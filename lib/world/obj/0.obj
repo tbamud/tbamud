@@ -1,0 +1,1064 @@
+#0
+bug~
+a bug~
+This object is BAD!  If you see it, there must be a bug in the game.  Please
+report it immediately using the BUG command.~
+~
+13 0 0 0
+0 0 0 0
+0 0 0 0
+#1
+wings~
+a pair of wings~
+A pair of wings is sitting here.~
+~
+9 0 ae 0
+6 0 0 0
+1 1 0 0
+#2
+fire ball fireball~
+a fireball~
+A fireball lies here burning.~
+~
+13 0 ao 0
+0 0 0 0
+1 1 0 0
+#3
+ruby red slippers~
+a pair of ruby slippers~
+A pair of ruby slippers lies here.~
+~
+13 0 ag 0
+0 0 0 0
+1 1 0 0
+#4
+emails listing~
+an email listing of the gods~
+The email listing of the gods is pinned against the wall.~
+~
+12 0 a 0
+0 0 0 0
+1 1 0 30
+E
+wizlist~
+                                 Implementors
+                                 ~~~~~~~~~~~ 
+                               Rumble   Welcor   
+                                 Greater Gods
+                                 ~~~~~~~~~~~ 
+       Detta   Elaseth   Elorien   Fade   Ferret   Fyre   Heiach   Manivo
+                          Radiax   Random   Relsqui   
+                                     Gods
+                                     ~~~ 
+       Aeon   Alambil   Amber   Arcano   Balm   Demar   Demortes   Elixias
+      Emmett   Exa   Falstar   Fharron   Fizban   Gatia   Ilsensine   Justo
+        Kyr   Macros   Meyekul   Mick   Minisham   Mythran   Neela   Poiu
+    Santa   Shamra   Shimmer   Silvanos   Smaug   Snowlock   Talgard   Taylor
+       Theophilus   Tocamat   Torpidai   Treestump   Tuskony   Zizazat   
+~
+E
+emails listing~
+   HELP CONTACT
+~
+#5
+foraged berries~
+some foraged berries~
+A few discolored berries that someone foraged.~
+~
+19 0 a 0
+6 0 0 0
+1 10 0 0
+E
+berries foraged~
+   These blue, red, and even green berries look edible.  Though you do wonder
+about all those stories of poisonous berries out in the woods.  These don't
+smell bitter, so they must be fine.    
+~
+#6
+greens forage~
+some foraged greens~
+Someone has foraged some greens to eat, but just left them here.~
+~
+19 0 a 0
+4 0 0 0
+1 20 0 0
+E
+foraged greens~
+   An assortment of leaves and grasses that look rather bland.  But if you had
+to a person could survive off this meager cuisine.  After all, how do you think
+all these animals live out here.    
+~
+#7
+foraged roots~
+some foraged roots~
+A pile of roots that someone collected for dinner.~
+~
+19 0 a 0
+8 0 0 0
+2 30 0 0
+E
+roots foraged~
+   Tubular roots of varying sizes and colors.  They look very edible.  Some of
+them are known to even taste good!  You recognize on of a purplish hue that is
+extremely sweet and is actually considered a delicacy in some parts.    
+~
+#8
+foraged bark~
+some foraged bark~
+A pile of bark is stacked neatly infront of you.~
+~
+19 0 a 0
+3 0 0 0
+3 15 0 0
+E
+foraged bark~
+   Now this is gross!  It must be desperate times when you have to turn to
+eating tree bark.  This stuff is still green luckily so it has some moisture to
+it.  But you really aren't going to eat this are you?    
+~
+#9
+foraged nuts~
+some foraged nuts~
+Half a dozen nuts are lined up perfectly on the ground.~
+~
+19 0 a 0
+5 0 0 0
+1 10 0 0
+E
+nuts foraged~
+   A variety of nuts that are very hard to come by.  Various animals hoard
+these in their lairs, so if you are lucky enough to come across some then you
+can just go nutty!    
+~
+#10
+waybread bread~
+a waybread~
+Some waybread has been put here.~
+~
+19 0 a 0
+24 0 0 0
+1 50 0 0
+E
+waybread bread~
+   The waybread is the traditional feed of elves when travelling, they call it
+lembas.  It is said to refresh the weary traveler greatly.  
+~
+#11
+water spring water~
+the spring~
+Fresh water is bubbling up from a spring.~
+~
+23 0 0 0
+100 100 0 0
+0 0 0 0
+#12
+staff sanctum~
+the Staff of Sanctum~
+The Staff of Sanctum stands here waiting to be taken up by those who are worthy.~
+~
+5 0 ano 0
+50 10 5 7
+20 1000 0 30
+T 13
+#13
+Ferret's black book~
+the little black book~
+A little black book is sitting here calling your name.~
+~
+12 bgi 0 0
+0 0 0 0
+0 0 0 0
+E
+book~
+   Upon these pages are players that have upset Ferret and will not receive help!
+
+
+Demigod
+Saint
+Angel
+Phoenix
+Alexander
+&w(Maybe you!)&y
+~
+#14
+pile stool steaming~
+a steaming pile of stool~
+A steaming pile of stool has recently been deposited here.~
+~
+19 0 a 0
+0 0 0 0
+1 1 0 0
+#15
+quest token~
+a quest token~
+A quest token needs to be returned to the questmaster.~
+~
+12 0 a 0
+0 0 0 0
+1 1 0 0
+T 141
+T 169
+E
+quest token~
+   It is a plain gold coin with the symbol of Sanctus engraved on both sides.  
+This token should be taken back to the questmaster to receive a reward.  
+~
+#16
+quest timer~
+a quest timer~
+A small quest timer is ticking away.~
+~
+12 0 a 0
+0 0 0 0
+1 1 0 0
+T 140
+T 141
+T 142
+E
+quest timer~
+   This small device looks like an antique gold pocket watch.  One small hand
+counts down the 10 minutes a questor has to complete their quest.  
+~
+#17
+quest mobile head~
+the head of the quest mob~
+The head of a quest mob needs to be taken back to the questmaster.~
+~
+12 0 a 0
+0 0 0 0
+1 1 0 0
+T 141
+E
+head quest mob~
+   This quest item is proof that you have hunted down and killed the quest mob.
+It needs to be returned to the questmaster within 10 minutes.  
+~
+#20
+portal gate gateway~
+a shimmering portal~
+A shimmering portal hovers here forming a gateway to another place and time.~
+~
+12 0 0 0
+0 0 0 0
+0 0 0 0
+#21
+sword quest War's Blood~
+War's Blood~
+The sword of kings awaits a hero to wield it.~
+~
+5 abdgimnoq ano 0
+8 10 9 3
+1 1000 0 20
+E
+sword quest war's blood~
+   The blade of this beautiful weapon is inlaid with tiny wavelets.  The guard
+extends far out from the basket hilt, guarding the wielder from all attacks.  
+Engraved across the blade are these words.  "Seek not death.  Seek not triumph.
+Seek wisdom, honor, and truth.  For I wield the spirit of my wielder, and blood
+of heroes never dies.  " These words are written in golden runes across the
+polished steel of the blade.  War's blood is given only to those warriors meant
+for greatness.  Remember, the sword wields the spirit of its master.    
+~
+A
+18 5
+A
+19 5
+A
+1 3
+#22
+Shadow Stealer dagger quest~
+shadow stealer~
+A piece of deepest midnight calls to you here.~
+~
+5 bdgmnpq ano 0
+10 10 9 11
+1 1000 0 20
+E
+shadow stealer dagger quest~
+   This long, thin dagger is made of the blackest metal you have ever seen.  It
+seems to devour all the light in its vicinity, making it appear as if it were a
+part of the very night.  As you look at the blade and hilt, you can make out an
+inscription which travels from the point of the weapon, to its ornately engraved
+pommel.  "Who so ever would let blood for love, who so ever would make war upon
+death, who so ever would give their life to love, make war with my darkness.  "
+Wield this fabled blade of lost love, and become one with the shadows.  
+~
+A
+2 3
+A
+14 50
+A
+18 5
+#23
+staff spellfire quest~
+the staff of spellfire~
+A burning staff of magical power floats in the air under its own power.~
+~
+5 abdfginopq ano 0
+6 10 9 7
+1 1000 0 20
+E
+staff spellfire quest~
+   Wrought of the pure weave, bound by mortal spells, wielded by only the
+highest of sorcerers, this staff is a burning rod of pure magic.  The white
+flame that gives it substance flickers and flares as you watch, threatening to
+break its magical wards and devour its surroundings.  As you hold this weapon,
+these words are burned into your mind.  "From the flash to the flame, my light
+shall guide the wizardry with wisdom.  From the beginning to the end, there
+will I be; to weave the one force eternal.  "
+~
+A
+4 3
+A
+3 3
+A
+12 50
+#24
+mace quest divine blessing~
+the mace of divine blessing~
+A gift from the gods is here seeking a worthy mortal.~
+~
+5 abdgimopq ano 0
+6 10 9 7
+1 1 0 20
+E
+mace quest divine blessing~
+   This heavy iron mace hums with suppressed power.  Its surface is engraved
+with thousands of tiny runes of all the deities that have ever been and ever
+will be.  Written across the flanges of the head are these words, "Let faith be
+the beginning.  Let the body be its instrument.  Let divinity flow through the
+wielder of my force.  Believe and be blessed.  "
+~
+A
+4 3
+A
+3 3
+A
+12 50
+#25
+silver bow quest~
+the silver bow of the light~
+A mighty force for good seeks a champion of the light.~
+~
+5 abdgiklq ano 0
+8 10 9 14
+1 1000 0 20
+E
+silver bow quest light~
+   Resplendent as the sun, this bow of pure silver seems to exude purity and
+goodness.  The bow itself is a shaft of pure silver, inscribed with sunbursts
+and lightning bolts.  Its string is a thread of purest white light that shimmers
+as you look at it.  No arrow is needed for this mighty weapon.  Its wielder need
+never carry a quiver.  If you listen closely, you can hear the weapon humming
+with its own energy.  If you listen long enough you might here these words in
+its song.  "Let light banish darkness.  Let Hope banish fear.  I am the herald
+of the end.  Where I strike, only light remains.  "
+~
+A
+12 50
+A
+13 50
+A
+18 5
+#26
+spear balance quest~
+the spear of balance~
+The greatest symbol of balance seeks the hearts of evil and good alike.~
+~
+5 abdgjkq ano 0
+8 10 9 11
+1 1000 0 20
+E
+spear quest balance~
+   The Lance of heroes.  The spear of mortal man.  The shaft of this legendary
+pike is carved from the wood of the tree of life.  Though separated from the
+tree that gave it life, the wood is a living, thinking entity.  Full 6 feet in
+length, the shaft's wood is smooth and unbroken by any scratch or mark.  The
+head of the spear is a huge dragon's fang, rumored to be from the mouth of the
+god Balm himself.  Etched in runes across the head of the spear are these words.
+"Find gray where only black and white were before.  Seek truth where others seek
+good and evil.  Bring justice through the scales of balance.  Then may you wield
+the truth that is my gift.  "
+~
+A
+12 50
+A
+13 50
+A
+14 50
+#27
+axe quest doomslaying~
+the axe of doomslaying~
+The axe meant to end all that is good in the realms floats here seeking a head to remove.~
+~
+5 bdgjlq ano 0
+10 10 9 3
+1 1000 0 20
+E
+axe doomslaying quest~
+   Darkest midnight, purest evil, death embodied.  This weapon is the end of all
+that is good.  Made only of shadows and the taint that is the most obscene
+corruption, the head of this axe is jagged and spiked.  The blade is balanced by
+a wicked spike giving this ancient weapon the look of a warped headsman's axe.
+No light seems to reach it, no living thing seeks its touch.  Tendrils of sickly
+smoke rise from the blade tainting your thoughts and the very air around you.  
+It calls you, it draws you.  "Wield me, worship me, watch me take the blood of
+the pure.  Become one with my taint.  Feel the foulness fermenting your soul.  
+Accept evil, accept the shadow.  Wield me and become death.  Become immortal.  
+"
+~
+A
+18 5
+A
+19 5
+A
+2 3
+#28
+cap quickling quest~
+the cap of quickling~
+A small cap of the faerie folk seeks the grasp of a true quickling.~
+~
+11 dfgq ae 0
+0 0 0 0
+1 1000 0 20
+E
+cap quickling quest~
+   This small green cap is made of a fine velvet lined with silk.  It's material
+seems to conform to your touch, as if trying to accommodate itself to your
+grasp.  Its only distinctive feature is a emerald studded silver stickpin
+jutting jauntily out of the front of the cap.  A peace of silk ribbon forms a
+band around the inside of the brim.  These words have been embroidered into the
+cap's material.  "The world is a wonder.  A wonder to wander.  To wander the
+wonderful world.  That is the life of a sprite.  Come my brothers, for much is
+lost that we may find.  Come my sisters, for many are lost that we may love.  
+Happiness is a laugh away.  Live and laugh and love; that is joy.  "
+~
+A
+14 50
+A
+2 3
+A
+17 -10
+#29
+armbands midnight sun land quest~
+the armbands of the land of the midnight sun~
+The symbol of trollish heroes awaits the next leader of the tribes.~
+~
+9 bdgiq ai 0
+10 0 0 0
+1 1000 0 20
+E
+armbands land midnight sun quest~
+   These huge bands of red metal are scratched and marked from years of battle
+and blood.  Crude markings cover their surface, chronicling the history of the
+trollish race in gory detail.  Marked in magical runes on the inside of each
+band are these words.  "Breaking bones, bringing blood, battering battle, bless
+me brothers, My eyes see red, my claws drip scarlet, and my soul is crimsoned
+with the blood of the hunt.  We will triumph, for there is no cure for death.  
+"
+~
+A
+1 3
+A
+13 50
+A
+5 3
+#30
+star man quest~
+the star of man~
+The light of humanity guides you onward here.~
+~
+1 abdgq ao 0
+0 0 -1 0
+2 1000 0 20
+E
+star man quest~
+   This beautiful gem was mined from the center of the mountain from which the
+stone of Sanctus's walls is constructed.  It pulses with the glow of true magic.
+Carved by the finest craftsman, enchanted by the most powerful wielders of the
+magical arts, This stone was made for the greatest of the human race.  Look into
+its depths, and see all the souls of mortal man.  It has no peer, no equal, and
+has yet to be classified by dwarven miners or gnomish scholars.  The human who
+holds it holds the light of all humanity in their grasp.  
+~
+A
+12 50
+A
+13 50
+A
+14 50
+#31
+shield quest wyrmguard~
+WyrmGuard~
+The protection of dragon-kind seeks the next hero of the wryms.~
+~
+9 abdgq aj 0
+10 0 0 0
+5 1000 0 20
+E
+shield quest wyrmguard~
+   Torn from Balm's breast, this scale has been shaped into a shield of
+unrivaled strength and beauty.  Its diamond shape expands and shapes itself to
+protect any dragon who bears it, from the youngest of hatchlings, to the most
+ancient of wyrms.  The shield shimmers and wavers with all the colors of the
+rainbow.  In its shimmering depths can be seen all the colors of every dragon
+that has ever come to pass.  Magical runes circle the shield's rim.  "Come wind,
+come fire.  Come Thunder come rain.  My bearer need never fear.  Come giants to
+dual.  My roar of triumph will be the last you ever hear.  "
+~
+A
+17 -10
+A
+3 3
+A
+12 50
+#32
+heartguard armor quest~
+HeartGuard~
+The pride of the dwarven race lies here unused.~
+~
+9 bdgiq ad 0
+10 0 0 0
+10 1000 0 20
+E
+heartguard armor quest~
+   This armor has been forged from the purest iron that can be found in mortal
+realms.  Its surface has been polished time and time again till it gleams with
+dark perfection.  The finest dwarven smiths have placed all their knowledge in
+its making.  The most hallowed dwarven priests have gifted this armor with their
+blessing.  It has no peer, no equal.  Inscribed on the armor's breastplate are
+these words: "To march to the clang of the hammer.  To be cooled by the
+whistling wind of the whirling axe.  Come foe, come fool; Break yourself on the
+rock of the dwarf.  Eternal wealth awaits, and we will not be denied.  "
+~
+A
+18 5
+A
+19 5
+A
+13 50
+#33
+scholar's guide jeweler's loop quest~
+Scholar's Guide~
+The Guide to all Gnomish knowledge hums here quietly.~
+~
+11 abdgq aco 0
+0 0 0 0
+3 1000 0 20
+E
+scholar's guide jeweler's loop quest~
+   You are looking at what could quite possibly be one of the most beautiful
+peaces of artistry ever made.  This finely crafted jeweler's loop is suspended
+from a chain of golden links.  The loop itself is a perfectly made combination
+of grounned glass, perfectly crafted silver, and precision gnomish workmanship.
+It is so simple as to be elegant.  A tiny plaque hangs from the chain that
+suspends the loop.  "To you who would sacrifice for life, join me.  To you who
+would become a slave to wonder, hold me.  To you who seek riches through
+learning, I am yours.  "
+~
+A
+3 3
+A
+12 50
+A
+4 3
+#34
+boots strider quest~
+the boots of the strider~
+The companions to the wanderlust sit here waiting for travel.~
+~
+9 bdgq ag 0
+10 0 0 0
+5 1000 0 20
+E
+boots strider quest~
+   These fine boots have been made from the hides of monsters and beasts the
+world over.  They are unadorned, black suede leather, with a thick soul and
+steel toe.  The stitching that holds them together is so fine as to be
+invisible.  As you look at them words enter your mind.  "Trip over mountain.  
+Stride over sea.  Travel across desert.  Run between the forest trees.  Be bold,
+be brave.  Be unfettered.  Let us run the world over.  You and me.  "
+~
+A
+14 50
+A
+5 3
+A
+2 3
+#35
+battleaxe dragonbane quest~
+the Battleaxe of Dragonbane~
+The bane of all wyrmkin seeks the heart of a dragon.~
+~
+5 abdgiq ano 0
+10 10 9 3
+10 1000 0 20
+E
+battleaxe dragonbane quest~
+   There is no greater weapon in mortal hands.  This is an instrument of death.
+The two-headed axe was meant for the hands of a giant.  The shaft and hilt of
+this mighty blade are formed from a gray stone that can never be chipped or
+broken.  The head of the weapon is formed from two massive pieces of obsidian
+Shaped like diamonds side by side.  However this vicious object has but one
+purpose.  Etched into the two heads of the axe are these words.  "Slash, slice,
+swerve and swipe.  Dodge, duck, down and up.  I draw the blood of the week.  
+Thunder marks my strike.  Lightning shines when I am drawn.  I am the storm to
+end all.  I am the dragonbane.  "
+~
+A
+13 50
+A
+19 5
+A
+18 5
+#36
+cloak Elven court quest~
+the cloak of the elven court~
+A heavy cloak of brown and green is hear for the next elven king.~
+~
+9 dgq ack 0
+10 0 0 0
+4 1000 0 20
+E
+cloak elven court quest~
+   A heavy, richly embroidered cloak of green and brown.  It's color changes as
+you move, blending in with the world around you.  A simple wooden clasp holds it
+together at the neck.  It would be like any other nobleman's traveling cloak
+were it not for one thing.  Laced with thread so fine it almost isn't there, the
+symbol of the Elvin court is sewn over the breast of the cloak.  This is the
+garment of the Elvin court.  Its bearers are the pride of their race.  Only 6
+heroes have ever been worthy to wear such a mark of honor.  
+~
+A
+2 3
+A
+3 3
+A
+14 50
+#37
+Gloves kindred quest~
+Gloves of the Kindred~
+Some fine gloves sit hear itching to grab something.~
+~
+11 dgq ah 0
+0 0 0 0
+3 1000 0 20
+E
+gloves kindred quest~
+   A set of lithe leather riding gloves.  The leather is so thin as to almost
+not be there.  The palm and fingertip of each glove are padded with a lining of
+cloth to protect the wearer's hand against harm.  Looking at these tiny gloves
+you wonder what keeps them from just tearing at the slightest pressure.  
+~
+A
+13 50
+A
+14 50
+A
+2 3
+#38
+gem sanctum~
+a gem of sanctum~
+One of the lost treasures of Sanctum is here.~
+~
+4 a ao 0
+30 1 1 26
+1 1000 0 0
+E
+gem sanctum~
+   This is one of the treasures from the hordes of the city of Sanctum.  
+~
+#39
+staff curative~
+a curative staff~
+A staff used by the healers of Sanctum is here.~
+~
+4 b ao 0
+30 1 1 43
+1 1000 0 0
+E
+curative staff~
+   This beautiful staff is used by the healers of sanctum.  
+~
+#40
+runestone sanctum church~
+a runestone of Sanctum~
+A runestone of the church of Sanctum has been left here.~
+~
+4 b ao 0
+30 1 1 36
+1 1000 0 0
+E
+runestone Sanctum church~
+   This is one of the runestones used by the priests of Sanctum in their duties.
+
+~
+#41
+Bell sanctum freedom~
+the bell of Sanctum's freedom~
+The symbol of Sanctum's freedom waits to be returned to its city.~
+Nothing.
+~
+4 b ao 0
+30 1 1 39
+1 1000 0 0
+E
+bell sanctum's freedom~
+   This is the bell that represents the freedom of the city of Sanctum.  
+~
+#42
+hammer Sanctum~
+the hammer of Sanctum~
+The hammer used to ring Sanctum's mighty bell is here.~
+~
+4 ab ao 0
+30 1 1 3
+1 1000 0 0
+E
+hammer Sanctum~
+   This is the hammer used to ring the bell of freedom in the church of Sanctum.
+
+~
+#43
+Guards Eternal Flame quest~
+Guards of the Eternal Flame~
+The spirit of Wyvern Rulers seeks a new Guardian of the flames.~
+~
+9 adfgq af 0
+10 0 0 0
+5 1000 0 30
+E
+guards eternal flame quest~
+   Guardians of history, heroes of legend, Ancients of elder years.  These are
+the Guards worn by those chosen to rule all of Drake kind.  The material that
+forms them glows and smokes like living flame.  However, it is cool to the
+touch, forming an impenetrable barrier against all attacks.  These leggings seem
+to shimmer before your very eyes, fact or fiction, they look as though they
+could vanish at any turn.  Looking deep into the fire that is their strength you
+see these words in yellow and red flame.  "Drawn from the depths.  Delivered
+from death.  Directed by Divinity.  I am the truth.  The light.  The guardian of
+hope and the future.  Find comfort in my flames.  Find strength in my touch.  
+For with me, Lies all that is to come.  "
+~
+A
+6 3
+A
+13 50
+A
+14 50
+#44
+questpoint setter immortal device~
+a questpoint setter~
+An immortal device to set questpoints.~
+~
+12 0 ao 0
+0 0 0 0
+1 1 0 31
+T 168
+#45
+pile coins gold~
+a pile of gold coins~
+A pile of gold coins is half-buried in the mud and muck.~
+~
+20 0 a 0
+1000000 0 0 0
+0 0 0 0
+T 193
+E
+pile coins gold~
+   The glittering gold catches your eye. Though covered in dirt and grime money
+is money. 
+~
+#46
+key gateguard~
+the gateguard key~
+The gateguards key was left here.~
+~
+12 0 a 0
+0 0 0 0
+1 1 0 0
+#47
+magic eight ball eightball~
+the magic eight ball~
+A mysterious looking magic eight ball holds the answer.~
+~
+12 0 ao 0
+0 0 0 0
+1 1 0 0
+T 6
+E
+magic eight ball~
+   Simply "shake eightball" to have all of your questions answered. 
+~
+#48
+bed comfy~
+a comfy bed~
+A comfy bed is begging you to take a nap.~
+~
+12 0 a 0
+0 0 0 0
+1 1 0 0
+E
+comfy bed~
+   This bed is beckoning you to lay down and get some much needed sleep.
+Just "sleep bed"
+~
+#80
+paintball gun red~
+a red paintball gun~
+A red paintball gun was abandoned here.~
+~
+12 0 a 0
+0 0 0 0
+1 50 0 0
+T 97
+#81
+paintball gun blue~
+a blue paintball gun~
+A blue paintball gun was abandoned here.~
+~
+12 0 a 0
+0 0 0 0
+1 50 0 0
+T 96
+#82
+teleporter~
+the teleporter~
+A strange device labeled "teleporter" was left here.~
+~
+12 0 a 0
+0 0 0 0
+10 100 0 0
+T 99
+T 176
+E
+teleporter~
+   This teleporter is used to transfer players between zones.  Accessible zones
+are listed under HELP AREAS by being CAPITALIZED.  For example to teleport to:
+  74 Newbie GRAVEyard                   -- Jojen                       3- 5
+type: teleport grave
+   The teleporter may also be used to recall back to Midgaard at any time.
+~
+#83
+slip paper tapcode code~
+a slip of paper~
+A small slip of paper has something written on it.~
+~
+12 0 a 0
+0 0 0 0
+1 1 0 0
+E
+slip paper tapcode code~
+TAPS| 1 | 2 | 3 | 4 | 5 | To the left is a tap code we use to communicate 
+------------------------- through walls by tapping two numbers. 
+1   | A | B |C/K| D | E | The first designates the horizontal row and the 2nd 
+------------------------- designates the vertical row. The letter W, for 
+2   | F | G | H | I | J | example, would be 5-2. The letter H would be 2-3.
+------------------------- The letter "c" works double duty as a c or k.
+3   | L | M | N | O | P |  
+-------------------------
+4   | Q | R | S | T | U |
+-------------------------
+5   | V | W | X | Y | Z |
+~
+#84
+drain shower hidden~
+the shower drain~
+.a hidden object!~
+~
+15 0 0 0
+5 5 -1 0
+0 0 0 0
+E
+shower drain~
+   The metal drain is covered with years of hair and grime. Several screws
+holding the drain in place seem to be missing.
+~
+#85
+pick iron~
+a small pick~
+A small piece of metal wire has been sharpened into a pick.~
+~
+12 0 ao 0
+0 0 0 0
+1 0 0 0
+E
+pick iron~
+   This small piece of wire has been filed or sanded into a sharp point and
+resembles some time of lock picking device.
+~
+#86
+shackles pair~
+a pair of shackles~
+A pair of shackles have been left here open.~
+~
+12 0 ag 0
+0 0 0 0
+15 0 0 0
+E
+shackles pair~
+   These iron shackles are heavy with a chain of about 20 links connecting the
+two ankle braces.
+~
+A
+14 -5
+#87
+lightwing's board~
+free~
+Lightwing's board is floating here.~
+~
+13 0 0 0
+0 0 0 0
+0 0 0 0
+#88
+idleout timer stayalive bracelet~
+Rumble's stayalive bracelet~
+A bright orange plastic bracelet was left here.~
+~
+12 0 m 0
+0 0 0 0
+1 1 0 0
+T 195
+E
+idleout timer stayalive bracelet~
+   The bracelet is made of a garish orange plastic with the letters STAYALIVE
+carved into the outer band. It is rumored that this bracelet will keep people
+from going linkdead.
+~
+#89
+iron shackles~
+a pair of iron shackles~
+A pair of shackles are securely fastened around both of your ankles.~
+~
+12 0 0 0
+0 0 0 0
+0 0 0 0
+T 89
+T 180
+E
+iron shackles pair~
+   The shackles are locked closed about your ankles with the link chain looped
+through a steel ring cemented into the floor.
+~
+#90
+ice cream 99 flake~
+an ice cream~
+An ice cream has been dropped here.~
+~
+19 0 0 0
+1 0 0 0
+1 4 0 0
+E
+ice cream 99 flake~
+   Known as the 99, it is an ice cream cornet with a stick of chocolate rammed
+in. First sold in 1922 at the ice cream shop at 99 the High Street, Portobello,
+Scotland.
+~
+#91
+full english breakfast fatty food~
+an English Breakfast~
+A full English Breakfast is being served here in all its fatty glory.~
+~
+19 0 a 0
+24 0 0 0
+4 8 0 0
+E
+full english breakfast fatty food~
+   'Heaven on a plate' or the quickest route to a heart attack. Eggs, bacon,
+sausages, baked beans, hashed browns, mushrooms, tomatoes, black pudding and
+fried bread. Available variants include the so-called Jewish Breakfast, served
+with turkey ham and beef sausages, or the vegetarian breakfast, served with
+quorn sausages. 
+~
+#92
+tea mug cup nice tea~
+a nice mug~
+A nice mug of tea has been left here.~
+~
+17 i a 0
+2 2 11 0
+7 1 0 0
+E
+mug cup tea nice~
+   A nice mug of fair trade tea, all you need now is a nice piece of cake. 
+From its home in China to the break times of Britain, Tea is the drink of Asian
+Emperors and European Monarchs, as well as sweatshop workers in the east and IT
+workers in the west.
+~
+#93
+board~
+the warriors board~
+The warriors board has been posted here to allow fellow fighters to communicate.~
+~
+13 0 0 0
+0 0 0 0
+0 0 0 0
+#94
+clerics board~
+the clerics board~
+A bulletin board for clerics to keep in touch with each other.~
+~
+13 0 0 0
+0 0 0 0
+0 0 0 0
+#95
+thieves board~
+the thieves board~
+A board for thieves to relate their current plots and schemes is hidden here.~
+~
+13 0 0 0
+0 0 0 0
+0 0 0 0
+#96
+mages board~
+the mages board~
+A board for mages to post to others in their class is glowing brightly here.~
+~
+13 0 0 0
+0 0 0 0
+0 0 0 0
+#97
+coffee cup mug coffee~
+a cup~
+A coffee cup has been left here.~
+~
+17 0 a 0
+1 1 12 0
+2 5 0 0
+E
+cup coffee mug~
+   A coffee cup, it is marked with the letters 'TBA'. Coffee originated from
+the Kaffa region in Ethiopia, and while long drunk in the Arab world, it did
+not enter Europe until the British East India Company began to import the
+product in the 16th Century. The first coffee house in Europe was founded in
+Oxford during 1650, and by 1670 there was already a coffee house in the
+Massachusetts Bay Colony.
+~
+#98
+board sign notice writing~
+a sign~
+@gA small @Gsign@g hangs on the wall.@n~
+~
+12 dq 0 0
+0 0 0 0
+1 0 0 0
+E
+board sign notice writing~
+   Please keep discussions within the room as much as possible, so that people
+can build with clear screens.
+~
+#99
+scythe death~
+the Scythe of Death~
+The Scythe of Death rests heavily on the ground.~
+~
+5 jkmno an 0
+0 5 10 5
+40 1000 0 20
+E
+scythe death~
+   It is a very heavy scythe.  The grey handle is made from hard wood and the
+long iron blade is completely smooth from countless years of use.  It feels cold
+to the touch.  
+~
+$~

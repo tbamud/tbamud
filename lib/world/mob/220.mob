@@ -1,0 +1,135 @@
+#22000
+dust bunny cloud~
+a dust bunny~
+@nA @Rterrifying @Ddust bunny@n blows @Ggr@gim@Ge@n in your face.
+~
+   @cIt appears to be nothing than an airy blob of dust, with glowing red chunks
+of fungus for eyes.  The way the dirt curls in some places almost seems like it
+is reaching out for something...@n
+~
+bd h 600 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 0
+E
+#22001
+Snuffins mouse~
+@WSnuffins@y the mouse@n~
+@nA small @ymouse @nchews nervously on a piece of @Ycheese@n.
+~
+   @WSnuffins @cis a mouse, small in stature and by his sudden, @Rjerky @cmovements,
+very nervous.  He wears a single, @Ws@Dt@Wr@Di@Wp@De@Wd @ctie and bowl hat about his head,
+seeming ready to go at a moments notice.  The whiskers around his incessantly
+twitching nose are long and frazzled, while patches of fur from his back seem to
+have fallen out.
+@n
+~
+bd h 1000 E
+20 17 -10 4d4+200 3d3+3
+200 40000
+8 8 1
+BareHandAttack: 8
+E
+T 22001
+T 22002
+#22002
+oreo cat kitty kitten~
+@DO@Wre@Do@n the cat~
+A huge, hissing cat sits atop a red cushion.
+~
+   @cThis frightening feline is both tall and sleek.  Her face and tail are
+completely @Dblack@c, save for a smattering of @Wivory @caround her nose, while her
+torso and legs are pure, unbroken @Dwhite@c.  A silver @Bpendant @changs from a @Dblack@c
+collar around her neck.@n
+~
+bdhr 0 -1000 E
+19 15 -1 3d3+190 3d3+3
+200 36100
+5 8 2
+BareHandAttack: 8
+E
+#22003
+icemonster~
+@cthe @Cice@Dmons@Cter@n~
+@nAn @Cice@Dmons@Cter @ngrowls angrily.
+~
+   @cA tremendous creation of @Cice@c, this colossal monster has a strange kind of
+beauty to it.  Two pairs of @Ccr@Wys@Cta@Wll@Cin@We@c legs stretch out from a @Ctranslucent@c,
+central body.  A lop-sided sphere of @Cice@c sits exactly where a head would be, and
+a long @Cic@Wic@Cle@c sticks out from it, perfectly simulating a nose.  This beast has
+no visible eyes, but by its angry snarls and growls, it definitely senses your
+presence here.@n
+~
+bcd 0 -1000 E
+19 14 -1 3d3+190 3d3+3
+190 36100
+8 8 0
+BareHandAttack: 3
+E
+#22004
+slime blob scum~
+a blob of @Doven @yscum@n~
+@nA blob of @yslime@n skulks past.@n
+~
+   @cA mutant has been born out of coalesced oven scum and filth!  It's a big,
+green-and-brown blob that absolutely @Greeks@c.@n
+~
+bd 0 500 E
+15 19 1 3d3+150 2d2+2
+100 22500
+8 8 0
+BareHandAttack: 4
+E
+#22005
+kitchen pixie~
+a @Wkitchen @Cpixie@n~
+A @Wkitchen @Cpixie@n flitters by nervously.
+~
+   @cIt's a @Wkitchen @Cpixie@c, right out of the fairy tales!  She is very small and
+scrawny, with a pinched, upturned nose and pouty lips.  A pair of wings attached
+to her back flap at a maddeningly quick pace.@n
+~
+bd n 1000 E
+17 18 0 3d3+170 2d2+2
+170 28900
+8 8 2
+BareHandAttack: 14
+E
+#22006
+spaghetti demon pile~
+a @Rspaghetti @Ddemon@n~
+@nA living pile of @Rspaghetti @wlurches past.@n
+~
+   @cThis mass of long, wet noodles seems to have suddenly mutated into a gross
+kind of monster.  It roars and growls out of a dent into the clump of modly
+noodles, though it apparently has no eyes.  Old spaghetti sauce seeps out and
+leaves a trail everywhere this demon goes.@n
+~
+bd 0 0 E
+17 18 0 3d3+170 2d2+2
+170 28900
+8 8 0
+BareHandAttack: 2
+E
+T 22000
+#22007
+turkey sandwich~
+a turkey sandwich~
+@nA @Dturkey @ysandwich @nmutter distractedly.
+~
+   @cIt looks...Like a turkey sandwich.  A nice-sized sliver of meat rests
+between two thick slices of @Wwhite@c bread.  It seems to have everything a
+person might want out of a sandwich- @Glettuce@c, @Rtomato@c and @Gpickles@c.
+@YMustard@c is even dripping off the side.  A pair of beachball-sized olives
+skewered on colored toothpicks represent eyes.  By the looks of things, this
+sandwich can't move, though the slices of bread flap and make mumbling noises
+occasionally.@n
+~
+bd h 0 E
+20 17 -3 4d4+200 3d3+3
+200 40000
+5 5 0
+BareHandAttack: 12
+E
+T 22003
+$

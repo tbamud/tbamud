@@ -1,0 +1,421 @@
+AC
+
+"AC" is your armor class.  It is a number from -10 to 10, roughly
+defined as follows:
+
+
+  AC  Roughly equivalent to
+-----------------------------------------------------------
+  10  Naked person
+   0  Very Heavily armored (Plate mail, and "two shields") 
+ -10  Armored battle tank
+
+The score command displays your armor class as a number such as 78/10;
+this means 78 on a scale from -100 to 100 (i.e., 7.8 on the scale from
+-10 to 10.)
+
+See also: SCORE
+#
+AREAS
+
+   This is a listing of the areas available for exploration on this
+CircleMUD.
+
+Limbo                    -- DikuMud
+River Island Of Minos    -- Mahatma of HexOynx
+God Simplex              -- CircleMUD, modified by Taz of Tazmania
+The Straight Path        -- Steppin of ChicagoMUD
+The High Tower Of Magic  -- Skylar of SillyMUD*
+Midgaard                 -- DikuMud
+The Three Of Swords      -- C.A.W.
+Miden'Nir                -- Copper II, modified by VampLestat of MercMUD*
+The Chessboard           -- Exxon of SillyMUD
+Mount Moria              -- Redferne of DikuMud*
+The Great Eastern Desert -- Rorschach
+The Drow City            -- Rorschach
+The City Of Thalos       -- Rorschach
+The Great Pyramid        -- Andersen of HexOynx*
+New Thalos               -- Duke Of SillyMUD*
+The Haon-Dor Forest      -- Quifael of DikuMud, extended by by Derkhil
+                            of CircleMUD
+The Orc Enclave          -- C.A.W.
+Arachnos                 -- Mahatma of HexOynx
+Rand's Tower             -- C.A.W.
+The Dwarven Kingdom      -- Depeche of DikuMud
+The Sewers               -- Redferne of DikuMud
+Redferne's Residence     -- DikuMud, modified by Cyron of VieMud
+Rome                     -- Onivel of JediMUD
+King Welmar's Castle     -- CircleMUD*
+Newbie Zone              -- Maynard of StrangeMUD
+
+All those marked with * have been heavily modified by Furry of VieMud
+C.A.W. stands for the Curious Areas Workshop.  For more information
+mail <fletchra@qsilver.queensu.ca>.
+
+See also: CREDITS
+#
+BOARDS
+
+Bulletin boards are the forum of inter-player communication on the MUD.
+There are different bulletin boards for different purposes -- for example,
+a standard mortal board, a board for immortals, a board for fun "social"
+messages, etc.  Naturally, not all players may be allowed to read all
+types of boards.
+
+Type "LOOK BOARD" to see the messages already posted on a board.  Type
+"WRITE <subject>" to post a message to a board; terminate a message with
+a '@' as the first character on a line.  Type "READ <number>" to read a
+post.  Type "REMOVE <number>" to remove your own messages.
+
+Example:
+
+  > look at board
+  > write Am I using these boards correctly?
+  [writes the message; terminates with a '@']
+  > look at board
+  > read 6
+  > remove 6
+
+See also: MAIL, READ, WRITE
+#
+CLERIC
+
+Clerics have an ancient belief in not carrying sharp weapons.  Hence, they can
+only wield bludgeoning weapons.  This class gives you the wisdom of peace,
+blessing and healing, though it is possible to learn more violent spells.
+
+You can improve your spells by using the practice command.
+
+See 'help spells' for a list of spells available.
+
+See also: PRACTICE, SPELLS
+#
+EXPERIENCE XP
+
+Whenever you kill a monster or a player, you earn experience points.  When
+enough experience points are earned, you raise a level.
+Things you should know about experience points:
+
+  * When damaging a monster, you get experience points.
+
+  * If you kill a monster of higher level than yourself, you get bonus
+    experience points.  If killing a monster of lower level you'll gain
+    less experience points
+
+See also: GROUP, SCORE
+#
+FLAGS
+
+Players sometimes have FLAGS after their names in the WHO list.  These
+flags are always in parentheses, not brackets or braces.
+
+  FLAG        MEANING
+  ----------- ---------------------------------------------------------
+  (KILLER)    Player is trying to kill other players.  That means you
+              can try to kill him/her without being flagged.
+  (THIEF)     Player is trying to steal from other players.  Fire away.
+  (invis)     Player is invisible; you can see him/her because you are
+              sensitive to the presence of invisible things.
+  (writing)   Player is writing on the board; do not disturb.
+  (mailing)   Player is writing mail; do not disturb.
+  (deaf)      Player has chosen not to hear shouts.
+  (notell)    Player has chosen not to accept tells.
+  (quest)     Player is participating in a quest currently being run by
+              the Gods.
+
+See also: NOSHOUT, NOTELL, QUEST, STEAL, VISIBLE
+#
+GUILD
+
+The Guildhouse is the place where mortals may go to escape the troubles and
+perils of a cruel world.  Each guild is heavily guarded, so that only members
+may enter the building.  Guilds are also the places where people come to
+learn and practice the skills of their trade.
+
+See also: PRACTICE
+#
+HOUSES
+
+Houses have been implemented as of CircleMUD 3.0.  A house entails two things:
+access control and crash protection.  Only you and your guests will be allowed
+to enter the house.  Your house will be crash-saved every five minutes.  You
+can force your house to save by typing 'save' while standing in your house.
+In the event of a crash, the objects in your house as of the last crash-save
+will be loaded back into your house when the MUD reboots.  Also, if you own
+a house, and quit from the game while standing in your house, you will be
+loaded into your house next time you enter the game.
+
+Guests of your house can be defined using the HOUSE command.  See HOUSE for
+more information.
+
+Houses are an alternative to renting.  You can simply enter your house and
+quit; your objects will drop to the ground and be crash-saved for when you
+return.  There is currently no limit to the number of objects which can be
+stored in your house.  Of course, players must expect to pay a much higher
+premium for the convenience of houses; contact your local Implementor for
+a fee schedule.
+
+See also: HOUSE
+#
+IMPLEMENTOR
+
+The most powerful being in existence.
+#
+INN INNS CRYOGENIC CRYO RECEPTION
+
+Inns are places where the weary traveler may rest while the innkeeper looks
+after his equipment and treasure.
+
+Specifically, the game will save your equipment while you are logged out.
+There is a daily cost for renting, based on your equipment.  Each item has
+a per diem charge.  The per diem charge is calculated to the nearest second,
+however -- if you rent at the rate of 2400 coins per day, and you come back
+39 hours later, you will be charged 3900 coins.
+
+A CRYOGENIC CENTER will store your items for a one-time charge of four
+days rent.
+
+Rent files are deleted if you run out of money to pay the per diem charges
+or after 30 days.  Cryogenic-rent files are deleted after 60 days.
+
+See also: OFFER, RENT
+#
+LINK
+
+A lot of players have problems with their links to the game.  This can be
+very hazardous to your health in the middle of a battle, of course.
+
+ I. If your link is broken, you will automatically attempt to flee each
+    time someone attempts to hit you.  If you manage to flee, then you
+    will be saved by divine forces, and put in a safe place until you
+    reconnect to the game.
+
+II. If your link jams (freezes), you have a problem.  The only solution we
+    can give is that you break your link as quickly as possible.  By
+    breaking the link you can hope that the above procedure is initiated.
+
+    Do not try to get out of a fight by breaking link.  You will be not
+    reimbursed for any experience or equipment if you purposefully
+    cut your link.
+#
+"MAGIC USER" WIZARD MAGE
+
+This is the class of powerful and violent magic, but the magic user do not
+control the nature, and can therefore not bless and such.
+
+You can improve your spells by using the practice command.
+
+See 'help spells' for a list of spells available.
+
+See also: PRACTICE, SPELLS
+#
+MANA
+
+Mana is used when casting spells.  You must have a certain amount of mana
+in order to cast any particular spell.  If you do not have enough mana to
+cast the spell you must rest until you gain enough points to cast.
+
+See also: SPELLS
+#
+MIDGAARD MAP
+
+                           Temple Altar
+                                 |
+                                 |
+                    Reading -- Temple -- Donations
+                     Room        of
+                              Midgaard     Post   Reception
+                                 |        Office   /
+                  Cleric         |            |  /
+                  Guild----Temple Square----Grunting---Bar
+                             (Fountain)     Boar Inn
+                 Magic           |
+                 Shop   Bakery   |    Grocer  Weaponsmith
+                   |      |      |       |        |        East
+      <---West-----+------+----Market----+--------+--------Gate--->
+          Gate     |      |    Square    |        |         |
+           |     Mage   Armory   |      Pet    Warrior    Wally's
+         (Wall   Guild           |     Shop     Guild    World of Water
+          Road)                  |
+           |                     |                     Uncle Juans's
+           |                     |                           |
+           +-(Poor-Alley)-+----Square----+(Dark-Alley)-------+
+           |              |      |       |        |          |
+           |            Grubby   |    Thieves    Levee   Warehouse
+           |             Inn     |     Guild      |
+         (Wall                  Dump              |
+          Road)           Sewers/                 |
+           |                                      |
+           |                                   Midgaard
+  <=== [Bridge] =============================== River =============>
+           |
+           |
+           +(Concourse)+------------+-------------+----------+
+           |           |            |             |          |
+           |           +            +----Cafe     +---Penny  |
+           |           |    Park--v |             |   Lane   |
+           |   City    |         +--+--+          |          |
+           |  Guard----+----+----+--o--+-----+----+---City   |
+           |     HQ    |                          |   Hall   |
+           |           +            +--(Emerald)--+          |
+      (Concourse)      |            |                   (Concourse)
+           |           +------(Park-+-Road)-------+          |
+           |                        |             |          |
+           |           +--(Emerald)-+             +---Elm    |
+           |           |                          |  Street  |
+           |           +                          +          |
+           |           |                          |          |
+           +-----------+------(Concourse)---------+----------+
+                                                  |
+                                              Graveyard 
+                                              Entrance
+#
+SHOPS
+
+Shops are places where the adventurer may purchase equipment for his quests,
+and where he may sell his treasure if he should manage to survive the perils
+with his life and sanity intact.  Many shops trade only in a specific type of
+merchandise.  Thus, a baker may well refuse to buy your armor, even if it is
+of high quality!
+
+To some people, the prospect of obtaining the entire inventory of a shop by
+murdering the keeper may appear tempting - but beware: The shopkeepers are 
+often rugged, capable men; roughened by years of trading and, indeed, surviving
+in a world where the only safe prospect is death in the end.
+
+See also: BUY, SELL, LIST, VALUE
+#
+SPELL SPELLS
+
+           Magic User               Cleric
+
+           (1) Magic Missile        (1) Armor
+           (1) -                    (1) Cure Light
+
+           (2) Detect Magic         (2) Create Water
+           (2) Detect Invisible     (2) Create Food
+
+           (3) Chill Touch          (3) Detect Poison
+           (3) Infravision          (3) -
+
+           (4) Invisibility         (4) Cure Blindness
+           (4) Armor                (4) Detect Evil
+           (4) -                    (4) Detect Alignment
+
+           (5) Burning Hands        (5) Bless
+
+           (6) Locate Object        (6) Blindness
+           (6) Strength             (6) Detect Invisible
+
+           (7) Shocking Grasp       (7) Infravision
+
+           (8) Sleep                (8) Protection From Evil
+           (8) -                    (8) Poison
+
+           (9) Lightning Bolt       (9) Cure Critical
+           (9) Blindness            (9) Group Armor
+
+          (10) Detect Poison       (10) Summon
+          (10) -                   (10) Remove Poison
+
+          (11) Color Spray         (11) -
+
+          (12) -                   (12) Earthquake
+          (12) -                   (12) Word of Recall
+
+          (13) Energy Drain        (13) -
+
+          (14) Curse               (14) Detect Evil
+          (14) Poison              (14) Detect Good
+          (14) -                   (14) Dispel Evil
+          (14) -                   (14) Dispel Good
+
+          (15) Fireball            (15) Call Lightning
+          (15) -                   (15) Sanctuary
+
+          (16) Charm Person        (16) Heal
+
+          (17) Sense Life          (17) Control Weather
+
+          (19) -                   (19) Harm
+
+          (22) -                   (22) Group Heal
+
+          (26) Enchant Weapon      (26) Remove Curse
+#
+THIEF THIEVES
+
+Thieves are known to have very special qualities, that no other class offers.
+Their specialty tends to be in the darker, sneakier art.  Many of these
+qualities can come in handy in many situations, such as picking locks.
+
+You can improve you skills by using the practice command.
+
+Skills available to thieves:
+
+sneak, hide, steal, backstab, pick lock, track
+
+See the help on each skill for more information.
+
+See also: PRACTICE
+#
+WARRIOR FIGHTER
+
+Warriors are known to have more strength than the average player.  This makes
+them better at hand-to-hand-combat, as they possess skills of violence and
+fighting unequaled by the members of any other class.  However, they lack the
+ability to use magic of any sort.
+
+You can improve your skills by using the practice command.
+
+Skills available to warriors:
+
+kick, rescue, track, bash
+
+See also: PRACTICE
+#
+CIRCLE CIRCLEMUD CREDITS
+                    C  I  R  C  L  E  M  U  D     3  .  0
+
+CircleMUD was developed from DikuMud (Gamma 0.0) by Jeremy "Ras" Elson at
+Johns Hopkins University's Department of Computer Science.  All code unique
+to CircleMUD is protected under a copyright by the Trustees of the Johns
+Hopkins University.
+
+Many, many people contributed to CircleMUD in one way or another throughout
+the course of its development.  Although it's impossible for me to remember
+them all, I'd like to extend special thanks to certain people:
+
+  -- Jeff Fink and George Greer, for submitting a veritable mountain of
+     excellent code.
+  -- Chris Epler and Chris Herringshaw for extensive beta-testing and bug
+     reporting.
+  -- Furry (Alex Fletcher), for single-handedly managing Circle's world files.
+  -- Fred Merkel, Ryan Watkins, Jay Levino, and Sharon Goza, for other
+     code and area submissions.
+  -- Jean-Jack Riethoven for porting the code to the Amiga, David Carver
+     for porting it to OS/2, and Jack Patton and Steffen Haeuser for the
+     Amiga port.
+  -- Bill Bogstad and Tim Stearns for allowing Circle to exist at JHU.
+  -- The DikuMud folk, and the good old WhatMUD implementors Dave & Justin,
+     for starting the ball rolling.
+  -- Bryan Jolson, Steven Lacher, Cat Stanton, and Naved Surve, for being 
+     there in the very early days of Circle's development.
+  -- Sharon, Ben, Erica, Aly, and Josh, for keeping me sane.
+  -- Jules (hamotek sheli) for being the greatest.
+
+...plus everyone else in the Circle community who has submitted material!
+Thanks everyone!
+
+  Anonymous FTP:  ftp.circlemud.org or ftp2.circlemud.org in pub/CircleMUD
+ To report bugs:  bugs@circlemud.org
+    To get help:  help@circlemud.org
+            URL:  http://www.circlemud.org/
+   Mailing List:  listserv@post.queensu.ca
+                  (write "subscribe circle <first name> <last name>")
+
+--Jeremy Elson (jelson@circlemud.org)
+
+See also: AREAS
+#
+$

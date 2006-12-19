@@ -1,0 +1,145 @@
+CircleMUD v3.0 Shop File~
+#24200~
+24217
+24218
+24219
+-1
+1.10
+0.90
+-1
+%s I don't have that!.~
+%s I see no such thing.~
+%s I don't buy, I only sell!~
+%s BUG, Please report.~
+%s You can't afford that!~
+%s Fine, that'll be %d gold pieces.~
+%s Bug, please report (%d).~
+1
+6
+24205
+0
+24223
+-1
+6
+22
+0
+0
+#24201~
+24209
+24210
+24211
+24212
+24213
+24214
+24215
+-1
+1.10
+0.90
+-1
+%s I don't have that!.~
+%s I see no such thing.~
+%s I don't buy, I only sell!~
+%s BUG, Please report.~
+%s You can't afford that!~
+%s Fine, that'll be %d gold pieces.~
+%s Bug, please report (%d).~
+1
+6
+24206
+0
+24224
+-1
+6
+22
+0
+0
+#24202~
+24295
+24296
+24297
+-1
+1.10
+0.90
+-1
+%s I don't have that!.~
+%s I see no such thing.~
+%s I don't buy, I only sell!~
+%s BUG, Please report.~
+%s You can't afford that!~
+%s Fine, that'll be %d gold pieces.~
+%s Bug, please report (%d).~
+0
+6
+24211
+0
+24238
+-1
+0
+28
+0
+0
+#24203~
+24291
+24292
+24293
+24294
+24295
+24296
+24297
+24203
+24202
+24201
+24200
+-1
+1.10
+0.90
+-1
+%s I don't have that!.~
+%s I see no such thing.~
+%s I don't buy, I only sell!~
+%s BUG, Please report.~
+%s You can't afford that!~
+%s Fine, that'll be %d gold pieces.~
+%s Bug, please report (%d).~
+0
+6
+24207
+0
+24231
+-1
+0
+28
+0
+0
+#24204~
+24291
+24292
+24293
+24294
+24295
+24200
+24201
+24202
+24203
+-1
+1.10
+0.90
+-1
+%s I don't have that!.~
+%s I see no such thing.~
+%s I don't buy, I only sell!~
+%s BUG, Please report.~
+%s You can't afford that!~
+%s Fine, that'll be %d gold pieces.~
+%s Bug, please report (%d).~
+0
+6
+24213
+0
+24276
+-1
+0
+28
+0
+0
+$~

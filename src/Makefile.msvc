@@ -1,0 +1,160 @@
+#
+# CircleMUD Makefile for Microsoft Visual C++ 4.0, Windows 95/NT
+# (manually created by Jeremy Elson)
+#
+# NOTE: This Makefile is only for MSVC 4.0.  If you have a different
+# compiler, see the file doc/README.WIN for instructions.
+#
+# This Makefile assumes that Microsoft Visual C++ v4.0 installed in
+# \MSDEV.  If you have MSVC++ installed in a different directory,
+# change the CLFAGS and LIB lines to reflect the location of your
+# header files and standard libraries, respectively.
+#
+# Make sure that the location of your compiler, linker, and make binaries
+# (e.g., \msdev\bin) is in your path.
+#
+
+# COMPILER PARAMETERS
+# Name of the C compiler
+CC=cl
+# Flags to pass to the compiler
+CFLAGS = /nologo /I. /IC:\MSDEV\INCLUDE
+
+
+# LINK PARAMETERS
+# Name of the linker
+LINK=link
+# Directory that contains the standard libraries
+LIB=C:\MSDEV\LIB
+# Flags to pass to the linker
+LFLAGS=/OUT:circle.exe /nologo /subsystem:console
+
+##############################################################################
+# Do Not Modify Anything Below This Line (unless you know what you're doing) #
+##############################################################################
+
+MAKE = $(MAKE) /NOLOGO /S
+
+OBJFILES = comm.obj act.comm.obj act.informative.obj act.movement.obj act.item.obj \
+        act.offensive.obj act.other.obj act.social.obj act.wizard.obj ban.obj boards.obj \
+        castle.obj class.obj config.obj constants.obj db.obj fight.obj graph.obj handler.obj \
+        house.obj interpreter.obj limits.obj magic.obj mail.obj mobact.obj modify.obj \
+        objsave.obj olc.obj shop.obj spec_assign.obj spec_procs.obj spell_parser.obj \
+        spells.obj utils.obj weather.obj random.obj alias.obj players.obj
+
+default: circle.exe
+        $(MAKE) circle.exe
+
+circle.exe : $(OBJFILES)
+        set lib=$(LIB)
+        $(LINK) $(LFLAGS) $(OBJFILES) wsock32.lib
+
+# Dependencies for the object files (automagically generated with
+# gcc -MM)
+
+alias.obj: alias.c conf.h sysdep.h structs.h utils.h interpreter.h db.h
+	$(CC) -c $(CFLAGS) alias.c
+act.comm.obj: act.comm.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
+  handler.h db.h screen.h
+	$(CC) -c $(CFLAGS) act.comm.c
+act.informative.obj: act.informative.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h screen.h constants.h
+	$(CC) -c $(CFLAGS) act.informative.c
+act.item.obj: act.item.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
+  handler.h db.h spells.h
+	$(CC) -c $(CFLAGS) act.item.c
+act.movement.obj: act.movement.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h house.h constants.h
+	$(CC) -c $(CFLAGS) act.movement.c
+act.offensive.obj: act.offensive.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h
+	$(CC) -c $(CFLAGS) act.offensive.c
+act.other.obj: act.other.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
+  handler.h db.h spells.h screen.h house.h
+	$(CC) -c $(CFLAGS) act.other.c
+act.social.obj: act.social.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h
+	$(CC) -c $(CFLAGS) act.social.c
+act.wizard.obj: act.wizard.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h house.h screen.h constants.h
+	$(CC) -c $(CFLAGS) act.wizard.c
+ban.obj: ban.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h db.h
+	$(CC) -c $(CFLAGS) ban.c
+boards.obj: boards.c conf.h sysdep.h structs.h utils.h comm.h db.h boards.h \
+  interpreter.h handler.h
+	$(CC) -c $(CFLAGS) boards.c
+castle.obj: castle.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
+  handler.h db.h spells.h
+	$(CC) -c $(CFLAGS) castle.c
+class.obj: class.c conf.h sysdep.h structs.h db.h utils.h spells.h interpreter.h
+	$(CC) -c $(CFLAGS) class.c
+comm.obj: comm.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h \
+  db.h house.h
+	$(CC) -c $(CFLAGS) comm.c
+config.obj: config.c conf.h sysdep.h structs.h
+	$(CC) -c $(CFLAGS) config.c
+constants.obj: constants.c conf.h sysdep.h structs.h
+	$(CC) -c $(CFLAGS) constants.c
+db.obj: db.c conf.h sysdep.h structs.h utils.h db.h comm.h handler.h spells.h mail.h \
+  interpreter.h house.h
+	$(CC) -c $(CFLAGS) db.c
+fight.obj: fight.c conf.h sysdep.h structs.h utils.h comm.h handler.h interpreter.h \
+  db.h spells.h screen.h
+	$(CC) -c $(CFLAGS) fight.c
+graph.obj: graph.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h \
+  db.h spells.h
+	$(CC) -c $(CFLAGS) graph.c
+handler.obj: handler.c conf.h sysdep.h structs.h utils.h comm.h db.h handler.h \
+  interpreter.h spells.h
+	$(CC) -c $(CFLAGS) handler.c
+house.obj: house.c conf.h sysdep.h structs.h comm.h handler.h db.h interpreter.h \
+  utils.h house.h constants.h
+	$(CC) -c $(CFLAGS) house.c
+interpreter.obj: interpreter.c conf.h sysdep.h structs.h comm.h interpreter.h db.h \
+  utils.h spells.h handler.h mail.h screen.h
+	$(CC) -c $(CFLAGS) interpreter.c
+limits.obj: limits.c conf.h sysdep.h structs.h utils.h spells.h comm.h db.h \
+  handler.h
+	$(CC) -c $(CFLAGS) limits.c
+magic.obj: magic.c conf.h sysdep.h structs.h utils.h comm.h spells.h handler.h db.h
+	$(CC) -c $(CFLAGS) magic.c
+mail.obj: mail.c conf.h sysdep.h structs.h utils.h comm.h db.h interpreter.h \
+  handler.h mail.h
+	$(CC) -c $(CFLAGS) mail.c
+mobact.obj: mobact.c conf.h sysdep.h structs.h utils.h db.h comm.h interpreter.h \
+  handler.h spells.h
+	$(CC) -c $(CFLAGS) mobact.c
+modify.obj: modify.c conf.h sysdep.h structs.h utils.h interpreter.h handler.h db.h \
+  comm.h spells.h mail.h boards.h
+	$(CC) -c $(CFLAGS) modify.c
+objsave.obj: objsave.c conf.h sysdep.h structs.h comm.h handler.h db.h \
+  interpreter.h utils.h spells.h
+	$(CC) -c $(CFLAGS) objsave.c
+olc.obj: olc.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h db.h \
+  olc.h
+	$(CC) -c $(CFLAGS) olc.c
+players.o: players.c conf.h sysdep.h structs.h utils.h db.h handler.h pfdefaults.h
+	$(CC) -c $(CFLAGS) players.c
+random.obj: random.c
+	$(CC) -c $(CFLAGS) random.c
+shop.obj: shop.c conf.h sysdep.h structs.h comm.h handler.h db.h interpreter.h \
+  utils.h shop.h
+	$(CC) -c $(CFLAGS) shop.c
+spec_assign.obj: spec_assign.c conf.h sysdep.h structs.h db.h interpreter.h \
+  utils.h
+	$(CC) -c $(CFLAGS) spec_assign.c
+spec_procs.obj: spec_procs.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h
+	$(CC) -c $(CFLAGS) spec_procs.c
+spell_parser.obj: spell_parser.c conf.h sysdep.h structs.h utils.h interpreter.h \
+  spells.h handler.h comm.h db.h
+	$(CC) -c $(CFLAGS) spell_parser.c
+spells.obj: spells.c conf.h sysdep.h structs.h utils.h comm.h spells.h handler.h \
+  db.h constants.h
+	$(CC) -c $(CFLAGS) spells.c
+utils.obj: utils.c conf.h sysdep.h structs.h utils.h comm.h screen.h spells.h \
+  handler.h
+	$(CC) -c $(CFLAGS) utils.c
+weather.obj: weather.c conf.h sysdep.h structs.h utils.h comm.h handler.h \
+  interpreter.h db.h
+	$(CC) -c $(CFLAGS) weather.c

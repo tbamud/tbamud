@@ -1,0 +1,34 @@
+LAB runloop
+
+  if exists .killscript then
+    delete .killscript quiet
+    SKIP the_end
+  endif
+
+  if exists .fastboot then
+    wait 3
+    delete .fastboot quiet
+  else
+    wait 5
+  endif
+
+  bin/Circle
+
+  search nonum log/syslog "self-delete" >> log/delete
+  search nonum log/syslog "PCLEAN" >> log/delete
+  search nonum log/syslog "death trap" >> log/dts
+  search nonum log/syslog "killed" >> log/rip
+  search nonum log/syslog "Running" >> log/restarts
+  search nonum log/syslog "advanced" >> log/levels
+  search nonum log/syslog "equipment lost" >> log/rentgone
+  search nonum log/syslog "usage" >> log/usage
+  search nonum log/syslog "new player" >> log/newplayers
+  search nonum log/syslog "SYSERR" >> log/errors
+  search nonum log/syslog "(GC)" >> log/godcmds
+  search nonum log/syslog "Bad PW" >> log/badpws
+
+  delete log/syslog quiet
+
+ SKIP runloop BACK
+
+LAB the_end

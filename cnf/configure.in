@@ -1,0 +1,215 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(src/act.comm.c)
+AC_SUBST(MYFLAGS)
+AC_SUBST(NETLIB)
+AC_SUBST(CRYPTLIB)
+
+AC_CONFIG_HEADER(src/conf.h)
+AC_DEFINE(CIRCLE_UNIX)
+
+dnl Find the 'more' program
+AC_CHECK_PROGS(MORE, less most more cat)
+
+dnl Checks for programs.
+AC_PROG_CC
+
+dnl If we're using gcc, use gcc options.
+dnl If not, test for various common switches to make a 'cc' compiler
+dnl compile ANSI C code.
+if test $ac_cv_prog_gcc = yes; then
+
+  dnl Determine if gcc -Wall causes warnings on isascii(), etc.
+  AC_CACHE_CHECK(whether ${CC-cc} -Wall also needs -Wno-char-subscripts,
+	ac_cv_char_warn,
+  [
+    OLDCFLAGS=$CFLAGS
+    CFLAGS="$CFLAGS -Wall -Werror"
+    AC_TRY_COMPILE([#include <ctype.h>],
+       [ int i; char c = '0';
+         i = isascii(c);
+         i = isdigit(c);
+         i = isprint(c);
+       ], ac_cv_char_warn=no, ac_cv_char_warn=yes)
+    CFLAGS=$OLDCFLAGS
+  ])
+
+  dnl If Determine if gcc can accept -Wno-char-subscripts
+  AC_CACHE_CHECK(whether ${CC-cc} accepts -Wno-char-subscripts, ac_cv_gcc_ncs,
+  [
+    OLDCFLAGS=$CFLAGS
+    CFLAGS="$CFLAGS -Wno-char-subscripts"
+    AC_TRY_COMPILE(, , ac_cv_gcc_ncs=yes, ac_cv_gcc_ncs=no)
+    CFLAGS=$OLDCFLAGS
+  ])
+
+  dnl If Determine if gcc can accept -fno-builtin
+  AC_CACHE_CHECK(whether ${CC-cc} accepts -fno-builtin, ac_cv_gcc_fnb,
+  [
+    OLDCFLAGS=$CFLAGS
+    CFLAGS="$CFLAGS -fno-builtin"
+    AC_TRY_COMPILE(, , ac_cv_gcc_fnb=yes, ac_cv_gcc_fnb=no)
+    CFLAGS=$OLDCFLAGS
+  ])
+
+  dnl If gcc -Wall gives no warnings with isascii(), use "-Wall";
+  dnl Otherwise, if gcc -Wall gives isascii warnings:
+  dnl    If we can use -Wno-char-subscripts, use "-Wall -Wno-char-subscripts"
+  dnl    If can't use -Wno-char-subscripts, use no flags at all.
+
+  if test ${ac_cv_char_warn:-ERROR} = no; then
+    MYFLAGS="-Wall"
+  else
+    if test ${ac_cv_gcc_ncs:-ERROR} = yes; then
+      MYFLAGS="-Wall -Wno-char-subscripts"
+    else
+      MYFLAGS=""
+    fi
+  fi
+
+else
+  dnl We aren't using gcc so we can't assume any special flags.
+  MYFLAGS=""
+
+fi
+
+dnl Checks for libraries.  We check for the library only if the function is
+dnl not available without the library.
+AC_CHECK_FUNC(gethostbyaddr, ,
+    [AC_CHECK_LIB(nsl, gethostbyaddr, NETLIB="-lnsl $NETLIB")])
+
+AC_CHECK_FUNC(socket, ,
+    [AC_CHECK_LIB(socket, socket, NETLIB="-lsocket $NETLIB")])
+
+AC_CHECK_FUNC(malloc, ,
+    [AC_CHECK_LIB(malloc, malloc)])
+
+AC_CHECK_FUNC(crypt, AC_DEFINE(CIRCLE_CRYPT),
+    [AC_CHECK_LIB(crypt, crypt, AC_DEFINE(CIRCLE_CRYPT) CRYPTLIB="-lcrypt")]
+    )
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_HEADER_SYS_WAIT
+AC_CHECK_HEADERS(fcntl.h sys/fcntl.h errno.h net/errno.h string.h strings.h)
+AC_CHECK_HEADERS(limits.h sys/time.h sys/select.h sys/types.h unistd.h)
+AC_CHECK_HEADERS(memory.h crypt.h assert.h arpa/telnet.h arpa/inet.h)
+AC_CHECK_HEADERS(sys/stat.h sys/socket.h sys/resource.h netinet/in.h netdb.h)
+AC_CHECK_HEADERS(signal.h sys/uio.h mcheck.h)
+
+AC_UNSAFE_CRYPT
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_TYPE_PID_T
+AC_TYPE_SIZE_T
+AC_CHECK_TYPE(ssize_t, int)
+AC_HEADER_TIME
+
+dnl Check for the 'struct in_addr' definition. Ugly, yes.
+if test $ac_cv_header_netinet_in_h = no; then
+  ac_cv_struct_in_addr = no
+else
+  if test $ac_cv_header_sys_types_h = yes; then
+    headers=`cat << EOF
+#include <sys/types.h>
+#include <netinet/in.h>
+EOF
+`
+  else
+    headers="#include <netinet/in.h>"
+  fi
+
+  AC_CACHE_CHECK([for struct in_addr], ac_cv_struct_in_addr,
+    [ AC_TRY_COMPILE([$headers],[struct in_addr tp; tp.s_addr;], ac_cv_struct_in_addr=yes, ac_cv_struct_in_addr=no)])
+
+  if test $ac_cv_struct_in_addr = yes; then
+    AC_DEFINE(HAVE_STRUCT_IN_ADDR)
+  fi
+fi
+
+
+dnl Check for the 'typedef socklen_t' definition. Even uglier, yes.
+if test $ac_cv_header_sys_socket_h = no; then
+  ac_cv_socklen_t = no;
+else
+  AC_CACHE_CHECK([for typedef socklen_t], ac_cv_socklen_t,
+    [ AC_TRY_COMPILE([#include <sys/socket.h>],[socklen_t sl; sl=0;], ac_cv_socklen_t=yes, ac_cv_socklen_t=no)])
+fi
+
+if test $ac_cv_socklen_t = no; then
+  AC_DEFINE(socklen_t, int)
+fi
+
+
+dnl Checks for library functions.
+AC_TYPE_SIGNAL
+AC_FUNC_VPRINTF
+AC_CHECK_FUNCS(gettimeofday select snprintf strcasecmp strdup strerror stricmp strlcpy strncasecmp strnicmp strstr vsnprintf)
+
+dnl Check for functions that parse IP addresses
+ORIGLIBS=$LIBS
+LIBS="$LIBS $NETLIB"
+AC_CHECK_FUNCS(inet_addr inet_aton)
+LIBS=$ORIGLIBS
+
+dnl Check for prototypes
+AC_CHECK_PROTO(accept)
+AC_CHECK_PROTO(atoi)
+AC_CHECK_PROTO(atol)
+AC_CHECK_PROTO(bind)
+AC_CHECK_PROTO(bzero)
+AC_CHECK_PROTO(chdir)
+AC_CHECK_PROTO(close)
+AC_CHECK_PROTO(crypt)
+AC_CHECK_PROTO(fclose)
+AC_CHECK_PROTO(fcntl)
+AC_CHECK_PROTO(fflush)
+AC_CHECK_PROTO(fprintf)
+AC_CHECK_PROTO(fputc)
+AC_CHECK_PROTO(fputs)
+AC_CHECK_PROTO(fread)
+AC_CHECK_PROTO(fscanf)
+AC_CHECK_PROTO(fseek)
+AC_CHECK_PROTO(fwrite)
+AC_CHECK_PROTO(getpeername)
+AC_CHECK_PROTO(getpid)
+AC_CHECK_PROTO(getrlimit)
+AC_CHECK_PROTO(getsockname)
+AC_CHECK_PROTO(gettimeofday)
+AC_CHECK_PROTO(htonl)
+AC_CHECK_PROTO(htons)
+AC_CHECK_PROTO(inet_addr)
+AC_CHECK_PROTO(inet_aton)
+AC_CHECK_PROTO(inet_ntoa)
+AC_CHECK_PROTO(listen)
+AC_CHECK_PROTO(ntohl)
+AC_CHECK_PROTO(perror)
+AC_CHECK_PROTO(printf)
+AC_CHECK_PROTO(qsort)
+AC_CHECK_PROTO(read)
+AC_CHECK_PROTO(remove)
+AC_CHECK_PROTO(rewind)
+AC_CHECK_PROTO(select)
+AC_CHECK_PROTO(setitimer)
+AC_CHECK_PROTO(setrlimit)
+AC_CHECK_PROTO(setsockopt)
+AC_CHECK_PROTO(snprintf)
+AC_CHECK_PROTO(socket)
+AC_CHECK_PROTO(sprintf)
+AC_CHECK_PROTO(sscanf)
+AC_CHECK_PROTO(strcasecmp)
+AC_CHECK_PROTO(strdup)
+AC_CHECK_PROTO(strerror)
+AC_CHECK_PROTO(stricmp)
+AC_CHECK_PROTO(strlcpy)
+AC_CHECK_PROTO(strncasecmp)
+AC_CHECK_PROTO(strnicmp)
+AC_CHECK_PROTO(system)
+AC_CHECK_PROTO(time)
+AC_CHECK_PROTO(unlink)
+AC_CHECK_PROTO(vsnprintf)
+AC_CHECK_PROTO(write)
+
+AC_OUTPUT(src/Makefile src/util/Makefile)
+#
+echo "Configuration completed.  To compile, type:  cd src; make"

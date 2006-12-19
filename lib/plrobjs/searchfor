@@ -1,0 +1,7 @@
+#!/bin/sh
+
+../../bin/listrent A-E/* | fgrep -i $1
+../../bin/listrent F-J/* | fgrep -i $1
+../../bin/listrent K-O/* | fgrep -i $1
+../../bin/listrent P-T/* | fgrep -i $1
+../../bin/listrent U-Z/* | fgrep -i $1

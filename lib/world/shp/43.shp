@@ -1,0 +1,78 @@
+CircleMUD v3.0 Shop File~
+#4300~
+4311
+4312
+4313
+4316
+-1
+1.50
+0.90
+-1
+%s Our hunters don't kill that.~
+%s You ain't got that item.~
+%s I only sell!~
+%s I'm low on cash at the moment, come back later.~
+%s Come back later, when you have enough money!~
+%s Thank you have a nice day.~
+%s Thank you have a nice day.~
+0
+6
+4309
+0
+4385
+-1
+0
+28
+0
+0
+#4301~
+4314
+4315
+4317
+-1
+1.50
+0.90
+-1
+%s Sorry, I don't make that.~
+%s You don't have that.~
+%s I don't want that.~
+%s I don't seem to have that much.~
+%s Not enough money there.~
+%s Thank you, come again.~
+%s Thank you, come again.~
+0
+6
+4310
+0
+4386
+-1
+0
+28
+0
+0
+#4302~
+4318
+4319
+4320
+-1
+2.00
+0.50
+-1
+%s That's not in stock.~
+%s You don't have that.~
+%s I don't want that item.~
+%s I don't have THAT much money!~
+%s You don't have enough money for that.~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+4311
+0
+4387
+-1
+0
+28
+0
+0
+$~

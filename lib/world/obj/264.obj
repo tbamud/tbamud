@@ -1,0 +1,195 @@
+#26400
+pool eternal~
+the Pool of Eternal Life~
+The Pool of Eternal Life sits centered in the boulevard, a wondrous beacon of life and the pirsuit of the everlasting.~
+Deep in it's mirrored depths, you think you may be able to see something past
+yourself, something dark, sinister.    
+~
+23 a 0 0
+1000 1000 15 0
+1005 0 0 0
+#26401
+robe father~
+the Robe of the Father~
+A glowing robe is rumpled on the ground.~
+~
+9 0 ak 0
+8 0 0 0
+7 1 0 30
+A
+3 2
+A
+4 2
+A
+5 -2
+#26402
+lament father's~
+the Father's Lament~
+A strange glowing ball has been left here.~
+~
+1 a ao 0
+0 0 -1 0
+10 1 0 0
+A
+18 1
+A
+1 1
+#26403
+gown mother~
+the Gown of the Mother~
+A beautiful gown has been left here.~
+~
+9 b ak 0
+8 0 0 0
+10 1 0 40
+A
+13 25
+A
+12 20
+#26404
+remorse mother's~
+the Mother's Remorse~
+A strange trinket of some sort has been left here.~
+~
+12 a ao 0
+0 0 0 0
+10 1 0 35
+A
+17 -3
+A
+19 2
+#26405
+mask enlightenment~
+the Mask of Enlightenment~
+A glowing mask is on the ground here.~
+~
+9 ahjo a 0
+5 0 0 0
+15 1 0 30
+A
+5 2
+#26406
+crown gentle~
+the Gentle Crown of Cathari~
+A shimmering crown has been dropped here.~
+~
+11 a ae 0
+0 0 0 0
+10 1 0 40
+A
+17 -6
+A
+13 20
+A
+1 -1
+#26407
+fist justice supreme~
+the Fist of Supreme Justice~
+A molded fist made of an unknown material has been left here.~
+~
+5 ajmop an 0
+3 5 7 7
+8 1 0 45
+A
+18 2
+A
+19 1
+A
+2 -2
+#26408
+song banshee~
+the Song of the Banshee~
+A glowing song has been left here.~
+~
+12 adejop a 0
+0 0 0 0
+3 1 0 25
+A
+3 2
+A
+12 15
+A
+1 -2
+#26409
+amulet voce~
+the Voce Amulet~
+A wide amulet in the shape of a teardrop has been dropped here.~
+~
+11 b ac 0
+0 0 0 0
+6 1 0 20
+A
+20 -2
+A
+9 -2
+#26410
+wraps arm embrace~
+the Arm Wraps of Embracing~
+Some leather wraps have been dropped here.~
+~
+9 hi ai 0
+6 0 0 0
+8 1 0 20
+A
+6 3
+A
+5 2
+#26411
+ring voce~
+the Voce Ring~
+A ring with a teardrop insignia has been left here.~
+~
+11 ajmn ab 0
+0 0 0 0
+5 1 0 40
+A
+18 2
+A
+19 2
+#26412
+wrap hand leather~
+some leather hand wraps~
+Some long strips of leather have been left here.~
+~
+11 0 ah 0
+0 0 0 0
+2 550 0 20
+A
+17 -5
+A
+19 1
+#26414
+jacket stately~
+a stately jacket~
+A fine jacket has been left here.~
+~
+9 0 ak 0
+10 0 0 0
+8 800 0 20
+E
+buttons~
+   The heavy buttons are engraved with small anchors.  
+~
+E
+stately jacket~
+   The dark jacket is really quite nice.  The material is smooth and clean.  
+Heavy metal buttons are sewn in a straight line from top to bottom.  
+~
+A
+23 2
+#26415
+boots travelling~
+the boots of travelling~
+Some soft, comfortable boots have been abandoned here.~
+~
+9 0 ag 0
+4 0 0 0
+4 1 0 25
+E
+boots travelling~
+   These boots are typical of travellers.  Lightweight and comfortable yet
+sturdy.  
+~
+A
+14 16
+$~

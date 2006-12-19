@@ -1,0 +1,858 @@
+#0
+The Void~
+   You don't think that you are not floating in nothing.  You can see
+a strange portal located above you.
+~
+0 d 1
+D4
+~
+~
+0 0 100
+S
+T 1200
+#1
+Limbo~
+   You are floating in a formless void, detached from all sensation of physical
+matter, surrounded by swirling glowing light, which fades into the relative
+darkness around you without any trace of edges or shadow.
+~
+0 d 1
+D5
+A strange portal in the floor is the only exit.
+~
+~
+0 0 100
+S
+#2
+Welcome to the Builder Academy~
+
+   A builder is a term usually used to describe a person who designs MUD zones
+for other characters to explore. Any player with motivation, ideas, and good 
+writing style can be a builder as well as a player. As a Builder, your job is 
+to create the virtual world in which players can roam around, solve puzzles, 
+find treasures, and gain experience. A Builder creates the rooms, objects, 
+mobs, shops, and triggers with which players will interact. 
+   If this is something you are interested in doing then you have come to the
+right place. Be warned, building is not easy and will require hard work, 
+patience, and the ability to take constructive criticism.
+
+   Your first task is to apply for builder status at: 
+
+             http://geocities.com/buildersacademy/
+
+   When you finish and submit the application tell anyone level 32 or higher
+and they will advance you to begin your training.
+
+~
+0 de 0
+S
+#3
+The Builder Academy~
+   Congratulations on your new-found immortality. Now all you need to know is
+how to use your new abilities. This zone describes how to create CircleMUD
+areas. The intended audience is builders interested in creating new worlds.  
+There are a few basic rules to understand while exploring this zone and
+learning how to build. Everything in @RCAPITAL LETTERS@n is something that
+can be further explored by typing @RCAPITAL LETTERS@n and hitting return.
+ 
+Test this out, @RHELP DISCLAIMER@n.
+~
+0 d 0
+D1
+~
+~
+0 0 4
+S
+#4
+The Beginning~
+   By simply following the different halls new builders will be taught the
+basics of building on a Circlemud. If new to immortality and building then I
+highly recommend the hallway to the north for an overview of immortal commands.
+For those that have a grasp on all commands listed under @RWIZHELP@n continue to
+the east. TBA is constantly striving to improve upon the training process so
+please use the typo and idea commands liberally. For example: idea you need
+more cow bell in the zone. Typo in help telnet teh = the.
+~
+0 de 0
+D0
+~
+~
+0 0 16
+D1
+~
+~
+0 0 5
+D3
+~
+~
+0 0 3
+S
+#5
+The Builder Academy Implementation~
+   Here at The Builder Academy we try not to restrict builders with rules and
+regulations. But, some are required in order to make this place run smoothly.
+Please realize we handle a lot of newbie builders with a very minimal staff so 
+be patient, learn to use the helpfiles and have fun.
+
+   Read the following help files on TBA's training process:
+@RHELP TRIALROOM
+HELP REPORT
+HELP LEVEL
+HELP ADVERTISING@n
+~
+0 d 0
+D1
+~
+~
+0 0 6
+D3
+~
+~
+0 0 4
+S
+#6
+Building~
+   This hallway running west to east is the route you will advance upon after 
+completing each hallway leading off to the north (if there is one) @RHELP TBAMAP@n.  
+   The first thing all builders need to realize is that their area is not going
+to be the best, and it is not going to have the best equipment or toughest mobs
+in the game.  All new builders want to make a piece of equipment that is better 
+than any other and they all want the large group of players to remember the 
+trials and tribulations they went through while trying to kill a mob that they 
+have created.  If you are a veteran of any MUD, you know that the toughest mobs
+have already been made, and to try to create a mob that is tougher is almost 
+impossible and will only duplicate existing mobs, or throw off the balance of
+the game. So start out small and do not expect to create a perfect zone the
+first time around. Do not make anything super-powerful. It will not be allowed 
+and you will have to redo it, wasting everyone's time, both yours and ours.
+   Read the following help files:
+@RHELP BUILDER
+HELP PREREQUISITE
+HELP BALANCE
+HELP BREATHE@n
+~
+0 d 0
+D1
+~
+~
+0 0 7
+D3
+~
+~
+0 0 5
+S
+#7
+Writing Good Descriptions~
+   The following help files go into the lengthy subject of writing good 
+descriptions.  This will also cover proper grammar and the use of the text
+editor where you enter all of your long descriptions.  
+   The hardest part for most new builders is writing descriptions. We assume 
+that you are reasonably literate and know basic English grammar and spelling. 
+If this does not describe you, we humbly suggest that you take some English 
+classes, get a dictionary, and start learning. Proper grammar should be used 
+at all times. If you can write reasonably well, great! I am sure you will still
+find this hallway useful. We will discuss some of the issues related to writing
+specifically for a MUD, such as:
+@RHELP DESCRIBING
+HELP YOU
+HELP BIAS
+HELP GRAMMAR
+HELP REDIT-DESCRIPTIONS
+HELP REDIT-EXTRA
+HELP OEDIT-EXTRA
+HELP D-DESC
+HELP MEDIT-L-DESC
+HELP TEXT-EDITOR@n
+~
+0 d 0
+D1
+~
+~
+0 0 8
+D3
+~
+~
+0 0 6
+S
+#8
+How to Use Redit~
+   Room edit, or redit, is how you create, link, and describe the rooms that a
+player explores. It can be used by simply typing redit in the room you wish to
+edit.  If you get a message that you do not have permission to edit that zone
+it is because your OLC is not set to that zone. @RSTAT SELF@n to see what your
+@MOLC[]@n is set to. OLC, or on-line-creation is set to the zone number
+assigned to you by the staff.  The zone number is then divided into VNUM's ##00
+to ##99. For example, Zone 12 has VNUM's 1200 to 1299. These numbers are
+critical; they are the identities of the rooms within the game.  They can be
+used with "goto" to go to that room.    
+   Now, lets look at the redit menu. Type the following: @RHELP REDIT-MENU@n
+That is an example of the redit menu you will see when you edit a room.
+Notice how each important line has an associated help topic. To learn more
+about it just see the appropriate help file. If this is your first experience
+with redit read ALL the help files. @RHELP STYLISTICS@n
+~
+0 d 0
+D1
+~
+~
+0 0 9
+D3
+~
+~
+0 0 7
+S
+#9
+How to Use Oedit~
+   Now you will learn the intricacies of creating objects with the object editor.
+Please remember that every MUD has different ideas of balance and the basics of
+building you learn here should be universal, but expect limitations on objects
+from your MUD administration. To further help your training we have added object
+standards to all values a builder can set. This way you know what values are 
+appropriate and will not have to redo objects because you did not know what 
+values to set.
+   Oedit can be used by typing "oedit <<VNUM>>".  A zone is divided into VNUM's 
+##00 to ##99.  For example, Zone 12 has VNUM's 1200 to 1299.  These numbers 
+are critical; they are the identities of the objects within the game.  It is 
+a good habit to start using all VNUMs from ##00 to ##99 consecutively.
+   Lets start off by checking out the oedit menu. Type @RHELP OEDIT-MENU@n
+That is an example of the oedit menu you will see when you edit an object. 
+Notice how each important line has an associated help topic. To learn more
+about it just see the appropriate help file. If this is your first experience
+with oedit read ALL the help files.
+~
+0 d 0
+D1
+~
+~
+0 0 10
+D3
+~
+~
+0 0 8
+S
+#10
+How to Use Medit~
+   Next you will learn how to create mobiles with the mobile editor. Mobs are 
+the non-player characters within the game (NPC's). With medit you will be able 
+to create a mob and modify all of its stats (statistics), flags, and settings.
+   Mobile edit, or medit, is how you create the monsters a player can interact
+with.  Notice I use the word interact.  Every mob should not be made for just
+killing.  There can and should be a variety.  For example, one mob could be
+made for high experience value, another for gold, another for a unique object,
+another to fill a storyline, another as part of a quest.  The options are
+limitless, especially with triggers, mobs are meant for much more than just
+killing.  Medit can be used by typing "medit <VNUM>".  
+   Type @RHELP MEDIT-MENU@n That is an example of the medit menu you will see 
+when you edit a mobile. Each line has its own help topic you should also read.
+~
+0 d 0
+D1
+~
+~
+0 0 11
+D3
+~
+~
+0 0 9
+S
+#11
+How to Use Zedit~
+   Zedit is what is used to load mobiles and objects into rooms. Every zone 
+goes through a zone reset, each one depending on how you set it. Upon a zone
+reset all rooms, mobs, and objects will reload if they are no longer present.
+   Most new builders think mobs and objects are loaded by the "load" command.
+This is not how it is done. Instead you use zedit in each room you wish a
+mob or object to load. This way whenever the zone resets it will execute the 
+zone commands to load all of your mobs and objects.
+   Zone edit, or zedit, is how you control how mobiles and objects are 
+integrated within the zone to create an inhabited world. Using "load obj 
+<VNUM>" does not ensure that the mob will always be there, in fact if someone 
+kills it or the mud reboots it will be gone. So you need to load mobs and 
+objects through zedit.
+   It can be used just like redit, by simply typing zedit while you are in the
+room you wish to edit or "zedit <<VNUM>>." Now, lets look at the zedit menu.
+@RHELP ZEDIT-MENU@n.  That is an example of the zedit menu, be sure to read
+the related helpfiles on each menu option.
+   Zedit contains zone settings, followed by a series of reset commands. Each
+time a zone is reset, the server executes all the commands in order from 
+beginning to end. All zones are reset when the server first boots, and 
+periodically reset again while the game is running.
+~
+0 d 0
+D1
+~
+~
+0 0 12
+D3
+~
+~
+0 0 10
+S
+#12
+How to Use Sedit~
+   Shops are stores within the mud that players can list the items for sale 
+and then buy or sell from. Shops are one of the more complicated aspects of 
+building and should not be attempted until you are comfortable with the other 
+forms of OLC (except trigedit).    
+   When you make a shop I suggest you use the shop vnum that matches the room
+you wish the shop to be in. For example, say I want a shop in room 1333. I 
+would sedit 1333 to create that shop. Now, let us look at the sedit menu.  
+Type the following: @RHELP SEDIT-MENU@n. That is an example of the sedit menu 
+you will see when you edit a shop. Notice how each important line has an 
+associated help topic. To learn more about it just see the appropriate help 
+file. If this is your first experience with sedit read ALL the help files.
+~
+0 d 0
+D1
+~
+~
+0 0 13
+D3
+~
+~
+0 0 11
+S
+#13
+How to Use Trigedit~
+   The hall to the north will show you how to use the trigger editor. Trigedit
+is the most advanced form of OLC we have to offer. It is the hardest, but also 
+the most rewarding. If you are looking to pour life into your mobs, enliven 
+your rooms or just make your objects special? This can all be done with 
+trigedit. Have fun with the power of (minor) coding!
+   Like all the hallways before use this hallway in conjuction with the help
+files: @RHELP TRIGEDIT-MENU@n and the commands @RTLIST@n and @RTSTAT@n commands.
+Do not attempt to use trigedit until you complete your trial vnum and are
+assigned a zone. Remember you must disable @RNOHASSLE@n. Triggers will not work
+on you otherwise.
+~
+0 d 0
+D0
+~
+~
+0 0 18
+D1
+~
+~
+0 0 14
+D3
+~
+~
+0 0 12
+S
+#14
+Planning~
+   The ideas discussed in the help files below are tried and true. Though they
+may not work for everyone, they will for the majority. Learn from others 
+mistakes and understand the planning required to make a good zone. Building a 
+great zone takes many things; such as time, patience, good grammar/spelling, 
+knowing how to balance your zone, a lot of work, and most importantly 
+planning. Now this all may sound like a lot to do, but I can assure you that 
+with this zone, and the help of others, you can do this. 
+
+@RHELP DICTIONARY@n
+@RHELP WORK@n
+@RHELP PLANNING@n
+@RHELP MAPPING@n
+@RHELP LOCATION@n
+@RHELP THEME@n
+@RHELP PLOT@n
+@RHELP SIZE@n
+@RHELP ALIGNMENT@n
+@RHELP BIAS@n
+~
+0 d 0
+D1
+~
+~
+0 0 15
+D3
+~
+~
+0 0 13
+S
+#15
+Lessons Learned and Advanced Building~
+   Here are a few lessons that have been passed down from builder to builder
+through out the years.  Take heed to these words as they have been and done 
+what you are now doing many times over.
+@RHELP LANCE
+HELP SNOWLOCK
+HELP ELASETH
+HELP PATHS@n
+   There are numerous resources out there for MUDs. Here are a few I have used
+in the past: Please mudmail me any good links to add.
+@RHELP DOCUMENTATION
+HELP OFFLINE
+HELP HCONTROL@n
+~
+0 d 0
+D1
+~
+~
+0 0 98
+D3
+~
+~
+0 0 14
+S
+#16
+Immortal Commands~
+   As an immortal you have some new commands available to you.  To see all
+of your immortal commands simply type @RWIZHELP@n. Every command in the game
+has a help entry. So the best way to learn how to use all these commands is 
+by simply typing @RHELP <COMMAND>@n. This will bring up some information 
+about the command. For example, this is what you will see if you type 
+@RHELP NOHASSLE@n:
+ 
+@WNOHASSLE      -------->> help topic
+ 
+Usage: nohassle         ---------->> what you need to type to do it.
+ 
+   Toggles a flag to prevent aggressive monsters from attacking and also prevents
+immortals from firing triggers. If you wish to test triggers you must turn 
+nohassle off.  -->> description
+ 
+See Also: HOLYLIGHT, ROOMFLAGS  ------->> other related commands in help file.
+@n
+   Now is the time to practice all of your immortal commands, make sure you
+understand what they do and how they can be used. Read all the help file
+entries on every command!!! Do not worry too much about redit, oedit, medit,
+zedit, sedit, and trigedit. We will get to those later. Know how to use all
+the commands available to you.
+~
+0 d 0
+D0
+~
+~
+0 0 17
+D2
+~
+~
+0 0 4
+S
+#17
+Overview of the MUD World~
+   The first thing you need to build is a good telnet client. Everyone has 
+their preferences.  Some work better than others.  A few clients can not understand
+color codes and other important special characters like the backslash. I highly
+recommend ZMUD.  It is even worth the 25$ registration fee.  If that is too 
+much, download the free version.  You can see an in-depth list of clients under:
+@RHELP TELNET@n
+ 
+   Once you have a good client you must understand a few basics:
+@RHELP VIRTUAL-NUMBERS@n
+@RHELP TERMINOLOGY@n
+~
+0 d 0
+D2
+~
+~
+0 0 16
+S
+#18
+A Quick Mob Quest Tutorial~
+
+See: @RHELP TRIGEDIT-MOB-TUTORIAL@n
+
+@RSTAT QUESTMASTER@n. Notice the attached triggers. @RTSTAT 1400@n.
+
+~
+0 de 0
+D0
+~
+~
+0 0 20
+D1
+~
+~
+0 0 19
+D2
+~
+~
+0 0 13
+S
+#19
+A Quest Room~
+   In this room you may be able to finish the Mob Quest Tutorial.    
+~
+0 d 0
+D3
+~
+~
+0 0 18
+S
+#20
+Advanced Trigedit Example~
+   Begin by @RSTAT GATEGUARD@n and then tstat each trigger listed to see what 
+they do.  This example is explained under @RHELP TRIGEDIT-ADVANCED-TUTORIAL@n.
+Including triggers 4, 5, 7, 8.
+
+To pay the gateguard take the pile of coins, then: @RGIVE 10 COINS GUARD@n.
+~
+0 de 0
+D0
+   The tutorial hallway continues.  
+~
+gateway~
+2 46 21
+D2
+~
+~
+0 0 18
+S
+#21
+Another Example With Quest Variables~
+   These triggers are a little more complex.  The complexity gives the builder
+more flexibility.  By setting a variable on a player you can later call on
+these variables.  The most basic usage is to set a quest as completed when the
+player is done.  Another use would be to set something else like
+player_can_breathe_water and prevent a player from entering a certain room
+unless they have this variable set.  To see what variables are set on a player
+simply stat that player.  @RSTAT SELF@n.    
+~
+0 de 0
+D0
+~
+~
+0 0 23
+D1
+~
+~
+0 0 22
+D2
+~
+gateway~
+1 -1 20
+S
+#22
+Quest Variables Example~
+   I used triggers 1409 thru 1412 to setup this example.  Simply tstat each to
+see what they do.    
+~
+0 d 0
+D3
+~
+~
+0 0 21
+S
+T 189
+#23
+Trigger Help Files~
+   I have added extensive help files on every type of trigger.  Please use them
+and give feedback.  The easiest way to get to them all is through: 
+@RHELP TRIGEDIT-MENU@n and @RHELP TRIGEDIT-TYPE@n.
+   There are 1000's of triggers on TBA you can use as examples. @RHELP EXAMPLES@n
+for a few. @RHELP TRIG-EXAMPLES@n for some advanced ones.
+
+@RGOTO 14@n to access the next hallway.
+~
+0 d 0
+D2
+~
+~
+0 0 21
+S
+#33
+Rumble's Room~
+   The mark of the immature man is that he wants to die nobly for a cause, 
+while the mark of the mature man is that he wants to live humbly for one.  
+--Wilhelm Stekel
+~
+0 d 0
+E
+.test~
+can you see this with look around?
+~
+E
+july4~
+   On July 4, 1776, we claimed our independence from England and Democracy was
+born.  Every day thousands leave their homeland to come to the "land of the
+free and the home of the brave" so they can begin their American Dream.  The
+United States is truly a diverse nation made up of dynamic people.  Each year
+on July 4, Americans celebrate that freedom and indepen-dence with barbecues,
+picnics, and family ga-therings.  Through the Internet we are learning about
+and communicat-ing with people of different nations, with different languages
+and different races throughout the world.  Bringing the world closer with
+understanding and knowledge can only benefit all nations.  We invite all
+nations to celebrate with Americans online this Fourth of July.  Happy
+Birthday, America!    
+~
+E
+oath~
+   I do solemnly swear that I will support and defend the Constitution of the
+United States against all enemies, foreign and domestic, and to bear true faith
+and allegiance to the same that I take this obligation freely, without any
+mental reservation or purpose of evasion, and that I will well and faithfully
+discharge the duties of the office upon which I am about to enter.
+~
+E
+builder~
+  
+There is one timeless way of building.
+  
+It is thousands of years old, and the same today as it has always been.
+  
+   The great traditional buildings of the past, the villages and tents and
+temples in which man feels at home, have always been made by people who were
+very close to the center of this way.  It is not possible to make great
+buildings, or great towns, beautiful places, places where you feel yourself,
+places where you feel alive, except by following this way.  And, as you will
+see, this way will lead anyone who looks for it to buildings which are
+themselves as ancient in their form, as the trees and hills, and as our faces
+are.    
+                                        --The Timeless Way of Building
+~
+E
+war~
+   War is an ugly thing, but not the ugliest of things.  The decayed and
+degraded state of moral and patriotic feeling which thinks that nothing is
+worth war is much worse.  The person who has nothing for which he is willing to
+fight, nothing which is more important than his own personal safety, is a
+miserable creature and has no chance of being free unless made and kept so by
+the exertions of better men than himself.
+
+John Stuart Mill
+~
+E
+old glory flag~
+   I fly atop the world's tallest buildings.  I stand watch in America's Halls
+of Justice.  I fly majestically over great institutions of learning.  I stand
+guard with the greatest military power in the world.  Look up and see me!  I
+stand for peace, honor, truth, and justice.  I stand for freedom.  I am
+confident, I am arrogant, I am proud.  When I am flown with my banners, my head
+is a little higher, my colors a little truer, I bow to no one!  I am recognized
+all over the world.  I am worshipped, I am loved, and I am feared!  I have
+fought in every battle of every war for more than 200 years: Gettysburg,
+Shiloh, Appomattox, San Juan Hill, the trenches of France, the Argonne Forest,
+Anzio, Rome, the beaches of Normandy, Guam, Okinawa, Japan, Korea, Vietnam, the
+Persian Gulf, and a score of places long forgotten by all, but those who were
+there with me...  I was there!  I led my Soldiers, Sailors, Airmen, and
+Marines.  I followed them and watched over them.  They loved me.  I was on a
+small hill in Iwo Jima.  I was dirty, battle-worn, and tired.  But my Soldiers
+cheered me!  And I was proud!  I have been soiled, burned, torn, and trampled
+on the streets of countries that I have helped set free.  It does not hurt, for
+I am invincible.  I have also been soiled, burned, torn, and trampled on the
+streets of my own country and, when it is by those whom I have served with in
+battle-it hurts.  But I shall overcome, for I am strong!  I have slipped the
+bonds of Earth and, from my vantage point on the Moon, I stand watch over the
+uncharted new frontiers of Space.  I have been a silent witness to all of
+America's finest hours.  But my finest hour comes when I am torn in strips to
+be used as bandages for my wounded comrades on the field of battle-when I fly
+at half-mast to honor my Soldiers, Sailors, Airmen, and Marines, and-when I lie
+in the trembling arms of a grieving mother, at the gravesite of her fallen son
+or daughter-I am proud.  My name is Old Glory-long may I wave.  Dear God, long
+may I wave.    
+~
+E
+Catcher Rye~
+   The mark of the immature man is that he wants to die nobly for a cause, 
+while the mark of the mature man is that he wants to live humbly for one.  
+--Wilhelm Stekel
+
+   ...you'll find that you're not the first person who was ever confused and 
+frighteneed and even sickened by human behavior. You're by no means alone on 
+that score, you'll be excited and stimulated to know. Many, many men have been 
+just as troubled morally and spiritually as you are right now. Happily, some 
+of them kept records of their troubles. You'll learn from them-if you want to. 
+Just as someday, if you have something to offer, someone will learn something 
+from you. It's a beautiful reciprocal arrangement.
+--The Catcher in the Rye   
+~
+S
+#34
+Pool of Images~
+   A broad mosaic walkway wraps around the natural hotsprings in this cavernous
+room.  Three large chandeliers are suspended from the domed ceiling and their
+sparkling light dances on the surface of the bubbling hotsprings.  As you peer
+into the water images begin to form from out of the depths, coalescing into a
+vivid scene.  Your heart begins to pound and your breathing becomes deeper as
+you watch the images taking shape in the turbulent liquid.  Your mouth becomes
+dry as you see yourself in the watery panorama ...  And time stands still for
+just one moment ...  As you see your future in the depths ...    
+~
+0 djk 0
+S
+#88
+Advertising Room~
+   Feel free to use this board to advertise for your own MUD.  DO NOT advertise
+on any channel or board besides this one.  A single post on this board is the
+only advertising allowed.  The quality of your post reflects on the quality of
+your MUD so please review and format your work before saving.  Do not format the
+MUD address with /f.  Since TBA uses the @@ as a colorcode you must use 2 @@@@ with
+your email address.  Posts may be deleted if done poorly or if the MUD is no
+longer online.
+~
+0 d 0
+S
+#89
+The Prison Cell Corridor~
+   This long hallway is barely wide enough for two people to walk abreast. 
+Along the Northern wall are steel doors spaced a few feet apart while the
+southern wall is of cynder block construction. 
+~
+0 0 0
+D1
+~
+~
+0 0 89
+D3
+~
+~
+0 0 89
+D4
+~
+trapdoor~
+1 0 130
+S
+#90
+Epictetus' Prison Cell~
+   This shower stall remodeled into a prison cell is not yet completed. While
+the shower head has been removed and cemented a drain still exists in the floor.
+Unintelligle voices can be heard whispering through the piping in the drain
+below.
+~
+0 d 0
+D2
+~
+~
+0 0 89
+E
+drain floor~
+   The metal drain is covered with years of hair and grime. Several screws
+holding the drain in place seem to be missing.
+~
+S
+#91
+Aristotle's Prison Cell~
+   What used to be a shower stall has been turned into a cell complete with a
+pungent waste bucket. The old shower head is still sticking out of the wall
+with a steel door opposite.
+~
+0 d 0
+E
+shower head cap~
+   The metal shower head has a plastic variable setting cap complete with a
+massage setting. The cap looks a bit damaged like someone may have opened it
+before.
+~
+S
+T 171
+T 172
+#92
+Plato's Prison Cell~
+   The now familiar cell is cast in strange movement and shadows as the single
+light bulb above flickers randomly as if it is about to burn out. The
+alternating bright and pitch black environment makes the eyes ache.
+~
+0 d 0
+S
+T 171
+T 172
+#93
+Friedrich Nietzsche's Prison Cell~
+   The stale, uncirculated air reeks from the prior occupants of this small
+cell. The silence is broken only by the occasional footsteps in the corridor
+outside or a fellow prisoner tapping on the cell wall.
+~
+0 d 0
+S
+T 171
+T 172
+#94
+Socrates' Prison Cell~
+   The small prison cell is stifling and claustrophobic. A single glaring bulb
+in the plywood ceiling is out of reach. The only break in the block walls is a
+steel door that is closed and locked.
+~
+0 d 0
+S
+T 172
+#95
+Confucius' Prison Cell~
+   The musty stall is somehow cleaner than the others. A hole in the North wall
+and another in the floor has been cemented over. They must have once been a
+shower head and a drain before this stall was converted into a prison cell.
+~
+0 d 0
+S
+T 171
+T 172
+#96
+James Stockdale's Prison Cell~
+   The small stall turned confinement cell is covered in dust. The dirty floor
+has various words and designs scratched into the dirt. The ceiling consists of
+a single sheet of unpainted plywood.
+~
+0 d 0
+S
+T 171
+T 172
+#97
+A Prison Cell~
+   What used to be a shower stall has been converted into a solitary confinement
+cell complete with iron shackles. A single steel door that is closed and locked
+is the only exit. The walls are constructed of unpainted cinder blocks.
+~
+0 d 0
+D2
+~
+lock~
+2 0 89
+S
+T 170
+T 171
+T 172
+#98
+The End of the Beginning~
+   For those of you who have read this far and actually made something out of
+it, Congratulations. You have the patience to become a builder and make 
+CircleMUD zones. If you wimped out or skipped some areas then please MUDmail 
+me why. @RAT POSTMASTER MAIL RUMBLE@n. Also, please MUDmail or email me any 
+questions, comments, concerns, or suggestions about this zone.  What did I do 
+wrong, forget, misspell, anything! If you have something to add feel free to 
+MUDmail or email me. @RHELP EMAIL@n.
+ 
+   This area is a culmination of help files I have come across and my own
+experiences in the CircleMUD community. I thank all those before who have
+helped in the creation of this masterpiece. Special Thanks to Welcor,
+Elaseth, Manivo, Snowlock, and Lance for their additions.
+ 
+Remember, MUDding is fun!
+ 
+Respectfully,
+ 
+Rumble
+~
+0 d 0
+D0
+~
+~
+0 0 99
+D3
+~
+~
+0 0 15
+S
+#99
+TBA Cafe 99~
+   Welcome to TBA Cafe 99, the hangout of builders and implementors. So pull up
+a pew and have a nice drink! If you want to have a social chat or lurk in order
+to help newer builders, this is the place to be!
+~
+0 de 0
+D2
+~
+~
+0 0 98
+E
+floor~
+   The stone floor is the same shade of grey as the sky and is completely plain
+and unscratched. It is probably too hard for anything to leave as much as a
+scratch on it.
+~
+E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
+~
+S
+$~

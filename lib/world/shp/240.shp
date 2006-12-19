@@ -1,0 +1,92 @@
+CircleMUD v3.0 Shop File~
+#24000~
+24005
+24008
+24010
+24014
+24022
+24018
+-1
+9.00
+0.50
+15purse
+5axe
+9loincloth
+5hatchet
+9brass
+-1
+%s You seeing things boy?~
+%s You stupid or what?~
+%s I don't want that.~
+%s I'm broke, come back later.~
+%s You seeing things boy?~
+%s That's %d, now go away~
+%s Here's %d, now go home!~
+0
+6
+24027
+0
+24012
+-1
+0
+28
+0
+0
+#24001~
+24011
+24012
+24013
+24019
+24020
+24021
+24025
+-1
+5.00
+0.50
+19meat
+19fish
+1lantern
+15pouch
+15purse
+9cape
+-1
+%s I'm out of that.~
+%s Look again you idiot~
+%s I don't want that.~
+%s I'm broke~
+%s How do you plan on paying for that?~
+%s That's %d!~
+%s Here's %d coins!~
+0
+6
+24028
+0
+24031
+-1
+0
+28
+0
+0
+#24002~
+-1
+20.00
+0.20
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+0
+24029
+7
+24029
+-1
+0
+28
+0
+0
+$~

@@ -1,0 +1,84 @@
+CircleMUD v3.0 Shop File~
+#6503~
+3022
+6504
+6505
+6510
+6512
+-1
+1.90
+0.30
+9
+5
+-1
+%s We don't have any in storage, sorry!~
+%s Check your possessions, you don't have that.~
+%s I don't care for those types of goods.~
+%s I can't afford something that great!~
+%s You can't afford it, and don't ask a God for the money!~
+%s That'll cost you %d coins, please.~
+%s You'll get %d coins for that.~
+1
+6
+6503
+0
+6516
+-1
+1
+28
+0
+0
+#6504~
+3000
+3003
+3010
+3011
+3031
+6013
+-1
+1.90
+0.20
+1
+15
+17
+19
+-1
+%s Haven't got that on storage!~
+%s You don't seem to have that!~
+%s I don't buy those types, try another shop.~
+%s I cannot afford such a great treasure!~
+%s You can't afford that!~
+%s That'll be %d coins, please.~
+%s You'll get %d coins for that!~
+0
+6
+6504
+0
+6535
+-1
+6
+18
+20
+28
+#6535~
+-1
+2.00
+0.50
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+1
+0
+-1
+0
+28
+0
+0
+$~

@@ -1,0 +1,54 @@
+CircleMUD v3.0 Shop File~
+#25601~
+25600
+25601
+25608
+25609
+25610
+-1
+1.10
+0.90
+-1
+%s We didn't grow any of those this year.~
+%s You don't have that!~
+%s I won't buy that!~
+%s I can't buy that!~
+%s You can't buy that!~
+%s Ok, %d coins please!~
+%s Ok, %d coins please!~
+2
+2
+25610
+0
+25639
+-1
+8
+22
+0
+0
+#25602~
+25619
+25620
+25621
+-1
+1.10
+0.90
+-1
+%s Could you repeat that please?~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s But you haven't the money!~
+%s Ok, %d gold please.~
+%s Ok, %d gold please.~
+1
+6
+25612
+0
+25634
+-1
+0
+28
+0
+0
+$~

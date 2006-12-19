@@ -1,0 +1,557 @@
+ARMOR
+
+Usage       : cast 'armor' [target]
+Accumulative: No
+Duration    : 24 Hours
+Level       : Mage level 4, Cleric level 1.
+
+The Armor spell will improve your AC by 2.
+
+See also: AC
+#
+BLESS
+
+Usage       : cast 'bless' <victim | object>
+Accumulative: No
+Duration    : 6 Hours, permanent for objects.
+Level       : Cleric level 5.
+
+Bless on a victim will improve the victims saving throw versus spells
+by 1, and furthermore improve the hitroll by 2.
+
+Bless on an item currently has no defined action.  It is only possible
+to bless non-evil items, and the object blessed may weigh no more
+than five pounds per level of caster. 
+#
+BLINDNESS
+
+Usage       : cast 'blindness' <victim>
+Accumulative: No
+Duration    : 2 hours.
+Level       : Mage level 9, Cleric level 6.
+
+Blindness will blind a victim failing its saving throw.
+A blinded person will have -4 penalty to both hitroll and AC.
+
+See also: AC
+#
+"BURNING HANDS"
+
+Usage       : cast 'burning hands' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 5.
+Save        : Versus spell for half damage.
+
+This spell is more powerful than the chill touch spell.
+
+See also: "CHILL TOUCH"
+#
+"CALL LIGHTNING"
+
+Usage       : cast 'call lightning' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 15.
+Save        : Versus spell for half damage.
+
+This spell will use the "force of nature" to make a lightning
+strike the victim.  It is therefore only possible to call lightning
+outside, and it has to be raining (or worse).
+
+See also: "CONTROL WEATHER", WEATHER
+#
+CAST
+
+Usage: cast '<spell name>' [target]
+
+For "magical" people.  If you want to throw a spell at someone or something.
+
+Example:
+
+  > cast 'burning hands' <player>
+  Note that the name of the spell must be enclosed by "'"s.
+
+See also: help on each individual spell:
+
+Examples:
+
+  > help cure ligh
+  > help ventri
+  > help energy drain
+#
+"CHARM PERSON"
+
+Usage       : cast 'charm person' <victim>
+Accumulative: No
+Duration    : (432/Intelligence points of person) hours
+Level       : Mage level 16.
+
+Is is not possible to charm anyone that is already charmed, if
+you're charmed yourself, or if the person is higher level than
+yourself.  The person will get a saving throw versus "paralysation".
+
+A charmed person will follow you, and not be able to attack you, you
+can order the charmed person using the order command.
+
+See also: FOLLOW, ORDER
+#
+"CHILL TOUCH"
+
+Usage       : cast 'chill touch' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 3.
+Save        : Versus spell for half damage.
+
+This spell is more powerful than the magic missile spell.
+A victim failing its saving throw will get its strength
+reduced by one.
+
+See also: "MAGIC MISSILE"
+#
+COLORSPRAY "COLOR SPRAY"
+
+Usage       : cast 'color spray' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 11.
+Save        : Versus spell for half damage.
+
+This spell is more powerful than the lightning bolt spell.
+
+See also: "LIGHTNING BOLT"
+
+For help on actual color, see:  ANSI
+#
+"CONTROL WEATHER"
+
+Usage       : cast 'control weather' <'better' | 'worse'>
+Accumulative: Yes
+Duration    : -
+Level       : Cleric level 17.
+
+This spell will change the "course" of the current weather.
+
+Example:
+
+  > cast 'control wea' worse
+#
+"CREATE FOOD"
+
+Usage       : cast 'create food'
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 2.
+
+This spell instantly creates a fresh waybread.  The waybread will be
+filling for the next (5+level) hours, up to a maximum of 24 hours.
+
+See also: "CREATE WATER"
+#
+"CREATE WATER"
+
+Usage       : cast 'create water' <drink container>
+Accumulative: No
+Duration    : Instantaneous
+Level       : Cleric level 2.
+
+Expect disastrous results if cast upon a drink container which contains
+another liquid than water.  Empty or water containers will be filled
+depending on the level of the caster.
+
+Double amount of water will be created if it is raining (or worse).
+
+See also: "CREATE FOOD"
+#
+"CURE BLIND"
+
+Usage       : cast 'cure blind' <victim>
+Accumulative: No
+Duration    : Instantaneous
+Level       : Cleric level 4.
+
+This spell will cure a person blinded by the "blindness" spell, it
+can not remove blindness caused by for example cursed items.
+#
+"CURE CRITIC"
+
+Usage       : cast 'cure critic' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 9.
+
+This spell cures 3d8+3 hitpoints of damage.
+#
+"CURE LIGHT"
+
+Usage       : cast 'cure light' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 1.
+
+Cures minor wounds and scratches.
+#
+CURSE
+
+Usage       : cast 'curse' <victim | object>
+Accumulative: Yes
+Duration    : 7 Days, permanent on objects.
+Level       : Mage level 14.
+
+Curse cast on a person that fails the saving throw, will reduce their
+hitroll and damage roll both by one.  It will also reduce the saving
+throw versus paralysation by one. 
+
+When cast upon an object, the object will become undropable.
+#
+"DETECT ALIGNMENT"
+
+Usage       : cast 'detect alignment'
+Accumulative: Yes (Duration)
+Duration    : 12 hours + level
+Level       : Cleric level 4.
+
+Allows the caster to detect the alignment of those around them.
+Evil will show as a red aura, good in a blue aura.
+
+See also: "DETECT INVISIBILITY"
+#
+"DETECT INVISIBILITY"
+
+Usage       : cast 'detect invisibility' [self]
+Accumulative: Yes (Duration)
+Duration    : 12 hours + level/4
+Level       : Mage level 2, Cleric level 6.
+
+This spell enables you to see invisible items and players.
+#
+"DETECT MAGIC"
+
+Usage       : cast 'detect magic' [self]
+Accumulative: Yes (Duration)
+Duration    : 12 hours + level
+Level       : Mage level 2.
+
+This spell will let you see the magical aura surrounding magical
+objects.
+#
+"DETECT POISON"
+
+Usage       : cast 'detect poison' <victim | food | drink>
+Accumulative: No
+Duration    : Instantaneous
+Level       : Mage level 10, Cleric level 3.
+
+Cast on food or drinks (drink containers) you will be able to
+sense if it is poisoned.
+
+Cast on a person you will be able to see if that person is
+poisoned.
+#
+"DISPEL EVIL"
+
+Usage       : cast 'dispel evil' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 14.
+Save        : Special
+
+This spell will only affect evil creatures.  An evil person of level
+equal or less than caster will suffer 100 damage points.
+
+If the victim is higher level than caster, the spell will inflict
+(caster_level)d4 damage points, saving throw versus half damage.
+
+See also: DISPEL GOOD
+#
+"DISPEL GOOD"
+
+Usage       : cast 'dispel good' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 14.
+Save        : Special
+
+This spell will only affect good creatures.  A good person of level
+equal or less than caster will suffer 100 damage points.
+
+If the victim is higher level than caster, the spell will inflict
+(caster_level)d4 damage points, saving throw versus half damage.
+
+See also: DISPEL EVIL
+#
+EARTHQUAKE
+
+Usage       : cast 'earthquake'
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 12.
+Save        : -
+
+This spell will damage everybody except the caster by
+1d8+level_of_caster hitpoints.
+#
+"ENCHANT WEAPON"
+
+Usage       : cast 'enchant weapon' <weapon>
+Accumulative: No
+Duration    : Permanent
+Level       : Mage level 26.
+
+This spell will enchant non-magical (non-modifying) weapons only.
+By non-modifying weapons we refer to weapons that might alter any
+ability such as for example damage.  The only way to know if a weapon
+is suitable for enchantment is to fully identify it.
+
+The enchantment will modify the weapon as:
+
+    Level    Hit Roll    Damage
+
+     0..17     +1         +1
+    18..19     +2         +1
+    20..20+    +2         +2
+#
+"ENERGY DRAIN"
+
+Usage       : cast 'energy drain' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 13.
+Save        : Versus spell for half damage.
+
+This spell does not give much damage, but victims failing their
+saving throws will loose up to 40,000 XP points.  You will gain
+a quarter of this XP.
+
+Beware that this spell is evil.
+#
+FIREBALL
+
+Usage       : cast 'fireball' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 15.
+Save        : Versus spell for half damage.
+
+This spell is the most powerful spell a magic user can cast.
+
+See also: "COLOR SPRAY"
+#
+HARM
+
+Usage       : cast 'harm' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 19.
+Save        : Versus spell for half damage.
+
+This spell removes all but 1d4 hitpoints from the victim.  The
+maximum number of damage points are 100.  It is not possible to
+kill using this spell (but almost).
+#
+HEAL
+
+Usage       : cast 'heal' <victim>
+Accumulative: No
+Duration    : Instantaneous
+Level       : Cleric level 16.
+
+Heal will heal all the hitpoints from a person, except 1d4 points.
+Maximum 100 points can be healed.  A victim who is blinded will also
+be cured by the heal spell.
+
+See also: "CURE BLINDNESS"
+#
+INFRAVISION
+
+Usage       : cast 'infravision'
+Accumulative: Yes (Duration)
+Duration    : 12 hours + level
+Level       : Mage level 3, Cleric level 7.
+
+Allows the caster to detect the heat given off by objects giving them
+the ability to have much better vision in dark conditions.
+
+See also: "DETECT INVISIBILITY"
+#
+INVISIBILITY
+
+Usage       : cast 'invisibility' <victim | object>
+Accumulative: Yes (Duration)
+Duration    : 24 hours, permanent on objects.
+Level       : Mage level 4.
+
+Makes the target of the spell invisible to everyone except those who have
+the "detect invisibility" spell.
+
+Attacking while invisible will immediately break the spell.
+
+See also: "DETECT INVISIBILITY"
+#
+"LIGHTNING BOLT"
+
+Usage       : cast 'lightning bolt' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 9.
+Save        : Versus spell for half damage.
+
+This spell is more powerful than the shocking grasp spell.
+
+See also: "SHOCKING GRASP"
+#
+"LOCATE OBJECT"
+
+Usage       : cast 'locate object' <object>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 6.
+
+If possible you will know exactly where an object is, or the
+name of the person using it.  If more than one object by the
+same name exists, you will get a listing of several objects.
+The maximum number of objects you can simultaneously locate is
+your level divided by 2.
+#
+"MAGIC MISSILE"
+
+Usage       : cast 'magic missile' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 1.
+Save        : Versus spell for half damage.
+
+Causes a bolt of magical energy to be thrown from the casters hands at the
+victim.
+#
+POISON
+
+Usage       : cast 'poison' <victim | food | drink>
+Accumulative: Yes on persons.
+Duration    : Level hours, or permanent on food and drinks.
+Level       : Cleric Level 8, Mage level 14.
+
+Casting poison on food or drink (containers) will poison it.  Eating
+poisoned food/drinks will poison the person eating or drinking.
+
+A person who is poisoned will suffer damage every hour, lose strength, and
+gain less points than usual.
+
+See also: "REMOVE POISON", "DETECT POISON"
+#
+"PROTECTION FROM EVIL"
+
+Usage       : cast 'protection from evil' [self]
+Accumulative: Yes (Duration)
+Duration    : 24 hours
+Level       : Cleric level 8.
+
+The meaning of this spell is not yet fully defined.
+#
+"REMOVE CURSE"
+
+Usage       : cast 'remove curse' <victim | object>
+Accumulative: No
+Duration    : Instantaneous
+Level       : Cleric level 26.
+
+Will remove a curse on carried objects or any persons in the room.
+#
+"REMOVE POISON"
+
+Usage       : cast 'remove poison' <victim | food | drink> 
+Accumulative: No
+Duration    : Instantaneous
+Level       : Cleric level 10.
+
+Will remove the affects of poison from a victim or an object.
+
+See also: POISON
+#
+SANCTUARY
+
+Usage       : cast 'sanctuary' [self]
+Accumulative: Yes (Duration)
+Duration    : 4 hours
+Level       : Cleric level 15.
+
+When protected by sanctuary you will only receive 1/2 the normal damage
+caused by a particular blow.
+
+See also: ARMOR, BLESS
+#
+"SHOCKING GRASP"
+
+Usage       : cast 'shocking grasp' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 7.
+Save        : Versus spell for half damage.
+
+This spell is more powerful than the burning hands spell.
+
+See also: "BURNING HANDS"
+#
+"SENSE LIFE"
+
+Usage       : cast 'sense life'
+Accumulative: Yes (Duration)
+Duration    : Level hours.
+Level       : Cleric level 5, Mage level 17.
+
+Allows the caster to sense the presence of a player or monster in the
+room which is hiding.  The true identity will remain hidden however.
+Invisible persons are also considered hidden.
+
+See also: HIDE
+#
+STRENGTH
+
+Usage       : cast 'strength' <victim>
+Accumulative: Yes
+Duration    : Level/2 + 4
+Level       : Mage level 6.
+
+A person will gain 1 strength point per spell (2 points if level of
+caster is greater than 18).  Maximum strength is 18/100.
+#
+SUMMON
+
+Usage       : cast 'summon' <victim>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 10.
+
+Will summon a person of the name spoken.  It is not possible to
+summon someone of three or more levels above yourself.
+If you attempt to summon a monster, it will get a saving throw.
+
+See also: NOSUMMON
+#
+VENTRILOQUATE
+
+Usage       : cast 'ventriloquate' <victim | object> <text>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Mage level 1.
+Save        : Versus spell victim only sees attempted cast.
+
+For all people in the same room as the caster that fail a saving throw, the
+spell will make the object or victim appear to say the text written.
+
+Example:
+
+  > cast 'vent' Mirlen I got 399,823 coins, don't even consider killing me!
+#
+"WORD OF RECALL"
+
+Usage       : cast 'word of recall' 
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 12.
+
+The caster will be transferred back to his hometown sanctuary (usually the
+Temple of Midgaard).
+#
+$

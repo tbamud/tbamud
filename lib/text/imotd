@@ -1,0 +1,11 @@
+(lib/text/imotd)
+
+Welcome to CircleMUD 3.5!
+
+This is the immortal MOTD -- the file that immortals will see when they
+log in to the game.  You should change it to something more interesting
+when you get a chance (as well as most of the other files in lib/text.)
+
+If you need help, find a bug, or wish to contribute please stop by 
+The Builder Academy at: builderacademy.net 9091
+

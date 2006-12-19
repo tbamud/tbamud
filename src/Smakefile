@@ -1,0 +1,192 @@
+# CircleMUD makefile for the Amiga
+
+# C compiler to use
+CC = sc
+
+# Any special flags you want to pass to the compiler
+MYFLAGS = 
+
+#flags for profiling (see hacker.doc for more information)
+PROFILE = 
+
+##############################################################################
+# Do Not Modify Anything Below This Line (unless you know what you're doing) #
+##############################################################################
+
+CFLAGS = NOLINK $(MYFLAGS) $(PROFILE)
+
+MAKE = SMAKE
+
+OBJFILES = comm.o act.comm.o act.informative.o act.movement.o act.item.o \
+	act.offensive.o act.other.o act.social.o act.wizard.o ban.o boards.o \
+	castle.o class.o config.o constants.o db.o fight.o graph.o handler.o \
+	house.o interpreter.o limits.o magic.o mail.o mobact.o modify.o \
+	objsave.o olc.o shop.o spec_assign.o spec_procs.o spell_parser.o \
+	spells.o utils.o weather.o random.o players.o
+
+default: 
+	$(MAKE) /bin/circle
+
+
+utils: 
+	$(MAKE) /bin/asciipasswd
+	$(MAKE) /bin/autowiz
+	$(MAKE) /bin/listrent
+	$(MAKE) /bin/plrtoascii
+	$(MAKE) /bin/shopconv
+	$(MAKE) /bin/sign
+	$(MAKE) /bin/split
+	$(MAKE) /bin/wld2html
+
+all: .accepted
+	$(MAKE) /bin/circle
+	$(MAKE) utils
+
+circle:
+	$(MAKE) /bin/circle
+asciipasswd:
+	$(MAKE) /bin/asciipasswd
+autowiz:
+	$(MAKE) /bin/autowiz
+listrent:
+	$(MAKE) /bin/listrent
+plrtoascii:
+	$(MAKE) /bin/plrtoascii
+shopconv:
+	$(MAKE) /bin/shopconv
+sign:
+	$(MAKE) /bin/sign
+split:
+	$(MAKE) /bin/split
+wld2html:
+	$(MAKE) /bin/wld2html
+
+
+/bin/asciipasswd: util/asciipasswd.c conf.h sysdep.h  structs.h utils.h
+	$(CC) $(CFLAGS) /bin/asciipasswd util/asciipasswd.c LINK
+/bin/autowiz: util/autowiz.c conf.h sysdep.h structs.h utils.h db.h
+	$(CC) $(CFLAGS) /bin/autowiz util/autowiz.c LINK
+/bin/listrent: util/listrent.c conf.h sysdep.h structs.h
+	$(CC) $(CFLAGS) /bin/listrent util/listrent.c LINK
+/bin/plrtoascii: util/plrtoascii.c conf.h sysdep.h db.h pfdefaults.h
+	$(CC) $(CFLAGS) /bin/plrtoascii util/plrtoascii.c LINK
+/bin/shopconv: util/shopconv.c conf.h sysdep.h structs.h db.h utils.h shop.h
+	$(CC) $(CFLAGS) /bin/shopconv util/shopconv.c LINK
+/bin/sign: util/sign.c conf.h sysdep.h
+	$(CC) $(CFLAGS) /bin/sign util/sign.c LINK
+/bin/split: util/split.c
+	$(CC) $(CFLAGS) /bin/split util/split.c LINK
+/bin/wld2html: util/wld2html.c
+	$(CC) $(CFLAGS) /bin/wld2html util/wld2html.c LINK
+
+/bin/circle : $(OBJFILES)
+	$(CC) $(PROFILE) $(OBJFILES) TO /bin/circle LINK
+
+# Dependencies for the object files (automagically generated with
+# gcc -MM)
+
+act.comm.o: act.comm.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
+  handler.h db.h screen.h
+	$(CC) $(CFLAGS) act.comm.c
+act.informative.o: act.informative.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h screen.h
+	$(CC) $(CFLAGS) act.informative.c
+act.item.o: act.item.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
+  handler.h db.h spells.h
+	$(CC) $(CFLAGS) act.item.c
+act.movement.o: act.movement.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h house.h
+	$(CC) $(CFLAGS) act.movement.c
+act.offensive.o: act.offensive.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h
+	$(CC) $(CFLAGS) act.offensive.c
+act.other.o: act.other.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
+  handler.h db.h spells.h screen.h house.h
+	$(CC) $(CFLAGS) act.other.c
+act.social.o: act.social.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h
+	$(CC) $(CFLAGS) act.social.c
+act.wizard.o: act.wizard.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h house.h screen.h
+	$(CC) $(CFLAGS) act.wizard.c
+ban.o: ban.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h db.h
+	$(CC) $(CFLAGS) ban.c
+boards.o: boards.c conf.h sysdep.h structs.h utils.h comm.h db.h boards.h \
+  interpreter.h handler.h
+	$(CC) $(CFLAGS) boards.c
+castle.o: castle.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
+  handler.h db.h spells.h
+	$(CC) $(CFLAGS) castle.c
+class.o: class.c conf.h sysdep.h structs.h db.h utils.h spells.h interpreter.h
+	$(CC) $(CFLAGS) class.c
+comm.o: comm.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h \
+  db.h house.h
+	$(CC) $(CFLAGS) comm.c
+config.o: config.c conf.h sysdep.h structs.h
+	$(CC) $(CFLAGS) config.c
+constants.o: constants.c conf.h sysdep.h structs.h
+	$(CC) $(CFLAGS) constants.c
+db.o: db.c conf.h sysdep.h structs.h utils.h db.h comm.h handler.h spells.h mail.h \
+  interpreter.h house.h
+	$(CC) $(CFLAGS) db.c
+fight.o: fight.c conf.h sysdep.h structs.h utils.h comm.h handler.h interpreter.h \
+  db.h spells.h screen.h
+	$(CC) $(CFLAGS) fight.c
+graph.o: graph.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h \
+  db.h spells.h
+	$(CC) $(CFLAGS) graph.c
+handler.o: handler.c conf.h sysdep.h structs.h utils.h comm.h db.h handler.h \
+  interpreter.h spells.h
+	$(CC) $(CFLAGS) handler.c
+house.o: house.c conf.h sysdep.h structs.h comm.h handler.h db.h interpreter.h \
+  utils.h house.h
+	$(CC) $(CFLAGS) house.c
+interpreter.o: interpreter.c conf.h sysdep.h structs.h comm.h interpreter.h db.h \
+  utils.h spells.h handler.h mail.h screen.h
+	$(CC) $(CFLAGS) interpreter.c
+limits.o: limits.c conf.h sysdep.h structs.h utils.h spells.h comm.h db.h \
+  handler.h
+	$(CC)  $(CFLAGS) limits.c
+magic.o: magic.c conf.h sysdep.h structs.h utils.h comm.h spells.h handler.h db.h
+	$(CC) $(CFLAGS) magic.c
+mail.o: mail.c conf.h sysdep.h structs.h utils.h comm.h db.h interpreter.h \
+  handler.h mail.h
+	$(CC) $(CFLAGS) mail.c
+mobact.o: mobact.c conf.h sysdep.h structs.h utils.h db.h comm.h interpreter.h \
+  handler.h spells.h
+	$(CC) $(CFLAGS) mobact.c
+modify.o: modify.c conf.h sysdep.h structs.h utils.h interpreter.h handler.h db.h \
+  comm.h spells.h mail.h boards.h
+	$(CC) $(CFLAGS) modify.c
+objsave.o: objsave.c conf.h sysdep.h structs.h comm.h handler.h db.h \
+  interpreter.h utils.h spells.h
+	$(CC) $(CFLAGS) objsave.c
+olc.o: olc.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h db.h \
+  olc.h
+	$(CC) $(CFLAGS) olc.c
+players.o: players.c conf.h sysdep.h structs.h utils.h db.h handler.h pfdefaults.h
+	$(CC) -c $(CFLAGS) players.c
+random.o: random.c
+	$(CC) $(CFLAGS) random.c
+shop.o: shop.c conf.h sysdep.h structs.h comm.h handler.h db.h interpreter.h \
+  utils.h shop.h
+	$(CC) $(CFLAGS) shop.c
+spec_assign.o: spec_assign.c conf.h sysdep.h structs.h db.h interpreter.h \
+  utils.h
+	$(CC) $(CFLAGS) spec_assign.c
+spec_procs.o: spec_procs.c conf.h sysdep.h structs.h utils.h comm.h \
+  interpreter.h handler.h db.h spells.h
+	$(CC) $(CFLAGS) spec_procs.c
+spell_parser.o: spell_parser.c conf.h sysdep.h structs.h utils.h interpreter.h \
+  spells.h handler.h comm.h db.h
+	$(CC) $(CFLAGS) spell_parser.c
+spells.o: spells.c conf.h sysdep.h structs.h utils.h comm.h spells.h handler.h \
+  db.h
+	$(CC) $(CFLAGS) spells.c
+utils.o: utils.c conf.h sysdep.h structs.h utils.h comm.h screen.h spells.h \
+  handler.h
+	$(CC) $(CFLAGS) utils.c
+weather.o: weather.c conf.h sysdep.h structs.h utils.h comm.h handler.h \
+  interpreter.h db.h
+	$(CC) $(CFLAGS) weather.c
+

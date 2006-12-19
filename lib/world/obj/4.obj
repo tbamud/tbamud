@@ -1,0 +1,205 @@
+#400
+gloves~
+rabbit skin gloves~
+A pair of rabbit skin gloves.~
+~
+9 0 aho 0
+2 0 0 0
+6 250 0 10
+E
+rabbit skin gloves glove~
+   The gloves are very furry.  They are made from the skin and fur of a
+recently killed rabbit.  You think these would keep your hands safe as well as
+warm.    
+~
+#401
+boots~
+rabbit skin boots~
+A pair of rabbit skin boots.~
+~
+9 0 ag 0
+2 0 0 0
+8 400 0 10
+E
+rabbit skin boots boot~
+   The boots are very well made, and look like they would protect you well.  
+The outside is covered in soft fur to keep your warm.  The inside is made from
+the skin of the rabbit.    
+~
+#402
+shrub~
+a small shrub~
+A small shrub is here.~
+~
+12 0 0 0
+0 0 0 0
+0 0 0 0
+E
+small shrub plant~
+   The plant is about knee high and in full bloom.  Many colorful flowers
+dangle from it, giving off a sweet scent.    
+~
+#403
+whip~
+rawhide whip~
+A rawhide whip~
+~
+5 b ano 0
+2 2 3 2
+7 300 0 10
+E
+rawhide whip~
+   The weapon looks rather strong and would defend you well in battle.  The
+whip is nine feet long with a very skinny end.  You could cut someone badly
+with this weapon.    
+~
+#406
+tree stump~
+tree stump~
+There is a tree stump here.~
+~
+12 0 0 0
+0 0 0 0
+0 0 0 0
+E
+Tree Stump~
+   This is just an ordinary tree stump.  By the looks of it, it's been here for
+quite some time.    
+~
+#407
+teddybear~
+a teddybear~
+A teddybear was abandoned here.~
+~
+12 0 ao 0
+0 0 0 0
+4 450 0 0
+E
+teddybear~
+   The bear is rather cute looking.  There seems to be a small glow within his
+eyes, maybe this bear is magical.    
+~
+#409
+armour~
+wooden armour~
+A suit of wooden armour~
+~
+9 0 ad 0
+5 0 0 0
+11 300 0 10
+E
+Wooden armour~
+   The armour is quite solid, giving you the best protection available.  A
+person would easily be able to move around wearing this.    
+~
+#410
+helmet~
+wooden warhelm~
+A wooden warhelm~
+~
+9 0 a 0
+3 0 0 0
+8 550 0 10
+E
+wooden wood warhelm helmet~
+   The helmet is quite solid and would protect you quite well in battle.  You
+notice a few small chips in the wood, most likely from a past battle.    
+~
+#411
+pebble rock~
+Onyx pebble~
+An onyx pebble is lying on the ground.~
+~
+8 0 ao 0
+0 0 0 0
+1 300 0 10
+E
+onyx pebble rock~
+   The black pebble shines as you look at it.  You feel that it must contain
+some kind of power.    
+~
+A
+1 2
+A
+6 1
+#415
+tree~
+a large tree is here.~
+A large tree is here.~
+~
+12 0 0 0
+0 0 0 0
+0 0 0 0
+E
+tree~
+   The tree is quite large.  It towers over you, shading you from the sunlight.
+  
+~
+#427
+plant~
+colorful plant~
+A colorful plant is growing here.~
+~
+12 a 0 0
+0 0 0 0
+0 0 0 0
+E
+colorful plant~
+   The plant is the most beautiful plant you have ever set your eyes on.  It
+has petals like silk and gives off the most wonderous scent.    
+~
+#433
+egg~
+bird egg~
+A bird egg is lying on the ground.~
+~
+12 0 ao 0
+0 0 0 0
+1 125 0 0
+E
+bird egg~
+   The egg is speckled with shades of blue.  It's in excellent condition.    
+~
+#447
+apple~
+apple~
+An apple~
+~
+19 0 ao 0
+1 0 0 0
+3 50 0 0
+E
+apple~
+   The red apples shines in the light, making it look more delicious.    
+~
+#450
+rock~
+magical rock~
+A magical rock~
+~
+8 a ao 0
+0 0 0 0
+2 400 0 0
+E
+magical rock~
+   The rocks seems to hold some sort of magic.  You feel the power running
+through your hands.    
+~
+A
+2 3
+A
+1 1
+#483
+painting~
+painting~
+A beautiful painting is hanging on the wall.~
+~
+12 0 0 0
+0 0 0 0
+0 0 0 0
+E
+painting~
+   Color flowers fills your eyes as they stretch off the canvas of the
+painting.  The picture gives the room a cheerful feeling.    
+~
+$~

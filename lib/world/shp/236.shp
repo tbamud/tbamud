@@ -1,0 +1,142 @@
+CircleMUD v3.0 Shop File~
+#23601~
+23601
+-1
+1.60
+0.80
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I sell what my master and I make. I don't want your petty items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+23601
+0
+23604
+-1
+0
+28
+0
+0
+#23602~
+-1
+2.30
+0.90
+-1
+%s My master doesn't make those.~
+%s You don't seem to have that.~
+%s I don't buy!~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+23602
+0
+23605
+23604
+-1
+0
+28
+0
+0
+#23603~
+-1
+3.70
+0.80
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't buy !~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+23603
+0
+23606
+-1
+0
+28
+0
+0
+#23604~
+-1
+4.00
+0.70
+8[^foil & gold|titanium|iron] & METAL
+-1
+%s That is not one of the items I manufacture.~
+%s You don't seem to have that.~
+%s Sorry - I can't use that for anything, can I ?~
+%s That's to much. I don't have that kind of gold.~
+%s Leave - before I slap you out of here.~
+%s That'll be %d coins, thanks.~
+%s If you give me that, I'll give you %d coins.~
+0
+6
+23609
+2
+23612
+-1
+8
+20
+0
+0
+#23605~
+-1
+4.00
+0.80
+8[gold|titanium|iron] & METAL
+-1
+%s WHAT DID YOU SAY ?!?~
+%s SORRY, DIDN'T HEAR YOU. CAN YOU REPEAT THAT ?~
+%s HEY - YOU THINK I'M STUPID ?~
+%s HUH ?~
+%s A WHAT ? I DIDN'T QUITE GET THAT...~
+%s GIVE ME %d COINS AND ITS YOURS.~
+%s I'LL TAKE THAT - HERE'S %d COINS FOR YOU.~
+0
+2
+23610
+2
+23615
+-1
+8
+20
+0
+0
+#23606~
+-1
+2.60
+0.97
+12rock
+8ruby | emerald
+8gold & foil
+12stone | headstone
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+2
+23611
+2
+23616
+-1
+0
+28
+0
+0
+$~

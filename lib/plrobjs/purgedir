@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Purging $1"
+cd $1
+date >> deleted
+../../../bin/delobjs ../../etc/players *.objs >> ../deleted
+cd ..

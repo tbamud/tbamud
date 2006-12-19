@@ -1,0 +1,28 @@
+CircleMUD v3.0 Shop File~
+#9600~
+9615
+9606
+9604
+-1
+1.20
+0.70
+10
+-1
+%s I don't carry that, fool!~
+%s You don't have that. Check your inventory.~
+%s I trade in only what I sell.~
+%s Er...I don't seem to have the funds for that item.~
+%s What are you trying to pull! You can't pay for that!~
+%s Really? Ok! That's...%d coins.~
+%s Against my better judgement, I'll pay %d coins.~
+0
+6
+9603
+0
+9600
+-1
+0
+28
+0
+0
+$~

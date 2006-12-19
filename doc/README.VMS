@@ -1,0 +1,81 @@
+This is directions for compiling & linking CircleMUD for OpenVMS.
+Additional documentation can be found at.
+
+	http://www.ourservers.net/openvms_ports/
+
+I have personally tested this port on both VAX and Alpha with OpenVMS v7.0 
+and DEC C v7.0 and Multinet TCP/IP using UCX emulation.
+
+To build this, you need the following:
+
+        .1) DEC C compiler.  I have tested with DEC C v7.0 and can help out
+            with problems with earlier versions of DEC C.  If you don't have
+	    the DEC C compiler I suggest you get a copy through the OpenVMS
+	    Hobbyist program at http://www.montagar.com/hobbyist.
+
+	.2) A TCP/IP stack for OpenVMS that supports UCX emulation.  I have
+            personally only tested out Multinet v4.1B and Multinet v4.2.
+            If you are using a TCP/IP stack that dosen't support UCX 
+	    emulation I would suggest getting a copy of Multinet though the
+            OpenVMS hobbyist program at http://www.montagar.com/hobbyist.
+
+	.3) A copy of the CircleMUD distribution file.
+
+            This can be found at ftp://ftp.circlemud.org/3.x/
+
+Now, you have everything, do the following...
+
+	.1) Unpack the CircleMUD file you got from "www.circlemud.org"
+
+	.2) Go to the SRC directory and locate the BUILD_CIRCLEMUD.COM file.
+
+	    The BUILD_CIRCLEMUD.COM file accepts the following parameters.
+
+		P1	ALL	Just Build "Everything".
+			CIRCLE	Just Build [.BIN]CIRCLE.EXE.
+			UTILS   Just Build The CircleMUD Utilities.
+
+		P2	DEBUG	Build CircleMUD With Debugging Information.
+			NODEBUG Build CircleMUD Without Debugging Information.
+
+	    The default is "ALL" and "NODEBUG".
+
+	    The "BUILD_CIRCLEMUD.COM" script checks some filenames to make 
+            sure that they are correct as some of them are unpacked different
+	    between the TAR file distribution and the ZIP file distribution.
+            It also checks for "CONF.H" and if not found copies "CONF.H_VMS"
+            to "CONF.H" for you.
+
+	    So if you just want to build "everything" without debugging 
+	    information you could use...
+
+		$ @BUILD_CIRCLEMUD ALL NODEBUG
+
+			OR
+
+		$ @BUILD_CIRCLEMUD
+
+            The EXE's will be placed in the CircleMUD BIN directory.
+
+Now, define the logical CIRCLEMUD_BIN to point to the "BIN" directory of
+the CircleMUD directory like this...
+
+   $ DEFINE/SYSTEM/EXEC CIRCLEMUD_BIN DISK$WORK:[CIRCLE30BPL16.BIN]
+
+To run CircleMUD, just execute the "VMS_AUTORUN.COM" file in the CircleMUD
+root directory.
+
+To customize how CircleMUD runs, edit the "VMS_CIRCLEMUD.COM" file in the
+BIN directory.
+
+To customize CircleMUD features (like player killing etc) edit the "CONFIG.C"
+file in the SRC directory.
+
+To edit the CircleMUD login message, edit the GREETINGS.; file found in the
+TEXT directory under the LIB directory.
+
+For the CircleMUD utilities, execute the file VMS_MUD_UTILS.COM in the
+BIN directory and it will create the VMS symbols for the utilities.
+
+If you have any problems, questions, comments, feel free to e-mail me at
+byer@mail.ourservers.net and I'll try my best to answer them all.

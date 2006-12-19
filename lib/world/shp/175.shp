@@ -1,0 +1,37 @@
+CircleMUD v3.0 Shop File~
+#17500~
+17500
+17501
+17502
+17506
+-1
+2.00
+0.50
+10
+3
+1
+2
+8
+18
+6
+4
+12
+-1
+%s Your eyes fool you child. I have that item not.~
+%s You have that item not, child.~
+%s I have no need of that item.~
+%s I apologise, but I have not the coin for such an item.~
+%s Unfortunately, you have not enough money.~
+%s You may have it. My price is %d coins.~
+%s Thankyou! Here is %d coins for your trouble.~
+0
+6
+17500
+0
+17502
+-1
+0
+28
+0
+0
+$~

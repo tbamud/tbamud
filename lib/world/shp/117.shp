@@ -1,0 +1,88 @@
+CircleMUD v3.0 Shop File~
+#11700~
+11707
+11709
+11705
+11710
+11711
+11712
+11713
+-1
+1.00
+0.00
+0
+-1
+%s So sorry, but I don't have that item!~
+%s But, er, you don't have one of those!~
+%s I don't want that, sorry.~
+%s You think I can afford that?? Hah!~
+%s You cannot afford that!~
+%s It will cost you %d coins. Thank you very much!~
+%s I am willing to pay you %d coins for that.~
+0
+0
+11704
+0
+11704
+-1
+1
+24
+0
+0
+#11701~
+11714
+11716
+11715
+11717
+11719
+-1
+1.00
+1.00
+-1
+%s Shorry, I don't hab dat...~
+%s You don't *hic* hab one a doz~
+%s I don't think I *hic* want *hic* that, rrreally... *hic*~
+%s I dun 'ave teh *hic* monney~
+%s Youuuu can't afforrrd it...~
+%s It'll cosht ya %d thingammajigs...~
+%s Yoo cn'ave %d fer it.~
+0
+0
+11705
+0
+11706
+-1
+3
+25
+0
+0
+#11702~
+11721
+11722
+11723
+11724
+11725
+-1
+1.00
+0.50
+9
+5
+-1
+%s Look at my display, do you see one of those there? No? I thought so.~
+%s I do not see one of those on you.~
+%s I will not take that.~
+%s I seem to be unable to afford what you have.~
+%s You do not have sufficient funds!~
+%s It will be %d coins. Thank you for your patronage.~
+%s I can give you %d coins for your item.~
+0
+4
+11707
+0
+11751
+-1
+7
+18
+22
+28
+$~

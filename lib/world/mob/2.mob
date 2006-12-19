@@ -1,0 +1,163 @@
+#200
+baker's assistant~
+the baker's assistant~
+An assistant to the baker is learning the trade.
+~
+   He sifts some flour with glazed over eyes that seem to be somewhere else.  
+Obviously daydreaming of better things.  His white apron is covered in floor.
+He stands a good six feet tall, all skin and bones.    
+~
+bd 0 0 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 1
+E
+#201
+apprentice healer~
+the apprentice healer~
+An apprentice healer helps any who are in need.
+~
+   He has devoted his life to selflessly aid those who are in need of either
+physical or mental aid.  The clerics of Sanctus are well known for their aiding
+those physically wounded, but are seldom known for their great prowess in the
+emotoinal aid they give.    
+~
+dg 0 0 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 1
+E
+T 146
+#202
+horse pets ~
+the horse~
+A beautiful horse shakes it's head and swishes it's tail.
+~
+   The horse has been well groomed and seems to be in excellent shape.    
+~
+bd 0 0 E
+5 19 7 1d1+50 1d2+0
+50 2500
+8 8 1
+E
+#203
+stablemasters petshops~
+the stablemaster~
+The stablemaster is busily cleaning out the stalls.
+~
+   He looks and smells like the rest of the stables.  His clothes are the same
+color and texture as the manure that he shovels into a wheelbarrow beside him.
+He could definitely use a bath.  But he does know his horses and makes a living
+selling, training, and breeding them.    
+~
+bd 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 338
+#204
+horse pets mare~
+the fine mare~
+A gentle and kind horse stares at you.
+~
+   The horse seems to be well trained and somewhat....  Lazy.  Doesn't look
+like it would be fast, but it probably has some great endurance.    
+~
+bd 0 0 E
+6 18 6 1d1+60 1d2+1
+60 3600
+8 8 1
+E
+#205
+horse pets stallion~
+the stallion~
+A sleek and mean looking horse tramps impatiently.
+~
+   The horse looks about ready to bolt, a strange gleam in it's eyes makes you
+wonder why this animal is even standing here.  The animal looks wild.    
+~
+bd 0 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 2
+E
+#206
+chunky philosopher man old~
+a chunky philosopher~
+An old man roams about whispering to himself.
+~
+   He is a large middle-aged man missing most of his hair.  He ambles about
+seemingly oblivious to his own girth and the world around him.  Occasionally he
+rambles on about truth, existence, and other esoteric topics that better mind
+than his have already questioned.  
+~
+dg 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 1
+E
+T 200
+#207
+angel jack russell terrier~
+Angel~
+Angel, the Jack Russel Terrier, is racing around looking for someone to play with.
+~
+   This dog has to be on drugs.  She never stops running around looking for
+attention or someone to play with.  Her breath smells strangely of bacon.  She
+appears to be beggin for some treats.  
+~
+dg 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 2
+BareHandAttack: 4
+E
+T 152
+T 153
+T 155
+T 156
+#208
+haruspex diviner~
+the haruspex~
+A haruspex is predicting your demise.
+~
+   She is a diviner of what the future holds.  Her predictions are gathered by
+the inspection of the entrails of sacrificial animals.  
+~
+dg 0 0 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 2
+E
+#209
+bob midget dwarf achondroplastic~
+Bob, the achondroplastic dwarf~
+Bob is bobbing and weaving his way past people who don't seem to notice him.
+~
+   He is noticeably upset about the lack of attention the big people give him.
+He is desperately trying not to be trampled on or shoved out of the way.  His
+short stature puts him about waist level to most people.  Bob is an
+achondroplastic dwarf.  His torso is normal while his limbs are extremely short.
+~
+dg 0 0 E
+7 18 5 1d1+70 1d2+1
+70 4900
+8 8 1
+E
+#210
+questmaster shopkeeper~
+the quest shopkeeper~
+A shopkeeper with a variety of powerful quest items waits for a customer.
+~
+   Experienced adventurers often come to her since she carries the best
+equipment in the realm. But, the prices are steep and only the most experienced
+questors can afford to pay her.
+~
+bdnopqr 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+E
+T 167
+$

@@ -1,0 +1,78 @@
+# CircleMUD Makefile.in - Makefile template used by 'configure'
+# for the 'util' directory
+
+# C compiler to use
+CC = @CC@
+
+# Any special flags you want to pass to the compiler
+MYFLAGS = @MYFLAGS@ -DCIRCLE_UTIL
+
+#flags for profiling (see hacker.doc for more information)
+PROFILE = 
+
+##############################################################################
+# Do Not Modify Anything Below This Line (unless you know what you're doing) #
+##############################################################################
+
+# binary destination directory
+BINDIR = ../../bin
+# location of Circle include files
+INCDIR = ..
+
+CFLAGS = @CFLAGS@ $(MYFLAGS) $(PROFILE) -I$(INCDIR)
+
+default: all
+
+all: $(BINDIR)/asciipasswd $(BINDIR)/autowiz $(BINDIR)/listrent \
+	$(BINDIR)/plrtoascii $(BINDIR)/shopconv $(BINDIR)/sign \
+	$(BINDIR)/split $(BINDIR)/wld2html
+
+asciipasswd: $(BINDIR)/asciipasswd
+
+autowiz: $(BINDIR)/autowiz
+
+listrent: $(BINDIR)/listrent
+
+plrtoascii: $(BINDIR)/plrtoascii
+
+shopconv: $(BINDIR)/shopconv
+
+sign: $(BINDIR)/sign
+
+split: $(BINDIR)/split
+
+wld2html: $(BINDIR)/wld2html
+
+webster: $(BINDIR)/webster
+
+$(BINDIR)/asciipasswd: asciipasswd.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
+        $(INCDIR)/structs.h $(INCDIR)/utils.h
+	$(CC) $(CFLAGS) -o $(BINDIR)/asciipasswd asciipasswd.c @CRYPTLIB@
+
+$(BINDIR)/autowiz: autowiz.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
+	$(INCDIR)/structs.h $(INCDIR)/utils.h $(INCDIR)/db.h
+	$(CC) $(CFLAGS) -o $(BINDIR)/autowiz autowiz.c
+
+$(BINDIR)/listrent: listrent.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
+	$(INCDIR)/structs.h
+	$(CC) $(CFLAGS) -o $(BINDIR)/listrent listrent.c
+
+$(BINDIR)/plrtoascii: plrtoascii.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
+	$(INCDIR)/db.h $(INCDIR)/pfdefaults.h
+	$(CC) $(CFLAGS) -o $(BINDIR)/plrtoascii plrtoascii.c
+
+$(BINDIR)/shopconv: shopconv.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
+	$(INCDIR)/structs.h $(INCDIR)/db.h $(INCDIR)/utils.h $(INCDIR)/shop.h
+	$(CC) $(CFLAGS) -o $(BINDIR)/shopconv shopconv.c
+
+$(BINDIR)/sign: sign.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h
+	$(CC) $(CFLAGS) -o $(BINDIR)/sign sign.c @NETLIB@
+
+$(BINDIR)/split: split.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h
+	$(CC) $(CFLAGS) -o $(BINDIR)/split split.c
+
+$(BINDIR)/wld2html: wld2html.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h
+	$(CC) $(CFLAGS) -o $(BINDIR)/wld2html wld2html.c
+
+$(BINDIR)/webster: webster.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h
+	$(CC) $(CFLAGS) -o $(BINDIR)/webster webster.c

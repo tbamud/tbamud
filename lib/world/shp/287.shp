@@ -1,0 +1,245 @@
+CircleMUD v3.0 Shop File~
+#28700~
+28720
+28713
+28721
+28722
+-1
+1.15
+0.15
+-1
+%s Sorry, I haven't got exactly that item.~
+%s Even if you had that, I wouldn't want it.~
+%s I don't buy anything from Midgaarders.~
+%s Tell Pippin! I ain't supposed to buy!~
+%s You can't afford it!~
+%s That'll be %d coins, please.~
+%s Tell Pippin! I ain't supposed to buy!~
+1
+7
+28700
+2
+28728
+-1
+5
+24
+0
+0
+#28703~
+28739
+28738
+28735
+28734
+28733
+28737
+28730
+321
+324
+-1
+1.50
+0.50
+5
+9
+-1
+%s Nope. Don't make that here.~
+%s Maybe I'd buy it, but you don't have it.~
+%s Keep it. I have no use for it.~
+%s I am sorry, but I have bought too much already.~
+%s You need to pay for that, my friend.~
+%s All right. That'll be %d coins.~
+%s Fine. Here are %d crowns.~
+1
+7
+28703
+2
+28719
+-1
+5
+18
+0
+0
+#28704~
+28750
+28736
+28749
+323
+342
+-1
+1.50
+0.40
+-1
+%s I haven't made any of those lately.~
+%s I think I could live without one of those.~
+%s I won't buy that.~
+%s I only buy wood, from John the Lumberjack.~
+%s You can't afford it!~
+%s That'll be %d coins, please.~
+%s Oops...a bug! I don't buy.~
+1
+7
+28704
+2
+28714
+-1
+5
+18
+0
+0
+#28705~
+28746
+28745
+28744
+28742
+309
+337
+332
+331
+-1
+3.50
+0.10
+1
+2
+3
+4
+5
+8
+9
+10
+12
+15
+16
+17
+19
+21
+22
+-1
+%s Don't have one. Get lost!~
+%s Take a look in your pack again, Sherlock!~
+%s No. Don't buy it!~
+%s Not enough cash! Go soak your head!~
+%s Sorry, but NO CREDIT!~
+%s Gimme %d coins!~
+%s I'll give you a whole %d coins for that.~
+1
+7
+28705
+0
+28720
+-1
+9
+17
+0
+0
+#28706~
+28756
+28755
+28754
+28753
+351
+-1
+2.00
+0.50
+1
+-1
+%s I don't see that here. Do you?~
+%s Well, my friend, perhaps you hallucinate?~
+%s I buy only things that bubble and fizz.~
+%s Too expensive for THIS wizard.~
+%s Alas, you are too poor to buy that.~
+%s That'll be %d coins, please.~
+%s Here. I pay you %d coins. Is that enough?~
+0
+7
+28706
+2
+28730
+-1
+5
+12
+13
+18
+#28707~
+28752
+28751
+28727
+386
+371
+376
+381
+-1
+1.20
+0.90
+-1
+%s Sorry...don't have that.~
+%s I don't buy anything.~
+%s I don't buy anything.~
+%s I don't buy anything.~
+%s This fine armor is too costly for you.~
+%s Wear it in good health! That will be %d coins.~
+%s Here, you can have %d coins for that.~
+0
+7
+28707
+2
+28729
+-1
+6
+22
+0
+0
+#28708~
+310
+28789
+-1
+2.00
+0.50
+-1
+%s I know not the recipe for that.~
+%s Sorry, I don't buy from outsiders.~
+%s Sorry, I don't buy from outsiders.~
+%s Sorry, I don't buy from outsiders.~
+%s Sorry, but here, no money means no goods!~
+%s %d coins, please.  Don't talk with your mouth full.~
+%s Here, you can have %d coins for that.~
+2
+7
+28708
+2
+28731
+-1
+3
+16
+0
+0
+#28709~
+28760
+28759
+28758
+28757
+352
+350
+-1
+1.50
+0.50
+2
+16
+21
+-1
+%s The goblins must have stolen that.~
+%s Sorry, you don't have that to sell.~
+%s This is a library, not a general store.~
+%s Would you donate it?~
+%s I'm sorry, but you can't afford that.~
+%s That'll be %d crowns.~
+%s Here are %d crowns. Thank you very much.~
+2
+7
+28709
+2
+28724
+-1
+5
+19
+0
+0
+$~

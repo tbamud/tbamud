@@ -1,0 +1,174 @@
+#!/bin/sh
+#
+# CircleMUD 3.0 autorun script
+# Contributions by Fred Merkel, Stuart Lamble, and Jeremy Elson
+# New log rotating code contributed by Peter Ajamian
+# Copyright (c) 1996 The Trustees of The Johns Hopkins University
+# All Rights Reserved
+# See license.doc for more information
+#
+#############################################################################
+#
+# This script can be used to run CircleMUD over and over again (i.e., have it
+# automatically reboot if it crashes).  It will run the game, and copy some
+# of the more useful information from the system logs to the 'log' directory
+# for safe keeping.
+#
+# You can control the operation of this script by creating and deleting files
+# in Circle's root directory, either manually or by using the 'shutdown'
+# command from within the MUD.
+#
+# Creating a file called .fastboot makes the script wait only 5 seconds
+# between reboot attempts instead of the usual 60.  If you want a quick
+# reboot, use the "shutdown reboot" command from within the MUD.
+#
+# Creating a file called .killscript makes the script terminate (i.e., stop
+# rebooting the MUD).  If you want to shut down the MUD and make it stay
+# shut down, use the "shutdown die" command from within the MUD.
+#
+# Finally, if a file called pause exists, the script will not reboot the MUD
+# again until pause is removed.  This is useful if you want to turn the MUD
+# off for a couple of minutes and then bring it back up without killing the
+# script.  Type "shutdown pause" from within the MUD to activate this feature.
+#
+ulimit -c unlimited
+
+# The port on which to run the MUD
+PORT=4000
+
+# Default flags to pass to the MUD server (see admin.txt for a description
+# of all flags).
+FLAGS='-q'
+
+# Number of syslog.# files to keep in the log directory.
+BACKLOGS=6
+
+# Each record in the following variable contains information for one log file.
+# The fields are filename:maxlines:pattern where filename is the name of the
+# log file, maxlines is the maximum number of lines in the file (0 for
+# unlimited) and pattern is a pattern which must be matched for a line to get
+# copied from syslog to this log file.
+LOGFILES='
+delete:0:self-delete
+delete:0:PCLEAN
+dts:0:death trap
+rip:0:killed
+restarts:0:Running
+levels:0:advanced
+rentgone:0:equipment lost
+usage:5000:usage
+newplayers:0:new player
+errors:5000:SYSERR
+godcmds:0:(GC)
+badpws:0:Bad PW
+olc:5000:OLC
+help:0:get help on
+trigger:5000:trigger
+'
+
+# The following is the number of lines in syslog.CRASH.  Set to 0 to disable
+# crashlogs.
+LEN_CRASHLOG=30
+
+#############################################################################
+
+#############
+# Functions #
+#############
+
+# The proc_syslog function will grep the logs for the various different info
+# and rotate the logs in the log directory.
+proc_syslog () {
+  # Return if there's no syslog
+  if ! [ -s syslog ]; then return; fi
+
+  # Create the crashlog
+  if [ -n "$LEN_CRASHLOG" -a "$LEN_CRASHLOG" -gt 0 ]; then
+    tail -n $LEN_CRASHLOG syslog > syslog.CRASH
+  fi
+
+  # Append to the specialty logfiles and truncate to maximum length if
+  # applicable
+  OLD_IFS=$IFS
+  IFS='
+'
+  for rec in $LOGFILES; do
+    name=log/`echo $rec|cut -f 1 -d:`
+    len=`echo $rec|cut -f 2 -d:`
+    pattern=`echo $rec|cut -f 3- -d:`
+
+    fgrep $pattern syslog >> $name
+    if [ $len -gt 0 ]; then
+      temp=`mktemp $name.XXXXXX`
+      tail -n $len $name > $temp
+      mv -f $temp $name
+    fi
+  done
+  IFS=$OLD_IFS
+
+  # Find the # to set the new log file to.
+  if [ -s log/syslog.$BACKLOGS ]; then
+    declare -i newlog=$BACKLOGS+1
+  else
+    declare -i newlog=1
+    while [ -s log/syslog.$newlog ]; do newlog=$newlog+1; done
+  fi
+
+  # Rotate the logs.
+  declare -i y=2
+  while [ $y -lt $newlog ]; do
+    declare -i x=$y-1
+    mv -f log/syslog.$y log/syslog.$x
+    y=$y+1
+  done
+  mv -f syslog log/syslog.$newlog
+}
+
+########
+# Main #
+########
+
+# Check to see if there is a syslog which would indicate that autorun
+# was improperly killed (ie maybe the system was rebooted or ?).
+if [ -s syslog ]; then
+  echo Improper shutdown of autorun detected, rotating syslogs before startup. >> syslog
+  proc_syslog
+fi
+
+# The main loop
+while ( : ) do
+
+  DATE=`date`
+  echo "autorun starting game $DATE" > syslog
+  echo "running bin/circle $FLAGS $PORT" >> syslog
+
+  # On Cygwin, you may need to precede this next line with './' for
+  # './bin/circle' as the command.
+  nohup bin/circle $FLAGS $PORT >> syslog 2>&1
+
+  if [ -r .killscript ]; then
+    DATE=`date`;
+    echo "autoscript killed $DATE"  >> syslog
+    rm .killscript
+    proc_syslog
+    exit
+  fi
+
+#  if [ ! -r .fastboot ]; then
+#    sleep 60 
+#  else
+#    rm .fastboot
+#  fi
+
+  while [ -r pause ]; do
+    sleep 60 
+  done
+
+  if [ -s lib/core ]; then 
+    gdb bin/circle lib/core -command gdb.tmp >lib/backtrace.$(date +%d.%m.%Y.%T)
+  fi
+
+  proc_syslog
+  sleep 5
+
+done

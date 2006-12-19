@@ -1,0 +1,128 @@
+CircleMUD v3.0 Shop File~
+#30100~
+30135
+30136
+30140
+-1
+3.00
+0.10
+-1
+%s I'm sorry but I could not find that particular item.~
+%s Please do not stuff that in my coin slot.~
+%s Please do not stuff that in my coin slot.~
+%s Go away.~
+%s Please insert additional coins.~
+%s That comes to about %d coins.  Have a awesome day, Eh?~
+%s That also comes to %d coins.  Have a cool day, Eh?~
+1
+7
+30118
+0
+30104
+-1
+1
+24
+0
+0
+#30101~
+30136
+30140
+30141
+30152
+30151
+-1
+1.20
+0.80
+-1
+%s I can't find that...it must be out of stock.~
+%s I don't buy from people.~
+%s I don't buy from people.~
+%s I don't buy from people.~
+%s You don't have enough money!  Come back later.~
+%s That will run you %d coins.  Here you are.~
+%s I don't buy.~
+0
+5
+30139
+0
+30245
+-1
+5
+12
+13
+22
+#30102~
+30140
+30141
+-1
+1.20
+0.80
+-1
+%s I'm sorry, I can nae help you there.~
+%s Are you sure you have one of those?~
+%s Dream on, dude!~
+%s How about as a gift?~
+%s Perhaps later, when you've got enough money, my friend.~
+%s That's %d coins.~
+%s Here's %d coins.~
+0
+7
+30140
+0
+30169
+-1
+0
+24
+0
+0
+#30103~
+30116
+30126
+30111
+-1
+6.30
+0.80
+-1
+%s I've never heard of that...what is it?~
+%s I don't see the goods, neighbour.~
+%s I don't buy that junk.~
+%s I'm a little short on the moolah, know what I mean?~
+%s If you come back with more money, I may consider selling it...to you.~
+%s That's %d coins...can I wrap it up for you?~
+%s Here's %d for that.~
+0
+7
+30141
+0
+30141
+-1
+0
+24
+0
+0
+#30104~
+30137
+30138
+30139
+-1
+1.10
+0.90
+-1
+%s How do you mix one of those?~
+%s I don't buy.~
+%s I don't buy.~
+%s I don't buy.~
+%s No bar tabs.  Pay in advance, bub.~
+%s That's %d gold.~
+%s I don't buy.~
+0
+7
+30142
+0
+30166
+-1
+0
+24
+0
+0
+$~

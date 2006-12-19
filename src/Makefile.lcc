@@ -1,0 +1,579 @@
+# Makefile for LCC-Win32 compile of CircleMUD
+# Created by Eric Jones (mailto:fpicard@mindless.com)
+
+# 08/31/98
+# Added LCCDIR variable because new release of LCC-Win32 extracts
+#  to \LCC instead of \LCCPUB as in older versions
+# Added DISTDIR variable to allow for an easy way to change
+#  where Circle is located, plus will allow for changes in the
+#  path between versions (e.g. bplZZ is circle30bplZZ)
+# With addition of new variables as replacements for old
+#  hard-coded paths, display lines will be less than 80 columns
+#  thus less clutter on the screen during the make
+
+LCCDIR=c:\lccpub
+DISTDIR=c:\circle
+CFLAGS=-c -I$(LCCDIR)\include -DLCC_WIN32
+CC=lcc
+OBJS=\
+	weather.obj \
+	utils.obj \
+	spells.obj \
+	spell_parser.obj \
+	spec_procs.obj \
+	spec_assign.obj \
+	shop.obj \
+	random.obj \
+	players.obj \
+	olc.obj \
+	objsave.obj \
+	modify.obj \
+	mobact.obj \
+	mail.obj \
+	magic.obj \
+	limits.obj \
+	interpreter.obj \
+	house.obj \
+	handler.obj \
+	graph.obj \
+	fight.obj \
+	db.obj \
+	constants.obj \
+	config.obj \
+	comm.obj \
+	class.obj \
+	castle.obj \
+	boards.obj \
+	ban.obj \
+	act.wizard.obj \
+	act.social.obj \
+	act.other.obj \
+	act.offensive.obj \
+	act.movement.obj \
+	act.item.obj \
+	act.informative.obj \
+	act.comm.obj \
+	alias.obj
+
+LIBS=$(LCCDIR)\lib\wsock32.lib
+
+circle.exe:	$(OBJS)
+        lcclnk  -subsystem console -o $(DISTDIR)\bin\circle.exe $(OBJS) $(LIBS)
+
+# Build WEATHER.C
+WEATHER_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\db.h\
+
+weather.obj: $(WEATHER_C) $(DISTDIR)\src\weather.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\weather.c
+
+# Build UTILS.C
+UTILS_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\screen.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\handler.h\
+
+utils.obj: $(UTILS_C) $(DISTDIR)\src\utils.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\utils.c
+
+# Build SPELLS.C
+SPELLS_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\constants.h\
+
+spells.obj: $(SPELLS_C) $(DISTDIR)\src\spells.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\spells.c
+
+# Build SPELL_PARSER.C
+SPELL_PARSER_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\db.h\
+
+spell_parser.obj: $(SPELL_PARSER_C) $(DISTDIR)\src\spell_parser.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\spell_parser.c
+
+# Build SPEC_PROCS.C
+SPEC_PROCS_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+
+spec_procs.obj: $(SPEC_PROCS_C) $(DISTDIR)\src\spec_procs.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\spec_procs.c
+
+# Build SPEC_ASSIGN.C
+SPEC_ASSIGN_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\utils.h\
+
+spec_assign.obj: $(SPEC_ASSIGN_C) $(DISTDIR)\src\spec_assign.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\spec_assign.c
+
+# Build SHOP.C
+SHOP_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\shop.h\
+
+shop.obj: $(SHOP_C) $(DISTDIR)\src\shop.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\shop.c
+
+# Build RANDOM.C
+RANDOM_C=\
+
+random.obj: $(RANDOM_C) $(DISTDIR)\src\random.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\random.c
+
+# Build PLAYERS.C
+PLAYERS_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\pfdefaults.h\
+
+players.o:  $(PLAYERS_C) $(DISTDIR)\src\players.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\players.c
+
+# Build OLC.C
+OLC_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\olc.h\
+
+olc.obj: $(OLC_C) $(DISTDIR)\src\olc.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\olc.c
+
+# Build OBJSAVE.C
+OBJSAVE_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\spells.h\
+
+objsave.obj: $(OBJSAVE_C) $(DISTDIR)\src\objsave.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\objsave.c
+
+# Build MODIFY.C
+MODIFY_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\mail.h\
+    $(DISTDIR)\src\boards.h\
+
+modify.obj: $(MODIFY_C) $(DISTDIR)\src\modify.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\modify.c
+
+# Build MOBACT.C
+MOBACT_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\spells.h\
+
+mobact.obj: $(MOBACT_C) $(DISTDIR)\src\mobact.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\mobact.c
+
+# Build MAIL.C
+MAIL_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\mail.h\
+
+mail.obj: $(MAIL_C) $(DISTDIR)\src\mail.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\mail.c
+
+# Build MAGIC.C
+MAGIC_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+
+magic.obj: $(MAGIC_C) $(DISTDIR)\src\magic.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\magic.c
+
+# Build LIMITS.C
+LIMITS_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\handler.h\
+
+limits.obj: $(LIMITS_C) $(DISTDIR)\src\limits.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\limits.c
+
+# Build INTERPRETER.C
+INTERPRETER_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\mail.h\
+    $(DISTDIR)\src\screen.h\
+
+interpreter.obj: $(INTERPRETER_C) $(DISTDIR)\src\interpreter.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\interpreter.c
+
+# Build HOUSE.C
+HOUSE_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\house.h\
+    $(DISTDIR)\src\constants.h\
+
+house.obj: $(HOUSE_C) $(DISTDIR)\src\house.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\house.c
+
+# Build HANDLER.C
+HANDLER_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\spells.h\
+
+handler.obj: $(HANDLER_C) $(DISTDIR)\src\handler.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\handler.c
+
+# Build GRAPH.C
+GRAPH_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+
+graph.obj: $(GRAPH_C) $(DISTDIR)\src\graph.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\graph.c
+
+# Build FIGHT.C
+FIGHT_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\screen.h\
+
+fight.obj: $(FIGHT_C) $(DISTDIR)\src\fight.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\fight.c
+
+# Build DB.C
+DB_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\mail.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\house.h\
+
+db.obj: $(DB_C) $(DISTDIR)\src\db.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\db.c
+
+# Build CONSTANTS.C
+CONSTANTS_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+
+constants.obj: $(CONSTANTS_C) $(DISTDIR)\src\constants.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\constants.c
+
+# Build CONFIG.C
+CONFIG_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+
+config.obj: $(CONFIG_C) $(DISTDIR)\src\config.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\config.c
+
+# Build COMM.C
+COMM_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\house.h\
+    $(DISTDIR)\src\telnet.h\
+
+comm.obj: $(COMM_C) $(DISTDIR)\src\comm.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\comm.c
+
+# Build CLASS.C
+CLASS_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\interpreter.h\
+
+class.obj: $(CLASS_C) $(DISTDIR)\src\class.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\class.c
+
+# Build CASTLE.C
+CASTLE_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+
+castle.obj: $(CASTLE_C) $(DISTDIR)\src\castle.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\castle.c
+
+# Build BOARDS.C
+BOARDS_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\boards.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+
+boards.obj: $(BOARDS_C) $(DISTDIR)\src\boards.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\boards.c
+
+# Build BAN.C
+BAN_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+
+ban.obj: $(BAN_C) $(DISTDIR)\src\ban.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\ban.c
+
+# Build ACT.WIZARD.C
+ACT_WIZARD_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\house.h\
+    $(DISTDIR)\src\screen.h\
+    $(DISTDIR)\src\constants.h\
+
+act.wizard.obj: $(ACT_WIZARD_C) $(DISTDIR)\src\act.wizard.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\act.wizard.c
+
+# Build ACT.SOCIAL.C
+ACT_SOCIAL_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+
+act.social.obj: $(ACT_SOCIAL_C) $(DISTDIR)\src\act.social.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\act.social.c
+
+# Build ACT.OTHER.C
+ACT_OTHER_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\screen.h\
+    $(DISTDIR)\src\house.h\
+
+act.other.obj: $(ACT_OTHER_C) $(DISTDIR)\src\act.other.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\act.other.c
+
+# Build ACT.OFFENSIVE.C
+ACT_OFFENSIVE_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+
+act.offensive.obj: $(ACT_OFFENSIVE_C) $(DISTDIR)\src\act.offensive.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\act.offensive.c
+
+# Build ACT.MOVEMENT.C
+ACT_MOVEMENT_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\house.h\
+    $(DISTDIR)\src\constants.h\
+
+act.movement.obj: $(ACT_MOVEMENT_C) $(DISTDIR)\src\act.movement.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\act.movement.c
+
+# Build ACT.ITEM.C
+ACT_ITEM_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+
+act.item.obj: $(ACT_ITEM_C) $(DISTDIR)\src\act.item.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\act.item.c
+
+# Build ACT.INFORMATIVE.C
+ACT_INFORMATIVE_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\spells.h\
+    $(DISTDIR)\src\screen.h\
+    $(DISTDIR)\src\constants.h\
+
+act.informative.obj: $(ACT_INFORMATIVE_C)
+$(DISTDIR)\src\act.informative.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\act.informative.c
+
+# Build ACT.COMM.C
+ACT_COMM_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\screen.h\
+
+act.comm.obj: $(ACT_COMM_C) $(DISTDIR)\src\act.comm.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\act.comm.c
+
+# Build ALIAS.C
+ALIAS_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\db.h\
+
+alias.obj: $(ALIAS_C) $(DISTDIR)\src\alias.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\alias.c
+

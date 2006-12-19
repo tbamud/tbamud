@@ -1,0 +1,68 @@
+CircleMUD v3.0 Shop File~
+#634~
+635
+636
+637
+638
+639
+640
+641
+-1
+1.25
+0.75
+-1
+%s Sorry, I don't serve that.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s This is not a homeless shelter, you've got to pay.~
+%s Let me see, with my 25 percent tip, that comes to %d coins please.~
+%s I'll give you %d coins for that.~
+0
+4
+634
+0
+634
+-1
+7
+22
+0
+0
+#635~
+600
+602
+617
+634
+-1
+2.00
+0.20
+1
+4
+5
+8
+9
+10
+11
+15
+19
+17
+21
+-1
+%s oh you know what would be a little better?~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s This is not a homeless shelter, you've got to pay.~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+4
+635
+0
+635
+-1
+7
+22
+0
+0
+$~

@@ -1,0 +1,41 @@
+CircleMUD v3.0 Shop File~
+#23900~
+23902
+23900
+23901
+23903
+23904
+23910
+23911
+23912
+23913
+-1
+1.50
+0.60
+5
+9
+15
+19
+17
+11
+3
+4
+-1
+%s I can't find any of that, perhaps you would want something else?~
+%s You don't have one of them, wanna buy one?~
+%s I'm sorry but I don't buy that, no shelf space.~
+%s I'm sorry but I can't afford that, business has been really bad.~
+%s You are too poor, would you like some of my money?~
+%s That'll be %d coins, would you like me to wrap that up for you?~
+%s I'll give you %d coins for that and one of my best smiles.~
+0
+4
+23918
+0
+23900
+-1
+0
+23
+0
+0
+$~

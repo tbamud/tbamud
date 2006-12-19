@@ -1,0 +1,497 @@
+CircleMUD v3.0 Shop File~
+#25700~
+25750
+25752
+25753
+25757
+-1
+1.15
+0.15
+2
+3
+4
+-1
+%s Sorry, but like, I haven't got exactly that item.~
+%s Maybe if you had one of those...~
+%s I don't get into that funky stuff, man.~
+%s That is too expensive for me!~
+%s You don't got the green!~
+%s That'll be %d coins, please.~
+%s You'll get %d coins for it!~
+1
+6
+25700
+0
+25735
+-1
+0
+28
+0
+0
+#25702~
+25722
+25751
+25752
+25790
+-1
+1.50
+0.40
+10
+2scroll
+-1
+%s Haven't got that on storage - try list!~
+%s You don't seem to have that.~
+%s I don't buy THAT... Try another shop.~
+%s I can't afford such a strong potion.~
+%s You can't afford it!~
+%s That'll be %d coins, please.~
+%s You'll get %d coins for it!~
+1
+6
+25724
+0
+25717
+-1
+0
+28
+0
+0
+#25703~
+25734
+25736
+-1
+1.30
+0.40
+9
+-1
+%s I haven't got that kind of boots!~
+%s You don't carry those boots!~
+%s I only buy boots.~
+%s I can't afford such a great pair of boots!~
+%s sorry, but NO CREDIT!~
+%s That costs just %d coins.~
+%s Here, you can have %d coins for that.~
+1
+6
+25707
+0
+25733
+-1
+0
+28
+0
+0
+#25704~
+25760
+25761
+25762
+25763
+-1
+2.00
+0.50
+22
+-1
+%s Haven't got that on storage - try list!~
+%s You don't seem to have that.~
+%s I only buy boats.. Go away!~
+%s That is too expensive for me - Try a wizard!~
+%s You can't afford it!~
+%s That'll be %d coins, please.~
+%s You'll get %d coins for it!~
+1
+6
+25706
+0
+25710
+-1
+0
+28
+0
+0
+#25705~
+25704
+25764
+-1
+1.20
+0.90
+17
+-1
+%s Sorry pal, I have not got that kind of drink.~
+%s Okay, but let me see it first.~
+%s I only buy drinks.~
+%s I can't afford such a drink.~
+%s This drink is too expensive for you.~
+%s Here is your drink, I'll take %d gold coins.~
+%s What a fine deal, you get %d gold coins.~
+1
+6
+25746
+0
+25789
+-1
+0
+28
+0
+0
+#25706~
+25765
+25779
+-1
+2.00
+0.80
+17
+-1
+%s Sorry, that isn't on my list of things I can sell.~
+%s Sorry, I don't buy from outsiders.~
+%s Sorry, I don't buy from outsiders.~
+%s Sorry, I don't buy from outsiders.~
+%s Sorry, but here, no money means no goods!~
+%s That will be %d coins, please.  Thank you.~
+%s Here, you can have %d coins for that.~
+1
+6
+25709
+0
+25709
+-1
+0
+28
+0
+0
+#25707~
+25702
+25703
+25712
+25713
+-1
+2.00
+0.50
+-1
+%s No such - try list!~
+%s No buying, buddy.~
+%s No buying, buddy.~
+%s No buying, buddy.~
+%s No flow!  Hit the road!~
+%s That'll be %d coins, buddy.~
+%s Here, you can have %d coins for that.~
+1
+6
+25740
+0
+25732
+-1
+0
+28
+0
+0
+#25708~
+25740
+25741
+25742
+25743
+25744
+-1
+1.50
+0.50
+9
+-1
+%s Sorry, I don't have that -- try list!~
+%s Sorry, I don't buy armor from outsiders.~
+%s Sorry, I don't buy armor from outsiders.~
+%s Sorry, I don't buy armor from outsiders.~
+%s Sorry, but here, no money means no armor!~
+%s That will be %d coins, please.  Thank you.~
+%s Here, you can have %d coins for that.~
+1
+6
+25704
+0
+25700
+-1
+0
+28
+0
+0
+#25709~
+25713
+25714
+-1
+1.10
+0.90
+-1
+%s It's very noisy in here, what did you say you wanted to buy?~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s Are you drunk or what?? - NO CREDIT!~
+%s That'll be - say %d coins.~
+%s Here, you can have %d coins for that.~
+1
+6
+25742
+56
+25724
+-1
+0
+28
+0
+0
+#25710~
+25730
+25731
+25732
+25733
+-1
+1.50
+0.50
+1
+9
+15
+-1
+%s Haven't got that on storage - try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s If you have no money, you'll have to go!~
+%s That'll be %d coins.~
+%s Here, you can have %d coins for that.~
+1
+6
+25702
+0
+25762
+-1
+0
+28
+0
+0
+#25711~
+25720
+25721
+25723
+25724
+25725
+-1
+1.10
+0.50
+5
+-1
+%s Haven't got that on storage - try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s If you have no money, you'll have to go!~
+%s That'll be %d coins.~
+%s Here, you can have %d coins for that.~
+1
+6
+25703
+0
+25763
+-1
+0
+28
+0
+0
+#25712~
+25701
+25738
+25739
+-1
+1.70
+0.50
+-1
+%s Haven't got that on storage - try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s If you have no money, you'll have to go!~
+%s That'll be %d coins.~
+%s Here, you can have %d coins for that.~
+1
+6
+25743
+0
+25731
+25715
+-1
+0
+28
+0
+0
+#25713~
+25700
+25737
+-1
+1.50
+0.80
+-1
+%s Haven't got that on storage - try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s If you have no money, you'll have to go!~
+%s That'll be %d coins.~
+%s Here, you can have %d coins for that.~
+1
+6
+25744
+88
+25719
+-1
+0
+28
+0
+0
+#25714~
+25709
+25710
+25711
+-1
+2.00
+0.50
+19
+-1
+%s What did you say you wanted to buy?~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s Oh, bugger off, NO CREDIT!~
+%s That'll be - say %d coins.~
+%s Here, you can have %d coins for that.~
+1
+6
+25701
+0
+25716
+-1
+0
+28
+0
+0
+#25715~
+25766
+25767
+25768
+25769
+-1
+1.50
+0.50
+9
+-1
+%s Thorry, I don't thell those.~
+%s Sorry, Ducky, I don't buy those.!~
+%s Can't help, you there, love.~
+%s Can't afford to buy that, sweety.~
+%s You can't afford that, but maybe for a favor...~
+%s Thank you SO much, lovey, DO come again.~
+%s Come back anytime!~
+1
+6
+25716
+0
+25786
+-1
+0
+28
+0
+0
+#25716~
+25770
+25771
+-1
+1.50
+0.50
+9
+-1
+%s Nope.~
+%s Nope.~
+%s Nope.~
+%s Nope.~
+%s Nope.~
+%s Nope.~
+%s Nope.~
+1
+6
+25729
+84
+25767
+-1
+0
+28
+0
+0
+#25717~
+25772
+25773
+25774
+-1
+1.50
+0.50
+15
+-1
+%s Sorry, can't.~
+%s Sorry, can't.~
+%s I only offer carts and the like.~
+%s I can't afford that.~
+%s You can't afford that.~
+%s Thank you.~
+%s Thanks.~
+1
+6
+25790
+0
+25753
+-1
+0
+28
+0
+0
+#25720~
+-1
+1.50
+0.50
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+2
+25713
+88
+25720
+-1
+0
+28
+0
+0
+#25734~
+25787
+25788
+25789
+-1
+1.20
+0.80
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+4
+25799
+0
+25734
+-1
+0
+28
+0
+0
+$~

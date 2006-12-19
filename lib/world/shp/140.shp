@@ -1,0 +1,203 @@
+CircleMUD v3.0 Shop File~
+#14000~
+14022
+14023
+-1
+1.20
+0.80
+5
+6
+7
+-1
+%s Go somewhere else ya bum, I aint got tat.~
+%s Get a brain, you don't got tat.~
+%s Whata ya tinking? I don't want dat.~
+%s I'm broke, try later.~
+%s What'a ya thinking, I can gives the stuff away???~
+%s Tanks, anything else I can getcha?~
+%s Not bad I can use dis.~
+0
+7
+14014
+8
+14079
+-1
+0
+24
+0
+0
+#14001~
+14032
+14033
+14034
+14035
+-1
+1.20
+0.85
+17
+19
+-1
+%s Go somewhere else will ya? We only got food and drink here.~
+%s I'm only buying thinks you got, not stuff you aint.~
+%s Wada ya tink I am, a general store? I don't want tat.~
+%s Shoot wish I had that kind of doe.~
+%s I aint given dis stuff away, go beg'n somewhere else.~
+%s Tanks I'm gona hit ya for %d we don't have a tab here.~
+%s I'll give ya %d for it, take it or leave it.~
+0
+6
+14016
+0
+14080
+-1
+1
+24
+0
+0
+#14002~
+14024
+14025
+14026
+14027
+14028
+14029
+14030
+14031
+14031
+-1
+1.20
+0.90
+9
+-1
+%s You see that here? Go somewhere else.~
+%s You blind? I don't by things in your imagination.~
+%s Armor, dats it. Anything else you go out the door.~
+%s Too rich for my blood.~
+%s Sure how bout I give you  the shop too. Go get a job.~
+%s Thanks. Anything else I can get ya?~
+%s %d up front. Take it or leave it.~
+0
+6
+14015
+0
+14081
+-1
+1
+24
+0
+0
+#14003~
+14020
+14021
+-1
+1.50
+0.80
+8
+18
+20
+1
+15
+-1
+%s If you run across one let me no, but I don't have it right now.~
+%s I don't by dreams.~
+%s Maybe in the future, but not into that right now.~
+%s Kind of strapped right now, try later.~
+%s Prices aren't up for discussion.~
+%s Here ya go.~
+%s Hmm...Here's %d for it.~
+0
+6
+14013
+32
+14082
+-1
+1
+24
+0
+0
+#14004~
+14036
+14037
+14038
+14039
+-1
+2.00
+0.50
+2
+3
+4
+10
+-1
+%s I Do not have that My Child. Pray and It will come.~
+%s I fear you do not carry such an item with you..you must have more faith...then will the gods reward you.~
+%s I do not trade in mortal goods...I am sorry my child.~
+%s My vows do not permit me to carry such wealth...wealth is for the sinfull.~
+%s You must donate more than that to gain such a blessing.~
+%s Take this and live a blessed life my child.~
+%s For such an object I can give you %d.~
+0
+6
+14017
+32
+14083
+-1
+1
+24
+0
+0
+#14005~
+14016
+14017
+-1
+1.20
+0.80
+2
+3
+4
+10
+-1
+%s Don't have that in my spell book..yet.~
+%s Got to see it before I'll buy it.~
+%s Got to be magic or I don't buy.~
+%s Can't aford that, us wizards aren't rich.~
+%s No credit!~
+%s %d up front...no financing.~
+%s I need that here's %d~
+0
+6
+14011
+0
+14084
+-1
+1
+24
+0
+0
+#14006~
+14018
+14019
+-1
+2.00
+0.50
+10
+17
+23
+-1
+%s Sorry, I sell water, only water.~
+%s You may think you have that, but you don't.~
+%s I only buy liquid, that's it.~
+%s Water's down lately, can't buy that much..sorry.~
+%s Sorry, I need gold not dreams, and you only have dreams.~
+%s Enjoy. Did you know water is one of the 4 elements?~
+%s Here's %d. Nice doing business with you.~
+0
+6
+14012
+0
+14085
+-1
+1
+24
+0
+0
+$~

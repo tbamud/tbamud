@@ -1,0 +1,598 @@
+#0
+An undefined string.~
+an undefined string.~
+An undefined string.~
+An undefined string.~
+d 0 0 E
+0 20 0 0d0+0 0d0+0
+0 0
+0 0 0
+Str: 3
+Dex: 3
+Int: 3
+Wis: 3
+E
+#1
+Puff dragon fractal~
+Puff~
+Puff the Fractal Dragon is here, contemplating a higher reality.
+~
+   Is that some type of differential curve involving some strange, and unknown
+calculus that she seems to be made out of?  
+~
+bdnopqr dkp 1000 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 2
+BareHandAttack: 12
+E
+T 95
+#2
+cleric healer~
+the healer~
+A healer in a white luminescent robe is tending to the wounded.
+~
+   Nothing.  This beautiful woman at one time used to piously offer her healing
+skills to any in need.  But times are rough and now she can only afford to help
+those that are just starting their adventures.  Type 'heal' to see what services
+she offers.  
+~
+bdnopr 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 2
+E
+#3
+questmaster~
+the questmaster~
+The questmaster is waiting for a brave adventurer to step forth.
+~
+   Many adventurers come here to seek glory by attempting to solve the quests
+given to them by this old man.  The quests are not easy, sometimes nearly
+impossible.  But they will always be a challenge.  The questmaster looks at you
+and says, 'help autoquest should show you all you need to know'.  
+~
+bdnopr 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 138
+T 139
+T 143
+#4
+healer~
+the healer~
+A healer in a white luminescent robe is tending to the wounded.
+~
+   This beautiful woman at one time used to piously offer her healing skills to
+any in need.  But times are rough and now she can only afford to help those that
+are just starting their adventures.  Type 'heal' to see what services she
+offers.  Type 'heal <spell>' to buy one of her spells.  
+~
+bdnopqr 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 2
+E
+#5
+jack russell~
+Jack Russell~
+Jack Russell hunts with his dogs.
+~
+   The Jack Russell takes its name from the Reverend John Russell who bred one
+of the finest strains of terriers for working fox in Devonshire, England in the
+mid-to-late 1800's.  Rev.  Russell (1795-1883), apart from his church
+activities, had a passion for fox hunting and the breeding of fox hunting dogs
+he is also said to be a rather flamboyant character, probably accounting for his
+strain of terrier's notability and the name of our terrier today.  
+~
+dg 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 1
+E
+#6
+john russell~
+John Russell~
+John Russell seems to have lost his dog.
+~
+   John Russell maintained his strain of fox terriers bred strictly for working,
+and the terrier we know of today as the Jack Russell is much the same as the
+pre-1900's fox terrier.  The Jack Russell has survived the changes that have
+occured in the modern-day Fox Terrier because it has been preserved by working
+terrier enthusiasts in England for more than 100 years.  
+~
+bd 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 1
+E
+#7
+jack russell terrier~
+the Jack Russell terrier~
+A Jack Russell terrier is following a scent.
+~
+   Jack Russell Terriers are a type, or strain, of working terrier they are not
+purebred in the sense that they have a broad genetic make-up, a broad standard,
+and do not breed true to type.  You will see different "types" of JRTs, from
+long-bodied, short, crooked legs to a more proportioned length of body and
+longer legs.  This is a result of having been bred strictly for hunting since
+their beginning in the early 1800's, and their preservation as a working breed
+since.  
+~
+bd 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+#8
+wishbone~
+Wishbone~
+Wishbone begins yet another adventure.
+~
+   Wishbone is a Jack Russell Terrier played by a dog named Soccer.  This
+adorable little actor has his own series on PBS and gets credit for introducing
+children to over 40 stories from classic literature.  Wishbone became so popular
+after his series started in 1994 that he now has his own line of children's
+books and plush toys.  
+~
+bd 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 1
+E
+#9
+sick looking dog~
+a sick looking dog~
+A sick looking dog gags on something in its mouth.
+~
+   The dog is unkept and unhealthy.  It does not look like it has been eating
+very well.  
+~
+bd 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 1
+E
+T 95
+#10
+clone~
+the clone~
+A boring old clone is standing here.
+~
+   This clone is nothing to look at.  No, really, it is quite boring.  
+~
+bdnopr 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+E
+#11
+zombie undead humanoid~
+the zombie~
+A strange humanoid is here.  How odd, its flesh seems to be falling off!
+~
+   This strange humanoid is moving rather slowly, and appears to be a corpse, a
+walking corpse!  It must be a zombie or something of the sort.  
+~
+bdnopr 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+BareHandAttack: 7
+E
+#12
+moose eddie~
+Moose, the Jack Russel Terrier~
+Moose is lounging about enjoying his fame.
+~
+   Moose is the name of the cute little Jack Russell Terrier who became famous
+when he landed the role of Eddie in the TV show Frasier.  Moose is also a
+leading star in the movie My Dog Skip and is known for his performances
+throughout the U.  S.  Currently Moose lives in Los Angeles with two of his
+sons, Enzo and Moosie.  
+~
+bd 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 1
+E
+#13
+kind soul~
+a kind soul~
+A very kind and caring soul is here looking out for those who need it.
+~
+   She immediately reminds you of your mother.  Constantly worrying about
+everyone and everything.  She is always around to help out those who have hit
+hard times and need a little boost.  
+~
+bdnopqr 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+E
+T 94
+#14
+tutorial questmaster~
+the tutorial questmaster~
+A questmaster is waiting for a brave adventurer to step forth.
+~
+   Many adventurers come here to seek glory by attempting to solve the quests
+given to them by this old woman. The quests are not easy, sometimes nearly
+impossible. But they will always be a challenge. The questmaster looks at you
+and says, 'are you up for a challenge? '
+~
+bdnopqr 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+E
+T 3
+T 1
+#15
+quest mobile~
+a quest mob~
+A quest mob wanders around aimlessly waiting to be slaughtered.
+~
+   This mobiles sole purpose is to be hunted down and killed.  
+~
+bd 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+E
+T 144
+#16
+ogre questogre~
+a quest ogre~
+A huge quest ogre has a pair of wings attached to its back as if he could fly.
+~
+   Though large and intimidating this ogre does not seem to realize that he
+would strike fear into the hearts of most mortals. Instead everything seems to
+scare it to death. It is as if he has seen the future and he knows he is going
+to die. A crude pair of small wings are attached to its back and it seems to be
+trying to fly away.
+~
+bdnopqr 0 0 E
+1 20 10 0d0+10 0d0+0
+10 100
+8 8 1
+E
+T 2
+#17
+Socrates~
+Socrates~
+Socrates patiently waits to help new builders.
+~
+   Socrates (469-399BC), Greek philosopher, who profoundly affected Western
+philosophy through his influence on Plato. Born in Athens, the son of
+Sophroniscus, a sculptor, and Phaenarete, a midwife, he received the regular
+elementary education in literature.
+~
+bdnopqr dfk 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 196
+T 194
+T 183
+#18
+Friedrich Nietzsche~
+Friedrich Nietzsche~
+Friedrich Nietzsche searches for those wishing to become Overmen.
+~
+   Nietzsche, Friedrich Wilhelm (1844-1900), German philosopher, poet, and
+classical philologist, who was one of the most provocative and influential
+thinkers of the 19th century. One of Nietzsche's fundamental contentions was
+that traditional values had lost their power in the lives of individuals. 
+Nietzsche maintained that all human behavior is motivated by the will to power.
+~
+bdnopqr dfk 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 199
+#19
+aerial servant shape~
+the aerial servant~
+An amorphous shape is floating in the air.
+~
+   As you stare at this amorphous shape, it begins to appear to take the shape
+of a cloud-like humanoid.  
+~
+bdnopr 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+E
+#20
+elemental~
+the elemental~
+An elemental is standing patiently here.
+~
+   This creature is the essence of the elements, and appears to be waiting
+patiently for something to occur.  
+~
+bdnopr 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+E
+#21
+Plato~
+Plato~
+Plato offers advice to any who are in need.
+~
+   Plato (circa 428-347 BC), Greek philosopher, one of the most creative and
+influential thinkers in Western philosophy. 
+~
+bdnopqr dfk 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 198
+T 184
+#22
+aristotle~
+Aristotle~
+Aristotle wanders the hallways constantly in search of more knowledge.
+~
+   Aristotle (384-322 BC), Greek philosopher and scientist, who shares with
+Plato and Socrates the distinction of being the most famous of ancient
+philosophers. 
+~
+bdnopqr dfk 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 197
+T 185
+#23
+confucius~
+Confucius~
+Confucius is busy following the way.
+~
+   Confucianism, major system of thought in China, developed from the teachings
+of Confucius and his disciples, and concerned with the principles of good
+conduct, practical wisdom, and proper social relationships. Confucianism has
+influenced the Chinese attitude toward life, set the patterns of living and
+standards of social value, and provided the background for Chinese political
+theories and institutions. 
+~
+bdnopqr dfk 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 186
+#24
+gateguard guard~
+the gateguard~
+The gateguard watches the gate carefully swinging the key around on its chain.
+~
+   He stands his watch carefully eyeing anyone who approaches. Disdain for the
+local government and the miserable wages has corrupted most of the gateguards.
+A simple bribe of about 10 gold is all it takes to get past them.
+~
+bdnopqr 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 4
+T 5
+T 7
+T 8
+#25
+variable questmaster master~
+the variable questmaster~
+The variable questmaster is waiting to set you.
+~
+   This questmaster will save a variable to your player file to remember wether
+or not you have done his quest. This way you can only do this quest once. 
+~
+bdnopqr 0 0 E
+0 20 10 1d1+0 1d1+0
+0 0
+8 8 1
+E
+T 192
+T 191
+T 190
+#26
+protector magic eight ball~
+the protector of the magic eight ball~
+The protector of the magic eight balls ensures everyone gets an eight ball before they leave.
+~
+   This strange humanoid lacks any distinguishing features. It is dressed in a
+white robe cinched about the waist with a white rope. It seems to have a
+strange power about it. 
+~
+bdnopqr 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 0
+E
+T 188
+#27
+man james bond stockdale admiral~
+James Stockdale~
+A man beaten to the brink of his life stares up at you with powerful eyes.
+~
+   James Stockdale was shotdown by anti-aircraft fire during Vietnam. He was
+held as a POW for seven years. He spent over half of this time in solitary
+confinement in leg irons. Even being incapacitated he was still able to lead
+the POW underground resistance successfully. For this he was routinely tortured
+and beaten resulting in permament disablement from a repeatedly broken leg,
+broken back, and shoulders being wrenched from their sockets. When his captors
+attempted to use him as televised propaganda he slit his scalp with a razor. 
+When they covered the cut with a hat he beat himself with a stool until his face
+was swollen beyond recognition. As a final attempt he slit his wrists rather
+than allow himself to be used or let down his fellow POW's. His captors found
+him unconscious and near death. The torture stopped after that and they no
+longer attempted to use him. He received the Medal of Honor for his actions.
+~
+bd 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 187
+#28
+carl von clausewitz~
+Carl Von Clausewitz~
+Carl Von Clausewitz is hunkered down in a corner of the cell plotting an escape plan.
+~
+   Carl von Clausewitz was born in Burg bei Magdeburg, Prussia in 1780. 
+Clausewitz's father was an officer in the Prussian Army Carl entered the
+Prussian military service at the age of twelve years, eventually attaining the
+rank of Major General. He is most famous for his military treatise Vom Kriege,
+translated into English as On War.
+~
+bd 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 182
+#29
+epictetus crippled man~
+Epictetus~
+A crippled man seems content with his life and abysmal surroundings.
+~
+   Epictetus spent his youth as a slave in Rome to Epaphroditos, a very wealthy
+freedman of Nero. Even as a slave, Epictetus used his time productively,
+studying Stoic Philosophy under Musonius Rufus. He was eventually freed and
+lived a relatively hard life in ill health in Rome, during which time he became
+a cripple due to a bad knee. He was exiled along with other philosophers by the
+emperor Domitian sometime between 89 and 95.
+~
+bd 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 181
+#30
+spy underground resistance~
+the spy for the underground~
+A spy from the underground resistance is discreetly looking for some new recruits.
+~
+   The underground resistance has been blamed for most of the crime in the city
+and it has been rumoured that many new recruits often end up missing. The few
+that do manage to come back are often damaged both physically and mentally.
+~
+d 0 0 E
+6 18 6 1d1+60 1d2+1
+60 3600
+8 8 2
+E
+T 174
+#31
+prison commissar~
+the Commissar~
+The prison commissar walks with his back straight and his nose held high.
+~
+   The Commissar is the highest ranking official in the prison and is
+responsible for all interrogation and the propaganda it produces.
+~
+bd 0 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+E
+T 173
+#32
+hired muscle~
+the hired muscle~
+Some hired muscle is willing to do just about anything for the right price.
+~
+   This grisly mercenary is covered in scars from numerous fights. His eyes
+show an intense hatred and a blankness of intelligence that seems to convey the
+truth about brawn without brains.
+~
+d 0 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+E
+#33
+Homer Simpson~
+Homer Simpson~
+Homer Simpson is wandering around aimlessly in a dream like state.
+~
+   The infamous cartoon character has come to life and roams this World spouting
+words of wisdom to fellow travellers. He is decked out in his usual blue pants
+and food stained white t-shirt.
+~
+d 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 1
+E
+T 178
+#34
+chuck norris~
+Chuck Norris~
+The one, the only, Chuck Norris dominates the World around him.
+~
+   Chuck is a martial arts star, winning numerous martial arts championships
+including being a six-time undefeated World Professional MiddleWeight Karate
+Champion with a record of 65-5. He is also a renowned teacher in the martial
+arts and if you are lucky he may pass on some of his wisdom to you.
+~
+bdnopqr dkp 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+E
+T 175
+#97
+waitress jenny jennifer woman girl maiden~
+Jenny the waitress~
+The waitress is waiting with a pot of coffee.
+~
+   Although she seems to be a mere maiden, Jennifer is a veteran of the greasy
+spoon, and enjoys serving the builders who come here in their overalls after a
+hard day laying bricks and writing triggers.
+~
+bdno 0 10 E
+10 10 4 10d10+100 10d10+10
+100 10000
+8 8 2
+E
+#98
+travelling saleswoman woman~
+the travelling saleswoman~
+This saleswoman is laden with gagdets and gizmos that are outrageously priced.
+~
+   A combination of good business sense, charming personality, and good looks
+has made her a success at pushing useless products on uneducated buyers.  Only
+on a rare occasion does she sell anything useful.  
+~
+bd 0 0 E
+33 9 -9 6d6+330 5d5+5
+330 108900
+8 8 2
+E
+T 98
+#99
+death grim reaper Hookah~
+Death~
+Death the Grim Reaper is smoking a Hookah.
+~
+   The dark-robed skeletal figure radiates an unendurable coldness. It is
+however, his day off, and he is using a water pipe that he picked up in
+Istanbul. It smells like he is smoking strawberries.
+~
+bdelnopqr dfkp 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+E
+$

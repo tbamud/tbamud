@@ -1,0 +1,230 @@
+#10100
+irrigation ditch~
+an irrigation ditch~
+An irrigation ditch has been dug across the road to water the fields.~
+~
+23 0 0 0
+500 500 0 0
+505 0 0 0
+E
+irrigation ditch~
+   The ditch is full of fresh water from a recent rain.  It crosses under a
+small wooden grating in the road.  The water looks clear and refreshing.    
+~
+#10101
+caravan~
+the caravan~
+A caravan of wagons lay burnt in ruins from a recent raid.~
+~
+15 0 0 0
+0 0 0 0
+0 0 0 0
+E
+caravan~
+   Several different wagons make up the caravan.  They appear to be carrying
+fish and crops between the cities.  Right up until a group of bandits or
+mercenaries ransacked it that is.    
+~
+#10102
+salmon~
+some salmon~
+Several fresh cuts of salmon that have been recently filleted.~
+~
+19 0 a 0
+20 0 0 0
+10 500 0 0
+E
+salmon~
+   These salmon steaks look delicious.  Except for the fact that they are rare.
+  
+~
+#10103
+large assortment crops fish~
+a large assortment of crops and fish~
+A large assortment of crops and fish.~
+~
+19 0 a 0
+24 0 0 0
+50 1000 0 0
+E
+large assortment crops fish~
+   Various crops, such as wheat, corn, and rice, are laid out besides crates of
+fish.  All of it ready for sale.    
+~
+#10104
+shovel maneur~
+a shovel covered in maneur~
+A shovel covered in cow maneur smells here.~
+~
+5 0 an 0
+0 2 8 7
+7 350 35 0
+E
+shovel maneur~
+   The shovel reeks of the barn and cows.  It is covered from end to end with
+maneur.    
+~
+#10105
+worn coveralls~
+some worn coveralls~
+Some coveralls that have been worn and abused were discarded.~
+~
+11 g ak 0
+0 0 0 0
+3 25 3 0
+E
+worn coveralls~
+   A set of farmers coveralls.  They are made of a light but durable cloth.  
+They have been heavily used and look about ready to be junked.    
+~
+A
+17 -3
+#10106
+cow bell~
+a cow bell~
+A cow's bell, made to hang around a cow's neck.~
+~
+9 0 ac 0
+1 0 0 0
+9 180 18 0
+E
+cow bell~
+   The brass bell is affixed to a leather adjustable strap.    
+~
+A
+2 -1
+#10107
+small cow nose ring~
+a nose ring for a cow~
+A small cow's nose ring glistens brightly.~
+~
+9 0 ab 0
+1 0 0 0
+1 20 2 0
+E
+cmall cow's nose ring~
+   The ring is made from solid brass, and is meant to prevent cow's from
+drinking from their mothers teats.    
+~
+A
+6 1
+#10108
+fishing pole~
+a fishing pole~
+A fishing pole without a line, hook, or sinkers.~
+~
+5 0 an 0
+7 2 5 2
+5 25 2 0
+E
+fishing pole~
+   The pole is made from a strange wood, reminding you of bamboo.  It is
+extremely flexible and rugged.    
+~
+#10109
+bandit mask~
+a mask for a bandit~
+A bandit's mask is waiting to be worn.~
+~
+9 0 ae 0
+2 0 0 0
+1 1 0 0
+E
+bandit's mask~
+   The cloth mask has been dyed black with holes cut out for the eyes and
+mouth.  It is very crude and extremely itchy.    
+~
+#10110
+camouflage pants~
+some camouflage pants~
+A set of camouflaged pants, died black and brown blend into their surroundings.~
+~
+9 0 af 0
+3 0 0 0
+3 15 1 0
+E
+camouflage pants~
+   The pants are made from burlap, and have been died a deep black and brown to
+blend in with the surrounding terrain.    
+~
+#10111
+camouflage moccassins~
+some camouflage moccassins~
+A pair of camouflage moccassins blend into their surroundings.~
+~
+9 0 ag 0
+3 0 0 0
+3 15 1 0
+E
+camouflage moccassins~
+   These fur moccassins have been died brown and black to blend in with their
+surroundings.    
+~
+#10112
+camouflage gloves~
+some camouflage gloves~
+A set of camouflaged gloves blend into their surroundings.~
+~
+9 0 ah 0
+3 0 0 0
+3 15 1 0
+E
+camouflage gloves~
+   The gloves are dyed brown, black, and green to help conceal their wearer in
+the wilderness.    
+~
+#10113
+torn sleeves coat~
+some torn sleeves~
+A once fine coat has had it's sleeves torn off and left here.~
+~
+9 0 ai 0
+2 0 0 0
+3 3 0 0
+E
+torn sleeves coat~
+   The coat must have been very fine by the look of these embroidered sleeves,
+but now it's been ravaged and torn.    
+~
+#10114
+local bottle rum local~
+a bottle~
+A bottle of cheap rum.~
+~
+17 0 aj 0
+3 3 8 0
+8 120 12 0
+E
+bottle rum~
+   Many find solace and protection within bottles such as these.  At least
+those that are dim witted and hopeless.    
+~
+#10115
+beltpouch pouch~
+a beltpouch~
+A fancy beltpouch made from a fine leather.~
+~
+9 0 al 0
+3 0 0 0
+3 30 3 0
+E
+beltpouch pouch~
+   The beltpouch is top of the line.  A fine pouch with a brass clasp and
+leather belt combined into one.    
+~
+#10116
+gypsy bracelet~
+a bracelet of the gypsy~
+A gypsy's bracelet sparkles brightly.~
+~
+12 g am 0
+0 0 0 0
+1 130 15 0
+E
+gypsy's bracelet~
+   The bracelet glimmers.  It's fake diamonds and emeralds set into a fake
+gold.  But it looks pretty real from a distance.    
+~
+A
+12 20
+$~

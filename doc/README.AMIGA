@@ -1,0 +1,81 @@
+			Compiling CircleMUD on the Amiga
+              Written by Damian Jurzysta <boing@amigascne.org>
+
+Compiling CircleMUD on the Amiga is basically the same as compiling it using
+UNIX.  What you need is:
+
+* AmiTCP, INet225R2 or any other TCP/IP stack working with ixnet.library.
+
+  You can get the limited unregistered version of Miami from
+  http://www.nordicglobal.com. An old demoversion of AmiTCP 4.0 can be found on
+  AmiNet (ftp://ftp.aminet.org/pub/aminet/comm/tcp/AmiTCP-demo-40.lha).
+
+* An installed and fully functional Geek Gadgets programming environment with
+  Autoconf installed. I've managed to compile and run CircleMUD using the
+  971125, 980523 and 990529 snapshots using GCC 2.7.2 and EGCS 1.1b-1.2.
+  The latest EGCS is always the optimal choice.
+
+  This can be found at ftp://ftp.ninemoons.com/pub/geekgadgets.
+  Installing this is a bit tricky at first, I recommend reading the manual
+  first. It is located at http://www.ninemoons.com/GG/docs/GG_7.html. That
+  way you'll know what archives to download and install.
+
+* 6 MB's of RAM, it might work with less but has not been tested.
+
+  You can find it at the local computerstore. :)
+
+* A 68020 CPU or better is required, I've not been able to compile it without
+  specifying the -m68020 flag, therefor it won't run on a 68000 or 68010 CPU.
+
+  A1500, A2500, A3000, A4000 and A1200 all come with factoryinstalled 68020-040
+  CPU's. If you own an unexpanded Amiga not listed above you'll need to expand
+  it.
+
+Here is how you compile this baby:
+
+1) Open up a shell.
+2) CD to the circle30bplXX directory. (where 'XX' is the current patchlevel)
+3) Type "sh configure".
+4) CD to the src directory.
+5) Edit the Makefile file and add -m68020 to MYFLAGS.
+6) Edit the config.c file and replace "const char *LOGNAME = NULL;" with
+   "const char *LOGNAME = "log/syslog";". If you don't do this, logging
+   won't be working properly.
+7) CD to the util directory and repeat step 5.
+8) Due to a buggy/non-functional/missing implementation of HAS_RLIMIT in
+   ixemul.library/Geek Gadgets you need to edit sysdep.h and remove or comment
+   the definition of HAS_RLIMIT on line 324 saying "#define HAS_RLIMIT".
+9) CD back to the src directory.
+10) Type "make all".
+
+If you want to optimize the binary executable, change MYFLAGS to correspond
+with your current processor (-m68020, -m68030, -m68040 or -m68060) and FPU
+(-m68881). The -m68060 option is not included in GCC 2.7.2, only in EGCS 1.1+.
+Also add -O3 to MYFLAGS to activate maximum optimization and inlining. I'm not
+sure -O3 is working with GCC 2.7.2, if you get compiler errors replace it with
+-O2. Finally, remove -g and -O2 from CFLAGS to remove debugging information and
+to avoid the above -O3 (or -O2 if you're using GCC 2.7.2) to collide with this
+flag.
+
+To run the server all you need to do is follow these five simple steps:
+
+1) Make sure you have a TCP/IP stack running. You don't need to be connected to
+   the net, just leave it running.
+2) Open up a shell.
+3) Since the UNIX autorun kept crashing on my machine, I wrote my own autorun
+   script. If "sh autorun" isn't working for you, type "autorun.amiga".
+4) If it says "file is not executable" when you try to run autorun.amiga, type
+   "protect autorun.amiga +es" and run it again.
+5) To connect to it, use a telnet or MUD client and connect to localhost, port
+   4000.  If you don't have one, use the one supplied with Geek Gadgets:
+   'telnet localhost 4000'. The first person to log in will be made an
+   implementor (level 34) with all powers.
+
+You may want to read the README.UNIX file since most what is written in it also
+complies to the Amiga Geek Gadgets environment.
+
+If someone manages to compile it on a PowerPC processor, please contact me.
+I don't own a PowerUP/G3/G4-board myself so I've not been able to test this.
+
+If you have any questions or can't get it working, feel free to email me at
+boing@amigascne.org.

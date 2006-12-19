@@ -1,0 +1,130 @@
+CircleMUD v3.0 Shop File~
+#29400~
+29405
+29406
+29407
+29408
+-1
+1.10
+0.90
+-1
+%s I haven't made any of those lately, but I'll consider it.~
+%s I don't buy used leather.  Try a pawnshop.~
+%s I don't buy used leather.  Try a pawnshop.~
+%s I don't buy used leather.  Try a pawnshop.~
+%s You can't afford this.  I'm sorry.~
+%s That will cost you %d gold coins.~
+%s I don't buy used leather.  Try a pawnshop.~
+1
+7
+29402
+0
+29441
+-1
+8
+17
+0
+0
+#29401~
+29409
+29410
+29411
+-1
+1.30
+0.70
+8
+-1
+%s I don't have any of those!~
+%s Are you sure you have one of those?~
+%s Yes, but do you have any valuble gems or jewels?~
+%s I'd love to, but tomorrow the rent is due.~
+%s We don't have a layaway plan, sorry.~
+%s That will run %d gold coins.~
+%s How about %d gold coins?~
+0
+7
+29403
+0
+29436
+-1
+8
+17
+8
+17
+#29402~
+29412
+29413
+29414
+-1
+1.10
+0.90
+-1
+%s Whah kind of ammynal iz dat?~
+%s I sells meats.  I no buyz meats.~
+%s I sells meats.  I no buyz meats.~
+%s I sells meats.  I no buyz meats.~
+%s Gold coinz!  I ownly take gold coins!~
+%s That costses you %d golds.~
+%s I sells meats.  I no buyz meats.~
+1
+6
+29404
+0
+29435
+-1
+7
+18
+7
+18
+#29403~
+29415
+29416
+29417
+29418
+-1
+1.20
+0.80
+-1
+%s I don't have that.~
+%s You don't have that.~
+%s I don't buy those.~
+%s I won't buy that.~
+%s You can't buy that.~
+%s That's %d gold.~
+%s Here's %d gold.~
+1
+6
+29409
+0
+29450
+-1
+8
+17
+8
+17
+#29404~
+29419
+29420
+29421
+-1
+1.10
+0.90
+-1
+%s I don't have that on tap, putz!~
+%s I only buy from the distributor, dwick!~
+%s I only buy from the distributor, dwick!~
+%s I only buy from the distributor, dwick!~
+%s Get some cash, you flaming newbie!~
+%s Gimme %d gold first!~
+%s I only buy from the distributor, dwick!~
+1
+6
+29408
+0
+29452
+-1
+1
+24
+0
+0
+$~

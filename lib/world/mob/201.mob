@@ -1,0 +1,145 @@
+#20101
+crab~
+a grumpy-looking crab~
+A very unhappy crab crawls around the area.
+~
+   The crab has a protective shell that serves to shield its soft inner body.  
+When danger approaches, it uses its razor-sharp pincers to defend itself.  
+~
+cdg t 0 E
+10 17 2 2d2+100 1d2+1
+0 10000
+8 8 0
+BareHandAttack: 8
+E
+T 20110
+#20102
+jellyfish fish jelly~
+a pale-looking jellyfish~
+An innocent-looking jellyfish floats here.
+~
+   This jellyfish has no features, except for its tentacles and the rounded top.
+It's white and near translucent, and you can see its insides which looks like
+silverish ribbons.  
+~
+bdfo bkst -200 E
+15 15 1 3d3+150 2d2+2
+0 22500
+8 8 0
+BareHandAttack: 1
+E
+#20103
+seagull bird~
+a hungry seagull~
+A seagull flies here, flapping its wings and soaring in the sky.
+~
+   The seagull has a white body, but the tip of its wings and the tail are
+painted black.  Its beck is yellow, which it uses to break the shells of crabs,
+its main food source.  
+~
+dg gs 0 E
+20 14 -2 4d4+200 3d3+3
+0 40000
+8 8 0
+BareHandAttack: 4
+E
+T 20111
+#20104
+creature siren~
+a stunningly beautiful siren~
+A siren rests here, singing in a soothing voice.
+~
+   The siren has golden-coloured eyes, and her body is lean.  She has a fair
+complexion, and her voluptuous, full lips are the main features of this
+marvelous creature.  
+~
+bdeo dfkmn 0 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 2
+BareHandAttack: 8
+E
+T 20113
+T 20114
+#20105
+woman lady tryny shopkeeper widow~
+Tryny the Widow~
+@W[GREET]@n Tryny the Widow Shopkeeper is here, waiting to sell you things.
+~
+   Tryny has looks depressed and in need of comforting.  Her black hair lined
+with streaks of grey, and her face has numerous wrinkles on it.  
+~
+bd mn 0 E
+10 17 4 2d2+100 1d2+1
+100 0
+8 8 2
+E
+T 20129
+T 20134
+#20106
+an Old Fool~
+an old fool~
+@W[GREET]@n An Old Fool is muttering nonsense here.
+~
+   An old man stands before you, lean and wiry from time.  His skin is wrinkled
+and charred black from the sun, and he is bald, with only a few miserable
+strands of hair left on his head.  
+~
+bdel 0 0 E
+7 18 5 1d1+70 1d2+1
+70 0
+8 8 1
+BareHandAttack: 13
+E
+T 20136
+T 20137
+T 20138
+T 20140
+T 20141
+T 20142
+T 20145
+#20197
+receptionist woman blonde~
+a blonde receptionist~
+An blonde woman in her late 40s is here, waiting to help you.
+~
+   The receptionist wears a smart business suit and holds a suitcase that holds
+plenty of important documents.  To delete/add questflags to unable you to do the
+quest again or enable quest, type @rplease add/delete@n
+~
+bd 0 0 E
+34 9 -10 6d6+10000 5d5+5
+10000 115600
+8 8 2
+E
+T 20188
+#20198
+tourguide guide man~
+a cheerful tour guide~
+A tour guide stands here, ready to assist you.
+~
+   Hair neatly comb, and with a smile plastered on his face, this tour guide
+will give you some stuff to begin your exploration of the Sapphire Islands.  
+~
+bd 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 1
+E
+T 20195
+T 20196
+#20199
+woman chef cook~
+a plump cook~
+A horizontally-challenged cook is here, awaiting your orders.
+~
+   This lady looks plump and is undeniably horizontally challenged.  
+~
+bd 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 2
+E
+T 20199
+T 20198
+$

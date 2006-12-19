@@ -1,0 +1,642 @@
+#11700
+wedding ring~
+a wedding ring~
+A simple ring made out of gold, it looks like a ring one would recieve at a wedding from their spouse.~
+~
+11 q ab 0
+0 0 0 0
+1 1 0 0
+#11701
+sign~
+a sign~
+A sign is posted in the ground~
+Tower #1: Shops and excecutive officing
+~
+16 0 a 0
+0 0 0 0
+50 1 0 0
+#11702
+yellow straightsword~
+@YYellow@n straightsword~
+A @YYellow@n straightsword is lying here.~
+~
+5 a an 0
+2 3 6 3
+6 475 0 15
+E
+yellow straightsword~
+   The long straight blade is stained a bright yellow.  It is well forged and
+the hilt is made of gold.  On the hilt is a symbol that looks like the sun seems
+to make the sword glow.  The blade is sharpened well and made of a sturdy metal.
+While somewhat heavy
+~
+#11703
+yellow field plate~
+@YYellow@n field plate~
+A @YYellow@n field plate is lying here.~
+~
+9 bo ad 0
+10 0 0 0
+9 1 0 15
+E
+yellow field plate~
+   The field plate is stained a bright yellow.  The armor is made of extremely
+sturdy metal and will sustain well against some pretty serious attacks.  The
+armor has a symbol that looks like a sun engraved on the back near the top.  
+~
+#11704
+silver scimitar~
+@DSilver@n scimitar~
+A @DSilver@n scimitar has been left here.~
+~
+5 a an 0
+3 2 9 3
+7 500 0 15
+E
+silver scimitar~
+   The scimitar is well curved and very sharp.  The blade is made of silver and
+shines like the full moon.  The hilt of the sword is also silver and very
+exquisite.  
+~
+#11705
+broiled turkey~
+a Broiled Turkey~
+A Broiled Turkey has been left here.~
+~
+19 0 a 0
+15 0 0 0
+3 1250 0 20
+E
+broiled turkey~
+   This delicious meal was no doubt made by the chefs at The Turkey's Gobble.  
+The famed food looks juicy and tender, cooked to a perfect golden brown on the
+outside and a delicious white on the inside, it can make even the most stubborn
+person's mouth water
+~
+#11706
+silver splint mail~
+a @DSilver@n splint mail~
+A @DSilver@n splint mail has been left here.~
+~
+9 bm ad 0
+8 0 0 0
+10 550 0 15
+E
+silver splint mail~
+   This unique armor has been made from forged scraps of silver, and is
+surprisingly durable.  The inside of the armor is covered in a layer of red felt
+for comfort.  The silver seems to shine more than you would expect it to.  
+~
+#11707
+turkey sandwich~
+a Turkey Sandwich~
+A Turkey Sandwich has been left here.~
+~
+19 0 a 0
+2 0 0 0
+2 30 0 0
+E
+turkey sandwich~
+   A turkey sandwich with a toothpick.  It looks quite tasty.  
+~
+#11708
+wooden cello~
+a wooden cello~
+A wooden cello has been left here.~
+~
+12 q a 0
+0 0 0 0
+8 1 0 0
+T 11705
+E
+wooden cello~
+   The cello is pretty and made of wood.  It is in tune and can be used well
+by masters.  
+~
+#11709
+turkey soup~
+a Turkey Soup~
+A Turkey Soup has been left here.~
+~
+19 0 a 0
+5 0 0 0
+5 100 0 0
+E
+turkey soup~
+   The steaming soup is served in an ivory bowl.  The soup is a tanish color
+with bits of white turkey meat floating in it.  There are also vegetables such
+as celery, tomatoes and carrots.  
+~
+#11710
+turkey surprise~
+a Turkey Surprise~
+A Turkey Surprise has been left here.~
+~
+19 0 a 0
+4 0 0 0
+4 75 0 0
+E
+turkey surprise~
+   Nobody knows what they put in this meal.  Nobody really cares, since it isn't
+that great anyway.  
+~
+#11711
+cranberry juice~
+a Cranberry Juice~
+A Cranberry Juice has been left here.~
+~
+23 0 a 0
+2 2 0 0
+3 60 0 0
+E
+cranberry juice~
+   The dark red juice is served in a tall glass with cranberries at the bottom
+of the juice.  The sweet and tart liquid is a favorite among many kids and
+adults.  
+~
+#11712
+pumpkin ale~
+a Pumpkin Ale~
+A Pumpkin Ale has been left here.~
+~
+23 0 a 0
+21 7 3 0
+10 200 0 0
+E
+pumpkin ale~
+   The orange ale is served in a large glass mug.  It has a thick froth at the
+top and is really bubbly.  On the side of the mug there is 'The Turkey's Gobble'
+written in calligraphy.  
+~
+#11713
+pumpkin pie~
+a Pumpkin Pie~
+A Pumpkin Pie has been left here.~
+~
+19 0 a 0
+8 0 0 0
+9 300 0 0
+E
+pumpkin pie~
+   The pie is baked to perfection and is topped in the center with whip cream.
+It is steaming fresh from the oven and a dark orange-brown color.  
+~
+#11714
+road heaven wine~
+@RRoad@n @Yto@n @CHeaven@n~
+A @RRoad@n @Yto@n @CHeaven@n has been left here.~
+~
+23 0 a 0
+100 10 2 0
+15 750 0 0
+E
+road heaven wine~
+   This dark red wine is called the @RRoad@n @Yto@n @CHeaven@n because it is
+extremely intoxicating but filling.  The bottle that contains it is huge and
+probably will keep you busy for quite some time.  The wine has a smell of a
+mixture of many fruits, though it is difficult to tell which ones were used.  
+~
+#11715
+wine flask~
+a Flask of White Wine~
+A Flask of White Wine has been left here.~
+~
+23 0 a 0
+12 3 2 0
+5 75 0 0
+E
+flask wine~
+   The flask is brown, and not very big.  The wine inside it kind of smells like
+peaches, for some reason.  
+~
+#11716
+estanzia~
+an Estanzia~
+An Estanzia has been left here.~
+~
+23 0 a 0
+15 5 2 0
+10 300 0 0
+E
+estanzia~
+   The wine in the bottle is a nice clear/white color.  The bottle itself is
+green and is wrapped with a large label that says 'Estanzia'.  
+~
+#11717
+glass wine~
+a glass of wine~
+A glass of wine has been left here.~
+~
+23 0 a 0
+8 2 2 0
+5 50 0 0
+E
+glass wine~
+   The glass is made of an intricately cut crystal filled to the top with a
+sweet, red wine.  It tastes like a mixture of grape and raspberry that feels
+warm on the tongue but cold in the hand.  
+~
+#11718
+cellar key~
+the wine cellar key~
+The wine cellar key has been left here.~
+~
+18 q a 0
+0 0 0 0
+1 1 0 0
+E
+key~
+   The key is pink and cut very nicely.  It is hanging off of a chain and it has
+'Wine cellar' engraved on it.  
+~
+#11719
+chalice red something~
+a Chalice of Red Something~
+A Chalice of Red Something has been left here.~
+~
+23 0 a 0
+7 7 13 0
+7 400 0 0
+E
+chalice wine~
+   @WO@n@DM@n@WG@n @WO@n@DM@n@WG@n that isn't @mwine@n it's @rblood!!!!!  @n
+~
+#11720
+defender~
+the @rD@n@me@n@rf@n@me@n@rn@n@md@n@re@n@mr@n~
+The @rD@n@me@n@rf@n@me@n@rn@n@md@n@re@n@mr@n has been left here.~
+~
+5 abdmnoq an 0
+4 7 3 10
+15 2000000 0 20
+E
+defender~
+   The @rD@n@me@n@rf@n@me@n@rn@n@md@n@re@n@mr@n is a valiant sword only usable
+by masters of the world.  The blade is a dull gray and the hilt is made of
+silver with a leather bound handle for a good grip.  Legend goes it was used to
+protect Los Torres from i nvasion of the Valdurain Army.  It is only wieldable
+by the warriors of the land.  
+~
+#11721
+optical blue helm~
+an @DOptical@n @bBlue@n helm~
+An @DOptical@n @bBlue@n helm has been left here.~
+~
+9 0 ae d
+10 0 0 0
+7 2750 0 12
+E
+optical blue helm~
+   Painted blue and black in a very, very thin striped pattern, the helmet makes
+your eyes hurt a bit.  The helm completely covers your head and neck, and it's
+desgin makes it look like a hood.  There is a mask covering the face, with
+eyeholes and holes in front of the mouth and nose for breathing.  The empty
+holes for the eyes seem to have a piercing look to them.  
+~
+#11722
+large boots~
+some Large Boots~
+Some Large Boots have been left here.~
+~
+9 0 afg 0
+10 0 0 0
+10 2500 0 11
+T 11708
+T 11709
+E
+large boots~
+   The boots are large and made of iron.  They are large enough to cover your
+shins as well as your feet.  
+~
+#11723
+titanium gauntlets~
+some Titanium Gauntlets~
+Some Titanium Gauntlets have been left here.~
+~
+9 b ah 0
+7 0 0 0
+5 2200 0 11
+E
+titanium gauntlets~
+   These gauntlets have been forged with pure titanium.  They are sturdy yet
+flexible enough to fit your fingers well.  The metal feels unexpectedly warm as
+it is worn.  The knuckles of the gauntlets have small spikes on them for
+aesthetic purposes.  
+~
+#11724
+pair greaves~
+a pair of greaves~
+A pair of greaves have been left here.~
+~
+9 0 af 0
+6 0 0 0
+10 1500 0 10
+E
+pair greaves~
+   The greaves are made of metal and strap around the user's legs with
+leather-bound buckles.  They are very shiny and look brand new.  
+~
+#11725
+white chainmail~
+a White Chainmail~
+A White Chainmail has been left here.~
+~
+9 0 ad 0
+9 0 0 0
+13 4000 0 0
+E
+white chainmail~
+   A chainmail made entirely of a white painted metal is here.  It has not been
+painted very well, for tiny hatches of gray are still visible.  The chainmail
+feels somewhat heavy and it is longer than a normal chainmail would be.  
+~
+#11726
+red wood bow~
+a bow made of dark, red wood~
+A bow made of dark, red wood has been left here.~
+~
+5 mn ano 0
+3 3 4 1
+10 600 0 14
+E
+bow red wood~
+   This is a bow intricately made of red wood from the Red Forest outside of Los
+Torres.  It has a small jewel placed at the tip of the red wooden parabola.  
+The coarse string of the bow is very stiff and difficult to pull for even the
+strongest of people.  It makes a very quiet and constant 'twang' sound when
+plucked.  
+~
+A
+3 2
+A
+1 1
+#11727
+ousishi katana~
+an Ousishi Katana~
+An Ousishi Katana has been left here.~
+~
+5 p an s
+3 5 4 3
+20 1500 0 13
+E
+ousishi katana~
+   This sword is a new model of the katana.  Unlike most models, it has a
+backward blade and is somewhat heavier.  There is a small hole in the blade
+above the hilt so the blade will make less sound when slashed.  It is also a
+little longer and there is a little bit more curve to the end of the blade than
+a standard katana.  
+~
+A
+2 3
+#11728
+red arrow~
+a red arrow~
+A red arrow has been left here.~
+~
+12 0 a 0
+0 0 0 0
+2 10 0 0
+E
+arrow~
+   The skinny arrow is painted red and has red feathers at the end of it.  It
+pierces the wind when fired and doesn't make more than a really quiet whistle.
+The head of the arrow is made of red painted iron.  
+~
+#11729
+redwood quiver~
+a Redwood Quiver~
+A Redwood Quiver has been left here.~
+~
+15 0 ao 0
+10 0 -1 0
+3 200 0 0
+E
+redwood quiver~
+   Red painted wood signifies this quiver was made by the Red Assassins, an
+infamous group from Los Torres.  It looks very deep and it might be able to hold
+a lot of arrows.  There are metal bindings at the top and the bottom of the
+cylindrical quiver that keep the wood together.  They are fastened with screws
+that are welded into the iron.  
+~
+#11730
+obscenity~
+an @WO@n@Yb@n@Rs@n@Mc@n@Be@n@Cn@n@Gi@n@Kt@n@Wy@n~
+An @WO@n@Yb@n@Rs@n@Mc@n@Be@n@Cn@n@Gi@n@Kt@n@Wy@n has been left here.~
+~
+11 abdq ao h
+0 0 0 0
+2 5 0 20
+A
+1 2
+A
+2 2
+A
+5 2
+#11731
+beam light~
+a beam of light~
+A Beam of Light has been left here.~
+~
+1 a a 0
+0 0 -1 0
+1 500 0 17
+E
+beam light~
+   This is a strange source of light indeed.  It is a beam of eternal light from
+the sun enclosed within a clear and weightless magical case.  It floats with
+it's carrier and clears away any darkness it may see.  
+~
+#11732
+kard~
+a Kard~
+A Kard has been left here.~
+~
+5 0 an 0
+2 3 5 14
+3 350 0 13
+E
+kard~
+   The small and lightweight dagger was made so that nobody would see it when it
+is thrust at its opponent.  The blade reaches over the hilt by about an inch and
+is about 5 inches in length.  
+~
+A
+2 1
+#11733
+red cloth costume~
+a @RRed Cloth Costume@n~
+A @RRed Cloth Costume@n has been left here.~
+~
+11 0 ad 0
+0 0 0 0
+5 475 0 15
+E
+red cloth costume~
+   The costume is made of red cloths woven and tied together in a tight fashion,
+with some flaps at the bottom.  It is apparently designed to be worn around the
+torso, with tiny arm holes and an opening at the top and bottom.  The hems on
+the clothing are gold colored and so are the buttons.  There are long, red
+strings around the costume to fasten it to its wearer.  
+~
+A
+19 2
+A
+5 1
+#11734
+pewter key~
+a pewter key~
+A pewter key has been left here.~
+~
+18 0 a 0
+0 0 0 0
+1 100 0 0
+E
+pewter key~
+   The key is simply cut, and made of a dark gray colored stone.  
+~
+#11735
+bouquet exotic flowers~
+a bouquet of exotic flowers~
+A bouquet of exotic flowers has been left here.~
+~
+13 0 a 0
+0 0 0 0
+1 1 0 0
+E
+bouquet exotic flowers~
+   A hand picked bouquet of @rred@n, @ggreen@n, @yyellow@n and @bblue@n flowers
+nicely arranged into a bouquet could make the perfect gift for anyone.  
+~
+#11736
+red breaker~
+a red breaker~
+A Red Breaker has been left here.~
+~
+5 a an 0
+2 3 6 9
+12 900 0 17
+E
+red breaker~
+   This extremely large sword is also known as a 'breaker' It extends 4 feet
+making it extremely heavy but powerful.  The blade has been colored a shade of
+red that matches the forest leaves.  The hilt is embedded with a symbol of a
+blazing meteor.  
+~
+#11737
+broken chandelier~
+a broken chandelier~
+A broken chandelier has been left here.~
+~
+13 0 a 0
+0 0 0 0
+15 1 0 0
+E
+broken chandelier~
+   The chandelier is broken and of no use.  The top of the chandelier where the
+wiring would poke out has been cut off for some reason.  
+~
+#11738
+marble fountain~
+a Marble Fountain~
+A Marble Fountain stands in the center of the plaza.~
+~
+23 0 a 0
+500 500 15 0
+505 1000 0 0
+E
+marble fountain~
+   The fountain is made of a black marble and is impossibly cut, making the
+shape of a tree with hundreds of individual leaves!  What's more, every last
+leaf is squirting out a pure water for drinking enjoyment.  
+~
+#11739
+paintbrush~
+a paintbrush~
+A paintbrush has been left here.~
+~
+5 0 an 0
+1 1 6 0
+3 60 0 6
+E
+paintbrush~
+   The small paintbrush is dipped in blue paint.  
+~
+#11740
+chef's knife~
+a Chef's Knife~
+A Chef's Knife has been left here.~
+~
+5 0 an 0
+2 4 2 14
+5 70 0 10
+E
+chef's knife~
+   The knife is a standard knife used in a kitchen.  It is very lare, and has a
+small handle for holding.  
+~
+#11741
+note~
+a note~
+A note has been left here.~
+   barbatsis
+~
+16 0 a 0
+0 0 0 0
+50 12 0 0
+#11742
+black belt~
+a black belt~
+A black belt has been left here.~
+~
+11 0 al 0
+0 0 0 0
+4 150 0 13
+E
+black belt~
+   This is a belt made of thick rough cloth that should be tied around the
+waist.  
+~
+A
+1 1
+#11743
+feather duster~
+a Feather Duster~
+A Feather Duster has been left here.~
+~
+12 0 a 0
+0 0 0 0
+2 75 0 0
+E
+feather duster~
+   The feather duster has a wooden handle attached to numerous large brown
+feathers.  This seems ideal for cleaning places.  
+~
+#11799
+spoilers list~
+the Spoiler's List for Los Torres.~
+The Spoiler's List of Los Torres is waiting to be read.~
+Trigger Commands: 
+In 11715- say hello
+In 11701- get ring 
+In 11703- steal cello (pointless) 
+In 11751- touch display 
+Get to 11758
+In 11721- open forest 
+In 11722- sit stump (just a hint)
+In 11753- sit stump 
+In 11755- touch nest
+In 11760- wake visconti
+In 11723- pick flowers (pointless, but pretty)
+In 11725- search fireplace (3n for password note)
+Go to 11702 (must have Goblet of Red Something)
+In 11705  unlock trapdoor, open trapdoor
+In 11752- wake lesalie
+In 11703- give ring(11700) man
+In 11719- say barbatsis
+Get to 11720
+*QUEST COMPLETE*
+~
+16 ab 0 0
+0 0 0 0
+0 0 0 0
+$~

@@ -1,0 +1,79 @@
+CircleMUD v3.0 Shop File~
+#24300~
+24306
+-1
+2.00
+0.40
+5
+-1
+%s I only sell ski passes wink!~
+%s I don't buy stuff!~
+%s I don't buy stuff!~
+%s I don't buy stuff!~
+%s Hey man, get some more cash!~
+%s That'll be %d bucks dude.~
+%s I don't buy stuff!~
+0
+6
+24308
+0
+24392
+-1
+0
+28
+0
+0
+#24301~
+24302
+24303
+24305
+-1
+2.00
+0.50
+0
+-1
+%s What you see is what I've got!~
+%s I don't buy stuff!~
+%s I don't buy stuff!~
+%s I don't buy stuff!~
+%s Sorry, but you can't afford it!~
+%s That'll be %d bucks dude.~
+%s I don't buy stuff!~
+0
+6
+24306
+0
+24399
+-1
+0
+28
+0
+0
+#24302~
+24307
+24308
+24309
+24310
+-1
+2.00
+0.50
+0
+-1
+%s Sorry, but I don't have any!~
+%s Used food? No thanks!~
+%s Used food? No thanks!~
+%s Used food? No thanks!~
+%s Sorry, but you can't afford it!~
+%s That shall be %d dollars.~
+%s Used food? No thanks!~
+0
+6
+24305
+0
+24361
+-1
+0
+28
+0
+0
+$~

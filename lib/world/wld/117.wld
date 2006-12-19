@@ -1,0 +1,1685 @@
+#11700
+Dysprosic's Zone Description Room~
+Zone name: Los Torres
+Location- City
+Levels- 10-15
+Alignment- mostly neutral (-200 thorugh 200)
+Theme- a community made of two towers (not based on LOTR :P) with one building containing shops, apartments for the members of the government and the supreme council and the other containing apartments for citizens.
+Plot- The government of Lost Torres is being unusually corrupt and ruthless to its citizens. You must meet with a councillor and free the people of Los Torres
+There will be about 60 rooms in the area, around 30 mobs and approximately 40 objects.
+Dysprosic
+
+~
+117 cegj 0
+S
+#11701
+Pathway~
+   This pathway leads to Los Torres.  It is laid with white stone and is lined
+with flowers of all colors.  The path takes you through a small forest of red
+leaved trees.  The towers are visible to the north.  
+~
+117 c 3
+D0
+~
+~
+0 11700 11702
+E
+trees tree~
+   The trees are skinny with beautiful red leaves.  
+~
+E
+flowers flower path~
+   The path is lined with exotic flowers planted in the ground.  There seems to
+be something glimmering in the soil.  
+~
+E
+soil ground~
+   The soil is a nice dark brown for all the flowers.  A ring is laying in the
+dirt.  
+~
+S
+T 11701
+#11702
+Entrance to Tower #1(Shops and Executive Offices)~
+   The entrance to the first tower lies here.  It is a large archway where
+guards seem to be checking citizens as they enter.  There is a pathway that
+leads east to the second and seemingly taller tower.  This tower seems to be
+much wider than the other tower though.  
+~
+117 0 1
+D0
+~
+~
+0 11700 11703
+D2
+~
+~
+0 11700 11701
+D3
+~
+~
+0 11700 11705
+E
+tower~
+   The tower is very large, standing about 7-10 stories high as it looks from
+the ground.  Inside it are many people scuttling around the shops and
+restaurants.  
+~
+S
+#11703
+Lobby~
+   The lobby of the tower is packed with shoppers.  To the west lies 'The
+Turkey's Gobble', a restaurant famous for it's broiled turkey.  To the north .
+is 'Defender's Dream', an armor shop with strong looking protective gear on
+display.  There is an orchestra playing in the center of the lobby, with many
+people sitting down at benches to listen to the majestic music.  Up above are
+the houses and offices of the members of the community government There are some
+pews lined around the center where the Orchestra plays.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11706
+D1
+~
+~
+0 11700 11751
+D2
+~
+~
+0 11700 11702
+D3
+~
+~
+0 11700 11704
+D4
+~
+~
+0 11700 11707
+E
+display~
+   There are many fancy armors on display at 'Defender's Dream'.  
+~
+E
+orchestra~
+   There is a full orchestra at the center of the lobby.  They are playing a
+song that seems to relax the soul and fit the scenery quite well.  
+~
+S
+T 11702
+#11704
+The Turkey's Gobble~
+   The restaurant is very busy, most of the tables there are filled with
+customers.  The room is filled with decorations that look like they should be
+used for thanksgiving.  The walls are painted a dark brown and the ceiling is
+painted with a spiral that surrounds an enormous chandelier.  The chandelier
+seems out of place but still it is very pretty.  The man at the counter seems
+very pleasant as he takes orders from the customers and brings them their food.
+~
+117 dh 0
+D1
+~
+~
+0 11700 11703
+D5
+~
+floor~
+1 11700 11758
+E
+chandelier~
+   The chandelier is humongous and made of diamonds with brass candle holders.
+It illuminates the room with a pretty patterned shadow.  
+~
+E
+table tables~
+   The tables are round and are suitable for 4 people to sit at.  Theyr rather
+boring at the top but are very intricately cut at the bottim, making it look
+like a roman column.  
+~
+S
+#11705
+Pathway~
+   The white path continues onward just outside of the red forest.  It leads
+from one tower of Los Torres to the next.  The path has been travelled on by
+numerous people though it is still in very good shape.  The forest seems endless
+when peered into from here.  This area seems like a nice place to relax.  
+~
+117 0 1
+D1
+~
+~
+0 11700 11702
+D3
+~
+~
+0 11700 11721
+E
+Path~
+   The white path has been kept up nicely for it's usage.  There are some spots
+from people walking on it repeatedly.  The brick is nicely layed in a diagonal
+fashion.  
+~
+E
+towers~
+   The towers are tall and they seem to overlook all of the red forest
+surrounding it.  They are made of a gray stone and have many windows in the
+walls.  
+~
+E
+forest~
+   The forest is seemingly endless from here.  The creatures make all sorts of
+pleasant noises and rustle around in the foliage.  
+~
+S
+#11706
+Lacela's Winery~
+   Lacela's Winery is decorated elaborately with lace.  Lace, lace, lace.  Lace
+for drapes, lace for carpet and red stained lace for the countertop where
+Cassandra Lacela stands.  She probably has a drink or two when no one is
+looking.  In the back of the room is a large wine rack in which all her stock is
+kept.  She seems to have a lot of wines.  There is a lace rug laid on the floor
+in a sloppy manner.  
+~
+117 dh 0
+D2
+~
+~
+0 11700 11703
+D5
+~
+trapdoor~
+2 11718 11752
+E
+lace~
+   It's everywhere!  Ahhh!!!!  
+~
+E
+wine rack~
+   The wine rack in the back of the room is huge.  It contains a lot of wines
+that are cooled by a large vent at the top.  It is sealed off with a glass door
+~
+S
+#11707
+Entrance to Council Officing~
+   The platform above the lobby marks the entrance to the offices to all of the
+government officials.  The echoing marble floor leads to a large marble
+staircase that will take you up even further into the governmental section.  
+~
+117 cd 0
+D0
+~
+~
+0 11700 11708
+D1
+~
+~
+0 11700 11709
+D3
+~
+~
+0 11700 11710
+D4
+~
+~
+0 11700 11711
+D5
+~
+~
+0 11700 11703
+E
+marble floor staircase~
+   The floor is made with a black marble that echoes when walked on.  It sort of
+leads people to the large marble staircase leading upward.  
+~
+S
+#11708
+Gertrude's Office~
+   The office reeks of an overwhelming perfume stench, probably caused by the
+open perfume bottle on the desk.  Papers on the desk are all messed up and the
+telephone is making a beeping noise because its off the hook.  Apparently the
+person who works here has no intention of being disturbed.  
+~
+117 d 0
+D2
+~
+~
+0 11700 11707
+E
+perfume desk papers telephone~
+   The desk contains an open bottle of perfume, a messy pile of papers, and a
+telephone that is off the hook.  
+~
+S
+T 11726
+#11709
+Lesalie's Office~
+   This room has been kept tidy and clean despite Lesalie's absence from office.
+The large desk in one corner has papers stacked all nice and neat, and the
+computer on the desk of highest quality.  The floor is a peach colored carpet
+immediately after the wooden door.  The wall is painted an off white color, with
+pictures of people hanging in various places.  
+~
+117 d 0
+D3
+~
+~
+0 11700 11707
+E
+door~
+   The door is made of wood and has been left open for people to come in and out
+as they please.  
+~
+E
+wall pictures~
+   The wall has been painted a nice off-white color all around the square room.
+It is dotted with hanging framed pictures of people that Lesalie knows.  
+~
+E
+desk computer~
+   The desk has papers neatly stacked papers in one corner, and a high quality
+computer on one side.  The desk seems larger than most other desks.  
+~
+S
+T 11723
+#11710
+Phel's Office~
+   This room is extremely fancy looking.  Its walls are painted tan with a dark
+green border at the ceiling.  The ceiling has an elaborate fan which blows a
+nice breeze.  The desk in the center of the room is circular, complete with a
+nice computer, a telephone, some paperwork, and decorations.  The floor is made
+of marble just like the corridor.  
+~
+117 d 0
+D1
+~
+~
+0 11700 11707
+E
+celing fan~
+   The smooth celing has an elaborate fan in the center which blows a soothing
+breeze in the room.  
+~
+E
+desk paperwork decorations computer telephone~
+   The desk in the center of the room is circular, complete with a nice
+computer, a telephone, some paperwork, and decorations.  
+~
+E
+wall border~
+   The wall is painted tan with a dark green border around the celing.  
+~
+S
+T 11725
+#11711
+Council Corridor~
+   The room has a constant echoing sound due to people walking up and down the
+black marble stairs.  The side by side staircases lead both up a floor and down
+a floor.  There are wooden doors here that lead to some of the officials
+offices.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11712
+D1
+~
+~
+0 11700 11713
+D3
+~
+~
+0 11700 11714
+D4
+~
+~
+0 11700 11715
+D5
+~
+~
+0 11700 11707
+E
+doors~
+   The doors in the room lead to some of the officials' offices.  
+~
+E
+stairs marble~
+   The black marble tiling echoes as people walk on it.  It sort of makes a path
+to two marble staircases that lead both up and down.  
+~
+S
+#11712
+Miranda's Office~
+   The room is totally out of order.  It looks like there was some sort of
+struggle here!  The desk is broken in half, with papers scattering all over the
+floor.  The wall has been beaten in and cracked, with the window in the back
+being broken as well.  
+~
+117 d 0
+D2
+~
+~
+0 11700 11711
+E
+window~
+   The window has been broken, making a cold breeze swift in.  Shards of glass
+hang around its edges.  
+~
+E
+desk~
+   The desk has been ripped apart!  
+~
+E
+wall~
+   The walls have been beaten and cracked for some unknown reason
+~
+E
+papers~
+   The papers are scattered across the floor in a disastrous manner.  
+~
+S
+T 11723
+#11713
+Cecille's Office~
+   The first notable thing about this office is that it is unusually dark.  
+There are no windows to give light, so all that is there to brighten up is a
+small lamp on the corner of the desk.  The drawers of the desk are open and
+contain a small amount of stacked papers.  The walls are painted a dark cobalt
+blue and the floor is of a green thick carpeting.  
+~
+117 d 0
+D3
+~
+~
+0 11700 11711
+E
+desk lamp drawers papers~
+   On the desk is a small lamp that provides little light to this dark room.  
+The drawers are partially filled with neatly stacked papers and folders.  
+~
+S
+T 11724
+#11714
+Johanes's Office~
+   The room is very small compared to the other offices in the tower.  
+Actually, its quite cramped in here!  The desk is hardly a desk at all; it has
+papers stuffed messily into files on one side and a tiny work space on the other
+side.  
+~
+117 d 0
+D1
+~
+~
+0 11700 11711
+E
+desk papers files~
+   The tiny desk has papers stuffed into files in a disorganized manner, and
+minimal work space.  
+~
+S
+T 11723
+#11715
+Upper Council Corridor~
+   This is the area where the big shots of the council do their work.  They
+usually have a bigger say in what happens to the city, but not nearly as a
+powerful judgment as the Empress, who is above.  The marble pathway ends halfway
+through here and changes instantly into an ivory pathway, and the staircase
+leading up is ivory, unlike the marble staircase leading down.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11716
+D1
+~
+~
+0 11700 11717
+D3
+~
+~
+0 11700 11718
+D4
+~
+~
+0 11700 11719
+D5
+~
+~
+0 11700 11711
+E
+marble ivory stairs staircases~
+   The psort of path is made of marble and ivory, with a marble staircase
+leading down and an ivory staircase leading up.  
+~
+S
+#11716
+Luther's Office~
+   The room is surprisingly bare minus a desk and some governmental paperwork.
+Most of Luthers belongings are in cardboard boxes and suitcases as if he were to
+leave.  Everything else is totally bare.  The walls are white, the ceiling is
+white and bumpy, and the window isnt anything special.  
+~
+117 de 0
+D2
+~
+~
+0 11700 11715
+E
+desk papers~
+   The desk is bare minus a few articles of paperwork.  
+~
+E
+suitcases boxes~
+   The boxes and suitcases in the corner of the room are all packed with
+Luther's belongings.  
+~
+S
+#11717
+Visconti's Office~
+   A really, really big desk is the most profound thing about the room.  It has
+intricately cut patterns on the sides and contains many drawers, filled with
+papers galore!  There is an extremely cool looking imperial tiling, and the
+walls are painted white, except for one red wall which gives a major accent.  
+This guy has style!  
+~
+117 d 0
+D3
+~
+~
+0 11700 11715
+E
+desk papers~
+   The desk is very large and it has exquisite carved patterns on the sides.  
+It is filled with paperwork galore!  
+~
+E
+walls~
+   The walls are painted white, except for a dark red wall that gives a really
+nice accent into the room.  
+~
+S
+T 11723
+#11718
+Thedoric's Office~
+   Red scrolls containing the writings and beliefs of Thedoric the powerful
+adorn the walls.  The paper filled desk is colored red and so are the curtains
+that shade the rather large window.  The floor is also made of a red wood like
+the desk, or maybe like the trees...  
+~
+117 d 0
+D1
+~
+~
+0 11700 11715
+E
+desk papers floor~
+   The floor is made of the same red wood as the paper filled desk is.  It's
+also quite similar to the wood that the trees outside give...  
+~
+E
+curtains window~
+   The rather large window has been shaded with grand red curtains.  
+~
+E
+scrolls~
+   The wall is adorned with red scrolls containing the writings and beliefs of
+Thedoric.  
+~
+S
+T 11722
+#11719
+Empress's Corridor~
+   The room is made with ivory tiling, ivory celing and ivory walls.  The
+Empress must have some fondness for ivory!  There is a red carpet path leading
+to a very large and exquisite door.  The carped has been barricaded by gold
+posts dotting the edges linked with a rope made of velvet.  The corners of the
+room are filled in with quarters of Mediterranean columns.  
+~
+117 d 0
+D0
+~
+grand doors~
+1 11700 11720
+D5
+~
+~
+0 11700 11715
+E
+carpet velvet posts~
+   The red carpet is barred off by golden posts linked together with velvet
+rope.  
+~
+E
+doors~
+   The doors to the north are very large, exquisitely styled and make a huge
+creaking sound when opened.  A creaking sound that echoes throughout the entire
+tower.  
+~
+E
+corners colums~
+   The corners are filled in with Mediterranean sytled column quarters.  
+~
+S
+#11720
+Empress Leraillia's Office~
+   The room is completely covered in ivory!  Its actually quite pretty.  The
+tile surprisingly doesnt make a sound when it is walked on.  The ceiling is
+strangely high compared to the ceiling in the corridor.  The walls are draped
+with tapestries and beam lights that blare down and make a circle of light
+around the ivory desk in the middle.  The desk is accompanied by a very large
+ivory colored swivel chair.  
+~
+117 de 0
+D2
+~
+grand~
+0 11700 11719
+E
+ceiling~
+   The ceiling is strangely high, almost out of sight!  
+~
+E
+desk chair~
+   The ivory desk is very nice, and so is the ivory colored chair.  It's only
+ivory colored, though.  It wouldn't be very comfy to sit in an ivory chair now,
+would it?  
+~
+E
+walls tapestries~
+   The walls are draped with tapestries showing strange pictures and patterns.
+
+~
+E
+lights~
+   The lights are scattered at the top edges of the walls and point down to make
+a circle of light around the desk and the chair.  
+~
+S
+#11721
+Pathway~
+   The pathway continues between the towers.  It seems to be cracked a lot more
+than the other parts of the path.  The sides are spruced with red trees like the
+ones in the forest.  The sounds of animals rustling in foliage is louder for
+some strange reason.  Citizens continue to walk past doing their own things and
+occasionally tripping on the various cracks in the path.  There seems to be a
+path to the south past the trees.  
+~
+117 0 1
+D1
+~
+~
+0 11700 11705
+D2
+~
+forest~
+1 11700 11753
+D3
+~
+~
+0 11700 11722
+E
+trees forest~
+   The forest is seemingly endless from here.  The sound of animals rustling in
+the forest is obscenely louder here.  
+~
+E
+path cracks~
+   The pathway that is usually nicely tidy isn't so much over here.  There are
+cracks in the path that are making the citizens unwillingly trip.  
+~
+S
+#11722
+The Town Plaza~
+   The white path leads here, into a large circular park with large stumps
+people can sit on around the edge and a huge water fountain in the center that
+citizens are drinking from.  The most noticeable thing about the plaza is the
+gigantic tree in the northeast corner.  It is no ordinary tree around here, for
+the leaves are green!  The people gather around this mysterious tree and wonder
+why it could be such a bizarre color.  There are many brown footprints along the
+white tile, and the forest is still visible from here.  The sound of rummaging
+animals has been greatly overpowered by the sound of chatting people.  
+~
+117 0 1
+D0
+~
+~
+0 11700 11723
+D1
+~
+~
+0 11700 11721
+E
+tree~
+   The green tree in the northeast corner attracts many people.  They gather
+around it, sit next to it, they have lunch, all sorts of stuff.  The leaves are
+a strange color of green and the bark is brown.  It is extremely large even
+compared to the trees in the Red Forest.  It seems to be about half the height
+of the tower to the north.  
+~
+E
+stumps~
+   There are stumps along the edge of the park that are made so people can sit
+on them.  
+~
+E
+citizens tourists~
+   There are many gathering citizens and tourists of Los Torres in the plaza.  
+~
+E
+tile footprints path~
+   The white tile path is covered in brown footprints from the dirty boots and
+shoes of people.  
+~
+S
+T 11715
+#11723
+Pathway~
+   This pathway is the junction between the plaza and the second tower.  The
+forest is only slightly visible from here, and the tile of the path is clean and
+beautiful flowers line the sides.  The looming gray stone tower is to the north
+and the town plaza is to the south.  
+~
+117 c 1
+D0
+~
+~
+0 11700 11724
+D2
+~
+~
+0 11700 11722
+E
+path flowers~
+   The white tile path is clean swept and lined with gorgeous exotic flowers,
+including some @rred@n, some @yyellow@n, and some @ggreen@n and a small amount
+of @bblue@n ones.  
+~
+S
+T 11716
+#11724
+Entrance to Tower #2 (Housing)~
+   The mediocre archway made of stone bears the gate to the domestic lives of
+Los Torres.  The tower stretches far up, though not so far as to drive anyone
+living at the top insane from vertigo.  It is made of dark gray stone and is
+spruced here and there with windows made of crystal clear glass.  The white
+pathway is kept nice and tidy for the citizens passing through.  The forest of
+red continues north even though the path ends here.
+~
+117 0 1
+D0
+~
+~
+0 11700 11725
+D2
+~
+~
+0 11700 11723
+E
+tower windows~
+   The tower stands high and is made of a dark gray colored stone.  Windows made
+of crystal clear glass appear occasionally on the wall.  
+~
+E
+path~
+   The white path ceases here, looking neat and tidy.  
+~
+E
+archway~
+   The archway is made of a dark gray stone and isn't to impressive.  The gate
+underneath it leads into all the houses of the citizens of Los Torres.  
+~
+S
+#11725
+A Comfortable Lobby~
+   A warm glow from this room makes it relaxing and comfortable to even look at.
+The floor is covered with a nice and soft red carpet with some strange square
+pattern along the sides. There are soft and squishy armchairs around tables and
+near a large stone fireplace. There is a brown wooden check in desk at the far
+side of the room, below a tan painted flat ceiling, with lights that blare and
+make the room bright.
+~
+117 d 0
+D0
+~
+wall~
+1 11700 11726
+D2
+~
+~
+0 11700 11724
+D3
+~
+~
+0 11700 11727
+E
+carpet pattern~
+   The plush carpet is red with a bizarre pattern along the edges.  
+~
+E
+celing lights~
+   The celing is smoothed nicely and painted a nice tan that miixed well with
+the red carpet.  There are circular lights scattered across that blare making
+this room very, very bright.  
+~
+E
+desk~
+   The desk on the far side is made of wood and very big.  It has brochures on a
+small rack advertising the shops of the other tower, and a broken silver bell
+marked "Ring for service.  "
+~
+E
+armchairs tables~
+   There are very comfortable looking armchairs colored red that sircle around
+small wooden tables and the grand fireplace on the north wall.  
+~
+E
+fireplace~
+   The fireplace is large and made of a tan colored stone, like the walls and
+the celing.  The fire roars and crackles warming the entire room.  One of the
+tiles on the side of the fireplace is kind of loose.  
+~
+S
+T 11717
+#11726
+Behind the Fireplace~
+   The fireplace opened up and made a small passageway!  It's pretty bare made
+of gray stone, and it has a bunch of ash particles in the air.  It looks like
+the outside is just to the north.  
+~
+117 di 0
+D0
+~
+~
+0 11700 11748
+D2
+~
+~
+0 11700 11725
+S
+#11727
+Bottom of the Staircase~
+   The staircase in the middle of the room spirals upward throughout the edge of
+the tower, leading to several platforms along the way to the top.  There are
+some exits to residences on this floor as well.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11746
+D1
+~
+~
+0 11700 11725
+D2
+~
+~
+0 11700 11747
+D4
+~
+~
+0 11700 11728
+E
+Staircase~
+   The staircase spirals up to the top of the tower.  
+~
+S
+#11728
+Second Floor~
+   The staircase continues upward throughout the edge of the tower.  The
+staircase continues both upwards and downwards.  There is a large round rug
+spread over the center of the floor.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11729
+D2
+~
+~
+0 11700 11730
+D4
+~
+~
+0 11700 11731
+D5
+~
+~
+0 11700 11727
+E
+staircase~
+   The spiral staircase continues up a floor and down a floor.  
+~
+E
+rug~
+   The rug is spread over the center of the floor, giving the room some
+atmosphere.  
+~
+S
+#11729
+Laundry Room~
+   This is where most of the citizen's laundry is done.  There is a large washer
+and dryer set next to an even bigger pile of bagged clothes.  Each bag has their
+own tag showing where the laundry should go when it's finished.  
+~
+117 d 0
+D2
+~
+~
+0 11700 11728
+E
+bags tags~
+   The bags of laundry have tags saying where they go when they are done.  
+~
+E
+washer dryer~
+   There is a large rumbling washer and dryer set.  
+~
+S
+#11730
+Chef's Room~
+   The room has the heavy stench of onions and peppers to it.  There is an
+unusually large kitchen area totally stocked with pots, pans, and cooking
+ingredients.  There is a sofa outside of the kitchen, where the chef probably
+sleeps.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11728
+E
+kitchen pots pans ingredients~
+   The kitchen area is very abnormally large and is filled with pots and pans.
+There are also some cooking ingredients visible in open cupboards.  
+~
+E
+sofa~
+   There is a big sofa soutside of the kitchen, where the chef presumably
+sleeps.  
+~
+S
+#11731
+Third Floor~
+   The staircase continues upward once more, and still goes.  There are some
+ceiling lights here as it is rather dark.  There is a square rug in the middle of
+the floor.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11732
+D2
+~
+~
+0 11700 11733
+D4
+~
+~
+0 11700 11734
+D5
+~
+~
+0 11700 11728
+E
+rug floor~
+   The square rug in the muddle of the floor gives the room a chic look.  
+~
+E
+lights~
+   The lights on the ceiling light the room up quite a bit.  
+~
+S
+#11732
+Dojo~
+   This room has been fashioned into a Martial Arts training area.  There is a
+large mirror on the far wall and railings on the side walls.  There is a large
+mat on the ground where pupils can practice and stretch.  There are long
+flourescent lights lining the ceiling that make a slight humming sound.  
+~
+117 0 0
+D2
+~
+~
+0 11700 11731
+E
+mat~
+   This is a large yellow mat that students can practice what they know on.  
+~
+E
+lights~
+   Large flourescent lights line the ceiling and make a quiet humming noise as
+they light the room.  
+~
+E
+mirror~
+   There is a really big mirror that stretches all across the far wall of the
+room.  
+~
+E
+railing~
+   Railings are on the side walls so that students can stretch easily.  
+~
+S
+#11733
+Standard Residence~
+   This is just a plain old regular residence.  There is a bed in the corner, a
+living area with some sofas, and a kitchen area that has a few pots and pans in
+the sink.  This is pretty standard living.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11731
+E
+bed~
+   The bed is made nicely and tucked away in the corner of the room.  
+~
+E
+sofas living~
+   There is a cozy looking living area with a couple of sofas gathered around a
+coffee table.  
+~
+E
+kitchen pots pans~
+   The kitchen area is fairly dirty, with some pots and pans lying in the sink.
+
+~
+S
+#11734
+Fourth Floor~
+   Yet again, the stairs lead upward.  This is the fourth floor, and there are
+an unusually large amount of windows in this room.  There is another circular
+rug in the center of the room.  
+~
+117 0 0
+D0
+~
+~
+0 11700 11735
+D2
+~
+~
+0 11700 11736
+D4
+~
+~
+0 11700 11737
+D5
+~
+~
+0 11700 11731
+E
+rug~
+   The people in this tower must like their rugs.  
+~
+E
+staircase~
+   More stairs, more stairs...  The stairs can take you down or up.  
+~
+S
+#11735
+Classroom~
+   This is a standard school classroom for the children here.  There currently
+are no kids in here at the moment, though it is still very messy.  There is a
+chalk covered green chalkboard and there are turned over desks.  There are also
+a ton of muddy footprints leading to the exit.  
+~
+117 d 0
+D2
+~
+~
+0 11700 11734
+E
+footprints~
+   A ton of muddy children's footprints lead to the exit.  
+~
+E
+chalkboard ~
+   The chalkboard is green and covered with chalk.  In some spots, there are
+crude drawings of flowers and clouds, and in others it's just a scribble.  
+~
+E
+desks~
+   Some of the desks in the classroom have been chaotically trned over for some
+reason.  
+~
+S
+#11736
+Playpen~
+   Little kids...  Everywhere!  Little kids here, little kids there, they're
+running around and being really chaotic!  Somebody, make them stop!  Lots of
+them are tackling each other to the ground or playing tag.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11734
+E
+children kids~
+   The kids are behaving chaotically and are pretty much everywhere you look.  
+~
+S
+#11737
+Fifth Floor~
+   This is a very tall tower!  The end must be near, for there is a small amount
+of light coming from the exit up.  Yet another square rug is placed in the
+center of the floor.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11738
+D2
+~
+~
+0 11700 11739
+D4
+~
+~
+0 11700 11740
+D5
+~
+~
+0 11700 11734
+E
+rug~
+   Hmm, a square rug on the floor...  How original...  
+~
+E
+staircase~
+   The stairway seems to be getting lighter as it goes upward.  Perhaps the top
+of the tower is near?  
+~
+S
+#11738
+Library~
+   The library is kept very clean, and there doesn't seem to be a trace of dust
+in here.  There are books stacked on wooden shelves all over the place, and
+there are some people browsing through them.  A wooden desk near the exit is
+where people bring their books to check out of the library, though they should
+be brought back.  
+~
+117 0 0
+D2
+~
+~
+0 11700 11737
+E
+bookshelves citizens~
+   The wooden bookshelves all over the place hold a ton of books.  Citizens are
+browsing through them, looking for what they want.  
+~
+E
+desk~
+   Citizens bring books they've found here to check out and read for a bit.  
+~
+E
+dust~
+   Amazingly, there isn't any!  
+~
+S
+#11739
+Bathroom~
+   This could possibly be the worst location for the bathroom in the world...  
+There are urinals on the left wall with dividers inbetween them, and there are
+toilet stalls at the rear with blue paint.  There are sinks on the east wall,
+though most of them have an 'out of order' sign attached to them.  
+~
+117 0 0
+D0
+~
+~
+0 11700 11737
+E
+sinks~
+   There are sinks on the east wall, some of them have yellow pot-it-notes with
+'out of order' written on them attached.  
+~
+E
+stalls toilet~
+   Toilet stalls are on the rear wall with blue paint on them.  
+~
+E
+urinals dividers~
+   On the west wall are urinals with dividers inbetween them, so nobody can
+sneak a peek, even if they wanted to.  
+~
+S
+#11740
+Sixth Floor~
+   This is the final floor inside the tower, the top is just above.  Light
+pours in from the exit up.  There isn't a rug in the center of the floor, but
+instead, a small statue dedicated to Thedoric, of all people.  
+~
+117 0 0
+D0
+~
+~
+0 11700 11741
+D2
+~
+~
+0 11700 11742
+D4
+~
+~
+0 11700 11743
+D5
+~
+~
+0 11700 11737
+E
+light stairway~
+   The stairway up leads to the top, where all the light is coming from.  
+Downstairs the rooms are a bit darker.  
+~
+E
+statue thedoric~
+   In the center of the room is a small statue dedicated to Thedoric, who is
+doing a dramatic pose.  By the looks of it, he hasn't really done anything.  
+~
+S
+#11741
+Standard Residence~
+   This is just a plain old regular residence.  There is a bed in the corner, a
+living area with some sofas, and a kitchen area that has a few pots and pans in
+the sink.  This is pretty standard living.  
+~
+117 0 0
+D2
+~
+~
+0 11700 11740
+E
+bed~
+   The bed is made nicely and tucked away in the corner of the room.  
+~
+E
+kitchen pots pans~
+   The kitchen area is fairly dirty, with some pots and pans lying in the sink.
+
+~
+E
+sefas living~
+   There is a cozy looking living area with a couple of sofas gathered around a
+coffee table.  
+~
+S
+#11742
+Empty Room~
+   Strange...  This room is totally empty...  The walls are painted white along
+with the ceiling and the floor, and there isn't anything special about the
+window...  Maybe someone is going to move in soon?  
+~
+117 0 0
+D0
+~
+~
+0 11700 11740
+E
+walls ceiling floor~
+   The walls, ceiling and floor are all painted white.  
+~
+E
+window~
+   There isn't anything special about this window...  
+~
+S
+#11743
+Top of the Tower~
+   The top of the tower was recently made usable courtesy of Government Official
+Visconti's planning, though Thedoric takes all the credit.  That must be what
+the statue downstairs is for.  There are little extended balconies to relax on
+to the north and to the south.  Other than that, the only place left to go is
+all the way back down.  
+~
+117 0 1
+D0
+~
+~
+0 11700 11744
+D2
+~
+~
+0 11700 11745
+D5
+~
+~
+0 11700 11740
+E
+balconies~
+   To the north and the south are extended balconies to the tower.  
+~
+E
+stairs~
+   The stairs only lead back down into the tower.  
+~
+S
+#11744
+North Balcony~
+   The balcony is a stone extension of the top of the tower.  This place is very
+calm and there is an endless view of red trees from here.  The forest seems like
+it has so many mysteries...  
+~
+117 0 1
+D2
+~
+~
+0 11700 11743
+E
+view forest trees~
+   There is an endless view of the Red Forest from here.  It is extremely
+relaxing
+~
+E
+balcony~
+   The balcony is a stone extension of the tower.  It is made of pewter and has
+a large railing surrounding it to prevent anyone from falling.  
+~
+S
+#11745
+South Balcony~
+   The south balcony is an extension from the top of the tower.  From here the
+town below is visible.  Citizens are talking, though the noise doesn't seem to
+echo all the way up to here.  There are a couple chairs here so that people can
+relax in them and take in the view.  
+~
+117 0 1
+D0
+~
+~
+0 11700 11743
+E
+view citizens town~
+   The the entire outside town of Los Torres is visible from here.  Talking
+citizens are noticable, but the sound doesn't reach up this far.  
+~
+E
+chairs~
+   There are metal chairs places here so that citizens can look down and relax.
+
+~
+S
+#11746
+Standard Residence~
+   This is just a plain old regular residence.  There is a bed in the corner, a
+living area with some sofas, and a kitchen area that has a few pots and pans in
+the sink.  This is pretty standard living.  
+~
+117 0 0
+D2
+~
+~
+0 11700 11727
+E
+bed~
+   The bed is made nicely and tucked away in a corner of the room.  
+~
+E
+living sofas~
+   There is a cozy looking living area with a couple sofas gathered around a
+coffee table.  
+~
+E
+kitchen pots pans~
+   The kitchen area is fairly dirty, with some pots and pans laying in the sink.
+
+~
+S
+#11747
+Artist's Residence~
+   This is obviously where an artist lives.  There are paintings and empty
+canvases hung up everywhere within the room.  The room itself isn't painted much
+except for paint splashes from mistakes.  The bed in the corner of the room is
+rather small but it seems cozy.  
+~
+117 d 0
+D0
+~
+~
+0 11700 11727
+E
+paintings canvases~
+   There are paintings and canvases along the walls.  There are splashes of
+paint behind the art that are the wall's only decorations.  
+~
+E
+bed~
+   The bed is very small, though it looks very cozy.  
+~
+S
+#11748
+Path Behind the Tower~
+   This is a hidden path behind the tower!  To the north you can see a bit more
+path, and to the south is the small opening that the firelace opened up.  The
+forest continues indefinitely in all directions otherwise
+~
+117 0 3
+D0
+~
+~
+0 11700 11749
+D2
+~
+~
+0 11700 11726
+S
+#11749
+End of Secret Path~
+   The little path behind the tower stops here.  Red trees surround everywhrere
+except for the tiny row to the south.  The light is totally blocked out from the
+thick canopy, and so is any vision upward.  It is now clear why this spot isn't
+visible from the towers.  
+~
+117 0 3
+D2
+~
+~
+0 11700 11748
+S
+#11751
+Defender's Dream~
+   Defender's Dream is a store dealing with armor and weapons.  There are all
+sorts of things on display from a large grey sword to a blue helm with a face
+mask.  There is a sign that says 'Items on display are for DISPLAY ONLY, DO NOT
+TOUCH' The floor is a white tile which has been stained with many footprints
+from all the shoppers.  The ceiling is painted a rather alarming shade of red
+that makes people jump when they see it for the first time.  The walls are
+painted of a scene as if the room is at the top of a mountain and all below and
+around is a large green forest and a blue sky with clouds.  
+~
+117 dh 0
+D3
+~
+~
+0 11700 11703
+E
+display sign~
+   The weapons and armor on display are rather nice.  A sign hangs near the
+display that says 'Items on display are for DISPLAY ONLY, DO NOT TOUCH'.  
+~
+E
+celind~
+   The celing is painted a shade of red that is way too bright for it's own
+good.  It makes most people jump when they see it.  
+~
+E
+floor footprints~
+   The white tile floor has been stained with muddy footprints from all the
+shoppers that have browsed around the store.  
+~
+S
+T 11711
+#11752
+Wine Cellar~
+   The wine cellar smells like expired wine like nobody could believe!  There
+are barrels that were supposed to be used for wine, but apparently have never
+been used since last year!  The stone walls are all wet and moldy, and there is
+fingus growing on some patches of the floor.  Cobwebs are present in every nook
+and cranny of the room.  It seems like nobody has kept this place tidy in quite
+some time!  
+~
+117 adj 0
+D4
+   Lacela's Winery is above you.  
+~
+trapdoor~
+2 11718 11706
+E
+barrels~
+   The wooden barrels are the source of the wine like stench in the room.  At
+first glance they seemed empty, though since it's so dark it's hard to see
+anything.  The barrels are actually filled with a dark red blood!  
+~
+E
+cobwebs~
+   The amount of cobwebs in the room is ridiculous!  They are present in every
+nook and cranny you can see.  
+~
+E
+mold walls~
+   The walls are filthy and covered in mold.  
+~
+E
+fungus fungi floors~
+   The floos have patches of fungi growing on them.  
+~
+S
+#11753
+Inside the Forest~
+   The path does not follow into the forest and all that shows you a way are
+torn down red trees and flattened red grass with leaves and twigs crunching on
+the ground.  The noises of animals running around are now followed by noises of
+things attacking animals, and making them run around.  One stump off of the
+'path' is rather large compared to the other tree stumps.  There is a blockade
+of trees that seems to block any further movement.  
+~
+117 cg 3
+D0
+~
+forest~
+1 11700 11721
+D2
+~
+blockade~
+1 11700 11754
+E
+stump~
+   The stump is rather grand in comparison with the other stumps on the trail.
+It is wide and has thousands of little rings signifying that it was very old.  
+The tree that was cut down must have been just as obscure as this stump.  
+~
+E
+foliage twigs leaves trees~
+   The scenery is completely filled with twigs, trees, stumps, leaves and other
+foliage.  All of which seem to have an appropriate shade of red to them.  
+~
+S
+T 11710
+#11754
+The Red Forest~
+   The path continues into the vast forest.  It is more defined than the path
+before the blockade.  This seems to be some sort of hideout for a faction within
+the community.  A sign etched into a tree trunk reads 'Red Assassins'.  The tree
+trunks stretch up for a long distance and suddenly disappear within an
+impossibly thick canopy.  
+~
+117 a 3
+D0
+~
+~
+0 11700 11753
+D1
+~
+~
+0 11700 11757
+D3
+~
+~
+0 11700 11755
+E
+trees~
+   The trees stretch up for a really long distance.  The red canopy of leaves
+suddenly swallows them up without a trace.  One of the trees is engraved with
+'Red Assassins' in the bark.  
+~
+E
+path~
+   The path is scattered with red stumps, broken trigs and red leaves.  It is
+more visible than the path outside the blockade of trees.  
+~
+S
+#11755
+A Sudden End~
+   The path in the forest comes to another end.  There aren't any more stumps in
+the path and the forest seems to be getting somewhat darker.  The trees on the
+side of the path are withered away and a bit dead but the source of the problem
+is not clear.  There is a small squirrel's nest in the branches of a lively tree
+placed over a peculiar patch of yellow sand on the ground.  
+~
+117 ag 3
+D1
+~
+~
+0 11700 11754
+D5
+~
+sand~
+1 11700 11756
+E
+path~
+   The path is stumpless and clear, except when it comes to a rather sudden end.
+It leads to the peculiar patch of sand below a lively tree.  
+~
+E
+sand~
+   There is a small and out of place patch of yellow sand at the end of the
+path.  It seems to have no important purpose here.  
+~
+E
+nest~
+   The nest is made of tiny leaves and placed cutely in the brances of a still
+living tree.  It is so close you could reach out and touch it.  
+~
+E
+trees~
+   The trees are somewhat withered away and dead.  The source of this is
+unclear.  
+~
+S
+T 11713
+#11756
+Under the Forest~
+   The forest leads down into this mysterious cave.  There are no clues around
+here as to what this place is.  The pile of sand in the back of the room leads
+up to the forest, or the path in the cave continues on east into the darkness.
+
+~
+117 c 0
+D1
+~
+~
+0 11700 11759
+D4
+~
+~
+0 11700 11755
+E
+sand~
+   The pile of sand in the back leads to a hole which can be used to exit the
+cave.  
+~
+S
+#11757
+Alcove in the Forest~
+   This is a small alcove of the lively red forest.  There are trees and hedges
+blocking the way forth, except for a small hole in the 'wall'.  The pathway
+outside Los Torres is visible from here!  The 'wall' is enforced with rocks and
+covered with leaves to hide it from anyone seeing it.  The hole is strategically
+placed to maybe spy on anyone walking past.  
+~
+117 0 3
+D3
+~
+~
+0 11700 11754
+E
+wall trees hedges hole~
+   The passage is stopped by a wall of trees.  Or more like leaves and trees
+covering a stone wall with a hole in it.  The hole seems like it would be used
+to spy on people or maybe fire something at them!  
+~
+S
+#11758
+The Basement~
+   This hidden and dark room almost seems like it has never been opened before.
+The only light that the room has is from the gaping hole made in the floor of
+The Turkey's Gobble by the chandelier.  The floor is dry, though rough and there
+are cobwebs EVERYWHERE from the celing to the foor.  The room is totally bare
+otherwise.  
+~
+117 cd 0
+D4
+~
+~
+0 11700 11704
+E
+cobwebs~
+   Cobwebs are in every direction of the room, I mean, everywhere.  It is
+impossible to move without touching 20 cobwebs.  It's that bad.  
+~
+E
+hole~
+   There is a large hole in the celing from the Chandelier breaking through the
+floor of The Turkey's Gobble.  
+~
+S
+#11759
+In a Mysterious Cave~
+   The cave leads in further and the light gets dimmer and dimmer with each foot
+inward.  There isn't much here to look at other than a gray rock wall and a
+couple of stalactices.  There is a wooden wall with a door that has a barred
+window to the east.  There are moaning sounds coming from inside the door.  
+There is a putrid smell of urine in this room.  
+~
+117 adg 0
+D1
+~
+door~
+2 11734 11760
+D3
+~
+~
+0 11700 11756
+E
+wall door~
+   The wall to the east is made of splintery dark wood.  There is a door in the
+wall that has barred windows and a rusty looking handle.  There is a smell of
+urine and excrement...  Also the bitter smell of blood!  
+~
+E
+stalactices~
+   The stalactites drip water from the celing making an annoying sound with each
+drop.  
+~
+S
+#11760
+Prison Cell~
+   Smells of urine and excrement coming from a small pile in the corner fill the
+room.  There is a machine here that is pumping blood from the ground!  There are
+barrels of blood stacked next to it in a pyramid-like fashion.  The room is
+formed by an ending in the cave with the wall to separate it from the rest.  
+From the celing to the floor is a damp solution, making the entire room
+slippery.  There are some stray red roots protruding from the celing, giving a
+clue that this place must be fairly close to the ground.  
+~
+117 c 0
+D3
+~
+door~
+2 11700 11759
+E
+machine barrels~
+   The machine is pumping blood from the ground, somehow, then storing the blood
+into wooden barrels that are stacked next to the machine like a pyramid.  
+~
+E
+roots~
+   There are red roots from the celing that are dripping blood!  Is that what
+the machine is pumping?!  
+~
+E
+pile excement urine pee poop~
+   There is a small pile of excrement and a puddle of urine in the far corner of
+the room.  The smell of the pile is unbearable!  
+~
+S
+$~

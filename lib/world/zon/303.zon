@@ -1,0 +1,16 @@
+#303
+Matrix of C.A.W.~
+Campus III~
+30300 30399 30 2
+D 0 30302 1 2 	(Hallway)
+D 0 30306 3 2 	(Really Narrow Stairwell, Part I)
+D 0 30319 1 2 	(Common Room)
+M 0 30134 1 30315 	(Bennie Boo)
+G 1 30133 99 -1 	(the World of Xeen(tm))
+M 0 30135 1 30317 	(the Bubble Man)
+M 0 30136 1 30301 	(the chimpster)
+G 1 30142 99 -1 	(a large steel key)
+O 0 30156 1 30326 	(a pendulum)
+O 0 30157 1 30326 	(a water fountain)
+S
+$

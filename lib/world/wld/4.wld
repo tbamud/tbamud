@@ -1,0 +1,1661 @@
+#400
+The Jade Forest~
+   You find yourself standing at the entrance of a thick forest.  Numerous
+trees tower over you, making you feel quite small.  In the distance you can
+hear birds chirping.    
+~
+4 0 3
+D3
+~
+~
+0 0 401
+E
+credits info~
+   Builder   : 
+Zone         : 4 Jade Forest
+Began        : 1999 
+Player Level : 10-25
+Rooms        : 100
+Mobs         : 31
+Objects      : 15
+Shops        : 3
+Triggers     : 0
+Theme        :
+Plot         :
+Links        : 00
+~
+S
+#401
+The Jade Forest~
+   The shadows of the trees seem to engulf you.  The light in here is extremely
+scarce, allowing you to see very little.  Tall blades of grass cover your legs,
+making you feel like you're walking through a swamp.    
+~
+4 0 3
+D0
+~
+~
+0 0 404
+D1
+~
+~
+0 0 400
+D3
+~
+~
+0 0 402
+S
+#402
+The Jade Forest~
+   As you continue making your way through the forest, you see several colorful
+plants hiding in the grass.  You begin to wonder if anyone ever cuts the grass
+in here.  Someone could get lost!    
+~
+4 c 3
+D0
+~
+~
+0 0 403
+D1
+~
+~
+0 0 401
+S
+#403
+The Jade Forest~
+   You seemed to have stepped into a large patch of weeds.  They loom over you,
+making you feel lost.  Perhaps you will be safer here in the weeds.  But then
+again, maybe not.    
+~
+4 0 3
+D1
+~
+~
+0 0 404
+D2
+~
+~
+0 0 402
+D3
+~
+~
+0 0 424
+S
+#404
+The Jade Forest~
+   Weeds begin to wrap around your feet, threatening to pull you down onto the
+ground.  You struggle to get free, pulling weeds from the ground and throwing
+them aside.  You decide it would be a good idea to walk a little faster.    
+~
+4 0 3
+D0
+~
+~
+0 0 405
+D2
+~
+~
+0 0 401
+D3
+~
+~
+0 0 403
+S
+#405
+The Jade Forest~
+   You step out from the weeds, feeling slightly tiresome from your troubles.
+As you look up, you notice beams of sunlight making its way through the
+branches of the trees.  The song of some nearby birds fills your ears.    
+~
+4 g 3
+D0
+~
+~
+0 0 406
+D2
+~
+~
+0 0 404
+S
+#406
+The Jade Forest~
+   You seem to have stumbled onto the beginning of a rather large looking path.
+Where could it lead?  Watch your back, you don't know what could be lurking in
+there.    
+~
+4 0 3
+D1
+~
+~
+0 0 407
+D2
+~
+~
+0 0 405
+S
+#407
+Rocky Path~
+   As you begin walking on the path, you hear rocks shuffling around under your
+weight.  You look down at the ground and notice several spots of blood covering
+the rocks.  A sick feeling eats at your stomach.    
+~
+4 0 3
+D1
+~
+~
+0 0 408
+D3
+~
+~
+0 0 406
+S
+#408
+Rocky Path~
+   The path seems to get slighly narrower here.  As you look to your side you
+see the path it lined with a bunch of dead twigs.  How could all these twigs
+have gotten here?    
+~
+4 0 3
+D1
+~
+~
+0 0 409
+D3
+~
+~
+0 0 407
+S
+#409
+Rocky Path~
+   There seems to be a large gap in the path.  You take a giant step over it,
+looking into the gap as you do so.  You see nothing but blackness.  What could
+be in there?    
+~
+4 0 3
+D0
+~
+~
+0 0 419
+D1
+~
+~
+0 0 410
+D2
+~
+~
+0 0 418
+D3
+~
+~
+0 0 408
+S
+#410
+Rocky Path~
+   The path is just about an at end.  You feel slighly relieved.  Maybe now you
+can see some more pleasant scenery.  On the other hand, you could be in for
+much worse than you have ever feared.    
+~
+4 0 3
+D1
+~
+~
+0 0 411
+D3
+~
+~
+0 0 409
+S
+#411
+Rocky Path~
+   You have come to the end of the path, you look around at everything around
+you.  To the south is a small garden.  What could be in there?  To the north
+you see the forest suddenly get much larger.    
+~
+4 0 3
+D1
+~
+~
+0 0 412
+D3
+~
+~
+0 0 410
+S
+#412
+The Jade Forest~
+   The forest seems to get thicker here.  The trees are much more fuller,
+sheltering you from the light of the day.  Since the light here is scarce, you
+can't see very much around you.  To the south you can see the start of a
+garden.    
+~
+4 0 3
+D0
+~
+~
+0 0 416
+D2
+~
+~
+0 0 413
+D3
+~
+~
+0 0 411
+S
+#413
+Garden~
+   This isn't exactly the kind of garden you had in mind.  There are no flowers
+here.  Just a bunch of rocks.  Some of them are quite large, others are so
+small you can step on them.    
+~
+4 0 3
+D0
+~
+~
+0 0 412
+D1
+~
+~
+0 0 415
+D2
+~
+~
+0 0 414
+S
+#414
+Garden~
+   The rocks seem to get larger the deeper you walk into the garden.  Who would
+make a garden like this?  You look down at the ground between some rocks to
+find a skeleton.  It must have been crushed by one of these huge boulders.    
+~
+4 0 3
+D0
+~
+~
+0 0 413
+S
+#415
+Dead End~
+   You find yourself standing in a dead end. The outside world has been blocked
+off by a huge wall of rocks. There is no way you could get over or around it.
+~
+4 0 3
+D3
+~
+~
+0 0 413
+S
+#416
+The Jade Forest~
+   The further you walk into the forest, the smaller you feel.  The trees seem
+to get taller and taller with every step.  Be careful not to get lost in here.
+  
+~
+4 g 3
+D0
+~
+~
+0 0 417
+D2
+~
+~
+0 0 412
+S
+#417
+The Jade Forest~
+   The further you walk into the forest, the smaller you feel.  The trees seem
+to get taller and taller with every step.  Be careful not to get lost in here.
+  
+~
+4 0 3
+D0
+~
+~
+0 0 441
+D2
+~
+~
+0 0 416
+D3
+~
+~
+0 0 434
+S
+#418
+Tree House~
+   An old abandoned tree house sits before you.  The tree that it was once in
+is no longer around.  This house would be better off as kindling, rather than a
+place to play.    
+~
+4 0 3
+D0
+~
+~
+0 0 409
+S
+#419
+The Jade Forest~
+   As you continue walking through the lush forest, images pass through your
+mind.  Thoughts of creatures from the past rush in and take over your thoughts.
+You can see great battles, bloody battles.  You begin to wonder if these
+battles still go on.    
+~
+4 0 3
+D0
+~
+~
+0 0 420
+D2
+~
+~
+0 0 409
+S
+#420
+Intersection~
+   You seem to be standing in some sort of intersection in the forest.  There
+is a narrow path leading in all directions.  Which path will you choose?    
+~
+4 0 3
+D0
+~
+~
+0 0 432
+D2
+~
+~
+0 0 419
+D3
+~
+~
+0 0 421
+S
+#421
+Tunnel of the Dead~
+   You have entered a mysterious looking tunnel made from logs and leaves.  
+Small beams of light shine through the roof of the tunnel, allowing you to see
+what is around you.  You suddenly feel like you don't belong here.    
+~
+4 0 3
+D1
+~
+~
+0 0 420
+D3
+~
+~
+0 0 422
+S
+#422
+Tunnel of the Dead~
+   As you walk deeper into the tunnel, you begin hearing a faint crying sound.
+Where could this be coming from?  Perhaps this tunnel is haunted by the spirits
+who died in the great battles that were held here.    
+~
+4 0 3
+D0
+~
+~
+0 0 431
+D1
+~
+~
+0 0 421
+D3
+~
+~
+0 0 423
+S
+#423
+Tunnel of the Dead~
+   Looking around at your surroundings, you begin to see things that you wish
+you hadn't.  Blood stains the walls and floor.  Several skeletons are scattered
+about the floor, almost tripping you.  You begin feeling terrified.    
+~
+4 0 3
+D1
+~
+~
+0 0 422
+D3
+~
+~
+0 0 430
+S
+#424
+The Jade Forest~
+   As you continue walking through the beginning of the forest, you begin to
+wonder what strange creatures you will encounter.  Will you even survive?  You
+begin looking for a way to get deeper into the forest.    
+~
+4 0 3
+D1
+~
+~
+0 0 403
+D3
+~
+~
+0 0 425
+S
+#425
+A Hole~
+   Whoops!  Maybe next time you will watch where you're walking.  You have
+stepped into a rather large hole filled with mud!  You feel your feet slowly
+start sinking into the ground.    
+~
+4 0 3
+D0
+~
+~
+0 0 426
+D1
+~
+~
+0 0 424
+S
+#426
+A Hole~
+   As you begin walking out of the hole, you feel your feet being weighed down
+tremendously.  Perhaps the mud is really clay.  That would be sure to slow you
+down.  You see the forest continue to the north.    
+~
+4 0 3
+D0
+~
+~
+0 0 427
+D2
+~
+~
+0 0 425
+S
+#427
+The Jade Forest~
+   At last you can see a larger section of the forest before you.  You had no
+idea it was this big!  Just up ahead to the north you can see a bridge made
+from logs.  Maybe there is a stream underneath it.    
+~
+4 0 3
+D0
+~
+~
+0 0 428
+D2
+~
+~
+0 0 426
+S
+#428
+A Log Bridge~
+   A large bridge stands before you.  As you step onto the logs that hold it
+together, you look down and see a swamp.  The smell just about knocks you over!
+As you look at the murky water below you, you notice that it's green and is as
+thick as pudding.  What could have made it this way?    
+~
+4 0 3
+D0
+~
+~
+0 0 429
+D2
+~
+~
+0 0 427
+S
+#429
+A Log Bridge~
+   As you walk further along the bridge, you begin to feel it sway back and
+forth.  You hold onto the sides of the bridge a little tighter and continue on
+your way.    
+~
+4 0 3
+D0
+~
+~
+0 0 433
+D1
+~
+~
+0 0 430
+D2
+~
+~
+0 0 428
+S
+#430
+Tunnel of the Dead~
+   You have reached the end of the tunnel.  You breathe a sigh of relief, being
+thankful that you're still alive.  Maybe now you can have a peaceful journey.
+But then again, maybe not.    
+~
+4 0 3
+D1
+~
+~
+0 0 423
+D3
+~
+~
+0 0 429
+S
+#431
+Marsh~
+   Yuck!  You have stepped into a murky marsh!  Mud and water cover your feet,
+sticking you to the ground.  You have a hard time getting free, but finally
+manage to get away.    
+~
+4 0 3
+D0
+~
+~
+0 0 435
+D2
+~
+~
+0 0 422
+S
+#432
+The Jade Forest~
+   As you walk deeper into the forest, you notice the ground beginning to
+change.  What was once hard and dry is now soft and wet.  You may have walked
+into some marsh lands.    
+~
+4 0 3
+D0
+~
+~
+0 0 436
+D2
+~
+~
+0 0 420
+S
+#433
+A Log Bridge~
+   You look ahead to see how much longer you will be on this death trap.  
+Theres only a few steps more to go.  The smell of the swamp engulfs you, making
+you gag.    
+~
+4 0 3
+D0
+~
+~
+0 0 438
+D2
+~
+~
+0 0 429
+S
+#434
+The Jade Forest~
+   The further you walk into the forest, the smaller you feel.  The trees seem
+to get taller and taller with every step.  Be careful not to get lost in here.
+  
+~
+4 0 3
+D1
+~
+~
+0 0 417
+S
+#435
+Marsh~
+   The water is up to your ankles now.  Your feet are soaked to the bone, but
+you continue to walk on.  You begin to feel a rise in the temperature, causing
+you to become quite warm.    
+~
+4 0 3
+D1
+~
+~
+0 0 437
+D2
+~
+~
+0 0 431
+D3
+~
+~
+0 0 440
+S
+#436
+Marsh~
+   Your feet slowly begin sinking into the ground, making you feel like you're
+being eaten alive.  It wouldn't be very wise to stand here for too long.  You
+may get sucked into the ground completely.    
+~
+4 0 3
+D2
+~
+~
+0 0 432
+D3
+~
+~
+0 0 437
+S
+#437
+Marsh~
+   The water is up to your ankles now.  Your feet are soaked to the bone, but
+you continue to walk on.  You begin to feel a rise in the temperature, causing
+you to become quite warm.    
+~
+4 0 3
+D1
+~
+~
+0 0 436
+D3
+~
+~
+0 0 435
+S
+#438
+A Log Bridge~
+   You have come to the end of the bridge.  You breathe a sigh of relief and
+look around at your surroundings.  You see several small trees scattered around
+the forest.  The smell here has improved greatly.    
+~
+4 0 2
+D1
+~
+~
+0 0 439
+D2
+~
+~
+0 0 433
+S
+#439
+Marsh~
+   You find yourself standing in what looks to be an end of a marsh.  The smell
+here isn't too bad, but you imagine it gets worse the farther in you go.  To
+the north is a small dirt path.    
+~
+4 0 3
+D0
+~
+~
+0 0 456
+D1
+~
+~
+0 0 440
+D3
+~
+~
+0 0 438
+S
+#440
+Marsh~
+   As you step deeper into the marsh, you feel yourself sink in quite a bit
+deeper.  Mud is up to your waist.  You suddenly feel like you're walking in
+slow motion.    
+~
+4 0 3
+D1
+~
+~
+0 0 435
+D3
+~
+~
+0 0 439
+S
+#441
+The Jade Forest~
+   The grass at your feet begins getting taller with every step.  How could
+anyone get through a jungle like this?  You see a small hole to the north, be
+careful not to fall in it.    
+~
+4 0 3
+D0
+~
+~
+0 0 442
+D2
+~
+~
+0 0 417
+S
+#442
+The Jade Forest~
+   You have come to a small hole.  It's barely big enough to fit your foot
+into, but if you weren't looking where you were going, you could easily trip
+and get hurt.    
+~
+4 0 3
+D1
+~
+~
+0 0 443
+D2
+~
+~
+0 0 441
+S
+#443
+The Jade Forest~
+   The trees seem to be getting closer together, making you feel trapped like
+an animal.  The grass at your feet is gradually disappearing.  You begin to
+wonder why.    
+~
+4 0 3
+D0
+~
+~
+0 0 444
+S
+#444
+The Jade Forest~
+   The ground at your feel is now all dirt.  You look around at your
+surroundings, and see a large village in the north.  It looks like a friendly
+enough place.    
+~
+4 0 3
+D2
+~
+~
+0 0 443
+D3
+~
+~
+0 0 445
+S
+#445
+Cobblestone Road~
+   You find yourself standing on the edge of a very well made cobblestone road.
+It seems to be leading into the village.  The trees seem to be more scarce
+here, allowing you to see more of your surroundings.    
+~
+4 0 3
+D1
+~
+~
+0 0 444
+D3
+~
+~
+0 0 446
+S
+#446
+Cobblestone Road~
+   As you begin walking down the road, everything around you seems to get
+quiet.  The creatures in the forest must sense your presence.  The road is very
+smooth and flawless.  You wonder who could have constructed such a fine piece
+of work.    
+~
+4 0 3
+D1
+~
+~
+0 0 445
+D3
+~
+~
+0 0 450
+S
+#447
+Hidden Village~
+   You continue following the cobblestone road towards the center of the
+village.  You pass several people who are busily working on their homes.  You
+feel some leaves fall from the trees and slide off the top of your head.    
+~
+4 0 3
+D0
+~
+~
+0 0 449
+D3
+~
+~
+0 0 448
+S
+#448
+Hidden Village~
+   You have entered the village.  Everything looks so peaceful here, so quiet
+and cozy.  The smell if fresh cut flowers fills your nostrils, reminding you of
+home.    
+~
+4 0 3
+D1
+~
+~
+0 0 447
+D2
+~
+~
+0 0 450
+D3
+~
+~
+0 0 454
+S
+#449
+Jedidiah's Armour Shop~
+   Welcome to Jedidiah's Armour Shop!  Here you may buy or sell items for a
+fair price.  In some cases you may even be able to trade.  To see what Jedidiah
+has to sell you today, type <list>.    
+~
+4 d 0
+D0
+~
+~
+0 0 471
+D1
+~
+~
+0 0 451
+D2
+~
+~
+0 0 447
+S
+#450
+Cobblestone Road~
+   The road turns here, heading directly into the village.  You see several
+shops and homes.  Who could be living in there?  You hear the chittering of
+people talking in the distance.    
+~
+4 0 3
+D0
+~
+~
+0 0 448
+D1
+~
+~
+0 0 446
+S
+#451
+Cobblestone Road~
+   As you leave the shop, you look around at everything around you.  There are
+so many beautiful houses, flowers and plants.  The smell here is overwhelming.
+~
+4 0 3
+D1
+~
+~
+0 0 452
+D3
+~
+~
+0 0 449
+S
+#452
+Cobblestone Road~
+   As you continue walking through the village, you begin to notice more and
+more trees appearing.  The trees seem to be leaning to one side, almost as if
+they were creating a path for you.  You see the pawn shop to the north.    
+~
+4 d 0
+D0
+~
+~
+0 0 453
+D3
+~
+~
+0 0 451
+S
+#453
+Village Pawn Shop~
+   Welcome to The Village Pawn Shop!  You can find almost anything here.  You
+see several items hanging from the wall, ranging from weapons to armour.  Type
+list to see what is available to buy.    
+~
+4 0 3
+D2
+~
+~
+0 0 452
+S
+#454
+Hidden Village~
+   Hundreds of leaves are falling from the trees all around you, making you
+feel like you're in a tornado.  A slight breeze picks up, blowing some of the
+leaves in your face.  The road before you is covered in a carpet of green.    
+~
+4 0 3
+D0
+~
+~
+0 0 455
+D1
+~
+~
+0 0 448
+S
+#455
+Hidden Village~
+   The road that was once visible is now covered in leaves.  They crunch under
+your feet as you continue walking.  You can see the center of the village in
+the distance.    
+~
+4 0 3
+D2
+~
+~
+0 0 454
+D3
+~
+~
+0 0 460
+S
+#456
+A Dirt Path~
+   You have turned off onto a small dirt path.  You're not sure where it leads,
+but the view here is beautiful!  You see several small plants all around you,
+and in full bloom!  The wonderous scent fills your lungs.    
+~
+4 0 3
+D0
+~
+~
+0 0 457
+D2
+~
+~
+0 0 439
+S
+#457
+A Dirt Path~
+   As you continue walking along the small path, you notice some small holes on
+the ground.  They are much too large to be ant holes.  What could have caused
+these?    
+~
+4 0 3
+D0
+~
+~
+0 0 458
+D2
+~
+~
+0 0 456
+S
+#458
+A Dirt Path~
+   The path comes to an end here, leaving you in a field of tall grass.  The
+grass comes up to your chin, making it very difficult to see anything around
+you.  Trees tower over you, making you feel like a lost child.    
+~
+4 0 3
+D1
+~
+~
+0 0 459
+D2
+~
+~
+0 0 457
+D3
+~
+~
+0 0 461
+S
+#459
+Cobblestone Road~
+   As you step out from the gigantic field of grass, you find yourself standing
+on a cobblestone road.  It appears to be going directly into the village.  
+There is a small house to the east.    
+~
+4 0 3
+D1
+~
+~
+0 0 460
+D3
+~
+~
+0 0 458
+S
+#460
+Hidden Village~
+   You have come to a small house.  It appears to have been abandoned some time
+ago.  The windows and the door have been boarded up, keeping people like you
+out.    
+~
+4 0 3
+D1
+~
+~
+0 0 455
+D3
+~
+~
+0 0 459
+S
+#461
+A Stream~
+   You have stumbled upon a rather large looking stream.  The water would
+easily go up to your knees.  As you look into the water, you see several small
+fish swimming about.    
+~
+4 0 3
+D1
+~
+~
+0 0 458
+D3
+~
+~
+0 0 462
+S
+#462
+A Stream~
+   As you walk along the stream, you look down into the water and gaze at some
+of the pebbles being hit by the sunlight.  The light reflects from the rocks,
+making small rainbows in the water.    
+~
+4 0 3
+D0
+~
+~
+0 0 464
+D1
+~
+~
+0 0 461
+D2
+~
+~
+0 0 463
+S
+#463
+A Stream~
+   As you walk along the stream, you look down into the water and gaze at some
+of the pebbles being hit by the sunlight.  The light reflects from the rocks,
+making small rainbows in the water.    
+~
+4 0 3
+D0
+~
+~
+0 0 462
+S
+#464
+A Stream~
+   The stream begins to get shallow here.  The tops of the pebbles that were
+once submerged under the water are now out in the open, being dried by the sun.
+You hear a soft scratching noise.    
+~
+4 0 3
+D0
+~
+~
+0 0 465
+D2
+~
+~
+0 0 462
+S
+#465
+A Stream~
+   There is a slight bend in the stream here.  It begins heading off to the
+east.  It appears to be almost at an end.  You can see the begining of a dirt
+trail straight ahead to the east.    
+~
+4 0 3
+D1
+~
+~
+0 0 466
+D2
+~
+~
+0 0 464
+S
+#466
+A Stream~
+   You are standing at the end of the stream.  There is a large dirt trail to
+the east.  Where could it lead?  Maybe it goes into the city.    
+~
+4 0 3
+D0
+~
+~
+0 0 475
+D1
+~
+~
+0 0 467
+S
+#467
+Sanctus Trail~
+   The trail ahead of you looks promising.  Many beautiful plants line the
+sides of the trail, making you feel like you're walking through a large flower
+garden.  The trail continues to the east.    
+~
+4 0 3
+D1
+~
+~
+0 0 468
+D3
+~
+~
+0 0 466
+S
+#468
+Sanctus Trail~
+   The trail curves here, heading towards the north.  It appears to remain
+straight for quite some time.  There are some large rocks sitting in the side
+of the trail.  Where could they have come from?    
+~
+4 0 3
+D0
+~
+~
+0 0 486
+D1
+~
+~
+0 0 469
+D3
+~
+~
+0 0 467
+S
+#469
+Cobblestone Road~
+   You find yourself standing on the edge of the village.  To your west is a
+large trail, possibly leading into Sanctus.  You can see the center of the
+village to the east.    
+~
+4 0 3
+D1
+~
+~
+0 0 470
+D3
+~
+~
+0 0 468
+S
+#470
+Cobblestone Road~
+   As you continue making your way through the village, you look around at
+everything around you.  To the west you can see a rather large looking trail.
+Where could it lead?  Off in the distance to the north you can see an inn.  
+Maybe you could stop there and rest.    
+~
+4 0 3
+D0
+~
+~
+0 0 473
+D1
+~
+~
+0 0 474
+D3
+~
+~
+0 0 469
+S
+#471
+Cobblestone Road~
+   An enormous tree stands before you.  It's branches are full with leaves,
+giving you plenty of shelter from the sun.  The road continues to the west,
+heading directly into the center of the village.    
+~
+4 0 3
+D2
+~
+~
+0 0 449
+D3
+~
+~
+0 0 472
+S
+#472
+Cobblestone Road~
+   The road makes a sharp turn here, heading to the north.  The village sits
+before you.  You see people busily shuffling around.  A few of them smile at
+you, then go about their business.    
+~
+4 0 3
+D0
+~
+~
+0 0 474
+D1
+~
+~
+0 0 471
+S
+#473
+Cobblestone Road~
+   The road seems to come to an end here, leaving nothing but open ground to
+walk on.  To the east you can see an old shop, but it doesn't appear to be
+open.    
+~
+4 0 3
+D1
+~
+~
+0 0 479
+D2
+~
+~
+0 0 470
+S
+#474
+Center of the Village~
+   As you walk deeper into the center of town, you see several beautiful houses
+lined up, hidden in the trees.  You notice some children playing in the grass.
+Memories of your childhood fill your mind.    
+~
+4 0 3
+D0
+~
+~
+0 0 479
+D2
+~
+~
+0 0 472
+D3
+~
+~
+0 0 470
+S
+#475
+Sanctus Trail~
+   You have turned onto a well made trail.  By the looks of it, it's heading
+into the city.  You see some trees scattered around the sides of the trail,
+sheltering you from the sun.  The road continues to the north.    
+~
+4 0 3
+D0
+~
+~
+0 0 476
+D2
+~
+~
+0 0 466
+S
+#476
+Sanctus Trail~
+   The trail begins to turn here, heading to the west.  A small breeze cascades
+over your face ad through your hair.  You see some leaves falling from the
+tress and onto the ground.    
+~
+4 0 3
+D2
+~
+~
+0 0 475
+D3
+~
+~
+0 0 477
+S
+#477
+Sanctus Trail~
+   The city is not too far away now.  You can see it in the distance.  It looks
+beautiful!  Just like you imagined it would.  You see several tall buildings.
+What could they be?    
+~
+4 0 3
+D0
+~
+~
+0 0 478
+D1
+~
+~
+0 0 476
+S
+#478
+Sanctus Trail~
+   The city is not too far away now.  You can see it in the distance.  It looks
+beautiful!  Just like you imagined it would.  You see several tall buildings.
+What could they be?    
+~
+4 0 3
+D2
+~
+~
+0 0 477
+S
+#479
+Abandoned Shop~
+   You have come to an old abandoned shop.  It looks like it used to be a
+weapons shop.  The store must have moved.    
+~
+4 0 3
+D1
+~
+~
+0 0 480
+D2
+~
+~
+0 0 474
+D3
+~
+~
+0 0 473
+S
+#480
+Hidden Village~
+   You feel yourself begin to get tired.  You stop and look around you.  To the
+east you can see a weapons shop.  To the north you can see a small inn, maybe
+you should stop there and rest.    
+~
+4 0 3
+D0
+~
+~
+0 0 482
+D1
+~
+~
+0 0 481
+D3
+~
+~
+0 0 479
+S
+#481
+Zachary the Weaponsmith~
+   Welcome to Zachary's Weapon Shop!  Here you can find specially made weapons.
+You may buy, sell or trade for a fair price.  Type <list> to see whats
+available to you today.    
+~
+4 d 0
+D3
+~
+~
+0 0 480
+S
+#482
+Inn Entrance~
+   You are standing in the entrance to the inn.  It looks like a marvelous
+place to stay.  To the west is the front desk.  You can rent a room there.    
+~
+4 0 0
+D0
+~
+~
+0 0 484
+D2
+~
+~
+0 0 480
+D3
+~
+~
+0 0 483
+S
+#483
+Front Desk~
+   You find yourself standing behind a large desk.  The room itself is
+beautiful.  You see some pictures hanging from the walls.  The carpet looks
+brand new.  You can smell some fresh cut flowers, but where are they?    
+~
+4 0 0
+D1
+~
+~
+0 0 482
+S
+#484
+Room 1~
+   The room before you is beautiful!  There is a large bed sitting in the
+corner of the room next to a large window with a beautiful view!  Your feet
+sink into the carpeting, making you feel like you're at home.    
+~
+4 0 0
+D1
+~
+~
+0 0 485
+D2
+~
+~
+0 0 482
+D3
+~
+~
+0 0 490
+S
+#485
+Room 2~
+   The room before you is beautiful!  There is a large bed sitting in the
+corner of the room next to a large window with a beautiful view!  Your feet
+sink into the carpeting, making you feel like you're at home.    
+~
+4 0 0
+D3
+~
+~
+0 0 484
+S
+#486
+Sanctus Trail~
+   The road ahead of you looks long.  As you look around you, you can see a
+very large city off in the distance.  Could it be Sanctus?    
+~
+4 0 3
+D0
+~
+~
+0 0 487
+D2
+~
+~
+0 0 468
+S
+#487
+Sanctus Trail~
+   The road ahead of you looks long.  As you look around you, you can see a
+very large city off in the distance.  Could it be Sanctus?    
+~
+4 0 3
+D0
+~
+~
+0 0 488
+D2
+~
+~
+0 0 486
+S
+#488
+Sanctus Trail~
+   As you continue walking down the trail, you turn around and look at the
+village that seems so far away.  The village looks tiny compared to the city
+thats up ahead.  The trail continues to the north.    
+~
+4 0 3
+D0
+~
+~
+0 0 495
+D2
+~
+~
+0 0 487
+S
+#489
+Room 4~
+   The room before you is beautiful!  There is a large bed sitting in the
+corner of the room next to a large window with a beautiful view!  Your feet
+sink into the carpeting, making you feel like you're at home.    
+~
+4 0 0
+D0
+~
+~
+0 0 498
+D1
+~
+~
+0 0 490
+S
+#490
+Room 3~
+   The room before you is beautiful!  There is a large bed sitting in the
+corner of the room next to a large window with a beautiful view!  Your feet
+sink into the carpeting, making you feel like you're at home.    
+~
+4 0 0
+D1
+~
+~
+0 0 484
+D3
+~
+~
+0 0 489
+S
+#491
+Sanctus Trail~
+   Several large boulders surround you, almost creating a wall.  To the east
+you can see a rather large looking well.  The trail continues north and south.
+  
+~
+4 0 3
+D0
+~
+~
+0 0 492
+D1
+~
+~
+0 0 496
+S
+#492
+Sanctus Trail~
+   The city lies just ahead!  Just a few more steps and you will have made it.
+You feel a great sense of accomplishment.  A beam of light shines off your
+face, making you feel slightly warmer.    
+~
+4 0 3
+D1
+~
+~
+0 0 493
+D2
+~
+~
+0 0 491
+S
+#493
+Sanctus Trail~
+   As you get closer to the city, you become more and more excited.  You see
+several large buildings off in the distance, but can't quite make out what they
+are.    
+~
+4 0 3
+D1
+~
+~
+0 0 494
+D2
+~
+~
+0 0 496
+D3
+~
+~
+0 0 492
+S
+#494
+Sanctus Trail~
+   You continue walking along the trail, heading straight for the city.  You
+begin to wonder what you will see there.  You have heard wonderful things about
+the city.  Now you will get to see if any of them are true.    
+~
+4 0 3
+D1
+~
+~
+0 0 495
+D3
+~
+~
+0 0 493
+S
+#495
+Sanctus Trail~
+   As you continue walking down the trail, you turn around and look at the
+village that seems so far away.  The village looks tiny compared to the city
+thats up ahead.  The trail continues to the north.    
+~
+4 0 3
+D0
+~
+~
+0 0 499
+D2
+~
+~
+0 0 488
+D3
+~
+~
+0 0 494
+S
+#496
+Sanctus Trail~
+   You have turned onto a small scenic route of the trail.  You see a large
+well here.  It looks to be in fairly good condition.  Perhaps you could drink
+from it.    
+~
+4 0 3
+D0
+~
+~
+0 0 493
+D3
+~
+~
+0 0 491
+S
+#497
+Room 6~
+   The room before you is beautiful!  There is a large bed sitting in the
+corner of the room next to a large window with a beautiful view!  Your feet
+sink into the carpeting, making you feel like you're at home.    
+~
+4 0 0
+D3
+~
+~
+0 0 498
+S
+#498
+Room 5~
+   The room before you is beautiful!  There is a large bed sitting in the
+corner of the room next to a large window with a beautiful view!  Your feet
+sink into the carpeting, making you feel like you're at home.    
+~
+4 0 0
+D1
+~
+~
+0 0 497
+D2
+~
+~
+0 0 489
+S
+#499
+Sanctus Trail~
+   You have come to a dead end!  There isn't much here to look at, just a few
+scattered trees.  You can see that the road heads off towards the west, maybe
+you should turn around and head in the correct direction.    
+~
+4 0 3
+D2
+~
+~
+0 0 495
+S
+$~

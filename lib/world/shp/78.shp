@@ -1,0 +1,56 @@
+CircleMUD v3.0 Shop File~
+#7801~
+7803
+7804
+7805
+7806
+7807
+7808
+-1
+2.00
+0.50
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+7802
+0
+7820
+-1
+0
+28
+0
+0
+#7802~
+7809
+7810
+7811
+7812
+-1
+2.00
+0.50
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+7803
+0
+7822
+-1
+0
+28
+0
+0
+$~

@@ -1,0 +1,86 @@
+CircleMUD v3.0 Shop File~
+#27234~
+-1
+2.00
+0.50
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+27127
+0
+27234
+-1
+0
+28
+0
+0
+#27259~
+27162
+27161
+27160
+27159
+27158
+27157
+27156
+-1
+3.00
+0.50
+8
+-1
+%s None of those available.~
+%s You seem to lack one of those yourself.~
+%s I deal in gems only.~
+%s I cannot afford this precious thing you carry.~
+%s You have not the gold to buy this.~
+%s That will be %d coins.~
+%s You'll have %d coins for it.~
+2
+6
+27126
+0
+27259
+-1
+0
+28
+0
+0
+#27282~
+27168
+27138
+27137
+27136
+27135
+27134
+-1
+1.20
+0.20
+15
+16
+17
+21
+-1
+%s I don't carry those in stock. Try list.~
+%s My eyesight is poor, but I can't see as you have one.~
+%s I don't buy those. Try another shop!~
+%s My store is too humble to afford this.~
+%s I don't accept down payments. Come back with more gold!~
+%s That comes to %d coins.~
+%s I'll give you %d coins for that.~
+2
+6
+27134
+0
+27282
+-1
+0
+28
+0
+0
+$~

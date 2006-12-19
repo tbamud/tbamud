@@ -1,0 +1,197 @@
+CircleMUD v3.0 Shop File~
+#29200~
+29202
+29208
+29209
+352
+350
+-1
+1.20
+0.50
+-1
+%s I can't find that...it must be out of print!~
+%s I don't buy.~
+%s I don't buy.~
+%s I don't buy.~
+%s You don't have enough money!~
+%s That will run you %d coins.~
+%s I don't buy.~
+0
+7
+29203
+0
+29247
+-1
+0
+24
+0
+0
+#29201~
+29214
+29217
+29243
+29244
+29245
+-1
+1.20
+0.50
+9
+5
+-1
+%s We don't have any of those, Sugar.~
+%s Are you sure you have one, handsome?~
+%s I don't buy those, darling.~
+%s I'm a little strapped--how about a gift?~
+%s Perhaps later, when you've more cash, honey.~
+%s That's %d coins, love.~
+%s Here's %d coins, friend.~
+0
+7
+29211
+0
+29243
+-1
+0
+24
+0
+0
+#29202~
+29218
+29219
+29220
+29221
+29222
+-1
+1.30
+0.80
+-1
+%s I've never heard of that...what species is it?~
+%s I don't buy.~
+%s I don't buy.~
+%s I don't buy.~
+%s If you come back with more money, I may consider selling it.~
+%s That's %d coins...can I wrap it up for you?~
+%s I don't buy.~
+0
+7
+29215
+0
+29254
+-1
+0
+24
+0
+0
+#29203~
+29211
+29212
+29213
+29210
+-1
+1.40
+0.80
+9
+5
+3
+4
+10
+-1
+%s I don't know if we have those...take a look around!~
+%s Is this a joke?  I don't see one.~
+%s I don't buy those.  Call me picky.~
+%s I don't have enough money for that.  Try a collector.~
+%s Why not come back with more money?~
+%s That's %d coins.~
+%s Here's %d coins.~
+0
+7
+29224
+0
+29239
+-1
+0
+24
+0
+0
+#29204~
+29205
+29207
+29240
+29241
+29242
+-1
+1.10
+0.90
+-1
+%s I didn't grow any of those this season, sorry.~
+%s I don't buy.~
+%s I don't buy.~
+%s I don't buy.~
+%s You don't have enough money...sorry.~
+%s That costs %d coins.~
+%s I don't buy.~
+0
+1
+29252
+0
+29352
+-1
+0
+24
+0
+24
+#29205~
+29248
+29249
+29250
+0
+0
+-1
+1.10
+0.90
+-1
+%s How do you mix one of those?~
+%s I don't buy.~
+%s I don't buy.~
+%s I don't buy.~
+%s No bar tabs.  Pay in advance, bub.~
+%s That's %d gold.~
+%s I don't buy.~
+0
+7
+29205
+0
+29246
+-1
+0
+24
+0
+0
+#29206~
+29248
+29249
+29250
+0
+0
+-1
+1.10
+0.90
+-1
+%s How do you mix one of those?~
+%s I don't buy.~
+%s I don't buy.~
+%s I don't buy.~
+%s No bar tabs.  Pay in advance, bub.~
+%s That's %d gold.~
+%s I don't buy.~
+0
+7
+29254
+0
+29265
+-1
+0
+24
+0
+0
+$~

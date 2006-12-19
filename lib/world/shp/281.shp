@@ -1,0 +1,29 @@
+CircleMUD v3.0 Shop File~
+#28100~
+28115
+28116
+28117
+-1
+1.15
+0.80
+17
+19
+-1
+%s Ummm, I don't have such things here.~
+%s Hmm, do you have such a thing?~
+%s Unfortunately I don't buy those.~
+%s Hah, that's way too expensive for me.~
+%s Mmm, you need some more gold to buy this, fellow.~
+%s Okay, %d gold coins.  Thanks.~
+%s Okay, I'll give you %d gold coins for it.~
+2
+6
+28104
+0
+28106
+-1
+8
+24
+0
+0
+$~

@@ -1,0 +1,728 @@
+ADVANCE
+
+Usage: advance <victim> <level>
+
+ADVANCE moves a player to a new level.  If used to promote a player to an
+immortal level, and if you have the autowiz program installed, the wizlist and
+immlist will automatically be recreated.
+
+Example:
+
+  > advance rasmussen 34
+
+See also: SET
+#
+WIZAT
+
+Usage: at <room VNUM | item | mob | player name> <command> <arguments>
+
+AT can be used to perform an action in a location other than where you are
+standing.  The first argument can be a virtual room number or the name of a
+character or object.  The remainder of the line is passed to the command
+interpreter.
+
+Examples:
+
+  > at 3001 look
+  > at fido kill fido
+  > at 3.corpse get all corpse
+  > at catje wave catje
+
+See also: GOTO
+#
+BAN UNBAN
+
+Usage: ban [<all | new | select> <site>]
+       unban <site>
+
+These commands prevent anyone from a site with a hostname containing the
+site substring from logging in to the game.  You may ban a site to ALL, NEW
+or SELECT players.  Banning a site to NEW players prevents any new players
+from registering.  Banning a site to ALL players disallows ANY connections
+from that site.  Banning a site SELECTively allows only players with site-ok
+flags to log in from that site.  Ban with no argument returns a list of
+currently banned sites.
+
+Unban removes the ban.
+
+Examples:
+
+  > ban all whitehouse.gov
+  > unban ai.mit.edu
+
+See also: WIZLOCK
+#
+DATE
+
+Shows the current real time. (Not a social)
+#
+DC
+
+Usage: dc <descriptor number>
+
+DC (DisConnect) is used to disconnect a socket.  If used on a playing socket,
+the player will lose his/her link, but, unlike PURGE, will not extract the
+player or dump the player's inventory on the ground.
+
+DC is also useful for disconnecting people who have accidentally left
+themselves at the main menu, or connections sitting in the "Get name" state.
+
+See also: USERS
+#
+ECHO GECHO QECHO SEND
+
+Usage: echo <message>
+       gecho <message>
+       send <victim> <message>
+       qecho <message>
+
+ECHO displays a string to everyone in your room.
+GECHO displays the string to everyone in the game.
+QECHO displays the string to everyone with the QUEST flag.
+SEND displays the string to a particular person.
+
+Examples:
+
+  > echo Hi, everyone in the room.
+  > gecho Hi, everyone in the game, isn't this annoying?
+  > send rasmussen You are being watched.
+#
+FORCE
+
+Usage: force <victim | all> <command> <arguments>
+
+FORCE forces a character, either monster or player, to perform a certain
+action.  FORCE ALL forces everyone in the game; FORCE ROOM forces everyone in
+your room.
+
+Example:
+
+  > force fido drop meat
+  > force all save
+  > force room look fido
+
+If you are invisible to the one being forced, the force will be performed
+silently.
+#
+FREEZE THAW
+
+Usage: freeze <victim>
+       thaw <victim>
+
+FREEZE, originally invented here at CircleMUD (we think), is used to prevent
+a player from playing.  If frozen, the game will ignore all commands entered
+by the player, including QUIT, until the player is unfrozen with THAW.
+
+Obviously, this command should only be used in extreme disciplinary
+circumstances.
+
+See also: SET -> FROZEN
+#
+GOTO TRANS WIZTELEPORT
+
+Usage: goto <location>
+       trans <victim>
+       teleport <victim> <location>
+
+These commands are used to transports yourself and others to different rooms.
+GOTO allows you to go to other rooms; TRANS transports a person from wherever
+they are to the room YOU are in; TELEPORT transports your victim to some other
+location.
+
+For both GOTO and TELEPORT, the location specifier can be either a virtual
+room number, or the name of a character or object.
+
+Examples:
+
+  > goto 3001
+  > goto rasmussen
+  > trans fido
+  > teleport fido 3001
+  > teleport fido 2.fido
+
+See also: POOFIN, POOFOUT, SET -> ROOM, WIZAT
+#
+HANDBOOK
+
+Usage: handbook
+
+Guidelines for having an Immortal character -- you should read it.
+#
+HCONTROL
+
+Usage: hcontrol build <house vnum> <exit dir> <player name>
+       hcontrol destroy <house vnum>
+       hcontrol pay <house vnum>
+       hcontrol show
+
+House control, controls the addition, removal, and payments of houses.
+Hcontrol show will show all the houses currently defined in the game
+along with their last 'rent' payment date.
+
+See also: HOUSE, HOUSES
+#
+HOLYLIGHT
+
+Usage: holylight
+
+A toggle which allows you to see:
+   Invisible people and objects, even if you don't have 'detect invisibility'
+   Hidden people, even if you don't have 'sense life'
+   Dark rooms, even if you don't have a light
+
+It is expected most immortals will keep HOLYLIGHT on most of the time;
+it exists so that you have the ability to see what mortals see for
+debugging purposes.
+#
+IMOTD
+
+Usage: imotd
+
+Displays the Immortal message of the day.  This file usually contains
+new information on commands recently added, new features and other
+important information that immortals should be aware of.
+
+See also: MOTD
+#
+INVIS
+
+Usage: invis [level]
+
+INVIS sets your invisibility level.  With no argument, invis toggles between
+making you fully visible and fully invisible.  If you specify a level, only
+people at and above the level you specify will be able to see you.
+
+Examples:
+
+  > invis
+  > invis 31
+
+See also: VISIBLE
+#
+LAST
+
+Usage: last <player_name>
+
+For checking the last time a person logged on, their sitename, and their
+ID number.
+
+Example: 
+
+  > last ras
+  [  24] [14 Cl] Ras          : somesite.edu : Tue May 16 22:07:09 1995
+
+See also: STAT
+#
+LOAD
+
+Usage: load <mob | obj> <virtual number>
+
+LOAD is used to create mobiles and objects.  The first argument specifies if
+you are trying to load a mobile or an object; the second is the virtual
+number.
+
+Example:
+
+  > load obj 3099
+  You create a bulletin board.
+
+  > load mob 3005
+  You create the receptionist.
+
+See also: VNUM
+#
+MUTE
+
+Usage: mute <victim>
+
+MUTE is used to shut a player up.  When muted, a player will not be able to
+use most communication channels until he/she is unmuted.
+
+See also: FLAGS
+#
+NOHASSLE
+
+Usage: nohassle
+
+Toggles a flag to prevent aggressive monsters from attacking.
+#
+NOTITLE
+
+Usage: notitle <vicitim>
+
+Prevent players from being able to set their own titles; i.e., if the
+player consistently has an offensive title.  The definition of offensive
+is left as an exercise for the reader.
+
+See also: TITLE
+#
+NOWIZ
+
+Usage: nowiz
+
+Allows you to hear or ignore messages coming over the wiznet.
+
+See also: WIZNET
+#
+OLC
+
+Usage: olc { . | set | show | obj | mob | room} [args]
+
+   .: Repeat last modification command
+ set: Set OLC characteristics
+show: Show OLC characteristics
+ obj: Modify an object
+ mob: Modify a mob
+room: Modify a room
+
+OnLine Creation.  A feature which will eventually allow the creation
+of areas ONLINE, without having to reboot the system.
+
+See also: SHOW->ZONES, ZRESET
+#
+PAGE
+
+Usage: page <player | all> <message>
+
+PAGE is used to send a message, along with a beep, to another player.  Use
+PAGE ALL to send a message and a beep to everyone in the game.
+
+Examples:
+
+  > page rasmussen Hey, are you still at the keyboard?
+  > page all GAME WILL BE SHUTTING DOWN IN 10 MINUTES
+
+Do not abuse this command.
+#
+PARDON
+
+Usage: pardon <victim>
+
+Removes killer and thief flags from a player.
+#
+POOFIN POOFOUT
+
+Usage: poofin <message>
+       poofout <message>
+
+Sets the message seen by players when you use GOTO to move to a different
+room.  POOFIN with no argument resets your poofin to the default "appears with
+an ear-splitting bang"; POOFOUT with no argument defaults to "disappears in
+a puff of smoke."
+
+See also: GOTO
+#
+PURGE
+
+Usage: purge [name]
+
+Purge destroys things.  If used with no arguments, it will clear a room of all
+mobiles and objects, but will not harm players.  If the argument is an object,
+that object (and all of its contents, if any) will be destroyed.  If the
+argument is a mobile, the mobile will be destroyed, leaving its inventory and
+equipment lying on the ground.
+
+If the argument is the name of a player, the player's inventory and equipment
+will drop on the ground and the player will lose his/her connection.  For this
+reason, PURGE should only be used on players in disciplinary situations.
+
+Examples:
+
+  > purge
+  > purge Pom
+  > purge sword
+  > purge dragon
+
+See also: DC
+#
+RELOAD
+
+Usage: reload < '*' | all | file >
+
+Reload is used to reload text files such as the MOTD from disk into memory.
+reload * reloads all the text files below.
+
+Valid files are:
+
+  background (/mud_dir/lib/text/background)
+  credits    (/mud_dir/lib/text/credits)
+  greetings  (/mud_dir/lib/text/greetings)
+  handbook   (/mud_dir/lib/text/handbook)
+  help       (/mud_dir/lib/text/help)
+  immlist    (/mud_dir/lib/text/immlist)
+  imotd      (/mud_dir/lib/text/imotd)
+  news       (/mud_dir/lib/text/news)
+  motd       (/mud_dir/lib/text/motd)
+  info       (/mud_dir/lib/text/info)
+  policy     (/mud_dir/lib/text/policies)
+  wizlist    (/mud_dir/lib/text/wizlist)
+  xhelp      (/mud_dir/lib/text/help/*)
+#
+REROLL
+
+Usage: reroll <player>
+
+REROLL gives a player new stats (i.e., Str, Int, Wis, Dex, Con, and Cha)
+
+See also: STAT
+#
+RESTORE
+
+Usage: restore <player | mobile>
+
+RESTORE restores a player or mobile to full hit, mana, and movement points.
+If used on immortals, it also sets all skill levels to 100%.
+#
+RETURN
+
+Usage: return
+
+RETURN returns you to your regular body if you are switched into a mob.
+
+See also: SWITCH
+#
+ROOMFLAGS
+
+Usage: roomflags
+
+Toggles a flag which causes the virtual room number and room flags, if any,
+to be displayed next to room names.
+#
+SET
+
+Usage: set [ file | player ] <character> <field> <value>
+
+SET is an extremely powerful command, capable of setting dozens of aspects of
+characters, both players and mobiles.
+
+SET PLAYER forces set to look for a player and not a mobile; useful for
+players with names such as 'guard'.
+
+SET FILE lets you change players who are not logged on.  If you use SET FILE
+on a player who IS logged on, your change will be lost.  If you wish to set
+a player who is in the game but is linkless, use set twice -- once with the
+FILE argument, and once without -- to make sure that the change takes.
+
+For toggled fields (BINARY), the value must be ON, OFF, YES, or NO.
+
+The following are valid fields:
+
+Field          Level Required   Who     Value Type   Decription
+-----------------------------------------------------------------------------
+age            LVL_GRGOD        BOTH    NUMBER       Character's age
+brief          LVL_GOD          PC      BINARY       Brief mode
+invstart       LVL_GOD          PC      BINARY       Invisible @ Start
+title          LVL_GOD          PC      MISC         Player's title
+nosummon       LVL_GRGOD        PC      BINARY       NOSUMMON flag
+maxhit         LVL_GRGOD        BOTH    NUMBER       Max HP
+maxmana        LVL_GRGOD        BOTH    NUMBER       Max mana
+maxmove        LVL_GRGOD        BOTH    NUMBER       Max movement
+hit            LVL_GRGOD        BOTH    NUMBER       Current HP
+mana           LVL_GRGOD        BOTH    NUMBER       Current mana
+move           LVL_GRGOD        BOTH    NUMBER       Current movement
+align          LVL_GOD          BOTH    NUMBER       Alignment
+str            LVL_GRGOD        BOTH    NUMBER       Strength
+stradd         LVL_GRGOD        BOTH    NUMBER       Additional STR (18/xx)
+int            LVL_GRGOD        BOTH    NUMBER       Inteligence
+wis            LVL_GRGOD        BOTH    NUMBER       Wisdom
+dex            LVL_GRGOD        BOTH    NUMBER       Dexterity
+con            LVL_GRGOD        BOTH    NUMBER       Constitution
+cha            LVL_GRGOD        BOTH    NUMBER       Charisma
+sex            LVL_GRGOD        BOTH    MISC         Sex
+ac             LVL_GRGOD        BOTH    NUMBER       Armor class
+gold           LVL_GOD          BOTH    NUMBER       Gold (On hand)
+bank           LVL_GOD          PC      NUMBER       Gold in bank
+exp            LVL_GRGOD        BOTH    NUMBER       Experience points
+hitroll        LVL_GRGOD        BOTH    NUMBER       To-Hit modifier
+damroll        LVL_GRGOD        BOTH    NUMBER       Damage modifier
+invis          LVL_IMPL         PC      NUMBER       Invisible (level)
+nohassle       LVL_GRGOD        PC      BINARY       NOHASSLE flag
+frozen         LVL_FREEZE       PC      BINARY       FROZEN flag
+practices      LVL_GRGOD        PC      NUMBER       # of practices
+lessons        LVL_GRGOD        PC      NUMBER       # of practices
+drunk          LVL_GRGOD        BOTH    MISC         Drunkeness
+hunger         LVL_GRGOD        BOTH    MISC         Hrs to hunger
+thirst         LVL_GRGOD        BOTH    MISC         Hrs to thirst
+killer         LVL_GOD          PC      BINARY       KILLER flag
+thief          LVL_GOD          PC      BINARY       THIEF flag
+level          LVL_IMPL         BOTH    NUMBER       Level
+room           LVL_IMPL         BOTH    NUMBER       Move to room
+roomflag       LVL_GRGOD        PC      BINARY       ROOMFLAGS flag
+siteok         LVL_GRGOD        PC      BINARY       SITEOK flag
+deleted        LVL_IMPL         PC      BINARY       DELETED flag
+class          LVL_GRGOD        BOTH    MISC         Class (W/T/C/M)
+nowizlist      LVL_GOD          PC      BINARY       Not Wizlistable flag
+quest          LVL_GOD          PC      BINARY       QUESTING flag
+loadroom       LVL_GRGOD        PC      MISC         Room to load in (#/off)
+color          LVL_GOD          PC      BINARY       COLOR flag
+idnum          LVL_IMPL         PC      NUMBER       ID Number
+passwd         LVL_IMPL         PC      MISC         Player password
+nodelete       LVL_GOD          PC      BINARY       Undeletable flag
+
+See also: STAT
+#
+SHOW
+
+Usage: show <mode> [argument]
+
+Valid Modes:
+
+death          errors         godrooms       houses
+player         rent           shops          stats
+zones   
+
+The SHOW command displays information.  Some modes of show require additional
+information, such as a player name.
+
+   death: Shows all death traps in the game.
+  errors: Shows errant rooms.
+godrooms: Shows the rooms in the 'god zone'.
+  houses: Shows the houses that are currently defined.
+  player: Shows player summary information, simply provide a player name.
+    rent: Shows the filename and path to a players rent file.
+   shops: Shows all the shops in the game and their buy/sell parameters.
+   stats: Shows game status information including players in game, mobs etc.
+   zones: Shows all the zones in the game and their current reset status.
+          An age of -1 means it is in the 'to be reset next' queue.
+
+See also: STAT, ZRESET
+#
+SHUTDOWN
+
+Usage: shutdown [reboot | die | pause]
+
+SHUTDOWN shuts the MUD down.  The SHUTDOWN command works in conjunction with
+CircleMUD's 'autorun' script.  If you are not using autorun, the arguments are
+meaningless.  If you are using autorun, the following arguments are available:
+
+REBOOT     Pause only 5 seconds instead of the normal 40 before trying to
+           restart the MUD.
+
+DIE        Kill the autorun script; the MUD will not reboot until autorun is
+           explicitly run again.
+
+PAUSE      Create a file called 'paused' in Circle's root directory; do not
+           try to restart the MUD until 'paused' is removed.
+#
+SKILLSET
+
+Usage: skillset <name> '<skill>' <value>
+
+Sets the specified skill to the specified value.
+
+See also: SET
+#
+SLOWNS
+
+Usage: slowns
+
+Toggles whether or not IP addresses are resolved into readable site names.
+If slow nameserver is enabled, USERS will show only IP addresses.
+(128.123.222.111 etc).
+
+See also: USERS
+#
+SNOOP
+
+Usage: snoop [player]
+
+Snoop allows you to listen in on another player's session; everything the
+player sees or types will be displayed on your terminal preceded by a '%'.
+
+Obviously, there are many ethical considerations to the use of this command; 
+snoop should be used minimally, and only for disciplinary purposes.
+
+Type snoop <your name> or just snoop to stop snooping.
+#
+SNOWBALL
+
+Snowball is just a social -- it prints a funny message, and nothing more.
+#
+STAT
+
+Usage: stat [player | object | mobile | file] <name>
+
+Gives information about players, monsters, and objects in the game.  The type
+argument is optional.
+
+STAT PLAYER will search only for players; useful for statting people with
+names such as Red or Cityguard.
+
+STAT OBJECT will search only for objects.
+
+STAT MOBILE will search only for monsters.
+
+STAT FILE is used to stat players who are not logged in; the information
+displayed comes from the playerfile.
+
+Examples:
+
+  > stat fido
+  > stat player red
+  > stat mobile red
+  > stat file niandra
+  > stat object thunderbolt
+
+See also: VSTAT
+#
+STRING
+
+Usage: string <type> <name> <field> [<string> | <keyword>]
+
+For changing the text-strings associated with objects and characters.  The
+format is:
+
+Type is either 'obj' or 'char'.
+
+Field is one of the following(the names may be abbreviated):
+
+Name                  (the call-name of an obj/char - kill giant)
+Short                 (for inventory lists (obj's) and actions (char's))
+Long                  (for when obj/character is seen in room)
+Title                 (for players)
+Description           (For look at.  For obj's, must be followed by a keyword)
+Delete-description    (only for obj's. Must be followed by keyword)
+
+Where a string is expected as the last argument, a newline will make you enter
+a string mode, and the game will prompt you for new lines to the string until
+you exceed the maximum length for the string or you end a line with a '@'.
+
+Mobiles and objects currently cannot be strung.
+#
+SWITCH
+
+Usage: switch <monster>
+
+SWITCH is used to take over the body of mobiles; useful for interactive
+adventures.  If the monster in which you are switched is killed you will be
+returned to your own body.
+
+See also: RETURN
+#
+SYSLOG
+
+Usage: syslog [off | brief | normal | complete]
+
+The SYSLOG command controls how detailed of an on-line system log you see.
+Messages surrounded by '[' and ']' are syslog messages and are in green
+if you have color on.
+
+The messages you receive are level dependent.
+
+Examples:
+
+  > syslog complete
+  > syslog off
+
+See also: COLOR
+#
+UNAFFECT
+
+Usage: unaffect <victim>
+
+Removes all affections (i.e., spell effects) from a player.
+
+See also: STAT
+#
+UPTIME
+
+Usage: uptime
+
+Displays when the game was booted and calculates how long ago that was.
+#
+USERS
+
+Usage: users [switches]
+
+USERS gives a list of all sockets (i.e., connections) currently active on the
+MUD.  The multi-column display shows the socket number (used by DC), class,
+level, and name of the player connected, connection state, idle time, and
+hostname.
+
+The following switches are available:
+
+-k or -o   Show only outlaws (killers and thieves).
+-p         Show only sockets in the playing sockets.
+-d         Show only non-playing (deadweight) sockets.
+-l min-max Show only sockets whose characters are from level min to max.
+-n <name>  Show the socket with <name> associated with it.
+-h <host>  Show all sockets from <host>.
+-c list    Show only sockets whose characters' classes are in list.
+
+See also: DC, SLOWNS
+#
+VNUM
+
+Usage: vnum <mob | obj> <name>
+
+Gives a list of the virtual numbers of objects or mobiles which have the
+specified name.
+
+Examples:
+
+  > vnum obj ring
+  1. [  904] a platinum ring
+  2. [ 2543] a seashell ring
+  3. [ 2588] a small emerald ring
+  
+  > vnum mob dragon
+  1. [    1] Puff
+  2. [  908] the dragon turtle
+  3. [ 2548] the Master of Illusions
+#
+VSTAT
+
+Usage: vstat < mob | obj > <virtual number>
+
+Used to stat a prototypical mobile or object by virtual number.
+
+Examples:
+
+  > vstat obj 3000
+  > vstat mob 3001
+
+See also: LOAD, STAT, VNUM
+#
+WIZHELP
+
+Usage: wizhelp
+
+Gives a list of the special commands available at your level.
+#
+WIZLOCK
+
+Usage: wizlock [value]
+
+WIZLOCK allows you to restrict the game.  WIZLOCK 1 prevents new characters
+from being created.  WIZLOCK n, 2 <= n <= 34, prevents new characters and
+allows only characters level n and above to log on.  WIZLOCK with no argument
+displays the current WIZLOCK level.
+
+See also: BAN
+#
+WIZNET ;
+
+The immortal communication channel.
+
+Usage: wiznet [ '@' | '+' | '-' | '#' ] [<text>]
+
+Examples:
+
+  >; <text>    - just sends text
+  >; @         - shows all gods that are on and visible to you
+               - also shows if the gods who are visible to you are writing
+
+This code was provided by Gnort.
+
+See also: NOWIZ
+#
+ZRESET
+
+Usage: zreset < zone | '*' | '.' >
+
+Used to force a zone to reset.  '*' forces all zones to reset.  '.' forces
+the zone you are in to reset.
+
+See also: SHOW -> ZONES
+#
+$

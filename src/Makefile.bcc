@@ -1,0 +1,336 @@
+#
+# Borland C++ IDE generated makefile
+# Generated 12/26/97 at 5:04:53 AM 
+#
+.AUTODEPEND
+
+
+#
+# Borland C++ tools
+#
+IMPLIB  = Implib
+BCC32   = Bcc32 +BccW32.cfg 
+BCC32I  = Bcc32i +BccW32.cfg 
+TLINK32 = TLink32
+TLIB    = TLib
+BRC32   = Brc32
+TASM32  = Tasm32
+#
+# IDE macros
+#
+
+
+#
+# Options
+#
+IDE_LinkFLAGS32 =  -LC:\BC5\LIB
+LinkerLocalOptsAtC32_circledexe =  -Tpe -ap -c
+ResLocalOptsAtC32_circledexe = 
+BLocalOptsAtC32_circledexe = 
+CompInheritOptsAt_circledexe = -IC:\BC5\INCLUDE -D_RTLDLL;_BIDSDLL;
+LinkerInheritOptsAt_circledexe = -x
+LinkerOptsAt_circledexe = $(LinkerLocalOptsAtC32_circledexe)
+ResOptsAt_circledexe = $(ResLocalOptsAtC32_circledexe)
+BOptsAt_circledexe = $(BLocalOptsAtC32_circledexe)
+
+#
+# Dependency List
+#
+Dep_circle = \
+   circle.exe
+
+circle : BccW32.cfg $(Dep_circle)
+  echo MakeNode
+
+Dep_circledexe = \
+   alias.obj\
+   act.comm.obj\
+   act.movement.obj\
+   act.item.obj\
+   act.informative.obj\
+   act.offensive.obj\
+   act.other.obj\
+   boards.obj\
+   ban.obj\
+   act.wizard.obj\
+   act.social.obj\
+   castle.obj\
+   class.obj\
+   db.obj\
+   constants.obj\
+   config.obj\
+   comm.obj\
+   fight.obj\
+   graph.obj\
+   limits.obj\
+   interpreter.obj\
+   house.obj\
+   handler.obj\
+   magic.obj\
+   mail.obj\
+   olc.obj\
+   objsave.obj\
+   players.obj\
+   modify.obj\
+   mobact.obj\
+   random.obj\
+   shop.obj\
+   spells.obj\
+   spell_parser.obj\
+   spec_procs.obj\
+   spec_assign.obj\
+   utils.obj\
+   weather.obj
+
+circle.exe : $(Dep_circledexe)
+  $(TLINK32) @&&|
+ /v $(IDE_LinkFLAGS32) $(LinkerOptsAt_circledexe) $(LinkerInheritOptsAt_circledexe) +
+C:\BC5\LIB\c0x32.obj+
+alias.obj+
+act.comm.obj+
+act.movement.obj+
+act.item.obj+
+act.informative.obj+
+act.offensive.obj+
+act.other.obj+
+boards.obj+
+ban.obj+
+act.wizard.obj+
+act.social.obj+
+castle.obj+
+class.obj+
+db.obj+
+constants.obj+
+config.obj+
+comm.obj+
+fight.obj+
+graph.obj+
+limits.obj+
+interpreter.obj+
+house.obj+
+handler.obj+
+magic.obj+
+mail.obj+
+olc.obj+
+objsave.obj+
+players.obj+
+modify.obj+
+mobact.obj+
+random.obj+
+shop.obj+
+spells.obj+
+spell_parser.obj+
+spec_procs.obj+
+spec_assign.obj+
+utils.obj+
+weather.obj
+$<,$*
+C:\BC5\LIB\bidsfi.lib+
+C:\BC5\LIB\import32.lib+
+C:\BC5\LIB\cw32i.lib
+
+
+|
+alias.obj : alias.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ alias.c
+|
+
+act.comm.obj :  act.comm.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ act.comm.c
+|
+
+act.movement.obj :  act.movement.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ act.movement.c
+|
+
+act.item.obj :  act.item.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ act.item.c
+|
+
+act.informative.obj :  act.informative.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ act.informative.c
+|
+
+act.offensive.obj :  act.offensive.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ act.offensive.c
+|
+
+act.other.obj :  act.other.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ act.other.c
+|
+
+boards.obj :  boards.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ boards.c
+|
+
+ban.obj :  ban.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ ban.c
+|
+
+act.wizard.obj :  act.wizard.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ act.wizard.c
+|
+
+act.social.obj :  act.social.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ act.social.c
+|
+
+castle.obj :  castle.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ castle.c
+|
+
+class.obj :  class.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ class.c
+|
+
+db.obj :  db.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ db.c
+|
+
+constants.obj :  constants.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ constants.c
+|
+
+config.obj :  config.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ config.c
+|
+
+comm.obj :  comm.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ comm.c
+|
+
+fight.obj :  fight.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ fight.c
+|
+
+graph.obj :  graph.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ graph.c
+|
+
+limits.obj :  limits.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ limits.c
+|
+
+interpreter.obj :  interpreter.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ interpreter.c
+|
+
+house.obj :  house.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ house.c
+|
+
+handler.obj :  handler.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ handler.c
+|
+
+magic.obj :  magic.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ magic.c
+|
+
+mail.obj :  mail.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ mail.c
+|
+
+olc.obj :  olc.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ olc.c
+|
+
+objsave.obj :  objsave.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ objsave.c
+|
+
+players.obj : players.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ players.c
+
+modify.obj :  modify.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ modify.c
+|
+
+mobact.obj :  mobact.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ mobact.c
+|
+
+random.obj :  random.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ random.c
+|
+
+shop.obj :  shop.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ shop.c
+|
+
+spells.obj :  spells.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ spells.c
+|
+
+spell_parser.obj :  spell_parser.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ spell_parser.c
+|
+
+spec_procs.obj :  spec_procs.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ spec_procs.c
+|
+
+spec_assign.obj :  spec_assign.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ spec_assign.c
+|
+
+utils.obj :  utils.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ utils.c
+|
+
+weather.obj :  weather.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ weather.c
+|
+
+# Compiler configuration file
+BccW32.cfg : 
+   Copy &&|
+-w
+-R
+-v
+-vi
+-H
+-H=circle.csm
+-WC
+-g0
+| $@
+
+

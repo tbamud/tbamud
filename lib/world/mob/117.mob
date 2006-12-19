@@ -1,0 +1,494 @@
+#11700
+guard holden~
+Tower Guard Holden~
+Tower Guard Holden is here inspecting visitors.
+~
+   It looks unfinished.  A tall male guard in armor stands here inspecting each
+visitor into the tower before they enter for security.  He is rather satisfied
+with his duties now and carries an arrogant smirk.  
+~
+bdegmn kn 150 E
+15 15 1 3d3+150 2d2+2
+300 25000
+8 8 1
+E
+T 11703
+#11701
+guard stradler~
+Tower Guard Stradler~
+Tower Guard Stradler cheerfully surveys the crowd.
+~
+   Stradler is a charming and attractive guard.  He inspects visitor's
+inventories for security here.  The ladies (and a few men) seem to flock to him
+for inspection.  He stands proud and tall for the safety of the people of Los
+Torres.  
+~
+bdegmn n 175 E
+15 15 1 3d3+150 2d2+2
+325 24000
+8 8 1
+E
+T 11704
+#11702
+citizen~
+citizen~
+A citizen stands here.
+~
+   The citizen of Los Torres stands here, minding her own business.  She does
+not want to be bothered, she has many, many errands to run.  She looks in her
+purse, counts her money and checks for her ID cards.  
+~
+dg 0 25 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 2
+E
+#11703
+hired assassin~
+a hired assassin~
+A governmentally hired assassin stalks around here.
+~
+   An assassin veiled in red lurks around in the forest to match the color of
+the leaves and be unseen.  He crunches on the twigs making it a dead giveaway as
+to where he is.  He has been ordered by the government to kidnap any people who
+are planning to attack them.
+~
+cdefgn k -200 E
+13 16 2 2d2+130 2d2+2
+200 18000
+8 8 1
+E
+#11704
+zulthan waiter~
+Zulthan the Waiter~
+Zulthan the Waiter takes orders from customers here.
+~
+   Zulthan the Waiter is here taking orders and retrieving food for people. He
+seems very busy, but he is very happy doing what he does. He has brown hair and
+is very short. He is also a bit on the pudgy side as well, though he doesn't
+seem to care. 
+~
+bd 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+E
+T 11700
+#11705
+cassandra lacela~
+Cassandra Lacela~
+Cassandra Lacela kinda stands here, like, drunk, you know...
+~
+   Cassandra Lacela stands here, kind of.  She slurs her tongue and her hair is
+all messed up.  She must be drunk.  She is wearing a white dress with some red
+and purple stains on it.  She lazily will take her customer's orders and she
+seems to have an obsession with lace, due to the decor in the room.  
+~
+bdnopr 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+E
+T 11706
+#11706
+official lesalie~
+the Government Official Lesalie~
+The Government Official Lesalie is here.
+~
+   The Government Official Lesalie is here in his brown suit.  He is wearing a
+white tie and brown pants.  He has brown hair and seems to be very tall.  He has
+a scar in his left cheek that looks like a slash from a weapon or a claw of
+sorts.  
+~
+bdo hp 0 E
+15 15 1 3d3+150 2d2+2
+150 22500
+4 8 1
+E
+T 11718
+#11707
+salesman derresor maosund~
+Salesman Derresor Maosund~
+Salesman Derresor Maosund stands here checking his inventory of armor.
+~
+   Salesman Derresor Maosund smiles at his customers as they browse his display
+and ask him questions on 'What does this armor do' and 'How much are these
+boots'.  He is wearing a black robe over what seems to be flowing black pants
+and a black shirt.  
+~
+bdg d 0 E
+20 14 -2 4d4+200 4d5+4
+0 0
+8 8 1
+BareHandAttack: 13
+E
+T 11707
+#11708
+sniper assassin~
+a Sniper Assassin~
+A Sniper Assassin hides here spying on citizens.
+~
+   The assassin here looks through the wall patiently at the citizens walking
+past.  She has long red hair that matches her red outfit.  She has very unique
+sniping skills as well as some interesting close up combat technique to boot.  
+She is mumbling to herself as she carefully watches to anyone opposing the
+government.  
+~
+bdel s -200 E
+14 16 1 3d2+140 2d4+2
+450 21000
+8 8 2
+E
+#11709
+assassin chieftan~
+the Assassin Chieftan~
+The Assassin Chieftan stands here guarding over her prisoner.
+~
+   The Chieftan of the Red Assassins stands here with her specially gold rimmed
+red veil and her dull gold badge that reads 'Red Assassin Chieftan'.  She gives
+orders to her assassins from the government and checks over her prisoner.  She
+has long black hair that flies out from behind her veiled head.  She has a very
+tall and skinny figure and she stands with her hand on her hip.  
+~
+bdeln dfk -200 E
+17 15 0 3d3+170 2d2+2
+1000 29500
+8 8 2
+E
+T 11714
+#11710
+government official visconti~
+the Government Official Visconti~
+The Government Official Visconti crawls up in his own filth.
+~
+   The Goverment Official Visconti, famous now for the addition of the top floor
+in the second tower, is covered in dirt, with ragged clothing and a bruised
+face.  He has a stubbled beard growing from lack of grooming and he smells like
+a skunk in an exhaust pipe!  
+~
+dg 0 0 E
+13 16 2 2d2+130 2d2+2
+130 16900
+4 8 1
+E
+T 11729
+#11711
+guard ackley~
+Tower Guard Ackley~
+Tower Guard Ackley stands here, slacking off.
+~
+   He stands short, and has a severe acne problem.  He often bites at his nails
+and shivers uncontrollably.  He has a major temper problem, and can go off the
+deep end easily when someone comments on one of his flaws.  He snorts loudly at
+random people for a laugh, and makes lewd gestures at those who have
+disrespected him before.  
+~
+bd 0 -50 E
+17 15 0 3d3+170 2d2+2
+170 28900
+8 8 1
+E
+#11712
+government official miranda~
+the Government Official Miranda~
+The Government Official Miranda stands here.
+~
+   Oh, busy, busy, busy!  That's how she wishes her life was.  Now she's been
+stuck in this dark place for so long all she has left to do now is cry.  Her
+brown overcoat and pink dress are all tattered, torn and wet.  Her face is
+covered in dirt, though it is hard to tell through her bushy medium length hair.
+
+~
+bdh 0 0 E
+12 16 2 2d2+120 2d2+2
+120 12500
+8 8 2
+E
+T 11730
+#11713
+government official phel~
+the Government Official Phel~
+The Government Official Phel is standing here.
+~
+   He grins, he manipulates, he's the sneaky official Phel.  Known for his
+persuasive skills around the town, nobody is exactly sure if this guy's
+trustworthy or not.  He wears a dark green suit as he works his busy day.  His
+hair is blonde with a white streak of hair down the right.  His eyes are colored
+differentyly, one being brown and one being hazel.  
+~
+bde 0 -100 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+E
+#11714
+government official gertrude~
+the Government Official Gertrude~
+The Government Official Gertrude sneers wickedly as she works.
+~
+   The pink suited Gertrude always wears a sneer and does things for her own
+interest instead of who she is supposed to represent.  She constantly sends off
+any messages of complaint to her, and is blatantly corrupt.  
+~
+bd 0 -150 E
+14 16 1 2d2+140 2d2+2
+140 17500
+8 8 2
+E
+#11715
+government official cecille~
+the Government Official Cecille~
+The Government Official Cecille hums ignorantly to herself.
+~
+   Cecille looks pretty darn dumb to be an official.  She is wearing a light
+pink buttoned shirt and a matching skirt.  She is humming a song that she made
+up five seconds ago and its rather irritating.  She seems like she would be
+easily persuaded to believe one way or the other even if its unjust.  
+~
+bdln 0 0 E
+11 17 3 2d2+110 1d2+1
+110 11500
+8 8 2
+BareHandAttack: 8
+E
+#11716
+government official thedoric~
+the Government Official Thedoric~
+The Government Official Thedoric grins fakely as he greets his clients.
+~
+   Thedoric is heavily biased toward certain beliefs in life and is not afraid
+to go to extreme measures to ensure that his beliefs are reality.  He is wearing
+a red suit and has medium length black hair.  He always wears a rather fake grin
+as he meets with people.  He tends to favor those who agree with him, and maybe
+he's a bit irrational when it comes to those who don't...  
+~
+bdeln 0 -250 E
+18 14 0 3d3+180 3d3+3
+250 32400
+8 8 1
+BareHandAttack: 7
+E
+#11717
+government official luther~
+the Government Official Luther~
+The Government Official Luther tries his best to keep the council in line.
+~
+   Luther is trying all he can do to keep the council in line as of now.  He is
+wearing a blue trench coat over a blue dress shirt with white pants.  He has
+very short brown hair with deep blue eyes.  He is scrambling to save the city
+from the council, though he looks like he could use some help.  Maybe you should
+say hello to him?  
+~
+bd 0 0 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+E
+T 11721
+#11718
+bodyguard verno~
+the Empress's bodyguard Verno~
+The Empress's bodyguard Verno blocks anyone from seeing the Empress.
+~
+   Verno, it would seem, stands very tall though he also has a very large
+waistline.  He is wearing a standard black tuxedo and he has his arms folded,
+stepping right in front of the path so that no one will go through.  He has a
+bald head and is also wearing a pair of black sunglasses.  
+~
+bde 0 0 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+BareHandAttack: 6
+E
+T 11719
+T 11720
+#11719
+empress leraillia~
+Empress Leraillia~
+Empress Lerallia smiles warmly at you.
+~
+   Leraillia is very exquisitely dressed.  She is wearing an untied scarlet red
+robe over a shirt that hangs down to her thighs at some parts.  The shirt is cut
+so tat triangular flaps hang from the waste.  Her pants are very loose and have
+several chains hanging from various spots.  The pants are flared a lot at the
+bottom, so much that it totally covers her feet.  She has long blonde hair and
+sky blue colored eyes.  Her lips are the scarlet of her robe.  
+~
+bdegnopr defhk 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 2
+BareHandAttack: 8
+E
+T 11731
+#11720
+artist~
+the artist~
+The artist paints another picture.
+~
+   The artist wears a paint covered smock and a black beret.  He stands in
+disgust trying to think of ideas for his next masterpiece.  
+~
+bd 0 50 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 1
+E
+#11721
+journalist~
+a journalist~
+A journalist wanders around asking people questions.
+~
+   The journalist is dressed nicely, and is carrying a notepad, a pen and a
+sheet of questions to ask the citizens of Los Torres.  The questions mainly deal
+with the government, though most people seem unwilling to answer them.  
+~
+dg 0 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+E
+#11722
+fat chef~
+a really fat chef~
+A really fat chef stands behind the counter chopping onions.
+~
+   The chef is extremely fat, I mean, totally huge.  He has a thick, black,
+curly mustache.  He is wearing a big poofy hat that chefs normally wear and a
+big white apron that somehow manages to fit around his grandiose waist.  
+~
+bd 0 0 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 1
+E
+#11723
+cryng man~
+a crying man~
+A crying man mopes on one of the pews about how he lost his wedding ring.
+~
+   The man has totally wrinkled clothing and bangs his fist on the pew
+repeatedly for some reason, making all the citizens nearby uncomfortable.  
+~
+bd 0 0 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 1
+E
+T 11727
+#11724
+government official johanes~
+the Government Official Johanes~
+The Government Official Johanes works on his papers.
+~
+   He looks busy and self important.
+~
+dg 0 0 E
+5 19 7 1d1+50 1d2+0
+50 2500
+8 8 1
+E
+#11725
+maid~
+the maid~
+The maid stands here doing laundry.
+~
+   The maid is a short skynni woman, wearing a black dress and a white apron.  
+She carries a bunch of towels in her hand and is busy doing the laundrywork to
+care about anything else.  
+~
+bd 0 150 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 2
+E
+#11726
+karate instructor~
+the Karate Instructor~
+The Karate Instructor practices Tae Kwon Do.
+~
+   It looks unfinished.  The instructor is bald headed, very short and thin.  
+He wears a white uniform with a black belt tied around the waist.  He is
+currently practicing one of his forms right now with his eyes closed, thinking
+about what he is doing.  
+~
+bd f 100 E
+15 15 1 3d3+150 3d2+3
+150 23500
+8 8 1
+BareHandAttack: 13
+E
+#11727
+librarian~
+the librarian~
+The Librarian stands here, swatting dust particles that come by.
+~
+   The librarian wears her brown hair down to her waist, and has bright green
+eyes.  She stands aware, looking t the air.  She seems very conscious about
+having dust in the room, as she keept slapping them out of the air with a
+feather duster.  
+~
+bd 0 200 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 2
+E
+#11728
+little alex~
+little Alex~
+Little Alex is here running around in circles.
+~
+   The confused little boy named Alex is bored, so he'll just run around in
+circles now.  H is wearing blue overalls and a red striped T-shirt.  
+~
+bcd 0 0 E
+7 18 5 1d1+70 1d2+1
+70 4900
+8 8 1
+E
+#11729
+clever josie~
+clever Josie~
+Clever Josie sits in the corner reading a book.
+~
+   Clever Josie the know-it--all of the bunch.  She is reading to herself in the
+corner quietly.  She is the only one of the children that is behaving nicely.  
+She has medium length brown heair and cat-shaped black glasses.  She is wearing
+a brown dress with pockets at the front.  
+~
+bd 0 0 E
+6 18 6 1d1+60 1d2+1
+60 3600
+8 8 2
+E
+#11730
+teacher~
+the teacher~
+The teacher stands here cleaning up after her kids.
+~
+   The teacher wears her hair in a bun, and is wearing small wire glasses.  She
+has a green dress on and she is aggravated by the mess that all of her students
+had made when they left.  
+~
+bd 0 50 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 2
+E
+#11731
+janitor~
+the janitor~
+The janitor kneels here, cleaning something off the walls.
+~
+   The janitor has short black hair, and a stubbly beard.  He wears a red
+T-shirt and blue jeans, and seems very cranky.  HE is unhappy that he has to
+clean up the messes that people make on the walls.  
+~
+bd 0 0 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 1
+BareHandAttack: 13
+E
+$

@@ -1,0 +1,167 @@
+CircleMUD v3.0 Shop File~
+#24800~
+24801
+3020
+3021
+3023
+24806
+7211
+6000
+-1
+1.30
+0.40
+5
+6
+7
+0
+0
+-1
+%s Sorry, I don't have that weapon.~
+%s Sorry, you don't seem to have that...~
+%s I don't buy such an item, try some other shop.~
+%s Sorry, that's a too expensive weapon for me, try in Thewston.~
+%s Get some money if you wanna buy something...~
+%s Ok, I'll charge you %d coins for it.~
+%s Here you are, I'll give you %d coins for it.~
+2
+6
+24804
+0
+24811
+-1
+0
+28
+0
+0
+#24801~
+3042
+3086
+3076
+24802
+6002
+24807
+24808
+-1
+2.00
+0.50
+9
+0
+0
+0
+0
+-1
+%s Sorry, I don't have that armour.~
+%s Sorry, you don't seem to have that.~
+%s I don't buy such a item, try some other shop.~
+%s Sorry, that's a too expensive armour for me, try in Thewston.~
+%s Get some money if you like to buy something...~
+%s Ok, that'll be %d coins, please.~
+%s Here you are, I'll give you %d coins for it.~
+0
+6
+24805
+0
+24810
+-1
+0
+28
+0
+0
+#24802~
+3050
+3051
+24809
+24810
+24811
+24812
+-1
+1.05
+0.15
+2
+3
+4
+10
+0
+-1
+%s To bad, I don't seem to have that item.~
+%s Sorry, I don't buy something you don't have.~
+%s Sorry that's not my part of business...~
+%s Sorry, that's a too expensive item for me, try in Thewston.~
+%s Get lost punk! You don't have that much money.~
+%s That'll be %d coins!~
+%s I'll give you about %d coins for it.~
+0
+6
+24806
+0
+24814
+-1
+0
+28
+0
+0
+#24803~
+24813
+24814
+24815
+24816
+24817
+7208
+-1
+1.50
+0.40
+1
+15
+16
+21
+8
+-1
+%s Sorry, I'm unfortunatly out of that for the moment.~
+%s You don't seem to be a honest man, maybe I should call the guards?~
+%s I don't trade in that kind of objects.~
+%s Sorry, I'm out of cash, try in Thewston, or give it to me. :-)~
+%s You seem to have been robbed if you thought you had that kind of money? ~
+%s That'll be %d coins, please...~
+%s I'll give you about %d coins for it, here you go...~
+0
+6
+24807
+0
+24813
+-1
+0
+28
+0
+0
+#24804~
+3102
+24818
+24819
+24820
+-1
+2.00
+0.90
+17
+19
+0
+0
+0
+-1
+%s It's very noisy in here, what did you say you wanted to buy?~
+%s You don't seem to be a honest man, maybe I should call the guards?~
+%s I don't trade in that kind of objects.~
+%s Sorry, I'm out of cash, try in Thewston, or give it to me for free...:-)~
+%s Are you drunk or what ??? - NO CREDIT!~
+%s That'll be - say %d coins.~
+%s I'll give you about %d coins for it, here you go...~
+0
+6
+24808
+0
+24816
+-1
+0
+28
+0
+0
+$~

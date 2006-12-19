@@ -1,0 +1,268 @@
+CircleMUD v3.0 Shop File~
+#27100~
+27178
+27177
+27176
+27175
+-1
+1.20
+0.20
+-1
+%s Don't got none, don't want none!~
+%s You don't seem to have one of those.~
+%s I don't want anything of yours.~
+%s Too rich for my blood!~
+%s You're too stinking poor to afford it.~
+%s That'll be %d coins and your firstborn child please!~
+%s I don't buy.~
+2
+6
+27148
+0
+27142
+-1
+0
+28
+0
+0
+#27111~
+27207
+-1
+1.20
+0.20
+-1
+%s I don't sell any of those!~
+%s Nothing is refundable, have a nice day.~
+%s Nothing is refundable, have a nice day.~
+%s Nothing is refundable, have a nice day.~
+%s Go buy something you can afford.~
+%s That comes to %d coins. Now get lost! Heheh.~
+%s I don't buy.~
+2
+6
+27123
+0
+27281
+-1
+0
+28
+0
+0
+#27112~
+27209
+27224
+-1
+1.20
+0.10
+2
+3
+4
+-1
+%s I offer no such thing! Try list.~
+%s You lack the item in question.~
+%s I buy the tools of magicians only.~
+%s The price of this is beyond my means.~
+%s You can't afford to purchase this!~
+%s %d coins, thank you.~
+%s You'll have %d coins for that.~
+2
+6
+27130
+0
+27112
+-1
+0
+28
+0
+0
+#27121~
+27123
+27121
+27120
+27119
+27118
+27117
+27116
+27115
+-1
+1.20
+0.20
+-1
+%s I never palmed that thing, try list.~
+%s That seems to be absent from your belongings.~
+%s I don't buy, I accept charity. Fork it over!~
+%s How about if I just steal it instead?~
+%s You beggar! You can't afford that.~
+%s Here ye go, pal. That'll be %d coins.~
+%s I don't buy.~
+2
+7
+27121
+1
+27121
+-1
+0
+28
+0
+0
+#27122~
+27193
+27192
+27191
+27180
+-1
+1.20
+0.20
+12
+-1
+%s I don't carry that.~
+%s Even if you had one of those, I doubt I would want it.~
+%s I don't need to buy those - I'm a witch! Muaha!~
+%s I'd buy it, but I just fed my dragon and am broke!~
+%s You'll need more gold than that!~
+%s Good choice, my pretty! %d coins please.~
+%s Ahh! Just the thing I needed. Have %d coins.~
+2
+6
+27127
+0
+27234
+-1
+0
+28
+0
+0
+#27146~
+27142
+27141
+27140
+27139
+-1
+1.20
+0.20
+5
+-1
+%s I do not forge that weapon, try list.~
+%s You seem fresh out of those.~
+%s My art is purely offensive. Try somewhere else.~
+%s Ah! I haven't seen the like of that in years! I cannot afford it.~
+%s You haven't the means to pay for this.~
+%s A fine selection for %d coins.~
+%s Here you are, %d coins. Now be off.~
+2
+6
+27133
+0
+27146
+-1
+0
+28
+0
+0
+#27147~
+27167
+27166
+27165
+27164
+27163
+-1
+1.20
+0.20
+9
+-1
+%s I don't carry that.~
+%s Hm. Smoke another one and check your inventory.~
+%s I'm not interested in such things.~
+%s The price for that is outrageous! Away with you.~
+%s That seems to be out of your price range.~
+%s That comes to %d coins. Enjoy.~
+%s I'll give you %d coins for that.~
+2
+6
+27132
+0
+27147
+-1
+0
+28
+0
+0
+#27148~
+27129
+27128
+27127
+27126
+27124
+27125
+27122
+-1
+1.20
+0.40
+-1
+%s You'll have to make that yourself, never heard of it.~
+%s You don't seem to have one.~
+%s Be on your way loafer, I don't buy.~
+%s Not for those prices.~
+%s You can't afford my hearty drink and meals!~
+%s A solid %d coins down on the bar, friend.~
+%s I don't buy.~
+2
+5
+27120
+0
+27148
+-1
+0
+28
+0
+0
+#27150~
+27133
+27217
+-1
+1.20
+0.50
+-1
+%s None of those here! Try list.~
+%s I don't buy!~
+%s I'd rather eat half-cooked chihuahua for a month than buy that.~
+%s I don't buy.~
+%s You cannot afford this.~
+%s The bill is %d coins.~
+%s I don't buy.~
+2
+6
+27131
+0
+27150
+-1
+0
+28
+0
+0
+#27153~
+27132
+27131
+27130
+-1
+1.20
+0.20
+-1
+%s Yo! Um, we don't sell that.~
+%s We don't buy, and you have none. I see a problem there.~
+%s I don't want for anything. Be on your way, peddler.~
+%s Not buying none, nope.~
+%s You haven't enough gold for it.~
+%s That'll be %d coins.~
+%s I'm not interested.~
+2
+2
+27128
+0
+27153
+-1
+0
+28
+0
+0
+$~

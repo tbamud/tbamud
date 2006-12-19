@@ -1,0 +1,34 @@
+CircleMUD v3.0 Shop File~
+#26100~
+26107
+26108
+26109
+26110
+26111
+26112
+26113
+26114
+26115
+-1
+2.00
+0.50
+17
+-1
+%s We don't that on tap, sorry!~
+%s Check your possessions, you don't have that.~
+%s I don't care for those types of goods.~
+%s I can't afford something that great!~
+%s You can't afford it, you damn lush!~
+%s That'll cost you %d coins, please.~
+%s You'll get %d coins for that.~
+1
+7
+26116
+0
+26129
+-1
+0
+28
+0
+0
+$~

@@ -1,0 +1,438 @@
+#400
+grass snake~
+Grass Snake~
+A grass snake is coiled up in the grass looking at you.
+~
+   He really isnt very big, but he looks very mean.  He watches you with his
+yellow eyes, ready to attack.    
+~
+bd 0 -250 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+BareHandAttack: 11
+E
+#401
+Giant Mosquito~
+Giant Mosquito~
+A giant mosquito is here.
+~
+   The creature is rather large looking.  She is almost the size of a bird!  
+It would be wise to not upset her.    
+~
+bd 0 -250 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 2
+BareHandAttack: 1
+E
+#403
+firefly~
+firefly~
+A firefly is here.
+~
+   You see the creature flying around through the weeds.  She looks much larger
+than any other firefly you have ever seen before!    
+~
+bd 0 -225 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 2
+BareHandAttack: 4
+E
+#406
+bluebird~
+bluebird~
+A bluebird flies past you and lands on a nearby branch.
+~
+   The creature is rather small, but looks to be quite tough.  It would be a
+mistake to under estimate him.    
+~
+bd 0 -225 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+BareHandAttack: 8
+E
+#410
+bear~
+bear~
+A large bear is standing here.
+~
+   The creature is enormous and could very easily rip you to shreds.  Maybe you
+should just leave him alone.    
+~
+bd 0 -300 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+BareHandAttack: 9
+E
+#412
+chipmunk~
+chipmunk~
+A small chipmunk is here looking at you.
+~
+   She chitters at you, warning you to stay away.  Her teeth are razor sharp
+and one of her ears has a small hole in it.  No doubt a battle scar.    
+~
+bd 0 -200 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+BareHandAttack: 4
+E
+#415
+cricket~
+cricket~
+A cricket is sitting here.
+~
+   The creature blends in with the grass and she is very hard to see.  She can
+easily hide from her enemies in here.    
+~
+bd 0 250 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 2
+BareHandAttack: 1
+E
+#416
+mouse~
+mouse~
+A cute little mouse is here.
+~
+   The mouse looks up at you with his big black eyes.  He looks to be harmless,
+but looks can be deceiving.    
+~
+bd 0 0 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 1
+BareHandAttack: 8
+E
+#421
+zombie~
+zombie~
+A zombie is staggering around before you.
+~
+   The creature is quite horrid looking.  His skin has just about completely
+rotted away.  The skin that is left is grey and holds a nasty odor.  As you
+look closer at the creature you see his teeth are in perfect condition.  How
+can this be?    
+~
+bd 0 -300 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 1
+BareHandAttack: 13
+E
+#422
+ghoul~
+ghoul~
+A mean looking ghoul is here.
+~
+   The creature looks at you, watching every move you make.  You suddenly get
+the feeling that maybe you shouldn't have come here.    
+~
+bd 0 -200 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 0
+BareHandAttack: 5
+E
+#423
+skeleton~
+skeleton~
+A skeleton stands before you.
+~
+   There is not much left to this creature.  It's just a stack of bones, but
+for some reason you think you'd better leave it alone.    
+~
+bd 0 -300 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 0
+BareHandAttack: 9
+E
+#426
+slug~
+slug~
+An enormous slug is here.
+~
+   The creature is filthy from the dirt and looks to be very slimy.  It doesn't
+look like it could do much to protect itself, but don't believe everything you
+hear.    
+~
+bd 0 -200 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 1
+BareHandAttack: 10
+E
+#430
+rat~
+rat~
+A rat is here.
+~
+   The rat watches you with his glowing eyes.  You suddenly feel like you don't
+belong here.    
+~
+bd 0 -200 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 2
+BareHandAttack: 4
+E
+#433
+redbird~
+redbird~
+A beautiful redbird is sitting on the side of the bridge.
+~
+   The bird is rather simple looking.  You notice he is missing a few feathers,
+but is tough just the same.    
+~
+bd 0 -200 E
+16 15 0 3d3+160 2d2+2
+160 25600
+8 8 1
+BareHandAttack: 11
+E
+#434
+muskrat~
+muskrat~
+A muskrat is here.
+~
+   She looks at you with her mangled face.  You notice her face is covered in
+battle scars.  She hisses at you, warning you to stay away.  
+~
+bd 0 200 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 2
+BareHandAttack: 11
+E
+#435
+leech~
+leech~
+A slimy leech is here.
+~
+   The creature sticks to some weeds that are sticking out of the water.  She
+watches you very closely, ready to attack.    
+~
+bd 0 -250 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+BareHandAttack: 4
+E
+#440
+bullfrog frog~
+bullfrog~
+A bullfrog is sitting here.
+~
+   The creature looks at you as you slowly walk by.  He is by far the biggest
+bullfrog you have ever seen!    
+~
+bd 0 -300 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 1
+E
+#441
+crow~
+crow~
+A crow is flying around above you.
+~
+   Her beak is enormous and she could probably swallow you whole!  Her claws
+are in bad need of clipping.  You notice she is missing a few feathers.    
+~
+bd 0 -300 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+BareHandAttack: 4
+E
+#444
+grasshopper~
+grasshopper~
+A grasshopper is hopping around in front of you.
+~
+   She looks like any other grasshopper, but you shouldnt underestimate her.  
+She could be quite tough.    
+~
+bd 0 200 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+BareHandAttack: 9
+E
+#447
+small boy child~
+Small Boy~
+A small boy is here playing in the dirt.
+~
+   He looks up at you.  His hands are covered in dirt.  You can see a slight
+glowing aura within his eyes.    
+~
+bd 0 200 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+BareHandAttack: 6
+E
+#449
+jedidiah~
+jedidiah~
+Jedidiah is standing here, waiting to help you.
+~
+   Jedidiah is a tall man with dark eyes.  He looks very mysterious, but
+friendly.    
+~
+bdnopr dfk 300 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+BareHandAttack: 7
+E
+#450
+teenager~
+teenager~
+A teenager is standing here.
+~
+   She stands at the side of the road looking at you.  You suddenly feel like a
+stranger.  She looks harmless enough, but you shouldn't anger her.    
+~
+bd 0 -200 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 2
+BareHandAttack: 10
+E
+#453
+samuel~
+samuel~
+Samuel the shopkeeper is here.
+~
+   He is a shorter man with no hair.  He is slightly on the chubby side, but
+looks very friendly.    
+~
+bdnopr 0 500 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+BareHandAttack: 7
+E
+#460
+caterpillar~
+caterpillar~
+A caterpillar is here.
+~
+   The creature is covered in fur, ranging from brown to black.  She looks much
+larger than a normal sized caterpillar.    
+~
+bd 0 -200 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+BareHandAttack: 4
+E
+#466
+rabbit~
+rabbit~
+A rabbit is here.
+~
+   He looks at you curiously, watching your every move.  His fur is very fluffy
+and clean.  It doesn't look like he's ever been dirty.    
+~
+bd 0 -250 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+BareHandAttack: 4
+E
+#471
+raccoon~
+raccoon~
+A raccoon is standing here.
+~
+   The raccoon stands there watching you.  You notice her eyes start to glow as
+a low growl begins coming from within her.    
+~
+bd 0 -300 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 2
+BareHandAttack: 8
+E
+#475
+coyote~
+coyote~
+A mean looking coyote is here.
+~
+   He looks at you with his cold dark eyes.  You suddenly feel like maybe you
+shouldn't have come here.  As he snarls at you, you see some blood dried to his
+teeth.    
+~
+bd 0 -300 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+BareHandAttack: 10
+E
+#480
+ghost~
+ghost~
+A ghost is floating around before you.
+~
+   You can see right through the creature, almost as if it wasn't there at all.
+You can hear a soft crying noise coming from within it.    
+~
+bd 0 -300 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 0
+BareHandAttack: 5
+E
+#481
+zachary~
+zachary~
+Zachary the shopkeep is standing here.
+~
+   He is a rather small man, but appears to be very tough.  You probably
+couldn't fight him alone.    
+~
+bdnopr 0 500 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+BareHandAttack: 11
+E
+#491
+finch~
+finch~
+A finch is here.
+~
+   The creature is very small and delicate looking.  She seems to be in
+excellent condition, but looks can be deceiving.    
+~
+bd 0 200 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 2
+BareHandAttack: 4
+E
+#493
+wolf~
+wolf~
+A wolf is standing here.
+~
+   He looks at you with his cold eyes, ready to attack.  Maybe if you're quiet
+and sneak past him he won't attack you.  But then again, maybe not.    
+~
+bd 0 -350 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+BareHandAttack: 8
+E
+$

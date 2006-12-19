@@ -1,0 +1,30 @@
+CircleMUD v3.0 Shop File~
+#20100~
+20117
+20118
+20119
+20197
+20115
+-1
+1.00
+0.20
+8cushion
+-1
+%s I don't sell that!~
+%s I can't buy something which you haven't got!~
+%s I don't need that stuff.~
+%s I seem to have... ran out of money.~
+%s You must have forgotten to bring enough money with you.~
+%s That will cost you %d coins.~
+%s I'll give you %d coins for that.~
+0
+2
+20105
+0
+20150
+-1
+7
+19
+0
+0
+$~

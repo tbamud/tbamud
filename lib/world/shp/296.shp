@@ -1,0 +1,27 @@
+CircleMUD v3.0 Shop File~
+#29659~
+29600
+29602
+29603
+-1
+1.50
+0.10
+-1
+%s I'm sorry *BEEP* but I do not have that item.~
+%s Please do not stuff that in my *BEEP* coin slot.~
+%s Please do not stuff that in my *BEEP* coin slot.~
+%s Please do not stuff that in my *BEEP* coin slot.~
+%s Please insert *BEEP* additional coins.~
+%s *WHIRR* *KACHUNK* %d coins.  Have a nice *BEEP* day.~
+%s *WHIRR* *KACHUNK* %d coins.  Have a nice *BEEP* day.~
+0
+6
+29604
+0
+29608
+-1
+1
+24
+0
+0
+$~

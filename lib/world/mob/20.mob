@@ -1,0 +1,316 @@
+#2000
+senator official~
+a senator~
+An official is trying to look important here.
+~
+   This senator is busy sucking up to the higher authorities.    
+~
+cdgl dfk 0 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 1
+BareHandAttack: 13
+E
+#2001
+priest~
+a priest~
+A priest is praying for his favorite gladiator to win.
+~
+   For a priest he seems to be enjoying the blood shed a little too much.    
+~
+dglpqr fk 0 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+E
+#2002
+augur~
+an augur~
+An Augur is trying to predict the winner of the next bout.
+~
+   Known for their predictions by the reading of omens these men are very
+popular among the rich.    
+~
+deghl fk 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+E
+#2003
+magistrate~
+a magistrate~
+A magistrate is standing here with his nose stuck up in the air.
+~
+   He looks rather ridiculous and extremely full of himself.    
+~
+bdl fp 0 E
+18 14 0 3d3+180 3d3+3
+180 32400
+8 8 1
+BareHandAttack: 10
+E
+#2004
+vestal virgin~
+a vestal virgin~
+A Vestal Virgin brushes close against you and winks seductively.
+~
+   She doesn't look nearly as innocent as she's suppose to be.    
+~
+bcdelnopqr dfkp 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 2
+BareHandAttack: 4
+E
+#2005
+samnite~
+a samnite warrior~
+A samnite warrior is waiting for his next bout here.
+~
+   This warrior looks depressed, already realizing his fate.  He will battle in
+the arena until he is killed.  Could be today or years from now, but his fate
+is unavoidable.    
+~
+deglq k 0 E
+16 15 0 3d3+160 2d2+2
+160 25600
+8 8 1
+BareHandAttack: 12
+E
+#2006
+thraecian warrior~
+a thraecian warrior~
+This warrior is covered in sweat, practicing his hand to hand combat skills.
+~
+   This guy is huge, well over six feet and pure muscle.  Looks like he's been
+training for years.    
+~
+bdlq dfk 0 E
+18 14 0 3d3+180 3d3+3
+180 32400
+8 8 1
+BareHandAttack: 9
+E
+#2007
+slave~
+a slave~
+A slave is hauling dead bodies to the graves.
+~
+   This slave looks like he's almost been worked to death, cleaning up after
+the animals, hauling the corpses to the common grave, retrieving armor and
+weapons from the dead.  He will soon be left alone in the arena and the starved
+wild animals will feed on him for the entertainment of the populace.    
+~
+dgl k 0 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 1
+E
+#2008
+ostrich bird~
+an ostrich~
+A strange bird with long legs and a long neck stands here.
+~
+   This must be one of the exotic animals from a far away country the emperor
+brings in to amuse his people.    
+~
+bd k 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+BareHandAttack: 4
+E
+#2009
+horse giraffe~
+a giraffe~
+A humungous yellow horse looking animal with brown spots towers above you.
+~
+   Another one of those exotic animals the emperor imports to keep his people
+happy by slaughtering them in the arena.  You think you heard the name before,
+"giraffee"
+~
+bdq k 0 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 1
+BareHandAttack: 4
+E
+#2010
+elephant~
+an elephant~
+A huge grey beast with long tusks and large floppy ears trumpets at you.
+~
+   Yet another exotic animal the emperor imports so his people can watch it be
+riddled with arrows and then slaughtered by gladiators.  Metal tusks have been
+placed over the regular ivory ones and look very sharp.    
+~
+bdq k 0 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 1
+BareHandAttack: 11
+E
+#2011
+Retiarri warrior~
+a retiarri warrior~
+A warrior in training practices with a wicked looking trident
+~
+   This warrior is heavily equipped with weapons a dagger, trident and a
+weighted net.    
+~
+dgq k 0 E
+19 14 -1 3d3+190 3d3+3
+190 36100
+8 8 1
+BareHandAttack: 3
+E
+#2012
+mirmillone gladiator~
+a mirmillone~
+This is gladiator practices with a shortsword, he looks very skilled.
+~
+   He is heavily armored with a helmet arm and leg guards and a funny looking
+shield.  All of his armor has a strange ornament of a fish on them.  He swings
+a shortsword with ease and familiarity.    
+~
+dgq k 0 E
+17 15 0 3d3+170 2d2+2
+170 28900
+8 8 1
+BareHandAttack: 3
+E
+#2013
+lion~
+a lion~
+A lion looks up as you enter, he looks hungry.
+~
+   These lions are starved then let loose in the arenas with gladiators or
+unarmed slaves.    
+~
+bdg dk 0 E
+16 15 0 3d3+160 2d2+2
+160 25600
+8 8 1
+BareHandAttack: 8
+E
+#2014
+tiger~
+a tiger~
+A tiger looks at you hungrily.
+~
+   Another animal that is let loose in the arenas to battle against the
+gladiators or feed on the slaves this large cat looks like it hasn't eaten in a
+long time.    
+~
+bd k 0 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+BareHandAttack: 8
+E
+#2015
+Gladiator~
+a gladiator~
+A professional gladiator pushes you out of his way.
+~
+   Years of experience and the battle scars to prove it makes this gladiator a
+veteran of combat of all kinds.    
+~
+dgnqr fk 0 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 1
+E
+#2016
+Gaul~
+a gaul~
+A gaul is practicing, he looks pathetic.
+~
+   This gladiator looks like he just began his training.    
+~
+dg k 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+E
+#2017
+emporer titus~
+Emporer Titus~
+Emperor Titus is overseeing the ampitheater.
+~
+   Emporer Titus abuses his wealth and power all the while holding these great
+games to distract the ignorant masses.  He is very good at it.  
+~
+bd dfk 0 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 1
+BareHandAttack: 10
+E
+#2018
+knight~
+a knight~
+This gladiator is dressed up like a knight, he looks ridiculous.
+~
+   This gladiator is dressed up like a knight, for one of the many shows.    
+~
+dg k 0 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+BareHandAttack: 10
+E
+#2019
+soldier~
+a soldier~
+A soldier stands here catching his breath before the next battle.
+~
+   Another member of the dozen or so gladiators.    
+~
+dgl dfk 0 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 1
+BareHandAttack: 5
+E
+#2020
+civilian~
+a civilian~
+A civilian is screaming at the top of his lungs, enthralled with the battle.
+~
+   He is watching the bout, screaming his encouragement to his favorite
+gladiator.  He seems to enjoy the blood shed and death.    
+~
+dg dfk 0 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 1
+BareHandAttack: 7
+E
+#2021
+religious official~
+a religious official~
+A religious official is wandering aimlessly through the crowd.
+~
+   He looks lost, he's walking around kissing babies and other political
+necessities.    
+~
+dg dfk 0 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+E
+#2022
+lanista~
+a lanista~
+A lanista is busy training gladiators.
+~
+   The lanista is a former gladiator who has managed to survive long enough to
+retire and pass on all his skills to others.    
+~
+bdqr dfk 0 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 1
+E
+$

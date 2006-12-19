@@ -1,0 +1,186 @@
+CircleMUD v3.0 Shop File~
+#27705~
+27711
+27712
+-1
+1.00
+1.00
+0
+12
+15
+21
+1
+10
+13
+16
+22
+2
+8
+11
+17
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+0
+27718
+0
+27705
+-1
+0
+28
+0
+0
+#27707~
+27709
+27747
+-1
+1.00
+1.00
+9
+5
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+5
+27720
+0
+27707
+-1
+0
+28
+0
+0
+#27721~
+27703
+27710
+27716
+27730
+27735
+27736
+27740
+27742
+27732
+-1
+1.20
+0.80
+12
+15
+21
+1
+10
+13
+16
+19
+22
+2
+8
+17
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+5
+27719
+0
+27721
+-1
+0
+28
+0
+0
+#27744~
+27718
+27719
+27720
+27723
+27724
+27726
+27727
+27728
+27729
+27733
+27734
+27738
+27739
+27741
+27743
+27745
+27746
+27721
+27722
+27725
+27731
+27737
+27744
+-1
+1.20
+0.80
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+4
+27733
+0
+27744
+27716
+-1
+0
+28
+0
+0
+#27758~
+27749
+27753
+27755
+27757
+27748
+27752
+27754
+27756
+27750
+-1
+1.00
+1.00
+11
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+4
+27734
+0
+27758
+-1
+0
+28
+0
+0
+$~

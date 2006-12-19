@@ -1,0 +1,18 @@
+#12
+CircleMUD~
+God Simplex~
+1200 1299 10 0
+R 0 1204 3098 -1 	(a holy bulletin board)
+O 0 3098 99 1204 	(a holy bulletin board)
+R 0 1293 1227 -1 	(a staff bulletin board)
+O 0 1227 99 1293 	(a staff bulletin board)
+R 0 1291 1226 -1 	(a builder's bulletin board)
+O 0 1226 99 1291 	(a builder's bulletin board)
+R 0 1202 3097 -1 	(a frozen bulletin board)
+O 0 3097 99 1202 	(a frozen bulletin board)
+R 0 1290 3096 -1 	(a social bulletin board)
+O 0 3096 99 1290 	(a social bulletin board)
+M 0 1200 1 1201 	(the Immortal Innkeeper)
+M 0 1201 1 1205 	(the Immortal Postmaster)
+S
+$

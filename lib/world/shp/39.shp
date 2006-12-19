@@ -1,0 +1,240 @@
+CircleMUD v3.0 Shop File~
+#3900~
+3952
+3951
+3983
+-1
+1.10
+0.90
+-1
+%s I don't have me none o' dat!~
+%s You don't got none o' dat!~
+%s I don't have no uses for dat stuff.~
+%s I can't buy dat!  You think me be made o' money?~
+%s You ain't got dat sort o' money?  You think me be stupid?~
+%s Gimme %d moneys!~
+%s I give you %d moneys for dat.~
+0
+6
+3917
+0
+3900
+3901
+3902
+3903
+3904
+3905
+3906
+3907
+3908
+3909
+3910
+3911
+3912
+3913
+3914
+3915
+3916
+3917
+3918
+3919
+3920
+3921
+3922
+3923
+3924
+3925
+3926
+3927
+3928
+3929
+3930
+3931
+3932
+3933
+3934
+3935
+3936
+3937
+3938
+3939
+3940
+3941
+3942
+3944
+3943
+3945
+3946
+3947
+3948
+3949
+3950
+3951
+3952
+3953
+3954
+3955
+3956
+3957
+3958
+3959
+3960
+3961
+3962
+3963
+3964
+3965
+3966
+3967
+3968
+3969
+3970
+3971
+3972
+3973
+3974
+3975
+3976
+3977
+3978
+3979
+3980
+3981
+3982
+3983
+3984
+3985
+3986
+3987
+3988
+3989
+3990
+3991
+3992
+3993
+3994
+3995
+3996
+3997
+3998
+3999
+-1
+0
+28
+0
+0
+#3901~
+3921
+3922
+-1
+2.00
+0.00
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+3971
+0
+3940
+-1
+0
+28
+0
+0
+#3902~
+3999
+3925
+3926
+3928
+3929
+3930
+3994
+3995
+3927
+-1
+2.00
+0.50
+5
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s Get your cheap self out of my shop.~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+3955
+0
+3957
+-1
+0
+28
+0
+0
+#3903~
+3946
+3965
+3957
+3984
+3956
+-1
+2.00
+0.50
+9
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+3973
+0
+3972
+-1
+0
+28
+0
+0
+#3904~
+3932
+3933
+3934
+3935
+3936
+3937
+-1
+2.00
+0.50
+3
+10
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+3956
+0
+3966
+-1
+0
+28
+0
+0
+$~

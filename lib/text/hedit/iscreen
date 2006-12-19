@@ -1,0 +1,18 @@
+For a list of commands available to you, type:     @RCOMMANDS@n
+For a list of immortal commands type:              @RWIZHELP@n
+
+To learn more about the above, type:         @RHELP <COMMAND>@n
+
+  New to the game ?                          @RHANDBOOK@n
+                                             @RPOLICY@n
+
+  Help with redit ?      @RHELP REDIT@n    | @RHELP REDIT-MENU@n
+  Help with oedit ?      @RHELP OEDIT@n    | @RHELP OEDIT-MENU@n
+  Help with medit ?      @RHELP MEDIT@n    | @RHELP MEDIT-MENU@n
+  Help with zedit ?      @RHELP ZEDIT@n    | @RHELP ZEDIT-MENU@n
+  Help with sedit ?      @RHELP SEDIT@n    | @RHELP SEDIT-MENU@n
+  Help with trigedit ?   @RHELP TRIGEDIT@n | @RHELP TRIGEDIT-MENU@n
+
+  Have other unanswered questions ?      @RHELP BUILDING@n
+
+Any capital letters in red should be typed for further information.

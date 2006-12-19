@@ -1,0 +1,31 @@
+CircleMUD v3.0 Shop File~
+#24100~
+24120
+24121
+24122
+24123
+24124
+24125
+-1
+2.00
+0.50
+0
+-1
+%s I'm sorry, but I don't have that right now!~
+%s I don't want to buy anything from you.~
+%s I don't want to buy anything from you.~
+%s I don't want to buy anything from you.~
+%s You don't have the money, stranger.~
+%s That will cost you %d coins. Enjoy your drink.~
+%s I don't want to buy anything from you.~
+-1
+7
+24107
+0
+24121
+-1
+0
+28
+0
+0
+$~

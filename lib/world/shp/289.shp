@@ -1,0 +1,129 @@
+CircleMUD v3.0 Shop File~
+#28900~
+28917
+28918
+28919
+-1
+1.10
+0.90
+-1
+%s I don't know how to make one of those!~
+%s We don't *buy* drinks...we sell 'em!~
+%s We don't *buy* drinks...we sell 'em!~
+%s We don't *buy* drinks...we sell 'em!~
+%s I don't give 'em away free, you know!~
+%s That's %d gold.~
+%s We don't *buy* drinks...we sell 'em!~
+1
+6
+28921
+0
+28913
+-1
+1
+24
+0
+0
+#28901~
+28917
+28918
+28919
+-1
+1.10
+0.90
+-1
+%s I don't know how to make one of those!~
+%s We don't *buy* drinks...we sell 'em!~
+%s We don't *buy* drinks...we sell 'em!~
+%s We don't *buy* drinks...we sell 'em!~
+%s I don't give 'em away free, you know!~
+%s That's %d gold.~
+%s We don't *buy* drinks...we sell 'em!~
+1
+6
+28920
+0
+28921
+-1
+1
+24
+0
+0
+#28902~
+28917
+28918
+28919
+-1
+1.10
+0.90
+-1
+%s I don't know how to make one of those!~
+%s We don't *buy* drinks...we sell 'em!~
+%s We don't *buy* drinks...we sell 'em!~
+%s We don't *buy* drinks...we sell 'em!~
+%s I don't give 'em away free, you know!~
+%s That's %d gold.~
+%s We don't *buy* drinks...we sell 'em!~
+1
+6
+28915
+0
+28928
+-1
+1
+24
+0
+0
+#28903~
+28917
+28918
+28919
+-1
+1.10
+0.90
+-1
+%s Say again, friend?~
+%s Thanks, but no thanks.~
+%s Thanks, but no thanks.~
+%s Thanks, but no thanks.~
+%s No tabs, friend.  Sorry.~
+%s That's %d gold.~
+%s We don't *buy* drinks...we sell 'em!~
+1
+6
+28914
+0
+28920
+-1
+1
+24
+1
+24
+#28904~
+-1
+1.10
+0.90
+3
+4
+8
+10
+2
+-1
+%s Don't have one, but I think I might be able to find one...~
+%s You have one?  Really?  Let me see!~
+%s I'm not interested.  Anything else?~
+%s Too rich for my blood!~
+%s Perhaps you should go visit the bank first...~
+%s That's just %d coins, cash in advance.~
+%s I'll take that for %d coins, thank you!~
+1
+6
+28919
+0
+28927
+-1
+1
+24
+1
+24
+$~

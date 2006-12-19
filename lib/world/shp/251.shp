@@ -1,0 +1,30 @@
+CircleMUD v3.0 Shop File~
+#25100~
+25100
+25106
+25108
+25101
+25104
+-1
+1.50
+0.50
+5
+-1
+%s We don't sell that, filthy human!~
+%s You don't have one, human!~
+%s We don't want those. Get lost!~
+%s We can't afford that! Get it outta here!~
+%s You don't have the money, moron!~
+%s That'll be %d coins, human.~
+%s We'll give you %d coins for that.~
+0
+5
+25114
+0
+25123
+-1
+0
+28
+0
+0
+$~

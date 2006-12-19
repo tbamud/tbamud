@@ -1,0 +1,1526 @@
+#20100
+Elixias's Zone Description Room~
+   @RLocation@n: A few island in the middle of the ocean @BPurpose@n: For people
+to explore, from the sandy beaches to the hidden coves.  From deep underwater to
+the deserted island where Leviathius the son of Leviathan resides.  It's a
+lowbie exp zone too, with crabs that appear more frequently at night and
+agressive jellyfishes that floats in the shallow waters.  There's no plot, but
+when hunting becomes boring players can always stroll down here and explore the
+area.  ;) @YSize@n: Size?  There's 50 rooms steeped with lots of trigs.  Things
+to note: Immortals, please turn nohassle off, or errors will occur OR you may
+not be able to enjoy the full experience of this zone.  If you are caught by the
+siren, simple type @Rgoto siren@n and purge siren.  You can also try to logon as
+another human character and ask for an imm to help ;)
+~
+201 d 0
+D5
+   A small ladder leads to the bottom.  
+~
+~
+0 20100 20104
+S
+#20101
+At the Entrance of a Gloomy Forest~
+   To the north is a dull, lifeless forest where the vegetation is densely thick
+and impassable.  Shadows play in the darkness of these woods and no sound could
+be heard from within the trees.  The only exit is a narrow path that leads to
+the south.  
+~
+201 0 3
+D2
+A small path leads away from the forest so the south, where it splits into two.
+~
+~
+0 20100 20103
+S
+T 20144
+#20102
+On a Cliff by a Lighthouse~
+   The cliff stands high from the sea below it, like a big giant at the edge of
+the coast.  Grasses sprout randomly around the area.  Looming from the west is
+an old lighthouse, and to the east a path leads towards a T-Junction.  
+~
+201 0 4
+D1
+   The road splits into a T-junction.  
+~
+~
+0 20100 20103
+D3
+   A lighthouse stands solemnly over the cliff, watching over the seas.  
+~
+door west~
+2 20199 20104
+E
+grasses grass~
+   Tiny patches of green grass can be found growing randomly in this area.  
+~
+S
+T 20101
+#20103
+At a T-Junction by a Slope~
+   The path is covered with lots of dust, which leads to the north, west and the
+south.  Northwards, the path leads to the entrance of a dark, ominous forest.  
+To the west, it continues to a silhouette of a tall building while to the south
+the path descends steeply to a sandy beach.  
+~
+201 c 2
+D0
+   A narrow path leads to a gloomy looking forest.  
+~
+~
+0 20100 20101
+D2
+   A slope leads down to a small sandy beach.  
+~
+~
+0 20100 20105
+D3
+   The gradient ascends towards an old lighthouse - worn down by weathering and
+age.  
+~
+~
+0 20100 20102
+S
+T 20101
+T 20144
+#20104
+In a Lighthouse~
+   The walls are made of rough granite and there are no windows at all, so light
+cannot enter this place.  Thick layers of dust have settled on the floor, but
+fresh footprints proves that it might not be really abandoned after all.  
+Please @RCLOSE DOOR@n after exiting to prevent players from entering.  
+~
+201 d 0
+D1
+   Outside the Lighthouse
+~
+door east~
+2 20199 20102
+D4
+   A sturdy ladder ascends upwards,
+~
+door~
+0 20100 20100
+E
+footprints prints foot~
+   The footprints are still fresh.  
+~
+E
+dust~
+   It is powdery-looking and grey in colour.  
+~
+S
+#20105
+On the Coast of Konolua Beach @Y[DIG]@n~
+   The beach begins here - filled with grains and grains of coarse, dry sand.  
+To the north is an upward going slope that ascends sharply.  To the west you can
+see the shore and to the south and east the coast continues on.  
+~
+201 0 2
+D0
+Up a Slope to a T-junction
+~
+~
+0 20100 20103
+D1
+Konolua Beach
+~
+~
+0 20100 20108
+D2
+Konolua Seahore
+~
+~
+0 20100 20112
+D3
+Konolua Seashore
+~
+~
+0 20100 20106
+E
+sand grain grains~
+   Coarse grains of sand fills this beach.  They are a rich yellow colour and
+are rough in texture.  
+~
+S
+T 20101
+T 20128
+#20106
+On a Sandy Shore @Y[DIG]@n~
+   Here is the edge of the beach, where the shore merges with the shallow
+waters.  The beach stretches all the way to the east, while to the west and
+south the water eventually leads to the sea.  A cliff stands tall as an obstacle
+to the North.  
+~
+201 0 2
+D1
+   Konolua Beach
+~
+~
+0 20100 20105
+D2
+   In Shallow Waters
+~
+~
+0 20100 20111
+D3
+   In Shallow Waters
+~
+~
+0 20100 20107
+S
+T 20102
+T 20128
+#20107
+In Shallow Waters @B[DIVE]@n~
+   Beyond the shore, the waters are a clear green with a tinge of ocean blue.  
+Floating pieces of broken wood swims lazily here, moving to the rhythm of the
+waves.  The beach lies to the east, while the deeper waters are generally to the
+west and south.  A solid, sturdy rock cliff prevents movement to the north and
+west.  
+~
+201 c 6
+D1
+   To the Shores of Konolua Beach
+~
+~
+0 20100 20106
+D2
+In the Deep Ocean
+~
+~
+0 20100 20131
+E
+wood~
+   Broken pieces of wood, dark-brown in texture from having soaked in the water
+for too long, floats around here.  
+~
+S
+T 20104
+T 20103
+T 20130
+#20108
+Konolua Seacoast @Y[DIG]@n~
+   Some trees scatter around the beach, swaying occasionally in the breeze.  To
+the north is a cliff, densely covered with vines and other form of parasitic
+plants.  Against it is a small delapidated house - its windows are near falling
+apart.  To the south the beach gently descends to the shore.  
+~
+201 0 2
+D0
+   A small house has been built here.  
+~
+door~
+2 20113 20150
+D1
+   Konolua Beach
+~
+~
+0 20100 20109
+D2
+   Konolua Seashore
+~
+~
+0 20100 20113
+D3
+Konolua Beach
+~
+~
+0 20100 20105
+E
+tree trees~
+   The trees have broad leaves that can provide shade from the sun in the
+morning.  
+~
+E
+cliff~
+   The cliff stands tall at a good 45 feet skywards.  Covered with plenty of
+vegetation, it looks like a guards standing the coast protecting the shores from
+danger.  
+~
+S
+T 20103
+T 20128
+T 20144
+#20109
+Konolua Seacoast @Y[DIG] @G[CLIMB]@n~
+   The smooth sandy beach terminates to the east, where a collection of rocks
+and scree litters the area.  Continuing to the west and south, the beach
+continues on.  To the north a cliff stands firm, hindering any movement in that
+direction.  
+~
+201 0 2
+D1
+Konolua Beach
+~
+~
+0 20100 20110
+D2
+Konolua Seashore
+~
+~
+0 20100 20114
+D3
+Konolua Beach
+~
+~
+0 20100 20108
+E
+cliff~
+   The cliff stands tall at a good 45 feet skywards.  Covered with plenty of
+vegetation, it looks like a guards standing the coast protecting the shores from
+danger.  
+~
+S
+T 20103
+T 20128
+T 20135
+T 20144
+#20110
+On a Rocky Part of Konolua Seacoast @Y[DIG]@n~
+   This area is highly populated with rocks.  Weathered stone as well as scree
+that had came of the nearby cliff are left here.  Because of this, lots of crabs
+and other creatures had made their home under the rocks where predators such as
+seagulls cannot find them.  A small trial free of rocks leads to the west and
+south.  
+~
+201 0 5
+D2
+Konolua Seashore
+~
+~
+0 20100 20115
+D3
+Konolua Beach
+~
+~
+0 20100 20109
+S
+T 20103
+T 20128
+T 20144
+#20111
+In Shallow Waters~
+   The water is not deep here, and it is slightly greener than to the south,
+where it eventually leads to the wide ocean.  Bubbles are formed when the waves
+retreat from the shore, and bob non-chalantly on the waves.  
+~
+201 c 6
+D0
+Konolua Seashore
+~
+~
+0 20100 20106
+D1
+Konolua Seashore
+~
+~
+0 20100 20112
+D2
+In Shallow Waters
+~
+~
+0 20100 20116
+D3
+In the Deep Ocean
+~
+~
+0 20100 20131
+E
+bubbles bubble~
+   Tiny bubbles are trapped in the foam created when the waves hit the shore and
+retreat.  
+~
+S
+T 20101
+T 20104
+#20112
+By the Seashore @Y[DIG]@n~
+   Soft, white sand lines the shore, forming a clear line between the deserted
+beach and the azure, blue sea.  The beach extends to the north and east, while
+to the west and south shoal water merges the land and the sea together.  
+~
+201 0 2
+D0
+Konolua Beach
+~
+~
+0 20100 20105
+D1
+Konolua Seashore
+~
+~
+0 20100 20113
+D2
+In Shallow Waters
+~
+~
+0 20100 20117
+D3
+In Shallow Waters
+~
+~
+0 20100 20111
+S
+T 20102
+T 20101
+T 20128
+#20113
+By the Seashore @Y[DIG]@n~
+   The elongated beach stretches to the far east and to the north and west.  
+Being closer to the sea, the winds are generally stronger here.  Sand dunes line
+the beach, forming adjacent to the direction of the wind.  
+~
+201 0 2
+D0
+Konolua Beach
+~
+~
+0 20100 20108
+D1
+Konolua Seashore
+~
+~
+0 20100 20114
+D2
+In Shallow Waters
+~
+~
+0 20100 20118
+D3
+Konolua Seashore
+~
+~
+0 20100 20112
+S
+T 20101
+T 20102
+T 20128
+#20114
+By the Seashore @Y[DIG]@n~
+   The empty shore holds nothing in sight accept for infinite grains of soft,
+white sand.  Northwards takes you inland, while going east or west will take you
+to another shore of Konolua beach.  Southwards takes you into the sea.  
+~
+201 0 2
+D0
+Konolua Beach
+~
+~
+0 20100 20109
+D1
+Konolua Seashore
+~
+~
+0 20100 20115
+D2
+In Shallow Waters
+~
+~
+0 20100 20119
+D3
+Konolua Seashore
+~
+~
+0 20100 20113
+S
+T 20101
+T 20128
+#20115
+By a Seashore @Y[DIG]@n~
+   Narrowing to the east, where a tall arch stands like a gate, is a small sand
+path leading into the ocean.  The beach continues north and west, and southwards
+leads to the beginning of the ocean.  
+~
+201 0 2
+D0
+Konolua Beach
+~
+~
+0 20100 20110
+D1
+On a Sandy Path
+~
+~
+0 20100 20122
+D2
+In Shallow Waters
+~
+~
+0 20100 20120
+D3
+Konolua Seashore
+~
+~
+0 20100 20114
+E
+arch~
+   The arch is connected to the cliff north of here.  Standing outstretched like
+a large gate it leads to a narrow sandy path that seems to lead to an nearby
+island not far from Konolua beach.  
+~
+S
+T 20101
+T 20128
+#20116
+In Shallow Waters~
+   Greenish blue water symbolises shallow waters.  It is clear, and the objects
+beneath the surface can be seen as wavering shapes.  Northwards leads the way
+back to the shores of Konolua Beach, and to the west and south is the entrance
+to the ocean.  
+~
+201 c 6
+D0
+In Shallow Waters
+~
+~
+0 20100 20111
+D1
+In Shallow Waters
+~
+~
+0 20100 20117
+D2
+Into the Deep Waters
+~
+~
+0 20100 20135
+D3
+~
+~
+0 20100 20133
+S
+T 20101
+T 20104
+#20117
+In Shallow Waters~
+   Beneath the surface of the ocean corals and seaweed sleeps.  Water sprawls
+onto the beach before subsiding.  Konolua beach is to the north,while to the
+south the waters lead you deeper into the ocean.  
+~
+201 c 6
+D0
+Konolua Seashore
+~
+~
+0 20100 20112
+D1
+In Shallow Waters
+~
+~
+0 20100 20118
+D2
+In the Ocean
+~
+~
+0 20100 20136
+D3
+In Shallow Waters
+~
+~
+0 20100 20116
+S
+T 20101
+T 20104
+#20118
+In Shallow Waters~
+   Shoal water links the shore north of here to the sea beyond the south, where
+it eventually leads to an open ocean.  To the east and west are more are shallow
+waters, which lines the edge of Konolua beach.  
+~
+201 c 6
+D0
+Konolua Beach
+~
+~
+0 20100 20113
+D1
+In Shallow Waters
+~
+~
+0 20100 20119
+D2
+~
+~
+0 20100 20137
+D3
+In Shallow Waters
+~
+~
+0 20100 20117
+S
+T 20101
+T 20104
+#20119
+In Shallow Waters~
+   The skin of the water refracts light from the surface, forming illusions of
+light dancing on the sandbed.  To the north is the shore of Konolua beach while
+going to the south will take you to the ocean.  
+~
+201 c 6
+D0
+Konolua Seashore
+~
+~
+0 20100 20114
+D1
+In Shallow Waters
+~
+~
+0 20100 20120
+D2
+In the Ocean
+~
+~
+0 20100 20138
+D3
+In Shallow Waters
+~
+~
+0 20100 20118
+S
+T 20101
+T 20104
+#20120
+In Shallow Waters~
+   A soft wind blows as the waves meekly moves towards the shore.  The water
+here is relatively deep, and currents are quite powerful here.  To the north is
+the safety of the seashore.  
+~
+201 c 7
+D0
+Konolua Seashore
+~
+~
+0 20100 20115
+D1
+On a Sandy Path
+~
+~
+0 20100 20123
+D2
+In the Ocean
+~
+~
+0 20100 20121
+D3
+In Shallow Waters
+~
+~
+0 20100 20119
+S
+T 20104
+T 20101
+#20121
+In Deep Waters~
+   The water is rather deep here, for the gradient of the ground plunges to
+great depths.  Northwards leads to shallower waters, while to the southwest as a
+spread of ocean.  
+~
+201 c 7
+D0
+In Shallow Waters
+~
+~
+0 20100 20120
+D1
+On a Sandy Path
+~
+~
+0 20100 20124
+D2
+In the Ocean
+~
+~
+0 20100 20132
+D3
+~
+~
+0 20100 20138
+S
+T 20105
+#20122
+On a Sandy Path~
+   The sandy path is made up of coarse sand, a deep yellow colour - wet from the
+waves coming from the east.  To the north is a grey, solemn cliff guarding
+Konolua beach while the path continues south.  
+~
+201 c 2
+D1
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+D2
+On a Sandy Path
+~
+~
+0 20100 20123
+D3
+Konolua Seashore
+~
+~
+0 20100 20115
+S
+T 20103
+#20123
+On a Sandy Path~
+   Stranded in the middle of the sea is a small narrow path leading to the south
+and the north.  To the east and west are bodies of water, where the waves are
+coming in and lapping at the pathway.  
+~
+201 c 2
+D0
+On a Sandy Path
+~
+~
+0 20100 20122
+D1
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+D2
+On a Sandy Path
+~
+~
+0 20100 20124
+D3
+In Shallow Waters
+~
+~
+0 20100 20120
+S
+T 20101
+#20124
+A Narrow Sandy Path~
+   Here is a very distinct route, being a sandy path in the middle of the wide
+ocean leading to the north and the east.  The waves lap teasingly at the road,
+as if they were going to swallow it up anytime.  
+~
+201 c 2
+D0
+On a Sandy Path
+~
+~
+0 20100 20123
+D1
+On a Sandy Path
+~
+~
+0 20100 20125
+D2
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+D3
+In the Ocean
+~
+~
+0 20100 20121
+S
+T 20107
+#20125
+On a Sandy Pathway~
+   The waters around this area are strong and agressive, threatening to swallow
+the sandy pathway here which leads to the west and the south.  Southwards, an
+arch stands like an entrance to a small island in the middle of the sea.  
+~
+201 c 2
+D0
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+D1
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+D2
+Stone Archs acting like a big gate is to the south.
+~
+~
+0 20100 20126
+D3
+On a Sandy Path
+~
+~
+0 20100 20124
+S
+T 20107
+#20126
+A Small Island in the Sea~
+   This island is surrounded by highly dangerous waves, pounding against the
+sides of the small island with utmost fury.  To the north is a stone arch, where
+a route starts and ends at Konolua beach.  To the south the the land twists and
+turns with ascending gradient.  
+~
+201 0 2
+D0
+Stone Archs acting like a big gate is to the north.
+~
+~
+0 20100 20125
+D1
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+D2
+Base of a Cliff
+~
+~
+0 20100 20127
+D3
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+S
+T 20107
+#20127
+At the Base of a Small Cliff~
+   The path twists to the east, where it leads to the peak of the island.  
+Below the layers of stone of this area is a small cave, created by the constant
+erosion by the sea waves.  To the north the route is less steep as it descends
+to the base of cliff.  
+~
+201 0 2
+D0
+On a Small Island
+~
+~
+0 20100 20126
+D1
+A path leads to the top of the cliff.
+~
+~
+0 20100 20128
+D2
+A deserted part of the island.
+~
+~
+0 20100 20129
+D3
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+S
+T 20107
+#20128
+At the Peak of the Cliff~
+   The wind is strong here, and below the waves are hungrily eroding the base of
+the cliff.  Sleeping beneath the waters are lots of hidden reefs, and falling
+over the edge would mean instand death.  
+~
+201 c 5
+D3
+A path descending to the base of the cliff.
+~
+~
+0 20100 20127
+S
+T 20108
+#20129
+An Isolated Part of the Island~
+   The island is deserted here, and the only things that could be found here are
+some logs - swept ashore by the waves.  The land continues to the north, while
+to the other directions are bodies of water.  
+~
+201 c 2
+D0
+To the base of the hill
+~
+~
+0 20100 20127
+D1
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+D2
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+D3
+The waves are strong here - forceful and unconquerable.
+~
+~
+0 20100 20132
+S
+T 20107
+#20130
+Underwater~
+   You are submerged underwater, and all around you is water.  Corals sway under
+the water currents and dance, while shoals of fishes dart around in the shadows.
+
+~
+201 b 0
+S
+#20131
+In the Deep Ocean~
+   The waves here are strong, large bodies of water rising and sinking as if the
+ocean itself were breathing and alive.  To the northeast are safer waters, while
+going south and west will take you deeper into the ocean.  
+~
+201 0 7
+D0
+In Shallow Waters
+~
+~
+0 20100 20107
+D1
+In Shallow Waters
+~
+~
+0 20100 20111
+D2
+~
+~
+0 20100 20133
+D3
+Beyond the west is an endless stretch of ocean...
+~
+~
+0 20100 20132
+S
+T 20105
+#20132
+In the Middle of the Ocean~
+   The ocean stretches as far as you can see, lying below the vast sky above.  
+Giant waves reaches high up and comes crashing down upon you, forcing you
+beneath the ocean surface.  Underwater currents tries to pull you under and the
+frigid cold wind merciless
+~
+201 0 7
+D0
+In the Raging Waves
+~
+~
+0 20100 20140
+D1
+In the Raging Waves
+~
+~
+0 20100 20142
+D2
+In the Raging Waves
+~
+~
+0 20100 20140
+D3
+In the Raging Waves
+~
+~
+0 20100 20142
+D5
+~
+~
+0 20100 20139
+S
+T 20116
+T 20124
+T 20126
+#20133
+In the Deep Ocean~
+   The wind whips the ocean until froth appears from the surface, and the waves
+retaliate by becoming more violent.  Safe waters are to the east and north,
+while going south and west will only lead you deeper into the ocean.  
+~
+201 0 0
+D0
+In the Deep Ocean
+~
+~
+0 20100 20131
+D1
+In Shallow Waters
+~
+~
+0 20100 20116
+D2
+Deep into the Ocean
+~
+~
+0 20100 20132
+D3
+Deep into the Ocean
+~
+~
+0 20100 20132
+S
+T 20105
+#20135
+In the Deep Waters~
+   In the distance to the northeast is Konolua beach, a small island in the
+middle of the sea.  Here, the waves are fierce and hungry, reaching out at you
+in an attempt you swallow you.  To the north, are shallow waters, while
+everywhere else are large bodies of ocean.  
+~
+201 0 7
+D0
+In Shallow Waters
+~
+~
+0 20100 20116
+D1
+~
+~
+0 20100 20136
+D2
+Restless waves to the south
+~
+~
+0 20100 20132
+D3
+In the Ocean
+~
+~
+0 20100 20132
+S
+T 20105
+#20136
+In the Ocean~
+   The ocean is a deep blue, and the waves here are strong.  It is impossible to
+look into the depths of the ocean, for the shifting bodies of the sea makes it
+difficult to.  To the north you can descry a small island.  
+~
+201 0 7
+D0
+In Shallow Waters
+~
+~
+0 20100 20117
+D1
+In the Ocean
+~
+~
+0 20100 20137
+D2
+In the Ocean
+~
+~
+0 20100 20132
+D3
+In the Ocean
+~
+~
+0 20100 20135
+S
+T 20105
+#20137
+In the Ocean~
+   The wind tears and howls, inflicting its wrath against you and the vast
+ocean.  North are safer and much calmer waters, while to the other directions
+the ocean continues.  
+~
+201 0 7
+D0
+To Shallower Waters
+~
+~
+0 20100 20118
+D1
+In the Ocean
+~
+~
+0 20100 20138
+D2
+In the Ocean
+~
+~
+0 20100 20132
+D3
+In the Ocean
+~
+~
+0 20100 20136
+S
+T 20105
+#20138
+In the Ocean~
+   The water is a deep blue color and looks threateningly deep.  Howling winds
+come in all direction, invoking the rage of the waves.  To the north the sea is
+calmer, while to the east, south and west the ocean continues.  
+~
+201 0 7
+D0
+Shallower Waters
+~
+~
+0 20100 20119
+D1
+~
+~
+0 20100 20121
+D2
+In the Ocean
+~
+~
+0 20100 20132
+D3
+In the Ocean
+~
+~
+0 20100 20137
+S
+T 20105
+#20139
+Underwater~
+   You are beneath the surface of the ocean.  The currents under here are
+strong, pulling and forcing you to go deeper.  The depths of the sea is great.
+It is deep, so deep that there is only inky darkness at the bottom.  
+Surrounding you are nothing, just lots and lots of seawater...  
+~
+201 0 0
+D0
+Underwater
+~
+~
+0 20100 20143
+D1
+Underwater
+~
+~
+0 20100 20145
+D2
+Underwater
+~
+~
+0 20100 20143
+D3
+Underwater
+~
+~
+0 20100 20145
+D4
+Above the Surface
+~
+~
+0 20100 20132
+S
+T 20117
+T 20125
+#20140
+In the Middle of the Ocean~
+   The ocean stretches as far as you can see, lying below the vast sky above.  
+Giant waves reaches high up and comes crashing down upon you, forcing you
+beneath the ocean surface.  Underwater currents tries to pull you under and the
+frigid cold wind merciless
+~
+201 0 7
+D0
+~
+~
+0 20100 20132
+D1
+~
+~
+0 20100 20141
+D2
+~
+~
+0 20100 20132
+D3
+~
+~
+0 20100 20141
+D5
+Underwater
+~
+~
+0 20100 20143
+S
+T 20116
+T 20124
+T 20126
+#20141
+In the Middle of the Ocean~
+   The ocean stretches as far as you can see, lying below the vast sky above.  
+Giant waves reaches high up and comes crashing down upon you, forcing you
+beneath the ocean surface.  Underwater currents tries to pull you under and the
+frigid cold wind merciless
+~
+201 0 7
+D0
+~
+~
+0 20100 20142
+D1
+~
+~
+0 20100 20140
+D2
+~
+~
+0 20100 20142
+D3
+~
+~
+0 20100 20140
+D5
+Underwater
+~
+~
+0 20100 20144
+S
+T 20116
+T 20124
+T 20126
+#20142
+In the Middle of the Ocean~
+   The ocean stretches as far as you can see, lying below the vast sky above.  
+Giant waves reaches high up and comes crashing down upon you, forcing you
+beneath the ocean surface.  Underwater currents tries to pull you under and the
+frigid cold wind merciless
+~
+201 0 7
+D0
+~
+~
+0 20100 20141
+D1
+~
+~
+0 20100 20132
+D2
+~
+~
+0 20100 20141
+D3
+~
+~
+0 20100 20132
+D5
+Underwater
+~
+~
+0 20100 20145
+S
+T 20116
+T 20124
+T 20126
+#20143
+Underwater~
+   You are beneath the surface of the ocean.  The currents under here are
+strong, pulling and forcing you to go deeper.  The depths of the sea is great.
+It is deep, so deep that there is only inky darkness at the bottom.  
+Surrounding you are nothing, just lots and lots of seawater...  
+~
+201 0 0
+D0
+Underwater
+~
+~
+0 20100 20139
+D1
+Underwater
+~
+~
+0 20100 20144
+D2
+Underwater
+~
+~
+0 20100 20139
+D3
+Underwater
+~
+~
+0 20100 20144
+D4
+Above the Surface
+~
+~
+0 20100 20140
+S
+T 20125
+T 20117
+#20144
+Underwater~
+   You are beneath the surface of the ocean.  The currents under here are
+strong, pulling and forcing you to go deeper.  The depths of the sea is great.
+It is deep, so deep that there is only inky darkness at the bottom.  
+Surrounding you are nothing, just lots and lots of seawater...  
+~
+201 0 0
+D0
+Underwater
+~
+~
+0 20100 20145
+D1
+Underwater
+~
+~
+0 20100 20143
+D2
+Underwater
+~
+~
+0 20100 20145
+D3
+Underwater
+~
+~
+0 20100 20143
+D4
+Above the Surface of the Water
+~
+~
+0 20100 20141
+S
+T 20125
+T 20117
+#20145
+Underwater~
+   You are beneath the surface of the ocean.  The currents under here are
+strong, pulling and forcing you to go deeper.  The depths of the sea is great.
+It is deep, so deep that there is only inky darkness at the bottom.  
+Surrounding you are nothing, just lots and lots of seawater...  
+~
+201 0 0
+D0
+Underwater
+~
+~
+0 20100 20144
+D1
+Underwater
+~
+~
+0 20100 20139
+D2
+Underwater
+~
+~
+0 20100 20144
+D3
+Underwater
+~
+~
+0 20100 20139
+D4
+Above the surface
+~
+~
+0 20100 20142
+S
+T 20125
+T 20117
+#20146
+In Oblivion~
+   You are floating in unconsciousness...  Your head hurts, your mind rears.  
+You try to move, your movements are hindered.  Darkness surrounds you from all
+sides, and there appear to be nothing here.  
+~
+201 a 0
+S
+T 20118
+T 20119
+#20147
+On a Sandy Bay~
+   The bay is a coast wenched between two cliffs, sandwiched in the middle.  
+Covered with washed up pieces of broken wood and miscellaneous junk items dumped
+onto it, the area is fully of rubbish peeking out from the sand.  
+~
+201 0 2
+D0
+   A dead end
+~
+~
+0 20100 20148
+D3
+   A shipwreck
+~
+~
+0 20100 20149
+E
+wood junk~
+   The litter the beach, making it unsightly.  Several organic items are
+decaying already.  
+~
+S
+T 20104
+T 20143
+#20148
+On a Sandy bay~
+   The cliff are on three sides, and the only visible exit is to the south.  It
+appears to be empty, and heavily populated by tropical plants and vicious vines.
+Speckles of broken rocks and stones lie here, and several marks are shown in the
+sand.  
+~
+201 0 2
+D2
+~
+~
+0 20100 20147
+E
+sand marks~
+   Lines leading to the area against the north cliff suggests that something has
+been dragged there.  
+~
+E
+north cliff~
+   Marks leading to the north cliff suggests that something has been dragged
+there.  Perhaps @Rsearch@ning for something will uncover a treasure box?  
+~
+S
+T 20121
+T 20120
+T 20144
+#20149
+At the Scene of a Shipwreck~
+   The shore ends here, prodding out of the sand are many jagged rocks.  Broken
+wooden planks are here, as well as a ship, torn by ocean reefs and left
+discarded here.  
+~
+201 0 2
+D1
+   On a Sandy Shore
+~
+~
+0 20100 20147
+E
+ship shipwreck~
+   This ship did not survived the cruel test of the stormy seas and hiding
+reefs.  Wrecked apart, the massive wooden structure is decaying, along with the
+stuff inside.  
+~
+S
+T 20104
+#20150
+In a Small Cozy House~
+   The room is plain and simple without many furniture.  Resting against the
+north wall is a sizeable bed, and beside it is a wooden cupboard.  To the south
+a carpet has been carefully placed there.  
+~
+201 cd 0
+D2
+~
+door~
+2 20113 20108
+S
+#20151
+In a Small Underwater Tunnel @C[SURFACE]@n~
+   Light filters from the surface, refracted to form ghostly figures that dance
+in the water.  The only exit out is to surface, or to go deeper into the tunnel
+north.  
+~
+201 dfgi 9
+D0
+   The circular tunnel leads north.  
+~
+~
+0 20100 20152
+S
+T 20131
+#20152
+In a Underwater Tunnel @C[SURFACE]@n~
+   The tunnel is made out of granite, with tiny pieces of glowing stones that
+lights the way in this tunnel.  It continues to the south, but it is possible to
+surface here.  
+~
+201 dfgi 0
+D2
+~
+~
+0 20100 20151
+S
+T 20132
+#20153
+In a Secret Cove @B[DIVE]@n~
+   This is the entrance and the exit of the hidden cove, naturally build within
+the cliff itself.  There is a pool of water to the southern edge of the wall,
+and to the north the cove continues.  
+~
+201 adefgj 0
+D0
+~
+~
+0 20100 20154
+S
+T 20133
+#20154
+In a Tunnel of A Cove~
+   The sound of dripping water echoes in the tunnel of the cove.  The walls here
+are nearly empty, with pieces of glowing minerals etched into them.  The tunnel
+continues west - where you see a small room, upwards to another room and south
+to the exit/entrance of the cove.  
+~
+201 defgj 0
+D2
+~
+~
+0 20100 20153
+D3
+The tunnel leads to a small room.
+~
+~
+0 20100 20155
+D4
+The tunnel leads to a small room.
+~
+~
+0 20100 20156
+S
+#20155
+A Room in the Cliff~
+   This room measures five feet high and eight feet wide, the walls bare except
+for glowing minerals in them.  Hidden from the outside world and carefully
+concealed in a cliff, this place would make a great hideout.  
+~
+201 defgj 0
+D1
+~
+~
+0 20100 20154
+S
+#20156
+A Room in the Cliff~
+   This room measures five feet high and eight feet wide, the walls bare except
+for glowing minerals in them.  Hidden from the outside world and carefully
+concealed in a cliff, this place would make a great hideout.  
+~
+201 defgj 0
+D5
+~
+~
+0 20100 20154
+S
+#20157
+On top of a Cliff @G[CLIMB]@n~
+   Tropical trees populates the cliff to the east and west, only a small dirt
+trial leads to the north towards a hut with no door.  To get to base level you
+will have to @GCLIMB DOWN@n the vines to arrive on a beach.  
+~
+201 0 0
+D0
+A small hut is to the north, set against some tropical trees.
+~
+~
+0 20100 20158
+S
+T 20139
+T 20144
+#20158
+In a Small Wooden hut~
+   The hut is made from different lengths and types of wood, and the roof -
+tropical, broad leaves attached in a circular shape.  The floor is a carpet of
+nicely trimmed, green grass.  Towards the south is a narrow dirt route which
+leads outside.  
+~
+201 0 0
+D2
+   A narrow route leads to the edge of a cliff
+~
+~
+0 20100 20157
+S
+T 20144
+$~

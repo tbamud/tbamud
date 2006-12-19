@@ -1,0 +1,319 @@
+CircleMUD v3.0 Shop File~
+#27500~
+350
+352
+-1
+1.05
+0.15
+2
+-1
+%s Terribly sorry, I don't have one of those, but I have a poem about one.  Would you like to hear it?~
+%s Don't you know Goethe knows all?  Sell me something you have.~
+%s Get a clue!  Try the store next door.  Non-poets can't stand them.~
+%s I've spent all my money to feed all the hungry artists in the world.  I can't afford that.~
+%s Sorry, you can't afford that, but you can afford a copy of 'Goethe: the poet's early years' (autographed version).~
+%s That will cost you %d coins.  And with that fine purchase you recieve a free copy of 'Goethe: Mere Genius or God.'~
+%s Money is but transient ether.  I will buy it for %d coins.~
+0
+6
+27500
+0
+27581
+-1
+0
+28
+0
+0
+#27501~
+4103
+6106
+-1
+1.20
+0.05
+4
+10
+-1
+%s I beg your pardon sir, but I do not seem to have that right now.~
+%s I see no such item on your person kind sir.~
+%s Sorry, sir, but I do not buy anything of that sort.~
+%s Sorry, but I do not seem to be in a position to buy that item.~
+%s I do not mean to be rude, but you cannot afford that item.~
+%s Kind sir, that will be %d coins and thank you for your patronage.~
+%s Oh, thank you for the opportunity to buy from you.~
+0
+6
+27501
+0
+27513
+-1
+0
+28
+0
+0
+#27502~
+332
+351
+353
+354
+-1
+1.05
+0.15
+3
+4
+15
+0
+0
+-1
+%s I don't have that item...better try again sometime later.~
+%s I might be old, but I'm not stupid.  You don't have that item.~
+%s I have no interest in anything like that, go try somewhere else.~
+%s Sorry, but buying that item would put me over my budget.~
+%s Come back after you get a job to earn some money to buy that!~
+%s That will be %d coins.~
+%s Thank you for helping enlarge my collection, here are %d coins.~
+0
+6
+27502
+0
+27568
+-1
+0
+28
+0
+0
+#27510~
+300
+301
+302
+-1
+2.00
+0.01
+-1
+%s Oops, I forgot to order more, please don't tell Sam.~
+%s I might be from Indiana, but you can't put a cow in my lap!~
+%s HA HA, now why would I want something like that?~
+%s Everytime Sam goes on a date, he leaves me with no money to buy anything!~
+%s Sorry, but only Mr. Peterson's allowed to run up a tab anymore.~
+%s That will be %d coins.~
+%s Here are %d coins, wait until Sam hears about what I bought.~
+0
+6
+27510
+0
+27583
+-1
+0
+28
+0
+0
+#27558~
+27503
+27504
+27505
+27506
+27528
+27507
+27514
+27529
+-1
+2.00
+0.10
+5
+9
+16
+18
+21
+-1
+%s Sorry, but that item hasn't been unloaded from the trucks yet.~
+%s Like, stop wasting my time with things you don't have!~
+%s You can't return something that you can't buy here!~
+%s Sorry, the store's going through financial difficulties now.~
+%s Look, I've got better things to do than talking to dead beats!~
+%s That will be %d coins, thank you and come again!~
+%s Here is your %d coins for your item.~
+0
+6
+27558
+0
+27597
+-1
+0
+28
+0
+0
+#27562~
+27516
+27521
+310
+-1
+2.00
+0.01
+-1
+%s Sorry, I don't have that right now.~
+%s What the hell's wrong with you, boy...you blind?!~
+%s This is a fish store...you can't expect me to buy that!~
+%s Sorry, business is bad, so I can't buy that right now.~
+%s If you want that, you'd better come back with some money.~
+%s That will be %d coins.~
+%s Here are %d coins.~
+0
+6
+27562
+0
+27507
+-1
+0
+28
+0
+0
+#27563~
+27510
+27511
+27519
+322
+324
+320
+321
+323
+325
+-1
+2.00
+0.10
+5
+-1
+%s What are you, blind?  Can't you see I don't have that right now?!~
+%s Do you think I'm blind!?  Get out of here, you con artist!~
+%s I don't buy that sh*t!~
+%s Sorry, but all my money went into bailing me out of jail!~
+%s Get out of here, you no good bum, come back when you get some money!~
+%s Pssst, I'll let you have it for %d coins.~
+%s You got yourself a deal.~
+0
+6
+27563
+0
+27517
+-1
+0
+28
+0
+0
+#27564~
+27520
+27521
+27522
+27526
+27527
+27523
+27524
+27525
+-1
+2.00
+0.50
+-1
+%s Yrros, ew era tuo fo taht thgir won.~
+%s Ouy tog ot eb gniddik, ouy t'nod evah taht meti.~
+%s Ew od ton yub gnihtyna tuohtiw tpiecer, hcihw ew t'nod evig.~
+%s I t'nod yub yna smeti, os ti t'nseod rettam taht m'I ekorb!~
+%s Ouy dlouhs peek retteb kcart to ruoy yenom esuac' ruoy ekorb!~
+%s Taht lliw eb %d snioc.~
+%s S'taht elbissopmi esuac' I t'nod yub gnihtyna.~
+0
+6
+27564
+0
+27518
+-1
+0
+28
+0
+0
+#27576~
+3061
+361
+-1
+2.00
+0.50
+22
+-1
+%s I don't have that!  Try list!~
+%s Show me one and I'll buy it!  You don't have one!~
+%s Sorry, that thing doesn't look like it floats too well!~
+%s That's such a fine vessel... too bad, I can't afford it.~
+%s Har!  No free rides here!  Come back when you have more money!~
+%s That'll be %d coins, matie.  Happy sailing.~
+%s I'll give you %d coins for that fine craft.~
+0
+6
+27576
+0
+27501
+-1
+0
+28
+0
+0
+#27577~
+340
+341
+342
+343
+344
+346
+370
+371
+375
+376
+380
+381
+385
+386
+-1
+2.00
+0.50
+9
+-1
+%s Haven't got that on storage -- try list!~
+%s You don't seem to have that.~
+%s I only buy armors.. Go away!~
+%s That is too expensive for me - Try a wizard!~
+%s You can't afford it!~
+%s That'll be %d coins, please.~
+%s You'll get %d coins for it!~
+0
+6
+27577
+0
+27567
+-1
+0
+28
+0
+0
+#27579~
+25620
+26114
+27531
+30821
+-1
+2.00
+0.50
+-1
+%s Sorry, I don't have that -- try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s Friend, you don't seem to have enough money for that.~
+%s That'll be %d coins.~
+%s Here, you can have %d coins for that.~
+0
+6
+27579
+0
+27512
+-1
+0
+28
+0
+0
+$~

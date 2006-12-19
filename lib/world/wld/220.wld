@@ -1,0 +1,653 @@
+#22000
+@nZone Description Room for the @REnchanted @WKitchen@n~
+@WZone name@n : An Enchanted Kitchen
+@WLocation@n  : It should probably be part of an enchanted house.
+@WLevel@n     : 10-20
+@WRooms@n     : Approximately 24
+@WMobs@n      : 9 unique mobs
+@WObjects@n   : 4
+@WAlignment@n : All mobs will have a good alignment, except for the 
+            icemonster and Oreo the cat.
+@WTheme@n     : Imagine a huge, giant-sized kitchen, in which utensils are 
+            about as tall as the average man. Its complete with a fridge 
+            and oven to explore, counters, and even a mouse hole.
+@WPlot@n      : Snuffins the mouse is sick of being tormented by his rival, 
+            Oreo the cat. It's the player's job to help save Snuffins. 
+            Other than that, there isn't much. It's a big kitchen with 
+            kitchen-like things. :)
+~
+220 dj 0
+E
+theme~
+   Imagine a huge, giant-sized kitchen, in which utensils are about as tall as
+the average man.  Its complete with a fridge and oven to explore, counters, and
+even a mouse hole.    
+~
+S
+#22001
+@WThe Open Doorway@n~
+   @yThe gigantic door is, thankfully, already wide open.  Smells wafting in from
+the north are highly @Gun@gpl@Gea@gsa@Gnt@y, and everything around is tremendous in size.  
+The temperature is agreeable, though definitely on the @rwarm@y side.  The cavernous
+room looks to be some sort of...@Wkitchen@y.@n 
+~
+220 d 0
+D0
+@DTo the north, a large chair is pulled out from under a table.  @n
+~
+~
+0 0 22002
+S
+#22002
+@WBeneath the Big Chair@w~
+   @yA gigantic chair with black, @Dsteel legs @ystands here.  It is pulled away from
+the table slightly, and you can hardly see over the @cpale blue @ycushion.  A
+refrigerator is visible to the east, as well as an enormous table to the north.
+Also, ominous clouds of dust seem to stir, almost as if they were alive...@m
+~
+220 d 0
+D0
+@DNothing can be made out in the darkness under the table to the north.  @n
+~
+~
+0 0 22003
+D1
+@DThe fridge door to the east is pulled open.  @n
+~
+~
+0 0 22010
+D2
+@DA doorway lies to the south.  @n
+~
+~
+0 0 22001
+D3
+@DA phone has fallen off the hook to the west.  @n
+~
+~
+0 0 22009
+D4
+@DRivets on the chair's legs are great for climbing down, but the height is
+staggering!  @n
+~
+~
+0 0 22011
+E
+steel legs~
+   There are colossal nailheads riveted into each of the four legs.  If one was
+very, very careful, it looks as though he might be able to climb up...    
+~
+S
+#22003
+@WUnderneath the Table@w~
+   @yLooking up, the kitchen table forms a ceiling high above.  It blocks all
+light, and even with a lantern, the strange shadows lurking about are scarcely
+visible.  Whispers seem to come from all directions, while clouds of dust dance
+noxiously by.  To the east, the oven door is left open.  It looks like an easy
+climb from here.
+~
+220 ad 0
+D0
+~
+~
+0 0 22004
+D1
+~
+~
+0 0 22008
+D2
+~
+~
+0 0 22002
+S
+#22004
+@WOutside the Mouse Hole@w~
+   @yAn over-sized mousetrap with a piece of @yrotted @Ycheese@y sits just outside a
+large hole about as tall as a human man.  A tiny @wg@yl@Yo@Ww@y is coming from the inside,
+though it is impossible to make anything out.  To the west, a monstrous looking
+cat watches the space you occupy intently, as if it were waiting for something
+or someone to appear.
+~
+220 d 0
+D0
+   There is a flame dancing inside, but nothing else is visible.    
+~
+~
+0 0 22005
+D1
+~
+~
+0 0 22007
+D2
+~
+~
+0 0 22003
+D3
+   A large cat prowls, guarding its space.    
+~
+~
+0 0 22006
+S
+#22005
+@WSnuffins' Dwelling@n~
+   @yEverything inside is, refreshingly, average-sized.  A spartan twin bed
+covered in thick blankets is pushed to the side, while a large, cherrywood desk
+dominates most of the room.  Candles burning atop it give off an aesthetic
+vanilla scent and just enough heat to keep the room at a comfortable
+temperature.  One of the walls is decorated with family @Dphotos @yportraying a
+happy group of mice.  The presence of numerous @Wbooks@y, @Ymaps @yand @gglobes @yhints at a
+person who enjoys travel.@n
+~
+220 de 0
+D2
+~
+~
+0 0 22004
+E
+maps globes~
+   Several different-size globes sit around the room, and maps are spread out
+in various places.  Comically large thumbtacks are placed on random locations
+over the world.  Cities like @CVe@cni@Cce@n, @RNe@Ww Yo@Brk@n, @yR@Yom@ye@n and @GTo@gky@Go@n are circled in
+bold @Rred@n.    
+~
+E
+photos walls pictures~
+   A happy mouse family is depicted in the many pictures along the walls.  One
+of the most @Ceye-catching@n is the image of a young mouse at a theme park,
+wearing what looks to be a set of plastic @yhuman ears@n over his head.  
+@WStr@wan@Dge@n...    
+~
+E
+desk~
+   This desk is cluttered with paperwads and chewed-up pens.  A thick book is
+pulled open, and looks to be a kind of @Ddiary@n.    
+~
+E
+diary~
+   @WDay @W39 : @n@n I am trapped.  My punishment for leaving home so early to
+travel the world has come back to bite me in the butt.  I had only planned to
+stay in this place for a night, merely to rest before I continued my journey,
+but it seems as if I've met my match in the devilcat named @DO@Wre@Do@n.    
+~
+E
+books~
+   The books laying around are all thick and ancient looking.  Upon closer
+inspection, it seems like they're all books on history or geography.  There are
+several atlases, as well.    
+~
+S
+#22006
+@WThe Cat Corner@n~
+   @yThis corner of the kitchen is littered with tell-tale furballs and pieces of
+kitty kibble.  A plush @rred @Rcushion @ylays in the furthest corner of the room, and
+a collection of multi-colored jingle balls and squeaky toys are scattered around
+it.  A food-and-water bowl lies empty, @Gmold @ycreeping over it.@n
+~
+220 d 0
+D1
+~
+~
+0 0 22004
+E
+pendant collar~
+   The name @DO@WRE@DO@n is engraved into a silver pendant.    
+~
+S
+#22007
+@WThe Back Door@n~
+   @yThe dust settled on the ground here is thick, so much that you can see deep
+paw prints smudged into the layer of muck.  Pieces of kitty kibble are thrown
+randomly, and a ray of @Yl@yi@wg@ch@Ct@y falls curiously over this spot.  A mousehole is
+nearby to the west.  Paint peels off the door, which is blocked by a heavy
+@Dpackage@y.@n 
+~
+220 d 0
+D2
+~
+~
+0 0 22008
+D3
+~
+~
+0 0 22004
+E
+package~
+@RKrazy @BKitty @GKibble@c, for the @CKrazy@c in your Kitty@n
+~
+S
+#22008
+@WOn the Oven Door@n~
+   @yThe oven door has been left open, and bits of @Dfilth @ycrawl along the steel.  
+An unpleasant smell fills the stuffy air, and heat waves blow in from the east.
+A string of @Rspaghetti @yis dangling from the top of the oven.  @GGross!@n
+~
+220 d 0
+D0
+@DPaw prints mar the layer of dust to the north.  @n
+~
+~
+0 0 22007
+D1
+@DGlowing bars pulse ominously to the east.  @n
+~
+~
+0 0 22012
+D2
+@DThe fridge door is open to the south.  @n
+~
+~
+0 0 22010
+D3
+@DDark dust clouds curl underneath the table to the west.  @n
+~
+~
+0 0 22003
+D4
+@DA spaghetti noodle leads upwards.  @n
+~
+~
+0 0 22021
+E
+spaghetti string~
+   A wet spaghetti noodle swings back and forth.  It is pretty thick, and
+doesn't look like it would break easily.  Maybe it could be climbed...    
+~
+S
+#22009
+@WThe Phone@n~
+   @yA tremendous phone seems to have fallen off the hook, and rests here on its
+side.  The buttons are huge, each one as big as your head.  A dial tone blares
+from one of the speakers, and a @RPOWER@y light blinks angrily.  The @Wcord@y is very
+thick and spirals upward.@n
+~
+220 0 0
+D1
+@DTo the east, a large chair is pulled out from under a table.  @n
+~
+~
+0 0 22002
+D4
+@DThe phone cord looks climbable.  @n
+~
+~
+0 0 22013
+E
+cord~
+   The pale @Wwhite@n cord is thick and springy.  If a person grabbed on, he
+could probably climb it fairly high.    
+~
+S
+#22010
+@WBefore the Fridge@w~
+   @yMultiple @Dsticky notes @yand pictures are posted on the outside of the fridge
+door.  It is cracked open, making it easy to see inside and climb up the racks
+on the inside of it.  The smell of rotten food is thick and choking.  A
+lightbulb high above you flickers incessantly, and there is some mumbling coming
+from up high.@n
+~
+220 d 0
+D0
+@DA burning smell wafts in from the north.  @n
+~
+~
+0 0 22008
+D3
+@DA kitchen chair is pulled out from the table.  @n
+~
+~
+0 0 22002
+D4
+@DStrange mumbling noises are coming from way up high...  @n
+~
+~
+0 0 22017
+E
+photos~
+   An autographed photo of @MBritney @CSpears@n reads @WTo Hank, love Britney
+xoxo@n.    
+~
+E
+sticky notes~
+   A sticky note tacked onto the fridge reads @WDon't forget to take the cat
+out.  Call mouse exterminator when you get home@n.  Weird.    
+~
+S
+#22011
+@WPile of Boxes@n~
+   @yA pile of @Bmail @ypostmarked ages ago sits on the @cpale blue @ychair cushion.  The
+packages are tall, brown and lumpy.  The way they are situated seems ideal for
+climbing.  The side of the cushion is torn, and fluff spills out of it.@n
+~
+220 d 0
+D0
+@DThe kitchen table is just a leap away.  @n
+~
+~
+0 0 22025
+D5
+@DRivets on the chair's legs are great for climbing down, but the height is
+staggering!  @n
+~
+~
+0 0 22002
+E
+packages mail~
+   The lumpy, brown packages have angry, red circles surrounding the addresses.
+One has @BHappy Birthday @WHank@n written on it.    
+~
+S
+#22012
+@RInside the Oven@n~
+   @yIt feels like a sauna in here!  The temperature is uncomfortably @Rhot@y and
+@Rhumid@y, and heat waves @Db@wl@Wu@Dr@y your vision slightly.  Thick layers of oven @Dscum@y,
+@ggrease@y and ancient @Gfood@y ingredients coat all four walls.  To the back, pulsing
+heat rods glow a @Rvibrant @Yorange @ycolor, dimly lighting the oven.  Steel beams
+form a baking rack above.@n
+~
+220 d 0
+D3
+@DTo the west, the oven door lies open.  @n
+~
+~
+0 0 22008
+S
+#22013
+@WOn the Counter@n~
+   @yThe counterspace here is mostly taken up by a large, spiral datebook that is
+flipped open to a random @Dpage@y.  A tall @Dpen@y is leaned precariously against one of
+the walls, though beads of ink stream down it sides.  The corners of the counter
+are crawling with dust and spiderwebs.@n
+~
+220 d 0
+D0
+@DChopped vegetables are piled to the north.  @n
+~
+~
+0 0 22014
+D5
+@DThe thick phone cord provide means of going down.  @n
+~
+~
+0 0 22009
+E
+pen~
+   Visible through the rivulets of ink dripping down, the words @WHank's Auto
+Repair@n are painted onto the pen in small caps.    
+~
+E
+page datebook book spiral~
+   A scribbled message reminds whoever it was meant for to take out the cat-
+but the date it is written on was at least two years ago!    
+~
+S
+#22014
+@WChopped Vegetables@n~
+   @yThis place has an enormous cutting board, at least a foot high off the
+counter.  A rather terrifying @DChef's knife@y is sunk halfway into a rotted @Rtomato@y,
+and carrot slices are piled into a tower on the corner of the cutting board.  
+The stench from other @gvegetables@y make the area smell terrible.  Looking @Ddown@y, a
+kitchen drawer is slightly cracked open.@n
+~
+220 d 0
+D0
+@DThere is a sink in the north.  @n
+~
+~
+0 0 22015
+D2
+@DA large spiral notebook is sitting to the south.  @n
+~
+~
+0 0 22013
+D5
+@DThe kitchen drawer is cracked open, and a person could probably squeeze into
+it.  @n
+~
+~
+0 0 22016
+E
+other vegetables~
+   @gMoldy@n bits of celery, piles of cheese gone bad and stinking potato
+slices appear to have been sitting for ages.  They're hardly recognizable!    
+~
+E
+chef knife~
+   This gigantic @DChef's knife@n is covered in rust and cobwebs.    
+~
+S
+#22015
+@WThe Sink@n~
+   @yThe sink is filled halfway with smelly water.  Capsized boats, plastic forks,
+spoons and thin saucers float around on the surface.  There are metal utensils
+sunk to the bottom, though they are covered in @Ggreen @gmold@y.  Unrecognizable
+chunks of food are also drifting past.@n
+~
+220 d 6
+D2
+@DA big cutting board lies to the south.  @n
+~
+~
+0 0 22014
+S
+#22016
+@WInside of a Drawer@n~
+   @yThis kitchen drawer has all the utensils.  Heavy metal forks, knives and
+spoons are organized into a plastic brown tray.  It smells musty, like it hasn't
+been aired out in a long time.  Cobwebs are forming over the various utensils,
+and dust is building in the darker corners.@n
+~
+220 ad 0
+D4
+~
+~
+0 0 22014
+S
+#22017
+@WInside the Fridge@w~
+   @yA gallon-sized jug of @Wmilk@y dominates this space, though there are a bunch of
+boxes and jars in the space surrounding it.  The colorful labels resemble towers
+to form a kind of city around the milk, with a main 'road' leading east to what
+lay behind.  A jar of mustard has been knocked over and left as it is, so some
+places are @Ggreen @ywhere there should be @Yyellow@y.@n
+~
+220 d 0
+D1
+@cA shadow cast by something behind the milk is moving...  @n
+~
+~
+0 0 22018
+D4
+@DA chill jet of air is coming from above.  @n
+~
+~
+0 0 22019
+D5
+@cThe trip back to the kitchen floor isn't a long one.  @n
+~
+~
+0 0 22010
+E
+milk~
+   Curiously, there seem to be creatures moving about inside the milk jug.  
+Odd sounds are coming from it.  Better keep away...    
+~
+S
+#22018
+@WBehind the Milk@w~
+   @yEverything just stops, and this area is mostly empty except for an upturned
+@Dlid@y in the corner.  The flickering lightbulb is here, making the room warm and
+@Wblindingly @Ybright@y.  A strong smell of generic @Ccleaner @ylingers in the air, much
+like a hospital.@n
+~
+220 de 0
+D3
+@DA city made out of pasta boxes, baking soda boxes and jelly jars lies west.  
+@n
+~
+~
+0 0 22017
+E
+lid~
+   The tin lid reads @BCreamy@W-@BBrand @WMayo!  @n A gray growth is forming on
+the rim.    
+~
+S
+#22019
+@WThe @WF@Cr@ce@we@Dz@Ce@Wr@n~
+   @yThis first part of the freezer is empty, for the most part.  A thick layer of
+soft, spongey ice coats the floor and walls around you.  Ominous tracks lead to
+the east, and you can hear a maddening @c-@Cdrip@c-@Wdrip@c-@Cdrip@c- @ysound coming from there.
+A half-eaten @Mpopsicle @ylies covered in torn wrapping to the side, a fine layer of
+ice crawling over it.@n
+~
+220 d 0
+D1
+@DFrosty, cryptic mists creep and crawl, almost as though they're reaching out
+to you...  @n
+~
+~
+0 0 22020
+D5
+@DThe fridge is below.  @n
+~
+~
+0 0 22017
+S
+#22020
+@WLair of the @CIce@Dm@Bo@Dn@Bs@Dt@Be@Dr@n~
+   @yThe temperature is freezing, and even the icicles around you seem to shiver
+amidst the cold.  @DBoxes @yof frozen dinners long past their expiration date are
+piled about, and an @Cice rack @ysits against one ice-covered wall.  The floor is
+dangerously slippery here, as a something liquid is leaking from the frosted
+ceiling high above.  A large bulb toward the back spreads plenty of @Ylight@y.@n
+~
+220 d 0
+D3
+@DA @Mpopsicle @Dlies to the west.
+@n
+~
+~
+0 0 22019
+E
+icerack rack~
+   Huge cubes of ice fill in the squares of a @mpurple@n icerack.  They're big
+enough to stand on or make cool ice sculptures out of.    
+~
+E
+boxes frozen dinners~
+   Boxes of frozen deserts, kids' meals and microwaveable lasagna form colorful
+towers.  The expiration dates seem to all have been at least a year ago,
+sometimes more!  The tempting pictures of a gigantic @Dfudge @ybrownie@n sure
+look tempting, though.    
+~
+E
+liquid ceiling~
+   Something up there is probably broken, because a steady drip of liquid is
+splattering onto the ground below and freezing almost immediately.  As a
+result, a frozen stalactite from the ceiling reaches down to a stalagmite
+building on the floor.    
+~
+S
+#22021
+@WOn Top of the Stove: @RFirst Burner@n~
+   @yA vast stove stretches out to the north and east.  A coil is here, though it
+is rusted over and probably hasn't been used a long while.  The steel top of the
+stove is coated in @Dgrime@y.@n
+~
+220 d 0
+D0
+@DAnother burner lies to the north.  @n
+~
+~
+0 0 22024
+D1
+@DThere is a faint @Rglow @Dto the east.  @n
+~
+~
+0 0 22022
+D5
+~
+~
+0 0 22008
+S
+#22022
+@WOn Top of the Stove: @RSecond Burner@n~
+   @RWhoa!! @yA glowing coil is here, so hot that it is almost melting in some
+places.  Someone probably forgot to turn this burner off.  The heat is
+completely overwhelming, and the air is very stuffy.  Thick spots of grossly
+cooked grime bubble close to the coil.@n
+~
+220 d 0
+D0
+@DLooks like another burner to the north.  @n
+~
+~
+0 0 22023
+D3
+@DA trail of blackened spaghetti sauce leads west.  @n
+~
+~
+0 0 22021
+S
+T 22004
+#22023
+@WOn Top of the Stove: @RThird Burner@n~
+   @yRust crawls over an unused metal coil.  This one is smaller than the rest and
+surrounded by thick layers of stove scum and grime.  Chunks of molded food have
+fallen beneath the coil, and a nasty smell pollutes the stuffy air here.@n
+~
+220 d 0
+D2
+~
+~
+0 0 22022
+D3
+~
+~
+0 0 22024
+S
+#22024
+@WOn Top of the Stove: @RFourth Burner@n~
+   @yA @rrusted@y metal pot is sitting on the burner here.  Thick, stinking liquid
+spills over the edge of the pot in @Gch@gu@Gnks@y, and the lid has fallen off.  There
+are noises coming from within, strange, wet-sounding @Gglop@y-@gglop@y-@Dglops@y.  The smell
+in this area is rank and overpowering.@n
+~
+220 d 0
+D1
+@DA burner is visible to the east.  @n
+~
+~
+0 0 22023
+D2
+@DA trail of blackened spaghetti sauce leads south.  @n
+~
+~
+0 0 22021
+S
+#22025
+@WOn Top of the Table@n~
+   @yThe table is covered in a thick layer of dust and crumbs.  It was set for
+@Ddinner@y, but most of the @Dfood@y has decayed or been eaten, probably by the ants
+that are crawling everywhere.  The view from here is pretty nice- you can see
+the fridge, stove and even a fluffy cat in the corner.@n
+~
+220 d 0
+D2
+@DA pile of boxes is just a leap away.  @n
+~
+~
+0 0 22011
+E
+ants~
+   A colony of ants appears to be feeding from this spot.  The large creatures
+are all walking in strict, complex lines that lead on and off the table, to
+some unknown location.    
+~
+E
+dinner set food~
+   A mold-filled cup sits next to a plate, which is covered in spiderwebs and
+ants.  The forks and knives sitting around it are completely rusted over.    
+~
+S
+$~

@@ -1,0 +1,201 @@
+CircleMUD 3.5 is currently being developed by The Builder Academy. If you need 
+any help stop by: builderacademy.net 9091
+
+Unfortunately this changelog is far from complete since TBA has not kept a 
+record of every change in the last 4 years:
+
+- Updated README, FAQ, news.
+- Removed all CIRCLEMUD_VERSION checks.
+- Renamed _DEAF to _NOSHOUT.
+- Added greetings, ihelp, wizlist, and immlist to tedit.
+- Changed all usage of dscr to desc for standardization.
+- Increased PLR_DESC_LENGTH from 240 to 512.
+- Renamed EXDSCR_LENGTH and CON_EXDESC to PLR_DESC_LENGTH and CON_PLR_DESC.
+- Moved lastlist (lists entire last file) to last *.
+- Removed edit command.
+- Fixed everything so MUD would load error free in mini mode.
+- Moved cheat to return. If not in a mob typing return will advance you to the
+  level specified in do_cheat. IDNUM 1 advanced to IMPL
+- Changed OLC to default to off, again.
+- Added Ascii Pfiles V3.0.1
+- Added pagelength (needs to be moved to toggle).
+- Update to list_obj_to_char for object stacking and iedit objects.
+- Increased MAX_STRING_LENGTH to 49152.
+- Moved poofin/out to set self poofin/out. 
+- Removed poofs command, poofs can be viewed under stat or score.
+- Isname updates.
+- Added mob/obj delete.
+- Update to delete_room to remove the room from the htree.
+- Counts colorcodes now when formatting in the text editor.
+- Update to create_new_zone to correct buildwalk issues after a new zone is created.
+- Added zpurge, checkload and zcheck Immortal commands.
+- Doubled MAX_INPUT_LENGTH to 512.
+- Usage: attach { mtr | otr | wtr } { trigger } { name } [ location ]
+- Usage: detach [ mob | object | room ] { target } { trigger | 'all' }
+- Added show zone <name> option.
+- Added look around command.
+- Fixed hidden object stacking.
+- Added vnum room/trig options to search by name.
+- Added hedit, helpcheck and hindex. Plus seperate imm/mort screens.
+- Added hidden mobs. medit-l-desc beginnin with a period (.) can only be seen 
+  with holylight.
+- Update to zreset and do_links.
+- Added paragraph option in the text editor /f 4-8 to make a para lines 4-8.
+- Object stacking fix, only stack if they are the same vnum AND short descr.
+- Update to do_hit to prevent crash if the player is AFF_CHARM somehow without 
+  a master.
+- Added Did you mean? to non-existing helpfile query.
+- Added TBA's donated zones to stock.
+- DG Scripts 1.0.14.
+- Set OLC options #, aedit, hedit, off.
+- Updates to parse_object, oedit_disp_perm_menu and oedit_parse to remove the 
+  ability of setting AFF_CHARM as on object perm affect. Setting this on a 
+  player (without having a clearly defined MASTER) causes a crash.
+- Added social gossip bug fix in do_gen_comm to give commands priority.
+- Did away with the #ifndef STOCK_CIRCLE tags.  
+- Removed some unused code from cedit_creation.
+- Update MAX_STRING_SIZE.
+- Update to do_gen_comm to make gemote and gossip behave the same for socials.
+- Update to do_gen_comm to remove SYSERRs generated while switched into mobs.
+- Update to SPECIAL(shop_keeer) so that MSG_NO_STEAL_HERE is sent TO_ROOM as 
+  well as TO_CHAR.
+- Update to zedit_parse.
+- Expanded zones to unsigned int. NOWHERE/corpse is now 65535, not -1
+- Added PRF_AFK.
+- Updated load_zones to fix reported bug with behavior of the 'Set a global 
+  variable' zedit command.
+- Replaced calls for ch|vict|obj->in_room to IN_ROOM(ch|vict|obj). Use of 
+  the macro is better.
+- Autosave everything except Buildwalk, dig, and rdelete.
+- Corrected minor typo in parse_class which is part of stock Circle 3.1.
+- Updates to free_room_strings, free_room, and free_srings.
+- Change to free_strings() in oasis_delete.c related to freeing extra descs.
+- Also made changes to copyover/saved room code for more logical behavior.
+- Removed @ as save character in the text editor since it is a color code.
+- Update to do_dig.
+- Change to remove_unique_id to plug mem leek.
+- Changes in dg_comm.c!
+- Added look_in_obj fix which was causing conflicts between room keywords and 
+  object keywords. 
+- Changed to unsigned int to double zones.
+- Added some missing dg_scripts related logic to save_char.
+- Added do_gemote command which allows you to emote over the gossip channel.
+- Changed the color code character from '&' to '@'. 
+- Fixed color bleeding in all the lists.
+- Added IMM command peace to stop all fighting in that room.
+- Fix for LOADROOM and copyover conflicts.
+- Changed copyover to save room player was in.
+- Made an option so shopkeepers never go broke.
+- Added Welcor's manual_color update with numerous updates.
+- replaced numerous special procedures with triggers (still some to go).
+- Removed leftover debug message from dg_mobcmd.c
+- Removed duplicate code in zedit.c related to who can do zone edits.
+- Corrected logic in object get code which was out of order.
+- Fix to read_mobile in db.c, was causing mobs to be assigned triggers twice.
+- Fixed /fi to not add two spaces after quoted "text."
+- Patched in Oasis 2.0.6
+- Set OLC to off on immortal advance
+- Changes in enter_player_game to use calls from CONFIG_ defs used by CEDIT. 
+- Fixes to redit.c for ROOM FLAGS.
+- Added objstacking.
+- Changed valid_dg_target to allow everyone to trigger except IMPL
+- Change to save_char related to problems with the copyover function.
+- Fixed buildwalk from continuing into next zone.
+- Added Aedit, Astat, and over 100 new socials.
+- Replaced all ch->in_room calls with IN_ROOM(ch) for general cleanliness.
+- Changed default olc to be -1 not 0.
+- Wiznet is now visible in OLC.
+- Added hidden objs. oedit-l-desc beginnin with a period (.) can only be seen 
+  with holylight.
+- Fixed tilde in room desc crash (and other world files).
+- Fixed socials taking precedence over commands and not allowing abbrevs.
+- Changed do_simple_move so players couldn't find hidden exits by trying to 
+  walk into them.
+- Fixed shopkeepers so they could sell just one item.
+- Fixed oedit where it did not recognize any change when modifying just weight
+  or values.
+- Some minor changes to redit in the way it interacts with door flags.
+- Added online dictionary. Tell m-w <word>.
+- Bugfix for enchant_weapon spell.
+- Added LVL_BUILDER.
+- Bugfix for locate_object spell.
+- Fixed all the OLC crashes from large numbers. Weight, cost, max contain, exp,
+  gold, and fountain contains to name a few.
+- Save room on copyover reboot.
+- Dg_scripts update to calls in spell_recall and spell_teleport.
+- Fixed mhunt.
+- Made all imm commands requiring zone # default to current zone if no arg.
+- Add formatting for trigedit. /f indents to make things easier to read.
+- Zero level mobs are set to level 1 in db.c.
+- Added links command.
+- Fixed social bodyparts.
+- Added mail saving.
+- Fixed Enter spell (0 for none): having 0 spell causes error, should be -1.
+- Added /r/n to "gate is closed from the other side" and "cool immortal."
+- Fixed variable file not deleting at player deletion.
+- Fixed the 2 shopkeepers one room crash.
+- Fixed colorcodes preventing capitalization.
+- Fixed /f, /fi creating an extra line.
+- Made object values reset when type is changed.
+- Added vdelete [*].
+- Fixed where so players in OLC would be listed.
+- The weapon dice check now works.
+- All olc files uses the can_edit_zone() function where appropriate.
+- Added OLC permissions to attach and detach.
+- Made it possible  to use one shopkeeper for more than one shop.
+- Restore skills and spells on advancement.
+- Added context help system, lib/text/contexthelp.
+- Fixed sedit crash caused by deleting room that where shops.
+- Added don't parse character \, use %% for %.
+- Fixed rdelete crash from deleting a room that is linked to itself.
+- Fixed exits to default to -1 instead of 0 when just making an edit desc.
+- Added a warning if a NOTE has an extra desc.
+- Fixed practice to show skills with 0 practices remaining.
+- Added file <option> to view logs.
+- Added several new names to the xnames file.
+- Added copyover.
+- Improved the last command.
+- Added switched people to the who list.
+- Added zedit commands to stat room.
+- Added triggers and shops to show stat.
+- Added more info to all the vstat options.
+- Added invis level at login to prevent greeting imms who are hiding.
+- Added delete option to extra desc's. Just /c.
+- Added history command to show last 100 comms.
+- Added an export command that would QQ and compress a zone.
+- Numerous new logs for force, buildwalk, delete, snoop, etc.
+- Added vnum and TRIG tags to everything, roomflags toggles it on/off.
+- Added keyword seperation when statting extra desc. [desk] [notes papers]
+- Added buildwalk and dig.
+
+Release history:
+Version 3.5 release: December 2006
+Version 3.1  (yes, no beta pl): November 18, 2002
+Version 3.00 beta pl22 release: October 4, 2002
+Version 3.00 beta pl21 release: April 15, 2002
+Version 3.00 beta pl20 release: January 15, 2002
+Version 3.00 beta pl19 release: August 14, 2001
+Version 3.00 beta pl18 release: March 18, 2001
+Version 3.00 beta pl17 release: January 23, 2000
+Version 3.00 beta pl16 release: August 30, 1999
+Version 3.00 beta pl15 release: March 16, 1999
+Version 3.00 beta pl14 release: July 3, 1998
+Version 3.00 beta pl13a release: June 4, 1998
+Version 3.00 beta pl13 release: June 1, 1998
+Version 3.00 beta pl12 release: October 29, 1997
+Version 3.00 beta pl11 release: April 14, 1996
+Version 3.00 beta pl10 release: March 11, 1996
+Version 3.00 beta pl9 release: February 6, 1996
+Version 3.00 beta pl8 release: May 23, 1995
+Version 3.00 beta pl7 release: March 9, 1995
+Version 3.00 beta pl6 release: March 6, 1995
+Version 3.00 beta pl5 release: February 23, 1995
+Version 3.00 beta pl4 release: September 28, 1994
+Version 3.00 beta pl1-3, internal releases for beta-testers.
+Version 3.00 alpha: Ran on net for testing.  Code not released.
+Version 2.20 release: November 17, 1993
+Version 2.11 release: September 19, 1993
+Version 2.10 release: September 1, 1993
+Version 2.02 release: Late August 1993
+Version 2.01 release: Early August 1993
+Version 2.00 release: July 16, 1993 (Initial public release)

@@ -1,0 +1,101 @@
+CircleMUD v3.0 Shop File~
+#12500~
+12569
+12570
+-1
+2.00
+0.50
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+7
+12569
+0
+12569
+-1
+0
+28
+0
+0
+#12562~
+12562
+12509
+12510
+-1
+2.00
+0.50
+-1
+%s Sorry, I don't stock that item.~
+%s I'm not interested!~
+%s Not interested!~
+%s I can't afford that!~
+%s Go make some money first.~
+%s Lets see, that's %d coins.~
+%s That'll be %d coins for ya, good deal eh?~
+0
+3
+12562
+0
+12562
+-1
+0
+28
+0
+0
+#12567~
+12567
+12503
+12508
+-1
+1.20
+0.80
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+7
+12566
+0
+12567
+-1
+0
+28
+0
+0
+#12568~
+12568
+12511
+12501
+-1
+1.20
+0.80
+-1
+%s A what?~
+%s I don't buy, only sell.~
+%s I don't buy, only sell.~
+%s Out of cash.~
+%s You need money idiot.~
+%s That's %d, thank you.~
+%s I'll give you %d coins for that.~
+0
+7
+12505
+0
+12568
+-1
+0
+28
+0
+0
+$~

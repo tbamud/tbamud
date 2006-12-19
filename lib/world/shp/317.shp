@@ -1,0 +1,79 @@
+CircleMUD v3.0 Shop File~
+#31700~
+301
+-1
+1.28
+0.80
+12
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+7
+31701
+0
+31734
+-1
+0
+28
+0
+0
+#31701~
+31721
+31722
+31723
+31724
+-1
+1.80
+0.80
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+4
+31717
+0
+31718
+-1
+0
+28
+0
+0
+#31702~
+31725
+31726
+31727
+31728
+31729
+-1
+1.67
+0.80
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+4
+31720
+0
+31725
+-1
+0
+28
+0
+0
+$~

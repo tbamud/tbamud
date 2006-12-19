@@ -1,0 +1,2366 @@
+#30200
+The Top Of The Greasepole~
+   You've made it to the top!  All you have to do now is get down...    
+~
+302 c 5
+D5
+It's a long slide down.
+~
+~
+0 -1 30192
+E
+pole greasepole~
+   The pole still looks pretty bad, but it doesn't look quite as bad as before.
+  
+~
+E
+info credits~
+   See zone description room for Campus.
+Zone 302 is linked to the following zones:
+301 Campus                         at 30200 (down ) ---> 30192
+301 Campus                         at 30201 (south) ---> 30142
+301 Campus                         at 30203 (west ) ---> 30142
+301 Campus                         at 30236 (north) ---> 30123
+301 Campus                         at 30250 (south) ---> 30124
+301 Campus                         at 30260 (north) ---> 30140
+301 Campus                         at 30266 (west ) ---> 30136
+301 Campus                         at 30283 (east ) ---> 30134
+301 Campus                         at 30284 (north) ---> 30109
+301 Campus                         at 30284 (east ) ---> 30115
+301 Campus                         at 30284 (south) ---> 30104
+301 Campus                         at 30284 (up   ) ---> 30120
+301 Campus                         at 30284 (down ) ---> 30106
+301 Campus                         at 30285 (north) ---> 30138
+
+301 Campus                         at 30285 (west ) ---> 30132
+301 Campus                         at 30285 (up   ) ---> 30139
+301 Campus                         at 30285 (down ) ---> 30169
+301 Campus                         at 30286 (north) ---> 30168
+303 Campus                         at 30286 (south) ---> 30302
+303 Campus                         at 30286 (west ) ---> 30312
+303 Campus                         at 30286 (up   ) ---> 30315
+301 Campus                         at 30286 (down ) ---> 30175
+301 Campus                         at 30287 (north) ---> 30170
+301 Campus                         at 30291 (east ) ---> 30135
+301 Campus                         at 30292 (east ) ---> 30135
+301 Campus                         at 30294 (west ) ---> 30126
+301 Campus                         at 30295 (east ) ---> 30126
+303 Campus                         at 30295 (up   ) ---> 30312
+303 Campus                         at 30296 (south) ---> 30302
+
+303 Campus                         at 30299 (north) ---> 30300
+303 Campus                         at 30299 (east ) ---> 30301
+Links: 64e to catacombs
+~
+S
+#30201
+Reception Desk~
+   This is the main reception desk for the Wally World residence.  You are able
+to see the incoming mail behind the desk as well as hooks for keys to hang
+upon.  To the east there is a door and just south of you is the lobby.    
+~
+302 dh 1
+D1
+~
+door~
+1 30103 30202
+D2
+~
+~
+0 -1 30142
+E
+hooks hook key keys~
+   Unfortunately you don't see any keys hanging off of any of the hooks.  
+~
+E
+mail~
+   Why are you trying to look at the mail, it's private!  
+~
+S
+#30202
+Main Office~
+   This is the main office associated with the Wally World residence.  There is
+a desk, chair and filing cabinet in the room.  There is only one exit from the
+room, west.    
+~
+302 d 1
+D3
+This way leads back to the reception desk.
+~
+door~
+1 30103 30201
+E
+filing cabinet files~
+   Looking through the files you see that Wally World was originally slated to
+have at least eleven levels but the designers got sick and tired of it and gave
+up after just a few levels.  
+~
+E
+desk~
+   The desk, like the chair, is completely normal.  The desk is also in
+excellent condition.  
+~
+E
+chair~
+   The chair is not unusual in any way whatsoever.  The chair is in excellent
+condition.  
+~
+S
+#30203
+Lobby~
+   This lobby is the perfect area to make a meeting place, assuming of course
+that you can find it again.  Just to make it easy to rediscover, exits have
+been handily located to both the east and west.    
+~
+302 d 4
+D1
+This leads to a handy stairwell.
+~
+~
+0 -1 30204
+D3
+This leads towards the exit.
+~
+~
+0 -1 30142
+S
+#30204
+Stairwell~
+   This is, as it says, a stairwell.  The exits are west and up.    
+~
+302 ad 4
+D3
+This leads to the lobby.
+~
+~
+0 -1 30203
+D4
+This leads up into the unknown.
+~
+~
+0 -1 30205
+S
+#30205
+Stairwell~
+   This is another stairwell.  The exits are west, up, and down.    
+~
+302 ad 4
+D3
+You can't tell where this leads.
+~
+~
+0 -1 30206
+D4
+This leads up into the unknown.
+~
+~
+0 -1 30222
+D5
+This leads down into the known.
+~
+~
+0 -1 30204
+S
+#30206
+Landing~
+   This is a landing with halls heading off in all the cardinal directions.  
+The only problem is that, the hall to the west is blocked by a door.    
+~
+302 ad 1
+D0
+You can't tell where this leads.
+~
+~
+0 -1 30208
+D1
+You can't tell where this leads.
+~
+~
+0 -1 30205
+D2
+You can't tell where this leads.
+~
+~
+0 -1 30215
+D3
+You can't tell where this leads.
+~
+door~
+1 -1 30207
+S
+#30207
+Broom Closet~
+   What a waste of effort it was to come in here...  There is absolutely
+nothing, not even brooms.  And there is no other exit to boot, just the one you
+came in!    
+~
+302 ad 1
+D1
+You can't tell where this leads.
+~
+door~
+1 -1 30206
+S
+#30208
+Hallway~
+   The hall continues north-south and there is a doorway on either side of the
+hall.    
+~
+302 ad 1
+D0
+You can't tell where this leads.
+~
+~
+0 -1 30211
+D1
+You can't tell where this leads.
+~
+door~
+1 -1 30209
+D2
+You can't tell where this leads.
+~
+~
+0 -1 30206
+D3
+You can't tell where this leads.
+~
+door~
+1 -1 30210
+E
+floor carpet~
+   This is a nice, groovy, red patterned carpet which extends all the way down
+the hall.  
+~
+E
+door~
+   The door on the west has the number 206 and the door on the east, 205.  
+~
+S
+#30209
+Private Room 205~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D3
+This leads back to the hall.
+~
+door~
+1 -1 30208
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30210
+Private Room 206~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D1
+This leads back to the hall.
+~
+door~
+1 -1 30208
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30211
+Hallway~
+   The hall leads to the south and there is a doorway on either side of the
+hall as well as one to the north.    
+~
+302 ad 1
+D0
+You can't tell where this leads.
+~
+door~
+1 -1 30214
+D1
+You can't tell where this leads.
+~
+door~
+1 -1 30212
+D2
+You can't tell where this leads.
+~
+~
+0 -1 30208
+D3
+You can't tell where this leads.
+~
+door~
+1 -1 30213
+E
+floor carpet~
+   This is a nice, groovy, red patterned carpet which extends all the way down
+the hall.  
+~
+E
+door~
+   The door on the west has the number 204 and the door on the east, 203 while
+the door to the north has the number 201.  
+~
+S
+#30212
+Private Room 203~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D3
+This leads back to the hall.
+~
+door~
+1 -1 30211
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30213
+Private Room 204~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D1
+This leads back to the hall.
+~
+door~
+1 -1 30211
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30214
+Private Room 201~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D2
+This leads back to the hall.
+~
+door~
+1 -1 30211
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30215
+Hallway~
+   The hall continues north-south and there is a doorway on either side of the
+hall.    
+~
+302 ad 1
+D0
+You can't tell where this leads.
+~
+~
+0 -1 30206
+D1
+You can't tell where this leads.
+~
+door~
+1 -1 30216
+D2
+You can't tell where this leads.
+~
+~
+0 -1 30218
+D3
+You can't tell where this leads.
+~
+door~
+1 -1 30217
+E
+floor carpet~
+   This is a nice, groovy, red patterned carpet which extends all the way down
+the hall.  
+~
+E
+door~
+   The door on the west has the number 208 and the door on the east, 207.  
+~
+S
+#30216
+Private Room 207~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D3
+This leads back to the hall.
+~
+door~
+1 -1 30215
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30217
+Private Room 208~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D1
+This leads back to the hall.
+~
+door~
+1 -1 30215
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30218
+Hallway~
+   The hall leads to the north and there is a doorway on either side of the
+hall as well as one to the south.    
+~
+302 ad 1
+D0
+You can't tell where this leads.
+~
+~
+0 -1 30215
+D1
+You can't tell where this leads.
+~
+door~
+1 -1 30219
+D2
+You can't tell where this leads.
+~
+door~
+1 -1 30221
+D3
+You can't tell where this leads.
+~
+door~
+1 -1 30220
+E
+floor carpet~
+   This is a nice, groovy, red patterned carpet which extends all the way down
+the hall.  
+~
+E
+door~
+   The door on the west has the number 210 and the door on the east, 209 and the
+door to the south has the number 202.  
+~
+S
+#30219
+Private Room 209~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D3
+This leads back to the hall.
+~
+door~
+1 -1 30218
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30220
+Private Room 210~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D1
+This leads back to the hall.
+~
+door~
+1 -1 30218
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30221
+Private Room 202~
+   This room is sparsely furnished but you notice one thing upon entering...  
+The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
+only one exit...  The one you came in...    
+~
+302 ad 1
+D0
+This leads back to the hall.
+~
+door~
+1 -1 30218
+E
+tile floor~
+   It is a nice friendly ceramic tile floor.  
+~
+S
+#30222
+Stairwell~
+   This is another stairwell.  The exits are west, up, and down.    
+~
+302 ad 4
+D3
+You can't tell where this leads.
+~
+~
+0 -1 30223
+D4
+This leads up into the unknown.
+~
+~
+0 -1 30205
+D5
+This leads down into the known.
+~
+~
+0 -1 30205
+S
+#30223
+Landing~
+   This is a landing with halls heading off in all the cardinal directions.  
+The only problem is that, the hall to the west is blocked by a door.    
+~
+302 ad 1
+D0
+You can't tell where this leads.
+~
+~
+0 -1 30225
+D1
+You can't tell where this leads.
+~
+~
+0 -1 30222
+D2
+You can't tell where this leads.
+~
+~
+0 -1 30229
+D3
+You can't tell where this leads.
+~
+door~
+1 -1 30224
+S
+#30224
+Broom Closet~
+   What a waste of effort it was to come in here...  There is absolutely
+nothing, not even brooms.  And to boot there is no other exit, just the one you
+came in!    
+~
+302 ad 1
+D1
+You can't tell where this leads.
+~
+door~
+1 -1 30223
+S
+#30225
+Hallway~
+   This hallway comes to an abrupt halt as there is a door in its way directly
+to the north.  Coincidentally, there are also doors to the east and west.  The
+only exit without a door in fact is to the south!    
+~
+302 ad 1
+D0
+The door is locked, so therefore you cannot see through it.
+~
+door~
+2 30104 30228
+D1
+The door is the door of room 301.
+~
+door~
+1 -1 30226
+D2
+The hallway continues to the south.
+~
+~
+0 -1 30223
+D3
+The door is the door of room 302.
+~
+door~
+1 -1 30227
+E
+door~
+   The doors all lead to rooms.  
+~
+S
+#30226
+Private Room 301~
+   This room is quite well furnished and could probably comfortably house two
+people.  It is much larger than the rooms downstairs.    
+~
+302 ad 1
+D3
+The door leads back into the hallway.
+~
+door~
+1 -1 30225
+S
+#30227
+Private Room 302~
+   This room is quite well furnished and could probably comfortably house two
+people.  It is much larger than the rooms downstairs.    
+~
+302 ad 1
+D1
+The door leads back into the hallway.
+~
+door~
+1 -1 30225
+S
+#30228
+Main Residence Office~
+   This office is the main office for all the residences of the University of
+North XXX.  There is a large desk here as well as two plush chairs.  In the
+north-west corner of the room there is a trapdoor in the ceiling.    
+~
+302 acd 2
+D2
+The door leads to the hallway.
+~
+door~
+2 30104 30225
+D4
+The trapdoor leads up... beyond that, you aren't sure where it goes.
+~
+trapdoor door~
+1 -1 30233
+E
+trapdoor~
+   The trapdoor is neatly fastened with a small hook.  
+~
+E
+desk chair plush~
+   The desk and chairs are neatly arranged as if in preparation for an upcoming
+meeting or something of the sort.  
+~
+S
+#30229
+Hallway~
+   This hallway comes to an abrupt halt as there is a door in its way directly
+to the south.  Coincidentally, there are also doors to the east and west.  The
+only exit without a door in fact is to the north!    
+~
+302 ad 1
+D0
+The hallway continues to the north.
+~
+~
+0 -1 30223
+D1
+The door is the door of room 303.
+~
+door~
+1 -1 30231
+D2
+The door is for room 305.
+~
+door~
+1 -1 30232
+D3
+The door is the door of room 304.
+~
+door~
+1 -1 30230
+E
+door~
+   The doors all lead to rooms.  
+~
+S
+#30230
+Private Room 304~
+   This room is quite well furnished and could probably comfortably house two
+people.  It is much larger than the rooms downstairs.    
+~
+302 ad 1
+D1
+The door leads back into the hallway.
+~
+door~
+1 -1 30229
+S
+#30231
+Private Room 303~
+   This room is quite well furnished and could probably comfortably house two
+people.  It is much larger than the rooms downstairs.    
+~
+302 ad 1
+D3
+The door leads back into the hallway.
+~
+door~
+1 -1 30229
+S
+#30232
+Private Room 300~
+   This room is quite well furnished and could probably comfortably house two
+people.  It is much larger than the rooms downstairs.    
+~
+302 ad 1
+D0
+The door leads back into the hallway.
+~
+door~
+1 -1 30229
+S
+#30233
+Attic~
+   This attic is carefully hidden away from sight as it is used as a secret
+storeroom.  The only exit is down.    
+~
+302 acd 4
+D2
+You see nothing special.
+~
+grate~
+1 -1 30234
+D5
+You see the office below.
+~
+trapdoor~
+1 -1 30228
+E
+grate~
+   Beyond the grate you can see another small storage room.  
+~
+S
+#30234
+Small Storage Room~
+   This is the really secret storage room attached to the attic.  There are two
+exits from it.  The main exit is through the grate to the north but there is a
+chute down to the first floor located in the floor.    
+~
+302 d 3
+D0
+The attic is just north of here.
+~
+grate~
+1 -1 30233
+D5
+A chute leads down from this room.
+~
+~
+0 -1 30235
+E
+grate~
+   Beyond the grate you can see the attic.  
+~
+E
+chute~
+   The chute is rather smooth and looks to be a fun ride.  
+~
+S
+#30235
+The Chute~
+   WHEEEEEEEEEEEE!  What a fun ride!!!!  Fortunately the only exit is down.  
+
+~
+302 d 0
+D5
+The chute continues down.
+~
+~
+0 -1 30203
+E
+chute~
+   The chute is rather smooth and is quite a fun ride.  
+~
+S
+#30236
+The Ghetto~
+   The road would normally run north-south, but the way south is blocked by a
+small obstacle...  An overturned policemobile.  There are houses on either side
+of the road.    
+~
+302 a 4
+D0
+To escape the ghetto, you can head this way.
+~
+~
+0 -1 30123
+D1
+A shack-like ghetto house stands (barely) there.
+~
+~
+0 -1 30237
+D3
+A shack-like ghetto house stands (barely) there.
+~
+door~
+1 -1 30238
+E
+overturned police policemobile mobile~
+   It is blocking the road quite nicely.  Maybe it is meant to impede passage.
+
+~
+S
+#30237
+Ghetto House~
+   It's a mess.    
+~
+302 ad 5
+D3
+An exit from this hellhole.
+~
+~
+0 -1 30236
+E
+mess~
+   Need you ask?  
+~
+S
+#30238
+Frec House~
+   You feel a little apprehensive as you enter this house...  It's a mess.    
+~
+302 ad 5
+D1
+An exit from this hellhole.
+~
+door~
+1 -1 30236
+D2
+An exit from this hellhole.  Looks like another hellhole though.
+~
+door~
+1 -1 30239
+E
+mess~
+   Need you ask?  
+~
+S
+#30239
+Ghetto House~
+   It looks like a hellhole...  It's a mess.    
+~
+302 ad 5
+D0
+An exit from this hellhole to yet another hellhole.
+~
+door~
+1 -1 30238
+D1
+An exit from this hellhole.
+~
+~
+0 -1 30240
+E
+hell hole hellhole~
+   Never seen one before?  
+~
+E
+mess~
+   Need you ask?  
+~
+S
+#30240
+The Ghetto~
+   The road would normally run north-south, but the way north is blocked by a
+small obstacle...  An overturned policemobile.  There is a house to the west.
+  
+~
+302 a 4
+D2
+The ghetto continues south.
+~
+~
+0 -1 30241
+D3
+A run-down house lies to the west.
+~
+~
+0 -1 30239
+E
+overturned police policemobile mobile~
+   It is blocking the road quite nicely.  Maybe it is meant to impede passage.
+
+~
+E
+house run-down~
+   It's in bad shape.  
+~
+S
+#30241
+The Ghetto Intersection~
+   This intersection is the joining point of what's left of University Avenue
+and Earl Road which heads off to the east.    
+~
+302 a 4
+D0
+The ghetto continues north.
+~
+~
+0 -1 30240
+D1
+It seems to be less run-down in this direction.
+~
+~
+0 -1 30242
+D2
+The ghetto continues south.
+~
+~
+0 -1 30247
+D3
+A fairly well-kept house lies to the west.
+~
+~
+0 -1 30255
+E
+house run-down~
+   It's not run-down.  
+~
+S
+#30242
+The Ghetto~
+   This part of the ghetto has survived in a better condition than the rest of
+the ghetto.  A house lies to the north.    
+~
+302 a 3
+D0
+A fairly well-kept house is north.
+~
+~
+0 -1 30246
+D1
+The ghetto continues east.
+~
+~
+0 -1 30243
+D3
+The ghetto continues west.
+~
+~
+0 -1 30241
+E
+house run-down~
+   It's not run-down.  
+~
+S
+#30243
+The Ghetto~
+   Earl Road ends abruptly as there is a house built immediately to the east.
+Another stands to the south.    
+~
+302 a 3
+D1
+A very well-kept house is east.
+~
+~
+0 -1 30244
+D2
+A very well-kept house is south.
+~
+~
+0 -1 30245
+D3
+The ghetto continues west.
+~
+~
+0 -1 30242
+E
+house run-down~
+   It's not run-down at all.  
+~
+S
+#30244
+Gael House~
+   This house reminds you of home, your parent's home.  It's mind-boggling.  
+
+~
+302 d 3
+D3
+You may exit to the west.
+~
+~
+0 -1 30243
+S
+#30245
+Gael House~
+   This house reminds you of home, your aunt's home.  Now, that's absurd.    
+~
+302 d 3
+D0
+You may exit to the north.
+~
+~
+0 -1 30243
+S
+#30246
+Boss House~
+   Papers and calculators litter the room, making an otherwise neat house,
+messy.    
+~
+302 d 4
+D2
+You may exit to the south.
+~
+~
+0 -1 30242
+E
+calculators papers~
+   Illegible notes are scribbled on the papers.  Large numbers are punched in on
+the calculators, making them seem important.  
+~
+S
+#30247
+The Ghetto~
+   This part of the ghetto seems to have survived.  To the west, you can see,
+behind the rubble, the vague outlines of a house.    
+~
+302 a 3
+D0
+The ghetto continues north.
+~
+~
+0 -1 30241
+D2
+The ghetto continues south.
+~
+~
+0 -1 30248
+E
+house run-down~
+   It's run-down.  
+~
+S
+#30248
+The Ghetto~
+   This part of the ghetto seems to have survived.  To the east, you can see
+the A & Z Supermarket.    
+~
+302 a 3
+D0
+The ghetto continues north.
+~
+~
+0 -1 30247
+D1
+The A & Z Supermarket looms to the east.
+~
+door~
+1 -1 30251
+D2
+The ghetto continues south.
+~
+~
+0 -1 30249
+E
+supermarket market~
+   Seems to be the only supermarket around.  
+~
+S
+#30249
+The Ghetto~
+   This part of the ghetto seems to have survived.  There are houses on either
+side of the road.    
+~
+302 a 3
+D0
+The ghetto continues north.
+~
+~
+0 -1 30248
+D1
+There is a run-down house to the east.
+~
+~
+0 -1 30252
+D2
+The ghetto continues south.
+~
+~
+0 -1 30250
+D3
+There is a fairly well-kept house to the west.
+~
+~
+0 -1 30253
+E
+houses house~
+   The houses are in relatively ok condition.  
+~
+S
+#30250
+The Ghetto~
+   This part of the ghetto seems to have survived.  There is a house to the
+east.  South of you, you can see the end of the ghetto.    
+~
+302 a 4
+D0
+The ghetto continues north.
+~
+~
+0 -1 30249
+D1
+There is a very well-kept house to the east.
+~
+~
+0 -1 30254
+D2
+The ghetto continues south.
+~
+~
+0 -1 30124
+E
+houses house~
+   The houses are in relatively ok condition.  
+~
+S
+#30251
+The A & Z Supermarket~
+   Aisles and aisles of foodstuffs are waiting to be bought by unknowing
+customers.    
+~
+302 cdh 2
+D3
+The automatic doors hide the ghetto.
+~
+door doors~
+1 -1 30248
+E
+aisle aisles food foodstuffs~
+   It's a supermarket, what did you expect?  
+~
+S
+#30252
+Frec House~
+   This house reminds you of your room, only worse.  It seems to be a
+post-holocaust version of it.    
+~
+302 ad 5
+D3
+You will exit to the west.
+~
+~
+0 -1 30249
+S
+#30253
+Boss House~
+   Papers and calculators litter the room, making an otherwise neat house,
+messy.    
+~
+302 d 4
+D1
+You may exit to the east.
+~
+~
+0 -1 30249
+E
+calculators papers~
+   Illegible notes are scribbled on the papers.  Large numbers are punched in on
+the calculators, making them seem important.  
+~
+S
+#30254
+Gael House~
+   This house reminds you of home, your grandma's home.  It's insane.    
+~
+302 d 3
+D3
+You may exit to the west.
+~
+~
+0 -1 30250
+S
+#30255
+Boss House~
+   Papers and calculators litter the room, making an otherwise neat house,
+messy.    
+~
+302 d 4
+D1
+You may exit to the east.
+~
+~
+0 -1 30241
+D2
+You may exit to the south, but it would probably not be a wise idea.
+~
+~
+0 -1 30256
+E
+calculators papers~
+   Illegible notes are scribbled on the papers.  Large numbers are punched in on
+the calculators, making them seem important.  
+~
+S
+#30256
+Frec House~
+   This house reminds you of your room, only worse.  It seems to be a
+post-holocaust version of it.    
+~
+302 ad 5
+D0
+You will exit to the north.  Even if it is to another ghetto house.
+~
+~
+0 -1 30255
+S
+#30257
+Stairwell~
+   A spiralling stairwell leads both up and down.  To the east, there is an
+exit to the auditorium.    
+~
+302 d 2
+D1
+As I said, there is an exit to the auditorium.
+~
+~
+0 -1 30258
+D4
+Upstairs is the balcony, you believe.
+~
+~
+0 -1 30262
+D5
+It is too dark to tell.
+~
+~
+0 -1 30264
+S
+#30258
+The West Aisle Of The Auditorium~
+   Many rows of seats line the floor of the auditorium.  This is where are the
+important get-togethers are held.  It is quite impressive.  But there seems to
+be some splotches on the seats.  To the west is a stairwell, and the auditorium
+continues east.  A balcony looms overhead.    
+~
+302 d 0
+D1
+The auditorium continues.
+~
+~
+0 -1 30259
+D3
+To the west, is a stairwell.
+~
+~
+0 -1 30257
+E
+seats splotches seat splotch~
+   The splotches on the seats seem to be some sort of purple dye which rained
+down upon them.  (Strange!  )
+~
+S
+#30259
+The Centre Aisle Of The Auditorium~
+   Many rows of seats line the floor of the auditorium.  This is where are the
+important get-togethers are held.  It is quite impressive.  But there seems to
+be some splotches on the seats.  The auditorium continues east and west.  A
+balcony looms overhead.  To the south is the stage.    
+~
+302 d 0
+D1
+The auditorium continues.
+~
+~
+0 -1 30260
+D2
+The stage is to the south.
+~
+~
+0 -1 30261
+D3
+The auditorium continues.
+~
+~
+0 -1 30258
+E
+seats splotches seat splotch~
+   The splotches on the seats seem to be some sort of purple dye which rained
+down upon them.  (Strange!  )
+~
+S
+#30260
+The East Aisle Of The Auditorium~
+   Many rows of seats line the floor of the auditorium.  This is where are the
+important get-togethers are held.  It is quite impressive.  But there seems to
+be some splotches on the seats.  To the north is the entry hall, and the
+auditorium continues west.  A balcony looms overhead.    
+~
+302 d 0
+D0
+The entry hall lies to the north.
+~
+~
+0 -1 30140
+D3
+The auditorium continues.
+~
+~
+0 -1 30259
+E
+seats splotches seat splotch~
+   The splotches on the seats seem to be some sort of purple dye which rained
+down upon them.  (Strange!  )
+~
+S
+#30261
+The Stage~
+   This is the stage which overlooks the entire auditorium.  The stage is about
+three to four feet off the main floor.  Drab brown curtains frame the outside
+of the stage, giving it a stage-like appearance.  Huge cords and pulleys swing
+overhead, obviously used for special effects for the non magically active.  
+The floor is made of sturdy wooden planks.  Backstage, you can see several
+props and huge objects to fill in the background of the stage.  Looking out
+into the auditorium, you can see rows and rows of seats and a milk dispenser in
+the back.  The walls are...  Why am I doing this?  Most people don't even read
+the descriptions of the rooms unless looking for a door of some sort!  Well
+there is no door here.  I bet you have brief mode on, don't you?  So you are
+probably missing several of our witty jokes!  Why must we go through all this
+painstaking writing of descriptions, if they aren't going to be read?  You
+probably aren't even reading this!  [Editorial :)] Well, anyways, the only exit
+is to the north.    
+~
+302 d 1
+D0
+The auditorium is to the north.
+~
+~
+0 -1 30259
+E
+sturdy wooden plank planks~
+   They are sturdy.  They are wooden.  They are planks.  
+~
+E
+cords cord pulley pulleys~
+   Hey!  It can make you look like you are flying!  
+~
+E
+drab brown curtains curtain~
+   They are just your average, everyday, drab brown curtains.  
+~
+S
+#30262
+Upper Stairwell~
+   The stairwell spirals upwards and downwards.  The balcony lies to the east.
+  
+~
+302 d 2
+D1
+As I said, the balcony lies to the east.
+~
+~
+0 -1 30263
+D4
+This leads to the clock tower.
+~
+~
+0 -1 30265
+D5
+You came from downstairs, don't you remember?
+~
+~
+0 -1 30257
+S
+#30263
+The Balcony~
+   Wow!  Finally in the balcony!  Now what?    
+~
+302 d 0
+D3
+It's the stairwell again!  Imagine that!
+~
+~
+0 -1 30262
+S
+#30264
+Entrance To The Catacombs~
+   The spiralling stairs lead down into a cold, dark, damp room.  The walls are
+stone, with a few unsightly cracks caused by the sands of time.  Cobwebs cling
+to the walls, undisturbed for a long time.  Dust lines the floor.  A huge stone
+door lies to the east.  A stairwell sits quietly in the corner.    
+~
+302 acd 0
+D4
+It's the same stairwell.
+~
+~
+0 -1 30257
+E
+huge stone door~
+   The huge stone door looks very inviting.  
+~
+E
+cobweb cobwebs web webs~
+   Don't disturb them now!  
+~
+S
+#30265
+The Grant Hall Clock~
+   This room seems to be the inside of the large clock which covers all sides
+of the Grant Hall clock tower.  You can see lots of little gears connected to
+lots of big gears.  There is absolutely no view seeing that the clock faces are
+opaque.  But, there is an exit that you can use by going down.    
+~
+302 d 3
+D5
+This leads back into the stairwell.
+~
+~
+0 -1 30262
+S
+#30266
+Hallway~
+   This hallway leads through the older building called Frosty Annex.  
+Unfortunately, the building seems to be living up to its name.  The hallway
+leads east-west with a room to the north and a door to the south.    
+~
+302 d 1
+D0
+There is a fairly large room to the north.
+~
+~
+0 -1 30273
+D1
+The hall continues to the east.
+~
+~
+0 -1 30267
+D2
+There is a door blocking the way to the south.
+~
+door~
+1 -1 30269
+D3
+The hall continues towards the entrance.
+~
+~
+0 -1 30136
+E
+door~
+   This is a standard solid metal door with no window in it whatsoever.  
+~
+S
+#30267
+Hallway~
+   The hallway continues along here.  In fact it continues both east and west.
+There is however a door to the south.    
+~
+302 d 1
+D1
+The hallway continues.
+~
+~
+0 -1 30268
+D2
+There is another of those large metal doors to the south without a
+window.
+~
+door~
+1 -1 30270
+D3
+The hallway continues in this direction as well.
+~
+~
+0 -1 30266
+E
+door~
+   This door is the main reason for having this room where it is...  Anyways,
+the is a large metal affair with no window.  
+~
+S
+#30268
+Hallway~
+   The hallway continues here, but only in one direction.  West.  There is a
+door to the north and stairs leading down, but otherwise this section of the
+hall is no different than the rest.    
+~
+302 d 1
+D0
+A door with the word "OFFICE" emblazoned on it stands to your north.
+~
+door~
+1 -1 30271
+D1
+The hallway does not continue in this direction.
+~
+~
+0 -1 -1
+D3
+The hallway continues in this direction.
+~
+~
+0 -1 30267
+D5
+A stairwell leads down into the darkness.
+~
+~
+0 -1 30272
+S
+#30269
+Mike-Lab~
+   This room is actually quite a large laboratory.  It contains all of those
+neat things that you would expect to find in a laboratory, like, well, lab
+equipment.  You can see all of the equipment that you see in your 8:30 am
+Monday Chemistry Lab.  But hey, don't think I'm bitter about this, no, it's not
+that I have to actually get up early after a nice relaxing weekend, but you are
+probably in situation like this, and if you aren't, boy do I ever envy you.  
+Anyways, there is a door to the north.    
+~
+302 d 2
+D0
+A large, steel door stands to the north.
+~
+door~
+1 -1 30266
+E
+equipment~
+   This is just ordinary lab equipment that you would find in any normal
+laboratory.  
+~
+S
+#30270
+John-Lab~
+   This lab is well decked out with all sorts of modern devices, of course,
+your definition of modern is probably extremely different from the scientists'
+definition as all of the devices would make Stone-Age devices look like
+technological marvels.  This lab is devoid of personnel but all of the machines
+are making scary humming noises.  You should probably make a beeline out the
+door to the north.    
+~
+302 d 2
+D0
+A door stands to the north.  This door is made of steel and is fairly
+large.
+~
+door~
+1 -1 30267
+E
+machines devices machine device~
+   These Stone-Age marvels sound like they are going to explode any minute,
+better take cover soon!  
+~
+S
+#30271
+Office~
+   This office looks extremely comfortable, that is if you don't mind an awful
+row coming from below and if you don't mind breezes coming through the large
+gaps in the wall.  Other than that, it does look alright.  There is one exit,
+the one to the south, which just happens to be blocked by a door.    
+~
+302 d 1
+D2
+The door blocking your way is well made.  It seems to be made of Oak with a
+well designed brass doorknob.
+~
+door~
+1 -1 30268
+E
+wall gaps~
+   There are some horrendously large holes in the wall which are letting all the
+warm air out, and all the colder outside air in.  
+~
+S
+#30272
+Jeff-Lab~
+   This lab is unlike any of the other labs you have seen in this building.  
+If perchance you haven't seen any, then the reason is quite obvious.  If,
+however, you have passed through one or two labs on the way, the reason is even
+more obvious, as this room contains all sorts of nice computer equipment.  
+There is a staircase leading up is one corner of the room.    
+~
+302 d 1
+D4
+The staircase in the north-east corner leads up towards the main floor
+of the building.
+~
+~
+0 -1 30268
+S
+#30273
+A Classroom~
+   This is another of the seemingly neverending series of classrooms on Campus.
+Of course, you don't expect anything less, this being a university, but I
+presume that you agree with me that enough is enough.  There is a hallway to
+the south.    
+~
+302 d 1
+D2
+The hallway lies to the south.
+~
+~
+0 -1 30266
+S
+#30274
+A Hallway~
+   This hallway leads through the building in all cardinal directions.    
+~
+302 ad 2
+D0
+It is too dark to tell.
+~
+~
+0 -1 30275
+D1
+It is too dark to tell.
+~
+~
+0 -1 30279
+D2
+It is too dark to tell.
+~
+~
+0 -1 30278
+D3
+It is too dark to tell.
+~
+~
+0 -1 30275
+D4
+It is too dark to tell.
+~
+~
+0 -1 30281
+S
+#30275
+A Hallway~
+   This hallway leads through the building in most directions.    
+~
+302 ad 2
+D0
+It is too dark to tell.
+~
+~
+0 -1 30280
+D2
+It is too dark to tell.
+~
+~
+0 -1 30276
+D3
+It is too dark to tell.
+~
+~
+0 -1 30277
+S
+#30276
+A Hallway~
+   This hallway leads through the building in most directions.    
+~
+302 ad 2
+D0
+It is too dark to tell.
+~
+~
+0 -1 30274
+D1
+It is too dark to tell.
+~
+~
+0 -1 30279
+D2
+It is too dark to tell.
+~
+~
+0 -1 30275
+D3
+It is too dark to tell.
+~
+~
+0 -1 30281
+S
+#30277
+A Hallway~
+   This hallway leads through the building in most directions.    
+~
+302 ad 2
+D0
+It is too dark to tell.
+~
+~
+0 -1 30280
+D1
+It is too dark to tell.
+~
+~
+0 -1 30276
+D2
+It is too dark to tell.
+~
+~
+0 -1 30282
+D3
+It is far too dark to tell.
+~
+~
+0 -1 30275
+S
+#30278
+A Hallway~
+   This hallway leads through the building in most directions.    
+~
+302 ad 2
+D0
+It is too dark to tell.
+~
+~
+0 -1 30280
+D1
+It is too dark to tell.
+~
+~
+0 -1 30281
+D2
+It is too dark to tell.
+~
+~
+0 -1 30275
+D3
+It is too dark to tell.
+~
+~
+0 -1 30276
+S
+#30279
+A Hallway~
+   This hallway leads through the building in most directions.    
+~
+302 ad 2
+D0
+It is too dark to tell.
+~
+~
+0 -1 30274
+D1
+It is really to the east, too dark to tell.
+~
+~
+0 -1 30281
+D2
+It is too dark to tell.
+~
+~
+0 -1 30280
+D3
+It is too dark to tell.
+~
+~
+0 -1 30275
+S
+#30280
+A Classroom~
+   This room suddenly dispels the monotony of the halls you were just passing
+through.  A small door sits quietly in the corner.    
+~
+302 ad 1
+D0
+It is too dark to tell.
+~
+~
+0 -1 30278
+D1
+It is too difficult to see through a solid door.
+~
+door~
+1 -1 30284
+D2
+It is too dark to tell.
+~
+~
+0 -1 30274
+D5
+It is too dark to tell.
+~
+~
+0 -1 30276
+E
+sigils~
+   The sigils seem to form some strange shapes:
+
+                       SSSSS
+                      SSS  SS
+                      SSS
+                      SSS
+                      SSS
+                      SSS
+                      SSS
+                      SSS
+                      SSS
+                      SSS
+                  SS  SSS
+                   SSSSS
+
+I wonder what it could be?
+~
+E
+door~
+   This door is covered with all types of non-magical sigils.  
+~
+S
+#30281
+A Classroom~
+   This room suddenly dispels the monotony of the halls you were just passing
+through.    
+~
+302 ad 1
+D1
+It is too dark to tell.
+~
+~
+0 -1 30275
+D2
+~
+~
+0 -1 30278
+D3
+It is too dark to tell.
+~
+~
+0 -1 30280
+D4
+It is too dark to tell.
+~
+~
+0 -1 30282
+S
+#30282
+A Hallway~
+   This hallway is radically different from all the others in that it only has
+two exits.  One exits to the east towards light, while the other heads west
+back into the darkness.    
+~
+302 ad 2
+D1
+This way draws you towards it...probably because you are suffering from
+light withdrawl.
+~
+~
+0 -1 30283
+D3
+You are repulsed by this exit since the exit to the east is well lit.
+~
+~
+0 -1 30274
+E
+dark~
+   Are you mad?  
+~
+E
+light~
+   It's nice, warm, and inviting.  
+~
+S
+#30283
+The Exit~
+   This long corridor leads out onto the street.    
+~
+302 d 5
+D1
+The light beckons you.
+~
+~
+0 -1 30134
+D3
+Back into darkness, I don't think so!
+~
+~
+0 -1 30282
+E
+dark~
+   Are you mad?  
+~
+E
+light~
+   It's nice, warm, and inviting.  
+~
+S
+#30284
+Mob Chute A~
+   Oops, you are not supposed to be here.  This is a programmer's tool to
+disperse mobs all over campus.  Exits go in all directions.  There is a small
+door to the west.  This goes all over Campus.    
+~
+302 dh 0
+D0
+This is just an exit.
+~
+~
+0 -1 30109
+D1
+This is just an exit.
+~
+~
+0 -1 30115
+D2
+This is just an exit.
+~
+~
+0 -1 30104
+D3
+This is just a door.
+~
+door~
+1 -1 30280
+D4
+This is just an exit.
+~
+~
+0 -1 30120
+D5
+This is just an exit.
+~
+~
+0 -1 30106
+E
+sigils~
+   The sigils seem to form some strange shapes:
+
+        MMM     MMM    OOO      OOO    !!
+        MMMM   MMMM   OO OO    OO OO   !!
+        MM MM MM MM  OO   OO  OO   OO  !!
+        MM  MMM  MM  OO   OO  OO   OO  !!
+        MM   M   MM   OO OO    OO OO
+        MM       MM    OOO      OOO    !!
+
+~
+E
+door~
+   This door is covered with all types of non-magical sigils.  
+~
+S
+#30285
+Mob Chute B~
+   Oops, you are not supposed to be here.  This is a programmer's tool to
+disperse mobs all over campus.  Exits go in all directions.  This is for It
+Mobs.    
+~
+302 dh 0
+D0
+This is just an exit.
+~
+~
+0 -1 30138
+D1
+This is just an exit.
+~
+~
+0 -1 30206
+D2
+This is just an exit.
+~
+~
+0 -1 30229
+D3
+This is just an exit.
+~
+~
+0 -1 30132
+D4
+This is just an exit.
+~
+~
+0 -1 30139
+D5
+This is just an exit.
+~
+~
+0 -1 30169
+S
+#30286
+Mob Chute C~
+   Oops, you are not supposed to be here.  This is a programmer's tool to
+disperse mobs all over campus.  Exits go in all directions.  This is for Male
+Mobs.    
+~
+302 dh 0
+D0
+This is just an exit.
+~
+~
+0 -1 30168
+D1
+This is just an exit.
+~
+~
+0 -1 30297
+D2
+This is just an exit.
+~
+~
+0 -1 30302
+D3
+This is just an exit.
+~
+~
+0 -1 30312
+D4
+This is just an exit.
+~
+~
+0 -1 30315
+D5
+This is just an exit.
+~
+~
+0 -1 30175
+S
+#30287
+Mob Chute D~
+   Oops, you are not supposed to be here.  This is a programmer's tool to
+disperse mobs all over campus.  Exits go in all directions.  This is for Female
+Mobs.    
+~
+302 dh 0
+D0
+This is just an exit.
+~
+~
+0 -1 30170
+D1
+This is just an exit.
+~
+~
+0 -1 30203
+D2
+This is just an exit.
+~
+~
+0 -1 30218
+D3
+This is just an exit.
+~
+~
+0 -1 30258
+D4
+This is just an exit.
+~
+~
+0 -1 30267
+D5
+This is just an exit.
+~
+~
+0 -1 30279
+S
+#30288
+Mob Chute E~
+   Oops, you are not supposed to be here.  This is a programmer's tool to
+disperse mobs all over campus.  Exits go in all directions.  This leads to the
+Ghetto.    
+~
+302 dh 0
+D0
+This is just an exit.
+~
+~
+0 -1 30237
+D1
+This is just an exit.
+~
+~
+0 -1 30247
+D2
+This is just an exit.
+~
+~
+0 -1 30243
+D3
+This is just an exit.
+~
+~
+0 -1 30248
+D4
+This is just an exit.
+~
+~
+0 -1 30241
+D5
+This is just an exit.
+~
+~
+0 -1 30250
+S
+#30289
+Mob Chute F~
+   Oops, you are not supposed to be here.  This is a programmer's tool to
+disperse mobs all over campus.  Exits go in all directions.  This is for Profs
+but leads to various classrooms around Campus.    
+~
+302 dh 0
+D0
+This is just an exit.
+~
+~
+0 -1 30280
+D1
+This is just an exit.
+~
+~
+0 -1 30276
+D2
+This is just an exit.
+~
+~
+0 -1 30273
+D3
+This is just an exit.
+~
+~
+0 -1 30273
+D4
+This is just an exit.
+~
+~
+0 -1 30259
+D5
+This is just an exit.
+~
+~
+0 -1 30291
+S
+#30290
+Central Mob Chute~
+   This is the central chute for mob dispersal.  The exits lead to the other
+mob chutes.  You are not supposed to be here.  This is essentially for every
+other Mob so that they can be spread out at complete random.    
+~
+302 dh 0
+D0
+This is leads to Mob Chute A.
+~
+~
+0 -1 30284
+D1
+This is leads to Mob Chute B.
+~
+~
+0 -1 30285
+D2
+This is leads to Mob Chute C.
+~
+~
+0 -1 30286
+D3
+This is leads to Mob Chute D.
+~
+~
+0 -1 30287
+D4
+This is leads to Mob Chute E.
+~
+~
+0 -1 30288
+D5
+This is leads to Mob Chute F.
+~
+~
+0 -1 30289
+S
+#30291
+Dunning Auditorium~
+   This large spacious lecture theatre would probably seat close to 300 and
+reminds you of movie theatres of old (like when they sat more than 10).  Its
+main purpose seems to exist and collect dust.  Maybe someone is doing some kind
+of study here.  There is a sign on the east wall near the front of the room.  
+
+~
+302 ad 3
+D1
+This leads towards the street.
+~
+~
+0 -1 30135
+E
+sign~
+   The sign on the wall seems to have something to do with fire regulations, but
+it is so old and faded, you cannot read it.  
+~
+S
+#30292
+A Completely Empty Hallway~
+   This hallway is not completely empty but looks like it is.  Must be
+something related to the Infinite Improbability Principle.    
+~
+302 ad 3
+D0
+There is a classroom to the north.
+~
+~
+0 -1 30293
+D1
+The lobby is back towards the east through some strange freak of nature.
+~
+~
+0 -1 30135
+E
+infinite improbability principle~
+   See the Douglas Adams Hitchhiker's Guide to the Galaxy series.  
+~
+S
+#30293
+Classroom~
+   This seems to be the only classroom in Dunning Hall.  Strange, the building
+looked larger on the outside.  Obviously some sort of principle related to the
+TARDIS principle on Doctor Who....    
+~
+302 ad 2
+D2
+A hallway leads off to the south.
+~
+~
+0 -1 30292
+E
+tardis doctor who~
+   The TARDIS is the ship that Doctor Who travelled the universe and the
+timestreams with.  
+~
+S
+#30294
+East Stairwell~
+   This stairwell leads up into the heights of Leonard Hall.    
+~
+302 ad 3
+D3
+This leads back to the lobby.
+~
+door~
+1 30106 30126
+D4
+This leads up.  Nuff said.
+~
+~
+0 -1 30296
+S
+#30295
+West Stairwell~
+   This leads up into the heights of Leonard Hall.    
+~
+302 ad 3
+D1
+This leads back to the lobby.
+~
+door~
+1 30105 30126
+D4
+This stairwell goes up into the darkness.
+~
+~
+0 -1 30312
+S
+#30296
+Junction~
+   This hallway leads north and south and there is a stairwell leading down in
+the place where the western wall should be found.    
+~
+302 ad 2
+D0
+The hallway continues north.
+~
+~
+0 -1 30297
+D2
+The hallway also continues south.
+~
+~
+0 -1 30302
+D5
+The stairwell leads down towards the lobby.
+~
+~
+0 -1 30294
+S
+#30297
+Hallway~
+   The hallway turns east-south here and there is an opening to the north.    
+~
+302 ad 2
+D0
+There is a room of sorts to the north.
+~
+~
+0 -1 30298
+D1
+The hallway continues east.
+~
+~
+0 -1 30299
+D2
+The hallway continues south.
+~
+~
+0 -1 30296
+S
+#30298
+Dorm Room~
+   This an ordinary dorm room that is unoccupied at the moment.  The furniture
+consists of a bed, and a desk.  Nothing else.  Just a bed and a desk.  But
+there is an exit to the south.    
+~
+302 ad 1
+D2
+The hallway is south of here.
+~
+~
+0 -1 30297
+E
+bed desk~
+   The bed and the desk seem to be the only furnishings of this room.  
+~
+S
+#30299
+Hallway~
+   This hallway comes to an abrupt end here.  However, there are exits in all
+cardinal directions except up and down.    
+~
+302 ad 2
+D0
+There seems to be a room to the north.
+~
+~
+0 -1 30300
+D1
+There seems to be a room to the east.
+~
+~
+0 -1 30301
+D2
+Regardless of what the description says, there is no
+exit in this direction.  Please try again.
+~
+~
+0 -1 -1
+D3
+The hallway continues west.
+~
+~
+0 -1 30297
+D4
+This is not an exit.  Read the description again.
+~
+~
+0 -1 -1
+D5
+This is not an exit.  Read the description again.
+~
+~
+0 -1 -1
+S
+$~
