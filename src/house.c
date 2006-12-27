@@ -324,7 +324,7 @@ void hcontrol_list_houses(struct char_data *ch)
     if (house_control[i].last_payment) {
       timestr = asctime(localtime(&(house_control[i].last_payment)));
       *(timestr + 10) = '\0';
-      strlcpy(last_pay, timestr, sizeof(built_on));
+      strlcpy(last_pay, timestr, sizeof(last_pay));
     } else
       strcpy(last_pay, "None");	/* strcpy: OK (for 'strlen("None") < 128') */
 

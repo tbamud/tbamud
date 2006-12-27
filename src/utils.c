@@ -192,14 +192,6 @@ int strn_cmp(const char *arg1, const char *arg2, int n)
 }
 #endif
 
-
-/* log a death trap hit */
-void log_death_trap(struct char_data *ch)
-{
-  mudlog(BRF, LVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(IN_ROOM(ch)), world[IN_ROOM(ch)].name);
-}
-
-
 /*
  * New variable argument log() function.  Works the same as the old for
  * previously written code but is very nice for new code.

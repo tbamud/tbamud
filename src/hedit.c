@@ -37,8 +37,7 @@ int top_of_h_table = 0;		/* ref to top of help table	 */
 int top_of_h_file = 0;		/* ref of size of help file	 */
 long top_help_idnum = 0;	/* highest idnum in use		 */
 void get_one_line(FILE *fl, char *buf);
-void create_help_index(void);
-int search_help(char *argument);
+int search_help(struct char_data *ch, char *argument);
 ACMD(do_reboot);
 
 void load_help(FILE *fl, char *name)
@@ -156,7 +155,7 @@ ACMD(do_oasis_hedit)
 
   OLC_NUM(d) = 0;
   OLC_STORAGE(d) = strdup(argument);
-  OLC_ZNUM(d) = search_help(OLC_STORAGE(d));
+  OLC_ZNUM(d) = search_help(ch, OLC_STORAGE(d));
   
   for(i = 0; i < (int)strlen(argument); i++)
     argument[i] = toupper(argument[i]);
@@ -439,7 +438,7 @@ ACMD(do_helpcheck)
                                           
    for(i = 1; *(complete_cmd_info[i].command) != '\n'; i++) { 
       snprintf(arg, sizeof(arg), "%s", complete_cmd_info[i].command);
-      if(search_help(arg) <= 0) { 
+      if(search_help(ch, arg) <= 0) { 
          if(complete_cmd_info[i].command_pointer == do_action) 
             continue; 
        w++; 
@@ -470,7 +469,7 @@ ACMD(do_hindex)
 		
   len = sprintf(buf, "Help index entries based on '%s':\r\n", argument); 
   for (i = 0; i <= top_of_h_table; i++) 
-    if (is_abbrev(argument, help_table[i].keywords))                
+    if (is_abbrev(argument, help_table[i].keywords) && (GET_LEVEL(ch) >= help_table[i].min_level)) 
       len += snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", 
     help_table[i].keywords, (++count % 3 ? "" : "\r\n")); 
  

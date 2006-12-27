@@ -103,6 +103,12 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 {
   if (!obj || !ch) {
     log("SYSERR: NULL pointer in show_obj_to_char(): obj=%p ch=%p", obj, ch);
+    /*  SYSERR_DESC:
+     *  Somehow a NULL pointer was sent to show_obj_to_char() in either the
+     *  'obj' or the 'ch' variable.  The error will indicate which was NULL
+     *  by listing both of the pointers passed to it.  This is often a
+     *  difficult one to trace, and may require stepping through a debugger.
+     */
     return;
   }
 
@@ -112,7 +118,7 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
     if (*obj->description == '.' && (IS_NPC(ch) || !PRF_FLAGGED(ch, PRF_HOLYLIGHT))) 
       return;
 	      
-    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_ROOMFLAGS)) 
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) 
       send_to_char(ch, "[%d] %s", GET_OBJ_VNUM(obj), SCRIPT(obj) ? "[TRIG] " : "");
     
     send_to_char(ch, "%s", CCGRN(ch, C_NRM));
@@ -120,7 +126,7 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
     break;
 
   case SHOW_OBJ_SHORT:
-    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_ROOMFLAGS)) 
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) 
       send_to_char(ch, "[%d] %s", GET_OBJ_VNUM(obj), SCRIPT(obj) ? "[TRIG] " : "");
     
     send_to_char(ch, "%s", obj->short_description);
@@ -150,6 +156,13 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 
   default:
     log("SYSERR: Bad display mode (%d) in show_obj_to_char().", mode);
+    /*  SYSERR_DESC:
+     *  show_obj_to_char() has some predefined 'mode's (argument #3) to tell
+     *  it what to display to the character when it is called.  If the mode
+     *  is not one of these, it will output this error, and indicate what
+     *  mode was passed to it.  To correct it, you will need to find the
+     *  call with the incorrect mode and change it to an acceptable mode.
+     */
     return;
   }
 
@@ -296,7 +309,7 @@ void list_one_char(struct char_data *i, struct char_data *ch)
     " is standing here."
   };
 
-  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_ROOMFLAGS) && IS_NPC(i)) 
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IS_NPC(i)) 
      send_to_char(ch, "[%d] %s", GET_MOB_VNUM(i), SCRIPT(i) ? "[TRIG] " : "");
   
   if (IS_NPC(i) && i->player.long_descr && GET_POS(i) == GET_DEFAULT_POS(i)) {
@@ -453,7 +466,7 @@ void look_at_room(struct char_data *ch, int ignore_brief)
     return;
   }
   send_to_char(ch, "%s", CCCYN(ch, C_NRM));
-  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_ROOMFLAGS)) {
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) {
     char buf[MAX_STRING_LENGTH];
 
     sprintbit(ROOM_FLAGS(IN_ROOM(ch)), room_bits, buf, sizeof(buf));
@@ -979,27 +992,33 @@ void space_to_minus(char *str)
     *str = '-';
 }
 
-int search_help(char *argument)
+
+int search_help(struct char_data *ch, char *argument)
 {
   int chk, bot, top, mid, minlen;
-   
   bot = 0;
   top = top_of_h_table;
   minlen = strlen(argument);
-    
   for (;;) {
     mid = (bot + top) / 2;
-   if (bot > top)
-     return FALSE;   
-   else if (!(chk = strn_cmp(argument, help_table[mid].keywords, minlen))) {
+    if (bot > top)
+      return FALSE;
+    else if (!(chk = strn_cmp(argument, help_table[mid].keywords, minlen))) {
       /* trace backwards to find first matching entry. Thanks Jeff Fink! */
-      while ((mid > 0) &&
-	 (!(chk = strn_cmp(argument, help_table[mid - 1].keywords, minlen))))
-	mid--;
-      return  mid;
+      while ((mid > 0) && (!(chk = strn_cmp(argument, help_table[mid - 1].keywords, minlen))))
+        mid--;
+      if (help_table[mid].min_level > GET_LEVEL(ch))
+        /* trace back up... */
+        while ((mid < top_of_h_table) &&
+          (!(chk = strn_cmp(argument, help_table[mid + 1].keywords, minlen)))) {
+          mid++;
+          if (help_table[mid].min_level < GET_LEVEL(ch))
+            return mid;
+        }
+      return mid;
     } else {
       if (chk > 0)
-        bot = mid + 1;
+	bot = mid + 1;
       else
         top = mid - 1;
     }
@@ -1029,9 +1048,9 @@ ACMD(do_help)
   }
 
   space_to_minus(argument);
-  mid = search_help(argument); 
+  mid = search_help(ch, argument); 
 
-  if ((mid <= 0) || (GET_LEVEL(ch) < help_table[mid].min_level)) {
+  if (mid <= 0) {
     send_to_char(ch, "There is no help on that word.\r\n");
     mudlog(NRM, MAX(LVL_IMPL, GET_INVIS_LEV(ch)), TRUE, 
       "%s tried to get help on %s", GET_NAME(ch), argument);
@@ -1058,8 +1077,9 @@ ACMD(do_help)
 
 
 #define WHO_FORMAT \
-"Usage: who [minlev[-maxlev]] [-n name] [-c classlist] [-s] [-k] [-q] [-r] [-z]\r\n"
+"Usage: who [minlev[-maxlev]] [-n name] [-c classlist] [-k] [-l] [-n] [-q] [-r] [-s] [-z]\r\n"
 
+/* Written by Rhade */
 ACMD(do_who) 
 { 
   struct descriptor_data *d; 
@@ -1069,7 +1089,7 @@ ACMD(do_who)
   char mode; 
   int low = 0, high = LVL_IMPL, localwho = 0, questwho = 0; 
   int showclass = 0, short_list = 0, outlaws = 0; 
-  int who_room = 0; 
+  int who_room = 0, showgroup = 0, showleader = 0;
 
   skip_spaces(&argument); 
   strcpy(buf, argument);   /* strcpy: OK (sizeof: argument == buf) */ 
@@ -1101,10 +1121,6 @@ ACMD(do_who)
         questwho = 1; 
         strcpy(buf, buf1);   /* strcpy: OK (sizeof: buf1 == buf) */ 
         break; 
-      case 'l': 
-        half_chop(buf1, arg, buf); 
-        sscanf(arg, "%d-%d", &low, &high); 
-        break; 
       case 'n': 
         half_chop(buf1, name_search, buf); 
         break; 
@@ -1115,6 +1131,14 @@ ACMD(do_who)
       case 'c': 
         half_chop(buf1, arg, buf); 
         showclass = find_class_bitvector(arg); 
+        break; 
+      case 'l': 
+        showleader = 1; 
+        strcpy(buf, buf1);   /* strcpy: OK (sizeof: buf1 == buf) */ 
+        break; 
+      case 'g': 
+        showgroup = 1; 
+        strcpy(buf, buf1);   /* strcpy: OK (sizeof: buf1 == buf) */ 
         break; 
       default: 
         send_to_char(ch, "%s", WHO_FORMAT); 
@@ -1159,6 +1183,10 @@ ACMD(do_who)
         continue; 
       if (showclass && !(showclass & (1 << GET_CLASS(tch)))) 
         continue; 
+      if (showgroup && (!tch->master || !AFF_FLAGGED(tch, AFF_GROUP))) 
+        continue; 
+      if (showleader && (!tch->followers || !AFF_FLAGGED(tch, AFF_GROUP))) 
+        continue; 
       for (i = 0; *rank[i].disp != '\n'; i++) 
         if (GET_LEVEL(tch) >= rank[i].min_level && GET_LEVEL(tch) <= rank[i].max_level) 
           rank[i].count++; 
@@ -1198,6 +1226,10 @@ ACMD(do_who)
       if (who_room && (IN_ROOM(tch) != IN_ROOM(ch))) 
         continue;        
       if (showclass && !(showclass & (1 << GET_CLASS(tch)))) 
+        continue; 
+      if (showgroup && (!tch->master || !AFF_FLAGGED(tch, AFF_GROUP))) 
+        continue; 
+      if (showleader && (!tch->followers || !AFF_FLAGGED(tch, AFF_GROUP))) 
         continue; 
 
       if (short_list) { 
@@ -1478,6 +1510,14 @@ ACMD(do_gen_ps)
     break;
   default:
     log("SYSERR: Unhandled case in do_gen_ps. (%d)", subcmd);
+    /*  SYSERR_DESC:
+     *  General page string function for such things as 'credits', 'news',
+     *  'wizlist', 'clear', 'version'.  This occurs when a call is made to
+     *  this routine that is not one of the predefined calls.  To correct
+     *  it, either a case needs to be added into the function to account for
+     *  the subcmd that is being passed to it, or the call to the function
+     *  needs to have the correct subcmd put into place.
+     */
     return;
   }
 }
@@ -1741,81 +1781,238 @@ ACMD(do_color)
 
 ACMD(do_toggle)
 {
-  char buf2[4];
+  char buf2[4], arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+  int toggle, result = 0;
 
   if (IS_NPC(ch))
     return;
 
-  if (GET_WIMP_LEV(ch) == 0)
-    strcpy(buf2, "OFF");	/* strcpy: OK */
-  else
-    sprintf(buf2, "%-3.3d", GET_WIMP_LEV(ch));	/* sprintf: OK */
+  argument = one_argument(argument, arg);
+  any_one_arg(argument, arg2); /* so that we don't skip 'on' */
 
-  if (GET_LEVEL(ch) >= LVL_IMMORT) {
-    send_to_char(ch,
-          "      Buildwalk: %-3s    "
-          "             ClsOLC: %-3s\r\n",
+  if (!*arg) {
+    if (!GET_WIMP_LEV(ch))
+      strcpy(buf2, "OFF");        /* strcpy: OK */
+    else
+      sprintf(buf2, "%-3.3d", GET_WIMP_LEV(ch));  /* sprintf: OK */
+
+    if (GET_LEVEL(ch) >= LVL_IMMORT) {
+      send_to_char(ch,
+        "      Buildwalk: %-3s    "
+        "                         "
+        "        ClsOLC: %-3s\r\n"
+        "      No Hassle: %-3s    "
+        "      Holylight: %-3s    "
+        "     Show Vnums: %-3s\r\n",
+
         ONOFF(PRF_FLAGGED(ch, PRF_BUILDWALK)),
-        ONOFF(PRF_FLAGGED(ch, PRF_CLS))
-    );
-
-    
-    send_to_char(ch,
-	  "      No Hassle: %-3s    "
-	  "      Holylight: %-3s    "
-	  "     Room Flags: %-3s\r\n",
-	ONOFF(PRF_FLAGGED(ch, PRF_NOHASSLE)),
-	ONOFF(PRF_FLAGGED(ch, PRF_HOLYLIGHT)),
-	ONOFF(PRF_FLAGGED(ch, PRF_ROOMFLAGS))
-    );
-  }
+        ONOFF(PRF_FLAGGED(ch, PRF_CLS)),
+        ONOFF(PRF_FLAGGED(ch, PRF_NOHASSLE)),
+        ONOFF(PRF_FLAGGED(ch, PRF_HOLYLIGHT)),
+        ONOFF(PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+      );
+    }
 
   send_to_char(ch,
-	  "Hit Pnt Display: %-3s    "
-	  "     Brief Mode: %-3s    "
-	  " Summon Protect: %-3s\r\n"
+    "Hit Pnt Display: %-3s    "
+    "     Brief Mode: %-3s    "
+    " Summon Protect: %-3s\r\n"
 
-	  "   Move Display: %-3s    "
-	  "   Compact Mode: %-3s    "
-	  "       On Quest: %-3s\r\n"
+    "   Move Display: %-3s    "
+    "   Compact Mode: %-3s    "
+    "       On Quest: %-3s\r\n"
 
-	  "   Mana Display: %-3s    "
-	  "         NoTell: %-3s    "
-	  "   Repeat Comm.: %-3s\r\n"
+    "   Mana Display: %-3s    "
+    "         NoTell: %-3s    "
+    "   Repeat Comm.: %-3s\r\n"
 
-	  " Auto Show Exit: %-3s    "
-	  "        NoShout: %-3s    "
-	  "     Wimp Level: %-3s\r\n"
+    " Auto Show Exit: %-3s    "
+    "        NoShout: %-3s    "
+    "     Wimp Level: %-3s\r\n"
 
-	  " Gossip Channel: %-3s    "
-	  "Auction Channel: %-3s    "
-	  "  Grats Channel: %-3s\r\n"
+    " Gossip Channel: %-3s    "
+    "Auction Channel: %-3s    "
+    "  Grats Channel: %-3s\r\n"
 
-          "       AFK flag: %-3s    "
-	  "    Color Level: %s     \r\n ",
-          
-	  ONOFF(PRF_FLAGGED(ch, PRF_DISPHP)),
-	  ONOFF(PRF_FLAGGED(ch, PRF_BRIEF)),
-	  ONOFF(!PRF_FLAGGED(ch, PRF_SUMMONABLE)),
+    "       AFK flag: %-3s    "
+    "    Color Level: %s     \r\n ",
 
-	  ONOFF(PRF_FLAGGED(ch, PRF_DISPMOVE)),
-	  ONOFF(PRF_FLAGGED(ch, PRF_COMPACT)),
-	  YESNO(PRF_FLAGGED(ch, PRF_QUEST)),
+    ONOFF(PRF_FLAGGED(ch, PRF_DISPHP)),
+    ONOFF(PRF_FLAGGED(ch, PRF_BRIEF)),
+    ONOFF(!PRF_FLAGGED(ch, PRF_SUMMONABLE)),
 
-	  ONOFF(PRF_FLAGGED(ch, PRF_DISPMANA)),
-	  ONOFF(PRF_FLAGGED(ch, PRF_NOTELL)),
-	  YESNO(!PRF_FLAGGED(ch, PRF_NOREPEAT)),
+    ONOFF(PRF_FLAGGED(ch, PRF_DISPMOVE)),
+    ONOFF(PRF_FLAGGED(ch, PRF_COMPACT)),
+    YESNO(PRF_FLAGGED(ch, PRF_QUEST)),
 
-	  ONOFF(PRF_FLAGGED(ch, PRF_AUTOEXIT)),
-	  YESNO(PRF_FLAGGED(ch, PRF_NOSHOUT)),
-	  buf2,
+    ONOFF(PRF_FLAGGED(ch, PRF_DISPMANA)),
+    ONOFF(PRF_FLAGGED(ch, PRF_NOTELL)),
+    YESNO(!PRF_FLAGGED(ch, PRF_NOREPEAT)),
 
-	  ONOFF(!PRF_FLAGGED(ch, PRF_NOGOSS)),
-	  ONOFF(!PRF_FLAGGED(ch, PRF_NOAUCT)),
-	  ONOFF(!PRF_FLAGGED(ch, PRF_NOGRATZ)),
+    ONOFF(PRF_FLAGGED(ch, PRF_AUTOEXIT)),
+    YESNO(PRF_FLAGGED(ch, PRF_NOSHOUT)),
+    buf2,
 
-	  ONOFF(PRF_FLAGGED(ch, PRF_AFK)),
-	  ctypes[COLOR_LEV(ch)]);
+    ONOFF(!PRF_FLAGGED(ch, PRF_NOGOSS)),
+    ONOFF(!PRF_FLAGGED(ch, PRF_NOAUCT)),
+    ONOFF(!PRF_FLAGGED(ch, PRF_NOGRATZ)),
+
+    ONOFF(PRF_FLAGGED(ch, PRF_AFK)),
+    ctypes[COLOR_LEV(ch)]);
+    return;
+  }
+
+  const struct {
+    char *command;
+    bitvector_t toggle; /* this needs changing once hashmaps are implemented */
+    char min_level;
+    char *disable_msg;
+    char *enable_msg;
+  } tog_messages[] = {
+    {"summonable", PRF_SUMMONABLE, 0,
+    "You are now safe from summoning by other players.\r\n",
+    "You may now be summoned by other players.\r\n"},
+    {"nohassle", PRF_NOHASSLE, LVL_IMMORT,
+    "Nohassle disabled.\r\n",
+    "Nohassle enabled.\r\n"},
+    {"brief", PRF_BRIEF, 0,
+    "Brief mode off.\r\n",
+    "Brief mode on.\r\n"},
+    {"compact", PRF_COMPACT, 0,
+    "Compact mode off.\r\n",
+    "Compact mode on.\r\n"},
+    {"notell", PRF_NOTELL, 0,
+    "You can now hear tells.\r\n",
+    "You are now deaf to tells.\r\n"},
+    {"noauction", PRF_NOAUCT, 0,
+    "You can now hear auctions.\r\n",
+    "You are now deaf to auctions.\r\n"},
+    {"noshout", PRF_NOSHOUT, 0,
+    "You can now hear shouts.\r\n",
+    "You are now deaf to shouts.\r\n"},
+    {"nogossip", PRF_NOGOSS, 0,
+    "You can now hear gossip.\r\n",
+    "You are now deaf to gossip.\r\n"},
+    {"wiznet", PRF_NOWIZ, 0,
+    "You can now hear the Wiz-channel.\r\n",
+    "You are now deaf to the Wiz-channel.\r\n"},
+    {"noquest", PRF_QUEST, 0,
+    "You are no longer part of the Quest.\r\n",
+    "Okay, you are part of the Quest!\r\n"},
+    {"showvnums", PRF_SHOWVNUMS, LVL_IMMORT,
+    "You will no longer see the vnums.\r\n",
+    "You will now see the vnums.\r\n"},
+    {"norepeat", PRF_NOREPEAT, 0,
+    "You will now have your communication repeated.\r\n",
+    "You will no longer have your communication repeated.\r\n"},
+    {"holylight", PRF_HOLYLIGHT, LVL_IMMORT,
+    "HolyLight mode off.\r\n",
+    "HolyLight mode on.\r\n"},
+    {"slowns", -1, LVL_IMPL,
+    "Nameserver_is_slow changed to NO; IP addresses will now be resolved.\r\n",
+    "Nameserver_is_slow changed to YES; sitenames will no longer be resolved.\r\n"},
+    {"autoexits", PRF_AUTOEXIT, 0,
+    "Autoexits disabled.\r\n",
+    "Autoexits enabled.\r\n"},
+    {"track", -1, LVL_IMPL,
+    "Will no longer track through doors.\r\n",
+    "Will now track through doors.\r\n"},
+    {"clearolc", PRF_CLS, LVL_BUILDER,
+    "Will no longer clear screen in OLC.\r\n",
+    "Will now clear screen in OLC.\r\n"},
+    {"buildwalk", PRF_BUILDWALK, LVL_BUILDER,
+    "Buildwalk Off.\r\n",
+    "Buildwalk On.\r\n"},
+    {"color", -1, 0, "\n", "\n"},
+    {"syslog", -1, LVL_IMMORT, "\n", "\n"},
+    {"\n", -1, -1, "\n", "\n"} /* must be last */
+  };
+
+  for (toggle = 0; *tog_messages[toggle].command != '\n'; toggle++)
+    if (!strcmp(arg, tog_messages[toggle].command))
+      break;
+
+    if (*tog_messages[toggle].command == '\n' || tog_messages[toggle].min_level > GET_LEVEL(ch)) {
+      send_to_char(ch, "You can't toggle that!\r\n");
+      return;
+      }
+
+  /* for color and syslog */
+  int tp;
+  const char *types[] = { "off", "brief", "normal", "complete", "\n" };
+
+  switch (toggle) {     
+  case SCMD_COLOR:
+    if (!*arg2) {
+      send_to_char(ch, "Your current color level is %s.\r\n", types[COLOR_LEV(ch)]);
+      return;
+    }
+
+    if (((tp = search_block(arg2, types, FALSE)) == -1)) {
+      send_to_char(ch, "Usage: color { Off | Sparse | Normal | Complete }\r\n");
+      return;
+    }
+    REMOVE_BIT(PRF_FLAGS(ch), PRF_COLOR_1 | PRF_COLOR_2);
+    SET_BIT(PRF_FLAGS(ch), (PRF_COLOR_1 * (tp & 1)) | (PRF_COLOR_2 * (tp & 2) >> 1));
+    send_to_char(ch, "Your %scolor%s is now %s.\r\n", CCRED(ch, C_SPR), CCNRM(ch, C_OFF), types[tp]);
+    return;
+  case SCMD_SYSLOG:
+    if (!*arg2) { 
+      send_to_char(ch, "Your syslog is currently %s.\r\n",
+        types[(PRF_FLAGGED(ch, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(ch, PRF_LOG2) ? 2 : 0)]);
+      return;         
+    }
+    if (((tp = search_block(arg, types, FALSE)) == -1)) {
+      send_to_char(ch, "Usage: syslog { Off | Brief | Normal | Complete }\r\n");
+      return;     
+    }
+    REMOVE_BIT(PRF_FLAGS(ch), PRF_LOG1 | PRF_LOG2);
+    SET_BIT(PRF_FLAGS(ch), (PRF_LOG1 * (tp & 1)) | (PRF_LOG2 * (tp & 2) >> 1)); 
+    send_to_char(ch, "Your syslog is now %s.\r\n", types[tp]);
+    return;
+  case SCMD_SLOWNS:
+    result = (CONFIG_NS_IS_SLOW = !CONFIG_NS_IS_SLOW);
+    break;
+  case SCMD_TRACK:
+    result = (CONFIG_TRACK_T_DOORS = !CONFIG_TRACK_T_DOORS);
+    break;
+  case SCMD_BUILDWALK:
+    if (GET_LEVEL(ch) < LVL_BUILDER) {
+      send_to_char(ch, "Builders only, sorry.\r\n");
+      return;
+    }
+    result = PRF_TOG_CHK(ch, PRF_BUILDWALK);
+    if (PRF_FLAGGED(ch, PRF_BUILDWALK))
+      mudlog(CMP, GET_LEVEL(ch), TRUE,
+             "OLC: %s turned buildwalk on.  Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
+    else
+      mudlog(CMP, GET_LEVEL(ch), TRUE,
+             "OLC: %s turned buildwalk off.  Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
+    break;
+  case SCMD_AFK:
+    if ((result = PRF_TOG_CHK(ch, PRF_AFK)))
+      act("$n is now away from $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
+    else
+      act("$n has return to $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
+    break;
+  default:
+    if (!*arg2) {
+      send_to_char(ch, "Value must either be 'on' or 'off'.\r\n");
+      return;
+    } else if (!strcmp(arg2, "on")) {
+      SET_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
+      result = 1;
+    } else if (!strcmp(arg2, "off")) {
+      REMOVE_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
+    } else {
+      send_to_char(ch, "Value must either be 'on' or 'off'.\r\n");
+      return;
+    }
+  }
+  if (result)
+    send_to_char(ch, "%s", tog_messages[toggle].enable_msg);
+  else
+    send_to_char(ch, "%s", tog_messages[toggle].disable_msg);
 }
 
 int sort_commands_helper(const void *a, const void *b)

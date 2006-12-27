@@ -28,6 +28,9 @@
 extern void half_chop(char *string, char *arg1, char *arg2);
 extern bitvector_t asciiflag_conv(char *flag);
 
+/* local functions */
+void trig_data_init(trig_data *this_data);
+
 void parse_trigger(FILE *trig_f, int nr)
 {
     int t[2], k, attach_type;

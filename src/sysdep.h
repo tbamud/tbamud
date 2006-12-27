@@ -12,7 +12,7 @@
 
 /*
  * CircleMUD uses the crypt(3) function to encrypt player passwords in the
- * playerfile so that they are never stored in plaintext form.  However,
+ * players file so that they are never stored in plaintext form.  However,
  * due to U.S. export restrictions on machine-readable cryptographic
  * software, the crypt() function is not available on some operating
  * systems such as FreeBSD.  By default, the 'configure' script will
@@ -622,7 +622,7 @@ struct in_addr {
 #endif
 
 #ifdef NEED_GETTIMEOFDAY_PROTO
-   int gettimeofday(struct timeval *tp, void * );
+   void gettimeofday(struct timeval *tp, void * );
 #endif
 
 #ifdef NEED_HTONL_PROTO

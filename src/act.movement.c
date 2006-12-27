@@ -184,7 +184,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     look_at_room(ch, 0);
 
   if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH) && GET_LEVEL(ch) < LVL_IMMORT) {
-    log_death_trap(ch);
+    mudlog(BRF, LVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(IN_ROOM(ch)), world[IN_ROOM(ch)].name);
     death_cry(ch);
     extract_char(ch);
     return (0);
@@ -647,7 +647,7 @@ ACMD(do_rest)
   default:
     send_to_char(ch, "You stop floating around, and stop to rest your tired bones.\r\n");
     act("$n stops floating around, and rests.", FALSE, ch, 0, 0, TO_ROOM);
-    GET_POS(ch) = POS_SITTING;
+    GET_POS(ch) = POS_RESTING;
     break;
   }
 }

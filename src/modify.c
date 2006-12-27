@@ -23,7 +23,6 @@
 #include "boards.h"
 #include "improved-edit.h"
 #include "oasis.h"
-#include "tedit.h"
 
 void show_string(struct descriptor_data *d, char *input);
 

@@ -213,7 +213,7 @@
 #define PRF_NOAUCT	(1 << 18) /* Can't hear auction channel		*/
 #define PRF_NOGOSS	(1 << 19) /* Can't hear gossip channel		*/
 #define PRF_NOGRATZ	(1 << 20) /* Can't hear grats channel		*/
-#define PRF_ROOMFLAGS	(1 << 21) /* Can see room flags (ROOM_x)	*/
+#define PRF_SHOWVNUMS	(1 << 21) /* Can see VNUMs               	*/
 #define PRF_DISPAUTO	(1 << 22) /* Show prompt HP, MP, MV when < 25%.	*/
 #define PRF_CLS         (1 << 23) /* Clear screen in OLC                */
 #define PRF_BUILDWALK   (1 << 24) /* Build new rooms while walking ?    */
@@ -330,7 +330,7 @@
 
 
 /* Take/Wear flags: used by obj_data.obj_flags.wear_flags */
-#define ITEM_WEAR_TAKE		(1 << 0)  /* Item can be takes		*/
+#define ITEM_WEAR_TAKE		(1 << 0)  /* Item can be taken		*/
 #define ITEM_WEAR_FINGER	(1 << 1)  /* Can be worn on finger	*/
 #define ITEM_WEAR_NECK		(1 << 2)  /* Can be worn around neck 	*/
 #define ITEM_WEAR_BODY		(1 << 3)  /* Can be worn on body 	*/
@@ -508,22 +508,22 @@
 /* Max amount of output that can be buffered */
 #define LARGE_BUFSIZE	   (MAX_SOCK_BUF - GARBAGE_SPACE - MAX_PROMPT_LENGTH)
 
-#define HISTORY_SIZE		5	/* Keep last 5 commands. */
+#define HISTORY_SIZE		5     /* Keep last 5 commands. */
 #define MAX_STRING_LENGTH	49152
-#define MAX_INPUT_LENGTH	512	/* Max length per *line* of input */
-#define MAX_RAW_INPUT_LENGTH	512	/* Max size of *raw* input */
+#define MAX_INPUT_LENGTH	512   /* Max length per *line* of input */
+#define MAX_RAW_INPUT_LENGTH	512   /* Max size of *raw* input */
 #define MAX_MESSAGES		60
-#define MAX_NAME_LENGTH		20  /* Used in char_file_u *DO*NOT*CHANGE* */
+#define MAX_NAME_LENGTH		20 
 /* ** MAX_PWD_LENGTH changed from 10 to 30 for ascii test - Sam ** */
-#define MAX_PWD_LENGTH		30  /* Used in char_file_u *DO*NOT*CHANGE* */
-#define MAX_TITLE_LENGTH	80  /* Used in char_file_u *DO*NOT*CHANGE* */
-#define HOST_LENGTH		30  /* Used in char_file_u *DO*NOT*CHANGE* */
-#define PLR_DESC_LENGTH		512 /* Used in char_file_u *DO*NOT*CHANGE* */
-#define MAX_TONGUE		3   /* Used in char_file_u *DO*NOT*CHANGE* */
-#define MAX_SKILLS		200 /* Used in char_file_u *DO*NOT*CHANGE* */
-#define MAX_AFFECT		32  /* Used in char_file_u *DO*NOT*CHANGE* */
-#define MAX_OBJ_AFFECT		6   /* Used in obj_file_elem *DO*NOT*CHANGE* */
-#define MAX_NOTE_LENGTH		4000	/* arbitrary */
+#define MAX_PWD_LENGTH		30
+#define MAX_TITLE_LENGTH	80 
+#define HOST_LENGTH		30
+#define PLR_DESC_LENGTH		512
+#define MAX_TONGUE		3   
+#define MAX_SKILLS		200  
+#define MAX_AFFECT		32    
+#define MAX_OBJ_AFFECT		6     /* Used in obj_file_elem */
+#define MAX_NOTE_LENGTH		4000  /* arbitrary */
 #define MAX_LAST_ENTRIES        6000  /* arbitrary */
 #define MAX_HELP_KEYWORDS       256 
 #define MAX_HELP_ENTRY          MAX_STRING_LENGTH
@@ -531,24 +531,9 @@
 /* define the largest set of commands for as trigger */
 #define MAX_CMD_LENGTH 16384         /* 16k should be plenty and then some */
 
-/*
- * A MAX_PWD_LENGTH of 10 will cause BSD-derived systems with MD5 passwords
- * and GNU libc 2 passwords to be truncated.  On BSD this will enable anyone
- * with a name longer than 5 character to log in with any password.  If you
- * have such a system, it is suggested you change the limit to 20.
- *
- * Please note that this will erase your player files.  If you are not
- * prepared to do so, simply erase these lines but heed the above warning.
- */
-#if defined(HAVE_UNSAFE_CRYPT) && MAX_PWD_LENGTH == 10
-#error You need to increase MAX_PWD_LENGTH to at least 20.
-#error See the comment near these errors for more explanation.
-#endif
-
 /**********************************************************************
 * Structures                                                          *
 **********************************************************************/
-
 
 typedef signed char		sbyte;
 typedef unsigned char		ubyte;
@@ -780,7 +765,7 @@ struct char_player_data {
 };
 
 
-/* Char's abilities.  Used in char_file_u *DO*NOT*CHANGE* */
+/* Char's abilities. */
 struct char_ability_data {
    sbyte str;
    sbyte str_add;      /* 000 - 100 if strength 18             */
@@ -792,7 +777,7 @@ struct char_ability_data {
 };
 
 
-/* Char's points.  Used in char_file_u *DO*NOT*CHANGE* */
+/* Char's points. */
 struct char_point_data {
    sh_int mana;
    sh_int max_mana;     /* Max mana for PC/NPC			   */
@@ -813,11 +798,7 @@ struct char_point_data {
 
 /* 
  * char_special_data_saved: specials which both a PC and an NPC have in
- * common, but which must be saved to the playerfile for PC's.
- *
- * WARNING:  Do not change this structure.  Doing so will ruin the
- * playerfile.  If you want to add to the playerfile, use the spares
- * in player_special_data.
+ * common, but which must be saved to the players file for PC's.
  */
 struct char_special_data_saved {
    int	alignment;		/* +-1000 for alignments                */
@@ -844,15 +825,6 @@ struct char_special_data {
    struct char_special_data_saved saved; /* constants saved in plrfile	*/
 };
 
-
-/*
- *  If you want to add new values to the playerfile, do it here.  DO NOT
- * ADD, DELETE OR MOVE ANY OF THE VARIABLES - doing so will change the
- * size of the structure and ruin the playerfile.  However, you can change
- * the names of the spares to something more meaningful, and then use them
- * in your new code.  They will automatically be transferred from the
- * playerfile into memory when players log in.
- */
 struct player_special_data_saved {
    byte skills[MAX_SKILLS+1];	/* array of skills plus skill 0		*/
    byte PADDING0;		/* used to be spells_to_learn		*/
@@ -865,39 +837,15 @@ struct player_special_data_saved {
    ubyte bad_pws;		/* number of bad password attemps	*/
    sbyte conditions[3];         /* Drunk, full, thirsty			*/
 
-   /* spares below for future expansion.  You can change the names from
-      'sparen' to something meaningful, but don't change the order.  */
-
-   ubyte spare0;
-   ubyte spare1;
-   ubyte spare2;
-   ubyte spare3;
-   ubyte spare4;
    ubyte page_length;
    int spells_to_learn;		/* How many can you learn yet this level*/
    int olc_zone;
-   int spare8;
-   int spare9;
-   int spare10;
-   int spare11;
-   int spare12;
-   int spare13;
-   int spare14;
-   int spare15;
-   int spare16;
-   long	spare17;
-   long	spare18;
-   long	spare19;
-   long	spare20;
-   long	spare21;
 };
 
 /*
  * Specials needed only by PCs, not NPCs.  Space for this structure is
  * not allocated in memory for NPCs, but it is for PCs and the portion
- * of it labelled 'saved' is saved in the playerfile.  This structure can
- * be changed freely; beware, though, that changing the contents of
- * player_special_data_saved will corrupt the playerfile.
+ * of it labelled 'saved' is saved in the players file.
  */
 struct player_special_data {
    struct player_special_data_saved saved;
@@ -922,7 +870,7 @@ struct mob_special_data {
 };
 
 
-/* An affect structure.  Used in char_file_u *DO*NOT*CHANGE* */
+/* An affect structure. */
 struct affected_type {
    sh_int type;          /* The type of spell that caused this      */
    sh_int duration;      /* For how long its effects will last      */
@@ -976,43 +924,10 @@ struct char_data {
    struct char_data *master;             /* Who is char following?        */
 
    long pref;	                         /* unique session id */
-   char *host;                           /* hostname copy     */
 };
 /* ====================================================================== */
-
-
-/* ==================== File Structure for Player ======================= */
-/*             BEWARE: Changing it will ruin the playerfile		  */
-struct char_file_u {
-   /* char_player_data */
-   char	name[MAX_NAME_LENGTH+1];
-   char	description[PLR_DESC_LENGTH];
-   char	title[MAX_TITLE_LENGTH+1];
-   byte sex;
-   byte chclass;
-   byte level;
-   sh_int hometown;
-   time_t birth;   /* Time of birth of character     */
-   int	played;    /* Number of secs played in total */
-   ubyte weight;
-   ubyte height;
-
-   char	pwd[MAX_PWD_LENGTH+1];    /* character's password */
-
-   struct char_special_data_saved char_specials_saved;
-   struct player_special_data_saved player_specials_saved;
-   struct char_ability_data abilities;
-   struct char_point_data points;
-   struct affected_type affected[MAX_AFFECT];
-
-   time_t last_logon;		/* Time (in secs) of last logon */
-   char host[HOST_LENGTH+1];	/* host of last logon */
-};
-/* ====================================================================== */
-
 
 /* descriptor-related structures ******************************************/
-
 
 struct txt_block {
    char	*text;

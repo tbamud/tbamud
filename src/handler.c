@@ -34,7 +34,6 @@ void update_char_objects(struct char_data *ch);
 
 /* external functions */
 int invalid_class(struct char_data *ch, struct obj_data *obj);
-void remove_follower(struct char_data *ch);
 void clearMemory(struct char_data *ch);
 ACMD(do_return);
 

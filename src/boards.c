@@ -79,12 +79,13 @@ SPECIAL(gen_board);
 int find_slot(void);
 int find_board(struct char_data *ch);
 void init_boards(void);
-
 char *msg_storage[INDEX_SIZE];
 int msg_storage_taken[INDEX_SIZE];
 int num_of_msgs[NUM_OF_BOARDS];
 int ACMD_READ, ACMD_LOOK, ACMD_EXAMINE, ACMD_WRITE, ACMD_REMOVE;
 struct board_msginfo msg_index[NUM_OF_BOARDS][MAX_BOARD_MESSAGES];
+void    Board_reset_board(int board_type);
+void    Board_clear_board(int board_type);
 
 
 int find_slot(void)
@@ -533,6 +534,8 @@ void Board_clear_board(int board_type)
   int i;
 
   for (i = 0; i < MAX_BOARD_MESSAGES; i++) {
+    if (MSG_SLOTNUM(board_type, i) == -1)
+      continue; /* don't try to free non-existant slots */
     if (MSG_HEADING(board_type, i))
       free(MSG_HEADING(board_type, i));
     if (msg_storage[MSG_SLOTNUM(board_type, i)])

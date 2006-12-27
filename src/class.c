@@ -1506,8 +1506,6 @@ void do_start(struct char_data *ch)
 
   if (CONFIG_SITEOK_ALL)
     SET_BIT(PLR_FLAGS(ch), PLR_SITEOK);
-
-  ch->player_specials->saved.olc_zone = NOWHERE;
 }
 
 

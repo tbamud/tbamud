@@ -359,54 +359,54 @@ void zmalloc_free_list(meminfo *m)
 
 main()
 {
-  unsigned char * shit;
+  unsigned char * tmp;
 
 
   printf("Testing Zmalloc.\n");
   printf("Malloc test..");
   printf("You should see no error here.\n");
-  shit = (unsigned char*)malloc(200);
-  free(shit); 
+  tmp = (unsigned char*)malloc(200);
+  free(tmp); 
 
   printf("Free free mem test...\n");
   printf("You should see an ERR: multiple frees here\n");
-  shit = (unsigned char*)malloc(200);
-  free(shit); 
-  free(shit); 
+  tmp = (unsigned char*)malloc(200);
+  free(tmp); 
+  free(tmp); 
 
 /*
   fprintf(zfd,"\nFree unallocated mem test \n");
-  shit += 4;
-  free(shit); 
+  tmp += 4;
+  free(tmp); 
 */
 
   printf("Unfreed mem test...\n");
   printf("You should see an \"UNfreed mem at line %d\" (at end) because of this\n",__LINE__+1);
-  shit = (unsigned char*)malloc(200);
+  tmp = (unsigned char*)malloc(200);
 
   printf("Buffer overrun test 1...\n");
   printf("You should see an ERR:endPad here\n");
-  shit = (unsigned char*)malloc(200);
-  shit[200] = 0xfa;
-  free(shit); 
+  tmp = (unsigned char*)malloc(200);
+  tmp[200] = 0xfa;
+  free(tmp); 
 
   printf("Buffer overrun test 2...\n");
   printf("You should see an ERR:endPad here\n");
-  shit = (unsigned char*)malloc(200);
-  shit[215] = 0xbb;
-  free(shit); 
+  tmp = (unsigned char*)malloc(200);
+  tmp[215] = 0xbb;
+  free(tmp); 
 
   printf("Buffer underrun test 1...\n");
   printf("You should see an ERR:beginPad here\n");
-  shit = (unsigned char*)malloc(200);
-  shit[-10] = 0x0f;
-  free(shit); 
+  tmp = (unsigned char*)malloc(200);
+  tmp[-10] = 0x0f;
+  free(tmp); 
 
   printf("Buffer underrun test 2...\n");
   printf("You should see an ERR:beginPad here\n");
-  shit = (unsigned char*)malloc(200);
-  shit[-1] = 0x00;
-  free(shit); 
+  tmp = (unsigned char*)malloc(200);
+  tmp[-1] = 0x00;
+  free(tmp); 
 
 
   zmalloc_check();

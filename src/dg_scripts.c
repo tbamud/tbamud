@@ -1335,9 +1335,9 @@ void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
   while (*rhs && isspace(*rhs))
     rhs++;
   
-  for (p = lhs; *p; p++);
+  for (p = (unsigned char *) lhs; *p; p++);
   for (--p; isspace(*p) && ((char *)p > lhs); *p-- = '\0');
-  for (p = rhs; *p; p++);
+  for (p = (unsigned char *) rhs; *p; p++);
   for (--p; isspace(*p) && ((char *)p > rhs); *p-- = '\0');  
 
 

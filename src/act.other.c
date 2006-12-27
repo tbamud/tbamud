@@ -32,7 +32,6 @@ extern const char *class_abbrevs[];
 /* extern procedures */
 void list_skills(struct char_data *ch);
 void appear(struct char_data *ch);
-void write_aliases(struct char_data *ch);
 void perform_immort_vis(struct char_data *ch);
 SPECIAL(shop_keeper);
 ACMD(do_gen_comm);
@@ -102,24 +101,7 @@ ACMD(do_save)
   if (IS_NPC(ch) || !ch->desc)
     return;
 
-  /* Only tell the char we're saving if they actually typed "save" */
-  if (cmd) {
-    /*
-     * This prevents item duplication by two PC's using coordinated saves
-     * (or one PC with a house) and system crashes. Note that houses are
-     * still automatically saved without this enabled. This code assumes
-     * that guest immortals aren't trustworthy. If you've disabled guest
-     * immortal advances from mortality, you may want < instead of <=.
-     */
-    if (CONFIG_AUTO_SAVE && GET_LEVEL(ch) <= LVL_IMMORT) {
-      send_to_char(ch, "Saving aliases.\r\n");
-      write_aliases(ch);
-      return;
-    }
-    send_to_char(ch, "Saving %s and aliases.\r\n", GET_NAME(ch));
-  }
-
-  write_aliases(ch);
+  send_to_char(ch, "Saving %s.\r\n", GET_NAME(ch));
   save_char(ch);
   Crash_crashsave(ch);
   if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_HOUSE_CRASH))
@@ -662,6 +644,10 @@ ACMD(do_use)
       return;
     default:
       log("SYSERR: Unknown subcmd %d passed to do_use.", subcmd);
+      /*  SYSERR_DESC:
+       *  This is the same as the unhandled case in do_gen_ps(), but in the
+       *  function which handles 'quaff', 'recite', and 'use'.
+       */
       return;
     }
   }
@@ -825,6 +811,11 @@ ACMD(do_gen_write)
 
   if (stat(filename, &fbuf) < 0) {
     perror("SYSERR: Can't stat() file");
+    /*  SYSERR_DESC:
+     *  This is from do_gen_write() and indicates that it cannot call the
+     *  stat() system call on the file required.  The error string at the
+     *  end of the line should explain what the problem is.
+     */
     return;
   }
   if (fbuf.st_size >= CONFIG_MAX_FILESIZE) {
@@ -833,6 +824,12 @@ ACMD(do_gen_write)
   }
   if (!(fl = fopen(filename, "a"))) {
     perror("SYSERR: do_gen_write");
+    /*  SYSERR_DESC:
+     *  This is from do_gen_write(), and will be output if the file in
+     *  question cannot be opened for appending to.  The error string
+     *  at the end of the line should explain what the problem is.
+     */
+
     send_to_char(ch, "Could not open the file.  Sorry.\r\n");
     return;
   }
@@ -935,7 +932,7 @@ ACMD(do_gen_tog)
     result = PRF_TOG_CHK(ch, PRF_QUEST);
     break;
   case SCMD_ROOMFLAGS:
-    result = PRF_TOG_CHK(ch, PRF_ROOMFLAGS);
+    result = PRF_TOG_CHK(ch, PRF_SHOWVNUMS);
     break;
   case SCMD_NOREPEAT:
     result = PRF_TOG_CHK(ch, PRF_NOREPEAT);
@@ -977,6 +974,10 @@ ACMD(do_gen_tog)
     break;
   default:
     log("SYSERR: Unknown subcmd %d in do_gen_toggle.", subcmd);
+    /*  SYSERR_DESC:
+     *  This is the same as the unhandled case in do_gen_ps(), but in the
+     *  function which handles 'compact', 'brief', and so forth.
+     */
     return;
   }
 

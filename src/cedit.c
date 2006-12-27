@@ -16,25 +16,14 @@
 #include "oasis.h"
 #include "improved-edit.h"
 
-
-/******************************************************************************/
-/** External Functions                                                       **/
-/******************************************************************************/
-void free_config(struct config_data *data);
-
-/******************************************************************************/
-/** Internal Macros                                                          **/
-/******************************************************************************/
+/* Local Macros */
 #define NO 0
 #define YES 1
 
 #define CHECK_VAR(var)  ((var == YES) ? "Yes" : "No")
 #define TOGGLE_VAR(var)	if (var == YES) { var = NO; } else { var = YES; }
 
-
-/******************************************************************************/
-/** Internal Functions                                                       **/
-/******************************************************************************/
+/* local functions */
 void cedit_disp_menu(struct descriptor_data *d);
 void cedit_save_internally(struct descriptor_data *d);
 void cedit_disp_game_play_options(struct descriptor_data *d);
@@ -44,10 +33,9 @@ void cedit_disp_operation_options(struct descriptor_data *d);
 void cedit_disp_autowiz_options(struct descriptor_data *d);
 int  save_config( IDXTYPE nowhere );
 void reassign_rooms(void);
+void cedit_setup(struct descriptor_data *d);
+void cedit_save_to_disk( void );
 
-/******************************************************************************/
-/** Routines                                                                 **/
-/******************************************************************************/
 ACMD(do_oasis_cedit)
 {
   struct descriptor_data *d;

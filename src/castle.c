@@ -90,6 +90,11 @@ void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc))
   if (rmr == NOBODY) {
     if (!mini_mud)
       log("SYSERR: assign_kings_castle(): can't find mob #%d.", vmv);
+      /*  SYSERR_DESC:
+       *  When the castle_mob_spec() function is given a mobnum that
+       *  does not correspond to a mod loaded (when not in minimud mode),
+       *  this error will result.
+       */
   } else
     mob_index[rmr].func = specproc;
 }

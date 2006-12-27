@@ -29,7 +29,6 @@ extern struct spell_info_type spell_info[];
 /* external functions */
 byte saving_throws(int class_num, int type, int level); /* class.c */
 void clearMemory(struct char_data *ch);
-void weight_change_object(struct obj_data *obj, int weight);
 
 /* local functions */
 int mag_materials(struct char_data *ch, int item0, int item1, int item2, int extract, int verbose);

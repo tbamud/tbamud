@@ -310,7 +310,6 @@ void remove_from_lookup_table(long uid);
 /* from dg_db_scripts.c */
 void parse_trigger(FILE *trig_f, int nr);
 trig_data *read_trigger(int nr);
-void trig_data_init(trig_data *this_data);
 void trig_data_copy(trig_data *this_data, const trig_data *trg);
 void dg_read_trigger(FILE *fp, void *proto, int type);
 void dg_obj_trigger(char *line, struct obj_data *obj);
@@ -345,8 +344,6 @@ void update_wait_events(struct room_data *to, struct room_data *from);
 
 /* from dg_comm.c */
 char *any_one_name(char *argument, char *first_arg);
-void sub_write_to_char(char_data *ch, char *tokens[],
-		       void *otokens[], char type[]);
 void sub_write(char *arg, char_data *ch, byte find_invis, int targets);
 void send_to_zone(char *messg, zone_rnum zone);
 

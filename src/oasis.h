@@ -458,7 +458,6 @@ ACMD(do_oasis);
 /*
  * Prototypes, to be moved later.
  */
-void medit_free_mobile(struct char_data *mob);
 void medit_setup_new(struct descriptor_data *d);
 void medit_setup_existing(struct descriptor_data *d, int rmob_num);
 void init_mobile(struct char_data *mob);
@@ -533,7 +532,6 @@ ACMD(do_oasis_sedit);
 
 void zedit_setup(struct descriptor_data *d, int room_num);
 void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top);
-void zedit_create_index(int znum, char *type);
 void zedit_save_internally(struct descriptor_data *d);
 void zedit_save_to_disk(int zone_num);
 void zedit_disp_menu(struct descriptor_data *d);
@@ -544,9 +542,7 @@ void zedit_disp_arg3(struct descriptor_data *d);
 void zedit_parse(struct descriptor_data *d, char *arg);
 ACMD(do_oasis_zedit);
 
-void cedit_setup(struct descriptor_data *d);
 void cedit_parse(struct descriptor_data *d, char *arg);
-void cedit_save_to_disk( void );
 void cedit_string_cleanup(struct descriptor_data *d, int terminator);
 ACMD(do_oasis_cedit);
 
@@ -555,12 +551,7 @@ void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num);
 void trigedit_setup_new(struct descriptor_data *d);
 ACMD(do_oasis_trigedit);
 
-void aedit_disp_menu(struct descriptor_data * d);
 void aedit_parse(struct descriptor_data * d, char *arg);
-void aedit_setup_new(struct descriptor_data *d);
-void aedit_setup_existing(struct descriptor_data *d, int real_num);
-void aedit_save_to_disk(struct descriptor_data *d);
-void aedit_save_internally(struct descriptor_data *d);
 void free_action(struct social_messg *mess);
 ACMD(do_oasis_aedit);
 
@@ -571,6 +562,9 @@ void hedit_parse(struct descriptor_data *d, char *arg);
 void hedit_string_cleanup(struct descriptor_data *d, int terminator);
 void free_help(struct help_index_element *help);
 ACMD(do_oasis_hedit);
+
+void tedit_string_cleanup(struct descriptor_data *d, int terminator);
+ACMD(do_tedit);
 
 /* oasis_delete.c */
 int free_strings(void *data, int type);

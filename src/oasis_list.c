@@ -314,7 +314,7 @@ void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum 
   
   if (rnum != NOWHERE) {
     /* Only one parameter was supplied - just list that zone */
-    print_zone(ch, rnum);
+     print_zone(ch, zone_table[rnum].number);
     return;
   } else {
     bottom = vmin;

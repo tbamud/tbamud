@@ -51,6 +51,4 @@ int	Board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
 int	Board_write_message(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
 void	Board_save_board(int board_type);
 void	Board_load_board(int board_type);
-void	Board_reset_board(int board_type);
-void	Board_clear_board(int board_type);
 void	Board_clear_all(void);

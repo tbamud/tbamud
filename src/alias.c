@@ -33,8 +33,12 @@ void write_aliases(struct char_data *ch)
     return;
 
   if ((file = fopen(fn, "w")) == NULL) {
-    log("SYSERR: Couldn't save aliases for %s in '%s'.", GET_NAME(ch), fn);
-    perror("SYSERR: write_aliases");
+    log("SYSERR: Couldn't save aliases for %s in '%s': %s", GET_NAME(ch), fn, strerror(errno));
+    /*  SYSERR_DESC:
+     *  This error occurs when the server fails to open the relevant alias
+     *  file for writing.  The text at the end of the error should give a
+     *  valid reason why.
+     */
     return;
   }
 
@@ -64,8 +68,12 @@ void read_aliases(struct char_data *ch)
 
   if ((file = fopen(xbuf, "r")) == NULL) {
     if (errno != ENOENT) {
-      log("SYSERR: Couldn't open alias file '%s' for %s.", xbuf, GET_NAME(ch));
-      perror("SYSERR: read_aliases");
+      log("SYSERR: Couldn't open alias file '%s' for %s: %s", xbuf, GET_NAME(ch), strerror(errno));
+      /*  SYSERR_DESC:
+       *  This error occurs when the server fails to open the relevant alias
+       *  file for reading.  The text at the end version should give a valid
+       *  reason why.
+       */
     }
     return;
   }
@@ -124,5 +132,9 @@ void delete_aliases(const char *charname)
 
   if (remove(filename) < 0 && errno != ENOENT)
     log("SYSERR: deleting alias file %s: %s", filename, strerror(errno));
+    /*  SYSERR_DESC:
+     *  When an alias file cannot be removed, this error will occur,
+     *  and the reason why will be the tail end of the error.
+     */
 }
 

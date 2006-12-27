@@ -20,7 +20,7 @@
 #if defined(CIRCLE_MACINTOSH)
 #define LIB_WORLD	":world:"
 #define LIB_TEXT	":text:"
-#define LIB_TEXT_HEDIT  ":text:hedit:"
+#define LIB_TEXT_HELP   ":text:help:"
 #define LIB_MISC	":misc:"
 #define LIB_ETC		":etc:"
 #define LIB_PLRTEXT	":plrtext:"
@@ -33,7 +33,7 @@
 #elif defined(CIRCLE_AMIGA) || defined(CIRCLE_UNIX) || defined(CIRCLE_WINDOWS) || defined(CIRCLE_ACORN) || defined(CIRCLE_VMS)
 #define LIB_WORLD	"world/"
 #define LIB_TEXT	"text/"
-#define LIB_TEXT_HEDIT  "text/hedit/"
+#define LIB_TEXT_HELP   "text/help/"
 #define LIB_MISC	"misc/"
 #define LIB_ETC		"etc/"
 #define LIB_PLRTEXT	"plrtext/"
@@ -78,15 +78,15 @@
 #define ZON_PREFIX	LIB_WORLD"zon"SLASH	/* zon defs & command tables */
 #define SHP_PREFIX	LIB_WORLD"shp"SLASH	/* shop definitions	*/
 #define TRG_PREFIX	LIB_WORLD"trg"SLASH	/* trigger files	*/
-#define HLP_PREFIX      LIB_TEXT"hedit"SLASH    /* Help files           */
+#define HLP_PREFIX      LIB_TEXT"help"SLASH     /* Help files           */
 
 #define CREDITS_FILE	LIB_TEXT"credits" /* for the 'credits' command	*/
 #define NEWS_FILE	LIB_TEXT"news"	/* for the 'news' command	*/
 #define MOTD_FILE	LIB_TEXT"motd"	/* messages of the day / mortal	*/
 #define IMOTD_FILE	LIB_TEXT"imotd"	/* messages of the day / immort	*/
 #define GREETINGS_FILE	LIB_TEXT"greetings"	/* The opening screen.	*/
-#define HELP_PAGE_FILE	LIB_TEXT_HEDIT"screen"	/* for HELP <CR>	*/
-#define IHELP_PAGE_FILE LIB_TEXT_HEDIT"iscreen" /* for HELP <CR> imms   */
+#define HELP_PAGE_FILE	LIB_TEXT_HELP"screen"	/* for HELP <CR>	*/
+#define IHELP_PAGE_FILE LIB_TEXT_HELP"iscreen" /* for HELP <CR> imms   */
 #define CONTEXT_HELP_FILE LIB_TEXT"contexthelp"	/* context help for olc	*/
 #define INFO_FILE	LIB_TEXT"info"		/* for INFO		*/
 #define WIZLIST_FILE	LIB_TEXT"wizlist"	/* for WIZLIST		*/
@@ -127,7 +127,6 @@ char	*fread_string(FILE *fl, const char *error);
 long	get_id_by_name(const char *name);
 char	*get_name_by_id(long id);
 void	save_mud_time(struct time_info_data *when);
-void	free_extra_descriptions(struct extra_descr_data *edesc);
 void	free_text_files(void);
 void	free_help_table(void);
 void	free_player_index(void);

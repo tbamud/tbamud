@@ -128,6 +128,8 @@ struct alias_data {
 #define SCMD_CLS        17
 #define SCMD_BUILDWALK  18
 #define SCMD_AFK        19
+#define SCMD_COLOR      20 
+#define SCMD_SYSLOG     21
 
 /* do_wizutil */
 #define SCMD_REROLL	0

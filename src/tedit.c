@@ -15,7 +15,6 @@
 #include "genolc.h"
 #include "oasis.h"
 #include "improved-edit.h"
-#include "tedit.h"
 
 extern const char *credits;
 extern const char *news;

@@ -327,14 +327,14 @@ int nameserver_is_slow = NO;
 /*
  * Will changes save automaticaly in OLC ?
  */
-int auto_save_olc = 1;
+int auto_save_olc = YES;
 
 /*
  * if you wish to enable Aedit, set this to 1 
  * This will make the mud look for a file called socials.new,
  * which is in a different format than the stock socials file.
  */
-int use_new_socials = 1;
+int use_new_socials = YES;
 
 const char *MENU =
 "\r\n"

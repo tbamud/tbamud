@@ -20,14 +20,19 @@
 #include "constants.h"
 #include "genolc.h"
 
-/* external functs */
+/* external functions */
 int sort_command_helper(const void *a, const void *b);
 void sort_commands(void); /* aedit patch -- M. Scott */
 void create_command_list(void);
 
-/* function protos */
+/* local functions */
 ACMD(do_astat);
 int aedit_find_command(const char *txt);
+void aedit_disp_menu(struct descriptor_data * d);
+void aedit_setup_new(struct descriptor_data *d);
+void aedit_setup_existing(struct descriptor_data *d, int real_num);
+void aedit_save_internally(struct descriptor_data *d);
+void aedit_save_to_disk(struct descriptor_data *d);
 
 /*
  * Utils and exported functions.

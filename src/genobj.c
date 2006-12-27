@@ -18,7 +18,11 @@
 #include "dg_olc.h"
 #include "handler.h"
 
+/* extern functions */
 extern struct board_info_type board_info[];
+
+/* local functions */
+void free_object_strings_proto(struct obj_data *obj);
 
 obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
 {

@@ -37,7 +37,6 @@ extern int max_obj_save;  /* change in config.c */
 
 /* Extern functions */
 ACMD(do_action);
-ACMD(do_tell);
 SPECIAL(receptionist);
 SPECIAL(cryogenicist);
 int invalid_class(struct char_data *ch, struct obj_data *obj);

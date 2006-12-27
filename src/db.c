@@ -75,9 +75,9 @@ char *credits = NULL;		/* game credits			 */
 char *news = NULL;		/* mud news			 */
 char *motd = NULL;		/* message of the day - mortals */
 char *imotd = NULL;		/* message of the day - immorts */
-char *GREETINGS = NULL;		/* opening credits screen	*/
+char *GREETINGS = NULL;		/* opening credits screen      */
 char *help = NULL;		/* help screen			 */
-char *ihelp = NULL;             /* help screen (immortals)       */
+char *ihelp = NULL;           /* help screen (immortals)     */
 char *info = NULL;		/* info page			 */
 char *wizlist = NULL;		/* list of higher gods		 */
 char *immlist = NULL;		/* list of peon gods		 */
@@ -137,15 +137,14 @@ char fread_letter(FILE *fp);
 void free_followers(struct follow_type *k);
 void load_default_config( void );
 void load_config( void );
+void free_extra_descriptions(struct extra_descr_data *edesc);
 
 /* external functions */
 void paginate_string(char *str, struct descriptor_data *d);
 struct time_info_data *mud_time_passed(time_t t2, time_t t1);
 void free_alias(struct alias_data *a);
 void load_messages(void);
-void weather_and_time(int mode);
 void mag_assign_spells(void);
-void boot_social_messages(void);
 void update_obj_file(void);	/* In objsave.c */
 void sort_commands(void);
 void sort_spells(void);
@@ -178,6 +177,164 @@ extern int auto_pwipe;
 /*************************************************************************
 *  routines for booting the system                                       *
 *************************************************************************/
+
+char *fread_action(FILE *fl, int nr)
+{
+  char buf[MAX_STRING_LENGTH];
+
+  fgets(buf, MAX_STRING_LENGTH, fl);
+  if (feof(fl)) {
+    log("SYSERR: fread_action: unexpected EOF near action #%d", nr);
+    /*  SYSERR_DESC:
+     *  fread_action() will fail if it discovers an end of file marker
+     *  before it is able to read in the expected string.  This can be
+     *  caused by a truncated socials file.
+     */
+    exit(1);
+  }
+  if (*buf == '#')
+    return (NULL);
+
+  buf[strlen(buf) - 1] = '\0';
+  return (strdup(buf));
+}
+
+void boot_social_messages(void)
+{
+  FILE *fl;
+  int nr = 0, hide, min_char_pos, min_pos, min_lvl, curr_soc = -1;
+  char next_soc[MAX_STRING_LENGTH], sorted[MAX_INPUT_LENGTH];
+
+  if (CONFIG_NEW_SOCIALS == TRUE) {
+    /* open social file */
+    if (!(fl = fopen(SOCMESS_FILE_NEW, "r"))) {
+      log("SYSERR: can't open socials file '%s': %s", SOCMESS_FILE_NEW, strerror(errno));
+      /*  SYSERR_DESC:
+       *  This error, from boot_social_messages(), occurs when the server
+       *  fails to open the file containing the social messages.  The error
+       *  at the end will indicate the reason why.
+       */
+      exit(1);
+    }
+    /* count socials */
+    *next_soc = '\0';
+    while (!feof(fl)) {
+      fgets(next_soc, MAX_STRING_LENGTH, fl);
+      if (*next_soc == '~') top_of_socialt++;
+    }
+  } else { /* old style */
+
+    /* open social file */
+    if (!(fl = fopen(SOCMESS_FILE, "r"))) {
+      log("SYSERR: can't open socials file '%s': %s", SOCMESS_FILE, strerror(errno));
+      /*  SYSERR_DESC:
+       *  This error, from boot_social_messages(), occurs when the server
+       *  fails to open the file containing the social messages.  The error
+       *  at the end will indicate the reason why.
+       */
+      exit(1);
+    }
+    /* count socials */
+    while (!feof(fl)) {
+      fgets(next_soc, MAX_STRING_LENGTH, fl);
+      if (*next_soc == '\n' || *next_soc == '\r') top_of_socialt++; /* all socials are followed by a blank line */
+    }
+  }
+
+  log("Social table contains %d socials.", top_of_socialt);
+  rewind(fl);
+  
+  CREATE(soc_mess_list, struct social_messg, top_of_socialt + 1);
+
+  /* now read 'em */
+  for (;;) {
+    fscanf(fl, " %s ", next_soc);
+    if (*next_soc == '$') break;
+
+    if (CONFIG_NEW_SOCIALS == TRUE) {
+      if (fscanf(fl, " %s %d %d %d %d \n",
+  		sorted, &hide, &min_char_pos, &min_pos, &min_lvl) != 5) {
+      log("SYSERR: format error in social file near social '%s'", next_soc);
+      /*  SYSERR_DESC:
+       *  From boot_social_messages(), this error is output when the
+       *  server is expecting to find the remainder of the first line of the
+       *  social ('hide' and 'minimum position').  These must follow the
+       *  name of the social with a single space such as: 'accuse 0 5\n'.
+       *  This error often occurs when one of the numbers is missing or the
+       *  social name has a space in it (i.e., 'bend over').
+       */
+      exit(1);
+    }
+      curr_soc++;
+      soc_mess_list[curr_soc].command = strdup(next_soc+1);
+      soc_mess_list[curr_soc].sort_as = strdup(sorted);
+      soc_mess_list[curr_soc].hide = hide;
+      soc_mess_list[curr_soc].min_char_position = min_char_pos;
+      soc_mess_list[curr_soc].min_victim_position = min_pos;
+      soc_mess_list[curr_soc].min_level_char = min_lvl;
+    } else {  /* old style */
+      if (fscanf(fl, " %d %d \n", &hide, &min_pos) != 2) {
+        log("SYSERR: format error in social file near social '%s'", next_soc);
+      /*  SYSERR_DESC:
+       *  From boot_social_messages(), this error is output when the
+       *  server is expecting to find the remainder of the first line of the
+       *  social ('hide' and 'minimum position').  These must follow the
+       *  name of the social with a single space such as: 'accuse 0 5\n'.
+       *  This error often occurs when one of the numbers is missing or the
+       *  social name has a space in it (i.e., 'bend over').
+       */
+      exit(1);
+      }
+      curr_soc++;
+      soc_mess_list[curr_soc].command = strdup(next_soc);
+      soc_mess_list[curr_soc].sort_as = strdup(next_soc);
+      soc_mess_list[curr_soc].hide = hide;
+      soc_mess_list[curr_soc].min_char_position = POS_RESTING;
+      soc_mess_list[curr_soc].min_victim_position = min_pos;
+      soc_mess_list[curr_soc].min_level_char = 0;
+    }
+
+#ifdef CIRCLE_ACORN
+    if (fgetc(fl) != '\n')
+      log("SYSERR: Acorn bug workaround failed.");
+      /*  SYSERR_DESC:
+       *  The only time that this error should ever arise is if you are running
+       *  your CircleMUD on the Acorn platform.  The error arises when the
+       *  server cannot properly read a '\n' out of the file at the end of the
+       *  first line of the social (that with 'hide' and 'min position').  This
+       *  is in boot_social_messages().
+       */
+#endif
+
+    soc_mess_list[curr_soc].char_no_arg = fread_action(fl, nr);
+    soc_mess_list[curr_soc].others_no_arg = fread_action(fl, nr);
+    soc_mess_list[curr_soc].char_found = fread_action(fl, nr);
+
+    /* if no char_found, the rest is to be ignored */
+    if (CONFIG_NEW_SOCIALS == FALSE && !soc_mess_list[curr_soc].char_found)
+      continue;
+
+    soc_mess_list[curr_soc].others_found = fread_action(fl, nr);
+    soc_mess_list[curr_soc].vict_found = fread_action(fl, nr);
+    soc_mess_list[curr_soc].not_found = fread_action(fl, nr);
+    soc_mess_list[curr_soc].char_auto = fread_action(fl, nr);
+    soc_mess_list[curr_soc].others_auto = fread_action(fl, nr);
+
+    if (CONFIG_NEW_SOCIALS == FALSE) 
+      continue;
+
+    soc_mess_list[curr_soc].char_body_found = fread_action(fl, nr);
+    soc_mess_list[curr_soc].others_body_found = fread_action(fl, nr);
+    soc_mess_list[curr_soc].vict_body_found = fread_action(fl, nr);
+    soc_mess_list[curr_soc].char_obj_found = fread_action(fl, nr);
+    soc_mess_list[curr_soc].others_obj_found = fread_action(fl, nr);
+  }
+
+  /* close file & set top */
+  fclose(fl);
+  assert(curr_soc <= top_of_socialt);
+  top_of_socialt = curr_soc;
+}
 
 /* this is necessary for the autowiz system */
 void reboot_wizlists(void)
@@ -360,6 +517,8 @@ void destroy_db(void)
   while (character_list) {
     chtmp = character_list;
     character_list = character_list->next;
+    if (chtmp->master)
+      stop_follower(chtmp);
     free_char(chtmp);
   }
 
@@ -642,7 +801,7 @@ void reset_time(void)
   FILE *bgtime;
 
   if ((bgtime = fopen(TIME_FILE, "r")) == NULL)
-    log("SYSERR: Can't read from '%s' time file.", TIME_FILE);
+    log("No time file '%s' starting from the beginning.", TIME_FILE);
   else {
     fscanf(bgtime, "%ld\n", &beginning_of_time);
     fclose(bgtime);
@@ -2444,6 +2603,8 @@ void free_char(struct char_data *ch)
       free(ch->player_specials->poofin);
     if (ch->player_specials->poofout)
       free(ch->player_specials->poofout);
+    if (GET_HOST(ch)) 
+      free(GET_HOST(ch));
     free(ch->player_specials);
     if (IS_NPC(ch))
       log("SYSERR: Mob %s (#%d) had player_specials allocated!", GET_NAME(ch), GET_MOB_VNUM(ch));
@@ -2461,9 +2622,6 @@ void free_char(struct char_data *ch)
     if (ch->player.description)
       free(ch->player.description);
     
-    if (GET_HOST(ch))
-      free(GET_HOST(ch));
-      
     /* free script proto list */
     free_proto_script(ch, MOB_TRIGGER);
     
@@ -3166,7 +3324,7 @@ void load_config( void )
   
   snprintf(buf, sizeof(buf), "%s/%s", DFLT_DIR, CONFIG_CONFFILE);
   if ( !(fl = fopen(CONFIG_CONFFILE, "r")) && !(fl = fopen(buf, "r")) ) {
-    snprintf(buf, sizeof(buf), "Game Config File: %s", CONFIG_CONFFILE);
+    snprintf(buf, sizeof(buf), "No %s file, using defaults", CONFIG_CONFFILE);
     perror(buf);
     return;
   }

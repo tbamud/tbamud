@@ -175,7 +175,7 @@ const char *action_bits[] = {
 const char *preference_bits[] = {
   "BRIEF",
   "COMPACT",
-  "DEAF",
+  "NO_SHOUT",
   "NO_TELL",
   "D_HP",
   "D_MANA",

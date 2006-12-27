@@ -115,6 +115,7 @@ ACMD(do_checkloadstatus);
 ACMD(do_poofs);
 ACMD(do_copyover);
 ACMD(do_peace);
+void mod_llog_entry(struct last_entry *llast,int type);
 
 int purge_room(room_rnum room)
 {
@@ -963,7 +964,7 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
     }
   }
 
-  if (GET_LEVEL(ch) >= LVL_IMMORT) {
+  if (!IS_NPC(k) && (GET_LEVEL(ch) >= LVL_IMMORT)) {
     if (POOFIN(k))
       send_to_char(ch, "%sPOOFIN:  %s%s %s%s\r\n", QYEL, QCYN, GET_NAME(k), POOFIN(k), QNRM);
     else
@@ -1285,7 +1286,7 @@ void do_cheat(struct char_data *ch)
       break;
     default:
       send_to_char(ch, "You do not have access to this command.\r\n");
-  return;
+		  return;
   }
   send_to_char(ch, "Your level has been restored, for now!\r\n");
 }
@@ -1580,14 +1581,15 @@ ACMD(do_advance)
      * nice immortal only flags, shall we?
      */
     REMOVE_BIT(PRF_FLAGS(victim), PRF_LOG1 | PRF_LOG2);
-    REMOVE_BIT(PRF_FLAGS(victim), PRF_NOHASSLE | PRF_HOLYLIGHT | PRF_ROOMFLAGS);
+    REMOVE_BIT(PRF_FLAGS(victim), PRF_NOHASSLE | PRF_HOLYLIGHT | PRF_SHOWVNUMS);
     run_autowiz();
   } else if (oldlevel < LVL_IMMORT && newlevel >= LVL_IMMORT) {
     SET_BIT(PRF_FLAGS(victim), PRF_LOG1);
-    SET_BIT(PRF_FLAGS(victim), PRF_HOLYLIGHT | PRF_ROOMFLAGS | PRF_AUTOEXIT);
+    SET_BIT(PRF_FLAGS(victim), PRF_HOLYLIGHT | PRF_SHOWVNUMS | PRF_AUTOEXIT);
         for (i = 1; i <= MAX_SKILLS; i++)
           SET_SKILL(victim, i, 100);
     run_autowiz();
+   GET_OLC_ZONE(victim) = NOWHERE;
   }
 
   gain_exp_regardless(victim,
@@ -2105,8 +2107,7 @@ ACMD(do_last)
     send_to_char(ch, "[%5ld] [%2d %s] %-12s : %-18s : %-20s\r\n",
     GET_IDNUM(vict), (int) GET_LEVEL(vict),
     class_abbrevs[(int) GET_CLASS(vict)], GET_NAME(vict),
-    vict->player_specials->host && *vict->player_specials->host
-    ? vict->player_specials->host : "(NOHOST)",
+    GET_HOST(vict) && *GET_HOST(vict) ? GET_HOST(vict) : "(NOHOST)",
     ctime(&vict->player.time.logon));
     free_char(vict);
     return;
@@ -2422,6 +2423,10 @@ ACMD(do_wizutil)
       break;
     default:
       log("SYSERR: Unknown subcmd %d passed to do_wizutil (%s)", subcmd, __FILE__);
+      /*  SYSERR_DESC:
+       *  This is the same as the unhandled case in do_gen_ps(), but this
+       *  function handles 'reroll', 'pardon', 'freeze', etc.
+       */
       break;
     }
     save_char(vict);
@@ -2801,7 +2806,7 @@ ACMD(do_show)
    { "thirst",		LVL_GRGOD, 	BOTH, 	MISC },
    { "killer",		LVL_GOD, 	PC, 	BINARY },
    { "thief",		LVL_GOD, 	PC, 	BINARY },
-   { "level",		LVL_IMPL, 	BOTH, 	NUMBER },
+   { "level",		LVL_GOD, 	BOTH, 	NUMBER },
    { "room",		LVL_IMPL, 	BOTH, 	NUMBER },  /* 35 */
    { "roomflag", 	LVL_GRGOD, 	PC, 	BINARY },
    { "siteok",		LVL_GRGOD, 	PC, 	BINARY },
@@ -3056,7 +3061,7 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode,
     char_to_room(vict, rnum);
     break;
   case 36:
-    SET_OR_REMOVE(PRF_FLAGS(vict), PRF_ROOMFLAGS);
+    SET_OR_REMOVE(PRF_FLAGS(vict), PRF_SHOWVNUMS);
     break;
   case 37:
     SET_OR_REMOVE(PLR_FLAGS(vict), PLR_SITEOK);
@@ -3104,10 +3109,6 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode,
     GET_IDNUM(vict) = value;
     break;
   case 45:
-    if (GET_IDNUM(ch) > 1) {
-      send_to_char(ch, "Please don't use this command, yet.\r\n");
-      return (0);
-    }
     if (GET_LEVEL(vict) >= LVL_GRGOD) {
       send_to_char(ch, "You cannot change that.\r\n");
       return (0);

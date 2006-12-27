@@ -12,20 +12,159 @@
 #include "../db.h"
 #include "../pfdefaults.h"
 
+
+// first some stock circle 3.0 defines. Change where appropriate.
+#define MAX_NAME_LENGTH		20  /* Used in char_file_u *DO*NOT*CHANGE* */
+
+#define MAX_PWD_LENGTH		30  /* Used in char_file_u *DO*NOT*CHANGE* */
+#define MAX_TITLE_LENGTH	80  /* Used in char_file_u *DO*NOT*CHANGE* */
+#define HOST_LENGTH		30  /* Used in char_file_u *DO*NOT*CHANGE* */
+#define PLR_DESC_LENGTH		512 /* Used in char_file_u *DO*NOT*CHANGE* */
+#define MAX_TONGUE		3   /* Used in char_file_u *DO*NOT*CHANGE* */
+#define MAX_SKILLS		200 /* Used in char_file_u *DO*NOT*CHANGE* */
+#define MAX_AFFECT		32  /* Used in char_file_u *DO*NOT*CHANGE* */
+
+/* Char's abilities.  Used in char_file_u *DO*NOT*CHANGE* */
+struct char_ability_data_plrtoascii {
+   sbyte str;
+   sbyte str_add;      /* 000 - 100 if strength 18             */
+   sbyte intel;
+   sbyte wis;
+   sbyte dex;
+   sbyte con;
+   sbyte cha;
+};
+
+
+/* Char's points.  Used in char_file_u *DO*NOT*CHANGE* */
+struct char_point_data_plrtoascii {
+   sh_int mana;
+   sh_int max_mana;     /* Max mana for PC/NPC			   */
+   sh_int hit;
+   sh_int max_hit;      /* Max hit for PC/NPC                      */
+   sh_int move;
+   sh_int max_move;     /* Max move for PC/NPC                     */
+
+   sh_int armor;        /* Internal -100..100, external -10..10 AC */
+   int	gold;           /* Money carried                           */
+   int	bank_gold;	/* Gold the char has in a bank account	   */
+   int	exp;            /* The experience of the player            */
+
+   sbyte hitroll;       /* Any bonus or penalty to the hit roll    */
+   sbyte damroll;       /* Any bonus or penalty to the damage roll */
+};
+
+
+/* 
+ * char_special_data_saved: specials which both a PC and an NPC have in
+ * common, but which must be saved to the playerfile for PC's.
+ *
+ * WARNING:  Do not change this structure.  Doing so will ruin the
+ * playerfile.  If you want to add to the playerfile, use the spares
+ * in player_special_data.
+ */
+struct char_special_data_saved_plrtoascii {
+   int	alignment;		/* +-1000 for alignments                */
+   long	idnum;			/* player's idnum; -1 for mobiles	*/
+   long /*bitvector_t*/ act;	/* act flag for NPC's; player flag for PC's */
+
+   long /*bitvector_t*/	affected_by;
+				/* Bitvector for spells/skills affected by */
+   sh_int apply_saving_throw[5]; /* Saving throw (Bonuses)		*/
+};
+
+struct player_special_data_saved_plrtoascii {
+   byte skills[MAX_SKILLS+1];	/* array of skills plus skill 0		*/
+   byte PADDING0;		/* used to be spells_to_learn		*/
+   bool talks[MAX_TONGUE];	/* PC s Tongues 0 for NPC		*/
+   int	wimp_level;		/* Below this # of hit points, flee!	*/
+   byte freeze_level;		/* Level of god who froze char, if any	*/
+   sh_int invis_level;		/* level of invisibility		*/
+   room_vnum load_room;		/* Which room to place char in		*/
+   long /*bitvector_t*/	pref;	/* preference flags for PC's.		*/
+   ubyte bad_pws;		/* number of bad password attemps	*/
+   sbyte conditions[3];         /* Drunk, full, thirsty			*/
+
+   /* spares below for future expansion.  You can change the names from
+      'sparen' to something meaningful, but don't change the order.  */
+
+   ubyte spare0;
+   ubyte spare1;
+   ubyte spare2;
+   ubyte spare3;
+   ubyte spare4;
+   ubyte page_length;
+   int spells_to_learn;		/* How many can you learn yet this level*/
+   int olc_zone;
+   int spare8;
+   int spare9;
+   int spare10;
+   int spare11;
+   int spare12;
+   int spare13;
+   int spare14;
+   int spare15;
+   int spare16;
+   long	spare17;
+   long	spare18;
+   long	spare19;
+   long	spare20;
+   long	spare21;
+};
+
+struct affected_type_plrtoascii {
+   sh_int type;          /* The type of spell that caused this      */
+   sh_int duration;      /* For how long its effects will last      */
+   sbyte modifier;       /* This is added to apropriate ability     */
+   byte location;        /* Tells which ability to change(APPLY_XXX)*/
+   long /*bitvector_t*/	bitvector; /* Tells which bits to set (AFF_XXX) */
+
+   struct affected_type_plrtoascii *next;
+};
+
+/* ==================== File Structure for Player ======================= */
+/*             BEWARE: Changing it will ruin the playerfile		  */
+struct char_file_u_plrtoascii {
+   /* char_player_data */
+   char	name[MAX_NAME_LENGTH+1];
+   char	description[PLR_DESC_LENGTH];
+   char	title[MAX_TITLE_LENGTH+1];
+   byte sex;
+   byte chclass;
+   byte level;
+   sh_int hometown;
+   time_t birth;   /* Time of birth of character     */
+   int	played;    /* Number of secs played in total */
+   ubyte weight;
+   ubyte height;
+
+   char	pwd[MAX_PWD_LENGTH+1];    /* character's password */
+
+   struct char_special_data_saved_plrtoascii char_specials_saved;
+   struct player_special_data_saved_plrtoascii player_specials_saved;
+   struct char_ability_data_plrtoascii abilities;
+   struct char_point_data_plrtoascii points;
+   struct affected_type_plrtoascii affected[MAX_AFFECT];
+
+   time_t last_logon;		/* Time (in secs) of last logon */
+   char host[HOST_LENGTH+1];	/* host of last logon */
+};
+/* ====================================================================== */
+
 int sprintascii(char *out, bitvector_t bits);
 int plr_filename(char *orig_name, char *filename);
 
 void convert(char *filename)
 {
   FILE *fl, *outfile, *index_file;
-  struct char_file_u player;
+  struct char_file_u_plrtoascii player;
   char index_name[40], outname[40], bits[127];
   int i;
-  struct char_special_data_saved *csds;
-  struct player_special_data_saved *psds;
-  struct char_ability_data *cad;
-  struct char_point_data *cpd;
-  struct affected_type *aff;
+  struct char_special_data_saved_plrtoascii *csds;
+  struct player_special_data_saved_plrtoascii *psds;
+  struct char_ability_data_plrtoascii *cad;
+  struct char_point_data_plrtoascii *cpd;
+  struct affected_type_plrtoascii *aff;
 
   if (!(fl = fopen(filename, "r+"))) {
     perror("error opening playerfile");
@@ -37,7 +176,7 @@ void convert(char *filename)
     exit(1);
   }
   for (;;) {
-    fread(&player, sizeof(struct char_file_u), 1, fl);
+    fread(&player, sizeof(struct char_file_u_plrtoascii), 1, fl);
     if (feof(fl)) {
       fclose(fl);
       fclose(index_file);

@@ -24,6 +24,9 @@
 #include "db.h"
 #include "constants.h"
 
+/* local functions */
+void sub_write_to_char(char_data *ch, char *tokens[], void *otokens[], char type[]);
+
 /* same as any_one_arg except that it stops at punctuation */
 char *any_one_name(char *argument, char *first_arg)
 {

@@ -140,4 +140,3 @@ struct last_entry {
 
 void add_llog_entry(struct char_data *ch, int type);
 struct last_entry *find_llog_entry(int punique, long idnum);
-void mod_llog_entry(struct last_entry *llast,int type);

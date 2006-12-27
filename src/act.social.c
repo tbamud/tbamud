@@ -21,11 +21,9 @@
 #include "spells.h"
 
 /* local functions */
-char *fread_action(FILE *fl, int nr);
 int find_action(int cmd);
 ACMD(do_action);
 ACMD(do_insult);
-void boot_social_messages(void);
 void free_social_messages(void);
 void free_action(struct social_messg *mess);
 void free_command_list(void);
@@ -159,112 +157,6 @@ ACMD(do_insult)
     send_to_char(ch, "I'm sure you don't want to insult *everybody*...\r\n");
 }
 
-
-
-void boot_social_messages(void)
-{
-  FILE *fl;
-  int nr = 0, hide, min_char_pos, min_pos, min_lvl, curr_soc = -1;
-  char next_soc[MAX_STRING_LENGTH], sorted[MAX_INPUT_LENGTH];
-
-  if (CONFIG_NEW_SOCIALS == TRUE) {
-    /* open social file */
-    if (!(fl = fopen(SOCMESS_FILE_NEW, "r"))) {
-      log("SYSERR: can't open socials file '%s': %s", SOCMESS_FILE_NEW, strerror(errno));
-      exit(1);
-    }
-    /* count socials */
-    *next_soc = '\0';
-    while (!feof(fl)) {
-      fgets(next_soc, MAX_STRING_LENGTH, fl);
-      if (*next_soc == '~') top_of_socialt++;
-    }
-  } else { /* old style */
-
-    /* open social file */
-    if (!(fl = fopen(SOCMESS_FILE, "r"))) {
-      log("SYSERR: can't open socials file '%s': %s", SOCMESS_FILE, strerror(errno));
-      exit(1);
-    }
-    /* count socials */
-    while (!feof(fl)) {
-      fgets(next_soc, MAX_STRING_LENGTH, fl);
-      if (*next_soc == '\n' || *next_soc == '\r') top_of_socialt++; /* all socials are followed by a blank line */
-    }
-  }
-
-  log("Social table contains %d socials.", top_of_socialt);
-  rewind(fl);
-  
-  CREATE(soc_mess_list, struct social_messg, top_of_socialt + 1);
-
-  /* now read 'em */
-  for (;;) {
-    fscanf(fl, " %s ", next_soc);
-    if (*next_soc == '$') break;
-
-    if (CONFIG_NEW_SOCIALS == TRUE) {
-      if (fscanf(fl, " %s %d %d %d %d \n",
-  		sorted, &hide, &min_char_pos, &min_pos, &min_lvl) != 5) {
-      log("SYSERR: format error in social file near social '%s'", next_soc);
-      exit(1);
-    }
-      curr_soc++;
-      soc_mess_list[curr_soc].command = strdup(next_soc+1);
-      soc_mess_list[curr_soc].sort_as = strdup(sorted);
-      soc_mess_list[curr_soc].hide = hide;
-      soc_mess_list[curr_soc].min_char_position = min_char_pos;
-      soc_mess_list[curr_soc].min_victim_position = min_pos;
-      soc_mess_list[curr_soc].min_level_char = min_lvl;
-    } else {  /* old style */
-      if (fscanf(fl, " %d %d \n", &hide, &min_pos) != 2) {
-        log("SYSERR: format error in social file near social '%s'", next_soc);
-        exit(1);
-      }
-      curr_soc++;
-      soc_mess_list[curr_soc].command = strdup(next_soc);
-      soc_mess_list[curr_soc].sort_as = strdup(next_soc);
-      soc_mess_list[curr_soc].hide = hide;
-      soc_mess_list[curr_soc].min_char_position = POS_RESTING;
-      soc_mess_list[curr_soc].min_victim_position = min_pos;
-      soc_mess_list[curr_soc].min_level_char = 0;
-    }
-
-#ifdef CIRCLE_ACORN
-    if (fgetc(fl) != '\n')
-      log("SYSERR: Acorn bug workaround failed.");
-#endif
-
-    soc_mess_list[curr_soc].char_no_arg = fread_action(fl, nr);
-    soc_mess_list[curr_soc].others_no_arg = fread_action(fl, nr);
-    soc_mess_list[curr_soc].char_found = fread_action(fl, nr);
-
-    /* if no char_found, the rest is to be ignored */
-    if (CONFIG_NEW_SOCIALS == FALSE && !soc_mess_list[curr_soc].char_found)
-      continue;
-
-    soc_mess_list[curr_soc].others_found = fread_action(fl, nr);
-    soc_mess_list[curr_soc].vict_found = fread_action(fl, nr);
-    soc_mess_list[curr_soc].not_found = fread_action(fl, nr);
-    soc_mess_list[curr_soc].char_auto = fread_action(fl, nr);
-    soc_mess_list[curr_soc].others_auto = fread_action(fl, nr);
-
-    if (CONFIG_NEW_SOCIALS == FALSE) 
-      continue;
-
-    soc_mess_list[curr_soc].char_body_found = fread_action(fl, nr);
-    soc_mess_list[curr_soc].others_body_found = fread_action(fl, nr);
-    soc_mess_list[curr_soc].vict_body_found = fread_action(fl, nr);
-    soc_mess_list[curr_soc].char_obj_found = fread_action(fl, nr);
-    soc_mess_list[curr_soc].others_obj_found = fread_action(fl, nr);
-  }
-
-  /* close file & set top */
-  fclose(fl);
-  assert(curr_soc <= top_of_socialt);
-  top_of_socialt = curr_soc;
-}
-
 /* this function adds in the loaded socials and assigns them a command # */
 void create_command_list(void)
 {
@@ -333,22 +225,6 @@ void free_command_list(void)
   free((char *)complete_cmd_info[i].sort_as);
   free(complete_cmd_info);
   complete_cmd_info = NULL;
-}
-
-char *fread_action(FILE *fl, int nr)
-{
-  char buf[MAX_STRING_LENGTH];
-
-  fgets(buf, MAX_STRING_LENGTH, fl);
-  if (feof(fl)) {
-    log("SYSERR: fread_action: unexpected EOF near action #%d", nr);
-    exit(1);
-  }
-  if (*buf == '#')
-    return (NULL);
-
-  buf[strlen(buf) - 1] = '\0';
-  return (strdup(buf));
 }
 
 void free_social_messages(void) 

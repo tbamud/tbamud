@@ -239,7 +239,7 @@ void queue_deq(struct queue *q, struct q_element *qe)
  */
 void *queue_head(struct queue *q)
 {
-  void *data;
+  void *dg_data;
   int i;
 
   i = pulse % NUM_EVENT_QUEUES;
@@ -247,9 +247,9 @@ void *queue_head(struct queue *q)
   if (!q->head[i])
     return NULL;
 
-  data = q->head[i]->data;
+  dg_data = q->head[i]->data;
   queue_deq(q, q->head[i]);
-  return data;
+  return dg_data;
 }
 
 

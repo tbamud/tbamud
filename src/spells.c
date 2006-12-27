@@ -27,7 +27,6 @@ extern room_rnum r_mortal_start_room;
 extern int mini_mud;
 
 /* external functions */
-void clearMemory(struct char_data *ch);
 void weight_change_object(struct obj_data *obj, int weight);
 int mag_savingthrow(struct char_data *ch, int type, int modifier);
 void name_to_drinkcon(struct obj_data *obj, int type);

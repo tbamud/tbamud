@@ -24,7 +24,6 @@
 #include "screen.h"
 #include "genolc.h"
 #include "oasis.h"
-#include "tedit.h"
 #include "improved-edit.h"
 #include "dg_scripts.h"
 #include "constants.h"
@@ -64,6 +63,7 @@ int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen);
 int reserved_word(char *argument);
 int _parse_name(char *arg, char *name);
 int enter_player_game (struct descriptor_data *d);
+void write_aliases(struct char_data *ch);
 
 /* prototypes for all do_x functions. */
 ACMD(do_action);
@@ -131,7 +131,6 @@ ACMD(do_load);
 ACMD(do_look);
 /* ACMD(do_move); -- interpreter.h */
 ACMD(do_not_here);
-ACMD(do_olc);
 ACMD(do_order);
 ACMD(do_page);
 ACMD(do_pagelength);
@@ -264,7 +263,7 @@ cpp_extern const struct command_info cmd_info[] = {
                              
   /* now, the main list */
   { "at"       , "at"      , POS_DEAD    , do_at       , LVL_IMMORT, 0 },
-  { "advance"  , "adv"     , POS_DEAD    , do_advance  , LVL_IMPL, 0 },
+  { "advance"  , "adv"     , POS_DEAD    , do_advance  , LVL_GOD, 0 },
   { "aedit"    , "aed"     , POS_DEAD    , do_oasis    , LVL_GOD, SCMD_OASIS_AEDIT },
   { "alias"    , "ali"     , POS_DEAD    , do_alias    , 0, 0 },
   { "afk"      , "afk"     , POS_DEAD    , do_gen_tog  , 0, SCMD_AFK },
@@ -744,7 +743,8 @@ ACMD(do_alias)
 	a->type = ALIAS_SIMPLE;
       a->next = GET_ALIASES(ch);
       GET_ALIASES(ch) = a;
-      send_to_char(ch, "Alias added.\r\n");
+      write_aliases(ch);
+      send_to_char(ch, "Alias saved.\r\n");
     }
   }
 }
@@ -1401,6 +1401,7 @@ void nanny(struct descriptor_data *d, char *arg)
       CREATE(d->character, struct char_data, 1);
       clear_char(d->character);
       CREATE(d->character->player_specials, struct player_special_data, 1);
+		  GET_HOST(d->character) = strdup(d->host);
       d->character->desc = d;
     }
     if (!*arg)
@@ -1435,6 +1436,8 @@ void nanny(struct descriptor_data *d, char *arg)
 	  CREATE(d->character, struct char_data, 1);
 	  clear_char(d->character);
 	  CREATE(d->character->player_specials, struct player_special_data, 1);
+	  GET_HOST(d->character) = strdup(d->host);
+
 	  d->character->desc = d;
 	  CREATE(d->character->player.name, char, strlen(tmp_name) + 1);
 	  strcpy(d->character->player.name, CAP(tmp_name));	/* strcpy: OK (size checked above) */

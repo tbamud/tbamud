@@ -27,7 +27,6 @@
 
 /* local functions */
 void build_player_index(void);
-void save_etext(struct char_data *ch);
 int sprintascii(char *out, bitvector_t bits);
 void tag_argument(char *argument, char *tag);
 void load_affects(FILE *fl, struct char_data *ch);
@@ -472,7 +471,7 @@ void save_char(struct char_data * ch)
     if (ch->desc->host && *ch->desc->host) {
       if (!GET_HOST(ch))
         GET_HOST(ch) = strdup(ch->desc->host);
-      else if (GET_HOST(ch) && !strcmp(GET_HOST(ch), ch->desc->host)) {
+      else if (GET_HOST(ch) && strcmp(GET_HOST(ch), ch->desc->host)) {
         free(GET_HOST(ch));
         GET_HOST(ch) = strdup(ch->desc->host);
       }
@@ -692,14 +691,6 @@ void save_char(struct char_data * ch)
   if (player_table[id].flags != i || save_index)
     save_player_index();
 }
-
-
-
-void save_etext(struct char_data *ch)
-{
-/* this will be really cool soon */
-}
-
 
 /* Separate a 4-character id tag from the data it precedes */
 void tag_argument(char *argument, char *tag)
