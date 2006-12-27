@@ -48,10 +48,13 @@ long top_idnum = 0;		/* highest idnum in use		 */
 extern struct pclean_criteria_data pclean_criteria[];
 
 
-/* ASCII Player Files - set this TRUE if you want poofin/poofout
+/* ASCII Player Files - set this FALSE if you don't want poofin/poofout
    strings saved in the pfiles
+   Welcor, 27/12/06 - This was bugged. The check below was #ifdef, not #if, 
+   so poofs were saved regardless of the text. Changed to TRUE to maintain
+   the saved poofs, and altered to #if below.
  */
-#define ASCII_SAVE_POOFS  FALSE
+#define ASCII_SAVE_POOFS  TRUE
 
 
 /*************************************************************************
@@ -362,14 +365,14 @@ int load_char(const char *name, struct char_data *ch)
 	break;
 
       case 'O':
-             if (!strcmp(tag, "Olc"))  GET_OLC_ZONE(ch) = atoi(line);
+             if (!strcmp(tag, "Olc "))  GET_OLC_ZONE(ch) = atoi(line);
         break;
 
       case 'P':
            if (!strcmp(tag, "Page"))  GET_PAGE_LENGTH(ch) = atoi(line);
 	else if (!strcmp(tag, "Pass"))	strcpy(GET_PASSWD(ch), line);
 	else if (!strcmp(tag, "Plyd"))	ch->player.time.played	= atoi(line);
- #ifdef ASCII_SAVE_POOFS
+ #if ASCII_SAVE_POOFS
 	else if (!strcmp(tag, "PfIn"))	POOFIN(ch)		= strdup(line);
 	else if (!strcmp(tag, "PfOt"))	POOFOUT(ch)		= strdup(line);
  #endif
@@ -546,7 +549,7 @@ void save_char(struct char_data * ch)
     kill_ems(buf);
     fprintf(fl, "Desc:\n%s~\n", buf);
   }
-#ifdef ASCII_SAVE_POOFS
+#if ASCII_SAVE_POOFS
   if (POOFIN(ch))				fprintf(fl, "PfIn: %s\n", POOFIN(ch));
   if (POOFOUT(ch))				fprintf(fl, "PfOt: %s\n", POOFOUT(ch));
 #endif
