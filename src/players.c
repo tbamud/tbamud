@@ -402,6 +402,9 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Titl"))	GET_TITLE(ch)		= strdup(line);
 	break;
 
+      case 'V':
+	     if (!strcmp(tag, "Vars"))	read_saved_vars_ascii(fl, ch, atoi(line));
+
       case 'W':
 	     if (!strcmp(tag, "Wate"))	GET_WEIGHT(ch)		= atoi(line);
 	else if (!strcmp(tag, "Wimp"))	GET_WIMP_LEV(ch)	= atoi(line);
@@ -527,7 +530,7 @@ void save_char(struct char_data * ch)
       tmp_aff[i].next = 0;
     }
   }
-  save_char_vars(ch);
+  // save_char_vars(ch);
 
   /*
    * remove the affections so that the raw values are stored; otherwise the
@@ -643,7 +646,8 @@ void save_char(struct char_data * ch)
     fprintf(fl, "0 0 0 0 0\n");
   }
 
-  if (GET_ALIASES(ch)) write_aliases_ascii(fl, ch);
+  write_aliases_ascii(fl, ch);
+  save_char_vars_ascii(fl, ch);
   
   fclose(fl);
 

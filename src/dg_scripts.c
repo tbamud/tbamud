@@ -2960,6 +2960,73 @@ void save_char_vars(struct char_data *ch)
   fclose(file);
 }
 
+/* load in a character's saved variables from an ASCII pfile*/
+void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count)
+{
+  long context;
+  char input_line[1024], *temp, *p;
+  char varname[READ_SIZE];
+  char context_str[READ_SIZE];
+	int i;
+
+  /*
+   * If getting to the menu from inside the game, the vars aren't removed.
+   * So let's not allocate them again.
+   */
+  if (SCRIPT(ch))
+    return;
+
+  /* create the space for the script structure which holds the vars */
+  /* We need to do this first, because later calls to 'remote' will need */
+  /* a script already assigned. */
+  CREATE(SCRIPT(ch), struct script_data, 1);
+
+  /* walk through each line in the file parsing variables */
+  for (i = 0; i < count; i++)
+  {
+    if (get_line(file, input_line)>0) {
+      p = temp = strdup(input_line);
+      temp = any_one_arg(temp, varname);
+      temp = any_one_arg(temp, context_str);
+      skip_spaces(&temp); /* temp now points to the rest of the line */
+
+      context = atol(context_str);
+      add_var(&(SCRIPT(ch)->global_vars), varname, temp, context);
+      free(p); /* plug memory hole */
+    }
+  }
+}
+
+/* save a characters variables out to an ASCII pfile */
+void save_char_vars_ascii(FILE *file, struct char_data *ch)
+{
+  struct trig_var_data *vars;
+  int count = 0;
+  /* immediate return if no script (and therefore no variables) structure */
+  /* has been created. this will happen when the player is logging in */
+  if (SCRIPT(ch) == NULL) return;
+
+  /* we should never be called for an NPC, but just in case... */
+  if (IS_NPC(ch)) return;
+
+  /* make sure this char has global variables to save */
+  if (ch->script->global_vars == NULL) return;
+
+  /* note that currently, context will always be zero. this may change */
+  /* in the future */
+  for (vars = ch->script->global_vars;vars;vars = vars->next)
+    if (*vars->name != '-')
+      count++;
+  
+  if (count != 0) {
+	  fprintf(file, "Vars: %d\n", count);
+  
+  for (vars = ch->script->global_vars;vars;vars = vars->next)
+    if (*vars->name != '-') /* don't save if it begins with - */
+      fprintf(file, "%s %ld %s\n", vars->name, vars->context, vars->value);
+  }
+}
+
 /* find_char() helpers */
 
 // Must be power of 2

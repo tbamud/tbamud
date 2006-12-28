@@ -1354,7 +1354,11 @@ int enter_player_game (struct descriptor_data *d)
       /* find_char helper */
       add_to_lookup_table(GET_ID(d->character), (void *)d->character);
 
-      read_saved_vars(d->character);
+      // after moving saving of variables to the player file, this should only be called
+      // in case nothing was found in the pfile. If something was found, SCRIPT(ch) will
+      // be set
+      if (!SCRIPT(d->character))
+        read_saved_vars(d->character);
 
       d->character->next = character_list;
       character_list = d->character;
