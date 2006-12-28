@@ -37,6 +37,8 @@ bitvector_t asciiflag_conv(char *flag);
 void save_char_vars(struct char_data *ch);
 void write_aliases_ascii(FILE *file, struct char_data *ch);
 void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
+void save_char_vars_ascii(FILE *file, struct char_data *ch);
+void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count);
 
 /* 'global' vars */
 struct player_index_element *player_table = NULL;	/* index to plr file	 */
