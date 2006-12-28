@@ -110,7 +110,7 @@ void read_aliases(struct char_data *ch)
     prev = t2;
     t2 = t2->next;
   }; 
-  
+
   fclose(file);
   return;
 
@@ -138,3 +138,67 @@ void delete_aliases(const char *charname)
      */
 }
 
+
+// until further notice, the alias->pfiles save and load functions will function
+// along side the old seperate alias file load, for compatibility.
+void write_aliases_ascii(FILE *file, struct char_data *ch)
+{
+  struct alias_data *temp;
+	int count = 0;
+
+  if (GET_ALIASES(ch) == NULL)
+    return;
+
+  for (temp = GET_ALIASES(ch); temp; temp = temp->next)
+    count++;
+    
+  fprintf(file, "Alis: %d\n", count);
+	// the +1 thing below is due to alias replacements having
+	// a space prepended in memory. The reason for this escapes me.
+	// Welcor 27/12/06
+  for (temp = GET_ALIASES(ch); temp; temp = temp->next) {
+
+    fprintf(file, "%s\n"	/* Alias */
+		  "%s\n"	/* Replacement */
+		  "%d\n",	/* Type */
+		temp->alias,
+		temp->replacement+1, 
+		temp->type);
+  }
+}
+
+void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
+{   
+	int i;
+  struct alias_data *temp;
+  char abuf[MAX_INPUT_LENGTH], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
+
+	if (count == 0) {
+		GET_ALIASES(ch) = NULL;
+    return; // no aliases in the list
+  }
+  
+  for (i = 0; i < count; i++) {
+    /* Read the aliased command. */
+		get_line(file, abuf);
+
+    /* Read the replacement. */
+		get_line(file, tbuf);
+    strcpy(rbuf, " ");
+    strcat(rbuf, tbuf); // strcat: OK  
+        
+		/* read the type */
+		get_line(file, tbuf);
+    
+    if (abuf && *abuf && tbuf && *tbuf && rbuf && *rbuf)
+    {
+		  CREATE(temp, struct alias_data, 1);
+		  temp->alias = strdup(abuf);
+		  temp->replacement = strdup(rbuf);
+		  temp->type = atoi(tbuf);
+		  temp->next = GET_ALIASES(ch);
+		  GET_ALIASES(ch) = temp;
+  	}
+  } 
+  
+}

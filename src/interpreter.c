@@ -743,8 +743,8 @@ ACMD(do_alias)
 	a->type = ALIAS_SIMPLE;
       a->next = GET_ALIASES(ch);
       GET_ALIASES(ch) = a;
-      write_aliases(ch);
-      send_to_char(ch, "Alias saved.\r\n");
+//      save_char(ch);
+      send_to_char(ch, "Alias ready.\r\n");
     }
   }
 }
@@ -1317,7 +1317,16 @@ int enter_player_game (struct descriptor_data *d)
     room_vnum load_room;
     
       reset_char(d->character);
+		/* 
+		 * See if there might be some aliases in the old alias file. 
+		 * Only do this if there were no aliases in the pfile.
+		 */
+		if (GET_ALIASES(d->character) == NULL) 
+		{
       read_aliases(d->character);
+      // delete the old file - player will be saved in a second.
+      delete_aliases(GET_NAME(d->character)); 
+    }
 
       if (PLR_FLAGGED(d->character, PLR_INVSTART))
 	GET_INVIS_LEV(d->character) = GET_LEVEL(d->character);

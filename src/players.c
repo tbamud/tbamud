@@ -18,7 +18,6 @@
 #include "pfdefaults.h"
 #include "dg_scripts.h"
 #include "comm.h"
-#include "genmob.h"
 
 #define LOAD_HIT	0
 #define LOAD_MANA	1
@@ -36,6 +35,8 @@ void load_HMVS(struct char_data *ch, const char *line, int mode);
 /* external fuctions */
 bitvector_t asciiflag_conv(char *flag);
 void save_char_vars(struct char_data *ch);
+void write_aliases_ascii(FILE *file, struct char_data *ch);
+void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
 
 /* 'global' vars */
 struct player_index_element *player_table = NULL;	/* index to plr file	 */
@@ -290,7 +291,8 @@ int load_char(const char *name, struct char_data *ch)
     GET_OLC_ZONE(ch) = PFDEF_OLC;
     GET_HOST(ch) = NULL;
     GET_PAGE_LENGTH(ch) = PFDEF_PAGELENGTH;
-
+    GET_ALIASES(ch) = NULL;
+    
     while (get_line(fl, line)) {
       tag_argument(line, tag);
 
@@ -301,6 +303,7 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Aff "))	AFF_FLAGS(ch)		= asciiflag_conv(line);
 	else if (!strcmp(tag, "Affs"))	load_affects(fl, ch);
 	else if (!strcmp(tag, "Alin"))	GET_ALIGNMENT(ch)	= atoi(line);
+	else if (!strcmp(tag, "Alis"))	read_aliases_ascii(fl, ch, atoi(line));
 	break;
 
       case 'B':
@@ -351,7 +354,7 @@ int load_char(const char *name, struct char_data *ch)
 
       case 'L':
 	     if (!strcmp(tag, "Last"))	ch->player.time.logon	= atol(line);
-      else if (!strcmp(tag, "Lern"))	GET_PRACTICES(ch)	= atoi(line);
+  else if (!strcmp(tag, "Lern"))	GET_PRACTICES(ch)	= atoi(line);
 	else if (!strcmp(tag, "Levl"))	GET_LEVEL(ch)		= atoi(line);
 	break;
 
@@ -365,11 +368,11 @@ int load_char(const char *name, struct char_data *ch)
 	break;
 
       case 'O':
-             if (!strcmp(tag, "Olc "))  GET_OLC_ZONE(ch) = atoi(line);
-        break;
+       if (!strcmp(tag, "Olc "))  GET_OLC_ZONE(ch) = atoi(line);
+  break;
 
       case 'P':
-           if (!strcmp(tag, "Page"))  GET_PAGE_LENGTH(ch) = atoi(line);
+       if (!strcmp(tag, "Page"))  GET_PAGE_LENGTH(ch) = atoi(line);
 	else if (!strcmp(tag, "Pass"))	strcpy(GET_PASSWD(ch), line);
 	else if (!strcmp(tag, "Plyd"))	ch->player.time.played	= atoi(line);
  #if ASCII_SAVE_POOFS
@@ -640,6 +643,8 @@ void save_char(struct char_data * ch)
     fprintf(fl, "0 0 0 0 0\n");
   }
 
+  if (GET_ALIASES(ch)) write_aliases_ascii(fl, ch);
+  
   fclose(fl);
 
   /* more char_to_store code to restore affects */

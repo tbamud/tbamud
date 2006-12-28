@@ -29,7 +29,7 @@ OBJFILES = act.comm.o act.informative.o act.item.o act.movement.o \
 	fight.o genmob.o genobj.o genolc.o genshp.o genwld.o genzon.o graph.o \
 	handler.o house.o improved-edit.o interpreter.o limits.o magic.o mail.o \
 	medit.o mobact.o modify.o oasis.o oasis_copy.o oasis_delete.o \
-	oasis_list.o objsave.o oedit.o olc.o random.o redit.o sedit.o \
+	oasis_list.o objsave.o oedit.o random.o redit.o sedit.o \
 	shop.o spec_assign.o spec_procs.o spell_parser.o spells.o tedit.o \
 	utils.o weather.o zedit.o bsd-snprintf.o \
 	dg_comm.o dg_db_scripts.o dg_event.o dg_handler.o dg_mobcmd.o \
@@ -43,7 +43,7 @@ CXREF_FILES = act.comm.c act.informative.c act.item.c act.movement.c \
 	fight.c genmob.c genobj.c genolc.c genshp.c genwld.c genzon.c graph.c \
 	handler.c house.c improved-edit.c interpreter.c limits.c magic.c mail.c \
 	medit.c mobact.c modify.c oasis.c oasis_copy.o oasis_delete.c \
-	oasis_list.o objsave.c oedit.c olc.c random.c redit.c sedit.c \
+	oasis_list.o objsave.c oedit.c random.c redit.c sedit.c \
 	shop.c spec_assign.c spec_procs.c spell_parser.c spells.c tedit.c \
 	utils.c weather.c zedit.c hedit.c bsd-snprintf.c players.c
 
