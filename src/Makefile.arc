@@ -25,7 +25,7 @@ OBJFILES = o.comm act.o.comm act.o.informative act.o.movement act.o.item \
 	act.o.offensive act.o.other act.o.social act.o.wizard o.ban o.boards \
 	o.castle o.class o.config o.constants o.db o.fight o.graph o.handler \
 	o.house o.interpreter o.limits o.magic o.mail o.mobact o.modify \
-	o.objsave o.olc o.random o.shop o.spec_assign o.spec_procs \
+	o.objsave o.random o.shop o.spec_assign o.spec_procs \
 	o.spell_parser o.spells o.utils o.weather o.players o.alias
 
 default:	all

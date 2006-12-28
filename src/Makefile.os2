@@ -25,7 +25,7 @@ OBJFILES = comm.o act.comm.o act.informative.o act.movement.o act.item.o \
         act.offensive.o act.other.o act.social.o act.wizard.o ban.o boards.o \
         castle.o class.o config.o constants.o db.o fight.o graph.o handler.o \
         house.o interpreter.o limits.o magic.o mail.o mobact.o modify.o \
-        objsave.o olc.o shop.o spec_assign.o spec_procs.o spell_parser.o \
+        objsave.o shop.o spec_assign.o spec_procs.o spell_parser.o \
         spells.o utils.o weather.o random.o alias.o players.o
 
 default: .accepted
@@ -171,9 +171,6 @@ modify.o: modify.c conf.h sysdep.h structs.h utils.h interpreter.h handler.h db.
 objsave.o: objsave.c conf.h sysdep.h structs.h comm.h handler.h db.h \
   interpreter.h utils.h spells.h
         $(CC) -c $(CFLAGS) objsave.c
-olc.o: olc.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h db.h \
-  olc.h
-        $(CC) -c $(CFLAGS) olc.c
 players.o: players.c conf.h sysdep.h structs.h utils.h db.h handler.h pfdefaults.h
         $(CC) -c $(CFLAGS) players.c
 random.o: random.c

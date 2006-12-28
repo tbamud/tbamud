@@ -69,7 +69,6 @@ Dep_circledexe = \
    handler.obj\
    magic.obj\
    mail.obj\
-   olc.obj\
    objsave.obj\
    players.obj\
    modify.obj\
@@ -112,7 +111,6 @@ house.obj+
 handler.obj+
 magic.obj+
 mail.obj+
-olc.obj+
 objsave.obj+
 players.obj+
 modify.obj+
@@ -253,11 +251,6 @@ magic.obj :  magic.c
 mail.obj :  mail.c
   $(BCC32) -P- -c @&&|
  $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ mail.c
-|
-
-olc.obj :  olc.c
-  $(BCC32) -P- -c @&&|
- $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ olc.c
 |
 
 objsave.obj :  objsave.c

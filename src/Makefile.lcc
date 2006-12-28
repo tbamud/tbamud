@@ -25,7 +25,6 @@ OBJS=\
 	shop.obj \
 	random.obj \
 	players.obj \
-	olc.obj \
 	objsave.obj \
 	modify.obj \
 	mobact.obj \
@@ -171,20 +170,6 @@ PLAYERS_C=\
 
 players.o:  $(PLAYERS_C) $(DISTDIR)\src\players.c
     $(CC)  $(CFLAGS) $(DISTDIR)\src\players.c
-
-# Build OLC.C
-OLC_C=\
-    $(DISTDIR)\src\sysdep.h\
-    $(DISTDIR)\src\structs.h\
-    $(DISTDIR)\src\utils.h\
-    $(DISTDIR)\src\comm.h\
-    $(DISTDIR)\src\interpreter.h\
-    $(DISTDIR)\src\handler.h\
-    $(DISTDIR)\src\db.h\
-    $(DISTDIR)\src\olc.h\
-
-olc.obj: $(OLC_C) $(DISTDIR)\src\olc.c
-    $(CC)  $(CFLAGS) $(DISTDIR)\src\olc.c
 
 # Build OBJSAVE.C
 OBJSAVE_C=\

@@ -39,7 +39,7 @@ OBJFILES = comm.obj act.comm.obj act.informative.obj act.movement.obj act.item.o
         act.offensive.obj act.other.obj act.social.obj act.wizard.obj ban.obj boards.obj \
         castle.obj class.obj config.obj constants.obj db.obj fight.obj graph.obj handler.obj \
         house.obj interpreter.obj limits.obj magic.obj mail.obj mobact.obj modify.obj \
-        objsave.obj olc.obj shop.obj spec_assign.obj spec_procs.obj spell_parser.obj \
+        objsave.obj shop.obj spec_assign.obj spec_procs.obj spell_parser.obj \
         spells.obj utils.obj weather.obj random.obj alias.obj players.obj
 
 default: circle.exe
@@ -130,9 +130,6 @@ modify.obj: modify.c conf.h sysdep.h structs.h utils.h interpreter.h handler.h d
 objsave.obj: objsave.c conf.h sysdep.h structs.h comm.h handler.h db.h \
   interpreter.h utils.h spells.h
 	$(CC) -c $(CFLAGS) objsave.c
-olc.obj: olc.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h db.h \
-  olc.h
-	$(CC) -c $(CFLAGS) olc.c
 players.o: players.c conf.h sysdep.h structs.h utils.h db.h handler.h pfdefaults.h
 	$(CC) -c $(CFLAGS) players.c
 random.obj: random.c
