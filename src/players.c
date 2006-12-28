@@ -39,6 +39,7 @@ void write_aliases_ascii(FILE *file, struct char_data *ch);
 void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
 void save_char_vars_ascii(FILE *file, struct char_data *ch);
 void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count);
+void strip_cr(char *buffer);
 
 /* 'global' vars */
 struct player_index_element *player_table = NULL;	/* index to plr file	 */
@@ -433,30 +434,6 @@ int load_char(const char *name, struct char_data *ch)
   return(id);
 }
 
-
-/* remove ^M's from file output */
-/* There may be a similar function in Oasis (and I'm sure
-   it's part of obuild).  Remove this if you get a
-   multiple definition error or if it you want to use a
-   substitute
-*/
-void kill_ems(char *str)
-{
-  char *ptr1, *ptr2, *tmp;
-
-  tmp = str;
-  ptr1 = str;
-  ptr2 = str;
-
-  while (*ptr1) {
-    if ((*(ptr2++) = *(ptr1++)) == '\r')
-      if (*ptr1 == '\r')
-	ptr1++;
-  }
-  *ptr2 = '\0';
-}
-
-
 /*
  * write the vital data of a player to the player file
  *
@@ -554,14 +531,14 @@ void save_char(struct char_data * ch)
   if (GET_TITLE(ch))				fprintf(fl, "Titl: %s\n", GET_TITLE(ch));
   if (ch->player.description && *ch->player.description) {
     strcpy(buf, ch->player.description);
-    kill_ems(buf);
+    strip_cr(buf);
     fprintf(fl, "Desc:\n%s~\n", buf);
   }
 #if ASCII_SAVE_POOFS
   if (POOFIN(ch))				fprintf(fl, "PfIn: %s\n", POOFIN(ch));
   if (POOFOUT(ch))				fprintf(fl, "PfOt: %s\n", POOFOUT(ch));
 #endif
-  if (GET_SEX(ch)	   != PFDEF_SEX)	fprintf(fl, "Sex : %d\n", GET_SEX(ch)); 
+  if (GET_SEX(ch)	     != PFDEF_SEX)	fprintf(fl, "Sex : %d\n", GET_SEX(ch)); 
   if (GET_CLASS(ch)	   != PFDEF_CLASS)	fprintf(fl, "Clas: %d\n", GET_CLASS(ch)); 
   if (GET_LEVEL(ch)	   != PFDEF_LEVEL)	fprintf(fl, "Levl: %d\n", GET_LEVEL(ch));
   if (GET_HOME(ch)	   != PFDEF_HOMETOWN)	fprintf(fl, "Home: %d\n", GET_HOME(ch));
@@ -574,7 +551,7 @@ void save_char(struct char_data * ch)
   if (GET_HOST(ch))				fprintf(fl, "Host: %s\n", GET_HOST(ch));
   if (GET_HEIGHT(ch)	   != PFDEF_HEIGHT)	fprintf(fl, "Hite: %d\n", GET_HEIGHT(ch));
   if (GET_WEIGHT(ch)	   != PFDEF_HEIGHT)	fprintf(fl, "Wate: %d\n", GET_WEIGHT(ch));
-  if (GET_ALIGNMENT(ch)	   != PFDEF_ALIGNMENT)	fprintf(fl, "Alin: %d\n", GET_ALIGNMENT(ch));
+  if (GET_ALIGNMENT(ch)  != PFDEF_ALIGNMENT)	fprintf(fl, "Alin: %d\n", GET_ALIGNMENT(ch));
 
   if (PLR_FLAGS(ch)	   != PFDEF_PLRFLAGS) {
     sprintascii(bits, PLR_FLAGS(ch));		fprintf(fl, "Act : %s\n", bits);
