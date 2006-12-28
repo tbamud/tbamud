@@ -379,7 +379,6 @@ int Crash_delete_file(char *name)
 int Crash_delete_crashfile(struct char_data *ch)
 {
   char fname[MAX_INPUT_LENGTH];
-  struct rent_info rent;
   int numread;
   FILE *fl;
   int rentcode,timed,netcost,gold,account,nitems;
@@ -403,9 +402,6 @@ int Crash_delete_crashfile(struct char_data *ch)
   if (rentcode == RENT_CRASH)
     Crash_delete_file(GET_NAME(ch));
 
-  if (rent.rentcode == RENT_CRASH)
-    Crash_delete_file(GET_NAME(ch));
-
   return (1);
 }
 
@@ -413,7 +409,6 @@ int Crash_delete_crashfile(struct char_data *ch)
 int Crash_clean_file(char *name)
 {
   char fname[MAX_STRING_LENGTH], filetype[20];
-  struct rent_info rent;
   int numread;
   FILE *fl;
   int rentcode, timed, netcost, gold, account, nitems;
@@ -439,9 +434,6 @@ int Crash_clean_file(char *name)
   sscanf(line, "%d %d %d %d %d %d",&rentcode,&timed,&netcost,
          &gold,&account,&nitems);
 
-  rentcode = rent.rentcode;
-  timed = rent.time;
-  
   if ((rentcode == RENT_CRASH) ||
       (rentcode == RENT_FORCED) || (rentcode == RENT_TIMEDOUT)) {
     if (timed < time(0) - (crash_file_timeout * SECS_PER_REAL_DAY)) {
@@ -490,7 +482,6 @@ void Crash_listrent(struct char_data *ch, char *name)
   char fname[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH];
   /*   struct obj_file_elem object; */
   struct obj_data *obj;
-  struct rent_info rent;
   int rentcode,timed,netcost,gold,account,nitems;
   int nr;
   char line[MAX_STRING_LENGTH];
@@ -516,8 +507,6 @@ void Crash_listrent(struct char_data *ch, char *name)
   
   sscanf(line,"%d %d %d %d %d %d",&rentcode,&timed,&netcost,
          &gold,&account,&nitems);
-
-  rentcode=rent.rentcode;
 
   switch (rentcode) {
   case RENT_RENTED:
@@ -716,8 +705,7 @@ void Crash_crashsave(struct char_data *ch)
   rent.rentcode = RENT_CRASH;
   rent.time = time(0);
 
-  fprintf(fp,"%d %d %d %d %d %d\r\n",rent.rentcode,rent.time,
-           rent.net_cost_per_diem,rent.gold,rent.account,rent.nitems);
+  fprintf(fp,"%d %d 0 0 0 0\r\n",rent.rentcode,rent.time);
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j)) {
@@ -798,8 +786,8 @@ void Crash_idlesave(struct char_data *ch)
   rent.gold = GET_GOLD(ch);
   rent.account = GET_BANK_GOLD(ch);
 
-  fprintf(fp,"%d %d %d %d %d %d\r\n",rent.rentcode,rent.time,
-           rent.net_cost_per_diem,rent.gold,rent.account,rent.nitems);
+  fprintf(fp,"%d %d %d %d %d 0\r\n",rent.rentcode,rent.time,
+           rent.net_cost_per_diem,rent.gold,rent.account);
   
   for (j = 0; j < NUM_WEARS; j++) {
     if (GET_EQ(ch, j)) {
@@ -847,8 +835,8 @@ void Crash_rentsave(struct char_data *ch, int cost)
   rent.gold = GET_GOLD(ch);
   rent.account = GET_BANK_GOLD(ch);
 
-  fprintf(fp,"%d %d %d %d %d %d\r\n",rent.rentcode,rent.time,
-           rent.net_cost_per_diem,rent.gold,rent.account,rent.nitems);
+  fprintf(fp,"%d %d %d %d %d 0\r\n",rent.rentcode,rent.time,
+           rent.net_cost_per_diem,rent.gold,rent.account);
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j)) {
@@ -898,8 +886,8 @@ void Crash_cryosave(struct char_data *ch, int cost)
   rent.account = GET_BANK_GOLD(ch);
   rent.net_cost_per_diem = 0;
 
-  fprintf(fp,"%d %d %d %d %d %d\r\n",rent.rentcode,rent.time,
-           rent.net_cost_per_diem,rent.gold,rent.account,rent.nitems);
+  fprintf(fp,"%d %d %d %d %d 0\r\n",rent.rentcode,rent.time,
+           rent.net_cost_per_diem,rent.gold,rent.account);
 
 
   for (j = 0; j < NUM_WEARS; j++)
