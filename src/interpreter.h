@@ -119,7 +119,7 @@ struct alias_data {
 #define SCMD_NOGRATZ	8
 #define SCMD_NOWIZ	9
 #define SCMD_QUEST	10
-#define SCMD_ROOMFLAGS	11
+#define SCMD_SHOWVNUMS	11
 #define SCMD_NOREPEAT	12
 #define SCMD_HOLYLIGHT	13
 #define SCMD_SLOWNS	14
@@ -130,6 +130,8 @@ struct alias_data {
 #define SCMD_AFK        19
 #define SCMD_COLOR      20 
 #define SCMD_SYSLOG     21
+#define SCMD_WIMPY      22
+#define SCMD_PAGELENGTH 23
 
 /* do_wizutil */
 #define SCMD_REROLL	0

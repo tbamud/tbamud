@@ -55,12 +55,9 @@ ACMD(do_ungroup);
 ACMD(do_report);
 ACMD(do_split);
 ACMD(do_use);
-ACMD(do_wimpy);
 ACMD(do_display);
 ACMD(do_gen_write);
-ACMD(do_gen_tog);
 ACMD(do_file);
-ACMD(do_pagelength);
 
 ACMD(do_quit)
 {
@@ -676,49 +673,6 @@ ACMD(do_use)
   mag_objectmagic(ch, mag_item, buf);
 }
 
-
-
-ACMD(do_wimpy)
-{
-  char arg[MAX_INPUT_LENGTH];
-  int wimp_lev;
-
-  /* 'wimp_level' is a player_special. -gg 2/25/98 */
-  if (IS_NPC(ch))
-    return;
-
-  one_argument(argument, arg);
-
-  if (!*arg) {
-    if (GET_WIMP_LEV(ch)) {
-      send_to_char(ch, "Your current wimp level is %d hit points.\r\n", GET_WIMP_LEV(ch));
-      return;
-    } else {
-      send_to_char(ch, "At the moment, you're not a wimp.  (sure, sure...)\r\n");
-      return;
-    }
-  }
-  if (isdigit(*arg)) {
-    if ((wimp_lev = atoi(arg)) != 0) {
-      if (wimp_lev < 0)
-	send_to_char(ch, "Heh, heh, heh.. we are jolly funny today, eh?\r\n");
-      else if (wimp_lev > GET_MAX_HIT(ch))
-	send_to_char(ch, "That doesn't make much sense, now does it?\r\n");
-      else if (wimp_lev > (GET_MAX_HIT(ch) / 2))
-	send_to_char(ch, "You can't set your wimp level above half your hit points.\r\n");
-      else {
-	send_to_char(ch, "Okay, you'll wimp out if you drop below %d hit points.\r\n", wimp_lev);
-	GET_WIMP_LEV(ch) = wimp_lev;
-      }
-    } else {
-      send_to_char(ch, "Okay, you'll now tough out fights to the bitter end.\r\n");
-      GET_WIMP_LEV(ch) = 0;
-    }
-  } else
-    send_to_char(ch, "Specify at how many hit points you want to wimp out at.  (0 to disable)\r\n");
-}
-
-
 ACMD(do_display)
 {
   size_t i;
@@ -839,157 +793,6 @@ ACMD(do_gen_write)
   send_to_char(ch, "Okay.  Thanks!\r\n");
 }
 
-
-
-#define TOG_OFF 0
-#define TOG_ON  1
-
-#define PRF_TOG_CHK(ch,flag) ((TOGGLE_BIT(PRF_FLAGS(ch), (flag))) & (flag))
-
-ACMD(do_gen_tog)
-{
-  long result;
-
-  const char *tog_messages[][2] = {
-    {"You are now safe from summoning by other players.\r\n",
-    "You may now be summoned by other players.\r\n"},
-    {"Nohassle disabled.\r\n",
-    "Nohassle enabled.\r\n"},
-    {"Brief mode off.\r\n",
-    "Brief mode on.\r\n"},
-    {"Compact mode off.\r\n",
-    "Compact mode on.\r\n"},
-    {"You can now hear tells.\r\n",
-    "You are now deaf to tells.\r\n"},
-    {"You can now hear auctions.\r\n",
-    "You are now deaf to auctions.\r\n"},
-    {"You can now hear shouts.\r\n",
-    "You are now deaf to shouts.\r\n"},
-    {"You can now hear gossip.\r\n",
-    "You are now deaf to gossip.\r\n"},
-    {"You can now hear the congratulation messages.\r\n",
-    "You are now deaf to the congratulation messages.\r\n"},
-    {"You can now hear the Wiz-channel.\r\n",
-    "You are now deaf to the Wiz-channel.\r\n"},
-    {"You are no longer part of the Quest.\r\n",
-    "Okay, you are part of the Quest!\r\n"},
-    {"You will no longer see the room flags.\r\n",
-    "You will now see the room flags.\r\n"},
-    {"You will now have your communication repeated.\r\n",
-    "You will no longer have your communication repeated.\r\n"},
-    {"HolyLight mode off.\r\n",
-    "HolyLight mode on.\r\n"},
-    {"Nameserver_is_slow changed to NO; IP addresses will now be resolved.\r\n",
-    "Nameserver_is_slow changed to YES; sitenames will no longer be resolved.\r\n"},
-    {"Autoexits disabled.\r\n",
-    "Autoexits enabled.\r\n"},
-    {"Will no longer track through doors.\r\n",
-    "Will now track through doors.\r\n"},
-    {"Will no longer clear screen in OLC.\r\n",
-    "Will now clear screen in OLC.\r\n"},
-    {"Buildwalk Off.\r\n",
-    "Buildwalk On.\r\n"},
-    {"AFK flag is now off.\r\n",
-    "AFK flag is now on.\r\n"}
-  };
-
-
-  if (IS_NPC(ch))
-    return;
-
-  switch (subcmd) {
-  case SCMD_NOSUMMON:
-    result = PRF_TOG_CHK(ch, PRF_SUMMONABLE);
-    break;
-  case SCMD_NOHASSLE:
-    result = PRF_TOG_CHK(ch, PRF_NOHASSLE);
-    break;
-  case SCMD_BRIEF:
-    result = PRF_TOG_CHK(ch, PRF_BRIEF);
-    break;
-  case SCMD_COMPACT:
-    result = PRF_TOG_CHK(ch, PRF_COMPACT);
-    break;
-  case SCMD_NOTELL:
-    result = PRF_TOG_CHK(ch, PRF_NOTELL);
-    break;
-  case SCMD_NOAUCTION:
-    result = PRF_TOG_CHK(ch, PRF_NOAUCT);
-    break;
-  case SCMD_NOSHOUT:
-    result = PRF_TOG_CHK(ch, PRF_NOSHOUT);
-    break;
-  case SCMD_NOGOSSIP:
-    result = PRF_TOG_CHK(ch, PRF_NOGOSS);
-    break;
-  case SCMD_NOGRATZ:
-    result = PRF_TOG_CHK(ch, PRF_NOGRATZ);
-    break;
-  case SCMD_NOWIZ:
-    result = PRF_TOG_CHK(ch, PRF_NOWIZ);
-    break;
-  case SCMD_QUEST:
-    result = PRF_TOG_CHK(ch, PRF_QUEST);
-    break;
-  case SCMD_ROOMFLAGS:
-    result = PRF_TOG_CHK(ch, PRF_SHOWVNUMS);
-    break;
-  case SCMD_NOREPEAT:
-    result = PRF_TOG_CHK(ch, PRF_NOREPEAT);
-    break;
-  case SCMD_HOLYLIGHT:
-    result = PRF_TOG_CHK(ch, PRF_HOLYLIGHT);
-    break;
-  case SCMD_SLOWNS:
-    result = (CONFIG_NS_IS_SLOW = !CONFIG_NS_IS_SLOW);
-    break;
-  case SCMD_AUTOEXIT:
-    result = PRF_TOG_CHK(ch, PRF_AUTOEXIT);
-    break;
-  case SCMD_TRACK:
-    result = (CONFIG_TRACK_T_DOORS = !CONFIG_TRACK_T_DOORS);
-    break;
-  case SCMD_CLS:
-    result = PRF_TOG_CHK(ch, PRF_CLS);
-    break;
-  case SCMD_BUILDWALK:
-    if (GET_LEVEL(ch) < LVL_BUILDER) {
-      send_to_char(ch, "Builders only, sorry.\r\n");  	
-      return;
-    }
-    result = PRF_TOG_CHK(ch, PRF_BUILDWALK);
-    if (PRF_FLAGGED(ch, PRF_BUILDWALK))
-      mudlog(CMP, GET_LEVEL(ch), TRUE, 
-             "OLC: %s turned buildwalk on. Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
-    else
-      mudlog(CMP, GET_LEVEL(ch), TRUE,
-             "OLC: %s turned buildwalk off. Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
-    break;
-  case SCMD_AFK:
-    result = PRF_TOG_CHK(ch, PRF_AFK);
-    if (PRF_FLAGGED(ch, PRF_AFK))
-      act("$n has gone AFK.", TRUE, ch, 0, 0, TO_ROOM);
-    else
-      act("$n has come back from AFK.", TRUE, ch, 0, 0, TO_ROOM);
-    break;
-  default:
-    log("SYSERR: Unknown subcmd %d in do_gen_toggle.", subcmd);
-    /*  SYSERR_DESC:
-     *  This is the same as the unhandled case in do_gen_ps(), but in the
-     *  function which handles 'compact', 'brief', and so forth.
-     */
-    return;
-  }
-
-  if (result)
-    send_to_char(ch, "%s", tog_messages[subcmd][TOG_ON]);
-  else
-    send_to_char(ch, "%s", tog_messages[subcmd][TOG_OFF]);
-
-  return;
-}
-
-
 ACMD(do_file)
 {
   FILE *req_file;
@@ -1087,23 +890,4 @@ ACMD(do_file)
    }
    page_string(ch->desc, buf, 1);
 
-}
-
-ACMD(do_pagelength)
-{
-  char arg[MAX_INPUT_LENGTH];
-
-  if (IS_NPC(ch))
-    return;
-
-  one_argument(argument, arg);
-
-  if (!*arg) {
-    send_to_char(ch, "You current page length is set to %d lines.\r\n", GET_PAGE_LENGTH(ch));
-  } else if (is_number(arg)) {
-    GET_PAGE_LENGTH(ch) = MIN(MAX(atoi(arg), 5), 255);
-    send_to_char(ch, "Okay, your page length is now set to %d lines.\r\n", GET_PAGE_LENGTH(ch));
-  } else {
-  send_to_char(ch, "Please specify a number of lines (5 - 255).\r\n");
-  }
 }

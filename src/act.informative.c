@@ -1749,40 +1749,11 @@ ACMD(do_diagnose)
   }
 }
 
-
-const char *ctypes[] = {
-  "off", "sparse", "normal", "complete", "\n"
-};
-
-ACMD(do_color)
-{
-  char arg[MAX_INPUT_LENGTH];
-  int tp;
-
-  if (IS_NPC(ch))
-    return;
-
-  one_argument(argument, arg);
-
-  if (!*arg) {
-    send_to_char(ch, "Your current color level is %s.\r\n", ctypes[COLOR_LEV(ch)]);
-    return;
-  }
-  if (((tp = search_block(arg, ctypes, FALSE)) == -1)) {
-    send_to_char(ch, "Usage: color { Off | Sparse | Normal | Complete }\r\n");
-    return;
-  }
-  REMOVE_BIT(PRF_FLAGS(ch), PRF_COLOR_1 | PRF_COLOR_2);
-  SET_BIT(PRF_FLAGS(ch), (PRF_COLOR_1 * (tp & 1)) | (PRF_COLOR_2 * (tp & 2) >> 1));
-
-  send_to_char(ch, "Your %scolor%s is now %s.\r\n", CCRED(ch, C_SPR), CCNRM(ch, C_OFF), ctypes[tp]);
-}
-
-
 ACMD(do_toggle)
 {
   char buf2[4], arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
-  int toggle, result = 0;
+  int toggle, tp, wimp_lev, result = 0;
+  const char *types[] = { "off", "brief", "normal", "on", "\n" };
 
   if (IS_NPC(ch))
     return;
@@ -1795,70 +1766,84 @@ ACMD(do_toggle)
       strcpy(buf2, "OFF");        /* strcpy: OK */
     else
       sprintf(buf2, "%-3.3d", GET_WIMP_LEV(ch));  /* sprintf: OK */
+	
+	if (GET_LEVEL(ch) == LVL_IMPL) {
+      send_to_char(ch,
+        " SlowNameserver: %-3s   "
+	"                        "
+	" Trackthru Doors: %-3s\r\n", 
 
+	ONOFF(CONFIG_NS_IS_SLOW),
+	ONOFF(CONFIG_TRACK_T_DOORS));
+    } 
+	
     if (GET_LEVEL(ch) >= LVL_IMMORT) {
       send_to_char(ch,
         "      Buildwalk: %-3s    "
-        "                         "
-        "        ClsOLC: %-3s\r\n"
-        "      No Hassle: %-3s    "
+        "          NoWiz: %-3s    "
+        "         ClsOLC: %-3s\r\n"
+        "       NoHassle: %-3s    "
         "      Holylight: %-3s    "
-        "     Show Vnums: %-3s\r\n",
+        "      ShowVnums: %-3s\r\n"
+        "         Syslog: %-3s\r\n",
 
         ONOFF(PRF_FLAGGED(ch, PRF_BUILDWALK)),
+        ONOFF(PRF_FLAGGED(ch, PRF_NOWIZ)),
         ONOFF(PRF_FLAGGED(ch, PRF_CLS)),
         ONOFF(PRF_FLAGGED(ch, PRF_NOHASSLE)),
         ONOFF(PRF_FLAGGED(ch, PRF_HOLYLIGHT)),
-        ONOFF(PRF_FLAGGED(ch, PRF_SHOWVNUMS))
-      );
+        ONOFF(PRF_FLAGGED(ch, PRF_SHOWVNUMS)),
+        types[(PRF_FLAGGED(ch, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(ch, PRF_LOG2) ? 2 : 0)]);
     }
 
   send_to_char(ch,
     "Hit Pnt Display: %-3s    "
-    "     Brief Mode: %-3s    "
-    " Summon Protect: %-3s\r\n"
+    "          Brief: %-3s    "
+    "     Summonable: %-3s\r\n"
 
     "   Move Display: %-3s    "
-    "   Compact Mode: %-3s    "
-    "       On Quest: %-3s\r\n"
+    "        Compact: %-3s    "
+    "          Quest: %-3s\r\n"
 
     "   Mana Display: %-3s    "
     "         NoTell: %-3s    "
-    "   Repeat Comm.: %-3s\r\n"
+    "       NoRepeat: %-3s\r\n"
 
-    " Auto Show Exit: %-3s    "
+    "      AutoExits: %-3s    "
     "        NoShout: %-3s    "
-    "     Wimp Level: %-3s\r\n"
+    "          Wimpy: %-3s\r\n"
 
-    " Gossip Channel: %-3s    "
-    "Auction Channel: %-3s    "
-    "  Grats Channel: %-3s\r\n"
+    "       NoGossip: %-3s    "
+    "      NoAuction: %-3s    "
+    "        NoGrats: %-3s\r\n"
 
-    "       AFK flag: %-3s    "
-    "    Color Level: %s     \r\n ",
+    "            AFK: %-3s    "
+    "     Pagelength: %-3d    "
+    "          Color: %s     \r\n ",
 
     ONOFF(PRF_FLAGGED(ch, PRF_DISPHP)),
     ONOFF(PRF_FLAGGED(ch, PRF_BRIEF)),
-    ONOFF(!PRF_FLAGGED(ch, PRF_SUMMONABLE)),
+    ONOFF(PRF_FLAGGED(ch, PRF_SUMMONABLE)),
 
     ONOFF(PRF_FLAGGED(ch, PRF_DISPMOVE)),
     ONOFF(PRF_FLAGGED(ch, PRF_COMPACT)),
-    YESNO(PRF_FLAGGED(ch, PRF_QUEST)),
+    ONOFF(PRF_FLAGGED(ch, PRF_QUEST)),
 
     ONOFF(PRF_FLAGGED(ch, PRF_DISPMANA)),
     ONOFF(PRF_FLAGGED(ch, PRF_NOTELL)),
-    YESNO(!PRF_FLAGGED(ch, PRF_NOREPEAT)),
+    ONOFF(PRF_FLAGGED(ch, PRF_NOREPEAT)),
 
     ONOFF(PRF_FLAGGED(ch, PRF_AUTOEXIT)),
-    YESNO(PRF_FLAGGED(ch, PRF_NOSHOUT)),
+    ONOFF(PRF_FLAGGED(ch, PRF_NOSHOUT)),
     buf2,
 
-    ONOFF(!PRF_FLAGGED(ch, PRF_NOGOSS)),
-    ONOFF(!PRF_FLAGGED(ch, PRF_NOAUCT)),
-    ONOFF(!PRF_FLAGGED(ch, PRF_NOGRATZ)),
+    ONOFF(PRF_FLAGGED(ch, PRF_NOGOSS)),
+    ONOFF(PRF_FLAGGED(ch, PRF_NOAUCT)),
+    ONOFF(PRF_FLAGGED(ch, PRF_NOGRATZ)),
 
     ONOFF(PRF_FLAGGED(ch, PRF_AFK)),
-    ctypes[COLOR_LEV(ch)]);
+    GET_PAGE_LENGTH(ch),
+    types[COLOR_LEV(ch)]);
     return;
   }
 
@@ -1893,12 +1878,15 @@ ACMD(do_toggle)
     {"nogossip", PRF_NOGOSS, 0,
     "You can now hear gossip.\r\n",
     "You are now deaf to gossip.\r\n"},
-    {"wiznet", PRF_NOWIZ, 0,
+    {"nograts", PRF_NOGRATZ, 0,
+    "You can now hear gratz.\r\n",
+    "You are now deaf to gratz.\r\n"},
+    {"nowiz", PRF_NOWIZ, LVL_IMMORT,
     "You can now hear the Wiz-channel.\r\n",
     "You are now deaf to the Wiz-channel.\r\n"},
-    {"noquest", PRF_QUEST, 0,
-    "You are no longer part of the Quest.\r\n",
-    "Okay, you are part of the Quest!\r\n"},
+    {"quest", PRF_QUEST, 0,
+    "Okay, you are part of the Quest.\r\n",
+    "You are no longer part of the Quest.\r\n"},
     {"showvnums", PRF_SHOWVNUMS, LVL_IMMORT,
     "You will no longer see the vnums.\r\n",
     "You will now see the vnums.\r\n"},
@@ -1908,23 +1896,28 @@ ACMD(do_toggle)
     {"holylight", PRF_HOLYLIGHT, LVL_IMMORT,
     "HolyLight mode off.\r\n",
     "HolyLight mode on.\r\n"},
-    {"slowns", -1, LVL_IMPL,
-    "Nameserver_is_slow changed to NO; IP addresses will now be resolved.\r\n",
-    "Nameserver_is_slow changed to YES; sitenames will no longer be resolved.\r\n"},
+    {"slownameserver", -1, LVL_IMPL,
+    "Nameserver_is_slow changed to OFF; IP addresses will now be resolved.\r\n",
+    "Nameserver_is_slow changed to ON; sitenames will no longer be resolved.\r\n"},
     {"autoexits", PRF_AUTOEXIT, 0,
     "Autoexits disabled.\r\n",
     "Autoexits enabled.\r\n"},
-    {"track", -1, LVL_IMPL,
-    "Will no longer track through doors.\r\n",
-    "Will now track through doors.\r\n"},
-    {"clearolc", PRF_CLS, LVL_BUILDER,
-    "Will no longer clear screen in OLC.\r\n",
-    "Will now clear screen in OLC.\r\n"},
+    {"trackthru", -1, LVL_IMPL,
+    "Players can no longer track through doors.\r\n",
+    "Players can now track through doors.\r\n"},
+    {"clsolc", PRF_CLS, LVL_BUILDER,
+    "You will no longer clear screen in OLC.\r\n",
+    "You will now clear screen in OLC.\r\n"},
     {"buildwalk", PRF_BUILDWALK, LVL_BUILDER,
-    "Buildwalk Off.\r\n",
-    "Buildwalk On.\r\n"},
+    "Buildwalk is now Off.\r\n",
+    "Buildwalk is now On.\r\n"},
+    {"afk", PRF_AFK, 0,
+    "AFK is now Off.\r\n",
+    "AFK is now On.\r\n"},
     {"color", -1, 0, "\n", "\n"},
     {"syslog", -1, LVL_IMMORT, "\n", "\n"},
+    {"wimpy", -1, 0, "\n", "\n"},
+    {"pagelength", -1, 0, "\n", "\n"},
     {"\n", -1, -1, "\n", "\n"} /* must be last */
   };
 
@@ -1937,10 +1930,6 @@ ACMD(do_toggle)
       return;
       }
 
-  /* for color and syslog */
-  int tp;
-  const char *types[] = { "off", "brief", "normal", "complete", "\n" };
-
   switch (toggle) {     
   case SCMD_COLOR:
     if (!*arg2) {
@@ -1949,7 +1938,7 @@ ACMD(do_toggle)
     }
 
     if (((tp = search_block(arg2, types, FALSE)) == -1)) {
-      send_to_char(ch, "Usage: color { Off | Sparse | Normal | Complete }\r\n");
+      send_to_char(ch, "Usage: color { Off | Normal | On }\r\n");
       return;
     }
     REMOVE_BIT(PRF_FLAGS(ch), PRF_COLOR_1 | PRF_COLOR_2);
@@ -1962,8 +1951,8 @@ ACMD(do_toggle)
         types[(PRF_FLAGGED(ch, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(ch, PRF_LOG2) ? 2 : 0)]);
       return;         
     }
-    if (((tp = search_block(arg, types, FALSE)) == -1)) {
-      send_to_char(ch, "Usage: syslog { Off | Brief | Normal | Complete }\r\n");
+    if (((tp = search_block(arg2, types, FALSE)) == -1)) {
+      send_to_char(ch, "Usage: syslog { Off | Brief | Normal | On }\r\n");
       return;     
     }
     REMOVE_BIT(PRF_FLAGS(ch), PRF_LOG1 | PRF_LOG2);
@@ -1995,6 +1984,44 @@ ACMD(do_toggle)
     else
       act("$n has return to $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
     break;
+  case SCMD_WIMPY:
+    if (!*arg2) {
+      if (GET_WIMP_LEV(ch)) {
+        send_to_char(ch, "Your current wimp level is %d hit points.\r\n", GET_WIMP_LEV(ch));
+        return;
+      } else {
+        send_to_char(ch, "At the moment, you're not a wimp.  (sure, sure...)\r\n");
+        return;
+      }
+    }
+    if (isdigit(*arg2)) {
+      if ((wimp_lev = atoi(arg2)) != 0) {
+        if (wimp_lev < 0)
+          send_to_char(ch, "Heh, heh, heh.. we are jolly funny today, eh?\r\n");
+        else if (wimp_lev > GET_MAX_HIT(ch))
+          send_to_char(ch, "That doesn't make much sense, now does it?\r\n");
+        else if (wimp_lev > (GET_MAX_HIT(ch) / 2))
+          send_to_char(ch, "You can't set your wimp level above half your hit points.\r\n");
+        else {
+          send_to_char(ch, "Okay, you'll wimp out if you drop below %d hit points.\r\n", wimp_lev);
+          GET_WIMP_LEV(ch) = wimp_lev;
+        }
+      } else {
+        send_to_char(ch, "Okay, you'll now tough out fights to the bitter end.\r\n");
+        GET_WIMP_LEV(ch) = 0;
+      }
+    } else
+      send_to_char(ch, "Specify at how many hit points you want to wimp out at.  (0 to disable)\r\n");
+    break;
+  case SCMD_PAGELENGTH:
+    if (!*arg2)
+      send_to_char(ch, "You current page length is set to %d lines.\r\n", GET_PAGE_LENGTH(ch));
+    else if (is_number(arg2)) {
+      GET_PAGE_LENGTH(ch) = MIN(MAX(atoi(arg2), 5), 255);
+      send_to_char(ch, "Okay, your page length is now set to %d lines.\r\n", GET_PAGE_LENGTH(ch));
+    } else 
+      send_to_char(ch, "Please specify a number of lines (5 - 255).\r\n");
+      break;
   default:
     if (!*arg2) {
       send_to_char(ch, "Value must either be 'on' or 'off'.\r\n");

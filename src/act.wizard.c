@@ -1487,35 +1487,6 @@ ACMD(do_purge)
   }
 }
 
-
-
-const char *logtypes[] = {
-  "off", "brief", "normal", "complete", "\n"
-};
-
-ACMD(do_syslog)
-{
-  char arg[MAX_INPUT_LENGTH];
-  int tp;
-
-  one_argument(argument, arg);
-  if (!*arg) {
-    send_to_char(ch, "Your syslog is currently %s.\r\n",
-	logtypes[(PRF_FLAGGED(ch, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(ch, PRF_LOG2) ? 2 : 0)]);
-    return;
-  }
-  if (((tp = search_block(arg, logtypes, FALSE)) == -1)) {
-    send_to_char(ch, "Usage: syslog { Off | Brief | Normal | Complete }\r\n");
-    return;
-  }
-  REMOVE_BIT(PRF_FLAGS(ch), PRF_LOG1 | PRF_LOG2);
-  SET_BIT(PRF_FLAGS(ch), (PRF_LOG1 * (tp & 1)) | (PRF_LOG2 * (tp & 2) >> 1));
-
-  send_to_char(ch, "Your syslog is now %s.\r\n", logtypes[tp]);
-}
-
-
-
 ACMD(do_advance)
 {
   struct char_data *victim;
