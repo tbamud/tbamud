@@ -19,19 +19,12 @@
 #include "handler.h"
 #include "improved-edit.h"
 
-/* List each help entry saved, was used for debugging. */
-
-/*------------------------------------------------------------------------*/
-
-/*
- * External data structures.
- */
-
+/* external data structures */
 extern struct descriptor_data *descriptor_list;
 extern void strip_string(char *buffer);
 void hedit_disp_menu(struct descriptor_data *d);
 
-/* 'global' vars */
+/* external variables */
 struct help_index_element *help_table;
 int top_of_h_table = 0;		/* ref to top of help table	 */
 int top_of_h_file = 0;		/* ref of size of help file	 */
@@ -39,6 +32,12 @@ long top_help_idnum = 0;	/* highest idnum in use		 */
 void get_one_line(FILE *fl, char *buf);
 int search_help(struct char_data *ch, char *argument);
 ACMD(do_reboot);
+
+/* local functions */
+void hedit_save_internally(struct descriptor_data *d);
+void hedit_save_to_disk(struct descriptor_data *d);
+void hedit_setup_new(struct descriptor_data *d, char *new_key);
+void hedit_setup_existing(struct descriptor_data *d, int rnum);
 
 void load_help(FILE *fl, char *name)
 {

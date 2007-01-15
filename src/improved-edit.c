@@ -49,40 +49,40 @@ int improved_editor_execute(struct descriptor_data *d, char *str)
       write_to_output(d, "Current buffer empty.\r\n");
     break;
   case 'd':
-    parse_action(PARSE_DELETE, actions, d);
+    parse_edit_action(PARSE_DELETE, actions, d);
     break;
   case 'e':
-    parse_action(PARSE_EDIT, actions, d);
+    parse_edit_action(PARSE_EDIT, actions, d);
     break;
   case 'f':
     if (*(d->str))
-      parse_action(PARSE_FORMAT, actions, d);
+      parse_edit_action(PARSE_FORMAT, actions, d);
     else
       write_to_output(d, "Current buffer empty.\r\n");
     break;
   case 'i':
     if (*(d->str))
-      parse_action(PARSE_INSERT, actions, d);
+      parse_edit_action(PARSE_INSERT, actions, d);
     else
       write_to_output(d, "Current buffer empty.\r\n");
     break;
   case 'h':
-    parse_action(PARSE_HELP, actions, d);
+    parse_edit_action(PARSE_HELP, actions, d);
     break;
   case 'l':
     if (*d->str)
-      parse_action(PARSE_LIST_NORM, actions, d);
+      parse_edit_action(PARSE_LIST_NORM, actions, d);
     else
       write_to_output(d, "Current buffer empty.\r\n");
     break;
   case 'n':
     if (*d->str)
-      parse_action(PARSE_LIST_NUM, actions, d);
+      parse_edit_action(PARSE_LIST_NUM, actions, d);
     else
       write_to_output(d, "Current buffer empty.\r\n");
     break;
   case 'r':
-    parse_action(PARSE_REPLACE, actions, d);
+    parse_edit_action(PARSE_REPLACE, actions, d);
     break;
   case 's':
     return STRINGADD_SAVE;
@@ -96,7 +96,7 @@ int improved_editor_execute(struct descriptor_data *d, char *str)
 /*
  * Handle some editor commands.
  */
-void parse_action(int command, char *string, struct descriptor_data *d)
+void parse_edit_action(int command, char *string, struct descriptor_data *d)
 {
   int indent = 0, rep_all = 0, flags = 0, replaced, i, line_low, line_high, j = 0;
   unsigned int total_len;
@@ -497,7 +497,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
     break;
   default:
     write_to_output(d, "Invalid option.\r\n");
-    mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: invalid command passed to parse_action");
+    mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: invalid command passed to parse_edit_action");
     return;
   }
 }

@@ -4131,7 +4131,7 @@ ACMD(do_zpurge)
     for (vroom = zone_table[zone].bot; vroom <= zone_table[zone].top; vroom++) {
       purge_room(real_room(vroom));
     }
-    send_to_char(ch, "Purged zone %d (#%d): %s.\r\n", zone, zone_table[zone].number, zone_table[zone].name);
+    send_to_char(ch, "Purged zone #%d: %s.\r\n", zone_table[zone].number, zone_table[zone].name);
     mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s purged zone %d (%s)", GET_NAME(ch), zone, zone_table[zone].name);
   }
   else {

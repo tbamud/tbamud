@@ -18,19 +18,27 @@
 #include "oasis.h"
 #include "constants.h"
 
-/*
- * External functions.
- */
+/* external functions */
 SPECIAL(shop_keeper);
 
-/*
- * External variables
- */
+/* external variables */
 extern const char *trade_letters[];
 extern const char *shop_bits[];
-/*
- * Should check more things.
- */
+
+/* local functions */
+void sedit_setup_new(struct descriptor_data *d);
+void sedit_setup_existing(struct descriptor_data *d, int rshop_num);
+void sedit_save_internally(struct descriptor_data *d);
+void sedit_save_to_disk(int zone_num);
+void sedit_products_menu(struct descriptor_data *d);
+void sedit_compact_rooms_menu(struct descriptor_data *d);
+void sedit_rooms_menu(struct descriptor_data *d);
+void sedit_namelist_menu(struct descriptor_data *d);
+void sedit_shop_flags_menu(struct descriptor_data *d);
+void sedit_no_trade_menu(struct descriptor_data *d);
+void sedit_types_menu(struct descriptor_data *d);
+void sedit_disp_menu(struct descriptor_data *d);
+
 void sedit_save_internally(struct descriptor_data *d)
 {
   OLC_SHOP(d)->vnum = OLC_NUM(d);
@@ -690,31 +698,31 @@ void sedit_parse(struct descriptor_data *d, char *arg)
      */
   case SEDIT_NOITEM1:
     if (genolc_checkstring(d, arg))
-      modify_string(&S_NOITEM1(OLC_SHOP(d)), arg);
+      modify_shop_string(&S_NOITEM1(OLC_SHOP(d)), arg);
     break;
   case SEDIT_NOITEM2:
     if (genolc_checkstring(d, arg))
-      modify_string(&S_NOITEM2(OLC_SHOP(d)), arg);
+      modify_shop_string(&S_NOITEM2(OLC_SHOP(d)), arg);
     break;
   case SEDIT_NOCASH1:
     if (genolc_checkstring(d, arg))
-      modify_string(&S_NOCASH1(OLC_SHOP(d)), arg);
+      modify_shop_string(&S_NOCASH1(OLC_SHOP(d)), arg);
     break;
   case SEDIT_NOCASH2:
     if (genolc_checkstring(d, arg))
-      modify_string(&S_NOCASH2(OLC_SHOP(d)), arg);
+      modify_shop_string(&S_NOCASH2(OLC_SHOP(d)), arg);
     break;
   case SEDIT_NOBUY:
     if (genolc_checkstring(d, arg))
-      modify_string(&S_NOBUY(OLC_SHOP(d)), arg);
+      modify_shop_string(&S_NOBUY(OLC_SHOP(d)), arg);
     break;
   case SEDIT_BUY:
     if (genolc_checkstring(d, arg))
-      modify_string(&S_BUY(OLC_SHOP(d)), arg);
+      modify_shop_string(&S_BUY(OLC_SHOP(d)), arg);
     break;
   case SEDIT_SELL:
     if (genolc_checkstring(d, arg))
-      modify_string(&S_SELL(OLC_SHOP(d)), arg);
+      modify_shop_string(&S_SELL(OLC_SHOP(d)), arg);
     break;
   case SEDIT_NAMELIST:
     if (genolc_checkstring(d, arg)) {
@@ -722,7 +730,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
 
       BUY_TYPE(new_entry) = OLC_VAL(d);
       BUY_WORD(new_entry) = strdup(arg);
-      add_to_type_list(&(S_NAMELISTS(OLC_SHOP(d))), &new_entry);
+      add_shop_to_type_list(&(S_NAMELISTS(OLC_SHOP(d))), &new_entry);
     }
     sedit_namelist_menu(d);
     return;
@@ -771,7 +779,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
     OLC_MODE(d) = SEDIT_NAMELIST;
     return;
   case SEDIT_DELETE_TYPE:
-    remove_from_type_list(&(S_NAMELISTS(OLC_SHOP(d))), atoi(arg));
+    remove_shop_from_type_list(&(S_NAMELISTS(OLC_SHOP(d))), atoi(arg));
     sedit_namelist_menu(d);
     return;
   case SEDIT_NEW_PRODUCT:
@@ -781,11 +789,11 @@ void sedit_parse(struct descriptor_data *d, char *arg)
 	return;
       }
     if (i > 0)
-      add_to_int_list(&(S_PRODUCTS(OLC_SHOP(d))), i);
+      add_shop_to_int_list(&(S_PRODUCTS(OLC_SHOP(d))), i);
     sedit_products_menu(d);
     return;
   case SEDIT_DELETE_PRODUCT:
-    remove_from_int_list(&(S_PRODUCTS(OLC_SHOP(d))), atoi(arg));
+    remove_shop_from_int_list(&(S_PRODUCTS(OLC_SHOP(d))), atoi(arg));
     sedit_products_menu(d);
     return;
   case SEDIT_NEW_ROOM:
@@ -795,11 +803,11 @@ void sedit_parse(struct descriptor_data *d, char *arg)
 	return;
       }
     if (i >= 0)
-      add_to_int_list(&(S_ROOMS(OLC_SHOP(d))), atoi(arg));
-    sedit_rooms_menu(d);
+      add_shop_to_int_list(&(S_ROOMS(OLC_SHOP(d))), atoi(arg));
+      sedit_rooms_menu(d);
     return;
   case SEDIT_DELETE_ROOM:
-    remove_from_int_list(&(S_ROOMS(OLC_SHOP(d))), atoi(arg));
+    remove_shop_from_int_list(&(S_ROOMS(OLC_SHOP(d))), atoi(arg));
     sedit_rooms_menu(d);
     return;
   case SEDIT_SHOP_FLAGS:

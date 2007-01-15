@@ -40,6 +40,7 @@ void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int c
 void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
 void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
 int mail_recip_ok(const char *name);
+void write_mail_record(FILE *mail_file, struct mail_t *record);
 
 /* -------------------------------------------------------------------------- */
 char *decrypt_hex(char *string, size_t len) 

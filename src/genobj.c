@@ -23,6 +23,8 @@ extern struct board_info_type board_info[];
 
 /* local functions */
 void free_object_strings_proto(struct obj_data *obj);
+int update_all_objects(struct obj_data *obj);
+void copy_object_strings(struct obj_data *to, struct obj_data *from);
 
 obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
 {
@@ -34,7 +36,7 @@ obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
    */
   if ((newobj->item_number = real_object(ovnum)) != NOTHING) {
     copy_object(&obj_proto[newobj->item_number], newobj);
-    update_objects(&obj_proto[newobj->item_number]);
+    update_all_objects(&obj_proto[newobj->item_number]);
     add_to_save_list(zone_table[rznum].number, SL_OBJ);
     return newobj->item_number;
   }
@@ -54,7 +56,7 @@ obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
  * if object is pointing to this prototype, then we need to replace it
  * with the new one.
  */
-int update_objects(struct obj_data *refobj)
+int update_all_objects(struct obj_data *refobj)
 {
   struct obj_data *obj, swap;
   int count = 0;
@@ -483,7 +485,7 @@ int delete_object(obj_rnum rnum)
       switch (ZCMD(zone, cmd_no).command) { 
       case 'P': 
         if (ZCMD(zone, cmd_no).arg3 == rnum) {
-          delete_command(&zone_table[zone], cmd_no); 
+          delete_zone_command(&zone_table[zone], cmd_no); 
         } else
           ZCMD(zone, cmd_no).arg3 -= (ZCMD(zone, cmd_no).arg3 > rnum);
 	break;    
@@ -491,13 +493,13 @@ int delete_object(obj_rnum rnum)
       case 'G': 
       case 'E': 
         if (ZCMD(zone, cmd_no).arg1 == rnum) {
-          delete_command(&zone_table[zone], cmd_no); 
+          delete_zone_command(&zone_table[zone], cmd_no); 
         } else
           ZCMD(zone, cmd_no).arg1 -= (ZCMD(zone, cmd_no).arg1 > rnum);
 	break; 
       case 'R': 
         if (ZCMD(zone, cmd_no).arg2 == rnum) {
-          delete_command(&zone_table[zone], cmd_no); 
+          delete_zone_command(&zone_table[zone], cmd_no); 
         } else
           ZCMD(zone, cmd_no).arg2 -= (ZCMD(zone, cmd_no).arg2 > rnum);
 	break; 

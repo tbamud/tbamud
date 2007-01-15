@@ -130,6 +130,8 @@ void	save_mud_time(struct time_info_data *when);
 void	free_text_files(void);
 void	free_help_table(void);
 void	free_player_index(void);
+void    load_help(FILE *fl, char *name);
+void    clean_pfiles(void);
 
 zone_rnum real_zone(zone_vnum vnum);
 room_rnum real_room(room_vnum vnum);
@@ -146,7 +148,8 @@ void	clear_char(struct char_data *ch);
 void	reset_char(struct char_data *ch);
 void	free_char(struct char_data *ch);
 void	save_player_index(void);
-long  get_ptable_by_name(const char *name);
+long    get_ptable_by_name(const char *name);
+void    remove_player(int pfilepos);
 
 struct obj_data *create_obj(void);
 void	clear_object(struct obj_data *obj);

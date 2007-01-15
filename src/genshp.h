@@ -5,17 +5,13 @@
  ************************************************************************/
 
 void copy_shop(struct shop_data *tshop, struct shop_data *fshop, int free_old_strings);
-void copy_list(IDXTYPE **tlist, IDXTYPE *flist);
-void copy_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist);
-void remove_from_type_list(struct shop_buy_data **list, int num);
-void remove_from_int_list(IDXTYPE **list, IDXTYPE num);
-void add_to_type_list(struct shop_buy_data **list, struct shop_buy_data *newl);
-void add_to_int_list(IDXTYPE **tlist, IDXTYPE newi);
+void remove_shop_from_type_list(struct shop_buy_data **list, int num);
+void remove_shop_from_int_list(IDXTYPE **list, IDXTYPE num);
+void add_shop_to_type_list(struct shop_buy_data **list, struct shop_buy_data *newl);
+void add_shop_to_int_list(IDXTYPE **tlist, IDXTYPE newi);
 void free_shop_string(struct shop_data *shop);
-void free_type_list(struct shop_buy_data **list);
 void free_shop(struct shop_data *shop);
-void free_shop_strings(struct shop_data *shop);
-void modify_string(char **str, char *newstr);
+void modify_shop_string(char **str, char *newstr);
 int add_shop(struct shop_data *shop);
 int save_shops(zone_rnum zone_num);
 shop_rnum real_shop(shop_vnum vnum);

@@ -23,18 +23,34 @@
 #include "improved-edit.h"
 #include "dg_olc.h"
 
-/*------------------------------------------------------------------------*/
-
-/*
- * External variable declarations.
- */
+/* external variables */
 extern struct attack_hit_type attack_hit_text[];
 extern struct spell_info_type spell_info[];
 extern struct board_info_type board_info[];
 
-/*
- * Handy macros.
- */
+/* local functions */
+void oedit_setup_new(struct descriptor_data *d);
+void oedit_setup_existing(struct descriptor_data *d, int real_num);
+void oedit_save_internally(struct descriptor_data *d);
+void oedit_save_to_disk(int zone_num);
+void oedit_disp_container_flags_menu(struct descriptor_data *d);
+void oedit_disp_extradesc_menu(struct descriptor_data *d);
+void oedit_disp_prompt_apply_menu(struct descriptor_data *d);
+void oedit_liquid_type(struct descriptor_data *d);
+void oedit_disp_apply_menu(struct descriptor_data *d);
+void oedit_disp_weapon_menu(struct descriptor_data *d);
+void oedit_disp_spells_menu(struct descriptor_data *d);
+void oedit_disp_val1_menu(struct descriptor_data *d);
+void oedit_disp_val2_menu(struct descriptor_data *d);
+void oedit_disp_val3_menu(struct descriptor_data *d);
+void oedit_disp_val4_menu(struct descriptor_data *d);
+void oedit_disp_type_menu(struct descriptor_data *d);
+void oedit_disp_extra_menu(struct descriptor_data *d);
+void oedit_disp_wear_menu(struct descriptor_data *d);
+void oedit_disp_menu(struct descriptor_data *d);
+void oedit_disp_perm_menu(struct descriptor_data *d);
+
+/* handy macro */
 #define S_PRODUCT(s, i) ((s)->producing[(i)])
 
 /*------------------------------------------------------------------------*\

@@ -1,53 +1,3 @@
-EDIT
-
-   This is simply a test function and does not actually do anything.
-
-See Also: OLC
-#31
-DRUNK WINE LIQUID-CONTAINERS BEER SPIRITS DRINK-TYPES LIQUOR WHISKEY WHISKY LIQUIDS LIQ-CONTAINERS
-
-   When selecting object type FOUNTAIN or DRINK CONTAINER you will need
-to choose the type of liquid it contains from the following list: 
-
-  0) water                  1) beer                 
-  2) wine                   3) ale                  
-  4) dark ale               5) whisky               
-  6) lemonade               7) firebreather         
-  8) local speciality       9) slime mold juice     
- 10) milk                  11) tea                  
- 12) coffee                13) blood                
- 14) salt water            15) clear water          
-
-See Also: VALUES
-#31
-<TOPIC> <COMMAND> COMMAND> TOPICS
-
-   You took me too literally. I want you to type help <topic>, as in topic 
-being something like newbie. So you should type @RHELP NEWBIE@n to learn more 
-about being a newbie here.
-
-#31
-ALIAS-EXAMPLES
-  
-  To set up aliases to use older CircleMUD building commands:
-  
-alias poofin set self poofin $*
-alias poofout set self poofout $*
-alias poofs score
-
-See Also: ALIAS
-#31
-AC-CONFIDENCE ARMOR-CLASS ARMOUR-CLASS AC-APPLY 
-
-   Your Armor Class (often called AC) is an expression for how good your armor
-is at protecting you.  When you don armor, any AC apply that armor has is 
-subtracted from your standard (naked) AC value, modified depending on where on
-the body you are wearing the armor.  Some items have a special bonus, and 
-substract from the AC directly. Negative AC is better. Modifiers: Body X3, 
-head and legs X2.
-
-See Also: MEDIT-AC
-#31
 LIMITS ZCHECK STANDARDS OBJ-LIMITS OBJECT-LIMITS ZONE-LIMITS OEDIT-LIMITS OEDIT-STANDARDS
 
 OBJECT STANDARDS:
@@ -90,34 +40,42 @@ This spell will change the "course" of the current weather.
 Example:
 
   > cast 'control wea' worse
-See Also: %WEATHER%, WEATHER
+See also: %WEATHER%, WEATHER
 #31
 IS-NPC NPCS IS_NPC ISNPC
 
 This is short for is non-player-character (mob).
 
-See Also: MEDIT-NPC-FLAGS
+See also: MEDIT-NPC-FLAGS
 #31
 TEDITOR
 
 Usage: tedit [file]
 
-Allows to edit files online. Files available to be edited:
+Allows editing of text files online. Files available to be edited:
 
 credits     news        motd        imotd       greetings   help        ihelp       
 info        background  handbook    policies    wizlist     immlist
 
 Perhaps you meant @RHELP TRIGEDIT@n
 #31
+CLSOLC
+
+Usage: CLSOLC
+
+Clears the screen just before you enter the main OLC menu.
+
+See Also: TOGGLE
+#31
 EDITORS
 
    Editors are what builders use to create their worlds.
 
-See Also: OLC, REDIT, OEDIT, MEDIT, ZEDIT, SEDIT, TRIGEDIT, TEXT-EDITOR
+See also: OLC, REDIT, OEDIT, MEDIT, ZEDIT, SEDIT, TRIGEDIT, TEXT-EDITOR
 #31
 @@
 
-The @@ character is used as a colorcode. If you see it try toggling color to
+The @@ character is used as a colorcode. If you see it, try toggling color to
 complete. If this still does not work you must not be able to view colors.
 
 Many people have asked why use the @@ as colorcodes while others use &. 
@@ -130,7 +88,7 @@ HE/SHE: &%obj%. So putting in colorcodes in echos returns garbage itititit
 etc. if done improperly. The fix is to use the escape character \&<colorcode> 
 in trigedit.
 
-See Also: COLORCODES
+See also: COLORCODES
 #31
 AEDIT-MENU ACTION-EDITOR ACREATE SOCIAL-EDITOR
 
@@ -162,7 +120,7 @@ Usage : astat <social>
 Allows you to view a social as written in the social editor. Anybody may submit 
 their own socials for use within the mud. 
 
-See Also: AEDIT, SOCIALS
+See also: AEDIT, SOCIALS
 #31
 VNUMS FIND-ITEM VNUM-OBJ VNUM-MOBILES  
 
@@ -183,7 +141,7 @@ Examples:
   2. [  908] the dragon turtle
   3. [ 208] the Master of Illusions
 
-See Also: VSTAT, TSTAT, VIRTUAL-NUMBERS, LOAD
+See also: VSTAT, TSTAT, VIRTUAL-NUMBERS, LOAD
 #31
 JEWELS GEMSTONES MINERALS DIAMONDS
 
@@ -204,7 +162,7 @@ This normal description can be seen by anyone.
 
 To make hidden exits or secret doors use trigedit. 
 
-See Also: %DOOR%
+See also: %DOOR%
 #31
 REPORT-EXAMPLE
 
@@ -222,11 +180,11 @@ From: justo
  1) Connected existing street system with Zone 82.
  2) Have been zediting doors to remain closed.
  3) Improved keywords on several mobs.
- 4) Added the appropriate extra descs to 15 objects. ( Still wish it would'nt
-    say " A bottle of tequila of whisky." Thats annoying.
+ 4) Added the appropriate extra descs to 15 objects. ( Still wish it would not
+    say " A bottle of tequila of whisky." That is annoying.
  5) Fixed up some of the shops...shop 15102 is still a problem...but its
-    finally fuctioning which is an improvement.
- 6) Erased old quest triggers that are'nt in phase with my current concept
+    finally functioning which is an improvement.
+ 6) Erased old quest triggers that are not in phase with my current concept
     for how the Zone should operate. Built some new ones that do conform
     to the new concept ( I'll explain that shortly. ).
  7) Built a realistic blunderbuss with your appreciated help.
@@ -251,7 +209,7 @@ From: justo
     Tejas 1820. I can Speech trigger those mobs...but what would a
     player bother to ask them ? All of them are ICly-justified 
     bilinguals or multilinguals in varying degrees of proficiency. 
-    But,I need more feedback on what players would like to know about
+    But, I need more feedback on what players would like to know about
     the Zone environment.  
     Maybe the way to go is to set up little instructional Quests for 
     the players. I might attempt that again.
@@ -299,7 +257,7 @@ load it to the room via zedit.
 In all cases special procedures need to be added in by a coder. Once your zone
 is complete mudmail your coder. 
 
-See Also: POSTMASTER, PETSHOPS, BANKS, GUILDMASTER, BOARDS
+See also: POSTMASTER, PETSHOPS, BANKS, GUILDMASTER, BOARDS
 #31
 WORK
 
@@ -315,7 +273,7 @@ will have building. There is nothing worse than making half a zone and then
 running out of ideas. You then have to start making more ideas up and they 
 will not fit well into the zone.
 
-See Also: PLANNING
+See also: PLANNING
 #31
 PLANNING
 
@@ -335,7 +293,7 @@ down and think about it. A zone should always start out on paper long before
 it reaches a MUD. Every zone starts with an idea or a spark. From there, 
 develop it. Pay attention to what kind of zone theme you want to create. Is it
 meant to be generic hack and slash experience zone? A wealthy populace to fill
-the players purse with gold? A quest for a special item? The possibilities are
+the player's purse with gold? A quest for a special item? The possibilities are
 limited only by your imagination. The important thing to remember is that zones
 are built for players. Ask yourself, would you want to play in this zone?
    To help brainstorm I suggest you check out the many different zones 
@@ -366,12 +324,12 @@ this method is that if you accidentally wipe out your work on the MUD you will
 have a ready backup. Be careful cutting and pasting to the MUD; if you send too
 much text at once you will be disconnected.
 
-See Also: WORK, MAPPING, LOCATION, THEME, PLOT, SIZE, ALIGN, BIAS
+See also: WORK, MAPPING, LOCATION, THEME, PLOT, SIZE, ALIGN, BIAS
 #31
 MAPPING
 
    The reasons behind mapping are simple. It solidifies what you are planning 
-to build into MUD terms. Also, though final products rarely are an exact copy 
+to build into MUD terms. also, though final products rarely are an exact copy 
 of the map, they provide a concrete reference for you to look at when the 
 builder's block question rears its ugly head "Hmm, what do I build next?" 
 Lastly, not all players have nifty clients especially made for MUDding with 
@@ -387,7 +345,7 @@ north, east, south, west should find themselves back in the same room from
 which they started. Having an area geometrically correct makes it much easier
 for a player to visualize it, and thus increases their enjoyment of it.
 
-See Also: TBAMAP, ASCII
+See also: TBAMAP, ASCII
 #31
 LOCATIONS
 
@@ -466,8 +424,8 @@ plans of the evil Lord Zygol, or simple like ridding the caves of goblins, or
 anything in between.  Often the plot in an area can be advanced by some fairly
 simple puzzles or descriptions.  This can be done with the help of triggers.
    TBA allows you to build anything you would like. Themes could include:
-sci-fi, futuristic, medieval, present day, ancient history, jurassic, western,
-chinese dynasty, etc. 
+sci-fi, futuristic, medieval, present day, ancient history, Jurassic, western,
+Chinese dynasty, etc. 
 
 #31
 SIZES
@@ -508,11 +466,11 @@ communities there is going to be some evil and good elements, and likewise with
 other communities. To some extent this goes along with the question about zone
 level, consider what seem to be "gaps" among the zones in the world as far as
 good or evil aligned areas for a particular level range, and try to fill those
-needs. Everyones first tendency is to make extremists--The ultimate evil hell
+needs. Everyone's first tendency is to make extremists--The ultimate evil hell
 area, or the blindingly good paladin fortress. Keep in mind that there are
 many layers in between, and these are often more interesting.    
 
-See Also: ALIGN
+See also: ALIGN
 #31
 PLOTS
 
@@ -538,7 +496,7 @@ it until you like it. It is always best to build when you are not bored of the
 area, since building when you are bored almost always turns out uninspired and
 boring areas.
    If you are having problems developing a plot try visualizing a story that 
-happens in your zone. For example, lets say a princess is captured somewhere 
+happens in your zone. For example, say a princess is captured somewhere 
 and her relatives are looking for her. Next, you drop some clues to her 
 whereabouts by putting conversations in the looked at description of mobiles. 
 You can set up some mobs so that when you look at them, you get "You strike up
@@ -594,7 +552,7 @@ carefully the first time they walk through an area, and having many extra
 descriptions helps them fill out their idea of what things actually look like.
    When writing the numerous descriptions of the area, make them interesting 
 to read! Nobody likes to read room after room of stupid one-line descriptions. 
-Vary each description as much as possible. One of the greatest joys of most 
+Vary each description as much as possible. One of the greatest joys for most 
 players is finding new and interesting rooms, items, treasures, and monsters. 
 For those of you familiar with role-playing games, this creative use of 
 descriptions and atmosphere should be quite well known to you. Consider 
@@ -655,13 +613,13 @@ GOOD: Shadows cower along the tall walls and almost seem to be moving. The
       from it, ruining the smoothness that is characteristic of the rest 
       of the room.
 
-See Also: GRAMMAR
+See also: GRAMMAR
 #31
 FAQ FREQUENTLY-ASKED-QUESTIONS 
 
 1. Can I add color to my area? 
    Yes, you can. Just type in all the color codes. Just remember not to color
-Alias or Namelists. @RHELP COLOR-CODES@n.
+mob alias or obj amelist. @RHELP COLOR-CODES@n.
  
 2. What the heck is a VNUM?
    A VNUM, or Virtual Number, is just a way to keep track of the items in the
@@ -698,7 +656,7 @@ even have the sword snap.
 opposite of toughness in that a material with high flex won't snap and chip.  
 The problem with a material with excessive flex is that it will dent easily 
 and can bend if enough pressure is applied to the blade.  It is the job of the 
-bladesmith to find a material with the best combination of toughness and flex 
+blade smith to find a material with the best combination of toughness and flex 
 so the sword withstands the test of time and battle.  I pointed out this fact 
 to show how some "modern" materials are not good for making swords no matter 
 how good they seem to be.  An example of such material is diamond which is the 
@@ -706,12 +664,11 @@ toughest material on earth but is extremely brittle so it would not be good to
 use as a sword blade.  Carbon steel is still the best material to make a sword 
 from, however there are still many kinds of carbon steel.  The ratio of iron 
 and carbon in the material determines how tough or flexible it will be.  
-   A few other misconceptions about swords that are almost universal among 
-moderners. 
+   A few other misconceptions about swords that are almost universal: 
    One is the mass of such weapons as the claymore and other large blades.  
 In recorded history, there is no sword that was ever intended for use in 
 battle that weighed over 11 pounds.  Claymores were generally 6 to 8 pounds.  
-For some reason it is thought that knights lugged around 50 pound woppers that 
+For some reason it is thought that knights lugged around 50 pound whoppers that 
 were a foot thick and other such nonsense. Something people also are not quite 
 correct about is the ability of swords to easily cut through hard materials 
 such as wood and metal.  A sword will not chop down a large tree in one stroke 
@@ -788,10 +745,10 @@ To keep things simple I would suggest weapons only do damage equal or double to
 the players level.  
 
    Average damage is calculated by this formula: ((DAMDICE + 1)/2) X NUMDICE
-4d5 = ((5+1)/2) X 4 = 3 X 4 = 12 ponts average damage. Which makes sense 
+4d5 = ((5+1)/2) X 4 = 3 X 4 = 12 points average damage. Which makes sense 
 since 4d5 would give damage between 4-20.
 
-See Also: STANDARDS, %DAMAGE%
+See also: STANDARDS, %DAMAGE%
 #31
 SPATIAL-ORIENTATION BIAS
 
@@ -838,7 +795,7 @@ exit by purge exit in redit exit menu or by using 'dig <direction> -1'
    Another common error is caused by how shop code handles drink containers 
 poorly. In order for shops to display a jug as a jug of <drink type> they 
 must have the drink type as the last alias. It is good practice to put the 
-drink type as the first and last word of an objects namelist (older verions 
+drink type as the first and last word of an objects namelist (older versions 
 of CircleMUD expect it first).
 i.e. a shot of whisky should have the namelist: whisky shot whisky
      a cup of slime mold juice namelist should be: juice cup slime juice
@@ -881,7 +838,7 @@ a single location. HELP ZEDIT-EQUIP for all the possible object equipping
 locations. All you have to do to fix this is pick a different equip location
 that is not used. 
 
-See Also: TRIG-ERRORS, ZEDIT-MISTAKES, SEDIT-MISTAKES
+See also: TRIG-ERRORS, ZEDIT-MISTAKES, SEDIT-MISTAKES
 #31
 TRIG-ERRORS TRIGEDIT-ERRORS TRIGEDIT-MISTAKES
 
@@ -939,7 +896,7 @@ another form of Unix:
    "bash configure" and "bash ./configure" until one of them works.
 
 5) NOW change to the /circle/src directory "cd src", and type "make", and watch
-   CircleMUD and the additional utilies included in the Circle distribution
+   CircleMUD and the additional utilities included in the Circle distribution
    automatically being compiled and placed in /circle/bin.
 
 6) Go back to /circle, and run the MUD either directly by typing
@@ -979,7 +936,7 @@ On stock CircleMUD a tilde is used in the world files to denote an end of line.
 This way the files can be saved and read. Because of this adding a tilde in any
 of the editors on older versions of CircleMUD could make the MUD unbootable. 
 
-See Also: WORLD-FILE
+See also: WORLD-FILE
 #31
 DISCONNECT FLOOD OVERFLOW CUTOFF CUT-OFF ENTERING-TEXT
 
@@ -988,10 +945,10 @@ at once in the text-editor.  To prevent this simply enter a sentence or two at
 a time. Hit return then enter another sentence then repeat. The MUD prevents 
 people from entering large strings of text to keep the CPU from getting bogged
 down. A return is required at least every 256 characters. If this is not done 
-the text will simply be cut off and lost. So enter each sentence seperately and
+the text will simply be cut off and lost. So enter each sentence separately and
 when done type /fi to format with indent.
 
-See Also: TEXT-EDITOR
+See also: TEXT-EDITOR
 
 #31
 BUFFERS DEFINES MAXSIZE MAX_SIZE MAXBUFFERS PAGE_LENGTHS MAX_BUFFERS 
@@ -1072,75 +1029,21 @@ Fyre asked his writing group about those possessive plurals and here is the
 response from his top flight editor who makes her living in Switzerland
 doing impressive loads of copyediting.
 
-"The horses' manes" is correct; the "ess appostrophe ess" form is only used in
+"The horses' manes" is correct; the "ess apostrophe ess" form is only used in
 proper names: Travis's albums, Maris's pendants
 
 My source is the Chicago Manual of Style, used in the majority of publishing
 houses in the States.
 
-And another supportive professor of english ... who has won several major
+And another supportive professor of English ... who has won several major
 writing awards recently ...
 
 "the horses' manes" is correct.  The possessive form of a plural word
-that ends in "S" is formed by adding only an apostophe.  The possessive form
-of a plural word that does not end in "S" is formed by adding "apostophe S,"
+that ends in "S" is formed by adding only an apostrophe.  The possessive form
+of a plural word that does not end in "S" is formed by adding "apostrophe S,"
 as in "women's hemlines."  
 
-We rest our case. Now do whatever you want...after all, it's your area.
-#31
-THANKSGIVING
-
-OBJ: 1331   MOB: 1322   TRG: 1363
-
-@Y.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.i@G
-			| | | | __ _ _ __  _ __  _   _
-			| |_| |/ _` | '_ \| '_ \| | | |
-			|  _  | (_| | |_) | |_) | |_| |
-			|_| |_|\__,_| .__/| .__/ \__, |
-			            |_|   |_|    |___/
-	 _____ _                 _              _       _
-	|_   _| |__   __ _ _ __ | | _____  __ _(_)_   _(_)_ __   __ _
-	  | | | '_ \ / _` | '_ \| |/ / __|/ _` | \ \ / / | '_ \ / _` |
-	  | | | | | | (_| | | | |   <\__ \ (_| | |\ V /| | | | | (_| |
-	  |_| |_| |_|\__,_|_| |_|_|\_\___/\__, |_| \_/ |_|_| |_|\__, |
-      	                            |___/                 |___/
-@Y .:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.@n
-
-                            ,+*^^*+___+++_
-                        ,*^^^^              )
-                     _+*                     ^**+_
-                   +^       _ _++*+_+++_,         )
-       _+^^*+_    (     ,+*^ ^          \+_        )
-      {       )  (    ,(    ,_+--+--,      ^)      ^\
-     { (@)    } f   ,(  ,+-^ __*_*_  ^^\_   ^\       )
-    {:;-/    (_+*-+^^^^^+*+*<_ _++_)_    )    )      /
-   ( /  (    (        ,___    ^*+_+* )   <    <      \
-    U _/     )    *--<  ) ^\-----++__)   )    )       )
-     (      )  _(^)^^))  )  )\^^^^^))^*+/    /       /
-   (      /  (_))_^)) )  )  ))^^^^^))^^^)__/     +^^
-  (     ,/    (^))^))  )  ) ))^^^^^^^))^^)       _)
-   *+__+*       (_))^)  ) ) ))^^^^^^))^^^^^)____*^
-   \                  )_)) ))^^^^^^^^^^))^^^^)
-    (_             ^\__^^^^^^^^^^^^))^^^^^^^)
-      ^\___            ^\__^^^^^^))^^^^^^^^)\\
-          ^^^^^\uuu/^^\uuu/^^^^\^\^\^\^\^\^\^\
-              ___) >____) >___   ^\_\_\_\_\_\_\)
-             ^^^//\\_^^//\\_^       ^(\_\_\_\)
-               ^^^ ^^ ^^^ ^^
-#31
-HALLOWEEN
-
-MOB: 1313
-TRG: 1395
-
-@G.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.i@R
-            __,  ,____)           __,  ,____)
-           (--|  |               (--|  |
-              |__| _, _  _          |__| _ || _       _  _ ,_
-             _|  |(_||_)|_)(_|     _|  |(_|||(_)(_|_)(/_(/_| |
-            (        |  |  ,_|    (                          |_,
-@G .:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.@n
-
+We rest our case. Now do whatever you want...after all, it is your area.
 #31
 OBJ-NOTES OBJECT-NOTES BOOKS PENS NOTES QUILLS NEWSPAPERS POSTITS POST-ITS OBJ-TYPE-NOTE
 
@@ -1161,7 +1064,7 @@ CWG BUDDHA SUNTZU RASPUTIN CIRCLEMUD-WITH-GOODIES
 to download from http://cwg.lazuras.org/. It comes in three versions: Buddha,
 Suntzu, and Rasputin.
  
-See Also: RESOURCES 
+See also: RESOURCES 
 #31
 SOURCES RESOURCES CODEBASE FTP DOWNLOADS DOCUMENTATION OLC-SOURCE CODEOLC OLCCODE OLC-CODE CODE-OLC WTFAQ MAILING-LISTS FORUMS MAILINGLISTS GROUPS 
 
@@ -1195,7 +1098,7 @@ http://share1.esd105.wednet.edu/bishopcj/EYES_on_IKE/graph_templates.htm
 http://www.42explore.com/writing.htm
 http://www.pastebin.com/
 
-See Also: CYGWIN, CODING
+See also: CYGWIN, CODING
 #31
 PLR CSH SITEOK LODRM INVST
 
@@ -1207,7 +1110,8 @@ WRITING    - Player writing (board/mail/olc)
 MAILING    - Player is writing mail
 CSH        - Player needs to be crash-saved
 SITEOK     - Player has been site-cleared
-NOSHOUT    - Player not allowed to shout/goss
+NOSHOUT    - Player in not on the shout channel
+NOSHOUT    - Player is not on the gossip channel
 NOTITLE    - Player not allowed to set title
 DELETED    - Player deleted - space reusable
 LOADRM     - Player uses nonstandard loadroom
@@ -1217,7 +1121,7 @@ INVST      - Player should enter game wizinvis
 CRYO       - Player is cryo-saved
 DEAD       - Player being extracted.
 
-See Also: FLAGS, PRF
+See also: FLAGS, PRF
 #31
 PRF CHAR-FLAGS PC-FLAGS NO_TELL PLAYER-FLAGS 
 
@@ -1234,13 +1138,13 @@ QUEST    - Player is on a quest.
 SUMN     - Player can be summoned by other players.
 NO_REP   - Communications will not be repeated.
 LIGHT    - Builders can see invis and in the dark. 
-C1       - Player has color set to sparse.
+C1       - Player has color set to brief.
 C2       - Player has color set to normal.
-           BOTH: Player has color complete.
+           BOTH: Player has color on.
 NO_WIZ   - Builder can not see wiznet.
 L1       - Builder has syslog set to brief. 
 L2       - Builder has syslog set to normal.
-           BOTH: Builder has syslog set to complete.
+           BOTH: Builder has syslog set to on.
 NO_AUC   - Player can not see auctions.
 NO_GOS   - Player can not see gossips. 
 NO_GTZ   - Player can not see grats.
@@ -1248,7 +1152,7 @@ RMFLG    - Builder can see roomflags, mobflags, and objflags.
 CLS      - Player is due to be saved on next autosave.
 BLDWLK   - Builder is Buildwalking. 
 
-See Also: FLAGS, PLR
+See also: FLAGS, PLR
 #31
 CAPITALIZATION CAPITALISATION CAPITALIZE CAPITALISE
 
@@ -1273,7 +1177,7 @@ STYLISTICS ELASETH STYLE
 
 @cDisclaimer@n: The opinions herein belong solely to Elizabeth Hoefling. Some 
 games look for different things when building, but overall any zone made by 
-these rules should be good for most muds.
+these rules should be good for most MUDs.
 
 @cThe Beginning of a Zone@n:
 
@@ -1295,14 +1199,14 @@ unfortunate souls to be at more of a disadvantage than they have to be... and
 maps are highly important to knowing a mud, even if you keep them all in your 
 head as a few players do. 
 
-When creating your basic map, it's also a good idea to number the rooms on your
+When creating your basic map, it is also a good idea to number the rooms on your
 map so you can keep track of vnums by the last two or three digits as well as 
 know exactly which room is where if you need to go back and change something. 
 It saves you having to dig through several vnums trying to find that one place 
 where you have to reconnect an exit. Just create each vnum with the 
-corresponding map digits and it's smooth sailing.
+corresponding map digits and it is smooth sailing.
 
-Now that you have an idea and a map, it's time to actually start building. And 
+Now that you have an idea and a map, it is time to actually start building. And 
 this is where the term stylistics comes into play. These are the do's and 
 don'ts of building that surpass simple knowledge of olc. Some of these rules 
 depend on the kind of mud you play, but most are tried and true for a nice, all
@@ -1328,10 +1232,10 @@ descriptions.
 
 Game environments benefit from complexity, especially complexity that comes in 
 a palatable form (such as simplicity). There exists a certain pleasure in 
-discovering depth anywhere, especially if its truly a discovery. Hiding deep 
+discovering depth anywhere, especially if it is truly a discovery. Hiding deep 
 meaning behind descriptions, areas to find, special items, unique nooks and 
 crannies to spend time socializing, and hints that point to these things 
-elsewhere outside of your own zone, are an excellent idea. In fact, if you 
+elsewhere outside of your own zone is an excellent idea. In fact, if you 
 don't wish to be building descriptions no one will read, you should employ 
 special secrets Â- most especially on games where knowing one's environment 
 does deeply affect a character's development. No matter what kind of zone you
@@ -1345,7 +1249,7 @@ types of play. This is fine, but make certain that your zone fulfills the
 game's basic design. Plain and simple, if these elements do not exist, the zone
 isn't interesting and is not worth building. 
 
-I suggest having something special every three or so rooms, even if it's only a
+I suggest having something special every three or so rooms, even if it is only a
 minor addition that doesn't even connect to the zone itself. Such as finding a 
 sigil of office on a door, or old burned bones in a ditch on the side of the 
 road.
@@ -1400,7 +1304,7 @@ road.
    in a different place than where they left. Why did that happen? If this 
    isn't something a player expects as a result of their actions, or a reason 
    hasn't been offered to explain away the situation, the builder fails in 
-   suspending disbelief. Instead, players think it's broken, or it's an OOC 
+   suspending disbelief. Instead, players think it is broken, or it is an OOC 
    attempt to screw them over, etc. So, if the physics of your world do not 
    match the physics in our world, inform your players through your 
    descriptions as to why their assumptions fail.
@@ -1410,7 +1314,7 @@ road.
    gain anything from the experience only frustrates players. This does not 
    mean don't make the zone complicated or difficult, but use good judgment as 
    to what is overly provoking to a player in a useless manner. A good rule to
-   follow is that if it's complicated and has nothing to do with a zone's quest
+   follow is that if it is complicated and has nothing to do with a zone's quest
    or purpose, don't make it necessary to achieve that purpose. My favorite 
    example for this "abuse" is adding secrets and failing to leave hints in 
    descriptions about how to solve or find them, such as a maze without even 
@@ -1429,10 +1333,10 @@ road.
 
 @cThe Polish @n(I.E. Picky Stuff)
 
-1) Do not use the word 'is' in descriptions. It's generally accepted by the 
+1) Do not use the word 'is' in descriptions. It is generally accepted by the 
    literary community that the active voice is more powerful and eloquent. 
    Dodging the use of this word enriches descriptions in another way as well 
-   as forcing you to use the active voice. It's easy to describe something as 
+   as forcing you to use the active voice. It is easy to describe something as 
    it is red, it is big, it is heavy... and the word 'is' becomes repetitive. 
 
 2) Do not to use the word 'you' in descriptions. It creates almost 90% of 
@@ -1450,8 +1354,8 @@ road.
 4) Be extremely careful when building with color. Especially if you're adding 
    it to your room descriptions. Try not to use more than one, and usually you 
    shouldn't use them in the text at all, only in the room title. On objects 
-   and mobs this rule is more relaxed, but if it's part of what the player 
-   automatically sees when entering a room, it's probably best that it not be 
+   and mobs this rule is more relaxed, but if it is part of what the player 
+   automatically sees when entering a room, it is probably best that it not be 
    too colorful and should only have 1 alternate color in it. Color is the 
    hardest thing for many good builders to learn how to use properly. Don't be
    disheartened or surprised if asked to change even a minor amount of color. 
@@ -1462,14 +1366,14 @@ road.
    the title of a book, capitalizing all words except for a, the, and the few 
    excluded prepositions like 'of'. Short descs on mobs and objects should 
    always include the article or a measure word like 'some'. Long descs must 
-   have the keyword of the object in it. In fact, it's usually best to write 
+   have the keyword of the object in it. In fact, it is usually best to write 
    the keywords -after- writing the short and long descs. A player should 
    never have to guess what the keyword is to affect an item. If they can see 
    it, they should be able to refer to it.
 
 6) Never describe a mob that's loaded into a room in the room description, and 
-   if the mob's sentient (like a humanoid or race), it simply must be a mob and
-   cannot appear in the room description. An example such is butterflies 
+   if the mobile is sentient (like a humanoid or race), it simply must be a mob 
+   and cannot appear in the room description. An example such is butterflies 
    circling a bush. That's fine if the butterflies are not supposed to be 
    sentient and are not loaded into the room. You should never describe drunks 
    at a bar in the room description of the bar, instead put them there as mobs.
@@ -1527,7 +1431,7 @@ road.
 14) Room titles should be original in nature. This means for the most part, do
     not copy room titles. A person should be able to look, and by title alone, 
     know exactly where they are. There are exceptions (like roads), but try not
-    to make them to common, and you can break those room titles up with 
+    to make them too common, and you can break those room titles up with 
     prepositions, etc, as well. Ex: Thistledon Road by a Willow
 
 15) Room titles should pick out the most important thing in the room or give 
@@ -1543,17 +1447,17 @@ road.
 
 @cRules of Practicality@n:
 
-1) Make sure the zone has a main goal. Every zone should have one before it's 
-   built. If it's defeating the necromancer in the tower, setting the prices of
+1) Make sure the zone has a main goal. Every zone should have one before it is 
+   built. If it is defeating the necromancer in the tower, setting the prices of
    the local stables, giving someone a realistic role-play environment, or just
-   killing everything in sight, make sure you know what it's supposed to be 
+   killing everything in sight, make sure you know what it is supposed to be 
    before you start building. 
 
 2) Anything a player can see, he or she should be able to refer to. Be certain 
    that your keywords are intuitive.
 
-3) If a mob's not humanoid they probably don't have money, and don't go around 
-   wearing all that much by the way of clothing. It's unrealistic for them to 
+3) If a mob is not humanoid they probably don't have money, and don't go around 
+   wearing all that much by the way of clothing. It is unrealistic for them to 
    have it, so don't give it to them. If you want to reward the player for 
    killing them, give them a pelt, teeth, claws or something to be sold. See 
    rule #14 for more info.
@@ -1634,7 +1538,7 @@ logged in for over three months I then "stat file <playername>" and check that
 they have the proper OLC set, and that they do not have the NO_DEL flag (I set
 no_delete on players that tell me they are going to be absent for a while). If 
 they have not been on for three months and do not have NO_DEL set I then "show 
-zone #" to doublecheck the zone and builder assigned.  I then use r/m/o/s/tlist
+zone #" to double-check the zone and builder assigned.  I then use r/m/o/s/tlist
 to check if they made anything of value that could be donated.
    Once I am positive it is safe to delete their zone I set their OLC to -1. 
 "stat file <playername>" to be sure it worked and then delete the zone from the
@@ -1655,7 +1559,7 @@ GRAMMAR GRAMMER TIPS
    Love thy dictionary. Be sure to check the spelling of your work. Medieval 
 words can be particularly tricky and elude electronic spell checkers. A good 
 dictionary, however, will help you spell archaic words. Whenever I am building 
-I use our merriam webster dictionary link on TBA to check any tough words for
+I use our Merriam Webster dictionary link on TBA to check any tough words for
 proper spelling. Test it out @RTELL M-W DEFINITION@n. We hope to add a thesaurus
 soon! Goto @Chttp://m-w.com/@n until then.
   I have found that a good principle to make is to avoid the use of all 
@@ -1716,7 +1620,7 @@ are expected to be able to write decent descriptions. MUDs will not implement
 zones that are grammatical nightmares. The goal of the Builder Academy is to
 develop great builders, part of this requires a grasp on the English language.
 We understand English is not the first language for most people, but that is no
-excuse if you wish to be a builder. Most muds are not going to spend the time
+excuse if you wish to be a builder. Most MUDs are not going to spend the time
 to teach you proper English. At the Builder Academy we will try.  But, it
 will take more effort on your part than ours.    
    Once you start your zone we will review it and make suggestions to redo or
@@ -1740,12 +1644,12 @@ someone is logged in the system files and is viewable by any immortal with
 syslog enabled.
 
 Snoop is meant to assist teachers in helping builders. It allows you to see
-what they are doing wrong and correct them. It should be used in conjuction
+what they are doing wrong and correct them. It should be used in conjunction
 with the send command. Snoop shall only be used to assist people when building.
 
 Type snoop <your name> or just snoop to stop snooping.
 
-See Also: SEND
+See also: SEND
 
 #31
 SEND
@@ -1775,12 +1679,12 @@ EVERYTHING ANYTHING
 When I help people I usually ask them what they need help with. All too often
 they tell me: everything. I can not teach people everything. It is up to each
 individual to learn what they can and then ask informed questions. The help
-files here are extensive and are continiously being developed. Read through
+files here are extensive and are continuously being developed. Read through
 all of the TBA zone starting at room 3. Inform yourself and then ask an 
 informed question in which I or the other staff members will be able to help
 with.
 
-See Also: NEWBIE
+See also: NEWBIE
 #31
 ASCII-ART ART
 
@@ -1804,7 +1708,7 @@ ASCII Text Generator:
 http://www.network-science.de/ascii/
 http://www.degraeve.com/img2txt.php
 
-See Also: TBAMAP, MAPPING
+See also: TBAMAP, MAPPING
 #31
 ABBREVIATIONS
 
@@ -1816,18 +1720,18 @@ anyone who types <action> rumble rumbl rumb rum ru.
 #31 
 ZONE-DESCRIPTION-ROOM ZONE_DESCRIPTION_ROOM 00 EXAMPLE-PROPOSALS EXAMPLE-ZONE-DESCRIPTIONS ZONE-INFO TEST-ZONE TRIAL-ZONE ZONE-DESCRIPTIONS ZEDIT-DESCRIPTION
 
-Your zone proporsal should be cut and pasted into your "Zone Description Room",
+Your zone proposal should be cut and pasted into your "Zone Description Room",
 which will be in room <zone #>00 (first room in your zone). In this credit room you 
 should update your zone proposal as required to keep a summary of any important
 information about your zone. This room will have no exits and should only be 
-accessible by immortals. It is there for you and the immortals who come after 
+accessible by immortals. It is there for you and the immortals that come after 
 you to get a basic idea of the zone without having to explore the whole thing. 
 If you have any planned links or possible exits or entrances to another zone, 
 make sure that you list them there. For examples goto the following rooms: 
 8600, 10600, 20000. Add anything to this room that you think would make it 
 easier to administer the zone on a MUD. 
 
-See Also: REPORT, PLANNING, PROPOSAL
+See also: REPORT, PLANNING, PROPOSAL
 
 #31
 PROPOSALS GUIDELINES ZONE-PROPOSALS PROPOSITIONS PROPOSE
@@ -1837,7 +1741,7 @@ room/mob/obj. Your next task is to submit a zone proposal to prove you have
 what it takes to properly plan out your first zone. It is extremely important
 that you put some forethought into what you will be creating. Remember, zones
 are built for others to play. Be sure to make it something a player will enjoy.
-A zone proposal consists of an informal MUDmail to your Head Buidler. It should
+A zone proposal consists of an informal MUDmail to your Head Builder. It should
 contain: the location, level, alignment, theme, plot, size, and any other 
 important notes about the zone. Detailed descriptions and help files are 
 available in the hallways starting from room 14 and 15.
@@ -1847,11 +1751,11 @@ deadlines, so take the time to give your zone character.
 
 Required Reading: @RHELP PLANNING, HELP STYLISTICS@n
 
-See Also: EXAMPLE-PROPOSAL
+See also: EXAMPLE-PROPOSAL
 #31
 LITTERING
 
-Do not load mob's or obj's in other people's zones. Especially in TBA zone
+Do not load mobiles or objects in other people's zones. Especially in TBA zone
 and immortal rooms.
 
 #31
@@ -1901,7 +1805,7 @@ hard work, a lot of people who have never built do not seem to realize it.
 I have taught numerous people how to build. They start on one small area 
 usually 50 rooms or less, they are all excited and gung-ho and get off to a 
 good start but then somewhere along the line they realize: "hey, building is 
-not as glamorous as I thought, it doesn't pay, and it's actually very hard 
+not as glamorous as I thought, it doesn't pay, and it is actually very hard 
 work." 
    Then they quit, which I respect more than the ones who I teach how to build,
 give them an area, and they sit around making a "special room for themselves" 
@@ -1909,7 +1813,7 @@ or take advantage of the builder commands and equip themselves to the hilt or
 they sit around and complain because they are not promoted in the first week. I 
 do not ask for much from builders, I let them build anything they want, if 
 there is something special they want that is not in the code we will put it in 
-(as long as it's reasonable of course) I don't ask for long hours and I don't 
+(as long as it is reasonable of course) I don't ask for long hours and I don't 
 sit looking over anyone's shoulders, I don't even require a builder to have 
 experience, I am more then willing to teach someone, what I am unwilling to do 
 is let someone take advantage of me or my MUD which is mostly what I find 
@@ -1939,8 +1843,8 @@ Be original, finish what you start, have fun, and don't forget to breathe!
 #31
 CALENDAR CALENDER MONTHS WEEKS DAYS HOURS 
 
-The CircleMUD calendar consists of 17 months with 35 days in a month.
-The rest is your normal 7 day week with 24 hour days.
+The CircleMUD calendar consists of 75 seconds per minute, 35 days a month and
+17 months a year.
 
 Days of the week:
   the Day of the Moon
@@ -1972,20 +1876,20 @@ Months of the year:
 
 Trigedit example that mimics the TIME command: @RTSTAT 36@n
 
-See Also: DATE, TIME
+See also: DATE, TIME
 #31
 FOUNTAINS DRINK-UNITS OEDIT-FOUNTAINS 
 
    After selecting object type FOUNTAIN you must then select C) Values to set
 the capacity of the fountain. A good number is 500 for both the capacity and
 quantity. When loading the fountain through zedit you should remove and then
-load the fountain every zone reset. This cand be done by choosing the R)
+load the fountain every zone reset. This can be done by choosing the R)
 Remove an object option in zedit followed by the O) Load Object to room command.  
 This way your fountain will reload every zone reset and always be full.
 
 Example: @RAT 23429 STAT ROOM@n
 
-See Also: VALUES
+See also: VALUES
 
 #31
 ALIGNMENT GOOD NEUTRAL EVIL %ACTOR.ALIGN% %ALIGN% %ALIGNMENT% 
@@ -1999,12 +1903,12 @@ ranges from:
   -350 to  350  Neutral
    350 to 1000  Good
 
-See Also: ALIGNMENTS
+See also: ALIGNMENTS
 #31
 TARGET
 
    Target is used often within these help files, normally as [target]. This can
-be an object a mobile or a player. Usually used in conjuction with another 
+be an object a mobile or a player. Usually used in conjunction with another 
 command.
 
 #31
@@ -2015,7 +1919,7 @@ Healing affects can be created through trigedit.
 MOB Examples: @RTSTAT 146@n
 Room Examples: @RTSTAT 163@n 
  
-See Also: %DAMAGE%
+See also: %DAMAGE%
 
 #31
 LOADROOM
@@ -2045,7 +1949,7 @@ STAT OBJECT will search only for objects.
 STAT MOBILE will search only for monsters.
 
 STAT FILE is used to stat players who are not logged in; the information
-displayed comes from the playerfile.
+displayed comes from the players file.
 
 STAT SELF will do the same thing as typing STAT <YOUR NAME>.
 
@@ -2085,7 +1989,7 @@ Usage: helpcheck
 Checks all commands in interpreter.c to ensure they have an associated help
 file.
 
-See Also: HEDIT, HINDEX
+See also: HEDIT, HINDEX
 #31
 HEDIT
 
@@ -2093,7 +1997,7 @@ Usage: hedit <keyword>
 
 This command allows online editing of help files. Hedit OLC permission is 888.
 
-See Also: HINDEX, HELPCHECK
+See also: HINDEX, HELPCHECK
 #31
 PET-SHOPS PETSHOPS PET_SHOPS
 
@@ -2109,7 +2013,7 @@ Although a pet shopkeeper is not required it is recommended. After all of this i
 ask your coder to implement the petshop. It will not work until the code is changed
 and the MUD is rebooted. The cost of pets is 300 times their level.
 
-See Also: SPECIALS
+See also: SPECIALS
 #31
 EXPORT
 
@@ -2126,14 +2030,14 @@ Usage : links <zone number>
 
    Lists all links from the given zone to any other zones.
 
-See Also: RESOURCES
+See also: RESOURCES
 #31
 CHECKLOAD
 
 Usage: checkload <O|M|T> <vnum>
 
    Checkload will scan the zone information and tell you where any given mob, 
-obj, or trig loads. We recommend you use this in conjuction with the lists to
+obj, or trig loads. We recommend you use this in conjunction with the lists to
 ensure everything created in your zone is actually used.
 
 > checkload o 15004
@@ -2151,7 +2055,7 @@ Checking load info for the beastly fido...
 Checking load info for the object trigger 'Portal to Midgaard - 100':
 (obj) [  100] the portal
 
-SEE ALSO:  LINKS, RLIST, OLIST, MLIST, SLIST
+See also:  LINKS, RLIST, OLIST, MLIST, SLIST
 #31
 PEACE %PEACE%
 
@@ -2189,7 +2093,7 @@ Examples:
   > echo Hi, everyone in the room.
   > gecho Hi, everyone in the game, isn't this annoying?
 
-See Also: %ECHO%
+See also: %ECHO%
 #31
 FORCE
 
@@ -2204,7 +2108,7 @@ Example:
   > force all save
   > force room look fido
 
-See Also: %FORCE%
+See also: %FORCE%
 #31
 FREEZE THAW FREEZING FROZEN
 
@@ -2226,8 +2130,8 @@ Usage: goto <location>
    These commands are used to transports yourself and others to different 
 rooms. GOTO allows you to go to other rooms; TRANS transports a person from 
 wherever they are to the room YOU are in; TELEPORT transports your victim to 
-some other location. For both GOTO and TELEPORT, the location specifier can 
-be either a virtual room number, or the name of a character or object.
+some other location. For both GOTO and TELEPORT, the location specified can 
+be either a virtual room number or the name of a character or object.
 
 Examples:
   > goto 3001
@@ -2266,11 +2170,12 @@ HOLYLIGHT LIGHTING LIGHTS TORCHES HOLY-LIGHTING
 
 Usage: holylight
 
-   A toggle which allows you to see invisible or hidden people and objects. 
-Dark rooms even if you don't have a light. It is expected most immortals will 
+   A toggle which allows you to see invisible or hidden people, objects, and 
+dark rooms even if you don't have a light. It is expected most immortals will 
 keep HOLYLIGHT on most of the time; it exists so that you have the ability to 
 see what mortals see for debugging purposes.
 
+See Also: TOGGLE
 #31
 IMOTD
 
@@ -2373,11 +2278,11 @@ Usage: nohassle
 immortals from firing triggers. If you wish to test triggers you must turn 
 nohassle off.
 
-See Also: HOLYLIGHT, ROOMFLAGS, REDIT-ROOM
+See also: TOGGLE, HOLYLIGHT, ROOMFLAGS, REDIT-ROOM
 #31
 NOTITLE
 
-Usage: notitle <vicitim>
+Usage: notitle <victim>
 
    Prevent players from being able to set their own titles; i.e., if the player
 consistently has an offensive title.  The definition of offensive is left as an
@@ -2391,7 +2296,7 @@ Usage: nowiz
 
    Allows you to hear or ignore messages coming over the wiznet.
 
-See also: WIZNET
+See also: TOGGLE, WIZNET
 #31
 PAGER BEEPER PAGING SEND-PAGE
 
@@ -2512,7 +2417,7 @@ If you are outdoors you will see weather messages for the following times:
 If you want to make your own messages use trigedit and set the INDOORS roomflag 
 so you don't receive the default messages.
 
-See Also: WAITUNTIL, WEATHER
+See also: WAITUNTIL, WEATHER
 #31
 WHERE
 
@@ -2536,13 +2441,15 @@ TIME TICKS
 
 Usage: time
 
-Gives you the current game time. CircleMUD uses military/zulu time 0-24 hours. 
+Gives you the current game time. CircleMUD uses zulu time 0-24 hours. There are
+75 seconds per minute, 35 days per month, and 17 months per year. 1 MUD year 
+takes about 12 days.
 
 /* mud-life time */
-@n#define SECS_PER_MUD_HOUR       75 // one MUD tick = 75 seconds
-@n#define SECS_PER_MUD_DAY        (24*SECS_PER_MUD_HOUR)
-@n#define SECS_PER_MUD_MONTH      (35*SECS_PER_MUD_DAY)
-@n#define SECS_PER_MUD_YEAR       (17*SECS_PER_MUD_MONTH)
+@n#define SECS_PER_MUD_HOUR       75 
+@n#define SECS_PER_MUD_DAY        (24*SECS_PER_MUD_HOUR)  // 1800 sec
+@n#define SECS_PER_MUD_MONTH      (35*SECS_PER_MUD_DAY)   // 63000 sec
+@n#define SECS_PER_MUD_YEAR       (17*SECS_PER_MUD_MONTH) // 1071000 sec (about 12.39 days)
  
 /* real-life time (remember Real Life?) */
 @n#define SECS_PER_REAL_MIN       60
@@ -2569,7 +2476,7 @@ FILE argument, and once without -- to make sure that the change takes.
  
 The following are valid fields:
  
-Field          Level Required   Who     Value Type  Decription
+Field          Level Required   Who     Value Type  Description
 ----------------------------------------------------------------------------
 ac             LVL_BUILDER      BOTH    NUMBER      Armor class
 age            LVL_BUILDER      BOTH    NUMBER      Character's age
@@ -2583,11 +2490,11 @@ con            LVL_BUILDER      BOTH    NUMBER      Constitution
 damroll        LVL_BUILDER      BOTH    NUMBER      Damage modifier
 deleted        LVL_IMPL         PC      BINARY      DELETED flag
 dex            LVL_BUILDER      BOTH    NUMBER      Dexterity
-drunk          LVL_BUILDER      BOTH    MISC        Drunkeness
+drunk          LVL_BUILDER      BOTH    MISC        Drunkenness
 exp            LVL_BUILDER      BOTH    NUMBER      Experience points
 frozen         LVL_FREEZE       PC      BINARY      FROZEN flag
 gold           LVL_BUILDER      BOTH    NUMBER      Gold (On hand)
-height         LVL_BUILDER      BOTH    NUMBER
+height         LVL_BUILDER      BOTH    NUMBER      Height
 hit            LVL_BUILDER      BOTH    NUMBER      Current HP
 hitroll        LVL_BUILDER      BOTH    NUMBER      To-Hit modifier
 hunger         LVL_BUILDER      BOTH    MISC        Hrs to hunger
@@ -2669,8 +2576,8 @@ SHUTDOWN shuts the MUD down.
  
 COPYOVER   Warm reboot of a mud without having to logout and then log back in. 
            You can stay connected and you will be automatically relogged in 
-           after a succesful copyover. OLC is not autosaved for copyovers. 
-           WARNING: All objects dropped on the ground will get lost and aggo
+           after a successful copyover. OLC is not autosaved for copyovers. 
+           WARNING: All objects dropped on the ground will get lost and aggro
            mobs will reappear just like any other zone reset or reboot.
 
 REBOOT     Pause only 5 seconds instead of the normal 40 before trying to
@@ -2685,15 +2592,17 @@ PAUSE      Create a file called 'paused' in the root directory; do not
 TIME       Time until reboot/shutdown. Omit to reboot/shutdown right away.
  
 #31
-SLOWNS
+SLOWNS SLOWNAMESERVER
 
-The slowns command is depricated after adding asynchronous host lookup.
+Usage: toggle slowns
+
+The slowns command is deprecated after adding asynchronous host lookup.
 
 Huh? Slowns toggles whether or not IP addresses are resolved into readable 
 site names. If slow nameserver is enabled, USERS will show only IP 
 addresses. (128.123.222.111 etc).
 
-See also: USERS
+See also: TOGGLE, USERS
 
 #31
 SWITCH
@@ -2708,7 +2617,7 @@ See also: RETURN, TRIG-SWITCH
 #31
 SYSLOG SYSLOG-OFF LOGS SYSLOG-BRIEF SYSLOG-NORMAL NORMAL SYSLOG-COMPLETE AUTOLOG 
 
-Usage: syslog [off | brief | normal | complete]
+Usage: toggle syslog [ Off | Brief | Normal | On ]
 
 The SYSLOG command controls how detailed of an on-line system log you see.
 Messages surrounded by '[' and ']' are syslog messages and are in green
@@ -2717,13 +2626,13 @@ if you have color on.
 The messages you receive are level dependent.
 
 Examples:
- > syslog complete - You will see all logs, spammy.
- > syslog normal   - You will see all the important stuff.
- > syslog brief    - You will see few logs.
- > syslog off      - You will see no logs.
- > syslog          - lets you know what your current setting is. 
+ > toggle syslog on       - You will see all logs, spammy.
+ > toggle syslog normal   - You will see all the important stuff.
+ > toggle syslog brief    - You will see few logs.
+ > toggle syslog off      - You will see no logs.
+ > toggle syslog          - lets you know what your current setting is. 
 
-See also: COLOR, PRF
+See also: TOGGLE, COLOR, PRF
 #31
 UNAFFECT
 
@@ -2782,9 +2691,9 @@ objects, 100 shops, and 100 triggers.
 vnum 1300 of my zone.  The first two digits are the zone number of my area, 
 the second two identify which item it is in that area. It would be zone 13, 
 object 00 of 100 possible objects. However, never use any VNUM from someone
-elses zone without the permission of that person and the staff.
+else's zone without the permission of that person and the staff.
 
-See Also: TERMINOLOGY, VNUM, SHOW-ZONES, AREAS
+See also: TERMINOLOGY, VNUM, SHOW-ZONES, AREAS
 #31
 GCC
 
@@ -2793,7 +2702,7 @@ time. They will get an error saying "GCC could not be found" This means a C
 compiler was not installed because you failed to follow the directions under
 HELP CYGWIN. Reread them and add the compiler to the default download.
 
-See Also: CYGWIN, README.CYGWIN
+See also: CYGWIN, README.CYGWIN
 
 #31
 VSTATS MSTATS OSTATS RSTATS ROOM-STAT
@@ -2832,8 +2741,7 @@ The following wizard commands are implemented with level in the brackets:
 [31]wiznet   [31]wizhelp   [34]wizlock   [32]zcheck   [31]zedit    [31]zlist     [32]zpurge   
 [31]zreset
 
-See also: <any of the above commands>, COMMAND      
-
+@RHELP <any of the above commands>@n
 #31
 WIZLOCK
 
@@ -2850,7 +2758,7 @@ WIZNET ; WIZTALK WIZTELL WIZCHAT WIZLINE
 
 The immortal communication channel. It is visible while in OLC.
 This channel should only be used for building related communications. If you 
-wish to chat and gossip please feel free to use the gossip channel. The gos 
+wish to chat and gossip please feel free to use the gossip channel. The gossip
 channel can be turned off through the NOGOS toggle and may be if the spam
 becomes too much for you to handle. It is not recommended that you go NOWIZ.
 
@@ -2933,11 +2841,11 @@ help           ../log/help
 #31
 TRACKTHRU
 
-Usage: trackthru
+Usage: toggle trackthru
 
-Sets wether or not you will track through doors.
+Sets whether or not players can track through doors.
 
-See also: TRACK
+See also: TOGGLE, TRACK
 #31
 WORLD-FORMATS ROOM-FORMATS WLD WORLD-FILES
 
@@ -2958,7 +2866,7 @@ E
 <description text>
 ~
 
-See Also: Redit
+See also: Redit
 #31
 MOBILE-FORMATS MOB-FORMATS MOB-FILES
 
@@ -2972,7 +2880,7 @@ MOBILE-FORMATS MOB-FORMATS MOB-FILES
 <action bitvector> <affection bitvector> <alignment> <type flag>
 {type-specific information; see below for details}
 
-See Also: MEDIT
+See also: MEDIT
 #31
 OBJ-FORMATS OBJECT-FORMATS OBJ-FILES
 
@@ -2986,7 +2894,7 @@ OBJ-FORMATS OBJECT-FORMATS OBJ-FILES
 <weight> <cost> <rent per day>
 {Zero or more Extra Descriptions and/or Affect Fields}
 
-See Also: OEDIT
+See also: OEDIT
 #31
 ZONE-FORMATS ZON-FILES
 
@@ -2995,14 +2903,14 @@ ZONE-FORMATS ZON-FILES
 <bottom room number> <top room number> <lifespan> <reset mode>
 {zero or more zone commands}
 
-See Also: ZEDIT
+See also: ZEDIT
 #31
 ZPURGES
 
 Usage: zpurge <zone #>
 
    Allows a builder to purge a zone of all mobs and objects. If used once all mobs
-and objs laying in the room will be purged. But, all objs carried by mobs will
+and objs lying in the room will be purged. But, all objs carried by mobs will
 be dropped to the ground. To completely wipe a zone use it twice.
 
 #31
@@ -3036,7 +2944,7 @@ http://www.circlemud.org/cdp/wtfaq/handpatch.html
 Zizazat's tutorial on how to create a patch:
 http://cwg.lazuras.org/cwg-files/docs/The%20Newbie%20Patching%20Primer.doc
 
-See Also: CODING, DOWNLOADS
+See also: CODING, DOWNLOADS
 #31
 CODING C++ PROGRAMMING LINUX UNIX 
 
@@ -3054,14 +2962,15 @@ directions under @RHELP CYGWIN@n.
 recommend the book "The C Programming Language" 2nd edition by Brian W. 
 Kernighan and Dennis M. Ritchie. There are also online tutorials like:
 
+http://mindview.net/CDs/ThinkingInC/beta3
 http://www.cprogramming.com/tutorial/
 http://www.free-ed.net/catalog/crsemain.asp?nC=3&nD=2&nO=3
 
-See Also: FREE-SERVERS, DOCUMENTATION, DOWNLOADS, CWG
+See also: FREE-SERVERS, DOCUMENTATION, DOWNLOADS, CWG
 #31
 DICTIONARY DICTIONARIES THESAURUS M-W.COM DEFINITION MERRIAM-WEBSTER M-W-DEFINITION WEBSTER MW TELL-M-W BREATHER 
 
-   We have a direct link to merriam webster. To use the dictionary just
+   We have a direct link to Merriam Webster. To use the dictionary just
 tell m-w <word>
 
 >tell m-w breather
@@ -3208,7 +3117,7 @@ eval num_hitp %actor.hitp%/2  - calculate half of hitpoints and then damage
 Example: @RTSTAT 16
          TSTAT 3008@n
 
-See Also: DAMAGE, GUNS, DEATH
+See also: DAMAGE, GUNS, DEATH
 #31
 %DOOR% WDOOR ODOOR MDOOR TRIGEDIT-EXIT TRIG-EXIT TRIGEDIT-DOORS TRIGEDIT-MENU-DOORS SECRET-DOORS TRIG-DOOR 
 
@@ -3252,7 +3161,7 @@ the victim.
 NOTE: When used with mobs make sure the mobs can see the players. i.e not blind, set INFRA.
 Example: @RTSTAT 18@n
 
-See Also: %ASOUND%
+See also: %ASOUND%
 #31
 %FORCE% OFORCE WFORCE MFORCE TRIGEDIT-FORCE TRIG-FORCE
 
@@ -3288,7 +3197,7 @@ equip obj to player   : %load% obj 1300 %actor% waist
 Obj Example: @RTSTAT 94@n
 Mob Example: @RTSTAT 81@n
 
-See Also: POSITIONS, CHAR-VAR
+See also: POSITIONS, CHAR-VAR
 #31
 %PURGE% OPURGE MPURGE WPURGE
 
@@ -3305,7 +3214,7 @@ Examples:
  
 Example: @RTSTAT 1375, 6300@n
 
-See Also: POSITIONS
+See also: POSITIONS
 #31
 %TELEPORT% WTELEPORT OTELEPORT MTELEPORT PORTALS %TRANSPORT% TRIG-TELEPORT
 
@@ -3327,7 +3236,7 @@ PORTAL EXAMPLES:
    ROOM: @RTSTAT 101@n
    MOB:  @RTSTAT 102@n
 
-See Also: MGOTO, TELEPORT
+See also: MGOTO, TELEPORT
 #31
 DG_CAST TRIG-CAST TRIGEDIT-CAST TRIGEDIT-SPELLS DG-CASTS %CAST% %SPELLS% %dg_cast% 
 
@@ -3344,7 +3253,7 @@ Commands:
 dg_cast 'poison' %actor%
 
 Example: @RTSTAT 132@n
-See Also: SPELLS
+See also: SPELLS
 #31
 %ASOUND% OASOUND MASOUND WASOUND ASOUND
 
@@ -3402,8 +3311,8 @@ MJUNK %JUNK%
 
 mjunk <object | all>
    
-   The object in the mob's inventory specified is removed from the game. 
-'Mjunk all' removes all of the objects in the mob's inventory. No message 
+   The object in the mobs inventory specified is removed from the game. 
+'Mjunk all' removes all of the objects in the mobs inventory. No message 
 is sent by this command. Only mobs may use this command.
 
 #31
@@ -3418,7 +3327,7 @@ mfollow %actor%
 
 Examples: @RTSTAT 57508, 40, 39@n
 
-See Also: GROUPS
+See also: GROUPS
 #31 
 MHUNT %HUNT% HUNT 
 
@@ -3430,7 +3339,7 @@ rooms.
 
 Examples: @RTSTAT 19596, 19595@n
 
-See Also: TRIGEDIT-MOB-BRIBE
+See also: TRIGEDIT-MOB-BRIBE
 #31
 %KILL% WKILL OKILL MKILL
 
@@ -3476,7 +3385,7 @@ timer triggers. Timers are reset on copyover and reboot.
 
 Example: @RTSTAT 11894@n
 
-See Also: TIMER, TRIGEDIT-OBJ-TIMER
+See also: TIMER, TRIGEDIT-OBJ-TIMER
 #31
 OSETVAL %SETVAL%
 
@@ -3529,7 +3438,7 @@ nop %actor.pos(sitting)%
 
 Examples: @RTSTAT 1399, 20997@n
 
-See Also: MEDIT-POSITIONS
+See also: MEDIT-POSITIONS
 #31
 GLOBALS GLOBAL-VARIABLES GLOBAL-VARS GVARS TRIGEDIT-GLOBALS
 
@@ -3542,7 +3451,7 @@ check the global variable to allow or prevent passage accordingly.
 
 * To make a variable 'reachable' from other triggers it has to be made 'global'. 
 * In this case I make a local known var %has_bribed_guard% and make it global. 
-* It's a good idea to use this in conjunction with context.
+* It is a good idea to use this in conjunction with context.
 set has_bribed_guard 1
 global has_bribed_guard
 
@@ -3553,7 +3462,7 @@ if %actor.varexists(variable)%
 Global variables should not be used when you want to remember something about a 
 player. To save something to a players file for future use always use REMOTE. 
 
-See Also: REMOTE, VARIABLES, CONTEXT
+See also: REMOTE, VARIABLES, CONTEXT
 #31
 CONTEXT %CONTEXT% 
 
@@ -3563,7 +3472,7 @@ context %actor.id%
 set has_said_hello 1
 global has_said_hello
 * now only triggers running with context = %actor.id% can access this particular 
-* variable. however - it's a better idea to use vars set on players: help remote.
+* variable. however - it is a better idea to use vars set on players: help remote.
 
    Changes the "context" of a trigger to this value. When first run, a trigger's 
 context is 0. When a variable is made global, it is given the current context. 
@@ -3576,7 +3485,7 @@ as variable context to allow a trigger to service multiple players at once.
 
 Example @RTSTAT 23612@n
 
-See Also: REMOTE
+See also: REMOTE
 #31
 EVALUATE TRIG-EVALS EVALS 
 
@@ -3593,7 +3502,7 @@ the result of the immediate evaluation of the provided expression. There also
 exists a "set" command, with the same syntax. Set differs in that the expression
 is not evaluated until the variable is accessed.
 
-See Also: TRIG-SET
+See also: TRIG-SET
 #31
 TRIG-SET %SET% MSET
 
@@ -3605,7 +3514,7 @@ Set sets variable to value, without evaluating it.
 
 * this example sets the value of result to '%self.hitp% * 100 / %self.maxhitp%'
 set result %self.hitp% * 100 / %self.maxhitp% 
-* The %result% var now works as a 'function' every time it's accessed.
+* The %result% var now works as a 'function' every time it is accessed.
 say My hitpoint percentage is %result%
 %damage% %self% 30
 say My hitpoint percentage is %result%
@@ -3617,7 +3526,7 @@ the expression is evaluated immediately.
 
 Example: @RTSTAT 41005@n
 
-See Also: EVAL
+See also: EVAL
 #31
 UNSET
 
@@ -3631,7 +3540,7 @@ unset testvar
    Remove the variable from the global variables of this trigger, or if not 
 found there, from the trigger.
 
-See Also: SET, EVAL
+See also: SET, EVAL
 #31
 EXTRACT
 
@@ -3679,7 +3588,7 @@ For anyone having trouble with the format of if/elseif/else/end blocks
 
 ***EVERY IF NEEDS AN END: 2 IF'S NEEDS 2 ENDS....***
 
-See Also: EXPRESSIONS, NESTED-IFS
+See also: EXPRESSIONS, NESTED-IFS
 #31
 NESTED-IFS
 
@@ -3738,7 +3647,7 @@ rdelete quest_object %actor.id%
 
    Delete a remote variable from the trigger referred to by the id of its owner.
 
-See Also: VDELETE, REMOTE
+See also: VDELETE, REMOTE
 #31
 REMOTES VSET RSET 
 
@@ -3765,7 +3674,7 @@ For more examples @RGOTO 13@n to access the trigedit hallway.
 
 Examples: @RTSTAT 199, 190-192, 23612-23614@n
 
-See Also: RDELETE, VDELETE, TRIG-SET, CONTEXT
+See also: RDELETE, VDELETE, TRIG-SET, CONTEXT
 #31
 TRIG-RETURN RETURN-0 CONTINUE %RETURN%
  
@@ -3785,7 +3694,7 @@ been executed, or a wait or halt command is called.
 
 Example: @RTSTAT 1364@n
 
-See Also: TRIG-TYPE, HALT, WAIT
+See also: TRIG-TYPE, HALT, WAIT
 #31
 TRIG-SWITCH TRIGEDIT-SWITCH CASE DEFAULT BREAK %SWITCH% 
 
@@ -3796,7 +3705,7 @@ switch %random.4%
     emote sings a merry song about someone named Fulbert and Beatrice.
   break
   case 2
-    emote booms out loudly, 'Heigh Ho! Heigh Ho! It's home from work we go!'
+    emote booms out loudly, 'Heigh Ho! Heigh Ho! It is home from work we go!'
   break
   case 3
     emote tries to sing falsetto, but his voice doesn't agree.
@@ -3813,10 +3722,10 @@ If a match is found, the commands that follow it, up until a break or done
 command, are executed. 
 Break is used to terminate commands in a switch. 
 Case is used to begin a new conditional group in a switch block.
-Default is similiar to case but matches any condition not met. 
+Default is similar to case but matches any condition not met. 
 Done is used to terminate a while or switch block.
 
-Examlpe: @RTSTAT 18@n
+Example: @RTSTAT 18@n
 #31
 WHILE DONE %NEXT% NEXT LOOP TRIG-LOOPS TRIG-WHILE TRIG-DONE
 
@@ -3845,11 +3754,11 @@ time. When a trigger is being executed it will attempt to execute all commands
 right away. To get small breaks in, and perhaps give the players time to adjust, 
 use the wait command.
 
-See Also: RANDOM-TIMING, WAIT-UNTIL
+See also: RANDOM-TIMING, WAIT-UNTIL
 #31
 WAITUNTIL WAIT-UNTIL 
 
-* If you want to syncronise your trigger, you can use the 'wait until' feature.
+* If you want to synchronize your trigger, you can use the 'wait until' feature.
 * This trigger wakes the mob at dawn, and puts him to sleep at night.
 wait until 8:00
 wake
@@ -3868,7 +3777,7 @@ rest
 wait 10 s
 sleep
 
-See Also: WAIT, RANDOM-TIMING
+See also: WAIT, RANDOM-TIMING
 #31
 TRIGEDIT-VARIABLES VARIABLES TRIG-VARS TRIG-VARIABLES TRIGGER-VARIABLES VARS %VARIABLES% %TRIGGER% %TRIGGERS% %COMMAND% %WORD% VARIABLES-REFERENCE REFERENCES %VAR%
 
@@ -3893,7 +3802,7 @@ Global variables also have a context associated with them. By default, the
 context is 0. Any global being referenced with a context of zero will be seen.
 Through the 'context <value>' command, a trigger may set its context to any
 integer; Globals created are always assigned the current trigger context. When a
-global is referenced, if it's context is not 0 or the current context of the
+global is referenced, if its context is not 0 or the current context of the
 trigger, it will not be seen. This technique allows, among other things, arrays
 of globals to be created by using a series of contexts as indexes. Also, it
 allows globals to be associated with a specific character, room, or object in
@@ -3901,9 +3810,9 @@ the game, by using the id of the target as the context.
 
 Variable Fields 
 
-A field of a variable can also retrieved, based on their type. To get a field,
-a notation of %variable.field% is used. The valid fields are listed in the help
-files below. 
+A field of a variable can also be retrieved, based on their type. To get a 
+field, a notation of %variable.field% is used. The valid fields are listed in 
+the help files below. 
 
 @RCHAR-VAR@n - Variables for characters.    @RTSTAT 27@n
 @ROBJ-VAR@n  - Variables for objects.       @RTSTAT 28@n
@@ -3911,7 +3820,7 @@ files below.
 @RTEXT-VAR@n - Variables for text.          @RTSTAT 30@n
 @RSPEC-VAR@n - Variables for special stuff. @RTSTAT 31@n
 
-See Also: GLOBAL
+See also: GLOBAL
 #31
 MUDCOMMAND CMD.MUDCOMMAND %CMD.MUDCOMMAND% %MUDCOMMAND% CMD.MUDCOMMAND 
 
@@ -3985,7 +3894,7 @@ Use \ for do not parse, or %% for %.
 
 Example: @RTSTAT 31@n
 
-See Also: TRIGEDIT-RANDOM, RANDOM-THOUGHTS 
+See also: TRIGEDIT-RANDOM, RANDOM-THOUGHTS 
 #31
 TRIGEDIT-VARIABLES-ROOMS ROOM-VARIABLES %WEATHER% %ID% %NAME% %DIRECTION% TRIGEDIT-ROOM-VAR %VNUM% CONTENTS %CONTENTS% %ROOMS% ROOM-VARS PEOPLE %PEOPLE% %ROOM% %ROOM.DIR% ROOM.ID ROOM.PEOPLE %ROOM.PEOPLE% ROOM.VNUM 
 
@@ -4010,7 +3919,7 @@ weather  - current weather: sunny, cloudy, rainy, or lightning @RTSTAT 41098@n.
 
 Example: @RTSTAT 29@n
 
-See Also: RANDOM-THOUGHTS
+See also: RANDOM-THOUGHTS
 #31
 TRIGEDIT-VARIABLES-OBJECTS OBJ-VAR %SHORTDESC% TRIGEDIT-OBJ-VAR VAL0 VAL1 VAL2 VAL3 %ITEM% %OBJECT% OBJVARS OBJ-VARS %NEXT_IN_LIST% %OBJ% OBJ-COMMAND   IS_INROOM
 
@@ -4051,7 +3960,7 @@ string is returned. * checks for any inventory.
 
 Examples: @RTSTAT 94, 19537@n.
 
-See Also: TRIG-EQ, %PURGE%, %LOAD%, CHAR-VAR
+See also: TRIG-EQ, %PURGE%, %LOAD%, CHAR-VAR
 #31
 TRIG-EQUIPMENT ACTOR.EQUIPMENT %ACTOR.EQ% %EQ% TRIG_EQUIPMENT
 
@@ -4063,7 +3972,7 @@ name of the location. @RHELP POSITIONS. * checks all positions.
 
 Examples: @RTSTAT 94, 9116@n
 
-See Also: TRIG-INV, %PURGE%, %LOAD%, POSITIONS, CHAR-VAR
+See also: TRIG-INV, %PURGE%, %LOAD%, POSITIONS, CHAR-VAR
 #31
 %NEXT_IN_ROOM% CHAR_VAR TRIG-FIELDS %ACTOR.SEX% %ACTOR.HITPOINTS% %ACTOR.HP% %HIS% IS_FIGHTING %FIGHTING% ACTOR.FIGHTING %ACTOR.FIGHTING% IN_ROOM IS_ROOM POS() HISHER %MASTER% %SELF.MASTER% %FOLLOWER.NAME% PVAR %HISHER% %SEX%
 
@@ -4125,7 +4034,7 @@ weight           - The actor's weight.
 
 Example: @RTSTAT 27@n
 
-See Also: VARIABLES, GLOBALS
+See also: VARIABLES, GLOBALS
 #31
 EXPRESSIONS TRIG-EXPRESSIONS TRIGEDIT-EXPRESSIONS INCREMENTS MATHEMATICAL NUMBERS TRIGEDIT-NUMBERS != <> LOGIC && /= || \ RNUMBERS + OPERATORS OPERATIONS == EQUAL ADDITION
 
@@ -4297,7 +4206,7 @@ Example: @RTSTAT 88@n
 #31
 TRIGEDIT-OBJ-CAST
 
-Activated when the obj is targetted by a spell.
+Activated when the obj is targeted by a spell.
  
 Numeric Arg : percent chance this trigger will be activated. 
 Argument    : not used.
@@ -4321,7 +4230,7 @@ Argument    : not used.
 Used with return 0 will prevent the player from leaving the room.
 
 Variables: 
-%actor%     - the character leaveing the room. 
+%actor%     - the character leaving the room. 
 %direction% - the direction the character is leaving to.
 
 Example: @RTSTAT 89, 27108@n
@@ -4346,7 +4255,7 @@ TRIGEDIT-ROOM-GLOBAL TRIG-ROOM-GLOBAL
 Not a trigger type by itself; used in conjunction with Random @RHELP 
 TRIGEDIT-ROOM-RANDOM@n and @RHELP TRIGEDIT-ROOM-TIME@n. While Random 
 and Time only trigger if players are in the same room, Global Random 
-and Global Time will will trigger regardless. 
+and Global Time will trigger regardless. 
  
 Numeric Arg : not used.
 Argument    : not used.
@@ -4364,7 +4273,7 @@ Argument    : not used.
 
 Example: @RTSTAT 51@n 
 
-See ALso: RANDOM-TIMING, TRIGEDIT-ROOM-GLOBAL
+See also: RANDOM-TIMING, TRIGEDIT-ROOM-GLOBAL
 #31
 RANDOM-TIMING TIMING TRIGEDIT-RANDOM-TIMING TRIG-RANDOM-TIMING TRIG-TIMING TRIGEDIT-TIMING TRIGGER-TIMING 
 
@@ -4381,7 +4290,7 @@ fires by modifying numeric arg to the following values:
 
 The actual equation is 100/numeric arg X 13 = time in seconds. 100/20 X 13 = 63 seconds
 
-See Also: TRIGEDIT-OBJ-RANDOM, TRIGEDIT-MOB-RANDOM, TRIGEDIT-ROOM-RANDOM
+See also: TRIGEDIT-OBJ-RANDOM, TRIGEDIT-MOB-RANDOM, TRIGEDIT-ROOM-RANDOM
 #31
 TRIGEDIT-ROOM-COMMANDS TRIG-ROOM-COMMANDS CLIMBING 
 
@@ -4400,7 +4309,7 @@ Variables:
 %cmd%   - the exact command (without arguments) issued
 %arg%   - the arguments, if any, following the command
 
-Example: @RTSTAT 52@n
+Example: @RTSTAT 52, 1218@n
 #31
 TRIGEDIT-ROOM-SPEECH TRIGSPEECH TRIG-SPEECH TRIGEDIT-SPEECH TRIG-ROOM-SPEECH 
 
@@ -4418,7 +4327,7 @@ Variables:
 
 Example: @RTSTAT 53, 2776, 63, 153, 1354, 139@n
 
-See Also: TRIGEDIT-MOB-SPEECH
+See also: TRIGEDIT-MOB-SPEECH
 #31
 TRIGEDIT-ROOM-ZONE-RESET TRIGEDIT-ROOM-ZRESET TRIGEDIT-ROOM-LOAD
  
@@ -4447,7 +4356,7 @@ Variables:
 
 Example: @RTSTAT 55, 133@n 
 
-See Also: TRIGEDIT-MOB-ENTRY
+See also: TRIGEDIT-MOB-ENTRY
 #31
 TRIGEDIT-ROOM-DROP TRIGEDIT-DROP TRIG-DROP TRIG-ROOM-DROP DROP-TRIG DROP_TRIG
 
@@ -4492,7 +4401,7 @@ Argument    : not used.
 Used with return 0 will prevent the player from leaving the room.
 
 Variables: 
-%actor%     - the character leavering the room. 
+%actor%     - the character leaving the room. 
 %direction% - the direction the character is leaving to.
 
 Example: @RTSTAT 58, 1233@n 
@@ -4524,7 +4433,7 @@ Argument    : not used.
 Variables:
 %time%      - MUD hour trigger fires off.
 
-See Also: TRIGEDIT-ROOM-GLOBAL
+See also: TRIGEDIT-ROOM-GLOBAL
 #31
 TRIGEDIT-MOB-RANDOM TRIGEDIT-RANDOM TRIG-MOB-RANDOM TRIG-RANDOM
  
@@ -4537,7 +4446,7 @@ Argument    : not used.
 
 Example: @RTSTAT 61@n
 
-See Also: RANDOM-TIMING
+See also: RANDOM-TIMING
 #31
 TRIGEDIT-MOB-COMMAND
 
@@ -4575,7 +4484,7 @@ Variables:
 
 Example: @RTSTAT 53, 2776, 63, 153, 1354, 139@n
 
-See Also: TRIGEDIT-ROOM-SPEECH
+See also: TRIGEDIT-ROOM-SPEECH
 #31
 TRIGEDIT-MOB-ACTION TRIG-MOB-ACT ACTIONS TRIGEDIT-ACTIONS TRIG-ACTIONS MOB-ACT 
 
@@ -4627,7 +4536,7 @@ Variables:
 
 Example: @RTSTAT 1305, 66, 101, 162@n
 
-See Also: TRIG-MOB-GREET-ALL
+See also: TRIG-MOB-GREET-ALL
 #31
 TRIGEDIT-MOB-GREET-ALL GREET-ALL TRIGEDIT-MOB-GREETALL TRIG-MOB-GREET-ALL TRIGEDIT-MOBILE-GREET-ALL TRIG-MOB-GREET-ALL
  
@@ -4643,7 +4552,7 @@ Variables:
 
 Example: @RTSTAT 67@n
 
-See Also: TRIG-MOB-GREET
+See also: TRIG-MOB-GREET
 #31
 TRIGEDIT-MOB-ENTRY ENTRY TRIGEDIT-ENTRY TRIGGER-ENTRY TRIG-MOB-ENTER TRIGEDIT-MOB-ENTER TRIGEDIT-MOBILE-ENTRY TRIG-MOB-ENTRY
 
@@ -4654,7 +4563,7 @@ Argument    : not used.
 
 Example: @RTSTAT 68@n
 
-See Also: TRIGEDIT-ROOM-ENTER
+See also: TRIGEDIT-ROOM-ENTER
 #31
 TRIGEDIT-MOB-RECEIVE TRIG-MOB-RECEIVE RECEIVE %RECEIVE% TRIG-MOB-RECEIVE TRIGEDIT-RECEIVE TRIG-RECEIVE TRIGEDIT-MOBILE-RECEIVE TRIG-RECEIVES TRIGEDIT-MOB-RECIEVES TRIGEDIT-MOBILE-RECIEVES TRI-RECIEVE
 
@@ -4688,7 +4597,7 @@ TRIGEDIT-MOB-HITPERCENT TRIGEDIT-MOB-HITPRCNT
 Activated during combat when the mobiles hit point percentage drops below a 
 specified percentage.
  
-Numeric Arg : percentage of hitpoints at the threshhold of allowing this trigger to
+Numeric Arg : percentage of hitpoints at the threshold of allowing this trigger to
               activate.
 Argument    : not used.
 
@@ -4710,7 +4619,7 @@ Variables:
 
 Example: @RTSTAT 130, 72, 8308, 23612, 19580@n
 
-See Also: MHUNT
+See also: MHUNT
 #31
 TRIGEDIT-MOB-LOAD TRIGEDIT-LOAD TRIG-LOAD 
  
@@ -4735,11 +4644,11 @@ Variables:
 
 Example: @RTSTAT 74@n, @RTSTAT 75@n
 
-See Also: NPC-FLAGS
+See also: NPC-FLAGS
 #31
 TRIGEDIT-MOB-CAST
 
-Activated when the mob is targetted by a spell.
+Activated when the mob is targeted by a spell.
  
 Numeric Arg : percent chance this trigger will be activated. 
 Argument    : not used.
@@ -4763,7 +4672,7 @@ Argument    : not used.
 Used with return 0 will prevent the player from leaving the room.
 
 Variables: 
-%actor%     - the character leavering the room. 
+%actor%     - the character leaving the room. 
 %direction% - the direction the character is leaving to.
 
 Example: @RTSTAT 77@n
@@ -4807,7 +4716,7 @@ Argument    : not used.
 
 Example: @RTSTAT 80@n
 
-See Also: RANDOM-TIMING
+See also: RANDOM-TIMING
 #31
 TRIGEDIT-OBJ-COMMAND TRIGEDIT-OBJECT-COMMAND TRIG-OBJ-COMMAND TRIG-OBJ-COMMANDS
 
@@ -4845,11 +4754,11 @@ Argument    : not used.
 
 Example: @RTSTAT 82@n
 
-See Also: TIMER, %TIMER%, %TIME%
+See also: TIMER, %TIMER%, %TIME%
 #31
 TRIGEDIT-ADVANCED-EXAMPLES
 
-To add life to the worlds circleMUD uses something called triggers. There are 
+To add life to the worlds CircleMUD uses something called triggers. There are 
 three things in game that can have triggers attached to them: mobiles, objects,
 and rooms. Examples of common triggers include:
 
@@ -4895,7 +4804,7 @@ eval, unset, and global). Game commands are those commands that a player could
 issue from their command line as well as special commands added for mobiles,
 objects, and rooms such as wake, east, sit, etc.
 
-See Also: @RTRIGEDIT-MOB-TUTORIAL@n, @RTRIGEDIT-ADVANCED-TUTORIAL@n
+See also: @RTRIGEDIT-MOB-TUTORIAL@n, @RTRIGEDIT-ADVANCED-TUTORIAL@n
 #31
 TRIGEDIT-ADVANCED-TUTORIAL TRIG-ADVANCED-TUTORIAL 
 
@@ -4918,7 +4827,7 @@ seen other triggers do, and allows you to produce a more interesting trigger.
 For this example, I want to create a gate guard for a small walled town. The 
 ruler of the town has decided that each group of people will be charged ten 
 coins to enter his domain. The gate guard must notify travelers of the cost to 
-enter, collect the money, allow people who have payed to enter the city, and 
+enter, collect the money, allow people who have paid to enter the city, and 
 close the gate after them. This will be a mob trigger. 
   
 Make the mobs, objects, and rooms.
@@ -5030,7 +4939,7 @@ Trigger Editor [1300]                       @RHELP TRIGEDIT-EDITOR@n
 Q) Quit
 Enter Choice :
 
-See Also: TRIGEDIT-TYPES, TRIGEDIT-COMMANDS, VARIABLES, TRIGEDIT-MOB-TUTORIAL,
+See also: TRIGEDIT-TYPES, TRIGEDIT-COMMANDS, VARIABLES, TRIGEDIT-MOB-TUTORIAL,
           TRIGEDIT-ADVANCED-TUTORIAL, TRIGEDIT-ADVANCED
 #31
 TRIGGER-EDITORS
@@ -5047,7 +4956,7 @@ TRIGEDIT-NAMES TRIG-NAMES TRIGGER-NAMES
 Always use names that explain the trigger. More importantly: always include the
 VNUM for the mob/obj/room the trigger is going to be attached to.
 
-   It's important to give your trigger a name you and others can understand. 
+   It is important to give your trigger a name you and others can understand. 
 Even more important is including the VNUM of what it is attached to. This way
 tlist and stat will show the name description and VNUM allowing others to 
 quickly comprehend what the trigger does. A good name could be 'guard shout for
@@ -5073,7 +4982,7 @@ TRIGEDIT-TRIGGER-TYPES
 
 3) Trigger types: @yGreet@n
 This is a bitvector  of which kind of events this trigger is triggered by. This 
-is the most important part of the trigger. It's here you decide if you want the 
+is the most important part of the trigger. It is here you decide if you want the 
 trigger to react on people dying in the room, dropping objects, saying stuff, 
 entering, jumping insanely up and down or whatever else you might think of.
 
@@ -5116,7 +5025,7 @@ DG-SCRIPTS DG_SCRIPTS DGSCRIPTS
 
 Stands for Death Gate scripts and are named after the original MUD they came from.
 
-See Also: TRIGEDIT, TRIGEDIT-MENU
+See also: TRIGEDIT, TRIGEDIT-MENU
 #31
 TRIGEDIT-MOB-TUTORIAL TRIGEDIT-TUTORIAL MOB-TUTORIAL 
 
@@ -5337,7 +5246,7 @@ through oedit/medit/redit.
 
 Examples:
 attach room 14500 14520 - Attaches room trigger 14500 to room 14520.
-attach mob 1332 santa   - Attaches mob trigger 1332 to mob 1308 (santa).
+attach mob 1332 Santa   - Attaches mob trigger 1332 to mob 1308 (Santa).
 attach obj 1480 sword   - Attaches obj trigger 1480 to a sword. 
 
 See also: DETACH, TRIG-ATTACH, TRIG-DETACH, OLC, TRIGEDIT, TSTAT, STAT, ROOMFLAGS
@@ -5359,9 +5268,9 @@ with the same alias are in the room.
 Examples:
 detach room 14500 14520 - remove trigger 14500 from room 14520.
 detach room all         - removes all triggers from a room.
-detach santa 1332       - detach trigger 1332 from mob 1308 (santa).
-detach mob santa all    - detach all triggers from Santa.
-detach santa all        - Same as above.
+detach Santa 1332       - detach trigger 1332 from mob 1308 (Santa).
+detach mob Santa all    - detach all triggers from Santa.
+detach Santa all        - Same as above.
 detach sword 1300       - detach trigger 1300 from sword.
 detach obj sword 1300   - You guessed it - same as above.
 detach sword all        - detach all triggers from the sword.
@@ -5382,13 +5291,13 @@ and %actor.id% are examples of id numbers, for use with this command.)
 
 Example: @RTSTAT 1345@n
 
-See Also: ATTACH, DETACH, TRIG-DETACH
+See also: ATTACH, DETACH, TRIG-DETACH
 #31
 TRIG-DETACH
 
 Usage: detach <vnum | all> id
 * if we - as described in the attach example, want our mob/obj/room to behave
-* differently, it's not always enough to just add another trigger with attach.
+* differently, it is not always enough to just add another trigger with attach.
 * it might be necessary to remove some old ones :
 detach 3000 %self.id%
 or
@@ -5398,7 +5307,7 @@ detach all %self.id%
 
 Example: @RTSTAT 45@n
 
-See Also: ATTACH, DETACH, TRIG-ATTACH
+See also: ATTACH, DETACH, TRIG-ATTACH
 #31
 TRIGEDIT-ARRAYS ARRAYS TRIG-ARRAYS
 
@@ -5492,7 +5401,7 @@ M) AFF Flags : @cNOBITS@n
 21) UNUSED         Unused (room for future expansion).
 22) CHARM          Reserved for internal use.  Do not set.
  
-See Also: INVIS, MEDIT-NPC-FLAGS, DG_AFFECT, TRIG-AFFECT
+See also: INVIS, MEDIT-NPC-FLAGS, DG_AFFECT, TRIG-AFFECT
 #31
 TEXT-EDITOR TEXTEDITOR /d /i /h /s /a /c /ra /l /fi /d1 /p WORDWRAP WORD-WRAP FORMATTING REPLACE /e# DELETE-LINE REMOVE-LINE LINES
 
@@ -5525,15 +5434,15 @@ Editor command formats: /<letter>
 @n/i# <text> -  inserts <text> before line #.
 @n/l         -  lists buffer.
 @n/n         -  lists buffer with line numbers, or a range #-#.
-@n/r 'a' 'b' -  replace 1st occurance of text <a> in buffer with text.
-@n/ra 'a' 'b'-  replace all occurances of text <a> within buffer with text.
+@n/r 'a' 'b' -  replace 1st occurence of text <a> in buffer with text.
+@n/ra 'a' 'b'-  replace all occurences of text <a> within buffer with text.
                 usage: /ra 'pattern' 'replacement'
 @n/s         -  saves the text and exits the editor.
 
-NOTE: /f and /fi in trigedit will autoindent your trigger. PLEASE USE IT.
+NOTE: /f and /fi in trigedit will auto indent your trigger. PLEASE USE IT.
 
 Commands such as /r, /n, /e#, /i#, /d# are invaluable and will make your job
-much easier. For example lets say you mistype "the" with "teh" in a 10 line
+much easier. For example, say you mistype "the" with "teh" in a 10 line
 description. Instead of /c (clearing) the text you can /r 'teh' 'the' or if it
 was on line 5 you can type /e5 <line with teh spelled correctly> or /d5. Learn
 all these options.
@@ -5601,7 +5510,7 @@ To determine the player ID stat player
 > stat file Rumble 
 male PC 'Rumble'  IDNum: [ 3531], In room [    0]
 
-See Also: REMOTE, RDELETE
+See also: REMOTE, RDELETE
 #31
 ASSEMBLIES ASSEMBLE ASSEMBLY VEHICLES MAKE BAKE BREW CRAFT FLETCH KNIT MIX THATCH WEAVE ASSEDIT FORGE
 
@@ -5613,7 +5522,7 @@ TRIG-QUESTS TRIGEDIT-QUESTS AUTOQUEST QUESTS QUESTPOINTS QUEST-POINTS QUESTMASTE
    Many zones have their own quests and examples within them, such as:
 
 Questmaster Example: @RTSTAT 139, GOTO 113@n
-Assembly Examples: @RTSTAT 38, 48, 335, 335, GOTO 366@n
+Assembly Examples: @RTSTAT 38, 48, 335, GOTO 366@n
 Questshop Example: @RTSTAT 167, GOTO 265@n
 Fizban's Questshop Example: @RTSTAT 57705-57707@n
 
@@ -5636,7 +5545,7 @@ Checks the actor for the affect in the subfield.
 
 Example: @RTSTAT 166@n
  
-See Also: AFFECTS, DG_AFFECT
+See also: AFFECTS, DG_AFFECT
 #31
 TRIG-STATISTICS TRIGEDIT-STATISTICS TRIG-STATS %ACTOR.STR% %ACTOR.INT% STRADD 
 
@@ -5645,9 +5554,9 @@ Trig Usage: %actor.<stat>(<#>)%
             %actor.str(18) sets it to 18
 
 Checks the actor's stat. A number in the subfield sets.
-Stats includ: cha, con, dex, int, str, stradd (only if str is 18).
+Stats include: cha, con, dex, int, str, stradd (only if str is 18).
 
-See Also: STATS
+See also: STATS
 #31
 HAS_ITEM ACTOR.HAS_ITEM %ACTOR.HAS_ITEM% TRIG_HAS_ITEM 
 
@@ -5685,7 +5594,7 @@ TBAMAPS TBA-MAPS
 
 @RGOTO #@n to teleport to any of the room numbers above.
 
-See Also: MAPPING, ASCII
+See also: MAPPING, ASCII
 #31
 OASIS OLC CREATION ONLINE-CREATION ON-LINE-CREATION 
 
@@ -5714,7 +5623,7 @@ to create the virtual world in which players can roam around, solve puzzles,
 find treasures, and gain experience. A Builder creates the rooms, objects, 
 mobs, shops, and triggers with which players will interact. 
 
-See Also: OLC, REDIT, MEDIT, OEDIT, ZEDIT, SEDIT, TRIGEDIT, AEDIT
+See also: OLC, REDIT, MEDIT, OEDIT, ZEDIT, SEDIT, TRIGEDIT, AEDIT
 #31
 TRIAL-VNUM-ASSIGNER ASSIGNER TRIAL-VNUM-LIMITER TBALIM JUNK-ASSIGNER LIMITER VNUM-ASSIGNER
 
@@ -5743,7 +5652,7 @@ nohassle
 
 @RTSTAT 1306, 1365, 1366@n
 
-See Also: TRIAL
+See also: TRIAL
 #31
 DEPENDENT ZEDIT-DEPENDENT DEPENDANT ZEDIT-DEPENDANT
 
@@ -5761,7 +5670,7 @@ dependent on the mob first loading only 1 item will be given when it loads.
 Unlike the load to room command where you should not set a maxload of 99
 because 99 objects will load to that room.
 
-See Also: MAXLOAD, ZEDIT-ADVANCED
+See also: MAXLOAD, ZEDIT-ADVANCED
 #31
 MAXLOADED MAX-LOADED ZEDIT-MAXLOADED ZEDIT-MISTAKES 
 
@@ -5772,7 +5681,7 @@ want 10 Kobolds set it to 10. The same goes for objects. In both cases never
 put a max of over 99. This is just a good practice and prevents 1000's of the
 same mobs or objects making a MUD look generic.
    Actual mob loading gets a little trickier. Because if you set it to 10 
-Kobolds in one room, then everytime that zone resets another Kobold will be 
+Kobolds in one room, then every time that zone resets another Kobold will be 
 loaded until you have 10 within that one room. So you need to disperse them. 
 You can do this by setting 5 different load mob commands in 5 different rooms.
 All with a max load of 10. The first time the zone resets. 5 Kobolds will be 
@@ -5828,7 +5737,7 @@ XLIST %LIST%
    By Xlist I meant to for you to replace the X with the type of list you want 
 to see. i.e. olist, mlist, rlist, zlist, slist.
 
-See Alos: OLIST, MLIST, RLIST, ZLIST, SLIST
+See also: OLIST, MLIST, RLIST, ZLIST, SLIST
 #31
 TLIST TRIGLIST TRIG-LIST TRIGEDIT-LIST TRIGGERLIST TRIGGER-LIST
 
@@ -5948,6 +5857,8 @@ BUILDWALKING BUILD-WALKING DIGWALK WALKDIG
 
 Builders working on their trial vnum do not need to learn this command, yet.   
 
+Usage: buildwalk
+
    BuildWalk is an OLC utility that will allow a builder to enable a
 "buildwalking" mode.  In this mode, walking in a direction that doesn't exist
 will find the next free room in the zone, create the room, and make a two-way
@@ -5964,7 +5875,7 @@ NOTE: Buildwalk does not autosave on exit. You must type SAVEALL. This way if
       Be careful using buildwalk. If you mess up you will have a lot of rooms
       to delete.
  
-See also: SAVEALL, REDIT, OLC, RLIST, DIG
+See also: TOGGLE, SAVEALL, REDIT, OLC, RLIST, DIG
 #31
 DIG UNDIG RDIG RELINK RLINKS 
 
@@ -6033,7 +5944,7 @@ P) Mortals Level To Immortal   : Yes
 3) NOEFFECT Message Text   : Nothing seems to happen.
 Q) Exit To The Main Menu
 
-See Also: CEDIT-MENU
+See also: CEDIT-MENU
 #31
 CEDIT-SAVES
 
@@ -6046,7 +5957,7 @@ F) Crash File Timeout : 10 day(s)
 G) Rent File Timeout  : 30 day(s)
 Q) Exit To The Main Menu
 
-See Also: CEDIT-MENU
+See also: CEDIT-MENU
 #31
 CEDIT-ROOMS
 
@@ -6058,7 +5969,7 @@ C) Frozen Start Room   : 1202
 3) Donation Room #3    : 235
 Q) Exit To The Main Menu
 
-See Also: CEDIT-MENU
+See also: CEDIT-MENU
 #31
 CEDIT-OPERATIONS
 
@@ -6095,7 +6006,7 @@ If you have not already, please fill out the builders application at:
 
 Q) Exit To The Main Menu
 
-See Also: CEDIT-MENU
+See also: CEDIT-MENU
 
 #31
 CEDIT-AUTOWIZ
@@ -6104,7 +6015,7 @@ A) Use the autowiz        : Yes
 B) Minimum wizlist level  : 32
 Q) Exit To The Main Menu
 
-See Also: CEDIT-MENU
+See also: CEDIT-MENU
 
 #31
 SEDIT-MENU SHOPS STORES BARTERING TRADE TRADING SHOPPING SHOPKEEPERS BARTENDERS LIBRARIAN
@@ -6381,13 +6292,13 @@ will be the last listed in a room when it is looked at.
 Mob loading through zedit is very limited in flexibility. Zone loading commands
 are saved in order by room number and the resulting list is simply run through
 line by line on zone reset. The problem with this is if you want to load 4 mobs
-in seperate rooms there is no way to check if the mobs exist and where they are.
+in separate rooms there is no way to check if the mobs exist and where they are.
 This results in the common problem of having towns with all the gateguards at 
-one gate. This can get complex, but lets say 4 guards are loading at the 4 
+one gate. This can get complex, but say 4 guards are loading at the 4 
 cardinal gates: north, east, south, and west with a maxload of 4 in world. The 
 load commands are also saved in the zone file in that order. On the first 
 zreset you would have 4 guards at the 4 gates loading in order N, E, S, W. Then
-lets say a player kills the guards at the E, S, W, gates, next zreset a guard 
+say a player kills the guards at the E, S, W, gates, next zreset a guard 
 loads at the N, E, S gates (2 now at the N gate). The same player kills the 
 guards at the E and S gates. Next zreset mobs load at the N and E gates, and so
 on. There is no "good" solution to this. It is simply a tradeoff in the code 
@@ -6442,7 +6353,7 @@ T) Assign a trigger (Advanced builders only)
 V) Set a global variable (Advanced builders only)
   Set a global variable to be used by triggers. @RHELP GLOBAL@n.
 
-See Also: ZEDIT-EQUIP, MAXLOAD, ZRESET
+See also: ZEDIT-EQUIP, MAXLOAD, ZRESET
 #31
 ZEDIT-COMMANDS ZONE-COMMANDS ZEDITCOMMANDS ZEDIT-COMMANDLISTS COMMANDLISTS COMMAND-LISTS
 
@@ -6454,7 +6365,7 @@ or object that are allowed to exist in the entire world at once. If the
 number currently existing is greater than or equal to the 'max existing' 
 limit, the command is not executed.
    Zone commands are listed from 0 and on. If creating a new command always
-choose 0 as it's number. The only exception to this is if you are making a
+choose 0 as its number. The only exception to this is if you are making a
 command that relies on the success of the other command. Choose 1 for those.
  
 N) New command.
@@ -6464,10 +6375,10 @@ Q) Quit
 Enter your choice : 
  
    All of these are pretty self-explanatory by this point I'd hope. The only
-one we need to go over is adding and editting a command. Both are similiar all
+one we need to go over is adding and editing a command. Both are similar all
 options will be explained under @RHELP ZEDIT-NEW@n.
 
-See Also: ZEDIT-NEW, ZEDIT-MISTAKES
+See also: ZEDIT-NEW, ZEDIT-MISTAKES
 #31
 ZEDIT-RESETS RESET-MODES
 
@@ -6584,7 +6495,7 @@ load mobiles from within the game.
 the plot instead. In this way, an area can be made infinitely more exciting by 
 having something to do besides killing. Make some quests with triggers. Have
 mobs interact with the players, respond to questions, etc.
-   Try to keep mobs realistic. If a mob's not humaniod they probably do not have
+   Try to keep mobs realistic. If a mob is not humanoid they probably do not have
 money, and do not go around wearing all that much by the way of clothing. 
 Instead of gold reward the player with a pelt, teeth, claws, etc. Always have
 a mob carry *something*. It might be low-grade piece of food, trash, or a bad
@@ -6727,10 +6638,10 @@ Here is our autoroll standard, entering mob level will calculate the following:
       GET_EXP(OLC_MOB(d))     = (mob_lev*mob_lev*100);
       GET_GOLD(OLC_MOB(d))    = (mob_lev*10);
 
-See Also: STANDARDS
+See also: STANDARDS
 
 Alignment
-A number from -1000 to 1000 representing the mob's initial alignment.
+A number from -1000 to 1000 representing the mobs initial alignment.
  
 Evil     -1000  to  -350 
 Neutral  -349   to   349 
@@ -6814,10 +6725,10 @@ be one of the following numbers:
  
    Default position is the position to which monsters will return after a 
 fight, which should be one of the same numbers as given above for Load 
-Position. In addition, the Default Position defines when the mob's long 
+Position. In addition, the Default Position defines when the mobs long 
 description is displayed. For example if a mob is sleeping it will not show 
 the l-desc, instead it will display "<<s-desc>> is <<position>>."
-   Angry mobs can be simulated by loading them sitting and agressive,
+   Angry mobs can be simulated by loading them sitting and aggressive,
 with a default position of standing.  After being attacked, they will
 wander around instead of sitting back down!  Other interesting things
 can be done with the position values as well...
@@ -6875,7 +6786,7 @@ L) NPC Flags : @cISNPC@n
 17) NOBASH     Large mobs such as trees that cannot be bashed.
 18) NOBLIND    Mob cannot be blinded.
  
-See Also: MEDIT-AFF-FLAGS
+See also: MEDIT-AFF-FLAGS
 #31
 OEDIT-MENU OBJ-MENU OBJECT-MENU
 -- Item number : [@c@c1300@n]                   @RHELP OEDIT-NUMBER@n
@@ -6942,7 +6853,7 @@ OEDIT-L-DESC
    The long description is displayed when the object is seen lying on the 
 ground, for example, "A furled umbrella is lying here." Unlike the Short 
 Description, the Long Description should end with appropriate punctuation 
-and the first letter should be captitalized. Just like a full sentence with
+and the first letter should be capitalized. Just like a full sentence with
 proper grammar. 
 
 Examples:
@@ -7147,7 +7058,7 @@ A) Cost/Day    : @c0@n
 B) Timer       : @c0@n
    Should not be set, but may be used in conjunction with a timer trigger.
 
-See Also: %TIMER%
+See also: %TIMER%
 #31
 OEDIT-VALUES OBJECT-VALUES VALUES
 
@@ -7208,7 +7119,7 @@ ARMOR
 this value times a multiplier based on where the armor is worn (Body X3,
 Head and Legs X2). Positive values enhance AC; negative values hurt AC
 (cursed armor for example).
-   Armour should be consistent with its description, meaning an item such as a
+   armor should be consistent with its description, meaning an item such as a
 cloth shirt is not expected to be good armor, therefore it should not be.
 Similarly, a tempered meteoric steel breastplate sounds rather impressive and
 should be.
@@ -7260,7 +7171,7 @@ FOUNTAIN
 
    value 2: The type of liquid in the drink-container, one of:
       Type          nr.         Effect of Liquid On:
-		        Drunkness   Fullness      Thirst
+		        drunkenness   Fullness      Thirst
       WATER          0      0           1           10
       BEER           1      3           2           5
       WINE           2      5           2           5
@@ -7278,15 +7189,15 @@ FOUNTAIN
       SALT WATER     14     0           1           -2
       CLEAR WATER    15     0           0           13
 
-   The above values for drunkness/fullness/thirst are in the units of one
+   The above values for drunkenness/fullness/thirst are in the units of one
 hour of effect per four units of liquid drunk.  For example, imagine that
 Dragon drinks an entire bottle (say 7 units) of saltwater.  According to the
-table above, saltwater has a drunkness value of 0, fullness value of 1 and
+table above, saltwater has a drunkenness value of 0, fullness value of 1 and
 thirst value of -2.  Therefore:
-His Drunkness is not changed ((7/4)*0)
+His drunkenness is not changed ((7/4)*0)
 His Fullness increases by ((7/4)*1) hours
 His Thirst increases by ((7/4)*-2) hours, thus making him more thirsty.
-A player's drunkness, fullness, and thirst can range from 0 to 24.
+A player's drunkenness, fullness, and thirst can range from 0 to 24.
 24 is the maximum; 0 means the person is completely sober, hungry,
 or thirsty respectively.
 
@@ -7320,10 +7231,10 @@ applies. Suggested object standards are displayed at the end of each apply
 17   ARMOR              Apply to armor class (AC). negative is better.
 18   HITROLL            Apply to hitroll. 
 19   DAMROLL            Apply to damage roll bonus. 
-20   SAVING_PARA        Apply to save throw: paralyzene. negative is better.
+20   SAVING_PARA        Apply to save throw: paralysis. negative is better.
 21   SAVING_ROD         Apply to save throw: rods. negative is better.
-22   SAVING_PETRI       Apply to save throw: petrif. negative is better.
-23   SAVING_BREATH      Apply to save throw: breath. negative is better.
+22   SAVING_PETRI       Apply to save throw: petrify. negative is better.
+23   SAVING_BREATH      Apply to save throw: breathe. negative is better.
 24   SAVING_SPELL       Apply to save throw: spells. negative is better.
 
 See also: STANDARDS
@@ -7407,7 +7318,7 @@ Trigger List:
 The first few lines tell you what triggers, if any, are already attached.
 
 N)  New trigger for this script
-To add a new trigger select N and then enter it's VNUM.
+To add a new trigger select N and then enter its VNUM.
 
 D)  Delete a trigger in this script
 This can be used to delete existing triggers from the room.
@@ -7513,7 +7424,7 @@ prevent a thief from picking the lock you must also set the PICKPROOF flag.
 Always create a unique name and description for your key and give hints in the 
 description about where it should be used.
 
-See Also: KEYS, ZONE-DESC, REDIT-EXIT
+See also: KEYS, ZONE-DESC, REDIT-EXIT
 #31
 REDIT-SECTOR-TYPE SECTORS SECTOR-TYPE TERRAIN-TYPE FIELDS FORESTS FLYING REDIT-SECTOR-FLAGS 
 
@@ -7534,11 +7445,12 @@ The following terrains may be selected (only one):
 9    UNDERWATER     Underwater is not fully implemented.    5 
 
 #31
-ROOMFLAGS RMFLG REDIT-ROOMFLAGS ROOM_FLAGS REDIT-ROOM-FLAGS ROOM-FLAGS GODROOMS TUNNELS NOMOB NO_MOB PEACEFUL INDOORS NO_TRACK NO-TRACK NO_MAGIC PRIVATE SOUNDPROOF HCRSH ATRIUM REDIT-FLAGS NO-MOBS
+SHOWVNUMS ROOMFLAGS RMFLG REDIT-ROOMFLAGS ROOM_FLAGS REDIT-ROOM-FLAGS ROOM-FLAGS GODROOMS TUNNELS NOMOB NO_MOB PEACEFUL INDOORS NO_TRACK NO-TRACK NO_MAGIC PRIVATE SOUNDPROOF HCRSH ATRIUM REDIT-FLAGS NO-MOBS
 
-Usage: roomflags
-Toggles a flag which causes the virtual numbers for all room/mob/obj flags to
-be displayed. Also now shows if a trigger is attached.
+Usage: showvnums
+
+   Toggles a flag which causes the virtual numbers for all room/mob/obj flags 
+to be displayed. Also now shows if a trigger is attached.
 
 3) Room flags  : @cNOBITS@n
 The following room flags can be selected:
@@ -7573,6 +7485,7 @@ do not know what a flag does, DO NOT SET IT!
 This requires repeating since it is so often ignored:
    @YIf a flag says UNUSED; DO NOT SET IT. If you do not know what it does; DO NOT SET IT!@n
 
+See Also: TOGGLE
 #31
 BULLETINS BOARDS BULLETIN-BOARDS MESSAGE-BOARDS
 
@@ -7633,7 +7546,7 @@ DESCRIPTIONS DESCRIBE
 
 Use a lot of room/mob/obj/extra descriptions. And more descriptions. And then some.
 
-See Also: DESCRIBING, REDIT-EXTRA-DESC, OEDIT-EXTRA-DESC, EXTRA
+See also: DESCRIBING, REDIT-EXTRA-DESC, OEDIT-EXTRA-DESC, EXTRA
 
 #31
 REDIT-EXTRA-DESC REDIT-EXTRAS EXTRAS 
@@ -7689,9 +7602,9 @@ Throm" or even just "the wizard's cloak". Anything but just a plain old cloak.
 Which would you rather have, as a player? When making extra descriptions ensure
 that all the keywords are covered by the description. Extra descriptions can 
 add small interesting details to your area and are often remembered by players.
-Please take the time to write extra descriptions. On most muds, you can look
+Please take the time to write extra descriptions. On most MUDs, you can look
 at 100 objects and "You see nothing special..." all 100 times. In an effort to 
-make all muds different and better, take the time to write an extra description
+make all MUDs different and better, take the time to write an extra description
 for your object. Think of an objects extra description as the same thing as a
 mobs description when you look at it, which it actually is. For the extra
 descriptions keywords, use the same words as used in the objects namelist. 
@@ -7705,7 +7618,7 @@ little time to put your signature on the objects you create. Objects can give
 the total sense of being within a certain world. They can also give clues as 
 to what may lie ahead or what has happened in the past. 
 
-See Also: TEXT-EDITOR, EXTRA, SWORDS
+See also: TEXT-EDITOR, EXTRA, SWORDS
 #31
 REDIT-DESCRIPTIONS ROOM-DESCRIPTIONS ROOMDESCRIPTIONS
 
@@ -7783,7 +7696,57 @@ set the following to C) Values:
 
 Container capacity counts towards the total container weight.
 
-See Also: VALUES
+See also: VALUES
+#31
+EDIT
+
+   This is simply a test function and does not actually do anything.
+
+See also: OLC
+#31
+DRUNK WINE LIQUID-CONTAINERS BEER SPIRITS DRINK-TYPES LIQUOR WHISKEY WHISKY LIQUIDS LIQ-CONTAINERS
+
+   When selecting object type FOUNTAIN or DRINK CONTAINER you will need
+to choose the type of liquid it contains from the following list: 
+
+  0) water                  1) beer                 
+  2) wine                   3) ale                  
+  4) dark ale               5) whisky               
+  6) lemonade               7) firebreather         
+  8) local speciality       9) slime mold juice     
+ 10) milk                  11) tea                  
+ 12) coffee                13) blood                
+ 14) salt water            15) clear water          
+
+See also: VALUES
+#31
+<TOPIC> <COMMAND> COMMAND> TOPICS
+
+   You took me too literally. I want you to type help <topic>, as in topic 
+being something like newbie. So you should type @RHELP NEWBIE@n to learn more 
+about being a newbie here.
+
+#31
+ALIAS-EXAMPLES
+  
+  To set up aliases to use older CircleMUD building commands:
+  
+alias poofin set self poofin $*
+alias poofout set self poofout $*
+alias poofs score
+
+See also: ALIAS
+#31
+AC-CONFIDENCE ARMOR-CLASS ARMOUR-CLASS AC-APPLY 
+
+   Your Armor Class (often called AC) is an expression for how good your armor
+is at protecting you.  When you don armor, any AC apply that armor has is 
+subtracted from your standard (naked) AC value, modified depending on where on
+the body you are wearing the armor.  Some items have a special bonus, and 
+subtract from the AC directly. Negative AC is better. Modifiers: Body X3, 
+head and legs X2.
+
+See also: MEDIT-AC
 #31
 TELEPORTERS
 
@@ -7793,7 +7756,7 @@ Any part of a zones name that is CAPITALIZED can be accessed by the teleporter.
 i.e. "teleport sanctus"
 Uncapitalized zones are linked through a capitalized zone.
 
-See Also: AREAS
+See also: AREAS
 #0
 AREAS ZONES
 
@@ -8002,7 +7965,7 @@ See also: STOCK, TELEPORTER
 #0
 IDLE VOID LIMBO
 
-   If you are idle for an extendend amount of time you will be pulled into the
+   If you are idle for an extended amount of time you will be pulled into the
 void until you send a command to the MUD. Then you will be pulled back to where
 you went idle.
 
@@ -8049,7 +8012,7 @@ This is a listing of stock areas available with CircleMUD.
    All those marked with * have been heavily modified by Furry of VieMud C.A.W.
 stands for the Curious Areas Workshop. All zones have been modified by Rumble.
 
-See Also: AREAS
+See also: AREAS
 #0
 ROLEPLAYING RP
 
@@ -8061,7 +8024,7 @@ TESTS
    Test all you like and please be brutal with the bug, idea, and typo 
 commands.
 
-See Also: BUG, TYPO, IDEA
+See also: BUG, TYPO, IDEA
 #0
 CLERIC
 
@@ -8217,7 +8180,7 @@ SPELLS MAGICS SPELLBOOKS TOMBS SPELL-LEVELS SPELLS-STOCK SPELLLIST
 |                          |   Remove Curse         26   |
 ----------------------------------------------------------
 
-See Also: SKILLS
+See also: SKILLS
 #0
 CURSED
 
@@ -8275,7 +8238,7 @@ QUESTIONS
 Boards may be used but generally are considered spamming unless it is of great
 importance to everyone.    
 
-See Also: MUDMAIL, BOARDS
+See also: MUDMAIL, BOARDS
 #0
 TELNET CLIENTS ZMUD GMUD TINYFUGUE TINTIN PUEBLO MUDMASTER MUSH PARSING TERMINALS
 
@@ -8312,7 +8275,7 @@ ANIMATE-DEAD
 
 Usage: cast 'animate dead' corpse
 
-   This spell will harness evil necromancy magics and bring life into a
+   This spell will harness evil necromancy magic and bring life into a
 corpse, creating a zombie.  The corpse will do the bidding of its master.
 
 #0
@@ -8356,6 +8319,10 @@ USAGE: hindex < letter | phrase >
 
   The help index command is a quick reference to help keywords matching the argument
 you provide. For Example:
+
+> hindex new
+Help index entries based on 'new':
+newbie-policy       newbies             news          
 
 #0
 UTILITIES SCREENS 
@@ -8420,7 +8387,7 @@ COMMUNICATION
 SAY ASK WHISPER                    - Talk to people in the room
 GSAY GTELL REPORT                  - Talk to a person in the group.
 TELL QSAY REPLY                    - Talk to a person in the game / the quest.
-SHOUT HOLLER GOSSIP GRATS AUCTION  - Send a meesage on a public channel
+SHOUT HOLLER GOSSIP GRATS AUCTION  - Send a message on a public channel
 MAIL RECEIVE CHECK                 - Used to communicate with a postman.
 WRITE READ REMOVE                  - Used to communicate via boards.
 DEPOSIT WITHDRAW BALANCE           - Used to communicate in banks.
@@ -8450,7 +8417,7 @@ AC-CONFIDENCE ARMOR-CLASS ARMOUR-CLASS AC-APPLY
 is at protecting you.  When you don armor, any AC apply that armor has is 
 subtracted from your standard (naked) AC value, modified depending on where on
 the body you are wearing the armor.  Some items have a special bonus, and 
-substract from the AC directly. Negative AC is better. 
+subtract from the AC directly. Negative AC is better. 
 
 #0
 PASSWORD PW
@@ -8574,9 +8541,9 @@ See also: SPELLS
 MV MOVEPOINTS MOVE-POINTS MOVEMENTPOINTS MOVEMENT-POINTS
 
    Depending on the type of terrain your character will tire from too much
-travelling and require some rest to continue.
+traveling and require some rest to continue.
 
-See Also: MANA, HITPOINTS
+See also: MANA, HITPOINTS
 #0
 CIRCLEMUD CREDITS
                     C  I  R  C  L  E  M  U  D     3  .  5
@@ -8587,7 +8554,7 @@ to CircleMUD is protected under a copyright by the Trustees of the Johns
 Hopkins University.
 
 Many, many people contributed to CircleMUD in one way or another throughout
-the course of its development.  Although it's impossible for me to remember
+the course of its development.  Although it is impossible for me to remember
 them all, I'd like to extend special thanks to certain people:
 
   -- Jeff Fink and George Greer, for submitting a veritable mountain of
@@ -8612,6 +8579,7 @@ them all, I'd like to extend special thanks to certain people:
 Thanks everyone!
 
   Anonymous FTP:  ftp.circlemud.org or ftp2.circlemud.org in pub/CircleMUD
+  Bugs and Help:  builderacademy.net 9091
             URL:  http://www.circlemud.org/
    Mailing List:  listserv@@post.queensu.ca
                   (write "subscribe circle <first name> <last name>")
@@ -8619,7 +8587,7 @@ Thanks everyone!
 --Jeremy Elson
 
 CircleMUD is currently being developed by The Builder Academy and all bugs and
-requests for help should be dirceted to: builderacademy.net 9091
+requests for help should be directed to: builderacademy.net 9091
 
 --Rumble
 #0
@@ -8739,7 +8707,6 @@ Jeremy Elson
 Department of Computer Science
 Johns Hopkins University
 Baltimore, MD 21218 USA
-jelson@@circlemud.org
 
 CircleMUD is licensed software. This file contains the text of the CircleMUD 
 license. If you wish to use the CircleMUD system in any way, or use any of its 
@@ -8881,7 +8848,7 @@ DENMARK
 
 This document contains the rules by which you can use, alter or publish
 parts of DikuMud. DikuMud has been created by the above five listed persons
-in their spare time, at DIKU (Computer Science Instutute at Copenhagen
+in their spare time, at DIKU (Computer Science Institute at Copenhagen
 University). You are legally bound to follow the rules described in this
 document.
 
@@ -8915,7 +8882,7 @@ Rules:
    your address, name etc.)
 
    Any running version of DikuMud must include our names in the login
-   sequence. Furthermore the "credits" command shall always cointain
+   sequence. Furthermore the "credits" command shall always contain
    our name, addresses, and a notice which states we have created DikuMud.
 
    You are allowed to alter DikuMud, source and documentation as long as
@@ -8942,8 +8909,7 @@ these files are erased it is called a pwipe since everyone starts over with a
 clean slate.
 
 #0
-AUCTION GOSSIP GRATS CONGRATULATIONS NOAUCTION NOGOSSIP NOGRATS
-
+AUCTION GOSSIP GRATS CONGRATULATIONS 
 Usage: auction <message>
        gossip <message>
        grats <message>
@@ -8952,22 +8918,20 @@ These are channels reserved for specific purposes.  Messages on these
 channels reach everyone who is monitoring them.  You must be at least level
 three to use these channels.
 
-These channels should be used accordingly. Gossip should be used for anything
-not pertaining to building. So builders not wishing to be spammed can go NOGOS.
+These channels should be used accordingly.
  
 Examples:
 
   > auction short sword -- minimum bid 100k
   > gossip Hey, is that a short sword on your belt or are you happy to see me?
-  > grats LEVEL!!!!!!!!
-  > grats GRATS CATJE!!!!!!!!
+  > grats GRATS Detta!!!!!!!!
 
-See also: EMOTE, GSAY, HOLLER, NOREPEAT, SAY, SHOUT
+See also: TOGGLE, EMOTE, GSAY, HOLLER, NOREPEAT, SAY, SHOUT
 
 #0
 AUTOEXITS AUTO-EXITS
 
-Usage: autoexit
+Usage: autoexits
 
 Toggles the automatic display of currently available exits.  Not all
 possible exits will be displayed, only those immediately available.
@@ -9015,7 +8979,7 @@ surroundings could mean the difference between life and death!
 If you explicitly type 'look', you will always see the full room description,
 even in BRIEF mode.
 
-See also: COMPACT, LOOK
+See also: TOGGLE, COMPACT, LOOK
 #0
 BUGS TYPOS IDEAS
 
@@ -9054,7 +9018,9 @@ Examples:
  
 See also: LIST, SELL, SHOPS, VALUE
 #0
-CLEAR CLSOLC
+CLEAR CLS
+
+Usage: cls
 
 Clears the screen.
 
@@ -9160,7 +9126,7 @@ will display:
 Helt is feeling very sad today.
 
 gemote does the same thing except over the gossip channel. So not just the people
-in your room see it, eveyone on the gossip channel does. Please don't abuse this.
+in your room see it, everyone on the gossip channel does. Please don't abuse this.
 
 See also: SOCIALS
 #0
@@ -9283,7 +9249,7 @@ Intelligence - How smart you are. Determines how much mana you gain per level,
                opponent and hit him more often, and if you're undead, helps 
                control your followers.
    
-See Also: HITROLL, DAMROLL, AC
+See also: HITROLL, DAMROLL, AC
 #0
 BLINDED SOMEONE INVISIBLE WIZINVIS 
 
@@ -9295,7 +9261,7 @@ a light.
 No one can use communication channels anonymously. Names will always be shown
 instead of "someone."
 
-See Also: INVIS, VISIBLE
+See also: INVIS, VISIBLE
 #0
 HITROLL
 
@@ -9381,7 +9347,7 @@ Duration    : 2 hours.
 Level       : Mage level 9, Cleric level 6.
 
 Blindness will blind a victim failing its saving throw.
-A blinded person will have -4 penalty to both hitroll and AC.
+A blinded person will have -4 penalties to hitroll and AC.
 
 See also: AC
 #0
@@ -9437,9 +9403,9 @@ Accumulative: No
 Duration    : (432/Intelligence points of person) hours
 Level       : Mage level 16.
 
-Is is not possible to charm anyone that is already charmed, if
+It is not possible to charm anyone that is already charmed, if
 you're charmed yourself, or if the person is higher level than
-yourself.  The person will get a saving throw versus "paralysation".
+yourself.  The person will get a saving throw versus "paralysis".
 
 A charmed person will follow you, and not be able to attack you, you
 can order the charmed person using the order command.
@@ -9551,9 +9517,9 @@ Level       : Mage level 14.
 
 Curse cast on a person that fails the saving throw, will reduce their
 hitroll and damage roll both by one.  It will also reduce the saving
-throw versus paralysation by one. 
+throw versus paralysis by one. 
 
-When cast upon an object, the object will no longer be removeable or droppable.
+When cast upon an object, the object will no longer be removable or droppable.
 The object must be uncursed by casting the spell remove curse on it.
 
 See also: REMOVE-CURSE
@@ -9700,7 +9666,7 @@ Level       : Cleric level 19.
 Save        : Versus spell for half damage.
 
 This spell removes all but 1d4 hitpoints from the victim.  The
-maximum number of damage points are 100.  It is not possible to
+maximum number of damage points is 100.  It is not possible to
 kill using this spell (but almost).
 #0
 HEAL
@@ -9789,7 +9755,7 @@ Casting poison on food or drink (containers) will poison it.  Eating
 poisoned food/drinks will poison the person eating or drinking.
 
 A person who is poisoned will suffer damage every hour, lose strength, and
-gain less points than usual.
+gain fewer points than usual.
 
 
 See also: REMOVE-POISON, DETECT-POISON
@@ -10155,16 +10121,9 @@ Useful if you have a slow connection or if it just annoys you.
 
 See also: TOGGLE
 #0
-NOSHOUT DEAF
+SUMMONABLE NOSUMMON SUMMON-PROTECTION
 
-Usage: noshout
-
-NOSHOUT toggles whether or not you hear shouts.  (deaf) will appear after
-your name in the WHO list.
-
-See also: FLAGS, HOLLER, SHOUT, TOGGLE, WHO
-#0
-NOSUMMON SUMMON-PROTECTION
+Usage: nosummon
 
   Prevents people from summoning you. If you want to let someone summon you 
 type NOSUMMON to turn off summon protection.  You can then type NOSUMMON 
@@ -10172,15 +10131,18 @@ again to turn protection back on.
 
 See also: TOGGLE
 #0
-NOTELL
+NOTELL NOAUCTION NOGOSSIP NOGRATS NOSHOUT
 
 Usage: notell
+       nogossip
+       noauction
+       nograts
+       noshout
 
-Use NOTELL if you wish to prevent other players from using tell to
-communicate with you.  (notell) will appear after your name in the WHO
-list if you have notell on.
+Use NO<channel> if you wish to stop using and seeing that channel. A 
+(no<channel>) flag will appear after your name in the WHO list.
 
-See also: FLAGS, TELL, TOGGLE, WHO
+See also: TOGGLE, FLAGS, TELL, TOGGLE, WHO
 #0
 OFFER RENTING UNRENTING UN-RENTING 
 
@@ -10315,11 +10277,11 @@ will ask players to turn on their Quest flags using this QUEST command
 if they are interested in the Quest.  It also allows you to listen in on
 the quest channel and receive information specific to the quest.
 
-See also: QSAY
+See also: TOGGLE, QSAY
 #0
 QUI SHUTDOW
 
-Just to prevent accidental quittings and/or shutdowns. This command does not do
+Just to prevent accidental quits and/or shutdowns. This command does not do
 it simply is.
 
 See also: QUIT, SHUTDOWN
@@ -10520,7 +10482,7 @@ Examples:
 
   > steal gold drunk
   > steal sword mercenary
-    (If it's wielded, only possible if he is sleeping)
+    (If it is wielded, only possible if he is sleeping)
 
 See also: FLAGS
 #0
@@ -10539,13 +10501,25 @@ See also: FLAGS, WHO
 TOGGLES CONFIGURE SETTINGS
 
 Usage: toggle
+       toggle <option> <argument>
 
 TOGGLE shows you the current values of various toggles available on the MUD.
-This command CAN NOT be used to change these values (see related commands.)
-All of these toggles remain the same until you change them; i.e. they are
-saved when you quit or rent.
+This command can also be used to change these values, if used with the correct
+argument. When a toggle is set, it will be saved in that state until the next
+time you change it.
 
-See also: BRIEF, COMPACT, DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
+ SlowNameserver: OFF                            Trackthru Doors: ON 
+      Buildwalk: OFF              NoWiz: OFF             ClsOLC: OFF
+       NoHassle: ON           Holylight: ON           ShowVnums: ON 
+         Syslog: normal
+Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
+   Move Display: OFF            Compact: ON               Quest: OFF
+   Mana Display: OFF             NoTell: OFF           NoRepeat: OFF
+      AutoExits: ON             NoShout: OFF              Wimpy: OFF
+       NoGossip: OFF          NoAuction: OFF            NoGrats: OFF
+            AFK: OFF         Pagelength: 45               Color: on  
+
+See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
 #0
 TRACK TRAIL 
 
@@ -10664,24 +10638,27 @@ See also: CONTROL-WEATHER, SUNRISE
 #0
 WHO WHOINVIS
 
-Usage: who [minlev[-maxlev]] [-n name] [-c classlist] [-s] [-k] [-q] [-r] [-z]
+Usage: who [minlev[-maxlev]] [-n name] [-c classlist] [-k] [-l] [-n] [-q] [-r] [-s] [-z]
 
 Lists the people currently in the game.  Some people may be invisible.
 Command-line options can be used to limit the listing.  The parameters
 can be specified on the command-line in any order.
 
--n : list only people whose names or titles contain sname
--s : list names in the short form (4 columns of names, without titles or flags)
--k : list names of people who are flagged as killers or thieves.
--q : list only people who are on the Quest
--r : list only people who are in your room
--z : list only people in your zone
+-c : List names of people of the following classes: Cleric, Warrior, Mage, Thief.
+-g : List names of people who are grouped.
+-k : List names of people who are flagged as killers or thieves.
+-l : List names of group leaders.
+-n : List only people whose names or titles contain this word.
+-q : List only people who are on the Quest.
+-r : List only people who are in your room.
+-s : List names in the short form (4 columns of names, without titles or flags).
+-z : List only people in your zone.
 
 Examples:
-
-  > who -s        List, in short form, all characters connected
+  > who -c Wa     List all Warriors in game.
+  > who -s        List, in short form, all characters connected.
   > who -k -z     List all outlaws who are in your zone.
-
+  > who 4-10      Lists all players level 4-10.
 #0
 WHOAMI
 
@@ -10707,18 +10684,17 @@ See also: EQUIPMENT, REMOVE, WEAR
 #0
 WIMPY
 
-Usage: wimpy [hp | max]
+Usage: toggle wimpy [#hp]
 
 Use the WIMPY command to automatically flee once your health drops below
 a certain level.
 
 Examples:
 
-  > wimpy 35    will make your character automatically flee a fight
-                if you have less than 35 hit points.
-  > wimpy 0     will turn off wimpy mode.
-  > wimpy       will show you your current wimp status.
-  > wimpy max   will set your wimpy to the maximum.
+  > toggle wimpy 35    will make your character automatically flee a fight
+                       if you have less than 35 hit points.
+  > toggle wimpy 0     will turn off wimpy mode.
+  > toggle wimpy       will show you your current wimp status.
 
 See also: FLEE, TOGGLE
 #0
@@ -10781,7 +10757,7 @@ Usage: unlock [door]
 If you find a locked door use a key to open it. You must have the correct key 
 in your inventory to unlock a door.
 
-See Also: OPEN
+See also: OPEN
 
 #0
 Changes
@@ -10859,12 +10835,12 @@ People may go linkless for many reasons:
 #0
 PAGELENGTHS
 
-Usage: pagelength [#]
+Usage: toggle pagelength [#]
 
    Sets how many lines you will receive before getting the page option "Return
 to continue."
 
-See Also: TOGGLE
+See also: TOGGLE
 #0
 TNL
 
@@ -10883,7 +10859,7 @@ KILLERS PLAYERKILLING PLAYERKILLERS PKILLERS PKILLING
    The act of slaughtering another player. Not a nice thing to do. If you do
 such a horrible and pointless thing you will need to be pardoned by the staff.
 
-See Also: FLAGS, PARDON
+See also: FLAGS, PARDON
 #0
 MULTIPLAYING MULTIPLAYERS MULTIPLE MULTI-PLAYERS MULTI-PLAYING
 
@@ -10904,7 +10880,7 @@ Usage : afk
 Let's other players know you will be away from keyboard. (AFK) flag will
 be displayed in who after your name and title.
 
-See also: WHO
+See also: TOGGLE, WHO
 #0
 AGE
 
@@ -10932,10 +10908,15 @@ Usage: history
    Shows last 100 communications your player has seen while in the game. 
 Automatically clears after you check it or leave the game.
 
-See Also: CHANNELS
+See also: CHANNELS
 #0
-COLORCODES COLOURCODES COLOR-CODES COLOUR-CODES COLORS COLOURS PCOLORS COLORCODING @@
+COLORCODES COLOURCODES COLOR-CODES COLOUR-CODES COLORS COLOURS PCOLORS COLORCODING
 
+Usage: toggle color [ off | normal | on ]
+
+   If you have a color-capable terminal and wish to see useful color-coding
+of information, use the TOGGLE COLOR command to set the level of coloring you 
+see.
    The letters for the colors are to be preceded by a single @@ sign, where the
 actual code will be @@<letter>. Double @@@@ = single @@. All use of colorcodes
 @RMUST@n be terminated with @@n to restore normal color to prevent color bleeding.
@@ -10955,6 +10936,927 @@ Extra codes:
 @ll - blink@n      @oo - bold@n
 @uu - underline@n  @ee - reverse video@n
 
-See also: @@, ANSI, PROMPT
+See also: @@, ANSI, PROMPT, TOGGLE
 #0
+MERC
+
+[Note: this entry may not be removed or altered or you will face legal
+ action.  See our license.txt.]
+This mud is based on Merc 2.2, created by Kahn, Hatchet, and Furey.  Merc 2.2
+is an upgrade from Merc 2.1, created by Furey, Hatchet, and Kahn.  Merc 2.2
+is available as Merc_22.tar.gz from ferkel.ucsb.edu (most files moved to
+ftp.tcp.com), ftp.math.okstate.edu, marble.bu.edu, zen.btc.uwe.ac.uk
+E-mail to 'merc-request@kpc.com' to join the merc mailing list.
+
+Thanks to ...
+  ... Diku Mud for starting it all.
+  ... The Free Software Foundation and DJ Delorie for kick-ass tools.
+  ... Copper Mud and Alfa Mud for releasing their code and worlds.
+  ... Aod of Generic for ... well, everything.  You're a hoopy frood, Aod.
+  ... Alander for many ideas and contributions.
+  ... John Brothers of Silly for permission to use Silly code and worlds.
+  ... Zrin for administering the mailing list.
+  ... Abaddon for proofreading our comm.c.
+  ... Hind, Quin, Vic, Diavolo, Oleg, and others for porting help.
+  ... Diavolo, Grodyn, Morgenes, Da Pub, Loki, Talen, Kalgen, Sludge,
+      The Crew of Salems Lot, and others for code and bug fixes.
+  ... N'Atas-Ha for MOBPrograms and the pager skeleton and Blackstar
+      for the improvements and ideas to the pager.
+  ... Raff, Doctor, VampLestat, Nirrad, Tyrst, PinkF, Chris for worlds.
+  ... Ikee, Chaos, Kraze, Maxx, Thoth, Zolstead, Zavod, VampLestat, Cyric,
+      Kelvin, and Jackal for extensively playtesting MERC 2.2 and providing
+      constructive input.
+  ... the players and imps of Mud Dome, Final Mud, Mud Lite, Vego Mud, Rivers
+      of Mud, Ruhr Mud, Mystic Realms, 4th Realm, Dragon Mud, and Salems Lot
+      for bug reports, ideas, new code, and hours of enjoyment.
+
+Share and enjoy.
+MERC Industries
+#0
+HEIACH XTBAX
+
+Heiach has been a big help with training new builders and has become very adept
+with trigedit. His example zone 359 is very impressive. He is always willing to
+help, especially with trigedit.
+
+#0
+RELSQUI
+
+   How do you pronounce your MUD name?  It doesn't come up very much, being a
+(usually) silent medium and all, but every once in a while I find myself
+wondering.  The only thing people usually mistake about mine is the 'u,' which
+is not silent.  Relskwee.  ^_^
+
+http://members.aol.com/relsqui/me
+http://members.aol.com/elsabett/squoose.gif
+
+#0
+FYRE
+ 
+   He actually needs no help. He is probably the most qualified of the staff to
+administer help to those who need it. He is training to become a massage therapist 
+so helping him may score you a free massage.
+
+#0
+RADIAX
+
+  He appreciates it, really. But, he can take care of himself.
+
+#0 
+DETTA
+
+   Detta needs help with her spelling and sense of humor. She randomly throws
+in U's in the oddest places and finds the strangest things funny.. like laundry.
+None of this is really her fault, she is British. She is also a very good nurse
+so feel free to ask her about anything health related. If you want to gross her
+out you can pick on her fear of bugs.  
+
+#0 
+SHAMRA
+
+   First and foremost, repeat after me "Shamra is God".  Think it, know it,
+drink it into your soul and make it a part of your very being.  My two favorite
+hobbies are swords and killing, and it is even better when I am killing people
+with swords.  From the time I was a lowly immortal I have always defied the
+supposed bounds of my power and I will never be satisfied until it is absolute!
+Now all that aside, I'm happy to help anyone who is willing to help themselves.
+I am currently working on zones 89 and 327, both works in progress but 89 is a
+bit further along.  I am oftentimes in another window or near my computer so
+page me if you really need something, if I don't respond I'm probably sleeping
+or in class or just don't want to be bothered :-)
+
+#0
+PRAISE REVIEWS RATINGS
+
+Review Submitted By: Detta 
+Author Status: Player and staff member 
+Started on The Builder Academy: June 2003 
+Submission Date: Sep 17, 2003 
+
+Initially I came to TBA knowing absolutely nothing about any sort of 
+building, having wanted to learn but being worried about expectations,
+difficulty etc. However, I eventually put in an application and found 
+it an extremely supportive atmosphere. There are extensive help files 
+on almost everything, there are no deadlines or pressures, and regular
+staff members to help with any problems.
+
+Was given the trial of building one basic room/object/mob first, and 
+was then able to work on my own zone in my own time, and learn some 
+of the more challenging aspects of building.
+
+Thoroughly enjoyed and enjoying the whole experience and am now 
+helping out as staff there myself. Regardless of how little or how 
+much you know about building, if you'd like to give it a go, or are 
+just curious as to what it entails then I wholeheartedly recommend 
+coming by :).
+
+Review Submitted By: Heiach 
+Author Status: Staff member 
+Started on The Builder Academy: 2003 
+Submission Date: Jan 10, 2004 
+TMC Listing: The Builder Academy 
+
+I entered TBA with the hope of becoming a teacher. I've been building
+for quite some time and my first impression was that of a pleasant 
+MUD with a very helpful staff. I filled out an application form and 
+was soon on my way. There is wonderful builder tutorial there, and 
+despite the fact I thought I knew most of it, I read it all anyway 
+and learnt much.
+
+I was then issued with a trial vnum, that is 1 room, 1 object and 1 
+mobile. And I described them to the best of my abilities. After some 
+friendly suggestions my vnum was passed and I was set up with my very
+own zone.
+
+The whole reason I came was to help teach Trigedit, but I ended 
+up learning many, many things that I had no idea were even possible.
+I am currently working there as a staff member and would definitely 
+recommend coming here whether you're an experienced builder and want 
+to refine your skills or if you're absolutely new to building and 
+have not a clue at all. Be assured, you'll be welcomed with open arms 
+and treated politely.
+
+Maren
+   I'm so glad that you've been such a great resource. The lessons I learned at 
+your BA have helped me develop areas for the MUD that I have played for 4 years. 
+I can't thank you enough for what you've done. 
+
+Message 6 : Tue Mar  4 (Chubs)      :: Rumble and Friends
+   Id like to say your help file on triggers has been an immense help, and that
+the mud altogether has helped, I direct learners to go here if they want to
+learn, thanks for working so hard Rumble, Relsqui, and community!  ^.  ^
+
+Znith
+I feel like this is my training ground. Good work you guys do...I, and the rest 
+of the mudding world, should and do appreciate it.
+
+Date: Wed Jan 14 18:06:54 2004
+  To: rumble
+From: Santa
+
+Hey wassup man,
+just thought I'd drop by and say hi!
+
+Actually, I came to thank you for all your help
+when I started doing this err zone making, the
+creative writing process I realized has really helped
+me out a lot, and is a skill that not many possess.
+
+right now, my friends and I started a new enterprise
+called meal deal.
+
+so we're doing a lot of work for restaurants and stuff, 
+and I've began to do restaurant reviews and pretty much
+all the copywriting on the entire website and on the sales
+kits and blah blah blah. it is a hell of a lot of writing.
+so er yeah, keep up the good work. and I just wanna say
+thanks.
+
+Santa
+
+Builder Academy by Robert 
+This is a very helpful academy where even the computer illiterate can learn to 
+build (like me. It has a group of rooms that teach you all you need to know as 
+long as you have patience to read them. There are people on it that help you 
+when you need information or tips. 
+
+Review Submitted By: Elaseth 
+Author Status: Staff member 
+Started on The Builder Academy: Oct 1999 
+Submission Date: Feb 8, 2004 
+TMC Listing: The Builder Academy 
+
+I've been on TBA off and on from the time before Cruel World actually 
+had players and TBA was just a building port to the time Cruel World 
+shut down for good and TBA was all that was left.
+
+When I originally went to TBA, I had just resigned from an admin
+position on a MUD and was floating about. I saw an advertisement for
+TBA and thought I'd see if there was anything to learn - and learn I 
+did. It did not take long before I was helping others, and soon after 
+that I meandered my way up the ranks to be one of their staff.
+
+From a staff perspective, we always attempt to answer all questions 
+and feel a commitment to improving the mud community - that of other 
+MUDs, not our own. Rumble, who runs TBA's social side, has a strong 
+sense of community and a desire to see others succeed. The rest of 
+us have bought into his flowers-and-sunshine ideals and are trying 
+to do our part... or haven't and are just using Rumble's resources 
+for our own vision and enlightenment. In either case, all comers are 
+treated with respect by the staff.
+
+The intention of TBA is simple - it is all about serving builders. We 
+cater to:
+
+   -- those learning to build
+   -- those simply enacting a vision for a zone
+   -- those building for another mud
+   -- learning to script with DG-scripts
+   -- discussing building tips and techniques
+   -- trying out pet theories 
+   -- those seeking to expose themselves to the theories of others
+
+
+There are no deadlines to work to but your own (though we do 
+occasionally overwrite or erase older work for the sake of making 
+space for newer work). It is my opinion that the staff is mature, 
+service-oriented, and non-judgmental about building abilities.
+
+If you wish to participate in any of the above, I believe we uniquely 
+suit your needs. The only drawback is that while many building 
+techniques are universal, we specifically teach the use of CircleMUD 
+3.1 with DG-Scripts 1.0.12 and OasisOLC 2.0.6.
+
+Happy Building!
+-Elaseth
+
+Review Submitted By: Elorien/Elora2404 
+Author Status: Player 
+Started on The Builder Academy: Some weeks ago 
+Submission Date: Feb 15, 2004 
+TMC Listing: The Builder Academy 
+
+There are a few places out there that are first and foremost
+dedicated to helping out the MUD community. This is one of the
+finest examples of such a place.
+
+When I first entered the TBA, I was greeted by enthusiastic players
+and staff members, who took the time to help me get started, and
+showed me all the patience in the world while I finished the
+application process.
+
+The standard on TBA is generally very high, and it keeps getting
+higher. There is a common consensus among both players and staff
+that everyone, including those most experienced and/or most 
+talented, has something to learn. Advice and honest opinions are 
+given when requested, but at the same time every builder has the  
+freedom to both experiment with unconventional building techniques, 
+as well as a chance to learn or get better with traditional
+CircleMUD tools. 
+
+This is a place for builders who love to build, and the building 
+happens in the friendliest atmosphere you could possibly imagine. I
+have yet to meet any single person who wasn't open, kind and ready
+to help with whatever you might need. And these people really know
+what they're doing.
+
+Before I started at TBA, I was completely drained of creative energy.
+After a longer, rather trying Imm-ship, I felt unappreciated,
+unmotivated and with the exception of a little private doodling in
+Word, I had stopped building altogether. It took no more than a few 
+days on TBA to make my mind start dreaming up new plots and
+schemes, planning a huge library meant to be a place that can help
+roleplayers evolve their clerics and mages at a scholarly level. I'm
+thoroughly enjoying every moment in there because, more than
+anything else, TBA remembers that building (and mudding in general)
+before anything else, is supposed to be fun. 
+
+Thank you for letting me work here at TBA, I've learned a lot of things, I'll 
+never forget u guys, for sure. I still have much left to learn, but, in the time
+I was here, you guys helped me a lot. Thank you!!!
+LAGUNA
+
+   Aight, from past experience with MUDs, and seeing how and what others have
+built on those MUDs that I have played, I have always wanted to learn how to
+build myself and along with that, it is of good experience to have under my belt
+for becoming a game designer. My feedback so for, up till this point, is all
+positives. This is a great place for newbies like myself in the building world
+to come, and even for those that are somewhat trained in the world of building.
+The help files that you supply are great, and are detailed/descriptive in every
+aspect The "higher" immortals/gods like yourself have been a great help also,
+pointing out what I need to fix, which helps me out a lot, there is usually
+always something for a person to improve upon, so any feedback/help for
+correcting my mistakes is always a plus. I like how you set it up for the
+beginner like myself to learn how to edit a vnum before we go about building an
+entire zone get the feel of things before you start, and also have a person such
+as yourself point out the errors, so that I can become better at building in all
+honesty I probably would not have understood as much as I do now in such a little
+time if it wasn't for the staff, the help files, and my passion for building and
+you allowing me to do so you are all doing a good job. Keep it up.
+CRISCAL
+
+I think it was a brilliant idea to help get MUDs who need builders.... what they
+need when I came into this mud via friend telling me the site I had absolutely 
+no knowledge of how to make rooms/objects/mobs. Now I know a lot more about all 
+three of those than I did before. I want to thank all of you guys for what you 
+are doing :)
+
+Pepper!
+#0
+RECRUITING ADVERTISING ADVERTISEMENTS ADVERTIZING ADVERTIZEMENTS
+
+   To prevent harassment of builders trying to learn we strictly enforce a no
+advertising policy. The one exception is that you may post to the advertising
+board in room 88. There are far better places to recruit builders such as the
+mudconnector. AGAIN: NO ADVERTISING FOR MUDs IS ALLOWED ON TBA. This includes
+all channels including tells.
+
+   For Implementors searching for help to create their MUDs. The staff of TBA
+is flattered, but we have plenty of builders and development to keep us busy
+for years. If you want to recruit, there is a board located in room 88 for 
+you to post your advertisements. No other advertising or recruitment is
+allowed on TBA. If you are asked to work on another MUD please notify the 
+staff.    If you are staff from another MUD here to evaluate a builders work before
+hiring them please contact any staff.  We will vouch for good builders that
+have crossed our threshold and tell you our honest feelings about the abilities
+of each. 
+
+   The harsh truth is that good MUDs do not need to advertise and as a minimum 
+will usually require a completed zone or equivalent proof that you are a good 
+builder. If someone says they just started a MUD and need good builders be 
+warned most MUDs fail and there is a good chance you will lose work. It happens
+to everyone eventually. Never build on a MUD unless they make backups and will
+give you a copy of your work.
+
+See also: TMC
+#0
+DISCLAIMER
+
+   All areas submitted or created on The Builder Academy remain the property
+of the original builder.  By creating or submitting an area the builder gives 
+the staff of TBA the right to edit, modify, and use the material as we see fit 
+on TBA without any penalty, fee, whining, or obligation of any sort.  TBA staff
+will not normally modify anyone's work. However, it is sometimes necessary for 
+troubleshooting, fixing errors, or game balance.
+   A builder can request a copy of their work from us at any time.  A builder's
+work will not leave TBA without their explicit permission.  The builder will 
+always be given public credit for their work. If a builder abandons their work 
+without notifying Rumble, they may be deleted and their work will either be 
+deleted or donated depending on the quality.
+
+#0
+STAFF-ZONES
+ 
+   Ensure their trial vnum is complete and they have submitted a zone proposal. 
+In my absence they can mudmail it to you directly. SHOW ZONES and then search 
+for a "free zone" I usually save zones <100 for people I know will complete
+them. Don't waste them on a typical newbie. Next redit #00 and enter the room
+name "Rumble's Zone Description Room" and cut and paste the zone proposal into 
+it. It may require a little cleaning up and if it is extremely long use the 
+extra desc. Next zedit #00 and put name under Builders and Name Me - Rumble for
+the zone name. Then set olc, title, and set nohassle on and purge the assigner 
+(or have them junk it).
+ 
+I use the following ZMUD trigger. It fires off me typing aaz # <builder>:
+
+redit [%1]00
+1
+%2's Zone Description Room
+q
+y
+zedit [%1]00
+1
+%2
+z
+Name Me - %2
+q
+y
+set file %2 olc %1
+set %2 olc %1
+set file %3 title has zone %1
+set %2 title has zone %1
+set file %2 loadroom [%1]00
+set %2 loadroom [%1]00
+wiznet Okay %2. You have zone %1 vnum's [%1]00 to [%1]99. Help buildwalk and help dig to learn how to create and link your rooms. If you have any questions just ask.
+set self level 32
+nohassle
+tbalim %2 purge
+cheat
+nohassle
+redit [%1]00
+2
+I then cut and paste the zone description into the first room.
+
+See also: STAFF, ASSIGNER
+#0
+STAFF DUTY DUTIES STAFF-DUTIES TBA-STAFF-DUTIES
+
+   This is how we handle new arrivals on TBA. Read the helpfiles on send/snoop.
+
+1.  Have them fill out the application at:
+      @C http://www.geocities.com/buildersacademy/ @n
+    They must send the app before being advanced or leaving room 2. 
+2.  Advance them to level 31.  
+3.  Transfer or teleport them to 3, Socrates will greet them with instructions. 
+    You must transfer or teleport them so the greet trigger will fire and 
+    give them an assigner.
+4.  Tell them to read through the entire zone and feel free to ask anyone for 
+    help. 
+5.  The entire zone should take well over an hour to read. A trigger will tell 
+    them at the end of the redit hallway that they can begin working on their
+    trial vnum.  Level 33's and above will assign trial vnums and zones. 
+6.  Be available for questions, but don't hand feed them everything. If you do
+    you will get burnt out or become suicidal. Help Xedit, shows the room 
+    number for each hallway. I have compiled an extensive help system so the
+    majority of the questions can be answered by directing them to a help file.
+7.  Once they complete their one room/mob/obj look it over. Check everything. 
+    Anything you miss will be repeated up to 100 more times with their new zone. 
+    Any corrections now will save us (and them) major headaches later! 
+    STAT ROOM/MOB/OBJ to be sure everything is correct. 
+8.  After the trial vnum is approved tell them to read HELP PROPOSAL. A zone 
+    proposal is required before they will be given a zone.  
+9.  Finally, make sure to have fun. If you don't want to deal with newbie's go
+    invis. Everybody gets tired of training eventually. I know it gets hectic
+    at times, just do your best, keep your cool, and remember to breathe ;-)
+
+Feel free to submit contact info to rumble for the HELP EMAIL entry.
+
+Level 33's:
+    Use any free trial vnum in the zone listed in imotd. Set their trial vnum 
+    in their title "set rumble title has trial vnum #" "set rumble olc #." Put
+    their name in their trial vnum room title. Use the assigner to limit them
+    to their single vnum. HELP ASSIGNER.
+    Thoroughly check their trial vnum, go into each form of OLC to see it
+    completely. Once complete have them write up a zone proposal and mudmail 
+    or email it to Rumble (help contact). In the rare occasion that I am absent
+    HELP STAFF-ZONES explains how I setup new zones.
+
+Rumble
+#0
+REPORT PROGRESS-REPORT 
+
+As a builder on a mud it is important that you are accountable to someone.
+To prepare you for this, and to keep the Builder Academy professional, I 
+request (not mandatory) a report from every builder so I can keep track of 
+everyones progress and give help to those who are serious about learning to
+build. These monthly reports are due the 1st of each month. The report will 
+include at a minimum the info in the example below. A simple mudmail to
+Rumble with this info is sufficient. Here is an example:
+
+Rumble's Building Report.
+Builder      : Rumble
+Zone         : 13 The Builder Academy
+Began        : When you started working on the zone.
+Player Level : 31-34 
+Rooms        : 145 complete
+Mobs         : 23
+Objects      : 42
+Triggers     : 129 
+Theme        : Its purpose, hack & slash, quest, rescue princess, kill ogre...
+Completion   : When do you expect to finish it, how is the progress going?
+Notes        : Such things as zone alignment, economy, quests, special mobs and
+       objs, and anything else I should know about your zone. What 
+       makes it unique?
+
+To submit a report type @RAT POSTMASTER MAIL RUMBLE@n. Do not worry about 
+making it look pretty. This is only necessary after you have completed your 
+trialroom and if you have your own zone. This proposal is also a good example
+of the Zone Description Room required for all zones. By writing the report you
+can include the same information in the zone description room.
+
+See also: REPORT-EXAMPLE, ZONE-DESC
+#0
+TRIAL-ROOM TRIAL-VNUM TRIALVNUM INTRO TRIALROOM TRAILROOM APPROVAL VNUM-APPROVAL TRAIL-VNUM TESTROOMS WIZNUMBER TRAINING-VNUM TEST-ROOM TRAIL-ROOM TRAILROOM
+
+   During your initial training you will be able to edit a single trial Vnum.
+@RHELP VIRTUAL-NUMBER@n. As you learn the different building commands feel free
+to goto <your Vnum> and test them out. Your Vnum (look at your title to see 
+what Vnum you were assigned) includes your trial room/mob/object. For example, 
+if your title says: Rumble has trial Vnum 13900, this means I will make one 
+room, one mob, and one object by editing that Vnum (i.e. redit 13900). Both the 
+mob and object must load in the room through zedit. Do not make a shop or 
+trigger with your Vnum, those are more advanced and should only be attempted 
+when the first four forms of OLC are well understood. Your Trial Vnum must have 
+your name in the room title.
+   This one Vnum is your chance to show off your building abilities. Every 
+builder makes one room/mob/obj here. It is also a chance for you to learn and 
+improve your building before being assigned a zone. Be creative. Make something 
+impressive and unique, not another "Ultimate Weapon" or "invincible mob" with 
+every affection and stat possible. They have already been made and impress 
+nobody. By monitoring this one trial Vnum the trainers can catch most of your 
+mistakes and prevent you from repeating them throughout an entire zone. Once 
+you finish your one room/mob/obj you must have it checked for any errors. Ask 
+anyone level 32 or above to do this for you. Once all errors are corrected and 
+you have proven you know the basics of building you can submit a zone proposal. 
+@RHELP PROPOSAL@n for more information. Once your proposal is approved you will 
+be assigned your own zone, consisting of 100 Vnum's. If you have not been 
+assigned a Vnum or zone please be patient and mudmail Rumble. Once you are 
+assigned either of these do not remove them from your title. Your title should 
+always have your trial vnum or your zone somewhere in it.
+
+#0
+BOOBS NOASSHOLE TITS IMMORAL
+
+YES, people have tried to get help on these things... 
+
+#0
+CHALLENGE
+
+That is what you will find here at TBA.
+
+#0
+TBA PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW
+
+@RGOTO 3@n to enter the Builder Academy tutorial.
+
+   A normal MUD will have a background (theme, plot, story, whatever you want
+to call it) which a builder is expected to work from. TBA does not have
+any such background. If you want to build a zone for a MUD then use their
+background. Otherwise, you may build whatever your heart desires.
+
+   TBA stands for The Builder Academy.
+
+   I created TBA in October of 2000 on Cruel World which was being run by 
+Zemial and Welcor. I then began combining my own experience with the work of 
+others into an extensive tutorial zone, help files, and examples. Welcor and 
+I ended up separating TBA from Cruel World to further enhance our training of
+new builders. Welcor has taken over the development of Trigedit and has 
+contributed extensively to the current version of Oasis OLC. TBA now has many
+purposes. It functions as a test port for Trigedit, Oasis OLC, CircleMUD, and 
+stock CircleMUD zones. And, of course, we are still open to anyone willing to 
+learn, teach, or help develop CircleMUD.  We have also teamed up with Zizazat
+of CWG to combine our efforts.
+
+   We are a low stress, no deadline, training environment. Where anyone with 
+motivation can work at their own pace to learn as much or as little as they
+wish. Numerous people are available to answer questions and give advice.
+
+1000's of builders served and counting.
+
+See also: NEWBIE
+#0
+EMAILS ICQ AIM ADMIN E-MAILS CONTACTS
+
+Name     Email                      ICQ #      AIM             MSN 
+
+Welcor   welcor@@builderacademy.net  18755607
+Rumble   rumble@@builderacademy.net  4822010    admwint         wintersn
+Ferret   ferret@@builderacademy.net                             radiax01
+Elaseth  elaseth@@builderacademy.net            ParaVox3
+Relsqui  relsqui@@builderacademy.net 72136407   Relsqui         penguinista 
+Heiach   heiach@@builderacademy.net             heiach          heiach
+Detta    detta@@builderacademy.net 
+Shamra   shamra@@builderacademy.net             BlackdemonRahl
+Elorien  elorien@@builderacademy.net
+Random   random@@builderacademy.net  219948345
+Fyre     fyre@@builderacademy.net 
+
+#0
+STARTS NEWBIES NEWBIE-POLICY ALL TUTORIALS TBA-ZONE SCHOOL 
+
+   Your first task is to apply for builder status at: 
+
+            @Chttp://www.geocities.com/buildersacademy/@n
+
+   When you finish and submit the application tell anyone level 32 or higher
+and they will advance you to begin your training.
+
+   Once promoted @RGOTO 3@n and read through the Builder Academy's tutorial 
+zone. Your third task as a builder is explained under @RHELP TRIAL@n. 
+
+See also: BACKGROUND
+#0
+HOMEPAGES WEBPAGES WEBSITES ADDRESSES PORT PORTS URLS ADDYS HOSTS IP-ADDRESSES SITES INTERNET-PROTOCOLS WEBLINKS MUDS ACCOUNTS CONNECTIONS CONNECTING 
+
+Builder Academy Homepage:
+   @C http://www.builderacademy.net@n
+Application:
+   @Chttp://www.geocities.com/buildersacademy@n
+
+The address (or IP and port) to TBA:
+TBA         : builderacademy.net 9091 IP: 65.69.46.147 
+
+Internet protocol (IP) is what identifies each computer individually on the internet.  The
+Gods can see your IP and report abuse to your provider so behave. 
+ 
+#0
+APPLICATION APPLY BUILDING LEARNING LESSONS 
+
+To apply for a building position go to:
+                   
+                   @Chttp://www.geocities.com/buildersacademy/@n 
+
+and fill out the application.
+
+@RGOTO 3@n to enter The Builder Academy.
+
+See also: OLC, REDIT, MEDIT, OEDIT, ZEDIT, SEDIT, TRIGEDIT, AEDIT
+
+#0
+PROMOTE PROMOTIONS ADVANCEMENTS RAISES LVLS LEVELS GAINS 31 32 33 34 RANKS RANKING HIRING 
+
+   Here at The Builder Academy the level of an immortal generally denotes
+their skill at building. This makes it easier for people to know who is in 
+charge, who they can ask for help, and who they should be wary of taking tips 
+from. I encourage everyone to help each other. Just realize that if the person
+is not at least level 32 they may have relatively little experience.
+  
+Level 31 (Immortal) Anyone who is new to TBA and is working on their trial vnum
+         or zone.
+Level 32 (God) An experienced builder that has proven their knowledge and is
+         willing to teach others. Level 32 and above is considered staff.
+Level 33 (Greater God) An experienced builder that has contributed significantly
+         to TBA.
+Level 34 (Implementor) Welcor and I (Rumble). Welcor codes, I administrate.
+
+   Do not bother asking to be advanced, and if that is why you are here, you
+are wasting your time. Note, this does not mean you are not a quality builder,
+but TBA is not your typical MUD. On the contrary, we are here as dedicated
+people to help you learn to build. Because of this the only chance of
+advancement is if you are willing to learn to build and then help teach others.
+If you are willing to give back to the CircleMUD community, and have the
+necessary skills to do so, you will be advanced and given further privileges
+to help teach others. Generally, if you have to ask for a promotion you will be
+less likely to receive it. Performance is everything here.
+
+#0
+RANDOM-THOUGHTS BIGGEST EGO
+
+Random Thoughts came to us a while back wanting to learn scripts and with
+his unique attitude and years of mudding experience, as well as his limited
+ability to understand the code, he is an asset and a welcome member of the
+TBA community.  He is also a part of the CWG community and enjoys spending
+time helping those in need, or just helping to lift the mood of frustrated
+builders with random misquotes.
+He is most known though for the size of his Ego and for his ability to refer
+builders to the helpfiles.
+
+@RTSTAT 41095@n
+#0
+THE-MUD-CONNECTOR TMC MUD-CONNECTOR
+
+   Most of our traffic comes through word of mouth or TMC reviews. If you are so
+inclined please leave a review about your experience with TBA at:
+http://mudconnector.com/mud-bin/adv_search.cgi?Mode=MUD&mud=The+Builder+Academy
+
+See also: REVIEWS
+#0
+TBA-ADVERTISING
+Mud Created: October, 2000
+
+The Builder Academy
+Code Base: [Circlemud] 3.1 
+Latest CircleMUD with OasisOLC and DG Scripts
+Site: builderacademy.net 9091 [206.123.75.138] 
+Admin Email: rumble@builderacademy.net
+Theme: Teaching Builders, CircleMUD and DG Scripts development
+http://www.builderacademy.net/
+telnet://builderacademy.net:9091
+
+   The most challenging aspect of running a mud is finding good builders. You
+will hear this from the admin of every MUD that has ever been. In the past it 
+has always been up to each individual MUD to find and usually train their own 
+builders. This works, but I think the CircleMUD community can come up with 
+something better. That is why I created The Builder Academy.
+
+   We have been open to anyone interested in learning or teaching how to build
+using Oasis OLC with dg scripts since 2000. The current developer of DG scripts,
+Welcor, uses The Builder's Academy (TBA) as the development port for DG
+scripts. 
+Now TBA has expanded to also be used to develop stock zones for CircleMUD.
+
+   TBA has trained thousands of builders and has an extensive tutorial and help
+file system. No pressure, no deadline, just come learn, teach, or help develop 
+CircleMUD. Give back to the community we have all taken so much from. TBA is a 
+CircleMUD resource. Take advantage of it so we can improve all of CircleMUD. 
+TBA can also be used by other MUDs as a builder's port. Just send us your 
+newbie builders. We will teach them and then you can have them back with the 
+zones they built.
+
+   We are always open to anyone willing to learn, teach, or help develop stock
+CircleMUD,Oasis OLC, and DG scripts.
+
+   TBA has been open to anyone interested in learning or teaching how to 
+build using Oasis OLC with DG Scripts since 2000. The current developer of 
+DG scripts and Oasis OLC, Welcor, uses TBA as the development port for both.
+TBA is also developing stock and other zones that are free to download.
+ 
+   TBA has trained thousands of builders and has an extensive tutorial and help
+file system. No pressure, no deadline, just come learn, teach, or help develop 
+CircleMUD. Give back to the community we have all taken so much from. TBA is a 
+CircleMUD resource. Take advantage of it so we can improve all of CircleMUD. 
+TBA can also be used by other MUDs as a builder's port. Just send us your 
+newbie builders. We will teach them and then you can have them back with the 
+zones they built.
+ 
+   We have now opened up a player's port running CWG Buddha to test and develop
+zones. We have 177 zones ready for testing and free to download. Check it out 
+at: builderacademy.net 9092 [65.69.46.147] 
+
+Rumble
+The Builder Academy
+builderacademy.net 9091 [206.123.75.138] 
+#0
+FAMOUS QUOTES
+
+Detta: this might hurt a little going in ;)
+Detta: yeah have been up to my waist in manure before heh, fun stuff :P
+Detta: you know... I normally just think about cute fluffy animals and paradise islands during my naps :)
+
+*Alexrain asked Detta if those numbers in her title were her measurements.
+[33 Cl] Detta '19/27/118' - Never get to heaven if you're scared of getting high
+
+*Shamra mistakenly gave everyone the wrong URL, then:
+Shamra: 33 Yes it was a PORN site...P-O-R-N...are you happy now! ??
+Shamra: all this chemistry talk is going to give me a serious orgasm :P
+
+Manivo: ...it hurts to have a conscience. =(
+Manivo: (And the knowledge that Rumble reads the backlog) :P
+Manivo: Actually I somehow lost a centimeter since I last measured. :P
+Manivo: But Rumble would whip me in ways I would not enjoy. :)
+Manivo: GOD, forget to put on deodorant ONE time, and you never let it go, HUH! >:(
+
+*Conversation between Surtur and Fyre
+Surtur: .....i pray you never become a therapist or psychiatrist
+Fyre: i'll keep that in mind for the future
+
+Masok: Anyone else think that maybe we should randomly carpet bomb overly populated areas of poor or useless people?
+Masok: You cant. I have metal underwear.
+
+*While talking with Rumble*
+Heiach: 15 inches?!.. Oh my.. I'm quite happy with my 2 or 3
+
+Ferret: <33> so did you examine the cord?? see if the Moose was chewing on the cable?
+
+*When puff took over TBA (everyone turned into puff)
+Puff dragon fractal: boy did I mess something up ;-P (Rumble)
+Puff dragon fractal: hehe now I can say whatever I want and get away with it (Shamra)
+Puff dragon fractal: will bring down the mud, one sec (Rumble)
+
+*Conversation between Detta and Heiach (Heiach talking about what he is feeding his pet)
+Detta says, 'what are you having?'
+Detta says, 'I am microwaving some spaghetti myself atm'
+Heiach says, 'entrails, guts, beating hearts, heads, quivering flesh'
+
+Gossip: Salem pets Heiach.
+Gossip: Heiach calls down lightning on Salem, leaving a pile of ashes that blows away in the wind.
+Salem gossips, 'you're ment to purr :P'
+Heiach: yeah.. I typoed
+
+*Talking about Shamra and her traveling cross country.
+Demorie: and its hard to drive with him on my lap
+
+Dysprosic gossips, 'but I think I stained my jeans and now everybody knows that I've been in there.'
+
+Five: how do you make a mud?
+Silvanos: add dirt and water :P
+
+Alucard: nut press isnt a mudcommand, right?
+
+Gossip: Shamra kisses Demorie.
+Demorie: aw :)
+Gossip: Demorie pounces on Shamra, pinning him to the ground.
+Gossip: Demorie kisses Shamra passionately.
+Bulrock gossips, 'Okay okay... get a Vnum for pete's sake'
+
+Fade: if (GET_SEXY_NESS(Fade) > VERY)
+Fade: worship(Fade.body);
+Gossip: Fade ducks out of the way.
+Rumble: SYSERROR: GET_SEXY_NESS(fade) returns negative value
+
+*A new player logs in and:
+Ghost gossips, 'suck my dick man'
+Ghost gossips, 'oh sorry wrong mud'
+
+[ (GC) Shinseiku tried to get help on NOASSHOLE ]
+[ Closing link to: Happythoughts. ]
+
+Krin gossips, 'my dog turned my computer off...'
+
+Elorien: a new builder is logging on in a sex, its an imm from the mud Im building an area to atm
+Shamra: hmm...have something on your mind elorien? :P
+
+Danguba: they say man without a stomack is like wait I cant remember the other part
+
+Nicodemus: There IS an end to the help files.. right?
+Nicodemus: whew, I found the end
+Nicodemus: That is without a doubt the most complete set of help files I've ever seen on a game..
+Nicodemus: Damn, I found ANOTHER hallway...
+
+Elerrina gossips, 'its hailing hard here'
+Elerrina gossips, 'you can tell because in this day and age hail has a different sound than it used to'
+Elerrina gossips, 'used to sound like small pellets of ice bouncing off stuff. now it sounds like car alarms'
+
+More Good Stuff: http://www.bash.org/?top
+#0
+RUMBLE TBA THE-BUILDER-ACADEMY
+ 
+   Thanks, I need all the help I can get.
+
+Rumble is the Creator of The Builder Academy and is in charge of its 
+administration: builderacademy.net 9091
+#0
+WELCOR
+
+   Welcor is the head coder of The Builder Academy and uses TBA to develop 
+Trigedit and OLC for all of CircleMUD.
+
+#0
+USAGE
+
+Jan 31 19:52:54 :: nusage: 16  sockets connected, 16  sockets playing
+
+Players
+-------
+[33 Cl] Shamra Rahl
+[ 1 Mu] Omethyn the Apprentice of Magic
+[31 Cl] Mystere has trial vnum 13499 (OLC) (Room Edit)
+[31 Wa] Demorie Isabeau Cullanie-Cartier
+[31 Mu] Tranek has trial vnum 13611
+[33 Cl] Heiach the red wizard
+[34 Wa] Rumble
+[31 Mu] Myrlin
+[31 Wa] Boomer has trial vnum 13875
+[33 Mu] Detta '19/27/118' - Even the very wise cannot see all ends
+[31 Cl] Elorien has zone 407
+[31 Th] Stump has trial vnum 13767
+[31 Wa] Dysprosic *404* Rides with his Pheonix (OLC) (Object Edit)
+[31 Th] Dayce vnum 13498 be on late. (AFK)
+[33 Th] Ferret has gone to bed (i33) (AFK)
+[31 Cl] Santiago has zone 403 (AFK)
+
+16 characters displayed.
+#0
+SERVERS FREE-SERVERS HOSTINGS FREE-HOSTS
+
+http://www.slayn.net/web/
+http://www.bylur.net/free/#110
+http://xnixhosting.homeunix.org -- Contact Reaplo
+http://www.planetmud.net/ 
+
+#0
+THANKSGIVING
+
+OBJ: 1331   MOB: 1322   TRG: 1363
+
+@Y.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.i@G
+			| | | | __ _ _ __  _ __  _   _
+			| |_| |/ _` | '_ \| '_ \| | | |
+			|  _  | (_| | |_) | |_) | |_| |
+			|_| |_|\__,_| .__/| .__/ \__, |
+			            |_|   |_|    |___/
+	 _____ _                 _              _       _
+	|_   _| |__   __ _ _ __ | | _____  __ _(_)_   _(_)_ __   __ _
+	  | | | '_ \ / _` | '_ \| |/ / __|/ _` | \ \ / / | '_ \ / _` |
+	  | | | | | | (_| | | | |   <\__ \ (_| | |\ V /| | | | | (_| |
+	  |_| |_| |_|\__,_|_| |_|_|\_\___/\__, |_| \_/ |_|_| |_|\__, |
+      	                            |___/                 |___/
+@Y .:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.@n
+
+                            ,+*^^*+___+++_
+                        ,*^^^^              )
+                     _+*                     ^**+_
+                   +^       _ _++*+_+++_,         )
+       _+^^*+_    (     ,+*^ ^          \+_        )
+      {       )  (    ,(    ,_+--+--,      ^)      ^\
+     { (@)    } f   ,(  ,+-^ __*_*_  ^^\_   ^\       )
+    {:;-/    (_+*-+^^^^^+*+*<_ _++_)_    )    )      /
+   ( /  (    (        ,___    ^*+_+* )   <    <      \
+    U _/     )    *--<  ) ^\-----++__)   )    )       )
+     (      )  _(^)^^))  )  )\^^^^^))^*+/    /       /
+   (      /  (_))_^)) )  )  ))^^^^^))^^^)__/     +^^
+  (     ,/    (^))^))  )  ) ))^^^^^^^))^^)       _)
+   *+__+*       (_))^)  ) ) ))^^^^^^))^^^^^)____*^
+   \                  )_)) ))^^^^^^^^^^))^^^^)
+    (_             ^\__^^^^^^^^^^^^))^^^^^^^)
+      ^\___            ^\__^^^^^^))^^^^^^^^)\\
+          ^^^^^\uuu/^^\uuu/^^^^\^\^\^\^\^\^\^\
+              ___) >____) >___   ^\_\_\_\_\_\_\)
+             ^^^//\\_^^//\\_^       ^(\_\_\_\)
+               ^^^ ^^ ^^^ ^^
+#31
+HALLOWEEN
+
+MOB: 1313
+TRG: 1395
+
+@G.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.i@R
+            __,  ,____)           __,  ,____)
+           (--|  |               (--|  |
+              |__| _, _  _          |__| _ || _       _  _ ,_
+             _|  |(_||_)|_)(_|     _|  |(_|||(_)(_|_)(/_(/_| |
+            (        |  |  ,_|    (                          |_,
+@G .:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.@n
+
+#31
+CHRISTMAS
+
+@R      __,_,_,___)          _______
+     (--| | |             (--/    ),_)       ,_)
+        | | |  _ ,_,_        |     |_ ,_' , _|_,_,_, _  ,
+      __| | | (/_| | (_|     |     | || |/_)_| | | |(_|/_)___,
+     (      |___,   ,__|     \____)  |__,          |__,@n
+
+
+              ,={ }.._,
+         _.-"`  { } a j-,_
+       {}'----.{_}``};_ __/
+                 `/(   `'--.._,_
+                 /\  `'---;--'-;`
+                / /'.    _,\
+                | |  )-'`  _}
+                |-\ {_,.-'` \
+                `"    \_\_,  \
+                      /__/\.-'`}
+                     {___}',-"`\       .-"\
+                     /  |   `-. \.__.-"   /
+   - .               | /  _..-`""`    _,`~ ~- `~, -~  ^`-
+   ~^  jgs `~       _/;-""     , = -~            ~- ^    `
+      `    ~^ ` ~-"` =~ =~ =~^  ~^     -          ~  ~^-  ~
+   `^  -   ` -.                                    ` ^ -
+          ^-   `~,_ ,`==,_  _,~``'` ~,  ,=.        ^   ~^ -
+     ~ -     ~-    `   ~  "~   ~  =~^ `~ ` `,_ , ` ~-^
+     `     ~^  ~^  -~^ ^~ -~^ -~ `^ ~~ -~
+
+#31
 $~

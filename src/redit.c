@@ -22,6 +22,16 @@
 #include "dg_olc.h"
 #include "constants.h"
 
+/* local functions */
+void redit_setup_new(struct descriptor_data *d);
+void redit_setup_existing(struct descriptor_data *d, int real_num);
+void redit_disp_extradesc_menu(struct descriptor_data *d);
+void redit_disp_exit_menu(struct descriptor_data *d);
+void redit_disp_exit_flag_menu(struct descriptor_data *d);
+void redit_disp_flag_menu(struct descriptor_data *d);
+void redit_disp_sector_menu(struct descriptor_data *d);
+void redit_disp_menu(struct descriptor_data *d);
+
 /*------------------------------------------------------------------------*\
   Utils and exported functions.
 \*------------------------------------------------------------------------*/

@@ -24,35 +24,35 @@
 #include "dg_olc.h"
 #include "screen.h"
 
-/*-------------------------------------------------------------------*/
-
-/*
- * External variable declarations.
- */
+/* external variables */
 extern struct attack_hit_type attack_hit_text[];
 #if CONFIG_OASIS_MPROG
 extern const char *mobprog_types[];
 #endif
 
-/*-------------------------------------------------------------------*/
+/* local functions */
+#if CONFIG_OASIS_MPROG
+void medit_disp_mprog(struct descriptor_data *d);
+void medit_disp_mprog_types(struct descriptor_data *d);
+void medit_change_mprog(struct descriptor_data *d);
+const char *medit_get_mprog_type(struct mob_prog_data *mprog);
+#endif
+void medit_setup_new(struct descriptor_data *d);
+void medit_setup_existing(struct descriptor_data *d, int rmob_num);
+void init_mobile(struct char_data *mob);
+void medit_save_internally(struct descriptor_data *d);
+void medit_save_to_disk(zone_vnum zone_num);
+void medit_disp_positions(struct descriptor_data *d);
+void medit_disp_sex(struct descriptor_data *d);
+void medit_disp_attack_types(struct descriptor_data *d);
+void medit_disp_mob_flags(struct descriptor_data *d);
+void medit_disp_aff_flags(struct descriptor_data *d);
+void medit_disp_menu(struct descriptor_data *d);
 
-/*
- * Handy internal macros.
- */
+/* handy macros */
 #if CONFIG_OASIS_MPROG
 #define GET_MPROG(mob)		(mob_index[(mob)->nr].mobprogs)
 #define GET_MPROG_TYPE(mob)	(mob_index[(mob)->nr].progtypes)
-#endif
-
-/*-------------------------------------------------------------------*/
-
-/*
- * Function prototypes.
- */
-#if CONFIG_OASIS_MPROG
-void medit_disp_mprog(struct descriptor_data *d);
-void medit_change_mprog(struct descriptor_data *d);
-const char *medit_get_mprog_type(struct mob_prog_data *mprog);
 #endif
 
 /*-------------------------------------------------------------------*\

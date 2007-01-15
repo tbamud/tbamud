@@ -1,6 +1,3 @@
-
-
-
 /*
 ** Zmalloc, a simple memory-allocation monitor.
 **
@@ -33,6 +30,8 @@
 **
 */
 
+/* local functions */
+void zfree_special (int *, char *, int);
 
 /* protect our calloc() and free() calls from recursive redefinition: */
 #define ZMALLOC_H

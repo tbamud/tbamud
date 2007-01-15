@@ -22,7 +22,6 @@
 
 int *zmalloc(int, char *, int);
 void zfree(int *, char *, int);
-void zfree_special (int *, char *, int);
 int zmalloc_check();
 char *zstrdup(const char*, char*, int);
 

@@ -5,7 +5,6 @@
  * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
  ************************************************************************/
 
-void copy_object_strings(struct obj_data *to, struct obj_data *from);
 void free_object_strings(struct obj_data *obj);
 int copy_object(struct obj_data *to, struct obj_data *from);
 int copy_object_preserve(struct obj_data *to, struct obj_data *from);

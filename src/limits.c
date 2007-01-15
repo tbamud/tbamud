@@ -23,20 +23,20 @@
 /* local functions */
 int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6);
 void run_autowiz(void);
-
 void Crash_rentsave(struct char_data *ch, int cost);
 int level_exp(int chclass, int level);
 char *title_male(int chclass, int level);
 char *title_female(int chclass, int level);
 void update_char_objects(struct char_data *ch);	/* handler.c */
 void reboot_wizlists(void);
+void check_idling(struct char_data *ch);
 
-/* When age < 15 return the value p0 */
-/* When age in 15..29 calculate the line between p1 & p2 */
-/* When age in 30..44 calculate the line between p2 & p3 */
-/* When age in 45..59 calculate the line between p3 & p4 */
-/* When age in 60..79 calculate the line between p4 & p5 */
-/* When age >= 80 return the value p6 */
+/* When age < 15 return the value p0
+   When age is 15..29 calculate the line between p1 & p2
+   When age is 30..44 calculate the line between p2 & p3
+   When age is 45..59 calculate the line between p3 & p4
+   When age is 60..79 calculate the line between p4 & p5
+   When age >= 80 return the value p6 */
 int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6)
 {
 

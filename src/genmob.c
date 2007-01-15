@@ -17,6 +17,9 @@
 #include "genzon.h"
 #include "dg_olc.h"
 
+/* local functions */
+void extract_mobile_all(mob_vnum vnum);
+
 int add_mobile(struct char_data *mob, mob_vnum vnum)
 {
   int rnum, i, found = FALSE, shop, cmd_no;
@@ -162,7 +165,7 @@ int delete_mobile(mob_rnum refpt)
   for (zone = 0; zone <= top_of_zone_table; zone++)
     for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++)
       if (ZCMD(zone, cmd_no).command == 'M' && ZCMD(zone, cmd_no).arg1 == refpt)
-        delete_command(&zone_table[zone], cmd_no);
+        delete_zone_command(&zone_table[zone], cmd_no);
 
   /*
    * Update shop keepers.

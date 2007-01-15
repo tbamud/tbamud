@@ -11,7 +11,6 @@
 #include "conf.h"
 #include "sysdep.h"
 
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -31,6 +30,7 @@ extern struct char_data *combat_list;
 int apply_ac(struct char_data *ch, int eq_pos);
 void update_object(struct obj_data *obj, int use);
 void update_char_objects(struct char_data *ch);
+void affect_modify(struct char_data *ch, byte loc, sbyte mod, bitvector_t bitv, bool add);
 
 /* external functions */
 int invalid_class(struct char_data *ch, struct obj_data *obj);

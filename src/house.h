@@ -3,7 +3,6 @@
 
 #define HOUSE_PRIVATE	0
 
-
 struct house_control_rec {
    room_vnum vnum;		/* vnum of this house		*/
    room_vnum atrium;		/* vnum of atrium		*/
@@ -24,13 +23,9 @@ struct house_control_rec {
    long spare7;
 };
 
-
-
-   
 #define TOROOM(room, dir) (world[room].dir_option[dir] ? \
 			    world[room].dir_option[dir]->to_room : NOWHERE)
 
-void	House_listrent(struct char_data *ch, room_vnum vnum);
 void	House_boot(void);
 void	House_save_all(void);
 int	House_can_enter(struct char_data *ch, room_vnum house);

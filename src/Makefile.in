@@ -42,8 +42,8 @@ CXREF_FILES = act.comm.c act.informative.c act.item.c act.movement.c \
 	boards.c castle.c cedit.c class.c comm.c config.c constants.c db.c \
 	fight.c genmob.c genobj.c genolc.c genshp.c genwld.c genzon.c graph.c \
 	handler.c house.c improved-edit.c interpreter.c limits.c magic.c mail.c \
-	medit.c mobact.c modify.c oasis.c oasis_copy.o oasis_delete.c \
-	oasis_list.o objsave.c oedit.c olc.c random.c redit.c sedit.c \
+	medit.c mobact.c modify.c oasis.c oasis_copy.c oasis_delete.c \
+	oasis_list.c objsave.c oedit.c olc.c random.c redit.c sedit.c \
 	shop.c spec_assign.c spec_procs.c spell_parser.c spells.c tedit.c \
 	utils.c weather.c zedit.c hedit.c bsd-snprintf.c players.c
 

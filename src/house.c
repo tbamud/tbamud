@@ -40,6 +40,7 @@ void hcontrol_list_houses(struct char_data *ch);
 void hcontrol_build_house(struct char_data *ch, char *arg);
 void hcontrol_destroy_house(struct char_data *ch, char *arg);
 void hcontrol_pay_house(struct char_data *ch, char *arg);
+void House_listrent(struct char_data *ch, room_vnum vnum);
 ACMD(do_hcontrol);
 ACMD(do_house);
 

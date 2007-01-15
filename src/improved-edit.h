@@ -7,14 +7,14 @@
 
 #define using_improved_editor	CONFIG_IMPROVED_EDITOR
 
-void parse_action(int command, char *string, struct descriptor_data *d);
+void parse_edit_action(int command, char *string, struct descriptor_data *d);
 int improved_editor_execute(struct descriptor_data *d, char *string);
 int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned int maxlen, int low, int high);
 int replace_str(char **string, char *pattern, char *replacement, int rep_all, unsigned int max_size);
 void send_editor_help(struct descriptor_data *d);
 
 /*
- * Action modes for parse_action().
+ * Action modes for parse_edit_action().
  */
 #define PARSE_FORMAT		0
 #define PARSE_REPLACE		1

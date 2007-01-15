@@ -11,7 +11,6 @@ int copy_mob_strings(struct char_data *to, struct char_data *from);
 int free_mob_strings(struct char_data *);
 int free_mobile(struct char_data *mob);
 int save_mobiles(zone_rnum rznum);
-void extract_mobile_all(mob_vnum vnum);
 int update_mobile_strings(struct char_data *t, struct char_data *f);
 void check_mobile_strings(struct char_data *mob);
 void check_mobile_string(mob_vnum i, char **string, const char *desc);

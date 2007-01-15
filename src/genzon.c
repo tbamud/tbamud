@@ -13,6 +13,10 @@
 #include "genzon.h"
 #include "dg_scripts.h"
 
+/* local functions */
+void create_world_index(int znum, const char *type);
+void remove_cmd_from_list(struct reset_com **list, int pos);
+
 /* real zone of room/mobile/object/shop given */
 zone_rnum real_zone_by_thing(room_vnum vznum)
 {
@@ -579,7 +583,7 @@ int new_command(struct zone_data *zone, int pos)
 /*
  * Error check user input and then remove command  
  */
-void delete_command(struct zone_data *zone, int pos)
+void delete_zone_command(struct zone_data *zone, int pos)
 {
   int subcmd = 0;
 

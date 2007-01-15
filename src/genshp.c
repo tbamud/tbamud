@@ -19,6 +19,12 @@
  * 	as the other editors with regard to updates or style.
  */
 
+/* local functions */
+void copy_shop_list(IDXTYPE **tlist, IDXTYPE *flist);
+void copy_shop_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist);
+void free_shop_strings(struct shop_data *shop);
+void free_shop_type_list(struct shop_buy_data **list);
+
 /*-------------------------------------------------------------------*/
 
 void copy_shop(struct shop_data *tshop, struct shop_data *fshop, int free_old_strings)
@@ -44,9 +50,9 @@ void copy_shop(struct shop_data *tshop, struct shop_data *fshop, int free_old_st
   /*
    * Copy lists over.
    */
-  copy_list(&(S_ROOMS(tshop)), S_ROOMS(fshop));
-  copy_list(&(S_PRODUCTS(tshop)), S_PRODUCTS(fshop));
-  copy_type_list(&(tshop->type), fshop->type);
+  copy_shop_list(&(S_ROOMS(tshop)), S_ROOMS(fshop));
+  copy_shop_list(&(S_PRODUCTS(tshop)), S_PRODUCTS(fshop));
+  copy_shop_type_list(&(tshop->type), fshop->type);
 
   /*
    * Copy notification strings over.
@@ -68,7 +74,7 @@ void copy_shop(struct shop_data *tshop, struct shop_data *fshop, int free_old_st
 /*
  * Copy a 'NOTHING' terminated integer array list.
  */
-void copy_list(IDXTYPE **tlist, IDXTYPE *flist)
+void copy_shop_list(IDXTYPE **tlist, IDXTYPE *flist)
 {
   int num_items, i;
 
@@ -99,12 +105,12 @@ void copy_list(IDXTYPE **tlist, IDXTYPE *flist)
  * Copy a -1 terminated (in the type field) shop_buy_data 
  * array list.
  */
-void copy_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist)
+void copy_shop_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist)
 {
   int num_items, i;
 
   if (*tlist)
-    free_type_list(tlist);
+    free_shop_type_list(tlist);
 
   /*
    * Count number of entries.
@@ -129,7 +135,7 @@ void copy_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist)
 
 /*-------------------------------------------------------------------*/
 
-void remove_from_type_list(struct shop_buy_data **list, int num)
+void remove_shop_from_type_list(struct shop_buy_data **list, int num)
 {
   int i, num_items;
   struct shop_buy_data *nlist;
@@ -155,7 +161,7 @@ void remove_from_type_list(struct shop_buy_data **list, int num)
 
 /*-------------------------------------------------------------------*/
 
-void add_to_type_list(struct shop_buy_data **list, struct shop_buy_data *newl)
+void add_shop_to_type_list(struct shop_buy_data **list, struct shop_buy_data *newl)
 {
   int i, num_items;
   struct shop_buy_data *nlist;
@@ -185,7 +191,7 @@ void add_to_type_list(struct shop_buy_data **list, struct shop_buy_data *newl)
 
 /*-------------------------------------------------------------------*/
 
-void add_to_int_list(IDXTYPE **list, IDXTYPE newi)
+void add_shop_to_int_list(IDXTYPE **list, IDXTYPE newi)
 {
   IDXTYPE i, num_items, *nlist;
 
@@ -214,7 +220,7 @@ void add_to_int_list(IDXTYPE **list, IDXTYPE newi)
 
 /*-------------------------------------------------------------------*/
 
-void remove_from_int_list(IDXTYPE **list, IDXTYPE num)
+void remove_shop_from_int_list(IDXTYPE **list, IDXTYPE num)
 {
   IDXTYPE i, num_items, *nlist;
 
@@ -282,7 +288,7 @@ void free_shop_strings(struct shop_data *shop)
 /*
  * Free a type list and all the strings it contains.
  */
-void free_type_list(struct shop_buy_data **list)
+void free_shop_type_list(struct shop_buy_data **list)
 {
   int i;
 
@@ -302,7 +308,7 @@ void free_type_list(struct shop_buy_data **list)
 void free_shop(struct shop_data *shop)
 {
   free_shop_strings(shop);
-  free_type_list(&(S_NAMELISTS(shop)));
+  free_shop_type_list(&(S_NAMELISTS(shop)));
   free(S_ROOMS(shop));
   free(S_PRODUCTS(shop));
   free(shop);
@@ -340,7 +346,7 @@ shop_rnum real_shop(shop_vnum vnum)
 /*
  * Generic string modifier for shop keeper messages.
  */
-void modify_string(char **str, char *new_s)
+void modify_shop_string(char **str, char *new_s)
 {
 
   char buf[MAX_STRING_LENGTH];

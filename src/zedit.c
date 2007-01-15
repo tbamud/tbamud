@@ -26,8 +26,17 @@
 #define OLC_CMD(d)	(OLC_ZONE(d)->cmd[OLC_VAL(d)])
 #define MAX_DUPLICATES 100
 
-/* Prototypes. */
+/* local functions */
 int start_change_command(struct descriptor_data *d, int pos);
+void zedit_setup(struct descriptor_data *d, int room_num);
+void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top);
+void zedit_save_internally(struct descriptor_data *d);
+void zedit_save_to_disk(int zone_num);
+void zedit_disp_menu(struct descriptor_data *d);
+void zedit_disp_comtype(struct descriptor_data *d);
+void zedit_disp_arg1(struct descriptor_data *d);
+void zedit_disp_arg2(struct descriptor_data *d);
+void zedit_disp_arg3(struct descriptor_data *d);
 
 /*-------------------------------------------------------------------*/
 
@@ -900,7 +909,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
      */
     pos = atoi(arg);
     if (isdigit(*arg)) {
-      delete_command(OLC_ZONE(d), pos);
+      delete_zone_command(OLC_ZONE(d), pos);
       OLC_ZONE(d)->age = 1;
     }
     zedit_disp_menu(d);

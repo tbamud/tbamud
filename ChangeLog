@@ -1,11 +1,68 @@
-CircleMUD 3.5 is currently being developed by The Builder Academy. If you need 
-any help stop by: builderacademy.net 9091
+tbaMUD is currently being developed by The Builder Academy. If you need any
+help or find any bugs please stop by: builderacademy.net 9091
 
-Unfortunately this changelog is far from complete since TBA has not kept a 
-record of every change in the last 4 years:
+todo:
+- Change numerous SYSERR logs to Warnings.
+- Change all doc/pdf's to .txt.
 
+- Moved numerous protos only used once from .h files to appropriate .c file.
+- Renamed numerous functions for clarity (mostly shop functions like copy_list
+  to copy_shop_list, etc).
+- Renamed update_objects to update_all_objects so it wouldn't be confused with
+  update_object.
+- Renamed data to dg_data in function queue_head in dg_event.c for clarity.
+- Moved function log_death_trap to a log since that is all it did anyways.
+- Renamed unmatched gettimeofday protos.
+- Renamed oasis_copy.o and oasis_list.o to appropriate .c for CXREF_FILES.
+- Fixed a bunch of strange bugs in objsave.c and altered build_player_index() 
+  to conform to gcc 4.1 standards. This mainly consisted of removing a cast 
+  which was not needed. 
+- Replaced kill_ems() with strip_cr(), for consistency.
+- Updated Makefile.*.
+- Removed redundant olc.c, oasis_delete.c, olc.h and tedit.h files from the 
+  build. Added prototypes for the new variable save functions to players.c
+- DG script variables now save to the player file instead of their own file. 
+  The load function has been kept for backwards compatibility.
+- Moved alias saving to Ascii pflies by default. Aliases in the old files will 
+  still be read (once per char).
+- do_toggle actually toggles everything now (thanks to Rhade). Moved slowns, 
+  track, syslog, pagelength, wimpy, and color to toggle <option> <arg>. Keeping
+  do_gen_tog so the old command toggles still work.
+- Immortals no longer have to pay to mudmail.
+- Autosaved aliases.
+- Added afk to do_set.
+- Removed unused olc_bitvector and save_etext functions.
+- Added min_level check to hindex.
+- Fixed zlist and index files 
+- Changed PRF_ROOMFLAGS to PRF_SHOWVNUMS.
+- Mini world zone 0, 12, 30 error free (Added 1.trg to index.mini for examples)
+- Updated errors for no time/config files.
+- Added -l(eader) and -g(rouped) options to do_who (thanks Rhade).
+- Added MERC license and help entry.
+- Spellchecked stock.hlp.
+- Updated fixes from 3.1 CVS snapshot.
+- Fixed permissions on numerous files.
+- Moved do_cheat into do_return.
+- Renamed shit, no really in zmalloc.c unsigned char * shit;
+- Spellchecked help.hlp.
+- Updated /doc/README.Cygwin.
+- Updated /doc/syserr.txt (much more to do though, along with all /doc, 
+  submissions welcome).
+- Modified all comments referring to old playerfile and removed obsolete code.
+- Removed .accepted, conf.h, and Makefile. 
+- Moved text/hedit to text/help directory. Now 2 help files to choose from 
+  help.hlp (TBA's helpfiles) and stock.hlp.
+- Fixed error from adding poofs to do_stat and not checking !IS_NPC.
+- Fixed help search so it checks player level so HELP AC can exist as a mortal
+  helpfile and an immortal helpfile.
+- Fixed hindex to check help entry level.
+- Added house saving call to do_saveall.
+
+CircleMUD 3.5
+- New do_who by Rhade.
+- Core files generated with unique time stamp.
 - Updated README, FAQ, news.
-- Removed all CIRCLEMUD_VERSION checks.
+- Removed all CIRCLEMUD_VERSION and #IF 0 debugging checks.
 - Renamed _DEAF to _NOSHOUT.
 - Added greetings, ihelp, wizlist, and immlist to tedit.
 - Changed all usage of dscr to desc for standardization.
@@ -18,7 +75,7 @@ record of every change in the last 4 years:
   level specified in do_cheat. IDNUM 1 advanced to IMPL
 - Changed OLC to default to off, again.
 - Added Ascii Pfiles V3.0.1
-- Added pagelength (needs to be moved to toggle).
+- Added pagelength to toggle.
 - Update to list_obj_to_char for object stacking and iedit objects.
 - Increased MAX_STRING_LENGTH to 49152.
 - Moved poofin/out to set self poofin/out. 
@@ -169,7 +226,8 @@ record of every change in the last 4 years:
 - Added buildwalk and dig.
 
 Release history:
-Version 3.5 release: December 2006
+Version 3.51 release: January, 2007
+Version 3.5 release: December 11, 2006
 Version 3.1  (yes, no beta pl): November 18, 2002
 Version 3.00 beta pl22 release: October 4, 2002
 Version 3.00 beta pl21 release: April 15, 2002

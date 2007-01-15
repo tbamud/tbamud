@@ -25,7 +25,7 @@
 #include "dg_olc.h"
 #include "dg_event.h"
 
-/* prototype externally defined functions */
+/* external functions */
 extern const char *trig_types[], *otrig_types[], *wtrig_types[];
 zone_rnum real_zone_by_thing(room_vnum vznum);
 
@@ -36,6 +36,8 @@ void trigedit_save(struct descriptor_data *d);
 void trigedit_create_index(int znum, char *type);
 void trigedit_string_cleanup(struct descriptor_data *d, int terminator);
 int format_script(struct descriptor_data *d);
+void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num);
+void trigedit_setup_new(struct descriptor_data *d);
 
 /* ***********************************************************************
  * trigedit 
