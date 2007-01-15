@@ -262,15 +262,19 @@ cpp_extern const struct command_info cmd_info[] = {
   { "advance"  , "adv"     , POS_DEAD    , do_advance  , LVL_GOD, 0 },
   { "aedit"    , "aed"     , POS_DEAD    , do_oasis    , LVL_GOD, SCMD_OASIS_AEDIT },
   { "alias"    , "ali"     , POS_DEAD    , do_alias    , 0, 0 },
+  { "afk"      , "afk"     , POS_DEAD    , do_gen_tog  , 0, SCMD_AFK },
   { "assist"   , "as"      , POS_FIGHTING, do_assist   , 1, 0 },
   { "ask"      , "ask"     , POS_RESTING , do_spec_comm, 0, SCMD_ASK },
   { "astat"    , "ast"     , POS_DEAD    , do_astat    , 0, 0 },
   { "auction"  , "auc"     , POS_SLEEPING, do_gen_comm , 0, SCMD_AUCTION },
-                            
+  { "autoexits" , "autoex"  , POS_DEAD    , do_gen_tog  , 0, SCMD_AUTOEXIT },
+
   { "backstab" , "ba"      , POS_STANDING, do_backstab , 1, 0 },
   { "ban"      , "ban"     , POS_DEAD    , do_ban      , LVL_GRGOD, 0 },
   { "balance"  , "bal"     , POS_STANDING, do_not_here , 1, 0 },
   { "bash"     , "bas"     , POS_FIGHTING, do_bash     , 1, 0 },
+  { "brief"    , "br"      , POS_DEAD    , do_gen_tog  , 0, SCMD_BRIEF },
+  { "buildwalk", "buildwalk", POS_STANDING, do_gen_tog,   LVL_BUILDER, SCMD_BUILDWALK },
   { "buy"      , "bu"      , POS_STANDING, do_not_here , 0, 0 },
   { "bug"      , "bug"     , POS_DEAD    , do_gen_write, 0, SCMD_BUG },
                             
@@ -281,8 +285,10 @@ cpp_extern const struct command_info cmd_info[] = {
   { "close"    , "cl"      , POS_SITTING , do_gen_door , 0, SCMD_CLOSE },
   { "clear"    , "cle"     , POS_DEAD    , do_gen_ps   , 0, SCMD_CLEAR },
   { "cls"      , "cls"     , POS_DEAD    , do_gen_ps   , 0, SCMD_CLEAR },
+  { "clsolc"   , "clsolc"  , POS_DEAD    , do_gen_tog  , 0, SCMD_CLS },
   { "consider" , "con"     , POS_RESTING , do_consider , 0, 0 },
   { "commands" , "com"     , POS_DEAD    , do_commands , 0, SCMD_COMMANDS },
+  { "compact"  , "comp"    , POS_DEAD    , do_gen_tog  , 0, SCMD_COMPACT },
   { "copyover" , "copyover", POS_DEAD    , do_copyover , LVL_GRGOD, 0 },
   { "credits"  , "cred"    , POS_DEAD    , do_gen_ps   , 0, SCMD_CREDITS },
                             
@@ -337,6 +343,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "hit"      , "hit"     , POS_FIGHTING, do_hit      , 0, SCMD_HIT },
   { "hold"     , "hold"    , POS_RESTING , do_grab     , 1, 0 },
   { "holler"   , "holler"  , POS_RESTING , do_gen_comm , 1, SCMD_HOLLER },
+  { "holylight", "holy"    , POS_DEAD    , do_gen_tog  , LVL_IMMORT, SCMD_HOLYLIGHT },
   { "house"    , "house"   , POS_RESTING , do_house    , 0, 0 },
                            
   { "inventory", "i"       , POS_DEAD    , do_inventory, 0, 0 },
@@ -368,7 +375,16 @@ cpp_extern const struct command_info cmd_info[] = {
   { "mute"     , "mute"    , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_SQUELCH },
                             
   { "news"     , "news"    , POS_SLEEPING, do_gen_ps   , 0, SCMD_NEWS },
+  { "noauction", "noauction",POS_DEAD    , do_gen_tog  , 0, SCMD_NOAUCTION },
+  { "nogossip" , "nogossip", POS_DEAD    , do_gen_tog  , 0, SCMD_NOGOSSIP },
+  { "nograts"  , "nograts" , POS_DEAD    , do_gen_tog  , 0, SCMD_NOGRATZ },
+  { "nohassle" , "nohassle", POS_DEAD    , do_gen_tog  , LVL_IMMORT, SCMD_NOHASSLE },
+  { "norepeat" , "norepeat", POS_DEAD    , do_gen_tog  , 0, SCMD_NOREPEAT },
+  { "noshout"  , "noshout" , POS_SLEEPING, do_gen_tog  , 1, SCMD_NOSHOUT },
+  { "nosummon" , "nosummon", POS_DEAD    , do_gen_tog  , 1, SCMD_NOSUMMON },
+  { "notell"   , "notell"  , POS_DEAD    , do_gen_tog  , 1, SCMD_NOTELL },
   { "notitle"  , "notitle" , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_NOTITLE },
+  { "nowiz"    , "nowiz"   , POS_DEAD    , do_gen_tog  , LVL_IMMORT, SCMD_NOWIZ },
                             
   { "open"     , "o"       , POS_SITTING , do_gen_door , 0, SCMD_OPEN },
   { "order"    , "ord"     , POS_RESTING , do_order    , 1, 0 },
@@ -390,6 +406,7 @@ cpp_extern const struct command_info cmd_info[] = {
                             
   { "quaff"    , "qua"     , POS_RESTING , do_use      , 0, SCMD_QUAFF },
   { "qecho"    , "qec"     , POS_DEAD    , do_qcomm    , LVL_GOD, SCMD_QECHO },
+  { "quest"    , "que"     , POS_DEAD    , do_gen_tog  , 0, SCMD_QUEST },
   { "qui"      , "qui"     , POS_DEAD    , do_quit     , 0, 0 },
   { "quit"     , "quit"    , POS_DEAD    , do_quit     , 0, SCMD_QUIT },
   { "qsay"     , "qsay"    , POS_RESTING , do_qcomm    , 0, SCMD_QSAY },
@@ -410,7 +427,8 @@ cpp_extern const struct command_info cmd_info[] = {
   { "redit"    , "redit"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_REDIT },
   { "rlist"    , "rlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_RLIST }, 
   { "rclone"   , "rclone"  , POS_DEAD    , do_room_copy, LVL_BUILDER, 0 },
-                            
+  { "roomflags", "roomflags", POS_DEAD   , do_gen_tog  , LVL_IMMORT, SCMD_SHOWVNUMS },
+
   { "say"      , "s"       , POS_RESTING , do_say      , 0, 0 },
   { "score"    , "sc"      , POS_DEAD    , do_score    , 0, 0 },
   { "sit"      , "si"      , POS_RESTING , do_sit      , 0, 0 },
