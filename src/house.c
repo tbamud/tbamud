@@ -21,8 +21,8 @@
 #include "constants.h"
 
 /* external functions */
-struct obj_data *Obj_from_store(struct obj_file_elem object, int *location);
-int Obj_to_store(struct obj_data *obj, FILE *fl, int location);
+obj_save_data *objsave_parse_objects(FILE *fl);
+int objsave_save_obj_record(struct obj_data *obj, FILE *fl, int location);
 
 /* local globals */
 struct house_control_rec house_control[MAX_HOUSES];
@@ -36,7 +36,7 @@ void House_restore_weight(struct obj_data *obj);
 void House_delete_file(room_vnum vnum);
 int find_house(room_vnum vnum);
 void House_save_control(void);
-void hcontrol_list_houses(struct char_data *ch);
+void hcontrol_list_houses(struct char_data *ch, char *arg);
 void hcontrol_build_house(struct char_data *ch, char *arg);
 void hcontrol_destroy_house(struct char_data *ch, char *arg);
 void hcontrol_pay_house(struct char_data *ch, char *arg);
@@ -63,9 +63,8 @@ int House_load(room_vnum vnum)
 {
   FILE *fl;
   char filename[MAX_STRING_LENGTH];
-  struct obj_file_elem object;
+	obj_save_data *loaded, *current;
   room_rnum rnum;
-  int i;
 
   if ((rnum = real_room(vnum)) == NOWHERE)
     return (0);
@@ -73,16 +72,20 @@ int House_load(room_vnum vnum)
     return (0);
   if (!(fl = fopen(filename, "r+b")))	/* no file found */
     return (0);
-  while (!feof(fl)) {
-    fread(&object, sizeof(struct obj_file_elem), 1, fl);
-    if (ferror(fl)) {
-      perror("SYSERR: Reading house file in House_load");
-      fclose(fl);
-      return (0);
-    }
-    if (!feof(fl))
-      obj_to_room(Obj_from_store(object, &i), rnum);
-  }
+
+	loaded = objsave_parse_objects(fl);
+
+	for (current = loaded; current != NULL; current = current->next)
+    obj_to_room(current->obj, rnum);
+
+	/* now it's safe to free the obj_save_data list - all members of it 
+	 * have been put in the correct lists by obj_to_room()
+	 */
+	while (loaded != NULL) {
+		current = loaded;
+		loaded = loaded->next;
+		free(current);
+	}
 
   fclose(fl);
 
@@ -100,7 +103,7 @@ int House_save(struct obj_data *obj, FILE *fp)
   if (obj) {
     House_save(obj->contains, fp);
     House_save(obj->next_content, fp);
-    result = Obj_to_store(obj, fp, 0);
+    result = objsave_save_obj_record(obj, fp, 0);
     if (!result)
       return (0);
 
@@ -173,9 +176,8 @@ void House_listrent(struct char_data *ch, room_vnum vnum)
   FILE *fl;
   char filename[MAX_STRING_LENGTH];
   char buf[MAX_STRING_LENGTH];
-  struct obj_file_elem object;
-  struct obj_data *obj;
-  int i;
+	obj_save_data *loaded, *current;
+	int len = 0;
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
@@ -184,17 +186,25 @@ void House_listrent(struct char_data *ch, room_vnum vnum)
     return;
   }
   *buf = '\0';
-  while (!feof(fl)) {
-    fread(&object, sizeof(struct obj_file_elem), 1, fl);
-    if (ferror(fl)) {
-      fclose(fl);
-      return;
-    }
-    if (!feof(fl) && (obj = Obj_from_store(object, &i)) != NULL) {
-      send_to_char(ch, " [%5d] (%5dau) %s\r\n", GET_OBJ_VNUM(obj), GET_OBJ_RENT(obj), obj->short_description);
-      free_obj(obj);
-    }
-  }
+	len = snprintf(buf, sizeof(buf), "filename: %s\r\n", filename);
+
+	loaded = objsave_parse_objects(fl);
+
+	for (current = loaded; current != NULL; current = current->next)
+	  len += snprintf(buf+len, sizeof(buf)-len, " [%5d] (%5dau) %s\r\n", 
+	    GET_OBJ_VNUM(current->obj), GET_OBJ_RENT(current->obj), current->obj->short_description);
+
+	/* now it's safe to free the obj_save_data list - all members of it 
+	 * have been put in the correct lists by obj_to_room()
+	 */
+	while (loaded != NULL) {
+		current = loaded;
+		loaded = loaded->next;
+		extract_obj(current->obj);
+		free(current);
+	}
+
+	page_string(ch->desc,buf,0);
   fclose(fl);
 }
 
@@ -294,13 +304,29 @@ const char *HCONTROL_FORMAT =
 "Usage: hcontrol build <house vnum> <exit direction> <player name>\r\n"
 "       hcontrol destroy <house vnum>\r\n"
 "       hcontrol pay <house vnum>\r\n"
-"       hcontrol show\r\n";
+"       hcontrol show [house vnum | .]\r\n";
 
-void hcontrol_list_houses(struct char_data *ch)
+void hcontrol_list_houses(struct char_data *ch, char *arg)
 {
   int i;
   char *timestr, *temp;
   char built_on[128], last_pay[128], own_name[MAX_NAME_LENGTH + 1];
+
+	if (arg && *arg) {
+		room_vnum toshow;
+		
+		if (*arg == '.')
+			toshow = GET_ROOM_VNUM(IN_ROOM(ch));
+		else
+			toshow = atoi(arg);
+			
+	  if ((i = find_house(toshow)) == NOWHERE) {
+  	  send_to_char(ch, "Unknown house, \"%s\".\r\n", arg);
+	    return;
+	  }
+		House_listrent(ch, toshow);
+		return;
+	}
 
   if (!num_of_houses) {
     send_to_char(ch, "No houses have been defined.\r\n");
@@ -502,7 +528,7 @@ ACMD(do_hcontrol)
   else if (is_abbrev(arg1, "pay"))
     hcontrol_pay_house(ch, arg2);
   else if (is_abbrev(arg1, "show"))
-    hcontrol_list_houses(ch);
+    hcontrol_list_houses(ch, arg2);
   else
     send_to_char(ch, "%s", HCONTROL_FORMAT);
 }

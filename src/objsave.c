@@ -50,9 +50,7 @@ int Crash_offer_rent(struct char_data *ch, struct char_data *receptionist, int d
 int Crash_report_unrentables(struct char_data *ch, struct char_data *recep, struct obj_data *obj);
 void Crash_report_rent(struct char_data *ch, struct char_data *recep, struct obj_data *obj, long *cost, long *nitems, int display, int factor);
 struct obj_data *Obj_from_store(struct obj_file_elem object, int *location);
-int Obj_to_store(struct obj_data *obj, FILE *fl, int location);
 void update_obj_file(void);
-int Crash_write_rentcode(struct char_data *ch, FILE *fl, struct rent_info *rent);
 int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd, char *arg, int mode);
 int Crash_save(struct obj_data *obj, FILE *fp, int location);
 void Crash_rent_deadline(struct char_data *ch, struct char_data *recep, long cost);
@@ -68,54 +66,11 @@ int Crash_load_objs(struct char_data *ch);
 void tag_argument(char *argument, char *tag);
 void strip_string(char *buffer);
 int handle_obj(struct obj_data *obj, struct char_data *ch, int locate, struct obj_data **cont_rows);
+obj_save_data *objsave_parse_objects(FILE *fl);
+int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char_data *ch);
+int objsave_save_obj_record(struct obj_data *obj, FILE *fl, int location);
 
-/*
- * The following function is pulled from my genolc.c file.
- * Feel free to use any similar function
- */
-
-/* Change BITSIZE to 1LL for bitvector_t of long long*/
-#ifdef BITSIZE
-#undef BITSIZE
-#endif
-
-#define BITSIZE 1
-
-#ifdef BITSET
-#undef BITSET
-#endif
-
-#define BITSET(bit_pattern, bit) (bit_pattern & (BITSIZE << bit))
-
-struct obj_data *Obj_from_store(struct obj_file_elem object, int *location)
-{
-  struct obj_data *obj;
-  int j;
-
-  *location = 0;
-  if (real_object(object.item_number) != NOTHING) {
-    obj = read_object(object.item_number, VIRTUAL);
-#if USE_AUTOEQ
-    *location = object.location;
-#endif
-    GET_OBJ_VAL(obj, 0) = object.value[0];
-    GET_OBJ_VAL(obj, 1) = object.value[1];
-    GET_OBJ_VAL(obj, 2) = object.value[2];
-    GET_OBJ_VAL(obj, 3) = object.value[3];
-    GET_OBJ_EXTRA(obj) = object.extra_flags;
-    GET_OBJ_WEIGHT(obj) = object.weight;
-    GET_OBJ_TIMER(obj) = object.timer;
-    obj->obj_flags.bitvector = object.bitvector;
-
-    for (j = 0; j < MAX_OBJ_AFFECT; j++)
-      obj->affected[j] = object.affected[j];
-
-    return (obj);
-  } else
-    return (NULL);
-}
-
-/* This procedure removes the '\r\n' from a string so that it may be
+/* This procedure turns the '\r\n' into '\n' in a string so that it may be
    saved to a file.  Use it only on buffers, not on the orginal
    strings. */
 void strip_string(char *buffer)
@@ -133,7 +88,11 @@ void strip_string(char *buffer)
   }
 }
 
-int Obj_to_store(struct obj_data *obj, FILE *fp, int locate)
+/*
+ * Writes one object record to FILE. 
+ * Old name: Obj_to_store()
+*/
+int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 {
   int counter2;
   struct extra_descr_data *ex_desc;
@@ -352,19 +311,18 @@ void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
     obj_to_char(obj, ch);
 }
 
-
 int Crash_delete_file(char *name)
 {
-  char filename[50];
+  char filename[MAX_INPUT_LENGTH];
   FILE *fl;
 
   if (!get_filename(filename, sizeof(filename), CRASH_FILE, name))
-    return (0);
+    return FALSE;
 
   if (!(fl = fopen(filename, "r"))) {
     if (errno != ENOENT)  /* if it fails but NOT because of no file */
       log("SYSERR: deleting crash file %s (1): %s", filename, strerror(errno));
-    return (0);
+    return FALSE;
   }
   fclose(fl);
 
@@ -372,7 +330,7 @@ int Crash_delete_file(char *name)
   if (remove(filename) < 0 && errno != ENOENT)
     log("SYSERR: deleting crash file %s (2): %s", filename, strerror(errno));
 
-  return (1);
+  return TRUE;
 }
 
 
@@ -381,61 +339,63 @@ int Crash_delete_crashfile(struct char_data *ch)
   char fname[MAX_INPUT_LENGTH];
   int numread;
   FILE *fl;
-  int rentcode,timed,netcost,gold,account,nitems;
-  char line[MAX_INPUT_LENGTH];
+  int rentcode;
+  char line[READ_SIZE];
 
   if (!get_filename(fname, sizeof(fname), CRASH_FILE, GET_NAME(ch)))
-    return (0);
+    return FALSE;
   
   if (!(fl = fopen(fname, "r"))) {
     if (errno != ENOENT)  /* if it fails, NOT because of no file */
       log("SYSERR: checking for crash file %s (3): %s", fname, strerror(errno));
-    return (0);
+    return FALSE;
   }
   numread = get_line(fl,line);
   fclose(fl);
+
   if (numread == FALSE)
-    return (0);
-  sscanf(line,"%d %d %d %d %d %d",&rentcode,&timed,&netcost,&gold,
-         &account,&nitems);
+    return FALSE;
+  sscanf(line,"%d ",&rentcode);
   
   if (rentcode == RENT_CRASH)
     Crash_delete_file(GET_NAME(ch));
 
-  return (1);
+  return TRUE;
 }
 
 
 int Crash_clean_file(char *name)
 {
-  char fname[MAX_STRING_LENGTH], filetype[20];
+  char fname[MAX_INPUT_LENGTH], filetype[20];
   int numread;
   FILE *fl;
   int rentcode, timed, netcost, gold, account, nitems;
-  char line[MAX_STRING_LENGTH];
+  char line[READ_SIZE];
 
   if (!get_filename(fname, sizeof(fname), CRASH_FILE, name))
-    return (0);
+    return FALSE;
 
   /*
    * open for write so that permission problems will be flagged now, at boot
    * time.
    */
-  if (!(fl = fopen(fname, "r"))) {
+  if (!(fl = fopen(fname, "rw"))) {
     if (errno != ENOENT)  /* if it fails, NOT because of no file */
       log("SYSERR: OPENING OBJECT FILE %s (4): %s", fname, strerror(errno));
-    return (0);
+    return FALSE;
   }
 
   numread = get_line(fl,line);
   fclose(fl);
   if (numread == FALSE)
-    return (0);
+    return FALSE;
+ 
   sscanf(line, "%d %d %d %d %d %d",&rentcode,&timed,&netcost,
          &gold,&account,&nitems);
 
   if ((rentcode == RENT_CRASH) ||
-      (rentcode == RENT_FORCED) || (rentcode == RENT_TIMEDOUT)) {
+      (rentcode == RENT_FORCED) || 
+      (rentcode == RENT_TIMEDOUT) ) {
     if (timed < time(0) - (crash_file_timeout * SECS_PER_REAL_DAY)) {
       Crash_delete_file(name);
       switch (rentcode) {
@@ -453,16 +413,16 @@ int Crash_clean_file(char *name)
         break;
       }
       log("    Deleting %s's %s file.", name, filetype);
-      return (1);
+      return TRUE;
     }
     /* Must retrieve rented items w/in 30 days */
   } else if (rentcode == RENT_RENTED)
     if (timed < time(0) - (rent_file_timeout * SECS_PER_REAL_DAY)) {
       Crash_delete_file(name);
       log("    Deleting %s's rent file.", name);
-      return (1);
+      return TRUE;
     }
-  return (0);
+  return FALSE;
 }
 
 
@@ -479,13 +439,9 @@ void update_obj_file(void)
 void Crash_listrent(struct char_data *ch, char *name)
 {
   FILE *fl;
-  char fname[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH];
-  /*   struct obj_file_elem object; */
-  struct obj_data *obj;
-  int rentcode,timed,netcost,gold,account,nitems;
-  int nr;
-  char line[MAX_STRING_LENGTH];
-  int numread;
+  char fname[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH], line[READ_SIZE];
+  obj_save_data *loaded, *current;
+  int rentcode,timed,netcost,gold,account,nitems, numread, len;
   
   if (!get_filename(fname, sizeof(fname), CRASH_FILE, name))
     return;
@@ -494,7 +450,7 @@ void Crash_listrent(struct char_data *ch, char *name)
     send_to_char(ch, "%s has no rent file.\r\n", name);
     return;
   }
-  sprintf(buf, "%s\r\n", fname);
+  len = snprintf(buf, sizeof(buf),"%s\r\n", fname);
   
   numread = get_line(fl, line);
 
@@ -505,62 +461,49 @@ void Crash_listrent(struct char_data *ch, char *name)
     return;
   }
   
-  sscanf(line,"%d %d %d %d %d %d",&rentcode,&timed,&netcost,
-         &gold,&account,&nitems);
+  sscanf(line,"%d %d %d %d %d %d",
+        &rentcode,&timed,&netcost,&gold,&account,&nitems);
 
   switch (rentcode) {
   case RENT_RENTED:
-    strcat(buf, "Rent\r\n");
+    len += snprintf(buf+len, sizeof(buf)-len, "Rent\r\n");
     break;
   case RENT_CRASH:
-    strcat(buf, "Crash\r\n");
+    len += snprintf(buf+len, sizeof(buf)-len,"Crash\r\n");
     break;
   case RENT_CRYO:
-    strcat(buf, "Cryo\r\n");
+    len += snprintf(buf+len, sizeof(buf)-len, "Cryo\r\n");
     break;
   case RENT_TIMEDOUT:
   case RENT_FORCED:
-    strcat(buf, "TimedOut\r\n");
+    len += snprintf(buf+len, sizeof(buf)-len, "TimedOut\r\n");
     break;
   default:
-    strcat(buf, "Undef\r\n");
+    len += snprintf(buf+len, sizeof(buf)-len, "Undef\r\n");
     break;
   }
 
-  while(get_line(fl, line)) {
-    if(*line == '#') { /* swell - its an item */
-      sscanf(line,"#%d",&nr);
-      if(nr != NOTHING) {  /* then we can dispense with it easily */
-        obj=read_object(nr,VIRTUAL);
-        if (!obj)
-          continue;
-        sprintf(buf,"%s[%5d] (%5dau) %-20s\r\n",buf,
-                nr, GET_OBJ_RENT(obj),
-                obj->short_description);
-        extract_obj(obj);
-      } else { /* its nothing, and a unique item. bleh. partial parse.*/
-        /* Policy states that all NOTHING objs should be rent 0 */
-      }
-    }
-  }
+	loaded = objsave_parse_objects(fl);
+	
+	for (current = loaded; current != NULL; current=current->next)
+	  len += snprintf(buf+len, sizeof(buf)-len, "[%5d] (%5dau) %-20s\r\n",
+                GET_OBJ_VNUM(current->obj), 
+                GET_OBJ_RENT(current->obj),
+                current->obj->short_description);
+	
+	/* 
+	 * now it's safe to free the obj_save_data list and the objects on it.
+	 */
+	while (loaded != NULL) {
+		current = loaded;
+		loaded = loaded->next;
+		extract_obj(current->obj);
+		free(current);
+	}
 
   page_string(ch->desc,buf,0);
   fclose(fl);
 }
-
-
-int Crash_write_rentcode(struct char_data *ch, FILE *fl, struct rent_info *rent)
-{
-
-  if(fprintf(fl,"%d %d %d %d %d %d\r\n",rent->rentcode, rent->time,
-              rent->net_cost_per_diem,rent->gold,rent->account,rent->nitems) < 1) {
-    perror("Syserr: Writing rent code");
-    return (0);
-  }
-
-  return (1);
-}
-
 
 /*
  * Return values:
@@ -584,13 +527,13 @@ int Crash_save(struct obj_data *obj, FILE *fp, int location)
     Crash_save(obj->next_content, fp, location);
     Crash_save(obj->contains, fp, MIN(0, location) - 1);
 
-    result = Obj_to_store(obj, fp, location);
+    result = objsave_save_obj_record(obj, fp, location);
 
     for (tmp = obj->in_obj; tmp; tmp = tmp->in_obj)
       GET_OBJ_WEIGHT(tmp) -= GET_OBJ_WEIGHT(obj);
 
     if (!result)
-      return (0);
+      return FALSE;
   }
   return (TRUE);
 }
@@ -638,17 +581,17 @@ void Crash_extract_objs(struct obj_data *obj)
 int Crash_is_unrentable(struct obj_data *obj)
 {
   if (!obj)
-    return (0);
+    return FALSE;
 
   if (OBJ_FLAGGED(obj, ITEM_NORENT) ||
       GET_OBJ_RENT(obj) < 0 ||
       GET_OBJ_RNUM(obj) == NOTHING ||
       GET_OBJ_TYPE(obj) == ITEM_KEY) {
  log("Crash_is_unrentable: removing object %s", obj->short_description);
-    return (1);
+    return TRUE;
   }
 
-  return (0);
+  return FALSE;
 }
 
 
@@ -689,7 +632,6 @@ void Crash_calculate_rent(struct obj_data *obj, int *cost)
 void Crash_crashsave(struct char_data *ch)
 {
   char buf[MAX_INPUT_LENGTH];
-  struct rent_info rent;
   int j;
   FILE *fp;
 
@@ -702,10 +644,8 @@ void Crash_crashsave(struct char_data *ch)
   if (!(fp = fopen(buf, "w")))
     return;
 
-  rent.rentcode = RENT_CRASH;
-  rent.time = time(0);
-
-  fprintf(fp,"%d %d 0 0 0 0\r\n",rent.rentcode,rent.time);
+  if (!objsave_write_rentcode(fp, RENT_CRASH, 0, ch))
+  	return;
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j)) {
@@ -731,7 +671,6 @@ void Crash_crashsave(struct char_data *ch)
 void Crash_idlesave(struct char_data *ch)
 {
   char buf[MAX_INPUT_LENGTH];
-  struct rent_info rent;
   int j;
   int cost, cost_eq;
   FILE *fp;
@@ -779,15 +718,9 @@ void Crash_idlesave(struct char_data *ch)
       return;
     }
   }
-  rent.net_cost_per_diem = cost;
 
-  rent.rentcode = RENT_TIMEDOUT;
-  rent.time = time(0);
-  rent.gold = GET_GOLD(ch);
-  rent.account = GET_BANK_GOLD(ch);
-
-  fprintf(fp,"%d %d %d %d %d 0\r\n",rent.rentcode,rent.time,
-           rent.net_cost_per_diem,rent.gold,rent.account);
+  if (!objsave_write_rentcode(fp, RENT_TIMEDOUT, cost, ch))
+  	return;
   
   for (j = 0; j < NUM_WEARS; j++) {
     if (GET_EQ(ch, j)) {
@@ -813,7 +746,6 @@ void Crash_idlesave(struct char_data *ch)
 void Crash_rentsave(struct char_data *ch, int cost)
 {
   char buf[MAX_INPUT_LENGTH];
-  struct rent_info rent;
   int j;
   FILE *fp;
 
@@ -829,14 +761,8 @@ void Crash_rentsave(struct char_data *ch, int cost)
   Crash_extract_norent_eq(ch);
   Crash_extract_norents(ch->carrying);
 
-  rent.net_cost_per_diem = cost;
-  rent.rentcode = RENT_RENTED;
-  rent.time = time(0);
-  rent.gold = GET_GOLD(ch);
-  rent.account = GET_BANK_GOLD(ch);
-
-  fprintf(fp,"%d %d %d %d %d 0\r\n",rent.rentcode,rent.time,
-           rent.net_cost_per_diem,rent.gold,rent.account);
+  if (!objsave_write_rentcode(fp, RENT_RENTED, cost, ch))
+  	return;
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j)) {
@@ -858,11 +784,27 @@ void Crash_rentsave(struct char_data *ch, int cost)
   Crash_extract_objs(ch->carrying);
 }
 
+int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char_data *ch)
+{
+  if (fprintf(fl, "%d %ld %d %d %d %d\r\n",
+          rentcode,					// rentcode
+          (long) time(0),		// time of save
+          cost_per_day,			// cost per day
+          GET_GOLD(ch),			// current gold balance
+          GET_BANK_GOLD(ch),	// current account balance
+          0)							    // number of items - not used atm
+       < 1)
+    {
+       perror("Syserr: Writing rent code");
+       return FALSE;
+    }
+  return TRUE;
+       
+}
 
 void Crash_cryosave(struct char_data *ch, int cost)
 {
   char buf[MAX_INPUT_LENGTH];
-  struct rent_info rent;
   int j;
   FILE *fp;
 
@@ -880,15 +822,8 @@ void Crash_cryosave(struct char_data *ch, int cost)
 
   GET_GOLD(ch) = MAX(0, GET_GOLD(ch) - cost);
 
-  rent.rentcode = RENT_CRYO;
-  rent.time = time(0);
-  rent.gold = GET_GOLD(ch);
-  rent.account = GET_BANK_GOLD(ch);
-  rent.net_cost_per_diem = 0;
-
-  fprintf(fp,"%d %d %d %d %d 0\r\n",rent.rentcode,rent.time,
-           rent.net_cost_per_diem,rent.gold,rent.account);
-
+  if (!objsave_write_rentcode(fp, RENT_CRYO, 0, ch))
+  	return;
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j)) {
@@ -985,7 +920,7 @@ int Crash_offer_rent(struct char_data *ch, struct char_data *receptionist,
     norent += Crash_report_unrentables(ch, receptionist, GET_EQ(ch, i));
 
   if (norent)
-    return (0);
+    return FALSE;
 
   totalcost = min_rent_cost * factor;
 
@@ -997,13 +932,13 @@ int Crash_offer_rent(struct char_data *ch, struct char_data *receptionist,
   if (!numitems) {
     act("$n tells you, 'But you are not carrying anything!  Just quit!'",
         FALSE, receptionist, 0, ch, TO_VICT);
-    return (0);
+    return FALSE;
   }
   if (numitems > max_obj_save) {
     sprintf(buf, "$n tells you, 'Sorry, but I cannot store more than %d items.'",
             max_obj_save);
     act(buf, FALSE, receptionist, 0, ch, TO_VICT);
-    return (0);
+    return FALSE;
   }
   if (display) {
     sprintf(buf, "$n tells you, 'Plus, my %d coin fee..'",
@@ -1015,7 +950,7 @@ int Crash_offer_rent(struct char_data *ch, struct char_data *receptionist,
     if (totalcost > GET_GOLD(ch) + GET_BANK_GOLD(ch)) {
       act("$n tells you, '...which I see you can't afford.'",
           FALSE, receptionist, 0, ch, TO_VICT);
-      return (0);
+      return FALSE;
     } else if (factor == RENT_FACTOR)
       Crash_rent_deadline(ch, receptionist, totalcost);
   }
@@ -1053,7 +988,7 @@ int gen_receptionist(struct char_data *ch, struct char_data *recep,
   if (free_rent) {
     act("$n tells you, 'Rent is free here.  Just quit, and your objects will be saved!'",
 	FALSE, recep, 0, ch, TO_VICT);
-    return (1);
+    return TRUE;
   }
 
   if (CMD_IS("rent")) {
@@ -1128,17 +1063,202 @@ void Crash_save_all(void)
   }
 }
 
+/*
+ * parses the object records stored in fl, and returns the first object in a
+ * linked list, which also handles location if worn.
+ * this list can then be handled by house code, listrent code, autoeq code, etc.
+ */
+obj_save_data *objsave_parse_objects(FILE *fl)
+{
+	obj_save_data *head, *current;
+  char line[READ_SIZE];
+  int t[4],i, nr;
+  struct obj_data *temp;
+
+	CREATE(current, obj_save_data, 1);
+	head = current;
+	current->locate = 0;
+	
+  temp = NULL;
+  while (TRUE) {
+    char tag[6];
+    int num;
+	
+    /* if the file is done, wrap it all up */
+    if(get_line(fl, line) == FALSE || (*line == '$' && line[1] == '~')) 
+    {
+			if (temp == NULL && current->obj == NULL)
+			{
+				// remove current from list
+				obj_save_data *t = head;
+				if (t == current)
+				{
+					free(current);
+					head = NULL;
+				}
+				else
+				{
+					while (t)
+					{
+						if (t->next == current)
+							t->next = NULL;
+							
+						t = t->next;
+					}
+					free(current);
+				}
+			}
+			else if (temp != NULL && current->obj == NULL)
+			{
+				current->obj = temp;
+			} 
+			else if (temp == NULL && current->obj != NULL)
+			{
+				// do nothing
+			} 
+			else if (temp != NULL && current->obj != NULL)
+			{
+				if (temp != current->obj)
+					log("inconsistent object pointers in objsave_parse_objects: %p/%p", temp, current->obj);
+			} 
+							
+      break;
+  }
+
+    /* if it's a new record, wrap up the old one, and make space for a new one */
+    if (*line == '#') {
+      /* check for false alarm. */
+      if (sscanf(line, "#%d", &nr) == 1) 
+      {
+      	if (temp) 
+      	{
+      	  current->obj = temp;
+ 	    	  CREATE(current->next, obj_save_data, 1);
+   		    current=current->next;
+
+       		current->locate = 0;
+         	temp = NULL;
+        }
+      }
+      else
+      	continue;
+      /* we have the number, check it, load obj. */
+      if (nr == NOTHING) {   /* then it is unique */
+        temp = create_obj();
+        temp->item_number=NOTHING;
+      } else if (nr < 0) {
+        continue;
+      } else {
+        if(real_object(nr) != NOTHING) {
+          temp=read_object(nr,VIRTUAL);
+					// go read next line - nothing more to see here 
+        } else {
+          log("Nonexistent object %d found in rent file.", nr);
+        }
+      }
+ 			// go read next line - nothing more to see here 
+      continue;
+    }
+
+    tag_argument(line, tag);
+    num = atoi(line);
+
+    switch(*tag) {
+    case 'A':
+      if (!strcmp(tag, "ADes")) {
+      	char error[40];
+      	snprintf(error, sizeof(error)-1, "rent(Ades):%s", temp->name);
+        temp->action_description = fread_string(fl, error);
+      } else if (!strcmp(tag, "Aff ")) {
+        sscanf(line, "%d %d %d", &t[0], &t[1], &t[2]);
+        if (t[0] < MAX_OBJ_AFFECT) {
+          temp->affected[t[0]].location = t[1];
+          temp->affected[t[0]].modifier = t[2];
+        }
+      }
+      break;
+    case 'C':
+      if (!strcmp(tag, "Cost"))
+        GET_OBJ_COST(temp) = num;
+      break;
+    case 'D':
+      if (!strcmp(tag, "Desc"))
+        temp->description = strdup(line);
+      break;
+    case 'E':
+      if(!strcmp(tag, "EDes")) {
+        struct extra_descr_data *new_desc;
+        char error[40];
+        snprintf(error, sizeof(error)-1, "rent(Edes): %s", temp->name);        
+        if (temp->item_number != NOTHING && /* Regular object */
+            temp->ex_description &&   /* with ex_desc == prototype */
+            (temp->ex_description == obj_proto[real_object(temp->item_number)].ex_description))
+          temp->ex_description = NULL;
+        CREATE(new_desc, struct extra_descr_data, 1);
+        new_desc->keyword = fread_string(fl, error);
+        new_desc->description = fread_string(fl, error);
+        new_desc->next = temp->ex_description;
+        temp->ex_description = new_desc;
+      }
+      break;
+    case 'F':
+      if (!strcmp(tag, "Flag"))
+        GET_OBJ_EXTRA(temp) = asciiflag_conv(line);
+      break;
+    case 'L':
+      if(!strcmp(tag, "Loc "))
+        current->locate = num;
+      break;
+    case 'N':
+      if (!strcmp(tag, "Name"))
+        temp->name = strdup(line);
+      break;
+    case 'P':
+      if (!strcmp(tag, "Perm"))
+        temp->obj_flags.bitvector = asciiflag_conv(line);
+      break;
+    case 'R':
+      if (!strcmp(tag, "Rent"))
+        GET_OBJ_RENT(temp) = num;
+      break;
+    case 'S':
+      if (!strcmp(tag, "Shrt"))
+        temp->short_description = strdup(line);
+      break;
+    case 'T':
+      if (!strcmp(tag, "Type"))
+        GET_OBJ_TYPE(temp) = num;
+      break;
+    case 'W':
+      if (!strcmp(tag, "Wear"))
+        GET_OBJ_WEAR(temp) = asciiflag_conv(line);
+      else if (!strcmp(tag, "Wght"))
+        GET_OBJ_WEIGHT(temp) = num;
+      break;
+    case 'V':
+      if (!strcmp(tag, "Vals")) {
+        sscanf(line, "%d %d %d %d", &t[0], &t[1], &t[2], &t[3]);
+        for (i = 0; i < NUM_OBJ_VAL_POSITIONS; i++)
+          GET_OBJ_VAL(temp, i) = t[i];
+      }
+      break;
+    default:
+    	log("Unknown tag in rentfile: %s", tag);
+    }
+  }	
+	
+	return head;
+}
+
 
 int Crash_load_objs(struct char_data *ch) {
   FILE *fl;
   char fname[MAX_STRING_LENGTH];
-  char line[256];
-  int t[10],i,num_of_days;
-  int orig_rent_code;
-  struct obj_data *temp;
-  int locate=0, nr,cost,num_objs=0;
+  char line[READ_SIZE];
+  int i, num_of_days, orig_rent_code, cost, num_objs=0;
   struct obj_data *cont_row[MAX_BAG_ROWS];
   int rentcode,timed,netcost,gold,account,nitems;
+	obj_save_data *loaded, *current;
 
   if (!get_filename(fname, sizeof(fname), CRASH_FILE, GET_NAME(ch)))
     return 1;
@@ -1204,131 +1324,19 @@ int Crash_load_objs(struct char_data *ch) {
     break;
   }
 
-  temp = NULL;
-  while (get_line(fl, line)) {
-    char tag[6];
-    int num;
-
-    /* first, we get the number. Not too hard. */
-    if(*line == '$' && line[1] == '~') {
-      if (temp)
-        num_objs += handle_obj(temp, ch, locate, cont_row);
-      break;
-    }
-    if (*line == '#') {
-      if (sscanf(line, "#%d", &nr) != 1) {
-        continue;
-      } else {
-        if (temp)
-          num_objs += handle_obj(temp, ch, locate, cont_row);
-        temp = NULL;
-        locate = 0;
-      }
-      /* we have the number, check it, load obj. */
-      if (nr == NOTHING) {   /* then it is unique */
-        temp = create_obj();
-        temp->item_number=NOTHING;
-      } else if (nr < 0) {
-        continue;
-      } else {
-        if(nr >= 999999) 
-          continue;
-        if(real_object(nr) != NOTHING) {
-          temp=read_object(nr,VIRTUAL);
-          if (!temp) {
-            continue;
-          }
-        } else {
-          log("Nonexistent object %d found in rent file.", nr);
-          continue;
-        }
-      }
-    }
-
-    tag_argument(line, tag);
-    num = atoi(line);
-
-    switch(*tag) {
-    case 'A':
-      if (!strcmp(tag, "ADes")) {
-      	char error[40];
-      	snprintf(error, sizeof(error)-1, "rent(Ades):%s", temp->name);
-        temp->action_description = fread_string(fl, error);
-      } else if (!strcmp(tag, "Aff ")) {
-        sscanf(line, "%d %d %d", &t[0], &t[1], &t[2]);
-        if (t[0] < MAX_OBJ_AFFECT) {
-          temp->affected[t[0]].location = t[1];
-          temp->affected[t[0]].modifier = t[2];
-        }
-      }
-      break;
-    case 'C':
-      if (!strcmp(tag, "Cost"))
-        GET_OBJ_COST(temp) = num;
-      break;
-    case 'D':
-      if (!strcmp(tag, "Desc"))
-        temp->description = strdup(line);
-      break;
-    case 'E':
-      if(!strcmp(tag, "EDes")) {
-        struct extra_descr_data *new_desc;
-        char error[40];
-        snprintf(error, sizeof(error)-1, "rent(Edes): %s", temp->name);        
-        if (temp->item_number != NOTHING && /* Regular object */
-            temp->ex_description &&   /* with ex_desc == prototype */
-            (temp->ex_description == obj_proto[real_object(temp->item_number)].ex_description))
-          temp->ex_description = NULL;
-        CREATE(new_desc, struct extra_descr_data, 1);
-        new_desc->keyword = fread_string(fl, error);
-        new_desc->description = fread_string(fl, error);
-        new_desc->next = temp->ex_description;
-        temp->ex_description = new_desc;
-      }
-      break;
-    case 'F':
-      if (!strcmp(tag, "Flag"))
-        GET_OBJ_EXTRA(temp) = asciiflag_conv(line);
-      break;
-    case 'L':
-      if(!strcmp(tag, "Loc "))
-        locate = num;
-      break;
-    case 'N':
-      if (!strcmp(tag, "Name"))
-        temp->name = strdup(line);
-      break;
-    case 'P':
-      if (!strcmp(tag, "Perm"))
-        temp->obj_flags.bitvector = asciiflag_conv(line);
-      break;
-    case 'R':
-      if (!strcmp(tag, "Rent"))
-        GET_OBJ_RENT(temp) = num;
-      break;
-    case 'S':
-      if (!strcmp(tag, "Shrt"))
-        temp->short_description = strdup(line);
-      break;
-    case 'T':
-      if (!strcmp(tag, "Type"))
-        GET_OBJ_TYPE(temp) = num;
-      break;
-    case 'W':
-      if (!strcmp(tag, "Wear"))
-        GET_OBJ_WEAR(temp) = asciiflag_conv(line);
-      else if (!strcmp(tag, "Wght"))
-        GET_OBJ_WEIGHT(temp) = num;
-      break;
-    case 'V':
-      if (!strcmp(tag, "Vals")) {
-        sscanf(line, "%d %d %d %d", &t[0], &t[1], &t[2], &t[3]);
-        for (i = 0; i < 4; i++)
-          GET_OBJ_VAL(temp, i) = t[i];
-      }
-      break;
-    }
-  }
+	loaded = objsave_parse_objects(fl);
+	for (current = loaded; current != NULL; current=current->next)
+	  num_objs += handle_obj(current->obj, ch, current->locate, cont_row);
+	
+	/* 
+	 * now it's safe to free the obj_save_data list - all members of it 
+	 * have been put in the correct lists by handle_obj()
+	 */
+	while (loaded != NULL) {
+		current = loaded;
+		loaded = loaded->next;
+		free(current);
+	}
  
   /* Little hoarding check. -gg 3/1/98 */
  mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "%s (level %d) has %d objects (max %d).", 
@@ -1349,7 +1357,7 @@ int handle_obj(struct obj_data *temp, struct char_data *ch, int locate, struct o
   struct obj_data *obj1;
 
   if (!temp)  /* this should never happen, but.... */
-    return (0);
+    return FALSE;
 
   auto_equip(ch, temp, locate);
 
@@ -1447,6 +1455,6 @@ int handle_obj(struct obj_data *temp, struct char_data *ch, int locate, struct o
     }
   } /* locate less than zero */
 
-  return (1);
+  return TRUE;
 }
 

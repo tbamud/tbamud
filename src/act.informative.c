@@ -1752,7 +1752,7 @@ ACMD(do_diagnose)
 ACMD(do_toggle)
 {
   char buf2[4], arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
-  int toggle, tp, wimp_lev, result = 0;
+  int toggle, tp, wimp_lev, result = 0, len = 0;
   const char *types[] = { "off", "brief", "normal", "on", "\n" };
 
   if (IS_NPC(ch))
@@ -1921,8 +1921,9 @@ ACMD(do_toggle)
     {"\n", -1, -1, "\n", "\n"} /* must be last */
   };
 
+	len = strlen(arg);
   for (toggle = 0; *tog_messages[toggle].command != '\n'; toggle++)
-    if (!strcmp(arg, tog_messages[toggle].command))
+    if (!strncmp(arg, tog_messages[toggle].command, len))
       break;
 
     if (*tog_messages[toggle].command == '\n' || tog_messages[toggle].min_level > GET_LEVEL(ch)) {
@@ -2024,15 +2025,17 @@ ACMD(do_toggle)
       break;
   default:
     if (!*arg2) {
-      send_to_char(ch, "Value must either be 'on' or 'off'.\r\n");
-      return;
+      TOGGLE_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
+      result = (PRF_FLAGGED(ch, tog_messages[toggle].toggle));
+//      send_to_char(ch, "Value must either be 'on' or 'off'.\r\n");
+//      return;
     } else if (!strcmp(arg2, "on")) {
       SET_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
       result = 1;
     } else if (!strcmp(arg2, "off")) {
       REMOVE_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
     } else {
-      send_to_char(ch, "Value must either be 'on' or 'off'.\r\n");
+      send_to_char(ch, "Value for %s must either be 'on' or 'off'.\r\n", tog_messages[toggle].command);
       return;
     }
   }

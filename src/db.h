@@ -266,6 +266,14 @@ struct ban_list_element {
    struct ban_list_element *next;
 };
 
+/* for the "buffered" rent and house object loading */
+struct obj_save_data_t {
+  struct obj_data *obj;
+  int locate;
+  struct obj_save_data_t *next;
+}; 
+typedef struct obj_save_data_t obj_save_data;
+
 
 /* global buffering system */
 
