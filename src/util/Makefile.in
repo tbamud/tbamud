@@ -25,7 +25,7 @@ default: all
 
 all: $(BINDIR)/asciipasswd $(BINDIR)/autowiz $(BINDIR)/listrent \
 	$(BINDIR)/plrtoascii $(BINDIR)/shopconv $(BINDIR)/sign \
-	$(BINDIR)/split $(BINDIR)/wld2html
+	$(BINDIR)/split $(BINDIR)/wld2html 
 
 asciipasswd: $(BINDIR)/asciipasswd
 
