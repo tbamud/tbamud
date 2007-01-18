@@ -45,6 +45,12 @@ ACMD(do_hcontrol);
 ACMD(do_house);
 
 
+// CONVERSION code starts here -- see comment below
+int ascii_convert_house(struct char_data *ch, obj_vnum vnum);
+void hcontrol_convert_houses(struct char_data *ch);
+struct obj_data *Obj_from_store(struct obj_file_elem object, int *location);
+// CONVERSION code ends here -- see comment below
+
 /* First, the basics: finding the filename; loading/saving objects */
 
 /* Return a filename given a house vnum */
@@ -70,7 +76,7 @@ int House_load(room_vnum vnum)
     return (0);
   if (!House_get_filename(vnum, filename, sizeof(filename)))
     return (0);
-  if (!(fl = fopen(filename, "r+b")))	/* no file found */
+  if (!(fl = fopen(filename, "r")))	/* no file found */
     return (0);
 
 	loaded = objsave_parse_objects(fl);
@@ -529,6 +535,11 @@ ACMD(do_hcontrol)
     hcontrol_pay_house(ch, arg2);
   else if (is_abbrev(arg1, "show"))
     hcontrol_list_houses(ch, arg2);
+// CONVERSION code starts here -- see comment below
+	// not in hcontrol_format
+	else if (!str_cmp(arg1, "asciiconvert"))
+    hcontrol_convert_houses(ch);
+// CONVERSION ends here -- read more below
   else
     send_to_char(ch, "%s", HCONTROL_FORMAT);
 }
@@ -641,3 +652,151 @@ void House_list_guests(struct char_data *ch, int i, int quiet)
   send_to_char(ch, "\r\n");
 }
 
+/* ***********************************************************************
+ * All code below this point and the code above, marked "CONVERSION"     *
+ * can be removed after you have converted your house rent files using   *
+ * the command                                                           *
+ *   hcontrol asciiconvert                                               *
+ *                                                                       *
+ * You can only use this command as implementor.                         *
+ * After you have converted your house files, I suggest a reboot, which  *
+ * will let your house files load on the next bootup.                    *
+ *                                                                       *
+ *                                                   Welcor              *
+ * ***********************************************************************/
+/*
+ * Code for conversion to ascii house rent files 
+ */
+
+void hcontrol_convert_houses(struct char_data *ch)
+{
+  int i;
+  
+	if (GET_LEVEL(ch) < LVL_IMPL)
+		{
+			send_to_char(ch, "Sorry, but you are not powerful enough to do that.\r\n");
+			return;
+		}
+
+
+  if (!num_of_houses) {
+    send_to_char(ch, "No houses have been defined.\r\n");
+    return;
+  }
+
+	send_to_char(ch, "Converting houses:\r\n");
+
+  for (i = 0; i < num_of_houses; i++) {
+	  send_to_char(ch, "  %d", house_control[i].vnum);
+	  
+	  if (!ascii_convert_house(ch, house_control[i].vnum))
+	  {	
+	  	// let ascii_convert_house() tell about the error
+	  	return;
+	  }
+	  else
+	  {
+	  	send_to_char(ch, "...done\r\n");
+	  } 
+  }
+	send_to_char(ch, "All done.\r\n");
+}
+
+
+int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
+{
+	FILE *in, *out;
+	char infile[MAX_INPUT_LENGTH], *outfile;
+	struct obj_data *tmp;
+	int i, j=0;
+	
+  House_get_filename(vnum, infile, sizeof(infile));	
+	
+	CREATE(outfile, char, strlen(infile)+7);
+	sprintf(outfile, "%s.ascii", infile);
+	
+  if (!(in = fopen(infile, "r+b")))	/* no file found */
+  {
+  	send_to_char(ch, "...no object file found\r\n");
+  	free(outfile);
+    return (0);
+  }
+
+  if (!(out = fopen(outfile, "w")))
+  {
+  	send_to_char(ch, "...cannot open output file\r\n");
+		free(outfile);
+		fclose(in);
+    return (0);
+  }
+
+  while (!feof(in)) {
+    struct obj_file_elem object;
+    fread(&object, sizeof(struct obj_file_elem), 1, in);
+    if (ferror(in)) {
+      perror("SYSERR: Reading house file in House_load");
+      send_to_char(ch, "...read error in house rent file.\r\n");
+      free(outfile);
+      fclose(in);
+      fclose(out);
+      return (0);
+    }
+    if (!feof(in)) 
+    {
+    	tmp = Obj_from_store(object, &i);
+      if (!objsave_save_obj_record(tmp, out, i))
+      {
+	      send_to_char(ch, "...write error in house rent file.\r\n");
+	      free(outfile);
+	      fclose(in);
+	      fclose(out);
+	      return (0);
+      }
+      j++;
+    }
+  }
+	
+	fprintf(out, "$~\n");
+
+	fclose(in);
+	fclose(out);
+	
+	// copy the new file over the old one
+//  remove(infile);
+//  rename(outfile, infile);
+	
+	free(outfile);
+
+	send_to_char(ch, "...%d items", j);
+	return 1;
+}
+
+// the circle 3.1 function for reading rent files. No longer used by the rent system.
+struct obj_data *Obj_from_store(struct obj_file_elem object, int *location)
+{
+  struct obj_data *obj;
+  obj_rnum itemnum;
+  int j;
+
+  *location = 0;
+  if ((itemnum = real_object(object.item_number)) == NOTHING)
+    return (NULL);
+
+  obj = read_object(itemnum, REAL);
+#if USE_AUTOEQ
+  *location = object.location;
+#endif
+  GET_OBJ_VAL(obj, 0) = object.value[0];
+  GET_OBJ_VAL(obj, 1) = object.value[1];
+  GET_OBJ_VAL(obj, 2) = object.value[2];
+  GET_OBJ_VAL(obj, 3) = object.value[3];
+  GET_OBJ_EXTRA(obj) = object.extra_flags;
+  GET_OBJ_WEIGHT(obj) = object.weight;
+  GET_OBJ_TIMER(obj) = object.timer;
+  GET_OBJ_AFFECT(obj) = object.bitvector;
+
+  for (j = 0; j < MAX_OBJ_AFFECT; j++)
+    obj->affected[j] = object.affected[j];
+
+  return (obj);
+}
