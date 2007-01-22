@@ -378,7 +378,7 @@ void oedit_disp_extradesc_menu(struct descriptor_data *d)
   clear_screen(d);
   write_to_output(d,
 	  "Extra desc menu\r\n"
-	  "%s1%s) Keyword: %s%s\r\n"
+	  "%s1%s) Keywords: %s%s\r\n"
 	  "%s2%s) Description:\r\n%s%s\r\n"
 	  "%s3%s) Goto next description: %s\r\n"
 	  "%s0%s) Quit\r\n"
@@ -735,7 +735,7 @@ void oedit_disp_menu(struct descriptor_data *d)
    */
   write_to_output(d,
 	  "-- Item number : [%s%d%s]\r\n"
-	  "%s1%s) Namelist : %s%s\r\n"
+	  "%s1%s) Keywords : %s%s\r\n"
 	  "%s2%s) S-Desc   : %s%s\r\n"
 	  "%s3%s) L-Desc   :-\r\n%s%s\r\n"
 	  "%s4%s) A-Desc   :-\r\n%s%s"
@@ -848,8 +848,8 @@ void oedit_parse(struct descriptor_data *d, char *arg)
 	cleanup_olc(d, CLEANUP_ALL);
       return;
     case '1':
-      write_to_output(d, "Enter namelist : ");
-      OLC_MODE(d) = OEDIT_EDIT_NAMELIST;
+      write_to_output(d, "Enter keywords : ");
+      OLC_MODE(d) = OEDIT_KEYWORD;
       break;
     case '2':
       write_to_output(d, "Enter short desc : ");
@@ -960,7 +960,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     if (dg_script_edit_parse(d, arg)) return;
     break;
 
-  case OEDIT_EDIT_NAMELIST:
+  case OEDIT_KEYWORD:
     if (!genolc_checkstring(d, arg))
       break;
     if (OLC_OBJ(d)->name)

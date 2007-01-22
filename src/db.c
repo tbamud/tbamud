@@ -806,10 +806,11 @@ void reset_time(void)
     fscanf(bgtime, "%ld\n", &beginning_of_time);
     fclose(bgtime);
   }
+
   if (beginning_of_time == 0)
     beginning_of_time = 650336715;
 
-  time_info = *mud_time_passed(time(0), beginning_of_time);
+time_info = *mud_time_passed(time(0), beginning_of_time);
 
   if (time_info.hours <= 4)
     weather_info.sunlight = SUN_DARK;
@@ -3067,7 +3068,7 @@ int check_object(struct obj_data *obj)
 
     strlcpy(onealias, space ? space + 1 : obj->name, sizeof(onealias));
     if (search_block(onealias, drinknames, TRUE) < 0 && (error = TRUE))
-      log("SYSERR: Object #%d (%s) doesn't have drink type as last alias. (%s)",
+      log("SYSERR: Object #%d (%s) doesn't have drink type as last keyword. (%s)",
 		GET_OBJ_VNUM(obj), obj->short_description, obj->name);
   }
   /* Fall through. */

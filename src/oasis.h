@@ -224,7 +224,7 @@ extern const char *nrm, *grn, *cyn, *yel;
  * Submodes of OEDIT connectedness.
  */
 #define OEDIT_MAIN_MENU              	1
-#define OEDIT_EDIT_NAMELIST          	2
+#define OEDIT_KEYWORD            	2
 #define OEDIT_SHORTDESC              	3
 #define OEDIT_LONGDESC               	4
 #define OEDIT_ACTDESC                	5
@@ -298,7 +298,7 @@ extern const char *nrm, *grn, *cyn, *yel;
  * Submodes of MEDIT connectedness.
  */
 #define MEDIT_MAIN_MENU              	0
-#define MEDIT_ALIAS			1
+#define MEDIT_KEYWORD			1
 #define MEDIT_S_DESC			2
 #define MEDIT_L_DESC			3
 #define MEDIT_D_DESC			4
@@ -506,7 +506,7 @@ void print_zone(struct char_data *ch, zone_rnum rnum);
 #define CONTEXT_HELP_STRING "help"
 
 #define CONTEXT_OEDIT_MAIN_MENU              	1
-#define CONTEXT_OEDIT_EDIT_NAMELIST          	2
+#define CONTEXT_OEDIT_KEYWORD           	2
 #define CONTEXT_OEDIT_SHORTDESC              	3
 #define CONTEXT_OEDIT_LONGDESC               	4
 #define CONTEXT_OEDIT_ACTDESC                	5
@@ -565,7 +565,7 @@ void print_zone(struct char_data *ch, zone_rnum rnum);
 #define CONTEXT_ZEDIT_SARG1			58
 #define CONTEXT_ZEDIT_SARG2			59
 #define CONTEXT_MEDIT_MAIN_MENU              	60
-#define CONTEXT_MEDIT_ALIAS			61
+#define CONTEXT_MEDIT_KEYWORD			61
 #define CONTEXT_MEDIT_S_DESC			62
 #define CONTEXT_MEDIT_L_DESC			63
 #define CONTEXT_MEDIT_D_DESC			64

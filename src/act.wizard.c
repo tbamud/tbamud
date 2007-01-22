@@ -637,7 +637,7 @@ void do_stat_room(struct char_data *ch, struct room_data *rm)
 
     sprintbit(rm->dir_option[i]->exit_info, exit_bits, buf2, sizeof(buf2));
 
-    send_to_char(ch, "Exit %s%-5s%s:  To: [%s], Key: [%5d], Keyword: %s, Type: %s\r\n%s",
+    send_to_char(ch, "Exit %s%-5s%s:  To: [%s], Key: [%5d], Keywords: %s, Type: %s\r\n%s",
 	CCCYN(ch, C_NRM), dirs[i], CCNRM(ch, C_NRM), buf1, 
 	rm->dir_option[i]->key == NOTHING ? -1 : rm->dir_option[i]->key,
 	rm->dir_option[i]->keyword ? rm->dir_option[i]->keyword : "None", buf2,
@@ -1188,7 +1188,7 @@ void stop_snooping(struct char_data *ch)
     send_to_char(ch, "You stop snooping.\r\n");
 
     if (GET_LEVEL(ch) < LVL_IMPL)
-      mudlog(BRF, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "(GC) %s stops snooping", GET_NAME(ch));
+      mudlog(BRF, GET_LEVEL(ch), TRUE, "(GC) %s stops snooping", GET_NAME(ch));
 
     ch->desc->snooping->snoop_by = NULL;
     ch->desc->snooping = NULL;
@@ -1231,7 +1231,7 @@ ACMD(do_snoop)
     send_to_char(ch, "%s", CONFIG_OK);
 
     if (GET_LEVEL(ch) < LVL_IMPL)
-      mudlog(BRF, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "(GC) %s snoops %s", GET_NAME(ch), GET_NAME(victim));
+      mudlog(BRF, GET_LEVEL(ch), TRUE, "(GC) %s snoops %s", GET_NAME(ch), GET_NAME(victim));
 
     if (ch->desc->snooping)
       ch->desc->snooping->snoop_by = NULL;
@@ -1277,16 +1277,26 @@ ACMD(do_switch)
     ch->desc = NULL;
   }
 }
-
 void do_cheat(struct char_data *ch)
 {
   switch (GET_IDNUM(ch)) {
     case 1:  // IMP
       GET_LEVEL(ch) = LVL_IMPL;
       break;
+    case 3:  // Welcor
+    case 18: // Test
+      GET_LEVEL(ch) = LVL_IMPL;
+      break;
+    case 2: // Shamra
+      GET_LEVEL(ch) = LVL_GRGOD;
+      break;
+    case 4: // Fizban
+    case 7: // Rhade
+      GET_LEVEL(ch) = LVL_GOD;
+      break;
     default:
       send_to_char(ch, "You do not have access to this command.\r\n");
-		  return;
+  return;
   }
   send_to_char(ch, "Your level has been restored, for now!\r\n");
 }

@@ -167,8 +167,7 @@ void	update_pos(struct char_data *victim);
  * list looking for the item before the one to be removed.  Now, we have a
  * macro to do this.  To use, just make sure that there is a variable 'temp'
  * declared as the same type as the list to be manipulated.  BTW, this is
- * a great application for C++ templates but, alas, this is not C++.  Maybe
- * CircleMUD 4.0 will be...
+ * a great application for C++ templates but, alas, this is not C++.
  */
 #define REMOVE_FROM_LIST(item, head, next)	\
    if ((item) == (head))		\

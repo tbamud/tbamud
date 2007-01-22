@@ -5,14 +5,6 @@
  * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
  ************************************************************************/
 
-#if !defined(_CIRCLEMUD) || !defined(CIRCLEMUD_VERSION)
-# error "This version of GenOLC only supports CircleMUD 3.0 bpl15 or later."
-#else
-# if _CIRCLEMUD < CIRCLEMUD_VERSION(3,0,15)
-#  error "This version of GenOLC only supports CircleMUD 3.0 bpl15 or later."
-# endif
-#endif
-
 #define STRING_TERMINATOR       '~'
 
 #define CONFIG_GENOLC_MOBPROG	0

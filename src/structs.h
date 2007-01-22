@@ -17,7 +17,7 @@
  * You are supposed to compare this with the macro CIRCLEMUD_VERSION()
  * in utils.h.  See there for usage.
  */
-#define _CIRCLEMUD	0x030500 /* Major/Minor/Patchlevel - MMmmPP */
+#define _CIRCLEMUD	0x030510 /* Major/Minor/Patchlevel - MMmmPP */
 
 /*
  * If you want equipment to be automatically equipped to the same place

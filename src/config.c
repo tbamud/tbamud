@@ -127,14 +127,14 @@ int track_through_doors = YES;
 
 /*
  * If you want mortals to level up to immortal once they have enough
- * experience, then set this to 0.  This is the stock behaviour for
+ * experience, then set this to NO.  This is the stock behaviour for
  * CircleMUD because it was the stock DikuMud behaviour.  Subtracting
  * this from LVL_IMMORT gives the top level that people can advance to
  * in gain_exp() in limits.c
  * For example, to stop people from advancing to LVL_IMMORT, simply set
- * immort_level_ok to 1.
+ * immort_level_ok to YES.
  */
-int immort_level_ok = 0;
+int immort_level_ok = NO;
 
 /****************************************************************************/
 /****************************************************************************/
@@ -240,8 +240,8 @@ room_vnum frozen_start_room = 1202;
  * donation rooms.
  */
 room_vnum donation_room_1 = 3063;
-room_vnum donation_room_2 = 5510; 	/* unused - room for expansion */
-room_vnum donation_room_3 = 235;	/* unused - room for expansion */
+room_vnum donation_room_2 = 5510;
+room_vnum donation_room_3 = 235;
 
 
 /****************************************************************************/
@@ -330,7 +330,7 @@ int nameserver_is_slow = NO;
 int auto_save_olc = YES;
 
 /*
- * if you wish to enable Aedit, set this to 1 
+ * if you wish to enable Aedit, set this to YES 
  * This will make the mud look for a file called socials.new,
  * which is in a different format than the stock socials file.
  */
@@ -338,8 +338,8 @@ int use_new_socials = YES;
 
 const char *MENU =
 "\r\n"
-"Welcome to CircleMUD!\r\n"
-"0) Exit from CircleMUD.\r\n"
+"Welcome to tbaMUD!\r\n"
+"0) Exit from tbaMUD.\r\n"
 "1) Enter the game.\r\n"
 "2) Enter description.\r\n"
 "3) Read the background story.\r\n"
@@ -352,11 +352,11 @@ const char *MENU =
 
 const char *WELC_MESSG =
 "\r\n"
-"Welcome to CircleMUD!  May your visit here be... Interesting"
+"Welcome to tbaMUD!  May your visit here be... Enlightening"
 "\r\n\r\n";
 
 const char *START_MESSG =
-"Welcome.  This is your new CircleMUD character!  You can now earn gold,\r\n"
+"Welcome.  This is your new tbaMUD character!  You can now earn gold,\r\n"
 "gain experience, find weapons and equipment, and much more -- while\r\n"
 "meeting people from around the world!\r\n";
 

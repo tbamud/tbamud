@@ -37,7 +37,7 @@ int find_context_oedit(struct descriptor_data *d)
 {
   switch (OLC_MODE(d)) {
     case OEDIT_MAIN_MENU:             return CONTEXT_OEDIT_MAIN_MENU;
-    case OEDIT_EDIT_NAMELIST:         return CONTEXT_OEDIT_EDIT_NAMELIST;
+    case OEDIT_KEYWORD:               return CONTEXT_OEDIT_KEYWORD;
     case OEDIT_SHORTDESC:             return CONTEXT_OEDIT_SHORTDESC;
     case OEDIT_LONGDESC:              return CONTEXT_OEDIT_LONGDESC;
     case OEDIT_ACTDESC:               return CONTEXT_OEDIT_ACTDESC;
@@ -119,7 +119,7 @@ int find_context_medit(struct descriptor_data *d)
 {
   switch (OLC_MODE(d)) {
     case MEDIT_MAIN_MENU:         return CONTEXT_MEDIT_MAIN_MENU;
-    case MEDIT_ALIAS:             return CONTEXT_MEDIT_ALIAS;
+    case MEDIT_KEYWORD:           return CONTEXT_MEDIT_KEYWORD;
     case MEDIT_S_DESC:            return CONTEXT_MEDIT_S_DESC;
     case MEDIT_L_DESC:            return CONTEXT_MEDIT_L_DESC;
     case MEDIT_D_DESC:            return CONTEXT_MEDIT_D_DESC;

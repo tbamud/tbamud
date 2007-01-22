@@ -15,7 +15,7 @@
 #include "interpreter.h"	/* alias_data */
 
 cpp_extern const char *circlemud_version = 
-        "CircleMUD, version 3.5";
+        "tbaMUD, version 3.51";
 
 cpp_extern const char *oasisolc_version =
 	"OasisOLC 2.0.6";

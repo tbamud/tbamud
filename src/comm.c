@@ -1604,7 +1604,7 @@ int new_descriptor(socket_t s)
     sockets_connected++;
 
   if (sockets_connected >= CONFIG_MAX_PLAYING) {
-    write_to_descriptor(desc, "Sorry, CircleMUD is full right now... please try again later!\r\n");
+    write_to_descriptor(desc, "Sorry, the game is full right now... please try again later!\r\n");
     CLOSE_SOCKET(desc);
     return (0);
   }
