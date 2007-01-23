@@ -4,14 +4,14 @@
 *                                                                         *
 *                                                                         *
 *  $Author: Mark A. Heilpern/egreen/Welcor $                              *
-*  $Date: 2004/10/11 12:07:00 $                                           * 
+*  $Date: 2004/10/11 12:07:00 $                                           *
 *  $Revision: 1.0.14 $                                                    *
 **************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
 
- 
+
 #include "structs.h"
 #include "dg_scripts.h"
 #include "utils.h"
@@ -32,19 +32,19 @@ extern struct time_info_data time_info;
 /* Utility functions */
 
 /*
- * Thanks to James Long for his assistance in plugging the memory leak 
+ * Thanks to James Long for his assistance in plugging the memory leak
  * that used to be here.   -- Welcor
  */
 /* adds a variable with given name and value to trigger */
 void add_var(struct trig_var_data **var_list, char *name, char *value, long id)
 {
   struct trig_var_data *vd;
-  
+
   if (strchr(name, '.')) {
     log("add_var() : Attempt to add illegal var: %s", name);
     return;
   }
-  
+
   for (vd = *var_list; vd && str_cmp(vd->name, name); vd = vd->next);
 
   if (vd && (!vd->context || vd->context==id)) {
@@ -54,10 +54,10 @@ void add_var(struct trig_var_data **var_list, char *name, char *value, long id)
 
   else {
     CREATE(vd, struct trig_var_data, 1);
-    
+
     CREATE(vd->name, char, strlen(name) + 1);
     strcpy(vd->name, name);                            /* strcpy: ok*/
-    
+
     CREATE(vd->value, char, strlen(value) + 1);
 
     vd->next = *var_list;
@@ -82,20 +82,20 @@ char *skill_percent(struct char_data *ch, char *skill)
   return retval;
 }
 
-/* 
+/*
    search through all the persons items, including containers
    and 0 if it doesnt exist, and greater then 0 if it does!
    Jamie Nelson (mordecai@timespace.co.nz)
    MUD -- 4dimensions.org:6000
-   
+
    Now also searches by vnum -- Welcor
    Now returns the number of matching objects -- Welcor 02/04
 */
 
-int item_in_list(char *item, obj_data *list) 
+int item_in_list(char *item, obj_data *list)
 {
   obj_data *i;
-  int count = 0;    
+  int count = 0;
 
   if (!item || !*item)
   	return 0;
@@ -104,35 +104,35 @@ int item_in_list(char *item, obj_data *list)
     long id = atol(item + 1);
 
     for (i = list; i; i = i->next_content) {
-      if (id == GET_ID(i)) 
+      if (id == GET_ID(i))
         count ++;
-      if (GET_OBJ_TYPE(i) == ITEM_CONTAINER)       
+      if (GET_OBJ_TYPE(i) == ITEM_CONTAINER)
         count += item_in_list(item, i->contains);
     }
   } else if (is_number(item)) { /* check for vnum */
     obj_vnum ovnum = atoi(item);
-    
+
     for (i = list; i; i = i->next_content) {
-      if (GET_OBJ_VNUM(i) == ovnum) 
+      if (GET_OBJ_VNUM(i) == ovnum)
         count++;
-      if (GET_OBJ_TYPE(i) == ITEM_CONTAINER)           
+      if (GET_OBJ_TYPE(i) == ITEM_CONTAINER)
         count += item_in_list(item, i->contains);
     }
   } else {
     for (i = list; i; i = i->next_content) {
-      if (isname(item, i->name)) 
+      if (isname(item, i->name))
         count++;
-      if (GET_OBJ_TYPE(i) == ITEM_CONTAINER)           
+      if (GET_OBJ_TYPE(i) == ITEM_CONTAINER)
         count += item_in_list(item, i->contains);
     }
   }
   return count;
 }
 
-/* 
+/*
    BOOLEAN return, just check if a player or mob
    has an item of any sort, searched for by name
-   or id. 
+   or id.
    searching equipment as well as inventory,
    and containers.
    Jamie Nelson (mordecai@timespace.co.nz)
@@ -143,8 +143,8 @@ int char_has_item(char *item, struct char_data *ch)
 {
 
   /* If this works, no more searching needed */
-  if (get_object_in_equip(ch, item) != NULL) 
-    return 1; 
+  if (get_object_in_equip(ch, item) != NULL)
+    return 1;
 
   if (item_in_list(item, ch->carrying) == 0)
     return 0;
@@ -157,17 +157,17 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
 {
   char *p, *p2;
   char tmpvar[MAX_STRING_LENGTH];
-  
+
   if (!str_cmp(field, "strlen")) {                     /* strlen    */
     snprintf(str, slen, "%d", strlen(vd->value));
     return TRUE;
   } else if (!str_cmp(field, "trim")) {                /* trim      */
     /* trim whitespace from ends */
     snprintf(tmpvar, sizeof(tmpvar)-1 , "%s", vd->value); /* -1 to use later*/
-    p = tmpvar;                       
-    p2 = tmpvar + strlen(tmpvar) - 1; 
-    while (*p && isspace(*p)) p++;     
-    while ((p<=p2) && isspace(*p2)) p2--; 
+    p = tmpvar;
+    p2 = tmpvar + strlen(tmpvar) - 1;
+    while (*p && isspace(*p)) p++;
+    while ((p<=p2) && isspace(*p2)) p2--;
     if (p>p2) { /* nothing left */
       *str = '\0';
       return TRUE;
@@ -178,7 +178,7 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
   } else if (!str_cmp(field, "contains")) {            /* contains  */
     if (str_str(vd->value, subfield))
       strcpy(str, "1");
-    else 
+    else
       strcpy(str, "0");
     return TRUE;
   } else if (!str_cmp(field, "car")) {                 /* car       */
@@ -187,7 +187,7 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
       *str++ = *car++;
     *str = '\0';
     return TRUE;
- 
+
   } else if (!str_cmp(field, "cdr")) {                 /* cdr       */
     char *cdr = vd->value;
     while (*cdr && !isspace(*cdr)) cdr++; /* skip 1st field */
@@ -200,7 +200,7 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
     if (index > len || index < 1)
       strcpy(str, "");
     else
-    	snprintf(str, slen, "%c", vd->value[index - 1]); 
+    	snprintf(str, slen, "%c", vd->value[index - 1]);
     return TRUE;
   } else if (!str_cmp(field, "mudcommand")) {
     /* find the mud command returned from this text */
@@ -214,9 +214,9 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
       if (!strncmp(cmd_info[cmd].command, vd->value, length))
         break;
 
-    if (*cmd_info[cmd].command == '\n') 
+    if (*cmd_info[cmd].command == '\n')
       *str = '\0';
-    else 
+    else
       snprintf(str, slen, "%s", cmd_info[cmd].command);
     return TRUE;
   }
@@ -254,19 +254,19 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
   char *recho[]          = {"mrecho ",      "orecho ",      "wrecho "     };
 
   *str = '\0';
-  
+
   /* X.global() will have a NULL trig */
   if (trig)
     for (vd = GET_TRIG_VARS(trig); vd; vd = vd->next)
       if (!str_cmp(vd->name, var))
         break;
-  
+
   /* some evil waitstates could crash the mud if sent here with sc==NULL*/
-  if (!vd && sc) 
+  if (!vd && sc)
     for (vd = sc->global_vars; vd; vd = vd->next)
       if (!str_cmp(vd->name, var) &&
           (vd->context==0 || vd->context==sc->context))
-        break; 
+        break;
 
   if (!*field) {
     if (vd)
@@ -285,7 +285,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           break;
         }
       }
-      else if (!str_cmp(var, "global")) { 
+      else if (!str_cmp(var, "global")) {
         /* so "remote varname %global%" will work */
         snprintf(str, slen, "%d", ROOM_ID_BASE);
         return;
@@ -367,7 +367,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         case MOB_TRIGGER:
           c = (char_data *) go;
           r = NULL;
-          o = NULL;  /* NULL assignments added to avoid self to always be    */ 
+          o = NULL;  /* NULL assignments added to avoid self to always be    */
           break;     /* the room.  - Welcor        */
         case OBJ_TRIGGER:
           o = (obj_data *) go;
@@ -381,7 +381,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           break;
         }
       }
-      
+
       else if (!str_cmp(var, "global")) {
         struct script_data *thescript = SCRIPT(&world[0]);
         *str = '\0';
@@ -391,15 +391,15 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         }
         for (vd = thescript->global_vars; vd ; vd = vd->next)
           if (!str_cmp(vd->name, field))
-            break; 
-        
+            break;
+
         if (vd)
           snprintf(str, slen, "%s", vd->value);
-        
+
         return;
       }
       else if (!str_cmp(var, "people")) {
-        snprintf(str, slen, "%d",((num = atoi(field)) > 0) ? trgvar_in_room(num) : 0);        
+        snprintf(str, slen, "%d",((num = atoi(field)) > 0) ? trgvar_in_room(num) : 0);
         return;
       }
       else if (!str_cmp(var, "time")) {
@@ -416,9 +416,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
       }
 /*
 
-      %findobj.<room vnum X>(<object vnum/id/name>)% 
+      %findobj.<room vnum X>(<object vnum/id/name>)%
         - count number of objects in room X with this name/id/vnum
-      %findmob.<room vnum X>(<mob vnum Y>)% 
+      %findmob.<room vnum X>(<mob vnum Y>)%
         - count number of mobs in room X with vnum Y
 
 for example you want to check how many PC's are in room with vnum 1204.
@@ -427,10 +427,10 @@ you would type:
 in any script:
 %echo% players in room 1204: %findmob.1204(-1)%
 
-Or say you had a bank, and you want a script to check the number of 
-bags 
+Or say you had a bank, and you want a script to check the number of
+bags
 of gold (vnum: 1234)
-in the vault (vnum: 453) now and then. you can just use 
+in the vault (vnum: 453) now and then. you can just use
 %findobj.453(1234)% and it will return the number of bags of gold.
 
 **/
@@ -443,7 +443,7 @@ in the vault (vnum: 453) now and then. you can just use
         } else {
           room_rnum rrnum = real_room(atoi(field));
           mob_vnum mvnum = atoi(subfield);
-      
+
           if (rrnum == NOWHERE) {
             script_log("findmob.vnum(ovnum): No room with vnum %d", atoi(field));
             strcpy(str, "0");
@@ -463,7 +463,7 @@ in the vault (vnum: 453) now and then. you can just use
           strcpy(str, "0");
         } else {
           room_rnum rrnum = real_room(atoi(field));
-      
+
           if (rrnum == NOWHERE) {
             script_log("findobj.vnum(ovnum): No room with vnum %d", atoi(field));
             strcpy(str, "0");
@@ -488,7 +488,7 @@ in the vault (vnum: 453) now and then. you can just use
                 count++;
               }
           }
-          
+
           else if (type == OBJ_TRIGGER) {
             for (c = world[obj_room((obj_data *) go)].people; c;
                  c = c->next_in_room)
@@ -498,18 +498,18 @@ in the vault (vnum: 453) now and then. you can just use
                 count++;
               }
           }
-          
+
           else if (type == WLD_TRIGGER) {
             for (c = ((struct room_data *) go)->people; c;
                  c = c->next_in_room)
               if (valid_dg_target(c, DG_ALLOW_GODS)) {
-                  
+
                 if (!rand_number(0, count))
                   rndm = c;
                 count++;
               }
           }
-          
+
           if (rndm)
             snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(rndm));
           else
@@ -518,7 +518,7 @@ in the vault (vnum: 453) now and then. you can just use
 
         else if (!str_cmp(field, "dir")) {
           room_rnum in_room = NOWHERE;
-          
+
           switch (type) {
             case WLD_TRIGGER:
               in_room = real_room(((struct room_data *) go)->number);
@@ -535,10 +535,10 @@ in the vault (vnum: 453) now and then. you can just use
           } else {
             doors = 0;
             room = &world[in_room];
-            for (i = 0; i < NUM_OF_DIRS ; i++) 
+            for (i = 0; i < NUM_OF_DIRS ; i++)
               if (R_EXIT(room, i))
                 doors++;
-            
+
             if (!doors) {
               *str = '\0';
             } else {
@@ -553,11 +553,11 @@ in the vault (vnum: 453) now and then. you can just use
         }
         else
           snprintf(str, slen, "%d", ((num = atoi(field)) > 0) ? rand_number(1, num) : 0);
-        
+
         return;
       }
     }
-    
+
     if (c) {
       if (text_processed(field, subfield, vd, str, slen)) return;
 
@@ -569,7 +569,7 @@ in the vault (vnum: 453) now and then. you can just use
       }
       /* set str to some 'non-text' first */
       *str = '\x1';
-      
+
       switch (LOWER(*field)) {
         case 'a':
           if (!str_cmp(field, "alias"))
@@ -588,7 +588,7 @@ in the vault (vnum: 453) now and then. you can just use
               int spell = find_skill_num(subfield);
               if (affected_by_spell(c, spell))
                 strcpy(str, "1");
-              else 
+              else
                 strcpy(str, "0");
             } else
               strcpy(str, "0");
@@ -642,7 +642,7 @@ in the vault (vnum: 453) now and then. you can just use
           if (!str_cmp(field, "exp")) {
             if (subfield && *subfield) {
               int addition = MIN(atoi(subfield), 1000);
-              
+
               gain_exp(c, addition);
             }
             snprintf(str, slen, "%d", GET_EXP(c));
@@ -654,7 +654,7 @@ in the vault (vnum: 453) now and then. you can just use
               *str = '\0';
             else if (*subfield == '*') {
               for (i = 0, j = 0; i < NUM_WEARS; i++)
-                if (GET_EQ(c, i)) { 
+                if (GET_EQ(c, i)) {
                   j++;
                   break;
                 }
@@ -672,9 +672,9 @@ in the vault (vnum: 453) now and then. you can just use
           if (!str_cmp(field, "fighting")) {
             if (FIGHTING(c))
               snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(FIGHTING(c)));
-            else 
+            else
               *str = '\0';
-          } 
+          }
           else if (!str_cmp(field, "follower")) {
             if (!c->followers || !c->followers->follower)
               *str = '\0';
@@ -700,10 +700,10 @@ in the vault (vnum: 453) now and then. you can just use
           }
           else if (!str_cmp(field, "hisher"))
             snprintf(str, slen, "%s", HSHR(c));
-    
+
           else if (!str_cmp(field, "heshe"))
             snprintf(str, slen, "%s", HSSH(c));
-    
+
           else if (!str_cmp(field, "himher"))
             snprintf(str, slen, "%s", HMHR(c));
 
@@ -759,7 +759,7 @@ in the vault (vnum: 453) now and then. you can just use
             else
               strcpy(str, "0");
           }
-    
+
           else if (!str_cmp(field, "is_thief")) {
             if (subfield && *subfield) {
               if (!str_cmp("on", subfield))
@@ -786,7 +786,7 @@ in the vault (vnum: 453) now and then. you can just use
           break;
         case 'l':
           if (!str_cmp(field, "level"))
-            snprintf(str, slen, "%d", GET_LEVEL(c)); 
+            snprintf(str, slen, "%d", GET_LEVEL(c));
           break;
         case 'm':
           if (!str_cmp(field, "maxhitp")) {
@@ -811,7 +811,7 @@ in the vault (vnum: 453) now and then. you can just use
             }
             snprintf(str, slen, "%d", GET_MAX_MANA(c));
           }
-    
+
           else if (!str_cmp(field, "move")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
@@ -819,7 +819,7 @@ in the vault (vnum: 453) now and then. you can just use
             }
             snprintf(str, slen, "%d", GET_MOVE(c));
           }
-    
+
           else if (!str_cmp(field, "maxmove")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
@@ -827,7 +827,7 @@ in the vault (vnum: 453) now and then. you can just use
             }
             snprintf(str, slen, "%d", GET_MAX_MOVE(c));
           }
-    
+
           else if (!str_cmp(field, "master")) {
             if (!c->master)
               *str = '\0';
@@ -842,12 +842,12 @@ in the vault (vnum: 453) now and then. you can just use
           else if (!str_cmp(field, "next_in_room")) {
             if (c->next_in_room)
               snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(c->next_in_room));
-            else 
+            else
               *str = '\0';
           }
           break;
         case 'p':
-          /* Thanks to Christian Ejlertsen for this idea 
+          /* Thanks to Christian Ejlertsen for this idea
              And to Ken Ray for speeding the implementation up :)*/
           if (!str_cmp(field, "pos")) {
             if (subfield && *subfield) {
@@ -873,11 +873,11 @@ in the vault (vnum: 453) now and then. you can just use
           if (!str_cmp(field, "room")) {  /* in NOWHERE, return the void */
 /* see note in dg_scripts.h */
 #ifdef ACTOR_ROOM_IS_UID
-            snprintf(str, slen, "%c%ld",UID_CHAR, 
-               (IN_ROOM(c)!= NOWHERE) ? (long) world[IN_ROOM(c)].number + ROOM_ID_BASE : ROOM_ID_BASE); 
-#else  
+            snprintf(str, slen, "%c%ld",UID_CHAR,
+               (IN_ROOM(c)!= NOWHERE) ? (long) world[IN_ROOM(c)].number + ROOM_ID_BASE : ROOM_ID_BASE);
+#else
             snprintf(str, slen, "%d", (IN_ROOM(c)!= NOWHERE) ? world[IN_ROOM(c)].number : 0);
-#endif      
+#endif
           }
 #ifdef GET_RACE
           else if (!str_cmp(field, "race")) {
@@ -896,7 +896,7 @@ in the vault (vnum: 453) now and then. you can just use
             else *str = '\0';
           }
 #endif
-    
+
 #ifdef RIDDEN_BY
           else if (!str_cmp(field, "ridden_by")) {
             if (RIDDEN_BY(c))
@@ -944,7 +944,7 @@ in the vault (vnum: 453) now and then. you can just use
                 if (skillnum > 0) {
                   int new_value = MAX(0, MIN(100, atoi(amount)));
                   SET_SKILL(c, skillnum, new_value);
-                } 
+                }
               }
             }
             *str = '\0'; /* so the parser know we recognize 'skillset' as a field */
@@ -990,8 +990,8 @@ in the vault (vnum: 453) now and then. you can just use
           if (!str_cmp(field, "title")) {
             if (!IS_NPC(c) && subfield && *subfield && valid_dg_target(c, DG_ALLOW_GODS)) {
               if (GET_TITLE(c)) free(GET_TITLE(c));
-                GET_TITLE(c) = strdup(subfield);          
-            } 
+                GET_TITLE(c) = strdup(subfield);
+            }
             snprintf(str, slen, "%s", IS_NPC(c) ? "" : GET_TITLE(c));
           }
         case 'v':
@@ -1002,14 +1002,14 @@ in the vault (vnum: 453) now and then. you can just use
               if (IS_NPC(c))
                 snprintf(str, slen, "%d", GET_MOB_VNUM(c));
               else
-              /* 
-               * for compatibility with unsigned indexes 
-               * - this is deprecated - use %actor.is_pc% to check 
+              /*
+               * for compatibility with unsigned indexes
+               * - this is deprecated - use %actor.is_pc% to check
                * instead of %actor.vnum% == -1  --Welcor 09/03
                */
                 strcpy(str, "-1");
             }
-          }    
+          }
 
           else if (!str_cmp(field, "varexists")) {
             struct trig_var_data *remote_vd;
@@ -1037,8 +1037,8 @@ in the vault (vnum: 453) now and then. you can just use
             snprintf(str, slen, "%d", GET_WIS(c));
           }
           break;
-      } /* switch *field */  
-    
+      } /* switch *field */
+
       if (*str == '\x1') { /* no match found in switch */
         if (SCRIPT(c)) {
           for (vd = (SCRIPT(c))->global_vars; vd; vd = vd->next)
@@ -1072,7 +1072,7 @@ in the vault (vnum: 453) now and then. you can just use
             }
             snprintf(str, slen, "%d", GET_OBJ_COST(o));
           }
-    
+
           else if (!str_cmp(field, "cost_per_day")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
@@ -1080,24 +1080,24 @@ in the vault (vnum: 453) now and then. you can just use
             }
             snprintf(str, slen, "%d", GET_OBJ_RENT(o));
           }
-      
+
           else if (!str_cmp(field, "carried_by")) {
             if (o->carried_by)
               snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(o->carried_by));
-            else 
+            else
               *str = '\0';
           }
-          
+
           else if (!str_cmp(field, "contents")) {
             if (o->contains)
               snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(o->contains));
-            else 
+            else
               *str = '\0';
           }
           /* thanks to Jamie Nelson (Mordecai of 4 Dimensions MUD) */
           else if (!str_cmp(field, "count")) {
-            if (GET_OBJ_TYPE(o) == ITEM_CONTAINER) 
-              snprintf(str, slen, "%d", item_in_list(subfield, 
+            if (GET_OBJ_TYPE(o) == ITEM_CONTAINER)
+              snprintf(str, slen, "%d", item_in_list(subfield,
 o->contains));
             else
             	strcpy(str, "0");
@@ -1105,9 +1105,9 @@ o->contains));
           break;
         case 'h':
           /* thanks to Jamie Nelson (Mordecai of 4 Dimensions MUD) */
-          if (!str_cmp(field, "has_in")) { 
-            if (GET_OBJ_TYPE(o) == ITEM_CONTAINER) 
-              snprintf(str, slen, "%s", (item_in_list(subfield, 
+          if (!str_cmp(field, "has_in")) {
+            if (GET_OBJ_TYPE(o) == ITEM_CONTAINER)
+              snprintf(str, slen, "%s", (item_in_list(subfield,
 o->contains) ? "1" : "0"));
             else
             	strcpy(str, "0");
@@ -1119,7 +1119,7 @@ o->contains) ? "1" : "0"));
 
           else if (!str_cmp(field, "is_inroom")) {
             if (IN_ROOM(o) != NOWHERE)
-              snprintf(str, slen,"%c%ld",UID_CHAR, (long) world[IN_ROOM(o)].number + ROOM_ID_BASE); 
+              snprintf(str, slen,"%c%ld",UID_CHAR, (long) world[IN_ROOM(o)].number + ROOM_ID_BASE);
             else
               *str = '\0';
           }
@@ -1127,11 +1127,11 @@ o->contains) ? "1" : "0"));
         case 'n':
           if (!str_cmp(field, "name"))
             snprintf(str, slen, "%s",  o->name);
-          
+
           else if (!str_cmp(field, "next_in_list")) {
             if (o->next_content)
               snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(o->next_content));
-            else 
+            else
               *str = '\0';
           }
           break;
@@ -1139,7 +1139,7 @@ o->contains) ? "1" : "0"));
           if (!str_cmp(field, "room")) {
             if (obj_room(o) != NOWHERE)
               snprintf(str, slen,"%c%ld",UID_CHAR, (long)world[obj_room(o)].number + ROOM_ID_BASE);
-            else 
+            else
               *str = '\0';
           }
           break;
@@ -1163,13 +1163,13 @@ o->contains) ? "1" : "0"));
             }
           else if (!str_cmp(field, "val0"))
             snprintf(str, slen, "%d", GET_OBJ_VAL(o, 0));
-          
+
           else if (!str_cmp(field, "val1"))
             snprintf(str, slen, "%d", GET_OBJ_VAL(o, 1));
-          
+
           else if (!str_cmp(field, "val2"))
             snprintf(str, slen, "%d", GET_OBJ_VAL(o, 2));
-          
+
           else if (!str_cmp(field, "val3"))
             snprintf(str, slen, "%d", GET_OBJ_VAL(o, 3));
           break;
@@ -1185,7 +1185,7 @@ o->contains) ? "1" : "0"));
           else if (!str_cmp(field, "worn_by")) {
             if (o->worn_by)
               snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(o->worn_by));
-            else 
+            else
               *str = '\0';
           }
           break;
@@ -1227,29 +1227,29 @@ o->contains) ? "1" : "0"));
               break;
           if (vd)
             snprintf(str, slen, "%s", vd->value);
-          else 
+          else
             *str = '\0';
-        }  
-      } 
-      
+        }
+      }
+
       else if (!str_cmp(field, "name"))
         snprintf(str, slen, "%s",  r->name);
 
       else if (!str_cmp(field, "sector"))
         sprinttype(r->sector_type, sector_types, str, slen);
-        
+
       else if (!str_cmp(field, "vnum")) {
         if (subfield && *subfield) {
           snprintf(str, slen, "%d", (int)(r->number == atoi(subfield)));
         } else {
-          snprintf(str, slen,"%d",r->number); 
-        }    
+          snprintf(str, slen,"%d",r->number);
+        }
       } else if (!str_cmp(field, "contents")) {
         if (subfield && *subfield) {
           for (obj = r->contents; obj; obj = obj->next_content) {
             if (GET_OBJ_VNUM(obj) == atoi(subfield)) {
               /* arg given, found */
-              snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(obj)); 
+              snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(obj));
               return;
             }
           }
@@ -1263,7 +1263,7 @@ o->contains) ? "1" : "0"));
           }
         }
       }
-      
+
       else if (!str_cmp(field, "people")) {
         if (r->people)
           snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(r->people));
@@ -1273,10 +1273,10 @@ o->contains) ? "1" : "0"));
       else if (!str_cmp(field, "id")) {
         room_rnum rnum = real_room(r->number);
         if (rnum != NOWHERE)
-          snprintf(str, slen, "%ld", (long) world[rnum].number + ROOM_ID_BASE); 
+          snprintf(str, slen, "%ld", (long) world[rnum].number + ROOM_ID_BASE);
         else
           *str = '\0';
-      } 
+      }
       else if (!str_cmp(field, "weather")) {
         const char *sky_look[] = {
           "sunny",
@@ -1301,7 +1301,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, NORTH)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, NORTH)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, NORTH)->to_room].number + ROOM_ID_BASE); 
+                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, NORTH)->to_room].number + ROOM_ID_BASE);
               else
                 *str = '\0';
             }
@@ -1321,7 +1321,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, EAST)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, EAST)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, EAST)->to_room].number + ROOM_ID_BASE); 
+                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, EAST)->to_room].number + ROOM_ID_BASE);
               else
                 *str = '\0';
             }
@@ -1341,7 +1341,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, SOUTH)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, SOUTH)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, SOUTH)->to_room].number + ROOM_ID_BASE); 
+                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, SOUTH)->to_room].number + ROOM_ID_BASE);
               else
                 *str = '\0';
             }
@@ -1361,7 +1361,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, WEST)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, WEST)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, WEST)->to_room].number + ROOM_ID_BASE); 
+                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, WEST)->to_room].number + ROOM_ID_BASE);
               else
                 *str = '\0';
             }
@@ -1381,7 +1381,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, UP)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, UP)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, UP)->to_room].number + ROOM_ID_BASE); 
+                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, UP)->to_room].number + ROOM_ID_BASE);
               else
                 *str = '\0';
             }
@@ -1401,7 +1401,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, DOWN)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, DOWN)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, DOWN)->to_room].number + ROOM_ID_BASE); 
+                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, DOWN)->to_room].number + ROOM_ID_BASE);
               else
                 *str = '\0';
             }
@@ -1432,7 +1432,7 @@ o->contains) ? "1" : "0"));
   }
 }
 
-/* 
+/*
  * Now automatically checks if the variable has more then one field
  * in it. And if the field returns a name or a script UID or the like
  * it can recurse.
@@ -1446,7 +1446,7 @@ o->contains) ? "1" : "0"));
  * will double the actors gold every time its called.  etc...
  * - Jamie Nelson 31st Oct 2003 01:24
  */
-   
+
 /* substitutes any variables into line and returns it as buf */
 void var_subst(void *go, struct script_data *sc, trig_data *trig,
                int type, char *line, char *buf)
@@ -1466,10 +1466,10 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
   }
   /*lets just empty these to start with*/
   *repl_str = *tmp = *tmp2 = '\0';
-  
+
   p = strcpy(tmp, line);
   subfield_p = subfield;
-  
+
   left = MAX_INPUT_LENGTH - 1;
 
   while (*p && (left > 0)) {
@@ -1480,9 +1480,9 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
       *(buf++) = *(p++);
       left--;
     }
-    
+
     *buf = '\0';
-    
+
     /* double % */
     if (*p && (*(++p) == '%') && (left > 0)) {
       *(buf++) = *(p++);
@@ -1493,10 +1493,10 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
 
     /* so it wasn't double %'s */
     else if (*p && (left > 0)) {
-      
-      /* search until end of var or beginning of field */      
+
+      /* search until end of var or beginning of field */
       for (var = p; *p && (*p != '%') && (*p != '.'); p++);
-      
+
       field = p;
       if (*p == '.') {
         *(p++) = '\0';
@@ -1505,7 +1505,7 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
           if (dots > 0) {
             *subfield_p = '\0';
             find_replacement(go, sc, trig, type, var, field, subfield, repl_str, sizeof(repl_str));
-            if (*repl_str) {   
+            if (*repl_str) {
               snprintf(tmp2, sizeof(tmp2), "eval tmpvr %s", repl_str); //temp var
               process_eval(go, sc, trig, type, tmp2);
               strcpy(var, "tmpvr");
@@ -1525,24 +1525,24 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
           } else if (*p=='.') {
             *p = '\0';
             dots++;
-          } 
+          }
         } /* for (field.. */
       } /* if *p == '.' */
-      
+
       *(p++) = '\0';
       *subfield_p = '\0';
-      
+
       if (*subfield) {
         var_subst(go, sc, trig, type, subfield, tmp2);
         strcpy(subfield, tmp2);
       }
 
       find_replacement(go, sc, trig, type, var, field, subfield, repl_str, sizeof(repl_str));
-      
+
       strncat(buf, repl_str, left);
       len = strlen(repl_str);
       buf += len;
       left -= len;
     } /* else if *p .. */
-  } /* while *p .. */ 
+  } /* while *p .. */
 }

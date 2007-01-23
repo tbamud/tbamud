@@ -15,5 +15,5 @@ obj_rnum index_object(struct obj_data *obj, obj_vnum ovnum, obj_rnum ornum);
 int update_objects(struct obj_data *refobj);
 obj_rnum add_object(struct obj_data *, obj_vnum ovnum);
 int copy_object_main(struct obj_data *to, struct obj_data *from, int free_object);
-int delete_object(obj_rnum); 
+int delete_object(obj_rnum);
 

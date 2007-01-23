@@ -104,12 +104,12 @@ void	update_pos(struct char_data *victim);
 #define CMP	3
 
 /* get_filename() */
-#define CRASH_FILE	 0 
+#define CRASH_FILE	 0
 #define ETEXT_FILE       1
 #define ALIAS_FILE	 2
 #define SCRIPT_VARS_FILE 3
-#define PLR_FILE         4	
-#define MAX_FILES        5	
+#define PLR_FILE         4
+#define MAX_FILES        5
 
 /* breadth-first searching */
 #define BFS_ERROR		(-1)

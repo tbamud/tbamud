@@ -130,7 +130,7 @@ int delete_mobile(mob_rnum refpt)
   int counter, cmd_no;
   mob_vnum vnum;
   zone_rnum zone;
-  
+
 #if CIRCLE_UNSIGNED_INDEX
   if (refpt == NOBODY || refpt > top_of_mobt) {
 #else
@@ -174,8 +174,8 @@ int delete_mobile(mob_rnum refpt)
     for (counter = 0; counter <= top_shop - top_shop_offset; counter++)
       SHOP_KEEPER(counter) -= (SHOP_KEEPER(counter) >= refpt);
 
-  save_mobiles(real_zone_by_thing(vnum)); 
-  
+  save_mobiles(real_zone_by_thing(vnum));
+
   return refpt;
 }
 
@@ -306,7 +306,7 @@ int save_mobiles(zone_rnum rznum)
   snprintf(usedfname, sizeof(usedfname), "%s%d.mob", MOB_PREFIX, vznum);
   remove(usedfname);
   rename(mobfname, usedfname);
-  
+
   if (in_save_list(vznum, SL_MOB))
     remove_from_save_list(vznum, SL_MOB);
   log("GenOLC: '%s' saved, %d bytes written.", usedfname, written);
@@ -358,7 +358,7 @@ int write_mobile_espec(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 {
 
-  char bit1[64]; 
+  char bit1[64];
   char bit2[64];
   char ldesc[MAX_STRING_LENGTH];
   char ddesc[MAX_STRING_LENGTH];

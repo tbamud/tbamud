@@ -159,8 +159,8 @@ ACMD(do_tell)
   if (!*buf || !*buf2)
     send_to_char(ch, "Who do you wish to tell what??\r\n");
   else if (!strcmp(buf, "m-w")) {
-    char word[MAX_INPUT_LENGTH], *p, *q; 
-    
+    char word[MAX_INPUT_LENGTH], *p, *q;
+
     if (last_webster_teller != -1L) {
       if (GET_IDNUM(ch) == last_webster_teller) {
         send_to_char(ch, "You are still waiting for a response.\r\n");
@@ -172,11 +172,11 @@ ACMD(do_tell)
     }
     /* only a-z and +/- allowed */
     for (p = buf2, q = word; *p ; p++) {
-      if ((LOWER(*p) <= 'z' && LOWER(*p) >= 'a') || (*p == '+') || (*p == '-')) 
+      if ((LOWER(*p) <= 'z' && LOWER(*p) >= 'a') || (*p == '+') || (*p == '-'))
         *q++ = *p;
     }
     *q = '\0';
-    
+
     if (!*word) {
       send_to_char(ch, "Sorry, only letters and +/- are allowed characters.\r\n");
       return;
@@ -185,7 +185,7 @@ ACMD(do_tell)
     system(buf);
     last_webster_teller = GET_IDNUM(ch);
     send_to_char(ch, "You look up '%s' in Merriam-Webster.\r\n", word);
-    
+
   } else if (GET_LEVEL(ch) < LVL_IMMORT && !(vict = get_player_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
     send_to_char(ch, "%s", CONFIG_NOPERSON);
   else if (GET_LEVEL(ch) >= LVL_IMMORT && !(vict = get_char_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
@@ -215,7 +215,7 @@ ACMD(do_reply)
      * a pointer, which is much better because it's safer, plus will still
      * work if someone logs out and back in again.
      */
-				     
+
     /*
      * XXX: A descriptor list based search would be faster although
      *      we could not find link dead people.  Not that they can
@@ -347,14 +347,14 @@ ACMD(do_write)
     act("You can't write on $p.", FALSE, ch, paper, 0, TO_CHAR);
   else {
     char *backstr = NULL;
- 
+
     /* Something on it, display it as that's in input buffer. */
     if (paper->action_description) {
       backstr = strdup(paper->action_description);
       send_to_char(ch, "There's something written on it already:\r\n");
       send_to_char(ch, "%s", paper->action_description);
     }
- 
+
     /* we can write - hooray! */
     act("$n begins to jot down a note.", TRUE, ch, 0, 0, TO_ROOM);
     send_editor_help(ch->desc);
@@ -483,9 +483,9 @@ ACMD(do_gen_comm)
       do_gmote(ch, argument + 1, 0, 1);
     else
       do_gmote(ch, argument, 0, 1);
- 
+
     return;
-  } 
+  }
 
   /* level_can_shout defined in config.c */
   if (GET_LEVEL(ch) < CONFIG_LEVEL_CAN_SHOUT) {
@@ -526,13 +526,13 @@ ACMD(do_gen_comm)
   /* now send all the strings out */
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING || i == ch->desc || !i->character )
-      continue;   
+      continue;
     if(PRF_FLAGGED(i->character, channels[subcmd]) || PLR_FLAGGED(i->character, PLR_WRITING))
       continue;
-    
-    if(ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD)) 
+
+    if(ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD))
       continue;
-    
+
     if (subcmd == SCMD_SHOUT &&
        ((world[IN_ROOM(ch)].zone != world[IN_ROOM(i->character)].zone) ||
        !AWAKE(i->character)))
@@ -595,7 +595,7 @@ void free_hist_messg(struct descriptor_data *d)
   }
   d->comms = NULL;
 }
-  
+
 void new_hist_messg(struct descriptor_data *d, const char *msg)
 {
   struct txt_block *tmp = d->comms;
@@ -609,10 +609,10 @@ void new_hist_messg(struct descriptor_data *d, const char *msg)
     tmp = tmp->next;
   CREATE(tmp->next, struct txt_block, 1);
   tmp->next->text = strdup(msg);
-  
+
   for (tmp = d->comms; tmp ; tmp= tmp->next)
     l++;
-    
+
   for (; l > HIST_LENGTH && d->comms; l--) {
     tmp = d->comms;
     d->comms = tmp->next;
@@ -629,16 +629,16 @@ ACMD(do_list_history)
 
   if (!d)
     return;
-  
+
   if (!d->comms) {
     write_to_output(d, "No communications in history.\r\n");
     return;
   }
   write_to_output(d, "Last %d communications:\r\n", HIST_LENGTH);
-  
+
   for (tmp = d->comms;tmp;tmp = tmp->next)
     write_to_output(d, "%s%s%s", QWHT, tmp->text, QNRM);
-  
+
   free_hist_messg(d);
 }
 
@@ -647,18 +647,18 @@ void handle_webster_file(void) {
   struct char_data *ch = find_char(last_webster_teller);
   char info[MAX_STRING_LENGTH], line[READ_SIZE];
   size_t len = 0, nlen = 0;
-   
+
   last_webster_teller = -1L;
 
   if (!ch) /* they quit ? */
     return;
-  
+
   fl = fopen("websterinfo", "r");
   if (!fl) {
     send_to_char(ch, "It seems Merriam-Webster is offline..\r\n");
     return;
   }
-  
+
   unlink("websterinfo");
 
   get_line(fl, line);
@@ -669,7 +669,7 @@ void handle_webster_file(void) {
     len += nlen;
     get_line(fl, line);
   }
- 
+
   if (len >= sizeof(info)) {
     const char *overflow = "\r\n**OVERFLOW**\r\n";
     strcpy(info + sizeof(info) - strlen(overflow) - 1, overflow); /* strcpy: OK */

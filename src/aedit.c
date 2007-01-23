@@ -47,7 +47,7 @@ ACMD(do_oasis_aedit)
   char arg[MAX_INPUT_LENGTH];
   struct descriptor_data *d;
   int i;
-  
+
   if (CONFIG_NEW_SOCIALS == 0) {
     send_to_char(ch, "Socials cannot be edited at the moment.\r\n");
     return;
@@ -65,7 +65,7 @@ ACMD(do_oasis_aedit)
     }
 
   one_argument(argument, arg);
-    
+
   if (!*arg) {
     send_to_char(ch, "Please specify a social to edit.\r\n");
     return;
@@ -80,7 +80,7 @@ ACMD(do_oasis_aedit)
     send_to_char(ch, "Done.\r\n");
     return;
   }
-  
+
   /*
    * Give descriptor an OLC structure.
    */
@@ -92,8 +92,8 @@ ACMD(do_oasis_aedit)
 
   OLC_NUM(d) = 0;
   OLC_STORAGE(d) = strdup(arg);
-  
-  for (OLC_ZNUM(d) = 0; (OLC_ZNUM(d) <= top_of_socialt); OLC_ZNUM(d)++)  
+
+  for (OLC_ZNUM(d) = 0; (OLC_ZNUM(d) <= top_of_socialt); OLC_ZNUM(d)++)
     if (is_abbrev(OLC_STORAGE(d), soc_mess_list[OLC_ZNUM(d)].command))
       break;
 
@@ -182,11 +182,11 @@ void aedit_setup_existing(struct descriptor_data *d, int real_num) {
 }
 
 
-      
+
 void aedit_save_internally(struct descriptor_data *d) {
    struct social_messg *new_soc_mess_list = NULL;
    int i;
-   
+
    /* add a new social into the list */
    if (OLC_ZNUM(d) > top_of_socialt)  {
       CREATE(new_soc_mess_list, struct social_messg, top_of_socialt + 2);
@@ -251,10 +251,10 @@ void aedit_save_to_disk(struct descriptor_data *d) {
               ((soc_mess_list[i].char_obj_found)?soc_mess_list[i].char_obj_found:"#"),
               ((soc_mess_list[i].others_obj_found)?soc_mess_list[i].others_obj_found:"#"));
    }
-   
+
    fprintf(fp, "$\n");
    fclose(fp);
-   remove_from_save_list(AEDIT_PERMISSION, SL_ACTION); 
+   remove_from_save_list(AEDIT_PERMISSION, SL_ACTION);
 }
 
 /*------------------------------------------------------------------------*/
@@ -267,8 +267,8 @@ void aedit_disp_menu(struct descriptor_data * d) {
    struct char_data *ch        = d->character;
 
    get_char_colors(ch);
-   
-   write_to_output(d, 
+
+   write_to_output(d,
            "%s-- Action editor\r\n"
            "%sn%s) Command         : %s%-15.15s%s %s1%s) Sort as Command  : %s%-15.15s%s\r\n"
            "%s2%s) Min Position[CH]: %s%-8.8s        %s3%s) Min Position [VT]: %s%-8.8s\r\n"
@@ -344,7 +344,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
       switch (*arg) {
        case 'y': case 'Y':
          aedit_save_internally(d);
-         mudlog (CMP, LVL_IMPL, TRUE, "OLC: %s edits action %s", 
+         mudlog (CMP, LVL_IMPL, TRUE, "OLC: %s edits action %s",
                  GET_NAME(d->character), OLC_ACTION(d)->command);
 
          /* do not free the strings.. just the structure */
@@ -373,7 +373,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
        case 'n': case 'N':
          OLC_ZNUM(d)++;
          for (;(OLC_ZNUM(d) <= top_of_socialt); OLC_ZNUM(d)++)
-           if (is_abbrev(OLC_STORAGE(d), soc_mess_list[OLC_ZNUM(d)].command)) 
+           if (is_abbrev(OLC_STORAGE(d), soc_mess_list[OLC_ZNUM(d)].command))
              break;
 
          if (OLC_ZNUM(d) > top_of_socialt) {
@@ -392,7 +392,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
          break;
        default:
          write_to_output(d, "Invalid choice!\r\n"
-                            "Do you wish to edit the '%s' action? ", 
+                            "Do you wish to edit the '%s' action? ",
                             soc_mess_list[OLC_ZNUM(d)].command);
          break;
       }
@@ -408,7 +408,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
          break;
        default:
          write_to_output(d, "Invalid choice!\r\n"
-                            "Do you wish to add the '%s' action? ", 
+                            "Do you wish to add the '%s' action? ",
                             OLC_STORAGE(d));
          break;
       }
@@ -435,7 +435,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
          write_to_output(d, "Enter the minimum position the Character has to be in to activate social:\r\n");
          for (i=POS_DEAD;i<=POS_STANDING;i++)
            write_to_output(d, "   %d) %s\r\n", i, position_types[i]);
-           
+
          write_to_output(d, "Enter choice: ");
          OLC_MODE(d) = AEDIT_MIN_CHAR_POS;
          return;
@@ -443,7 +443,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
          write_to_output(d, "Enter the minimum position the Victim has to be in to activate social:\r\n");
          for (i=POS_DEAD;i<=POS_STANDING;i++)
            write_to_output(d, "   %d) %s\r\n", i, position_types[i]);
-           
+
          write_to_output(d, "Enter choice: ");
          OLC_MODE(d) = AEDIT_MIN_VICT_POS;
          return;
@@ -475,7 +475,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->not_found)?OLC_ACTION(d)->not_found:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_VICT_NOT_FOUND;
          return;
        case 'd': case 'D':
@@ -483,7 +483,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->char_auto)?OLC_ACTION(d)->char_auto:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_SELF_CHAR;
          return;
        case 'e': case 'E':
@@ -491,7 +491,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->others_auto)?OLC_ACTION(d)->others_auto:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_SELF_OTHERS;
          return;
        case 'f': case 'F':
@@ -499,7 +499,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->char_found)?OLC_ACTION(d)->char_found:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_VICT_CHAR_FOUND;
          return;
        case 'g': case 'G':
@@ -507,7 +507,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->others_found)?OLC_ACTION(d)->others_found:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_VICT_OTHERS_FOUND;
          return;
        case 'h': case 'H':
@@ -515,7 +515,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->vict_found)?OLC_ACTION(d)->vict_found:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_VICT_VICT_FOUND;
          return;
        case 'i': case 'I':
@@ -523,7 +523,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->char_body_found)?OLC_ACTION(d)->char_body_found:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_VICT_CHAR_BODY_FOUND;
          return;
        case 'j': case 'J':
@@ -531,7 +531,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->others_body_found)?OLC_ACTION(d)->others_body_found:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_VICT_OTHERS_BODY_FOUND;
          return;
        case 'k': case 'K':
@@ -539,7 +539,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->vict_body_found)?OLC_ACTION(d)->vict_body_found:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_VICT_VICT_BODY_FOUND;
          return;
        case 'l': case 'L':
@@ -547,7 +547,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->char_obj_found)?OLC_ACTION(d)->char_obj_found:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_OBJ_CHAR_FOUND;
          return;
        case 'm': case 'M':
@@ -555,7 +555,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
                             "[OLD]: %s\r\n"
                             "[NEW]: ",
                             ((OLC_ACTION(d)->others_obj_found)?OLC_ACTION(d)->others_obj_found:"NULL"));
-         
+
          OLC_MODE(d) = AEDIT_OBJ_OTHERS_FOUND;
          return;
        default:
@@ -563,12 +563,12 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
          break;
       }
       return;
-         
+
     case AEDIT_ACTION_NAME:
       if (!*arg || strchr(arg,' ')) {
         aedit_disp_menu(d);
         return;
-      } 
+      }
       if (OLC_ACTION(d)->command)
         free(OLC_ACTION(d)->command);
         OLC_ACTION(d)->command = strdup(arg);
@@ -596,13 +596,13 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
       if ((i < POS_DEAD) && (i > POS_STANDING))  {
         aedit_disp_menu(d);
         return;
-      } 
+      }
       if (OLC_MODE(d) == AEDIT_MIN_CHAR_POS)
         OLC_ACTION(d)->min_char_position = i;
       else
         OLC_ACTION(d)->min_victim_position = i;
       break;
-      
+
     case AEDIT_MIN_CHAR_LEVEL:
       if (!*arg) {
         aedit_disp_menu(d);
@@ -622,7 +622,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
       if (*arg) {
         delete_doubledollar(arg);
         OLC_ACTION(d)->char_no_arg = strdup(arg);
-      } else 
+      } else
         OLC_ACTION(d)->char_no_arg = NULL;
       break;
 
@@ -782,7 +782,7 @@ ACMD(do_astat)
   }
 
    get_char_colors(ch);
-   send_to_char(ch, 
+   send_to_char(ch,
     "n) Command         : %s%-15.15s%s 1) Sort as Command : %s%-15.15s%s\r\n"
     "2) Min Position[CH]: %s%-8.8s%s        3) Min Position[VT]: %s%-8.8s%s\r\n"
     "4) Min Level   [CH]: %s%-3d%s             5) Show if Invis   : %s%s%s\r\n"
@@ -822,13 +822,13 @@ ACMD(do_astat)
 
 }
 
-int aedit_find_command(const char *txt) 
+int aedit_find_command(const char *txt)
 {
   int cmd;
 
   for (cmd = 1; *complete_cmd_info[cmd].command != '\n'; cmd++)
     if (!strncmp(complete_cmd_info[cmd].sort_as, txt, strlen(txt)) ||
-        !strcmp(complete_cmd_info[cmd].command, txt)) 
+        !strcmp(complete_cmd_info[cmd].command, txt))
       return (cmd);
   return (-1);
 }

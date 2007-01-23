@@ -72,7 +72,7 @@ int is_name(const char *str, const char *namelist)
         break;
 
       if (LOWER(*curstr) != LOWER(*curname))
-        break;  
+        break;
     }
 
     /* skip to next name */
@@ -109,7 +109,7 @@ int isname(const char *str, const char *namelist)
 
 
 
-void affect_modify(struct char_data *ch, byte loc, sbyte mod, 
+void affect_modify(struct char_data *ch, byte loc, sbyte mod,
                    bitvector_t bitv, bool add)
 {
   if (add)
@@ -825,12 +825,12 @@ void extract_obj(struct obj_data *obj)
   if (GET_OBJ_RNUM(obj) != NOTHING)
     (obj_index[GET_OBJ_RNUM(obj)].number)--;
 
-  if (SCRIPT(obj)) 
+  if (SCRIPT(obj))
     extract_script(obj, OBJ_TRIGGER);
- 
+
   if (GET_OBJ_RNUM(obj) == NOTHING || obj->proto_script != obj_proto[GET_OBJ_RNUM(obj)].proto_script)
     free_proto_script(obj, OBJ_TRIGGER);
-  
+
   free_obj(obj);
 }
 
@@ -969,7 +969,7 @@ void extract_char_final(struct char_data *ch)
       mob_index[GET_MOB_RNUM(ch)].number--;
     clearMemory(ch);
 
-    if (SCRIPT(ch)) 
+    if (SCRIPT(ch))
       extract_script(ch, MOB_TRIGGER);
 
     if (SCRIPT_MEM(ch))

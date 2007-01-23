@@ -54,7 +54,7 @@ extern struct pclean_criteria_data pclean_criteria[];
 
 /* ASCII Player Files - set this FALSE if you don't want poofin/poofout
    strings saved in the pfiles
-   Welcor, 27/12/06 - This was bugged. The check below was #ifdef, not #if, 
+   Welcor, 27/12/06 - This was bugged. The check below was #ifdef, not #if,
    so poofs were saved regardless of the text. Changed to TRUE to maintain
    the saved poofs, and altered to #if below.
  */
@@ -295,7 +295,7 @@ int load_char(const char *name, struct char_data *ch)
     GET_HOST(ch) = NULL;
     GET_PAGE_LENGTH(ch) = PFDEF_PAGELENGTH;
     GET_ALIASES(ch) = NULL;
-    
+
     while (get_line(fl, line)) {
       tag_argument(line, tag);
 
@@ -538,8 +538,8 @@ void save_char(struct char_data * ch)
   if (POOFIN(ch))				fprintf(fl, "PfIn: %s\n", POOFIN(ch));
   if (POOFOUT(ch))				fprintf(fl, "PfOt: %s\n", POOFOUT(ch));
 #endif
-  if (GET_SEX(ch)	     != PFDEF_SEX)	fprintf(fl, "Sex : %d\n", GET_SEX(ch)); 
-  if (GET_CLASS(ch)	   != PFDEF_CLASS)	fprintf(fl, "Clas: %d\n", GET_CLASS(ch)); 
+  if (GET_SEX(ch)	     != PFDEF_SEX)	fprintf(fl, "Sex : %d\n", GET_SEX(ch));
+  if (GET_CLASS(ch)	   != PFDEF_CLASS)	fprintf(fl, "Clas: %d\n", GET_CLASS(ch));
   if (GET_LEVEL(ch)	   != PFDEF_LEVEL)	fprintf(fl, "Levl: %d\n", GET_LEVEL(ch));
   if (GET_HOME(ch)	   != PFDEF_HOMETOWN)	fprintf(fl, "Home: %d\n", GET_HOME(ch));
 
@@ -586,7 +586,7 @@ void save_char(struct char_data * ch)
   if (GET_MOVE(ch)	   != PFDEF_MOVE || GET_MAX_MOVE(ch) != PFDEF_MAXMOVE) fprintf(fl, "Move: %d/%d\n", GET_MOVE(ch), GET_MAX_MOVE(ch));
 
   if (GET_STR(ch)	   != PFDEF_STR  || GET_ADD(ch)      != PFDEF_STRADD)  fprintf(fl, "Str : %d/%d\n", GET_STR(ch),  GET_ADD(ch));
- 
+
 
   if (GET_INT(ch)	   != PFDEF_INT)	fprintf(fl, "Int : %d\n", GET_INT(ch));
   if (GET_WIS(ch)	   != PFDEF_WIS)	fprintf(fl, "Wis : %d\n", GET_WIS(ch));
@@ -627,7 +627,7 @@ void save_char(struct char_data * ch)
 
   write_aliases_ascii(fl, ch);
   save_char_vars_ascii(fl, ch);
-  
+
   fclose(fl);
 
   /* more char_to_store code to restore affects */
@@ -651,7 +651,7 @@ void save_char(struct char_data * ch)
   }
 
   /* end char_to_store code */
- 
+
   if ((id = get_ptable_by_name(GET_NAME(ch))) < 0)
     return;
 
@@ -692,7 +692,7 @@ void tag_argument(char *argument, char *tag)
   for (i = 0; i < 4; i++)
     *(ttag++) = *(tmp++);
   *ttag = '\0';
-  
+
   while (*tmp == ':' || *tmp == ' ')
     tmp++;
 
@@ -709,7 +709,7 @@ void tag_argument(char *argument, char *tag)
  * remove_player() removes all files associated with a player who is
  * self-deleted, deleted by an immortal, or deleted by the auto-wipe
  * system (if enabled).
- */ 
+ */
 void remove_player(int pfilepos)
 {
   char fname[40];

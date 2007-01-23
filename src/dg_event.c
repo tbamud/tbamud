@@ -40,7 +40,7 @@ struct queue *event_q;          /* the event queue */
 extern long pulse;
 
 /* initializes the event queue */
-void event_init(void) 
+void event_init(void)
 {
   event_q = queue_init();
 }
@@ -56,7 +56,7 @@ struct event *event_create(EVENTFUNC(*func), void *event_obj, long when)
 
   if (when < 1) /* make sure its in the future */
     when = 1;
- 
+
   CREATE(new_event, struct event, 1);
   new_event->func = func;
   new_event->event_obj = event_obj;
@@ -103,7 +103,7 @@ void event_process(void)
     ** event function.
     */
     the_event->q_el = NULL;
- 
+
     /* call event func, reenqueue event if retval > 0 */
     if ((new_time = (the_event->func)(the_event->event_obj)) > 0)
       the_event->q_el = queue_enq(event_q, the_event, new_time + pulse);
@@ -205,7 +205,7 @@ struct q_element *queue_enq(struct queue *q, void *data, long key)
       qe->next->prev = qe;
     }
   }
- 
+
   return qe;
 }
 
@@ -228,7 +228,7 @@ void queue_deq(struct queue *q, struct q_element *qe)
     q->tail[i] = qe->prev;
   else
     qe->next->prev = qe->prev;
-    
+
   free(qe);
 }
 
@@ -291,5 +291,5 @@ void queue_free(struct queue *q)
 
   free(q);
  }
- 
- 
+
+

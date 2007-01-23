@@ -34,8 +34,8 @@ char *any_one_name(char *argument, char *first_arg)
 
     /* Find first non blank */
     while(isspace(*argument))
-        argument++; 
- 
+        argument++;
+
     /* Find length of first word */
     for(arg = first_arg ;
         *argument && !isspace(*argument) &&
@@ -91,7 +91,7 @@ void sub_write_to_char(char_data *ch, char *tokens[],
 	    else
 		strcat(sb,HSHR((char_data *) otokens[i]));
 	    break;
-		
+
 	case '&':
 	    if (!otokens[i] || !CAN_SEE(ch, (char_data *) otokens[i]))
 		strcat(sb,"it");
@@ -100,7 +100,7 @@ void sub_write_to_char(char_data *ch, char *tokens[],
 	    else
 		strcat(sb,HSSH((char_data *) otokens[i]));
 	    break;
-	    
+
 	case '*':
 	    if (!otokens[i] || !CAN_SEE(ch, (char_data *) otokens[i]))
 		strcat(sb,"it");
@@ -139,9 +139,9 @@ void sub_write(char *arg, char_data *ch, byte find_invis, int targets)
 
     if (!arg)
 	return;
-  
+
     tokens[0] = str;
-    
+
     for (i = 0, p = arg, s = str; *p;)
     {
 	switch (*p) {
@@ -158,13 +158,13 @@ void sub_write(char *arg, char_data *ch, byte find_invis, int targets)
 		find_invis ? (void *)get_char_in_room(&world[IN_ROOM(ch)], name) : (void *)get_char_room_vis(ch, name, NULL);
 	    tokens[++i] = ++s;
 	    break;
-	    
+
 	case '¨':
 	    /* get obj_data, move to next token */
 	    type[i] = *p;
 	    *s = '\0';
 	    p = any_one_name(++p, name);
-            
+
             if (find_invis) obj = get_obj_in_room(&world[IN_ROOM(ch)], name);
             else if (!(obj = get_obj_in_list_vis(ch, name, NULL, world[IN_ROOM(ch)].contents))) ;
             else if (!(obj = get_obj_in_equip_vis(ch, name, &tmp, ch->equipment))) ;
@@ -178,7 +178,7 @@ void sub_write(char *arg, char_data *ch, byte find_invis, int targets)
 	    p++;
 	    *s++ = *p++;
 	    break;
-	    
+
 	default:
 	    *s++ = *p++;
 	}

@@ -165,7 +165,7 @@ const char *skill_name(int num)
     return ("UNDEFINED");
 }
 
-	 
+
 int find_skill_num(char *name)
 {
   int skindex, ok;
@@ -428,7 +428,7 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj,
 
   if (!consume_otrigger(obj, ch, OCMD_QUAFF))  /* check trigger */
     return;
- 
+
     act("You quaff $p.", FALSE, ch, obj, NULL, TO_CHAR);
     if (obj->action_description)
       act(obj->action_description, FALSE, ch, obj, NULL, TO_ROOM);
@@ -468,7 +468,7 @@ int cast_spell(struct char_data *ch, struct char_data *tch,
 	TOP_SPELL_DEFINE);
     return (0);
   }
-    
+
   if (GET_POS(ch) < SINFO.min_position) {
     switch (GET_POS(ch)) {
       case POS_SLEEPING:
@@ -674,7 +674,7 @@ void spell_level(int spell, int chclass, int level)
     bad = 1;
   }
 
-  if (!bad)    
+  if (!bad)
     spell_info[spell].min_level[chclass] = level;
 }
 

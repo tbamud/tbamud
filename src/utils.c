@@ -663,10 +663,10 @@ int count_color_chars(char *string)
 {
   int i, len;
   int num = 0;
-	
+
 	if (!string || !*string)
 		return 0;
-	
+
 	len = strlen(string);
   for (i = 0; i < len; i++) {
     while (string[i] == '@') {
@@ -711,12 +711,12 @@ int levenshtein_distance(char *s1, char *s2)
 {
   int s1_len = strlen(s1), s2_len = strlen(s2);
   int d[s1_len + 1][s2_len + 1];
-  int i, j;       
+  int i, j;
 
   for (i = 0; i <= s1_len; i++)
-    d[i][0] = i;   
+    d[i][0] = i;
   for (j = 0; j <= s2_len; j++)
-    d[0][j] = j;   
+    d[0][j] = j;
 
   for (i = 1; i <= s1_len; i++)
     for (j = 1; j <= s2_len; j++)

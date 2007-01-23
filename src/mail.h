@@ -17,7 +17,7 @@
 /* You can modify the following constants to fit your own MUD.  */
 
 /* minimum level a player must be to send mail	*/
-#define MIN_MAIL_LEVEL 1 
+#define MIN_MAIL_LEVEL 1
 
 /* # of gold coins required to send mail	*/
 #define STAMP_PRICE 150

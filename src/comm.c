@@ -111,7 +111,7 @@ static bool fCopyOver;          /* Are we booting in copyover mode? */
 ush_int port;
 socket_t mother_desc;
 int log_this_messg;
- 
+
 /* functions in this file */
 RETSIGTYPE reread_wizlists(int sig);
 RETSIGTYPE unrestrict_game(int sig);
@@ -261,7 +261,7 @@ int main(int argc, char **argv)
     CONFIG_CONFFILE = strdup(CONFIG_FILE);
 
   load_config();
-    
+
   port = CONFIG_DFLT_PORT;
   dir = CONFIG_DFLT_DIR;
 
@@ -421,7 +421,7 @@ void copyover_recover()
   bool fOld;
   char name[MAX_INPUT_LENGTH];
   long pref;
-  
+
   log ("Copyover recovery initiated");
 
   fp = fopen (COPYOVER_FILE, "r");
@@ -433,8 +433,8 @@ void copyover_recover()
   }
 
   /* In case something crashes - doesn't prevent reading  */
-  unlink (COPYOVER_FILE);  
-     
+  unlink (COPYOVER_FILE);
+
   /* read boot_time - first line in file */
   fscanf(fp, "%ld\n", &boot_time);
 
@@ -444,7 +444,7 @@ void copyover_recover()
     if (desc == -1)
       break;
 
-    /* Write something, and check if it goes error-free */    
+    /* Write something, and check if it goes error-free */
     if (write_to_descriptor (desc, "\n\rRestoring from copyover...\n\r") < 0) {
       close (desc); /* nope */
       continue;
@@ -479,7 +479,7 @@ void copyover_recover()
     /* Player file not found?! */
     if (!fOld) {
       write_to_descriptor (desc, "\n\rSomehow, your character was lost in the copyover. Sorry.\n\r");
-      close_socket (d);      
+      close_socket (d);
     } else {
       write_to_descriptor (desc, "\n\rCopyover recovery complete.\n\r");
       GET_PREF(d->character) = pref;
@@ -802,7 +802,7 @@ void game_loop(socket_t mother_desc)
      * to sleep until the next 0.1 second tick.  The first step is to
      * calculate how long we took processing the previous iteration.
      */
-    
+
     gettimeofday(&before_sleep, (struct timezone *) 0); /* current time */
     timediff(&process_time, &before_sleep, &last_time);
 
@@ -1157,18 +1157,18 @@ const char *ANSI[] = { "@", A"0m",A"0m",A"0;30m",A"0;34m",A"0;32m",A"0;36m",A"0;
 #undef A
 const char CCODE[] = "@nNdbgcrmywDBGCRMYW01234567luoe!";
 
-size_t proc_colors(char *txt, size_t maxlen, int parse) 
+size_t proc_colors(char *txt, size_t maxlen, int parse)
 {
   char *d, *s, *c, *p;
   int i;
-  
+
   if (!txt || !strchr(txt, '@')) /* skip out if no color codes     */
     return strlen(txt);
 
   s = txt;
   CREATE(d, char, maxlen);
   p = d;
-  
+
   for( ; *s && (d-p < maxlen); ) {
     /* no color code - just copy */
     if (*s != '@') {
@@ -1191,17 +1191,17 @@ size_t proc_colors(char *txt, size_t maxlen, int parse)
         *d++ = '@';
       }
       s++; /* skip to next (non-colorcode) char */
-      continue;   
+      continue;
     }
-    
+
     /* parse the color code */
     for (i = 0; CCODE[i] != '!'; i++) { /* do we find it ? */
       if ((*s) == CCODE[i]) {           /* if so :*/
-        
+
         /* c now points to the first char in color code*/
-        for(c = (char *)ANSI[i] ; *c && (d-p < maxlen); ) 
+        for(c = (char *)ANSI[i] ; *c && (d-p < maxlen); )
           *d++ = *c++;
-        
+
         break;
       }
     }
@@ -1210,16 +1210,16 @@ size_t proc_colors(char *txt, size_t maxlen, int parse)
     * - Welcor
     */
     s++;
-    
+
   } /* for loop */
 
 
   /* make sure txt is NULL - terminated */
   d = '\0';
   strncpy(txt, p, maxlen-1);
-  
+
   free(p);
-  
+
   return strlen(txt);
 }
 
@@ -1270,13 +1270,13 @@ char *make_prompt(struct descriptor_data *d)
         if (count >= 0)
           len += count;
       }
-  
+
       if (PRF_FLAGGED(d->character, PRF_DISPMANA) && len < sizeof(prompt)) {
         count = snprintf(prompt + len, sizeof(prompt) - len, "%dM ", GET_MANA(d->character));
         if (count >= 0)
           len += count;
       }
-  
+
       if (PRF_FLAGGED(d->character, PRF_DISPMOVE) && len < sizeof(prompt)) {
         count = snprintf(prompt + len, sizeof(prompt) - len, "%dV ", GET_MOVE(d->character));
         if (count >= 0)
@@ -1448,7 +1448,7 @@ size_t vwrite_to_output(struct descriptor_data *t, const char *format, va_list a
 void free_bufpool(void)
 {
   struct txt_block *tmp;
- 
+
   while (bufpool) {
     tmp = bufpool->next;
     if (bufpool->text)
@@ -1559,7 +1559,7 @@ int set_sendbuf(socket_t s)
 void init_descriptor (struct descriptor_data *newd, int desc)
 {
     static int last_desc = 0;	/* last descriptor number */
-    
+
   newd->descriptor = desc;
   newd->idle_tics = 0;
   newd->output = newd->small_outbuf;
@@ -1842,7 +1842,7 @@ ssize_t perform_socket_write(socket_t desc, const char *txt, size_t length)
 
 #endif /* CIRCLE_WINDOWS */
 
-    
+
 /*
  * write_to_descriptor takes a descriptor, and text to write to the
  * descriptor.  It keeps calling the system-level write() until all
@@ -2173,7 +2173,7 @@ int perform_subst(struct descriptor_data *t, char *orig, char *subst)
 void close_socket(struct descriptor_data *d)
 {
   struct descriptor_data *temp;
-  
+
   REMOVE_FROM_LIST(d, descriptor_list, next);
   CLOSE_SOCKET(d->descriptor);
   flush_queues(d);
@@ -2203,7 +2203,7 @@ void close_socket(struct descriptor_data *d)
     }
 
     add_llog_entry(d->character, LAST_DISCONNECT);
-    
+
     if (IS_PLAYING(d) || STATE(d) == CON_DISCONNECT) {
       struct char_data *link_challenged = d->original ? d->original : d->character;
 
@@ -2230,9 +2230,9 @@ void close_socket(struct descriptor_data *d)
 	free(d->history[cnt]);
     free(d->history);
   }
-  
+
   free_hist_messg(d);
-  
+
   if (d->showstr_head)
     free(d->showstr_head);
   if (d->showstr_count)
@@ -2559,14 +2559,14 @@ void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...)
   struct char_data *i;
   va_list args;
   int j;
-  
+
   if (start > finish) {
     log("send_to_range passed start room value greater then finish.");
     return;
   }
   if (messg == NULL)
     return;
-    
+
   for (j = 0; j < top_of_world; j++) {
     if (GET_ROOM_VNUM(j) >= start && GET_ROOM_VNUM(j) <= finish) {
       for (i = world[j].people; i; i = i->next_in_room) {
@@ -2708,7 +2708,7 @@ void perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
 
   if (to->desc) {
     write_to_output(to->desc, "%s", CAP(lbuf));
-    if (log_this_messg)    
+    if (log_this_messg)
       new_hist_messg(to->desc, lbuf);
   }
   log_this_messg = 0;
@@ -2729,7 +2729,7 @@ void act(const char *str, int hide_invisible, struct char_data *ch,
 
   /*
    * Warning: the following TO_SLEEP code is a hack.
-   * 
+   *
    * I wanted to be able to tell act to deliver a message regardless of sleep
    * without adding an additional argument.  TO_SLEEP is 128 (a single bit
    * high up).  It's ONLY legal to combine TO_SLEEP with one other TO_x
@@ -2750,8 +2750,8 @@ void act(const char *str, int hide_invisible, struct char_data *ch,
   /* And this too.. */
   log_this_messg = IS_SET(type, LOG_MESSG);
   if (log_this_messg)
-    REMOVE_BIT(type, LOG_MESSG);  
-  
+    REMOVE_BIT(type, LOG_MESSG);
+
   if (type == TO_CHAR) {
     if (ch && SENDOK(ch))
       perform_act(str, ch, obj, vict_obj, ch);

@@ -95,7 +95,7 @@ struct alias_data {
 
 /* do_gen_ps */
 #define SCMD_INFO       0
-#define SCMD_HANDBOOK   1 
+#define SCMD_HANDBOOK   1
 #define SCMD_CREDITS    2
 #define SCMD_NEWS       3
 #define SCMD_WIZLIST    4
@@ -128,7 +128,7 @@ struct alias_data {
 #define SCMD_CLS        17
 #define SCMD_BUILDWALK  18
 #define SCMD_AFK        19
-#define SCMD_COLOR      20 
+#define SCMD_COLOR      20
 #define SCMD_SYSLOG     21
 #define SCMD_WIMPY      22
 #define SCMD_PAGELENGTH 23

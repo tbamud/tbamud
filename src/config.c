@@ -307,7 +307,7 @@ int max_bad_pws = 3;
 int siteok_everyone = TRUE;
 
 /*
- * Some nameservers are very slow and cause the game to lag terribly every 
+ * Some nameservers are very slow and cause the game to lag terribly every
  * time someone logs in.  The lag is caused by the gethostbyaddr() function
  * which is responsible for resolving numeric IP addresses to alphabetic names.
  * Sometimes, nameservers can be so slow that the incredible lag caused by
@@ -330,7 +330,7 @@ int nameserver_is_slow = NO;
 int auto_save_olc = YES;
 
 /*
- * if you wish to enable Aedit, set this to YES 
+ * if you wish to enable Aedit, set this to YES
  * This will make the mud look for a file called socials.new,
  * which is in a different format than the stock socials file.
  */

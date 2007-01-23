@@ -41,11 +41,11 @@ ACMD(do_dig)
   zone_rnum zone;
   int dir = 0, rawvnum;
   struct descriptor_data *d = ch->desc; /* will save us some typing */
-  
+
   /* Grab the room's name (if available). */
   new_room_name = two_arguments(argument, sdir, sroom);
   skip_spaces(&new_room_name);
-  
+
   /* Can't dig if we don't know where to go. */
   if (!*sdir || !*sroom) {
     send_to_char(ch, "Format: dig <direction> <room> - to create an exit\r\n"
@@ -58,7 +58,7 @@ ACMD(do_dig)
     rvnum = NOWHERE;
   else
     rvnum = (room_vnum)rawvnum;
-  rrnum = real_room(rvnum);  
+  rrnum = real_room(rvnum);
   dir = search_block(sdir, dirs, FALSE);
   zone = world[IN_ROOM(ch)].zone;
 
@@ -72,7 +72,7 @@ ACMD(do_dig)
     return;
   }
   /*
-   * Lets not allow digging to limbo. 
+   * Lets not allow digging to limbo.
    * After all, it'd just get us more errors on 'show errors'
    */
   if (rvnum == 0) {
@@ -80,9 +80,9 @@ ACMD(do_dig)
    return;
   }
   /*
-   * target room == -1 removes the exit 
+   * target room == -1 removes the exit
    */
-  if (rvnum == NOTHING) { 
+  if (rvnum == NOTHING) {
     if (W_EXIT(IN_ROOM(ch), dir)) {
       /* free the old pointers, if any */
       if (W_EXIT(IN_ROOM(ch), dir)->general_description)
@@ -98,17 +98,17 @@ ACMD(do_dig)
     send_to_char(ch, "There is no exit to the %s.\r\n"
                      "No exit removed.\r\n", dirs[dir]);
     return;
-  }  
+  }
   /*
-   * Can't dig in a direction, if it's already a door. 
+   * Can't dig in a direction, if it's already a door.
    */
   if (W_EXIT(IN_ROOM(ch), dir)) {
       send_to_char(ch, "There already is an exit to the %s.\r\n", dirs[dir]);
       return;
   }
-  
+
   /* Make sure that the builder has access to the zone he's linking to. */
-  zone = real_zone_by_thing(rvnum);  
+  zone = real_zone_by_thing(rvnum);
   if (zone == NOWHERE) {
     send_to_char(ch, "You cannot link to a non-existing zone!\r\n");
     return;
@@ -118,7 +118,7 @@ ACMD(do_dig)
     return;
   }
   /*
-   * Now we know the builder is allowed to make the link 
+   * Now we know the builder is allowed to make the link
    */
   /* If the room doesn't exist, create it.*/
   if (rrnum == NOWHERE) {
@@ -134,30 +134,30 @@ ACMD(do_dig)
     OLC_ZNUM(d) = zone;
     OLC_NUM(d) = rvnum;
     CREATE(OLC_ROOM(d), struct room_data, 1);
-    
-    
+
+
     /* Copy the room's name. */
     if (*new_room_name)
      OLC_ROOM(d)->name = strdup(new_room_name);
     else
      OLC_ROOM(d)->name = strdup("An unfinished room");
-    
+
     /* Copy the room's description.*/
     OLC_ROOM(d)->description = strdup("You are in an unfinished room.\r\n");
     OLC_ROOM(d)->zone = OLC_ZNUM(d);
     OLC_ROOM(d)->number = NOWHERE;
-    
+
     /*
      * Save the new room to memory.
      * redit_save_internally handles adding the room in the right place, etc.
      */
     redit_save_internally(d);
     OLC_VAL(d) = 0;
-    
+
     send_to_char(ch, "New room (%d) created.\r\n", rvnum);
     cleanup_olc(d, CLEANUP_STRUCTS);
-    /* 
-     * update rrnum to the correct room rnum after adding the room 
+    /*
+     * update rrnum to the correct room rnum after adding the room
      */
     rrnum = real_room(rvnum);
   }
@@ -170,14 +170,14 @@ ACMD(do_dig)
   W_EXIT(IN_ROOM(ch), dir)->keyword = NULL;
   W_EXIT(IN_ROOM(ch), dir)->to_room = rrnum;
   add_to_save_list(zone_table[world[IN_ROOM(ch)].zone].number, SL_WLD);
-  
-  send_to_char(ch, "You make an exit %s to room %d (%s).\r\n", 
+
+  send_to_char(ch, "You make an exit %s to room %d (%s).\r\n",
                    dirs[dir], rvnum, world[rrnum].name);
 
-  /* 
-   * check if we can dig from there to here. 
+  /*
+   * check if we can dig from there to here.
    */
-  if (W_EXIT(rrnum, rev_dir[dir])) 
+  if (W_EXIT(rrnum, rev_dir[dir]))
     send_to_char(ch, "Can not dig from %d to here. The target room already has an exit to the %s.\r\n",
                      rvnum, dirs[rev_dir[dir]]);
   else {
@@ -197,14 +197,14 @@ ACMD(do_room_copy)
    zone_rnum dst_zone;
    struct descriptor_data *dsc;
    char buf[MAX_INPUT_LENGTH];
-     
+
    one_argument(argument, buf);
-   
+
    if (!*buf) {
      send_to_char(ch, "Usage: rclone <target room>\r\n");
      return;
    }
-   
+
    if (real_room((buf_num = atoi(buf))) != NOWHERE) {
      send_to_char(ch, "That room already exist!\r\n");
      return;
@@ -214,24 +214,24 @@ ACMD(do_room_copy)
      send_to_char(ch, "Sorry, there is no zone for that number!\r\n");
      return;
    }
-    
+
    if (!can_edit_zone(ch, dst_zone) ||
        !can_edit_zone(ch, world[IN_ROOM(ch)].zone) ) {
      send_to_char(ch, "You may only copy rooms within your designated zone(s)!\r\n");
      return;
    }
-   
-   
+
+
    room_src = &world[IN_ROOM(ch)];
    CREATE(room_dst, struct room_data, 1);
 
    room_dst->zone = dst_zone;
- 
+
    /*
    * Allocate space for all strings.
    */
    send_to_char(ch, "Cloning room....\r\n");
-   
+
    room_dst->name = str_udup(world[IN_ROOM(ch)].name);
    room_dst->description = str_udup(world[IN_ROOM(ch)].description);
    room_dst->description = str_udup(world[IN_ROOM(ch)].description);
@@ -242,7 +242,7 @@ ACMD(do_room_copy)
   /*
    * Extra descriptions, if necessary.
    */
-  
+
   send_to_char(ch, "Cloning extra descriptions....\r\n");
   if (world[IN_ROOM(ch)].ex_description) {
     struct extra_descr_data *tdesc, *temp, *temp2;
@@ -262,9 +262,9 @@ ACMD(do_room_copy)
   }
    /*
     * Now save the room in the right place:
-    */ 
+    */
   send_to_char(ch, "Saving new room...\r\n");
-    
+
   if ((room_num = add_room(room_dst)) == NOWHERE) {
     send_to_char(ch, "Something went wrong...\r\n");
     log("SYSERR: do_room_copy: Something failed! (%d)", room_num);
@@ -307,12 +307,12 @@ ACMD(do_room_copy)
 ****************************************************************************/
 
 /* For buildwalk. Finds the next free vnum in the zone */
-room_vnum redit_find_new_vnum(zone_rnum zone) 
+room_vnum redit_find_new_vnum(zone_rnum zone)
 {
   room_vnum vnum = genolc_zone_bottom(zone);
   room_rnum rnum = real_room(vnum);
 
-  if (rnum == NOWHERE) 
+  if (rnum == NOWHERE)
     return NOWHERE;
 
   for(;;) {
@@ -334,7 +334,7 @@ int buildwalk(struct char_data *ch, int dir)
 
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_BUILDWALK) &&
       GET_LEVEL(ch) >= LVL_BUILDER) {
-   
+
     get_char_colors(ch);
 
     if (!can_edit_zone(ch, world[IN_ROOM(ch)].zone)) {
@@ -355,21 +355,21 @@ int buildwalk(struct char_data *ch, int dir)
       OLC_ZNUM(d) = world[IN_ROOM(ch)].zone;
       OLC_NUM(d) = vnum;
       CREATE(OLC_ROOM(d), struct room_data, 1);
-      
+
       OLC_ROOM(d)->name = strdup("New BuildWalk Room");
-      
+
       sprintf(buf, "This unfinished room was created by %s.\r\n", GET_NAME(ch));
       OLC_ROOM(d)->description = strdup(buf);
       OLC_ROOM(d)->zone = OLC_ZNUM(d);
       OLC_ROOM(d)->number = NOWHERE;
-      
+
       /*
        * Save the new room to memory.
        * redit_save_internally handles adding the room in the right place, etc.
        */
       redit_save_internally(d);
       OLC_VAL(d) = 0;
-      
+
       /* Link rooms */
       rnum = real_room(vnum);
       CREATE(EXIT(ch, dir), struct room_direction_data, 1);
@@ -380,7 +380,7 @@ int buildwalk(struct char_data *ch, int dir)
       /* Report room creation to user */
       send_to_char(ch, "%sRoom #%d created by BuildWalk.%s\r\n", yel, vnum, nrm);
       cleanup_olc(d, CLEANUP_STRUCTS);
-      
+
       return (1);
 
     }

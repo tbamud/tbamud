@@ -107,7 +107,7 @@ const char *trade_letters[] = {
 const char *shop_bits[] = {
         "WILL_FIGHT",
         "USES_BANK",
-        "UNLIMITED_CASH", 
+        "UNLIMITED_CASH",
         "\n"
 };
 
@@ -1250,7 +1250,7 @@ void assign_the_shopkeepers(void)
   for (cindex = 0; cindex <= top_shop; cindex++) {
     if (SHOP_KEEPER(cindex) == NOBODY)
       continue;
-   
+
     if (SHOP_KEEPER(cindex) > top_of_mobt) {
     	log ("shop %d had mob out of bounds", cindex);
     	abort();

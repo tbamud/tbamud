@@ -14,7 +14,7 @@
 #include "structs.h"
 #include "interpreter.h"	/* alias_data */
 
-cpp_extern const char *circlemud_version = 
+cpp_extern const char *circlemud_version =
         "tbaMUD, version 3.51";
 
 cpp_extern const char *oasisolc_version =
@@ -806,7 +806,7 @@ const char *month_name[] = {
 
 /* mob trigger types */
 const char *trig_types[] = {
-  "Global", 
+  "Global",
   "Random",
   "Command",
   "Speech",

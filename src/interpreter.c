@@ -220,7 +220,7 @@ ACMD(do_mzoneecho);
 ACMD(do_mrecho);
 ACMD(do_vdelete);
 ACMD(do_mfollow);
-ACMD(do_tlist); 
+ACMD(do_tlist);
 
 /* TBA specifics */
 ACMD(do_file);
@@ -256,7 +256,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "west"     , "w"       , POS_STANDING, do_move     , 0, SCMD_WEST },
   { "up"       , "u"       , POS_STANDING, do_move     , 0, SCMD_UP },
   { "down"     , "d"       , POS_STANDING, do_move     , 0, SCMD_DOWN },
-                             
+
   /* now, the main list */
   { "at"       , "at"      , POS_DEAD    , do_at       , LVL_IMMORT, 0 },
   { "advance"  , "adv"     , POS_DEAD    , do_advance  , LVL_GOD, 0 },
@@ -277,7 +277,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "buildwalk", "buildwalk", POS_STANDING, do_gen_tog,   LVL_BUILDER, SCMD_BUILDWALK },
   { "buy"      , "bu"      , POS_STANDING, do_not_here , 0, 0 },
   { "bug"      , "bug"     , POS_DEAD    , do_gen_write, 0, SCMD_BUG },
-                            
+
   { "cast"     , "c"       , POS_SITTING , do_cast     , 1, 0 },
   { "cedit"    , "cedit"   , POS_DEAD    , do_oasis    , LVL_IMPL, SCMD_OASIS_CEDIT },
   { "check"    , "ch"      , POS_STANDING, do_not_here , 1, 0 },
@@ -291,7 +291,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "compact"  , "comp"    , POS_DEAD    , do_gen_tog  , 0, SCMD_COMPACT },
   { "copyover" , "copyover", POS_DEAD    , do_copyover , LVL_GRGOD, 0 },
   { "credits"  , "cred"    , POS_DEAD    , do_gen_ps   , 0, SCMD_CREDITS },
-                            
+
   { "date"     , "da"      , POS_DEAD    , do_date     , LVL_IMMORT, SCMD_DATE },
   { "dc"       , "dc"      , POS_DEAD    , do_dc       , LVL_GOD, 0 },
   { "deposit"  , "depo"    , POS_STANDING, do_not_here , 1, 0 },
@@ -301,7 +301,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "donate"   , "don"     , POS_RESTING , do_drop     , 0, SCMD_DONATE },
   { "drink"    , "dri"     , POS_RESTING , do_drink    , 0, SCMD_DRINK },
   { "drop"     , "dro"     , POS_RESTING , do_drop     , 0, SCMD_DROP },
-                            
+
   { "eat"      , "ea"      , POS_RESTING , do_eat      , 0, SCMD_EAT },
   { "echo"     , "ec"      , POS_SLEEPING, do_echo     , LVL_IMMORT, SCMD_ECHO },
   { "emote"    , "em"      , POS_RESTING , do_echo     , 1, SCMD_EMOTE },
@@ -311,14 +311,14 @@ cpp_extern const struct command_info cmd_info[] = {
   { "exits"    , "ex"      , POS_RESTING , do_exits    , 0, 0 },
   { "examine"  , "exa"     , POS_SITTING , do_examine  , 0, 0 },
   { "export"   , "export"  , POS_DEAD    , do_export_zone, LVL_IMPL, 0 },
-                            
+
   { "force"    , "force"   , POS_SLEEPING, do_force    , LVL_GOD, 0 },
   { "fill"     , "fil"     , POS_STANDING, do_pour     , 0, SCMD_FILL },
   { "file"     , "file"    , POS_SLEEPING, do_file     , LVL_GOD, 0 },
   { "flee"     , "fl"      , POS_FIGHTING, do_flee     , 1, 0 },
   { "follow"   , "fol"     , POS_RESTING , do_follow   , 0, 0 },
   { "freeze"   , "freeze"  , POS_DEAD    , do_wizutil  , LVL_FREEZE, SCMD_FREEZE },
-                            
+
   { "get"      , "g"       , POS_RESTING , do_get      , 0, 0 },
   { "gecho"    , "gecho"   , POS_DEAD    , do_gecho    , LVL_GOD, 0 },
   { "gemote"   , "gem"     , POS_SLEEPING, do_gen_comm , 0, SCMD_GEMOTE },
@@ -331,10 +331,10 @@ cpp_extern const struct command_info cmd_info[] = {
   { "grats"    , "grat"    , POS_SLEEPING, do_gen_comm , 0, SCMD_GRATZ },
   { "gsay"     , "gsay"    , POS_SLEEPING, do_gsay     , 0, 0 },
   { "gtell"    , "gt"      , POS_SLEEPING, do_gsay     , 0, 0 },
-                            
+
   { "help"     , "h"       , POS_DEAD    , do_help     , 0, 0 },
   { "hedit"    , "hedit"   , POS_DEAD    , do_oasis    , LVL_GOD  , SCMD_OASIS_HEDIT },
-  { "hindex"   , "hind"    , POS_DEAD    , do_hindex   , 0, 0 },  
+  { "hindex"   , "hind"    , POS_DEAD    , do_hindex   , 0, 0 },
   { "helpcheck", "helpch"  , POS_DEAD    , do_helpcheck, LVL_IMPL, 0 },
   { "hide"     , "hi"      , POS_RESTING , do_hide     , 1, 0 },
   { "handbook" , "handb"   , POS_DEAD    , do_gen_ps   , LVL_IMMORT, SCMD_HANDBOOK },
@@ -345,7 +345,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "holler"   , "holler"  , POS_RESTING , do_gen_comm , 1, SCMD_HOLLER },
   { "holylight", "holy"    , POS_DEAD    , do_gen_tog  , LVL_IMMORT, SCMD_HOLYLIGHT },
   { "house"    , "house"   , POS_RESTING , do_house    , 0, 0 },
-                           
+
   { "inventory", "i"       , POS_DEAD    , do_inventory, 0, 0 },
   { "idea"     , "id"      , POS_DEAD    , do_gen_write, 0, SCMD_IDEA },
   { "imotd"    , "imo"     , POS_DEAD    , do_gen_ps   , LVL_IMMORT, SCMD_IMOTD },
@@ -353,27 +353,27 @@ cpp_extern const struct command_info cmd_info[] = {
   { "info"     , "info"    , POS_SLEEPING, do_gen_ps   , 0, SCMD_INFO },
   { "insult"   , "insult"  , POS_RESTING , do_insult   , 0, 0 },
   { "invis"    , "invi"    , POS_DEAD    , do_invis    , LVL_IMMORT, 0 },
-                            
+
   { "junk"     , "j"       , POS_RESTING , do_drop     , 0, SCMD_JUNK },
-                            
+
   { "kill"     , "k"       , POS_FIGHTING, do_kill     , 0, 0 },
   { "kick"     , "ki"      , POS_FIGHTING, do_kick     , 1, 0 },
-                            
+
   { "look"     , "l"       , POS_RESTING , do_look     , 0, SCMD_LOOK },
   { "last"     , "last"    , POS_DEAD    , do_last     , LVL_GOD, 0 },
   { "leave"    , "lea"     , POS_STANDING, do_leave    , 0, 0 },
   { "levels"   , "lev"     , POS_DEAD    , do_levels   , 0, 0 },
   { "list"     , "lis"     , POS_STANDING, do_not_here , 0, 0 },
-  { "links"    , "lin"     , POS_STANDING, do_links    , LVL_GOD, 0 },           
+  { "links"    , "lin"     , POS_STANDING, do_links    , LVL_GOD, 0 },
   { "lock"     , "loc"     , POS_SITTING , do_gen_door , 0, SCMD_LOCK },
   { "load"     , "load"     , POS_DEAD    , do_load     , LVL_BUILDER, 0 },
-                            
+
   { "motd"     , "motd"    , POS_DEAD    , do_gen_ps   , 0, SCMD_MOTD },
   { "mail"     , "mail"    , POS_STANDING, do_not_here , 1, 0 },
   { "medit"    , "med"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_MEDIT },
   { "mlist"    , "mlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_MLIST },
   { "mute"     , "mute"    , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_SQUELCH },
-                            
+
   { "news"     , "news"    , POS_SLEEPING, do_gen_ps   , 0, SCMD_NEWS },
   { "noauction", "noauction",POS_DEAD    , do_gen_tog  , 0, SCMD_NOAUCTION },
   { "nogossip" , "nogossip", POS_DEAD    , do_gen_tog  , 0, SCMD_NOGOSSIP },
@@ -385,14 +385,14 @@ cpp_extern const struct command_info cmd_info[] = {
   { "notell"   , "notell"  , POS_DEAD    , do_gen_tog  , 1, SCMD_NOTELL },
   { "notitle"  , "notitle" , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_NOTITLE },
   { "nowiz"    , "nowiz"   , POS_DEAD    , do_gen_tog  , LVL_IMMORT, SCMD_NOWIZ },
-                            
+
   { "open"     , "o"       , POS_SITTING , do_gen_door , 0, SCMD_OPEN },
   { "order"    , "ord"     , POS_RESTING , do_order    , 1, 0 },
   { "offer"    , "off"     , POS_STANDING, do_not_here , 1, 0 },
   { "olc"      , "olc"     , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OLC_SAVEINFO },
-  { "olist"    , "olist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_OLIST }, 
+  { "olist"    , "olist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_OLIST },
   { "oedit"    , "oedit"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_OEDIT },
-                            
+
   { "put"      , "p"       , POS_RESTING , do_put      , 0, 0 },
   { "peace"    , "pe"      , POS_DEAD    , do_peace    , LVL_BUILDER, 0 },
   { "pick"     , "pi"      , POS_STANDING, do_gen_door , 1, SCMD_PICK },
@@ -403,14 +403,14 @@ cpp_extern const struct command_info cmd_info[] = {
   { "pour"     , "pour"    , POS_STANDING, do_pour     , 0, SCMD_POUR },
   { "prompt"   , "pro"     , POS_DEAD    , do_display  , 0, 0 },
   { "purge"    , "purge"   , POS_DEAD    , do_purge    , LVL_BUILDER, 0 },
-                            
+
   { "quaff"    , "qua"     , POS_RESTING , do_use      , 0, SCMD_QUAFF },
   { "qecho"    , "qec"     , POS_DEAD    , do_qcomm    , LVL_GOD, SCMD_QECHO },
   { "quest"    , "que"     , POS_DEAD    , do_gen_tog  , 0, SCMD_QUEST },
   { "qui"      , "qui"     , POS_DEAD    , do_quit     , 0, 0 },
   { "quit"     , "quit"    , POS_DEAD    , do_quit     , 0, SCMD_QUIT },
   { "qsay"     , "qsay"    , POS_RESTING , do_qcomm    , 0, SCMD_QSAY },
-                            
+
   { "reply"    , "r"       , POS_SLEEPING, do_reply    , 0, 0 },
   { "rest"     , "res"     , POS_RESTING , do_rest     , 0, 0 },
   { "read"     , "rea"     , POS_RESTING , do_look     , 0, SCMD_READ },
@@ -425,7 +425,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "restore"  , "resto"   , POS_DEAD    , do_restore  , LVL_GOD, 0 },
   { "return"   , "retu"    , POS_DEAD    , do_return   , 0, 0 },
   { "redit"    , "redit"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_REDIT },
-  { "rlist"    , "rlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_RLIST }, 
+  { "rlist"    , "rlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_RLIST },
   { "rclone"   , "rclone"  , POS_DEAD    , do_room_copy, LVL_BUILDER, 0 },
   { "roomflags", "roomflags", POS_DEAD   , do_gen_tog  , LVL_IMMORT, SCMD_SHOWVNUMS },
 
@@ -455,7 +455,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "stat"     , "stat"    , POS_DEAD    , do_stat     , LVL_IMMORT, 0 },
   { "steal"    , "ste"     , POS_STANDING, do_steal    , 1, 0 },
   { "switch"   , "switch"  , POS_DEAD    , do_switch   , LVL_GOD, 0 },
-                            
+
   { "tell"     , "t"       , POS_DEAD    , do_tell     , 0, 0 },
   { "take"     , "ta"      , POS_RESTING , do_get      , 0, 0 },
   { "taste"    , "tas"     , POS_RESTING , do_eat      , 0, SCMD_TASTE },
@@ -469,7 +469,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "transfer" , "transfer", POS_SLEEPING, do_trans    , LVL_GOD, 0 },
   { "trigedit" , "trigedit", POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_TRIGEDIT},
   { "typo"     , "typo"    , POS_DEAD    , do_gen_write, 0, SCMD_TYPO },
-                            
+
   { "unlock"   , "unlock"  , POS_SITTING , do_gen_door , 0, SCMD_UNLOCK },
   { "ungroup"  , "ungroup" , POS_DEAD    , do_ungroup  , 0, 0 },
   { "unban"    , "unban"   , POS_DEAD    , do_unban    , LVL_GRGOD, 0 },
@@ -477,13 +477,13 @@ cpp_extern const struct command_info cmd_info[] = {
   { "uptime"   , "uptime"  , POS_DEAD    , do_date     , LVL_GOD, SCMD_UPTIME },
   { "use"      , "use"     , POS_SITTING , do_use      , 1, SCMD_USE },
   { "users"    , "users"   , POS_DEAD    , do_users    , LVL_GOD, 0 },
-                            
+
   { "value"    , "val"     , POS_STANDING, do_not_here , 0, 0 },
   { "version"  , "ver"     , POS_DEAD    , do_gen_ps   , 0, SCMD_VERSION },
   { "visible"  , "vis"     , POS_RESTING , do_visible  , 1, 0 },
   { "vnum"     , "vnum"    , POS_DEAD    , do_vnum     , LVL_IMMORT, 0 },
   { "vstat"    , "vstat"   , POS_DEAD    , do_vstat    , LVL_IMMORT, 0 },
-                            
+
   { "wake"     , "wake"    , POS_SLEEPING, do_wake     , 0, 0 },
   { "wear"     , "wea"     , POS_RESTING , do_wear     , 0, 0 },
   { "weather"  , "weather" , POS_RESTING , do_weather  , 0, 0 },
@@ -499,17 +499,17 @@ cpp_extern const struct command_info cmd_info[] = {
   { "wizlist"  , "wizlist" , POS_DEAD    , do_gen_ps   , 0, SCMD_WIZLIST },
   { "wizlock"  , "wizlock" , POS_DEAD    , do_wizlock  , LVL_IMPL, 0 },
   { "write"    , "write"   , POS_STANDING, do_write    , 1, 0 },
-                            
+
   { "zreset"   , "zreset"  , POS_DEAD    , do_zreset   , LVL_BUILDER, 0 },
   { "zedit"    , "zedit"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_ZEDIT },
   { "zlist"    , "zlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_ZLIST },
   { "zcheck"   , "zcheck"  , POS_DEAD    , do_zcheck   , LVL_GOD, 0 },
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
-                            
+
   /* DG trigger commands */
   { "attach"   , "attach"  , POS_DEAD    , do_attach   , LVL_BUILDER, 0 },
   { "detach"   , "detach"  , POS_DEAD    , do_detach   , LVL_BUILDER, 0 },
-  { "tlist"    , "tlist"    , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_TLIST }, 
+  { "tlist"    , "tlist"    , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_TLIST },
   { "tstat"    , "tstat"   , POS_DEAD    , do_tstat    , LVL_BUILDER, 0 },
   { "masound"  , "masound" , POS_DEAD    , do_masound  , -1, 0 },
   { "mkill"    , "mkill"   , POS_STANDING, do_mkill    , -1, 0 },
@@ -593,7 +593,7 @@ void command_interpreter(struct char_data *ch, char *argument)
     line = any_one_arg(argument, arg);
 
   /* Since all command triggers check for valid_dg_target before acting, the levelcheck
-   * here has been removed. 
+   * here has been removed.
    */
   /* otherwise, find the command */
   {
@@ -603,22 +603,22 @@ void command_interpreter(struct char_data *ch, char *argument)
     if (!cont) cont = command_otrigger(ch, arg, line);   /* any object triggers ? */
     if (cont) return;                                    /* yes, command trigger took over */
   }
-          
-  for (length = strlen(arg), cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++) 
-    if(complete_cmd_info[cmd].command_pointer != do_action && 
-       !strncmp(complete_cmd_info[cmd].command, arg, length)) 
+
+  for (length = strlen(arg), cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++)
+    if(complete_cmd_info[cmd].command_pointer != do_action &&
+       !strncmp(complete_cmd_info[cmd].command, arg, length))
       if (GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
         break;
- 
-  /* it's not a 'real' command, so it's a social */ 
- 
-  if(*complete_cmd_info[cmd].command == '\n') 
-    for (length = strlen(arg), cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++) 
-      if (complete_cmd_info[cmd].command_pointer == do_action && 
-          !strncmp(complete_cmd_info[cmd].command, arg, length)) 
-        if (GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level) 
-          break; 
- 
+
+  /* it's not a 'real' command, so it's a social */
+
+  if(*complete_cmd_info[cmd].command == '\n')
+    for (length = strlen(arg), cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++)
+      if (complete_cmd_info[cmd].command_pointer == do_action &&
+          !strncmp(complete_cmd_info[cmd].command, arg, length))
+        if (GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
+          break;
+
   if (*complete_cmd_info[cmd].command == '\n')
     send_to_char(ch, "Huh?!?\r\n");
   else if (!IS_NPC(ch) && PLR_FLAGGED(ch, PLR_FROZEN) && GET_LEVEL(ch) < LVL_IMPL)
@@ -1043,7 +1043,7 @@ char *two_arguments(char *argument, char *first_arg, char *second_arg)
  * (now works symmetrically -- JE 7/25/94)
  *
  * that was dumb.  it shouldn't be symmetrical.  JE 5/1/95
- * 
+ *
  * returns 1 if arg1 is an abbreviation of arg2
  */
 int is_abbrev(const char *arg1, const char *arg2)
@@ -1199,7 +1199,7 @@ int perform_dupe_check(struct descriptor_data *d)
     } else if (k->character && GET_IDNUM(k->character) == id) {
       /* Character taking over their own body. */
       pref_temp=GET_PREF(k->character);
-   
+
       if (!target && STATE(k) == CON_PLAYING) {
 	write_to_output(k, "\r\nThis body has been usurped!\r\n");
 	target = k->character;
@@ -1259,13 +1259,13 @@ int perform_dupe_check(struct descriptor_data *d)
     GET_HOST(d->character)= strdup(d->host);
     return 0;
   }
-  
+
   if (GET_HOST(target)) free(GET_HOST(target));
   GET_HOST(target) = strdup(d->host);
-    
+
   GET_PREF(target) = pref_temp;
   add_llog_entry(target, LAST_RECONNECT);
- 
+
   /* Okay, we've found a target.  Connect d to target. */
   free_char(d->character); /* get rid of the old char */
   d->character = target;
@@ -1305,17 +1305,17 @@ int enter_player_game (struct descriptor_data *d)
 
     int load_result;
     room_vnum load_room;
-    
+
       reset_char(d->character);
-		/* 
-		 * See if there might be some aliases in the old alias file. 
+		/*
+		 * See if there might be some aliases in the old alias file.
 		 * Only do this if there were no aliases in the pfile.
 		 */
-		if (GET_ALIASES(d->character) == NULL) 
+		if (GET_ALIASES(d->character) == NULL)
 		{
       read_aliases(d->character);
       // delete the old file - player will be saved in a second.
-      delete_aliases(GET_NAME(d->character)); 
+      delete_aliases(GET_NAME(d->character));
     }
 
       if (PLR_FLAGGED(d->character, PLR_INVSTART))
@@ -1560,12 +1560,12 @@ void nanny(struct descriptor_data *d, char *arg)
       else
 	write_to_output(d, "%s", motd);
 
-      if (GET_INVIS_LEV(d->character)) 
-        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, 
-        "%s [%s] has connected. (invis %d)", GET_NAME(d->character), d->host, 
+      if (GET_INVIS_LEV(d->character))
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE,
+        "%s [%s] has connected. (invis %d)", GET_NAME(d->character), d->host,
         GET_INVIS_LEV(d->character));
       else
-        mudlog(BRF, LVL_IMMORT, TRUE, 
+        mudlog(BRF, LVL_IMMORT, TRUE,
                "%s [%s] has connected.", GET_NAME(d->character), d->host);
 
       if (load_result) {
@@ -1796,7 +1796,7 @@ void nanny(struct descriptor_data *d, char *arg)
              SET_BIT(player_table[player_i].flags, PINDEX_SELFDELETE);
              remove_player(player_i);
 	   }
-		      
+
       delete_aliases(GET_NAME(d->character));
       delete_variables(GET_NAME(d->character));
       write_to_output(d, "Character '%s' deleted!\r\n"

@@ -84,10 +84,10 @@
 #define MAX_OBJ_RENT        2000000
 #define MAX_CONTAINER_SIZE    10000
 
-#define MAX_MOB_GOLD         100000 
+#define MAX_MOB_GOLD         100000
 #define MAX_MOB_EXP          150000
 /* this is one mud year.. */
-#define MAX_OBJ_TIMER       1071000 
+#define MAX_OBJ_TIMER       1071000
 
 
 /* this defines how much memory is alloacted for 'bit strings' when
@@ -144,8 +144,8 @@ struct oasis_olc_data {
   struct social_messg *action;   /* Aedit uses this one      */
   struct trig_data *trig;
   int script_mode;
-  int trigger_position;          
-  int item_type;                 
+  int trigger_position;
+  int item_type;
   struct trig_proto_list *script; /* for assigning triggers in [r|o|m]edit*/
   struct help_index_element*help;   /* Hedit uses this */
 };
@@ -371,7 +371,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define SEDIT_SHOP_FLAGS		35
 #define SEDIT_NOTRADE			36
 
-/* 
+/*
  * Submodes of CEDIT connectedness.
  */
 #define CEDIT_MAIN_MENU			0

@@ -84,7 +84,7 @@ int House_load(room_vnum vnum)
 	for (current = loaded; current != NULL; current = current->next)
     obj_to_room(current->obj, rnum);
 
-	/* now it's safe to free the obj_save_data list - all members of it 
+	/* now it's safe to free the obj_save_data list - all members of it
 	 * have been put in the correct lists by obj_to_room()
 	 */
 	while (loaded != NULL) {
@@ -197,10 +197,10 @@ void House_listrent(struct char_data *ch, room_vnum vnum)
 	loaded = objsave_parse_objects(fl);
 
 	for (current = loaded; current != NULL; current = current->next)
-	  len += snprintf(buf+len, sizeof(buf)-len, " [%5d] (%5dau) %s\r\n", 
+	  len += snprintf(buf+len, sizeof(buf)-len, " [%5d] (%5dau) %s\r\n",
 	    GET_OBJ_VNUM(current->obj), GET_OBJ_RENT(current->obj), current->obj->short_description);
 
-	/* now it's safe to free the obj_save_data list - all members of it 
+	/* now it's safe to free the obj_save_data list - all members of it
 	 * have been put in the correct lists by obj_to_room()
 	 */
 	while (loaded != NULL) {
@@ -320,12 +320,12 @@ void hcontrol_list_houses(struct char_data *ch, char *arg)
 
 	if (arg && *arg) {
 		room_vnum toshow;
-		
+
 		if (*arg == '.')
 			toshow = GET_ROOM_VNUM(IN_ROOM(ch));
 		else
 			toshow = atoi(arg);
-			
+
 	  if ((i = find_house(toshow)) == NOWHERE) {
   	  send_to_char(ch, "Unknown house, \"%s\".\r\n", arg);
 	    return;
@@ -665,13 +665,13 @@ void House_list_guests(struct char_data *ch, int i, int quiet)
  *                                                   Welcor              *
  * ***********************************************************************/
 /*
- * Code for conversion to ascii house rent files 
+ * Code for conversion to ascii house rent files
  */
 
 void hcontrol_convert_houses(struct char_data *ch)
 {
   int i;
-  
+
 	if (GET_LEVEL(ch) < LVL_IMPL)
 		{
 			send_to_char(ch, "Sorry, but you are not powerful enough to do that.\r\n");
@@ -688,16 +688,16 @@ void hcontrol_convert_houses(struct char_data *ch)
 
   for (i = 0; i < num_of_houses; i++) {
 	  send_to_char(ch, "  %d", house_control[i].vnum);
-	  
+
 	  if (!ascii_convert_house(ch, house_control[i].vnum))
-	  {	
+	  {
 	  	// let ascii_convert_house() tell about the error
 	  	return;
 	  }
 	  else
 	  {
 	  	send_to_char(ch, "...done\r\n");
-	  } 
+	  }
   }
 	send_to_char(ch, "All done.\r\n");
 }
@@ -709,12 +709,12 @@ int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	char infile[MAX_INPUT_LENGTH], *outfile;
 	struct obj_data *tmp;
 	int i, j=0;
-	
-  House_get_filename(vnum, infile, sizeof(infile));	
-	
+
+  House_get_filename(vnum, infile, sizeof(infile));
+
 	CREATE(outfile, char, strlen(infile)+7);
 	sprintf(outfile, "%s.ascii", infile);
-	
+
   if (!(in = fopen(infile, "r+b")))	/* no file found */
   {
   	send_to_char(ch, "...no object file found\r\n");
@@ -741,7 +741,7 @@ int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
       fclose(out);
       return (0);
     }
-    if (!feof(in)) 
+    if (!feof(in))
     {
     	tmp = Obj_from_store(object, &i);
       if (!objsave_save_obj_record(tmp, out, i))
@@ -755,16 +755,16 @@ int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
       j++;
     }
   }
-	
+
 	fprintf(out, "$~\n");
 
 	fclose(in);
 	fclose(out);
-	
+
 	// copy the new file over the old one
 //  remove(infile);
 //  rename(outfile, infile);
-	
+
 	free(outfile);
 
 	send_to_char(ch, "...%d items", j);

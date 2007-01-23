@@ -232,7 +232,7 @@ ACMD(do_steal)
 	  send_to_char(ch, "Steal the equipment now?  Impossible!\r\n");
 	  return;
 	} else {
-          if (!give_otrigger(obj, vict, ch) || 
+          if (!give_otrigger(obj, vict, ch) ||
               !receive_mtrigger(ch, vict, obj) ) {
             send_to_char(ch, "Impossible!\r\n");
             return;
@@ -253,7 +253,7 @@ ACMD(do_steal)
 	act("$n tries to steal something from $N.", TRUE, ch, 0, vict, TO_NOTVICT);
       } else {			/* Steal the item */
 	if (IS_CARRYING_N(ch) + 1 < CAN_CARRY_N(ch)) {
-          if (!give_otrigger(obj, vict, ch) || 
+          if (!give_otrigger(obj, vict, ch) ||
               !receive_mtrigger(ch, vict, obj) ) {
             send_to_char(ch, "Impossible!\r\n");
             return;
@@ -492,7 +492,7 @@ ACMD(do_ungroup)
   act("$N is no longer a member of your group.", FALSE, ch, 0, tch, TO_CHAR);
   act("You have been kicked out of $n's group!", FALSE, ch, 0, tch, TO_VICT);
   act("$N has been kicked out of $n's group!", FALSE, ch, 0, tch, TO_NOTVICT);
- 
+
   if (!AFF_FLAGGED(tch, AFF_CHARM))
     stop_follower(tch);
 }
@@ -901,12 +901,12 @@ ACMD(do_gen_tog)
     break;
   case SCMD_BUILDWALK:
     if (GET_LEVEL(ch) < LVL_BUILDER) {
-      send_to_char(ch, "Builders only, sorry.\r\n");  	
+      send_to_char(ch, "Builders only, sorry.\r\n");
       return;
     }
     result = PRF_TOG_CHK(ch, PRF_BUILDWALK);
     if (PRF_FLAGGED(ch, PRF_BUILDWALK))
-      mudlog(CMP, GET_LEVEL(ch), TRUE, 
+      mudlog(CMP, GET_LEVEL(ch), TRUE,
              "OLC: %s turned buildwalk on. Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
     else
       mudlog(CMP, GET_LEVEL(ch), TRUE,
@@ -991,7 +991,7 @@ ACMD(do_file)
      req_lines = 15; /* default is the last 15 lines */
    else
      req_lines = atoi(value);
-   
+
    if (!(req_file=fopen(fields[l].file,"r"))) {
      mudlog(BRF, LVL_IMPL, TRUE,
             "SYSERR: Error opening file %s using 'file' command.",
@@ -1007,7 +1007,7 @@ ACMD(do_file)
    rewind(req_file);
 
    req_lines = MIN(MIN(req_lines, num_lines),150);
-   
+
    len = snprintf(buf, sizeof(buf), "Last %d lines of %s:\r\n", req_lines, fields[l].file);
 
    get_line(req_file,line);

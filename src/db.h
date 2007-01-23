@@ -157,7 +157,7 @@ void	free_obj(struct obj_data *obj);
 struct obj_data *read_object(obj_vnum nr, int type);
 int	vnum_object(char *searchname, struct char_data *ch);
 int     vnum_room(char *, struct char_data *);
-int     vnum_trig(char *, struct char_data *); 
+int     vnum_trig(char *, struct char_data *);
 
 #define REAL 0
 #define VIRTUAL 1
@@ -174,7 +174,7 @@ struct reset_com {
    char *sarg1;		/* string argument                      */
    char *sarg2;		/* string argument                      */
 
-   /* 
+   /*
 	*  Commands:              *
 	*  'M': Read a mobile     *
 	*  'O': Read an object    *
@@ -271,7 +271,7 @@ struct obj_save_data_t {
   struct obj_data *obj;
   int locate;
   struct obj_save_data_t *next;
-}; 
+};
 typedef struct obj_save_data_t obj_save_data;
 
 

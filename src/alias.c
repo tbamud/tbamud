@@ -53,12 +53,12 @@ void write_aliases(struct char_data *ch)
 		repllen, temp->replacement + 1,
 		temp->type);
   }
-  
+
   fclose(file);
 }
 
 void read_aliases(struct char_data *ch)
-{   
+{
   FILE *file;
   char xbuf[MAX_STRING_LENGTH];
   struct alias_data *t2, *prev = NULL;
@@ -77,9 +77,9 @@ void read_aliases(struct char_data *ch)
     }
     return;
   }
- 
+
   CREATE(GET_ALIASES(ch), struct alias_data, 1);
-  t2 = GET_ALIASES(ch); 
+  t2 = GET_ALIASES(ch);
 
   for (;;) {
     /* Read the aliased command. */
@@ -95,13 +95,13 @@ void read_aliases(struct char_data *ch)
 
     *xbuf = ' ';		/* Doesn't need terminated, fgets() will. */
     fgets(xbuf + 1, length + 1, file);
-    t2->replacement = strdup(xbuf); 
+    t2->replacement = strdup(xbuf);
 
     /* Figure out the alias type. */
     if (fscanf(file, "%d\n", &length) != 1)
       goto read_alias_error;
 
-    t2->type = length; 
+    t2->type = length;
 
     if (feof(file))
       break;
@@ -109,7 +109,7 @@ void read_aliases(struct char_data *ch)
     CREATE(t2->next, struct alias_data, 1);
     prev = t2;
     t2 = t2->next;
-  }; 
+  };
 
   fclose(file);
   return;
@@ -121,7 +121,7 @@ read_alias_error:
   if (prev)
     prev->next = NULL;
   fclose(file);
-} 
+}
 
 void delete_aliases(const char *charname)
 {
@@ -151,7 +151,7 @@ void write_aliases_ascii(FILE *file, struct char_data *ch)
 
   for (temp = GET_ALIASES(ch); temp; temp = temp->next)
     count++;
-    
+
   fprintf(file, "Alis: %d\n", count);
 	// the +1 thing below is due to alias replacements having
 	// a space prepended in memory. The reason for this escapes me.
@@ -162,13 +162,13 @@ void write_aliases_ascii(FILE *file, struct char_data *ch)
 		  "%s\n"	/* Replacement */
 		  "%d\n",	/* Type */
 		temp->alias,
-		temp->replacement+1, 
+		temp->replacement+1,
 		temp->type);
   }
 }
 
 void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
-{   
+{
 	int i;
   struct alias_data *temp;
   char abuf[MAX_INPUT_LENGTH], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
@@ -177,7 +177,7 @@ void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
 		GET_ALIASES(ch) = NULL;
     return; // no aliases in the list
   }
-  
+
   for (i = 0; i < count; i++) {
     /* Read the aliased command. */
 		get_line(file, abuf);
@@ -185,11 +185,11 @@ void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
     /* Read the replacement. */
 		get_line(file, tbuf);
     strcpy(rbuf, " ");
-    strcat(rbuf, tbuf); // strcat: OK  
-        
+    strcat(rbuf, tbuf); // strcat: OK
+
 		/* read the type */
 		get_line(file, tbuf);
-    
+
     if (abuf && *abuf && tbuf && *tbuf && rbuf && *rbuf)
     {
 		  CREATE(temp, struct alias_data, 1);
@@ -199,6 +199,6 @@ void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
 		  temp->next = GET_ALIASES(ch);
 		  GET_ALIASES(ch) = temp;
   	}
-  } 
-  
+  }
+
 }

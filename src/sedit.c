@@ -51,7 +51,7 @@ void sedit_save_to_disk(int num)
 }
 
 /*-------------------------------------------------------------------*\
-  utility functions 
+  utility functions
 \*-------------------------------------------------------------------*/
 
 ACMD(do_oasis_sedit)
@@ -67,7 +67,7 @@ ACMD(do_oasis_sedit)
   /** Parse any arguments.                                                   **/
   /****************************************************************************/
   buf3 = two_arguments(argument, buf1, buf2);
-  
+
   if (!*buf1) {
     send_to_char(ch, "Specify a shop VNUM to edit.\r\n");
     return;
@@ -76,32 +76,32 @@ ACMD(do_oasis_sedit)
       send_to_char(ch, "Yikes!  Stop that, someone will get hurt!\r\n");
       return;
     }
-    
+
     save = TRUE;
-    
+
     if (is_number(buf2))
       number = atoi(buf2);
     else if (GET_OLC_ZONE(ch) > 0) {
       zone_rnum zlok;
-      
+
       if ((zlok = real_zone(GET_OLC_ZONE(ch))) == NOWHERE)
         number = NOWHERE;
       else
         number = genolc_zone_bottom(zlok);
     }
-    
+
     if (number == NOWHERE) {
       send_to_char(ch, "Save which zone?\r\n");
       return;
     }
   }
-  
+
   /****************************************************************************/
   /** If a numeric argument was given, get it.                               **/
   /****************************************************************************/
   if (number == NOWHERE)
     number = atoi(buf1);
-  
+
   /****************************************************************************/
   /** Check that the shop isn't already being edited.                        **/
   /****************************************************************************/
@@ -114,12 +114,12 @@ ACMD(do_oasis_sedit)
       }
     }
   }
-  
+
   /****************************************************************************/
   /** Point d to the builder's descriptor.                                   **/
   /****************************************************************************/
   d = ch->desc;
-  
+
   /****************************************************************************/
   /** Give the descriptor an OLC structure.                                  **/
   /****************************************************************************/
@@ -128,9 +128,9 @@ ACMD(do_oasis_sedit)
       "SYSERR: do_oasis_sedit: Player already had olc structure.");
     free(d->olc);
   }
-  
+
   CREATE(d->olc, struct oasis_olc_data, 1);
-  
+
   /****************************************************************************/
   /** Find the zone.                                                         **/
   /****************************************************************************/
@@ -141,13 +141,13 @@ ACMD(do_oasis_sedit)
     d->olc = NULL;
     return;
   }
-  
+
   /****************************************************************************/
   /** Everyone but IMPLs can only edit zones they have been assigned.        **/
   /****************************************************************************/
   if (!can_edit_zone(ch, OLC_ZNUM(d))) {
 send_to_char(ch, " You do not have permission to edit zone %d. Try zone %d.\r\n", zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
- 
+
     /**************************************************************************/
     /** Free the OLC structure.                                              **/
     /**************************************************************************/
@@ -155,19 +155,19 @@ send_to_char(ch, " You do not have permission to edit zone %d. Try zone %d.\r\n"
     d->olc = NULL;
     return;
   }
-  
+
   if (save) {
     send_to_char(ch, "Saving all shops in zone %d.\r\n",
       zone_table[OLC_ZNUM(d)].number);
     mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
       "OLC: %s saves shop info for zone %d.",
       GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
-    
+
     /**************************************************************************/
     /** Save the shops to the shop file.                                     **/
     /**************************************************************************/
     save_shops(OLC_ZNUM(d));
-    
+
     /**************************************************************************/
     /** Free the OLC structure.                                              **/
     /**************************************************************************/
@@ -175,19 +175,19 @@ send_to_char(ch, " You do not have permission to edit zone %d. Try zone %d.\r\n"
     d->olc = NULL;
     return;
   }
-  
+
   OLC_NUM(d) = number;
-  
+
   if ((real_num = real_shop(number)) != NOTHING)
     sedit_setup_existing(d, real_num);
   else
     sedit_setup_new(d);
-  
+
   STATE(d) = CON_SEDIT;
-  
+
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT(PLR_FLAGS(ch), PLR_WRITING);
-  
+
   mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing zone %d allowed zone %d",
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
@@ -253,7 +253,7 @@ void sedit_setup_existing(struct descriptor_data *d, int rshop_num)
 }
 
 /**************************************************************************
- Menu functions 
+ Menu functions
  **************************************************************************/
 
 void sedit_products_menu(struct descriptor_data *d)
@@ -312,7 +312,7 @@ void sedit_rooms_menu(struct descriptor_data *d)
   struct shop_data *shop;
   int i;
   room_rnum rnum;
-  
+
   shop = OLC_SHOP(d);
   get_char_colors(d->character);
 
@@ -322,7 +322,7 @@ void sedit_rooms_menu(struct descriptor_data *d)
     rnum = real_room(S_ROOM(shop, i));
     /* if the room has been deleted, this may crash us otherwise. */
     /* set to 0 to be deletable.   -- Welcor 09/04                */
-    if (rnum == NOWHERE)  
+    if (rnum == NOWHERE)
       S_ROOM(shop, i) = rnum = 0;
 
     write_to_output(d, "%2d - [%s%5d%s] - %s%s%s\r\n", i, cyn, S_ROOM(shop, i), nrm,
@@ -839,7 +839,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
 /*-------------------------------------------------------------------*/
 
 /*
- * END OF CASE 
+ * END OF CASE
  * If we get here, we have probably changed something, and now want to
  * return to main menu.  Use OLC_VAL as a 'has changed' flag.
  */

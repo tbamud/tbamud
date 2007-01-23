@@ -11,7 +11,6 @@
 #include "conf.h"
 #include "sysdep.h"
 
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -366,15 +365,15 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   while (ch->affected)
     affect_remove(ch, ch->affected);
 
-  /* To make ordinary commands work in scripts.  welcor*/  
-  GET_POS(ch) = POS_STANDING; 
-  
+  /* To make ordinary commands work in scripts.  welcor*/
+  GET_POS(ch) = POS_STANDING;
+
   if (killer) {
     if (death_mtrigger(ch, killer))
       death_cry(ch);
   } else
     death_cry(ch);
- 
+
   update_pos(ch);
 
   make_corpse(ch);
@@ -706,7 +705,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   if (!ok_damage_shopkeeper(ch, victim))
     return (0);
 
-  /* You can't damage an immortal! */ 
+  /* You can't damage an immortal! */
   if (!IS_NPC(victim) && (GET_LEVEL(victim) >= LVL_IMMORT))
     dam = 0;
 
@@ -757,7 +756,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
    * dam_message just sends a generic "You hit $n extremely hard.".
    * skill_message is preferable to dam_message because it is more
    * descriptive.
-   * 
+   *
    * If we are _not_ attacking with a weapon (i.e. a spell), always use
    * skill_message. If we are attacking with a weapon: If this is a miss or a
    * death blow, send a skill_message if one exists; if not, default to a

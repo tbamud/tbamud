@@ -167,22 +167,22 @@ int add_to_save_list(zone_vnum zone, int type)
 {
   struct save_list_data *nitem;
   zone_rnum rznum;
-  
+
   if (type == SL_CFG)
-    return FALSE; 
-  
+    return FALSE;
+
   rznum = real_zone(zone);
   if (rznum == NOWHERE || rznum > top_of_zone_table) {
     if (zone != AEDIT_PERMISSION) {
       log("SYSERR: add_to_save_list: Invalid zone number passed. (%d => %d, 0-%d)", zone, rznum, top_of_zone_table);
       return FALSE;
     }
-  } 
-  
+  }
+
   for (nitem = save_list; nitem; nitem = nitem->next)
     if (nitem->zone == zone && nitem->type == type)
       return FALSE;
-  
+
   CREATE(nitem, struct save_list_data, 1);
   nitem->zone = zone;
   nitem->type = type;
@@ -196,11 +196,11 @@ int add_to_save_list(zone_vnum zone, int type)
 int in_save_list(zone_vnum zone, int type)
 {
   struct save_list_data *nitem;
-  
+
   for (nitem = save_list; nitem; nitem = nitem->next)
     if (nitem->zone == zone && nitem->type == type)
       return TRUE;
-  
+
   return FALSE;
 }
 
@@ -282,19 +282,19 @@ ACMD(do_export_zone)
   char sysbuf[MAX_INPUT_LENGTH];
   char fn[MAX_INPUT_LENGTH], *f;
   void space_to_minus(char *str);
-  
+
   if (IS_NPC(ch) || GET_LEVEL(ch) < LVL_IMPL)
     return;
 
   skip_spaces(&argument);
   zvnum = atoi(argument);
   zrnum = real_zone(zvnum);
-  
+
   if (zrnum == NOWHERE) {
     send_to_char(ch, "Export which zone?\r\n");
     return;
   }
-  
+
   if (!export_info_file(zrnum))
     send_to_char(ch, "Info file not saved!\r\n");
   if (!export_save_shops(zrnum))
@@ -314,8 +314,8 @@ ACMD(do_export_zone)
   snprintf(fn, sizeof(fn), "%d_%s.tgz", zvnum, zone_table[zrnum].name);
   f = fn;
   space_to_minus(f);
-  snprintf(sysbuf, sizeof(sysbuf), 
-           LIB_ETC "export_script.sh %s &", 
+  snprintf(sysbuf, sizeof(sysbuf),
+           LIB_ETC "export_script.sh %s &",
            fn);
   system(sysbuf);
   send_to_char(ch, "Files tar'ed to \"%s\"\r\n", fn);
@@ -326,7 +326,7 @@ int export_info_file(zone_rnum zrnum)
 {
   int i;
   FILE *info_file;
-  
+
   if (!(info_file = fopen("world/export/qq.info", "w"))) {
     mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_info_file : Cannot open file!");
     return FALSE;
@@ -335,7 +335,7 @@ int export_info_file(zone_rnum zrnum)
     fclose(info_file);
     return FALSE;
   }
-  
+
   fprintf(info_file, "The files accompanying this info file contain the area: %s\n", zone_table[zrnum].name);
   fprintf(info_file, "It was written by: %s.\n\n", zone_table[zrnum].builders);
   fprintf(info_file, "The author has given permission to distribute the area, provided credit is\n");
@@ -350,24 +350,24 @@ int export_info_file(zone_rnum zrnum)
     fprintf(info_file, "2. Exits out of this zone have been ZZ'd. So all doors leading out have ZZ??\n");
     fprintf(info_file, "   instead of the room vnum (?? are numbers 00 - 99).\n");
     fprintf(info_file, "   In this zone, the exit rooms in question are:\n");
-		     
+
     for (i = genolc_zone_bottom(zrnum); i <= zone_table[zrnum].top; i++) {
       room_rnum rnum = real_room(i);
       struct room_data *room;
       int j;
-  
-      if (rnum == NOWHERE) 
+
+      if (rnum == NOWHERE)
         continue;
-  
+
       room = &world[rnum];
-  
+
       for (j = 0; j < NUM_OF_DIRS; j++) {
         if (!R_EXIT(room, j))
           continue;
-  
+
         if (R_EXIT(room, j)->to_room == NOWHERE || world[R_EXIT(room, j)->to_room].zone == zrnum)
           continue;
-  
+
         fprintf(info_file, "      Room QQ%02d : Exit to the %s\n",
                            room->number%100, dirs[j]);
       }
@@ -375,9 +375,9 @@ int export_info_file(zone_rnum zrnum)
     zone_exits = 0;
   } else {
     fprintf(info_file, "2. This area doesn't have any exits _out_ of the zone.\n");
-    fprintf(info_file, "   More info on connections in the zone description room.\n");    
+    fprintf(info_file, "   More info on connections in the zone description room.\n");
   }
-  
+
   fprintf(info_file, "\nAdditional zone information is available in the zone description room QQ00.\n");
   fprintf(info_file, "The Builder's Academy is maintaining and improving these zones. Any typo or\n");
   fprintf(info_file, "bug reports should be reported to rumble@builderacademy.net or stop by The Builder Academy\n");
@@ -389,7 +389,7 @@ int export_info_file(zone_rnum zrnum)
   fprintf(info_file, "Rumble - Admin of TBA\n");
   fprintf(info_file, "Welcor - Coder of TBA\n");
   fprintf(info_file, "\ntelnet://builderacademy.net:9091/\n");
-  
+
   fclose(info_file);
   return TRUE;
 }
@@ -423,7 +423,7 @@ int export_save_shops(zone_rnum zrnum)
         if (obj_index[S_PRODUCT(shop, j)].vnum < genolc_zone_bottom(zrnum) ||
             obj_index[S_PRODUCT(shop, j)].vnum > zone_table[zrnum].top)
           continue;
-	
+
 	fprintf(shop_file, "QQ%02d\n", obj_index[S_PRODUCT(shop, j)].vnum%100);
       }
       fprintf(shop_file, "-1\n");
@@ -439,8 +439,8 @@ int export_save_shops(zone_rnum zrnum)
       /*
        * Save the buy types and namelists.
        */
-      for (j = 0;S_BUYTYPE(shop, j) != NOTHING; j++) 
-        fprintf(shop_file, "%d%s\n", 
+      for (j = 0;S_BUYTYPE(shop, j) != NOTHING; j++)
+        fprintf(shop_file, "%d%s\n",
                 S_BUYTYPE(shop, j),
 		S_BUYWORD(shop, j) ? S_BUYWORD(shop, j) : "");
       fprintf(shop_file, "-1\n");
@@ -481,13 +481,13 @@ int export_save_shops(zone_rnum zrnum)
         if (S_ROOM(shop, j) < genolc_zone_bottom(zrnum) ||
             S_ROOM(shop, j) > zone_table[zrnum].top)
           continue;
-      
+
         fprintf(shop_file, "QQ%02d\n", S_ROOM(shop, j)%100);
       }
       fprintf(shop_file, "-1\n");
 
       /*
-       * Save open/closing times 
+       * Save open/closing times
        */
       fprintf(shop_file, "%d\n%d\n%d\n%d\n", S_OPEN1(shop), S_CLOSE1(shop),
 		S_OPEN2(shop), S_CLOSE2(shop));
@@ -527,7 +527,7 @@ int export_save_mobiles(zone_rnum rznum)
 int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 {
 
-  char bit1[64]; 
+  char bit1[64];
   char bit2[64];
   char ldesc[MAX_STRING_LENGTH];
   char ddesc[MAX_STRING_LENGTH];
@@ -577,14 +577,14 @@ int export_save_zone(zone_rnum zrnum)
 {
   int subcmd;
   FILE *zone_file;
-  
+
   if (!(zone_file = fopen("world/export/qq.zon", "w"))) {
     mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_zone : Cannot open file!");
     return FALSE;
   }
 
   /*
-   * Print zone header to file	
+   * Print zone header to file
    */
   fprintf(zone_file, "#QQ\n"
                  "%s~\n"
@@ -686,7 +686,7 @@ int export_save_zone(zone_rnum zrnum)
               ZCMD(zrnum, subcmd).if_flag,
               ZCMD(zrnum, subcmd).arg1,
               ZCMD(zrnum, subcmd).arg2,
-              world[ZCMD(zrnum, subcmd).arg3].number%100, 
+              world[ZCMD(zrnum, subcmd).arg3].number%100,
               ZCMD(zrnum, subcmd).sarg1,
               ZCMD(zrnum, subcmd).sarg2);
       break;
@@ -702,7 +702,7 @@ int export_save_zone(zone_rnum zrnum)
   }
   fputs("S\n$\n", zone_file);
   fclose(zone_file);
- 
+
   return TRUE;
 }
 
@@ -749,7 +749,7 @@ int export_save_objects(zone_rnum zrnum)
       sprintascii(bit2, GET_OBJ_PERM(obj));
 
       fprintf(obj_file,
-	      "%d %s %s %s\n", 
+	      "%d %s %s %s\n",
 	      GET_OBJ_TYPE(obj), buf, bit1, bit2);
 
       if (GET_OBJ_TYPE(obj) != ITEM_CONTAINER)
@@ -764,18 +764,18 @@ int export_save_objects(zone_rnum zrnum)
 	        GET_OBJ_VAL(obj, 2) == -1 ? "" : "QQ", /* key */
 	        GET_OBJ_VAL(obj, 2) == -1 ? -1 : GET_OBJ_VAL(obj, 2)%100,
 	        GET_OBJ_VAL(obj, 3));
-      
+
       fprintf(obj_file,
-	      "%d %d %d %d\n",	      
+	      "%d %d %d %d\n",
 	      GET_OBJ_WEIGHT(obj), GET_OBJ_COST(obj), GET_OBJ_RENT(obj), GET_OBJ_LEVEL(obj));
 
       /*
-       * Do we have script(s) attached ? 
+       * Do we have script(s) attached ?
        */
       export_script_save_to_disk(obj_file, obj, OBJ_TRIGGER);
-      
+
       /*
-       * Do we have extra descriptions? 
+       * Do we have extra descriptions?
        */
       if (obj->ex_description) {	/* Yes, save them too. */
 	for (ex_desc = obj->ex_description; ex_desc; ex_desc = ex_desc->next) {
@@ -794,12 +794,12 @@ int export_save_objects(zone_rnum zrnum)
 	}
       }
       /*
-       * Do we have affects? 
+       * Do we have affects?
        */
       for (i = 0; i < MAX_OBJ_AFFECT; i++)
 	if (obj->affected[i].modifier)
 	  fprintf(obj_file, "A\n"
-		            "%d %d\n", 
+		            "%d %d\n",
 		  obj->affected[i].location,
 		  obj->affected[i].modifier);
     }
@@ -898,7 +898,7 @@ int export_save_rooms(zone_rnum zrnum)
 			      dflag,
 			      R_EXIT(room, j)->key == NOTHING ? "" : "QQ",
 			      R_EXIT(room, j)->key == NOTHING ? -1 : R_EXIT(room, j)->key % 100 ,
-			      R_EXIT(room, j)->to_room == NOTHING ? "" : "QQ", 
+			      R_EXIT(room, j)->to_room == NOTHING ? "" : "QQ",
 			      R_EXIT(room, j)->to_room != NOTHING ? (world[R_EXIT(room, j)->to_room].number%100) : -1);
           else {
 	    fprintf(room_file,"D%d\n"
@@ -977,7 +977,7 @@ int export_save_triggers(zone_rnum zrnum)
     mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_triggers : Cannot open file!");
     return FALSE;
   }
-        
+
   for (i = genolc_zone_bottom(zrnum); i <= zone_table[zrnum].top; i++) {
     trig_rnum rnum;
 
@@ -994,7 +994,7 @@ int export_save_triggers(zone_rnum zrnum)
            trig->attach_type,
            *bitBuf ? bitBuf : "0", GET_TRIG_NARG(trig),
            GET_TRIG_ARG(trig) ? GET_TRIG_ARG(trig) : "", STRING_TERMINATOR);
-                
+
       fprintf(trig_file, "* This trigger has been exported 'as is'. This means that vnums\n"
                          "* in this file are not changed, and will have to be edited by hand.\n"
                          "* This zone was number %d on The Builder Academy, so you\n"
@@ -1006,7 +1006,7 @@ int export_save_triggers(zone_rnum zrnum)
       fprintf(trig_file, "%c\n", STRING_TERMINATOR);
     }
   }
-        
+
   fprintf(trig_file, "$%c\n", STRING_TERMINATOR);
   fclose(trig_file);
   return TRUE;

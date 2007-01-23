@@ -119,8 +119,8 @@
 #define SPELL_ACID_BREATH            205
 #define SPELL_LIGHTNING_BREATH       206
 
-                                           
-#define SPELL_DG_AFFECT              298  /* to make an affect induced by dg_affect 
+
+#define SPELL_DG_AFFECT              298  /* to make an affect induced by dg_affect
                                            * look correct on 'stat' we need to define
                                            * it with a 'spellname'.
                                            */

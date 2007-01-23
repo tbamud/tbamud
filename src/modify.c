@@ -76,7 +76,7 @@ int length[] =
 void smash_tilde(char *str)
 {
   /*
-   * Erase any _line ending_ tildes inserted in the editor. 
+   * Erase any _line ending_ tildes inserted in the editor.
    * The load mechanism can't handle those, yet.
    * -- Welcor 04/2003
    */
@@ -102,7 +102,7 @@ void string_write(struct descriptor_data *d, char **writeto, size_t len, long ma
   if (using_improved_editor)
     d->backstr = (char *)data;
   else if (data)
-    free(data); 
+    free(data);
 
   d->str = writeto;
   d->max_str = len;
@@ -123,14 +123,14 @@ void string_add(struct descriptor_data *d, char *str)
   delete_doubledollar(str);
   smash_tilde(str);
 
-  /* determine if this is the terminal string, and truncate if so */ 
-  /* changed to only accept '@' at the beginning of line - J. Elson 1/17/94 */ 
-  /* changed to only accept '@' if it's by itself - fnord 10/15/2004 */ 
-  if ((action = (*str == '@' && !str[1]))) 
-    *str = '\0'; 
-  else 
-    if ((action = improved_editor_execute(d, str)) == STRINGADD_ACTION) 
-      return; 
+  /* determine if this is the terminal string, and truncate if so */
+  /* changed to only accept '@' at the beginning of line - J. Elson 1/17/94 */
+  /* changed to only accept '@' if it's by itself - fnord 10/15/2004 */
+  if ((action = (*str == '@' && !str[1])))
+    *str = '\0';
+  else
+    if ((action = improved_editor_execute(d, str)) == STRINGADD_ACTION)
+      return;
 
   if (action != STRINGADD_OK)
     /* Do nothing. */ ;
@@ -141,7 +141,7 @@ void string_add(struct descriptor_data *d, char *str)
       CREATE(*d->str, char, d->max_str);
       strcpy(*d->str, str);	/* strcpy: OK (size checked) */
       if (!using_improved_editor)
-        action = STRINGADD_SAVE; 
+        action = STRINGADD_SAVE;
     } else {
       CREATE(*d->str, char, strlen(str) + 3);
       strcpy(*d->str, str);	/* strcpy: OK (size checked) */
@@ -150,7 +150,7 @@ void string_add(struct descriptor_data *d, char *str)
     if (strlen(str) + strlen(*d->str) + 3 > d->max_str) { /* \r\n\0 */
       send_to_char(d->character, "String too long.  Last line skipped.\r\n");
       if (!using_improved_editor)
-        action = STRINGADD_SAVE; 
+        action = STRINGADD_SAVE;
       else if (action == STRINGADD_OK)
         action = STRINGADD_ACTION;    /* No appending \r\n\0, but still let them save. */
     } else {
@@ -256,7 +256,7 @@ void exdesc_string_cleanup(struct descriptor_data *d, int action)
 {
   if (action == STRINGADD_ABORT)
     write_to_output(d, "Description aborted.\r\n");
-  
+
   write_to_output(d, "%s", CONFIG_MENU);
   STATE(d) = CON_MENU;
 }
@@ -365,25 +365,25 @@ ACMD(do_skillset)
 char *next_page(char *str, struct char_data *ch)
 {
   int col = 1, line = 1;
-  
+
   for (;; str++) {
     /* If end of string, return NULL. */
     if (*str == '\0')
       return (NULL);
-		
+
     /* If we're at the start of the next page, return this fact. */
     else if (line > (GET_PAGE_LENGTH(ch) - (PRF_FLAGGED(ch, PRF_COMPACT) ? 1 : 2)))
       return (str);
-			    
+
     /* Check for the begining of an ANSI color code block. */
     else if (*str == '\x1B')
       str++;
-				
+
     else if (*str == '@') {
       if (*(str + 1) != '@')
         str++;
     }
-				    
+
     /* Check for everything else. */
     else {
       /* Carriage return puts us in column one. */
@@ -392,7 +392,7 @@ char *next_page(char *str, struct char_data *ch)
       /* Newline puts us on the next line. */
       else if (*str == '\n')
         line++;
-					    
+
       /* We need to check here and see if we are over the page width,
        * and if so, compensate by going to the begining of the next line.
        */

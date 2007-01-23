@@ -83,7 +83,7 @@ void load_help(FILE *fl, char *name)
         log("SYSERR: Help entry does not have a min level. %s", key);
         el.min_level = 0;
       }
-    }         
+    }
     el.duplicate = 0;
     el.entry = strdup(entry);
     scan = one_word(key, next_key);
@@ -92,10 +92,10 @@ void load_help(FILE *fl, char *name)
       help_table[top_of_h_table++] = el;
       el.duplicate++;
       scan = one_word(scan, next_key);
-     } 
+     }
    /* get next keyword line (or $) */
     get_one_line(fl, key);
-  }  
+  }
 }
 
 int hsort(const void *a, const void *b)
@@ -111,8 +111,8 @@ int hsort(const void *a, const void *b)
 ACMD(do_oasis_hedit)
 {
   struct descriptor_data *d;
-  int i; 
- 
+  int i;
+
   if (!can_edit_zone(ch, HEDIT_PERMISSION)) {
     send_to_char(ch, "You don't have access to editing Help files.\r\n");
     return;
@@ -125,7 +125,7 @@ ACMD(do_oasis_hedit)
     }
 
   skip_spaces(&argument);
-  
+
   if (!*argument) {
     send_to_char(ch, "Please specify a help entry to edit.\r\n");
     return;
@@ -140,7 +140,7 @@ ACMD(do_oasis_hedit)
     send_to_char(ch, "Done.\r\n");
     return;
   }
-  
+
 
   /*
    * Give descriptor an OLC structure.
@@ -155,16 +155,16 @@ ACMD(do_oasis_hedit)
   OLC_NUM(d) = 0;
   OLC_STORAGE(d) = strdup(argument);
   OLC_ZNUM(d) = search_help(ch, OLC_STORAGE(d));
-  
+
   for(i = 0; i < (int)strlen(argument); i++)
     argument[i] = toupper(argument[i]);
-  
-  if (OLC_ZNUM(d) <= 0) 
+
+  if (OLC_ZNUM(d) <= 0)
      hedit_setup_new(d, OLC_STORAGE(d));
-  else 
+  else
      hedit_setup_existing(d, OLC_ZNUM(d));
-  
- 
+
+
   STATE(d) = CON_HEDIT;
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT(PLR_FLAGS(ch), PLR_WRITING);
@@ -236,8 +236,8 @@ void hedit_save_to_disk(struct descriptor_data *d)
 {
   FILE *fp;
   char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE], buf[READ_SIZE];
-  int i; 
-   
+  int i;
+
   snprintf(index_name, sizeof(index_name), "%s%s", HLP_PREFIX, HELP_FILE);
   if (!(fp = fopen(index_name, "w"))) {
     log("SYSERR: Could not write help index file");
@@ -249,8 +249,8 @@ void hedit_save_to_disk(struct descriptor_data *d)
       continue;
     strncpy(buf1, help_table[i].entry ? help_table[i].entry : "Empty\n\r", sizeof(buf1) - 1);
     strip_cr(buf1);
-   
-    /* 
+
+    /*
      * Forget making a buffer, lets just write the thing now.
      */
     fprintf(fp, "%s" "#%d\n", buf1, help_table[i].min_level);
@@ -264,7 +264,7 @@ void hedit_save_to_disk(struct descriptor_data *d)
 }
 
 /**************************************************************************
- Menu functions 
+ Menu functions
  **************************************************************************/
 
 /*
@@ -274,9 +274,9 @@ void hedit_disp_menu(struct descriptor_data *d)
 {
   clear_screen(d);
   write_to_output(d,
-	  
+
 "\r\n@c-------------------------------------------------------------------------@n\r\n"
-	  "                         @CHelpfile Editor@n        \r\n" 
+	  "                         @CHelpfile Editor@n        \r\n"
 "@c-------------------------------------------------------------------------@n\r\n"
 	  "@g1@n) Keyword [@G%-12s@g]@n\r\n"
 	  "@g2@n) Entry       : \n@y%s\r\n"
@@ -310,9 +310,9 @@ void hedit_parse(struct descriptor_data *d, char *arg)
       snprintf(buf, sizeof(buf), "OLC: %s edits help for %s.", GET_NAME(d->character), OLC_HELP(d)->keywords);
       mudlog(TRUE, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), CMP, buf);
       write_to_output(d, "Help files saved to disk.\r\n");
-      hedit_save_internally(d);     
+      hedit_save_internally(d);
       /*
-       * Do NOT free strings! Just the help structure. 
+       * Do NOT free strings! Just the help structure.
        */
       cleanup_olc(d, CLEANUP_STRUCTS);
       break;
@@ -419,66 +419,66 @@ void hedit_string_cleanup(struct descriptor_data *d, int terminator)
  }
 }
 
-ACMD(do_helpcheck) 
-{ 
-   char buf[MAX_STRING_LENGTH]; 
-   int i, w = 0; 
-   char arg[64]; 
+ACMD(do_helpcheck)
+{
+   char buf[MAX_STRING_LENGTH];
+   int i, w = 0;
+   char arg[64];
    ACMD(do_action);
-              
-   if(!help_table) { 
-      send_to_char(ch, "The help_table doesn't exist!\r\n"); 
-      return; 
-   } 
-                                
-   sprintf(buf, "\r\n"); 
-   strcpy(buf, "Commands without help entries:\r\n"); 
-   strcat(buf, "-------------------------------------------------------------------\r\n"); 
-                                          
-   for(i = 1; *(complete_cmd_info[i].command) != '\n'; i++) { 
+
+   if(!help_table) {
+      send_to_char(ch, "The help_table doesn't exist!\r\n");
+      return;
+   }
+
+   sprintf(buf, "\r\n");
+   strcpy(buf, "Commands without help entries:\r\n");
+   strcat(buf, "-------------------------------------------------------------------\r\n");
+
+   for(i = 1; *(complete_cmd_info[i].command) != '\n'; i++) {
       snprintf(arg, sizeof(arg), "%s", complete_cmd_info[i].command);
-      if(search_help(ch, arg) <= 0) { 
-         if(complete_cmd_info[i].command_pointer == do_action) 
-            continue; 
-       w++; 
-       w = w%3; 
-       sprintf(buf + strlen(buf), " %-20.20s%s", complete_cmd_info[i].command, (w ? "|":"\r\n")); 
+      if(search_help(ch, arg) <= 0) {
+         if(complete_cmd_info[i].command_pointer == do_action)
+            continue;
+       w++;
+       w = w%3;
+       sprintf(buf + strlen(buf), " %-20.20s%s", complete_cmd_info[i].command, (w ? "|":"\r\n"));
    }
   }
-   if(w) 
-     strcat(buf, "\r\n"); 
-               
-   if(ch->desc) 
-     page_string(ch->desc, buf, 1); 
-                                  
-   *buf = '\0';  
-} 
-                                     
-ACMD(do_hindex) 
-{ 
-  int len, count = 0, i; 
-  char buf[MAX_STRING_LENGTH]; 
-  
-  skip_spaces(&argument); 
-    
-  if (!*argument) { 
-    send_to_char(ch, "Usage: hindex <string>\r\n"); 
-    return; 
-  } 
-		
-  len = sprintf(buf, "Help index entries based on '%s':\r\n", argument); 
-  for (i = 0; i <= top_of_h_table; i++) 
-    if (is_abbrev(argument, help_table[i].keywords) && (GET_LEVEL(ch) >= help_table[i].min_level)) 
-      len += snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", 
-    help_table[i].keywords, (++count % 3 ? "" : "\r\n")); 
- 
-    if (count % 3) 
-      len += snprintf(buf + len, sizeof(buf) - len, "\r\n"); 
-		      
-    if (!count) 
-      len += snprintf(buf + len, sizeof(buf) - len, "  None.\r\n"); 
-			
-  page_string(ch->desc, buf, TRUE); 
+   if(w)
+     strcat(buf, "\r\n");
+
+   if(ch->desc)
+     page_string(ch->desc, buf, 1);
+
+   *buf = '\0';
+}
+
+ACMD(do_hindex)
+{
+  int len, count = 0, i;
+  char buf[MAX_STRING_LENGTH];
+
+  skip_spaces(&argument);
+
+  if (!*argument) {
+    send_to_char(ch, "Usage: hindex <string>\r\n");
+    return;
+  }
+
+  len = sprintf(buf, "Help index entries based on '%s':\r\n", argument);
+  for (i = 0; i <= top_of_h_table; i++)
+    if (is_abbrev(argument, help_table[i].keywords) && (GET_LEVEL(ch) >= help_table[i].min_level))
+      len += snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s",
+    help_table[i].keywords, (++count % 3 ? "" : "\r\n"));
+
+    if (count % 3)
+      len += snprintf(buf + len, sizeof(buf) - len, "\r\n");
+
+    if (!count)
+      len += snprintf(buf + len, sizeof(buf) - len, "  None.\r\n");
+
+  page_string(ch->desc, buf, TRUE);
 }
 
 void free_help(struct help_index_element *help)
@@ -496,7 +496,7 @@ void free_help(struct help_index_element *help)
 void free_help_table(void)
 {
 int i;
- 
+
     if (help_table) {
       for (i = 0; i <= top_of_h_table; i++) {
         if (help_table[i].keywords)

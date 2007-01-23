@@ -137,7 +137,7 @@ void assign_mobiles(void)
 
   ASSIGNMOB(1200, receptionist);
   ASSIGNMOB(3005, receptionist);
-  ASSIGNMOB(5404, receptionist);   
+  ASSIGNMOB(5404, receptionist);
   ASSIGNMOB(27713, receptionist);
   ASSIGNMOB(27730, receptionist);
 }

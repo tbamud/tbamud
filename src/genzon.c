@@ -152,7 +152,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   create_world_index(vzone_num, "obj");
   create_world_index(vzone_num, "shp");
   create_world_index(vzone_num, "trg");
-  
+
   /*
    * Make a new zone in memory. This was the source of all the zedit new
    * crashes reported to the CircleMUD list. It was happily overwriting
@@ -182,7 +182,7 @@ rznum = i;
 
   /*
    * Ok, insert the new zone here.
-   */  
+   */
   zone->name = strdup("New Zone");
   zone->number = vzone_num;
   zone->builders = strdup("None");
@@ -234,7 +234,7 @@ void create_world_index(int znum, const char *type)
     break;
   default:
     /*
-     * Caller messed up  
+     * Caller messed up
      */
     return;
   }
@@ -253,7 +253,7 @@ void create_world_index(int znum, const char *type)
 
   /*
    * Index contents must be in order: search through the old file for the
-   * right place, insert the new file, then copy the rest over. 
+   * right place, insert the new file, then copy the rest over.
    */
   snprintf(buf1, sizeof(buf1), "%d.%s", znum, type);
   while (get_line(oldfile, buf)) {
@@ -327,7 +327,7 @@ int save_zone(zone_rnum zone_num)
   char fname[128], oldname[128];
   const char *comment = NULL;
   FILE *zfile;
-  
+
 #if CIRCLE_UNSIGNED_INDEX
   if (zone_num == NOWHERE || zone_num > top_of_zone_table) {
 #else
@@ -344,7 +344,7 @@ int save_zone(zone_rnum zone_num)
   }
 
   /*
-   * Print zone header to file	
+   * Print zone header to file
    */
   fprintf(zfile, "#%d\n"
                  "%s~\n"
@@ -426,7 +426,7 @@ int save_zone(zone_rnum zone_num)
       arg1 = ZCMD(zone_num, subcmd).arg1; /* trigger type */
       arg2 = trig_index[ZCMD(zone_num, subcmd).arg2]->vnum; /* trigger vnum */
       arg3 = world[ZCMD(zone_num, subcmd).arg3].number; /* room num */
-      comment = GET_TRIG_NAME(trig_index[real_trigger(arg2)]->proto); 
+      comment = GET_TRIG_NAME(trig_index[real_trigger(arg2)]->proto);
       break;
     case 'V':
       arg1 = ZCMD(zone_num, subcmd).arg1; /* trigger type */
@@ -447,7 +447,7 @@ int save_zone(zone_rnum zone_num)
 		ZCMD(zone_num, subcmd).command, ZCMD(zone_num, subcmd).if_flag, arg1, arg2, arg3, comment);
     else
       fprintf(zfile, "%c %d %d %d %d %s %s\n",
-              ZCMD(zone_num, subcmd).command, ZCMD(zone_num, subcmd).if_flag, arg1, arg2, arg3, 
+              ZCMD(zone_num, subcmd).command, ZCMD(zone_num, subcmd).if_flag, arg1, arg2, arg3,
               ZCMD(zone_num, subcmd).sarg1, ZCMD(zone_num, subcmd).sarg2);
   }
   fputs("S\n$\n", zfile);
@@ -455,7 +455,7 @@ int save_zone(zone_rnum zone_num)
   snprintf(oldname, sizeof(oldname), "%s/%d.zon", ZON_PREFIX, zone_table[zone_num].number);
   remove(oldname);
   rename(fname, oldname);
-  
+
   if (in_save_list(zone_table[zone_num].number, SL_ZON))
     remove_from_save_list(zone_table[zone_num].number, SL_ZON);
   return TRUE;
@@ -524,7 +524,7 @@ void remove_cmd_from_list(struct reset_com **list, int pos)
   struct reset_com *newlist;
 
   /*
-   * Count number of commands (not including terminator)  
+   * Count number of commands (not including terminator)
    */
   count = count_commands(*list);
 
@@ -553,7 +553,7 @@ void remove_cmd_from_list(struct reset_com **list, int pos)
 /*-------------------------------------------------------------------*/
 
 /*
- * Error check user input and then add new (blank) command  
+ * Error check user input and then add new (blank) command
  */
 int new_command(struct zone_data *zone, int pos)
 {
@@ -561,7 +561,7 @@ int new_command(struct zone_data *zone, int pos)
   struct reset_com *new_com;
 
   /*
-   * Error check to ensure users hasn't given too large an index  
+   * Error check to ensure users hasn't given too large an index
    */
   while (zone->cmd[subcmd].command != 'S')
     subcmd++;
@@ -570,7 +570,7 @@ int new_command(struct zone_data *zone, int pos)
     return 0;
 
   /*
-   * Ok, let's add a new (blank) command 
+   * Ok, let's add a new (blank) command
    */
   CREATE(new_com, struct reset_com, 1);
   new_com->command = 'N';
@@ -581,14 +581,14 @@ int new_command(struct zone_data *zone, int pos)
 /*-------------------------------------------------------------------*/
 
 /*
- * Error check user input and then remove command  
+ * Error check user input and then remove command
  */
 void delete_zone_command(struct zone_data *zone, int pos)
 {
   int subcmd = 0;
 
   /*
-   * Error check to ensure users hasn't given too large an index  
+   * Error check to ensure users hasn't given too large an index
    */
   while (zone->cmd[subcmd].command != 'S')
     subcmd++;
@@ -597,7 +597,7 @@ void delete_zone_command(struct zone_data *zone, int pos)
     return;
 
   /*
-   * Ok, let's zap it  
+   * Ok, let's zap it
    */
   remove_cmd_from_list(&zone->cmd, pos);
 }

@@ -15,7 +15,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
-    
+
 
 #include "structs.h"
 #include "dg_scripts.h"
@@ -69,13 +69,13 @@ int remove_var(struct trig_var_data **var_list, char *name)
       free_var_el(i);
     }
 
-    return 1;      
+    return 1;
   }
-  
+
   return 0;
 }
 
-/* 
+/*
  * Return memory used by a trigger
  * The command list is free'd when changed and when
  * shutting down.
@@ -84,7 +84,7 @@ void free_trigger(struct trig_data *trig)
 {
     free(trig->name);
     trig->name = NULL;
-  
+
     if (trig->arglist) {
       free(trig->arglist);
       trig->arglist = NULL;
@@ -95,7 +95,7 @@ void free_trigger(struct trig_data *trig)
     }
     if (GET_TRIG_WAIT(trig))
       event_cancel(GET_TRIG_WAIT(trig));
-   
+
     free(trig);
 }
 
@@ -110,7 +110,7 @@ void extract_trigger(struct trig_data *trig)
     GET_TRIG_WAIT(trig) = NULL;
   }
 
-  trig_index[trig->nr]->number--; 
+  trig_index[trig->nr]->number--;
 
   /* walk the trigger list and remove this one */
   REMOVE_FROM_LIST(trig, trigger_list, next_in_world);
@@ -153,10 +153,10 @@ void extract_script(void *thing, int type)
     if (sc) {
       for ( ; i ; i = i->next)
         assert(sc != SCRIPT(i));
-      
+
       for ( ; j ; j = j->next)
         assert(sc != SCRIPT(j));
-    
+
       for (k = 0; k < top_of_world; k++)
         assert(sc != SCRIPT(&world[k]));
     }
@@ -167,10 +167,10 @@ void extract_script(void *thing, int type)
     extract_trigger(trig);
   }
   TRIGGERS(sc) = NULL;
- 
+
   /* Thanks to James Long for tracking down this memory leak */
   free_varlist(sc->global_vars);
- 
+
   free(sc);
 }
 
@@ -186,7 +186,7 @@ void extract_script_mem(struct script_memory *sc)
   }
 }
 
-void free_proto_script(void *thing, int type) 
+void free_proto_script(void *thing, int type)
 {
   struct trig_proto_list *proto = NULL, *fproto;
   char_data *mob;
@@ -218,10 +218,10 @@ void free_proto_script(void *thing, int type)
     if (proto) {
       for ( ; i ; i = i->next)
         assert(proto != i->proto_script);
-      
+
       for ( ; j ; j = j->next)
         assert(proto != j->proto_script);
-    
+
       for (k = 0; k < top_of_world; k++)
         assert(proto != world[k].proto_script);
     }
@@ -249,7 +249,7 @@ void copy_proto_script(void *source, void *dest, int type)
       tp_src = ((room_data *)source)->proto_script;
       break;
   }
-  
+
   if (tp_src) {
     CREATE(tp_dst, struct trig_proto_list, 1);
     switch (type) {
@@ -263,7 +263,7 @@ void copy_proto_script(void *source, void *dest, int type)
         ((room_data *)dest)->proto_script = tp_dst;
         break;
     }
-    	
+
     while (tp_src) {
       tp_dst->vnum = tp_src->vnum;
       tp_src = tp_src->next;
@@ -271,7 +271,7 @@ void copy_proto_script(void *source, void *dest, int type)
         CREATE(tp_dst->next, struct trig_proto_list, 1);
       tp_dst = tp_dst->next;
     }
-  } 
+  }
 }
 
 void delete_variables(const char *charname)
@@ -288,10 +288,10 @@ void delete_variables(const char *charname)
 void update_wait_events(struct room_data *to, struct room_data *from)
 {
   struct trig_data *trig;
-  
+
   if (!SCRIPT(from))
     return;
-    
+
   for (trig = TRIGGERS(SCRIPT(from)); trig; trig = trig->next) {
     if (!GET_TRIG_WAIT(trig))
       continue;

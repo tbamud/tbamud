@@ -175,7 +175,7 @@ ASPELL(spell_locate_object)
     send_to_char(ch, "You sense nothing.\r\n");
     return;
   }
-  
+
   strlcpy(name, fname(obj->name), sizeof(name));
   j = level / 2;
 

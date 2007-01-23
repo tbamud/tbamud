@@ -69,7 +69,7 @@ struct shop_data {
 
 
 /* Whom will we not trade with (bitvector for SHOP_TRADE_WITH()) */
-#define TRADE_NOGOOD		(1 << 0)	
+#define TRADE_NOGOOD		(1 << 0)
 #define TRADE_NOEVIL		(1 << 1)
 #define TRADE_NONEUTRAL		(1 << 2)
 #define TRADE_NOMAGIC_USER	(1 << 3)

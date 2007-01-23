@@ -72,7 +72,7 @@ void clear_screen(struct descriptor_data *d)
 /*
  * Exported ACMD do_oasis function.
  *
- * This function is the OLC interface.  It deals with all the 
+ * This function is the OLC interface.  It deals with all the
  * generic OLC stuff, then passes control to the sub-olc sections.
  *
  * UPDATE:
@@ -93,16 +93,16 @@ ACMD(do_oasis)
   /*
    * Prevent forcing people in OLC to edit other stuff.
    * 'force' just lets command_interpreter() handle the input,
-   * regardless of the state of the victim. 
-   * This can wreck havoc if people are i OLC already 
+   * regardless of the state of the victim.
+   * This can wreck havoc if people are i OLC already
    * - ie. their input would have been redirected by nanny(), and
    * never get to command_interpreter().
-   * -- Welcor 09/03 
+   * -- Welcor 09/03
    * - thanks to Mark Garringer (zizazat@hotmail.com) for the bug report.
    */
-  if (STATE(ch->desc) != CON_PLAYING) 
+  if (STATE(ch->desc) != CON_PLAYING)
     return;
-    
+
   switch (subcmd) {
   /*
    * The command to see what needs to be saved, typically 'olc'.
@@ -110,31 +110,31 @@ ACMD(do_oasis)
     case SCMD_OLC_SAVEINFO:
       do_show_save_list(ch);
       break;
-      
+
     case SCMD_OASIS_CEDIT:
       do_oasis_cedit(ch, argument, cmd, subcmd);
       break;
-      
+
     case SCMD_OASIS_ZEDIT:
       do_oasis_zedit(ch, argument, cmd, subcmd);
       break;
-    
+
     case SCMD_OASIS_REDIT:
       do_oasis_redit(ch, argument, cmd, subcmd);
       break;
-    
+
     case SCMD_OASIS_OEDIT:
       do_oasis_oedit(ch, argument, cmd, subcmd);
       break;
-      
+
     case SCMD_OASIS_MEDIT:
       do_oasis_medit(ch, argument, cmd, subcmd);
       break;
-      
+
     case SCMD_OASIS_SEDIT:
       do_oasis_sedit(ch, argument, cmd, subcmd);
       break;
-      
+
     case SCMD_OASIS_RLIST:
     case SCMD_OASIS_MLIST:
     case SCMD_OASIS_OLIST:
@@ -155,7 +155,7 @@ ACMD(do_oasis)
     case SCMD_OASIS_AEDIT:
       do_oasis_aedit(ch, argument, cmd, subcmd);
       break;
-      
+
     case SCMD_OASIS_HEDIT:
       do_oasis_hedit(ch, argument, cmd, subcmd);
       break;
@@ -168,12 +168,12 @@ ACMD(do_oasis)
 }
 
 /*------------------------------------------------------------*\
- Exported utilities 
+ Exported utilities
 \*------------------------------------------------------------*/
 
 /*
  * Set the colour string pointers for that which this char will
- * see at color level NRM.  Changing the entries here will change 
+ * see at color level NRM.  Changing the entries here will change
  * the colour scheme throughout the OLC.
  */
 void get_char_colors(struct char_data *ch)
@@ -254,7 +254,7 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
    */
   if (OLC_SHOP(d))
       free_shop(OLC_SHOP(d));
-  
+
   /*. Check for aedit stuff -- M. Scott */
   if (OLC_ACTION(d))  {
     switch(cleanup_type)  {
@@ -286,11 +286,11 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
 
   /* free storage if allocated (for tedit and aedit) */
    /* and Triggers */
-   /* 
+   /*
     * this is the command list - it's been copied to disk already,
     * so just free it -- Welcor
     */
-   if (OLC_STORAGE(d)) { 
+   if (OLC_STORAGE(d)) {
      free(OLC_STORAGE(d));
      OLC_STORAGE(d) = NULL;
    }
@@ -307,14 +307,14 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
     * OLC_SCRIPT is always set as trig_proto of OLC_OBJ/MOB/ROOM.
     * Therefore it should not be free'd here.
     */
-  
+
   /*
    * Restore descriptor playing status.
    */
   if (d->character) {
     REMOVE_BIT(PLR_FLAGS(d->character), PLR_WRITING);
     act("$n stops using OLC.", TRUE, d->character, NULL, NULL, TO_ROOM);
-    
+
     if (cleanup_type == CLEANUP_CONFIG)
       mudlog(BRF, LVL_IMMORT, TRUE, "OLC: %s stops editing the game configuration", GET_NAME(d->character));
     else if (STATE(d) == CON_TEDIT)
@@ -339,22 +339,22 @@ void split_argument(char *argument, char *tag)
 {
   char *tmp = argument, *ttag = tag, *wrt = argument;
   int i;
-  
+
   for (i = 0; *tmp; tmp++, i++) {
     if (*tmp != ' ' && *tmp != '=')
       *(ttag++) = *tmp;
     else if (*tmp == '=')
       break;
   }
-  
+
   *ttag = '\0';
-  
+
   while (*tmp == '=' || *tmp == ' ')
     tmp++;
-  
+
   while (*tmp)
     *(wrt++) = *(tmp++);
-  
+
   *wrt = '\0';
 }
 
@@ -364,7 +364,7 @@ void free_config(struct config_data *data)
   /** Free strings.                                                          **/
   /****************************************************************************/
   free_strings(data, OASIS_CFG);
-  
+
   /****************************************************************************/
   /** Free the data structure.                                               **/
   /****************************************************************************/
@@ -400,11 +400,11 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
   /* always access if ch is high enough level */
   if (GET_LEVEL(ch) >= LVL_GRGOD)
     return (TRUE);
-  
+
   /* always access if a player helped build the zone in the first place */
   if (is_name(GET_NAME(ch), zone_table[rnum].builders))
     return (TRUE);
-  
+
   /* no access if you haven't been assigned a zone */
   if (GET_OLC_ZONE(ch) == NOWHERE) {
     return FALSE;

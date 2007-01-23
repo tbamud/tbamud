@@ -69,7 +69,7 @@ unsigned long circle_random(void);
 
 void circle_srandom(unsigned long initial_seed)
 {
-    seed = initial_seed; 
+    seed = initial_seed;
 }
 
 

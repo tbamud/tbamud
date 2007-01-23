@@ -114,7 +114,7 @@ bitvector_t find_class_bitvector(const char *arg)
  * a character of the class is allowed to attain in any skill.  (After
  * this level, attempts to practice will say "You are already learned in
  * this area."
- * 
+ *
  * The second line controls the maximum percent gain in learnedness a
  * character is allowed per practice -- in other words, if the random
  * die throw comes out higher than this number, the gain will only be
@@ -124,7 +124,7 @@ bitvector_t find_class_bitvector(const char *arg)
  * character is allowed per practice -- in other words, if the random
  * die throw comes out below this number, the gain will be set up to
  * this number.
- * 
+ *
  * The fourth line simply sets whether the character knows 'spells'
  * or 'skills'.  This does not affect anything except the message given
  * to the character when trying to practice (i.e. "You know of the
@@ -971,7 +971,7 @@ byte saving_throws(int class_num, int type, int level)
       case 50: return  0;
       default:
 	log("SYSERR: Missing level for warrior paralyzation saving throw.");
-	break;	
+	break;
       }
     case SAVING_ROD:	/* Rods */
       switch (level) {
@@ -1886,7 +1886,7 @@ int level_exp(int chclass, int level)
 }
 
 
-/* 
+/*
  * Default titles of male characters.
  */
 const char *title_male(int chclass, int level)
@@ -2033,7 +2033,7 @@ const char *title_male(int chclass, int level)
 }
 
 
-/* 
+/*
  * Default titles of female characters.
  */
 const char *title_female(int chclass, int level)

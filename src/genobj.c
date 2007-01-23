@@ -267,12 +267,12 @@ int save_objects(zone_rnum zone_num)
       );
 
       /*
-       * Do we have script(s) attached ? 
+       * Do we have script(s) attached ?
        */
       script_save_to_disk(fp, obj, OBJ_TRIGGER);
-      
+
       /*
-       * Do we have extra descriptions? 
+       * Do we have extra descriptions?
        */
       if (obj->ex_description) {	/* Yes, save them too. */
 	for (ex_desc = obj->ex_description; ex_desc; ex_desc = ex_desc->next) {
@@ -291,7 +291,7 @@ int save_objects(zone_rnum zone_num)
 	}
       }
       /*
-       * Do we have affects? 
+       * Do we have affects?
        */
       for (counter2 = 0; counter2 < MAX_OBJ_AFFECT; counter2++)
 	if (obj->affected[counter2].modifier)
@@ -401,25 +401,25 @@ int copy_object_main(struct obj_data *to, struct obj_data *from, int free_object
   return TRUE;
 }
 
-int delete_object(obj_rnum rnum) 
-{ 
-  obj_rnum i; 
-  struct obj_data *obj, *tmp; 
-  int shop, j; 
+int delete_object(obj_rnum rnum)
+{
+  obj_rnum i;
+  struct obj_data *obj, *tmp;
+  int shop, j;
 
-  if (rnum == NOWHERE || rnum > top_of_objt) 
-    return FALSE; 
+  if (rnum == NOWHERE || rnum > top_of_objt)
+    return FALSE;
 
-  obj = &obj_proto[rnum]; 
+  obj = &obj_proto[rnum];
 
   zone_rnum zrnum = real_zone_by_thing(GET_OBJ_VNUM(obj));
 
-  /* This is something you might want to read about in the logs. */ 
-  log("GenOLC: delete_object: Deleting object #%d (%s).", GET_OBJ_VNUM(obj), obj->short_description); 
+  /* This is something you might want to read about in the logs. */
+  log("GenOLC: delete_object: Deleting object #%d (%s).", GET_OBJ_VNUM(obj), obj->short_description);
 
-  for (tmp = object_list; tmp; tmp = tmp->next) { 
-    if (tmp->item_number != obj->item_number) 
-      continue; 
+  for (tmp = object_list; tmp; tmp = tmp->next) {
+    if (tmp->item_number != obj->item_number)
+      continue;
 
     // extract_obj() will just axe contents.
     if (tmp->contains) {
@@ -444,14 +444,14 @@ int delete_object(obj_rnum rnum)
     // remove from object_list, etc. - handles weightchanges, and similar.
     extract_obj(tmp);
   }
-	       
+
   // make sure all are removed.
   assert(obj_index[rnum].number == 0);
 
   // adjust rnums of all other objects.
-  for (tmp = object_list; tmp; tmp = tmp->next) { 
-    GET_OBJ_RNUM(tmp) -= (GET_OBJ_RNUM(tmp) > rnum); 
-  } 
+  for (tmp = object_list; tmp; tmp = tmp->next) {
+    GET_OBJ_RNUM(tmp) -= (GET_OBJ_RNUM(tmp) > rnum);
+  }
 
   for (i = rnum; i < top_of_objt; i++) {
     obj_index[i] = obj_index[i + 1];
@@ -463,51 +463,51 @@ int delete_object(obj_rnum rnum)
   RECREATE(obj_index, struct index_data, top_of_objt + 1);
   RECREATE(obj_proto, struct obj_data, top_of_objt + 1);
 
-  /* 
-   * Renumber notice boards. 
-   */ 
-  for (j = 0; j < NUM_OF_BOARDS; j++) 
-    BOARD_RNUM(j) -= (BOARD_RNUM(j) > rnum); 
+  /*
+   * Renumber notice boards.
+   */
+  for (j = 0; j < NUM_OF_BOARDS; j++)
+    BOARD_RNUM(j) -= (BOARD_RNUM(j) > rnum);
 
-  /* 
-   * Renumber shop produce; 
-   */ 
-  for (shop = 0; shop <= top_shop - top_shop_offset; shop++) 
-    for (j = 0; SHOP_PRODUCT(shop, j) != NOTHING; j++) 
-      SHOP_PRODUCT(shop, j) -= (SHOP_PRODUCT(shop, j) > rnum); 
+  /*
+   * Renumber shop produce;
+   */
+  for (shop = 0; shop <= top_shop - top_shop_offset; shop++)
+    for (j = 0; SHOP_PRODUCT(shop, j) != NOTHING; j++)
+      SHOP_PRODUCT(shop, j) -= (SHOP_PRODUCT(shop, j) > rnum);
 
-  /* 
-   * Renumber zone table. 
-   */ 
-  int zone, cmd_no; 
-  for (zone = 0; zone <= top_of_zone_table; zone++) { 
-    for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++) { 
-      switch (ZCMD(zone, cmd_no).command) { 
-      case 'P': 
+  /*
+   * Renumber zone table.
+   */
+  int zone, cmd_no;
+  for (zone = 0; zone <= top_of_zone_table; zone++) {
+    for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++) {
+      switch (ZCMD(zone, cmd_no).command) {
+      case 'P':
         if (ZCMD(zone, cmd_no).arg3 == rnum) {
-          delete_zone_command(&zone_table[zone], cmd_no); 
+          delete_zone_command(&zone_table[zone], cmd_no);
         } else
           ZCMD(zone, cmd_no).arg3 -= (ZCMD(zone, cmd_no).arg3 > rnum);
-	break;    
-      case 'O': 
-      case 'G': 
-      case 'E': 
+	break;
+      case 'O':
+      case 'G':
+      case 'E':
         if (ZCMD(zone, cmd_no).arg1 == rnum) {
-          delete_zone_command(&zone_table[zone], cmd_no); 
+          delete_zone_command(&zone_table[zone], cmd_no);
         } else
           ZCMD(zone, cmd_no).arg1 -= (ZCMD(zone, cmd_no).arg1 > rnum);
-	break; 
-      case 'R': 
+	break;
+      case 'R':
         if (ZCMD(zone, cmd_no).arg2 == rnum) {
-          delete_zone_command(&zone_table[zone], cmd_no); 
+          delete_zone_command(&zone_table[zone], cmd_no);
         } else
           ZCMD(zone, cmd_no).arg2 -= (ZCMD(zone, cmd_no).arg2 > rnum);
-	break; 
-      } 
-    } 
-  } 
+	break;
+      }
+    }
+  }
 
-  save_objects(zrnum);  
+  save_objects(zrnum);
 
-  return TRUE; 
+  return TRUE;
 }

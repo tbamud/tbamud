@@ -71,7 +71,7 @@ ACMD(do_assist)
     else if (!CAN_SEE(ch, opponent))
       act("You can't see who is fighting $M!", FALSE, ch, 0, helpee, TO_CHAR);
          /* prevent accidental pkill */
-    else if (!CONFIG_PK_ALLOWED && !IS_NPC(opponent))	
+    else if (!CONFIG_PK_ALLOWED && !IS_NPC(opponent))
       act("Use 'murder' if you really want to attack $N.", FALSE,
 	  ch, 0, opponent, TO_CHAR);
     else {

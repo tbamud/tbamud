@@ -71,7 +71,7 @@ ACMD(do_tedit)
   int l, i = 0;
   char field[MAX_INPUT_LENGTH];
   char *backstr = NULL;
-   
+
   struct {
     char *cmd;
     char level;
@@ -98,7 +98,7 @@ ACMD(do_tedit)
 
   if (ch->desc == NULL)
     return;
-   
+
   one_argument(argument, field);
 
   if (!*field) {
@@ -119,12 +119,12 @@ ACMD(do_tedit)
   for (l = 0; *(fields[l].cmd) != '\n'; l++)
     if (!strncmp(field, fields[l].cmd, strlen(field)))
       break;
-   
+
   if (*fields[l].cmd == '\n') {
     send_to_char(ch, "Invalid text editor option.\r\n");
     return;
   }
-   
+
   if (GET_LEVEL(ch) < fields[l].level) {
     send_to_char(ch, "You are not godly enough for that!\r\n");
     return;
@@ -140,7 +140,7 @@ ACMD(do_tedit)
     free(ch->desc->olc);
   }
   CREATE(ch->desc->olc, struct oasis_olc_data, 1);
-  
+
   if (*fields[l].buffer) {
     send_to_char(ch, "%s", *fields[l].buffer);
     backstr = strdup(*fields[l].buffer);

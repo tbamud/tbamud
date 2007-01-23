@@ -18,28 +18,28 @@
 /* unless you change this, Puff casts all your dg spells */
 #define DG_CASTER_PROXY 1
 /* spells cast by objects and rooms use this level */
-#define DG_SPELL_LEVEL  25 
+#define DG_SPELL_LEVEL  25
 
 /*
  * define this if you don't want wear/remove triggers to fire when
  * a player is saved.
  */
 #define NO_EXTRANEOUS_TRIGGERS
-/* 
+/*
  * %actor.room% behaviour :
- * Until pl 7 %actor.room% returned a room vnum. 
+ * Until pl 7 %actor.room% returned a room vnum.
  * Working with this number in scripts was unnecessarily hard,
  * especially in those situations one needed the id of the room,
  * the items in it, etc. As a result of this, the output
  * has been changed (as of pl 8) to a room variable.
  * This means old scripts will need a minor adjustment;
- * 
+ *
  * Before:
  * if %actor.room%==3001
  *   %echo% You are at the main temple.
  *
  * After:
- * eval room %actor.room% 
+ * eval room %actor.room%
  * if %room.vnum%==3001
  *   %echo% You are at the main temple.
  *
@@ -122,7 +122,7 @@
 
 /*
  * These are slightly off of PULSE_MOBILE so
- * everything isnt happening at the same time 
+ * everything isnt happening at the same time
  */
 #define PULSE_DG_SCRIPT         (13 RL_SEC)
 
@@ -143,7 +143,7 @@ struct trig_var_data {
   char *name;				/* name of variable  */
   char *value;				/* value of variable */
   long context;				/* 0: global context */
-  
+
   struct trig_var_data *next;
 };
 
@@ -163,8 +163,8 @@ struct trig_data {
     struct event *wait_event;   	/* event to pause the trigger      */
     ubyte purged;			/* trigger is set to be purged     */
     struct trig_var_data *var_list;	/* list of local vars for trigger  */
-    
-    struct trig_data *next;  
+
+    struct trig_data *next;
     struct trig_data *next_in_world;    /* next in the global trigger list */
 };
 
@@ -208,7 +208,7 @@ int is_substring(char *sub, char *string);
 int word_check(char *str, char *wordlist);
 
 void act_mtrigger(const char_data *ch, char *str,
-	char_data *actor, char_data *victim, obj_data *object, obj_data *target, char *arg);  
+	char_data *actor, char_data *victim, obj_data *object, obj_data *target, char *arg);
 void speech_mtrigger(char_data *actor, char *str);
 void speech_wtrigger(char_data *actor, char *str);
 void greet_memory_mtrigger(char_data *ch);
@@ -265,34 +265,34 @@ void time_otrigger(obj_data *obj);
 void time_wtrigger(room_data *room);
 
 /* function prototypes from dg_scripts.c */
-char *str_str(char *cs, char *ct); 
+char *str_str(char *cs, char *ct);
 int find_eq_pos_script(char *arg);
 int can_wear_on_pos(struct obj_data *obj, int pos);
-struct char_data *find_char(long n); 
+struct char_data *find_char(long n);
 char_data *get_char(char *name);
 char_data *get_char_near_obj(obj_data *obj, char *name);
-char_data *get_char_in_room(room_data *room, char *name); 
+char_data *get_char_in_room(room_data *room, char *name);
 obj_data *get_obj_near_obj(obj_data *obj, char *name);
 obj_data *get_obj(char *name);
-room_data *get_room(char *name); 
+room_data *get_room(char *name);
 char_data *get_char_by_obj(obj_data *obj, char *name);
 char_data *get_char_by_room(room_data *room, char *name);
 obj_data *get_obj_by_obj(obj_data *obj, char *name);
-obj_data *get_obj_in_room(room_data *room, char *name); 
-obj_data *get_obj_by_room(room_data *room, char *name); 
+obj_data *get_obj_in_room(room_data *room, char *name);
+obj_data *get_obj_by_room(room_data *room, char *name);
 int trgvar_in_room(room_vnum vnum);
 obj_data *get_obj_in_list(char *name, obj_data *list);
 obj_data *get_object_in_equip(char_data * ch, char *name);
 void script_trigger_check(void);
 void check_time_triggers(void);
-void find_uid_name(char *uid, char *name, size_t nlen); 
+void find_uid_name(char *uid, char *name, size_t nlen);
 void do_sstat_room(struct char_data * ch);
 void do_sstat_object(char_data *ch, obj_data *j);
 void do_sstat_character(char_data *ch, char_data *k);
 void add_trigger(struct script_data *sc, trig_data *t, int loc);
 void script_vlog(const char *format, va_list args);
 void script_log(const char *format, ...) __attribute__ ((format (printf, 1, 2)));
-char *matching_quote(char *p); 
+char *matching_quote(char *p);
 struct room_data *dg_room_of_obj(struct obj_data *obj);
 
 /* To maintain strict-aliasing we'll have to do this trick with a union */
@@ -301,8 +301,8 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode);
 trig_rnum real_trigger(trig_vnum vnum);
 void process_eval(void *go, struct script_data *sc, trig_data *trig,
                  int type, char *cmd);
-void read_saved_vars(struct char_data *ch); 
-void save_char_vars(struct char_data *ch); 
+void read_saved_vars(struct char_data *ch);
+void save_char_vars(struct char_data *ch);
 void init_lookup_table(void);
 void add_to_lookup_table(long uid, void *c);
 void remove_from_lookup_table(long uid);
@@ -348,9 +348,9 @@ void sub_write(char *arg, char_data *ch, byte find_invis, int targets);
 void send_to_zone(char *messg, zone_rnum zone);
 
 /* from dg_misc.c */
-void do_dg_cast(void *go, struct script_data *sc, trig_data *trig, 
+void do_dg_cast(void *go, struct script_data *sc, trig_data *trig,
     int type, char *cmd);
-void do_dg_affect(void *go, struct script_data *sc, trig_data *trig, 
+void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
     int type, char *cmd);
 void send_char_pos(struct char_data *ch, int dam);
 int valid_dg_target(char_data *ch, int bitvector);
@@ -388,7 +388,7 @@ room_rnum obj_room(obj_data *obj);
 #define SCRIPT(o)		  ((o)->script)
 #define SCRIPT_MEM(c)             ((c)->memory)
 
-#define SCRIPT_TYPES(s)		  ((s)->types)				  
+#define SCRIPT_TYPES(s)		  ((s)->types)
 #define TRIGGERS(s)		  ((s)->trig_list)
 
 #define GET_SHORT(ch)    ((ch)->player.short_descr)

@@ -4,7 +4,7 @@
 ** Version 2. added detection for writing off the end or beginning
 ** of buffers, freeing the same block multiple times.  Also now use the
 ** env variable to set the name of a file to write output to.
-** 
+**
 **
 ** Copyright 1996,1998,1999,2000 Eric Murray, ericm@lne.com
 **
@@ -170,7 +170,7 @@ void zfree_special(int * what, char * file,int line)
           pad_check(m);
 
           /* note that we freed the memory */
-          m->frees++;  
+          m->frees++;
 
           /* check to see if it was freed > once */
           if (m->frees > 1) {
@@ -228,7 +228,7 @@ void zfree(int * what, char * file,int line)
           pad_check(m);
 
           /* note that we freed the memory */
-          m->frees++;  
+          m->frees++;
 
           /* check to see if it was freed > once */
           if (m->frees > 1) {
@@ -259,7 +259,7 @@ void zfree(int * what, char * file,int line)
 char *zstrdup(const char *src, char *file, int line)
 {
     char *result;
-#ifndef NO_MEMORY_STRDUP    
+#ifndef NO_MEMORY_STRDUP
   if (!getzmallocstatus()) {
     result = (char*)malloc(strlen(src) + 1);
     if (result == (char*)0)
@@ -312,7 +312,7 @@ void zmalloc_check()
         admonishemnt = "you call yourself a programmer?";
       else if (total_leak > 1000)
         admonishemnt = "the X consortium has a job for you...";
-      else 
+      else
         admonishemnt = "close, but not there yet.";
       fprintf(zfd,"zmalloc: %d leaks totalling %d bytes... %s\n",num_leaks,total_leak,
         admonishemnt);
@@ -332,7 +332,7 @@ void pad_check(meminfo *m)
 
   /* check the padding: */
   if (memcmp((int *)(addr - sizeof(beginPad)),
-      beginPad, sizeof(beginPad)) != 0) 
+      beginPad, sizeof(beginPad)) != 0)
     fprintf(zfd," ERR: beginPad was modified!\n");
   if (memcmp((int *)(addr + m->size),endPad,
       sizeof(endPad)) != 0)
@@ -350,7 +350,7 @@ void zmalloc_free_list(meminfo *m)
     free(old);
   }
 }
-      
+
 #ifdef ZTEST
 #undef ZMALLOC_H
 
@@ -365,18 +365,18 @@ main()
   printf("Malloc test..");
   printf("You should see no error here.\n");
   tmp = (unsigned char*)malloc(200);
-  free(tmp); 
+  free(tmp);
 
   printf("Free free mem test...\n");
   printf("You should see an ERR: multiple frees here\n");
   tmp = (unsigned char*)malloc(200);
-  free(tmp); 
-  free(tmp); 
+  free(tmp);
+  free(tmp);
 
 /*
   fprintf(zfd,"\nFree unallocated mem test \n");
   tmp += 4;
-  free(tmp); 
+  free(tmp);
 */
 
   printf("Unfreed mem test...\n");
@@ -387,25 +387,25 @@ main()
   printf("You should see an ERR:endPad here\n");
   tmp = (unsigned char*)malloc(200);
   tmp[200] = 0xfa;
-  free(tmp); 
+  free(tmp);
 
   printf("Buffer overrun test 2...\n");
   printf("You should see an ERR:endPad here\n");
   tmp = (unsigned char*)malloc(200);
   tmp[215] = 0xbb;
-  free(tmp); 
+  free(tmp);
 
   printf("Buffer underrun test 1...\n");
   printf("You should see an ERR:beginPad here\n");
   tmp = (unsigned char*)malloc(200);
   tmp[-10] = 0x0f;
-  free(tmp); 
+  free(tmp);
 
   printf("Buffer underrun test 2...\n");
   printf("You should see an ERR:beginPad here\n");
   tmp = (unsigned char*)malloc(200);
   tmp[-1] = 0x00;
-  free(tmp); 
+  free(tmp);
 
 
   zmalloc_check();

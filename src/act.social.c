@@ -58,7 +58,7 @@ ACMD(do_action)
     return;
   }
 
-  if (!action->char_found) 
+  if (!action->char_found)
     *arg = '\0';
 
   if (action->char_found && argument)
@@ -82,8 +82,8 @@ ACMD(do_action)
     else
       send_to_char(ch, "I don't see anything by that name here.\r\n");
     return;
-  } 
-  
+  }
+
   if (vict == ch) {
     if (action->char_auto)
       send_to_char(ch, "%s\r\n", action->char_auto);
@@ -91,8 +91,8 @@ ACMD(do_action)
       send_to_char(ch, "Erm, no.");
     act(action->others_auto, action->hide, ch, 0, 0, TO_ROOM);
     return;
-  } 
-  
+  }
+
   if (GET_POS(vict) < action->min_victim_position)
     act("$N is not in a proper position for that.", FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
   else {
@@ -165,7 +165,7 @@ void create_command_list(void)
   extern struct command_info cmd_info[];
 
   /* free up old command list */
-  if (complete_cmd_info) 
+  if (complete_cmd_info)
     free_command_list();
 
   /* re check the sort on the socials */
@@ -193,7 +193,7 @@ void create_command_list(void)
   j = 0;
   k = 0;
   while ((*cmd_info[i].command != '\n') || (j <= top_of_socialt))  {
-    if ((i < RESERVE_CMDS) || (j > top_of_socialt) || 
+    if ((i < RESERVE_CMDS) || (j > top_of_socialt) ||
 	(str_cmp(cmd_info[i].sort_as, soc_mess_list[j].sort_as) < 1))
       complete_cmd_info[k++] = cmd_info[i++];
     else {
@@ -215,30 +215,30 @@ void create_command_list(void)
   log("Command info rebuilt, %d total commands.", k);
 }
 
-void free_command_list(void) 
+void free_command_list(void)
 {
   int i;
-  
+
   for (i = 0;*complete_cmd_info[i].command !='\n';i++);
-  
+
   free((char *)complete_cmd_info[i].command); /* special case, the terminator */
   free((char *)complete_cmd_info[i].sort_as);
   free(complete_cmd_info);
   complete_cmd_info = NULL;
 }
 
-void free_social_messages(void) 
+void free_social_messages(void)
 {
   struct social_messg *mess;
   int i;
-  
+
   for (i = 0;i <= top_of_socialt;i++)  {
     mess = &soc_mess_list[i];
     free_action(mess);
   }
   free(soc_mess_list);
-  
-}  
+
+}
 
 void free_action(struct social_messg *mess)  {
   if (mess->command) free(mess->command);
@@ -303,7 +303,7 @@ ACMD(do_gmote)
     return;
   }
 
-  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_SOUNDPROOF)) { 
+  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_SOUNDPROOF)) {
     send_to_char(ch, "The walls seem to absorb your actions.\r\n");
     return;
   }

@@ -76,7 +76,7 @@ int has_boat(struct char_data *ch)
   return (0);
 }
 
-  
+
 
 /* do_simple_move assumes
  *    1. That there is no master and no followers.

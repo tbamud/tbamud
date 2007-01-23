@@ -99,7 +99,7 @@ void bfs_clear_queue(void)
 }
 
 
-/* 
+/*
  * find_first_step: given a source room and a target room, find the first
  * step on the shortest path from the source to the target.
  *

@@ -43,10 +43,10 @@ ACMD(do_oasis_redit)
   char buf2[MAX_STRING_LENGTH];
   int number = NOWHERE, save = 0, real_num;
   struct descriptor_data *d;
-  
+
   /* Parse any arguments. */
   buf3 = two_arguments(argument, buf1, buf2);
-  
+
   if (!*buf1)
     number = GET_ROOM_VNUM(IN_ROOM(ch));
   else if (!isdigit(*buf1)) {
@@ -54,55 +54,55 @@ ACMD(do_oasis_redit)
       send_to_char(ch, "Yikes!  Stop that, someone will get hurt!\r\n");
       return;
     }
-    
+
     save = TRUE;
-      
+
     if (is_number(buf2))
       number = atoi(buf2);
     else if (GET_OLC_ZONE(ch) != NOWHERE) {
       zone_rnum zlok;
-        
+
       if ((zlok = real_zone(GET_OLC_ZONE(ch))) == NOWHERE)
         number = NOWHERE;
       else
         number = genolc_zone_bottom(zlok);
     }
-      
+
     if (number == NOWHERE) {
       send_to_char(ch, "Save which zone?\r\n");
       return;
     }
   }
-  
+
   /*
    * If a numeric argument was given (like a room number), get it.
    */
   if (number == NOWHERE)
     number = atoi(buf1);
-  
+
   /* Check to make sure the room isn't already being edited. */
   for (d = descriptor_list; d; d = d->next) {
     if (STATE(d) == CON_REDIT) {
       if (d->olc && OLC_NUM(d) == number) {
-        send_to_char(ch, "That room is currently being edited by %s.\r\n", 
+        send_to_char(ch, "That room is currently being edited by %s.\r\n",
           PERS(d->character, ch));
         return;
       }
     }
   }
-  
+
   /* Retrieve the player's descriptor. */
   d = ch->desc;
-  
+
   /* Give the descriptor an OLC structure. */
   if (d->olc) {
     mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis_redit: Player already had olc structure.");
     free(d->olc);
   }
-  
+
   /* Create the OLC structure. */
   CREATE(d->olc, struct oasis_olc_data, 1);
-  
+
   /* Find the zone. */
   OLC_ZNUM(d) = save ? real_zone(number) : real_zone_by_thing(number);
   if (OLC_ZNUM(d) == NOWHERE) {
@@ -117,36 +117,36 @@ ACMD(do_oasis_redit)
 send_to_char(ch, " You do not have permission to edit zone %d. Try zone %d.\r\n", zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 mudlog(BRF, LVL_IMPL, TRUE, "OLC: %s tried to edit zone %d allowed zone %d",
                GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
-    
+
     free(d->olc);
     d->olc = NULL;
     return;
   }
-  
+
   if (save) {
     send_to_char(ch, "Saving all rooms in zone %d.\r\n", zone_table[OLC_ZNUM(d)].number);
     mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves room info for zone %d.", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
-    
+
     /* Save the rooms. */
     save_rooms(OLC_ZNUM(d));
-    
+
     /* Free the olc data from the descriptor. */
     free(d->olc);
     d->olc = NULL;
     return;
   }
-  
+
   OLC_NUM(d) = number;
-  
+
   if ((real_num = real_room(number)) != NOWHERE)
     redit_setup_existing(d, real_num);
   else
     redit_setup_new(d);
-  
+
   STATE(d) = CON_REDIT;
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT(PLR_FLAGS(ch), PLR_WRITING);
-  
+
   mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing zone %d allowed zone %d",
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
@@ -183,7 +183,7 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
    */
   room->name = str_udup(world[real_num].name);
   room->description = str_udup(world[real_num].description);
-  
+
   /*
    * Exits - We allocate only if necessary.
    */
@@ -234,7 +234,7 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
 
   dg_olc_script_copy(d);
   room->proto_script = NULL;
-  SCRIPT(room) = NULL; 
+  SCRIPT(room) = NULL;
 
   redit_disp_menu(d);
 }
@@ -259,15 +259,15 @@ void redit_save_internally(struct descriptor_data *d)
     return;
   }
 
-  /* Update triggers */  
+  /* Update triggers */
   /* Free old proto list */
   if (world[room_num].proto_script &&
-      world[room_num].proto_script != OLC_SCRIPT(d)) 
-    free_proto_script(&world[room_num], WLD_TRIGGER); 
-  
+      world[room_num].proto_script != OLC_SCRIPT(d))
+    free_proto_script(&world[room_num], WLD_TRIGGER);
+
   world[room_num].proto_script = OLC_SCRIPT(d);
   assign_triggers(&world[room_num], WLD_TRIGGER);
-  /* end trigger update */  
+  /* end trigger update */
 
   /* Don't adjust numbers on a room update. */
   if (!new_room)
@@ -316,17 +316,17 @@ void free_room(struct room_data *room)
 {
   /* Free the strings (Mythran). */
   free_room_strings(room);
-  
+
   if (SCRIPT(room))
     extract_script(room, WLD_TRIGGER);
-  free_proto_script(room, WLD_TRIGGER);  
-  
+  free_proto_script(room, WLD_TRIGGER);
+
   /* Free the room. */
   free(room);	/* XXX ? */
 }
 
 /**************************************************************************
- Menu functions 
+ Menu functions
  **************************************************************************/
 
 /*
@@ -359,14 +359,14 @@ void redit_disp_exit_menu(struct descriptor_data *d)
 {
   char door_buf[24];
   /*
-   * if exit doesn't exist, alloc/create it 
+   * if exit doesn't exist, alloc/create it
    */
   if (OLC_EXIT(d) == NULL) {
     CREATE(OLC_EXIT(d), struct room_direction_data, 1);
     OLC_EXIT(d)->to_room = NOWHERE;
   }
   /*
-   * Weird door handling! 
+   * Weird door handling!
    */
   if (IS_SET(OLC_EXIT(d)->exit_info, EX_ISDOOR)) {
     if (IS_SET(OLC_EXIT(d)->exit_info, EX_PICKPROOF))
@@ -497,7 +497,7 @@ void redit_disp_menu(struct descriptor_data *d)
 	  room->dir_option[WEST] && room->dir_option[WEST]->to_room != NOWHERE ?
 	  world[room->dir_option[WEST]->to_room].number : -1,
 	  grn, nrm, cyn,
-	  room->dir_option[UP] && room->dir_option[UP]->to_room != NOWHERE ? 
+	  room->dir_option[UP] && room->dir_option[UP]->to_room != NOWHERE ?
 	  world[room->dir_option[UP]->to_room].number : -1,
 	  grn, nrm, cyn,
 	  room->dir_option[DOWN] && room->dir_option[DOWN]->to_room != NOWHERE ?
@@ -533,7 +533,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
       } else
         write_to_output(d, "Room saved to memory.\r\n");
       /*
-       * Do NOT free strings! Just the room structure. 
+       * Do NOT free strings! Just the room structure.
        */
       cleanup_olc(d, CLEANUP_STRUCTS);
       break;
@@ -624,7 +624,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
       write_to_output(d, "Are you sure you want to delete this room? ");
       OLC_MODE(d) = REDIT_DELETE;
       break;
-      
+
     case 's':
     case 'S':
       OLC_SCRIPT_EDIT_MODE(d) = SCRIPT_MAIN_MENU;
@@ -636,7 +636,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
       break;
     }
     return;
-    
+
 
   case OLC_SCRIPT_EDIT:
     if (dg_script_edit_parse(d, arg)) return;
@@ -852,25 +852,25 @@ void redit_parse(struct descriptor_data *d, char *arg)
       return;
     }
     break;
-  
+
   case REDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_room(real_room(OLC_ROOM(d)->number))) 
+      if (delete_room(real_room(OLC_ROOM(d)->number)))
         write_to_output(d, "Room deleted.\r\n");
      else
         write_to_output(d, "Couldn't delete the room!.\r\n");
-      
+
       cleanup_olc(d, CLEANUP_ALL);
       return;
     } else if (*arg == 'n' || *arg == 'N') {
       redit_disp_menu(d);
-      OLC_MODE(d) = REDIT_MAIN_MENU;      
+      OLC_MODE(d) = REDIT_MAIN_MENU;
       return;
     } else
       write_to_output(d, "Please answer 'Y' or 'N': ");
-    
-    break;  
-  
+
+    break;
+
   default:
     /*
      * We should never get here.

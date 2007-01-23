@@ -10,7 +10,7 @@
 #include "conf.h"
 #include "sysdep.h"
 
- 
+
 #include "structs.h"
 #include "dg_scripts.h"
 #include "utils.h"
@@ -70,7 +70,7 @@ void do_dg_cast(void *go, struct script_data *sc, trig_data *trig,
       script_log("dg_do_cast: unknown trigger type!");
       return;
   }
-  
+
   strcpy(orig_cmd, cmd);
   /* get: blank, spell name, target name */
   s = strtok(cmd, "'");
@@ -107,7 +107,7 @@ void do_dg_cast(void *go, struct script_data *sc, trig_data *trig,
           (IS_SET(SINFO.targets, TAR_CHAR_ROOM) ||
            IS_SET(SINFO.targets, TAR_CHAR_WORLD))) {
       if ((tch = get_char(t)) != NULL)
-        target = TRUE; 
+        target = TRUE;
     }
 
     if (!target &&
@@ -116,7 +116,7 @@ void do_dg_cast(void *go, struct script_data *sc, trig_data *trig,
            IS_SET(SINFO.targets, TAR_OBJ_ROOM) ||
            IS_SET(SINFO.targets, TAR_OBJ_WORLD))) {
       if ((tobj = get_obj(t)) != NULL)
-        target = TRUE; 
+        target = TRUE;
     }
 
     if (!target) {
@@ -140,7 +140,7 @@ void do_dg_cast(void *go, struct script_data *sc, trig_data *trig,
     }
     /* set the caster's name to that of the object, or the gods.... */
     if (type==OBJ_TRIGGER)
-      caster->player.short_descr = 
+      caster->player.short_descr =
         strdup(((struct obj_data *)go)->short_description);
     else if (type==WLD_TRIGGER)
       caster->player.short_descr = strdup("The gods");
@@ -172,7 +172,7 @@ void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
   int i=0, type=0;
   struct affected_type af;
 
-  
+
   half_chop(cmd, junk, cmd);
   half_chop(cmd, charname, cmd);
   half_chop(cmd, property, cmd);
@@ -236,7 +236,7 @@ void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
     affect_from_char(ch, SPELL_DG_AFFECT);
     return;
   }
-  
+
   /* add the affect */
   af.type = SPELL_DG_AFFECT;
   af.duration = duration;
@@ -249,7 +249,7 @@ void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
     af.location = 0;
     af.bitvector = (1<<i);
   }
-  
+
   affect_to_char(ch, &af);
 }
 
@@ -283,22 +283,22 @@ void send_char_pos(struct char_data *ch, int dam)
 
 
 /* Used throughout the xxxcmds.c files for checking if a char
- * can be targetted 
+ * can be targetted
  * - allow_gods is false when called by %force%, for instance,
- * while true for %teleport%.  -- Welcor 
+ * while true for %teleport%.  -- Welcor
  */
 int valid_dg_target(struct char_data *ch, int bitvector)
 {
-  if (IS_NPC(ch))  
+  if (IS_NPC(ch))
     return TRUE;  /* all npcs are allowed as targets */
-  else if (GET_LEVEL(ch) < LVL_IMMORT) 
+  else if (GET_LEVEL(ch) < LVL_IMMORT)
     return TRUE;  /* as well as all mortals */
   else if (!IS_SET(bitvector, DG_ALLOW_GODS) &&
      GET_LEVEL(ch) >= LVL_GRGOD) /* LVL_GOD has the advance command. Can't allow them to be forced. */
     return FALSE; /* but not always the highest gods */
   else if (!PRF_FLAGGED(ch, PRF_NOHASSLE))
     return TRUE;  /* the ones in between as allowed as long as they have no-hassle off.   */
-  else            
+  else
     return FALSE;  /* The rest are gods with nohassle on... */
 }
 
@@ -313,15 +313,15 @@ void script_damage(struct char_data *vict, int dam)
 
   GET_HIT(vict) -= dam;
   GET_HIT(vict) = MIN(GET_HIT(vict), GET_MAX_HIT(vict));
-  
+
   update_pos(vict);
   send_char_pos(vict, dam);
 
   if (GET_POS(vict) == POS_DEAD) {
     if (!IS_NPC(vict))
-      mudlog( BRF, 0, TRUE, "%s killed by script at %s", 
+      mudlog( BRF, 0, TRUE, "%s killed by script at %s",
                             GET_NAME(vict), world[vict->in_room].name);
     die(vict, NULL);
   }
-}  
-  
+}
+

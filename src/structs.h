@@ -274,7 +274,7 @@
 #define CON_AEDIT        25     /* OLC mode - social (action) edit      */
 #define CON_TRIGEDIT     26	/* OLC mode - trigger edit              */
 #define CON_HEDIT        27
- 
+
 /* Character equipment positions: used as index for char_data.equipment[] */
 /* NOTE: Don't confuse these constants with the ITEM_ bitvectors
    which control the valid places you can wear a piece of equipment */
@@ -513,19 +513,19 @@
 #define MAX_INPUT_LENGTH	512   /* Max length per *line* of input */
 #define MAX_RAW_INPUT_LENGTH	512   /* Max size of *raw* input */
 #define MAX_MESSAGES		60
-#define MAX_NAME_LENGTH		20 
+#define MAX_NAME_LENGTH		20
 /* ** MAX_PWD_LENGTH changed from 10 to 30 for ascii test - Sam ** */
 #define MAX_PWD_LENGTH		30
-#define MAX_TITLE_LENGTH	80 
+#define MAX_TITLE_LENGTH	80
 #define HOST_LENGTH		30
 #define PLR_DESC_LENGTH		512
-#define MAX_TONGUE		3   
-#define MAX_SKILLS		200  
-#define MAX_AFFECT		32    
+#define MAX_TONGUE		3
+#define MAX_SKILLS		200
+#define MAX_AFFECT		32
 #define MAX_OBJ_AFFECT		6     /* Used in obj_file_elem */
 #define MAX_NOTE_LENGTH		4000  /* arbitrary */
 #define MAX_LAST_ENTRIES        6000  /* arbitrary */
-#define MAX_HELP_KEYWORDS       256 
+#define MAX_HELP_KEYWORDS       256
 #define MAX_HELP_ENTRY          MAX_STRING_LENGTH
 
 /* define the largest set of commands for as trigger */
@@ -745,7 +745,7 @@ struct time_data {
 struct pclean_criteria_data {
   int level;		/* max level for this time limit	*/
   int days;		/* time limit in days			*/
-}; 
+};
 
 /* general player-related info, usually PC's and NPC's */
 struct char_player_data {
@@ -796,7 +796,7 @@ struct char_point_data {
 };
 
 
-/* 
+/*
  * char_special_data_saved: specials which both a PC and an NPC have in
  * common, but which must be saved to the players file for PC's.
  */
@@ -1114,11 +1114,11 @@ struct guild_info_type {
 
 /*
  * Config structs
- * 
+ *
  */
- 
+
  /*
- * The game configuration structure used for configurating the game play 
+ * The game configuration structure used for configurating the game play
  * variables.
  */
 struct game_data {
@@ -1138,7 +1138,7 @@ struct game_data {
   int load_into_inventory;/* Objects load in immortals inventory. */
   int track_through_doors;/* Track through doors while closed?    */
   int immort_level_ok;    /* Automatically level mortals to imm?  */
-  
+
   char *OK;               /* When player receives 'Okay.' text.	  */
   char *NOPERSON;         /* 'No-one by that name here.'	  */
   char *NOEFFECT;         /* 'Nothing seems to happen.'	          */
@@ -1161,7 +1161,7 @@ struct crash_save_data {
 
 
 /*
- * The room numbers. 
+ * The room numbers.
  */
 struct room_numbers {
   room_vnum mortal_start_room;	/* vnum of room that mortals enter at.  */

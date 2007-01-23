@@ -211,7 +211,7 @@ void perform_get_from_container(struct char_data *ch, struct obj_data *obj,
   if (mode == FIND_OBJ_INV || can_take_obj(ch, obj)) {
     if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch))
       act("$p: you can't hold any more items.", FALSE, ch, obj, 0, TO_CHAR);
-    else if (get_otrigger(obj, ch)) { 
+    else if (get_otrigger(obj, ch)) {
       obj_from_obj(obj);
       obj_to_char(obj, ch);
       act("You get $p from $P.", FALSE, ch, obj, cont, TO_CHAR);
@@ -275,7 +275,7 @@ void get_from_container(struct char_data *ch, struct obj_data *cont,
 
 int perform_get_from_room(struct char_data *ch, struct obj_data *obj)
 {
-  if (can_take_obj(ch, obj) && get_otrigger(obj, ch)) { 
+  if (can_take_obj(ch, obj) && get_otrigger(obj, ch)) {
     obj_from_room(obj);
     obj_to_char(obj, ch);
     act("You get $p.", FALSE, ch, obj, 0, TO_CHAR);
@@ -458,7 +458,7 @@ int perform_drop(struct char_data *ch, struct obj_data *obj,
 
   if (!drop_otrigger(obj, ch))
     return 0;
-  
+
   if ((mode == SCMD_DROP) && !drop_wtrigger(obj, ch))
     return 0;
 
@@ -512,7 +512,7 @@ ACMD(do_drop)
   byte mode = SCMD_DROP;
   int dotmode, amount = 0, multi, num_don_rooms;
   const char *sname;
-  
+
   switch (subcmd) {
   case SCMD_JUNK:
     sname = "junk";
@@ -522,9 +522,9 @@ ACMD(do_drop)
     sname = "donate";
     mode = SCMD_DONATE;
     /* fail + double chance for room 1   */
-    num_don_rooms = (CONFIG_DON_ROOM_1 != NOWHERE) * 2 +       
+    num_don_rooms = (CONFIG_DON_ROOM_1 != NOWHERE) * 2 +
                     (CONFIG_DON_ROOM_2 != NOWHERE)     +
-                    (CONFIG_DON_ROOM_3 != NOWHERE)     + 1 ; 
+                    (CONFIG_DON_ROOM_3 != NOWHERE)     + 1 ;
     switch (rand_number(0, num_don_rooms)) {
     case 0:
       mode = SCMD_JUNK;
@@ -621,7 +621,7 @@ ACMD(do_drop)
 void perform_give(struct char_data *ch, struct char_data *vict,
 		       struct obj_data *obj)
 {
-  if (!give_otrigger(obj, ch, vict)) 
+  if (!give_otrigger(obj, ch, vict))
     return;
   if (!receive_mtrigger(vict, ch, obj))
     return;
@@ -716,7 +716,7 @@ ACMD(do_give)
       send_to_char(ch, "What do you want to give %d of?\r\n", amount);
     else if (!(vict = give_find_vict(ch, argument)))
       return;
-    else if (!(obj = get_obj_in_list_vis(ch, arg, NULL, ch->carrying))) 
+    else if (!(obj = get_obj_in_list_vis(ch, arg, NULL, ch->carrying)))
       send_to_char(ch, "You don't seem to have any %ss.\r\n", arg);
     else {
       while (obj && amount--) {
@@ -895,10 +895,10 @@ ACMD(do_drink)
     send_to_char(ch, "It's empty.\r\n");
     return;
   }
-  
+
   if (!consume_otrigger(temp, ch, OCMD_DRINK))  /* check trigger */
     return;
-    
+
   if (subcmd == SCMD_DRINK) {
     char buf[MAX_STRING_LENGTH];
 

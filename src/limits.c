@@ -400,11 +400,11 @@ void point_update(void)
   /* characters */
   for (i = character_list; i; i = next_char) {
     next_char = i->next;
-	
+
     gain_condition(i, FULL, -1);
     gain_condition(i, DRUNK, -1);
     gain_condition(i, THIRST, -1);
-	
+
     if (GET_POS(i) >= POS_STUNNED) {
       GET_HIT(i) = MIN(GET_HIT(i) + hit_gain(i), GET_MAX_HIT(i));
       GET_MANA(i) = MIN(GET_MANA(i) + mana_gain(i), GET_MAX_MANA(i));
@@ -467,7 +467,7 @@ void point_update(void)
     /* If the timer is set, count it down and at 0, try the trigger */
     /* note to .rej hand-patchers: make this last in your point-update() */
     else if (GET_OBJ_TIMER(j)>0) {
-      GET_OBJ_TIMER(j)--; 
+      GET_OBJ_TIMER(j)--;
       if (!GET_OBJ_TIMER(j))
         timer_otrigger(j);
     }

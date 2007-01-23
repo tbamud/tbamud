@@ -200,7 +200,7 @@ extern void abort (), exit ();
 
 /* Header files *******************************************************/
 
- 
+
 /* Header files common to all source files */
 
 #ifdef HAVE_LIMITS_H
@@ -487,7 +487,7 @@ struct in_addr {
 #ifdef NEED_BZERO_PROTO
 //     void bzero(char *b, int length);
 #endif
- 
+
 #ifdef NEED_CRYPT_PROTO
    char *crypt(const char *key, const char *salt);
 #endif
@@ -663,7 +663,7 @@ struct in_addr {
 
 #ifdef NEED_SELECT_PROTO
    int select(int nfds, fd_set *readfds, fd_set *writefds,
-          fd_set *exceptfds, struct timeval *timeout);   
+          fd_set *exceptfds, struct timeval *timeout);
 #endif
 
 #ifdef NEED_SETITIMER_PROTO

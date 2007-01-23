@@ -102,7 +102,7 @@ void copy_shop_list(IDXTYPE **tlist, IDXTYPE *flist)
 /*-------------------------------------------------------------------*/
 
 /*
- * Copy a -1 terminated (in the type field) shop_buy_data 
+ * Copy a -1 terminated (in the type field) shop_buy_data
  * array list.
  */
 void copy_shop_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist)
@@ -316,7 +316,7 @@ void free_shop(struct shop_data *shop)
 
 /*-------------------------------------------------------------------*/
 
-/* returns the real number of the shop with given virtual number 
+/* returns the real number of the shop with given virtual number
  *
  * We take so good care to keep it sorted - let's use it :) - Welcor
  */
@@ -475,8 +475,8 @@ int save_shops(zone_rnum zone_num)
       /*
        * Save the buy types and namelists.
        */
-      for (j = 0;S_BUYTYPE(shop, j) != NOTHING; j++) 
-        fprintf(shop_file, "%d%s\n", 
+      for (j = 0;S_BUYTYPE(shop, j) != NOTHING; j++)
+        fprintf(shop_file, "%d%s\n",
                 S_BUYTYPE(shop, j),
 		S_BUYWORD(shop, j) ? S_BUYWORD(shop, j) : "");
       fprintf(shop_file, "-1\n");
@@ -518,12 +518,12 @@ int save_shops(zone_rnum zone_num)
       /*
        * Save the rooms.
        */
-      for (j = 0;S_ROOM(shop, j) != NOWHERE; j++) 
+      for (j = 0;S_ROOM(shop, j) != NOWHERE; j++)
         fprintf(shop_file, "%d\n", S_ROOM(shop, j));
       fprintf(shop_file, "-1\n");
 
       /*
-       * Save open/closing times 
+       * Save open/closing times
        */
       fprintf(shop_file, "%d\n%d\n%d\n%d\n", S_OPEN1(shop), S_CLOSE1(shop),
 		S_OPEN2(shop), S_CLOSE2(shop));

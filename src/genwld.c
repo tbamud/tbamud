@@ -33,14 +33,14 @@ room_rnum add_room(struct room_data *room)
   struct obj_data *tobj;
   int j, found = FALSE;
   room_rnum i;
-  
+
   if (room == NULL)
     return NOWHERE;
 
   if ((i = real_room(room->number)) != NOWHERE) {
     if (SCRIPT(&world[i]))
       extract_script(&world[i], WLD_TRIGGER);
-    tch = world[i].people; 
+    tch = world[i].people;
     tobj = world[i].contents;
     copy_room(&world[i], room);
     world[i].people = tch;
@@ -106,7 +106,7 @@ room_rnum add_room(struct room_data *room)
       default:
         mudlog(BRF, LVL_GOD, TRUE, "SYSERR: GenOLC: add_room: Unknown zone entry found!");
       }
-      
+
   /*
    * Update the loadroom table. Adds 1 or 0.
    */
@@ -208,7 +208,7 @@ int delete_room(room_rnum rnum)
             free(W_EXIT(i, j)->general_description);
           free(W_EXIT(i, j));
           W_EXIT(i, j) = NULL;
-        } else { 
+        } else {
           /* description is set, just point to nowhere */
           W_EXIT(i, j)->to_room = NOWHERE;
         }
@@ -360,7 +360,7 @@ int save_rooms(zone_rnum rzone)
 	    strncpy(buf1, R_EXIT(room, j)->keyword, sizeof(buf1)-1 );
 	  else
 	    *buf1 = '\0';
-     
+
 	  /*
 	   * Now write the exit to the file.
 	   */
@@ -449,7 +449,7 @@ room_rnum duplicate_room(room_vnum dest_vnum, room_rnum orig)
     return NOWHERE;
   }
 
-  nroom = world[new_rnum]; 
+  nroom = world[new_rnum];
   nroom.number = dest_vnum;
   nroom.zone = znum;
 
@@ -513,10 +513,10 @@ int free_room_strings(struct room_data *room)
   /* Free exits. */
   for (i = 0; i < NUM_OF_DIRS; i++) {
     if (room->dir_option[i]) {
-      if (room->dir_option[i]->general_description) 
+      if (room->dir_option[i]->general_description)
         free(room->dir_option[i]->general_description);
 
-      if (room->dir_option[i]->keyword) 
+      if (room->dir_option[i]->keyword)
         free(room->dir_option[i]->keyword);
 
       free(room->dir_option[i]);
