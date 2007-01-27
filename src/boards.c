@@ -192,9 +192,8 @@ SPECIAL(gen_board)
 
 int Board_write_message(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
 {
-  char *tmstr;
   time_t ct;
-  char buf[MAX_INPUT_LENGTH], buf2[MAX_NAME_LENGTH + 3];
+  char buf[MAX_INPUT_LENGTH], buf2[MAX_NAME_LENGTH + 3], tmstr[MAX_STRING_LENGTH];
 
   if (GET_LEVEL(ch) < WRITE_LVL(board_type)) {
     send_to_char(ch, "You are not holy enough to write on this board.\r\n");
@@ -221,11 +220,10 @@ int Board_write_message(int board_type, struct char_data *ch, char *arg, struct 
     return (1);
   }
   ct = time(0);
-  tmstr = (char *) asctime(localtime(&ct));
-  *(tmstr + strlen(tmstr) - 1) = '\0';
+  strftime(tmstr, sizeof(tmstr), "%a %b %d %Y", localtime(&ct));
 
   snprintf(buf2, sizeof(buf2), "(%s)", GET_NAME(ch));
-  snprintf(buf, sizeof(buf), "%6.10s %-12s :: %s", tmstr, buf2, arg);
+  snprintf(buf, sizeof(buf), "%s %-12s :: %s", tmstr, buf2, arg);
   NEW_MSG_INDEX(board_type).heading = strdup(buf);
   NEW_MSG_INDEX(board_type).level = GET_LEVEL(ch);
 

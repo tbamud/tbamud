@@ -124,10 +124,10 @@ See also: AEDIT, SOCIALS
 #31
 VNUMS FIND-ITEM VNUM-OBJ VNUM-MOBILES  
 
-Usage: vnum { room | obj | mob | trig } <name>
+Usage: vnum { room | obj | mob | trig } <keyword>
 
    Returns a list of the virtual numbers of the room, object, mobile, or trig
-which have the specified namelist or alias.
+which have the specified keyword.
 
 Examples:
 
@@ -155,7 +155,7 @@ HIDDEN-DOORS . HIDDEN-EXITS HIDDEN-ROOMS HIDDEN-OBJECTS HIDDEN-MOBS SECRETS UNSE
 present and may be acted upon by players. 
    This is done by starting the l-desc with a period (.). Unless a player has 
 holylight on they will not be able to see it. To make things easier please 
-please include the namelist "hidden" on the object or mobile.
+please include the keyword "hidden" on the object or mobile.
 
 .This is a hidden object/mob. This long description can only be seen with holylight.
 This normal description can be seen by anyone.
@@ -248,10 +248,10 @@ any of the above mudmail your coder after your zone is complete.
    Most of the things possible through special procedures can now be done
 through trigedit. 
 
-To create a postmaster make a mob, set one of the alias' as "postmaster," set
+To create a postmaster make a mob, set one of the keywords as "postmaster," set
 the NPC flag SPEC, and load it to the room via zedit. 
 
-To create a bank make an object, set it to type OTHER, add namelist "bank" and
+To create a bank make an object, set it to type OTHER, add keyword "bank" and
 load it to the room via zedit. 
 
 In all cases special procedures need to be added in by a coder. Once your zone
@@ -619,7 +619,7 @@ FAQ FREQUENTLY-ASKED-QUESTIONS
 
 1. Can I add color to my area? 
    Yes, you can. Just type in all the color codes. Just remember not to color
-mob alias or obj amelist. @RHELP COLOR-CODES@n.
+mob or obj keywords. @RHELP COLOR-CODES@n.
  
 2. What the heck is a VNUM?
    A VNUM, or Virtual Number, is just a way to keep track of the items in the
@@ -790,15 +790,15 @@ modifies a room exit but does not include an exit room vnum. These errant
 rooms are listed by the command 'show error' The fix is simple, remove the 
 exit by purge exit in redit exit menu or by using 'dig <direction> -1'
 
-2: SYSERR: Object # (oedit-s-desc) doesn't have drink type as last alias. (oedit-namelist)
+2: SYSERR: Object # (oedit-s-desc) doesn't have drink type as last keyword. (oedit-keyword)
 
    Another common error is caused by how shop code handles drink containers 
 poorly. In order for shops to display a jug as a jug of <drink type> they 
-must have the drink type as the last alias. It is good practice to put the 
-drink type as the first and last word of an objects namelist (older versions 
+must have the drink type as the last keyword. It is good practice to put the 
+drink type as the first and last word of an objects keyword (older versions 
 of CircleMUD expect it first).
-i.e. a shot of whisky should have the namelist: whisky shot whisky
-     a cup of slime mold juice namelist should be: juice cup slime juice
+i.e. a shot of whisky should have the keyword: whisky shot whisky
+     a cup of slime mold juice keyword should be: juice cup slime juice
 
 3: SYSERR: Mob #5 both Aggressive and Aggressive_to_Alignment.
 
@@ -1640,17 +1640,17 @@ Usage: snoop [player]
 
 Snoop allows you to see everything another player types or can see. This will 
 be displayed on your terminal preceded by a '%'. To prevent abuse snooping 
-someone is logged in the system files and is viewable by any immortal with 
-syslog enabled.
+someone is logged in the system files.
 
-Snoop is meant to assist teachers in helping builders. It allows you to see
-what they are doing wrong and correct them. It should be used in conjunction
-with the send command. Snoop shall only be used to assist people when building.
+Snoop is meant to assist teachers in helping builders and to ensure players do
+not cheat. With builders it allows you to see what they are doing wrong and 
+correct them. It should be used in conjunction with the send command. Snoop 
+shall only be used to assist people when building and enforcing rules. It is
+not meant as a tool for spying.
 
 Type snoop <your name> or just snoop to stop snooping.
 
 See also: SEND
-
 #31
 SEND
 
@@ -1667,10 +1667,8 @@ With this I just type: sa <message>. This will use color to catch his attention
 and will list my name since send does not automatically show who the send is 
 from.
 
-Wiznet is now viewable while in OLC.
-
-Example:
-send Rumble You are being watched!
+Wiznet is now viewable while in OLC so if the MUD isn't too crowded you can use
+that as well, but do not spam other builders.
 
 See also: TRIG-SEND
 #31
@@ -1713,9 +1711,9 @@ See also: TBAMAP, MAPPING
 ABBREVIATIONS
 
    We have added abbreviations so you do not have to type everything exactly as
-it appears. This also means that when you enter keywords/alias/namelist in OLC
-you do not have to list all forms. i. e. the keyword rumble could be used to cover 
-anyone who types <action> rumble rumbl rumb rum ru.
+it appears. This also means that when you enter keywords in OLC you do not have
+to list all forms. i. e. the keyword rumble could be used to cover anyone who 
+types <action> rumble rumbl rumb rum ru.
 
 #31 
 ZONE-DESCRIPTION-ROOM ZONE_DESCRIPTION_ROOM 00 EXAMPLE-PROPOSALS EXAMPLE-ZONE-DESCRIPTIONS ZONE-INFO TEST-ZONE TRIAL-ZONE ZONE-DESCRIPTIONS ZEDIT-DESCRIPTION
@@ -2600,10 +2598,9 @@ The slowns command is deprecated after adding asynchronous host lookup.
 
 Huh? Slowns toggles whether or not IP addresses are resolved into readable 
 site names. If slow nameserver is enabled, USERS will show only IP 
-addresses. (128.123.222.111 etc).
+addresses. i.e. 128.123.222.111 and not ip.hr.hr.cox.net.
 
 See also: TOGGLE, USERS
-
 #31
 SWITCH
 
@@ -2726,20 +2723,19 @@ Usage: wizhelp
 Gives a list of the special commands available at your level.
 
 The following wizard commands are implemented with level in the brackets:
-[31];        [32]advance   [32]aedit     [31]at       [31]attach   [33]ban       [31]buildwalk
-[34]cedit    [32]checkload [33]copyover  [31]date     [32]dc       [31]detach    [31]dig      
-[31]echo     [34]edit      [34]export    [32]file     [32]force    [33]freeze    [32]gecho
-[31]goto     [31]handbook  [33]hcontrol  [32]hedit    [34]helpcheck[31]holylight [31]imotd    
-[31]invis    [32]last      [34]lastlist  [32]links    [31]load     [31]medit     [31]mlist    
-[33]mute     [31]nohassle  [33]notitle   [31]nowiz    [31]oedit    [31]olc       [31]olist    
-[32]pardon   [31]peace     [31]poofin    [31]poofout  [31]poofs    [31]purge     [34]qecho
-[31]rclone   [31]redit     [34]reload    [33]reroll   [31]restore  [31]rlist     [31]roomflag 
-[31]saveall  [31]sedit     [32]send      [32]set      [31]show     [34]shutdow   [34]shutdown 
-[32]skillset [31]slist     [34]slowns    [32]snoop    [31]stat     [32]switch    [31]syslog   
-[33]tedit    [32]teleport  [33]thaw      [31]tlist    [34]trackthru[32]transfer  [31]trigedit 
-[31]tstat    [32]unaffect  [33]unban     [32]users    [32]vdelete  [31]vnum      [31]vstat    
-[31]wiznet   [31]wizhelp   [34]wizlock   [32]zcheck   [31]zedit    [31]zlist     [32]zpurge   
-[31]zreset
+[31];         [32]advance   [32]aedit     [31]at        [31]attach    [33]ban       [31]buildwalk
+[34]cedit     [32]checkload [33]copyover  [31]date      [32]dc        [31]detach    [31]dig      
+[31]echo      [34]export    [32]file      [32]force     [33]freeze    [32]gecho     [31]goto
+[31]handbook  [33]hcontrol  [32]hedit     [34]helpcheck [31]holylight [31]imotd     [31]invis
+[32]last      [32]links     [31]load      [31]medit     [31]mlist     [33]mute      [31]nohassle
+[33]notitle   [31]nowiz     [31]oedit     [31]olc       [31]olist     [31]page      [32]pardon
+[31]peace     [31]purge     [34]qecho     [31]rclone    [31]redit     [34]reload    [33]reroll
+[31]restore   [31]rlist     [31]roomflags [31]saveall   [31]sedit     [32]send      [32]set
+[31]show      [34]shutdow   [34]shutdown  [32]skillset  [31]slist     [32]snoop     [31]stat
+[32]switch    [33]tedit     [32]teleport  [33]thaw      [31]tlist     [32]transfer  [31]trigedit 
+[31]tstat     [32]unaffect  [33]unban     [31]uptime    [32]users     [32]vdelete   [31]vnum
+[31]vstat     [31]wiznet    [31]wizhelp   [34]wizlock   [32]zcheck    [31]zedit     [31]zlist
+[32]zpurge    [31]zreset
 
 @RHELP <any of the above commands>@n
 #31
@@ -6199,7 +6195,7 @@ and English forms are both valid (5 or WEAPON, 9 or ARMOR, etc.).
    The second (optional) argument is called "OBJ-EXTRA FLAGS" and allows you
 to provide optional keywords to define specific keywords that must be present
 on the objects for the shopkeeper to buy or sell it. 
- CAPS means flags, lowercase means object namelist.
+ CAPS means flags, lowercase means object keyword.
    
 @n##              Type   OBJ-EXTRA FLAGS
    
@@ -6461,7 +6457,7 @@ equip the same position with more than one object.
 MEDIT-MENU MOB-MENU
 
 -- Mob Number:  [@c1300@n]                             @RHELP MEDIT-NUMBER@n
-1) Sex: @yneutral@n          2) Alias: @ymob unfinished@n  @RHELP MEDIT-ALIAS@n
+1) Sex: @yneutral@n          2) Keywords: @ymob unfinished@n  @RHELP MEDIT-KEYWORDS@n
 3) S-Desc: @ythe unfinished mob@n                      @RHELP MEDIT-S-DESC@n
 4) L-Desc:-
 @yAn unfinished mob stands here.@n                     @RHELP MEDIT-L-DESC@n
@@ -6504,27 +6500,27 @@ rash. Be creative.
 #31
 KEYWORDS
 
-   Mob aliases, and object namelists are keywords the player will use to
-interact with the mobs and objects. Such as "look Rusty" and "wield bludger"
-If you have more than one keyword separate them with spaces, not commas. They 
-should never include colorcodes or the words "look, look at, a, an, the, of, 
-some, etc." Only use keywords a player can figure out by the s-desc, l-desc,
-d-desc, or extra descriptions. Always make them unique, there are already 
-plenty of swords and citizens on most MUDs. 
+   Keywords are what the player will use to interact with the mobs and objects.
+Such as "look Rusty" and "wield bludger" If you have more than one keyword 
+separate them with spaces, not commas. They should never include colorcodes or 
+the words "look, look at, a, an, the, of, some, etc." Only use keywords a 
+player can figure out by the s-desc, l-desc, d-desc, or extra descriptions. 
+Always make them unique, there are already plenty of swords and citizens on 
+most MUDs. 
 
-See also: OEDIT-NAMELIST, MEDIT-ALIAS, EXTRA, COLORCODES
+See also: OEDIT-KEYWORD, MEDIT-KEYWORDS, EXTRA, COLORCODES
 #31
-MEDIT-ALIAS MEDIT-SEX MEDITNAME MOB-NAME MEDIT-ALIAS MOB-SEX 
+MEDIT-KEYWORDS MEDIT-ALIAS MEDIT-SEX MEDITNAME MOB-NAME MEDIT-ALIAS MOB-SEX 
 
 1) Sex: @yneutral@n 
    This is pretty self-explanatory. Male, Female, or Neutral. Remember if the
 mob is too small to determine its sex you should set it as neutral.  
 
-2) Alias: @ymob unfinished@n
-   An alias is the word you use to act on a mob. For example the alias: "Spike 
+2) Keywords: @ymob unfinished@n
+   A keyword is the word you use to act on a mob. For example the keyword: "Spike 
 dog black angry" would allow the following commands to work: kill Spike, look 
 black, consider angry, poke dog, etc. So many people get this wrong I will 
-rephrase it. Mob alias is a list of KEYWORDS which players can use to interact 
+rephrase it. It is a list of KEYWORDS which players can use to interact 
 with the mobile.  @RHELP KEYWORDS@n. 
 
 Examples: "sparkly golden dragon" "bassett hound fat"
@@ -6790,7 +6786,7 @@ See also: MEDIT-AFF-FLAGS
 #31
 OEDIT-MENU OBJ-MENU OBJECT-MENU
 -- Item number : [@c@c1300@n]                   @RHELP OEDIT-NUMBER@n
-1) Namelist : @yunfinished object@n           @RHELP OEDIT-NAMELIST@n
+1) keywords : @yunfinished object@n           @RHELP OEDIT-KEYWORDS@n
 2) S-Desc   : @yan unfinished object@n        @RHELP OEDIT-S-DESC@n
 3) L-Desc   :-       
 @yAn unfinished object is lying here.@n       @RHELP OEDIT-L-DESC@n
@@ -6823,10 +6819,10 @@ of the object within the game. It is the number that will be used to reference
 the object from zone files and is the number used to load objects from within 
 the game. 
 #31
-OEDIT-NAMELIST OEDIT-ALIASES OBJ-NAMELIST NAMELIST
+OEDIT-KEYWORDS OEDIT-NAMELIST OEDIT-ALIASES OBJ-NAMELIST NAMELIST
 
 
-1) Namelist : @yunfinished object@n
+1) keywords : @yunfinished object@n
    The list of keywords players can use to interact with the object.
 @RHELP KEYWORD@n.
 
@@ -6880,8 +6876,7 @@ Potions: Rumble quaffs <object>.
    I guess this needs to be repeated once more. A-desc does not normally need 
 to be set. Except for the few instances listed above. It is not the object's
 equivalent of the D-desc. If you want someone to see something when they 
-look at the object add it in the extra description menu with keywords the 
-same as the namelist.
+look at the object add it in the extra description menu with the same keywords.
 
 A-desc is not seen by the person using the object. Only by the victim and other
 players in the room. The following variables can be used with it. 
@@ -7344,8 +7339,8 @@ additional detail by typing "look wall."  Choosing this option will bring you
 to the extra descriptions menu: 
 
 1) Keyword: @y<NONE>@n
-   This is the same as an alias or namelist. Simply the <thing>. Do
-not use a/an/the/look/read in this field.
+   List the words you want people to use to interact with it. Simply the 
+<thing>. Do not use a/an/the/look/read in this field.
 
 2) Description:
 @y<NONE>@n
@@ -7388,7 +7383,7 @@ These must always be complete sentences. For example, "You see the
 main chamber of the temple." These can really flesh out a zone.
 
 3) Door name   : @yNONE@n
-This is an alias field. An alias is the word you use when you perform
+This is a keyword field. A keyword is the word you use when you perform
 an action. Such as opening and closing. It can be more than one word, but
 the first word is the only one displayed in the output messages. i.e. Rumble
 opens a <Door name>.
@@ -7607,7 +7602,7 @@ at 100 objects and "You see nothing special..." all 100 times. In an effort to
 make all MUDs different and better, take the time to write an extra description
 for your object. Think of an objects extra description as the same thing as a
 mobs description when you look at it, which it actually is. For the extra
-descriptions keywords, use the same words as used in the objects namelist. 
+descriptions keywords, use the same keywords as you did earlier. 
 A very easy way to detect lazy builders with bad grammar is when objects
 have no description at all. This causes frustration on the player side, because
 when you have seen "You see nothing special..." once too many, you just do not
@@ -10506,7 +10501,7 @@ Usage: toggle
 TOGGLE shows you the current values of various toggles available on the MUD.
 This command can also be used to change these values, if used with the correct
 argument. When a toggle is set, it will be saved in that state until the next
-time you change it.
+time you change it. Level IMP toggle includes:
 
  SlowNameserver: OFF                            Trackthru Doors: ON 
       Buildwalk: OFF              NoWiz: OFF             ClsOLC: OFF
@@ -10973,7 +10968,7 @@ Thanks to ...
 Share and enjoy.
 MERC Industries
 #0
-HEIACH XTBAX
+HEIACH XTBA
 
 Heiach has been a big help with training new builders and has become very adept
 with trigedit. His example zone 359 is very impressive. He is always willing to

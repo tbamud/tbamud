@@ -1,36 +1,33 @@
-                           CircleMUD README File
+                            tbaMUD README File
                            ---------------------
-Updated: Dec 2006
+Updated: Jan 2006
 
-Welcome to CircleMUD 3.5!  I hope you enjoy your stay.
-
-Current development of CircleMUD is being done by the Builder Academy. All
-requests for help or bugs should be reported there: builderacademy.net 9091.
+All requests for help or bugs should be reported there: builderacademy.net 9091.
 
 Information about CircleMUD can be found at the CircleMUD Home Page and FTP:
 http://www.circlemud.org
 ftp://ftp.circlemud.org
 
-Both of these sights are outdated and no longer maintained. Hopefully this will
-change soon. Until then the latest information and downloads can be found at 
-the CWG forums and download section: 
-
+Both of these sites are outdated and no longer maintained. The latest 
+information and downloads can be found at the CWG forums and download
+section: 
 http://cwg.lazuras.org/modules.php?name=Forums
 
 
-Downloading CircleMUD
+Downloading tbaMUD
 ---------------------
 
-You can find the current version of CircleMUD at the following URL:
+You can find the current version of tbaMUD at the following URL:
 
 http://cwg.lazuras.org/modules.php?name=Downloads
 
 
-Compiling CircleMUD
+Compiling
 -------------------
 
-CircleMUD compiles under a large number of operating systems; instructions
+tbaMUD compiles under a large number of operating systems; instructions
 for compiling on each platform is can be found in the file doc/README.<system>
+Many of these instructions are outdated, please feel free to update them.
 
 AMIGA   - If you are using an Amiga running AmigaDOS. (If you're running 
           NetBSD or Linux on an Amiga, use README.UNIX instead.)
@@ -53,7 +50,6 @@ VMS     - If you happen to be on OpenVMS.
 WATCOM  - If using WATCOM under Windows.
 
 WIN     - If you are using Windows.
-
 
 If you are interested in porting CircleMUD to a new platform, see the
 file doc/porting.txt for some tips.
@@ -94,10 +90,9 @@ the more basic coding tasks such as how to add new commands, spells,
 skills, socials, and classes.  Note that it assumes the reader already has
 an excellent knowledge of C; the manual is not a C tutorial.
 
-"The CircleMUD SYSERR List" (syserr.txt, syserr.ps)
-    A list of SYSERR messages CircleMUD can generate, and a description of what
-can cause each problem and how to solve it.  An excellent guide for 
-troubleshooting and area debugging.
+"The CircleMUD SYSERR List" (syserr.txt)
+    A list of SYSERR messages and a description of what can cause each problem
+and how to solve it.  An excellent guide for troubleshooting and area debugging.
 
 
 Getting Help
@@ -113,8 +108,7 @@ http://post.queensu.ca/cgi-bin/listserv/wa?SUBED1=circle&A=1
 No matter how you choose to get help, make sure to always include the
 following information:
 
-  -- The exact version of CircleMUD you're using (e.g., "CircleMUD 3.5",
-     "CircleMUD 3.0 beta patchlevel 21", etc.).
+  -- The exact version you are using (i.e., "tbaMUD 3.51", etc.).
   -- The EXACT text of any error messages, compiler errors, link errors, or any
      other errors you're getting.
   -- The exact type of hardware, operating system name and version, and

@@ -1,10 +1,10 @@
-tbaMUD is currently being developed by The Builder Academy. If you need any
+atbaMUD is currently being developed by The Builder Academy. If you need any
 help or find any bugs please stop by: builderacademy.net 9091
 
-todo:
-- Change numerous SYSERR logs to Warnings.
-- Change all doc/pdf's to .txt.
-
+tbaMUD 3.51
+- Added years to messages (thanks Rhade).
+- Updated version and files to new name: tbaMUD!
+- Renamed medit_alias and oedit_namelist to _keyword for consistency.
 - Moved numerous protos only used once from .h files to appropriate .c file.
 - Renamed numerous functions for clarity (mostly shop functions like copy_list
   to copy_shop_list, etc).
@@ -25,7 +25,7 @@ todo:
   The load function has been kept for backwards compatibility.
 - Moved alias saving to Ascii pflies by default. Aliases in the old files will 
   still be read (once per char).
-- do_toggle actually toggles everything now (thanks to Rhade). Moved slowns, 
+- do_toggle actually toggles everything now (thanks Rhade). Moved slowns, 
   track, syslog, pagelength, wimpy, and color to toggle <option> <arg>. Keeping
   do_gen_tog so the old command toggles still work.
 - Immortals no longer have to pay to mudmail.
@@ -34,7 +34,7 @@ todo:
 - Removed unused olc_bitvector and save_etext functions.
 - Added min_level check to hindex.
 - Fixed zlist and index files 
-- Changed PRF_ROOMFLAGS to PRF_SHOWVNUMS.
+- Renamed roomflags to showvnums.
 - Mini world zone 0, 12, 30 error free (Added 1.trg to index.mini for examples)
 - Updated errors for no time/config files.
 - Added -l(eader) and -g(rouped) options to do_who (thanks Rhade).
@@ -42,7 +42,6 @@ todo:
 - Spellchecked stock.hlp.
 - Updated fixes from 3.1 CVS snapshot.
 - Fixed permissions on numerous files.
-- Moved do_cheat into do_return.
 - Renamed shit, no really in zmalloc.c unsigned char * shit;
 - Spellchecked help.hlp.
 - Updated /doc/README.Cygwin.
@@ -51,7 +50,7 @@ todo:
 - Modified all comments referring to old playerfile and removed obsolete code.
 - Removed .accepted, conf.h, and Makefile. 
 - Moved text/hedit to text/help directory. Now 2 help files to choose from 
-  help.hlp (TBA's helpfiles) and stock.hlp.
+  help.hlp (TBA's helpfiles) and the oldhelp directory.
 - Fixed error from adding poofs to do_stat and not checking !IS_NPC.
 - Fixed help search so it checks player level so HELP AC can exist as a mortal
   helpfile and an immortal helpfile.
@@ -221,7 +220,7 @@ CircleMUD 3.5
 - Added history command to show last 100 comms.
 - Added an export command that would QQ and compress a zone.
 - Numerous new logs for force, buildwalk, delete, snoop, etc.
-- Added vnum and TRIG tags to everything, roomflags toggles it on/off.
+- Added vnum and TRIG tags to everything, showvnums toggles it on/off.
 - Added keyword seperation when statting extra desc. [desk] [notes papers]
 - Added buildwalk and dig.
 
