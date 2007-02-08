@@ -420,7 +420,7 @@ void	update_pos(struct char_data *victim);
 					GET_OBJ_VAL((obj), 3) == 1)
 
 #define CAN_WEAR(obj, part)	OBJWEAR_FLAGGED((obj), (part))
-
+#define GET_OBJ_SHORT(obj)      ((obj)->short_description)
 
 /* compound utilities and other macros **********************************/
 

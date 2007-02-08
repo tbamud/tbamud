@@ -1817,7 +1817,14 @@ ACMD(do_toggle)
     "      NoAuction: %-3s    "
     "        NoGrats: %-3s\r\n"
 
-    "            AFK: %-3s    "
+    "       AutoLoot: %-3s    "
+    "       AutoGold: %-3s    "
+    "      AutoSplit: %-3s\r\n"
+
+    "        AutoSac: %-3s    "
+    "     AutoAssist: %-3s    "
+    "            AFK: %-3s\r\n"
+
     "     Pagelength: %-3d    "
     "          Color: %s     \r\n ",
 
@@ -1841,7 +1848,14 @@ ACMD(do_toggle)
     ONOFF(PRF_FLAGGED(ch, PRF_NOAUCT)),
     ONOFF(PRF_FLAGGED(ch, PRF_NOGRATZ)),
 
+    ONOFF(PRF_FLAGGED(ch, PRF_AUTOLOOT)),
+    ONOFF(PRF_FLAGGED(ch, PRF_AUTOGOLD)),
+    ONOFF(PRF_FLAGGED(ch, PRF_AUTOSPLIT)),
+
+    ONOFF(PRF_FLAGGED(ch, PRF_AUTOSAC)),
+    ONOFF(PRF_FLAGGED(ch, PRF_AUTOASSIST)),
     ONOFF(PRF_FLAGGED(ch, PRF_AFK)),
+
     GET_PAGE_LENGTH(ch),
     types[COLOR_LEV(ch)]);
     return;
@@ -1918,6 +1932,21 @@ ACMD(do_toggle)
     {"syslog", -1, LVL_IMMORT, "\n", "\n"},
     {"wimpy", -1, 0, "\n", "\n"},
     {"pagelength", -1, 0, "\n", "\n"},
+    {"autoloot", PRF_AUTOLOOT, 0,
+    "Autoloot disabled.\r\n",
+    "Autoloot enabled.\r\n"},
+    {"autogold", PRF_AUTOGOLD, 0,
+    "Autogold disabled.\r\n",
+    "Autogold enabled.\r\n"},
+    {"autosplit", PRF_AUTOSPLIT, 0,
+    "Autosplit disabled.\r\n",
+    "Autosplit enabled.\r\n"},
+    {"autosac", PRF_AUTOSAC, 0,
+    "Autosac disabled.\r\n",
+    "Autosac enabled.\r\n"},
+    {"autoassist", PRF_AUTOASSIST, 0,
+    "Autoassist disabled.\r\n",
+    "Autoassist enabled.\r\n"},
     {"\n", -1, -1, "\n", "\n"} /* must be last */
   };
 
@@ -2027,8 +2056,6 @@ ACMD(do_toggle)
     if (!*arg2) {
       TOGGLE_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
       result = (PRF_FLAGGED(ch, tog_messages[toggle].toggle));
-//      send_to_char(ch, "Value must either be 'on' or 'off'.\r\n");
-//      return;
     } else if (!strcmp(arg2, "on")) {
       SET_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
       result = 1;

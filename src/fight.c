@@ -32,6 +32,10 @@ extern struct message_list fight_messages[MAX_MESSAGES];
 /* External procedures */
 char *fread_action(FILE *fl, int nr);
 ACMD(do_flee);
+ACMD(do_get);
+ACMD(do_split);
+ACMD(do_sac);
+ACMD(do_assist);
 int backstab_mult(int level);
 int thaco(int ch_class, int level);
 int ok_damage_shopkeeper(struct char_data *ch, struct char_data *victim);
@@ -683,6 +687,11 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
  */
 int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
 {
+  long local_gold = 0;
+  char local_buf[256];
+  struct char_data *tmp_char;
+  struct obj_data *corpse_obj, *coin_obj, *next_obj;
+
   if (GET_POS(victim) <= POS_DEAD) {
     /* This is "normal"-ish now with delayed extraction. -gg 3/15/2001 */
     if (PLR_FLAGGED(victim, PLR_NOTDEADYET) || MOB_FLAGGED(victim, MOB_NOTDEADYET))
@@ -839,7 +848,33 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
       if (MOB_FLAGGED(ch, MOB_MEMORY))
 	forget(ch, victim);
     }
+    /* Cant determine GET_GOLD on corpse, so do now and store */
+    if (IS_NPC(victim)) {
+      local_gold = GET_GOLD(victim);
+      sprintf(local_buf,"%ld", (long)local_gold);
+    }
+
     die(victim, ch);
+    if (IS_AFFECTED(ch, AFF_GROUP) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
+      generic_find("corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
+      if (corpse_obj) {
+        for (coin_obj = corpse_obj->contains; coin_obj; coin_obj = next_obj) {
+          next_obj = coin_obj->next_content;
+          if (CAN_SEE_OBJ(ch, coin_obj) && isname("coin", coin_obj->name))
+            extract_obj(coin_obj);
+        }
+        do_split(ch,local_buf,0,0);
+      }
+      /* need to remove the gold from the corpse */
+    } else if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOGOLD)) {
+      do_get(ch, "all.coin corpse", 0, 0);
+    }
+    if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOLOOT)) {
+      do_get(ch, "all corpse", 0, 0);
+    }
+    if (IS_NPC(victim) && !IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOSAC)) {
+      do_sac(ch,"corpse",0,0);
+    }
     return (-1);
   }
   return (dam);
@@ -976,6 +1011,7 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
 void perform_violence(void)
 {
   struct char_data *ch;
+  struct follow_type *k;
 
   for (ch = combat_list; ch; ch = next_combat_list) {
     next_combat_list = ch->next_fighting;
@@ -1001,6 +1037,19 @@ void perform_violence(void)
       send_to_char(ch, "You can't fight while sitting!!\r\n");
       continue;
     }
+
+    for (k = ch->followers; k; k=k->next) {
+      /* should followers auto-assist master? */
+      if (!IS_NPC(k->follower) && !FIGHTING(k->follower) && PRF_FLAGGED(k->follower, 
+	  PRF_AUTOASSIST) && (IN_ROOM(k->follower) == IN_ROOM(ch)))
+        do_assist(k->follower, GET_NAME(ch), 0, 0);
+    }
+
+    /* should master auto-assist followers?  */
+    if (ch->master && PRF_FLAGGED(ch->master, PRF_AUTOASSIST) &&
+        FIGHTING(ch) && !FIGHTING(ch->master) &&
+        (IN_ROOM(ch->master) == IN_ROOM(ch)))
+      do_assist(ch->master, GET_NAME(ch), 0, 0);
 
     hit(ch, FIGHTING(ch), TYPE_UNDEFINED);
     if (MOB_FLAGGED(ch, MOB_SPEC) && GET_MOB_SPEC(ch) && !MOB_FLAGGED(ch, MOB_NOTDEADYET)) {

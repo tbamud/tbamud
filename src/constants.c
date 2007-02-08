@@ -199,11 +199,11 @@ const char *preference_bits[] = {
   "CLS",
   "BLDWLK",
   "AFK",
-  "UNUSED1",
-  "UNUSED2",
-  "UNUSED3",
-  "UNUSED4",
-  "UNUSED5",
+  "AUTOLOOT",
+  "AUTOGOLD",
+  "AUTOSPLIT",
+  "AUTOSAC",
+  "AUTOASSIST",
   "\n"
 };
 

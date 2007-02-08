@@ -397,7 +397,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "peace"    , "pe"      , POS_DEAD    , do_peace    , LVL_BUILDER, 0 },
   { "pick"     , "pi"      , POS_STANDING, do_gen_door , 1, SCMD_PICK },
   { "practice" , "pr"     , POS_RESTING , do_practice , 1, 0 },
-  { "page"     , "pag"     , POS_DEAD    , do_page     , LVL_IMMORT, 0 },
+  { "page"     , "pag"     , POS_DEAD    , do_page     , 1, 0 },
   { "pardon"   , "pardon"  , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_PARDON },
   { "policy"   , "pol"     , POS_DEAD    , do_gen_ps   , 0, SCMD_POLICIES },
   { "pour"     , "pour"    , POS_STANDING, do_pour     , 0, SCMD_POUR },
@@ -619,8 +619,23 @@ void command_interpreter(struct char_data *ch, char *argument)
         if (GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
           break;
 
-  if (*complete_cmd_info[cmd].command == '\n')
-    send_to_char(ch, "Huh?!?\r\n");
+  if (*complete_cmd_info[cmd].command == '\n') {
+    int found = 0;
+    send_to_char(ch, "Huh!?!\r\n");
+
+    for (cmd = 0; *cmd_info[cmd].command != '\n'; cmd++) {
+      if (*arg != *cmd_info[cmd].command || cmd_info[cmd].minimum_level > GET_LEVEL(ch))
+        continue;
+
+      if (levenshtein_distance(arg, (char *) cmd_info[cmd].command) <= 2) {
+        if (!found) {   
+          send_to_char(ch, "\r\nDid you mean:\r\n");
+          found = 1;
+        }
+        send_to_char(ch, "  %s\r\n", cmd_info[cmd].command);
+      }
+    }
+  }
   else if (!IS_NPC(ch) && PLR_FLAGGED(ch, PLR_FROZEN) && GET_LEVEL(ch) < LVL_IMPL)
     send_to_char(ch, "You try, but the mind-numbing cold prevents you...\r\n");
   else if (complete_cmd_info[cmd].command_pointer == NULL)

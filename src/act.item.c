@@ -986,7 +986,7 @@ ACMD(do_eat)
     do_drink(ch, argument, 0, SCMD_SIP);
     return;
   }
-  if ((GET_OBJ_TYPE(food) != ITEM_FOOD) && (GET_LEVEL(ch) <= LVL_BUILDER)) {
+  if ((GET_OBJ_TYPE(food) != ITEM_FOOD) && (GET_LEVEL(ch) < LVL_IMMORT)) {
     send_to_char(ch, "You can't eat THAT!\r\n");
     return;
   }
@@ -1521,4 +1521,71 @@ ACMD(do_remove)
     else
       perform_remove(ch, i);
   }
+}
+
+ACMD(do_sac)
+{
+  char arg[MAX_INPUT_LENGTH];
+  struct obj_data *j, *jj, *next_thing2;
+
+  one_argument(argument, arg);
+
+  if (!*arg) {
+       send_to_char(ch, "Sacrifice what?\n\r");
+       return;
+     }
+
+  if (!(j = get_obj_in_list_vis(ch, arg, NULL, world[IN_ROOM(ch)].contents)) && (!(j = get_obj_in_list_vis(ch, arg, NULL, ch->carrying)))) {
+       send_to_char(ch, "It doesn't seem to be here.\n\r");
+       return;
+     }
+
+  if (!CAN_WEAR(j, ITEM_WEAR_TAKE)) {
+       send_to_char(ch, "You can't sacrifice that!\n\r");
+       return;
+     }
+
+   act("$n sacrifices $p.", FALSE, ch, j, 0, TO_ROOM);
+
+  switch (rand_number(0, 5)) {
+      case 0:
+        send_to_char(ch, "You sacrifice %s to the Gods.\r\nYou receive one gold coin for your humility.\r\n", GET_OBJ_SHORT(j));
+        GET_GOLD(ch) += 1;
+      break;
+      case 1:
+        send_to_char(ch, "You sacrifice %s to the Gods.\r\nThe Gods ignore your sacrifice.\r\n", GET_OBJ_SHORT(j));
+      break;
+      case 2:
+        send_to_char(ch, "You sacrifice %s to the Gods.\r\nZizazat gives you %d experience points.\r\n", GET_OBJ_SHORT(j), (2*GET_OBJ_COST(j)));
+        GET_EXP(ch) += (2*GET_OBJ_COST(j));
+      break;
+      case 3:
+        send_to_char(ch, "You sacrifice %s to the Gods.\r\nYou receive %d experience points.\r\n", GET_OBJ_SHORT(j), GET_OBJ_COST(j));
+        GET_EXP(ch) += GET_OBJ_COST(j);
+      break;
+      case 4:
+        send_to_char(ch, "Your sacrifice to the Gods is rewarded with %d gold coins.\r\n", GET_OBJ_COST(j));
+        GET_GOLD(ch) += GET_OBJ_COST(j);
+      break;
+      case 5:
+        send_to_char(ch, "Your sacrifice to the Gods is rewarded with %d gold coins\r\n", (2*GET_OBJ_COST(j)));
+        GET_GOLD(ch) += (2*GET_OBJ_COST(j));
+      break;
+    default:
+        send_to_char(ch, "You sacrifice %s to the Gods.\r\nYou receive one gold coin for your humility.\r\n", GET_OBJ_SHORT(j));
+        GET_GOLD(ch) += 1;
+    break;
+  }
+  for (jj = j->contains; jj; jj = next_thing2) {
+    next_thing2 = jj->next_content;       /* Next in inventory */
+    obj_from_obj(jj);
+
+    if (j->carried_by)
+      obj_to_room(jj, IN_ROOM(j));
+    else if (IN_ROOM(j) != NOWHERE)
+      obj_to_room(jj, IN_ROOM(j));
+    else
+      assert(FALSE);
+  }
+  extract_obj(j);
 }

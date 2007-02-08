@@ -218,6 +218,11 @@
 #define PRF_CLS         (1 << 23) /* Clear screen in OLC                */
 #define PRF_BUILDWALK   (1 << 24) /* Build new rooms while walking ?    */
 #define PRF_AFK         (1 << 25) /* AFK flag                           */
+#define PRF_AUTOLOOT    (1 << 26) /* Loot everything from a corpse      */
+#define PRF_AUTOGOLD    (1 << 27) /* Loot gold from a corpse            */
+#define PRF_AUTOSPLIT   (1 << 28) /* Split gold with group              */
+#define PRF_AUTOSAC     (1 << 29) /* Sacrifice a corpse                 */
+#define PRF_AUTOASSIST  (1 << 30) /* Auto-assist toggle                 */
 
 /* Affect bits: used in char_data.char_specials.saved.affected_by */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */

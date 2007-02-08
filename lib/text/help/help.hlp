@@ -951,7 +951,7 @@ when done type /fi to format with indent.
 See also: TEXT-EDITOR
 
 #31
-BUFFERS DEFINES MAXSIZE MAX_SIZE MAXBUFFERS PAGE_LENGTHS MAX_BUFFERS 
+BUFFERS DEFINES MAXSIZE MAX_SIZE MAXBUFFERS MAX_BUFFERS 
 
 define MAX_SOCK_BUF       (24 * 1024)   /* Size of kernel's sock buf   */
 define MAX_PROMPT_LENGTH           96   /* Max length of prompt        */
@@ -1111,7 +1111,7 @@ MAILING    - Player is writing mail
 CSH        - Player needs to be crash-saved
 SITEOK     - Player has been site-cleared
 NOSHOUT    - Player in not on the shout channel
-NOSHOUT    - Player is not on the gossip channel
+NOGOS      - Player is not on the gossip channel
 NOTITLE    - Player not allowed to set title
 DELETED    - Player deleted - space reusable
 LOADRM     - Player uses nonstandard loadroom
@@ -2476,8 +2476,9 @@ The following are valid fields:
  
 Field          Level Required   Who     Value Type  Description
 ----------------------------------------------------------------------------
+afk            LVL_BUILDER      BOTH    NUMBER      AFK flag
 ac             LVL_BUILDER      BOTH    NUMBER      Armor class
-age            LVL_BUILDER      BOTH    NUMBER      Character's age
+age            LVL_GOD          BOTH    NUMBER      Character's age
 align          LVL_BUILDER      BOTH    NUMBER      Alignment
 bank           LVL_BUILDER      PC      NUMBER      Gold in bank
 brief          LVL_GOD          PC      BINARY      Brief mode
@@ -2489,7 +2490,7 @@ damroll        LVL_BUILDER      BOTH    NUMBER      Damage modifier
 deleted        LVL_IMPL         PC      BINARY      DELETED flag
 dex            LVL_BUILDER      BOTH    NUMBER      Dexterity
 drunk          LVL_BUILDER      BOTH    MISC        Drunkenness
-exp            LVL_BUILDER      BOTH    NUMBER      Experience points
+exp            LVL_GOD          BOTH    NUMBER      Experience points
 frozen         LVL_FREEZE       PC      BINARY      FROZEN flag
 gold           LVL_BUILDER      BOTH    NUMBER      Gold (On hand)
 height         LVL_BUILDER      BOTH    NUMBER      Height
@@ -2501,8 +2502,8 @@ int            LVL_BUILDER      BOTH    NUMBER      Intelligence
 invis          LVL_GOD          PC      NUMBER      Invisible (level)
 invstart       LVL_BUILDER      PC      BINARY      Invisible Start
 killer         LVL_GOD          PC      BINARY      KILLER flag
-lessons        LVL_BUILDER      PC      NUMBER      #100 of practices
-level          LVL_IMPL         BOTH    NUMBER      Level
+lessons        LVL_GOD          PC      NUMBER      # of practices
+level          LVL_GRGOD        BOTH    NUMBER      Level
 loadroom       LVL_BUILDER      PC      MISC        Room to load in
 mana           LVL_BUILDER      BOTH    NUMBER      Current mana
 maxhit         LVL_BUILDER      BOTH    NUMBER      Max HP
@@ -2512,18 +2513,18 @@ move           LVL_BUILDER      BOTH    NUMBER      Current movement
 nodelete       LVL_GOD          PC      BINARY      Undeletable flag
 nohassle       LVL_GOD          PC      BINARY      NOHASSLE flag
 nosummon       LVL_BUILDER      PC      BINARY      NOSUMMON flag
-nowizlist      LVL_GOD          PC      BINARY      Not Wizlistable flag
+nowizlist      LVL_GRGOD        PC      BINARY      Not Wizlistable flag
 olc            LVL_GRGOD        PC      MISC        Zone to OLC
 passwd         LVL_IMPL         PC      MISC        Player password
 poofin         LVL_IMMORT       PC      MISC        Poofin
 poofout        LVL_IMMORT       PC      MISC        Poofout
-practices      LVL_BUILDER      PC      NUMBER      #100 of practices
-quest          LVL_GOD          PC      BINARY      QUESTING flag
+practices      LVL_GOD          PC      NUMBER      # of practices
+quest          LVL_GOD          PC      BINARY      QUEST flag
 race           LVL_BUILDER      BOTH    MISC        Race h/e/g/a/b/m/w/t/d/r/s
 room           LVL_IMPL         BOTH    NUMBER      Move to room
-roomflag       LVL_GOD          PC      BINARY      ROOMFLAGS flag
+showvnum       LVL_GOD          PC      BINARY      ShowVnums
 sex            LVL_GOD          BOTH    MISC        Sex
-siteok         LVL_GOD          PC      BINARY      SITEOK flag
+siteok         LVL_GOD          PC      BINARY      SITEOK
 str            LVL_BUILDER      BOTH    NUMBER      Strength
 stradd         LVL_BUILDER      BOTH    NUMBER      Additional STR (18/xx)
 thief          LVL_GOD          PC      BINARY      THIEF flag
@@ -2723,7 +2724,7 @@ Usage: wizhelp
 Gives a list of the special commands available at your level.
 
 The following wizard commands are implemented with level in the brackets:
-[31];         [32]advance   [32]aedit     [31]at        [31]attach    [33]ban       [31]buildwalk
+[31];         [33]advance   [32]aedit     [31]at        [31]attach    [33]ban       [31]buildwalk
 [34]cedit     [32]checkload [33]copyover  [31]date      [32]dc        [31]detach    [31]dig      
 [31]echo      [34]export    [32]file      [32]force     [33]freeze    [32]gecho     [31]goto
 [31]handbook  [33]hcontrol  [32]hedit     [34]helpcheck [31]holylight [31]imotd     [31]invis
@@ -7743,6 +7744,31 @@ head and legs X2.
 
 See also: MEDIT-AC
 #31
+TOGGLES CONFIGURE SETTINGS
+
+Usage: toggle
+       toggle <option> <argument>
+
+TOGGLE shows you the current values of various toggles available on the MUD.
+This command can also be used to change these values, if used with the correct
+argument. When a toggle is set, it will be saved in that state until the next
+time you change it. Level IMP toggle includes:
+
+ SlowNameserver: OFF                            Trackthru Doors: ON 
+      Buildwalk: OFF              NoWiz: OFF             ClsOLC: OFF
+       NoHassle: ON           Holylight: ON           ShowVnums: ON 
+         Syslog: normal
+Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
+   Move Display: OFF            Compact: ON               Quest: OFF
+   Mana Display: OFF             NoTell: OFF           NoRepeat: OFF
+      AutoExits: OFF            NoShout: OFF              Wimpy: OFF
+       NoGossip: OFF          NoAuction: OFF            NoGrats: OFF
+       AutoLoot: ON            AutoGold: ON           AutoSplit: ON 
+        AutoSac: ON          AutoAssist: ON                 AFK: OFF
+     Pagelength: 32               Color: off     
+
+See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
+#0
 TELEPORTERS
 
 Usage: teleport <zone>
@@ -8218,14 +8244,14 @@ ASSIST
 
 Usage: ASSIST <person in need>
 
-If Joe is being beaten senseless by a poodle and you feel brave enough to help 
-him, type ASSIST JOE to hit the poodle.  Note that the poodle will keep 
-hitting Joe; assist only makes you start to fight whomever the person you are 
+If Joe is being beaten senseless by a poodle and you feel brave enough to help
+him, type ASSIST JOE to hit the poodle.  Note that the poodle will keep
+hitting Joe; assist only makes you start to fight whomever the person you are
 assisting is fighting.
 
   > assist Joe
 
-See also: FLEE, KILL, RESCUE
+See also: AUTOASSIST, FLEE, KILL, RESCUE
 #0
 QUESTIONS
 
@@ -9105,25 +9131,36 @@ Thirst and Hunger are modified by objects in units of hours. So an object
 with 24 drink units will quench thirst for 24 hours. Same for food. 
 Immortals never become hungry, thirsty or full.
 #0
-EMOTES : GEMOTES GMOTES EMOTICONS EMOTIONS 
+EMOTES : EMOTIONS
 
 Usage: emote <message>
        : <message>
-       gemote <message>
 
 Show people what you're feeling.  The shorthand for emote is ":".
 "emote <string>" will display your name, then the string.
 
 Example:
-If your name is "Helt",
+If your name is "Rhade",
   > emote is feeling very sad today.
 will display:
-Helt is feeling very sad today.
+Rhade is feeling very sad today.
 
-gemote does the same thing except over the gossip channel. So not just the people
-in your room see it, everyone on the gossip channel does. Please don't abuse this.
+See also: SOCIALS, GEMOTE
+#0
+GEMOTES GMOTES EMOTICONS
 
-See also: SOCIALS
+Usage: gemote <social>
+
+Allows you to perform socials over gossip for everyone on the gossip channel 
+to see.
+
+Example:
+If your name is "Manivo",
+  > gemote spork Shamra
+will display:
+Gossip: Manivo sporks Shamra ruthlessly.
+
+See also: SOCIALS, EMOTE
 #0
 ENTER
 
@@ -9189,7 +9226,7 @@ Examples:
 
 See also: GROUP, SNEAK
 #0
-GET TAKE LOOT
+GET TAKE-ALL-CORPSE LOOT
 
 "Get" and "take" are exactly the same and can be used interchangeably.
 
@@ -9204,12 +9241,12 @@ it up.  'get' can also be used to extract items from containers.
 Examples:
 
   > get sword corpse
-  > get all corpse
+  > take all corpse
   > get all all.bag
-  > get all.bread all.bag
+  > take all.bread all.bag
   > get all 2.corpse (to retrieve items from the second corpse in a room)
 
-See also: DROP, PUT
+See also: DROP, PUT, AUTOLOOT, AUTOGOLD
 #0
 GIVE PAY BRIBE
 
@@ -10461,7 +10498,7 @@ the same room with you, and you type SPLIT 100, you will give each of the
 other 4 group members 20 coins each.  (100 coins is split 5 ways; you keep
 your share and give everyone else their share).
 
-See also: FOLLOW, GROUP
+See also: AUTOSPLIT, FOLLOW, GROUP
 #0
 STEAL
 
@@ -10501,20 +10538,65 @@ Usage: toggle
 TOGGLE shows you the current values of various toggles available on the MUD.
 This command can also be used to change these values, if used with the correct
 argument. When a toggle is set, it will be saved in that state until the next
-time you change it. Level IMP toggle includes:
+time you change it. 
 
- SlowNameserver: OFF                            Trackthru Doors: ON 
-      Buildwalk: OFF              NoWiz: OFF             ClsOLC: OFF
-       NoHassle: ON           Holylight: ON           ShowVnums: ON 
-         Syslog: normal
 Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
    Move Display: OFF            Compact: ON               Quest: OFF
    Mana Display: OFF             NoTell: OFF           NoRepeat: OFF
-      AutoExits: ON             NoShout: OFF              Wimpy: OFF
+      AutoExits: OFF            NoShout: OFF              Wimpy: OFF
        NoGossip: OFF          NoAuction: OFF            NoGrats: OFF
-            AFK: OFF         Pagelength: 45               Color: on  
+       AutoLoot: ON            AutoGold: ON           AutoSplit: ON 
+        AutoSac: ON          AutoAssist: ON                 AFK: OFF
+     Pagelength: 23               Color: off     
 
 See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
+#0
+AUTOGOLD 
+
+Usage: toggle autogold
+
+   Enables you to automatically take the gold from any mob you kill. This will
+not take any equipment or objects.
+
+See Also: TOGGLE, TAKE
+#0
+AUTOSACRIFICE SACRIFICE
+
+Usage: toggle autosac
+
+   Enables you to automatically sacrifice any mob you kill. If you do not have
+autoloot and autoloot enabled the objects and gold will also be sacrificed.
+
+See Also: TOGGLE
+#0
+AUTOLOOT 
+
+Usage: toggle autoloot
+
+   Enables you to automatically "take all corpse" from any mob you kill. You 
+will loot everything, this includes cursed objects, until you can no longer
+carry anymore weight. If this happens and you also have autosac enabled the
+items you can't pick up will be sacrificed with the mob.
+
+See Also: TOGGLE, TAKE, SPLIT
+#0
+AUTOSPLIT 
+
+Usage: toggle autosplit
+
+   Enables you to automatically split the money from any mob you kill with your
+fellow group members.
+
+See Also: TOGGLE, GROUP
+#0
+AUTOASSIST
+
+Usage: toggle autoassist
+
+   Enables you to automatically assist a fellow group member when they are
+attacked without having to manually type "assist."
+
+See Also: TOGGLE, ASSIST
 #0
 TRACK TRAIL 
 
@@ -10780,7 +10862,7 @@ DELETE SUICIDE
 select the option to delete your character. 
 
 #0
-SEARCH FLY PEEK SCAN WHOIS OOC AUTOGOLD AUTOSACRIFICE AUTOLOOT AUTOSPLIT OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS CLANS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING IDENTIFY CLONES CLONING CLANS MUSIC
+SEARCH FLY PEEK SCAN WHOIS OOC OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS CLANS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING IDENTIFY CLONES CLONING CLANS MUSIC
 
    Not implemented.
 
@@ -10828,7 +10910,7 @@ People may go linkless for many reasons:
   They might not log off correctly
 
 #0
-PAGELENGTHS
+PAGELENGTHS PAGE_LENGTHS
 
 Usage: toggle pagelength [#]
 
@@ -10923,7 +11005,7 @@ n - normal
 @gg - green@n      @GG - bright green@n   @22 - background green@n
 @cc - cyan@n       @CC - bright cyan@n    @33 - background cyan@n
 @rr - red@n        @RR - bright red@n     @44 - background red@n
-@mm - magenta@n    @MM - bright magenta@n @55 - background magneta@n
+@mm - magenta@n    @MM - bright magenta@n @55 - background magenta@n
 @yy - yellow@n     @YY - bright yellow@n  @66 - background yellow@n
 @ww - white@n      @WW - bright white@n   @77 - background white@n
  
@@ -11583,7 +11665,7 @@ The Builder Academy
 Code Base: [Circlemud] 3.1 
 Latest CircleMUD with OasisOLC and DG Scripts
 Site: builderacademy.net 9091 [206.123.75.138] 
-Admin Email: rumble@builderacademy.net
+Admin Email: rumble@@builderacademy.net
 Theme: Teaching Builders, CircleMUD and DG Scripts development
 http://www.builderacademy.net/
 telnet://builderacademy.net:9091
