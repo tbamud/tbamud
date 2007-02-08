@@ -839,7 +839,7 @@ ACMD(do_score)
   if (GET_COND(ch, DRUNK) > 10)
     send_to_char(ch, "You are intoxicated.\r\n");
 
-  if (GET_COND(ch, FULL) == 0)
+  if (GET_COND(ch, HUNGER) == 0)
     send_to_char(ch, "You are hungry.\r\n");
 
   if (GET_COND(ch, THIRST) == 0)

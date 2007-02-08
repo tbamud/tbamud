@@ -95,7 +95,7 @@ int mana_gain(struct char_data *ch)
     if (IS_MAGIC_USER(ch) || IS_CLERIC(ch))
       gain *= 2;
 
-    if ((GET_COND(ch, FULL) == 0) || (GET_COND(ch, THIRST) == 0))
+    if ((GET_COND(ch, HUNGER) == 0) || (GET_COND(ch, THIRST) == 0))
       gain /= 4;
   }
 
@@ -139,7 +139,7 @@ int hit_gain(struct char_data *ch)
     if (IS_MAGIC_USER(ch) || IS_CLERIC(ch))
       gain /= 2;	/* Ouch. */
 
-    if ((GET_COND(ch, FULL) == 0) || (GET_COND(ch, THIRST) == 0))
+    if ((GET_COND(ch, HUNGER) == 0) || (GET_COND(ch, THIRST) == 0))
       gain /= 4;
   }
 
@@ -180,7 +180,7 @@ int move_gain(struct char_data *ch)
       break;
     }
 
-    if ((GET_COND(ch, FULL) == 0) || (GET_COND(ch, THIRST) == 0))
+    if ((GET_COND(ch, HUNGER) == 0) || (GET_COND(ch, THIRST) == 0))
       gain /= 4;
   }
 
@@ -333,7 +333,7 @@ void gain_condition(struct char_data *ch, int condition, int value)
     return;
 
   switch (condition) {
-  case FULL:
+  case HUNGER:
     send_to_char(ch, "You are hungry.\r\n");
     break;
   case THIRST:
@@ -401,7 +401,7 @@ void point_update(void)
   for (i = character_list; i; i = next_char) {
     next_char = i->next;
 
-    gain_condition(i, FULL, -1);
+    gain_condition(i, HUNGER, -1);
     gain_condition(i, DRUNK, -1);
     gain_condition(i, THIRST, -1);
 

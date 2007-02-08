@@ -1501,7 +1501,7 @@ void do_start(struct char_data *ch)
   GET_MOVE(ch) = GET_MAX_MOVE(ch);
 
   GET_COND(ch, THIRST) = 24;
-  GET_COND(ch, FULL) = 24;
+  GET_COND(ch, HUNGER) = 24;
   GET_COND(ch, DRUNK) = 0;
 
   if (CONFIG_SITEOK_ALL)

@@ -431,7 +431,7 @@
 
 /* Player conditions */
 #define DRUNK        0
-#define FULL         1
+#define HUNGER       1
 #define THIRST       2
 
 
@@ -840,7 +840,7 @@ struct player_special_data_saved {
    room_vnum load_room;		/* Which room to place char in		*/
    long /*bitvector_t*/	pref;	/* preference flags for PC's.		*/
    ubyte bad_pws;		/* number of bad password attemps	*/
-   sbyte conditions[3];         /* Drunk, full, thirsty			*/
+   sbyte conditions[3];         /* Drunk, hunger, thirst		*/
 
    ubyte page_length;
    int spells_to_learn;		/* How many can you learn yet this level*/

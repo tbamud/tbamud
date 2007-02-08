@@ -905,7 +905,7 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
   send_to_char(ch, "eq: %d\r\n", i2);
 
   if (!IS_NPC(k))
-    send_to_char(ch, "Hunger: %d, Thirst: %d, Drunk: %d\r\n", GET_COND(k, FULL), GET_COND(k, THIRST), GET_COND(k, DRUNK));
+    send_to_char(ch, "Hunger: %d, Thirst: %d, Drunk: %d\r\n", GET_COND(k, HUNGER), GET_COND(k, THIRST), GET_COND(k, DRUNK));
 
   column = send_to_char(ch, "Master is: %s, Followers are:", k->master ? GET_NAME(k->master) : "<none>");
   if (!k->followers)
@@ -2881,16 +2881,14 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
       affect_total(vict);
       break;
     case 13: /* drunk */
-    case 20: /* hunger */
-    case 49: /* thirst */
       if (!str_cmp(val_arg, "off")) {
-        GET_COND(vict, (mode - 29)) = -1; /* warning: magic number here */
-        send_to_char(ch, "%s's %s now off.\r\n", GET_NAME(vict), set_fields[mode].cmd);
+        GET_COND(vict, DRUNK) = -1;
+        send_to_char(ch, "%s's drunkenness is now off.\r\n", GET_NAME(vict));
       } else if (is_number(val_arg)) {
         value = atoi(val_arg);
         RANGE(0, 24);
-        GET_COND(vict, (mode - 29)) = value; /* and here too */
-        send_to_char(ch, "%s's %s set to %d.\r\n", GET_NAME(vict), set_fields[mode].cmd, value);
+        GET_COND(vict, DRUNK) = value;
+        send_to_char(ch, "%s's drunkenness set to %d.\r\n", GET_NAME(vict), value);
       } else {
         send_to_char(ch, "Must be 'off' or a value from 0 to 24.\r\n");
         return (0);
@@ -2921,7 +2919,21 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
       vict->points.hitroll = RANGE(-20, 20);
       affect_total(vict);
       break;
-    case 21: /* int */
+    case 20: /* hunger */
+      if (!str_cmp(val_arg, "off")) {
+        GET_COND(vict, HUNGER) = -1;
+        send_to_char(ch, "%s's hunger is now off.\r\n", GET_NAME(vict));
+      } else if (is_number(val_arg)) {
+        value = atoi(val_arg);
+        RANGE(0, 24);
+        GET_COND(vict, HUNGER) = value;
+        send_to_char(ch, "%s's hunger set to %d.\r\n", GET_NAME(vict), value);
+      } else {
+        send_to_char(ch, "Must be 'off' or a value from 0 to 24.\r\n");
+        return (0);
+       }
+       break;
+   case 21: /* int */
       if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
         RANGE(3, 25);
       else
@@ -3091,7 +3103,21 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
     case 48: /* thief */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_THIEF);
       break;
-    case 50: /* title */
+    case 49: /* thirst */
+      if (!str_cmp(val_arg, "off")) {
+        GET_COND(vict, THIRST) = -1;
+        send_to_char(ch, "%s's thirst is now off.\r\n", GET_NAME(vict));
+      } else if (is_number(val_arg)) {
+        value = atoi(val_arg);
+        RANGE(0, 24);
+        GET_COND(vict, THIRST) = value;
+        send_to_char(ch, "%s's thirst set to %d.\r\n", GET_NAME(vict), value);
+      } else {
+        send_to_char(ch, "Must be 'off' or a value from 0 to 24.\r\n");
+        return (0);
+      }
+      break;
+  case 50: /* title */
       set_title(vict, val_arg);
       send_to_char(ch, "%s's title is now: %s\r\n", GET_NAME(vict), GET_TITLE(vict));
       break;

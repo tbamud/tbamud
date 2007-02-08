@@ -887,7 +887,7 @@ ACMD(do_drink)
     act("$n tries to drink but misses $s mouth!", TRUE, ch, 0, 0, TO_ROOM);
     return;
   }
-  if ((GET_COND(ch, FULL) > 20) && (GET_COND(ch, THIRST) > 0)) {
+  if ((GET_COND(ch, HUNGER) > 20) && (GET_COND(ch, THIRST) > 0)) {
     send_to_char(ch, "Your stomach can't contain anymore!\r\n");
     return;
   }
@@ -926,7 +926,7 @@ ACMD(do_drink)
   weight_change_object(temp, -weight);	/* Subtract amount */
 
   gain_condition(ch, DRUNK,  drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK]  * amount / 4);
-  gain_condition(ch, FULL,   drink_aff[GET_OBJ_VAL(temp, 2)][FULL]   * amount / 4);
+  gain_condition(ch, HUNGER,   drink_aff[GET_OBJ_VAL(temp, 2)][HUNGER]   * amount / 4);
   gain_condition(ch, THIRST, drink_aff[GET_OBJ_VAL(temp, 2)][THIRST] * amount / 4);
 
   if (GET_COND(ch, DRUNK) > 10)
@@ -935,7 +935,7 @@ ACMD(do_drink)
   if (GET_COND(ch, THIRST) > 20)
     send_to_char(ch, "You don't feel thirsty any more.\r\n");
 
-  if (GET_COND(ch, FULL) > 20)
+  if (GET_COND(ch, HUNGER) > 20)
     send_to_char(ch, "You are full.\r\n");
 
   if (GET_OBJ_VAL(temp, 3)) {	/* The crap was poisoned ! */
@@ -990,7 +990,7 @@ ACMD(do_eat)
     send_to_char(ch, "You can't eat THAT!\r\n");
     return;
   }
-  if (GET_COND(ch, FULL) > 20) {/* Stomach full */
+  if (GET_COND(ch, HUNGER) > 20) {/* Stomach full */
     send_to_char(ch, "You are too full to eat more!\r\n");
     return;
   }
@@ -1008,9 +1008,9 @@ ACMD(do_eat)
 
   amount = (subcmd == SCMD_EAT ? GET_OBJ_VAL(food, 0) : 1);
 
-  gain_condition(ch, FULL, amount);
+  gain_condition(ch, HUNGER, amount);
 
-  if (GET_COND(ch, FULL) > 20)
+  if (GET_COND(ch, HUNGER) > 20)
     send_to_char(ch, "You are full.\r\n");
 
   if (GET_OBJ_VAL(food, 3) && (GET_LEVEL(ch) < LVL_IMMORT)) {
