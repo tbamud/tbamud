@@ -2709,59 +2709,59 @@ ACMD(do_show)
     const char pcnpc;
     const char type;
   } set_fields[] = {
-   { "ac", 			LVL_BUILDER, 	BOTH, 	NUMBER },  /* 0  */
-   { "afk",             LVL_BUILDER,	PC,		BINARY },  /* 1  */
-   { "age",			LVL_GOD,		BOTH,		NUMBER },
+   { "ac",		LVL_BUILDER, 	BOTH, 	NUMBER },  /* 0  */
+   { "afk",             LVL_BUILDER,	PC,	BINARY },  /* 1  */
+   { "age",		LVL_GOD,	BOTH,	NUMBER },
    { "align",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "bank",		LVL_BUILDER, 	PC, 		NUMBER },
-   { "brief",		LVL_GOD, 		PC, 		BINARY },  /* 5  */
-   { "cha",			LVL_BUILDER, 	BOTH, 	NUMBER },
+   { "bank",		LVL_BUILDER, 	PC, 	NUMBER },
+   { "brief",		LVL_GOD, 	PC, 	BINARY },  /* 5  */
+   { "cha",		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "class",		LVL_BUILDER, 	BOTH, 	MISC },
-   { "color",		LVL_GOD, 		PC, 		BINARY },
+   { "color",		LVL_GOD, 	PC, 	BINARY },
    { "con", 		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "damroll", 		LVL_BUILDER, 	BOTH, 	NUMBER },  /* 10 */
-   { "deleted", 		LVL_IMPL, 		PC, 		BINARY },
+   { "damroll",		LVL_BUILDER, 	BOTH, 	NUMBER },  /* 10 */
+   { "deleted",		LVL_IMPL, 	PC, 	BINARY },
    { "dex", 		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "drunk",		LVL_BUILDER, 	BOTH, 	MISC },
-   { "exp", 		LVL_GOD, 		BOTH, 	NUMBER },
-   { "frozen",		LVL_FREEZE, 	PC,		BINARY },  /* 15 */
+   { "exp", 		LVL_GOD, 	BOTH, 	NUMBER },
+   { "frozen",		LVL_FREEZE, 	PC,	BINARY },  /* 15 */
    { "gold",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "height",		LVL_BUILDER,	BOTH,		NUMBER },
+   { "height",		LVL_BUILDER,	BOTH,	NUMBER },
    { "hit", 		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "hitroll",		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "hunger",		LVL_BUILDER, 	BOTH, 	MISC },    /* 20 */
    { "int", 		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "invis",		LVL_GOD, 		PC, 		NUMBER },
-   { "invstart",        LVL_BUILDER,	PC, 		BINARY },
-   { "killer",		LVL_GOD, 		PC, 		BINARY },
-   { "level",		LVL_GRGOD, 		BOTH, 	NUMBER },  /* 25 */
-   { "loadroom", 		LVL_BUILDER, 	PC, 		MISC },
+   { "invis",		LVL_GOD, 	PC, 	NUMBER },
+   { "invstart",        LVL_BUILDER,	PC, 	BINARY },
+   { "killer",		LVL_GOD, 	PC, 	BINARY },
+   { "level",		LVL_GRGOD, 	BOTH, 	NUMBER },  /* 25 */
+   { "loadroom",	LVL_BUILDER, 	PC, 	MISC },
    { "mana",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "maxhit",	      LVL_BUILDER, 	BOTH, 	NUMBER },
+   { "maxhit",	        LVL_BUILDER, 	BOTH, 	NUMBER },
    { "maxmana",       	LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "maxmove", 		LVL_BUILDER, 	BOTH, 	NUMBER },  /* 30 */
+   { "maxmove",		LVL_BUILDER, 	BOTH, 	NUMBER },  /* 30 */
    { "move",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "nodelete", 		LVL_GOD, 		PC, 		BINARY },
-   { "nohassle", 		LVL_GOD, 		PC, 		BINARY },
-   { "nosummon", 		LVL_BUILDER,	PC, 		BINARY },
-   { "nowizlist", 	LVL_GRGOD, 		PC, 		BINARY },  /* 35 */
-   { "olc",			LVL_GRGOD,		PC,		MISC },
-   { "password",		LVL_IMPL, 		PC, 		MISC },
-   { "poofin",          LVL_IMMORT,		PC,		MISC },
-   { "poofout",         LVL_IMMORT,		PC,		MISC },
-   { "practices", 	LVL_GOD, 		PC, 		NUMBER },   /* 40 */
-   { "quest",		LVL_GOD, 		PC, 		BINARY },
+   { "nodelete",	LVL_GOD, 	PC, 	BINARY },
+   { "nohassle",	LVL_GOD, 	PC, 	BINARY },
+   { "nosummon",	LVL_BUILDER,	PC,	BINARY },
+   { "nowizlist", 	LVL_GRGOD, 	PC, 	BINARY },  /* 35 */
+   { "olc",		LVL_GRGOD,	PC,	MISC },
+   { "password",	LVL_IMPL, 	PC,	MISC },
+   { "poofin",		LVL_IMMORT,	PC,	MISC },
+   { "poofout",         LVL_IMMORT,	PC,	MISC },
+   { "practices", 	LVL_GOD, 	PC, 	NUMBER },   /* 40 */
+   { "quest",		LVL_GOD, 	PC, 	BINARY },
    { "room",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "sex", 		LVL_GOD, 		BOTH, 	MISC },
-   { "showvnums", 	LVL_BUILDER, 	PC, 		BINARY },
-   { "siteok",		LVL_GOD, 		PC, 		BINARY },  /* 45 */
-   { "str",			LVL_BUILDER, 	BOTH, 	NUMBER },
+   { "sex", 		LVL_GOD, 	BOTH, 	MISC },
+   { "showvnums", 	LVL_BUILDER, 	PC,	BINARY },
+   { "siteok",		LVL_GOD, 	PC, 	BINARY },  /* 45 */
+   { "str",		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "stradd",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "thief",		LVL_GOD, 		PC, 		BINARY },
+   { "thief",		LVL_GOD, 	PC, 	BINARY },
    { "thirst",		LVL_BUILDER, 	BOTH, 	MISC },
-   { "title",		LVL_GOD, 		PC, 		MISC   },  /* 50 */
-   { "variable",        LVL_GRGOD,		PC,		MISC },
-   { "weight",		LVL_BUILDER,	BOTH,		NUMBER },
+   { "title",		LVL_GOD, 	PC, 	MISC   },  /* 50 */
+   { "variable",        LVL_GRGOD,	PC,	MISC },
+   { "weight",		LVL_BUILDER,	BOTH,	NUMBER },
    { "wis", 		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "\n", 0, BOTH, MISC }
   };

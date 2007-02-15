@@ -423,6 +423,7 @@ if %actor.is_pc%
       remote 3_napalm_done %actor.id%
     end
   end
+end
 ~
 #336
 Room Contents Test~

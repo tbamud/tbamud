@@ -1428,7 +1428,7 @@ end
 (2719) memlin asks if hungry~
 0 gh 100
 ~
-if %self.has_item(2763)
+if %self.has_item(2763)%
   if %actor.is_pc%
     wait 1 s
     smile %actor.name%

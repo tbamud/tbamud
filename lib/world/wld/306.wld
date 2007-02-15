@@ -1368,37 +1368,9 @@ glancing up higher it is seen that there is still more height to be attained.
 The only direction to travel is back along a branch to the east.    
 ~
 306 0 3
-D0
-~
-~
-0 0 30679
 D1
 ~
 ~
 0 0 30645
-S
-#30679
-An unfinished room~
-You are in an unfinished room.
-~
-306 n 0
-D0
-~
-~
-0 0 30680
-D2
-~
-~
-0 0 30678
-S
-#30680
-An unfinished room~
-You are in an unfinished room.
-~
-306 jlm 0
-D2
-~
-~
-0 0 30679
 S
 $~

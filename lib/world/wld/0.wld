@@ -454,7 +454,7 @@ A Quick Mob Quest Tutorial~
 
 See: @RHELP TRIGEDIT-MOB-TUTORIAL@n
 
-@RSTAT QUESTMASTER@n. Notice the attached triggers. @RTSTAT 1400@n.
+@RSTAT QUESTMASTER@n. Notice the attached triggers. @RTSTAT 1@n.
 
 ~
 0 de 0
@@ -559,6 +559,15 @@ while the mark of the mature man is that he wants to live humbly for one.
 --Wilhelm Stekel
 ~
 0 d 0
+D1
+test
+~
+door~
+1 1 33
+D3
+~
+~
+0 0 33
 E
 .test~
 can you see this with look around?
@@ -670,7 +679,7 @@ you watch the images taking shape in the turbulent liquid.  Your mouth becomes
 dry as you see yourself in the watery panorama ...  And time stands still for
 just one moment ...  As you see your future in the depths ...    
 ~
-0 djk 0
+0 dj 0
 S
 #88
 Advertising Room~

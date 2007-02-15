@@ -10,8 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -35,7 +33,6 @@ ACMD(do_flee);
 ACMD(do_bash);
 ACMD(do_rescue);
 ACMD(do_kick);
-
 
 ACMD(do_assist)
 {
@@ -63,8 +60,7 @@ ACMD(do_assist)
     else
       for (opponent = world[IN_ROOM(ch)].people;
 	   opponent && (FIGHTING(opponent) != helpee);
-	   opponent = opponent->next_in_room)
-		;
+	   opponent = opponent->next_in_room);
 
     if (!opponent)
       act("But nobody is fighting $M!", FALSE, ch, 0, helpee, TO_CHAR);
@@ -82,7 +78,6 @@ ACMD(do_assist)
     }
   }
 }
-
 
 ACMD(do_hit)
 {
@@ -122,8 +117,6 @@ ACMD(do_hit)
   }
 }
 
-
-
 ACMD(do_kill)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -150,8 +143,6 @@ ACMD(do_kill)
     }
   }
 }
-
-
 
 ACMD(do_backstab)
 {
@@ -205,7 +196,6 @@ ACMD(do_backstab)
 
   WAIT_STATE(ch, 2 * PULSE_VIOLENCE);
 }
-
 
 ACMD(do_order)
 {
@@ -261,8 +251,6 @@ ACMD(do_order)
   }
 }
 
-
-
 ACMD(do_flee)
 {
   int i, attempt, loss;
@@ -294,7 +282,6 @@ ACMD(do_flee)
   }
   send_to_char(ch, "PANIC!  You couldn't escape!\r\n");
 }
-
 
 ACMD(do_bash)
 {
@@ -353,7 +340,6 @@ ACMD(do_bash)
   WAIT_STATE(ch, PULSE_VIOLENCE * 2);
 }
 
-
 ACMD(do_rescue)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -409,8 +395,6 @@ ACMD(do_rescue)
 
   WAIT_STATE(vict, 2 * PULSE_VIOLENCE);
 }
-
-
 
 ACMD(do_kick)
 {

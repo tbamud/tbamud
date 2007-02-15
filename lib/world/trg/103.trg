@@ -54,12 +54,16 @@ board~
 if board /= %cmd% && cloud /= %arg% && %arg%
   %send% %actor% You jump onto the cloud and take a seat.
   %echoaround% %actor% %actor.name% jumps up onto nimbus.
+  wait 3 sec
+  %send% %actor% The nimbus cloud takes off down the tower.
   %echoaround% %actor% The nimbus cloud takes off down the tower.
   %teleport% %actor% 10306
+  wait 10 sec
   %echoaround% %actor% The cloud lands and %actor.name% steps off.
   %echoaround% %actor% The cloud flies off to the top of the tower.
+  %send% %actor% The cloud lands and you jump off landing safely on the ground.
+  wait 2 sec
   %force% %actor% look
-  %send% %actor% You jump off the nimbus cloud.
 else
   %send% %actor% board what?
 end
@@ -121,6 +125,7 @@ wait 2 sec
 say Master Vegeta is in his atire.
 wait 1 sec
 say And there is a fighter here to help you train.
+end
 ~
 #10315
 Newbie Fighter Sacrifice - 10318~

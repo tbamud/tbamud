@@ -55,8 +55,8 @@ S
 Clerics Avenue~
    The cobblestone road is in decent shape, though a few stones have been
 overturned leaving gaping holes.  No wagons travel down this part of the city.
-Everyone knows Clerics have no need anything besides what they can provide by
-themselves.    
+Everyone knows clerics have no need for anything besides what they can provide
+by themselves.  
 ~
 3 0 1
 D0
@@ -73,7 +73,7 @@ The Southern Road~
    You walk underneath the inner city wall.  The road turns into hard packed
 dirt.  To the north you may enter the inner city towards the Temple of Sanctus
 or go south towards the southern gate.  The southern half of the city consists
-of the Magi's and Cleric' quarters.    
+of the magi's and cleric' quarters.  
 ~
 3 0 1
 D0
@@ -86,7 +86,7 @@ D2
 0 0 313
 S
 #303
-Magis Avenue~
+Magi's Avenue~
    The Tower of the Magi lies to the southwest.  Just to the south you can see
 where the inner city wall turns to the west.  You are deep within the Magi's
 Quarter.  Accidents have been known to happen around here.  People must be
@@ -104,10 +104,9 @@ D2
 S
 #304
 An Elegant Hall~
-   Drawings continue along the hallway as you pass.  More battles where the
-Magi are slaughtering their foes.  Some depict battles with Ogres, others are
-Orcs, Goblins, more Demons.  Every creature imaginable.  Even fellow humans,
-dwarves, and elves.    
+   Drawings of ancient battles in which the Magi slaughter their foes line both
+sides of the hallway.  Depicted on these drawings are a myriad of creatures
+ranging from ogres, orcs, goblins, and demons to humans, elves, and dwarves.
 ~
 3 d 1
 D0
@@ -125,10 +124,10 @@ D2
 S
 #305
 The Baths~
-   Large copper tubs filled with hot water have filled the room with a hot
-steam.  The air is musky and hard to breath.  A large fire fills the eastern
-wall, pots of water are heating over it.  These baths are used only by the
-Magi.  As people often say, cleanliness is next to godliness.    
+   The air is musky and hard to breathe due to the hot steam wafting from the
+large copper tubs filled with hot water.  A large fire with pots of water
+heating over it fills the eastern wall.  These baths are only to be used by the
+magi whom believe cleanliness is next to godliness.
 ~
 3 d 1
 D0
@@ -146,10 +145,10 @@ D3
 S
 #306
 A large Bunk Room~
-   Neatly made bunks are arranged in precise rows and columns, filling the room
-wall to wall.  Every rack made precisely to standard.  Every sheet a pristine
-white, not a speck of dust can be found.  The Clerics of Sanctus lead a
-disciplined life second to none, not even the army.    
+   Neatly made bunks are arranged in precise rows and colums filling the room
+from wall to wall.  Every rack is made precisely to standard, every sheet a
+pristine white, without even a speck of dust.  The Cleric's of Sanctus lead a
+disciplined life, second to none, not even the soldiers.
 ~
 3 0 1
 D1
@@ -163,10 +162,10 @@ D2
 S
 #307
 A Long Hallway~
-   The barren walls and floors reminds you how the Clerics of Sanctus consider
-decorations, desires, or any form of unnecessary wants a type of blasphemy.  
-They dedicate their lives to helping others, never themselves.  Every one of
-them would sacrifice their lives for that principle.    
+   The barren walls and floor would seem odd anywhere but here as the Clerics of
+Sanctus consider decorations, desires, or any form od unnecessary wants to be
+blasphemous.  They dedicate their lives to helping others, never themselves, and
+would all sacrifice their lives for that principle.
 ~
 3 d 1
 D0
@@ -184,10 +183,10 @@ D3
 S
 #308
 The Southwest Intersection~
-   The inner city wall ends here and continues to the east.  A small road
-follows along the inner city wall just north of the Tower of the High Council.
-Clerics Avenue continues north and south.  The Tower almost seems to glow
-because of it's glaring whiteness.    
+   The inner city wall ends here, as it reaches Clerics' Avenue, and continues
+on to the east.  A small road follows along the inner city wall just north of
+the Tower of the High Council which seems to glow because of its glaring
+brightness.
 ~
 3 0 1
 D0
@@ -204,11 +203,11 @@ D2
 0 0 323
 S
 #309
-Clerics Alley~
-   Within the Cleric's Quarter an adventurer has very little to worry about.  
-Even those would be vandals, pickpockets, and thugs shy away from this Quarter
-because of their respect of the clerics.  To be a cleric is second only to
-being a Master Magi.    
+Clerics' Alley~
+   Within the Cleric's Quarters an adventurer has very little to worry about.  
+Even those would be vandals, pickpockets, and thugs shy away out of their
+respect of the clerics.  To be a cleric is to be respected second only to that
+of the Master Magi.
 ~
 3 0 1
 D1
@@ -221,11 +220,11 @@ D3
 0 0 308
 S
 #310
-Clerics Alley~
-   The southern section of the inner city wall crowds you from the north.  The
-massive fortification of rock and mortar is impressive, rising at least two or
-maybe three times your own height.  You can just make out a small walkway on
-the top of the wall, too bad only the guards know where the entrance is.    
+Clerics' Alley~
+   The southern section of the inner city wall towers over you to the north.  
+The massive fortification of rock and mortar is impressive, rising at least two
+or maybe three times your own height.  You can just make out a small walkway on
+the top of the wall, too bad only the guards know where the entrance is.  
 ~
 3 0 1
 D1
@@ -238,12 +237,12 @@ D3
 0 0 309
 S
 #311
-Clerics Alley~
-   The Tower of the High Council of Clerics is almost as impressive as the
+Clerics' Alley~
+   The Tower of the High Council of Clerics' is almost as impressive as the
 Temple of Sanctus.  They look very similiar, except of course the Tower is much
 smaller.  Far up in the tower you can see people walking by windows in white
 flowing robes.  The healers within are known for their miraculous abilities in
-restoring the wounded.    
+restoring the wounded.
 ~
 3 0 1
 D1
@@ -256,11 +255,11 @@ D3
 0 0 310
 S
 #312
-Clerics Alley~
+Clerics' Alley~
    The inner city wall opens up just to the east into the southern road which
-runs from the south gate directly to the heart of Sanctus inside the temple.  
-A few apprentice healers in flowing robes rush between the Temple and the
-Cleric's Quarter, no doubt on an errand from the Council.    
+runs from the south gate directly to the heart of Sanctus inside the temple.  A
+few apprentice healers in flowing robes rush between the Temple and the Clerics'
+Quarters, no doubt on an errand from the Council.  
 ~
 3 0 1
 D1
@@ -274,11 +273,11 @@ D3
 S
 #313
 The Southern Road~
-   A large gate has been built into the inner city wall here along adventurers
-to pass between the Temple and the southern half of the city.  The Cleric's
-Quarter lies to the west while the Magi's Quarter is to the east.  Within their
-centers rises the Tower of the High Council of Cleric's and the Tower of the
-Magi respectively.    
+   A large gate has been built into the inner city wall here to allow
+adventurers to pass between the Temple and the southern half of the city.  The
+Clerics' Quarters lie to the west while the Magis' Quarters are to the east.  
+Within their centers rises the Tower of the High Council of Clerics' and the
+Tower of the Magi respectively.  
 ~
 3 0 1
 D0
@@ -299,11 +298,11 @@ D3
 0 0 312
 S
 #314
-Magis Alley~
+Magis' Alley~
    The black Tower of the Magi casts an intimidating shadow over you and the
-alley you walk in.  Within the tower lies many secrets that the average citizen
-is not privileged enough to be told about.  Rumours abound, especially about
-the Orb of Sanctum the gods left in the Master Magi's care.    
+alley you walk in.  Within the tower lie many secrets that the average citizen
+is not privileged enough to be told about.  Rumours abound, especially about the
+Orb of Sanctum the gods left in the Master Magi's care.  
 ~
 3 0 1
 D1
@@ -316,7 +315,7 @@ D3
 0 0 313
 S
 #315
-Magis Alley~
+Magis' Alley~
    The sound of voices from above are impossible to locate.  They could be
 coming either from on top of the inner city wall to the north or from an open
 window of the Tower of the Magi south of you.  The voices are too low to be
@@ -333,7 +332,7 @@ D3
 0 0 314
 S
 #316
-Magis Alley~
+Magis' Alley~
    The inner city wall is used to seperate the city into two seperate
 battlefields.  In case of an attack by superior numbers the citizens will fall
 back into the inner city as a last measure of defense.  Luckily, the army has
@@ -350,11 +349,11 @@ D3
 0 0 315
 S
 #317
-Magis Alley~
+Magis' Alley~
    You have reached the southeastern corner of the inner city wall where it
-turns north along the Magis Avenue.  The Tower of the Magi still looms over you
+turns north along the Magis' Avenue.  The Tower of the Magi still looms over you
 oppressively.  The sounds of voices echo between the tower and the inner city
-wall, very disturbing.    
+wall, very disturbing.  
 ~
 3 0 1
 D1
@@ -367,11 +366,11 @@ D3
 0 0 316
 S
 #318
-The Southeast intersection~
-   A small alley ducks between the Tower of the Magi and the southern section
-of the inner city wall.  The Magi Mansion is so extravagant it is almost an eye
-sore just to the east.  The Tower contains the fabled Orb of Sanctum, but few
-are ever lucky enough to lay their eyes on it.    
+The Southeastern Intersection~
+   A small alley ducks between the Tower of the Magi and the southern section of
+the inner city wall.  The Magi Mansion is so extravagant, almost to the point of
+becoming an eyesore, is just to the east.  The Tower contains the fabled Orb of
+Sanctum, but few are ever lucky enough to lay their eyes on it.  
 ~
 3 0 1
 D0
@@ -390,10 +389,10 @@ S
 #319
 An Elegant Hall~
    Both sides of the hallway are covered from floor to ceiling in exquisite
-drawings.  All depicting various battles in which the Magi have fought in.  In
-the one infront of you the army of Sanctus stands on the verge of defeat,
-except for the constant bombardment of fireballs, lightning, and meteors by the
-Magi.    
+drawings.  All of them depicting various battles in which the Magi have fought
+in.  In the one infront of you the army of Sanctus stands on the verge of
+defeat, except for the constant bombardment of fireballs, lightning, and meteors
+hurled from the battlements by the Magi.  
 ~
 3 0 1
 D0
@@ -411,10 +410,10 @@ D2
 S
 #320
 The Kitchen~
-   An assortment of foods are being prepared, some on small trays to be served
-as appetizers.  Others in fine silver plates and containers.  The kitchen is
+   An assortment of foods are being prepared.  Some on small trays to be served
+as appetizers, and others in fine silver plates and containers.  The kitchen is
 cramped, too many things and too many people in one area.  The cooks look
-overworked and ready to revolt.    
+overworked and ready to revolt.
 ~
 3 d 1
 D0
@@ -432,10 +431,11 @@ D3
 S
 #321
 A Room of Prayer~
-   Candles are arranged along a set of shelves.  Some burning, some unlit.  
-Cushions are arranged along the floor facing the candles.  A simple room of
-prayer where the one can give thanks to all that has been given.  The walls are
-unadorned, everything looks to be plain and only used for it's purpose.    
+   Candles are arranged along a set of shelves, some of which are burning, while
+others remain unlit.  Cushions are arranged along the floor facing the candles,
+so that one can give thanks for all that has been given in this simple room of
+prayer.  The walls are unadorned, everything looks to be plain and only used for
+its intended purpose.  
 ~
 3 0 1
 D0
@@ -453,10 +453,10 @@ D2
 S
 #322
 The Hall of Clerics~
-   A long hallway stretches directly to your north.  It appears to run the
-length of the entire building.  Lanterns line the walls spaced widely apart so
-much of the hall is in shadow.  The bare floor and walls show the lifestyle the
-Clerics lead.    
+   A long hallway carries on to the north.  It appears to run the length of the
+entire building.  The only source of light are lanterns spaced widely apart upon
+the walls which leave much of the hall in shadow.  The bare floor and walls show
+the lifestyle the clerics lead.
 ~
 3 0 1
 D0
@@ -473,12 +473,12 @@ D3
 0 0 321
 S
 #323
-Clerics Avenue~
+Clerics' Avenue~
    The entrance to both the Hall of Clerics and the Tower of the High Council
-is just to the south.  You see a small intersection to the north where the
+are just to the south.  You see a small intersection to the north where the
 inner city wall begins.  Many people come to this quarter to seek aid from the
 clerics, whether it be healing in the tower or to settle disputes within the
-Hall.    
+Hall.  
 ~
 3 0 1
 D0
@@ -494,8 +494,8 @@ S
 A Training Room~
    Within this tower new clerics are taken to be trained in the art of healing.
 Very few are selected for this great honor, and even fewer ever achieve a
-mastery in the art of restoring health.  Several old clerics are bestowing
-their knowledge and wisdom to their students here.    
+mastery in the art of restoring health.  Several of the older clerics are here
+bestowing their knowledge and wisdom to their students.  
 ~
 3 0 1
 D1
@@ -509,10 +509,9 @@ D2
 S
 #325
 A Training Room~
-   A rug lines the floor where several clerics in training listen intently to
-an gray-haired man who is drawing something on a board.  His often uses words
-of a different language that are very hard to follow and impossible to
-understand.    
+   A rug lines the floor where several clerics in training listen intently to a
+gray-haired man who is drawing something on a board.  He often uses words of a
+different language that are very hard to follow and impossible to understand.  
 ~
 3 d 1
 D1
@@ -530,10 +529,10 @@ D3
 S
 #326
 A Training Room~
-   A group of clerics in training surround a poor frightened white cat.  The
-cat is shivering in fright.  It seems to have broken it's foot and the soon to
-be healers are practicing their skills on it.  Better than expirementing with
-live humans.    
+   A group of clerics in training surround a poor frightened white cat.  The cat
+is shivering in fright.  It seems to have broken its foot and the soon to be
+healers are practicing their skills on it.  Better than expirementing with live
+humans.  
 ~
 3 0 1
 D1
@@ -552,10 +551,10 @@ S
 #327
 An Advanced Training Room~
    A small child lay on a cot circled by several young clerics dressed in white
-robes.  As you watch one of them lays a gentle hand on the childs forehead
-causing the young boy to instantly fall asleep, another cleric take the boys
+robes.  As you watch one of them lays a gentle hand on the child's forehead
+causing the young boy to instantly fall asleep.  Another cleric takes the boys
 arm which has been badly bruised and possibly broken and begins chanting
-mysterious words.  The bruises fade away without a trace.    
+mysterious words.  The bruises fade away without a trace.  
 ~
 3 d 1
 D2
@@ -603,10 +602,10 @@ D2
 S
 #330
 The Training Room~
-   The Magi train within the tower as to help protect the city from invasion.
-Though the army is normally the only intervention required to handle most
-battles, the Magi are sometimes called upon to prevent heavy casualties or
-counter any magical abilities the attackers may possess.    
+   The Magiwithin the tower train to help protect the city from invasion.  
+Though the army is generally all that is required to handle most battles, the
+Magi are sometimes called upon to prevent heavy casualties or counter any
+magical abilities the attackers may possess.  
 ~
 3 d 1
 D1
@@ -683,8 +682,8 @@ The Foyier~
    The mansion surrounding you leaves your mouth agape from the luxuries the
 Magi have come to call their home.  Curtains of deep maroon velvet drape over
 the windows.  Rugs of the colors of the Magi line the floors.  Everything is
-spotless and well maintained.  Living here would be what many would consider is
-living the good life.    
+spotless and well maintained.  Living here would be what many would consider as
+living the good life.  
 ~
 3 d 1
 D0
@@ -698,10 +697,11 @@ D2
 S
 #335
 A Back Hall~
-   This part of the mansion is meant only for servants and students to travel
-unseen in the majority of the mansion.  The Magi live an extravagant life and
-hold themselves to be very prestigious and elegant.  No one would ever dare
-call them otherwise.  The ha is unkempt and bare of any furnishings.    
+   This part of the mansion is rarely used except by servants and students
+traveling unseen from one section of the mansion to another.  The Magi live an
+extravagant life and hold themselves to be very prestigious and elegant.  No one
+would ever dare call them otherwise.  The hall is unkempt and bare of any
+furnishings.  
 ~
 3 d 1
 D0
@@ -715,11 +715,11 @@ D2
 S
 #336
 An Emergency Shelter~
-   Empty cots and bunks fill the room.  Bandages, supplies, slings, and other
-healing aids are neatly sorted and stored within a large set of shelves.  The
-walls are all plain white plaster with no decorations.  The room is used as an
-emergency shelter in case a large number of casualties are incurred, more than
-the Tower can handle.    
+   The plain white plaster walls are devoid of all decoration.  Lining the walls
+are shelves holding bandages, slings, healing aids and other supplies in neatly
+arranged assortments.  The rest of the room is filled with empty cots and bunks
+which are used to rehabilitate the injured if there are ever more casualties
+than the tower can hold.
 ~
 3 d 1
 D0
@@ -733,10 +733,10 @@ D1
 S
 #337
 The Hall of Clerics~
-   This building holds the majority of the Clerics within the city of Sanctus.
+   This building holds the majority of the clerics within the city of Sanctus.
 It is here the High Council convenes to help citizens solve minor disputes.  
-The building is barren of any luxuries.  That is the way a Cleric must live,
-without desires or wants.    
+The building is barren of any luxuries.  That is the way a cleric must live,
+without desires or wants.  
 ~
 3 d 1
 D0
@@ -753,12 +753,12 @@ D3
 0 0 336
 S
 #338
-The Clerics Quarter~
-   Large doors to the east and west lead into the Hall of Clerics or the Tower
-of the High Council.  To the south a small shop displaying a sign of several
-multi-colored herbs swings in the gentle breeze.  The Tower rises far above
-you, it's two spires reaching almost as high as the Temple.  In contrast the
-Hall looks very mundane.    
+The Clerics' Quarters~
+   Large doors to the east and west lead into the Hall of Clerics and the Tower
+of the High Council respectively.  To the south a small shop displaying a sign
+with multi-colored herbs swings in the gentle breeze.  The Tower rises far above
+you, its two spires reaching almost as high as the Temple.  In contrast the hall
+looks very mundane.  
 ~
 3 0 1
 D0
@@ -780,10 +780,10 @@ door~
 S
 #339
 The Tower of the High Council of Clerics~
-   A large archway leads into the center of the Cleric's Quarter just to the
+   A large archway leads into the center of the Clerics' Quarters just to the
 west.  The Tower around you is bathed in bright white light that reflects off
-every surface around you.  All around you can hear the soft murmur of healers
-in training or going about their daily routine.    
+every surface around you.  All around you the soft murmur of healers in training
+or going about their daily routine can be heard.  
 ~
 3 0 1
 D0
@@ -804,11 +804,11 @@ D3
 0 0 338
 S
 #340
-The Tower of Cleric's~
+The Tower of Clerics~
    A wide staircase covered by a large tan rug leads up into the heart of the
-Tower towards the High Councils chambers.  Many famous healers reside within
-this towers magical walls.  It is said that just by standing in certain rooms
-of the tower one can heal at unnatural rates.    
+tower towards the High Council's chambers.  Many famous healers reside within
+this tower's magical walls.  It is said that just by standing in certain rooms
+of the tower one can heal at unnatural rates.  
 ~
 3 0 1
 D0
@@ -833,11 +833,10 @@ D4
 0 0 128
 S
 #341
-The Tower of Cleric's~
-   A wide set of stairs leads up to the second floor of the tower.  The
-building around you is impressive in both size and stature.  Large white
-pillars support high domed ceilings, everything is white, not a speck of dust
-or dirt can be seen anywhere.    
+The Tower of the Clerics~
+   A wide set of stairs leads up to the second floor of the tower.  The building
+around you is impressive in both size and stature.  Large white pillars support
+high domed ceilings of this spotless white room.
 ~
 3 0 1
 D0
@@ -863,11 +862,10 @@ D4
 S
 #342
 The Tower of the High Council of Clerics~
-   The east end of the Tower opens into the Southern Road that passes between
+   The east end of the Tower opens into the Southern Road which passes between
 the Southern Towers and the Temple of Sanctus.  You are in the entrance of the
-reverred Tower of the High Council.  High above you is where the councillors
-make many important decisions on how to uphold the welfare and health of the
-city.    
+revered Tower of the High Council.  High above you is where the councillors make
+many important decisions on how to uphold the welfare and health of the city.  
 ~
 3 d 1
 D0
@@ -890,9 +888,9 @@ S
 #343
 The Southern Road~
    The entrance to both towers of the Southern half of Sanctus open before you.
-To the west the Tower of the High Council of Cleric's, to the east the Tower of
-the Magi.  Both impressive structures that were built by both master architects
-and the use of magic.    
+To the west the Tower of the High Council of Clerics, to the east the Tower of
+the Magi.  Both impressive structures were built by both master architects and
+the use of magic.
 ~
 3 0 1
 D0
@@ -915,9 +913,9 @@ S
 #344
 The Tower of the Magi~
    The black floor, walls, and ceiling of this tower brings about a feeling of
-oppression.  As if something or someone is holding something back from you.  A
+oppression, as if something or someone is holding something back from you.  A
 large doorway to the west leads to the Southern Road or you may explore deeper
-into the temple to the east.    
+into the temple to the east.  
 ~
 3 0 1
 D0
@@ -969,9 +967,8 @@ S
 #346
 The Tower of the Magi~
    A pair of circular stairwells wind their way higher into the tower.  The
-sounds of people chanting echo off the tar black walls that almost look
-depthless.  A simple trick of the eye, but then again, maybe not.  Around you
-apprentices carry out their daily routines.    
+sounds of people chanting echo off the pitch black walls that almost appear
+depthless.  Most likely a simple trick of the eye, but then again, maybe not.  
 ~
 3 d 1
 D0
@@ -997,11 +994,11 @@ D4
 S
 #347
 The Tower of the Magi~
-   Everything is made from black stone.  At first it looks to be marble, but
-upon closer examination you can't see any grain within it.  Looking into the
-stone you seem to lose yourself.  Peering further and further into the
+   Everything is made from black stone, which at first glance appears to be
+marble, but upon closer examination you can't see any grain within it.  Looking
+into the stone you seem to lose yourself.  Peering further and further into the
 blackness, you cannot tell whether it is a trick of the eye or some strange
-magic at work here.  The center of the Magi's Quarter lies to the east.    
+magic at work here.  To the east is the center of the Magis' Quarters.  
 ~
 3 0 1
 D0
@@ -1069,10 +1066,11 @@ door~
 S
 #350
 A Study~
-   Books line the walls, low hanging lantersn are positioned over three large
-tables around the room. Several chairs per table allow those who wish to study
-the fine art of magic to rest comfortably. Several books lay open upon the
-tables. A trickle of smoke seeps around the edges of a door to the east.
+   Three low hanging lanterns positioned over the rooms large tables illuminate
+the book-lined walls.  There are several chairs at each table so as to allow
+those who wish to studey the fine art of magic to rest comfortably.  Several
+books lay open upon the tables.  Occasional trickles of smoke waft in from under
+the doorway to the east.
 ~
 3 d 1
 D0
@@ -1091,9 +1089,9 @@ S
 #351
 The Healer's Shop~
    Small indoor gardens have been set up within this small house to grow the
-herbs and mix the salves required to support the duties of the Cleric.  They
-are rumoured to sometimes sell some of their remedies, though this is very rare
-and at a very steep price.    
+herbs required for the mixes and salves the clerics require.  They are rumoured
+to sometimes sell some of their remedies, though this is very rare and at a very
+steep price.  
 ~
 3 0 1
 D0
@@ -1121,9 +1119,9 @@ S
 #353
 A Large Basin~
    A large basin of water lies against the southern wall.  Small statues
-surround the edge.  A small portrayal of woman and children playing on a rivers
-edge.  This water must be the sacred water used by the Cleric's to tned the
-wounded.    
+portraying a woman and children playing on a river's edge surround the edge of
+basin.  The water inside the basin is extremely clean and sterily, likely used
+by the the clerics to tend for the wounded.
 ~
 3 d 1
 D0
@@ -1140,11 +1138,11 @@ D3
 0 0 352
 S
 #354
-Cleric's Hallway~
-   The smell of medicine fills the entire tower.  A large open area, the center
-of the tower, to the north holds a set of stairs leading higher into the tower.
-Small benches line the walls here, allowing people to rest from their
-adentures.    
+Clerics' Hallway~
+   The smell of exotic medicines fills the entire tower.  A large open area to
+the north, the center of the tower, holds a set of stairs leading higher up into
+the tower.  Small benches line the walls here, allowing people to rest from
+their adentures.  
 ~
 3 d 1
 D0
@@ -1162,10 +1160,10 @@ D3
 S
 #355
 A Waiting Room~
-   Benches line both walls here.  Several injured people hold cuts or bruises
-that need to be tended by the healers.  An apprentice does what he can to aid
-the people with bandages and water, but these people need the attention of a
-real healer.    
+   Benches filled with people waiting to see a healer line the walls here.  An
+apprentice does what he can to aid these poor people, but it is obvious that
+many of them need to be attended to shortly by a real healer or else they may
+perish.
 ~
 3 d 1
 D0
@@ -1179,8 +1177,8 @@ D3
 S
 #356
 The Southern Road~
-   To the east the Tower of the High Council of Clerics glows a bright white,
-it's polished surfaces reflecting all light down onto the Cleric's Quarter it
+To the east the Tower of the High Council of Clerics glows a bright white,
+its polished surfaces reflecting all light down onto the Clerics' Quarters which it
 protects.  To the west the Tower of the Magi does the exact opposite, seeming
 to absorb all light surround it.  Their must be balance in all things.    
 ~

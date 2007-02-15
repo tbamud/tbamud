@@ -2,6 +2,9 @@ tbaMUD is currently being developed by The Builder Academy. If you need any
 help or find any bugs please stop by: builderacademy.net 9091
 
 tbaMUD 3.51
+- Limited trigedit numeric arg to 0-100.
+- Removed the magic numbers for setting DRUNK, HUNGER, THIRST. Renamed FULL to 
+  HUNGER.
 - Changed page to level 1.
 - Snooping log message is now only visible by higher imms.
 - Moved nohassle, holylight, showvnums, color, compact, syslog, poofin, 

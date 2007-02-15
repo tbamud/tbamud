@@ -466,6 +466,10 @@ Beautiful pine steps are leading up to his house, and the door is nowhere to be
 seen, it seems it has been taken off.  @n
 ~
 104 0 1
+D0
+~
+~
+0 0 10464
 D1
 ~
 ~
@@ -481,8 +485,7 @@ Elder Lucious' House~
 beautiful items line the walls, and even more are on a table that sits in the
 center of the room.  Heat emits from another well built looking cobble stone
 fireplace.  High in the rafter you notice another red glowing orb.  This orb
-adds
-another reddish tint, but the color is darker.  @n
+adds another reddish tint, but the color is darker.  @n
 ~
 104 cde 1
 D0
@@ -1199,15 +1202,40 @@ D1
 S
 #10463
 A Path Through the Forest~
-   @yThis path looks like it has been used by many travelers and creatures. 
-The earth is compact and the no shuberry grows near this place. The sky above
-can be seen, but it looks as if the sky fades into the trees ahead. @n
+   @y The road seems to have been used many times before, the earth has become
+compacted, harden into what feels like clay.  The shruberry that was once here
+has turned into nothing but a skeleton of branches.  A dark presence seems to
+reside over this particular intersection, but oddly enough so does the presence
+of life.  The darkness engulfs the northern exit while the life fills the
+surrounding area.
 ~
 104 0 0
+D0
+~
+~
+0 0 20901
 D2
 ~
 ~
 0 0 10462
+S
+#10464
+An Observetion Room~
+   @yThe room is not a small room, but rather vast, books are scattered all around
+the floor and on the tables.  This place seems as though no one has cleaned it
+for months.  Large tools scatter the desk off in the corner, and many piles of
+papers with writing on them scatter this desk as well.  The ceiling above is
+nothing but a thick looking glass with bars filling in for support.
+~
+104 cn 1
+D0
+~
+~
+0 0 -1
+D2
+~
+~
+0 0 10423
 S
 #10499
 Taylor's Lounge~
@@ -1225,6 +1253,10 @@ A large squishy looking armchair sits in the middle of the room only a few feet
 from the fireplace. @n
 ~
 104 de 0
+D0
+~
+~
+0 0 -1
 E
 main chamber room taylors tays~
    @WA small lamp sits in the center of the room letting off a small amount of

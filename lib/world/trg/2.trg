@@ -34,15 +34,34 @@ else
 end
 ~
 #202
-Free Trig~
-0 b 100
-~
-if %mhunt_target.room% == %self.room%
-  mkill %mhunt_target%
-  %echo% killing %mhunt_target.name%.
-else
-  %echo% hunting %mhunt_target.name%
-  mhunt %mhunt_target%
+Object Spells~
+1 c 1
+c~
+* if command is cast and arg is fireshield (and all abbrevs of each)
+if %cmd.mudcommand% == cast && fireshield /= %arg%
+  switch %random.1%
+    case 1
+      if %actor.class% == Magic User
+        %echoaround% %actor% %self.shortdesc% that %actor.name% is wearing glows brightly for a moment.
+        %send% %actor% Your %self.shortdesc% glows brightly for a moment. 
+        dg_cast 'armor' %actor%
+      end
+    break
+    default
+      %send% %actor% reached default case.
+    break
+    eval ward_major %ward_major%+1
+    if %ward_major% == 2
+      detach all %self.id%
+    end
+    global ward_major
+  done
 end
+~
+#203
+free~
+2 bg 100
+~
+* No Script
 ~
 $~

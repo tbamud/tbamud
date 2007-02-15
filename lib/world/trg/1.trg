@@ -2081,7 +2081,7 @@ say The best advice for new builders is under @RHELP SUGGESTIONS@n.
 TBA Welcome - 18~
 0 e 1
 entered reconnected~
-if %actor.is_pc%
+if %actor.is_pc% && %actor.level% == 1
   wait 1 sec
   if %actor.varexists(TBA_mortal_greeting)%
     say Welcome back %actor.name%. Tell someone level 32 or above when you complete the application.
@@ -2093,6 +2093,9 @@ if %actor.is_pc%
     say Please fill out the application at: geocities.com/buildersacademy/
     set TBA_mortal_greeting 1
     remote TBA_mortal_greeting %actor.id%
+    if !%actor.has_item(1233)%
+      %load% obj 1332 %actor% inv
+    end
   end
 end
 ~

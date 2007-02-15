@@ -2476,8 +2476,8 @@ The following are valid fields:
  
 Field          Level Required   Who     Value Type  Description
 ----------------------------------------------------------------------------
-afk            LVL_BUILDER      BOTH    NUMBER      AFK flag
 ac             LVL_BUILDER      BOTH    NUMBER      Armor class
+afk            LVL_BUILDER      BOTH    NUMBER      AFK flag
 age            LVL_GOD          BOTH    NUMBER      Character's age
 align          LVL_BUILDER      BOTH    NUMBER      Alignment
 bank           LVL_BUILDER      PC      NUMBER      Gold in bank
@@ -2497,12 +2497,10 @@ height         LVL_BUILDER      BOTH    NUMBER      Height
 hit            LVL_BUILDER      BOTH    NUMBER      Current HP
 hitroll        LVL_BUILDER      BOTH    NUMBER      To-Hit modifier
 hunger         LVL_BUILDER      BOTH    MISC        Hrs to hunger
-idnum          LVL_IMPL         PC      NUMBER      ID Number
 int            LVL_BUILDER      BOTH    NUMBER      Intelligence
 invis          LVL_GOD          PC      NUMBER      Invisible (level)
 invstart       LVL_BUILDER      PC      BINARY      Invisible Start
 killer         LVL_GOD          PC      BINARY      KILLER flag
-lessons        LVL_GOD          PC      NUMBER      # of practices
 level          LVL_GRGOD        BOTH    NUMBER      Level
 loadroom       LVL_BUILDER      PC      MISC        Room to load in
 mana           LVL_BUILDER      BOTH    NUMBER      Current mana
@@ -2515,15 +2513,14 @@ nohassle       LVL_GOD          PC      BINARY      NOHASSLE flag
 nosummon       LVL_BUILDER      PC      BINARY      NOSUMMON flag
 nowizlist      LVL_GRGOD        PC      BINARY      Not Wizlistable flag
 olc            LVL_GRGOD        PC      MISC        Zone to OLC
-passwd         LVL_IMPL         PC      MISC        Player password
+password       LVL_IMPL         PC      MISC        Player password
 poofin         LVL_IMMORT       PC      MISC        Poofin
 poofout        LVL_IMMORT       PC      MISC        Poofout
 practices      LVL_GOD          PC      NUMBER      # of practices
 quest          LVL_GOD          PC      BINARY      QUEST flag
-race           LVL_BUILDER      BOTH    MISC        Race h/e/g/a/b/m/w/t/d/r/s
-room           LVL_IMPL         BOTH    NUMBER      Move to room
-showvnum       LVL_GOD          PC      BINARY      ShowVnums
+room           LVL_BUILDER      BOTH    NUMBER      Move to room
 sex            LVL_GOD          BOTH    MISC        Sex
+showvnums      LVL_BUILDER      PC      BINARY      ShowVnums
 siteok         LVL_GOD          PC      BINARY      SITEOK
 str            LVL_BUILDER      BOTH    NUMBER      Strength
 stradd         LVL_BUILDER      BOTH    NUMBER      Additional STR (18/xx)
@@ -3489,7 +3486,7 @@ EVALUATE TRIG-EVALS EVALS
 Usage: eval <variable> <expression>
 
 * this example immediately evaluates the expression below and stores the result
-* in %result%:
+* in %result%
 eval result %self.hitp% * 100 / %self.maxhitp% 
 say My hitpoint percentage is %result%
 * this result will not change after the evaluation even if %self.hitp% changes.
@@ -3505,9 +3502,9 @@ TRIG-SET %SET% MSET
 
 Usage: set <variable> <value>
 
-Set sets variable to value, without evaluating it. 
- Example: set foobar 15 - 5
- sets the variable foobar to the string "15 - 5"
+Set creates a variable without evaluating it. For example:
+  set foobar 15 - 5
+Sets the variable foobar to the string "15 - 5"
 
 * this example sets the value of result to '%self.hitp% * 100 / %self.maxhitp%'
 set result %self.hitp% * 100 / %self.maxhitp% 
@@ -4422,9 +4419,10 @@ Example: @RTSTAT 59@n
 #31
 TRIGEDIT-ROOM-TIME TRIGEDIT-TIME
 
-Activated when MUD hour equals numeric arg.
+Activated by MUD hour listed in Numeric Arg. A player must be in the room for 
+it to work unless you use it in conjunction with @RTRIGEDIT-ROOM-GLOBAL@n.
  
-Numeric Arg : MUD hour to trigger off.
+Numeric Arg : MUD hour to trigger off (0-23).
 Argument    : not used.
 
 Variables:

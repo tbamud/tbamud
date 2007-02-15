@@ -399,35 +399,28 @@ A Master Map lies on the ground here.~
 0 0 0 0
 4 1000 0 0
 E
-master map~
-@bMaster Map
-@r*=================+==================================*
-@r| @bPage 1        @r|            @bForest Map              @r|
-@r| @bPage 2        @r|            @bVillage Map             @r|    
-@r| @bPage 3        @r|            @bMaze Map                @r|   
-@r+=================+==================================+
-|                                                    |
-|    @b@uTo look at any of these maps, it is look (#)@n@r    |
-|                                                    |
-*====================================================*@n
-~
-E
-1~
-@bArea     : A Small Forest
-@bLevel    : Any Level
+3~
 @r-------------------------------------------------------
-@b                  WOD
-                   |                            
-             BET--WOP--NTF--FTF  ENF                           
-              |    |         |    |
-             HSE  LLP--ENF  SHK--LKE                                        
+                                                       
+@b                               DED    
+@b                                |
+@b                DED  DED  DED--MOD--DED   X --MOD
+@b                 |    |         |         |    |
+@b            X -- X -- X   CNT-- X         X --MOD--DED
+@b            |         |         |         |
+@b      DED-- X    X --MOD-- X -- X -- X -- X
+@b            |    |    |         |
+@b  X -- X -- X   DED   X        MOD
+@b  |                   |
+@b  X                  DED
+@b  |
+@b ENT
+
 @r-------------------------------------------------------
-@bWOD: Further into the Woods    LLP: Lightly Lit Path
-BET: Barricade of Trees        ENF: End of Forest
-WOP: Woodland Path             NTF: Near the Tree Fort
-FTF: Foot of the Fort          SHK: A Small Shack
-LKE: Lake
-@r-------------------------------------------------------
+@yENT: Beginning              MOD: Monsters Den
+@yDED: Dead End                 X: Just a Regular Maze Room
+@yCNT: Center of the Maze         @BRooms: 31
+@r-------------------------------------------------------@n
 ~
 E
 2~
@@ -453,28 +446,35 @@ ACS: Amor Shop    MSH: Map Shop
 @r-------------------------------------------------------
 ~
 E
-3~
+1~
+@bArea     : A Small Forest
+@bLevel    : Any Level
 @r-------------------------------------------------------
-                                                       
-@b                               DED    
-@b                                |
-@b                DED  DED  DED--MOD--DED   X --MOD
-@b                 |    |         |         |    |
-@b            X -- X -- X   CNT-- X         X --MOD--DED
-@b            |         |         |         |
-@b      DED-- X    X --MOD-- X -- X -- X -- X
-@b            |    |    |         |
-@b  X -- X -- X   DED   X        MOD
-@b  |                   |
-@b  X                  DED
-@b  |
-@b ENT
-
+@b                  WOD
+                   |                            
+             BET--WOP--NTF--FTF  ENF                           
+              |    |         |    |
+             HSE  LLP--ENF  SHK--LKE                                        
 @r-------------------------------------------------------
-@yENT: Beginning              MOD: Monsters Den
-@yDED: Dead End                 X: Just a Regular Maze Room
-@yCNT: Center of the Maze         @BRooms: 31
-@r-------------------------------------------------------@n
+@bWOD: Further into the Woods    LLP: Lightly Lit Path
+BET: Barricade of Trees        ENF: End of Forest
+WOP: Woodland Path             NTF: Near the Tree Fort
+FTF: Foot of the Fort          SHK: A Small Shack
+LKE: Lake
+@r-------------------------------------------------------
+~
+E
+master map~
+@bMaster Map
+@r*=================+==================================*
+@r| @bPage 1        @r|            @bForest Map              @r|
+@r| @bPage 2        @r|            @bVillage Map             @r|    
+@r| @bPage 3        @r|            @bMaze Map                @r|   
+@r+=================+==================================+
+|                                                    |
+|    @b@uTo look at any of these maps, it is look (#)@n@r    |
+|                                                    |
+*====================================================*@n
 ~
 #10432
 map~
@@ -484,23 +484,6 @@ DO NOT LOOK!~
 12 0 a 0
 0 0 0 0
 1 200 0 0
-E
-legend~
-                             +------+
-                             |LEGEND|                     
-       +---------------------+------+--------------------+
-       | ---:  Gate                :X::  A Dead End      |
-       | : ::  Golden Road         EHS:  Elders House    |
-       | MST:  Main Street         PSH:  Items Shop      |
-       | TSQ:  Town Square         BRD:  Brick Road      |
-       | SIN:  Small Intersection  INN:  Inn             |
-       | TPT:  Trodden Path        JSH:  Jaks Shop       |
-       | CRD:  Cement Road         PND:  Pond            |
-       | DRD:  Dirt Road           QLA:  Quan Road       |
-       | STB:  Stable              CTY:  Court Yard      |
-       | GRD:  Gold Road           WEL:  Well            |
-       +-------------------------------------------------+
-~
 E
 map~
   ______________________________     ___________________________
@@ -535,6 +518,23 @@ map~
                                             
                            To see the legend it is 'look legend'
 ~
+E
+legend~
+                             +------+
+                             |LEGEND|                     
+       +---------------------+------+--------------------+
+       | ---:  Gate                :X::  A Dead End      |
+       | : ::  Golden Road         EHS:  Elders House    |
+       | MST:  Main Street         PSH:  Items Shop      |
+       | TSQ:  Town Square         BRD:  Brick Road      |
+       | SIN:  Small Intersection  INN:  Inn             |
+       | TPT:  Trodden Path        JSH:  Jaks Shop       |
+       | CRD:  Cement Road         PND:  Pond            |
+       | DRD:  Dirt Road           QLA:  Quan Road       |
+       | STB:  Stable              CTY:  Court Yard      |
+       | GRD:  Gold Road           WEL:  Well            |
+       +-------------------------------------------------+
+~
 #10433
 spy glasses~
 spy glasses~
@@ -544,6 +544,20 @@ A pair of spy glasses lies here.~
 0 0 0 0
 1 1000 0 10
 T 10417
+#10434
+Infra Armor~
+the Infra Armor~
+Infra armor sits here~
+~
+9 ag d n
+30 0 0 0
+16 892 0 7
+A
+1 3
+A
+17 10
+A
+5 3
 #10499
 a bag~
 a bag~

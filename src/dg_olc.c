@@ -378,7 +378,7 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
       break;
 
     case TRIGEDIT_NARG:
-      OLC_TRIG(d)->narg = atoi(arg);
+      OLC_TRIG(d)->narg = LIMIT(atoi(arg), 0, 100);
       OLC_VAL(d)++;
       break;
 

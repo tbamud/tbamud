@@ -290,6 +290,25 @@ else
   %send% %actor% The feather seems powerless.
 end
 ~
+#1218
+Multiple Command Example Trig~
+2 c 100
+test~
+if %cmd% == test
+  * Careful not to use Arguments * or this trig will freeze you. 
+  * evaluate the first arg
+  eval command %arg.car%
+  * evaluate the rest of the arg string
+  eval therest %arg.cdr%
+  * while there is an arg keep going
+  while %command%
+    %echo% the first arg is: %command%
+    %echo% the remaining arg is: %therest%
+    eval command %therest.car%
+    eval therest %therest.cdr%
+  done
+end
+~
 #1220
 book keeping~
 2 c 100

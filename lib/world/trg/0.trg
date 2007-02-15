@@ -379,7 +379,7 @@ switch %random.3%
     * only the person entering the room will see this.
     %send% %actor% You trip over a root as you walk into the room. 
     * everyone in the room except the actor will see this.
-    %echoaround% %actor% %actor.name% trips on a root walking into the room.
+%echoaround% %actor% %actor.name% trips on a root while walking into the room.
     * everyone in the room will see this.
     %echo% The root suddenly springs to life and attacks!
     * let everyone in the zone hear about this.
@@ -403,7 +403,7 @@ done
 AT Example~
 2 b 100
 ~
-%at% 1233 %echo% at'd to a room
+%at% 33 %echo% at'd to a room
 %at% Rumble %echo% at'd to Rumble
 ~
 #20
@@ -1562,6 +1562,17 @@ end
 Room Speech Example~
 2 d 1
 *~
+* By Rumble
+*
+* .car returns the first word in a string.
+* .cdr returns the remaining string.
+*
+%echo% The first word is: %speech.car%
+%echo% The rest of the string is: %speech.cdr%
+*
+* To go through a long string of text looking at each word you can
+* use a while loop. You could also check for matching text.
+*
 * evaluate the first word
 eval word %speech.car%
 * evaluate the rest of the speech string
@@ -2194,111 +2205,111 @@ if %actor.is_pc% && %actor.level% < 3
   wait 2 sec
   if !%actor.eq(*)%
     say get some clothes on! Here, I will help.
-    %load% obj 200 %actor% light
-    %load% obj 201 %actor% rfinger
-    %load% obj 202 %actor% lfinger
-    %load% obj 203 %actor% neck1
-    %load% obj 204 %actor% neck2
-    %load% obj 205 %actor% body
-    %load% obj 206 %actor% head
-    %load% obj 207 %actor% legs
-    %load% obj 208 %actor% feet
-    %load% obj 209 %actor% hands
-    %load% obj 210 %actor% arms
-    %load% obj 211 %actor% shield
-    %load% obj 212 %actor% about
-    %load% obj 213 %actor% waist
-    %load% obj 214 %actor% rwrist
-    %load% obj 215 %actor% lwrist
-    %load% obj 216 %actor% wield
-    %load% obj 217 %actor% hold
+    %load% obj 50 %actor% light
+    %load% obj 51 %actor% rfinger
+    %load% obj 52 %actor% lfinger
+    %load% obj 53 %actor% neck1
+    %load% obj 54 %actor% neck2
+    %load% obj 55 %actor% body
+    %load% obj 56 %actor% head
+    %load% obj 57 %actor% legs
+    %load% obj 58 %actor% feet
+    %load% obj 59 %actor% hands
+    %load% obj 60 %actor% arms
+    %load% obj 61 %actor% shield
+    %load% obj 62 %actor% about
+    %load% obj 63 %actor% waist
+    %load% obj 64 %actor% rwrist
+    %load% obj 65 %actor% lwrist
+    %load% obj 66 %actor% wield
+    %load% obj 67 %actor% hold
     halt
   end
   if !%actor.eq(light)%
     Say you really shouldn't be wandering these parts without a light source %actor.name%.
     shake
-    %load% obj 200
+    %load% obj 50
     give generic %actor.name%
     halt
   end
   if !%actor.eq(rfinger)% || !%actor.eq(lfinger)%
     Say did you lose one of your rings?
     sigh
-    %load% obj 201
+    %load% obj 51
     give generic %actor.name%
     halt
   end
   if !%actor.eq(neck1)% || !%actor.eq(neck2)%
     Say you lose everything don't you?
     roll
-    %load% obj 203
+    %load% obj 53
     give generic %actor.name%
     halt
   end
   if !%actor.eq(body)%
     say you won't get far without some body armor %actor.name%.
-    %load% obj 205
+    %load% obj 55
     give generic %actor.name%
     halt
   end
   if !%actor.eq(head)%
     Say protect that noggin of yours, %actor.name%.
-    %load% obj 206
+    %load% obj 56
     give generic %actor.name%
     halt
   end
   if !%actor.eq(legs)%
     Say why do you always lose your pants %actor.name%?
-    %load% obj 207
+    %load% obj 57
     give generic %actor.name%
     halt
   end
   if !%actor.eq(feet)%
     Say you can't go around barefoot %actor.name%.
-    %load% obj 208
+    %load% obj 58
     give generic %actor.name%
     halt
   end
   if !%actor.eq(hands)%
     Say need some gloves %actor.name%?
-    %load% obj 209
+    %load% obj 59
     give generic %actor.name%
     halt
   end
   if !%actor.eq(arms)%
     Say you must be freezing %actor.name%.
-    %load% obj 210
+    %load% obj 60
     give generic %actor.name%
     halt
   end
   if !%actor.eq(shield)%
     Say you need one of these to protect yourself %actor.name%.
-    %load% obj 211
+    %load% obj 61
     give generic %actor.name%
     halt
   end
   if !%actor.eq(about)%
     Say you are going to catch a cold %actor.name%.
-    %load% obj 212
+    %load% obj 62
     give generic %actor.name%
     halt
   end
   if !%actor.eq(waist)%
     Say better use this to hold your pants up %actor.name%.
-    %load% obj 213
+    %load% obj 63
     give generic %actor.name%
     halt
   end
   if !%actor.eq(rwrist)% || !%actor.eq(lwrist)%
     Say misplace something?
     smile
-    %load% obj 215
+    %load% obj 65
     give generic %actor.name%
     halt
   end
   if !%actor.eq(wield)%
     Say without a weapon you will be Fido food %actor.name%.
-    %load% obj 216
+    %load% obj 66
     give generic %actor.name%
     halt
   end
@@ -2311,7 +2322,7 @@ Puff - Random Advice~
 eval max %random.200%
 set  text[1]   My god!  It's full of stars!
 set  text[2]   How'd all those fish get up here?
-set  text[3]   I'm a very female dragon.
+set  text[3]   Some people are like Slinkies. Not really good for anything, but still bring a smile to your face when you push them down a flight of stairs.
 set  text[4]   I've got a peaceful, easy feeling.
 set  text[5]   Ahhh, spring is in the air.
 set  text[6]   I'm one of those bad things that happen to good people.
@@ -2508,7 +2519,6 @@ set  text[196] It is as bad as you think and they are out to get you.
 set  text[197] Isn't it scary that doctors call what they do "practice"?
 set  text[198] Accept that some days you're the pigeon, and some days you're the statue.
 set  text[199] I'm not crazy, I've just been in a very bad mood for years.
-set  text[200] All I ask is a chance to prove money can't make me happy.
 set  speech %%text[%max%]%%
 eval speech %speech%
 say %speech%
@@ -2563,24 +2573,24 @@ has entered the game.~
 * By Rumble
 if %actor.is_pc%  
   if !%actor.eq(*)%
-    %load% obj 200 %actor% light
-    %load% obj 201 %actor% rfinger
-    %load% obj 202 %actor% lfinger
-    %load% obj 203 %actor% neck1
-    %load% obj 204 %actor% neck2
-    %load% obj 205 %actor% body
-    %load% obj 206 %actor% head
-    %load% obj 207 %actor% legs
-    %load% obj 208 %actor% feet
-    %load% obj 209 %actor% hands
-    %load% obj 210 %actor% arms
-    %load% obj 211 %actor% shield
-    %load% obj 212 %actor% about
-    %load% obj 213 %actor% waist
-    %load% obj 214 %actor% rwrist
-    %load% obj 215 %actor% lwrist
-    %load% obj 216 %actor% wield
-    %load% obj 217 %actor% hold
+    %load% obj 50 %actor% light
+    %load% obj 51 %actor% rfinger
+    %load% obj 52 %actor% lfinger
+    %load% obj 53 %actor% neck1
+    %load% obj 54 %actor% neck2
+    %load% obj 55 %actor% body
+    %load% obj 56 %actor% head
+    %load% obj 57 %actor% legs
+    %load% obj 58 %actor% feet
+    %load% obj 59 %actor% hands
+    %load% obj 60 %actor% arms
+    %load% obj 61 %actor% shield
+    %load% obj 62 %actor% about
+    %load% obj 63 %actor% waist
+    %load% obj 64 %actor% rwrist
+    %load% obj 65 %actor% lwrist
+    %load% obj 66 %actor% wield
+    %load% obj 67 %actor% hold
   end
   wait 2 sec
   if !(%actor.inventory(82)%)
@@ -2599,6 +2609,7 @@ if %actor.is_pc%
     wait 2 s
     say HELP AREAS
   end
+end
 ~
 #99
 Obj Command 82 - Teleporter~

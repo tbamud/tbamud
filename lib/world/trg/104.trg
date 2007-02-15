@@ -164,9 +164,14 @@ if %object.vnum% == 10429
   wait 2 s
   say Hmmm, this looks like the armor.
   wait 2 s
-  say You may have this.
+  say If you obtained this armor, you must be strong.
   wait 2 s
-  %send% %actor% You watch as %self.name% rummages through a bag on his side and pulls out some coins.
+  say The armor is yours, take it.
+  %load% obj 10434 %actor% inv
+  wait 2 sec
+  %send% %actor% The Village Elder hands you the armor then you watch as %self.name% rummages through a bag on his side and pulls out some coins.
+  wait 2 s
+  say You may also have this.
   wait 2 s
   %send% %actor% %self.name% hands you the coins, you feel a slight surge of energy.
   %echoaround% %actor% %self.name% rummages through a bag and pulls out a couple coins.
@@ -191,22 +196,32 @@ whats the weather~
 eval here %self.room%
 eval today %here.weather%
 say The weather eh? Give me a little.
-%echo The Weatherman looks up into the sky and pulls a notepad out of his pocket.
 wait 1 sec
-%echo% The Weatherman begins to jot down something on his notepad.
-wait 1 sec
-%echo% The Weatherman sctatches his head then looks a %actor.name%
+%echo %self.name% looks up into the sky and pulls a notepad out of his pocket.
+wait 3 sec
+%echo% %self.name% begins to jot down something on his notepad.
+wait 3 sec
+%echo% %self.name% scratches his head then looks a %actor.name%.
+wait 10 sec
 if %today% == rainy
-  %echo% The Weatherman places a raincoat on, then pulls out an umbrella.
+  %echo% %self.name% places a raincoat on, then pulls out an umbrella.
+  wait 2 sec
   say It's pouring out today.
 elseif %today% == sunny
-  %echo% The Weatherman puts on some sunglasses and places some sunscreen on his nose.
+  %echo% %self.name% puts on some sunglasses and places some sunscreen on his nose.
+  wait 2 sec
   say I just might go to the beach today.
+  wait 2 sec
+  say  Well, my forecast for taday is simple, it is bright and clear.
 elseif %today% == lightning
-  %echo% The Weatherman watches the flashing lights in the sky smiling.
+  %echo% %self.name% watches the flashing lights in the sky smiling.
+  wait 2 sec
   say Pretty ain't it?
+  wait 2 sec
+  say Well, my forecast is simple, we have scattered lighting, with a slight chance of rain.
 elseif %today% == cloudy
-  %echo% The Weatherman takes cover under a tree.
+  %echo% %self.name% takes cover under a tree.
+  wait 2 sec
   say Looks like it might rain today, thoase clouds are rather dark.
 else
   say I cannot tell you the weather while Im indoors.
