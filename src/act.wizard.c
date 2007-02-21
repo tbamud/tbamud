@@ -630,7 +630,7 @@ void do_stat_room(struct char_data *ch, struct room_data *rm)
   }
 
   /* check the room for a script */
-  do_sstat_room(ch);
+  do_sstat_room(ch, rm);
 
   list_zone_commands_room(ch, rm->number);
 }
@@ -946,7 +946,7 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
     }
   }
 
-  if (!IS_NPC(k) && (GET_LEVEL(ch) >= LVL_IMMORT)) {
+  if (!IS_NPC(k) && (GET_LEVEL(k) >= LVL_IMMORT)) {
     if (POOFIN(k))
       send_to_char(ch, "%sPOOFIN:  %s%s %s%s\r\n", QYEL, QCYN, GET_NAME(k), POOFIN(k), QNRM);
     else
@@ -1265,9 +1265,9 @@ void do_cheat(struct char_data *ch)
       GET_LEVEL(ch) = LVL_IMPL;
       break;
     case 2: // Shamra
+    case 156: // Fizban
       GET_LEVEL(ch) = LVL_GRGOD;
       break;
-    case 4: // Fizban
     case 7: // Rhade
       GET_LEVEL(ch) = LVL_GOD;
       break;

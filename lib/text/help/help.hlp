@@ -7728,8 +7728,11 @@ ALIAS-EXAMPLES
 alias poofin set self poofin $*
 alias poofout set self poofout $*
 alias poofs score
+alias syslog toggle syslog $*
+alias color toggle color $*
+alias cheat return
 
-See also: ALIAS
+See also: ALIASES
 #31
 AC-CONFIDENCE ARMOR-CLASS ARMOUR-CLASS AC-APPLY 
 
@@ -10952,7 +10955,7 @@ AFK
 
 Usage : afk
 
-Let's other players know you will be away from keyboard. (AFK) flag will
+Lets other players know you will be away from the keyboard. The (AFK) flag will
 be displayed in who after your name and title.
 
 See also: TOGGLE, WHO
@@ -11099,6 +11102,21 @@ I am currently working on zones 89 and 327, both works in progress but 89 is a
 bit further along.  I am oftentimes in another window or near my computer so
 page me if you really need something, if I don't respond I'm probably sleeping
 or in class or just don't want to be bothered :-)
+
+#0
+FIZBAN
+
+Unlike Rumble, Fizban actually doesn't want your help. He is already well
+on his way to world domination. Sometimes he pretends to lack powers he
+mastered long ago so to seem feeble, but in actuality he is one of the
+most powerful beings in existence and seeks to destroy the world. He only
+pretends to be the Avatar of Paladine because then no one suspects him.
+The Avatar of Fizban that is here on The Builder Academy is one of his
+feeble essences, where he pretends to not be overly competent and actually
+humble and helpful, but whatever you do...don't be fooled! It should be obvious
+from the fact he's built 4 rooms in that many years that he is spending most
+of his time elsewhere...on much darker motives than building happy zones
+for CircleMUD players.
 
 #0
 PRAISE REVIEWS RATINGS

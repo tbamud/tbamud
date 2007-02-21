@@ -436,3 +436,12 @@ void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
     act("$N gives $n a piece of mail.", FALSE, ch, 0, mailman, TO_ROOM);
   }
 }
+
+void notify_if_playing(struct char_data *from, int recipient_id) 
+{ 
+  struct descriptor_data *d; 
+
+  for (d = descriptor_list; d; d = d->next) 
+    if ((IS_PLAYING(d)) && (GET_IDNUM(d->character) == recipient_id) && (has_mail(GET_IDNUM(d->character)))) 
+      send_to_char(d->character, "You have new mudmail from %s.\r\n", GET_NAME(from)); 
+} 

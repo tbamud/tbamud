@@ -322,23 +322,22 @@ void free_shop(struct shop_data *shop)
  */
 shop_rnum real_shop(shop_vnum vnum)
 {
-  shop_rnum bot, top, mid;
+  int bot, top, mid;
 
   bot = 0;
   top = top_shop - top_shop_offset;
 
   /* perform binary search on shop_table */
-  for (;;) {
+  while (bot < top) {
     mid = (bot + top) / 2;
     if (SHOP_NUM(mid) == vnum)
       return (mid);
-    if (bot >= top)
-      return (NOWHERE);
     if (SHOP_NUM(mid) > vnum)
       top = mid;
     else
       bot = mid + 1;
   }
+  return NOWHERE;
 }
 
 /*-------------------------------------------------------------------*/

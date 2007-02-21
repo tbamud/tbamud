@@ -286,7 +286,7 @@ obj_data *get_object_in_equip(char_data * ch, char *name);
 void script_trigger_check(void);
 void check_time_triggers(void);
 void find_uid_name(char *uid, char *name, size_t nlen);
-void do_sstat_room(struct char_data * ch);
+void do_sstat_room(struct char_data * ch, room_data *r);
 void do_sstat_object(char_data *ch, obj_data *j);
 void do_sstat_character(char_data *ch, char_data *k);
 void add_trigger(struct script_data *sc, trig_data *t, int loc);

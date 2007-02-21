@@ -185,7 +185,7 @@ void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum 
   }
 
   if (counter == 0)
-    send_to_char(ch, "No rooms found for zone #%d\r\n", zone_table[rnum].number);
+    send_to_char(ch, "No rooms found for zone/range specified.\r\n");
 }
 
 

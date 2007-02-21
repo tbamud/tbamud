@@ -21,11 +21,7 @@
 
 /*
  * If you want equipment to be automatically equipped to the same place
- * it was when players rented, set the define below to 1.  Please note
- * that this will require erasing or converting all of your rent files.
- * And of course, you have to recompile everything.  We need this feature
- * for CircleMUD to be complete but we refuse to break binary file
- * compatibility.
+ * it was when players rented, set the define below to 1.
  */
 #define USE_AUTOEQ	1	/* TRUE/FALSE aren't defined yet. */
 

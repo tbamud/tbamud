@@ -21,7 +21,6 @@
 
 /* external data structures */
 extern struct descriptor_data *descriptor_list;
-extern void strip_string(char *buffer);
 void hedit_disp_menu(struct descriptor_data *d);
 
 /* external variables */
@@ -30,7 +29,7 @@ int top_of_h_table = 0;		/* ref to top of help table	 */
 int top_of_h_file = 0;		/* ref of size of help file	 */
 long top_help_idnum = 0;	/* highest idnum in use		 */
 void get_one_line(FILE *fl, char *buf);
-int search_help(struct char_data *ch, char *argument);
+int search_help(char *argument, int level);
 ACMD(do_reboot);
 
 /* local functions */
@@ -154,7 +153,7 @@ ACMD(do_oasis_hedit)
 
   OLC_NUM(d) = 0;
   OLC_STORAGE(d) = strdup(argument);
-  OLC_ZNUM(d) = search_help(ch, OLC_STORAGE(d));
+  OLC_ZNUM(d) = search_help(OLC_STORAGE(d), GET_LEVEL(ch));
 
   for(i = 0; i < (int)strlen(argument); i++)
     argument[i] = toupper(argument[i]);
@@ -421,38 +420,35 @@ void hedit_string_cleanup(struct descriptor_data *d, int terminator)
 
 ACMD(do_helpcheck)
 {
-   char buf[MAX_STRING_LENGTH];
-   int i, w = 0;
-   char arg[64];
-   ACMD(do_action);
+  ACMD(do_action);
 
-   if(!help_table) {
-      send_to_char(ch, "The help_table doesn't exist!\r\n");
-      return;
-   }
+  char buf[MAX_STRING_LENGTH];
+  int i, count = 0;
+  size_t len = 0, nlen;
 
-   sprintf(buf, "\r\n");
-   strcpy(buf, "Commands without help entries:\r\n");
-   strcat(buf, "-------------------------------------------------------------------\r\n");
+  send_to_char(ch, "Commands without help entries:\r\n");
+  send_to_char(ch, "-------------------------------------------------------------------\r\n");
 
-   for(i = 1; *(complete_cmd_info[i].command) != '\n'; i++) {
-      snprintf(arg, sizeof(arg), "%s", complete_cmd_info[i].command);
-      if(search_help(ch, arg) <= 0) {
-         if(complete_cmd_info[i].command_pointer == do_action)
-            continue;
-       w++;
-       w = w%3;
-       sprintf(buf + strlen(buf), " %-20.20s%s", complete_cmd_info[i].command, (w ? "|":"\r\n"));
-   }
+  for (i = 1; *(complete_cmd_info[i].command) != '\n'; i++) {
+    if (complete_cmd_info[i].command_pointer != do_action) {
+      if (search_help((char *) complete_cmd_info[i].command, GET_LEVEL(ch)) < 0) {
+        nlen = snprintf(buf + len, sizeof(buf) - len, " %-20.20s%s",
+            complete_cmd_info[i].command, (++count % 3 ? "|":"\r\n"));
+        if (len + nlen >= sizeof(buf) || nlen < 0)
+          break;
+        len += nlen;
+      }
+    }
   }
-   if(w)
-     strcat(buf, "\r\n");
+  if (count % 3 && len < sizeof(buf))
+    nlen = snprintf(buf + len, sizeof(buf) - len, "\r\n");
 
-   if(ch->desc)
-     page_string(ch->desc, buf, 1);
+  if (ch->desc)
+    page_string(ch->desc, buf, TRUE);
 
-   *buf = '\0';
+  *buf = '\0';
 }
+
 
 ACMD(do_hindex)
 {

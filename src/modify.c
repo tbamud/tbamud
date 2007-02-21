@@ -236,6 +236,7 @@ void playing_string_cleanup(struct descriptor_data *d, int action)
     if (action == STRINGADD_SAVE && *d->str) {
       store_mail(d->mail_to, GET_IDNUM(d->character), *d->str);
       write_to_output(d, "Message sent!\r\n");
+      notify_if_playing(d->character, d->mail_to); 
     } else
       write_to_output(d, "Mail aborted.\r\n");
       free(*d->str);

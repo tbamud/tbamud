@@ -992,37 +992,35 @@ void space_to_minus(char *str)
     *str = '-';
 }
 
+int search_help(char *argument, int level) 
+{ 
+  int chk, bot, top, mid, minlen; 
 
-int search_help(struct char_data *ch, char *argument)
-{
-  int chk, bot, top, mid, minlen;
-  bot = 0;
-  top = top_of_h_table;
-  minlen = strlen(argument);
-  for (;;) {
-    mid = (bot + top) / 2;
-    if (bot > top)
-      return FALSE;
-    else if (!(chk = strn_cmp(argument, help_table[mid].keywords, minlen))) {
-      /* trace backwards to find first matching entry. Thanks Jeff Fink! */
-      while ((mid > 0) && (!(chk = strn_cmp(argument, help_table[mid - 1].keywords, minlen))))
-        mid--;
-      if (help_table[mid].min_level > GET_LEVEL(ch))
-        /* trace back up... */
-        while ((mid < top_of_h_table) &&
-          (!(chk = strn_cmp(argument, help_table[mid + 1].keywords, minlen)))) {
-          mid++;
-          if (help_table[mid].min_level < GET_LEVEL(ch))
-            return mid;
-        }
+   bot = 0; 
+   top = top_of_h_table; 
+   minlen = strlen(argument); 
+
+  while (bot <= top) { 
+    mid = (bot + top) / 2; 
+
+    if (!(chk = strn_cmp(argument, help_table[mid].keywords, minlen)))  { 
+      while ((mid > 0) && !strn_cmp(argument, help_table[mid - 1].keywords, minlen)) 
+         mid--; 
+
+      while (level < help_table[mid].min_level && mid < (bot + top) / 2) 
+        mid++; 
+
+      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
+	break; 
+
       return mid;
-    } else {
-      if (chk > 0)
-	bot = mid + 1;
-      else
-        top = mid - 1;
     }
-  }
+    else if (chk > 0) 
+      bot = mid + 1; 
+    else 
+      top = mid - 1; 
+  } 
+  return -1;      
 }
 
 ACMD(do_help)
@@ -1048,9 +1046,9 @@ ACMD(do_help)
   }
 
   space_to_minus(argument);
-  mid = search_help(ch, argument);
+  mid = search_help(argument, GET_LEVEL(ch));
 
-  if (mid <= 0) {
+  if (mid < 0) {
     send_to_char(ch, "There is no help on that word.\r\n");
     mudlog(NRM, MAX(LVL_IMPL, GET_INVIS_LEV(ch)), TRUE,
       "%s tried to get help on %s", GET_NAME(ch), argument);

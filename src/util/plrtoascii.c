@@ -266,8 +266,8 @@ void convert(char *filename)
       sprintascii(bits, psds->pref);
       fprintf(outfile, "Pref: %s\n", bits);
     }
-    if (psds->conditions[FULL] && player.level < LVL_IMMORT &&
-	psds->conditions[FULL] != PFDEF_HUNGER)
+    if (psds->conditions[HUNGER] && player.level < LVL_IMMORT &&
+	psds->conditions[HUNGER] != PFDEF_HUNGER)
       fprintf(outfile, "Hung: %d\n", (int)psds->conditions[0]);
     if (psds->conditions[THIRST] && player.level < LVL_IMMORT &&
 	psds->conditions[THIRST] != PFDEF_THIRST)

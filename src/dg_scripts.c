@@ -841,10 +841,8 @@ void script_stat (char_data *ch, struct script_data *sc)
 }
 
 
-void do_sstat_room(struct char_data * ch)
+void do_sstat_room(struct char_data * ch, struct room_data *rm)
 {
-  struct room_data *rm = &world[IN_ROOM(ch)];
-
   send_to_char(ch, "Script information:\r\n");
   if (!SCRIPT(rm)) {
     send_to_char(ch, "  None.\r\n");

@@ -64,29 +64,11 @@ void Crash_rentsave(struct char_data *ch, int cost);
 void Crash_cryosave(struct char_data *ch, int cost);
 int Crash_load_objs(struct char_data *ch);
 void tag_argument(char *argument, char *tag);
-void strip_string(char *buffer);
 int handle_obj(struct obj_data *obj, struct char_data *ch, int locate, struct obj_data **cont_rows);
 obj_save_data *objsave_parse_objects(FILE *fl);
 int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char_data *ch);
 int objsave_save_obj_record(struct obj_data *obj, FILE *fl, int location);
-
-/* This procedure turns the '\r\n' into '\n' in a string so that it may be
-   saved to a file.  Use it only on buffers, not on the orginal
-   strings. */
-void strip_string(char *buffer)
-{
-  register char *ptr, *str;
-
-  ptr = buffer;
-  str = ptr;
-
-  while ((*str = *ptr)) {
-    str++;
-    ptr++;
-    if (*ptr == '\r')
-      ptr++;
-  }
-}
+void strip_cr(char *buffer);
 
 /*
  * Writes one object record to FILE.
@@ -109,7 +91,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 
   if (obj->action_description) {
     strcpy(buf1, obj->action_description);
-    strip_string(buf1);
+    strip_cr(buf1);
   } else
     *buf1 = 0;
 
@@ -189,7 +171,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
           continue;
         }
         strcpy(buf1, ex_desc->description);
-        strip_string(buf1);
+        strip_cr(buf1);
         fprintf(fp, "EDes:\n"
                  "%s~\n"
                  "%s~\n",
