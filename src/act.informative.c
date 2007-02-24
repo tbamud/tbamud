@@ -10,7 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -28,7 +27,6 @@ extern struct help_index_element *help_table;
 extern char *help;
 extern char *ihelp;
 extern struct time_info_data time_info;
-
 extern char *credits;
 extern char *news;
 extern char *info;
@@ -49,6 +47,7 @@ char *title_male(int chclass, int level);
 char *title_female(int chclass, int level);
 struct time_info_data *real_time_passed(time_t t2, time_t t1);
 int compute_armor_class(struct char_data *ch);
+int has_mail(long id);
 
 /* local functions */
 int sort_commands_helper(const void *a, const void *b);
@@ -97,7 +96,6 @@ int *cmd_sort_info;
 #define SHOW_OBJ_LONG		0
 #define SHOW_OBJ_SHORT		1
 #define SHOW_OBJ_ACTION		2
-
 
 void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 {
@@ -170,7 +168,6 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
   send_to_char(ch, "\r\n");
 }
 
-
 void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
 {
   if (OBJ_FLAGGED(obj, ITEM_INVISIBLE))
@@ -188,7 +185,6 @@ void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
   if (OBJ_FLAGGED(obj, ITEM_HUM))
     send_to_char(ch, " ..It emits a faint humming sound!");
 }
-
 
 void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show)
 {
@@ -209,9 +205,12 @@ void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int
       if (!strcmp(j->short_description, i->short_description))
         num++;
     if (CAN_SEE_OBJ(ch, i) && (*i->description != '.' || (IS_NPC(ch) || PRF_FLAGGED(ch, PRF_HOLYLIGHT)))) {
+      if (mode == SHOW_OBJ_LONG) 
+        send_to_char(ch, "%s", CCGRN(ch, C_NRM));  
       if (num != 1)
         send_to_char(ch, "(%2i) ", num);
       show_obj_to_char(i, ch, mode);
+      send_to_char(ch, "%s", CCNRM(ch, C_NRM));
       found = TRUE;
     }
   }
@@ -248,7 +247,6 @@ void diag_char_to_char(struct char_data *i, struct char_data *ch)
 
   send_to_char(ch, "%c%s %s\r\n", UPPER(*pers), pers + 1, diagnosis[ar_index].text);
 }
-
 
 void look_at_char(struct char_data *i, struct char_data *ch)
 {
@@ -293,7 +291,6 @@ void look_at_char(struct char_data *i, struct char_data *ch)
       send_to_char(ch, "You can't see anything.\r\n");
   }
 }
-
 
 void list_one_char(struct char_data *i, struct char_data *ch)
 {
@@ -378,8 +375,6 @@ void list_one_char(struct char_data *i, struct char_data *ch)
     act("...$e glows with a bright light!", FALSE, i, 0, ch, TO_VICT);
 }
 
-
-
 void list_char_to_char(struct char_data *list, struct char_data *ch)
 {
   struct char_data *i;
@@ -390,14 +385,15 @@ void list_char_to_char(struct char_data *list, struct char_data *ch)
       if (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_HOLYLIGHT) &&
       	   IS_NPC(i) && i->player.long_descr && *i->player.long_descr == '.')
         continue;
+      send_to_char(ch, "%s", CCYEL(ch, C_NRM)); 
       if (CAN_SEE(ch, i))
         list_one_char(i, ch);
       else if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch) &&
 	       AFF_FLAGGED(i, AFF_INFRAVISION))
         send_to_char(ch, "You see a pair of glowing red eyes looking your way.\r\n");
+      send_to_char(ch, "%s", CCNRM(ch, C_NRM)); 
     }
 }
-
 
 void do_auto_exits(struct char_data *ch)
 {
@@ -418,7 +414,6 @@ void do_auto_exits(struct char_data *ch)
   send_to_char(ch, "%s]%s\r\n", slen ? "" : "None!", CCNRM(ch, C_NRM));
 }
 
-
 ACMD(do_exits)
 {
   int door, len = 0;
@@ -438,7 +433,7 @@ ACMD(do_exits)
 
     len++;
 
-    if (GET_LEVEL(ch) >= LVL_IMMORT)
+    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS)) 
       send_to_char(ch, "%-5s - [%5d] %s\r\n", dirs[door], GET_ROOM_VNUM(EXIT(ch, door)->to_room),
 		world[EXIT(ch, door)->to_room].name);
     else
@@ -449,8 +444,6 @@ ACMD(do_exits)
   if (!len)
     send_to_char(ch, " None.\r\n");
 }
-
-
 
 void look_at_room(struct char_data *ch, int ignore_brief)
 {
@@ -489,14 +482,9 @@ void look_at_room(struct char_data *ch, int ignore_brief)
     do_auto_exits(ch);
 
   /* now list characters & objects */
-  send_to_char(ch, "%s", CCGRN(ch, C_NRM));
   list_obj_to_char(world[IN_ROOM(ch)].contents, ch, SHOW_OBJ_LONG, FALSE);
-  send_to_char(ch, "%s", CCYEL(ch, C_NRM));
   list_char_to_char(world[IN_ROOM(ch)].people, ch);
-  send_to_char(ch, "%s", CCNRM(ch, C_NRM));
 }
-
-
 
 void look_in_direction(struct char_data *ch, int dir)
 {
@@ -513,8 +501,6 @@ void look_in_direction(struct char_data *ch, int dir)
   } else
     send_to_char(ch, "Nothing special there...\r\n");
 }
-
-
 
 void look_in_obj(struct char_data *ch, char *arg)
 {
@@ -568,8 +554,6 @@ void look_in_obj(struct char_data *ch, char *arg)
   }
 }
 
-
-
 char *find_exdesc(char *word, struct extra_descr_data *list)
 {
   struct extra_descr_data *i;
@@ -580,7 +564,6 @@ char *find_exdesc(char *word, struct extra_descr_data *list)
 
   return (NULL);
 }
-
 
 /*
  * Given the argument "look at <target>", figure out what object or char
@@ -668,7 +651,6 @@ void look_at_target(struct char_data *ch, char *arg)
     send_to_char(ch, "You do not see that here.\r\n");
 }
 
-
 ACMD(do_look)
 {
   int look_type;
@@ -722,8 +704,6 @@ ACMD(do_look)
   }
 }
 
-
-
 ACMD(do_examine)
 {
   struct char_data *tmp_char;
@@ -753,8 +733,6 @@ ACMD(do_examine)
   }
 }
 
-
-
 ACMD(do_gold)
 {
   if (GET_GOLD(ch) == 0)
@@ -764,7 +742,6 @@ ACMD(do_gold)
   else
     send_to_char(ch, "You have %d gold coins.\r\n", GET_GOLD(ch));
 }
-
 
 ACMD(do_score)
 {
@@ -892,7 +869,6 @@ ACMD(do_inventory)
   list_obj_to_char(ch->carrying, ch, SHOW_OBJ_SHORT, TRUE);
 }
 
-
 ACMD(do_equipment)
 {
   int i, found = 0;
@@ -914,7 +890,6 @@ ACMD(do_equipment)
   if (!found)
     send_to_char(ch, " Nothing.\r\n");
 }
-
 
 ACMD(do_time)
 {
@@ -958,7 +933,6 @@ ACMD(do_time)
   send_to_char(ch, "The %d%s Day of the %s, Year %d.\r\n",
 	  day, suf, month_name[time_info.month], time_info.year);
 }
-
 
 ACMD(do_weather)
 {
@@ -1072,7 +1046,6 @@ ACMD(do_help)
   }
   page_string(ch->desc, help_table[mid].entry, 0);
 }
-
 
 #define WHO_FORMAT \
 "Usage: who [minlev[-maxlev]] [-n name] [-c classlist] [-k] [-l] [-n] [-q] [-r] [-s] [-z]\r\n"
@@ -1314,11 +1287,9 @@ ACMD(do_who)
     send_to_char(ch, "%d characters displayed.\r\n", num_can_see);
 }
 
-
 #define USERS_FORMAT \
 "format: users [-l minlevel[-maxlevel]] [-n name] [-h host] [-c classlist] [-o] [-p]\r\n"
 
-/* BIG OL' FIXME: Rewrite it all. Similar to do_who(). */
 ACMD(do_users)
 {
   char line[200], line2[220], idletime[10], classname[20];
@@ -1383,7 +1354,7 @@ ACMD(do_users)
     }
   }				/* end while (parser) */
   send_to_char(ch,
-	 "Num Class   Name         State           Idl  Login@   Site\r\n"
+	 "Num Class   Name         State           Idl  Login@@   Site\r\n"
 	 "--- ------- ------------ -------------- ----- -------- ------------------------\r\n");
 
   one_argument(argument, arg);
@@ -1462,7 +1433,6 @@ ACMD(do_users)
   send_to_char(ch, "\r\n%d visible sockets connected.\r\n", num_can_see);
 }
 
-
 /* Generic page_string function for displaying text */
 ACMD(do_gen_ps)
 {
@@ -1520,7 +1490,6 @@ ACMD(do_gen_ps)
   }
 }
 
-
 void perform_mortal_where(struct char_data *ch, char *arg)
 {
   struct char_data *i;
@@ -1554,7 +1523,6 @@ void perform_mortal_where(struct char_data *ch, char *arg)
   }
 }
 
-
 void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
 			        int recur)
 {
@@ -1579,8 +1547,6 @@ void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
   } else
     send_to_char(ch, "in an unknown location\r\n");
 }
-
-
 
 void perform_immort_where(struct char_data *ch, char *arg)
 {
@@ -1621,8 +1587,6 @@ void perform_immort_where(struct char_data *ch, char *arg)
   }
 }
 
-
-
 ACMD(do_where)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -1634,8 +1598,6 @@ ACMD(do_where)
   else
     perform_mortal_where(ch, arg);
 }
-
-
 
 ACMD(do_levels)
 {
@@ -1676,8 +1638,6 @@ ACMD(do_levels)
 		LVL_IMMORT, level_exp(GET_CLASS(ch), LVL_IMMORT));
   page_string(ch->desc, buf, TRUE);
 }
-
-
 
 ACMD(do_consider)
 {
@@ -1724,8 +1684,6 @@ ACMD(do_consider)
   else if (diff <= 100)
     send_to_char(ch, "You ARE mad!\r\n");
 }
-
-
 
 ACMD(do_diagnose)
 {
@@ -2009,8 +1967,11 @@ ACMD(do_toggle)
   case SCMD_AFK:
     if ((result = PRF_TOG_CHK(ch, PRF_AFK)))
       act("$n is now away from $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
-    else
+    else {
       act("$n has return to $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
+      if (has_mail(GET_IDNUM(ch))) 
+        send_to_char(ch, "You have mail waiting.\r\n"); 
+    } 
     break;
   case SCMD_WIMPY:
     if (!*arg2) {
@@ -2076,7 +2037,6 @@ int sort_commands_helper(const void *a, const void *b)
                 complete_cmd_info[*(const int *)b].sort_as);
 }
 
-
 void sort_commands(void)
 {
   int a, num_of_cmds = 0;
@@ -2093,7 +2053,6 @@ void sort_commands(void)
   /* Don't sort the RESERVED or \n entries. */
   qsort(cmd_sort_info + 1, num_of_cmds - 2, sizeof(int), sort_commands_helper);
 }
-
 
 ACMD(do_commands)
 {

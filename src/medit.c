@@ -26,17 +26,8 @@
 
 /* external variables */
 extern struct attack_hit_type attack_hit_text[];
-#if CONFIG_OASIS_MPROG
-extern const char *mobprog_types[];
-#endif
 
 /* local functions */
-#if CONFIG_OASIS_MPROG
-void medit_disp_mprog(struct descriptor_data *d);
-void medit_disp_mprog_types(struct descriptor_data *d);
-void medit_change_mprog(struct descriptor_data *d);
-const char *medit_get_mprog_type(struct mob_prog_data *mprog);
-#endif
 void medit_setup_new(struct descriptor_data *d);
 void medit_setup_existing(struct descriptor_data *d, int rmob_num);
 void init_mobile(struct char_data *mob);
@@ -48,12 +39,6 @@ void medit_disp_attack_types(struct descriptor_data *d);
 void medit_disp_mob_flags(struct descriptor_data *d);
 void medit_disp_aff_flags(struct descriptor_data *d);
 void medit_disp_menu(struct descriptor_data *d);
-
-/* handy macros */
-#if CONFIG_OASIS_MPROG
-#define GET_MPROG(mob)		(mob_index[(mob)->nr].mobprogs)
-#define GET_MPROG_TYPE(mob)	(mob_index[(mob)->nr].progtypes)
-#endif
 
 /*-------------------------------------------------------------------*\
   utility functions
@@ -226,10 +211,6 @@ void medit_setup_new(struct descriptor_data *d)
   GET_SDESC(mob) = strdup("the unfinished mob");
   GET_LDESC(mob) = strdup("An unfinished mob stands here.\r\n");
   GET_DDESC(mob) = strdup("It looks unfinished.\r\n");
-#if CONFIG_OASIS_MPROG
-  OLC_MPROGL(d) = NULL;
-  OLC_MPROG(d) = NULL;
-#endif
   SCRIPT(mob) = NULL;
   mob->proto_script = OLC_SCRIPT(d) = NULL;
 
@@ -253,28 +234,6 @@ void medit_setup_existing(struct descriptor_data *d, int rmob_num)
   CREATE(mob, struct char_data, 1);
 
   copy_mobile(mob, mob_proto + rmob_num);
-
-#if CONFIG_OASIS_MPROG
-  {
-    MPROG_DATA *temp;
-    MPROG_DATA *head;
-
-    if (GET_MPROG(mob))
-      CREATE(OLC_MPROGL(d), MPROG_DATA, 1);
-    head = OLC_MPROGL(d);
-    for (temp = GET_MPROG(mob); temp; temp = temp->next) {
-      OLC_MPROGL(d)->type = temp->type;
-      OLC_MPROGL(d)->arglist = strdup(temp->arglist);
-      OLC_MPROGL(d)->comlist = strdup(temp->comlist);
-      if (temp->next) {
-        CREATE(OLC_MPROGL(d)->next, MPROG_DATA, 1);
-        OLC_MPROGL(d) = OLC_MPROGL(d)->next;
-      }
-    }
-    OLC_MPROGL(d) = head;
-    OLC_MPROG(d) = OLC_MPROGL(d);
-  }
-#endif
 
   OLC_MOB(d) = mob;
   OLC_ITEM_TYPE(d) = MOB_TRIGGER;
@@ -331,8 +290,6 @@ void medit_save_internally(struct descriptor_data *d)
     log("medit_save_internally: add_mobile failed.");
     return;
   }
-
-
 
   /* Update triggers */
   /* Free old proto list  */
@@ -400,97 +357,6 @@ void medit_disp_positions(struct descriptor_data *d)
   }
   write_to_output(d, "Enter position number : ");
 }
-
-/*-------------------------------------------------------------------*/
-
-#if CONFIG_OASIS_MPROG
-/*
- * Get the type of MobProg.
- */
-const char *medit_get_mprog_type(struct mob_prog_data *mprog)
-{
-  switch (mprog->type) {
-  case IN_FILE_PROG:	return ">in_file_prog";
-  case ACT_PROG:	return ">act_prog";
-  case SPEECH_PROG:	return ">speech_prog";
-  case RAND_PROG:	return ">rand_prog";
-  case FIGHT_PROG:	return ">fight_prog";
-  case HITPRCNT_PROG:	return ">hitprcnt_prog";
-  case DEATH_PROG:	return ">death_prog";
-  case ENTRY_PROG:	return ">entry_prog";
-  case GREET_PROG:	return ">greet_prog";
-  case ALL_GREET_PROG:	return ">all_greet_prog";
-  case GIVE_PROG:	return ">give_prog";
-  case BRIBE_PROG:	return ">bribe_prog";
-  }
-  return ">ERROR_PROG";
-}
-
-/*-------------------------------------------------------------------*/
-
-/*
- * Display the MobProgs.
- */
-void medit_disp_mprog(struct descriptor_data *d)
-{
-  struct mob_prog_data *mprog = OLC_MPROGL(d);
-
-  OLC_MTOTAL(d) = 1;
-
-  clear_screen(d);
-  while (mprog) {
-    write_to_output(d, "%d) %s %s\r\n", OLC_MTOTAL(d), medit_get_mprog_type(mprog),
-		(mprog->arglist ? mprog->arglist : "NONE"));
-    OLC_MTOTAL(d)++;
-    mprog = mprog->next;
-  }
-  write_to_output(d,  "%d) Create New Mob Prog\r\n"
-		"%d) Purge Mob Prog\r\n"
-		"Enter number to edit [0 to exit]:  ",
-		OLC_MTOTAL(d), OLC_MTOTAL(d) + 1);
-  OLC_MODE(d) = MEDIT_MPROG;
-}
-
-/*-------------------------------------------------------------------*/
-
-/*
- * Change the MobProgs.
- */
-void medit_change_mprog(struct descriptor_data *d)
-{
-  clear_screen(d);
-  write_to_output(d,  "1) Type: %s\r\n"
-		"2) Args: %s\r\n"
-		"3) Commands:\r\n%s\r\n\r\n"
-		"Enter number to edit [0 to exit]: ",
-	medit_get_mprog_type(OLC_MPROG(d)),
-	(OLC_MPROG(d)->arglist ? OLC_MPROG(d)->arglist: "NONE"),
-	(OLC_MPROG(d)->comlist ? OLC_MPROG(d)->comlist : "NONE"));
-
-  OLC_MODE(d) = MEDIT_CHANGE_MPROG;
-}
-
-/*-------------------------------------------------------------------*/
-
-/*
- * Change the MobProg type.
- */
-void medit_disp_mprog_types(struct descriptor_data *d)
-{
-  int i;
-
-  get_char_colors(d->character);
-  clear_screen(d);
-
-  for (i = 0; i < NUM_PROGS-1; i++) {
-    write_to_output(d, "%s%2d%s) %s\r\n", grn, i, nrm, mobprog_types[i]);
-  }
-  write_to_output(d, "Enter mob prog type : ");
-  OLC_MODE(d) = MEDIT_MPROG_TYPE;
-}
-#endif
-
-/*-------------------------------------------------------------------*/
 
 /*
  * Display the gender of the mobile.
@@ -622,9 +488,6 @@ void medit_disp_menu(struct descriptor_data *d)
 	  "%sK%s) Attack    : %s%s\r\n"
 	  "%sL%s) NPC Flags : %s%s\r\n"
 	  "%sM%s) AFF Flags : %s%s\r\n"
-#if CONFIG_OASIS_MPROG
-	  "%sP%s) Mob Progs : %s%s\r\n"
-#endif
           "%sS%s) Script    : %s%s\r\n"
           "%sX%s) Delete mob\r\n"
 	  "%sQ%s) Quit\r\n"
@@ -635,9 +498,6 @@ void medit_disp_menu(struct descriptor_data *d)
 	  grn, nrm, yel, attack_hit_text[(int)GET_ATTACK(mob)].singular,
 	  grn, nrm, cyn, flags,
 	  grn, nrm, cyn, flag2,
-#if CONFIG_OASIS_MPROG
-	  grn, nrm, cyn, (OLC_MPROGL(d) ? "Set." : "Not Set."),
-#endif
           grn, nrm, cyn, OLC_SCRIPT(d) ?"Set.":"Not Set.",
           grn, nrm,
 	  grn, nrm
@@ -822,13 +682,6 @@ void medit_parse(struct descriptor_data *d, char *arg)
       write_to_output(d, "Are you sure you want to delete this mobile? ");
       OLC_MODE(d) = MEDIT_DELETE;
       return;
-#if CONFIG_OASIS_MPROG
-    case 'p':
-    case 'P':
-      OLC_MODE(d) = MEDIT_MPROG;
-      medit_disp_mprog(d);
-      return;
-#endif
     case 's':
     case 'S':
       OLC_SCRIPT_EDIT_MODE(d) = SCRIPT_MAIN_MENU;
@@ -888,16 +741,6 @@ void medit_parse(struct descriptor_data *d, char *arg)
     write_to_output(d, "Oops...\r\n");
     break;
 /*-------------------------------------------------------------------*/
-#if CONFIG_OASIS_MPROG
-  case MEDIT_MPROG_COMLIST:
-    /*
-     * We should never get here, but if we do, bail out.
-     */
-    cleanup_olc(d, CLEANUP_ALL);
-    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: medit_parse(): Reached MPROG_COMLIST case!");
-    break;
-#endif
-/*-------------------------------------------------------------------*/
   case MEDIT_NPC_FLAGS:
     if ((i = atoi(arg)) <= 0)
       break;
@@ -917,101 +760,11 @@ void medit_parse(struct descriptor_data *d, char *arg)
                AFF_CHARM | AFF_POISON | AFF_GROUP | AFF_SLEEP);
     medit_disp_aff_flags(d);
     return;
-/*-------------------------------------------------------------------*/
-#if CONFIG_OASIS_MPROG
-  case MEDIT_MPROG:
-    if ((i = atoi(arg)) == 0)
-      medit_disp_menu(d);
-    else if (i == OLC_MTOTAL(d)) {
-      struct mob_prog_data *temp;
-      CREATE(temp, struct mob_prog_data, 1);
-      temp->next = OLC_MPROGL(d);
-      temp->type = -1;
-      temp->arglist = NULL;
-      temp->comlist = NULL;
-      OLC_MPROG(d) = temp;
-      OLC_MPROGL(d) = temp;
-      OLC_MODE(d) = MEDIT_CHANGE_MPROG;
-      medit_change_mprog (d);
-    } else if (i < OLC_MTOTAL(d)) {
-      struct mob_prog_data *temp;
-      int x = 1;
-      for (temp = OLC_MPROGL(d); temp && x < i; temp = temp->next)
-        x++;
-      OLC_MPROG(d) = temp;
-      OLC_MODE(d) = MEDIT_CHANGE_MPROG;
-      medit_change_mprog (d);
-    } else if (i == (OLC_MTOTAL(d) + 1)) {
-      write_to_output(d, "Which mob prog do you want to purge? ");
-      OLC_MODE(d) = MEDIT_PURGE_MPROG;
-    } else
-      medit_disp_menu(d);
-    return;
-
-  case MEDIT_PURGE_MPROG:
-    if ((i = atoi(arg)) > 0 && i < OLC_MTOTAL(d)) {
-      struct mob_prog_data *temp;
-      int x = 1;
-
-      for (temp = OLC_MPROGL(d); temp && x < i; temp = temp->next)
-	x++;
-      OLC_MPROG(d) = temp;
-      REMOVE_FROM_LIST(OLC_MPROG(d), OLC_MPROGL(d), next);
-      free(OLC_MPROG(d)->arglist);
-      free(OLC_MPROG(d)->comlist);
-      free(OLC_MPROG(d));
-      OLC_MPROG(d) = NULL;
-      OLC_VAL(d) = 1;
-    }
-    medit_disp_mprog(d);
-    return;
-
-  case MEDIT_CHANGE_MPROG:
-    if ((i = atoi(arg)) == 1)
-      medit_disp_mprog_types(d);
-    else if (i == 2) {
-      write_to_output(d, "Enter new arg list: ");
-      OLC_MODE(d) = MEDIT_MPROG_ARGS;
-    } else if (i == 3) {
-      write_to_output(d, "Enter new mob prog commands:\r\n");
-      /*
-       * Pass control to modify.c for typing.
-       */
-      OLC_MODE(d) = MEDIT_MPROG_COMLIST;
-      if (OLC_MPROG(d)->comlist) {
-        write_to_output(d, "%s", OLC_MPROG(d)->comlist);
-        oldtext = strdup(OLC_MPROG(d)->comlist);
-      }
-      string_write(d, &OLC_MPROG(d)->comlist, MAX_STRING_LENGTH, 0, oldtext);
-      OLC_VAL(d) = 1;
-    } else
-      medit_disp_mprog(d);
-    return;
-#endif
 
 /*-------------------------------------------------------------------*/
-
 /*
  * Numerical responses.
  */
-
-#if CONFIG_OASIS_MPROG
-  case MEDIT_MPROG_TYPE:
-    /*
-     * This calculation may be off by one too many powers of 2?
-     * Someone who actually uses MobProgs will have to check.
-     */
-    OLC_MPROG(d)->type = (1 << LIMIT(atoi(arg), 0, NUM_PROGS - 1));
-    OLC_VAL(d) = 1;
-    medit_change_mprog(d);
-    return;
-
-  case MEDIT_MPROG_ARGS:
-    OLC_MPROG(d)->arglist = strdup(arg);
-    OLC_VAL(d) = 1;
-    medit_change_mprog(d);
-    return;
-#endif
 
   case MEDIT_SEX:
     GET_SEX(OLC_MOB(d)) = LIMIT(i, 0, NUM_GENDERS - 1);
@@ -1133,12 +886,6 @@ void medit_parse(struct descriptor_data *d, char *arg)
 void medit_string_cleanup(struct descriptor_data *d, int terminator)
 {
   switch (OLC_MODE(d)) {
-
-#if CONFIG_OASIS_MPROG
-  case MEDIT_MPROG_COMLIST:
-    medit_change_mprog(d);
-    break;
-#endif
 
   case MEDIT_D_DESC:
   default:

@@ -836,6 +836,8 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
         send_to_char(ch, ", OLC[%sAedit%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
       else if (GET_OLC_ZONE(k)==HEDIT_PERMISSION)
         send_to_char(ch, ", OLC[%sHedit%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
+      else if (GET_OLC_ZONE(k) == ALL_PERMISSION) 
+        send_to_char(ch, ", OLC[%sAll%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM)); 
       else if (GET_OLC_ZONE(k)==NOWHERE)
         send_to_char(ch, ", OLC[%sOFF%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
       else
@@ -2160,7 +2162,7 @@ ACMD(do_wiznet)
   delete_doubledollar(argument);
 
   if (!*argument) {
-    send_to_char(ch, "Usage: wiznet <text> | #<level> <text> | *<emotetext> |\r\n        wiznet @<level> *<emotetext> | wiz @\r\n");
+    send_to_char(ch, "Usage: wiznet [ #<level> ] [<text> | *<emotetext> | @@ ]\r\n");
     return;
   }
   switch (*argument) {
@@ -3020,8 +3022,10 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
     case 36: /* olc */
       if (is_abbrev(val_arg, "socials") || is_abbrev(val_arg, "actions") || is_abbrev(val_arg, "aedit"))
         GET_OLC_ZONE(vict) = AEDIT_PERMISSION;
-      else if (is_abbrev(val_arg, "hedit"))
+      else if (is_abbrev(val_arg, "hedit") || is_abbrev(val_arg, "help")) 
         GET_OLC_ZONE(vict) = HEDIT_PERMISSION;
+      else if (*val_arg == '*' || is_abbrev(val_arg, "all")) 
+        GET_OLC_ZONE(vict) = ALL_PERMISSION;
       else if (is_abbrev(val_arg, "off"))
         GET_OLC_ZONE(vict) = NOWHERE;
       else if (!is_number(val_arg))  {

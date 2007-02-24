@@ -38,9 +38,6 @@ extern int drink_aff[][3];
 extern const char *trig_types[];
 extern const char *otrig_types[];
 extern const char *wtrig_types[];
-#if defined(CONFIG_OASIS_MPROG)
-extern const char *mobprog_types[];
-#endif
 extern size_t room_bits_count;
 extern size_t action_bits_count;
 extern size_t affected_bits_count;

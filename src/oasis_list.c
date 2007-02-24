@@ -69,7 +69,12 @@ ACMD(do_oasis_list)
     case SCMD_OASIS_RLIST: list_rooms(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_TLIST: list_triggers(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_SLIST: list_shops(ch, rzone, vmin, vmax); break;
-    case SCMD_OASIS_ZLIST: list_zones(ch, rzone, vmin, vmax); break;
+    case SCMD_OASIS_ZLIST:
+      if (!*smin)
+        list_zones(ch, NOWHERE, 0, zone_table[top_of_zone_table].number);
+      else
+        list_zones(ch, rzone, vmin, vmax);
+      break;
     default:
       send_to_char(ch, "You can't list that!\r\n");
       mudlog(BRF, LVL_IMMORT, TRUE,

@@ -3279,7 +3279,7 @@ void load_default_config( void )
   CONFIG_DON_ROOM_3             = donation_room_3;
 
   /****************************************************************************/
-  /**eration options.                                                **/
+  /** Game operation options.                                                **/
   /****************************************************************************/
   CONFIG_DFLT_PORT              = DFLT_PORT;
 

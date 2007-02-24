@@ -16,18 +16,7 @@
 
 #define AEDIT_PERMISSION  999  /* arbitrary number higher than max zone vnum*/
 #define HEDIT_PERMISSION  888  /* arbitrary number higher then max zone vnum*/
-
-/*
- * Set this to 1 to enable MobProg support.  MobProgs are available on
- * the CircleMUD FTP site in the "contrib/scripting/" directory.
- *
- * -- THIS WILL NOT WORK WITHOUT MobProgs INSTALLED. --
- * -- OasisOLC DOES NOT COME WITH THEM. -- Loud enough for you?
- *
- * It might work with DG Scripts (successor to MobProgs) but I haven't
- * tried, nor have I heard of anyone trying.
- */
-#define CONFIG_OASIS_MPROG	0
+#define ALL_PERMISSION    666  /* arbitrary number higher then max zone vnum*/
 
 /*
  * Macros, defines, structs and globals for the OLC suite.  You will need
@@ -51,13 +40,6 @@
 #define NUM_GENDERS		3
 #define NUM_SHOP_FLAGS 		3
 #define NUM_TRADERS 		7
-
-#if CONFIG_OASIS_MPROG
-/*
- * Define this to how many MobProg scripts you have.
- */
-#define NUM_PROGS		12
-#endif
 
 /* -------------------------------------------------------------------------- */
 
@@ -136,11 +118,6 @@ struct oasis_olc_data {
   struct shop_data *shop;        /* used for 'sedit'         */
   struct config_data *config;    /* used for 'cedit'         */
   struct extra_descr_data *desc; /* used in '[r|o|m]edit'    */
-#if CONFIG_OASIS_MPROG           /*                          */
-  int total_mprogs;              /*                          */
-  struct mob_prog_data *mprog;   /*                          */
-  struct mob_prog_data *mprogl;  /*                          */
-#endif
   struct social_messg *action;   /* Aedit uses this one      */
   struct trig_data *trig;
   int script_mode;
@@ -173,12 +150,6 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define OLC_DESC(d) 	(OLC(d)->desc)		/* Extra description.	*/
 #define OLC_CONFIG(d)	(OLC(d)->config)	/* Config structure.	*/
 #define OLC_TRIG(d)     (OLC(d)->trig)          /* Trigger structure.   */
-
-#if CONFIG_OASIS_MPROG
-#define OLC_MPROG(d)	(OLC(d)->mprog)		/* Temporary MobProg.	*/
-#define OLC_MPROGL(d)	(OLC(d)->mprogl)	/* MobProg list.	*/
-#define OLC_MTOTAL(d)	(OLC(d)->total_mprogs)	/* Total mprog number.	*/
-#endif
 
 #define OLC_ACTION(d)   (OLC(d)->action)        /* Action structure     */
 #define OLC_HELP(d)     (OLC(d)->help)          /* Hedit structure      */
@@ -326,14 +297,6 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define MEDIT_LEVEL			25
 #define MEDIT_ALIGNMENT			26
 #define MEDIT_DELETE                    27
-#if CONFIG_OASIS_MPROG
-#define MEDIT_MPROG                     27
-#define MEDIT_CHANGE_MPROG              28
-#define MEDIT_MPROG_COMLIST             29
-#define MEDIT_MPROG_ARGS                30
-#define MEDIT_MPROG_TYPE                31
-#define MEDIT_PURGE_MPROG               32
-#endif
 
 /*
  * Submodes of SEDIT connectedness.

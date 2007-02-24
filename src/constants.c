@@ -10,7 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "interpreter.h"	/* alias_data */
 
@@ -24,10 +23,7 @@ cpp_extern const char *ascii_pfiles_version =
 	"ASCII Player Files 3.0.1";
 
 /* strings corresponding to ordinals/bitvectors in structs.h */
-
-
 /* (Note: strings for class definitions in class.c instead of here) */
-
 
 /* cardinal directions */
 const char *dirs[] =
@@ -40,7 +36,6 @@ const char *dirs[] =
   "down",
   "\n"
 };
-
 
 /* ROOM_x */
 const char *room_bits[] = {
@@ -63,7 +58,6 @@ const char *room_bits[] = {
   "\n"
 };
 
-
 /* EX_x */
 const char *exit_bits[] = {
   "DOOR",
@@ -72,7 +66,6 @@ const char *exit_bits[] = {
   "PICKPROOF",
   "\n"
 };
-
 
 /* SECT_ */
 const char *sector_types[] = {
@@ -89,7 +82,6 @@ const char *sector_types[] = {
   "\n"
 };
 
-
 /*
  * SEX_x
  * Not used in sprinttype() so no \n.
@@ -101,7 +93,6 @@ const char *genders[] =
   "female",
   "\n"
 };
-
 
 /* POS_x */
 const char *position_types[] = {
@@ -116,7 +107,6 @@ const char *position_types[] = {
   "Standing",
   "\n"
 };
-
 
 /* PLR_x */
 const char *player_bits[] = {
@@ -145,7 +135,6 @@ const char *player_bits[] = {
   "\n"
 };
 
-
 /* MOB_x */
 const char *action_bits[] = {
   "SPEC",
@@ -169,7 +158,6 @@ const char *action_bits[] = {
   "DEAD",    /* You should never see this. */
   "\n"
 };
-
 
 /* PRF_x */
 const char *preference_bits[] = {
@@ -207,7 +195,6 @@ const char *preference_bits[] = {
   "\n"
 };
 
-
 /* AFF_x */
 const char *affected_bits[] =
 {
@@ -235,7 +222,6 @@ const char *affected_bits[] =
   "CHARM",
   "\n"
 };
-
 
 /* CON_x */
 const char *connected_types[] = {
@@ -295,7 +281,6 @@ const char *wear_where[] = {
   "<held>               "
 };
 
-
 /* WEAR_x - for stat */
 const char *equipment_types[] = {
   "Used as light",
@@ -318,7 +303,6 @@ const char *equipment_types[] = {
   "Held",
   "\n"
 };
-
 
 /* ITEM_x (ordinal object types) */
 const char *item_types[] = {
@@ -349,7 +333,6 @@ const char *item_types[] = {
   "\n"
 };
 
-
 /* ITEM_WEAR_ (wear bitvector) */
 const char *wear_bits[] = {
   "TAKE",
@@ -369,7 +352,6 @@ const char *wear_bits[] = {
   "HOLD",
   "\n"
 };
-
 
 /* ITEM_x (extra bits) */
 const char *extra_bits[] = {
@@ -392,7 +374,6 @@ const char *extra_bits[] = {
   "NO_SELL",
   "\n"
 };
-
 
 /* APPLY_x */
 const char *apply_types[] = {
@@ -424,7 +405,6 @@ const char *apply_types[] = {
   "\n"
 };
 
-
 /* CONT_x */
 const char *container_bits[] = {
   "CLOSEABLE",
@@ -433,7 +413,6 @@ const char *container_bits[] = {
   "LOCKED",
   "\n",
 };
-
 
 /* LIQ_x */
 const char *drinks[] =
@@ -457,10 +436,7 @@ const char *drinks[] =
   "\n"
 };
 
-
 /* other constants for liquids ******************************************/
-
-
 /* one-word alias for each drink */
 const char *drinknames[] =
 {
@@ -483,7 +459,6 @@ const char *drinknames[] =
   "\n"
 };
 
-
 /* effect of drinks on hunger, thirst, and drunkenness -- see values.doc */
 int drink_aff[][3] = {
   {0, 1, 10},
@@ -503,7 +478,6 @@ int drink_aff[][3] = {
   {0, 1, -2},
   {0, 0, 13}
 };
-
 
 /* color of the various drinks */
 const char *color_liquid[] =
@@ -527,7 +501,6 @@ const char *color_liquid[] =
   "\n"
 };
 
-
 /*
  * level of fullness for drink containers
  * Not used in sprinttype() so no \n.
@@ -540,10 +513,7 @@ const char *fullness[] =
   ""
 };
 
-
 /* str, int, wis, dex, con applies **************************************/
-
-
 /* [ch] strength apply (all) */
 cpp_extern const struct str_app_type str_app[] = {
   {-5, -4, 0, 0},	/* str = 0 */
@@ -579,8 +549,6 @@ cpp_extern const struct str_app_type str_app[] = {
   {3, 6, 480, 30}	/* str = 18/100 */
 };
 
-
-
 /* [dex] skill apply (thieves only) */
 cpp_extern const struct dex_skill_type dex_app_skill[] = {
   {-99, -99, -90, -99, -60},	/* dex = 0 */
@@ -610,8 +578,6 @@ cpp_extern const struct dex_skill_type dex_app_skill[] = {
   {25, 30, 15, 25, 25},
   {25, 30, 15, 25, 25}		/* dex = 25 */
 };
-
-
 
 /* [dex] apply (all) */
 cpp_extern const struct dex_app_type dex_app[] = {
@@ -643,8 +609,6 @@ cpp_extern const struct dex_app_type dex_app[] = {
   {5, 5, -6}		/* dex = 25 */
 };
 
-
-
 /* [con] apply (all) */
 cpp_extern const struct con_app_type con_app[] = {
   {-4, 20},		/* con = 0 */
@@ -674,8 +638,6 @@ cpp_extern const struct con_app_type con_app[] = {
   {6, 99},
   {6, 99}		/* con = 25 */
 };
-
-
 
 /* [int] apply (all) */
 cpp_extern const struct int_app_type int_app[] = {
@@ -707,7 +669,6 @@ cpp_extern const struct int_app_type int_app[] = {
   {60}		/* int = 25 */
 };
 
-
 /* [wis] apply (all) */
 cpp_extern const struct wis_app_type wis_app[] = {
   {0},	/* wis = 0 */
@@ -738,13 +699,11 @@ cpp_extern const struct wis_app_type wis_app[] = {
   {7}  /* wis = 25 */
 };
 
-
 const char *npc_class_types[] = {
   "Normal",
   "Undead",
   "\n"
 };
-
 
 int rev_dir[] =
 {
@@ -755,7 +714,6 @@ int rev_dir[] =
   5,
   4
 };
-
 
 int movement_loss[] =
 {
@@ -781,7 +739,6 @@ const char *weekdays[] = {
   "the Day of the Great Gods",
   "the Day of the Sun"
 };
-
 
 /* Not used in sprinttype(). */
 const char *month_name[] = {
@@ -829,7 +786,6 @@ const char *trig_types[] = {
   "\n"
 };
 
-
 /* obj trigger types */
 const char *otrig_types[] = {
   "Global",
@@ -855,7 +811,6 @@ const char *otrig_types[] = {
   "\n"
 };
 
-
 /* wld trigger types */
 const char *wtrig_types[] = {
   "Global",
@@ -880,27 +835,6 @@ const char *wtrig_types[] = {
   "Time",
   "\n"
 };
-
-#if defined(CONFIG_OASIS_MPROG)
-/*
- * Definitions necessary for MobProg support in OasisOLC
- */
-const char *mobprog_types[] = {
-  "INFILE",
-  "ACT",
-  "SPEECH",
-  "RAND",
-  "FIGHT",
-  "DEATH",
-  "HITPRCNT",
-  "ENTRY",
-  "GREET",
-  "ALL_GREET",
-  "GIVE",
-  "BRIBE",
-  "\n"
-};
-#endif
 
 /* --- End of constants arrays. --- */
 

@@ -529,7 +529,7 @@
 #define MAX_HELP_KEYWORDS       256
 #define MAX_HELP_ENTRY          MAX_STRING_LENGTH
 
-/* define the largest set of commands for as trigger */
+/* define the largest set of commands for a trigger */
 #define MAX_CMD_LENGTH 16384         /* 16k should be plenty and then some */
 
 /**********************************************************************

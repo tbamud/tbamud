@@ -394,7 +394,13 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
   if (!ch->desc || IS_NPC(ch) || rnum == NOWHERE)
     return FALSE;
 
-  if (rnum == HEDIT_PERMISSION)
+  if (GET_OLC_ZONE(ch) == ALL_PERMISSION) 
+    return TRUE; 
+
+  if (GET_OLC_ZONE(ch) == HEDIT_PERMISSION && rnum == HEDIT_PERMISSION) 
+    return TRUE; 
+
+  if (GET_OLC_ZONE(ch) == AEDIT_PERMISSION && rnum == AEDIT_PERMISSION) 
     return TRUE;
 
   /* always access if ch is high enough level */

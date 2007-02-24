@@ -486,11 +486,12 @@ void save_char(struct char_data * ch)
   /* Unaffect everything a character can be affected by */
 
   for (i = 0; i < NUM_WEARS; i++) {
-    if (GET_EQ(ch, i))
+    if (GET_EQ(ch, i)) {
       char_eq[i] = unequip_char(ch, i);
 #ifndef NO_EXTRANEOUS_TRIGGERS
       remove_otrigger(char_eq[i], ch);
 #endif
+    }
     else
       char_eq[i] = NULL;
   }

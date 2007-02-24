@@ -53,7 +53,7 @@ ACMD(do_oasis_aedit)
     return;
   }
 
-  if (GET_OLC_ZONE(ch) != AEDIT_PERMISSION && GET_LEVEL(ch) < LVL_GOD) {
+  if (!can_edit_zone(ch, AEDIT_PERMISSION)) {
     send_to_char(ch, "You don't have access to editing socials.\r\n");
     return;
   }

@@ -70,15 +70,6 @@ int add_mobile(struct char_data *mob, mob_vnum vnum)
 
   log("GenOLC: add_mobile: Added mobile %d at index #%d.", vnum, found);
 
-#if CONFIG_GENOLC_MOBPROG
-  GET_MPROG(OLC_MOB(d)) = OLC_MPROGL(d);
-  GET_MPROG_TYPE(OLC_MOB(d)) = (OLC_MPROGL(d) ? OLC_MPROGL(d)->type : 0);
-  while (OLC_MPROGL(d)) {
-    GET_MPROG_TYPE(OLC_MOB(d)) |= OLC_MPROGL(d)->type;
-    OLC_MPROGL(d) = OLC_MPROGL(d)->next;
-  }
-#endif
-
   /*
    * Update live mobile rnums.
    */
@@ -312,29 +303,6 @@ int save_mobiles(zone_rnum rznum)
   log("GenOLC: '%s' saved, %d bytes written.", usedfname, written);
   return written;
 }
-
-#if CONFIG_GENOLC_MOBPROG
-int write_mobile_mobprog(mob_vnum mvnum, struct char_data *mob, FILE *fd)
-{
-  char wmmarg[MAX_STRING_LENGTH], wmmcom[MAX_STRING_LENGTH];
-  MPROG_DATA *mob_prog;
-
-  for (mob_prog = GET_MPROG(mob); mob_prog; mob_prog = mob_prog->next) {
-    wmmarg[MAX_STRING_LENGTH - 1] = '\0';
-    wmmcom[MAX_STRING_LENGTH - 1] = '\0';
-    strip_cr(strncpy(wmmarg, mob_prog->arglist, MAX_STRING_LENGTH - 1));
-    strip_cr(strncpy(wmmcom, mob_prog->comlist, MAX_STRING_LENGTH - 1));
-    fprintf(fd,	"%s %s~\n"
-		"%s%c\n",
-	medit_get_mprog_type(mob_prog), wmmarg,
-	wmmcom, STRING_TERMINATOR
-    );
-    if (mob_prog->next == NULL)
-      fputs("|\n", fd);
-  }
-  return TRUE;
-}
-#endif
 
 int write_mobile_espec(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 {
