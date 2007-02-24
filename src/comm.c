@@ -2744,7 +2744,7 @@ void act(const char *str, int hide_invisible, struct char_data *ch,
 
   /* this is a hack as well - DG_NO_TRIG is 256 -- Welcor */
   /* If the bit is set, unset dg_act_check, thus the ! below */
-  if ((dg_act_check = !IS_SET(type, DG_NO_TRIG)))
+  if (!(dg_act_check = !IS_SET(type, DG_NO_TRIG))) 
     REMOVE_BIT(type, DG_NO_TRIG);
 
   /* And this too.. */

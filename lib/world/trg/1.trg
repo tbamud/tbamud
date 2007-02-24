@@ -2030,7 +2030,7 @@ if %actor.is_pc%
     say Be sure to do everything the room descriptions tell you to do. You should read and comprehend everything contained within these walls.
     set TBA_greeting 1
     remote TBA_greeting %actor.id%
-    if !%actor.has_item(1233)%
+    if !%actor.has_item(1332)%
       %load% obj 1332 %actor% inv
     end
   end
@@ -2042,7 +2042,7 @@ Rumble's Stayalive bracelet - 88~
 ~
 eval actor %self.worn_by%
 if %actor%
-  %echo% @n
+  %send% %actor% @n
 end
 ~
 #196
@@ -2093,7 +2093,7 @@ if %actor.is_pc% && %actor.level% == 1
     say Please fill out the application at: geocities.com/buildersacademy/
     set TBA_mortal_greeting 1
     remote TBA_mortal_greeting %actor.id%
-    if !%actor.has_item(1233)%
+    if !%actor.has_item(1332)%
       %load% obj 1332 %actor% inv
     end
   end

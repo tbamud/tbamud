@@ -2128,6 +2128,21 @@ $n looks at your $t and contemplates grabbing it.
 You look at $p and contemplates grabbing it.
 $n looks at $p and contemplates grabbing it.
 
+~facepalm facepalm 0 8 8 0
+You plant your face in the palm of your hand with disbelief.
+$n plants $s face into the palm of $s hand, full of disbelief.
+You plant your face in the palm of your hand, mumbling something about $N's ways.
+$n plants $s face into the palm of $s hand, mumbling something about $N's ways.
+$n plants $s face into the palm of $s hand, mumbling something about your ways.
+They're not around, bub.     
+You plant your face in the palm of your hand, not quite sure where you went wrong.
+$n plants $s face into the palm of $s hand at $s own mistake.
+#
+#
+#
+You plant your face in the palm of your hand, cursing the day $p was ever conceived.
+$n plants $s face into the palm of $s hand, cursing the day $p was ever conceived.
+
 ~fade fade 0 5 0 0
 You disappear into the void.
 $n slowly fades out of existence.
@@ -2897,8 +2912,8 @@ $n loads object 15400 and dons it.
 You raise your hand - me me me!
 $n raises $s hand - me me me!
 You raise your hand, trying to get $N's attention?
-$n raises his hand in response to $N.
-$n raises his hand in response to you.
+$n raises $s hand in response to $N.
+$n raises $s hand in response to you.
 If you raise your hand in an empty room, does anyone see?
 You raise your hand... at least thats one of you.
 $n raises $s hand to $mself... that makes one.
@@ -5378,8 +5393,8 @@ That there person ain't here.
 You can't have a shootout with yourself, pardner.
 $n seems to think about having a shoot out with $mself. $e decides against it.
 You look at $N's $t and get ready to draw.
-$n looks at your $t and gets ready to draw $s guns.
 $n looks at $N's $t and gets ready to draw $s guns.
+$n looks at your $t and gets ready to draw $s guns.
 You look over $p and get ready to draw.
 $n looks over $p and gets ready to draw $s guns.
 
@@ -6158,7 +6173,7 @@ Who do you want to tell to suckit-up?
 You tell yourself to suckit-up.
 $n gets $mself a can of suckit-up.
 You give $S $t a can of suckit-up.
-You give $S $t a can of suckit-up.
+$n gives $N's $t a can of suckit-up.
 $n gives your $t a can of suckit-up.
 You give $p a can of suckit-up.
 $n gives $p a can of suckit-up.
@@ -6637,9 +6652,9 @@ $n pulls out a pocket dragon and toasts you. You are no more! Ow...
 POOF! Maybe your victim disintegrated... Then again, maybe it was just a figment of your imagination.
 You toast yourself. You are no more! Ow...
 $n toasts $mself. $n is no more. $n is ashes, ashes and only ashes, and the ashes blow away in the wind. Buhbye $n.
-You pull out a pocket dragon and squeeze it at your $t. $t is no more. $t is ashes, ashes and only ashes, and the ashes blow away in the wind. Buhbye $t.
-$n pulls out a pocket dragon and squeezes it at $N's $t. $N's $t is no more. $N's $t is ashes, ashes and only ashes, and the ashes blow away in the wind. Buhbye $N's $t.
-$n pulls out a pocket dragon and squeezes it at your $t. Your $t is no more. Your $t is ashes, ashes and only ashes, and the ashes blow away in the wind. Buhbye $t.
+#
+#
+#
 You pull out a pocket dragon and squeeze it at $p. $p bursts in flame. $p is toast. Poor $p.
 $n pulls out a pocket dragon and squeezes it at $p. $p bursts in flame. $p is toast. Poor $p.
 
@@ -6667,9 +6682,9 @@ For some reason, $n has just touched you.
 You can't touch that person, they don't exist.
 You touch yourself, eww!
 $n does something a little discusting.
-You curiously touch $S $i.
-$n curiously touches $N's $i.
-$n curiously touches your $i.
+You curiously touch $S $t.
+$n curiously touches $N's $t.
+$n curiously touches your $t.
 You curiously touch $p.
 $n curiously touches $p.
 

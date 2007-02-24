@@ -2221,12 +2221,12 @@ ACMD(do_wiznet)
   }
 
   for (d = descriptor_list; d; d = d->next) {
-    if ((STATE(d) == CON_PLAYING) && (GET_LEVEL(d->character) >= level) &&
+    if (IS_PLAYING(d) && (GET_LEVEL(d->character) >= level) && 
 	(!PRF_FLAGGED(d->character, PRF_NOWIZ))
 	&& (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
       send_to_char(d->character, "%s", CCCYN(d->character, C_NRM));
-	send_to_char(d->character, "%s", buf1);
-	new_hist_messg(d, buf1);
+      send_to_char(d->character, "%s", buf1);
+      new_hist_messg(d, buf1);
       send_to_char(d->character, "%s", CCNRM(d->character, C_NRM));
     }
   }

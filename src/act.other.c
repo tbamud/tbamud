@@ -344,7 +344,7 @@ ACMD(do_title)
     send_to_char(ch, "Sorry, titles can't be longer than %d characters.\r\n", MAX_TITLE_LENGTH);
   else {
     set_title(ch, argument);
-    send_to_char(ch, "Okay, you're now %s %s.\r\n", GET_NAME(ch), GET_TITLE(ch));
+    send_to_char(ch, "Okay, you're now %s%s%s.\r\n", GET_NAME(ch), *GET_TITLE(ch) ? " " : "", GET_TITLE(ch));
   }
 }
 
@@ -1010,6 +1010,8 @@ ACMD(do_file)
 
    len = snprintf(buf, sizeof(buf), "Last %d lines of %s:\r\n", req_lines, fields[l].file);
 
+   if (req_lines == num_lines)
+     len += snprintf(buf + len, sizeof(buf) - len, "Top of file.\r\n");                 
    get_line(req_file,line);
    while (!feof(req_file)) {
      cur_line++;

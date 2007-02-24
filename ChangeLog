@@ -2,9 +2,29 @@ tbaMUD is currently being developed by The Builder Academy. If you need any
 help or find any bugs please stop by: builderacademy.net 9091
 
 tbaMUD 3.51
+- Removed the extra space when you have no title (thanks Rhade).
+- Added "Top of File" to the do_file command (thanks Rhade).
+- Removed socials from wizhelp.
+- Changed zlist with no arg to list zones.
+- Wiznet can now be seen while in OLC, again (thanks Fizban).
+- Removed MOBprograms.
+- Added ALL_PERMISSIONS so anyone with OLC can have access to the entire World.
+  Included set <player> olc all. (thanks Rhade).
+- Fixed color bleeding from listing consecutive mobs (yellow) and objs(green)
+  in room or vice versa (thanks Rhade).
+- Removed trg/index double entries (thanks Fizban).
+- Cleaned up search_help and do_helpcheck. Now using player level instead of 
+  the entire char structure (thanks Rhade).
+- Fixed do_sstat_room so stat can display more than just the room you are 
+  standing in (thanks Rhade).
+- Fixed crash if you try to boot the game without a shop (thanks Rhade).
+- Added online mail notification, "You have mail." as soon as mudmail is sent
+  (thanks JamDog) and when coming back from afk (thanks Rhade).
+- Removed strip_string function; strip_cr does the same thing (thanks Rhade).
+- Released tbaMUD3.51rc.
 - Limited trigedit numeric arg to 0-100.
-- Removed the magic numbers for setting DRUNK, HUNGER, THIRST. Renamed FULL to 
-  HUNGER.
+- Removed the magic numbers for setting DRUNK, HUNGER, THIRST. 
+- Renamed FULL to HUNGER.
 - Changed page to level 1.
 - Snooping log message is now only visible by higher imms.
 - Moved nohassle, holylight, showvnums, color, compact, syslog, poofin, 
@@ -57,7 +77,7 @@ tbaMUD 3.51
 - Spellchecked stock.hlp.
 - Updated fixes from 3.1 CVS snapshot.
 - Fixed permissions on numerous files.
-- Renamed shit, no really in zmalloc.c unsigned char * shit;
+- Renamed shit. No really; in zmalloc.c unsigned char * shit;
 - Spellchecked help.hlp.
 - Updated /doc/README.Cygwin.
 - Updated /doc/syserr.txt (much more to do though, along with all /doc, 

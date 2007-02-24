@@ -2,11 +2,18 @@
 
 			    THE tbaMUD HERALD
    		 "We addict players for their own enjoyment."
-			      January, 2007
+			      February, 2007
 
 
 NEW COMMANDS AND NEW MUD BEHAVIOR:
 ---------------------------------
+**  Over 100 new socials, check them out and feel free to suggest new ones.
+
+**  You will now be notified when you have new mail.
+
+**  New toggles: autoloot, autogold, autosplit, autosac, and autoassist.
+
+**  Improved toggle command allowing more options.
 
 **  You can now use the history command to see the last 100 communications
     from all the channels. It clears upon viewing or log off.

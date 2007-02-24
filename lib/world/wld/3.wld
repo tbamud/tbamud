@@ -995,10 +995,10 @@ S
 #347
 The Tower of the Magi~
    Everything is made from black stone, which at first glance appears to be
-marble, but upon closer examination you can't see any grain within it.  Looking
-into the stone you seem to lose yourself.  Peering further and further into the
-blackness, you cannot tell whether it is a trick of the eye or some strange
-magic at work here.  To the east is the center of the Magis' Quarters.  
+marble, but upon closer examination has no grain within it.  Looking into the
+wood causes one to lose themselves as they peer further and further into the
+blackness.  It is impossible to tell if this is caused by magic or just a simple
+trick of the eye.  To the east is the center of the Magis' Quarters.
 ~
 3 0 1
 D0
@@ -1020,10 +1020,9 @@ D3
 S
 #348
 The Magis Quarter~
-   You stand within the heart of the Magi's Quarter.  To the east you may enter
-the Magi's Mansion where the Master Magi can be found when they are not
-guarding the Orb.  To the west the pure black Tower of the Magi houses the
-sacred Orb that protects the city.    
+   This is the heart of the Magis' Quarters.  The Magis' Mansion where they can
+be found when they are not guarding the orb is to the east.  The pure black
+Tower of the Magi which houses the sacred orb that protects the city.
 ~
 3 0 1
 D0
@@ -1046,9 +1045,9 @@ S
 #349
 The Magi Mansion~
    The walls are adorned in fancy draperies and expensive tapestries of every
-style and design imagineable.  The Magi believe in a life of service to their
+style and design imaginable.  The Magi believe in a life of service to their
 discipline, but they also believe that they should be able to live in comfort.
-This building is one of the most elaborate within the entire city.    
+This building is one of the most elaborate within the entire city.  
 ~
 3 d 1
 D0
@@ -1068,7 +1067,7 @@ S
 A Study~
    Three low hanging lanterns positioned over the rooms large tables illuminate
 the book-lined walls.  There are several chairs at each table so as to allow
-those who wish to studey the fine art of magic to rest comfortably.  Several
+those who wish to study the fine art of magic to rest comfortably.  Several
 books lay open upon the tables.  Occasional trickles of smoke waft in from under
 the doorway to the east.
 ~
@@ -1362,14 +1361,14 @@ starless sky tear savagely at your fragile body.
 ~
 3 dj 0
 E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
-~
-E
 floor~
    The stone floor is the same shade of grey as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
+~
+E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
 ~
 S
 $~

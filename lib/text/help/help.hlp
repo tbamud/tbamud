@@ -2750,23 +2750,18 @@ See also: BAN
 #31
 WIZNET ; WIZTALK WIZTELL WIZCHAT WIZLINE
 
-The immortal communication channel. It is visible while in OLC.
-This channel should only be used for building related communications. If you 
-wish to chat and gossip please feel free to use the gossip channel. The gossip
-channel can be turned off through the NOGOS toggle and may be if the spam
-becomes too much for you to handle. It is not recommended that you go NOWIZ.
+The immortal communication channel which is the only channel visible in OLC.
 
-Usage: wiznet [ '@@' | '+' | '-' | '#' ] [<text>]
+Usage: wiznet [ #<level> ] [ <text> | *<emotetext> | @@ ]
 
 Examples:
 
->; <text>         - just sends text
->; @@              - shows all gods that are on and visible to you
-                  - also shows if the gods who are visible to you are writing
+>wiznet <text>    - just sends text.
+>; <text>         - ; is short for wiznet.
+>; @@              - shows all gods that are on and visible to you.
+                  - also shows if the gods who are visible to you are writing.
 >;#<level> <text> - sends text to everyone <level> and above.
                   - ;#32 only level 32 and above will see this.
-
-This code was provided by Gnort.
 
 See also: NOWIZ
 #31
@@ -3329,18 +3324,18 @@ mhunt <victim>
 
    The mobile will begin to hunt for victim, and engage in combat upon finding 
 them. Only Mobiles may use this command. Hunting mobs will walk through NOMOB
-rooms.
+rooms. %kill% may be used for mobs attacking mobs.
 
 Examples: @RTSTAT 19596, 19595@n
 
 See also: TRIGEDIT-MOB-BRIBE
 #31
-%KILL% WKILL OKILL MKILL
+MKILL WKILL OKILL %KILL% 
 
 mkill <victim>
 
-   mkill causes the mob to hit the victim. It is the same as kill, except mkill 
-works for low level mobs attacking PCs, where kill might not.
+   Mkill will force the mob to attack the victim. It is the same as kill, 
+except mkill works for low level mobs attacking PCs, where kill might not.
 
 Examples: @RTSTAT 23613@n
 #31
@@ -7728,9 +7723,8 @@ ALIAS-EXAMPLES
 alias poofin set self poofin $*
 alias poofout set self poofout $*
 alias poofs score
-alias syslog toggle syslog $*
-alias color toggle color $*
 alias cheat return
+alias mail at postmaster mail $*
 
 See also: ALIASES
 #31
@@ -10956,7 +10950,8 @@ AFK
 Usage : afk
 
 Lets other players know you will be away from the keyboard. The (AFK) flag will
-be displayed in who after your name and title.
+be displayed in your prompt and under who after your name and title. When you
+come back from AFK you will be notified if you have mail waiting.
 
 See also: TOGGLE, WHO
 #0

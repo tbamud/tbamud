@@ -2095,6 +2095,9 @@ ACMD(do_commands)
     if (!wizhelp && socials != (complete_cmd_info[i].command_pointer == do_action || complete_cmd_info[i].command_pointer == do_insult))
       continue;
 
+    if (wizhelp && complete_cmd_info[i].command_pointer == do_action) 
+      continue;
+
     send_to_char(ch, "%-11s%s", complete_cmd_info[i].command, no++ % 7 == 0 ? "\r\n" : "");
   }
 
