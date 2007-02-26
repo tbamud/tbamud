@@ -560,26 +560,34 @@ WCMD(do_wdamage) {
   script_damage(ch, dam);
 }
 
+WCMD(do_wat)     
+{
+  room_rnum loc = NOWHERE;
+  struct char_data *ch;
+  char arg[MAX_INPUT_LENGTH], *command; 
 
-WCMD(do_wat) {
-    char location[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
-    int vnum = 0;
-    room_data *r2;
+  command = any_one_arg(argument, arg); 
 
-    half_chop(argument, location, arg2);
+  if (!*arg) {
+    wld_log(room, "wat called with no args");
+    return;
+  }
 
-    if (!*location || !*arg2 || !isdigit(*location)) {
-        wld_log(room, "wat: bad syntax");
-        return;
-    }
-    vnum = atoi(location);
-    if (NOWHERE == real_room(vnum)) {
-        wld_log(room, "wat: location not found");
-        return;
-    }
+  skip_spaces(&command); 
 
-    r2 = &world[real_room(vnum)];
-    wld_command_interpreter(r2, arg2);
+  if (!*command) {
+    wld_log(room, "wat called without a command");
+    return;
+  }
+
+  if (isdigit(*arg)) loc = real_room(atoi(arg));
+  else if ((ch = get_char_by_room(room, arg))) loc = IN_ROOM(ch);
+  
+  if (loc == NOWHERE) {
+    wld_log(room, "wat: location not found (%s)", arg);
+    return;
+  }
+  wld_command_interpreter(&world[loc], command);
 }
 
 const struct wld_command_info wld_cmd_info[] = {

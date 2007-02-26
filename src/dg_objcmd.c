@@ -726,33 +726,40 @@ OCMD(do_osetval)
 /* submitted by PurpleOnyx - tkhasi@shadowglen.com*/
 OCMD(do_oat)
 {
-  char location[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
-  int vnum = 0, rnum = 0;
-  obj_data *object;
+  room_rnum loc = NOWHERE;
+  struct char_data *ch;
+  struct obj_data *object;
+  char arg[MAX_INPUT_LENGTH], *command;
 
-  half_chop(argument, location, arg2);
+  command = any_one_arg(argument, arg);
 
-  if (!*location || !*arg2 || !isdigit(*location)) {
-      obj_log(obj, "oat: bad syntax : %s", argument);
-      return;
+  if (!*arg) {
+    obj_log(obj, "oat called with no args");
+    return;
   }
 
-  vnum = atoi(location);
-  rnum = real_room(vnum);
+  skip_spaces(&command);
 
-  if (rnum == NOWHERE) {
-      obj_log(obj, "oat: location not found");
-      return;
+  if (!*command) {
+    obj_log(obj, "oat called without a command");
+    return;
   }
 
-  object = read_object(GET_OBJ_VNUM(obj), VIRTUAL);
-  if (!object)
+  if (isdigit(*arg)) loc = real_room(atoi(arg));
+  else if ((ch = get_char_by_obj(obj, arg))) loc = IN_ROOM(ch); 
+
+  if (loc == NOWHERE) {
+    obj_log(obj, "oat: location not found (%s)", arg);
+    return;
+  }
+
+  if (!(object = read_object(GET_OBJ_VNUM(obj), VIRTUAL)))
     return;
 
-  obj_to_room(object, rnum);
-  obj_command_interpreter(object, arg2);
+  obj_to_room(object, loc);
+  obj_command_interpreter(object, command);
 
-  if (object->in_room == rnum)
+  if (object->in_room == loc) 
     extract_obj(object);
 }
 

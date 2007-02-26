@@ -40,7 +40,6 @@ extern char *class_abbrevs[];
 
 /* extern functions */
 ACMD(do_action);
-ACMD(do_insult);
 bitvector_t find_class_bitvector(const char *arg);
 int level_exp(int chclass, int level);
 char *title_male(int chclass, int level);
@@ -994,7 +993,7 @@ int search_help(char *argument, int level)
     else 
       top = mid - 1; 
   } 
-  return -1;      
+  return NOWHERE;      
 }
 
 ACMD(do_help)
@@ -1020,9 +1019,8 @@ ACMD(do_help)
   }
 
   space_to_minus(argument);
-  mid = search_help(argument, GET_LEVEL(ch));
 
-  if (mid < 0) {
+  if ((mid = search_help(argument, GET_LEVEL(ch))) == NOWHERE) {
     send_to_char(ch, "There is no help on that word.\r\n");
     mudlog(NRM, MAX(LVL_IMPL, GET_INVIS_LEV(ch)), TRUE,
       "%s tried to get help on %s", GET_NAME(ch), argument);
@@ -1968,7 +1966,7 @@ ACMD(do_toggle)
     if ((result = PRF_TOG_CHK(ch, PRF_AFK)))
       act("$n is now away from $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
     else {
-      act("$n has return to $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
+      act("$n has returned to $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
       if (has_mail(GET_IDNUM(ch))) 
         send_to_char(ch, "You have mail waiting.\r\n"); 
     } 
@@ -2092,7 +2090,7 @@ ACMD(do_commands)
     if ((complete_cmd_info[i].minimum_level >= LVL_IMMORT) != wizhelp)
       continue;
 
-    if (!wizhelp && socials != (complete_cmd_info[i].command_pointer == do_action || complete_cmd_info[i].command_pointer == do_insult))
+    if (!wizhelp && socials != (complete_cmd_info[i].command_pointer == do_action))
       continue;
 
     if (wizhelp && complete_cmd_info[i].command_pointer == do_action) 

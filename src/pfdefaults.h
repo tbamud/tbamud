@@ -49,7 +49,7 @@
 #define PFDEF_HUNGER		0
 #define PFDEF_THIRST		0
 #define PFDEF_DRUNK		0
-#define PFDEF_OLC               65535
+#define PFDEF_OLC               NOWHERE 
 #define PFDEF_PAGELENGTH        22
 
 #endif

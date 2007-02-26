@@ -1,8 +1,8 @@
                             tbaMUD README File
                            ---------------------
-Updated: Jan 2006
+Updated: Apr 2007
 
-All requests for help or bugs should be reported there: builderacademy.net 9091.
+All requests for help or bugs should be reported to: builderacademy.net 9091.
 
 Information about CircleMUD can be found at the CircleMUD Home Page and FTP:
 http://www.circlemud.org
@@ -51,7 +51,7 @@ WATCOM  - If using WATCOM under Windows.
 
 WIN     - If you are using Windows.
 
-If you are interested in porting CircleMUD to a new platform, see the
+If you are interested in porting tbaMUD to a new platform, see the
 file doc/porting.txt for some tips.
 
 For a small, private MUD, or a MUD used only for testing and development,

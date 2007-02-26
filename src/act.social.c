@@ -23,7 +23,6 @@
 /* local functions */
 int find_action(int cmd);
 ACMD(do_action);
-ACMD(do_insult);
 void free_social_messages(void);
 void free_action(struct social_messg *mess);
 void free_command_list(void);
@@ -108,55 +107,6 @@ ACMD(do_action)
   }
 }
 
-
-
-ACMD(do_insult)
-{
-  char arg[MAX_INPUT_LENGTH];
-  struct char_data *victim;
-
-  one_argument(argument, arg);
-
-  if (*arg) {
-    if (!(victim = get_char_vis(ch, arg, NULL, FIND_CHAR_ROOM)))
-      send_to_char(ch, "Can't hear you!\r\n");
-    else {
-      if (victim != ch) {
-	send_to_char(ch, "You insult %s.\r\n", GET_NAME(victim));
-
-	switch (rand_number(0, 2)) {
-	case 0:
-	  if (GET_SEX(ch) == SEX_MALE) {
-	    if (GET_SEX(victim) == SEX_MALE)
-	      act("$n accuses you of fighting like a woman!", FALSE, ch, 0, victim, TO_VICT);
-	    else
-	      act("$n says that women can't fight.", FALSE, ch, 0, victim, TO_VICT);
-	  } else {		/* Ch == Woman */
-	    if (GET_SEX(victim) == SEX_MALE)
-	      act("$n accuses you of having the smallest... (brain?)",
-		  FALSE, ch, 0, victim, TO_VICT);
-	    else
-	      act("$n tells you that you'd lose a beauty contest against a troll.",
-		  FALSE, ch, 0, victim, TO_VICT);
-	  }
-	  break;
-	case 1:
-	  act("$n calls your mother a bitch!", FALSE, ch, 0, victim, TO_VICT);
-	  break;
-	default:
-	  act("$n tells you to get lost!", FALSE, ch, 0, victim, TO_VICT);
-	  break;
-	}			/* end switch */
-
-	act("$n insults $N.", TRUE, ch, 0, victim, TO_NOTVICT);
-      } else {			/* ch == victim */
-	send_to_char(ch, "You feel insulted.\r\n");
-      }
-    }
-  } else
-    send_to_char(ch, "I'm sure you don't want to insult *everybody*...\r\n");
-}
-
 /* this function adds in the loaded socials and assigns them a command # */
 void create_command_list(void)
 {
@@ -237,7 +187,6 @@ void free_social_messages(void)
     free_action(mess);
   }
   free(soc_mess_list);
-
 }
 
 void free_action(struct social_messg *mess)  {
