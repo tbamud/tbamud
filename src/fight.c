@@ -10,7 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -81,9 +80,7 @@ struct attack_hit_type attack_hit_text[] =
 };
 
 #define IS_WEAPON(type) (((type) >= TYPE_HIT) && ((type) < TYPE_SUFFERING))
-
 /* The Fight related routines */
-
 void appear(struct char_data *ch)
 {
   if (affected_by_spell(ch, SPELL_INVISIBLE))
@@ -98,7 +95,6 @@ void appear(struct char_data *ch)
 	FALSE, ch, 0, 0, TO_ROOM);
 }
 
-
 int compute_armor_class(struct char_data *ch)
 {
   int armorclass = GET_AC(ch);
@@ -109,14 +105,12 @@ int compute_armor_class(struct char_data *ch)
   return (MAX(-100, armorclass));      /* -100 is lowest */
 }
 
-
 void free_messages_type(struct msg_type *msg)
 {
   if (msg->attacker_msg)	free(msg->attacker_msg);
   if (msg->victim_msg)		free(msg->victim_msg);
   if (msg->room_msg)		free(msg->room_msg);
 }
-
 
 void free_messages(void)
 {
@@ -136,7 +130,6 @@ void free_messages(void)
     }
 }
 
-
 void load_messages(void)
 {
   FILE *fl;
@@ -155,45 +148,45 @@ void load_messages(void)
     fight_messages[i].msg = NULL;
   }
 
-  fgets(chk, 128, fl);
-  while (!feof(fl) && (*chk == '\n' || *chk == '*'))
-    fgets(chk, 128, fl);
-
-  while (*chk == 'M') {
-    fgets(chk, 128, fl);
-    sscanf(chk, " %d\n", &type);
-    for (i = 0; (i < MAX_MESSAGES) && (fight_messages[i].a_type != type) &&
-	 (fight_messages[i].a_type); i++);
-    if (i >= MAX_MESSAGES) {
-      log("SYSERR: Too many combat messages.  Increase MAX_MESSAGES and recompile.");
-      exit(1);
-    }
-    CREATE(messages, struct message_type, 1);
-    fight_messages[i].number_of_attacks++;
-    fight_messages[i].a_type = type;
-    messages->next = fight_messages[i].msg;
-    fight_messages[i].msg = messages;
-
-    messages->die_msg.attacker_msg = fread_action(fl, i);
-    messages->die_msg.victim_msg = fread_action(fl, i);
-    messages->die_msg.room_msg = fread_action(fl, i);
-    messages->miss_msg.attacker_msg = fread_action(fl, i);
-    messages->miss_msg.victim_msg = fread_action(fl, i);
-    messages->miss_msg.room_msg = fread_action(fl, i);
-    messages->hit_msg.attacker_msg = fread_action(fl, i);
-    messages->hit_msg.victim_msg = fread_action(fl, i);
-    messages->hit_msg.room_msg = fread_action(fl, i);
-    messages->god_msg.attacker_msg = fread_action(fl, i);
-    messages->god_msg.victim_msg = fread_action(fl, i);
-    messages->god_msg.room_msg = fread_action(fl, i);
+  while (!feof(fl)) {
     fgets(chk, 128, fl);
     while (!feof(fl) && (*chk == '\n' || *chk == '*'))
       fgets(chk, 128, fl);
-  }
 
+    while (*chk == 'M') {
+      fgets(chk, 128, fl);
+      sscanf(chk, " %d\n", &type);
+      for (i = 0; (i < MAX_MESSAGES) && (fight_messages[i].a_type != type) &&
+         (fight_messages[i].a_type); i++);
+      if (i >= MAX_MESSAGES) {
+        log("SYSERR: Too many combat messages.  Increase MAX_MESSAGES and recompile.");
+        exit(1);
+      }
+      CREATE(messages, struct message_type, 1);
+      fight_messages[i].number_of_attacks++;
+      fight_messages[i].a_type = type;
+      messages->next = fight_messages[i].msg;
+      fight_messages[i].msg = messages;
+
+      messages->die_msg.attacker_msg = fread_action(fl, i);
+      messages->die_msg.victim_msg = fread_action(fl, i);
+      messages->die_msg.room_msg = fread_action(fl, i);
+      messages->miss_msg.attacker_msg = fread_action(fl, i);
+      messages->miss_msg.victim_msg = fread_action(fl, i);
+      messages->miss_msg.room_msg = fread_action(fl, i);
+      messages->hit_msg.attacker_msg = fread_action(fl, i);
+      messages->hit_msg.victim_msg = fread_action(fl, i);
+      messages->hit_msg.room_msg = fread_action(fl, i);
+      messages->god_msg.attacker_msg = fread_action(fl, i);
+      messages->god_msg.victim_msg = fread_action(fl, i);
+      messages->god_msg.room_msg = fread_action(fl, i);
+      fgets(chk, 128, fl);
+      while (!feof(fl) && (*chk == '\n' || *chk == '*'))
+        fgets(chk, 128, fl);
+    }
+  }
   fclose(fl);
 }
-
 
 void update_pos(struct char_data *victim)
 {
@@ -211,7 +204,6 @@ void update_pos(struct char_data *victim)
     GET_POS(victim) = POS_STUNNED;
 }
 
-
 void check_killer(struct char_data *ch, struct char_data *vict)
 {
   if (PLR_FLAGGED(vict, PLR_KILLER) || PLR_FLAGGED(vict, PLR_THIEF))
@@ -224,7 +216,6 @@ void check_killer(struct char_data *ch, struct char_data *vict)
   mudlog(BRF, LVL_IMMORT, TRUE, "PC Killer bit set on %s for initiating attack on %s at %s.",
 	    GET_NAME(ch), GET_NAME(vict), world[IN_ROOM(vict)].name);
 }
-
 
 /* start one char fighting another (yes, it is horrible, I know... )  */
 void set_fighting(struct char_data *ch, struct char_data *vict)
@@ -250,8 +241,6 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
     check_killer(ch, vict);
 }
 
-
-
 /* remove a char from the list of fighting chars */
 void stop_fighting(struct char_data *ch)
 {
@@ -266,8 +255,6 @@ void stop_fighting(struct char_data *ch)
   GET_POS(ch) = POS_STANDING;
   update_pos(ch);
 }
-
-
 
 void make_corpse(struct char_data *ch)
 {
@@ -335,18 +322,13 @@ void make_corpse(struct char_data *ch)
   obj_to_room(corpse, IN_ROOM(ch));
 }
 
-
 /* When ch kills victim */
 void change_alignment(struct char_data *ch, struct char_data *victim)
 {
-  /*
-   * new alignment change algorithm: if you kill a monster with alignment A,
-   * you move 1/16th of the way to having alignment -A.  Simple and fast.
-   */
+  /* new alignment change algorithm: if you kill a monster with alignment A,
+   * you move 1/16th of the way to having alignment -A.  Simple and fast. */
   GET_ALIGNMENT(ch) += (-GET_ALIGNMENT(victim) - GET_ALIGNMENT(ch)) / 16;
 }
-
-
 
 void death_cry(struct char_data *ch)
 {
@@ -358,8 +340,6 @@ void death_cry(struct char_data *ch)
     if (CAN_GO(ch, door))
       send_to_room(world[IN_ROOM(ch)].dir_option[door]->to_room, "Your blood freezes as you hear someone's death cry.\r\n");
 }
-
-
 
 void raw_kill(struct char_data * ch, struct char_data * killer)
 {
@@ -384,8 +364,6 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   extract_char(ch);
 }
 
-
-
 void die(struct char_data * ch, struct char_data * killer)
 {
   gain_exp(ch, -(GET_EXP(ch) / 2));
@@ -393,8 +371,6 @@ void die(struct char_data * ch, struct char_data * killer)
     REMOVE_BIT(PLR_FLAGS(ch), PLR_KILLER | PLR_THIEF);
   raw_kill(ch, killer);
 }
-
-
 
 void perform_group_gain(struct char_data *ch, int base,
 			     struct char_data *victim)
@@ -411,7 +387,6 @@ void perform_group_gain(struct char_data *ch, int base,
   gain_exp(ch, share);
   change_alignment(ch, victim);
 }
-
 
 void group_gain(struct char_data *ch, struct char_data *victim)
 {
@@ -451,7 +426,6 @@ void group_gain(struct char_data *ch, struct char_data *victim)
       perform_group_gain(f->follower, base, victim);
 }
 
-
 void solo_gain(struct char_data *ch, struct char_data *victim)
 {
   int exp;
@@ -474,7 +448,6 @@ void solo_gain(struct char_data *ch, struct char_data *victim)
   gain_exp(ch, exp);
   change_alignment(ch, victim);
 }
-
 
 char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural)
 {
@@ -502,7 +475,6 @@ char *replace_string(const char *str, const char *weapon_singular, const char *w
 
   return (buf);
 }
-
 
 /* message for doing damage with a weapon */
 void dam_message(int dam, struct char_data *ch, struct char_data *victim,
@@ -574,7 +546,6 @@ void dam_message(int dam, struct char_data *ch, struct char_data *victim,
     }
   };
 
-
   w_type -= TYPE_HIT;		/* Change to base of table with text */
 
   if (dam == 0)		msgnum = 0;
@@ -607,11 +578,8 @@ void dam_message(int dam, struct char_data *ch, struct char_data *victim,
   send_to_char(victim, CCNRM(victim, C_CMP));
 }
 
-
-/*
- *  message for doing damage with a spell or skill
- *  C3.0: Also used for weapon damage on miss and death blows
- */
+/*  message for doing damage with a spell or skill. Also used for weapon 
+ *  damage on miss and death blows. */
 int skill_message(int dam, struct char_data *ch, struct char_data *vict,
 		      int attacktype)
 {
@@ -679,12 +647,10 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
   return (0);
 }
 
-/*
- * Alert: As of bpl14, this function returns the following codes:
+/* This function returns the following codes:
  *	< 0	Victim died.
  *	= 0	No damage.
- *	> 0	How much damage done.
- */
+ *	> 0	How much damage done. */
 int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
 {
   long local_gold = 0;
@@ -760,17 +726,15 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 
   update_pos(victim);
 
-  /*
-   * skill_message sends a message from the messages file in lib/misc.
-   * dam_message just sends a generic "You hit $n extremely hard.".
+  /* skill_message sends a message from the messages file in lib/misc. 
+   * dam_message just sends a generic "You hit $n extremely hard.". 
    * skill_message is preferable to dam_message because it is more
    * descriptive.
    *
    * If we are _not_ attacking with a weapon (i.e. a spell), always use
    * skill_message. If we are attacking with a weapon: If this is a miss or a
    * death blow, send a skill_message if one exists; if not, default to a
-   * dam_message. Otherwise, always send a dam_message.
-   */
+   * dam_message. Otherwise, always send a dam_message. */
   if (!IS_WEAPON(attacktype))
     skill_message(dam, ch, victim, attacktype);
   else {
@@ -880,14 +844,9 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   return (dam);
 }
 
-
-/*
- * Calculate the THAC0 of the attacker.
- *
- * 'victim' currently isn't used but you could use it for special cases like
- * weapons that hit evil creatures easier or a weapon that always misses
- * attacking an animal.
- */
+/* Calculate the THAC0 of the attacker. 'victim' currently isn't used but you 
+ * could use it for special cases like weapons that hit evil creatures easier 
+ * or a weapon that always misses attacking an animal. */
 int compute_thaco(struct char_data *ch, struct char_data *victim)
 {
   int calc_thaco;
@@ -903,7 +862,6 @@ int compute_thaco(struct char_data *ch, struct char_data *victim)
 
   return calc_thaco;
 }
-
 
 void hit(struct char_data *ch, struct char_data *victim, int type)
 {
@@ -939,14 +897,11 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
   /* roll the die and take your chances... */
   diceroll = rand_number(1, 20);
 
-  /*
-   * Decide whether this is a hit or a miss.
-   *
+  /* Decide whether this is a hit or a miss.
    *  Victim asleep = hit, otherwise:
    *     1   = Automatic miss.
    *   2..19 = Checked vs. AC.
-   *    20   = Automatic hit.
-   */
+   *    20   = Automatic hit. */
   if (diceroll == 20 || !AWAKE(victim))
     dam = TRUE;
   else if (diceroll == 1)
@@ -958,9 +913,8 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
     /* the attacker missed the victim */
     damage(ch, victim, 0, type == SKILL_BACKSTAB ? SKILL_BACKSTAB : w_type);
   else {
-    /* okay, we know the guy has been hit.  now calculate damage. */
-
-    /* Start with the damage bonuses: the damroll and strength apply */
+    /* okay, we know the guy has been hit.  now calculate damage. 
+     * Start with the damage bonuses: the damroll and strength apply */
     dam = str_app[STRENGTH_APPLY_INDEX(ch)].todam;
     dam += GET_DAMROLL(ch);
 
@@ -976,19 +930,15 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
 	dam += rand_number(0, 2);	/* Max 2 bare hand damage for players */
     }
 
-    /*
-     * Include a damage multiplier if victim isn't ready to fight:
-     *
+    /* Include a damage multiplier if victim isn't ready to fight:
      * Position sitting  1.33 x normal
      * Position resting  1.66 x normal
      * Position sleeping 2.00 x normal
      * Position stunned  2.33 x normal
      * Position incap    2.66 x normal
      * Position mortally 3.00 x normal
-     *
      * Note, this is a hack because it depends on the particular
-     * values of the POSITION_XXX constants.
-     */
+     * values of the POSITION_XXX constants. */
     if (GET_POS(victim) < POS_FIGHTING)
       dam *= 1 + (POS_FIGHTING - GET_POS(victim)) / 3;
 
@@ -1004,8 +954,6 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
   /* check if the victim has a hitprcnt trigger */
   hitprcnt_mtrigger(victim);
 }
-
-
 
 /* control the fights going on.  Called every 2 seconds from comm.c. */
 void perform_violence(void)

@@ -92,11 +92,9 @@ ACMD(do_oasis_trigedit)
     return;
   }
 
-  /*
-   * Everyone but IMPLs can only edit zones they have been assigned.
-   */
+  /* Everyone but IMPLs can only edit zones they have been assigned.*/
   if (!can_edit_zone(ch, OLC_ZNUM(d))) {
-send_to_char(ch, " You do not have permission to edit zone %d. Try zone %d.\r\n", zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
+    send_cannot_edit(ch, zone_table[OLC_ZNUM(d)].number);
     mudlog(BRF, LVL_IMPL, TRUE, "OLC: %s tried to edit zone %d (allowed zone %d)",
       GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
     free(d->olc);
@@ -664,7 +662,7 @@ void trigedit_save(struct descriptor_data *d)
   remove(buf);
   rename(fname, buf);
 
-  write_to_output(d, "Saving Index file\r\n");
+  write_to_output(d, "Trigger saved to disk.\r\n");
   trigedit_create_index(zone, "trg");
 }
 

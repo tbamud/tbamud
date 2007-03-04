@@ -1,41 +1,29 @@
 /* ************************************************************************
 *   File: structs.h                                     Part of CircleMUD *
 *  Usage: header file for central structures and contstants               *
-*                                                                         *
 *  All rights reserved.  See license.doc for complete information.        *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 ************************************************************************ */
 
-/*
- * Intended use of this macro is to allow external packages to work with
- * a variety of CircleMUD versions without modifications.  For instance,
- * an IS_CORPSE() macro was introduced in pl13.  Any future code add-ons
- * could take into account the CircleMUD version and supply their own
- * definition for the macro if used on an older version of CircleMUD.
- * You are supposed to compare this with the macro CIRCLEMUD_VERSION()
- * in utils.h.  See there for usage.
- */
+/* Intended use of this macro is to allow external packages to work with a 
+ * variety of CircleMUD versions without modifications.  For instance, an 
+ * IS_CORPSE() macro was introduced in pl13.  Any future code add-ons could 
+ * take into account the CircleMUD version and supply their own definition for 
+ * the macro if used on an older version of CircleMUD. You are supposed to 
+ * compare this with the macro CIRCLEMUD_VERSION() in utils.h. */
 #define _CIRCLEMUD	0x030520 /* Major/Minor/Patchlevel - MMmmPP */
 
-/*
- * If you want equipment to be automatically equipped to the same place
- * it was when players rented, set the define below to 1.
- */
+/* If you want equipment to be automatically equipped to the same place
+ * it was when players rented, set the define below to 1. */
 #define USE_AUTOEQ	1	/* TRUE/FALSE aren't defined yet. */
 
-
-/* preamble *************************************************************/
-
-/*
- * As of bpl20, it should be safe to use unsigned data types for the
- * various virtual and real number data types.  There really isn't a
- * reason to use signed anymore so use the unsigned types and get
- * 65,535 objects instead of 32,768.
- *
- * NOTE: This will likely be unconditionally unsigned later.
- */
+/* preamble */
+/* As of bpl20, it should be safe to use unsigned data types for the various 
+ * virtual and real number data types.  There really isn't a reason to use 
+ * signed anymore so use the unsigned types and get 65,535 objects instead of 
+ * 32,768. NOTE: This will likely be unconditionally unsigned later. */
 #define CIRCLE_UNSIGNED_INDEX	1	/* 0 = signed, 1 = unsigned */
 
 #if CIRCLE_UNSIGNED_INDEX
@@ -53,10 +41,7 @@
 #define SPECIAL(name) \
    int (name)(struct char_data *ch, void *me, int cmd, char *argument)
 
-
-/* room-related defines *************************************************/
-
-
+/* room-related defines */
 /* The cardinal directions: used as index to room_data.dir_option[] */
 #define NORTH          0
 #define EAST           1
@@ -64,7 +49,6 @@
 #define WEST           3
 #define UP             4
 #define DOWN           5
-
 
 /* Room flags: used in room_data.room_flags */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
@@ -85,13 +69,11 @@
 #define ROOM_OLC		(1 << 14)  /* (R) Modifyable/!compress	*/
 #define ROOM_BFS_MARK		(1 << 15)  /* (R) breath-first srch mrk	*/
 
-
 /* Exit info: used in room_data.dir_option.exit_info */
 #define EX_ISDOOR		(1 << 0)   /* Exit is a door		*/
 #define EX_CLOSED		(1 << 1)   /* The door is closed	*/
 #define EX_LOCKED		(1 << 2)   /* The door is locked	*/
 #define EX_PICKPROOF		(1 << 3)   /* Lock can't be picked	*/
-
 
 /* Sector types: used in room_data.sector_type */
 #define SECT_INSIDE          0		   /* Indoors			*/
@@ -105,10 +87,7 @@
 #define SECT_FLYING	     8		   /* Wheee!			*/
 #define SECT_UNDERWATER	     9		   /* Underwater		*/
 
-
-/* char and mob-related defines *****************************************/
-
-
+/* char and mob-related defines */
 /* PC classes */
 #define CLASS_UNDEFINED	  (-1)
 #define CLASS_MAGIC_USER  0
@@ -126,12 +105,10 @@
 #define CLASS_DRAGON      4
 #define CLASS_GIANT       5
 
-
 /* Sex */
 #define SEX_NEUTRAL   0
 #define SEX_MALE      1
 #define SEX_FEMALE    2
-
 
 /* Positions */
 #define POS_DEAD       0	/* dead			*/
@@ -143,7 +120,6 @@
 #define POS_SITTING    6	/* sitting		*/
 #define POS_FIGHTING   7	/* fighting		*/
 #define POS_STANDING   8	/* standing		*/
-
 
 /* Player flags: used by char_data.char_specials.act */
 #define PLR_KILLER	(1 << 0)   /* Player is a player-killer		*/
@@ -163,7 +139,6 @@
 #define PLR_INVSTART	(1 << 14)  /* Player should enter game wizinvis	*/
 #define PLR_CRYO	(1 << 15)  /* Player is cryo-saved (purge prog)	*/
 #define PLR_NOTDEADYET	(1 << 16)  /* (R) Player being extracted.	*/
-
 
 /* Mobile flags: used by char_data.char_specials.act */
 #define MOB_SPEC         (1 << 0)  /* Mob has a callable spec-proc	*/
@@ -185,7 +160,6 @@
 #define MOB_NOBASH	 (1 << 16) /* Mob can't be bashed (e.g. trees)	*/
 #define MOB_NOBLIND	 (1 << 17) /* Mob can't be blinded		*/
 #define MOB_NOTDEADYET   (1 << 18) /* (R) Mob being extracted.		*/
-
 
 /* Preference flags: used by char_data.player_specials.pref */
 #define PRF_BRIEF       (1 << 0)  /* Room descs won't normally be shown	*/
@@ -245,7 +219,6 @@
 #define AFF_UNUSED20	      (1 << 20)	   /* Room for future expansion	*/
 #define AFF_CHARM             (1 << 21)	   /* Char is charmed		*/
 
-
 /* Modes of connectedness: used by descriptor_data.state */
 #define CON_PLAYING	 0	/* Playing - Nominal state		*/
 #define CON_CLOSE	 1	/* User disconnect, remove character.	*/
@@ -300,10 +273,7 @@
 
 #define NUM_WEARS      18	/* This must be the # of eq positions!! */
 
-
-/* object-related defines ********************************************/
-
-
+/* object-related defines */
 /* Item types: used by obj_data.obj_flags.type_flag */
 #define ITEM_LIGHT      1		/* Item is a light source	*/
 #define ITEM_SCROLL     2		/* Item is a scroll		*/
@@ -329,7 +299,6 @@
 #define ITEM_BOAT      22		/* Item is a boat		*/
 #define ITEM_FOUNTAIN  23		/* Item is a fountain		*/
 
-
 /* Take/Wear flags: used by obj_data.obj_flags.wear_flags */
 #define ITEM_WEAR_TAKE		(1 << 0)  /* Item can be taken		*/
 #define ITEM_WEAR_FINGER	(1 << 1)  /* Can be worn on finger	*/
@@ -346,7 +315,6 @@
 #define ITEM_WEAR_WRIST		(1 << 12) /* Can be worn on wrist 	*/
 #define ITEM_WEAR_WIELD		(1 << 13) /* Can be wielded		*/
 #define ITEM_WEAR_HOLD		(1 << 14) /* Can be held		*/
-
 
 /* Extra object flags: used by obj_data.obj_flags.extra_flags */
 #define ITEM_GLOW          (1 << 0)	/* Item is glowing		*/
@@ -366,7 +334,6 @@
 #define ITEM_ANTI_THIEF	   (1 << 14)	/* Not usable by thieves	*/
 #define ITEM_ANTI_WARRIOR  (1 << 15)	/* Not usable by warriors	*/
 #define ITEM_NOSELL	   (1 << 16)	/* Shopkeepers won't touch it	*/
-
 
 /* Modifier constants used with obj affects ('A' fields) */
 #define APPLY_NONE              0	/* No effect			*/
@@ -395,13 +362,11 @@
 #define APPLY_SAVING_BREATH    23	/* Apply to save throw: breath	*/
 #define APPLY_SAVING_SPELL     24	/* Apply to save throw: spells	*/
 
-
 /* Container flags - value[1] */
 #define CONT_CLOSEABLE      (1 << 0)	/* Container can be closed	*/
 #define CONT_PICKPROOF      (1 << 1)	/* Container is pickproof	*/
 #define CONT_CLOSED         (1 << 2)	/* Container is closed		*/
 #define CONT_LOCKED         (1 << 3)	/* Container is locked		*/
-
 
 /* Some different kind of liquids for use in values of drink containers */
 #define LIQ_WATER      0
@@ -421,15 +386,11 @@
 #define LIQ_SALTWATER  14
 #define LIQ_CLEARWATER 15
 
-
-/* other miscellaneous defines *******************************************/
-
-
+/* other miscellaneous defines */
 /* Player conditions */
 #define DRUNK        0
 #define HUNGER       1
 #define THIRST       2
-
 
 /* Sun state for weather_data */
 #define SUN_DARK	0
@@ -437,13 +398,11 @@
 #define SUN_LIGHT	2
 #define SUN_SET		3
 
-
 /* Sky conditions for weather_data */
 #define SKY_CLOUDLESS	0
 #define SKY_CLOUDY	1
 #define SKY_RAINING	2
 #define SKY_LIGHTNING	3
-
 
 /* Rent codes */
 #define RENT_UNDEF      0
@@ -453,19 +412,14 @@
 #define RENT_FORCED     4
 #define RENT_TIMEDOUT   5
 
-
-/* other #defined constants **********************************************/
-
-/*
- * **DO**NOT** blindly change the number of levels in your MUD merely by
+/* other #defined constants */
+/* **DO**NOT** blindly change the number of levels in your MUD merely by
  * changing these numbers and without changing the rest of the code to match.
- * Other changes throughout the code are required.  See coding.doc for
- * details.
+ * Other changes throughout the code are required.  See coding.doc for details.
  *
  * LVL_IMPL should always be the HIGHEST possible immortal level, and
  * LVL_IMMORT should always be the LOWEST immortal level.  The number of
- * mortal levels will always be LVL_IMMORT - 1.
- */
+ * mortal levels will always be LVL_IMMORT - 1. */
 #define LVL_IMPL	34
 #define LVL_GRGOD	33
 #define LVL_GOD		32
@@ -474,20 +428,15 @@
 /* Builders that have access to the saveall command */
 #define LVL_BUILDER	LVL_IMMORT
 
-/* Level of the 'freeze' command */
-#define LVL_FREEZE	LVL_GRGOD
-
 #define NUM_OF_DIRS	6	/* number of directions in a room (nsewud) */
 #define MAGIC_NUMBER	(0x06)	/* Arbitrary number that won't be in a string */
 
-/*
- * OPT_USEC determines how many commands will be processed by the MUD per
+/* OPT_USEC determines how many commands will be processed by the MUD per
  * second and how frequently it does socket I/O.  A low setting will cause
  * actions to be executed more frequently but will increase overhead due to
  * more cycling to check.  A high setting (e.g. 1 Hz) may upset your players
  * as actions (such as large speedwalking chains) take longer to be executed.
- * You shouldn't need to adjust this.
- */
+ * You shouldn't need to adjust this. */
 #define OPT_USEC	100000		/* 10 passes per second */
 #define PASSES_PER_SEC	(1000000 / OPT_USEC)
 #define RL_SEC		* PASSES_PER_SEC
@@ -532,10 +481,7 @@
 /* define the largest set of commands for a trigger */
 #define MAX_CMD_LENGTH 16384         /* 16k should be plenty and then some */
 
-/**********************************************************************
-* Structures                                                          *
-**********************************************************************/
-
+/* Structures */
 typedef signed char		sbyte;
 typedef unsigned char		ubyte;
 typedef signed short int	sh_int;
@@ -564,15 +510,10 @@ typedef IDXTYPE zone_rnum;
 typedef IDXTYPE shop_rnum;
 typedef IDXTYPE trig_rnum;
 
-
-/*
- * Bitvector type for 32 bit unsigned long bitvectors.
- * 'unsigned long long' will give you at least 64 bits if you have GCC.
- *
- * Since we don't want to break the pfiles, you'll have to search throughout
- * the code for "bitvector_t" and change them yourself if you'd like this
- * extra flexibility.
- */
+/* Bitvector type for 32 bit unsigned long bitvectors. 'unsigned long long' 
+ * will give you at least 64 bits if you have GCC. You'll have to search 
+ * throughout the code for "bitvector_t" and change them yourself if you'd 
+ * like this extra flexibility. */
 typedef unsigned long int	bitvector_t;
 
 /* Extra description: used in objects, mobiles, and rooms */
@@ -582,9 +523,7 @@ struct extra_descr_data {
    struct extra_descr_data *next; /* Next in list                     */
 };
 
-
-/* object-related structures ******************************************/
-
+/* object-related structures */
 #define NUM_OBJ_VAL_POSITIONS 4
 /* object flags; used in obj_data */
 struct obj_flag_data {
@@ -600,15 +539,13 @@ struct obj_flag_data {
    long /*bitvector_t*/	bitvector;	/* To set chars bits                */
 };
 
-
 /* Used in obj_file_elem *DO*NOT*CHANGE* */
 struct obj_affected_type {
    byte location;      /* Which ability to change (APPLY_XXX) */
    sbyte modifier;     /* How much it changes by              */
 };
 
-
-/* ================== Memory Structure for Objects ================== */
+/* Memory Structure for Objects */
 struct obj_data {
    obj_rnum item_number;	/* Where in data-base			*/
    room_rnum in_room;		/* In what room -1 when conta/carr	*/
@@ -635,11 +572,8 @@ struct obj_data {
    struct obj_data *next_content; /* For 'contains' lists             */
    struct obj_data *next;         /* For the object list              */
 };
-/* ======================================================================= */
 
-
-/* ====================== File Element for Objects ======================= */
-/*                 BEWARE: Changing it will ruin rent files		   */
+/* File Element for Objects BEWARE: Changing it will ruin rent files  */
 struct obj_file_elem {
    obj_vnum item_number;
 
@@ -653,7 +587,6 @@ struct obj_file_elem {
    long /*bitvector_t*/	bitvector;
    struct obj_affected_type affected[MAX_OBJ_AFFECT];
 };
-
 
 /* header block for rent files.  BEWARE: Changing it will ruin rent files  */
 struct rent_info {
@@ -672,14 +605,10 @@ struct rent_info {
    int	spare6;
    int	spare7;
 };
-/* ======================================================================= */
 
-
-/* room-related structures ************************************************/
-
-
+/* room-related structures */
 struct room_direction_data {
-   char	*general_description;       /* When look DIR.			*/
+   char	*general_description;   /* When look DIR.			*/
 
    char	*keyword;		/* for open/close			*/
 
@@ -688,8 +617,7 @@ struct room_direction_data {
    room_rnum to_room;		/* Where direction leads (NOWHERE)	*/
 };
 
-
-/* ================== Memory Structure for room ======================= */
+/* Memory Structure for room */
 struct room_data {
    room_vnum number;		/* Rooms number	(vnum)		      */
    zone_rnum zone;              /* Room zone (for resetting)          */
@@ -709,12 +637,8 @@ struct room_data {
    struct obj_data *contents;   /* List of items in room              */
    struct char_data *people;    /* List of NPC / PC in room           */
 };
-/* ====================================================================== */
 
-
-/* char-related structures ************************************************/
-
-
+/* char-related structures */
 /* memory structure for characters */
 struct memory_rec_struct {
    long	id;
@@ -723,14 +647,12 @@ struct memory_rec_struct {
 
 typedef struct memory_rec_struct memory_rec;
 
-
-/* This structure is purely intended to be an easy way to transfer */
-/* and return information about time (real or mudwise).            */
+/* This structure is purely intended to be an easy way to transfer  and return 
+ * information about time (real or mudwise). */
 struct time_info_data {
    int hours, day, month;
    sh_int year;
 };
-
 
 /* These data contain information about a players time data */
 struct time_data {
@@ -739,10 +661,9 @@ struct time_data {
    int	played;     /* This is the total accumulated time played in secs */
 };
 
-/* The pclean_criteria_data is set up in config.c and used in db.c to
-   determine the conditions which will cause a player character to be
-   deleted from disk if the automagic pwipe system is enabled (see config.c).
-*/
+/* The pclean_criteria_data is set up in config.c and used in db.c to determine
+ * the conditions which will cause a player character to be deleted from disk 
+ * if the automagic pwipe system is enabled (see config.c). */
 struct pclean_criteria_data {
   int level;		/* max level for this time limit	*/
   int days;		/* time limit in days			*/
@@ -765,7 +686,6 @@ struct char_player_data {
    ubyte height;       /* PC / NPC's height                    */
 };
 
-
 /* Char's abilities. */
 struct char_ability_data {
    sbyte str;
@@ -776,7 +696,6 @@ struct char_ability_data {
    sbyte con;
    sbyte cha;
 };
-
 
 /* Char's points. */
 struct char_point_data {
@@ -796,11 +715,8 @@ struct char_point_data {
    sbyte damroll;       /* Any bonus or penalty to the damage roll */
 };
 
-
-/*
- * char_special_data_saved: specials which both a PC and an NPC have in
- * common, but which must be saved to the players file for PC's.
- */
+/* char_special_data_saved: specials which both a PC and an NPC have in
+ * common, but which must be saved to the players file for PC's. */
 struct char_special_data_saved {
    int	alignment;		/* +-1000 for alignments                */
    long	idnum;			/* player's idnum; -1 for mobiles	*/
@@ -810,7 +726,6 @@ struct char_special_data_saved {
 				/* Bitvector for spells/skills affected by */
    sh_int apply_saving_throw[5]; /* Saving throw (Bonuses)		*/
 };
-
 
 /* Special playing constants shared by PCs and NPCs which aren't in pfile */
 struct char_special_data {
@@ -843,11 +758,9 @@ struct player_special_data_saved {
    int olc_zone;
 };
 
-/*
- * Specials needed only by PCs, not NPCs.  Space for this structure is
+/* Specials needed only by PCs, not NPCs.  Space for this structure is
  * not allocated in memory for NPCs, but it is for PCs and the portion
- * of it labelled 'saved' is saved in the players file.
- */
+ * of it labelled 'saved' is saved in the players file. */
 struct player_special_data {
    struct player_special_data_saved saved;
 
@@ -860,7 +773,6 @@ struct player_special_data {
    char *host;			/* player host				*/
 };
 
-
 /* Specials used by NPCs, not PCs */
 struct mob_special_data {
    memory_rec *memory;	    /* List of attackers to remember	       */
@@ -869,7 +781,6 @@ struct mob_special_data {
    byte damnodice;          /* The number of damage dice's	       */
    byte damsizedice;        /* The size of the damage dice's           */
 };
-
 
 /* An affect structure. */
 struct affected_type {
@@ -882,15 +793,13 @@ struct affected_type {
    struct affected_type *next;
 };
 
-
 /* Structure used for chars following other chars */
 struct follow_type {
    struct char_data *follower;
    struct follow_type *next;
 };
 
-
-/* ================== Structure for player/non-player ===================== */
+/* Structure for player/non-player */
 struct char_data {
    int pfilepos;			 /* playerfile pos		  */
    mob_rnum nr;                          /* Mob's rnum			  */
@@ -926,16 +835,13 @@ struct char_data {
 
    long pref;	                         /* unique session id */
 };
-/* ====================================================================== */
 
-/* descriptor-related structures ******************************************/
-
+/* descriptor-related structures */
 struct txt_block {
    char	*text;
    int aliased;
    struct txt_block *next;
 };
-
 
 struct txt_q {
    struct txt_block *head;
@@ -978,9 +884,7 @@ struct descriptor_data {
    struct oasis_olc_data *olc;   /* OLC info                            */
 };
 
-
-/* other miscellaneous structures ***************************************/
-
+/* other miscellaneous structures */
 struct msg_type {
    char	*attacker_msg;  /* message to attacker */
    char	*victim_msg;    /* message to victim   */
@@ -1047,13 +951,11 @@ struct dex_skill_type {
    sh_int hide;
 };
 
-
 struct dex_app_type {
    sh_int reaction;
    sh_int miss_att;
    sh_int defensive;
 };
-
 
 struct str_app_type {
    sh_int tohit;    /* To Hit (THAC0) Bonus/Penalty        */
@@ -1062,22 +964,18 @@ struct str_app_type {
    sh_int wield_w;  /* Maximum weight that can be wielded  */
 };
 
-
 struct wis_app_type {
    byte bonus;       /* how many practices player gains per lev */
 };
-
 
 struct int_app_type {
    byte learn;       /* how many % a player learns a spell/skill */
 };
 
-
 struct con_app_type {
    sh_int hitp;
    sh_int shock;
 };
-
 
 struct weather_data {
    int	pressure;	/* How is the pressure ( Mb ) */
@@ -1086,12 +984,8 @@ struct weather_data {
    int	sunlight;	/* And how much sun. */
 };
 
-
-/*
- * Element in monster and object index-tables.
- *
- * NOTE: Assumes sizeof(mob_vnum) >= sizeof(obj_vnum)
- */
+/* Element in monster and object index-tables.
+   NOTE: Assumes sizeof(mob_vnum) >= sizeof(obj_vnum) */
 struct index_data {
    mob_vnum	vnum;	/* virtual number of this mob/obj		*/
    int		number;	/* number of existing units of this mob/obj	*/
@@ -1113,15 +1007,10 @@ struct guild_info_type {
   int direction;
 };
 
-/*
- * Config structs
- *
- */
+/* Config structs */
 
- /*
- * The game configuration structure used for configurating the game play
- * variables.
- */
+ /* The game configuration structure used for configurating the game play
+    variables. */
 struct game_data {
   int pk_allowed;         /* Is player killing allowed? 	  */
   int pt_allowed;         /* Is player thieving allowed?	  */
@@ -1145,11 +1034,7 @@ struct game_data {
   char *NOEFFECT;         /* 'Nothing seems to happen.'	          */
 };
 
-
-
-/*
- * The rent and crashsave options.
- */
+/* The rent and crashsave options. */
 struct crash_save_data {
   int free_rent;          /* Should the MUD allow rent for free?  */
   int max_obj_save;       /* Max items players can rent.          */
@@ -1160,10 +1045,7 @@ struct crash_save_data {
   int rent_file_timeout;  /* Lifetime of normal rent files in days*/
 };
 
-
-/*
- * The room numbers.
- */
+/* The room numbers. */
 struct room_numbers {
   room_vnum mortal_start_room;	/* vnum of room that mortals enter at.  */
   room_vnum immort_start_room;  /* vnum of room that immorts enter at.  */
@@ -1173,10 +1055,7 @@ struct room_numbers {
   room_vnum donation_room_3;    /* vnum of donation room #3.	        */
 };
 
-
-/*
- * The game operational constants.
- */
+/* The game operational constants. */
 struct game_operation {
   ush_int DFLT_PORT;        /* The default port to run the game.  */
   char *DFLT_IP;            /* Bind to all interfaces.		  */
@@ -1194,17 +1073,13 @@ struct game_operation {
   char *START_MESSG;        /* The start msg for new characters.  */
 };
 
-/*
- * The Autowizard options.
- */
+/* The Autowizard options. */
 struct autowiz_data {
   int use_autowiz;        /* Use the autowiz feature?		*/
   int min_wizlist_lev;    /* Minimun level to show on wizlist.	*/
 };
 
-/*
- * The main configuration structure;
- */
+/* The main configuration structure; */
 struct config_data {
   char                   *CONFFILE;	/* config file path	 */
   struct game_data       play;		/* play related config   */

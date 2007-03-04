@@ -701,7 +701,7 @@ EVENTFUNC(trig_wait_event)
       log("Trigger restarted on unknown entity. Vnum: %d", GET_TRIG_VNUM(trig));
       log("Type: %s trigger", type==MOB_TRIGGER ? "Mob" : type == OBJ_TRIGGER ? "Obj" : "Room");
       log("attached %d places", trig_index[trig->nr]->number);
-      //script_log("Trigger restart attempt on unknown entity.");
+      script_log("Trigger restart attempt on unknown entity.");
       return 0;
     }
   }
@@ -1569,22 +1569,19 @@ int process_if(char *cond, void *go, struct script_data *sc,
 }
 
 
-/*
- * scans for end of if-block.
- * returns the line containg 'end', or the last
- * line of the trigger if not found.
- */
+/* scans for end of if-block.  returns the line containg 'end', or the last
+   line of the trigger if not found. */
 struct cmdlist_element *find_end(trig_data *trig, struct cmdlist_element *cl)
 {
   struct cmdlist_element *c;
   char *p;
 
-  if (!(cl->next)) { //rryan: if this is the last line, theres no end
+  if (!(cl->next)) { /* rryan: if this is the last line, theres no end */
     script_log("Trigger VNum %d has 'if' without 'end'. (error 1)", GET_TRIG_VNUM(trig));
     return cl;
   }
 
-  for (c = cl->next; c && c->next; c = c?c->next:NULL) {
+  for (c = cl->next; c; c = c->next) {
     for (p = c->cmd; *p && isspace(*p); p++);
 
     if (!strn_cmp("if ", p, 3))
@@ -1599,8 +1596,8 @@ struct cmdlist_element *find_end(trig_data *trig, struct cmdlist_element *cl)
     }
   }
 
-  //rryan: we didn't find an end
-  //script_log("Trigger VNum %d has 'if' without 'end'. (error 3)", GET_TRIG_VNUM(trig));
+  /* rryan: we didn't find an end */
+  script_log("Trigger VNum %d has 'if' without 'end'. (error 3)", GET_TRIG_VNUM(trig));
   return c;
 }
 
@@ -2562,7 +2559,7 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
   dg_owner_purged = 0;
 
   for (cl = (mode == TRIG_NEW) ? trig->cmdlist : trig->curr_state;
-       cl && GET_TRIG_DEPTH(trig); cl = cl ? cl->next : NULL) {
+      cl && GET_TRIG_DEPTH(trig); cl = cl->next) {
     for (p = cl->cmd; *p && isspace(*p); p++);
 
     if (*p == '*') /* comment */

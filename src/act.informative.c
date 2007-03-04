@@ -1922,7 +1922,7 @@ ACMD(do_toggle)
     }
 
     if (((tp = search_block(arg2, types, FALSE)) == -1)) {
-      send_to_char(ch, "Usage: color { Off | Normal | On }\r\n");
+      send_to_char(ch, "Usage: toggle color { Off | Normal | On }\r\n");
       return;
     }
     REMOVE_BIT(PRF_FLAGS(ch), PRF_COLOR_1 | PRF_COLOR_2);
@@ -1936,7 +1936,7 @@ ACMD(do_toggle)
       return;
     }
     if (((tp = search_block(arg2, types, FALSE)) == -1)) {
-      send_to_char(ch, "Usage: syslog { Off | Brief | Normal | On }\r\n");
+      send_to_char(ch, "Usage: toggle syslog { Off | Brief | Normal | On }\r\n");
       return;
     }
     REMOVE_BIT(PRF_FLAGS(ch), PRF_LOG1 | PRF_LOG2);

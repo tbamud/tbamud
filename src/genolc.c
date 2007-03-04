@@ -74,7 +74,7 @@ int save_all(void)
   while (save_list) {
     if (save_list->type < 0 || save_list->type > SL_MAX) {
       if (save_list->type == SL_ACTION) {
-        log("Actions not saved - can not autosave. Use 'aedit save'.");
+        log("Actions not saved - cannot autosave. Use 'aedit save'.");
         save_list = save_list->next;	/* Fatal error, skip this one. */
       } else
         log("SYSERR: GenOLC: Invalid save type %d in save list.\n", save_list->type);

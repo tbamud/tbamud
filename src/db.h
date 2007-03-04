@@ -111,6 +111,7 @@
 #define BAN_FILE	LIB_ETC"badsites"  /* for the siteban system	*/
 #define HCONTROL_FILE	LIB_ETC"hcontrol"  /* for the house system	*/
 #define TIME_FILE	LIB_ETC"time"	   /* for calendar system	*/
+#define CHANGE_LOG_FILE "../changelog"     /* for the changelog         */
 
 /* new bitvector data for use in player_index_element */
 #define PINDEX_DELETED		(1 << 0)	/* deleted player	*/

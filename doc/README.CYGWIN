@@ -1,16 +1,13 @@
-The README.Cygwin that comes with CircleMUD is outdated. Below is current and
-works as of December 2006.
-
-                          Compiling CircleMUD
+                          Compiling tbaMUD
                   under Microsoft Windows using CygWin
 
-CircleMUD 3.1 compiles under Cygwin without needing any special modifications.
+tbaMUD compiles under Cygwin without needing any special modifications.
 This free pseudo-Unix environment for Windows includes the "bash" shell, "gcc"
 family of compilers, and a full set of programs and libraries for Windows users
 to compile and run programs from source code intended for Unix. It can be
 downloaded from: http://cygwin.com/
 
-Compiling Circle under Cygwin is basically the same as it would be under
+Compiling tbaMUD under Cygwin is basically the same as it would be under
 another form of Unix:
 
 1) Download from: http://cygwin.com/setup.exe
@@ -23,18 +20,17 @@ another form of Unix:
    Click Next.
    Install, follow prompts.
 
-2) Download and uncompress the latest version of CircleMUD. TBA is now 
-   recommending everyone use CWG (CircleMUD With Goodies) Buddha since it comes
-   pre-packaged with many important features like OLC and Trigedit. Join the 
-   forum and download Buddha at: http://cwg.lazuras.org/ The forums will 
-   also be a great resource for any problems that come up. Once you download 
-   and uncompress Buddha (I use winRAR) read through the /doc directory.
+2) Download and uncompress the latest version of tbaMUD:
+   http://cwg.lazuras.org/modules.php?name=Downloads&d_op=viewdownload&cid=16
+   Join the forums as they will be a great resource for any problems that you
+   encounter. Once you download and uncompress tbaMUD (I use winRAR) read 
+   through the /doc directory.
 
 3) Start the Cygwin "bash" shell by double clicking the Cygwin Icon. This will 
    open a telnet looking window that mimics a *nix server where you can run the
-   MUD. Go to the directory where you extracted CircleMUD by using the "cd" change
+   MUD. Go to the directory where you extracted tbaMUD by using the "cd" change
    directory command and "dir" directory listing to find the correct files. For
-   example "C:\circle". "cd c:/circle" "dir" in the listed files you should see 
+   example "C:\tbaMUD". "cd c:/tbaMUD" "dir" in the listed files you should see 
    one called configure. DO NOT go into the SRC directory yet.
 
 4) Run the configure script by typing "./configure".  This will automatically 
@@ -46,12 +42,12 @@ another form of Unix:
    an executable, you can also try "sh configure", "sh ./configure",
    "bash configure" and "bash ./configure" until one of them works.
 
-5) NOW change to the /circle/src directory "cd src", and type "make", and watch
-   CircleMUD and the additional utilies included in the Circle distribution
-   automatically being compiled and placed in /circle/bin.
+5) NOW change to the /tbaMUD/src directory "cd src", and type "make", and watch
+   tbaMUD and the additional utilities included in the tbaMUD distribution
+   automatically being compiled and placed in /tbaMUD/bin.
 
-6) Go back to /circle, and run the MUD either directly by typing
-   "bin/circle", or by using the "./autorun &" script.
+6) Go back to /tbaMUD, and run the MUD either directly by typing
+   "bin/tbaMUD", or by using the "./autorun &" script.
 
 7) Start a telnet program.  Open a connection to your own machine "localhost"
    on port 4000.  You should see the MUD's login screen welcoming you. The
@@ -59,22 +55,19 @@ another form of Unix:
 
 If you have problems, read this document again.  Most of the questions received
 in email or which are posted to USENET newsgroups are answered in this file, or 
-in other documents included in the CircleMUD distribution.  If you are still 
+in other documents included in the tbaMUD distribution.  If you are still 
 having problems and you're *sure* that your question is not answered in this 
-document or in one of the others files in the /circle/doc directory, try 
-reading the through the CircleMUD website at: http://www.circlemud.org
+document or in one of the others files in the /tbaMUD/doc directory, try 
+reading the forums at http://cwg.lazuras.org/ or stop by TBA for assistance.
+
 It really can not be stressed enough: READ EVERYTHING.
 
 Credit where credit is due:
 
 Some parts of this document have been derived or outright copied from other
-files in the CircleMUD distribution by:
-Jeremy Elson
-David Goldstein
-Tony Robbins
-George Greer
+files by: Jeremy Elson, David Goldstein, Tony Robbins, and George Greer
 
 Rumble
-Rumble@@builderacademy.net 
+Rumble@builderacademy.net 
 The Builder Academy
 builderacademy.net 9091

@@ -50,10 +50,7 @@ void sedit_save_to_disk(int num)
   save_shops(num);
 }
 
-/*-------------------------------------------------------------------*\
-  utility functions
-\*-------------------------------------------------------------------*/
-
+/* utility functions */
 ACMD(do_oasis_sedit)
 {
   int number = NOWHERE, save = 0;
@@ -63,9 +60,7 @@ ACMD(do_oasis_sedit)
   char buf1[MAX_INPUT_LENGTH];
   char buf2[MAX_INPUT_LENGTH];
 
-  /****************************************************************************/
-  /** Parse any arguments.                                                   **/
-  /****************************************************************************/
+  /* Parse any arguments. */
   buf3 = two_arguments(argument, buf1, buf2);
 
   if (!*buf1) {
@@ -96,15 +91,11 @@ ACMD(do_oasis_sedit)
     }
   }
 
-  /****************************************************************************/
-  /** If a numeric argument was given, get it.                               **/
-  /****************************************************************************/
+  /* If a numeric argument was given, get it. */
   if (number == NOWHERE)
     number = atoi(buf1);
 
-  /****************************************************************************/
-  /** Check that the shop isn't already being edited.                        **/
-  /****************************************************************************/
+  /* Check that the shop isn't already being edited. */
   for (d = descriptor_list; d; d = d->next) {
     if (STATE(d) == CON_SEDIT) {
       if (d->olc && OLC_NUM(d) == number) {
@@ -115,14 +106,10 @@ ACMD(do_oasis_sedit)
     }
   }
 
-  /****************************************************************************/
-  /** Point d to the builder's descriptor.                                   **/
-  /****************************************************************************/
+  /* Point d to the builder's descriptor. */
   d = ch->desc;
 
-  /****************************************************************************/
-  /** Give the descriptor an OLC structure.                                  **/
-  /****************************************************************************/
+  /* Give the descriptor an OLC structure. */
   if (d->olc) {
     mudlog(BRF, LVL_IMMORT, TRUE,
       "SYSERR: do_oasis_sedit: Player already had olc structure.");
@@ -131,9 +118,7 @@ ACMD(do_oasis_sedit)
 
   CREATE(d->olc, struct oasis_olc_data, 1);
 
-  /****************************************************************************/
-  /** Find the zone.                                                         **/
-  /****************************************************************************/
+  /* Find the zone. */
   OLC_ZNUM(d) = save ? real_zone(number) : real_zone_by_thing(number);
   if (OLC_ZNUM(d) == NOWHERE) {
     send_to_char(ch, "Sorry, there is no zone for that number!\r\n");
@@ -142,15 +127,11 @@ ACMD(do_oasis_sedit)
     return;
   }
 
-  /****************************************************************************/
-  /** Everyone but IMPLs can only edit zones they have been assigned.        **/
-  /****************************************************************************/
+  /* Everyone but IMPLs can only edit zones they have been assigned. */
   if (!can_edit_zone(ch, OLC_ZNUM(d))) {
-send_to_char(ch, " You do not have permission to edit zone %d. Try zone %d.\r\n", zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
+    send_cannot_edit(ch, zone_table[OLC_ZNUM(d)].number);
 
-    /**************************************************************************/
-    /** Free the OLC structure.                                              **/
-    /**************************************************************************/
+    /* Free the OLC structure. */
     free(d->olc);
     d->olc = NULL;
     return;
@@ -163,14 +144,10 @@ send_to_char(ch, " You do not have permission to edit zone %d. Try zone %d.\r\n"
       "OLC: %s saves shop info for zone %d.",
       GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
 
-    /**************************************************************************/
-    /** Save the shops to the shop file.                                     **/
-    /**************************************************************************/
+    /* Save the shops to the shop file. */
     save_shops(OLC_ZNUM(d));
 
-    /**************************************************************************/
-    /** Free the OLC structure.                                              **/
-    /**************************************************************************/
+    /* Free the OLC structure. */
     free(d->olc);
     d->olc = NULL;
     return;
@@ -196,21 +173,15 @@ void sedit_setup_new(struct descriptor_data *d)
 {
   struct shop_data *shop;
 
-  /*
-   * Allocate a scratch shop structure.
-   */
+  /* Allocate a scratch shop structure. */
   CREATE(shop, struct shop_data, 1);
 
-  /*
-   * Fill in some default values.
-   */
+  /* Fill in some default values. */
   S_KEEPER(shop) = NOBODY;
   S_CLOSE1(shop) = 28;
   S_BUYPROFIT(shop) = 1.0;
   S_SELLPROFIT(shop) = 1.0;
-  /*
-   * Add a spice of default strings.
-   */
+  /* Add a spice of default strings. */
   S_NOITEM1(shop) = strdup("%s Sorry, I don't stock that item.");
   S_NOITEM2(shop) = strdup("%s You don't seem to have that.");
   S_NOCASH1(shop) = strdup("%s I can't afford that!");
@@ -218,9 +189,7 @@ void sedit_setup_new(struct descriptor_data *d)
   S_NOBUY(shop) = strdup("%s I don't trade in such items.");
   S_BUY(shop) = strdup("%s That'll be %d coins, thanks.");
   S_SELL(shop) = strdup("%s I'll give you %d coins for that.");
-  /*
-   * Stir the lists lightly.
-   */
+  /* Stir the lists lightly. */
   CREATE(S_PRODUCTS(shop), obj_vnum, 1);
 
   S_PRODUCT(shop, 0) = NOTHING;
@@ -231,20 +200,14 @@ void sedit_setup_new(struct descriptor_data *d)
 
   S_BUYTYPE(shop, 0) = NOTHING;
 
-  /*
-   * Presto! A shop.
-   */
+   /* Presto! A shop. */
   OLC_SHOP(d) = shop;
   sedit_disp_menu(d);
 }
 
-/*-------------------------------------------------------------------*/
-
 void sedit_setup_existing(struct descriptor_data *d, int rshop_num)
 {
-  /*
-   * Create a scratch shop structure.
-   */
+  /* Create a scratch shop structure. */
   CREATE(OLC_SHOP(d), struct shop_data, 1);
 
   /* don't waste time trying to free NULL strings -- Welcor */
@@ -252,10 +215,7 @@ void sedit_setup_existing(struct descriptor_data *d, int rshop_num)
   sedit_disp_menu(d);
 }
 
-/**************************************************************************
- Menu functions
- **************************************************************************/
-
+/* Menu functions */
 void sedit_products_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
@@ -280,8 +240,6 @@ void sedit_products_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_PRODUCTS_MENU;
 }
 
-/*-------------------------------------------------------------------*/
-
 void sedit_compact_rooms_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
@@ -304,8 +262,6 @@ void sedit_compact_rooms_menu(struct descriptor_data *d)
 
   OLC_MODE(d) = SEDIT_ROOMS_MENU;
 }
-
-/*-------------------------------------------------------------------*/
 
 void sedit_rooms_menu(struct descriptor_data *d)
 {
@@ -338,8 +294,6 @@ void sedit_rooms_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_ROOMS_MENU;
 }
 
-/*-------------------------------------------------------------------*/
-
 void sedit_namelist_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
@@ -364,8 +318,6 @@ void sedit_namelist_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_NAMELIST_MENU;
 }
 
-/*-------------------------------------------------------------------*/
-
 void sedit_shop_flags_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
@@ -382,8 +334,6 @@ void sedit_shop_flags_menu(struct descriptor_data *d)
 		cyn, bits, nrm);
   OLC_MODE(d) = SEDIT_SHOP_FLAGS;
 }
-
-/*-------------------------------------------------------------------*/
 
 void sedit_no_trade_menu(struct descriptor_data *d)
 {
@@ -402,8 +352,6 @@ void sedit_no_trade_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_NOTRADE;
 }
 
-/*-------------------------------------------------------------------*/
-
 void sedit_types_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
@@ -421,11 +369,7 @@ void sedit_types_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_TYPE_MENU;
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Display main menu.
- */
+/* Display main menu. */
 void sedit_disp_menu(struct descriptor_data *d)
 {
   char buf1[MAX_STRING_LENGTH];
@@ -483,10 +427,7 @@ void sedit_disp_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_MAIN_MENU;
 }
 
-/**************************************************************************
-  The GARGANTUAN event handler
- **************************************************************************/
-
+/* The GARGANTUAN event handler */
 void sedit_parse(struct descriptor_data *d, char *arg)
 {
   int i;
@@ -498,7 +439,6 @@ void sedit_parse(struct descriptor_data *d, char *arg)
     }
   }
   switch (OLC_MODE(d)) {
-/*-------------------------------------------------------------------*/
   case SEDIT_CONFIRM_SAVESTRING:
     switch (*arg) {
     case 'y':
@@ -525,7 +465,6 @@ void sedit_parse(struct descriptor_data *d, char *arg)
     }
     break;
 
-/*-------------------------------------------------------------------*/
   case SEDIT_MAIN_MENU:
     i = 0;
     switch (*arg) {
@@ -631,7 +570,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
     else
       write_to_output(d, "Oops...\r\n");
     return;
-/*-------------------------------------------------------------------*/
+
   case SEDIT_NAMELIST_MENU:
     switch (*arg) {
     case 'a':
@@ -648,7 +587,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
       break;
     }
     break;
-/*-------------------------------------------------------------------*/
+
   case SEDIT_PRODUCTS_MENU:
     switch (*arg) {
     case 'a':
@@ -666,7 +605,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
       break;
     }
     break;
-/*-------------------------------------------------------------------*/
+
   case SEDIT_ROOMS_MENU:
     switch (*arg) {
     case 'a':
@@ -692,10 +631,8 @@ void sedit_parse(struct descriptor_data *d, char *arg)
       break;
     }
     break;
-/*-------------------------------------------------------------------*/
-    /*
-     * String edits.
-     */
+
+    /* String edits. */
   case SEDIT_NOITEM1:
     if (genolc_checkstring(d, arg))
       modify_shop_string(&S_NOITEM1(OLC_SHOP(d)), arg);
@@ -735,10 +672,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
     sedit_namelist_menu(d);
     return;
 
-/*-------------------------------------------------------------------*/
-    /*
-     * Numerical responses.
-     */
+    /* Numerical responses. */
   case SEDIT_KEEPER:
     i = atoi(arg);
     if ((i = atoi(arg)) != -1)
@@ -749,9 +683,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
     S_KEEPER(OLC_SHOP(d)) = i;
     if (i == -1)
       break;
-    /*
-     * Fiddle with special procs.
-     */
+    /* Fiddle with special procs. */
     S_FUNC(OLC_SHOP(d)) = mob_index[i].func != shop_keeper ? mob_index[i].func : NULL;
     mob_index[i].func = shop_keeper;
     break;
@@ -825,24 +757,16 @@ void sedit_parse(struct descriptor_data *d, char *arg)
     }
     break;
 
-/*-------------------------------------------------------------------*/
   default:
-    /*
-     * We should never get here.
-     */
+    /* We should never get here. */
     cleanup_olc(d, CLEANUP_ALL);
     mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: sedit_parse(): Reached default case!");
     write_to_output(d, "Oops...\r\n");
     break;
   }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * END OF CASE
- * If we get here, we have probably changed something, and now want to
- * return to main menu.  Use OLC_VAL as a 'has changed' flag.
- */
+/* If we get here, we have probably changed something, and now want to return 
+   to main menu.  Use OLC_VAL as a 'has changed' flag. */
   OLC_VAL(d) = 1;
   sedit_disp_menu(d);
 }

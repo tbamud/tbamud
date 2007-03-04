@@ -58,7 +58,6 @@ ACMD(do_use);
 ACMD(do_display);
 ACMD(do_gen_tog);
 ACMD(do_gen_write);
-ACMD(do_file);
 
 ACMD(do_quit)
 {
@@ -412,7 +411,7 @@ ACMD(do_group)
   }
 
   if (ch->master) {
-    act("You can not enroll group members without being head of a group.",
+    act("You cannot enroll group members without being head of a group.",
 	FALSE, ch, 0, 0, TO_CHAR);
     return;
   }
@@ -930,105 +929,4 @@ ACMD(do_gen_tog)
     send_to_char(ch, "%s", tog_messages[subcmd][TOG_OFF]);
 
   return;
-}
-
-ACMD(do_file)
-{
-  FILE *req_file;
-  int cur_line = 0, num_lines = 0, req_lines = 0, i, j, l;
-  char field[MAX_INPUT_LENGTH], value[MAX_INPUT_LENGTH], line[READ_SIZE];
-  char buf[MAX_STRING_LENGTH];
-  size_t len = 0, nlen;
-
-  struct file_struct {
-    char *cmd;
-    char level;
-    char *file;
-  } fields[] = {
-    { "bugs",           LVL_BUILDER,    "../lib/misc/bugs"},
-    { "typos",          LVL_BUILDER ,   "../lib/misc/typos"},
-    { "ideas",          LVL_BUILDER,    "../lib/misc/ideas"},
-    { "xnames",         LVL_BUILDER,     "../lib/misc/xnames"},
-    { "levels",         LVL_BUILDER,    "../log/levels" },
-    { "rip",            LVL_BUILDER,    "../log/rip" },
-    { "players",        LVL_BUILDER,    "../log/newplayers" },
-    { "rentgone",       LVL_BUILDER,    "../log/rentgone" },
-    { "errors",         LVL_BUILDER,    "../log/errors" },
-    { "godcmds",        LVL_BUILDER,    "../log/godcmds" },
-    { "syslog",         LVL_BUILDER,    "../syslog" },
-    { "crash",          LVL_BUILDER,    "../syslog.CRASH" },
-    { "help",           LVL_BUILDER,    "../log/help" },
-    { "\n", 0, "\n" }
-  };
-
-   skip_spaces(&argument);
-
-   if (!*argument) {
-     send_to_char(ch, "USAGE: file <option> <num lines>\r\n\r\nFile options:\r\n");
-     for (j = 0, i = 0; fields[i].level; i++)
-       if (fields[i].level <= GET_LEVEL(ch))
-         send_to_char(ch, "%-15s%s\r\n", fields[i].cmd, fields[i].file);
-     return;
-   }
-
-   two_arguments(argument, field, value);
-
-   for (l = 0; *(fields[l].cmd) != '\n'; l++)
-     if (!strncmp(field, fields[l].cmd, strlen(field)))
-     break;
-
-   if(*(fields[l].cmd) == '\n') {
-     send_to_char(ch, "That is not a valid option!\r\n");
-     return;
-   }
-
-   if (GET_LEVEL(ch) < fields[l].level) {
-     send_to_char(ch, "You are not godly enough to view that file!\r\n");
-     return;
-   }
-
-   if(!*value)
-     req_lines = 15; /* default is the last 15 lines */
-   else
-     req_lines = atoi(value);
-
-   if (!(req_file=fopen(fields[l].file,"r"))) {
-     mudlog(BRF, LVL_IMPL, TRUE,
-            "SYSERR: Error opening file %s using 'file' command.",
-            fields[l].file);
-     return;
-   }
-
-   get_line(req_file, line);
-   while (!feof(req_file)) {
-     num_lines++;
-     get_line(req_file,line);
-   }
-   rewind(req_file);
-
-   req_lines = MIN(MIN(req_lines, num_lines),150);
-
-   len = snprintf(buf, sizeof(buf), "Last %d lines of %s:\r\n", req_lines, fields[l].file);
-
-   if (req_lines == num_lines)
-     len += snprintf(buf + len, sizeof(buf) - len, "Top of file.\r\n");                 
-   get_line(req_file,line);
-   while (!feof(req_file)) {
-     cur_line++;
-     if(cur_line > (num_lines - req_lines)) {
-       nlen = snprintf(buf + len, sizeof(buf) - len, "%s\r\n", line);
-       if (len + nlen >= sizeof(buf) || nlen < 0)
-         break;
-       len += nlen;
-     }
-     get_line(req_file,line);
-   }
-   fclose(req_file);
-
-   if (len >= sizeof(buf)) {
-     const char *overflow = "\r\n**OVERFLOW**\r\n";
-     strcpy(buf + sizeof(buf) - strlen(overflow) - 1, overflow); /* strcpy: OK */
-   }
-   page_string(ch->desc, buf, 1);
-
 }

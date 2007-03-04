@@ -414,7 +414,8 @@ void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
     return;
   }
   while (has_mail(GET_IDNUM(ch))) {
-    obj = read_object(1, VIRTUAL); /*a pair of wings will work :)*/
+    obj = create_obj(); 
+    obj->item_number = 1; 
     obj->name = strdup("mail paper letter");
     obj->short_description = strdup("a piece of mail");
     obj->description = strdup("Someone has left a piece of mail here.");

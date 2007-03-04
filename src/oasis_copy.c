@@ -63,7 +63,7 @@ ACMD(do_dig)
   zone = world[IN_ROOM(ch)].zone;
 
   if (dir < 0) {
-    send_to_char(ch, "Can not create an exit to the '%s'.\r\n", sdir);
+    send_to_char(ch, "You cannot create an exit to the '%s'.\r\n", sdir);
     return;
   }
   /* Make sure that the builder has access to the zone he's in. */
@@ -178,7 +178,7 @@ ACMD(do_dig)
    * check if we can dig from there to here.
    */
   if (W_EXIT(rrnum, rev_dir[dir]))
-    send_to_char(ch, "Can not dig from %d to here. The target room already has an exit to the %s.\r\n",
+    send_to_char(ch, "You cannot dig from %d to here. The target room already has an exit to the %s.\r\n",
                      rvnum, dirs[rev_dir[dir]]);
   else {
     CREATE(W_EXIT(rrnum, rev_dir[dir]), struct room_direction_data, 1);

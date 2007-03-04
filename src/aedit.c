@@ -357,7 +357,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
          break;
        default:
          write_to_output(d, "Invalid choice!\r\n"
-                            "Do you wish to save this action internally? ");
+                            "Do you wish to save your changes? ");
          break;
       }
       return; /* end of AEDIT_CONFIRM_SAVESTRING */
@@ -418,7 +418,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
       switch (*arg) {
        case 'q': case 'Q':
          if (OLC_VAL(d))  { /* Something was modified */
-            write_to_output(d, "Do you wish to save this action internally? ");
+            write_to_output(d, "Do you wish to save your changes? ");
             OLC_MODE(d) = AEDIT_CONFIRM_SAVESTRING;
          }
          else cleanup_olc(d, CLEANUP_ALL);

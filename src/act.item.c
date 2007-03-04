@@ -462,9 +462,10 @@ int perform_drop(struct char_data *ch, struct obj_data *obj,
   if ((mode == SCMD_DROP) && !drop_wtrigger(obj, ch))
     return 0;
 
-  if (OBJ_FLAGGED(obj, ITEM_NODROP)) {
+  if (OBJ_FLAGGED(obj, ITEM_NODROP) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
     snprintf(buf, sizeof(buf), "You can't %s $p, it must be CURSED!", sname);
     act(buf, FALSE, ch, obj, 0, TO_CHAR);
+    return (0);
   }
 
   snprintf(buf, sizeof(buf), "You %s $p.%s", sname, VANISH(mode));
@@ -1166,8 +1167,6 @@ ACMD(do_pour)
   weight_change_object(to_obj, amount);	/* Add weight */
 }
 
-
-
 void wear_message(struct char_data *ch, struct obj_data *obj, int where)
 {
   const char *wear_messages[][2] = {
@@ -1230,8 +1229,6 @@ void wear_message(struct char_data *ch, struct obj_data *obj, int where)
   act(wear_messages[where][1], FALSE, ch, obj, 0, TO_CHAR);
 }
 
-
-
 void perform_wear(struct char_data *ch, struct obj_data *obj, int where)
 {
   /*
@@ -1293,8 +1290,6 @@ void perform_wear(struct char_data *ch, struct obj_data *obj, int where)
   equip_char(ch, obj, where);
 }
 
-
-
 int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg)
 {
   int where = -1;
@@ -1339,8 +1334,6 @@ int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg)
 
   return (where);
 }
-
-
 
 ACMD(do_wear)
 {
@@ -1401,8 +1394,6 @@ ACMD(do_wear)
   }
 }
 
-
-
 ACMD(do_wield)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -1423,8 +1414,6 @@ ACMD(do_wield)
       perform_wear(ch, obj, WEAR_WIELD);
   }
 }
-
-
 
 ACMD(do_grab)
 {
@@ -1451,21 +1440,17 @@ ACMD(do_grab)
   }
 }
 
-
-
 void perform_remove(struct char_data *ch, int pos)
 {
   struct obj_data *obj;
 
   if (!(obj = GET_EQ(ch, pos)))
     log("SYSERR: perform_remove: bad pos %d passed.", pos);
-    /*  SYSERR_DESC:
-     *  This error occurs when perform_remove() is passed a bad 'pos'
-     *  (location) to remove an object from.
-     */
-  else if (OBJ_FLAGGED(obj, ITEM_NODROP))
+    /*  This error occurs when perform_remove() is passed a bad 'pos'
+     *  (location) to remove an object from. */
+  else if (OBJ_FLAGGED(obj, ITEM_NODROP) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) 
     act("You can't remove $p, it must be CURSED!", FALSE, ch, obj, 0, TO_CHAR);
-  else if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch))
+  else if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)&& !PRF_FLAGGED(ch, PRF_NOHASSLE))
     act("$p: you can't carry that many items!", FALSE, ch, obj, 0, TO_CHAR);
   else {
     if (!remove_otrigger(obj, ch))
@@ -1476,8 +1461,6 @@ void perform_remove(struct char_data *ch, int pos)
     act("$n stops using $p.", TRUE, ch, obj, 0, TO_ROOM);
   }
 }
-
-
 
 ACMD(do_remove)
 {

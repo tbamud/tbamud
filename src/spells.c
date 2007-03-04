@@ -228,7 +228,7 @@ ASPELL(spell_charm)
   else if (!CONFIG_PK_ALLOWED && !IS_NPC(victim))
     send_to_char(ch, "You fail - shouldn't be doing it anyway.\r\n");
   else if (circle_follow(victim, ch))
-    send_to_char(ch, "Sorry, following in circles can not be allowed.\r\n");
+    send_to_char(ch, "Sorry, following in circles is not allowed.\r\n");
   else if (mag_savingthrow(victim, SAVING_PARA, 0))
     send_to_char(ch, "Your victim resists!\r\n");
   else {

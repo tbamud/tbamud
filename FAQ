@@ -223,14 +223,21 @@ notably it cannot be used to make money in ANY way, the original developers'
 names must be in the login screen and that the credits command always presents
 the same information, etc.
 
+tbaMUD's vision is to provide the MUDding community a stable and functional 
+codebase that includes an in-depth World and help files that makes it ready 
+to be molded into a custom MUD by its coders and builders. We also provide 
+multiple resources to allow for feedback, contribution, and the sharing of 
+ideas within the MUDding community to ensure constant development and 
+improvements. 
+
 TbaMUD is highly developed from the programming side, but highly UNdeveloped
-on the game-playing side.  So, if you're looking for a huge MUD with billions 
-of spells, skills, classes, and races, tbaMUD will probably disappoint you 
-severely.  TbaMUD still has only the 4 original Diku classes, the original 
-spells, and the original skills. On the other hand, if you're looking for a
-highly stable, well-developed, well-organized "blank slate" MUD on which you 
-can put your OWN ideas for spells, skills, and classes, then tbaMUD is what 
-what you are looking for."
+on the game-playing side. So, if you're looking for a huge MUD with billions
+of spells, skills, classes, and races, tbaMUD will disappoint you. TbaMUD still
+has only the 4 original Diku classes, the original spells, and the original 
+skills. On the other hand, if you're looking for a highly stable, developed, 
+organized, and well documented "blank slate" MUD on which you can put your OWN 
+ideas for spells, skills, and classes, then tbaMUD is what what you are looking
+for.
 
 
 1.5.  What is the history of tbaMUD?

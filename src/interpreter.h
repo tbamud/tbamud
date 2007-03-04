@@ -37,8 +37,8 @@ char	*delete_doubledollar(char *string);
 #define argument_interpreter(a, b, c) two_arguments(a, b, c)
 
 /* WARNING: if you have added diagonal directions and have them at the
- * beginning of the command list.. change this value to 11 or 15 (depending) */
-/* reserve these commands to come straight from the cmd list then start
+ * beginning of the command list.. change this value to 11 or 15 (depending)
+ * reserve these commands to come straight from the cmd list then start
  * sorting */
 #define RESERVE_CMDS                7
 
@@ -52,19 +52,12 @@ struct command_info {
    int	subcmd;
 };
 
-/*
- * Necessary for CMD_IS macro.  Borland needs the structure defined first
- * so it has been moved down here.
- */
+/* Necessary for CMD_IS macro.  Borland needs the structure defined first
+ * so it has been moved down here. */
 #ifndef __INTERPRETER_C__
 extern struct command_info *complete_cmd_info;
 #endif
 
-/*
- * Alert! Changed from 'struct alias' to 'struct alias_data' in bpl15
- * because a Windows 95 compiler gives a warning about it having similiar
- * named member.
- */
 struct alias_data {
   char *alias;
   char *replacement;
@@ -79,12 +72,8 @@ struct alias_data {
 #define ALIAS_VAR_CHAR	'$'
 #define ALIAS_GLOB_CHAR	'*'
 
-/*
- * SUBCOMMANDS
- *   You can define these however you want to, and the definitions of the
- *   subcommands are independent from function to function.
- */
-
+/* SUBCOMMANDS: You can define these however you want to, and the definitions
+ * of the subcommands are independent from function to function.*/
 /* directions */
 #define SCMD_NORTH	1
 #define SCMD_EAST	2

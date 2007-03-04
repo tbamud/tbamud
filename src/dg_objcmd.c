@@ -158,8 +158,10 @@ OCMD(do_oecho)
 
     else if ((room = obj_room(obj)) != NOWHERE)
     {
-            if (world[room].people)
-            sub_write(argument, world[room].people, TRUE, TO_ROOM | TO_CHAR);
+      if (world[room].people) { 
+        sub_write(argument, world[room].people, TRUE, TO_ROOM); 
+        sub_write(argument, world[room].people, TRUE, TO_CHAR); 
+      } 
     }
 
     else
@@ -603,8 +605,10 @@ OCMD(do_oasound)
     if (world[room].dir_option[door] != NULL &&
        (world[room].dir_option[door])->to_room != NOWHERE &&
        (world[room].dir_option[door])->to_room != room &&
-        world[(world[room].dir_option[door])->to_room].people)
-          sub_write(argument, world[(world[room].dir_option[door])->to_room].people, TRUE, TO_ROOM | TO_CHAR);
+        world[(world[room].dir_option[door])->to_room].people) { 
+          sub_write(argument, world[(world[room].dir_option[door])->to_room].people, TRUE, TO_ROOM); 
+          sub_write(argument, world[(world[room].dir_option[door])->to_room].people, TRUE, TO_CHAR); 
+    }
   }
 }
 

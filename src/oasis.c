@@ -426,3 +426,11 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
 
   return (FALSE);
 }
+
+void send_cannot_edit(struct char_data *ch, zone_vnum zone)
+{
+  send_to_char(ch, "You do not have permission to edit zone %d.", zone);
+  if (GET_OLC_ZONE(ch) != NOWHERE)
+    send_to_char(ch, "  Try zone %d.", GET_OLC_ZONE(ch));
+  send_to_char(ch, "\r\n");
+}

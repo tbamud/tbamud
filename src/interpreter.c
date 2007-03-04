@@ -77,6 +77,7 @@ ACMD(do_backstab);
 ACMD(do_ban);
 ACMD(do_bash);
 ACMD(do_cast);
+ACMD(do_changelog);
 ACMD(do_commands);
 ACMD(do_consider);
 ACMD(do_copyover);
@@ -279,6 +280,7 @@ cpp_extern const struct command_info cmd_info[] = {
 
   { "cast"     , "c"       , POS_SITTING , do_cast     , 1, 0 },
   { "cedit"    , "cedit"   , POS_DEAD    , do_oasis    , LVL_IMPL, SCMD_OASIS_CEDIT },
+  { "changelog", "cha"     , POS_DEAD    , do_changelog, LVL_IMPL, 0 },
   { "check"    , "ch"      , POS_STANDING, do_not_here , 1, 0 },
   { "checkload", "checkl"  , POS_DEAD    , do_checkloadstatus, LVL_GOD, 0 },
   { "close"    , "cl"      , POS_SITTING , do_gen_door , 0, SCMD_CLOSE },
@@ -316,7 +318,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "file"     , "file"    , POS_SLEEPING, do_file     , LVL_GOD, 0 },
   { "flee"     , "fl"      , POS_FIGHTING, do_flee     , 1, 0 },
   { "follow"   , "fol"     , POS_RESTING , do_follow   , 0, 0 },
-  { "freeze"   , "freeze"  , POS_DEAD    , do_wizutil  , LVL_FREEZE, SCMD_FREEZE },
+  { "freeze"   , "freeze"  , POS_DEAD    , do_wizutil  , LVL_GRGOD, SCMD_FREEZE },
 
   { "get"      , "g"       , POS_RESTING , do_get      , 0, 0 },
   { "gecho"    , "gecho"   , POS_DEAD    , do_gecho    , LVL_GOD, 0 },
@@ -459,7 +461,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "taste"    , "tas"     , POS_RESTING , do_eat      , 0, SCMD_TASTE },
   { "teleport" , "tele"    , POS_DEAD    , do_teleport , LVL_GOD, 0 },
   { "tedit"    , "tedit"   , POS_DEAD    , do_tedit    , LVL_GOD, 0 },  /* XXX: Oasisify */
-  { "thaw"     , "thaw"    , POS_DEAD    , do_wizutil  , LVL_FREEZE, SCMD_THAW },
+  { "thaw"     , "thaw"    , POS_DEAD    , do_wizutil  , LVL_GRGOD, SCMD_THAW },
   { "title"    , "title"   , POS_DEAD    , do_title    , 0, 0 },
   { "time"     , "time"    , POS_DEAD    , do_time     , 0, 0 },
   { "toggle"   , "toggle"  , POS_DEAD    , do_toggle   , 0, 0 },

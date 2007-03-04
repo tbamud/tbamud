@@ -377,74 +377,74 @@ ACMD(do_reboot)
     if (file_to_string_alloc(GREETINGS_FILE, &GREETINGS) == 0)
       prune_crlf(GREETINGS);
     if (file_to_string_alloc(WIZLIST_FILE, &wizlist) < 0)
-      send_to_char(ch, "Can not read wizlist\r\n");
+      send_to_char(ch, "Cannot read wizlist\r\n");
     if (file_to_string_alloc(IMMLIST_FILE, &immlist) < 0)
-      send_to_char(ch, "Can not read immlist\r\n");
+      send_to_char(ch, "Cannot read immlist\r\n");
     if (file_to_string_alloc(NEWS_FILE, &news) < 0)
-      send_to_char(ch, "Can not read news\r\n");
+      send_to_char(ch, "Cannot read news\r\n");
     if (file_to_string_alloc(CREDITS_FILE, &credits) < 0)
-      send_to_char(ch, "Can not read credits\r\n");
+      send_to_char(ch, "Cannot read credits\r\n");
     if (file_to_string_alloc(MOTD_FILE, &motd) < 0)
-      send_to_char(ch, "Can not read motd\r\n");
+      send_to_char(ch, "Cannot read motd\r\n");
     if (file_to_string_alloc(IMOTD_FILE, &imotd) < 0)
-      send_to_char(ch, "Can not read imotd\r\n");
+      send_to_char(ch, "Cannot read imotd\r\n");
     if (file_to_string_alloc(HELP_PAGE_FILE, &help) < 0)
-      send_to_char(ch, "Can not read help front page\r\n");
+      send_to_char(ch, "Cannot read help front page\r\n");
     if (file_to_string_alloc(IHELP_PAGE_FILE, &ihelp) < 0)
-      send_to_char(ch, "Can not read help front page\r\n");
+      send_to_char(ch, "Cannot read help front page\r\n");
     if (file_to_string_alloc(INFO_FILE, &info) < 0)
-      send_to_char(ch, "Can not read info file\r\n");
+      send_to_char(ch, "Cannot read info file\r\n");
     if (file_to_string_alloc(POLICIES_FILE, &policies) < 0)
-      send_to_char(ch, "Can not read policies\r\n");
+      send_to_char(ch, "Cannot read policies\r\n");
     if (file_to_string_alloc(HANDBOOK_FILE, &handbook) < 0)
-      send_to_char(ch, "Can not read handbook\r\n");
+      send_to_char(ch, "Cannot read handbook\r\n");
     if (file_to_string_alloc(BACKGROUND_FILE, &background) < 0)
-      send_to_char(ch, "Can not read background\r\n");
+      send_to_char(ch, "Cannot read background\r\n");
     if (help_table) {
       free_help_table();
     index_boot(DB_BOOT_HLP);
     }
   } else if (!str_cmp(arg, "wizlist")) {
     if (file_to_string_alloc(WIZLIST_FILE, &wizlist) < 0)
-      send_to_char(ch, "Can not read wizlist\r\n");
+      send_to_char(ch, "Cannot read wizlist\r\n");
   } else if (!str_cmp(arg, "immlist")) {
     if (file_to_string_alloc(IMMLIST_FILE, &immlist) < 0)
-      send_to_char(ch, "Can not read immlist\r\n");
+      send_to_char(ch, "Cannot read immlist\r\n");
   } else if (!str_cmp(arg, "news")) {
     if (file_to_string_alloc(NEWS_FILE, &news) < 0)
-      send_to_char(ch, "Can not read news\r\n");
+      send_to_char(ch, "Cannot read news\r\n");
   } else if (!str_cmp(arg, "credits")) {
     if (file_to_string_alloc(CREDITS_FILE, &credits) < 0)
-      send_to_char(ch, "Can not read credits\r\n");
+      send_to_char(ch, "Cannot read credits\r\n");
   } else if (!str_cmp(arg, "motd")) {
     if (file_to_string_alloc(MOTD_FILE, &motd) < 0)
-      send_to_char(ch, "Can not read motd\r\n");
+      send_to_char(ch, "Cannot read motd\r\n");
   } else if (!str_cmp(arg, "imotd")) {
     if (file_to_string_alloc(IMOTD_FILE, &imotd) < 0)
-      send_to_char(ch, "Can not read imotd\r\n");
+      send_to_char(ch, "Cannot read imotd\r\n");
   } else if (!str_cmp(arg, "help")) {
     if (file_to_string_alloc(HELP_PAGE_FILE, &help) < 0)
-      send_to_char(ch, "Can not read help front page\r\n");
+      send_to_char(ch, "Cannot read help front page\r\n");
   } else if (!str_cmp(arg, "ihelp")) {
-      if (file_to_string_alloc(IHELP_PAGE_FILE, &ihelp) < 0)
-        send_to_char(ch, "Can not read help front page\r\n");
+    if (file_to_string_alloc(IHELP_PAGE_FILE, &ihelp) < 0)
+      send_to_char(ch, "Cannot read help front page\r\n");
   } else if (!str_cmp(arg, "info")) {
     if (file_to_string_alloc(INFO_FILE, &info) < 0)
-      send_to_char(ch, "Can not read info\r\n");
+      send_to_char(ch, "Cannot read info\r\n");
   } else if (!str_cmp(arg, "policy")) {
     if (file_to_string_alloc(POLICIES_FILE, &policies) < 0)
-      send_to_char(ch, "Can not read policy\r\n");
+      send_to_char(ch, "Cannot read policy\r\n");
   } else if (!str_cmp(arg, "handbook")) {
     if (file_to_string_alloc(HANDBOOK_FILE, &handbook) < 0)
-      send_to_char(ch, "Can not read handbook\r\n");
+      send_to_char(ch, "Cannot read handbook\r\n");
   } else if (!str_cmp(arg, "background")) {
     if (file_to_string_alloc(BACKGROUND_FILE, &background) < 0)
-      send_to_char(ch, "Can not read background\r\n");
+      send_to_char(ch, "Cannot read background\r\n");
   } else if (!str_cmp(arg, "greetings")) {
     if (file_to_string_alloc(GREETINGS_FILE, &GREETINGS) == 0)
       prune_crlf(GREETINGS);
     else
-      send_to_char(ch, "Can not read greetings.\r\n");
+      send_to_char(ch, "Cannot read greetings.\r\n");
   } else if (!str_cmp(arg, "xhelp")) {
     if (help_table) {
       free_help_table();

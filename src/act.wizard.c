@@ -2113,7 +2113,7 @@ ACMD(do_force)
     if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)))
       send_to_char(ch, "%s", CONFIG_NOPERSON);
     else if (!IS_NPC(vict) && GET_LEVEL(ch) < LVL_GOD)
-      send_to_char(ch, "You can not force players.\r\n");
+      send_to_char(ch, "Only level GOD and above can force players.\r\n");
     else if (!IS_NPC(vict) && GET_LEVEL(ch) <= GET_LEVEL(vict))
       send_to_char(ch, "No, no, no!\r\n");
     else {
@@ -2726,7 +2726,7 @@ ACMD(do_show)
    { "dex", 		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "drunk",		LVL_BUILDER, 	BOTH, 	MISC },
    { "exp", 		LVL_GOD, 	BOTH, 	NUMBER },
-   { "frozen",		LVL_FREEZE, 	PC,	BINARY },  /* 15 */
+   { "frozen",		LVL_GRGOD, 	PC,	BINARY },  /* 15 */
    { "gold",		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "height",		LVL_BUILDER,	BOTH,	NUMBER },
    { "hit", 		LVL_BUILDER, 	BOTH, 	NUMBER },
@@ -3029,7 +3029,7 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
       else if (is_abbrev(val_arg, "off"))
         GET_OLC_ZONE(vict) = NOWHERE;
       else if (!is_number(val_arg))  {
-        send_to_char(ch, "Value must be either 'aedit', 'hedit', 'off' or a zone number.\r\n");
+        send_to_char(ch, "Value must be a zone number, 'aedit', 'hedit', 'off' or 'all'.\r\n");
         return (0);
       } else
         GET_OLC_ZONE(vict) = atoi(val_arg);
@@ -4115,4 +4115,165 @@ ACMD(do_zpurge)
     send_to_char(ch, "Purged world.\r\n");
     mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s purged entire world.", GET_NAME(ch));
   }
+}
+
+ACMD(do_file)
+{
+  FILE *req_file;
+  int cur_line = 0, num_lines = 0, req_lines = 0, i, j, l;
+  char field[MAX_INPUT_LENGTH], value[MAX_INPUT_LENGTH], line[READ_SIZE];
+  char buf[MAX_STRING_LENGTH];
+  size_t len = 0, nlen;
+
+  struct file_struct {
+    char *cmd;
+    char level;
+    char *file;
+  } fields[] = {
+    { "bugs",           LVL_GOD,    "../lib/misc/bugs"},
+    { "typos",          LVL_GOD,    "../lib/misc/typos"},
+    { "ideas",          LVL_GOD,    "../lib/misc/ideas"},
+    { "xnames",         LVL_GOD,    "../lib/misc/xnames"},
+    { "levels",         LVL_GOD,    "../log/levels" },
+    { "rip",            LVL_GOD,    "../log/rip" },
+    { "players",        LVL_GOD,    "../log/newplayers" },
+    { "rentgone",       LVL_GOD,    "../log/rentgone" },
+    { "errors",         LVL_GOD,    "../log/errors" },
+    { "godcmds",        LVL_GOD,    "../log/godcmds" },
+    { "syslog",         LVL_GOD,    "../syslog" },
+    { "crash",          LVL_GOD,    "../syslog.CRASH" },
+    { "help",           LVL_GOD,    "../log/help" },
+    { "\n", 0, "\n" }
+  };
+
+   skip_spaces(&argument);
+
+   if (!*argument) {
+     send_to_char(ch, "USAGE: file <option> <num lines>\r\n\r\nFile options:\r\n");
+     for (j = 0, i = 0; fields[i].level; i++)
+       if (fields[i].level <= GET_LEVEL(ch))
+         send_to_char(ch, "%-15s%s\r\n", fields[i].cmd, fields[i].file);
+     return;
+   }
+
+   two_arguments(argument, field, value);
+
+   for (l = 0; *(fields[l].cmd) != '\n'; l++)
+     if (!strncmp(field, fields[l].cmd, strlen(field)))
+     break;
+
+   if(*(fields[l].cmd) == '\n') {
+     send_to_char(ch, "That is not a valid option!\r\n");
+     return;
+   }
+
+   if (GET_LEVEL(ch) < fields[l].level) {
+     send_to_char(ch, "You are not godly enough to view that file!\r\n");
+     return;
+   }
+
+   if(!*value)
+     req_lines = 15; /* default is the last 15 lines */
+   else
+     req_lines = atoi(value);
+
+   if (!(req_file=fopen(fields[l].file,"r"))) {
+     mudlog(BRF, LVL_IMPL, TRUE,
+            "SYSERR: Error opening file %s using 'file' command.",
+            fields[l].file);
+     return;
+   }
+
+   get_line(req_file, line);
+   while (!feof(req_file)) {
+     num_lines++;
+     get_line(req_file,line);
+   }
+   rewind(req_file);
+
+   req_lines = MIN(MIN(req_lines, num_lines),150);
+
+   len = snprintf(buf, sizeof(buf), "Last %d lines of %s:\r\n", req_lines, fields[l].file);
+
+   if (req_lines == num_lines)
+     len += snprintf(buf + len, sizeof(buf) - len, "Top of file.\r\n");
+   get_line(req_file,line);
+   while (!feof(req_file)) {
+     cur_line++;
+     if(cur_line > (num_lines - req_lines)) {
+       nlen = snprintf(buf + len, sizeof(buf) - len, "%s\r\n", line);
+       if (len + nlen >= sizeof(buf) || nlen < 0)
+         break;
+       len += nlen;
+     }
+     get_line(req_file,line);
+   }
+   fclose(req_file);
+
+   if (len >= sizeof(buf)) {
+     const char *overflow = "\r\n**OVERFLOW**\r\n";
+     strcpy(buf + sizeof(buf) - strlen(overflow) - 1, overflow); /* strcpy: OK */
+   }
+   page_string(ch->desc, buf, 1);
+}
+
+ACMD(do_changelog)
+{
+  time_t rawtime;      
+  char tmstr[MAX_INPUT_LENGTH], line[READ_SIZE], last_buf[READ_SIZE],
+      buf[READ_SIZE];   
+  FILE *fl, *new;
+ 
+  skip_spaces(&argument);
+ 
+  if (!*argument) {
+    send_to_char(ch, "Usage: changelog <change>\r\n");
+    return;
+  }
+ 
+  sprintf(buf, "%s.bak", CHANGE_LOG_FILE);
+  if (rename(CHANGE_LOG_FILE, buf)) {
+    mudlog(BRF, LVL_IMPL, TRUE,
+           "SYSERR: Error making backup changelog file (%s)", buf);
+    return;
+  }
+ 
+  if (!(fl = fopen(buf, "r"))) {
+    mudlog(BRF, LVL_IMPL, TRUE,
+           "SYSERR: Error opening backup changelog file (%s)", buf);
+    return;
+  }
+ 
+  if (!(new = fopen(CHANGE_LOG_FILE, "w"))) {
+    mudlog(BRF, LVL_IMPL, TRUE,
+           "SYSERR: Error opening new changelog file (%s)", CHANGE_LOG_FILE);
+    return;
+  }
+ 
+  while (get_line(fl, line)) {
+    if (*line != '[')
+      fprintf(new, "%s\n", line);
+    else {
+      strcpy(last_buf, line);
+      break;
+    }
+  }
+ 
+  rawtime = time(0);
+  strftime(tmstr, sizeof(tmstr), "%b %d %Y", localtime(&rawtime));
+ 
+  sprintf(buf, "[%s] - %s", tmstr, GET_NAME(ch));
+ 
+  fprintf(new, "%s\n", buf);
+  fprintf(new, "  %s\n", argument);
+ 
+  if (strcmp(buf, last_buf))
+    fprintf(new, "%s\n", line);
+ 
+  while (get_line(fl, line))
+    fprintf(new, "%s\n", line);
+ 
+  fclose(fl);
+  fclose(new);
+  send_to_char(ch, "Change added.\r\n");
 }

@@ -1,17 +1,12 @@
-/*
-** Zmalloc, a simple memory-allocation monitor.
+/** Zmalloc, a simple memory-allocation monitor.
 **
 ** Version 2. added detection for writing off the end or beginning
 ** of buffers, freeing the same block multiple times.  Also now use the
 ** env variable to set the name of a file to write output to.
 **
-**
 ** Copyright 1996,1998,1999,2000 Eric Murray, ericm@lne.com
 **
 ** You may make free use of this code but please give me credit.
-**
-**
-** Documentation: http://www.lne.com/ericm/zmalloc
 **
 ** $Id: zmalloc.c,v 1.3 2000/06/26 18:38:53 ericm Exp $
 ** $Log: zmalloc.c,v $
@@ -25,10 +20,7 @@
 ** use env variable to set output to stdin, stdout, file
 **
 ** Revision 1.1  1998/05/25 16:31:35  ericm
-** Initial revision
-**
-**
-*/
+** Initial revision */
 
 /* local functions */
 void zfree_special (int *, char *, int);

@@ -8,13 +8,10 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 ************************************************************************ */
 
-/***
- * The entire shop rewrite for Circle 3.0 was done by Jeff Fink.  Thanks Jeff!
- ***/
+/* The entire shop rewrite for Circle 3.0 was done by Jeff Fink.  Thanks Jeff! */
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "comm.h"
 #include "handler.h"
@@ -81,7 +78,6 @@ int end_read_list(struct shop_buy_data *list, int len, int error);
 void read_line(FILE *shop_f, const char *string, void *data);
 void destroy_shops(void);
 
-
 /* config arrays */
 const char *operator_str[] = {
         "[({",
@@ -102,7 +98,6 @@ const char *trade_letters[] = {
         "Warrior",
         "\n"
 };
-
 
 const char *shop_bits[] = {
         "WILL_FIGHT",
@@ -144,7 +139,6 @@ int is_ok_char(struct char_data *keeper, struct char_data *ch, int shop_nr)
   return (TRUE);
 }
 
-
 int is_open(struct char_data *keeper, int shop_nr, int msg)
 {
   char buf[MAX_INPUT_LENGTH];
@@ -165,7 +159,6 @@ int is_open(struct char_data *keeper, int shop_nr, int msg)
   return (FALSE);
 }
 
-
 int is_ok(struct char_data *keeper, struct char_data *ch, int shop_nr)
 {
   if (is_open(keeper, shop_nr, TRUE))
@@ -174,12 +167,10 @@ int is_ok(struct char_data *keeper, struct char_data *ch, int shop_nr)
     return (FALSE);
 }
 
-
 void push(struct stack_data *stack, int pushval)
 {
   S_DATA(stack, S_LEN(stack)++) = pushval;
 }
-
 
 int top(struct stack_data *stack)
 {
@@ -188,7 +179,6 @@ int top(struct stack_data *stack)
   else
     return (-1);
 }
-
 
 int pop(struct stack_data *stack)
 {
@@ -199,7 +189,6 @@ int pop(struct stack_data *stack)
     return (0);
   }
 }
-
 
 void evaluate_operation(struct stack_data *ops, struct stack_data *vals)
 {
@@ -219,7 +208,6 @@ void evaluate_operation(struct stack_data *ops, struct stack_data *vals)
   }
 }
 
-
 int find_oper_num(char token)
 {
   int oindex;
@@ -229,7 +217,6 @@ int find_oper_num(char token)
       return (oindex);
   return (NOTHING);
 }
-
 
 int evaluate_expression(struct obj_data *obj, char *expr)
 {
@@ -285,7 +272,6 @@ int evaluate_expression(struct obj_data *obj, char *expr)
   return (temp);
 }
 
-
 int trade_with(struct obj_data *item, int shop_nr)
 {
   int counter;
@@ -307,7 +293,6 @@ int trade_with(struct obj_data *item, int shop_nr)
     }
   return (OBJECT_NOTOK);
 }
-
 
 int same_obj(struct obj_data *obj1, struct obj_data *obj2)
 {
@@ -333,7 +318,6 @@ int same_obj(struct obj_data *obj1, struct obj_data *obj2)
   return (TRUE);
 }
 
-
 int shop_producing(struct obj_data *item, int shop_nr)
 {
   int counter;
@@ -347,18 +331,16 @@ int shop_producing(struct obj_data *item, int shop_nr)
   return (FALSE);
 }
 
-
 int transaction_amt(char *arg)
 {
   char buf[MAX_INPUT_LENGTH];
 
   char *buywhat;
 
-  /*
-   * If we have two arguments, it means 'buy 5 3', or buy 5 of #3.
-   * We don't do that if we only have one argument, like 'buy 5', buy #5.
-   * Code from Andrey Fidrya <andrey@ALEX-UA.COM>
-   */
+  /* If we have two arguments, it means 'buy 5 3', or buy 5 of #3.
+     We don't do that if we only have one argument, like 'buy 5', buy #5.
+     Code from Andrey Fidrya <andrey@ALEX-UA.COM> */
+
   buywhat = one_argument(arg, buf);
   if (*buywhat && *buf && is_number(buf)) {
     strcpy(arg, arg + strlen(buf) + 1);	/* strcpy: OK (always smaller) */
@@ -366,7 +348,6 @@ int transaction_amt(char *arg)
   }
   return (1);
 }
-
 
 char *times_message(struct obj_data *obj, char *name, int num)
 {
@@ -390,9 +371,7 @@ char *times_message(struct obj_data *obj, char *name, int num)
   return (buf);
 }
 
-
-struct obj_data *get_slide_obj_vis(struct char_data *ch, char *name,
-				            struct obj_data *list)
+struct obj_data *get_slide_obj_vis(struct char_data *ch, char *name, struct obj_data *list)
 {
   struct obj_data *i, *last_match = NULL;
   int j, number;
@@ -415,9 +394,7 @@ struct obj_data *get_slide_obj_vis(struct char_data *ch, char *name,
   return (NULL);
 }
 
-
-struct obj_data *get_hash_obj_vis(struct char_data *ch, char *name,
-				           struct obj_data *list)
+struct obj_data *get_hash_obj_vis(struct char_data *ch, char *name, struct obj_data *list)
 {
   struct obj_data *loop, *last_obj = NULL;
   int qindex;
@@ -439,9 +416,7 @@ struct obj_data *get_hash_obj_vis(struct char_data *ch, char *name,
   return (NULL);
 }
 
-
-struct obj_data *get_purchase_obj(struct char_data *ch, char *arg,
-		            struct char_data *keeper, int shop_nr, int msg)
+struct obj_data *get_purchase_obj(struct char_data *ch, char *arg, struct char_data *keeper, int shop_nr, int msg)
 {
   char name[MAX_INPUT_LENGTH];
   struct obj_data *obj;
@@ -469,38 +444,30 @@ struct obj_data *get_purchase_obj(struct char_data *ch, char *arg,
   return (obj);
 }
 
-
-/*
- * Shop purchase adjustment, based on charisma-difference from buyer to keeper.
- *
- * for i in `seq 15 -15`; do printf " * %3d: %6.4f\n" $i \
- * `echo "scale=4; 1+$i/70" | bc`; done
- *
- *  Shopkeeper higher charisma (markup)
- *  ^  15: 1.2142  14: 1.2000  13: 1.1857  12: 1.1714  11: 1.1571
- *  |  10: 1.1428   9: 1.1285   8: 1.1142   7: 1.1000   6: 1.0857
- *  |   5: 1.0714   4: 1.0571   3: 1.0428   2: 1.0285   1: 1.0142
- *  +   0: 1.0000
- *  |  -1: 0.9858  -2: 0.9715  -3: 0.9572  -4: 0.9429  -5: 0.9286
- *  |  -6: 0.9143  -7: 0.9000  -8: 0.8858  -9: 0.8715 -10: 0.8572
- *  v -11: 0.8429 -12: 0.8286 -13: 0.8143 -14: 0.8000 -15: 0.7858
- *  Player higher charisma (discount)
- *
- * Most mobiles have 11 charisma so an 18 charisma player would get a 10%
- * discount beyond the basic price.  That assumes they put a lot of points
- * into charisma, because on the flip side they'd get 11% inflation by
- * having a 3.
- */
+/* Shop purchase adjustment, based on charisma-difference from buyer to keeper.
+   for i in `seq 15 -15`; do printf " * %3d: %6.4f\n" $i \
+   `echo "scale=4; 1+$i/70" | bc`; done
+   Shopkeeper higher charisma (markup)
+   ^  15: 1.2142  14: 1.2000  13: 1.1857  12: 1.1714  11: 1.1571
+   |  10: 1.1428   9: 1.1285   8: 1.1142   7: 1.1000   6: 1.0857
+   |   5: 1.0714   4: 1.0571   3: 1.0428   2: 1.0285   1: 1.0142
+   +   0: 1.0000
+   |  -1: 0.9858  -2: 0.9715  -3: 0.9572  -4: 0.9429  -5: 0.9286
+   |  -6: 0.9143  -7: 0.9000  -8: 0.8858  -9: 0.8715 -10: 0.8572
+   v -11: 0.8429 -12: 0.8286 -13: 0.8143 -14: 0.8000 -15: 0.7858
+   Player higher charisma (discount)
+   Most mobiles have 11 charisma so an 18 charisma player would get a 10%
+   discount beyond the basic price.  That assumes they put a lot of points
+   into charisma, because on the flip side they'd get 11% inflation by
+   having a 3. */
 int buy_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, struct char_data *buyer)
 {
   return (int) (GET_OBJ_COST(obj) * SHOP_BUYPROFIT(shop_nr)
 	* (1 + (GET_CHA(keeper) - GET_CHA(buyer)) / (float)70));
 }
 
-/*
- * When the shopkeeper is buying, we reverse the discount. Also make sure
- * we don't buy for more than we sell for, to prevent infinite money-making.
- */
+/* When the shopkeeper is buying, we reverse the discount. Also make sure
+   we don't buy for more than we sell for, to prevent infinite money-making. */
 int sell_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, struct char_data *seller)
 {
   float sell_cost_modifier = SHOP_SELLPROFIT(shop_nr) * (1 - (GET_CHA(keeper) - GET_CHA(seller)) / (float)70);
@@ -511,7 +478,6 @@ int sell_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, stru
 
   return (int) (GET_OBJ_COST(obj) * sell_cost_modifier);
 }
-
 
 void shopping_buy(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr)
 {
@@ -629,7 +595,6 @@ void shopping_buy(char *arg, struct char_data *ch, struct char_data *keeper, int
     }
 }
 
-
 struct obj_data *get_selling_obj(struct char_data *ch, char *name, struct char_data *keeper, int shop_nr, int msg)
 {
   char buf[MAX_INPUT_LENGTH];
@@ -670,17 +635,13 @@ struct obj_data *get_selling_obj(struct char_data *ch, char *name, struct char_d
   return (NULL);
 }
 
-
-struct obj_data *slide_obj(struct obj_data *obj, struct char_data *keeper,
-			            int shop_nr)
-/*
-   This function is a slight hack!  To make sure that duplicate items are
-   only listed once on the "list", this function groups "identical"
-   objects together on the shopkeeper's inventory list.  The hack involves
-   knowing how the list is put together, and manipulating the order of
-   the objects on the list.  (But since most of DIKU is not encapsulated,
-   and information hiding is almost never used, it isn't that big a deal) -JF
-*/
+/* This function is a slight hack!  To make sure that duplicate items are
+ * only listed once on the "list", this function groups "identical"
+ * objects together on the shopkeeper's inventory list.  The hack involves
+ * knowing how the list is put together, and manipulating the order of
+ * the objects on the list.  (But since most of DIKU is not encapsulated,
+ * and information hiding is almost never used, it isn't that big a deal) -JF */
+struct obj_data *slide_obj(struct obj_data *obj, struct char_data *keeper, int shop_nr)
 {
   struct obj_data *loop;
   int temp;
@@ -710,7 +671,6 @@ struct obj_data *slide_obj(struct obj_data *obj, struct char_data *keeper,
   return (obj);
 }
 
-
 void sort_keeper_objs(struct char_data *keeper, int shop_nr)
 {
   struct obj_data *list = NULL, *temp;
@@ -733,7 +693,6 @@ void sort_keeper_objs(struct char_data *keeper, int shop_nr)
       slide_obj(temp, keeper, shop_nr);
   }
 }
-
 
 void shopping_sell(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr)
 {
@@ -812,7 +771,6 @@ void shopping_sell(char *arg, struct char_data *ch, struct char_data *keeper, in
   }
 }
 
-
 void shopping_value(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr)
 {
   char buf[MAX_STRING_LENGTH], name[MAX_INPUT_LENGTH];
@@ -833,7 +791,6 @@ void shopping_value(char *arg, struct char_data *ch, struct char_data *keeper, i
   snprintf(buf, sizeof(buf), "%s I'll give you %d gold coins for that!", GET_NAME(ch), sell_price(obj, shop_nr, keeper, ch));
   do_tell(keeper, buf, cmd_tell, 0);
 }
-
 
 char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr, struct char_data *keeper, struct char_data *ch)
 {
@@ -866,11 +823,11 @@ char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr, struct
   }
   CAP(itemname);
 
-  snprintf(result, sizeof(result), " %2d)  %9s   %-48s %6d\r\n",
-	aindex, quantity, itemname, buy_price(obj, shop_nr, keeper, ch));
+  snprintf(result, sizeof(result), " %2d)  %9s   %-*s %6d\r\n", aindex, quantity, 
+      48 - count_color_chars(itemname), itemname, buy_price(obj, shop_nr, keeper, ch));
+
   return (result);
 }
-
 
 void shopping_list(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr)
 {
@@ -924,7 +881,6 @@ void shopping_list(char *arg, struct char_data *ch, struct char_data *keeper, in
   }
 }
 
-
 int ok_shop_room(int shop_nr, room_vnum room)
 {
   int mindex;
@@ -934,7 +890,6 @@ int ok_shop_room(int shop_nr, room_vnum room)
       return (TRUE);
   return (FALSE);
 }
-
 
 SPECIAL(shop_keeper)
 {
@@ -989,7 +944,6 @@ SPECIAL(shop_keeper)
   return (FALSE);
 }
 
-
 int ok_damage_shopkeeper(struct char_data *ch, struct char_data *victim)
 {
   int sindex;
@@ -1015,7 +969,6 @@ int ok_damage_shopkeeper(struct char_data *ch, struct char_data *victim)
   return (TRUE);
 }
 
-
 /* val == obj_vnum and obj_rnum (?) */
 int add_to_list(struct shop_buy_data *list, int type, int *len, int *val)
 {
@@ -1035,7 +988,6 @@ int add_to_list(struct shop_buy_data *list, int type, int *len, int *val)
   return (FALSE);
 }
 
-
 int end_read_list(struct shop_buy_data *list, int len, int error)
 {
   if (error)
@@ -1044,7 +996,6 @@ int end_read_list(struct shop_buy_data *list, int len, int error)
   BUY_TYPE(list[len++]) = NOTHING;
   return (len);
 }
-
 
 void read_line(FILE *shop_f, const char *string, void *data)
 {
@@ -1055,7 +1006,6 @@ void read_line(FILE *shop_f, const char *string, void *data)
     exit(1);
   }
 }
-
 
 int read_list(FILE *shop_f, struct shop_buy_data *list, int new_format,
 	          int max, int type)
@@ -1076,7 +1026,6 @@ int read_list(FILE *shop_f, struct shop_buy_data *list, int new_format,
     }
   return (end_read_list(list, len, error));
 }
-
 
 /* END_OF inefficient. */
 int read_type_list(FILE *shop_f, struct shop_buy_data *list,
@@ -1125,7 +1074,6 @@ int read_type_list(FILE *shop_f, struct shop_buy_data *list,
   return (end_read_list(list, len, error));
 }
 
-
 char *read_shop_message(int mnum, room_vnum shr, FILE *shop_f, const char *why)
 {
   int cht, ss = 0, ds = 0, err = 0;
@@ -1163,7 +1111,6 @@ char *read_shop_message(int mnum, room_vnum shr, FILE *shop_f, const char *why)
   }
   return (tbuf);
 }
-
 
 void boot_the_shops(FILE *shop_f, char *filename, int rec_count)
 {
@@ -1236,7 +1183,6 @@ void boot_the_shops(FILE *shop_f, char *filename, int rec_count)
   }
 }
 
-
 void assign_the_shopkeepers(void)
 {
   int cindex;
@@ -1265,7 +1211,6 @@ void assign_the_shopkeepers(void)
 
   }
 }
-
 
 char *customer_string(int shop_nr, int detailed)
 {
@@ -1299,7 +1244,6 @@ char *customer_string(int shop_nr, int detailed)
   return (buf);
 }
 
-
 /* END_OF inefficient */
 void list_all_shops(struct char_data *ch)
 {
@@ -1329,16 +1273,15 @@ void list_all_shops(struct char_data *ch)
     else
       sprintf(buf1, "%6d", mob_index[SHOP_KEEPER(shop_nr)].vnum);	/* sprintf: OK (for 'buf1 >= 11', 32-bit int) */
 
-    len += snprintf(buf + len, sizeof(buf) - len,
-               "%3d   %6d   %6d    %s   %3.2f   %3.2f    %s\r\n",
-	       shop_nr + 1, SHOP_NUM(shop_nr), SHOP_ROOM(shop_nr, 0), buf1,
-	       SHOP_SELLPROFIT(shop_nr), SHOP_BUYPROFIT(shop_nr),
-	       customer_string(shop_nr, FALSE));
+    len += snprintf(buf + len, sizeof(buf) - len,  
+        "%3d   %6d   %6d    %s   %3.2f   %3.2f    %s\r\n",
+        shop_nr + 1, SHOP_NUM(shop_nr), SHOP_ROOM(shop_nr, 0), buf1,
+        SHOP_SELLPROFIT(shop_nr), SHOP_BUYPROFIT(shop_nr),
+        customer_string(shop_nr, FALSE));
   }
 
   page_string(ch->desc, buf, TRUE);
 }
-
 
 void list_detailed_shop(struct char_data *ch, int shop_nr)
 {
@@ -1347,7 +1290,6 @@ void list_detailed_shop(struct char_data *ch, int shop_nr)
   char *ptrsave;
 
   send_to_char(ch, "Vnum:       [%5d], Rnum: [%5d]\r\n", SHOP_NUM(shop_nr), shop_nr + 1);
-
 
   send_to_char(ch, "Rooms:      ");
   column = 12;	/* ^^^ strlen ^^^ */
@@ -1392,9 +1334,7 @@ void list_detailed_shop(struct char_data *ch, int shop_nr)
   } else
     send_to_char(ch, "<NONE>\r\n");
 
-
   send_to_char(ch, "Customers:  %s\r\n", (ptrsave = customer_string(shop_nr, TRUE)) ? ptrsave : "None");
-
 
   send_to_char(ch, "Produces:   ");
   column = 12;	/* ^^^ strlen ^^^ */
@@ -1458,7 +1398,6 @@ void list_detailed_shop(struct char_data *ch, int shop_nr)
 	SHOP_SELLPROFIT(shop_nr), SHOP_BUYPROFIT(shop_nr), SHOP_OPEN1(shop_nr),
 	SHOP_CLOSE1(shop_nr), SHOP_OPEN2(shop_nr), SHOP_CLOSE2(shop_nr));
 
-
   /* Need a local buffer. */
   {
     char buf1[128];
@@ -1466,7 +1405,6 @@ void list_detailed_shop(struct char_data *ch, int shop_nr)
     send_to_char(ch, "Bits:       %s\r\n", buf1);
   }
 }
-
 
 void show_shops(struct char_data *ch, char *arg)
 {
@@ -1496,7 +1434,6 @@ void show_shops(struct char_data *ch, char *arg)
     list_detailed_shop(ch, shop_nr);
   }
 }
-
 
 void destroy_shops(void)
 {
@@ -1537,7 +1474,6 @@ void destroy_shops(void)
   shop_index = NULL;
   top_shop = -1;
 }
-
 
 int find_shop(int vnum)
 {

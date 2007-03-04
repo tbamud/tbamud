@@ -7,21 +7,16 @@
 
 #define _OASISOLC	0x206   /* 2.0.6 */
 
-/*
- * Used to determine what version of OasisOLC is installed.
- *
- * Ex: #if _OASISOLC >= OASIS_VERSION(2,0,0)
- */
+/* Used to determine what version of OasisOLC is installed.
+   Ex: #if _OASISOLC >= OASIS_VERSION(2,0,0) */
 #define OASIS_VERSION(x,y,z)	(((x) << 8 | (y) << 4 | (z))
 
 #define AEDIT_PERMISSION  999  /* arbitrary number higher than max zone vnum*/
 #define HEDIT_PERMISSION  888  /* arbitrary number higher then max zone vnum*/
 #define ALL_PERMISSION    666  /* arbitrary number higher then max zone vnum*/
 
-/*
- * Macros, defines, structs and globals for the OLC suite.  You will need
- * to adjust these numbers if you ever add more.
- */
+/* Macros, defines, structs and globals for the OLC suite.  You will need
+   to adjust these numbers if you ever add more. */
 #define NUM_ROOM_FLAGS 		16
 #define NUM_ROOM_SECTORS	10
 
@@ -41,11 +36,7 @@
 #define NUM_SHOP_FLAGS 		3
 #define NUM_TRADERS 		7
 
-/* -------------------------------------------------------------------------- */
-
-/*
- * Limit information.
- */
+/* Limit information. */
 #define MAX_ROOM_NAME	75
 #define MAX_MOB_NAME	50
 #define MAX_OBJ_NAME	50
@@ -68,17 +59,16 @@
 
 #define MAX_MOB_GOLD         100000
 #define MAX_MOB_EXP          150000
+
 /* this is one mud year.. */
 #define MAX_OBJ_TIMER       1071000
 
 
 /* this defines how much memory is alloacted for 'bit strings' when
- * saving in OLC. Remember to change it if you go for longer bitvectors.
- */
+   saving in OLC. Remember to change it if you go for longer bitvectors. */
 #define BIT_STRING_LENGTH 33
-/*
- * The data types for miscellaneous functions.
- */
+
+/* The data types for miscellaneous functions. */
 #define OASIS_WLD	0
 #define OASIS_MOB	1
 #define OASIS_OBJ	2
@@ -86,22 +76,14 @@
 #define OASIS_EXI	4
 #define OASIS_CFG	5
 
-/*
- * Utilities exported from olc.c.
- *   -- Umm, shouldn't this say 'from oasis.c' now???  * Mythran
- */
+/* Utilities exported from oasis.c. */
 void cleanup_olc(struct descriptor_data *d, byte cleanup_type);
 void get_char_colors(struct char_data *ch);
 void split_argument(char *argument, char *tag);
+void send_cannot_edit(struct char_data *ch, zone_vnum zone);
 
-/*
- * OLC structures.
- */
-/* -------------------------------------------------------------------------- */
-
-/*
- * The following defines used to be in config.c.
- */
+/* OLC structures. */
+/* The following defines used to be in config.c. */
 #define NO	0
 #define YES	1
 
@@ -127,14 +109,10 @@ struct oasis_olc_data {
   struct help_index_element*help;   /* Hedit uses this */
 };
 
-/*
- * Exported globals.
- */
+/* Exported globals. */
 extern const char *nrm, *grn, *cyn, *yel;
 
-/*
- * Descriptor access macros.
- */
+/* Descriptor access macros. */
 #define OLC(d)		((d)->olc)
 #define OLC_MODE(d) 	(OLC(d)->mode)		/* Parse input mode.	*/
 #define OLC_NUM(d) 	(OLC(d)->number)	/* Room/Obj VNUM.	*/
@@ -154,14 +132,10 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define OLC_ACTION(d)   (OLC(d)->action)        /* Action structure     */
 #define OLC_HELP(d)     (OLC(d)->help)          /* Hedit structure      */
 
-/*
- * Other macros.
- */
+/* Other macros. */
 #define OLC_EXIT(d)		(OLC_ROOM(d)->dir_option[OLC_VAL(d)])
 
-/*
- * Cleanup types.
- */
+/* Cleanup types. */
 #define CLEANUP_ALL		1	/* Free the whole lot.			*/
 #define CLEANUP_STRUCTS 	2	/* Don't free strings.			*/
 #define CLEANUP_CONFIG          3       /* Used just to send proper message. 	*/
@@ -191,9 +165,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define AEDIT_OBJ_CHAR_FOUND           21
 #define AEDIT_OBJ_OTHERS_FOUND         22
 
-/*
- * Submodes of OEDIT connectedness.
- */
+/* Submodes of OEDIT connectedness. */
 #define OEDIT_MAIN_MENU              	1
 #define OEDIT_KEYWORD            	2
 #define OEDIT_SHORTDESC              	3
@@ -222,9 +194,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define OEDIT_PERM			26
 #define OEDIT_DELETE                   27
 
-/*
- * Submodes of REDIT connectedness.
- */
+/* Submodes of REDIT connectedness. */
 #define REDIT_MAIN_MENU 		1
 #define REDIT_NAME 			2
 #define REDIT_DESC 			3
@@ -243,9 +213,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define REDIT_EXTRADESC_DESCRIPTION 	16
 #define REDIT_DELETE			17
 
-/*
- * Submodes of ZEDIT connectedness.
- */
+/* Submodes of ZEDIT connectedness. */
 #define ZEDIT_MAIN_MENU              	0
 #define ZEDIT_DELETE_ENTRY		1
 #define ZEDIT_NEW_ENTRY			2
@@ -265,9 +233,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define ZEDIT_SARG1			20
 #define ZEDIT_SARG2			21
 
-/*
- * Submodes of MEDIT connectedness.
- */
+/* Submodes of MEDIT connectedness. */
 #define MEDIT_MAIN_MENU              	0
 #define MEDIT_KEYWORD			1
 #define MEDIT_S_DESC			2
@@ -276,9 +242,8 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define MEDIT_NPC_FLAGS			5
 #define MEDIT_AFF_FLAGS			6
 #define MEDIT_CONFIRM_SAVESTRING	7
-/*
- * Numerical responses.
- */
+
+/* Numerical responses. */
 #define MEDIT_NUMERICAL_RESPONSE	10
 #define MEDIT_SEX			11
 #define MEDIT_HITROLL			12
@@ -298,9 +263,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define MEDIT_ALIGNMENT			26
 #define MEDIT_DELETE                    27
 
-/*
- * Submodes of SEDIT connectedness.
- */
+/* Submodes of SEDIT connectedness. */
 #define SEDIT_MAIN_MENU              	0
 #define SEDIT_CONFIRM_SAVESTRING	1
 #define SEDIT_NOITEM1			2
@@ -314,9 +277,8 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define SEDIT_ROOMS_MENU		12
 #define SEDIT_NAMELIST_MENU		13
 #define SEDIT_NAMELIST			14
-/*
- * Numerical responses.
- */
+
+/* Numerical responses. */
 #define SEDIT_NUMERICAL_RESPONSE	20
 #define SEDIT_OPEN1			21
 #define SEDIT_OPEN2			22
@@ -334,9 +296,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define SEDIT_SHOP_FLAGS		35
 #define SEDIT_NOTRADE			36
 
-/*
- * Submodes of CEDIT connectedness.
- */
+/* Submodes of CEDIT connectedness. */
 #define CEDIT_MAIN_MENU			0
 #define CEDIT_CONFIRM_SAVESTRING	1
 #define CEDIT_GAME_OPTIONS_MENU		2
@@ -355,9 +315,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define CEDIT_WELC_MESSG		15
 #define CEDIT_START_MESSG		16
 
-/*
- * Numerical responses.
- */
+/* Numerical responses. */
 #define CEDIT_NUMERICAL_RESPONSE	20
 #define CEDIT_LEVEL_CAN_SHOUT		21
 #define CEDIT_HOLLER_MOVE_COST		22
@@ -402,14 +360,9 @@ extern const char *nrm, *grn, *cyn, *yel;
 
 #define HEDIT_LIST                     0  /* Define True, for logging help - FUTURE USE */
 
-
-/* -------------------------------------------------------------------------- */
-
 #ifndef __GENOLC_C__
 
-/*
- * Prototypes to keep.
- */
+/* Prototypes to keep. */
 #ifndef ACMD
 #define ACMD(name)  \
    void name(struct char_data *ch, char *argument, int cmd, int subcmd)

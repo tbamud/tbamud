@@ -211,10 +211,7 @@ void	update_pos(struct char_data *victim);
 #define ROOM_FLAGS(loc)	(world[(loc)].room_flags)
 #define SPELL_ROUTINES(spl)	(spell_info[spl].routines)
 
-/*
- * See http://www.circlemud.org/~greerga/todo/todo.009 to eliminate MOB_ISNPC.
- * IS_MOB() acts as a VALID_MOB_RNUM()-like function.
- */
+/* IS_MOB() acts as a VALID_MOB_RNUM()-like function.*/
 #define IS_NPC(ch)	(IS_SET(MOB_FLAGS(ch), MOB_ISNPC))
 #define IS_MOB(ch)	(IS_NPC(ch) && GET_MOB_RNUM(ch) <= top_of_mobt && \
 				GET_MOB_RNUM(ch) != NOBODY)

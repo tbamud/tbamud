@@ -17,11 +17,7 @@
 #include "oasis.h"
 #include "dg_scripts.h"
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Nasty internal macros to clean up the code.
- */
+/* Nasty internal macros to clean up the code. */
 #define MYCMD		(OLC_ZONE(d)->cmd[subcmd])
 #define OLC_CMD(d)	(OLC_ZONE(d)->cmd[OLC_VAL(d)])
 #define MAX_DUPLICATES 100
@@ -38,8 +34,6 @@ void zedit_disp_arg1(struct descriptor_data *d);
 void zedit_disp_arg2(struct descriptor_data *d);
 void zedit_disp_arg3(struct descriptor_data *d);
 
-/*-------------------------------------------------------------------*/
-
 ACMD(do_oasis_zedit)
 {
   int number = NOWHERE, save = 0, real_num;
@@ -48,14 +42,10 @@ ACMD(do_oasis_zedit)
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
-  /****************************************************************************/
-  /** Parse any arguments.                                                   **/
-  /****************************************************************************/
+  /* Parse any arguments. */
   buf3 = two_arguments(argument, buf1, buf2);
 
-  /****************************************************************************/
-  /** If no argument was given, use the zone the builder is standing in.     **/
-  /****************************************************************************/
+  /* If no argument was given, use the zone the builder is standing in. */
   if (!*buf1)
     number = GET_ROOM_VNUM(IN_ROOM(ch));
   else if (!isdigit(*buf1)) {
@@ -94,15 +84,11 @@ ACMD(do_oasis_zedit)
         bottom = atoi(sbot);
         top = atoi(stop);
 
-        /**********************************************************************/
-        /** Setup the new zone (displays the menu to the builder).           **/
-        /**********************************************************************/
+        /* Setup the new zone (displays the menu to the builder). */
         zedit_new_zone(ch, number, bottom, top);
       }
 
-      /************************************************************************/
-      /** Done now, exit the function.                                       **/
-      /************************************************************************/
+      /* Done now, exit the function. */
       return;
 
     } else {
@@ -111,15 +97,11 @@ ACMD(do_oasis_zedit)
     }
   }
 
-  /****************************************************************************/
-  /** If a numeric argumentwas given, retrieve it.                           **/
-  /****************************************************************************/
+  /* If a numeric argumentwas given, retrieve it. */
   if (number == NOWHERE)
     number = atoi(buf1);
 
-  /****************************************************************************/
-  /** Check that nobody is currently editing this zone.                      **/
-  /****************************************************************************/
+  /* Check that nobody is currently editing this zone. */
   for (d = descriptor_list; d; d = d->next) {
     if (STATE(d) == CON_ZEDIT) {
       if (d->olc && OLC_NUM(d) == number) {
@@ -130,14 +112,10 @@ ACMD(do_oasis_zedit)
     }
   }
 
-  /****************************************************************************/
-  /** Store the builder's descriptor in d.                                   **/
-  /****************************************************************************/
+  /* Store the builder's descriptor in d. */
   d = ch->desc;
 
-  /****************************************************************************/
-  /** Give the builder's descriptor an OLC structure.                        **/
-  /****************************************************************************/
+  /* Give the builder's descriptor an OLC structure. */
   if (d->olc) {
     mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis_zedit: Player already "
       "had olc structure.");
@@ -146,36 +124,28 @@ ACMD(do_oasis_zedit)
 
   CREATE(d->olc, struct oasis_olc_data, 1);
 
-  /****************************************************************************/
-  /** Find the zone.                                                         **/
-  /****************************************************************************/
+  /* Find the zone. */
   OLC_ZNUM(d) = save ? real_zone(number) : real_zone_by_thing(number);
   if (OLC_ZNUM(d) == NOWHERE) {
     send_to_char(ch, "Sorry, there is no zone for that number!\r\n");
 
-    /**************************************************************************/
-    /** Free the descriptor's OLC structure.                                 **/
-    /**************************************************************************/
+    /* Free the descriptor's OLC structure. */
     free(d->olc);
     d->olc = NULL;
     return;
   }
 
-  /****************************************************************************/
-  /** Everyone but IMPLs can only edit zones they have been assigned.        **/
-  /****************************************************************************/
+  /* Everyone but IMPLs can only edit zones they have been assigned. */
   if (!can_edit_zone(ch, OLC_ZNUM(d))) {
-send_to_char(ch, " You do not have permission to edit zone %d. Try zone %d.\r\n", zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
-mudlog(BRF, LVL_IMPL, TRUE, "OLC: %s tried to edit zone %d allowed zone %d",
-      GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
+    send_cannot_edit(ch, zone_table[OLC_ZNUM(d)].number);
+    mudlog(BRF, LVL_IMPL, TRUE, "OLC: %s tried to edit zone %d allowed zone %d",
+        GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
     free(d->olc);
     d->olc = NULL;
     return;
   }
 
-  /****************************************************************************/
-  /** If we need to save, then save the zone.                                **/
-  /****************************************************************************/
+  /* If we need to save, then save the zone. */
   if (save) {
     send_to_char(ch, "Saving all zone information for zone %d.\r\n",
       zone_table[OLC_ZNUM(d)].number);
@@ -183,14 +153,10 @@ mudlog(BRF, LVL_IMPL, TRUE, "OLC: %s tried to edit zone %d allowed zone %d",
       "OLC: %s saves zone information for zone %d.", GET_NAME(ch),
       zone_table[OLC_ZNUM(d)].number);
 
-    /**************************************************************************/
-    /** Save the zone information to the zone file.                          **/
-    /**************************************************************************/
+    /* Save the zone information to the zone file. */
     save_zone(OLC_ZNUM(d));
 
-    /**************************************************************************/
-    /** Free the descriptor's OLC structure.                                 **/
-    /**************************************************************************/
+    /* Free the descriptor's OLC structure. */
     free(d->olc);
     d->olc = NULL;
     return;
@@ -201,9 +167,7 @@ mudlog(BRF, LVL_IMPL, TRUE, "OLC: %s tried to edit zone %d allowed zone %d",
   if ((real_num = real_room(number)) == NOWHERE) {
     write_to_output(d, "That room does not exist.\r\n");
 
-    /**************************************************************************/
-    /** Free the descriptor's OLC structure.                                 **/
-    /**************************************************************************/
+    /* Free the descriptor's OLC structure. */
     free(d->olc);
     d->olc = NULL;
     return;
@@ -224,14 +188,10 @@ void zedit_setup(struct descriptor_data *d, int room_num)
   struct zone_data *zone;
   int subcmd = 0, count = 0, cmd_room = NOWHERE;
 
-  /*
-   * Allocate one scratch zone structure.
-   */
+  /* Allocate one scratch zone structure. */
   CREATE(zone, struct zone_data, 1);
 
-  /*
-   * Copy all the zone header information over.
-   */
+  /* Copy all the zone header information over. */
   zone->name = strdup(zone_table[OLC_ZNUM(d)].name);
   if (zone_table[OLC_ZNUM(d)].builders)
     zone->builders = strdup(zone_table[OLC_ZNUM(d)].builders);
@@ -239,21 +199,15 @@ void zedit_setup(struct descriptor_data *d, int room_num)
   zone->bot = zone_table[OLC_ZNUM(d)].bot;
   zone->top = zone_table[OLC_ZNUM(d)].top;
   zone->reset_mode = zone_table[OLC_ZNUM(d)].reset_mode;
-  /*
-   * The remaining fields are used as a 'has been modified' flag
-   */
+  /* The remaining fields are used as a 'has been modified' flag */
   zone->number = 0;	/* Header information has changed.	*/
   zone->age = 0;	/* The commands have changed.		*/
 
-  /*
-   * Start the reset command list with a terminator.
-   */
+  /* Start the reset command list with a terminator. */
   CREATE(zone->cmd, struct reset_com, 1);
   zone->cmd[0].command = 'S';
 
-  /*
-   * Add all entries in zone_table that relate to this room.
-   */
+  /* Add all entries in zone_table that relate to this room. */
   while (ZCMD(OLC_ZNUM(d), subcmd).command != 'S') {
     switch (ZCMD(OLC_ZNUM(d), subcmd).command) {
     case 'M':
@@ -283,11 +237,7 @@ void zedit_setup(struct descriptor_data *d, int room_num)
   zedit_disp_menu(d);
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Create a new zone.
- */
+/* Create a new zone. */
 void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top)
 {
   int result;
@@ -322,12 +272,8 @@ void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom,
   write_to_output(ch->desc, "Zone created successfully.\r\n");
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Save all the information in the player's temporary buffer back into
- * the current zone table.
- */
+/* Save all the information in the player's temporary buffer back into
+ * the current zone table. */
 void zedit_save_internally(struct descriptor_data *d)
 {
   int	mobloaded = FALSE,
@@ -342,19 +288,15 @@ void zedit_save_internally(struct descriptor_data *d)
 
   remove_room_zone_commands(OLC_ZNUM(d), room_num);
 
-  /*
-   * Now add all the entries in the players descriptor list
-   */
+  /* Now add all the entries in the players descriptor list */
   for (subcmd = 0; MYCMD.command != 'S'; subcmd++) {
-    /*
-     * Since Circle does not keep track of what rooms the 'G', 'E', and
+    /* Since Circle does not keep track of what rooms the 'G', 'E', and
      * 'P' commands are exitted in, but OasisOLC groups zone commands
      * by rooms, this creates interesting problems when builders use these
      * commands without loading a mob or object first.  This fix prevents such
      * commands from being saved and 'wandering' through the zone command
      * list looking for mobs/objects to latch onto.
-     * C.Raehl 4/27/99
-     */
+     * C.Raehl 4/27/99 */
     switch (MYCMD.command) {
       /* Possible fail cases. */
       case 'G':
@@ -382,9 +324,7 @@ void zedit_save_internally(struct descriptor_data *d)
     add_cmd_to_list(&(zone_table[OLC_ZNUM(d)].cmd), &MYCMD, subcmd);
   }
 
-  /*
-   * Finally, if zone headers have been changed, copy over
-   */
+  /* Finally, if zone headers have been changed, copy over */
   if (OLC_ZONE(d)->number) {
     free(zone_table[OLC_ZNUM(d)].name);
     free(zone_table[OLC_ZNUM(d)].builders);
@@ -399,37 +339,24 @@ void zedit_save_internally(struct descriptor_data *d)
   add_to_save_list(zone_table[OLC_ZNUM(d)].number, SL_ZON);
 }
 
-/*-------------------------------------------------------------------*/
-
 void zedit_save_to_disk(int zone)
 {
   save_zone(zone);
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Error check user input and then setup change
- */
+/* Error check user input and then setup change */
 int start_change_command(struct descriptor_data *d, int pos)
 {
   if (pos < 0 || pos >= count_commands(OLC_ZONE(d)->cmd))
     return 0;
 
-  /*
-   * Ok, let's get editing.
-   */
+  /* Ok, let's get editing. */
   OLC_VAL(d) = pos;
   return 1;
 }
 
-/**************************************************************************
- Menu functions
- **************************************************************************/
-
-/*
- * the main menu
- */
+/* Menu functions */
+/* the main menu */
 void zedit_disp_menu(struct descriptor_data *d)
 {
   int subcmd = 0, room, counter = 0;
@@ -438,9 +365,7 @@ void zedit_disp_menu(struct descriptor_data *d)
   clear_screen(d);
   room = real_room(OLC_NUM(d));
 
-  /*
-   * Menu header
-   */
+  /* Menu header */
   send_to_char(d->character,
 	  "Room number: %s%d%s		Room zone: %s%d\r\n"
 	  "%s1%s) Builders       : %s%s\r\n"
@@ -464,13 +389,9 @@ void zedit_disp_menu(struct descriptor_data *d)
           nrm
 	  );
 
-  /*
-   * Print the commands for this room into display buffer.
-   */
+  /* Print the commands for this room into display buffer. */
   while (MYCMD.command != 'S') {
-    /*
-     * Translate what the command means.
-     */
+    /* Translate what the command means. */
     write_to_output(d, "%s%d - %s", nrm, counter++, yel);
     switch (MYCMD.command) {
     case 'M':
@@ -554,9 +475,7 @@ void zedit_disp_menu(struct descriptor_data *d)
     write_to_output(d, "\r\n");
     subcmd++;
   }
-  /*
-   * Finish off menu
-   */
+  /* Finish off menu */
    write_to_output(d,
 	  "%s%d - <END OF LIST>\r\n"
 	  "%sN%s) Insert new command.\r\n"
@@ -569,11 +488,7 @@ void zedit_disp_menu(struct descriptor_data *d)
   OLC_MODE(d) = ZEDIT_MAIN_MENU;
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Print the command type menu and setup response catch.
- */
+/* Print the command type menu and setup response catch. */
 void zedit_disp_comtype(struct descriptor_data *d)
 {
   get_char_colors(d->character);
@@ -593,12 +508,8 @@ void zedit_disp_comtype(struct descriptor_data *d)
   OLC_MODE(d) = ZEDIT_COMMAND_TYPE;
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Print the appropriate message for the command type for arg1 and set
- * up the input catch clause
- */
+/* Print the appropriate message for the command type for arg1 and set
+   up the input catch clause */
 void zedit_disp_arg1(struct descriptor_data *d)
 {
   write_to_output(d, "\r\n");
@@ -617,9 +528,7 @@ void zedit_disp_arg1(struct descriptor_data *d)
     break;
   case 'D':
   case 'R':
-    /*
-     * Arg1 for these is the room number, skip to arg2
-     */
+    /* Arg1 for these is the room number, skip to arg2 */
     OLC_CMD(d).arg1 = real_room(OLC_NUM(d));
     zedit_disp_arg2(d);
     break;
@@ -629,9 +538,7 @@ void zedit_disp_arg1(struct descriptor_data *d)
     OLC_MODE(d) = ZEDIT_ARG1;
     break;
   default:
-    /*
-     * We should never get here.
-     */
+    /* We should never get here. */
     cleanup_olc(d, CLEANUP_ALL);
     mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: zedit_disp_arg1(): Help!");
     write_to_output(d, "Oops...\r\n");
@@ -639,12 +546,8 @@ void zedit_disp_arg1(struct descriptor_data *d)
   }
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Print the appropriate message for the command type for arg2 and set
- * up the input catch clause.
- */
+/* Print the appropriate message for the command type for arg2 and set
+   up the input catch clause. */
 void zedit_disp_arg2(struct descriptor_data *d)
 {
   int i;
@@ -675,9 +578,7 @@ void zedit_disp_arg2(struct descriptor_data *d)
     write_to_output(d, "Global's context (0 for none) : ");
     break;
   default:
-    /*
-     * We should never get here, but just in case...
-     */
+    /* We should never get here, but just in case.  */
     cleanup_olc(d, CLEANUP_ALL);
     mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: zedit_disp_arg2(): Help!");
     write_to_output(d, "Oops...\r\n");
@@ -686,12 +587,8 @@ void zedit_disp_arg2(struct descriptor_data *d)
   OLC_MODE(d) = ZEDIT_ARG2;
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Print the appropriate message for the command type for arg3 and set
- * up the input catch clause.
- */
+/* Print the appropriate message for the command type for arg3 and set
+   up the input catch clause. */
 void zedit_disp_arg3(struct descriptor_data *d)
 {
   int i = 0;
@@ -727,9 +624,7 @@ void zedit_disp_arg3(struct descriptor_data *d)
   case 'R':
   case 'G':
   default:
-    /*
-     * We should never get here, just in case.
-     */
+    /* We should never get here, just in case. */
     cleanup_olc(d, CLEANUP_ALL);
     mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: zedit_disp_arg3(): Help!");
     write_to_output(d, "Oops...\r\n");
@@ -738,23 +633,17 @@ void zedit_disp_arg3(struct descriptor_data *d)
   OLC_MODE(d) = ZEDIT_ARG3;
 }
 
-/**************************************************************************
-  The GARGANTAUN event handler
- **************************************************************************/
-
+/* The event handler */
 void zedit_parse(struct descriptor_data *d, char *arg)
 {
   int pos, i = 0;
 
   switch (OLC_MODE(d)) {
-/*-------------------------------------------------------------------*/
   case ZEDIT_CONFIRM_SAVESTRING:
     switch (*arg) {
     case 'y':
     case 'Y':
-      /*
-       * Save the zone in memory, hiding invisible people.
-       */
+      /* Save the zone in memory, hiding invisible people. */
       zedit_save_internally(d);
       if (CONFIG_OLC_SAVE) {
         write_to_output(d, "Saving zone info to disk.\r\n");
@@ -770,19 +659,18 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       break;
     default:
       write_to_output(d, "Invalid choice!\r\n");
-      write_to_output(d, "Do you wish to save the zone info? : ");
+      write_to_output(d, "Do you wish to save your changes? : ");
       break;
     }
     break;
    /* End of ZEDIT_CONFIRM_SAVESTRING */
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_MAIN_MENU:
     switch (*arg) {
     case 'q':
     case 'Q':
       if (OLC_ZONE(d)->age || OLC_ZONE(d)->number) {
-	write_to_output(d, "Do you wish to save the changes to the zone info? (y/n) : ");
+	write_to_output(d, "Do you wish to save your changes? (y/n) : ");
 	OLC_MODE(d) = ZEDIT_CONFIRM_SAVESTRING;
       } else {
 	write_to_output(d, "No changes made.\r\n");
@@ -791,9 +679,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'n':
     case 'N':
-      /*
-       * New entry.
-       */
+      /* New entry. */
       if (OLC_ZONE(d)->cmd[0].command == 'S') {
         /* first command */
         if (new_command(OLC_ZONE(d), 0) && start_change_command(d, 0)) {
@@ -807,40 +693,30 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'e':
     case 'E':
-      /*
-       * Change an entry.
-       */
+      /* Change an entry. */
       write_to_output(d, "Which command do you wish to change? : ");
       OLC_MODE(d) = ZEDIT_CHANGE_ENTRY;
       break;
     case 'd':
     case 'D':
-      /*
-       * Delete an entry.
-       */
+      /* Delete an entry. */
       write_to_output(d, "Which command do you wish to delete? : ");
       OLC_MODE(d) = ZEDIT_DELETE_ENTRY;
       break;
     case 'z':
     case 'Z':
-      /*
-       * Edit zone name.
-       */
+      /* Edit zone name. */
       write_to_output(d, "Enter new zone name : ");
       OLC_MODE(d) = ZEDIT_ZONE_NAME;
       break;
     case '1':
-      /*
-       * Edit zone builders.
-       */
+      /* Edit zone builders. */
       write_to_output(d, "Enter new builders list : ");
       OLC_MODE(d) = ZEDIT_ZONE_BUILDERS;
       break;
     case 'b':
     case 'B':
-      /*
-       * Edit bottom of zone.
-       */
+      /* Edit bottom of zone. */
       if (GET_LEVEL(d->character) < LVL_IMPL)
 	zedit_disp_menu(d);
       else {
@@ -850,9 +726,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       break;
     case 't':
     case 'T':
-      /*
-       * Edit top of zone.
-       */
+      /* Edit top of zone. */
       if (GET_LEVEL(d->character) < LVL_IMPL)
 	zedit_disp_menu(d);
       else {
@@ -862,17 +736,13 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'l':
     case 'L':
-      /*
-       * Edit zone lifespan.
-       */
+      /* Edit zone lifespan. */
       write_to_output(d, "Enter new zone lifespan : ");
       OLC_MODE(d) = ZEDIT_ZONE_LIFE;
       break;
     case 'r':
     case 'R':
-      /*
-       * Edit zone reset mode.
-       */
+      /* Edit zone reset mode. */
       write_to_output(d, "\r\n"
 		"0) Never reset\r\n"
 		"1) Reset only when no players in zone\r\n"
@@ -887,11 +757,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     break;
     /* End of ZEDIT_MAIN_MENU */
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_NEW_ENTRY:
-    /*
-     * Get the line number and insert the new line.
-     */
+    /* Get the line number and insert the new line. */
     pos = atoi(arg);
     if (isdigit(*arg) && new_command(OLC_ZONE(d), pos)) {
       if (start_change_command(d, pos)) {
@@ -902,11 +769,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       zedit_disp_menu(d);
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_DELETE_ENTRY:
-    /*
-     * Get the line number and delete the line.
-     */
+    /* Get the line number and delete the line. */
     pos = atoi(arg);
     if (isdigit(*arg)) {
       delete_zone_command(OLC_ZONE(d), pos);
@@ -915,15 +779,9 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     zedit_disp_menu(d);
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_CHANGE_ENTRY:
-    /*
-     * Parse the input for which line to edit, and goto next quiz.
-     */
-    /*
-     *  Abort edit, and return to main menu
-     * - idea from Mark Garringer zizazat@hotmail.com
-     */
+    /* Parse the input for which line to edit, and goto next quiz. Abort edit, 
+       and return to main menu idea from Mark Garringer zizazat@hotmail.com */
     if (toupper(*arg) == 'A') {
       if (OLC_CMD(d).command == 'N') {
         OLC_CMD(d).command = '*';
@@ -940,12 +798,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       zedit_disp_menu(d);
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_COMMAND_TYPE:
-    /*
-     * Parse the input for which type of command this is, and goto next
-     * quiz.
-     */
+    /* Parse the input for which type of command this is, and goto next quiz. */
     OLC_CMD(d).command = toupper(*arg);
     if (!OLC_CMD(d).command || (strchr("MOPEDGRTV", OLC_CMD(d).command) == NULL)) {
       write_to_output(d, "Invalid choice, try again : ");
@@ -965,11 +819,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     }
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_IF_FLAG:
-    /*
-     * Parse the input for the if flag, and goto next quiz.
-     */
+    /* Parse the input for the if flag, and goto next quiz. */
     switch (*arg) {
     case 'y':
     case 'Y':
@@ -986,11 +837,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     zedit_disp_arg1(d);
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_ARG1:
-    /*
-     * Parse the input for arg1, and goto next quiz.
-     */
+    /* Parse the input for arg1, and goto next quiz. */
     if (!isdigit(*arg)) {
       write_to_output(d, "Must be a numeric value, try again : ");
       return;
@@ -1025,9 +873,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     case 'D':
     case 'R':
     default:
-      /*
-       * We should never get here.
-       */
+      /* We should never get here. */
       cleanup_olc(d, CLEANUP_ALL);
       mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: zedit_parse(): case ARG1: Ack!");
       write_to_output(d, "Oops...\r\n");
@@ -1035,11 +881,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     }
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_ARG2:
-    /*
-     * Parse the input for arg2, and goto next quiz.
-     */
+    /* Parse the input for arg2, and goto next quiz. */
     if (!isdigit(*arg)) {
       write_to_output(d, "Must be a numeric value, try again : ");
       return;
@@ -1076,9 +919,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'D':
       pos = atoi(arg);
-      /*
-       * Count directions.
-       */
+      /* Count directions. */
       if (pos < 0 || pos > NUM_OF_DIRS)
 	write_to_output(d, "Try again : ");
       else {
@@ -1094,9 +935,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
 	write_to_output(d, "That object does not exist, try again : ");
       break;
     default:
-      /*
-       * We should never get here, but just in case...
-       */
+      /* We should never get here, but just in case. */
       cleanup_olc(d, CLEANUP_ALL);
       mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: zedit_parse(): case ARG2: Ack!");
       write_to_output(d, "Oops...\r\n");
@@ -1104,11 +943,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     }
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_ARG3:
-    /*
-     * Parse the input for arg3, and go back to main menu.
-     */
+    /* Parse the input for arg3, and go back to main menu. */
     if (!isdigit(*arg)) {
       write_to_output(d, "Must be a numeric value, try again : ");
       return;
@@ -1116,10 +952,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     switch (OLC_CMD(d).command) {
     case 'E':
       pos = atoi(arg);
-      /*
-       * Count number of wear positions.  We could use NUM_WEARS, this is
-       * more reliable.
-       */
+      /* Count number of wear positions.  We could use NUM_WEARS, this is
+         more reliable. */
       while (*equipment_types[i] != '\n')
 	i++;
       if (pos < 0 || pos > i)
@@ -1152,9 +986,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     case 'T':
     case 'V':
     default:
-      /*
-       * We should never get here, but just in case...
-       */
+      /* We should never get here, but just in case. */
       cleanup_olc(d, CLEANUP_ALL);
       mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: zedit_parse(): case ARG3: Ack!");
       write_to_output(d, "Oops...\r\n");
@@ -1162,7 +994,6 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     }
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_SARG1:
     if (strlen(arg)) {
       OLC_CMD(d).sarg1 = strdup(arg);
@@ -1172,7 +1003,6 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       write_to_output(d, "Must have some name to assign : ");
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_SARG2:
     if (strlen(arg)) {
       OLC_CMD(d).sarg2 = strdup(arg);
@@ -1181,11 +1011,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       write_to_output(d, "Must have some value to set it to :");
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_NAME:
-    /*
-     * Add new name and return to main menu.
-     */
+    /* Add new name and return to main menu. */
     if (genolc_checkstring(d, arg)) {
       if (OLC_ZONE(d)->name)
         free(OLC_ZONE(d)->name);
@@ -1197,11 +1024,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     zedit_disp_menu(d);
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_BUILDERS:
-    /*
-     * Add new builders list and return to main menu.
-     */
+    /* Add new builders list and return to main menu. */
     if (genolc_checkstring(d, arg)) {
       if (OLC_ZONE(d)->builders)
         free(OLC_ZONE(d)->builders);
@@ -1213,11 +1037,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     zedit_disp_menu(d);
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_RESET:
-    /*
-     * Parse and add new reset_mode and return to main menu.
-     */
+    /* Parse and add new reset_mode and return to main menu. */
     pos = atoi(arg);
     if (!isdigit(*arg) || pos < 0 || pos > 2)
       write_to_output(d, "Try again (0-2) : ");
@@ -1228,11 +1049,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     }
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_LIFE:
-    /*
-     * Parse and add new lifespan and return to main menu.
-     */
+    /* Parse and add new lifespan and return to main menu. */
     pos = atoi(arg);
     if (!isdigit(*arg) || pos < 0 || pos > 240)
       write_to_output(d, "Try again (0-240) : ");
@@ -1243,11 +1061,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     }
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_BOT:
-    /*
-     * Parse and add new bottom room in zone and return to main menu.
-     */
+    /* Parse and add new bottom room in zone and return to main menu. */
     if (OLC_ZNUM(d) == 0)
       OLC_ZONE(d)->bot = LIMIT(atoi(arg), 0, OLC_ZONE(d)->top);
     else
@@ -1256,11 +1071,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     zedit_disp_menu(d);
     break;
 
-/*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_TOP:
-    /*
-     * Parse and add new top room in zone and return to main menu.
-     */
+    /* Parse and add new top room in zone and return to main menu. */
     if (OLC_ZNUM(d) == top_of_zone_table)
       OLC_ZONE(d)->top = LIMIT(atoi(arg), genolc_zonep_bottom(OLC_ZONE(d)), 32000);
     else
@@ -1269,18 +1081,11 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     zedit_disp_menu(d);
     break;
 
-/*-------------------------------------------------------------------*/
   default:
-    /*
-     * We should never get here, but just in case...
-     */
+    /* We should never get here, but just in case... */
     cleanup_olc(d, CLEANUP_ALL);
     mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: zedit_parse(): Reached default case!");
     write_to_output(d, "Oops...\r\n");
     break;
   }
 }
-
-/******************************************************************************/
-/** End of parse_zedit()                                                     **/
-/******************************************************************************/
