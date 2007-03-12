@@ -2152,7 +2152,7 @@ ACMD(do_force)
 ACMD(do_wiznet)
 {
   char buf1[MAX_INPUT_LENGTH + MAX_NAME_LENGTH + 32],
-	buf2[MAX_INPUT_LENGTH + MAX_NAME_LENGTH + 32];
+       buf2[MAX_INPUT_LENGTH + MAX_NAME_LENGTH + 32], *msg;
   struct descriptor_data *d;
   char emote = FALSE;
   char any = FALSE;
@@ -2213,21 +2213,25 @@ ACMD(do_wiznet)
     return;
   }
   if (level > LVL_IMMORT) {
-    snprintf(buf1, sizeof(buf1), "%s: <%d> %s%s\r\n", GET_NAME(ch), level, emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "Someone: <%d> %s%s\r\n", level, emote ? "<--- " : "", argument);
+    snprintf(buf1, sizeof(buf1), "@c%s: <%d> %s%s@n\r\n", GET_NAME(ch), level, emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "@cSomeone: <%d> %s%s@n\r\n", level, emote ? "<--- " : "", argument);
   } else {
-    snprintf(buf1, sizeof(buf1), "%s: %s%s\r\n", GET_NAME(ch), emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "Someone: %s%s\r\n", emote ? "<--- " : "", argument);
+    snprintf(buf1, sizeof(buf1), "@c%s: %s%s@n\r\n", GET_NAME(ch), emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "@cSomeone: %s%s@n\r\n", emote ? "<--- " : "", argument);
   }
 
   for (d = descriptor_list; d; d = d->next) {
     if (IS_PLAYING(d) && (GET_LEVEL(d->character) >= level) && 
 	(!PRF_FLAGGED(d->character, PRF_NOWIZ))
 	&& (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
-      send_to_char(d->character, "%s", CCCYN(d->character, C_NRM));
+      if (CAN_SEE(d->character, ch)) {
+        msg = strdup(buf1);
       send_to_char(d->character, "%s", buf1);
-      new_hist_messg(d, buf1);
-      send_to_char(d->character, "%s", CCNRM(d->character, C_NRM));
+      } else {
+        msg = strdup(buf2);
+        send_to_char(d->character, "%s", buf2);
+      }   
+      add_history(d->character, msg, HIST_WIZNET);
     }
   }
 

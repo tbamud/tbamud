@@ -730,7 +730,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       return;
     default:
       write_to_output(d, "Invalid choice!\r\n");
-      write_to_output(d, "Do you wish to save this object?\r\n");
+      write_to_output(d, "Do you wish to save your changes? : \r\n");
       return;
     }
 
@@ -740,7 +740,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     case 'q':
     case 'Q':
       if (OLC_VAL(d)) {	/* Something has been modified. */
-	write_to_output(d, "Do you wish to save this object? : ");
+	write_to_output(d, "Do you wish to save your changes? : ");
 	OLC_MODE(d) = OEDIT_CONFIRM_SAVESTRING;
       } else
 	cleanup_olc(d, CLEANUP_ALL);

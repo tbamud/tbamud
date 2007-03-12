@@ -1,6 +1,6 @@
 /* ************************************************************************
 *   File: structs.h                                     Part of CircleMUD *
-*  Usage: header file for central structures and contstants               *
+*  Usage: header file for central structures and constants                *
 *  All rights reserved.  See license.doc for complete information.        *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
@@ -88,6 +88,20 @@
 #define SECT_UNDERWATER	     9		   /* Underwater		*/
 
 /* char and mob-related defines */
+
+/* History */
+#define HIST_ALL       0
+#define HIST_SAY       1
+#define HIST_GOSSIP    2
+#define HIST_WIZNET    3
+#define HIST_TELL      4
+#define HIST_SHOUT     5
+#define HIST_GRATS     6
+#define HIST_HOLLER    7
+#define HIST_AUCTION   8
+
+#define NUM_HIST       9
+
 /* PC classes */
 #define CLASS_UNDEFINED	  (-1)
 #define CLASS_MAGIC_USER  0
@@ -528,14 +542,14 @@ struct extra_descr_data {
 /* object flags; used in obj_data */
 struct obj_flag_data {
    int	value[NUM_OBJ_VAL_POSITIONS];	/* Values of the item (see list)    */
-   byte type_flag;	/* Type of item			    */
-   int level;		/* Minimum level of object.		*/
+   byte type_flag;			/* Type of item			    */
+   int level;				/* Minimum level of object	    */
    int /*bitvector_t*/	wear_flags;	/* Where you can wear it	    */
    int /*bitvector_t*/	extra_flags;	/* If it hums, glows, etc.	    */
-   int	weight;		/* Weigt what else                  */
-   int	cost;		/* Value when sold (gp.)            */
-   int	cost_per_day;	/* Cost to keep pr. real day        */
-   int	timer;		/* Timer for object                 */
+   int	weight;				/* Weight what else                 */
+   int	cost;				/* Value when sold (gp.)            */
+   int	cost_per_day;			/* Cost to keep pr. real day        */
+   int	timer;				/* Timer for object                 */
    long /*bitvector_t*/	bitvector;	/* To set chars bits                */
 };
 
@@ -752,7 +766,7 @@ struct player_special_data_saved {
    long /*bitvector_t*/	pref;	/* preference flags for PC's.		*/
    ubyte bad_pws;		/* number of bad password attemps	*/
    sbyte conditions[3];         /* Drunk, hunger, thirst		*/
-
+   struct txt_block *comm_hist[NUM_HIST]; /* Player's communcations history     */
    ubyte page_length;
    int spells_to_learn;		/* How many can you learn yet this level*/
    int olc_zone;
@@ -875,7 +889,6 @@ struct descriptor_data {
    int	bufspace;		/* space left in the output buffer	*/
    struct txt_block *large_outbuf; /* ptr to large buffer, if we need it */
    struct txt_q input;		/* q of unprocessed input		*/
-   struct txt_block *comms;     /* latest comms history.                */
    struct char_data *character;	/* linked to char			*/
    struct char_data *original;	/* original char if switched		*/
    struct descriptor_data *snooping; /* Who is this char snooping	*/

@@ -10,7 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "spells.h"
@@ -54,16 +53,12 @@ int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6)
     return (p6);					/* >= 80 */
 }
 
-
-/*
- * The hit_limit, mana_limit, and move_limit functions are gone.  They
- * added an unnecessary level of complexity to the internal structure,
- * weren't particularly useful, and led to some annoying bugs.  From the
- * players' point of view, the only difference the removal of these
- * functions will make is that a character's age will now only affect
- * the HMV gain per tick, and _not_ the HMV maximums.
- */
-
+/* The hit_limit, mana_limit, and move_limit functions are gone.  They added an
+ * unnecessary level of complexity to the internal structure, weren't 
+ * particularly useful, and led to some annoying bugs.  From the players' point
+ * of view, the only difference the removal of these functions will make is 
+ * that a character's age will now only affect the HMV gain per tick, and _not_
+ * the HMV maximums. */
 /* manapoint gain pr. game hour */
 int mana_gain(struct char_data *ch)
 {
@@ -104,7 +99,6 @@ int mana_gain(struct char_data *ch)
 
   return (gain);
 }
-
 
 /* Hitpoint gain pr. game hour */
 int hit_gain(struct char_data *ch)
@@ -149,8 +143,6 @@ int hit_gain(struct char_data *ch)
   return (gain);
 }
 
-
-
 /* move gain pr. game hour */
 int move_gain(struct char_data *ch)
 {
@@ -163,10 +155,7 @@ int move_gain(struct char_data *ch)
     gain = graf(age(ch)->year, 16, 20, 24, 20, 16, 12, 10);
 
     /* Class/Level calculations */
-
     /* Skill/Spell calculations */
-
-
     /* Position calculations    */
     switch (GET_POS(ch)) {
     case POS_SLEEPING:
@@ -190,8 +179,6 @@ int move_gain(struct char_data *ch)
   return (gain);
 }
 
-
-
 void set_title(struct char_data *ch, char *title)
 {
   if (title == NULL) {
@@ -209,7 +196,6 @@ void set_title(struct char_data *ch, char *title)
 
   GET_TITLE(ch) = strdup(title);
 }
-
 
 void run_autowiz(void)
 {
@@ -236,8 +222,6 @@ void run_autowiz(void)
   }
 #endif /* CIRCLE_UNIX || CIRCLE_WINDOWS */
 }
-
-
 
 void gain_exp(struct char_data *ch, int gain)
 {
@@ -281,7 +265,6 @@ void gain_exp(struct char_data *ch, int gain)
   }
 }
 
-
 void gain_exp_regardless(struct char_data *ch, int gain)
 {
   int is_altered = FALSE;
@@ -313,7 +296,6 @@ void gain_exp_regardless(struct char_data *ch, int gain)
     }
   }
 }
-
 
 void gain_condition(struct char_data *ch, int condition, int value)
 {
@@ -348,7 +330,6 @@ void gain_condition(struct char_data *ch, int condition, int value)
   }
 
 }
-
 
 void check_idling(struct char_data *ch)
 {
@@ -389,8 +370,6 @@ void check_idling(struct char_data *ch)
   }
 }
 
-
-
 /* Update PCs, NPCs, and objects */
 void point_update(void)
 {
@@ -425,7 +404,8 @@ void point_update(void)
       update_char_objects(i);
       if (GET_LEVEL(i) < CONFIG_IDLE_MAX_LEVEL)
 	check_idling(i);
-    }
+      else 
+        (i->char_specials.timer)++;}
   }
 
   /* objects */
@@ -464,8 +444,8 @@ void point_update(void)
 	extract_obj(j);
       }
     }
-    /* If the timer is set, count it down and at 0, try the trigger */
-    /* note to .rej hand-patchers: make this last in your point-update() */
+    /* If the timer is set, count it down and at 0, try the trigger
+     * note to .rej hand-patchers: make this last in your point-update() */
     else if (GET_OBJ_TIMER(j)>0) {
       GET_OBJ_TIMER(j)--;
       if (!GET_OBJ_TIMER(j))

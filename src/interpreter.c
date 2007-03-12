@@ -12,7 +12,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "comm.h"
 #include "interpreter.h"
@@ -73,17 +72,20 @@ ACMD(do_alias);
 ACMD(do_assist);
 ACMD(do_astat);
 ACMD(do_at);
+ACMD(do_attach);
 ACMD(do_backstab);
 ACMD(do_ban);
 ACMD(do_bash);
 ACMD(do_cast);
 ACMD(do_changelog);
+ACMD(do_checkloadstatus);
 ACMD(do_commands);
 ACMD(do_consider);
 ACMD(do_copyover);
 ACMD(do_credits);
 ACMD(do_date);
 ACMD(do_dc);
+ACMD(do_detach);
 ACMD(do_diagnose);
 ACMD(do_dig);
 ACMD(do_display);
@@ -96,6 +98,8 @@ ACMD(do_equipment);
 ACMD(do_examine);
 ACMD(do_exit);
 ACMD(do_exits);
+ACMD(do_export_zone);
+ACMD(do_file);
 ACMD(do_flee);
 ACMD(do_follow);
 ACMD(do_force);
@@ -115,6 +119,7 @@ ACMD(do_gsay);
 ACMD(do_hcontrol);
 ACMD(do_help);
 ACMD(do_hindex);
+ACMD(do_history);
 ACMD(do_helpcheck);
 ACMD(do_hide);
 ACMD(do_hit);
@@ -126,9 +131,31 @@ ACMD(do_kill);
 ACMD(do_last);
 ACMD(do_leave);
 ACMD(do_levels);
+ACMD(do_links);
 ACMD(do_load);
 ACMD(do_look);
+ACMD(do_masound);
+ACMD(do_mat);
+ACMD(do_mdamage);
+ACMD(do_mdoor);
+ACMD(do_mecho);
+ACMD(do_mechoaround);
+ACMD(do_mfollow);
+ACMD(do_mforce);
+ACMD(do_mgoto);
+ACMD(do_mhunt);
+ACMD(do_mjunk);
+ACMD(do_mkill);
+ACMD(do_mload);
 /* ACMD(do_move); -- interpreter.h */
+ACMD(do_mpurge);
+ACMD(do_msend);
+ACMD(do_mteleport);
+ACMD(do_mremember);
+ACMD(do_mforget);
+ACMD(do_mtransform);
+ACMD(do_mzoneecho);
+ACMD(do_mrecho);
 ACMD(do_not_here);
 ACMD(do_order);
 ACMD(do_page);
@@ -171,13 +198,16 @@ ACMD(do_teleport);
 ACMD(do_tell);
 ACMD(do_time);
 ACMD(do_title);
+ACMD(do_tlist);
 ACMD(do_toggle);
 ACMD(do_track);
 ACMD(do_trans);
+ACMD(do_tstat);
 ACMD(do_unban);
 ACMD(do_ungroup);
 ACMD(do_use);
 ACMD(do_users);
+ACMD(do_vdelete);
 ACMD(do_visible);
 ACMD(do_vnum);
 ACMD(do_vstat);
@@ -191,63 +221,22 @@ ACMD(do_wizlock);
 ACMD(do_wiznet);
 ACMD(do_wizutil);
 ACMD(do_write);
+ACMD(do_zcheck);
 ACMD(do_zreset);
 ACMD(do_zpurge);
 
-/* DG Script ACMD's */
-ACMD(do_attach);
-ACMD(do_detach);
-ACMD(do_tstat);
-ACMD(do_masound);
-ACMD(do_mkill);
-ACMD(do_mjunk);
-ACMD(do_mdoor);
-ACMD(do_mechoaround);
-ACMD(do_msend);
-ACMD(do_mecho);
-ACMD(do_mload);
-ACMD(do_mpurge);
-ACMD(do_mgoto);
-ACMD(do_mat);
-ACMD(do_mdamage);
-ACMD(do_mteleport);
-ACMD(do_mforce);
-ACMD(do_mhunt);
-ACMD(do_mremember);
-ACMD(do_mforget);
-ACMD(do_mtransform);
-ACMD(do_mzoneecho);
-ACMD(do_mrecho);
-ACMD(do_vdelete);
-ACMD(do_mfollow);
-ACMD(do_tlist);
-
-/* TBA specifics */
-ACMD(do_file);
-ACMD(do_checkloadstatus);
-ACMD(do_links);
-ACMD(do_zcheck);
-ACMD(do_list_history);
-ACMD(do_export_zone);
-
-
 struct command_info *complete_cmd_info;
 
-/* This is the Master Command List(tm).
-
- * You can put new commands in, take commands out, change the order
- * they appear in, etc.  You can adjust the "priority" of commands
- * simply by changing the order they appear in the command list.
- * (For example, if you want "as" to mean "assist" instead of "ask",
- * just put "assist" above "ask" in the Master Command List(tm).
- *
- * In general, utility commands such as "at" should have high priority;
- * infrequently used and dangerously destructive commands should have low
- * priority.
- */
+/* This is the Master Command List. You can put new commands in, take commands 
+ * out, change the order they appear in, etc.  You can adjust the "priority" 
+ * of commands simply by changing the order they appear in the command list.
+ * (For example, if you want "as" to mean "assist" instead of "ask", just put 
+ * "assist" above "ask" in the Master Command List. In general, utility 
+ * commands such as "at" should have high priority; infrequently used and 
+ * dangerously destructive commands should have low priority. */
 
 cpp_extern const struct command_info cmd_info[] = {
-  { "RESERVED", "", 0, 0, 0, 0 },	/* this must be first -- for specprocs */
+  { "RESERVED", "", 0, 0, 0, 0 }, /* this must be first -- for specprocs */
 
   /* directions must come before other commands but after RESERVED */
   { "north"    , "n"       , POS_STANDING, do_move     , 0, SCMD_NORTH },
@@ -340,7 +329,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "hide"     , "hi"      , POS_RESTING , do_hide     , 1, 0 },
   { "handbook" , "handb"   , POS_DEAD    , do_gen_ps   , LVL_IMMORT, SCMD_HANDBOOK },
   { "hcontrol" , "hcontrol", POS_DEAD    , do_hcontrol , LVL_GRGOD, 0 },
-  { "history"  , "histo"   , POS_DEAD    , do_list_history, 1, 0},
+  { "history"  , "history" , POS_DEAD    , do_history, 0, 0},
   { "hit"      , "hit"     , POS_FIGHTING, do_hit      , 0, SCMD_HIT },
   { "hold"     , "hold"    , POS_RESTING , do_grab     , 1, 0 },
   { "holler"   , "holler"  , POS_RESTING , do_gen_comm , 1, SCMD_HOLLER },
@@ -535,7 +524,6 @@ cpp_extern const struct command_info cmd_info[] = {
   { "mfollow"  , "mfollow" , POS_DEAD    , do_mfollow  , -1, 0 },
 
   { "\n", "zzzzzzz", 0, 0, 0, 0 } };	/* this must be last */
-
 
 const char *fill[] =
 {
@@ -1467,6 +1455,7 @@ void nanny(struct descriptor_data *d, char *arg)
 	  REMOVE_BIT(PLR_FLAGS(d->character),
 		     PLR_WRITING | PLR_MAILING | PLR_CRYO);
 	  REMOVE_BIT(AFF_FLAGS(d->character), AFF_GROUP);
+          d->character->player.time.logon = time(0);
 	  write_to_output(d, "Password: ");
 	  echo_off(d);
 	  d->idle_tics = 0;

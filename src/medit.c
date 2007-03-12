@@ -473,7 +473,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
       return;
     default:
       write_to_output(d, "Invalid choice!\r\n");
-      write_to_output(d, "Do you wish to save the mobile? : ");
+      write_to_output(d, "Do you wish to save your changes? : ");
       return;
     }
     break;
@@ -484,7 +484,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
     case 'q':
     case 'Q':
       if (OLC_VAL(d)) {	/* Anything been changed? */
-	write_to_output(d, "Do you wish to save the changes to the mobile? (y/n) : ");
+	write_to_output(d, "Do you wish to save your changes? : ");
 	OLC_MODE(d) = MEDIT_CONFIRM_SAVESTRING;
       } else
 	cleanup_olc(d, CLEANUP_ALL);

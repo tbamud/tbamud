@@ -13,14 +13,9 @@
 #include "structs.h"
 #include "interpreter.h"	/* alias_data */
 
-cpp_extern const char *circlemud_version =
-        "tbaMUD, version 3.52";
-
-cpp_extern const char *oasisolc_version =
-	"OasisOLC 2.0.6";
-
-cpp_extern const char *ascii_pfiles_version =
-	"ASCII Player Files 3.0.1";
+cpp_extern const char *circlemud_version = "tbaMUD, version 3.52";
+cpp_extern const char *oasisolc_version = "OasisOLC 2.0.6";
+cpp_extern const char *ascii_pfiles_version = "ASCII Player Files 3.0.1";
 
 /* strings corresponding to ordinals/bitvectors in structs.h */
 /* (Note: strings for class definitions in class.c instead of here) */
@@ -82,10 +77,7 @@ const char *sector_types[] = {
   "\n"
 };
 
-/*
- * SEX_x
- * Not used in sprinttype() so no \n.
- */
+/* SEX_x. Not used in sprinttype() so no \n. */
 const char *genders[] =
 {
   "neutral",
@@ -256,10 +248,7 @@ const char *connected_types[] = {
   "\n"
 };
 
-/*
- * WEAR_x - for eq list
- * Not use in sprinttype() so no \n.
- */
+/* WEAR_x - for eq list. Not used in sprinttype() so no \n. */
 const char *wear_where[] = {
   "<used as light>      ",
   "<worn on finger>     ",
@@ -436,8 +425,7 @@ const char *drinks[] =
   "\n"
 };
 
-/* other constants for liquids ******************************************/
-/* one-word alias for each drink */
+/* Other constants for liquids, one-word alias for each drink. */
 const char *drinknames[] =
 {
   "water",
@@ -501,10 +489,7 @@ const char *color_liquid[] =
   "\n"
 };
 
-/*
- * level of fullness for drink containers
- * Not used in sprinttype() so no \n.
- */
+/* level of fullness for drink containers. Not used in sprinttype() so no \n. */
 const char *fullness[] =
 {
   "less than half ",
@@ -836,12 +821,22 @@ const char *wtrig_types[] = {
   "\n"
 };
 
+const char *history_types[] = {
+  "all",   
+  "say",   
+  "gossip",
+  "wiznet",
+  "tell",
+  "shout",
+  "grats",
+  "holler",
+  "auction",
+  "\n"   
+};
 /* --- End of constants arrays. --- */
 
-/*
- * Various arrays we count so we can check the world files.  These
- * must be at the bottom of the file so they're pre-declared.
- */
+/* Various arrays we count so we can check the world files.  These
+ * must be at the bottom of the file so they're pre-declared. */
 size_t	room_bits_count = sizeof(room_bits) / sizeof(room_bits[0]) - 1,
 	action_bits_count = sizeof(action_bits) / sizeof(action_bits[0]) - 1,
 	affected_bits_count = sizeof(affected_bits) / sizeof(affected_bits[0]) - 1,

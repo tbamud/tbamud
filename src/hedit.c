@@ -284,7 +284,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
       cleanup_olc(d, CLEANUP_ALL);
       break;
     default:
-      write_to_output(d, "Invalid choice!\r\nDo you wish to save this help entry internally? : \r\n");
+      write_to_output(d, "Invalid choice!\r\nDo you wish to save your changes? : \r\n");
       break;
     }
     return;
@@ -294,7 +294,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
     case 'q':
     case 'Q':
       if (OLC_VAL(d)) { /* Something has been modified. */
-	write_to_output(d, "Do you wish to save this help entry? : ");
+	write_to_output(d, "Do you wish to save your changes? : ");
 	OLC_MODE(d) = HEDIT_CONFIRM_SAVESTRING;
       } else {
         log("this is a test of quit out of hedit");

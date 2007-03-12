@@ -296,7 +296,7 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
            if (!GET_TRIG_TYPE(OLC_TRIG(d))) {
              write_to_output(d, "Invalid Trigger Type! Answer a to abort quit!\r\n");
            }
-           write_to_output(d, "Do you wish to save the changes to the trigger? (y/n): ");
+           write_to_output(d, "Do you wish to save your changes? : ");
            OLC_MODE(d) = TRIGEDIT_CONFIRM_SAVESTRING;
          } else
            cleanup_olc(d, CLEANUP_ALL);

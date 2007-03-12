@@ -10,8 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -48,23 +46,29 @@ ACMD(do_say)
   if (!*argument)
     send_to_char(ch, "Yes, but WHAT do you want to say?\r\n");
   else {
-    char buf[MAX_INPUT_LENGTH + 14];
+    char buf[MAX_INPUT_LENGTH + 14], *msg;
 
-    snprintf(buf, sizeof(buf), "$n says, '%s@n'", argument);
-    act(buf, FALSE, ch, 0, 0, TO_ROOM | DG_NO_TRIG | LOG_MESSG);
+    snprintf(buf, sizeof(buf), "$n@n says, '%s@n'", argument);
+    msg = act(buf, FALSE, ch, 0, 0, TO_ROOM | DG_NO_TRIG);
+
+    struct char_data *vict;
+    for (vict = world[IN_ROOM(ch)].people; vict; vict = vict->next_in_room)
+      if (vict != ch && GET_POS(vict) > POS_SLEEPING)
+        add_history(vict, msg, HIST_SAY);
 
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else {
       delete_doubledollar(argument);
-      send_to_char(ch, "You say, '%s@n'\r\n", argument);
+      sprintf(buf, "You say, '%s@n'", argument);
+      msg = act(buf, FALSE, ch, 0, 0, TO_CHAR | DG_NO_TRIG);
+      add_history(ch, msg, HIST_SAY);
     }
   }
   /* trigger check */
   speech_mtrigger(ch, argument);
   speech_wtrigger(ch, argument);
 }
-
 
 ACMD(do_gsay)
 {
@@ -90,11 +94,11 @@ ACMD(do_gsay)
     snprintf(buf, sizeof(buf), "$n tells the group, '%s@n'", argument);
 
     if (AFF_FLAGGED(k, AFF_GROUP) && (k != ch))
-      act(buf, FALSE, ch, 0, k, TO_VICT | TO_SLEEP | LOG_MESSG);
+      act(buf, FALSE, ch, 0, k, TO_VICT | TO_SLEEP);
     for (f = k->followers; f; f = f->next)
       if (AFF_FLAGGED(f->follower, AFF_GROUP) && (f->follower != ch))
-	act(buf, FALSE, ch, 0, f->follower, TO_VICT | TO_SLEEP | LOG_MESSG);
-
+        act(buf, FALSE, ch, 0, f->follower, TO_VICT | TO_SLEEP);
+    
     if (PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else
@@ -102,23 +106,20 @@ ACMD(do_gsay)
   }
 }
 
-
 void perform_tell(struct char_data *ch, struct char_data *vict, char *arg)
 {
-  char buf[MAX_STRING_LENGTH];
+  char buf[MAX_STRING_LENGTH], *msg;
 
-  send_to_char(vict, "%s", CCRED(vict, C_NRM));
-  snprintf(buf, sizeof(buf), "$n tells you, '%s'", arg);
-  act(buf, FALSE, ch, 0, vict, TO_VICT | TO_SLEEP | LOG_MESSG);
-  send_to_char(vict, "%s", CCNRM(vict, C_NRM));
+  snprintf(buf, sizeof(buf), "%s$n tells you, '%s'%s", CCRED(vict, C_NRM), arg, CCNRM(vict, C_NRM));
+  msg = act(buf, FALSE, ch, 0, vict, TO_VICT | TO_SLEEP);
+  add_history(vict, msg, HIST_TELL);
 
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
     send_to_char(ch, "%s", CONFIG_OK);
   else {
-    send_to_char(ch, "%s", CCRED(ch, C_CMP));
-    snprintf(buf, sizeof(buf), "You tell $N, '%s'", arg);
-    act(buf, FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
-    send_to_char(ch, "%s", CCNRM(ch, C_CMP));
+    snprintf(buf, sizeof(buf), "%sYou tell $N, '%s'%s", CCRED(ch, C_NRM), arg, CCNRM(ch, C_NRM));
+    msg = act(buf, FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);     
+    add_history(ch, msg, HIST_TELL);
   }
 
   if (!IS_NPC(vict) && !IS_NPC(ch))
@@ -145,10 +146,8 @@ int is_tell_ok(struct char_data *ch, struct char_data *vict)
   return (FALSE);
 }
 
-/*
- * Yes, do_tell probably could be combined with whisper and ask, but
- * called frequently, and should IMHO be kept as tight as possible.
- */
+/* Yes, do_tell probably could be combined with whisper and ask, but
+ * called frequently, and should IMHO be kept as tight as possible. */
 ACMD(do_tell)
 {
   struct char_data *vict = NULL;
@@ -194,7 +193,6 @@ ACMD(do_tell)
     perform_tell(ch, vict, buf2);
 }
 
-
 ACMD(do_reply)
 {
   struct char_data *tch = character_list;
@@ -209,18 +207,12 @@ ACMD(do_reply)
   else if (!*argument)
     send_to_char(ch, "What is your reply?\r\n");
   else {
-    /*
-     * Make sure the person you're replying to is still playing by searching
+    /* Make sure the person you're replying to is still playing by searching
      * for them.  Note, now last tell is stored as player IDnum instead of
      * a pointer, which is much better because it's safer, plus will still
-     * work if someone logs out and back in again.
-     */
-
-    /*
-     * XXX: A descriptor list based search would be faster although
-     *      we could not find link dead people.  Not that they can
-     *      hear tells anyway. :) -gg 2/24/98
-     */
+     * work if someone logs out and back in again. A descriptor list based 
+     * search would be faster although we could not find link dead people.  
+     * Not that they can hear tells anyway. :) -gg 2/24/98 */
     while (tch != NULL && (IS_NPC(tch) || GET_IDNUM(tch) != GET_LAST_TELL(ch)))
       tch = tch->next;
 
@@ -230,7 +222,6 @@ ACMD(do_reply)
       perform_tell(ch, tch, argument);
   }
 }
-
 
 ACMD(do_spec_comm)
 {
@@ -270,7 +261,7 @@ ACMD(do_spec_comm)
     char buf1[MAX_STRING_LENGTH];
 
     snprintf(buf1, sizeof(buf1), "$n %s you, '%s'", action_plur, buf2);
-    act(buf1, FALSE, ch, 0, vict, TO_VICT | LOG_MESSG);
+    act(buf1, FALSE, ch, 0, vict, TO_VICT);
 
     if (PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
@@ -280,11 +271,7 @@ ACMD(do_spec_comm)
   }
 }
 
-
-/*
- * buf1, buf2 = MAX_OBJECT_NAME_LENGTH
- *	(if it existed)
- */
+/* buf1, buf2 = MAX_OBJECT_NAME_LENGTH (if it existed) */
 ACMD(do_write)
 {
   struct obj_data *paper, *pen = NULL;
@@ -339,7 +326,6 @@ ACMD(do_write)
       pen = GET_EQ(ch, WEAR_HOLD);
   }
 
-
   /* ok.. now let's see what kind of stuff we've found */
   if (GET_OBJ_TYPE(pen) != ITEM_PEN)
     act("$p is no good for writing with.", FALSE, ch, pen, 0, TO_CHAR);
@@ -362,8 +348,6 @@ ACMD(do_write)
   }
 }
 
-
-
 ACMD(do_page)
 {
   struct descriptor_data *d;
@@ -384,13 +368,13 @@ ACMD(do_page)
       if (GET_LEVEL(ch) > LVL_GOD) {
 	for (d = descriptor_list; d; d = d->next)
 	  if (STATE(d) == CON_PLAYING && d->character)
-	    act(buf, FALSE, ch, 0, d->character, TO_VICT | LOG_MESSG);
+	    act(buf, FALSE, ch, 0, d->character, TO_VICT);
       } else
 	send_to_char(ch, "You will never be godly enough to do that!\r\n");
       return;
     }
     if ((vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)) != NULL) {
-      act(buf, FALSE, ch, 0, vict, TO_VICT | LOG_MESSG);
+      act(buf, FALSE, ch, 0, vict, TO_VICT);
       if (PRF_FLAGGED(ch, PRF_NOREPEAT))
 	send_to_char(ch, "%s", CONFIG_OK);
       else
@@ -400,16 +384,12 @@ ACMD(do_page)
   }
 }
 
-
-/**********************************************************************
- * generalized communication func, originally by Fred C. Merkel (Torg) *
-  *********************************************************************/
-
+/* generalized communication func, originally by Fred C. Merkel (Torg) */
 ACMD(do_gen_comm)
 {
   struct descriptor_data *i;
   char color_on[24];
-  char buf1[MAX_INPUT_LENGTH];
+  char buf1[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH], *msg;
 
   /* Array of flags which must _not_ be set in order for comm to be heard */
   int channels[] = {
@@ -422,12 +402,18 @@ ACMD(do_gen_comm)
     0
   };
 
-  /*
-   * com_msgs: [0] Message if you can't perform the action because of noshout
+  int hist_type[] = {
+    HIST_HOLLER,
+    HIST_SHOUT,
+    HIST_GOSSIP,
+    HIST_AUCTION,
+    HIST_GRATS,
+  };
+
+  /* com_msgs: [0] Message if you can't perform the action because of noshout
    *           [1] name of the action
    *           [2] message if you're not on the channel
-   *           [3] a color string.
-   */
+   *           [3] a color string. */
   const char *com_msgs[][4] = {
     {"You cannot holler!!\r\n",
       "holler",
@@ -518,8 +504,11 @@ ACMD(do_gen_comm)
   /* first, set up strings to be given to the communicator */
   if (PRF_FLAGGED(ch, PRF_NOREPEAT))
     send_to_char(ch, "%s", CONFIG_OK);
-  else
-    send_to_char(ch, "%sYou %s, '%s'%s\r\n", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], argument, CCNRM(ch, C_CMP));
+  else {
+    snprintf(buf1, sizeof(buf1), "%sYou %s, '%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], argument, CCNRM(ch, C_CMP));
+    msg = act(buf1, FALSE, ch, 0, 0, TO_CHAR);
+    add_history(ch, msg, hist_type[subcmd]);
+  }
 
   snprintf(buf1, sizeof(buf1), "$n %ss, '%s'", com_msgs[subcmd][1], argument);
 
@@ -538,14 +527,11 @@ ACMD(do_gen_comm)
        !AWAKE(i->character)))
       continue;
 
-    if (COLOR_LEV(i->character) >= C_NRM)
-      send_to_char(i->character, "%s", color_on);
-    act(buf1, FALSE, ch, 0, i->character, TO_VICT | TO_SLEEP | LOG_MESSG);
-    if (COLOR_LEV(i->character) >= C_NRM)
-      send_to_char(i->character, "%s", KNRM);
+    snprintf(buf2, sizeof(buf2), "%s%s%s", (COLOR_LEV(i->character) >= C_NRM) ? color_on : "", buf1, KNRM); 
+    msg = act(buf2, FALSE, ch, 0, i->character, TO_VICT | TO_SLEEP);
+    add_history(i->character, msg, hist_type[subcmd]);
   }
 }
-
 
 ACMD(do_qcomm)
 {
@@ -577,69 +563,8 @@ ACMD(do_qcomm)
       }
     for (i = descriptor_list; i; i = i->next)
       if (STATE(i) == CON_PLAYING && i != ch->desc && PRF_FLAGGED(i->character, PRF_QUEST))
-	act(buf, 0, ch, 0, i->character, TO_VICT | TO_SLEEP | LOG_MESSG);
+       act(buf, 0, ch, 0, i->character, TO_VICT | TO_SLEEP);
   }
-}
-
-#define HIST_LENGTH  100
-
-void free_hist_messg(struct descriptor_data *d)
-{
-  struct txt_block *tmp = d->comms, *ftmp;
-  while (tmp) {
-    ftmp = tmp;
-    tmp = tmp->next;
-    if (ftmp->text)
-      free(ftmp->text);
-    free(ftmp);
-  }
-  d->comms = NULL;
-}
-
-void new_hist_messg(struct descriptor_data *d, const char *msg)
-{
-  struct txt_block *tmp = d->comms;
-  int l = 0;
-  if (!tmp) {
-    CREATE(d->comms, struct txt_block, 1);
-    d->comms->text = strdup(msg);
-    return;
-  }
-  while (tmp->next)
-    tmp = tmp->next;
-  CREATE(tmp->next, struct txt_block, 1);
-  tmp->next->text = strdup(msg);
-
-  for (tmp = d->comms; tmp ; tmp= tmp->next)
-    l++;
-
-  for (; l > HIST_LENGTH && d->comms; l--) {
-    tmp = d->comms;
-    d->comms = tmp->next;
-    if (tmp->text)
-      free(tmp->text);
-    free(tmp);
-  }
-}
-
-ACMD(do_list_history)
-{
-  struct txt_block *tmp;
-  struct descriptor_data *d = ch->desc;
-
-  if (!d)
-    return;
-
-  if (!d->comms) {
-    write_to_output(d, "No communications in history.\r\n");
-    return;
-  }
-  write_to_output(d, "Last %d communications:\r\n", HIST_LENGTH);
-
-  for (tmp = d->comms;tmp;tmp = tmp->next)
-    write_to_output(d, "%s%s%s", QWHT, tmp->text, QNRM);
-
-  free_hist_messg(d);
 }
 
 void handle_webster_file(void) {
@@ -676,8 +601,6 @@ void handle_webster_file(void) {
   }
   fclose(fl);
 
-
   send_to_char(ch, "You get this feedback from Merriam-Webster:\r\n");
   page_string(ch->desc, info, 1);
-
 }

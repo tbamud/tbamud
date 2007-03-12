@@ -77,6 +77,7 @@ bool	circle_follow(struct char_data *ch, struct char_data *victim);
 
 /* in act.informative.c */
 void	look_at_room(struct char_data *ch, int mode);
+void    add_history(struct char_data *ch, char *msg, int type);
 
 /* in act.movmement.c */
 int	do_simple_move(struct char_data *ch, int dir, int following);
@@ -329,7 +330,7 @@ void	update_pos(struct char_data *victim);
 #define GET_LAST_TELL(ch)	CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->last_tell))
 #define GET_PREF(ch)      ((ch)->pref)
 #define GET_HOST(ch)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->host))
-
+#define GET_HISTORY(ch, i)      CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.comm_hist[i]))
 
 #define GET_SKILL(ch, i)	CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.skills[i]))
 #define SET_SKILL(ch, i, pct)	do { CHECK_PLAYER_SPECIAL((ch), (ch)->player_specials->saved.skills[i]) = pct; } while(0)

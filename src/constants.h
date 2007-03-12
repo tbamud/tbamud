@@ -1,3 +1,12 @@
+/* ************************************************************************
+*   File: constants.h                                      Part of tbaMUD *
+*  Usage: Header file for constants.                                      *
+*  All rights reserved.  See license for complete information.            *
+*                                                                         *
+*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
+*  tbaMUD is based on CircleMUD and DikuMUD, Copyright (C) 1990, 1991.    *
+************************************************************************ */
+
 extern const char *circlemud_version;
 extern const char *oasisolc_version;
 extern const char *ascii_pfiles_version;
@@ -38,6 +47,7 @@ extern int drink_aff[][3];
 extern const char *trig_types[];
 extern const char *otrig_types[];
 extern const char *wtrig_types[];
+extern const char *history_types[];
 extern size_t room_bits_count;
 extern size_t action_bits_count;
 extern size_t affected_bits_count;

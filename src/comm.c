@@ -47,10 +47,8 @@
 # include <sys/ioctl.h>
 #endif
 
-/*
- * Note, most includes for all platforms are in sysdep.h.  The list of
- * files that is included is controlled by conf.h for that platform.
- */
+/* Note, most includes for all platforms are in sysdep.h.  The list of
+ * files that is included is controlled by conf.h for that platform. */
 
 #include "structs.h"
 #include "utils.h"
@@ -112,7 +110,7 @@ ush_int port;
 socket_t mother_desc;
 int log_this_messg;
 
-/* functions in this file */
+/* local functions */
 RETSIGTYPE reread_wizlists(int sig);
 RETSIGTYPE unrestrict_game(int sig);
 RETSIGTYPE reap(int sig);
@@ -156,11 +154,10 @@ sigfunc *my_signal(int signo, sigfunc *func);
 byte webster_file_ready = FALSE;/* signal: SIGUSR2 */
 RETSIGTYPE websterlink(int sig);
 extern void handle_webster_file();
-void copyover_recover( void );
+void copyover_recover(void);
 size_t proc_colors(char *txt, size_t maxlen, int parse);
-void free_hist_messg(struct descriptor_data *d);
 
-/* extern fcnts */
+/* extern functions */
 void reboot_wizlists(void);
 void boot_world(void);
 void affect_update(void);	/* In magic.c */
@@ -188,18 +185,12 @@ void new_hist_messg(struct descriptor_data *d, const char *msg);
 #define FD_CLR(x, y)
 #endif
 
-
-/***********************************************************************
-*  main game loop and related stuff                                    *
-***********************************************************************/
+/*  main game loop and related stuff */
 
 #if defined(CIRCLE_WINDOWS) || defined(CIRCLE_MACINTOSH)
-
-/*
- * Windows doesn't have gettimeofday, so we'll simulate it.
- * The Mac doesn't have gettimeofday either.
- * Borland C++ warns: "Undefined structure 'timezone'"
- */
+/* Windows doesn't have gettimeofday, so we'll simulate it. The Mac doesn't 
+ * have gettimeofday either. Borland C++ warns: "Undefined structure 
+ * 'timezone'" */
 void gettimeofday(struct timeval *t, struct timezone *dummy)
 {
 #if defined(CIRCLE_WINDOWS)
@@ -215,7 +206,6 @@ void gettimeofday(struct timeval *t, struct timezone *dummy)
 
 #endif	/* CIRCLE_WINDOWS || CIRCLE_MACINTOSH */
 
-
 int main(int argc, char **argv)
 {
   int pos = 1;
@@ -226,21 +216,16 @@ int main(int argc, char **argv)
 #endif
 
 #ifdef CIRCLE_MACINTOSH
-  /*
-   * ccommand() calls the command line/io redirection dialog box from
-   * Codewarriors's SIOUX library
-   */
+  /* ccommand() calls the command line/io redirection dialog box from
+   * Codewarriors's SIOUX library. */
   argc = ccommand(&argv);
   /* Initialize the GUSI library calls.  */
   GUSIDefaultSetup();
 #endif
 
-  /****************************************************************************/
-  /** Load the game configuration.                                           **/
-  /** We must load BEFORE we use any of the constants stored in constants.c. **/
-  /** Otherwise, there will be no variables set to set the rest of the vars  **/
-  /** to, which will mean trouble --> Mythran                                **/
-  /****************************************************************************/
+  /* Load the game configuration. We must load BEFORE we use any of the 
+   * constants stored in constants.c.  Otherwise, there will be no variables 
+   * set to set the rest of the vars to, which will mean trouble --> Mythran */
   CONFIG_CONFFILE = NULL;
   while ((pos < argc) && (*(argv[pos]) == '-')) {
     if (*(argv[pos] + 1) == 'f') {
@@ -355,10 +340,8 @@ int main(int argc, char **argv)
   /* All arguments have been parsed, try to open log file. */
   setup_log(CONFIG_LOGNAME, STDERR_FILENO);
 
-  /*
-   * Moved here to distinguish command line options and to show up
-   * in the log if stderr is redirected to a file.
-   */
+  /* Moved here to distinguish command line options and to show up
+   * in the log if stderr is redirected to a file. */
   log("Using %s for configuration.", CONFIG_CONFFILE);
   log("%s", circlemud_version);
   log("%s", oasisolc_version);
@@ -551,12 +534,8 @@ void init_game(ush_int port)
   log("Normal termination of game.");
 }
 
-
-
-/*
- * init_socket sets up the mother descriptor - creates the socket, sets
- * its options up, binds it, and listens.
- */
+/* init_socket sets up the mother descriptor - creates the socket, sets
+ * its options up, binds it, and listens. */
 socket_t init_socket(ush_int port)
 {
   socket_t s;
@@ -575,11 +554,9 @@ socket_t init_socket(ush_int port)
       exit(1);
     }
 
-    /*
-     * 4 = stdin, stdout, stderr, mother_desc.  Windows might
-     * keep sockets and files separate, in which case this isn't
-     * necessary, but we will err on the side of caution.
-     */
+    /* 4 = stdin, stdout, stderr, mother_desc.  Windows might keep sockets and 
+     * files separate, in which case this isn't necessary, but we will err on 
+     * the side of caution. */
     if ((wsaData.iMaxSockets - 4) < max_players) {
       max_players = wsaData.iMaxSockets - 4;
     }
@@ -592,16 +569,14 @@ socket_t init_socket(ush_int port)
     }
   }
 #else
-  /*
-   * Should the first argument to socket() be AF_INET or PF_INET?  I don't
+  /* Should the first argument to socket() be AF_INET or PF_INET?  I don't
    * know, take your pick.  PF_INET seems to be more widely adopted, and
    * Comer (_Internetworking with TCP/IP_) even makes a point to say that
    * people erroneously use AF_INET with socket() when they should be using
    * PF_INET.  However, the man pages of some systems indicate that AF_INET
    * is correct; some such as ConvexOS even say that you can use either one.
    * All implementations I've seen define AF_INET and PF_INET to be the same
-   * number anyway, so the point is (hopefully) moot.
-   */
+   * number anyway, so the point is (hopefully) moot. */
 
   if ((s = socket(PF_INET, SOCK_STREAM, 0)) < 0) {
     perror("SYSERR: Error creating socket");
@@ -619,11 +594,9 @@ socket_t init_socket(ush_int port)
 
   set_sendbuf(s);
 
-/*
- * The GUSI sockets library is derived from BSD, so it defines
- * SO_LINGER, even though setsockopt() is unimplimented.
- *	(from Dean Takemori <dean@UHHEPH.PHYS.HAWAII.EDU>)
- */
+/* The GUSI sockets library is derived from BSD, so it defines SO_LINGER, even 
+ * though setsockopt() is unimplimented. (from Dean Takemori 
+ * <dean@UHHEPH.PHYS.HAWAII.EDU>) */
 #if defined(SO_LINGER) && !defined(CIRCLE_MACINTOSH)
   {
     struct linger ld;
@@ -652,7 +625,6 @@ socket_t init_socket(ush_int port)
   return (s);
 }
 
-
 int get_max_players(void)
 {
 #ifndef CIRCLE_UNIX
@@ -662,10 +634,8 @@ int get_max_players(void)
   int max_descs = 0;
   const char *method;
 
-/*
- * First, we'll try using getrlimit/setrlimit.  This will probably work
- * on most systems.  HAS_RLIMIT is defined in sysdep.h.
- */
+/* First, we'll try using getrlimit/setrlimit.  This will probably work
+ * on most systems.  HAS_RLIMIT is defined in sysdep.h. */
 #ifdef HAS_RLIMIT
   {
     struct rlimit limit;
@@ -701,11 +671,9 @@ int get_max_players(void)
   max_descs = OPEN_MAX;		/* Uh oh.. rlimit didn't work, but we have
 				 * OPEN_MAX */
 #elif defined (_SC_OPEN_MAX)
-  /*
-   * Okay, you don't have getrlimit() and you don't have OPEN_MAX.  Time to
+  /* Okay, you don't have getrlimit() and you don't have OPEN_MAX.  Time to
    * try the POSIX sysconf() function.  (See Stevens' _Advanced Programming
-   * in the UNIX Environment_).
-   */
+   * in the UNIX Environment_). */
   method = "POSIX sysconf";
   errno = 0;
   if ((max_descs = sysconf(_SC_OPEN_MAX)) < 0) {
@@ -735,15 +703,11 @@ int get_max_players(void)
 #endif /* CIRCLE_UNIX */
 }
 
-
-
-/*
- * game_loop contains the main loop which drives the entire MUD.  It
+/* game_loop contains the main loop which drives the entire MUD.  It
  * cycles once every 0.10 seconds and is responsible for accepting new
  * new connections, polling existing connections for input, dequeueing
  * output and sending it out to players, and calling "heartbeat" functions
- * such as mobile_activity().
- */
+ * such as mobile_activity(). */
 void game_loop(socket_t mother_desc)
 {
   fd_set input_set, output_set, exc_set, null_set;
@@ -796,20 +760,16 @@ void game_loop(socket_t mother_desc)
       FD_SET(d->descriptor, &exc_set);
     }
 
-    /*
-     * At this point, we have completed all input, output and heartbeat
+    /* At this point, we have completed all input, output and heartbeat
      * activity from the previous iteration, so we have to put ourselves
      * to sleep until the next 0.1 second tick.  The first step is to
-     * calculate how long we took processing the previous iteration.
-     */
+     * calculate how long we took processing the previous iteration. */
 
     gettimeofday(&before_sleep, (struct timezone *) 0); /* current time */
     timediff(&process_time, &before_sleep, &last_time);
 
-    /*
-     * If we were asleep for more than one pass, count missed pulses and sleep
-     * until we're resynchronized with the next upcoming pulse.
-     */
+    /* If we were asleep for more than one pass, count missed pulses and sleep
+     * until we're resynchronized with the next upcoming pulse. */
     if (process_time.tv_sec == 0 && process_time.tv_usec < OPT_USEC) {
       missed_pulses = 0;
     } else {
@@ -865,12 +825,10 @@ void game_loop(socket_t mother_desc)
     for (d = descriptor_list; d; d = next_d) {
       next_d = d->next;
 
-      /*
-       * Not combined to retain --(d->wait) behavior. -gg 2/20/98
-       * If no wait state, no subtraction.  If there is a wait
-       * state then 1 is subtracted. Therefore we don't go less
-       * than 0 ever and don't require an 'if' bracket. -gg 2/27/99
-       */
+      /* Not combined to retain --(d->wait) behavior. -gg 2/20/98 If no wait 
+       * state, no subtraction.  If there is a wait state then 1 is subtracted.
+       * Therefore we don't go less than 0 ever and don't require an 'if' 
+       * bracket. -gg 2/27/99 */
       if (d->character) {
         GET_WAIT_STATE(d->character) -= (GET_WAIT_STATE(d->character) > 0);
 
@@ -937,11 +895,9 @@ void game_loop(socket_t mother_desc)
 	close_socket(d);
     }
 
-    /*
-     * Now, we execute as many pulses as necessary--just one if we haven't
+    /* Now, we execute as many pulses as necessary--just one if we haven't
      * missed any pulses, or make up for lost time if we missed a few
-     * pulses by sleeping for too long.
-     */
+     * pulses by sleeping for too long. */
     missed_pulses++;
 
     if (missed_pulses <= 0) {
@@ -983,7 +939,6 @@ void game_loop(socket_t mother_desc)
 #endif
   }
 }
-
 
 void heartbeat(int heart_pulse)
 {
@@ -1031,21 +986,11 @@ void heartbeat(int heart_pulse)
   extract_pending_chars();
 }
 
-
-/* ******************************************************************
-*  general utility stuff (for local use)                            *
-****************************************************************** */
-
-/*
- *  new code to calculate time differences, which works on systems
- *  for which tv_usec is unsigned (and thus comparisons for something
- *  being < 0 fail).  Based on code submitted by ss@sirocco.cup.hp.com.
- */
-
-/*
- * code to return the time difference between a and b (a-b).
- * always returns a nonnegative value (floors at 0).
- */
+/* new code to calculate time differences, which works on systems for which 
+ * tv_usec is unsigned (and thus comparisons for something being < 0 fail).  
+ * Based on code submitted by ss@sirocco.cup.hp.com. Code to return the time 
+ * difference between a and b (a-b). Always returns a nonnegative value 
+ * (floors at 0). */
 void timediff(struct timeval *rslt, struct timeval *a, struct timeval *b)
 {
   if (a->tv_sec < b->tv_sec)
@@ -1067,11 +1012,8 @@ void timediff(struct timeval *rslt, struct timeval *a, struct timeval *b)
   }
 }
 
-/*
- * Add 2 time values.
- *
- * Patch sent by "d. hall" <dhall@OOI.NET> to fix 'static' usage.
- */
+/* Add 2 time values.  Patch sent by "d. hall" <dhall@OOI.NET> to fix 'static' 
+ * usage. */
 void timeadd(struct timeval *rslt, struct timeval *a, struct timeval *b)
 {
   rslt->tv_sec = a->tv_sec + b->tv_sec;
@@ -1082,7 +1024,6 @@ void timeadd(struct timeval *rslt, struct timeval *a, struct timeval *b)
     rslt->tv_sec++;
   }
 }
-
 
 void record_usage(void)
 {
@@ -1107,14 +1048,9 @@ void record_usage(void)
 	    ru.ru_utime.tv_sec, ru.ru_stime.tv_sec, ru.ru_maxrss);
   }
 #endif
-
 }
 
-
-
-/*
- * Turn off echoing (specific to telnet client)
- */
+/* Turn off echoing (specific to telnet client) */
 void echo_off(struct descriptor_data *d)
 {
   char off_string[] =
@@ -1128,10 +1064,7 @@ void echo_off(struct descriptor_data *d)
   write_to_output(d, "%s", off_string);
 }
 
-
-/*
- * Turn on echoing (specific to telnet client)
- */
+/* Turn on echoing (specific to telnet client) */
 void echo_on(struct descriptor_data *d)
 {
   char on_string[] =
@@ -1205,14 +1138,10 @@ size_t proc_colors(char *txt, size_t maxlen, int parse)
         break;
       }
     }
-   /* If we couldn't find any correct color code
-    * let's just skip it
-    * - Welcor
-    */
+   /* If we couldn't find any correct color code let's just skip it - Welcor */
     s++;
 
   } /* for loop */
-
 
   /* make sure txt is NULL - terminated */
   d = '\0';
@@ -1300,10 +1229,7 @@ char *make_prompt(struct descriptor_data *d)
   return (prompt);
 }
 
-
-/*
- * NOTE: 'txt' must be at most MAX_INPUT_LENGTH big.
- */
+/* NOTE: 'txt' must be at most MAX_INPUT_LENGTH big. */
 void write_to_q(const char *txt, struct txt_q *queue, int aliased)
 {
   struct txt_block *newt;
@@ -1323,10 +1249,7 @@ void write_to_q(const char *txt, struct txt_q *queue, int aliased)
   }
 }
 
-
-/*
- * NOTE: 'dest' must be at least MAX_INPUT_LENGTH big.
- */
+/* NOTE: 'dest' must be at least MAX_INPUT_LENGTH big. */
 int get_from_q(struct txt_q *queue, char *dest, int *aliased)
 {
   struct txt_block *tmp;
@@ -1346,7 +1269,6 @@ int get_from_q(struct txt_q *queue, char *dest, int *aliased)
   return (1);
 }
 
-
 /* Empty the queues before closing connection */
 void flush_queues(struct descriptor_data *d)
 {
@@ -1362,7 +1284,6 @@ void flush_queues(struct descriptor_data *d)
   }
 }
 
-
 /* Add a new string to a player's output queue. For outside use. */
 size_t write_to_output(struct descriptor_data *t, const char *txt, ...)
 {
@@ -1375,7 +1296,6 @@ size_t write_to_output(struct descriptor_data *t, const char *txt, ...)
 
   return left;
 }
-
 
 /* Add a new string to a player's output queue. */
 size_t vwrite_to_output(struct descriptor_data *t, const char *format, va_list args)
@@ -1398,21 +1318,17 @@ size_t vwrite_to_output(struct descriptor_data *t, const char *format, va_list a
     strcpy(txt + size - strlen(text_overflow), text_overflow);	/* strcpy: OK */
   }
 
-  /*
-   * If the text is too big to fit into even a large buffer, truncate
+  /* If the text is too big to fit into even a large buffer, truncate
    * the new text to make it fit.  (This will switch to the overflow
-   * state automatically because t->bufspace will end up 0.)
-   */
+   * state automatically because t->bufspace will end up 0.) */
   if (size + t->bufptr + 1 > LARGE_BUFSIZE) {
     size = LARGE_BUFSIZE - t->bufptr - 1;
     txt[size] = '\0';
     buf_overflows++;
   }
 
-  /*
-   * If we have enough space, just write to buffer and that's it! If the
-   * text just barely fits, then it's switched to a large buffer instead.
-   */
+  /* If we have enough space, just write to buffer and that's it! If the
+   * text just barely fits, then it's switched to a large buffer instead. */
   if (t->bufspace > size) {
     strcpy(t->output + t->bufptr, txt);	/* strcpy: OK (size checked above) */
     t->bufspace -= size;
@@ -1458,20 +1374,12 @@ void free_bufpool(void)
   }
 }
 
-
-/* ******************************************************************
-*  socket handling                                                  *
-****************************************************************** */
-
-
-/*
- * get_bind_addr: Return a struct in_addr that should be used in our
+/*  socket handling */
+/* get_bind_addr: Return a struct in_addr that should be used in our
  * call to bind().  If the user has specified a desired binding
  * address, we try to bind to it; otherwise, we bind to INADDR_ANY.
  * Note that inet_aton() is preferred over inet_addr() so we use it if
- * we can.  If neither is available, we always bind to INADDR_ANY.
- */
-
+ * we can.  If neither is available, we always bind to INADDR_ANY. */
 struct in_addr *get_bind_addr()
 {
   static struct in_addr bind_addr;
@@ -1501,11 +1409,8 @@ struct in_addr *get_bind_addr()
 }
 
 #ifdef HAVE_INET_ATON
-
-/*
- * inet_aton's interface is the same as parse_ip's: 0 on failure, non-0 if
- * successful
- */
+/* inet_aton's interface is the same as parse_ip's: 0 on failure, non-0 if
+ * successful. */
 int parse_ip(const char *addr, struct in_addr *inaddr)
 {
   return (inet_aton(addr, inaddr));
@@ -1527,7 +1432,6 @@ int parse_ip(const char *addr, struct in_addr *inaddr)
 }
 
 #else
-
 /* If you have neither function - sorry, you can't do specific binding. */
 int parse_ip(const char *addr, struct in_addr *inaddr)
 {
@@ -1535,10 +1439,7 @@ int parse_ip(const char *addr, struct in_addr *inaddr)
       "functions to parse IP addresses (how bizarre!)");
   return (0);
 }
-
 #endif /* INET_ATON and INET_ADDR */
-
-
 
 /* Sets the kernel's send buffer size for the descriptor */
 int set_sendbuf(socket_t s)
@@ -1649,16 +1550,12 @@ int new_descriptor(socket_t s)
 }
 
 
-/*
- * Send all of the output that we've accumulated for a player out to
- * the player's descriptor.
- *
- * 32 byte GARBAGE_SPACE in MAX_SOCK_BUF used for:
+/* Send all of the output that we've accumulated for a player out to the 
+ * player's descriptor. 32 byte GARBAGE_SPACE in MAX_SOCK_BUF used for:
  *	 2 bytes: prepended \r\n
  *	14 bytes: overflow message
  *	 2 bytes: extra \r\n for non-comapct
- *      14 bytes: unused
- */
+ *      14 bytes: unused */
 int process_output(struct descriptor_data *t)
 {
   char i[MAX_SOCK_BUF], *osb = i + 2;
@@ -1681,10 +1578,8 @@ int process_output(struct descriptor_data *t)
   /* add a prompt */
   strcat(i, make_prompt(t));	/* strcpy: OK (i:MAX_SOCK_BUF reserves space) */
 
-  /*
-   * now, send the output.  If this is an 'interruption', use the prepended
-   * CRLF, otherwise send the straight output sans CRLF.
-   */
+  /* now, send the output.  If this is an 'interruption', use the prepended
+   * CRLF, otherwise send the straight output sans CRLF. */
   if (t->has_prompt) {
     t->has_prompt = FALSE;
     result = write_to_descriptor(t->descriptor, i);
@@ -1705,10 +1600,8 @@ int process_output(struct descriptor_data *t)
 
   /* The common case: all saved output was handed off to the kernel buffer. */
   if (result >= t->bufptr) {
-    /*
-     * if we were using a large buffer, put the large buffer on the buffer pool
-     * and switch back to the small one
-     */
+    /* If we were using a large buffer, put the large buffer on the buffer pool
+     * and switch back to the small one. */
     if (t->large_outbuf) {
       t->large_outbuf->next = bufpool;
       bufpool = t->large_outbuf;
@@ -1720,11 +1613,9 @@ int process_output(struct descriptor_data *t)
     t->bufptr = 0;
     *(t->output) = '\0';
 
-    /*
-     * If the overflow message or prompt were partially written, try to save
+    /* If the overflow message or prompt were partially written, try to save
      * them. There will be enough space for them if this is true.  'result'
-     * is effectively unsigned here anyway.
-     */
+     * is effectively unsigned here anyway. */
     if ((unsigned int)result < strlen(osb)) {
       size_t savetextlen = strlen(osb + result);
 
@@ -1744,26 +1635,18 @@ int process_output(struct descriptor_data *t)
   return (result);
 }
 
-
-/*
- * perform_socket_write: takes a descriptor, a pointer to text, and a
+/* perform_socket_write: takes a descriptor, a pointer to text, and a
  * text length, and tries once to send that text to the OS.  This is
  * where we stuff all the platform-dependent stuff that used to be
- * ugly #ifdef's in write_to_descriptor().
- *
- * This function must return:
- *
+ * ugly #ifdef's in write_to_descriptor(). This function must return:
  * -1  If a fatal error was encountered in writing to the descriptor.
  *  0  If a transient failure was encountered (e.g. socket buffer full).
  * >0  To indicate the number of bytes successfully written, possibly
  *     fewer than the number the caller requested be written.
- *
  * Right now there are two versions of this function: one for Windows,
- * and one for all other platforms.
- */
+ * and one for all other platforms. */
 
 #if defined(CIRCLE_WINDOWS)
-
 ssize_t perform_socket_write(socket_t desc, const char *txt, size_t length)
 {
   ssize_t result;
@@ -1815,11 +1698,8 @@ ssize_t perform_socket_write(socket_t desc, const char *txt, size_t length)
     return (-1);
   }
 
-  /*
-   * result < 0, so an error was encountered - is it transient?
-   * Unfortunately, different systems use different constants to
-   * indicate this.
-   */
+  /* result < 0, so an error was encountered - is it transient? Unfortunately, 
+   * different systems use different constants to indicate this. */
 
 #ifdef EAGAIN		/* POSIX */
   if (errno == EAGAIN)
@@ -1839,20 +1719,13 @@ ssize_t perform_socket_write(socket_t desc, const char *txt, size_t length)
   /* Looks like the error was fatal.  Too bad. */
   return (-1);
 }
-
 #endif /* CIRCLE_WINDOWS */
 
-
-/*
- * write_to_descriptor takes a descriptor, and text to write to the
- * descriptor.  It keeps calling the system-level write() until all
- * the text has been delivered to the OS, or until an error is
- * encountered.
- *
- * Returns:
+/* write_to_descriptor takes a descriptor, and text to write to the descriptor.
+ * It keeps calling the system-level write() until all the text has been 
+ * delivered to the OS, or until an error is encountered. Returns:
  * >=0  If all is well and good.
- *  -1  If an error was encountered, so that the player should be cut off.
- */
+ *  -1  If an error was encountered, so that the player should be cut off. */
 int write_to_descriptor(socket_t desc, const char *txt)
 {
   ssize_t bytes_written;
@@ -1878,11 +1751,8 @@ int write_to_descriptor(socket_t desc, const char *txt)
   return (write_total);
 }
 
-
-/*
- * Same information about perform_socket_write applies here. I like
- * standards, there are so many of them. -gg 6/30/98
- */
+/* Same information about perform_socket_write applies here. I like
+ * standards, there are so many of them. -gg 6/30/98 */
 ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space_left)
 {
   ssize_t ret;
@@ -1905,9 +1775,7 @@ ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space_left)
     return (-1);
   }
 
-  /*
-   * read returned a value < 0: there was an error
-   */
+  /* Read returned a value < 0: there was an error. */
 
 #if defined(CIRCLE_WINDOWS)	/* Windows */
   if (WSAGetLastError() == WSAEWOULDBLOCK || WSAGetLastError() == WSAEINTR)
@@ -1941,27 +1809,22 @@ ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space_left)
 
 #endif /* CIRCLE_WINDOWS */
 
-  /*
-   * We don't know what happened, cut them off. This qualifies for
-   * a SYSERR because we have no idea what happened at this point.
-   */
+  /* We don't know what happened, cut them off. This qualifies for
+   * a SYSERR because we have no idea what happened at this point.*/
   perror("SYSERR: perform_socket_read: about to lose connection");
   return (-1);
 }
 
-/*
- * ASSUMPTION: There will be no newlines in the raw input buffer when this
+/* ASSUMPTION: There will be no newlines in the raw input buffer when this
  * function is called.  We must maintain that before returning.
  *
  * Ever wonder why 'tmp' had '+8' on it?  The crusty old code could write
- * MAX_INPUT_LENGTH+1 bytes to 'tmp' if there was a '$' as the final
- * character in the input buffer.  This would also cause 'space_left' to
- * drop to -1, which wasn't very happy in an unsigned variable.  Argh.
- * So to fix the above, 'tmp' lost the '+8' since it doesn't need it
- * and the code has been changed to reserve space by accepting one less
- * character. (Do you really need 256 characters on a line?)
- * -gg 1/21/2000
- */
+ * MAX_INPUT_LENGTH+1 bytes to 'tmp' if there was a '$' as the final character 
+ * in the input buffer.  This would also cause 'space_left' to drop to -1, 
+ * which wasn't very happy in an unsigned variable.  Argh. So to fix the 
+ * above, 'tmp' lost the '+8' since it doesn't need it and the code has been 
+ * changed to reserve space by accepting one less character. (Do you really 
+ * need 256 characters on a line?) -gg 1/21/2000 */
 int process_input(struct descriptor_data *t)
 {
   int buf_length, failed_subst;
@@ -2000,16 +1863,14 @@ int process_input(struct descriptor_data *t)
     read_point += bytes_read;
     space_left -= bytes_read;
 
-/*
- * on some systems such as AIX, POSIX-standard nonblocking I/O is broken,
+/* on some systems such as AIX, POSIX-standard nonblocking I/O is broken,
  * causing the MUD to hang when it encounters input not terminated by a
  * newline.  This was causing hangs at the Password: prompt, for example.
  * I attempt to compensate by always returning after the _first_ read, instead
  * of looping forever until a read returns -1.  This simulates non-blocking
  * I/O because the result is we never call read unless we know from select()
  * that data is ready (process_input is only called if select indicates that
- * this descriptor is in the read set).  JE 2/23/95.
- */
+ * this descriptor is in the read set).  JE 2/23/95. */
 #if !defined(POSIX_NONBLOCK_BROKEN)
   } while (nl_pos == NULL);
 #else
@@ -2019,10 +1880,8 @@ int process_input(struct descriptor_data *t)
     return (0);
 #endif /* POSIX_NONBLOCK_BROKEN */
 
-  /*
-   * okay, at this point we have at least one newline in the string; now we
-   * can copy the formatted data to a new array for further processing.
-   */
+  /* okay, at this point we have at least one newline in the string; now we
+   * can copy the formatted data to a new array for further processing. */
 
   read_point = t->inbuf;
 
@@ -2115,12 +1974,9 @@ int process_input(struct descriptor_data *t)
   return (1);
 }
 
-
-
 /* perform substitution for the '^..^' csh-esque syntax orig is the
  * orig string, i.e. the one being modified.  subst contains the
- * substition string, i.e. "^telm^tell"
- */
+ * substition string, i.e. "^telm^tell" */
 int perform_subst(struct descriptor_data *t, char *orig, char *subst)
 {
   char newsub[MAX_INPUT_LENGTH + 5];
@@ -2167,8 +2023,6 @@ int perform_subst(struct descriptor_data *t, char *orig, char *subst)
 
   return (0);
 }
-
-
 
 void close_socket(struct descriptor_data *d)
 {
@@ -2231,8 +2085,6 @@ void close_socket(struct descriptor_data *d)
     free(d->history);
   }
 
-  free_hist_messg(d);
-
   if (d->showstr_head)
     free(d->showstr_head);
   if (d->showstr_count)
@@ -2257,8 +2109,6 @@ void close_socket(struct descriptor_data *d)
   free(d);
 }
 
-
-
 void check_idle_passwords(void)
 {
   struct descriptor_data *d, *next_d;
@@ -2278,15 +2128,11 @@ void check_idle_passwords(void)
   }
 }
 
-
-
-/*
- * I tried to universally convert Circle over to POSIX compliance, but
+/* I tried to universally convert Circle over to POSIX compliance, but
  * alas, some systems are still straggling behind and don't have all the
  * appropriate defines.  In particular, NeXT 2.x defines O_NDELAY but not
  * O_NONBLOCK.  Krusty old NeXT machines!  (Thanks to Michael Jones for
- * this and various other NeXT fixes.)
- */
+ * this and various other NeXT fixes.) */
 
 #if defined(CIRCLE_WINDOWS)
 
@@ -2341,21 +2187,15 @@ void nonblock(socket_t s)
     exit(1);
   }
 }
-
 #endif  /* CIRCLE_UNIX || CIRCLE_OS2 || CIRCLE_MACINTOSH */
 
 
-/* ******************************************************************
-*  signal-handling functions (formerly signals.c).  UNIX only.      *
-****************************************************************** */
-
+/*  signal-handling functions (formerly signals.c).  UNIX only. */
 #if defined(CIRCLE_UNIX) || defined(CIRCLE_MACINTOSH)
-
 RETSIGTYPE reread_wizlists(int sig)
 {
   reread_wizlist = TRUE;
 }
-
 
 RETSIGTYPE unrestrict_game(int sig)
 {
@@ -2389,30 +2229,24 @@ RETSIGTYPE checkpointing(int sig)
 #endif
 }
 
-
 /* Dying anyway... */
 RETSIGTYPE hupsig(int sig)
 {
   log("SYSERR: Received SIGHUP, SIGINT, or SIGTERM.  Shutting down...");
-  exit(1);			/* perhaps something more elegant should
-				 * substituted */
+  exit(1); /* perhaps something more elegant should substituted */
 }
 
 #endif	/* CIRCLE_UNIX */
 
-/*
- * This is an implementation of signal() using sigaction() for portability.
+/* This is an implementation of signal() using sigaction() for portability.
  * (sigaction() is POSIX; signal() is not.)  Taken from Stevens' _Advanced
  * Programming in the UNIX Environment_.  We are specifying that all system
  * calls _not_ be automatically restarted for uniformity, because BSD systems
  * do not restart select(), even if SA_RESTART is used.
- *
  * Note that NeXT 2.x is not POSIX and does not have sigaction; therefore,
  * I just define it to be the old signal.  If your system doesn't have
  * sigaction either, you can use the same fix.
- *
- * SunOS Release 4.0.2 (sun386) needs this too, according to Tim Aldric.
- */
+ * SunOS Release 4.0.2 (sun386) needs this too, according to Tim Aldric. */
 
 #ifndef POSIX
 #define my_signal(signo, func) signal(signo, func)
@@ -2435,7 +2269,6 @@ sigfunc *my_signal(int signo, sigfunc *func)
 }
 #endif				/* POSIX */
 
-
 void signal_setup(void)
 {
 #ifndef CIRCLE_MACINTOSH
@@ -2445,16 +2278,12 @@ void signal_setup(void)
   /* user signal 1: reread wizlists.  Used by autowiz system. */
   my_signal(SIGUSR1, reread_wizlists);
 
-  /*
-   * user signal 2: unrestrict game.  Used for emergencies if you lock
-   * yourself out of the MUD somehow.  (Duh...)
-   */
+  /* user signal 2: unrestrict game.  Used for emergencies if you lock
+   * yourself out of the MUD somehow. */
   my_signal(SIGUSR2, websterlink);
 
-  /*
-   * set up the deadlock-protection so that the MUD aborts itself if it gets
-   * caught in an infinite loop for more than 3 minutes.
-   */
+  /* set up the deadlock-protection so that the MUD aborts itself if it gets
+   * caught in an infinite loop for more than 3 minutes. */
   interval.tv_sec = 180;
   interval.tv_usec = 0;
   itime.it_interval = interval;
@@ -2473,11 +2302,7 @@ void signal_setup(void)
 }
 
 #endif	/* CIRCLE_UNIX || CIRCLE_MACINTOSH */
-
-/* ****************************************************************
-*       Public routines for system-to-player-communication        *
-**************************************************************** */
-
+/* Public routines for system-to-player-communication. */
 size_t send_to_char(struct char_data *ch, const char *messg, ...)
 {
   if (ch->desc && messg && *messg) {
@@ -2491,7 +2316,6 @@ size_t send_to_char(struct char_data *ch, const char *messg, ...)
   }
   return 0;
 }
-
 
 void send_to_all(const char *messg, ...)
 {
@@ -2510,7 +2334,6 @@ void send_to_all(const char *messg, ...)
     va_end(args);
   }
 }
-
 
 void send_to_outdoor(const char *messg, ...)
 {
@@ -2532,8 +2355,6 @@ void send_to_outdoor(const char *messg, ...)
     va_end(args);
   }
 }
-
-
 
 void send_to_room(room_rnum room, const char *messg, ...)
 {
@@ -2581,15 +2402,11 @@ void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...)
   }
 }
 
-
 const char *ACTNULL = "<NULL>";
-
 #define CHECK_NULL(pointer, expression) \
   if ((pointer) == NULL) i = ACTNULL; else i = (expression);
-
-
 /* higher-level communication: the act() function */
-void perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
+char *perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
 		const void *vict_obj, const struct char_data *to)
 {
   const char *i = NULL;
@@ -2706,37 +2523,32 @@ void perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
   *(++buf) = '\n';
   *(++buf) = '\0';
 
-  if (to->desc) {
+  if (to->desc)
     write_to_output(to->desc, "%s", CAP(lbuf));
-    if (log_this_messg)
-      new_hist_messg(to->desc, lbuf);
-  }
-  log_this_messg = 0;
 
   if ((IS_NPC(to) && dg_act_check) && (to != ch))
     act_mtrigger(to, lbuf, ch, dg_victim, obj, dg_target, dg_arg);
+
+  return strdup(lbuf);
 }
 
-
-void act(const char *str, int hide_invisible, struct char_data *ch,
+char *act(const char *str, int hide_invisible, struct char_data *ch,
 	 struct obj_data *obj, const void *vict_obj, int type)
 {
+  char *msg = NULL;
   const struct char_data *to;
   int to_sleeping;
 
   if (!str || !*str)
-    return;
+    return NULL;
 
-  /*
-   * Warning: the following TO_SLEEP code is a hack.
-   *
+  /* Warning: the following TO_SLEEP code is a hack.
    * I wanted to be able to tell act to deliver a message regardless of sleep
    * without adding an additional argument.  TO_SLEEP is 128 (a single bit
    * high up).  It's ONLY legal to combine TO_SLEEP with one other TO_x
    * command.  It's not legal to combine TO_x's with each other otherwise.
    * TO_SLEEP only works because its value "happens to be" a single bit;
-   * do not change it to something else.  In short, it is a hack.
-   */
+   * do not change it to something else.  In short, it is a hack. */
 
   /* check if TO_SLEEP is there, and remove it if it is. */
   if ((to_sleeping = (type & TO_SLEEP)))
@@ -2747,37 +2559,34 @@ void act(const char *str, int hide_invisible, struct char_data *ch,
   if (!(dg_act_check = !IS_SET(type, DG_NO_TRIG))) 
     REMOVE_BIT(type, DG_NO_TRIG);
 
-  /* And this too.. */
-  log_this_messg = IS_SET(type, LOG_MESSG);
-  if (log_this_messg)
-    REMOVE_BIT(type, LOG_MESSG);
-
   if (type == TO_CHAR) {
     if (ch && SENDOK(ch))
-      perform_act(str, ch, obj, vict_obj, ch);
-    return;
+      return perform_act(str, ch, obj, vict_obj, ch);
+    return NULL;
   }
 
   if (type == TO_VICT) {
     if ((to = (const struct char_data *) vict_obj) != NULL && SENDOK(to))
-      perform_act(str, ch, obj, vict_obj, to);
-    return;
+      return perform_act(str, ch, obj, vict_obj, to);
+    return NULL;
   }
+
 #include "screen.h"
   if (type == TO_GMOTE) {
     struct descriptor_data *i;
+    char buf[MAX_STRING_LENGTH];
+    
     for (i = descriptor_list; i; i = i->next) {
       if (!i->connected && i->character &&
           !PRF_FLAGGED(i->character, PRF_NOGOSS) &&
           !PLR_FLAGGED(i->character, PLR_WRITING) &&
           !ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF)) {
 
-        send_to_char(i->character, "%s", CCYEL(i->character, C_NRM));
-        perform_act(str, ch, obj, vict_obj, i->character);
-        send_to_char(i->character, "%s", CCNRM(i->character, C_NRM));
+        sprintf(buf, "%s%s%s", CCYEL(i->character, C_NRM), str, CCNRM(i->character, C_NRM));
+        msg = perform_act(buf, ch, obj, vict_obj, i->character);
       }
     }
-    return;
+    return msg;
   }
   /* ASSUMPTION: at this point we know type must be TO_NOTVICT or TO_ROOM */
 
@@ -2787,7 +2596,7 @@ void act(const char *str, int hide_invisible, struct char_data *ch,
     to = world[IN_ROOM(obj)].people;
   else {
     log("SYSERR: no valid target to act()!");
-    return;
+    return NULL;
   }
 
   for (; to; to = to->next_in_room) {
@@ -2797,10 +2606,10 @@ void act(const char *str, int hide_invisible, struct char_data *ch,
       continue;
     if (type != TO_ROOM && to == vict_obj)
       continue;
-    perform_act(str, ch, obj, vict_obj, to);
+    msg = perform_act(str, ch, obj, vict_obj, to);
   }
+  return msg;
 }
-
 
 /* Prefer the file over the descriptor. */
 void setup_log(const char *filename, int fd)

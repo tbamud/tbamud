@@ -490,7 +490,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
       cleanup_olc(d, CLEANUP_ALL);
       break;
     default:
-      write_to_output(d, "Invalid choice!\r\nDo you wish to save this room ? : ");
+      write_to_output(d, "Invalid choice!\r\nDo you wish to save your changes ? : ");
       break;
     }
     return;
@@ -500,7 +500,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
     case 'q':
     case 'Q':
       if (OLC_VAL(d)) { /* Something has been modified. */
-        write_to_output(d, "Do you wish to save this room ? : ");
+        write_to_output(d, "Do you wish to save your changes? : ");
         OLC_MODE(d) = REDIT_CONFIRM_SAVESTRING;
       } else
         cleanup_olc(d, CLEANUP_ALL);

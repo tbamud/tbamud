@@ -302,13 +302,11 @@ void make_corpse(struct char_data *ch)
 
   /* transfer gold */
   if (GET_GOLD(ch) > 0) {
-    /*
-     * following 'if' clause added to fix gold duplication loophole
-     * The above line apparently refers to the old "partially log in,
-     * kill the game character, then finish login sequence" duping
-     * bug. The duplication has been fixed (knock on wood) but the
-     * test below shall live on, for a while. -gg 3/3/2002
-     */
+    /* following 'if' clause added to fix gold duplication loophole. The above 
+     * line apparently refers to the old "partially log in, kill the game 
+     * character, then finish login sequence" duping bug. The duplication has 
+     * been fixed (knock on wood) but the test below shall live on, for a 
+     * while. -gg 3/3/2002 */
     if (IS_NPC(ch) || ch->desc) {
       money = create_money(GET_GOLD(ch));
       obj_to_obj(money, corpse);
@@ -564,14 +562,16 @@ void dam_message(int dam, struct char_data *ch, struct char_data *victim,
   act(buf, FALSE, ch, NULL, victim, TO_NOTVICT);
 
   /* damage message to damager */
-  send_to_char(ch, "@Y(%d)", dam);
+  if (GET_LEVEL(ch) >= LVL_IMMORT)
+	send_to_char(ch, "(%d) ", dam);
   buf = replace_string(dam_weapons[msgnum].to_char,
 	  attack_hit_text[w_type].singular, attack_hit_text[w_type].plural);
   act(buf, FALSE, ch, NULL, victim, TO_CHAR);
   send_to_char(ch, CCNRM(ch, C_CMP));
 
   /* damage message to damagee */
-  send_to_char(victim, "@R(%d)", dam);
+  if (GET_LEVEL(ch) >= LVL_IMMORT)
+    send_to_char(victim, "@R(%d)", dam);
   buf = replace_string(dam_weapons[msgnum].to_victim,
 	  attack_hit_text[w_type].singular, attack_hit_text[w_type].plural);
   act(buf, FALSE, ch, NULL, victim, TO_VICT | TO_SLEEP);

@@ -10,8 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "comm.h"
 #include "handler.h"
@@ -70,10 +68,7 @@ int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char
 int objsave_save_obj_record(struct obj_data *obj, FILE *fl, int location);
 void strip_cr(char *buffer);
 
-/*
- * Writes one object record to FILE.
- * Old name: Obj_to_store()
-*/
+/* Writes one object record to FILE.  Old name: Obj_to_store() */
 int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 {
   int counter2;
@@ -90,6 +85,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
   }
 
   if (obj->action_description) {
+
     strcpy(buf1, obj->action_description);
     strip_cr(buf1);
   } else

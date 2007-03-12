@@ -810,7 +810,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
           return;
         default :
           write_to_output(d, "\r\nThat is an invalid choice!\r\n");
-          write_to_output(d, "Do you wish to save your changes? (y/n) : ");
+          write_to_output(d, "Do you wish to save your changes? : ");
           return;
       }
 
@@ -850,7 +850,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         case 'q':
         case 'Q':
-          write_to_output(d, "Do you wish to save your changes? (y/n) : ");
+          write_to_output(d, "Do you wish to save your changes? : ");
           OLC_MODE(d) = CEDIT_CONFIRM_SAVESTRING;
           break;
 

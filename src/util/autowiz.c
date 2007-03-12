@@ -6,22 +6,9 @@
 *  Copyright (C) 1993 The Trustees of The Johns Hopkins University        *
 ************************************************************************* */
 
-
-/* 
-   WARNING:  THIS CODE IS A HACK.  WE CAN NOT AND WILL NOT BE RESPONSIBLE
-   FOR ANY NASUEA, DIZZINESS, VOMITING, OR SHORTNESS OF BREATH RESULTING
-   FROM READING THIS CODE.  PREGNANT WOMEN AND INDIVIDUALS WITH BACK
-   INJURIES, HEART CONDITIONS, OR ARE UNDER THE CARE OF A PHYSICIAN SHOULD
-   NOT READ THIS CODE.
-
-   -- The Management
- */
-
 #include "conf.h"
 #include "sysdep.h"
-
 #include <signal.h>
-
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -59,7 +46,6 @@ struct control_rec level_params[] =
   {0, ""}
 };
 
-
 struct level_rec *levels = 0;
 
 void initialize(void)
@@ -75,7 +61,6 @@ void initialize(void)
     levels = tmp;
   }
 }
-
 
 void read_file(void)
 {
@@ -111,11 +96,9 @@ void read_file(void)
 	!(IS_SET(flags, PINDEX_NOWIZLIST)) &&
 	!(IS_SET(flags, PINDEX_DELETED)))
 	add_name(level, name);
-}
-
+  }
   fclose(fl);
 }
-
 
 void add_name(byte level, char *name)
 {
@@ -142,7 +125,6 @@ void add_name(byte level, char *name)
   curr_level->names = tmp;
 }
 
-
 void sort_names(void)
 {
   struct level_rec *curr_level;
@@ -162,7 +144,6 @@ void sort_names(void)
   }
 }
 
-
 void write_wizlist(FILE * out, int minlev, int maxlev)
 {
   char buf[100];
@@ -172,10 +153,7 @@ void write_wizlist(FILE * out, int minlev, int maxlev)
 
   fprintf(out,
 "*************************************************************************\n"
-"* The following people have reached immortality on CircleMUD.  They are *\n"
-"* to be treated with respect and awe.  Occasional prayers to them are   *\n"
-"* advisable.  Annoying them is not recommended.  Stealing from them is  *\n"
-"* punishable by immediate death.                                        *\n"
+"*        The following people have reached immortality on tbaMUD.       *\n"
 "*************************************************************************\n\n");
 
   for (curr_level = levels; curr_level; curr_level = curr_level->next) {
@@ -231,9 +209,6 @@ void write_wizlist(FILE * out, int minlev, int maxlev)
   }
 }
 
-
-
-
 int main(int argc, char **argv)
 {
   int wizlevel, immlevel, pid = 0;
@@ -278,14 +253,10 @@ char *CAP(char *txt)
   return (txt);
 }
 
-
-/*
- * get_line reads the next non-blank line off of the input stream.
- * The newline character is removed from the input.  Lines which begin
- * with '*' are considered to be comments.
- *
- * Returns the number of lines advanced in the file.
- */
+/* get_line reads the next non-blank line off of the input stream. The newline 
+ * character is removed from the input.  Lines which begin with '*' are 
+ * considered to be comments. Returns the number of lines advanced in the 
+ * file. */
 int get_line(FILE * fl, char *buf)
 {
   char temp[256];
@@ -302,7 +273,6 @@ int get_line(FILE * fl, char *buf)
   strcpy(buf, temp);
   return (lines);
 }
-
 
 bitvector_t asciiflag_conv(char *flag)
 {

@@ -100,12 +100,10 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 {
   if (!obj || !ch) {
     log("SYSERR: NULL pointer in show_obj_to_char(): obj=%p ch=%p", obj, ch);
-    /*  SYSERR_DESC:
-     *  Somehow a NULL pointer was sent to show_obj_to_char() in either the
-     *  'obj' or the 'ch' variable.  The error will indicate which was NULL
-     *  by listing both of the pointers passed to it.  This is often a
-     *  difficult one to trace, and may require stepping through a debugger.
-     */
+    /*  SYSERR_DESC: Somehow a NULL pointer was sent to show_obj_to_char() in 
+     *  either the 'obj' or the 'ch' variable.  The error will indicate which 
+     *  was NULL by listing both of the pointers passed to it.  This is often a
+     *  difficult one to trace, and may require stepping through a debugger. */
     return;
   }
 
@@ -153,13 +151,11 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 
   default:
     log("SYSERR: Bad display mode (%d) in show_obj_to_char().", mode);
-    /*  SYSERR_DESC:
-     *  show_obj_to_char() has some predefined 'mode's (argument #3) to tell
-     *  it what to display to the character when it is called.  If the mode
-     *  is not one of these, it will output this error, and indicate what
-     *  mode was passed to it.  To correct it, you will need to find the
-     *  call with the incorrect mode and change it to an acceptable mode.
-     */
+    /*  SYSERR_DESC:  show_obj_to_char() has some predefined 'mode's (argument 
+     *  #3) to tell it what to display to the character when it is called.  If 
+     *  the mode is not one of these, it will output this error, and indicate 
+     *  what mode was passed to it.  To correct it, you will need to find the
+     *  call with the incorrect mode and change it to an acceptable mode. */
     return;
   }
 
@@ -564,14 +560,10 @@ char *find_exdesc(char *word, struct extra_descr_data *list)
   return (NULL);
 }
 
-/*
- * Given the argument "look at <target>", figure out what object or char
- * matches the target.  First, see if there is another char in the room
- * with the name.  Then check local objs for exdescs.
- *
- * Thanks to Angus Mezick <angus@EDGIL.CCMAIL.COMPUSERVE.COM> for the
- * suggested fix to this problem.
- */
+/* Given the argument "look at <target>", figure out what object or char
+ * matches the target.  First, see if there is another char in the room with
+ * the name.  Then check local objs for exdescs. Thanks to Angus Mezick 
+ * <angus@EDGIL.CCMAIL.COMPUSERVE.COM> for the suggested fix to this problem. */
 void look_at_target(struct char_data *ch, char *arg)
 {
   int bits, found = FALSE, j, fnum, i = 0;
@@ -861,7 +853,6 @@ ACMD(do_score)
   }
 }
 
-
 ACMD(do_inventory)
 {
   send_to_char(ch, "You are carrying:\r\n");
@@ -905,14 +896,11 @@ ACMD(do_time)
 	  (time_info.hours % 12 == 0) ? 12 : (time_info.hours % 12),
 	  time_info.hours >= 12 ? "pm" : "am", weekdays[weekday]);
 
-  /*
-   * Peter Ajamian <peter@PAJAMIAN.DHS.ORG> supplied the following as a fix
+  /* Peter Ajamian <peter@PAJAMIAN.DHS.ORG> supplied the following as a fix
    * for a bug introduced in the ordinal display that caused 11, 12, and 13
    * to be incorrectly displayed as 11st, 12nd, and 13rd.  Nate Winters
    * <wintersn@HOTMAIL.COM> had already submitted a fix, but it hard-coded a
-   * limit on ordinal display which I want to avoid.	-dak
-   */
-
+   * limit on ordinal display which I want to avoid. -dak */
   suf = "th";
 
   if (((day % 100) / 10) != 1) {
@@ -1352,7 +1340,7 @@ ACMD(do_users)
     }
   }				/* end while (parser) */
   send_to_char(ch,
-	 "Num Class   Name         State           Idl  Login@@   Site\r\n"
+	 "Num Class   Name         State          Idl   Login@@   Site\r\n"
 	 "--- ------- ------------ -------------- ----- -------- ------------------------\r\n");
 
   one_argument(argument, arg);
@@ -2101,4 +2089,87 @@ ACMD(do_commands)
 
   if (no % 7 != 1)
     send_to_char(ch, "\r\n");
+}
+
+void free_history(struct char_data *ch, int type)
+{
+  struct txt_block *tmp = GET_HISTORY(ch, type), *ftmp;     
+
+  while ((ftmp = tmp)) {
+    tmp = tmp->next;
+    if (ftmp->text)   
+      free(ftmp->text);
+    free(ftmp);
+  }
+  GET_HISTORY(ch, type) = NULL;       
+}
+
+ACMD(do_history)
+{
+  char arg[MAX_INPUT_LENGTH];
+
+  one_argument(argument, arg);
+
+  int type = search_block(arg, history_types, FALSE);
+  if (!*arg || type < 0) {
+    int i;
+
+    send_to_char(ch, "Usage: history <");
+    for (i = 0; *history_types[i] != '\n'; i++) {
+      send_to_char(ch, " %s ", history_types[i]);
+      if (*history_types[i + 1] == '\n')
+        send_to_char(ch, ">\r\n");
+      else
+        send_to_char(ch, "|");
+    }
+    return;
+  }
+
+  if (GET_HISTORY(ch, type) && GET_HISTORY(ch, type)->text && *GET_HISTORY(ch, type)->text) {
+    struct txt_block *tmp;
+    for (tmp = GET_HISTORY(ch, type); tmp; tmp = tmp->next)
+      send_to_char(ch, "%s", tmp->text);
+/* Make this a 1 if you want history to clear after viewing */
+#if 0
+      free_history(ch, type);
+#endif
+  } else
+    send_to_char(ch, "You have no history in that channel.\r\n");
+}
+
+#define HIST_LENGTH 100 
+void add_history(struct char_data *ch, char *str, int type)
+{
+  int i = 0;
+  struct txt_block *tmp = GET_HISTORY(ch, type);     
+  char time_str[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
+
+  time_t ct = time(0);
+  strftime(time_str, sizeof(time_str), "%H:%M ", localtime(&ct));
+
+  sprintf(buf, "%s%s", time_str, str);
+
+  if (!tmp) {
+    CREATE(GET_HISTORY(ch, type), struct txt_block, 1);
+    GET_HISTORY(ch, type)->text = strdup(buf);
+  } 
+  else {   
+    while (tmp->next)
+      tmp = tmp->next;
+    CREATE(tmp->next, struct txt_block, 1);
+    tmp->next->text = strdup(buf);
+
+    for (tmp = GET_HISTORY(ch, type); tmp; tmp = tmp->next, i++);
+
+    for (; i > HIST_LENGTH && GET_HISTORY(ch, type); i--) {
+      tmp = GET_HISTORY(ch, type);
+      GET_HISTORY(ch, type) = tmp->next;
+      if (tmp->text)
+        free(tmp->text);
+      free(tmp);
+    }
+  }
+  /* add this history message to ALL */
+  if (type != HIST_ALL)
+    add_history(ch, str, HIST_ALL);
 }
