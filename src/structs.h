@@ -481,7 +481,7 @@
 /* ** MAX_PWD_LENGTH changed from 10 to 30 for ascii test - Sam ** */
 #define MAX_PWD_LENGTH		30
 #define MAX_TITLE_LENGTH	80
-#define HOST_LENGTH		30
+#define HOST_LENGTH		40
 #define PLR_DESC_LENGTH		512
 #define MAX_TONGUE		3
 #define MAX_SKILLS		200

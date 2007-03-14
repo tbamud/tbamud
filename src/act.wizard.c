@@ -36,6 +36,8 @@ extern int top_of_p_table;
 extern socket_t mother_desc;
 extern ush_int port;
 extern const char *pc_class_types[];
+extern int top_of_p_table;
+extern struct player_index_element *player_table;
 
 /* external functions */
 int level_exp(int chclass, int level);
@@ -54,6 +56,7 @@ void Crash_rentsave(struct char_data * ch, int cost);
 void new_hist_messg(struct descriptor_data *d, const char *msg);
 void clearMemory(struct char_data *ch);
 int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_arg);
+struct time_info_data *real_time_passed(time_t t2, time_t t1);
 
 /* local functions */
 int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *val_arg);
@@ -113,6 +116,7 @@ ACMD(do_poofs);
 ACMD(do_copyover);
 ACMD(do_peace);
 void mod_llog_entry(struct last_entry *llast,int type);
+ACMD(do_plist);
 
 int purge_room(room_rnum room)
 {
@@ -168,7 +172,6 @@ ACMD(do_echo)
       act(buf, FALSE, ch, 0, 0, TO_CHAR);
   }
 }
-
 
 ACMD(do_send)
 {
@@ -544,7 +547,6 @@ void list_zone_commands_room(struct char_data *ch, room_vnum rvnum)
   send_to_char(ch, nrm);
   if (!count)
     send_to_char(ch, "None!\r\n");
-
 }
 #undef ZOCMD
 
@@ -683,10 +685,8 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
   send_to_char(ch, "In room: %d (%s), ", GET_ROOM_VNUM(IN_ROOM(j)),
 	IN_ROOM(j) == NOWHERE ? "Nowhere" : world[IN_ROOM(j)].name);
 
-  /*
-   * NOTE: In order to make it this far, we must already be able to see the
-   *       character holding the object. Therefore, we do not need CAN_SEE().
-   */
+  /* In order to make it this far, we must already be able to see the character
+   * holding the object. Therefore, we do not need CAN_SEE(). */
   send_to_char(ch, "In object: %s, ", j->in_obj ? j->in_obj->short_description : "None");
   send_to_char(ch, "Carried by: %s, ", j->carried_by ? GET_NAME(j->carried_by) : "Nobody");
   send_to_char(ch, "Worn by: %s\r\n", j->worn_by ? GET_NAME(j->worn_by) : "Nobody");
@@ -735,8 +735,7 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
   case ITEM_NOTE:
     send_to_char(ch, "Tongue: %d\r\n", GET_OBJ_VAL(j, 0));
     break;
-  case ITEM_KEY:
-    /* Nothing */
+  case ITEM_KEY: /* Nothing */
     break;
   case ITEM_FOOD:
     send_to_char(ch, "Makes full: %d, Poisoned: %s\r\n", GET_OBJ_VAL(j, 0), YESNO(GET_OBJ_VAL(j, 3)));
@@ -750,11 +749,6 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
 	    GET_OBJ_VAL(j, 2), GET_OBJ_VAL(j, 3));
     break;
   }
-
-  /*
-   * I deleted the "equipment status" code from here because it seemed
-   * more or less useless and just takes up valuable screen space.
-   */
 
   if (j->contains) {
     int column;
@@ -830,7 +824,7 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
 	 k->player.hometown, GET_TALK(k, 0), GET_TALK(k, 1), GET_TALK(k, 2),
 	    GET_PRACTICES(k), int_app[GET_INT(k)].learn,
 	    wis_app[GET_WIS(k)].bonus);
-    /*. Display OLC zone for immorts .*/
+    /* Display OLC zone for immorts. */
     if (GET_LEVEL(k) >= LVL_BUILDER) {
       if (GET_OLC_ZONE(k)==AEDIT_PERMISSION)
         send_to_char(ch, ", OLC[%sAedit%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
@@ -987,8 +981,8 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
 
       send_to_char(ch, "Global Variables:\r\n");
 
-      /* currently, variable context for players is always 0, so it is */
-      /* not displayed here. in the future, this might change */
+      /* currently, variable context for players is always 0, so it is not 
+       * displayed here. in the future, this might change */
       for (tv = k->script->global_vars; tv; tv = tv->next) {
         if (*(tv->value) == UID_CHAR) {
           find_uid_name(tv->value, uname, sizeof(uname));
@@ -1141,11 +1135,9 @@ ACMD(do_shutdown)
 
 void snoop_check(struct char_data *ch)
 {
-  /*  This short routine is to ensure that characters that happen
-   *  to be snooping (or snooped) and get advanced/demoted will
-   *  not be snooping/snooped someone of a higher/lower level (and
-   *  thus, not entitled to be snooping.
-   */
+  /*  This short routine is to ensure that characters that happen to be snooping
+   *  (or snooped) and get advanced/demoted will not be snooping/snooped someone
+   *  of a higher/lower level (and thus, not entitled to be snooping. */
   if (!ch || !ch->desc)
     return;
   if (ch->desc->snooping &&
@@ -1289,15 +1281,11 @@ ACMD(do_return)
   if (ch->desc && ch->desc->original) {
     send_to_char(ch, "You return to your original body.\r\n");
 
-    /*
-     * If someone switched into your original body, disconnect them.
-     *   - JE 2/22/95
-     *
-     * Zmey: here we put someone switched in our body to disconnect state
-     * but we must also NULL his pointer to our character, otherwise
-     * close_socket() will damage our character's pointer to our descriptor
-     * (which is assigned below in this function). 12/17/99
-     */
+    /* If someone switched into your original body, disconnect them. - JE
+     * Zmey: here we put someone switched in our body to disconnect state but 
+     * we must also NULL his pointer to our character, otherwise close_socket()
+     * will damage our character's pointer to our descriptor (which is assigned
+     * below in this function). */
     if (ch->desc->original->desc) {
       ch->desc->original->desc->character = NULL;
       STATE(ch->desc->original->desc) = CON_DISCONNECT;
@@ -1532,9 +1520,7 @@ ACMD(do_advance)
 		GET_NAME(ch), GET_NAME(victim), newlevel, oldlevel);
 
   if (oldlevel >= LVL_IMMORT && newlevel < LVL_IMMORT) {
-    /* If they are no longer an immortal, let's remove some of the
-     * nice immortal only flags, shall we?
-     */
+    /* If they are no longer an immortal, remove the immortal only flags. */
     REMOVE_BIT(PRF_FLAGS(victim), PRF_LOG1 | PRF_LOG2);
     REMOVE_BIT(PRF_FLAGS(victim), PRF_NOHASSLE | PRF_HOLYLIGHT | PRF_SHOWVNUMS);
     run_autowiz();
@@ -1698,29 +1684,21 @@ ACMD(do_dc)
     return;
   }
 
-  /* We used to just close the socket here using close_socket(), but
-   * various people pointed out this could cause a crash if you're
-   * closing the person below you on the descriptor list.  Just setting
-   * to CON_CLOSE leaves things in a massively inconsistent state so I
-   * had to add this new flag to the descriptor. -je
-   *
-   * It is a much more logical extension for a CON_DISCONNECT to be used
-   * for in-game socket closes and CON_CLOSE for out of game closings.
-   * This will retain the stability of the close_me hack while being
-   * neater in appearance. -gg 12/1/97
-   *
-   * For those unlucky souls who actually manage to get disconnected
-   * by two different immortals in the same 1/10th of a second, we have
-   * the below 'if' check. -gg 12/17/99
-   */
+  /* We used to just close the socket here using close_socket(), but various 
+   * people pointed out this could cause a crash if you're closing the person 
+   * below you on the descriptor list.  Just setting to CON_CLOSE leaves things
+   * in a massively inconsistent state so I had to add this new flag to the 
+   * descriptor. -je It is a much more logical extension for a CON_DISCONNECT 
+   * to be used for in-game socket closes and CON_CLOSE for out of game 
+   * closings. This will retain the stability of the close_me hack while being 
+   * neater in appearance. -gg For those unlucky souls who actually manage to 
+   * get disconnected by two different immortals in the same 1/10th of a 
+   * second, we have the below 'if' check. -gg */
   if (STATE(d) == CON_DISCONNECT || STATE(d) == CON_CLOSE)
     send_to_char(ch, "They're already being disconnected.\r\n");
   else {
-    /*
-     * Remember that we can disconnect people not in the game and
-     * that rather confuses the code when it expected there to be
-     * a character context.
-     */
+    /* Remember that we can disconnect people not in the game and that rather 
+     * confuses the code when it expected there to be a character context. */
     if (STATE(d) == CON_PLAYING)
       STATE(d) = CON_DISCONNECT;
     else
@@ -1792,8 +1770,7 @@ ACMD(do_date)
    last [name] [#]
    last without arguments displays the last 10 entries.
    last with a name only displays the 'stock' last entry.
-   last with a number displays that many entries (combines with name)
-*/
+   last with a number displays that many entries (combines with name) */
 const char *last_array[11] = {
   "Connect",
   "Enter Game",
@@ -1847,7 +1824,7 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
   return NULL;
 }
 
-  /* mod_llog_entry assumes that llast is accurate */
+/* mod_llog_entry assumes that llast is accurate */
 void mod_llog_entry(struct last_entry *llast,int type) {
   FILE *fp;
   struct last_entry mlast;
@@ -1864,8 +1841,8 @@ void mod_llog_entry(struct last_entry *llast,int type) {
 
   recs = size/sizeof(struct last_entry);
 
-  /* we'll search last to first, since it's faster than any thing else
-        we can do (like searching for the last shutdown/etc..) */
+  /* We'll search last to first, since it's faster than any thing else we can 
+   * do (like searching for the last shutdown/etc..) */
   for(tmp=recs; tmp > 0; tmp--) {
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
     fread(&mlast,sizeof(struct last_entry),1,fp);
@@ -1889,11 +1866,11 @@ void mod_llog_entry(struct last_entry *llast,int type) {
       fclose(fp);
       return;
     }
-        /*not the one we seek. next */
+    /*not the one we seek. next */
   }
   fclose(fp);
 
-        /*not found, no problem, quit */
+  /*not found, no problem, quit */
   return;
 }
 
@@ -1901,9 +1878,8 @@ void add_llog_entry(struct char_data *ch, int type) {
   FILE *fp;
   struct last_entry *llast;
 
-  /* so if a char enteres a name, but bad password, otherwise
-        loses link before he gets a pref assinged, we
-        won't record it */
+  /* so if a char enteres a name, but bad password, otherwise loses link before
+   * he gets a pref assinged, we won't record it */
   if(GET_PREF(ch) <= 0) {
     return;
   }
@@ -2273,9 +2249,7 @@ ACMD(do_zreset)
     send_to_char(ch, "You do not have permission to reset this zone. Try %d.\r\n", GET_OLC_ZONE(ch));
 }
 
-/*
- *  General fn for wizcommands of the sort: cmd <player>
- */
+/*  General fn for wizcommands of the sort: cmd <player> */
 ACMD(do_wizutil)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -2370,10 +2344,8 @@ ACMD(do_wizutil)
       break;
     default:
       log("SYSERR: Unknown subcmd %d passed to do_wizutil (%s)", subcmd, __FILE__);
-      /*  SYSERR_DESC:
-       *  This is the same as the unhandled case in do_gen_ps(), but this
-       *  function handles 'reroll', 'pardon', 'freeze', etc.
-       */
+      /*  SYSERR_DESC: This is the same as the unhandled case in do_gen_ps(), 
+       *  but this function handles 'reroll', 'pardon', 'freeze', etc. */
       break;
     }
     save_char(vict);
@@ -2381,9 +2353,7 @@ ACMD(do_wizutil)
 }
 
 /* single zone printing fn used by "show zone" so it's not repeated in the
-   code 3 times ... -je, 4/6/93 */
-
-/* FIXME: overflow possible */
+   code 3 times ... -je, 4/6/93 FIXME: overflow possible */
 size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int listall)
 {
   size_t tmp;
@@ -2433,9 +2403,9 @@ size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int listall)
   }
 
     return snprintf(bufptr, left,
-		    "%3d %-*s%s By: %-10.10s%s Range: %5d-%5d\r\n", zone_table[zone].number,
-		    count_color_chars(zone_table[zone].name)+30, zone_table[zone].name, KNRM,
-		    zone_table[zone].builders, KNRM, zone_table[zone].bot, zone_table[zone].top);
+        "%3d %-*s%s By: %-10.10s%s Range: %5d-%5d\r\n", zone_table[zone].number,
+	count_color_chars(zone_table[zone].name)+30, zone_table[zone].name, KNRM,
+	zone_table[zone].builders, KNRM, zone_table[zone].bot, zone_table[zone].top);
 }
 
 ACMD(do_show)
@@ -2692,7 +2662,7 @@ ACMD(do_show)
   }
 }
 
-/***************** The do_set function ***********************************/
+/* The do_set function */
 
 #define PC   1
 #define NPC  2
@@ -2831,8 +2801,7 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
       }
       /* NOTE: May not display the exact age specified due to the integer
        * division used elsewhere in the code.  Seems to only happen for
-       * some values below the starting age (17) anyway. -gg 5/27/98
-       */
+       * some values below the starting age (17) anyway. -gg 5/27/98 */
       vict->player.time.birth = time(0) - ((value - 17) * SECS_PER_MUD_YEAR);
       break;
     case 3: /* align */
@@ -3293,10 +3262,7 @@ ACMD(do_links)
   }
 }
 
-/**************************************************************************************/
-/*                         Zone Checker Code below                                    */
-/**************************************************************************************/
-
+/* Zone Checker Code below */
 /*mob limits*/
 #define MAX_DAMROLL_ALLOWED      MAX(GET_LEVEL(mob)/5, 1)
 #define MAX_HITROLL_ALLOWED      MAX(GET_LEVEL(mob)/3, 1)
@@ -3340,12 +3306,8 @@ struct zcheck_armor {
 #define MAX_APPLIES_LIMIT        1     /* toggle - is there a limit at all?               */
 #define CHECK_ITEM_RENT          0     /* do we check for rent cost == 0 ?                */
 #define CHECK_ITEM_COST          0     /* do we check for item cost == 0 ?                */
-/*
-  Applies limits
-  !! Very Important:  Keep these in the same order as in Structs.h
-  To ignore an apply, set max_aff to -99.
-  These will be ignored if MAX_APPLIES_LIMIT = 0
-*/
+/* Applies limits !! Very Important:  Keep these in the same order as in Structs.h.
+ * To ignore an apply, set max_aff to -99. These will be ignored if MAX_APPLIES_LIMIT = 0 */
 struct zcheck_affs {
   int aff_type;    /*from Structs.h*/
   int min_aff;     /*min. allowed value*/
@@ -3415,7 +3377,7 @@ ACMD (do_zcheck)
   } else
     send_to_char(ch, "Checking zone %d!\r\n", zone_table[zrnum].number);
 
- /************** Check mobs *****************/
+ /* Check mobs */
 
   send_to_char(ch, "Checking Mobs for limits...\r\n");
   /*check mobs first*/
@@ -3503,7 +3465,7 @@ ACMD (do_zcheck)
           len += snprintf(buf + len, sizeof(buf) - len,
                             "- SPEC flag needs to be removed.\r\n");
 
-          /*****ADDITIONAL MOB CHECKS HERE*****/
+          /* Additional mob checks.*/
           if (found) {
             send_to_char(ch,
                     "%s[%5d]%s %-30s: %s\r\n",
@@ -3516,10 +3478,10 @@ ACMD (do_zcheck)
           strcpy(buf, "");
           found = 0;
           len = 0;
-        }   /*mob is in zone*/
-    }  /*check mobs*/
+        }   /* mob is in zone */
+    }  /* check mobs */
 
- /************** Check objects *****************/
+ /* Check objects */
   send_to_char(ch, "\r\nChecking Objects for limits...\r\n");
   for (i=0; i<top_of_objt; i++) {
     if (real_zone_by_thing(obj_index[i].vnum) == zrnum) { /*is object in this zone?*/
@@ -3651,7 +3613,7 @@ ACMD (do_zcheck)
      if (ext2 && (found = 1))
        len += snprintf(buf + len, sizeof(buf) - len,
                        "- has unformatted extra description\r\n");
-     /*****ADDITIONAL OBJ CHECKS HERE*****/
+     /* Additional object checks. */
      if (found) {
         send_to_char(ch, "[%5d] %-30s: \r\n", GET_OBJ_VNUM(obj), obj->short_description);
         send_to_char(ch, buf);
@@ -3662,7 +3624,7 @@ ACMD (do_zcheck)
     }   /*object is in zone*/
   } /*check objects*/
 
-  /************** Check rooms *****************/
+  /* Check rooms */
   send_to_char(ch, "\r\nChecking Rooms for limits...\r\n");
   for (i=0; i<top_of_world;i++) {
     if (world[i].zone==zrnum) {
@@ -3744,7 +3706,6 @@ ACMD (do_zcheck)
     send_to_char(ch, "More than 1/3 of the rooms are not linked.\r\n");
 
 }
-/**********************************************************************************/
 
 void mob_checkload(struct char_data *ch, mob_vnum mvnum)
 {
@@ -3933,7 +3894,6 @@ void trg_checkload(struct char_data *ch, trig_vnum tvnum)
                          mob_proto[i].player.short_descr);
         found = 1;
       }
-
   }
 
   for (j = 0; j < top_of_objt; j++) {
@@ -3947,7 +3907,6 @@ void trg_checkload(struct char_data *ch, trig_vnum tvnum)
                          obj_proto[j].short_description);
         found = 1;
       }
-
   }
 
   for (k = 0;k < top_of_world; k++) {
@@ -3992,11 +3951,8 @@ ACMD(do_checkloadstatus)
     trg_checkload(ch, atoi(buf2));
     return;
   }
-
 }
-/**************************************************************************************/
-/*                         Zone Checker code above                                    */
-/**************************************************************************************/
+/* Zone Checker code above. */
 
 /* (c) 1996-97 Erwin S. Andreasen <erwin@pip.dknet.dk> */
 ACMD(do_copyover)
@@ -4011,11 +3967,6 @@ ACMD(do_copyover)
       return;
     }
 
-   /*
-    * Uncomment if you use OasisOLC2.0, this saves all OLC modules:
-     save_all();
-    *
-    */
    sprintf (buf, "\n\r *** COPYOVER by %s - please remain seated!\n\r", GET_NAME(ch));
 
    /* write boot_time as first line in file */
@@ -4280,4 +4231,96 @@ ACMD(do_changelog)
   fclose(fl);
   fclose(new);
   send_to_char(ch, "Change added.\r\n");
+}
+
+#define PLIST_FORMAT \
+  "plist [minlev[-maxlev]] [-n name] [-d days] [-h hours] [-i] [-m]"
+
+ACMD(do_plist)
+{
+  int i, len = 0, count = 0;
+  char mode, buf[MAX_STRING_LENGTH], name_search[MAX_NAME_LENGTH], time_str[MAX_STRING_LENGTH];
+  struct time_info_data time_away;
+  int low = 0, high = LVL_IMPL, low_day = 0, high_day = 10000, low_hr = 0, high_hr = 24;
+
+  skip_spaces(&argument);
+  strcpy(buf, argument);        /* strcpy: OK (sizeof: argument == buf) */
+  name_search[0] = '\0';
+
+  while (*buf) {
+    char arg[MAX_INPUT_LENGTH], buf1[MAX_INPUT_LENGTH];
+
+    half_chop(buf, arg, buf1);
+    if (isdigit(*arg)) {
+      if (sscanf(arg, "%d-%d", &low, &high) == 1)
+        high = low;
+      strcpy(buf, buf1);        /* strcpy: OK (sizeof: buf1 == buf) */
+    } else if (*arg == '-') {
+      mode = *(arg + 1);        /* just in case; we destroy arg in the switch */
+      switch (mode) {
+      case 'l':
+        half_chop(buf1, arg, buf);
+        sscanf(arg, "%d-%d", &low, &high);
+        break;
+      case 'n':
+        half_chop(buf1, name_search, buf);
+        break;
+      case 'i':
+        strcpy(buf, buf1);
+        low = LVL_IMMORT;
+        break;
+      case 'm':
+        strcpy(buf, buf1); 
+        high = LVL_IMMORT - 1;
+        break;
+      case 'd':
+        half_chop(buf1, arg, buf);
+        if (sscanf(arg, "%d-%d", &low_day, &high_day) == 1)
+          high_day = low_day;
+        break;
+      case 'h':
+        half_chop(buf1, arg, buf);
+        if (sscanf(arg, "%d-%d", &low_hr, &high_hr) == 1)
+          high_hr = low_hr;
+        break;
+      default:
+        send_to_char(ch, "%s\r\n", PLIST_FORMAT);
+        return;   
+      }
+    } else {
+      send_to_char(ch, "%s\r\n", PLIST_FORMAT);
+      return;
+    }
+  }
+
+  len = 0;   
+  len += snprintf(buf + len, sizeof(buf) - len, "@W[ Id] (Lv) Name         Last@n\r\n"
+                  "%s-----------------------------------------------%s\r\n", CCCYN(ch, C_NRM),
+                  CCNRM(ch, C_NRM));
+
+  for (i = 0; i <= top_of_p_table; i++) {
+    if (player_table[i].level < low || player_table[i].level > high)
+      continue;
+
+    time_away = *real_time_passed(time(0), player_table[i].last);
+
+    if (*name_search && str_cmp(name_search, player_table[i].name))
+      continue;
+
+    if (time_away.day > high_day || time_away.day < low_day)
+      continue;
+    if (time_away.hours > high_hr || time_away.hours < low_hr)
+      continue;
+
+    strcpy(time_str, asctime(localtime(&player_table[i].last)));
+    time_str[strlen(time_str) - 1] = '\0';
+
+    len += snprintf(buf + len, sizeof(buf) - len, "[%3ld] (%2d) %-12s %s\r\n",
+                    player_table[i].id, player_table[i].level,
+                    CAP(strdup(player_table[i].name)), time_str);
+    count++;
+  }
+  snprintf(buf + len, sizeof(buf) - len, "%s-----------------------------------------------%s\r\n"
+           "%d players listed.\r\n", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM), count);
+  page_string(ch->desc, buf, TRUE);
 }

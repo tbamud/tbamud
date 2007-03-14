@@ -160,6 +160,7 @@ ACMD(do_not_here);
 ACMD(do_order);
 ACMD(do_page);
 ACMD(do_peace);
+ACMD(do_plist);
 ACMD(do_pour);
 ACMD(do_practice);
 ACMD(do_purge);
@@ -255,6 +256,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "assist"   , "as"      , POS_FIGHTING, do_assist   , 1, 0 },
   { "ask"      , "ask"     , POS_RESTING , do_spec_comm, 0, SCMD_ASK },
   { "astat"    , "ast"     , POS_DEAD    , do_astat    , 0, 0 },
+  { "attach"   , "attach"  , POS_DEAD    , do_attach   , LVL_BUILDER, 0 },
   { "auction"  , "auc"     , POS_SLEEPING, do_gen_comm , 0, SCMD_AUCTION },
   { "autoexits" , "autoex"  , POS_DEAD    , do_gen_tog  , 0, SCMD_AUTOEXIT },
 
@@ -285,6 +287,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "date"     , "da"      , POS_DEAD    , do_date     , LVL_IMMORT, SCMD_DATE },
   { "dc"       , "dc"      , POS_DEAD    , do_dc       , LVL_GOD, 0 },
   { "deposit"  , "depo"    , POS_STANDING, do_not_here , 1, 0 },
+  { "detach"   , "detach"  , POS_DEAD    , do_detach   , LVL_BUILDER, 0 },
   { "diagnose" , "diag"    , POS_RESTING , do_diagnose , 0, 0 },
   { "dig"      , "dig"     , POS_DEAD    , do_dig      , LVL_BUILDER, 0 },
   { "display"  , "disp"    , POS_DEAD    , do_display  , 0, 0 },
@@ -388,6 +391,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "practice" , "pr"     , POS_RESTING , do_practice , 1, 0 },
   { "page"     , "pag"     , POS_DEAD    , do_page     , 1, 0 },
   { "pardon"   , "pardon"  , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_PARDON },
+  { "plist"    , "plist"   , POS_DEAD    , do_plist    , LVL_GOD, 0 },
   { "policy"   , "pol"     , POS_DEAD    , do_gen_ps   , 0, SCMD_POLICIES },
   { "pour"     , "pour"    , POS_STANDING, do_pour     , 0, SCMD_POUR },
   { "prompt"   , "pro"     , POS_DEAD    , do_display  , 0, 0 },
@@ -458,6 +462,8 @@ cpp_extern const struct command_info cmd_info[] = {
   { "transfer" , "transfer", POS_SLEEPING, do_trans    , LVL_GOD, 0 },
   { "trigedit" , "trigedit", POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_TRIGEDIT},
   { "typo"     , "typo"    , POS_DEAD    , do_gen_write, 0, SCMD_TYPO },
+  { "tlist"    , "tlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_TLIST },
+  { "tstat"    , "tstat"   , POS_DEAD    , do_tstat    , LVL_BUILDER, 0 },
 
   { "unlock"   , "unlock"  , POS_SITTING , do_gen_door , 0, SCMD_UNLOCK },
   { "ungroup"  , "ungroup" , POS_DEAD    , do_ungroup  , 0, 0 },
@@ -472,6 +478,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "visible"  , "vis"     , POS_RESTING , do_visible  , 1, 0 },
   { "vnum"     , "vnum"    , POS_DEAD    , do_vnum     , LVL_IMMORT, 0 },
   { "vstat"    , "vstat"   , POS_DEAD    , do_vstat    , LVL_IMMORT, 0 },
+  { "vdelete"  , "vdelete" , POS_DEAD    , do_vdelete  , LVL_BUILDER, 0 },
 
   { "wake"     , "wake"    , POS_SLEEPING, do_wake     , 0, 0 },
   { "wear"     , "wea"     , POS_RESTING , do_wear     , 0, 0 },
@@ -496,10 +503,6 @@ cpp_extern const struct command_info cmd_info[] = {
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
 
   /* DG trigger commands */
-  { "attach"   , "attach"  , POS_DEAD    , do_attach   , LVL_BUILDER, 0 },
-  { "detach"   , "detach"  , POS_DEAD    , do_detach   , LVL_BUILDER, 0 },
-  { "tlist"    , "tlist"    , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_TLIST },
-  { "tstat"    , "tstat"   , POS_DEAD    , do_tstat    , LVL_BUILDER, 0 },
   { "masound"  , "masound" , POS_DEAD    , do_masound  , -1, 0 },
   { "mkill"    , "mkill"   , POS_STANDING, do_mkill    , -1, 0 },
   { "mjunk"    , "mjunk"   , POS_SITTING , do_mjunk    , -1, 0 },
@@ -520,7 +523,6 @@ cpp_extern const struct command_info cmd_info[] = {
   { "mforget"  , "mforget" , POS_DEAD    , do_mforget  , -1, 0 },
   { "mtransform", "mtransform", POS_DEAD , do_mtransform,-1, 0 },
   { "mzoneecho", "mzoneecho", POS_DEAD   , do_mzoneecho, -1, 0 },
-  { "vdelete"  , "vdelete" , POS_DEAD    , do_vdelete  , LVL_BUILDER, 0 },
   { "mfollow"  , "mfollow" , POS_DEAD    , do_mfollow  , -1, 0 },
 
   { "\n", "zzzzzzz", 0, 0, 0, 0 } };	/* this must be last */
@@ -550,11 +552,9 @@ const char *reserved[] =
   "\n"
 };
 
-/*
- * This is the actual command interpreter called from game_loop() in comm.c
+/* This is the actual command interpreter called from game_loop() in comm.c
  * It makes sure you are the proper level and position to execute the command,
- * then calls the appropriate function.
- */
+ * then calls the appropriate function. */
 void command_interpreter(struct char_data *ch, char *argument)
 {
   int cmd, length;
@@ -568,11 +568,9 @@ void command_interpreter(struct char_data *ch, char *argument)
   if (!*argument)
     return;
 
-  /*
-   * special case to handle one-character, non-alphanumeric commands;
-   * requested by many people so "'hi" or ";godnet test" is possible.
-   * Patch sent by Eric Green and Stefan Wasilewski.
-   */
+  /* special case to handle one-character, non-alphanumeric commands; requested
+   * by many people so "'hi" or ";godnet test" is possible. Patch sent by Eric 
+   * Green and Stefan Wasilewski. */
   if (!isalpha(*argument)) {
     arg[0] = argument[0];
     arg[1] = '\0';
@@ -581,9 +579,7 @@ void command_interpreter(struct char_data *ch, char *argument)
     line = any_one_arg(argument, arg);
 
   /* Since all command triggers check for valid_dg_target before acting, the levelcheck
-   * here has been removed.
-   */
-  /* otherwise, find the command */
+   * here has been removed. Otherwise, find the command. */
   {
     int cont;                                            /* continue the command checks */
     cont = command_wtrigger(ch, arg, line);              /* any world triggers ? */
@@ -658,11 +654,7 @@ void command_interpreter(struct char_data *ch, char *argument)
     ((*complete_cmd_info[cmd].command_pointer) (ch, line, cmd, complete_cmd_info[cmd].subcmd));
 }
 
-/**************************************************************************
- * Routines to handle aliasing                                             *
-  **************************************************************************/
-
-
+/* Routines to handle aliasing. */
 struct alias_data *find_alias(struct alias_data *alias_list, char *str)
 {
   while (alias_list != NULL) {
@@ -676,7 +668,6 @@ struct alias_data *find_alias(struct alias_data *alias_list, char *str)
   return (NULL);
 }
 
-
 void free_alias(struct alias_data *a)
 {
   if (a->alias)
@@ -685,7 +676,6 @@ void free_alias(struct alias_data *a)
     free(a->replacement);
   free(a);
 }
-
 
 /* The interface to the outside world: do_alias */
 ACMD(do_alias)
@@ -736,18 +726,16 @@ ACMD(do_alias)
 	a->type = ALIAS_SIMPLE;
       a->next = GET_ALIASES(ch);
       GET_ALIASES(ch) = a;
-//      save_char(ch);
+      save_char(ch);
       send_to_char(ch, "Alias ready.\r\n");
     }
   }
 }
 
-/*
- * Valid numeric replacements are only $1 .. $9 (makes parsing a little
- * easier, and it's not that much of a limitation anyway.)  Also valid
- * is "$*", which stands for the entire original line after the alias.
- * ";" is used to delimit commands.
- */
+/* Valid numeric replacements are only $1 .. $9 (makes parsing a little easier,
+ * and it's not that much of a limitation anyway.)  Also valid is "$*", which 
+ * stands for the entire original line after the alias. ";" is used to delimit 
+ * commands. */
 #define NUM_TOKENS       9
 
 void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a)
@@ -803,15 +791,11 @@ void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data 
   }
 }
 
-
-/*
- * Given a character and a string, perform alias replacement on it.
- *
+/* Given a character and a string, perform alias replacement on it.
  * Return values:
  *   0: String was modified in place; call command_interpreter immediately.
  *   1: String was _not_ modified in place; rather, the expanded aliases
- *      have been placed at the front of the character's input queue.
- */
+ *      have been placed at the front of the character's input queue. */
 int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen)
 {
   char first_arg[MAX_INPUT_LENGTH], *ptr;
@@ -845,18 +829,12 @@ int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen)
   }
 }
 
+/* Various other parsing utilities. */
 
-
-/***************************************************************************
- * Various other parsing utilities                                         *
- **************************************************************************/
-
-/*
- * searches an array of strings for a target string.  "exact" can be
- * 0 or non-0, depending on whether or not the match must be exact for
- * it to be returned.  Returns -1 if not found; 0..n otherwise.  Array
- * must be terminated with a '\n' so it knows to stop searching.
- */
+/* Searches an array of strings for a target string.  "exact" can be 0 or non-0,
+ * depending on whether or not the match must be exact for it to be returned.  
+ * Returns -1 if not found; 0..n otherwise.  Array must be terminated with a 
+ * '\n' so it knows to stop searching. */
 int search_block(char *arg, const char **list, int exact)
 {
   int i, l;
@@ -865,8 +843,7 @@ int search_block(char *arg, const char **list, int exact)
    *  prevent the explicit choice of that point.  It seems a bit silly to
    *  dump control characters into arrays to prevent that, so we'll just
    *  check in here to see if the first character of the argument is '!',
-   *  and if so, just blindly return a '-1' for not found. - ae.
-   */
+   *  and if so, just blindly return a '-1' for not found. - ae. */
   if (*arg == '!')
     return (-1);
 
@@ -890,7 +867,6 @@ int search_block(char *arg, const char **list, int exact)
   return (-1);
 }
 
-
 int is_number(const char *str)
 {
   while (*str)
@@ -900,26 +876,21 @@ int is_number(const char *str)
   return (1);
 }
 
-/*
- * Function to skip over the leading spaces of a string.
- */
+/* Function to skip over the leading spaces of a string. */
 void skip_spaces(char **string)
 {
   for (; **string && isspace(**string); (*string)++);
 }
 
 
-/*
- * Given a string, change all instances of double dollar signs ($$) to
- * single dollar signs ($).  When strings come in, all $'s are changed
- * to $$'s to avoid having users be able to crash the system if the
- * inputted string is eventually sent to act().  If you are using user
- * input to produce screen output AND YOU ARE SURE IT WILL NOT BE SENT
- * THROUGH THE act() FUNCTION (i.e., do_gecho, do_title, but NOT do_say),
- * you can call delete_doubledollar() to make the output look correct.
- *
- * Modifies the string in-place.
- */
+/* Given a string, change all instances of double dollar signs ($$) to single 
+ * dollar signs ($).  When strings come in, all $'s are changed to $$'s to 
+ * avoid having users be able to crash the system if the inputted string is 
+ * eventually sent to act().  If you are using user input to produce screen 
+ * output AND YOU ARE SURE IT WILL NOT BE SENT THROUGH THE act() FUNCTION 
+ * (i.e., do_gecho, do_title, but NOT do_say), you can call 
+ * delete_doubledollar() to make the output look correct. 
+ * Modifies the string in-place. */
 char *delete_doubledollar(char *string)
 {
   char *ddread, *ddwrite;
@@ -942,23 +913,18 @@ char *delete_doubledollar(char *string)
   return (string);
 }
 
-
 int fill_word(char *argument)
 {
   return (search_block(argument, fill, TRUE) >= 0);
 }
-
 
 int reserved_word(char *argument)
 {
   return (search_block(argument, reserved, TRUE) >= 0);
 }
 
-
-/*
- * copy the first non-fill-word, space-delimited argument of 'argument'
- * to 'first_arg'; return a pointer to the remainder of the string.
- */
+/* Copy the first non-fill-word, space-delimited argument of 'argument'
+ * to 'first_arg'; return a pointer to the remainder of the string. */
 char *one_argument(char *argument, char *first_arg)
 {
   char *begin = first_arg;
@@ -984,13 +950,8 @@ char *one_argument(char *argument, char *first_arg)
   return (argument);
 }
 
-
-/*
- * one_word is like any_one_arg, except that words in quotes ("") are
- * considered one word.
- *
- * No longer ignores fill words.  -dak, 6 Jan 2003.
- */
+/* one_word is like any_one_arg, except that words in quotes ("") are considered 
+ * one word. No longer ignores fill words.  -dak, 6 Jan 2003. */
 char *one_word(char *argument, char *first_arg)
 {
     skip_spaces(&argument);
@@ -1013,7 +974,6 @@ char *one_word(char *argument, char *first_arg)
   return (argument);
 }
 
-
 /* same as one_argument except that it doesn't ignore fill words */
 char *any_one_arg(char *argument, char *first_arg)
 {
@@ -1029,26 +989,15 @@ char *any_one_arg(char *argument, char *first_arg)
   return (argument);
 }
 
-
-/*
- * Same as one_argument except that it takes two args and returns the rest;
- * ignores fill words
- */
+/* Same as one_argument except that it takes two args and returns the rest;
+ * ignores fill words */
 char *two_arguments(char *argument, char *first_arg, char *second_arg)
 {
   return (one_argument(one_argument(argument, first_arg), second_arg)); /* :-) */
 }
 
-
-
-/*
- * determine if a given string is an abbreviation of another
- * (now works symmetrically -- JE 7/25/94)
- *
- * that was dumb.  it shouldn't be symmetrical.  JE 5/1/95
- *
- * returns 1 if arg1 is an abbreviation of arg2
- */
+/* Determine if a given string is an abbreviation of another.
+ * Returns 1 if arg1 is an abbreviation of arg2. */
 int is_abbrev(const char *arg1, const char *arg2)
 {
   if (!*arg1)
@@ -1064,13 +1013,8 @@ int is_abbrev(const char *arg1, const char *arg2)
     return (0);
 }
 
-
-
-/*
- * Return first space-delimited token in arg1; remainder of string in arg2.
- *
- * NOTE: Requires sizeof(arg2) >= sizeof(string)
- */
+/* Return first space-delimited token in arg1; remainder of string in arg2.
+ * NOTE: Requires sizeof(arg2) >= sizeof(string) */
 void half_chop(char *string, char *arg1, char *arg2)
 {
   char *temp;
@@ -1079,8 +1023,6 @@ void half_chop(char *string, char *arg1, char *arg2)
   skip_spaces(&temp);
   strcpy(arg2, temp);	/* strcpy: OK (documentation) */
 }
-
-
 
 /* Used in specprocs, mostly.  (Exactly) matches "command" to cmd number */
 int find_command(const char *command)
@@ -1093,7 +1035,6 @@ int find_command(const char *command)
 
   return (-1);
 }
-
 
 int special(struct char_data *ch, int cmd, char *arg)
 {
@@ -1133,13 +1074,7 @@ int special(struct char_data *ch, int cmd, char *arg)
   return (0);
 }
 
-
-
-/* *************************************************************************
-*  Stuff for controlling the non-playing sockets (get name, pwd etc)       *
-************************************************************************* */
-
-
+/* Stuff for controlling the non-playing sockets (get name, pwd etc). */
 /* This function needs to die. */
 int _parse_name(char *arg, char *name)
 {
@@ -1156,7 +1091,6 @@ int _parse_name(char *arg, char *name)
   return (0);
 }
 
-
 #define RECON		1
 #define USURP		2
 #define UNSWITCH	3
@@ -1170,10 +1104,8 @@ int perform_dupe_check(struct descriptor_data *d)
   int pref_temp = 0; /* for "last" log */
   int id = GET_IDNUM(d->character);
 
-  /*
-   * Now that this descriptor has successfully logged in, disconnect all
-   * other descriptors controlling a character with the same ID number.
-   */
+  /* Now that this descriptor has successfully logged in, disconnect all
+   * other descriptors controlling a character with the same ID number. */
 
   for (k = descriptor_list; k; k = next_k) {
     next_k = k->next;
@@ -1216,15 +1148,12 @@ int perform_dupe_check(struct descriptor_data *d)
     }
   }
 
- /*
-  * now, go through the character list, deleting all characters that
-  * are not already marked for deletion from the above step (i.e., in the
-  * CON_HANGUP state), and have not already been selected as a target for
-  * switching into.  In addition, if we haven't already found a target,
-  * choose one if one is available (while still deleting the other
-  * duplicates, though theoretically none should be able to exist).
-  */
-
+ /* Now, go through the character list, deleting all characters that are not 
+  * already marked for deletion from the above step (i.e., in the CON_HANGUP 
+  * state), and have not already been selected as a target for switching into.
+  * In addition, if we haven't already found a target, choose one if one is 
+  * available (while still deleting the other duplicates, though theoretically 
+  * none should be able to exist). */
   for (ch = character_list; ch; ch = next_ch) {
     next_ch = ch->next;
 
@@ -1310,24 +1239,20 @@ int enter_player_game (struct descriptor_data *d)
     room_vnum load_room;
 
       reset_char(d->character);
-		/*
-		 * See if there might be some aliases in the old alias file.
-		 * Only do this if there were no aliases in the pfile.
-		 */
+      /* See if there might be some aliases in the old alias file. Only do this 
+       * if there were no aliases in the pfile. */
 		if (GET_ALIASES(d->character) == NULL)
 		{
       read_aliases(d->character);
-      // delete the old file - player will be saved in a second.
+      /* delete the old file - player will be saved in a second. */
       delete_aliases(GET_NAME(d->character));
     }
 
       if (PLR_FLAGGED(d->character, PLR_INVSTART))
 	GET_INVIS_LEV(d->character) = GET_LEVEL(d->character);
 
-      /*
-       * We have to place the character in a room before equipping them
-       * or equip_char() will gripe about the person in NOWHERE.
-       */
+      /* We have to place the character in a room before equipping them
+       * or equip_char() will gripe about the person in NOWHERE. */
       if ((load_room = GET_LOADROOM(d->character)) != NOWHERE)
 	load_room = real_room(load_room);
 
@@ -1347,9 +1272,9 @@ int enter_player_game (struct descriptor_data *d)
       /* find_char helper */
       add_to_lookup_table(GET_ID(d->character), (void *)d->character);
 
-      // after moving saving of variables to the player file, this should only be called
-      // in case nothing was found in the pfile. If something was found, SCRIPT(ch) will
-      // be set
+      /* After moving saving of variables to the player file, this should only 
+       * be called in case nothing was found in the pfile. If something was 
+       * found, SCRIPT(ch) will be set. */
       if (!SCRIPT(d->character))
         read_saved_vars(d->character);
 
@@ -1361,7 +1286,6 @@ int enter_player_game (struct descriptor_data *d)
 
     return load_result;
 }
-
 
 /* deal with newcomers and other non-playing sockets */
 void nanny(struct descriptor_data *d, char *arg)
@@ -1388,9 +1312,7 @@ void nanny(struct descriptor_data *d, char *arg)
 
   skip_spaces(&arg);
 
-  /*
-   * Quick check for the OLC states.
-   */
+  /* Quick check for the OLC states. */
   for (player_i = 0; olc_functions[player_i].state >= 0; player_i++)
     if (STATE(d) == olc_functions[player_i].state) {
       /* send context-sensitive help if need be */
@@ -1505,15 +1427,13 @@ void nanny(struct descriptor_data *d, char *arg)
     break;
 
   case CON_PASSWORD:		/* get pwd for known player      */
-    /*
-     * To really prevent duping correctly, the player's record should
-     * be reloaded from disk at this point (after the password has been
-     * typed).  However I'm afraid that trying to load a character over
-     * an already loaded character is going to cause some problem down the
-     * road that I can't see at the moment.  So to compensate, I'm going to
-     * (1) add a 15 or 20-second time limit for entering a password, and (2)
-     * re-add the code to cut off duplicates when a player quits.  JE 6 Feb 96
-     */
+    /* To really prevent duping correctly, the player's record should be reloaded 
+     * from disk at this point (after the password has been typed).  However I'm 
+     * afraid that trying to load a character over an already loaded character is 
+     * going to cause some problem down the road that I can't see at the moment.  
+     * So to compensate, I'm going to (1) add a 15 or 20-second time limit for 
+     * entering a password, and (2) re-add the code to cut off duplicates when a 
+     * player quits.  JE 6 Feb 96 */
 
     echo_on(d);    /* turn echo back on */
 
@@ -1716,14 +1636,8 @@ void nanny(struct descriptor_data *d, char *arg)
     case '2':
       if (d->character->player.description) {
 	write_to_output(d, "Current description:\r\n%s", d->character->player.description);
-	/*
-	 * Don't free this now... so that the old description gets loaded
-	 * as the current buffer in the editor.  Do setup the ABORT buffer
-	 * here, however.
-	 *
-	 * free(d->character->player.description);
-	 * d->character->player.description = NULL;
-	 */
+	/* Don't free this now... so that the old description gets loaded as the 
+	 * current buffer in the editor.  Do setup the ABORT buffer here, however. */
 	d->backstr = strdup(d->character->player.description);
       }
       write_to_output(d, "Enter the new text you'd like others to see when they look at you.\r\n");
@@ -1814,11 +1728,9 @@ void nanny(struct descriptor_data *d, char *arg)
     }
     break;
 
-  /*
-   * It's possible, if enough pulses are missed, to kick someone off
-   * while they are at the password prompt. We'll just defer to let
-   * the game_loop() axe them.
-   */
+  /* It is possible, if enough pulses are missed, to kick someone off while 
+   * they are at the password prompt. We'll just defer to let the game_loop()
+   * axe them. */
   case CON_CLOSE:
     break;
 

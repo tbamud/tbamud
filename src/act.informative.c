@@ -2144,6 +2144,9 @@ void add_history(struct char_data *ch, char *str, int type)
   struct txt_block *tmp = GET_HISTORY(ch, type);     
   char time_str[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
 
+  if (IS_NPC(ch)) 
+    return;
+
   time_t ct = time(0);
   strftime(time_str, sizeof(time_str), "%H:%M ", localtime(&ct));
 
