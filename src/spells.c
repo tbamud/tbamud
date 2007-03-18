@@ -11,7 +11,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -25,6 +24,7 @@
 /* external variables */
 extern room_rnum r_mortal_start_room;
 extern int mini_mud;
+extern char cast_arg2[MAX_STRING_LENGTH];
 
 /* external functions */
 void weight_change_object(struct obj_data *obj, int weight);
@@ -33,10 +33,7 @@ void name_to_drinkcon(struct obj_data *obj, int type);
 void name_from_drinkcon(struct obj_data *obj);
 int compute_armor_class(struct char_data *ch);
 
-/*
- * Special spells appear below.
- */
-
+/* Special spells appear below. */
 ASPELL(spell_create_water)
 {
   int water;
@@ -65,7 +62,6 @@ ASPELL(spell_create_water)
   }
 }
 
-
 ASPELL(spell_recall)
 {
   if (victim == NULL || IS_NPC(victim))
@@ -80,7 +76,6 @@ ASPELL(spell_recall)
   greet_mtrigger(victim, -1);
   greet_memory_mtrigger(victim);
 }
-
 
 ASPELL(spell_teleport)
 {
@@ -105,7 +100,6 @@ ASPELL(spell_teleport)
 }
 
 #define SUMMON_FAIL "You failed.\r\n"
-
 ASPELL(spell_summon)
 {
   if (ch == NULL || victim == NULL)
@@ -157,7 +151,52 @@ ASPELL(spell_summon)
   greet_memory_mtrigger(victim);
 }
 
+/* Used by the locate object spell to check the alias list on objects */
+int isname_obj(char *search, char *list)
+{
+  char *found_in_list; //but could be something like 'ring' in 'shimmering'
+  char searchname[128];
+  char namelist[MAX_STRING_LENGTH];
+  int found_pos = -1;
+  int found_name=0; /* found the name we're looking for */
+  int match = 1;
+  int i;
 
+  /* Force to lowercase for string comparisons */
+  sprintf(searchname, "%s", search);
+  for (i = 0; searchname[i]; i++)
+    searchname[i] = LOWER(searchname[i]);
+
+  sprintf(namelist, "%s", list);
+  for (i = 0; namelist[i]; i++)
+    namelist[i] = LOWER(namelist[i]);
+
+  /* see if searchname exists any place within namelist */
+  found_in_list = strstr(namelist, searchname);
+  if (!found_in_list) {
+    return 0;
+  }
+
+  /* Found the name in the list, now see if it's a valid hit. The following 
+   * avoids substrings (like ring in shimmering) is it at beginning of 
+   * namelist? */
+  for (i = 0; searchname[i]; i++)
+    if (searchname[i] != namelist[i])
+      match = 0;
+
+  if (match) /* It was found at the start of the namelist string. */
+    found_name = 1;
+  else { /* It is embedded inside namelist. Is it preceded by a space? */
+    found_pos = found_in_list - namelist;
+    if (namelist[found_pos-1] == ' ')
+      found_name = 1;
+  }
+
+  if (found_name)
+    return 1;
+  else
+    return 0;
+}
 
 ASPELL(spell_locate_object)
 {
@@ -165,22 +204,18 @@ ASPELL(spell_locate_object)
   char name[MAX_INPUT_LENGTH];
   int j;
 
-  /*
-   * FIXME: This is broken.  The spell parser routines took the argument
-   * the player gave to the spell and located an object with that keyword.
-   * Since we're passed the object and not the keyword we can only guess
-   * at what the player originally meant to search for. -gg
-   */
   if (!obj) {
     send_to_char(ch, "You sense nothing.\r\n");
     return;
   }
 
-  strlcpy(name, fname(obj->name), sizeof(name));
-  j = level / 2;
+  /*  added a global var to catch 2nd arg. */
+  sprintf(name, "%s", cast_arg2); 
+
+  j = GET_LEVEL(ch) / 2;  /* # items to show = twice char's level */
 
   for (i = object_list; i && (j > 0); i = i->next) {
-    if (!isname(name, i->name))
+    if (!isname_obj(name, i->name))
       continue;
 
     send_to_char(ch, "%s", CAP(strdup(i->short_description)));
@@ -198,12 +233,7 @@ ASPELL(spell_locate_object)
 
     j--;
   }
-
-  if (j == level / 2)
-    send_to_char(ch, "You sense nothing.\r\n");
 }
-
-
 
 ASPELL(spell_charm)
 {

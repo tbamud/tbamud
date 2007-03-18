@@ -330,7 +330,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define CEDIT_DTS_ARE_DUMPS		31
 #define CEDIT_LOAD_INTO_INVENTORY	32
 #define CEDIT_TRACK_THROUGH_DOORS	33
-#define CEDIT_IMMORT_LEVEL_OK		34
+#define CEDIT_NO_MORT_TO_IMMORT		34
 #define CEDIT_MAX_OBJ_SAVE		35
 #define CEDIT_MIN_RENT_COST		36
 #define CEDIT_AUTOSAVE_TIME		37

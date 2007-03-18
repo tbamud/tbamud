@@ -41,9 +41,7 @@ ACMD(do_oasis_cedit)
   struct descriptor_data *d;
   char buf1[MAX_STRING_LENGTH];
 
-  /****************************************************************************/
-  /** Parse any arguments.                                                   **/
-  /****************************************************************************/
+  /* Parse any arguments. */
   one_argument(argument, buf1);
 
   if (GET_LEVEL(ch) < LVL_IMPL) {
@@ -76,21 +74,13 @@ ACMD(do_oasis_cedit)
   cedit_save_to_disk();
 }
 
-/*-------------------------------------------------------------------*/
-
 void cedit_setup(struct descriptor_data *d)
 {
-  /****************************************************************************/
-  /** Create the config_data struct.                                         **/
-  /****************************************************************************/
+  /* Create the config_data struct. */
   CREATE(OLC_CONFIG(d), struct config_data, 1);
 
-  /****************************************************************************/
-  /** Copy the current configuration from the config_info to this one.       **/
-  /****************************************************************************/
-  /****************************************************************************/
-  /** Copy the game play options from the configuration info struct.         **/
-  /****************************************************************************/
+  /* Copy the current configuration from the config_info to this one and copy
+   * the game play options from the configuration info struct. */
   OLC_CONFIG(d)->play.pk_allowed          = CONFIG_PK_ALLOWED;
   OLC_CONFIG(d)->play.pt_allowed          = CONFIG_PT_ALLOWED;
   OLC_CONFIG(d)->play.level_can_shout     = CONFIG_LEVEL_CAN_SHOUT;
@@ -106,11 +96,9 @@ void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->play.dts_are_dumps       = CONFIG_DTS_ARE_DUMPS;
   OLC_CONFIG(d)->play.load_into_inventory = CONFIG_LOAD_INVENTORY;
   OLC_CONFIG(d)->play.track_through_doors = CONFIG_TRACK_T_DOORS;
-  OLC_CONFIG(d)->play.immort_level_ok     = CONFIG_IMMORT_LEVEL_OK;
+  OLC_CONFIG(d)->play.no_mort_to_immort   = CONFIG_NO_MORT_TO_IMMORT;
 
-  /****************************************************************************/
-  /** Crash Saves                                                            **/
-  /****************************************************************************/
+  /* Crash Saves */
   OLC_CONFIG(d)->csd.free_rent            = CONFIG_FREE_RENT;
   OLC_CONFIG(d)->csd.max_obj_save         = CONFIG_MAX_OBJ_SAVE;
   OLC_CONFIG(d)->csd.min_rent_cost        = CONFIG_MIN_RENT_COST;
@@ -119,9 +107,7 @@ void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->csd.crash_file_timeout   = CONFIG_CRASH_TIMEOUT;
   OLC_CONFIG(d)->csd.rent_file_timeout    = CONFIG_RENT_TIMEOUT;
 
-  /****************************************************************************/
-  /** Room Numbers                                                           **/
-  /****************************************************************************/
+  /* Room Numbers */
   OLC_CONFIG(d)->room_nums.mortal_start_room = CONFIG_MORTAL_START;
   OLC_CONFIG(d)->room_nums.immort_start_room = CONFIG_IMMORTAL_START;
   OLC_CONFIG(d)->room_nums.frozen_start_room = CONFIG_FROZEN_START;
@@ -129,9 +115,7 @@ void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->room_nums.donation_room_2   = CONFIG_DON_ROOM_2;
   OLC_CONFIG(d)->room_nums.donation_room_3   = CONFIG_DON_ROOM_3;
 
-  /****************************************************************************/
-  /** Game Operation                                                         **/
-  /****************************************************************************/
+  /* Game Operation */
   OLC_CONFIG(d)->operation.DFLT_PORT          = CONFIG_DFLT_PORT;
   OLC_CONFIG(d)->operation.max_playing        = CONFIG_MAX_PLAYING;
   OLC_CONFIG(d)->operation.max_filesize       = CONFIG_MAX_FILESIZE;
@@ -141,16 +125,12 @@ void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->operation.auto_save_olc      = CONFIG_OLC_SAVE;
   OLC_CONFIG(d)->operation.nameserver_is_slow = CONFIG_NS_IS_SLOW;
 
-  /****************************************************************************/
-  /** Autowiz                                                                **/
-  /****************************************************************************/
+  /* Autowiz */
   OLC_CONFIG(d)->autowiz.use_autowiz          = CONFIG_USE_AUTOWIZ;
   OLC_CONFIG(d)->autowiz.min_wizlist_lev      = CONFIG_MIN_WIZLIST_LEV;
 
 
-  /****************************************************************************/
-  /** Allocate space for the strings.                                        **/
-  /****************************************************************************/
+  /* Allocate space for the strings. */
   OLC_CONFIG(d)->play.OK       = str_udup(CONFIG_OK);
   OLC_CONFIG(d)->play.NOPERSON = str_udup(CONFIG_NOPERSON);
   OLC_CONFIG(d)->play.NOEFFECT = str_udup(CONFIG_NOEFFECT);
@@ -188,15 +168,11 @@ void cedit_setup(struct descriptor_data *d)
   cedit_disp_menu(d);
 }
 
-/******************************************************************************/
-
 void cedit_save_internally(struct descriptor_data *d)
 {
   /* see if we need to reassign spec procs on rooms */
   int reassign = (CONFIG_DTS_ARE_DUMPS != OLC_CONFIG(d)->play.dts_are_dumps);
-  /****************************************************************************/
-  /** Copy the data back from the descriptor to the config_info structure.   **/
-  /****************************************************************************/
+  /* Copy the data back from the descriptor to the config_info structure. */
   CONFIG_PK_ALLOWED          = OLC_CONFIG(d)->play.pk_allowed;
   CONFIG_PT_ALLOWED          = OLC_CONFIG(d)->play.pt_allowed;
   CONFIG_LEVEL_CAN_SHOUT     = OLC_CONFIG(d)->play.level_can_shout;
@@ -212,11 +188,9 @@ void cedit_save_internally(struct descriptor_data *d)
   CONFIG_DTS_ARE_DUMPS       = OLC_CONFIG(d)->play.dts_are_dumps;
   CONFIG_LOAD_INVENTORY = OLC_CONFIG(d)->play.load_into_inventory;
   CONFIG_TRACK_T_DOORS = OLC_CONFIG(d)->play.track_through_doors;
-  CONFIG_IMMORT_LEVEL_OK     = OLC_CONFIG(d)->play.immort_level_ok;
+  CONFIG_NO_MORT_TO_IMMORT   = OLC_CONFIG(d)->play.no_mort_to_immort;
 
-  /****************************************************************************/
-  /** Crash Saves                                                            **/
-  /****************************************************************************/
+  /* Crash Saves */
   CONFIG_FREE_RENT            = OLC_CONFIG(d)->csd.free_rent;
   CONFIG_MAX_OBJ_SAVE         = OLC_CONFIG(d)->csd.max_obj_save;
   CONFIG_MIN_RENT_COST        = OLC_CONFIG(d)->csd.min_rent_cost;
@@ -225,9 +199,7 @@ void cedit_save_internally(struct descriptor_data *d)
   CONFIG_CRASH_TIMEOUT   = OLC_CONFIG(d)->csd.crash_file_timeout;
   CONFIG_RENT_TIMEOUT    = OLC_CONFIG(d)->csd.rent_file_timeout;
 
-  /****************************************************************************/
-  /** Room Numbers                                                           **/
-  /****************************************************************************/
+  /* Room Numbers */
   CONFIG_MORTAL_START = OLC_CONFIG(d)->room_nums.mortal_start_room;
   CONFIG_IMMORTAL_START = OLC_CONFIG(d)->room_nums.immort_start_room;
   CONFIG_FROZEN_START = OLC_CONFIG(d)->room_nums.frozen_start_room;
@@ -235,9 +207,7 @@ void cedit_save_internally(struct descriptor_data *d)
   CONFIG_DON_ROOM_2   = OLC_CONFIG(d)->room_nums.donation_room_2;
   CONFIG_DON_ROOM_3   = OLC_CONFIG(d)->room_nums.donation_room_3;
 
-  /****************************************************************************/
-  /** Game Operation                                                         **/
-  /****************************************************************************/
+  /* Game Operation */
   CONFIG_DFLT_PORT          = OLC_CONFIG(d)->operation.DFLT_PORT;
   CONFIG_MAX_PLAYING        = OLC_CONFIG(d)->operation.max_playing;
   CONFIG_MAX_FILESIZE       = OLC_CONFIG(d)->operation.max_filesize;
@@ -247,15 +217,11 @@ void cedit_save_internally(struct descriptor_data *d)
   CONFIG_NS_IS_SLOW = OLC_CONFIG(d)->operation.nameserver_is_slow;
   CONFIG_OLC_SAVE           = OLC_CONFIG(d)->operation.auto_save_olc;
 
-  /****************************************************************************/
-  /** Autowiz                                                                **/
-  /****************************************************************************/
+  /* Autowiz */
   CONFIG_USE_AUTOWIZ          = OLC_CONFIG(d)->autowiz.use_autowiz;
   CONFIG_MIN_WIZLIST_LEV      = OLC_CONFIG(d)->autowiz.min_wizlist_lev;
 
-  /****************************************************************************/
-  /** Allocate space for the strings.                                        **/
-  /****************************************************************************/
+  /* Allocate space for the strings. */
   if (CONFIG_OK)
     free(CONFIG_OK);
   CONFIG_OK       = str_udup(OLC_CONFIG(d)->play.OK);
@@ -274,7 +240,6 @@ void cedit_save_internally(struct descriptor_data *d)
     CONFIG_DFLT_IP     = strdup(OLC_CONFIG(d)->operation.DFLT_IP);
   else
     CONFIG_DFLT_IP     = NULL;
-
 
   if (CONFIG_DFLT_DIR)
     free(CONFIG_DFLT_DIR);
@@ -318,17 +283,11 @@ void cedit_save_internally(struct descriptor_data *d)
   add_to_save_list(NOWHERE, SL_CFG);
 }
 
-/******************************************************************************/
-
 void cedit_save_to_disk( void )
 {
-  /****************************************************************************/
-  /** Just call save_config and get it over with.                            **/
-  /****************************************************************************/
+  /* Just call save_config and get it over with. */
   save_config( NOWHERE );
 }
-
-/******************************************************************************/
 
 int save_config( IDXTYPE nowhere )
 {
@@ -385,7 +344,7 @@ int save_config( IDXTYPE nowhere )
   fprintf(fl, "* Should PC's be able to track through hidden or closed doors?\n"
               "track_through_doors = %d\n\n", CONFIG_TRACK_T_DOORS);
   fprintf(fl, "* Should players who reach enough exp automatically level to immortal?\n"
-              "immort_level_ok = %d\n\n", CONFIG_IMMORT_LEVEL_OK);
+              "no_mort_to_immort = %d\n\n", CONFIG_NO_MORT_TO_IMMORT);
 
   strcpy(buf, CONFIG_OK);
   strip_cr(buf);
@@ -405,11 +364,7 @@ int save_config( IDXTYPE nowhere )
   fprintf(fl, "* Text sent to players when an effect fails.\n"
               "noeffect = %s\n", buf);
 
-
-
-  /************************************************************************
-   ** RENT / CRASHSAVE OPTIONS					         **
-   ************************************************************************/
+   /* RENT / CRASHSAVE OPTIONS */
   fprintf(fl, "\n\n\n* [ Rent/Crashsave Options ]\n");
 
   fprintf(fl, "* Should the MUD allow you to 'rent' for free?  (i.e. if you just quit,\n"
@@ -431,10 +386,7 @@ int save_config( IDXTYPE nowhere )
   fprintf(fl, "* Lifetime of normal rent files in days.\n"
               "rent_file_timeout = %d\n\n", CONFIG_RENT_TIMEOUT);
 
-
-  /************************************************************************
-   ** ROOM NUMBERS						  	 **
-   ************************************************************************/
+   /* ROOM NUMBERS */
   fprintf(fl, "\n\n\n* [ Room Numbers ]\n");
 
   fprintf(fl, "* The virtual number of the room that mortals should enter at.\n"
@@ -562,13 +514,7 @@ int save_config( IDXTYPE nowhere )
   return (TRUE);
 }
 
-/**************************************************************************
- Menu functions
- **************************************************************************/
-
-/*
- * the main menu
- */
+/* Menu functions - The main menu. */
 void cedit_disp_menu(struct descriptor_data *d)
 {
   get_char_colors(d->character);
@@ -598,7 +544,6 @@ void cedit_disp_menu(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_MAIN_MENU;
 }
 
-/*-------------------------------------------------------------------*/
 void cedit_disp_game_play_options(struct descriptor_data *d)
 {
   get_char_colors(d->character);
@@ -642,7 +587,7 @@ void cedit_disp_game_play_options(struct descriptor_data *d)
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.dts_are_dumps),
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.load_into_inventory),
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.track_through_doors),
-        grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.immort_level_ok),
+        grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.no_mort_to_immort),
 
         grn, nrm, cyn, OLC_CONFIG(d)->play.OK,
         grn, nrm, cyn, OLC_CONFIG(d)->play.NOPERSON,
@@ -653,8 +598,6 @@ void cedit_disp_game_play_options(struct descriptor_data *d)
 
   OLC_MODE(d) = CEDIT_GAME_OPTIONS_MENU;
 }
-
-/*-------------------------------------------------------------------*/
 
 void cedit_disp_crash_save_options(struct descriptor_data *d)
 {
@@ -684,8 +627,6 @@ void cedit_disp_crash_save_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_CRASHSAVE_OPTIONS_MENU;
 }
 
-/*-------------------------------------------------------------------*/
-
 void cedit_disp_room_numbers(struct descriptor_data *d)
 {
   get_char_colors(d->character);
@@ -711,9 +652,6 @@ void cedit_disp_room_numbers(struct descriptor_data *d)
 
   OLC_MODE(d) = CEDIT_ROOM_NUMBERS_MENU;
 }
-
-
-/*-------------------------------------------------------------------*/
 
 void cedit_disp_operation_options(struct descriptor_data *d)
 {
@@ -757,9 +695,6 @@ void cedit_disp_operation_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_OPERATION_OPTIONS_MENU;
 }
 
-
-/*-------------------------------------------------------------------*/
-
 void cedit_disp_autowiz_options(struct descriptor_data *d)
 {
   get_char_colors(d->character);
@@ -778,12 +713,7 @@ void cedit_disp_autowiz_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_AUTOWIZ_OPTIONS_MENU;
 }
 
-/*-------------------------------------------------------------------*/
-
-/**************************************************************************
-  The GARGANTAUN event handler
- **************************************************************************/
-
+/* The GARGANTAUN event handler */
 void cedit_parse(struct descriptor_data *d, char *arg)
 {
   char *oldtext = NULL;
@@ -813,8 +743,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
           write_to_output(d, "Do you wish to save your changes? : ");
           return;
       }
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_MAIN_MENU:
       switch (*arg) {
@@ -860,9 +788,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
           break;
       }
       break;
-
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_GAME_OPTIONS_MENU:
       switch (*arg) {
@@ -953,7 +878,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         case 'p':
         case 'P':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.immort_level_ok);
+          TOGGLE_VAR(OLC_CONFIG(d)->play.no_mort_to_immort);
           break;
 
         case '1':
@@ -983,8 +908,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
       cedit_disp_game_play_options(d);
       return;
-
- /*-------------------------------------------------------------------*/
 
     case CEDIT_CRASHSAVE_OPTIONS_MENU:
       switch (*arg) {
@@ -1040,8 +963,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_crash_save_options(d);
         return;
 
- /*-------------------------------------------------------------------*/
-
     case CEDIT_ROOM_NUMBERS_MENU:
       switch (*arg) {
         case 'a':
@@ -1088,8 +1009,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
     cedit_disp_room_numbers(d);
     return;
-
- /*-------------------------------------------------------------------*/
 
      case CEDIT_OPERATION_OPTIONS_MENU:
        switch (*arg) {
@@ -1214,8 +1133,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
    cedit_disp_operation_options(d);
    return;
 
- /*-------------------------------------------------------------------*/
-
     case CEDIT_AUTOWIZ_OPTIONS_MENU:
       switch (*arg) {
         case 'a':
@@ -1241,8 +1158,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       cedit_disp_autowiz_options(d);
       return;
 
- /*-------------------------------------------------------------------*/
-
     case CEDIT_LEVEL_CAN_SHOUT:
       if (!*arg) {
         write_to_output(d,
@@ -1253,8 +1168,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_game_play_options(d);
       }
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_HOLLER_MOVE_COST:
       if (!*arg) {
@@ -1267,8 +1180,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_TUNNEL_SIZE:
       if (!*arg) {
         write_to_output(d,
@@ -1280,8 +1191,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_MAX_EXP_GAIN:
       if (*arg)
         OLC_CONFIG(d)->play.max_exp_gain = atoi(arg);
@@ -1289,17 +1198,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       cedit_disp_game_play_options(d);
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_MAX_EXP_LOSS:
       if (*arg)
         OLC_CONFIG(d)->play.max_exp_loss = atoi(arg);
 
       cedit_disp_game_play_options(d);
       break;
-
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_MAX_NPC_CORPSE_TIME:
       if (!*arg) {
@@ -1312,8 +1216,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_MAX_PC_CORPSE_TIME:
       if (!*arg) {
         write_to_output(d,
@@ -1324,8 +1226,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
           cedit_disp_game_play_options(d);
         }
         break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_IDLE_VOID:
       if (!*arg) {
@@ -1338,8 +1238,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_IDLE_RENT_TIME:
       if (!*arg) {
         write_to_output(d,
@@ -1351,8 +1249,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_IDLE_MAX_LEVEL:
       if (!*arg) {
         write_to_output(d,
@@ -1363,8 +1259,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_game_play_options(d);
       }
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_OK:
       if (!genolc_checkstring(d, arg))
@@ -1379,8 +1273,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       cedit_disp_game_play_options(d);
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_NOPERSON:
       if (!genolc_checkstring(d, arg))
         break;
@@ -1393,8 +1285,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
       cedit_disp_game_play_options(d);
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_NOEFFECT:
       if (!genolc_checkstring(d, arg))
@@ -1409,8 +1299,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       cedit_disp_game_play_options(d);
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_MAX_OBJ_SAVE:
       if (!*arg) {
         write_to_output(d,
@@ -1421,8 +1309,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
           cedit_disp_crash_save_options(d);
         }
         break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_MIN_RENT_COST:
       if (!*arg) {
@@ -1435,8 +1321,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_AUTOSAVE_TIME:
       if (!*arg) {
         write_to_output(d,
@@ -1447,8 +1331,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_crash_save_options(d);
       }
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_CRASH_FILE_TIMEOUT:
       if (!*arg) {
@@ -1461,8 +1343,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_RENT_FILE_TIMEOUT:
       if (!*arg) {
         write_to_output(d,
@@ -1473,8 +1353,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_crash_save_options(d);
       }
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_MORTAL_START_ROOM:
       if (!*arg) {
@@ -1491,8 +1369,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_IMMORT_START_ROOM:
       if (!*arg) {
         write_to_output(d,
@@ -1507,8 +1383,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_room_numbers(d);
       }
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_FROZEN_START_ROOM:
       if (!*arg) {
@@ -1525,8 +1399,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_DONATION_ROOM_1:
       if (!*arg) {
         write_to_output(d,
@@ -1541,8 +1413,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_room_numbers(d);
       }
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_DONATION_ROOM_2:
       if (!*arg) {
@@ -1559,8 +1429,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_DONATION_ROOM_3:
       if (!*arg) {
         write_to_output(d,
@@ -1576,14 +1444,10 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_DFLT_PORT:
       OLC_CONFIG(d)->operation.DFLT_PORT = atoi(arg);
       cedit_disp_operation_options(d);
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_DFLT_IP:
       if (!*arg) {
@@ -1596,8 +1460,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_DFLT_DIR:
       if (!*arg) {
         write_to_output(d,
@@ -1608,8 +1470,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_operation_options(d);
       }
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_LOGNAME:
       if (!*arg) {
@@ -1622,28 +1482,20 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_MAX_PLAYING:
       OLC_CONFIG(d)->operation.max_playing = atoi(arg);
       cedit_disp_operation_options(d);
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_MAX_FILESIZE:
       OLC_CONFIG(d)->operation.max_filesize = atoi(arg);
       cedit_disp_operation_options(d);
       break;
 
-/*-------------------------------------------------------------------*/
-
     case CEDIT_MAX_BAD_PWS:
       OLC_CONFIG(d)->operation.max_bad_pws = atoi(arg);
       cedit_disp_operation_options(d);
       break;
-
-/*-------------------------------------------------------------------*/
 
     case CEDIT_MIN_WIZLIST_LEV:
       if (atoi(arg) > LVL_IMPL) {
@@ -1656,22 +1508,14 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-/*-------------------------------------------------------------------*/
-
-    default:
-      /*
-       * We should never get here, but just in case...
-       */
+    default:  /* We should never get here, but just in case... */
       cleanup_olc(d, CLEANUP_CONFIG);
       mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: cedit_parse(): Reached default case!");
       write_to_output(d, "Oops...\r\n");
       break;
   }
-}
+}  /* End of parse_cedit() */
 
-/*
- * End of parse_cedit()
- */
 void reassign_rooms(void)
 {
   void assign_rooms(void);

@@ -1852,13 +1852,13 @@ ACMD(do_toggle)
     {"holylight", PRF_HOLYLIGHT, LVL_IMMORT,
     "HolyLight mode off.\r\n",
     "HolyLight mode on.\r\n"},
-    {"slownameserver", -1, LVL_IMPL,
+    {"slownameserver", 0, LVL_IMPL,
     "Nameserver_is_slow changed to OFF; IP addresses will now be resolved.\r\n",
     "Nameserver_is_slow changed to ON; sitenames will no longer be resolved.\r\n"},
     {"autoexits", PRF_AUTOEXIT, 0,
     "Autoexits disabled.\r\n",
     "Autoexits enabled.\r\n"},
-    {"trackthru", -1, LVL_IMPL,
+    {"trackthru", 0, LVL_IMPL,
     "Players can no longer track through doors.\r\n",
     "Players can now track through doors.\r\n"},
     {"clsolc", PRF_CLS, LVL_BUILDER,
@@ -1870,10 +1870,10 @@ ACMD(do_toggle)
     {"afk", PRF_AFK, 0,
     "AFK is now Off.\r\n",
     "AFK is now On.\r\n"},
-    {"color", -1, 0, "\n", "\n"},
-    {"syslog", -1, LVL_IMMORT, "\n", "\n"},
-    {"wimpy", -1, 0, "\n", "\n"},
-    {"pagelength", -1, 0, "\n", "\n"},
+    {"color", 0, 0, "\n", "\n"},
+    {"syslog", 0, LVL_IMMORT, "\n", "\n"},
+    {"wimpy", 0, 0, "\n", "\n"},
+    {"pagelength", 0, 0, "\n", "\n"},
     {"autoloot", PRF_AUTOLOOT, 0,
     "Autoloot disabled.\r\n",
     "Autoloot enabled.\r\n"},
@@ -1889,7 +1889,7 @@ ACMD(do_toggle)
     {"autoassist", PRF_AUTOASSIST, 0,
     "Autoassist disabled.\r\n",
     "Autoassist enabled.\r\n"},
-    {"\n", -1, -1, "\n", "\n"} /* must be last */
+    {"\n", 0, -1, "\n", "\n"} /* must be last */
   };
 
 	len = strlen(arg);
@@ -2141,12 +2141,12 @@ ACMD(do_history)
 void add_history(struct char_data *ch, char *str, int type)
 {
   int i = 0;
-  struct txt_block *tmp = GET_HISTORY(ch, type);     
   char time_str[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
 
   if (IS_NPC(ch)) 
     return;
 
+  struct txt_block *tmp = GET_HISTORY(ch, type);
   time_t ct = time(0);
   strftime(time_str, sizeof(time_str), "%H:%M ", localtime(&ct));
 

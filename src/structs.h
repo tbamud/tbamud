@@ -1040,7 +1040,7 @@ struct game_data {
   int dts_are_dumps;      /* Should items in dt's be junked?	  */
   int load_into_inventory;/* Objects load in immortals inventory. */
   int track_through_doors;/* Track through doors while closed?    */
-  int immort_level_ok;    /* Automatically level mortals to imm?  */
+  int no_mort_to_immort;  /* Prevent mortals leveling to imms?    */
 
   char *OK;               /* When player receives 'Okay.' text.	  */
   char *NOPERSON;         /* 'No-one by that name here.'	  */

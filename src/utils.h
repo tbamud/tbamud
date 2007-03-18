@@ -577,7 +577,7 @@ void	update_pos(struct char_data *victim);
 #define CONFIG_DTS_ARE_DUMPS    config_info.play.dts_are_dumps
 #define CONFIG_LOAD_INVENTORY   config_info.play.load_into_inventory
 #define CONFIG_TRACK_T_DOORS    config_info.play.track_through_doors
-#define CONFIG_IMMORT_LEVEL_OK  config_info.play.immort_level_ok
+#define CONFIG_NO_MORT_TO_IMMORT config_info.play.no_mort_to_immort
 #define CONFIG_OK               config_info.play.OK
 #define CONFIG_NOPERSON         config_info.play.NOPERSON
 #define CONFIG_NOEFFECT         config_info.play.NOEFFECT

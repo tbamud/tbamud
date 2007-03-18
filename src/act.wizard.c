@@ -42,7 +42,7 @@ extern struct player_index_element *player_table;
 /* external functions */
 int level_exp(int chclass, int level);
 void show_shops(struct char_data *ch, char *value);
-void hcontrol_list_houses(struct char_data *ch);
+void hcontrol_list_houses(struct char_data *ch, char *arg);
 void do_start(struct char_data *ch);
 void appear(struct char_data *ch);
 void reset_zone(zone_rnum zone);
@@ -50,7 +50,7 @@ void roll_real_abils(struct char_data *ch);
 int parse_class(char arg);
 void run_autowiz(void);
 int save_all(void);
-extern zone_rnum real_zone_by_thing(room_vnum vznum); /* added for zone_checker */
+zone_rnum real_zone_by_thing(room_vnum vznum);
 SPECIAL(shop_keeper);
 void Crash_rentsave(struct char_data * ch, int cost);
 void new_hist_messg(struct descriptor_data *d, const char *msg);
@@ -2634,7 +2634,7 @@ ACMD(do_show)
 
   /* show houses */
   case 9:
-    hcontrol_list_houses(ch);
+    hcontrol_list_houses(ch, value);
     break;
 
   /* show snoop */
@@ -4234,7 +4234,7 @@ ACMD(do_changelog)
 }
 
 #define PLIST_FORMAT \
-  "plist [minlev[-maxlev]] [-n name] [-d days] [-h hours] [-i] [-m]"
+  "Usage: plist [minlev[-maxlev]] [-n name] [-d days] [-h hours] [-i] [-m]"
 
 ACMD(do_plist)
 {
@@ -4315,7 +4315,7 @@ ACMD(do_plist)
     strcpy(time_str, asctime(localtime(&player_table[i].last)));
     time_str[strlen(time_str) - 1] = '\0';
 
-    len += snprintf(buf + len, sizeof(buf) - len, "[%3ld] (%2d) %-12s %s\r\n",
+    len += snprintf(buf + len, sizeof(buf) - len, "[%3ld] (%2d) %-15s %s\r\n",
                     player_table[i].id, player_table[i].level,
                     CAP(strdup(player_table[i].name)), time_str);
     count++;

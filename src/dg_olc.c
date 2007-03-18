@@ -14,7 +14,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -39,18 +38,13 @@ int format_script(struct descriptor_data *d);
 void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num);
 void trigedit_setup_new(struct descriptor_data *d);
 
-/* ***********************************************************************
- * trigedit
- * ***********************************************************************/
-
+/* Trigedit */
 ACMD(do_oasis_trigedit)
 {
   int number, real_num;
   struct descriptor_data *d;
 
-  /*
-   * Parse any arguments.
-   */
+  /* Parse any arguments. */
   skip_spaces(&argument);
   if (!*argument || !isdigit(*argument)) {
     send_to_char(ch, "Specify a trigger VNUM to edit.\r\n");
@@ -59,9 +53,7 @@ ACMD(do_oasis_trigedit)
 
   number = atoi(argument);
 
-  /*
-   * Check that it isn't already being edited.
-   */
+  /* Check that it isn't already being edited. */
   for (d = descriptor_list; d; d = d->next) {
     if (STATE(d) == CON_TRIGEDIT) {
       if (d->olc && OLC_NUM(d) == number) {
@@ -72,9 +64,7 @@ ACMD(do_oasis_trigedit)
     }
   }
   d = ch->desc;
-  /*
-   * Give descriptor an OLC structure.
-   */
+  /* Give descriptor an OLC structure. */
   if (d->olc) {
     mudlog(BRF, LVL_IMMORT, TRUE,
       "SYSERR: do_oasis_trigedit: Player already had olc structure.");
@@ -82,9 +72,7 @@ ACMD(do_oasis_trigedit)
   }
   CREATE(d->olc, struct oasis_olc_data, 1);
 
-  /*
-   * Find the zone.
-   */
+  /* Find the zone. */
   if ((OLC_ZNUM(d) = real_zone_by_thing(number)) == NOWHERE) {
     send_to_char(ch, "Sorry, there is no zone for that number!\r\n");
     free(d->olc);
@@ -103,10 +91,8 @@ ACMD(do_oasis_trigedit)
   }
   OLC_NUM(d) = number;
 
-  /*
-   *  If this is a new trigger, setup a new one,
-   *  otherwise, setup the a copy of the existing trigger
-   */
+  /* If this is a new trigger, setup a new one, otherwise, setup the a copy of 
+   * the existing trigger. */
   if ((real_num = real_trigger(number)) == NOTHING)
     trigedit_setup_new(d);
   else
@@ -121,8 +107,8 @@ ACMD(do_oasis_trigedit)
          GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-/* called when a mob or object is being saved to disk, so its script can */
-/* be saved */
+/* Called when a mob or object is being saved to disk, so its script can be 
+ * saved. */
 void script_save_to_disk(FILE *fp, void *item, int type)
 {
   struct trig_proto_list *t;
@@ -145,21 +131,16 @@ void script_save_to_disk(FILE *fp, void *item, int type)
   }
 }
 
-
 void trigedit_setup_new(struct descriptor_data *d)
 {
   struct trig_data *trig;
 
-  /*
-   * Allocate a scratch trigger structure
-   */
+  /* Allocate a scratch trigger structure. */
   CREATE(trig, struct trig_data, 1);
 
-  trig->nr = -1;
+  trig->nr = NOWHERE;
 
-  /*
-   * Set up some defaults
-   */
+  /* Set up some defaults. */
   trig->name = strdup("new trigger");
   trig->trigger_type = MTRIG_GREET;
 
@@ -179,9 +160,7 @@ void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
 {
   struct trig_data *trig;
   struct cmdlist_element *c;
-  /*
-   * Allocate a scratch trigger structure
-   */
+  /* Allocate a scratch trigger structure. */
   CREATE(trig, struct trig_data, 1);
 
   trig_data_copy(trig, trig_index[rtrg_num]->proto);
@@ -197,15 +176,14 @@ void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
     strcat(OLC_STORAGE(d), "\r\n");
     c = c->next;
   }
-  /* now trig->cmdlist is something to pass to the text editor */
-  /* it will be converted back to a real cmdlist_element list later */
+  /* Now trig->cmdlist is something to pass to the text editor it will be 
+   * converted back to a real cmdlist_element list later. */
 
   OLC_TRIG(d) = trig;
   OLC_VAL(d) = 0;  /* Has changed flag. (It hasn't so far, we just made it.) */
 
   trigedit_disp_menu(d);
 }
-
 
 void trigedit_disp_menu(struct descriptor_data *d)
 {
@@ -404,7 +382,6 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
   trigedit_disp_menu(d);
 }
 
-
 /* save the zone's triggers to internal memory and to disk */
 void trigedit_save(struct descriptor_data *d)
 {
@@ -584,9 +561,7 @@ void trigedit_save(struct descriptor_data *d)
     for (live_trig = trigger_list; live_trig; live_trig = live_trig->next_in_world)
       GET_TRIG_RNUM(live_trig) += (GET_TRIG_RNUM(live_trig) > rnum);
 
-    /*
-     * Update other trigs being edited.
-     */
+    /* Update other trigs being edited. */
      for (dsc = descriptor_list; dsc; dsc = dsc->next)
        if (STATE(dsc) == CON_TRIGEDIT)
          if (GET_TRIG_RNUM(OLC_TRIG(dsc)) >= rnum)
@@ -594,13 +569,11 @@ void trigedit_save(struct descriptor_data *d)
 
   }
 
-  /* now write the trigger out to disk, along with the rest of the  */
-  /* triggers for this zone, of course                              */
-  /* note: we write this to disk NOW instead of letting the builder */
-  /* have control because if we lose this after having assigned a   */
-  /* new trigger to an item, we will get SYSERR's upton reboot that */
-  /* could make things hard to debug.                               */
-
+  /* now write the trigger out to disk, along with the rest of the triggers for
+   * this zone. We write this to disk NOW instead of letting the builder have 
+   * control because if we lose this after having assigned a new trigger to an 
+   * item, we will get SYSERR's upton reboot that could make things hard to 
+   * debug. */
   zone = zone_table[OLC_ZNUM(d)].number;
   top = zone_table[OLC_ZNUM(d)].top;
 
@@ -666,7 +639,6 @@ void trigedit_save(struct descriptor_data *d)
   trigedit_create_index(zone, "trg");
 }
 
-
 void trigedit_create_index(int znum, char *type)
 {
   FILE *newfile, *oldfile;
@@ -687,10 +659,8 @@ void trigedit_create_index(int znum, char *type)
     return;
   }
 
-  /*
-   * Index contents must be in order: search through the old file for the
-   * right place, insert the new file, then copy the rest over.
-   */
+  /* Index contents must be in order: search through the old file for the right
+   * place, insert the new file, then copy the rest over. */
   snprintf(buf1, sizeof(buf1), "%d.%s", znum, type);
   while (get_line(oldfile, buf)) {
     if (*buf == '$') {
@@ -711,9 +681,7 @@ void trigedit_create_index(int znum, char *type)
   fclose(newfile);
   fclose(oldfile);
 
-  /*
-   * Out with the old, in with the new.
-   */
+  /* Out with the old, in with the new. */
   remove(old_name);
   rename(new_name, old_name);
 }
@@ -788,33 +756,23 @@ int dg_script_edit_parse(struct descriptor_data *d, char *arg)
     case SCRIPT_MAIN_MENU:
       switch(tolower(*arg)) {
         case 'x':
-          /* this was buggy.
-             First we created a copy of a thing, but maintained pointers to scripts,
-             then if we altered the scripts, we freed the pointers and added new ones
-             to the OLC_THING. If we then chose _NOT_ to save the changes, the
-             pointers in the original thing pointed to garbage. If we saved changes
-             the pointers were updated correctly.
-
-             Solution:
-             Here we just point the working copies to the new proto_scripts
-             We only update the original when choosing to save internally,
-             then free the unused memory there.
-
-             Welcor
-
-             Thanks to
-             Jeremy Stanley - fungi@yuggoth.org and
-             Torgny Bjers - artovil@arcanerealms.org
-             for the bug report.
-
-             After updating to OasisOLC 2.0.3 I discovered some malfunctions
-             in this code, so I restructured it a bit. Now things work like this:
-             OLC_SCRIPT(d) is assigned a copy of the edited things' proto_script.
-             OLC_OBJ(d), etc.. are initalized with proto_script = NULL;
-             On save, the saved copy is updated with OLC_SCRIPT(d) as new proto_script (freeing the old one).
-             On quit/nosave, OLC_SCRIPT is free()'d, and the prototype not touched.
-
-           */
+          /* This was buggy. First we created a copy of a thing, but maintained
+	   * pointers to scripts, then if we altered the scripts, we freed the 
+	   * pointers and added new ones to the OLC_THING. If we then choose NOT
+	   * to save the changes, the pointers in the original pointed to 
+	   * garbage. If we saved changes the pointers were updated correctly.
+	   * Solution: Here we just point the working copies to the new 
+	   * proto_scripts. We only update the original when choosing to save 
+	   * internally, then free the unused memory there. -Welcor
+	   * Thanks to Jeremy Stanley - fungi@yuggoth.org and Torgny Bjers - 
+	   * artovil@arcanerealms.org for the bug report.
+	   * After updating to OasisOLC 2.0.3 I discovered some malfunctions
+	   * in this code, so I restructured it a bit. Now things work like 
+	   * this: OLC_SCRIPT(d) is assigned a copy of the edited things' 
+	   * proto_script. OLC_OBJ(d), etc.. are initalized with proto_script =
+	   * NULL; On save, the saved copy is updated with OLC_SCRIPT(d) as new
+	   * proto_script (freeing the old one). On quit/nosave, OLC_SCRIPT is 
+	   * free()'d, and the prototype not touched. */
           return 0;
         case 'n':
           write_to_output(d, "\r\nPlease enter position, vnum   (ex: 1, 200):");

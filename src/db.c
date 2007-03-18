@@ -12,8 +12,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -28,22 +26,18 @@
 #include "dg_scripts.h"
 #include "dg_event.h"
 
-/**************************************************************************
-*  declarations of most of the 'global' variables                         *
-**************************************************************************/
-
+/*  declarations of most of the 'global' variables */
 struct config_data config_info; /* Game configuration list.	 */
 
 struct room_data *world = NULL;	/* array of rooms		 */
 room_rnum top_of_world = 0;	/* ref to top element of world	 */
 
-struct char_data *character_list = NULL;	/* global linked list of
-						 * chars	 */
+struct char_data *character_list = NULL; /* global linked list of chars	*/
 struct index_data *mob_index;	/* index table for mobile file	 */
 struct char_data *mob_proto;	/* prototypes for mobs		 */
 mob_rnum top_of_mobt = 0;	/* top of mobile index table	 */
 
-struct obj_data *object_list = NULL;	/* global linked list of objs	 */
+struct obj_data *object_list = NULL;	/* global linked list of objs	*/
 struct index_data *obj_index;	/* index table for object file	 */
 struct obj_data *obj_proto;	/* prototypes for objs		 */
 obj_rnum top_of_objt = 0;	/* top of object index table	 */
@@ -166,18 +160,14 @@ extern struct descriptor_data *descriptor_list;
 extern const char *unused_spellname;	/* spell_parser.c */
 extern int no_specials;
 extern int scheck;
-
 extern struct player_index_element *player_table;
-int top_of_p_table;
-long top_idnum;
+extern int top_of_p_table;
+extern long top_idnum;
 
 /* external ASCII Player Files vars */
 extern int auto_pwipe;
 
-/*************************************************************************
-*  routines for booting the system                                       *
-*************************************************************************/
-
+/* routines for booting the system */
 char *fread_action(FILE *fl, int nr)
 {
   char buf[MAX_STRING_LENGTH];
@@ -185,11 +175,9 @@ char *fread_action(FILE *fl, int nr)
   fgets(buf, MAX_STRING_LENGTH, fl);
   if (feof(fl)) {
     log("SYSERR: fread_action: unexpected EOF near action #%d", nr);
-    /*  SYSERR_DESC:
-     *  fread_action() will fail if it discovers an end of file marker
-     *  before it is able to read in the expected string.  This can be
-     *  caused by a truncated socials file.
-     */
+    /* SYSERR_DESC: fread_action() will fail if it discovers an end of file 
+     * marker before it is able to read in the expected string.  This can be
+     * caused by a truncated socials file. */
     exit(1);
   }
   if (*buf == '#')
@@ -209,11 +197,9 @@ void boot_social_messages(void)
     /* open social file */
     if (!(fl = fopen(SOCMESS_FILE_NEW, "r"))) {
       log("SYSERR: can't open socials file '%s': %s", SOCMESS_FILE_NEW, strerror(errno));
-      /*  SYSERR_DESC:
-       *  This error, from boot_social_messages(), occurs when the server
-       *  fails to open the file containing the social messages.  The error
-       *  at the end will indicate the reason why.
-       */
+      /* SYSERR_DESC: This error, from boot_social_messages(), occurs when the
+       * server fails to open the file containing the social messages.  The 
+       * error at the end will indicate the reason why. */
       exit(1);
     }
     /* count socials */
@@ -227,11 +213,9 @@ void boot_social_messages(void)
     /* open social file */
     if (!(fl = fopen(SOCMESS_FILE, "r"))) {
       log("SYSERR: can't open socials file '%s': %s", SOCMESS_FILE, strerror(errno));
-      /*  SYSERR_DESC:
-       *  This error, from boot_social_messages(), occurs when the server
-       *  fails to open the file containing the social messages.  The error
-       *  at the end will indicate the reason why.
-       */
+      /* SYSERR_DESC: This error, from boot_social_messages(), occurs when the
+       * server fails to open the file containing the social messages.  The 
+       * error at the end will indicate the reason why. */
       exit(1);
     }
     /* count socials */
@@ -255,14 +239,12 @@ void boot_social_messages(void)
       if (fscanf(fl, " %s %d %d %d %d \n",
   		sorted, &hide, &min_char_pos, &min_pos, &min_lvl) != 5) {
       log("SYSERR: format error in social file near social '%s'", next_soc);
-      /*  SYSERR_DESC:
-       *  From boot_social_messages(), this error is output when the
-       *  server is expecting to find the remainder of the first line of the
-       *  social ('hide' and 'minimum position').  These must follow the
-       *  name of the social with a single space such as: 'accuse 0 5\n'.
-       *  This error often occurs when one of the numbers is missing or the
-       *  social name has a space in it (i.e., 'bend over').
-       */
+      /* SYSERR_DESC: From boot_social_messages(), this error is output when 
+       * the server is expecting to find the remainder of the first line of the
+       * social ('hide' and 'minimum position').  These must follow the name of
+       * the social with a single space such as: 'accuse 0 5\n'. This error 
+       * often occurs when one of the numbers is missing or the social name has
+       * a space in it (i.e., 'bend over'). */
       exit(1);
     }
       curr_soc++;
@@ -275,14 +257,12 @@ void boot_social_messages(void)
     } else {  /* old style */
       if (fscanf(fl, " %d %d \n", &hide, &min_pos) != 2) {
         log("SYSERR: format error in social file near social '%s'", next_soc);
-      /*  SYSERR_DESC:
-       *  From boot_social_messages(), this error is output when the
-       *  server is expecting to find the remainder of the first line of the
-       *  social ('hide' and 'minimum position').  These must follow the
-       *  name of the social with a single space such as: 'accuse 0 5\n'.
-       *  This error often occurs when one of the numbers is missing or the
-       *  social name has a space in it (i.e., 'bend over').
-       */
+      /* SYSERR_DESC: From boot_social_messages(), this error is output when the
+       * server is expecting to find the remainder of the first line of the
+       * social ('hide' and 'minimum position').  These must follow the name of
+       * the social with a single space such as: 'accuse 0 5\n'. This error 
+       * often occurs when one of the numbers is missing or the social name has
+       * a space in it (i.e., 'bend over'). */
       exit(1);
       }
       curr_soc++;
@@ -297,13 +277,11 @@ void boot_social_messages(void)
 #ifdef CIRCLE_ACORN
     if (fgetc(fl) != '\n')
       log("SYSERR: Acorn bug workaround failed.");
-      /*  SYSERR_DESC:
-       *  The only time that this error should ever arise is if you are running
-       *  your CircleMUD on the Acorn platform.  The error arises when the
-       *  server cannot properly read a '\n' out of the file at the end of the
-       *  first line of the social (that with 'hide' and 'min position').  This
-       *  is in boot_social_messages().
-       */
+      /* SYSERR_DESC: The only time that this error should ever arise is if you
+       * are running your MUD on the Acorn platform.  The error arises when the
+       * server cannot properly read a '\n' out of the file at the end of the
+       * first line of the social (that with 'hide' and 'min position').  This
+       * is in boot_social_messages(). */
 #endif
 
     soc_mess_list[curr_soc].char_no_arg = fread_action(fl, nr);
@@ -343,7 +321,6 @@ void reboot_wizlists(void)
   file_to_string_alloc(IMMLIST_FILE, &immlist);
 }
 
-
 /* Wipe out all the loaded text files, for shutting down. */
 void free_text_files(void)
 {
@@ -360,13 +337,9 @@ void free_text_files(void)
     }
 }
 
-
-/*
- * Too bad it doesn't check the return values to let the user
- * know about -1 values.  This will result in an 'Okay.' to a
- * 'reload' command even when the string was not replaced.
- * To fix later, if desired. -gg 6/24/99
- */
+/* Too bad it doesn't check the return values to let the user know about -1 
+ * values.  This will result in an 'Okay.' to a 'reload' command even when the 
+ * string was not replaced. To fix later. */
 ACMD(do_reboot)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -458,7 +431,6 @@ ACMD(do_reboot)
   send_to_char(ch, "%s", CONFIG_OK);
 }
 
-
 void boot_world(void)
 {
   log("Loading zone table.");
@@ -491,7 +463,6 @@ void boot_world(void)
   }
 }
 
-
 void free_extra_descriptions(struct extra_descr_data *edesc)
 {
   struct extra_descr_data *enext;
@@ -504,7 +475,6 @@ void free_extra_descriptions(struct extra_descr_data *edesc)
     free(edesc);
   }
 }
-
 
 /* Free the world, in a memory allocation sense. */
 void destroy_db(void)
@@ -601,7 +571,6 @@ void destroy_db(void)
   destroy_shops();
 
   /* Zones */
-
 #define THIS_CMD zone_table[cnt].cmd[itr]
 
   for (cnt = 0; cnt <= top_of_zone_table; cnt++) {
@@ -663,9 +632,7 @@ void destroy_db(void)
 
   /* context sensitive help system */
   free_context_help();
-
 }
-
 
 /* body of the booting system */
 void boot_db(void)
@@ -793,7 +760,6 @@ void boot_db(void)
   log("Boot db -- DONE.");
 }
 
-
 /* reset the time in the game from file */
 void reset_time(void)
 {
@@ -844,7 +810,6 @@ time_info = *mud_time_passed(time(0), beginning_of_time);
     weather_info.sky = SKY_CLOUDLESS;
 }
 
-
 /* Write the time in 'when' to the MUD-time file. */
 void save_mud_time(struct time_info_data *when)
 {
@@ -858,11 +823,8 @@ void save_mud_time(struct time_info_data *when)
   }
 }
 
-/*
- * Thanks to Andrey (andrey@alex-ua.com) for this bit of code, although I
- * did add the 'goto' and changed some "while()" into "do { } while()".
- *	-gg 6/24/98 (technically 6/25/98, but I care not.)
- */
+/* Thanks to Andrey (andrey@alex-ua.com) for this bit of code, although I did 
+ * add the 'goto' and changed some "while()" into "do { } while()". -gg */
 int count_alias_records(FILE *fl)
 {
   char key[READ_SIZE], next_key[READ_SIZE];
@@ -915,8 +877,6 @@ int count_hash_records(FILE *fl)
 
   return (count);
 }
-
-
 
 void index_boot(int mode)
 {
@@ -994,9 +954,7 @@ void index_boot(int mode)
     exit(1);
   }
 
-  /*
-   * NOTE: "bytes" does _not_ include strings or other later malloc'd things.
-   */
+  /* "bytes" does _not_ include strings or other later malloc'd things. */
   switch (mode) {
   case DB_BOOT_TRG:
     CREATE(trig_index, struct index_data *, rec_count);
@@ -1070,7 +1028,6 @@ void index_boot(int mode)
   }
 }
 
-
 void discrete_load(FILE *fl, int mode, char *filename)
 {
   int nr = -1, last;
@@ -1080,10 +1037,8 @@ void discrete_load(FILE *fl, int mode, char *filename)
   /* modes positions correspond to DB_BOOT_xxx in db.h */
 
   for (;;) {
-    /*
-     * we have to do special processing with the obj files because they have
-     * no end-of-record marker :(
-     */
+    /* We have to do special processing with the obj files because they have no
+     * end-of-record marker. */
     if (mode != DB_BOOT_OBJ || nr < 0)
       if (!get_line(fl, line)) {
 	if (nr == -1) {
@@ -1162,7 +1117,6 @@ bitvector_t asciiflag_conv(char *flag)
   return (flags);
 }
 
-
 /* load the rooms */
 void parse_room(FILE *fl, int virtual_nr)
 {
@@ -1233,10 +1187,8 @@ void parse_room(FILE *fl, int virtual_nr)
       CREATE(new_descr, struct extra_descr_data, 1);
       new_descr->keyword = fread_string(fl, buf2);
       new_descr->description = fread_string(fl, buf2);
-      /* fix for crashes in the editor when formatting
-       * - e-descs are assumed to end with a \r\n
-       * -- Welcor 09/03
-       */
+      /* Fix for crashes in the editor when formatting. E-descs are assumed to 
+       * end with a \r\n. -Welcor */
       {
       	char *end = strchr(new_descr->description, '\0');
       	if (end > new_descr->description && *(end-1) != '\n') {
@@ -1266,8 +1218,6 @@ void parse_room(FILE *fl, int virtual_nr)
     }
   }
 }
-
-
 
 /* read direction data */
 void setup_dir(FILE *fl, int room, int dir)
@@ -1300,7 +1250,6 @@ void setup_dir(FILE *fl, int room, int dir)
   world[room].dir_option[dir]->to_room = ((t[2] == -1  || t[2] == 0) ? NOWHERE : t[2]);
 }
 
-
 /* make sure the start rooms exist & resolve their vnums to rnums */
 void check_start_rooms(void)
 {
@@ -1320,7 +1269,6 @@ void check_start_rooms(void)
   }
 }
 
-
 /* resolve all vnums into rnums in the world */
 void renum_world(void)
 {
@@ -1334,20 +1282,14 @@ void renum_world(void)
 	    real_room(world[room].dir_option[door]->to_room);
 }
 
-
 #define ZCMD zone_table[zone].cmd[cmd_no]
 
-/*
- * "resulve vnums into rnums in the zone reset tables"
- *
- * Or in English: Once all of the zone reset tables have been loaded, we
- * resolve the virtual numbers into real numbers all at once so we don't have
- * to do it repeatedly while the game is running.  This does make adding any
- * room, mobile, or object a little more difficult while the game is running.
- *
- * NOTE 1: Assumes NOWHERE == NOBODY == NOTHING.
- * NOTE 2: Assumes sizeof(room_rnum) >= (sizeof(mob_rnum) and sizeof(obj_rnum))
- */
+/* Resolve vnums into rnums in the zone reset tables. In English: Once all of 
+ * the zone reset tables have been loaded, we resolve the virtual numbers into 
+ * real numbers all at once so we don't have to do it repeatedly while the game
+ * is running.  This does make adding any room, mobile, or object a little more
+ * difficult while the game is running. Assumes NOWHERE == NOBODY == NOTHING.
+ * Assumes sizeof(room_rnum) >= (sizeof(mob_rnum) and sizeof(obj_rnum)) */
 void renum_zone_table(void)
 {
   int cmd_no;
@@ -1406,8 +1348,6 @@ void renum_zone_table(void)
       }
     }
 }
-
-
 
 void parse_simple_mob(FILE *mob_f, int i, int nr)
 {
@@ -1485,31 +1425,22 @@ void parse_simple_mob(FILE *mob_f, int i, int nr)
   GET_WEIGHT(mob_proto + i) = 200;
   GET_HEIGHT(mob_proto + i) = 198;
 
-  /*
-   * these are now save applies; base save numbers for MOBs are now from
-   * the warrior save table.
-   */
+  /* These are now save applies; base save numbers for MOBs are now from the 
+   * warrior save table. */
   for (j = 0; j < 5; j++)
     GET_SAVE(mob_proto + i, j) = 0;
 }
 
-
-/*
- * interpret_espec is the function that takes espec keywords and values
- * and assigns the correct value to the mob as appropriate.  Adding new
- * e-specs is absurdly easy -- just add a new CASE statement to this
- * function!  No other changes need to be made anywhere in the code.
- *
+/* interpret_espec is the function that takes espec keywords and values and 
+ * assigns the correct value to the mob as appropriate.  Adding new e-specs is 
+ * absurdly easy -- just add a new CASE statement to this function! No other 
+ * changes need to be made anywhere in the code.
  * CASE		: Requires a parameter through 'value'.
- * BOOL_CASE	: Being specified at all is its value.
- */
-
+ * BOOL_CASE	: Being specified at all is its value. */
 #define CASE(test)	\
 	if (value && !matched && !str_cmp(keyword, test) && (matched = TRUE))
-
 #define BOOL_CASE(test)	\
 	if (!value && !matched && !str_cmp(keyword, test) && (matched = TRUE))
-
 #define RANGE(low, high)	\
 	(num_arg = MAX((low), MIN((high), (num_arg))))
 
@@ -1517,10 +1448,8 @@ void interpret_espec(const char *keyword, const char *value, int i, int nr)
 {
   int num_arg = 0, matched = FALSE;
 
-  /*
-   * If there isn't a colon, there is no value.  While Boolean options are
-   * possible, we don't actually have any.  Feel free to make some.
-  */
+  /* If there isn't a colon, there is no value.  While Boolean options are
+   * possible, we don't actually have any.  Feel free to make some. */
   if (value)
     num_arg = atoi(value);
 
@@ -1586,7 +1515,6 @@ void parse_espec(char *buf, int i, int nr)
   interpret_espec(buf, ptr, i, nr);
 }
 
-
 void parse_enhanced_mob(FILE *mob_f, int i, int nr)
 {
   char line[READ_SIZE];
@@ -1607,7 +1535,6 @@ void parse_enhanced_mob(FILE *mob_f, int i, int nr)
   exit(1);
 }
 
-
 void parse_mobile(FILE *mob_f, int nr)
 {
   static int i = 0;
@@ -1621,15 +1548,13 @@ void parse_mobile(FILE *mob_f, int nr)
 
   clear_char(mob_proto + i);
 
-  /*
-   * Mobiles should NEVER use anything in the 'player_specials' structure.
+  /* Mobiles should NEVER use anything in the 'player_specials' structure.
    * The only reason we have every mob in the game share this copy of the
-   * structure is to save newbie coders from themselves. -gg 2/25/98
-   */
+   * structure is to save newbie coders from themselves. -gg */
   mob_proto[i].player_specials = &dummy_mob;
   sprintf(buf2, "mob vnum %d", nr);	/* sprintf: OK (for 'buf2 >= 19') */
 
-  /***** String data *****/
+  /* String data */
   mob_proto[i].player.name = fread_string(mob_f, buf2);
   tmpptr = mob_proto[i].player.short_descr = fread_string(mob_f, buf2);
   if (tmpptr && *tmpptr)
@@ -1640,7 +1565,7 @@ void parse_mobile(FILE *mob_f, int nr)
   mob_proto[i].player.description = fread_string(mob_f, buf2);
   GET_TITLE(mob_proto + i) = NULL;
 
-  /* *** Numeric data *** */
+  /* Numeric data */
   if (!get_line(mob_f, line)) {
     log("SYSERR: Format error after string section of mob #%d\n"
 	"...expecting line of form '# # # {S | E}', but file ended!", nr);
@@ -1708,9 +1633,6 @@ void parse_mobile(FILE *mob_f, int nr)
   top_of_mobt = i++;
 }
 
-
-
-
 /* read all objects from obj file; generate index and prototypes */
 char *parse_object(FILE *obj_f, int nr)
 {
@@ -1730,7 +1652,7 @@ char *parse_object(FILE *obj_f, int nr)
 
   sprintf(buf2, "object #%d", nr);	/* sprintf: OK (for 'buf2 >= 19') */
 
-  /* *** string data *** */
+  /* string data */
   if ((obj_proto[i].name = fread_string(obj_f, buf2)) == NULL) {
     log("SYSERR: Null obj name or format error at or near %s", buf2);
     exit(1);
@@ -1746,7 +1668,7 @@ char *parse_object(FILE *obj_f, int nr)
     CAP(tmpptr);
   obj_proto[i].action_description = fread_string(obj_f, buf2);
 
-  /* *** numeric data *** */
+  /* numeric data */
   if (!get_line(obj_f, line)) {
     log("SYSERR: Expecting first numeric line of %s, but file ended!", buf2);
     exit(1);
@@ -1804,14 +1726,13 @@ char *parse_object(FILE *obj_f, int nr)
       GET_OBJ_WEIGHT(obj_proto + i) = GET_OBJ_VAL(obj_proto + i, 1) + 5;
   }
 
-  /* *** extra descriptions and affect fields *** */
-
+  /* extra descriptions and affect fields */
   for (j = 0; j < MAX_OBJ_AFFECT; j++) {
     obj_proto[i].affected[j].location = APPLY_NONE;
     obj_proto[i].affected[j].modifier = 0;
   }
 
-  strcat(buf2, ", after numeric constants\n"	/* strcat: OK (for 'buf2 >= 87') */
+  strcat(buf2, ", after numeric constants\n" /* strcat: OK (for 'buf2 >= 87') */
 	 "...expecting 'E', 'A', '$', or next object number");
   j = 0;
 
@@ -1865,9 +1786,7 @@ char *parse_object(FILE *obj_f, int nr)
   }
 }
 
-
 #define Z	zone_table[zone]
-
 /* load the zone table and command tables */
 void load_zones(FILE *fl, char *zonename)
 {
@@ -1883,10 +1802,9 @@ void load_zones(FILE *fl, char *zonename)
   for (tmp = 0; tmp < 3; tmp++)
     get_line(fl, buf);
 
-  /*  More accurate count. Previous was always 4 or 5 too high. -gg 2001/1/17
-   *  Note that if a new zone command is added to reset_zone(), this string
-   *  will need to be updated to suit. - ae.
-   */
+  /* More accurate count. Previous was always 4 or 5 too high. -gg Note that if
+   * a new zone command is added to reset_zone(), this string will need to be 
+   * updated to suit. - ae. */
   while (get_line(fl, buf))
     if ((strchr("MOPGERDTV", buf[0]) && buf[1] == ' ') || (buf[0] == 'S' && buf[1] == '\0'))
       num_of_cmds++;
@@ -1919,11 +1837,9 @@ void load_zones(FILE *fl, char *zonename)
 
   line_num += get_line(fl, buf);
   if (sscanf(buf, " %hd %hd %d %d ", &Z.bot, &Z.top, &Z.lifespan, &Z.reset_mode) != 4) {
-    /*
-     * This may be due to the fact that the zone has no builder.  So, we just attempt
-     * to fix this by copying the previous 2 last reads into this variable and the
-     * last one.
-     */
+    /* This may be due to the fact that the zone has no builder.  So, we just 
+     * attempt to fix this by copying the previous 2 last reads into this 
+     * variable and the last one. */
     log("SYSERR: Format error in numeric constant line of %s, attempting to fix.", zname);
     if (sscanf(Z.name, " %hd %hd %d %d ", &Z.bot, &Z.top, &Z.lifespan, &Z.reset_mode) != 4) {
       log("SYSERR: Could not fix previous error, aborting game.");
@@ -2001,9 +1917,7 @@ void load_zones(FILE *fl, char *zonename)
 
   top_of_zone_table = zone++;
 }
-
 #undef Z
-
 
 void get_one_line(FILE *fl, char *buf)
 {
@@ -2014,10 +1928,6 @@ void get_one_line(FILE *fl, char *buf)
 
   buf[strlen(buf) - 1] = '\0'; /* take off the trailing \n */
 }
-
-/*************************************************************************
-*  procedures for resetting, both play-time and boot-time               *
-*************************************************************************/
 
 int vnum_mobile(char *searchname, struct char_data *ch)
 {
@@ -2031,8 +1941,6 @@ int vnum_mobile(char *searchname, struct char_data *ch)
 
   return (found);
 }
-
-
 
 int vnum_object(char *searchname, struct char_data *ch)
 {
@@ -2086,7 +1994,6 @@ struct char_data *create_char(void)
   return (ch);
 }
 
-
 /* create a new mobile from a prototype */
 struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
 {
@@ -2133,7 +2040,6 @@ struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
   return (mob);
 }
 
-
 /* create an object, and add it to the object list */
 struct obj_data *create_obj(void)
 {
@@ -2150,7 +2056,6 @@ struct obj_data *create_obj(void)
 
   return (obj);
 }
-
 
 /* create a new object from a prototype */
 struct obj_data *read_object(obj_vnum nr, int type) /* and obj_rnum */
@@ -2181,10 +2086,7 @@ struct obj_data *read_object(obj_vnum nr, int type) /* and obj_rnum */
   return (obj);
 }
 
-
-
 #define ZO_DEAD  999
-
 /* update zone ages, queue for reset if necessary, and dequeue when possible */
 void zone_update(void)
 {
@@ -2194,11 +2096,8 @@ void zone_update(void)
 
   /* jelson 10/22/92 */
   if (((++timer * PULSE_ZONE) / PASSES_PER_SEC) >= 60) {
-    /* one minute has passed */
-    /*
-     * NOT accurate unless PULSE_ZONE is a multiple of PASSES_PER_SEC or a
-     * factor of 60
-     */
+    /* one minute has passed NOT accurate unless PULSE_ZONE is a multiple of 
+     * PASSES_PER_SEC or a factor of 60 */
 
     timer = 0;
 
@@ -2229,9 +2128,8 @@ void zone_update(void)
     }
   }	/* end - one minute has passed */
 
-
-  /* dequeue zones (if possible) and reset */
-  /* this code is executed every 10 seconds (i.e. PULSE_ZONE) */
+  /* Dequeue zones (if possible) and reset. This code is executed every 10 
+   * seconds (i.e. PULSE_ZONE). */
   for (update_u = reset_q.head; update_u; update_u = update_u->next)
     if (zone_table[update_u->zone_to_reset].reset_mode == 2 ||
 	is_empty(update_u->zone_to_reset)) {
@@ -2282,11 +2180,9 @@ void reset_zone(zone_rnum zone)
     if (ZCMD.if_flag && !last_cmd)
       continue;
 
-    /*  This is the list of actual zone commands.  If any new
-     *  zone commands are added to the game, be certain to update
-     *  the list of commands in load_zone() so that the counting
-     *  will still be correct. - ae.
-     */
+    /* This is the list of actual zone commands. If any new zone commands are 
+     * added to the game, be certain to update the list of commands in load_zone
+     * () so that the counting will still be correct. - ae. */
     switch (ZCMD.command) {
     case '*':			/* ignore command */
       last_cmd = 0;
@@ -2501,8 +2397,6 @@ void reset_zone(zone_rnum zone)
   }
 }
 
-
-
 /* for use in reset_zone; return TRUE if zone 'nr' is free of PC's  */
 int is_empty(zone_rnum zone_nr)
 {
@@ -2515,10 +2409,8 @@ int is_empty(zone_rnum zone_nr)
       continue;
     if (world[IN_ROOM(i->character)].zone != zone_nr)
       continue;
-    /*
-     * if an immortal has nohassle off, he counts as present
-     * added for testing zone reset triggers - Welcor
-     */
+    /* If an immortal has nohassle off, he counts as present. Added for testing 
+     * zone reset triggers -Welcor */
     if ((GET_LEVEL(i->character) >= LVL_IMMORT) && (PRF_FLAGGED(i->character, PRF_NOHASSLE)))
       continue;
 
@@ -2528,11 +2420,7 @@ int is_empty(zone_rnum zone_nr)
   return (1);
 }
 
-/************************************************************************
-*  funcs of a (more or less) general utility nature			*
-************************************************************************/
-
-
+/* Functions of a general utility nature. */
 /* read and allocate space for a '~'-terminated string from a given file */
 char *fread_string(FILE *fl, const char *error)
 {
@@ -2655,19 +2543,13 @@ void free_char(struct char_data *ch)
   if (ch->desc)
     ch->desc->character = NULL;
 
-  /* find_char helper */
-  /*
-   * when free_char is called with a blank character struct, ID is set
-   * to 0, and has not yet been added to the lookup table.
-   */
+  /* find_char helper, when free_char is called with a blank character struct, 
+   * ID is set to 0, and has not yet been added to the lookup table */
   if (GET_ID(ch) != 0)
   remove_from_lookup_table(GET_ID(ch));
 
   free(ch);
 }
-
-
-
 
 /* release memory allocated for an obj struct */
 void free_obj(struct obj_data *obj)
@@ -2692,25 +2574,15 @@ void free_obj(struct obj_data *obj)
   free(obj);
 }
 
-
-/*
- * Steps:
- *   1: Read contents of a text file.
- *   2: Make sure no one is using the pointer in paging.
- *   3: Allocate space.
- *   4: Point 'buf' to it.
- *
- * We don't want to free() the string that someone may be
- * viewing in the pager.  page_string() keeps the internal
- * strdup()'d copy on ->showstr_head and it won't care
- * if we delete the original.  Otherwise, strings are kept
- * on ->showstr_vector but we'll only match if the pointer
- * is to the string we're interested in and not a copy.
- *
- * If someone is reading a global copy we're trying to
- * replace, give everybody using it a different copy so
- * as to avoid special cases.
- */
+/* Steps: 1: Read contents of a text file. 2: Make sure no one is using the 
+ * pointer in paging. 3: Allocate space. 4: Point 'buf' to it.
+ * We don't want to free() the string that someone may be viewing in the pager.
+ * page_string() keeps the internal strdup()'d copy on ->showstr_head and it 
+ * won't care if we delete the original.  Otherwise, strings are kept on 
+ * ->showstr_vector but we'll only match if the pointer is to the string we're 
+ * interested in and not a copy. If someone is reading a global copy we're 
+ * trying to replace, give everybody using it a different copy so as to avoid 
+ * special cases. */
 int file_to_string_alloc(const char *name, char **buf)
 {
   int temppage;
@@ -2741,7 +2613,6 @@ int file_to_string_alloc(const char *name, char **buf)
   *buf = strdup(temp);
   return (0);
 }
-
 
 /* read contents of a text file, and place in buf */
 int file_to_string(const char *name, char *buf)
@@ -2778,8 +2649,6 @@ int file_to_string(const char *name, char *buf)
   return (0);
 }
 
-
-
 /* clear some of the the working variables of a char */
 void reset_char(struct char_data *ch)
 {
@@ -2811,8 +2680,6 @@ void reset_char(struct char_data *ch)
   GET_LAST_TELL(ch) = NOBODY;
 }
 
-
-
 /* clear ALL the working variables of a char; do NOT free any space alloc'ed */
 void clear_char(struct char_data *ch)
 {
@@ -2830,7 +2697,6 @@ void clear_char(struct char_data *ch)
     ch->points.max_mana = 100;
 }
 
-
 void clear_object(struct obj_data *obj)
 {
   memset((char *) obj, 0, sizeof(struct obj_data));
@@ -2840,13 +2706,8 @@ void clear_object(struct obj_data *obj)
   obj->worn_on = NOWHERE;
 }
 
-
-
-
-/*
- * Called during character creation after picking character class
- * (and then never again for that character).
- */
+/* Called during character creation after picking character class (and then 
+ * never again for that character). */
 void init_char(struct char_data *ch)
 {
   int i;
@@ -2855,7 +2716,7 @@ void init_char(struct char_data *ch)
   if (ch->player_specials == NULL)
     CREATE(ch->player_specials, struct player_special_data, 1);
 
-  /* *** if this is our first player --- he be God *** */
+  /* If this is our first player make him IMPL. */
   if (top_of_p_table == 0) {
     GET_LEVEL(ch) = LVL_IMPL;
     GET_EXP(ch) = 7000000;
@@ -2884,14 +2745,10 @@ void init_char(struct char_data *ch)
   for (i = 0; i < MAX_TONGUE; i++)
     GET_TALK(ch, i) = 0;
 
-  /*
-   * make favors for sex -- or in English, we bias the height and weight of the
-   * character depending on what gender they've chosen for themselves. While it
-   * is possible to have a tall, heavy female it's not as likely as a male.
-   *
-   * Height is in centimeters. Weight is in pounds.  The only place they're
-   * ever printed (in stock code) is SPELL_IDENTIFY.
-   */
+  /* Bias the height and weight of the character depending on what gender 
+   * they have chosen. While it is possible to have a tall, heavy female it's 
+   * not as likely as a male. Height is in centimeters. Weight is in pounds. 
+   * The only place they're ever printed (in stock code) is SPELL_IDENTIFY. */
   if (GET_SEX(ch) == SEX_MALE) {
     GET_WEIGHT(ch) = rand_number(120, 180);
     GET_HEIGHT(ch) = rand_number(160, 200); /* 5'4" - 6'8" */
@@ -2931,8 +2788,6 @@ void init_char(struct char_data *ch)
   GET_LOADROOM(ch) = NOWHERE;
 }
 
-
-
 /* returns the real number of the room with given virtual number */
 room_rnum real_room(room_vnum vnum)
 {
@@ -2957,8 +2812,6 @@ room_rnum real_room(room_vnum vnum)
       bot = mid + 1;
   }
 }
-
-
 
 /* returns the real number of the monster with given virtual number */
 mob_rnum real_mobile(mob_vnum vnum)
@@ -2985,7 +2838,6 @@ mob_rnum real_mobile(mob_vnum vnum)
   }
 }
 
-
 /* returns the real number of the object with given virtual number */
 obj_rnum real_object(obj_vnum vnum)
 {
@@ -3010,7 +2862,6 @@ obj_rnum real_object(obj_vnum vnum)
       bot = mid + 1;
   }
 }
-
 
 /* returns the real number of the zone with given virtual number */
 zone_rnum real_zone(zone_vnum vnum)
@@ -3037,12 +2888,7 @@ zone_rnum real_zone(zone_vnum vnum)
   }
 }
 
-
-/*
- * Extend later to include more checks.
- *
- * TODO: Add checks for unknown bitvectors.
- */
+/* Extend later to include more checks and add checks for unknown bitvectors. */
 int check_object(struct obj_data *obj)
 {
   char objname[MAX_INPUT_LENGTH + 32];
@@ -3121,10 +2967,8 @@ int check_object_spell_number(struct obj_data *obj, int val)
   if (GET_OBJ_VAL(obj, val) == -1)	/* i.e.: no spell */
     return (error);
 
-  /*
-   * Check for negative spells, spells beyond the top define, and any
-   * spell which is actually a skill.
-   */
+  /* Check for negative spells, spells beyond the top define, and any spell 
+   * which is actually a skill. */
   if (GET_OBJ_VAL(obj, val) < 0)
     error = TRUE;
   if (GET_OBJ_VAL(obj, val) > TOP_SPELL_DEFINE)
@@ -3194,7 +3038,7 @@ extern int idle_max_level;
 extern int dts_are_dumps;
 extern int load_into_inventory;
 extern int track_through_doors;
-extern int immort_level_ok;
+extern int no_mort_to_immort;
 extern int free_rent;
 extern int max_obj_save;
 extern int min_rent_cost;
@@ -3230,13 +3074,9 @@ extern const char *NOEFFECT;
 
 void load_default_config( void )
 {
-  /****************************************************************************/
-  /** This function is called only once, at boot-time.                       **/
-  /** - We assume config_info is empty                          -- Welcor    **/
-  /****************************************************************************/
-  /****************************************************************************/
-  /** Game play options.                                                     **/
-  /****************************************************************************/
+  /* This function is called only once, at boot-time. We assume config_info is 
+   * empty. -Welcor */
+  /* Game play options. */
   CONFIG_PK_ALLOWED 	        = pk_allowed;
   CONFIG_PT_ALLOWED             = pt_allowed;
   CONFIG_LEVEL_CAN_SHOUT 	= level_can_shout;
@@ -3255,11 +3095,9 @@ void load_default_config( void )
   CONFIG_NOPERSON		= strdup(NOPERSON);
   CONFIG_NOEFFECT		= strdup(NOEFFECT);
   CONFIG_TRACK_T_DOORS          = track_through_doors;
-  CONFIG_IMMORT_LEVEL_OK	= immort_level_ok;
+  CONFIG_NO_MORT_TO_IMMORT	= no_mort_to_immort;
 
-  /****************************************************************************/
-  /** Rent / crashsave options.                                              **/
-  /****************************************************************************/
+  /* Rent / crashsave options. */
   CONFIG_FREE_RENT              = free_rent;
   CONFIG_MAX_OBJ_SAVE           = max_obj_save;
   CONFIG_MIN_RENT_COST	        = min_rent_cost;
@@ -3268,9 +3106,7 @@ void load_default_config( void )
   CONFIG_CRASH_TIMEOUT          = crash_file_timeout;
   CONFIG_RENT_TIMEOUT	        = rent_file_timeout;
 
-  /****************************************************************************/
-  /** Room numbers.                                                          **/
-  /****************************************************************************/
+  /* Room numbers. */
   CONFIG_MORTAL_START           = mortal_start_room;
   CONFIG_IMMORTAL_START         = immort_start_room;
   CONFIG_FROZEN_START           = frozen_start_room;
@@ -3278,9 +3114,7 @@ void load_default_config( void )
   CONFIG_DON_ROOM_2             = donation_room_2;
   CONFIG_DON_ROOM_3             = donation_room_3;
 
-  /****************************************************************************/
-  /** Game operation options.                                                **/
-  /****************************************************************************/
+  /* Game operation options. */
   CONFIG_DFLT_PORT              = DFLT_PORT;
 
   if (DFLT_IP)
@@ -3306,9 +3140,7 @@ void load_default_config( void )
   CONFIG_WELC_MESSG             = strdup(WELC_MESSG);
   CONFIG_START_MESSG            = strdup(START_MESSG);
 
-  /****************************************************************************/
-  /** Autowiz options.                                                       **/
-  /****************************************************************************/
+  /* Autowiz options. */
   CONFIG_USE_AUTOWIZ            = use_autowiz;
   CONFIG_MIN_WIZLIST_LEV        = min_wizlist_lev;
 }
@@ -3330,9 +3162,7 @@ void load_config( void )
     return;
   }
 
-  /****************************************************************************/
-  /** Load the game configuration file.                                      **/
-  /****************************************************************************/
+  /* Load the game configuration file. */
   while (get_line(fl, line)) {
     split_argument(line, tag);
     num = atoi(line);
@@ -3407,8 +3237,8 @@ void load_config( void )
           CONFIG_IDLE_RENT_TIME = num;
         else if (!str_cmp(tag, "idle_max_level"))
           CONFIG_IDLE_MAX_LEVEL = num;
-        else if (!str_cmp(tag, "immort_level_ok"))
-          CONFIG_IMMORT_LEVEL_OK = num;
+        else if (!str_cmp(tag, "no_mort_to_immort"))
+          CONFIG_NO_MORT_TO_IMMORT = num;
         else if (!str_cmp(tag, "immort_start_room"))
           CONFIG_IMMORTAL_START = num;
         break;

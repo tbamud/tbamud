@@ -152,9 +152,9 @@ void write_wizlist(FILE * out, int minlev, int maxlev)
   int i, j;
 
   fprintf(out,
-"*************************************************************************\n"
-"*        The following people have reached immortality on tbaMUD.       *\n"
-"*************************************************************************\n\n");
+"*******************************************************************************\n"
+"*          The following people have reached immortality on tbaMUD.           *\n"
+"*******************************************************************************\n\n");
 
   for (curr_level = levels; curr_level; curr_level = curr_level->next) {
     if (curr_level->params->level < minlev ||

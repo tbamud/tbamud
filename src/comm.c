@@ -1219,6 +1219,12 @@ char *make_prompt(struct descriptor_data *d)
         len += count;
     }
 
+    if (PRF_FLAGGED(d->character, PRF_AFK) && len < sizeof(prompt)) {
+      count = snprintf(prompt + len, sizeof(prompt) - len, "AFK ");
+      if (count >= 0)
+        len += count;
+    }
+
     if (len < sizeof(prompt))
       strncat(prompt, "> ", sizeof(prompt) - len - 1);	/* strncat: OK */
   } else if (STATE(d) == CON_PLAYING && IS_NPC(d->character))

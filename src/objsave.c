@@ -81,7 +81,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
     temp=read_object(GET_OBJ_VNUM(obj), VIRTUAL);
   else {
     temp = create_obj();
-    temp->item_number = -1;
+    temp->item_number = NOWHERE;
   }
 
   if (obj->action_description) {

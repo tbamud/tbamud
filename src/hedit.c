@@ -23,13 +23,13 @@ extern struct descriptor_data *descriptor_list;
 void hedit_disp_menu(struct descriptor_data *d);
 
 /* external variables */
-struct help_index_element *help_table;
-int top_of_h_table = 0;		/* ref to top of help table	 */
-int top_of_h_file = 0;		/* ref of size of help file	 */
-long top_help_idnum = 0;	/* highest idnum in use		 */
+extern struct help_index_element *help_table;
 void get_one_line(FILE *fl, char *buf);
 int search_help(char *argument, int level);
 ACMD(do_reboot);
+
+/* local variables */
+int top_of_h_table = 0;         /* ref to top of help table      */
 
 /* local functions */
 void hedit_save_internally(struct descriptor_data *d);

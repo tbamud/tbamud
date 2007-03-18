@@ -1,11 +1,18 @@
 TbaMUD is currently being developed by The Builder Academy. If you need any
 help, find any bugs, or have ideas for improvement please stop by TBA. 
-
 Rumble
 The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.52
+[Mar 18 2007] - Rumble
+  Cleaned up the code by running it through a g++ compiler (thanks Rhade).
+  Added AFK to the prompt.
+  Stop snooping at do_quit to prevent snooping of passwords on deletion or password reset.
+[Mar 17 2007] - Rumble
+  Fixed locate object spell (thanks JamDog).
+  Added plist and and improved history command (thanks Rhade).
+  Renamed immort_level_ok to no_mort_to_immort and rewrote the convuluted comments.
 [Mar 04 2007] - Rumble
   Fixed fight_messages not displaying (thanks Rhade).
   Removed LVL_FREEZE and set ban/freeze to LVL_GRGOD.

@@ -1,5 +1,5 @@
 /* ************************************************************************
-*   File: act.other.c                                   Part of CircleMUD *
+*   File: act.other.c                                                     *
 *  Usage: Miscellaneous player-level commands                             *
 *                                                                         *
 *  All rights reserved.  See license.doc for complete information.        *
@@ -12,7 +12,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -76,22 +75,25 @@ ACMD(do_quit)
     mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has quit the game.", GET_NAME(ch));
     send_to_char(ch, "Goodbye, friend.. Come back soon!\r\n");
 
-    /*  We used to check here for duping attempts, but we may as well
-     *  do it right in extract_char(), since there is no check if a
-     *  player rents out and it can leave them in an equally screwy
-     *  situation.
-     */
+    /* We used to check here for duping attempts, but we may as well do it right
+     * in extract_char(), since there is no check if a player rents out and it 
+     * can leave them in an equally screwy situation. */
 
     if (CONFIG_FREE_RENT)
       Crash_rentsave(ch, 0);
 
     GET_LOADROOM(ch) = GET_ROOM_VNUM(IN_ROOM(ch));
 
+    /* Stop snooping so you can't see passwords during deletion or change. */
+    if (ch->desc->snoop_by) {
+      write_to_output(ch->desc->snoop_by, "Your victim is no longer among us.\r\n");
+      ch->desc->snoop_by->snooping = NULL;
+      ch->desc->snoop_by = NULL;
+    }
+
     extract_char(ch);		/* Char is saved before extracting. */
   }
 }
-
-
 
 ACMD(do_save)
 {
@@ -106,15 +108,12 @@ ACMD(do_save)
   GET_LOADROOM(ch) = GET_ROOM_VNUM(IN_ROOM(ch));
 }
 
-
-/* generic function for commands which are normally overridden by
-   special procedures - i.e., shop commands, mail commands, etc. */
+/* Generic function for commands which are normally overridden by special 
+ * procedures - i.e., shop commands, mail commands, etc. */
 ACMD(do_not_here)
 {
   send_to_char(ch, "Sorry, but you cannot do that here!\r\n");
 }
-
-
 
 ACMD(do_sneak)
 {
@@ -142,8 +141,6 @@ ACMD(do_sneak)
   affect_to_char(ch, &af);
 }
 
-
-
 ACMD(do_hide)
 {
   byte percent;
@@ -165,9 +162,6 @@ ACMD(do_hide)
 
   SET_BIT(AFF_FLAGS(ch), AFF_HIDE);
 }
-
-
-
 
 ACMD(do_steal)
 {
@@ -293,8 +287,6 @@ ACMD(do_steal)
     hit(vict, ch, TYPE_UNDEFINED);
 }
 
-
-
 ACMD(do_practice)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -310,8 +302,6 @@ ACMD(do_practice)
     list_skills(ch);
 }
 
-
-
 ACMD(do_visible)
 {
   if (GET_LEVEL(ch) >= LVL_IMMORT) {
@@ -325,8 +315,6 @@ ACMD(do_visible)
   } else
     send_to_char(ch, "You are already visible.\r\n");
 }
-
-
 
 ACMD(do_title)
 {
@@ -347,7 +335,6 @@ ACMD(do_title)
   }
 }
 
-
 int perform_group(struct char_data *ch, struct char_data *vict)
 {
   if (AFF_FLAGGED(vict, AFF_GROUP) || !CAN_SEE(ch, vict))
@@ -360,7 +347,6 @@ int perform_group(struct char_data *ch, struct char_data *vict)
   act("$N is now a member of $n's group.", FALSE, ch, 0, vict, TO_NOTVICT);
   return (1);
 }
-
 
 void print_group(struct char_data *ch)
 {
@@ -393,8 +379,6 @@ void print_group(struct char_data *ch)
     }
   }
 }
-
-
 
 ACMD(do_group)
 {
@@ -441,8 +425,6 @@ ACMD(do_group)
     }
   }
 }
-
-
 
 ACMD(do_ungroup)
 {
@@ -496,9 +478,6 @@ ACMD(do_ungroup)
     stop_follower(tch);
 }
 
-
-
-
 ACMD(do_report)
 {
   char buf[MAX_STRING_LENGTH];
@@ -526,8 +505,6 @@ ACMD(do_report)
 
   send_to_char(ch, "You report to the group.\r\n");
 }
-
-
 
 ACMD(do_split)
 {
@@ -613,8 +590,6 @@ ACMD(do_split)
   }
 }
 
-
-
 ACMD(do_use)
 {
   char buf[MAX_INPUT_LENGTH], arg[MAX_INPUT_LENGTH];
@@ -641,10 +616,8 @@ ACMD(do_use)
       return;
     default:
       log("SYSERR: Unknown subcmd %d passed to do_use.", subcmd);
-      /*  SYSERR_DESC:
-       *  This is the same as the unhandled case in do_gen_ps(), but in the
-       *  function which handles 'quaff', 'recite', and 'use'.
-       */
+      /* SYSERR_DESC: This is the same as the unhandled case in do_gen_ps(), 
+       * but in the function which handles 'quaff', 'recite', and 'use'. */
       return;
     }
   }
@@ -722,8 +695,6 @@ ACMD(do_display)
   send_to_char(ch, "%s", CONFIG_OK);
 }
 
-
-
 ACMD(do_gen_write)
 {
   FILE *fl;
@@ -765,11 +736,9 @@ ACMD(do_gen_write)
 
   if (stat(filename, &fbuf) < 0) {
     perror("SYSERR: Can't stat() file");
-    /*  SYSERR_DESC:
-     *  This is from do_gen_write() and indicates that it cannot call the
-     *  stat() system call on the file required.  The error string at the
-     *  end of the line should explain what the problem is.
-     */
+    /* SYSERR_DESC: This is from do_gen_write() and indicates that it cannot 
+     * call the stat() system call on the file required.  The error string at
+     * the end of the line should explain what the problem is. */
     return;
   }
   if (fbuf.st_size >= CONFIG_MAX_FILESIZE) {
@@ -778,11 +747,9 @@ ACMD(do_gen_write)
   }
   if (!(fl = fopen(filename, "a"))) {
     perror("SYSERR: do_gen_write");
-    /*  SYSERR_DESC:
-     *  This is from do_gen_write(), and will be output if the file in
-     *  question cannot be opened for appending to.  The error string
-     *  at the end of the line should explain what the problem is.
-     */
+    /* SYSERR_DESC: This is from do_gen_write(), and will be output if the file
+     * in question cannot be opened for appending to.  The error string at the 
+     * end of the line should explain what the problem is. */
 
     send_to_char(ch, "Could not open the file.  Sorry.\r\n");
     return;
@@ -795,9 +762,7 @@ ACMD(do_gen_write)
 
 #define TOG_OFF 0
 #define TOG_ON  1
-
 #define PRF_TOG_CHK(ch,flag) ((TOGGLE_BIT(PRF_FLAGS(ch), (flag))) & (flag))
-
 ACMD(do_gen_tog)
 {
   long result;
@@ -844,7 +809,6 @@ ACMD(do_gen_tog)
     {"AFK flag is now off.\r\n",
     "AFK flag is now on.\r\n"}
   };
-
 
   if (IS_NPC(ch))
     return;

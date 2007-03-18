@@ -11,8 +11,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "interpreter.h"
@@ -26,6 +24,7 @@
 
 /* local globals */
 struct spell_info_type spell_info[TOP_SPELL_DEFINE + 1];
+char cast_arg2[MAX_INPUT_LENGTH];
 
 /* local functions */
 void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct obj_data *tobj);
@@ -35,18 +34,15 @@ ACMD(do_cast);
 void unused_spell(int spl);
 void mag_assign_spells(void);
 
-/*
- * This arrangement is pretty stupid, but the number of skills is limited by
+/* This arrangement is pretty stupid, but the number of skills is limited by
  * the playerfile.  We can arbitrarily increase the number of skills by
  * increasing the space in the playerfile. Meanwhile, 200 should provide
- * ample slots for skills.
- */
+ * ample slots for skills. */
 
 struct syllable {
   const char *org;
   const char *news;
 };
-
 
 struct syllable syls[] = {
   {" ", " "},
@@ -84,14 +80,12 @@ struct syllable syls[] = {
 };
 
 const char *unused_spellname = "!UNUSED!"; /* So we can get &unused_spellname */
-
 int mag_manacost(struct char_data *ch, int spellnum)
 {
   return MAX(SINFO.mana_max - (SINFO.mana_change *
 		    (GET_LEVEL(ch) - SINFO.min_level[(int) GET_CLASS(ch)])),
 	     SINFO.mana_min);
 }
-
 
 void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
 	            struct obj_data *tobj)
@@ -150,11 +144,9 @@ void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
   }
 }
 
-/*
- * This function should be used anytime you are not 100% sure that you have
+/* This function should be used anytime you are not 100% sure that you have
  * a valid spell/skill number.  A typical for() loop would not need to use
- * this because you can guarantee > 0 and <= TOP_SPELL_DEFINE.
- */
+ * this because you can guarantee > 0 and <= TOP_SPELL_DEFINE. */
 const char *skill_name(int num)
 {
   if (num > 0 && num <= TOP_SPELL_DEFINE)
@@ -164,7 +156,6 @@ const char *skill_name(int num)
   else
     return ("UNDEFINED");
 }
-
 
 int find_skill_num(char *name)
 {
@@ -194,15 +185,12 @@ int find_skill_num(char *name)
   return (-1);
 }
 
-
-
 /*
- * This function is the very heart of the entire magic system.  All
- * invocations of all types of magic -- objects, spoken and unspoken PC
- * and NPC spells, the works -- all come through this function eventually.
- * This is also the entry point for non-spoken or unrestricted spells.
- * Spellnum 0 is legal but silently ignored here, to make callers simpler.
- */
+ * This function is the very heart of the entire magic system.  All invocations
+ * of all types of magic -- objects, spoken and unspoken PC and NPC spells, the
+ * works -- all come through this function eventually. This is also the entry 
+ * point for non-spoken or unrestricted spells. Spellnum 0 is legal but silently
+ * ignored here, to make callers simpler. */
 int call_magic(struct char_data *caster, struct char_data *cvict,
 	     struct obj_data *ovict, int spellnum, int level, int casttype)
 {
@@ -244,7 +232,6 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
     savetype = SAVING_BREATH;
     break;
   }
-
 
   if (IS_SET(SINFO.routines, MAG_DAMAGE))
     if (mag_damage(level, caster, cvict, spellnum, savetype) == -1)
@@ -293,20 +280,15 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
   return (1);
 }
 
-/*
- * mag_objectmagic: This is the entry-point for all magic items.  This should
+/* mag_objectmagic: This is the entry-point for all magic items.  This should
  * only be called by the 'quaff', 'use', 'recite', etc. routines.
- *
  * For reference, object values 0-3:
  * staff  - [0]	level	[1] max charges	[2] num charges	[3] spell num
  * wand   - [0]	level	[1] max charges	[2] num charges	[3] spell num
  * scroll - [0]	level	[1] spell num	[2] spell num	[3] spell num
  * potion - [0] level	[1] spell num	[2] spell num	[3] spell num
- *
- * Staves and wands will default to level 14 if the level is not specified;
- * the DikuMUD format did not specify staff and wand levels in the world
- * files (this is a CircleMUD enhancement).
- */
+ * Staves and wands will default to level 14 if the level is not specified; the
+ * DikuMUD format did not specify staff and wand levels in the world files */
 void mag_objectmagic(struct char_data *ch, struct obj_data *obj,
 		          char *argument)
 {
@@ -337,12 +319,8 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj,
       /* Level to cast spell at. */
       k = GET_OBJ_VAL(obj, 0) ? GET_OBJ_VAL(obj, 0) : DEFAULT_STAFF_LVL;
 
-      /*
-       * Problem : Area/mass spells on staves can cause crashes.
-       * Solution: Remove the special nature of area/mass spells on staves.
-       * Problem : People like that behavior.
-       * Solution: We special case the area/mass spells here.
-       */
+      /* Area/mass spells on staves can cause crashes. So we use special cases
+       * for those spells spells here. */
       if (HAS_SPELL_ROUTINE(GET_OBJ_VAL(obj, 3), MAG_MASSES | MAG_AREAS)) {
         for (i = 0, tch = world[IN_ROOM(ch)].people; tch; tch = tch->next_in_room)
 	  i++;
@@ -451,15 +429,10 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj,
   }
 }
 
-
-/*
- * cast_spell is used generically to cast any spoken spell, assuming we
- * already have the target char/obj and spell number.  It checks all
- * restrictions, etc., prints the words, etc.
- *
- * Entry point for NPC casts.  Recommended entry point for spells cast
- * by NPCs via specprocs.
- */
+/* cast_spell is used generically to cast any spoken spell, assuming we already
+ * have the target char/obj and spell number.  It checks all restrictions, 
+ * prints the words, etc. Entry point for NPC casts.  Recommended entry point 
+ * for spells cast by NPCs via specprocs. */
 int cast_spell(struct char_data *ch, struct char_data *tch,
 	           struct obj_data *tobj, int spellnum)
 {
@@ -512,12 +485,10 @@ int cast_spell(struct char_data *ch, struct char_data *tch,
 }
 
 
-/*
- * do_cast is the entry point for PC-casted spells.  It parses the arguments,
+/* do_cast is the entry point for PC-casted spells.  It parses the arguments,
  * determines the spell number and finds a target, throws the die to see if
  * the spell can be cast, checks for sufficient mana and subtracts it, and
- * passes control to cast_spell().
- */
+ * passes control to cast_spell(). */
 ACMD(do_cast)
 {
   struct char_data *tch = NULL;
@@ -566,6 +537,9 @@ ACMD(do_cast)
     strlcpy(arg, t, sizeof(arg));
     one_argument(arg, t);
     skip_spaces(&t);
+
+    /* Copy target to global cast_arg2, for use in spells like locate object */
+    strcpy(cast_arg2, t);
   }
   if (IS_SET(SINFO.targets, TAR_IGNORE)) {
     target = TRUE;
@@ -653,8 +627,6 @@ ACMD(do_cast)
   }
 }
 
-
-
 void spell_level(int spell, int chclass, int level)
 {
   int bad = 0;
@@ -700,7 +672,6 @@ void spello(int spl, const char *name, int max_mana, int min_mana,
   spell_info[spl].wear_off_msg = wearoff;
 }
 
-
 void unused_spell(int spl)
 {
   int i;
@@ -718,52 +689,30 @@ void unused_spell(int spl)
 }
 
 #define skillo(skill, name) spello(skill, name, 0, 0, 0, 0, 0, 0, 0, NULL);
-
-
-/*
- * Arguments for spello calls:
- *
+/* Arguments for spello calls:
  * spellnum, maxmana, minmana, manachng, minpos, targets, violent?, routines.
- *
  * spellnum:  Number of the spell.  Usually the symbolic name as defined in
- * spells.h (such as SPELL_HEAL).
- *
+ *  spells.h (such as SPELL_HEAL).
  * spellname: The name of the spell.
- *
  * maxmana :  The maximum mana this spell will take (i.e., the mana it
- * will take when the player first gets the spell).
- *
+ *  will take when the player first gets the spell).
  * minmana :  The minimum mana this spell will take, no matter how high
- * level the caster is.
- *
+ *  level the caster is.
  * manachng:  The change in mana for the spell from level to level.  This
- * number should be positive, but represents the reduction in mana cost as
- * the caster's level increases.
- *
+ *  number should be positive, but represents the reduction in mana cost as
+ *  the caster's level increases.
  * minpos  :  Minimum position the caster must be in for the spell to work
- * (usually fighting or standing). targets :  A "list" of the valid targets
- * for the spell, joined with bitwise OR ('|').
- *
+ *  (usually fighting or standing). targets :  A "list" of the valid targets
+ *  for the spell, joined with bitwise OR ('|').
  * violent :  TRUE or FALSE, depending on if this is considered a violent
- * spell and should not be cast in PEACEFUL rooms or on yourself.  Should be
- * set on any spell that inflicts damage, is considered aggressive (i.e.
- * charm, curse), or is otherwise nasty.
- *
+ *  spell and should not be cast in PEACEFUL rooms or on yourself.  Should be
+ *  set on any spell that inflicts damage, is considered aggressive (i.e.
+ *  charm, curse), or is otherwise nasty.
  * routines:  A list of magic routines which are associated with this spell
- * if the spell uses spell templates.  Also joined with bitwise OR ('|').
- *
- * See the CircleMUD documentation for a more detailed description of these
- * fields.
- */
-
-/*
- * NOTE: SPELL LEVELS ARE NO LONGER ASSIGNED HERE AS OF Circle 3.0 bpl9.
- * In order to make this cleaner, as well as to make adding new classes
- * much easier, spell levels are now assigned in class.c.  You only need
- * a spello() call to define a new spell; to decide who gets to use a spell
- * or skill, look in class.c.  -JE 5 Feb 1996
- */
-
+ *  if the spell uses spell templates.  Also joined with bitwise OR ('|').
+ * See the documentation for a more detailed description of these fields. You 
+ * only need a spello() call to define a new spell; to decide who gets to use 
+ * a spell or skill, look in class.c.  -JE */
 void mag_assign_spells(void)
 {
   int i;
@@ -978,10 +927,8 @@ void mag_assign_spells(void)
 	TAR_CHAR_ROOM | TAR_OBJ_INV | TAR_OBJ_ROOM, FALSE, MAG_MANUAL,
 	NULL);
 
-  /*
-   * These spells are currently not used, not implemented, and not castable.
-   * Values for the 'breath' spells are filled in assuming a dragon's breath.
-   */
+  /* These spells are currently not used, not implemented, and not castable.
+   * Values for the 'breath' spells are filled in assuming a dragon's breath. */
 
   spello(SPELL_FIRE_BREATH, "fire breath", 0, 0, 0, POS_SITTING,
 	TAR_IGNORE, TRUE, 0,
@@ -1008,12 +955,9 @@ void mag_assign_spells(void)
 	TAR_IGNORE, TRUE, 0,
 	NULL);
 
-  /*
-   * Declaration of skills - this actually doesn't do anything except
-   * set it up so that immortals can use these skills by default.  The
-   * min level to use the skill for other classes is set up in class.c.
-   */
-
+  /* Declaration of skills - this actually doesn't do anything except set it up
+   * so that immortals can use these skills by default.  The min level to use 
+   * the skill for other classes is set up in class.c. */
   skillo(SKILL_BACKSTAB, "backstab");
   skillo(SKILL_BASH, "bash");
   skillo(SKILL_HIDE, "hide");
