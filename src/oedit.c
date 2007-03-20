@@ -65,8 +65,7 @@ ACMD(do_oasis_oedit)
   /* Parse any arguments. */
   buf3 = two_arguments(argument, buf1, buf2);
 
-  /* If there aren't any arguments...well...they can't modify nothing now 
-     can they? */
+  /* If there aren't any arguments they can't modify anything. */
   if (!*buf1) {
     send_to_char(ch, "Specify an object VNUM to edit.\r\n");
     return;
@@ -164,8 +163,7 @@ ACMD(do_oasis_oedit)
 
   OLC_NUM(d) = number;
 
-  /* If this is a new object, setup a new object, otherwise setup the existing 
-     object. */
+  /* If a new object, setup new, otherwise setup the existing object. */
   if ((real_num = real_object(number)) != NOTHING)
     oedit_setup_existing(d, real_num);
   else
@@ -213,8 +211,8 @@ void oedit_setup_existing(struct descriptor_data *d, int real_num)
   OLC_VAL(d) = 0;
   OLC_ITEM_TYPE(d) = OBJ_TRIGGER;
   dg_olc_script_copy(d);
-  /* The edited obj must not have a script. It will be assigned to the updated 
-     obj later, after editing. */
+  /* The edited obj must not have a script. It will be assigned to the updated
+   * obj later, after editing. */
   SCRIPT(obj) = NULL;
   OLC_OBJ(d)->proto_script = NULL;
 
@@ -411,7 +409,7 @@ void oedit_disp_spells_menu(struct descriptor_data *d)
   get_char_colors(d->character);
   clear_screen(d);
 
-  for (counter = 0; counter < NUM_SPELLS; counter++) {
+  for (counter = 1; counter <= NUM_SPELLS; counter++) {
     write_to_output(d, "%s%2d%s) %s%-20.20s %s", grn, counter, nrm, yel,
 		spell_info[counter].name, !(++columns % 3) ? "\r\n" : "");
   }
@@ -424,9 +422,7 @@ void oedit_disp_val1_menu(struct descriptor_data *d)
   OLC_MODE(d) = OEDIT_VALUE_1;
   switch (GET_OBJ_TYPE(OLC_OBJ(d))) {
   case ITEM_LIGHT:
-    /*
-     * values 0 and 1 are unused.. jump to 2
-     */
+    /* values 0 and 1 are unused.. jump to 2 */
     oedit_disp_val3_menu(d);
     break;
   case ITEM_SCROLL:
@@ -436,9 +432,7 @@ void oedit_disp_val1_menu(struct descriptor_data *d)
     write_to_output(d, "Spell level : ");
     break;
   case ITEM_WEAPON:
-    /*
-     * This doesn't seem to be used if I remembe right.
-     */
+    /* This doesn't seem to be used if I remembe right. */
     write_to_output(d, "Modifier to Hitroll : ");
     break;
   case ITEM_ARMOR:
@@ -458,9 +452,9 @@ void oedit_disp_val1_menu(struct descriptor_data *d)
     write_to_output(d, "Number of gold coins : ");
     break;
   case ITEM_NOTE:
-    /*
-     * This is supposed to be language, but it's unused.
-     */
+    break;
+  case ITEM_CHAIR:
+    write_to_output(d, "Number of people the chair can hold : ");
     break;
   default:
     oedit_disp_menu(d);
@@ -488,9 +482,7 @@ void oedit_disp_val2_menu(struct descriptor_data *d)
     oedit_disp_val4_menu(d);
     break;
   case ITEM_CONTAINER:
-    /*
-     * These are flags, needs a bit of special handling.
-     */
+    /* These are flags, needs a bit of special handling. */
     oedit_disp_container_flags_menu(d);
     break;
   case ITEM_DRINKCON:
@@ -846,9 +838,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       oedit_disp_menu(d);
       break;
     }
-    return;			/*
-				 * end of OEDIT_MAIN_MENU
-				 */
+    return; /* end of OEDIT_MAIN_MENU */
 
   case OLC_SCRIPT_EDIT:
     if (dg_script_edit_parse(d, arg)) return;
@@ -950,7 +940,16 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     return;
 
   case OEDIT_VALUE_1:
+    number = atoi(arg);
     switch (GET_OBJ_TYPE(OLC_OBJ(d))) {
+    case ITEM_CHAIR:
+      if (number < 0 || number > MAX_PEOPLE_IN_CHAIR)
+        oedit_disp_val1_menu(d);
+      else {
+        GET_OBJ_VAL(OLC_OBJ(d), 0) = number;
+        oedit_disp_val2_menu(d);
+      }
+      break;
     case ITEM_WEAPON:
       GET_OBJ_VAL(OLC_OBJ(d), 0) = MIN(MAX(atoi(arg), -50), 50);
       break;
@@ -1168,9 +1167,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
 	  OLC_DESC(d) = OLC_DESC(d)->next;
 	}
       }
-      /*
-       * No break - drop into default case.
-       */
+      /* No break - drop into default case. */
     default:
       oedit_disp_extradesc_menu(d);
       return;

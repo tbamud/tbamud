@@ -1719,6 +1719,8 @@ char *parse_object(FILE *obj_f, int nr)
   GET_OBJ_RENT(obj_proto + i) = t[2];
   GET_OBJ_LEVEL(obj_proto + i) = t[3];
 
+  obj_proto[i].sitting_here = NULL;
+
   /* check to make sure that weight of containers exceeds curr. quantity */
   if (GET_OBJ_TYPE(obj_proto + i) == ITEM_DRINKCON ||
       GET_OBJ_TYPE(obj_proto + i) == ITEM_FOUNTAIN) {
@@ -2665,6 +2667,7 @@ void reset_char(struct char_data *ch)
   ch->next_fighting = NULL;
   ch->next_in_room = NULL;
   FIGHTING(ch) = NULL;
+  char_from_chair(ch);
   ch->char_specials.position = POS_STANDING;
   ch->mob_specials.default_pos = POS_STANDING;
   ch->char_specials.carry_weight = 0;
@@ -2954,7 +2957,13 @@ int check_object(struct obj_data *obj)
       } while (onealias && *onealias);
     }
   break;
-}
+  case ITEM_CHAIR:
+    if (GET_OBJ_VAL(obj, 1) > GET_OBJ_VAL(obj, 0) && (error = TRUE))
+      log("SYSERR: Object #%d (%s) contains (%d) more than maximum (%d).",
+          GET_OBJ_VNUM(obj), obj->short_description, GET_OBJ_VAL(obj, 1), 
+	  GET_OBJ_VAL(obj, 0));
+    break;
+  }
 
   return (error);
 }

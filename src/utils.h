@@ -8,9 +8,7 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 ************************************************************************ */
 
-
-/* external declarations and prototypes **********************************/
-
+/* external declarations and prototypes */
 extern struct weather_data weather_info;
 extern FILE *logfile;
 
@@ -40,10 +38,8 @@ int     levenshtein_distance(char *s1, char *s2);
 
 #define core_dump()		core_dump_real(__FILE__, __LINE__)
 
-/*
- * Only provide our versions if one isn't in the C library. These macro names
- * will be defined by sysdep.h if a strcasecmp or stricmp exists.
- */
+/* Only provide our versions if one isn't in the C library. These macro names
+ * will be defined by sysdep.h if a strcasecmp or stricmp exists. */
 #ifndef str_cmp
 int	str_cmp(const char *arg1, const char *arg2);
 #endif
@@ -95,8 +91,12 @@ void	gain_condition(struct char_data *ch, int condition, int value);
 void	point_update(void);
 void	update_pos(struct char_data *victim);
 
+void char_from_chair(struct char_data *ch);
+#define SITTING(ch)             ((ch)->char_specials.chair)
+#define NEXT_SITTING(ch)        ((ch)->char_specials.next_in_chair)
+#define OBJ_SAT_IN_BY(obj)      ((obj)->sitting_here)
 
-/* various constants *****************************************************/
+/* various constants */
 
 /* defines for mudlog() */
 #define OFF	0
@@ -117,10 +117,8 @@ void	update_pos(struct char_data *victim);
 #define BFS_ALREADY_THERE	(-2)
 #define BFS_NO_PATH		(-3)
 
-/*
- * XXX: These constants should be configurable. See act.informative.c
- *	and utils.c for other places to change.
- */
+/* These constants should be configurable. See act.informative.c and utils.c 
+ * for other places to change. */
 /* mud-life time */
 #define SECS_PER_MUD_HOUR	75
 #define SECS_PER_MUD_DAY	(24*SECS_PER_MUD_HOUR)
@@ -133,10 +131,7 @@ void	update_pos(struct char_data *victim);
 #define SECS_PER_REAL_DAY	(24*SECS_PER_REAL_HOUR)
 #define SECS_PER_REAL_YEAR	(365*SECS_PER_REAL_DAY)
 
-
-/* string utils **********************************************************/
-
-
+/* string utils */
 #define YESNO(a) ((a) ? "YES" : "NO")
 #define ONOFF(a) ((a) ? "ON" : "OFF")
 
@@ -148,10 +143,7 @@ void	update_pos(struct char_data *victim);
 /* See also: ANA, SANA */
 #define AN(string) (strchr("aeiouAEIOU", *string) ? "an" : "a")
 
-
-/* memory utils **********************************************************/
-
-
+/* memory utils */
 #define CREATE(result, type, number)  do {\
 	if ((number) * sizeof(type) <= 0)	\
 		log("SYSERR: Zero bytes or less requested at %s:%d.", __FILE__, __LINE__);	\
@@ -162,14 +154,12 @@ void	update_pos(struct char_data *victim);
   if (!((result) = (type *) realloc ((result), sizeof(type) * (number))))\
 		{ perror("SYSERR: realloc failure"); abort(); } } while(0)
 
-/*
- * the source previously used the same code in many places to remove an item
+/* the source previously used the same code in many places to remove an item
  * from a list: if it's the list head, change the head, else traverse the
  * list looking for the item before the one to be removed.  Now, we have a
  * macro to do this.  To use, just make sure that there is a variable 'temp'
  * declared as the same type as the list to be manipulated.  BTW, this is
- * a great application for C++ templates but, alas, this is not C++.
- */
+ * a great application for C++ templates but, alas, this is not C++. */
 #define REMOVE_FROM_LIST(item, head, next)	\
    if ((item) == (head))		\
       head = (item)->next;		\
@@ -181,22 +171,17 @@ void	update_pos(struct char_data *victim);
          temp->next = (item)->next;	\
    }					\
 
-
-/* basic bitvector utils *************************************************/
-
-
+/* basic bitvector utils */
 #define IS_SET(flag,bit)  ((flag) & (bit))
 #define SET_BIT(var,bit)  ((var) |= (bit))
 #define REMOVE_BIT(var,bit)  ((var) &= ~(bit))
 #define TOGGLE_BIT(var,bit) ((var) ^= (bit))
 
-/*
- * Accessing player specific data structures on a mobile is a very bad thing
+/* Accessing player specific data structures on a mobile is a very bad thing
  * to do.  Consider that changing these variables for a single mob will change
  * it for every other single mob in the game.  If we didn't specifically check
  * for it, 'wimpy' would be an extremely bad thing for a mob to do, as an
- * example.  If you really couldn't care less, change this to a '#if 0'.
- */
+ * example.  If you really couldn't care less, change this to a '#if 0'. */
 #if 1
 /* Subtle bug in the '#var', but works well for now. */
 #define CHECK_PLAYER_SPECIAL(ch, var) \
@@ -238,9 +223,7 @@ void	update_pos(struct char_data *victim);
 /* new define for quick check */
 #define DEAD(ch) (PLR_FLAGGED((ch), PLR_NOTDEADYET) || MOB_FLAGGED((ch), MOB_NOTDEADYET))
 
-/* room utils ************************************************************/
-
-
+/* room utils */
 #define SECT(room)	(VALID_ROOM_RNUM(room) ? \
 				world[(room)].sector_type : SECT_INSIDE)
 
@@ -253,9 +236,7 @@ void	update_pos(struct char_data *victim);
 #define GET_ROOM_SPEC(room) \
 	(VALID_ROOM_RNUM(room) ? world[(room)].func : NULL)
 
-/* char utils ************************************************************/
-
-
+/* char utils */
 #define IN_ROOM(ch)	((ch)->in_room)
 #define GET_WAS_IN(ch)	((ch)->was_in_room)
 #define GET_AGE(ch)     (age(ch)->year)
@@ -268,10 +249,8 @@ void	update_pos(struct char_data *victim);
 #define GET_PASSWD(ch)	((ch)->player.passwd)
 #define GET_PFILEPOS(ch)((ch)->pfilepos)
 
-/*
- * I wonder if this definition of GET_REAL_LEVEL should be the definition
- * of GET_LEVEL?  JE
- */
+/* I wonder if this definition of GET_REAL_LEVEL should be the definition of 
+ * GET_LEVEL?  JE */
 #define GET_REAL_LEVEL(ch) \
    (ch->desc && ch->desc->original ? GET_LEVEL(ch->desc->original) : \
     GET_LEVEL(ch))
@@ -363,7 +342,6 @@ void	update_pos(struct char_data *victim);
 #define IS_EVIL(ch)    (GET_ALIGNMENT(ch) <= -350)
 #define IS_NEUTRAL(ch) (!IS_GOOD(ch) && !IS_EVIL(ch))
 
-
 /* These three deprecated. */
 #define WAIT_STATE(ch, cycle) do { GET_WAIT_STATE(ch) = (cycle); } while(0)
 #define CHECK_WAIT(ch)                ((ch)->wait > 0)
@@ -371,10 +349,7 @@ void	update_pos(struct char_data *victim);
 /* New, preferred macro. */
 #define GET_WAIT_STATE(ch)    ((ch)->wait)
 
-
-/* descriptor-based utils ************************************************/
-
-/* Hrm, not many.  We should make more. -gg 3/4/99 */
+/* descriptor-based utils. We should make more. -gg */
 #define STATE(d)	((d)->connected)
 
 #define IS_PLAYING(d)   (STATE(d) == CON_TEDIT || STATE(d) == CON_REDIT ||      \
@@ -387,13 +362,11 @@ void	update_pos(struct char_data *victim);
 #define SENDOK(ch)	(((ch)->desc || SCRIPT_CHECK((ch), MTRIG_ACT)) && \
 			(to_sleeping || AWAKE(ch)) && \
 			!PLR_FLAGGED((ch), PLR_WRITING))
-/* object utils **********************************************************/
 
-/*
- * Check for NOWHERE or the top array index?
- * If using unsigned types, the top array index will catch everything.
- * If using signed types, NOTHING will catch the majority of bad accesses.
- */
+/* object utils */
+/* Check for NOWHERE or the top array index? If using unsigned types, the top 
+ * array index will catch everything. If using signed types, NOTHING will 
+ * catch the majority of bad accesses. */
 #define VALID_OBJ_RNUM(obj)	(GET_OBJ_RNUM(obj) <= top_of_objt && \
 				 GET_OBJ_RNUM(obj) != NOTHING)
 
@@ -420,12 +393,9 @@ void	update_pos(struct char_data *victim);
 #define CAN_WEAR(obj, part)	OBJWEAR_FLAGGED((obj), (part))
 #define GET_OBJ_SHORT(obj)      ((obj)->short_description)
 
-/* compound utilities and other macros **********************************/
-
-/*
- * Used to compute CircleMUD version. To see if the code running is newer
- * than 3.0pl13, you would use: #if _CIRCLEMUD > CIRCLEMUD_VERSION(3,0,13)
- */
+/* compound utilities and other macros */
+/* Used to compute CircleMUD version. To see if the code running is newer than 
+ * 3.0pl13, you would use: #if _CIRCLEMUD > CIRCLEMUD_VERSION(3,0,13) */
 #define CIRCLEMUD_VERSION(major, minor, patchlevel) \
 	(((major) << 16) + ((minor) << 8) + (patchlevel))
 
@@ -435,7 +405,6 @@ void	update_pos(struct char_data *victim);
 
 #define ANA(obj) (strchr("aeiouAEIOU", *(obj)->name) ? "An" : "A")
 #define SANA(obj) (strchr("aeiouAEIOU", *(obj)->name) ? "an" : "a")
-
 
 /* Various macros building up to CAN_SEE */
 
@@ -457,9 +426,7 @@ void	update_pos(struct char_data *victim);
 #define CAN_SEE(sub, obj) (SELF(sub, obj) || \
    ((GET_REAL_LEVEL(sub) >= (IS_NPC(obj) ? 0 : GET_INVIS_LEV(obj))) && \
    IMM_CAN_SEE(sub, obj)))
-
 /* End of CAN_SEE */
-
 
 #define INVIS_OK_OBJ(sub, obj) \
   (!OBJ_FLAGGED((obj), ITEM_INVISIBLE) || AFF_FLAGGED((sub), AFF_DETECT_INVIS))
@@ -491,7 +458,6 @@ void	update_pos(struct char_data *victim);
 #define OBJN(obj, vict) (CAN_SEE_OBJ((vict), (obj)) ? \
 	fname((obj)->name) : "something")
 
-
 #define EXIT(ch, door)  (world[IN_ROOM(ch)].dir_option[door])
 #define W_EXIT(room, num)     (world[(room)].dir_option[(num)])
 #define R_EXIT(room, num)     ((room)->dir_option[(num)])
@@ -499,7 +465,6 @@ void	update_pos(struct char_data *victim);
 #define CAN_GO(ch, door) (EXIT(ch,door) && \
 			 (EXIT(ch,door)->to_room != NOWHERE) && \
 			 !IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED))
-
 
 #define CLASS_ABBR(ch) (IS_NPC(ch) ? "--" : class_abbrevs[(int)GET_CLASS(ch)])
 
@@ -514,10 +479,7 @@ void	update_pos(struct char_data *victim);
 
 #define OUTSIDE(ch) (!ROOM_FLAGGED(IN_ROOM(ch), ROOM_INDOORS))
 
-
-/* OS compatibility ******************************************************/
-
-
+/* OS compatibility */
 /* there could be some strange OS which doesn't have NULL... */
 #ifndef NULL
 #define NULL (void *)0
@@ -546,20 +508,16 @@ void	update_pos(struct char_data *victim);
 #define SEEK_END	2
 #endif
 
-/*
- * NOCRYPT can be defined by an implementor manually in sysdep.h.
- * CIRCLE_CRYPT is a variable that the 'configure' script
- * automatically sets when it determines whether or not the system is
- * capable of encrypting.
- */
+/* NOCRYPT can be defined by an implementor manually in sysdep.h. CIRCLE_CRYPT 
+ * is a variable that the 'configure' script automatically sets when it 
+ * determines whether or not the system is capable of encrypting. */
 #if defined(NOCRYPT) || !defined(CIRCLE_CRYPT)
 #define CRYPT(a,b) (a)
 #else
 #define CRYPT(a,b) ((char *) crypt((a),(b)))
 #endif
 
-/*******************  Config macros *********************/
-
+/* Config macros */
 #define CONFIG_CONFFILE             config_info.CONFFILE
 
 #define CONFIG_PK_ALLOWED       config_info.play.pk_allowed
@@ -582,7 +540,7 @@ void	update_pos(struct char_data *victim);
 #define CONFIG_NOPERSON         config_info.play.NOPERSON
 #define CONFIG_NOEFFECT         config_info.play.NOEFFECT
 
-  /** Crash Saves **/
+/* Crash Saves */
 #define CONFIG_FREE_RENT        config_info.csd.free_rent
 #define CONFIG_MAX_OBJ_SAVE     config_info.csd.max_obj_save
 #define CONFIG_MIN_RENT_COST    config_info.csd.min_rent_cost
@@ -591,7 +549,7 @@ void	update_pos(struct char_data *victim);
 #define CONFIG_CRASH_TIMEOUT    config_info.csd.crash_file_timeout
 #define CONFIG_RENT_TIMEOUT     config_info.csd.rent_file_timeout
 
-  /** Room Numbers **/
+/* Room Numbers */
 #define CONFIG_MORTAL_START     config_info.room_nums.mortal_start_room
 #define CONFIG_IMMORTAL_START   config_info.room_nums.immort_start_room
 #define CONFIG_FROZEN_START     config_info.room_nums.frozen_start_room
@@ -599,7 +557,7 @@ void	update_pos(struct char_data *victim);
 #define CONFIG_DON_ROOM_2       config_info.room_nums.donation_room_2
 #define CONFIG_DON_ROOM_3       config_info.room_nums.donation_room_3
 
-  /** Game Operation **/
+/* Game Operation */
 #define CONFIG_DFLT_PORT        config_info.operation.DFLT_PORT
 #define CONFIG_DFLT_IP          config_info.operation.DFLT_IP
 #define CONFIG_MAX_PLAYING      config_info.operation.max_playing
@@ -615,7 +573,7 @@ void	update_pos(struct char_data *victim);
 #define CONFIG_WELC_MESSG       config_info.operation.WELC_MESSG
 #define CONFIG_START_MESSG      config_info.operation.START_MESSG
 
-  /** Autowiz **/
+/* Autowiz */
 #define CONFIG_USE_AUTOWIZ      config_info.autowiz.use_autowiz
 #define CONFIG_MIN_WIZLIST_LEV  config_info.autowiz.min_wizlist_lev
 

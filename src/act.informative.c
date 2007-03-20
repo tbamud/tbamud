@@ -98,6 +98,9 @@ int *cmd_sort_info;
 
 void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 {
+  int found = 0;   
+  struct char_data *temp;
+  
   if (!obj || !ch) {
     log("SYSERR: NULL pointer in show_obj_to_char(): obj=%p ch=%p", obj, ch);
     /*  SYSERR_DESC: Somehow a NULL pointer was sent to show_obj_to_char() in 
@@ -105,6 +108,21 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
      *  was NULL by listing both of the pointers passed to it.  This is often a
      *  difficult one to trace, and may require stepping through a debugger. */
     return;
+  }
+
+  if ((mode == 0) && obj->description) {
+    if (!GET_OBJ_VAL(obj, 1) == 0 || OBJ_SAT_IN_BY(obj)) {
+      temp = OBJ_SAT_IN_BY(obj);
+      for (temp = OBJ_SAT_IN_BY(obj); temp; temp = NEXT_SITTING(temp)) {
+        if (temp == ch)
+          found++;
+      }
+      if (found) {
+        send_to_char(ch, "You are %s upon %s.", GET_POS(ch) == POS_SITTING ? "sitting" :
+        "resting", obj->short_description);
+        goto end;
+      }
+    }
   }
 
   switch (mode) {
@@ -158,6 +176,7 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
      *  call with the incorrect mode and change it to an acceptable mode. */
     return;
   }
+  end:
 
   show_obj_modifiers(obj, ch);
   send_to_char(ch, "\r\n");
@@ -289,6 +308,7 @@ void look_at_char(struct char_data *i, struct char_data *ch)
 
 void list_one_char(struct char_data *i, struct char_data *ch)
 {
+  struct obj_data *chair;
   const char *positions[] = {
     " is lying here, dead.",
     " is lying here, mortally wounded.",
@@ -337,13 +357,21 @@ void list_one_char(struct char_data *i, struct char_data *ch)
     send_to_char(ch, " (linkless)");
   if (!IS_NPC(i) && PLR_FLAGGED(i, PLR_WRITING))
     send_to_char(ch, " (writing)");
-
   if (!IS_NPC(i) && PRF_FLAGGED(i, PRF_BUILDWALK))
     send_to_char(ch, " (buildwalk)");
+  if (!IS_NPC(i) && PRF_FLAGGED(i, PRF_AFK))
+    send_to_char(ch, " (AFK)");
 
-  if (GET_POS(i) != POS_FIGHTING)
-    send_to_char(ch, "%s", positions[(int) GET_POS(i)]);
+  if (GET_POS(i) != POS_FIGHTING) {
+    if (!SITTING(i))
+      send_to_char(ch, "%s", positions[(int) GET_POS(i)]);
   else {
+    chair = SITTING(i);
+    send_to_char(ch, " is %s upon %s.", ((GET_POS(i) == POS_SITTING) ? 
+        "sitting" : "resting"), (CAN_SEE_OBJ(ch, chair) ? 
+        chair->short_description : "something"));
+    }
+  } else {
     if (FIGHTING(i)) {
       send_to_char(ch, " is here, fighting ");
       if (FIGHTING(i) == ch)
@@ -791,7 +819,12 @@ ACMD(do_score)
     send_to_char(ch, "You are resting.\r\n");
     break;
   case POS_SITTING:
-    send_to_char(ch, "You are sitting.\r\n");
+    if (!SITTING(ch))
+      send_to_char(ch, "You are sitting.\r\n");
+    else {
+      struct obj_data *chair = SITTING(ch);
+      send_to_char(ch, "You are sitting upon %s.\r\n", chair->short_description);
+    }
     break;
   case POS_FIGHTING:
     send_to_char(ch, "You are fighting %s.\r\n", FIGHTING(ch) ? PERS(FIGHTING(ch), ch) : "thin air");

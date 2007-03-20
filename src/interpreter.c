@@ -1213,6 +1213,8 @@ int perform_dupe_check(struct descriptor_data *d)
     write_to_output(d, "Reconnecting.\r\n");
     act("$n has reconnected.", TRUE, d->character, 0, 0, TO_ROOM);
     mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "%s [%s] has reconnected.", GET_NAME(d->character), d->host);
+    if (has_mail(GET_IDNUM(d->character)))
+      write_to_output(d, "You have mail waiting.\r\n");
     break;
   case USURP:
     write_to_output(d, "You take over your own body, already in use!\r\n");

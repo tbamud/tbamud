@@ -644,6 +644,7 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
   struct obj_data *j2;
   struct extra_descr_data *desc;
   char buf[MAX_STRING_LENGTH];
+  struct char_data *tempch;
 
   send_to_char(ch, "Name: '%s%s%s', Aliases: %s\r\n", CCYEL(ch, C_NRM),
 	  j->short_description ? j->short_description : "<None>",
@@ -742,6 +743,13 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
     break;
   case ITEM_MONEY:
     send_to_char(ch, "Coins: %d\r\n", GET_OBJ_VAL(j, 0));
+    break;
+  case ITEM_CHAIR:
+    send_to_char(ch, "Can hold: [%d] Num. of People in Chair: [%d]\r\n", GET_OBJ_VAL(j, 0), GET_OBJ_VAL(j, 1));
+    send_to_char(ch, "Holding : ");
+    for (tempch = OBJ_SAT_IN_BY(j); tempch; tempch = NEXT_SITTING(tempch))
+      send_to_char(ch, "%s ", GET_NAME(tempch));
+    send_to_char(ch, "\r\n");
     break;
   default:
     send_to_char(ch, "Values 0-3: [%d] [%d] [%d] [%d]\r\n",

@@ -188,11 +188,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 #undef TEST_OBJS
 #undef TEST_OBJN
 
-
-/*
- * AutoEQ by Burkhard Knopf <burkhard.knopf@informatik.tu-clausthal.de>
- */
-
+/* AutoEQ by Burkhard Knopf <burkhard.knopf@informatik.tu-clausthal.de> */
 void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
 {
   int j;
@@ -270,10 +266,8 @@ void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
 
     if (location > 0) {      /* Wearable. */
       if (!GET_EQ(ch,j)) {
-        /*
-         * Check the characters's alignment to prevent them from being
-         * zapped through the auto-equipping.
-         */
+        /* Check the characters's alignment to prevent them from being zapped 
+	 * through the auto-equipping. */
         if (invalid_align(ch, obj) || invalid_class(ch, obj))
           location = LOC_INVENTORY;
         else
@@ -311,7 +305,6 @@ int Crash_delete_file(char *name)
   return TRUE;
 }
 
-
 int Crash_delete_crashfile(struct char_data *ch)
 {
   char fname[MAX_INPUT_LENGTH];
@@ -341,7 +334,6 @@ int Crash_delete_crashfile(struct char_data *ch)
   return TRUE;
 }
 
-
 int Crash_clean_file(char *name)
 {
   char fname[MAX_INPUT_LENGTH], filetype[20];
@@ -353,10 +345,7 @@ int Crash_clean_file(char *name)
   if (!get_filename(fname, sizeof(fname), CRASH_FILE, name))
     return FALSE;
 
-  /*
-   * open for write so that permission problems will be flagged now, at boot
-   * time.
-   */
+  /* Open so that permission problems will be flagged now, at boot time. */
   if (!(fl = fopen(fname, "rw"))) {
     if (errno != ENOENT)  /* if it fails, NOT because of no file */
       log("SYSERR: OPENING OBJECT FILE %s (4): %s", fname, strerror(errno));
@@ -403,7 +392,6 @@ int Crash_clean_file(char *name)
   return FALSE;
 }
 
-
 void update_obj_file(void)
 {
   int i;
@@ -412,7 +400,6 @@ void update_obj_file(void)
     if (*player_table[i].name)
       Crash_clean_file(player_table[i].name);
 }
-
 
 void Crash_listrent(struct char_data *ch, char *name)
 {
@@ -469,9 +456,7 @@ void Crash_listrent(struct char_data *ch, char *name)
                 GET_OBJ_RENT(current->obj),
                 current->obj->short_description);
 
-	/*
-	 * now it's safe to free the obj_save_data list and the objects on it.
-	 */
+	/* Now it's safe to free the obj_save_data list and the objects on it. */
 	while (loaded != NULL) {
 		current = loaded;
 		loaded = loaded->next;
@@ -483,18 +468,14 @@ void Crash_listrent(struct char_data *ch, char *name)
   fclose(fl);
 }
 
-/*
- * Return values:
+/* Return values:
  *  0 - successful load, keep char in rent room.
  *  1 - load failure or load of crash items -- put char in temple.
- *  2 - rented equipment lost (no $)
- */
+ *  2 - rented equipment lost (no $) */
 int Crash_load(struct char_data *ch)
 {
   return (Crash_load_objs(ch));
 }
-
-
 
 int Crash_save(struct obj_data *obj, FILE *fp, int location)
 {
@@ -516,7 +497,6 @@ int Crash_save(struct obj_data *obj, FILE *fp, int location)
   return (TRUE);
 }
 
-
 void Crash_restore_weight(struct obj_data *obj)
 {
   if (obj) {
@@ -527,10 +507,8 @@ void Crash_restore_weight(struct obj_data *obj)
   }
 }
 
-/*
- * Get !RENT items from equipment to inventory and
- * extract !RENT out of worn containers.
- */
+/* Get !RENT items from equipment to inventory and extract !RENT out of worn 
+ * containers. */
 void Crash_extract_norent_eq(struct char_data *ch)
 {
   int j;
@@ -555,7 +533,6 @@ void Crash_extract_objs(struct obj_data *obj)
   }
 }
 
-
 int Crash_is_unrentable(struct obj_data *obj)
 {
   if (!obj)
@@ -572,7 +549,6 @@ int Crash_is_unrentable(struct obj_data *obj)
   return FALSE;
 }
 
-
 void Crash_extract_norents(struct obj_data *obj)
 {
   if (obj) {
@@ -582,7 +558,6 @@ void Crash_extract_norents(struct obj_data *obj)
       extract_obj(obj);
   }
 }
-
 
 void Crash_extract_expensive(struct obj_data *obj)
 {
@@ -595,8 +570,6 @@ void Crash_extract_expensive(struct obj_data *obj)
   extract_obj(max);
 }
 
-
-
 void Crash_calculate_rent(struct obj_data *obj, int *cost)
 {
   if (obj) {
@@ -605,7 +578,6 @@ void Crash_calculate_rent(struct obj_data *obj, int *cost)
     Crash_calculate_rent(obj->next_content, cost);
   }
 }
-
 
 void Crash_crashsave(struct char_data *ch)
 {
@@ -644,7 +616,6 @@ void Crash_crashsave(struct char_data *ch)
   fclose(fp);
   REMOVE_BIT(PLR_FLAGS(ch), PLR_CRASH);
 }
-
 
 void Crash_idlesave(struct char_data *ch)
 {
@@ -719,7 +690,6 @@ void Crash_idlesave(struct char_data *ch)
 
   Crash_extract_objs(ch->carrying);
 }
-
 
 void Crash_rentsave(struct char_data *ch, int cost)
 {
@@ -823,11 +793,7 @@ void Crash_cryosave(struct char_data *ch, int cost)
   SET_BIT(PLR_FLAGS(ch), PLR_CRYO);
 }
 
-
-/* ************************************************************************
-* Routines used for the receptionist                                     *
-************************************************************************* */
-
+/* Routines used for the receptionist. */
 void Crash_rent_deadline(struct char_data *ch, struct char_data *recep,
                          long cost)
 {
@@ -861,11 +827,8 @@ int Crash_report_unrentables(struct char_data *ch, struct char_data *recep,
   return (has_norents);
 }
 
-
-
-void Crash_report_rent(struct char_data *ch, struct char_data *recep,
-                       struct obj_data *obj, long *cost, long *nitems,
-                       int display, int factor)
+void Crash_report_rent(struct char_data *ch, struct char_data *recep, struct
+    obj_data *obj, long *cost, long *nitems, int display, int factor)
 {
   static char buf[256];
 
@@ -883,8 +846,6 @@ void Crash_report_rent(struct char_data *ch, struct char_data *recep,
     Crash_report_rent(ch, recep, obj->next_content, cost, nitems, display, factor);
   }
 }
-
-
 
 int Crash_offer_rent(struct char_data *ch, struct char_data *receptionist,
                      int display, int factor)
@@ -935,8 +896,8 @@ int Crash_offer_rent(struct char_data *ch, struct char_data *receptionist,
   return (totalcost);
 }
 
-int gen_receptionist(struct char_data *ch, struct char_data *recep,
-		         int cmd, char *arg, int mode)
+int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd,
+    char *arg, int mode)
 {
   int cost;
   const char *action_table[] = { "smile", "dance", "sigh", "blush", "burp",
@@ -1014,18 +975,15 @@ int gen_receptionist(struct char_data *ch, struct char_data *recep,
   return (TRUE);
 }
 
-
 SPECIAL(receptionist)
 {
   return (gen_receptionist(ch, (struct char_data *)me, cmd, argument, RENT_FACTOR));
 }
 
-
 SPECIAL(cryogenicist)
 {
   return (gen_receptionist(ch, (struct char_data *)me, cmd, argument, CRYO_FACTOR));
 }
-
 
 void Crash_save_all(void)
 {
@@ -1041,21 +999,19 @@ void Crash_save_all(void)
   }
 }
 
-/*
- * parses the object records stored in fl, and returns the first object in a
- * linked list, which also handles location if worn.
- * this list can then be handled by house code, listrent code, autoeq code, etc.
- */
+/* Parses the object records stored in fl, and returns the first object in a
+ * linked list, which also handles location if worn. This list can then be 
+ * handled by house code, listrent code, autoeq code, etc. */
 obj_save_data *objsave_parse_objects(FILE *fl)
 {
-	obj_save_data *head, *current;
+  obj_save_data *head, *current;
   char line[READ_SIZE];
   int t[4],i, nr;
   struct obj_data *temp;
 
-	CREATE(current, obj_save_data, 1);
-	head = current;
-	current->locate = 0;
+  CREATE(current, obj_save_data, 1);
+  head = current;
+  current->locate = 0;
 
   temp = NULL;
   while (TRUE) {
@@ -1063,59 +1019,45 @@ obj_save_data *objsave_parse_objects(FILE *fl)
     int num;
 
     /* if the file is done, wrap it all up */
-    if(get_line(fl, line) == FALSE || (*line == '$' && line[1] == '~'))
-    {
-			if (temp == NULL && current->obj == NULL)
-			{
-				// remove current from list
-				obj_save_data *t = head;
-				if (t == current)
-				{
-					free(current);
-					head = NULL;
-				}
-				else
-				{
-					while (t)
-					{
-						if (t->next == current)
-							t->next = NULL;
+    if(get_line(fl, line) == FALSE || (*line == '$' && line[1] == '~')) {
+      if (temp == NULL && current->obj == NULL)	{
+        /* Remove current from list. */
+        obj_save_data *t = head;
+        if (t == current) {
+          free(current);
+          head = NULL;
+      } else {
+	  while (t) {
+            if (t->next == current)
+              t->next = NULL;
+            t = t->next;
+          }
+          free(current);
+        }
+      }
+    else if (temp != NULL && current->obj == NULL)
+      current->obj = temp;
+    else if (temp == NULL && current->obj != NULL) {
+      /* Do nothing. */
+  } else if (temp != NULL && current->obj != NULL) {
+      if (temp != current->obj)
+        log("inconsistent object pointers in objsave_parse_objects: %p/%p", temp, current->obj);
+    }
 
-						t = t->next;
-					}
-					free(current);
-				}
-			}
-			else if (temp != NULL && current->obj == NULL)
-			{
-				current->obj = temp;
-			}
-			else if (temp == NULL && current->obj != NULL)
-			{
-				// do nothing
-			}
-			else if (temp != NULL && current->obj != NULL)
-			{
-				if (temp != current->obj)
-					log("inconsistent object pointers in objsave_parse_objects: %p/%p", temp, current->obj);
-			}
-
-      break;
+    break;
   }
 
     /* if it's a new record, wrap up the old one, and make space for a new one */
     if (*line == '#') {
       /* check for false alarm. */
-      if (sscanf(line, "#%d", &nr) == 1)
-      {
-      	if (temp)
-      	{
+      if (sscanf(line, "#%d", &nr) == 1) {
+      	if (temp) {
       	  current->obj = temp;
- 	    	  CREATE(current->next, obj_save_data, 1);
-   		    current=current->next;
+    	  CREATE(current->next, obj_save_data, 1);
+          current=current->next;
 
-       		current->locate = 0;
-         	temp = NULL;
+       	  current->locate = 0;
+          temp = NULL;
         }
       }
       else
@@ -1129,12 +1071,12 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       } else {
         if(real_object(nr) != NOTHING) {
           temp=read_object(nr,VIRTUAL);
-					// go read next line - nothing more to see here
+	/* Go read next line - nothing more to see here. */
         } else {
           log("Nonexistent object %d found in rent file.", nr);
         }
       }
- 			// go read next line - nothing more to see here
+      /* go read next line - nothing more to see here. */
       continue;
     }
 
@@ -1221,13 +1163,12 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       }
       break;
     default:
-    	log("Unknown tag in rentfile: %s", tag);
+      log("Unknown tag in rentfile: %s", tag);
     }
   }
 
-	return head;
+  return head;
 }
-
 
 int Crash_load_objs(struct char_data *ch) {
   FILE *fl;
@@ -1306,10 +1247,8 @@ int Crash_load_objs(struct char_data *ch) {
 	for (current = loaded; current != NULL; current=current->next)
 	  num_objs += handle_obj(current->obj, ch, current->locate, cont_row);
 
-	/*
-	 * now it's safe to free the obj_save_data list - all members of it
-	 * have been put in the correct lists by handle_obj()
-	 */
+	/* now it's safe to free the obj_save_data list - all members of it
+	 * have been put in the correct lists by handle_obj() */
 	while (loaded != NULL) {
 		current = loaded;
 		loaded = loaded->next;
@@ -1328,7 +1267,6 @@ int Crash_load_objs(struct char_data *ch) {
     return 1;
 }
 
-
 int handle_obj(struct obj_data *temp, struct char_data *ch, int locate, struct obj_data **cont_row)
 {
   int j;
@@ -1339,29 +1277,17 @@ int handle_obj(struct obj_data *temp, struct char_data *ch, int locate, struct o
 
   auto_equip(ch, temp, locate);
 
-  /*
-     what to do with a new loaded item:
-
-     if there's a list with <locate> less than 1 below this:
-     (equipped items are assumed to have <locate>==0 here) then its
-     container has disappeared from the file   *gasp*
-     -> put all the list back to ch's inventory
-     if there's a list of contents with <locate> 1 below this:
-     check if it's a container
-     - if so: get it from ch, fill it, and give it back to ch (this way the
-     container has its correct weight before modifying ch)
-     - if not: the container is missing -> put all the list to ch's inventory
-
-     for items with negative <locate>:
-     if there's already a list of contents with the same <locate> put obj to it
-     if not, start a new list
-
-     Confused? Well maybe you can think of some better text to be put here ...
-
-     since <locate> for contents is < 0 the list indices are switched to
-     non-negative
-  */
-
+  /* What to do with a new loaded item:
+   * If there's a list with <locate> less than 1 below this: (equipped items 
+   * are assumed to have <locate>==0 here) then its container has disappeared 
+   * from the file   *gasp* -> put all the list back to ch's inventory if 
+   * there's a list of contents with <locate> 1 below this: check if it's a 
+   * container - if so: get it from ch, fill it, and give it back to ch (this 
+   * way the container has its correct weight before modifying ch) - if not: 
+   * the container is missing -> put all the list to ch's inventory. For items 
+   * with negative <locate>: If there's already a list of contents with the 
+   * same <locate> put obj to it if not, start a new list. Since <locate> for 
+   * contents is < 0 the list indices are switched to non-negative. */
   if (locate > 0) { /* item equipped */
 
     for (j = MAX_BAG_ROWS-1;j > 0;j--)

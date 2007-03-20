@@ -295,6 +295,8 @@ int load_char(const char *name, struct char_data *ch)
     GET_HOST(ch) = NULL;
     GET_PAGE_LENGTH(ch) = PFDEF_PAGELENGTH;
     GET_ALIASES(ch) = NULL;
+    SITTING(ch) = NULL;
+    NEXT_SITTING(ch) = NULL;
 
     while (get_line(fl, line)) {
       tag_argument(line, tag);

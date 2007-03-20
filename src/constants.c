@@ -319,6 +319,7 @@ const char *item_types[] = {
   "PEN",
   "BOAT",
   "FOUNTAIN",
+  "CHAIR",
   "\n"
 };
 
@@ -498,8 +499,7 @@ const char *fullness[] =
   ""
 };
 
-/* str, int, wis, dex, con applies **************************************/
-/* [ch] strength apply (all) */
+/* str, int, wis, dex, con applies, [ch] strength apply (all) */
 cpp_extern const struct str_app_type str_app[] = {
   {-5, -4, 0, 0},	/* str = 0 */
   {-5, -4, 3, 1},	/* str = 1 */

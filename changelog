@@ -5,7 +5,14 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.52
-[Mar 18 2007] - Rumble
+[Mar 20 2007] - Rumble
+  Added object type CHAIR (thanks Dark).
+  Added ZZZ directories to plrfiles and plrvars (thanks Zizazat).
+  Added 00 files to plrfiles directories (thanks Khorlane).
+  Added mail check at reconnect and when coming back from AFK.
+[Mar 19 2007] - Rumble
+  Added JamDog's updated levenshtein_distance that compiles clean with MSVC++.
+  Added AFK to player L-desc.
   Cleaned up the code by running it through a g++ compiler (thanks Rhade).
   Added AFK to the prompt.
   Stop snooping at do_quit to prevent snooping of passwords on deletion or password reset.

@@ -31,9 +31,7 @@ obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
   int found = NOTHING;
   zone_rnum rznum = real_zone_by_thing(ovnum);
 
-  /*
-   * Write object to internal tables.
-   */
+  /* Write object to internal tables. */
   if ((newobj->item_number = real_object(ovnum)) != NOTHING) {
     copy_object(&obj_proto[newobj->item_number], newobj);
     update_all_objects(&obj_proto[newobj->item_number]);
@@ -47,15 +45,10 @@ obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
   return found;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------ */
-
-/*
- * Fix all existing objects to have these values.
- * We need to run through each and every object currently in the
- * game to see which ones are pointing to this prototype.
- * if object is pointing to this prototype, then we need to replace it
- * with the new one.
- */
+/* Fix all existing objects to have these values. We need to run through each 
+ * and every object currently in the game to see which ones are pointing to 
+ * this prototype. If object is pointing to this prototype, then we need to 
+ * replace it with the new one. */
 int update_all_objects(struct obj_data *refobj)
 {
   struct obj_data *obj, swap;
@@ -80,17 +73,15 @@ int update_all_objects(struct obj_data *refobj)
     obj->contains = swap.contains;
     obj->next_content = swap.next_content;
     obj->next = swap.next;
+    obj->sitting_here = swap.sitting_here;
   }
 
   return count;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------ */
-
-/*
- * Adjust the internal values of other objects as if something was inserted at the given array index.
- * Might also be useful to make 'holes' in the array for some reason.
- */
+/* Adjust the internal values of other objects as if something was inserted at 
+ * the given array index. Might also be useful to make 'holes' in the array 
+ * for some reason. */
 obj_rnum adjust_objects(obj_rnum refpt)
 {
   int shop, i, zone, cmd_no;
@@ -103,23 +94,17 @@ obj_rnum adjust_objects(obj_rnum refpt)
 #endif
     return NOTHING;
 
-  /*
-   * Renumber live objects.
-   */
+  /* Renumber live objects. */
   for (obj = object_list; obj; obj = obj->next)
     GET_OBJ_RNUM(obj) += (GET_OBJ_RNUM(obj) >= refpt);
 
-  /*
-   * Renumber zone table.
-   */
+  /* Renumber zone table. */
   for (zone = 0; zone <= top_of_zone_table; zone++) {
     for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++) {
       switch (ZCMD(zone, cmd_no).command) {
       case 'P':
         ZCMD(zone, cmd_no).arg3 += (ZCMD(zone, cmd_no).arg3 >= refpt);
-         /*
-          * No break here - drop into next case.
-          */
+         /* No break here - drop into next case. */
       case 'O':
       case 'G':
       case 'E':
@@ -132,15 +117,11 @@ obj_rnum adjust_objects(obj_rnum refpt)
     }
   }
 
-  /*
-   * Renumber notice boards.
-   */
+  /* Renumber notice boards. */
   for (i = 0; i < NUM_OF_BOARDS; i++)
     BOARD_RNUM(i) += (BOARD_RNUM(i) >= refpt);
 
-  /*
-   * Renumber shop produce.
-   */
+  /* Renumber shop produce. */
   for (shop = 0; shop <= top_shop - top_shop_offset; shop++)
     for (i = 0; SHOP_PRODUCT(shop, i) != NOTHING; i++)
       SHOP_PRODUCT(shop, i) += (SHOP_PRODUCT(shop, i) >= refpt);
@@ -148,12 +129,9 @@ obj_rnum adjust_objects(obj_rnum refpt)
   return refpt;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------ */
-
-/*
- * Function handle the insertion of an object within the prototype framework.  Note that this does not adjust internal values
- * of other objects, use add_object() for that.
- */
+/* Function handle the insertion of an object within the prototype framework. 
+ * Note that this does not adjust internal values of other objects, use 
+ * add_object() for that. */
 obj_rnum insert_object(struct obj_data *obj, obj_vnum ovnum)
 {
   obj_rnum i;
@@ -162,13 +140,9 @@ obj_rnum insert_object(struct obj_data *obj, obj_vnum ovnum)
   RECREATE(obj_index, struct index_data, top_of_objt + 1);
   RECREATE(obj_proto, struct obj_data, top_of_objt + 1);
 
-  /*
-   * Start counting through both tables.
-   */
+  /* Start counting through both tables. */
   for (i = top_of_objt; i > 0; i--) {
-    /*
-     * Check if current virtual is bigger than our virtual number.
-     */
+    /* Check if current virtual is bigger than our virtual number. */
     if (ovnum > obj_index[i - 1].vnum)
       return index_object(obj, ovnum, i);
 
@@ -181,8 +155,6 @@ obj_rnum insert_object(struct obj_data *obj, obj_vnum ovnum)
   /* Not found, place at 0. */
   return index_object(obj, ovnum, 0);
 }
-
-/* ------------------------------------------------------------------------------------------------------------------------------ */
 
 obj_rnum index_object(struct obj_data *obj, obj_vnum ovnum, obj_rnum ornum)
 {
@@ -203,8 +175,6 @@ obj_rnum index_object(struct obj_data *obj, obj_vnum ovnum, obj_rnum ornum)
 
   return ornum;
 }
-
-/* ------------------------------------------------------------------------------------------------------------------------------ */
 
 int save_objects(zone_rnum zone_num)
 {
@@ -228,9 +198,7 @@ int save_objects(zone_rnum zone_num)
     mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: Cannot open objects file %s!", fname);
     return FALSE;
   }
-  /*
-   * Start running through all objects in this zone.
-   */
+  /* Start running through all objects in this zone. */
   for (counter = genolc_zone_bottom(zone_num); counter <= zone_table[zone_num].top; counter++) {
     if ((realcounter = real_object(counter)) != NOTHING) {
       if ((obj = &obj_proto[realcounter])->action_description) {
@@ -266,19 +234,13 @@ int save_objects(zone_rnum zone_num)
 	      GET_OBJ_WEIGHT(obj), GET_OBJ_COST(obj), GET_OBJ_RENT(obj), GET_OBJ_LEVEL(obj)
       );
 
-      /*
-       * Do we have script(s) attached ?
-       */
+      /* Do we have script(s) attached? */
       script_save_to_disk(fp, obj, OBJ_TRIGGER);
 
-      /*
-       * Do we have extra descriptions?
-       */
+      /* Do we have extra descriptions? */
       if (obj->ex_description) {	/* Yes, save them too. */
 	for (ex_desc = obj->ex_description; ex_desc; ex_desc = ex_desc->next) {
-	  /*
-	   * Sanity check to prevent nasty protection faults.
-	   */
+	  /* Sanity check to prevent nasty protection faults. */
 	  if (!ex_desc->keyword || !ex_desc->description || !*ex_desc->keyword || !*ex_desc->description) {
 	    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: oedit_save_to_disk: Corrupt ex_desc!");
 	    continue;
@@ -290,9 +252,7 @@ int save_objects(zone_rnum zone_num)
 		  "%s~\n", ex_desc->keyword, buf);
 	}
       }
-      /*
-       * Do we have affects?
-       */
+      /* Do we have affects? */
       for (counter2 = 0; counter2 < MAX_OBJ_AFFECT; counter2++)
 	if (obj->affected[counter2].modifier)
 	  fprintf(fp, "A\n"
@@ -301,9 +261,7 @@ int save_objects(zone_rnum zone_num)
     }
   }
 
-  /*
-   * Write the final line, close the file.
-   */
+  /* Write the final line, close the file. */
   fprintf(fp, "$~\n");
   fclose(fp);
   snprintf(buf, sizeof(buf), "%s/%d.obj", OBJ_PREFIX, zone_table[zone_num].number);
@@ -315,9 +273,7 @@ int save_objects(zone_rnum zone_num)
   return TRUE;
 }
 
-/*
- * Free all, unconditionally.
- */
+/* Free all, unconditionally. */
 void free_object_strings(struct obj_data *obj)
 {
   if (obj->name)
@@ -332,9 +288,7 @@ void free_object_strings(struct obj_data *obj)
     free_ex_descriptions(obj->ex_description);
 }
 
-/*
- * For object instances that are not the prototype.
- */
+/* For object instances that are not the prototype. */
 void free_object_strings_proto(struct obj_data *obj)
 {
   int robj_num = GET_OBJ_RNUM(obj);
@@ -421,34 +375,34 @@ int delete_object(obj_rnum rnum)
     if (tmp->item_number != obj->item_number)
       continue;
 
-    // extract_obj() will just axe contents.
+    /* extract_obj() will just axe contents. */
     if (tmp->contains) {
       struct obj_data *this_content, *next_content;
       for (this_content = tmp->contains; this_content; this_content = next_content) {
         next_content = this_content->next_content;
         if (IN_ROOM(tmp)) {
-          // transfer stuff from object to room
+          /* Transfer stuff from object to room. */
           obj_from_obj(this_content);
           obj_to_room(this_content, IN_ROOM(tmp));
         } else if (tmp->worn_by || tmp->carried_by) {
-          // transfer stuff from object to person inventory
+          /* Transfer stuff from object to person inventory. */
           obj_from_char(this_content);
           obj_to_char(this_content, tmp->carried_by);
         } else if (tmp->in_obj) {
-          // transfer stuff from object to containing object
+          /* Transfer stuff from object to containing object. */
           obj_from_obj(this_content);
           obj_to_obj(this_content, tmp->in_obj);
         }
       }
     }
-    // remove from object_list, etc. - handles weightchanges, and similar.
+    /* Remove from object_list, etc. - handles weightchanges, and similar. */
     extract_obj(tmp);
   }
 
-  // make sure all are removed.
+  /* Make sure all are removed. */
   assert(obj_index[rnum].number == 0);
 
-  // adjust rnums of all other objects.
+  /* Adjust rnums of all other objects. */
   for (tmp = object_list; tmp; tmp = tmp->next) {
     GET_OBJ_RNUM(tmp) -= (GET_OBJ_RNUM(tmp) > rnum);
   }
@@ -463,22 +417,16 @@ int delete_object(obj_rnum rnum)
   RECREATE(obj_index, struct index_data, top_of_objt + 1);
   RECREATE(obj_proto, struct obj_data, top_of_objt + 1);
 
-  /*
-   * Renumber notice boards.
-   */
+  /* Renumber notice boards. */
   for (j = 0; j < NUM_OF_BOARDS; j++)
     BOARD_RNUM(j) -= (BOARD_RNUM(j) > rnum);
 
-  /*
-   * Renumber shop produce;
-   */
+  /* Renumber shop produce. */
   for (shop = 0; shop <= top_shop - top_shop_offset; shop++)
     for (j = 0; SHOP_PRODUCT(shop, j) != NOTHING; j++)
       SHOP_PRODUCT(shop, j) -= (SHOP_PRODUCT(shop, j) > rnum);
 
-  /*
-   * Renumber zone table.
-   */
+  /* Renumber zone table. */
   int zone, cmd_no;
   for (zone = 0; zone <= top_of_zone_table; zone++) {
     for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++) {

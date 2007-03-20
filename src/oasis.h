@@ -24,7 +24,7 @@
 #define NUM_AFF_FLAGS		22
 #define NUM_ATTACK_TYPES	15
 
-#define NUM_ITEM_TYPES		24
+#define NUM_ITEM_TYPES		25
 #define NUM_ITEM_FLAGS		17
 #define NUM_ITEM_WEARS 		15
 #define NUM_APPLIES		25
@@ -36,6 +36,8 @@
 #define NUM_SHOP_FLAGS 		3
 #define NUM_TRADERS 		7
 
+#define MAX_PEOPLE_IN_CHAIR 10   /* The maximum number of people you want
+                                    to sit in a chair at the same time. */
 /* Limit information. */
 #define MAX_ROOM_NAME	75
 #define MAX_MOB_NAME	50
@@ -64,8 +66,8 @@
 #define MAX_OBJ_TIMER       1071000
 
 
-/* this defines how much memory is alloacted for 'bit strings' when
-   saving in OLC. Remember to change it if you go for longer bitvectors. */
+/* this defines how much memory is alloacted for 'bit strings' when saving in 
+ * OLC. Remember to change it if you go for longer bitvectors. */
 #define BIT_STRING_LENGTH 33
 
 /* The data types for miscellaneous functions. */

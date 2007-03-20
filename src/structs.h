@@ -312,6 +312,7 @@
 #define ITEM_PEN       21		/* Item is a pen		*/
 #define ITEM_BOAT      22		/* Item is a boat		*/
 #define ITEM_FOUNTAIN  23		/* Item is a fountain		*/
+#define ITEM_CHAIR     24		/* Item is a chair		*/
 
 /* Take/Wear flags: used by obj_data.obj_flags.wear_flags */
 #define ITEM_WEAR_TAKE		(1 << 0)  /* Item can be taken		*/
@@ -585,6 +586,7 @@ struct obj_data {
 
    struct obj_data *next_content; /* For 'contains' lists             */
    struct obj_data *next;         /* For the object list              */
+   struct char_data *sitting_here;/* who is sitting in it             */
 };
 
 /* File Element for Objects BEWARE: Changing it will ruin rent files  */
@@ -745,6 +747,8 @@ struct char_special_data_saved {
 struct char_special_data {
    struct char_data *fighting;	/* Opponent				*/
    struct char_data *hunting;	/* Char hunted by this char		*/
+   struct obj_data *chair;      /* Object the char is sitting in        */
+   struct char_data *next_in_chair;     /* The next person in the chair */
 
    byte position;		/* Standing, fighting, sleeping, etc.	*/
 

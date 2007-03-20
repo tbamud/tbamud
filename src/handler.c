@@ -800,10 +800,10 @@ void object_list_new_owner(struct obj_data *list, struct char_data *ch)
   }
 }
 
-
 /* Extract an object from the world */
 void extract_obj(struct obj_data *obj)
 {
+  struct char_data *ch, *next = NULL;
   struct obj_data *temp;
 
   if (obj->worn_by != NULL)
@@ -815,6 +815,17 @@ void extract_obj(struct obj_data *obj)
     obj_from_char(obj);
   else if (obj->in_obj)
     obj_from_obj(obj);
+
+  if (OBJ_SAT_IN_BY(obj)){
+    for (ch = OBJ_SAT_IN_BY(obj); OBJ_SAT_IN_BY(obj); ch = next){
+      if (!NEXT_SITTING(ch))
+        OBJ_SAT_IN_BY(obj) = NULL;
+      else
+        OBJ_SAT_IN_BY(obj) = (next = NEXT_SITTING(ch));
+      SITTING(ch) = NULL;
+      NEXT_SITTING(ch) = NULL;
+    }
+  }
 
   /* Get rid of the contents of the object, as well. */
   while (obj->contains)
@@ -834,8 +845,6 @@ void extract_obj(struct obj_data *obj)
   free_obj(obj);
 }
 
-
-
 void update_object(struct obj_data *obj, int use)
 {
   /* dont update objects with a timer trigger */
@@ -846,7 +855,6 @@ void update_object(struct obj_data *obj, int use)
   if (obj->next_content)
     update_object(obj->next_content, use);
 }
-
 
 void update_char_objects(struct char_data *ch)
 {
@@ -874,7 +882,6 @@ void update_char_objects(struct char_data *ch)
     update_object(ch->carrying, 1);
 }
 
-
 /* Extract a ch completely from the world, and leave his stuff behind */
 void extract_char_final(struct char_data *ch)
 {
@@ -889,11 +896,9 @@ void extract_char_final(struct char_data *ch)
     exit(1);
   }
 
-  /*
-   * We're booting the character of someone who has switched so first we
-   * need to stuff them back into their own body.  This will set ch->desc
-   * we're checking below this loop to the proper value.
-   */
+  /* We're booting the character of someone who has switched so first we need 
+   * to stuff them back into their own body.  This will set ch->desc we're 
+   * checking below this loop to the proper value. */
   if (!IS_NPC(ch) && !ch->desc) {
     for (d = descriptor_list; d; d = d->next)
       if (d->original == ch) {
@@ -903,24 +908,18 @@ void extract_char_final(struct char_data *ch)
   }
 
   if (ch->desc) {
-    /*
-     * This time we're extracting the body someone has switched into
-     * (not the body of someone switching as above) so we need to put
-     * the switcher back to their own body.
-     *
-     * If this body is not possessed, the owner won't have a
-     * body after the removal so dump them to the main menu.
-     */
+    /* This time we're extracting the body someone has switched into (not the 
+     * body of someone switching as above) so we need to put the switcher back 
+     * to their own body. If this body is not possessed, the owner won't have a
+     * body after the removal so dump them to the main menu. */
     if (ch->desc->original)
       do_return(ch, NULL, 0, 0);
     else {
-      /*
-       * Now we boot anybody trying to log in with the same character, to
-       * help guard against duping.  CON_DISCONNECT is used to close a
-       * descriptor without extracting the d->character associated with it,
-       * for being link-dead, so we want CON_CLOSE to clean everything up.
-       * If we're here, we know it's a player so no IS_NPC check required.
-       */
+      /* Now we boot anybody trying to log in with the same character, to help 
+       * guard against duping.  CON_DISCONNECT is used to close a descriptor 
+       * without extracting the d->character associated with it, for being 
+       * link-dead, so we want CON_CLOSE to clean everything up. If we're 
+       * here, we know it's a player so no IS_NPC check required. */
       for (d = descriptor_list; d; d = d->next) {
         if (d == ch->desc)
           continue;
@@ -933,7 +932,6 @@ void extract_char_final(struct char_data *ch)
   }
 
   /* On with the character's assets... */
-
   if (ch->followers || ch->master)
     die_follower(ch);
 
@@ -985,21 +983,16 @@ void extract_char_final(struct char_data *ch)
 }
 
 
-/*
- * Q: Why do we do this?
- * A: Because trying to iterate over the character
- *    list with 'ch = ch->next' does bad things if
- *    the current character happens to die. The
- *    trivial workaround of 'vict = next_vict'
- *    doesn't work if the _next_ person in the list
- *    gets killed, for example, by an area spell.
- *
- * Q: Why do we leave them on the character_list?
- * A: Because code doing 'vict = vict->next' would
- *    get really confused otherwise.
- */
+/* Why do we do this? Because trying to iterate over the character list with 
+ * 'ch = ch->next' does bad things if the current character happens to die. The
+ * trivial workaround of 'vict = next_vict' doesn't work if the _next_ person 
+ * in the list gets killed, for example, by an area spell. Why do we leave them
+ * on the character_list? Because code doing 'vict = vict->next' would get 
+ * really confused otherwise. */
 void extract_char(struct char_data *ch)
 {
+  char_from_chair(ch);
+  
   if (IS_NPC(ch))
     SET_BIT(MOB_FLAGS(ch), MOB_NOTDEADYET);
   else
@@ -1008,17 +1001,10 @@ void extract_char(struct char_data *ch)
   extractions_pending++;
 }
 
-
-/*
- * I'm not particularly pleased with the MOB/PLR
- * hoops that have to be jumped through but it
- * hardly calls for a completely new variable.
- * Ideally it would be its own list, but that
- * would change the '->next' pointer, potentially
- * confusing some code. Ugh. -gg 3/15/2001
- *
- * NOTE: This doesn't handle recursive extractions.
- */
+/* I'm not particularly pleased with the MOB/PLR hoops that have to be jumped 
+ * through but it hardly calls for a completely new variable. Ideally it would 
+ * be its own list, but that would change the '->next' pointer, potentially
+ * confusing some code. -gg This doesn't handle recursive extractions. */
 void extract_pending_chars(void)
 {
   struct char_data *vict, *next_vict, *prev_vict;
@@ -1054,13 +1040,8 @@ void extract_pending_chars(void)
   extractions_pending = 0;
 }
 
-
-/* ***********************************************************************
-* Here follows high-level versions of some earlier routines, ie functions*
-* which incorporate the actual player-data                               *.
-*********************************************************************** */
-
-
+/* Here follows high-level versions of some earlier routines, ie functions
+ * which incorporate the actual player-data */
 struct char_data *get_player_vis(struct char_data *ch, char *name, int *number, int inroom)
 {
   struct char_data *i;
@@ -1088,7 +1069,6 @@ struct char_data *get_player_vis(struct char_data *ch, char *name, int *number, 
   return (NULL);
 }
 
-
 struct char_data *get_char_room_vis(struct char_data *ch, char *name, int *number)
 {
   struct char_data *i;
@@ -1115,7 +1095,6 @@ struct char_data *get_char_room_vis(struct char_data *ch, char *name, int *numbe
 
   return (NULL);
 }
-
 
 struct char_data *get_char_world_vis(struct char_data *ch, char *name, int *number)
 {
@@ -1148,7 +1127,6 @@ struct char_data *get_char_world_vis(struct char_data *ch, char *name, int *numb
   return (NULL);
 }
 
-
 struct char_data *get_char_vis(struct char_data *ch, char *name, int *number, int where)
 {
   if (where == FIND_CHAR_ROOM)
@@ -1158,7 +1136,6 @@ struct char_data *get_char_vis(struct char_data *ch, char *name, int *number, in
   else
     return (NULL);
 }
-
 
 struct obj_data *get_obj_in_list_vis(struct char_data *ch, char *name, int *number, struct obj_data *list)
 {
@@ -1181,7 +1158,6 @@ struct obj_data *get_obj_in_list_vis(struct char_data *ch, char *name, int *numb
 
   return (NULL);
 }
-
 
 /* search the entire world for an object, and return a pointer  */
 struct obj_data *get_obj_vis(struct char_data *ch, char *name, int *number)
@@ -1215,7 +1191,6 @@ struct obj_data *get_obj_vis(struct char_data *ch, char *name, int *number)
   return (NULL);
 }
 
-
 struct obj_data *get_obj_in_equip_vis(struct char_data *ch, char *arg, int *number, struct obj_data *equipment[])
 {
   int j, num;
@@ -1236,7 +1211,6 @@ struct obj_data *get_obj_in_equip_vis(struct char_data *ch, char *arg, int *numb
   return (NULL);
 }
 
-
 int get_obj_pos_in_equip_vis(struct char_data *ch, char *arg, int *number, struct obj_data *equipment[])
 {
   int j, num;
@@ -1256,7 +1230,6 @@ int get_obj_pos_in_equip_vis(struct char_data *ch, char *arg, int *number, struc
 
   return (-1);
 }
-
 
 const char *money_desc(int amount)
 {
@@ -1293,7 +1266,6 @@ const char *money_desc(int amount)
 
   return ("an absolutely colossal mountain of gold coins");
 }
-
 
 struct obj_data *create_money(int amount)
 {
@@ -1347,10 +1319,7 @@ struct obj_data *create_money(int amount)
   return (obj);
 }
 
-
-/* Generic Find, designed to find any object/character
- *
- * Calling:
+/* Generic Find, designed to find any object orcharacter.
  *  *arg     is the pointer containing the string to be searched for.
  *           This string doesn't have to be a single word, the routine
  *           extracts the next word itself.
@@ -1362,8 +1331,7 @@ struct obj_data *create_money(int amount)
  *
  * The routine used to return a pointer to the next word in *arg (just
  * like the one_argument routine), but now it returns an integer that
- * describes what it filled in.
- */
+ * describes what it filled in. */
 int generic_find(char *arg, bitvector_t bitvector, struct char_data *ch,
 		     struct char_data **tar_ch, struct obj_data **tar_obj)
 {
@@ -1418,7 +1386,6 @@ int generic_find(char *arg, bitvector_t bitvector, struct char_data *ch,
 
   return (0);
 }
-
 
 /* a function to scan for "all" or "all.x" */
 int find_all_dots(char *arg)

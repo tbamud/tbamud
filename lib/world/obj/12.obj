@@ -3,7 +3,7 @@ email list staff~
 a list of the staff's emails~
 A list of the staff's emails has been left here.~
 ~
-12 0 ao 0
+24 0 ao 0
 0 0 0 0
 1 1 0 0
 E
@@ -74,13 +74,13 @@ Staff~
 1 3 3 31
 1 1 0 0
 #1209
-squishy armchair chair~
+chair~
 a squishy armchair~
 A large squishy armchair sits in front of the fireplace.~
 ~
-12 0 0 0
-0 0 0 0
-0 0 0 0
+24 0 a 0
+1 0 0 0
+1 1 0 0
 T 1209
 T 1286
 E

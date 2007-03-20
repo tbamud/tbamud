@@ -28,7 +28,7 @@
 extern struct spell_info_type spell_info[];
 extern const char *class_abbrevs[];
 
-/* extern procedures */
+/* extern functions */
 void list_skills(struct char_data *ch);
 void appear(struct char_data *ch);
 void perform_immort_vis(struct char_data *ch);
@@ -36,6 +36,7 @@ SPECIAL(shop_keeper);
 ACMD(do_gen_comm);
 void die(struct char_data *ch, struct char_data * killer);
 void Crash_rentsave(struct char_data *ch, int cost);
+int has_mail(long id);
 
 /* local functions */
 ACMD(do_quit);
@@ -879,8 +880,11 @@ ACMD(do_gen_tog)
     result = PRF_TOG_CHK(ch, PRF_AFK);
     if (PRF_FLAGGED(ch, PRF_AFK))
       act("$n has gone AFK.", TRUE, ch, 0, 0, TO_ROOM);
-    else
+    else {
       act("$n has come back from AFK.", TRUE, ch, 0, 0, TO_ROOM);
+      if (has_mail(GET_IDNUM(ch)))
+        send_to_char(ch, "You have mail waiting.\r\n");
+    }
     break;
   default:
     log("SYSERR: Unknown subcmd %d in do_gen_toggle.", subcmd);

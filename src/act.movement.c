@@ -10,8 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -45,17 +43,11 @@ ACMD(do_sleep);
 ACMD(do_wake);
 ACMD(do_follow);
 
-
 /* simple function to determine if char can walk on water */
 int has_boat(struct char_data *ch)
 {
   struct obj_data *obj;
   int i;
-
-/*
-  if (ROOM_IDENTITY(IN_ROOM(ch)) == DEAD_SEA)
-    return (1);
-*/
 
   if (GET_LEVEL(ch) > LVL_IMMORT)
     return (1);
@@ -76,26 +68,16 @@ int has_boat(struct char_data *ch)
   return (0);
 }
 
-
-
-/* do_simple_move assumes
- *    1. That there is no master and no followers.
- *    2. That the direction exists.
- *
- *   Returns :
- *   1 : If succes.
- *   0 : If fail
- */
+/* do_simple_move assumes that there is no master, no followers and that the
+ * direction exists. It returns 1 for success, 0 if failure. */
 int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 {
   char throwaway[MAX_INPUT_LENGTH] = ""; /* Functions assume writable. */
   room_rnum was_in = IN_ROOM(ch);
   int need_movement;
 
-  /*
-   * Check for special routines (North is 1 in command list, but 0 here) Note
-   * -- only check if following; this avoids 'double spec-proc' bug
-   */
+  /* Check for special routines (North is 1 in command list, but 0 here) Note
+   * -- only check if following; this avoids 'double spec-proc' bug */
   if (need_specials_check && special(ch, dir + 1, throwaway))
     return (0);
 
@@ -169,8 +151,8 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   char_from_room(ch);
   char_to_room(ch, world[was_in].dir_option[dir]->to_room);
 
-  /* move them first, then move them back if they aren't allowed to go. */
-  /* see if an entry trigger disallows the move */
+  /* move them first, then move them back if they aren't allowed to go. Also,
+   * see if an entry trigger disallows the move */
   if (!entry_mtrigger(ch) || !enter_wtrigger(&world[IN_ROOM(ch)], ch, dir)) {
     char_from_room(ch);
     char_to_room(ch, was_in);
@@ -199,7 +181,6 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 
   return (1);
 }
-
 
 int perform_move(struct char_data *ch, int dir, int need_specials_check)
 {
@@ -236,17 +217,13 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
   return (0);
 }
 
-
 ACMD(do_move)
 {
-  /*
-   * This is basically a mapping of cmd numbers to perform_move indices.
-   * It cannot be done in perform_move because perform_move is called
-   * by other functions which do not require the remapping.
-   */
+  /* This is basically a mapping of cmd numbers to perform_move indices. It 
+   * cannot be done in perform_move because perform_move is called by other 
+   * functions which do not require the remapping. */
   perform_move(ch, subcmd - 1, 0);
 }
-
 
 int find_door(struct char_data *ch, const char *type, char *dir, const char *cmdname)
 {
@@ -287,7 +264,6 @@ int find_door(struct char_data *ch, const char *type, char *dir, const char *cmd
   }
 }
 
-
 int has_key(struct char_data *ch, obj_vnum key)
 {
   struct obj_data *o;
@@ -302,8 +278,6 @@ int has_key(struct char_data *ch, obj_vnum key)
 
   return (0);
 }
-
-
 
 #define NEED_OPEN	(1 << 0)
 #define NEED_CLOSED	(1 << 1)
@@ -327,7 +301,6 @@ const int flags_door[] =
   NEED_CLOSED | NEED_UNLOCKED,
   NEED_CLOSED | NEED_LOCKED
 };
-
 
 #define EXITN(room, door)		(world[room].dir_option[door])
 #define OPEN_DOOR(room, obj, door)	((obj) ?\
@@ -417,7 +390,6 @@ void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int scmd)
 		scmd == SCMD_CLOSE ? "d" : "ed");
 }
 
-
 int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd)
 {
   int percent, skill_lvl;
@@ -440,25 +412,19 @@ int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd)
   return (0);
 }
 
-
-#define DOOR_IS_OPENABLE(ch, obj, door)	((obj) ? \
-			((GET_OBJ_TYPE(obj) == ITEM_CONTAINER) && \
-			OBJVAL_FLAGGED(obj, CONT_CLOSEABLE)) :\
-			(EXIT_FLAGGED(EXIT(ch, door), EX_ISDOOR)))
-#define DOOR_IS_OPEN(ch, obj, door)	((obj) ? \
-			(!OBJVAL_FLAGGED(obj, CONT_CLOSED)) :\
-			(!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED)))
-#define DOOR_IS_UNLOCKED(ch, obj, door)	((obj) ? \
-			(!OBJVAL_FLAGGED(obj, CONT_LOCKED)) :\
-			(!EXIT_FLAGGED(EXIT(ch, door), EX_LOCKED)))
-#define DOOR_IS_PICKPROOF(ch, obj, door) ((obj) ? \
-			(OBJVAL_FLAGGED(obj, CONT_PICKPROOF)) : \
-			(EXIT_FLAGGED(EXIT(ch, door), EX_PICKPROOF)))
-
-#define DOOR_IS_CLOSED(ch, obj, door)	(!(DOOR_IS_OPEN(ch, obj, door)))
-#define DOOR_IS_LOCKED(ch, obj, door)	(!(DOOR_IS_UNLOCKED(ch, obj, door)))
-#define DOOR_KEY(ch, obj, door)		((obj) ? (GET_OBJ_VAL(obj, 2)) : \
-					(EXIT(ch, door)->key))
+#define DOOR_IS_OPENABLE(ch, obj, door)	((obj) ? ((GET_OBJ_TYPE(obj) == \
+    ITEM_CONTAINER) && OBJVAL_FLAGGED(obj, CONT_CLOSEABLE)) :\
+    (EXIT_FLAGGED(EXIT(ch, door), EX_ISDOOR)))
+#define DOOR_IS_OPEN(ch, obj, door) ((obj) ? (!OBJVAL_FLAGGED(obj, \
+    CONT_CLOSED)) : (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED)))
+#define DOOR_IS_UNLOCKED(ch, obj, door)	((obj) ? (!OBJVAL_FLAGGED(obj, \
+    CONT_LOCKED)) : (!EXIT_FLAGGED(EXIT(ch, door), EX_LOCKED)))
+#define DOOR_IS_PICKPROOF(ch, obj, door) ((obj) ? (OBJVAL_FLAGGED(obj, \
+    CONT_PICKPROOF)) : (EXIT_FLAGGED(EXIT(ch, door), EX_PICKPROOF)))
+#define DOOR_IS_CLOSED(ch, obj, door) (!(DOOR_IS_OPEN(ch, obj, door)))
+#define DOOR_IS_LOCKED(ch, obj, door) (!(DOOR_IS_UNLOCKED(ch, obj, door)))
+#define DOOR_KEY(ch, obj, door)	((obj) ? (GET_OBJ_VAL(obj, 2)) : \
+    (EXIT(ch, door)->key))
 
 ACMD(do_gen_door)
 {
@@ -502,8 +468,6 @@ ACMD(do_gen_door)
   return;
 }
 
-
-
 ACMD(do_enter)
 {
   char buf[MAX_INPUT_LENGTH];
@@ -537,7 +501,6 @@ ACMD(do_enter)
   }
 }
 
-
 ACMD(do_leave)
 {
   int door;
@@ -557,7 +520,6 @@ ACMD(do_leave)
   }
 }
 
-
 ACMD(do_stand)
 {
   switch (GET_POS(ch)) {
@@ -567,6 +529,8 @@ ACMD(do_stand)
   case POS_SITTING:
     send_to_char(ch, "You stand up.\r\n");
     act("$n clambers to $s feet.", TRUE, ch, 0, 0, TO_ROOM);
+    /* Were they sitting in a chair? */
+    char_from_chair(ch);
     /* Will be sitting after a successful bash and may still be fighting. */
     GET_POS(ch) = FIGHTING(ch) ? POS_FIGHTING : POS_STANDING;
     break;
@@ -574,6 +538,8 @@ ACMD(do_stand)
     send_to_char(ch, "You stop resting, and stand up.\r\n");
     act("$n stops resting, and clambers on $s feet.", TRUE, ch, 0, 0, TO_ROOM);
     GET_POS(ch) = POS_STANDING;
+    /* Were they sitting in the chair */
+    char_from_chair(ch);
     break;
   case POS_SLEEPING:
     send_to_char(ch, "You have to wake up first!\r\n");
@@ -590,14 +556,56 @@ ACMD(do_stand)
   }
 }
 
-
 ACMD(do_sit)
 {
+  char arg[MAX_STRING_LENGTH];
+  struct obj_data *chair;
+  struct char_data *tempch;
+  int found;
+
+  one_argument(argument, arg);
+ 
+  if (!*arg)
+    found = 0;
+  if (!(chair = get_obj_in_list_vis(ch, arg, NULL, world[ch->in_room].contents)))
+    found = 0;
+  else
+    found = 1;
+  
   switch (GET_POS(ch)) {
   case POS_STANDING:
-    send_to_char(ch, "You sit down.\r\n");
-    act("$n sits down.", FALSE, ch, 0, 0, TO_ROOM);
-    GET_POS(ch) = POS_SITTING;
+    if (found == 0) {
+      send_to_char(ch, "You sit down.\r\n");
+      act("$n sits down.", FALSE, ch, 0, 0, TO_ROOM);
+      GET_POS(ch) = POS_SITTING;
+    } else {   
+      if (GET_OBJ_TYPE(chair) != ITEM_CHAIR) {
+        send_to_char(ch, "You can't sit on that!\r\n");
+        return;
+      } else if (GET_OBJ_VAL(chair, 1) > GET_OBJ_VAL(chair, 0)) {
+        /* val 1 is current number in chair, 0 is max in chair */
+        act("$p looks like it's all full.", TRUE, ch, chair, 0, TO_CHAR);
+        log("SYSERR: chair %d holding too many people.", GET_OBJ_VNUM(chair));
+        return;
+      } else if (GET_OBJ_VAL(chair, 1) == GET_OBJ_VAL(chair, 0)) {
+        act("There is no where left to sit upon $p.", TRUE, ch, chair, 0, TO_CHAR);
+        return;
+      } else { 
+        if (OBJ_SAT_IN_BY(chair) == NULL)
+          OBJ_SAT_IN_BY(chair) = ch;
+        for (tempch = OBJ_SAT_IN_BY(chair); tempch != ch ; tempch = NEXT_SITTING(tempch)) {
+          if (NEXT_SITTING(tempch))
+            continue;
+          NEXT_SITTING(tempch) = ch;
+        }
+        act("You sit down upon $p.", TRUE, ch, chair, 0, TO_CHAR);
+        act("$n sits down upon $p.", TRUE, ch, chair, 0, TO_ROOM);
+        SITTING(ch) = chair;
+        NEXT_SITTING(ch) = NULL;
+        GET_OBJ_VAL(chair, 1) += 1;
+        GET_POS(ch) = POS_SITTING;
+      }
+    }
     break;
   case POS_SITTING:
     send_to_char(ch, "You're sitting already.\r\n");
@@ -620,7 +628,6 @@ ACMD(do_sit)
     break;
   }
 }
-
 
 ACMD(do_rest)
 {
@@ -652,7 +659,6 @@ ACMD(do_rest)
   }
 }
 
-
 ACMD(do_sleep)
 {
   switch (GET_POS(ch)) {
@@ -677,7 +683,6 @@ ACMD(do_sleep)
     break;
   }
 }
-
 
 ACMD(do_wake)
 {
@@ -714,10 +719,11 @@ ACMD(do_wake)
   else {
     send_to_char(ch, "You awaken, and sit up.\r\n");
     act("$n awakens.", TRUE, ch, 0, 0, TO_ROOM);
+    /* Were they asleep in a chair? */
+    char_from_chair(ch);
     GET_POS(ch) = POS_SITTING;
   }
 }
-
 
 ACMD(do_follow)
 {

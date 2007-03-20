@@ -10,8 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -21,7 +19,6 @@
 #include "handler.h"
 #include "interpreter.h"
 
-
 /* external globals */
 extern struct time_data time_info;
 
@@ -29,7 +26,6 @@ extern struct time_data time_info;
 struct time_info_data *real_time_passed(time_t t2, time_t t1);
 struct time_info_data *mud_time_passed(time_t t2, time_t t1);
 void prune_crlf(char *txt);
-
 
 /* creates a random number in interval [from;to] */
 int rand_number(int from, int to)
@@ -42,20 +38,14 @@ int rand_number(int from, int to)
     log("SYSERR: rand_number() should be called with lowest, then highest. (%d, %d), not (%d, %d).", from, to, to, from);
   }
 
-  /*
-   * This should always be of the form:
-   *
-   *	((float)(to - from + 1) * rand() / (float)(RAND_MAX + from) + from);
-   *
-   * if you are using rand() due to historical non-randomness of the
-   * lower bits in older implementations.  We always use circle_random()
-   * though, which shouldn't have that problem. Mean and standard
-   * deviation of both are identical (within the realm of statistical
-   * identity) if the rand() implementation is non-broken.
-   */
+  /* This should always be of the form: ((float)(to - from + 1) * rand() / 
+   * (float)(RAND_MAX + from) + from); If you are using rand() due to historical
+   * non-randomness of the lower bits in older implementations.  We always use 
+   * circle_random() though, which shouldn't have that problem. Mean and 
+   * standard deviation of both are identical (within the realm of statistical
+   * identity) if the rand() implementation is non-broken. */
   return ((circle_random() % (to - from + 1)) + from);
 }
-
 
 /* simulates dice roll */
 int dice(int num, int size)
@@ -71,7 +61,6 @@ int dice(int num, int size)
   return (sum);
 }
 
-
 /* Be wary of sign issues with this. */
 int MIN(int a, int b)
 {
@@ -83,7 +72,6 @@ int MAX(int a, int b)
 {
   return (a > b ? a : b);
 }
-
 
 /* color issue fix -- skip color codes, _then_ capitalize */
 char *CAP(char *txt)
@@ -97,19 +85,13 @@ char *CAP(char *txt)
   return (txt);
 }
 
-
 #if !defined(HAVE_STRLCPY)
-/*
- * A 'strlcpy' function in the same fashion as 'strdup' below.
- *
- * This copies up to totalsize - 1 bytes from the source string, placing
- * them and a trailing NUL into the destination string.
- *
- * Returns the total length of the string it tried to copy, not including
- * the trailing NUL.  So a '>= totalsize' test says it was truncated.
- * (Note that you may have _expected_ truncation because you only wanted
- * a few characters from the source string.)
- */
+/* A 'strlcpy' function in the same fashion as 'strdup' below. This copies up 
+ * to totalsize - 1 bytes from the source string, placing them and a trailing 
+ * NUL into the destination string. Returns the total length of the string it 
+ * tried to copy, not including the trailing NUL.  So a '>= totalsize' test 
+ * says it was truncated. (Note that you may have _expected_ truncation 
+ * because you only wanted a few characters from the source string.) */
 size_t strlcpy(char *dest, const char *source, size_t totalsize)
 {
   strncpy(dest, source, totalsize - 1);	/* strncpy: OK (we must assume 'totalsize' is correct) */
@@ -117,7 +99,6 @@ size_t strlcpy(char *dest, const char *source, size_t totalsize)
   return strlen(source);
 }
 #endif
-
 
 #if !defined(HAVE_STRDUP)
 /* Create a duplicate of a string */
@@ -130,10 +111,7 @@ char *strdup(const char *source)
 }
 #endif
 
-
-/*
- * Strips \r\n from end of string.
- */
+/* Strips \r\n from end of string. */
 void prune_crlf(char *txt)
 {
   int i = strlen(txt) - 1;
@@ -142,14 +120,10 @@ void prune_crlf(char *txt)
     txt[i--] = '\0';
 }
 
-
 #ifndef str_cmp
-/*
- * str_cmp: a case-insensitive version of strcmp().
- * Returns: 0 if equal, > 0 if arg1 > arg2, or < 0 if arg1 < arg2.
- *
- * Scan until strings are found different or we reach the end of both.
- */
+/* str_cmp: a case-insensitive version of strcmp(). Returns: 0 if equal, > 0 
+ * if arg1 > arg2, or < 0 if arg1 < arg2. Scan until strings are found 
+ * different or we reach the end of both. */
 int str_cmp(const char *arg1, const char *arg2)
 {
   int chk, i;
@@ -167,14 +141,10 @@ int str_cmp(const char *arg1, const char *arg2)
 }
 #endif
 
-
 #ifndef strn_cmp
-/*
- * strn_cmp: a case-insensitive version of strncmp().
- * Returns: 0 if equal, > 0 if arg1 > arg2, or < 0 if arg1 < arg2.
- *
- * Scan until strings are found different, the end of both, or n is reached.
- */
+/* strn_cmp: a case-insensitive version of strncmp(). Returns: 0 if equal, > 0 
+ * if arg1 > arg2, or < 0 if arg1 < arg2. Scan until strings are found 
+ * different, the end of both, or n is reached. */
 int strn_cmp(const char *arg1, const char *arg2, int n)
 {
   int chk, i;
@@ -192,10 +162,8 @@ int strn_cmp(const char *arg1, const char *arg2, int n)
 }
 #endif
 
-/*
- * New variable argument log() function.  Works the same as the old for
- * previously written code but is very nice for new code.
- */
+/* New variable argument log() function.  Works the same as the old for
+ * previously written code but is very nice for new code. */
 void basic_mud_vlog(const char *format, va_list args)
 {
   time_t ct = time(0);
@@ -217,7 +185,6 @@ void basic_mud_vlog(const char *format, va_list args)
   fflush(logfile);
 }
 
-
 /* So mudlog() can use the same function. */
 void basic_mud_log(const char *format, ...)
 {
@@ -227,7 +194,6 @@ void basic_mud_log(const char *format, ...)
   basic_mud_vlog(format, args);
   va_end(args);
 }
-
 
 /* the "touch" command, essentially. */
 int touch(const char *path)
@@ -243,11 +209,8 @@ int touch(const char *path)
   }
 }
 
-
-/*
- * mudlog -- log mud messages to a file & to online imm's syslogs
- * based on syslog by Fen Jul 3, 1992
- */
+/* mudlog -- log mud messages to a file & to online imm's syslogs based on 
+ * syslog by Fen Jul 3, 1992 */
 void mudlog(int type, int level, int file, const char *str, ...)
 {
   char buf[MAX_STRING_LENGTH];
@@ -288,11 +251,9 @@ void mudlog(int type, int level, int file, const char *str, ...)
 
 
 
-/*
- * If you don't have a 'const' array, just cast it as such.  It's safer
- * to cast a non-const array as const than to cast a const one as non-const.
- * Doesn't really matter since this function doesn't change the array though.
- */
+/* If you don't have a 'const' array, just cast it as such.  It's safer to cast
+ * a non-const array as const than to cast a const one as non-const. Doesn't 
+ * really matter since this function doesn't change the array though. */
 size_t sprintbit(bitvector_t bitvector, const char *names[], char *result, size_t reslen)
 {
   size_t len = 0;
@@ -319,7 +280,6 @@ size_t sprintbit(bitvector_t bitvector, const char *names[], char *result, size_
   return (len);
 }
 
-
 size_t sprinttype(int type, const char *names[], char *result, size_t reslen)
 {
   int nr = 0;
@@ -331,7 +291,6 @@ size_t sprinttype(int type, const char *names[], char *result, size_t reslen)
 
   return strlcpy(result, *names[nr] != '\n' ? names[nr] : "UNDEFINED", reslen);
 }
-
 
 /* Calculate the REAL time passed over the last t2-t1 centuries (secs) */
 struct time_info_data *real_time_passed(time_t t2, time_t t1)
@@ -352,8 +311,6 @@ struct time_info_data *real_time_passed(time_t t2, time_t t1)
 
   return (&now);
 }
-
-
 
 /* Calculate the MUD time passed over the last t2-t1 centuries (secs) */
 struct time_info_data *mud_time_passed(time_t t2, time_t t1)
@@ -377,7 +334,6 @@ struct time_info_data *mud_time_passed(time_t t2, time_t t1)
   return (&now);
 }
 
-
 time_t mud_time_to_secs(struct time_info_data *now)
 {
   time_t when = 0;
@@ -390,7 +346,6 @@ time_t mud_time_to_secs(struct time_info_data *now)
   return (time(NULL) - when);
 }
 
-
 struct time_info_data *age(struct char_data *ch)
 {
   static struct time_info_data player_age;
@@ -402,9 +357,7 @@ struct time_info_data *age(struct char_data *ch)
   return (&player_age);
 }
 
-
-/* Check if making CH follow VICTIM will create an illegal */
-/* Follow "Loop/circle"                                    */
+/* Check if making CH follow VICTIM will create an illegal Follow Loop. */
 bool circle_follow(struct char_data *ch, struct char_data *victim)
 {
   struct char_data *k;
@@ -417,10 +370,8 @@ bool circle_follow(struct char_data *ch, struct char_data *victim)
   return (FALSE);
 }
 
-
-
-/* Called when stop following persons, or stopping charm */
-/* This will NOT do if a character quits/dies!!          */
+/* Called when stop following persons, or stopping charm. This will NOT do if 
+ * a character quits or dies. */
 void stop_follower(struct char_data *ch)
 {
   struct follow_type *j, *k;
@@ -458,7 +409,6 @@ void stop_follower(struct char_data *ch)
   REMOVE_BIT(AFF_FLAGS(ch), AFF_CHARM | AFF_GROUP);
 }
 
-
 int num_followers_charmed(struct char_data *ch)
 {
   struct follow_type *lackey;
@@ -470,7 +420,6 @@ int num_followers_charmed(struct char_data *ch)
 
   return (total);
 }
-
 
 /* Called when a character that follows/is followed dies */
 void die_follower(struct char_data *ch)
@@ -486,10 +435,8 @@ void die_follower(struct char_data *ch)
   }
 }
 
-
-
-/* Do NOT call this before having checked if a circle of followers */
-/* will arise. CH will follow leader                               */
+/* Do NOT call this before having checked if a circle of followers will arise. 
+ * CH will follow leader. */
 void add_follower(struct char_data *ch, struct char_data *leader)
 {
   struct follow_type *k;
@@ -513,15 +460,10 @@ void add_follower(struct char_data *ch, struct char_data *leader)
   act("$n starts to follow $N.", TRUE, ch, 0, leader, TO_NOTVICT);
 }
 
-
-/*
- * get_line reads the next non-blank line off of the input stream.
- * The newline character is removed from the input.  Lines which begin
- * with '*' are considered to be comments.
- *
- * Returns the number of lines advanced in the file. Buffer given must
- * be at least READ_SIZE (256) characters large.
- */
+/* get_line reads the next non-blank line off of the input stream. The newline 
+ * character is removed from the input.  Lines which begin with '*' are 
+ * considered to be comments. Returns the number of lines advanced in the file.
+ * Buffer given must be at least READ_SIZE (256) characters large. */
 int get_line(FILE *fl, char *buf)
 {
   char temp[READ_SIZE];
@@ -542,7 +484,6 @@ int get_line(FILE *fl, char *buf)
   strcpy(buf, temp); /* strcpy: OK, if buf >= READ_SIZE (256) */
   return (lines);
 }
-
 
 int get_filename(char *filename, size_t fbufsize, int mode, const char *orig_name)
 {
@@ -609,7 +550,6 @@ int get_filename(char *filename, size_t fbufsize, int mode, const char *orig_nam
   return (1);
 }
 
-
 int num_pc_in_room(struct room_data *room)
 {
   int i = 0;
@@ -622,19 +562,13 @@ int num_pc_in_room(struct room_data *room)
   return (i);
 }
 
-/*
- * This function (derived from basic fork(); abort(); idea by Erwin S.
- * Andreasen) causes your MUD to dump core (assuming you can) but
- * continue running.  The core dump will allow post-mortem debugging
- * that is less severe than assert();  Don't call this directly as
- * core_dump_unix() but as simply 'core_dump()' so that it will be
- * excluded from systems not supporting them. (e.g. Windows '95).
- *
- * You still want to call abort() or exit(1) for
- * non-recoverable errors, of course...
- *
- * XXX: Wonder if flushing streams includes sockets?
- */
+/* This function (derived from basic fork() abort() idea by Erwin S. Andreasen)
+ * causes your MUD to dump core (assuming you can) but continue running. The 
+ * core dump will allow post-mortem debugging that is less severe than assert();
+ * Don't call this directly as core_dump_unix() but as simply 'core_dump()' so 
+ * that it will be excluded from systems not supporting them. You still want to
+ * call abort() or exit(1) for non-recoverable errors, of course. Wonder if 
+ * flushing streams includes sockets? */
 extern FILE *player_fl;
 void core_dump_real(const char *who, int line)
 {
@@ -649,10 +583,8 @@ void core_dump_real(const char *who, int line)
   /* Everything, just in case, for the systems that support it. */
   fflush(NULL);
 
-  /*
-   * Kill the child so the debugger or script doesn't think the MUD
-   * crashed.  The 'autorun' script would otherwise run it again.
-   */
+  /* Kill the child so the debugger or script doesn't think the MUD crashed. 
+   * The 'autorun' script would otherwise run it again. */
   if (fork() == 0)
     abort();
 #endif
@@ -679,12 +611,8 @@ int count_color_chars(char *string)
   }
   return num;
 }
-/*
- * Rules (unless overridden by ROOM_DARK):
- *
- * Inside and City rooms are always lit.
- * Outside rooms are dark at sunset and night.
- */
+/* Rules (unless overridden by ROOM_DARK): Inside and City rooms are always 
+ * lit. Outside rooms are dark at sunset and night. */
 int room_is_dark(room_rnum room)
 {
   if (!VALID_ROOM_RNUM(room)) {
@@ -710,19 +638,78 @@ int room_is_dark(room_rnum room)
 int levenshtein_distance(char *s1, char *s2)
 {
   int s1_len = strlen(s1), s2_len = strlen(s2);
-  int d[s1_len + 1][s2_len + 1];
-  int i, j;
+  int *d = NULL;
+  int i, j, k;       
 
-  for (i = 0; i <= s1_len; i++)
-    d[i][0] = i;
-  for (j = 0; j <= s2_len; j++)
-    d[0][j] = j;
+  s1_len++;
+  s2_len++;
 
-  for (i = 1; i <= s1_len; i++)
-    for (j = 1; j <= s2_len; j++)
-      d[i][j] = MIN(d[i - 1][j] + 1,
-      MIN(d[i][j - 1] + 1,
-      d[i - 1][j - 1] + ((s1[i - 1] == s2[j - 1]) ? 0 : 1)));
+  CREATE(d, int, (s1_len * s2_len));
 
-  return d[s1_len][s2_len];
+  for (i = 0; i < s1_len; i++)
+    d[i] = i;   
+  for (j = 0; j < s2_len; j++)
+    d[j*s1_len] = j;   
+
+  for (i = 1; i < s1_len; i++)
+    for (j = 1; j < s2_len; j++)
+      d[(j*s1_len)+i] = MIN(d[(j*s1_len) + i - 1] + 1, MIN(d[i+((j-1)*s1_len)]
+        + 1, d[((j-1)*s1_len) + i - 1] + ((s1[i - 1] == s2[j - 1]) ? 0 : 1)));
+
+  k = d[s1_len*s2_len-1];
+
+  free (d);
+
+  return k; 
+}
+
+void char_from_chair(struct char_data *ch)
+{
+  struct obj_data *chair;
+  struct char_data *tempch;
+  int i, found = 0;
+
+  if (!SITTING(ch))
+    return;
+
+  if (!(chair = SITTING(ch))){
+    log("SYSERR: ACK, no chair for char in char from chair");
+    SITTING(ch) = NULL;
+    NEXT_SITTING(ch) = NULL;
+    return;
+  }
+  
+  if (!(tempch = OBJ_SAT_IN_BY(chair))){
+    log("SYSERR: Char from chair, but no chair!");
+    SITTING(ch) = NULL;
+    NEXT_SITTING(ch) = NULL;
+    return;
+  }
+    
+  if (tempch == ch){
+    if (!NEXT_SITTING(ch))  
+         OBJ_SAT_IN_BY(chair) = NULL;
+    else
+         OBJ_SAT_IN_BY(chair) = NEXT_SITTING(ch);
+    GET_OBJ_VAL(chair, 1) -= 1;
+    SITTING(ch) = NULL;
+    NEXT_SITTING(ch) = NULL;
+    return;
+  }
+
+  for (i = 0; i < GET_OBJ_VAL(chair, 1) && found == 0; i++){
+    if (NEXT_SITTING(tempch) == ch){
+      NEXT_SITTING(tempch) = NEXT_SITTING(ch);
+      found++;
+    }   
+  }
+  if (found)
+    log("SYSERR: Char flagged as sitting, but not in chair");
+  else
+    GET_OBJ_VAL(chair, 1) -= 1;
+   
+  SITTING(ch) = NULL;
+  NEXT_SITTING(ch) = NULL;
+ 
+ return;
 }
