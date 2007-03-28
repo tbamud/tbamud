@@ -60,6 +60,10 @@ ACMD(do_oasis_sedit)
   char buf1[MAX_INPUT_LENGTH];
   char buf2[MAX_INPUT_LENGTH];
 
+  /* No building as a mob or while being forced. */
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
+    return;
+    
   /* Parse any arguments. */
   buf3 = two_arguments(argument, buf1, buf2);
 

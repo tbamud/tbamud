@@ -9,7 +9,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -204,12 +203,8 @@ int in_save_list(zone_vnum zone, int type)
   return FALSE;
 }
 
-/* -------------------------------------------------------------------------- */
-
-/*
- * Used from do_show(), ideally.
- */
-void do_show_save_list(struct char_data *ch)
+/* Used from do_show(), ideally. */
+ACMD(do_show_save_list)
 {
   if (save_list == NULL)
     send_to_char(ch, "All world files are up to date.\r\n");

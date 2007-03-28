@@ -1,4 +1,5 @@
-                          Compiling tbaMUD
+Updated: Apr 2007
+                            Compiling tbaMUD
                   under Microsoft Windows using CygWin
 
 tbaMUD compiles under Cygwin without needing any special modifications.
@@ -33,6 +34,25 @@ another form of Unix:
    example "C:\tbaMUD". "cd c:/tbaMUD" "dir" in the listed files you should see 
    one called configure. DO NOT go into the SRC directory yet.
 
+OPTIONAL: Make the following change to src/Makefile.in to make copyover work:
+
+	--- Makefile.in.old 2007-02-26 05:52:19.000000000 +0100
+	+++ Makefile.in     2007-03-26 17:21:56.000000000 +0200
+	@@ -61,6 +61,8 @@ circle:
+	        $(MAKE) $(BINDIR)/circle
+
+	 $(BINDIR)/circle : $(OBJFILES)
+	+       @-rm $(BINDIR)/circleold.exe
+	+       @-mv $(BINDIR)/circle.exe $(BINDIR)/circleold.exe
+	        $(CC) -o $(BINDIR)/circle $(PROFILE) $(OBJFILES) $(LIBS)
+
+	 clean:
+
+   The above is a "patch" file. All you need to do is add the two lines with
+   the +'s to your file Makefile.in. If you are still confused check out these
+   links on how to patch: http://www.circlemud.org/cdp/wtfaq/handpatch.html
+   http://cwg.lazuras.org/modules.php?name=Forums&file=viewtopic&t=757
+
 4) Run the configure script by typing "./configure".  This will automatically 
    detect what programs and library functions are available, and create the 
    files "Makefile" and "conf.h" based on the results.
@@ -62,12 +82,8 @@ reading the forums at http://cwg.lazuras.org/ or stop by TBA for assistance.
 
 It really can not be stressed enough: READ EVERYTHING.
 
-Credit where credit is due:
-
-Some parts of this document have been derived or outright copied from other
-files by: Jeremy Elson, David Goldstein, Tony Robbins, and George Greer
+Authors: Jeremy Elson, David Goldstein, Tony Robbins, and George Greer.
 
 Rumble
-Rumble@builderacademy.net 
 The Builder Academy
 builderacademy.net 9091

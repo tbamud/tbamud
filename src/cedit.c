@@ -41,6 +41,10 @@ ACMD(do_oasis_cedit)
   struct descriptor_data *d;
   char buf1[MAX_STRING_LENGTH];
 
+  /* No building as a mob or while being forced. */
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
+    return;
+
   /* Parse any arguments. */
   one_argument(argument, buf1);
 

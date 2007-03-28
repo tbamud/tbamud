@@ -346,7 +346,7 @@ int Crash_clean_file(char *name)
     return FALSE;
 
   /* Open so that permission problems will be flagged now, at boot time. */
-  if (!(fl = fopen(fname, "rw"))) {
+  if (!(fl = fopen(fname, "r"))) {
     if (errno != ENOENT)  /* if it fails, NOT because of no file */
       log("SYSERR: OPENING OBJECT FILE %s (4): %s", fname, strerror(errno));
     return FALSE;

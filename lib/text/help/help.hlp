@@ -734,7 +734,7 @@ is 4-20 points damage.
    The question often comes up as to what damage a weapon should inflict. I 
 will attempt to explain. To understand damage you first need to know hitpoints.
 A player starts with 10 hitpoints. Then they gain a certain amount depending on
-their class when they level. Stock CircleMUD uses the following: Magic Users
+their class when they level. Stock tbaMUD uses the following: Magic Users
 gain 3-8, Clerics 5-10, Thieves 7-13, Warriors 10-15. So a level 1 Warrior
 will have 20-25 hitpoints. Now, let us apply common sense. A weapon that does
 25 points of damage could kill a level 1 player in one hit. While a weapon with
@@ -847,19 +847,16 @@ These are numerous and I will add them as people ask questions about them.
 #31
 CYGWIN README.CYGWIN README-CYGWIN COMPILER SHELLS
 
-The README.Cygwin that comes with CircleMUD is outdated. Below is current and
-works as of December 2006.
-
-                          Compiling CircleMUD
+                          Compiling tbaMUD
                   under Microsoft Windows using CygWin
 
-CircleMUD 3.1 compiles under Cygwin without needing any special modifications.
+tbaMUD compiles under Cygwin without needing any special modifications.
 This free pseudo-Unix environment for Windows includes the "bash" shell, "gcc"
 family of compilers, and a full set of programs and libraries for Windows users
 to compile and run programs from source code intended for Unix. It can be
 downloaded from: http://cygwin.com/
 
-Compiling Circle under Cygwin is basically the same as it would be under
+Compiling tbaMUD under Cygwin is basically the same as it would be under
 another form of Unix:
 
 1) Download from: http://cygwin.com/setup.exe
@@ -872,18 +869,17 @@ another form of Unix:
    Click Next.
    Install, follow prompts.
 
-2) Download and uncompress the latest version of CircleMUD. TBA is now 
-   recommending everyone use CWG (CircleMUD With Goodies) Buddha since it comes
-   pre-packaged with many important features like OLC and Trigedit. Join the 
-   forum and download Buddha at: http://cwg.lazuras.org/ The forums will 
-   also be a great resource for any problems that come up. Once you download 
-   and uncompress Buddha (I use winRAR) read through the /doc directory.
+2) Download and uncompress the latest version of tbaMUD:
+   http://cwg.lazuras.org/modules.php?name=Downloads&d_op=viewdownload&cid=16
+   Join the forums as they will be a great resource for any problems that you
+   encounter. Once you download and uncompress tbaMUD (I use winRAR) read 
+   through the /doc directory.
 
 3) Start the Cygwin "bash" shell by double clicking the Cygwin Icon. This will 
    open a telnet looking window that mimics a *nix server where you can run the
-   MUD. Go to the directory where you extracted CircleMUD by using the "cd" change
+   MUD. Go to the directory where you extracted tbaMUD by using the "cd" change
    directory command and "dir" directory listing to find the correct files. For
-   example "C:\circle". "cd c:/circle" "dir" in the listed files you should see 
+   example "C:\tbaMUD". "cd c:/tbaMUD" "dir" in the listed files you should see 
    one called configure. DO NOT go into the SRC directory yet.
 
 4) Run the configure script by typing "./configure".  This will automatically 
@@ -895,12 +891,12 @@ another form of Unix:
    an executable, you can also try "sh configure", "sh ./configure",
    "bash configure" and "bash ./configure" until one of them works.
 
-5) NOW change to the /circle/src directory "cd src", and type "make", and watch
-   CircleMUD and the additional utilities included in the Circle distribution
-   automatically being compiled and placed in /circle/bin.
+5) NOW change to the /tbaMUD/src directory "cd src", and type "make", and watch
+   tbaMUD and the additional utilities included in the tbaMUD distribution
+   automatically being compiled and placed in /tbaMUD/bin.
 
-6) Go back to /circle, and run the MUD either directly by typing
-   "bin/circle", or by using the "./autorun &" script.
+6) Go back to /tbaMUD, and run the MUD either directly by typing
+   "bin/tbaMUD", or by using the "./autorun &" script.
 
 7) Start a telnet program.  Open a connection to your own machine "localhost"
    on port 4000.  You should see the MUD's login screen welcoming you. The
@@ -908,20 +904,17 @@ another form of Unix:
 
 If you have problems, read this document again.  Most of the questions received
 in email or which are posted to USENET newsgroups are answered in this file, or 
-in other documents included in the CircleMUD distribution.  If you are still 
+in other documents included in the tbaMUD distribution.  If you are still 
 having problems and you're *sure* that your question is not answered in this 
-document or in one of the others files in the /circle/doc directory, try 
-reading the through the CircleMUD website at: http://www.circlemud.org
+document or in one of the others files in the /tbaMUD/doc directory, try 
+reading the forums at http://cwg.lazuras.org/ or stop by TBA for assistance.
+
 It really can not be stressed enough: READ EVERYTHING.
 
 Credit where credit is due:
 
 Some parts of this document have been derived or outright copied from other
-files in the CircleMUD distribution by:
-Jeremy Elson
-David Goldstein
-Tony Robbins
-George Greer
+files by: Jeremy Elson, David Goldstein, Tony Robbins, and George Greer
 
 Rumble
 Rumble@@builderacademy.net 
@@ -932,9 +925,9 @@ See also: CODING, DOWNLOADS
 #31
 TILDES ~
 
-On stock CircleMUD a tilde is used in the world files to denote an end of line.
-This way the files can be saved and read. Because of this adding a tilde in any
-of the editors on older versions of CircleMUD could make the MUD unbootable. 
+On tbaMUD a tilde is used in the world files to denote an end of line. This way
+the files can be saved and read. Because of this adding a tilde in any of the 
+editors on older versions of CircleMUD could make the MUD unbootable. 
 
 See also: WORLD-FILE
 #31
@@ -1062,23 +1055,21 @@ CWG BUDDHA SUNTZU RASPUTIN CIRCLEMUD-WITH-GOODIES
 
    CWG is short for CircleMUD with Goodies. It is a customized codebase free
 to download from http://cwg.lazuras.org/. It comes in three versions: Buddha,
-Suntzu, and Rasputin.
+Suntzu, and Rasputin. CWG is also nice enough to host the tbaMUD forums and
+downloads section.
  
 See also: RESOURCES 
 #31
 SOURCES RESOURCES CODEBASE FTP DOWNLOADS DOCUMENTATION OLC-SOURCE CODEOLC OLCCODE OLC-CODE CODE-OLC WTFAQ MAILING-LISTS FORUMS MAILINGLISTS GROUPS 
 
+Source:      http://cwg.lazuras.org/modules.php?name=Downloads&d_op=viewdownload&cid=16
 CWG:         http://cwg.lazuras.org/
-Stock:       ftp://ftp.circlemud.org/pub/CircleMUD/3.x/
 Trigedit:    http://builderacademy.net/Oasis_DG_pages/contents/downloads.htm
 GDB:         http://www.cs.clemson.edu/~ihcho/courses/cs360/common/gdb.html
 
 Documentation:
-http://www.circlemud.org
-ftp://ftp.circlemud.org/pub/CircleMUD/3.x/uncompressed/circle-3.1/doc/
 http://builderacademy.net/Oasis_DG_pages/index.html
 http://www.circlemud.org/cdp/wtfaq/
-http://developer.circlemud.org/
 
    You should join the following forums and mailing lists. Learn how to search
 them for any problems you have:
@@ -1264,7 +1255,7 @@ road.
    what you intended to have there all along. Novels have editors, and so 
    should any zone.
 
-2) Add secrets! Reward players for participating in game that the zone 
+2) Add secrets! Reward players for participating in the game that the zone 
    represents. Always include at least one interesting thing per three or so 
    rooms. For example, have a bench in the garden or a table loaded to the 
    room. Many objects don't have to do anything, just break up the sparse 
@@ -1497,7 +1488,7 @@ road.
      browns, and yellows unless you can make that description only show during 
      that season.
 
-@cNOTE: If you would like to use this information for your game, you may do so
+@cNOTE:@n If you would like to use this information for your game, you may do so
         so long as you copy the entirety as is, keep Elaseth's copyright label 
         at the top of it, and make any corrections as specific to your mud in 
         parenthesis. If you wish to use this as a basis for your own building 
@@ -1708,7 +1699,7 @@ http://www.degraeve.com/img2txt.php
 
 See also: TBAMAP, MAPPING
 #31
-ABBREVIATIONS
+ABBREVIATIONS ABBREVS
 
    We have added abbreviations so you do not have to type everything exactly as
 it appears. This also means that when you enter keywords in OLC you do not have
@@ -1841,7 +1832,7 @@ Be original, finish what you start, have fun, and don't forget to breathe!
 #31
 CALENDAR CALENDER MONTHS WEEKS DAYS HOURS 
 
-The CircleMUD calendar consists of 75 seconds per minute, 35 days a month and
+The tbaMUD calendar consists of 75 seconds per minute, 35 days a month and
 17 months a year.
 
 Days of the week:
@@ -2113,11 +2104,10 @@ FREEZE THAW FREEZING FROZEN
 Usage: freeze [target]
        thaw [target]
 
-   FREEZE, originally invented here at CircleMUD (we think), is used to prevent
-a player from playing.  If frozen, the game will ignore all commands entered
-by the player, including QUIT, until the player is unfrozen with THAW. 
-Obviously, this command should only be used in extreme disciplinary 
-circumstances.
+   FREEZE is used to prevent a player from playing.  If frozen, the game will 
+ignore all commands entered by the player, including QUIT, until the player is 
+unfrozen with THAW. Obviously, this command should only be used in extreme 
+disciplinary circumstances.
 
 #31
 GOTO TRANSFER TRANSPORT TELEPORT
@@ -2272,7 +2262,7 @@ NOHASSLE HASSLE DARK NO_HASSLE DISABLE NOHASSEL HASSEL NO-HASSLE
 
 Usage: nohassle
 
-   Toggles a flag to prevent aggressive monsters from attacking and also prevents
+   Toggles a flag to prevent aggressive monsters from attacking, and also prevents
 immortals from firing triggers. If you wish to test triggers you must turn 
 nohassle off.
 
@@ -2439,7 +2429,7 @@ TIME TICKS
 
 Usage: time
 
-Gives you the current game time. CircleMUD uses zulu time 0-24 hours. There are
+Gives you the current game time. tbaMUD uses zulu time 0-24 hours. There are
 75 seconds per minute, 35 days per month, and 17 months per year. 1 MUD year 
 takes about 12 days.
 
@@ -2677,7 +2667,7 @@ entity by its Vnum. Vnums are not seen by mortal players. Each zone also has
 a Vnum.  The zone Vnum for any zone is simply the room, mob, object, shop, or 
 trigger Vnum divided by 100. For example, The Builder Academy is zone 13, 
 consisting of Vnums 1300 to 1399.
-   CircleMUD worlds are divided into distinct sections called zones.  Each
+   tbaMUD worlds are divided into distinct sections called zones.  Each
 zone typically consists of a single region of the MUD's virtual world with a
 consistent storyline.  Each zone can define its own rooms, mobs, objects,
 shops, and triggers. A single zone typically contains 100 rooms, 100 mobs, 100
@@ -2692,7 +2682,7 @@ See also: TERMINOLOGY, VNUM, SHOW-ZONES, AREAS
 #31
 GCC
 
-Several people have problems with configuring CircleMUD in cygwin the first
+Several people have problems with configuring tbaMUD in cygwin the first
 time. They will get an error saying "GCC could not be found" This means a C
 compiler was not installed because you failed to follow the directions under
 HELP CYGWIN. Reread them and add the compiler to the default download.
@@ -3176,7 +3166,7 @@ wait 1 s
 %load% <obj|mob> <vnum> [name [position]]
 
    This command loads a mob or object into the game. No-take objects loaded to
-a mob will load to the room.
+an actor will load to the room. NO_RENT objects can not be loaded.
 
 load an object to room: %load% obj 1300
 load a mob to room    : %load% mob 1300
@@ -3207,7 +3197,7 @@ See also: POSITIONS
 #31
 %TELEPORT% WTELEPORT OTELEPORT MTELEPORT PORTALS %TRANSPORT% TRIG-TELEPORT
 
-Stock CircleMUD does not have an object type portal. This is instead done with
+Stock tbaMUD does not have an object type portal. This is instead done with
 trigedit.
 
  %teleport% <victim> <location>
@@ -3876,8 +3866,6 @@ findmob.<room vnum X>(<mob vnum Y>)
 &%var%        - it, you, he/she            Example: @RTSTAT 91@n
 *%var%        - it, you, him/her
 ^%var%        - its, your, his/her
-  object only
-'%obj%        - something, name
 
 Use \ for do not parse, or %% for %.
 
@@ -4008,7 +3996,7 @@ next_in_room     - The next mob/player in the room as a variable (id) nice to
 pos()            - %actor.pos% returns position. Subfield modifies. Sleeping,
                    resting, sitting, fighting, standing. @RTSTAT 1399, 20997@n     
 prac()           - The actor's number of practices. Subfield modifies.
-race             - The actor's race, as a string. (not used in stock Circle)
+race             - The actor's race, as a string. (not used in tbaMUD)
 room             - The room the actor is in as a room variable. 
 sex              - The actor's sex, as a string: MALE, FEMALE, or NEUTRAL.
 skill()          - The percentage of learnedness in the skill subfield.
@@ -4748,7 +4736,7 @@ See also: TIMER, %TIMER%, %TIME%
 #31
 TRIGEDIT-ADVANCED-EXAMPLES
 
-To add life to the worlds CircleMUD uses something called triggers. There are 
+To add life to the worlds tbaMUD uses something called triggers. There are 
 three things in game that can have triggers attached to them: mobiles, objects,
 and rooms. Examples of common triggers include:
 
@@ -5311,12 +5299,16 @@ positions to an array. See the examples below.
 
 @RTSTAT 150, 41005, 1325, 57715@n
 #31
-ASSEMBLIES ASSEMBLE ASSEMBLY VEHICLES MAKE BAKE BREW CRAFT FLETCH KNIT MIX THATCH WEAVE ASSEDIT FORGE
- 
-   These are no longer implemented here since the same thing can be done with
-Trigedit.
+TRIG-EXAMPLES ASSEMBLIES ASSEMBLE ASSEMBLY VEHICLES MAKE BAKE BREW CRAFT FLETCH KNIT MIX THATCH WEAVE ASSEDIT FORGE SMOKE SMOKING CIGARS CIGARETTES PIPES SHOTGUN BLAST SHOOT RANGED-WEAPONS FIRE-WEAPONS BOWS QUIVERS MISSILES GUNS
 
-@RTSTAT 38, 48, 335@n
+   These are not implemented since the same thing can be done with trigedit.
+
+Assemblies: @RTSTAT 38, 48, 335@n
+Smokables: @RTSTAT 159@n
+Furniture: @RTSTAT 1399@n
+Weapons: @RTSTAT 1361, 9000, 11840, 13005@n
+
+See Also: @RTRIG-QUESTS@n
 #31
 DG_AFFECTS SCRIPT-AFFLICTED AFFLICTED DG-AFFECTS DG-AFFECTS %DG_AFFECT% DG-EFFECT DG_EFFECT
 
@@ -5441,29 +5433,6 @@ Warning: Some clients will give you problems since they use special characters
 like the / character (Avplay, Mush, and SimpleMU).
 
 #31
-FURNITURE COUCH CHAIR
-
-   There is no object type for furniture since this is stock CircleMUD. But it
-can be done through trigedit. Just set the object type to OTHER and attach a
-trigger similar to the example below. Just change the word chair to the name
-you desire.
-
-Example: @RTSTAT 1399@n
-#31
-SMOKE SMOKING CIGARS CIGARETTES PIPES
-
-   Smokable objects are not implemented on CircleMUD. The same effect may be
-created through trigedit.
-
-@RTSTAT 159@n 
-#31
-SHOTGUN BLAST SHOOT RANGED-WEAPONS FIRE-WEAPONS BOWS QUIVERS MISSILES GUNS 
-
-   Object type Fire Weapon and MISSILE are not implemented in CircleMUD. The  
-same effect may be created through trigedit.
-
-@RTSTAT 1361, 9000, 11840, 13005@n
-#31
 TRIGEDIT TRIGS TRIGEDITOR TRIGGEREDIT TRIGGER-EDIT TRIGGERS DG-SCRIPTS TRIG-HELP SCRIPTS MOBPROGS MPROGS PROGS SCRIPTING TRIGMENU
 
 Builders working on their trial vnum do not need to learn this command, yet.
@@ -5502,12 +5471,7 @@ male PC 'Rumble'  IDNum: [ 3531], In room [    0]
 
 See also: REMOTE, RDELETE
 #31
-ASSEMBLIES ASSEMBLE ASSEMBLY VEHICLES MAKE BAKE BREW CRAFT FLETCH KNIT MIX THATCH WEAVE ASSEDIT FORGE
-
-See: @RTRIG-EXAMPLES@n
-
-#31
-TRIG-QUESTS TRIGEDIT-QUESTS AUTOQUEST QUESTS QUESTPOINTS QUEST-POINTS QUESTMASTERS TRIG-EXAMPLES TRIGEDIT-EXAMPLES QUEST-MOBS QUESTMOBS QEDIT TRIG_EXAMPLES
+TRIG-QUESTS TRIGEDIT-QUESTS AUTOQUEST QUESTS QUESTPOINTS QUEST-POINTS QUESTMASTERS QUEST-MOBS QUESTMOBS QEDIT TRIG_EXAMPLES
 
    Many zones have their own quests and examples within them, such as:
 
@@ -5516,7 +5480,7 @@ Assembly Examples: @RTSTAT 38, 48, 335, GOTO 366@n
 Questshop Example: @RTSTAT 167, GOTO 265@n
 Fizban's Questshop Example: @RTSTAT 57705-57707@n
 
-See Also Examples: BOATS, PORTALS, GUNS, ASSASSINS
+See Also Examples: TRIG-EXAMPLES, BOATS, PORTALS, GUNS, ASSASSINS
 #31
 CANBESEEN %CANBESEEN% %ACTOR.CANBESEEN%
 
@@ -6886,7 +6850,7 @@ $S his/her target of staff/wand/scroll/potion
 
 PROPER USAGE: @RVSTAT OBJ 350@n
 #31
-OEDIT-TYPES OBJECT-TYPES OBJ-TYPES OBJ-WEAPONS TRASH 
+OEDIT-TYPES OBJECT-TYPES OBJ-TYPES OBJ-WEAPONS TRASH FURNITURE COUCH CHAIRS
 
 5) Type        : @cUNDEFINED@n
    This specifies what type an object is defined as; also controls the meanings
@@ -6916,6 +6880,7 @@ of value0 through value4 (option C). The Type Flag must be one of the following:
 21   PEN            Item is a pen.
 22   BOAT           Item is a boat; allows you to traverse water (noswim).
 23   FOUNTAIN       Item is a fountain.
+24   CHAIR          Item is a chair people can sit in.
 
    Good items should be very rare, and hard to get. Lousy items should require 
 much less effort. Give the most powerful items actually to a mob; Thieves and
@@ -7718,13 +7683,14 @@ about being a newbie here.
 #31
 ALIAS-EXAMPLES
   
-  To set up aliases to use older CircleMUD building commands:
+  To set up aliases to use older tbaMUD building commands:
   
 alias poofin set self poofin $*
 alias poofout set self poofout $*
 alias poofs score
 alias cheat return
 alias mail at postmaster mail $*
+alias history history all
 
 See also: ALIASES
 #31
@@ -7738,6 +7704,19 @@ subtract from the AC directly. Negative AC is better. Modifiers: Body X3,
 head and legs X2.
 
 See also: MEDIT-AC
+#31
+PLIST PLAYERLIST P-LIST PLAYER-LIST
+
+Usage: plist [minlev[-maxlev]] [-n name] [-d days] [-h hours] [-i] [-m]
+
+   This command allows immortals to search through the player files using
+specific criteria.
+
+Examples:
+   plist 0          - List everyone level 0.
+   plist -i -h 2    - List all immortals that have logged in in the past hour.
+
+See Also: LAST
 #31
 TOGGLES CONFIGURE SETTINGS
 
@@ -7776,12 +7755,12 @@ See also: AREAS
 #0
 AREAS ZONES
 
-These zones are maintained in the latest CircleMUD format with DG Scripts on 
+These zones are maintained in the latest tbaMUD format with DG Scripts on 
 The Builder Academy (TBA) telnet://builderacademy.net:9091/ 
 
-These areas include all donated areas from TBA, CircleMUD FTP, and stock. TBA 
-is always looking for new submissions or help on improving the current zones. 
-Please report any bugs, typos, ideas, or submissions to:
+These areas include all donated areas from tbaMUD. We are always looking for 
+new submissions or help on improving the current zones. Please report any bugs,
+typos, ideas, or submissions to:
 
 Rumble
 The Builder Academy
@@ -7988,7 +7967,7 @@ you went idle.
 #0
 STOCK
 
-This is a listing of stock areas available with CircleMUD.
+This is a listing of stock areas.
 
 0   Limbo                       -- DikuMud
 9   River Island Of Minos       -- Mahatma of HexOynx
@@ -8436,16 +8415,13 @@ the body you are wearing the armor.  Some items have a special bonus, and
 subtract from the AC directly. Negative AC is better. 
 
 #0
-PASSWORD PW
+PASSWORDS PW
 
-A secret series of characters that enables a user to access a file,
-computer, or program.  On multi-user systems, each user must enter his or her
-password before the computer will respond to commands.  The password helps
-ensure that unauthorized users do not access the computer.  In addition, data
-files and programs may require a password.  Ideally, the password should be
-something that nobody could guess.  In practice, most people choose a password
-that is easy to remember, such as their name or their initials.  This is one
-reason it is relatively easy to break into most computer systems.    
+Ideally, your password should be something that nobody could guess.  In 
+reality, most people choose a password that is easy to remember and they never
+change it. While passwords on most MUDs are encrypted there is no rule that 
+they have to be. So please NEVER use a password on a MUD that you use anywhere 
+else. Choose a separate MUDding password and change it occasionally.
 
 If you forget your password any IMP can reset it for you.
 #0
@@ -8562,14 +8538,15 @@ traveling and require some rest to continue.
 See also: MANA, HITPOINTS
 #0
 CIRCLEMUD CREDITS
-                    C  I  R  C  L  E  M  U  D     3  .  5
 
-CircleMUD was developed from DikuMUD (Gamma 0.0) by Jeremy "Ras" Elson at
-Johns Hopkins University's Department of Computer Science.  All code unique
-to CircleMUD is protected under a copyright by the Trustees of the Johns
-Hopkins University.
+                        t  b  a  M  U  D     3  .  5  1
 
-Many, many people contributed to CircleMUD in one way or another throughout
+tbaMUD (formerly known as CircleMUD) was developed from DikuMUD (Gamma 0.0) by 
+Jeremy "Ras" Elson at Johns Hopkins University's Department of Computer Science.
+All code unique to tbaMUD is protected under a copyright by the Trustees of 
+the Johns Hopkins University.
+
+Many, many people contributed to tbaMUD in one way or another throughout
 the course of its development.  Although it is impossible for me to remember
 them all, I'd like to extend special thanks to certain people:
 
@@ -8594,16 +8571,15 @@ them all, I'd like to extend special thanks to certain people:
 ...plus everyone else in the Circle community who has submitted material!
 Thanks everyone!
 
-  Anonymous FTP:  ftp.circlemud.org or ftp2.circlemud.org in pub/CircleMUD
   Bugs and Help:  builderacademy.net 9091
-            URL:  http://www.circlemud.org/
-   Mailing List:  listserv@@post.queensu.ca
-                  (write "subscribe circle <first name> <last name>")
+            URL:  http://tbaMUD.com/
+   Mailing List:  http://cwg.lazuras.org/
 
 --Jeremy Elson
 
-CircleMUD is currently being developed by The Builder Academy and all bugs and
-requests for help should be directed to: builderacademy.net 9091
+tbaMUD (formerly known as CircleMUD) is currently being developed by The 
+Builder Academy. All bugs and requests for help should be directed to: 
+builderacademy.net 9091
 
 --Rumble
 #0
@@ -9754,11 +9730,10 @@ Accumulative: -
 Duration    : Instantaneous
 Level       : Mage level 6.
 
-If possible you will know exactly where an object is, or the
-name of the person using it.  If more than one object by the
-same name exists, you will get a listing of several objects.
-The maximum number of objects you can simultaneously locate is
-your level divided by 2.
+If possible you will know exactly where an object is, or the name of the person 
+using it.  If more than one object by the same name exists, you will get a 
+listing of several objects. The maximum number of objects you can 
+simultaneously locate is your level divided by 2.
 #0
 MAGIC-MISSILE
 
@@ -10011,14 +9986,14 @@ See also: HOUSES
 #0
 POLICIES INFO NEWS POLICY VERSION UPDATES
 
-These commands show you important information about CircleMUD.  It is a good
+These commands show you important information about tbaMUD.  It is a good
 idea to read them every once in a while.
 
    info     - useful information about the game for beginners
    news     - latest changes to the code and areas
    policy   - policies on topics like player killing
-   credits  - the people who made CircleMUD possible!
-   version  - displays the current CircleMUD version number
+   credits  - the people who made tbaMUD possible!
+   version  - displays the current tbaMUD version number
 
 #0
 INVENTORY
@@ -10169,7 +10144,7 @@ Usage: notell
 Use NO<channel> if you wish to stop using and seeing that channel. A 
 (no<channel>) flag will appear after your name in the WHO list.
 
-See also: TOGGLE, FLAGS, TELL, TOGGLE, WHO
+See also: TOGGLE, FLAGS, TELL, WHO
 #0
 OFFER RENTING UNRENTING UN-RENTING 
 
@@ -10964,22 +10939,24 @@ you are logged in the MUD or not.
 BACKDOOR HACKING 
 
    Not a good thing to be searching for help on. Your IP address has been logged
-and we will be contacting your service provider. Just Kidding. CircleMUD is 
+and we will be contacting your service provider. Just Kidding. tbaMUD is 
 actually very stable. I have never heard of one being hacked except via weak or
 compromised passwords. 
 
 #0
 DIKU ROM DBX DBZ SMAUG
 
-   These are other types of MUD codebases. We only focus on the latest version
-of CircleMUD here.
+   These are other types of MUD codebases. We only focus on tbaMUD (the codebase
+formerly known as CircleMUD).
+
 #0
 HISTORY
 
-Usage: history
+Usage: history < all | say | gossip | wiznet | tell | shout | grats | holler | auction >
 
-   Shows last 100 communications your player has seen while in the game. 
-Automatically clears after you check it or leave the game.
+   This command displays what has been said over the channel you input along
+with a time stamp for when it was sent. History all will list the history of
+all channels.
 
 See also: CHANNELS
 #0
@@ -11046,6 +11023,33 @@ Thanks to ...
 Share and enjoy.
 MERC Industries
 #0
+PROMOTE PROMOTIONS ADVANCEMENTS RAISES LVLS LEVELS GAINS 31 32 33 34 RANKS RANKING HIRING 
+
+   Here at The Builder Academy the level of an immortal generally denotes
+their skill at building. This makes it easier for people to know who is in 
+charge, who they can ask for help, and who they should be wary of taking tips 
+from. I encourage everyone to help each other. Just realize that if the person
+is not at least level 32 they may have relatively little experience.
+  
+Level 31 (Immortal) Anyone who is new to TBA and is working on their trial vnum
+         or zone.
+Level 32 (God) An experienced builder that has proven their knowledge and is
+         willing to teach others. Level 32 and above is considered staff.
+Level 33 (Greater God) An experienced builder that has contributed significantly
+         to TBA.
+Level 34 (Implementor) Welcor and I (Rumble). Welcor codes, I administrate.
+
+   Do not bother asking to be advanced, and if that is why you are here, you
+are wasting your time. Note, this does not mean you are not a quality builder,
+but TBA is not your typical MUD. On the contrary, we are here as dedicated
+people to help you learn to build. Because of this the only chance of
+advancement is if you are willing to learn to build and then help teach others.
+If you are willing to give back to the tbaMUD community, and have the
+necessary skills to do so, you will be advanced and given further privileges
+to help teach others. Generally, if you have to ask for a promotion you will be
+less likely to receive it. Performance is everything here.
+
+#0
 HEIACH XTBA
 
 Heiach has been a big help with training new builders and has become very adept
@@ -11111,7 +11115,7 @@ feeble essences, where he pretends to not be overly competent and actually
 humble and helpful, but whatever you do...don't be fooled! It should be obvious
 from the fact he's built 4 rooms in that many years that he is spending most
 of his time elsewhere...on much darker motives than building happy zones
-for CircleMUD players.
+for tbaMUD players.
 
 #0
 PRAISE REVIEWS RATINGS
@@ -11252,7 +11256,7 @@ service-oriented, and non-judgmental about building abilities.
 
 If you wish to participate in any of the above, I believe we uniquely 
 suit your needs. The only drawback is that while many building 
-techniques are universal, we specifically teach the use of CircleMUD 
+techniques are universal, we specifically teach the use of tbaMUD 
 3.1 with DG-Scripts 1.0.12 and OasisOLC 2.0.6.
 
 Happy Building!
@@ -11280,7 +11284,7 @@ talented, has something to learn. Advice and honest opinions are
 given when requested, but at the same time every builder has the  
 freedom to both experiment with unconventional building techniques, 
 as well as a chance to learn or get better with traditional
-CircleMUD tools. 
+tbaMUD tools. 
 
 This is a place for builders who love to build, and the building 
 happens in the friendliest atmosphere you could possibly imagine. I
@@ -11533,29 +11537,40 @@ CHALLENGE
 That is what you will find here at TBA.
 
 #0
-TBA PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW
+TBAMUD PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW VISION TBA-VISION
 
+TBA stands for The Builder Academy. 
 @RGOTO 3@n to enter the Builder Academy tutorial.
 
-   A normal MUD will have a background (theme, plot, story, whatever you want
-to call it) which a builder is expected to work from. TBA does not have
-any such background. If you want to build a zone for a MUD then use their
-background. Otherwise, you may build whatever your heart desires.
+TbaMUD's vision is to provide the MUDding community a stable and functional 
+codebase that includes an in-depth World and help files that makes it ready 
+to be molded into a custom MUD by its coders and builders. We also provide 
+multiple resources to allow for feedback, contribution, and the sharing of 
+ideas within the MUDding community to ensure constant development and 
+improvements. 
 
-   TBA stands for The Builder Academy.
+TbaMUD is highly developed from the programming side, but highly UNdeveloped
+on the game-playing side. So, if you're looking for a huge MUD with billions
+of spells, skills, classes, and races, tbaMUD will disappoint you. TbaMUD still
+has only the 4 original Diku classes, the original spells, and the original 
+skills. On the other hand, if you're looking for a highly stable, developed, 
+organized, and well documented "blank slate" MUD on which you can put your OWN 
+ideas for spells, skills, and classes, then tbaMUD is what what you are looking
+for.
 
-   I created TBA in October of 2000 on Cruel World which was being run by 
-Zemial and Welcor. I then began combining my own experience with the work of 
-others into an extensive tutorial zone, help files, and examples. Welcor and 
-I ended up separating TBA from Cruel World to further enhance our training of
-new builders. Welcor has taken over the development of Trigedit and has 
-contributed extensively to the current version of Oasis OLC. TBA now has many
-purposes. It functions as a test port for Trigedit, Oasis OLC, CircleMUD, and 
-stock CircleMUD zones. And, of course, we are still open to anyone willing to 
-learn, teach, or help develop CircleMUD.  We have also teamed up with Zizazat
-of CWG to combine our efforts.
+TBA was created in 2000 on Cruel World which was being run by Zemial and Welcor.
+I began combining my own experience with the work of others into an extensive 
+tutorial zone, help files, and examples. Welcor and I ended up separating TBA 
+from Cruel World to further enhance our training of new builders. Welcor has 
+taken over the development of Trigedit and has contributed extensively to what
+has now evolved into the tbaMUD release. 
 
-   We are a low stress, no deadline, training environment. Where anyone with 
+After offering several times to take over CircleMUD development TBA released
+CircleMUD 3.5 and later changed the codebase name to tbaMUD. TBA now has many
+purposes including: Developing trigedit, OLC, the tbaMUD codebase, and all the
+zones.
+
+   TBA is a low stress, no deadline, training environment. Where anyone with 
 motivation can work at their own pace to learn as much or as little as they
 wish. Numerous people are available to answer questions and give advice.
 
@@ -11621,33 +11636,6 @@ and fill out the application.
 See also: OLC, REDIT, MEDIT, OEDIT, ZEDIT, SEDIT, TRIGEDIT, AEDIT
 
 #0
-PROMOTE PROMOTIONS ADVANCEMENTS RAISES LVLS LEVELS GAINS 31 32 33 34 RANKS RANKING HIRING 
-
-   Here at The Builder Academy the level of an immortal generally denotes
-their skill at building. This makes it easier for people to know who is in 
-charge, who they can ask for help, and who they should be wary of taking tips 
-from. I encourage everyone to help each other. Just realize that if the person
-is not at least level 32 they may have relatively little experience.
-  
-Level 31 (Immortal) Anyone who is new to TBA and is working on their trial vnum
-         or zone.
-Level 32 (God) An experienced builder that has proven their knowledge and is
-         willing to teach others. Level 32 and above is considered staff.
-Level 33 (Greater God) An experienced builder that has contributed significantly
-         to TBA.
-Level 34 (Implementor) Welcor and I (Rumble). Welcor codes, I administrate.
-
-   Do not bother asking to be advanced, and if that is why you are here, you
-are wasting your time. Note, this does not mean you are not a quality builder,
-but TBA is not your typical MUD. On the contrary, we are here as dedicated
-people to help you learn to build. Because of this the only chance of
-advancement is if you are willing to learn to build and then help teach others.
-If you are willing to give back to the CircleMUD community, and have the
-necessary skills to do so, you will be advanced and given further privileges
-to help teach others. Generally, if you have to ask for a promotion you will be
-less likely to receive it. Performance is everything here.
-
-#0
 RANDOM-THOUGHTS BIGGEST EGO
 
 Random Thoughts came to us a while back wanting to learn scripts and with
@@ -11661,69 +11649,112 @@ builders to the helpfiles.
 
 @RTSTAT 41095@n
 #0
-THE-MUD-CONNECTOR TMC MUD-CONNECTOR
+THE-MUD-CONNECTOR TMC MUD-CONNECTOR MUDCONNECTOR
 
    Most of our traffic comes through word of mouth or TMC reviews. If you are so
 inclined please leave a review about your experience with TBA at:
 http://mudconnector.com/mud-bin/adv_search.cgi?Mode=MUD&mud=The+Builder+Academy
 
+   The most challenging aspect of running a mud is finding good 
+builders. You will hear this from the admin of every MUD that has ever
+been. In the past it has always been up to each individual MUD to find
+and usually train their own builders. This works, but I think the 
+MUDding community can come up with something better. That is why I 
+created The Builder Academy.
+
+   We have been open to anyone interested in learning or teaching how
+to build using Oasis OLC with dg scripts since 2000. TBA has expanded
+to also be used to develop stock zones for CircleMUD.
+
+   TBA has trained 1000's of builders and has an extensive tutorial 
+and help file system. No pressure, no deadline, just come learn, 
+teach, or help develop CircleMUD. Give back to the community we have
+all taken so much from. TBA is a MUDding resource. Take advantage of
+it so we can improve the entire MUDding community. 
+
+   TBA can also be used by other MUDs as a builder's port. Just send 
+us your newbie builders. We will teach them and then you can have 
+them back with the zones they built.
+
+   We are always open to anyone willing to learn, teach, or help 
+develop our newly released tbaMUD codebase (the codebase formerly 
+known as CircleMUD).
+
 See also: REVIEWS
 #0
 TBA-ADVERTISING
-Mud Created: October, 2000
 
+Mud Created: 2000
 The Builder Academy
-Code Base: [Circlemud] 3.1 
-Latest CircleMUD with OasisOLC and DG Scripts
-Site: builderacademy.net 9091 [206.123.75.138] 
+Code Base: [tbaMUD] the latest version
+Site: builderacademy.net 9091 [88.80.193.39] 
 Admin Email: rumble@@builderacademy.net
-Theme: Teaching Builders, CircleMUD and DG Scripts development
+Theme: Teaching Builders and tbaMUD codebase development
 http://www.builderacademy.net/
 telnet://builderacademy.net:9091
 
+   Since 2000 The Builder Academy has been training new builders and
+developing the CircleMUD codebase, Oasis OLC, and trigedit. After years
+of stock CircleMUD stagnation TBA offered to take over stock CircleMUD
+development several times. TBA unofficially released CircleMUD 3.5 in 
+2006 and later released the codebase under the name tbaMUD. TbaMUD is 
+holding true to the original CircleMUD vision with a few additions. The 
+largest difference is the inclusion of Oasis OLC, trigedit, in-depth 
+tutorials, help files, and examples. TBA will continue development and is
+always open to feedback and recommendations from the MUDding community. 
+TBA is foremost a MUDding resource with the goal of improving the MUDding
+community.
+ 
+The tbaMUD vision:
+   TbaMUD's vision is to provide the MUDding community a stable and 
+functional codebase that includes an in-depth World and help files that 
+makes it ready to be molded into a custom MUD by its coders and builders. 
+We also provide multiple resources to allow for feedback, contribution, 
+and the sharing of ideas within the MUDding community to ensure constant 
+development and improvements. 
+   TbaMUD is highly developed from the programming side, but highly 
+UNdeveloped on the game-playing side. So, if you're looking for a huge MUD
+with billions of spells, skills, classes, and races, tbaMUD will 
+disappoint you. TbaMUD still has only the 4 original Diku classes, the 
+original spells, and the original skills. On the other hand, if you're 
+looking for a highly stable, developed, organized, and well documented 
+"blank slate" MUD on which you can put your OWN ideas for spells, skills, 
+and classes, then tbaMUD is what what you are looking for.
+ 
+The source: 
+   http://tbamud.com/Oasis_DG_pages/downloads/patches/tbamud-3.51.tgz
+The forums: 
+   http://cwg.lazuras.org/
+ 
+Rumble
+The Builder Academy
+builderacademy.net 9091
+
    The most challenging aspect of running a mud is finding good builders. You
 will hear this from the admin of every MUD that has ever been. In the past it 
-has always been up to each individual MUD to find and usually train their own 
-builders. This works, but I think the CircleMUD community can come up with 
+has always been up to each individual MUD to find and attempt to train their 
+own builders. This works, but I think the MUDding community can come up with 
 something better. That is why I created The Builder Academy.
 
-   We have been open to anyone interested in learning or teaching how to build
-using Oasis OLC with dg scripts since 2000. The current developer of DG scripts,
-Welcor, uses The Builder's Academy (TBA) as the development port for DG
-scripts. 
-Now TBA has expanded to also be used to develop stock zones for CircleMUD.
+   TBA has been open to anyone interested in learning or teaching how to build
+using Oasis OLC with dg scripts since 2000. TBA is now being used to develop
+the tbaMUD codebase (formerly known as CircleMUD)
 
    TBA has trained thousands of builders and has an extensive tutorial and help
 file system. No pressure, no deadline, just come learn, teach, or help develop 
-CircleMUD. Give back to the community we have all taken so much from. TBA is a 
-CircleMUD resource. Take advantage of it so we can improve all of CircleMUD. 
-TBA can also be used by other MUDs as a builder's port. Just send us your 
+tbaMUD. Give back to the community we have all taken so much from. TBA is a 
+MUDding resource. Please take advantage of it so we can improve all of the 
+MUDding community. 
+
+TBA can even be used by other MUDs as a builder's port. Just send us your 
 newbie builders. We will teach them and then you can have them back with the 
 zones they built.
 
-   We are always open to anyone willing to learn, teach, or help develop stock
-CircleMUD,Oasis OLC, and DG scripts.
-
-   TBA has been open to anyone interested in learning or teaching how to 
-build using Oasis OLC with DG Scripts since 2000. The current developer of 
-DG scripts and Oasis OLC, Welcor, uses TBA as the development port for both.
-TBA is also developing stock and other zones that are free to download.
- 
-   TBA has trained thousands of builders and has an extensive tutorial and help
-file system. No pressure, no deadline, just come learn, teach, or help develop 
-CircleMUD. Give back to the community we have all taken so much from. TBA is a 
-CircleMUD resource. Take advantage of it so we can improve all of CircleMUD. 
-TBA can also be used by other MUDs as a builder's port. Just send us your 
-newbie builders. We will teach them and then you can have them back with the 
-zones they built.
- 
-   We have now opened up a player's port running CWG Buddha to test and develop
-zones. We have 177 zones ready for testing and free to download. Check it out 
-at: builderacademy.net 9092 [65.69.46.147] 
+   We are always open to anyone willing to learn, teach, or help develop tbaMUD.
 
 Rumble
 The Builder Academy
-builderacademy.net 9091 [206.123.75.138] 
+builderacademy.net 9091 [88.80.193.39] 
 #0
 FAMOUS QUOTES
 
@@ -11827,7 +11858,7 @@ administration: builderacademy.net 9091
 WELCOR
 
    Welcor is the head coder of The Builder Academy and uses TBA to develop 
-Trigedit and OLC for all of CircleMUD.
+the tbaMUD codebase.
 
 #0
 USAGE
@@ -11861,6 +11892,7 @@ http://www.slayn.net/web/
 http://www.bylur.net/free/#110
 http://xnixhosting.homeunix.org -- Contact Reaplo
 http://www.planetmud.net/ 
+www.evileyehosting.com
 
 #0
 THANKSGIVING

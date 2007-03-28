@@ -44,6 +44,10 @@ ACMD(do_oasis_trigedit)
   int number, real_num;
   struct descriptor_data *d;
 
+  /* No building as a mob or while being forced. */
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
+    return;
+
   /* Parse any arguments. */
   skip_spaces(&argument);
   if (!*argument || !isdigit(*argument)) {

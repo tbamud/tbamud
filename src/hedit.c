@@ -111,6 +111,10 @@ ACMD(do_oasis_hedit)
   struct descriptor_data *d;
   int i;
 
+  /* No building as a mob or while being forced. */
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
+    return;
+
   if (!can_edit_zone(ch, HEDIT_PERMISSION)) {
     send_to_char(ch, "You don't have access to editing help files.\r\n");
     return;

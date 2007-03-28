@@ -5,6 +5,13 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.52
+[Mar 27 2007] - Rumble
+  Removed the do_oasis function and called the Xedit commands directly (thanks Rhade).
+[Mar 25 2007] - Rumble
+  Updated idle timer to keep track of imms too (thanks Jamdog).
+  Standardized OLC messages.
+  Removed special procedures that were replaced with trigedit.
+  Updated README.WIN, README.MSVC8, and README.CYGWIN.
 [Mar 20 2007] - Rumble
   Added object type CHAIR (thanks Dark).
   Added ZZZ directories to plrfiles and plrvars (thanks Zizazat).
@@ -26,7 +33,7 @@ tbaMUD 3.52
   Added send_cannot_edit function (thanks Rhade).
 [Feb 26 2007] - Rumble
   updated CYGWIN.README, FAQ, and README
-  Added in game changelog command (thanks Rhade).
+  Added an in game changelog command (thanks Rhade).
   Moved do_file to act.wizard.c.
   Alphabetized Makefile.in, yeah I'm anal like that.
   Clarified licheck so people know to enter Q to accept the license and quit.

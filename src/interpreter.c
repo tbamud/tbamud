@@ -183,6 +183,7 @@ ACMD(do_score);
 ACMD(do_send);
 ACMD(do_set);
 ACMD(do_show);
+ACMD(do_show_save_list);
 ACMD(do_shutdown);
 ACMD(do_sit);
 ACMD(do_skillset);
@@ -250,7 +251,7 @@ cpp_extern const struct command_info cmd_info[] = {
   /* now, the main list */
   { "at"       , "at"      , POS_DEAD    , do_at       , LVL_IMMORT, 0 },
   { "advance"  , "adv"     , POS_DEAD    , do_advance  , LVL_GOD, 0 },
-  { "aedit"    , "aed"     , POS_DEAD    , do_oasis    , LVL_GOD, SCMD_OASIS_AEDIT },
+  { "aedit"    , "aed"     , POS_DEAD    , do_oasis_aedit, LVL_GOD, 0 },
   { "alias"    , "ali"     , POS_DEAD    , do_alias    , 0, 0 },
   { "afk"      , "afk"     , POS_DEAD    , do_gen_tog  , 0, SCMD_AFK },
   { "assist"   , "as"      , POS_FIGHTING, do_assist   , 1, 0 },
@@ -270,7 +271,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "bug"      , "bug"     , POS_DEAD    , do_gen_write, 0, SCMD_BUG },
 
   { "cast"     , "c"       , POS_SITTING , do_cast     , 1, 0 },
-  { "cedit"    , "cedit"   , POS_DEAD    , do_oasis    , LVL_IMPL, SCMD_OASIS_CEDIT },
+  { "cedit"    , "cedit"   , POS_DEAD    , do_oasis_cedit, LVL_IMPL, 0 },
   { "changelog", "cha"     , POS_DEAD    , do_changelog, LVL_IMPL, 0 },
   { "check"    , "ch"      , POS_STANDING, do_not_here , 1, 0 },
   { "checkload", "checkl"  , POS_DEAD    , do_checkloadstatus, LVL_GOD, 0 },
@@ -326,7 +327,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "gtell"    , "gt"      , POS_SLEEPING, do_gsay     , 0, 0 },
 
   { "help"     , "h"       , POS_DEAD    , do_help     , 0, 0 },
-  { "hedit"    , "hedit"   , POS_DEAD    , do_oasis    , LVL_GOD  , SCMD_OASIS_HEDIT },
+  { "hedit"    , "hedit"   , POS_DEAD    , do_oasis_hedit, LVL_GOD , 0 },
   { "hindex"   , "hind"    , POS_DEAD    , do_hindex   , 0, 0 },
   { "helpcheck", "helpch"  , POS_DEAD    , do_helpcheck, LVL_IMPL, 0 },
   { "hide"     , "hi"      , POS_RESTING , do_hide     , 1, 0 },
@@ -362,8 +363,8 @@ cpp_extern const struct command_info cmd_info[] = {
 
   { "motd"     , "motd"    , POS_DEAD    , do_gen_ps   , 0, SCMD_MOTD },
   { "mail"     , "mail"    , POS_STANDING, do_not_here , 1, 0 },
-  { "medit"    , "med"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_MEDIT },
-  { "mlist"    , "mlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_MLIST },
+  { "medit"    , "med"     , POS_DEAD    , do_oasis_medit, LVL_BUILDER, 0 },
+  { "mlist"    , "mlist"   , POS_DEAD    , do_oasis_list , LVL_BUILDER, SCMD_OASIS_MLIST },
   { "mute"     , "mute"    , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_SQUELCH },
 
   { "news"     , "news"    , POS_SLEEPING, do_gen_ps   , 0, SCMD_NEWS },
@@ -381,9 +382,9 @@ cpp_extern const struct command_info cmd_info[] = {
   { "open"     , "o"       , POS_SITTING , do_gen_door , 0, SCMD_OPEN },
   { "order"    , "ord"     , POS_RESTING , do_order    , 1, 0 },
   { "offer"    , "off"     , POS_STANDING, do_not_here , 1, 0 },
-  { "olc"      , "olc"     , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OLC_SAVEINFO },
-  { "olist"    , "olist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_OLIST },
-  { "oedit"    , "oedit"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_OEDIT },
+  { "olc"      , "olc"     , POS_DEAD    , do_show_save_list, LVL_BUILDER, 0 },
+  { "olist"    , "olist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_OLIST },
+  { "oedit"    , "oedit"   , POS_DEAD    , do_oasis_oedit, LVL_BUILDER, 0 },
 
   { "put"      , "p"       , POS_RESTING , do_put      , 0, 0 },
   { "peace"    , "pe"      , POS_DEAD    , do_peace    , LVL_BUILDER, 0 },
@@ -417,8 +418,8 @@ cpp_extern const struct command_info cmd_info[] = {
   { "rescue"   , "resc"    , POS_FIGHTING, do_rescue   , 1, 0 },
   { "restore"  , "resto"   , POS_DEAD    , do_restore  , LVL_GOD, 0 },
   { "return"   , "retu"    , POS_DEAD    , do_return   , 0, 0 },
-  { "redit"    , "redit"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_REDIT },
-  { "rlist"    , "rlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_RLIST },
+  { "redit"    , "redit"   , POS_DEAD    , do_oasis_redit, LVL_BUILDER, 0 },
+  { "rlist"    , "rlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_RLIST },
   { "rclone"   , "rclone"  , POS_DEAD    , do_room_copy, LVL_BUILDER, 0 },
   { "roomflags", "roomflags", POS_DEAD   , do_gen_tog  , LVL_IMMORT, SCMD_SHOWVNUMS },
 
@@ -429,7 +430,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "save"     , "sav"     , POS_SLEEPING, do_save     , 0, 0 },
   { "saveall"  , "saveall" , POS_DEAD    , do_saveall  , LVL_BUILDER, 0},
   { "sell"     , "sell"    , POS_STANDING, do_not_here , 0, 0 },
-  { "sedit"    , "sedit"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_SEDIT },
+  { "sedit"    , "sedit"   , POS_DEAD    , do_oasis_sedit, LVL_BUILDER, 0 },
   { "send"     , "send"    , POS_SLEEPING, do_send     , LVL_GOD, 0 },
   { "set"      , "set"     , POS_DEAD    , do_set      , LVL_IMMORT, 0 },
   { "shout"    , "sho"     , POS_RESTING , do_gen_comm , 0, SCMD_SHOUT },
@@ -439,7 +440,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "sip"      , "sip"     , POS_RESTING , do_drink    , 0, SCMD_SIP },
   { "skillset" , "skillset", POS_SLEEPING, do_skillset , LVL_GRGOD, 0 },
   { "sleep"    , "sl"      , POS_SLEEPING, do_sleep    , 0, 0 },
-  { "slist"    , "slist"   , POS_SLEEPING, do_oasis    , LVL_BUILDER, SCMD_OASIS_SLIST },
+  { "slist"    , "slist"   , POS_SLEEPING, do_oasis_list, LVL_BUILDER, SCMD_OASIS_SLIST },
   { "sneak"    , "sneak"   , POS_STANDING, do_sneak    , 1, 0 },
   { "snoop"    , "snoop"   , POS_DEAD    , do_snoop    , LVL_GOD, 0 },
   { "socials"  , "socials" , POS_DEAD    , do_commands , 0, SCMD_SOCIALS },
@@ -460,9 +461,9 @@ cpp_extern const struct command_info cmd_info[] = {
   { "toggle"   , "toggle"  , POS_DEAD    , do_toggle   , 0, 0 },
   { "track"    , "track"   , POS_STANDING, do_track    , 0, 0 },
   { "transfer" , "transfer", POS_SLEEPING, do_trans    , LVL_GOD, 0 },
-  { "trigedit" , "trigedit", POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_TRIGEDIT},
+  { "trigedit" , "trigedit", POS_DEAD    , do_oasis_trigedit, LVL_BUILDER, 0 },
   { "typo"     , "typo"    , POS_DEAD    , do_gen_write, 0, SCMD_TYPO },
-  { "tlist"    , "tlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_TLIST },
+  { "tlist"    , "tlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_TLIST },
   { "tstat"    , "tstat"   , POS_DEAD    , do_tstat    , LVL_BUILDER, 0 },
 
   { "unlock"   , "unlock"  , POS_SITTING , do_gen_door , 0, SCMD_UNLOCK },
@@ -497,8 +498,8 @@ cpp_extern const struct command_info cmd_info[] = {
   { "write"    , "write"   , POS_STANDING, do_write    , 1, 0 },
 
   { "zreset"   , "zreset"  , POS_DEAD    , do_zreset   , LVL_BUILDER, 0 },
-  { "zedit"    , "zedit"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_ZEDIT },
-  { "zlist"    , "zlist"   , POS_DEAD    , do_oasis    , LVL_BUILDER, SCMD_OASIS_ZLIST },
+  { "zedit"    , "zedit"   , POS_DEAD    , do_oasis_zedit, LVL_BUILDER, 0 },
+  { "zlist"    , "zlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_ZLIST },
   { "zcheck"   , "zcheck"  , POS_DEAD    , do_zcheck   , LVL_GOD, 0 },
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
 

@@ -1,7 +1,6 @@
-                            tbaMUD README File
-                           ---------------------
 Updated: Apr 2007
-
+                                tbaMUD README
+				-------------
 All requests for help or bugs should be reported to: builderacademy.net 9091.
 
 Information about CircleMUD can be found at the CircleMUD Home Page and FTP:
@@ -32,29 +31,21 @@ Many of these instructions are outdated, please feel free to update them.
 AMIGA   - If you are using an Amiga running AmigaDOS. (If you're running 
           NetBSD or Linux on an Amiga, use README.UNIX instead.)
 ARC     - If you are using an Acorn running RiscOS.
-
 BORLAND - For those using Borland under Windows.
-
-CYGWIN  - If you are using Cygwin shell in Windows (Updated 12/2006).
-
+CYGWIN  - If you are using Cygwin shell in Windows.
 MSVC#   - If you are using MSVC.
-
 OS2     - If you are using OS/2 Warp Connect v3.0 or OS/2 v2.x.
-
 UNIX    - If you have any type UNIX system, including Linux, MkLinux, Ultrix, 
           HP/UX, Solaris, SunOS, IRIX, FreeBSD, OpenBSD, NetBSD, BSDi, 
           Macintosh OS X, etc.
-
 VMS     - If you happen to be on OpenVMS.
-
 WATCOM  - If using WATCOM under Windows.
-
 WIN     - If you are using Windows.
 
-If you are interested in porting tbaMUD to a new platform, see the
-file doc/porting.txt for some tips.
+If you are interested in porting tbaMUD to a new platform, see the file 
+doc/porting.txt for some tips.
 
-For a small, private MUD, or a MUD used only for testing and development,
+For a small, private MUD, or a MUD used only for testing and development, 
 about 10 megs of disk space and 16 megs of memory should be sufficient.
 For large, public MUDs with a large player base, 30 megs to 50 megs of
 disk space and at least 32 megs of memory are recommended.  Free memory

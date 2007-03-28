@@ -49,6 +49,10 @@ ACMD(do_oasis_medit)
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
+  /* No building as a mob or while being forced. */
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
+    return;
+    
   /* Parse any arguments */
   buf3 = two_arguments(argument, buf1, buf2);
 
@@ -763,7 +767,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
 
   case MEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_mobile(GET_MOB_RNUM(OLC_MOB(d))))
+      if (delete_mobile(GET_MOB_RNUM(OLC_MOB(d))) != NOBODY) 
         write_to_output(d, "Mobile deleted.\r\n");
       else
         write_to_output(d, "Couldn't delete the mobile!\r\n");

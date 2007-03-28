@@ -361,9 +361,9 @@ int delete_object(obj_rnum rnum)
   struct obj_data *obj, *tmp;
   int shop, j;
 
-  if (rnum == NOWHERE || rnum > top_of_objt)
-    return FALSE;
-
+  if (rnum == NOTHING || rnum > top_of_objt)
+    return NOTHING;
+  
   obj = &obj_proto[rnum];
 
   zone_rnum zrnum = real_zone_by_thing(GET_OBJ_VNUM(obj));
@@ -457,5 +457,5 @@ int delete_object(obj_rnum rnum)
 
   save_objects(zrnum);
 
-  return TRUE;
+  return rnum;
 }

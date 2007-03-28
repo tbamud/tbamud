@@ -8,7 +8,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "interpreter.h"
 #include "handler.h"
@@ -34,13 +33,7 @@ void aedit_setup_existing(struct descriptor_data *d, int real_num);
 void aedit_save_internally(struct descriptor_data *d);
 void aedit_save_to_disk(struct descriptor_data *d);
 
-/*
- * Utils and exported functions.
- */
-
-/*------------------------------------------------------------------------*\
-  Utils and exported functions.
-\*------------------------------------------------------------------------*/
+/* Utils and exported functions. */
 
 ACMD(do_oasis_aedit)
 {
@@ -48,7 +41,11 @@ ACMD(do_oasis_aedit)
   struct descriptor_data *d;
   int i;
 
-  if (CONFIG_NEW_SOCIALS == 0) {
+  /* No building as a mob or while being forced. */
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
+    return;
+    
+    if (CONFIG_NEW_SOCIALS == 0) {
     send_to_char(ch, "Socials cannot be edited at the moment.\r\n");
     return;
   }
@@ -81,9 +78,7 @@ ACMD(do_oasis_aedit)
     return;
   }
 
-  /*
-   * Give descriptor an OLC structure.
-   */
+  /* Give descriptor an OLC structure. */
   if (d->olc) {
     mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis: Player already had olc structure.");
     free(d->olc);
@@ -115,7 +110,6 @@ ACMD(do_oasis_aedit)
   mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing actions.", GET_NAME(ch));
 }
 
-
 void aedit_setup_new(struct descriptor_data *d) {
    CREATE(OLC_ACTION(d), struct social_messg, 1);
    OLC_ACTION(d)->command             = strdup(OLC_STORAGE(d));
@@ -140,8 +134,6 @@ void aedit_setup_new(struct descriptor_data *d) {
    aedit_disp_menu(d);
    OLC_VAL(d) = 0;
 }
-
-/*------------------------------------------------------------------------*/
 
 void aedit_setup_existing(struct descriptor_data *d, int real_num) {
    CREATE(OLC_ACTION(d), struct social_messg, 1);
@@ -181,8 +173,6 @@ void aedit_setup_existing(struct descriptor_data *d, int real_num) {
    aedit_disp_menu(d);
 }
 
-
-
 void aedit_save_internally(struct descriptor_data *d) {
    struct social_messg *new_soc_mess_list = NULL;
    int i;
@@ -211,9 +201,6 @@ void aedit_save_internally(struct descriptor_data *d) {
    add_to_save_list(AEDIT_PERMISSION, SL_ACTION);
    aedit_save_to_disk(d); /* autosave by Rumble */
 }
-
-
-/*------------------------------------------------------------------------*/
 
 void aedit_save_to_disk(struct descriptor_data *d) {
    FILE *fp;
@@ -257,11 +244,7 @@ void aedit_save_to_disk(struct descriptor_data *d) {
    remove_from_save_list(AEDIT_PERMISSION, SL_ACTION);
 }
 
-/*------------------------------------------------------------------------*/
-
-/* Menu functions */
-
-/* the main menu */
+/* The Main Menu. */
 void aedit_disp_menu(struct descriptor_data * d) {
    struct social_messg *action = OLC_ACTION(d);
    struct char_data *ch        = d->character;
@@ -332,10 +315,7 @@ void aedit_disp_menu(struct descriptor_data * d) {
 }
 
 
-/*
- * The main loop
- */
-
+/* The main loop. */
 void aedit_parse(struct descriptor_data * d, char *arg) {
    int i;
 

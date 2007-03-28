@@ -42,6 +42,10 @@ ACMD(do_oasis_zedit)
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
+  /* No building as a mob or while being forced. */
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
+    return;
+
   /* Parse any arguments. */
   buf3 = two_arguments(argument, buf1, buf2);
 
@@ -670,7 +674,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     case 'q':
     case 'Q':
       if (OLC_ZONE(d)->age || OLC_ZONE(d)->number) {
-	write_to_output(d, "Do you wish to save your changes? (y/n) : ");
+	write_to_output(d, "Do you wish to save your changes? : ");
 	OLC_MODE(d) = ZEDIT_CONFIRM_SAVESTRING;
       } else {
 	write_to_output(d, "No changes made.\r\n");

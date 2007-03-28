@@ -10,12 +10,10 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "db.h"
 #include "interpreter.h"
 #include "utils.h"
-
 
 /* external globals */
 extern int mini_mud;
@@ -41,7 +39,6 @@ void ASSIGNMOB(mob_vnum mob, SPECIAL(fname));
 void ASSIGNOBJ(obj_vnum obj, SPECIAL(fname));
 
 /* functions to perform assignments */
-
 void ASSIGNMOB(mob_vnum mob, SPECIAL(fname))
 {
   mob_rnum rnum;
@@ -72,11 +69,7 @@ void ASSIGNROOM(room_vnum room, SPECIAL(fname))
     log("SYSERR: Attempt to assign spec to non-existant room #%d", room);
 }
 
-
-/* ********************************************************************
-*  Assignments                                                        *
-******************************************************************** */
-
+/* Assignments */
 /* assign special procedures to mobiles */
 void assign_mobiles(void)
 {

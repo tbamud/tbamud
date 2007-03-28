@@ -62,6 +62,10 @@ ACMD(do_oasis_oedit)
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
+  /* No building as a mob or while being forced. */
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
+    return;
+    
   /* Parse any arguments. */
   buf3 = two_arguments(argument, buf1, buf2);
 
@@ -1175,7 +1179,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     break;
   case OEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_object(GET_OBJ_RNUM(OLC_OBJ(d))))
+      if (delete_object(GET_OBJ_RNUM(OLC_OBJ(d))) != NOTHING)
         write_to_output(d, "Object deleted.\r\n");
       else
         write_to_output(d, "Couldn't delete the object!\r\n");
