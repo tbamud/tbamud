@@ -10,7 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -54,9 +53,7 @@ ACMD(do_wear);
 ACMD(do_wield);
 ACMD(do_grab);
 
-
-void perform_put(struct char_data *ch, struct obj_data *obj,
-		      struct obj_data *cont)
+void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont)
 {
 
   if (!drop_otrigger(obj, ch))
@@ -65,7 +62,8 @@ void perform_put(struct char_data *ch, struct obj_data *obj,
   if (!obj) /* object might be extracted by drop_otrigger */
     return;
 
-  if (GET_OBJ_WEIGHT(cont) + GET_OBJ_WEIGHT(obj) > GET_OBJ_VAL(cont, 0))
+  if ((GET_OBJ_VAL(cont, 0) > 0) &&
+      (GET_OBJ_WEIGHT(cont) + GET_OBJ_WEIGHT(obj) > GET_OBJ_VAL(cont, 0)))
     act("$p won't fit in $P.", FALSE, ch, obj, cont, TO_CHAR);
   else if (OBJ_FLAGGED(obj, ITEM_NODROP) && IN_ROOM(cont) != NOWHERE)
     act("You can't get $p out of your hand.", FALSE, ch, obj, NULL, TO_CHAR);
@@ -85,17 +83,12 @@ void perform_put(struct char_data *ch, struct obj_data *obj,
   }
 }
 
-
-/* The following put modes are supported by the code below:
-
-	1) put <object> <container>
-	2) put all.<object> <container>
-	3) put all <container>
-
-	<container> must be in inventory or on ground.
-	all objects to be put into container must be in inventory.
-*/
-
+/* The following put modes are supported:
+     1) put <object> <container>
+     2) put all.<object> <container>
+     3) put all <container>
+   The <container> must be in inventory or on ground. All objects to be put 
+   into container must be in inventory. */
 ACMD(do_put)
 {
   char arg1[MAX_INPUT_LENGTH];
@@ -169,8 +162,6 @@ ACMD(do_put)
   }
 }
 
-
-
 int can_take_obj(struct char_data *ch, struct obj_data *obj)
 {
   if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)) {
@@ -185,7 +176,6 @@ int can_take_obj(struct char_data *ch, struct obj_data *obj)
   }
   return (1);
 }
-
 
 void get_check_money(struct char_data *ch, struct obj_data *obj)
 {
@@ -204,7 +194,6 @@ void get_check_money(struct char_data *ch, struct obj_data *obj)
     send_to_char(ch, "There were %d coins.\r\n", value);
 }
 
-
 void perform_get_from_container(struct char_data *ch, struct obj_data *obj,
 				     struct obj_data *cont, int mode)
 {
@@ -220,7 +209,6 @@ void perform_get_from_container(struct char_data *ch, struct obj_data *obj,
     }
   }
 }
-
 
 void get_from_container(struct char_data *ch, struct obj_data *cont,
 			     char *arg, int mode, int howmany)
@@ -272,7 +260,6 @@ void get_from_container(struct char_data *ch, struct obj_data *cont,
   }
 }
 
-
 int perform_get_from_room(struct char_data *ch, struct obj_data *obj)
 {
   if (can_take_obj(ch, obj) && get_otrigger(obj, ch)) {
@@ -285,7 +272,6 @@ int perform_get_from_room(struct char_data *ch, struct obj_data *obj)
   }
   return (0);
 }
-
 
 void get_from_room(struct char_data *ch, char *arg, int howmany)
 {
@@ -327,8 +313,6 @@ void get_from_room(struct char_data *ch, char *arg, int howmany)
   }
 }
 
-
-
 ACMD(do_get)
 {
   char arg1[MAX_INPUT_LENGTH];
@@ -351,8 +335,8 @@ ACMD(do_get)
     int amount = 1;
     if (is_number(arg1)) {
       amount = atoi(arg1);
-      strcpy(arg1, arg2);	/* strcpy: OK (sizeof: arg1 == arg2) */
-      strcpy(arg2, arg3);	/* strcpy: OK (sizeof: arg2 == arg3) */
+      strcpy(arg1, arg2); /* strcpy: OK (sizeof: arg1 == arg2) */
+      strcpy(arg2, arg3); /* strcpy: OK (sizeof: arg2 == arg3) */
     }
     cont_dotmode = find_all_dots(arg2);
     if (cont_dotmode == FIND_INDIV) {
@@ -400,9 +384,7 @@ ACMD(do_get)
   }
 }
 
-
-void perform_drop_gold(struct char_data *ch, int amount,
-		            byte mode, room_rnum RDR)
+void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_rnum RDR)
 {
   struct obj_data *obj;
 
@@ -412,7 +394,7 @@ void perform_drop_gold(struct char_data *ch, int amount,
     send_to_char(ch, "You don't have that many coins!\r\n");
   else {
     if (mode != SCMD_JUNK) {
-      WAIT_STATE(ch, PULSE_VIOLENCE);	/* to prevent coin-bombing */
+      WAIT_STATE(ch, PULSE_VIOLENCE); /* to prevent coin-bombing */
       obj = create_money(amount);
       if (mode == SCMD_DONATE) {
 	send_to_char(ch, "You throw some gold into the air where it disappears in a puff of smoke!\r\n");
@@ -446,10 +428,8 @@ void perform_drop_gold(struct char_data *ch, int amount,
   }
 }
 
-
 #define VANISH(mode) ((mode == SCMD_DONATE || mode == SCMD_JUNK) ? \
 		      "  It vanishes in a puff of smoke!" : "")
-
 int perform_drop(struct char_data *ch, struct obj_data *obj,
 		     byte mode, const char *sname, room_rnum RDR)
 {
@@ -493,17 +473,13 @@ int perform_drop(struct char_data *ch, struct obj_data *obj,
     return (value);
   default:
     log("SYSERR: Incorrect argument %d passed to perform_drop.", mode);
-    /*  SYSERR_DESC:
-     *  This error comes from perform_drop() and is output when perform_drop()
-     *  is called with an illegal 'mode' argument.
-     */
+    /* SYSERR_DESC: This error comes from perform_drop() and is output when 
+     * perform_drop() is called with an illegal 'mode' argument. */
     break;
   }
 
   return (0);
 }
-
-
 
 ACMD(do_drop)
 {
@@ -618,7 +594,6 @@ ACMD(do_drop)
   }
 }
 
-
 void perform_give(struct char_data *ch, struct char_data *vict,
 		       struct obj_data *obj)
 {
@@ -664,7 +639,6 @@ struct char_data *give_find_vict(struct char_data *ch, char *arg)
   return (NULL);
 }
 
-
 void perform_give_gold(struct char_data *ch, struct char_data *vict,
 		            int amount)
 {
@@ -693,7 +667,6 @@ void perform_give_gold(struct char_data *ch, struct char_data *vict,
   bribe_mtrigger(vict, ch, amount);
 }
 
-
 ACMD(do_give)
 {
   char arg[MAX_STRING_LENGTH];
@@ -713,7 +686,7 @@ ACMD(do_give)
       if ((vict = give_find_vict(ch, arg)) != NULL)
 	perform_give_gold(ch, vict, amount);
       return;
-    } else if (!*arg)	/* Give multiple code. */
+    } else if (!*arg) /* Give multiple code. */
       send_to_char(ch, "What do you want to give %d of?\r\n", amount);
     else if (!(vict = give_find_vict(ch, argument)))
       return;
@@ -756,8 +729,6 @@ ACMD(do_give)
   }
 }
 
-
-
 void weight_change_object(struct obj_data *obj, int weight)
 {
   struct obj_data *tmp_obj;
@@ -775,14 +746,11 @@ void weight_change_object(struct obj_data *obj, int weight)
     obj_to_obj(obj, tmp_obj);
   } else {
     log("SYSERR: Unknown attempt to subtract weight from an object.");
-    /*  SYSERR_DESC:
-     *  weight_change_object() outputs this error when weight is attempted to
-     *  be removed from an object that is not carried or in another object.
-     */
+    /* SYSERR_DESC: weight_change_object() outputs this error when weight is 
+     * attempted to be removed from an object that is not carried or in 
+     * another object. */
   }
 }
-
-
 
 void name_from_drinkcon(struct obj_data *obj)
 {
@@ -796,11 +764,9 @@ void name_from_drinkcon(struct obj_data *obj)
   liqname = drinknames[GET_OBJ_VAL(obj, 2)];
   if (!isname(liqname, obj->name)) {
     log("SYSERR: Can't remove liquid '%s' from '%s' (%d) item.", liqname, obj->name, obj->item_number);
-    /*  SYSERR_DESC:
-     *  From name_from_drinkcon(), this error comes about if the object
-     *  noted (by keywords and item vnum) does not contain the liquid string
-     *  being searched for.
-     */
+    /* SYSERR_DESC: From name_from_drinkcon(), this error comes about if the 
+     * object noted (by keywords and item vnum) does not contain the liquid 
+     * string being searched for. */
     return;
   }
 
@@ -820,16 +786,14 @@ void name_from_drinkcon(struct obj_data *obj)
       continue;
 
     if (*new_name)
-      strcat(new_name, " ");	/* strcat: OK (size precalculated) */
-    strncat(new_name, cur_name, cpylen);	/* strncat: OK (size precalculated) */
+      strcat(new_name, " "); /* strcat: OK (size precalculated) */
+    strncat(new_name, cur_name, cpylen); /* strncat: OK (size precalculated) */
   }
 
   if (GET_OBJ_RNUM(obj) == NOTHING || obj->name != obj_proto[GET_OBJ_RNUM(obj)].name)
     free(obj->name);
   obj->name = new_name;
 }
-
-
 
 void name_to_drinkcon(struct obj_data *obj, int type)
 {
@@ -839,15 +803,13 @@ void name_to_drinkcon(struct obj_data *obj, int type)
     return;
 
   CREATE(new_name, char, strlen(obj->name) + strlen(drinknames[type]) + 2);
-  sprintf(new_name, "%s %s", obj->name, drinknames[type]);	/* sprintf: OK */
+  sprintf(new_name, "%s %s", obj->name, drinknames[type]); /* sprintf: OK */
 
   if (GET_OBJ_RNUM(obj) == NOTHING || obj->name != obj_proto[GET_OBJ_RNUM(obj)].name)
     free(obj->name);
 
   obj->name = new_name;
 }
-
-
 
 ACMD(do_drink)
 {
@@ -859,7 +821,7 @@ ACMD(do_drink)
 
   one_argument(argument, arg);
 
-  if (IS_NPC(ch))	/* Cannot use GET_COND() on mobs. */
+  if (IS_NPC(ch)) /* Cannot use GET_COND() on mobs. */
     return;
 
   if (!*arg) {
@@ -921,11 +883,12 @@ ACMD(do_drink)
 
   amount = MIN(amount, GET_OBJ_VAL(temp, 1));
 
-  /* You can't subtract more than the object weighs */
-  weight = MIN(amount, GET_OBJ_WEIGHT(temp));
-
-  weight_change_object(temp, -weight);	/* Subtract amount */
-
+  /* You can't subtract more than the object weighs, unless its unlimited. */
+  if (GET_OBJ_VAL(temp, 0) > 0) {
+    weight = MIN(amount, GET_OBJ_WEIGHT(temp));
+    weight_change_object(temp, -weight); /* Subtract amount */
+  }
+  
   gain_condition(ch, DRUNK,  drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK]  * amount / 4);
   gain_condition(ch, HUNGER,   drink_aff[GET_OBJ_VAL(temp, 2)][HUNGER]   * amount / 4);
   gain_condition(ch, THIRST, drink_aff[GET_OBJ_VAL(temp, 2)][THIRST] * amount / 4);
@@ -939,7 +902,7 @@ ACMD(do_drink)
   if (GET_COND(ch, HUNGER) > 20)
     send_to_char(ch, "You are full.\r\n");
 
-  if (GET_OBJ_VAL(temp, 3)) {	/* The crap was poisoned ! */
+  if (GET_OBJ_VAL(temp, 3)) { /* The crap was poisoned ! */
     send_to_char(ch, "Oops, it tasted rather strange!\r\n");
     act("$n chokes and utters some strange sounds.", TRUE, ch, 0, 0, TO_ROOM);
 
@@ -950,17 +913,17 @@ ACMD(do_drink)
     af.bitvector = AFF_POISON;
     affect_join(ch, &af, FALSE, FALSE, FALSE, FALSE);
   }
-  /* empty the container, and no longer poison. */
-  GET_OBJ_VAL(temp, 1) -= amount;
-  if (!GET_OBJ_VAL(temp, 1)) {	/* The last bit */
-    name_from_drinkcon(temp);
-    GET_OBJ_VAL(temp, 2) = 0;
-    GET_OBJ_VAL(temp, 3) = 0;
+  /* Empty the container (unless unlimited), and no longer poison. */
+  if (GET_OBJ_VAL(temp, 0) > 0) {
+    GET_OBJ_VAL(temp, 1) -= amount;
+    if (!GET_OBJ_VAL(temp, 1)) { /* The last bit */
+      name_from_drinkcon(temp);
+      GET_OBJ_VAL(temp, 2) = 0;
+      GET_OBJ_VAL(temp, 3) = 0;
+    }
   }
   return;
 }
-
-
 
 ACMD(do_eat)
 {
@@ -971,7 +934,7 @@ ACMD(do_eat)
 
   one_argument(argument, arg);
 
-  if (IS_NPC(ch))	/* Cannot use GET_COND() on mobs. */
+  if (IS_NPC(ch)) /* Cannot use GET_COND() on mobs. */
     return;
 
   if (!*arg) {
@@ -991,12 +954,12 @@ ACMD(do_eat)
     send_to_char(ch, "You can't eat THAT!\r\n");
     return;
   }
-  if (GET_COND(ch, HUNGER) > 20) {/* Stomach full */
+  if (GET_COND(ch, HUNGER) > 20) { /* Stomach full */
     send_to_char(ch, "You are too full to eat more!\r\n");
     return;
   }
 
-  if (!consume_otrigger(food, ch, OCMD_EAT))  /* check trigger */
+  if (!consume_otrigger(food, ch, OCMD_EAT)) /* check trigger */
     return;
 
   if (subcmd == SCMD_EAT) {
@@ -1036,17 +999,16 @@ ACMD(do_eat)
   }
 }
 
-
 ACMD(do_pour)
 {
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
   struct obj_data *from_obj = NULL, *to_obj = NULL;
-  int amount;
+  int amount = 0;
 
   two_arguments(argument, arg1, arg2);
 
   if (subcmd == SCMD_POUR) {
-    if (!*arg1) {		/* No arguments */
+    if (!*arg1) { /* No arguments */
       send_to_char(ch, "From what do you want to pour?\r\n");
       return;
     }
@@ -1060,7 +1022,7 @@ ACMD(do_pour)
     }
   }
   if (subcmd == SCMD_FILL) {
-    if (!*arg1) {		/* no arguments */
+    if (!*arg1) { /* no arguments */
       send_to_char(ch, "What do you want to fill?  And what are you filling it from?\r\n");
       return;
     }
@@ -1072,7 +1034,7 @@ ACMD(do_pour)
       act("You can't fill $p!", FALSE, ch, to_obj, 0, TO_CHAR);
       return;
     }
-    if (!*arg2) {		/* no 2nd argument */
+    if (!*arg2) { /* no 2nd argument */
       act("What do you want to fill $p from?", FALSE, ch, to_obj, 0, TO_CHAR);
       return;
     }
@@ -1089,21 +1051,25 @@ ACMD(do_pour)
     act("The $p is empty.", FALSE, ch, from_obj, 0, TO_CHAR);
     return;
   }
-  if (subcmd == SCMD_POUR) {	/* pour */
+  if (subcmd == SCMD_POUR) { /* pour */
     if (!*arg2) {
       send_to_char(ch, "Where do you want it?  Out or in what?\r\n");
       return;
     }
     if (!str_cmp(arg2, "out")) {
-      act("$n empties $p.", TRUE, ch, from_obj, 0, TO_ROOM);
-      act("You empty $p.", FALSE, ch, from_obj, 0, TO_CHAR);
+      if (GET_OBJ_VAL(from_obj, 0) > 0) {
+        act("$n empties $p.", TRUE, ch, from_obj, 0, TO_ROOM);
+        act("You empty $p.", FALSE, ch, from_obj, 0, TO_CHAR);
 
-      weight_change_object(from_obj, -GET_OBJ_VAL(from_obj, 1)); /* Empty */
+        weight_change_object(from_obj, -GET_OBJ_VAL(from_obj, 1)); /* Empty */
 
-      name_from_drinkcon(from_obj);
-      GET_OBJ_VAL(from_obj, 1) = 0;
-      GET_OBJ_VAL(from_obj, 2) = 0;
-      GET_OBJ_VAL(from_obj, 3) = 0;
+        name_from_drinkcon(from_obj);
+        GET_OBJ_VAL(from_obj, 1) = 0;
+        GET_OBJ_VAL(from_obj, 2) = 0;
+        GET_OBJ_VAL(from_obj, 3) = 0;
+      }
+      else
+        send_to_char(ch, "You can't possibly pour that container out!\r\n");
 
       return;
     }
@@ -1121,8 +1087,8 @@ ACMD(do_pour)
     send_to_char(ch, "A most unproductive effort.\r\n");
     return;
   }
-  if ((GET_OBJ_VAL(to_obj, 1) != 0) &&
-      (GET_OBJ_VAL(to_obj, 2) != GET_OBJ_VAL(from_obj, 2))) {
+  if ((GET_OBJ_VAL(to_obj, 0) < 0) ||
+      (!(GET_OBJ_VAL(to_obj, 1) < GET_OBJ_VAL(to_obj, 0)))) {
     send_to_char(ch, "There is already another liquid in it!\r\n");
     return;
   }
@@ -1145,26 +1111,32 @@ ACMD(do_pour)
   GET_OBJ_VAL(to_obj, 2) = GET_OBJ_VAL(from_obj, 2);
 
   /* Then how much to pour */
-  GET_OBJ_VAL(from_obj, 1) -= (amount =
-			 (GET_OBJ_VAL(to_obj, 0) - GET_OBJ_VAL(to_obj, 1)));
+  if (GET_OBJ_VAL(from_obj, 0) > 0) {
+    GET_OBJ_VAL(from_obj, 1) -= (amount =
+        (GET_OBJ_VAL(to_obj, 0) - GET_OBJ_VAL(to_obj, 1)));
 
-  GET_OBJ_VAL(to_obj, 1) = GET_OBJ_VAL(to_obj, 0);
+    GET_OBJ_VAL(to_obj, 1) = GET_OBJ_VAL(to_obj, 0);
 
-  if (GET_OBJ_VAL(from_obj, 1) < 0) {	/* There was too little */
-    GET_OBJ_VAL(to_obj, 1) += GET_OBJ_VAL(from_obj, 1);
-    amount += GET_OBJ_VAL(from_obj, 1);
-    name_from_drinkcon(from_obj);
-    GET_OBJ_VAL(from_obj, 1) = 0;
-    GET_OBJ_VAL(from_obj, 2) = 0;
-    GET_OBJ_VAL(from_obj, 3) = 0;
+    if (GET_OBJ_VAL(from_obj, 1) < 0) {	/* There was too little */
+      GET_OBJ_VAL(to_obj, 1) += GET_OBJ_VAL(from_obj, 1);
+      amount += GET_OBJ_VAL(from_obj, 1);
+      name_from_drinkcon(from_obj);
+      GET_OBJ_VAL(from_obj, 1) = 0;
+      GET_OBJ_VAL(from_obj, 2) = 0;
+      GET_OBJ_VAL(from_obj, 3) = 0;
+    }
   }
-  /* Then the poison boogie */
-  GET_OBJ_VAL(to_obj, 3) =
-    (GET_OBJ_VAL(to_obj, 3) || GET_OBJ_VAL(from_obj, 3));
+  else
+    GET_OBJ_VAL(to_obj, 1) = GET_OBJ_VAL(to_obj, 0);
 
-  /* And the weight boogie */
-  weight_change_object(from_obj, -amount);
-  weight_change_object(to_obj, amount);	/* Add weight */
+  /* Poisoned? */
+  GET_OBJ_VAL(to_obj, 3) = (GET_OBJ_VAL(to_obj, 3) || GET_OBJ_VAL(from_obj, 3))
+;
+  /* Weight change, except for unlimited. */
+  if (GET_OBJ_VAL(from_obj, 0) > 0) {
+    weight_change_object(from_obj, -amount);
+  }
+  weight_change_object(to_obj, amount); /* Add weight */
 }
 
 void wear_message(struct char_data *ch, struct obj_data *obj, int where)

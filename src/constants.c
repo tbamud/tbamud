@@ -301,8 +301,8 @@ const char *item_types[] = {
   "WAND",
   "STAFF",
   "WEAPON",
-  "FIRE WEAPON",
-  "MISSILE",
+  "FURNITURE",
+  "UNDEFINED",
   "TREASURE",
   "ARMOR",
   "POTION",
@@ -319,7 +319,6 @@ const char *item_types[] = {
   "PEN",
   "BOAT",
   "FOUNTAIN",
-  "CHAIR",
   "\n"
 };
 

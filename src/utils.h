@@ -91,9 +91,9 @@ void	gain_condition(struct char_data *ch, int condition, int value);
 void	point_update(void);
 void	update_pos(struct char_data *victim);
 
-void char_from_chair(struct char_data *ch);
-#define SITTING(ch)             ((ch)->char_specials.chair)
-#define NEXT_SITTING(ch)        ((ch)->char_specials.next_in_chair)
+void char_from_furniture(struct char_data *ch);
+#define SITTING(ch)             ((ch)->char_specials.furniture)
+#define NEXT_SITTING(ch)        ((ch)->char_specials.next_in_furniture)
 #define OBJ_SAT_IN_BY(obj)      ((obj)->sitting_here)
 
 /* various constants */

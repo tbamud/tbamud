@@ -78,11 +78,9 @@ chair~
 a squishy armchair~
 A large squishy armchair sits in front of the fireplace.~
 ~
-24 0 a 0
-1 0 0 0
+6 0 a 0
+2 0 0 0
 1 1 0 0
-T 1209
-T 1286
 E
 chair armchair squishy~
    This chair has large red leather cushions, on the seat and back.  Strange
@@ -104,7 +102,7 @@ a spring well~
 A mountain spring bubbles up fresh water here.~
 ~
 23 0 0 0
-500 500 15 0
+-1 0 0 0
 0 0 0 0
 E
 spring fountain water~
@@ -294,13 +292,13 @@ A piece of fireworks is planted in a champagne bottle.~
 0 0 0 0
 T 1297
 E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
-~
-E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
+~
+E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~

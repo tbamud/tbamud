@@ -308,7 +308,7 @@ void look_at_char(struct char_data *i, struct char_data *ch)
 
 void list_one_char(struct char_data *i, struct char_data *ch)
 {
-  struct obj_data *chair;
+  struct obj_data *furniture;
   const char *positions[] = {
     " is lying here, dead.",
     " is lying here, mortally wounded.",
@@ -366,10 +366,10 @@ void list_one_char(struct char_data *i, struct char_data *ch)
     if (!SITTING(i))
       send_to_char(ch, "%s", positions[(int) GET_POS(i)]);
   else {
-    chair = SITTING(i);
-    send_to_char(ch, " is %s upon %s.", ((GET_POS(i) == POS_SITTING) ? 
-        "sitting" : "resting"), (CAN_SEE_OBJ(ch, chair) ? 
-        chair->short_description : "something"));
+    furniture = SITTING(i);
+    send_to_char(ch, " is %s upon %s.", ((GET_POS(i) == POS_SLEEPING) ? 
+        "sleeping" : "sitting"), (CAN_SEE_OBJ(ch, furniture) ? 
+        furniture->short_description : "something"));
     }
   } else {
     if (FIGHTING(i)) {
@@ -564,9 +564,15 @@ void look_in_obj(struct char_data *ch, char *arg)
       if (GET_OBJ_VAL(obj, 1) <= 0)
 	send_to_char(ch, "It is empty.\r\n");
       else {
-	if (GET_OBJ_VAL(obj,0) <= 0 || GET_OBJ_VAL(obj,1)>GET_OBJ_VAL(obj,0)) {
-	  send_to_char(ch, "Its contents seem somewhat murky.\r\n"); /* BUG */
-	} else {
+        if (GET_OBJ_VAL(obj, 0) < 0)
+        {
+          char buf2[MAX_STRING_LENGTH];
+          sprinttype(GET_OBJ_VAL(obj, 2), color_liquid, buf2, sizeof(buf2));
+          send_to_char(ch, "It's full of a %s liquid.\r\n", buf2);
+        }
+	else if (GET_OBJ_VAL(obj,1)>GET_OBJ_VAL(obj,0)) 
+          send_to_char(ch, "Its contents seem somewhat murky.\r\n"); /* BUG */
+        else {
           char buf2[MAX_STRING_LENGTH];
 	  amt = (GET_OBJ_VAL(obj, 1) * 3) / GET_OBJ_VAL(obj, 0);
 	  sprinttype(GET_OBJ_VAL(obj, 2), color_liquid, buf2, sizeof(buf2));
@@ -822,8 +828,8 @@ ACMD(do_score)
     if (!SITTING(ch))
       send_to_char(ch, "You are sitting.\r\n");
     else {
-      struct obj_data *chair = SITTING(ch);
-      send_to_char(ch, "You are sitting upon %s.\r\n", chair->short_description);
+      struct obj_data *furniture = SITTING(ch);
+      send_to_char(ch, "You are sitting upon %s.\r\n", furniture->short_description);
     }
     break;
   case POS_FIGHTING:

@@ -294,8 +294,8 @@
 #define ITEM_WAND       3		/* Item is a wand		*/
 #define ITEM_STAFF      4		/* Item is a staff		*/
 #define ITEM_WEAPON     5		/* Item is a weapon		*/
-#define ITEM_FIREWEAPON 6		/* Unimplemented		*/
-#define ITEM_MISSILE    7		/* Unimplemented		*/
+#define ITEM_FURNITURE  6		/* Sittable Furniture		*/
+#define ITEM_UNDEFINED  7		/* Unimplemented		*/
 #define ITEM_TREASURE   8		/* Item is a treasure, not gold	*/
 #define ITEM_ARMOR      9		/* Item is armor		*/
 #define ITEM_POTION    10 		/* Item is a potion		*/
@@ -312,7 +312,6 @@
 #define ITEM_PEN       21		/* Item is a pen		*/
 #define ITEM_BOAT      22		/* Item is a boat		*/
 #define ITEM_FOUNTAIN  23		/* Item is a fountain		*/
-#define ITEM_CHAIR     24		/* Item is a chair		*/
 
 /* Take/Wear flags: used by obj_data.obj_flags.wear_flags */
 #define ITEM_WEAR_TAKE		(1 << 0)  /* Item can be taken		*/
@@ -747,8 +746,8 @@ struct char_special_data_saved {
 struct char_special_data {
    struct char_data *fighting;	/* Opponent				*/
    struct char_data *hunting;	/* Char hunted by this char		*/
-   struct obj_data *chair;      /* Object the char is sitting in        */
-   struct char_data *next_in_chair;     /* The next person in the chair */
+   struct obj_data *furniture;      /* Object the char is sitting in        */
+   struct char_data *next_in_furniture; /* The next person sitting */
 
    byte position;		/* Standing, fighting, sleeping, etc.	*/
 

@@ -744,8 +744,8 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
   case ITEM_MONEY:
     send_to_char(ch, "Coins: %d\r\n", GET_OBJ_VAL(j, 0));
     break;
-  case ITEM_CHAIR:
-    send_to_char(ch, "Can hold: [%d] Num. of People in Chair: [%d]\r\n", GET_OBJ_VAL(j, 0), GET_OBJ_VAL(j, 1));
+  case ITEM_FURNITURE:
+    send_to_char(ch, "Can hold: [%d] Num. of People in: [%d]\r\n", GET_OBJ_VAL(j, 0), GET_OBJ_VAL(j, 1));
     send_to_char(ch, "Holding : ");
     for (tempch = OBJ_SAT_IN_BY(j); tempch; tempch = NEXT_SITTING(tempch))
       send_to_char(ch, "%s ", GET_NAME(tempch));

@@ -2667,7 +2667,7 @@ void reset_char(struct char_data *ch)
   ch->next_fighting = NULL;
   ch->next_in_room = NULL;
   FIGHTING(ch) = NULL;
-  char_from_chair(ch);
+  char_from_furniture(ch);
   ch->char_specials.position = POS_STANDING;
   ch->mob_specials.default_pos = POS_STANDING;
   ch->char_specials.carry_weight = 0;
@@ -2922,7 +2922,8 @@ int check_object(struct obj_data *obj)
   }
   /* Fall through. */
   case ITEM_FOUNTAIN:
-    if (GET_OBJ_VAL(obj, 1) > GET_OBJ_VAL(obj, 0) && (error = TRUE))
+    if ((GET_OBJ_VAL(obj,0) > 0) && (GET_OBJ_VAL(obj, 1) > GET_OBJ_VAL(obj, 0) 
+        && (error = TRUE)))
       log("SYSERR: Object #%d (%s) contains (%d) more than maximum (%d).",
 		GET_OBJ_VNUM(obj), obj->short_description,
 		GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 0));
@@ -2957,7 +2958,7 @@ int check_object(struct obj_data *obj)
       } while (onealias && *onealias);
     }
   break;
-  case ITEM_CHAIR:
+  case ITEM_FURNITURE:
     if (GET_OBJ_VAL(obj, 1) > GET_OBJ_VAL(obj, 0) && (error = TRUE))
       log("SYSERR: Object #%d (%s) contains (%d) more than maximum (%d).",
           GET_OBJ_VNUM(obj), obj->short_description, GET_OBJ_VAL(obj, 1), 

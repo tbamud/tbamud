@@ -611,6 +611,7 @@ int count_color_chars(char *string)
   }
   return num;
 }
+
 /* Rules (unless overridden by ROOM_DARK): Inside and City rooms are always 
  * lit. Outside rooms are dark at sunset and night. */
 int room_is_dark(room_rnum room)
@@ -663,24 +664,24 @@ int levenshtein_distance(char *s1, char *s2)
   return k; 
 }
 
-void char_from_chair(struct char_data *ch)
+void char_from_furniture(struct char_data *ch)
 {
-  struct obj_data *chair;
+  struct obj_data *furniture;
   struct char_data *tempch;
   int i, found = 0;
 
   if (!SITTING(ch))
     return;
 
-  if (!(chair = SITTING(ch))){
-    log("SYSERR: ACK, no chair for char in char from chair");
+  if (!(furniture = SITTING(ch))){
+    log("SYSERR: No furniture for char in char_from_furniture.");
     SITTING(ch) = NULL;
     NEXT_SITTING(ch) = NULL;
     return;
   }
   
-  if (!(tempch = OBJ_SAT_IN_BY(chair))){
-    log("SYSERR: Char from chair, but no chair!");
+  if (!(tempch = OBJ_SAT_IN_BY(furniture))){
+    log("SYSERR: Char from furniture, but no furniture!");
     SITTING(ch) = NULL;
     NEXT_SITTING(ch) = NULL;
     return;
@@ -688,28 +689,28 @@ void char_from_chair(struct char_data *ch)
     
   if (tempch == ch){
     if (!NEXT_SITTING(ch))  
-         OBJ_SAT_IN_BY(chair) = NULL;
+      OBJ_SAT_IN_BY(furniture) = NULL;
     else
-         OBJ_SAT_IN_BY(chair) = NEXT_SITTING(ch);
-    GET_OBJ_VAL(chair, 1) -= 1;
+      OBJ_SAT_IN_BY(furniture) = NEXT_SITTING(ch);
+    GET_OBJ_VAL(furniture, 1) -= 1;
     SITTING(ch) = NULL;
     NEXT_SITTING(ch) = NULL;
     return;
   }
 
-  for (i = 0; i < GET_OBJ_VAL(chair, 1) && found == 0; i++){
-    if (NEXT_SITTING(tempch) == ch){
+  for (i = 0; i < GET_OBJ_VAL(furniture, 1) && found == 0; i++){
+    if (NEXT_SITTING(tempch) != ch){
       NEXT_SITTING(tempch) = NEXT_SITTING(ch);
       found++;
     }   
   }
   if (found)
-    log("SYSERR: Char flagged as sitting, but not in chair");
+    log("SYSERR: Char flagged as sitting, but not in furniture.");
   else
-    GET_OBJ_VAL(chair, 1) -= 1;
+    GET_OBJ_VAL(furniture, 1) -= 1;
    
   SITTING(ch) = NULL;
   NEXT_SITTING(ch) = NULL;
- 
+
  return;
 }

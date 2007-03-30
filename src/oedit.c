@@ -443,11 +443,11 @@ void oedit_disp_val1_menu(struct descriptor_data *d)
     write_to_output(d, "Apply to AC : ");
     break;
   case ITEM_CONTAINER:
-    write_to_output(d, "Max weight to contain : ");
+    write_to_output(d, "Max weight to contain (-1 for unlimited) : ");
     break;
   case ITEM_DRINKCON:
   case ITEM_FOUNTAIN:
-    write_to_output(d, "Max drink units : ");
+    write_to_output(d, "Max drink units (-1 for unlimited) : ");
     break;
   case ITEM_FOOD:
     write_to_output(d, "Hours to fill stomach : ");
@@ -457,8 +457,8 @@ void oedit_disp_val1_menu(struct descriptor_data *d)
     break;
   case ITEM_NOTE:
     break;
-  case ITEM_CHAIR:
-    write_to_output(d, "Number of people the chair can hold : ");
+  case ITEM_FURNITURE:
+    write_to_output(d, "Number of people it can hold : ");
     break;
   default:
     oedit_disp_menu(d);
@@ -946,8 +946,8 @@ void oedit_parse(struct descriptor_data *d, char *arg)
   case OEDIT_VALUE_1:
     number = atoi(arg);
     switch (GET_OBJ_TYPE(OLC_OBJ(d))) {
-    case ITEM_CHAIR:
-      if (number < 0 || number > MAX_PEOPLE_IN_CHAIR)
+    case ITEM_FURNITURE:
+      if (number < 0 || number > MAX_PEOPLE)
         oedit_disp_val1_menu(d);
       else {
         GET_OBJ_VAL(OLC_OBJ(d), 0) = number;
@@ -958,7 +958,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       GET_OBJ_VAL(OLC_OBJ(d), 0) = MIN(MAX(atoi(arg), -50), 50);
       break;
     case ITEM_CONTAINER:
-      GET_OBJ_VAL(OLC_OBJ(d), 0) = LIMIT(atoi(arg), 0, MAX_CONTAINER_SIZE);
+      GET_OBJ_VAL(OLC_OBJ(d), 0) = LIMIT(atoi(arg), -1, MAX_CONTAINER_SIZE);
       break;
     default:
       GET_OBJ_VAL(OLC_OBJ(d), 0) = atoi(arg);

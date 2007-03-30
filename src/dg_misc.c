@@ -306,8 +306,8 @@ int valid_dg_target(struct char_data *ch, int bitvector)
 void script_damage(struct char_data *vict, int dam)
 {
   if (GET_LEVEL(vict)>=LVL_IMMORT && (dam > 0)) {
-    send_to_char(vict, "Being the cool immortal you are, you sidestep a trap,\r\n"
-                       "obviously placed to kill you.\r\n");
+    send_to_char(vict, "Being the cool immortal you are, you sidestep a trap, "
+        "obviously placed to kill you.\r\n");
     return;
   }
 
@@ -320,7 +320,7 @@ void script_damage(struct char_data *vict, int dam)
   if (GET_POS(vict) == POS_DEAD) {
     if (!IS_NPC(vict))
       mudlog( BRF, 0, TRUE, "%s killed by script at %s",
-                            GET_NAME(vict), world[vict->in_room].name);
+          GET_NAME(vict), world[vict->in_room].name);
     die(vict, NULL);
   }
 }

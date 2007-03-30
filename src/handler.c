@@ -10,7 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -51,7 +50,7 @@ char *fname(const char *namelist)
 }
 
 /* Stock isname().  Leave this here even if you put in a newer  *
- * isname().  Used for OasisOLC.                                */
+ * isname().  Used for OasisOLC. */
 int is_name(const char *str, const char *namelist)
 {
   const char *curname, *curstr;
@@ -107,8 +106,6 @@ int isname(const char *str, const char *namelist)
      return 0;
 }
 
-
-
 void affect_modify(struct char_data *ch, byte loc, sbyte mod,
                    bitvector_t bitv, bool add)
 {
@@ -146,14 +143,11 @@ void affect_modify(struct char_data *ch, byte loc, sbyte mod,
     /* ??? GET_CLASS(ch) += mod; */
     break;
 
-  /*
-   * My personal thoughts on these two would be to set the person to the
-   * value of the apply.  That way you won't have to worry about people
-   * making +1 level things to be imp (you restrict anything that gives
-   * immortal level of course).  It also makes more sense to set someone
-   * to a class rather than adding to the class number. -gg
-   */
-
+  /* My personal thoughts on these two would be to set the person to the value 
+   * of the apply.  That way you won't have to worry about people making +1 
+   * level things to be imp (you restrict anything that gives immortal level of
+   * course).  It also makes more sense to set someone to a class rather than 
+   * adding to the class number. -gg */
   case APPLY_LEVEL:
     /* ??? GET_LEVEL(ch) += mod; */
     break;
@@ -227,10 +221,8 @@ void affect_modify(struct char_data *ch, byte loc, sbyte mod,
   } /* switch */
 }
 
-
-
-/* This updates a character by subtracting everything he is affected by */
-/* restoring original abilities, and then affecting all again           */
+/* This updates a character by subtracting everything he is affected by 
+ * restoring original abilities, and then affecting all again. */
 void affect_total(struct char_data *ch)
 {
   struct affected_type *af;
@@ -258,12 +250,10 @@ void affect_total(struct char_data *ch)
 		      GET_OBJ_AFFECT(GET_EQ(ch, i)), TRUE);
   }
 
-
   for (af = ch->affected; af; af = af->next)
     affect_modify(ch, af->location, af->modifier, af->bitvector, TRUE);
 
   /* Make certain values are between 0..25, not < 0 and not > 25! */
-
   i = (IS_NPC(ch) || GET_LEVEL(ch) >= LVL_GRGOD) ? 25 : 18;
 
   GET_DEX(ch) = MAX(0, MIN(GET_DEX(ch), i));
@@ -284,10 +274,8 @@ void affect_total(struct char_data *ch)
   }
 }
 
-
-
-/* Insert an affect_type in a char_data structure
-   Automatically sets apropriate bits and apply's */
+/* Insert an affect_type in a char_data structure. Automatically sets 
+ * apropriate bits and apply's */
 void affect_to_char(struct char_data *ch, struct affected_type *af)
 {
   struct affected_type *affected_alloc;
@@ -302,13 +290,9 @@ void affect_to_char(struct char_data *ch, struct affected_type *af)
   affect_total(ch);
 }
 
-
-
-/*
- * Remove an affected_type structure from a char (called when duration
- * reaches zero). Pointer *af must never be NIL!  Frees mem and calls
- * affect_location_apply
- */
+/* Remove an affected_type structure from a char (called when duration reaches 
+ * zero). Pointer *af must never be NIL!  Frees mem and calls 
+ * affect_location_apply */
 void affect_remove(struct char_data *ch, struct affected_type *af)
 {
   struct affected_type *temp;
@@ -324,8 +308,6 @@ void affect_remove(struct char_data *ch, struct affected_type *af)
   affect_total(ch);
 }
 
-
-
 /* Call affect_remove with every spell of spelltype "skill" */
 void affect_from_char(struct char_data *ch, int type)
 {
@@ -338,12 +320,8 @@ void affect_from_char(struct char_data *ch, int type)
   }
 }
 
-
-
-/*
- * Return TRUE if a char is affected by a spell (SPELL_XXX),
- * FALSE indicates not affected.
- */
+/* Return TRUE if a char is affected by a spell (SPELL_XXX), FALSE indicates 
+ * not affected. */
 bool affected_by_spell(struct char_data *ch, int type)
 {
   struct affected_type *hjp;
@@ -354,8 +332,6 @@ bool affected_by_spell(struct char_data *ch, int type)
 
   return (FALSE);
 }
-
-
 
 void affect_join(struct char_data *ch, struct affected_type *af,
 		      bool add_dur, bool avg_dur, bool add_mod, bool avg_mod)
@@ -386,7 +362,6 @@ void affect_join(struct char_data *ch, struct affected_type *af,
     affect_to_char(ch, af);
 }
 
-
 /* move a player out of a room */
 void char_from_room(struct char_data *ch)
 {
@@ -409,7 +384,6 @@ void char_from_room(struct char_data *ch)
   IN_ROOM(ch) = NOWHERE;
   ch->next_in_room = NULL;
 }
-
 
 /* place a character in a room */
 void char_to_room(struct char_data *ch, room_rnum room)
@@ -435,8 +409,7 @@ void char_to_room(struct char_data *ch, room_rnum room)
   }
 }
 
-
-/* give an object to a char   */
+/* Give an object to a char. */
 void obj_to_char(struct obj_data *object, struct char_data *ch)
 {
   if (object && ch) {
@@ -453,7 +426,6 @@ void obj_to_char(struct obj_data *object, struct char_data *ch)
   } else
     log("SYSERR: NULL obj (%p) or char (%p) passed to obj_to_char.", object, ch);
 }
-
 
 /* take an object from a char */
 void obj_from_char(struct obj_data *object)
@@ -475,8 +447,6 @@ void obj_from_char(struct obj_data *object)
   object->carried_by = NULL;
   object->next_content = NULL;
 }
-
-
 
 /* Return the effect of a piece of armor in position eq_pos */
 int apply_ac(struct char_data *ch, int eq_pos)
@@ -573,8 +543,6 @@ void equip_char(struct char_data *ch, struct obj_data *obj, int pos)
   affect_total(ch);
 }
 
-
-
 struct obj_data *unequip_char(struct char_data *ch, int pos)
 {
   int j;
@@ -611,7 +579,6 @@ struct obj_data *unequip_char(struct char_data *ch, int pos)
   return (obj);
 }
 
-
 int get_number(char **name)
 {
   int i;
@@ -634,8 +601,6 @@ int get_number(char **name)
   return (1);
 }
 
-
-
 /* Search a given list for an object number, and return a ptr to that obj */
 struct obj_data *get_obj_in_list_num(int num, struct obj_data *list)
 {
@@ -648,8 +613,6 @@ struct obj_data *get_obj_in_list_num(int num, struct obj_data *list)
   return (NULL);
 }
 
-
-
 /* search the entire world for an object number, and return a pointer  */
 struct obj_data *get_obj_num(obj_rnum nr)
 {
@@ -661,8 +624,6 @@ struct obj_data *get_obj_num(obj_rnum nr)
 
   return (NULL);
 }
-
-
 
 /* search a room for a char, and return a pointer if found..  */
 struct char_data *get_char_room(char *name, int *number, room_rnum room)
@@ -686,8 +647,6 @@ struct char_data *get_char_room(char *name, int *number, room_rnum room)
   return (NULL);
 }
 
-
-
 /* search all over the world for a char num, and return a pointer if found */
 struct char_data *get_char_num(mob_rnum nr)
 {
@@ -699,8 +658,6 @@ struct char_data *get_char_num(mob_rnum nr)
 
   return (NULL);
 }
-
-
 
 /* put an object in a room */
 void obj_to_room(struct obj_data *object, room_rnum room)
@@ -717,7 +674,6 @@ void obj_to_room(struct obj_data *object, room_rnum room)
       SET_BIT(ROOM_FLAGS(room), ROOM_HOUSE_CRASH);
   }
 }
-
 
 /* Take an object from a room */
 void obj_from_room(struct obj_data *object)
@@ -738,7 +694,6 @@ void obj_from_room(struct obj_data *object)
   object->next_content = NULL;
 }
 
-
 /* put an object in an object (quaint)  */
 void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
 {
@@ -753,16 +708,19 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
   obj->next_content = obj_to->contains;
   obj_to->contains = obj;
   obj->in_obj = obj_to;
+  tmp_obj = obj->in_obj;
 
-  for (tmp_obj = obj->in_obj; tmp_obj->in_obj; tmp_obj = tmp_obj->in_obj)
+  /* Add weight to container, unless unlimited. */
+  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {	  
+    for (tmp_obj = obj->in_obj; tmp_obj->in_obj; tmp_obj = tmp_obj->in_obj)
+      GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
+
+    /* top level object.  Subtract weight from inventory if necessary. */
     GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
-
-  /* top level object.  Subtract weight from inventory if necessary. */
-  GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
-  if (tmp_obj->carried_by)
-    IS_CARRYING_W(tmp_obj->carried_by) += GET_OBJ_WEIGHT(obj);
+    if (tmp_obj->carried_by)
+      IS_CARRYING_W(tmp_obj->carried_by) += GET_OBJ_WEIGHT(obj);
+  }
 }
-
 
 /* remove an object from an object */
 void obj_from_obj(struct obj_data *obj)
@@ -774,21 +732,22 @@ void obj_from_obj(struct obj_data *obj)
     return;
   }
   obj_from = obj->in_obj;
+  temp = obj->in_obj;
   REMOVE_FROM_LIST(obj, obj_from->contains, next_content);
 
-  /* Subtract weight from containers container */
-  for (temp = obj->in_obj; temp->in_obj; temp = temp->in_obj)
+  /* Subtract weight from containers container unless unlimited. */
+  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {
+    for (temp = obj->in_obj; temp->in_obj; temp = temp->in_obj)
+      GET_OBJ_WEIGHT(temp) -= GET_OBJ_WEIGHT(obj);
+
+    /* Subtract weight from char that carries the object */
     GET_OBJ_WEIGHT(temp) -= GET_OBJ_WEIGHT(obj);
-
-  /* Subtract weight from char that carries the object */
-  GET_OBJ_WEIGHT(temp) -= GET_OBJ_WEIGHT(obj);
-  if (temp->carried_by)
-    IS_CARRYING_W(temp->carried_by) -= GET_OBJ_WEIGHT(obj);
-
+    if (temp->carried_by)
+      IS_CARRYING_W(temp->carried_by) -= GET_OBJ_WEIGHT(obj);
+  }
   obj->in_obj = NULL;
   obj->next_content = NULL;
 }
-
 
 /* Set all carried_by to point to new owner */
 void object_list_new_owner(struct obj_data *list, struct char_data *ch)
@@ -982,7 +941,6 @@ void extract_char_final(struct char_data *ch)
     free_char(ch);
 }
 
-
 /* Why do we do this? Because trying to iterate over the character list with 
  * 'ch = ch->next' does bad things if the current character happens to die. The
  * trivial workaround of 'vict = next_vict' doesn't work if the _next_ person 
@@ -991,7 +949,7 @@ void extract_char_final(struct char_data *ch)
  * really confused otherwise. */
 void extract_char(struct char_data *ch)
 {
-  char_from_chair(ch);
+  char_from_furniture(ch);
   
   if (IS_NPC(ch))
     SET_BIT(MOB_FLAGS(ch), MOB_NOTDEADYET);

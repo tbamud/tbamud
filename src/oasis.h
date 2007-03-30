@@ -24,7 +24,7 @@
 #define NUM_AFF_FLAGS		22
 #define NUM_ATTACK_TYPES	15
 
-#define NUM_ITEM_TYPES		25
+#define NUM_ITEM_TYPES		24
 #define NUM_ITEM_FLAGS		17
 #define NUM_ITEM_WEARS 		15
 #define NUM_APPLIES		25
@@ -36,8 +36,8 @@
 #define NUM_SHOP_FLAGS 		3
 #define NUM_TRADERS 		7
 
-#define MAX_PEOPLE_IN_CHAIR 10   /* The maximum number of people you want
-                                    to sit in a chair at the same time. */
+#define MAX_PEOPLE 10 /* Max # of people you want to sit in furniture. */
+
 /* Limit information. */
 #define MAX_ROOM_NAME	75
 #define MAX_MOB_NAME	50

@@ -529,8 +529,8 @@ ACMD(do_stand)
   case POS_SITTING:
     send_to_char(ch, "You stand up.\r\n");
     act("$n clambers to $s feet.", TRUE, ch, 0, 0, TO_ROOM);
-    /* Were they sitting in a chair? */
-    char_from_chair(ch);
+    /* Were they sitting in something? */
+    char_from_furniture(ch);
     /* Will be sitting after a successful bash and may still be fighting. */
     GET_POS(ch) = FIGHTING(ch) ? POS_FIGHTING : POS_STANDING;
     break;
@@ -538,8 +538,8 @@ ACMD(do_stand)
     send_to_char(ch, "You stop resting, and stand up.\r\n");
     act("$n stops resting, and clambers on $s feet.", TRUE, ch, 0, 0, TO_ROOM);
     GET_POS(ch) = POS_STANDING;
-    /* Were they sitting in the chair */
-    char_from_chair(ch);
+    /* Were they sitting in something. */
+    char_from_furniture(ch);
     break;
   case POS_SLEEPING:
     send_to_char(ch, "You have to wake up first!\r\n");
@@ -559,7 +559,7 @@ ACMD(do_stand)
 ACMD(do_sit)
 {
   char arg[MAX_STRING_LENGTH];
-  struct obj_data *chair;
+  struct obj_data *furniture;
   struct char_data *tempch;
   int found;
 
@@ -567,7 +567,7 @@ ACMD(do_sit)
  
   if (!*arg)
     found = 0;
-  if (!(chair = get_obj_in_list_vis(ch, arg, NULL, world[ch->in_room].contents)))
+  if (!(furniture = get_obj_in_list_vis(ch, arg, NULL, world[ch->in_room].contents)))
     found = 0;
   else
     found = 1;
@@ -579,30 +579,30 @@ ACMD(do_sit)
       act("$n sits down.", FALSE, ch, 0, 0, TO_ROOM);
       GET_POS(ch) = POS_SITTING;
     } else {   
-      if (GET_OBJ_TYPE(chair) != ITEM_CHAIR) {
+      if (GET_OBJ_TYPE(furniture) != ITEM_FURNITURE) {
         send_to_char(ch, "You can't sit on that!\r\n");
         return;
-      } else if (GET_OBJ_VAL(chair, 1) > GET_OBJ_VAL(chair, 0)) {
-        /* val 1 is current number in chair, 0 is max in chair */
-        act("$p looks like it's all full.", TRUE, ch, chair, 0, TO_CHAR);
-        log("SYSERR: chair %d holding too many people.", GET_OBJ_VNUM(chair));
+      } else if (GET_OBJ_VAL(furniture, 1) > GET_OBJ_VAL(furniture, 0)) {
+        /* Val 1 is current number sitting, 0 is max in sitting. */
+        act("$p looks like it's all full.", TRUE, ch, furniture, 0, TO_CHAR);
+        log("SYSERR: Furniture %d holding too many people.", GET_OBJ_VNUM(furniture));
         return;
-      } else if (GET_OBJ_VAL(chair, 1) == GET_OBJ_VAL(chair, 0)) {
-        act("There is no where left to sit upon $p.", TRUE, ch, chair, 0, TO_CHAR);
+      } else if (GET_OBJ_VAL(furniture, 1) == GET_OBJ_VAL(furniture, 0)) {
+        act("There is no where left to sit upon $p.", TRUE, ch, furniture, 0, TO_CHAR);
         return;
       } else { 
-        if (OBJ_SAT_IN_BY(chair) == NULL)
-          OBJ_SAT_IN_BY(chair) = ch;
-        for (tempch = OBJ_SAT_IN_BY(chair); tempch != ch ; tempch = NEXT_SITTING(tempch)) {
+        if (OBJ_SAT_IN_BY(furniture) == NULL)
+          OBJ_SAT_IN_BY(furniture) = ch;
+        for (tempch = OBJ_SAT_IN_BY(furniture); tempch != ch ; tempch = NEXT_SITTING(tempch)) {
           if (NEXT_SITTING(tempch))
             continue;
           NEXT_SITTING(tempch) = ch;
         }
-        act("You sit down upon $p.", TRUE, ch, chair, 0, TO_CHAR);
-        act("$n sits down upon $p.", TRUE, ch, chair, 0, TO_ROOM);
-        SITTING(ch) = chair;
+        act("You sit down upon $p.", TRUE, ch, furniture, 0, TO_CHAR);
+        act("$n sits down upon $p.", TRUE, ch, furniture, 0, TO_ROOM);
+        SITTING(ch) = furniture;
         NEXT_SITTING(ch) = NULL;
-        GET_OBJ_VAL(chair, 1) += 1;
+        GET_OBJ_VAL(furniture, 1) += 1;
         GET_POS(ch) = POS_SITTING;
       }
     }
@@ -719,8 +719,8 @@ ACMD(do_wake)
   else {
     send_to_char(ch, "You awaken, and sit up.\r\n");
     act("$n awakens.", TRUE, ch, 0, 0, TO_ROOM);
-    /* Were they asleep in a chair? */
-    char_from_chair(ch);
+    /* Were they asleep while sitting? */
+    char_from_furniture(ch);
     GET_POS(ch) = POS_SITTING;
   }
 }
