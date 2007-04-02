@@ -195,7 +195,7 @@ if %cmd.mudcommand% == sit && chair /= %arg%
     %force% %actor% sit
   else
     if %cmd.mudcommand% == sit && chair /= %arg%
-      %echoaround% %actor% %actor.name% tries to sit in the chair but a macial force prevents him.
+      %echoaround% %actor% %actor.name% tries to sit in the chair but a magical force prevents him.
       %send% %actor% You try to sit in the chair but a magical force prevents you.
     end
   end
@@ -214,10 +214,15 @@ else
 end
 ~
 #1211
-FREE~
-1 b 3
+Questpoints Test~
+2 b 100
 ~
-* No Script
+set actor %random.char%
+%echo% QP: %actor.questpoints%
+nop %actor.questpoints(2)%
+%echo% QP+2: %actor.questpoints%
+nop %actor.questpoints(-1)%
+%echo% QP-1: %actor.questpoints%
 ~
 #1212
 Constant Raining~

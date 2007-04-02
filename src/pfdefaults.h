@@ -51,6 +51,7 @@
 #define PFDEF_DRUNK		0
 #define PFDEF_OLC               NOWHERE 
 #define PFDEF_PAGELENGTH        22
+#define PFDEF_QUESTPOINTS       0
 
 #endif
 

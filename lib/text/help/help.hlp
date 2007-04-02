@@ -882,7 +882,26 @@ another form of Unix:
    example "C:\tbaMUD". "cd c:/tbaMUD" "dir" in the listed files you should see 
    one called configure. DO NOT go into the SRC directory yet.
 
-4) Run the configure script by typing "./configure".  This will automatically 
+4) Make the following change to src/Makefile.in to make copyover work:
+
+	--- Makefile.in.old 2007-02-26 05:52:19.000000000 +0100
+	+++ Makefile.in     2007-03-26 17:21:56.000000000 +0200
+	@@ -61,6 +61,8 @@ circle:
+	        $(MAKE) $(BINDIR)/circle
+
+	 $(BINDIR)/circle : $(OBJFILES)
+	+       @-rm $(BINDIR)/circleold.exe
+	+       @-mv $(BINDIR)/circle.exe $(BINDIR)/circleold.exe
+	        $(CC) -o $(BINDIR)/circle $(PROFILE) $(OBJFILES) $(LIBS)
+
+	 clean:
+
+   The above is a "patch" file. All you need to do is add the two lines with
+   the +'s to your file Makefile.in. If you are still confused check out these
+   links on how to patch: http://www.circlemud.org/cdp/wtfaq/handpatch.html
+   http://cwg.lazuras.org/modules.php?name=Forums&file=viewtopic&t=757
+
+   Run the configure script by typing "./configure".  This will automatically 
    detect what programs and library functions are available, and create the 
    files "Makefile" and "conf.h" based on the results.
 
@@ -911,13 +930,9 @@ reading the forums at http://cwg.lazuras.org/ or stop by TBA for assistance.
 
 It really can not be stressed enough: READ EVERYTHING.
 
-Credit where credit is due:
-
-Some parts of this document have been derived or outright copied from other
-files by: Jeremy Elson, David Goldstein, Tony Robbins, and George Greer
+Authors: Jeremy Elson, David Goldstein, Tony Robbins, and George Greer.
 
 Rumble
-Rumble@@builderacademy.net 
 The Builder Academy
 builderacademy.net 9091
 
@@ -1870,16 +1885,11 @@ See also: DATE, TIME
 FOUNTAINS DRINK-UNITS OEDIT-FOUNTAINS 
 
    After selecting object type FOUNTAIN you must then select C) Values to set
-the capacity of the fountain. A good number is 500 for both the capacity and
-quantity. When loading the fountain through zedit you should remove and then
-load the fountain every zone reset. This can be done by choosing the R)
-Remove an object option in zedit followed by the O) Load Object to room command.  
-This way your fountain will reload every zone reset and always be full.
-
-Example: @RAT 23429 STAT ROOM@n
+the capacity of the fountain. The first number is max capacity. The second is
+the current contents. To make a fountain contain that never runs out set the
+2nd number to -1.
 
 See also: VALUES
-
 #31
 ALIGNMENT GOOD NEUTRAL EVIL %ACTOR.ALIGN% %ALIGN% %ALIGNMENT% 
 
@@ -2508,6 +2518,7 @@ poofin         LVL_IMMORT       PC      MISC        Poofin
 poofout        LVL_IMMORT       PC      MISC        Poofout
 practices      LVL_GOD          PC      NUMBER      # of practices
 quest          LVL_GOD          PC      BINARY      QUEST flag
+questpoints    LVL_GOD          PC      NUMBER      Questpoints
 room           LVL_BUILDER      BOTH    NUMBER      Move to room
 sex            LVL_GOD          BOTH    MISC        Sex
 showvnums      LVL_BUILDER      PC      BINARY      ShowVnums
@@ -6228,8 +6239,7 @@ the command should be placed. Use the SAME number as the command which loads
 the rose. This will bump the command, which loads the rose down. Then you will
 be at a command options menu. Enter R for remove an object from a room. If no 
 one comes along and gets the rose, the game will remove it and load another 
-one. This will prevent build up. Also use the remove option to remove fountains
-before they reload so it will be full after every reset.    
+one. This will prevent build up. 
    Zedit can not currently give a container to a mob and then load an object to
 that container. A workaround for this is to load the object to the room before
 loading the mob. Then attach a load trigger to the mob that will force it to
@@ -6298,8 +6308,9 @@ D) Open/Close/Lock a Door
   use option 2). This will close and lock a door. It is not necessary to close
   it with one command, then lock it with another. @RHELP REDIT-EXIT@n.
 R) Remove an object from the room 
-  Important for refilling fountains and to load a single instance of an object 
-  with a maxload greater than 1. @RHELP FOUNTAIN@n, @RHELP ZEDIT-ADVANCED@n. 
+  Important for reloading containers that a player may have emptied and to load
+  a single instance of an object with a maxload greater than 1. @RHELP FOUNTAIN@n, 
+  @RHELP ZEDIT-ADVANCED@n. 
 T) Assign a trigger (Advanced builders only)
   Attach a trigger to a mob, obj, or room. Usually done through REDIT, MEDIT,
   or OEDIT.  DO NOT USE THIS OPTION WITHOUT FIRST CLEARING IT WITH A LEVEL 33 
@@ -6862,8 +6873,8 @@ of value0 through value4 (option C). The Type Flag must be one of the following:
 3    WAND           Item is a magical wand.
 4    STAFF          Item is a magical staff.
 5    WEAPON         Must be piercing to backstab.
-6    FIREWEAPON     Not implemented.  Do not use. @RHELP GUN@n.
-7    MISSILE        Not implemented.  Do not use.
+6    FURNITURE      Item may be sat on.
+7    UNDEFINED      Not implemented.  Do not use.
 8    TREASURE       Item is treasure other than gold coins (i.e. gems)
 9    ARMOR          Item is armor.
 10   POTION         Item is a magical potion.
@@ -6879,7 +6890,7 @@ of value0 through value4 (option C). The Type Flag must be one of the following:
 20   MONEY          Value set in the C) Applies. Cost not used. Max 1000 coins.
 21   PEN            Item is a pen.
 22   BOAT           Item is a boat; allows you to traverse water (noswim).
-23   FOUNTAIN       Item is a fountain.
+23   FOUNTAIN       Item is a fountain. Set Values to -1 to make it unlimited.
 24   CHAIR          Item is a chair people can sit in.
 
    Good items should be very rare, and hard to get. Lousy items should require 
@@ -6891,8 +6902,7 @@ beneficial lying around. This may sound obvious, but it has been done.
    Also consider creating objects that are harmful to the owner. Objects that
 lower certain stats, saving throws, or confer weaknesses make the game more
 interesting. Remember that a lot of small items make an area more interesting 
-than a few incredibly powerful items, for the most part. Do not feel limited to
-items players consider useful, such as weapons and armor. A giant untakeable
+than a few incredibly powerful items, for the most part. Do not feel lim armor. A giant untakeable
 monolith, and other strange and odd items can add a lot of atmosphere to an 
 area. They can also be used to distract players. Most of the useless items are 
 often best as trash, but can be worn, and do not feel that items should not get 
@@ -7064,8 +7074,10 @@ WEAPON
            12) blast                13) punch                
            14) stab                 
 
-FIREWEAPON - No values currently used. - not implemented. 
-MISSILE - No values currently used. - not implemented. 
+FURNITURE 
+   value 0: Number of people that can sit on this object.
+
+UNDEFINED - Not implemented. 
 TREASURE - No values currently used.
 
 ARMOR
@@ -7091,7 +7103,7 @@ TRASH - No values currently used.
 TRAP - No values currently used. - not implemented. 
 
 CONTAINER
-   value 0: Capacity (max containable weight) of container
+   value 0: Capacity (max containable weight) of container. -1 for unlimited.
    value 1: Container flag bitvector
      1)    CLOSEABLE      Container can be closed and locked.
      2)    PICKPROOF      Lock on container cannot be picked.
@@ -7119,7 +7131,7 @@ BOAT - No values currently used.
 DRINKCON
 FOUNTAIN
    value 0: Capacity of container
-   value 1: Current quantity in container
+   value 1: Current quantity in container. -1 for unlimited.
    value 2: see below
    value 3: If the drink is poisoned, how long will the poison burn? 0 if not poisoned.
 
@@ -7660,8 +7672,8 @@ See also: OLC
 #31
 DRUNK WINE LIQUID-CONTAINERS BEER SPIRITS DRINK-TYPES LIQUOR WHISKEY WHISKY LIQUIDS LIQ-CONTAINERS
 
-   When selecting object type FOUNTAIN or DRINK CONTAINER you will need
-to choose the type of liquid it contains from the following list: 
+   When selecting object type FOUNTAIN or DRINK CONTAINER you will need to 
+choose the type of liquid it contains from the following list: 
 
   0) water                  1) beer                 
   2) wine                   3) ale                  
@@ -8203,15 +8215,16 @@ See also: NOSUMMON
 #0
 DISPLAYS PROMPTS HIT-PNT-DISPLAY
 
-Usage: display < H | M | V | all | auto | off >
+Usage: prompt < H | M | V | all | auto | off >
 
 Modify your prompt to show your hit points, mana, and/or movement points.
 
-  > display hv          Display hit points and movement points
-  > display off         Return to normal display
-  > display all         Display hit, mana, and move points
-  > display auto        Display hit, mana, and move when they are below 30%
+  > prompt hv       Display hit points and movement points.
+  > prompt off      Return to no prompt.
+  > prompt all      Display hit, mana, and movement points.
 
+  > prompt auto     A seperate toggle that will only display your selected 
+                    prompt if the values drop below 30% of max.
 See also: TOGGLE
 #0
 ASSIST
@@ -9081,7 +9094,7 @@ Level 31 builders can not drop objects outside of their assigned zone.
 
 See also: DONATE, GET, JUNK
 #0
-EATING DRINKING SIP TASTE HUNGRY HUNGER THIRSTY FOOD
+EATING DRINKING SIP TASTE HUNGRY HUNGER THIRSTY FOOD NIBBLE
 
 Usage: eat <item>
        taste [from] <item>
@@ -9096,7 +9109,7 @@ If you're hungry or thirsty, these commands are for you!
   > sip fountain
   
 If you taste or sip, you don't get large portions and won't be
-hurt badly by poison. You don't get satisfied either, though.
+hurt badly by poison. You :Sdon't get satisfied either, though.
 
 Thirst and Hunger are modified by objects in units of hours. So an object
 with 24 drink units will quench thirst for 24 hours. Same for food. 

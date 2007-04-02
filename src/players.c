@@ -297,6 +297,7 @@ int load_char(const char *name, struct char_data *ch)
     GET_ALIASES(ch) = NULL;
     SITTING(ch) = NULL;
     NEXT_SITTING(ch) = NULL;
+    GET_QUESTPOINTS(ch) = PFDEF_QUESTPOINTS;
 
     while (get_line(fl, line)) {
       tag_argument(line, tag);
@@ -605,6 +606,7 @@ void save_char(struct char_data * ch)
   if (GET_DAMROLL(ch)	   != PFDEF_DAMROLL)	fprintf(fl, "Drol: %d\n", GET_DAMROLL(ch));
   if (GET_OLC_ZONE(ch)     != PFDEF_OLC)        fprintf(fl, "Olc : %d\n", GET_OLC_ZONE(ch));
   if (GET_PAGE_LENGTH(ch)  != PFDEF_PAGELENGTH) fprintf(fl, "Page: %d\n", GET_PAGE_LENGTH(ch));
+  if (GET_QUESTPOINTS(ch)  != PFDEF_QUESTPOINTS) fprintf(fl, "Qstp: %d\n", GET_QUESTPOINTS(ch));
 
   /* Save skills */
   if (GET_LEVEL(ch) < LVL_IMMORT) {

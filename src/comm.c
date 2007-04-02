@@ -188,9 +188,8 @@ void new_hist_messg(struct descriptor_data *d, const char *msg);
 /*  main game loop and related stuff */
 
 #if defined(CIRCLE_WINDOWS) || defined(CIRCLE_MACINTOSH)
-/* Windows doesn't have gettimeofday, so we'll simulate it. The Mac doesn't 
- * have gettimeofday either. Borland C++ warns: "Undefined structure 
- * 'timezone'" */
+/* Windows and Mac do not have gettimeofday, so we'll simulate it. Borland C++ 
+ * warns: "Undefined structure 'timezone'" */
 void gettimeofday(struct timeval *t, struct timezone *dummy)
 {
 #if defined(CIRCLE_WINDOWS)

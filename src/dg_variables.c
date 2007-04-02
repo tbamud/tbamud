@@ -869,7 +869,16 @@ in the vault (vnum: 453) now and then. you can just use
             snprintf(str, slen, "%d", GET_PRACTICES(c));
           }
           break;
-        case 'r':
+        case 'q':
+          if (!str_cmp(field, "questpoints")) {
+            if (subfield && *subfield) {
+              int addition = atoi(subfield);
+              GET_QUESTPOINTS(c) += addition;
+            }
+            snprintf(str, slen, "%d", GET_QUESTPOINTS(c));
+          }
+          break;
+	case 'r':
           if (!str_cmp(field, "room")) {  /* in NOWHERE, return the void */
 /* see note in dg_scripts.h */
 #ifdef ACTOR_ROOM_IS_UID

@@ -773,6 +773,7 @@ struct player_special_data_saved {
    ubyte page_length;
    int spells_to_learn;		/* How many can you learn yet this level*/
    int olc_zone;
+   int questpoints;
 };
 
 /* Specials needed only by PCs, not NPCs.  Space for this structure is
@@ -1015,12 +1016,6 @@ struct index_data {
 struct trig_proto_list {
   int vnum;                             /* vnum of the trigger   */
   struct trig_proto_list *next;         /* next trigger          */
-};
-
-struct guild_info_type {
-  int pc_class;
-  room_vnum guild_room;
-  int direction;
 };
 
 /* Config structs */

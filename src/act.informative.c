@@ -367,10 +367,10 @@ void list_one_char(struct char_data *i, struct char_data *ch)
       send_to_char(ch, "%s", positions[(int) GET_POS(i)]);
   else {
     furniture = SITTING(i);
-    send_to_char(ch, " is %s upon %s.", ((GET_POS(i) == POS_SLEEPING) ? 
-        "sleeping" : "sitting"), (CAN_SEE_OBJ(ch, furniture) ? 
-        furniture->short_description : "something"));
-    }
+    send_to_char(ch, " is %s upon %s.", (GET_POS(i) == POS_SLEEPING ? 
+        "sleeping" : (GET_POS(i) == POS_RESTING ? "resting" : "sitting")), 
+        OBJS(furniture, ch));
+  }
   } else {
     if (FIGHTING(i)) {
       send_to_char(ch, " is here, fighting ");
@@ -789,8 +789,8 @@ ACMD(do_score)
   send_to_char(ch, "Your armor class is %d/10, and your alignment is %d.\r\n",
 	  compute_armor_class(ch), GET_ALIGNMENT(ch));
 
-  send_to_char(ch, "You have scored %d exp, and have %d gold coins.\r\n",
-	  GET_EXP(ch), GET_GOLD(ch));
+  send_to_char(ch, "You have %d exp, %d gold coins, and %d questpoints.\r\n",
+	  GET_EXP(ch), GET_GOLD(ch), GET_QUESTPOINTS(ch));
 
   if (GET_LEVEL(ch) < LVL_IMMORT)
     send_to_char(ch, "You need %d exp to reach your next level.\r\n",

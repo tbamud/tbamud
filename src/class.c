@@ -8,18 +8,13 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 ************************************************************************ */
 
-/*
- * This file attempts to concentrate most of the code which must be changed
- * in order for new classes to be added.  If you're adding a new class,
- * you should go through this entire file from beginning to end and add
- * the appropriate new special cases for your new class.
- */
-
-
+/* This file attempts to concentrate most of the code which must be changed
+ * in order for new classes to be added.  If you're adding a new class, you 
+ * should go through this entire file from beginning to end and add the 
+ * appropriate new special cases for your new class. */
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "db.h"
 #include "utils.h"
@@ -42,7 +37,6 @@ const char *title_male(int chclass, int level);
 const char *title_female(int chclass, int level);
 
 /* Names first */
-
 const char *class_abbrevs[] = {
   "Mu",
   "Cl",
@@ -51,7 +45,6 @@ const char *class_abbrevs[] = {
   "\n"
 };
 
-
 const char *pc_class_types[] = {
   "Magic User",
   "Cleric",
@@ -59,7 +52,6 @@ const char *pc_class_types[] = {
   "Warrior",
   "\n"
 };
-
 
 /* The menu for choosing a class in interpreter.c: */
 const char *class_menu =
@@ -70,13 +62,8 @@ const char *class_menu =
 "  [W]arrior\r\n"
 "  [M]agic-user\r\n";
 
-
-
-/*
- * The code to interpret a class letter -- used in interpreter.c when a
- * new character is selecting a class and by 'set class' in act.wizard.c.
- */
-
+/* The code to interpret a class letter -- used in interpreter.c when a new 
+ * character is selecting a class and by 'set class' in act.wizard.c. */
 int parse_class(char arg)
 {
   arg = LOWER(arg);
@@ -90,12 +77,10 @@ int parse_class(char arg)
   }
 }
 
-/*
- * bitvectors (i.e., powers of two) for each class, mainly for use in
- * do_who and do_users.  Add new classes at the end so that all classes
- * use sequential powers of two (1 << 0, 1 << 1, 1 << 2, 1 << 3, 1 << 4,
- * 1 << 5, etc.) up to the limit of your bitvector_t, typically 0-31.
- */
+/* bitvectors (i.e., powers of two) for each class, mainly for use in do_who 
+ * and do_users.  Add new classes at the end so that all classes use sequential
+ * powers of two (1 << 0, 1 << 1, 1 << 2, 1 << 3, 1 << 4, 1 << 5, etc.) up to 
+ * the limit of your bitvector_t, typically 0-31. */
 bitvector_t find_class_bitvector(const char *arg)
 {
   size_t rpos, ret = 0;
@@ -106,30 +91,23 @@ bitvector_t find_class_bitvector(const char *arg)
   return (ret);
 }
 
-
-/*
- * These are definitions which control the guildmasters for each class.
+/* These are definitions which control the guildmasters for each class. 
+ * The  first field (top line) controls the highest percentage skill level a 
+ * character of the class is allowed to attain in any skill.  (After this 
+ * level, attempts to practice will say "You are already learned in this area."
  *
- * The first field (top line) controls the highest percentage skill level
- * a character of the class is allowed to attain in any skill.  (After
- * this level, attempts to practice will say "You are already learned in
- * this area."
+ * The second line controls the maximum percent gain in learnedness a character
+ * is allowed per practice -- in other words, if the random die throw comes out
+ * higher than this number, the gain will only be this number instead.
  *
- * The second line controls the maximum percent gain in learnedness a
- * character is allowed per practice -- in other words, if the random
- * die throw comes out higher than this number, the gain will only be
- * this number instead.
+ * The third line controls the minimu percent gain in learnedness a character 
+ * is allowed per practice -- in other words, if the random die throw comes 
+ * out below this number, the gain will be set up to this number.
  *
- * The third line controls the minimu percent gain in learnedness a
- * character is allowed per practice -- in other words, if the random
- * die throw comes out below this number, the gain will be set up to
- * this number.
- *
- * The fourth line simply sets whether the character knows 'spells'
- * or 'skills'.  This does not affect anything except the message given
- * to the character when trying to practice (i.e. "You know of the
- * following spells" vs. "You know of the following skills"
- */
+ * The fourth line simply sets whether the character knows 'spells' or 'skills'.
+ * This does not affect anything except the message given to the character when
+ * trying to practice (i.e. "You know of the following spells" vs. "You know of
+ * the following skills" */
 
 #define SPELL	0
 #define SKILL	1
@@ -147,44 +125,8 @@ int prac_params[4][NUM_CLASSES] = {
   { SPELL,	SPELL,	SKILL,	SKILL	},	/* prac name */
 };
 
-
-/*
- * ...And the appropriate rooms for each guildmaster/guildguard; controls
- * which types of people the various guildguards let through.  i.e., the
- * first line shows that from room 3017, only MAGIC_USERS are allowed
- * to go south.
- *
- * Don't forget to visit spec_assign.c if you create any new mobiles that
- * should be a guild master or guard so they can act appropriately. If you
- * "recycle" the existing mobs that are used in other guilds for your new
- * guild, then you don't have to change that file, only here.
- */
-struct guild_info_type guild_info[] = {
-
-/* Midgaard */
-  { CLASS_MAGIC_USER,	3017,	SCMD_SOUTH	},
-  { CLASS_CLERIC,	3004,	SCMD_NORTH	},
-  { CLASS_THIEF,	3027,	SCMD_EAST	},
-  { CLASS_WARRIOR,	3021,	SCMD_EAST	},
-
-/* Brass Dragon */
-  { -999 /* all */ ,	5065,	SCMD_WEST	},
-
-/* this must go last -- add new guards above! */
-  { -1, NOWHERE, -1}
-};
-
-
-
-/*
- * Saving throws for:
- * MCTW
- *   PARA, ROD, PETRI, BREATH, SPELL
- *     Levels 0-40
- *
- * Do not forget to change extern declaration in magic.c if you add to this.
- */
-
+/* Saving throws for : MCTW : PARA, ROD, PETRI, BREATH, SPELL. Levels 0-40. Do 
+ * not forget to change extern declaration in magic.c if you add to this. */
 byte saving_throws(int class_num, int type, int level)
 {
   switch (class_num) {
@@ -1387,11 +1329,9 @@ int thaco(int class_num, int level)
 }
 
 
-/*
- * Roll the 6 stats for a character... each stat is made of the sum of
- * the best 3 out of 4 rolls of a 6-sided die.  Each class then decides
- * which priority will be given for the best to worst stats.
- */
+/* Roll the 6 stats for a character... each stat is made of the sum of the best
+ * 3 out of 4 rolls of a 6-sided die.  Each class then decides which priority 
+ * will be given for the best to worst stats. */
 void roll_real_abils(struct char_data *ch)
 {
   int i, j, k, temp;
@@ -1458,7 +1398,6 @@ void roll_real_abils(struct char_data *ch)
   ch->aff_abils = ch->real_abils;
 }
 
-
 /* Some initializations for characters, including initial skills */
 void do_start(struct char_data *ch)
 {
@@ -1508,12 +1447,8 @@ void do_start(struct char_data *ch)
     SET_BIT(PLR_FLAGS(ch), PLR_SITEOK);
 }
 
-
-
-/*
- * This function controls the change to maxmove, maxmana, and maxhp for
- * each class every time they gain a level.
- */
+/* This function controls the change to maxmove, maxmana, and maxhp for each 
+ * class every time they gain a level. */
 void advance_level(struct char_data *ch)
 {
   int add_hp, add_mana = 0, add_move = 0, i;
@@ -1571,12 +1506,10 @@ void advance_level(struct char_data *ch)
 }
 
 
-/*
- * This simply calculates the backstab multiplier based on a character's
- * level.  This used to be an array, but was changed to be a function so
- * that it would be easier to add more levels to your MUD.  This doesn't
- * really create a big performance hit because it's not used very often.
- */
+/* This simply calculates the backstab multiplier based on a character's level.
+ * This used to be an array, but was changed to be a function so that it would 
+ * be easier to add more levels to your MUD.  This doesn't really create a big 
+ * performance hit because it's not used very often. */
 int backstab_mult(int level)
 {
   if (level <= 0)
@@ -1595,11 +1528,8 @@ int backstab_mult(int level)
     return 20;	  /* immortals */
 }
 
-
-/*
- * invalid_class is used by handler.c to determine if a piece of equipment is
- * usable by a particular class, based on the ITEM_ANTI_{class} bitvectors.
- */
+/* invalid_class is used by handler.c to determine if a piece of equipment is
+ * usable by a particular class, based on the ITEM_ANTI_{class} bitvectors. */
 int invalid_class(struct char_data *ch, struct obj_data *obj)
 {
   if (OBJ_FLAGGED(obj, ITEM_ANTI_MAGIC_USER) && IS_MAGIC_USER(ch))
@@ -1617,12 +1547,9 @@ int invalid_class(struct char_data *ch, struct obj_data *obj)
   return FALSE;
 }
 
-
-/*
- * SPELLS AND SKILLS.  This area defines which spells are assigned to
- * which classes, and the minimum level the character must be to use
- * the spell or skill.
- */
+/* SPELLS AND SKILLS.  This area defines which spells are assigned to which 
+ * classes, and the minimum level the character must be to use the spell or 
+ * skill. */
 void init_spell_levels(void)
 {
   /* MAGES */
@@ -1696,11 +1623,8 @@ void init_spell_levels(void)
   spell_level(SKILL_BASH, CLASS_WARRIOR, 12);
 }
 
-
-/*
- * This is the exp given to implementors -- it must always be greater
- * than the exp required for immortality, plus at least 20,000 or so.
- */
+/* This is the exp given to implementors -- it must always be greater than the 
+ * exp required for immortality, plus at least 20,000 or so. */
 #define EXP_MAX  10000000
 
 /* Function to return the exp required for each class/level */
@@ -1711,16 +1635,13 @@ int level_exp(int chclass, int level)
     return 0;
   }
 
-  /*
-   * Gods have exp close to EXP_MAX.  This statement should never have to
-   * changed, regardless of how many mortal or immortal levels exist.
-   */
+  /* Gods have exp close to EXP_MAX.  This statement should never have to
+   * changed, regardless of how many mortal or immortal levels exist. */
    if (level > LVL_IMMORT) {
      return EXP_MAX - ((LVL_IMPL - level) * 1000);
    }
 
   /* Exp required for normal mortals is below */
-
   switch (chclass) {
 
     case CLASS_MAGIC_USER:
@@ -1876,19 +1797,14 @@ int level_exp(int chclass, int level)
     break;
   }
 
-  /*
-   * This statement should never be reached if the exp tables in this function
+  /* This statement should never be reached if the exp tables in this function
    * are set up properly.  If you see exp of 123456 then the tables above are
-   * incomplete -- so, complete them!
-   */
+   * incomplete. */
   log("SYSERR: XP tables not set up correctly in class.c!");
   return 123456;
 }
 
-
-/*
- * Default titles of male characters.
- */
+/* Default titles of male characters. */
 const char *title_male(int chclass, int level)
 {
   if (level <= 0 || level > LVL_IMPL)
@@ -2032,10 +1948,7 @@ const char *title_male(int chclass, int level)
   return "the Classless";
 }
 
-
-/*
- * Default titles of female characters.
- */
+/* Default titles of female characters. */
 const char *title_female(int chclass, int level)
 {
   if (level <= 0 || level > LVL_IMPL)

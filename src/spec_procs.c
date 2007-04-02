@@ -22,7 +22,6 @@
 /*   external vars  */
 extern struct time_info_data time_info;
 extern struct spell_info_type spell_info[];
-extern struct guild_info_type guild_info[];
 
 /* extern functions */
 ACMD(do_drop);

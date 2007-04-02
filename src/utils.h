@@ -29,7 +29,7 @@ size_t	sprinttype(int type, const char *names[], char *result, size_t reslen);
 int	get_line(FILE *fl, char *buf);
 int	get_filename(char *filename, size_t fbufsize, int mode, const char *orig_name);
 time_t	mud_time_to_secs(struct time_info_data *now);
-struct time_info_data *age(struct char_data *ch);
+struct  time_info_data *age(struct char_data *ch);
 int	num_pc_in_room(struct room_data *room);
 void	core_dump_real(const char *, int);
 int     count_color_chars(char *string);
@@ -310,6 +310,8 @@ void char_from_furniture(struct char_data *ch);
 #define GET_PREF(ch)      ((ch)->pref)
 #define GET_HOST(ch)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->host))
 #define GET_HISTORY(ch, i)      CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.comm_hist[i]))
+#define GET_PAGE_LENGTH(ch)     CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.page_length))
+#define GET_QUESTPOINTS(ch)     CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.questpoints))
 
 #define GET_SKILL(ch, i)	CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.skills[i]))
 #define SET_SKILL(ch, i, pct)	do { CHECK_PLAYER_SPECIAL((ch), (ch)->player_specials->saved.skills[i]) = pct; } while(0)
@@ -576,6 +578,4 @@ void char_from_furniture(struct char_data *ch);
 /* Autowiz */
 #define CONFIG_USE_AUTOWIZ      config_info.autowiz.use_autowiz
 #define CONFIG_MIN_WIZLIST_LEV  config_info.autowiz.min_wizlist_lev
-
-#define GET_PAGE_LENGTH(ch)         CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.page_length))
 
