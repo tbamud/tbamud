@@ -1,8 +1,9 @@
-/************************************************************************
- * Generic OLC Library - Zones / genzon.c			v1.0	*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genzon.c                                          Part of tbaMUD *
+*  Usage: Generic OLC Library - Zones.                                    *
+*                                                                         *
+*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -71,9 +72,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
       return NOWHERE;
      }
 
-  /*
-   * Create the zone file.
-   */
+  /* Create the zone file. */
   snprintf(buf, sizeof(buf), "%s/%d.zon", ZON_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Can't write new zone file.");
@@ -83,9 +82,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   fprintf(fp, "#%d\nNone~\nNew Zone~\n%d %d 30 2\nS\n$\n", vzone_num, bottom, top);
   fclose(fp);
 
-  /*
-   * Create the room file.
-   */
+  /* Create the room file. */
   snprintf(buf, sizeof(buf), "%s/%d.wld", WLD_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Can't write new world file.");
@@ -95,9 +92,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   fprintf(fp, "#%d\nThe Beginning~\nNot much here.\n~\n%d 0 0\nS\n$\n", bottom, vzone_num);
   fclose(fp);
 
-  /*
-   * Create the mobile file.
-   */
+  /* Create the mobile file. */
   snprintf(buf, sizeof(buf), "%s/%d.mob", MOB_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Can't write new mob file.");
@@ -107,9 +102,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   fprintf(fp, "$\n");
   fclose(fp);
 
-  /*
-   * Create the object file.
-   */
+  /* Create the object file. */
   snprintf(buf, sizeof(buf), "%s/%d.obj", OBJ_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Can't write new obj file.");
@@ -119,9 +112,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   fprintf(fp, "$\n");
   fclose(fp);
 
-  /*
-   * Create the shop file.
-   */
+  /* Create the shop file. */
   snprintf(buf, sizeof(buf), "%s/%d.shp", SHP_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Can't write new shop file.");
@@ -131,9 +122,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   fprintf(fp, "$~\n");
   fclose(fp);
 
-  /*
-   * Create the trigger file.
-   */
+  /* Create the trigger file. */
   snprintf(buf, sizeof(buf), "%s/%d.trg", TRG_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Can't write new trigger file");
@@ -143,9 +132,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   fprintf(fp, "$~\n");
   fclose(fp);
 
-  /*
-   * Update index files.
-   */
+  /* Update index files. */
   create_world_index(vzone_num, "zon");
   create_world_index(vzone_num, "wld");
   create_world_index(vzone_num, "mob");
@@ -153,16 +140,13 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   create_world_index(vzone_num, "shp");
   create_world_index(vzone_num, "trg");
 
-  /*
-   * Make a new zone in memory. This was the source of all the zedit new
-   * crashes reported to the CircleMUD list. It was happily overwriting
-   * the stack.  This new loop by Andrew Helm fixes that problem and is
-   * more understandable at the same time.
+  /* Make a new zone in memory. This was the source of all the zedit new 
+   * crashes. It was happily overwriting the stack.  This new loop by Andrew 
+   * Helm fixes that problem and is more understandable at the same time.
    *
    * The variable is 'top_of_zone_table_table + 2' because we need record 0
    * through top_of_zone (top_of_zone_table + 1 items) and a new one which
-   * makes it top_of_zone_table + 2 elements large.
-   */
+   * makes it top_of_zone_table + 2 elements large. */
   RECREATE(zone_table, struct zone_data, top_of_zone_table + 2);
   zone_table[top_of_zone_table + 1].number = 32000;
 
@@ -180,9 +164,7 @@ rznum = i;
   }
   zone = &zone_table[rznum];
 
-  /*
-   * Ok, insert the new zone here.
-   */
+  /* Ok, insert the new zone here. */
   zone->name = strdup("New Zone");
   zone->number = vzone_num;
   zone->builders = strdup("None");
@@ -191,9 +173,7 @@ rznum = i;
   zone->lifespan = 30;
   zone->age = 0;
   zone->reset_mode = 2;
-  /*
-   * No zone commands, just terminate it with an 'S'
-   */
+  /* No zone commands, just terminate it with an 'S' */
   CREATE(zone->cmd, struct reset_com, 1);
   zone->cmd[0].command = 'S';
 
@@ -202,8 +182,6 @@ rznum = i;
   add_to_save_list(zone->number, SL_ZON);
   return rznum;
 }
-
-/*-------------------------------------------------------------------*/
 
 void create_world_index(int znum, const char *type)
 {
@@ -233,9 +211,7 @@ void create_world_index(int znum, const char *type)
     prefix = TRG_PREFIX;
     break;
   default:
-    /*
-     * Caller messed up
-     */
+    /* Caller messed up. */
     return;
   }
 
@@ -251,16 +227,12 @@ void create_world_index(int znum, const char *type)
     return;
   }
 
-  /*
-   * Index contents must be in order: search through the old file for the
-   * right place, insert the new file, then copy the rest over.
-   */
+  /* Index contents must be in order: search through the old file for the right
+   * place, insert the new file, then copy the rest over. */
   snprintf(buf1, sizeof(buf1), "%d.%s", znum, type);
   while (get_line(oldfile, buf)) {
     if (*buf == '$') {
-      /*
-       * The following used to add a blank line, thanks to Brian Taylor for the fix... (Mythran)
-       */
+      /* The following used to add a blank line, thanks to Brian Taylor for the fix. */
       fprintf(newfile, "%s", (!found ? strncat(buf1, "\n$\n", sizeof(buf1)-1) : "$\n"));
       break;
     } else if (!found) {
@@ -275,23 +247,17 @@ void create_world_index(int znum, const char *type)
 
   fclose(newfile);
   fclose(oldfile);
-  /*
-   * Out with the old, in with the new.
-   */
+  /* Out with the old, in with the new. */
   remove(old_name);
   rename(new_name, old_name);
 }
-
-/*-------------------------------------------------------------------*/
 
 void remove_room_zone_commands(zone_rnum zone, room_rnum room_num)
 {
   int subcmd = 0, cmd_room = -2;
 
-  /*
-   * Delete all entries in zone_table that relate to this room so we
-   * can add all the ones we have in their place.
-   */
+  /* Delete all entries in zone_table that relate to this room so we can add 
+   * all the ones we have in their place. */
   while (zone_table[zone].cmd[subcmd].command != 'S') {
     switch (zone_table[zone].cmd[subcmd].command) {
     case 'M':
@@ -314,13 +280,9 @@ void remove_room_zone_commands(zone_rnum zone, room_rnum room_num)
   }
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Save all the zone_table for this zone to disk.  This function now
- * writes simple comments in the form of (<name>) to each record.  A
- * header for each field is also there.
- */
+/* Save all the zone_table for this zone to disk.  This function now writes 
+ * simple comments in the form of (<name>) to each record.  A header for each 
+ * field is also there. */
 int save_zone(zone_rnum zone_num)
 {
   int subcmd, arg1 = -1, arg2 = -1, arg3 = -1;
@@ -343,9 +305,7 @@ int save_zone(zone_rnum zone_num)
     return FALSE;
   }
 
-  /*
-   * Print zone header to file
-   */
+  /* Print zone header to file. */
   fprintf(zfile, "#%d\n"
                  "%s~\n"
                  "%s~\n"
@@ -361,8 +321,7 @@ int save_zone(zone_rnum zone_num)
 	  zone_table[zone_num].reset_mode
 	  );
 
-	/*
-	 * Handy Quick Reference Chart for Zone Values.
+	/* Handy Quick Reference Chart for Zone Values.
 	 *
 	 * Field #1    Field #3   Field #4  Field #5
 	 * -------------------------------------------------
@@ -375,8 +334,7 @@ int save_zone(zone_rnum zone_num)
 	 * R (Remove)  Room-Vnum  Obj-Vnum  Unused
          * T (Trigger) Trig-type  Trig-Vnum Room-Vnum
          * V (var)     Trig-type  Context   Room-Vnum Varname Value
-	 * -------------------------------------------------
-	 */
+	 * ------------------------------------------------- */
 
   for (subcmd = 0; ZCMD(zone_num, subcmd).command != 'S'; subcmd++) {
     switch (ZCMD(zone_num, subcmd).command) {
@@ -434,9 +392,7 @@ int save_zone(zone_rnum zone_num)
       arg3 = world[ZCMD(zone_num, subcmd).arg3].number;
       break;
     case '*':
-      /*
-       * Invalid commands are replaced with '*' - Ignore them.
-       */
+      /* Invalid commands are replaced with '*' - Ignore them. */
       continue;
     default:
       mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: z_save_to_disk(): Unknown cmd '%c' - NOT saving", ZCMD(zone_num, subcmd).command);
@@ -461,11 +417,7 @@ int save_zone(zone_rnum zone_num)
   return TRUE;
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Some common code to count the number of comands in the list.
- */
+/* Some common code to count the number of comands in the list. */
 int count_commands(struct reset_com *list)
 {
   int count = 0;
@@ -476,130 +428,89 @@ int count_commands(struct reset_com *list)
   return count;
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Adds a new reset command into a list.  Takes a pointer to the list
- * so that it may play with the memory locations.
- */
+/* Adds a new reset command into a list.  Takes a pointer to the list so that 
+ * it may play with the memory locations. */
 void add_cmd_to_list(struct reset_com **list, struct reset_com *newcmd, int pos)
 {
   int count, i, l;
   struct reset_com *newlist;
 
-  /*
-   * Count number of commands (not including terminator).
-   */
+  /* Count number of commands (not including terminator). */
   count = count_commands(*list);
 
-  /*
-   * Value is +2 for the terminator and new field to add.
-   */
+  /* Value is +2 for the terminator and new field to add. */
   CREATE(newlist, struct reset_com, count + 2);
 
-  /*
-   * Even tighter loop to copy the old list and insert a new command.
-   */
+  /* Even tighter loop to copy the old list and insert a new command. */
   for (i = 0, l = 0; i <= count; i++) {
     newlist[i] = ((i == pos) ? *newcmd : (*list)[l++]);
   }
 
-  /*
-   * Add terminator, then insert new list.
-   */
+  /* Add terminator, then insert new list. */
   newlist[count + 1].command = 'S';
   free(*list);
   *list = newlist;
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Remove a reset command from a list.	Takes a pointer to the list
- * so that it may play with the memory locations.
- */
+/* Remove a reset command from a list. Takes a pointer to the list so that it 
+ * may play with the memory locations. */
 void remove_cmd_from_list(struct reset_com **list, int pos)
 {
   int count, i, l;
   struct reset_com *newlist;
 
-  /*
-   * Count number of commands (not including terminator)
-   */
+  /* Count number of commands (not including terminator). */
   count = count_commands(*list);
 
-  /*
-   * Value is 'count' because we didn't include the terminator above
-   * but since we're deleting one thing anyway we want one less.
-   */
+  /* Value is 'count' because we didn't include the terminator above but since 
+   * we're deleting one thing anyway we want one less. */
   CREATE(newlist, struct reset_com, count);
 
-  /*
-   * Even tighter loop to copy old list and skip unwanted command.
-   */
+  /* Even tighter loop to copy old list and skip unwanted command. */
   for (i = 0, l = 0; i < count; i++) {
     if (i != pos) {
       newlist[l++] = (*list)[i];
     }
   }
-  /*
-   * Add the terminator, then insert the new list.
-   */
+  /* Add the terminator, then insert the new list. */
   newlist[count - 1].command = 'S';
   free(*list);
   *list = newlist;
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Error check user input and then add new (blank) command
- */
+/* Error check user input and then add new (blank) command. */
 int new_command(struct zone_data *zone, int pos)
 {
   int subcmd = 0;
   struct reset_com *new_com;
 
-  /*
-   * Error check to ensure users hasn't given too large an index
-   */
+  /* Error check to ensure users hasn't given too large an index. */
   while (zone->cmd[subcmd].command != 'S')
     subcmd++;
 
   if (pos < 0 || pos > subcmd)
     return 0;
 
-  /*
-   * Ok, let's add a new (blank) command
-   */
+  /* Ok, let's add a new (blank) command. */
   CREATE(new_com, struct reset_com, 1);
   new_com->command = 'N';
   add_cmd_to_list(&zone->cmd, new_com, pos);
   return 1;
 }
 
-/*-------------------------------------------------------------------*/
-
-/*
- * Error check user input and then remove command
- */
+/* Error check user input and then remove command. */
 void delete_zone_command(struct zone_data *zone, int pos)
 {
   int subcmd = 0;
 
-  /*
-   * Error check to ensure users hasn't given too large an index
-   */
+  /* Error check to ensure users hasn't given too large an index. */
   while (zone->cmd[subcmd].command != 'S')
     subcmd++;
 
   if (pos < 0 || pos >= subcmd)
     return;
 
-  /*
-   * Ok, let's zap it
-   */
+  /* Ok, let's zap it. */
   remove_cmd_from_list(&zone->cmd, pos);
 }
 
-/*-------------------------------------------------------------------*/

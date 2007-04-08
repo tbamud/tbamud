@@ -1,6 +1,6 @@
 /**************************************************************************
-*  File: dg_misc.c                                                        *
-*  Usage: contains general functions for script usage.                    *
+*  File: dg_misc.c                                         Part of tbaMUD *
+*  Usage: Contains general functions for script usage.                    *
 *                                                                         *
 *  $Author: Mark A. Heilpern/egreen/Welcor $                              *
 *  $Date: 2004/10/11 12:07:00$                                            *
@@ -9,8 +9,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "dg_scripts.h"
 #include "utils.h"
@@ -31,17 +29,13 @@ void die(struct char_data *ch, struct char_data * killer);
 /* external vars */
 extern struct spell_info_type spell_info[];
 
-
-/* cast a spell; can be called by mobiles, objects and rooms, and no   */
-/* level check is required. Note that mobs should generally use the    */
-/* normal 'cast' command (which must be patched to allow mobs to cast  */
-/* spells) as the spell system is designed to have a character caster, */
-/* and this cast routine may overlook certain issues.                  */
-/* LIMITATION: a target MUST exist for the spell unless the spell is   */
-/* set to TAR_IGNORE. Also, group spells are not permitted             */
-/* code borrowed from do_cast() */
-void do_dg_cast(void *go, struct script_data *sc, trig_data *trig,
-		 int type, char *cmd)
+/* Cast a spell; can be called by mobiles, objects and rooms, and no level 
+ * check is required. Note that mobs should generally use the normal 'cast' 
+ * command (which must be patched to allow mobs to cast spells) as the spell 
+ * system is designed to have a character caster, and this cast routine may 
+ * overlook certain issues. LIMITATION: a target MUST exist for the spell unless
+ * the spell is set to TAR_IGNORE. Also, group spells are not permitted. */
+void do_dg_cast(void *go, struct script_data *sc, trig_data *trig, int type, char *cmd)
 {
   struct char_data *caster = NULL;
   struct char_data *tch = NULL;
@@ -153,12 +147,10 @@ void do_dg_cast(void *go, struct script_data *sc, trig_data *trig,
     call_magic(caster, tch, tobj, spellnum, GET_LEVEL(caster), CAST_SPELL);
 }
 
-
-/* modify an affection on the target. affections can be of the AFF_x  */
-/* variety or APPLY_x type. APPLY_x's have an integer value for them  */
-/* while AFF_x's have boolean values. In any case, the duration MUST  */
-/* be non-zero.                                                       */
-/* usage:  apply <target> <property> <value> <duration>               */
+/* Modify an affection on the target. affections can be of the AFF_x variety 
+ * or APPLY_x type. APPLY_x's have an integer value for them while AFF_x's 
+ * have boolean values. In any case, the duration MUST be non-zero.
+ * Usage:  apply <target> <property> <value> <duration> */
 #define APPLY_TYPE	1
 #define AFFECT_TYPE	2
 void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
@@ -223,7 +215,6 @@ void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
     return;
   }
 
-
   /* locate the target */
   ch = get_char(charname);
   if (!ch) {
@@ -281,12 +272,9 @@ void send_char_pos(struct char_data *ch, int dam)
   }
 }
 
-
-/* Used throughout the xxxcmds.c files for checking if a char
- * can be targetted
- * - allow_gods is false when called by %force%, for instance,
- * while true for %teleport%.  -- Welcor
- */
+/* Used throughout the xxxcmds.c files for checking if a char can be targetted
+ * - allow_gods is false when called by %force%, for instance, while true for 
+ * %teleport%. - Welcor */
 int valid_dg_target(struct char_data *ch, int bitvector)
 {
   if (IS_NPC(ch))
@@ -301,7 +289,6 @@ int valid_dg_target(struct char_data *ch, int bitvector)
   else
     return FALSE;  /* The rest are gods with nohassle on... */
 }
-
 
 void script_damage(struct char_data *vict, int dam)
 {

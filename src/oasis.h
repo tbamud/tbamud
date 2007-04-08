@@ -1,9 +1,9 @@
-/************************************************************************
- * OasisOLC - General / oasis.h					v2.0	*
- * Original author: Levork						*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: oasis.c                                           Part of tbaMUD *
+*  Usage: Oasis - General.                                                *
+*                                                                         *
+* By Levork. Copyright 1996 Harvey Gilpin. 1997-2001 George Greer.        *
+**************************************************************************/
 
 #define _OASISOLC	0x206   /* 2.0.6 */
 

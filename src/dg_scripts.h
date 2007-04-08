@@ -1,8 +1,8 @@
 /**************************************************************************
-*  File: dg_scripts.h                                                     *
-*  Usage: header file for script structures and constants, and            *
-*         function prototypes for dg_scripts.c                            *
+*  File: dg_scripts.h                                      Part of tbaMUD *
 *                                                                         *
+*  Usage: header file for script structures, constants, and function      *
+*         prototypes for dg_scripts.c                                     *
 *                                                                         *
 *  $Author: Mark A. Heilpern/egreen/Welcor $                              *
 *  $Date: 2004/10/11 12:07:00$                                            *
@@ -20,19 +20,16 @@
 /* spells cast by objects and rooms use this level */
 #define DG_SPELL_LEVEL  25
 
-/*
- * define this if you don't want wear/remove triggers to fire when
- * a player is saved.
- */
+/* Define this if you don't want wear/remove triggers to fire when a player 
+ * is saved. */
 #define NO_EXTRANEOUS_TRIGGERS
-/*
- * %actor.room% behaviour :
- * Until pl 7 %actor.room% returned a room vnum.
- * Working with this number in scripts was unnecessarily hard,
- * especially in those situations one needed the id of the room,
- * the items in it, etc. As a result of this, the output
- * has been changed (as of pl 8) to a room variable.
- * This means old scripts will need a minor adjustment;
+
+/* %actor.room% behaviour :
+ * Until pl 7 %actor.room% returned a room vnum. Working with this number in 
+ * scripts was unnecessarily hard, especially in those situations one needed 
+ * the id of the room, the items in it, etc. As a result of this, the output
+ * has been changed (as of pl 8) to a room variable.i This means old scripts 
+ * will need a minor adjustment;
  *
  * Before:
  * if %actor.room%==3001
@@ -44,9 +41,7 @@
  *   %echo% You are at the main temple.
  *
  * If you wish to continue using the old style, comment out the line below.
- *
- * Welcor
- */
+ * - Welcor */
 #define ACTOR_ROOM_IS_UID 1
 
 /* mob trigger types */
@@ -119,13 +114,9 @@
 #define TRIG_NEW                0	     /* trigger starts from top  */
 #define TRIG_RESTART            1	     /* trigger restarting       */
 
-
-/*
- * These are slightly off of PULSE_MOBILE so
- * everything isnt happening at the same time
- */
+/* These are slightly off of PULSE_MOBILE so everything isnt happening at the 
+ * same time. */
 #define PULSE_DG_SCRIPT         (13 RL_SEC)
-
 
 #define MAX_SCRIPT_DEPTH      10          /* maximum depth triggers can
 					     recurse into each other */
@@ -168,7 +159,6 @@ struct trig_data {
     struct trig_data *next_in_world;    /* next in the global trigger list */
 };
 
-
 /* a complete script (composed of several triggers) */
 struct script_data {
   long types;				/* bitvector of trigger types */
@@ -200,7 +190,6 @@ struct script_memory {
   char *cmd;				/* command, or NULL for generic */
   struct script_memory *next;
 };
-
 
 /* function prototypes from dg_triggers.c */
 char *one_phrase(char *arg, char *first_arg);
@@ -315,7 +304,6 @@ void dg_read_trigger(FILE *fp, void *proto, int type);
 void dg_obj_trigger(char *line, struct obj_data *obj);
 void assign_triggers(void *i, int type);
 
-
 /* From dg_variables.c */
 void add_var(struct trig_var_data **var_list, char *name, char *value, long id);
 int item_in_list(char *item, obj_data *list);
@@ -327,7 +315,6 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
                    char *str, size_t slen);
 void find_replacement(void *go, struct script_data *sc, trig_data *trig,
                 int type, char *var, char *field, char *subfield, char *str, size_t slen);
-
 
 /* From dg_handler.c */
 void free_var_el(struct trig_var_data *var);
@@ -363,7 +350,6 @@ room_rnum obj_room(obj_data *obj);
 #define DG_ALLOW_GODS (1<<0)
 
 /* Macros for scripts */
-
 #define UID_CHAR   '}'
 #define GET_TRIG_NAME(t)          ((t)->name)
 #define GET_TRIG_RNUM(t)          ((t)->nr)
@@ -377,10 +363,10 @@ room_rnum obj_room(obj_data *obj);
 #define GET_TRIG_DEPTH(t)         ((t)->depth)
 #define GET_TRIG_LOOPS(t)         ((t)->loops)
 
-/* player id's: 0 to MOB_ID_BASE - 1            */
-/* mob id's: MOB_ID_BASE to ROOM_ID_BASE - 1      */
-/* room id's: ROOM_ID_BASE to OBJ_ID_BASE - 1    */
-/* object id's: OBJ_ID_BASE and higher           */
+/* player id's: 0 to MOB_ID_BASE - 1
+ * mob id's: MOB_ID_BASE to ROOM_ID_BASE - 1
+ * room id's: ROOM_ID_BASE to OBJ_ID_BASE - 1
+ * object id's: OBJ_ID_BASE and higher */
 #define MOB_ID_BASE	  50000  /* 50000 player IDNUMS should suffice */
 #define ROOM_ID_BASE    1050000 /* 1000000 Mobs */
 #define OBJ_ID_BASE     1300000 /* 250000 Rooms */
@@ -392,7 +378,6 @@ room_rnum obj_room(obj_data *obj);
 #define TRIGGERS(s)		  ((s)->trig_list)
 
 #define GET_SHORT(ch)    ((ch)->player.short_descr)
-
 
 #define SCRIPT_CHECK(go, type)   (SCRIPT(go) && \
 				  IS_SET(SCRIPT_TYPES(SCRIPT(go)), type))

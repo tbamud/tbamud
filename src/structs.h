@@ -1,19 +1,20 @@
-/* ************************************************************************
-*   File: structs.h                                     Part of CircleMUD *
-*  Usage: header file for central structures and constants                *
-*  All rights reserved.  See license.doc for complete information.        *
+/**************************************************************************
+*  File: structs.h                                         Part of tbaMUD *
+*  Usage: Header file for central structures and constants.               *
+*                                                                         *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 /* Intended use of this macro is to allow external packages to work with a 
- * variety of CircleMUD versions without modifications.  For instance, an 
- * IS_CORPSE() macro was introduced in pl13.  Any future code add-ons could 
- * take into account the CircleMUD version and supply their own definition for 
- * the macro if used on an older version of CircleMUD. You are supposed to 
- * compare this with the macro CIRCLEMUD_VERSION() in utils.h. */
-#define _CIRCLEMUD	0x030520 /* Major/Minor/Patchlevel - MMmmPP */
+ * variety of versions without modifications.  For instance, an IS_CORPSE()
+ * macro was introduced in pl13.  Any future code add-ons could take into 
+ * account the version and supply their own definition for the macro if used 
+ * on an older version. You are supposed to compare this with the macro 
+ * TBAMUD_VERSION() in utils.h. */
+#define _TBAMUD    0x030520 /* Major/Minor/Patchlevel - MMmmPP */
 
 /* If you want equipment to be automatically equipped to the same place
  * it was when players rented, set the define below to 1. */
@@ -295,14 +296,14 @@
 #define ITEM_STAFF      4		/* Item is a staff		*/
 #define ITEM_WEAPON     5		/* Item is a weapon		*/
 #define ITEM_FURNITURE  6		/* Sittable Furniture		*/
-#define ITEM_UNDEFINED  7		/* Unimplemented		*/
+#define ITEM_FREE       7		/* Unimplemented		*/
 #define ITEM_TREASURE   8		/* Item is a treasure, not gold	*/
 #define ITEM_ARMOR      9		/* Item is armor		*/
 #define ITEM_POTION    10 		/* Item is a potion		*/
 #define ITEM_WORN      11		/* Unimplemented		*/
 #define ITEM_OTHER     12		/* Misc object			*/
 #define ITEM_TRASH     13		/* Trash - shopkeeps won't buy	*/
-#define ITEM_TRAP      14		/* Unimplemented		*/
+#define ITEM_FREE2     14		/* Unimplemented		*/
 #define ITEM_CONTAINER 15		/* Item is a container		*/
 #define ITEM_NOTE      16		/* Item is note 		*/
 #define ITEM_DRINKCON  17		/* Item is a drink container	*/
@@ -1016,6 +1017,12 @@ struct index_data {
 struct trig_proto_list {
   int vnum;                             /* vnum of the trigger   */
   struct trig_proto_list *next;         /* next trigger          */
+};
+
+struct guild_info_type {
+  int pc_class;
+  room_vnum guild_room;
+  int direction;
 };
 
 /* Config structs */

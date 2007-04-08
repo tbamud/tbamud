@@ -1,18 +1,15 @@
-/* ************************************************************************
-*   File: castle.c                                      Part of CircleMUD *
-*  Usage: Special procedures for King's Castle area                       *
+/**************************************************************************
+*  File: castle.c                                          Part of tbaMUD *
+*  Usage: Special procedures for King's Castle area.                      *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
-*  Special procedures for Kings Castle by Pjotr (d90-pem@nada.kth.se)     *
-*  Coded by Sapowox (d90-jkr@nada.kth.se)                                 *
+*  Special procedures for Kings Castle by Pjotr. Coded by Sapowox.        *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -21,16 +18,11 @@
 #include "db.h"
 #include "spells.h"
 
-
-/* IMPORTANT!
-   The below defined number is the zone number of the Kings Castle.
-   Change it to apply to your chosen zone number. The default zone
-   number (On Alex and Alfa) is 80 (That is rooms and mobs have numbers
-   in the 8000 series... */
+/* IMPORTANT! The below defined number is the zone number of the Kings Castle.
+ * Change it to apply to your chosen zone number. The default zone number 
+ * is 80. */
 
 #define Z_KINGS_C 150
-
-
 /* external variables */
 extern struct time_info_data time_info;
 extern int mini_mud;
@@ -53,12 +45,7 @@ int castle_cleaner(struct char_data *ch, int cmd, int gripe);
 int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname);
 void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc));
 
-
-/**********************************************************************\
-|* Special procedures for Kings Castle by Pjotr (d90-pem@nada.kth.se) *|
-|* Coded by Sapowox (d90-jkr@nada.kth.se)                             *|
-\**********************************************************************/
-
+/* Special procedures for Kings Castle by Pjotr. Coded by Sapowox. */
 SPECIAL(CastleGuard);
 SPECIAL(James);
 SPECIAL(cleaning);
@@ -73,12 +60,8 @@ SPECIAL(guild);
 ACMD(do_gen_door);
 ACMD(do_follow);
 
-/*
- * Assign castle special procedures.
- *
- * NOTE: The mobile number isn't fully specified. It's only an offset
- *	from the zone's base.
- */
+/* Assign castle special procedures. NOTE: The mobile number isn't fully 
+ * specified. It's only an offset from the zone's base. */
 void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc))
 {
   mob_vnum vmv = castle_virtual(mobnum);
@@ -90,15 +73,12 @@ void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc))
   if (rmr == NOBODY) {
     if (!mini_mud)
       log("SYSERR: assign_kings_castle(): can't find mob #%d.", vmv);
-      /*  SYSERR_DESC:
-       *  When the castle_mob_spec() function is given a mobnum that
-       *  does not correspond to a mod loaded (when not in minimud mode),
-       *  this error will result.
-       */
+      /* SYSERR_DESC: When the castle_mob_spec() function is given a mobnum
+       * that does not correspond to a mod loaded (when not in minimud mode),
+       * this error will result. */
   } else
     mob_index[rmr].func = specproc;
 }
-
 
 mob_vnum castle_virtual(mob_vnum offset)
 {
@@ -110,7 +90,6 @@ mob_vnum castle_virtual(mob_vnum offset)
   return zone_table[zon].bot + offset;
 }
 
-
 room_rnum castle_real_room(room_vnum roomoffset)
 {
   zone_rnum zon;
@@ -121,17 +100,11 @@ room_rnum castle_real_room(room_vnum roomoffset)
   return real_room(zone_table[zon].bot + roomoffset);
 }
 
-
-/*
- * Routine: assign_kings_castle
- *
- * Used to assign function pointers to all mobiles in the Kings Castle.
- * Called from spec_assign.c.
- */
+/* Routine: assign_kings_castle. Used to assign function pointers to all mobiles
+ * in the Kings Castle. Called from spec_assign.c. */
 void assign_kings_castle(void)
 {
   castle_mob_spec(0, CastleGuard);	/* Gwydion */
-  /* Added the previous line -- Furry */
   castle_mob_spec(1, king_welmar);	/* Our dear friend, the King */
   castle_mob_spec(3, CastleGuard);	/* Jim */
   castle_mob_spec(4, CastleGuard);	/* Brian */
@@ -148,8 +121,7 @@ void assign_kings_castle(void)
   castle_mob_spec(17, cleaning);	/* Ze Cleaning Fomen */
   castle_mob_spec(20, tim);		/* Tim, Tom's twin */
   castle_mob_spec(21, tom);		/* Tom, Tim's twin */
-  castle_mob_spec(24, DicknDavid);	/* Dick, guard of the
-					 * Treasury */
+  castle_mob_spec(24, DicknDavid);	/* Dick, guard of the Treasury */
   castle_mob_spec(25, DicknDavid);	/* David, Dicks brother */
   castle_mob_spec(26, jerry);		/* Jerry, the Gambler */
   castle_mob_spec(27, CastleGuard);	/* Michael */
@@ -157,13 +129,8 @@ void assign_kings_castle(void)
   castle_mob_spec(29, CastleGuard);	/* Boris */
 }
 
-
-/*
- * Routine: member_of_staff
- *
- * Used to see if a character is a member of the castle staff.
- * Used mainly by BANZAI:ng NPC:s.
- */
+/* Routine: member_of_staff. Used to see if a character is a member of the 
+ * castle staff. Used mainly by BANZAI:ng NPC:s. */
 int member_of_staff(struct char_data *chChar)
 {
   int ch_num;
@@ -188,13 +155,8 @@ int member_of_staff(struct char_data *chChar)
   return (FALSE);
 }
 
-
-/*
- * Function: member_of_royal_guard
- *
- * Returns TRUE if the character is a guard on duty, otherwise FALSE.
- * Used by Peter the captain of the royal guard.
- */
+/* Function: member_of_royal_guard. Returns TRUE if the character is a guard on
+ * duty, otherwise FALSE. Used by Peter the captain of the royal guard. */
 int member_of_royal_guard(struct char_data *chChar)
 {
   int ch_num;
@@ -216,13 +178,8 @@ int member_of_royal_guard(struct char_data *chChar)
   return (FALSE);
 }
 
-
-/*
- * Function: find_npc_by_name
- *
- * Returns a pointer to an npc by the given name.
- * Used by Tim and Tom
- */
+/* Function: find_npc_by_name. Returns a pointer to an npc by the given name.
+ * Used by Tim and Tom. */
 struct char_data *find_npc_by_name(struct char_data *chAtChar,
 		const char *pszName, int iLen)
 {
@@ -235,13 +192,8 @@ struct char_data *find_npc_by_name(struct char_data *chAtChar,
   return (NULL);
 }
 
-
-/*
- * Function: find_guard
- *
- * Returns the pointer to a guard on duty.
- * Used by Peter the Captain of the Royal Guard
- */
+/* Function: find_guard. Returns the pointer to a guard on duty. Used by Peter 
+ * the Captain of the Royal Guard */
 struct char_data *find_guard(struct char_data *chAtChar)
 {
   struct char_data *ch;
@@ -253,14 +205,9 @@ struct char_data *find_guard(struct char_data *chAtChar)
   return (NULL);
 }
 
-
-/*
- * Function: get_victim
- *
- * Returns a pointer to a randomly chosen character in the same room,
- * fighting someone in the castle staff...
- * Used by BANZAII-ing characters and King Welmar...
- */
+/* Function: get_victim. Returns a pointer to a randomly chosen character in 
+ * the same room, fighting someone in the castle staff. Used by BANZAII-ing 
+ * characters and King Welmar... */
 struct char_data *get_victim(struct char_data *chAtChar)
 {
   struct char_data *ch;
@@ -295,13 +242,8 @@ struct char_data *get_victim(struct char_data *chAtChar)
   return (NULL);
 }
 
-
-/*
- * Function: banzaii
- *
- * Makes a character banzaii on attackers of the castle staff.
- * Used by Guards, Tim, Tom, Dick, David, Peter, Master, King and Guards.
- */
+/* Banzaii. Makes a character banzaii on attackers of the castle staff. Used 
+ * by Guards, Tim, Tom, Dick, David, Peter, Master, and the King. */
 int banzaii(struct char_data *ch)
 {
   struct char_data *chOpponent;
@@ -315,13 +257,7 @@ int banzaii(struct char_data *ch)
   return (TRUE);
 }
 
-
-/*
- * Function: do_npc_rescue
- *
- * Makes ch_hero rescue ch_victim.
- * Used by Tim and Tom
- */
+/* Do_npc_rescue. Makes ch_hero rescue ch_victim. Used by Tim and Tom. */
 int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim)
 {
   struct char_data *ch_bad_guy;
@@ -349,11 +285,8 @@ int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim)
   return (TRUE);
 }
 
-
-/*
- * Procedure to block a person trying to enter a room.
- * Used by Tim/Tom at Kings bedroom and Dick/David at treasury.
- */
+/* Procedure to block a person trying to enter a room. Used by Tim/Tom at Kings 
+ * bedroom and Dick/David at treasury. */
 int block_way(struct char_data *ch, int cmd, char *arg, room_vnum iIn_room,
 	          int iProhibited_direction)
 {
@@ -373,11 +306,8 @@ int block_way(struct char_data *ch, int cmd, char *arg, room_vnum iIn_room,
   return (TRUE);
 }
 
-
-/*
- * Routine to check if an object is trash...
- * Used by James the Butler and the Cleaning Lady.
- */
+/* Routine to check if an object is trash. Used by James the Butler and the 
+ * Cleaning Lady. */
 int is_trash(struct obj_data *i)
 {
   if (!OBJWEAR_FLAGGED(i, ITEM_WEAR_TAKE))
@@ -389,13 +319,8 @@ int is_trash(struct obj_data *i)
   return (FALSE);
 }
 
-
-/*
- * Function: fry_victim
- *
- * Finds a suitabe victim, and cast some _NASTY_ spell on him.
- * Used by King Welmar
- */
+/* Fry_victim. Finds a suitabe victim, and cast some _NASTY_ spell on him. Used 
+ * by King Welmar. */
 void fry_victim(struct char_data *ch)
 {
   struct char_data *tch;
@@ -439,13 +364,7 @@ void fry_victim(struct char_data *ch)
   return;
 }
 
-
-/*
- * Function: king_welmar
- *
- * Control the actions and movements of the King.
- * Used by King Welmar.
- */
+/* King_welmar. Control the actions and movements of the King. */
 SPECIAL(king_welmar)
 {
   char actbuf[MAX_INPUT_LENGTH];
@@ -560,14 +479,9 @@ SPECIAL(king_welmar)
   return (FALSE);
 }
 
-
-/*
- * Function: training_master
- *
- * Acts actions to the training room, if his students are present.
- * Also allowes warrior-class to practice.
- * Used by the Training Master.
- */
+/* Training_master. Acts actions to the training room, if his students are 
+ * present. Also allowes warrior-class to practice. Used by the Training 
+ * Master. */
 SPECIAL(training_master)
 {
   struct char_data *pupil1, *pupil2 = NULL, *tch;
@@ -653,7 +567,6 @@ SPECIAL(training_master)
   return (FALSE);
 }
 
-
 SPECIAL(tom)
 {
   return castle_twin_proc(ch, cmd, argument, 48, "Tim");
@@ -664,9 +577,7 @@ SPECIAL(tim)
   return castle_twin_proc(ch, cmd, argument, 49, "Tom");
 }
 
-/*
- * Common routine for the Castle Twins.
- */
+/* Common routine for the Castle Twins. */
 int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname)
 {
   struct char_data *king, *twin;
@@ -697,20 +608,14 @@ int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum, const
 }
 
 
-/*
- * Routine for James the Butler.
- * Complains if he finds any trash...
- *
- * This doesn't make sure he _can_ carry it...
- */
+/* Routine for James the Butler. Complains if he finds any trash. This doesn't 
+ * make sure he _can_ carry it. */
 SPECIAL(James)
 {
   return castle_cleaner(ch, cmd, TRUE);
 }
 
-/*
- * Common code for James and the Cleaning Woman.
- */
+/* Common code for James and the Cleaning Woman. */
 int castle_cleaner(struct char_data *ch, int cmd, int gripe)
 {
   struct obj_data *i;
@@ -735,22 +640,13 @@ int castle_cleaner(struct char_data *ch, int cmd, int gripe)
   return (FALSE);
 }
 
-
-/*
- * Routine for the Cleaning Woman.
- * Picks up any trash she finds...
- */
+/* Routine for the Cleaning Woman. Picks up any trash she finds. */
 SPECIAL(cleaning)
 {
   return castle_cleaner(ch, cmd, FALSE);
 }
 
-
-/*
- * Routine: CastleGuard
- *
- * Standard routine for ordinary castle guards.
- */
+/* CastleGuard. Standard routine for ordinary castle guards. */
 SPECIAL(CastleGuard)
 {
   if (cmd || !AWAKE(ch) || (GET_POS(ch) == POS_FIGHTING))
@@ -759,12 +655,7 @@ SPECIAL(CastleGuard)
   return (banzaii(ch));
 }
 
-
-/*
- * Routine: DicknDave
- *
- * Routine for the guards Dick and David.
- */
+/* DicknDave. Routine for the guards Dick and David. */
 SPECIAL(DicknDavid)
 {
   if (!AWAKE(ch))
@@ -776,11 +667,7 @@ SPECIAL(DicknDavid)
   return (block_way(ch, cmd, argument, castle_virtual(36), 1));
 }
 
-
-/*
- * Routine: peter
- * Routine for Captain of the Guards.
- */
+/*Peter. Routine for Captain of the Guards. */
 SPECIAL(peter)
 {
   struct char_data *ch_guard = NULL;
@@ -843,11 +730,8 @@ SPECIAL(peter)
   return (FALSE);
 }
 
-
-/*
- * Procedure for Jerry and Michael in x08 of King's Castle.
- * Code by Sapowox modified by Pjotr.(Original code from Master)
- */
+/* Procedure for Jerry and Michael in x08 of King's Castle. Code by Sapowox 
+ * modified by Pjotr.(Original code from Master) */
 SPECIAL(jerry)
 {
   struct char_data *gambler1, *gambler2 = NULL, *tch;

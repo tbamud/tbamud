@@ -1,13 +1,12 @@
-/************************************************************************
- * Generic OLC Library - Rooms / genwld.c			v1.0	*
- * Original author: Levork						*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genwld.c                                          Part of tbaMUD *
+*  Usage: Generic OLC Library - Rooms.                                    *
+*                                                                         *
+*  By Levork. Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer. *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -23,10 +22,8 @@ extern room_rnum r_mortal_start_room;
 extern room_rnum r_immort_start_room;
 extern room_rnum r_frozen_start_room;
 
-/*
- * This function will copy the strings so be sure you free your own
- * copies of the description, title, and such.
- */
+/* This function will copy the strings so be sure you free your own copies of 
+ * the description, title, and such. */
 room_rnum add_room(struct room_data *room)
 {
   struct char_data *tch;
@@ -79,12 +76,9 @@ room_rnum add_room(struct room_data *room)
   }
 
   log("GenOLC: add_room: Added room %d at index #%d.", room->number, found);
-
   /* found is equal to the array index where we added the room. */
 
-  /*
-   * Find what zone that room was in so we can update the loading table.
-   */
+  /* Find what zone that room was in so we can update the loading table. */
   for (i = room->zone; i <= top_of_zone_table; i++)
     for (j = 0; ZCMD(i, j).command != 'S'; j++)
       switch (ZCMD(i, j).command) {
@@ -107,16 +101,12 @@ room_rnum add_room(struct room_data *room)
         mudlog(BRF, LVL_GOD, TRUE, "SYSERR: GenOLC: add_room: Unknown zone entry found!");
       }
 
-  /*
-   * Update the loadroom table. Adds 1 or 0.
-   */
+  /* Update the loadroom table. Adds 1 or 0. */
   r_mortal_start_room += (r_mortal_start_room >= found);
   r_immort_start_room += (r_immort_start_room >= found);
   r_frozen_start_room += (r_frozen_start_room >= found);
 
-  /*
-   * Update world exits.
-   */
+  /* Update world exits. */
   i = top_of_world + 1;
   do {
     i--;
@@ -127,13 +117,9 @@ room_rnum add_room(struct room_data *room)
 
   add_to_save_list(zone_table[room->zone].number, SL_WLD);
 
-  /*
-   * Return what array entry we placed the new room in.
-   */
+  /* Return what array entry we placed the new room in. */
   return found;
 }
-
-/* -------------------------------------------------------------------------- */
 
 int delete_room(room_rnum rnum)
 {
@@ -166,10 +152,8 @@ int delete_room(room_rnum rnum)
     r_frozen_start_room = 0;	/* The Void */
   }
 
-  /*
-   * Dump the contents of this room into the Void.  We could also just
-   * extract the people, mobs, and objects here.
-   */
+  /* Dump the contents of this room into the Void.  We could also just extract 
+   * the people, mobs, and objects here. */
   for (obj = world[rnum].contents; obj; obj = next_obj) {
     next_obj = obj->next_content;
     obj_from_room(obj);
@@ -186,10 +170,8 @@ int delete_room(room_rnum rnum)
     extract_script(room, WLD_TRIGGER);
   free_proto_script(room, WLD_TRIGGER);
 
-  /*
-   * Change any exit going to this room to go the void.
-   * Also fix all the exits pointing to rooms above this.
-   */
+  /* Change any exit going to this room to go the void. Also fix all the exits 
+   * pointing to rooms above this. */
   i = top_of_world + 1;
   do {
     i--;
@@ -216,9 +198,7 @@ int delete_room(room_rnum rnum)
     }
   } while (i > 0);
 
-  /*
-   * Find what zone that room was in so we can update the loading table.
-   */
+  /* Find what zone that room was in so we can update the loading table. */
   for (i = 0; i <= top_of_zone_table; i++)
     for (j = 0; ZCMD(i , j).command != 'S'; j++)
       switch (ZCMD(i, j).command) {
@@ -247,18 +227,14 @@ int delete_room(room_rnum rnum)
         mudlog(BRF, LVL_GOD, TRUE, "SYSERR: GenOLC: delete_room: Unknown zone entry found!");
       }
 
-  /*
-   * Remove this room from all shop lists.
-   */
+  /* Remove this room from all shop lists. */
   for (i = 0;i < top_shop;i++) {
     for (j = 0;SHOP_ROOM(i, j) != NOWHERE;j++) {
       if (SHOP_ROOM(i, j) == world[rnum].number)
         SHOP_ROOM(i, j) = 0; /* set to the void */
     }
   }
-  /*
-   * Now we actually move the rooms down.
-   */
+  /* Now we actually move the rooms down. */
   for (i = rnum; i < top_of_world; i++) {
     world[i] = world[i + 1];
     update_wait_events(&world[i], &world[i+1]);
@@ -275,7 +251,6 @@ int delete_room(room_rnum rnum)
 
   return TRUE;
 }
-
 
 int save_rooms(zone_rnum rzone)
 {
@@ -313,15 +288,11 @@ int save_rooms(zone_rnum rzone)
 
       room = (world + rnum);
 
-      /*
-       * Copy the description and strip off trailing newlines.
-       */
+      /* Copy the description and strip off trailing newlines. */
       strncpy(buf, room->description ? room->description : "Empty room.", sizeof(buf)-1 );
       strip_cr(buf);
 
-      /*
-       * Save the numeric and string section of the file.
-       */
+      /* Save the numeric and string section of the file. */
       sprintascii(bit, room->room_flags);
       fprintf(sf, 	"#%d\n"
 			"%s%c\n"
@@ -333,9 +304,7 @@ int save_rooms(zone_rnum rzone)
 		zone_table[room->zone].number, bit, room->sector_type
       );
 
-      /*
-       * Now you write out the exits for the room.
-       */
+      /* Now you write out the exits for the room. */
       for (j = 0; j < NUM_OF_DIRS; j++) {
 	if (R_EXIT(room, j)) {
 	  int dflag;
@@ -345,9 +314,7 @@ int save_rooms(zone_rnum rzone)
 	  } else
 	    *buf = '\0';
 
-	  /*
-	   * Figure out door flag.
-	   */
+	  /* Figure out door flag. */
 	  if (IS_SET(R_EXIT(room, j)->exit_info, EX_ISDOOR)) {
 	    if (IS_SET(R_EXIT(room, j)->exit_info, EX_PICKPROOF))
 	      dflag = 2;
@@ -361,9 +328,7 @@ int save_rooms(zone_rnum rzone)
 	  else
 	    *buf1 = '\0';
 
-	  /*
-	   * Now write the exit to the file.
-	   */
+	  /* Now write the exit to the file. */
 	  fprintf(sf,	"D%d\n"
 			"%s~\n"
 			"%s~\n"
@@ -390,9 +355,7 @@ int save_rooms(zone_rnum rzone)
     }
   }
 
-  /*
-   * Write the final line and close it.
-   */
+  /* Write the final line and close it. */
   fprintf(sf, "$~\n");
   fclose(sf);
 
@@ -413,17 +376,14 @@ int copy_room(struct room_data *to, struct room_data *from)
   *to = *from;
   copy_room_strings(to, from);
 
-  /* Don't put people and objects in two locations.
-     Am thinking this shouldn't be done here... */
+  /* Don't put people and objects in two locations. Should this be done here? */
   from->people = NULL;
   from->contents = NULL;
 
   return TRUE;
 }
 
-/*
- * Idea by: Cris Jacobin <jacobin@bellatlantic.net>
- */
+/* Idea by Cris Jacob. */
 room_rnum duplicate_room(room_vnum dest_vnum, room_rnum orig)
 {
   int new_rnum, znum;
@@ -441,9 +401,7 @@ room_rnum duplicate_room(room_vnum dest_vnum, room_rnum orig)
     return NOWHERE;
   }
 
-  /*
-   * add_room will make its own copies of strings.
-   */
+  /* add_room will make its own copies of strings. */
   if ((new_rnum = add_room(&nroom)) == NOWHERE) {
     log("SYSERR: GenOLC: copy_room: Problem adding room.");
     return NOWHERE;
@@ -453,21 +411,17 @@ room_rnum duplicate_room(room_vnum dest_vnum, room_rnum orig)
   nroom.number = dest_vnum;
   nroom.zone = znum;
 
-  /* So the people and objects aren't in two places at once... */
+  /* So the people and objects aren't in two places at once. */
   nroom.contents = NULL;
   nroom.people = NULL;
 
   return new_rnum;
 }
 
-/* -------------------------------------------------------------------------- */
-
-/*
- * Copy strings over so bad things don't happen.  We do not free the
- * existing strings here because copy_room() did a shallow copy previously
- * and we'd be freeing the very strings we're copying.  If this function
- * is used elsewhere, be sure to free_room_strings() the 'dest' room first.
- */
+/* Copy strings over so bad things don't happen.  We do not free the existing 
+ * strings here because copy_room() did a shallow copy previously and we'd be 
+ * freeing the very strings we're copying.  If this function is used elsewhere,
+ * be sure to free_room_strings() the 'dest' room first. */
 int copy_room_strings(struct room_data *dest, struct room_data *source)
 {
   int i;

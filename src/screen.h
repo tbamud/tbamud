@@ -1,8 +1,8 @@
-/* ************************************************************************
-*   File: screen.h                                      Part of CircleMUD *
-*  Usage: header file with ANSI color codes for online color              *
+/**************************************************************************
+*  File: screen.h                                          Part of tbaMUD *
+*  Usage: Header file with ANSI color codes for online color.             *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.        *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *

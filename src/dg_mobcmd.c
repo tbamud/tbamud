@@ -1,34 +1,6 @@
-/***************************************************************************
- *  Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,        *
- *  Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.   *
- *                                                                         *
- *  Merc Diku Mud improvments copyright (C) 1992, 1993 by Michael          *
- *  Chastain, Michael Quan, and Mitchell Tse.                              *
- *                                                                         *
- *  In order to use any part of this Merc Diku Mud, you must comply with   *
- *  both the original Diku license in 'license.doc' as well the Merc       *
- *  license in 'license.txt'.  In particular, you may not remove either of *
- *  these copyright notices.                                               *
- *                                                                         *
- *  Much time and thought has gone into this software and you are          *
- *  benefitting.  We hope that you share your changes too.  What goes      *
- *  around, comes around.                                                  *
- ***************************************************************************/
-
-/***************************************************************************
- *  The MOBprograms have been contributed by N'Atas-ha.  Any support for   *
- *  these routines should not be expected from Merc Industries.  However,  *
- *  under no circumstances should the blame for bugs, etc be placed on     *
- *  Merc Industries.  They are not guaranteed to work on all systems due   *
- *  to their frequent use of strxxx functions.  They are also not the most *
- *  efficient way to perform their tasks, but hopefully should be in the   *
- *  easiest possible way to install and begin using. Documentation for     *
- *  such installation can be found in INSTALL.  Enjoy........    N'Atas-Ha *
- ***************************************************************************/
 /**************************************************************************
-*  File: dg_mobcmd.c                                                      *
-*  Usage: contains the mobile script commands.                            *
-*                                                                         *
+*  File: dg_mobcmd.c                                       Part of tbaMUD *
+*  Usage: Contains the mobile script commands.                            *
 *                                                                         *
 *  $Author: N'Atas-ha/Mark A. Heilpern/egreen/Welcor $                    *
 *  $Date: 2004/10/11 12:07:00$                                            *
@@ -37,8 +9,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "screen.h"
 #include "dg_scripts.h"
@@ -50,17 +20,13 @@
 #include "spells.h"
 #include "constants.h"
 
-/*
- * External functions
- */
+/* External functions */
 bitvector_t asciiflag_conv(char *flag);
 zone_rnum real_zone_by_thing(room_vnum vznum);
 void die(struct char_data *ch, struct char_data *killer);
 room_rnum find_target_room(struct char_data *ch, char *rawroomstr);
 
-/*
- * Local functions.
- */
+/* Local functions. */
 void mob_log(char_data *mob, const char *format, ...);
 ACMD(do_masound);
 ACMD(do_mkill);
@@ -98,14 +64,11 @@ void mob_log(char_data *mob, const char *format, ...)
   va_end(args);
 }
 
-/*
-** macro to determine if a mob is permitted to use these commands
-*/
+/* Macro to determine if a mob is permitted to use these commands. */
 #define MOB_OR_IMPL(ch) \
   (IS_NPC(ch) && (!(ch)->desc || GET_LEVEL((ch)->desc->original)>=LVL_IMPL))
 
 /* mob commands */
-
 /* prints the argument to all the rooms aroud the mobile */
 ACMD(do_masound)
 {
@@ -144,7 +107,6 @@ ACMD(do_masound)
 
     IN_ROOM(ch) = was_in_room;
 }
-
 
 /* lets the mobile kill any player or mobile without murder*/
 ACMD(do_mkill)
@@ -196,12 +158,9 @@ ACMD(do_mkill)
     return;
 }
 
-
-/*
- * lets the mobile destroy an object in its inventory
- * it can also destroy a worn object and it can destroy
- * items using all.xxxxx or just plain all of them
- */
+/* Lets the mobile destroy an object in its inventory it can also destroy a 
+ * worn object and it can destroy items using all.xxxxx or just plain all of 
+ * them. */
 ACMD(do_mjunk)
 {
     char arg[MAX_INPUT_LENGTH];
@@ -249,7 +208,6 @@ ACMD(do_mjunk)
     return;
 }
 
-
 /* prints the message to everyone in the room other than the mob and victim */
 ACMD(do_mechoaround)
 {
@@ -286,7 +244,6 @@ ACMD(do_mechoaround)
     sub_write(p, victim, TRUE, TO_ROOM);
 }
 
-
 /* sends the message to only the victim */
 ACMD(do_msend)
 {
@@ -322,7 +279,6 @@ ACMD(do_msend)
 
     sub_write(p, victim, TRUE, TO_CHAR);
 }
-
 
 /* prints the message to the room at large */
 ACMD(do_mecho)
@@ -367,10 +323,8 @@ ACMD(do_mzoneecho)
     }
 }
 
-/*
- * lets the mobile load an item or mobile.  All items
- * are loaded into inventory, unless it is NO-TAKE.
- */
+/* Lets the mobile load an item or mobile.  All items are loaded into 
+ * inventory, unless it is NO-TAKE. */
 ACMD(do_mload)
 {
     char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
@@ -476,12 +430,9 @@ ACMD(do_mload)
         mob_log(ch, "mload: bad type");
 }
 
-
-/*
- * lets the mobile purge all objects and other npcs in the room,
- * or purge a specified object or mob in the room.  It can purge
- *  itself, but this will be the last command it does.
- */
+/* Lets the mobile purge all objects and other npcs in the room, or purge a 
+ * specified object or mob in the room.  It can purge itself, but this will 
+ * be the last command it does. */
 ACMD(do_mpurge)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -549,7 +500,6 @@ ACMD(do_mpurge)
   extract_char(victim);
 }
 
-
 /* lets the mobile goto any location it wishes that is not private */
 ACMD(do_mgoto)
 {
@@ -583,7 +533,6 @@ ACMD(do_mgoto)
     char_to_room(ch, location);
     enter_wtrigger(&world[IN_ROOM(ch)], ch, -1);
 }
-
 
 /* lets the mobile do a command at another location. Very useful */
 ACMD(do_mat)
@@ -626,11 +575,8 @@ ACMD(do_mat)
     }
 }
 
-
-/*
- * lets the mobile transfer people.  the all argument transfers
- * everyone in the current room to the specified location
- */
+/* Lets the mobile transfer people. The all argument transfers everyone in the 
+ * current room to the specified location. */
 ACMD(do_mteleport)
 {
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
@@ -693,7 +639,6 @@ ACMD(do_mteleport)
   }
 }
 
-
 ACMD(do_mdamage) {
   char name[MAX_INPUT_LENGTH], amount[MAX_INPUT_LENGTH];
   int dam = 0;
@@ -728,10 +673,8 @@ ACMD(do_mdamage) {
   script_damage(vict, dam);
 }
 
-/*
- * lets the mobile force someone to do something.  must be mortal level
- * and the all argument only affects those in the room with the mobile
- */
+/* Lets the mobile force someone to do something.  must be mortal level and the 
+ * all argument only affects those in the room with the mobile. */
 ACMD(do_mforce)
 {
     char arg[MAX_INPUT_LENGTH];
@@ -832,7 +775,6 @@ ACMD(do_mhunt)
 
 }
 
-
 /* place someone into the mob's memory list */
 ACMD(do_mremember)
 {
@@ -883,7 +825,6 @@ ACMD(do_mremember)
       mem->cmd = strdup(argument);
     }
 }
-
 
 /* remove someone from the list */
 ACMD(do_mforget)
@@ -941,7 +882,6 @@ ACMD(do_mforget)
    }
 }
 
-
 /* transform into a different mobile */
 ACMD(do_mtransform)
 {
@@ -984,7 +924,6 @@ ACMD(do_mtransform)
     }
 
     /* move new obj info over to old object and delete new obj */
-
     for (pos = 0; pos < NUM_WEARS; pos++) {
       if (GET_EQ(ch, pos))
         obj[pos] = unequip_char(ch, pos);
@@ -1009,7 +948,6 @@ ACMD(do_mtransform)
       tmpmob.player.long_descr = strdup(m->player.long_descr);
     if(m->player.description)
       tmpmob.player.description = strdup(m->player.description);
-
 
     tmpmob.id = ch->id;
     tmpmob.affected = ch->affected;
@@ -1047,7 +985,6 @@ ACMD(do_mtransform)
   }
 }
 
-
 ACMD(do_mdoor)
 {
     char target[MAX_INPUT_LENGTH], direction[MAX_INPUT_LENGTH];
@@ -1065,7 +1002,6 @@ ACMD(do_mdoor)
         "room",
         "\n"
     };
-
 
     if (!MOB_OR_IMPL(ch)) {
         send_to_char(ch, "Huh?!?\r\n");
@@ -1220,8 +1156,8 @@ ACMD(do_mfollow)
   leader->followers = k;
 }
 
-/* prints the message to everyone in the range of numbers */
-/* Thx to Jamie Nelson of 4D for this contribution */
+/* Prints the message to everyone in the range of numbers. Thanks to Jamie 
+ * Nelson of 4D for this contribution */
 ACMD(do_mrecho)
 {
     char start[MAX_INPUT_LENGTH], finish[MAX_INPUT_LENGTH], *msg;

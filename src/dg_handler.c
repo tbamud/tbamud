@@ -1,9 +1,8 @@
 /**************************************************************************
-*  File: dg_handler.c                                                     *
+*  File: dg_handler.c                                      Part of tbaMUD *
+*  Usage: Contains functions to handle memory for scripts.                *
 *                                                                         *
-*  Usage: contains functions to handle memory for scripts.                *
-*                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Death's Gate MUD is based on CircleMUD, Copyright (C) 1993, 94.        *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
@@ -15,8 +14,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "dg_scripts.h"
 #include "utils.h"
@@ -49,10 +46,7 @@ void free_varlist(struct trig_var_data *vd)
     }
 }
 
-/*
- * remove var name from var_list
- * returns 1 if found, else 0
- */
+/* Remove var name from var_list. Returns 1 if found, else 0. */
 int remove_var(struct trig_var_data **var_list, char *name)
 {
   struct trig_var_data *i, *j;
@@ -75,11 +69,8 @@ int remove_var(struct trig_var_data **var_list, char *name)
   return 0;
 }
 
-/*
- * Return memory used by a trigger
- * The command list is free'd when changed and when
- * shutting down.
- */
+/* Return memory used by a trigger. The command list is free'd when changed and
+ * when shutting down. */
 void free_trigger(struct trig_data *trig)
 {
     free(trig->name);
@@ -98,7 +89,6 @@ void free_trigger(struct trig_data *trig)
 
     free(trig);
 }
-
 
 /* remove a single trigger from a mob/obj/room */
 void extract_trigger(struct trig_data *trig)

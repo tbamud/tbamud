@@ -1,11 +1,11 @@
-/*
- * The functions below this point is handling the context sensitive help system
- * If you add more olc options, be sure to add a case for it here. - Welcor
- */
+/**************************************************************************
+*  File: context_help.c                                    Part of tbaMUD *
+*  Usage: Handles the context sensitive help system.                      *
+*  By Welcor.                                                             *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -20,6 +20,7 @@ ACMD(do_help);
 /* local global */
 char *context_help_list[NUM_CONTEXTS];
 
+/* If you add more olc options, be sure to add a case for it here. - Welcor */
 int find_context(struct descriptor_data *d)
 {
   switch STATE(d) {

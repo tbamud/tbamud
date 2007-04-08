@@ -1,9 +1,9 @@
-/************************************************************************
- * Generic OLC Library - Objects / genobj.c			v1.0	*
- * Original author: Levork						*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genobj.c                                          Part of tbaMUD *
+*  Usage: Generic OLC Library - Objects.                                  *
+*                                                                         *
+*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

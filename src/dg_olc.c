@@ -1,11 +1,6 @@
 /**************************************************************************
-*  File: dg_olc.c                                                         *
-*                                                                         *
-*  Usage: this source file is used in extending Oasis style OLC for       *
-*  dg-scripts onto a CircleMUD that already has dg-scripts (as released   *
-*  by Mark Heilpern on 1/1/98) implemented.                               *
-*                                                                         *
-*  Parts of this file by Chris Jacobson of _Aliens vs Predator: The MUD_  *
+*  File: dg_olc.c                                          Part of tbaMUD *
+*  Usage: this source file is used in extending Oasis OLC for trigedit.   *
 *                                                                         *
 *  $Author: Chris Jacobsen/Mark A. Heilpern/egreen/Welcor $               *
 *  $Date: 2004/10/11 12:07:00$                                            *
@@ -768,8 +763,7 @@ int dg_script_edit_parse(struct descriptor_data *d, char *arg)
 	   * Solution: Here we just point the working copies to the new 
 	   * proto_scripts. We only update the original when choosing to save 
 	   * internally, then free the unused memory there. -Welcor
-	   * Thanks to Jeremy Stanley - fungi@yuggoth.org and Torgny Bjers - 
-	   * artovil@arcanerealms.org for the bug report.
+	   * Thanks to Jeremy Stanley and Torgny Bjers for the bug report.
 	   * After updating to OasisOLC 2.0.3 I discovered some malfunctions
 	   * in this code, so I restructured it a bit. Now things work like 
 	   * this: OLC_SCRIPT(d) is assigned a copy of the edited things' 

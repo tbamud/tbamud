@@ -1,9 +1,9 @@
-/************************************************************************
- * OasisOLC - Objects / oedit.c					v2.0	*
- * Original author: Levork						*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: oedit.c                                           Part of tbaMUD *
+*  Usage: Oasis OLC - Objects.                                            *
+*                                                                         *
+* By Levork. Copyright 1996 Harvey Gilpin. 1997-2001 George Greer.        *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

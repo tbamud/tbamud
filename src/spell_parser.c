@@ -1,13 +1,12 @@
-/* ************************************************************************
-*   File: spell_parser.c                                Part of CircleMUD *
-*  Usage: top-level magic routines; outside points of entry to magic sys. *
+/**************************************************************************
+*  File: spell_parser.c                                    Part of tbaMUD *
+*  Usage: Top-level magic routines; outside points of entry to magic sys. *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
-
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -185,8 +184,7 @@ int find_skill_num(char *name)
   return (-1);
 }
 
-/*
- * This function is the very heart of the entire magic system.  All invocations
+/* This function is the very heart of the entire magic system.  All invocations
  * of all types of magic -- objects, spoken and unspoken PC and NPC spells, the
  * works -- all come through this function eventually. This is also the entry 
  * point for non-spoken or unrestricted spells. Spellnum 0 is legal but silently
@@ -922,14 +920,12 @@ void mag_assign_spells(void)
 
 
   /* NON-castable spells should appear below here. */
-
   spello(SPELL_IDENTIFY, "identify", 0, 0, 0, 0,
 	TAR_CHAR_ROOM | TAR_OBJ_INV | TAR_OBJ_ROOM, FALSE, MAG_MANUAL,
 	NULL);
 
   /* These spells are currently not used, not implemented, and not castable.
    * Values for the 'breath' spells are filled in assuming a dragon's breath. */
-
   spello(SPELL_FIRE_BREATH, "fire breath", 0, 0, 0, POS_SITTING,
 	TAR_IGNORE, TRUE, 0,
 	NULL);

@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: db.h                                          Part of CircleMUD *
-*  Usage: header file for database handling                               *
+/**************************************************************************
+*  File: db.h                                              Part of tbaMUD *
+*  Usage: Header file for database handling.                              *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 /* arbitrary constants used by index_boot() (must be unique) */
 #define DB_BOOT_WLD	0
@@ -175,21 +175,17 @@ struct reset_com {
    char *sarg1;		/* string argument                      */
    char *sarg2;		/* string argument                      */
 
-   /*
-	*  Commands:              *
-	*  'M': Read a mobile     *
-	*  'O': Read an object    *
-	*  'G': Give obj to mob   *
-	*  'P': Put obj in obj    *
-	*  'G': Obj to char       *
-	*  'E': Obj to char equip *
-	*  'D': Set state of door *
-	*  'T': Trigger command   *
-	*  'V': Assign a variable *
-   */
+   /* Commands: 
+    *  'M': Read a mobile 
+    *  'O': Read an object 
+    *  'G': Give obj to mob
+    *  'P': Put obj in obj
+    *  'G': Obj to char
+    *  'E': Obj to char equip
+    *  'D': Set state of door
+    *  'T': Trigger command
+    *  'V': Assign a variable */
 };
-
-
 
 /* zone definition structure. for the 'zone-table'   */
 struct zone_data {
@@ -205,15 +201,11 @@ struct zone_data {
    zone_vnum number;	    /* virtual number of this zone	  */
    struct reset_com *cmd;   /* command table for reset	          */
 
-   /*
-    * Reset mode:
+   /* Reset mode:
     *   0: Don't reset, and don't update age.
     *   1: Reset if no PC's are located in zone.
-    *   2: Just reset.
-    */
+    *   2: Just reset. */
 };
-
-
 
 /* for queueing zones for update   */
 struct reset_q_element {
@@ -221,19 +213,14 @@ struct reset_q_element {
    struct reset_q_element *next;
 };
 
-
-
 /* structure for the update queue     */
 struct reset_q_type {
    struct reset_q_element *head;
    struct reset_q_element *tail;
 };
 
-
-/* Added level, flags, and last, primarily for pfile autocleaning.  You
-   can also use them to keep online statistics, and can add race, class,
-   etc if you like.
-*/
+/* Added level, flags, and last, primarily for pfile autocleaning.  You can also
+ * use them to keep online statistics, and add race, class, etc if you like. */
 struct player_index_element {
    char	*name;
    long id;
@@ -242,7 +229,6 @@ struct player_index_element {
    time_t last;
 };
 
-
 struct help_index_element {
    char *index;      /*Future Use */
    char *keywords;   /*Keyword Place holder and sorter */
@@ -250,7 +236,6 @@ struct help_index_element {
    int duplicate;    /*Duplicate entries for multple keywords*/
    int min_level;    /*Min Level to read help entry*/
 };
-
 
 /* don't change these */
 #define BAN_NOT 	0

@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: comm.c                                        Part of CircleMUD *
-*  Usage: Communication, socket handling, main(), central game loop       *
+/**************************************************************************
+*  File: comm.c                                            Part of tbaMUD *
+*  Usage: Communication, socket handling, main(), central game loop.      *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #define __COMM_C__
 
@@ -76,7 +76,7 @@
 extern struct ban_list_element *ban_list;
 extern int num_invalid;
 extern char *GREETINGS;
-extern const char *circlemud_version;
+extern const char *tbamud_version;
 extern const char *oasisolc_version;
 extern const char *ascii_pfiles_version;
 extern int circle_restrict;
@@ -168,9 +168,9 @@ int isbanned(char *hostname);
 void weather_and_time(int mode);
 int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen);
 void free_messages(void);
-void Board_clear_all(void);
+void board_clear_all(void);
 void free_social_messages(void);
-void Free_Invalid_List(void);
+void free_invalid_list(void);
 void free_command_list(void);
 void load_config(void);
 void new_hist_messg(struct descriptor_data *d, const char *msg);
@@ -301,10 +301,8 @@ int main(int argc, char **argv)
       puts("Suppressing assignment of special routines.");
       break;
     case 'h':
-      /* From: Anil Mahajan <amahajan@proxicom.com> */
-      /* Do NOT use -C, this is the copyover mode and without
-       * the proper copyover.dat file, the game will go nuts!
-       * -spl */
+      /* From: Anil Mahajan. Do NOT use -C, this is the copyover mode and 
+       * without the proper copyover.dat file, the game will go nuts! */
       printf("Usage: %s [-c] [-m] [-q] [-r] [-s] [-d pathname] [port #]\n"
               "  -c             Enable syntax check mode.\n"
               "  -d <directory> Specify library directory (defaults to 'lib').\n"
@@ -342,7 +340,7 @@ int main(int argc, char **argv)
   /* Moved here to distinguish command line options and to show up
    * in the log if stderr is redirected to a file. */
   log("Using %s for configuration.", CONFIG_CONFFILE);
-  log("%s", circlemud_version);
+  log("%s", tbamud_version);
   log("%s", oasisolc_version);
   log("%s", DG_SCRIPT_VERSION);
   log("%s", ascii_pfiles_version);
@@ -369,12 +367,12 @@ int main(int argc, char **argv)
     free_player_index();	/* players.c */
     free_messages();		/* fight.c */
     free_text_files();		/* db.c */
-    Board_clear_all();		/* boards.c */
+    board_clear_all();		/* boards.c */
     free(cmd_sort_info);	/* act.informative.c */
     free_command_list();        /* act.informative.c */
     free_social_messages();	/* act.social.c */
     free_help_table();		/* db.c */
-    Free_Invalid_List();	/* ban.c */
+    free_invalid_list();	/* ban.c */
     free_strings(&config_info, OASIS_CFG); /* oasis_delete.c */
   }
 
@@ -594,8 +592,7 @@ socket_t init_socket(ush_int port)
   set_sendbuf(s);
 
 /* The GUSI sockets library is derived from BSD, so it defines SO_LINGER, even 
- * though setsockopt() is unimplimented. (from Dean Takemori 
- * <dean@UHHEPH.PHYS.HAWAII.EDU>) */
+ * though setsockopt() is unimplimented. (from Dean Takemori) */
 #if defined(SO_LINGER) && !defined(CIRCLE_MACINTOSH)
   {
     struct linger ld;
@@ -979,7 +976,7 @@ void heartbeat(int heart_pulse)
     record_usage();
 
   if (!(heart_pulse % PULSE_TIMESAVE))
-    save_mud_time(&time_info);
+  save_mud_time(&time_info);
 
   /* Every pulse! Don't want them to stink the place up... */
   extract_pending_chars();
@@ -1011,8 +1008,7 @@ void timediff(struct timeval *rslt, struct timeval *a, struct timeval *b)
   }
 }
 
-/* Add 2 time values.  Patch sent by "d. hall" <dhall@OOI.NET> to fix 'static' 
- * usage. */
+/* Add 2 time values.  Patch sent by "d. hall" to fix 'static' usage. */
 void timeadd(struct timeval *rslt, struct timeval *a, struct timeval *b)
 {
   rslt->tv_sec = a->tv_sec + b->tv_sec;
@@ -1109,7 +1105,6 @@ size_t proc_colors(char *txt, size_t maxlen, int parse)
     }
 
     /* if we get here we have a color code */
-
     s++; /* s now points to the code */
 
     if (!*s) { /* string was terminated with @ */
@@ -1554,7 +1549,6 @@ int new_descriptor(socket_t s)
   return (0);
 }
 
-
 /* Send all of the output that we've accumulated for a player out to the 
  * player's descriptor. 32 byte GARBAGE_SPACE in MAX_SOCK_BUF used for:
  *	 2 bytes: prepended \r\n
@@ -1631,7 +1625,6 @@ int process_output(struct descriptor_data *t)
 
   } else {
     /* Not all data in buffer sent.  result < output buffersize. */
-
     strcpy(t->output, t->output + result);	/* strcpy: OK (overlap) */
     t->bufptr   -= result;
     t->bufspace += result;
@@ -1781,7 +1774,6 @@ ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space_left)
   }
 
   /* Read returned a value < 0: there was an error. */
-
 #if defined(CIRCLE_WINDOWS)	/* Windows */
   if (WSAGetLastError() == WSAEWOULDBLOCK || WSAGetLastError() == WSAEINTR)
     return (0);
@@ -1857,9 +1849,8 @@ int process_input(struct descriptor_data *t)
       return (0);
 
     /* at this point, we know we got some data from the read */
-
     *(read_point + bytes_read) = '\0';	/* terminate the string */
-
+    
     /* search for a newline in the data we just read */
     for (ptr = read_point; *ptr && !nl_pos; ptr++)
       if (ISNEWL(*ptr))
@@ -1979,19 +1970,17 @@ int process_input(struct descriptor_data *t)
   return (1);
 }
 
-/* perform substitution for the '^..^' csh-esque syntax orig is the
- * orig string, i.e. the one being modified.  subst contains the
- * substition string, i.e. "^telm^tell" */
+/* Perform substitution for the '^..^' csh-esque syntax orig is the orig string, 
+ * i.e. the one being modified.  subst contains the substition string, i.e. 
+ * "^telm^tell" */
 int perform_subst(struct descriptor_data *t, char *orig, char *subst)
 {
   char newsub[MAX_INPUT_LENGTH + 5];
 
   char *first, *second, *strpos;
 
-  /*
-   * first is the position of the beginning of the first string (the one
-   * to be replaced
-   */
+  /* First is the position of the beginning of the first string (the one to be 
+   * replaced. */
   first = subst + 1;
 
   /* now find the second '^' */
@@ -2547,13 +2536,13 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
   if (!str || !*str)
     return NULL;
 
-  /* Warning: the following TO_SLEEP code is a hack.
-   * I wanted to be able to tell act to deliver a message regardless of sleep
-   * without adding an additional argument.  TO_SLEEP is 128 (a single bit
-   * high up).  It's ONLY legal to combine TO_SLEEP with one other TO_x
-   * command.  It's not legal to combine TO_x's with each other otherwise.
-   * TO_SLEEP only works because its value "happens to be" a single bit;
-   * do not change it to something else.  In short, it is a hack. */
+  /* Warning: the following TO_SLEEP code is a hack. I wanted to be able to tell
+   * act to deliver a message regardless of sleep without adding an additional 
+   * argument.  TO_SLEEP is 128 (a single bit high up).  It's ONLY legal to 
+   * combine TO_SLEEP with one other TO_x command.  It's not legal to combine 
+   * TO_x's with each other otherwise. TO_SLEEP only works because its value 
+   * "happens to be" a single bit; do not change it to something else.  In 
+   * short, it is a hack. */
 
   /* check if TO_SLEEP is there, and remove it if it is. */
   if ((to_sleeping = (type & TO_SLEEP)))
@@ -2678,18 +2667,14 @@ int open_logfile(const char *filename, FILE *stderr_fp)
   return (FALSE);
 }
 
-/*
- * This may not be pretty but it keeps game_loop() neater than if it was inline.
- */
+/* This may not be pretty but it keeps game_loop() neater than if it was inline. */
 #if defined(CIRCLE_WINDOWS)
-
 void circle_sleep(struct timeval *timeout)
 {
   Sleep(timeout->tv_sec * 1000 + timeout->tv_usec / 1000);
 }
 
 #else
-
 void circle_sleep(struct timeval *timeout)
 {
   if (select(0, (fd_set *) 0, (fd_set *) 0, (fd_set *) 0, timeout) < 0) {

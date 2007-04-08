@@ -1,8 +1,8 @@
-/* ************************************************************************
-*   File: handler.c                                     Part of CircleMUD *
-*  Usage: internal funcs: moving and finding chars/objs                   *
+/**************************************************************************
+*  File: handler.c                                         Part of tbaMUD *
+*  Usage: Internal funcs: moving and finding chars/objs.                  *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
@@ -49,8 +49,7 @@ char *fname(const char *namelist)
   return (holder);
 }
 
-/* Stock isname().  Leave this here even if you put in a newer  *
- * isname().  Used for OasisOLC. */
+/* Leave this here even if you put in a newer isname().  Used for OasisOLC. */
 int is_name(const char *str, const char *namelist)
 {
   const char *curname, *curstr;
@@ -139,17 +138,10 @@ void affect_modify(struct char_data *ch, byte loc, sbyte mod,
     GET_CHA(ch) += mod;
     break;
 
+  /* Do Not Use. */
   case APPLY_CLASS:
-    /* ??? GET_CLASS(ch) += mod; */
     break;
-
-  /* My personal thoughts on these two would be to set the person to the value 
-   * of the apply.  That way you won't have to worry about people making +1 
-   * level things to be imp (you restrict anything that gives immortal level of
-   * course).  It also makes more sense to set someone to a class rather than 
-   * adding to the class number. -gg */
   case APPLY_LEVEL:
-    /* ??? GET_LEVEL(ch) += mod; */
     break;
 
   case APPLY_AGE:
@@ -235,7 +227,6 @@ void affect_total(struct char_data *ch)
 		      GET_EQ(ch, i)->affected[j].modifier,
 		      GET_OBJ_AFFECT(GET_EQ(ch, i)), FALSE);
   }
-
 
   for (af = ch->affected; af; af = af->next)
     affect_modify(ch, af->location, af->modifier, af->bitvector, FALSE);
@@ -1037,7 +1028,7 @@ struct char_data *get_char_room_vis(struct char_data *ch, char *name, int *numbe
     num = get_number(&name);
   }
 
-  /* JE 7/18/94 :-) :-) */
+  /* JE */
   if (!str_cmp(name, "self") || !str_cmp(name, "me"))
     return (ch);
 

@@ -1,18 +1,13 @@
-/* ************************************************************************
-*   File: mail.h                                        Part of CircleMUD *
-*  Usage: header file for mail system                                     *
+/**************************************************************************
+*  File: mail.h                                            Part of tbaMUD *
+*  Usage: header file for mudmail system                                  *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
-
-/******* MUD MAIL SYSTEM HEADER FILE **********************
- ***     written by Jeremy Elson (jelson@circlemud.org) ***
- *********************************************************/
-
-/* INSTALLATION INSTRUCTIONS in MAIL.C */
+*  By Jeremy Elson.                                                       *
+**************************************************************************/
 
 /* You can modify the following constants to fit your own MUD.  */
 
@@ -28,22 +23,13 @@
 /* size of mail file allocation blocks		*/
 #define BLOCK_SIZE 100
 
-/*
- * NOTE:  Make sure that your block size is big enough -- if not,
- * HEADER_BLOCK_DATASIZE will end up negative.  This is a bad thing.
- * Check the define below to make sure it is >0 when choosing values
- * for NAME_SIZE and BLOCK_SIZE.  100 is a nice round number for
- * BLOCK_SIZE and is the default ... why bother trying to change it
- * anyway?
- *
- * The mail system will always allocate disk space in chunks of size
- * BLOCK_SIZE.
- */
+/* NOTE:  Make sure that your block size is big enough. If not, HEADER_BLOCK_
+ * DATASIZE will end up negative.  This is a bad thing. Check the define below 
+ * to make sure it is >0 when choosing values for NAME_SIZE and BLOCK_SIZE.  
+ * 100 is a nice round number for BLOCK_SIZE and is the default. The mail system
+ * will always allocate disk space in chunks of size BLOCK_SIZE. */
 
-/* USER CHANGABLE DEFINES ABOVE **
-***************************************************************************
-**   DON'T TOUCH DEFINES BELOW  */
-
+/* DON'T TOUCH DEFINES BELOW. */
 int	scan_file(void);
 int	has_mail(long recipient);
 void	store_mail(long to, long from, char *message_pointer);
@@ -57,21 +43,14 @@ struct mail_t {
 	char *body;
 };
 
-
-
-
 /* old stuff below */
-
 #define HEADER_BLOCK  (-1)
 #define LAST_BLOCK    (-2)
 #define DELETED_BLOCK (-3)
 
-/*
- * note: next_block is part of header_blk in a data block; we can't combine
- * them here because we have to be able to differentiate a data block from a
- * header block when booting mail system.
- */
-
+/* Note: next_block is part of header_blk in a data block; we can't combine them
+ * here because we have to be able to differentiate a data block from a header 
+ * block when booting mail system. */
 struct header_data_type {
    long	next_block;		/* if header block, link to next block	*/
    long from;			/* idnum of the mail's sender		*/

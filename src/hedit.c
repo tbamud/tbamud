@@ -1,8 +1,9 @@
-/************************************************************************
-* hedit.c 	Hedit version 3.0 for Oasis OLC	 5/5/06			*
-* by Steve Wolfe - siv@cyberenet.net					*
-* Updated by Scott Meisenholder for Oasis 2.0.6                         *
-* **********************************************************************/
+/**************************************************************************
+*  File: hedit.c                                           Part of tbaMUD *
+*  Usage: Help Editor.                                                    *
+*                                                                         *
+*  By Steve Wolfe. Updated by Scott Meisenholder.                         *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

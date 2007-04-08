@@ -1,8 +1,10 @@
-/************************************************************************
- * Generic OLC Library - Zones / genzon.h			v1.0	*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genzon.h                                          Part of tbaMUD *
+*                                                                         *
+*  Usage: Generic OLC Library - Zones.                                    *
+*                                                                         *
+*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
+**************************************************************************/
 
 zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, const char **error);
 void remove_room_zone_commands(zone_rnum zone, room_rnum room_num);
@@ -13,4 +15,3 @@ int new_command(struct zone_data *zone, int pos);
 void delete_zone_command(struct zone_data *zone, int pos);
 zone_rnum real_zone_by_thing(room_vnum vznum);
 
-/* Make delete_zone() */

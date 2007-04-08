@@ -1,9 +1,9 @@
-/*
- * Originally written by: Michael Scott -- Manx.
- * Last known e-mail address: scottm@workcomm.net
- *
- * XXX: This needs Oasis-ifying.
- */
+/**************************************************************************
+*  File: tedit.c                                           Part of tbaMUD *
+*  Usage: Oasis OLC - Text files.                                         *
+*                                                                         *
+* By Michael Scott [Manx].                                                *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

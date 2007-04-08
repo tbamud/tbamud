@@ -1,8 +1,9 @@
-/************************************************************************
- * OasisOLC - Shops / sedit.c					v2.0	*
- * Copyright 1996 Harvey Gilpin						*
- * Copyright 1997-2001 George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: sedit.c                                           Part of tbaMUD *
+*  Usage: Oasis OLC - Shops.                                              *
+*                                                                         *
+* Copyright 1996 Harvey Gilpin. 1997-2001 George Greer.                   *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

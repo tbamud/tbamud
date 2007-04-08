@@ -1,12 +1,12 @@
 /**************************************************************************
-*   File: act.wizard.c                                  Part of CircleMUD *
-*  Usage: Player-level god commands and other goodies                     *
+*  File: act.wizard.c                                      Part of tbaMUD *
+*  Usage: Player-level god commands and other goodies.                    *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -247,7 +247,7 @@ room_rnum find_target_room(struct char_data *ch, char *rawroomstr)
     }
   }
 
-  /* a location has been found -- if you're >= GRGOD, no restrictions. */
+  /* A location has been found -- if you're >= GRGOD, no restrictions. */
   if (GET_LEVEL(ch) >= LVL_GRGOD)
     return (location);
 
@@ -717,9 +717,6 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
     break;
   case ITEM_ARMOR:
     send_to_char(ch, "AC-apply: [%d]\r\n", GET_OBJ_VAL(j, 0));
-    break;
-  case ITEM_TRAP:
-    send_to_char(ch, "Spell: %d, - Hitpoints: %d\r\n", GET_OBJ_VAL(j, 0), GET_OBJ_VAL(j, 1));
     break;
   case ITEM_CONTAINER:
     sprintbit(GET_OBJ_VAL(j, 1), container_bits, buf, sizeof(buf));
@@ -1800,34 +1797,32 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
   int size,recs,tmp;
 
   if(!(fp=fopen(LAST_FILE,"r"))) {
-    log("error opening last_file for reading");
+    log("Error opening last_file for reading, will create.");
     return NULL;
   }
   fseek(fp,0L,SEEK_END);
   size=ftell(fp);
 
   /* recs = number of records in the last file */
-
   recs = size/sizeof(struct last_entry);
-  /* we'll search last to first, since it's faster than any thing else
-        we can do (like searching for the last shutdown/etc..) */
+  /* we'll search last to first, since it's faster than any thing else we can 
+   * do (like searching for the last shutdown/etc..) */
   for(tmp=recs-1; tmp > 0; tmp--) {
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
     fread(&mlast,sizeof(struct last_entry),1,fp);
         /*another one to keep that stepback */
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
 
-    if(mlast.idnum == idnum &&
-       mlast.punique == punique) {
-        /* then we've found a match */
+    if(mlast.idnum == idnum && mlast.punique == punique) {
+      /* then we've found a match */
       CREATE(llast,struct last_entry,1);
       memcpy(llast,&mlast,sizeof(struct last_entry));
       fclose(fp);
       return llast;
     }
-        /*not the one we seek. next */
+    /*not the one we seek. next */
   }
-        /*not found, no problem, quit */
+  /*not found, no problem, quit */
   fclose(fp);
   return NULL;
 }
@@ -1839,14 +1834,13 @@ void mod_llog_entry(struct last_entry *llast,int type) {
   int size,recs,tmp;
 
   if(!(fp=fopen(LAST_FILE,"r+"))) {
-    log("error opening last_file for reading and writing");
+    log("Error opening last_file for reading and writing.");
     return;
   }
   fseek(fp,0L,SEEK_END);
   size=ftell(fp);
 
   /* recs = number of records in the last file */
-
   recs = size/sizeof(struct last_entry);
 
   /* We'll search last to first, since it's faster than any thing else we can 
@@ -1854,31 +1848,29 @@ void mod_llog_entry(struct last_entry *llast,int type) {
   for(tmp=recs; tmp > 0; tmp--) {
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
     fread(&mlast,sizeof(struct last_entry),1,fp);
-        /*another one to keep that stepback */
+    /* Another one to keep that stepback. */
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
 
-    if(mlast.idnum == llast->idnum &&
-       mlast.punique == llast->punique) {
-        /* then we've found a match */
-        /* lets assume quit is inviolate, mainly because
-                disconnect is called after each of these */
+    if(mlast.idnum == llast->idnum && mlast.punique == llast->punique) {
+      /* Then we've found a match, lets assume quit is inviolate, mainly 
+       * because disconnect is called after each of these */
       if(mlast.close_type != LAST_QUIT &&
-         mlast.close_type != LAST_IDLEOUT &&
-         mlast.close_type != LAST_REBOOT &&
-         mlast.close_type != LAST_SHUTDOWN) {
+        mlast.close_type != LAST_IDLEOUT &&
+        mlast.close_type != LAST_REBOOT &&
+        mlast.close_type != LAST_SHUTDOWN) {
         mlast.close_type=type;
       }
       mlast.close_time=time(0);
-        /*write it, and we're done!*/
+      /*write it, and we're done!*/
       fwrite(&mlast,sizeof(struct last_entry),1,fp);
       fclose(fp);
       return;
     }
-    /*not the one we seek. next */
+    /* Not the one we seek, next. */
   }
   fclose(fp);
 
-  /*not found, no problem, quit */
+  /* Not found, no problem, quit. */
   return;
 }
 
@@ -1971,12 +1963,8 @@ ACMD(do_list_llog_entries) {
   fread(&llast, sizeof(struct last_entry), 1, fp);
 
   while(!feof(fp)) {
-    send_to_char(ch,
-                   "%10s\t%d\t%s\t%s",
-                   llast.username,
-                   llast.punique,
-                   last_array[llast.close_type],
-                   ctime(&llast.time));
+    send_to_char(ch, "%10s\t%d\t%s\t%s", llast.username, llast.punique,
+        last_array[llast.close_type], ctime(&llast.time));
     fread(&llast, sizeof(struct last_entry), 1, fp);
   }
 }
@@ -2711,7 +2699,7 @@ ACMD(do_show)
    { "frozen",		LVL_GRGOD, 	PC,	BINARY },  /* 15 */
    { "gold",		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "height",		LVL_BUILDER,	BOTH,	NUMBER },
-   { "hit", 		LVL_BUILDER, 	BOTH, 	NUMBER },
+   { "hitpoints",       LVL_BUILDER, 	BOTH, 	NUMBER },
    { "hitroll",		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "hunger",		LVL_BUILDER, 	BOTH, 	MISC },    /* 20 */
    { "int", 		LVL_BUILDER, 	BOTH, 	NUMBER },
@@ -3966,7 +3954,7 @@ ACMD(do_checkloadstatus)
 }
 /* Zone Checker code above. */
 
-/* (c) 1996-97 Erwin S. Andreasen <erwin@pip.dknet.dk> */
+/* (c) 1996-97 Erwin S. Andreasen. */
 ACMD(do_copyover)
 {
   FILE *fp;

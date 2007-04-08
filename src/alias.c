@@ -1,13 +1,11 @@
-/* ***********************************************************************
-*  File: alias.c				A utility to CircleMUD	 *
-* Usage: writing/reading player's aliases.				 *
-*									 *
-* Code done by Jeremy Hess and Chad Thompson				 *
-* Modifed by George Greer for inclusion into CircleMUD bpl15.		 *
+/*************************************************************************
+* File: alias.c	                                          Part of tbaMUD *
+* Usage: Writing/reading player's aliases.				 *
 *									 *
 * Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 * CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.		 *
-*********************************************************************** */
+* by Jeremy Hess, Chad Thompson, and George Greer                        *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -34,11 +32,9 @@ void write_aliases(struct char_data *ch)
 
   if ((file = fopen(fn, "w")) == NULL) {
     log("SYSERR: Couldn't save aliases for %s in '%s': %s", GET_NAME(ch), fn, strerror(errno));
-    /*  SYSERR_DESC:
-     *  This error occurs when the server fails to open the relevant alias
-     *  file for writing.  The text at the end of the error should give a
-     *  valid reason why.
-     */
+    /* SYSERR_DESC: This error occurs when the server fails to open the relevant
+     * alias file for writing.  The text at the end of the error should give a
+     * valid reason why. */
     return;
   }
 
@@ -69,11 +65,9 @@ void read_aliases(struct char_data *ch)
   if ((file = fopen(xbuf, "r")) == NULL) {
     if (errno != ENOENT) {
       log("SYSERR: Couldn't open alias file '%s' for %s: %s", xbuf, GET_NAME(ch), strerror(errno));
-      /*  SYSERR_DESC:
-       *  This error occurs when the server fails to open the relevant alias
-       *  file for reading.  The text at the end version should give a valid
-       *  reason why.
-       */
+      /* SYSERR_DESC: This error occurs when the server fails to open the 
+       * relevant alias file for reading.  The text at the end version should 
+       * give a valid reason why. */
     }
     return;
   }
@@ -132,19 +126,16 @@ void delete_aliases(const char *charname)
 
   if (remove(filename) < 0 && errno != ENOENT)
     log("SYSERR: deleting alias file %s: %s", filename, strerror(errno));
-    /*  SYSERR_DESC:
-     *  When an alias file cannot be removed, this error will occur,
-     *  and the reason why will be the tail end of the error.
-     */
+    /* SYSERR_DESC: When an alias file cannot be removed, this error will occur,
+     * and the reason why will be the tail end of the error. */
 }
 
-
-// until further notice, the alias->pfiles save and load functions will function
-// along side the old seperate alias file load, for compatibility.
+/* until further notice, the alias->pfiles save and load functions will 
+ * function along side the old seperate alias file load, for compatibility. */
 void write_aliases_ascii(FILE *file, struct char_data *ch)
 {
   struct alias_data *temp;
-	int count = 0;
+  int count = 0;
 
   if (GET_ALIASES(ch) == NULL)
     return;
@@ -153,11 +144,9 @@ void write_aliases_ascii(FILE *file, struct char_data *ch)
     count++;
 
   fprintf(file, "Alis: %d\n", count);
-	// the +1 thing below is due to alias replacements having
-	// a space prepended in memory. The reason for this escapes me.
-	// Welcor 27/12/06
+  /* the +1 thing below is due to alias replacements having a space prepended 
+   * in memory. The reason for this escapes me. Welcor 27/12/06 */
   for (temp = GET_ALIASES(ch); temp; temp = temp->next) {
-
     fprintf(file, "%s\n"	/* Alias */
 		  "%s\n"	/* Replacement */
 		  "%d\n",	/* Type */
@@ -169,36 +158,34 @@ void write_aliases_ascii(FILE *file, struct char_data *ch)
 
 void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
 {
-	int i;
+  int i;
   struct alias_data *temp;
   char abuf[MAX_INPUT_LENGTH], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
 
-	if (count == 0) {
-		GET_ALIASES(ch) = NULL;
-    return; // no aliases in the list
+  if (count == 0) {
+    GET_ALIASES(ch) = NULL;
+    return; /* No aliases in the list. */
   }
 
   for (i = 0; i < count; i++) {
     /* Read the aliased command. */
-		get_line(file, abuf);
+    get_line(file, abuf);
 
     /* Read the replacement. */
-		get_line(file, tbuf);
+    get_line(file, tbuf);
     strcpy(rbuf, " ");
-    strcat(rbuf, tbuf); // strcat: OK
+    strcat(rbuf, tbuf); /* strcat: OK */
 
-		/* read the type */
-		get_line(file, tbuf);
+    /* read the type */
+    get_line(file, tbuf);
 
-    if (abuf && *abuf && tbuf && *tbuf && rbuf && *rbuf)
-    {
-		  CREATE(temp, struct alias_data, 1);
-		  temp->alias = strdup(abuf);
-		  temp->replacement = strdup(rbuf);
-		  temp->type = atoi(tbuf);
-		  temp->next = GET_ALIASES(ch);
-		  GET_ALIASES(ch) = temp;
-  	}
+    if (abuf && *abuf && tbuf && *tbuf && rbuf && *rbuf) {
+      CREATE(temp, struct alias_data, 1);
+      temp->alias = strdup(abuf);
+      temp->replacement = strdup(rbuf);
+      temp->type = atoi(tbuf);
+      temp->next = GET_ALIASES(ch);
+      GET_ALIASES(ch) = temp;
+    }
   }
-
 }

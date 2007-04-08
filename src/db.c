@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: db.c                                          Part of CircleMUD *
-*  Usage: Loading/saving chars, booting/resetting world, internal funcs   *
+/**************************************************************************
+*  File: db.c                                              Part of tbaMUD *
+*  Usage: Loading/saving chars, booting/resetting world, internal funcs.  *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #define __DB_C__
 
@@ -143,7 +143,7 @@ void update_obj_file(void);	/* In objsave.c */
 void sort_commands(void);
 void sort_spells(void);
 void load_banned(void);
-void Read_Invalid_List(void);
+void read_invalid_list(void);
 void boot_the_shops(FILE *shop_f, char *filename, int rec_count);
 int hsort(const void *a, const void *b);
 void prune_crlf(char *txt);
@@ -715,7 +715,7 @@ void boot_db(void)
   }
   log("Reading banned site and invalid-name list.");
   load_banned();
-  Read_Invalid_List();
+  read_invalid_list();
 
   if (!no_rent_check) {
     log("Deleting timed-out crash and rent files:");

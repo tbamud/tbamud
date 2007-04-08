@@ -1,13 +1,12 @@
-/* ************************************************************************
-*   File: spells.c                                      Part of CircleMUD *
-*  Usage: Implementation of "manual spells".  Circle 2.2 spell compat.    *
+/**************************************************************************
+*  File: spells.c                                          Part of tbaMUD *
+*  Usage: Implementation of "manual spells".                              *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
-
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -284,8 +283,6 @@ ASPELL(spell_charm)
   }
 }
 
-
-
 ASPELL(spell_identify)
 {
   int i, found;
@@ -374,12 +371,8 @@ ASPELL(spell_identify)
   }
 }
 
-
-
-/*
- * Cannot use this spell on an equipped object or it will mess up the
- * wielding character's hit/dam totals.
- */
+/* Cannot use this spell on an equipped object or it will mess up the wielding 
+ * character's hit/dam totals. */
 ASPELL(spell_enchant_weapon)
 {
   int i;
@@ -413,7 +406,6 @@ ASPELL(spell_enchant_weapon)
   } else
     act("$p glows yellow.", FALSE, ch, obj, 0, TO_CHAR);
 }
-
 
 ASPELL(spell_detect_poison)
 {

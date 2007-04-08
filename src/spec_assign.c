@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: spec_assign.c                                 Part of CircleMUD *
+/**************************************************************************
+*  File: spec_assign.c                                     Part of tbaMUD *
 *  Usage: Functions to assign function pointers to objs/mobs/rooms        *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

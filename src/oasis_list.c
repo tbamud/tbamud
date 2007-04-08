@@ -1,13 +1,13 @@
-/******************************************************************************/
-/** OasisOLC - InGame OLC Listings                                     v2.0  **/
-/** Original author: Levork                                                  **/
-/** Copyright 1996 Harvey Gilpin                                             **/
-/** Copyright 1997-2001 George Greer (greerga@circlemud.org)                 **/
-/** Copyright 2002 Kip Potter [Mythran] (kip_potter@hotmail.com)             **/
-/******************************************************************************/
+/**************************************************************************
+*  File: oasis_list.c                                      Part of tbaMUD *
+*  Usage: Oasis OLC listings.                                             *
+*                                                                         *
+* By Levork. Copyright 1996 Harvey Gilpin. 1997-2001 George Greer.        *
+* 2002 Kip Potter [Mythran].                                              *
+**************************************************************************/
+
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -30,9 +30,7 @@ void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin , obj_vnum
 void list_shops(struct char_data *ch  , zone_rnum rnum, shop_vnum vmin, shop_vnum vmax);
 void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax);
 
-/******************************************************************************/
-/** Ingame Commands                                                          **/
-/******************************************************************************/
+/* Ingame Commands */
 ACMD(do_oasis_list)
 {
   zone_rnum rzone = NOWHERE;
@@ -53,7 +51,7 @@ ACMD(do_oasis_list)
       return;
     }
   } else {
-    /** Listing by min vnum / max vnum.  Retrieve the numeric values.          **/
+    /* Listing by min vnum / max vnum.  Retrieve the numeric values. */
     vmin = atoi(smin);
     vmax = atoi(smax);
 
@@ -81,7 +79,6 @@ ACMD(do_oasis_list)
         "SYSERR: do_oasis_list: Unknown list option: %d", subcmd);
   }
 }
-
 
 ACMD(do_oasis_links)
 {
@@ -134,22 +131,15 @@ ACMD(do_oasis_links)
   }
 }
 
-
-/******************************************************************************/
-/** Helper Functions                                                         **/
-/******************************************************************************/
-/*
- * List all rooms in a zone.
- */
+/* Helper Functions */
+/* List all rooms in a zone. */
 void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum vmax)
 {
   room_rnum i;
   room_vnum bottom, top;
   int j, counter = 0;
 
-  /*
-   * Expect a minimum / maximum number if the rnum for the zone is NOWHERE.
-   */
+  /* Expect a minimum / maximum number if the rnum for the zone is NOWHERE. */
   if (rnum != NOWHERE) {
     bottom = zone_table[rnum].bot;
     top    = zone_table[rnum].top;
@@ -193,10 +183,7 @@ void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum 
     send_to_char(ch, "No rooms found for zone/range specified.\r\n");
 }
 
-
-/*
- * List all mobiles in a zone.
- */
+/* List all mobiles in a zone. */
 void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mob_vnum vmax)
 {
   mob_rnum i;
@@ -232,9 +219,7 @@ void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mob_vnum 
     send_to_char(ch, "None found.\r\n");
 }
 
-/*
- * List all objects in a zone.
- */
+/* List all objects in a zone. */
 void list_objects(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum vmax)
 {
   obj_rnum i;
@@ -271,9 +256,7 @@ void list_objects(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnu
     send_to_char(ch, "None found.\r\n");
 }
 
-/*
- * List all shops in a zone.
- */
+/* List all shops in a zone. */
 void list_shops(struct char_data *ch, zone_rnum rnum, shop_vnum vmin, shop_vnum vmax)
 {
   shop_rnum i;
@@ -300,7 +283,7 @@ void list_shops(struct char_data *ch, zone_rnum rnum, shop_vnum vmin, shop_vnum 
       send_to_char(ch, "%s%4d%s) [%s%-5d%s] [%s%-5d%s]",
         QGRN, counter, QNRM, QGRN, SHOP_NUM(i), QNRM, QGRN, i + 1, QNRM);
 
-      /* Thanks to Ken Ray (kenr86@hotmail.com) for this display fix -- Welcor*/
+      /* Thanks to Ken Ray for this display fix. -Welcor */
       for (j = 0; SHOP_ROOM(i, j) != NOWHERE; j++)
         send_to_char(ch, "%s%s[%s%-5d%s]%s",
                       ((j > 0) && (j % 6 == 0)) ? "\r\n                      " : " ",
@@ -316,9 +299,8 @@ void list_shops(struct char_data *ch, zone_rnum rnum, shop_vnum vmin, shop_vnum 
   if (counter == 0)
     send_to_char(ch, "None found.\r\n");
 }
-/*
- * List all zones in the world (sort of like 'show zones').
- */
+
+/* List all zones in the world (sort of like 'show zones'). */
 void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax)
 {
   int counter = 0;
@@ -351,13 +333,7 @@ void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum 
     send_to_char(ch, "  None found within those parameters.\r\n");
 }
 
-
-
-
-
-/*
- * Prints all of the zone information for the selected zone.
- */
+/* Prints all of the zone information for the selected zone. */
 void print_zone(struct char_data *ch, zone_vnum vnum)
 {
   zone_rnum rnum;
@@ -370,10 +346,7 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     return;
   }
 
-  /****************************************************************************/
-  /** Locate the largest of the three, top_of_world, top_of_mobt, or         **/
-  /** top_of_objt.                                                           **/
-  /****************************************************************************/
+  /* Locate the largest of the three, top_of_world, top_of_mobt, or top_of_objt. */
   if (top_of_world >= top_of_objt && top_of_world >= top_of_mobt)
     largest_table = top_of_world;
   else if (top_of_objt >= top_of_mobt && top_of_objt >= top_of_world)
@@ -381,9 +354,7 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
   else
     largest_table = top_of_mobt;
 
-  /****************************************************************************/
-  /** Initialize some of the variables.                                      **/
-  /****************************************************************************/
+  /* Initialize some of the variables. */
   size_rooms   = 0;
   size_objects = 0;
   size_mobiles = 0;
@@ -404,9 +375,7 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
         size_mobiles++;
   }
 
-  /****************************************************************************/
-  /** Display all of the zone information at once.                           **/
-  /****************************************************************************/
+  /* Display all of the zone information at once. */
   send_to_char(ch,
     "%sVirtual Number = %s%d\r\n"
     "%sName of zone   = %s%s\r\n"
@@ -435,13 +404,13 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     QGRN, QCYN, size_mobiles, QNRM);
 }
 
-/* List code by Ronald Evers - dlanor@xs4all.nl */
+/* List code by Ronald Evers. */
 void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax)
 {
   int i, bottom, top, counter = 0;
   char trgtypes[256];
 
-  /** Expect a minimum / maximum number if the rnum for the zone is NOWHERE. **/
+  /* Expect a minimum / maximum number if the rnum for the zone is NOWHERE. */
   if (rnum != NOWHERE) {
     bottom = zone_table[rnum].bot;
     top    = zone_table[rnum].top;
@@ -451,13 +420,12 @@ void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vn
   }
 
 
-  /** Store the header for the room listing. **/
+  /* Store the header for the room listing. */
   send_to_char (ch,
   "Index VNum    Trigger Name                                  Type\r\n"
   "----- ------- -------------------------------------------------------\r\n");
 
-
-  /** Loop through the world and find each room. **/
+  /* Loop through the world and find each room. */
   for (i = 0; i < top_of_trigt; i++) {
     /** Check to see if this room is one of the ones needed to be listed.    **/
     if ((trig_index[i]->vnum >= bottom) && (trig_index[i]->vnum <= top)) {

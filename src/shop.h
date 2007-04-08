@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: shop.h                                        Part of CircleMUD *
-*  Usage: shop file definitions, structures, constants                    *
+/**************************************************************************
+*  File: shop.h                                            Part of tbaMUD *
+*  Usage: Shop file definitions, structures, constants.                   *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 int find_shop(int);
 
@@ -43,17 +43,14 @@ struct shop_data {
    SPECIAL (*func);		/* Secondary spec_proc for shopkeeper	*/
 };
 
-
 #define MAX_TRADE	5	/* List maximums for compatibility	*/
 #define MAX_PROD	5	/*	with shops before v3.0		*/
 #define VERSION3_TAG	"v3.0"	/* The file has v3.0 shops in it!	*/
 #define MAX_SHOP_OBJ	100	/* "Soft" maximum for list maximums	*/
 
-
 /* Pretty general macros that could be used elsewhere */
 #define IS_GOD(ch)		(!IS_NPC(ch) && (GET_LEVEL(ch) >= LVL_GOD))
 #define END_OF(buffer)		((buffer) + strlen((buffer)))
-
 
 /* Possible states for objects trying to be sold */
 #define OBJECT_DEAD		0
@@ -61,12 +58,10 @@ struct shop_data {
 #define OBJECT_OK		2
 #define OBJECT_NOVAL		3
 
-
 /* Types of lists to read */
 #define LIST_PRODUCE		0
 #define LIST_TRADE		1
 #define LIST_ROOM		2
-
 
 /* Whom will we not trade with (bitvector for SHOP_TRADE_WITH()) */
 #define TRADE_NOGOOD		(1 << 0)
@@ -77,7 +72,6 @@ struct shop_data {
 #define TRADE_NOTHIEF		(1 << 5)
 #define TRADE_NOWARRIOR		(1 << 6)
 
-
 struct stack_data {
    int data[100];
    int len;
@@ -86,7 +80,6 @@ struct stack_data {
 #define S_DATA(stack, index)	((stack)->data[(index)])
 #define S_LEN(stack)		((stack)->len)
 
-
 /* Which expression type we are now parsing */
 #define OPER_OPEN_PAREN		0
 #define OPER_CLOSE_PAREN	1
@@ -94,7 +87,6 @@ struct stack_data {
 #define OPER_AND		3
 #define OPER_NOT		4
 #define MAX_OPER		4
-
 
 #define SHOP_NUM(i)		(shop_index[(i)].vnum)
 #define SHOP_KEEPER(i)		(shop_index[(i)].keeper)
@@ -123,15 +115,12 @@ struct stack_data {
 #define NOTRADE_THIEF(i)	(IS_SET(SHOP_TRADE_WITH((i)), TRADE_NOTHIEF))
 #define NOTRADE_WARRIOR(i)	(IS_SET(SHOP_TRADE_WITH((i)), TRADE_NOWARRIOR))
 
-
-
 #define WILL_START_FIGHT	(1 << 0)
 #define WILL_BANK_MONEY		(1 << 1)
 #define HAS_UNLIMITED_CASH      (1 << 2)
 
 #define SHOP_KILL_CHARS(i)	(IS_SET(SHOP_BITVECTOR(i), WILL_START_FIGHT))
 #define SHOP_USES_BANK(i)	(IS_SET(SHOP_BITVECTOR(i), WILL_BANK_MONEY))
-
 
 #define MIN_OUTSIDE_BANK	5000
 #define MAX_OUTSIDE_BANK	15000

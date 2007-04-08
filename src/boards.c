@@ -1,53 +1,35 @@
-/* ************************************************************************
-*   File: boards.c                                      Part of CircleMUD *
-*  Usage: handling of multiple bulletin boards                            *
+/**************************************************************************
+*  File: boards.c                                          Part of tbaMUD *
+*  Usage: Handling of multiple bulletin boards.                           *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
-
-/* FEATURES & INSTALLATION INSTRUCTIONS ***********************************
-
-This board code has many improvements over the infamously buggy standard
-Diku board code.  Features include:
-
-- Arbitrary number of boards handled by one set of generalized routines.
-  Adding a new board is as easy as adding another entry to an array.
-- Safe removal of messages while other messages are being written.
-- Does not allow messages to be removed by someone of a level less than
-  the poster's level.
-
-
-TO ADD A NEW BOARD, simply follow our easy 4-step program:
-
-1 - Create a new board object in the object files
-
-2 - Increase the NUM_OF_BOARDS constant in boards.h
-
-3 - Add a new line to the board_info array below.  The fields, in order, are:
-
-	Board's virtual number.
-	Min level one must be to look at this board or read messages on it.
-	Min level one must be to post a message to the board.
-	Min level one must be to remove other people's messages from this
-		board (but you can always remove your own message).
-	Filename of this board, in quotes.
-	Last field must always be 0.
-
-4 - In spec_assign.c, find the section which assigns the special procedure
-    gen_board to the other bulletin boards, and add your new one in a
-    similar fashion.
-
-*/
-
+/* FEATURES & INSTALLATION INSTRUCTIONS
+ * - Arbitrary number of boards handled by one set of generalized routines.
+ *   Adding a new board is as easy as adding another entry to an array.
+ * - Safe removal of messages while other messages are being written.
+ *
+ * TO ADD A NEW BOARD, simply follow our easy 4-step program:
+ * 1 - Create a new board object in the object files.
+ * 2 - Increase the NUM_OF_BOARDS constant in boards.h.
+ * 3 - Add a new line to the board_info array below.  The fields are:
+ * 	Board's virtual number.
+ * 	Min level one must be to look at this board or read messages on it.
+ * 	Min level one must be to post a message to the board.
+ * 	Min level one must be to remove other people's messages from this
+ * 	  board (but you can always remove your own message).
+ * 	Filename of this board, in quotes.
+ * 	Last field must always be 0.
+ * 4 - In spec_assign.c, find the section which assigns the special procedure
+ *     gen_board to the other bulletin boards, and add your new one in a
+ *     similar fashion. */
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -60,10 +42,8 @@ TO ADD A NEW BOARD, simply follow our easy 4-step program:
 /* Board appearance order. */
 #define	NEWEST_AT_TOP	FALSE
 
-/*
-format:	vnum, read lvl, write lvl, remove lvl, filename, 0 at end
-Be sure to also change NUM_OF_BOARDS in board.h
-*/
+/* Format: vnum, read lvl, write lvl, remove lvl, filename, 0 at end. Be sure 
+ * to also change NUM_OF_BOARDS in board.h*/
 struct board_info_type board_info[NUM_OF_BOARDS] = {
   {3099, 0, 0, LVL_GOD, LIB_ETC "board.mortal", 0},
   {3098, LVL_IMMORT, LVL_IMMORT, LVL_GRGOD, LIB_ETC "board.immortal", 0},
@@ -84,9 +64,8 @@ int msg_storage_taken[INDEX_SIZE];
 int num_of_msgs[NUM_OF_BOARDS];
 int ACMD_READ, ACMD_LOOK, ACMD_EXAMINE, ACMD_WRITE, ACMD_REMOVE;
 struct board_msginfo msg_index[NUM_OF_BOARDS][MAX_BOARD_MESSAGES];
-void    Board_reset_board(int board_type);
-void    Board_clear_board(int board_type);
-
+void board_reset_board(int board_type);
+void board_clear_board(int board_type);
 
 int find_slot(void)
 {
@@ -99,7 +78,6 @@ int find_slot(void)
     }
   return (-1);
 }
-
 
 /* search the room ch is standing in to find which board he's looking at */
 int find_board(struct char_data *ch)
@@ -121,7 +99,6 @@ int find_board(struct char_data *ch)
   return (-1);
 }
 
-
 void init_boards(void)
 {
   int i, j, fatal_error = 0;
@@ -142,13 +119,12 @@ void init_boards(void)
       memset((char *) &(msg_index[i][j]), 0, sizeof(struct board_msginfo));
       msg_index[i][j].slot_num = -1;
     }
-    Board_load_board(i);
+    board_load_board(i);
   }
 
-//  if (fatal_error)
-//    exit(1);
+  if (fatal_error)
+    exit(1);
 }
-
 
 SPECIAL(gen_board)
 {
@@ -178,19 +154,18 @@ SPECIAL(gen_board)
     return (0);
   }
   if (cmd == ACMD_WRITE)
-    return (Board_write_message(board_type, ch, argument, board));
+    return (board_write_message(board_type, ch, argument, board));
   else if (cmd == ACMD_LOOK || cmd == ACMD_EXAMINE)
-    return (Board_show_board(board_type, ch, argument, board));
+    return (board_show_board(board_type, ch, argument, board));
   else if (cmd == ACMD_READ)
-    return (Board_display_msg(board_type, ch, argument, board));
+    return (board_display_msg(board_type, ch, argument, board));
   else if (cmd == ACMD_REMOVE)
-    return (Board_remove_msg(board_type, ch, argument, board));
+    return (board_remove_msg(board_type, ch, argument, board));
   else
     return (0);
 }
 
-
-int Board_write_message(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
+int board_write_message(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
 {
   time_t ct;
   char buf[MAX_INPUT_LENGTH], buf2[MAX_NAME_LENGTH + 3], tmstr[MAX_STRING_LENGTH];
@@ -212,7 +187,7 @@ int Board_write_message(int board_type, struct char_data *ch, char *arg, struct 
   skip_spaces(&arg);
   delete_doubledollar(arg);
 
-  /* JE 27 Oct 95 - Truncate headline at 80 chars if it's longer than that */
+  /* JE Truncate headline at 80 chars if it's longer than that. */
   arg[80] = '\0';
 
   if (!*arg) {
@@ -238,8 +213,7 @@ int Board_write_message(int board_type, struct char_data *ch, char *arg, struct 
   return (1);
 }
 
-
-int Board_show_board(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
+int board_show_board(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
 {
   int i;
   char tmp[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
@@ -300,8 +274,7 @@ fubar:
   return (1);
 }
 
-
-int Board_display_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
+int board_display_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
 {
   char number[MAX_INPUT_LENGTH], buffer[MAX_STRING_LENGTH];
   int msg, ind;
@@ -310,7 +283,7 @@ int Board_display_msg(int board_type, struct char_data *ch, char *arg, struct ob
   if (!*number)
     return (0);
   if (isname(number, board->name))	/* so "read board" works */
-    return (Board_show_board(board_type, ch, arg, board));
+    return (board_show_board(board_type, ch, arg, board));
   if (!is_number(number))	/* read 2.mail, look 2.sword */
     return (0);
   if (!(msg = atoi(number)))
@@ -356,8 +329,7 @@ int Board_display_msg(int board_type, struct char_data *ch, char *arg, struct ob
   return (1);
 }
 
-
-int Board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
+int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
 {
   int ind, msg, slot_num;
   char number[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH];
@@ -425,13 +397,12 @@ int Board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
   send_to_char(ch, "Message removed.\r\n");
   snprintf(buf, sizeof(buf), "$n just removed message %d.", msg);
   act(buf, FALSE, ch, 0, 0, TO_ROOM);
-  Board_save_board(board_type);
+  board_save_board(board_type);
 
   return (1);
 }
 
-
-void Board_save_board(int board_type)
+void board_save_board(int board_type)
 {
   FILE *fl;
   int i;
@@ -470,8 +441,7 @@ void Board_save_board(int board_type)
   fclose(fl);
 }
 
-
-void Board_load_board(int board_type)
+void board_load_board(int board_type)
 {
   FILE *fl;
   int i, len1, len2;
@@ -485,14 +455,14 @@ void Board_load_board(int board_type)
   fread(&(num_of_msgs[board_type]), sizeof(int), 1, fl);
   if (num_of_msgs[board_type] < 1 || num_of_msgs[board_type] > MAX_BOARD_MESSAGES) {
     log("SYSERR: Board file %d corrupt.  Resetting.", board_type);
-    Board_reset_board(board_type);
+    board_reset_board(board_type);
     return;
   }
   for (i = 0; i < num_of_msgs[board_type]; i++) {
     fread(&(msg_index[board_type][i]), sizeof(struct board_msginfo), 1, fl);
     if ((len1 = msg_index[board_type][i].heading_len) <= 0) {
       log("SYSERR: Board file %d corrupt!  Resetting.", board_type);
-      Board_reset_board(board_type);
+      board_reset_board(board_type);
       return;
     }
     CREATE(tmp1, char, len1);
@@ -501,7 +471,7 @@ void Board_load_board(int board_type)
 
     if ((MSG_SLOTNUM(board_type, i) = find_slot()) == -1) {
       log("SYSERR: Out of slots booting board %d!  Resetting...", board_type);
-      Board_reset_board(board_type);
+      board_reset_board(board_type);
       return;
     }
     if ((len2 = msg_index[board_type][i].message_len) > 0) {
@@ -515,19 +485,17 @@ void Board_load_board(int board_type)
   fclose(fl);
 }
 
-
 /* When shutting down, clear all boards. */
-void Board_clear_all(void)
+void board_clear_all(void)
 {
   int i;
 
   for (i = 0; i < NUM_OF_BOARDS; i++)
-    Board_clear_board(i);
+    board_clear_board(i);
 }
 
-
 /* Clear the in-memory structures. */
-void Board_clear_board(int board_type)
+void board_clear_board(int board_type)
 {
   int i;
 
@@ -545,10 +513,9 @@ void Board_clear_board(int board_type)
   num_of_msgs[board_type] = 0;
 }
 
-
 /* Destroy the on-disk and in-memory board. */
-void Board_reset_board(int board_type)
+void board_reset_board(int board_type)
 {
-  Board_clear_board(board_type);
+  board_clear_board(board_type);
   remove(FILENAME(board_type));
 }

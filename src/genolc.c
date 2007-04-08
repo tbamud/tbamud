@@ -1,9 +1,9 @@
-/************************************************************************
- * Generic OLC Library - General / genolc.c			v1.0	*
- * Original author: Levork						*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genolc.c                                          Part of tbaMUD *
+*  Usage: Generic OLC Library - General.                                  *
+*                                                                         *
+*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
+**************************************************************************/
 
 #define __GENOLC_C__
 
@@ -29,14 +29,10 @@
 int save_config( IDXTYPE nowhere );        /* Exported from cedit.c */
 int top_shop_offset = 0;
 
-/*
- * List of zones to be saved.
- */
+/* List of zones to be saved. */
 struct save_list_data *save_list;
 
-/*
- * Structure defining all known save types.
- */
+/* Structure defining all known save types. */
 struct {
   int save_type;
   int (*func)(IDXTYPE rnum);
@@ -52,8 +48,6 @@ struct {
   { -1, NULL, NULL },
 };
 
-/* -------------------------------------------------------------------------- */
-
 int genolc_checkstring(struct descriptor_data *d, char *arg)
 {
   smash_tilde(arg);
@@ -65,9 +59,7 @@ char *str_udup(const char *txt)
   return strdup((txt && *txt) ? txt : "undefined");
 }
 
-/*
- * Original use: to be called at shutdown time.
- */
+/* Original use: to be called at shutdown time. */
 int save_all(void)
 {
   while (save_list) {
@@ -84,11 +76,7 @@ int save_all(void)
   return TRUE;
 }
 
-/* -------------------------------------------------------------------------- */
-
-/*
- * NOTE: This changes the buffer passed in.
- */
+/* NOTE: This changes the buffer passed in. */
 void strip_cr(char *buffer)
 {
   int rpos, wpos;
@@ -102,8 +90,6 @@ void strip_cr(char *buffer)
   }
   buffer[wpos] = '\0';
 }
-
-/* -------------------------------------------------------------------------- */
 
 void copy_ex_descriptions(struct extra_descr_data **to, struct extra_descr_data *from)
 {
@@ -119,8 +105,6 @@ void copy_ex_descriptions(struct extra_descr_data **to, struct extra_descr_data 
       CREATE(wpos->next, struct extra_descr_data, 1);
   }
 }
-
-/* -------------------------------------------------------------------------- */
 
 void free_ex_descriptions(struct extra_descr_data *head)
 {
@@ -141,8 +125,6 @@ void free_ex_descriptions(struct extra_descr_data *head)
   }
 }
 
-/* -------------------------------------------------------------------------- */
-
 int remove_from_save_list(zone_vnum zone, int type)
 {
   struct save_list_data *ritem, *temp;
@@ -159,8 +141,6 @@ int remove_from_save_list(zone_vnum zone, int type)
   free(ritem);
   return TRUE;
 }
-
-/* -------------------------------------------------------------------------- */
 
 int add_to_save_list(zone_vnum zone, int type)
 {
@@ -189,8 +169,6 @@ int add_to_save_list(zone_vnum zone, int type)
   save_list = nitem;
   return TRUE;
 }
-
-/* -------------------------------------------------------------------------- */
 
 int in_save_list(zone_vnum zone, int type)
 {
@@ -226,14 +204,10 @@ room_vnum genolc_zonep_bottom(struct zone_data *zone)
   return zone->bot;
 }
 
-/* -------------------------------------------------------------------------- */
-
 zone_vnum genolc_zone_bottom(zone_rnum rznum)
 {
   return zone_table[rznum].bot;
 }
-
-/* -------------------------------------------------------------------------- */
 
 int sprintascii(char *out, bitvector_t bits)
 {
@@ -253,11 +227,7 @@ int sprintascii(char *out, bitvector_t bits)
   return j;
 }
 
-
-
 /* Zone export functions */
-
-
 int export_save_shops(zone_rnum zrnum);
 int export_save_mobiles(zone_rnum rznum);
 int export_save_zone(zone_rnum zrnum);
@@ -403,17 +373,13 @@ int export_save_shops(zone_rnum zrnum)
     fclose(shop_file);
     return FALSE;
   }
-  /*
-   * Search database for shops in this zone.
-   */
+  /* Search database for shops in this zone. */
   for (i = genolc_zone_bottom(zrnum); i <= zone_table[zrnum].top; i++) {
     if ((rshop = real_shop(i)) != NOWHERE) {
       fprintf(shop_file, "#QQ%02d~\n", i%100);
       shop = &shop_index[rshop];
 
-      /*
-       * Save the products.
-       */
+      /* Save the products. */
       for (j = 0; S_PRODUCT(shop, j) != NOTHING; j++) {
         if (obj_index[S_PRODUCT(shop, j)].vnum < genolc_zone_bottom(zrnum) ||
             obj_index[S_PRODUCT(shop, j)].vnum > zone_table[zrnum].top)
@@ -423,27 +389,20 @@ int export_save_shops(zone_rnum zrnum)
       }
       fprintf(shop_file, "-1\n");
 
-      /*
-       * Save the rates.
-       */
+      /* Save the rates. */
       fprintf(shop_file, "%1.2f\n"
                          "%1.2f\n",
                          S_BUYPROFIT(shop),
                          S_SELLPROFIT(shop));
 
-      /*
-       * Save the buy types and namelists.
-       */
+      /* Save the buy types and namelists. */
       for (j = 0;S_BUYTYPE(shop, j) != NOTHING; j++)
         fprintf(shop_file, "%d%s\n",
                 S_BUYTYPE(shop, j),
 		S_BUYWORD(shop, j) ? S_BUYWORD(shop, j) : "");
       fprintf(shop_file, "-1\n");
 
-      /*
-       * Save messages'n'stuff.
-       * Added some small'n'silly defaults as sanity checks.
-       */
+      /* Save messages. Added some defaults as sanity checks. */
       fprintf(shop_file,
 	      "%s~\n"
 	      "%s~\n"
@@ -469,9 +428,7 @@ int export_save_shops(zone_rnum zrnum)
 	      S_NOTRADE(shop)
 	      );
 
-      /*
-       * Save the rooms.
-       */
+      /* Save the rooms. */
       for (j = 0;S_ROOM(shop, j) != NOWHERE; j++) {
         if (S_ROOM(shop, j) < genolc_zone_bottom(zrnum) ||
             S_ROOM(shop, j) > zone_table[zrnum].top)
@@ -481,9 +438,7 @@ int export_save_shops(zone_rnum zrnum)
       }
       fprintf(shop_file, "-1\n");
 
-      /*
-       * Save open/closing times
-       */
+      /* Save open/closing times. */
       fprintf(shop_file, "%d\n%d\n%d\n%d\n", S_OPEN1(shop), S_CLOSE1(shop),
 		S_OPEN2(shop), S_CLOSE2(shop));
     }
@@ -517,7 +472,6 @@ int export_save_mobiles(zone_rnum rznum)
 
   return TRUE;
 }
-
 
 int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 {
@@ -578,9 +532,7 @@ int export_save_zone(zone_rnum zrnum)
     return FALSE;
   }
 
-  /*
-   * Print zone header to file
-   */
+  /* Print zone header to file. */
   fprintf(zone_file, "#QQ\n"
                  "%s~\n"
                  "%s~\n"
@@ -595,8 +547,7 @@ int export_save_zone(zone_rnum zrnum)
 	  zone_table[zrnum].reset_mode
 	  );
 
-	/*
-	 * Handy Quick Reference Chart for Zone Values.
+	/* Handy Quick Reference Chart for Zone Values.
 	 *
 	 * Field #1    Field #3   Field #4  Field #5
 	 * -------------------------------------------------
@@ -609,8 +560,7 @@ int export_save_zone(zone_rnum zrnum)
 	 * R (Remove)  Room-Vnum  Obj-Vnum  Unused
          * T (Trigger) Trig-type  Trig-Vnum Room-Vnum
          * V (var)     Trig-type  Context   Room-Vnum Varname Value
-	 * -------------------------------------------------
-	 */
+	 * ------------------------------------------------- */
 
   for (subcmd = 0; ZCMD(zrnum, subcmd).command != 'S'; subcmd++) {
     switch (ZCMD(zrnum, subcmd).command) {
@@ -686,9 +636,7 @@ int export_save_zone(zone_rnum zrnum)
               ZCMD(zrnum, subcmd).sarg2);
       break;
     case '*':
-      /*
-       * Invalid commands are replaced with '*' - Ignore them.
-       */
+      /* Invalid commands are replaced with '*' - Ignore them. */
       continue;
     default:
       mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: export_save_zone(): Unknown cmd '%c' - NOT saving", ZCMD(zrnum, subcmd).command);
@@ -715,9 +663,7 @@ int export_save_objects(zone_rnum zrnum)
     mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_objects : Cannot open file!");
     return FALSE;
   }
-  /*
-   * Start running through all objects in this zone.
-   */
+  /* Start running through all objects in this zone. */
   for (ovnum = genolc_zone_bottom(zrnum); ovnum <= zone_table[zrnum].top; ovnum++) {
     if ((ornum = real_object(ovnum)) != NOTHING) {
       if ((obj = &obj_proto[ornum])->action_description) {
@@ -764,19 +710,13 @@ int export_save_objects(zone_rnum zrnum)
 	      "%d %d %d %d\n",
 	      GET_OBJ_WEIGHT(obj), GET_OBJ_COST(obj), GET_OBJ_RENT(obj), GET_OBJ_LEVEL(obj));
 
-      /*
-       * Do we have script(s) attached ?
-       */
+      /* Do we have script(s) attached? */
       export_script_save_to_disk(obj_file, obj, OBJ_TRIGGER);
 
-      /*
-       * Do we have extra descriptions?
-       */
+      /* Do we have extra descriptions? */
       if (obj->ex_description) {	/* Yes, save them too. */
 	for (ex_desc = obj->ex_description; ex_desc; ex_desc = ex_desc->next) {
-	  /*
-	   * Sanity check to prevent nasty protection faults.
-	   */
+	  /* Sanity check to prevent nasty protection faults. */
 	  if (!ex_desc->keyword || !ex_desc->description || !*ex_desc->keyword || !*ex_desc->description) {
 	    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: export_save_objects: Corrupt ex_desc!");
 	    continue;
@@ -788,9 +728,7 @@ int export_save_objects(zone_rnum zrnum)
 		  "%s~\n", ex_desc->keyword, buf);
 	}
       }
-      /*
-       * Do we have affects?
-       */
+      /* Do we have affects? */
       for (i = 0; i < MAX_OBJ_AFFECT; i++)
 	if (obj->affected[i].modifier)
 	  fprintf(obj_file, "A\n"
@@ -800,9 +738,7 @@ int export_save_objects(zone_rnum zrnum)
     }
   }
 
-  /*
-   * Write the final line, close the file.
-   */
+  /* Write the final line, close the file. */
   fprintf(obj_file, "$~\n");
   fclose(obj_file);
 
@@ -831,15 +767,11 @@ int export_save_rooms(zone_rnum zrnum)
 
       room = &world[rnum];
 
-      /*
-       * Copy the description and strip off trailing newlines.
-       */
+      /* Copy the description and strip off trailing newlines. */
       strncpy(buf, room->description ? room->description : "Empty room.", sizeof(buf)-1 );
       strip_cr(buf);
 
-      /*
-       * Save the numeric and string section of the file.
-       */
+      /* Save the numeric and string section of the file. */
       sprintascii(bit, room->room_flags);
       fprintf(room_file, 	"#QQ%02d\n"
 			"%s%c\n"
@@ -851,9 +783,7 @@ int export_save_rooms(zone_rnum zrnum)
 		bit, room->sector_type
       );
 
-      /*
-       * Now you write out the exits for the room.
-       */
+      /* Now you write out the exits for the room. */
       for (j = 0; j < NUM_OF_DIRS; j++) {
 	if (R_EXIT(room, j)) {
 	  int dflag;
@@ -863,9 +793,7 @@ int export_save_rooms(zone_rnum zrnum)
 	  } else
 	    *buf = '\0';
 
-	  /*
-	   * Figure out door flag.
-	   */
+	  /* Figure out door flag. */
 	  if (IS_SET(R_EXIT(room, j)->exit_info, EX_ISDOOR)) {
 	    if (IS_SET(R_EXIT(room, j)->exit_info, EX_PICKPROOF))
 	      dflag = 2;
@@ -879,9 +807,7 @@ int export_save_rooms(zone_rnum zrnum)
 	  else
 	    *buf1 = '\0';
 
-	  /*
-	   * Now write the exit to the file.
-	   */
+	  /* Now write the exit to the file. */
           if (R_EXIT(room, j)->to_room == NOWHERE || world[R_EXIT(room, j)->to_room].zone == zrnum)
 	    fprintf(room_file,"D%d\n"
 		              "%s~\n"
@@ -928,9 +854,7 @@ int export_save_rooms(zone_rnum zrnum)
     }
   }
 
-  /*
-   * Write the final line and close it.
-   */
+  /* Write the final line and close it. */
   fprintf(room_file, "$~\n");
   fclose(room_file);
 

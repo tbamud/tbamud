@@ -1,17 +1,15 @@
-/* ************************************************************************
-*   File: mobact.c                                      Part of CircleMUD *
-*  Usage: Functions for generating intelligent (?) behavior in mobiles    *
+/**************************************************************************
+*  File: mobact.c                                          Part of tbaMUD *
+*  Usage: Functions for generating intelligent (?) behavior in mobiles.   *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -20,7 +18,6 @@
 #include "handler.h"
 #include "spells.h"
 #include "constants.h"
-
 
 /* external globals */
 extern int no_specials;
@@ -143,15 +140,10 @@ void mobile_activity(void)
       }
     }
 
-    /*
-     * Charmed Mob Rebellion
-     *
-     * In order to rebel, there need to be more charmed monsters
-     * than the person can feasibly control at a time.  Then the
+    /* Charmed Mob Rebellion: In order to rebel, there need to be more charmed 
+     * monsters than the person can feasibly control at a time.  Then the
      * mobiles have a chance based on the charisma of their leader.
-     *
-     * 1-4 = 0, 5-7 = 1, 8-10 = 2, 11-13 = 3, 14-16 = 4, 17-19 = 5, etc.
-     */
+     * 1-4 = 0, 5-7 = 1, 8-10 = 2, 11-13 = 3, 14-16 = 4, 17-19 = 5, etc. */
     if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && num_followers_charmed(ch->master) > (GET_CHA(ch->master) - 2) / 3) {
       if (!aggressive_mob_on_a_leash(ch, ch->master, ch->master)) {
         if (CAN_SEE(ch, ch->master) && !PRF_FLAGGED(ch->master, PRF_NOHASSLE))
@@ -180,10 +172,7 @@ void mobile_activity(void)
   }				/* end for() */
 }
 
-
-
 /* Mob Memory Routines */
-
 /* make ch remember victim */
 void remember(struct char_data *ch, struct char_data *victim)
 {
@@ -204,7 +193,6 @@ void remember(struct char_data *ch, struct char_data *victim)
     MEMORY(ch) = tmp;
   }
 }
-
 
 /* make ch forget victim */
 void forget(struct char_data *ch, struct char_data *victim)
@@ -230,7 +218,6 @@ void forget(struct char_data *ch, struct char_data *victim)
   free(curr);
 }
 
-
 /* erase ch's memory */
 void clearMemory(struct char_data *ch)
 {
@@ -247,13 +234,9 @@ void clearMemory(struct char_data *ch)
   MEMORY(ch) = NULL;
 }
 
-
-/*
- * An aggressive mobile wants to attack something.  If
- * they're under the influence of mind altering PC, then
- * see if their master can talk them out of it, eye them
- * down, or otherwise intimidate the slave.
- */
+/* An aggressive mobile wants to attack something.  If they're under the 
+ * influence of mind altering PC, then see if their master can talk them out 
+ * of it, eye them down, or otherwise intimidate the slave. */
 bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack)
 {
   static int snarl_cmd;

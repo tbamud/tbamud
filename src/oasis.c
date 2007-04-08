@@ -1,9 +1,9 @@
-/************************************************************************
- * OasisOLC - General / oasis.c					v2.0	*
- * Original author: Levork						*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: oasis.c                                           Part of tbaMUD *
+*  Usage: Oasis - General.                                                *
+*                                                                         *
+* By Levork. Copyright 1996 Harvey Gilpin. 1997-2001 George Greer.        *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -187,8 +187,6 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
   d->olc = NULL;
 }
 
-/* This function is an exact duplicate of the tag_argument function found in 
- * one of the ascii patches located on the circlemud ftp website. */
 void split_argument(char *argument, char *tag)
 {
   char *tmp = argument, *ttag = tag, *wrt = argument;

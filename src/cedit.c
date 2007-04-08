@@ -1,8 +1,9 @@
-/************************************************************************
- * OasisOLC - Game configuration / cedit.c                   v2.0	*
- * Copyright 2002-2003 Kip Potter   (kip_potter@hotmail.com)            *
- * A graphical in-game game configuration utility for OasisOLC.         *
- ************************************************************************/
+/**************************************************************************
+*  File: cedit.c                                           Part of tbaMUD *
+*  Usage: A graphical in-game game configuration utility for OasisOLC.    *
+*                                                                         *
+*  Copyright 2002-2003 Kip Potter                                         *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -524,9 +525,7 @@ void cedit_disp_menu(struct descriptor_data *d)
   get_char_colors(d->character);
   clear_screen(d);
 
-  /*
-   * Menu header
-   */
+  /* Menu header. */
   write_to_output(d,
   	  "OasisOLC MUD Configuration Editor\r\n"
   	  "%sG%s) Game Play Options\r\n"
@@ -717,7 +716,7 @@ void cedit_disp_autowiz_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_AUTOWIZ_OPTIONS_MENU;
 }
 
-/* The GARGANTAUN event handler */
+/* The event handler. */
 void cedit_parse(struct descriptor_data *d, char *arg)
 {
   char *oldtext = NULL;

@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: act.movement.c                                Part of CircleMUD *
-*  Usage: movement commands, door handling, & sleep/rest/etc state        *
+/**************************************************************************
+*  File: act.movement.c                                    Part of tbaMUD *
+*  Usage: Movement commands, door handling, & sleep/rest/etc state.       *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license complete information.                *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

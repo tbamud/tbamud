@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: act.item.c                                    Part of CircleMUD *
-*  Usage: object handling routines -- get/drop and container handling     *
+/**************************************************************************
+*  File: act.item.c                                        Part of tbaMUD *
+*  Usage: Object handling routines -- get/drop and container handling.    *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

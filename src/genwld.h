@@ -1,9 +1,10 @@
-/************************************************************************
- * Generic OLC Library - Rooms / genwld.h			v1.0	*
- * Original author: Levork						*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genwld.h                                          Part of tbaMUD *
+*                                                                         *
+*  Usage: Generic OLC Library - Rooms.                                    *
+*                                                                         *
+*  By Levork. Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer. *
+**************************************************************************/
 
 room_rnum add_room(struct room_data *);
 int delete_room(room_rnum);

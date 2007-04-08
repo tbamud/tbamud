@@ -1,17 +1,15 @@
-/* ************************************************************************
-*   File: modify.c                                      Part of CircleMUD *
-*  Usage: Run-time modification of game variables                         *
+/**************************************************************************
+*  File: modify.c                                          Part of tbaMUD *
+*  Usage: Run-time modification of game variables.                        *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "interpreter.h"
@@ -50,7 +48,6 @@ const char *string_fields[] =
   "\n"
 };
 
-
 /* maximum length for text field x+1 */
 int length[] =
 {
@@ -61,39 +58,25 @@ int length[] =
   60
 };
 
-
-/* ************************************************************************
-*  modification of malloc'ed strings                                      *
-************************************************************************ */
-
-/*
- * Put '#if 1' here to erase ~, or roll your own method.  A common idea
- * is smash/show tilde to convert the tilde to another innocuous character
- * to save and then back to display it. Whatever you do, at least keep the
- * function around because other MUD packages use it, like mudFTP.
- *   -gg 9/9/98
- */
+/* modification of malloc'ed strings */
+/* Put '#if 1' here to erase ~, or roll your own method.  A common idea is 
+ * smash/show tilde to convert the tilde to another innocuous character to 
+ * save and then back to display it. Whatever you do, at least keep the
+ * function around because other MUD packages use it, like mudFTP. -gg */
 void smash_tilde(char *str)
 {
-  /*
-   * Erase any _line ending_ tildes inserted in the editor.
-   * The load mechanism can't handle those, yet.
-   * -- Welcor 04/2003
-   */
-
-   char *p = str;
-   for (; *p; p++)
-     if (*p == '~' && (*(p+1)=='\r' || *(p+1)=='\n' || *(p+1)=='\0'))
-       *p=' ';
+  /* Erase any _line ending_ tildes inserted in the editor. The load mechanism 
+   * can't handle those, yet. - Welcor */
+  char *p = str;
+  for (; *p; p++)
+    if (*p == '~' && (*(p+1)=='\r' || *(p+1)=='\n' || *(p+1)=='\0'))
+      *p=' ';
 }
 
-/*
- * Basic API function to start writing somewhere.
- *
- * 'data' isn't used in stock CircleMUD but you can use it to pass whatever
- * else you may want through it.  The improved editor patch when updated
- * could use it to pass the old text buffer, for instance.
- */
+/* Basic API function to start writing somewhere. 'data' isn't used, but you 
+ * can use it to pass whatever else you may want through it.  The improved 
+ * editor patch when updated could use it to pass the old text buffer, for 
+ * instance. */
 void string_write(struct descriptor_data *d, char **writeto, size_t len, long mailto, void *data)
 {
   if (d->character && !IS_NPC(d->character))
@@ -109,23 +92,20 @@ void string_write(struct descriptor_data *d, char **writeto, size_t len, long ma
   d->mail_to = mailto;
 }
 
-/*
- * Add user input to the 'current' string (as defined by d->str).
- * This is still overly complex.
- */
+/* Add user input to the 'current' string (as defined by d->str). This is still
+ * overly complex. */
 void string_add(struct descriptor_data *d, char *str)
 {
   int action;
 
-  /* determine if this is the terminal string, and truncate if so */
-  /* changed to only accept '@' at the beginning of line - J. Elson 1/17/94 */
+  /* Determine if this is the terminal string, and truncate if so. Changed to 
+   * only accept '@' at the beginning of line. - JE */
 
   delete_doubledollar(str);
   smash_tilde(str);
 
-  /* determine if this is the terminal string, and truncate if so */
-  /* changed to only accept '@' at the beginning of line - J. Elson 1/17/94 */
-  /* changed to only accept '@' if it's by itself - fnord 10/15/2004 */
+  /* Determine if this is the terminal string, and truncate if so. Changed to 
+   * only accept '@' if it's by itself. - fnord */
   if ((action = (*str == '@' && !str[1])))
     *str = '\0';
   else
@@ -159,9 +139,7 @@ void string_add(struct descriptor_data *d, char *str)
     }
   }
 
-  /*
-   * Common cleanup code.
-   */
+  /* Common cleanup code. */
   switch (action) {
     case STRINGADD_ABORT:
       switch (STATE(d)) {
@@ -197,7 +175,6 @@ void string_add(struct descriptor_data *d, char *str)
   }
 
   /* Ok, now final cleanup. */
-
   if (action == STRINGADD_SAVE || action == STRINGADD_ABORT) {
     int i;
     struct {
@@ -243,11 +220,10 @@ void playing_string_cleanup(struct descriptor_data *d, int action)
       free(d->str);
     }
 
-  /*
-   * We have no way of knowing which slot the post was sent to so we can only give the message...
-   */
+  /* We have no way of knowing which slot the post was sent to so we can only 
+   * give the message.   */
     if (d->mail_to >= BOARD_MAGIC) {
-      Board_save_board(d->mail_to - BOARD_MAGIC);
+      board_save_board(d->mail_to - BOARD_MAGIC);
       if (action == STRINGADD_ABORT)
         write_to_output(d, "Post not aborted, use REMOVE <post #>.\r\n");
     }
@@ -262,11 +238,7 @@ void exdesc_string_cleanup(struct descriptor_data *d, int action)
   STATE(d) = CON_MENU;
 }
 
-
-/* **********************************************************************
-*  Modification of character skills                                     *
-********************************************************************** */
-
+/* Modification of character skills. */
 ACMD(do_skillset)
 {
   struct char_data *vict;
@@ -342,27 +314,15 @@ ACMD(do_skillset)
     return;
   }
 
-  /*
-   * find_skill_num() guarantees a valid spell_info[] index, or -1, and we
-   * checked for the -1 above so we are safe here.
-   */
+  /* find_skill_num() guarantees a valid spell_info[] index, or -1, and we
+   * checked for the -1 above so we are safe here. */
   SET_SKILL(vict, skill, value);
   mudlog(BRF, LVL_IMMORT, TRUE, "%s changed %s's %s to %d.", GET_NAME(ch), GET_NAME(vict), spell_info[skill].name, value);
   send_to_char(ch, "You change %s's %s to %d.\r\n", GET_NAME(vict), spell_info[skill].name, value);
 }
 
-
-
-/*********************************************************************
-* New Pagination Code
-* Michael Buselli submitted the following code for an enhanced pager
-* for CircleMUD.  All functions below are his.  --JE 8 Mar 96
-*
-*********************************************************************/
-
-/* Traverse down the string until the begining of the next page has been
- * reached.  Return NULL if this is the last page of the string.
- */
+/* By Michael Buselli. Traverse down the string until the begining of the next 
+ * page has been reached.  Return NULL if this is the last page of the string. */
 char *next_page(char *str, struct char_data *ch)
 {
   int col = 1, line = 1;
@@ -394,9 +354,8 @@ char *next_page(char *str, struct char_data *ch)
       else if (*str == '\n')
         line++;
 
-      /* We need to check here and see if we are over the page width,
-       * and if so, compensate by going to the begining of the next line.
-       */
+      /* We need to check here and see if we are over the page width, and if 
+       * so, compensate by going to the begining of the next line. */
       else if (col++ > PAGE_WIDTH) {
         col = 1;
         line++;
@@ -414,11 +373,9 @@ int count_pages(char *str, struct char_data *ch)
     return (pages);
 }
 
-
 /* This function assigns all the pointers for showstr_vector for the
  * page_string function, after showstr_vector has been allocated and
- * showstr_count set.
- */
+ * showstr_count set. */
 void paginate_string(char *str, struct descriptor_data *d)
 {
   int i;
@@ -431,7 +388,6 @@ void paginate_string(char *str, struct descriptor_data *d)
 
   d->showstr_page = 0;
 }
-
 
 /* The call that gets the paging ball rolling... */
 void page_string(struct descriptor_data *d, char *str, int keep_internal)
@@ -458,7 +414,6 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal)
   show_string(d, actbuf);
 }
 
-
 /* The call that displays the next page. */
 void show_string(struct descriptor_data *d, char *input)
 {
@@ -478,21 +433,15 @@ void show_string(struct descriptor_data *d, char *input)
     }
     return;
   }
-  /* R is for refresh, so back up one page internally so we can display
-   * it again.
-   */
+  /* Back up one page internally so we can display it again. */
   else if (LOWER(*buf) == 'r')
     d->showstr_page = MAX(0, d->showstr_page - 1);
 
-  /* B is for back, so back up two pages internally so we can display the
-   * correct page here.
-   */
+  /* Back up two pages internally so we can display the correct page here. */
   else if (LOWER(*buf) == 'b')
     d->showstr_page = MAX(0, d->showstr_page - 2);
 
-  /* Feature to 'goto' a page.  Just type the number of the page and you
-   * are there!
-   */
+  /* Type the number of the page and you are there! */
   else if (isdigit(*buf))
     d->showstr_page = MAX(0, MIN(atoi(buf) - 1, d->showstr_count - 1));
 
@@ -501,9 +450,8 @@ void show_string(struct descriptor_data *d, char *input)
     return;
   }
   /* If we're displaying the last page, just send it to the character, and
-   * then free up the space we used.
-   */
-  /* also send a @n - to make color stop bleeding. -- Welcor */
+   * then free up the space we used. Also send a @n - to make color stop 
+   * bleeding. - Welcor */
   if (d->showstr_page + 1 >= d->showstr_count) {
     send_to_char(d->character, "%s@n", d->showstr_vector[d->showstr_page]);
     free(d->showstr_vector);
@@ -520,10 +468,7 @@ void show_string(struct descriptor_data *d, char *input)
     if (diff > MAX_STRING_LENGTH - 3) /* 3=\r\n\0 */
       diff = MAX_STRING_LENGTH - 3;
     strncpy(buffer, d->showstr_vector[d->showstr_page], diff);	/* strncpy: OK (size truncated above) */
-    /*
-     * Fix for prompt overwriting last line in compact mode submitted by
-     * Peter Ajamian <peter@pajamian.dhs.org> on 04/21/2001
-     */
+    /* Fix for prompt overwriting last line in compact mode by Peter Ajamian */
     if (buffer[diff - 2] == '\r' && buffer[diff - 1]=='\n')
       buffer[diff] = '\0';
     else if (buffer[diff - 2] == '\n' && buffer[diff - 1] == '\r')

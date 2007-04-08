@@ -1,12 +1,13 @@
-/* ************************************************************************
-*   File: handler.h                                     Part of CircleMUD *
+/**************************************************************************
+*  File: handler.h                                         Part of tbaMUD *
+*                                                                         *
 *  Usage: header file: prototypes of handling and utility functions       *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 /* handling the affected-structures */
 void	affect_total(struct char_data *ch);
@@ -25,8 +26,7 @@ int	is_name(const char *str, const char *namelist);
 char	*fname(const char *namelist);
 int	get_number(char **name);
 
-/* ******** objects *********** */
-
+/* objects */
 void	obj_to_char(struct obj_data *object, struct char_data *ch);
 void	obj_from_char(struct obj_data *object);
 
@@ -42,8 +42,7 @@ void	object_list_new_owner(struct obj_data *list, struct char_data *ch);
 
 void	extract_obj(struct obj_data *obj);
 
-/* ******* characters ********* */
-
+/* characters*/
 struct char_data *get_char_room(char *name, int *num, room_rnum room);
 struct char_data *get_char_num(mob_rnum nr);
 
@@ -66,9 +65,7 @@ struct obj_data *get_obj_vis(struct char_data *ch, char *name, int *num);
 struct obj_data *get_obj_in_equip_vis(struct char_data *ch, char *arg, int *number, struct obj_data *equipment[]);
 int              get_obj_pos_in_equip_vis(struct char_data *ch, char *arg, int *num, struct obj_data *equipment[]);
 
-
 /* find all dots */
-
 int	find_all_dots(char *arg);
 
 #define FIND_INDIV	0
@@ -77,7 +74,6 @@ int	find_all_dots(char *arg);
 
 
 /* Generic Find */
-
 int	generic_find(char *arg, bitvector_t bitvector, struct char_data *ch,
 		struct char_data **tar_ch, struct obj_data **tar_obj);
 
@@ -90,7 +86,6 @@ int	generic_find(char *arg, bitvector_t bitvector, struct char_data *ch,
 
 
 /* prototypes from crash save system */
-
 int	Crash_delete_file(char *name);
 int	Crash_delete_crashfile(struct char_data *ch);
 int	Crash_clean_file(char *name);
@@ -111,7 +106,6 @@ int	skill_message(int dam, struct char_data *ch, struct char_data *vict,
 		      int attacktype);
 
 /* For new last command: */
-
 #define LAST_FILE LIB_ETC"last"
 
 #define LAST_CONNECT            0

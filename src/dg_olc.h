@@ -1,9 +1,7 @@
 /**************************************************************************
-*  File: dg_olc.h                                                         *
+*  File: dg_olc.h                                          Part of tbaMUD *
 *                                                                         *
-*  Usage: this source file is used in extending Oasis style OLC for       *
-*  dg-scripts onto a CircleMUD that already has dg-scripts (as released   *
-*  by Mark Heilpern on 1/1/98) implemented.                               *
+*  Usage: This source file is used in extending Oasis OLC for trigedit.   *
 *                                                                         *
 *  $Author: Mark A. Heilpern/egreen/Welcor $                              *
 *  $Date: 2004/10/11 12:07:00$                                            *
@@ -12,12 +10,9 @@
 
 #include "dg_scripts.h"
 
-
 #define NUM_TRIG_TYPE_FLAGS		20
 
-/*
- * Submodes of TRIGEDIT connectedness.
- */
+/* Submodes of TRIGEDIT connectedness. */
 #define TRIGEDIT_MAIN_MENU              0
 #define TRIGEDIT_TRIGTYPE               1
 #define TRIGEDIT_CONFIRM_SAVESTRING	2

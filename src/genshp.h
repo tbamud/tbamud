@@ -1,8 +1,10 @@
-/************************************************************************
- * Generic OLC Library - Shops / genshp.h			v1.0	*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genshp.h                                          Part of tbaMUD *
+*                                                                         *
+*  Usage: Generic OLC Library - Shops.                                    *
+*                                                                         *
+*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
+**************************************************************************/
 
 void copy_shop(struct shop_data *tshop, struct shop_data *fshop, int free_old_strings);
 void remove_shop_from_type_list(struct shop_buy_data **list, int num);
@@ -16,9 +18,7 @@ int add_shop(struct shop_data *shop);
 int save_shops(zone_rnum zone_num);
 shop_rnum real_shop(shop_vnum vnum);
 
-/*
- * Handy macros.
- */
+/* Handy macros. */
 #define S_NUM(i)		((i)->vnum)
 #define S_KEEPER(i)		((i)->keeper)
 #define S_OPEN1(i)		((i)->open1)

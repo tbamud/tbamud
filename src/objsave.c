@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: objsave.c                                     Part of CircleMUD *
+/**************************************************************************
+*  File: objsave.c                                         Part of tbaMUD *
 *  Usage: loading/saving player objects for rent and crash-save           *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -188,7 +188,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 #undef TEST_OBJS
 #undef TEST_OBJN
 
-/* AutoEQ by Burkhard Knopf <burkhard.knopf@informatik.tu-clausthal.de> */
+/* AutoEQ by Burkhard Knopf. */
 void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
 {
   int j;

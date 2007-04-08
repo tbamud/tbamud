@@ -1,19 +1,19 @@
-/* ************************************************************************
-*   File: constants.c                                   Part of CircleMUD *
-*  Usage: Numeric and string contants used by the MUD                     *
+/**************************************************************************
+*  File: constants.c                                       Part of tbaMUD *
+*  Usage: Numeric and string contants used by the MUD.                    *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
 #include "interpreter.h"	/* alias_data */
 
-cpp_extern const char *circlemud_version = "tbaMUD, version 3.52";
+cpp_extern const char *tbamud_version = "tbaMUD, version 3.52";
 cpp_extern const char *oasisolc_version = "OasisOLC 2.0.6";
 cpp_extern const char *ascii_pfiles_version = "ASCII Player Files 3.0.1";
 
@@ -302,14 +302,14 @@ const char *item_types[] = {
   "STAFF",
   "WEAPON",
   "FURNITURE",
-  "UNDEFINED",
+  "FREE",
   "TREASURE",
   "ARMOR",
   "POTION",
   "WORN",
   "OTHER",
   "TRASH",
-  "TRAP",
+  "FREE2",
   "CONTAINER",
   "NOTE",
   "LIQ CONTAINER",

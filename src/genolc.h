@@ -1,9 +1,10 @@
-/************************************************************************
- * Generic OLC Library - General / genolc.h			v1.0	*
- * Original author: Levork						*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genolc.h                                          Part of tbaMUD *
+*                                                                         *
+*  Usage: Generic OLC Library - General.                                  *
+*                                                                         *
+*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
+**************************************************************************/
 
 #define STRING_TERMINATOR       '~'
 #define CONFIG_GENOLC_MOBPROG	0

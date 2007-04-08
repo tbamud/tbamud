@@ -1,24 +1,16 @@
-/* ************************************************************************
-*   File: mail.c                                        Part of CircleMUD *
-*  Usage: Internal funcs and player spec-procs of mud-mail system         *
+/**************************************************************************
+*  File: mail.c                                            Part of tbaMUD *
+*  Usage: Internal funcs and player spec-procs of mudmail system.         *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
-
-/******* MUD MAIL SYSTEM MAIN FILE ***************************************
-
-Written by Jeremy Elson (jelson@circlemud.org)
-
-*************************************************************************/
-
-/* And completely rewritten by Welcor 16th of december, 2005 */
+*  By Jeremy Elson. Rewritten by Welcor.                                  *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -26,7 +18,6 @@ Written by Jeremy Elson (jelson@circlemud.org)
 #include "interpreter.h"
 #include "handler.h"
 #include "mail.h"
-
 
 /* external variables */
 extern int no_mail;
@@ -42,7 +33,6 @@ void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, in
 int mail_recip_ok(const char *name);
 void write_mail_record(FILE *mail_file, struct mail_t *record);
 
-/* -------------------------------------------------------------------------- */
 char *decrypt_hex(char *string, size_t len)
 {
 	static char output[MAX_STRING_LENGTH];
@@ -82,8 +72,6 @@ char *encrypt_hex(char *string, size_t len)
   return output;
 }
 
-
-
 int mail_recip_ok(const char *name)
 {
   int player_i, ret = FALSE;
@@ -94,7 +82,6 @@ int mail_recip_ok(const char *name)
   }
   return ret;
 }
-
 
 void free_mail_record(struct mail_t *record)
 {
@@ -139,13 +126,11 @@ void write_mail_record(FILE *mail_file, struct mail_t *record)
                      record->body );
 }
 
-/*
- * int scan_file(none)
+/* int scan_file(none)
  * Returns false if mail file is corrupted or true if everything correct.
  *
  * This is called once during boot-up.  It scans through the mail file
- * and indexes all entries currently in the mail file.
- */
+ * and indexes all entries currently in the mail file. */
 int scan_file(void)
 {
   FILE *mail_file;
@@ -171,13 +156,11 @@ int scan_file(void)
  	return TRUE;
 }
 
-/*
- * int has_mail(long #1)
+/* int has_mail(long #1)
  * #1 - id number of the person to check for mail.
  * Returns true or false.
  *
- * A simple little function which tells you if the guy has mail or not.
- */
+ * A simple little function which tells you if the player has mail or not. */
 int has_mail(long recipient)
 {
   FILE *mail_file;
@@ -203,17 +186,14 @@ int has_mail(long recipient)
   return FALSE;
 }
 
-
-/*
- * void store_mail(long #1, long #2, char * #3)
+/* void store_mail(long #1, long #2, char * #3)
  * #1 - id number of the person to mail to.
  * #2 - id number of the person the mail is from.
  * #3 - The actual message to send.
  *
  * call store_mail to store mail.  (hard, huh? :-) )  Pass 3 arguments:
  * who the mail is to (long), who it's from (long), and a pointer to the
- * actual message text (char *).
- */
+ * actual message text (char *). */
 void store_mail(long to, long from, char *message_pointer)
 {
   FILE *mail_file;
@@ -235,17 +215,12 @@ void store_mail(long to, long from, char *message_pointer)
   fclose(mail_file);
 }
 
-
-/*
- * char *read_delete(long #1)
+/* char *read_delete(long #1)
  * #1 - The id number of the person we're checking mail for.
  * Returns the message text of the mail received.
  *
  * Retrieves one messsage for a player. The mail is then discarded from
- * the file.
- *
- * Expects mail to exist.
- */
+ * the file. Expects mail to exist. */
 char *read_delete(long recipient)
 {
   FILE *mail_file, *new_file;
@@ -311,12 +286,7 @@ char *read_delete(long recipient)
   return strdup(buf);
 }
 
-
-/****************************************************************
-* Below is the spec_proc for a postmaster using the above       *
-* routines.  Written by Jeremy Elson (jelson@circlemud.org) *
-****************************************************************/
-
+/* spec_proc for a postmaster using the above routines.  By Jeremy Elson */
 SPECIAL(postmaster)
 {
   if (!ch->desc || IS_NPC(ch))
@@ -342,7 +312,6 @@ SPECIAL(postmaster)
   } else
     return (0);
 }
-
 
 void postmaster_send_mail(struct char_data *ch, struct char_data *mailman,
 			  int cmd, char *arg)
@@ -391,7 +360,6 @@ void postmaster_send_mail(struct char_data *ch, struct char_data *mailman,
   string_write(ch->desc, mailwrite, MAX_MAIL_SIZE, recipient, NULL);
 }
 
-
 void postmaster_check_mail(struct char_data *ch, struct char_data *mailman,
 			  int cmd, char *arg)
 {
@@ -400,7 +368,6 @@ void postmaster_check_mail(struct char_data *ch, struct char_data *mailman,
   else
     act("$n tells you, 'Sorry, you don't have any mail waiting.'", FALSE, mailman, 0, ch, TO_VICT);
 }
-
 
 void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
 			  int cmd, char *arg)

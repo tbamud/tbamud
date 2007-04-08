@@ -1,12 +1,15 @@
-/* ************************************************************************
-*   File: spec_procs.c                                  Part of CircleMUD *
-*  Usage: implementation of special procedures for mobiles/objects/rooms  *
+/**************************************************************************
+*  File: spec_procs.c                                      Part of tbaMUD *
+*  Usage: Implementation of special procedures for mobiles/objects/rooms. *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
+
+/* For more examples: 
+ * ftp://ftp.circlemud.org/pub/CircleMUD/contrib/snippets/specials */
 
 #include "conf.h"
 #include "sysdep.h"
@@ -22,6 +25,7 @@
 /*   external vars  */
 extern struct time_info_data time_info;
 extern struct spell_info_type spell_info[];
+extern struct guild_info_type guild_info[];
 
 /* extern functions */
 ACMD(do_drop);
@@ -37,6 +41,15 @@ void list_skills(struct char_data *ch);
 SPECIAL(guild);
 SPECIAL(dump);
 SPECIAL(mayor);
+void npc_steal(struct char_data *ch, struct char_data *victim);
+SPECIAL(snake);
+SPECIAL(thief);
+SPECIAL(magic_user);
+SPECIAL(guild_guard);
+SPECIAL(puff);
+SPECIAL(fido);
+SPECIAL(janitor);
+SPECIAL(cityguard);
 SPECIAL(pet_shops);
 SPECIAL(bank);
 
@@ -299,6 +312,293 @@ SPECIAL(mayor)
   return (FALSE);
 }
 
+/* General special procedures for mobiles. */
+
+void npc_steal(struct char_data *ch, struct char_data *victim)
+{
+  int gold;
+
+  if (IS_NPC(victim))
+    return;
+  if (GET_LEVEL(victim) >= LVL_IMMORT)
+    return;
+  if (!CAN_SEE(ch, victim))
+    return;
+
+  if (AWAKE(victim) && (rand_number(0, GET_LEVEL(ch)) == 0)) {
+    act("You discover that $n has $s hands in your wallet.", FALSE, ch, 0, victim, TO_VICT);
+    act("$n tries to steal gold from $N.", TRUE, ch, 0, victim, TO_NOTVICT);
+  } else {
+    /* Steal some gold coins */
+    gold = (GET_GOLD(victim) * rand_number(1, 10)) / 100;
+    if (gold > 0) {
+      GET_GOLD(ch) += gold;
+      GET_GOLD(victim) -= gold;
+    }
+  }
+}
+
+/* Quite lethal to low-level characters. */
+SPECIAL(snake)
+{
+  if (cmd || GET_POS(ch) != POS_FIGHTING || !FIGHTING(ch))
+    return (FALSE);
+
+  if (IN_ROOM(FIGHTING(ch)) != IN_ROOM(ch) || rand_number(0, GET_LEVEL(ch)) != 0)
+    return (FALSE);
+
+  act("$n bites $N!", 1, ch, 0, FIGHTING(ch), TO_NOTVICT);
+  act("$n bites you!", 1, ch, 0, FIGHTING(ch), TO_VICT);
+  call_magic(ch, FIGHTING(ch), 0, SPELL_POISON, GET_LEVEL(ch), CAST_SPELL);
+  return (TRUE);
+}
+
+SPECIAL(thief)
+{
+  struct char_data *cons;
+
+  if (cmd || GET_POS(ch) != POS_STANDING)
+    return (FALSE);
+
+  for (cons = world[IN_ROOM(ch)].people; cons; cons = cons->next_in_room)
+    if (!IS_NPC(cons) && GET_LEVEL(cons) < LVL_IMMORT && !rand_number(0, 4)) {
+      npc_steal(ch, cons);
+      return (TRUE);
+    }
+
+  return (FALSE);
+}
+
+SPECIAL(magic_user)
+{
+  struct char_data *vict;
+
+  if (cmd || GET_POS(ch) != POS_FIGHTING)
+    return (FALSE);
+
+  /* pseudo-randomly choose someone in the room who is fighting me */
+  for (vict = world[IN_ROOM(ch)].people; vict; vict = vict->next_in_room)
+    if (FIGHTING(vict) == ch && !rand_number(0, 4))
+      break;
+
+  /* if I didn't pick any of those, then just slam the guy I'm fighting */
+  if (vict == NULL && IN_ROOM(FIGHTING(ch)) == IN_ROOM(ch))
+    vict = FIGHTING(ch);
+
+  /* Hm...didn't pick anyone...I'll wait a round. */
+  if (vict == NULL)
+    return (TRUE);
+
+  if (GET_LEVEL(ch) > 13 && rand_number(0, 10) == 0)
+    cast_spell(ch, vict, NULL, SPELL_POISON);
+
+  if (GET_LEVEL(ch) > 7 && rand_number(0, 8) == 0)
+    cast_spell(ch, vict, NULL, SPELL_BLINDNESS);
+
+  if (GET_LEVEL(ch) > 12 && rand_number(0, 12) == 0) {
+    if (IS_EVIL(ch))
+      cast_spell(ch, vict, NULL, SPELL_ENERGY_DRAIN);
+    else if (IS_GOOD(ch))
+      cast_spell(ch, vict, NULL, SPELL_DISPEL_EVIL);
+  }
+
+  if (rand_number(0, 4))
+    return (TRUE);
+
+  switch (GET_LEVEL(ch)) {
+    case 4:
+    case 5:
+      cast_spell(ch, vict, NULL, SPELL_MAGIC_MISSILE);
+      break;
+    case 6:
+    case 7:
+      cast_spell(ch, vict, NULL, SPELL_CHILL_TOUCH);
+      break;
+    case 8:
+    case 9:
+      cast_spell(ch, vict, NULL, SPELL_BURNING_HANDS);
+      break;
+    case 10:
+    case 11:
+      cast_spell(ch, vict, NULL, SPELL_SHOCKING_GRASP);
+      break;
+    case 12:
+    case 13:
+      cast_spell(ch, vict, NULL, SPELL_LIGHTNING_BOLT);
+      break;
+    case 14:
+    case 15:
+    case 16:
+    case 17:
+      cast_spell(ch, vict, NULL, SPELL_COLOR_SPRAY);
+      break;
+    default:
+      cast_spell(ch, vict, NULL, SPELL_FIREBALL);
+      break;
+  }
+  return (TRUE);
+}
+
+/* Special procedures for mobiles. */
+SPECIAL(guild_guard)
+{
+  int i;
+  struct char_data *guard = (struct char_data *)me;
+  const char *buf = "The guard humiliates you, and blocks your way.\r\n";
+  const char *buf2 = "The guard humiliates $n, and blocks $s way.";
+
+  if (!IS_MOVE(cmd) || AFF_FLAGGED(guard, AFF_BLIND))
+    return (FALSE);
+
+  if (GET_LEVEL(ch) >= LVL_IMMORT)
+    return (FALSE);
+
+  for (i = 0; guild_info[i].guild_room != NOWHERE; i++) {
+    /* Wrong guild or not trying to enter. */
+    if (GET_ROOM_VNUM(IN_ROOM(ch)) != guild_info[i].guild_room || cmd != guild_info[i].direction)
+      continue;
+
+    /* Allow the people of the guild through. */
+    if (!IS_NPC(ch) && GET_CLASS(ch) == guild_info[i].pc_class)
+      continue;
+
+    send_to_char(ch, "%s", buf);
+    act(buf2, FALSE, ch, 0, 0, TO_ROOM);
+    return (TRUE);
+  }
+  return (FALSE);
+}
+
+SPECIAL(puff)
+{
+  char actbuf[MAX_INPUT_LENGTH];
+
+  if (cmd)
+    return (FALSE);
+
+  switch (rand_number(0, 60)) {
+    case 0:
+      do_say(ch, strcpy(actbuf, "My god!  It's full of stars!"), 0, 0);	/* strcpy: OK */
+      return (TRUE);
+    case 1:
+      do_say(ch, strcpy(actbuf, "How'd all those fish get up here?"), 0, 0);	/* strcpy: OK */
+      return (TRUE);
+    case 2:
+      do_say(ch, strcpy(actbuf, "I'm a very female dragon."), 0, 0);	/* strcpy: OK */
+      return (TRUE);
+    case 3:
+      do_say(ch, strcpy(actbuf, "I've got a peaceful, easy feeling."), 0, 0);	/* strcpy: OK */
+      return (TRUE);
+    default:
+      return (FALSE);
+  }
+}
+
+SPECIAL(fido)
+{
+  struct obj_data *i, *temp, *next_obj;
+
+  if (cmd || !AWAKE(ch))
+    return (FALSE);
+
+  for (i = world[IN_ROOM(ch)].contents; i; i = i->next_content) {
+    if (!IS_CORPSE(i))
+      continue;
+
+    act("$n savagely devours a corpse.", FALSE, ch, 0, 0, TO_ROOM);
+    for (temp = i->contains; temp; temp = next_obj) {
+      next_obj = temp->next_content;
+      obj_from_obj(temp);
+      obj_to_room(temp, IN_ROOM(ch));
+    }
+    extract_obj(i);
+    return (TRUE);
+  }
+  return (FALSE);
+}
+
+SPECIAL(janitor)
+{
+  struct obj_data *i;
+
+  if (cmd || !AWAKE(ch))
+    return (FALSE);
+
+  for (i = world[IN_ROOM(ch)].contents; i; i = i->next_content) {
+    if (!CAN_WEAR(i, ITEM_WEAR_TAKE))
+      continue;
+    if (GET_OBJ_TYPE(i) != ITEM_DRINKCON && GET_OBJ_COST(i) >= 15)
+      continue;
+    act("$n picks up some trash.", FALSE, ch, 0, 0, TO_ROOM);
+    obj_from_room(i);
+    obj_to_char(i, ch);
+    return (TRUE);
+  }
+  return (FALSE);
+}
+
+SPECIAL(cityguard)
+{
+  struct char_data *tch, *evil, *spittle;
+  int max_evil, min_cha;
+
+  if (cmd || !AWAKE(ch) || FIGHTING(ch))
+    return (FALSE);
+
+  max_evil = 1000;
+  min_cha = 6;
+  spittle = evil = NULL;
+
+  for (tch = world[IN_ROOM(ch)].people; tch; tch = tch->next_in_room) {
+    if (!CAN_SEE(ch, tch))
+      continue;
+    if (!IS_NPC(tch) && PLR_FLAGGED(tch, PLR_KILLER)) {
+      act("$n screams 'HEY!!!  You're one of those PLAYER KILLERS!!!!!!'", FALSE, ch, 0, 0, TO_ROOM);
+      hit(ch, tch, TYPE_UNDEFINED);
+      return (TRUE);
+    }
+
+    if (!IS_NPC(tch) && PLR_FLAGGED(tch, PLR_THIEF)) {
+      act("$n screams 'HEY!!!  You're one of those PLAYER THIEVES!!!!!!'", FALSE, ch, 0, 0, TO_ROOM);
+      hit(ch, tch, TYPE_UNDEFINED);
+      return (TRUE);
+    }
+
+    if (FIGHTING(tch) && GET_ALIGNMENT(tch) < max_evil && (IS_NPC(tch) || IS_NPC(FIGHTING(tch)))) {
+      max_evil = GET_ALIGNMENT(tch);
+      evil = tch;
+    }
+
+    if (GET_CHA(tch) < min_cha) {
+      spittle = tch;
+      min_cha = GET_CHA(tch);
+    }
+  }
+
+  if (evil && GET_ALIGNMENT(FIGHTING(evil)) >= 0) {
+    act("$n screams 'PROTECT THE INNOCENT!  BANZAI!  CHARGE!  ARARARAGGGHH!'", FALSE, ch, 0, 0, TO_ROOM);
+    hit(ch, evil, TYPE_UNDEFINED);
+    return (TRUE);
+  }
+
+  /* Reward the socially inept. */
+  if (spittle && !rand_number(0, 9)) {
+    static int spit_social;
+
+    if (!spit_social)
+      spit_social = find_command("spit");
+
+    if (spit_social > 0) {
+      char spitbuf[MAX_NAME_LENGTH + 1];
+      strncpy(spitbuf, GET_NAME(spittle), sizeof(spitbuf));	/* strncpy: OK */
+      spitbuf[sizeof(spitbuf) - 1] = '\0';
+      do_action(ch, spitbuf, spit_social, 0);
+      return (TRUE);
+    }
+  }
+  return (FALSE);
+}
+
 #define PET_PRICE(pet) (GET_LEVEL(pet) * 300)
 SPECIAL(pet_shops)
 {
@@ -363,7 +663,7 @@ SPECIAL(pet_shops)
   return (FALSE);
 }
 
-/* Special procedures for objects */
+/* Special procedures for objects. */
 SPECIAL(bank)
 {
   int amount;

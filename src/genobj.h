@@ -1,9 +1,10 @@
-/************************************************************************
- * Generic OLC Library - Objects / genobj.h			v1.0	*
- * Original author: Levork						*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genobj.h                                          Part of tbaMUD *
+*                                                                         *
+*  Usage: Generic OLC Library - Objects.                                  *
+*                                                                         *
+*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
+**************************************************************************/
 
 void free_object_strings(struct obj_data *obj);
 int copy_object(struct obj_data *to, struct obj_data *from);

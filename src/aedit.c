@@ -1,10 +1,8 @@
-/*
- * File: aedit.c
- * Comment: OLC for MUDs -- this one edits socials
- * by Michael Scott <scottm@workcomm.net> -- 06/10/96
- * for use with OasisOLC
- * ftpable from ftp.circlemud.org:/pub/CircleMUD/contrib/code
- */
+/**************************************************************************
+*  File: aedit.c                                           Part of tbaMUD *
+*  Usage: OLC for MUDs -- this one edits socials.                         *
+*  by Michael Scott                                                       *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -34,7 +32,6 @@ void aedit_save_internally(struct descriptor_data *d);
 void aedit_save_to_disk(struct descriptor_data *d);
 
 /* Utils and exported functions. */
-
 ACMD(do_oasis_aedit)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -313,7 +310,6 @@ void aedit_disp_menu(struct descriptor_data * d) {
 
    OLC_MODE(d) = AEDIT_MAIN_MENU;
 }
-
 
 /* The main loop. */
 void aedit_parse(struct descriptor_data * d, char *arg) {

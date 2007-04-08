@@ -1,17 +1,15 @@
-/* ************************************************************************
-*   File: act.social.c                                  Part of CircleMUD *
-*  Usage: Functions to handle socials                                     *
+/**************************************************************************
+*  File: act.social.c                                      Part of tbaMUD *
+*  Usage: Functions to handle socials.                                    *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"

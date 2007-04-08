@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: comm.h                                        Part of CircleMUD *
-*  Usage: header file: prototypes of public communication functions       *
+/**************************************************************************
+*  File: comm.h                                            Part of tbaMUD *
+*  Usage: Header file, prototypes of public communication functions.      *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #define NUM_RESERVED_DESCS	8
 #define COPYOVER_FILE "copyover.dat"

@@ -1,17 +1,15 @@
-/* ************************************************************************
-*   File: ban.c                                         Part of CircleMUD *
-*  Usage: banning/unbanning/checking sites and player names               *
+/**************************************************************************
+*  File: ban.c                                             Part of tbaMUD *
+*  Usage: Banning/unbanning/checking sites and player names.              *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -29,10 +27,9 @@ void _write_one_node(FILE *fp, struct ban_list_element *node);
 void write_ban_list(void);
 ACMD(do_ban);
 ACMD(do_unban);
-int Valid_Name(char *newname);
-void Read_Invalid_List(void);
-void Free_Invalid_List(void);
-
+int valid_name(char *newname);
+void read_invalid_list(void);
+void free_invalid_list(void);
 
 const char *ban_types[] = {
   "no",
@@ -41,7 +38,6 @@ const char *ban_types[] = {
   "all",
   "ERROR"
 };
-
 
 void load_banned(void)
 {
@@ -79,7 +75,6 @@ void load_banned(void)
   fclose(fl);
 }
 
-
 int isbanned(char *hostname)
 {
   int i;
@@ -100,7 +95,6 @@ int isbanned(char *hostname)
   return (i);
 }
 
-
 void _write_one_node(FILE *fp, struct ban_list_element *node)
 {
   if (node) {
@@ -109,8 +103,6 @@ void _write_one_node(FILE *fp, struct ban_list_element *node)
 	    node->site, (long) node->date, node->name);
   }
 }
-
-
 
 void write_ban_list(void)
 {
@@ -124,7 +116,6 @@ void write_ban_list(void)
   fclose(fl);
   return;
 }
-
 
 #define BAN_LIST_FORMAT "%-25.25s  %-8.8s  %-10.10s  %-16.16s\r\n"
 ACMD(do_ban)
@@ -201,7 +192,6 @@ ACMD(do_ban)
 }
 #undef BAN_LIST_FORMAT
 
-
 ACMD(do_unban)
 {
   char site[MAX_INPUT_LENGTH];
@@ -234,48 +224,38 @@ ACMD(do_unban)
   write_ban_list();
 }
 
-
-/**************************************************************************
- *  Code to check for invalid names (i.e., profanity, etc.)		  *
- *  Written by Sharon P. Goza						  *
- **************************************************************************/
-
+/* Check for invalid names (i.e., profanity, etc.) Written by Sharon P Garza. */
 #define MAX_INVALID_NAMES	200
-
 char *invalid_list[MAX_INVALID_NAMES];
 int num_invalid = 0;
 
-int Valid_Name(char *newname)
+int valid_name(char *newname)
 {
-  int i, wovels = 0;
+  int i, vowels = 0;
   struct descriptor_data *dt;
   char tempname[MAX_INPUT_LENGTH];
 
-  /*
-   * Make sure someone isn't trying to create this same name.  We want to
-   * do a 'str_cmp' so people can't do 'Bob' and 'BoB'.  The creating login
-   * will not have a character name yet and other people sitting at the
-   * prompt won't have characters yet.
-   *
-   * New, unindexed characters (i.e., characters who are in the process of creating)
-   * will have an idnum of -1, set by clear_char() in db.c.  If someone is creating a
-   * character by the same name as the one we are checking, then the name is invalid,
-   * to prevent character duping.
-   * THIS SHOULD FIX THE 'invalid name' if disconnected from OLC-bug - WELCOR 9/00
-   */
+  /* Make sure someone isn't trying to create this same name.  We want to do a 
+   * 'str_cmp' so people can't do 'Bob' and 'BoB'.  The creating login will not
+   * have a character name yet and other people sitting at the prompt won't 
+   * have characters yet. New, unindexed characters (i.e., characters who are 
+   * in the process of creating) will have an idnum of -1, set by clear_char() 
+   * in db.c.  If someone is creating a character by the same name as the one 
+   * we are checking, then the name is invalid, to prevent character duping.
+   * THIS SHOULD FIX THE 'invalid name' if disconnected from OLC-bug - Welcor */
   for (dt = descriptor_list; dt; dt = dt->next)
     if (dt->character && GET_NAME(dt->character) && !str_cmp(GET_NAME(dt->character), newname))
       if (GET_IDNUM(dt->character) == -1)
         return (IS_PLAYING(dt));
 
-  /* count wovels */
+  /* count vowels */
   for (i = 0; newname[i]; i++) {
     if (strchr("aeiouyAEIOUY", newname[i]))
-      wovels++;
+      vowels++;
   }
 
-  /* return invalid if no wovels */
-  if (!wovels)
+  /* return invalid if no vowels */
+  if (!vowels)
     return (0);
 
   /* return valid if list doesn't exist */
@@ -295,9 +275,7 @@ int Valid_Name(char *newname)
   return (1);
 }
 
-
-/* What's with the wacky capitalization in here? */
-void Free_Invalid_List(void)
+void free_invalid_list(void)
 {
   int invl;
 
@@ -307,8 +285,7 @@ void Free_Invalid_List(void)
   num_invalid = 0;
 }
 
-
-void Read_Invalid_List(void)
+void read_invalid_list(void)
 {
   FILE *fp;
   char temp[256];

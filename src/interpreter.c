@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: interpreter.c                                 Part of CircleMUD *
-*  Usage: parse user commands, search for specials, call ACMD functions   *
+/**************************************************************************
+*  File: interpreter.c                                     Part of tbaMUD *
+*  Usage: Parse user commands, search for specials, call ACMD functions.  *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #define __INTERPRETER_C__
 
@@ -48,7 +48,7 @@ void do_start(struct char_data *ch);
 int parse_class(char arg);
 int special(struct char_data *ch, int cmd, char *arg);
 int isbanned(char *hostname);
-int Valid_Name(char *newname);
+int valid_name(char *newname);
 void read_aliases(struct char_data *ch);
 void delete_aliases(const char *charname);
 void remove_player(int pfilepos);
@@ -1341,7 +1341,7 @@ void nanny(struct descriptor_data *d, char *arg)
       char buf[MAX_INPUT_LENGTH], tmp_name[MAX_INPUT_LENGTH];
 
       if ((_parse_name(arg, tmp_name)) || strlen(tmp_name) < 2 ||
-	  strlen(tmp_name) > MAX_NAME_LENGTH || !Valid_Name(tmp_name) ||
+	  strlen(tmp_name) > MAX_NAME_LENGTH || !valid_name(tmp_name) ||
 	  fill_word(strcpy(buf, tmp_name)) || reserved_word(buf)) {	/* strcpy: OK (mutual MAX_INPUT_LENGTH) */
 	write_to_output(d, "Invalid name, please try another.\r\nName: ");
 	return;
@@ -1360,7 +1360,7 @@ void nanny(struct descriptor_data *d, char *arg)
 		/* We get a false positive from the original deleted character. */
 	  free_char(d->character);
 	  /* Check for multiple creations... */
-	  if (!Valid_Name(tmp_name)) {
+	  if (!valid_name(tmp_name)) {
 	    write_to_output(d, "Invalid name, please try another.\r\nName: ");
 	    return;
 	  }
@@ -1390,7 +1390,7 @@ void nanny(struct descriptor_data *d, char *arg)
 	/* player unknown -- make new character */
 
 	/* Check for multiple creations of a character. */
-	if (!Valid_Name(tmp_name)) {
+	if (!valid_name(tmp_name)) {
 	  write_to_output(d, "Invalid name, please try another.\r\nName: ");
 	  return;
 	}

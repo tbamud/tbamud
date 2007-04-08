@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: interpreter.h                                 Part of CircleMUD *
+/**************************************************************************
+*  File: interpreter.h                                     Part of tbaMUD *
 *  Usage: header file: public procs, macro defs, subcommand defines       *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #define ACMD(name)  \
    void name(struct char_data *ch, char *argument, int cmd, int subcmd)

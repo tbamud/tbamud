@@ -1,12 +1,10 @@
-/*
-
-improved-edit.c		Routines specific to the improved editor.
-
-*/
+/**************************************************************************
+*  File: improved-edit.c                                   Part of tbaMUD *
+*  Usage: Routines specific to the improved editor.                       *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -93,9 +91,7 @@ int improved_editor_execute(struct descriptor_data *d, char *str)
   return STRINGADD_ACTION;
 }
 
-/*
- * Handle some editor commands.
- */
+/* Handle some editor commands. */
 void parse_edit_action(int command, char *string, struct descriptor_data *d)
 {
   int indent = 0, rep_all = 0, flags = 0, replaced, i, line_low, line_high, j = 0;
@@ -240,10 +236,8 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
     }
     break;
   case PARSE_LIST_NORM:
-    /*
-     * Note: Rv's buf, buf1, buf2, and arg variables are defined to 32k so
-     * they are probly ok for what to do here.
-     */
+    /* Note: Rv's buf, buf1, buf2, and arg variables are defined to 32k so they
+     * are ok for what we do here. */
     *buf = '\0';
     if (*string)
       switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
@@ -295,17 +289,13 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
       *s = temp;
     } else
       strcat(buf, t);
-    /*
-     * This is kind of annoying...but some people like it.
-     */
+    /* This is kind of annoying...but some people like it. */
     sprintf(buf + strlen(buf), "\r\n%d line%sshown.\r\n", total_len, (total_len != 1) ? "s " : " ");
     page_string(d, buf, TRUE);
     break;
   case PARSE_LIST_NUM:
-    /*
-     * Note: Rv's buf, buf1, buf2, and arg variables are defined to 32k so
-     * they are probly ok for what to do here.
-     */
+    /* Note: Rv's buf, buf1, buf2, and arg variables are defined to 32k so they
+     * are probably ok for what we do here. */
     *buf = '\0';
     if (*string)
       switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
@@ -430,63 +420,43 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
       return;
     }
     if (line_low > 0) {
-      /*
-       * Loop through the text counting \n characters until we get to the line.
-       */
+      /* Loop through the text counting \n characters until we get to the line. */
       while (s && i < line_low)
 	if ((s = strchr(s, '\n')) != NULL) {
 	  i++;
 	  s++;
 	}
-      /*
-       * Make sure that there was a THAT line in the text.
-       */
+      /* Make sure that there was a THAT line in the text. */
       if (s == NULL || i < line_low) {
 	write_to_output(d, "Line number out of range; change aborted.\r\n");
 	return;
       }
-      /*
-       * If s is the same as *d->str that means I'm at the beginning of the
-       * message text and I don't need to put that into the changed buffer.
-       */
+      /* If s is the same as *d->str that means I'm at the beginning of the
+       * message text and I don't need to put that into the changed buffer. */
       if (s != *d->str) {
-	/*
-	 * First things first .. we get this part into the buffer.
-	 */
+	/* First things first .. we get this part into the buffer. */
 	temp = *s;
 	*s = '\0';
-	/*
-	 * Put the first 'good' half of the text into storage.
-	 */
+	/* Put the first 'good' half of the text into storage. */
 	strcat(buf, *d->str);
 	*s = temp;
       }
-      /*
-       * Put the new 'good' line into place.
-       */
+      /* Put the new 'good' line into place. */
       strcat(buf, buf2);
       if ((s = strchr(s, '\n')) != NULL) {
-	/*
-	 * This means that we are at the END of the line, we want out of
-	 * there, but we want s to point to the beginning of the line
-	 * AFTER the line we want edited
-	 */
+        /* This means that we are at the END of the line, we want out of there,
+         * but we want s to point to the beginning of the line. AFTER the line 
+         * we want edited. */
 	s++;
-	/*
-	 * Now put the last 'good' half of buffer into storage.
-	 */
+	/* Now put the last 'good' half of buffer into storage. */
 	strcat(buf, s);
       }
-      /*
-       * Check for buffer overflow.
-       */
+      /* Check for buffer overflow. */
       if (strlen(buf) > d->max_str) {
 	write_to_output(d, "Change causes new length to exceed buffer maximum size, aborted.\r\n");
 	return;
       }
-      /*
-       * Change the size of the REAL buffer to fit the new text.
-       */
+      /* Change the size of the REAL buffer to fit the new text. */
       RECREATE(*d->str, char, strlen(buf) + 3);
       strcpy(*d->str, buf);
       write_to_output(d, "Line changed.\r\n");
@@ -502,11 +472,8 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
   }
 }
 
-
-/*
- * Re-formats message type formatted char *.
- * (for strings edited with d->str) (mostly olc and mail)
- */
+/* Re-formats message type formatted char *. (for strings edited with d->str) 
+ * (mostly olc and mail). */
 int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned int maxlen, int low, int high)
 {
   int line_chars, cap_next = TRUE, cap_next_next = FALSE, color_chars = 0, i, pass_line = 0;
@@ -520,7 +487,6 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
   }
 
   /* XXX: Want to make sure the string doesn't grow either... */
-
   if ((flow = *ptr_string) == NULL)
     return 0;
 
@@ -573,25 +539,18 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
         cap_next = TRUE;
       }
 
-      /*
-       * This is so that if we stopped on a sentence .. we move off the
-       * sentence delimiter.
-       */
+      /* This is so that if we stopped on a sentence, we move off the sentence 
+       * delimiter. */
       while (strchr(".!?", *flow)) {
         cap_next_next = TRUE;
         flow++;
       }
 
-      /*
-       * special case: if we're at the end of the last line, and the last
+      /* Special case: if we're at the end of the last line, and the last
        * character is a delimiter, the flow++ above will have *flow pointing
-       * to the \r (or \n) character after the delimiter. Thus *flow will
-       * be non-null, and an extra (blank) line might be added erroneously.
-       * We fix it by skipping the newline characters in between.
-       *
-       * Welcor 04/04
-       */
-
+       * to the \r (or \n) character after the delimiter. Thus *flow will be 
+       * non-null, and an extra (blank) line might be added erroneously. We 
+       * fix it by skipping the newline characters in between. - Welcor */
       if (strchr("\n\r", *flow)) {
         *flow = '\0';  /* terminate 'start' string */
         flow++;        /* we know this is safe     */

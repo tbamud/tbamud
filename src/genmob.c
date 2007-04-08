@@ -1,12 +1,12 @@
-/************************************************************************
- * Generic OLC Library - Mobiles / genmob.c			v1.0	*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genmob.c                                          Part of tbaMUD *
+*  Usage: Generic OLC Library - Mobiles.                                  *
+*                                                                         *
+*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -70,23 +70,17 @@ int add_mobile(struct char_data *mob, mob_vnum vnum)
 
   log("GenOLC: add_mobile: Added mobile %d at index #%d.", vnum, found);
 
-  /*
-   * Update live mobile rnums.
-   */
+  /* Update live mobile rnums. */
   for (live_mob = character_list; live_mob; live_mob = live_mob->next)
     GET_MOB_RNUM(live_mob) += (GET_MOB_RNUM(live_mob) >= found);
 
-  /*
-   * Update zone table.
-   */
+  /* Update zone table. */
   for (zone = 0; zone <= top_of_zone_table; zone++)
     for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++)
       if (ZCMD(zone, cmd_no).command == 'M')
 	ZCMD(zone, cmd_no).arg1 += (ZCMD(zone, cmd_no).arg1 >= found);
 
-  /*
-   * Update shop keepers.
-   */
+  /* Update shop keepers. */
   if (shop_index)
     for (shop = 0; shop <= top_shop - top_shop_offset; shop++)
       SHOP_KEEPER(shop) += (SHOP_KEEPER(shop) >= found);
@@ -144,23 +138,17 @@ int delete_mobile(mob_rnum refpt)
   RECREATE(mob_index, struct index_data, top_of_mobt + 1);
   RECREATE(mob_proto, struct char_data, top_of_mobt + 1);
 
-  /*
-   * Update live mobile rnums.
-   */
+  /* Update live mobile rnums. */
   for (live_mob = character_list; live_mob; live_mob = live_mob->next)
     GET_MOB_RNUM(live_mob) -= (GET_MOB_RNUM(live_mob) >= refpt);
 
-  /*
-   * Update zone table.
-   */
+  /* Update zone table. */
   for (zone = 0; zone <= top_of_zone_table; zone++)
     for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++)
       if (ZCMD(zone, cmd_no).command == 'M' && ZCMD(zone, cmd_no).arg1 == refpt)
         delete_zone_command(&zone_table[zone], cmd_no);
 
-  /*
-   * Update shop keepers.
-   */
+  /* Update shop keepers. */
   if (shop_index)
     for (counter = 0; counter <= top_shop - top_shop_offset; counter++)
       SHOP_KEEPER(counter) -= (SHOP_KEEPER(counter) >= refpt);
@@ -215,10 +203,8 @@ int free_mobile_strings(struct char_data *mob)
   return TRUE;
 }
 
-/*
- * Free a mobile structure that has been edited.
- * Take care of existing mobiles and their mob_proto!
- */
+/* Free a mobile structure that has been edited. Take care of existing mobiles 
+ * and their mob_proto! */
 int free_mobile(struct char_data *mob)
 {
   mob_rnum i;
@@ -226,9 +212,7 @@ int free_mobile(struct char_data *mob)
   if (mob == NULL)
     return FALSE;
 
-  /*
-   * Non-prototyped mobile.  Also known as new mobiles.
-   */
+  /* Non-prototyped mobile.  Also known as new mobiles. */
   if ((i = GET_MOB_RNUM(mob)) == NOBODY) {
     free_mobile_strings(mob);
     /* free script proto list */
@@ -321,7 +305,6 @@ int write_mobile_espec(mob_vnum mvnum, struct char_data *mob, FILE *fd)
   fputs("E\n", fd);
   return TRUE;
 }
-
 
 int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 {

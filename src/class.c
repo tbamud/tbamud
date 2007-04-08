@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: class.c                                       Part of CircleMUD *
-*  Usage: Source file for class-specific code                             *
+/**************************************************************************
+*  File: class.c                                           Part of tbaMUD *
+*  Usage: Source file for class-specific code.                            *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 /* This file attempts to concentrate most of the code which must be changed
  * in order for new classes to be added.  If you're adding a new class, you 
@@ -123,6 +123,28 @@ int prac_params[4][NUM_CLASSES] = {
   { 100,	100,	12,	12	},	/* max per practice */
   { 25,		25,	0,	0	},	/* min per practice */
   { SPELL,	SPELL,	SKILL,	SKILL	},	/* prac name */
+};
+
+/* The appropriate rooms for each guildmaster/guildguard; controls which types
+ * of people the various guildguards let through.  i.e., the first line shows 
+ * that from room 3017, only MAGIC_USERS are allowed to go south. Don't forget 
+ * to visit spec_assign.c if you create any new mobiles that should be a guild
+ * master or guard so they can act appropriately. If you "recycle" the 
+ * existing mobs that are used in other guilds for your new guild, then you 
+ * don't have to change that file, only here. */
+struct guild_info_type guild_info[] = {
+
+/* Midgaard */
+  { CLASS_MAGIC_USER,	3017,	SCMD_SOUTH	},
+  { CLASS_CLERIC,	3004,	SCMD_NORTH	},
+  { CLASS_THIEF,	3027,	SCMD_EAST	},
+  { CLASS_WARRIOR,	3021,	SCMD_EAST	},
+
+/* Brass Dragon */
+  { -999 /* all */ ,	5065,	SCMD_WEST	},
+
+/* this must go last -- add new guards above! */
+  { -1, NOWHERE, -1}
 };
 
 /* Saving throws for : MCTW : PARA, ROD, PETRI, BREATH, SPELL. Levels 0-40. Do 

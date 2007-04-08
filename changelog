@@ -5,7 +5,13 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.52
+[Apr 08 2007] - Rumble
+  Removed object type TRAP.
+  Removed oasis_delete.h.
+  Renamed variable wovel to vowel in ban.c.
+  Renamed several functions to lower case.
 [Apr 02 2007] - Rumble
+  Stopped Checking abbrevs with doors so players can't spam open a, open b, etc.
   Added questpoints!
 [Mar 30 2007] - Rumble
   Added unlimited fountains and containers (Thanks Adam Scriven).
@@ -14,7 +20,6 @@ tbaMUD 3.52
 [Mar 25 2007] - Rumble
   Updated idle timer to keep track of imms too (thanks Jamdog).
   Standardized OLC messages.
-  Removed special procedures that were replaced with trigedit.
   Updated README.WIN, README.MSVC8, and README.CYGWIN.
 [Mar 20 2007] - Rumble
   Added object type FURNITURE (thanks Dark).

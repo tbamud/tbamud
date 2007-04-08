@@ -1,13 +1,13 @@
+/**************************************************************************
+*  File: pfdefaults.h                                      Part of tbaMUD *
+*  Usage: ASCII player file defaults.                                     *
+**************************************************************************/
+
 #ifndef _PFDEFAULTS_H_
 #define _PFDEFAULTS_H_
 
-/*
-  ascii pfile variable defaults
-
-  WARNING:  Do not change the values below if you've got existing ascii
-  player files you don't want to screw up.  See the documentation
-  included in the ascii pfiles distribution for more information.
-*/
+/* WARNING:  Do not change the values below if you have existing ascii player 
+ * files you don't want to screw up. */
 
 #define PFDEF_SEX		0
 #define PFDEF_CLASS		0

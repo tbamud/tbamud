@@ -1,8 +1,9 @@
-/************************************************************************
- * OasisOLC - Mobiles / medit.c					v2.0	*
- * Copyright 1996 Harvey Gilpin						*
- * Copyright 1997-2001 George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: medit.c                                           Part of tbaMUD *
+*  Usage: Oasis OLC - Mobiles.                                            *
+*                                                                         *
+* Copyright 1996 Harvey Gilpin. 1997-2001 George Greer.                   *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

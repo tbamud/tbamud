@@ -1,17 +1,15 @@
-/* ************************************************************************
-*   File: magic.c                                       Part of CircleMUD *
-*  Usage: low-level functions for magic; spell template code              *
+/**************************************************************************
+*  File: magic.c                                           Part of tbaMUD *
+*  Usage: Low-level functions for magic; spell template code.             *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
-
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -36,18 +34,10 @@ void perform_mag_groups(int level, struct char_data *ch, struct char_data *tch, 
 int mag_savingthrow(struct char_data *ch, int type, int modifier);
 void affect_update(void);
 
-/*
- * Saving throws are now in class.c as of bpl13.
- */
-
-
-/*
- * Negative apply_saving_throw[] values make saving throws better!
- * Then, so do negative modifiers.  Though people may be used to
- * the reverse of that. It's due to the code modifying the target
- * saving throw instead of the random number of the character as
- * in some other systems.
- */
+/* Negative apply_saving_throw[] values make saving throws better! So do 
+ * negative modifiers.  Though people may be used to the reverse of that. 
+ * It's due to the code modifying the target saving throw instead of the 
+ * random number of the character as in some other systems. */
 int mag_savingthrow(struct char_data *ch, int type, int modifier)
 {
   /* NPCs use warrior tables according to some book */
@@ -68,7 +58,6 @@ int mag_savingthrow(struct char_data *ch, int type, int modifier)
   /* Oops, failed. Sorry. */
   return (FALSE);
 }
-
 
 /* affect_update: called from comm.c (causes spells to wear off) */
 void affect_update(void)
@@ -94,15 +83,10 @@ void affect_update(void)
     }
 }
 
-
-/*
- *  mag_materials:
- *  Checks for up to 3 vnums (spell reagents) in the player's inventory.
- *
- * No spells implemented in Circle use mag_materials, but you can use
- * it to implement your own spells which require ingredients (i.e., some
- * heal spell which requires a rare herb or some such.)
- */
+/* mag_materials: Checks for up to 3 vnums (spell reagents) in the player's 
+ * inventory. No spells currently use mag_materials, but you can use it to 
+ * implement your own spells which require ingredients (i.e. heal spells which 
+ * requires a rare herb or some such.) */
 int mag_materials(struct char_data *ch, int item0, int item1, int item2,
 		      int extract, int verbose)
 {
@@ -153,15 +137,9 @@ int mag_materials(struct char_data *ch, int item0, int item1, int item2,
 }
 
 
-
-
-/*
- * Every spell that does damage comes through here.  This calculates the
- * amount of damage, adds in any modifiers, determines what the saves are,
- * tests for save and calls damage().
- *
- * -1 = dead, otherwise the amount of damage done.
- */
+/* Every spell that does damage comes through here.  This calculates the amount
+ * of damage, adds in any modifiers, determines what the saves are, tests for 
+ * save and calls damage(). -1 = dead, otherwise the amount of damage done. */
 int mag_damage(int level, struct char_data *ch, struct char_data *victim,
 		     int spellnum, int savetype)
 {
@@ -265,14 +243,9 @@ int mag_damage(int level, struct char_data *ch, struct char_data *victim,
 }
 
 
-/*
- * Every spell that does an affect comes through here.  This determines
- * the effect, whether it is added or replacement, whether it is legal or
- * not, etc.
- *
- * affect_join(vict, aff, add_dur, avg_dur, add_mod, avg_mod)
- */
-
+/* Every spell that does an affect comes through here.  This determines the 
+ * effect, whether it is added or replacement, whether it is legal or not, etc.
+ * affect_join(vict, aff, add_dur, avg_dur, add_mod, avg_mod) */
 #define MAX_SPELL_AFFECTS 5	/* change if more needed */
 
 void mag_affects(int level, struct char_data *ch, struct char_data *victim,
@@ -487,11 +460,9 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     break;
   }
 
-  /*
-   * If this is a mob that has this affect set in its mob file, do not
-   * perform the affect.  This prevents people from un-sancting mobs
-   * by sancting them and waiting for it to fade, for example.
-   */
+  /* If this is a mob that has this affect set in its mob file, do not perform 
+   * the affect.  This prevents people from un-sancting mobs by sancting them 
+   * and waiting for it to fade, for example. */
   if (IS_NPC(victim) && !affected_by_spell(victim, spellnum))
     for (i = 0; i < MAX_SPELL_AFFECTS; i++)
       if (AFF_FLAGGED(victim, af[i].bitvector)) {
@@ -499,10 +470,8 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
 	return;
       }
 
-  /*
-   * If the victim is already affected by this spell, and the spell does
-   * not have an accumulative effect, then fail the spell.
-   */
+  /* If the victim is already affected by this spell, and the spell does not 
+   * have an accumulative effect, then fail the spell. */
   if (affected_by_spell(victim,spellnum) && !(accum_duration||accum_affect)) {
     send_to_char(ch, "%s", CONFIG_NOEFFECT);
     return;
@@ -518,11 +487,8 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     act(to_room, TRUE, victim, 0, ch, TO_ROOM);
 }
 
-
-/*
- * This function is used to provide services to mag_groups.  This function
- * is the one you should change to add new group spells.
- */
+/* This function is used to provide services to mag_groups.  This function is 
+ * the one you should change to add new group spells. */
 void perform_mag_groups(int level, struct char_data *ch,
 			struct char_data *tch, int spellnum, int savetype)
 {
@@ -539,18 +505,11 @@ void perform_mag_groups(int level, struct char_data *ch,
   }
 }
 
-
-/*
- * Every spell that affects the group should run through here
- * perform_mag_groups contains the switch statement to send us to the right
- * magic.
- *
- * group spells affect everyone grouped with the caster who is in the room,
- * caster last.
- *
- * To add new group spells, you shouldn't have to change anything in
- * mag_groups -- just add a new case to perform_mag_groups.
- */
+/* Every spell that affects the group should run through here perform_mag_groups
+ * contains the switch statement to send us to the right magic. Group spells 
+ * affect everyone grouped with the caster who is in the room, caster last. To 
+ * add new group spells, you shouldn't have to change anything in mag_groups.
+ * Just add a new case to perform_mag_groups. */
 void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
 {
   struct char_data *tch, *k;
@@ -582,12 +541,8 @@ void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
   perform_mag_groups(level, ch, ch, spellnum, savetype);
 }
 
-
-/*
- * mass spells affect every creature in the room except the caster.
- *
- * No spells of this class currently implemented.
- */
+/* Mass spells affect every creature in the room except the caster. No spells 
+ * of this class currently implemented. */
 void mag_masses(int level, struct char_data *ch, int spellnum, int savetype)
 {
   struct char_data *tch, *tch_next;
@@ -602,15 +557,10 @@ void mag_masses(int level, struct char_data *ch, int spellnum, int savetype)
   }
 }
 
-
-/*
- * Every spell that affects an area (room) runs through here.  These are
- * generally offensive spells.  This calls mag_damage to do the actual
- * damage -- all spells listed here must also have a case in mag_damage()
- * in order for them to work.
- *
- *  area spells have limited targets within the room.
- */
+/* Every spell that affects an area (room) runs through here.  These are
+ * generally offensive spells.  This calls mag_damage to do the actual damage.
+ * All spells listed here must also have a case in mag_damage() in order for 
+ * them to work. Area spells have limited targets within the room. */
 void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
 {
   struct char_data *tch, *next_tch;
@@ -619,10 +569,8 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
   if (ch == NULL)
     return;
 
-  /*
-   * to add spells to this fn, just add the message here plus an entry
-   * in mag_damage for the damaging part of the spell.
-   */
+  /* to add spells just add the message here plus an entry in mag_damage for 
+   * the damaging part of the spell.   */
   switch (spellnum) {
   case SPELL_EARTHQUAKE:
     to_char = "You gesture and the earth begins to shake all around you!";
@@ -639,13 +587,10 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
   for (tch = world[IN_ROOM(ch)].people; tch; tch = next_tch) {
     next_tch = tch->next_in_room;
 
-    /*
-     * The skips: 1: the caster
+    /* The skips: 1: the caster
      *            2: immortals
      *            3: if no pk on this mud, skips over all players
-     *            4: pets (charmed NPCs)
-     */
-
+     *            4: pets (charmed NPCs) */
     if (tch == ch)
       continue;
     if (!IS_NPC(tch) && GET_LEVEL(tch) >= LVL_IMMORT)
@@ -660,20 +605,8 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
   }
 }
 
-
-/*
- *  Every spell which summons/gates/conjours a mob comes through here.
- *
- *  None of these spells are currently implemented in CircleMUD; these
- *  were taken as examples from the JediMUD code.  Summons can be used
- *  for spells like clone, ariel servant, etc.
- *
- * 10/15/97 (gg) - Implemented Animate Dead and Clone.
- */
-
-/*
- * These use act(), don't put the \r\n.
- */
+/* Every spell which summons/gates/conjours a mob comes through here. */
+/* These use act(), don't put the \r\n. */
 const char *mag_summon_msgs[] = {
   "\r\n",
   "$n makes a strange magical gesture; you feel a strong breeze!",
@@ -690,9 +623,7 @@ const char *mag_summon_msgs[] = {
   "$n animates a corpse!"
 };
 
-/*
- * Keep the \r\n because these use send_to_char.
- */
+/* Keep the \r\n because these use send_to_char. */
 const char *mag_summon_fail_msgs[] = {
   "\r\n",
   "There are no such creatures.\r\n",
@@ -704,20 +635,11 @@ const char *mag_summon_fail_msgs[] = {
   "There is no corpse!\r\n"
 };
 
-/* These mobiles do not exist. */
-#define MOB_MONSUM_I		130
-#define MOB_MONSUM_II		140
-#define MOB_MONSUM_III		150
-#define MOB_GATE_I		160
-#define MOB_GATE_II		170
-#define MOB_GATE_III		180
-
 /* Defined mobiles. */
-#define MOB_ELEMENTAL_BASE	20	/* Only one for now. */
+#define MOB_ELEMENTAL_BASE	20
 #define MOB_CLONE		10
 #define MOB_ZOMBIE		11
 #define MOB_AERIALSERVANT	19
-
 
 void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
 		      int spellnum, int savetype)
@@ -790,7 +712,6 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
   }
 }
 
-
 void mag_points(int level, struct char_data *ch, struct char_data *victim,
 		     int spellnum, int savetype)
 {
@@ -818,7 +739,6 @@ void mag_points(int level, struct char_data *ch, struct char_data *victim,
   update_pos(victim);
 }
 
-
 void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,
 		        int spellnum, int type)
 {
@@ -830,10 +750,8 @@ void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,
 
   switch (spellnum) {
   case SPELL_HEAL:
-    /*
-     * Heal also restores health, so don't give the "no effect" message
-     * if the target isn't afflicted by the 'blindness' spell.
-     */
+    /* Heal also restores health, so don't give the "no effect" message if the 
+     * target isn't afflicted by the 'blindness' spell. */
     msg_not_affected = FALSE;
     /* fall-through */
   case SPELL_CURE_BLIND:
@@ -866,9 +784,7 @@ void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,
     act(to_vict, FALSE, victim, 0, ch, TO_CHAR);
   if (to_room != NULL)
     act(to_room, TRUE, victim, 0, ch, TO_ROOM);
-
 }
-
 
 void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj,
 		         int spellnum, int savetype)
@@ -935,10 +851,7 @@ void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj,
     act(to_room, TRUE, ch, obj, 0, TO_ROOM);
   else if (to_char != NULL)
     act(to_char, TRUE, ch, obj, 0, TO_ROOM);
-
 }
-
-
 
 void mag_creations(int level, struct char_data *ch, int spellnum)
 {

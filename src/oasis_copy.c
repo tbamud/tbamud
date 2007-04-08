@@ -1,13 +1,13 @@
-/******************************************************************************/
-/** OasisOLC - InGame OLC Copying                                      v2.0  **/
-/** Original author: Levork                                                  **/
-/** Copyright 1996 Harvey Gilpin                                             **/
-/** Copyright 1997-2001 George Greer (greerga@circlemud.org)                 **/
-/** Copyright 2002 Kip Potter [Mythran] (kip_potter@hotmail.com)             **/
-/******************************************************************************/
+/**************************************************************************
+*  File: oasis_copy.c                                      Part of tbaMUD *
+*  Usage: Oasis OLC copying.                                              *
+*                                                                         *
+* By Levork. Copyright 1996 Harvey Gilpin. 1997-2001 George Greer.        *
+* 2002 Kip Potter [Mythran].                                              *
+**************************************************************************/
+
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -21,18 +21,13 @@
 #include "improved-edit.h"
 #include "constants.h"
 
-
-/******************************************************************************/
-/** Internal Functions                                                       **/
-/******************************************************************************/
+/* Internal Functions */
 ACMD(do_dig);
 ACMD(do_room_copy);
 room_vnum redit_find_new_vnum(zone_rnum zone);
 int buildwalk(struct char_data *ch, int dir);
 
-/******************************************************************************/
-/** Commands                                                                 **/
-/******************************************************************************/
+/* Commands */
 ACMD(do_dig)
 {
   char sdir[MAX_INPUT_LENGTH], sroom[MAX_INPUT_LENGTH], *new_room_name;
@@ -71,17 +66,13 @@ ACMD(do_dig)
     send_to_char(ch, "You do not have permission to edit this zone.\r\n");
     return;
   }
-  /*
-   * Lets not allow digging to limbo.
-   * After all, it'd just get us more errors on 'show errors'
-   */
+  /* Lets not allow digging to limbo. After all, it'd just get us more errors 
+   * on 'show errors.' */
   if (rvnum == 0) {
    send_to_char(ch, "The target exists, but you can't dig to limbo!\r\n");
    return;
   }
-  /*
-   * target room == -1 removes the exit
-   */
+  /* Target room == -1 removes the exit. */
   if (rvnum == NOTHING) {
     if (W_EXIT(IN_ROOM(ch), dir)) {
       /* free the old pointers, if any */
@@ -99,9 +90,7 @@ ACMD(do_dig)
                      "No exit removed.\r\n", dirs[dir]);
     return;
   }
-  /*
-   * Can't dig in a direction, if it's already a door.
-   */
+  /* Can't dig in a direction, if it's already a door. */
   if (W_EXIT(IN_ROOM(ch), dir)) {
       send_to_char(ch, "There already is an exit to the %s.\r\n", dirs[dir]);
       return;
@@ -117,15 +106,11 @@ ACMD(do_dig)
     send_to_char(ch, "You do not have permission to edit room #%d.\r\n", rvnum);
     return;
   }
-  /*
-   * Now we know the builder is allowed to make the link
-   */
+  /* Now we know the builder is allowed to make the link. */
   /* If the room doesn't exist, create it.*/
   if (rrnum == NOWHERE) {
-    /*
-     * Give the descriptor an olc struct.
-     * This way we can let redit_save_internally handle the room adding.
-     */
+    /* Give the descriptor an olc struct. This way we can let 
+     * redit_save_internally handle the room adding. */
     if (d->olc) {
       mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_dig: Player already had olc structure.");
       free(d->olc);
@@ -147,24 +132,18 @@ ACMD(do_dig)
     OLC_ROOM(d)->zone = OLC_ZNUM(d);
     OLC_ROOM(d)->number = NOWHERE;
 
-    /*
-     * Save the new room to memory.
-     * redit_save_internally handles adding the room in the right place, etc.
-     */
+    /* Save the new room to memory. redit_save_internally handles adding the 
+     * room in the right place, etc. */
     redit_save_internally(d);
     OLC_VAL(d) = 0;
 
     send_to_char(ch, "New room (%d) created.\r\n", rvnum);
     cleanup_olc(d, CLEANUP_STRUCTS);
-    /*
-     * update rrnum to the correct room rnum after adding the room
-     */
+    /* Update rrnum to the correct room rnum after adding the room. */
     rrnum = real_room(rvnum);
   }
 
-  /*
-   * Now dig.
-   */
+  /* Now dig. */
   CREATE(W_EXIT(IN_ROOM(ch), dir), struct room_direction_data, 1);
   W_EXIT(IN_ROOM(ch), dir)->general_description = NULL;
   W_EXIT(IN_ROOM(ch), dir)->keyword = NULL;
@@ -174,9 +153,7 @@ ACMD(do_dig)
   send_to_char(ch, "You make an exit %s to room %d (%s).\r\n",
                    dirs[dir], rvnum, world[rrnum].name);
 
-  /*
-   * check if we can dig from there to here.
-   */
+  /* Check if we can dig from there to here. */
   if (W_EXIT(rrnum, rev_dir[dir]))
     send_to_char(ch, "You cannot dig from %d to here. The target room already has an exit to the %s.\r\n",
                      rvnum, dirs[rev_dir[dir]]);
@@ -187,7 +164,6 @@ ACMD(do_dig)
     W_EXIT(rrnum, rev_dir[dir])->to_room = IN_ROOM(ch);
     add_to_save_list(zone_table[world[rrnum].zone].number, SL_WLD);
   }
-
 }
 
 ACMD(do_room_copy)
@@ -227,9 +203,7 @@ ACMD(do_room_copy)
 
    room_dst->zone = dst_zone;
 
-   /*
-   * Allocate space for all strings.
-   */
+   /* Allocate space for all strings. */
    send_to_char(ch, "Cloning room....\r\n");
 
    room_dst->name = str_udup(world[IN_ROOM(ch)].name);
@@ -239,10 +213,7 @@ ACMD(do_room_copy)
    room_dst->room_flags = ROOM_FLAGS(IN_ROOM(ch));
    room_dst->sector_type = world[IN_ROOM(ch)].sector_type;
 
-  /*
-   * Extra descriptions, if necessary.
-   */
-
+  /* Extra descriptions, if necessary. */
   send_to_char(ch, "Cloning extra descriptions....\r\n");
   if (world[IN_ROOM(ch)].ex_description) {
     struct extra_descr_data *tdesc, *temp, *temp2;
@@ -260,9 +231,7 @@ ACMD(do_room_copy)
 	temp->next = NULL;
     }
   }
-   /*
-    * Now save the room in the right place:
-    */
+   /* Now save the room in the right place. */
   send_to_char(ch, "Saving new room...\r\n");
 
   if ((room_num = add_room(room_dst)) == NOWHERE) {
@@ -270,7 +239,7 @@ ACMD(do_room_copy)
     log("SYSERR: do_room_copy: Something failed! (%d)", room_num);
     return;
   }
-    /* Idea contributed by C.Raehl 4/27/99 */
+  /* Idea contributed by C.Raehl. */
   for (dsc = descriptor_list; dsc; dsc = dsc->next) {
     if (dsc == ch->desc)
       continue;
@@ -301,11 +270,7 @@ ACMD(do_room_copy)
   send_to_char(ch, "Room cloned to %d.\r\nAll Done.\r\n", buf_num);
 }
 
-
-/****************************************************************************
-* BuildWalk - OasisOLC Extension by D. Tyler Barnes                         *
-****************************************************************************/
-
+/* BuildWalk - OasisOLC Extension by D. Tyler Barnes. */
 /* For buildwalk. Finds the next free vnum in the zone */
 room_vnum redit_find_new_vnum(zone_rnum zone)
 {
@@ -343,10 +308,8 @@ int buildwalk(struct char_data *ch, int dir)
       send_to_char(ch, "No free vnums are available in this zone!\r\n");
     } else {
       struct descriptor_data *d = ch->desc;
-      /*
-       * Give the descriptor an olc struct.
-       * This way we can let redit_save_internally handle the room adding.
-       */
+      /* Give the descriptor an olc struct. This way we can let 
+       * redit_save_internally handle the room adding. */
       if (d->olc) {
         mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: buildwalk(): Player already had olc structure.");
         free(d->olc);
@@ -363,10 +326,8 @@ int buildwalk(struct char_data *ch, int dir)
       OLC_ROOM(d)->zone = OLC_ZNUM(d);
       OLC_ROOM(d)->number = NOWHERE;
 
-      /*
-       * Save the new room to memory.
-       * redit_save_internally handles adding the room in the right place, etc.
-       */
+      /* Save the new room to memory. redit_save_internally handles adding the 
+       * room in the right place, etc. */
       redit_save_internally(d);
       OLC_VAL(d) = 0;
 

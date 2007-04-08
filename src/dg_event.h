@@ -1,42 +1,27 @@
-/* ************************************************************************
-*  File: dg_event.h                                                       *
+/**************************************************************************
+*  File: dg_event.h                                        Part of tbaMUD *
+*  Usage: Structures and prototypes for events.                           *
 *                                                                         *
-*  Usage: structures and prototypes for events                            *
-*                                                                         *
-*  Written by Eric Green (ejg3@cornell.edu)                               *
-*                                                                         *
-*  Changes:                                                               *
-*      3/6/98 ejg:  Changed return type of EVENTFUNC from void to long.   *
-*                   Moved struct event definition to events.c.            *
 *  $Author: Mark A. Heilpern/egreen/Welcor $                              *
 *  $Date: 2004/10/11 12:07:00$                                            *
 *  $Revision: 1.0.14 $                                                    *
-************************************************************************ */
+**************************************************************************/
 
-/*
-** how often will heartbeat() call the 'wait' event function?
-*/
+/* How often will heartbeat() call the 'wait' event function? */
 #define PULSE_DG_EVENT 1
 
-
-/********** Event related section *********/
-
+/* Event related section.*/
 #define EVENTFUNC(name) long (name)(void *event_obj)
 
-
-/*
-** define event related structures
-*/
+/* Define event related structures. */
 struct event {
   EVENTFUNC(*func);
   void *event_obj;
   struct q_element *q_el;
 };
+/* End of Event related info. */
 
-/****** End of Event related info ********/
-
-/***** Queue related info ******/
-
+/* Queue related info. */
 /* number of queues to use (reduces enqueue cost) */
 #define NUM_EVENT_QUEUES    10
 
@@ -49,7 +34,7 @@ struct q_element {
   long key;
   struct q_element *prev, *next;
 };
-/****** End of Queue related info ********/
+/* End of Queue related info. */
 
 /* - events - function protos need by other modules */
 void event_init(void);

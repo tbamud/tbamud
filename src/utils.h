@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: utils.h           Part of CircleMUD *
-*  Usage: header file: utility macros and prototypes of utility funcs     *
-*                          *
-*  All rights reserved.  See license.doc for complete information.        *
-*                          *
+/**************************************************************************
+*  File: utils.h                                           Part of tbaMUD *
+*  Usage: Header file, utility macros and prototypes of utility funcs.    *
+*                                                                         *
+*  All rights reserved.  See license for complete information.            *
+*                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 /* external declarations and prototypes */
 extern struct weather_data weather_info;
@@ -395,11 +395,11 @@ void char_from_furniture(struct char_data *ch);
 #define CAN_WEAR(obj, part)	OBJWEAR_FLAGGED((obj), (part))
 #define GET_OBJ_SHORT(obj)      ((obj)->short_description)
 
-/* compound utilities and other macros */
-/* Used to compute CircleMUD version. To see if the code running is newer than 
- * 3.0pl13, you would use: #if _CIRCLEMUD > CIRCLEMUD_VERSION(3,0,13) */
+/* Compound utilities and other macros. */
+/* Used to compute version. To see if the code running is newer than 3.0pl13, 
+ * you would use: #if _CIRCLEMUD > CIRCLEMUD_VERSION(3,0,13) */
 #define CIRCLEMUD_VERSION(major, minor, patchlevel) \
-	(((major) << 16) + ((minor) << 8) + (patchlevel))
+       (((major) << 16) + ((minor) << 8) + (patchlevel))
 
 #define HSHR(ch) (GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "his":"her") :"its")
 #define HSSH(ch) (GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "he" :"she") : "it")

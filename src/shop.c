@@ -1,14 +1,13 @@
-/* ************************************************************************
-*   File: shop.c                                        Part of CircleMUD *
-*  Usage: shopkeepers: loading config files, spec procs.                  *
+/**************************************************************************
+*  File: shop.c                                            Part of tbaMUD *
+*  Usage: Shopkeepers, loading config files, spec procs.                  *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
-
-/* The entire shop rewrite for Circle 3.0 was done by Jeff Fink.  Thanks Jeff! */
+*  By Jeff Fink.                                                          *
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -337,10 +336,8 @@ int transaction_amt(char *arg)
 
   char *buywhat;
 
-  /* If we have two arguments, it means 'buy 5 3', or buy 5 of #3.
-     We don't do that if we only have one argument, like 'buy 5', buy #5.
-     Code from Andrey Fidrya <andrey@ALEX-UA.COM> */
-
+  /* If we have two arguments, it means 'buy 5 3', or buy 5 of #3. We don't do 
+   * that if we only have one argument, like 'buy 5', buy #5. By Andrey Fidrya */
   buywhat = one_argument(arg, buf);
   if (*buywhat && *buf && is_number(buf)) {
     strcpy(arg, arg + strlen(buf) + 1);	/* strcpy: OK (always smaller) */
@@ -635,12 +632,12 @@ struct obj_data *get_selling_obj(struct char_data *ch, char *name, struct char_d
   return (NULL);
 }
 
-/* This function is a slight hack!  To make sure that duplicate items are
- * only listed once on the "list", this function groups "identical"
- * objects together on the shopkeeper's inventory list.  The hack involves
- * knowing how the list is put together, and manipulating the order of
- * the objects on the list.  (But since most of DIKU is not encapsulated,
- * and information hiding is almost never used, it isn't that big a deal) -JF */
+/* This function is a slight hack!  To make sure that duplicate items are only 
+ * listed once on the "list", this function groups "identical" objects together
+ * on the shopkeeper's inventory list.  The hack involves knowing how the list 
+ * is put together, and manipulating the order of the objects on the list. (But
+ * since most of DIKU is not encapsulated, and information hiding is almost 
+ * never used, it isn't that big a deal). -JF */
 struct obj_data *slide_obj(struct obj_data *obj, struct char_data *keeper, int shop_nr)
 {
   struct obj_data *loop;

@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: act.offensive.c                               Part of CircleMUD *
-*  Usage: player-level commands of an offensive nature                    *
+/**************************************************************************
+*  File: act.offensive.c                                   Part of tbaMUD *
+*  Usage: Player-level commands of an offensive nature.                   *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"

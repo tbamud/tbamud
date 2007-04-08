@@ -1,7 +1,6 @@
 /**************************************************************************
-*  File: dg_variables.c                                                   *
-*  Usage: contains the functions dealing with variable substitution.      *
-*                                                                         *
+*  File: dg_variables.c                                    Part of tbaMUD *
+*  Usage: Contains the functions dealing with variable substitution.      *
 *                                                                         *
 *  $Author: Mark A. Heilpern/egreen/Welcor $                              *
 *  $Date: 2004/10/11 12:07:00 $                                           *
@@ -10,8 +9,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "dg_scripts.h"
 #include "utils.h"
@@ -24,18 +21,15 @@
 #include "constants.h"
 #include "spells.h"
 
-
 /* External variables and functions */
 extern const char *pc_class_types[];
 extern struct time_info_data time_info;
 
 /* Utility functions */
 
-/*
- * Thanks to James Long for his assistance in plugging the memory leak
- * that used to be here.   -- Welcor
- */
-/* adds a variable with given name and value to trigger */
+/* Thanks to James Long for his assistance in plugging the memory leak that 
+ * used to be here. - Welcor */
+/* Adds a variable with given name and value to trigger. */
 void add_var(struct trig_var_data **var_list, char *name, char *value, long id)
 {
   struct trig_var_data *vd;
@@ -68,7 +62,6 @@ void add_var(struct trig_var_data **var_list, char *name, char *value, long id)
   strcpy(vd->value, value);                            /* strcpy: ok*/
 }
 
-
 /* perhaps not the best place for this, but I didn't want a new file */
 char *skill_percent(struct char_data *ch, char *skill)
 {
@@ -82,16 +75,9 @@ char *skill_percent(struct char_data *ch, char *skill)
   return retval;
 }
 
-/*
-   search through all the persons items, including containers
-   and 0 if it doesnt exist, and greater then 0 if it does!
-   Jamie Nelson (mordecai@timespace.co.nz)
-   MUD -- 4dimensions.org:6000
-
-   Now also searches by vnum -- Welcor
-   Now returns the number of matching objects -- Welcor 02/04
-*/
-
+/* Search through all the persons items, including containers. 0 if it doesnt 
+ * exist, and greater then 0 if it does! Jamie Nelson.  Now also searches by 
+ * vnum and returns the number of matching objects. - Welcor */
 int item_in_list(char *item, obj_data *list)
 {
   obj_data *i;
@@ -129,16 +115,9 @@ int item_in_list(char *item, obj_data *list)
   return count;
 }
 
-/*
-   BOOLEAN return, just check if a player or mob
-   has an item of any sort, searched for by name
-   or id.
-   searching equipment as well as inventory,
-   and containers.
-   Jamie Nelson (mordecai@timespace.co.nz)
-   MUD -- 4dimensions.org:6000
-*/
-
+/* BOOLEAN return, just check if a player or mob has an item of any sort, 
+ * searched for by name or id. Searching equipment as well as inventory, and 
+ * containers. Jamie Nelson */
 int char_has_item(char *item, struct char_data *ch)
 {
 
@@ -223,7 +202,6 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
 
   return FALSE;
 }
-
 
 /* sets str to be the value of var.field */
 void find_replacement(void *go, struct script_data *sc, trig_data *trig,
@@ -414,28 +392,16 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         else *str = '\0';
         return;
       }
-/*
-
-      %findobj.<room vnum X>(<object vnum/id/name>)%
-        - count number of objects in room X with this name/id/vnum
-      %findmob.<room vnum X>(<mob vnum Y>)%
-        - count number of mobs in room X with vnum Y
-
-for example you want to check how many PC's are in room with vnum 1204.
-as PC's have the vnum -1...
-you would type:
-in any script:
-%echo% players in room 1204: %findmob.1204(-1)%
-
-Or say you had a bank, and you want a script to check the number of
-bags
-of gold (vnum: 1234)
-in the vault (vnum: 453) now and then. you can just use
-%findobj.453(1234)% and it will return the number of bags of gold.
-
-**/
-
-      /* addition inspired by Jamie Nelson - mordecai@xtra.co.nz */
+/* %findobj.<room vnum X>(<object vnum/id/name>)%
+ *  - count number of objects in room X with this name/id/vnum
+ * %findmob.<room vnum X>(<mob vnum Y>)%
+ *  - count number of mobs in room X with vnum Y
+ * For example you want to check how many PC's are in room with vnum 1204. PC's 
+ * have the vnum -1 so: %echo% players in room 1204: %findmob.1204(-1)%
+ * Or say you had a bank, and you want a script to check the number of bags of 
+ * gold (vnum: 1234). In the vault (vnum: 453). Use: %findobj.453(1234)% and it 
+ * will return the number of bags of gold. 
+ * Addition inspired by Jamie Nelson */
       else if (!str_cmp(var, "findmob")) {
         if (!field || !*field || !subfield || !*subfield) {
           script_log("findmob.vnum(mvnum) - illegal syntax");
@@ -456,7 +422,7 @@ in the vault (vnum: 453) now and then. you can just use
           }
         }
       }
-      /* addition inspired by Jamie Nelson - mordecai@xtra.co.nz */
+      /* Addition inspired by Jamie Nelson. */
       else if (!str_cmp(var, "findobj")) {
         if (!field || !*field || !subfield || !*subfield) {
           script_log("findobj.vnum(ovnum) - illegal syntax");
@@ -1441,20 +1407,12 @@ o->contains) ? "1" : "0"));
   }
 }
 
-/*
- * Now automatically checks if the variable has more then one field
- * in it. And if the field returns a name or a script UID or the like
- * it can recurse.
- * If you supply a value like, %actor.int.str% it wont blow up on you
- * either.
- * - Jamie Nelson 31st Oct 2003 01:03
- *
- * Now also lets subfields have variables parsed inside of them
- * so that:
- * %echo% %actor.gold(%actor.gold%)%
- * will double the actors gold every time its called.  etc...
- * - Jamie Nelson 31st Oct 2003 01:24
- */
+/* Now automatically checks if the variable has more then one field in it. And 
+ * if the field returns a name or a script UID or the like it can recurse. If 
+ * you supply a value like, %actor.int.str% it wont blow up on you either. Now 
+ * also lets subfields have variables parsed inside of them so that: %echo% 
+ * %actor.gold(%actor.gold%)% will double the actors gold every time its called.
+ * - Jamie Nelson */
 
 /* substitutes any variables into line and returns it as buf */
 void var_subst(void *go, struct script_data *sc, trig_data *trig,

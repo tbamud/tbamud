@@ -1,8 +1,6 @@
 /**************************************************************************
-*  File: dg_objcmd.c                                                      *
-*  Usage: contains the command_interpreter for objects,                   *
-*         object commands.                                                *
-*                                                                         *
+*  File: dg_objcmd.c                                       Part of tbaMUD *
+*  Usage: Contains the command_interpreter for objects, object commands.  *
 *                                                                         *
 *  $Author: galion/Mark A. Heilpern/egreen/Welcor $                       *
 *  $Date: 2004/10/11 12:07:00$                                            *
@@ -11,8 +9,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "screen.h"
 #include "dg_scripts.h"
@@ -27,9 +23,7 @@ void die(struct char_data * ch, struct char_data *killer);
 bitvector_t asciiflag_conv(char *flag);
 zone_rnum real_zone_by_thing(room_vnum vznum);
 
-/*
- * Local functions
- */
+/* Local functions */
 #define OCMD(name)  \
    void (name)(obj_data *obj, char *argument, int cmd, int subcmd)
 
@@ -52,19 +46,15 @@ OCMD(do_osetval);
 OCMD(do_oat);
 void obj_command_interpreter(obj_data *obj, char *argument);
 
-
 struct obj_command_info {
    char *command;
    void        (*command_pointer)(obj_data *obj, char *argument, int cmd, int subcmd);
    int        subcmd;
 };
 
-
 /* do_osend */
 #define SCMD_OSEND         0
 #define SCMD_OECHOAROUND   1
-
-
 
 /* attaches object name and vnum to msg and sends it to script_log */
 void obj_log(obj_data *obj, const char *format, ...)
@@ -93,7 +83,6 @@ room_rnum obj_room(obj_data *obj)
     else
         return NOWHERE;
 }
-
 
 /* returns the real room number, or NOWHERE if not found or invalid */
 room_rnum find_obj_target_room(obj_data *obj, char *rawroomstr)
@@ -143,10 +132,7 @@ room_rnum find_obj_target_room(obj_data *obj, char *rawroomstr)
     return location;
 }
 
-
-
 /* Object commands */
-
 OCMD(do_oecho)
 {
     int room;
@@ -167,7 +153,6 @@ OCMD(do_oecho)
     else
         obj_log(obj, "oecho called by object in NOWHERE");
 }
-
 
 OCMD(do_oforce)
 {
@@ -268,8 +253,8 @@ OCMD(do_osend)
         obj_log(obj, "no target found for osend");
 }
 
-/* prints the message to everyone in the range of numbers */
-/* Thx to Jamie Nelson of 4D for this contribution */
+/* Prints the message to everyone in the range of numbers. Thanks to Jamie 
+ * Nelson of 4D for this contribution. */
 OCMD(do_orecho)
 {
     char start[MAX_INPUT_LENGTH], finish[MAX_INPUT_LENGTH], *msg;
@@ -284,7 +269,6 @@ OCMD(do_orecho)
       send_to_range(atoi(start), atoi(finish), "%s\r\n", msg);
 
 }
-
 
 /* set the object's timer value */
 OCMD(do_otimer)
@@ -301,10 +285,8 @@ OCMD(do_otimer)
     GET_OBJ_TIMER(obj) = atoi(arg);
 }
 
-
-/* transform into a different object */
-/* note: this shouldn't be used with containers unless both objects */
-/* are containers! */
+/* Transform into a different object. Note: this shouldn't be used with 
+ * containers unless both objects are containers! */
 OCMD(do_otransform)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -353,7 +335,6 @@ OCMD(do_otransform)
     extract_obj(o);
   }
 }
-
 
 /* purge all objects an npcs in room, or specified object or mob */
 OCMD(do_opurge)
@@ -405,7 +386,6 @@ OCMD(do_opurge)
     extract_char(ch);
 }
 
-
 OCMD(do_oteleport)
 {
     char_data *ch, *next_ch;
@@ -456,7 +436,6 @@ OCMD(do_oteleport)
             obj_log(obj, "oteleport: no target found");
     }
 }
-
 
 OCMD(do_dgoload)
 {
@@ -583,7 +562,6 @@ OCMD(do_odamage) {
   script_damage(ch, dam);
 }
 
-
 OCMD(do_oasound)
 {
   room_rnum room;
@@ -612,7 +590,6 @@ OCMD(do_oasound)
   }
 }
 
-
 OCMD(do_odoor)
 {
     char target[MAX_INPUT_LENGTH], direction[MAX_INPUT_LENGTH];
@@ -630,7 +607,6 @@ OCMD(do_odoor)
         "room",
         "\n"
     };
-
 
     argument = two_arguments(argument, target, direction);
     value = one_argument(argument, field);
@@ -706,7 +682,6 @@ OCMD(do_odoor)
     }
 }
 
-
 OCMD(do_osetval)
 {
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
@@ -727,7 +702,7 @@ OCMD(do_osetval)
     obj_log(obj, "osetval: position out of bounds!");
 }
 
-/* submitted by PurpleOnyx - tkhasi@shadowglen.com*/
+/* Submitted by PurpleOnyx */
 OCMD(do_oat)
 {
   room_rnum loc = NOWHERE;
@@ -790,11 +765,7 @@ const struct obj_command_info obj_cmd_info[] = {
     { "\n", 0, 0 }        /* this must be last */
 };
 
-
-
-/*
- *  This is the command interpreter used by objects, called by script_driver.
- */
+/* This is the command interpreter used by objects, called by script_driver. */
 void obj_command_interpreter(obj_data *obj, char *argument)
 {
     int cmd, length;

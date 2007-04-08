@@ -1,78 +1,75 @@
-
 (lib/text/news)
-
-			    THE tbaMUD HERALD
+			   THE 2007 tbaMUD HERALD
    		 "We addict players for their own enjoyment."
-			      February, 2007
-
 
 NEW COMMANDS AND NEW MUD BEHAVIOR:
 ---------------------------------
-**  Over 100 new socials, check them out and feel free to suggest new ones.
+**  Added questpoints so be sure to ask about quests.
 
-**  You will now be notified when you have new mail.
+**  Added furniture for your MUDding comfort.
+
+**  You will now be immediately notified when you have new mail, when coming
+    back from AFK and reconnecting.
 
 **  New toggles: autoloot, autogold, autosplit, autosac, and autoassist.
 
 **  Improved toggle command allowing more options.
 
-**  You can now use the history command to see the last 100 communications
-    from all the channels. It clears upon viewing or log off.
+**  You can now use the history command to see a log of all channels.
 
 **  Your mail will now be saved so you will not lose it when you log off.
 
-**  You can now use the AFK toggle to let people see you are gone under
-    who.
+**  NEW AFK toggle that displays in your prompt, under who, and when people
+    look at the room.
 
 **  You now have almost 180 stock zones to play.
 
 **  You can now interact with rooms, mobs, and objects through triggers.
 
-**  Multiple objects will now be stacked and preceeded by a quantity so
-    your inventory won't be as long. (3) A waybread.
+**  Multiple objects will now be stacked and preceeded by a quantity so your 
+    inventory won't be as long. i.e. (3) A waybread.
 
-**  Over 100 new socials, and the gemote command to use socials over the 
-    gossip channel. Socials can now target bodyparts too, behave.
+**  Over 100 new socials, and the gemote command to use socials over the gossip
+    channel. Socials can now target bodyparts too, behave. Check them out and 
+    feel free to suggest new ones.
 
 **  You can now use color! @RHELP COLORCODES@n.
 
-**  Added new invisible mobs and objects so everything may not be as it
-    appears (not even visible with detect invis).
+**  Added new invisible mobs and objects so everything may not be as it appears
+    (not even visible with detect invis and sense life).
 
 **  Added an online dictionary. Tell m-w <word>.
 
-**  The player description length has been increased so please write a 
-    decent description for yourself.
+**  The player description length has been increased so please write a decent 
+    description for yourself.
 
-**  You can now set your pagelength with the same command.
+**  You can now set your pagelength!
 
 **  You can now "look around" to see anything of interest in the room. But,
     some things may still be hidden and require further investigation.
 
-**  You can now use "all" and "all.x" very generally with the get, put,
-    drop, junk, donate, give, wear and remove commands.  Type HELP GET
-    for more info.
+**  You can now use "all" and "all.x" very generally with the get, put, drop, 
+    junk, donate, give, wear and remove commands.  Type HELP GET for more info.
 
-**  The "track" function will show you the first step on the shortest
-    path to anyone in the game.
+**  The "track" function will show you the first step on the shortest path to 
+    anyone in the game.
 
-**  You can now remove your own messages from the board.  Also, if you
-    put someone else's name in parentheses in the message header, they
-    will be able to remove the message too.
+**  You can now remove your own messages from the board.  Also, if you put 
+    someone else's name in parentheses in the message header, they will be 
+    able to remove the message too.
 
-**  The MIDGAARD MAIL SYSTEM is now complete.  The Post Office is north
-    of the entrance to the Grunting Boar inn.  Stamps cost 150 coins.
+**  The MIDGAARD MAIL SYSTEM is now complete.  The Post Office is north of the 
+    entrance to the Grunting Boar inn.  Stamps cost 150 coins.
 
-**  Fountains have now been implemented.  You can drink from fountains
-    or fill containers from fountains using the FILL command.
+**  Fountains have now been implemented.  You can drink from fountains or fill 
+    containers from fountains using the FILL command.
 
-**  The SHOUT command, as always, only reaches people in your zone (you
-    can see who these people are by typing WHERE).  The HOLLER command
-    reaches everyone in the game but costs extra movement points.
+**  The SHOUT command, as always, only reaches people in your zone (you can see
+    who these people are by typing WHERE).  The HOLLER command reaches everyone
+    in the game but costs extra movement points.
 
-**  When you are writing a message, you will now not be interrupted
-    by tells, shouts, emotes, socials, and even people talking in the
-    same room.
+**  When you are writing a message, you will now not be interrupted by tells, 
+    shouts, emotes, socials, and even people talking in the same room.
 
 *****************************************************************************
     IF YOU LEAVE THE GAME FOR MORE THAN AN HOUR, either by renting or plain
@@ -80,10 +77,10 @@ NEW COMMANDS AND NEW MUD BEHAVIOR:
     when you come back!  This doesn't work if you're poisoned.
 *****************************************************************************
 
-**  Use the ASSIST command to engage in mortal combat with someone in the
-    room who is getting pummeled.
+**  Use the ASSIST command to engage in mortal combat with someone in the room
+    who is getting pummeled.
 
-**  Use the SPLIT command to split gold among the members of your group
+**  Use the SPLIT command to split gold among the members of your group 
     (including yourself) who are in the room.  i.e. If you are in a group
     with 4 other people who are in the room with you, type "SPLIT 100"
     to give each of them 20 coins.

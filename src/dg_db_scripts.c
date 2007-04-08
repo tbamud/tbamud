@@ -1,9 +1,8 @@
-/* ************************************************************************
-*  File: dg_db_scripts.c                         Part of Death's Gate MUD *
+/**************************************************************************
+*  File: dg_db_scripts.c                                   Part of tbaMUD *
+*  Usage: Contains routines to handle db functions for scripts and trigs. *
 *                                                                         *
-*  Usage: Contains routines to handle db functions for scripts and trigs  *
-*                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Death's Gate MUD is based on CircleMUD, Copyright (C) 1993, 94.        *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
@@ -11,11 +10,10 @@
 *  $Author: Mark A. Heilpern/egreen/Welcor $                              *
 *  $Date: 2004/10/11 12:07:00$                                            *
 *  $Revision: 1.0.14 $                                                    *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "dg_scripts.h"
 #include "utils.h"
@@ -77,11 +75,7 @@ void parse_trigger(FILE *trig_f, int nr)
     trig_index[top_of_trigt++] = t_index;
 }
 
-
-/*
- * create a new trigger from a prototype.
- * nr is the real number of the trigger.
- */
+/* Create a new trigger from a prototype. nr is the real number of the trigger. */
 trig_data *read_trigger(int nr)
 {
     index_data *t_index;
@@ -98,8 +92,6 @@ trig_data *read_trigger(int nr)
 
     return trig;
 }
-
-
 
 void trig_data_init(trig_data *this_data)
 {
@@ -118,7 +110,6 @@ void trig_data_init(trig_data *this_data)
 
     this_data->next = NULL;
 }
-
 
 void trig_data_copy(trig_data *this_data, const trig_data *trg)
 {

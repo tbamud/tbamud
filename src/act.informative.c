@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: act.informative.c                             Part of CircleMUD *
-*  Usage: Player-level commands of an informative nature                  *
+/**************************************************************************
+*  File: act.informative.c                                 Part of tbaMUD *
+*  Usage: Player-level commands of an informative nature.                 *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -596,8 +596,8 @@ char *find_exdesc(char *word, struct extra_descr_data *list)
 
 /* Given the argument "look at <target>", figure out what object or char
  * matches the target.  First, see if there is another char in the room with
- * the name.  Then check local objs for exdescs. Thanks to Angus Mezick 
- * <angus@EDGIL.CCMAIL.COMPUSERVE.COM> for the suggested fix to this problem. */
+ * the name.  Then check local objs for exdescs. Thanks to Angus Mezick for 
+ * the suggested fix to this problem. */
 void look_at_target(struct char_data *ch, char *arg)
 {
   int bits, found = FALSE, j, fnum, i = 0;
@@ -935,11 +935,10 @@ ACMD(do_time)
 	  (time_info.hours % 12 == 0) ? 12 : (time_info.hours % 12),
 	  time_info.hours >= 12 ? "pm" : "am", weekdays[weekday]);
 
-  /* Peter Ajamian <peter@PAJAMIAN.DHS.ORG> supplied the following as a fix
-   * for a bug introduced in the ordinal display that caused 11, 12, and 13
-   * to be incorrectly displayed as 11st, 12nd, and 13rd.  Nate Winters
-   * <wintersn@HOTMAIL.COM> had already submitted a fix, but it hard-coded a
-   * limit on ordinal display which I want to avoid. -dak */
+  /* Peter Ajamian supplied the following as a fix for a bug introduced in the 
+   * ordinal display that caused 11, 12, and 13 to be incorrectly displayed as 
+   * 11st, 12nd, and 13rd.  Nate Winters had already submitted a fix, but it 
+   * hard-coded a limit on ordinal display which I want to avoid. -dak */
   suf = "th";
 
   if (((day % 100) / 10) != 1) {
@@ -1493,7 +1492,7 @@ ACMD(do_gen_ps)
     send_to_char(ch, "\033[H\033[J");
     break;
   case SCMD_VERSION:
-    send_to_char(ch, "%s\r\n", circlemud_version);
+    send_to_char(ch, "%s\r\n", tbamud_version);
     send_to_char(ch, "%s\r\n", oasisolc_version);
     send_to_char(ch, "%s\r\n", DG_SCRIPT_VERSION);
     send_to_char(ch, "%s\r\n", ascii_pfiles_version);
@@ -1503,14 +1502,12 @@ ACMD(do_gen_ps)
     break;
   default:
     log("SYSERR: Unhandled case in do_gen_ps. (%d)", subcmd);
-    /*  SYSERR_DESC:
-     *  General page string function for such things as 'credits', 'news',
-     *  'wizlist', 'clear', 'version'.  This occurs when a call is made to
-     *  this routine that is not one of the predefined calls.  To correct
-     *  it, either a case needs to be added into the function to account for
-     *  the subcmd that is being passed to it, or the call to the function
-     *  needs to have the correct subcmd put into place.
-     */
+    /* SYSERR_DESC: General page string function for such things as 'credits',
+     * 'news', 'wizlist', 'clear', 'version'.  This occurs when a call is made 
+     * to this routine that is not one of the predefined calls.  To correct it, 
+     * either a case needs to be added into the function to account for the 
+     * subcmd that is being passed to it, or the call to the function needs to 
+     * have the correct subcmd put into place. */
     return;
   }
 }

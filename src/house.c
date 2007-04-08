@@ -1,16 +1,15 @@
-/* ************************************************************************
-*   File: house.c                                       Part of CircleMUD *
-*  Usage: Handling of player houses                                       *
+/**************************************************************************
+*  File: house.c                                           Part of tbaMUD *
+*  Usage: Handling of player houses.                                      *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "comm.h"
 #include "handler.h"
@@ -44,15 +43,13 @@ void House_listrent(struct char_data *ch, room_vnum vnum);
 ACMD(do_hcontrol);
 ACMD(do_house);
 
-
-// CONVERSION code starts here -- see comment below
+/* CONVERSION code starts here -- see comment below. */
 int ascii_convert_house(struct char_data *ch, obj_vnum vnum);
 void hcontrol_convert_houses(struct char_data *ch);
 struct obj_data *Obj_from_store(struct obj_file_elem object, int *location);
-// CONVERSION code ends here -- see comment below
+/* CONVERSION code ends here -- see comment below. */
 
 /* First, the basics: finding the filename; loading/saving objects */
-
 /* Return a filename given a house vnum */
 int House_get_filename(room_vnum vnum, char *filename, size_t maxlen)
 {
@@ -62,7 +59,6 @@ int House_get_filename(room_vnum vnum, char *filename, size_t maxlen)
   snprintf(filename, maxlen, LIB_HOUSE"%d.house", vnum);
   return (1);
 }
-
 
 /* Load all objects for a house */
 int House_load(room_vnum vnum)
@@ -98,9 +94,8 @@ int House_load(room_vnum vnum)
   return (1);
 }
 
-
-/* Save all objects for a house (recursive; initial call must be followed
-   by a call to House_restore_weight)  Assumes file is open already. */
+/* Save all objects for a house (recursive; initial call must be followed by a 
+ * call to House_restore_weight)  Assumes file is open already. */
 int House_save(struct obj_data *obj, FILE *fp)
 {
   struct obj_data *tmp;
@@ -119,7 +114,6 @@ int House_save(struct obj_data *obj, FILE *fp)
   return (1);
 }
 
-
 /* restore weight of containers after House_save has changed them for saving */
 void House_restore_weight(struct obj_data *obj)
 {
@@ -130,7 +124,6 @@ void House_restore_weight(struct obj_data *obj)
       GET_OBJ_WEIGHT(obj->in_obj) += GET_OBJ_WEIGHT(obj);
   }
 }
-
 
 /* Save all objects in a house */
 void House_crashsave(room_vnum vnum)
@@ -156,7 +149,6 @@ void House_crashsave(room_vnum vnum)
   REMOVE_BIT(ROOM_FLAGS(rnum), ROOM_HOUSE_CRASH);
 }
 
-
 /* Delete a house save file */
 void House_delete_file(room_vnum vnum)
 {
@@ -174,7 +166,6 @@ void House_delete_file(room_vnum vnum)
   if (remove(filename) < 0)
     log("SYSERR: Error deleting house file #%d. (2): %s", vnum, strerror(errno));
 }
-
 
 /* List all objects in a house file */
 void House_listrent(struct char_data *ch, room_vnum vnum)
@@ -214,13 +205,7 @@ void House_listrent(struct char_data *ch, room_vnum vnum)
   fclose(fl);
 }
 
-
-
-
-/******************************************************************
- *  Functions for house administration (creation, deletion, etc.  *
- *****************************************************************/
-
+/* Functions for house administration (creation, deletion, etc. */
 int find_house(room_vnum vnum)
 {
   int i;
@@ -231,8 +216,6 @@ int find_house(room_vnum vnum)
 
   return (NOWHERE);
 }
-
-
 
 /* Save the house control information */
 void House_save_control(void)
@@ -249,9 +232,8 @@ void House_save_control(void)
   fclose(fl);
 }
 
-
-/* call from boot_db - will load control recs, load objs, set atrium bits */
-/* should do sanity checks on vnums & remove invalid records */
+/* Call from boot_db - will load control recs, load objs, set atrium bits. 
+ * Should do sanity checks on vnums & remove invalid records. */
 void House_boot(void)
 {
   struct house_control_rec temp_house;
@@ -302,10 +284,7 @@ void House_boot(void)
   House_save_control();
 }
 
-
-
 /* "House Control" functions */
-
 const char *HCONTROL_FORMAT =
 "Usage: hcontrol build <house vnum> <exit direction> <player name>\r\n"
 "       hcontrol destroy <house vnum>\r\n"
@@ -370,8 +349,6 @@ void hcontrol_list_houses(struct char_data *ch, char *arg)
     House_list_guests(ch, i, TRUE);
   }
 }
-
-
 
 void hcontrol_build_house(struct char_data *ch, char *arg)
 {
@@ -456,8 +433,6 @@ void hcontrol_build_house(struct char_data *ch, char *arg)
   House_save_control();
 }
 
-
-
 void hcontrol_destroy_house(struct char_data *ch, char *arg)
 {
   int i, j;
@@ -491,16 +466,12 @@ void hcontrol_destroy_house(struct char_data *ch, char *arg)
   send_to_char(ch, "House deleted.\r\n");
   House_save_control();
 
-  /*
-   * Now, reset the ROOM_ATRIUM flag on all existing houses' atriums,
-   * just in case the house we just deleted shared an atrium with another
-   * house.  --JE 9/19/94
-   */
+  /* Now, reset the ROOM_ATRIUM flag on all existing houses' atriums, just in 
+   * case the house we just deleted shared an atrium with another house. -JE */
   for (i = 0; i < num_of_houses; i++)
     if ((real_atrium = real_room(house_control[i].atrium)) != NOWHERE)
       SET_BIT(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
 }
-
 
 void hcontrol_pay_house(struct char_data *ch, char *arg)
 {
@@ -519,7 +490,6 @@ void hcontrol_pay_house(struct char_data *ch, char *arg)
   }
 }
 
-
 /* The hcontrol command itself, used by imms to create/destroy houses */
 ACMD(do_hcontrol)
 {
@@ -535,15 +505,13 @@ ACMD(do_hcontrol)
     hcontrol_pay_house(ch, arg2);
   else if (is_abbrev(arg1, "show"))
     hcontrol_list_houses(ch, arg2);
-// CONVERSION code starts here -- see comment below
-	// not in hcontrol_format
+/* CONVERSION code starts here -- see comment below not in hcontrol_format. */
 	else if (!str_cmp(arg1, "asciiconvert"))
     hcontrol_convert_houses(ch);
-// CONVERSION ends here -- read more below
+/* CONVERSION ends here -- read more below. */
   else
     send_to_char(ch, "%s", HCONTROL_FORMAT);
 }
-
 
 /* The house command, used by mortal house owners to assign guests */
 ACMD(do_house)
@@ -586,11 +554,7 @@ ACMD(do_house)
   }
 }
 
-
-
 /* Misc. administrative functions */
-
-
 /* crash-save all the houses */
 void House_save_all(void)
 {
@@ -602,7 +566,6 @@ void House_save_all(void)
       if (ROOM_FLAGGED(real_house, ROOM_HOUSE_CRASH))
 	House_crashsave(house_control[i].vnum);
 }
-
 
 /* note: arg passed must be house vnum, so there. */
 int House_can_enter(struct char_data *ch, room_vnum house)
@@ -652,7 +615,7 @@ void House_list_guests(struct char_data *ch, int i, int quiet)
   send_to_char(ch, "\r\n");
 }
 
-/* ***********************************************************************
+/*************************************************************************
  * All code below this point and the code above, marked "CONVERSION"     *
  * can be removed after you have converted your house rent files using   *
  * the command                                                           *
@@ -660,14 +623,9 @@ void House_list_guests(struct char_data *ch, int i, int quiet)
  *                                                                       *
  * You can only use this command as implementor.                         *
  * After you have converted your house files, I suggest a reboot, which  *
- * will let your house files load on the next bootup.                    *
- *                                                                       *
- *                                                   Welcor              *
- * ***********************************************************************/
-/*
- * Code for conversion to ascii house rent files
- */
-
+ * will let your house files load on the next bootup. -Welcor            *
+ ************************************************************************/
+/* Code for conversion to ascii house rent files. */
 void hcontrol_convert_houses(struct char_data *ch)
 {
   int i;
@@ -691,7 +649,7 @@ void hcontrol_convert_houses(struct char_data *ch)
 
 	  if (!ascii_convert_house(ch, house_control[i].vnum))
 	  {
-	  	// let ascii_convert_house() tell about the error
+	  	/* Let ascii_convert_house() tell about the error. */
 	  	return;
 	  }
 	  else
@@ -701,7 +659,6 @@ void hcontrol_convert_houses(struct char_data *ch)
   }
 	send_to_char(ch, "All done.\r\n");
 }
-
 
 int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 {
@@ -761,17 +718,13 @@ int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	fclose(in);
 	fclose(out);
 
-	// copy the new file over the old one
-//  remove(infile);
-//  rename(outfile, infile);
-
 	free(outfile);
 
 	send_to_char(ch, "...%d items", j);
 	return 1;
 }
 
-// the circle 3.1 function for reading rent files. No longer used by the rent system.
+/* The circle 3.1 function for reading rent files. No longer used by the rent system. */
 struct obj_data *Obj_from_store(struct obj_file_elem object, int *location)
 {
   struct obj_data *obj;

@@ -1,26 +1,9 @@
-/** Zmalloc, a simple memory-allocation monitor.
-**
-** Version 2. added detection for writing off the end or beginning
-** of buffers, freeing the same block multiple times.  Also now use the
-** env variable to set the name of a file to write output to.
-**
-** Copyright 1996,1998,1999,2000 Eric Murray, ericm@lne.com
-**
-** You may make free use of this code but please give me credit.
-**
-** $Id: zmalloc.c,v 1.3 2000/06/26 18:38:53 ericm Exp $
-** $Log: zmalloc.c,v $
-** Revision 1.3  2000/06/26 18:38:53  ericm
-** updated copyright
-** fixed a bug in the test code
-** added a test for unfreed memory
-**
-** Revision 1.2  1998/05/25 16:38:22  ericm
-** added more checking: multiple frees, overwriting buffers
-** use env variable to set output to stdin, stdout, file
-**
-** Revision 1.1  1998/05/25 16:31:35  ericm
-** Initial revision */
+/**************************************************************************
+*  File: zmalloc.c                                         Part of tbaMUD *
+*  Usage: A simple memory allocation monitor.                             *
+*                                                                         *
+*  Version 2. Copyright 1996, 1998, 1999, 2000 Eric Murray.               *
+**************************************************************************/
 
 /* local functions */
 void zfree_special (int *, char *, int);
@@ -32,7 +15,7 @@ void zfree_special (int *, char *, int);
 #include <stdlib.h>
 #include <string.h>
 
-//#define NO_MEMORY_PADDING
+/* #define NO_MEMORY_PADDING */
 
 #ifndef NO_MEMORY_PADDING
 static unsigned char beginPad[4] = {

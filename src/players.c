@@ -1,16 +1,15 @@
-/* ************************************************************************
-*   File: players.c                                     Part of CircleMUD *
-*  Usage: Player loading/saving and utility routines                      *
+/**************************************************************************
+*  File: players.c                                         Part of tbaMUD *
+*  Usage: Player loading/saving and utility routines.                     *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
-
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -47,27 +46,11 @@ int top_of_p_table = 0;		/* ref to top of table		 */
 int top_of_p_file = 0;		/* ref of size of p file	 */
 long top_idnum = 0;		/* highest idnum in use		 */
 
-
 /* external ASCII Player Files vars */
 extern struct pclean_criteria_data pclean_criteria[];
 
-
-/* ASCII Player Files - set this FALSE if you don't want poofin/poofout
-   strings saved in the pfiles
-   Welcor, 27/12/06 - This was bugged. The check below was #ifdef, not #if,
-   so poofs were saved regardless of the text. Changed to TRUE to maintain
-   the saved poofs, and altered to #if below.
- */
-#define ASCII_SAVE_POOFS  TRUE
-
-
-/*************************************************************************
-*  stuff related to the player index					 *
-*************************************************************************/
-
-
-/* new version to build player index for ASCII Player Files */
-/* generate index table for the player file */
+/* New version to build player index for ASCII Player Files. Generate index 
+ * table for the player file. */
 void build_player_index(void)
 {
   int rec_count = 0, i;
@@ -108,12 +91,9 @@ void build_player_index(void)
   top_of_p_file = top_of_p_table = i - 1;
 }
 
-
-/*
- * Create a new entry in the in-memory index table for the player file.
- * If the name already exists, by overwriting a deleted character, then
- * we re-use the old position.
- */
+/* Create a new entry in the in-memory index table for the player file. If the 
+ * name already exists, by overwriting a deleted character, then we re-use the 
+ * old position. */
 int create_entry(char *name)
 {
   int i, pos;
@@ -132,14 +112,13 @@ int create_entry(char *name)
 
   /* copy lowercase equivalent of name to table field */
   for (i = 0; (player_table[pos].name[i] = LOWER(name[i])); i++)
-	/* Nothing */;
+    /* Nothing */;
 
   /* clear the bitflag in case we have garbage data */
   player_table[pos].flags = 0;
 
   return (pos);
 }
-
 
 /* This function necessary to save a seperate ASCII player index */
 void save_player_index(void)
@@ -166,7 +145,6 @@ void save_player_index(void)
   fclose(index_file);
 }
 
-
 void free_player_index(void)
 {
   int tp;
@@ -183,7 +161,6 @@ void free_player_index(void)
   top_of_p_table = 0;
 }
 
-
 long get_ptable_by_name(const char *name)
 {
   int i;
@@ -194,7 +171,6 @@ long get_ptable_by_name(const char *name)
 
   return (-1);
 }
-
 
 long get_id_by_name(const char *name)
 {
@@ -207,7 +183,6 @@ long get_id_by_name(const char *name)
   return (-1);
 }
 
-
 char *get_name_by_id(long id)
 {
   int i;
@@ -219,16 +194,11 @@ char *get_name_by_id(long id)
   return (NULL);
 }
 
-
-/*************************************************************************
-*  stuff related to the save/load player system				 *
-*************************************************************************/
-
-
+/* Stuff related to the save/load player system. */
 #define NUM_OF_SAVE_THROWS	5
 
-/* new load_char reads ASCII Player Files */
-/* Load a char, TRUE if loaded, FALSE if not */
+/* New load_char reads ASCII Player Files. Load a char, TRUE if loaded, FALSE
+ * if not. */
 int load_char(const char *name, struct char_data *ch)
 {
   int id, i;
@@ -246,8 +216,7 @@ int load_char(const char *name, struct char_data *ch)
       return (-1);
     }
 
-    /* character initializations */
-    /* initializations necessary to keep some things straight */
+    /* Character initializations. Necessary to keep some things straight. */
     ch->affected = NULL;
     for (i = 1; i <= MAX_SKILLS; i++)
       GET_SKILL(ch, i) = 0;
@@ -381,10 +350,8 @@ int load_char(const char *name, struct char_data *ch)
        if (!strcmp(tag, "Page"))  GET_PAGE_LENGTH(ch) = atoi(line);
 	else if (!strcmp(tag, "Pass"))	strcpy(GET_PASSWD(ch), line);
 	else if (!strcmp(tag, "Plyd"))	ch->player.time.played	= atoi(line);
- #if ASCII_SAVE_POOFS
 	else if (!strcmp(tag, "PfIn"))	POOFIN(ch)		= strdup(line);
 	else if (!strcmp(tag, "PfOt"))	POOFOUT(ch)		= strdup(line);
- #endif
 	else if (!strcmp(tag, "Pref"))	PRF_FLAGS(ch)		= asciiflag_conv(line);
 	break;
 
@@ -437,12 +404,8 @@ int load_char(const char *name, struct char_data *ch)
   return(id);
 }
 
-/*
- * write the vital data of a player to the player file
- *
- * And that's it! No more fudging around with the load room.
- */
-/* This is the ASCII Player Files save routine */
+/* Write the vital data of a player to the player file. */
+/* This is the ASCII Player Files save routine. */
 void save_char(struct char_data * ch)
 {
   FILE *fl;
@@ -454,10 +417,7 @@ void save_char(struct char_data * ch)
   if (IS_NPC(ch) || GET_PFILEPOS(ch) < 0)
     return;
 
-  /*
-   * If ch->desc is not null, then we need to update some session data
-   * before saving.
-   */
+  /* If ch->desc is not null, then update session data before saving. */
   if (ch->desc) {
     if (ch->desc->host && *ch->desc->host) {
       if (!GET_HOST(ch))
@@ -468,10 +428,7 @@ void save_char(struct char_data * ch)
       }
     }
 
-    /*
-     * We only update the time.played and time.logon if the character
-     * is playing.
-     */
+    /* Only update the time.played and time.logon if the character is playing. */
     if (STATE(ch->desc) == CON_PLAYING) {
       ch->player.time.played += time(0) - ch->player.time.logon;
       ch->player.time.logon = time(0);
@@ -485,9 +442,7 @@ void save_char(struct char_data * ch)
     return;
   }
 
-  /* remove affects from eq and spells (from char_to_store) */
-  /* Unaffect everything a character can be affected by */
-
+  /* Unaffect everything a character can be affected by. */
   for (i = 0; i < NUM_WEARS; i++) {
     if (GET_EQ(ch, i)) {
       char_eq[i] = unequip_char(ch, i);
@@ -513,12 +468,9 @@ void save_char(struct char_data * ch)
       tmp_aff[i].next = 0;
     }
   }
-  // save_char_vars(ch);
 
-  /*
-   * remove the affections so that the raw values are stored; otherwise the
-   * effects are doubled when the char logs back in.
-   */
+  /* Remove the affections so that the raw values are stored; otherwise the
+   * effects are doubled when the char logs back in. */
 
   while (ch->affected)
     affect_remove(ch, ch->affected);
@@ -527,7 +479,6 @@ void save_char(struct char_data * ch)
     log("SYSERR: WARNING: OUT OF STORE ROOM FOR AFFECTED TYPES!!!");
 
   ch->aff_abils = ch->real_abils;
-
   /* end char_to_store code */
 
   if (GET_NAME(ch))				fprintf(fl, "Name: %s\n", GET_NAME(ch));
@@ -538,10 +489,8 @@ void save_char(struct char_data * ch)
     strip_cr(buf);
     fprintf(fl, "Desc:\n%s~\n", buf);
   }
-#if ASCII_SAVE_POOFS
   if (POOFIN(ch))				fprintf(fl, "PfIn: %s\n", POOFIN(ch));
   if (POOFOUT(ch))				fprintf(fl, "PfOt: %s\n", POOFOUT(ch));
-#endif
   if (GET_SEX(ch)	     != PFDEF_SEX)	fprintf(fl, "Sex : %d\n", GET_SEX(ch));
   if (GET_CLASS(ch)	   != PFDEF_CLASS)	fprintf(fl, "Clas: %d\n", GET_CLASS(ch));
   if (GET_LEVEL(ch)	   != PFDEF_LEVEL)	fprintf(fl, "Levl: %d\n", GET_LEVEL(ch));
@@ -635,9 +584,7 @@ void save_char(struct char_data * ch)
 
   fclose(fl);
 
-  /* more char_to_store code to restore affects */
-
-  /* add spell and eq affections back in now */
+  /* More char_to_store code to add spell and eq affections back in. */
   for (i = 0; i < MAX_AFFECT; i++) {
     if (tmp_aff[i].type)
       affect_to_char(ch, &tmp_aff[i]);
@@ -654,7 +601,6 @@ void save_char(struct char_data * ch)
           obj_to_char(char_eq[i], ch);
 #endif
   }
-
   /* end char_to_store code */
 
   if ((id = get_ptable_by_name(GET_NAME(ch))) < 0)
@@ -706,15 +652,10 @@ void tag_argument(char *argument, char *tag)
   *wrt = '\0';
 }
 
-/*************************************************************************
-*  stuff related to the player file cleanup system			 *
-*************************************************************************/
+/* Stuff related to the player file cleanup system. */
 
-/*
- * remove_player() removes all files associated with a player who is
- * self-deleted, deleted by an immortal, or deleted by the auto-wipe
- * system (if enabled).
- */
+/* remove_player() removes all files associated with a player who is self-deleted,
+ * deleted by an immortal, or deleted by the auto-wipe system (if enabled). */
 void remove_player(int pfilepos)
 {
   char fname[40];
@@ -736,29 +677,21 @@ void remove_player(int pfilepos)
   save_player_index();
 }
 
-
 void clean_pfiles(void)
 {
   int i, ci;
 
   for (i = 0; i <= top_of_p_table; i++) {
-    /*
-     * We only want to go further if the player isn't protected
-     * from deletion and hasn't already been deleted.
-     */
+    /* We only want to go further if the player isn't protected from deletion 
+     * and hasn't already been deleted. */
     if (!IS_SET(player_table[i].flags, PINDEX_NODELETE) &&
         *player_table[i].name) {
-      /*
-       * If the player is already flagged for deletion, then go
-       * ahead and get rid of him.
-       */
+      /* If the player is already flagged for deletion, then go ahead and get 
+       * rid of him. */
       if (IS_SET(player_table[i].flags, PINDEX_DELETED)) {
 	remove_player(i);
       } else {
-        /*
-         * Now we check to see if the player has overstayed his
-         * welcome based on level.
-         */
+        /* Check to see if the player has overstayed his welcome based on level. */
 	for (ci = 0; pclean_criteria[ci].level > -1; ci++) {
 	  if (player_table[i].level <= pclean_criteria[ci].level &&
 	      ((time(0) - player_table[i].last) >
@@ -767,17 +700,13 @@ void clean_pfiles(void)
 	    break;
 	  }
 	}
-	/*
-         * If we got this far and the players hasn't been kicked out,
-         * then he can stay a little while longer.
-         */
+        /* If we got this far and the players hasn't been kicked out, then he 
+	 * can stay a little while longer. */
       }
     }
   }
-  /*
-   * After everything is done, we should rebuild player_index and
-   * remove the entries of the players that were just deleted.
-   */
+  /* After everything is done, we should rebuild player_index and remove the 
+   * entries of the players that were just deleted. */
 }
 
 void load_affects(FILE *fl, struct char_data *ch)
@@ -802,7 +731,6 @@ void load_affects(FILE *fl, struct char_data *ch)
   } while (num != 0);
 }
 
-
 void load_skills(FILE *fl, struct char_data *ch)
 {
   int num = 0, num2 = 0;
@@ -815,7 +743,6 @@ void load_skills(FILE *fl, struct char_data *ch)
 	GET_SKILL(ch, num) = num2;
   } while (num != 0);
 }
-
 
 void load_HMVS(struct char_data *ch, const char *line, int mode)
 {

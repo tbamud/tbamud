@@ -1,8 +1,8 @@
-/* ************************************************************************
-*   File: graph.c                                       Part of CircleMUD *
-*  Usage: various graph algorithms                                        *
+/**************************************************************************
+*  File: graph.c                                           Part of tbaMUD *
+*  Usage: Various graph algorithms.                                       *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
@@ -10,8 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -19,7 +17,6 @@
 #include "handler.h"
 #include "db.h"
 #include "spells.h"
-
 
 /* external functions */
 ACMD(do_say);
@@ -79,7 +76,6 @@ void bfs_enqueue(room_rnum room, int dir)
     queue_head = queue_tail = curr;
 }
 
-
 void bfs_dequeue(void)
 {
   struct bfs_queue_struct *curr;
@@ -91,21 +87,16 @@ void bfs_dequeue(void)
   free(curr);
 }
 
-
 void bfs_clear_queue(void)
 {
   while (queue_head)
     bfs_dequeue();
 }
 
-
-/*
- * find_first_step: given a source room and a target room, find the first
- * step on the shortest path from the source to the target.
- *
- * Intended usage: in mobile_activity, give a mob a dir to go if they're
- * tracking another mob or a PC.  Or, a 'track' skill for PCs.
- */
+/* find_first_step: given a source room and a target room, find the first step 
+ * on the shortest path from the source to the target. Intended usage: in 
+ * mobile_activity, give a mob a dir to go if they're tracking another mob or a
+ * PC.  Or, a 'track' skill for PCs. */
 int find_first_step(room_rnum src, room_rnum target)
 {
   int curr_dir;
@@ -150,11 +141,7 @@ int find_first_step(room_rnum src, room_rnum target)
   return (BFS_NO_PATH);
 }
 
-
-/********************************************************
-* Functions and Commands which use the above functions. *
-********************************************************/
-
+/* Functions and Commands which use the above functions. */
 ACMD(do_track)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -211,7 +198,6 @@ ACMD(do_track)
     break;
   }
 }
-
 
 void hunt_victim(struct char_data *ch)
 {

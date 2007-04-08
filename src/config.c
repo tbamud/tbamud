@@ -1,13 +1,12 @@
-/* ************************************************************************
-*   File: config.c                                      Part of CircleMUD *
-*  Usage: Configuration of various aspects of CircleMUD operation         *
+/**************************************************************************
+*  File: config.c                                          Part of tbaMUD *
+*  Usage: Configuration of various aspects of tbaMUD operation.           *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
-
+**************************************************************************/
 
 #define __CONFIG_C__
 
@@ -22,7 +21,7 @@
  * this file instead.  - Mythran */
 
 /* Below are several constants which you can change to alter certain aspects
- * of the way CircleMUD acts.  Since this is a .c file, all you have to do
+ * of the way tbaMUD acts.  Since this is a .c file, all you have to do
  * to change one of the constants (assuming you keep your object files around)
  * is change the constant in this file and type 'make'.  Make will recompile
  * this file and relink; you don't have to wait for the whole thing to recompile
@@ -228,7 +227,7 @@ int max_filesize = 50000;
 /* Maximum number of password attempts before disconnection. */
 int max_bad_pws = 3;
 
-/* Rationale for enabling this, as explained by naved@bird.taponline.com.
+/* Rationale for enabling this, as explained by Naved:
  * Usually, when you select ban a site, it is because one or two people are
  * causing troubles while there are still many people from that site who you
  * want to still log on.  Right now if I want to add a new select ban, I need

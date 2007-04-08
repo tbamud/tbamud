@@ -1,8 +1,8 @@
-/* ************************************************************************
-*   File: weather.c                                     Part of CircleMUD *
-*  Usage: functions handling time and the weather                         *
+/**************************************************************************
+*  File: weather.c                                         Part of tbaMUD *
+*  Usage: Functions handling time and the weather.                        *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
@@ -10,8 +10,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -25,14 +23,12 @@ void weather_and_time(int mode);
 void another_hour(int mode);
 void weather_change(void);
 
-
 void weather_and_time(int mode)
 {
   another_hour(mode);
   if (mode)
     weather_change();
 }
-
 
 void another_hour(int mode)
 {
@@ -75,7 +71,6 @@ void another_hour(int mode)
     }
   }
 }
-
 
 void weather_change(void)
 {

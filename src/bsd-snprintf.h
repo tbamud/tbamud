@@ -1,5 +1,9 @@
-/*
- * This file taken from openbsd-compat of OpenSSH 3.1:
+/**************************************************************************
+*  File: bsd-snprintf.h                                    Part of tbaMUD *
+*  Usage: Used if your OS does not provide snprintf() or vsnprintf().     *
+**************************************************************************/
+
+/* This file taken from openbsd-compat of OpenSSH 3.1:
  *
  * --- 8< --- OpenSSH LICENSE --- 8< ---
  * Remaining components of the software are provided under a standard

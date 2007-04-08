@@ -1,8 +1,6 @@
 /**************************************************************************
-*  File: dg_wldcmd.c                                                      *
-*  Usage: contains the command_interpreter for rooms,                     *
-*         room commands.                                                  *
-*                                                                         *
+*  File: dg_wldcmd.c                                       Part of tbaMUD *
+*  Usage: Contains the command_interpreter for rooms, room commands.      *
 *                                                                         *
 *  $Author: galion/Mark A. Heilpern/egreen/Welcor $                       *
 *  $Date: 2004/10/11 12:07:00$                                            *
@@ -11,8 +9,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "screen.h"
 #include "dg_scripts.h"
@@ -23,16 +19,12 @@
 #include "db.h"
 #include "constants.h"
 
-/*
- * External functions
- */
+/* External functions. */
 void die(struct char_data * ch, struct char_data * killer);
 zone_rnum real_zone_by_thing(room_vnum vznum);
 bitvector_t asciiflag_conv(char *flag);
 
-/*
- * Local functions
- */
+/* Local functions. */
 
 #define WCMD(name)  \
     void (name)(room_data *room, char *argument, int cmd, int subcmd)
@@ -53,7 +45,6 @@ WCMD(do_wdamage);
 WCMD(do_wat);
 void wld_command_interpreter(room_data *room, char *argument);
 
-
 struct wld_command_info {
     char *command;
     void (*command_pointer)
@@ -61,12 +52,9 @@ struct wld_command_info {
     int        subcmd;
 };
 
-
 /* do_wsend */
 #define SCMD_WSEND        0
 #define SCMD_WECHOAROUND  1
-
-
 
 /* attaches room vnum to msg and sends it to script_log */
 void wld_log(room_data *room, const char *format, ...)
@@ -88,19 +76,14 @@ void act_to_room(char *str, room_data *room)
     if (!room->people)
         return;
 
-    /*
-     * since you can't use act(..., TO_ROOM) for an room, send it
-     * TO_ROOM and TO_CHAR for some char in the room.
-     * (just dont use $n or you might get strange results)
-     */
+    /* Since you can't use act(..., TO_ROOM) for an room, send it TO_ROOM and 
+     * TO_CHAR for some char in the room. (just dont use $n or you might get 
+     * strange results). */
     act(str, FALSE, room->people, 0, 0, TO_ROOM);
     act(str, FALSE, room->people, 0, 0, TO_CHAR);
 }
 
-
-
 /* World commands */
-
 /* prints the argument to all the rooms aroud the room */
 WCMD(do_wasound)
 {
@@ -122,7 +105,6 @@ WCMD(do_wasound)
     }
 }
 
-
 WCMD(do_wecho)
 {
     skip_spaces(&argument);
@@ -133,7 +115,6 @@ WCMD(do_wecho)
     else
         act_to_room(argument, room);
 }
-
 
 WCMD(do_wsend)
 {
@@ -298,7 +279,6 @@ WCMD(do_wdoor)
     }
 }
 
-
 WCMD(do_wteleport)
 {
     char_data *ch, *next_ch;
@@ -350,7 +330,6 @@ WCMD(do_wteleport)
     }
 }
 
-
 WCMD(do_wforce)
 {
     char_data *ch, *next_ch;
@@ -390,7 +369,6 @@ WCMD(do_wforce)
             wld_log(room, "wforce: no target found");
     }
 }
-
 
 /* purge all objects an npcs in room, or specified object or mob */
 WCMD(do_wpurge)
@@ -443,7 +421,6 @@ WCMD(do_wpurge)
 
   extract_char(ch);
 }
-
 
 /* loads a mobile or object into the room */
 WCMD(do_wload)
@@ -609,10 +586,7 @@ const struct wld_command_info wld_cmd_info[] = {
     { "\n", 0, 0 }        /* this must be last */
 };
 
-
-/*
- *  This is the command interpreter used by rooms, called by script_driver.
- */
+/* This is the command interpreter used by rooms, called by script_driver. */
 void wld_command_interpreter(room_data *room, char *argument)
 {
     int cmd, length;

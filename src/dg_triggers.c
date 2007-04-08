@@ -1,9 +1,8 @@
 /**************************************************************************
-*  File: dg_triggers.c                                                    *
+*  File: dg_triggers.c                                     part of tbaMUD *
+*  Usage: Contains all the trigger functions for scripts.                 *
 *                                                                         *
-*  Usage: contains all the trigger functions for scripts.                 *
-*                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Death's Gate MUD is based on CircleMUD, Copyright (C) 1993, 94.        *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
@@ -15,8 +14,6 @@
 
 #include "conf.h"
 #include "sysdep.h"
-
-
 #include "structs.h"
 #include "dg_scripts.h"
 #include "utils.h"
@@ -33,14 +30,9 @@ extern struct time_info_data time_info;
 /* external functions */
 const char *skill_name(int num);
 
-/*
- *  General functions used by several triggers
- */
+/* General functions used by several triggers. */
 
-
-/*
- * Copy first phrase into first_arg, returns rest of string
- */
+/* Copy first phrase into first_arg, returns rest of string. */
 char *one_phrase(char *arg, char *first_arg)
 {
     skip_spaces(&arg);
@@ -79,7 +71,6 @@ char *one_phrase(char *arg, char *first_arg)
     return arg;
 }
 
-
 int is_substring(char *sub, char *string)
 {
     char *s;
@@ -101,12 +92,9 @@ int is_substring(char *sub, char *string)
     return 0;
 }
 
-
-/*
- * return 1 if str contains a word or phrase from wordlist.
- * phrases are in double quotes (").
- * if wrdlist is NULL, then return 1, if str is NULL, return 0.
- */
+/* Return 1 if str contains a word or phrase from wordlist. Phrases are in 
+ * double quotes ("). if wrdlist is NULL, then return 1, if str is NULL, 
+ * return 0. */
 int word_check(char *str, char *wordlist)
 {
     char words[MAX_INPUT_LENGTH], phrase[MAX_INPUT_LENGTH], *s;
@@ -122,20 +110,12 @@ int word_check(char *str, char *wordlist)
     return 0;
 }
 
-
-
-/*
- *  mob triggers
- */
-
+/*Mob triggers. */
 void random_mtrigger(char_data *ch)
 {
   trig_data *t;
 
-  /*
-   * This trigger is only called if a char is in the zone without nohassle.
-   */
-
+  /* This trigger is only called if a char is in the zone without nohassle. */
   if (!SCRIPT_CHECK(ch, MTRIG_RANDOM) || AFF_FLAGGED(ch, AFF_CHARM))
     return;
 
@@ -220,7 +200,6 @@ void greet_memory_mtrigger(char_data *actor)
   }
 }
 
-
 int greet_mtrigger(char_data *actor, int dir)
 {
   trig_data *t;
@@ -254,7 +233,6 @@ int greet_mtrigger(char_data *actor, int dir)
   }
   return final;
 }
-
 
 void entry_memory_mtrigger(char_data *ch)
 {
@@ -359,7 +337,6 @@ int command_mtrigger(char_data *actor, char *cmd, char *argument)
   return 0;
 }
 
-
 void speech_mtrigger(char_data *actor, char *str)
 {
   char_data *ch, *ch_next;
@@ -392,7 +369,6 @@ void speech_mtrigger(char_data *actor, char *str)
       }
   }
 }
-
 
 void act_mtrigger(const char_data *ch, char *str, char_data *actor,
                   char_data *victim, obj_data *object,
@@ -437,7 +413,6 @@ void act_mtrigger(const char_data *ch, char *str, char_data *actor,
     }
 }
 
-
 void fight_mtrigger(char_data *ch)
 {
   struct char_data *actor;
@@ -463,7 +438,6 @@ void fight_mtrigger(char_data *ch)
   }
 }
 
-
 void hitprcnt_mtrigger(char_data *ch)
 {
   struct char_data *actor;
@@ -485,7 +459,6 @@ void hitprcnt_mtrigger(char_data *ch)
     }
   }
 }
-
 
 int receive_mtrigger(char_data *ch, char_data *actor, obj_data *obj)
 {
@@ -512,7 +485,6 @@ int receive_mtrigger(char_data *ch, char_data *actor, obj_data *obj)
 
   return 1;
 }
-
 
 int death_mtrigger(char_data *ch, char_data *actor)
 {
@@ -646,10 +618,7 @@ void time_mtrigger(char_data *ch)
   trig_data *t;
   char buf[MAX_INPUT_LENGTH];
 
-  /*
-   * This trigger is called if the hour is the same as specified in Narg.
-   */
-
+  /* This trigger is called if the hour is the same as specified in Narg. */
   if (!SCRIPT_CHECK(ch, MTRIG_TIME) || AFF_FLAGGED(ch, AFF_CHARM))
     return;
 
@@ -664,10 +633,7 @@ void time_mtrigger(char_data *ch)
   }
 }
 
-/*
- *  object triggers
- */
-
+/* Object triggers. */
 void random_otrigger(obj_data *obj)
 {
   trig_data *t;
@@ -684,7 +650,6 @@ void random_otrigger(obj_data *obj)
   }
 }
 
-
 void timer_otrigger(struct obj_data *obj)
 {
   trig_data *t;
@@ -700,7 +665,6 @@ void timer_otrigger(struct obj_data *obj)
 
   return;
 }
-
 
 int get_otrigger(obj_data *obj, char_data *actor)
 {
@@ -727,7 +691,6 @@ int get_otrigger(obj_data *obj, char_data *actor)
 
   return 1;
 }
-
 
 /* checks for command trigger on specific object. assumes obj has cmd trig */
 int cmd_otrig(obj_data *obj, char_data *actor, char *cmd,
@@ -766,7 +729,6 @@ int cmd_otrig(obj_data *obj, char_data *actor, char *cmd,
   return 0;
 }
 
-
 int command_otrigger(char_data *actor, char *cmd, char *argument)
 {
   obj_data *obj;
@@ -791,7 +753,6 @@ int command_otrigger(char_data *actor, char *cmd, char *argument)
 
   return 0;
 }
-
 
 int wear_otrigger(obj_data *obj, char_data *actor, int where)
 {
@@ -819,7 +780,6 @@ int wear_otrigger(obj_data *obj, char_data *actor, int where)
   return 1;
 }
 
-
 int remove_otrigger(obj_data *obj, char_data *actor)
 {
   trig_data *t;
@@ -846,7 +806,6 @@ int remove_otrigger(obj_data *obj, char_data *actor)
   return 1;
 }
 
-
 int drop_otrigger(obj_data *obj, char_data *actor)
 {
   trig_data *t;
@@ -872,7 +831,6 @@ int drop_otrigger(obj_data *obj, char_data *actor)
 
   return 1;
 }
-
 
 int give_otrigger(obj_data *obj, char_data *actor, char_data *victim)
 {
@@ -1040,10 +998,7 @@ void time_otrigger(obj_data *obj)
   }
 }
 
-/*
- *  world triggers
- */
-
+/* World triggers. */
 void reset_wtrigger(struct room_data *room)
 {
   trig_data *t;
@@ -1076,7 +1031,6 @@ void random_wtrigger(struct room_data *room)
   }
 }
 
-
 int enter_wtrigger(struct room_data *room, char_data *actor, int dir)
 {
   trig_data *t;
@@ -1099,7 +1053,6 @@ int enter_wtrigger(struct room_data *room, char_data *actor, int dir)
 
   return 1;
 }
-
 
 int command_wtrigger(char_data *actor, char *cmd, char *argument)
 {
@@ -1139,7 +1092,6 @@ int command_wtrigger(char_data *actor, char *cmd, char *argument)
 
   return 0;
 }
-
 
 void speech_wtrigger(char_data *actor, char *str)
 {
@@ -1227,7 +1179,6 @@ int cast_wtrigger(char_data *actor, char_data *vict, obj_data *obj, int spellnum
 
   return 1;
 }
-
 
 int leave_wtrigger(struct room_data *room, char_data *actor, int dir)
 {

@@ -1,8 +1,10 @@
-/************************************************************************
- * Generic OLC Library - Mobiles / genmob.h			v1.0	*
- * Copyright 1996 by Harvey Gilpin					*
- * Copyright 1997-2001 by George Greer (greerga@circlemud.org)		*
- ************************************************************************/
+/**************************************************************************
+*  File: genmob.h                                          Part of tbaMUD *
+*                                                                         *
+*  Usage: Generic OLC Library - Mobiles.                                  *
+*                                                                         *
+*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
+**************************************************************************/
 
 int delete_mobile(mob_rnum);
 int copy_mobile(struct char_data *to, struct char_data *from);

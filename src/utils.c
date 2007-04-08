@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: utils.c                                       Part of CircleMUD *
-*  Usage: various internal functions of a utility nature                  *
+/**************************************************************************
+*  File: utils.c                                           Part of tbaMUD *
+*  Usage: Various internal functions of a utility nature.                 *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -342,7 +342,6 @@ time_t mud_time_to_secs(struct time_info_data *now)
   when += now->month * SECS_PER_MUD_MONTH;
   when += now->day   * SECS_PER_MUD_DAY;
   when += now->hours * SECS_PER_MUD_HOUR;
-
   return (time(NULL) - when);
 }
 

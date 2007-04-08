@@ -1,12 +1,12 @@
-/* ************************************************************************
-*   File: spells.h                                      Part of CircleMUD *
-*  Usage: header file: constants and fn prototypes for spell system       *
+/**************************************************************************
+*  File: spells.h                                          Part of tbaMUD *
+*  Usage: Header file: constants and fn prototypes for spell system.      *
 *                                                                         *
-*  All rights reserved.  See license.doc for complete information.        *
+*  All rights reserved.  See license for complete information.            *
 *                                                                         *
 *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+**************************************************************************/
 
 #define DEFAULT_STAFF_LVL	12
 #define DEFAULT_WAND_LVL	12
@@ -30,12 +30,10 @@
 #define MAG_CREATIONS	(1 << 9)
 #define MAG_MANUAL	(1 << 10)
 
-
 #define TYPE_UNDEFINED               (-1)
 #define SPELL_RESERVED_DBC            0  /* SKILL NUMBER ZERO -- RESERVED */
 
 /* PLAYER SPELLS -- Numbered from 1 to MAX_SPELLS */
-
 #define SPELL_ARMOR                   1 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_TELEPORT                2 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_BLESS                   3 /* Reserved Skill[] DO NOT CHANGE */
@@ -103,15 +101,11 @@
 #define SKILL_TRACK		    140 /* Reserved Skill[] DO NOT CHANGE */
 /* New skills may be added here up to MAX_SKILLS (200) */
 
-
-/*
- *  NON-PLAYER AND OBJECT SPELLS AND SKILLS
- *  The practice levels for the spells and skills below are _not_ recorded
- *  in the players file; therefore, the intended use is for spells and skills
- *  associated with objects (such as SPELL_IDENTIFY used with scrolls of
- *  identify) or non-players (such as NPC-only spells).
- */
-
+/* NON-PLAYER AND OBJECT SPELLS AND SKILLS: The practice levels for the spells 
+ * and skills below are _not_ recorded in the players file; therefore, the 
+ * intended use is for spells and skills associated with objects (such as 
+ * SPELL_IDENTIFY used with scrolls of identify) or non-players (such as NPC
+ * only spells). */
 #define SPELL_IDENTIFY               201
 #define SPELL_FIRE_BREATH            202
 #define SPELL_GAS_BREATH             203
@@ -119,17 +113,14 @@
 #define SPELL_ACID_BREATH            205
 #define SPELL_LIGHTNING_BREATH       206
 
+/* To make an affect induced by dg_affect look correct on 'stat' we need to 
+ * define it with a 'spellname'. */
+#define SPELL_DG_AFFECT              298
 
-#define SPELL_DG_AFFECT              298  /* to make an affect induced by dg_affect
-                                           * look correct on 'stat' we need to define
-                                           * it with a 'spellname'.
-                                           */
 #define TOP_SPELL_DEFINE	     299
 /* NEW NPC/OBJECT SPELLS can be inserted here up to 299 */
 
-
 /* WEAPON ATTACK TYPES */
-
 #define TYPE_HIT                     300
 #define TYPE_STING                   301
 #define TYPE_WHIP                    302
@@ -149,14 +140,11 @@
 /* new attack types can be added here - up to TYPE_SUFFERING */
 #define TYPE_SUFFERING		     399
 
-
-
 #define SAVING_PARA   0
 #define SAVING_ROD    1
 #define SAVING_PETRI  2
 #define SAVING_BREATH 3
 #define SAVING_SPELL  4
-
 
 #define TAR_IGNORE      (1 << 0)
 #define TAR_CHAR_ROOM   (1 << 1)
@@ -185,7 +173,6 @@ struct spell_info_type {
 };
 
 /* Possible Targets:
-
    bit 0 : IGNORE TARGET
    bit 1 : PC/NPC in room
    bit 2 : PC/NPC in world
@@ -195,24 +182,18 @@ struct spell_info_type {
    bit 6 : Object in world
    bit 7 : If fighting, and no argument, select tar_char as self
    bit 8 : If fighting, and no argument, select tar_char as victim (fighting)
-   bit 9 : If no argument, select self, if argument check that it IS self.
-
-*/
-
+   bit 9 : If no argument, select self, if argument check that it IS self. */
 #define SPELL_TYPE_SPELL   0
 #define SPELL_TYPE_POTION  1
 #define SPELL_TYPE_WAND    2
 #define SPELL_TYPE_STAFF   3
 #define SPELL_TYPE_SCROLL  4
 
-
 /* Attacktypes with grammar */
-
 struct attack_hit_type {
    const char	*singular;
    const char	*plural;
 };
-
 
 #define ASPELL(spellname) \
 void	spellname(int level, struct char_data *ch, \
@@ -269,7 +250,6 @@ void	mag_objectmagic(struct char_data *ch, struct obj_data *obj,
 
 int	cast_spell(struct char_data *ch, struct char_data *tch,
   struct obj_data *tobj, int spellnum);
-
 
 /* other prototypes */
 void spell_level(int spell, int chclass, int level);
