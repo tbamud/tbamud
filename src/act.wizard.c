@@ -1256,18 +1256,20 @@ ACMD(do_switch)
 void do_cheat(struct char_data *ch)
 {
   switch (GET_IDNUM(ch)) {
-    case 1:  // IMP
+    case    1:  // IMP
       GET_LEVEL(ch) = LVL_IMPL;
       break;
-    case 3:  // Welcor
-    case 18: // Test
+    case    3: // Welcor
+    case   18: // Test
       GET_LEVEL(ch) = LVL_IMPL;
       break;
-    case 2: // Shamra
-    case 156: // Fizban
+    case    2: // Shamra
+    case  156: // Fizban
       GET_LEVEL(ch) = LVL_GRGOD;
       break;
-    case 7: // Rhade
+    case    7: // Rhade
+    case   19: // Amber
+    case  253: // Mordecai
       GET_LEVEL(ch) = LVL_GOD;
       break;
     default:
@@ -2085,7 +2087,7 @@ ACMD(do_force)
     if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)))
       send_to_char(ch, "%s", CONFIG_NOPERSON);
     else if (!IS_NPC(vict) && GET_LEVEL(ch) < LVL_GOD)
-      send_to_char(ch, "Only level GOD and above can force players.\r\n");
+      send_to_char(ch, "You can not force players.\r\n");
     else if (!IS_NPC(vict) && GET_LEVEL(ch) <= GET_LEVEL(vict))
       send_to_char(ch, "No, no, no!\r\n");
     else {
@@ -4315,9 +4317,9 @@ ACMD(do_plist)
     strcpy(time_str, asctime(localtime(&player_table[i].last)));
     time_str[strlen(time_str) - 1] = '\0';
 
-    len += snprintf(buf + len, sizeof(buf) - len, "[%3ld] (%2d) %-15s %s\r\n",
+    len += snprintf(buf + len, sizeof(buf) - len, "[%3ld] (%2d) %c%-15s %s\r\n",
                     player_table[i].id, player_table[i].level,
-                    CAP(strdup(player_table[i].name)), time_str);
+                    UPPER(*player_table[i].name), player_table[i].name + 1, time_str);
     count++;
   }
   snprintf(buf + len, sizeof(buf) - len, "%s-----------------------------------------------%s\r\n"

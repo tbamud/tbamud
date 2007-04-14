@@ -5,7 +5,16 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.52
+[Apr 14 2007] - Rumble
+  IP's only visible to LVL_GOD and above now for the paranoid people out there.
+[Apr 13 2007] - Rumble
+  Finally made gemote actually work like emote and not just use socials. (thanks Fizban)
+  Reworded and standardized the trigedit attachment menu.
+  Numerous minor fixes taken from the latest CWG release. (thanks Zizazat)
+  Update to is_number to check for negative numbers. (thanks Kyle)
+  Update to isname to disallow abbreviated numbers. (thanks Sryth)
 [Apr 08 2007] - Rumble
+  Removed all usage of CAP(str causing a memory leak (thanks Kyle).
   Removed object type TRAP.
   Removed oasis_delete.h.
   Renamed variable wovel to vowel in ban.c.

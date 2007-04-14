@@ -1,6 +1,6 @@
 /**************************************************************************
 *  File: spells.c                                          Part of tbaMUD *
-*  Usage: Implementation of "manual spells".                              *
+*  Usage: Implementation of "manual spells."                              *
 *                                                                         *
 *  All rights reserved.  See license for complete information.            *
 *                                                                         *
@@ -217,7 +217,7 @@ ASPELL(spell_locate_object)
     if (!isname_obj(name, i->name))
       continue;
 
-    send_to_char(ch, "%s", CAP(strdup(i->short_description)));
+  send_to_char(ch, "%c%s", UPPER(*i->short_description), i->short_description + 1); 
 
     if (i->carried_by)
       send_to_char(ch, " is being carried by %s.\r\n", PERS(i->carried_by, ch));

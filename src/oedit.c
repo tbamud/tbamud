@@ -139,10 +139,7 @@ ACMD(do_oasis_oedit)
   /* Everyone but IMPLs can only edit zones they have been assigned. */
   if (!can_edit_zone(ch, OLC_ZNUM(d))) {
     send_cannot_edit(ch, zone_table[OLC_ZNUM(d)].number);
-    mudlog(BRF, LVL_IMPL, TRUE, "OLC: %s tried to edit zone %d allowed zone %d",
-        GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
-
-    /* Free the descriptor's OLC structure. */
+    /* Free the OLC structure. */
     free(d->olc);
     d->olc = NULL;
     return;
@@ -447,7 +444,7 @@ void oedit_disp_val1_menu(struct descriptor_data *d)
     break;
   case ITEM_DRINKCON:
   case ITEM_FOUNTAIN:
-    write_to_output(d, "Max drink units (-1 for unlimited) : ");
+    write_to_output(d, "Max drink units : ");
     break;
   case ITEM_FOOD:
     write_to_output(d, "Hours to fill stomach : ");
@@ -491,7 +488,7 @@ void oedit_disp_val2_menu(struct descriptor_data *d)
     break;
   case ITEM_DRINKCON:
   case ITEM_FOUNTAIN:
-    write_to_output(d, "Initial drink units : ");
+    write_to_output(d, "Initial drink units (-1 for unlimited) : ");
     break;
   default:
     oedit_disp_menu(d);

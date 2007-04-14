@@ -135,7 +135,6 @@ ACMD(do_oasis_sedit)
   /* Everyone but IMPLs can only edit zones they have been assigned. */
   if (!can_edit_zone(ch, OLC_ZNUM(d))) {
     send_cannot_edit(ch, zone_table[OLC_ZNUM(d)].number);
-
     /* Free the OLC structure. */
     free(d->olc);
     d->olc = NULL;
@@ -465,7 +464,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
       cleanup_olc(d, CLEANUP_ALL);
       return;
     default:
-      write_to_output(d, "Invalid choice!\r\nDo you wish to save the shop? : ");
+     write_to_output(d, "Invalid choice!\r\nDo you wish to save your changes? : ");
       return;
     }
     break;

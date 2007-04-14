@@ -1048,7 +1048,7 @@ struct game_data {
   int no_mort_to_immort;  /* Prevent mortals leveling to imms?    */
 
   char *OK;               /* When player receives 'Okay.' text.	  */
-  char *NOPERSON;         /* 'No-one by that name here.'	  */
+  char *NOPERSON;         /* 'No one by that name here.'	  */
   char *NOEFFECT;         /* 'Nothing seems to happen.'	          */
 };
 

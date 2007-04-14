@@ -264,8 +264,15 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
 
 void send_cannot_edit(struct char_data *ch, zone_vnum zone)
 {
-  send_to_char(ch, "You do not have permission to edit zone %d.", zone);
-  if (GET_OLC_ZONE(ch) != NOWHERE)
-    send_to_char(ch, "  Try zone %d.", GET_OLC_ZONE(ch));
-  send_to_char(ch, "\r\n");
+  char buf[MAX_STRING_LENGTH];
+	   
+  if (GET_OLC_ZONE(ch) != NOWHERE) {
+    send_to_char(ch, "You do not have permission to edit zone %d.  Try zone %d.\r\n", zone, GET_OLC_ZONE(ch));
+    sprintf(buf, "OLC: %s tried to edit zone %d (allowed zone %d).", GET_NAME(ch), zone, GET_OLC_ZONE(ch));
+  } else {
+    send_to_char(ch, "You do not have permission to edit zone %d.\r\n", GET_OLC_ZONE(ch));
+    sprintf(buf, "OLC: %s tried to edit zone %d.", GET_NAME(ch), zone);
+  }
+  mudlog(BRF, LVL_IMPL, TRUE, buf);
 }
+

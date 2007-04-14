@@ -96,17 +96,18 @@ int isname(const char *str, const char *namelist)
 
   newlist = strdup(namelist); /* make a copy since strtok 'modifies' strings */
   for(curtok = strtok(newlist, WHITESPACE); curtok; curtok = strtok(NULL, WHITESPACE))
-     if(curtok && is_abbrev(str, curtok))
-       {
-       free(newlist);
-       return 1;
-       }
-     free(newlist);
-     return 0;
+    if(curtok && is_abbrev(str, curtok)) {
+      /* Don't allow abbreviated numbers. - Sryth */
+      if (isdigit(*str) && (atoi(str) != atoi(curtok)))
+        return 0;
+      free(newlist);
+      return 1;
+    }
+  free(newlist);
+  return 0;
 }
 
-void affect_modify(struct char_data *ch, byte loc, sbyte mod,
-                   bitvector_t bitv, bool add)
+void affect_modify(struct char_data *ch, byte loc, sbyte mod, bitvector_t bitv, bool add)
 {
   if (add)
     SET_BIT(AFF_FLAGS(ch), bitv);

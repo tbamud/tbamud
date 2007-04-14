@@ -870,6 +870,10 @@ int search_block(char *arg, const char **list, int exact)
 
 int is_number(const char *str)
 {
+  if(*str == '-')
+     str++;
+  if(!*str)
+     return (0);
   while (*str)
     if (!isdigit(*(str++)))
       return (0);
@@ -882,7 +886,6 @@ void skip_spaces(char **string)
 {
   for (; **string && isspace(**string); (*string)++);
 }
-
 
 /* Given a string, change all instances of double dollar signs ($$) to single 
  * dollar signs ($).  When strings come in, all $'s are changed to $$'s to 
@@ -951,8 +954,8 @@ char *one_argument(char *argument, char *first_arg)
   return (argument);
 }
 
-/* one_word is like any_one_arg, except that words in quotes ("") are considered 
- * one word. No longer ignores fill words.  -dak, 6 Jan 2003. */
+/* one_word is like any_one_arg, except that words in quotes ("") are 
+ * considered one word. No longer ignores fill words.  -dak */
 char *one_word(char *argument, char *first_arg)
 {
     skip_spaces(&argument);
@@ -975,7 +978,7 @@ char *one_word(char *argument, char *first_arg)
   return (argument);
 }
 
-/* same as one_argument except that it doesn't ignore fill words */
+/* Same as one_argument except that it doesn't ignore fill words. */
 char *any_one_arg(char *argument, char *first_arg)
 {
   skip_spaces(&argument);
@@ -1075,8 +1078,8 @@ int special(struct char_data *ch, int cmd, char *arg)
   return (0);
 }
 
-/* Stuff for controlling the non-playing sockets (get name, pwd etc). */
-/* This function needs to die. */
+/* Stuff for controlling the non-playing sockets (get name, pwd etc).
+ * This function needs to die. */
 int _parse_name(char *arg, char *name)
 {
   int i;
@@ -1213,7 +1216,12 @@ int perform_dupe_check(struct descriptor_data *d)
   case RECON:
     write_to_output(d, "Reconnecting.\r\n");
     act("$n has reconnected.", TRUE, d->character, 0, 0, TO_ROOM);
-    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "%s [%s] has reconnected.", GET_NAME(d->character), d->host);
+
+    if (GET_INVIS_LEV(d->character))
+      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "%s has reconnected. (invis %d)", GET_NAME(d->character), GET_INVIS_LEV(d->character));
+    else
+      mudlog(BRF, LVL_IMMORT, TRUE, "%s has reconnected.", GET_NAME(d->character));
+
     if (has_mail(GET_IDNUM(d->character)))
       write_to_output(d, "You have mail waiting.\r\n");
     break;
@@ -1350,16 +1358,14 @@ void nanny(struct descriptor_data *d, char *arg)
 	GET_PFILEPOS(d->character) = player_i;
 
 	if (PLR_FLAGGED(d->character, PLR_DELETED)) {
-	  /* make sure old files are removed so the new player doesn't get
-	     the deleted player's equipment (this should probably be a
-	     stock behavior)
-	   */
+          /* Make sure old files are removed so the new player doesn't get the 
+	   * deleted player's equipment. */
 	   if ((player_i = get_ptable_by_name(tmp_name)) >= 0)
 	   remove_player(player_i);
 
-		/* We get a false positive from the original deleted character. */
+          /* We get a false positive from the original deleted character. */
 	  free_char(d->character);
-	  /* Check for multiple creations... */
+	  /* Check for multiple creations. */
 	  if (!valid_name(tmp_name)) {
 	    write_to_output(d, "Invalid name, please try another.\r\nName: ");
 	    return;
@@ -1488,12 +1494,9 @@ void nanny(struct descriptor_data *d, char *arg)
 	write_to_output(d, "%s", motd);
 
       if (GET_INVIS_LEV(d->character))
-        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE,
-        "%s [%s] has connected. (invis %d)", GET_NAME(d->character), d->host,
-        GET_INVIS_LEV(d->character));
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "%s has connected. (invis %d)", GET_NAME(d->character), GET_INVIS_LEV(d->character));
       else
-        mudlog(BRF, LVL_IMMORT, TRUE,
-               "%s [%s] has connected.", GET_NAME(d->character), d->host);
+        mudlog(BRF, LVL_IMMORT, TRUE, "%s has connected.", GET_NAME(d->character));
 
       if (load_result) {
         write_to_output(d, "\r\n\r\n\007\007\007"
@@ -1575,7 +1578,11 @@ void nanny(struct descriptor_data *d, char *arg)
     } else
       GET_CLASS(d->character) = load_result;
 
-    if (GET_PFILEPOS(d->character) < 0)
+      if (d->olc) {
+        free(d->olc);
+        d->olc = NULL;
+      }
+      if (GET_PFILEPOS(d->character) < 0)
       GET_PFILEPOS(d->character) = create_entry(GET_PC_NAME(d->character));
     /* Now GET_NAME() will work properly. */
     init_char(d->character);
@@ -1710,18 +1717,17 @@ void nanny(struct descriptor_data *d, char *arg)
 	SET_BIT(PLR_FLAGS(d->character), PLR_DELETED);
       save_char(d->character);
       Crash_delete_file(GET_NAME(d->character));
-      /* If the selfdelete_fastwipe flag is set (in config.c), remove all
-         the player's immediately */
-         if (selfdelete_fastwipe)
-           if ((player_i = get_ptable_by_name(GET_NAME(d->character))) >= 0) {
-             SET_BIT(player_table[player_i].flags, PINDEX_SELFDELETE);
-             remove_player(player_i);
-	   }
+      /* If the selfdelete_fastwipe flag is set (in config.c), remove all the 
+       * player's immediately. */
+      if (selfdelete_fastwipe)
+        if ((player_i = get_ptable_by_name(GET_NAME(d->character))) >= 0) {
+          SET_BIT(player_table[player_i].flags, PINDEX_SELFDELETE);
+          remove_player(player_i);
+        }
 
       delete_aliases(GET_NAME(d->character));
       delete_variables(GET_NAME(d->character));
-      write_to_output(d, "Character '%s' deleted!\r\n"
-	      "Goodbye.\r\n", GET_NAME(d->character));
+      write_to_output(d, "Character '%s' deleted! Goodbye.\r\n", GET_NAME(d->character));
       mudlog(NRM, LVL_GOD, TRUE, "%s (lev %d) has self-deleted.", GET_NAME(d->character), GET_LEVEL(d->character));
       STATE(d) = CON_CLOSE;
       return;
@@ -1731,9 +1737,8 @@ void nanny(struct descriptor_data *d, char *arg)
     }
     break;
 
-  /* It is possible, if enough pulses are missed, to kick someone off while 
-   * they are at the password prompt. We'll just defer to let the game_loop()
-   * axe them. */
+  /* It is possible, if enough pulses are missed, to kick someone off while they
+   * are at the password prompt. We'll let the game_loop()axe them. */
   case CON_CLOSE:
     break;
 

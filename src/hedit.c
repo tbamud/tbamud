@@ -251,8 +251,8 @@ void hedit_disp_menu(struct descriptor_data *d)
   write_to_output(d,
 
          "-- Help file editor\r\n"
-         "1) Keywords    : %s\r\n"
-         "2) Entry       :\r\n%s"
+         "@g1@n) Keywords    : @y%s@n\r\n"
+         "@g2@n) Entry       :\r\n@y%s@n"
 	 "@g3@n) Min Level   : @c%d@n\r\n"
 	  "@gQ@n) Quit\r\n"
 	  "Enter choice : ",

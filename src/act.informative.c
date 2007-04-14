@@ -127,7 +127,7 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 
   switch (mode) {
   case SHOW_OBJ_LONG:
-    /* hide objects starting with . from non-holylighted people Idea from Elaseth of TBA */
+    /* Hide objects starting with . from non-holylighted people. - Elaseth */
     if (*obj->description == '.' && (IS_NPC(ch) || !PRF_FLAGGED(ch, PRF_HOLYLIGHT)))
       return;
 
@@ -344,10 +344,10 @@ void list_one_char(struct char_data *i, struct char_data *ch)
     return;
   }
 
-  if (IS_NPC(i))
-    send_to_char(ch, "%s", CAP(strdup(i->player.short_descr)));
+  if (IS_NPC(i)) 
+    send_to_char(ch, "%c%s", UPPER(*i->player.short_descr), i->player.short_descr + 1); 
   else
-  send_to_char(ch, "%s%s%s", i->player.name, *GET_TITLE(i) ? " " : "", GET_TITLE(i));
+    send_to_char(ch, "%s%s%s", i->player.name, *GET_TITLE(i) ? " " : "", GET_TITLE(i));
 
   if (AFF_FLAGGED(i, AFF_INVISIBLE))
     send_to_char(ch, " (invisible)");

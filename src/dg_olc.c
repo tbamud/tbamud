@@ -1,6 +1,6 @@
 /**************************************************************************
 *  File: dg_olc.c                                          Part of tbaMUD *
-*  Usage: this source file is used in extending Oasis OLC for trigedit.   *
+*  Usage: This source file is used in extending Oasis OLC for trigedit.   *
 *                                                                         *
 *  $Author: Chris Jacobsen/Mark A. Heilpern/egreen/Welcor $               *
 *  $Date: 2004/10/11 12:07:00$                                            *
@@ -82,8 +82,7 @@ ACMD(do_oasis_trigedit)
   /* Everyone but IMPLs can only edit zones they have been assigned.*/
   if (!can_edit_zone(ch, OLC_ZNUM(d))) {
     send_cannot_edit(ch, zone_table[OLC_ZNUM(d)].number);
-    mudlog(BRF, LVL_IMPL, TRUE, "OLC: %s tried to edit zone %d (allowed zone %d)",
-      GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
+    /* Free the OLC structure. */
     free(d->olc);
     d->olc = NULL;
     return;
@@ -333,7 +332,7 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
           break;
         default:
           write_to_output(d, "Invalid choice!\r\n");
-          write_to_output(d, "Do you wish to save the trigger? : ");
+          write_to_output(d, "Do you wish to save your changes? : ");
           return;
       }
       break;
@@ -720,7 +719,7 @@ void dg_script_menu(struct descriptor_data *d)
   OLC_SCRIPT_EDIT_MODE(d) = SCRIPT_MAIN_MENU;
 
   clear_screen(d);
-  write_to_output(d, "     Script Editor\r\n\r\n     Trigger List:\r\n");
+  write_to_output(d, "     Triggers Attached:\r\n");
 
   editscript = OLC_SCRIPT(d);
 
@@ -739,9 +738,9 @@ void dg_script_menu(struct descriptor_data *d)
     write_to_output(d, "     <none>\r\n");
 
   write_to_output(d,  "\r\n"
-    " %sN%s)  New trigger for this script\r\n"
-    " %sD%s)  Delete a trigger in this script\r\n"
-    " %sX%s)  Exit Script Editor\r\n\r\n"
+    " %sN%s)  Attach trigger\r\n"
+    " %sX%s)  Detach trigger\r\n"
+    " %sQ%s)  Quit\r\n\r\n"
     "     Enter choice :",
     grn, nrm, grn, nrm, grn, nrm);
 }
@@ -754,7 +753,7 @@ int dg_script_edit_parse(struct descriptor_data *d, char *arg)
   switch(OLC_SCRIPT_EDIT_MODE(d)) {
     case SCRIPT_MAIN_MENU:
       switch(tolower(*arg)) {
-        case 'x':
+        case 'q':
           /* This was buggy. First we created a copy of a thing, but maintained
 	   * pointers to scripts, then if we altered the scripts, we freed the 
 	   * pointers and added new ones to the OLC_THING. If we then choose NOT
@@ -776,7 +775,7 @@ int dg_script_edit_parse(struct descriptor_data *d, char *arg)
           write_to_output(d, "\r\nPlease enter position, vnum   (ex: 1, 200):");
           OLC_SCRIPT_EDIT_MODE(d) = SCRIPT_NEW_TRIGGER;
           break;
-        case 'd':
+        case 'x':
           write_to_output(d, "     Which entry should be deleted?  0 to abort :");
           OLC_SCRIPT_EDIT_MODE(d) = SCRIPT_DEL_TRIGGER;
           break;

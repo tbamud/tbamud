@@ -403,7 +403,8 @@ void point_update(void)
       if (GET_LEVEL(i) < CONFIG_IDLE_MAX_LEVEL)
 	check_idling(i);
       else 
-        (i->char_specials.timer)++;}
+        (i->char_specials.timer)++;
+    }
   }
 
   /* objects */

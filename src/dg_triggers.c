@@ -678,10 +678,8 @@ int get_otrigger(obj_data *obj, char_data *actor)
     if (TRIGGER_CHECK(t, OTRIG_GET) && (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
       ADD_UID_VAR(buf, t, actor, "actor", 0);
       ret_val = script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
-      /* don't allow a get to take place, if
-       * a) the actor is killed (the mud would choke on obj_to_char).
-       * b) the object is purged.
-       */
+      /* Don't allow a get to take place, if the actor is killed (the mud 
+       * would choke on obj_to_char) or the object is purged. */
       if (DEAD(actor) || !obj)
         return 0;
       else
@@ -767,9 +765,7 @@ int wear_otrigger(obj_data *obj, char_data *actor, int where)
     if (TRIGGER_CHECK(t, OTRIG_WEAR)) {
       ADD_UID_VAR(buf, t, actor, "actor", 0);
       ret_val = script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
-      /* don't allow a wear to take place, if
-       * the object is purged.
-       */
+      /* Don't allow a wear to take place, if the object is purged. */
       if (!obj)
         return 0;
       else
@@ -793,9 +789,7 @@ int remove_otrigger(obj_data *obj, char_data *actor)
     if (TRIGGER_CHECK(t, OTRIG_REMOVE)) {
       ADD_UID_VAR(buf, t, actor, "actor", 0);
       ret_val = script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
-      /* don't allow a remove to take place, if
-       * the object is purged.
-       */
+      /* Don't allow a remove to take place, if the object is purged. */
       if (!obj)
         return 0;
       else
@@ -819,9 +813,7 @@ int drop_otrigger(obj_data *obj, char_data *actor)
     if (TRIGGER_CHECK(t, OTRIG_DROP) && (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
       ADD_UID_VAR(buf, t, actor, "actor", 0);
       ret_val = script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
-      /* don't allow a drop to take place, if
-       * the object is purged (nothing to drop).
-       */
+      /* Don't allow a drop to take place, if the object is purged. */
       if (!obj)
         return 0;
       else
@@ -846,10 +838,8 @@ int give_otrigger(obj_data *obj, char_data *actor, char_data *victim)
       ADD_UID_VAR(buf, t, actor, "actor", 0);
       ADD_UID_VAR(buf, t, victim, "victim", 0);
       ret_val = script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
-      /* don't allow a give to take place, if
-       * a) the object is purged.
-       * b) the object is not carried by the giver.
-       */
+      /* Don't allow a give to take place, if the object is purged or the 
+       * object is not carried by the giver. */
       if (!obj || obj->carried_by != actor)
         return 0;
       else
@@ -966,9 +956,7 @@ int consume_otrigger(obj_data *obj, char_data *actor, int cmd)
           break;
       }
       ret_val = script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
-      /* don't allow a wear to take place, if
-       * the object is purged.
-       */
+      /* Don't allow a wear to take place, if the object is purged. */
       if (!obj)
         return 0;
       else

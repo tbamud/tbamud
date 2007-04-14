@@ -97,7 +97,7 @@ int load_into_inventory = YES;
 
 /* "okay" etc. */
 const char *OK = "Okay.\r\n";
-const char *NOPERSON = "No-one by that name here.\r\n";
+const char *NOPERSON = "No one by that name here.\r\n";
 const char *NOEFFECT = "Nothing seems to happen.\r\n";
 
 /* You can define or not define TRACK_THOUGH_DOORS, depending on whether or not

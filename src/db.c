@@ -2513,6 +2513,10 @@ void free_char(struct char_data *ch)
     if (ch->player.description)
       free(ch->player.description);
 
+    for (i = 0; i < NUM_HIST; i++)
+      if (GET_HISTORY(ch, i))
+        free(GET_HISTORY(ch, i));
+  
     /* free script proto list */
     free_proto_script(ch, MOB_TRIGGER);
 
@@ -2546,7 +2550,7 @@ void free_char(struct char_data *ch)
     ch->desc->character = NULL;
 
   /* find_char helper, when free_char is called with a blank character struct, 
-   * ID is set to 0, and has not yet been added to the lookup table */
+   * ID is set to 0, and has not yet been added to the lookup table. */
   if (GET_ID(ch) != 0)
   remove_from_lookup_table(GET_ID(ch));
 

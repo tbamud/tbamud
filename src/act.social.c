@@ -246,7 +246,8 @@ ACMD(do_gmote)
         break;
 
   if ((act_nr = find_action(cmd)) < 0) {
-    send_to_char(ch, "That's not a social!\r\n");
+    snprintf(buf, sizeof(buf), "Gossip: $n%s", argument);
+    act(buf, FALSE, ch, 0, vict, TO_GMOTE);
     return;
   }
 
