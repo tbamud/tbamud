@@ -59,9 +59,77 @@ if %cmd.mudcommand% == cast && fireshield /= %arg%
 end
 ~
 #203
-free~
-2 bg 100
+Phoenix Rising - 211~
+0 f 100
 ~
-* No Script
+* You can't use waits in a mob death trig.
+* Phoenix turns into ashes when it dies and is reborn 3 times.
+* O219 is !TAKE and must always be in the room to count the deaths.
+emote shrieks in pain and bursts into flames.
+* Phoenix triggers 212 to count the deaths. Make it a unique command.
+phoenix2
+* Damage everyone in the room from the fire.
+set room_var %self.room%
+%echo% The phoenix is completely enveloped in flames and explodes, burning everyone in the room.
+* Target the first char
+set target_char %room_var.people%
+* Loop through everyone in the room.
+while %target_char%
+  * Set the next target before this one perhaps dies.
+  set tmp_target %target_char.next_in_room%
+  * Dish out the damage.
+  if %target_char.is_pc%
+    %send% %target_char% The fire burns you.
+    %damage% %target_char% 10
+  end
+  * Find next target
+  set target_char %tmp_target%
+  * Loop back
+done
+* Can't purge it (yet it is on the todo list) so teleport it to 0.
+%teleport% %self% 0
+* This prevents a death cry.
+return 0
+~
+#204
+Pirate Parott Pepeats - M212~
+0 d 100
+*~
+* Parrot randomly repeats something said in the room.
+* Pick the next number in the array and global it to be read next firing.
+eval n %n%+1
+global n
+* Pick a random number from the array and global what was said to the mob.
+eval r %%random.%n%%%
+set speech[%n%] %speech%
+global speech[%n%]
+* Wait a little bit and then speak.
+wait 1 sec
+eval say %%speech[%r%]%%
+eval say %say%
+say %say%
+~
+#212
+Phoenix Rising - 219~
+1 c 4
+phoenix2~
+* Numeric Arg: 4 means obj has to be in the room.
+* Does not work for level 32 and above.
+* Add 1 to the total deaths
+eval phoenix_deaths %phoenix_deaths% + 1
+wait 3 sec
+* Rebirth for only the first 3 times.
+if %phoenix_deaths% <= 2
+  * It comes back!
+  %load% mob 211
+  %echo% A baby phoenix pokes its head out of the pile of ashes.
+else
+  * Reward on the last kill!
+  %load% obj 184
+  eval phoenix_deaths 0
+  %echo% Something in the pile of ashes glimmers brightly.
+end  
+* Remember the count for the next time this trig fires
+global phoenix_deaths
 ~
 $~

@@ -443,6 +443,10 @@ end
 Mob Act - 156 speaker greet~
 0 e 0
 has entered the game.~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Num Arg 0 means the argument has to match exactly. So trig will only fire off:
+* "has entered game." and not "has" or "entered" etc. (that would be num arg 1).
+* Figure out what vnum the mob is in so we can use zoneecho.
 eval inroom %self.room%
 %zoneecho% %inroom.vnum% %self.name% shouts, 'Welcome, %actor.name%!'
 ~
@@ -598,42 +602,58 @@ end
 Thief Guildguard - 177~
 0 q 100
 ~
-* Check the direction the player must go to enter the guild.
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* This replaces stock guildguard spcial procedure that stops non-class members.
 if %direction% == up
+  * Let the guildmaster pass to pawn players items. T137.
   if %actor.vnum% == 122
     halt
   end
   * Stop them if they are not the appropriate class.
   if %actor.class% != thief
     return 0
-    %send% %actor% The guard humiliates you, and blocks your way.
-    %echoaround% %actor% The guard humiliates %actor.name%, and blocks %actor.hisher% way.
+    * Just send the block message to players.
+    if %actor.is_pc%
+      %send% %actor% The guard humiliates you, and blocks your way.
+      %echoaround% %actor% The guard humiliates %actor.name%, and blocks %actor.hisher% way.
+    end
   end
 end
 ~
 #137
-Thief Guildmaster Steal - 122~
-0 b 5
+Thief Guildmaster Steals - M122~
+0 b 100
 ~
+* By Rumble of The Builder Academy    builderacademy.net 9091
 * Idea taken from cheesymud.com
-* Thief guildmaster steals from actor inventory and pawns it in the shop
-* downstairs, player then has to buy their equipment back.
+* Thief guildmaster steals from players who idle in his guild. Then pawns the
+* item in the shop downstairs so player has to buy their equipment back :-P
+* Random trigs have no actors so pick one and make sure it is a player.
 set actor %random.char%
-if %actor%
+if %actor.is_pc%
+  * Pick the first item in the actors inventory.
   eval item %actor.inventory%
+  * I'll be nice and not steal containers or mail.
+  if %item.type% == CONTAINER || %item.vnum% <= 1
+    halt
+  end
+  * If they have an item let the master thief steal it.
   eval item_to_steal %%actor.inventory(%item.vnum%)%%
   if %item_to_steal%
+    * Give some hints that the guildmaster is not to be trusted.
     %echo% %self.name% examines %item.shortdesc%.
     wait 2 sec
+    * Purge the actors object and load it to the master thief.
     eval stolen %item_to_steal.vnum%
     eval name %item_to_steal.name%
     %load% obj %stolen%
     %purge% %item_to_steal% 
     wait 2 sec
+    * Lets go sell it to Morgan using its first keyword.
     down
     sell %name.car%
     wait 2 sec
-    whisper morgan hehe, silly mortals.
+    wink Morgan
     wait 2 sec
     up
   else
@@ -645,17 +665,16 @@ end
 Questmaster Greet - 3~
 0 g 100
 ~
-if %actor.is_pc% 
-  if !%actor.varexists(questpoints)%
-    set questpoints 0
-    remote questpoints %actor.id%
-    elsif %actor.questpoints% < 50
-    wait 2 sec
-    if !%actor.varexists(on_quest_zone_1)%
-      say Welcome %actor.name%, are you interested in a simple quest?
-    else
-      say How is your quest going %actor.name%, do you have a quest token or the quest mobs head for me?
-    end
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Part of a timed quest to kill a mob or find an object. Trigs 138-144.
+* Simple quests, probably too simple so only let players earn 50 qp's doing this.
+if %actor.is_pc% && %actor.questpoints% < 50
+  wait 2 sec
+  * Check to see if they are not on a zone 1 quest.
+  if !%actor.varexists(on_quest_zone_1)%
+    say Welcome %actor.name%, are you interested in a simple quest?
+  else
+    say How is your quest going %actor.name%, do you have a quest token or the quest mobs head for me?
   end
 end
 ~
@@ -663,21 +682,29 @@ end
 Questmaster Quest Assignment - 3~
 0 d 1
 *~
-* Don't let them do more than one quest at a time or complete more than 50.
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Part of a timed quest to kill a mob or find an object. Trigs 138-144.
+* Don't let them do more than one quest at a time or earn more than 50 qp.
 if %actor.varexists(on_quest_zone_1)% || %actor.questpoints% > 50
   halt
 end
+* This loop goes through the entire string of words the actor says. .car is the
+* word and .cdr is the remaining string.
 eval word %speech.car%
 eval rest %speech.cdr%
 while %word%
+  * Check to see if the word is yes or an abbreviation of yes.
   if yes /= %word%
     say Very well %actor.name%. Would you like to find an object or hunt a mobile?
     halt
   end
-  eval loadroom 100 + %random.265%  
+  * Pick a room from 100 to 365.
+  eval loadroom 99 + %random.265%  
   if mobile /= %word% || hunt /= %word%
+    * Load the mob in the random room picked above.
     %at% %loadroom% %load% m 15
     say Go kill the quest mob and bring me its head %actor.name%. You only have 10 minutes!
+    * Load an object on the player that counts down from 10 minutes.
     %load% obj 16 %actor% inv
     %send% %actor% Gives you the quest timer.
     %echoaround% %actor% %self.name% gives %actor.name% the quest timer.
@@ -687,7 +714,7 @@ while %word%
   elseif object /= %word% || find /= %word%
     say Go find the quest token and return it to me. You only have 10 minutes %actor.name%!
     %load% o 15
-    %at% %loadroom% drop quest
+    %at% %loadroom% drop quest_token_zone_1
     %load% obj 16 %actor% inv
     %send% %actor% Gives you the quest timer.
     %echoaround% %actor% %self.name% gives %actor.name% the quest timer.
@@ -695,6 +722,8 @@ while %word%
     remote on_quest_zone_1 %actor.id%
     halt
   end
+  * End of the loop we need to take the next word in the string and save the 
+  * remainder for the next pass.
   eval word %rest.car%
   eval rest %rest.cdr%
 done
@@ -703,9 +732,13 @@ done
 Quest Timer - 16~
 1 c 7
 l~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Part of a timed quest to kill a mob or find an object. Trigs 138-144.
+* Let a player see how much time they have left.
 if %cmd.mudcommand% == look && timer /= %arg%
-  return 0
   %send% %actor% You have %self.timer% minutes remaining.
+  * Let the look timer command still go through so they look at it.
+  return 0
 else
   return 0
 end
@@ -714,60 +747,75 @@ end
 Quest 10 min Purge - 15, 16, 17~
 1 f 100
 ~
-* Attached to quest objects 15-17. Purges itself 10 minutes after loading if player does not
-* finish the quest. Part of a quest from room 113.
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Part of a timed quest to kill a mob or find an object. Trigs 138-144.
+* Attached to quest objects 15-17. Purges itself 10 minutes after loading if 
+* player does not finish the quest.
+* Make sure timer is being carried by a player.
 if %self.carried_by%
   set actor %self.carried_by%
   if %actor.is_pc%
     %send% %actor% Your quest time has run out. Try again.
+    * Delete the on quest variable so they can try again.
     rdelete on_quest_zone_1 %actor.id%   
   end
 end
+* Purge the timer.
 %purge% %self%
 ~
 #142
 Quest Timer Random - 16~
 1 b 10
 ~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Part of a timed quest to kill a mob or find an object. Trigs 138-144.
+* If timer is being carried by a player, warn them every 2 minutes.
 if %self.carried_by%
   set actor %self.carried_by%
-  %send% %actor% You have %self.timer% minutes remaining.
+  if %actor.is_pc%
+    %send% %actor% You have %self.timer% minutes remaining.
+  end
 end
 ~
 #143
 Questmaster Receive - 3~
 0 j 100
 ~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Part of a timed quest to kill a mob or find an object. Trigs 138-144.
+* Check if they are on the quest.
 if !%actor.varexists(on_quest_zone_1)%
   say You are not even on a quest %actor.name%.
+  * Stop the trig and prevent the item from being given to the mob.
   halt
 end
 *
 wait 1 sec
+* If they have the head or the token.
 if %object.vnum% == 15 || %object.vnum% == 17
   say Well done, %actor.name%.
+  * Give them 50 gold and experience. Delete the on quest variable and purge.
   nop %actor.exp(50)%
   nop %actor.gold(50)%
   rdelete on_quest_zone_1 %actor.id%   
   %purge% %object%
-  if %actor.varexists(questpoints)%
-    eval questpoints %actor.questpoints% + 1
-    remote questpoints %actor.id%
-  else
-    set questpoints 1
-    remote questpoints %actor.id%
-  end
-  say you have earned 50 gold, 50, experience points and 1 questpoint.
+  * Reward them with 1 questpoint. Cheap I know but these quests are not hard.
+  nop %actor.questpoints(1)%
+  say you have earned 50 gold, 50 xp, 1 questpoint %actor.name%.
 else
   say I don't want that!
-  %purge% %object%
+  * Don't accept the object to prevent overloading the mob with junk.
+  return 0.
 end
 ~
 #144
 Quest Mob Loads Head - 15~
 0 n 100
 ~
-*This is a load instead of a death trig because I want the head to purge 10 minutes after loading.
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Part of a timed quest to kill a mob or find an object. Trigs 138-144.
+* This is a load instead of a death trig because I want the head to purge 10 
+* minutes after loading.
 %load% obj 17
 ~
 #145
@@ -1185,6 +1233,9 @@ done
 Mob Questshop Example~
 0 c 100
 *~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A questshop that uses questpoints!
+* Command triggers do not work for level 32 and above.
 if %cmd.mudcommand% == list
   *
   %send% %actor%  ##   Available   Item                                Cost in Questpoints
@@ -1194,10 +1245,6 @@ if %cmd.mudcommand% == list
   %send% %actor%   3)  Unlimited   the staff of spellfire                              100
   *
 elseif %cmd.mudcommand% == buy
-  if !%actor.varexists(questpoints)% 
-    tell %actor.name% You have no questpoints!
-    halt
-  end
   if War /= %arg% || Blood /= %arg% || %arg% == 1
     set quest_item 21
     set quest_item_cost 100
@@ -1217,8 +1264,7 @@ elseif %cmd.mudcommand% == buy
   else
     %load% obj %quest_item% %actor% inv
     tell %actor.name% here you go.
-    eval questpoints %actor.questpoints% - %quest_item_cost%
-    remote questpoints %actor.id%
+    nop %actor.questpoints(-%quest_item_cost%)
   end
 elseif %cmd.mudcommand% == sell
   tell %actor.name% I don't want anything you have.
@@ -1518,7 +1564,7 @@ set  text[47]  When Chuck Norris exercises, the machine gets stronger.
 set  text[48]  Chuck Norris is allowed to talk about Fight Club.
 set  text[49]  The only thing we have to fear is fear itself... The only thing fear has to fear is Chuck Norris.
 set  text[50]  Chuck Norris clogs the toilet even when he pisses.
-set  text[51]  A blind man once stepped on Chuck Norris' shoe. Chuck replied, "Don't you know who I am? I'm Chuck Norris!" The mere mention of his name cured this man blindness. Sadly the first, last, and only thing this man ever saw, was a fatal roundhouse delivered by Chuck Norris.
+set  text[51]  A blind man once stepped on Chuck Norris' shoe. Chuck replied, "Don't you know who I am? I'm Chuck Norris!" The mere mention of his name cured the mans blindness. Sadly the first, last, and only thing this man ever saw, was a fatal roundhouse delivered by Chuck Norris.
 set  text[52]  The most effective form of suicide known to man is to type "Chuck Norris" into Google and hit "I'm Feeling Lucky!".
 set  text[53]  Chuck Norris never gets brain freeze. Slurpees know when to back off.
 set  text[54]  Chuck Norris got in touch with his feminine side, and promptly got her pregnant.
@@ -1874,7 +1920,7 @@ set txt[4] At its best, citizenship finds an equilibrium between two essential i
 set txt[5] Ariel and Will Durant said it best, "Freedom and equality are sworn enemies, when one prevails the other dies."
 set txt[6] As a people we have become soft. Stress isn't a bad thing. It is actually good for you, particularly the kind that comes from physical exercise.
 set txt[7] The Durants also said, "What determines whether the challenge of history will or will not be met depends upon the presence or absence of creative individuals with a clarity of mind and energy of will, capable of effective responses to new situations.
-set txt[8] once on learns to accomodate the shocks of a stressful existence, his adrenalin, will power, and imagination are going to start churning to provide the maximum performance of the human mind.
+set txt[8] once one learns to accomodate the shocks of a stressful existence, his adrenalin, will power, and imagination are going to start churning to provide the maximum performance of the human mind.
 set txt[9] would a good soldier fighting a tough battle stop to say to himself how unhappy he is?
 set txt[10] Remember Herman Melville? " In time of peril, like the needle to the lodestone, obedience, irrespective of rank, generally flies to him who is best fitted to command.
 set txt[11] There is no evidence that the way of the World assures the punishment of evil or the reward of virtue.

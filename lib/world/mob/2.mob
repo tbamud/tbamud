@@ -160,4 +160,33 @@ bdnopqr 0 0 E
 8 8 2
 E
 T 167
+#211
+phoenix~
+the phoenix~
+A phoenix looks up at you with intelligent eyes.
+~
+   This beautiful and magical bird is the source of many tales.  Most so
+outrageous they can't be true, or can they?
+~
+bd 0 0 E
+3 19 8 0d0+30 1d2+0
+0 900
+8 8 0
+E
+T 203
+#212
+pirate parrot~
+a parrot with an eye patch~
+This parrot seems to have lost his pirate. He squawks incessantly.
+~
+   The parrot paces back and forth with a look of authority.  The usual
+scratching of its small feet is punctuated by a thudding.  Upon closer
+inspection the parrot has a wooden leg and an eye patch!
+~
+bd 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+E
+T 204
 $

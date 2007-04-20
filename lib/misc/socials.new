@@ -568,36 +568,6 @@ $n blinks at your $t.
 You blinks at $p.
 $n blinks at $p.
 
-~blink2 blink2 0 5 8 0
-#
-This action is unfinished.
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-
-~bloink bloink 0 5 0 0
-Who do you want to boink?
-$n looks around, puzzled.
-You boink $M.
-$n boinks $N with ultimate passion.
-$n boinks you passionately.
-Who's that?
-You boink yourself on the head.
-*YUCK* $n boinks $mself on the head.
-You boink $S $t.
-$n boinks $N's $t.
-$n boinks your $t.
-You boink $p.
-$n boinks $p.
-
 ~bloob bloob 0 0 8 0
 You tell a story about a bloober, you once saw.
 $n bloobs out about nothing and everything.
@@ -687,6 +657,21 @@ $n seems to be boggled over $N's $t.
 $n boggles over your $t.
 You are boggled by $p.
 $n seems to be boggled over $p.
+
+~boink boink 0 5 0 0
+Who do you want to boink?
+$n looks around, puzzled.
+You boink $M.
+$n boinks $N with ultimate passion.
+$n boinks you passionately.
+Who's that?
+You boink yourself on the head.
+*YUCK* $n boinks $mself on the head.
+You boink $S $t.
+$n boinks $N's $t.
+$n boinks your $t.
+You boink $p.
+$n boinks $p.
 
 ~bonk bonk 0 5 0 0
 Whom do you wish to bonk on the head?
@@ -5968,21 +5953,6 @@ $n playfully splashes water at your $t...... going to take that?
 You splash $p with water, trying to clean off those nasty bloodstains. 
 $n splashes $p with water, and starts to wash away an imaginary bloodstain.
 
-~spondebath spondebath 0 0 8 0
-This action is unfinished.
-This action is unfinished.
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-
 ~spongebath spongebath 0 6 0 0
 You demand a sponge bath.
 $n demands a sponge bath.
@@ -6301,7 +6271,7 @@ $n swears at $p.
 ~sweat sweat 0 5 0 0
 Cool down?
 $n sweats a river!
-You look at $s and break out into a sweat.
+You look at $S and break out into a sweat.
 $n looks at $N and breaks out in a sweat.
 $n looks at you and starts sweating.
 You break out in a sweat.

@@ -5,7 +5,7 @@ Non-attachable trigger~
 * You can't attach trigger 0!
 ~
 #1
-Mob Tutorial Example Quest Offer - 14~
+Mob Tutorial Example Quest Offer - M14~
 0 g 100
 ~
 * we don't want him to tell this to mobs. Check if actor is a player.
@@ -93,85 +93,98 @@ else
 end
 ~
 #6
-Obj Command Magic Eight Ball - 47~
-1 c 100
+Obj Command Magic Eight Ball - O47~
+1 c 2
 shake~
-* Numeric Arg: 2 means in character's carried inventory
-* does not work for level 32 and above.
+* By Rumble of The Builder Academy builderacademy.net 9091
+* Numeric Arg: 2 means in character's carried inventory.
+* Command trigs do not work for level 32 and above.
 * There are 20 possible answers that the Magic Eight Ball can give. 
 * Of these, nine are full positive, two are full negative, one is 
 * mostly positive, three are mostly negative, and five are abstentions. 
 *
+* Check arguments if they match. /= checks abbreviations.
 if ball /= %arg% || eightball /= %arg%
-  %echoaround% %actor% %actor.name% shakes the magic eight ball vigorously.
-  %send% %actor% You shake the magic eight ball vigorously.
+  * Echo text to everyone else in the room and the actor.
+  %echoaround% %actor% %actor.name% shakes %self.shortdesc% vigorously.
+  %send% %actor% You shake %self.shortdesc% vigorously.
+  * Use a switch to choose a random response (1-20).
   switch %random.20%
+    * Send the answer! %self% is the 8ball, or whatever the trig is attached to.
+    * Only the actor sees the answer.
+    * Case is what we are trying to match. Does %random.20% == 1? 
     case 1
-      %send% %actor% The magic eight ball reveals the answer: Outlook Good 
+      %send% %actor% %self.shortdesc% reveals the answer: Outlook Good 
+      * We are done with this case so check the next one.
     break
     case 2
-      %send% %actor% The magic eight ball reveals the answer: Outlook Not So Good 
+      %send% %actor% %self.shortdesc% reveals the answer: Outlook Not So Good 
     break
     case 3
-      %send% %actor% The magic eight ball reveals the answer: My Reply Is No
+      %send% %actor% %self.shortdesc% reveals the answer: My Reply Is No
     break
     case 4
-      %send% %actor% The magic eight ball reveals the answer: Don't Count On It
+      %send% %actor% %self.shortdesc% reveals the answer: Don't Count On It
     break
     case 5
-      %send% %actor% The magic eight ball reveals the answer: You May Rely On It
+      %send% %actor% %self.shortdesc% reveals the answer: You May Rely On It
     break
     case 6
-      %send% %actor% The magic eight ball reveals the answer: Ask Again Later
+      %send% %actor% %self.shortdesc% reveals the answer: Ask Again Later
     break
     case 7
-      %send% %actor% The magic eight ball reveals the answer: Most Likely 
+      %send% %actor% %self.shortdesc% reveals the answer: Most Likely 
     break
     case 8
-      %send% %actor% The magic eight ball reveals the answer: Cannot Predict Now
+      %send% %actor% %self.shortdesc% reveals the answer: Cannot Predict Now
     break
     case 9
-      %send% %actor% The magic eight ball reveals the answer: Yes 
+      %send% %actor% %self.shortdesc% reveals the answer: Yes 
     break
     case 10
-      %send% %actor% The magic eight ball reveals the answer: Yes, definitely
+      %send% %actor% %self.shortdesc% reveals the answer: Yes, definitely
     break
     case 11
-      %send% %actor% The magic eight ball reveals the answer: Better Not Tell You Now 
+      %send% %actor% %self.shortdesc% reveals the answer: Better Not Tell You Now 
     break
     case 12
-      %send% %actor% The magic eight ball reveals the answer: It Is Certain
+      %send% %actor% %self.shortdesc% reveals the answer: It Is Certain
     break
     case 13
-      %send% %actor% The magic eight ball reveals the answer: Very Doubtful
+      %send% %actor% %self.shortdesc% reveals the answer: Very Doubtful
     break
     case 14
-      %send% %actor% The magic eight ball reveals the answer: It Is Decidedly So
+      %send% %actor% %self.shortdesc% reveals the answer: It Is Decidedly So
     break
     case 15
-      %send% %actor% The magic eight ball reveals the answer: Concentrate And Ask Again
+      %send% %actor% %self.shortdesc% reveals the answer: Concentrate And Ask Again
     break
     case 16
-      %send% %actor% The magic eight ball reveals the answer: Signs Point To Yes 
+      %send% %actor% %self.shortdesc% reveals the answer: Signs Point To Yes 
     break
     case 17
-      %send% %actor% The magic eight ball reveals the answer: My Sources Say No 
+      %send% %actor% %self.shortdesc% reveals the answer: My Sources Say No 
     break
     case 18
-      %send% %actor% The magic eight ball reveals the answer: Without A Doubt 
+      %send% %actor% %self.shortdesc% reveals the answer: Without A Doubt 
     break
     case 19
-      %send% %actor% The magic eight ball reveals the answer: Reply Hazy, Try Again
+      %send% %actor% %self.shortdesc% reveals the answer: Reply Hazy, Try Again
     break
     case 20
-      %send% %actor% The magic eight ball reveals the answer: As I See It, Yes
+      %send% %actor% %self.shortdesc% reveals the answer: As I See It, Yes
     break
+    * Every switch should have a default. A catch-all if the cases do not match.
     default
-      %send% %actor% The magic eight ball explodes since your question is unanswerable.
+      %send% %actor% %self.shortdesc% explodes since your question is unanswerable.
     break
+    * Every switch must have a done! Just like every if needs an end!
   done
+  * The actor didn't use the command shake with arg ball or eightball.
 else
-  %send% %actor% shake What?
+  * Return 0 allows the command to continue through to the MUD. The player will 
+  * get the Huh!?! response or the shake social if you have one.
+  return 0
 end
 ~
 #7
@@ -495,34 +508,63 @@ end
 * end
 ~
 #23
-Object While Damage Example~
+While Damage Example - Grenade O1301~
 1 h 100
 ~
-* By Rumble
-* A script to make a bomb go off 3 seconds after it is dropped.
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A small script to make a grenade go off 3 seconds after it is dropped.
+* Set the rooms ID to a variable.
 set room_var %actor.room%
-* Wait, then send a message when the bomb goes off.
 wait 3 s
+* Send a message when the bomb goes off.
 %echo% The Grenade blasts into smithereens, striking everyone here.
-* Target the first char
+* Target the first char.
 set target_char %room_var.people%
-* Do stuff
+* Now loop through everyone in the room and hurt them.
+while %target_char%
+  %send% %actor% People: %target_char.name%
+  %send% %actor% Next_in_room: %self.next_in_room%
+  * Set the next target before this one perhaps dies.
+  set tmp_target %target_char.next_in_room%
+  * This is where the good/bad things are supposed to happen.
+  %send% %target_char% The explosion hurts you.
+  * Damage them... 30 hitpoints. To heal use -#.
+  %damage% %target_char% 30
+  * Set the next target.
+  set target_char %tmp_target%
+  * Loop back.
+done
+* After we go through everyone get rid of the grenade.
+%purge% %self%
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A small script to make a grenade go off 3 seconds after it is dropped.
+* Set the rooms ID to a variable.
+set room_var %actor.room%
+wait 3 s
+* Send a message when the bomb goes off.
+%echo% The Grenade blasts into smithereens, striking everyone here.
+* Target the first char.
+set target_char %room_var.people%
+* Now loop through everyone in the room and hurt them.
 while %target_char%
   * Set the next target before this one perhaps dies.
   set tmp_target %target_char.next_in_room%
   * This is where the good/bad things are supposed to happen.
   %send% %target_char% The explosion hurts you.
+  * Damage them... 30 hitpoints. To heal use -#.
   %damage% %target_char% 30
-  * Find next target
+  * Set the next target.
   set target_char %tmp_target%
-  * Loop back
+  * Loop back.
 done
+* After we go through everyone get rid of the grenade.
+%purge% %self%
 ~
 #24
 Room While Teleport Example~
 2 b 100
 ~
-* By Rumble
+* By Rumble of The Builder Academy    builderacademy.net 9091
 * Target the first person or mob in the room.
 eval person %self.people%
 wait 1 sec
@@ -1196,14 +1238,14 @@ Container with Personal Key~
 *~
 * By Jamie Nelson from the forum http://groups.yahoo.com/group/dg_scripts/
 * Container script for use with no key
-if %actor.is_pc%
+if !%actor.is_pc%
   return 0 
   halt
 end
 *
 switch %cmd%
   case codeset
-    if %actor.name% != test
+    if %actor.name% != rumble
       %send% %actor% I am sorry %actor.name%, only Rumble can set the code.
       halt
     end
@@ -1424,87 +1466,25 @@ else
 end
 ~
 #49
-free~
-1 c 2
-shake~
-* By Rumble
-* Numeric Arg: 2 means in character's carried inventory
-* does not work for level 32 and above.
-* There are 20 possible answers that the Magic Eight Ball can give. 
-* Of these, nine are full positive, two are full negative, one is 
-* mostly positive, three are mostly negative, and five are abstentions. 
+Eval and Set Example~
+2 d 100
+test~
+* By Rumble of The Builder Academy builderacademy.net 9091
+* This is a speech trig @RHELP TRIGEDIT ROOM SPEECH@n, say 'test' to activate.
+* There is much confusion about the difference between set and eval. So this is
+* the simplest way I can think of to explain it (assume %actor.level% = 34):
 *
-if %arg% /= ball || %arg% /= eightball
-  %echoaround% %actor.name% %actor.name% shakes the magic eight ball vigorously.
-  %send% %actor% You shake the magic eight ball vigorously.
-    switch %random.20%
-      case 1
-        %send% %actor% The magic eight ball reveals the answer: Outlook Good 
-      break
-      case 2
-        %send% %actor% The magic eight ball reveals the answer: Outlook Not So Good 
-      break
-      case 3
-        %send% %actor% The magic eight ball reveals the answer: My Reply Is No
-      break
-      case 4
-        %send% %actor% The magic eight ball reveals the answer: Don't Count On It
-      break
-      case 5
-        %send% %actor% The magic eight ball reveals the answer: You May Rely On It
-      break
-      case 6
-        %send% %actor% The magic eight ball reveals the answer: Ask Again Later
-      break
-      case 7
-        %send% %actor% The magic eight ball reveals the answer: Most Likely 
-      break
-      case 8
-        %send% %actor% The magic eight ball reveals the answer: Cannot Predict Now
-      break
-      case 9
-        %send% %actor% The magic eight ball reveals the answer: Yes 
-      break
-      case 10
-        %send% %actor% The magic eight ball reveals the answer: Yes Definately
-      break
-      case 11
-        %send% %actor% The magic eight ball reveals the answer: Better Not Tell You Now 
-      break
-      case 12
-        %send% %actor% The magic eight ball reveals the answer: It Is Certain
-      break
-      case 13
-        %send% %actor% The magic eight ball reveals the answer: Very Doubtful
-      break
-      case 14
-        %send% %actor% The magic eight ball reveals the answer: It Is Decidedly So
-      break
-      case 15
-        %send% %actor% The magic eight ball reveals the answer: Concentrate And Ask Again
-      break
-      case 16
-        %send% %actor% The magic eight ball reveals the answer: Signs Point To Yes 
-      break
-      case 17
-        %send% %actor% The magic eight ball reveals the answer: My Sources Say No 
-      break
-      case 18
-        %send% %actor% The magic eight ball reveals the answer: Without A Doubt 
-      break
-      case 19
-        %send% %actor% The magic eight ball reveals the answer: Reply Hazy, Try Again
-      break
-      case 20
-        %send% %actor% The magic eight ball reveals the answer: As I See It, Yes
-      break
-      default
-        %send% %actor% The magic eight ball explodes since your question is unanswerable.
-      break
-    done
-else
-%send% %actor% shake What?
-end
+* Set stores the variable and will not process it until called.
+* In the example below %set_variable% will contain '34 + 1' 
+set set_variable %actor.level% + 1
+%echo% Set Variable: %set_variable%
+*
+* Eval immediately evaluates the variable. 
+* In the example below %eval_variable% will contain '35'
+eval eval_variable %actor.level% + 1
+%echo% Eval Variable: %eval_variable%
+*
+%echo% Level: %actor.level%
 ~
 #50
 Room Global Random Example~
@@ -1533,16 +1513,8 @@ Room Random Example~
 * Fires only when a player is in the room.
 * Actor is not defined with random, so lets define it.
 set actor %random.char%
-%damage% %actor% -100
+%damage% %actor% -10
 %echo% A healing breeze flows through the room.
-* Example by Snowlock
-* %echo% The pungent fumes burn your lungs!
-* set target_char %self.people%
-* while %target_char%
-*   set tmp_target %target_char.next_in_room%
-*   %damage% %target_char% 3
-*   set target_char %tmp_target%
-* done
 ~
 #52
 Room Command Example~
@@ -2107,8 +2079,6 @@ eval thing %self.name.car%
 %echo% IT, YOU, HE/SHE:         &%thing%
 %echo% IT, YOU, HIM/HER:        *%thing%
 %echo% ITS, YOUR' HIS/HER:      ^%thing%
-* object only
-%echo% SOMETHING, NAME          '%thing%
 ~
 #92
 Room Command Combination Lock~

@@ -243,8 +243,9 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
     return (TRUE);
 
   /* always access if a player helped build the zone in the first place */
-  if (is_name(GET_NAME(ch), zone_table[rnum].builders))
-    return (TRUE);
+  if (rnum != HEDIT_PERMISSION && rnum != AEDIT_PERMISSION)
+    if (is_name(GET_NAME(ch), zone_table[rnum].builders))
+      return (TRUE);
 
   /* no access if you haven't been assigned a zone */
   if (GET_OLC_ZONE(ch) == NOWHERE) {

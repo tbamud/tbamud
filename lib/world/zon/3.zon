@@ -2,6 +2,7 @@
 Rumble~
 Sanctus III~
 300 399 30 2
+O 0 335 1 334 	(the large fountain)
 M 0 30 3 343 	(the spy for the underground)
 M 0 99 1 367 	(Death)
 E 1 99 1 16 	(the Scythe of Death)
@@ -20,8 +21,8 @@ M 0 198 2 340 	(a temple cleric)
 M 0 125 3 340 	(the young girl)
 M 0 170 3 340 	(the townsman)
 G 1 176 99 -1 	(a cancer stick)
-D 0 338 3 1 	(The Clerics Quarter)
-D 0 338 2 1 	(The Clerics Quarter)
+D 0 338 3 1 	(The Clerics' Quarters)
+D 0 338 2 1 	(The Clerics' Quarters)
 M 0 190 3 338 	(the cat)
 G 1 174 99 -1 	(a nasty hairball)
 R 0 333 164 -1 	(some beggin strips)

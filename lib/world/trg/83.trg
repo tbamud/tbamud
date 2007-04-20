@@ -21,7 +21,7 @@ Small Fish (8301) Schooling~
 if %actor.vnum% == 8301
   follow %actor%
 else
-  end
+end
 ~
 #8302
 Large Fish (8302) chase Small Fish (8301)~

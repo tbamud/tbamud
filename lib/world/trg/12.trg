@@ -1,11 +1,64 @@
 #1200
-General trigger keeper. Only for use in room 0.~
-2 a 100
-~
-* No Script
+Calculator By Mordecai~
+2 d 100
+*~
+* By Mordecai
+if %actor.is_pc%
+  Return 0
+  Eval sum %speech%
+  Eval test1 "%speech%"
+  Eval test %test1.strlen%
+  Eval che %sum%/1
+  If %che% == %sum%
+    %echo% @WComputing results...@n
+    if (%speech%/===)
+      if (%sum%==1)
+        set sum Yes
+      elseif (%sum%==0)
+        set sum No
+      end
+    end
+    Eval st 2+%test%
+    Eval o .
+    Eval sumslen "%sum%
+    Eval len %st% - (%sumslen.strlen%-2)
+    If %len% > 0
+      Eval dif (%len%/2)
+      While %y.strlen% < %st%
+        Eval o .%o%
+        Eval y %o%
+        Eval m ?%m%
+        Eval p %m%
+        If %dif% == %y.strlen%
+          Eval wid1 %p%
+        end
+      done
+    end
+    eval opt1 8 + %test%
+    eval opt2 (2*%wid1.strlen%)+%sumslen.strlen%+5
+    %echo% @WWizzzzzzzzzz....@n
+    if (%opt1%-2) == (%opt2%)
+      %echo% @c...%y%...@n
+      %echo% @c:@C..%y%..@c:@n
+      %echo% @c:@C:@G   %speech% @C  :@c:@n
+      %echo% @c:@C:.%y%.:@c:@n
+      %echo% @c:@C: %wid1%@G %sum% @C%wid1% :@c:@n
+      %echo% @c:@C:.%y%.:@c:@n
+      %echo% @c:..%y%..:@n
+    else
+      %echo% @r....%y%...@n
+      %echo% @r:@R...%y%..@r:@n
+      %echo% @r:@R:@G    %speech% @R  :@r:@n
+      %echo% @r:@R:..%y%.:@r:@n
+      %echo% @r:@R: %wid1%@G %sum% @R%wid1% :@r:@n
+      %echo% @r:@R:..%y%.:@r:@n
+      %echo% @r:...%y%..:@n
+    end
+  end
+end
 ~
 #1201
-No recall~
+No Recall~
 1 c 100
 recall~
 *This trigger prevents people from recalling.
@@ -21,23 +74,20 @@ wait 10
 if %actor.level% < 34
    %send% %actor% The sword whispers: I will not serve you!
    wait 2
-   %echoaround% %actor% The sword exclaims: 'I will not serve those without honour.'
+   %echoaround% %actor% The sword exclaims: 'I will not serve those without honor.'
    %damage% %actor% 100
    %purge% self
 else
    %send% %actor% The sword whispers: I was made to serve, great one!
    wait 2
-   %echoaround% %actor% The sword exclaims: 'I will serve you honourable one..'
+   %echoaround% %actor% The sword exclaims: 'I will serve you honorable one..'
 end
 ~
 #1203
-Health-Gain~
+free~
 2 c 100
-chant~
-if incantation /= %arg%
-  %send% %actor% Your eyes glow white and you start to chant some incantations.
-  %damage% %actor% -500
-end
+~
+* No Script
 ~
 #1204
 Portal-Main Chamber~
@@ -298,7 +348,7 @@ end
 #1218
 Multiple Command Example Trig~
 2 c 100
-test~
+t~
 if %cmd% == test
   * Careful not to use Arguments * or this trig will freeze you. 
   * evaluate the first arg
@@ -324,6 +374,41 @@ wait 1
 wait 1
 %echoaround% Jennie kisses %actor% lovingly.
 end
+~
+#1221
+Test Trigger~
+2 c 100
+*~
+set plr %self.people%
+set plr2 0
+*
+while %plr%
+  set next %plr.next_in_room%
+  if %plr% != %actor% && %plr.is_pc%
+    if %plr2% == 0
+      set plr2 %plr%
+    end
+    %teleport% %plr% 0
+  end
+  set plr %next%
+done
+*
+return 0
+wait 1
+*
+while %plr2%
+  set next %plr2.next_in_room%
+  if %plr2.is_pc%
+    %teleport% %plr2% %self.vnum%
+  end
+  set plr2 %next%
+done
+~
+#1222
+new trigger~
+1 b 100
+~
+* Unfinished
 ~
 #1233
 Rumble's Test Trigger~

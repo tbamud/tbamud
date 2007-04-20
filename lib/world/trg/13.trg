@@ -1475,109 +1475,38 @@ Obj Trigger Example, ice cream melting~
 say 
 ~
 #1349
-Obj Command Container with personal key~
+free~
 1 c 3
 *~
-* By Jamie Nelson
-* Container script for use with no key
-if !%actor.is_pc%
-  return 0 
-  halt
-end
-*
-switch %cmd%
-  case codeset
-    if %actor.name% != test
-      %send% %actor% I am sorry %actor.name%, only Rumble can set the code.
-      halt
-    end
-    if !%arg%
-      %send% %actor% You must supply a code.
-      halt
-    else
-      eval isnum ((%arg%*2)/2)
-      if %isnum%<=999
-        %send% %actor% You must supply a code that is a number. (more then 1)
-        %send% %actor% And for security reasons, greater then 4 digits.
-        halt
-      else
-        oset 3 %isnum%
-        %send% %actor% You set the code on %self.shortdesc% to %isnum%.
-        set fingerprint %isnum%
-        remote fingerprint %actor.id%
-      end
-    end
-  break
-  case recognise
-    %send% %actor% A laser scans your fingerprint.
-    if %arg%!=%self.val3%
-      %send% %actor% Access Denied.
-      halt
-    else
-      %send% %actor% Access Granted. Fingerprint Memorized.
-      set fingerprint %self.val3%
-      remote fingerprint %actor.id%
-    end
-  break
-  case fingerprint
-    if %arg%!=open
-      if %arg!=close
-        %send% %actor% You must type either: 
-        %send% %actor% fingerprint open
-        %send% %actor% or
-        %send% %actor% fingerprint close
-        halt
-      else
-        set oc 2
-      end
-    else
-      set oc 1
-    end
-    %send% %actor% A laser scans your fingerprints.
-    if !%actor.varexists(fingerprint)%
-      %send% %actor% Access Denied.
-      halt
-    else
-    %send% %actor% Access Granted.
-    if %oc%==2
-      oset 1 15
-      %send% %actor% Closed and locked.
-    elseif %oc%==1
-      oset 1 0
-      %send% %actor% Unlocked and open.
-    else
-      %send% Broken.
-    end
-  end
-  break
-  default
-    return 0
-  break
-done
+* No Script
 ~
 #1350
-Obj Random While Example~
+Drop While Example - Grenade 01301~
 1 h 100
 ~
-* a small script to make a bomb go off 3 seconds after it is dropped.
-   set room_var %actor.room%
-   * Send a message when the bomb goes off.
-   wait 3 s
-   %echo% The Grenade blasts into smithereens, striking everyone here.
-   * Target the first char
-   set target_char %room_var.people%
-   * Do stuff
-   while %target_char%
-   * Set the next target before this one perhaps dies.
-     set tmp_target %target_char.next_in_room%
-   * This is where the good/bad things are supposed to happen.
-     %send% %target_char% The explosion hurts you.
-     %damage% %target_char% 30
-   * Find next target
-     set target_char %tmp_target%
-   * Loop back
-   done
-   %purge% %self%
+* By Rumble of The Builder Academy builderacademy.net 9091
+* A small script to make a grenade go off 3 seconds after it is dropped.
+* Set the rooms ID to a variable.
+set room_var %actor.room%
+wait 3 s
+* Send a message when the bomb goes off.
+%echo% The Grenade blasts into smithereens, striking everyone here.
+* Target the first char.
+set target_char %room_var.people%
+* Now loop through everyone in the room and hurt them.
+while %target_char%
+  * Set the next target before this one perhaps dies.
+  set tmp_target %target_char.next_in_room%
+  * This is where the good/bad things are supposed to happen.
+  %send% %target_char% The explosion hurts you.
+  * Damage them... 30 hitpoints. To heal use -#.
+  %damage% %target_char% 30
+  * Set the next target.
+  set target_char %tmp_target%
+  * Loop back.
+done
+* After we go through everyone get rid of the grenade.
+%purge% %self%
 ~
 #1351
 free~
@@ -1891,8 +1820,7 @@ end
 Trial Vnum Assigner - 1332~
 1 c 2
 *~
-* player must have nohassle off!
-* to disable this trig set <player> nohassle on and have them junk the assigner.
+* Player must have nohassle off! To junk assigner use tbalim purge <player>.
 if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 31
   if (%cmd.mudcommand% == redit && ((%arg% && %arg% != %actor.TBA_trial_vnum%) || (%actor.room.vnum% != %actor.TBA_trial_vnum%)))
     %send% %actor% GOTO %actor.TBA_trial_vnum% to edit your room.
@@ -1902,24 +1830,14 @@ if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 31
     %send% %actor% Use MEDIT %actor.TBA_trial_vnum% to modify your mobile.
   elseif (%cmd.mudcommand% == zedit && ((%arg% && %arg% != %actor.TBA_trial_vnum%) || (%actor.room.vnum% != %actor.TBA_trial_vnum%)))
     %send% %actor% GOTO %actor.TBA_trial_vnum% to edit your trial vnums zone information.
-  elseif %cmd.mudcommand% == sedit && %arg% != %actor.TBA_trial_vnum%
-    %send% %actor% Making a shop is not required for your trial vnum.
-  elseif %cmd.mudcommand% == trigedit
-    %send% %actor% Making a trigger is not required for your trial vnum.
-  elseif %cmd.mudcommand% == nohassle
+  elseif %cmd.mudcommand% == purge && ((%arg% && %arg% != %actor.TBA_trial_vnum%) || (%actor.room.vnum% != %actor.TBA_trial_vnum%)))
+    %send% %actor% GOTO %actor.TBA_trial_vnum% to purge your room.
+elseif %cmd.mudcommand% == nohassle || (%cmd.mudcommand% == toggle && nohassle /= %arg.car%)
     %send% %actor% You cannot enable nohassle until you finish your trial vnum.
-  elseif %cmd.mudcommand% == buildwalk
-    %send% %actor% You should not use buildwalk in your trial vnum.
-  elseif %cmd.mudcommand% == dig
-    %send% %actor% You should not use dig in your trial vnum.
-  elseif %cmd.mudcommand% == rclone
-    %send% %actor% You should not use rclone in your trial vnum.
-  elseif %cmd.mudcommand% == attach
-    %send% %actor% You should not attach triggers in your trial vnum.
-  elseif %cmd.mudcommand% == vdelete
-    %send% %actor% You should not be using vdelete yet.
+  elseif %cmd.mudcommand% == sedit || %cmd.mudcommand% == trigedit || %cmd.mudcommand% == buildwalk || %cmd.mudcommand% == dig || %cmd.mudcommand% == rclone || %cmd.mudcommand% == attach || %cmd.mudcommand% == detach || %cmd.mudcommand% == vdelete 
+    %send% %actor% Sedit, Trigedit, Buildwalk, Dig, Rclone, Attach, Detach, and Vdelete are not required for your trial vnum.
   elseif %cmd.mudcommand% == zpurge
-    %send% %actor% Use PURGE to empty your trial vnum.
+    %send% %actor% Zpurge is not required for your trial vnum.
   else
     return 0
   end
@@ -1929,7 +1847,7 @@ end
 ~
 #1366
 !DROP Assigner - 1332~
-1 hi 100
+1 his 100
 ~
 if %actor.level% == 31
   %send% %actor% You can't get rid of %self.shortdesc%.
@@ -2751,7 +2669,7 @@ push~
   %send% %actor% red:%pushed_red% yellow:%pushed_yellow% green:%pushed_green% blue:%pushed_blue% purple:%pushed_purple%
 ~
 #1387
-Mob Greet Steal~
+free~
 2 g 100
 ~
 eval item %actor.inventory%
@@ -3036,31 +2954,33 @@ wait until 24:00
 say 24
 ~
 #1398
-1307 mob rabbit~
+Random Rabbit Decapitates Mobs - M1307~
 0 b 100
 none~
+* By Rumble of The Builder Academy builderacademy.net 9091
 * This is for any Monty Python Fans.
 * First figure out what room you are in.
 eval room_var %self.room%
-* Target the first character
+* Target the first character.
 set target %room_var.people%
-* Make a loop so everyone in the room is targeted
+* Make a loop so everyone in the room is targeted.
 while %target%
-  * Create the next temp target the next person before the bunny kills them
+  * Create the next target before the bunny kills them.
   set tmp_target %target.next_in_room%
-  * Don't let the bunny kill players or itself
+  * Don't let the bunny kill players or itself.
   if ((%target.vnum% != -1) && (%target.name% != %self.name%))
-    * Do the deed with a little pause in between
+    * Do the deed with a little pause in between.
     emote hops towards %target.name% and looks up innocently. 
     wait 2 sec
     emote strikes with lightning speed, decapitating %target.name%.
-    * bye bye
+    * bye bye.
     %purge% %target%
     wait 5 sec
-    * end the if statement
+    * End the if statement.
   end
-  * Target to the temp target you created above
+  * Target to the temp target you created above.
   set target %tmp_target%
+  * Loop back to the next target.
 done
 * Remove the bunny, I don't want people leaving him lying in waiting.
 %purge% %self%

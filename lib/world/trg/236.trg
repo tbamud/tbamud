@@ -62,82 +62,80 @@ if %inroom.vnum% == 23653
   set foreman_leaving 1
   global foreman_leaving
 end
- 
 if %inroom.vnum% == 23664
   set foreman_leaving 0
   global foreman_leaving
 end
- 
 if %foreman_leaving%
   switch %inroom.vnum%
-* start room 23653
+    * start room 23653
     case 23653
       open door
       wait 1
       east
       wait 1
       close door
-      break
+    break
     case 23630
-    case 23662
-    case 23629
-    case 23628
-    case 23641
-    case 23642
-    case 23635
-    case 23614
-    case 23646
+      case 23662
+      case 23629
+      case 23628
+      case 23641
+      case 23642
+      case 23635
+      case 23614
+      case 23646
       east
-      break
+    break
     case 23644
-    case 23660
-    case 23649
-    case 23650
-    case 23617
-    case 23619
-    case 23620
-    case 23666
-    case 23632
-    case 23645
-    case 23663
+      case 23660
+      case 23649
+      case 23650
+      case 23617
+      case 23619
+      case 23620
+      case 23666
+      case 23632
+      case 23645
+      case 23663
       west
-      break
+    break
     case 23655
-* at the entrance to the court.
-       open granite
-       wait 4
-       west
-       wait 4
-       close granite
-       break
+      * at the entrance to the court.
+      open granite
+      wait 4
+      west
+      wait 4
+      close granite
+    break
     case 23648
-       open marble
-       wait 4
-       west
-       wait 4
-       close marble
-       break
+      open marble
+      wait 4
+      west
+      wait 4
+      close marble
+    break
     case 23643
-    case 23637
-    case 23631
-    case 23623
-    case 23618
-    case 23667
-    case 23634
-    case 23626
+      case 23637
+      case 23631
+      case 23623
+      case 23618
+      case 23667
+      case 23634
+      case 23626
       north
-      break
+    break
     case 23661
-    case 23627
-    case 23633
-    case 23640
-    case 23647
-    case 23654
-    case 23621
-    case 23669
-    case 23652
+      case 23627
+      case 23633
+      case 23640
+      case 23647
+      case 23654
+      case 23621
+      case 23669
+      case 23652
       south
-      break
+    break
     default
       say I don't think I've ever been to this side of the city before...
       wait 6
@@ -146,84 +144,84 @@ if %foreman_leaving%
       emote pulls a small scroll from a hidden pocket and quickly recites it.
       emote disappears in a puff of smoke.
       mgoto 23653
-      break
+    break
   done
 else
   switch %inroom.vnum%
-     case 23661
-     case 23648
-     case 23649
-     case 23643
-     case 23618
-     case 23617
-     case 23619
-     case 23662
-     case 23629
-     case 23628
-     case 23641
-     case 23642
-     case 23635
-     case 23614
-     case 23646
-       east
-       break
-     case 23660
-* leaving the court
-       open granite
-       wait 4
-       east
-       wait 4
-       close granite
-       break
-     case 23655
-       open marble
-       wait 4
-       east
-       wait 4
-       close marble
-       break
-     case 23631
-     case 23666
-     case 23632
-     case 23645
-       west
-       break
-     case 23654
-* entering tool shed
-       open door
-       wait 1
-       west
-       wait 1
-       close door
-       break
-     case 23663
-     case 23620
-     case 23627
-     case 23633
-     case 23640
-     case 23647
-     case 23667
-     case 23634
-     case 23626
-       north
-       break
-     case 23650
-     case 23644
-     case 23637
-     case 23630
-     case 23623
-     case 23621
-     case 23669
-     case 23652
-       south
-       break
-     case 23664
-       say I'm pleased to say that productivity is at the maximum...
-       wait 3 s
-       say I'll be on my way..
-       wait 3 s
-       east
-       break
+    case 23661
+      case 23648
+      case 23649
+      case 23643
+      case 23618
+      case 23617
+      case 23619
+      case 23662
+      case 23629
+      case 23628
+      case 23641
+      case 23642
+      case 23635
+      case 23614
+      case 23646
+      east
+    break
+    case 23660
+      * leaving the court
+      open granite
+      wait 4
+      east
+      wait 4
+      close granite
+    break
+    case 23655
+      open marble
+      wait 4
+      east
+      wait 4
+      close marble
+    break
+    case 23631
+      case 23666
+      case 23632
+      case 23645
+      west
+    break
+    case 23654
+      * entering tool shed
+      open door
+      wait 1
+      west
+      wait 1
+      close door
+    break
+    case 23663
+      case 23620
+      case 23627
+      case 23633
+      case 23640
+      case 23647
+      case 23667
+      case 23634
+      case 23626
+      north
+    break
+    case 23650
+      case 23644
+      case 23637
+      case 23630
+      case 23623
+      case 23621
+      case 23669
+      case 23652
+      south
+    break
+    case 23664
+      say I'm pleased to say that productivity is at the maximum...
+      wait 3 s
+      say I'll be on my way..
+      wait 3 s
+      east
+    break
     default
       say I don't think I've ever been to this side of the city before...
       wait 6
@@ -232,8 +230,8 @@ else
       emote pulls a small scroll from a hidden pocket and quickly recites it.
       emote disappears in a puff of smoke.
       mgoto 23653
-      break
-   done
+    break
+  done
 end
 ~
 #23606
@@ -418,34 +416,43 @@ Mad Miners - NOT ATTACHED~
 mkill %bad_guy%
 ~
 #23612
-Lieutenant Bribe - 23608~
+Lieutenant Door Bribe - M23608~
 0 m 1
 ~
+* By Welcor of The Builder Academy builderacademy.net 9091
 wait 1
+* The price is 400 coins to pass. Player must 'give 400 coin leader.'
 if %amount% < 400
   say Did you really think I was that cheap, %actor.name%.
   snarl 
 else
+  * Context saves the global with the players ID so multiple players can bribe.
   context %actor.id%
+  * Set the variable to a value, 1 for YES.
   set has_bribed_guard 1
+  * Global it! You can now 'stat leader' and see it listed.
   global has_bribed_guard
   whisper %actor.name% Enter when you're ready. I'll lock the door behind you.
   unlock door
 end
 ~
 #23613
-Lieutenant Door - 23608~
+Lieutenant Door Bribe 2 - M23608~
 0 r 100
 ~
+* By Welcor of The Builder Academy builderacademy.net 9091
 * Allows more than one instance of this trigger to run.
 context %actor.id%
-* Checks a global variable to see if this mob has been bribed. TSTAT 23612
+* Checks a global variable to see if this mob has been bribed. TSTAT 23612.
 if %has_bribed_guard%
+  * Let the player through, he's paid.
   return 1
+  * Don't bother continuing the trig, just stop it.
   halt
 end
-* if the player tries to pick the catch him!
-if %cmd%==pick
+* If the player tries to pick the lock catch him!
+if %cmd% == pick
+  * Stop them! Return 0 prevents the command from going through.
   return 0
   wait 1
   say No way, you don't fool me, %actor.name%.
@@ -459,13 +466,18 @@ end
 Lieutenant Leave - 23608~
 0 q 100
 ~
-if %direction%==east
+* By Welcor of The Builder Academy builderacademy.net 9091
+* If the player is trying to leave to the East.
+if %direction% == east
   context %actor.id%
+  * If they have bribed let them through and forget them.
   if %has_bribed_guard%
     unset has_bribed_guard
+    * Let the command go through. Halt the trig, its over.
     return 1
     halt
   end
+  * They haven't paid, stop them.
   %send% %actor% You try to leave, but %self.name% stops you.
   return 0
 end

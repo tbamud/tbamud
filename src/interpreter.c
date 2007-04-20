@@ -1594,7 +1594,7 @@ void nanny(struct descriptor_data *d, char *arg)
     GET_PREF(d->character)= rand_number(1, 128000);
     GET_HOST(d->character)= strdup(d->host);
 
-    mudlog(NRM, LVL_IMMORT, TRUE, "%s [%s] new player.", GET_NAME(d->character), d->host);
+    mudlog(NRM, LVL_GOD, TRUE, "%s [%s] new player.", GET_NAME(d->character), d->host);
     break;
 
   case CON_RMOTD:		/* read CR after printing motd   */

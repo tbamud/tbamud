@@ -10,18 +10,19 @@ say admittance to Eldorado is 1000000 coins
 end
 ~
 #2201
-Not Used~
-0 m 0
+Flame Damage - R2228~
+2 b 50
 ~
-wait 1
-unlock gate
-open gate
-wait 20 s
-close gate
-lock gate
+%echo% The pungent fumes burn your lungs!
+set target_char %self.people%
+while %target_char%
+  set tmp_target %target_char.next_in_room%
+  %damage% %target_char% 3
+  set target_char %tmp_target%
+done
 ~
 #2202
-fire damage~
+Fire Damage - R2218-20~
 2 g 100
 ~
 %send% %actor% The hot flame and smoke burns you.
@@ -29,7 +30,7 @@ fire damage~
 %damage% %actor% 10
 ~
 #2203
-moaning~
+Moaining - R2200-2~
 2 g 25
 ~
 if %actor.is_pc%
@@ -37,7 +38,7 @@ if %actor.is_pc%
 end
 ~
 #2204
-princess shout~
+Princess Shout for Help - M2229~
 0 b 1
 ~
 eval inroom %self.room%

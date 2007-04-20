@@ -14,7 +14,7 @@ tbaMUD 3.52
   Update to is_number to check for negative numbers. (thanks Kyle)
   Update to isname to disallow abbreviated numbers. (thanks Sryth)
 [Apr 08 2007] - Rumble
-  Removed all usage of CAP(str causing a memory leak (thanks Kyle).
+  Removed all usage of CAP(str) causing a memory leak (thanks Kyle).
   Removed object type TRAP.
   Removed oasis_delete.h.
   Renamed variable wovel to vowel in ban.c.

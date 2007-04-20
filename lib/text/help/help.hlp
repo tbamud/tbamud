@@ -1053,7 +1053,7 @@ as in "women's hemlines."
 
 We rest our case. Now do whatever you want...after all, it is your area.
 #31
-OBJ-NOTES OBJECT-NOTES BOOKS PENS NOTES QUILLS NEWSPAPERS POSTITS POST-ITS OBJ-TYPE-NOTE
+OBJ-NOTES OBJECT-NOTES BOOKS PENS NOTES QUILLS NEWSPAPERS POSTITS POST-ITS OBJ-TYPE-NOTE PAPERS
 
    With Object Type NOTE you can then use the A-desc to write what you want 
 people to see when they read it.  Players will then be able to write on the
@@ -1150,7 +1150,7 @@ C2       - Player has color set to normal.
 NO_WIZ   - Builder can not see wiznet.
 L1       - Builder has syslog set to brief. 
 L2       - Builder has syslog set to normal.
-           BOTH: Builder has syslog set to on.
+           BOTH: Builder has syslog set to on and will see ALL logs (spammy).
 NO_AUC   - Player can not see auctions.
 NO_GOS   - Player can not see gossips. 
 NO_GTZ   - Player can not see grats.
@@ -1622,7 +1622,7 @@ See also: STANDARDS
 PREREQUISITES CONSTRUCTIVE-CRITICISM
 
    Do you own a dictionary? Can you write in complete sentences? Builders
-are expected to be able to write decent descriptions. MUDs will not implement
+are expected to be able to write decent descriptions. Good MUDs will not use
 zones that are grammatical nightmares. The goal of the Builder Academy is to
 develop great builders, part of this requires a grasp on the English language.
 We understand English is not the first language for most people, but that is no
@@ -1990,7 +1990,7 @@ file.
 
 See also: HEDIT, HINDEX
 #31
-HEDIT
+HEDIT HELP-EDITOR
 
 Usage: hedit <keyword>
 
@@ -2457,7 +2457,7 @@ takes about 12 days.
 
 See also: DATE, %TIME%
 #31
-SET INVSTART
+SET INVSTART NOWIZLIST
   
 Usage: set [ file | player ] <character> <field> <value>
  
@@ -2494,7 +2494,7 @@ exp            LVL_GOD          BOTH    NUMBER      Experience points
 frozen         LVL_FREEZE       PC      BINARY      FROZEN flag
 gold           LVL_BUILDER      BOTH    NUMBER      Gold (On hand)
 height         LVL_BUILDER      BOTH    NUMBER      Height
-hit            LVL_BUILDER      BOTH    NUMBER      Current HP
+hitpoints      LVL_BUILDER      BOTH    NUMBER      Current HP
 hitroll        LVL_BUILDER      BOTH    NUMBER      To-Hit modifier
 hunger         LVL_BUILDER      BOTH    MISC        Hrs to hunger
 int            LVL_BUILDER      BOTH    NUMBER      Intelligence
@@ -3104,12 +3104,12 @@ eval stunned %actor.hitp%     - evaluate all hitpoints and then damage
 eval num_hitp %actor.hitp%/2  - calculate half of hitpoints and then damage
 %damage% %actor% %num_hitp% 
 
-Example: @RTSTAT 16
+Example: @RTSTAT 16, 51
          TSTAT 3008@n
 
 See also: DAMAGE, GUNS, DEATH
 #31
-%DOOR% WDOOR ODOOR MDOOR TRIGEDIT-EXIT TRIG-EXIT TRIGEDIT-DOORS TRIGEDIT-MENU-DOORS SECRET-DOORS TRIG-DOOR 
+%DOOR% WDOOR ODOOR MDOOR TRIGEDIT-EXIT TRIG-EXIT TRIGEDIT-DOORS TRIGEDIT-MENU-DOORS SECRET-DOORS TRIG-DOOR %EXIT%
 
 %door% <vnum> < direction> < field> [value] 
 
@@ -3131,7 +3131,7 @@ room        - value is the vnum of the room this direction leads to
  
 Example: @RTSTAT 17, 23603@n
 #31
-%ECHO% %ECHOAROUND% %SEND% TRIG-SEND %ZONEECHO% ZONEECHO ZECHOAROUND ECHOAROUND OECHO WECHO MECHO OECHOAROUND WECHOAROUND MECHOAROUD OSEND WSEND MSEND ZONECHO RECHO %ZECHO% ZSOUND MECHOAROUND MZONEECHO MRECHO
+%ECHO% %ECHOAROUND% %SEND% TRIG-SEND %ZONEECHO% ZONEECHO ZONECHO %ZONECHO% ZECHOAROUND ECHOAROUND OECHO WECHO MECHO OECHOAROUND WECHOAROUND MECHOAROUD OSEND WSEND MSEND ZONECHO RECHO %ZECHO% ZSOUND MECHOAROUND MZONEECHO MRECHO
 
 %echo% <message>
    Message is sent to all non-sleeping characters in the same room that this 
@@ -3148,7 +3148,10 @@ the victim.
    Zoneecho echoes message to the entire zone. room vnum should be any vnum in 
    the zone you wish to echo to. 13400 would echo in zone 134.
 
-NOTE: When used with mobs make sure the mobs can see the players. i.e not blind, set INFRA.
+To send a blank line use: %send% %actor% \
+NOTE: When used with mobs make sure the mobs can see the players. 
+      i.e not blind, set INFRA, DET_INVIS.
+
 Example: @RTSTAT 18@n
 
 See also: %ASOUND%
@@ -3202,6 +3205,13 @@ Examples:
    %purge% %actor.inventory(1300)%   
    %purge% %actor.eq(hold)%
  
+When purging objects make sure the object exists. If it does not the room will 
+be purged:
+
+if %actor.inventory(700)%
+  %purge% %actor.inventory(700)%
+end
+
 Example: @RTSTAT 1375, 6300@n
 
 See also: POSITIONS
@@ -3306,7 +3316,7 @@ mjunk <object | all>
 is sent by this command. Only mobs may use this command.
 
 #31
-%FOLLOWER% TRIG-FOLLOW MFOLLOW %MASTER% MASTER %SELF.FOLLOWER% %SELF.MASTER%
+%FOLLOWER% TRIG-FOLLOW MFOLLOW %MASTER% MASTER %SELF.FOLLOWER% %SELF.MASTER% %FOLLOW%
 
 mfollow <victim>
 
@@ -3324,8 +3334,9 @@ MHUNT %HUNT% HUNT
 mhunt <victim>
 
    The mobile will begin to hunt for victim, and engage in combat upon finding 
-them. Only Mobiles may use this command. Hunting mobs will walk through NOMOB
-rooms. %kill% may be used for mobs attacking mobs.
+them. Only Mobiles may use this command. Hunting mobs will ignore STAY_ZONE and
+SENTINEL flags. They will also walk through NOMOB rooms. %kill% may be used for
+mobs attacking mobs.
 
 Examples: @RTSTAT 19596, 19595@n
 
@@ -3366,7 +3377,7 @@ load trigger will be executed.
 
 Example: @RTSTAT 21, 1370@n
 #31
-OTIMER %TIMER% 
+OTIMER %TIMER% %OTIMER%
 
 otimer <value>
 
@@ -3377,13 +3388,15 @@ Example: @RTSTAT 11894@n
 
 See also: TIMER, TRIGEDIT-OBJ-TIMER
 #31
-OSETVAL %SETVAL%
+OSETVAL %SETVAL% VAL0 VAL1 VAL2 VAL3 %VAL0% %VAL1% %VAL2% %VAL3%
 
 osetval <position> <value>
 
    Osetval lets you alter the object values of an object. The meaning of the 
-values depends on the object type (@RHELP OEDIT-VALUES@n).
+values depends on the object type (@RHELP OEDIT-VALUES@n). "osetval 3 50" will
+set the objects 3rd value to 50.
 
+Example: @RTSTAT 42@n
 #31
 COMMENT * 
 
@@ -3400,7 +3413,7 @@ trigger text try /*.
 
 See also: REDIT-ROOM-FLAGS
 #31
-NOP NO-OPERATION NON-OPERATION TRIG-EXPERIENCE %ACTOR.EXP% ACTOR.EXP TRIG-GOLD ACTOR.GOLD %ACTOR.GOLD% %NOP% %POSITION% %POS% %ACTOR.POS% ACTOR.POS
+NOP NO-OPERATION NON-OPERATION TRIG-EXPERIENCE %ACTOR.EXP% ACTOR.EXP TRIG-GOLD ACTOR.GOLD %ACTOR.GOLD% %NOP% %POSITION% %POS% %ACTOR.POS% ACTOR.POS TRIGEDIT-NOP
 
    Almost a no-operation. Certain variable/subfield combinations for characters 
 change some attribute about the character. nop allows those changes to be used 
@@ -3445,12 +3458,12 @@ check the global variable to allow or prevent passage accordingly.
 set has_bribed_guard 1
 global has_bribed_guard
 
-Global variables are checked when the specified variable is not recognized. It can
-also be used to check for variables.
-if %actor.varexists(variable)%
+Globals can be checked by varexists: if %actor.varexists(<variable>)%
 
 Global variables should not be used when you want to remember something about a 
 player. To save something to a players file for future use always use REMOTE. 
+
+Examples: @RTSTAT 23612, 23613, 23614@n
 
 See also: REMOTE, VARIABLES, CONTEXT
 #31
@@ -3473,7 +3486,7 @@ name, differing only by context. Players may have variables; this mostly
 removes the need for variable context. Previously, a player's ID could be used 
 as variable context to allow a trigger to service multiple players at once.
 
-Example @RTSTAT 23612@n
+Example: @RTSTAT 23612@n
 
 See also: REMOTE
 #31
@@ -3491,6 +3504,8 @@ say My hitpoint percentage is %result%
 the result of the immediate evaluation of the provided expression. There also 
 exists a "set" command, with the same syntax. Set differs in that the expression
 is not evaluated until the variable is accessed.
+
+Example: @RTSTAT 49@n
 
 See also: TRIG-SET
 #31
@@ -3514,9 +3529,9 @@ the provided expression, which will be evaluated when the variable is accessed.
 There also exists an "eval" command, with the same syntax. Eval differs in that 
 the expression is evaluated immediately.
 
-Example: @RTSTAT 41005@n
+Example: @RTSTAT 49, 41005@n
 
-See also: EVAL
+See also: EVAL, OSETVAL
 #31
 UNSET
 
@@ -3607,9 +3622,24 @@ end
   mkill %actor%
 
 #31
-MAKEUID VAREXISTS %VAREXISTS% %EXISTS% EXISTS UID
+VAREXISTS %VAREXISTS% %EXISTS% EXISTS
+
+Usage: if %actor.varexists(on_quest_zone_1)%
+
+  The above usage checks if the variable on_quest_zone_1 has been saved to the 
+player file or to a mob (does not work for objects). It can also be used with 
+!%actor.varexists(on_quest_zone_1)% to mean does not exist. This is useful on 
+quests or other complex triggers that need to save variables to a player file 
+by using remote.
+
+Example: @RTSTAT 138, 139@n
+
+See Also: REMOTE
+#30
+MAKEUID UID
 
 Usage: makeuid variable id
+
 * We have one mob giving a quest. This mob sets the targets id as a global on 
 * the player via the 'remote' command, like this:
 eval quest_object %obj.id%
@@ -3666,7 +3696,7 @@ Examples: @RTSTAT 199, 190-192, 23612-23614@n
 
 See also: RDELETE, VDELETE, TRIG-SET, CONTEXT
 #31
-TRIG-RETURN RETURN-0 CONTINUE %RETURN%
+TRIG-RETURN RETURN-0 CONTINUE %RETURN% RETURN-1
  
 Usage: return 0
 
@@ -3677,10 +3707,12 @@ fire is to have the first one return 0. Other Examples:
 
 Get, Give, Drop, Wear, Leave, and Consume trigs with return 0 prevents the action.
 Command trigs with return 0 allow the command to continue to the MUD and not be
-captured by the trigger.
+stopped by the trigger.
 
 Return does not end the triggers execution. It is returned after all commands have
 been executed, or a wait or halt command is called.
+
+Return 1 is rarely used since it just means normal termination of the trigger.
 
 Example: @RTSTAT 1364@n
 
@@ -3715,7 +3747,7 @@ Case is used to begin a new conditional group in a switch block.
 Default is similar to case but matches any condition not met. 
 Done is used to terminate a while or switch block.
 
-Example: @RTSTAT 18@n
+Example: @RTSTAT 18, 6@n
 #31
 WHILE DONE %NEXT% NEXT LOOP TRIG-LOOPS TRIG-WHILE TRIG-DONE
 
@@ -3725,7 +3757,7 @@ Usage: while expression
 or negative. This can make permanent loops - be careful. The switch block must 
 be terminated by a done. While loops are disabled after looping 100 times.
 
-Room example: @RTSTAT 24@n
+Room example: @RTSTAT 24, 2201@n
 Obj example:  @RTSTAT 23@n
 Mob example:  @RTSTAT 11858@n
 #31
@@ -3848,7 +3880,7 @@ mudcommand - Returns the mud command the string is shorthand for. Used to make
 
 Example: @RTSTAT 30@n
 #31
-TRIGEDIT-VARIABLES-SPECIALS SPEC-VAR %SELF% RANDOM %RANDOM% %TIME% %PEOPLE% TRIGEDIT-SPEC-VAR %RANDOM.CHAR% %SPEECH% DG_LETTER DG-LETTERS TRIGEDIT-LETTERS
+TRIGEDIT-VARIABLES-SPECIALS SPEC-VAR %SELF% RANDOM %RANDOM% %TIME% %PEOPLE% TRIGEDIT-SPEC-VAR %RANDOM.CHAR% %SPEECH% DG_LETTER DG-LETTERS TRIGEDIT-LETTERS FINDMOB FINDOBJ
 
 Special Variables When using field - The variable returns:
  
@@ -3909,7 +3941,7 @@ Example: @RTSTAT 29@n
 
 See also: RANDOM-THOUGHTS
 #31
-TRIGEDIT-VARIABLES-OBJECTS OBJ-VAR %SHORTDESC% TRIGEDIT-OBJ-VAR VAL0 VAL1 VAL2 VAL3 %ITEM% %OBJECT% OBJVARS OBJ-VARS %NEXT_IN_LIST% %OBJ% OBJ-COMMAND   IS_INROOM
+TRIGEDIT-VARIABLES-OBJECTS OBJ-VAR %SHORTDESC% TRIGEDIT-OBJ-VAR VAL0 VAL1 VAL2 VAL3 %ITEM% %OBJECT% OBJVARS OBJ-VARS %NEXT_IN_LIST% %OBJ% OBJ-COMMAND IS_INROOM WORN_BY NEXT_IN_LIST
 
 Objects When using field - The variable returns:
  
@@ -3962,11 +3994,11 @@ Examples: @RTSTAT 94, 9116@n
 
 See also: TRIG-INV, %PURGE%, %LOAD%, POSITIONS, CHAR-VAR
 #31
-%NEXT_IN_ROOM% CHAR_VAR TRIG-FIELDS %ACTOR.SEX% %ACTOR.HITPOINTS% %ACTOR.HP% %HIS% IS_FIGHTING %FIGHTING% ACTOR.FIGHTING %ACTOR.FIGHTING% IN_ROOM IS_ROOM POS() HISHER %MASTER% %SELF.MASTER% %FOLLOWER.NAME% PVAR %HISHER% %SEX%
+%NEXT_IN_ROOM% CHAR_VAR TRIG-FIELDS %ACTOR.SEX% %ACTOR.HITPOINTS% %ACTOR.HP% %ACTOR.HITP% %HIS% IS_FIGHTING %FIGHTING% ACTOR.FIGHTING %ACTOR.FIGHTING% IN_ROOM IS_ROOM POS() HISHER %MASTER% %SELF.MASTER% %FOLLOWER.NAME% PVAR %HISHER% %SEX% %ACTOR.HISHER%
 
 See @RHELP CHAR-VAR@n
 #31
-CHAR-VARS TRIGEDIT-VARIABLES-CHARACTERS %TITLE% %ACTOR.TITLE% CHAR-VARIABLES TRIGEDIT-CHAR-VAR %ACTOR.ID% ACTOR.ID ACTOR.VNUM %ACTOR.VNUM% %ACTOR.NAME% %ACTOR% %VICTIM% SELF %SELF% MOBVARS MOB-VARS TRIGEDIT-LEVEL %SELF.ID% SELF.ID NEXT_IN_ROOM
+CHAR-VARS TRIGEDIT-VARIABLES-CHARACTERS %TITLE% %ACTOR.TITLE% CHAR-VARIABLES TRIGEDIT-CHAR-VAR %ACTOR.ID% ACTOR.ID ACTOR.VNUM %ACTOR.VNUM% %ACTOR.NAME% %ACTOR% %VICTIM% SELF %SELF% MOBVARS MOB-VARS TRIGEDIT-LEVEL %SELF.ID% SELF.ID NEXT_IN_ROOM ACTOR-VAR
 
 The following fields can be used with %actor%. i.e. %actor.<field>%
 Excluding the subfield () returns the value. Adding a subfield modifies it.
@@ -4259,7 +4291,7 @@ noise, and other ambience into your zone.
 Numeric Arg : 0-100: percentage chance this trigger will run.
 Argument    : not used.
 
-Example: @RTSTAT 51@n 
+Example: @RTSTAT 51, 2202, 2201@n 
 
 See also: RANDOM-TIMING, TRIGEDIT-ROOM-GLOBAL
 #31
@@ -4276,7 +4308,7 @@ fires by modifying numeric arg to the following values:
 50%  = 26 seconds
 100% = 13 seconds
 
-The actual equation is 100/numeric arg X 13 = time in seconds. 100/20 X 13 = 63 seconds
+The actual equation is 100/numeric arg X 13 = time in seconds. 100/20 X 13 = 65 seconds
 
 See also: TRIGEDIT-OBJ-RANDOM, TRIGEDIT-MOB-RANDOM, TRIGEDIT-ROOM-RANDOM
 #31
@@ -4297,7 +4329,7 @@ Variables:
 %cmd%   - the exact command (without arguments) issued
 %arg%   - the arguments, if any, following the command
 
-Example: @RTSTAT 52, 1218@n
+Example: @RTSTAT 52, 1214@n
 #31
 TRIGEDIT-ROOM-SPEECH TRIGSPEECH TRIG-SPEECH TRIGEDIT-SPEECH TRIG-ROOM-SPEECH 
 
@@ -4305,8 +4337,8 @@ Activates when matching text is spoken by a character in the room
  
 Numeric Arg : 0: argument is a substring that must be found in the speech to cause a
                  match. 
-              1: argument is a list of words, any of which found in the speech will
-                 activate the trigger.
+          1-100: argument is a list of words, any of which found in the speech will
+                 activate the trigger. 
 Argument    : a phrase or wordlist to be matched.
 
 Variables:
@@ -4379,7 +4411,7 @@ Variables:
 
 Example: @RTSTAT 57@n 
 #31
-TRIGEDIT-ROOM-LEAVE TRIG-ROOM-LEAVE TRIG-ROOM-EXIT TRIGEDIT-ROOM-EXIT 
+TRIGEDIT-ROOM-LEAVE TRIG-ROOM-LEAVE TRIG-ROOM-EXIT TRIGEDIT-ROOM-EXIT TRIG-LEAVE
 
 Activated when someone leaves the room.
 
@@ -4411,7 +4443,7 @@ Variables:
 
 Example: @RTSTAT 59@n 
 #31
-TRIGEDIT-ROOM-TIME TRIGEDIT-TIME
+TRIGEDIT-ROOM-TIME TRIGEDIT-TIME TRIG-ROOM-TIME
 
 Activated by MUD hour listed in Numeric Arg. A player must be in the room for 
 it to work unless you use it in conjunction with @RTRIGEDIT-ROOM-GLOBAL@n.
@@ -4494,7 +4526,7 @@ Variables:
 %target% - the target of the action, if any
 %arg%    - the entire phrase
 
-Example: @RTSTAT 64, 1372@n
+Example: @RTSTAT 127, 64, 1372@n
 #31
 TRIGEDIT-MOB-DEATH TRIG-MOB-DEATH MOB-DEATH MOBDEATH MDEATH  
 
@@ -4730,7 +4762,7 @@ Variables:
 %cmd%   - the exact command (without arguments) issued
 %arg%   - the arguments, if any, following the command
 
-Example: @RTSTAT 81, 154, 9800, 11859@n
+Example: @RTSTAT 81, 154, 6, 9800, 11859@n
 #31
 TRIGEDIT-OBJ-TIMER TRIGEDIT-TIMER TRIG-TIMER TRIGEDIT-OBJECT-TIMER  
  
@@ -4942,19 +4974,16 @@ TRIGEDIT-NAMES TRIG-NAMES TRIGGER-NAMES
 
 1) Name         : @ynew trigger@n
 
-Always use names that explain the trigger. More importantly: always include the
-VNUM for the mob/obj/room the trigger is going to be attached to.
+Always use names that explain your trigger and include the VNUM for the 
+mob/obj/room the trigger is going to be attached to. It is important to give 
+your trigger a name you and others can understand. This way others can search 
+"vnum trigger <keyword>." This will also make it easier when using tlist and 
+tstat. Allowing others to quickly comprehend what the trigger does. Here are
+some good examples:
 
-   It is important to give your trigger a name you and others can understand. 
-Even more important is including the VNUM of what it is attached to. This way
-tlist and stat will show the name description and VNUM allowing others to 
-quickly comprehend what the trigger does. A good name could be 'guard shout for
-help - 101' or 'mage cast poison - 300' even 'cursed object - 130.'
-
-Examples:
-   Quest Offer - 1310       --> trigger attached to mob 1310
-   Fall Down Stairs - 1300  --> trigger attached to room 1300
-   No Dropping Stuff - 1301 --> trigger attached to obj 1301
+Princess Shout for Help - M2229     --> Trigger 2204 attached to mob 2229.
+Tutorial Example Quest Offer - M14  --> Trigger 1 attached to mob 14.
+No Recall - R0                      --> Trigger 1201 attached to room 0.
 
 #31
 TRIGEDIT-INTENDED
@@ -5310,9 +5339,9 @@ positions to an array. See the examples below.
 
 @RTSTAT 150, 41005, 1325, 57715@n
 #31
-TRIG-EXAMPLES ASSEMBLIES ASSEMBLE ASSEMBLY VEHICLES MAKE BAKE BREW CRAFT FLETCH KNIT MIX THATCH WEAVE ASSEDIT FORGE SMOKE SMOKING CIGARS CIGARETTES PIPES SHOTGUN BLAST SHOOT RANGED-WEAPONS FIRE-WEAPONS BOWS QUIVERS MISSILES GUNS
+TRIG-EXAMPLES ASSEMBLIES ASSEMBLE ASSEMBLY VEHICLES MAKE BAKE BREW CRAFT FLETCH KNIT MIX THATCH WEAVE ASSEDIT FORGE SMOKE SMOKING CIGARS CIGARETTES PIPES SHOTGUN BLAST SHOOT RANGED-WEAPONS FIRE-WEAPONS BOWS QUIVERS MISSILES GUNS FIREARMS AMMO
 
-   These are not implemented since the same thing can be done with trigedit.
+   The above list of skills are not implemented since the same thing can be done with trigedit.
 
 Assemblies: @RTSTAT 38, 48, 335@n
 Smokables: @RTSTAT 159@n
@@ -5486,7 +5515,7 @@ TRIG-QUESTS TRIGEDIT-QUESTS AUTOQUEST QUESTS QUESTPOINTS QUEST-POINTS QUESTMASTE
 
    Many zones have their own quests and examples within them, such as:
 
-Questmaster Example: @RTSTAT 139, GOTO 113@n
+Questmaster Example: @RTSTAT 138-144, GOTO 113@n
 Assembly Examples: @RTSTAT 38, 48, 335, GOTO 366@n
 Questshop Example: @RTSTAT 167, GOTO 265@n
 Fizban's Questshop Example: @RTSTAT 57705-57707@n
@@ -5579,7 +5608,7 @@ See also: REDIT, OEDIT, MEDIT, SEDIT, ZEDIT, ZRESET,
           RLIST, OLIST, MLIST, SLIST, SHOW-ZONE  
 Advanced: TRIGEDIT, TSTAT, TLIST, DIG, RCLONE, BUILDWALK
 #31
-BUILDERS
+BUILDERS IMMORTALS
 
    A builder is a term usually used to describe a person who designs MUD zones
 for other characters to explore. Any player with motivation, ideas, and good 
@@ -6671,7 +6700,7 @@ objects and quests.
 
 See also: AUTOROLL
 #31
-MEDIT-POSITION MEDIT-DEFAULT
+MEDIT-POSITIONS MEDIT-DEFAULT
 
 I) Position  : @yStanding@n
 J) Default   : @yStanding@n
@@ -6774,7 +6803,7 @@ E) Extra descriptions menu                @RHELP OEDIT-EXTRA@n
 M) Min Level   : @c0@n                        @RHELP OEDIT-MIN-LEVEL@n
 P) Perm Affects: @cNOBITS@n                   @RHELP OEDIT-PERM-AFFECTS@n
 S) Script    : @cNot Set.@n                   @RHELP SCRIPT-MENU@n
-X) Delete Object                              @RHELP OEDIT-DELETE@n   
+X) Delete Object                          @RHELP OEDIT-DELETE@n   
 Q) Quit                                
 Enter choice :                        
 
@@ -6867,21 +6896,21 @@ OEDIT-TYPES OBJECT-TYPES OBJ-TYPES OBJ-WEAPONS TRASH FURNITURE COUCH CHAIRS
    This specifies what type an object is defined as; also controls the meanings
 of value0 through value4 (option C). The Type Flag must be one of the following:
  
-0    UNDEFINED      Do Not Set.
+0    UNDEFINED      Do not set.
 1    LIGHT          Item is a light source.
 2    SCROLL         Item is a magical scroll.
 3    WAND           Item is a magical wand.
 4    STAFF          Item is a magical staff.
 5    WEAPON         Must be piercing to backstab.
 6    FURNITURE      Item may be sat on.
-7    UNDEFINED      Not implemented.  Do not use.
+7    FREE           Do not set.
 8    TREASURE       Item is treasure other than gold coins (i.e. gems)
 9    ARMOR          Item is armor.
 10   POTION         Item is a magical potion.
 11   WORN           Item is worn, but not armor.
 12   OTHER          Miscellaneous object with no special properties.
 13   TRASH          Trash is not bought by shopkeepers.
-14   TRAP           Currently not implemented.  Do not use.
+14   FREE2          Do not set.
 15   CONTAINER      Item is a container. Be creative, make robes with pockets, etc.
 16   NOTE           Item is a note @RHELP OBJ-NOTE@n for more info.
 17   LIQ CONTAINER  Item is a drink container. Do not include liquid type in s-desc.
@@ -7077,7 +7106,7 @@ WEAPON
 FURNITURE 
    value 0: Number of people that can sit on this object.
 
-UNDEFINED - Not implemented. 
+FREE - Not used. 
 TREASURE - No values currently used.
 
 ARMOR
@@ -7100,7 +7129,7 @@ value 3: Spell number 3
 WORN - No values currently used.
 OTHER - No values currently used.
 TRASH - No values currently used.
-TRAP - No values currently used. - not implemented. 
+FREE2 - Not used.
 
 CONTAINER
    value 0: Capacity (max containable weight) of container. -1 for unlimited.
@@ -7130,8 +7159,8 @@ BOAT - No values currently used.
 
 DRINKCON
 FOUNTAIN
-   value 0: Capacity of container
-   value 1: Current quantity in container. -1 for unlimited.
+   value 0: Capacity of container. -1 for unlimited.
+   value 1: Current quantity in container.    
    value 2: see below
    value 3: If the drink is poisoned, how long will the poison burn? 0 if not poisoned.
 
@@ -7277,26 +7306,21 @@ SCRIPT-MENU MEDIT-SCRIPT-MENU OEDIT-SCRIPT-MENU REDIT-SCRIPT-MENU REDIT-SCRIPTS 
 S) Script      : @cNot Set.@n
 Selecting S within redit will take you to the script attachment menu:
 
-Script Editor
+Trigger Attachment
 
 Trigger List:
 <none>
 The first few lines tell you what triggers, if any, are already attached.
 
-N)  New trigger for this script
-To add a new trigger select N and then enter its VNUM.
+N)  Attach trigger - Adds a new trigger, select N and then enter its VNUM.
+X)  Detach trigger - Detaches the trigger.
+Q)  Quit - You figure it out.
 
-D)  Delete a trigger in this script
-This can be used to delete existing triggers from the room.
+NOTE: Scripts, also called triggers, are an advanced form of OLC. Do not worry 
+too much about these until you are assigned a zone and are comfortable with all
+other forms of OLC.
 
-X)  Exit Script Editor
-Of course, you figure it out.
-
-NOTE:  Scripts (also called triggers) are an advanced form of OLC, they can 
-cause problems when used incorrectly. If you do not know what you are
-doing, do not mess with them. Do not worry too much about these until you
-are assigned a zone and are comfortable with all other forms of OLC.
-
+See Also: TRIGEDIT
 #31
 EXTRA-DESCRIPTIONS EXTRA-DESCS E-DESCRIPTIONS REDIT-E-DESCRIPTIONS REDIT-MENU-E-DESCRIPTIONS REDIT-EXTRA-DESCRIPTIONS 
  
@@ -7325,7 +7349,7 @@ use /fi by typing it into the last line and hitting enter.
 or the Description blank and exit.
 
 #31
-REDIT-EXITS DOORFLAGS REDIT-KEYS PICKPROOF REDIT-EXIT-MENU EXIT-BASICS DOOR-FLAGS 
+REDIT-EXITS DOORFLAGS REDIT-KEYS PICKPROOF REDIT-EXIT-MENU EXIT-BASICS DOOR-FLAGS EXIT-MENU PURGE-EXITS
 
 Choosing to modify an exit will bring you to the exit menu. 
 
@@ -7424,11 +7448,10 @@ The following room flags can be selected:
 1)  DARK       - The room is dark, players need a light source, or infravision.
 2)  DEATH      - Players die on entry. All dropped items will be junked.
 3)  NO_MOB     - Mobs will not enter this room. This can be used to define the
-            	 zone where any mob can wander. For example, lower level 
-	         mobiles can be set so that only they can wander on the first 
-	         level of a dungeon by making the stairwells no mob. Be warned 
-        	 that making a !MOB room will limit pets and charmed mobs from 
-	         following players through them.
+                 zone where any mob can wander. For example, lower level mobs 
+                 can be set so that only they can wander on the first level of 
+                 a dungeon by making the stairwells NO_MOB. A NO_MOB room will 
+                 also prevent pets and charmed mobs from following players.
 4)  INDOORS    - Weather messages will not be sent to room, always lighted. 
                  Call lightning will not work.
 5)  PEACEFUL   - No violence will work here. Use sparingly.
@@ -7437,11 +7460,11 @@ The following room flags can be selected:
 7)  NO_TRACK   - Track will never find a path through this room.
 8)  NO_MAGIC   - No magic will work here. 
 9)  TUNNEL     - Only one person allowed at one time.
-10) PRIVATE    - Cannot enter if more than two people are already in the room. 
+10) PRIVATE    - Only room for 2 players/mobs i.e. a tunnel or small space.
 11) GODROOM    - Only allows GODS of level 33 or above to goto.
 12) HOUSE      - DO NOT USE. Room is a house.       \  automatically
 13) HCRSH      - DO NOT USE. House needs saving.     >    set by 
-14) ATRIUM     - DO NOT USE. The door to a house.  /    hcontrol
+14) ATRIUM     - DO NOT USE. The door to a house.   /    hcontrol
 15) OLC        - DO NOT USE. Is room modifiable.
 16) *          - DO NOT USE. Breadth-first search mark used by track and hunt.
 
@@ -7453,7 +7476,7 @@ This requires repeating since it is so often ignored:
 
 See Also: TOGGLE
 #31
-BULLETINS BOARDS BULLETIN-BOARDS MESSAGE-BOARDS
+BULLETINS BOARDS BULLETIN-BOARDS MESSAGE-BOARDS POSTING
 
 Bulletin boards are the forum of inter-player communication on the MUD.
 There are different bulletin boards for different purposes -- for example,
@@ -8033,6 +8056,16 @@ commands.
 
 See also: BUG, TYPO, IDEA
 #0
+CLASSES
+
+   There are 4 classes on tbaMUD. See the help files on each for details.
+
+WARRIOR
+MAGIC USER
+CLERIC
+THIEF
+
+#0
 CLERIC
 
 Clerics have an ancient belief in not carrying sharp weapons.  Hence, they can
@@ -8248,12 +8281,13 @@ importance to everyone.
 
 See also: MUDMAIL, BOARDS
 #0
-TELNET CLIENTS ZMUD GMUD TINYFUGUE TINTIN PUEBLO MUDMASTER MUSH PARSING TERMINALS
+TELNET CLIENTS ZMUD GMUD TINYFUGUE TINTIN PUEBLO MUDMASTER MUSH PARSING TERMINALS CMUD
 
 Below is a list of specialty telnet programs for connecting to MUDs. Plus a 
 few normal telnet program that have slipped in because people like them. 
 
 ZMud (PC) - @Chttp://www.zuggsoft.com/zmud/down.asp#zMUD@n
+CMUD (PC) - http://www.zuggsoft.com/cmud/
 Atlantis (Mac) - http://riverdark.net/atlantis/
 Portal (PC) - http://gameaxle.com/
 GMud (PC) - http://www.uberworld.org/gmud.exe (fits on a floppy).
@@ -9134,9 +9168,10 @@ See also: SOCIALS, GEMOTE
 GEMOTES GMOTES EMOTICONS
 
 Usage: gemote <social>
+       gemote @@ <message>
 
-Allows you to perform socials over gossip for everyone on the gossip channel 
-to see.
+Allows you to perform socials or messages like emote over gossip for everyone 
+on the gossip channel to see.
 
 Example:
 If your name is "Manivo",
@@ -9828,7 +9863,7 @@ This spell is more powerful than the burning hands spell.
 
 See also: BURNING-HANDS
 #0
-SENSE-LIFE
+SENSE-LIFE DETECT-LIFE
 
 Usage       : cast 'sense life'
 Accumulative: Yes (Duration)
@@ -9958,7 +9993,7 @@ room.
 
 See also: GROUP, TELL, SAY
 #0
-HELPFILES
+HELPFILES HELP-FILES
 
 Usage: help [command]
 
@@ -9997,10 +10032,9 @@ from the guest list.
 
 See also: HOUSES
 #0
-POLICIES INFO NEWS POLICY VERSION UPDATES
+POLICIES INFO NEWS POLICY VERSION UPDATES RULES
 
-These commands show you important information about tbaMUD.  It is a good
-idea to read them every once in a while.
+These commands show you important information about tbaMUD.
 
    info     - useful information about the game for beginners
    news     - latest changes to the code and areas
@@ -10758,7 +10792,7 @@ Examples:
 
 See also: FLEE, TOGGLE
 #0
-SOCIALS
+SOCIALS ALIST
 
 Usage: socials
 
@@ -10845,13 +10879,12 @@ DELETE SUICIDE
 select the option to delete your character. 
 
 #0
-SEARCH FLY PEEK SCAN WHOIS OOC OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS CLANS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING IDENTIFY CLONES CLONING CLANS MUSIC
+SEARCH FLY PEEK SCAN WHOIS OOC OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS CLANS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING IDENTIFY CLONES CLONING CLANS MUSIC RACES
 
    Not implemented.
 
 #0
-ORDINAL-DIRECTIONS NORTHWEST NORTHEAST SOUTHWEST SOUTHEAST NW SW SE NE STATLIST GEDIT TRUST ZDELETE TCLONE OCLONE MCLONE XCLONES RCOPY OCOPY MCOPY ZCOPY MOUNTS RIDE TAME PARALYZE HASTE BLOCKING IGNORE COOK CAMPFIRES HORSES ZONE-DELETE
-
+ORDINAL-DIRECTIONS NORTHWEST NORTHEAST SOUTHWEST SOUTHEAST NW SW SE NE STATLIST GEDIT TRUST ZDELETE TCLONE OCLONE MCLONE XCLONES OCOPY MCOPY ZCOPY MOUNTS RIDE TAME PARALYZE HASTE BLOCKING IGNORE COOK CAMPFIRES HORSES ZONE-DELETE IMC LINKLOAD
 
    Not implemented.
 
@@ -11511,7 +11544,7 @@ can include the same information in the zone description room.
 
 See also: REPORT-EXAMPLE, ZONE-DESC
 #0
-TRIAL-ROOM TRIAL-VNUM TRIALVNUM INTRO TRIALROOM TRAILROOM APPROVAL VNUM-APPROVAL TRAIL-VNUM TESTROOMS WIZNUMBER TRAINING-VNUM TEST-ROOM TRAIL-ROOM TRAILROOM
+TRIAL-ROOM TRIAL-VNUM TRIALVNUM INTRO TRIALROOM TRAILROOM APPROVAL VNUM-APPROVAL TRAIL-VNUM TESTROOMS WIZNUMBER TRAINING-VNUM TEST-ROOM TRAIL-ROOM TRAILROOM AUTHORIZE
 
    During your initial training you will be able to edit a single trial Vnum.
 @RHELP VIRTUAL-NUMBER@n. As you learn the different building commands feel free
@@ -11622,7 +11655,7 @@ zone. Your third task as a builder is explained under @RHELP TRIAL@n.
 
 See also: BACKGROUND
 #0
-HOMEPAGES WEBPAGES WEBSITES ADDRESSES PORT PORTS URLS ADDYS HOSTS IP-ADDRESSES SITES INTERNET-PROTOCOLS WEBLINKS MUDS ACCOUNTS CONNECTIONS CONNECTING 
+HOMEPAGES WEBPAGES WEBSITES ADDRESSES PORT PORTS URLS ADDYS IP-ADDRESSES SITES INTERNET-PROTOCOLS WEBLINKS MUDS ACCOUNTS CONNECTIONS CONNECTING HOSTS
 
 Builder Academy Homepage:
    @C http://www.builderacademy.net@n
@@ -11769,7 +11802,7 @@ Rumble
 The Builder Academy
 builderacademy.net 9091 [88.80.193.39] 
 #0
-FAMOUS QUOTES
+FAMOUS QUOTES FUNNY HUMOR JOKES LAUGH
 
 Detta: this might hurt a little going in ;)
 Detta: yeah have been up to my waist in manure before heh, fun stuff :P
@@ -11842,6 +11875,7 @@ Ghost gossips, 'oh sorry wrong mud'
 
 [ (GC) Shinseiku tried to get help on NOASSHOLE ]
 [ Closing link to: Happythoughts. ]
+[ Closing link to: God. ]
 
 Krin gossips, 'my dog turned my computer off...'
 
@@ -11906,7 +11940,9 @@ http://www.bylur.net/free/#110
 http://xnixhosting.homeunix.org -- Contact Reaplo
 http://www.planetmud.net/ 
 www.evileyehosting.com
+www.frostmud.com
 
+See Also: CODING
 #0
 THANKSGIVING
 

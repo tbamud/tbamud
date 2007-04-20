@@ -2,36 +2,56 @@
 Near Death Trap Mahatma - 6318~
 0 g 100
 ~
-* Near Death Trap stuns actor and takes all of their equipment.
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Near Death Trap - Mahatma stuns actor and then takes all of their equipment.
 wait 3 sec
 say Here, have a quick trip to the Temple of Midgaard.
 wait 2 sec
 %send% %actor% Mahatma plunges a black dagger into your back and takes all your equipment.
 %echoaround% %actor% Mahatma plunges a black dagger into %actor.name%'s back and takes all of %actor.hisher% equipment.
-* damage the actor to 0 hitpoints so they lay there stunned, unable to move.
-* they will recover.
-eval stunned %actor.hitp% 
+* Damage the actor to 0 hitpoints so they lay there stunned, unable to move.
+* They will recover.
+eval stunned %actor.hitp%
 %damage% %actor% %stunned%
 * steal all their inventory.
-while %actor.inventory%
-  eval item %actor.inventory%
-  eval item_to_purge %%actor.inventory(%item.vnum%)%%
-  eval stolen %item.vnum%
-  %purge% %item_to_purge% 
-  %load% obj %stolen%
+set i %actor.inventory%
+while %i%
+  set pge 1
+  if %i.type% == container
+    if %i.contents%
+      set i %container.contents%
+      * Don't purge containers inside containers or mudmail.
+      if %i.type% == container || %i.vnum% <= 1
+        set pge 0
+      end
+    end
+  end
+  eval stolen %i.vnum%
+  set next %i.next_in_list%
+  if %pge% 
+    %purge% %i%
+  end
+  * Don't steal mail.
+  if %stolen% > 1
+    %load% obj %stolen%
+  end
+  if !%next%
+    set i %actor.inventory%
+  else
+    set i %next%
+  end
 done
 eval i 0
 * steal all their equipped items.
 while %i% < 18
-  eval item %%actor.eq(%i%)%%
+  eval item %actor.eq(%i%)%
   if %item%
     eval stolen %item.vnum%
-    eval item_to_purge %%actor.eq(%i%)%%
-    %purge% %item_to_purge% 
+    %purge% %item%
     %load% obj %stolen%
   end
-  eval i %i%+1 
-done
+  eval i %i%+1
+done 
 ~
 #6301
 Magic User - 6302, 6309, 6312, 6314, 6315~

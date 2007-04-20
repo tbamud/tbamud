@@ -189,7 +189,7 @@ A steaming pile of stool has recently been deposited here.~
 0 0 0 0
 1 1 0 0
 #15
-quest token~
+quest_token_zone_1 token~
 a quest token~
 A quest token needs to be returned to the questmaster.~
 ~
@@ -1137,13 +1137,19 @@ two ankle braces.
 A
 14 -5
 #87
-lightwing's board~
-free~
-Lightwing's board is floating here.~
+throne chair bayonets~
+a throne of bayonets~
+A throne of sharp bayonets looks like the last place you would want to sit.~
 ~
-13 0 0 0
-0 0 0 0
-0 0 0 0
+6 0 0 0
+1 0 0 0
+50 100 0 0
+E
+throne chair bayonets~
+   The chair is made completely out of bayonets with the sharpest points in the
+most inconvenient of spots.  A plaque on the bottom reads: "You can build a
+throne of bayonets, but you can't sit on it for long."  
+~
 #88
 idleout timer stayalive bracelet~
 Rumble's stayalive bracelet~

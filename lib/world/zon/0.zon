@@ -2,11 +2,12 @@
 Rumble~
 The Builder Academy Zone~
 0 99 10 2
+O 0 87 1 33 	(a throne of bayonets)
+M 0 34 1 33 	(Chuck Norris)
 O 0 10 33 2 	(a waybread)
 R 0 2 11 -1 	(the spring)
 O 0 11 99 2 	(the spring)
 M 0 18 1 2 	(Friedrich Nietzsche)
-M 0 34 1 33 	(Chuck Norris)
 R 0 88 1228 -1 	(a advertising bulletin board)
 O 0 1228 99 88 	(a advertising bulletin board)
 M 0 1 1 1 	(Puff)
@@ -48,7 +49,7 @@ R 0 22 47 -1 	(the magic eight ball)
 O 0 47 99 22 	(the magic eight ball)
 M 0 25 1 21 	(the variable questmaster)
 D 0 20 0 2 	(Advanced Trigedit Example)
-M 0 24 1 20 	(the gateguard)
+M 0 24 1 20 	(the example gateguard)
 G 1 46 99 -1 	(the gateguard key)
 R 0 20 45 -1 	(a pile of gold coins)
 O 0 45 99 20 	(a pile of gold coins)

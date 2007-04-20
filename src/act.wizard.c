@@ -1435,7 +1435,7 @@ ACMD(do_purge)
   if (*buf) {
     if ((vict = get_char_vis(ch, buf, NULL, FIND_CHAR_ROOM)) != NULL) {
       if (!IS_NPC(vict) && (GET_LEVEL(ch) <= GET_LEVEL(vict))) {
-	send_to_char(ch, "Fuuuuuuuuu!\r\n");
+	send_to_char(ch, "You can't purge them!\r\n");
 	return;
       }
       act("$n disintegrates $N.", FALSE, ch, 0, vict, TO_NOTVICT);
@@ -1532,7 +1532,7 @@ ACMD(do_advance)
     REMOVE_BIT(PRF_FLAGS(victim), PRF_NOHASSLE | PRF_HOLYLIGHT | PRF_SHOWVNUMS);
     run_autowiz();
   } else if (oldlevel < LVL_IMMORT && newlevel >= LVL_IMMORT) {
-    SET_BIT(PRF_FLAGS(victim), PRF_LOG1);
+    SET_BIT(PRF_FLAGS(victim), PRF_LOG2);
     SET_BIT(PRF_FLAGS(victim), PRF_HOLYLIGHT | PRF_SHOWVNUMS | PRF_AUTOEXIT);
         for (i = 1; i <= MAX_SKILLS; i++)
           SET_SKILL(victim, i, 100);

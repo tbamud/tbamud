@@ -209,8 +209,7 @@ int touch(const char *path)
   }
 }
 
-/* mudlog -- log mud messages to a file & to online imm's syslogs based on 
- * syslog by Fen Jul 3, 1992 */
+/* Log mud messages to a file & to online imm's syslogs. - Fen */
 void mudlog(int type, int level, int file, const char *str, ...)
 {
   char buf[MAX_STRING_LENGTH];
