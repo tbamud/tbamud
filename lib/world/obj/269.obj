@@ -3,7 +3,7 @@ stone chipped rock~
 a chipped rock~
 A chipped rock is lying here, half-hidden in the weeds.~
 ~
-5 e an 0
+5 e 0 0 0 an 0 0 0 0 0 0 0
 0 2 3 0
 5 10 0 0
 A
@@ -17,7 +17,7 @@ weed plant grass~
 a strange weed~
 A strange, dry weed attempts to grow out of the dust.~
 ~
-19 jq ao 0
+19 jq 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 2 1 0 0
 A
@@ -29,7 +29,7 @@ hatchet, tomahawk~
 a chipped tomahawk~
 A strange little axe is here, abandoned on the ground.~
 ~
-5 bgj an 0
+5 bgj 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 10
 5 500 0 0
 A
@@ -41,7 +41,7 @@ spear vicious~
 a vicious spear~
 A vicious spear is struck into the earth here, daring you to take it.~
 ~
-5 bfjn an 0
+5 bfjn 0 0 0 an 0 0 0 0 0 0 0
 0 4 4 11
 10 700 0 0
 A
@@ -51,7 +51,7 @@ dagger black quartz~
 a black quartz dagger~
 A black dagger exists here, hovering about seven inches off the ground.~
 ~
-5 abdfgimnpq an 0
+5 abdfgimnpq 0 0 0 an 0 0 0 0 0 0 0
 0 5 6 11
 5 645 0 0
 E
@@ -71,7 +71,7 @@ bone breastplate plate~
 a bone breastplate~
 An Indian bone breastplate is here.~
 ~
-9 bdegj ad 0
+9 bdegj 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 9 1000 0 0
 E
@@ -83,7 +83,7 @@ leather headband band~
 a leather headband~
 A leather headband is here, it is your destiny to wear it.~
 ~
-9 begj aem 0
+9 begj 0 0 0 aem 0 0 0 0 0 0 0
 4 0 0 0
 2 1000 0 0
 E
@@ -102,7 +102,7 @@ necklace quartz beaded beads~
 a quartz-bead necklace~
 A necklace is here, made of shining stones.~
 ~
-9 agp acm 0
+9 agp 0 0 0 acm 0 0 0 0 0 0 0
 3 0 0 0
 2 1000 0 0
 E
@@ -119,7 +119,7 @@ thorn cactus~
 a cactus thorn~
 A cactus thorn lies here, almost under your feet.~
 ~
-5 e an 0
+5 e 0 0 0 an 0 0 0 0 0 0 0
 0 1 3 1
 1 100 0 0
 E
@@ -131,7 +131,7 @@ feather red key~
 a red feather~
 A red feather is lying here.~
 ~
-18 ce a 0
+18 ce 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E

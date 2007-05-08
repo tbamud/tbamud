@@ -3,7 +3,7 @@ vest ringmail~
 a ringmail vest~
 A vest made of iron rings lies heaped on the floor.~
 ~
-9 ag ad 0
+9 ag 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 50 800 40 0
 A
@@ -13,7 +13,7 @@ helm iron~
 an iron helm~
 An iron helm has been left on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 10 500 80 0
 A
@@ -23,7 +23,7 @@ gauntlets iron~
 a pair of iron gauntlets~
 A pair of iron gauntlets rests heavily on the ground.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
 10 220 90 0
 A
@@ -35,7 +35,7 @@ sleeves iron~
 a pair of iron sleeves~
 A set of iron sleeves lies on the ground.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 10 245 50 0
 A
@@ -47,7 +47,7 @@ boots iron~
 a pair of iron boots~
 A pair of iron boots has been left here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 6 800 200 0
 A
@@ -59,7 +59,7 @@ greaves iron~
 a set of iron greaves~
 A set of iron greaves lie here unattended.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 7 0 0 0
 10 540 21 0
 A
@@ -71,7 +71,7 @@ girth iron~
 an iron girth~
 A small iron girth lies at your feet.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
 6 420 60 0
 #5207
@@ -79,7 +79,7 @@ plate breast iron~
 a battered iron breast plate~
 A battered iron breast plate lies here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 50 800 15 0
 A
@@ -89,7 +89,7 @@ shield iron~
 a sturdy iron shield~
 A small, but sturdy, iron shield has been left here.~
 ~
-9 gh aj 0
+9 gh 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 5 500 1000 0
 A
@@ -101,7 +101,7 @@ potion black~
 a black potion~
 A jet black potion sits upright waiting to be taken.~
 ~
-10 fg a 0
+10 fg 0 0 0 a 0 0 0 0 0 0 0
 16 4 36 39
 5 600 100 0
 #5211
@@ -109,7 +109,7 @@ potion orange~
 an orange potion~
 A small orange potion lies here.~
 ~
-10 fg a 0
+10 fg 0 0 0 a 0 0 0 0 0 0 0
 20 44 -1 -1
 10 750 100 0
 #5213
@@ -117,7 +117,7 @@ staff serpentine~
 a green serpentine staff~
 A green serpentine staff has been left here.~
 ~
-4 fg ao 0
+4 fg 0 0 0 ao 0 0 0 0 0 0 0
 15 2 2 23
 12 660 30 0
 #5214
@@ -125,7 +125,7 @@ ball quartz~
 a smooth quartz ball~
 A smooth quartz ball lies here gleaming.~
 ~
-1 g ao 0
+1 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 72 0
 30 305 95 0
 #5215
@@ -133,7 +133,7 @@ scroll tattered~
 a tattered scroll~
 A worn and tattered scroll has been left here.~
 ~
-2 g a 0
+2 g 0 0 0 a 0 0 0 0 0 0 0
 24 24 44 4
 15 800 40 0
 #5216
@@ -141,7 +141,7 @@ scroll bound~
 a bound scroll~
 A bound scroll of detection lies at your feet.~
 ~
-2 g a 0
+2 g 0 0 0 a 0 0 0 0 0 0 0
 15 18 19 20
 15 420 100 0
 #5217
@@ -149,7 +149,7 @@ flute silver~
 a silver flute~
 A brilliant silver flute glimmers from beneath a rock.~
 ~
-4 fg ao 0
+4 fg 0 0 0 ao 0 0 0 0 0 0 0
 18 2 2 7
 3 900 80 0
 #5218
@@ -157,7 +157,7 @@ talisman demon~
 a demon-faced talisman~
 A demon-faced talisman glares at you angrily.~
 ~
-9 agh ac 0
+9 agh 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
 11 250 15 0
 A
@@ -169,15 +169,15 @@ venison chunk~
 a chunk of venison~
 A large chunk of venison sits here, ready to be eaten.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 20 100 20 0
 #5220
 fountain blood cracked~
 a large cracked fountain~
-undefined~
+Undefined~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 10 10 13 1
 0 0 0 0
 E
@@ -189,7 +189,7 @@ sword two-handed~
 a two-handed sword~
 A nice two-handed sword hangs on a hook in the wall.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 3
 22 550 80 0
 A
@@ -201,7 +201,7 @@ robe black silk~
 a black silk robe~
 A black silk robe lies heaped in one corner.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 6 130 50 0
 #5223
@@ -209,7 +209,7 @@ cloak green~
 a dark green cloak~
 A beautiful dark green cloak has been dropped here by someone.~
 ~
-9 ag ac 0
+9 ag 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 12 450 40 0
 A
@@ -221,15 +221,15 @@ seal ebony~
 an engraved ebony seal~
 A small, engraved ebony seal is here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 #5225
 desk curved~
 the desk~
-undefined~
+Undefined~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 100 13 5224 0
 0 0 0 0
 #5226
@@ -237,15 +237,15 @@ seal ivory~
 an engraved ivory seal~
 A small, engraved ivory seal lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 #5227
 cabinet glass~
 the glass cabinet~
-undefined~
+Undefined~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 13 5226 0
 0 0 0 0
 #5228
@@ -253,7 +253,7 @@ arm rotted~
 a half-rotted arm~
 A half-rotted arm floats lazily past your feet.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 0 1
 20 10 10 0
 #5230
@@ -261,7 +261,7 @@ stone pale blue~
 a pale blue stone~
 A pale blue stone sits here.~
 ~
-8 dg ao 0
+8 dg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 550 60 0
 A
@@ -271,7 +271,7 @@ stone scarlet blue~
 a scarlet and blue stone~
 A pretty scarlet and blue stone has been dropped here.~
 ~
-8 dg ao 0
+8 dg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 550 60 0
 A
@@ -281,7 +281,7 @@ stone blue incandescent~
 an incandescent blue stone~
 A small incandescent blue stone lies here.~
 ~
-8 dg ao 0
+8 dg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 550 60 0
 A
@@ -291,7 +291,7 @@ stone red deep~
 a deep red stone~
 Someone has left a deep red stone here.~
 ~
-8 dg ao 0
+8 dg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 550 60 0
 A
@@ -301,7 +301,7 @@ stone pink~
 a pink stone~
 A tiny pink stone lies at your feet.~
 ~
-8 dg ao 0
+8 dg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 550 60 0
 A
@@ -311,7 +311,7 @@ stone pearly white~
 a pearly white stone~
 A lovely, pearly white stone has been carelessly left here.~
 ~
-8 dg ao 0
+8 dg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 870 60 0
 A
@@ -321,7 +321,7 @@ stone lavender pale~
 a pale lavender stone~
 A beautiful pale lavender stone lies here.~
 ~
-8 dgh ao 0
+8 dgh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 530 60 0
 A
@@ -331,7 +331,7 @@ stone lavender green~
 a lavender and green stone~
 A stunning lavender and green stone rests on the ground.~
 ~
-8 dgh ao 0
+8 dgh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 470 60 0
 A
@@ -341,7 +341,7 @@ stone rose dusty~
 a dusty rose stone~
 A stone is here, sort of a dusty rose color and very pretty.~
 ~
-8 dg ao 0
+8 dg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 980 60 0
 A
@@ -351,7 +351,7 @@ stone grey dull~
 a dull grey stone~
 You can barely make out a dull grey stone on the ground.~
 ~
-8 dg ao 0
+8 dg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 20 200 0
 #5240
@@ -359,7 +359,7 @@ stone purple vibrant~
 a vibrant purple stone~
 A stunningly vibrant purple stone attracts your attention.~
 ~
-8 dgh ao 0
+8 dgh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 1000 100 0
 A
@@ -369,7 +369,7 @@ stone pink green~
 a pink and green stone~
 A bright pink and green stone has been left here.~
 ~
-8 dgh ao 0
+8 dgh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 660 100 0
 A
@@ -379,7 +379,7 @@ stone green pale~
 a pale green stone~
 A pale green stone lies here collecting dust.~
 ~
-8 dgh ao 0
+8 dgh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 710 100 0
 A
@@ -389,7 +389,7 @@ stone clear~
 a clear stone~
 An odd clear stone lies at your feet.~
 ~
-8 dgh ao 0
+8 dgh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 890 100 0
 A
@@ -399,7 +399,7 @@ stone iridescent~
 an iridescent stone~
 A large iridescent stone has been left here.~
 ~
-8 dgh ao 0
+8 dgh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 370 100 0
 A
@@ -409,7 +409,7 @@ mandolin~
 a mandolin~
 A mandolin lies against the wall.~
 ~
-4 g ao 0
+4 g 0 0 0 ao 0 0 0 0 0 0 0
 13 3 3 15
 20 300 150 0
 #5251
@@ -417,7 +417,7 @@ harp golden~
 a golden harp~
 A battered golden harp has been tipped over.~
 ~
-4 g ao 0
+4 g 0 0 0 ao 0 0 0 0 0 0 0
 18 1 1 6
 50 250 80 0
 $~

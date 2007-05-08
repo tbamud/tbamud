@@ -3,18 +3,18 @@ nothingness universal~
 Sapowox's Universal Nothingness~
 You are quite unable to perceive Sapowox's Universal Nothingness here.~
 ~
-5 bcg an 0
+5 bcg 0 0 0 an 0 0 0 0 0 0 0
 0 6 4 1
 40 1 200 0
+E
+text writing inscription~
+   It just says: ' (void *) ' Not very enlightening, is it?  
+~
 E
 nothingness universal~
    You are not sure, but you do not seem not able to figure out what it isn't,
 because it doesn't much resemble anything you haven't ever seen.  You feel a bit
 of mortal confusion, but you notice a small inscription on it.  
-~
-E
-text writing inscription~
-   It just says: ' (void *) ' Not very enlightening, is it?  
 ~
 A
 18 2
@@ -25,7 +25,7 @@ gold coins~
 the gold~
 A lot of gold is here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 1 1000 0 0
 #15002
@@ -33,7 +33,7 @@ sceptre royal golden~
 a golden sceptre~
 A golden Royal sceptre lies on the ground.~
 ~
-12 gk ao 0
+12 gk 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 20 150 30 0
 A
@@ -43,7 +43,7 @@ crown golden~
 a golden crown~
 A magnificently jewelled golden crown has been left here.~
 ~
-9 gk ae 0
+9 gk 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 40 120 10 0
 A
@@ -55,7 +55,7 @@ apple golden~
 a golden apple~
 There is a golden apple here.~
 ~
-1 gk ao 0
+1 gk 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 5 800 40 0
 #15005
@@ -63,7 +63,7 @@ telescope scope~
 a large telescope~
 There is a large telescope here, pointing at the sky.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -78,7 +78,7 @@ sword training~
 a training sword~
 A training sword with blunt edges is leaned against a wall.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 3
 7 300 5 0
 A
@@ -88,7 +88,7 @@ key huge~
 a huge key~
 There is a huge, heavy-looking key on the floor here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #15008
@@ -96,7 +96,7 @@ Verminator sword~
 Verminator~
 A strange looking sword is lying upon the ground here.~
 ~
-5 adjmnoq an 0
+5 adjmnoq 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 11
 2 1 40 0
 E
@@ -109,7 +109,7 @@ key butlers butler~
 the Butler's key~
 The Butler's key is here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 0
 #15010
@@ -117,7 +117,7 @@ key small~
 a small key~
 A small key lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 100 0
 #15011
@@ -125,7 +125,7 @@ chest wooden~
 a large wooden chest~
 A large wooden chest stands here in a corner.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 800 13 15010 0
 50 400 100 0
 E
@@ -138,7 +138,7 @@ vial large potion brown~
 a large vial~
 A large vial has been left here.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 15 15 -1 -1
 14 800 80 0
 E
@@ -150,24 +150,24 @@ banner royal~
 a royal banner~
 The royal banner has been firmly planted in the ground here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
+E
+flag~
+   On the flag is the symbol of King Welmar's house, the rampant stag.  
+~
 E
 banner royal standard~
    It is large and very heavy.  On top of it flutters King Welmar's flag
 proudly.  
-~
-E
-flag~
-   On the flag is the symbol of King Welmar's house, the rampant stag.  
 ~
 #15014
 key~
 a key~
 A key lies on the floor.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 13 1 0 0
 E
@@ -179,7 +179,7 @@ hauberk mail chain~
 a guard's chain mail hauberk~
 A chain mail hauberk lies on the floor~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 50 200 50 0
 #15016
@@ -187,7 +187,7 @@ broadsword sword large~
 a large broadsword~
 There is a large broadsword lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 3
 14 130 30 0
 #15017
@@ -195,7 +195,7 @@ key cell~
 the cell key~
 A key lies on the floor.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 0
 E
@@ -207,7 +207,7 @@ carcass~
 a carcass~
 There is a carcass lying in the middle of the floor of the building here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #15019
@@ -215,7 +215,7 @@ lobster~
 a delicious-looking lobster~
 A delicious-looking lobster is lying here, tempting your appetite.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 7 0 0 0
 5 100 10 0
 #15020
@@ -223,7 +223,7 @@ caviar~
 some Russian caviar~
 There is some delicious-looking Russian caviar here, making your mouth water.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 250 20 0
 #15021
@@ -231,7 +231,7 @@ glow~
 the glow from the west~
 There is a strange glow coming from the west.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -244,7 +244,7 @@ wail sound~
 the wailing sound from the east~
 There is an eerie wailing sound coming from the house to the east.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 $~

@@ -3,7 +3,7 @@ codex stone massive~
 the stone codex~
 A massive stone codex rests in the center of the room.~
 ~
-12 d 0 0
+12 d 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -25,7 +25,7 @@ large wooden sign~
 a large, wooden sign~
 A large wooden sign is mounted on a painted post near the path.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -39,7 +39,7 @@ hole~
 a hole in the ground~
 A hole has been dug in the ground here.~
 ~
-15 d 0 0
+15 d 0 0 0 0 0 0 0 0 0 0 0
 20 0 -1 0
 0 0 0 0
 #7403
@@ -47,7 +47,7 @@ handful edible roots~
 a handful of edible roots~
 A handful of edible roots juts up from the dirt.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 2 25 5 0
 E
@@ -60,7 +60,7 @@ bunch hyacinths white~
 a bunch of white hyacinths~
 Petals scattered, a bunch of hyacinths has been tossed to the ground here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 15 5 0
 E
@@ -76,7 +76,7 @@ boots sturdy~
 a pair of sturdy leather boots~
 Someone has left a pair of boots lying around.~
 ~
-9 o ag 0
+9 o 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 10 100 10 0
 E
@@ -92,7 +92,7 @@ shovel iron battered~
 an iron shovel~
 A battered iron shovel has been discarded here.~
 ~
-5 jm an k
+5 jm 0 0 0 an 0 0 0 l 0 0 0
 0 3 2 7
 5 250 25 0
 E
@@ -105,7 +105,7 @@ small marble tombstone~
 a small, marble tombstone~
 A small, marble tombstone lies here, marking an unknown grave.~
 ~
-9 jm aj n
+9 jm 0 0 0 aj 0 0 0 o 0 0 0
 3 0 0 0
 10 50 5 0
 E
@@ -119,7 +119,7 @@ patchwork cloak heap cloth~
 a patchwork cloak~
 A heap of cloth collects dust as it lies here.~
 ~
-9 gp ak 0
+9 gp 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 2 2 0 0
 E
@@ -135,7 +135,7 @@ simple earthenware jug water~
 a simple earthenware jug~
 An earthenware jug lies on its side on the ground.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 5 15 0
 5 75 7 0
 E
@@ -148,7 +148,7 @@ black pile silk gloves~
 a pair of fine, black silk gloves~
 A small pile of black silk lies crumpled on the ground.~
 ~
-11 0 ah 0
+11 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 1 1 1 0
 E
@@ -163,7 +163,7 @@ long black silk veil~
 a long, black silk veil~
 A silk veil is tossed around in the breeze.~
 ~
-11 dgh ae 0
+11 dgh 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 2 2 0 0
 E
@@ -178,7 +178,7 @@ heavy canvas bag~
 a heavy canvas bag~
 A heavy canvas bag has been tossed aside here.~
 ~
-15 0 ad 0
+15 0 0 0 0 ad 0 0 0 0 0 0 0
 200 0 -1 0
 2 10 1 0
 E
@@ -192,7 +192,7 @@ bright copper oil lamp~
 a bright, copper oil lamp~
 A bright, copper oil lamp lies here, burning merrily.~
 ~
-1 k a d
+1 k 0 0 0 a 0 0 0 e 0 0 0
 0 0 10 0
 3 60 6 0
 E
@@ -209,7 +209,7 @@ wide ivory bracelet~
 a wide ivory bracelet~
 A wide, ivory bracelet is here, collecting dust.~
 ~
-9 b am 0
+9 b 0 0 0 am 0 0 0 0 0 0 0
 1 0 0 0
 2 50 5 0
 E
@@ -225,7 +225,7 @@ key shiny copper~
 a shiny copper key~
 Something shiny has been left lying here.~
 ~
-18 c alm 0
+18 c 0 0 0 alm 0 0 0 0 0 0 0
 0 0 0 0
 1 20 2 0
 E
@@ -239,7 +239,7 @@ pouch belt hide worn beltpouch~
 a worn hide beltpouch~
 Someone's beltpouch was left here.~
 ~
-15 0 al 0
+15 0 0 0 0 al 0 0 0 0 0 0 0
 13 0 -1 0
 3 25 1 0
 E
@@ -256,7 +256,7 @@ square stone key~
 a square stone key~
 An odd shaped stone is lying here.~
 ~
-18 c ag 0
+18 c 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 2 10 1 0
 E
@@ -270,7 +270,7 @@ long knobby ashwood staff~
 a long ashwood staff~
 A long, knobby staff lies here.~
 ~
-5 p an 0
+5 p 0 0 0 an 0 0 0 0 0 0 0
 4 2 2 7
 5 100 10 0
 E
@@ -285,7 +285,7 @@ platinum circlet ring small~
 a small platinum circlet~
 Nearly unnoticeable, a small ring glints in the dust.~
 ~
-11 gk ab f
+11 gk 0 0 0 ab 0 0 0 g 0 0 0
 0 0 0 0
 1 300 30 0
 E
@@ -301,7 +301,7 @@ slender steel key~
 a slender, steel key~
 A slender bit of steel has been discarded here.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 75 7 0
 E
@@ -314,7 +314,7 @@ sweeping black cape pile cloth~
 a sweeping black cape~
 A pile of black cloth lies in the dirt.~
 ~
-9 j ak 0
+9 j 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
 3 100 10 0
 E
@@ -330,7 +330,7 @@ sinuous leather whip~
 a sinuous leather whip~
 There is a leather whip lying here, unclaimed.~
 ~
-5 bj an 0
+5 bj 0 0 0 an 0 0 0 0 0 0 0
 7 1 5 10
 5 150 15 0
 E
@@ -346,7 +346,7 @@ charred suit mail~
 a charred suit of mail~
 A charred mail suit was thrown aside here.~
 ~
-9 jmo ad 0
+9 jmo 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 20 400 40 0
 E
@@ -360,7 +360,7 @@ pair chain blackened sleeves~
 a pair of blackened chain sleeves~
 Someone's chain sleeves lie here, badly burned.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
 10 250 25 0
 E
@@ -378,7 +378,7 @@ pair blackened chain leggings~
 a pair of blackened chain leggings~
 A pair of blackened leggings lies here, smouldering.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
 10 275 27 0
 E
@@ -396,7 +396,7 @@ glowing length chain ~
 a glowing length of chain ~
 A glowing length of chain was cast aside here.~
 ~
-9 a al 0
+9 a 0 0 0 al 0 0 0 0 0 0 0
 1 0 0 0
 8 350 35 0
 E
@@ -412,7 +412,7 @@ bottle fizzing green liquid potion~
 a fizzing green potion~
 A bottle of fizzing green liquid has been set here carefully.~
 ~
-10 cg a 0
+10 cg 0 0 0 a 0 0 0 0 0 0 0
 12 -1 -1 -1
 2 400 40 0
 E
@@ -426,7 +426,7 @@ stone vial oil potion~
 a stone vial~
 A stone vial filled with a foul-smelling oil is here.~
 ~
-10 cg a 0
+10 cg 0 0 0 a 0 0 0 0 0 0 0
 12 1 -1 -1
 5 500 50 0
 E
@@ -440,7 +440,7 @@ fine bluesteel steel breastplate~
 a fine bluesteel breastplate ~
 A breastplate of blue steel lies here, glowing softly.~
 ~
-9 n ad 0
+9 n 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 10 400 40 0
 E
@@ -454,7 +454,7 @@ steel bluesteel warhammer hammer~
 Lord Mycea's bluesteel warhammer~
 A wicked-looking warhammer has been left here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 2 3 2 6
 15 900 100 0
 E
@@ -468,7 +468,7 @@ ancient band copper~
 an ancient band of copper~
 A band of copper lies here.~
 ~
-12 gk am 0
+12 gk 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 5 100 10 0
 E
@@ -482,7 +482,7 @@ tiny horned half helm little~
 a tiny, horned half-helm~
 Someone left their little helm here.~
 ~
-9 a ae 0
+9 a 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 8 300 30 0
 E
@@ -498,7 +498,7 @@ six massive locked chests~
 six massive locked chests~
 Six massive locked chests are scattered about here.~
 ~
-15 cd 0 0
+15 cd 0 0 0 0 0 0 0 0 0 0 0
 500 0 -1 0
 0 0 0 0
 E
@@ -513,7 +513,7 @@ lace handkerchief black~
 a black lace handkerchief~
 A lace handkerchief blows around on the breeze.~
 ~
-2 g a 0
+2 g 0 0 0 a 0 0 0 0 0 0 0
 12 35 -1 -1
 1 250 30 0
 E

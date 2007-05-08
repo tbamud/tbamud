@@ -3,7 +3,7 @@ tall hibiscus plant~
 a tall hibiscus plant~
 A tall hibiscus plant stands proudly in a large china vase.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -18,7 +18,7 @@ pram lacey doll's~
 a lacey doll's pram~
 A lacey doll's pram stands against the corner.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -32,7 +32,7 @@ machine washing~
 a washing machine~
 A washing machine rumbles steadily as it spins.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 5 -1 0
 0 0 0 0
 E
@@ -45,7 +45,7 @@ cloth nappy dingy white piece~
 a cloth nappy~
 A dingy white piece of cloth lies crumpled on the ground.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 15 0 0
 E
@@ -59,7 +59,7 @@ tiny blue sundress dress little pretty~
 a tiny blue sundress~
 A pretty little sundress lies crumpled here.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 E
@@ -73,7 +73,7 @@ eye~
 an eye~
 A large eye sits unblinking here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11805
@@ -92,7 +92,7 @@ dollhouse house dollshouse~
 an old and magnificent wooden dollhouse~
 An old and magnificent wooden dollhouse stands prominently displayed.~
 ~
-15 g 0 0
+15 g 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -115,7 +115,7 @@ leather-strapped journal~
 a leather-strapped journal~
 A leather-strapped journal lies on the ground.~
 ~
-12 dq a 0
+12 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11891
@@ -131,7 +131,7 @@ little red crayon~
 a little red crayon~
 A little red crayon lies here.~
 ~
-21 dq a 0
+21 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -145,7 +145,7 @@ little doll blue~
 a little doll in a blue dress~
 A little doll, dressed in blue, lies gathering dust here.~
 ~
-13 dgq a 0
+13 dgq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11803
@@ -163,7 +163,7 @@ children's bible book~
 a children's bible~
 A children's bible lies open here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -178,7 +178,7 @@ slightly dented billiard ball~
 a slightly dented billiard ball~
 A slightly dented billiard ball has been left lying on the floor.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 4 5
 1 1 0 0
 E
@@ -192,7 +192,7 @@ birdcage little wicker cage~
 a little wicker birdcage~
 A little wicker birdcage hangs from a white stand.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 15 11823 0
 0 0 0 0
 E
@@ -207,7 +207,7 @@ tiny humming bird~
 a tiny humming-bird~
 A tiny humming-bird flits rapidly about.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11809
@@ -216,7 +216,7 @@ fridge tall~
 a tall fridge~
 A tall fridge stands unobtrusively against the wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 5 -1 0
 0 0 0 0
 E
@@ -230,7 +230,7 @@ green velvety pool table~
 a green velvety pool table~
 A green velvety pool table on sturdy wooden legs stands in the room.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -244,7 +244,7 @@ milk carton milk~
 a carton of milk~
 A carton of milk stands here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 10 0
 25 1 0 0
 T 11810
@@ -259,7 +259,7 @@ shiny red apple~
 a shiny red apple~
 A shiny red apple lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 1 0 0
 T 11810
@@ -274,7 +274,7 @@ long orange carrot~
 an orange carrot~
 A long orange carrot lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 1 0 0
 T 11810
@@ -289,7 +289,7 @@ playpen childs child's pen~
 a child's playpen~
 A brightly coloured child's playpen stands here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -304,7 +304,7 @@ bright yellow fluffy towel~
 a bright yellow fluffy towel~
 A bright yellow fluffy towel lies neatly folded here.~
 ~
-11 0 adkl 0
+11 0 0 0 0 adkl 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -319,7 +319,7 @@ shiny brass trumpet~
 a shiny brass trumpet~
 A shiny brass trumpet lies here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -334,7 +334,7 @@ child's dress shoes~
 child's dress shoes~
 Some child's dress shoes lie dropped here.~
 ~
-11 0 ag 0
+11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 E
@@ -348,7 +348,7 @@ little white key~
 a little white key~
 A little white key is lying on the ground.~
 ~
-18 q a 0
+18 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -364,7 +364,7 @@ bookshelf shelf tall wooden~
 a tall wooden bookshelf~
 A tall wooden bookshelf stands here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -378,7 +378,7 @@ fresh baked bread~
 some fresh baked bread~
 Some fresh baked bread sits here, filling the air with a warm scent.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 14 0 0 0
 1 10 0 0
 E
@@ -392,7 +392,7 @@ golden apple pie cinnamon~
 a golden apple pie~
 The smell of apples and cinnamon waft from a golden pie.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 14 0 0 0
 1 10 0 0
 E
@@ -405,7 +405,7 @@ tree large leafy pear~
 a large leafy pear tree~
 A large leafy pear tree grows here, branches waving gently.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -420,7 +420,7 @@ pear~
 a pear~
 A golden pear lies here.~
 ~
-19 dq a 0
+19 dq 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 5
 1 1 0 0
 E
@@ -435,7 +435,7 @@ bed large wooden bunkbed~
 a large wooden bunkbed~
 A large wooden bunkbed stands against the wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -451,7 +451,7 @@ alphabet blocks pile~
 a pile of alphabet blocks~
 A pile of alphabet blocks lie scattered here.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 E
@@ -468,7 +468,7 @@ milk baby bottle milk~
 a baby bottle~
 A baby bottle has been dropped on the ground, left to sour.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 8 8 10 0
 13 50 0 0
 E
@@ -483,7 +483,7 @@ violet flower~
 @ma violet@n~
 @mA violet@g blooms in a flowerpot here.@n~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 E
@@ -498,7 +498,7 @@ tiny insect~
 an insect~
 A tiny insect lies as if dead here.~
 ~
-13 dq a 0
+13 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11830
@@ -514,7 +514,7 @@ box little black~
 a little black box~
 A little black box has been set here.~
 ~
-15 dq a 0
+15 dq 0 0 0 a 0 0 0 0 0 0 0
 99 1 -1 0
 1 1 0 0
 E
@@ -528,7 +528,7 @@ sword words~
 a sword of words~
 A sword lies gathering dust here.~
 ~
-5 dgq an 0
+5 dgq 0 0 0 an 0 0 0 0 0 0 0
 2 6 2 3
 1 1 0 0
 E
@@ -543,7 +543,7 @@ swirling tunnel tunnel-like vortex~
 a swirling vortex~
 A swirling tunnel-like vortex hovers here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -557,7 +557,7 @@ dark brown sofa couch~
 a dark brown sofa couch~
 A dark brown sofa sits against the wall, ripped and frayed.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -572,7 +572,7 @@ computer~
 a computer~
 A computer sits on one of the desks here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -586,7 +586,7 @@ bush leafy~
 a leafy bush~
 A leafy bush grows greenly here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -600,7 +600,7 @@ cluster little red berries~
 a little cluster of red berries~
 A little cluster of red berries lie fallen here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 15 0 0
 E
@@ -614,7 +614,7 @@ bed wooden~
 a wooden bed~
 A wooden bed has been pushed against the wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -629,7 +629,7 @@ screwdriver~
 a screwdriver~
 A screwdriver has been left here.~
 ~
-5 jl an 0
+5 jl 0 0 0 an 0 0 0 0 0 0 0
 2 5 2 11
 1 30 0 0
 E
@@ -644,7 +644,7 @@ toolbox box~
 a toolbox~
 A toolbox sits unobtrusively off to the side.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 99 1 -1 0
 4 40 0 0
 E
@@ -658,7 +658,7 @@ piece twine~
 a piece of twine~
 A piece of twine lies coiled up.~
 ~
-11 0 am j
+11 0 0 0 0 am 0 0 0 k 0 0 0
 0 0 0 0
 1 10 0 0
 E
@@ -673,7 +673,7 @@ pair pliers~
 a pair of pliers~
 A pair of pliers glint dangerously.~
 ~
-5 jl an 0
+5 jl 0 0 0 an 0 0 0 0 0 0 0
 2 4 3 11
 2 20 0 0
 E
@@ -687,7 +687,7 @@ long black skirt~
 a long black skirt~
 A long black skirt lies crumpled on the ground.~
 ~
-11 0 af 0
+11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 2 50 0 0
 E
@@ -703,7 +703,7 @@ little pile cornflakes~
 a little pile of cornflakes~
 A little pile of cornflakes lies scattered here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 1 0 0
 E
@@ -717,7 +717,7 @@ shelves large wooden~
 large wooden shelves~
 Large wooden shelves stand against the eastern wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -732,7 +732,7 @@ bathtub tub bath~
 a bathtub~
 A bathtub sits against the wall.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -747,7 +747,7 @@ bed wooden~
 a wooden bed~
 A wooden bed has been pushed against the wall.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -762,7 +762,7 @@ pair eyes~
 a pair of eyes~
 A pair of eyes lie unblinking on the ground.~
 ~
-11 q ae 0
+11 q 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11848
@@ -778,7 +778,7 @@ cabinet broken mirror~
 a broken mirror cabinet~
 A mirror cabinet hangs on the wall, the glass cracked and broken.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 5 -1 0
 0 0 0 0
 T 11859
@@ -793,7 +793,7 @@ sharp knife~
 a sharp knife~
 A sharp knife lies glinting cruelly on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 6 2 3
 2 200 0 0
 E
@@ -809,7 +809,7 @@ bloody dress~
 a bloody dress~
 A bloody dress lies dumped in a heap.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -826,7 +826,7 @@ little black key~
 a little black key~
 A little black key lies forgotten here.~
 ~
-18 dq a 0
+18 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -842,7 +842,7 @@ corpse red trout~
 the corpse of the red trout~
 The corpse of the red trout is lying here.~
 ~
-15 dq a 0
+15 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
 1 1 0 0
 T 11865
@@ -852,7 +852,7 @@ corpse taildove~
 the corpse of the taildove~
 The corpse of the taildove is lying here.~
 ~
-15 dq a 0
+15 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11865
@@ -862,7 +862,7 @@ corpse vile toad~
 the corpse of the vile toad~
 The corpse of the vile toad is lying here.~
 ~
-15 dq a 0
+15 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11865
@@ -872,7 +872,7 @@ ana pearl darkly beautiful~
 the ana pearl~
 A darkly beautiful pearl glints from the ground.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 500 0 0
 E
@@ -891,7 +891,7 @@ hotdog~
 a hotdog~
 A hotdog lies gathering dust.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11871
@@ -907,7 +907,7 @@ pines~
 the pines~
 Pines stand stiffly against the breeze.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 11883
@@ -922,7 +922,7 @@ black egg~
 a black egg~
 A black egg lies forgotten on the ground.~
 ~
-12 cdq a 0
+12 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 11880
@@ -938,7 +938,7 @@ serpent's tongue~
 the serpent's tongue~
 The severed tongue of a serpent has been left to rot.~
 ~
-11 0 am 0
+11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 0
 E
@@ -957,7 +957,7 @@ wine glass red wine~
 a glass of red wine~
 A glass of deep red wine stands here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 10 2 1
 15 1 0 0
 E
@@ -971,7 +971,7 @@ dark cluster burning trees raging fire pines~
 a burning cluster of pines~
 A dark cluster of pines is ablaze with raging fire.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 11881
@@ -988,7 +988,7 @@ black page~
 a black page~
 A black page lies gathering dust.~
 ~
-13 dq a 0
+13 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -1003,7 +1003,7 @@ flickering candle~
 a flickering candle~
 A flickering candle casts long shadows about itself.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 30 0 0
 E
@@ -1017,7 +1017,7 @@ book shadows dark~
 @Da book of shadows@n~
 @DA dark book lies amongst the shadows.@g~
 ~
-12 q a 0
+12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -1031,7 +1031,7 @@ corpse~
 the corpse of a ghostly girl~
 The corpse of a ghostly girl is lying here.~
 ~
-15 dq a 0
+15 dq 0 0 0 a 0 0 0 0 0 0 0
 1 0 -1 0
 1 1 0 0
 T 11865
@@ -1042,7 +1042,7 @@ green mound earth little~
 a little green mound of earth~
 A little green mound of earth marks a burial spot.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 11865
@@ -1057,7 +1057,7 @@ fiery bloodstone amulet~
 a fiery bloodstone amulet~
 A fiery amulet lies flickering on the ground.~
 ~
-11 g ac 0
+11 g 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 700 0 0
 T 11819
@@ -1075,7 +1075,7 @@ little silver ring~
 a little silver ring~
 A little silver ring lies gathering dust.~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -1091,7 +1091,7 @@ small embroidery~
 a small embroidery~
 A small embroidery has been left crumpled here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 20 0 0
 E
@@ -1105,7 +1105,7 @@ lego bricks~
 some lego bricks~
 Some lego bricks lie abandoned.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -1119,7 +1119,7 @@ box cornflakes~
 a box of cornflakes~
 A box of cornflakes lies on the ground.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 30 0 -1 0
 1 1 0 0
 E
@@ -1133,7 +1133,7 @@ box kraft cheese macaroni~
 a box of kraft macaroni and cheese~
 A box of kraft macaroni and cheese lies on the ground.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 1 0 0
 E

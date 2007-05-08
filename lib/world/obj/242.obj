@@ -3,7 +3,7 @@ tea cup tea~
 a cup~
 A cup has been set here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 11 0
 13 5 1 0
 E
@@ -15,7 +15,7 @@ milk cup milk~
 a cup~
 A cup has been set here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 10 0
 13 7 1 0
 E
@@ -27,7 +27,7 @@ water cup water~
 a cup~
 A cup has been set here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 12 12 15 0
 17 2 1 0
 E
@@ -39,25 +39,25 @@ water bottle water~
 a bottle~
 A bottle of Evian natural spring water is here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 24 24 15 0
 29 10 6 0
+E
+bottle~
+   It is a large, clean bottle.  There is a large label pasted on the side.  
+~
 E
 label~
    You've been ripped off!  It says here at the bottom of the label, in really
 really small letters, 'Bottled in the Midgaard branch of Evian Inc.  This water
 is from the natural, mostly clean River of Midgaard.  '
 ~
-E
-bottle~
-   It is a large, clean bottle.  There is a large label pasted on the side.  
-~
 #24204
 water canteen water~
 a canteen~
 A canteen has been set on the ground here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 80 80 15 0
 85 45 15 0
 E
@@ -69,7 +69,7 @@ red usher usher's vest~
 a red usher's vest~
 A red ushers vest has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 4 1 0 0
 E
@@ -82,7 +82,7 @@ flashlight flash light~
 a small black flashlight~
 A small black metal flashlight is lying here.~
 ~
-1 ag a 0
+1 ag 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
 2 1 0 0
 E
@@ -94,7 +94,7 @@ leather work gloves~
 a pair of leather work gloves~
 A pair of thick leather work gloves have been left here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 2 1 0 0
 E
@@ -107,7 +107,7 @@ denim overalls~
 a pair of denim overalls~
 A pair of denim overalls have been discarded here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
 4 200 0 0
 E
@@ -120,7 +120,7 @@ expensive suit jacket~
 an expensive suit jacket~
 An expensive looking black suit jacket is sitting here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
 4 400 100 0
 E
@@ -132,7 +132,7 @@ white dress shirt~
 a white dress shirt~
 A white dress shirt has been neatly folded here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
 4 750 250 0
 E
@@ -145,7 +145,7 @@ black dress pants~
 a pair of black dress pants~
 A pair of black dress pants is lying here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
 3 200 20 0
 E
@@ -157,7 +157,7 @@ leather dress shoes~
 a pair of men's leather dress shoes~
 A pair of men's black leather dress shoes are sitting here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 2 400 500 0
 E
@@ -170,7 +170,7 @@ fancy dress~
 a fancy black dress~
 A fancy black dress has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 3 400 100 0
 E
@@ -182,7 +182,7 @@ dress heels~
 a pair of dress heels~
 A pair of women's dress heels are sitting here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 2 400 500 0
 E
@@ -195,7 +195,7 @@ black bow tie~
 a black bow tie~
 A black bow tie is here, waiting for you to pick it up.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 2 0 0 0
 1 250 50 0
 E
@@ -207,7 +207,7 @@ key city~
 the City Key~
 The very big City Key is lying here.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 30 1000 500 0
 E
@@ -221,7 +221,7 @@ pda personal digital assistant~
 a PDA~
 A PDA (Personal Digital Assistant) is lying here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 250 50 0
 E
@@ -238,7 +238,7 @@ cell phone cellphone~
 a black cellphone~
 A black cell phone is here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 150 50 0
 E
@@ -254,7 +254,7 @@ laptop lap top~
 a brand new laptop~
 A brand new laptop is here, waiting to be stolen.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 550 55 0
 E
@@ -272,7 +272,7 @@ sack coins gold~
 a huge sack of gold coins~
 A huge sack of gold coins sits here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 1 1 0 0
 #24221
@@ -280,7 +280,7 @@ sword long~
 a long sword~
 A long sword has been left here.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
 8 600 10 0
 #24222
@@ -288,7 +288,7 @@ meat chunk~
 a piece of meat~
 A rather dubious looking piece of meat is on the ground here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 14 0 0 0
 5 24 10 0
 E
@@ -303,7 +303,7 @@ script first 1 one~
 the first page of a script~
 The first page of a play script is lying here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -348,7 +348,7 @@ script second 2 two~
 the second page of a script~
 The second page of a play script is lying here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -392,7 +392,7 @@ script third 3 three~
 the third page of a script~
 The third page of a script is lying here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -437,7 +437,7 @@ mop~
 a mop~
 A wooden handled mop has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 7
 8 300 0 0
 E
@@ -453,7 +453,7 @@ broom curling~
 a curling broom~
 A plastic curling broom has been left.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 3
 8 300 0 0
 E
@@ -469,7 +469,7 @@ red curling rock~
 a red curling rock~
 A red curling rock has been left here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 14 50 0 0
 E
@@ -486,7 +486,7 @@ yellow curling rock~
 a yellow curling rock~
 A yellow curling rock has been left here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 14 50 0 0
 E
@@ -503,7 +503,7 @@ coffee cup coffee~
 a cup~
 A cup of coffee has been set here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 12 0
 7 7 1 0
 #24292
@@ -511,7 +511,7 @@ hamburger burger~
 a tasty hamburger~
 A tasty looking hamburger has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 10 5 0
 E
@@ -524,7 +524,7 @@ poutine box cheesy~
 a box of poutine~
 A box of cheesy poutine has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 36 0 0 0
 1 15 5 0
 E
@@ -537,7 +537,7 @@ hotdog foot long foot-long~
 a foot-long hotdog~
 A foot-long is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 10 5 0
 E
@@ -549,7 +549,7 @@ water bottle water~
 a bottle of water~
 A bottle of water has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 4 4 0 0
 9 5 0 0
 #24296
@@ -557,7 +557,7 @@ bag potato chips~
 a bag of potato chips~
 A bag of potato chips has been left here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 15 5 0
 #24297
@@ -565,7 +565,7 @@ box pretzels~
 a box of pretzels~
 A box of pretzels is here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 18 0 0 0
 1 18 10 0
 #24298
@@ -573,7 +573,7 @@ sturdy key~
 a sturdy key~
 A sturdy key is lying here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #24299
@@ -581,7 +581,7 @@ silver key~
 a silver key~
 A shiny silver key has been left here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 $~

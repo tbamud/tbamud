@@ -3,7 +3,7 @@ ring pewter~
 a pewter ring~
 There is a pewter ring lying here.~
 ~
-11 fg ab 0
+11 fg 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 5 150 25 0
 A
@@ -15,7 +15,7 @@ belt bronze~
 a bronze belt~
 There is a bronze belt on the ground here.~
 ~
-9 f al 0
+9 f 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
 5 1000 50 0
 A
@@ -27,7 +27,7 @@ helmet roman combat~
 a Roman combat helmet~
 A Roman combat helmet has been left here.~
 ~
-9 a ae 0
+9 a 0 0 0 ae 0 0 0 0 0 0 0
 8 0 0 0
 25 120 80 0
 A
@@ -39,7 +39,7 @@ whistle coach~
 a coach's whistle~
 A coach's whistle has been left here.~
 ~
-8 h ac 0
+8 h 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 200 0
 #12004
@@ -47,7 +47,7 @@ stethoscope object~
 a stethoscope~
 There is an odd object laying on the ground here.~
 ~
-11 i ac 0
+11 i 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 150 20 0
 A
@@ -59,7 +59,7 @@ hairpin~
 a hairpin~
 A woman's hairpin is lying here.~
 ~
-11 i ae 0
+11 i 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 300 50 0
 A
@@ -71,7 +71,7 @@ apple~
 an apple~
 A delicious looking apple has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 5 5 0
 #12007
@@ -79,7 +79,7 @@ orange~
 an orange~
 A sun-ripened orange has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 6 6 0
 #12008
@@ -87,7 +87,7 @@ sandals leather~
 a pair of leather sandals~
 A pair of leather sandals has been dropped here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 2 250 41 0
 #12010
@@ -95,7 +95,7 @@ hotdog frank dog~
 a hotdog~
 A hotdog loaded with chili and onions has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 11 11 0
 #12011
@@ -103,7 +103,7 @@ bracelet silver gold~
 a silver and gold bracelet~
 A bracelet, made from silver and gold, has been carelessly left here.~
 ~
-11 bh am 0
+11 bh 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 14 1000 800 0
 A
@@ -115,7 +115,7 @@ ring sapphire~
 a sapphire ring~
 A sapphire ring has been left here.~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 20 350 55 0
 A
@@ -127,7 +127,7 @@ pendant jade~
 a jade pendant~
 A beautiful jade pendant has been left here.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 30 165 60 0
 A
@@ -139,7 +139,7 @@ robe froboz~
 Froboz' robe~
 Froboz' robe has been dropped here.~
 ~
-11 0 ak 0
+11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 5 150 25 0
 A
@@ -151,7 +151,7 @@ sword tempered~
 a tempered sword~
 A nasty looking tempered sword is lying here.~
 ~
-5 bmn an 0
+5 bmn 0 0 0 an 0 0 0 0 0 0 0
 0 3 8 3
 16 150 50 0
 A
@@ -161,7 +161,7 @@ sword quenched~
 a quenched sword~
 A very bloody, but quenched, sword has been left here.~
 ~
-5 fmn ano 0
+5 fmn 0 0 0 ano 0 0 0 0 0 0 0
 0 3 5 3
 14 100 40 0
 #12017
@@ -169,7 +169,7 @@ bracers moorish~
 a pair of Moorish bracers~
 A pair of Moorish bracers has been dropped here.~
 ~
-9 a ai 0
+9 a 0 0 0 ai 0 0 0 0 0 0 0
 8 0 0 0
 15 250 100 0
 A
@@ -181,7 +181,7 @@ plate breast roman combat~
 a Roman combat breast plate~
 A piece of military combat plate has been left here.~
 ~
-9 a ad 0
+9 a 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 50 500 95 0
 A
@@ -193,7 +193,7 @@ boots combat~
 a pair of Roman combat boots~
 A pair of combat boots have been left here.~
 ~
-9 a ag 0
+9 a 0 0 0 ag 0 0 0 0 0 0 0
 8 0 0 0
 45 875 90 0
 A
@@ -205,7 +205,7 @@ thunderbolt jupiter~
 Jupiter's Thunderbolt~
 Jupiter's Thunderbolt has been left here.~
 ~
-5 bgkmn an 0
+5 bgkmn 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 6
 22 1000 250 0
 A
@@ -217,7 +217,7 @@ loincloth red mars~
 a red loincloth~
 Mars' red loincloth is resting here.~
 ~
-9 bk al 0
+9 bk 0 0 0 al 0 0 0 0 0 0 0
 10 0 0 0
 30 1000 200 0
 A
@@ -229,7 +229,7 @@ necklace crystal venus~
 a crystal necklace~
 Someone has left the crystal necklace of knowledge here.~
 ~
-11 b ac 0
+11 b 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 35 500 120 0
 A
@@ -241,7 +241,7 @@ sandals winged mercury~
 a pair of winged sandals~
 Mercury's winged sandals have been left here.~
 ~
-9 al ag 0
+9 al 0 0 0 ag 0 0 0 0 0 0 0
 8 0 0 0
 14 750 130 0
 A
@@ -253,7 +253,7 @@ scroll dark grey~
 a dark grey scroll~
 A scroll has been carelessly left here.~
 ~
-2 fp ao 0
+2 fp 0 0 0 ao 0 0 0 0 0 0 0
 20 4 15 1
 2 500 200 0
 #12025
@@ -261,7 +261,7 @@ scroll ornate~
 an ornate scroll~
 An ornate scroll has been left here.~
 ~
-2 p ao 0
+2 p 0 0 0 ao 0 0 0 0 0 0 0
 18 10 10 16
 2 700 300 0
 #12026
@@ -269,7 +269,7 @@ scroll plain~
 a plain scroll~
 A plain scroll is lying on the ground.~
 ~
-2 p ao 0
+2 p 0 0 0 ao 0 0 0 0 0 0 0
 15 7 15 1
 2 800 220 0
 #12027
@@ -277,7 +277,7 @@ bag herbs~
 a bag of herbs~
 There is a small, sweet-smelling bag here on the ground.~
 ~
-3 b ao 0
+3 b 0 0 0 ao 0 0 0 0 0 0 0
 30 4 4 43
 5 150 20 0
 #12028
@@ -285,7 +285,7 @@ staff kodarta~
 a Kodarta staff~
 A Kodarta staff has been carelessly left here.~
 ~
-4 0 ao 0
+4 0 0 0 0 ao 0 0 0 0 0 0 0
 17 3 3 15
 6 350 40 0
 #12029
@@ -293,7 +293,7 @@ wand prototype~
 a prototype wand~
 There is a prototype of a new magical wand lying here.~
 ~
-3 fhj ao 0
+3 fhj 0 0 0 ao 0 0 0 0 0 0 0
 30 4 3 26
 26 200 130 0
 A
@@ -305,7 +305,7 @@ flask potion blaze orange~
 a flask~
 There is a flask, containing a blaze orange potion, resting here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 9 4 17 33
 8 1000 100 0
 #12031
@@ -313,7 +313,7 @@ mace executioner~
 an executioner's mace~
 An executioner's mace is lying here.~
 ~
-5 hmo an 0
+5 hmo 0 0 0 an 0 0 0 0 0 0 0
 0 5 1 7
 13 300 18 0
 A
@@ -325,7 +325,7 @@ mug beer~
 a mug~
 A frosty mug has been left on the ground here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 1 0
 3 10 5 0
 #12033
@@ -333,7 +333,7 @@ key rusted~
 a rusted key~
 There is a rusted key here.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 12033 0 0 0
 1 1 0 0
 #12034
@@ -341,7 +341,7 @@ key double~
 a double sided key~
 A double sided key has been left here.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 0
 #12035
@@ -349,7 +349,7 @@ key diamond~
 a diamond studded key~
 A diamond studded key is sitting on the ground.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 30 1 0 0
 #12036
@@ -357,7 +357,7 @@ key pearl~
 a key with a pearl handle~
 A key with a pearl handle is sitting on the ground.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 0
 #12037
@@ -365,7 +365,7 @@ key aquamarine~
 an aquamarine key~
 There is an aquamarine colored key here.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 0
 #12038
@@ -373,7 +373,7 @@ key opal~
 an opal key~
 An opal key has been left here.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 20 1 0 0
 #12039
@@ -381,7 +381,7 @@ key steel~
 a steel key~
 A steel key is lying on the ground.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 $~

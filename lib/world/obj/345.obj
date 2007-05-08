@@ -3,7 +3,7 @@ skeleton key~
 a skeleton key~
 A skeleton key is lying here.~
 ~
-18 q a 0
+18 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 5
 E
@@ -16,7 +16,7 @@ scalpel~
 a blood-stained scalpel~
 A blood-stained scalpel is lying here~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 1 6 14
 2 10 0 5
 #34502
@@ -24,7 +24,7 @@ severed head~
 a severed head~
 A severed head bloodies the floor here~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 0
 E
@@ -38,7 +38,7 @@ skull cap~
 a skull cap~
 A skull cap sits here.~
 ~
-9 0 e j
+9 0 0 0 0 e 0 0 0 k 0 0 0
 10 0 0 0
 5 100 0 8
 E
@@ -55,7 +55,7 @@ light~
 a light~
 A light sits here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 $~

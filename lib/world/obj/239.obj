@@ -3,7 +3,7 @@ dry canteen~
 a canteen~
 A once full canteen is dry now.~
 ~
-13 dhq a 0
+13 dhq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 15 10 0 0
 E
@@ -16,7 +16,7 @@ wooden club sasquatch~
 a huge wooden club~
 A huge wooden club with two spikes on the end.~
 ~
-5 cd an 0
+5 cd 0 0 0 an 0 0 0 0 0 0 0
 3 3 10 5
 5 300 3 17
 E
@@ -29,7 +29,7 @@ sentinel hammer~
 a sentinel hammer~
 A Dwarven Sentinel's Hammer~
 ~
-5 acdkoq an 0
+5 acdkoq 0 0 0 an 0 0 0 0 0 0 0
 0 0 0 0
 5 900 0 17
 E
@@ -49,7 +49,7 @@ shield sentinal stone dwarven~
 a stone shield~
 A shield of stone manufactered by the finest dwarven stone cutters of NewHaven~
 ~
-9 acdkp aj 0
+9 acdkp 0 0 0 aj 0 0 0 0 0 0 0
 3 0 0 0
 2 900 0 16
 E
@@ -67,7 +67,7 @@ bark helmet ponderosa pine~
 a bark helm~
 A bark helm crafted by Ewts.~
 ~
-9 fgk ae 0
+9 fgk 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
 3 900 200 0
 E
@@ -84,7 +84,7 @@ club stone drow~
 an obsidian club~
 A Drow's stone club.~
 ~
-5 i an 0
+5 i 0 0 0 an 0 0 0 0 0 0 0
 3 5 5 7
 3 500 5 0
 E
@@ -101,7 +101,7 @@ boots drow~
 a pair of drow boots~
 A pair of Drow boots~
 ~
-9 ajop ag 0
+9 ajop 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 3 500 25 15
 E
@@ -120,7 +120,7 @@ black cape drow~
 a black cape~
 A Drow's black cape~
 ~
-9 op ack 0
+9 op 0 0 0 ack 0 0 0 0 0 0 0
 1 0 0 0
 2 500 10 15
 E
@@ -139,7 +139,7 @@ staff drow~
 a spider staff~
 A staff of spider silk woven with magical powers.~
 ~
-5 fop an 0
+5 fop 0 0 0 an 0 0 0 0 0 0 0
 4 2 10 5
 3 500 10 15
 E
@@ -158,7 +158,7 @@ robe drow amber~
 an amber robe~
 An amber black robe woven from spider silk.~
 ~
-9 gop ad 0
+9 gop 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 3 500 10 15
 E
@@ -176,7 +176,7 @@ helmet drow~
 a drow helmet~
 A drow helmet with a spider emblem.~
 ~
-9 jlmno ae 0
+9 jlmno 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 1 200 5 0
 E
@@ -193,7 +193,7 @@ spider web collar~
 a spider web collar~
 A drow spider web collar.~
 ~
-9 mno ac 0
+9 mno 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 2 200 8 15
 E
@@ -212,7 +212,7 @@ breastplate plate drow dark~
 a dark breastplate~
 A dark drow breastplate.~
 ~
-9 mno ad 0
+9 mno 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
 5 400 5 15
 E
@@ -229,7 +229,7 @@ drow belt guard~
 a drow guard belt~
 A drow guard's belt woven with leather.~
 ~
-9 mno al 0
+9 mno 0 0 0 al 0 0 0 0 0 0 0
 1 0 0 0
 1 200 3 15
 E
@@ -242,7 +242,7 @@ a drow guard bracelet~
 a drow bracelet~
 A drow guard's bracelet.~
 ~
-9 mno am 0
+9 mno 0 0 0 am 0 0 0 0 0 0 0
 1 0 0 0
 2 300 3 15
 E
@@ -259,7 +259,7 @@ black silk pants~
 a pair of black silk pants~
 A pair of black silk pants.~
 ~
-9 mno af 0
+9 mno 0 0 0 af 0 0 0 0 0 0 0
 1 0 0 0
 3 300 5 15
 E
@@ -276,7 +276,7 @@ guard drow boots~
 a pair of drow boots~
 A black pair of guard boots.~
 ~
-9 mno ag 0
+9 mno 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
 2 300 5 15
 E
@@ -293,7 +293,7 @@ arm band drow armband~
 a drow armband~
 A drow guard's armband.~
 ~
-9 go ai 0
+9 go 0 0 0 ai 0 0 0 0 0 0 0
 1 0 0 0
 1 300 0 15
 E
@@ -306,7 +306,7 @@ leg leggings leather black drow~
 a pair of drow leggings~
 A pair of finely crafted drow leggings lays here.~
 ~
-9 gjo a 0
+9 gjo 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 2 300 2 15
 E
@@ -320,7 +320,7 @@ rusty sword~
 a rusty sword~
 A rusty sword lies here.~
 ~
-5 mn an 0
+5 mn 0 0 0 an 0 0 0 0 0 0 0
 5 2 10 3
 3 300 3 15
 E
@@ -336,7 +336,7 @@ rusty knife~
 a rusty knife~
 A rusty knife lays here.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 5 2 5 11
 2 300 2 15
 E
@@ -350,7 +350,7 @@ crude shield~
 a crude shield~
 A crude shield with a blue dragon on it lays here.~
 ~
-9 a aj 0
+9 a 0 0 0 aj 0 0 0 0 0 0 0
 2 0 0 0
 3 300 2 15
 E
@@ -370,7 +370,7 @@ leather halter~
 a leather halter~
 A shabby leather halter lays in a pile here.~
 ~
-9 mn a 0
+9 mn 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 2 300 1 12
 E
@@ -384,7 +384,7 @@ leather vest~
 a leather vest~
 A leather vest is lying here.~
 ~
-9 j ad 0
+9 j 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
 2 300 3 15
 E
@@ -401,7 +401,7 @@ key obsidian~
 an obsidian gate key~
 An obsidian key shines here.~
 ~
-18 bh a 0
+18 bh 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 300 0 0
 E
@@ -414,7 +414,7 @@ sign crude~
 a crude sign~
 A crude sign is scrawled here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -429,7 +429,7 @@ green sign~
 a green sign~
 A green sign is posted next to the tree here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E

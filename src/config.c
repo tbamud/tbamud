@@ -192,6 +192,20 @@ room_vnum donation_room_2 = 5510;
 room_vnum donation_room_3 = 235;
 
 /* GAME OPERATION OPTIONS */
+
+/*
+ * Please read 128bit.readme before setting this to true. Set this
+ * flag if you want the conversion to take place.
+ */
+int bitwarning = FALSE;
+
+/*
+ * If you want to look at normal worldfiles but DO NOT want to save
+ * to 128bit format, turn this to false. However, do not save through
+ * olc, or your worldfiles will be 128bit anyway.
+ */
+int bitsavetodisk = TRUE;
+
 /* This is the default port on which the game should run if no port is given on 
  * the command-line.  NOTE WELL: If you're using the 'autorun' script, the port 
  * number there will override this setting. Change the PORT= line in autorun 

@@ -86,7 +86,7 @@ void appear(struct char_data *ch)
   if (affected_by_spell(ch, SPELL_INVISIBLE))
     affect_from_char(ch, SPELL_INVISIBLE);
 
-  REMOVE_BIT(AFF_FLAGS(ch), AFF_INVISIBLE | AFF_HIDE);
+  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_INVISIBLE | AFF_HIDE);
 
   if (GET_LEVEL(ch) < LVL_IMMORT)
     act("$n slowly fades into existence.", FALSE, ch, 0, 0, TO_ROOM);
@@ -211,7 +211,7 @@ void check_killer(struct char_data *ch, struct char_data *vict)
   if (PLR_FLAGGED(ch, PLR_KILLER) || IS_NPC(ch) || IS_NPC(vict) || ch == vict)
     return;
 
-  SET_BIT(PLR_FLAGS(ch), PLR_KILLER);
+  SET_BIT_AR(PLR_FLAGS(ch), PLR_KILLER);
   send_to_char(ch, "If you want to be a PLAYER KILLER, so be it...\r\n");
   mudlog(BRF, LVL_IMMORT, TRUE, "PC Killer bit set on %s for initiating attack on %s at %s.",
 	    GET_NAME(ch), GET_NAME(vict), world[IN_ROOM(vict)].name);
@@ -261,7 +261,7 @@ void make_corpse(struct char_data *ch)
   char buf2[MAX_NAME_LENGTH + 64];
   struct obj_data *corpse, *o;
   struct obj_data *money;
-  int i;
+  int i, x, y;
 
   corpse = create_obj();
 
@@ -276,8 +276,14 @@ void make_corpse(struct char_data *ch)
   corpse->short_description = strdup(buf2);
 
   GET_OBJ_TYPE(corpse) = ITEM_CONTAINER;
-  GET_OBJ_WEAR(corpse) = ITEM_WEAR_TAKE;
-  GET_OBJ_EXTRA(corpse) = ITEM_NODONATE;
+  for(x = y = 0; x < EF_ARRAY_MAX || y < TW_ARRAY_MAX; x++, y++) {
+    if (x < EF_ARRAY_MAX)
+      GET_OBJ_EXTRA_AR(corpse, x) = 0;
+    if (y < TW_ARRAY_MAX)
+      corpse->obj_flags.wear_flags[y] = 0;
+  }
+  SET_BIT_AR(GET_OBJ_WEAR(corpse), ITEM_WEAR_TAKE);
+  SET_BIT_AR(GET_OBJ_EXTRA(corpse), ITEM_NODONATE);
   GET_OBJ_VAL(corpse, 0) = 0;	/* You can't store stuff in a corpse */
   GET_OBJ_VAL(corpse, 3) = 1;	/* corpse identifier */
   GET_OBJ_WEIGHT(corpse) = GET_WEIGHT(ch) + IS_CARRYING_W(ch);
@@ -366,7 +372,7 @@ void die(struct char_data * ch, struct char_data * killer)
 {
   gain_exp(ch, -(GET_EXP(ch) / 2));
   if (!IS_NPC(ch))
-    REMOVE_BIT(PLR_FLAGS(ch), PLR_KILLER | PLR_THIEF);
+    REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_KILLER | PLR_THIEF);
   raw_kill(ch, killer);
 }
 

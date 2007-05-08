@@ -6,7 +6,7 @@ A putrid zombie is here.
    It is a prime example of the undead: sickly green skin, sunken eyes with a
 yellowish tinge, and sharp, dirt-encrusted claws.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 0
@@ -19,7 +19,7 @@ A poisonous asp slithers here.
    This small snake looks quite dangerous, better take a wide detour around it.
   
 ~
-dfg 0 0 E
+104 0 0 0 0 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -34,7 +34,7 @@ such a sweet thing become the leader of this cult?  As a bard once wrote, 'You
 could tell she was practiced at the art of deception by her bloodstained hands.
 '
 ~
-bcd dh -1000 E
+14 0 0 0 16 0 0 0 -1000 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 2
@@ -48,7 +48,7 @@ Lazarus, Assassin and Guild Physician, is here.
 soothing balms and poisons.  Even death could not release him...  The
 necromancers just reanimated him.    
 ~
-bd h -900 E
+10 0 0 0 0 0 0 0 -900 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -61,7 +61,7 @@ An undead riding beetle is parked here.
    A fine example of Necromancy, this giant beast can travel for miles with no
 need for food nor water.  A most economical mount -- and sporty too!    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -75,7 +75,7 @@ A wraith knight stands a silent watch here.
 got their hold on him.  Now he just awaits, blade drawn, like some ethereal
 beefeater.    
 ~
-bdf 0 -800 E
+42 0 0 0 0 0 0 0 -800 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -89,7 +89,7 @@ The Crypt Keeper, grinning at you maliciously, is here.
 He twitches from excitement so much that his scraggly hair jostles as he
 flashes his dull yellow teeth.    
 ~
-bd d 20 E
+10 0 0 0 16 0 0 0 20 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -113,7 +113,7 @@ rule from his petrified prison through the manipulation of the minds of men.
 Indeed, he has done so to this day.  Many believe he is plotting the day he can
 return in the flesh, so to speak...  ' With that the Hermit begins to cackle
 madly, ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -125,7 +125,7 @@ A blob of green slime drops upon you!
 ~
    It looks like animated mucous, dissolving and eating all it touches.    
 ~
-bdf 0 0 E
+42 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -138,7 +138,7 @@ A flame dweller is basking in fire here.
    Its shape changes like the flame it lives in.  One moment it may resemble a
 serpent, the next, a man.  It seems to be thoroughly enjoying itself.    
 ~
-bd 0 -50 E
+10 0 0 0 0 0 0 0 -50 E
 14 16 1 2d2+140 2d2+2
 140 19600
 6 6 0
@@ -152,7 +152,7 @@ A green crystal spider is roaming here.
 giving off a green light.  It clicks its crystal mandibles in irritation with
 you.    
 ~
-dgh 0 -400 E
+200 0 0 0 0 0 0 0 -400 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -165,7 +165,7 @@ A yellow crystal spider is clicking its mandibles here.
    Slightly smaller than its green cousin, this creature also appears to be
 made of living crystalline substance which glows yellow.    
 ~
-dfg 0 -350 E
+104 0 0 0 0 0 0 0 -350 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -177,7 +177,7 @@ The Petrified Warden guards the way.
 ~
    It wears the sneer of cold command upon its stony visage.    
 ~
-bd 0 -700 E
+10 0 0 0 0 0 0 0 -700 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -190,7 +190,7 @@ A lumbering umber hulk is here.
    This great beast has huge mandibles and a mammals' mouth, angry animal eyes
 set between unreadable insect eyes.  The effect is confusing.    
 ~
-dfg 0 -750 E
+104 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -203,7 +203,7 @@ A hideous ochre jello approaches.
    As it oozes slowly at you, you can make out items undigested within it.  
 From past unfortunates, you presume.    
 ~
-dfg 0 -700 E
+104 0 0 0 0 0 0 0 -700 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -216,7 +216,7 @@ A Necromancer of the Bloodstone, creating zombies, is here.
    Evil reeks from his dark robes.  His hands are adorned with the long, wicked
 nails which are stained with the ichor of embalmers and malignant salves.    
 ~
-bdfh 0 -900 E
+170 0 0 0 0 0 0 0 -900 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1

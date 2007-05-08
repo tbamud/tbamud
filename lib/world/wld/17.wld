@@ -6,7 +6,7 @@ horse hooves turning it into a thick muddy slime.  Through the thick
 forest to the east you see the western wall of Bellau City.  Through a thin 
 covering of trees to the west you see a massive body of water.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -63,7 +63,7 @@ it to the south or enter the courtyard to the west.  Out in the courtyard
 you see a couple groups of people talking amongst themselves.  Maybe they 
 can give you some answers to what's going on.    
 ~
-17 0 0
+17 0 0 0 0 0
 D2
 ~
 ~
@@ -85,7 +85,7 @@ courtyard looking at the main gate, but no one is leaving.  You notice
 guards are blocking anyone from leaving the castle.  It looks like you 
 might be stuck here.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -105,7 +105,7 @@ Courtyard~
 whispering back and forth.  This entire castle seems to be keeping a secret 
 from each other.  They look in your direction and immediately stop talking.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -126,7 +126,7 @@ missing.  Only a few people are walking around through the courtyard, and
 none of them are going towards the gate.  They all look at each other and 
 especially at the guards distrustfully
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -142,7 +142,7 @@ Main Hall~
 the castle.  The halls seem empty, it seems like a castle this size should 
 have many more people living in it than you've seen.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -159,7 +159,7 @@ throne sits on a dais to the west.  Some nobles are having a heated
 discussion about some new tax and about having to provide people for the 
 kings army.
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -176,7 +176,7 @@ velvet cushions sits majestically above all the other chairs in the room.
 You are so mesmerized by the throne and it's possible value that you 
 hardly notice the small alcove to the south
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -200,7 +200,7 @@ Audience Chamber~
 throne sits on a dais to the east.  You notice a small alcove behind the 
 throne, partially covered by some large velvet curtains.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -217,7 +217,7 @@ walking along the lane to the north and south but they don't seem to have
 a purpose other than to be pacing, obviously waiting for something or 
 someone.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -234,7 +234,7 @@ looks at you and you start to get the feeling that you shouldn't be
 bothering this impressive horse.  A bin of grain and half a bale of hay 
 lie on the floor.    
 ~
-17 0 0
+17 0 0 0 0 0
 D3
 ~
 ~
@@ -245,7 +245,7 @@ Stables~
    You stand in the vast stables of Camelot.  Row upon row of stalls greet your
 eye.  Smells of horse, sweat, and fresh straw combine into an unpleasant mix.  
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -270,7 +270,7 @@ looks at you and you start to get the feeling that you shouldn't be
 bothering this impressive horse.  A bin of grain and half a bale of hay 
 lie on the floor.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -283,7 +283,7 @@ overhear "..  It is terrible.  The poor girl was captured on her way to
 her wedding by that foul Mordred.  Her father has offered a considerable 
 sum for her safe return.  I think my Gawaine can surely claim it..  "
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -299,7 +299,7 @@ Tourney Yard~
 challenge one and another for a claim to a seat on the round table.  You 
 can make out several contests underway- perhaps you would like to joust?    
 ~
-17 0 0
+17 0 0 0 0 0
 D2
 ~
 ~
@@ -317,7 +317,7 @@ Lancelot.  Flanking the road are the standards of the other knights of
 the round table.  A strange peace fills the air here.  Knight's Way 
 continues to the north and the Tourney Yard of Camelot is to the south.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -342,7 +342,7 @@ challenge one and another for a claim to a seat on the round table.
 You can make out several contests underway- perhaps you would like 
 to joust?    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -359,7 +359,7 @@ chairs or benches, the floors are covered with numerous mats.  They must
 worship by kneeling on them, how strange.  A few monks tend to the 
 various candles surrounding the room.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -376,7 +376,7 @@ look to be very proficient.  Several squires and lackeys look on in
 concentration, trying to memorize the complex forms the masterful knights 
 use to try to overcome each other.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -393,7 +393,7 @@ dance hall or large meeting place.  It has now been taken over by all
 these Scottish warriors.  It must be hard times if the King is seeking 
 help from these ruffians.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -410,7 +410,7 @@ stone look like they could hold back any army, yet this castle already
 seems defeated.  You wonder at how any army could overtake the greatest 
 kingdom and ruler ever.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -427,7 +427,7 @@ lake at the small ferry on the shore waiting to carry travellers across.
 Several Archers and guards keep a sharp lookout as if they are expecting 
 a full scale siege at any moment.    
 ~
-17 0 0
+17 0 0 0 0 0
 D5
 ~
 ~
@@ -440,7 +440,7 @@ Bellau City to the east and a thick forest to the south.  The lake around
 the castle is smooth as glass and reflects an inverse image of the castle.  
 The stairs lead back down.    
 ~
-17 0 0
+17 0 0 0 0 0
 D5
 ~
 ~
@@ -453,7 +453,7 @@ fields in the distance.  A guard ignores you, dismissing you as harmless
 and resumes his watch, what he's looking for you have no idea.  A set of 
 stairs lead back down.    
 ~
-17 0 0
+17 0 0 0 0 0
 D5
 ~
 ~
@@ -465,7 +465,7 @@ Open Field~
 them.  The farmer stares at you in disgust as you walk by.  These people 
 don't seem to be very happy about working in these fields.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -484,7 +484,7 @@ forest to the east grows right up against the western wall of Bellau City,
 and to the west through a thin covering of trees you see a large body of 
 water, is it a lake or an ocean?  You're not sure.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -501,7 +501,7 @@ building to the west.  The shadows are deep in this corner of the castle
 and it seems like the beggars and unlawful merchants have taken over this 
 area.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -518,7 +518,7 @@ kind seems to be placed perfectly on the table, everything looks perfect.
 Someone is going to be throwing a huge feast here.  But where is 
 everybody?    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 door~
@@ -534,7 +534,7 @@ Dining Room~
 placed all over the table.  Fine wines are sitting on the table in crystal
 decanters.  This must be a very special occasion.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -551,7 +551,7 @@ setting the table and folding napkins into fancy shapes.  How do they
 do that?  Various foods cover the table.  The room and the table 
 continue to the east.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -567,7 +567,7 @@ Main Hall~
 allow you to hear the clatter of utensils and a drone of conversations 
 coming through the doorway.  Sounds like a feast is being held.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -583,7 +583,7 @@ Stairs~
 of the castle.  The stairs are spotless and torches are placed close 
 together illuminating every corner of the room.    
 ~
-17 d 0
+17 8 0 0 0 0
 D3
 ~
 door~
@@ -600,7 +600,7 @@ hidden passageway, so the king and other members of the court can travel
 between rooms without being bothered by the local folk.  Doors are closed 
 on the east and west walls.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -620,7 +620,7 @@ Stairs~
 of the castle.  The stairs are spotless and torches are placed close 
 together illuminating every corner of the room.    
 ~
-17 d 0
+17 8 0 0 0 0
 D1
 ~
 door~
@@ -636,7 +636,7 @@ Center Lane~
 to the north.  They look to be mostly nobles and servants.  All of the 
 common folk must be out working the fields.  A tall wall is to the west.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -653,7 +653,7 @@ been raised for speed and agility.  This is the kind of horse you wish
 you had so you wouldn't have to walk everywhere.  A bale of hay, grain 
 bin and a salt lick are laying on the floor.    
 ~
-17 0 0
+17 0 0 0 0 0
 D3
 ~
 ~
@@ -669,7 +669,7 @@ playing with a small dagger.  Tossing it 10 feet in the air, catching it
 by the blade and then burying it in the middle of a bale of hay 20 feet 
 away.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -694,7 +694,7 @@ been raised for speed and agility.  This is the kind of horse you wish
 you had so you wouldn't have to walk everywhere.  A bale of hay, grain 
 bin and a salt lick are laying on the floor.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -707,7 +707,7 @@ away for their knights who travel far and wide on Arthurs missions.  The
 main activity here is tapestry making, and presently there are 3 tapestries 
 under construction.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -723,7 +723,7 @@ Tourney Yard~
 hear a squeal of delight from a spectator.  The black caped knight leans 
 into his charge with his weight forward and in a low stand on his stirrups.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -744,7 +744,7 @@ in full armor and a bright orange plume.  To the right is a knight in chain
 mail and a trailing black cape.  Arthur signal's the knights with a short 
 wave.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -770,7 +770,7 @@ second, delivering a thrust high on the shield of the black caped knight.
 The black caped knight connects with ahard shot to the center of the 
 shield of the orange knight.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -792,7 +792,7 @@ every available part of the floor.  They must be in charge of recording
 current events.  If you want to find out what's wrong with these people, 
 this would be the best place to start.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -810,7 +810,7 @@ lead ball is too much for him and keeps pulling him off balance, you
 decide to quickly move on before the inexperienced squire hurts himself 
 or you.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -827,7 +827,7 @@ probably die next battle.  You have to admit they are throwing one hell
 of a party though.  You just wish so much brawling wasn't involved.  
 A chair goes flying past your head.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -843,7 +843,7 @@ West Lane~
 through the stone walls of a building in that direction.  Somebody still 
 seems to be able to celebrate.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -862,7 +862,7 @@ Tapestries depicting him pulling Excalibur from the stone, and his
 campaigns of unification adorn the walls.  A small book is lying on a stand 
 beside the bed.
 ~
-17 0 0
+17 0 0 0 0 0
 D2
 ~
 ~
@@ -876,7 +876,7 @@ wall, showing the area surrounding the castle.  You notice that the
 northwestern corner of the map has been redone There is some writing 
 over that part of the map.    
 ~
-17 0 0
+17 0 0 0 0 0
 D2
 ~
 ~
@@ -888,7 +888,7 @@ Princess's Bed~
 are neatly layed across the bed.  The toys and the bed haven't been used 
 in a long time, where is the child that must live in here?    
 ~
-17 0 0
+17 0 0 0 0 0
 D2
 ~
 ~
@@ -901,7 +901,7 @@ The ground here has been plowed and several serbs are dutifully picking
 rocks out of the field and throwing them into the lake.  You duck as they 
 don't seem to care whether they hit the lake or you.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -919,7 +919,7 @@ already began to reclaim the path as it's own.  The western wall of Bellau
 City is still to the east and you hear the gentle lapping of waves on the 
 shoreline to the west.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -937,7 +937,7 @@ exiting north or west.  A beggar looks up at you rising a small tin cup.
 A glimmer of hope in his eyes.  A set of stairs are carved into the wall 
 to the west, leading up into the tower.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -958,7 +958,7 @@ to the east or west.  Shadows cover a large portion of the road and you try
 unsucessfuly to peer inside them.  Beggars seemed to have taken over this 
 part of the castle.  This must be the poor sector.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -976,7 +976,7 @@ you a note that looks to be signed by the king himself.  He starts to tell
 you what it's about, but then a guard rounds a corner to the west and the 
 merchant immediately walks away from you.  Dropping the note in his haste.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -993,7 +993,7 @@ position at the Round Table.  All you need to do is purchase the Holy Grail
 from him and present it to the king.  The merchant pulls out a tin cup you 
 saw a beggar using not ten minutes ago and asks for 2000000 gold.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1010,7 +1010,7 @@ the center of the castle carries the smell of food and wine to you.  The lane
 you are on is empty except for a scattering of guards in the distance.  Where
 are all the common folk?    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1032,7 +1032,7 @@ you see hurry past you and don't even attempt to be polite to anyone else.
 Though the road is wide and empty they still shoulder you out of their 
 way.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1049,7 +1049,7 @@ ordering people into his army to fight the northern army, no one has come
 back from the battles.  ' He emphasizes his words with a long stare that 
 sets your nerves on end, then turns and walks away.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1066,7 +1066,7 @@ looking at you as if measuring your abilities against his.  He writes
 something down on a piece of paper and hands it to a page that is 
 walking by.  The guard looks back up at you and grins.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1084,7 +1084,7 @@ merchant seemed to think he wouldn't have to pay right up until the guard
 drew his sword.  A set of stairs is carved into the wall to the west, 
 leading up into the tower.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1105,7 +1105,7 @@ been raised for speed and agility.  This is the kind of horse you wish
 you had so you wouldn't have to walk everywhere.  A bale of hay, grain 
 bin and a salt lick are laying on the floor.    
 ~
-17 0 0
+17 0 0 0 0 0
 D3
 ~
 ~
@@ -1117,7 +1117,7 @@ Stables~
 back and forth with hay, grain and pitchforks full of horse dung.  Various 
 tackle and leather harnesses line the walls.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1138,7 +1138,7 @@ been raised for speed and agility.  This is the kind of horse you wish
 you had so you wouldn't have to walk everywhere.  A bale of hay, grain 
 bin and a salt lick are laying on the floor.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1151,7 +1151,7 @@ big trouble if you are not!  There certainly is a lot of activity.  A young
 girl stands in sorrow here weeping, and you notice a group of ladies off 
 in the corner.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1168,7 +1168,7 @@ knight.  She quickly runs over to congratulate the black knight.  Hanging
 on to him like a leech.  The spectators cheer weakly, hurrying over to 
 shake the nights hand.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1188,7 +1188,7 @@ Tourney Yard~
 yard.  The black knight circles and raises his lance in a salute to 
 Arthur.  A few people cheer, but most seem to be preoccupied.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1212,7 +1212,7 @@ Tourney Yard~
 She quickly recovers and tosses her favor to the black knight.  The 
 spectators that were cheering for the orange knight quietly disperse.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1233,7 +1233,7 @@ will be lost soon.  The monks ignore you when you try to ask them
 questions.  Most just wave you away with their ink smudged hands.  One of 
 these books must be able to tell you something, but which one.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1249,7 +1249,7 @@ Practice Yard~
 They seem to be all about equally experienced and doesn't look like any one
 person will win.  You better move on before they ask you to join in.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1266,7 +1266,7 @@ almost appetizing.  More of the scots are here armwrestling or having
 dagger throwing contestests.  You hear someone scream from across the 
 room, guess he won that bout.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1283,7 +1283,7 @@ leads up to the watchtower.  The noise from the building to the east is
 even louder here.  You don't see how anyone could possibly make so much 
 noise.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1301,7 +1301,7 @@ ink bottle and several messages are set on top of a large mahogany desk.
 Some of the messages have writing on them, and others are already sealed
 with wax and ready for delivery.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1318,7 +1318,7 @@ granite floor is polished smooth and everything has a bright shine to it.
 From the suits of armor, to the assorted weapons and flags hanging on the 
 walls you stare in awe.  Further north you see a large table.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1335,7 +1335,7 @@ While looking clean with no signs of dust the room has a vacant feel
 to it.  As if no one has used it in a long time.  Curtains on the west 
 wall are drawn tightly closed.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1352,7 +1352,7 @@ castle.  You try to ask the peasants and farmers how to reach it but they
 ignore you.  A farmer is here driving a pair of oxen pulling a plow, 
 furrowing one of the fields so it can be planted.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1370,7 +1370,7 @@ a strange silence overcoming the woods.  You quicken your pace.  The
 western wall of Bellau City is to the east and the path turns to the west. 
 A large uprooted tree blocks the forest to the south.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1388,7 +1388,7 @@ lake to the north is cloaked in a thick fog.  You see a large shadow of
 an island in the fog, it looks to be a building of some sort but you 
 can't discern it.  The path leads east and west.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1406,7 +1406,7 @@ in these woods must be true.  You check the contents of your purse then
 move on, the lake still blocks the north and the forest doesn't look very 
 safe to the south.
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1424,7 +1424,7 @@ out of one of the corpses eye sockets.  You hear a crashing sound to the
 south as a large person or animal makes a run for cover.  You should 
 follow the trail east or west.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1442,7 +1442,7 @@ A fortress sits on the island looking impregnable.  The trail continues
 east and west with the south still too thick to be worth travelling 
 through.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1460,7 +1460,7 @@ floor.  The lake to the north stretches for almost a mile before reaching
 the island.  The trail is opening up into a road once more and you see 
 people walking along it to the west.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1477,7 +1477,7 @@ hard to produce food for those who live on the island across the lake to
 the north. The trail continues east and west, into the fields or back 
 towards the forest.
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1494,7 +1494,7 @@ being led to pasture, including some sheep and cows.  Peasants are toiling
 in the dirt and mud, planting crops.  The lake extends to the north and the 
 path goes east and west.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1510,7 +1510,7 @@ A Cultivated Field~
 How Rude!  You don't see how these people travel back and forth from the 
 island.  There must be a ferry somewhere, but you can't see it.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1527,7 +1527,7 @@ before you.  It would almost look like they are trying to build up a stock
 of food, maybe they're expecting a siege.  The fields continue along the 
 path to the east and west.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1544,7 +1544,7 @@ horseshoes and repairing any that have bent with time.  They look rather
 miserable, wiping their sweating foreheads with the the sleeves of their 
 leather smocks.    
 ~
-17 0 0
+17 0 0 0 0 0
 D3
 ~
 ~
@@ -1556,7 +1556,7 @@ Stables~
 at any minute.  The stable master is here using a massive bale hook to 
 drop the bale's down where the stable hands can reach them.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1577,7 +1577,7 @@ of what looks to be some type of cow.  One of them repairs an old saddle
 while the other works on a new one.  They look very proficient at their 
 jobs, but these hands too seem to be in a foul mood.    
 ~
-17 0 0
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1590,7 +1590,7 @@ the perfect dress to seduce one of the many famous knights of the round
 table.  Little do they realize that they will probably be the ones that 
 get used.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1603,7 +1603,7 @@ noblemen and knights walk barefoot in the grass discussing chivalry and
 wars to come.  Everyone seems to be avoiding the subject of the war, 
 which you would think would be the major topic of all the conversations.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1619,7 +1619,7 @@ Court of Camelot~
 thrives and the high ideals of chivalry breathe.  You have a commanding 
 vantage of the Tourney Yard of Camelot to the north from here.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1639,7 +1639,7 @@ Court of Camelot~
 into the air all for a chance of earning the kings favor.  Ladies in 
 waiting play their love games with young knights and squires.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1656,7 +1656,7 @@ complete with feather bed and fireplace.  A table of fresh meat and bread
 has been set, and on it is an ornate chalice filled with water.  A candle 
 burns brightly and there is a single chair at the table.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1669,7 +1669,7 @@ impressive sword battle you have ever seen.  This knight expertly disarms
 all three knights within seconds.  Your jaw drops in admiration.  The 
 knight bows deeply and all the squires cheer.  Lancelot, Lancelot
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1682,7 +1682,7 @@ glares at you, making you decide not to help yourself to any of ale or
 food.  Everyone is cussing, joking and laughing as if there will be no 
 tomorrow....    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1694,7 +1694,7 @@ Southwest Tower~
 view. Guards solemnly stand their watch, keeping an eye out for the 
 farmers and peasants tending the fields over the lake to the west.    
 ~
-17 0 0
+17 0 0 0 0 0
 D5
 ~
 ~
@@ -1707,7 +1707,7 @@ the walls, Your feet sink into a thick fur rug.  Open double doors to the
 north lead to what looks to be a luxurious bedroom.  The hall continues 
 to the east or west, you can also descend the stairs to the south.    
 ~
-17 d 0
+17 8 0 0 0 0
 D0
 ~
 door~
@@ -1732,7 +1732,7 @@ north.  You stare with your mouth open at the fancy drawings and the thick
 fur rug you walk across.  You would be set for life if you could sell just 
 one of them.    
 ~
-17 d 0
+17 8 0 0 0 0
 D0
 ~
 door~
@@ -1754,7 +1754,7 @@ You gape at all the expensive finery layering the walls and floors.  A
 beautiful painting of a half-naked woman rising out of a lake holding a 
 sword covers the western wall
 ~
-17 d 0
+17 8 0 0 0 0
 D0
 ~
 door~
@@ -1774,7 +1774,7 @@ Open Field~
 must be it's going to rain.  The trail turns north along the shoreline of 
 the lake.  You still can't see any possible way to reach the island.    
 ~
-17 0 0
+17 0 0 0 0 0
 D0
 ~
 ~

@@ -7,7 +7,7 @@ Fred the prison guard is standing here, staring at you.
 his brother Joe sits on the other side of the door.  Fred doesn't look too
 friendly.    
 ~
-bdglpqr d -200 E
+231498 0 0 0 16 0 0 0 -200 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -26,7 +26,7 @@ Joe the prison guard is standing here, staring at you.
 his brother Fred sits on the other side of the door.  Joe doesn't look too
 friendly.    
 ~
-bdglpqr d -200 E
+231498 0 0 0 16 0 0 0 -200 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1

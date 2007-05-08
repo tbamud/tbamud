@@ -6,7 +6,7 @@ showing you only a small swath of the sky.  To the east, you can smell the odor
 of brimstone.  You fail to surpress a shudder when you remember the tales you
 have heard of this place.    
 ~
-42 c 0
+42 4 0 0 0 0
 D1
 ~
 ~
@@ -24,7 +24,7 @@ some deep furrows in the rock, always in groups of three.  You suddenly realize
 that these cuts are claw marks, probably territory marks of some sort...  To
 the east, the chasm gets yet deeper.    
 ~
-42 0 0
+42 0 0 0 0 0
 D1
 ~
 ~
@@ -42,7 +42,7 @@ est, you realize that the end of this ordeal is in sight-you can see the
 bottom.  The smell of sulfur is very strong here, and it seems to be wafting on
 the air currents from the east.    
 ~
-42 0 0
+42 0 0 0 0 0
 D1
 ~
 ~
@@ -60,7 +60,7 @@ There are multiple groups of three deep claw furrows all over the ground and
 covering a good portion of the walls.  There is a cave in the north wall,
 almost big enough for a large giant to walk into without ducking.    
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 ~
@@ -82,7 +82,7 @@ granite walls.  As it is, you can only see a small piece of the sky.  There are
 numerous claw marks here, each several inches deep.  The smell of sulfur is
 omnipresent, but it seems worse to the west.    
 ~
-42 0 0
+42 0 0 0 0 0
 D1
 ~
 ~
@@ -98,7 +98,7 @@ Entrance to a Cave~
 blocked by a large mass of rubble.  There's no way you can get out that way.  
 To the east, however, is a large cave.  Maybe you can go spelunking.    
 ~
-42 0 0
+42 0 0 0 0 0
 D1
 Nothing.
 ~
@@ -116,7 +116,7 @@ compared to you.  It doesn't go back too far, you can almost see all the way to
 the back of it.  There is a small glow towards the back of the cave.  To the
 west is the exit.    
 ~
-42 ac 0
+42 5 0 0 0 0
 D1
 ~
 ~
@@ -134,7 +134,7 @@ walking into a giant mouth.  The thing that bothers you the most, though, is
 that though the center of the chamber, there are stumps where other stalagmites
 should be.  Something REALLY strong must have done that.    
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 ~
@@ -152,7 +152,7 @@ into the stone!  The path through the stalagmites continues, and you feel too
 captivated by curiousity to stop now.  You conviently forget that curiousity
 killed the cat...    
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 ~
@@ -169,7 +169,7 @@ from here, with passages big enough to accomodate medium-sized giants.  To the
 north is a smaller hole in the otherwise completely smooth walls.  The walls
 are so smooth, in facts, that it is clear that they could not be natural...  
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 ~
@@ -197,7 +197,7 @@ Top of A Stairwell~
 see.  Each step is about ten feet long and thirty feet wide.  You would hate to
 find out what would happen if you tripped and fell down them...    
 ~
-42 c 0
+42 4 0 0 0 0
 D3
 ~
 ~
@@ -215,7 +215,7 @@ stairs is that they are very large and wide, big enough for a giant.  They
 spiral downwards are far as you can see.  You look up.  They go just as far
 that way.    
 ~
-42 0 0
+42 0 0 0 0 0
 D4
 ~
 ~
@@ -232,7 +232,7 @@ barely small enough for you to go up the stairs without climbing up each step.
 The stairwell is large enough to hold a giant, with some room to spare.  To the
 east, you detect a faint humidness.    
 ~
-42 c 0
+42 4 0 0 0 0
 D1
 ~
 ~
@@ -249,7 +249,7 @@ other unidentifiable substances on the floor.  Like the rest of this place, the
 ceiling is high above, almost lost in shadow.  To the west, you see a
 stairwell.  To the east, you see more corridor.    
 ~
-42 0 0
+42 0 0 0 0 0
 D1
 ~
 ~
@@ -265,7 +265,7 @@ A Dank Corridor~
 south side.  There is a solid steel door set into the rock.  You think you can
 hear mumbling and heavy footfalls coming from beyond the doorway...    
 ~
-42 0 0
+42 0 0 0 0 0
 D1
 ~
 ~
@@ -285,7 +285,7 @@ A Prison Cell~
 fit in without complaint.  There are a few bones scattered around the room, and
 the bite marks on them are unsettling you...    
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 door cell~
@@ -298,7 +298,7 @@ several meters high, almost taller than you are.  To the east, you see a cave
 with multiple stalagmites, and another stairwell opposite the one you are
 currently in.    
 ~
-42 cd 0
+42 12 0 0 0 0
 D1
 ~
 ~
@@ -314,7 +314,7 @@ A Small Room~
 There are numerous brooms and mops around, as well as a few buckets and a well
 carved into one corner.  Evidently this is a storeroom for cleaning supplies.
 ~
-42 c 0
+42 4 0 0 0 0
 D1
 ~
 ~
@@ -327,7 +327,7 @@ pretty, with millions of shiny flecks strewn about the visible portion of the
 rock.  To the south, you see an intersection, and to the north, you see more
 hallway.  You notice that the smell of sulfur and brimstone has intensified...
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 ~
@@ -343,7 +343,7 @@ A Hallway~
 extremely long.  To the east is the stairway back down, and there is an
 intersection to the west.  The amount of claw marks here worries you...    
 ~
-42 0 0
+42 0 0 0 0 0
 D1
 ~
 ~
@@ -359,7 +359,7 @@ A Hallway~
 the other north.  There is also a doorway to the west, and you think about
 hiding, as the claw marks here indicate that this passageway is well traveled.
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 ~
@@ -381,7 +381,7 @@ eggsells lying about.  There are no eggs, luckily for you- if there were eggs,
 there would be a watchful dragon nearby.  You think you hear a few high-pitched
 squeaks, though...    
 ~
-42 c 0
+42 4 0 0 0 0
 D2
 ~
 ~
@@ -393,7 +393,7 @@ The End of the Hallway~
 the ceiling to the sky above.  The ground is rough and pebbly, with a large
 mound a sand in the center of the room.  There is a keyrack here.    
 ~
-42 0 0
+42 0 0 0 0 0
 D3
 ~
 ~
@@ -406,7 +406,7 @@ discomforting amount of claw marks as normal...  If you count the stench of
 sulfur as run of the mill...  And if you count the roaring you hear echoing
 from somewhere as ordinary...    
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 ~
@@ -423,7 +423,7 @@ a few things that mar its perfect smoothness, and those few things are multiple
 scratches and claw marks on the floor and walls.  Up ahead, you think you hear
 the sound of scales, but you can't be sure.    
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 ~
@@ -441,7 +441,7 @@ the rock you guess that many dragons have waited in this room for permission
 beyond.  You also notice that there is some smoke drifting down the ramp to the
 west.    
 ~
-42 c 0
+42 4 0 0 0 0
 D1
 ~
 ~
@@ -460,7 +460,7 @@ granite floor has somehow been made so that the rock has the illusion of being a
 carpet.  The smell of sulfur, which is intensifying, is the only aspect of the
 stairwell that you think could be better.    
 ~
-42 0 0
+42 0 0 0 0 0
 D1
 ~
 ~
@@ -478,7 +478,7 @@ small cleared area where you are standing.  You take a step towards the
 treasure, but immediately realize that there is no way you could possibly take
 all of the treasure with you.    
 ~
-42 cd 0
+42 12 0 0 0 0
 D4
 ~
 pattern~
@@ -495,7 +495,7 @@ a ramp desending downward, and you see three passages in the north, east, and
 south walls of the room.  The stench of sulfur is so thick that you can almost
 see it, and it is making your eyes water.    
 ~
-42 d 0
+42 8 0 0 0 0
 D0
 ~
 ~
@@ -526,7 +526,7 @@ carved from rock, but in the wall near you there is a skeleton *melted* into
 the wall, still carrying his sword and shield.  You shiver.  What a horrible
 fate...    
 ~
-42 0 0
+42 0 0 0 0 0
 D2
 ~
 ~
@@ -540,7 +540,7 @@ far below you, and you shudder as you think what would happen if you fell from
 here.  You look up, and you can see the blue sky far above you.  To the north
 is the passageway that brought you here.    
 ~
-42 0 0
+42 0 0 0 0 0
 D0
 ~
 ~
@@ -556,7 +556,7 @@ large designs, showing knights on horseback being slaughtered, countrysides
 being ravaged, and castles being destroyed.  They are obviously a monument to
 some particularly evil acts by dragons.    
 ~
-42 0 0
+42 0 0 0 0 0
 D3
 ~
 ~
@@ -566,7 +566,7 @@ S
 NOTE~
    -add material desc for chasm walls -more stuff to add feeling to the zone
 ~
-42 0 0
+42 0 0 0 0 0
 S
 #4295
 A Stairwell~
@@ -576,7 +576,7 @@ stairs is that they are very large and wide, big enough for a giant.  They
 spiral downwards are far as you can see.  You look up.  They go just as far
 that way.    
 ~
-42 0 0
+42 0 0 0 0 0
 D4
 ~
 ~
@@ -592,7 +592,7 @@ Top of A Stairwell~
 see.  Each step is about ten feet long and thirty feet wide.  You would hate to
 find out what would happen if you tripped and fell down them...    
 ~
-42 c 0
+42 4 0 0 0 0
 D3
 ~
 ~
@@ -611,7 +611,7 @@ walls.  There is a large circular depression by the wall, which have some bones
 and assorted pieces of armor lying about-all of them with large bite marks on
 them.  You start to get an uneasy feeling in the pit of your stomach...    
 ~
-42 cd 0
+42 12 0 0 0 0
 D3
 ~
 ~

@@ -8,7 +8,7 @@ probably made by some farmer or woodcutter who wanted easier access to his home.
 West you can see the walled city of Jareth, with majestic Lord's Keep sitting
 high atop the tallest hill, flying Jareth's standard proudly.  
 ~
-258 0 2
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -56,7 +56,7 @@ A Shady Lane~
 way through the forest.  To the south, you may enter onto a well travelled road
 which runs east and west.  
 ~
-258 0 1
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -72,7 +72,7 @@ A Well Travelled Road~
 carts abreast.  It is obvious from the amount of cart and wagon tracks you see
 that this is one of the main roads in XXXX.  
 ~
-258 0 2
+258 0 0 0 0 0
 D1
 You see a fairly large road leading towards a grand castle in the distance.
 ~
@@ -89,7 +89,7 @@ The City Entrance~
 uncharted and uncivilized lands, while to the west, the city awaits with all its
 splendor and majesty.  
 ~
-258 0 2
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -105,7 +105,7 @@ A Shady Lane~
 South of you, the forest lightens and gives way to an open area, while to the
 north, the forest only gets deeper and darker.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -127,7 +127,7 @@ Dirt Road~
 of the spires of the great city of Jareth.  A large house lies south of the
 path.  It looks very inviting.  
 ~
-258 0 3
+258 0 0 0 0 0
 D1
 More light forest.
 ~
@@ -149,7 +149,7 @@ Dirt Road~
    The road runs east and west, with a branch going north as well.  The forest
 here seems more peaceful, more relaxing than the forest to the west.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -170,7 +170,7 @@ Dirt Road~
    The road bends here, turning south.  This road seems to branch in many
 places, leading to many different realms of XXXX.  
 ~
-258 0 3
+258 0 0 0 0 0
 D2
 More and darker woods.
 ~
@@ -188,7 +188,7 @@ On a Wide Road~
 left, but it is easily passable just the same.  The forest around you seems
 alive with sound and motion.  It is really quite enjoyable.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -204,7 +204,7 @@ Skirting the Clearing~
    The clearing still lies south of you, however the trail you follow leads away
 from clearing into deeper forest in an easterly direction.  
 ~
-258 0 3
+258 0 0 0 0 0
 D1
 Huge grey mountains lie in this direction.
 ~
@@ -220,7 +220,7 @@ Edge of a Clearing~
    Just to the south of you, the forest opens up into a large grassy field, it's
 size undeterminable.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 Trees as far as the eye can see.
 ~
@@ -243,7 +243,7 @@ A Forest Trail~
 begin to hear the sound of animals making their way around you now that you are
 far away from any kind of civilization.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 The trail bends to the north.
 ~
@@ -261,7 +261,7 @@ On the River~
 north, you think you may see some sort of clearing, but no trail is visible form
 here.  South lies nothing but deep forest.  
 ~
-258 0 7
+258 0 0 0 0 0
 D2
 A light section of forest.
 ~
@@ -279,7 +279,7 @@ A Dark and Gloomy Trail~
 hear the sound of running water to the south, possibly it leads to a place a bit
 more bright and cheery than this...?  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 There is a small clearing to the north.
 ~
@@ -297,7 +297,7 @@ continues east and west, with a bit more light to the east.  To the north, you
 think you may be able to see a trail, though from the looks of it, the trail is
 not used much at all.  
 ~
-258 0 7
+258 0 0 0 0 0
 D0
 More forest.
 ~
@@ -316,7 +316,7 @@ You feel no menace to your surroundings whatsoever, as people walk by and wave
 cheerily at you.  Even all the little forest animals seem undisturbed and
 unafraid.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 A trail leading north-south.
 ~
@@ -334,7 +334,7 @@ On a Wide Road~
 has been neatly cleared away from the path, all manner of obstruction removed.
 You must be near a large city.  
 ~
-258 0 3
+258 0 0 0 0 0
 D1
 More trees.
 ~
@@ -352,7 +352,7 @@ A Wide Bend~
 north for quite some distance.  The road seems to be very well-kept, which makes
 the travelling light and enjoyable.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 Many trees to the north.
 ~
@@ -370,7 +370,7 @@ A Wide Road~
 constantly, a flurry of activity now that you near XXXX.  In fact, you can begin
 to see the spires of the city to northeast.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 You can see a trail this way.
 ~
@@ -389,7 +389,7 @@ discernable, heads in a southerly direction.  To the north, a large forest
 begins.  Under your feet, the road is very hard-packed, as if many heavy feet
 pass this way regularly.  
 ~
-258 0 2
+258 0 0 0 0 0
 D0
 The forest gets lighter this way.
 ~
@@ -416,7 +416,7 @@ here, and the branches high above your head are so thick that they block out all
 direct sunlight.  While it is much too thick to go further east, you might be
 able to make your way though the forest to the south and west.  
 ~
-258 0 3
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -433,7 +433,7 @@ Old Stone Road~
 south.  Under the dirt and loose gravel you think you may be able to see some
 old stones which might have formed a well used road long ago.  
 ~
-258 a 3
+258 1 0 0 0 0
 D0
 Darkness...
 ~
@@ -456,7 +456,7 @@ Deep in the Forest~
 north, you catch glimpses of daylight.  To the east, you simply cannot see.  
 The trees are close and stifling.  
 ~
-258 0 3
+258 0 0 0 0 0
 D2
 ~
 ~
@@ -471,7 +471,7 @@ Grassy Field~
    This field seems to go on forever.  The trail continues north and south of
 here.  
 ~
-258 0 2
+258 0 0 0 0 0
 D0
 It appears to get much darker that direction.
 ~
@@ -498,7 +498,7 @@ road.  Most of the tracks seem to head east, so you must assume that there is
 something of interest in that direction, however it is hard to see over the hill
 which you are slowly climbing.  
 ~
-258 0 5
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -517,7 +517,7 @@ the outdoor setting, hearing all the hustle and bustle of the city so near.
 You may head to the toll booths just east of here, or leave to the west into the
 wilderness.  
 ~
-258 0 4
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -534,7 +534,7 @@ bridges leading into McGintey Cove.  The second, just east of you, looks just as
 busy as this one.  If you are not sure what to do next, possibly reading the
 sign on the outside of the booth may give you some idea.  
 ~
-258 0 4
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -555,7 +555,7 @@ Take your pick, east or west.  There also seems to be some sort of park to the
 south, and to the north is an enormous stable, where alll steeds are kept, since
 none are allowed in the city.  
 ~
-258 0 4
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -579,7 +579,7 @@ Eastern Toll Booth~
 seaport city, McGintey Cove.  If you are not quite sure how to gain access, just
 read the sign posted on the outer wall of the booth.  
 ~
-258 0 4
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -600,7 +600,7 @@ depths, you cannot imagine trying to find any one particular within this
 building.  A sign is posted to your left, explaining the stable rules.  The exit
 is to your south.  
 ~
-258 d 0
+258 8 0 0 0 0
 D2
 ~
 ~
@@ -614,7 +614,7 @@ the benches all freshly painted and clean.  A large sign dedicates this park to
 the founder of the city.  You may enter back onto McGintey Road to the north, or
 rest here for a while before continuing on your way.  
 ~
-258 d 0
+258 8 0 0 0 0
 D0
 ~
 ~
@@ -627,7 +627,7 @@ same in terms of ease of travel.  There looks to be a bit more traffic to the
 north, however the trails leading east and west don't exactly look unused
 themselves.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -647,7 +647,7 @@ Forest Road~
 almost alive from the way the playful breeze ruffles through their branches.  
 To the west the road splits to the north or continues its way west.  
 ~
-258 0 3
+258 0 0 0 0 0
 D3
 ~
 ~
@@ -658,7 +658,7 @@ A Wide Road~
    The road turns here heading east and south.  It seems to run quite some way
 to the east, however to the south it makes another turn.  
 ~
-258 0 3
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -675,7 +675,7 @@ seems to end!  It looks as if there may be a large cliff to your south, and from
 the smell of things, it must lead down to the sea.  To the north, the field runs
 for some distance until reaching a far-off forest.  
 ~
-258 0 2
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -700,7 +700,7 @@ A Wide Road Near the City~
 a long, wide road which is filled with traffic at all ours of the day and night,
 it being the main route from XXXX to Jareth, the Free City.  
 ~
-258 a 3
+258 1 0 0 0 0
 D0
 ~
 ~
@@ -717,7 +717,7 @@ Just West of XXXX~
 way down a long, wide, and extremely well traveled road.  To the north you see a
 road made from aged cobblestones.  
 ~
-258 0 1
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -734,7 +734,7 @@ A Tunnel In The Mountains~
 south the passage gets smaller and smaller.  A small alcove has been carved into
 the east wall.  
 ~
-258 a 1
+258 1 0 0 0 0
 D0
 The tunnel gets wider in this direction.
 ~
@@ -752,7 +752,7 @@ Diminishing Trail~
 vegetation is growing in on the trail, it is hard to tell.  It looks like the
 trail may head east and north from here.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -773,7 +773,7 @@ Faint Trail~
 hope you are heading in the right direction, through openings in trees and such,
 so faint is the trail.  
 ~
-258 0 3
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -789,7 +789,7 @@ Nearing the Maze~
 It runs north and south of the path you stand on as far as your eyes can see in
 either direction.  Looks like a fellow could get lost in there pretty easily.  
 ~
-258 0 3
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -804,7 +804,7 @@ Old Stone Road~
    The road runs north and south still.  There is a large gate, closed, way off
 to the north, a large building just beyond the gates.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -828,7 +828,7 @@ Cliff's Edge~
 looking south over the edge, you see the someone has made some crude steps that
 run along the wall of the cliff.  
 ~
-258 0 2
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -848,7 +848,7 @@ Old Stone Road~
 what appears to be an old cathedral or church.  To the south the road heads back
 toward the main forest trail.  
 ~
-258 0 3
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -865,7 +865,7 @@ and west from here.  Looking down and over the edge of the cliff, you find that
 you were right about what lies at the bottom of the cliff, the sea!  To the
 north the trail cuts through a huge grassy field.  
 ~
-258 0 2
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -887,7 +887,7 @@ On a Rock Landing~
 leading down to the sea shore.  The footing looks to be treacherous at best, so
 be careful!  
 ~
-258 0 5
+258 0 0 0 0 0
 D0
 ~
 ~
@@ -904,7 +904,7 @@ be hard pressed to follow it far.  A number of bushes are trampled on and some
 medium sized branches have been knocked down.  Obviously there has been a battle
 here rather recently.  
 ~
-258 0 3
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -921,7 +921,7 @@ The Bar~
 the Innkeeper, but as of late, he only serves the few adventurers that manage to
 survive a trip through the forest.  
 ~
-258 df 1
+258 40 0 0 0 0
 D1
 ~
 ~
@@ -933,7 +933,7 @@ Along the Cliff~
 whatever lies in that direction.  To the west, the trail heads it way along, not
 really seeming to head anywhere.  
 ~
-258 0 5
+258 0 0 0 0 0
 D1
 You see the main floor of the Inn to the east.
 ~
@@ -953,7 +953,7 @@ lead from the edge of the cliff to the city gate are the only entrance or exit
 from the town.  The trail also runs west far into the distance, skirting the
 southern edge of a huge field, which seems to go on forever.  
 ~
-258 0 4
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -968,7 +968,7 @@ West of Town~
    The road runs east toward the huge seaport atop the plateau and west, topping
 a tall hill.  
 ~
-258 0 4
+258 0 0 0 0 0
 D1
 ~
 ~
@@ -985,7 +985,7 @@ A Dark and Gloomy Trail~
 by.  The birds you heard singing before are now quiet, all you can hear now is
 the sound of your own heavy breathing.  
 ~
-258 a 3
+258 1 0 0 0 0
 D0
 ~
 ~
@@ -1003,7 +1003,7 @@ surrounding you.  Trees brush against you on either side, feeling almost like
 they tug at your clothing.  The trail seems to continue north, although it seems
 much more sensible to go south.  
 ~
-258 a 3
+258 1 0 0 0 0
 D0
 The trail continues.
 ~
@@ -1020,7 +1020,7 @@ A Dead End Trail~
 any further exploration impossible.  It does seem strange, though, that a trail
 through the woods would end so abruptly.  
 ~
-258 a 3
+258 1 0 0 0 0
 D2
 ~
 ~
@@ -1032,7 +1032,7 @@ Entrance to the Maze~
 These walls run north and south from where you stand farther than you can see in
 either direction.  
 ~
-258 0 4
+258 0 0 0 0 0
 D3
 ~
 ~

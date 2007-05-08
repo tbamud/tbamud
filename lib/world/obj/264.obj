@@ -5,7 +5,7 @@ The Pool of Eternal Life sits centered in the boulevard, a wondrous beacon of li
 Deep in it's mirrored depths, you think you may be able to see something past
 yourself, something dark, sinister.    
 ~
-23 a 0 0
+23 a 0 0 0 0 0 0 0 0 0 0 0
 1000 1000 15 0
 1005 0 0 0
 #26401
@@ -13,7 +13,7 @@ robe father~
 the Robe of the Father~
 A glowing robe is rumpled on the ground.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
 7 1 0 30
 A
@@ -27,7 +27,7 @@ lament father's~
 the Father's Lament~
 A strange glowing ball has been left here.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 10 1 0 0
 A
@@ -39,7 +39,7 @@ gown mother~
 the Gown of the Mother~
 A beautiful gown has been left here.~
 ~
-9 b ak 0
+9 b 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
 10 1 0 40
 A
@@ -51,7 +51,7 @@ remorse mother's~
 the Mother's Remorse~
 A strange trinket of some sort has been left here.~
 ~
-12 a ao 0
+12 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 35
 A
@@ -63,7 +63,7 @@ mask enlightenment~
 the Mask of Enlightenment~
 A glowing mask is on the ground here.~
 ~
-9 ahjo a 0
+9 ahjo 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 15 1 0 30
 A
@@ -73,7 +73,7 @@ crown gentle~
 the Gentle Crown of Cathari~
 A shimmering crown has been dropped here.~
 ~
-11 a ae 0
+11 a 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 40
 A
@@ -87,7 +87,7 @@ fist justice supreme~
 the Fist of Supreme Justice~
 A molded fist made of an unknown material has been left here.~
 ~
-5 ajmop an 0
+5 ajmop 0 0 0 an 0 0 0 0 0 0 0
 3 5 7 7
 8 1 0 45
 A
@@ -101,7 +101,7 @@ song banshee~
 the Song of the Banshee~
 A glowing song has been left here.~
 ~
-12 adejop a 0
+12 adejop 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 25
 A
@@ -115,7 +115,7 @@ amulet voce~
 the Voce Amulet~
 A wide amulet in the shape of a teardrop has been dropped here.~
 ~
-11 b ac 0
+11 b 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 6 1 0 20
 A
@@ -127,7 +127,7 @@ wraps arm embrace~
 the Arm Wraps of Embracing~
 Some leather wraps have been dropped here.~
 ~
-9 hi ai 0
+9 hi 0 0 0 ai 0 0 0 0 0 0 0
 6 0 0 0
 8 1 0 20
 A
@@ -139,7 +139,7 @@ ring voce~
 the Voce Ring~
 A ring with a teardrop insignia has been left here.~
 ~
-11 ajmn ab 0
+11 ajmn 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 40
 A
@@ -151,7 +151,7 @@ wrap hand leather~
 some leather hand wraps~
 Some long strips of leather have been left here.~
 ~
-11 0 ah 0
+11 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 2 550 0 20
 A
@@ -163,17 +163,17 @@ jacket stately~
 a stately jacket~
 A fine jacket has been left here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
 8 800 0 20
-E
-buttons~
-   The heavy buttons are engraved with small anchors.  
-~
 E
 stately jacket~
    The dark jacket is really quite nice.  The material is smooth and clean.  
 Heavy metal buttons are sewn in a straight line from top to bottom.  
+~
+E
+buttons~
+   The heavy buttons are engraved with small anchors.  
 ~
 A
 23 2
@@ -182,7 +182,7 @@ boots travelling~
 the boots of travelling~
 Some soft, comfortable boots have been abandoned here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 4 1 0 25
 E

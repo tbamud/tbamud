@@ -3,7 +3,7 @@ candlestick~
 a candlestick~
 A pewter candlestick is standing here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 24 0
 5 150 15 0
 E
@@ -16,7 +16,7 @@ cross~
 a silver cross~
 A beautiful cross made of silver has been left here.~
 ~
-8 i ac 0
+8 i 0 0 0 ac 0 0 0 0 0 0 0
 10 0 0 0
 5 800 80 0
 E
@@ -30,7 +30,7 @@ tombstone headstone~
 a tombstone~
 An ancient tombstone sits at the head of this cemetery plot.~
 ~
-15 a 0 0
+15 a 0 0 0 0 0 0 0 0 0 0 0
 500 0 -1 0
 0 0 0 0
 E
@@ -43,7 +43,7 @@ ball string~
 a ball of string~
 There is a ball of string rolling on the floor.~
 ~
-12 h a 0
+12 h 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 10 1 0
 E
@@ -55,7 +55,7 @@ knife pocket~
 a pocket knife~
 A small pocket knife lies in the dust.  Someone must have dropped it.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
 1 100 10 0
 E
@@ -67,7 +67,7 @@ thigh bone~
 a large thigh bone~
 A disgusting thigh bone is lying in the corner.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 7
 15 50 5 0
 E
@@ -79,7 +79,7 @@ pile carcasses~
 a pile of decaying carcasses~
 There is a larg pile of decaying carcasses here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 5 -1 0
 0 0 0 0
 E
@@ -93,7 +93,7 @@ shovel~
 a burial shovel~
 A very well built shovel rests against the wall.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 7
 25 500 40 0
 E
@@ -110,7 +110,7 @@ cloak shadow~
 a shadow cloak~
 A cloak as black as the very night lies on the ground.~
 ~
-11 g ak 0
+11 g 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
 5 500 50 0
 E
@@ -126,7 +126,7 @@ wrap~
 a burial wrap~
 A dirty grey burial wrap is lying here.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 3 400 80 0
 E
@@ -143,7 +143,7 @@ sarcophagus~
 an ancient sarcophagus~
 An ancient sarcophagus lies in the center of this room.~
 ~
-15 a 0 0
+15 a 0 0 0 0 0 0 0 0 0 0 0
 500 15 24744 0
 0 0 0 0
 E
@@ -155,7 +155,7 @@ sword crystal~
 a crystal sword~
 A sword carved out the finest crystal has been left here.~
 ~
-5 ag an 0
+5 ag 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
 15 1000 100 0
 E
@@ -173,7 +173,7 @@ plate crystal breast~
 a crystal breast plate~
 Plate mail formed from crystal has been carelessly left here.~
 ~
-9 ag ad 0
+9 ag 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 10 200 20 0
 E
@@ -188,7 +188,7 @@ carcass elven prince~
 the carcass of an elven prince~
 The carcass of an elven prince is here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 -1 0
 20 1 0 0
 E
@@ -202,7 +202,7 @@ rose~
 a beautiful crystal rose~
 The most beautiful rose you have ever seen is here.~
 ~
-1 agi ao 0
+1 agi 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 5 750 170 0
 E
@@ -220,7 +220,7 @@ black lace veil~
 a black lace veil~
 A black lace veil lies crumpled on the ground.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 100 10 0
 A
@@ -230,7 +230,7 @@ coins huge pile~
 a huge pile of treasure~
 There is a huge pile of treasure in this room.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 952 0 0 0
 50 1 0 0
 #24718
@@ -238,7 +238,7 @@ crown jewel~
 a jewel encrusted crown~
 A beautiful crown with elegant jewels rests on the ground.~
 ~
-8 g ae 0
+8 g 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 5 300 30 0
 E
@@ -255,7 +255,7 @@ wand skull~
 a skull headed wand~
 An evil looking wand with a grinning skull stares up at you.~
 ~
-3 bg ao 0
+3 bg 0 0 0 ao 0 0 0 0 0 0 0
 30 3 3 1
 5 500 50 0
 E
@@ -268,7 +268,7 @@ dagger vorpal~
 a vorpal dagger~
 A curvy vorpal dagger is stuck into the wall.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
 5 250 25 0
 E
@@ -285,7 +285,7 @@ sword rusty~
 a rusty sword~
 An ancient sword covered in rust lies among the debris.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 3
 5 10 1 0
 #24723
@@ -293,7 +293,7 @@ robe black undead~
 the black robe of the undead~
 The black robe of the undead is spread out on the floor before you.~
 ~
-11 g ak 0
+11 g 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 10 240 24 0
 E
@@ -309,7 +309,7 @@ armor bone~
 some bone plated armor~
 Some plate mail formed from large bones lies in a heap.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 15 250 25 0
 #24725
@@ -317,7 +317,7 @@ mask death~
 the grinning mask of death~
 A mask made from a rather large skull grins back at you.~
 ~
-9 h ae 0
+9 h 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 8 260 25 0
 E
@@ -330,7 +330,7 @@ gold coins~
 some gold coins~
 A small pile of gold coins.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 452 0 0 0
 10 1 0 0
 #24730
@@ -338,7 +338,7 @@ key iron~
 an iron key~
 There is a heavy looking iron key here.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #24731
@@ -346,7 +346,7 @@ crowbar~
 a crowbar~
 There is a heavy looking crowbar leaning against the corner.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 20 1 0 0
 #24734
@@ -354,7 +354,7 @@ rose~
 a long stemmed rose~
 A beautiful long stemmed rose has been placed here.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -367,7 +367,7 @@ key crystal~
 a crystal key~
 There is a beautiful crystal key lying on the floor.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #24749
@@ -375,7 +375,7 @@ key warped wooden~
 a warped wooden key~
 There is a warped wooden key lying in the dirt.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #24756
@@ -383,7 +383,7 @@ tea no~
 no tea~
 There is no tea here.~
 ~
-12 h a 0
+12 h 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 1 0
 #24759
@@ -391,7 +391,7 @@ key stone~
 a stone key~
 There is ancient stone key lying here.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #24760
@@ -399,7 +399,7 @@ key black~
 a pure black key~
 There is a key black as the night lying on the ground.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 $~

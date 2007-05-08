@@ -6,7 +6,7 @@ intervals, there are guard towers for lookout purposes which are manned
 twenty-eight hours a day.  The main section of the camp lies east of here along
 a roadway, the main highway through the gates to the west.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -38,7 +38,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 d 0
+324 8 0 0 0 0
 D0
 ~
 ~
@@ -48,14 +48,14 @@ D2
 ~
 0 0 32400
 E
-scorecards~
-   The cards all have been filled in with the judges evaluations of today's
-combata nts.  It seems that Sparticus is having a good day.  
-~
-E
 pencils pencil~
    An ordinary number 2 lead pencil.  Judging by the teeth marks on the shaft,
 the user should see a dentist very soon!  
+~
+E
+scorecards~
+   The cards all have been filled in with the judges evaluations of today's
+combata nts.  It seems that Sparticus is having a good day.  
 ~
 S
 #32402
@@ -66,7 +66,7 @@ intervals, there are guard towers for lookout purposes, one of which is right
 here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  
 ~
-324 d 0
+324 8 0 0 0 0
 D0
 ~
 ~
@@ -86,7 +86,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -112,7 +112,7 @@ here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  The Walk turns north and east at this point, following the natural slope
 of the valley.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 There is an acrid smell coming from that direction.
 ~
@@ -138,7 +138,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 Through the clouds of dust, you can make out a passable road.
 ~
@@ -162,7 +162,7 @@ intervals, there are guard towers for lookout purposes, one of which is right
 here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 ~
 ~
@@ -176,12 +176,6 @@ D4
 ~
 0 0 32437
 E
-swords weapons armor halberds whips~
-   Titus has enough hardware in here to outfit a large army.  Maybe that's why
-he has a lucrative contract to sell weapons to the emperor's armies for
-outrageous prices.  
-~
-E
 sign~
    The sign has a note posted on it.  It reads:
 
@@ -191,6 +185,12 @@ sign~
      Sell   - Tells me you will sell that item, to me.
 
 ~
+E
+swords weapons armor halberds whips~
+   Titus has enough hardware in here to outfit a large army.  Maybe that's why
+he has a lucrative contract to sell weapons to the emperor's armies for
+outrageous prices.  
+~
 S
 #32407
 The Guard Walk~
@@ -198,7 +198,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 ~
 ~
@@ -220,7 +220,7 @@ intervals, there are guard towers for lookout purposes, one of which is right
 here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 ~
 ~
@@ -247,7 +247,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 There is a large oval dirt-track in that direction.
 ~
@@ -258,13 +258,8 @@ D3
 ~
 0 0 32408
 E
-gladiator~
-   He is a big muscular man with lots of armor.  He sizes you up and decides
-that you aren't worth his time or trouble.  
-~
-E
-driver~
-   The driver is too busy changing a wheel on his chariot to notice you.  
+coach trainer~
+   The coach tells you "Stop bothering my athletes and get lost!  "
 ~
 E
 chariot~
@@ -274,8 +269,13 @@ the chariot as belonging to Drucilis "Lightning-whip" Octavious, a favorite
 driver of the masses.  
 ~
 E
-coach trainer~
-   The coach tells you "Stop bothering my athletes and get lost!  "
+driver~
+   The driver is too busy changing a wheel on his chariot to notice you.  
+~
+E
+gladiator~
+   He is a big muscular man with lots of armor.  He sizes you up and decides
+that you aren't worth his time or trouble.  
 ~
 S
 #32410
@@ -287,7 +287,7 @@ here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  The Walk turns south and west at this point, following the natural slope
 of the valley.  
 ~
-324 0 0
+324 0 0 0 0 0
 D2
 ~
 ~
@@ -314,7 +314,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 d 0
+324 8 0 0 0 0
 D0
 ~
 ~
@@ -337,7 +337,7 @@ intervals, there are guard towers for lookout purposes, one of which is right
 here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -358,7 +358,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 d 0
+324 8 0 0 0 0
 D0
 A dusty road lies to the north.
 ~
@@ -382,7 +382,7 @@ constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  You may enter into the
 main section of the camp to west - the east gate lies just east of here.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 You see the living quarters to the north.
 ~
@@ -411,7 +411,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -429,7 +429,7 @@ intervals, there are guard towers for lookout purposes, one of which is right
 here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -449,7 +449,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -468,7 +468,7 @@ here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  The Walk turns north and west here, following the natural curve of the
 valley's floor.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -494,7 +494,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 The highway continues to the east.
 ~
@@ -514,7 +514,7 @@ intervals, there are guard towers for lookout purposes, one of which is right
 here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 ~
 ~
@@ -530,17 +530,17 @@ D4
 ~
 0 0 32431
 E
+roll paper~
+   Hey!!  This is first-class stuff!!  - White Cloud brand with lotion.  The
+roll is about half-used.  
+~
+E
 hole toilet~
    You walk over to the hole and see that there is a large turd floating in a
 pool black water about 2 feet below the surface of the ground.  As you lean
 closer to get a better look, your nose catches a concentrated dose of the
 fragrant aroma wafting upwards.  Your stomach decides that it has had enough of
 this shoddy treatment and you puke until it is empty.  
-~
-E
-roll paper~
-   Hey!!  This is first-class stuff!!  - White Cloud brand with lotion.  The
-roll is about half-used.  
 ~
 S
 #32421
@@ -549,7 +549,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 ~
 ~
@@ -567,7 +567,7 @@ intervals, there are guard towers for lookout purposes, one of which is right
 here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 ~
 ~
@@ -588,7 +588,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 ~
 ~
@@ -607,7 +607,7 @@ here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  The Walk turns north and east here, following the natural curve of the
 valley's floor.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 You see rows upon rows of dilapidated wooden bleachers.
 ~
@@ -633,7 +633,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 You see hundreds, if not thousands of people.
 ~
@@ -659,7 +659,7 @@ intervals, there are guard towers for lookout purposes, one of which is right
 here.  Entry into the tower is by a tall ladder which climbs to the floor of the
 tower.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -685,7 +685,7 @@ The Guard Walk~
 constant vigil, watching for signs of hostile intruders.  At regularly spaced
 intervals, there are guard towers for lookout purposes.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 You see a paved road in the distance.
 ~
@@ -697,14 +697,10 @@ You see an incredible house off in the distance.
 ~
 0 -1 32426
 E
-Venus~
-   Venus, the Roman goddess of beauty and knowledge is displayed in a all of her
-splendor.  
-~
-E
-Jupiter~
-   A statue made of pure gold depicts Zeus sitting on his throne.  The throne
-looks like it is made of silver.  
+trees tree shrubs shrub plants plant~
+   All of the plants, trees and shrubs are perfectly trimmed, without so much as
+a dead leaf anywhere to be seen.  You welcome the shade that they give from the
+harsh sun above.  
 ~
 E
 Neptune~
@@ -713,10 +709,14 @@ It is sitting in the center of a small pond which has hundreds of beautiful fish
 swimming in it.  
 ~
 E
-trees tree shrubs shrub plants plant~
-   All of the plants, trees and shrubs are perfectly trimmed, without so much as
-a dead leaf anywhere to be seen.  You welcome the shade that they give from the
-harsh sun above.  
+Jupiter~
+   A statue made of pure gold depicts Zeus sitting on his throne.  The throne
+looks like it is made of silver.  
+~
+E
+Venus~
+   Venus, the Roman goddess of beauty and knowledge is displayed in a all of her
+splendor.  
 ~
 S
 #32428
@@ -725,15 +725,15 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
 0 0 32426
 E
-floor tile~
-   Very expensive!  A lot of master craftsmen labored long and hard to produce
-such a work of art.  
+furniture~
+   You hope to eventually be able to own a piece of furniture just like these
+someday.  These are only dreams, of course.  
 ~
 E
 windows~
@@ -741,9 +741,9 @@ windows~
 the gods.  
 ~
 E
-furniture~
-   You hope to eventually be able to own a piece of furniture just like these
-someday.  These are only dreams, of course.  
+floor tile~
+   Very expensive!  A lot of master craftsmen labored long and hard to produce
+such a work of art.  
 ~
 S
 #32429
@@ -752,18 +752,18 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
 0 0 32424
 E
-gate~
-   The gate is made of solid iron and is well maintained.  
-~
-E
 road~
    The road is wide and very muddy.  
+~
+E
+gate~
+   The gate is made of solid iron and is well maintained.  
 ~
 S
 #32430
@@ -772,7 +772,7 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
@@ -784,7 +784,7 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
@@ -796,21 +796,21 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
 0 0 32418
 E
+aqueduct~
+   To the southeast, off in the distance, stands a large stone structure that is
+used to channel water into the city.  
+~
+E
 vendor vendors~
    There are several sidewalk vendors here, selling fresh fruits and vegetables,
 home baked goods, fine jewelry and other items.  Most of the items for sale are
 of very high quality.  
-~
-E
-aqueduct~
-   To the southeast, off in the distance, stands a large stone structure that is
-used to channel water into the city.  
 ~
 S
 #32433
@@ -819,7 +819,7 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
@@ -831,7 +831,7 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
@@ -843,7 +843,7 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
@@ -855,21 +855,14 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
 0 0 32408
 E
-desk~
-   The desk is made of solid walnut and gold inlay.  It is exquisitely carved
-with superior craftsmanship, the likes of which has rarely been seen.  It was
-probably brought to Rome from Gaul.  
-~
-E
-documents decrees paperwork document decree papers paper~
-   The documents are all written on reed scrolls made in Egypt and have been
-sealed with wax.  
+flowers plants flower plant~
+   The plants contribute to a very relaxing atmosphere.  
 ~
 E
 bookcase books~
@@ -877,8 +870,15 @@ bookcase books~
 entire Roman empire.  They appear to be collecting dust.  
 ~
 E
-flowers plants flower plant~
-   The plants contribute to a very relaxing atmosphere.  
+documents decrees paperwork document decree papers paper~
+   The documents are all written on reed scrolls made in Egypt and have been
+sealed with wax.  
+~
+E
+desk~
+   The desk is made of solid walnut and gold inlay.  It is exquisitely carved
+with superior craftsmanship, the likes of which has rarely been seen.  It was
+probably brought to Rome from Gaul.  
 ~
 S
 #32437
@@ -887,7 +887,7 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
@@ -899,7 +899,7 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
@@ -911,7 +911,7 @@ Guard Tower~
 slats, arrow and peep holes cut and left open at eye level.  The entire space is
 roughly five foot by five foot, tightly cramped and uncomfortable.  
 ~
-324 d 0
+324 8 0 0 0 0
 D5
 ~
 ~
@@ -927,7 +927,7 @@ Roadway~
    This hard-packed road runs into the center of the camp, which branches
 leading north and south toward the smithy and the farming area.  
 ~
-324 c 0
+324 4 0 0 0 0
 D0
 ~
 ~
@@ -946,17 +946,6 @@ You can see a busy street in that direction.
 ~
 0 -1 32400
 E
-telescope~
-   If it were operational, it would offer a spectacular view of the Mountain of
-the Gods.  Unfortunately, it appears to have been vandalized.  
-~
-E
-aqueduct~
-   The aqueduct is a massive stone structure that channels water into Rome from
-the Mountain of the Gods.  During the rainy season, it is filled to the top.  
-However, due to recent drought, the water level appears to be very low.  
-~
-E
 sign~
    ********************************************
    *                                          *
@@ -968,6 +957,17 @@ sign~
    *                                          *
    ********************************************
 ~
+E
+aqueduct~
+   The aqueduct is a massive stone structure that channels water into Rome from
+the Mountain of the Gods.  During the rainy season, it is filled to the top.  
+However, due to recent drought, the water level appears to be very low.  
+~
+E
+telescope~
+   If it were operational, it would offer a spectacular view of the Mountain of
+the Gods.  Unfortunately, it appears to have been vandalized.  
+~
 S
 #32441
 Roadway~
@@ -976,7 +976,7 @@ running east for some ways.  There is a large hay barn just to the south, fenced
 off so that entry must be from another direction.  A small wooden hut lies just
 north of here, its door also on another side.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 You see more aqueduct.
 ~
@@ -1000,7 +1000,7 @@ Roadway~
 graduation, tradition, or other such ceremony.  The trail sections off to the
 north and south, heading toward the barracks area and the mess tent.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1019,11 +1019,6 @@ You see the south gate through the door.
 ~
 0 -1 32441
 E
-fog mist~
-   This is some really strange stuff!  You have never seen anything this color
-before.  Your legs are totally obscured from the knee down.  
-~
-E
 sign~
    The sign has a note posted on it.  It reads:
 
@@ -1032,6 +1027,11 @@ sign~
      Value  - Tells you what I will pay for an item.
      Sell   - Tells me you will sell that item, to me.
 
+~
+E
+fog mist~
+   This is some really strange stuff!  You have never seen anything this color
+before.  Your legs are totally obscured from the knee down.  
 ~
 S
 #32443
@@ -1042,7 +1042,7 @@ from a thin chimney along the side.  North is another wood building, but one
 which is somewhat larger than the hut to the east.  A large amount of ringing
 noise can be heard from that building, where smoke also rises from.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1066,7 +1066,7 @@ rods being cured for use as armor or clothing.  The place is intensely warm due
 to the fact that it is so small an area and a fire blazes in a wood stove
 constantly.  
 ~
-324 d 0
+324 8 0 0 0 0
 D3
 ~
 ~
@@ -1078,7 +1078,7 @@ Roadway~
 free of debris.  The higher ranking officers must be big sticklers for the
 troops to keep their area clean.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1088,12 +1088,12 @@ D2
 ~
 0 0 32442
 E
-stairs stairway steps~
-   The stairs are immaculately polished and made of white marble.  
-~
-E
 statue statues~
    There is really nothing noteworthy about them.  
+~
+E
+stairs stairway steps~
+   The stairs are immaculately polished and made of white marble.  
 ~
 S
 #32446
@@ -1103,7 +1103,7 @@ team of smiths work daily to keep armor and weapons in good condition, not to
 mention making new items for new recruits.  A fire blazes in a huge fireplace,
 various implements of the trade inside.  
 ~
-324 d 0
+324 8 0 0 0 0
 D0
 The general store lies in that direction.
 ~
@@ -1119,14 +1119,14 @@ D2
 ~
 0 0 32443
 E
-stone structure aqueduct~
-   You see a massive stone structure, built several centuries ago, that is used
-to channel water into the city.  
-~
-E
 mountain~
    Off to the southwest, you can see a huge mountain that is partially obscured
 by the haze.  It is rumored that the gods reside there and protect the city.  
+~
+E
+stone structure aqueduct~
+   You see a massive stone structure, built several centuries ago, that is used
+to channel water into the city.  
 ~
 S
 #32447
@@ -1135,7 +1135,7 @@ Armor Cache~
 and dented or broken pieces of armor.  Most of the items here are in fine shape,
 there are not many broken pieces due to the fact that it is peace-time.  
 ~
-324 d 0
+324 8 0 0 0 0
 D2
 ~
 ~
@@ -1147,7 +1147,7 @@ Weapon Cache~
 and dented or broken weapons.  Most of the items here are in fine shape, there
 are not many broken pieces due to the fact that it is peace-time.  
 ~
-324 d 0
+324 8 0 0 0 0
 D3
 The aqueduct continues.
 ~
@@ -1166,7 +1166,7 @@ Roadway~
 north, encircled by rows and rows of long grey tents where the soldiers sleep.
 To the south is the main road through the camp.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1176,14 +1176,14 @@ D2
 ~
 0 0 32445
 E
-workbench workbenches tubes beakers crucibles dishes~
-   These are all tools of great power.  You cannot even begin to understand what
-any of this stuff does.  
-~
-E
 cinders ashes pile~
    The ashes are a very fine grayish white powder that seems to be the only
 worldly remains of Froboz's "test specimens".  
+~
+E
+workbench workbenches tubes beakers crucibles dishes~
+   These are all tools of great power.  You cannot even begin to understand what
+any of this stuff does.  
 ~
 S
 #32450
@@ -1193,20 +1193,20 @@ the lower rank soldiers of the camp make their home.  A footlocker stands at the
 foot of each bed, everything inside of the tent, including the dirt floor, is
 spotlessly clean.  
 ~
-324 d 0
+324 8 0 0 0 0
 D1
 ~
 ~
 0 0 32451
 E
+seal~
+   The seal of the emperor is mounted above the judge's stand.  
+~
+E
 bench stand box jury~
    You see large wooden structures that are designed to separate the judge, jury
 and witnesses from the rest of the courtroom.  They are made of polished oak and
 are strictly functional.  
-~
-E
-seal~
-   The seal of the emperor is mounted above the judge's stand.  
 ~
 S
 #32451
@@ -1215,7 +1215,7 @@ Fire Pit~
 relatively free of debris or grunge, the pit always fresh dug, the ground raked
 and smooth.  Long grey barracks tents lie to the north, east and west.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1234,15 +1234,15 @@ The clay street leads into the city.
 ~
 0 -1 32450
 E
+gate~
+   The gate is fabricated from iron and has been designed to keep intruders out
+of the city.  
+~
+E
 spires towers~
    There are two tall spires on either side of the gate and are constantly
 manned by the city guards.  They are made of stone and stand about 40 feet tall.
 
-~
-E
-gate~
-   The gate is fabricated from iron and has been designed to keep intruders out
-of the city.  
 ~
 S
 #32452
@@ -1252,7 +1252,7 @@ the lower rank soldiers of the camp make their home.  A footlocker stands at the
 foot of each bed, everything inside of the tent, including the dirt floor, is
 spotlessly clean.  
 ~
-324 d 0
+324 8 0 0 0 0
 D3
 ~
 ~
@@ -1269,7 +1269,7 @@ the lower rank soldiers of the camp make their home.  A footlocker stands at the
 foot of each bed, everything inside of the tent, including the dirt floor, is
 spotlessly clean.  
 ~
-324 d 0
+324 8 0 0 0 0
 D2
 ~
 ~
@@ -1283,7 +1283,7 @@ the army must keep it in high supply during times of peace.  The road continues
 to the south toward a large circular, fenced area where warhorses neigh and
 whinny, tossing their mighty heads.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 The aqueduct continues.
 ~
@@ -1313,21 +1313,21 @@ up roughly thirty feet into the air supporting a tin ceiling which serves to
 keep the hay beneath dry.  The hay reaches all the way to the ceiling and would
 undoubtedly reach beyond were it given the opportunity.  
 ~
-324 0 0
+324 0 0 0 0 0
 D3
 The courtroom lies in that direction.
 ~
 door~
 0 12106 32454
 E
-tombs books~
-   The books are very large and filled with Roman legal precedent.  
-~
-E
 papers documents~
    There are hundreds of pages of petitions, lawsuits and court orders sitting
 on the desk.  One particularly interesting case involves a nobleman, a slave and
 a roll of toilet paper.  
+~
+E
+tombs books~
+   The books are very large and filled with Roman legal precedent.  
 ~
 S
 #32456
@@ -1337,7 +1337,7 @@ soldiers during meal times.  The tent itself sits dead center of the roadway,
 the road picking up again just south of the tent, ending at a couple of
 decent-sized wood outbuildings.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1347,13 +1347,13 @@ D2
 ~
 0 0 32462
 E
+trail path~
+   The path is a little muddy, possibly due to a recent thundershower.  
+~
+E
 tree trees vegetation~
    All of the vegetation is lush, green and in full bloom.  You wish that you
 could take the time to stop and enjoy it properly.  
-~
-E
-trail path~
-   The path is a little muddy, possibly due to a recent thundershower.  
 ~
 S
 #32457
@@ -1362,7 +1362,7 @@ Roadway~
 the camp.  The mighty steeds inside neigh and whinny in protest, running in
 circle and tossing their heads.  To the east is a large barn.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 The aqueduct continues.
 ~
@@ -1392,25 +1392,25 @@ cavalry and for doing the work that the cowboys of the army are responsible for.
 There are a few stalls off in the far east corner of the barn where it appears
 the best of the best of the Army's steeds are kept.  
 ~
-324 d 0
+324 8 0 0 0 0
 D3
 ~
 ~
 0 0 32457
 E
-stream brook~
-   A stream of the clearest, cleanest water that you have ever seen winds its
-way through the valley.  
+trees fruit~
+   The fruit trees, nourished by the fertile ground at the edge of the stream
+and sustained by the brilliant sunshine, line the banks of the stream and are
+laden with fruit.  
 ~
 E
 fish~
    A variety of species swims peacefully in the cool, clear water.  
 ~
 E
-trees fruit~
-   The fruit trees, nourished by the fertile ground at the edge of the stream
-and sustained by the brilliant sunshine, line the banks of the stream and are
-laden with fruit.  
+stream brook~
+   A stream of the clearest, cleanest water that you have ever seen winds its
+way through the valley.  
 ~
 S
 #32459
@@ -1419,7 +1419,7 @@ Corral~
 kick any man who is not their usual rider.  Best to get out of this area quickly
 before you get trampled!  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 door~
@@ -1444,7 +1444,7 @@ Branding Block~
 pit.  A large wooden block is here to aid the branders in keeping the animals
 still while branding them with the mark of the Eatern Army/f
 ~
-324 0 0
+324 0 0 0 0 0
 D3
 ~
 ~
@@ -1463,7 +1463,7 @@ main meat, milk and leather supply for the army and so are well tended.  The
 ground is strewn with all sorts of surprises - it might be best to watch one's
 step!  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1474,7 +1474,7 @@ Roadway~
    The road ends here at a couple of wooden buildings.  There are rickety doors
 on both, one to the east and one south, neither of them appear to be locked.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1500,7 +1500,7 @@ Dry Storage~
 flour, loads of dried fruits and canned goods are stacked neatly on shelves and
 on pallets all over the floor.  
 ~
-324 d 0
+324 8 0 0 0 0
 D3
 ~
 door~
@@ -1521,7 +1521,7 @@ Cold Storage~
 milk from the cattle, meats which are kept cold until consumed by the soldiers
 are all kept on ice here.  
 ~
-324 d 0
+324 8 0 0 0 0
 D0
 ~
 door~
@@ -1536,7 +1536,7 @@ every soldier in the army.  To the east is the cavalry fields where the cavalry
 officers might train in their riding and horseman's skills to better their
 performance on the field of battle.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 ~
 ~
@@ -1555,7 +1555,7 @@ the stands is the practice field, a much less used place where trainees go
 through their drills in hopes of perfection when marching on the opulent Parade
 Grounds.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1573,7 +1573,7 @@ place where they can proudly march for their superiors.  A large grandstands
 lies just north of the grounds where spectators may view events which take place
 and the higher ranks may give praise to those who have done a job well.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1595,7 +1595,7 @@ Strategies~
 around it.  Maps and charts are stacked in neat piles in corners of the table,
 writing implements before each stool.  
 ~
-324 d 0
+324 8 0 0 0 0
 D2
 ~
 ~
@@ -1609,7 +1609,7 @@ Eastern Army proudly flying from its summit.  To the east is an even larger tent
 of the same blue fabric, the flag of the Army also atop its summit along with
 the crest of the General.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1634,7 +1634,7 @@ To the south is another section of the roadway where you can see a few small
 wood huts, presumably outhouses, along the side of the road before it ends at a
 stream.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1654,7 +1654,7 @@ Roadway~
 the south is a stream roughly two feet in width, maybe two feet deep.  
 Obviously, this where the army gets its main water supply.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1675,7 +1675,7 @@ south.  The fresh, cool scent of the water running over the rocks constrasts so
 strongly with the smell of the latrine that it almost seems an affront to
 nature.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1695,7 +1695,7 @@ Stream~
 however, which is the main reason why the army chose this valley over many
 others that they might have picked.  
 ~
-324 0 0
+324 0 0 0 0 0
 D0
 ~
 ~
@@ -1708,7 +1708,7 @@ platform built at the east side.  A hole has been cut into the top of the
 platform allowing soldiers a place to rest their rump where they may relieve any
 excess bowel pressures.  It truly stinks like shit in here.  
 ~
-324 d 0
+324 8 0 0 0 0
 D3
 ~
 door~
@@ -1719,7 +1719,7 @@ Roadway~
    The roadway runs east toward the east gate of the encampment.  You may exit
 the camp just east of here or head into the main camp area to the west.  
 ~
-324 0 0
+324 0 0 0 0 0
 D1
 ~
 ~
@@ -1737,7 +1737,7 @@ comfortable.  There is a bed here, only slightly larger than those found in the
 barracks tents and the small table which doubles as a desk is only large enough
 for two men at the most to eat upon it.  
 ~
-324 d 0
+324 8 0 0 0 0
 D3
 ~
 ~
@@ -1750,7 +1750,7 @@ tremendous wood pile which is fed daily by the logging teams of the army.
 Soldiers work constantly at cutting and shaping the wood for whatever needs the
 Army may have.  
 ~
-324 c 0
+324 4 0 0 0 0
 D0
 ~
 ~
@@ -1771,7 +1771,7 @@ which has been cut by the logging crews for the army.  Soldiers work around the
 clock at keeping enough wood available for the cook fires and the tents where
 soldier sleep.  
 ~
-324 0 0
+324 0 0 0 0 0
 D2
 ~
 ~
@@ -1783,7 +1783,7 @@ Cavalry Fields~
 from the earth by the thundering hooves of warhorses.  To the west is the
 footman's training area, a large blue tent blocks any passage south.  
 ~
-324 0 0
+324 0 0 0 0 0
 D3
 ~
 ~
@@ -1795,7 +1795,7 @@ Medical Tent~
 all linens are clean and sanitary.  For being in the middle of a camp, having
 only this tent for shelter, this is quite a facility.  
 ~
-324 0 0
+324 0 0 0 0 0
 D3
 ~
 ~

@@ -3,7 +3,7 @@ golden plaque sign~
 a golden plaque~
 An impressive plaque hangs on the wall.~
 ~
-8 0 0 0
+8 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -23,7 +23,7 @@ seashell shell~
 a simple @Ws@ye@Wa@ys@rh@ye@Wll@n~
 A petite, spiral-like seashell lies here, its tip pointing skywards.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 1 0
 E
@@ -36,7 +36,7 @@ coral~
 a piece of @mc@Mo@Yr@Ma@ml@n~
 A genuine piece of sea coral lies here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 300 0 0
 E
@@ -49,7 +49,7 @@ sign wood~
 a wooden sign~
 A weather-beaten sign solemnly stands here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 5 0 0 0
 E
@@ -64,7 +64,7 @@ coconut milk~
 a brown coconut~
 A coconut which has fallen from its tree lies forgotten here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 10 0
 3 1 1 0
 E
@@ -77,7 +77,7 @@ coconuttree tree~
 a sturdy coconut tree~
 A tall and sturdy coconut tree is rooted here.~
 ~
-8 0 0 0
+8 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 20106
@@ -91,7 +91,7 @@ boulder stone rock~
 a jagged boulder~
 A jagged boulder pokes up from the sand here.~
 ~
-8 dq 0 0
+8 dq 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -103,7 +103,7 @@ nest~
 a seagull's nest~
 A nest made of straw is here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 5 0 -1 0
 0 0 0 0
 E
@@ -115,7 +115,7 @@ egg~
 a seagull's egg~
 An egg with brown specks is here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 50 1 0
 E
@@ -128,7 +128,7 @@ harp~
 @wh@Warp @wo@Wf @we@Wchoes@n~
 An ornate harp has been carelessly left here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 10000 5000 0
 T 20115
@@ -144,7 +144,7 @@ sign~
 a warning sign~
 A warning sign has been placed here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -158,7 +158,7 @@ sword meridianus oceana~
 @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@n~
 A blade exuding arcane powers has been planted into the ground here.~
 ~
-5 a ano 0
+5 a 0 0 0 ano 0 0 0 0 0 0 0
 5 3 5 3
 12 10000 2000 0
 T 20123
@@ -185,7 +185,7 @@ chest~
 a treasure chest~
 A sturdy wooden chest lies opened here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 50 5 -1 0
 0 0 0 0
 E
@@ -198,7 +198,7 @@ key~
 a old, rusty key~
 A crude rusty key is half-buried here.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 1 0
 E
@@ -211,7 +211,7 @@ note paper~
 a note~
 A small piece of yellowed paper has been discared here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 1 0
 E
@@ -226,7 +226,7 @@ prism shard~
 a @MP@Wr@Mi@ms@Wm S@Mh@ma@Wrd@n~
 A glowing fragmented shard is lying here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 0
 E
@@ -240,7 +240,7 @@ prism shell~
 a heavy @MP@Wr@Mi@ms@Wm S@Mhe@Wll@n~
 A glowing piece of shell is lying here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 5 500 500 0
 E
@@ -255,7 +255,7 @@ cushion~
 @Rred@n cushion~
 A big, @Rred@g cushion has been carefully placed here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 200 0 0
 T 20146
@@ -270,7 +270,7 @@ cushion~
 @Bblue@n cushion~
 A big, @Bblue@g cushion has been carefully placed here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 200 0 0
 T 20146
@@ -285,7 +285,7 @@ cushion~
 @Yyellow@n cushion~
 A big, @Yyellow@g cushion has been carefully placed here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 200 0 0
 T 20146
@@ -300,7 +300,7 @@ prism anklet~
 a @MP@Wr@Mi@ms@Wm @MA@Wn@Mk@ml@We@mt@n~
 A glittering anklet sparkles silently here.~
 ~
-9 gq ag 0
+9 gq 0 0 0 ag 0 0 0 0 0 0 0
 10 0 0 0
 6 2500 500 0
 E
@@ -315,7 +315,7 @@ prism dress~
 a @MP@Wr@Mi@ms@Wm @MD@Wr@Me@ms@Ws@n~
 A nearly transparent dress lies here, sparkling silently.~
 ~
-9 gq af 0
+9 gq 0 0 0 af 0 0 0 0 0 0 0
 10 0 0 0
 8 7500 1000 0
 E
@@ -330,7 +330,7 @@ prism collar~
 a @MP@Wr@Mi@ms@Wm @MC@Wo@Ml@ml@Wa@Mr@n~
 A glittering collar sparkles alone.~
 ~
-9 gq ac 0
+9 gq 0 0 0 ac 0 0 0 0 0 0 0
 10 0 0 0
 5 2500 500 0
 E
@@ -345,7 +345,7 @@ sign~
 a wooden sign~
 A wooden sign has been planted here.~
 ~
-8 0 0 0
+8 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -357,44 +357,9 @@ book manual guide~
 a handy guidebook~
 A simple guidebook of @WSapphire Islands@g lies here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
-E
-book~
-   This book has been made for immortals to give them a rough idea of this area.
-A simple, plain hardcover book, the pages contains many useful information and
-secrets of the Sapphire Islands.  Type look index to look at it.  
-~
-E
-index~
-INDEX:
-1)Overview
-2)Notes by the Author
-3)Features
-4)Secrets
-Type look <number> to read the different entries.
-~
-E
-1~
-   OVERVIEW type @Rgoto 20100@n and look ;)
-~
-E
-2~
-WORDS BY THE BUILDER
-Thanks everyone who has helped me in the making of this zone. It took me 7 days to finish it, followed by a few more days of editing.
-There may be a lot more hidden errors, so mail me if you see any ;)
-~
-E
-3~
-FEATURES
-Wildlife: Crabs and seagull sleep at night, if you like watching these creatures you may want to observe them from day till night.
-
-Prism: The old fool will offer to make prism equipments for you. Simple DIG around for a few prism shards of shells and greet him to get a list of instructions.
-
-Danger: Although Konolua beach may seem peaceful on the outside, GUYS especially should keep a look out for the siren and be wary of them. Their voices can stun you!
-Deep waters should also be avoided, if you don't want to drown.
-~
 E
 4~
 @n
@@ -407,12 +372,47 @@ The Old Fool in the old hut may seem to be talking rubbish, but they are actuall
 
 Special commands like dive and dig can be performed at the places where they say you can do so.
 ~
+E
+3~
+FEATURES
+Wildlife: Crabs and seagull sleep at night, if you like watching these creatures you may want to observe them from day till night.
+
+Prism: The old fool will offer to make prism equipments for you. Simple DIG around for a few prism shards of shells and greet him to get a list of instructions.
+
+Danger: Although Konolua beach may seem peaceful on the outside, GUYS especially should keep a look out for the siren and be wary of them. Their voices can stun you!
+Deep waters should also be avoided, if you don't want to drown.
+~
+E
+2~
+WORDS BY THE BUILDER
+Thanks everyone who has helped me in the making of this zone. It took me 7 days to finish it, followed by a few more days of editing.
+There may be a lot more hidden errors, so mail me if you see any ;)
+~
+E
+1~
+   OVERVIEW type @Rgoto 20100@n and look ;)
+~
+E
+index~
+INDEX:
+1)Overview
+2)Notes by the Author
+3)Features
+4)Secrets
+Type look <number> to read the different entries.
+~
+E
+book~
+   This book has been made for immortals to give them a rough idea of this area.
+A simple, plain hardcover book, the pages contains many useful information and
+secrets of the Sapphire Islands.  Type look index to look at it.  
+~
 #20190
 sword nirvana~
 @bDeathly @BNirvana@n~
 A sword with an evil aura is glowing here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 20 5 10 3
 9 5000 0 0
 T 20187
@@ -427,7 +427,7 @@ icecream ice cone~
 a yummy icecream cone~
 A @Wvanilla-flavoured@g icecream in a cone is slowly melting here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 T 20190
@@ -441,7 +441,7 @@ hat~
 a lakers hat~
 Someone has left a hat here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 500 0 0
 E
@@ -454,7 +454,7 @@ bag~
 a bag of holding~
 A simple bag lies here.~
 ~
-15 a al 0
+15 a 0 0 0 al 0 0 0 0 0 0 0
 10000 1 -1 0
 1 5000 0 0
 E
@@ -467,7 +467,7 @@ specs spec spectacles spectacle glasses~
 a cool-looking @1@Wtinted-spectacle@0@n~
 Someone has dropped a pair of glasses here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 500 0 0
 E
@@ -480,7 +480,7 @@ shorts short~
 a pair of @Wb@wo@wa@Wr@wd @Bs@Wh@Bo@Wr@Bt@Ws@n~
 A new pair of hawiian style shorts has been left here.~
 ~
-11 b af 0
+11 b 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -493,7 +493,7 @@ surfboard board~
 a stylish surfboard~
 A surfboard capable of riding the waves has been dropped here.~
 ~
-22 adq ao 0
+22 adq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 1000 0 30
 T 20193
@@ -509,7 +509,7 @@ crab food meal dish~
 a crab cooked in spicy sauce~
 A crab cooked with spicy sauce is in a dish here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 50 0 0
 E
@@ -523,32 +523,31 @@ shirt t-shirt tshirt clothes~
 an Authentic @BH@Wa@Bw@Wi@Bi@Wa@Bn@n T-shirt~
 A neatly folded, @Cocean blue@g T-shirt lies here.~
 ~
-11 bdq ad 0
+11 bdq 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 300 0 0
+E
+label~
+   The label reads: I-wear - We specialize in making clothes for happy
+immortals.  
+~
 E
 tshirt shirt t-shirt~
    This Hawiian t-shirt is made from a brilliant blue fabric, carefully and
 specially designed to fit any immortal.  A label hangs by the collar of the
 shirt.  
 ~
-E
-label~
-   The label reads: I-wear - We specialize in making clothes for happy
-immortals.  
-~
 #20199
 key~
 a rusty, old key~
 A key that is covered in a reddish-material lies forgotten here.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 1 0
 E
-material rust~
-   The reddish-material is rust, which the key seems to be collecting after many
-many years.  
+engraving engravings~
+   The rust makes it difficult to read.  
 ~
 E
 key~
@@ -556,7 +555,8 @@ key~
 engravings can be found on the key, the rust makes it difficult to see.  
 ~
 E
-engraving engravings~
-   The rust makes it difficult to read.  
+material rust~
+   The reddish-material is rust, which the key seems to be collecting after many
+many years.  
 ~
 $~

@@ -5,7 +5,7 @@ The dungeon ruler sits here in his chair.
 ~
    This guy looks mean!  You had better run while you still have time!    
 ~
-bcdelmnop bcdfhkp -1000 E
+63518 0 0 0 65628 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -21,7 +21,7 @@ An old woman sits here waiting to attack you, the intruder.
    She looks really nasty.  You don't want to find out how the deep scratches
 and blood marks got on those walls....  Or do you?    
 ~
-bcdelmnop bcdfhjkp -700 E
+63518 0 0 0 66652 0 0 0 -700 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 2
@@ -39,7 +39,7 @@ A spooky ghost is floating in mid-air here.
    His eyes glow yellow, and then you practically feel them penetrate yours.  
 He reveals long, razor-sharp, 6 inch long claws and then takes a swipe at you!
 ~
-cdglnop bdkps -800 E
+59468 0 0 0 589844 0 0 0 -800 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -57,7 +57,7 @@ Darkness reigns over the entire room.
    It is a huge shadowy figure with no eyes or anything.  Just total darkness.
 How weird.  But when he hits you, it will HURT!!    
 ~
-bcdlmnop bdfkp -300 E
+63502 0 0 0 65620 0 0 0 -300 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -72,7 +72,7 @@ A harmless spider sits in his web here.
 ~
    This spider couldn't be dangerous....  But could it?    
 ~
-bcdelmno bdkp -10 E
+30750 0 0 0 65556 0 0 0 -10 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -87,7 +87,7 @@ A dragon is here waiting for you to move closer...
    This thing doesn't like you.  It breaths fire out of its nostrils, and then
 comes in for the kill.  If I were you, I'd get out of here and fast!    
 ~
-bcdelmnopr bcdfhkp -400 E
+194590 0 0 0 65628 0 0 0 -400 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -105,7 +105,7 @@ A small box lays in the corner, torn somehow.
 ~
    It's a plain old box with nothing inside of it but dust.    
 ~
-bcdelmnopr bdjkp -500 E
+194590 0 0 0 66580 0 0 0 -500 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -120,7 +120,7 @@ A rock lays on the ground here.
 ~
    It's just a plain old rock.    
 ~
-bdehlmnopr djkpt -30 E
+194714 0 0 0 1115152 0 0 0 -30 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -132,7 +132,7 @@ A little spider sits here.
 ~
    It's a cute little spider.    
 ~
-cdghlmno djkps -4 E
+30924 0 0 0 590864 0 0 0 -4 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -145,7 +145,7 @@ A ghost is here, carrying his head with him.
    His head was somehow cut off and now he must carry it wherever he goes.  
 It's is a very bloody picture.  Sick.  Actually, it makes you want to puke.  
 ~
-bcdehnop bdjkps -50 E
+57502 0 0 0 590868 0 0 0 -50 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -160,7 +160,7 @@ A large bat flies around up here.
 ~
    It's a bat!  Eeeeek!  Run!!    
 ~
-cdghlnop adfjkpt -50 E
+59596 0 0 0 1115218 0 0 0 -50 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -175,7 +175,7 @@ A bat is flying around.
 ~
    It's a bat!  Eeeeek!!!  Run!!!!    
 ~
-cdghmnop adfjkps -20 E
+61644 0 0 0 590930 0 0 0 -20 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -191,7 +191,7 @@ A rat crawls around in a skull here.
    This little guy is having loads of fun playing inside of a skull on the
 ground here.  It sits in the eyehole and starts watching you now...    
 ~
-bcdhlmnop dkp -98 E
+63630 0 0 0 65552 0 0 0 -98 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -207,7 +207,7 @@ A rat is wandering around the entire area looking lost.
    This little guy looks so cute....  Don't let the looks fool you, though.  
 Be on your guard at every moment.    
 ~
-cdghlmno dks -200 E
+30924 0 0 0 524304 0 0 0 -200 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -221,7 +221,7 @@ A roach crawls around here.
 ~
    It's a bug!  Squash it!    
 ~
-dghlmno dk 0 E
+30920 0 0 0 16 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 5 0
@@ -233,7 +233,7 @@ A beetle crawls around here.
 ~
    Yuck!  A beetle!  How sick!    
 ~
-dghlmno dk 1 E
+30920 0 0 0 16 0 0 0 1 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 6 0
@@ -245,7 +245,7 @@ Someone is acting like an idiot.
 ~
    It's simple: he's LUNEY!!    
 ~
-cdglno k 20 E
+26700 0 0 0 0 0 0 0 20 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 6 6 1
@@ -261,7 +261,7 @@ A very evil prisoner stands here plotting his revenge.
    This guy is really evil.  He walks around with a file trying to get out of
 this dungeon.  It looks like he's been in here for years!    
 ~
-bcdlmnop djk -320 E
+63502 0 0 0 1040 0 0 0 -320 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -278,7 +278,7 @@ Someone who looks very sad is here.
    All he does is weep all day long.  He does not belong here.  He cries and
 balls, and then starts screaming of how he's here for no reason.    
 ~
-bdno jk 278 E
+24586 0 0 0 1024 0 0 0 278 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 6 6 1
@@ -294,7 +294,7 @@ A slave sits here working for his master.
 makes him work all day long for nothing.  He has marks all over his body from a
 whip.    
 ~
-bcdlmno aj 180 E
+30734 0 0 0 1026 0 0 0 180 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 6 6 1
@@ -308,7 +308,7 @@ A wizard is wandering around here.
    This guy is bout half of your size and carries around a magic wand.  He
 keeps mumbling to himself, and he probably is very lost.    
 ~
-deglmno bdfkp -60 E
+30808 0 0 0 65620 0 0 0 -60 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -323,7 +323,7 @@ A monster from your nightmares stands here.
 ~
    It's the boogie monster!  Run and hide under your bed!    
 ~
-bcdelnop kp -400 E
+59422 0 0 0 65536 0 0 0 -400 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -340,7 +340,7 @@ A crow stands here.
 ~
    There's nothing really special about this bird.    
 ~
-bcdelmno bdjkp -10 E
+30750 0 0 0 66580 0 0 0 -10 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -354,7 +354,7 @@ The walls are strangely made of stone...
 ~
    It's just a wall made of hard stone...    
 ~
-bcdelmnopqr bcdfhkp -1000 E
+260126 0 0 0 65628 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0

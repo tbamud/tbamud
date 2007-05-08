@@ -1183,8 +1183,9 @@ if %self.inventory(16701)% && %self.inventory(16702)% && %self.inventory(16703)%
   * For roleplay sake
   say Thank you %actor.name%! Now here is the cake.
   * Give the reward
-  %load% obj 16706
-  give cake %actor.name%
+  %load% obj 16706 %actor%
+  %send% %actor% %self.name% gives you a cake.
+  %echoaround% %actor% %self.name% gives %actor.name% a cake.
 end
 ~
 #39
@@ -1349,28 +1350,28 @@ done
 Rumble's Shotgun~
 1 b 100
 ~
-* By Rumble
-* if the object is being wielded
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* If the object is being wielded.
 if %self.worn_by%
-* a random trigger so actor has to be defined
-eval actor %self.worn_by%
-  * if the person wielding the object is fighting
+  * This is a random trigger so actor has to be defined.
+  eval actor %self.worn_by%
+  * If the person wielding the object is fighting.
   if %actor.fighting%
-    * evaluate uniquely to this player
+    * Evaluate uniquely to this player.
     context %actor.id%
-    * count the shots
+    * Count the shots.
     eval shotgun_rounds %shotgun_rounds% + 1
-    * remember the count for the next time this trig fires
+    * Remember the count for the next time this trig fires.
     global shotgun_rounds
-    * double barrel shotgun, only has 2 rounds
+    * This double barrel shotgun, only has 2 rounds.
     if %shotgun_rounds% > 2
-      * detaching trig since gun is out of ammo.
+      * Detaching trig since gun is out of ammo.
       detach 1361 %self.id%
       halt
     end  
-    * have to define the victim
+    * We also have to define the victim.
     eval victim %actor.fighting%
-    * send the message and do the damage
+    * Send the messages and do the damage.
     %echoaround% %actor.name% %actor.name% points %self.shortdesc% at %victim.name% and pulls the trigger.
     %send% %actor% You point %self.shortdesc% at %victim.name% and pull the trigger.
     %damage% %victim% 10

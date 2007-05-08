@@ -5,7 +5,7 @@ A eunuch stands here, guarding the harem.
 ~
    He doesn't have any expression, nor anything special about him.  
 ~
-bdfln 0 0 E
+10282 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -24,7 +24,7 @@ A sightseer is here, smiling at the sights.
 seeing everything there is possible to see.  She is a traveler, judging by her
 semi-poor clothes, and probably not posessing of a lot of material wealth.  
 ~
-dghl 0 0 E
+2248 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -42,7 +42,7 @@ A man is here, wandering aimlessly.
    The man just wanders around, his dull eyes absorbing all of the sights he can
 see.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -60,7 +60,7 @@ A woman is here, wandering around aimlessly.
    She looks like she has all the time in the world and nowhere to be.  She is
 obviously very content with just seeing the sights.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -79,7 +79,7 @@ A carver is here, selling his wares.
 carried in the two bags at his waist.  He politely encourages you to buy some of
 his works, unlike some of the people around DEMANDING you buy their wares.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -96,7 +96,7 @@ A woman yells here, selling kitchenware.
    The woman looks rather poor, but happy in her work of yelling at the passers
 by to buy her wonderful kitchenware!  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -109,7 +109,7 @@ A man stands here, selling his furniture.
 ~
    This man is selling his furniture, and would like your business.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -125,7 +125,7 @@ A maid stands here, looking for dust.
    She looks as though dust is her worst enemy - and she shall wipe out the
 entire species if she can!  
 ~
-cdgh 0 0 E
+204 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -141,7 +141,7 @@ Degruziel's advisor stands here, looking important.
 ~
    He looks like he thinks himself very important.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -158,7 +158,7 @@ A bodyguard stands here, looking mean.
 doesn't look like the kind of person to mess with without thinking about it
 first.  
 ~
-dglm 0 500 E
+6216 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -176,7 +176,7 @@ An elite patrolman is here, walking Haven and looking for trouble.
    He looks as if he enjoys keeping the peace for Haven.  It would be unwise to
 make him angry.  
 ~
-dglm 0 1000 E
+6216 0 0 0 0 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -193,7 +193,7 @@ An elite guard stands here, protecting the innocent.
    This guard looks as if he knows the use of his weapon well.  It would be a
 bad idea to cross him.  
 ~
-bdlm 0 1000 E
+6154 0 0 0 0 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -211,7 +211,7 @@ A citizen is here, resting and looking about himself happily.
    This man is obviously enjoying his life.  He loves his town, Haven, and just
 sits here, enjoying all of the life that goes on around him.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 5 5 1
@@ -225,7 +225,7 @@ A bard is here, singing to a strummed tune.
    His voice is clear and strong.  It is so good it might make you wish to give
 him coin...  Or buy him supper.  
 ~
-bdhl 0 0 E
+2186 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -241,7 +241,7 @@ A tumbler is here, doing handstands.
    This tumbler is tall, thin, and lightning quick.  He draws a crowd on good
 days, and appears to make a living off his skill.  
 ~
-bdhl 0 0 E
+2186 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -258,7 +258,7 @@ A busty tavern wench is here, serving drinks.
 wouldn't take any crap from anyone.  Some of the men in the room give her
 fearful glances if she so much as makes a slight threatening move.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -271,7 +271,7 @@ An unusual-looking mud slick is here, swirling.
 ~
    It looks dirty....  It looks like mud.  Wow.  It might even be a snake.  
 ~
-dfgnpr 0 0 E
+172136 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -283,7 +283,7 @@ Little bubbles pip up through the water here.
 ~
    There is something strange about those bubbles...  
 ~
-bdhj t -100 E
+650 0 0 0 1048576 0 0 0 -100 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -298,7 +298,7 @@ A yappy dog stands here, barking... and barking... and barking...
 bark because she barks at everything that moves...  And even things that don't
 move.  This dog barks at her own shadow.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -311,7 +311,7 @@ A cat is here, looking small but fast.
    This cat is small, but has muscles that indicate it could move like
 lightning.  
 ~
-dgh st 0 E
+200 0 0 0 1572864 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -326,7 +326,7 @@ A rabid dog stands here, looking mean.
    This dog is skinny and on his last leg of life.  Foams surrounds his mouth.
 He is obviously rabid.  He is also obviously a very LARGE dog.  
 ~
-dfgh 0 0 E
+232 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -339,7 +339,7 @@ A rat is here... boy is it huge.
    This rat looks at you with beady, unafraid eyes as if it can see right
 through you.  It appears completely unafraid.  
 ~
-dfgh 0 0 E
+232 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -352,7 +352,7 @@ A serving boy is here, bearing a pitcher full of wine.
    This boy walks around the room asking those with glasses if they would like a
 refill.  
 ~
-dghl 0 0 E
+2248 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -367,7 +367,7 @@ A gentleman stands here, looking about himself in disgust.
 intelligence.  He looks around at the oppulance around him with disgust, appaled
 at such wasteful spending.  After all, this money could go to help the poor!  
 ~
-dgilm 0 750 E
+6472 0 0 0 0 0 0 0 750 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -385,7 +385,7 @@ A well-born lady stands here, buisily seducing the other guests.
 demeanor and speech is of the high born, but she acts like a harlot, using her
 feminine alure on everyone nearby.  
 ~
-dghl 0 0 E
+2248 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -405,7 +405,7 @@ all the poor people in the world, as if he is convincing himself not to.  His
 manner shows he was born rich and has never known poverty as anything but
 missing a meal.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -419,7 +419,7 @@ A manor guard stands here, guarding.
 It must be important to him at least.  He closely scrutinizes everyone that
 walks past.  
 ~
-bdilm 0 250 E
+6410 0 0 0 0 0 0 0 250 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -434,7 +434,7 @@ Degruziel's bodyguard stands here, watching him protectively.
    He looks very strong, and he plainly wishes to take care of anyone and
 everyone that might wish harm his master...  By putting them six feet under.  
 ~
-bdilm 0 500 E
+6410 0 0 0 0 0 0 0 500 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -452,7 +452,7 @@ A smiling woman stands here, not looking... very smart...
 her.  One might mistake her for the typical high-born woman, but there is some
 sort of glint deep in her eyes that you can't quite place.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -472,7 +472,7 @@ shadows.  You would think that attempting to hide in shadows would make you
 inconspicuous, but apparently that isn't the case.  Dodging around and trying to
 walk quietly is only getting this filcher noticed.  
 ~
-deghl st -250 E
+2264 0 0 0 1572864 0 0 0 -250 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -491,7 +491,7 @@ A pickpocket is here, trying to blend in with the shadows.
 with a deft twist.  As he sees you looking his way he tries to fit into the
 shadows.  
 ~
-dg 0 -300 E
+72 0 0 0 0 0 0 0 -300 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -505,7 +505,7 @@ A small child stands here, adjusting her fake peg leg.
 out and cheat a few tourists out of their money.  She adjusts her fake peg leg
 and gets ready to go out for a round of begging.  
 ~
-dghl 0 -100 E
+2248 0 0 0 0 0 0 0 -100 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -520,7 +520,7 @@ A smiling man stands here, rubbing at his slightly crooked moustache.
 clothes.  His black moustache is slightly crooked.  It looks as if he messed up
 his trimming slightly.  
 ~
-bcdl 0 -250 E
+2062 0 0 0 0 0 0 0 -250 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -537,7 +537,7 @@ A shadowy form is here.
 ~
    You can't really make out the features.  
 ~
-dfgl st -250 E
+2152 0 0 0 1572864 0 0 0 -250 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -554,7 +554,7 @@ A man is here, sleeping in his bedroll.
 ~
    He is quite obviously asleep in his bedroll, and that is that.  
 ~
-bdl 0 -50 E
+2058 0 0 0 0 0 0 0 -50 E
 10 17 4 2d2+100 1d2+1
 100 10000
 4 4 1
@@ -569,7 +569,7 @@ her money.  Then he might just kill her for the fun of it.  He doesn't look like
 a nice guy.  He is clad all in black, and would blend in well with any shadows.
 
 ~
-dfgl st -550 E
+2152 0 0 0 1572864 0 0 0 -550 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -588,7 +588,7 @@ The King of Luna's Alley is here, appearing slightly more sane than his peers.
 why somebody would want to be the king of this place is a sign of insanity in
 itself.  Some people are just different...  Whatever floats your boat.  
 ~
-bdfhl 0 0 E
+2218 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -605,7 +605,7 @@ A bum stands here, quitetly cackling.
    This bum has obviously gone insane, as he just stands here quietly cackling
 to himself.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -618,7 +618,7 @@ A paraniod schizophrenic stands here, screaming at the world.
 ~
    It looks as if this crazy person is on one of their screaming phrases.  
 ~
-bdfl 0 0 E
+2090 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -633,7 +633,7 @@ A halfwit sits here, drooling.
    The halfwit is thoroughly content to just sit here and stare at the ground
 all day, watching their drool accumulate into a small puddle.  
 ~
-bcdh 0 0 E
+142 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 6 6 1
@@ -647,7 +647,7 @@ A gibbering madman stands here, takling to the wall.
    He looks quite insane, but his face is sincere as he talks to the wall in a
 language that only they can understand.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -666,7 +666,7 @@ A raving lunatic is here, preaching the destruction of the world.
 once been a handsome man, but now he has scars across his cheeks.  The look like
 they might have been caused by fingernails.  Perhaps his own.  
 ~
-bcdhl 0 0 E
+2190 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -680,7 +680,7 @@ The ship's cook stands here, brandishing a baked bread nastily.
    He looks just like any other sailor, except he wears an apron and angrily
 brandishes a herring at his simmering delights.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -698,7 +698,7 @@ art, creating weapons.  He looks super-strong, and has the marks of many
 battles.  His left horn is broken in half, and scars mark his brown fur.  He
 doesn't look like someone you would want to mess with.  
 ~
-bdlno 0 0 E
+26634 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -714,7 +714,7 @@ Tia stands here, mixing a potion and looking ready to help you.
 flowing blue robes.  She can always be seen mixing a potion or two, or helping
 people find things in her shop.  
 ~
-bdlno 0 0 E
+26634 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -729,7 +729,7 @@ Milos stands behind the counter here, happily counting his money.
 love in life is his money, and your money.  He would love to hold your money for
 you while you are out adventuring.  
 ~
-bdlno 0 0 E
+26634 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -747,7 +747,7 @@ The wandering shopper stands here, looking for a merchant to spend money on.
    One of the meany wealthy shopers looking to waste more off their hard earned
 money.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -764,7 +764,7 @@ A fisherman's wife stands here, looking around and muttering.
 about it.  Perhaps her husband went to the bar again and she doesn't yet know
 it.  No matter, she is angry anyway.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -781,7 +781,7 @@ A sunbather lies here, enjoying lying in the sand.
    She looks as if she could just sunbathe all day long and then look at the
 stars all night.  She doesn't appear to have a care in the world.  
 ~
-bdhl 0 0 E
+2186 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 5 5 2
@@ -798,7 +798,7 @@ A citizen is here, strolling past.
 ~
    He looks as if he is enjoying the fine scenery.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -815,7 +815,7 @@ A citizen is here, strolling past.
 ~
    She looks as if she is enjoying the fine scenery.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -832,7 +832,7 @@ A king crab is here, looking mean.
 ~
    The king crab does @RNOT@n like intruders in his lair.  
 ~
-bdf t 0 E
+42 0 0 0 1048576 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -847,7 +847,7 @@ The Captain's woman is here, looking at the Captain with dreamy eyes.
 Captain as if she doesn't really see him, but there is a wide smile on her face
 as if she is remembering something pleasant.  
 ~
-bdhl 0 0 E
+2186 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -865,7 +865,7 @@ The Captain of the ship stands here, looking off into space.
 has no work to do now that the ship is in the port.  He wears a soft smile, as
 though his daydream is good.  He also doesn't like people in his quarters...  
 ~
-bdfl 0 0 E
+2090 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -884,7 +884,7 @@ A man stands here, next to the rope connected to the net.
 will drop all of its fish onto the deck.  He has a spare net draped over his
 shoulder, in case the current one needs repairs.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -899,7 +899,7 @@ A fish pitcher is here, throwing fish over the edge of the deck.
 the deck without even looking.  He knows there is and always will be cartmen
 down there waiting for him to throw a fish down into their carts.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -916,7 +916,7 @@ A man with a cart stands here, waiting patiently.
 filled so that he may hurry away to the market and the vendor that wishes to
 purchase the fish.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -930,7 +930,7 @@ A man speeds through the crowd here with his cart.
    He looks as if he is in a hurry to get himself and his cart to wherever it is
 he is going, and he isn't going to stop for anything if he can help it.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -948,7 +948,7 @@ A patron of the bar stands here, singing loudly.
    He looks as if he has enjoyed a few too many of the local drinks.  He sings
 in a loud clear voice, a bawdy sailing song.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -968,7 +968,7 @@ muscular arms could easily break up any brawls, should they start.  He doesn't
 look at you, but you know he wishes you to buy a drink if you wish to stay any
 length of time.  
 ~
-bdlno 0 0 E
+26634 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -988,7 +988,7 @@ imaginary friend, whom the drunk often accuses of tripping him.  You can see
 some of the people nearby looking at him with obvious disgust, but some just
 plain don't care.  They see enough of his kind since the tavern was built.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1009,7 +1009,7 @@ with the muscles he had aquired, as he has worked for long years as the armorer
 of Haven.  He impatiently taps his fingers on the counter as he waits for you to
 tell him what you wish of him.  
 ~
-bdlno 0 0 E
+26634 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -1032,7 +1032,7 @@ the use of his weapon.  His muscles ripple as he casually tosses heavy chairs
 and such from one side of his cart to the other.  From his dress he looks like a
 sailor, as do most of the people in Haven.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1052,7 +1052,7 @@ special attention she could ever want or need.  She even has a few gifts from
 Degruziel to her.  She appears very happy with what she does, even though some
 other people might not like it...  
 ~
-bdhl 0 0 E
+2186 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 6 2
@@ -1074,7 +1074,7 @@ She gets well-fed, well-paid, and she hardly has to do anything now that
 Degruziel has a favorite, and it isn't her.  She thinks she has it made, and it
 shows on her pampered face.  
 ~
-bdhl 0 0 E
+2186 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 6 2
@@ -1094,7 +1094,7 @@ hurriedly pours contents into a mixing bowl.  Sometimes her glance will stray to
 Tiama, if she is present.  It is quite possible this young girl is afraid of the
 head cook, like so many of her smart peers.  
 ~
-bcd 0 0 E
+14 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -1109,7 +1109,7 @@ is as thin as a toothpick.  He is manacled to the wall, and muttering all sorts
 of nonsense.  Occasionally he will let out a yell for help, however.  Maybe you
 should listen to him.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -1123,7 +1123,7 @@ Degruziel's Master of Torture stands here, looking very sinister.
    The Master of Torture doesn't like intruders into his lair....  Which means
 you.  
 ~
-bdflo 0 -500 E
+18474 0 0 0 0 0 0 0 -500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -1136,7 +1136,7 @@ Tiama, the Head Cook of Haven, stands here covered from head to toe in flour.
    Tiama is plump from tasting her own creations, but she waves her spoon around
 as if she isn't afraid to give any of the kitchen girls a good whack.  
 ~
-bdlo 0 0 E
+18442 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -1152,7 +1152,7 @@ everything in tells you he is an experianced warrior.  His hand rests casually
 on the mace at his belt, as if he wouldn't be afraid to use it if things got out
 of hand.  
 ~
-bdeilo dh 500 E
+18714 0 0 0 16 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 6 6 1
@@ -1168,7 +1168,7 @@ looks as though he cares nothing about the poor or their welfare.  The glass of
 wine he so casually sips looks as though it could be sold for enough money to
 feed a fishing famliy for weeks.  .fi
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1182,7 +1182,7 @@ A manservant of Degruziel stands here, attending to... whatever it is he's atten
    This manservant looks like he's hurriedly going about doing something very
 important...  Though what exactly it is he's doing is unapparent.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -1196,7 +1196,7 @@ The Stablemaster stand here... what?! A WOMAN?!?!
 would she get the job as stablemaster?  She talks to the horses as if she speaks
 their language.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -1210,7 +1210,7 @@ A stableboy stands here, contemplating life as he mucks out stalls.
 bed.  He mucks out the stalls mechanically, giving his pitchfork an expert twist
 every time he throws something into the nearby wheelbarrow.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -1224,7 +1224,7 @@ A donkey is here, plodding away with its head down.
 recieved from hauling things to and fro all day have given her bulging muscles.
 
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -1239,7 +1239,7 @@ A cartman stands here, swearing profusely at the traffic and his draft animal.
 expletives comming from his mouth make the people around him wince and cover
 their children's ears.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1253,7 +1253,7 @@ A prancing horse stands here, tossing its pretty head.
    The horse tosses its head and snorts, full of energy and eager to be off.  
 It looks more like a rider's horse, not a cart horse, and is full of spirit.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -1267,7 +1267,7 @@ A merchant stands here, advertising his wares at the top of his lungs.
 today.  He keeps his hand on his weapon as if he knows it well, probably to ward
 off thieves.  
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -1281,7 +1281,7 @@ A sailor stands here, walking like he belongs on the sea.
    He looks rather burly and rather mean, so you might want to leave him alone.
 He also looks like he could hold his own in a fight.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1299,7 +1299,7 @@ An outlander stands here looking very confused.
 Haven very well.  He also appears very confused, listening intently and trying
 to figure out what people around him are saying.  
 ~
-dgl 0 200 E
+2120 0 0 0 0 0 0 0 200 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1312,7 +1312,7 @@ An admirer of Haven is here, appearing awestruck.
    The woman is clad in the garb of one who travels much, and her mouth is
 slightly open as she looks around with wide eyes at the sights.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -1326,7 +1326,7 @@ A little boy stands here, smiling happily.
 Something about his manner tells you that he is probably skipping out on his
 chores to view the town.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -1340,7 +1340,7 @@ A woman of Haven is here, humming softly to herself.
 vendor in the market.  She appears to be richly dressed, and is probably a
 merchant's wife.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -1354,7 +1354,7 @@ A short, matronly citizen of Haven is here, her patched dress billowing in the c
 patched dress billowing.  She calls out a name, probably of her child, and she
 has an angry look on her face.  Boy, is somebody in trouble.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -1367,7 +1367,7 @@ A citizen of Haven
    The burly man of Haven stands here, his pipe hanging from his mouth.  He
 looks as though he is talking to himself about the market prices.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1383,7 +1383,7 @@ of watching Haven's gates.  The usually peaceful city doesn't see much trouble
 from the merchants and tourists, so his days pass slowly as he wishes for
 excitement.  
 ~
-bdlm 0 0 E
+6154 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -1398,7 +1398,7 @@ A diligent carver stands here, biting on the end of his knife.
 completely absorbed in the gates of Haven, always seeking to improve them with
 his skillful hand and his sharp knife.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1

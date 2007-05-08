@@ -3,7 +3,7 @@ useless trinkets~
 some useless trinkets~
 A lot of useless trinkets, nothing of value.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 8 100 0 0
 E
@@ -16,7 +16,7 @@ tempered broadsword sword~
 a tempered broadsword~
 A large tempered broadsword was left here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 6 2 12 3
 8 400 40 0
 E
@@ -32,7 +32,7 @@ silver chain armor~
 some silver chain armor~
 Some chain armore of silver is lying here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 8 400 40 0
 E
@@ -48,7 +48,7 @@ silver wristguard~
 a silver wristguard~
 Someone left a silver wristguard here.~
 ~
-9 g am 0
+9 g 0 0 0 am 0 0 0 0 0 0 0
 1 0 0 0
 8 340 34 0
 E
@@ -64,7 +64,7 @@ crystal clear stream~
 a crystal clear stream~
 A crystal clear stream gently flows by you.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 0 0 0 0
 E
@@ -77,7 +77,7 @@ silver link chain belt~
 a belt of silver chain links~
 A belt of silver chain links was left here.~
 ~
-9 h al 0
+9 h 0 0 0 al 0 0 0 0 0 0 0
 2 0 0 0
 5 100 10 0
 E
@@ -92,7 +92,7 @@ silver shield~
 a silver shield~
 A silver shield with the crest of Camelot engraved on the front.~
 ~
-9 g aj 0
+9 g 0 0 0 aj 0 0 0 0 0 0 0
 3 0 0 0
 12 500 50 0
 E
@@ -107,7 +107,7 @@ silver trimmmed coat~
 a silver trimmed coat~
 A fine coat trimmed with silver.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
 3 200 0 0
 E
@@ -121,7 +121,7 @@ silver bracers pair~
 a pair of silver bracers~
 A pair of silver bracers.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 4 0 0 0
 5 150 15 0
 E
@@ -134,7 +134,7 @@ set silver gauntlets~
 a set of silver gauntlets~
 A set of silver gauntlets engraved with the crest of Camelot.~
 ~
-9 g ah 0
+9 g 0 0 0 ah 0 0 0 0 0 0 0
 4 0 0 0
 5 200 25 0
 E
@@ -149,7 +149,7 @@ set silver boots~
 a set of silver boots~
 A set of silver boots with the crest of Camelot.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 5 150 15 0
 E
@@ -162,7 +162,7 @@ set silver greaves~
 a set of silver greaves~
 A set of silver greaves with the crest of Camelot on them.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
 4 120 12 0
 E
@@ -175,7 +175,7 @@ fine silver helm~
 a fine silver helm~
 A fine silver helm with the crest of Camelot on the forehead.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
 5 150 15 0
 E
@@ -188,7 +188,7 @@ silver chain~
 a silver chain~
 A silver chain made from small links with the crest of Camelot hanging from it.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 5 150 15 0
 E
@@ -201,7 +201,7 @@ silver ring~
 a silver ring~
 A silver ring with the crest of Camelot upon it.~
 ~
-12 0 ab 0
+12 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 3 90 9 0
 E
@@ -215,7 +215,7 @@ silver sceptre~
 a silver sceptre~
 A silver sceptre with the crest of Camelot upon it.~
 ~
-1 gk ao 0
+1 gk 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 4 500 50 0
 E
@@ -231,7 +231,7 @@ stone fountain~
 the stone fountain~
 A fountain of stone depicting three bare-breasted women pouring water out of jugs.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
 0 0 0 0
 E

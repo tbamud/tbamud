@@ -3,7 +3,7 @@ scroll Shadimar quest~
 Shadimar's quest scroll~
 An important-looking scroll is lying here.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 E
@@ -34,7 +34,7 @@ fire wand~
 a fire wand~
 A firey wand lies on the ground here, warming the area slightly.~
 ~
-3 agi ao 0
+3 agi 0 0 0 ao 0 0 0 0 0 0 0
 12 1 1 26
 3 1000 100 0
 E
@@ -47,7 +47,7 @@ black void wand~
 a void wand~
 A void wand lies here, absorbing the light and the warmth.~
 ~
-3 gj ao 0
+3 gj 0 0 0 ao 0 0 0 0 0 0 0
 12 5 5 25
 3 800 80 0
 E
@@ -61,7 +61,7 @@ inscription~
 an inscription~
 An inscription is carved into the wall here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -81,7 +81,7 @@ trickle~
 a trickle of water~
 A trickle of clean water runs down the wall here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
 505 0 0 0
 E
@@ -94,7 +94,7 @@ lesser Kraken spike~
 a lesser Kraken's spike~
 A lesser Kraken's spike bobs in a rock pool here.~
 ~
-12 g ano 0
+12 g 0 0 0 ano 0 0 0 0 0 0 0
 0 0 0 0
 5 50 5 0
 E
@@ -106,7 +106,7 @@ glow glowing white potion~
 a glowing white potion~
 A glowing white potion is on the ground here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 12 1 -1 -1
 3 1000 100 0
 #17509
@@ -114,7 +114,7 @@ Trilless bracelet white~
 Trilless' white bracelet~
 A small white bracelet hovers half an inch above the ground here, rotating gently.~
 ~
-11 g am 0
+11 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 130 0
 A
@@ -126,7 +126,7 @@ sanctuary glyph Trilless~
 Trilless' sanctuary glyph~
 A small white glyph lies on the ground here.~
 ~
-18 abcgi ao 0
+18 abcgi 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 120 12 0
 #17511
@@ -134,7 +134,7 @@ white blade Tranquil~
 Tranquil~
 A white blade rests here, shining brightly. It has the word 'Tranquil' etched along the blade.~
 ~
-12 gkl an 0
+12 gkl 0 0 0 an 0 0 0 0 0 0 0
 0 0 0 0
 10 950 120 0
 #17512
@@ -142,7 +142,7 @@ black blade Ristoril~
 Ristoril~
 A blade of pure blackness lies here, absorbing the light. It has the word 'Ristoril' etched across the blade.~
 ~
-12 gjl an 0
+12 gjl 0 0 0 an 0 0 0 0 0 0 0
 0 0 0 0
 10 300 30 0
 #17513
@@ -150,7 +150,7 @@ sigil darkness~
 a sigil of darkness~
 A dark sigil is here, glowing with a dark aura of magic.~
 ~
-18 cg ao 0
+18 cg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 150 15 0
 #17514
@@ -158,7 +158,7 @@ carcophans black bracelet~
 Carcophan's black bracelet~
 A dark bracelet lies on the ground here, consuming light and warmth.~
 ~
-11 g am 0
+11 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 5 350 40 0
 A
@@ -170,7 +170,7 @@ staff night carcophan~
 Carcophan's Staff of Night~
 A black staff is waiting for someone to pick it up.~
 ~
-5 gp an 0
+5 gp 0 0 0 an 0 0 0 0 0 0 0
 4 3 8 5
 8 40 4 0
 E

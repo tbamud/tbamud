@@ -8,7 +8,7 @@ is needed.  The dwarves are interested in trade, and without roads there will
 be no trade.  The road continues southward, while north of here you see a cave
 opening.    
 ~
-237 0 5
+237 0 0 0 0 0
 D0
 ~
 ~
@@ -17,12 +17,6 @@ D2
 ~
 ~
 0 0 23701
-E
-view east~
-   The view is excellent from uphere.  You have a splendid view over the
-mountains, and you think they're sooo beautiful...  They do, however get boring
-eventually.  
-~
 E
 credits info~
    This zone has been thought out, and implemented by Welcor of Cruelworld Mud.
@@ -42,6 +36,12 @@ Links        : 24, 26, 29
 Zone 237 is linked to the following zones:
 236 Aldin                          at 23700 (north) ---> 23601
 ~
+E
+view east~
+   The view is excellent from uphere.  You have a splendid view over the
+mountains, and you think they're sooo beautiful...  They do, however get boring
+eventually.  
+~
 S
 #23701
 On a well used road through the mountains~
@@ -51,7 +51,7 @@ drop leads into certain death.  The road is quite wide and heavily used by
 carridges, soldiers and the occasional road worker.  North from here you see
 some sort of opening in the mountain.    
 ~
-237 0 5
+237 0 0 0 0 0
 D0
 ~
 ~
@@ -70,7 +70,7 @@ keeps you from going that way.  However a set of steps has been hacked into the
 stone of the boulder to the south, allowing you to get to the small wooden
 building on top of it.    
 ~
-237 0 5
+237 0 0 0 0 0
 D0
 ~
 ~
@@ -93,7 +93,7 @@ you see the reason for going so near the edge; A colossal rock has once tumbled
 down the mountain, and hit the road where it lay once - close to the side of
 the mountain.    
 ~
-237 0 5
+237 0 0 0 0 0
 D1
 ~
 ~
@@ -110,7 +110,7 @@ dropped where the road once were.  This part of the road has been made around
 it, and is therefore a little narrower.  This also means you are walking
 dangerously close to the edge of a cliff, several hundred feet high.    
 ~
-237 p 5
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -130,7 +130,7 @@ enourmous boulder, about the size of a house which totally blocks the road
 where it once were, near the side of the cliff.  The road continues north and
 east around the boulder.    
 ~
-237 p 5
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -151,7 +151,7 @@ of the boulder you can see a small wooden building, which seem to house some
 kind of lookout post.  The rockface to both north and east is smooth, and
 cannot be climbed here, though.    
 ~
-237 p 5
+237 32768 0 0 0 0
 D2
 ~
 ~
@@ -171,7 +171,7 @@ to invade the city of the dwarves.  Not only does the lookout have a good view.
 He alos has some switches on the northern wall of the cabin.  From what you can
 decpiher of the labels, they set off different traps on the road below.    
 ~
-237 d 0
+237 8 0 0 0 0
 D5
 ~
 ~
@@ -196,7 +196,7 @@ several times.  As you raise your eyes, you see the small wooden cabin, the
 dwarves has built on top of the boulder.  Just below you, the road is ready to
 accept the offer of your falling body, should you slip.    
 ~
-237 0 0
+237 0 0 0 0 0
 D4
 ~
 ~
@@ -216,7 +216,7 @@ eastern cliffwall, some logs have been fastened with boards and a thick rope
 leads northward from here.  You hope noone pulls the rope while you're standing
 here.    
 ~
-237 p 5
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -238,7 +238,7 @@ rockslide onto YOU!  And you can't even escape westwards, without falling a
 hundred feet to the valley below.  You'd better move on, north ar south from
 here.  
 ~
-237 p 5
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -256,7 +256,7 @@ smooth rock wall blocks any access, while west the road stops at the edge of
 the shelf along the mountain, letting you fall several hundred feet to the
 bottom, should you go outthere.    
 ~
-237 p 5
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -275,7 +275,7 @@ the shelf along the mountain, letting you fall several hundred feet to the
 bottom, should you go outthere.  South of here a promontory from the main
 mountain makes the road turn.    
 ~
-237 p 5
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -293,7 +293,7 @@ you step one step off the ledge south or west of here.  This also means that
 you can go into the foothills of the promontory, by leaving east or continue
 into the mountains by going north.    
 ~
-237 p 5
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -313,7 +313,7 @@ You figure you must be high indeed as you know the distance to be nearly a days
 travel.  The well-tended road is impossible close to the edge here, and you
 watch your step carefully, so as to not fall from the ledge.  
 ~
-237 p 5
+237 32768 0 0 0 0
 D1
 ~
 ~
@@ -333,7 +333,7 @@ east from here.  All thoughts of leaving the path are forgotten as you look
 over the southern edge into a deep valley and north a blank rock wall blocks
 your progress.  The road is obviously the only way ahead.    
 ~
-237 p 5
+237 32768 0 0 0 0
 D1
 ~
 ~
@@ -352,7 +352,7 @@ a landslide.  Though the way looks unstable and dangerous, it should still be
 passable.  The road itself has been seen to recently, and not a single stone is
 out of place.    
 ~
-237 p 5
+237 32768 0 0 0 0
 D1
 ~
 ~
@@ -374,7 +374,7 @@ north.  The road is well-tended, not a single bit of grass peeks out from the
 cracks.  The road leads north and south here, and being the only interesting
 thing around here, you decide to stick to it.    
 ~
-237 p 4
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -394,7 +394,7 @@ long ago learned to be meticulous about their work, making a name in the stone
 and steel business.  You decide to stay on the north and south leading road,
 while watching the scenery around from a distance.    
 ~
-237 p 4
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -412,7 +412,7 @@ road is rising slightly towards the north, heading into the mountain range you
 can see to your far north.  The road leaves no doubt about its origin, made
 from granite, and tended beyond belief, it's a masterpiece in itself.    
 ~
-237 p 4
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -431,7 +431,7 @@ south it continues over a hill toward the eastern highway.  The road itself is
 an exhibition of engineering in itself.  Totally smooth, and perfectly
 straight.  Just what any dwarf would want to show off with.    
 ~
-237 p 4
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -450,7 +450,7 @@ the T-crossing where the trade route meets the Highway.  The granite road feels
 comfortably smooth to walk on, so you are certain the hills to your north are
 easily crossed with this kind of foundation.    
 ~
-237 p 4
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -469,7 +469,7 @@ southward, across the plains.  The grasslands around you are unsafe, as several
 places quicksand is hidden under a thin layer of grass.  After a short
 consideration you decide to stay on the road.    
 ~
-237 p 2
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -490,7 +490,7 @@ the dwarves and the capital Aldin.  The occasional trader comes here, and some
 hide a smile as they see your amazement.  South of here the man-made eastern
 highway leads towards a city.    
 ~
-237 p 2
+237 32768 0 0 0 0
 D0
 ~
 ~
@@ -504,7 +504,7 @@ possibility of another landslide seems imminent.  The landslide slopes
 downwards to the east.  Leading towards a deep chasm.  To the north the
 landslide rises steeply above you, looking almost impossible to climb.    
 ~
-237 c 0
+237 4 0 0 0 0
 D0
 ~
 ~
@@ -524,7 +524,7 @@ Crossing the Landslide~
 The sheer walls of granite from the chasm begin to block out portions of the
 sky.  The further east you travel the deeper into the chasm you will be.    
 ~
-237 0 0
+237 0 0 0 0 0
 D3
 ~
 ~
@@ -536,7 +536,7 @@ Climbing Up the Landslide~
 Just to the north, at the top, you can see some old ruins uncovered by the
 recent avalanche.  Now if you can only find the footing to climb up to it.    
 ~
-237 0 0
+237 0 0 0 0 0
 D0
 ~
 ~
@@ -553,7 +553,7 @@ of a desert to the south, the city of Eldorado to the southeast.  To the west
 you can vaguely catch glimpses of the plains through a jagged mountain range.
 North and east a fresh wind blows in off from the ocean.    
 ~
-237 0 0
+237 0 0 0 0 0
 D0
 ~
 ~
@@ -570,7 +570,7 @@ a strange doorway made of ancient stone.  Strange symbols, almost worn away
 with age, decorate the door and walls.  The door is cracked open slightly.  
 Unidentifiable tracks, made from blood, lead down into the passageway
 ~
-237 0 0
+237 0 0 0 0 0
 D2
 ~
 ~

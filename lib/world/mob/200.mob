@@ -7,7 +7,7 @@ A dirty woman dressed in ragged clothing wanders past.
 bathed or eaten for several days.  You smell her long before and after you see
 her.  She hobbles along aimlessly.  
 ~
-dgi 0 0 E
+328 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -19,7 +19,7 @@ A cute, furry rabbit is hopping about here.
 ~
    A large, white, furry rabbit with a big bushy tail.  
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -33,7 +33,7 @@ A little fawn is standing here.
    A cute, little fawn.  It looks quite lost.  Perhaps it has lost it's mother.
 
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -46,7 +46,7 @@ A bear cub stares warily at your intrusion.
 ~
    A small, black bear cub.  Better hope it's mother is not around.  
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -61,7 +61,7 @@ A wondering missionary is looking for someone to preach too.
 for quite some time.  Perhaps a nice warm meal would help to up his spirits a
 bit.  
 ~
-dgh 0 350 E
+200 0 0 0 0 0 0 0 350 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -75,7 +75,7 @@ A grizzy old man stomps past with confidence.
    This man has lived out in the wilderness for the majority of his life.  Few
 things surprise or threaten him on his own turf.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -90,7 +90,7 @@ you can kill it, and find a fur trader.  Unfortunately, bears are not an easy
 kill.  They are even known to become aggressive when cornered or protecting
 their young.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -104,7 +104,7 @@ An old man covered from head to toe in fur pelts shows them off and starts to ha
 immediately.  He swears that he sells the finest furs in the realm and you could
 never find a better bargain anywhere else.  
 ~
-bdnopqr dfk 0 E
+253962 0 0 0 80 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -117,7 +117,7 @@ An old man strolls past walking his trapline.
    It looks like he's had a long day out in the wilderness.  He is checking his
 trapline for any catch that he can take back to the trading post and sell.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -131,7 +131,7 @@ A red fox lopes along, trying to keep a safe distance from you.
 well known for their cunning and intelligence.  Usually passive and wary they
 have been known to raid local farms when food becomes sparse.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -146,7 +146,7 @@ citizen.  But he was a witness to something terrible that drove him crazy.  He
 now roams the wilderness looking for something that he can never seem to find.
 You suddenly realize that he is naked, solely covered by dirt and grime.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -161,7 +161,7 @@ to have ran afoul on some rocks and he barely was able to SWIM for his life.
 He has to have been very strong and good at swiming to have fought off the river
 like he did.  
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 5 5 1

@@ -6,7 +6,7 @@ A Rahn warrior suddenly lunges up out of the grass and attacks you!
    Dressed in the ancient Rahn war garb, wearing tufts of grass about his waist,
 with his face painted in light brown hues, this man looks quite fearsome.  
 ~
-dfg kst 0 E
+104 0 0 0 1572864 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -20,7 +20,7 @@ A Rahn warrior lunges at you, seemingly from nowhere!
    Dressed in the colors of the grasslands, this woman blends in with everything
 around her, rendering her nearly invisible.  
 ~
-dfg kst 0 E
+104 0 0 0 1572864 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 2
@@ -33,7 +33,7 @@ A Rahn hunter is startled from his place of concealment, turning his anger on yo
    The tales told of these fearsome grassland hunters keep children up at night,
 for fear one may sneak into their room!  
 ~
-dfg kst 0 E
+104 0 0 0 1572864 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -45,7 +45,7 @@ A Rahn huntress decides you are fair game since you have invaded her territory!
 ~
    This fearsome woman can only be described as 'beastial'.  
 ~
-dfg kst 0 E
+104 0 0 0 1572864 0 0 0 0 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 2
@@ -57,7 +57,7 @@ A Rahn hidesman comes running at you, teeth bared.
 ~
    Man, this dude is crazy!  
 ~
-dfg st 0 E
+104 0 0 0 1572864 0 0 0 0 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -69,7 +69,7 @@ A Rahn Keeper lunges at you from his spot in the grass, watch out!
 ~
    He looks mean.  
 ~
-dfg st 0 E
+104 0 0 0 1572864 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1

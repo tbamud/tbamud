@@ -6,7 +6,7 @@ Samantha smiles as you enter her shop.
    Samantha is a beautiful young elf, who seems to be happy with what she does.
 She is very pleased to see you.    
 ~
-bdenopr dfp 0 E
+188442 0 0 0 65616 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -18,7 +18,7 @@ The newbie training mob stands here mocking you.
 ~
    The newbie training mob looks very scrawny and sickly.    
 ~
-bd df 0 E
+10 0 0 0 80 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -31,7 +31,7 @@ A newbie dummy mob is unsure what it is doing.
    This mob looks like a punching bag, that would bounce right back up, if it
 got knocked to the ground.    
 ~
-bde df 0 E
+26 0 0 0 80 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -45,7 +45,7 @@ A Kobold is snearing at you.
 small dagger which is jagged and chipped.  The clothes on this rat man are torn
 and a bit oversized.    
 ~
-dg 0 1 E
+72 0 0 0 0 0 0 0 1 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -59,7 +59,7 @@ A badger is here hissing.
    You see a large badger with red eyes staring back at you.  The badger seems
 to be unusally strong.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 2
@@ -73,7 +73,7 @@ A brownie is here trying to hide.
    You see a tiny humanoid.  The brownie is a little larger than a fairy, and
 does not have wings.  They are skilled with ranged items.    
 ~
-dg bdfs 6 E
+72 0 0 0 524372 0 0 0 6 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -87,7 +87,7 @@ You see a bulette snooping around
    You see a very large insect type creature that looks like an overgrown
 beetle.  It is armored with a very tough shell.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -101,7 +101,7 @@ An osquip snaps at you.
    You see a large rodent with 6 legs and appears to be of a beaver family.  
 It also looks like a large Rat.  The Osquip is the size of a small dog.    
 ~
-dg d -8 E
+72 0 0 0 16 0 0 0 -8 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -115,7 +115,7 @@ An urd is flying overhead
    An Urd is of the Kobold family, except that the Urd has wings and can fly.
 Urds are three feet tall and have short ivory horns and red rimmed eyes.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -129,7 +129,7 @@ A water weird is angered to see you.
    This water weird is still young.  It seems to be made out of water, and seems
 to be of a serpent type.  It's body blends into the water.    
 ~
-bd df 0 E
+10 0 0 0 80 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -143,7 +143,7 @@ The Armourer is watching you eagerly.
    The Armourer is the size of a hobbit.  He looks well equipped and seems to
 have been in a battle or two.  He has a kind looking face.    
 ~
-bdnopr df -250 E
+188426 0 0 0 80 0 0 0 -250 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -156,7 +156,7 @@ A brownie is here trying to hide.
    You see a tiny humanoid.  The brownie is a little larger than a fairy, and
 does not have wings.  They are skilled with ranged items.    
 ~
-dgh bdf 0 E
+200 0 0 0 84 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1

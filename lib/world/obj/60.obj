@@ -3,7 +3,7 @@ axe lumber~
 a lumber axe~
 A heavy lumber axe lies here.~
 ~
-5 d an 0
+5 d 0 0 0 an 0 0 0 0 0 0 0
 0 2 3 3
 12 50 15 0
 E
@@ -17,7 +17,7 @@ shirt chequered~
 a chequered shirt~
 A chequered shirt lies here.~
 ~
-9 d ad 0
+9 d 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
 2 20 8 0
 E
@@ -29,7 +29,7 @@ boots leather~
 a pair of worn leather boots~
 A pair of worn leather boots lies here.~
 ~
-9 d ag 0
+9 d 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 4 60 10 0
 E
@@ -42,7 +42,7 @@ fireplace~
 a fireplace~
 A fireplace made from stone is set against the east wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 200 0 0 0
 0 0 0 0
 E
@@ -56,25 +56,25 @@ lantern brass hooded~
 a hooded brass lantern~
 A hooded brass lantern has been left here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 100 0
 4 60 10 0
+E
+letters~
+   The letters say: Use 'hold lantern' to activate.  
+~
 E
 lantern brass hooded~
    It is a large and robust but somewhat battered oil lantern made from brass,
 and it is equipped with a handle to make it handy and a hood to protect its
 flame.  Some letters have been scratched on its bottom.  
 ~
-E
-letters~
-   The letters say: Use 'hold lantern' to activate.  
-~
 #6005
 chest wooden~
 a wooden chest~
 A wooden chest stands in the corner.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 100 15 6006 0
 20 100 10 0
 E
@@ -87,7 +87,7 @@ key brass~
 a small brass key~
 A small brass key lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -99,7 +99,7 @@ coins gold~
 a heap of gold coins~
 Some gold coins lie piled up in a heap on the floor.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 127 0 0 0
 1 127 0 0
 E
@@ -111,7 +111,7 @@ blackberries berries~
 some blackberries~
 Some blackberries grow on a bush nearby.~
 ~
-19 c a 0
+19 c 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 1 1 0 0
 E
@@ -123,7 +123,7 @@ mushroom~
 a mushroom~
 A small mushroom grows nearby.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 10 10 0
 E
@@ -135,14 +135,9 @@ sign~
 a large sign~
 A large sign mounted on a pole is standing by the roadside.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
-E
-pole~
-   Not the most interesting pole in the world.  Better leave it here, though, as
-it holds the sign in place.  
-~
 E
 sign~
    It says :-
@@ -151,12 +146,17 @@ sign~
  
  This is the Forest of Haon-Dor.  Enter at your own risk.
 ~
+E
+pole~
+   Not the most interesting pole in the world.  Better leave it here, though, as
+it holds the sign in place.  
+~
 #6013
 barrel water~
 a barrel~
 A water barrel has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 40 40 15 0
 45 60 20 0
 #6014
@@ -164,7 +164,7 @@ water brook~
 a small brook~
 A small brook trickles through the forest beside the path.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 505 0 0 0
 E
@@ -176,7 +176,7 @@ water lake~
 the lake~
 .the lake~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
 505 0 0 0
 #6016
@@ -184,7 +184,7 @@ cudgel oak oaken limb~
 an oaken cudgel~
 A limb has fallen here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 7
 16 1 20 0
 E
@@ -200,7 +200,7 @@ carcass board~
 the carcass of a boar~
 .A hidden carcass of a boar.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 100 0 0 0
 0 0 0 0
 #6018
@@ -208,7 +208,7 @@ slab meat~
 a large slab of meat~
 A large piece of freshly cut boar meat is on the ground here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 15 40 1 0
 E
@@ -220,7 +220,7 @@ tusks pair~
 a pair of boar tusks~
 A pair of large boar tusks have been dropped here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 60 1 0
 E
@@ -232,7 +232,7 @@ log hollow floating~
 a hollow log~
 .A hidden hollow log.~
 ~
-22 0 a 0
+22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 48 2 1 0
 E
@@ -244,7 +244,7 @@ nest bird~
 the bird's nest~
 .A hidden bird's nest.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 30 0 0 0
 0 0 0 0
 #6022
@@ -252,7 +252,7 @@ egg blue robin~
 a blue robin's egg~
 A small bluish egg has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 10 0 0
 E
@@ -264,7 +264,7 @@ meat rabbit~
 a piece of rabbit meat~
 A large piece of rabbit meat.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 5 29 20 0
 #6024
@@ -272,7 +272,7 @@ meat deer venison~
 a piece of venison~
 A large piece of venison.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 10 80 20 0
 $~

@@ -5,7 +5,7 @@ life is the tracks you leave behind.  A gusting wind throws sand up into your
 face and makes you choke.  On the horizon you believe you can see a clump of
 trees.    
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -37,7 +37,7 @@ and slippery footing makes travel in this desert painful.  To the southeast you
 can make out a few trees and some small shrubbery.  A good sign of water.  You
 are thirsty.    
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -53,7 +53,7 @@ Between Sand Dunes~
 see nothing but desert stretching for miles in every direction.  You find it
 very hard if not impossible to remember which direction you are heading.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -79,7 +79,7 @@ landmark for miles around and it is from this landmark that many travellers
 find their way to the lost city and the south pass.  You can faintly make out a
 trail leading east and west.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -104,7 +104,7 @@ bearable and you can breathe without swallowing a handful of sand.  The desert
 is very peaceful here.  You notice some bleached white bones half-buried in the
 sand.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -129,7 +129,7 @@ seems to be the remains of a small stream that dried up years ago.  You have
 heard that you can follow a stream and it will eventually lead to civilization.
 Maybe this will lead to somewhere important.    
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -146,7 +146,7 @@ better.  The sand you walk on seems to be firming up slightly and you can see a
 few cactii further to the east as you work your way out of the harshest part of
 the desert.    
 ~
-90 0 2
+90 0 0 0 0 0
 D2
 ~
 ~
@@ -163,7 +163,7 @@ to trace your footsteps, but the wind has already covered them over.  You get
 an uneasy feeling in your stomach as you realize how easily one could get lost
 here.    
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -180,7 +180,7 @@ You try to cover your face but the sand still finds its way in.  You remember
 stories of lost travellers entering the desert and never returning.  Will you
 be next?    
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -201,7 +201,7 @@ extreme heat during the day and frigid cold at night.  It is a wonder that any
 animal could survive out here, but some do.  Most animals living in the desert
 are scavengers who prey on lost souls, like your own!    
 ~
-90 0 2
+90 0 0 0 0 0
 D2
 ~
 ~
@@ -218,7 +218,7 @@ travel between the lost city, south pass, and the Capital.  This is where the
 truly adventureous travelers roam in the search for fame and fortune.  Most
 never make it back.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -236,7 +236,7 @@ trickles through the center of the palms.  It is not very refreshing, but
 enough to support a flurry of plant and animal life.  From here paths continue
 north toward the Capital or the lost city, and south to the south pass.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -261,7 +261,7 @@ small trickle of water that never runs dry.  This oasis is a safe haven for
 many lost travellers.  From the oasis a lost traveller can usually find his way
 back to safety.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -278,7 +278,7 @@ somehow survive without water for months at a time.  Small animals that have
 adapted to the extreme weather in the desert scurry away as you pass.  Tales of
 deadly scorpions make you watch where you step.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -295,7 +295,7 @@ been washed away in this area making a small ditch where a good sized stream
 must have once flowed.  The ground around the ditch is packed sand with cracks
 running through it.    
 ~
-90 0 2
+90 0 0 0 0 0
 D2
 ~
 ~
@@ -312,7 +312,7 @@ climb to the top, expecting to get a better view of your surroundins, you only
 see more dunes.  The dry air makes you wish you had remembered to bring more
 water.    
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -329,7 +329,7 @@ not enough moisture in the desert to form any clouds.  The area around you is
 barren, just sand, no sign of any life.  To the northeast you can see what
 looks like some trees in the distance.    
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -345,7 +345,7 @@ The Desert~
 under your feet makes it difficult to even walk.  Just to the north is a small
 patch of palm trees.  A place of sanctuary in the middle of an ocean of sand.
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -362,7 +362,7 @@ bottom of what must have once been an impressive river.  Skeletons of fish are
 half buried in the rubble.  It appears this stream ran dry from an unnatural
 cause.  The banks of the river reach up to about eye level.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -379,7 +379,7 @@ your head, actually slanting towards you, making them impossible to climb.
 The rocky river bed makes an unsure footing and you stumble along, trying not
 to twist an ankle.  The river bed leads in an east west direction,
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -396,7 +396,7 @@ there was to begin with.  It feels as if the walls are closing in on you.  You
 begin to notice bones scattered among the rocks that don't look like fish
 bones.    
 ~
-90 0 2
+90 0 0 0 0 0
 D2
 ~
 ~
@@ -413,7 +413,7 @@ horizon.  Maybe it is just a mirage, or maybe it is something else.  The harder
 you look the more you begin to think that you might be reaching the southern
 end of the desert.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -429,7 +429,7 @@ A Dried Up River Bed~
 smooth from years of errosion from the river.  Now they are becoming pitted and
 cracked.  The river bed continues north and east.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -446,7 +446,7 @@ large river.  The banks reach up to just above your head, obscuring your view
 of what's above you.  The river bottom is layered in small round pebbles.  
 This would be a great place to set up an ambush for unwary travellers.    
 ~
-90 0 2
+90 0 0 0 0 0
 D3
 ~
 ~
@@ -458,7 +458,7 @@ The Desert~
 relentlessly.  You can make out what looks like a mountain range further to the
 south.  Perhaps this faded trail you are following leads to the south pass.  
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -475,7 +475,7 @@ north and west.  The remains of a trail being consumed by the desert sand.  To
 the south you can see somthing on the horizon.  Desert stretches as far as you
 can see in every other direction.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -492,7 +492,7 @@ far as you can see.  To the south a jagged mountain range stretches to the sky.
 The mountains are tall enough to be barren of trees and some are even snow
 capped.    
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -509,7 +509,7 @@ range are wild and undoubtedly false.  But one thing you know is true.  They
 are almost insurpassable unless you can find the south pass.  The trail leads
 east and west.    
 ~
-90 0 2
+90 0 0 0 0 0
 D1
 ~
 ~
@@ -525,7 +525,7 @@ A Faded Trail~
 desert sand.  Dunes of sand rise above you to the south and east.  The trail
 continues to the west.  This part of the desert is strangely quite and still.
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -541,7 +541,7 @@ Before the Mountains~
 west the mountains look insurpassable.  A small trail continues south towards
 the base of the mountains or north into the desert.    
 ~
-90 0 2
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -559,7 +559,7 @@ to the north.  Anyone or anything could easily hide along the base of the
 mountains.  A small trail leads to the east.  An almost invisible trail leads
 south from here, toward the mountains.    
 ~
-90 c 2
+90 4 0 0 0 0
 D0
 ~
 ~
@@ -575,7 +575,7 @@ A Hidden Path~
 It winds it's way still further to the north along the base of the mountains.
 Small trees and even a small stream give this place a feeling of peace.    
 ~
-90 0 0
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -592,7 +592,7 @@ beside you, the water looks very clean and refreshing.  You are surrounded by
 trees that block any good view of your surroundings.  There seems to be a
 clearing just to the north.    
 ~
-90 0 0
+90 0 0 0 0 0
 D0
 ~
 ~
@@ -609,7 +609,7 @@ covered in a spongy moss that makes you feel like you are walking on air.
 This area has a strangely serene feeling to it.  You suddenly get the feeling
 that you are not the only one enjoying this peaceful grove.    
 ~
-90 0 0
+90 0 0 0 0 0
 D2
 ~
 ~

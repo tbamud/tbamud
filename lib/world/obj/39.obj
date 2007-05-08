@@ -3,7 +3,7 @@ Rusty Key~
 a rusty key~
 A rusty key is here, getting rustier by the minute.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -16,7 +16,7 @@ Shining Silver Key~
 a shining silver key~
 A shining silver key is here, glinting merrily.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -29,7 +29,7 @@ large key~
 a large key~
 A large key is lying here, as big as your hand.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #3903
@@ -37,7 +37,7 @@ sea chest~
 sea chest~
 A heavy sea chest is here, against the wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 400 15 3945 0
 0 0 0 0
 #3904
@@ -45,7 +45,7 @@ twinkling ruby~
 a twinkling ruby~
 A ruby is lying here, twinkling suggestively.~
 ~
-13 h a 0
+13 h 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 A
@@ -55,7 +55,7 @@ twinkling ruby~
 a twinkling ruby~
 A ruby is lying here, twinkling suggestively.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 5 0 0
 #3906
@@ -63,7 +63,7 @@ candle~
 a low-burning candle~
 A candle is here, sputtering almost to the point of going out.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 3 0
 1 10 1 0
 #3907
@@ -71,7 +71,7 @@ banks hidden~
 the bank~
 .This is a hidden object. The long description can only be seen with holylight. If you see this as a mortal please report the bug.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #3908
@@ -79,7 +79,7 @@ padded couch~
 a padded couch~
 A padded couch is lying here, looking shabby.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 1 0 0
 #3909
@@ -87,7 +87,7 @@ silver ring~
 the silver ring~
 A silver hoop of metal is here in the dust.~
 ~
-9 0 ab 0
+9 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #3910
@@ -95,7 +95,7 @@ black leather boots~
 a pair of black leather boots~
 A pair of worn, black leather boots is lying here on the ground.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 5 0 0 0
 2 20 2 0
 #3911
@@ -103,7 +103,7 @@ silver helm~
 a silver helm~
 A sparkling helm of silver is here on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 10 300 30 0
 #3912
@@ -111,7 +111,7 @@ wooden spoon~
 a wooden spoon~
 A wooden spoon is here, looking very mundane.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 12 12 12
 1 5 0 0
 #3913
@@ -119,7 +119,7 @@ demonic idol~
 a demonic idol~
 A demonic idol is here, crudely made.~
 ~
-11 gh ao 0
+11 gh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 1000 100 0
 A
@@ -129,7 +129,7 @@ stag carving~
 a stag carving~
 A small carving of a stag is here, so masterfully done it looks almost alive.~
 ~
-11 0 a 0
+11 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 A
@@ -139,7 +139,7 @@ chair~
 a chair~
 A wooden chair is here, ready to be sat upon.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 0
 #3917
@@ -147,7 +147,7 @@ diamond brooch~
 a diamond brooch~
 A brooch is here, sparkling with diamonds.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 0
 E
@@ -159,7 +159,7 @@ pixie-eye emerald~
 a pixie-eye emerald~
 An emerald about the size of a pixie's eye is here.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 20 0
 1 1 0 0
 A
@@ -169,7 +169,7 @@ bejeweled bracelet~
 the bejeweled bracelet~
 A bracelet is lying here, sparkling with jewels.~
 ~
-11 0 am 0
+11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 40 4 0
 A
@@ -179,7 +179,7 @@ fish~
 a fish~
 A fish is lying here, smelling fishy.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 4 1 0 0
 #3921
@@ -187,7 +187,7 @@ brown bottle beer~
 a brown bottle~
 Its a brown bottle.  It might even have beer in it.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 1 0
 8 120 12 0
 #3922
@@ -195,7 +195,7 @@ pitcher water~
 a pitcher~
 A pitcher has been placed here carefully, full of clear water.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 5 0 0
 5 75 7 0
 #3924
@@ -203,7 +203,7 @@ twisted staff~
 a twisted staff~
 A twisted quarterstaff is here, looking rather harmless.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 4 2 3 7
 8 40 4 0
 #3925
@@ -211,7 +211,7 @@ barbed spear~
 a barbed spear~
 A dangerous barbed spear is here, looking nasty.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 4 2 4 3
 10 200 20 0
 #3926
@@ -219,7 +219,7 @@ awl pike~
 an awl pike~
 An awl pike is here, taking up much space.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 4 3 5 3
 15 750 75 0
 #3927
@@ -227,7 +227,7 @@ jeweled dagger~
 a jeweled dagger~
 A dagger is lying here, its jewels sparkling merrily.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 2 3 14
 4 120 12 0
 #3928
@@ -235,7 +235,7 @@ A dagger is lying here, its jewels sparkling merrily.~
 a wickedly curving dagger~
 A dagger lies here on the ground, its curve looking particularly wicked.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 1 4 1
 3 150 15 0
 #3929
@@ -243,7 +243,7 @@ chain~
 a length of chain~
 A lenght of chain is lying on the ground, gleaming.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 7 1 5 2
 7 350 35 0
 #3930
@@ -251,7 +251,7 @@ large flail~
 a large flail~
 A large flail is lying here, looking abandoned.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 2 4 10
 20 1000 100 0
 #3931
@@ -259,7 +259,7 @@ bench~
 a bench~
 A bench has been provided for weary travelers to rest upon.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #3932
@@ -267,7 +267,7 @@ aquamarine chalice~
 an aquamarine chalice~
 An aquamarien chalice has been abandoned here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 12 -1 -1 -1
 3 100 0 0
 #3933
@@ -275,7 +275,7 @@ purple decanter~
 a purple decanter~
 A purple decanter is here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 12 43 -1 -1
 2 800 0 0
 #3934
@@ -283,7 +283,7 @@ glowing apple~
 a glowing apple~
 A glowing red apple is here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 12 3 -1 -1
 1 600 0 0
 #3935
@@ -291,7 +291,7 @@ yellow jar~
 a yellow jar~
 A yellow jar is here, humming with power.~
 ~
-10 b a 0
+10 b 0 0 0 a 0 0 0 0 0 0 0
 12 19 -1 -1
 2 400 0 0
 #3936
@@ -299,7 +299,7 @@ rose shaped vial~
 a rose-shaped vial~
 A rose-shaped vial is lying here, glowing slightly.~
 ~
-10 a ao 0
+10 a 0 0 0 ao 0 0 0 0 0 0 0
 12 36 -1 -1
 3 1000 0 0
 #3937
@@ -307,7 +307,7 @@ green vial~
 the green vial~
 A green vial is here, glowing slightly.~
 ~
-10 a ao 0
+10 a 0 0 0 ao 0 0 0 0 0 0 0
 12 29 -1 -1
 1 500 0 0
 #3938
@@ -315,7 +315,7 @@ wooden toy~
 a wooden toy~
 A wooden child's toy is lying here, forgotten.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #3939
@@ -323,7 +323,7 @@ market stall~
 a market stall~
 A market stall is here, the vendors inside yelling for customers.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #3940
@@ -331,7 +331,7 @@ dining table~
 a dining table~
 A dining table is setting in the middle of the floor here, heaped with food.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #3941
@@ -339,7 +339,7 @@ big soft pillow~
 a big, soft pillow~
 A big pillow is here, looking very soft and inviting.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 #3942
@@ -347,7 +347,7 @@ mat~
 a mat~
 A mat is lying on the floor here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 #3943
@@ -355,7 +355,7 @@ bread~
 a freshly baked bread~
 A loaf of freshly baked bread is here.  It looks yummy.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 1 0 0
 #3944
@@ -363,7 +363,7 @@ bed~
 Degruziel's bed~
 The magnificent bed of Degruziel lies here on the center of the floor.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #3945
@@ -371,7 +371,7 @@ key~
 the small key~
 A small key has been left lying here.  Maybe someone has lost it.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #3946
@@ -379,7 +379,7 @@ chainmail coif~
 a chainmail coif~
 A small pile of chainmail lies here on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 3 150 15 0
 #3947
@@ -387,7 +387,7 @@ lute~
 a lute~
 A lute is lying here, abandoned by its owner.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 15 15 32
 10 150 15 0
 #3948
@@ -395,7 +395,7 @@ steel longsword~
 a steel longsword~
 A steel longsword is here on the ground, neglected.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 6 1 9 3
 10 750 75 0
 #3949
@@ -403,7 +403,7 @@ old leather dog collar~
 an old leather dog's collar~
 Some dog somewhere has lost it's old collar.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 10 1 0
 #3950
@@ -411,7 +411,7 @@ rat tail~
 a rat's tail~
 A long, dirty rat's tail is here on the ground.  What pollution.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 1 0 0 0
 2 10 1 0
 #3951
@@ -419,7 +419,7 @@ silver pitcher wine~
 a silver pitcher~
 A silver pitcher is on the ground here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 7 3 2 0
 10 300 30 0
 #3952
@@ -427,7 +427,7 @@ serving platter~
 a silver serving platter~
 A large platter made of silver and with an odd handle is on the ground here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 7 0 0 0
 7 210 21 0
 #3953
@@ -435,7 +435,7 @@ tri-cornered hat~
 the tri-cornered hat~
 A hat with three corners is lying here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 7 35 3 0
 #3954
@@ -443,7 +443,7 @@ shimmering silvery dress~
 a shimmering silvery dress~
 A pile of shimmering material is lying here.  Perhaps it might be a dress.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
 6 6 0 0
 #3955
@@ -451,7 +451,7 @@ rich cape~
 a rich cape~
 A rich cape made of silver thread is here, looking expensive.~
 ~
-9 gikl ak 0
+9 gikl 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 20 20 2 0
 A
@@ -463,7 +463,7 @@ banded steel leg guard~
 the banded steel leg guards~
 A pair of banded steel leg guards are sitting here, looking rather new.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 8 0 0 0
 1 100 0 0
 #3957
@@ -471,7 +471,7 @@ banded steel bracer~
 a banded steel bracer~
 A piece of banded steel is just lying here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 2 150 15 0
 #3958
@@ -479,7 +479,7 @@ steel shortsword~
 a steel shortsword~
 A steel shortsword is on the ground here.  Pity.  It might rust.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 1 6 3
 6 450 45 0
 #3959
@@ -487,7 +487,7 @@ black silk skirt~
 a black silk skirt~
 Somebody has left a skirt here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
 5 5 0 0
 #3960
@@ -495,7 +495,7 @@ moustache~
 a fake moustache~
 A small, fuzzy thing is on the ground here.  What the... It looks like a fake moustache.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #3961
@@ -503,7 +503,7 @@ peg leg~
 a false peg leg~
 A false peg leg is here, lying in the open.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 1 6 5
 3 15 1 0
 #3962
@@ -511,7 +511,7 @@ rusty cup water~
 a rusty cup~
 A rusty cup is lying here, collecting rainwater.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 5 3 0 1
 8 160 16 0
 #3963
@@ -519,7 +519,7 @@ curving sword~
 a short, curving sword~
 A short, curving sword is lying here glimmering.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 1 5 3
 10 500 50 0
 #3964
@@ -527,7 +527,7 @@ curving dagger~
 a curving dagger~
 A strange curved dagger is here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 1 4 14
 2 100 10 0
 #3965
@@ -535,7 +535,7 @@ black silk pants~
 a pair of black silk pants~
 Someone has lost their pants.... hmm....~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
 3 3 0 0
 #3966
@@ -543,7 +543,7 @@ black silk shirt~
 a black silk shirt~
 A black silk shirt is lying here, neglected.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 3 3 0 0
 #3967
@@ -551,7 +551,7 @@ rags~
 some rags~
 A pile of smelly rags is here, stinking.~
 ~
-11 0 ak 0
+11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 4 4 0 0
 A
@@ -563,7 +563,7 @@ purse~
 a purse~
 A woman must have dropped her purse here...~
 ~
-15 0 aco 0
+15 0 0 0 0 aco 0 0 0 0 0 0 0
 10 1 -1 0
 2 10 1 0
 #3969
@@ -571,7 +571,7 @@ red dress~
 an expensive red dress~
 A pile of red material lies abandoned here, looking vaguely like a dress.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
 8 8 0 0
 #3970
@@ -579,7 +579,7 @@ cutlass~
 a sharp cutlass~
 A cutlass is here, gleaming sharply.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 1 4 1
 2 100 10 0
 #3971
@@ -587,7 +587,7 @@ net~
 a rope net~
 A tangled rope net is lying here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 20 20 2 0
 #3972
@@ -595,7 +595,7 @@ herring~
 a raw herring~
 A raw fish is here... it might just be a herring.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 1 0 0
 #3973
@@ -603,7 +603,7 @@ broken bottle~
 a broken bottle~
 A half-shattered broken bottle has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 3 14
 1 15 1 0
 #3974
@@ -611,7 +611,7 @@ wine glass wine~
 a wine glass~
 A wine glass lies here, discarded.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 2 2 2 0
 7 105 10 0
 #3975
@@ -619,7 +619,7 @@ patched dress~
 a patched dress~
 A shabby dress is here, sewn with colorful patches.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 7 7 0 0
 #3976
@@ -627,7 +627,7 @@ ale flagon ale~
 a flagon of ale~
 A flagon of ale lying is here, forgotten.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 3 3 3 0
 8 40 4 0
 #3977
@@ -635,7 +635,7 @@ handcart~
 a wooden handcart~
 A wooden handcart is lying here, tipped on its side.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 100 0 -1 0
 20 1 0 0
 #3978
@@ -643,7 +643,7 @@ silver bracelet~
 a silver bracelet~
 A ring of silver metal is here, waiting to be worn on a wrist.~
 ~
-11 0 am 0
+11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 A
@@ -653,7 +653,7 @@ transparent veil~
 a small, nearly transparent veil~
 A small pile of sheer material is here, looking like a veil.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #3980
@@ -661,7 +661,7 @@ wool skirty~
 a long wool skirt~
 A pile of wool is here, vaguely looking like a skirt.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
 5 25 2 0
 #3981
@@ -669,7 +669,7 @@ black leather mask~
 a black leather mask~
 A black leather mask lies here, ready to conceal someone's face.~
 ~
-11 g ae 0
+11 g 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 2 20 2 0
 #3982
@@ -677,7 +677,7 @@ barbed whip~
 a cruel-looking barbed whip~
 A barbed whip is here, looking malicious.~
 ~
-5 j an 0
+5 j 0 0 0 an 0 0 0 0 0 0 0
 7 2 4 1
 3 30 3 0
 #3983
@@ -685,7 +685,7 @@ wooden spoon~
 a wooden spoon~
 A wooden spoon is lying here, looking abandoned.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 5 0 0
 #3984
@@ -693,7 +693,7 @@ sparkling chainmail~
 the sparkling chainmail~
 A pile of chain links is here, sparkling in the light.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 30 400 150 0
 #3985
@@ -701,7 +701,7 @@ black bandana~
 a black bandana~
 A strip of black cloth is on the ground here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
 1 1 0 0
 #3986
@@ -709,7 +709,7 @@ bullwhip~
 a bullwhip~
 A bullwhip is here, looking menacing.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 7 1 5 2
 3 30 3 0
 #3987
@@ -717,7 +717,7 @@ saddlebag~
 a saddlebag~
 A saddlebag is lying here, abandoned.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 1 -1 0
 15 150 15 0
 #3993
@@ -725,7 +725,7 @@ sparkling mace~
 a sparkling silver mace~
 A sparkling silver, but heavy-looking, mace is lying here unattended~
 ~
-5 k an 0
+5 k 0 0 0 an 0 0 0 0 0 0 0
 3 1 5 6
 50 375 375 0
 E
@@ -742,7 +742,7 @@ merchant's sword~
 a merchant's sword~
 A shimmering sword is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 1 7 3
 15 900 112 0
 E
@@ -755,7 +755,7 @@ commoner's sword~
 a commoner's sword~
 An unusually common looking sword is here, gleaming slightly.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 1 7 3
 12 240 24 0
 E
@@ -768,7 +768,7 @@ bracer~
 a black leather bracer~
 A black leather bracer is lying here, looking special.~
 ~
-9 ag am 0
+9 ag 0 0 0 am 0 0 0 0 0 0 0
 1 0 0 0
 2 20 2 0
 E
@@ -784,7 +784,7 @@ guard vest~
 a well-made leather vest~
 A pile of black leather is lying here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 15 150 15 0
 E
@@ -801,7 +801,7 @@ whittling knife~
 a sharp whittling knife~
 A whittling knife is lying here.  It looks sharp.~
 ~
-5 i an 0
+5 i 0 0 0 an 0 0 0 0 0 0 0
 5 1 3 1
 2 100 10 0
 E
@@ -814,7 +814,7 @@ gullmarked sword~
 a gull-marked sword~
 A sword with a stylized gull engraved onto the hilt is here, looking special.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 6 1 9 3
 20 1000 100 0
 E

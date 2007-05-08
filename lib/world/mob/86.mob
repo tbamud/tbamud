@@ -5,7 +5,7 @@ A rat is chewing on an moldy piece of bread here.
 ~
    A rat is a small, black, greasy looking rodent with a tiny twitching nose.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 8 0
@@ -19,7 +19,7 @@ A dusty white moth beats her wings here.
    No longer than the first joint of a human finger, this tiny moth flits about
 looking for more cutains to chew upon.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -32,7 +32,7 @@ A rat is wiggling beneath the covers here.
    The rat is a fairly large black rodent with shiny black whiskers and a foul
 odor about him.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -45,7 +45,7 @@ A small rat is here, nibbling on something.
    This rat is a tiny specimen considering what else is roaming about this Keep.
 His eyes are shiny black and his coat is of a dark brown color.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -60,7 +60,7 @@ A bandit is sleeping on the floor here.
 over his face.  The bandits clothing is ripped and riddled with lice and food.
 
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 5 8 1
@@ -75,7 +75,7 @@ A female bandit is here, looking for something to wear.
 dresses.  The dress has been ripped at the hem and is missing a sleeve.  The
 young woman is rummaging through her closet for a better one.  
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -88,7 +88,7 @@ A bat is flapping about here.
 ~
    It looks like a flying rat!  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -101,7 +101,7 @@ A mouse is running about here, looking for a scrap of food.
    Small and grey this mouse looks a little on the thin side.  Its whiskers
 twitch quickly and it blinks rapidly.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -116,7 +116,7 @@ chiseled out a most imposing carving.  The guardian's stone delinated muscles
 seem to quiver and its eyes almost shift.  Whomever set them here must have
 something to protect...  
 ~
-bdglnpr 0 0 E
+174154 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -131,7 +131,7 @@ Grand Duke Kalithorn is here, plotting his revenge.
 over his desk scribbling and mumbling to himself about his ultimate revenge upon
 the bandits who took his wife.  
 ~
-bdgnpr h 0 E
+172106 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 6 8 1
@@ -145,7 +145,7 @@ A wandering bandit is here, staring off into the distance.
    Unshaved, scarred and generally unappealing to look at, a bandit, grins
 broadly as he stares off into the distance.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -159,7 +159,7 @@ A dirty bandit is standing here.
    Looks like this fella hasn't washed in a loooong time.  His stench alone
 could kill.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -174,7 +174,7 @@ The leader of the bandits is here, writing something down.
 riff-raff.  His hair is bound back with a leather fillip and he appears to be
 writing something down in a notebook.  
 ~
-bdgnpr 0 0 E
+172106 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -189,7 +189,7 @@ A young bandit is sneaking about here.
 he walks with the confidence of a much older individual.  The calluses on his
 hands prove that he knows his way around a sword.  
 ~
-dgmn 0 0 E
+12360 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1

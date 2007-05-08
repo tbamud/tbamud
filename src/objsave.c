@@ -74,7 +74,6 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
   int counter2;
   struct extra_descr_data *ex_desc;
   char buf1[MAX_STRING_LENGTH +1];
-  char flags[65];
   struct obj_data *temp = NULL;
 
   if (GET_OBJ_VNUM(obj) != NOTHING)
@@ -105,10 +104,8 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
              GET_OBJ_VAL(obj, 2),
              GET_OBJ_VAL(obj, 3)
              );
-  if (GET_OBJ_EXTRA(obj) != GET_OBJ_EXTRA(temp)) {
-    sprintascii(flags, GET_OBJ_EXTRA(obj));
-    fprintf(fp, "Flag: %s\n", flags);
-  }
+  if (GET_OBJ_EXTRA(obj) != GET_OBJ_EXTRA(temp)) 
+    fprintf(fp, "Flag: %d %d %d %d\n", GET_OBJ_EXTRA(obj)[0], GET_OBJ_EXTRA(obj)[1], GET_OBJ_EXTRA(obj)[2], GET_OBJ_EXTRA(obj)[3]);
 
 #define TEST_OBJS(obj1, obj2, field) ((!obj1->field || !obj2->field || \
                                       strcmp(obj1->field, obj2->field)))
@@ -136,14 +133,10 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
     fprintf(fp, "Cost: %d\n", GET_OBJ_COST(obj));
   if (TEST_OBJN(cost_per_day))
     fprintf(fp, "Rent: %d\n", GET_OBJ_RENT(obj));
-  if (TEST_OBJN(bitvector)) {
-    sprintascii(flags, obj->obj_flags.bitvector);
-    fprintf(fp, "Perm: %s\n", flags);
-  }
-  if (TEST_OBJN(wear_flags)) {
-    sprintascii(flags, GET_OBJ_WEAR(obj));
-    fprintf(fp, "Wear: %s\n", flags);
-  }
+  if (TEST_OBJN(bitvector)) 
+    fprintf(fp, "Perm: %d %d %d %d\n", GET_OBJ_PERM(obj)[0], GET_OBJ_PERM(obj)[1], GET_OBJ_PERM(obj)[2], GET_OBJ_PERM(obj)[3]);
+  if (TEST_OBJN(wear_flags))
+    fprintf(fp, "Wear: %d %d %d %d\n", GET_OBJ_WEAR(obj)[0], GET_OBJ_WEAR(obj)[1], GET_OBJ_WEAR(obj)[2], GET_OBJ_WEAR(obj)[3]);
 
   /* Do we have affects? */
   for (counter2 = 0; counter2 < MAX_OBJ_AFFECT; counter2++)
@@ -614,7 +607,7 @@ void Crash_crashsave(struct char_data *ch)
 
   fprintf(fp, "$~\n");
   fclose(fp);
-  REMOVE_BIT(PLR_FLAGS(ch), PLR_CRASH);
+  REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_CRASH);
 }
 
 void Crash_idlesave(struct char_data *ch)
@@ -790,7 +783,7 @@ void Crash_cryosave(struct char_data *ch, int cost)
   fclose(fp);
 
   Crash_extract_objs(ch->carrying);
-  SET_BIT(PLR_FLAGS(ch), PLR_CRYO);
+  SET_BIT_AR(PLR_FLAGS(ch), PLR_CRYO);
 }
 
 /* Routines used for the receptionist. */
@@ -961,7 +954,7 @@ int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd,
 	  FALSE, recep, 0, ch, TO_VICT);
       Crash_cryosave(ch, cost);
       mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has cryo-rented.", GET_NAME(ch));
-      SET_BIT(PLR_FLAGS(ch), PLR_CRYO);
+      SET_BIT_AR(PLR_FLAGS(ch), PLR_CRYO);
     }
 
     act("$n helps $N into $S private chamber.", FALSE, recep, 0, ch, TO_NOTVICT);
@@ -993,7 +986,7 @@ void Crash_save_all(void)
       if (PLR_FLAGGED(d->character, PLR_CRASH)) {
         Crash_crashsave(d->character);
         save_char(d->character);
-        REMOVE_BIT(PLR_FLAGS(d->character), PLR_CRASH);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRASH);
       }
     }
   }
@@ -1005,7 +998,7 @@ void Crash_save_all(void)
 obj_save_data *objsave_parse_objects(FILE *fl)
 {
   obj_save_data *head, *current;
-  char line[READ_SIZE];
+  char f1[128], f2[128], f3[128], f4[128], line[READ_SIZE];
   int t[4],i, nr;
   struct obj_data *temp;
 
@@ -1122,8 +1115,13 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       }
       break;
     case 'F':
-      if (!strcmp(tag, "Flag"))
-        GET_OBJ_EXTRA(temp) = asciiflag_conv(line);
+      if (!strcmp(tag, "Flag")) {
+        sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+        GET_OBJ_EXTRA(temp)[0] = asciiflag_conv(f1);
+        GET_OBJ_EXTRA(temp)[1] = asciiflag_conv(f2);
+        GET_OBJ_EXTRA(temp)[2] = asciiflag_conv(f3);
+        GET_OBJ_EXTRA(temp)[3] = asciiflag_conv(f4);
+      }
       break;
     case 'L':
       if(!strcmp(tag, "Loc "))
@@ -1134,8 +1132,13 @@ obj_save_data *objsave_parse_objects(FILE *fl)
         temp->name = strdup(line);
       break;
     case 'P':
-      if (!strcmp(tag, "Perm"))
-        temp->obj_flags.bitvector = asciiflag_conv(line);
+      if (!strcmp(tag, "Perm")) {
+        sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+        GET_OBJ_PERM(temp)[0] = asciiflag_conv(f1);
+        GET_OBJ_PERM(temp)[1] = asciiflag_conv(f2);
+        GET_OBJ_PERM(temp)[2] = asciiflag_conv(f3);
+        GET_OBJ_PERM(temp)[3] = asciiflag_conv(f4);
+      }
       break;
     case 'R':
       if (!strcmp(tag, "Rent"))
@@ -1150,8 +1153,13 @@ obj_save_data *objsave_parse_objects(FILE *fl)
         GET_OBJ_TYPE(temp) = num;
       break;
     case 'W':
-      if (!strcmp(tag, "Wear"))
-        GET_OBJ_WEAR(temp) = asciiflag_conv(line);
+      if (!strcmp(tag, "Wear")) {
+        sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+        GET_OBJ_WEAR(temp)[0] = asciiflag_conv(f1);
+        GET_OBJ_WEAR(temp)[1] = asciiflag_conv(f2);
+        GET_OBJ_WEAR(temp)[2] = asciiflag_conv(f3);
+        GET_OBJ_WEAR(temp)[3] = asciiflag_conv(f4);
+      }
       else if (!strcmp(tag, "Wght"))
         GET_OBJ_WEIGHT(temp) = num;
       break;

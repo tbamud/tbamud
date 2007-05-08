@@ -7,7 +7,7 @@ A seriously menacing orc is here, growling at you.
 wasn't first in line when the gods handed out beauty.  However, there seem to be
 nothing amiss with his swordarm, and he doesn't seem to like you.  
 ~
-cdfglm 0 -650 E
+6252 0 0 0 0 0 0 0 -650 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -22,7 +22,7 @@ A seriously menacing orc is here, resting.
    The terrible orc is here, resting and having a quiet and of course
 unintelligent conversation with his friends.  
 ~
-cdfglm 0 -650 E
+6252 0 0 0 0 0 0 0 -650 E
 3 19 8 0d0+30 1d2+0
 30 900
 5 5 1
@@ -37,7 +37,7 @@ A seriously menacing orc is getting a - much needed - beauty sleep here.
    The orc is battlescarred, and seem to have just been in a fight.  You guess
 he's just getting ready to go back in the fray.  
 ~
-cdfglm 0 -650 E
+6252 0 0 0 0 0 0 0 -650 E
 3 19 8 0d0+30 1d2+0
 30 900
 4 4 1
@@ -53,7 +53,7 @@ H'Ogh the Half-ogre is here, guarding the Boss' tent.
 obviously lives in this room, just to protect the Boss around the clock.  As if
 he knew what that is.  
 ~
-bcdeflm 0 -650 E
+6206 0 0 0 0 0 0 0 -650 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -67,7 +67,7 @@ Dra'L the Half-ogre is here, guarding the Boss' tent.
 obviously lives in this room, just to protect the Boss around the clock.  As if
 he knew what that is.  
 ~
-bcdeflm 0 -650 E
+6206 0 0 0 0 0 0 0 -650 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -83,7 +83,7 @@ in world view, but after the introduction of his personal guards H'Ogh and
 Dra'L, there has been little said against his position.  As you look closer he
 turns to you and reaches for his sword.  
 ~
-bcdflm d -650 E
+6190 0 0 0 16 0 0 0 -650 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -99,7 +99,7 @@ The orc Shaman is here, screaming, because you interrupted the spell.
 helps a bit.  He seems to be all but out of his mind, and you decide to put him
 out of his misery.  
 ~
-bcdflmn de -650 E
+14382 0 0 0 48 0 0 0 -650 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1

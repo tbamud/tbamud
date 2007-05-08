@@ -8,7 +8,7 @@ head.  Kami wears a white robe like thing that has a strange symbol on the
 front.  
 @n
 ~
-bdnopqr k 0 E
+253962 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -22,7 +22,7 @@ A Namekian Priest stands here looking at you.
    It looks unfinished.  He looks just like the other people in this village,
 his green skin, antenna, and namekian cloths.  
 ~
-bd cdef 0 E
+10 0 0 0 120 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -38,7 +38,7 @@ with a jewel in the center, also around his body he wears a red vest, and on his
 legs he wears tan pants.  
 @n
 ~
-bdnopqr k 0 E
+253962 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 6 6 1
@@ -50,7 +50,7 @@ A large wolf stands here growling.
 ~
    The wolf has a very dirty looking coat, she seems angy at something.  
 ~
-dg d 0 E
+72 0 0 0 16 0 0 0 0 E
 2 20 8 0d0+20 0d2+0
 20 400
 8 8 2
@@ -64,7 +64,7 @@ Matilda sits behind her desk writing something on a piece of paper.
    She is a very pretty woman, and is also very polite, she smile sweetly at you
 and then goes baack to writing on her paper.
 ~
-bde cdef 0 E
+26 0 0 0 120 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 6 6 2
@@ -78,7 +78,7 @@ A Newbie Fighter stands here looking at you.
    He seems to be not a lot to look at, he looks koind of weak, his health seems
 to be good though.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 20 14 10 8d8+400 6d6+4
 3000 40000
 8 8 1
@@ -91,7 +91,7 @@ Vegeta stands here, grinning evilly at you.
    @YVegeta has a huge golden aura, his hair is blond and his muscles are huge.
 Occasionnly bolts of electricity arc therogh his aura.  @n
 ~
-bde cdef 0 E
+26 0 0 0 120 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -106,7 +106,7 @@ Master Roshi sits here reading a magazine and making weird noises.
    He wears a large turtle shell, and large funny looking sunglasses, the sun
 shines off of his head, and he wears an old hawain shirt.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 6 6 1
@@ -122,7 +122,7 @@ Truncks is here playing his game system paying you no mind.
    The purple haird boy wears nothing more then a capsul corp t-shirt, blue
 jeans, and a pair of semi worn-out socks.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 6 6 1
@@ -137,7 +137,7 @@ A beautiful woman is here tending to the garden.
 made completly of a red materal, she has a very shaped figure, curves in all the
 right places.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -150,7 +150,7 @@ A Namek Townsmen is walking around here.
 ~
    You see nothing special...  
 ~
-dg cdef 0 E
+72 0 0 0 120 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -164,7 +164,7 @@ The Elder Namek sits in his large chair breathing heavily.
 weighing over 800lb, he could eaisly crush you.  But he won't because of his age
 and he is a peace loveing man that looks like any other Namek.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 6 6 0
@@ -176,7 +176,7 @@ A Dragon Statue sits here.
 ~
    It is a large statue of a dragon.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -188,7 +188,7 @@ A large bird flies around here.
 ~
    You see nothing special...  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 27 11 10 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -200,7 +200,7 @@ A brown rabbit hops around happily.
 ~
    It looks like a brown fluffy rabbit.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 2
@@ -212,7 +212,7 @@ A white rabbit hops around happily.
 ~
    It looks like a small white fluffy rabbit.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -225,7 +225,7 @@ A Gambler is here gambling away his money.
    He wears the usual biker outfit, all leather, and he swings a chain around
 his head.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -237,7 +237,7 @@ A Biker stands here swingging a chain around.
 ~
    He has the usual gamblers dice, and holds a knife in his left hand.
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1

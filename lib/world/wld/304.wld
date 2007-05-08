@@ -21,7 +21,7 @@ Bill Pelletier
 wjp@@hopper.unh.edu
 Aten/Talisman of GenericMUD
 ~
-304 0 0
+304 0 0 0 0 0
 S
 #30401
 A Grassy Field~
@@ -30,7 +30,7 @@ causing the ripe ends of the grass stalks to bob lazily back and forth.  To the
 north you spy what appears to be some sort of temple, its great white walls
 blazing with the light of the sun.    
 ~
-304 c 2
+304 4 0 0 0 0
 D0
 You see the entrance to the temple.
 ~
@@ -48,7 +48,7 @@ Before the Temple~
 columns are spaced evenly around the perimeter of the temple, and an arch
 beckons you inside.    
 ~
-304 c 2
+304 4 0 0 0 0
 D0
 There is an arch to the north.
 ~
@@ -68,7 +68,7 @@ way to get inside the temple.  "Why the heck to I want to go in there ?", you
 think to yourself.  You shrug your shoulders and suddenly get the feeling that
 you are being watched.    
 ~
-304 d 0
+304 8 0 0 0 0
 D0
 You see a great marble door.  It has a VERY nice polish.
 ~
@@ -89,7 +89,7 @@ The Temple~
    The echo of you footsteps reverberates through the temple.  Everything is
 white, the tiled floor, the walls, the ceiling.....    
 ~
-304 d 0
+304 8 0 0 0 0
 D0
 You see a room in the temple.
 ~
@@ -106,7 +106,7 @@ The Temple~
    The echo of your footsteps reverberates through the temple.  Everything is
 white, the tiled floors, the walls, the ceiling.....    
 ~
-304 d 0
+304 8 0 0 0 0
 D1
 You see a room in the temple.
 ~
@@ -127,7 +127,7 @@ The Temple~
    The echo of your footsteps reverberates through the temple.  Everything is
 white, the tiled floor, the walls, the ceiling.....    
 ~
-304 d 0
+304 8 0 0 0 0
 D0
 You see a room in the temple.
 ~
@@ -144,7 +144,7 @@ The Temple~
    The echo of your footsteps reverberates through the temple.  Everything is
 white, the tiled floor, the walls, the ceiling.....    
 ~
-304 d 0
+304 8 0 0 0 0
 D0
 There is a stairwell to the north.
 ~
@@ -167,7 +167,7 @@ The Atrium and Gardens~
 catch the sun's rays coming in from the open sky.  The smell of rich dark earth
 overwhelms your senses, and a small brook winds beneath your feet.    
 ~
-304 0 2
+304 0 0 0 0 0
 D0
 You see a room in the temple.
 ~
@@ -184,12 +184,12 @@ You see a room in the temple.
 ~
 0 0 30407
 E
-plants~
-   They seem to be doing very well, someone around here has a green thumb.  
-~
-E
 brook~
    What a nice little bubbling brook!  
+~
+E
+plants~
+   They seem to be doing very well, someone around here has a green thumb.  
 ~
 S
 #30409
@@ -197,7 +197,7 @@ The Temple~
    The echo of your footsteps reverberates through the temple.  Everything is
 white, the tiled floor, the walls, the ceiling.....    
 ~
-304 d 0
+304 8 0 0 0 0
 D0
 There seems to be a stairwell to the north.
 ~
@@ -219,7 +219,7 @@ The Stairwell~
    There is a beautiful curving stairwell leading upwards.  It seems to have
 been carved directly from stone.    
 ~
-304 d 0
+304 8 0 0 0 0
 D2
 You see a room in the temple.
 ~
@@ -241,7 +241,7 @@ The Temple~
 white, the tiled floor, the walls, the ceiling.....  There is a nice framed
 sign on the north wall.    
 ~
-304 d 0
+304 8 0 0 0 0
 D2
 There is a small garden to the south.
 ~
@@ -263,7 +263,7 @@ The Stairwell~
    There is a beautiful curving stairwell leading upwards.  It seems to have
 been carved directly from stone.    
 ~
-304 d 0
+304 8 0 0 0 0
 D2
 You see a room in the temple.
 ~
@@ -282,7 +282,7 @@ part of the temple has decorations.  The walls are covered with murals and
 furs.  A corridor leads off the the south, and the stairs offer a retreat
 downwards.    
 ~
-304 ad 0
+304 9 0 0 0 0
 D2
 You see a corridor.
 ~
@@ -294,12 +294,12 @@ You see the bottom of the stairs.
 ~
 0 0 30410
 E
-fur~
-   The fur is brown, short, and coarse.  
-~
-E
 mural~
    The mural shows a great shaggy beast with two pointed horns.  
+~
+E
+fur~
+   The fur is brown, short, and coarse.  
 ~
 S
 #30414
@@ -307,7 +307,7 @@ Mateon's Chamber~
    You find yourself in a small, cramped chamber.  A window is set in the north
 wall, and a sturdy oak door is to the west.    
 ~
-304 d 0
+304 8 0 0 0 0
 D1
 There is an oak door there.
 ~
@@ -323,7 +323,7 @@ The Upper Temple~
    You find yourself atop a flight of stairs.  A sturdy oak door is to the
 west, a corridor leads south, and the stairs offer a path downwards.    
 ~
-304 ad 0
+304 9 0 0 0 0
 D2
 Looks like a corridor.
 ~
@@ -346,7 +346,7 @@ The Corridor~
 wall, and a balcony to the east protects you from falling down into the
 gardens.    
 ~
-304 d 0
+304 8 0 0 0 0
 D0
 You see the stairway.
 ~
@@ -358,12 +358,12 @@ Woah..looks like a dead end.  You get the chills.
 ~
 0 0 30419
 E
-window~
-   The window overlooks a grassy field.  
-~
-E
 balcony~
    Its a simple piece of polished wood.  You can see the gardens below.  
+~
+E
+window~
+   The window overlooks a grassy field.  
 ~
 S
 #30417
@@ -374,14 +374,14 @@ stone walls and floor.  A stained oak table dominates the center of the room,
 and couches line the walls.  You look out the window and are vaguely surprised
 that you can't see the ground.    
 ~
-304 d 0
+304 8 0 0 0 0
 S
 #30418
 The Corridor~
    You are standing in a drafty corridor.  There is a window set in the east
 wall, and a balcony to the west protects you from falling into the gardens.  
 ~
-304 d 0
+304 8 0 0 0 0
 D0
 You see the stairway.
 ~
@@ -393,12 +393,12 @@ Can't really see much..its rather dark over there.
 ~
 0 0 30421
 E
-balcony~
-   Its a simple piece of polished wood.  You can see the gardens below.  
-~
-E
 window~
    The window looks down upon a grassy field.  
+~
+E
+balcony~
+   Its a simple piece of polished wood.  You can see the gardens below.  
 ~
 S
 #30419
@@ -406,7 +406,7 @@ The Cul-de-Sac~
    The corridor comes to an abrupt halt here, and the only exit appears to be
 back the way you came.    
 ~
-304 d 0
+304 8 0 0 0 0
 D0
 You see the corridor.
 ~
@@ -420,7 +420,7 @@ numerous shelves and just dumped on the floor.  The room has an unfamiliar
 smell, and you wrinkle your nose in disgust.  An great sliding window is open
 to the south and leads to the balcony, and a heavy iron door is to the east.  
 ~
-304 d 0
+304 8 0 0 0 0
 D1
 A heavy iron door is there.
 ~
@@ -432,12 +432,12 @@ You see the balcony over there.
 ~
 0 0 30422
 E
-window~
-   Its a great, big walk-through window.  
-~
-E
 shelves~
    The shelves have been swept clean.  
+~
+E
+window~
+   Its a great, big walk-through window.  
 ~
 S
 #30421
@@ -447,7 +447,7 @@ to rise.  There is so little light in this room that you start to imagine
 things..  Or do you?  You know for certain that you spotted a door to the west
 when you first entered.    
 ~
-304 ad 0
+304 9 0 0 0 0
 D0
 You see the corridor.
 ~
@@ -464,7 +464,7 @@ The Balcony~
    You sense that you have reached journey's end.  The balcony overlooks a
 great grassy field.  The sun's rays blind you, and you hear a snort.    
 ~
-304 0 1
+304 0 0 0 0 0
 D0
 You see the Bull's Chamber.
 ~

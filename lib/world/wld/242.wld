@@ -5,7 +5,7 @@ grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
 their destinations. To the north, you see the western bridge.
 ~
-242 0 1
+242 0 0 0 0 0
 D1
 ~
 ~
@@ -14,6 +14,50 @@ D2
 ~
 ~
 0 -1 24206
+E
+credits info~
+    x---------------------------------------------------------------------x
+    |            NEW SOUTHERN MIDGAARD ZONE - FOR CIRCLEMUD 3.1           |
+    |                      Written in 2002 by Crazyman                    |
+    |                         www.nt.net/saarinen                         |
+    x---------------------------------------------------------------------x
+     I found the stock Southern Midgaard to be really confusing, so I
+     decided to write a new one. This new zone features about 100 rooms,
+     several new shops, a theatre, and a curling rink. I've used a few
+     of the old Southern Midgaard rooms and objects, but everything else
+     is totally different.
+     Stuff You Need to Change:
+     -------------------------
+     The Chain
+        1. In 79.wld, find room 7914.
+        2. Change the room leading down (D5) to 3135.        
+     The Southwestern Gate:
+        1. In 35.wld, find room 3505. Change the room leading north (D0) 
+           to 3112.
+     The Central Bridge/The Dump
+        1. In 30.wld, find room 3025 (The Common Square). Change the room 
+           leading south (D2) to 3118.
+        2. In 30.wld, find room 3030 (The Dump). Change the room leading
+           north (D0) to 3044.
+        3. In 30.wld, find room 3044 (Poor Alley). Add a room leading
+           south (D2) to room 3030 (The Dump).       
+      (You don't HAVE to make the above changes. They are just what I
+       decided to do on my MUD. Place the zone wherever YOU want!)
+    x---------------------------------------------------------------------x
+    |         Written  entirely from  scratch in WordPad.  Feel           |
+    |         free to edit, modify, and redistribute this zone!           |    
+    x---------------------------------------------------------------------x
+   Builder      : Crazyman
+   Zone         : 242 New Southern Midgaard
+   Began        : 2001
+   Player Level : 3-7
+   Rooms        : 98
+   Mobs         : 14
+   Objects      : 39
+   Shops        : 5
+   Triggers     : 0
+   Links        : 11e
+~
 E
 maps~
    SOUTHERN MIDGAARD
@@ -86,50 +130,6 @@ Catwalks---Catwalks---Catwalks---Catwalks
         Theatre        |
       Office 3136---Entrance
 ~
-E
-credits info~
-    x---------------------------------------------------------------------x
-    |            NEW SOUTHERN MIDGAARD ZONE - FOR CIRCLEMUD 3.1           |
-    |                      Written in 2002 by Crazyman                    |
-    |                         www.nt.net/saarinen                         |
-    x---------------------------------------------------------------------x
-     I found the stock Southern Midgaard to be really confusing, so I
-     decided to write a new one. This new zone features about 100 rooms,
-     several new shops, a theatre, and a curling rink. I've used a few
-     of the old Southern Midgaard rooms and objects, but everything else
-     is totally different.
-     Stuff You Need to Change:
-     -------------------------
-     The Chain
-        1. In 79.wld, find room 7914.
-        2. Change the room leading down (D5) to 3135.        
-     The Southwestern Gate:
-        1. In 35.wld, find room 3505. Change the room leading north (D0) 
-           to 3112.
-     The Central Bridge/The Dump
-        1. In 30.wld, find room 3025 (The Common Square). Change the room 
-           leading south (D2) to 3118.
-        2. In 30.wld, find room 3030 (The Dump). Change the room leading
-           north (D0) to 3044.
-        3. In 30.wld, find room 3044 (Poor Alley). Add a room leading
-           south (D2) to room 3030 (The Dump).       
-      (You don't HAVE to make the above changes. They are just what I
-       decided to do on my MUD. Place the zone wherever YOU want!)
-    x---------------------------------------------------------------------x
-    |         Written  entirely from  scratch in WordPad.  Feel           |
-    |         free to edit, modify, and redistribute this zone!           |    
-    x---------------------------------------------------------------------x
-   Builder      : Crazyman
-   Zone         : 242 New Southern Midgaard
-   Began        : 2001
-   Player Level : 3-7
-   Rooms        : 98
-   Mobs         : 14
-   Objects      : 39
-   Shops        : 5
-   Triggers     : 0
-   Links        : 11e
-~
 S
 #24201
 Emerald Avenue~
@@ -139,7 +139,7 @@ Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree.
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -165,7 +165,7 @@ stone statue of a man stands here, surrounded by a ring of bushes and
 flowers. From all around you, you can hear the bustle of daily city life in 
 Midgaard. The central bridge is north, leading to the old part of Midgaard. 
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -207,7 +207,7 @@ Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree.
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -230,7 +230,7 @@ to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree. You can see the
 southern docks to the north.
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -255,7 +255,7 @@ grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
 their destinations. To the north, you can see the southern docks.
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -276,7 +276,7 @@ grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
 their destinations. 
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -298,7 +298,7 @@ Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree.
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -323,7 +323,7 @@ is wall road, while to the north you can see most of the city of Midgaard.
 You can see some street vendors here, standing inside small kiosks. You
 can see everything from cheap jewelry to leather jackets for sale.
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -353,7 +353,7 @@ All along the bottom edge of it are lightbulbs. A double glass door leads
 north, while a few signs have been set up here on the sidewalk. You 
 recognize this as the entrance to the Midgaard Theatre.
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -410,7 +410,7 @@ Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree.
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -435,7 +435,7 @@ grey rocks that have been fastened to each other with some kind of mortar.
 You can see a large stone entrance leading into the wall here, leading
 east. People are walking past you, hurrying to their destinations. 
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -457,7 +457,7 @@ leads south to the forest of Miden'Nir (Goblinic for 'Green Blood').
 You can still see the city to the east, but if you go south, there is
 fresh air and greenery.
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -474,7 +474,7 @@ grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
 their destinations. 
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -495,7 +495,7 @@ grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
 their destinations. 
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -516,7 +516,7 @@ grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
 their destinations. 
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -537,7 +537,7 @@ grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
 their destinations. 
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -559,7 +559,7 @@ walking next to the western city wall, at the southeast gate.  The gate is
 closed, blocking all passage and seems to have been that way for a long time.
   
 ~
-242 0 1
+242 0 0 0 0 0
 D0
 ~
 ~
@@ -578,7 +578,7 @@ leading east and west. The tall buildings of southern Midgaard dominate the
 southern skyline, while you can see the huge temple of Midgaard off in the 
 north.
 ~
-242 0 1
+242 0 0 0 0 0
 D2
 ~
 ~
@@ -592,7 +592,7 @@ windows let in light, giving the bank a bright glow. A long desk spans
 the entire western wall, and behind it stand several tellers, looking
 bored. An immensely thick steel door leads north, to the vault.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 door~
@@ -610,7 +610,7 @@ desk stands directly in front of you, and from behind it you can see
 many desks with computers on them. Journalists are seated, typing up
 stories for the Cooland Press.
 ~
-242 d 0
+242 8 0 0 0 0
 D2
 ~
 ~
@@ -623,7 +623,7 @@ have been built fairly high off the river, making it impossible to access
 the river from here. Several large crates and barrels are scattered around
 here. Across the river, you can see the levee.
 ~
-242 0 1
+242 0 0 0 0 0
 D1
 ~
 ~
@@ -640,7 +640,7 @@ have been built fairly high off the river, making it impossible to access
 the river from here. Across the river, you can see a building that looks
 like an old warehouse.
 ~
-242 0 1
+242 0 0 0 0 0
 D2
 ~
 ~
@@ -658,7 +658,7 @@ twenty feet high, run the entire length of the store. Aisles run in between
 them. Computer parts of all kinds are neatly stacked on the shelves. Several
 checkouts are located beside the door.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -671,7 +671,7 @@ rather low ceilings. Racks of clothing totally fill the store, making it
 almost impossible to move. You can faintly hear some classical music being
 played.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -686,7 +686,7 @@ you're in the middle of the city, you feel as though you're in a deep
 forest. As your eyes adjust to the lower light, you notice a rope softly
 swaying in the wind, behind a thick tree.
 ~
-242 0 1
+242 0 0 0 0 0
 D2
 ~
 ~
@@ -703,7 +703,7 @@ navy blue carpet covers the floor, while expensive looking wallpaper
 covers the walls. An elaborate chandelier hangs from the ceiling. A 
 small ticket booth is located near the front door.
 ~
-242 cd 0
+242 12 0 0 0 0
 D0
 ~
 ~
@@ -725,7 +725,7 @@ The walls are all solid wood. A large U shaped desk sits in the middle
 of the room, where the secretary usually sits. A beautifully carved
 staircase leads up to the mayor's office.
 ~
-242 d 0
+242 8 0 0 0 0
 D2
 ~
 ~
@@ -741,7 +741,7 @@ An Empty Room~
 is covered in dust.  A few small tracks, most likely from rodents or
 cockroaches, can be seen in the dust.    
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -753,7 +753,7 @@ An Empty Room~
 is covered in dust.  A few small tracks, most likely from rodents or
 cockroaches, can be seen in the dust.    
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -766,7 +766,7 @@ counting that monkey school in Ape Village). Everything looks neat and
 tidy, which is surprising for a public school. You notice the odd
 student walking past you, giving you funny looks.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -780,7 +780,7 @@ looking out onto Wall Road. Many round tables are scattered throughout
 the room, with people seated around many of them. Plants and small potted
 shrubs are also scattered around.
 ~
-242 d 0
+242 8 0 0 0 0
 D2
 ~
 ~
@@ -793,7 +793,7 @@ filled with desks and filing cabinets. Guards are here, talking on the
 phones and writing down stuff in books. They're ready to be dispatched
 to whoever needs help.
 ~
-242 d 0
+242 8 0 0 0 0
 D2
 ~
 ~
@@ -806,7 +806,7 @@ safety deposit boxes cover the walls. Three rows of extremely bright lights
 shine down on you, making everything completely visible. It would be 
 impossible to hide in here.
 ~
-242 d 0
+242 8 0 0 0 0
 D2
 ~
 door~
@@ -819,7 +819,7 @@ of the tree. From here, you have an excellent view of Midgaard. From out
 of nowhere, a thick chain falls out of the sky, right in front of your 
 face. It leads up into the clouds above.
 ~
-242 0 1
+242 0 0 0 0 0
 D5
 ~
 ~
@@ -833,7 +833,7 @@ wooden desk sits in far end of the room, covered with papers and old
 documents. Only a single reading lamp is on, making this room fairly
 dark.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -845,7 +845,7 @@ Theatre Corridor~
 painted black, and the floor is also black. A dark wooden door leads south 
 to the main part of the theatre.
 ~
-242 cd 0
+242 12 0 0 0 0
 D0
 ~
 ~
@@ -862,7 +862,7 @@ built into the northern wall, and behind it a glass-doored fridge and a
 selection of snacks can been seen. In between scenes, audience members come 
 here to get some food or a drink.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -883,7 +883,7 @@ painted black, and the floor is also black. A dark wooden door leads south
 to the main part of the theatre. A set of stairs leads down the the dressing 
 rooms.
 ~
-242 cd 0
+242 12 0 0 0 0
 D0
 ~
 ~
@@ -904,7 +904,7 @@ fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway. A
 wooden door leads south.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -925,7 +925,7 @@ stage up ahead, with some bright lights shining on it. All along the
 sides of the aisle on the floor are small lights, leading the way. It's
 very dark in here.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -945,7 +945,7 @@ In the Seats~
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -961,7 +961,7 @@ In the Seats~
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -978,7 +978,7 @@ stage up ahead, with some bright lights shining on it. All along the
 sides of the aisle on the floor are small lights, leading the way. It's
 very dark in here.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -998,7 +998,7 @@ Dressing Room Hallway~
 fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1020,7 +1020,7 @@ A large mirror, completely surrounded by lightbulbs, sits against the wall
 behind the counter. A costume rack sits beside the door, packed with different
 clothing and costumes.
 ~
-242 d 0
+242 8 0 0 0 0
 D3
 ~
 ~
@@ -1033,7 +1033,7 @@ stage up ahead, with some bright lights shining on it. All along the
 sides of the aisle on the floor are small lights, leading the way. It's
 very dark in here.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1053,7 +1053,7 @@ In the Seats~
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1069,7 +1069,7 @@ In the Seats~
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1086,7 +1086,7 @@ stage up ahead, with some bright lights shining on it. All along the
 sides of the aisle on the floor are small lights, leading the way. It's
 very dark in here.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1106,7 +1106,7 @@ Dressing Room Hallway~
 fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1128,7 +1128,7 @@ A large mirror, completely surrounded by lightbulbs, sits against the wall
 behind the counter. A costume rack sits beside the door, packed with different
 clothing and costumes.
 ~
-242 d 0
+242 8 0 0 0 0
 D3
 ~
 ~
@@ -1140,7 +1140,7 @@ Left Aisle~
 directly in front of you, with some stairs leading up to it. Bright
 lights shine all across it, making it look quite bright.
 ~
-242 cd 0
+242 12 0 0 0 0
 D1
 ~
 ~
@@ -1160,7 +1160,7 @@ In the Seats~
 feel very soft. You can see the stage, just in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1176,7 +1176,7 @@ In the Seats~
 feel very soft. You can see the stage, just in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1192,7 +1192,7 @@ Right Aisle~
 directly in front of you, with some stairs leading up to it. Bright
 lights shine all across it, making it look quite bright.
 ~
-242 cd 0
+242 12 0 0 0 0
 D2
 ~
 ~
@@ -1212,7 +1212,7 @@ Dressing Room Hallway~
 fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1234,7 +1234,7 @@ looking couch along the eastern wall. A large mirror, completely surrounded by
 lightbulbs, sits against the wall behind the counter. A costume rack sits 
 beside the door, packed with different clothing and costumes.
 ~
-242 d 0
+242 8 0 0 0 0
 D3
 ~
 ~
@@ -1250,7 +1250,7 @@ sits along the northern wall. You see a black ladder leading up to the
 catwalk.
    You see a sign hanging beside the stage entrance.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1274,7 +1274,7 @@ behind you. The floor is of solid wood, and makes a slight creaking sound
 as you walk. You can see the entire theatre from here. An opening in the
 curtain leads west, backstage.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1295,7 +1295,7 @@ currently assembled, only a massive curtain hangs behind you. The floor is
 of solid wood, and makes a slight creaking sound as you walk. You can see 
 the entire theatre from here.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1313,7 +1313,7 @@ curtain hangs behind you. The floor is of solid wood, and makes a slight
 creaking sound as you walk. You can see the entire theatre from here. An 
 opening in the curtain leads east, backstage.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1337,7 +1337,7 @@ rests here, and costumes of kinds hang from its hangers. A door leads down
 to the dressing rooms.
    You notice a sign hanging near the stage entrance.
 ~
-242 d 0
+242 8 0 0 0 0
 D3
 ~
 ~
@@ -1359,7 +1359,7 @@ Dressing Room Hallway~
 fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1382,7 +1382,7 @@ recliner sits by the door, with a rack of magazines sitting beside it. A
 filing cabinet sits in front of a tapestry that covers the entire northern
 wall.
 ~
-242 d 0
+242 8 0 0 0 0
 D3
 ~
 ~
@@ -1394,7 +1394,7 @@ Black Ladder~
 rungs are slick with condensation and bits of rust break off in your hands.  
 The rungs are almost ready to collapse.    
 ~
-242 d 0
+242 8 0 0 0 0
 D4
 ~
 ~
@@ -1411,7 +1411,7 @@ out of steel grating, and a railing has been built out of metal bars.
 Everything has been painted black. From here, you have a great view
 of the stage, as you can see everything perfectly.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1428,7 +1428,7 @@ out of steel grating, and a railing has been built out of metal bars.
 Everything has been painted black. From here, you have a great view
 of the stage, as you can see everything perfectly.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1445,7 +1445,7 @@ out of steel grating, and a railing has been built out of metal bars.
 Everything has been painted black. From here, you have a great view
 of the stage, as you can see everything perfectly.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1462,7 +1462,7 @@ out of steel grating, and a railing has been built out of metal bars.
 Everything has been painted black. From here, you have a great view
 of the stage, as you can see everything perfectly.
 ~
-242 d 0
+242 8 0 0 0 0
 D3
 ~
 ~
@@ -1476,7 +1476,7 @@ the east. The walls are a pale beige colour, and an ancient looking tile
 ceiling is slowly rotting away. This place looks like it's at least fifty
 years old.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1492,7 +1492,7 @@ Curling Club Entrance Stairs~
 grey carpet ends here, and a short set of stairs leads up to east. A large
 wooden door leads north, but it's blocked off.
 ~
-242 cd 0
+242 12 0 0 0 0
 D2
 ~
 ~
@@ -1513,7 +1513,7 @@ window, looking out onto the curling rink. A small green safe with a beer
 sticker on it sits in front of the railing, by the stairs leading down
 to the hallway.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1531,7 +1531,7 @@ trays sit on each one. A railing runs across the northern part of the room,
 but it curves downwards here opening up to a staircase. The wall in front of 
 the spectators area is an enormous window, looking out onto the curling rink. 
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1553,7 +1553,7 @@ cigarette butts. A railing runs across the northern part of the room, and ten
 feet below it is the spectators area. The wall in front of the spectators area 
 is an enormous window, looking out onto the curling rink. 
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1572,7 +1572,7 @@ here, waiting for people to sit at them. Several thickly plated windows
 look out onto the street to the south. The actual building looks very 
 solid, as if it was made to withstand an earthquake.
 ~
-242 d 0
+242 8 0 0 0 0
 D3
 ~
 ~
@@ -1587,7 +1587,7 @@ a large bulletin board has been attached to the wall. It's covered with
 posters and advertisements. At the top of the wall is a railing. A set of
 doors leads north onto the ice.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1624,7 +1624,7 @@ the curling club. An enormous window looks south onto the curling
 rink. Many wooden chairs are here, lined up facing the window. Behind you,
 a stair case leads up to the curling club.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1651,7 +1651,7 @@ a large bulletin board has been attached to the wall. It's covered with
 posters and advertisements. At the top of the wall is a railing. A set of
 doors leads north onto the ice.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1690,7 +1690,7 @@ and it's fairly cold in here. You can hear the light humming of a machine
 somewhere. Bright lights shine down on you from above, illuminating this
 area quite well.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1711,7 +1711,7 @@ and it's fairly cold in here. You can hear the light humming of a machine
 somewhere. Bright lights shine down on you from above, illuminating this
 area quite well.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1732,7 +1732,7 @@ and it's fairly cold in here. You can hear the light humming of a machine
 somewhere. Bright lights shine down on you from above, illuminating this
 area quite well.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1749,7 +1749,7 @@ and it's fairly cold in here. You can hear the light humming of a machine
 somewhere. Bright lights shine down on you from above, illuminating this
 area quite well.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1770,7 +1770,7 @@ and it's fairly cold in here. You can hear the light humming of a machine
 somewhere. Bright lights shine down on you from above, illuminating this
 area quite well.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1795,7 +1795,7 @@ and it's fairly cold in here. You can hear the light humming of a machine
 somewhere. Bright lights shine down on you from above, illuminating this
 area quite well.
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1816,7 +1816,7 @@ and it's fairly cold in here. You can hear the light humming of a machine
 somewhere. Bright lights shine down on you from above, illuminating this
 area quite well.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1837,7 +1837,7 @@ and it's fairly cold in here. You can hear the light humming of a machine
 somewhere. Bright lights shine down on you from above, illuminating this
 area quite well.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 ~
@@ -1858,7 +1858,7 @@ and it's fairly cold in here. You can hear the light humming of a machine
 somewhere. Bright lights shine down on you from above, illuminating this
 area quite well.
 ~
-242 d 0
+242 8 0 0 0 0
 D2
 ~
 ~
@@ -1874,7 +1874,7 @@ Washrooms~
 quite clean. Several toilets are here, along with some urinals with motion
 detectors. No more touching filthy handles!
 ~
-242 d 0
+242 8 0 0 0 0
 D1
 ~
 ~
@@ -1890,7 +1890,7 @@ Locker Room~
 and benches sit in front of them. You notice the odd gym bag sitting on top
 of the lockers. At the back of the room you notice a door, leading north.
 ~
-242 d 0
+242 8 0 0 0 0
 D0
 ~
 door~
@@ -1908,7 +1908,7 @@ has scuff marks all over it. The passage is quite wide. It seems as though
 this hall used to be used for hauling equipment and goods. A rough wooden
 door here leads south.
 ~
-242 ad 0
+242 9 0 0 0 0
 D0
 ~
 ~
@@ -1925,7 +1925,7 @@ and a single light bulb hangs from the ceiling. The floor is cement, and
 has scuff marks all over it. The passage is quite wide. It seems as though
 this hall used to be used for hauling equipment and goods.
 ~
-242 ad 0
+242 9 0 0 0 0
 D0
 ~
 ~
@@ -1942,7 +1942,7 @@ and a single light bulb hangs from the ceiling. The floor is cement, and
 has scuff marks all over it. The passage is quite wide. It seems as though
 this hall used to be used for hauling equipment and goods.
 ~
-242 ad 0
+242 9 0 0 0 0
 D0
 ~
 ~
@@ -1959,7 +1959,7 @@ and a single light bulb hangs from the ceiling. The floor is cement, and
 has scuff marks all over it. The passage is quite wide. It seems as though
 this hall used to be used for hauling equipment and goods.
 ~
-242 ad 0
+242 9 0 0 0 0
 D0
 ~
 ~
@@ -1980,7 +1980,7 @@ and a single light bulb hangs from the ceiling. The floor is cement, and
 has scuff marks all over it. The passage is quite wide. It seems as though
 this hall used to be used for hauling equipment and goods.
 ~
-242 ad 0
+242 9 0 0 0 0
 D0
 ~
 ~
@@ -1998,7 +1998,7 @@ has scuff marks all over it. The passage is quite wide. It seems as though
 this hall used to be used for hauling equipment and goods. A wooden door
 leads north.
 ~
-242 ad 0
+242 9 0 0 0 0
 D0
 ~
 door~
@@ -2015,7 +2015,7 @@ large items, and they're covered with dust and cobwebs. You notice a
 calender on the wall, and it's from over 30 years ago. This place
 obviously isn't used anymore.
 ~
-242 ad 0
+242 9 0 0 0 0
 D3
 ~
 door~
@@ -2029,7 +2029,7 @@ looks so comfortable that it most of all resembles a bed with the head end
 raised slightly. Windows look in all directions, giving a great view of
 the city.
 ~
-242 d 0
+242 8 0 0 0 0
 D5
 ~
 ~

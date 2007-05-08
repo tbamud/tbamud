@@ -10,7 +10,7 @@ it. The quest will have one task that will need to be completed to get the
 piece of eq, but there is a quest just to get into the asylum as well. This is
 all in a modern day time period. 
 ~
-345 0 0
+345 0 0 0 0 0
 D5
 ~
 ~
@@ -23,7 +23,7 @@ it anymore. To the north the road is blocked by a fallen tree. To the south
 the road continues. A vine covered brick wall greets the eye to the east,
 effectively hiding what may lay beyond it.
 ~
-345 0 1
+345 0 0 0 0 0
 D2
 ~
 ~
@@ -42,7 +42,7 @@ north and south. There is a break in the wall to the east. A heavy iron bar
 gate stands there allowing a glimpse of what is behind the wall. Next to it is
 an old bronze plaque.
 ~
-345 0 1
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -58,6 +58,11 @@ D2
 ~
 0 0 34503
 E
+iron gate~
+   Made from heavy black iron, the left side of the gate is only hanging by the
+bottom hinge. A large mansion can be seen through the bars.
+~
+E
 plaque sign~
 @y 
 **************************
@@ -68,11 +73,6 @@ plaque sign~
 *   CRIMINALLY INSANE    *
 ************************** @n                  
 ~
-E
-iron gate~
-   Made from heavy black iron, the left side of the gate is only hanging by the
-bottom hinge. A large mansion can be seen through the bars.
-~
 S
 #34503
 A Broken Road~
@@ -80,7 +80,7 @@ A Broken Road~
 better to the north. To the south the road is so bad that its not usable. 
 Your view to the east is blocked by a large vine covered wall.
 ~
-345 0 1
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -104,7 +104,7 @@ gate hangs slightly. To the north and south overgrown bushes and tall grass
 seem to harbor unknown secrets. To the east a dirt road leads to do an old
 abandoned building, shrouded in a fog.
 ~
-345 c 2
+345 4 0 0 0 0
 D1
 ~
 ~
@@ -128,7 +128,7 @@ and saftey. A small over-grown path that leads to south, but its unclear where
 it heads. There is an unnatural fog in the air, making seeing very far
 difficult.
 ~
-345 0 2
+345 0 0 0 0 0
 D1
 ~
 ~
@@ -151,7 +151,7 @@ collapse the whole wall. To the south there appears to be headstones, with
 someone moving in among them... Or it could just be the swirling fog playing
 tricks. 
 ~
-345 c 4
+345 4 0 0 0 0
 D1
    A heavy iron reinforced oak door.
 ~
@@ -169,7 +169,7 @@ nature. A black wrought iron fence with a gate leads to a path to the south.
 Northeast is a large building in disrepair. Faintly to west, you can make out a
 high wall. 
 ~
-345 c 2
+345 4 0 0 0 0
 D0
 ~
 ~
@@ -180,12 +180,12 @@ D2
 gate south~
 1 0 34509
 E
-wall~
-   It is very hard to see from here.
-~
-E
 gate~
    A black wrought iron gate, hanging slightly from its hinges.
+~
+E
+wall~
+   It is very hard to see from here.
 ~
 S
 #34508
@@ -196,7 +196,7 @@ animals have made a home here as well. There is a reception area at the
 northern end of the room with an old sign next to it telling the way to
 different sections of the compound.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -235,7 +235,7 @@ Entrance to the Cemetery~
 them. A few trees can be seen about, looking as depressed as the area around
 them. The path continues east into the cemetery and north past an iron gate.
 ~
-345 0 0
+345 0 0 0 0 0
 D0
    A black wrought iron gate, hanging slightly from its hinges.
 ~
@@ -262,7 +262,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 c 2
+345 4 0 0 0 0
 D1
 ~
 ~
@@ -283,7 +283,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 2
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -315,7 +315,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 2
+345 0 0 0 0 0
 D2
 ~
 ~
@@ -339,7 +339,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 2
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -366,7 +366,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 2
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -394,7 +394,7 @@ foreboding in the air, as if some terribly evil is lurking in the area. All
 around the dead seem to call out from beyond the grave. Although this whole
 place is strange there is something odd about a nearby grave stone.
 ~
-345 0 2
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -426,7 +426,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 2
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -451,7 +451,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 2
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -472,7 +472,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 2
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -494,7 +494,7 @@ exposing the it to the elements. To the north, south, east, and west are entry
 ways into the main building. There are benches, in various states of disrepair,
 scattered throughout the space.
 ~
-345 0 2
+345 0 0 0 0 0
 D0
 ~
 ~
@@ -524,7 +524,7 @@ light doesn't seem to penetrate as far as it should. The sounds of screams con
 be heard faintly in the air. To the north is a heavy door with a lock on the
 outside.
 ~
-345 ad 0
+345 9 0 0 0 0
 D0
 ~
 door north~
@@ -545,7 +545,7 @@ and cob webs. The air is thick with the smell of stale blood and death. Your
 light doesn't seem to penetrate as far as it should. The sounds of screams con
 be heard faintly in the air. To the north is a heavy door off its hinges.
 ~
-345 ad 0
+345 9 0 0 0 0
 D0
 ~
 door north~
@@ -572,7 +572,7 @@ light doesn't seem to penetrate as far as it should. The sounds of screams con
 be heard faintly in the air. To the north is a heavy door with a lock on the
 outside.
 ~
-345 ad 0
+345 9 0 0 0 0
 D0
 ~
 ~
@@ -594,7 +594,7 @@ light doesn't seem to penetrate as far as it should. The sounds of screams con
 be heard faintly in the air. To the east is a heavy door with an old rusted
 lock hanging on it.
 ~
-345 ad 0
+345 9 0 0 0 0
 D0
 ~
 ~
@@ -619,7 +619,7 @@ and cob webs. The air is thick with the smell of stale blood, death, and
 insanity if there is such a smell. Your light doesn't seem to penetrate as far
 as it should. To the south is a heavy wooden door with iron reinforcing straps.
 ~
-345 ad 0
+345 9 0 0 0 0
 D0
 ~
 ~
@@ -645,7 +645,7 @@ and cob webs. The air is thick with the smell of stale blood and death. Your
 light doesn't seem to penetrate as far as it should. The sounds of screams con
 be heard faintly in the air. To the south a door hangs off its hinges.
 ~
-345 ad 0
+345 9 0 0 0 0
 D0
 ~
 ~
@@ -671,7 +671,7 @@ and cob webs. The air is thick with the smell of stale blood and death. Your
 light doesn't seem to penetrate as far as it should. From the south the sounds
 of someone moving around can be heard.
 ~
-345 ad 0
+345 9 0 0 0 0
 D0
 ~
 ~
@@ -692,7 +692,7 @@ to have been all white at one time, thought time has seen to the chipping of the
 paint. The stench of human and animal waste fills the air. The only place to
 retreat is to the south
 ~
-345 d 0
+345 8 0 0 0 0
 D2
 ~
 door south~
@@ -705,7 +705,7 @@ padded, but most of the stuffing has been removed or is hanging out of gaping
 holes. The body of what can only be assumed to be a patient is in one corner as
 if the person had just died yesterday.
 ~
-345 d 0
+345 8 0 0 0 0
 D2
 ~
 door south~
@@ -719,7 +719,7 @@ visitions or as a community room for the patients. The walls use to be a bright
 yellow and show signs that pictures use to hang on them. The only exit is to
 the south.
 ~
-345 d 0
+345 8 0 0 0 0
 D2
 ~
 ~
@@ -732,7 +732,7 @@ of filing cabinets. While the staff may have all left their work area remains
 along with all the files of the patients. Paper litters the floor like a
 carpet. The only entrance or exit is to the west.
 ~
-345 d 0
+345 8 0 0 0 0
 D3
 ~
 ~
@@ -745,7 +745,7 @@ to have been all white at one time, thought time has seen to the chipping of the
 paint. The stench of human and animal waste fills the air. The only place to
 retreat is to the north.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 door north~
@@ -758,7 +758,7 @@ areas all over. This must have been the kitchen, though most of the appliances
 have been removed. While the stench of the rest of the building reaches here as
 well, but for some reason its not as bad.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -772,7 +772,7 @@ padded, but most of the stuffing has been removed or is hanging out of gaping
 holes. The stench of human and animal waste fills the air. To the north is
 only escape from the smell.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -786,7 +786,7 @@ working in the building. This area looks as if it was kept up better and looks
 nicer than the rest of the building. There is a room to the east and a hallway
 that runs from north to south. 
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -811,7 +811,7 @@ A Hallway~
 hanging on the walls. They are worn and dusty but they seem like they might
 have been placed here after the asylum closed. To the east is a door.
 ~
-345 d 0
+345 8 0 0 0 0
 D1
 ~
 door east~
@@ -834,7 +834,7 @@ an office in all the same color. There is an old wooden desk dominating the
 center of the room and a filing cabinet in one corner. The only exit is to the
 west.
 ~
-345 d 0
+345 8 0 0 0 0
 D3
 ~
 door west~
@@ -849,21 +849,21 @@ wooden desk dominating the center of the room and a filing cabinet in one
 corner. On the desk is some yellowed paper. Against one wall is a book case
 that still has a few books on it. The only exit is to the west.
 ~
-345 d 0
+345 8 0 0 0 0
 D3
 ~
 door west~
 1 0 34534
 E
+paper~
+   The paper, yellowed with age, has only one simple line on it: If one is
+seeking true enlightenment, one must first learn the correct words.
+~
+E
 bookcase~
    Old and dusty like the rest of the room the book case only house a few books
 now. Interestingly enough they are all by or about the same person... Edgar
 Allen Poe. What an curious thing that is.
-~
-E
-paper~
-   The paper, yellowed with age, has only one simple line on it: If one is
-seeking true enlightenment, one must first learn the correct words.
 ~
 S
 #34538
@@ -872,7 +872,7 @@ A Hallway~
 hanging on the walls. They are worn and dusty but they seem like they might
 have been placed here after the asylum closed. To the east is a door.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -894,7 +894,7 @@ from the carpet to the wall coverings. It gives the room a dark and depressing
 feeling. There is an old wooden desk dominating the center of the room and a
 filing cabinet in one corner. The only exit is to the west.
 ~
-345 d 0
+345 8 0 0 0 0
 D3
 ~
 door west~
@@ -909,7 +909,7 @@ The faint sounds of screams can be heard but its difficult to tell from what
 direction. From here you can go up to the courtyard or continue you along to
 the north or east.
 ~
-345 cd 0
+345 12 0 0 0 0
 D0
 ~
 ~
@@ -931,7 +931,7 @@ ahead of you. Lining the walls are all sorts of equipment. One thing that
 catches the eyes is a rack with some straight jackets in it, dirty and tan from
 years of use and storage.
 ~
-345 d 0
+345 8 0 0 0 0
 D2
 ~
 ~
@@ -949,7 +949,7 @@ ahead of you. Lining the walls are all sorts of equipment. The way west is
 blocked by debris and would take much to long to get around it. The south is a
 doorway that looks like it use to have door at one point in time.
 ~
-345 d 0
+345 8 0 0 0 0
 D1
 ~
 ~
@@ -966,7 +966,7 @@ table with a light hanging over head. The tile walls and floor are covered in
 blood, some of which looks recent. The smell of death is heavy in the air here.
 The only way to escape this room is to the north and west.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -984,7 +984,7 @@ ahead of you. Lining the walls are all sorts of equipment. The way north is
 blocked by debris and would take much to long to get around it. The hallway
 continues on to the south and there is a doorway to the east.
 ~
-345 d 0
+345 8 0 0 0 0
 D1
 ~
 ~
@@ -1002,7 +1002,7 @@ ahead of you. Lining the walls are all sorts of equipment. The way south is
 blocked by debris. The hallway continues on to the north and there is a doorway
 to the east.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -1020,7 +1020,7 @@ other side of the bed. There is still a needle and syringe on the try. The
 visions of people convulsing and having seizures cross your vision for a brief
 moment.
 ~
-345 d 0
+345 8 0 0 0 0
 D1
 ~
 ~
@@ -1038,7 +1038,7 @@ the top of the bed is an object that looks as if it is suppose to fit over the
 head of the patient. Funny... The piece of electrical equipment doesn't have
 any dust build up on it.
 ~
-345 d 0
+345 8 0 0 0 0
 D2
 ~
 ~
@@ -1055,7 +1055,7 @@ equipment and trash littering the ground everywhere making it difficult to walk
 through. There is a door to the north. The hallway goes east but the passage
 to the west is block with debris.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -1071,7 +1071,7 @@ A Hallway in Disarray ~
 equipment and trash littering the ground everywhere making it difficult to walk
 through. The hallway continues to the west and north.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -1088,7 +1088,7 @@ basement. Old rusted pipes and wires can be seen running above into the dark
 ahead of you. Lining the walls are all sorts of equipment. The hallway runs
 north and south. The lights seem to flicker a lot in this part of the asylum.
 ~
-345 d 0
+345 8 0 0 0 0
 D0
 ~
 ~
@@ -1106,7 +1106,7 @@ ahead of you. Lining the walls are all sorts of equipment. The hallway runs to
 the south and makes a turn to the west here. The lights seem to flicker a lot
 in this part of the asylum.
 ~
-345 d 0
+345 8 0 0 0 0
 D2
 ~
 ~
@@ -1123,21 +1123,21 @@ blood red carpet on the floor and a few disturbing paintings on the walls. In
 the center of the room is wooden table. Even though this room is in good shape
 there is still an uneasy feeling. Maybe its from the low lighting.
 ~
-345 cd 0
+345 12 0 0 0 0
 D3
 ~
 ~
 0 0 34537
 E
+paintings~
+   The paintings are of morbid landscapes or of hell it. They are both
+beautiful and disturbing. They are framed in thick mahogany.
+~
+E
 table~
    The table is about waist high and made from a rich mahogany. It has many
 dents and ding's in it from years of use. The most interesting thing about it
 is its lack of dust.
-~
-E
-paintings~
-   The paintings are of morbid landscapes or of hell it. They are both
-beautiful and disturbing. They are framed in thick mahogany.
 ~
 S
 $~

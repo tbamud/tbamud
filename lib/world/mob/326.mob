@@ -6,7 +6,7 @@ A footman trudges past you, looking worn and tired.
    Poor guy must have been marching all day long.  You notice that the only one
 with a canteen is the guy in the front - must be one of the rank things.  '
 ~
-cdgm 0 0 E
+4172 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -20,7 +20,7 @@ A footman marches along steadily with the rest his troop.
    This man looks as if he could probably march all day and all night without a
 complaint.  Must be what the army would call 'Gung Ho'.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -34,7 +34,7 @@ A footman trudges along with the rest of his troop, trying to stay in step.
 hopping from one foot to the other, watching his fellow footmen, trying to get
 in synche - but to no avail.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -47,7 +47,7 @@ A cavalry soldier walks his horse along the road, giving the steed a rest.
    This man appears to be most proud of not only his steed, but of the position
 he has attained within the Army's Ranks.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -61,7 +61,7 @@ A patrolman walks his rounds, on constant alert for signs of danger or invasion.
 walks with a slow, deliberate gait that suggests readiness and watchfulness.  
 
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -74,7 +74,7 @@ A guard stands at rigid attention, eyes boring down on you as if reading your in
    Strict orders have been placed upon this poor lad - no one in civilian
 clothing may pass without authorization forms from a higher power.    
 ~
-bdegmq 0 0 E
+69722 0 0 0 0 0 0 0 0 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -88,7 +88,7 @@ A lookout appears shocked by your intrusion here.
 invaders from launching surprise attacks upon the camp.  You are now considered
 a breach of security.    
 ~
-bdefg 0 0 E
+122 0 0 0 0 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -102,7 +102,7 @@ A man is here with his back turned to you, unaware of your presence.
 he is watching, he does not notice that you have entered into his small space.
   
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -115,7 +115,7 @@ The lookout is here, fast asleep against the trunk of the tree.
    He is someone you could almost miss were you not searching for someone, he
 is so camoflauged by his face paint and attire.    
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 4 4 1
@@ -128,7 +128,7 @@ A logger is here, pounding away at a tree.
    This man is built like an ox - muscles to match.  Might be a good idea to
 make friends with this one...    
 ~
-dghi 0 0 E
+456 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -141,7 +141,7 @@ A logger is here taking a break from the chopping, leaning on his axe.
    This man is lean and wiry, with small, solid muscles that bely his true
 strength.    
 ~
-bdegm 0 0 E
+4186 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -154,7 +154,7 @@ A logger is propped up against a stump, snoring away.
    If this man can sleep through the sound of loggers hacking at trees with
 axes, then this man has my respect and admiration!    
 ~
-dghi 0 0 E
+456 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 4 4 1
@@ -167,7 +167,7 @@ The logging chief is here barking orders at the top of his lungs.
    How could a man spend his days screaming at the top of his lungs, in
 competition with a dozen axes pounding at trees?  This guy is special...    
 ~
-dghi 0 0 E
+456 0 0 0 0 0 0 0 0 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -182,7 +182,7 @@ face.  She does not seem to notice or care that you have entered into her area
 - she looks at a point in the air just past where she sits - staring at nothing
 and crying for her loss.    
 ~
-bdegnopqr 0 0 E
+254042 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 6 6 0
@@ -195,7 +195,7 @@ A soldier jogs past you, getting a bit of exercise.
    He looks a bit red in the face and maybe even winded, but he continues on.
 A real trooper.  No pun intended.    
 ~
-dgm 0 0 E
+4168 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -208,7 +208,7 @@ A soldier marches past you, intent on his rythym.
    He looks neither right nor left, simply straight ahead at where he is going.
   
 ~
-dgm 0 0 E
+4168 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -220,7 +220,7 @@ A wagon driver stands beside his wagon, mopping his face and forehead from the h
 ~
    He glances up with a small smile and a wave.    
 ~
-bdglm 0 0 E
+6218 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -233,7 +233,7 @@ A little squirrel runs across your path.
    It stops at the edge of the path, raises up on its hind legs and twitches
 its nose at you.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -245,7 +245,7 @@ A small bird hops about on the forest floor, looking for worms or bits of seed.
 ~
    It shies away from your approach, but doesn't take to flight - yet.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -258,7 +258,7 @@ A little rabbit sprints across the path just ahead of you.
    It pauses just at the fringe of the forest and wiggles its pink nose at you.
   
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -272,7 +272,7 @@ A drill sergeant runs along side his men, barking the rythym.
 sides, lending him an air of hostility and savagery.  He looks mean to the
 core.    
 ~
-dgm 0 -100 E
+4168 0 0 0 0 0 0 0 -100 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1

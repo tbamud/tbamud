@@ -8,7 +8,7 @@ laboratories of hell.  Its black eyes stare into you soul with a hunger that
 makes you shiver.  The guardian stands motionless before you, its rough grey
 skin looks impervious to normal weapons.    
 ~
-cdeglm hk -900 E
+6236 0 0 0 0 0 0 0 -900 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -20,7 +20,7 @@ A pile of gold coins lies on the ground.
 ~
    A large sparkly pile of gold coins.    
 ~
-bcde k -800 E
+30 0 0 0 0 0 0 0 -800 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -33,7 +33,7 @@ The male demon Dee lies on the bed here waiting to please you.
    This is the most handsome male you have ever seen.  His naked body makes
 your mouth water.    
 ~
-bcdejm hk -1000 E
+4638 0 0 0 0 0 0 0 -1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -46,7 +46,7 @@ The female demon Dee lies on the bed here waiting to please you.
    This is the most beautiful female you have ever seen.  The curves of her
 naked body make you sweat, and babble uncontrollably.    
 ~
-bcdejm hk -1000 E
+4638 0 0 0 0 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -58,7 +58,7 @@ A shiny gold bar lies on the ground.
 ~
    This gold bar must be worth bucks!    
 ~
-bcde k -800 E
+30 0 0 0 0 0 0 0 -800 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -70,7 +70,7 @@ A yummy looking chicken pot pie is here on the ground.
 ~
    You see a golden crusted pot pie filled with chicken and vegetables.    
 ~
-bcde k -800 E
+30 0 0 0 0 0 0 0 -800 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -82,7 +82,7 @@ A yummy looking beef pot pie is here on the ground.
 ~
    You see a golden crusted pot pie filled with beef and vegetables.    
 ~
-bcde k -800 E
+30 0 0 0 0 0 0 0 -800 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -94,7 +94,7 @@ A yummy looking vegetable pot pie is here on the ground.
 ~
    You see a golden crusted pot pie filled with vegetables.    
 ~
-bcde k -800 E
+30 0 0 0 0 0 0 0 -800 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -107,7 +107,7 @@ A damned soul wanders aimlessly here.
    You see a faint silhouette of a person.  Looking closely at it you can
 barely make out features that would identify it as the person it was in life.
 ~
-cdeg k -700 E
+92 0 0 0 0 0 0 0 -700 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -120,7 +120,7 @@ A tortured soul screams out in pain.
    You see a unrecognizable person going through unheard of and indescribable
 torture.  It screams out at you in pain and terror.    
 ~
-cdegh k -800 E
+220 0 0 0 0 0 0 0 -800 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -134,7 +134,7 @@ A half-eaten person lies here writhing in agony.
 writhes in agony and pain as it gasps frantically for Death to answer its
 desperate plea...    
 ~
-bcdeg k -757 E
+94 0 0 0 0 0 0 0 -757 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -148,7 +148,7 @@ A wall stands here. Its surface seems to move and come to life...
 feet, and toes jutting from the surface.  You hear low moans of horror, pain,
 and sorrow issuing from the walls.    
 ~
-bcdeglmnopqr fhkp -1000 E
+260190 0 0 0 65600 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -161,7 +161,7 @@ A skeletal warrior wanders the planes of hell.
    Rotting flesh and gore drops from the bones of this creature.  Its decaying
 eyes stare at you intently as it sees only you delicious and juicy brain.    
 ~
-cdg k -743 E
+76 0 0 0 0 0 0 0 -743 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -174,7 +174,7 @@ A bloody severed arm lies here.
    The blood arm of some poor luckless indivudual.  The stench of the gore
 covered limb makes you want to retch.    
 ~
-bcdg k -884 E
+78 0 0 0 0 0 0 0 -884 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -186,7 +186,7 @@ A bloody severed foot lies here.
 ~
    This bloody foot definitely wasn't a lucky one.    
 ~
-bcdg k -800 E
+78 0 0 0 0 0 0 0 -800 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -199,7 +199,7 @@ A bloody severed nose lies here.
    I wonder how the person that lost this smells...  Hopefully not as bad as
 this nose does...    
 ~
-bcdg k -800 E
+78 0 0 0 0 0 0 0 -800 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -212,7 +212,7 @@ The blood in the fountain gurgles merrily.
    You see gallons and gallons of thick red blood gurgling in the fountian.  
 
 ~
-bcdg k -950 E
+78 0 0 0 0 0 0 0 -950 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -225,7 +225,7 @@ A lost soul stands here looking lost.
    This soul is definetely clueless to where it is.  He holds a ticket that
 reads #14349023402342039840293481234900049.    
 ~
-cdg k -500 E
+76 0 0 0 0 0 0 0 -500 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -239,7 +239,7 @@ A crispy critter is here being burned to death.
 that is being burned for eternity...  I screams out as the flames lick at its
 body and devour its flesh...    
 ~
-bcdfglmo k -800 E
+22638 0 0 0 0 0 0 0 -800 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -252,7 +252,7 @@ A decaying pile of bones lies here on the ground.
    Stringy bits of flesh blow gently in the breeze.  The bones rattle as you
 walk by them.    
 ~
-bcdgl k -700 E
+2126 0 0 0 0 0 0 0 -700 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -268,7 +268,7 @@ often fed upon by Demon lords and princes.  Their green and red blotched skin
 gives them a diseased and decaying look.  They somewhat resemble shadows or
 ghasts.    
 ~
-cdeglmq hk -900 E
+71772 0 0 0 0 0 0 0 -900 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -282,7 +282,7 @@ The prisoner of hell, Raiden sits here for eternity.
 been thrown at him.  He sits here chained to the wall; banished to hell forever
 by the God.    
 ~
-bcdeglmo hk -1000 E
+22622 0 0 0 0 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -295,7 +295,7 @@ A sad looking individual sits here awaiting torture.
    She is sad looking indeed.  Cuts and scraps all over her.  Many scars and
 burns cover her face and arms.    
 ~
-bcdegh k -800 E
+222 0 0 0 0 0 0 0 -800 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -309,7 +309,7 @@ A sad looking individual sits here awaiting torture.
 burns cover her face and arms.  One of his arms is broken at the forearm and
 hangs limply by his side.    
 ~
-bcdegh k -800 E
+222 0 0 0 0 0 0 0 -800 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -322,7 +322,7 @@ A demonguard patrols the planes of hell.
    This very large demon stands before you licking its daggerlike teeth.  
 Yellow spittle runs down the scales of his blackened skin.    
 ~
-cdg k -800 E
+76 0 0 0 0 0 0 0 -800 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -335,7 +335,7 @@ A burning fool is here, crisping away.
    You can barely make out anything on it.  All you can make out is the flames
 of hell consuming it and the smell of burning flesh.    
 ~
-bcdf hk -900 E
+46 0 0 0 0 0 0 0 -900 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -349,7 +349,7 @@ A construction worker is here welding pipework.
 you look closer at the hard hat you notice it says, '4th DEMONsion Construction
 Co.  '
 ~
-bcdefghlmo hk -666 E
+22782 0 0 0 0 0 0 0 -666 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -363,7 +363,7 @@ A construction worker is here working riviting framework.
 As you look closer at the hard hat you notice it says, '4th DEMONsion
 Construction Co.  '
 ~
-bcdefghlmo hk -666 E
+22782 0 0 0 0 0 0 0 -666 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 2
@@ -377,7 +377,7 @@ A construction worker is here working cutting structural steel.
 As you look closer at the hard hat you notice it says, '4th DEMONsion
 Construction Co.  '
 ~
-bcdefghlmo hk -666 E
+22782 0 0 0 0 0 0 0 -666 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -391,7 +391,7 @@ A fire devil stands here with a box of matches lighting up poor souls.
 with blisters and puss.  As you look at it, it smiles at you with sharp blood
 covered teeth.  This is definetly a face only a mother could love.    
 ~
-cdegl hk -1000 E
+2140 0 0 0 0 0 0 0 -1000 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -405,7 +405,7 @@ A wall of fire is here, creeping slowly across the room.
 room burning everything in its path; Including the poor souls that are chained
 to various posts around the room.    
 ~
-bcdefg hk -600 E
+126 0 0 0 0 0 0 0 -600 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -419,7 +419,7 @@ A hell hound runs free through the halls of hell.
 ghastly red.  Its sooty black teeth and tongue are covered with green spittle
 that runs down its dung covered coat.    
 ~
-cdeghlmnopqr hk -900 E
+260316 0 0 0 0 0 0 0 -900 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -432,7 +432,7 @@ A frozen body lies here on the ground.
    As you look at the corpse you recoil as you notice its eyes still move.  
 They stare intently from its bluish face as if pleading for your help.    
 ~
-bd k -900 E
+10 0 0 0 0 0 0 0 -900 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -448,7 +448,7 @@ painfully freezing the damned souls, quickly thawing them and then starting
 over.  Every couple of minutes it takes time out to break an apendage off of a
 nearby soul and beat the soul with it.    
 ~
-bcdeglo hk -1000 E
+18526 0 0 0 0 0 0 0 -1000 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -462,7 +462,7 @@ A soul trapped under the ice gasps desperately for air.
 iceflow.  It desperatly gasps for air for a few minutes and then seems to die
 for a second before it is restored and begins thrashing about again.    
 ~
-bd k -789 E
+10 0 0 0 0 0 0 0 -789 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -476,7 +476,7 @@ A half frozen body hangs here on a meat hook.
 small white maggots eating away at the body.  The flesh seems to move and
 wriggle with a life of its own...    
 ~
-bd k -876 E
+10 0 0 0 0 0 0 0 -876 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -489,7 +489,7 @@ A small penguin waddles around here on the ice.
    What a cute little penguin....  Wait why is it looking at you that way...  
 HEY!  Penguins don't have teeth!    
 ~
-cdgh k -876 E
+204 0 0 0 0 0 0 0 -876 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -503,7 +503,7 @@ An I-scream worker runs from machine to machine.
 It runs about screaming, 'I SCREAM, YOU SCREAM!  WE ALL SCREAM FOR I SCREAM!!!
 '
 ~
-cdefghl k -706 E
+2300 0 0 0 0 0 0 0 -706 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -516,7 +516,7 @@ An Ice Screamer is here yelling into empty cartons.
    He is dressing in a white jumpsuit with the words, 'Eye Splean I Screamery'
 written on it in large yellow letters.    
 ~
-cdefghl k -706 E
+2300 0 0 0 0 0 0 0 -706 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -530,7 +530,7 @@ A Demonic Foreman sits here looking at blueprints.
 jumpsuit.  The words, '4th DEMONsion Construction Co.  ' are written on the
 back in large black letters.  He seems none to happy to see you.    
 ~
-bcdefglmnopqr hk -1000 E
+260222 0 0 0 0 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -544,7 +544,7 @@ The Secretary of Hell sits here watching the phones ring.
 watching the little lights on the telephone blink.  She is oblivious to your
 presence and seems fascinated by the phones.    
 ~
-bcdeghlo hk -700 E
+18654 0 0 0 0 0 0 0 -700 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 2
@@ -557,7 +557,7 @@ An office worker from hell is here looking for a boss to piss off.
    Just looking at them makes your blood boil.  
 AAAAAAAAAAaaaaaaaaaaaarrrrrrrrgggggghhhhh!!!!!!!!!!!    
 ~
-cdgh k -1000 E
+204 0 0 0 0 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -570,7 +570,7 @@ A records worker is here filing bad reports.
    You see a rather plain looking office personel here filing a file on
 someone.    
 ~
-cdgh k -1000 E
+204 0 0 0 0 0 0 0 -1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -583,7 +583,7 @@ Santa Claus is here checking who has been naughty...
    Its a jolly old man, with red cheeks and a rolly poley belly and a laugh as
 jolly as you can get.    
 ~
-bcdefghlmnopqr hk 1000 E
+260350 0 0 0 0 0 0 0 1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -596,7 +596,7 @@ The High Priest of Hell is here eating 'I Scream'.
    The dark black robes hide most of his features, but you can barely make out
 his emaciated face beneath his hood.    
 ~
-bdgjl hk -1000 E
+2634 0 0 0 0 0 0 0 -1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -608,7 +608,7 @@ A bowl of blood sits here on the altar.
 ~
    Its is a wooden bowl filled with blood and bits of flesh.    
 ~
-bdo hk -900 E
+16394 0 0 0 0 0 0 0 -900 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -621,7 +621,7 @@ A jury member sits here with a guilty sign, waiting for a trial to begin.
    It seems to be a lesser demon disguised as mortal.  Fair trial...  Not
 likely.    
 ~
-bdhl k -800 E
+2186 0 0 0 0 0 0 0 -800 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -634,7 +634,7 @@ Judge Whopper sits here trying to think of a painful sentence.
    This is the High Judge of Hell.  He has never found anyone innocent, and is
 notorious for his painful and harsh punishments.    
 ~
-bdeghlmnopqr hk -1000 E
+260314 0 0 0 0 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -646,7 +646,7 @@ The Lawyer from Hell sits here playing games on his laptop computer.
 ~
    Slimy, sleazy and has very sharp teeth...  A lawyer all right...    
 ~
-bcdhl k -1000 E
+2190 0 0 0 0 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -659,7 +659,7 @@ The Complaints Officer is here watching her favorite soap opera.
    She seems not to notice you; But is absorbed in her favorite soap, 'As The
 Hell Burns'
 ~
-bdhl hk -1000 E
+2186 0 0 0 0 0 0 0 -1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 2
@@ -673,7 +673,7 @@ The Bastard Hiramoto stands here trying to learn Kung Fu from a book.
 to practicing.  He is known to buy anything....  And sell anything people sell
 him.    
 ~
-bcdlo hk -600 E
+18446 0 0 0 0 0 0 0 -600 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -686,7 +686,7 @@ A maintenance worker is here fixing stuff.
    He is in a yellow jumpsuit with a large nuclear warning symbol on the back.
   
 ~
-cdeghlmo hk -750 E
+22748 0 0 0 0 0 0 0 -750 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -698,7 +698,7 @@ A weed is growing out of the cement here.
 ~
    You see a nasty yellow and purple weed.    
 ~
-bd k -1000 E
+10 0 0 0 0 0 0 0 -1000 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -712,7 +712,7 @@ Stanley stands here waiting to sell you one of his wonderful figurines.
 are pretty well known.  He was rumored to disappear around Solace 100 years
 ago.    
 ~
-bdo hk -700 E
+16394 0 0 0 0 0 0 0 -700 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -725,7 +725,7 @@ A half eaten horse carcass is here being digested.
    This is what used to be a horse....  Maybe...  Its hard to tell; half of it
 has been digested already.    
 ~
-bd k -800 E
+10 0 0 0 0 0 0 0 -800 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -738,7 +738,7 @@ A stomach dragon is here digesting Big Mouth's food.
    A large brown and green slime covered reptile.  It seems to move around to
 each food item and proceed to barf acid all over it.    
 ~
-bdo k -900 E
+16394 0 0 0 0 0 0 0 -900 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -751,7 +751,7 @@ A rancid turkey leg sits in a pool of slime here.
    Its one of those really nasty pieces of food in the refrigerator that
 disappears and you wonder if it just walked away....    
 ~
-bd k -900 E
+10 0 0 0 0 0 0 0 -900 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -764,7 +764,7 @@ A reactor specialist sits here checking on the reactor core.
    He is dressed in a black jumpsuit with a large nuclear warning symbol on the
 back.    
 ~
-bcdeghlmo hk -900 E
+22750 0 0 0 0 0 0 0 -900 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -777,7 +777,7 @@ A reactor worker sits here monitoring various screens.
    He is dressed in a black jumpsuit with a large lighting bolt symbol on the
 back.    
 ~
-bcdeghlmo hk -900 E
+22750 0 0 0 0 0 0 0 -900 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -792,7 +792,7 @@ coffee and shouts out, 'DOH!  ' Warning lights blink rapidly as the coffee
 shorts out the control panel.  Homer calmly stands up and unplugs the control
 panel and sits down for a nap.    
 ~
-bdho hk -900 E
+16522 0 0 0 0 0 0 0 -900 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -804,7 +804,7 @@ A nice slice of devils food cake is here waiting to be eaten.
 ~
    Mmmmmm...  Don't you just want to take a bite?    
 ~
-bdo k -900 E
+16394 0 0 0 0 0 0 0 -900 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -816,7 +816,7 @@ A mad cook is here cooking up a storm.
 ~
    You spots you and screams, 'Git awa froom mi food!  ' 'I'll kill you!  '
 ~
-cdegho k -900 E
+16604 0 0 0 0 0 0 0 -900 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -828,7 +828,7 @@ A frantic lady is here tearing her hair out looking for a sale.
 ~
    Ugly!    
 ~
-cdegho k -600 E
+16604 0 0 0 0 0 0 0 -600 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 2
@@ -840,7 +840,7 @@ A nuclear technician is here fiddling with his rad suit.
 ~
    Wau, dont get too close, he seems to be glowing!    
 ~
-bcdeghlmo hk -850 E
+22750 0 0 0 0 0 0 0 -850 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -852,7 +852,7 @@ A stray proton is here wizzing about.
 ~
    I can't see it.  Can you?    
 ~
-dg hk -850 E
+72 0 0 0 0 0 0 0 -850 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -864,7 +864,7 @@ Radiation is here doing unknown things to you.
 ~
    Eagle eyes?    
 ~
-dfg hk -1000 E
+104 0 0 0 0 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -879,7 +879,7 @@ panic button at the moment; Chuckling happily as workers below on the reactor
 floor frantically check dials and gauges while flashing lights and sirens
 sound.    
 ~
-bcdehlo hk -1000 E
+18590 0 0 0 0 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -894,7 +894,7 @@ out in pain.  He pokes and picks at the flesh of the damned who were unlucky
 enough to be tortured close to him.  His black taloned nails rip slowly through
 their flesh, as he cackles with glee at the sounds of their unending pain...  
 ~
-cdeglmo hk -1000 E
+22620 0 0 0 0 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -907,7 +907,7 @@ A frozen side of beef hangs here on a hook.
    This enormous carcass looks as if it came from a small dragon or a very
 large cow.    
 ~
-bdo k -675 E
+16394 0 0 0 0 0 0 0 -675 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -919,7 +919,7 @@ A guard dog sits here guarding the break room.
 ~
    A vicious looking pit bull / demon dog mix is here slobering on the donuts.
 ~
-bd k -900 E
+10 0 0 0 0 0 0 0 -900 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -931,7 +931,7 @@ A mouth watering juicy steak is here steaming.
 ~
    Mmmmmmm.....  Steak....  Mmmmmm...  You feel your mouth start to water.    
 ~
-bd k -900 E
+10 0 0 0 0 0 0 0 -900 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0

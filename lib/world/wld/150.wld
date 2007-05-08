@@ -8,7 +8,7 @@ that the road seems to be perfectly smooth and perfectly straight.
 surrounds the road at this point.
 A traveller passes by and waves cheerfully at you.
 ~
-150 c 1
+150 4 0 0 0 0
 D1
 The King's Road continues in a straight line to the east towards a grand
 castle.
@@ -36,7 +36,7 @@ The King's Road~
    You stand in the center of the great King's Road.  The road is very well
 built, and goes in a straight line due east-west.
 ~
-150 0 1
+150 0 0 0 0 0
 D1
 The King's Road continues in a straight line to the east.
 ~
@@ -54,7 +54,7 @@ The King's Road~
 skill of the builders is apparent, since it is impossible to notice
 any turn or irregularity in the road.
 ~
-150 0 1
+150 0 0 0 0 0
 D1
 You see a castle in the far east.
 ~
@@ -75,7 +75,7 @@ by a deep moat, and its windows are just narrow slits for archers
 to shoot through.  To the north there is a drawbridge across the
 moat.
 ~
-150 0 1
+150 0 0 0 0 0
 D0
 You see the drawbridge.
 ~
@@ -93,7 +93,7 @@ On The Drawbridge~
 you is a huge, double-doored gate.  It seems very strong.  You see some
 whirls in the moat.
 ~
-150 c 1
+150 4 0 0 0 0
 D0
 The gate has huge, but intricately carved hinges.  As the Castle itself,
 it seems designed not only for strength, but also for beauty.
@@ -119,7 +119,7 @@ All around the room, there are shelves with different kinds of cooking
 gear stacked on them.  There is an exit to the north, and one to the east;
 both leading to small passages.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see a small, dimly lit passage.
 ~
@@ -137,7 +137,7 @@ A Small Passage~
 for the servants of the Castle.  It is only dimly lit and quite narrow.
 The passage leads west, and to the east there is a small door.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 The door is small and uninteresting.
 ~
@@ -155,7 +155,7 @@ The Entrance Hall~
 To the north is an exit into the Great Hall.  There is also an exit
 east, and a small door to the west.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the King's Great Hall.
 ~
@@ -182,7 +182,7 @@ The Guard Room~
    You are in a small room, evidently meant for guards currently
 not on duty.  There is only one exit, back to the entrance hall.
 ~
-150 d 0
+150 8 0 0 0 0
 D3
 You see the Castle Entrance.
 ~
@@ -196,7 +196,7 @@ no guards here, and you sense that this part of the Castle is largely
 unused.  There are stairs going up to the tower, and there is also an
 exit to the north.
 ~
-150 cd 0
+150 12 0 0 0 0
 D0
 You see a small, dimly lit passage.
 ~
@@ -218,7 +218,7 @@ The Small Passage~
 mainly for the servants of the Castle.  The passage leads north
 and south.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see a small, dimly lit passage.
 ~
@@ -238,7 +238,7 @@ closer than the clouds outside.  The roof is beautifully painted, by
 someone who must have been a true master.  The hall is very large,
 and could easily seat several hundred people at a banquet.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the King's Great Hall.
 ~
@@ -267,7 +267,7 @@ and could easily seat several hundred people at a banquet.  To your
 north, you see King Welmar's great throne, and to the south is the
 Castle Entrance.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the part of the Great Hall where the throne is.
 ~
@@ -304,7 +304,7 @@ closer than the clouds outside.  The roof is beautifully painted, by
 someone who must have been a true master.  The hall is very large,
 and could easily seat several hundred people at a banquet.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the King's Great Hall.
 ~
@@ -328,7 +328,7 @@ A Passage~
    You are standing in a passage, that leads north and south.  To the south
 it leads towards one of towers.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the small passage continue.
 ~
@@ -344,7 +344,7 @@ The Passage~
    You are in a passage, that leads north and south. To the east there
 is an exit to the Great Hall.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the passage continue.
 ~
@@ -371,7 +371,7 @@ and could easily seat several hundred people at a banquet.  To your
 east, you see King Welmar's great throne, and to the west there is
 an exit to a passage.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You see the part of the Great Hall where the throne is.
 ~
@@ -404,7 +404,7 @@ single block of ivory, though you shiver at the thought of meeting
 the animal that died to yield a piece of that size.  The Hall continues
 to the east, west and south.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You see the King's Great Hall.
 ~
@@ -421,16 +421,16 @@ You see the King's Great Hall.
 ~
 0 -1 15016
 E
-throne ivory~
-   It is large and very beautiful.  The carvings are mainly of animals and magic
-beasts.  
-~
-E
 roof paintings paint~
    The paintings on the roof depict the great heroes and gods.  One of the gods
 is fairly heavy-bellied and incredibly hairy, with a massive beard.  Also among
 them are the great enemies and wrongdoers, such as the evil Goddess Yochlol and
 the powerful evil Wizard Tharoecon.  
+~
+E
+throne ivory~
+   It is large and very beautiful.  The carvings are mainly of animals and magic
+beasts.  
 ~
 S
 #15018
@@ -443,7 +443,7 @@ and could easily seat several hundred people at a banquet.  To your
 west, you see King Welmar's great throne, and to the east there is
 an exit to a small passage.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You see a passage.
 ~
@@ -472,7 +472,7 @@ The Small Passage~
    You are standing in a small passage, that leads north and south.
 To the west, there is an exit into the Great Hall.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 The passage continues to the north.
 ~
@@ -494,7 +494,7 @@ The Passage~
    You are standing in a north-south leading passage.  There is a door
 to the east.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 The passage leads to a staircase.
 ~
@@ -518,7 +518,7 @@ There are doors to the north and west.  The corridor itself is mainly
 used by servants, and lacks some of the beauty of the rest of the
 castle.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 There is a door there!
 ~
@@ -540,7 +540,7 @@ The End Of The Servants' Corridor~
    The corridor leads only west from here, but there is a door to
 the north.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 The door leads to a room intended for the butler.
 ~
@@ -560,7 +560,7 @@ of the weapons seem to be intended for training only, with blunt
 edges and the like, but there are some that might be useful for
 real fighting.  There is a door to the north.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 The door is large and heavy.
 ~
@@ -578,7 +578,7 @@ The Small Passage~
 is also an exit to the west, from which grunts, cheers and heavy blows
 can be heard.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 The passage leads north to some stairs.
 ~
@@ -602,7 +602,7 @@ second floor of the Castle.  The stairs are made of marble, and there
 are pillars carved in the likenesses of trees with little animals
 running up and down the trunks.
 ~
-150 d 0
+150 8 0 0 0 0
 D2
 You see the passage.
 ~
@@ -614,13 +614,13 @@ The stairs lead up to the second floor.
 ~
 0 -1 15049
 E
-pillar pillars tree trees~
-   Very nice.  Squirrels and little birds all over.  
-~
-E
 stairs stair~
    Made out of marble, and as all the rest of the Castle made primarily for
 beauty and with great skill.  
+~
+E
+pillar pillars tree trees~
+   Very nice.  Squirrels and little birds all over.  
 ~
 S
 #15026
@@ -629,7 +629,7 @@ The Servants' Quarters~
 servants.  The room is full of comfortable-looking beds.  There is also
 a large chest, probably containing some of the servants' belongings.
 ~
-150 d 0
+150 8 0 0 0 0
 D2
 The door is made out of wood.
 ~
@@ -648,7 +648,7 @@ in the servants' wing, and still it is large and comfortable; almost
 luxurious, in fact.  There is a large bed and a drawer in the room.
 The only exit is via the door to the south.
 ~
-150 d 0
+150 8 0 0 0 0
 D2
 You see the corridor.
 ~
@@ -665,7 +665,7 @@ The Guards' Barracks~
 obvious, that this is where the guards off duty spend most of their
 time, drinking and gambling or, probably, mostly sleeping.
 ~
-150 d 0
+150 8 0 0 0 0
 D2
 The door is large and heavy.
 ~
@@ -683,7 +683,7 @@ you notice that for the first time since you entered the castle,
 things are not aesthetically made.  Instead it looks more functional
 and prison-like.
 ~
-150 d 0
+150 8 0 0 0 0
 D2
 You see the small passage.
 ~
@@ -704,7 +704,7 @@ S
 At A Bend In The Corridor~
    You are standing at a place where the corridor bends from east to north.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the corridor continue.
 ~
@@ -721,7 +721,7 @@ The Corridor~
    You are standing in a long corridor, decorated with tapestries
 depicting old times and old heroes.  It leads east and west.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You see the corridor continue.
 ~
@@ -738,7 +738,7 @@ The Corridor~
    You are standing in a long corridor, decorated with tapestries
 depicting old times and old heroes.  It leads east and west.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You see the corridor continue.
 ~
@@ -756,7 +756,7 @@ The Corridor~
 depicting old times and old heroes.  The corridor continues west,
 and to the north you see the luxurious guest wing.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the guest wing.
 ~
@@ -773,7 +773,7 @@ In The South-East Tower~
    This part of the tower is fairly uninteresting, but it leads further
 upwards...
 ~
-150 d 0
+150 8 0 0 0 0
 D4
 The room at the top of the tower seems darkish for some reason.
 ~
@@ -791,7 +791,7 @@ The Corridor~
 depicting old times and old heroes.  It leads north and south.  There
 is also an exit to the east here.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the corridor continue.
 ~
@@ -813,7 +813,7 @@ By The Treasure Room~
    You are standing by a great iron door.  The door is very large, and
 seems very solid indeed.  There is a sign posted by it. 
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You see a large steel door.
 ~
@@ -841,7 +841,7 @@ however, that most of these things are too well known to be sold
 anywhere, without branding yourself as a thief, and condemning yourself
 to instant death at the hands of the Royal Guard.
 ~
-150 d 0
+150 8 0 0 0 0
 D3
 You see a large steel door.
 ~
@@ -859,7 +859,7 @@ The Guest Wing~
 guests are housed.  To the east there is a large, ornamented
 door, and a somewhat smaller one leads north. 
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 The door seems to lead to a guest room.
 ~
@@ -884,7 +884,7 @@ room of the suite, but it is huge and tastefully decorated.  All the
 furniture is not only beautiful, but also made for comfort.  To the
 north, there is an exit to the bedroom, and there is a door to the west.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the bedroom.
 ~
@@ -901,7 +901,7 @@ The Corridor~
    You are standing in a long corridor, decorated with tapestries
 depicting old times and old heroes.  It leads north and south.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the corridor continue.
 ~
@@ -918,7 +918,7 @@ The Ball Room~
    You are standing in the great Ball Room.  It is a truly large room,
 with a stage for an orchestra in the south-east end.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the Ball Room.
 ~
@@ -936,7 +936,7 @@ By The Stage~
 musicians to play on at the same time.  The Ball Room continues
 to the west and north.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the Ball Room.
 ~
@@ -954,7 +954,7 @@ A Guest Room~
 you can tell it is not meant for any of the most illustrious guests,
 since it lacks that extreme luxury found elsewhere in the Castle.
 ~
-150 d 0
+150 8 0 0 0 0
 D2
 Behind the door, you see the entrance to the Guest Wing.
 ~
@@ -967,7 +967,7 @@ The Bedroom~
 against the northern wall.  The room is large and cosy, and the bed
 virtually begs you to lie down in it and sleep.
 ~
-150 d 0
+150 8 0 0 0 0
 D2
 You see the living room of the suite.
 ~
@@ -984,7 +984,7 @@ The Corridor~
 depicting old times and old heroes.  It leads north and south.  There
 is an exit to the east, that leads to a large room.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 You see the corridor continue.
 ~
@@ -1006,7 +1006,7 @@ The Ball Room~
    You are standing in the great Ball Room.  It is a truly large room,
 with a stage for an orchestra in the south-east end.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You see the Ball Room.
 ~
@@ -1028,7 +1028,7 @@ The Ball Room~
    You are standing in the great Ball Room.  It is a truly large room,
 with a stage for an orchestra in the south-east end.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 To the east, you can enter a tower.
 ~
@@ -1051,7 +1051,7 @@ In The Tower~
 towers of the Castle.  To the west, you can enter the Ball Room and
 there are stairs leading up into the Tower.
 ~
-150 d 0
+150 8 0 0 0 0
 D3
 You see the Ball Room.
 ~
@@ -1072,7 +1072,7 @@ The Grand Staircase~
    You are standing on a great staircase, that leads up and down.  To 
 the east, there is a large oak door, and a corridor leads south.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 The door is large and made out of oak.
 ~
@@ -1105,7 +1105,7 @@ The Cosy Room~
 with a fire burning, and a few comfortable chairs around a little
 table.  There is a door to the west, and also an exit to the east.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You see a large bedroom.
 ~
@@ -1117,17 +1117,17 @@ The door is large, and made out of oak.
 door large oak~
 1 15014 15049
 E
-chairs~
-   The chairs are arranged around the fireplace.  
+fire fireplace~
+   The fire is built out of logs, and seems to be able to burn for quite a while
+longer.  
 ~
 E
 table~
    The table is made of mahogany, and elegant in a cosy way(!  )
 ~
 E
-fire fireplace~
-   The fire is built out of logs, and seems to be able to burn for quite a while
-longer.  
+chairs~
+   The chairs are arranged around the fireplace.  
 ~
 S
 #15051
@@ -1139,20 +1139,16 @@ works such as: 'A Treatise on the History of Midgaard and surrounding
 areas', 'Magic - A Beginner's Introduction' and many others.  There is
 an exit to the west.
 ~
-150 d 0
+150 8 0 0 0 0
 D3
 There is a large and cosy room to the west.
 ~
 ~
 0 -1 15050
 E
-magic~
-   Beginner?  This book goes beyond most of what YOU know about magic anyway.  
-But then, there are levels of magical knowledge, it seems.  
-~
-E
-history midgaard~
-   A dry tome, filled with boring knowledge.  
+books book shelf shelves bookshelf bookshelves~
+   Most of the books seem worn, as if thoroughly studied.  The King evidently is
+interested in keeping himself educated.  
 ~
 E
 bed~
@@ -1160,9 +1156,13 @@ bed~
 Royal Bed!  
 ~
 E
-books book shelf shelves bookshelf bookshelves~
-   Most of the books seem worn, as if thoroughly studied.  The King evidently is
-interested in keeping himself educated.  
+history midgaard~
+   A dry tome, filled with boring knowledge.  
+~
+E
+magic~
+   Beginner?  This book goes beyond most of what YOU know about magic anyway.  
+But then, there are levels of magical knowledge, it seems.  
 ~
 S
 #15052
@@ -1172,19 +1172,19 @@ room is small, and the only light source is a flickering candle, on
 a cluttered table, in the middle of the room.  The only obvious exit
 is back down the stairs.
 ~
-150 d 0
+150 8 0 0 0 0
 D5
 The stairs go down the tower.
 ~
 ~
 0 -1 15034
 E
-candle~
-   Small, uninteresting...  A candle that is as normal as can be.  
-~
-E
 table~
    On the table are various objects, all very strange-looking.  
+~
+E
+candle~
+   Small, uninteresting...  A candle that is as normal as can be.  
 ~
 S
 #15053
@@ -1195,7 +1195,7 @@ guarding.  The windows are slits for bowmen, very narrow on the
 outward side and broad inwards to allow a wide shooting angle.
 The only evident exit is down the stairs again.
 ~
-150 d 0
+150 8 0 0 0 0
 D5
 The stairs go down to the second floor.
 ~
@@ -1215,7 +1215,7 @@ north and east you see a vast mountain range, and far to the west
 a beautiful lake.  A bit closer, the town of Midgaard lies at the
 end of the King's Road.  The only exit you can see is down again.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 To the north, the tall White Mountains have their highest peaks.
 The mountaintops disappear in the white clouds, far above the 
@@ -1257,7 +1257,7 @@ torch flickering in the room which this staircase is built off of.
    The stairs lead upwards and they open up onto a fairly small
 room to the east.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 A small room opens up to the east.
 ~
@@ -1279,7 +1279,7 @@ cells through the south door.
 and a deck of cards.  A stairwell has been built into the western wall
 and it leads upwards. 
 ~
-150 d 0
+150 8 0 0 0 0
 D2
 Through the peep hole at the top of the small wooden door you can see
 that there is a small corridor leading past several cells.
@@ -1292,14 +1292,14 @@ A small stairwell built into the western wall of the room leads upwards.
 ~
 0 -1 15055
 E
-card floor~
-   The card on the floor seems to be the Ace of Spades...  A bad card to find
-indeed.  What could be the bad luck brought about by this discovery?  
-~
-E
 table cards deck~
    There is a deck of cards on the table in a small pile.  There is one card
 lying on the floor however.  
+~
+E
+card floor~
+   The card on the floor seems to be the Ace of Spades...  A bad card to find
+indeed.  What could be the bad luck brought about by this discovery?  
 ~
 S
 #15057
@@ -1316,7 +1316,7 @@ the corridor right near the north end and one isolated at the south
 end of the corridor with a small metal plaque located over the door
 in the keystone of the archway.
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 A small wooden door blocks the way out of the prison.
 ~
@@ -1350,7 +1350,7 @@ A Cell~
 western wall where something has broken through the stones
 into the cell.  There is a cell door in the eastern wall.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 The cell door to the east leads back to the prison hallway.
 ~
@@ -1370,7 +1370,7 @@ the floor to keep some warmth.  It seems that the prisoner kept
 here is treated quite well, almost too well for a murderer of
 an entire town...
 ~
-150 d 0
+150 8 0 0 0 0
 D0
 The cell door to the north leads back to the prison hallway.
 ~
@@ -1383,7 +1383,7 @@ A Cell~
 has lived in it for quite some time.  A small cell door is located in
 the west wall.
 ~
-150 d 0
+150 8 0 0 0 0
 D3
 The cell door to the west leads back to the prison hallway.
 ~
@@ -1400,7 +1400,7 @@ a peaceful feeling come over you as you realize that mankind
 has not passed this way for some time.
    The faded trail appears to lead north and south.
 ~
-150 0 4
+150 0 0 0 0 0
 D0
 The travel upon the King's Road can be heard off to the north.
 ~
@@ -1424,7 +1424,7 @@ used that it has almost completely grown over with vegitation
 from the woods here.  
    The faded trail appears to lead north and east.
 ~
-150 0 4
+150 0 0 0 0 0
 D0
 The trail continues northwards.
 ~
@@ -1450,7 +1450,7 @@ from the woods here.
 a strange eerie silence seems to hang in the air, almost blocking
 out all the sounds that you can hear from the north and east.
 ~
-150 0 4
+150 0 0 0 0 0
 D2
 The undergrowth begins to open up to the south and you can see what
 appears to be a small village to the south.  It is very quiet, almost
@@ -1477,7 +1477,7 @@ village either.  It is almost as still and silent as the woods
 to the north.
 There is a small sign lying by the side of the road here.
 ~
-150 0 2
+150 0 0 0 0 0
 D0
 An trail leads into the heavy undergrowth to the north.
 ~
@@ -1517,7 +1517,7 @@ as if the village hides a secret which they do not want to be spread
 about.
    There is another house standing on the east side of the road.  
 ~
-150 0 2
+150 0 0 0 0 0
 D0
 The dirt road continues to the north.
 ~
@@ -1550,7 +1550,7 @@ a building to the east with a small sign hanging out front from a black
 and charred chain.
    The dirt road continues north and south.
 ~
-150 0 2
+150 0 0 0 0 0
 D0
 The small dirt road continues towards the north.
 ~
@@ -1596,7 +1596,7 @@ decade ago, but the village seems to have been empty for almost
 that long.
    The dirt road leads away from the carnage to the north.
 ~
-150 0 2
+150 0 0 0 0 0
 D0
 Just near the north edge of the pit a small and narrow trail leads
 away.
@@ -1614,7 +1614,7 @@ how it all seems so recent, since there are no cobwebs, and there
 is no dust on anything.
    The dirt road can be seen to the east through the doorway.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You can see the dirt road through the doorway to the east.
 ~
@@ -1633,7 +1633,7 @@ might be able to sell it as antique.
    The meager light of the road shines through the doorway to the
 west.
 ~
-150 ad 0
+150 9 0 0 0 0
 D3
 You can see the dirt road through the doorway to the west.
 ~
@@ -1650,7 +1650,7 @@ really strange, perhaps it wuld be in your best interests to leave as
 soon as humanly possible.
    The road is back through the open doorway to the east.
 ~
-150 d 0
+150 8 0 0 0 0
 D1
 You can see the dirt road through the doorway to the east.
 ~
@@ -1669,7 +1669,7 @@ near what is left of the north wall seems to indicate that this was
 once a shop.
    The road lies to the west through the blackened wall.
 ~
-150 0 2
+150 0 0 0 0 0
 D3
 You can see the dirt road to the west.
 ~
@@ -1687,7 +1687,7 @@ all around you seems to be almost contrived, and doesn't seem natural
 for this kind of vegitation.
    The path continues west and you can see light to the east.
 ~
-150 ad 1
+150 9 0 0 0 0
 D1
 The path continues towards a small intersection with a dirt road.
 ~
@@ -1707,7 +1707,7 @@ as if they didn't want to feel your presence.  The wood is almost totally
 silent and you wonder silently to yourself why this could be.
    The path appears to continue east and west.
 ~
-150 ad 1
+150 9 0 0 0 0
 D1
 The path continues through the darkness.
 ~
@@ -1735,7 +1735,7 @@ far above your heads blocking out the sky.
 in colour.  This glow provides enough light for you to see with even
 though the sky above has been blotted out.
 ~
-150 d 1
+150 8 0 0 0 0
 D1
 A narrow path leads away into the darkness.
 ~

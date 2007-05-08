@@ -16,7 +16,7 @@
             Other than that, there isn't much. It's a big kitchen with 
             kitchen-like things. :)
 ~
-220 dj 0
+220 520 0 0 0 0
 E
 theme~
    Imagine a huge, giant-sized kitchen, in which utensils are about as tall as
@@ -31,7 +31,7 @@ the north are highly @Gun@gpl@Gea@gsa@Gnt@y, and everything around is tremendous
 The temperature is agreeable, though definitely on the @rwarm@y side.  The cavernous
 room looks to be some sort of...@Wkitchen@y.@n 
 ~
-220 d 0
+220 8 0 0 0 0
 D0
 @DTo the north, a large chair is pulled out from under a table.  @n
 ~
@@ -45,7 +45,7 @@ the table slightly, and you can hardly see over the @cpale blue @ycushion.  A
 refrigerator is visible to the east, as well as an enormous table to the north.
 Also, ominous clouds of dust seem to stir, almost as if they were alive...@m
 ~
-220 d 0
+220 8 0 0 0 0
 D0
 @DNothing can be made out in the darkness under the table to the north.  @n
 ~
@@ -86,7 +86,7 @@ visible.  Whispers seem to come from all directions, while clouds of dust dance
 noxiously by.  To the east, the oven door is left open.  It looks like an easy
 climb from here.
 ~
-220 ad 0
+220 9 0 0 0 0
 D0
 ~
 ~
@@ -108,7 +108,7 @@ though it is impossible to make anything out.  To the west, a monstrous looking
 cat watches the space you occupy intently, as if it were waiting for something
 or someone to appear.
 ~
-220 d 0
+220 8 0 0 0 0
 D0
    There is a flame dancing inside, but nothing else is visible.    
 ~
@@ -138,29 +138,16 @@ temperature.  One of the walls is decorated with family @Dphotos @yportraying a
 happy group of mice.  The presence of numerous @Wbooks@y, @Ymaps @yand @gglobes @yhints at a
 person who enjoys travel.@n
 ~
-220 de 0
+220 24 0 0 0 0
 D2
 ~
 ~
 0 0 22004
 E
-maps globes~
-   Several different-size globes sit around the room, and maps are spread out
-in various places.  Comically large thumbtacks are placed on random locations
-over the world.  Cities like @CVe@cni@Cce@n, @RNe@Ww Yo@Brk@n, @yR@Yom@ye@n and @GTo@gky@Go@n are circled in
-bold @Rred@n.    
-~
-E
-photos walls pictures~
-   A happy mouse family is depicted in the many pictures along the walls.  One
-of the most @Ceye-catching@n is the image of a young mouse at a theme park,
-wearing what looks to be a set of plastic @yhuman ears@n over his head.  
-@WStr@wan@Dge@n...    
-~
-E
-desk~
-   This desk is cluttered with paperwads and chewed-up pens.  A thick book is
-pulled open, and looks to be a kind of @Ddiary@n.    
+books~
+   The books laying around are all thick and ancient looking.  Upon closer
+inspection, it seems like they're all books on history or geography.  There are
+several atlases, as well.    
 ~
 E
 diary~
@@ -170,10 +157,23 @@ stay in this place for a night, merely to rest before I continued my journey,
 but it seems as if I've met my match in the devilcat named @DO@Wre@Do@n.    
 ~
 E
-books~
-   The books laying around are all thick and ancient looking.  Upon closer
-inspection, it seems like they're all books on history or geography.  There are
-several atlases, as well.    
+desk~
+   This desk is cluttered with paperwads and chewed-up pens.  A thick book is
+pulled open, and looks to be a kind of @Ddiary@n.    
+~
+E
+photos walls pictures~
+   A happy mouse family is depicted in the many pictures along the walls.  One
+of the most @Ceye-catching@n is the image of a young mouse at a theme park,
+wearing what looks to be a set of plastic @yhuman ears@n over his head.  
+@WStr@wan@Dge@n...    
+~
+E
+maps globes~
+   Several different-size globes sit around the room, and maps are spread out
+in various places.  Comically large thumbtacks are placed on random locations
+over the world.  Cities like @CVe@cni@Cce@n, @RNe@Ww Yo@Brk@n, @yR@Yom@ye@n and @GTo@gky@Go@n are circled in
+bold @Rred@n.    
 ~
 S
 #22006
@@ -183,7 +183,7 @@ kitty kibble.  A plush @rred @Rcushion @ylays in the furthest corner of the room
 a collection of multi-colored jingle balls and squeaky toys are scattered around
 it.  A food-and-water bowl lies empty, @Gmold @ycreeping over it.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D1
 ~
 ~
@@ -201,7 +201,7 @@ randomly, and a ray of @Yl@yi@wg@ch@Ct@y falls curiously over this spot.  A mous
 nearby to the west.  Paint peels off the door, which is blocked by a heavy
 @Dpackage@y.@n 
 ~
-220 d 0
+220 8 0 0 0 0
 D2
 ~
 ~
@@ -221,7 +221,7 @@ S
 An unpleasant smell fills the stuffy air, and heat waves blow in from the east.
 A string of @Rspaghetti @yis dangling from the top of the oven.  @GGross!@n
 ~
-220 d 0
+220 8 0 0 0 0
 D0
 @DPaw prints mar the layer of dust to the north.  @n
 ~
@@ -260,7 +260,7 @@ side.  The buttons are huge, each one as big as your head.  A dial tone blares
 from one of the speakers, and a @RPOWER@y light blinks angrily.  The @Wcord@y is very
 thick and spirals upward.@n
 ~
-220 0 0
+220 0 0 0 0 0
 D1
 @DTo the east, a large chair is pulled out from under a table.  @n
 ~
@@ -285,7 +285,7 @@ on the inside of it.  The smell of rotten food is thick and choking.  A
 lightbulb high above you flickers incessantly, and there is some mumbling coming
 from up high.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D0
 @DA burning smell wafts in from the north.  @n
 ~
@@ -302,14 +302,14 @@ D4
 ~
 0 0 22017
 E
-photos~
-   An autographed photo of @MBritney @CSpears@n reads @WTo Hank, love Britney
-xoxo@n.    
-~
-E
 sticky notes~
    A sticky note tacked onto the fridge reads @WDon't forget to take the cat
 out.  Call mouse exterminator when you get home@n.  Weird.    
+~
+E
+photos~
+   An autographed photo of @MBritney @CSpears@n reads @WTo Hank, love Britney
+xoxo@n.    
 ~
 S
 #22011
@@ -318,7 +318,7 @@ S
 packages are tall, brown and lumpy.  The way they are situated seems ideal for
 climbing.  The side of the cushion is torn, and fluff spills out of it.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D0
 @DThe kitchen table is just a leap away.  @n
 ~
@@ -344,7 +344,7 @@ S
 heat rods glow a @Rvibrant @Yorange @ycolor, dimly lighting the oven.  Steel beams
 form a baking rack above.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D3
 @DTo the west, the oven door lies open.  @n
 ~
@@ -358,7 +358,7 @@ flipped open to a random @Dpage@y.  A tall @Dpen@y is leaned precariously agains
 the walls, though beads of ink stream down it sides.  The corners of the counter
 are crawling with dust and spiderwebs.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D0
 @DChopped vegetables are piled to the north.  @n
 ~
@@ -370,14 +370,14 @@ D5
 ~
 0 0 22009
 E
-pen~
-   Visible through the rivulets of ink dripping down, the words @WHank's Auto
-Repair@n are painted onto the pen in small caps.    
-~
-E
 page datebook book spiral~
    A scribbled message reminds whoever it was meant for to take out the cat-
 but the date it is written on was at least two years ago!    
+~
+E
+pen~
+   Visible through the rivulets of ink dripping down, the words @WHank's Auto
+Repair@n are painted onto the pen in small caps.    
 ~
 S
 #22014
@@ -388,7 +388,7 @@ and carrot slices are piled into a tower on the corner of the cutting board.
 The stench from other @gvegetables@y make the area smell terrible.  Looking @Ddown@y, a
 kitchen drawer is slightly cracked open.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D0
 @DThere is a sink in the north.  @n
 ~
@@ -406,13 +406,13 @@ it.  @n
 ~
 0 0 22016
 E
+chef knife~
+   This gigantic @DChef's knife@n is covered in rust and cobwebs.    
+~
+E
 other vegetables~
    @gMoldy@n bits of celery, piles of cheese gone bad and stinking potato
 slices appear to have been sitting for ages.  They're hardly recognizable!    
-~
-E
-chef knife~
-   This gigantic @DChef's knife@n is covered in rust and cobwebs.    
 ~
 S
 #22015
@@ -422,7 +422,7 @@ spoons and thin saucers float around on the surface.  There are metal utensils
 sunk to the bottom, though they are covered in @Ggreen @gmold@y.  Unrecognizable
 chunks of food are also drifting past.@n
 ~
-220 d 6
+220 8 0 0 0 0
 D2
 @DA big cutting board lies to the south.  @n
 ~
@@ -436,7 +436,7 @@ spoons are organized into a plastic brown tray.  It smells musty, like it hasn't
 been aired out in a long time.  Cobwebs are forming over the various utensils,
 and dust is building in the darker corners.@n
 ~
-220 ad 0
+220 9 0 0 0 0
 D4
 ~
 ~
@@ -450,7 +450,7 @@ to form a kind of city around the milk, with a main 'road' leading east to what
 lay behind.  A jar of mustard has been knocked over and left as it is, so some
 places are @Ggreen @ywhere there should be @Yyellow@y.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D1
 @cA shadow cast by something behind the milk is moving...  @n
 ~
@@ -479,7 +479,7 @@ S
 @Wblindingly @Ybright@y.  A strong smell of generic @Ccleaner @ylingers in the air, much
 like a hospital.@n
 ~
-220 de 0
+220 24 0 0 0 0
 D3
 @DA city made out of pasta boxes, baking soda boxes and jelly jars lies west.  
 @n
@@ -500,7 +500,7 @@ the east, and you can hear a maddening @c-@Cdrip@c-@Wdrip@c-@Cdrip@c- @ysound co
 A half-eaten @Mpopsicle @ylies covered in torn wrapping to the side, a fine layer of
 ice crawling over it.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D1
 @DFrosty, cryptic mists creep and crawl, almost as though they're reaching out
 to you...  @n
@@ -521,7 +521,7 @@ piled about, and an @Cice rack @ysits against one ice-covered wall.  The floor i
 dangerously slippery here, as a something liquid is leaking from the frosted
 ceiling high above.  A large bulb toward the back spreads plenty of @Ylight@y.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D3
 @DA @Mpopsicle @Dlies to the west.
 @n
@@ -529,9 +529,11 @@ D3
 ~
 0 0 22019
 E
-icerack rack~
-   Huge cubes of ice fill in the squares of a @mpurple@n icerack.  They're big
-enough to stand on or make cool ice sculptures out of.    
+liquid ceiling~
+   Something up there is probably broken, because a steady drip of liquid is
+splattering onto the ground below and freezing almost immediately.  As a
+result, a frozen stalactite from the ceiling reaches down to a stalagmite
+building on the floor.    
 ~
 E
 boxes frozen dinners~
@@ -541,11 +543,9 @@ sometimes more!  The tempting pictures of a gigantic @Dfudge @ybrownie@n sure
 look tempting, though.    
 ~
 E
-liquid ceiling~
-   Something up there is probably broken, because a steady drip of liquid is
-splattering onto the ground below and freezing almost immediately.  As a
-result, a frozen stalactite from the ceiling reaches down to a stalagmite
-building on the floor.    
+icerack rack~
+   Huge cubes of ice fill in the squares of a @mpurple@n icerack.  They're big
+enough to stand on or make cool ice sculptures out of.    
 ~
 S
 #22021
@@ -554,7 +554,7 @@ S
 is rusted over and probably hasn't been used a long while.  The steel top of the
 stove is coated in @Dgrime@y.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D0
 @DAnother burner lies to the north.  @n
 ~
@@ -577,7 +577,7 @@ places.  Someone probably forgot to turn this burner off.  The heat is
 completely overwhelming, and the air is very stuffy.  Thick spots of grossly
 cooked grime bubble close to the coil.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D0
 @DLooks like another burner to the north.  @n
 ~
@@ -596,7 +596,7 @@ T 22004
 surrounded by thick layers of stove scum and grime.  Chunks of molded food have
 fallen beneath the coil, and a nasty smell pollutes the stuffy air here.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D2
 ~
 ~
@@ -613,7 +613,7 @@ spills over the edge of the pot in @Gch@gu@Gnks@y, and the lid has fallen off.  
 are noises coming from within, strange, wet-sounding @Gglop@y-@gglop@y-@Dglops@y.  The smell
 in this area is rank and overpowering.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D1
 @DA burner is visible to the east.  @n
 ~
@@ -632,22 +632,22 @@ S
 that are crawling everywhere.  The view from here is pretty nice- you can see
 the fridge, stove and even a fluffy cat in the corner.@n
 ~
-220 d 0
+220 8 0 0 0 0
 D2
 @DA pile of boxes is just a leap away.  @n
 ~
 ~
 0 0 22011
 E
+dinner set food~
+   A mold-filled cup sits next to a plate, which is covered in spiderwebs and
+ants.  The forks and knives sitting around it are completely rusted over.    
+~
+E
 ants~
    A colony of ants appears to be feeding from this spot.  The large creatures
 are all walking in strict, complex lines that lead on and off the table, to
 some unknown location.    
-~
-E
-dinner set food~
-   A mold-filled cup sits next to a plate, which is covered in spiderwebs and
-ants.  The forks and knives sitting around it are completely rusted over.    
 ~
 S
 $~

@@ -7,7 +7,7 @@ The Grand Knight is standing here, waiting for someone to help.
 blue and silver.  He looks VERY strong, as he stands here, ready to help the
 innocent.  
 ~
-bcdilno dhk 1000 E
+26894 0 0 0 16 0 0 0 1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -22,7 +22,7 @@ There is a large rat here, poking through the foodstuffs lying around.
 of your fingers, looking very nasty.  It seems to be quite occupied with all the
 chewed open foodstuffs lying about the room.  
 ~
-bdf k -800 E
+42 0 0 0 0 0 0 0 -800 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -35,7 +35,7 @@ The Cleaver is here eyeing you hungrily in anticipation of its next meal.
    The Cleaver is a huge spidery chittinous creature with four large spindly
 arms ending in cleaverlike talons that will surely cut you to ribbons.  
 ~
-defglnopqr dhkp 0 E
+256120 0 0 0 65552 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0

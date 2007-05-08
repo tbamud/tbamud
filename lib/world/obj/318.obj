@@ -3,7 +3,7 @@ shirt sailors white black~
 a white and black striped sailor's shirt~
 A white and black striped sailor's shirt has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 5 100 0 20
 E
@@ -16,7 +16,7 @@ stubble~
 some prickly chin stubble~
 Some prickly chin stubble is lying in a heap on the floor.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 3 100 0 20
 E
@@ -30,7 +30,7 @@ fistful money~
 a fistful of money~
 A fistful of money is laying here on the ground.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 0 0
 50 1 0 1
 E
@@ -42,7 +42,7 @@ sash black~
 a black sash~
 A pile of crumpled black silk is on the ground.~
 ~
-9 j ak 0
+9 j 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
 1 1 0 20
 E
@@ -56,7 +56,7 @@ knuckles spiked~
 a set of spiked knuckles~
 A set of spiked knuckles have been left here.~
 ~
-5 j an 0
+5 j 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 9
 1 1 0 20
 E
@@ -68,7 +68,7 @@ sash red~
 a red sash~
 A red sash has been left on the floor.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
 3 200 0 20
 E
@@ -83,7 +83,7 @@ wicked scythe~
 a wicked looking scythe~
 A wicked looking scythe lies on the ground.~
 ~
-5 no an 0
+5 no 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 3
 1 1 0 20
 E
@@ -96,7 +96,7 @@ rusted knife~
 a rusted knife~
 A rusted knife has been left here.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 1 2 7 14
 1 1 0 10
 E
@@ -109,7 +109,7 @@ blade marcko's dagger~
 Marcko's Blade~
 A black knife has been left here.~
 ~
-5 adjn an 0
+5 adjn 0 0 0 an 0 0 0 0 0 0 0
 3 5 8 11
 1 1 0 28
 E
@@ -128,7 +128,7 @@ ring opal black~
 a black opal ring~
 A black opal ring has been dropped here.~
 ~
-11 jl ab 0
+11 jl 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 28
 E
@@ -146,7 +146,7 @@ boots razor tipped~
 a pair of razor tipped boots~
 A pair of boots have been left here.~
 ~
-9 bj ag 0
+9 bj 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 3 300 0 19
 E
@@ -165,7 +165,7 @@ hammer~
 a hammer~
 A hammer has been left here on the ground.~
 ~
-5 o an 0
+5 o 0 0 0 an 0 0 0 0 0 0 0
 2 4 5 7
 1 1 0 22
 E
@@ -177,7 +177,7 @@ belt tool carpenter's~
 a carpenter's tool belt~
 A carpenter's tool belt has been dropped here.~
 ~
-15 0 al 0
+15 0 0 0 0 al 0 0 0 0 0 0 0
 100 0 -1 0
 1 1 0 22
 E
@@ -192,7 +192,7 @@ cigar stogie fat~
 a fat cigar~
 A fat cigar is on the floor, just begging to be smoked.~
 ~
-12 b ao 0
+12 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 E
@@ -209,7 +209,7 @@ beer gut foreman~
 the foreman's beer gut~
 The foreman's beer gut is lumped in the corner.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 0
 1 50 0 25
 E
@@ -225,7 +225,7 @@ sweat coat thin~
 a thin coat of sweat~
 A thin coat of sweat is glooped on the floor.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 1 1 0 20
 E
@@ -241,7 +241,7 @@ board clip clipboard~
 a clipboard~
 A clipboard is lying face down on the floor.~
 ~
-12 a ao 0
+12 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 25
 E
@@ -258,7 +258,7 @@ locket anchor~
 an anchor shaped locket~
 A necklace of some sort is lying on the ground.~
 ~
-11 b ac 0
+11 b 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 200 0 21
 E
@@ -279,7 +279,7 @@ dirk shiny~
 a shiny dirk~
 A shiny dirk has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 3 11
 1 1 0 1
 E
@@ -291,7 +291,7 @@ britches pair green~
 a pair of green britches~
 A green pair of britches are crumpled on the floor here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 11
 E
@@ -309,7 +309,7 @@ hat cap'n~
 the Cap'n's hat~
 A sailor's hat is lying here.~
 ~
-9 b ae 0
+9 b 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 1 500 0 20
 E
@@ -326,7 +326,7 @@ sleeves dolphin skin~
 some dolphin skin sleeves~
 A wad of some sort of animal's skin is on the ground.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 6 0 0 0
 1 200 0 23
 E
@@ -340,7 +340,7 @@ arm tie~
 a black leather arm tie~
 A thin piece of black leather is here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 1 0 0 0
 1 100 0 25
 E
@@ -354,7 +354,7 @@ whip backhand~
 a backhand whip~
 A small whip has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 4 2
 1 1 0 2
 E

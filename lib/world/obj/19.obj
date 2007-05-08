@@ -3,7 +3,7 @@ spider's fang~
 a spider's fang~
 A spider's fang glistens here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 2 6 14
 3 300 3 0
 E
@@ -20,7 +20,7 @@ straggling weed~
 a straggling weed~
 A straggling weed grows miserably here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 1 1 0 0
 E
@@ -34,7 +34,7 @@ murky pool water~
 a murky pool of water~
 A murky pool of water stagnates slowly.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
 104 0 0 0
 E
@@ -47,7 +47,7 @@ rusted dagger~
 a rusted dagger~
 A rusted dagger protrudes from the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 2 3 14
 2 100 0 0
 E
@@ -61,7 +61,7 @@ cricket legs~
 a pair of cricket legs~
 A pair of cricket legs lie here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 1 0 0
 T 1915
@@ -76,7 +76,7 @@ primitive fire torch~
 a primitive fire torch~
 A primitive fire torch has been set here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 15 0
 1 1 0 0
 E
@@ -90,7 +90,7 @@ sharply chiselled key~
 a sharply chiselled key~
 A sharply chiselled key has been left here.~
 ~
-18 cdq ac 0
+18 cdq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -105,7 +105,7 @@ stained bone necklace bones~
 @ya stained bone necklace@n~
 @yA necklace of stained bones@g is lying here.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 100 1 0
 E
@@ -119,7 +119,7 @@ dark leathery egg~
 a dark leathery egg~
 A dark leathery egg lies here.~
 ~
-12 q a 0
+12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -133,7 +133,7 @@ Fallorain's Plate fallorains fallorain's plate ancient beautiful breastplate~
 Fallorain's Plate~
 An ancient but beautiful breastplate lies forgotten here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 2 500 4 0
 E
@@ -148,7 +148,7 @@ skeleton rotting old~
 an old rotting skeleton~
 An old rotting skeleton floats forlornly in the water.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -163,7 +163,7 @@ tiny silver tag chain~
 a silver tag~
 A tiny tag on a silver chain sparkles here.~
 ~
-8 i ac 0
+8 i 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 800 5 0
 E
@@ -177,7 +177,7 @@ great trident forked weapon large~
 a great trident~
 A large forked weapon lies abandoned.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 4 14
 2 200 2 0
 E
@@ -191,7 +191,7 @@ warrior's longsword shiny blade sword~
 a warrior's longsword~
 A long shiny blade lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 3 3
 2 200 1 0
 E
@@ -205,7 +205,7 @@ spiked mace~
 a spiked mace~
 A spiked mace has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 5 7
 2 300 2 0
 E
@@ -219,7 +219,7 @@ old wooden shield~
 an old wooden shield~
 An old wooden shield lies forgotten here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 2 100 1 0
 E
@@ -233,7 +233,7 @@ metal wall shield~
 a metal wall shield~
 A metal wall shield glistens brightly here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 9 0 0 0
 4 600 4 0
 E
@@ -247,7 +247,7 @@ smoked meat~
 some smoked meat~
 Some smoked meat is here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 1 0 0
 E
@@ -260,7 +260,7 @@ massive statue frog god~
 the massive statue of a frog god~
 The massive statue of a frog god has been erected here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -274,7 +274,7 @@ several scattered coins~
 several scattered coins~
 Several scattered coins glint temptingly on the ground.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 147 0 0 0
 1 1 0 0
 E
@@ -287,7 +287,7 @@ large webbed cocoon~
 a large webbed cocoon~
 A large webbed cocoon lies here.~
 ~
-12 cdq 0 0
+12 cdq 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 1919
@@ -304,7 +304,7 @@ crimson-stained crimson stained robe~
 a crimson-stained robe~
 A robe lies crumpled here, flecked with red.~
 ~
-11 jl ad n
+11 jl 0 0 0 ad 0 0 0 o 0 0 0
 0 0 0 0
 1 300 2 0
 E
@@ -322,7 +322,7 @@ small piece meat~
 a small piece of meat~
 A small piece of meat has been left to spoil.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 1 1 0 0
 E
@@ -336,7 +336,7 @@ smooth piece velvety leather cloak blanket hide~
 @ma smooth velvety piece of hide@n~
 @mA piece of smooth velvety leather lies forgotten here.@n~
 ~
-9 j ak 0
+9 j 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
 1 400 2 0
 E
@@ -354,7 +354,7 @@ glistening woven long silk cord~
 @Wa glistening silk cord@n~
 @WA long cord of woven silk lies glistening here.@n~
 ~
-11 0 al g
+11 0 0 0 0 al 0 0 0 h 0 0 0
 0 0 0 0
 1 200 2 0
 E
@@ -370,7 +370,7 @@ dark shimmering retina~
 @Da dark shimmering retina@n~
 @DThe dark retina of an orb spider lies here.@n~
 ~
-11 0 ae k
+11 0 0 0 0 ae 0 0 0 l 0 0 0
 0 0 0 0
 1 200 0 0
 E
@@ -384,7 +384,7 @@ chunk rich cheese~
 a chunk of rich cheese~
 A chunk of rich cheese gives off a powerful aroma.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 14 0 0 0
 1 1 0 0
 E
@@ -397,7 +397,7 @@ juicy cluster red grapes~
 a cluster of juicy red grapes~
 A cluster of juicy red grapes has been placed here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
 1 1 0 0
 E
@@ -411,7 +411,7 @@ candleholder dark holder~
 a dark candleholder~
 A dark candleholder stands elegantly here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 10 0 -1 0
 0 0 0 0
 E
@@ -425,7 +425,7 @@ long black candle xcandlex~
 a long black candle~
 A single black candle stands here.~
 ~
-12 cdegjq a 0
+12 cdegjq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 T 1940
@@ -440,7 +440,7 @@ ragged loincloth filthy pile fabric cloth~
 a ragged loincloth~
 A filthy pile of ragged fabric lies here.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -455,7 +455,7 @@ large webbed cocoon~
 a large webbed cocoon~
 A large webbed cocoon lies here~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 1924
@@ -471,7 +471,7 @@ water webbing spider gland water~
 the webbing gland of a spider~
 The webbing gland of a spider is here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 30 0 0 0
 1 100 0 0
 E
@@ -486,7 +486,7 @@ venommace mace large deadly~
 Venommace~
 A large and deadly mace glints on the ground.~
 ~
-5 gjq an 0
+5 gjq 0 0 0 an 0 0 0 0 0 0 0
 5 7 4 6
 3 500 3 0
 E
@@ -504,7 +504,7 @@ blood-red shield blood red~
 a blood-red shield~
 A shield glints red, like a puddle of blood on the ground.~
 ~
-9 gj aj 0
+9 gj 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
 3 500 3 0
 E
@@ -519,7 +519,7 @@ silvery-webbed leather pants black silver webbed~
 silvery-webbed leather pants~
 A dark pair of leather pants lie here, webbed with silver.~
 ~
-9 j af 0
+9 j 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
 2 400 2 0
 E
@@ -534,7 +534,7 @@ delicate chain mail chainmail shirt~
 a delicate chainmail shirt~
 A glittering piece of fine chainmail has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 3 400 3 0
 E
@@ -549,7 +549,7 @@ black spider gloves dark pair leathery~
 black spider gloves~
 A dark pair of leathery gloves lie here.~
 ~
-9 gj ah 0
+9 gj 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 1 200 1 0
 E
@@ -570,7 +570,7 @@ sheer gown heap shadowy shimmering dark fabric~
 a sheer shadowy gown~
 A heap of shimmering dark fabric lies here.~
 ~
-11 g ad 0
+11 g 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 600 4 0
 E
@@ -588,7 +588,7 @@ long burning black candle drowcandle~
 a burning black candle~
 A burning black candle lies here.~
 ~
-1 0 0 0
+1 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -601,7 +601,7 @@ Eilistraee Eilistraee's Pendant silver chain necklace~
 Eilistraee's Pendant~
 A delicate silver necklace glitters here.~
 ~
-8 gq ac 0
+8 gq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 100 1 0
 E
@@ -617,7 +617,7 @@ cabinet mahogany~
 a mahogany cabinet~
 A mahogany cabinet is fixed to the eastern wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 13 1944 0
 0 0 0 0
 E
@@ -633,7 +633,7 @@ key dark little carved wood~
 a key carved from dark wood~
 A little dark key lies here.~
 ~
-18 cdq a 0
+18 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -647,7 +647,7 @@ silvery-webbed silver red vial~
 a silvery-webbed @Rred vial@n~
 @RA silvery-webbed red vial lies here.@n~
 ~
-12 gq a 0
+12 gq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 1 0
 T 1950
@@ -662,7 +662,7 @@ silvery-webbed silver blue vial~
 a silvery-webbed @Bblue vial@n~
 @BA silvery-webbed blue vial lies here.@n~
 ~
-12 gq a 0
+12 gq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 1 0
 T 1951
@@ -677,7 +677,7 @@ silvery-webbed silver green vial~
 a silvery-webbed @Ggreen vial@n~
 @GA silvery-webbed green vial lies here.@n~
 ~
-12 gq a 0
+12 gq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 1952
@@ -692,7 +692,7 @@ contraption large mysterious metal machine~
 a large and mysterious metal contraption~
 A large and mysterious metal contraption hums noisily.~
 ~
-15 g 0 0
+15 g 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 T 1960
@@ -719,7 +719,7 @@ water silvery-webbed clear silver empty vial water~
 a silvery-webbed empty vial~
 A silvery-webbed clear vial is lying here.~
 ~
-17 q a 0
+17 q 0 0 0 a 0 0 0 0 0 0 0
 20 0 13 0
 1 1 0 0
 E
@@ -733,7 +733,7 @@ long sticky flesh albino frog's tongue~
 a long, sticky bit of flesh~
 A long, sticky bit of flesh is lying here.~
 ~
-12 q a 0
+12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -747,7 +747,7 @@ sealed beaker dark blood~
 a sealed beaker of dark blood~
 A sealed beaker of dark blood stands here.~
 ~
-12 q a 0
+12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -761,7 +761,7 @@ silvery-webbed silver black vial~
 a silvery-webbed @Dblack vial@n~
 @DA silvery-webbed black vial lies here.@n~
 ~
-12 q a 0
+12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 1962
@@ -801,7 +801,7 @@ astounding.
 a man and machine-maker. Use them wisely.
 
 ~
-16 cdq a 0
+16 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1954
@@ -833,7 +833,7 @@ astounding.
 a man and machine-maker. Use them wisely.
 
 ~
-16 cdq a 0
+16 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1955
@@ -866,7 +866,7 @@ astounding.
 a man and machine-maker. Use them wisely.
 
 ~
-16 cdq a 0
+16 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1956
@@ -874,7 +874,7 @@ swamp vine~
 a swamp vine~
 A swamp vine splays across the ground like an open hand.~
 ~
-19 q a 0
+19 q 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 1 0 0
 E
@@ -889,7 +889,7 @@ something remember~
 something to remember~
 Something to remember is left here.~
 ~
-0 0 a 0
+0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -901,7 +901,7 @@ crumpled heap gloosy black animal fur~
 a glossy black animal fur~
 A crumpled heap of glossy black fur lies here.~
 ~
-11 0 ak 0
+11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 2 200 0 0
 E
@@ -918,7 +918,7 @@ humanoid skull~
 a humanoid skull~
 A humanoid skull lies decaying here.~
 ~
-13 dq a 0
+13 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -933,7 +933,7 @@ white chainmail arm wrappings armour~
 white chainmail arm wrappings~
 A little pile of white chainmail armour lies here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
 2 200 0 0
 E
@@ -948,7 +948,7 @@ beautiful silvery helmet sleek helm~
 a sleek silvery helm~
 A beautiful silvery helmet lies here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 2 200 0 0
 E
@@ -963,7 +963,7 @@ scaley black leather boots~
 scaley black leather boots~
 Some scaley black leather boots lie here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 1 100 0 0
 E
@@ -979,7 +979,7 @@ fireworks~
 a colourful firework~
 A colourful firework is lying here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 1987
@@ -993,7 +993,7 @@ irridescent webbed ring~
 an irridescent webbed ring~
 A tiny ring glints delicate shades of green and blue.~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 200 0 0
 E

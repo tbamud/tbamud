@@ -4,7 +4,7 @@ Shore~
 all the way up to the shore, splashing some rocks.  The water looks perfect for
 traveling on.  What kind of neat things could this sea hold?    
 ~
-6 0 0
+6 0 0 0 0 0
 D2
 ~
 ~
@@ -31,7 +31,7 @@ Shore~
 before you.  You hear some birds singing in the distance.  It seems very
 peaceful here.    
 ~
-6 c 2
+6 4 0 0 0 0
 D0
 ~
 ~
@@ -47,7 +47,7 @@ Shore~
 before you.  You hear some birds singing in the distance.  It seems very
 peaceful here.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -67,7 +67,7 @@ Sea of Souls~
 the birds on the distance.  The waves intice you to enter the sea, to see what
 lies beyond.    
 ~
-6 0 6
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -87,7 +87,7 @@ Sea of Souls~
 the birds on the distance.  The waves intice you to enter the sea, to see what
 lies beyond.    
 ~
-6 0 6
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -111,7 +111,7 @@ Sea of Souls~
 the birds in the distance.  The waves intice you to enter the sea, to see what
 lies beyond.    
 ~
-6 h 2
+6 128 0 0 0 0
 D0
 ~
 ~
@@ -135,7 +135,7 @@ Shore~
 water.  You think you could walk through some of the sea, but it might not be
 very safe.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -151,7 +151,7 @@ Shore~
 of open sea.  Waves crash down onto your feet, making you wet.  As you look
 down, you can see footprints in the sand.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -171,7 +171,7 @@ Sea of Souls~
 without a boat.  You feel clams and rocks shuffle underneath your feet as your
 feet sink into the sand of the sea.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -195,7 +195,7 @@ Sea of Souls~
 without a boat.  You feel clams and rocks shuffle underneath your feet as your
 feet sink into the sand of the sea.    
 ~
-6 0 6
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -218,7 +218,7 @@ Sea of Souls~
    The sea seems to expand greatly, heading off towards the southwest.  You can
 see a small island off in the distance.  You wonder what could be there.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -242,7 +242,7 @@ Island~
 walking around, you notice several small trees.  The ground is mostly sand.  
 You feel your feet squishing around under you.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -266,7 +266,7 @@ Island~
 surrounded by numerous large trees, shading you from the sun.  The island
 continues to the south.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -285,7 +285,7 @@ Island~
    You have come to the edge of the island.  The ground below you is very
 murky.  You can feet your feet begining to sink into the cold sea.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -304,7 +304,7 @@ Sea of Souls~
    The water before you is calm and quiet.  The only sound you can hear is the
 sound of birds singing in the distance.  You feel very relaxed here.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -323,7 +323,7 @@ Sea of Souls~
    The water before you is calm and quiet.  The only sound you can hear is the
 sound of birds singing in the distance.  You feel very relaxed here.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -342,7 +342,7 @@ Sea of Souls~
    Everything around you is beginning to look the same.  Some small waves
 gently rock your boat, making you sway to and fro.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -358,7 +358,7 @@ A Small Cove~
 here, but the view is marvelous!  In the distance you can see several little
 animals running around playing.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -370,7 +370,7 @@ Sea of Souls~
 There really isn't much here.  To the south you can see a small island.  What
 could be there?    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -394,7 +394,7 @@ Tunnel~
 island.  The walls of the tunnel are made from seaweed, giving the place a
 weird smell.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -409,7 +409,7 @@ Tunnel~
    As you continue making your way through the tunnel, a horrible smell fills
 your nose.  It smells like dead fish!  There is a small island to the east.  
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -429,7 +429,7 @@ Tunnel~
 disappear, showing you a beautiful island to the east.  You wonder what
 treasures are hidden there.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -445,7 +445,7 @@ Tropical Island~
 are a few scattered palm trees growing in the sand.  As you look down at the
 ground, you notice that the sand is red.  How did this happen?    
 ~
-6 0 2
+6 0 0 0 0 0
 D2
 ~
 ~
@@ -460,7 +460,7 @@ Sea of Souls~
    The waves from the sea crash up against your boat, spraying you with a light
 mist.  It feels refreshing and cool on your skin.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -480,7 +480,7 @@ Sea of Souls~
 island.  There isn't one in view, but that doesn't mean that ones not there.  
 
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -500,7 +500,7 @@ Sea of Souls~
 childhood fill your mind as the waves threaten to put you to sleep.  There is
 an island to the east.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -516,7 +516,7 @@ Tropical Island~
 village in the distance, to the south.  Maybe you can get something to eat
 there.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -540,7 +540,7 @@ Tropical Island~
 you.  There are coconuts hanging from the palm trees, and you see some
 weed-like flowers growing through the sand.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -555,7 +555,7 @@ Sea of Souls~
    The water is rather calm here, maybe too calm.  Everything around you is
 quiet.  You suddenly feel alone.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -572,7 +572,7 @@ small floating village towards the east.  Maybe there are some shops there
 where you can sell some of the things you have collected through your journey.
   
 ~
-6 0 7
+6 0 0 0 0 0
 D2
 ~
 ~
@@ -588,7 +588,7 @@ Sea of Souls~
 rock back and forth.  To the east you can see a village.  What could be in it?
   
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -608,7 +608,7 @@ Sea of Souls~
 The water looks very cold and the chances of you surviving temperatures like
 that are very slim.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -624,7 +624,7 @@ Floating Village~
 docked at the side of the village.  Many people shuffle around you busily,
 getting supplies and food.  To the east you can see a small pawn shop.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -644,7 +644,7 @@ Small House~
 people like yourself out.  The house should have been knocked down long ago,
 but may have been kept for historical reasons.    
 ~
-6 0 2
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -660,7 +660,7 @@ Village Resturant~
 bite to eat.  The place is quite packed.  The food here must be good!  The
 smell of fresh cooked fish fills your nose, making you hungry.    
 ~
-6 0 0
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -680,7 +680,7 @@ Village Pawn Shop~
 island.  Everything you could imagine is here, and for a very reasonable price!
 Possibly the best around.    
 ~
-6 0 0
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -700,7 +700,7 @@ Sea of Souls~
 like you could dock your boat at the village and rest for a bit.  There looks
 to be some shops there.  Maybe you should go have a look.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -715,7 +715,7 @@ Narrow Tunnel~
    A narrow path in the sea sits before you.  It seems to lead to an island.  
 You can't whats on the island yet, maybe you should just go there and find out.
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -731,7 +731,7 @@ Narrow Tunnel~
 You can see a little more of the island, but not enough to make out whats
 there.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -751,7 +751,7 @@ Small Cove~
 another dead end.  Guess you'll have to turn around and go a different way.  
 
 ~
-6 0 7
+6 0 0 0 0 0
 D2
 ~
 ~
@@ -763,7 +763,7 @@ Sea of Souls~
 conecting two islands together.  Off in the distance to the west you can see a
 floating village.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -779,7 +779,7 @@ Hidden Island~
 here, just some wild plants, but it might be worth your time to have a look.  
 
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -795,7 +795,7 @@ Hidden Island~
 south.  You must have hit a small cluster of islands.  You wonder if anyone
 lives on these islands.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -811,7 +811,7 @@ Dark Isle~
 north.  You can see a small resturant inside.  You can smell some fresh cooked
 food.  It makes you hungry.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -828,7 +828,7 @@ everything got so dark.  You look up to see a large dome covering the entire
 island!  You reach down and feel the sand.  It's cold and wet between your
 fingers.    
 ~
-6 0 2
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -844,7 +844,7 @@ Dark Isle~
 be out of luck.  You feel sharp pebbles digging into your feet.  You can hear
 them crunching in the darknesss.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -859,7 +859,7 @@ Sea of Souls~
    The water around you is calm and relaxing.  One could fall asleep in these
 surroundings.  Just don't go getting yourself lost!    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -878,7 +878,7 @@ Sea of Souls~
    The water around you is calm and relaxing.  One could fall asleep in there
 surroundings.  Just don't go getting yourself lost!    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -898,7 +898,7 @@ Scorpion Island~
 to kill them, or let them kill you.  You see a small path between the creatures
 that you could safely walk on.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -914,7 +914,7 @@ Scorpion Island~
 you look down at the ground, you notice that you are surrounded by scorpions!
 Maybe you shouldn't have come here.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -929,7 +929,7 @@ Scorpion Island~
    Shadows off of some nearby trees shade you from the sun.  You can feel your
 feet starting to sink into the sand as you continue walking.    
 ~
-6 0 2
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -950,7 +950,7 @@ several large boulders sticking up from the depths of the water.  Where could
 these enormous rocks have come from?  Be careful not to hit one, you wouldn't
 be likely to survive.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -965,7 +965,7 @@ Sea of Souls~
    An enormous portion of the sea sits before you, waiting to be explored.  
 You can see nothing but water, and a few stray birds flying by.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -988,7 +988,7 @@ Sea of Souls~
    An enormous portion of the sea sits before you, waiting to be explored.  
 You can see nothing but water, and a few stray birds flying by.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1007,7 +1007,7 @@ Sea of Souls~
    An enormous portion of the sea sits before you, waiting to be explored.  
 You can see nothing but water, and a few stray birds flying by.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1023,7 +1023,7 @@ Sea of Souls~
 appear to be much there, but it might be worth your time to stop and have a
 look.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1042,7 +1042,7 @@ Sea of Souls~
    The sea almost seems to end here.  The start of a small island is to the
 south, waiting to be explored.  What creatures will you encounter there?    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1058,7 +1058,7 @@ Forgotten Island~
 to have been abandoned some time ago.  All the trees are dead, the ground is
 covered in twigs and dead leaves.  You suddenly feel alone.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1075,7 +1075,7 @@ layer of sand.  You bend down and brush away some of the sand to expose an
 ancient tablet.  There are drawings on here that you are unable to read.  You
 begin to wonder who was on this island before you, and what happened to them.
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1099,7 +1099,7 @@ Forgotten Island~
 sea.  You feel a sudden sense of freedom come over you.  A small breeze picks
 up, blowing warm air across your face.    
 ~
-6 0 2
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1114,7 +1114,7 @@ Sea of Souls~
    You feel your boat gently sway back and forth from the waves of the sea.  
 You can see a small island to the west.  It appears to be abandoned.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1138,7 +1138,7 @@ Sea of Souls~
 One to the west and one to the southeast.  The one to the southeast is rather
 large.  What could be over there?    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1159,7 +1159,7 @@ several large boulders sticking up from the depths of the water.  Where could
 these enormous rocks have come from?  Be careful not to hit one, you wouldn't
 be likely to survive.    
 ~
-6 0 7
+6 0 0 0 0 0
 D2
 ~
 ~
@@ -1175,7 +1175,7 @@ Sea of Souls~
 off to the south.  The island looks bigger than the rest that you have seen.  
 What could be there?    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1195,7 +1195,7 @@ Dragon Isle~
 island never leave it.  Maybe you should leave before you are spotted as
 someones lunch.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1215,7 +1215,7 @@ Dragon Isle~
 footprints in the sand.  You step inside of one, and suddenly feel very scared.
 You're not alone here.    
 ~
-6 0 2
+6 0 0 0 0 0
 D2
 ~
 ~
@@ -1231,7 +1231,7 @@ Sea of Souls~
 to tip over.  You can hear some birds singing in the distance.  You feel very
 peaceful here.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1247,7 +1247,7 @@ Sea of Souls~
 and see a large island to the east.  You can see that several large trees have
 been knocked down.  What could have caused something like this?    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1267,7 +1267,7 @@ Sea of Souls~
 to tip over.  You can hear some birds singing in the distance.  You feel very
 peaceful here.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1284,7 +1284,7 @@ water.  The water must be very deep here.  As you look over the side of your
 boat, into the water you see nothing but blackness.  It makes you think of
 death.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1303,7 +1303,7 @@ Dragon Isle~
    As you continue on, you pass an old crumbled cave.  It was most likely
 crushed by one of the dragons while remove it's prey from the cave.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1319,7 +1319,7 @@ Dragon Isle~
 To the east, the island continues.  To the west is the sea.  Maybe you had
 better leave the island while you still can.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1338,7 +1338,7 @@ Sea of Souls~
    As you continue sailing along, you spot a large island to the east.  The
 island looks to have been left in ruins.  Maybe shouldn't go there.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1354,7 +1354,7 @@ Sea of Souls~
 and see a large island to the east.  You can see that several large trees have
 been knocked down.  What could have caused something like this?    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1371,7 +1371,7 @@ water.  The water must be very deep here.  As you look over the side of your
 boat, into the water you see nothing but blackness.  It makes you think of
 death.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1388,7 +1388,7 @@ water.  The water must be very deep here.  As you look over the side of your
 boat, into the water you see nothing but blackness.  It makes you think of
 death.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1403,7 +1403,7 @@ Sea of Souls~
    As you continue floating along the sea, everthing gets quiet.  Maybe too
 quiet.  You can see a small island in the distance to the southeast.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1419,7 +1419,7 @@ Sea of Souls~
 You can see a small island to the east.  This is perhaps the smallest island
 you have encountered so far.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1436,7 +1436,7 @@ be possible?  The climate is much too warm for there to be snow.  All the
 plants have died and shrivled up, leaving you as the only living thing on this
 island.    
 ~
-6 0 2
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1456,7 +1456,7 @@ Ice Isle~
 remains of an old ice fort.  The sun has melted quite a bit of it down, leaving
 nothing but a mound of ice.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1467,7 +1467,7 @@ Sea of Souls~
    The water here is quite cold.  You can see small chunks of ice floating past
 you.  To the west is a small island covered in snow.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1482,7 +1482,7 @@ Sea of Souls~
    The water here is quite cold.  You can see small chunks of ice floating past
 you.  To the west is a small island covered in snow.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1502,7 +1502,7 @@ Sea of Souls~
 waves crashes against your boat, almost tipping you over!  You're sprayed with
 a light mist, leaving your clothes drenched.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1522,7 +1522,7 @@ Forest Island~
 leaving almost no room for you to walk.  You see some wild flowers and weeds
 growing through the tall grass.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1538,7 +1538,7 @@ Forest Island~
 is up to your chin.  You begin to feel like you're in the jungle.  Several bugs
 zoom past your ear, making a soft buzzing sound.    
 ~
-6 0 2
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1554,7 +1554,7 @@ Sea of Souls~
 south you can see an island filled with trees.  The shore is not to far off to
 the southeast.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1573,7 +1573,7 @@ Sea of Souls~
    The waves ripple softly, splashing against the side of your boat.  It rocks
 gently, threatening to put you to sleep.  You feel very relaxed here.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1592,7 +1592,7 @@ Sea of Souls~
    The waves ripple softly, splashing against the side of your boat.  It rocks
 gently, threatening to put you to sleep.  You feel very relaxed here.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1612,7 +1612,7 @@ Sea of Souls~
 south you can see an island filled with trees.  The shore is not to far off to
 the southeast.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1628,7 +1628,7 @@ Forest Island~
 It almost feels as if you're in quicksand.  The grass is much shorter here,
 showing you the sea to the north and south.    
 ~
-6 0 2
+6 0 0 0 0 0
 D2
 ~
 ~
@@ -1643,7 +1643,7 @@ Sea of Souls~
    You begin sailing into the unknown.  What things will you encounter?  Will
 you even survive?  Luck doesn't appear to be on your side.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1659,7 +1659,7 @@ Private Island~
 with wild flowers, giving off a sweet scent.  You can see a small house to the
 east.    
 ~
-6 0 2
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1675,7 +1675,7 @@ Private Island~
 here very long.  There doesn't appear to be anyone home.  Maybe you should
 leave before someone sees you.    
 ~
-6 0 2
+6 0 0 0 0 0
 D2
 ~
 ~
@@ -1691,7 +1691,7 @@ Private Island~
 see a small house to the north.  It's constructed of bricks and is by far the
 most beautiful house you have ever seen!    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1707,7 +1707,7 @@ Sea of Souls~
 the north you can see an island.  It doesn't appear to be very big, but it
 might be a good place to stop and rest.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1722,7 +1722,7 @@ Sea of Souls~
    The water here is quite calm, making you feel very relaxed.  Don't get too
 relaxed.  You may fall sleep and tip over!    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1738,7 +1738,7 @@ Sea of Souls~
 up, causing the sea to become wavy.  You grab on to the sides of the boat,
 trying to hang on.    
 ~
-6 0 7
+6 0 0 0 0 0
 D0
 ~
 ~
@@ -1754,7 +1754,7 @@ Sea of Souls~
 small island off to the west.  It looks nice enough, but looks can be
 deceiving.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1774,7 +1774,7 @@ Sea of Souls~
 up, causing the sea to become wavy.  You grab on to the sides of the boat,
 trying to hang on.    
 ~
-6 0 7
+6 0 0 0 0 0
 D1
 ~
 ~
@@ -1790,7 +1790,7 @@ Shore~
 What mysteries could it hold?  Would you survive a journey across it?  You hear
 some birds chirping in the distance.    
 ~
-6 0 2
+6 0 0 0 0 0
 D0
 ~
 ~

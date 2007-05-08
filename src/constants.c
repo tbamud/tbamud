@@ -190,6 +190,7 @@ const char *preference_bits[] = {
 /* AFF_x */
 const char *affected_bits[] =
 {
+  "\0", /* DO NOT REMOVE!! */
   "BLIND",
   "INVIS",
   "DET-ALIGN",

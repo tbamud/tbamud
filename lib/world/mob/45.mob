@@ -7,7 +7,7 @@ A ferret wearing monk robes stands here.
 This is a creature completely at peace with him self.  He is dressed in some
 nice red robes, and wearing a pair of worn out sandals.  
 ~
-dghilm cm 1000 E
+6600 0 0 0 8200 0 0 0 1000 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -20,7 +20,7 @@ A mousy looking monk stands here.
 ~
    You see a mouse wearing a monk's robe.  He is walking about intently.  
 ~
-dghilm m 1000 E
+6600 0 0 0 8192 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -34,7 +34,7 @@ A squirrel monk darts around.
    You see a monk.  This one has a rather large, bushy tail, and seems to have a
 weird twitch.  
 ~
-cdgilm m 1000 E
+6476 0 0 0 8192 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -48,7 +48,7 @@ An assistant stands here nervously.
    You see a rabbit wearing an apron.  He looks exhausted, and tired.  Maybe his
 shift has been a little too long...  
 ~
-bdhm 0 1000 E
+4234 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -61,7 +61,7 @@ A large badger stands here, barking orders.
    You see a VERY large badger.  She is ranting and raving at various helpers
 within the kitchen.  She looks upset.  
 ~
-bdimp 0 1000 E
+37130 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -75,7 +75,7 @@ A phoenix nests here.
 patches of feathers.  One wing hangs slightly limp.  It's head contains a crest
 with several very long ornamental feathers.  
 ~
-bcdilmnpr dfhm 1000 E
+178446 0 0 0 8272 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -90,7 +90,7 @@ The abbot calmly stands here.
 watching the people sitting within the pews as the choir behind him sings
 quietly.  
 ~
-bdilmn hm 1000 E
+14602 0 0 0 8192 0 0 0 1000 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -103,7 +103,7 @@ A gopher sits here, watching you intently.
 ~
    You see an ordinary gopher.  It seems a little big for it's kind.  
 ~
-bcd 0 1000 E
+14 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -118,7 +118,7 @@ A guard stands here.
 suit.  On his back hangs a quiver and a bow.  A sword hangs loosely by his side.
 He stares at you, waiting for a response.  
 ~
-bcdlm 0 700 E
+6158 0 0 0 0 0 0 0 700 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -131,7 +131,7 @@ A sentry stands here.
 ~
    You see a very alert guard, intently gazing into the surrounding territory.
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -146,7 +146,7 @@ large thick muscles ripple under is skin as it moves silently through the
 forest.  To large red eyes turn and concentrate on you.  You shudder as you feel
 a wave of hate and anger ripple through you from the dragon.  
 ~
-bcdelnopqr mn 0 E
+256030 0 0 0 8192 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -161,7 +161,7 @@ An archer patrols the walls.
 any sign of movement in the forest, which he takes care of with one quickly shot
 arrow.  
 ~
-cdgklmnpr d 350 E
+179276 0 0 0 16 0 0 0 350 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1

@@ -7,7 +7,7 @@ A Fetch, dressed in black tattered robes which seem to float about its body, sta
 The primary function of a Fetch is to fortell death.  The question is - is this
 Fetch foretelling your death, or someone else's?  
 ~
-bdenopqr cdfkn 0 E
+253978 0 0 0 88 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -22,7 +22,7 @@ A womanish spectre floats through the manse, her eyes crying blood.
 home, possibly even older.  She constantly wrings her hands, looking about as if
 in search for someone or something.  
 ~
-dfgnopqr dfj -200 E
+254056 0 0 0 1104 0 0 0 -200 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -36,7 +36,7 @@ A sticky spiderweb lunges out at you, trying to draw you into its web.
 stare at it for hours and travel its full length.  Strange, it seems almost as
 if it might have just moved...  
 ~
-bdfnopqr df -500 E
+253994 0 0 0 80 0 0 0 -500 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -49,7 +49,7 @@ A spectre of a distinguished man floats a foot above the chair at the desk, inte
    The spectre notices your arrival and - with bared teeth - lunges at you,
 obviously intent on your destruction.  
 ~
-bdfl dfr 0 E
+2090 0 0 0 262224 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -63,7 +63,7 @@ A moaning churel floats through the house, weeping for all the lost children.
    Its feet seem a bit askew, almost as if they were turned backward on the
 ankles, and the constant moaning is enought to drive a crazy man sane.  
 ~
-dgqr 0 -300 E
+196680 0 0 0 0 0 0 0 -300 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -75,7 +75,7 @@ A large black spider crawls along the floor just ahead of you.
 ~
    It has hair all over its small but grotesque body.  
 ~
-dgq 0 -300 E
+65608 0 0 0 0 0 0 0 -300 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -90,7 +90,7 @@ A howling Phantom floats through the halls, looking for others to join it in its
 only a vague humanish shape, baleful glowing eyes, and what appears to a flowing
 robe cloak all about it.  
 ~
-dfgpr 0 -800 E
+163944 0 0 0 0 0 0 0 -800 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -104,7 +104,7 @@ A Screeching Apparition comes flying at you, screaming its anger and hatred.
    Its insubstantial form gathers together into a blackish cloud, all mottled
 and shot thtrough with streaks of reddish-orange flames.  
 ~
-bdfpq h -1000 E
+98346 0 0 0 0 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -119,7 +119,7 @@ A rat scurries across the floor in front of you.
 straight, you would almost think this rat meant to attack you!  Best not to find
 out - better kill it.  
 ~
-dg 0 -500 E
+72 0 0 0 0 0 0 0 -500 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0

@@ -353,7 +353,7 @@ void postmaster_send_mail(struct char_data *ch, struct char_data *mailman,
   if (GET_LEVEL(ch) < LVL_IMMORT)
     GET_GOLD(ch) -= STAMP_PRICE;
 
-  SET_BIT(PLR_FLAGS(ch), PLR_MAILING);	/* string_write() sets writing. */
+  SET_BIT_AR(PLR_FLAGS(ch), PLR_MAILING);	/* string_write() sets writing. */
 
   /* Start writing! */
   CREATE(mailwrite, char *, 1);
@@ -374,6 +374,7 @@ void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
 {
   char buf[256];
   struct obj_data *obj;
+  int y;
 
   if (!has_mail(GET_IDNUM(ch))) {
     snprintf(buf, sizeof(buf), "$n tells you, 'Sorry, you don't have any mail waiting.'");
@@ -388,7 +389,9 @@ void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
     obj->description = strdup("Someone has left a piece of mail here.");
 
     GET_OBJ_TYPE(obj) = ITEM_NOTE;
-    GET_OBJ_WEAR(obj) = ITEM_WEAR_TAKE;
+    for(y = 0; y < TW_ARRAY_MAX; y++)
+      obj->obj_flags.wear_flags[y] = 0;
+    SET_BIT_AR(GET_OBJ_WEAR(obj), ITEM_WEAR_TAKE);
     GET_OBJ_WEIGHT(obj) = 1;
     GET_OBJ_COST(obj) = 30;
     GET_OBJ_RENT(obj) = 10;

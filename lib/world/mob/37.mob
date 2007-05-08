@@ -7,7 +7,7 @@ A large rat is scurrying about here, squeeking as you approach.
 obvious because the rat is just about ready to sink those teeth into your warm
 human flesh.  
 ~
-dfgh k -150 E
+232 0 0 0 0 0 0 0 -150 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -21,7 +21,7 @@ A large rat is here, searching for food.
    This rat doesn't look very menacing, but if you press it hard it'll certainly
 fight back.  
 ~
-dfgh k 100 E
+232 0 0 0 0 0 0 0 100 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -35,7 +35,7 @@ A huge rat is here, growling as you get nearer. Careful - it bites!
    This battlescarred rat is not going anywhere.  You, however are going to go
 right into its belly, after it's killed you.  Better get out of here.  
 ~
-bdfgm k -350 E
+4202 0 0 0 0 0 0 0 -350 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -51,7 +51,7 @@ long been rumours about the magicusers using sewer animals in their experiments.
 This is the final proof.  As you study the rat closer you notice what looks like
 a small gleam of intelligence in its eyes.  
 ~
-bcdgm k -350 E
+4174 0 0 0 0 0 0 0 -350 E
 7 18 5 1d1+70 1d2+1
 70 4900
 5 5 0
@@ -64,7 +64,7 @@ A bat is hanging from the ceiling here.
 ~
    A small bat, getting a good days sleep.  
 ~
-bdfghm k 0 E
+4330 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 4 4 0
@@ -77,7 +77,7 @@ A bat is here, flying quickly about.
 ~
    A small bat, getting ready to go out of the cave, to get something to eat.  
 ~
-dfghm k 0 E
+4328 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -91,7 +91,7 @@ A huge bat is here, considering you for meal.
    This giant bat makes you shiver.  Even if it just flys around you, it still
 gives you the creeps.  
 ~
-dfghm k 0 E
+4328 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -105,7 +105,7 @@ A huge bat is here. You see fresh blood on its face.
    This giant bat makes you shiver.  You realise that soon your blood will be
 tasted too.  
 ~
-bdfgm k -500 E
+4202 0 0 0 0 0 0 0 -500 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -119,7 +119,7 @@ A trout is swimming happily about here.
    The underground lake must be connected to the outside rivers.  This fish
 looks healthy and fresh.  
 ~
-bdenpq gps 0 E
+106522 0 0 0 589952 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -133,7 +133,7 @@ A blind fish is here, all white.
    Having spent it's entire life in this cave, the fish has never used its eyes.
 Your torch' presence has made it blind.  
 ~
-bdenpq agps 0 E
+106522 0 0 0 589954 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -147,7 +147,7 @@ A giant oyster sits on the bottom here.
    You come very close to the oyster, but suddenly it snaps shut, preventing you
 from seeing inside.  
 ~
-bdgnopqr g 0 E
+254026 0 0 0 128 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 6 6 0
@@ -162,7 +162,7 @@ A small rabbit is nibbling on some grass here.
 kid..  They're small, furry and generate extreme amounts of small black perls
 whereever they go...  
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -176,7 +176,7 @@ A small grey and black striped cat is waiting for a bird to catch..
    It's extremely nice and sweet.  If you reach out you hand to carees it, it
 only bites and scratches so HALF your fingers are missing afterwards..  
 ~
-dg s -50 E
+72 0 0 0 524288 0 0 0 -50 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -190,7 +190,7 @@ A small fox is here, prowling.
    A red, not so large canine, with pointy ears and nose - and teeth, for that
 matter..  
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0

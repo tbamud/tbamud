@@ -450,7 +450,7 @@ void copyover_recover()
     if ((player_i = load_char(name, d->character)) >= 0) {
       GET_PFILEPOS(d->character) = player_i;
       if (!PLR_FLAGGED(d->character, PLR_DELETED))
-        REMOVE_BIT(PLR_FLAGS(d->character),PLR_WRITING | PLR_MAILING | PLR_CRYO);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING | PLR_MAILING | PLR_CRYO);
       else
         fOld = FALSE;
     } else

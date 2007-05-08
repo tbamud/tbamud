@@ -6,7 +6,7 @@ John Connor is giving orders here.
    The leader of the Resistance Force he is a hardened veteran with the scars
 to prove it.    
 ~
-bdinpqr dfk 0 E
+237834 0 0 0 80 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -20,7 +20,7 @@ A terminator is looking for a human to kill.
    This metal endoskeleton is the perfect killing weapon.  The mechanical red
 eyes scan the area for anything living.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 0
@@ -34,7 +34,7 @@ A flying hunter killer zooms past you, it's turbines whining.
    This flying metal machine has a mind of it's own and was made for the sole
 purpose of hunting down humans and killing them.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -47,7 +47,7 @@ A huge metal tank rolls past, bones crunching under it's weight.
 ~
    Yet another machine made by machines to purge the world of humans.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 0
@@ -60,7 +60,7 @@ A centurion runs past.
 ~
    This four legged gun pod is fast and deadly accurate.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -74,7 +74,7 @@ A silverfish is trying to sneak up on you.
    This small centipede like robot finds it's way into the resistance force
 hideouts and explodes, sending razor sharp shrapnel in all directions.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -88,7 +88,7 @@ A T1000 is shapeshifting before you.
    A poly-alloy or liquid medal, this is the latest and greatest invention of
 the robots.    
 ~
-bdfnpqr bcfkpt 0 E
+237610 0 0 0 1114188 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 0
@@ -101,7 +101,7 @@ A soldier of the resistance force is looking for a terminator to kill.
 ~
    Born in battle, it's all this soldier has ever known.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 0
@@ -115,7 +115,7 @@ An autonomous terminator is guarding skynet.
    This terminator was made as a sentry to keep all from entering skynet
 laboratories.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 0
@@ -129,7 +129,7 @@ A child is learning helping the soldiers with their wounds.
 the wounded, run messages, help with the equipment.  No one is free until the
 machines are destroyed.    
 ~
-bcd k 0 E
+14 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -143,7 +143,7 @@ An officer of the resistance force is leading his soldiers into battle.
    His eyes tell you what he dares not say to his troops, this battle is
 hopless, lives are waster killing machines that can just be rebuilt.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 0
@@ -156,7 +156,7 @@ A german shepherd sniffs your hand.
 ~
    The resistance uses this dog to detect terminators.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -169,7 +169,7 @@ Kyle Reese is hiding from the terminators.
 ~
    If only he knew what the future held for him.    
 ~
-dgil bdfk 0 E
+2376 0 0 0 84 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1

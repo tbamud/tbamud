@@ -6,7 +6,7 @@ An electron is here, doing electron things.
    This electron is a few hundred thousand times larger than your typical
 electron.  It glows a bright yellow, and it crackles with energy.    
 ~
-dghmnopr dfp 0 E
+192712 0 0 0 65616 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -22,7 +22,7 @@ pins are huge, the cooling fan could probably chop a human in two.  The heat
 given off by something of that size is ungodly, you are sweating heavily under
 your armor.    
 ~
-bdlnopqr p 0 E
+256010 0 0 0 65536 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -34,7 +34,7 @@ There is a massive floating point processor here.
 ~
    This is basically a really $#@%!  Big calculator.    
 ~
-bdglnopqr p 0 E
+256074 0 0 0 65536 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -47,7 +47,7 @@ There is a 16MB EDO SIMM chip here, running programs.
    This looks like your typical 16MB SIMM, black chips fused to a silicon
 board, only this one's a lot larger, and oddly enough, looks mean.    
 ~
-bdnoqr p 0 E
+221194 0 0 0 65536 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -60,7 +60,7 @@ There is a 28.8kbps modem here, emitting a hideous noise.
    This is your typical modem, except the fact that it's alive, and a hundred
 times bigger.    
 ~
-bdlnopqr p 0 E
+256010 0 0 0 65536 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -73,7 +73,7 @@ There is a massive video card here.
    This video card is massive.  The chips are the size of small horses, and the
 metal connectors are the size of your fist.    
 ~
-bdlnopqr p 0 E
+256010 0 0 0 65536 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -86,7 +86,7 @@ There is a gargantuan sound card here.
    This sound is huge, the ram chips are huge, and the connector for the CD-ROM
 drive is huge.    
 ~
-bdlnopqr p 0 E
+256010 0 0 0 65536 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -99,7 +99,7 @@ There is a huge SCSI controller here.
    This is your typical SCSI controller.  Ports for hard drives, CD-ROM drives
 and the like.    
 ~
-bdlnopqr p 0 E
+256010 0 0 0 65536 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0

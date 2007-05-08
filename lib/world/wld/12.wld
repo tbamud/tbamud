@@ -4,7 +4,7 @@ The Meeting Room Of The Gods~
 middle of the room, lit by some unseen light source.  There are many chairs
 around the table, all empty.  The Immortal Board Room is to the north.  
 ~
-12 d 0
+12 8 0 0 0 0
 D0
 The Immortal Board Room can be seen to the north.
 ~
@@ -18,7 +18,7 @@ small precious stones on it.  When a God comes to rent his belongings,
 his essence is stored in the stones.  The Immortal Board Room is to
 the south.
 ~
-12 d 0
+12 8 0 0 0 0
 D2
 The Immortal Board Room can be seen to the south.
 ~
@@ -30,7 +30,7 @@ The Ice Box Of The Gods~
    The Ice Box is for little boys and girls that cannot play nice. Be good
 and maybe someone will come and get you.
 ~
-12 defhk 0
+12 1208 0 0 0 0
 S
 #1203
 The Gods' Mortal Board Room~
@@ -38,7 +38,7 @@ The Gods' Mortal Board Room~
 room.  Any God can easily post and read messages from the mortal board room
 without being seen by any mortals.  The Immortal Board Room is to the west.
 ~
-12 d 0
+12 8 0 0 0 0
 D3
 The Immortal Board Room can be seen to the west.
 ~
@@ -53,7 +53,7 @@ east and the meeting room for the gods is to the south.  To the north is the
 Gods' Inn and to the west is a post office for Gods.  In the northeast corner
 you spot a small staircase leading upwards.
 ~
-12 d 0
+12 8 0 0 0 0
 D0
 The Gods' Inn can be seen just to the north.
 ~
@@ -96,7 +96,7 @@ it is not as slow.  Even the Postal service knows not to anger the Gods.
 Piles of junk mail line the walls.  I guess even Gods get on mailing lists.
 The Immortal Board Room is to the east.
 ~
-12 d 0
+12 8 0 0 0 0
 D1
 The Immortal Board Room is just to the east.
 ~
@@ -108,7 +108,7 @@ The Social Gathering Room~
    This elegantly decorated room has one simple purpose.  To socialize with
 everyone else around in one central location.
 ~
-12 d 0
+12 8 0 0 0 0
 D5
 The Immortal Board Room is just down through the floor.  Funny how you
 didn't notice that exit before isn't it?
@@ -122,7 +122,7 @@ The Immortal Board Hall~
 immortals.  You can enter the hall of builders to the north, to the south are
 the halls of justice, while to the west you can find the immortal board room.
 ~
-12 d 0
+12 8 0 0 0 0
 D0
 ~
 ~
@@ -142,7 +142,7 @@ The Builders' Board Room~
 if you need a refresher.  TBA zone should be able to teach anyone, no matter how
 new, the basics of building.
 ~
-12 d 0
+12 8 0 0 0 0
 D2
 ~
 ~
@@ -154,7 +154,7 @@ The Immortals' Mortal Board Room~
 Any God can easily post and read messages from the mortal board room without
 being seen by any mortals.  The Immortal Board Hall is to the west.
 ~
-12 0 0
+12 0 0 0 0 0
 D3
 ~
 ~
@@ -167,7 +167,7 @@ north.  Statues of Karileena the goddess of Honour and Justice, are lining the
 walls.  You realize this is where the exalted gods meet to discuss what course of
 action to take against offenders in the realms.    
 ~
-12 d 9
+12 8 0 0 0 0
 D0
 ~
 ~

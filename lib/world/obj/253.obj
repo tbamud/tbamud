@@ -3,7 +3,7 @@ armor suit steel~
 a suit of steel MoS armor~
 A steel suit of MoS is laying here on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 11 450 0 30
 E
@@ -22,7 +22,7 @@ sword steel~
 a steel sword~
 A steel sword with a blade-breaker guard sits on the ground.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 4 3 4 14
 5 1000 0 0
 E
@@ -35,7 +35,7 @@ shield steel~
 an MoS shield~
 An MoS shield has been left here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
 5 12 0 30
 E
@@ -48,7 +48,7 @@ clipboard board~
 a clipboard~
 A clipboard has been left here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 0
 E
@@ -67,7 +67,7 @@ bands wrist steel~
 a steel wrist band~
 A steel wrist band have been left here.~
 ~
-9 a am 0
+9 a 0 0 0 am 0 0 0 0 0 0 0
 7 0 0 0
 5 46 0 0
 E
@@ -85,7 +85,7 @@ banner~
 a gray piece of cloth~
 A gray piece of cloth lies thrown in a  corner.~
 ~
-12 b ao 0
+12 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 100 0 0
 E

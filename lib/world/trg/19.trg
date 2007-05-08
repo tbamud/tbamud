@@ -1234,4 +1234,12 @@ while %here%
   set here %others%
 done
 ~
+#1995
+fix for immortals~
+2 c 100
+immortalcheat~
+rdelete zn118_thinwrite %actor.id%
+set zn118_thindone 1
+remote zn118_thindone %actor.id%
+~
 $~

@@ -3,7 +3,7 @@ scales justice scale~
 the Scales of Justice~
 Two beautiful plates shaped like scales have been left here.~
 ~
-12 ak ao 0
+12 ak 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 150 22 0
 E
@@ -20,7 +20,7 @@ scroll parchment~
 the Scroll of the Messenger~
 You see a solid and silver-lined scroll resting on the ground.~
 ~
-12 g ao 0
+12 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 500 500 0
 E
@@ -37,7 +37,7 @@ sword blazing~
 a blazing sword~
 You are startled by the sight of a sword that glows as you approach it.~
 ~
-5 abgkn an 0
+5 abgkn 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 11
 10 500 90 0
 E
@@ -52,7 +52,7 @@ protector faithful shield~
 the Protector of the Faithful~
 A weighty looking shield has been abandoned by one unworthy to hold it.~
 ~
-9 kn aj 0
+9 kn 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
 20 500 150 0
 E
@@ -65,7 +65,7 @@ armband band faded~
 a faded armband~
 A ragged and faded looking piece of cloth has been left here, forgotten.~
 ~
-12 j ai 0
+12 j 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
 1 15 50 0
 E
@@ -82,7 +82,7 @@ scimitar jeweled~
 a jeweled scimitar~
 A stunning curved blade glistens on the ground.~
 ~
-5 akn an 0
+5 akn 0 0 0 an 0 0 0 0 0 0 0
 0 7 1 3
 5 500 50 0
 E
@@ -95,7 +95,7 @@ ember charred~
 a charred ember~
 You glance briefly at a smouldering ember that rests at your feet.~
 ~
-1 ajnop ao 0
+1 ajnop 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 5 25 0
 E
@@ -111,7 +111,7 @@ ethereal flame~
 an ethereal flame~
 The entire room is aglow from the flame at your feet.~
 ~
-1 ajkop ao 0
+1 ajkop 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 5 25 0
 E
@@ -127,7 +127,7 @@ key gates~
 the Key to the Gates~
 You have found at last the Key to the Gates of eternity.~
 ~
-18 aikl ao 0
+18 aikl 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 50 0
 E
@@ -141,7 +141,7 @@ history burnt book~
 a burnt history~
 You have found a burnt book, some forgotten history lying on the ground.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 10 500 0
 E
@@ -156,7 +156,7 @@ surah book~
 a surah of the book~
 You notice a thin parchment, with flowing script and rich decorative trim.~
 ~
-1 dklmn ao 0
+1 dklmn 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 500 80 0
 E
@@ -174,7 +174,7 @@ forge unity~
 the Forge of Unity~
 It is surely the best of men who has left these gloves to aid you.~
 ~
-9 iklmn ah 0
+9 iklmn 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
 5 120 40 0
 A
@@ -186,7 +186,7 @@ ankh~
 an Ankh~
 You see a beautiful pendant of ancient and noble craftsmanship.~
 ~
-11 al ac 0
+11 al 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 3 500 200 0
 E
@@ -203,7 +203,7 @@ amulet ra~
 the Amulet of Ra~
 You have found a beautiful gleaming disc with a golden image of the sun god.~
 ~
-11 ag ac 0
+11 ag 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 5 750 150 0
 A
@@ -215,7 +215,7 @@ image azathoth graven~
 a graven image of Azathoth~
 You frown in disgust at the hideous icon of a false god that you have found.~
 ~
-1 jlq ao 0
+1 jlq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 1000 500 0
 A

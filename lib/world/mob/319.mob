@@ -7,7 +7,7 @@ A sea zombie rises from the sea with a blast of water and attacks!
 Through to the next life, instead wreaking his vengence on all those who cross
 the place where he himself perished.    
 ~
-bdflnopr 0 -700 E
+190506 0 0 0 0 0 0 0 -700 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -20,7 +20,7 @@ A giant squid moves through the water at a lightning pace.
    It looks very slimy to the touch and extremely mean.  Watch that it does not
 decide to make a meal of you.    
 ~
-dfg 0 0 E
+104 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -33,7 +33,7 @@ An enormous dragon turtle glides across the surface of the sea, searching for fo
    It does not move very fast, in fact it still has not seemed to notice that
 you are here, but it is larger than a killer whale.  And stronger.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -46,7 +46,7 @@ A pelican glides over the surface of the water, skimming for food.
    Its enormous beak dips in and out of the water in constant search for a
 morsel to eat.    
 ~
-dg 0 100 E
+72 0 0 0 0 0 0 0 100 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -60,7 +60,7 @@ A killer whale skims just under the surface of the water.
    The teeth are the visible part of this animal, even when its mouth is closed
 - could it just be your imagination?!?    
 ~
-dgq 0 200 E
+65608 0 0 0 0 0 0 0 200 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -74,7 +74,7 @@ A curved fin is visible swimming very near to you.
    Is this something that you really feel you'd like to investigate?  If it IS
 a shark, it is probably best left alone.    
 ~
-dgnqr 0 300 E
+204872 0 0 0 0 0 0 0 300 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -88,7 +88,7 @@ The head of a sea elf pokes out of the water nearby.
    The elf gives you a smile and a laugh and then dives for the depths of the
 sea.    
 ~
-dgl 0 400 E
+2120 0 0 0 0 0 0 0 400 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -101,7 +101,7 @@ A small red crab bobs at the top of the water.
    Its two little whiskers bounce wetly above its bulbous eyes.  It almost
 seems like it might be looking at you, even smiling...    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -113,7 +113,7 @@ A gooey mass of greenish yuck is floating on the surface.
 ~
    That damn stuff is alive!  Its a jellyfish!    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -127,7 +127,7 @@ The dark colored head of a walrus is all that is visible from here.
    It almost looks goofy with its big buck-toothed tusks and the whiskers.  It
 sees you and gives a bark.    
 ~
-dg 0 400 E
+72 0 0 0 0 0 0 0 400 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -139,7 +139,7 @@ A seal gracefully leaps the waves as it happily plays on the surface.
 ~
    It barks and claps it fins as plays, noisily voicing its delight.    
 ~
-dg 0 700 E
+72 0 0 0 0 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -153,7 +153,7 @@ A merman gives a gasp as he realizes you've spotted him and dives under.
    All that is left of where he was is a small ripple on the surface of the
 sea.    
 ~
-bdgh 0 700 E
+202 0 0 0 0 0 0 0 700 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 1
@@ -166,7 +166,7 @@ A mermaid's eyes get very wide and afraid as she spots you.
    She immediately ducks under the water, only a small ripple left of where she
 was.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 2
@@ -178,7 +178,7 @@ A water elemental swirls in with a rush of water and wind.
 ~
    It is in constant motion, churning and swirling with force and fury.    
 ~
-bdlnpqr 0 700 E
+239626 0 0 0 0 0 0 0 700 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 0
@@ -192,7 +192,7 @@ A sea demon snarls in fury as you enter into its domain.
 that they owned their section of the seas.  Indeed, many seafarers might not
 agrue that.    
 ~
-bdejnopqr 0 900 E
+254490 0 0 0 0 0 0 0 900 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 0

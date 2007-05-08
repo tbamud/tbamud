@@ -3,7 +3,7 @@ starstone~
 the starstone~
 The Starstone lies here on the ground collecting dust.~
 ~
-1 abgk ao b
+1 abgk 0 0 0 ao 0 0 0 c 0 0 0
 0 0 -1 0
 2 600 1 0
 A
@@ -15,7 +15,7 @@ fountain aquarius~
 the fountain of Aquarius~
 The Fountain of Aquarius is bubbling merrily here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 1
 505 0 0 0
 #5708
@@ -23,18 +23,18 @@ Rune Saber~
 the rune saber~
 The Rune Saber lies here.~
 ~
-5 abg an 0
+5 abg 0 0 0 an 0 0 0 0 0 0 0
 6 4 8 3
 8 200 250 0
-E
-pictures~
-   The pictures are of people being killed by the wielder of this sword.  Some
-are being impaled and others decapitated.  
-~
 E
 rune~
    These runes appear to be ancient.  Whatever race created this sword was
 probably evil due to the gruesome detail in the pictures etched into it.  
+~
+E
+pictures~
+   The pictures are of people being killed by the wielder of this sword.  Some
+are being impaled and others decapitated.  
 ~
 A
 3 -2
@@ -43,7 +43,7 @@ Libra water~
 Libra~
 Libra, the scales lies here. Water has built up on the weighing pans creating a place to drink.~
 ~
-23 a 0 0
+23 a 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 505 0 0 0
 #5730
@@ -51,7 +51,7 @@ Rune Blade~
 a rune blade~
 A Rune Blade lies here.~
 ~
-5 abg an 0
+5 abg 0 0 0 an 0 0 0 0 0 0 0
 5 4 2 3
 7 280 28 0
 A
@@ -61,7 +61,7 @@ carcass tree nymph~
 the carcass of the tree nymph~
 The carcass of the tree nymph lies here bleeding profusely.~
 ~
-13 ab 0 0
+13 ab 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -73,7 +73,7 @@ Scorpion Platemail~
 the scorpion platemail~
 A suit of Scorpion Platemail lies here.~
 ~
-9 abgm ad 0
+9 abgm 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 10 250 30 0
 A

@@ -7,7 +7,7 @@ A small fish swims by.
 of survival against larger predators.  Their bright colors disorient the foe,
 and their numbers ensure that the majority survive.    
 ~
-dgh g 0 E
+200 0 0 0 128 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -23,7 +23,7 @@ A large fish swims by.
 fear in the sea, and thus concentrate most of their efforts on hunting smaller
 fish.    
 ~
-dgh g 0 E
+200 0 0 0 128 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -39,7 +39,7 @@ A hungry moray eel swims by.
 on the ocean floor.  They scavenge for food, but will sometimes attack other
 creatures when hungry.    
 ~
-cdfgh g 0 E
+236 0 0 0 128 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -53,7 +53,7 @@ A Great White Shark swims by, watching you very closely...
    This sleek, grey creature is one of nature's most deadly predators.  They
 feed on almost every creature in the sea, including you!    
 ~
-dfg g 0 E
+104 0 0 0 128 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -70,7 +70,7 @@ flag bearing a skull and crossbones indicates that these men are pirates.
    Pirates are not usually fond of prisoners, but sometimes exceptions are made;
 If they seem too tough for you, say or just type @oSURRENDER@n at the prompt.
 ~
-cdfg gp -999 E
+108 0 0 0 65664 0 0 0 -999 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -87,7 +87,7 @@ A grizzly pirate stands here, steering the boat.
 dusting of salt.  His tired eyes are focused intently on the horizon, searching
 for new lands or other ships to loot.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -102,7 +102,7 @@ The cabin boy stands here, wearily swabbing the deck.
    The cabin boy has dreamed of being a pirate since they plundered his village
 when he was a child.  Hey, if you can't beat them, join them!    
 ~
-cdgh 0 200 E
+204 0 0 0 0 0 0 0 200 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -120,7 +120,7 @@ man is paid to make sure prisoners stay in their cell, but everyone has a
 price...  The going rate for a set of keys is 100 gold down here in the brig.
   
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -136,7 +136,7 @@ A drunken pirate sits here, taking a swig of booze.
    This pirate is quite enjoying his time off duty.  Right now he's so
 plastered he can barely move, so he'll be stuck in that chair for a while.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 6 6 1
@@ -151,7 +151,7 @@ A drunken pirate sits here, taking a swig of booze.
    This pirate is quite enjoying his time off duty.  Right now he's so
 plastered he can barely move, so he'll be stuck in that chair for a while.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 6 6 1
@@ -165,7 +165,7 @@ Glumgold the Pirate~
    He looks very mean!  He's missing an eye, a hand, and a leg, each replaced
 some way or another.    
 ~
-bdmo 0 -600 E
+20490 0 0 0 0 0 0 0 -600 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -184,7 +184,7 @@ pirates have visited.  Parrots are believed to have the ability to hold a
 conversation, but in reality they only repeat simple phrases that they've heard
 others speak.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -200,7 +200,7 @@ A small crab is here, scurrying about in the sand.
    It's a small, red, crab.  He looks quite content just sitting here on the
 beach.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -216,7 +216,7 @@ Tai Ho, a famous fisherman, sits on the side of the boat waiting for a fish to b
 Republic.  He and his brother Yam Koo travel far and wide searching for good
 spots to fish and good people to gamble with.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 6 6 1
@@ -230,7 +230,7 @@ Yam Koo, a fisherman, stands here.
    Yam Koo is the brother of Tai Ho.  The two come from the town of Kaku in the
 Toran Republic in search of good times and good fishing.    
 ~
-bd 0 300 E
+10 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1

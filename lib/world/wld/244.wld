@@ -7,12 +7,30 @@ no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D2
 The main hallway is South.
 ~
 door iron~
 2 24499 24404
+E
+sign notice door~
+   The notice looks like this:
+
+   x-------------------------------------------------------------------x
+   |                    C O O L A N D   P R I S O N                    |
+   |                                                                   |
+   |  You are now an inmate of Cooland Prison. You have been sent      |
+   |  here because you committed an intolerable offense. Although      |
+   |  extremely difficult, it is possible to escape this prison. If    |
+   |  you happen to die here, you will permanently lose ALL of your    |
+   |  equipment. You cannot talk to people or cast spells while here.  |
+   |  Don't bother calling for the GODs either, they'll ignore you.    |
+   |  You're on your own now!                                          |
+   |                                                                   |
+   |         IF YOU CAN'T DO THE TIME, DON'T DO THE CRIME!             |
+   x-------------------------------------------------------------------x
+~
 E
 credits info~
    x---------------------------------------------------------------------x
@@ -54,24 +72,6 @@ Mobs         : 2
 Objects      : 1
 Links        : 
 ~
-E
-sign notice door~
-   The notice looks like this:
-
-   x-------------------------------------------------------------------x
-   |                    C O O L A N D   P R I S O N                    |
-   |                                                                   |
-   |  You are now an inmate of Cooland Prison. You have been sent      |
-   |  here because you committed an intolerable offense. Although      |
-   |  extremely difficult, it is possible to escape this prison. If    |
-   |  you happen to die here, you will permanently lose ALL of your    |
-   |  equipment. You cannot talk to people or cast spells while here.  |
-   |  Don't bother calling for the GODs either, they'll ignore you.    |
-   |  You're on your own now!                                          |
-   |                                                                   |
-   |         IF YOU CAN'T DO THE TIME, DON'T DO THE CRIME!             |
-   x-------------------------------------------------------------------x
-~
 S
 #24401
 Cell B1~
@@ -82,7 +82,7 @@ no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D2
 The main hallway is South.
 ~
@@ -116,7 +116,7 @@ no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D2
 The main hallway is South.
 ~
@@ -147,7 +147,7 @@ Sprial Staircase~
 hallway is west, while darkness leads up. You can hear dripping water from 
 above you.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The main hallway is East.
 ~
@@ -166,7 +166,7 @@ is peeling, and a few flickering light bulbs hang from the ceiling. You
 can see old rusty iron doors leading north and south. These lead to the
 A1 and A2 cells. It's rather cold in here.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 Cell A1 is North.
 ~
@@ -197,7 +197,7 @@ B1 and B2 cells. It's rather cold in here.
    You can see some words scratched on the wall beside the southern
 door.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 Cell B1 is North.
 ~
@@ -238,7 +238,7 @@ is peeling, and a few flickering light bulbs hang from the ceiling. You
 can see old rusty iron doors leading north and south. These lead to the
 C1 and C2 cells. It's rather cold in here.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 Cell B1 is North.
 ~
@@ -269,7 +269,7 @@ and several stainless steel food bowls are sitting on it. That must be
 where the stink is coming from. About a dozen rows of flickering lights
 hang from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D3
 The cell hallway is West.
 ~
@@ -285,7 +285,7 @@ no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The main hallway is North.
 ~
@@ -317,7 +317,7 @@ falling, falling deep into the ground. You finally land, and you feel both of
 your legs snap under your weight. As you scream out in pain, the rest of the
 debris from the cement floor lands on you, crushing your body.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The main hallway is North.
 ~
@@ -333,7 +333,7 @@ no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The main hallway is North.
 ~
@@ -364,7 +364,7 @@ A Warm Room~
 on a bed of red hot coals. Your body is engulfed in flames, and you quickly
 roast to death.
 ~
-244 acdfgh 0
+244 237 0 0 0 0
 S
 T 24400
 #24412
@@ -377,7 +377,7 @@ light bulb hangs from the ceiling. You can feel an intense heat coming from
 an iron door to the north, while you feel an extreme coldness coming from an
 iron door leading south.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 A hot room is North. 
 ~
@@ -400,7 +400,7 @@ A Cold Room~
 hard on a sheet of ice. The room is extremely cold, and your body quickly freezes
 solid.
 ~
-244 acdfgh 0
+244 237 0 0 0 0
 S
 T 24400
 #24414
@@ -410,7 +410,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -430,7 +430,7 @@ the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling. A steel spiral staircase leads down
 into darkness.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -454,7 +454,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -473,7 +473,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North.
 ~
@@ -502,7 +502,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -521,7 +521,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -540,7 +540,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -559,7 +559,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -578,7 +578,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -597,7 +597,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor leads North.
 ~
@@ -621,7 +621,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -640,7 +640,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -659,7 +659,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -678,7 +678,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D2
 The corridor continues South. 
 ~
@@ -697,7 +697,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -716,7 +716,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -735,7 +735,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -754,7 +754,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -773,7 +773,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -792,7 +792,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor. As you wonder if it can support you, the floor
 gives way and you fall down a bottomless pit.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 S
 #24435
 A Prison Corridor~
@@ -801,7 +801,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -820,7 +820,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -839,7 +839,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -868,7 +868,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -887,7 +887,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -906,7 +906,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -935,7 +935,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor. As you wonder if it can support you, the floor
 gives way and you fall down a bottomless pit.
 ~
-244 acdfgh 0
+244 237 0 0 0 0
 S
 T 24400
 #24442
@@ -945,7 +945,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -964,7 +964,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -983,7 +983,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling. A steel spiral staircase leads up.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D2
 The corridor continues South.
 ~
@@ -1002,7 +1002,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -1021,7 +1021,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D0
 The corridor continues North. 
 ~
@@ -1045,7 +1045,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -1064,7 +1064,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor. As you wonder if it can support you, the floor
 gives way and you fall down a bottomless pit.
 ~
-244 acdfgh 0
+244 237 0 0 0 0
 S
 T 24400
 #24449
@@ -1074,7 +1074,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -1093,7 +1093,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor, and you wonder if can support you. A long burnt out 
 light bulb hangs from the ceiling.
 ~
-244 adfgh 0
+244 233 0 0 0 0
 D1
 The corridor continues East. 
 ~
@@ -1112,7 +1112,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor. As you wonder if it can support you, the floor
 gives way and you fall down a bottomless pit.
 ~
-244 acdfgh 0
+244 237 0 0 0 0
 S
 T 24400
 #24452
@@ -1122,7 +1122,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor. As you wonder if it can support you, the floor
 gives way and you fall down a bottomless pit.
 ~
-244 acdfgh 0
+244 237 0 0 0 0
 S
 T 24400
 #24453
@@ -1132,7 +1132,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor. As you wonder if it can support you, the floor
 gives way and you fall down a bottomless pit.
 ~
-244 acdfgh 0
+244 237 0 0 0 0
 S
 T 24400
 #24454
@@ -1142,7 +1142,7 @@ damp, and the dark grey paint is flaking. You notice large cracks in
 the old cement floor. As you wonder if it can support you, the floor
 gives way and you fall down a bottomless pit.
 ~
-244 acdfgh 0
+244 237 0 0 0 0
 S
 T 24400
 #24455
@@ -1151,7 +1151,7 @@ Prison Upper Level~
 leads down into darkness. This is where the prisoners are kept.
    A sign written in red lettering is attached to the wall. 
 ~
-244 d 0
+244 8 0 0 0 0
 D3
 The hallway continues West.
 ~
@@ -1182,7 +1182,7 @@ cinderblocks, and an immensely huge thick metal door leads west. This must
 be the main door that keeps the prisoners safely locked up. A small stool
 sits beside the door, which is where Joe the gateguard sits.  
 ~
-244 d 0
+244 8 0 0 0 0
 D1
 The hallway continues East.
 ~
@@ -1205,7 +1205,7 @@ northern wall, but it looks empty. Maybe this prison isn't maintained
 anymore. 
    A sign has been attached to the wall beside the door.
 ~
-244 d 0
+244 8 0 0 0 0
 D1
 The hallway leads East.
 ~

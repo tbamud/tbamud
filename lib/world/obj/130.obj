@@ -3,7 +3,7 @@ tombstone~
 an old tombstone~
 A home for moss and fungus to grow, a tombstone shows it's age.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 13007
@@ -12,7 +12,7 @@ crown eagle eyes~
 an eagle eyed crown~
 You are watched by the clear brown eagle eyes that set atop this crown.~
 ~
-9 ag ae f
+9 ag 0 0 0 ae 0 0 0 g 0 0 0
 5 0 0 0
 3 5000 0 0
 T 13004
@@ -33,7 +33,7 @@ bow detta dettas~
 Detta's Bow~
 Intricate lettering spelling the name Detta is carved on to the shaft of this bow.~
 ~
-5 bg an k
+5 bg 0 0 0 an 0 0 0 l 0 0 0
 0 1 1 5
 8 666 0 0
 T 13005
@@ -44,7 +44,7 @@ arrow black~
 a black arrow~
 A black shafted arrow awaits it's chance to bite.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #13004
@@ -52,7 +52,7 @@ arrow red~
 a red arrow~
 A red shafted arrow awaits it's chance to bite.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #13005
@@ -60,7 +60,7 @@ arrow blue~
 a blue arrow~
 A blue shafted arrow awaits it's chance to bite.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #13006
@@ -68,7 +68,7 @@ arrow green~
 a green arrow~
 A green shafted arrow awaits it's chance to bite.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #13007
@@ -76,7 +76,7 @@ recall staff~
 a recall staff~
 A simple staff with only a few knots to mar it's appearance quivers anxiously.~
 ~
-11 0 ao 0
+11 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 T 13002
@@ -87,7 +87,7 @@ note~
 a torn note~
 A fragment of a note blows in the breeze.~
 ~
-13 cq a 0
+13 cq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -100,7 +100,7 @@ mist~
 a swirling mist~
 The mists swirl before you.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 13009
@@ -116,7 +116,7 @@ mist~
 a swirling mist~
 The mists swirl before you.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 13010
@@ -132,7 +132,7 @@ light~
 a ray of light~
 A ray of light penetrates the mist showing you the way out.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 13018
@@ -147,7 +147,7 @@ mist whip tendril~
 a tendril of the wispy mist~
 A tendril of the mist taken solid form awaits your touch.~
 ~
-5 jmn an 0
+5 jmn 0 0 0 an 0 0 0 0 0 0 0
 4 5 6 2
 1 2000 0 15
 E
@@ -166,7 +166,7 @@ mist~
 a swirling mist~
 A tendril of a mist swirls from the ground up.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 13099

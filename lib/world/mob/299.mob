@@ -8,7 +8,7 @@ that is beyond you, but he is a poor and deaf hunchback, once hired by the High
 Priest of the cathedral to ring the bells.  He is quite large, but appears
 smaller due to his deformity, and looks to be quite strong.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 0
@@ -22,7 +22,7 @@ A ghoul is here attacking a man in black robes!
 translucent skin is taut about its bones and you think you can see strange
 little white movements underneath it.    
 ~
-bcdg dh 700 E
+78 0 0 0 16 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -36,7 +36,7 @@ A ghoul is plodding towards the woman!
 translucent skin is taut about its bones and you think you can see strange
 little white movements underneath it.    
 ~
-bcdg dh 700 E
+78 0 0 0 16 0 0 0 700 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 0
@@ -52,7 +52,7 @@ this time, isn't it?  And even stranger, you know her name...  How distinctly
 odd.  Anyways, Esmerelda seems to be watching the undead before her advancing
 ever so slowly, maybe you can try to save her!    
 ~
-bcdfh dh -900 E
+174 0 0 0 16 0 0 0 -900 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 2
@@ -66,7 +66,7 @@ A man, dressed in black and silver robes, is fighting off some undead!
 what looks to be obsidian.  He seems to be sorely beset by the undead before
 him.    
 ~
-bdfh dh -750 E
+170 0 0 0 16 0 0 0 -750 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -85,7 +85,7 @@ collection of bones serves to form what looks to be a dragon, although the odd
 bone or two seems to be out of place.  It does appear that Wyrenthoth is a
 dracolich.    
 ~
-bdgh dh 900 E
+202 0 0 0 16 0 0 0 900 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 0
@@ -100,7 +100,7 @@ red satin lining.  He has dark hair and cold green eyes that catch and reflect
 every movement.  Erich, as his name happens to be, is the master vampire in
 control of all of the evil undead which infest this cathedral.    
 ~
-bcdf dh -1000 E
+46 0 0 0 16 0 0 0 -1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -114,7 +114,7 @@ A rather large zombie is lumbering about here, quite aimlessly.
 the...  It.  It is an enormous mass of rotting flesh and filth that smells, to
 put it bluntly, really bad.    
 ~
-bd dh 1000 E
+10 0 0 0 16 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 0
@@ -128,7 +128,7 @@ A skeletal human is standing here, looking rather confused.
 twitch, and looks around.  You are rather shocked, until you realize that it
 seems to be looking for someone in particular.    
 ~
-bdg dh 600 E
+74 0 0 0 16 0 0 0 600 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 0
@@ -143,7 +143,7 @@ it in small chunks.  It is dressed in the remains of a peasant's clothing and
 seems to have a single purpose in mind (not that its mind could probably handle
 any more than that).    
 ~
-bdg dh 500 E
+74 0 0 0 16 0 0 0 500 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 0
@@ -156,7 +156,7 @@ A shadow made of inky blackness moves along the wall towards you.
    The moving shape of blackness looks like it is a shadow that lost its owner
 at some point.  It looks rather malignant.  To put it mildly.    
 ~
-bdg dh -800 E
+74 0 0 0 16 0 0 0 -800 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 0
@@ -172,7 +172,7 @@ thought is to look at it a little more closely.  In doing so, you notice that
 it seems to be made of mummified flesh, stretched over pointed bones.  Also, it
 has strangely glowing red eyes.    
 ~
-bdg dh -900 E
+74 0 0 0 16 0 0 0 -900 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 0
@@ -185,7 +185,7 @@ A strange humanoid shape moves towards you.  It is a wraith!
    This thing looks vaguely humanoid, but does not appear to be made of flesh
 but rather seems to be made of a strange electricity in the air.    
 ~
-bdg dhu -800 E
+74 0 0 0 16 0 0 0 -800 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 0
@@ -200,7 +200,7 @@ ravages of time and decay, leaving only a pale resemblence to the former living
 elf.  Looking closely at the clothing she wears, you notice that it appears to
 be the soul of the cathedral's Mother Superior.    
 ~
-bdg dh 800 E
+74 0 0 0 16 0 0 0 800 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -215,7 +215,7 @@ portly fellow and even though he is long since dead, he looks rather jovial.
 When you look at him, he stops singing for a minute, looks up at you, smiles
 sadly, and then continues his song.    
 ~
-bdg dh 750 E
+74 0 0 0 16 0 0 0 750 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1

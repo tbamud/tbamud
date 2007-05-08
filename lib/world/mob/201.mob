@@ -6,7 +6,7 @@ A very unhappy crab crawls around the area.
    The crab has a protective shell that serves to shield its soft inner body.  
 When danger approaches, it uses its razor-sharp pincers to defend itself.  
 ~
-cdg t 0 E
+76 0 0 0 1048576 0 0 0 0 E
 10 17 2 2d2+100 1d2+1
 0 10000
 8 8 0
@@ -22,7 +22,7 @@ An innocent-looking jellyfish floats here.
 It's white and near translucent, and you can see its insides which looks like
 silverish ribbons.  
 ~
-bdfo bkst -200 E
+16426 0 0 0 1572868 0 0 0 -200 E
 15 15 1 3d3+150 2d2+2
 0 22500
 8 8 0
@@ -37,7 +37,7 @@ A seagull flies here, flapping its wings and soaring in the sky.
 painted black.  Its beck is yellow, which it uses to break the shells of crabs,
 its main food source.  
 ~
-dg gs 0 E
+72 0 0 0 524416 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 0 40000
 8 8 0
@@ -53,7 +53,7 @@ A siren rests here, singing in a soothing voice.
 complexion, and her voluptuous, full lips are the main features of this
 marvelous creature.  
 ~
-bdeo dfkmn 0 E
+16410 0 0 0 8272 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -69,7 +69,7 @@ Tryny the Widow~
    Tryny has looks depressed and in need of comforting.  Her black hair lined
 with streaks of grey, and her face has numerous wrinkles on it.  
 ~
-bd mn 0 E
+10 0 0 0 8192 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 0
 8 8 2
@@ -85,7 +85,7 @@ an old fool~
 and charred black from the sun, and he is bald, with only a few miserable
 strands of hair left on his head.  
 ~
-bdel 0 0 E
+2074 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 0
 8 8 1
@@ -107,7 +107,7 @@ An blonde woman in her late 40s is here, waiting to help you.
 plenty of important documents.  To delete/add questflags to unable you to do the
 quest again or enable quest, type @rplease add/delete@n
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+10000 5d5+5
 10000 115600
 8 8 2
@@ -121,7 +121,7 @@ A tour guide stands here, ready to assist you.
    Hair neatly comb, and with a smile plastered on his face, this tour guide
 will give you some stuff to begin your exploration of the Sapphire Islands.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -135,7 +135,7 @@ A horizontally-challenged cook is here, awaiting your orders.
 ~
    This lady looks plump and is undeniably horizontally challenged.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2

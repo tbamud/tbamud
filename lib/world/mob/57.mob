@@ -7,7 +7,7 @@ Sheila, Gatia's Assistant stands here.
 certain death.  Ever since that day she has sworn to do everything that Gatia
 says...  
 ~
-bdemnopr 0 900 E
+192538 0 0 0 0 0 0 0 900 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -19,7 +19,7 @@ The Gemini stands here.
 ~
    Gemini is a sign of the zodiac and is represented by the twins.  
 ~
-bdf 0 -1000 E
+42 0 0 0 0 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -36,7 +36,7 @@ Pisces the fish are swimming here.
 ~
    Pisces is represented by the two fish.  
 ~
-bdj m -1000 E
+522 0 0 0 8192 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -55,7 +55,7 @@ Aquarius the Water Carrier stands here.
 back, it looks too much for a lady to carry but she handles it very well, almost
 as if she was a man...  
 ~
-bdfg 0 -1000 E
+106 0 0 0 0 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -69,7 +69,7 @@ Leo the Lion stands here proudly.
    Leo is the 5th sign of the zodiac.  He is a fearsome monster and not one to
 be messed with.  Treat him with care.  
 ~
-bdgioq 0 879 E
+82250 0 0 0 0 0 0 0 879 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -83,7 +83,7 @@ Taurus the Bull walks around his pen grunting.
    Taurus looks like a typical bull in every way except that he is ten times the
 size!  Getting on his bad side would be a big mistake.  
 ~
-bdfnpr 0 184 E
+172074 0 0 0 0 0 0 0 184 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -101,7 +101,7 @@ Aries the Ram stands here bleating.
 competition hand (er, hooves) down.  He is a good starsign and dislikes evil
 things.  
 ~
-bdi 0 1000 E
+266 0 0 0 0 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -115,7 +115,7 @@ Sagittarius is here stringing a bow.
    Sagittarius belongs to an ancient race, the Centaurs.  He is the 9th sign of
 the zodiac and is famous because of this.  
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -133,7 +133,7 @@ Cancer the Crab squats here bubbling at the mouth.
    Cancer looks dangerous.  She has 5 foot claws at the end of each arm.  The
 claws gleam in the half light as she clacks them through the air.  
 ~
-bdjpr 0 -600 E
+164362 0 0 0 0 0 0 0 -600 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -151,7 +151,7 @@ Bungle the Shopkeeper stands here.
 Virgos' dress at a Fancy Dress Ball two years ago.  Since then he has spent his
 life in this cramped little shop.  
 ~
-bcdgnopqr 0 0 E
+254030 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -164,7 +164,7 @@ Virgo is imprisoned here.
    Virgo is the 6th sign of the zodiac, she is imprisoned by Scorpio and will
 probably end up as his next meal.  
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -176,7 +176,7 @@ Capricorn rests his head here.
 ~
    Capricorn is resting his head on a bed of moss.  He looks so relaxed.  
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 14 16 1 2d2+140 2d2+2
 140 19600
 5 5 1
@@ -193,7 +193,7 @@ A Male Goat stands here.
    A Male Goat stands here butting heads with friends and whacking his head into
 the oak tree.  
 ~
-bdm 0 200 E
+4106 0 0 0 0 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -209,7 +209,7 @@ Scorpio, the 8th sign of the zodiac stands here.
 ~
    Scorpio is the 8th sign of the zodiac.  
 ~
-bdgo 0 -1000 E
+16458 0 0 0 0 0 0 0 -1000 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -223,7 +223,7 @@ Crannasia the Drow Assassin stands here with an evil grin upon her face.
    Crannasia is a very famous Drow assassin.  Her rates are high but she's the
 best there is.  She has never missed a target...  
 ~
-bdmnopqr bdm 0 E
+258058 0 0 0 8212 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2

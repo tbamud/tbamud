@@ -7,7 +7,7 @@ A green worker ant toils away mindlessly for its queen.
 almost constantly, digging new tunnels, gathering food, and even protecting the
 hill from other bugs.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -22,7 +22,7 @@ A red soldier ant is invading the anthill.
 the red ant colony.  This red soldier ant has been sent here to eliminate the
 existing residents.  
 ~
-cdgq 0 0 E
+65612 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -36,7 +36,7 @@ A green soldier ant is protecting the anthill.
    The green soldier ant was born and raised to protect the queen and the entire
 anthill.  They do no work, but will sacrifice themselves for the queen.  
 ~
-bd 0 3 E
+10 0 0 0 0 0 0 0 3 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -51,7 +51,7 @@ A huge green soldier ant stands here ready to die protecting the Queen.
 the queen from attack.  It is by far one of the largest ants in the entire
 anthill.  
 ~
-bdm 0 0 E
+4106 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -69,7 +69,7 @@ The green queen ant is ensuring the survival of the species.
 and it doesn't look like she could ever fit through any of the tunnels.  She
 guards over her newborn larvae.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -87,7 +87,7 @@ A large green dominant male ant scutters about, making sure the workers tend the
 is to ensure everything gets done and the queen keeps pumping out cute little
 larvae.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0

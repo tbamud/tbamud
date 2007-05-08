@@ -4,7 +4,7 @@ Dorm Room~
 in this room as any other dorm room, a desk, bed, and exit...  This time to the
 south.    
 ~
-303 ad 2
+303 9 0 0 0 0
 D2
 The hallway lies to the south.
 ~
@@ -34,23 +34,23 @@ water bottle structure similar to the ones used in modern day hamster and
 gerbil cages.  The only exit is to the west.  Just as you finish looking
 around, your eye spots a SEP.    
 ~
-303 ad 4
+303 9 0 0 0 0
 D3
 Thank Bob, the hallway is still to the west of here.
 ~
 ~
 0 -1 30299
 E
+bars bar ceiling~
+   The bars hanging from the ceiling look quite sturdy and it looks like you
+could swing on them rather easily...  If you were coordinated that is.  
+~
+E
 sep~
    This is Someone Else's Problem.  The only way that you are able to spot it is
 by jumping around and looking like an idiot as you try and avert your eyes so
 that it can be seen.  Unfortunately, seeing it doesn't help.  It looks like some
 sort of Italian Bistro...  Rather strange actually.  
-~
-E
-bars bar ceiling~
-   The bars hanging from the ceiling look quite sturdy and it looks like you
-could swing on them rather easily...  If you were coordinated that is.  
 ~
 S
 #30302
@@ -59,7 +59,7 @@ Hallway~
 there is a room to the south and a door to the east.  The hallway grinds to a
 start when you move northwards though.    
 ~
-303 ad 2
+303 9 0 0 0 0
 D0
 The hallway starts here and runs northwards.  You'd better catch it before
 it gets away.  *Groan*
@@ -79,13 +79,13 @@ it.
 ~
 0 -1 30303
 E
-erp! erp~
-   Get it...  Elephants Ride Porcupines!  ...  ERP!  
-~
-E
 martian~
    It's just a joke, you are supposed to smile at the obscure gag hidden in it.
 It's almost like saying the Elephants Ride Porcupines!  
+~
+E
+erp! erp~
+   Get it...  Elephants Ride Porcupines!  ...  ERP!  
 ~
 S
 #30303
@@ -97,7 +97,7 @@ would say that they don't have that item.  The logistics just don't work on
 these magnitudes, with more rooms maybe, but definitely not one room.  There is
 an exit to the north.    
 ~
-303 ad 2
+303 9 0 0 0 0
 D0
 This leads back to the hallway out of this stupidity.
 ~
@@ -116,7 +116,7 @@ below you though...  About 60 feet below you that is.  If you go north, you can
 escape back to the real world (the balcony at least, just type exit to see
 where you end up if you go down).    
 ~
-303 0 4
+303 0 0 0 0 0
 D0
 The salvation of the balcony is directly to the north.  All it needs is for
 you to press N and then RETURN.
@@ -139,7 +139,7 @@ S
 A Really Bad, Evil, And Nasty Deathtrap~
    The name says it all, doesn't it?    
 ~
-303 cd 0
+303 12 0 0 0 0
 E
 deathtrap~
    It's designed to kill, so if you are reading this, either you have avoided it
@@ -156,7 +156,7 @@ trying to navigate the stairs though.  The fact that there is an exit to the
 west blocked by a door doesn't help.  The fact that the only other way out is
 to go up.  Not coincidentally, that doesn't help either.    
 ~
-303 acd 5
+303 13 0 0 0 0
 D3
 This is blocked by a door.  Unless you opened it already, which is pretty
 likely.
@@ -175,7 +175,7 @@ Really Narrow Stairwell, Part II~
    The Stairwell's Revenge.  Now there is an exit to the west and one down.  
 
 ~
-303 acd 5
+303 13 0 0 0 0
 D3
 This leads to a nice entrance hall.
 ~
@@ -197,7 +197,7 @@ Entry Hall~
 mudroom.  That is, you remove the mud from your footwear here.  The hall
 continues to the west into a nice, clean room and to the east to a stairwell.
 ~
-303 ad 3
+303 9 0 0 0 0
 D1
 The dreaded stairwell is here.
 ~
@@ -221,7 +221,7 @@ furnishing the room, such as a rocking chair, a coffee table, and a couch.
 All of the furnishings are decorated in a somewhat flowery style.  You can
 leave this room by going east to the entrance hall or south to the bedroom.  
 ~
-303 d 2
+303 8 0 0 0 0
 D1
 The entrance hall is directly to the east.
 ~
@@ -233,15 +233,15 @@ The bedroom is to the south.
 ~
 0 -1 30310
 E
-couch rocking chair~
-   The flowery pattern makes you recoil in disgust, but other than that it seems
-to be a normal piece of furniture.  
-~
-E
 coffee table~
    As you look at the coffee table, you notice a copy of the really rude Madonna
 book...  No wait, that was just censored by the Builders.  We are allowing none
 of that smut here.  You are disgusted by the flowery pattern on the table.  
+~
+E
+couch rocking chair~
+   The flowery pattern makes you recoil in disgust, but other than that it seems
+to be a normal piece of furniture.  
 ~
 S
 #30310
@@ -250,7 +250,7 @@ Bedroom~
 bedroom furnishings here, a bed (obviously), a night-table, and a dresser.  
 There are exits to the north and to the balcony to the east.    
 ~
-303 d 2
+303 8 0 0 0 0
 D0
 The living room is to the north.
 ~
@@ -262,8 +262,9 @@ The balcony is to the east.
 ~
 0 -1 30311
 E
-dresser~
-   Too bad none of the clothes in here fit you at all.  
+bed~
+   You feel sleepy as you look towards this, maybe ...  Nope, none of those
+thoughts here!  
 ~
 E
 night-table~
@@ -272,9 +273,8 @@ space underneath.  The thing that makes it different is that the drawer is empty
 and the top and empty space are just that.  Empty.  
 ~
 E
-bed~
-   You feel sleepy as you look towards this, maybe ...  Nope, none of those
-thoughts here!  
+dresser~
+   Too bad none of the clothes in here fit you at all.  
 ~
 S
 #30311
@@ -285,7 +285,7 @@ does not resemble the real countryside, so you aren't sure what you are seeing
 exactly.  Must be an illusion.  Anyways, there is an exit back to the bedroom
 in the west wall.    
 ~
-303 c 2
+303 4 0 0 0 0
 D2
 This leads to a thin ledge.
 ~
@@ -297,10 +297,9 @@ This leads back to a bedroom.
 ~
 0 -1 30310
 E
-frgos~
-   No, this isn't a spelling mistake!  It's just a neat little creature that you
-have never seen before and will probably never see again after this.  After all,
-this is an illusion, or something, isn't it?  
+cows horses pigs pig cow horse~
+   These are normal farm animals.  You aren't quite sure what farm they are on
+though.  
 ~
 E
 dogs cats cat dog~
@@ -308,9 +307,10 @@ dogs cats cat dog~
 they are where they are.  
 ~
 E
-cows horses pigs pig cow horse~
-   These are normal farm animals.  You aren't quite sure what farm they are on
-though.  
+frgos~
+   No, this isn't a spelling mistake!  It's just a neat little creature that you
+have never seen before and will probably never see again after this.  After all,
+this is an illusion, or something, isn't it?  
 ~
 S
 #30312
@@ -318,7 +318,7 @@ Hallway Junction~
    This hallway leads north and south and there is a stairwell in the east
 wall.  There is a sign on the wall.    
 ~
-303 ad 2
+303 9 0 0 0 0
 D0
 The hallway continues north.
 ~
@@ -352,7 +352,7 @@ S
 Hallway~
    The hallway turns west-south here and there is an opening to the north.    
 ~
-303 ad 2
+303 9 0 0 0 0
 D0
 There is a room to the north.
 ~
@@ -377,17 +377,16 @@ room, you can see a large collection of CDs and Cassettes...  Exam time must be
 coming up soon.  On the east wall sits a large computer with lots of neat
 accessories.  The only exit is to the south.    
 ~
-303 ad 2
+303 9 0 0 0 0
 D2
 The hallway leads away from here to the south.
 ~
 ~
 0 -1 30313
 E
-pictures snow boats walls~
-   The pictures cover the walls completely and you find it difficult to see any
-of the wall whatsoever between the pictures of snowscapes that you don't
-recognize and boats that you would love to own.  
+computer accessories~
+   This is so large and incomprehensible that you simply do not understand it.
+
 ~
 E
 cds cd cassettes cassette~
@@ -395,9 +394,10 @@ cds cd cassettes cassette~
 african tribal music to the latest from Neil Young.  
 ~
 E
-computer accessories~
-   This is so large and incomprehensible that you simply do not understand it.
-
+pictures snow boats walls~
+   The pictures cover the walls completely and you find it difficult to see any
+of the wall whatsoever between the pictures of snowscapes that you don't
+recognize and boats that you would love to own.  
 ~
 S
 #30315
@@ -405,7 +405,7 @@ Hallway~
    This hallway leads east and has an opening to the north and one to the west
 and one to the south.    
 ~
-303 ad 2
+303 9 0 0 0 0
 D0
 Bubbles seem to be coming from the northern entrance.
 ~
@@ -433,7 +433,7 @@ Bubble Land~
 There is only one exit...  To the south (you think).  With all the bubbles you
 can't see anything else in the room.    
 ~
-303 ad 5
+303 9 0 0 0 0
 D2
 You think the hallway lies to the south.
 ~
@@ -453,20 +453,16 @@ the fact that other than that the room is completely empty of furniture, but
 wait, that pizza box in the corner seems to be acting as a table of sorts with
 all the newspapers supporting it.  There is an exit to the east.    
 ~
-303 ad 2
+303 9 0 0 0 0
 D1
 The hallway extends to the east.
 ~
 ~
 0 -1 30315
 E
-news newspapers~
-   It's only the business sections, and they are old.  Type NEWS for a more
-updated edition.  
-~
-E
-pizza box~
-   It's about 3 weeks old and seems to be growing mould....  Yech.  
+stock certificates~
+   They all seem to be immensely valuable but with your awful luck, you can't
+seem to pry any of them from the walls.  
 ~
 E
 furniture~
@@ -474,9 +470,13 @@ furniture~
 as the table of the future.  
 ~
 E
-stock certificates~
-   They all seem to be immensely valuable but with your awful luck, you can't
-seem to pry any of them from the walls.  
+pizza box~
+   It's about 3 weeks old and seems to be growing mould....  Yech.  
+~
+E
+news newspapers~
+   It's only the business sections, and they are old.  Type NEWS for a more
+updated edition.  
 ~
 S
 #30318
@@ -486,21 +486,21 @@ this room at least).  There are posters of John all over the walls as well as a
 few of the other Beatles...  Wait you don't see any of Paul...  Strange.  
 There is only one exit, the one to the north.    
 ~
-303 ad 2
+303 9 0 0 0 0
 D0
 The hallway is directly to your north.
 ~
 ~
 0 -1 30315
 E
-paul~
-   Wait...  There's one of Paul...  See it?  The one with all the darts stuck in
-it.  
-~
-E
 posters john lennon beatles~
    The majority of the posters in this room deal with John Lennon but there are
 a few of Ringo and George also.  
+~
+E
+paul~
+   Wait...  There's one of Paul...  See it?  The one with all the darts stuck in
+it.  
 ~
 S
 #30319
@@ -510,7 +510,7 @@ room in a residence is decorated, with a fridge, stove and of course a TV.
 Unfortunately, there does not seem to be any couches or chairs in the room.  
 There is an exit to the north and a door on the east wall with no doorknob.  
 ~
-303 ad 2
+303 9 0 0 0 0
 D0
 The hallway leads to the north.
 ~
@@ -523,8 +523,9 @@ way through.
 door~
 2 0 -1
 E
-chair chairs couch couches~
-   You don't see any such thing.  Read the description.  
+door~
+   The door seems to be permanently closed and there does not seem to be a way
+through.  
 ~
 E
 fridge stove tv~
@@ -532,9 +533,8 @@ fridge stove tv~
 this magnitude.  
 ~
 E
-door~
-   The door seems to be permanently closed and there does not seem to be a way
-through.  
+chair chairs couch couches~
+   You don't see any such thing.  Read the description.  
 ~
 S
 #30320
@@ -543,7 +543,7 @@ Hallway~
 the west and east.  The sound of snoring denotes a lecture hall to the south.
   
 ~
-303 d 2
+303 8 0 0 0 0
 D1
 The hallway continues east.
 ~
@@ -570,7 +570,7 @@ Hallway~
 the west and east.  The sound of snoring denotes a lecture hall to the south.
   
 ~
-303 d 2
+303 8 0 0 0 0
 D1
 The hallway continues east.
 ~
@@ -596,7 +596,7 @@ Hallway~
    The hallway curves around slightly so that you can't quite see what is to
 the west and east.  There is an extraneous exit to the north.    
 ~
-303 d 2
+303 8 0 0 0 0
 D0
 To the north you see... the centre of the building?
 ~
@@ -623,7 +623,7 @@ Hallway~
 the est and east.  The sound of snoring denotes a lecture hall to the south.  
 
 ~
-303 d 2
+303 8 0 0 0 0
 D1
 The hallway continues east.
 ~
@@ -650,7 +650,7 @@ Hallway~
 the west and east.  The sound of snoring denotes a lecture hall to the south.
   
 ~
-303 d 2
+303 8 0 0 0 0
 D1
 The hallway continues east.
 ~
@@ -676,7 +676,7 @@ An Odd Circular Room~
    A small circular room sits in the centre of the building.  There are exits
 to the north and south.    
 ~
-303 d 1
+303 8 0 0 0 0
 D0
 The entrance can been seen to the north.
 ~
@@ -698,19 +698,19 @@ Lecture Hall "B"~
 seats with small tables bolted to them.  As soon as you enter the room, you get
 a very sleepy feeling...    
 ~
-303 d 0
+303 8 0 0 0 0
 D0
 Well, it's the hallway you entered from... Or is it?
 ~
 ~
 0 -1 30320
 E
-letter number lettering numbering order~
-   You aren't too sure that there is an order to the lettering scheme.  
-~
-E
 round circle circular curves curve~
    Yes, it's round.  
+~
+E
+letter number lettering numbering order~
+   You aren't too sure that there is an order to the lettering scheme.  
 ~
 S
 #30327
@@ -719,19 +719,19 @@ Lecture Hall "A"~
 seats with small tables bolted to them.  As soon as you enter the room, you get
 a very sleepy feeling...    
 ~
-303 d 0
+303 8 0 0 0 0
 D0
 Well, it's the hallway you entered from... Or is it?
 ~
 ~
 0 -1 30321
 E
-letter number lettering numbering order~
-   You aren't too sure that there is an order to the lettering scheme.  
-~
-E
 round circle circular curves curve~
    Yes, it's round.  
+~
+E
+letter number lettering numbering order~
+   You aren't too sure that there is an order to the lettering scheme.  
 ~
 S
 #30328
@@ -740,19 +740,19 @@ Lecture Hall "D"~
 seats with small tables bolted to them.  As soon as you enter the room, you get
 a very sleepy feeling...    
 ~
-303 d 0
+303 8 0 0 0 0
 D0
 Well, it's the hallway you entered from... Or is it?
 ~
 ~
 0 -1 30323
 E
-letter number lettering numbering order~
-   You aren't too sure that there is an order to the lettering scheme.  
-~
-E
 round circle circular curves curve~
    Yes, it's round.  
+~
+E
+letter number lettering numbering order~
+   You aren't too sure that there is an order to the lettering scheme.  
 ~
 S
 #30329
@@ -761,19 +761,19 @@ Lecture Hall "C"~
 seats with small tables bolted to them.  As soon as you enter the room, you get
 a very sleepy feeling...    
 ~
-303 d 0
+303 8 0 0 0 0
 D0
 Well, it's the hallway you entered from... Or is it?
 ~
 ~
 0 -1 30324
 E
-letter number lettering numbering order~
-   You aren't too sure that there is an order to the lettering scheme.  
-~
-E
 round circle circular curves curve~
    Yes, it's round.  
+~
+E
+letter number lettering numbering order~
+   You aren't too sure that there is an order to the lettering scheme.  
 ~
 S
 #30330
@@ -783,7 +783,7 @@ conveyer belt under your feet, and you can see glinting objects ahead, and the
 way back east seems to have disappeared.  The pictures on the walls make you
 feel extremely comfortable.    
 ~
-303 acd 1
+303 13 0 0 0 0
 D1
 There isn't an exit in this direction, so don't even bother trying to
 go this way.
@@ -811,7 +811,7 @@ it is!  But, the system seems to work well, as the rotating knives cut you up
 into tiny little pieces of flesh and your blood drains down the chutes, and the
 suction devices casually suck what's left of your mangled flesh away....    
 ~
-303 d 0
+303 8 0 0 0 0
 D1
 Why even look...it won't halt the mangling?
 ~

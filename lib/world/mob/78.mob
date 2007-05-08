@@ -6,7 +6,7 @@ An elven lass stands here, humming to herself.
    The elven lass smiles happily as she goes on about her business, humming
 quietly to herself.  
 ~
-dgh 0 900 E
+200 0 0 0 0 0 0 0 900 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -19,7 +19,7 @@ The baker Stamnell stands here smiling.
    Stamnell has rosey cheeks and round belly.  His handlebar mustache has bits
 of flour in it, but he doesn't seem to mind.  
 ~
-bdor 0 500 E
+147466 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -32,7 +32,7 @@ Vhispera stands here busily counting her stock.
    She is a middle aged elven woman with dark hair and eyes.  She is rather
 plain to look at but she smiles at you warmly.  
 ~
-bdor 0 700 E
+147466 0 0 0 0 0 0 0 700 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -46,7 +46,7 @@ A small boy stands here.
 lays messily on his head and he has clothes that looks like they have seen
 better days.  
 ~
-dgh 0 750 E
+200 0 0 0 0 0 0 0 750 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -63,7 +63,7 @@ The village guard stands here, observing the area.
 guard off hand, but the small patch sewn on his right arm sleeve denotes his
 profession.  His eyes are darting about on constant watch for trouble.  
 ~
-dglm 0 1000 E
+6216 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -78,7 +78,7 @@ The village fool stands here, making an idiot of himself.
 entertain.  His ratty clothes dispell dust with every movement as he goes about
 his way.  
 ~
-dgn 0 600 E
+8264 0 0 0 0 0 0 0 600 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -92,7 +92,7 @@ An elven gardner stands here, grumbling to himself.
    The gardner looks very grumpy, perhaps it would be a good idea to stay out of
 his way.  
 ~
-dgloq 0 900 E
+84040 0 0 0 0 0 0 0 900 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -105,7 +105,7 @@ A human servant stands here.
 ~
    She looks just like you would expect a servant to look like.  
 ~
-dghpr 0 200 E
+164040 0 0 0 0 0 0 0 200 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -118,7 +118,7 @@ A husky hunter stands here, bragging of his last kill.
    He is big and burly.  He has stains all over his clothing, perhaps it is
 blood from his constant hunting.  
 ~
-dgnopqr 0 -100 E
+254024 0 0 0 0 0 0 0 -100 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -132,7 +132,7 @@ The elven healer hurries about
    The elven healer hurries about from house to house bandaging the sick.  
 Mabye she will have enough time to teach you,
 ~
-dgoq 0 0 E
+81992 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2

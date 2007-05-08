@@ -5,7 +5,7 @@ of music and laughter can be heard off in the distance.  The top of a large
 tent can be seen to the south.  The path continues south with the western
 highway to the north.    
 ~
-187 0 2
+187 0 0 0 0 0
 D2
 ~
 ~
@@ -34,7 +34,7 @@ Circus Path~
 field sways gently in the breeze.  The sounds of laughter and music can be
 heard to the west.  The path leads off to the north and continues to the south.
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -52,7 +52,7 @@ over the sounds of the field.  A large colorful tent can be seen off in the
 distance to the southeast, with its multi-colored flags blowing in the wind.  
 The path continues to the west and leads off to the north.    
 ~
-187 0 2
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -68,7 +68,7 @@ Circus Path~
 can be heard a bit louder here.  A few people can be seen now as more of the
 circus comes into view.  The path leads south as well as to the east.    
 ~
-187 0 2
+187 0 0 0 0 0
 D1
 ~
 ~
@@ -85,7 +85,7 @@ A small line can be seen to the south as people line up to enter the circus.
 The sounds of the circus are in full swing,  bringing a smile to your face.  
 The path continues to the north as well as to the south.    
 ~
-187 c 2
+187 4 0 0 0 0
 D0
 ~
 ~
@@ -102,7 +102,7 @@ built here to keep the line going in an orderly fashion.  There is a welcomer
 here, welcoming you to the Circus of Wonders.  The path continues to the north
 and west through the arch.    
 ~
-187 0 2
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -120,7 +120,7 @@ the sounds of the circus are all around you.  There is a game stall directly to
 the north and a game stall to the south too.  The path continues to the west
 and to the east.    
 ~
-187 0 2
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -144,7 +144,7 @@ Circus Game Stall~
 The attendant urges you to take a wack at the mole.  It's free so why not!  
 The only way out is to the south.    
 ~
-187 d 0
+187 8 0 0 0 0
 D2
 ~
 ~
@@ -157,7 +157,7 @@ There is a attendent standing here, smiling at you.  She urges you to take you
 best shot at hitting the small chick.  It is free so why not give it a try.  
 The only exit is to the north.    
 ~
-187 d 0
+187 8 0 0 0 0
 D0
 ~
 ~
@@ -170,7 +170,7 @@ well worn path.  Sounds of music can be heard from all around.  The path leads
 to a game stall to the north and continues east and west to other parts of the
 circus.    
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -190,7 +190,7 @@ Circus Game Stall~
 wicked man standing watch over all that enter this stall.  Maybe this is not a
 game that one should be playing.  The only exit is to the south.    
 ~
-187 d 0
+187 8 0 0 0 0
 D2
 ~
 ~
@@ -203,7 +203,7 @@ the air.  To the north you see a dark colored tent with lights flickering
 inside.  A small sign hangs on the flap of the tent.  The path continues on to
 the south and east.    
 ~
-187 0 2
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -231,7 +231,7 @@ the table, the images on them are nothing you can recognize.  A sign hangs
 crookedly from the edge of the table.  The only way out is back to the south
 where you entered this tent.    
 ~
-187 0 0
+187 0 0 0 0 0
 D2
 ~
 ~
@@ -249,7 +249,7 @@ indescribable, neither male or female and you can't make out what it is saying.
 The path continues on to the north and to the east you can make out a shape of
 a small tent.    
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -265,7 +265,7 @@ North of the Circus~
 passing without bumping each other.  You can hear faint animal noises that are
 carried along by the wind.  The path leads to the west and south.    
 ~
-187 0 2
+187 0 0 0 0 0
 D2
 ~
 ~
@@ -282,7 +282,7 @@ there is a run down shack, boards missing and windows broken.  The door is off
 its hinges and hangs precariously by what looks to be a nail.  The path
 continues on to the south from here.    
 ~
-187 0 2
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -304,7 +304,7 @@ something that you can not place fills the air.  There is something here.....
 But where?  There is a small door leading west to a dark room and to the south
 you may leave back to the path.    
 ~
-187 0 0
+187 0 0 0 0 0
 D2
 ~
 ~
@@ -321,7 +321,7 @@ in the air held captive by the fact there is no window to release it.  A small
 cage has been toppled over in the corner, looking as if something just made an
 escape from its tiny confines.  The only way out is back to the east.    
 ~
-187 0 0
+187 0 0 0 0 0
 D1
 ~
 ~
@@ -334,7 +334,7 @@ see the Big Top and a few animal cages.  You can still hear the sounds of
 laughter and singing all around you.  The path continues to the south and
 north.    
 ~
-187 0 2
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -350,7 +350,7 @@ Circus Area~
 can see a few animal cages.  One hears the sounds of animals and the sounds of
 the Big Top.  The path continues to the south and north.    
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -367,7 +367,7 @@ air...  Laughter, singing and animals.  To the east you see some animal cages
 and to the southeast you see the massive tent with its banners flying wildly in
 the wind.  The path runs northerly from here.    
 ~
-187 0 2
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -384,7 +384,7 @@ Lions, elephants and monkeys can be heard though you are not certain where the
 sound comes from.  The sounds seem to echo and meld together creating a
 frightful noise.    
 ~
-187 0 2
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -405,7 +405,7 @@ The cage is filled with vines and branches so that they can excersize and the
 monkies swing and hop from branch to branch above you.  A few sit lazily upon
 the ground stuffing their faces with food the keeper brought to them.    
 ~
-187 0 0
+187 0 0 0 0 0
 D2
 ~
 ~
@@ -418,7 +418,7 @@ mewlings can be heard while to the south the cage is quiet, only the stench
 catches your attention.  To the west you see the Big Top and westerly will take
 you further down the path.    
 ~
-187 0 2
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -442,7 +442,7 @@ Animal Cage~
 meows can be heard.  They are so cute but the looks in their eyes tell you that
 it would not be a good idea to pet them.  The only exit is to the south
 ~
-187 0 0
+187 0 0 0 0 0
 D2
 ~
 ~
@@ -456,7 +456,7 @@ imagine if the elephants were actually in the cage it would be worse.  A lone
 baby elephant is sleeping on one of the piles of hay waiting for its mother to
 return from the act in the circus.    
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -470,7 +470,7 @@ banner red and white pennants flap wildly in the breeze.  Laughter and cheering
 fills the air as well as the occasional roar of lions.  You can enter the big
 top to the east and to the south you see an elaboratly decorated wagon.    
 ~
-187 0 2
+187 0 0 0 0 0
 D1
 ~
 ~
@@ -496,7 +496,7 @@ children.  You can hear the ringmaster calling out the next act from here,
 looking closer a high wire is visible to the southeast.  The bleachers are to
 the south and the exit of the Big Top is to the west.    
 ~
-187 0 0
+187 0 0 0 0 0
 D2
 ~
 ~
@@ -516,7 +516,7 @@ children a thrill.  Laughter sails through the air almost as gracefully as the
 man on the trapeze.  To the east you can see the main event in the center ring,
 while to the north will lead you back to the entrance.    
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -534,7 +534,7 @@ not linger to find out!  To the north is another ring where you can see
 elephants parading around.  To the south you see a highwire with a man
 tottering upon it and back to the west is the seating area.    
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -556,7 +556,7 @@ One miscalculation and his fate is sealed, hence the look of extreme
 concentration on his face.  You can hear the crowd gasp for breath as he
 teeters back and forth.    
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -571,7 +571,7 @@ they are playing follow the leader walking around the large circle.  While yet
 another has a young beautiful girl riding gingerly on its back.  To the south
 you can see the main ring and further south you can make out a highwire.    
 ~
-187 0 0
+187 0 0 0 0 0
 D2
 ~
 ~
@@ -583,7 +583,7 @@ Inside the Big Top~
 swing here.  Laughing and cheer can be heard all around you.  There is an exit
 to the north.  
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~
@@ -598,7 +598,7 @@ side a small yet intricately carved table.  This must be the ringmasters
 private quarters for only he could afford such luxury in the circus.  The door
 to the north is the only exit.    
 ~
-187 0 0
+187 0 0 0 0 0
 D0
 ~
 ~

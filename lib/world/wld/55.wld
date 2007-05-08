@@ -2,7 +2,7 @@
 Underground~
    The small passage continues west and east.
 ~
-55 ad 0
+55 9 0 0 0 0
 D1
 ~
 ~
@@ -16,7 +16,7 @@ S
 Underground~
    The small passage continues west and east.
 ~
-55 ad 0
+55 9 0 0 0 0
 D1
 ~
 ~
@@ -30,7 +30,7 @@ S
 Underground~
    The small passage continues west and east.
 ~
-55 ad 0
+55 9 0 0 0 0
 D1
 ~
 ~
@@ -47,7 +47,7 @@ your guildmaster ready to assist you when the time is right.  The room
 is completely silent.  The only obvious exit is back up the staircase
 into the the Nectar.
 ~
-55 deh 0
+55 152 0 0 0 0
 D1
 You notice the floor at the base of the eastern wall has some faint
 scratches in it.
@@ -67,7 +67,7 @@ From what you have heard however, this holy man has a bit of a temper,
 and he doesn't look very happy that you've disturbed his prayers.
    The only obvious exit is south.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 ~
@@ -80,7 +80,7 @@ Thalos.  A huge altar made of highly polished black onyx is standing
 in front of you.  Behind this altar sits a twelve foot tall statue of
 Akbal, the highest god in all the lands.
 ~
-55 deg 0
+55 88 0 0 0 0
 D2
 ~
 ~
@@ -98,7 +98,7 @@ into tailored clothes.  Cotten is brought in from the country side
 and spun up into cloth and dyed different colors.  A young boy walks
 in, grabs a pile of clothing and leaves.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -110,7 +110,7 @@ The Craftsmans' Guild~
 with various tools and materials.  The air is tense with the rush to
 complete various projects and creations.
 ~
-55 d 0
+55 8 0 0 0 0
 D3
 ~
 ~
@@ -123,7 +123,7 @@ still looks immaculate.  To the north you see the chamber of the High
 Priest and a sign on the door in BIG letters thats reads 'DO NOT DISTURB'
 To the south is the entrance to the Clerics' Guild.
 ~
-55 dg 0
+55 72 0 0 0 0
 D0
 ~
 ~
@@ -147,7 +147,7 @@ rising high above the ground.  The deep red carpeting underfoot shows
 not a speck of wear or dirt.  It is obvious that New Thalonians take
 religion seriously.
 ~
-55 dgh 0
+55 200 0 0 0 0
 D0
 ~
 ~
@@ -173,7 +173,7 @@ had been hoarding some of the basic neccesities for just such an occasion.
 These days the donation room depends on the generosity of wealthy 
 adventurers, and a curse on any that walk in to take everything.
 ~
-55 cd 0
+55 12 0 0 0 0
 D3
 ~
 ~
@@ -186,7 +186,7 @@ by the people of New Thalos to pay homage to the saints they believe to
 have saved all their lives.
    The museum continues to the south.
 ~
-55 cd 0
+55 12 0 0 0 0
 D2
 ~
 ~
@@ -204,7 +204,7 @@ seen milling about quitely talking to each other.  North is back
 inside the temple proper, and south is the entrance to the clerics'
 bar.
 ~
-55 deh 0
+55 152 0 0 0 0
 D0
 ~
 ~
@@ -221,7 +221,7 @@ large wrought iron gates lie open before you.  Although they might not
 ever be used the priests in the temple are ready to defend themselves,
 should their city ever come under seige again.
 ~
-55 0 1
+55 0 0 0 0 0
 D0
 ~
 ~
@@ -240,7 +240,7 @@ Ahkeem's Stuff~
    You step into a shop swirling with smoke.  Ahkeem seems to have a
 liking for things not of this world... very strange stuff indeed.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 ~
@@ -254,7 +254,7 @@ mother telling you 'Eat your Veggies'.  That is probably why you are
 spending time in the city of New Thalos and not with her.  But wait...
 Vera looks just like your mother!
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 ~
@@ -267,7 +267,7 @@ by the people of New Thalos to pay homage to the saints they believe to
 have saved all their lives.
    The museum continues to the north.
 ~
-55 cd 0
+55 12 0 0 0 0
 D0
 ~
 ~
@@ -284,7 +284,7 @@ staircase spirling up along the wall to a higher level.  Up these
 stairs you are told awaits the old mage who may be able to help
 you advance in your studies.
 ~
-55 de 0
+55 24 0 0 0 0
 D1
 ~
 ~
@@ -306,7 +306,7 @@ Around the sides are four wrought iron benches with cushions where the
 mages of the land sit and exchange ideas.  To the west stands a two-story
 tower where the leader of the mages' guild performs his experiments.
 ~
-55 e 1
+55 16 0 0 0 0
 D2
 ~
 ~
@@ -325,7 +325,7 @@ allowed to enter this bar they have condoned making it as comfortable
 as possible.  In the corner stands a staircase leading down to the
 meditaion chambers.
 ~
-55 deh 0
+55 152 0 0 0 0
 D0
 ~
 ~
@@ -343,7 +343,7 @@ either preaching or listening to their fellows preach.  Huge
 marble steps lead up to the gates of the temple and Main Street
 lies to the south.
 ~
-55 cg 1
+55 68 0 0 0 0
 D0
 ~
 ~
@@ -365,7 +365,7 @@ You wonder at the skill the dwarves have for detail as you examine
 the trim.  Fine silver seperates the polished blocks that make up the
 floor.
 ~
-55 de 0
+55 24 0 0 0 0
 D1
 ~
 ~
@@ -378,7 +378,7 @@ at home.  You see a fairly simple set up.  The corpses... er... selections
 hang on hooks, still bleeding into catch pans that drain into a single
 underground vat.  You wonder where that leads...
 ~
-55 d 0
+55 8 0 0 0 0
 D3
 ~
 ~
@@ -396,7 +396,7 @@ surrounds your feet makes it seem that you have stepped into a gateway
 to another plane.  A cluttered table stands near the far wall, opposite
 the doorway.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 ~
@@ -408,7 +408,7 @@ Braheem's Magic Shop~
 The owner seems to be hard at work on his latest magical creation.
 You see a small sign on the wall.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 ~
@@ -431,7 +431,7 @@ The Entrance To The Mages' Tower~
 only purpose is to house the powerful sorcerer standing here guarding 
 the entrance.
 ~
-55 deh 0
+55 152 0 0 0 0
 D0
 ~
 ~
@@ -445,7 +445,7 @@ S
 The Entrance To The Guild of Warriors~
    This small hall is merely a check point to keep the unwanted out.
 ~
-55 deh 0
+55 152 0 0 0 0
 D0
 ~
 ~
@@ -463,7 +463,7 @@ types of armour singlehandedly.  If you have an item in need of repair
 simply give it to the man behind the counter.
 There is a small sign on the counter.
 ~
-55 cd 0
+55 12 0 0 0 0
 D0
 ~
 ~
@@ -481,7 +481,7 @@ The General Store~
    The new found wealth of this beautiful city is apearant in the exotic
 items for sale here.  You wonder what would happen if you typed... LIST...
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -497,7 +497,7 @@ Abdul's prize creations.  Here you can purchase suits of armour meant
 to keep monsters from hacking you into little pieces.
 A note on the wall beckons your attention.
 ~
-55 d 0
+55 8 0 0 0 0
 D3
 ~
 ~
@@ -521,7 +521,7 @@ but the laws of supply and demand are irresistable.  People come here
 when they feel unable or are unwilling to fight their own battles.  For
 a small fee you may hire a henchman.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 ~
@@ -536,7 +536,7 @@ S
 The Mercenaries Guild~
    This is the storage room for the mercenaries to be hired.
 ~
-55 dj 0
+55 520 0 0 0 0
 S
 #5532
 Entrance To The Thieves' Guild~
@@ -545,7 +545,7 @@ light. There is a small wooden bench and a book lying on it.  The
 assassin guarding the entrance from 'outsiders' stands as you walk
 in.
 ~
-55 adeh 0
+55 153 0 0 0 0
 D2
 ~
 ~
@@ -564,7 +564,7 @@ good idea to hold your tounge for a while as you soak up the atmosphere.
    There is an exit to the east where the master swordsman awaits pupils
 to train with.
 ~
-55 deh 0
+55 152 0 0 0 0
 D0
 ~
 ~
@@ -580,7 +580,7 @@ The Tournament And Practice Yard~
 and swordpupils.  To the north you see a man dressed in black robes,
 unlike his iron clad comrades, who you assume to be your master.
 ~
-55 deh 0
+55 152 0 0 0 0
 D1
 You see the grass near the base of the wall here is slightly torn.
 ~
@@ -596,7 +596,7 @@ The Bread Stand~
    A small stand has been set up here, showing the shopkeep's humble
 selection.  You notice he has added a few things to his list.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 ~
@@ -611,7 +611,7 @@ creation.  It is here you can buy rare and exotic items not found in
 other parts of the world.
 A note catches your eye.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 ~
@@ -632,7 +632,7 @@ Ye Old Leather Shoppe~
 racks of numerous leather goods.  A few women sit on leather cushions
 sewing in some detail work on custom ordered jackets.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -646,7 +646,7 @@ you walk in, you don't feel very welcome.  The bar has numerous
 knife holes in it and the bartender leans over waiting for your
 order.
 ~
-55 d 0
+55 8 0 0 0 0
 D3
 ~
 ~
@@ -660,7 +660,7 @@ in low voices.  A flash of steel lets you know that weapons are in
 great abundance in this crowd.  As you quickly check your beltpouch
 you notice a small staircase leading down.
 ~
-55 deh 0
+55 152 0 0 0 0
 D0
 ~
 ~
@@ -676,7 +676,7 @@ The Warehouse~
 city before it is shipped off.  All the items here are made in New Thalos
 and shipped to other parts of the land.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -693,7 +693,7 @@ This area of the warehouse is used for storing the raw materials brought
 in from areas outside the city.  These goods are then delivered to the
 various guilds.  The export area of the warehouses is to the south.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 ~
@@ -710,7 +710,7 @@ An old man with a curly, grey beard stand behind a small counter waiting
 to take your order.  Behind him are mounted various model sailboats and
 large fish.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -726,7 +726,7 @@ The Drafting Room~
 is used by the shipwright to build his creations on paper before making a
 single cut in wood.
 ~
-55 d 0
+55 8 0 0 0 0
 D3
 ~
 ~
@@ -739,7 +739,7 @@ It seems that most of his creations deal with horses.  On the walls you
 see several horseshoes made of iron.  The room is hot, hotter than the
 desert just south of here, and one wonders how the smithy can stand it.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 ~
@@ -752,7 +752,7 @@ Sultan's choice Arabian Stallions, and each has their own trough
 for drinking.  A small boy wanders in sometimes with a shovel to
 remove the offensive by-product of such beasts.
 ~
-55 d 1
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -769,7 +769,7 @@ you may train in the arts of stealing, picking locks, and becoming almost
 invisible.
    A small staircase leads back up to the Unicorn.
 ~
-55 deh 0
+55 152 0 0 0 0
 D2
 You see some small scratches in the wall to the south.
 ~
@@ -786,7 +786,7 @@ The Dump~
 to the constant winds blowing down the moutains the smell is usually blown
 outside the walls and over the desert.
 ~
-55 0 1
+55 0 0 0 0 0
 D2
 ~
 ~
@@ -800,7 +800,7 @@ of potions, scroll, and wands lie in disaray.  The man you see before you
 sits hunched over a small wooden table with two beakers of bubbling liquid
 in front of him.  He looks up as you enter and smiles broadly.
 ~
-55 deh 0
+55 152 0 0 0 0
 D5
 ~
 ~
@@ -813,7 +813,7 @@ serves as a storage area for the horses in the stables.  The young boy
 you saw with the shovel seems to have takes up residence on the second
 story.
 ~
-55 d 0
+55 8 0 0 0 0
 D3
 ~
 ~
@@ -828,7 +828,7 @@ ceiling casting light on the ancient tapestries adorning the walls.  The
 crick in your neck tells you that it is time to stop staring.  To the west
 the numerous halls of the palace being and the gate lies to the east.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 ~
@@ -854,7 +854,7 @@ lost knowledge of Thalos.  Rows of shelves filled with book in every
 condition line the walls.  The air has the aroma of old parchment
 and glue.
 ~
-55 df 0
+55 40 0 0 0 0
 D1
 ~
 ~
@@ -867,7 +867,7 @@ up the confetti and pieces of food.  Hundreds of empty beer mugs on the
 tables surrounding the dance floor suggest that the citizens love their
 drink.  There is still a banner on the wall.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -886,7 +886,7 @@ The Jail~
    You are in jail.  For some reason, someone feels that you've screwed
 up pretty bad and should be put away safely for a while.  
 ~
-55 defhj 0
+55 696 0 0 0 0
 D0
 ~
 gate~
@@ -899,7 +899,7 @@ decisions regarding city policy are made.  Although the Sultan's
 word is law, he usually spends his time on affairs outside the city
 wall.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 ~
@@ -914,7 +914,7 @@ busy in the corner preparing feathers for the fine shafts used in making
 arrows.  Some Elven craftsmen are carefuly inspecting each bow as it is
 finnished.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -928,7 +928,7 @@ are hard at work doing what they do best.  The hammers fly in a blur as
 these talented craftsmen work the stone into ornate bricks, pillars, trim,
 and many other forms.
 ~
-55 d 0
+55 8 0 0 0 0
 D3
 ~
 ~
@@ -940,7 +940,7 @@ The Guard House~
 stone interior has a spartan look to it, only the bare neccesities.
 A few weapons are mounted on the walls in case they might be needed.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 ~
@@ -954,7 +954,7 @@ The ruler of all the eastern lands resides in this fine palace, and he is
 not a poor man.  The grand entrance lies byond the gate, and Sultan's Walk
 is to the east.
 ~
-55 0 1
+55 0 0 0 0 0
 D1
 ~
 ~
@@ -972,7 +972,7 @@ divide between here and Midgaard.  The River Ishtar slowly flows from that
 direction.  South you can see the entire city of New Thalos and the Great
 Eastern Desert to the south.
 ~
-55 d 0
+55 8 0 0 0 0
 D5
 ~
 ~
@@ -985,7 +985,7 @@ guards are seated here, playing cards.  The stone interior is clean but
 bare walled save the weapons and armor mounted in the walls.
    The only exit is south.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 ~
@@ -1001,7 +1001,7 @@ preparing fresh hares.
    A small door leads out into the hall northward and the doorway to the
 dining hall is west.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 door~
@@ -1017,7 +1017,7 @@ The Northeast Tower~
 you see the wide plains and then the forset.  South of here you see the
 city and the Great Eastern Desert beyond.
 ~
-55 d 0
+55 8 0 0 0 0
 D5
 ~
 ~
@@ -1028,7 +1028,7 @@ A Hall~
    You are at the eastern end of the southern hallway.  A small servants'
 entrance gives access to the kitchen and the hall continues west.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 door small~
@@ -1047,7 +1047,7 @@ skins into.  The people are streaching the leather and cutting it into
 the shapes they need.
 You notice a small message on a wall.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -1066,7 +1066,7 @@ A Hall~
 exit is west except for the simple wooden door to the north.
 There is a golden plaque above the door.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 door~
@@ -1090,7 +1090,7 @@ The walls here are decorated with beautiful, multi-colored tiles.
 There is a strange stillness about the air.  You sense the presence
 of an all-mighty being.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 door~
@@ -1101,7 +1101,7 @@ Outside The Northern Gate Of New Thalos~
    You stand outside the gate of New Thalos.  The city lies to the south,
 and wilderness to the north.
 ~
-55 c 1
+55 4 0 0 0 0
 D0
 ~
 ~
@@ -1116,7 +1116,7 @@ Outside The Eastern Gate Of New Thalos~
    You stand outside the protective walls of the city.  The massive iron
 gate sits to the west and the unknown awaits you eastward.
 ~
-55 0 1
+55 0 0 0 0 0
 D1
 ~
 ~
@@ -1135,7 +1135,7 @@ Outside The West Gate Of New Thalos~
    You stand outside the city walls, the iron gate to the east.  The city
 lies in that direction and the road to Midgaard lies west.
 ~
-55 0 1
+55 0 0 0 0 0
 D1
 ~
 gate~
@@ -1151,7 +1151,7 @@ Outside The Wall~
 ground seems well trodden but you can see no apparent exit save that
 to the north.
 ~
-55 0 2
+55 0 0 0 0 0
 D0
 ~
 ~
@@ -1165,7 +1165,7 @@ as of yet, servants sprint about setting the table and placing condiments.
    The kitchen entrance is to the east, and two huge double doors open
 into the hallway north.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 doors double~
@@ -1180,7 +1180,7 @@ A Hall~
    You stand at a T-crossing in the long hallways.  There are two large
 double doors to the south.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 ~
@@ -1204,7 +1204,7 @@ A Hall~
 lead off in all directions except west, the garden of the palace
 can be entered there.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 ~
@@ -1227,7 +1227,7 @@ A Hall~
    You have come to a T-crossing on the hallways.  The wooden corridors
 continue east, west and south.  There is a large iron door to the north.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 door iron heavy~
@@ -1253,7 +1253,7 @@ rest of the Palace.
    A large steel grating leads down into darkness, and an iron door
 returns you to the hallway.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 door iron~
@@ -1271,20 +1271,20 @@ up in satin sheets stands in the middle of the room against the south
 wall under a window.  The only obvious exit is north back out into the 
 hallway.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 door~
 1 -1 5577
 E
-window~
-   Looking out this window you can see the grounds of the palace that seperate
-the walls of the palace from the building itself.  
-~
-E
 mirror~
    You see a the fighting image of some armor clad humanoid wielding a weapon.
 
+~
+E
+window~
+   Looking out this window you can see the grounds of the palace that seperate
+the walls of the palace from the building itself.  
 ~
 S
 #5577
@@ -1293,7 +1293,7 @@ A Hall~
 the north wall hangs the picture of some forgotten nobleman who once ruled 
 the land.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -1317,7 +1317,7 @@ trees, you see a delicate white gazebo.
    A path leads out into the hallway and west towards the gazebo.
 To your right stands a gold sign.
 ~
-55 0 2
+55 0 0 0 0 0
 D1
 ~
 ~
@@ -1348,7 +1348,7 @@ small red carpet covering the centerline is always underfoot and an
 occasional bench or potted plant lines the wall.
 There is a door here to the north with a plaque mounted over it.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 door~
@@ -1383,7 +1383,7 @@ so the viewer may see an entire sculpture at a glance.
    Your eyes, however, are pulled towards a painting that dominates the
 far wall.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 door~
@@ -1400,7 +1400,7 @@ A Guest Room~
 up against the eastern wall with a mirror above it and a queen sized bed,
 made up in satin sheets, against the south wall.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 door~
@@ -1411,7 +1411,7 @@ A Hall~
    You have reached the western end of the southern hallway.  The only
 exit is east except for the doors in the southern and western walls.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -1431,7 +1431,7 @@ The Garden Gazebo~
 structure.  The sounds of birds, the smell of flowers, ahhh, paradise.
 You believe that you have never been in a more peaceful setting.
 ~
-55 d 0
+55 8 0 0 0 0
 D1
 ~
 ~
@@ -1442,7 +1442,7 @@ A Hall~
    This is the western end of the northern hallway.  Two doors are set
 in the walls here, one to the north, another to the west.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 door~
@@ -1463,7 +1463,7 @@ footlockers.  The guards come here when off duty to sleep, for
 they may only leave the Palace grounds with special permission.
    The only exit is to the south.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 door~
@@ -1476,7 +1476,7 @@ to the rest of the Palace, you see only cots and footlockers here.  On the
 walls you see pictures of well known knights who have give a proud name to
 the Sultan's Guard.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 ~
@@ -1490,7 +1490,7 @@ you can almost see through.  In the western end of the room stands a
 large mound of pillows and a beautiful young maiden sits perched atop.
 It is unfortunate for you that only the Sultan is allowed in here.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 door secret~
@@ -1509,7 +1509,7 @@ A Small room~
    This is secret chamber allowing the Sultan direct access to his harem
 at any time he chooses.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 door~
@@ -1526,7 +1526,7 @@ stand at attention near his side ready to make the ultimate sacrifice for
 their beloved leader.  The gold inlaid throne studded with jewels stands
 upon a mable dias.  The Sultan is not a man to be trifled with.
 ~
-55 d 0
+55 8 0 0 0 0
 D0
 ~
 throne~
@@ -1547,7 +1547,7 @@ Sultan.  The alarm sounding in the background tells you that you must
 have tripped off some kind of alarm system.  It might be adviseable to
 grab as much stuff as you possibly can and run for the door.
 ~
-55 d 0
+55 8 0 0 0 0
 D2
 ~
 door~
@@ -1560,7 +1560,7 @@ room.  There is a small bench with some old magazines and a low
 burning candle sitting off to one side.  A door is set into the
 stone on the north wall, and the steel grating opens up above.
 ~
-55 ad 0
+55 9 0 0 0 0
 D1
 ~
 door~
@@ -1575,7 +1575,7 @@ A Tunnel In The Dungeon~
    You stand in a roughly hewn stone tunnel with cells to the north and
 south.  The tunnel continues east.
 ~
-55 ad 0
+55 9 0 0 0 0
 D0
 ~
 cell~
@@ -1598,7 +1598,7 @@ A Tunnel In The Dungeon~
    You stand in a roughly hewn stone tunnel with cells to the north and
 south.  The tunnel continues east and west.
 ~
-55 ad 0
+55 9 0 0 0 0
 D0
 ~
 cell~
@@ -1621,7 +1621,7 @@ A Tunnel In The Dungeon~
    You stand in a roughly hewn stone tunnel with cells to the north and
 south.  The tunnel continues east and west.
 ~
-55 ad 0
+55 9 0 0 0 0
 D0
 ~
 cell~
@@ -1645,7 +1645,7 @@ A Tunnel In The Dungeon~
 south.  The tunnel continues west and you notice a small crack in the
 stone to the east.
 ~
-55 ad 0
+55 9 0 0 0 0
 D0
 ~
 cell~
@@ -1670,7 +1670,7 @@ strewn about the floor covering bones of unkown origin.  Spatterd blood
 and tufts of grey hair lie matted in one corner.  As you turn to leave
 you notice a pair of small red eyes peering at you from the darkness.
 ~
-55 adfj 0
+55 553 0 0 0 0
 D3
 ~
 crack~
@@ -1680,7 +1680,7 @@ S
 The Cell~
    You are in a cold, cramped chamber with only one exit.
 ~
-55 adfj 0
+55 553 0 0 0 0
 D2
 ~
 cell~
@@ -1690,7 +1690,7 @@ S
 The Cell~
    You are in a cold, cramped chamber with only one exit.
 ~
-55 adfj 0
+55 553 0 0 0 0
 D2
 ~
 cell~
@@ -1700,7 +1700,7 @@ S
 The Cell~
    You are in a cold, cramped chamber with only one exit.
 ~
-55 adfj 0
+55 553 0 0 0 0
 D2
 ~
 cell~

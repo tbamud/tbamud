@@ -7,7 +7,7 @@ entryway to a large compound of some sort, one that seems almost scholastic in
 appearance, but more somber - more militaristic.  In any case, it is certainly
 no longer in use, and has not been for some time.  
 ~
-314 0 0
+314 0 0 0 0 0
 D2
 ~
 ~
@@ -41,7 +41,7 @@ proudly in the center, a thick tome tucked under his one arm and the other hand
 holding onto his lapels.  There is still some sort of liquid at the bottom of
 the fountain, but it does not appear to be safe for consumation.  
 ~
-314 0 0
+314 0 0 0 0 0
 D0
 ~
 ~
@@ -68,7 +68,7 @@ smaller and taller building lying to the south.  To the north is, of course, the
 exit from this place.  The door to the southern-most building lies directly
 south from here.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -94,7 +94,7 @@ time, this place must have been some sort of well-funded institution.  What
 could have happened to cause it to be left in this state, one can only imagine.
 
 ~
-314 a 0
+314 1 0 0 0 0
 D2
 ~
 ~
@@ -113,7 +113,7 @@ one of them swinging on its hinge at a crazy angle.  Looking closely at the
 door, there can be seen a smear of blood near the handle and on the framework
 around the handle.  A jumbled path leads south between the buildings.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -139,7 +139,7 @@ in the center and the surrounding buildings, however someone or something caused
 all of this to be abandoned and left to rot into its current state.  Perhaps
 funding ran out, perhaps a disease.  One can only surmise.  
 ~
-314 a 0
+314 1 0 0 0 0
 D1
 ~
 ~
@@ -161,7 +161,7 @@ the court heading farther back into the asylum's area.  At this angle, south
 along the path and somewhat behind the southern building a light of some sort
 flickers.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -184,7 +184,7 @@ a small hole cut in upper center area where it appears there might once have
 been glass placed.  The hallway runs north from here, a thin trail of old blood
 running along the length of the floor.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -206,7 +206,7 @@ opening in its top center where it appears a window might once have been.  The
 trail of blood continues north to the end of the hall and leads into yet another
 door there.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -228,7 +228,7 @@ dark to see what may be inside.  The hall runs south into the darkness, back
 toward the exit.  A set of concrete stairs lead up into the darkness, their
 steps covered in litter and rubble.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D1
 ~
 door~
@@ -251,7 +251,7 @@ wall and the desks and chairs which used to seat the pupils are still nailed
 solidly to the floor.  Obviously, if the chairs and desks had to be nailed to
 the floor there was a need for forced discipline.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 door~
@@ -266,7 +266,7 @@ such desk now.  The chairs and desks remain only because they were bolted into
 the floor of the room, made so as to enforce discipline the old fashioned way.
 
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 door~
@@ -281,7 +281,7 @@ once smooth clean walls stood.  Lewd scrawlings adorn the walls where they still
 hold any sort of flat surface, sure evidence that this place may not completely
 be deserted.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 door~
@@ -302,7 +302,7 @@ a building of this size made entirely of brick and mortar would get extremely
 warm without ventilation.  There is a door on the east wall, the hall itself
 runs south for a short distance and terminates.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D1
 ~
 door~
@@ -322,7 +322,7 @@ Upper Hall~
 and ceiling that it makes it difficult to traverse the hallway.  The walls are
 cracked and scorched from old fires, blood smattered in places.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -343,7 +343,7 @@ mortar scattered throughout with bricks.  There is a door on the east wall,
 stuck open from all the collected trash on the floor.  Possibly a quick jump
 over the junk would allow a landing to the east...  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -359,7 +359,7 @@ Classing Room~
 remains of old desks and chairs lie broken and scattered all over the floor, on
 one wall, there is even a small hole through to the next room.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 door~
@@ -377,7 +377,7 @@ this room - or is it vice versa?  - coating the floor in filth.  Broken
 splinters of wood from desks and chairs lie scattered about, pieces of forged
 metal interspersed throughout.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 door~
@@ -390,7 +390,7 @@ is obvious that some of the smears are older than others, some seem even
 relatively fresh.  There is a ton of rubble from the building's collapsing walls
 and ceiling, and the stink is horrific.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 door~
@@ -404,7 +404,7 @@ the building's decay makes movement through this area quite difficult.  The
 blood soaked into the plastered walls and rubble strewn floors does not do much
 to bolster the ego, either.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D2
 ~
 ~
@@ -421,7 +421,7 @@ ruined by the ravages of time and looters that the walls no longer appear to
 hold any sort of form.  There are holes in the walls, gaping things which give a
 clear view into the rooms of this broken down building.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -442,7 +442,7 @@ one time.  Who knows, possibly long ago it may have been the registration or
 maybe the room where the dean of the asylum had his private audiences with the
 more problematic children.  Who can say?  
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 ~
@@ -454,7 +454,7 @@ Adminsitrative Office~
 was still up and functional.  Scraps of wood and metal lie broken on the floor
 of the room, most likely the remains of office furniture.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D1
 ~
 door~
@@ -468,7 +468,7 @@ in the walls still showing into the other rooms of the building.  Tinges of red
 terrible place gets farther and farther.  It might be a good idea not to stray
 too far from the door.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D1
 ~
 ~
@@ -484,7 +484,7 @@ Base of a Crumbling Stairway~
 crumbled and fallen to the ground beneath.  It would take a great deal of skill
 and foolhearty bravery to get up those steps.  There is a door to the east.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -504,7 +504,7 @@ At the Top of a Crumbled Stair~
 at any soul foolish enough to attempt a descent.  A door lies to the north, a
 hallway runs east.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 door~
@@ -525,7 +525,7 @@ rubble is just as bad on this upper level as it is in the lower levels.  There
 are no doors or windows in sight, but there is plenty of blood - ever present.
 
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -542,7 +542,7 @@ stacks of old pieces of paneling, rotted and long since made worthless from time
 and decay, which give every indication that this once was a place of comfort for
 some high ranking administrator.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D2
 ~
 door~
@@ -555,7 +555,7 @@ on either side.  It almost seems that the entire building may have been
 sprinkled in droplets of blood, as the red stains persist even here in this
 upper level.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -572,7 +572,7 @@ made just for the purpose of enteraining guests and other faculty.  The floor is
 still covered in some small areas by chunks of ratty carpet that was once plush
 and lavish, the walls covered with the same.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D1
 ~
 door~
@@ -585,7 +585,7 @@ the other walls making footing in any direction very treacherous.  There are
 still the blood stains everywhere, making the whole place seem as if it were
 seen through a red tint.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D2
 ~
 ~
@@ -602,7 +602,7 @@ as an asylum anyway.  The blood which seems to cover most of the grounds of the
 asylum seems especially thick here, the walls sticky to the touch and the floor
 tacky when stepped upon.  There is a small door in the east wall.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 door~
@@ -618,7 +618,7 @@ Living Area~
 eating meals or sharing time.  The remains of an old table are here, one leg all
 that is left of the original four, propping the table up at an absurd angle.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D2
 ~
 ~
@@ -637,7 +637,7 @@ is left is a pile of timber from the bed and furniture and a lot of plaster
 chunks which have fallen from the walls.  All of which is - of course - soaked
 in blood.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -653,7 +653,7 @@ the way through it all is not in any way prohibitive, as if a path had been
 cleared.  To the south a flickering light of some sort can be seen.  To the east
 is the entryway into a small, low building made of stone.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -675,7 +675,7 @@ and in some cases already dried by the splash of blood.  A terrible feeling
 accompanies this place, almost as if an anticipation of death were in the near
 future.  A crude stone foundation with no roof lies just to the west.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -702,7 +702,7 @@ path, blood can be seen spilled in huge quantities all over the stone.  It
 almost appears as if it were poured on the stone in an attempt to saturate the
 entire area.  
 ~
-314 ac 0
+314 5 0 0 0 0
 D0
 ~
 ~
@@ -721,7 +721,7 @@ moving about around that fire.  All along in the courtyard are also people who
 seem to be about some sort of business, whether swaying in some ritual of some
 sort of going about a task of some sort, they are many.  
 ~
-314 ac 0
+314 5 0 0 0 0
 D0
 ~
 ~
@@ -738,7 +738,7 @@ harmful to themselves and others if a guard had to be kept on the grounds at all
 times.  This building is much like any of the others around, decripid and
 falling apart, blood stains everywhere.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D1
 ~
 ~
@@ -754,7 +754,7 @@ The Guards' Quarters~
 only broken bits of furniture and the like.  This asylum must have been
 abandoned and left to rot quite some time ago.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 ~
@@ -767,7 +767,7 @@ the asylum kept their mounts while they stayed on the grounds.  The floor shows
 no sign of ever having been stoned, the walls are all of a crude stone which
 does not look to have been made for the purpose of warmth at all.  
 ~
-314 a 0
+314 1 0 0 0 0
 D1
 ~
 ~
@@ -785,7 +785,7 @@ was perpatrated at this place to cover the entire place in blood?  What sort of
 hideous creature could do such a thing to such a mass of warm blooded creatures?
 
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -798,7 +798,7 @@ which holds within a flickering flame of some sort.  The stones underfoot are
 tacky, sticking to the soles of boots and shoes, making progress at the very
 least discouraged.  
 ~
-314 0 0
+314 0 0 0 0 0
 D0
 ~
 ~
@@ -819,7 +819,7 @@ dominates the center of the courtyard, stone steps leading up to its main floor
 from every direction.  The ground underfoot is tacky to the touch, making feet
 stick it.  
 ~
-314 a 0
+314 1 0 0 0 0
 D1
 ~
 ~
@@ -842,7 +842,7 @@ with blood than the rest of the previous areas, the thick stains making travel
 almost difficult as the thick, dried blood attempts to stick to the bottoms of
 shoes and boots.  
 ~
-314 a 0
+314 1 0 0 0 0
 D1
 ~
 ~
@@ -865,7 +865,7 @@ soaked with blood than the rest of the previous areas, the thick stains making
 travel almost difficult as the thick, dried blood attempts to stick to the
 bottoms of shoes and boots.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -890,7 +890,7 @@ wedged in between two sets of the stairs which run up to the gazebo.  The scent
 of fresh blood wafts heavily in the air, the stone all around testament to the
 fact that people must die in this courtyard daily.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -915,7 +915,7 @@ torch is thrust into a stone holder, a makeshift altar next to it.  A man
 dressed in dark blood-soaked robes kneels before the altar, arms upraised in
 prayer - a curved dagger clenched tightly in one upraised fist.  
 ~
-314 ac 0
+314 5 0 0 0 0
 D0
 ~
 ~
@@ -940,7 +940,7 @@ that boundary.  The entrance to the building lies just south, a set of tall
 steps leading up into its dark interior.  Just behind the building a tall water
 tower can be seen rising up into the night sky.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -961,7 +961,7 @@ torch is thrust into a stone holder, a makeshift altar next to it.  A man
 dressed in dark blood-soaked robes kneels before the altar, arms upraised in
 prayer - a curved dagger clenched tightly in one upraised fist.  
 ~
-314 ac 0
+314 5 0 0 0 0
 D0
 ~
 ~
@@ -986,7 +986,7 @@ red blood stains covering the outer walls, lies to the west.  A set of double
 doors lie open at crazy angles, the interior dark and mysterious.  Straight to
 the east is a set of steps leading up to a stone gazebo.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1013,7 +1013,7 @@ builders, which is filled to the rim with thick, dark blood.  Torches are thrust
 into holders on the supports of the gazebo's ceiling, four of them in number
 lighting this terrible place all too well.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1037,7 +1037,7 @@ Asylum Courtyard~
 the west.  The entrance to this building lies just north, through a set of open
 double doors.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1058,7 +1058,7 @@ wedged in between two sets of the stairs which run up to the gazebo.  The scent
 of fresh blood wafts heavily in the air, the stone all around testament to the
 fact that people must die in this courtyard daily.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1083,7 +1083,7 @@ torch is thrust into a stone holder, a makeshift altar next to it.  A man
 dressed in dark blood-soaked robes kneels before the altar, arms upraised in
 prayer - a curved dagger clenched tightly in one upraised fist.  
 ~
-314 ac 0
+314 5 0 0 0 0
 D0
 ~
 ~
@@ -1108,7 +1108,7 @@ wedged in between two sets of the stairs which run up to the gazebo.  The scent
 of fresh blood wafts heavily in the air, the stone all around testament to the
 fact that people must die in this courtyard daily.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1133,7 +1133,7 @@ torch is thrust into a stone holder, a makeshift altar next to it.  A man
 dressed in dark blood-soaked robes kneels before the altar, arms upraised in
 prayer - a curved dagger clenched tightly in one upraised fist.  
 ~
-314 ac 0
+314 5 0 0 0 0
 D0
 ~
 ~
@@ -1158,7 +1158,7 @@ wedged in between two sets of the stairs which run up to the gazebo.  The scent
 of fresh blood wafts heavily in the air, the stone all around testament to the
 fact that people must die in this courtyard daily.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1184,7 +1184,7 @@ can be seen rising high above the chapel, the bell still hanging inside.  A
 large stone gazebo lies in the center of the courtyard, a flickering light
 burninng strong inside.  
 ~
-314 a 0
+314 1 0 0 0 0
 D2
 ~
 ~
@@ -1202,7 +1202,7 @@ courtyard, is a large stone gazebo with a ceremony of some sort in progress.
 People of some race or another can be seen shuffling about in the courtyard
 going about some sort of business.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1225,7 +1225,7 @@ surface, but now those angels are smeared in blood, their faces ghastly and
 horrific in the flickering light.  The steps up to the gazebo in the center of
 the courtyard lie just west.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1248,7 +1248,7 @@ Asylum Courtyard~
    This is the eastern end of the courtyard, the outer wall of the chapel just
 to the east.  The entrance to the chapel lies just north, up a set of steps.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1268,7 +1268,7 @@ Asylum Courtyard~
 around a large building which lies just south from here.  The ceremony continues
 in the gazebo to the northeast.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1288,7 +1288,7 @@ Asylum Courtyard~
 entrance lies to the south, one of two entrances.  The gazebo lies to the
 northeast, in the center of the courtyard.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1312,7 +1312,7 @@ Asylum Courtyard~
 the south is the wall of a stone building.  The blood on the ground seems never
 ending.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1332,7 +1332,7 @@ Asylum Courtyard~
 of a long stone building.  A door to that building lies to the south, the gazebo
 standing in the center of the courtyard - almost seeming to beckon entry.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1356,7 +1356,7 @@ Asylum Courtyard~
 the buildings which form the boundaries of the courtyard.  To the far northwest
 is a large gazebo, a fire flickering within.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1377,7 +1377,7 @@ of worked stone, carvings of all sorts of angelic murals and poses.  To the
 north is a door, to the south is the main worship area.  East is a small room,
 the function of which unfathomable from this room.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 door~
@@ -1404,7 +1404,7 @@ the other rooms in the buildings of this asylum, has succumbed to the demand of
 time and decay, the walls crumbling and the floors broken and cracked.  All of
 this is, of course covered in a sheen of red.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D2
 ~
 door~
@@ -1418,7 +1418,7 @@ the bell is visible even from here on the ground level.  A set of ropes hang
 down, their frayed ends high out of reach.  They must once have connected to
 something here, but whatever that was, it is long since rotted or taken.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 ~
@@ -1437,7 +1437,7 @@ appear the work of vandals or looters if not for the immense amounts of blood
 soaked into the stonework of the place.  This was a calculated ruination of a
 place of worship.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -1449,7 +1449,7 @@ In the Shaft~
 bit further and the bell can be reached, where a platform of stone surrounds the
 inside of the shaft.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D4
 ~
 ~
@@ -1468,7 +1468,7 @@ many more people moving about this place.  On the north wall is a window which
 leads out just above the roof of the chapel.  It does not appear that the tower
 would be accessable again once exited from and onto the chapel roof.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 window~
@@ -1487,7 +1487,7 @@ too much effort for the vandals of this area to climb out here and trash this
 part as well.  It appears that the only way from this rooftop is down, jumping
 from the roof to the courtyard below.  
 ~
-314 a 0
+314 1 0 0 0 0
 D5
 ~
 roof~
@@ -1500,7 +1500,7 @@ librarian once sat and made sure that all books within were accounted for.
 There is no desk, no secretary or librarian, only a set four crumbling walls,
 the plaster or mortar fallen and in decay.  
 ~
-314 acd 0
+314 13 0 0 0 0
 D1
 ~
 ~
@@ -1515,7 +1515,7 @@ Library~
    Most of the shelves that used to line the walls, molded into the stone that
 made up the walls, are now broken and lying in dust on the cracked floors.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -1530,7 +1530,7 @@ what the room must have been, some old steel frames - probably cots - line one
 wall, all rusted into uselessness.  Like every other section of this asylum, the
 walls are soaked in blood as are the floors.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -1546,7 +1546,7 @@ Dormatory~
 There are no longer any sorts of furniture items left in the room, only hunks of
 broken plaster and mortar.  A doorway opens wide into a basement stairway.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -1569,7 +1569,7 @@ what the room must have been, some old steel frames - probably cots - line one
 wall, all rusted into uselessness.  Like every other section of this asylum, the
 walls are soaked in blood as are the floors.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -1585,7 +1585,7 @@ Dormatory~
 There are no longer any sorts of furniture items left in the room, only hunks of
 broken plaster and mortar.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D1
 ~
 ~
@@ -1601,7 +1601,7 @@ Dormatory~
 There are no longer any sorts of furniture items left in the room, only hunks of
 broken plaster and mortar.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -1617,7 +1617,7 @@ Storage and Detainment Area~
 them whatsoever.  On the south wall is a small wooden door, still securely
 fastened on its hinges.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D2
 ~
 door~
@@ -1635,7 +1635,7 @@ well below freezing in the nights, being dirt floored and in the basement.  Any
 students who had a problem with obedience ending up cooling their heels in the
 Cooling Room.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 door~
@@ -1647,7 +1647,7 @@ Old Cobbled Trail~
 soaked in blood.  The trail turns south and curves out of sight to the east
 again toward a tall, squarish stone building.  
 ~
-314 ac 0
+314 5 0 0 0 0
 D2
 ~
 ~
@@ -1663,7 +1663,7 @@ Old Cobbled Trail~
 soaked in blood.  The trail heads north back toward the courtyard or turns east
 again, headed toward the entrance of a tall, stone building.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1679,7 +1679,7 @@ Old Cobbled Trail~
 soaked in blood.  The building, which now lies just south of you, can be entered
 through a doorway just east from here.  
 ~
-314 a 0
+314 1 0 0 0 0
 D1
 ~
 ~
@@ -1696,7 +1696,7 @@ within.  Squatters can be seen inside the building, hunched over fires or
 sleeping in wretched balls on floor.  The trail heads west away from here back
 toward the courtyard.  
 ~
-314 a 0
+314 1 0 0 0 0
 D2
 ~
 ~
@@ -1714,7 +1714,7 @@ curled upon the floor sleeping what little amounts that they might before the
 next Choosing.  A set of stone stadium seats lead up to the roof on the south
 end of the place.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -1736,7 +1736,7 @@ curled upon the floor sleeping what little amounts that they might before the
 next Choosing.  A set of stone stadium seats lead up to the roof on the south
 end of the place.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D1
 ~
 ~
@@ -1754,7 +1754,7 @@ curled upon the floor sleeping what little amounts that they might before the
 next Choosing.  A set of stone stadium seats lead up to the roof on the south
 end of the place.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -1776,7 +1776,7 @@ curled upon the floor sleeping what little amounts that they might before the
 next Choosing.  A set of stone stadium seats lead up to the roof on the south
 end of the place.  
 ~
-314 ad 0
+314 9 0 0 0 0
 D0
 ~
 ~
@@ -1797,7 +1797,7 @@ south wall where the seats actually reach the ceiling.  More squatters lie
 wedged between seats, snug in their hopes that they will not be the next Chosen.
 
 ~
-314 ad 0
+314 9 0 0 0 0
 D1
 ~
 ~
@@ -1814,7 +1814,7 @@ south wall where the seats actually reach the ceiling.  More squatters lie
 wedged between seats, snug in their hopes that they will not be the next Chosen.
 
 ~
-314 ad 0
+314 9 0 0 0 0
 D3
 ~
 ~
@@ -1830,7 +1830,7 @@ Cracked Path~
 asylum's main water source, the water tower.  The tower rises high into the dark
 sky to the west.  
 ~
-314 ac 0
+314 5 0 0 0 0
 D1
 ~
 ~
@@ -1847,7 +1847,7 @@ west.  There is some sort of short, thin structure rising about twenty feet into
 the air to the south but from here it is too dark and too far to be seen
 clearly.  
 ~
-314 a 0
+314 1 0 0 0 0
 D1
 ~
 ~
@@ -1868,7 +1868,7 @@ functional.  It now has too many holes and leaks to hold any water all, but a
 spiral staircase still leads around the inside up to the top, probably installed
 so that repairs could be made when their were leaks.  
 ~
-314 a 0
+314 1 0 0 0 0
 D1
 ~
 ~
@@ -1885,7 +1885,7 @@ heavily on rain water to help replentish their supplies of water whenever nature
 was kind.  This small platform runs around near the utmost top of tower, a wire
 mesh affair that feels none-too-sturdy.  
 ~
-314 a 0
+314 1 0 0 0 0
 D5
 ~
 ~
@@ -1898,7 +1898,7 @@ not made of stone like the rest of this place.  All that remains, or so it
 appears, of the place is the chimney which still stands tall with a fireplace at
 the base.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1914,7 +1914,7 @@ Ruins of a Building~
 grows here, as the burning stunted that growth for many years yet to come.  A
 tall stone fireplace rises to the west.  
 ~
-314 a 0
+314 1 0 0 0 0
 D0
 ~
 ~
@@ -1931,7 +1931,7 @@ grows here, as the burning stunted that growth for many years yet to come.  A
 stone chimney with a fireplace at the base is all that is left of whatever sort
 of building might once have stood here long ago.  
 ~
-314 a 0
+314 1 0 0 0 0
 D1
 ~
 ~

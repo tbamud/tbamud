@@ -6,7 +6,7 @@ A maid walks around, looking for something to clean.
    She wears a black dress with a white apron.  She looks as if she knows her
 job well.  
 ~
-cdgh 0 500 E
+204 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 6 2
@@ -20,7 +20,7 @@ A firetender is here keeping the water warm for you.
    This young servant has probably only reached his ninth or tenth year, and is
 probably working to help support his family.  What a great little fella.  
 ~
-bd 0 750 E
+10 0 0 0 0 0 0 0 750 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -36,7 +36,7 @@ A young female firetender is here keeping the water warm for guests' baths.
    This young lady has probably only reached her ninth or tenth year.  She is
 probably working so that her poverty stricken family can eat this season.  
 ~
-bd 0 750 E
+10 0 0 0 0 0 0 0 750 E
 6 18 6 1d1+60 1d2+1
 60 3600
 6 6 1
@@ -53,7 +53,7 @@ One of the Lord's servants bustles by looking very busy.
 dawdling service, at least not since the lady Penelope was taken by Mordecai.  
 "
 ~
-dgh 0 250 E
+200 0 0 0 0 0 0 0 250 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -67,7 +67,7 @@ One of the Lord's guests stands here importantly.
    Dressed in finery, with many frills and trills, this man could very well pass
 for a transvestite.  
 ~
-dgmnopr 0 0 E
+192584 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -81,7 +81,7 @@ One of the Lord's cooks stands here preparing for the next meal.
 ~
    Dressed all in white, this woman seems covered head to toe in flour.  
 ~
-bd 0 350 E
+10 0 0 0 0 0 0 0 350 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -99,7 +99,7 @@ An annoying little kid runs past you, nearly knocking you over.
    Dressed all in finery, this is obviously one the children of one the Lord's
 guests.  
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -112,7 +112,7 @@ Here you find the Lord of the Keep, weeping silently, knees drawn up against his
    The Lord, a strong and proud looking man, can not seem to stay lucid long
 enough to speak to you.  
 ~
-bdelnoqr dh 0 E
+223258 0 0 0 16 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -124,7 +124,7 @@ A member of Lord's Guard stands here, ready to fight for his Lord.
 ~
    This man, showing no expression at all, could easily be made of stone.  
 ~
-bdm 0 0 E
+4106 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -137,7 +137,7 @@ The Commander of the Lord's Guard stands here at attention.
    A truly noble man, this person's only desire in life is to protect his Lord.
 
 ~
-bdm 0 0 E
+4106 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -150,7 +150,7 @@ A gardener smiles up at you as you enter.
    He looks to be a kind and gentle man, one who has devoted much of his life to
 nature and Mother Earth.  
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 18 14 0 3d3+180 3d3+3
 180 32400
 6 6 1
@@ -162,7 +162,7 @@ A stablehand waits patiently for your mount.
 ~
    Although a young lad, he still seems very competent.  
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -175,7 +175,7 @@ A waiter stands nearby, waiting to serve.
    Hans waits, stolidly and politely, as if he has not a care in the world but
 to get you a drink or snack.  
 ~
-bdnopr 0 600 E
+188426 0 0 0 0 0 0 0 600 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -188,7 +188,7 @@ A blacksmith works here, intent on his anvil.
    He looks as if he could pound that metal for hours and not even break a
 sweat.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -201,7 +201,7 @@ A servant sneaks by you, head down, seeming to want to be un-noticed.
    This guy MUST be some kind of rat or informer, he just looks so, well,
 guilty.  
 ~
-degh st -100 E
+216 0 0 0 1572864 0 0 0 -100 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1

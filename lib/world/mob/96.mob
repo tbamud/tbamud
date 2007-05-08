@@ -7,7 +7,7 @@ A small squirrel scampers about.
 one, he grabs it and begins cracking it, before noticing you.  He stands stock
 still and stares, waiting for you to make a move.  
 ~
-dgq 0 153 E
+65608 0 0 0 0 0 0 0 153 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -21,7 +21,7 @@ A sparrow buzzes erratically about.
    A small sparrow flies around randomly, collecting food and grass for it's
 nest.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -35,7 +35,7 @@ A mad wizard stands here, cackling at your presence.
 He dons a purple cone-shaped hat on his head, and he is dressed in ragged blue
 robes.  
 ~
-bd d 0 E
+10 0 0 0 16 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -51,7 +51,7 @@ A mole squints at you from the safety of its den.
    A mole with velvety brown fur and cute squinty eyes peers at you.  He tugs
 his nose a few times, then resumes staring at the sky.  
 ~
-bd a 0 E
+10 0 0 0 2 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 6 1
@@ -65,7 +65,7 @@ A lanky white rabbit hops around here.
 appearance.  Standing about a foot high, the lanky white speedster expertly
 bounds around you, eluding your grasp.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -80,7 +80,7 @@ A wily red fox sprints around here.
 stops momentarily and stares at you, then continues his everlasting search for
 rabbits.  
 ~
-dgq 0 0 E
+65608 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -94,7 +94,7 @@ A demonic bear with blood-red eyes snarls at you.
    A huge, 8 foot tall bear snarls menacingly.  His blood-red eyes seem to
 pulsate eerily, and it raises a blunt claw, making ready to swipe at you.  
 ~
-bdf u 0 E
+42 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -107,7 +107,7 @@ A black rat scurries about.
 ~
    A small black rat, about a foot long, scurries about the floor.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -122,7 +122,7 @@ The queen of all rats prepares for battle.
 light, and this monster is a full 3 foot long, maybe even longer.  Teeth working
 in a mad frenzy, it looks ready to kill.  
 ~
-bdf 0 0 E
+42 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -137,7 +137,7 @@ An old knight is here, ready for a last battle.
 he still finds the strength to wield his sword and armor.  What a valiant man.
 
 ~
-bd 0 569 E
+10 0 0 0 0 0 0 0 569 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -152,7 +152,7 @@ A small hairy gremlin hops about recklessly.
    A small gremlin, about 3 foot high and brandishing sharp claws bounces about.
 Although he looks weak, appearances can be decieving.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -168,7 +168,7 @@ The King is here, shining his sword of legend.
 wrinkles.  He has sandy blond hair, but no beard.  His blue eyes seem to
 penetrate into one's very soul.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1

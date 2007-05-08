@@ -5,7 +5,7 @@ not formidable enough to truly keep people off Westlawn's property.  Indeed -
 were it not for the guards which are stationed here, one could easily ride off
 the road and go around.  
 ~
-309 0 0
+309 0 0 0 0 0
 D2
 ~
 ~
@@ -32,7 +32,7 @@ being grain, since it is so easy to grow.  Westlawn is a known brawler and
 tactician, farming is not exactly his strong point - the running part of his
 estate that he leaves to be tended by his servants.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -51,7 +51,7 @@ parts of Baron Westlawn's life that he does know quite a lot about - horses and
 drinking.  The King's Highway lies north of here, the way into Westlawn's estate
 lies south.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -69,7 +69,7 @@ of the area, the people who scratch a bare living from the coffers of the Baron,
 but are not in any way mistreated and of course may leave of their own volition
 at any time.  To the north is the main highway.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -87,7 +87,7 @@ road also takes a turn for the worse at this point, the evidence of much traffic
 and little upkeep obvious due to the many potholes and ruts in it.  The road
 travels north and south.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -108,7 +108,7 @@ making it very bumpy and hard to travel.  The road is also perpetually wet from
 the slops and waste of the folk who live in the area on the west side of the
 road.  The road runs south toward a large barn or north toward the highway.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -129,7 +129,7 @@ spilled out into the roadway, making it very soft and hard to travel upon.  It
 does not appear that any effort is taken in the upkeep of the road or the hovels
 which lie to the west.  The road continues north and south.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -150,7 +150,7 @@ hovels and shacks of the poor folk who work dawn until dusk to keep the crops
 plentiful.  To the south is a large red barn, is paint flaking away, the walls
 partially askew from poor craftsmanship.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -173,7 +173,7 @@ building, though, suggesting it to be an inn or tavern for the locals.  On the
 west side are more of the homes of the commoners and to the south the road bends
 to the east.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -198,7 +198,7 @@ the south.  Entrance into the barn lies just to the south, the large front door
 slightly crooked on its slider.  To the west is a fenced in pasture where a few
 sickly-looking cows wander about.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -219,7 +219,7 @@ visible to the southeast.  To the west is the place of the common folk, where
 they live and work.  There is a rackety wooden door in the wall of the inn on
 the north side of the road.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 door~
@@ -239,7 +239,7 @@ Twisting Road~
 Exits lie to the north and east.  To the east, the road runs over a bridge which
 spans a small river.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -257,7 +257,7 @@ which might cross over it is another story.  It groans and creaks with your
 crossing, slightly shaking as you move about on it.  The road bends to the south
 and west.  
 ~
-309 0 0
+309 0 0 0 0 0
 D2
 ~
 ~
@@ -274,7 +274,7 @@ which does not appear to be in any sort of disrepair but is certainly not
 pleasing to the eye.  It is one of those great examples of function over form.
 To the north is a bridge and the road which leads back to the main highway.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -290,7 +290,7 @@ Before the Keep~
 and rough.  The entire feel to this place is one of raw strength, of bold valor.
 Quite fitting for the home of the warrior Baron.  
 ~
-309 c 0
+309 4 0 0 0 0
 D1
 ~
 ~
@@ -309,7 +309,7 @@ purpose.  This inner yard is completely walled in, the only doors are the one
 which lies just to the west, the exit, and one other which is built into the
 eastern wall a short distance away.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -335,7 +335,7 @@ footing relatively dangerous and a coating of dirt on every table.  A bar lies
 on the east wall, behind which a man in a grubby smock serves drinks and food.
 
 ~
-309 d 0
+309 8 0 0 0 0
 D2
 ~
 door~
@@ -353,7 +353,7 @@ folk is spent harvesting or doing the general labor of the fields, however there
 are some days when Westlawn declares a free day and then the fun begins.  This
 small area - this place of mud and grime - is where that fun is had.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -375,7 +375,7 @@ folk is spent harvesting or doing the general labor of the fields, however there
 are some days when Westlawn declares a free day and then the fun begins.  This
 small area - this place of mud and grime - is where that fun is had.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -401,7 +401,7 @@ folk is spent harvesting or doing the general labor of the fields, however there
 are some days when Westlawn declares a free day and then the fun begins.  This
 small area - this place of mud and grime - is where that fun is had.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -427,7 +427,7 @@ folk is spent harvesting or doing the general labor of the fields, however there
 are some days when Westlawn declares a free day and then the fun begins.  This
 small area - this place of mud and grime - is where that fun is had.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -455,7 +455,7 @@ small area - this place of mud and grime - is where that fun is had.  A
 fenced-in area to the south is where the cows are kept.  They provide the milk
 not only for the keep, but for these folk as well.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -477,7 +477,7 @@ covered in the mud that gets tracked in from the yard outside.  A small table is
 pushed against the far wall, rows of low cots line the floors along the opposite
 wall.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 door~
@@ -491,7 +491,7 @@ most the wooded areas have been cut down to provide more room for growing crops
 for the Barons.  Gaps in the walls and ceiling make it only slightly better than
 being outside - a steady breeze flows through.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -504,7 +504,7 @@ this area.  The walls are all quite solid and without gaps, the flooring is
 smooth and covered in wood.  There are even sections where private areas can be
 had by the people who live here.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 door~
@@ -516,7 +516,7 @@ Canvas and Straw Hut~
 quite well.  The walls are all covered in thick canvas which holds out against
 wind and rain and provides adequate cover for privacy.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -529,7 +529,7 @@ other place to go.  There are no beds, just open floor space.  The only piece of
 furniture in the room is a low table which may be used by sitting on the floor.
 
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -542,7 +542,7 @@ the old, open smell of a barn so distinct as to be a scent all its own.
 Harnesses and tools for harvesting lie about the place, all in surprising order.
 The main exit lies to the north, a wide set of double doors open to the west.  
 ~
-309 d 0
+309 8 0 0 0 0
 D0
 ~
 ~
@@ -558,7 +558,7 @@ Hay Barn~
 A door leads east into the main section of the barn, another leading north out
 into the cow pasture.  
 ~
-309 cd 0
+309 12 0 0 0 0
 D0
 ~
 ~
@@ -576,7 +576,7 @@ quite a few small greenish-brown piles laying about.  To the east of this
 pasture is the roadway, a fence blocking the way onto the road and to the north
 is the common folks' area where their homes and muddy yards lay.  
 ~
-309 0 0
+309 0 0 0 0 0
 D2
 ~
 ~
@@ -594,7 +594,7 @@ quite a few small greenish-brown piles laying about.  To the east of this
 pasture is the roadway, a fence blocking the way onto the road and to the north
 is the common folks' area where their homes and muddy yards lay.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -607,7 +607,7 @@ Children play in the relative safety of the walls of the keep, men and women go
 about their business and the higher nobles of the area talk business amongst
 themselves in what they feel is a sort of seclusion in the southeast corner.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -624,7 +624,7 @@ place where most of those who live within these walls come to stretch out or
 take a break.  Most of the comings and goings within the keep require travel
 through this section, so traffic is usually quite brisk.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -644,7 +644,7 @@ Inner Yard~
 spare time in the outdoors.  Exits from the yard lie directly east and directly
 west from where you stand.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -669,7 +669,7 @@ courtyard and meets with a very solid and well-constructed wall of stone and
 mortar on the south side.  There is no door in the wall, but it is obvious that
 beyond that mortar wall lies the innards of the keep.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -687,7 +687,7 @@ attack Westlawn to gain control of his land and holdings.  This yard is where
 all the people who live on Westlawn's land come in times of strife or bad
 weather, to stay together in number and relative safety.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -709,7 +709,7 @@ attack Westlawn to gain control of his land and holdings.  This yard is where
 all the people who live on Westlawn's land come in times of strife or bad
 weather, to stay together in number and relative safety.  
 ~
-309 0 0
+309 0 0 0 0 0
 D2
 ~
 ~
@@ -726,7 +726,7 @@ doors which allow access as far you can see from looking around at the walls of
 this yard.  The exit to the keep lies directly west, a short walk across the
 yard from you.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -751,7 +751,7 @@ deals are made by the local nobles of the area.  It is said that any word
 uttered within the confines of the inner keep can be and are heard by Westlawn,
 so most of the bargains which are made are done outdoors in this very area.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -770,7 +770,7 @@ that the Baron has no qualms about leading his fine steeds through this section
 of his home.  The hall meets with another hall just to the east, the courtyard
 lies to the west through a set of heavy double doors.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -786,7 +786,7 @@ The Main Hall~
 largest section of the keep.  A door lies to the east, leading into the Baron's
 stable area.  A hall lies to the west leading toward the courtyard.  
 ~
-309 d 0
+309 8 0 0 0 0
 D0
 ~
 ~
@@ -809,7 +809,7 @@ The Main Hall~
    The hall runs north to south past doors in the center and in the north and
 south ends.  At either end of the hall, it curves westward, out of sight.  
 ~
-309 d 0
+309 8 0 0 0 0
 D0
 ~
 ~
@@ -824,7 +824,7 @@ The Main Hall~
    The hall runs north to south past doors in the center and in the north and
 south ends.  At either end of the hall, it curves westward, out of sight.  
 ~
-309 d 0
+309 8 0 0 0 0
 D0
 ~
 ~
@@ -842,7 +842,7 @@ western wall is another wooden door, hoever it does not appear to hold behind it
 anything of true worth, as it is not as thick and strong-looking as the other
 two doors.  
 ~
-309 d 0
+309 8 0 0 0 0
 D0
 ~
 ~
@@ -872,7 +872,7 @@ of the Baron's.  On the east wall is the door into the kitchen, where wonderful
 smells emanate all day long - there is always something cooking in this place.
 
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 door~
@@ -898,7 +898,7 @@ nightly feasts here at this table, feasts that everyone in the keep is invited
 to and usually attend.  Much revelry, singing and baudy jokes are told
 throughout the evenings - a favorite past time of the Baron's.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -916,7 +916,7 @@ nightly feasts here at this table, feasts that everyone in the keep is invited
 to and usually attend.  Much revelry, singing and baudy jokes are told
 throughout the evenings - a favorite past time of the Baron's.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -934,7 +934,7 @@ nightly feasts here at this table, feasts that everyone in the keep is invited
 to and usually attend.  Much revelry, singing and baudy jokes are told
 throughout the evenings - a favorite past time of the Baron's.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -952,7 +952,7 @@ slowly and deliberately past all who would dine at his table.  His chair is, of
 course, slightly raised from the rest of the chairs at the table - not that he
 needs the height.  Rumor has it, the baron is close to seven feet in height.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -966,7 +966,7 @@ always lit and running, always cooking something at all times - even in the dead
 of night.  Cooks run here and there, constantly making sure that nothing burns
 and nothing spoils.  
 ~
-309 d 0
+309 8 0 0 0 0
 D3
 ~
 door~
@@ -980,7 +980,7 @@ rows, all of them clean and crisp.  The baron always makes it a point to stop
 into this room at least once a day so that he might make sure that no soldier of
 his lives like a pig.  There are severe penalties for slovenly behavior.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 door~
@@ -998,7 +998,7 @@ rows, all of them clean and crisp.  The baron always makes it a point to stop
 into this room at least once a day so that he might make sure that no soldier of
 his lives like a pig.  There are severe penalties for slovenly behavior.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -1016,7 +1016,7 @@ rows, all of them clean and crisp.  The baron always makes it a point to stop
 into this room at least once a day so that he might make sure that no soldier of
 his lives like a pig.  There are severe penalties for slovenly behavior.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -1029,7 +1029,7 @@ and armor are kept in perfect condition.  On top of that chore, me crafts all
 metal-work within the keep, shoes horses and crafts new weapons for the Baron to
 test out.  Donold is not Westlawn's right-hand man but he is damn near close.  
 ~
-309 d 0
+309 8 0 0 0 0
 D3
 ~
 door~
@@ -1042,7 +1042,7 @@ place which a person must already have made through all others in the keep.
 The general's horses are a matter of pride for him, such strong pride that he
 guards them jealously from intruders.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 door~
@@ -1059,7 +1059,7 @@ Baron's keep.  The ground down here is damp and earthy, the smell of the entire
 place musty and raw.  There is not much light except that which you may have
 brought with you.  
 ~
-309 ad 0
+309 9 0 0 0 0
 D2
 ~
 ~
@@ -1080,7 +1080,7 @@ Baron's keep.  The ground down here is damp and earthy, the smell of the entire
 place musty and raw.  There is not much light except that which you may have
 brought with you.  
 ~
-309 ad 0
+309 9 0 0 0 0
 D0
 ~
 ~
@@ -1097,7 +1097,7 @@ Baron's keep.  The ground down here is damp and earthy, the smell of the entire
 place musty and raw.  There is not much light except that which you may have
 brought with you.  
 ~
-309 ad 0
+309 9 0 0 0 0
 D0
 ~
 ~
@@ -1118,7 +1118,7 @@ Baron's keep.  The ground down here is damp and earthy, the smell of the entire
 place musty and raw.  There is not much light except that which you may have
 brought with you.  
 ~
-309 ad 0
+309 9 0 0 0 0
 D0
 ~
 ~
@@ -1135,7 +1135,7 @@ Baron's keep.  The ground down here is damp and earthy, the smell of the entire
 place musty and raw.  There is not much light except that which you may have
 brought with you.  
 ~
-309 ad 0
+309 9 0 0 0 0
 D1
 ~
 ~
@@ -1152,7 +1152,7 @@ Baron's keep.  The ground down here is damp and earthy, the smell of the entire
 place musty and raw.  There is not much light except that which you may have
 brought with you.  
 ~
-309 ad 0
+309 9 0 0 0 0
 D1
 ~
 ~
@@ -1172,7 +1172,7 @@ Watch Post on the Battlements~
 upper rampartes, a great line of visibility in every direction.  A large gong
 has been placed here to be sounded during times when enemies are spotted.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -1184,7 +1184,7 @@ On the Battlements~
 guard post lies just west of here, the battelments allow access to the east and
 west.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -1200,7 +1200,7 @@ On the Battlements~
 here.  They are really nothing more than narrow wooden planking hammered down on
 top of the thick timbers which are the walls of the keep.  
 ~
-309 0 0
+309 0 0 0 0 0
 D2
 ~
 ~
@@ -1220,7 +1220,7 @@ On the Battlements~
 from here.  They are really nothing more than narrow wooden planking hammered
 down on top of the thick timbers which are the walls of the keep.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1236,7 +1236,7 @@ On the Battlements~
 from here.  They are really nothing more than narrow wooden planking hammered
 down on top of the thick timbers which are the walls of the keep.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1252,7 +1252,7 @@ On the Battlements~
 here.  They are really nothing more than narrow wooden planking hammered down on
 top of the thick timbers which are the walls of the keep.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1268,7 +1268,7 @@ On the Battlements~
 To the east is the long wooden walkway which spans the upper level of the keep.
 
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -1285,7 +1285,7 @@ which affords a generous view of the lands in every direction.  A huge gong has
 been hung on the south wall of the place, to be rung in times of danger so that
 the population of the keep may know to mobilize.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -1299,7 +1299,7 @@ raised by the Baron are trained and tamed.  The entire place is ringed by a
 clean white-painted fence, stables lie on the north and south sides of the
 field, another field lies to the east.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1324,7 +1324,7 @@ army are trained in the arts of battle and as a place where the legendary steeds
 raised by the Baron are trained and tamed.  To the north is the entrance into
 one of the Baron's stables, the field lies wide open to the east and south.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 door~
@@ -1346,7 +1346,7 @@ raised by the Baron are trained and tamed.  A stable lies to the north of you,
 the entrance a bit to the west.  To the far east is another field where more
 horses can be seen grazing and idling.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -1366,7 +1366,7 @@ Training Fields~
 Westlawn commands.  The fence which rings this place runs along north to south
 on your east side, another smaller fenced in area over there.  
 ~
-309 0 0
+309 0 0 0 0 0
 D2
 ~
 ~
@@ -1382,7 +1382,7 @@ Training Fields~
 allows entry east into a larger, more open field that appears less used - or at
 least less trampled.  The keep entrance lies straight west.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1406,7 +1406,7 @@ Training Fields~
 Westlawn's many steeds and the men who ride them.  The ground is quite trampled
 and free of grass for the most part, only patches of green can be seen here.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1431,7 +1431,7 @@ steeds and the men who ride them.  The ground is quite trampled and free of
 grass for the most part, only patches of green can be seen here.  The door to
 one of Westlawn's stables lies to the south.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1451,7 +1451,7 @@ Training Fields~
 steeds and the men who ride them.  The ground is quite trampled and free of
 grass for the most part, only patches of green can be seen here.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1471,7 +1471,7 @@ Training Fields~
 steeds and the men who ride them.  The ground is quite trampled and free of
 grass for the most part, only patches of green can be seen here.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1491,7 +1491,7 @@ Westlawn farms to keep his estate financially sound.  Beyond those fields are
 the tall, dark trees of the Kailaani Forest - the place from where they say no
 man ever returns.  
 ~
-309 0 0
+309 0 0 0 0 0
 D1
 ~
 ~
@@ -1509,7 +1509,7 @@ Westlawn's servants so that the steeds never run short on food.  The keep lies
 to the west, through another field.  To the east is the long, open fields which
 Westlawn farms to keep his estate financially sound.  
 ~
-309 0 0
+309 0 0 0 0 0
 D2
 ~
 ~
@@ -1529,7 +1529,7 @@ Westlawn farms to keep his estate financially sound.  Beyond those fields are
 the tall, dark trees of the Kailaani Forest - the place from where they say no
 man ever returns.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1555,7 +1555,7 @@ Westlawn's servants so that the steeds never run short on food.  The keep lies
 to the west, through another field.  To the east is the long, open fields which
 Westlawn farms to keep his estate financially sound.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1579,7 +1579,7 @@ Westlawn farms to keep his estate financially sound.  Beyond those fields are
 the tall, dark trees of the Kailaani Forest - the place from where they say no
 man ever returns.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1597,7 +1597,7 @@ Westlawn's servants so that the steeds never run short on food.  The keep lies
 to the west, through another field.  To the east is the long, open fields which
 Westlawn farms to keep his estate financially sound.  
 ~
-309 0 0
+309 0 0 0 0 0
 D0
 ~
 ~
@@ -1614,7 +1614,7 @@ broken and are ready for either battle or market.  The Baron keeps all of his
 steeds in perfect health, all of them ready to be either sold to highest bidder
 or rode into battle at a moment's notice.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -1630,7 +1630,7 @@ North Stables~
 within.  Sacks of grain and brushes for combing lie on the ground in neat piles
 just outside the doors - all of which are used daily.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -1646,7 +1646,7 @@ North Stables~
 within.  Sacks of grain and brushes for combing lie on the ground in neat piles
 just outside the doors - all of which are used daily.  
 ~
-309 d 0
+309 8 0 0 0 0
 D3
 ~
 ~
@@ -1660,7 +1660,7 @@ quality, but have the worst attitude of the steeds that Westlawn owns, and so
 are seperated from the general population.  The noise in here is tremendous, as
 are the steeds which stand proudly behind the stall doors.  
 ~
-309 d 0
+309 8 0 0 0 0
 D0
 ~
 door~
@@ -1678,7 +1678,7 @@ quality, but have the worst attitude of the steeds that Westlawn owns, and so
 are seperated from the general population.  The noise in here is tremendous, as
 are the steeds which stand proudly behind the stall doors.  
 ~
-309 d 0
+309 8 0 0 0 0
 D1
 ~
 ~
@@ -1696,7 +1696,7 @@ quality, but have the worst attitude of the steeds that Westlawn owns, and so
 are seperated from the general population.  The noise in here is tremendous, as
 are the steeds which stand proudly behind the stall doors.  
 ~
-309 d 0
+309 8 0 0 0 0
 D3
 ~
 ~

@@ -6,7 +6,7 @@ A huge black bat hovers before you.
    It doesn't seem to want to attack, it simply seems to be watching you, almost
 with intelligent eyes.  
 ~
-cdgqr df -200 E
+196684 0 0 0 80 0 0 0 -200 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -20,7 +20,7 @@ A Zigeuner Gypsy seems shocked by your presence here.
    Walking head down, mumbling to himself, you are the last thing this guy
 expected.  
 ~
-dglm 0 -300 E
+6216 0 0 0 0 0 0 0 -300 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -32,7 +32,7 @@ A Cigano Gypsy spots you and turns away at a quick pace.
 ~
    He seems to be on his way to take care of something.  
 ~
-dghlm 0 -300 E
+6344 0 0 0 0 0 0 0 -300 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -45,7 +45,7 @@ A Tsigani Gypsy comes running at you, weapon drawn!
    Of all the different gypsies in the castle, you had to find the one with a
 deathwish...  
 ~
-dfglm 0 -300 E
+6248 0 0 0 0 0 0 0 -300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -59,7 +59,7 @@ A Greater Vampyre flings himself on you in a frenzy of Bloodlust!
    You really don't have the time to stop and check this guy out, he is
 attacking you!  
 ~
-degjpqr dfk -700 E
+229976 0 0 0 80 0 0 0 -700 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -72,7 +72,7 @@ A Lesser Vampyre attacks with a power that only a vampyre could possess.
 ~
    Watch the teeth - something you were supposed to remember about the teeth.  
 ~
-degjmpr dfk -800 E
+168536 0 0 0 80 0 0 0 -800 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -85,7 +85,7 @@ A huge, terrifying man-like thing is about to bite your neck.
 ~
    He moves so fast, it is hard to tell anything about him at all.  
 ~
-bdegjl dfhkn -1000 E
+2650 0 0 0 80 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1

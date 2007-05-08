@@ -5,7 +5,7 @@ ground from passing feet and wagon wheels.  The tracks lead south toward an open
 area where a fairly large number of people are milling about.  Just south of
 here are a couple of wagons pulled up close by the side of the road.  
 ~
-325 0 0
+325 0 0 0 0 0
 D2
 ~
 ~
@@ -22,7 +22,7 @@ Matted-down Grass~
 which has headed in this direction has made the way very passable.  Just to the
 east is a colorful wagon with a man sitting inside, waving at you.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -44,7 +44,7 @@ been completely worn away.  Directly south from here is a huge, wide open area
 where large numbers of odd looking men and women dance, cavort and tease their
 way through the people who walk through the area.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -64,7 +64,7 @@ At the Tonic Wagon~
 exotic areas of the world.  Small silver bells hang off of the awnings from
 strings, the bells twinkling and ringing as the wind carries them.  
 ~
-325 0 0
+325 0 0 0 0 0
 D3
 ~
 ~
@@ -77,7 +77,7 @@ It is painted in bright, garish colors with terrible landscapes and beautiful
 waterfalls abounding.  It certainly is a wagon that attracts a great deal of
 attention.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -89,7 +89,7 @@ Festival Grounds~
 caravan of gypsies or performers leaves, it always seems that another takes its
 place.  A panorama of spectacles and wonders await in every direction.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -113,7 +113,7 @@ Festival Grounds~
 amaze and delight any who will watch.  This is the northeast corner of the area
 - most of the activity is off to the south and west.  
 ~
-325 0 0
+325 0 0 0 0 0
 D2
 ~
 ~
@@ -130,7 +130,7 @@ all.  The yellowish grass underfoot crunches unerfoot, still a bit springy when
 stepped upon.  All sorts of curiousities fill this area, most of it off to the
 south and east.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -145,7 +145,7 @@ Festival Grounds~
    A open swath through the trees leads off to the west, more of the same
 delights that fill this area in that direction.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -171,7 +171,7 @@ performers and the general hubbub of a place like this.  The strangest sights
 abound in every direction, one need only to around to see a new miracle or feat
 at every turn.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -194,7 +194,7 @@ Festival Grounds~
    A wide open area to the east leads past more of the same delights that fill
 this clearing.  Off to the south, performance of some sort is in progress.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -217,7 +217,7 @@ Festival Grounds~
    The clearing comes to the edge of the forest at this point, however there is
 a small pathway through the trees to the west.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -241,7 +241,7 @@ Festival Grounds~
 moving all about you jostling and bumping elbows.  In any direction is something
 new, something wonderful.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -266,7 +266,7 @@ hard not to relax a bit in this place and drop a bit of coin.  This place must
 be a traveling affair, as the ground underfoot still seems to be alive even
 through all the feet that tromp over it.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -291,7 +291,7 @@ north, south and east.  It really is amazing how so many folk can come through
 this area, all of them of different race, size and stature and yet all of them
 can mingle peacefully - even happily.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -311,7 +311,7 @@ Festival Grounds~
 some sort of skit.  The north, east and west are many other attractions as well.
 
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -335,7 +335,7 @@ Festival Grounds~
 and north.  To the south is the southern boundary of the clearing where a small
 path has been cleared through the woods.  
 ~
-325 d 0
+325 8 0 0 0 0
 D0
 ~
 ~
@@ -356,7 +356,7 @@ more gaming and fun are being had.  There are wagons parked alongside the
 grassway at intervals, each one filled with exotic goods for sale to sale who
 pass.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -376,7 +376,7 @@ Eastern Grassway~
 gather about watching shows and buying goods.  Wagons are parked alongside this
 grassway, one of which is parked just north of where you stand.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -401,7 +401,7 @@ with colorful cloths and tapestries, all of which seem like they compete with
 another in terms of garishness.  Most obviously, the owner of this wagon makes
 his living selling clothing and cloth.  
 ~
-325 0 0
+325 0 0 0 0 0
 D2
 ~
 ~
@@ -414,7 +414,7 @@ entertainment pass by, doing whatever it is that they are good at.  A large
 gathering of people are centered to the east, watching some kind of act or play.
 
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -434,7 +434,7 @@ Eastern Grassway~
 and having fun.  To the south is a brightly-colored wagon selling some sort of
 wearable, looks like jewelry.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -459,7 +459,7 @@ regal robes and draping jewelry.  Close up pictures of hands wearing glistening
 rings and sparkling bracelets draw attention to the sale of items in the wagon's
 sale-window.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -472,7 +472,7 @@ acting troops to enact intricate plays and skits which involve deep story lines
 and thick plots.  A large crowd has gathered before the stage to watch the
 plays.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -493,7 +493,7 @@ for the main festival grounds, but it gives a good fight.  A stage is set up at
 the eastern edge of the clearing, constant skits and acts being played out to
 the delight and wonder of the crowd watching.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -513,7 +513,7 @@ Court~
 watched by a large crowd of people in the area to the south.  To the north is an
 open-air restaurant - the frangrant smell of gypsy food filling the air.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -534,7 +534,7 @@ going on or coming off the stage from playing their parts.  North of here is an
 area filled with people seated on comfortable picnic-type tables partaking of
 food which is sold nearby.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -554,7 +554,7 @@ The Gypsys' Court~
 involved in the play a neverending flurry of movement.  To the south is a huge
 tent which men stand under, holding mugs of beer while watching the play .
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -574,7 +574,7 @@ The Gypsys' Court~
 men - stand drinking among their fellows, enjoying the day's festivities.  The
 main stage is to the northeast, a side area lies just to the east.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -595,7 +595,7 @@ they have a mind to speak of.  The important thing is that they are all drinking
 great-tasting gypsy ale.  So - really - they could be talking about birthing a
 baby gnat and it wouldn't matter.  Its the drink that counts.  
 ~
-325 d 0
+325 8 0 0 0 0
 D0
 ~
 ~
@@ -611,7 +611,7 @@ A Gypsy Wagon~
 Ale Tent makes his home.  Whenever the festival moves or ends, he simply hitches
 the horses and finds a new home where he can brew his ale and sell it.  
 ~
-325 d 0
+325 8 0 0 0 0
 D3
 ~
 ~
@@ -624,7 +624,7 @@ they partake of the food being sold at the vending stand here.  The smell of the
 food is mouthwatering, the frangrance alone enough to make anyone immediately
 hungry.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -641,7 +641,7 @@ together in the small confines of this wagon.  Turns are taken at night for who
 sleeps outside and who enjoys the indoor comfort of the wagon.  Why anyone would
 ever want to live in that fashion...  Who can know?  
 ~
-325 d 0
+325 8 0 0 0 0
 D3
 ~
 ~
@@ -652,7 +652,7 @@ Stage~
    Ahem...  You are on a professional's turf.  Please exit down to the left or
 right, but GET OFF THE STAGE!!  
 ~
-325 0 0
+325 0 0 0 0 0
 D2
 ~
 ~
@@ -667,7 +667,7 @@ Stage~
    Ahem...  You are on a professional's turf.  Please exit down to the left or
 right, but GET OFF THE STAGE!!  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -683,7 +683,7 @@ Grassy Walkway~
 to the west.  The same sort of merriment and festival-type atmosphere that lies
 to the east seems to carry on over to the west as well.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -699,7 +699,7 @@ Grassy Walkway~
 ringing the field.  This area caters more toward the families who might visit
 Revelry, as there are a great many attractions for the children in this area.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -715,7 +715,7 @@ Grassy Court~
 wafting from that direction.  To the north and south are extensions of this
 court where all sorts of activities are constantly going on.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -740,7 +740,7 @@ semblances of creatures of the wild just south of here.  To the east is a small
 area where a woman reads from a thick tome, relating an adventurer to a crowd of
 wide-eyed kids.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -763,7 +763,7 @@ seated on the ground before the castle.  To the east is a small area where caged
 animals pace in their cages, a place where rare animals can be seen and in some
 instances - touched.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -785,7 +785,7 @@ where a puppet master causes his small cloth and wood men to dance, sing, fight
 and laugh - all amid the uproarious peels of laughter from the children gathered
 around the castle.  
 ~
-325 0 0
+325 0 0 0 0 0
 D2
 ~
 ~
@@ -797,7 +797,7 @@ Petting Zoo~
 unique and interesting animal.  To the north are more of the cages and animals.
 
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -814,7 +814,7 @@ wont.  The area does not smell all that nice - most every breath is filled with
 a bit of foul fragrance, but then the beautiful animals make up for that bit of
 nastiness...  Well, mostly anyway.  
 ~
-325 0 0
+325 0 0 0 0 0
 D2
 ~
 ~
@@ -826,7 +826,7 @@ Face Painting~
 face or even a silly one painted over their own.  One after another, they take
 turns ooing and awing over a new face turned out by the Painter here.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -839,7 +839,7 @@ thin wooden roofing.  A grill with steaming meats and a keg filled with pleasant
 juices lies at one end of the structure, tended by workers.  This would
 certainly be a relaxing place to sit down, eat and rest a while.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -852,7 +852,7 @@ or a cart has been pushed through.  The grass is matted down in two straight,
 flat lines which head south into the woods.  The main festival grounds are just
 to the east.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -868,7 +868,7 @@ Path~
 down or pushed to the side by whatever vehicle came through.  The way out back
 into the main area is to the north.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -886,7 +886,7 @@ the door.  No sound comes from within, the drapes are all closed - from the
 looks of it, the thing may have been abandoned by some gypsy from the festival
 who decided they didn't want it anymore.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -904,7 +904,7 @@ of the place is enough to make most seasoned fair-goers turn tail.  And that is
 saying a lot.  A small, round table sits in the center of the room, a glowing
 ball resting dead center on the table.  
 ~
-325 d 0
+325 8 0 0 0 0
 D0
 ~
 door~
@@ -916,7 +916,7 @@ Festival Grounds~
 to the northeast.  A small portable stage lies just east of here, upon which a
 small troop of actors enact a skit.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -932,7 +932,7 @@ At the Performance~
 man's selfish choices affected the course of an entire city's existance.  The
 main festival area lies to the north.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -952,7 +952,7 @@ Festival Grounds~
 main area.  Just to the west is a small portable stage where a small troop of
 actors perform a skit.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -973,7 +973,7 @@ path through takes a bit of concentration.  Because of the slow going, you are
 able to hear the reason that others may had reason to travel in the same
 direction - the sound of running water.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -990,7 +990,7 @@ try and follow the pushed-aside grasses and the broken twigs and saplings.
 Looks like you could go one of three directions at this point west, south or
 north.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1010,7 +1010,7 @@ Beaten Trail~
 great amount of water, just the twinkling of a stream.  There is a way through
 the forest to the north, east and south.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1030,7 +1030,7 @@ Forest Trail~
 about.  Structures of some sort have been erected or placed there as well.  The
 way back to the festival grounds lies to the west.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -1047,7 +1047,7 @@ the gypsies came through.  Possibly they parked their many wagons and tents here
 for just that reason, in hopes of catching a little bit of dinner.  The wagons
 and tents lie to east surrounding a clearing in the woods.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -1064,7 +1064,7 @@ the treeline.  A huge bonfire burns in the center where most of the people who
 sleep in this area lounge during their breaks or late at night when the
 festivities have slowed a bit.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1089,7 +1089,7 @@ the treeline.  A huge bonfire burns in the center where most of the people who
 sleep in this area lounge during their breaks or late at night when the
 festivities have slowed a bit.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1114,7 +1114,7 @@ the treeline.  A huge bonfire burns in the center where most of the people who
 sleep in this area lounge during their breaks or late at night when the
 festivities have slowed a bit.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1139,7 +1139,7 @@ the treeline.  A huge bonfire burns in the center where most of the people who
 sleep in this area lounge during their breaks or late at night when the
 festivities have slowed a bit.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1164,7 +1164,7 @@ the treeline.  A huge bonfire burns in the center where most of the people who
 sleep in this area lounge during their breaks or late at night when the
 festivities have slowed a bit.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1189,7 +1189,7 @@ the treeline.  A huge bonfire burns in the center where most of the people who
 sleep in this area lounge during their breaks or late at night when the
 festivities have slowed a bit.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1214,7 +1214,7 @@ very empty save for a small pad of blankets to sleep in.  The top is made of a
 strong fabric that keeps rain from falling into the interior with flaps at both
 ends that can tie closed for privacy.  
 ~
-325 d 0
+325 8 0 0 0 0
 D1
 ~
 ~
@@ -1227,7 +1227,7 @@ very empty save for a small pad of blankets to sleep in.  The top is made of a
 strong fabric that keeps rain from falling into the interior with flaps at both
 ends that can tie closed for privacy.  
 ~
-325 d 0
+325 8 0 0 0 0
 D2
 ~
 ~
@@ -1240,7 +1240,7 @@ very empty save for a small pad of blankets to sleep in.  The top is made of a
 strong fabric that keeps rain from falling into the interior with flaps at both
 ends that can tie closed for privacy.  
 ~
-325 d 0
+325 8 0 0 0 0
 D2
 ~
 ~
@@ -1252,7 +1252,7 @@ Tent~
 any comfort in living.  The user must spend only sleeping moments here, no time
 for relaxing.  
 ~
-325 d 0
+325 8 0 0 0 0
 D3
 ~
 ~
@@ -1264,7 +1264,7 @@ Tent~
 any comfort in living.  The user must spend only sleeping moments here, no time
 for relaxing.  
 ~
-325 d 0
+325 8 0 0 0 0
 D3
 ~
 ~
@@ -1276,7 +1276,7 @@ Tent~
 any comfort in living.  The user must spend only sleeping moments here, no time
 for relaxing.  
 ~
-325 d 0
+325 8 0 0 0 0
 D3
 ~
 ~
@@ -1289,7 +1289,7 @@ smoke to drift out and into the air above.  This looks like it would sleep a
 good six or so people comfortably - and from the number of blankets strewn about
 the ground, that number is pretty accurate.  
 ~
-325 d 0
+325 8 0 0 0 0
 D0
 ~
 ~
@@ -1302,7 +1302,7 @@ smoke to drift out and into the air above.  This looks like it would sleep a
 good six or so people comfortably - and from the number of blankets strewn about
 the ground, that number is pretty accurate.  
 ~
-325 d 0
+325 8 0 0 0 0
 D0
 ~
 ~
@@ -1315,7 +1315,7 @@ smoke to drift out and into the air above.  This looks like it would sleep a
 good six or so people comfortably - and from the number of blankets strewn about
 the ground, that number is pretty accurate.  
 ~
-325 d 0
+325 8 0 0 0 0
 D1
 ~
 ~
@@ -1327,7 +1327,7 @@ Side Stage Left~
 drink from the ale tent before resuming a part or heading to their home for the
 night.  The stage itself lies just to the north.  
 ~
-325 0 0
+325 0 0 0 0 0
 D3
 ~
 ~
@@ -1343,7 +1343,7 @@ Side Stage Right~
 stage, rehearsing lines or simply waiting quietly.  A lot of nervous titter and
 adjustment of costume goes on here before the scenes are enacted.  
 ~
-325 0 0
+325 0 0 0 0 0
 D3
 ~
 ~
@@ -1360,7 +1360,7 @@ could not be more than three or four feet, it couldnt be any wider than eight
 feet.  The sounds of the water is very soothing, this is the sort of place to
 inspire works of art.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1375,7 +1375,7 @@ In the Brook~
    Well, your feet have certainly gotten wet now!  The water is cold and clear
 and certainly good enough to drink.  The forest path lies to the north.  
 ~
-325 0 0
+325 0 0 0 0 0
 D0
 ~
 ~
@@ -1387,7 +1387,7 @@ The Bard's Stump~
 however the stump of the huge oak that rests in this space appears to be one
 heck of a place to rest for a spell, or even for the night.  
 ~
-325 0 0
+325 0 0 0 0 0
 D1
 ~
 ~
@@ -1401,7 +1401,7 @@ spun from the Great Tome of Adventures.  Wide-eyed and completely quiet as they
 sit enraptured, the children chew their bottom lips, exchange frightened or
 excited looks - but never leave until the end.  
 ~
-325 0 0
+325 0 0 0 0 0
 D3
 ~
 ~

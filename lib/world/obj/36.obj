@@ -3,7 +3,7 @@ armour black pawn~
 some Black Pawn Armour~
 A pile of black armour is here.~
 ~
-9 j ad 0
+9 j 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
 13 300 1 0
 #3601
@@ -11,7 +11,7 @@ armour white pawn~
 some White Pawn Armour~
 A pile of white armour is here.~
 ~
-9 k ad 0
+9 k 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
 13 300 1 0
 #3602
@@ -19,7 +19,7 @@ sword black pawn~
 a Black Pawn's Sword~
 The sword of a Black Pawn lies here.~
 ~
-5 j an 0
+5 j 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 3
 10 100 1 0
 #3603
@@ -27,7 +27,7 @@ sword white pawn~
 a White Pawn's Sword~
 The sword of a White Pawn lies here.~
 ~
-5 k an 0
+5 k 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 3
 10 100 1 0
 #3604
@@ -35,7 +35,7 @@ armour black rook~
 some Black Rook Armour~
 Some armour made from the remains of a black rook lies heaped on the floor.~
 ~
-9 ahj ad 0
+9 ahj 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
 50 170 5 0
 A
@@ -47,7 +47,7 @@ armour white rook~
 some White Rook Armour~
 Some armour made from the remains of a white rook lies heaped on the floor.~
 ~
-9 agk ad 0
+9 agk 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
 50 170 5 0
 A
@@ -59,7 +59,7 @@ lance black knight~
 the Lance of the Black Knight~
 The Lance of the Black Knight lies here, waiting to rust.~
 ~
-5 bgj an 0
+5 bgj 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 6
 18 100 3 0
 A
@@ -71,7 +71,7 @@ lance white knight~
 the Lance of the White Knight~
 The Lance of the White Knight lies here, waiting to rust.~
 ~
-5 bgk an 0
+5 bgk 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 6
 18 100 3 0
 A
@@ -83,7 +83,7 @@ staff black bishop~
 the Staff of the Black Bishop~
 The Black Bishop's Staff is lying here.~
 ~
-4 agj ao 0
+4 agj 0 0 0 ao 0 0 0 0 0 0 0
 20 5 5 36
 3 200 6 0
 #3609
@@ -91,7 +91,7 @@ staff white bishop~
 the Staff of the White Bishop~
 The White Bishop's Staff is lying here.~
 ~
-4 agk ao 0
+4 agk 0 0 0 ao 0 0 0 0 0 0 0
 20 5 5 36
 3 200 6 0
 #3610
@@ -99,7 +99,7 @@ crown black queen~
 the Crown of the Black Queen~
 The Crown of the Black Queen lies here, looking neglected.~
 ~
-9 bgj ae 0
+9 bgj 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 4 300 5 0
 A
@@ -111,7 +111,7 @@ crown white queen~
 the Crown of the White Queen~
 The Crown of the White Queen lies here, looking neglected.~
 ~
-9 bgk ae 0
+9 bgk 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 4 300 5 0
 A
@@ -123,7 +123,7 @@ sceptre black king~
 the Black King's Sceptre~
 The Sceptre of the Black King lies here, collecting dust.~
 ~
-8 bfgj ao 0
+8 bfgj 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 50 850 1 0
 A
@@ -135,7 +135,7 @@ sceptre white king~
 the White King's Sceptre~
 The Sceptre of the White King lies here, collecting dust.~
 ~
-8 bfgk ao 0
+8 bfgk 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 50 850 10 0
 A
@@ -147,7 +147,7 @@ key black treasury~
 the Key to the Black Treasury~
 There is a sinister black key lying here.~
 ~
-18 cdfq ao 0
+18 cdfq 0 0 0 ao 0 0 0 0 0 0 0
 3614 0 0 0
 1 1000 300 0
 #3615
@@ -155,7 +155,7 @@ key white treasury~
 the Key to the White Treasury~
 There is a bright white key lying here.~
 ~
-18 cdfq ao 0
+18 cdfq 0 0 0 ao 0 0 0 0 0 0 0
 3615 0 0 0
 1 1000 300 0
 #3616
@@ -163,7 +163,7 @@ coins gold black royal treasure~
 the Black Royal Treasure~
 There are a LOT of coins here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 10 1000 0 0
 #3617
@@ -171,7 +171,7 @@ coins gold white royal treasure~
 the White Royal Treasure~
 There are a LOT of coins here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 10 1000 0 0
 $~

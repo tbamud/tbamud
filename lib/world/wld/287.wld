@@ -6,7 +6,7 @@ reason the goblins have not tried to follow you, being too weak to move it.
 You, however, can still shove it aside, should you wish to slither north.  The
 wide passage to the south looks much, much more inviting, however.  
 ~
-287 adei 5
+287 281 0 0 0 0
 D0
 The crawlway opens into a large cave, crudely hewn from the stone.
 ~
@@ -34,7 +34,7 @@ small crack in it, and to the south this wide tunnel becomes higher, and
 slightly narrower.  A shadow on the west wall implies a tunnel mouth, leading
 out of your lantern's reach.  
 ~
-287 ad 0
+287 9 0 0 0 0
 D0
 You look at the north wall.  Maybe you could fit through there.
 ~
@@ -65,7 +65,7 @@ small tunnel to the south.  To the east, a larger cave continues to a bend.
 That boulder troubles you.  Anxiously you examine its support, and notice some
 writing on the wall.  There is a NEWLY CARVED SIGN here.  Read it!  
 ~
-287 ad 2
+287 9 0 0 0 0
 D0
 The tunnel widens and lowers to the north, seemingly to a dead end.
 ~
@@ -82,13 +82,6 @@ The small stream trickles south.
 ~
 0 -1 28703
 E
-writing wall~
-   The runes are of a well-known mode, but you know not the tongue.  They say
-something like this: Tuo sdael lennut nretsae.  Retsasid ot sdael lennut htuos.
-Ekat ot eno eht si nretsae eht Htaed ylrae na diova ot tnaw uoy fi.  Nam
-Mooreeffoc Eht Morf.  What could it mean?  
-~
-E
 new sign~
                          Notice!
                     The eastern tunnel
@@ -96,6 +89,13 @@ new sign~
                     It is now safe ;so
                     Thrash and Pippin 
                     Won't die here again.
+~
+E
+writing wall~
+   The runes are of a well-known mode, but you know not the tongue.  They say
+something like this: Tuo sdael lennut nretsae.  Retsasid ot sdael lennut htuos.
+Ekat ot eno eht si nretsae eht Htaed ylrae na diova ot tnaw uoy fi.  Nam
+Mooreeffoc Eht Morf.  What could it mean?  
 ~
 S
 #28703
@@ -110,7 +110,7 @@ narrow for a surefooted cat, and slippery as fish skin.  It is not too late to
 turn back!  A narrow crevasse leads down the cliff, but only an acrobat could
 turn round and descend it.  Your nose brushes an inscription.  
 ~
-287 adhi 5
+287 393 0 0 0 0
 D0
 The wise (if poor) man may return north to a larger cave.
 ~
@@ -135,7 +135,7 @@ the mine, and gather the riches therein, you step from the tiny ledge to the
 broad flat table of stone near the mine entrance.  That is, you try to step that
 way...  Your feet slip.  Oh dear.  
 ~
-287 ad 0
+287 9 0 0 0 0
 S
 #28705
 A Short Tunnel~
@@ -146,7 +146,7 @@ can only read three: one in orcish, another in common, and a third, written
 large by a firm hand, in the secret dwarven tongue.  Looking closer, you see
 another, in ogrish.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D2
 You see a glimmer of daylight, not very far away.
 ~
@@ -158,14 +158,10 @@ You can go west, to examine that odd inscription.  Or that small cave.
 ~
 0 -1 28702
 E
-orcish inscription~
-   It says, more or less: Krsd be al tem blude noms Krsd be al tem blude dwrvs
-Krsd be al tem blude elfs Krsd be da hobits but tey tasty Haf ogrs aint bad
-fokes Rit by Orfax da orc
-~
-E
-common~
-   This is easily read: O traveler!  Beware!  For goblins live near here!  
+ogrish~
+   Ugh...  Anyone...  Anyone pass this way...  Thrash need help...  Can anyone
+read this need to know....  Where Thrash buy torches...  ...  Ugh...  Thrash the
+Ogre
 ~
 E
 dwarvish secret~
@@ -176,10 +172,14 @@ Gloin his wife is cheating on him.  I know because she cheats with me.  Dorig of
 the Foehammers.  
 ~
 E
-ogrish~
-   Ugh...  Anyone...  Anyone pass this way...  Thrash need help...  Can anyone
-read this need to know....  Where Thrash buy torches...  ...  Ugh...  Thrash the
-Ogre
+common~
+   This is easily read: O traveler!  Beware!  For goblins live near here!  
+~
+E
+orcish inscription~
+   It says, more or less: Krsd be al tem blude noms Krsd be al tem blude dwrvs
+Krsd be al tem blude elfs Krsd be da hobits but tey tasty Haf ogrs aint bad
+fokes Rit by Orfax da orc
 ~
 S
 #28706
@@ -191,7 +191,7 @@ inside the cave, it must have passed under your feet at a lower level, for it is
 in a gorge seventy or more feet deep.  To your south you see the smooth line of
 a road cutting the woods.  A sign is carved into the stone here.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 You may go further into the dark cave.
 ~
@@ -220,7 +220,7 @@ and south.  A milestone stands near.  A sign stands at the intersection of this
 fine road, and the path to the mountain cave.  The dirt road to the south used
 to be blocked but now the way has been cleared.  
 ~
-287 g 1
+287 64 0 0 0 0
 D0
 A grass-grown path leads to a cave in the north.
 ~
@@ -231,10 +231,6 @@ The road continues east to a city.
 ~
 ~
 0 -1 28708
-E
-milestone mile stone~
-   It says "Sorvecgden-Lacgorr 6 stadia"
-~
 E
 sign~
    It has boards with fingers pointing north, south, and west.
@@ -247,6 +243,10 @@ sign~
               our kingdom.  Report all strange happenings
               to Pippin, Emperor of the Lands of Eighty One.
 ~
+E
+milestone mile stone~
+   It says "Sorvecgden-Lacgorr 6 stadia"
+~
 S
 #28708
 The Old Plank Road~
@@ -256,7 +256,7 @@ in the mountains.  You would need wings to go down there.  This gorge certainly
 serves Ofingia well as a moat; the bridge has a wooden section that may easily
 be removed during a siege.  
 ~
-287 g 1
+287 64 0 0 0 0
 D1
 Ofingia's gate is right across the river.
 ~
@@ -276,7 +276,7 @@ large as the Grunting Boar, but as a sailor will take any port in a storm, you
 will drink anywhere after abstaining so long!  Though Ofingia is a city under
 siege nowadays, with all the goblin raids, still Reilly keeps the inn open.  
 ~
-287 0 0
+287 0 0 0 0 0
 D1
 The King's Way continues east.
 ~
@@ -305,7 +305,7 @@ that almost all Ofintines have either left or taken up arms to defend their
 town, the only folk seen here are off-duty guards and those who come to draw
 water.  A shed stands to the south, and a tiny church to the north.  
 ~
-287 0 0
+287 0 0 0 0 0
 D0
 The church has a large sign hanging on its front wall.
 ~
@@ -339,7 +339,7 @@ of Ofingia.  The northern building is an open shed, where a blacksmith is busily
 pounding iron.  To the south, a carpenter's shop fills the air with the
 fragrance of wood smoke - and a lot of it; he's burning shavings.  
 ~
-287 0 0
+287 0 0 0 0 0
 D0
 You hear a hammer thumping on hot iron, and ringing on the anvil.
 ~
@@ -367,7 +367,7 @@ The Market Square~
 once-peaceful square, as the citizens patrol their town, watching out for
 enemies.  A general store stands to the north.  
 ~
-287 0 0
+287 0 0 0 0 0
 D0
 You hear someone cursing shoplifters.
 ~
@@ -395,7 +395,7 @@ Southwestern Market Square~
 fence prevents you from walking to it.  Someone has scrawled on the fence with
 chalk.  To the south a road runs through Ofingia.  
 ~
-287 0 0
+287 0 0 0 0 0
 D0
 The clamor of a market square echoes all around you.
 ~
@@ -429,7 +429,7 @@ you know!  He can make just about anything you want, if it is wooden, but just
 now has only a few items in stock.  He might list them for you, if you asked
 really nicely.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 A small street is north of here.
 ~
@@ -447,7 +447,7 @@ Drovers' Street~
 Ofingia, on the way to the Market Square.  No more.  It has been paved, and far
 fewer hogs roam here than on King's Way.  
 ~
-287 0 0
+287 0 0 0 0 0
 D0
 North leads you to the market square.
 ~
@@ -469,7 +469,7 @@ Inside the South Gate of Ofingia~
    Well, now you have reached the end of Ofingia's small noble district.  To
 your south is a great gate, and to your east, a strongly built stone house.  
 ~
-287 0 0
+287 0 0 0 0 0
 D0
 Why don't you go to City Hall and answer your 200 counts of burglary?
 ~
@@ -489,7 +489,7 @@ they leave them here while they were on patrol?  And as for finding money, don't
 bother!  Only in Midgaard do foolish guards keep 32000 gold coins where Pippin
 or any old thief can steal them.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 A red door leads north to the city hall.
 ~
@@ -507,7 +507,7 @@ The Church of St. John Nepomucene.~
 in these dangerous times.  You find no idols here, the Ofintines are a Christian
 nation.  
 ~
-287 deh 0
+287 152 0 0 0 0
 D2
 You can leave and go to the town square.
 ~
@@ -521,7 +521,7 @@ Forges a bar of iron into a knife blade in fifteen minutes.  He makes some fine
 swords and chain mail, but good armor doesn't come cheap!  A battle axe hangs on
 the wall.  
 ~
-287 d 0
+287 8 0 0 0 0
 D2
 You can leave and avoid the sparks of molten iron that fly thick here.
 ~
@@ -542,7 +542,7 @@ either.  Max also carries a few staple items for you fool adventurers, too,
 which he would gladly list.  A strange sign with darts stuck in it is hung on
 the wall.  
 ~
-287 d 0
+287 8 0 0 0 0
 D2
 You can go find a cheaper store somewhere else in Market Square.
 ~
@@ -561,7 +561,7 @@ Northeastern Market Square~
 is busy enough, but nobody ever goes into the store to the east as you watch its
 door.  Maybe it is closed.  
 ~
-287 0 0
+287 0 0 0 0 0
 D0
 The smell of tanned leather comes from the north.
 ~
@@ -589,7 +589,7 @@ Southeastern Market Square~
 considered the best in the world by those who know what REAL bread tastes like.
 
 ~
-287 0 0
+287 0 0 0 0 0
 D0
 There is more of the square to the north.
 ~
@@ -621,7 +621,7 @@ and used for its old purpose, for you see a great throne glittering in gold to
 the north.  Oh yes; a spiral iron stair leads down.  An inscription is carved
 into the wooden wall above it.  There is a door, and a sign, to the south.  
 ~
-287 d 0
+287 8 0 0 0 0
 D1
 You see more of the hall.
 ~
@@ -643,15 +643,15 @@ A stairway leads down.
 ~
 0 -1 28724
 E
+sign~
+                        Guard Headquarters of Ofingia
+~
+E
 inscription~
                         Down:Ofingian Public Library
                              And Book Store.
                              Open 8 to 11 A.M.
                               And 5 to 9 P.M.
-~
-E
-sign~
-                        Guard Headquarters of Ofingia
 ~
 S
 #28724
@@ -665,7 +665,7 @@ Looking about you, you are amazed at the number of books still left, but most
 are poorly written works of popular fiction.  Alas!  There are some exceptions;
 a map hangs on the wall, for instance.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 The wall is lined with bookshelves.
 ~
@@ -692,10 +692,6 @@ A spiral iron staircase leads up.
 ~
 0 -1 28723
 E
-portrait painting~
-   It is a picture of Claeregina Mahzi, queen of Adacaract.  
-~
-E
 map~
                      St. John's"|             Grocer
  @   M A P   @        Church |_+_|    Smithy   ____   ____ Cobbler
@@ -720,6 +716,10 @@ map~
                       Sir Mischa              |......|
                                               South Gate
 ~
+E
+portrait painting~
+   It is a picture of Claeregina Mahzi, queen of Adacaract.  
+~
 S
 #28725
 The Secret Library Vault~
@@ -729,46 +729,32 @@ that shelf just out of reach, you see a book that has to be the Book of Dwarven
 Herblore.  Too bad you can't get it; it would be useful to a wizard.  A few torn
 off pages litter the lowest shelf, nearer at hand than the great dusty tome.  
 ~
-287 ad 0
+287 9 0 0 0 0
 D0
 The public section of the library is to the north.
 ~
 ~
 2 28708 28724
 E
-book herblore~
-   It lies open, and you may read part of one page: Long was this wisdom lost to
-men, and long did it lie deep, deep buried beneath the goblin caves.  But the
-brave Nambor did fetch back a tattered scroll, bearing a few runes of ancient
-Dwarven, who only I, Bog Grundelgrin, could read.  Now mark well my words, O
-enchanter, for if you take the leaf of the mevais plant ground to a paste with
-water from the Well of Jakur, you may make an ointment, which heals all wounds.
-But it is hard to prepare.  The ground leaves must have been picked under the
-dying moon of late November, when the mevais is dry, and browned.  Then they
-must be You can read no more, nor can you reach the book.  
+blue chewed paper~
+   It is a letter, or rather, half of a letter.
+
+has never done. I say more happily that your ring is finished. It
+is a work of great art, and no king wears its equal. Indeed, the stone
+quarried from the [dwarven?] mines of Holdraxe is said to have magical
+properties.  I know little of these.  But it is said that the right
+sort of opal makes the man invisible who wears it in a ring.  Sorcery
+or not, the ring is quite beautiful, and I will send it to you by
+courier as soon as the spring mires become roads once more.
+                                               Signed by my hand,
+                                                   Rzesk Kural
 ~
 E
-pages~
-   One is a small vellum page, another is large, with red letters.  A third is a
-fragment of papyrus scroll.  Still another, very withered, curls as it dries.  
-Tucked into a corner a piece of blue paper has been chewed by mice.  
-~
-E
-small vellum~
-   Like the rest it is a fragment:
-
-The age of Iron came next; it is our present age. In these days men
-dwindled both in stature and nobility still further from the Bronze
-Age, so say the philosophers. They began forging their tools and 
-blades of iron, and no longer wrote the great epics of the last Age.
-Death still reigned, and reigns, over the world of men, cutting 
-short their little works. How large they seemed! Yet all is not lost.
-So says the philosopher:
-              To the world that stumbles lost and lone,
-              A king descends from heaven's throne. 
-              Death by death is overthrown.
-
-Here the page has been torn off.
+withered curled curling~
+   I.  O.  U.
+   For Groceries ...........................3 cr. 1 f. 3 1/2 d.
+   (Signed) Tim, son of Tom the Lifeguard. 
+   (Signed) Maxtrum Holloknob 
 ~
 E
 papyrus scroll fragment~
@@ -792,25 +778,39 @@ There are dark rumors of a scimitar borne by the Goblin King that, if
 Shoot! There is no more.
 ~
 E
-withered curled curling~
-   I.  O.  U.
-   For Groceries ...........................3 cr. 1 f. 3 1/2 d.
-   (Signed) Tim, son of Tom the Lifeguard. 
-   (Signed) Maxtrum Holloknob 
+small vellum~
+   Like the rest it is a fragment:
+
+The age of Iron came next; it is our present age. In these days men
+dwindled both in stature and nobility still further from the Bronze
+Age, so say the philosophers. They began forging their tools and 
+blades of iron, and no longer wrote the great epics of the last Age.
+Death still reigned, and reigns, over the world of men, cutting 
+short their little works. How large they seemed! Yet all is not lost.
+So says the philosopher:
+              To the world that stumbles lost and lone,
+              A king descends from heaven's throne. 
+              Death by death is overthrown.
+
+Here the page has been torn off.
 ~
 E
-blue chewed paper~
-   It is a letter, or rather, half of a letter.
-
-has never done. I say more happily that your ring is finished. It
-is a work of great art, and no king wears its equal. Indeed, the stone
-quarried from the [dwarven?] mines of Holdraxe is said to have magical
-properties.  I know little of these.  But it is said that the right
-sort of opal makes the man invisible who wears it in a ring.  Sorcery
-or not, the ring is quite beautiful, and I will send it to you by
-courier as soon as the spring mires become roads once more.
-                                               Signed by my hand,
-                                                   Rzesk Kural
+pages~
+   One is a small vellum page, another is large, with red letters.  A third is a
+fragment of papyrus scroll.  Still another, very withered, curls as it dries.  
+Tucked into a corner a piece of blue paper has been chewed by mice.  
+~
+E
+book herblore~
+   It lies open, and you may read part of one page: Long was this wisdom lost to
+men, and long did it lie deep, deep buried beneath the goblin caves.  But the
+brave Nambor did fetch back a tattered scroll, bearing a few runes of ancient
+Dwarven, who only I, Bog Grundelgrin, could read.  Now mark well my words, O
+enchanter, for if you take the leaf of the mevais plant ground to a paste with
+water from the Well of Jakur, you may make an ointment, which heals all wounds.
+But it is hard to prepare.  The ground leaves must have been picked under the
+dying moon of late November, when the mevais is dry, and browned.  Then they
+must be You can read no more, nor can you reach the book.  
 ~
 S
 #28726
@@ -821,7 +821,7 @@ marched forth to fight the evil armies that have lately assailed his kingdom.
 Long live King Korbor!  An ancient throne of carved walnut stands here, bright
 with gold.  On the wall a shield is hung.  
 ~
-287 d 0
+287 8 0 0 0 0
 D3
 The hall extends west, as far as you can see.
 ~
@@ -833,16 +833,16 @@ You see a tile floor.
 trapdoor~
 2 28710 28749
 E
+shield wall~
+   The shield bears a cross and a stag, the arms of King Korbor.  
+~
+E
 throne~
    You had thought the glint you saw was gilt paint, but it was not.  The throne
 of carved black walnut is very beautifully crafted, with rather plain carving,
 just enough to be handsome without looking overly fancy.  Gold plates and
 brackets look lovely against the dark wood.  You need not read the engraved
 plate on its side to know the work of Joel Kreb.  
-~
-E
-shield wall~
-   The shield bears a cross and a stag, the arms of King Korbor.  
 ~
 S
 #28727
@@ -855,7 +855,7 @@ because from here he now commands a small band of guards who go out hunting
 goblins, intending to free the countryside eventually.  A tattered sign and a
 newly printed poster hang on the inside wall of this shed.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 You can only leave to the north.
 ~
@@ -886,24 +886,24 @@ the booze.  Or perhaps you prefer beer?  His brew is second to none, better than
 the Grunting Boar's swill.  The mounted head of a 12 point buck hangs over the
 fireplace, and two upturned deer feet and hooves support some strange object.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 You can leave the inn, if you really want to.
 ~
 door oak~
 1 -1 28709
 E
+object strange hooves rifle gun~
+   A long metal tube set into a carved handle of curly maple, with an odd sort
+of lever hanging from it, rests on the hooves.  Perhaps it is a magical token of
+some sort.  Carved into it is the inscription "Winchester Model 1889".  Odd.  
+~
+E
 buck head trophy~
    It is a magnificent whitetail buck, the kind native only to Ofingia in this
 part of the world.  The whitetail is the craftiest animal in the woods; if you
 can stalk one and bring it down with a bow, as Fred Bear used to say, you can
 stalk anything.  
-~
-E
-object strange hooves rifle gun~
-   A long metal tube set into a carved handle of curly maple, with an odd sort
-of lever hanging from it, rests on the hooves.  Perhaps it is a magical token of
-some sort.  Carved into it is the inscription "Winchester Model 1889".  Odd.  
 ~
 S
 #28729
@@ -912,7 +912,7 @@ D. Shattershock's Fine Armor.~
 woodsmen.  Nothing he has is very heavy, but you don't want heavy armor if you
 are sneaking around the woods, hunting goblins.  
 ~
-287 d 0
+287 8 0 0 0 0
 D2
 South of here is the market square.
 ~
@@ -928,21 +928,21 @@ preparations magical and medicinal.  Some complexity of glassware bubbles on a
 charcoal brazier behind the counter, and many bottles of colorful liquids stand
 within reach.  
 ~
-287 d 0
+287 8 0 0 0 0
 D3
 You can leave this mysterious store to the west.
 ~
 ~
 0 -1 28721
 E
-glassware still~
-   An alembic bubbles and boils on a charcoal brazier, filled with sharp-
-smelling liquid.  
-~
-E
 bottles liquid~
    Unfortunately, some sort of magical barrier prevents you from sampling the
 liquid in these bottles.  
+~
+E
+glassware still~
+   An alembic bubbles and boils on a charcoal brazier, filled with sharp-
+smelling liquid.  
 ~
 S
 #28731
@@ -954,7 +954,7 @@ great-great-great-grandfather Ogann baked the great Rye Loaf of Ofingia, which
 could be carried in a pocket, and yet fed an army of Ofintines for thirty days.
 
 ~
-287 d 0
+287 8 0 0 0 0
 D3
 You can inhale deeply and leave west.
 ~
@@ -969,7 +969,7 @@ the glint of gold and gems through the dirty glass of a few display cases, but
 you can't break the glass- it seems to be some sort of gnomish material that
 can't be shattered.  The sign has been painted over in a strange way.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 You can leave this shop and go to Market Square.
 ~
@@ -989,7 +989,7 @@ that doing in a water-carved cave?  It has a sign on it that might explain who
 would put a door here.  The floor is quite flat, and the sand which covers it
 everywhere else is absent here.  Maybe it deserves a second look.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D1
 You may go back east. What a boring place.
 ~
@@ -1006,13 +1006,13 @@ Maybe you better have a really close look at that stone floor.
 floor~
 1 -1 28734
 E
+sign~
+   It is carved into the door.  The sign says: A gnotiyen na purxe Grob.  
+~
+E
 stone floor~
    It is certainly not natural.  There is a peculiar square crack, and you
 suspect it opens up.  Only one way to find out!  
-~
-E
-sign~
-   It is carved into the door.  The sign says: A gnotiyen na purxe Grob.  
 ~
 S
 #28734
@@ -1021,7 +1021,7 @@ Down, Down, to Goblin-Town!~
 yourself in.  There is no escape now but deeper in, and farther down.  There is
 a faint smell of goblins about this place.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D2
 You see a stone hallway.
 ~
@@ -1033,7 +1033,7 @@ The Stone Hallway~
    The walls are carved from limestone, and drip water, so this cave is always
 very damp, and very cold.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D0
 The walls are just as damp to the north.
 ~
@@ -1050,7 +1050,7 @@ The Stone Hallway~
    The walls are carved from limestone, and drip water.  You are beginning to
 fear for your health, and cold is not your greatest worry.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D1
 The walls are just as damp to the east.
 ~
@@ -1067,7 +1067,7 @@ The Stone Hallway~
    You hear a peculiar scratching and tapping coming from a hole in the cave
 floor.  A strong, foul-smelling draft rises from it.  To the west is a door.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D1
 The walls are just as damp to the east.
 ~
@@ -1095,7 +1095,7 @@ Often arms are also stored here, in case of an invasion.  The guards are so bad,
 however, that Goblin town places little trust in this, their first line of
 defense.  
 ~
-287 d 1
+287 8 0 0 0 0
 D1
 You can only go east.
 ~
@@ -1108,7 +1108,7 @@ The Stone Hallway~
 but you can not reach its warm fires now.  Only through worse danger will you
 leave these caves.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D0
 The walls are just as damp to the north.
 ~
@@ -1125,7 +1125,7 @@ The Stone Hallway~
    The limestone walls in this room are cracked and seep icy water.  Your boots
 are soaking wet by the time you have walked twenty-five yards.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D1
 The walls are just as damp to the east.
 ~
@@ -1147,7 +1147,7 @@ The Stone Hallway~
 around you and go on.  No turning back now!  The floor is drier here; the
 seepage drips around a square panel on the floor.  
 ~
-287 d 2
+287 8 0 0 0 0
 D1
 A glowing stone door is balanced on posts of steel and bolted shut.
 ~
@@ -1179,7 +1179,7 @@ storehouse of some sort, for you see no guards.  It is a large room.  The
 door-light does not reach far, and your torch casts long shadows.  Plenty of
 room for creepy things to hide.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D3
 There is a glowing door to the west.
 ~
@@ -1191,7 +1191,7 @@ The Spiral Tunnel~
    This tunnel spirals slowly clockwise, delving deeper into the bowels of the
 mountain.  You must be very far down now.  
 ~
-287 ad 3
+287 9 0 0 0 0
 D4
 Icy water seeps round this stone slab, soaking your jacket.
 ~
@@ -1209,7 +1209,7 @@ The Spiral Tunnel~
 goblin city.  Whatever madness brought you here, it is too late to curse your
 foolishness, for goblins lie both before you and behind.  
 ~
-287 ad 3
+287 9 0 0 0 0
 D4
 A stream of water flows from this direction.
 ~
@@ -1228,7 +1228,7 @@ still tastes good after walking so far.  The gloom of these caverns is beginning
 to darken your mind, and you long for the common room of the Grunting Boar Inn.
 
 ~
-287 ad 3
+287 9 0 0 0 0
 D4
 The endless tunnel spirals upward.
 ~
@@ -1247,7 +1247,7 @@ still tastes good after walking so far.  The cavern-gloom is beginning to darken
 your mind, and you long for the common room of the Grunting Boar Inn.  Here the
 tunnel jogs to the east.  
 ~
-287 ad 3
+287 9 0 0 0 0
 D1
 The endless spiral runs east.
 ~
@@ -1264,7 +1264,7 @@ The Spiral Tunnel~
    There is no use counting how far this tunnel has spiralled down.  Goblins
 must be near, though; you can smell it.  Here the tunnel jogs down and west.  
 ~
-287 ad 3
+287 9 0 0 0 0
 D3
 The endless spiral runs west.
 ~
@@ -1282,7 +1282,7 @@ The Spiral Tunnel~
 You do not want to know.  The stench of goblin-caves is very bad here, but
 bearable.  
 ~
-287 ad 3
+287 9 0 0 0 0
 D4
 The endless spiral climbs higher.
 ~
@@ -1298,7 +1298,7 @@ S
 The Treasury~
    Hey!  You're not supposed to be in here!  Get out!  
 ~
-287 ad 0
+287 9 0 0 0 0
 D4
 You better leave now!
 ~
@@ -1312,7 +1312,7 @@ strength to keep going and now found an exit from the horrible spiral tunnel.
 It is hotter here than it was higher up, and the filthy stench of goblin caves
 wafts from a hole in the floor.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D4
 The endless spiral climbs upwards.
 ~
@@ -1329,7 +1329,7 @@ Upper Goblin-Town~
    You reach the first level of the goblin city.  Now you must fight for your
 life, adventurer!  Draw your weapon and stay on your guard!  
 ~
-287 ad 2
+287 9 0 0 0 0
 D2
 A hallway leads south.
 ~
@@ -1356,7 +1356,7 @@ A Small Armory~
    The Goblins keep a few weapons here, perhaps those they do not like to use.
 
 ~
-287 ad 1
+287 9 0 0 0 0
 D1
 An iron door leads east.
 ~
@@ -1368,7 +1368,7 @@ A Dark Hall in Goblin-Town~
    This hall is deadly dangerous.  The goblins try to chase you into a corner,
 but you dart from shadow to shadow.  You must escape!  
 ~
-287 ad 1
+287 9 0 0 0 0
 D0
 The hallway leads north.
 ~
@@ -1390,7 +1390,7 @@ A Small Storeroom~
    You are not sure what is stored in this room, but there are plenty of crude
 chests to open.  Many appear to be of dwarven make; plunder, no doubt.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D3
 A black door leads back west.
 ~
@@ -1403,7 +1403,7 @@ A Dark Hall in Goblin-Town.~
 But they are locked-wait, perhaps you can pick them, or do you carry the keys?
 If not, stand and fight!  Hope is not lost.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D0
 A hallway continues north.
 ~
@@ -1425,7 +1425,7 @@ A Small Room~
    This is another storeroom, of some sort.  This entire level is, like a ship's
 hold, devoted to storage.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D0
 The only exit is a stone door to the north.
 ~
@@ -1437,7 +1437,7 @@ A Guard Room~
    Not now!  Not another guard room!  But this is where one should be; after
 all, there hasn't been any other on this floor.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D1
 There is a steel door to the east.
 ~
@@ -1454,7 +1454,7 @@ A Landing~
    A stairwell plunges down to the next level here.  To the west, a steel door
 forbids your passage.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D3
 A steel door blocks this way.
 ~
@@ -1473,7 +1473,7 @@ thousand years' supply of rotten orc meat.  This hall is no longer dark; the
 walls glow with a pale light, a foul magical imitation of the dwarvish secret
 lamp-light that still floods parts of Moria.  
 ~
-287 d 0
+287 8 0 0 0 0
 D2
 A glowing hall leads south.
 ~
@@ -1489,7 +1489,7 @@ S
 A Pale-Glowing Hall in Goblin-Town~
    Not a pleasant place for a Sunday stroll!  Wonder how far down you are?  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 The hall leads north.
 ~
@@ -1513,7 +1513,7 @@ certainly the kind of dank, filthy holes goblins like best.  Bones and rotten
 meat litter the floor, and strange crawling beasts live on the gathered garbage.
 
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 A bronze door leads north.
 ~
@@ -1542,7 +1542,7 @@ walls of this room.  You are far below limestone, now.  The goblins sleep here.
 Some sleep now.  What extraordinary dreams they must be having, the foul
 creatures!  
 ~
-287 d 0
+287 8 0 0 0 0
 D2
 There is a bronze door to the south.
 ~
@@ -1555,7 +1555,7 @@ A Pale-Glowing Hall in Goblin-Town~
 is very unnerving, and it does not help that you are dodging goblins left and
 right.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 There is a bronze door to the north.
 ~
@@ -1583,7 +1583,7 @@ A Barracks Room~
 worse than week-old sardines, littered as they are with old hides and
 accumulated filth.  You had better be leaving.  
 ~
-287 d 0
+287 8 0 0 0 0
 D2
 There is a bronze door to the south.
 ~
@@ -1595,7 +1595,7 @@ A Pale-Glowing Hall in Goblin-Town~
    Uh oh...  This passage seems to go to a large, well guarded room.  A shadow
 standing there is bigger than any goblin you have ever seen.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 A bronze door leads north.
 ~
@@ -1618,7 +1618,7 @@ A Barracks Room~
 by dire need.  Even then, it would be miserable.  Here weapons and battered
 armor lie discarded, but you could use little of it.  
 ~
-287 d 0
+287 8 0 0 0 0
 D2
 There is a bronze door to the south.
 ~
@@ -1630,7 +1630,7 @@ A Glowing Hallway in Goblin-Town~
    Hurry up!  That hulking shadow nearby to the south might not have seen you
 running through the halls, but you probably won't get through unnoticed.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 The walls seem to crackle in horror, casting a flashing light.
 ~
@@ -1651,7 +1651,7 @@ board.  Grotesque green-skinned warriors of all sizes and degrees of hideousness
 mill about, chewing on meat, whose origins you do not wish to know.  The east
 smells like a knacker's yard, when he is boiling down corpses.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 You hear loud shrieks and running feet to the north.
 ~
@@ -1682,7 +1682,7 @@ however it tastes.  Around him are stacked jars of strange substances to add to
 his pot, probably not tasty spices.  Dry, boiled bones are piled in the corner.
 
 ~
-287 d 0
+287 8 0 0 0 0
 D2
 Another passage leaves this cave to the southeast.
 ~
@@ -1707,7 +1707,7 @@ creatures, so they swallow some terrible-smelling concoction of cave molds until
 it kills them.  There is no such thing as a happy drunk here.  You remember the
 dwarven village fondly now.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 You can leave this place, but northwards leads only to more trouble.
 ~
@@ -1725,7 +1725,7 @@ The Mess~
 littered with rubbish.  A guarded door leads east; it is made of stone, and
 elaborately carved.  Some orcish runes are cut into the stone.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 A fireplace with a bubbling cauldron emits a foul smell.
 ~
@@ -1742,14 +1742,14 @@ A smell like sour wine and musty wood wafts from there.
 ~
 0 -1 28770
 E
+orcish runes~
+   They say: Krsd be da hammer wieldn dwarfs
+~
+E
 carved carvings stone door~
    Goblins never make anything beautiful, but this door is very well made.  You
 suspect this cave once had better occupants.  The door is in excellent condition
 (though scrawled on) ...  Glowing
-~
-E
-orcish runes~
-   They say: Krsd be da hammer wieldn dwarfs
 ~
 S
 #28772
@@ -1760,7 +1760,7 @@ Some spell on it probably saved it from ruin.  This particular room might have
 once been a treasury or armory of the dwarves (or gnomes), with a lock like
 that, but now a rough hole in its floor leads downward.  
 ~
-287 d 0
+287 8 0 0 0 0
 D3
 A stone door leads west.
 ~
@@ -1781,7 +1781,7 @@ made it so big.  As it is, they have crammed in the bunks as closely as
 possible, and you see a few which, because their walls were too thin, have
 collapsed on the bunk below.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 A bronze door stands to the north.
 ~
@@ -1795,7 +1795,7 @@ much like a catacombs' tombs are.  In the middle of all these barracks rooms'
 floors are deep pits in the stone, and a foul stench streaming upward from them
 suggests their purpose and use.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 A bronze door stands to the north.
 ~
@@ -1814,20 +1814,15 @@ serves as a bed.  Not even a dwarf would like such a life!  The walls are scrawn
 all over with orc-runes and signs, and decorated with scalps and skulls.  You
 would not live long if the chief found you here.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 A bronze door leads north. It has some symbols on it.
 ~
 door bronze~
 2 28702 28760
 E
-wall walls orc runes~
-   What you can read says: Dy kng Korbor!  Todstol lede sune!  
-~
-E
-signs~
-   All have a shield with a cross and stag on it, splotched with black, and
-hacked with some instrument.  
+scalps skulls~
+   Many are human, but a few are elven.  
 ~
 E
 door symbols~
@@ -1835,8 +1830,13 @@ door symbols~
 Grundelgrin.  So these were once his halls.  
 ~
 E
-scalps skulls~
-   Many are human, but a few are elven.  
+signs~
+   All have a shield with a cross and stag on it, splotched with black, and
+hacked with some instrument.  
+~
+E
+wall walls orc runes~
+   What you can read says: Dy kng Korbor!  Todstol lede sune!  
 ~
 S
 #28776
@@ -1845,7 +1845,7 @@ A Rough Tunnel~
 through.  Rubble litters the floor.  This cave is dark, so you must light your
 lantern again.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D0
 The tunnel continues north.
 ~
@@ -1868,7 +1868,7 @@ A Rough Tunnel~
 through.  Rubble litters the floor.  This cave is dark, so you must walk by
 lantern-light if you have not the ability to see in darkness.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D0
 The tunnel continues north.
 ~
@@ -1885,7 +1885,7 @@ A Rough Tunnel~
    Here the walls are roughly hewn, where the goblins mine for iron.  Rubble and
 ore litters the floor.  This cave is still unlit.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D0
 The tunnel continues north.
 ~
@@ -1902,7 +1902,7 @@ A Rough Tunnel~
    Your lamp casts odd shadows on the rough-hewn walls of this passage.  The
 tapping of goblin miners at work can be heard here and there.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D0
 You hear rushing water to the north and feel a faint draft.
 ~
@@ -1929,7 +1929,7 @@ and it is run by several sturdy trolls turning a horse-mill.  Slag heaps lie all
 about this huge cave, and glowing pig iron in trenches threatens to burn the
 soles off your shoes.  
 ~
-287 d 2
+287 8 0 0 0 0
 D0
 A steel door leads north.
 ~
@@ -1947,7 +1947,7 @@ A Corner In the Mines~
 If you wanted to, you could more easily dive in; your lantern glints off the
 surface of a lake not far below.  
 ~
-287 ad 3
+287 9 0 0 0 0
 D1
 The tunnel continues east.
 ~
@@ -1974,7 +1974,7 @@ A Rough Tunnel~
    The walls become slightly smoother here long enough for someone to scratch a
 few words in the common speech into the stone.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D1
 The tunnel continues east.
 ~
@@ -2005,7 +2005,7 @@ smoke hangs in the air.  No doubt the goblins have some strange magic to break
 the stony ore from the walls.  The walls are pockmarked with shallow holes, and
 the rubble is similarly marked.  
 ~
-287 ad 3
+287 9 0 0 0 0
 D0
 A faint glimmer of light comes from the north.
 ~
@@ -2026,7 +2026,7 @@ The Mine Shaft~
    Here the mine passage ends.  A pale glow shines around a trapdoor in the
 floor.  
 ~
-287 ad 2
+287 9 0 0 0 0
 D2
 A rubble-strewn tunnel bends round a corner.
 ~
@@ -2053,7 +2053,7 @@ a small stream flows out through a tunnel.  Of all the numerous influences that
 feed this lake, none are large enough, or low enough, for you to leave through.
 
 ~
-287 cdgh 6
+287 204 0 0 0 0
 D0
 The stream flows fast, but not too much to swim in.
 ~
@@ -2066,7 +2066,7 @@ On the Underground Stream~
 is darker here, but since the current pushes you east, you don't much need to
 see.  
 ~
-287 adgh 6
+287 201 0 0 0 0
 D1
 The stream slows slightly to the east.
 ~
@@ -2081,7 +2081,7 @@ You had better leave the stream while you can.  As the walls narrow, the stream
 rushes faster and faster, and you hear a great thrashing noise like a mill wheel
 close by to the east.  
 ~
-287 adgh 6
+287 201 0 0 0 0
 D0
 Looks like gravel.
 ~
@@ -2100,7 +2100,7 @@ whitewater drowning.  There is no way to turn back now; the current is just too
 strong.  Then you see the ground drop away up ahead, and will soon discover how
 it feels to go over Niagara Falls without even a barrel.  
 ~
-287 dgh 6
+287 200 0 0 0 0
 S
 #28789
 The Ledge~
@@ -2108,7 +2108,7 @@ The Ledge~
 flank this small stream.  A crevasse nearby looks like it could be chimneyed
 with a lot of effort.  
 ~
-287 ad 1
+287 9 0 0 0 0
 D2
 The stream flows quickly east.
 ~
@@ -2125,7 +2125,7 @@ The Crevasse~
    It is rough climbing, and you won't try to go down this way, but you have
 made good progress.  
 ~
-287 adgh 5
+287 201 0 0 0 0
 D4
 You can keep climbing up.
 ~
@@ -2142,7 +2142,7 @@ The Crevasse~
    Tiring, you climb more slowly, but still go upwards at a good pace.  You are
 nearly half way up.  
 ~
-287 adgh 5
+287 201 0 0 0 0
 D4
 You can keep climbing up, but you certainly won't do this again!
 ~
@@ -2158,7 +2158,7 @@ S
 The Crevasse~
    Tiring, you climb more slowly, but still go upwards at a good pace.  
 ~
-287 adgh 5
+287 201 0 0 0 0
 D4
 You can keep climbing up, but you certainly won't do this again!
 ~
@@ -2175,7 +2175,7 @@ Up the Cliff We Go~
    Every move is sheer torture as you haul yourself up this rough crevasse in
 the cliff-face, but you are nearly to the top!  
 ~
-287 adgh 5
+287 201 0 0 0 0
 D4
 You can keep climbing up, but you will NEVER do this again!
 ~
@@ -2194,7 +2194,7 @@ by doors; a wooden door to north, a brass door to the east, an iron door to the
 south, and a western door of adamant.  You can also escape the way you came
 here.  
 ~
-287 ad 0
+287 9 0 0 0 0
 D0
 The wooden door seems like the safest bet; probably nothing is there.
 ~
@@ -2226,7 +2226,7 @@ The Storeroom~
    This place is not very interesting; however, the wooden crates that are
 stacked about in this dusty cave do arouse your curiosity.  
 ~
-287 ad 0
+287 9 0 0 0 0
 D2
 A wooden door leads south.
 ~
@@ -2239,7 +2239,7 @@ The Guard Chamber~
 Goblin sends them to ravage Lonoya.  Can you slay these foul creatures, or will
 you flee?  
 ~
-287 d 0
+287 8 0 0 0 0
 D3
 A crossing of passages lies west of here.
 ~
@@ -2254,7 +2254,7 @@ lopsided, but only enough to be disturbing without making itself obvious.  Bas
 reliefs adorn the walls which would be lovely, but for slightly distorted
 details.  You shudder involuntarily.  This place is evil.  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 It might be wise to leave, NOW, through that iron door.
 ~
@@ -2272,7 +2272,7 @@ The Goblin Treasury~
 at last.  Now you may plunder the gold, gems, and wonderful weapons which the
 goblins have stolen over these many years.  
 ~
-287 ad 0
+287 9 0 0 0 0
 D1
 Have you gathered it all? Then leave through the door of adamant.
 ~
@@ -2285,7 +2285,7 @@ The Throne Room~
 sits here among his bodyguards, ready to pound your skull in for entering his
 miserable halls!  
 ~
-287 d 0
+287 8 0 0 0 0
 D0
 Run away north while you still can!
 ~

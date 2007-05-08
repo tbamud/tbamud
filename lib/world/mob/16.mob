@@ -6,7 +6,7 @@ A dirty serf shuffles along here.
    The serf is in rags, smells, and you actually think you can see lice on him.
   
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -20,7 +20,7 @@ A squire is on an errand from his lord.
    A squire stands here on a mission for his lord.  He is dressed in rags,
 smells bad, and looks like he is in a hurry.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -34,7 +34,7 @@ Sir Benlad slaps you with his gauntlet and challenges you!
    Sir Benlad is clad in his renowned green armor, rumored to be impervious to
 normal weaponry.  He bears a huge battle axe.    
 ~
-dgq dfk 0 E
+65608 0 0 0 80 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -47,7 +47,7 @@ Sir Galahad, paragon of chivalry, bastard of Lancelot & Elane, stands here.
 ~
    Sir Galahad is dressed all in white armor and walks with pride.    
 ~
-dgq dfk 0 E
+65608 0 0 0 80 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -62,7 +62,7 @@ A knight with armor of many colors stands here.
 many colors.  He anxiously awaits an opportunity to help a damsel in distress.
   
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -76,7 +76,7 @@ Sir Garlon, the invisible knight, is waiting here.
    Sir Garlon (the vile villian) is hiding here.  He was given his invisibility
 power by the witch of the fens for the furtherment of evil.    
 ~
-dg bdfk 0 E
+72 0 0 0 84 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -94,7 +94,7 @@ Sir Gawaine, the strong, is on a mission of vengeance!
    Sir Gawaine, the red headed cousin of Arthur, is mounted, fully armored and
 wears his famous horned helm.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -109,7 +109,7 @@ The mighty Merlin is here grumbling over a book.
 earthy colored robe and bears a twisted staff.  His flowing white beard offsets
 his rosy cheeks and sparkling blue eyes.    
 ~
-bdq dfk 0 E
+65546 0 0 0 80 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -124,7 +124,7 @@ King Pellinore is here searching for the Questing Beast.
 Beast for generations and asks if you have seen it.  Pelinore is just past
 middle age, though he is still a stout fighter.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -138,7 +138,7 @@ Sir Tristram smirks at you.
    Sir Tristram, suitor of Isolade, is considered by many to be second only to
 Lancelot in his skill of arms.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -152,7 +152,7 @@ An boy in golden armor gives you an elfin laugh and strikes with his spear!
    Mordred, bastard son of Lancelot and Gwenivere, wears his enchanted golden
 armor and his unholy spear.    
 ~
-dgnp dfst 0 E
+41032 0 0 0 1572944 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -167,7 +167,7 @@ A knight in a flowing white cape swings a spiked ball here.
 white cape and carries a spiked ball and chain.  He hefts his weapon and grins
 at you.    
 ~
-dgl k 0 E
+2120 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -182,7 +182,7 @@ A fool in motley cavorts here!
 his hands while juggling a set of knives.  You get the impression that he could
 handle himself well in a fight.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -196,7 +196,7 @@ A knight with a wolf helm cackles with glee!
    Turquine is dressed in scale mail and a wolf helm.  He is a slender whip of
 a man, and his eyes dart left and right.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -211,7 +211,7 @@ A knight dressed in red shimmering armor faces you!
 stocky man.  His ruby armor is shimmering in the sunlight, and he wears the
 silken red favor of Galenvine on his sleeve.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -225,7 +225,7 @@ A nobleman stands here in all his finery.
 adorn him in the form of chains, and a rather heavy looking purse.  He seems
 intent on going somewhere.    
 ~
-cdg k 0 E
+76 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -239,7 +239,7 @@ A brightly clothed merchant hawks his goods to you!
    The merchant wears a bright tunic to draw attention and signify his wares.
   
 ~
-cdg k 0 E
+76 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -252,7 +252,7 @@ A servant is rushing by.
 ~
    The servant has a plate of hot food that looks delicious.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -269,7 +269,7 @@ visions.  Merlin has bound this demon here to use its power in the fabrication
 of magic items, however his hold has slipped a few times, enabling the demon to
 give out a few artifacts to encourage the downfall of Camelot.    
 ~
-dg chk 0 E
+72 0 0 0 8 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -283,7 +283,7 @@ Iron Jack, the armorer of Camelot is here.
    Iron Jack wears his smith apron, leather leggings, and has corded muscular
 arms.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -297,7 +297,7 @@ Persante of Inde is here, marshalling the troops of Camelot.
    Persante is called the blue knight because of his brilliant blue armor.  He
 is mounted on a fine charger, and is waving his blue pennant.    
 ~
-dgq k 0 E
+65608 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -311,7 +311,7 @@ Dodinas le Savage is here, holding a wicked looking sword!
    Dodinas is a whirlwind of weapons and martial skill, felling all who
 challenge him.  He is mounted atop his famed steed Rue.    
 ~
-dgq k 0 E
+65608 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -325,7 +325,7 @@ Lionel the knight, staggers past.
    Lionel is covered in blood, and is walking as if stunned.  It looks like he
 is going to fall.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -338,7 +338,7 @@ Gaheris, Gawaine's brother, is here.
    Gaheris has long red hair, and a gray stallion.  He is extremely angry and
 is looking for someone to take it out on.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -352,7 +352,7 @@ A crow cocks it's head sideways, staring at you inquiringly.
    One of merlins pets, this crow is suppose to have extraordinary
 intelligence.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -366,7 +366,7 @@ A toad is hopping around on the floor.
    This toad is used by merlin for various experiments.  It is unnaturally
 large.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -379,7 +379,7 @@ A cat rubs up against your leg, shedding half it's fur on you.
    Another one of Merlins experimental pet this cat looks extremely dangerous.
 It is the largest cat you have ever seen.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -393,7 +393,7 @@ Master Bleise is here paging through some books.
    He is completely absorbed in his reading and does not even look up when you
 enter.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -405,7 +405,7 @@ A fat cook is walking around with a spoons tasting all the food.
 ~
    She must weigh over 200 pounds.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -418,7 +418,7 @@ A guard is standing a sharp watch.
 ~
    He seems to be suspicious of everyone.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -431,7 +431,7 @@ An archer is dying here.
 ~
    He looks like he'll die any minute now.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -444,7 +444,7 @@ An infantryman is dying here.
 ~
    He looks to be almost dead.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -458,7 +458,7 @@ A knight is slowly bleeding to death.
    He has suffered several wounds during his battles.  It doesn't look like
 he'll last much longer.    
 ~
-bdl dfk 0 E
+2058 0 0 0 80 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -472,7 +472,7 @@ A wolf is chewing on something, It looks like... someone's Arm!
    The wolf is huge, it's shoulder comes up to about your waist and it looks
 hungry.    
 ~
-dgq dks 0 E
+65608 0 0 0 524304 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -485,7 +485,7 @@ A long necked, lion pawed, spotted, creature is here gnawing on a femur.
 ~
    It looks hungry!    
 ~
-dfghnpq bdks 0 E
+106728 0 0 0 524308 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -500,7 +500,7 @@ A damsel in distress is here, screaming for help!
 tied with here hands behind her back.  Her coartly gowns are soiled and
 tattered.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2

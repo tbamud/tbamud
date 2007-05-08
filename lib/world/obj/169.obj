@@ -3,7 +3,7 @@ intricate gold ring~
 an intricate gold ring~
 An intricate gold ring is lying here, sinking into the dirt.~
 ~
-13 0 ab 0
+13 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 400 40 0
 #16902
@@ -11,7 +11,7 @@ gibberling shortsword~
 a bluish shortsword~
 A bluish shortsword is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 0 1 0
 1 10 0 0
 E
@@ -26,7 +26,7 @@ small carcass~
 a small carcass~
 A corpse is decaying here on the ground.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 20 200 20 0
 E
@@ -41,7 +41,7 @@ brittle twig~
 a brittle twig~
 A small twig litters the ground here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -53,7 +53,7 @@ butcher knife~
 a butcher knife~
 A wicked looking butcher knife is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 2 3
 3 90 9 0
 E
@@ -66,7 +66,7 @@ slab of meat~
 a slab of mystery meat~
 A shapeless mass of meat has been thrown here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 10 0 0
 E
@@ -80,7 +80,7 @@ gibberling shaman's wand~
 a gibberling wand of power~
 A bejeweled, gnarled, stick is lying here.~
 ~
-3 b an 0
+3 b 0 0 0 an 0 0 0 0 0 0 0
 12 5 5 -1
 2 10 1 0
 E
@@ -93,7 +93,7 @@ berries~
 some wild berries~
 Some wild berries are lying on the ground.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 1 0 0
 E
@@ -105,7 +105,7 @@ keg of dark ale~
 a keg of dark ale~
 A large wooden keg is here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 35 20 4 0
 25 15 1 0
 E
@@ -118,7 +118,7 @@ hide trousers~
 a pair of hide trousers~
 Some hide trousers have been thrown on the ground here.~
 ~
-9 0 a 0
+9 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 10 1 0
 E
@@ -131,17 +131,9 @@ pine tree~
 a pine tree~
 A tall pine tree is growing here along the trail.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
-E
-carvings inscription patch scratch~
-   The inscription is a strange series of symbols written in the language of
-the gibberlings.  As you strain your eyes to try and decipher the meaning, the
-words begin to glow, and a voice inside your head speaks a message: The bearer
-of the tomahawk of terror has forged the fate of my tribe, if i could repay
-him, I would gouge out his eyes!  Thryln'k
-~
 E
 tree pine~
    It is a massive pine tree, apparently very old, judging by the mass and
@@ -150,12 +142,20 @@ wooded areas such as this, near mountainous regions.  You look closely, and
 notice there appears to be some kind of writing, scratched into a small
 barkless patch near the base of the tree.    
 ~
+E
+carvings inscription patch scratch~
+   The inscription is a strange series of symbols written in the language of
+the gibberlings.  As you strain your eyes to try and decipher the meaning, the
+words begin to glow, and a voice inside your head speaks a message: The bearer
+of the tomahawk of terror has forged the fate of my tribe, if i could repay
+him, I would gouge out his eyes!  Thryln'k
+~
 #16912
 rotting animal carcass~
 a rotting animal carcass~
 An animal carcass is rotting in the dirt.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 3 0 0
 E
@@ -170,7 +170,7 @@ brass skullcap~
 a brass skullcap~
 A shiny brass skullcap is on the ground here.~
 ~
-9 a ae 0
+9 a 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 5 100 10 0
 E
@@ -183,7 +183,7 @@ tough leather trousers~
 some tough leather trousers~
 Some tough leather trousers have been tossed here.~
 ~
-9 a af 0
+9 a 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
 2 20 2 0
 E
@@ -196,7 +196,7 @@ gibberling imperial sword~
 a gibberling imperial sword~
 A great bluish imperial sword lies here.~
 ~
-5 ag an 0
+5 ag 0 0 0 an 0 0 0 0 0 0 0
 6 2 6 3
 12 545 55 0
 E
@@ -209,7 +209,7 @@ dead elf~
 a dead elf~
 A dead elf is shackled to the north wall.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -222,7 +222,7 @@ gibberling shelf~
 a stone shelf~
 A stone shelf has been dug into the wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -236,7 +236,7 @@ water clay bowl water~
 a clay bowl~
 A hand-made bowl or pot is laying in the dirt.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 2 2 0 0
 #16919
@@ -244,7 +244,7 @@ gib potion~
 a gib potion~
 A gibberling potion is lying here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 12 28 -1 -1
 1 1 0 0
 E
@@ -257,7 +257,7 @@ small fortune~
 a small fortune~
 A small fortune is lying here, sparkling!~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 1 1 0 0
 E
@@ -269,7 +269,7 @@ bottle whiskey whisky~
 a large green bottle of whiskey~
 A large green bottle of whiskey has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 5 5
 15 50 0 0
 E

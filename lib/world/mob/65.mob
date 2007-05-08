@@ -6,7 +6,7 @@ A dwarven guard is here.
    The guard looks very tough and mean.  He wears his beard long, and he smells
 like he hasn't bathed in over a month.  
 ~
-bdlm dhk 1000 E
+6154 0 0 0 16 0 0 0 1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -19,7 +19,7 @@ A dwarven mining worker is here.
 ~
    He is very dirty, and looks extremely over-worked.  
 ~
-dglm 0 900 E
+6216 0 0 0 0 0 0 0 900 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -31,7 +31,7 @@ A wraith is awaiting your first move here.
 ~
    A black, almost transparent wraith.  
 ~
-bdfnopr dfk -900 E
+188458 0 0 0 80 0 0 0 -900 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -44,7 +44,7 @@ The Hide & Tooth storekeeper is standing here, waiting patiently.
 ~
    The storekeeper is very rotund, but looks in excellent condition.  
 ~
-bdlm d 1000 E
+6154 0 0 0 16 0 0 0 1000 E
 33 15 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -56,7 +56,7 @@ Granite Head, the baker, is waiting for a customer here.
 ~
    Granite Head is covered with flour and grains.  
 ~
-bdlm d 900 E
+6154 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -69,7 +69,7 @@ A giant lizard is foraging for food along the cavern floor here.
    This scaly creature looks like it is well adapted to its underground habitat.
 He looks very powerful.  
 ~
-dg dk 100 E
+72 0 0 0 16 0 0 0 100 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -82,7 +82,7 @@ A giant is wandering around the mountainside here.
    The giant is about 18 feet tall, with arms of steel, and looks in excellent
 physical condition.  
 ~
-dgl k 600 E
+2120 0 0 0 0 0 0 0 600 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -94,7 +94,7 @@ A dwarven mineworker is here.
 ~
    The mineworker is very tired, and very dirty, and he has bulging muscles.  
 ~
-bdl k 500 E
+2058 0 0 0 0 0 0 0 500 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -107,7 +107,7 @@ A dwarven mine leader is here, supervising the work.
    The mine leader is very big and very strong, though he must be fairly bright
 also, to have gotten this job.  
 ~
-bdl k 700 E
+2058 0 0 0 0 0 0 0 700 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -119,7 +119,7 @@ The dwarven doctor is here, aiding the sick of his people.
 ~
    He is a very skilled healer, and extremely faithful to his god.  
 ~
-bdl dhk 999 E
+2058 0 0 0 16 0 0 0 999 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -133,7 +133,7 @@ A dwarven peon is awaiting help here.
    Incapable of doing anything himself this dwarf is utterly lost and is
 awaiting orders.  
 ~
-bdm k 500 E
+4106 0 0 0 0 0 0 0 500 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -145,7 +145,7 @@ A dwarf is here.
 ~
    He is short and stout as their kind is famed to be.  
 ~
-bd k 500 E
+10 0 0 0 0 0 0 0 500 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -157,7 +157,7 @@ A barrack guard is here, lounging around while off duty.
 ~
    This middle aged man seems lost without something to guard.  
 ~
-bdm k 100 E
+4106 0 0 0 0 0 0 0 100 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -169,7 +169,7 @@ A mazekeeper is here.
 ~
    He looks VERY tough.  
 ~
-bdfl dhk -1000 E
+2090 0 0 0 16 0 0 0 -1000 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -184,7 +184,7 @@ There is a giant snake here.
 The scaly skin is a mottled brown, black, and grey that blends into the
 surrounding terrain.  
 ~
-bdf k -1000 E
+42 0 0 0 0 0 0 0 -1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1

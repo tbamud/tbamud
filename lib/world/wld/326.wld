@@ -7,7 +7,7 @@ can see that all different sorts have passed this way, probably more than once.
 You follow your gaze eastward along the highway, but you cannot see its end from
 where you now stand.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -35,7 +35,7 @@ ended, the road veering slightly northward into the deep forest which will soon
 surround you.  You sense nothing threatening in the direction you travel,
 however one can never be too sure.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -53,7 +53,7 @@ following a path.  To the north of you is a trail into the forest, only visible
 because it is a break in the trees.  The trail itself is nearly completelt
 covered in leaves.  The highway continues to the east and west.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -74,7 +74,7 @@ You are constantly amazed by the amount of traffic that passes by you, the dust
 from all the passing people almost annoying.  To the north is a small, leaf
 covered trail heading into the thick forest.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -96,7 +96,7 @@ civilization, however, that this highway leads to, otherwise it would not be so
 well travelled.  To the south is a small path in through the trees of the
 forest.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -115,7 +115,7 @@ Trampled Dirt Highway~
    You may continue your way north or south along the highway.  To the east is
 small dirt trail which runs in through the forest.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -137,7 +137,7 @@ and boots which have passed through the river and head south, the water has
 saturated into hard packed dirt of the highway and turned it to slippery mud.  
 Best to watch your step.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -157,7 +157,7 @@ wash out and turn into a gorge, however there are only so many stones and in
 many spots the road has turned to mud.  You may head east or south along the
 highway or west onto a barely visible trail through the forest.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -178,7 +178,7 @@ which clings to most feet, wheels and hooves which pass this way and head east.
 Just to the west is a river crossing, north is a dirt trail through the forest,
 and east the highway continues.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -201,7 +201,7 @@ passage eastward, apparently unless permission is given by the one or both of
 the two guards which stand at post in front of the gate.  There is a small path
 through the forest just to the south of here.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -227,7 +227,7 @@ valley, but that might not be wise to pursue to any long-term degree as the
 archers towers that line the perimeter seem to have been designed for sight
 see-ers just like yourself.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -252,7 +252,7 @@ is impassable in every direction except the way of the trail.  You have this
 strange sensation of being watched, although how anyone could watch you through
 the tangled mess of these trees is beyond you.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -273,7 +273,7 @@ completely gone, just the creak and groan of the trees reach your ears now.
 You feel a strange presence, almost as if someone were watching you.  Quite
 creepy.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -292,7 +292,7 @@ Leaf-Strewn Trail~
    You can't shake the feeling that you are being spied upon, somehow someone or
 something is out there watching you, maybe from the trees somewhere...  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -311,7 +311,7 @@ Leaf-Strewn Trail~
    The trail makes a turn here, heading south and east.  You look one way then
 another, trying figure out who it is that you feel watching you.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -328,7 +328,7 @@ the tangle of branches overhead.  Immediately upon entry into the trees, you
 sense a feeling of someone or something watching your every move.  Possibly from
 the trees.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -352,7 +352,7 @@ Narrow Forest Trail~
 other exits save the way you came apparent.  You still cannot shake the feeling
 that someone is watching you - possibly from the trees...  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -367,7 +367,7 @@ Narrow Forest Trail~
    The path curves to the west, deadending just west of here at a large tree.  
 To the south is the way back through the prickly bushes to the highway.  
 ~
-326 0 0
+326 0 0 0 0 0
 D2
 ~
 ~
@@ -385,7 +385,7 @@ bush and bracken grows over into the pathway, scratching at your arms and legs
 as you try and pass through.  You have this feeling, this sensation of being
 watched.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -403,7 +403,7 @@ claustrophobic, almost oppressive.  To make things that much the worse, you get
 the strange feeling that someone might be watching you from a place of
 concealment.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -425,7 +425,7 @@ claustrophobic, almost oppressive.  To make things that much the worse, you get
 the strange feeling that someone might be watching you from a place of
 concealment.  Possibly from up in the trees.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -446,7 +446,7 @@ maybe someones.  The trees immediately surroung you, cutting off all feeling of
 being out in the open.  You feel almost a presence, a sensation of being
 watched.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -461,7 +461,7 @@ Well Worn Path Through the Trees~
    The path makes a turn, heading north and east from here.  You still feel that
 strange feeling of being watched.  Possibly up in the trees...  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -480,7 +480,7 @@ Well Worn Path Through the Trees~
    The trail runs west and north from here through the thick forest.  You cannot
 seem to shake the feeling that you are being watched.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -496,7 +496,7 @@ Lookout Post~
 which support it.  The wood has been painted in shades of green and browns to
 match the forest around it - from the ground, no one can see you.  
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -508,7 +508,7 @@ Lookout Post~
 hues of green and brown to match the forest colors around it.  From the ground,
 chances are that one would not be able to see this small post.  
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -520,7 +520,7 @@ Lookout Post~
 who rests up here.  It has been painted in the green and browns of the forest,
 covered over by branches and leaves.  
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -532,7 +532,7 @@ Lookout Post~
 How anyone could spend more than an hour cooped up in this spot is beyond you.
 Must be that 'high intensity' military training these guys get.  
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -546,7 +546,7 @@ the main camp.  The wood that this platform in the trees is made from has been
 painted brown and green to better blend in with the forest, making it virtually
 impossible for anyone to spot this post from the ground.  
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -559,7 +559,7 @@ guards in the turrets nearby don't decide to take you as a threat and use you
 for target practice.  There is a small trail leading off into the forest to the
 west from here.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -580,7 +580,7 @@ from here.  To the north is a small trail into the surrounding forest and of
 course - although you cannot enter into it from here - there is one of the
 ever-present turrets just inside the barbed wire mesh .
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -600,7 +600,7 @@ Camp Perimeter~
 barbed wire which threatens to snag your finery if you get too close.  You can
 head west or north along the perimeter.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -616,7 +616,7 @@ Camp Perimeter~
 wire encircled camp and valley to the east and south, the forest to the north
 and west.  A trail leads off into the woods just west from here.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -636,7 +636,7 @@ Camp Perimeter~
 as possible so that the archers in the turrets do not take any true notice of
 you.  To the east there is some sort of activity, lots of noise and movement.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -653,7 +653,7 @@ thing.  Just northeast of here you see an area which must be the logging crew's
 alotted space for supplying the troops with wood to build with, burn and use for
 general purposes.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -669,7 +669,7 @@ Camp Perimeter~
 trail to enter into the small logging area that the army uses to supply itself
 with wood.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -690,7 +690,7 @@ barbed wire as tall and wicked looking as ever.  You can see to the north and
 east entryways into the logging area for the army, where a frenzy of activity
 seems constant, foremen shouting orders of the hack and slash of axes.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -707,7 +707,7 @@ continually amazed at the sheer immensity that this army exhibits, especially
 viewed from this height.  The forest surrounds the valley from every direction,
 small trails leading from this wagon trail every now and again.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -726,7 +726,7 @@ Camp Perimeter~
    You may continue along the perimeter north to south or head off east into the
 woods, where a small trail cuts into the thick wood.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -745,7 +745,7 @@ Camp Perimeter~
    You may continue north or south along the perimeter.  Beware the looming
 turrets which never seem far enough away...  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -763,7 +763,7 @@ into the forest, wide and hard packed as it is on the other end.  There is a
 gate here which would lead into the camp, however it appears to be in some
 disuse, locked and shackled so as not to allow a way through.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -787,7 +787,7 @@ Camp Perimeter~
 barbed wire which encircles the entire valley as well.  A small path leads off
 into the thick woods to the east.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -806,7 +806,7 @@ Camp Perimeter~
    The wagon trail makes a turn - as does the barbed wire, following along the
 edge of the valley.  A small trail leads south from here into the woods.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -827,7 +827,7 @@ Caution is advised to a large degree along this pathway, as any lingering could
 result in the loosing of arrows from the guards in any of the many turrets which
 surround the camp.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -844,7 +844,7 @@ you a wonderful vantage point to look at the whole of the army.  It is
 staggering, the number of men in this outfit, at least judging from the size of
 the encampment.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -860,7 +860,7 @@ Camp Perimeter~
 here.  The forest to the south of you is thick and impassable, at least through
 ordinary means, so your choices are limited to that which the road offers.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -876,7 +876,7 @@ Camp Perimeter~
 the barbed wire.  To the south a small trail leads off into the thick woods,
 probably one of many which run through these thick woods.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -900,7 +900,7 @@ before archers and crossbowmen from the guard turrets which also line the road,
 cut one down while flailing in the wire.  Probably it is best to follow along
 the road and seek other means of entry.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -919,7 +919,7 @@ course, getting cut on wire would actually pale in comparison to getting shot
 with an arrow or bolt from one of the guard turrets which line the crest of the
 valley.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -934,7 +934,7 @@ Forest Path~
    The forest cuts out all sounds of the army, immediately and completely.  The
 path heads north deeper into the forest or east back to the wagon trail.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -949,7 +949,7 @@ Forest Path~
    You stand in the depths of this forest with the oddest feeling that someone
 or something seems to be watching you.  Perhaps from the trees...  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -969,7 +969,7 @@ Forest Path~
 of the leaves as they ride on the currents of the wind high above all you hear.
 You cannot shake the feeling of being watched, though.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -985,7 +985,7 @@ Forest Path~
 The feeling that you are being watched is stronger than ever.  Possibly from the
 trees...  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -1010,7 +1010,7 @@ by the looming trees of this thick forest.  You feel immediately isolated and
 alone, and very vulnerable.  In fact, you could almost swear that you were being
 watched.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -1028,7 +1028,7 @@ With the foliage so thick, no sound travels through the trees at all, save for
 the occasional creak of a tree as it sways or the skitter of a chipmunk.  A
 strange feeling of being watched also pervades the area.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1048,7 +1048,7 @@ Path Through the Trees~
 trail.  Especially now that the sensation of being watched is stronger than
 ever.  Kind of creepy.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1063,7 +1063,7 @@ Path Through the Trees~
    The path heads east and west throught the trees, the feeling that someone is
 watching always just behind you or over your shoulder.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -1078,7 +1078,7 @@ Path Through the Trees~
    The path heads east and west throught the trees, the feeling that someone is
 watching always just behind you or over your shoulder.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -1094,7 +1094,7 @@ Path Through the Trees~
 prevent any progress save that offered by the trail.  However, you get the
 strangest feeling that you are being watched, perhaps from the trees...  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1113,7 +1113,7 @@ Path Through the Trees~
    The path leads through the trees deep into the forest.  You may head south
 deeper into the trees or north back out onto the wagon trail.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1130,7 +1130,7 @@ the trail, you do see the mark of booted feet having traveled this way.  The
 forest immediately surrounds you, placing you in an entirely different
 surrounding that of what you grew accustomed to along the wagon trail.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -1146,7 +1146,7 @@ Faint Path Through the Forest~
 forest.  You have the strangest feeling, almost as if you were being watched...
 
 ~
-326 0 0
+326 0 0 0 0 0
 D2
 ~
 ~
@@ -1161,7 +1161,7 @@ Faint Path Through the Forest~
    The path branches here, heading north, south, and east.  The feeling of being
 watched is as strong as ever.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1181,7 +1181,7 @@ Faint Path Through the Forest~
 air has been replaced by a stuffy, isolated feeling.  The trail heads north or
 back west onto the wagon trail.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1198,7 +1198,7 @@ the way you came, the forest is just simply too thick to pass through without
 having a trail to follow.  You feel eyes upon you as you turn around and prepare
 to head back the way you came.  Perhaps someone in the trees...?  
 ~
-326 0 0
+326 0 0 0 0 0
 D3
 ~
 ~
@@ -1214,7 +1214,7 @@ Lookout Post~
 hidden so as to bland in with the forest surroundings, quite skillfully,
 actually.  
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -1226,7 +1226,7 @@ Lookout Post~
 location from any would-be attackers on the encampment.  It seems to work pretty
 well, too!  
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -1238,7 +1238,7 @@ Lookout Post~
 perfectly with the trees of the forest.  From below, no one would ever suspect
 that this small outpost existed.  
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -1251,7 +1251,7 @@ it that much the better.  Branches and leaves have been draped over the tops of
 the post to give it a natural look.  From below, no one would suspect a thing.
 
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -1262,7 +1262,7 @@ Lookout Post~
    This small post has been cleverly painted in hues of green and brown so that
 passerbys in the forest below might not notice its existance.  
 ~
-326 0 0
+326 0 0 0 0 0
 D5
 ~
 ~
@@ -1275,7 +1275,7 @@ everywhere.  At the edges of the area, where the army has not yet gone into to
 cut down these trees, lies stacks and stacks of shorn tree trunks, the limbs and
 bows all cut from them to form perfect logs.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1296,7 +1296,7 @@ once a strong, thriving forest which towered high above your head only a vague
 realization.  It is almost impossible to believe that there were ever trees
 here, even though the litter of stumps all over the ground tells otherwise.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1321,7 +1321,7 @@ everywhere.  At the edges of the area, where the army has not yet gone into to
 cut down these trees, lies stacks and stacks of shorn tree trunks, the limbs and
 bows all cut from them to form perfect logs.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1339,7 +1339,7 @@ see just north of here an area where it appears the army has cut into within the
 last month or less - it does not seem as finalized of an area as the rest of
 this does.  
 ~
-326 0 0
+326 0 0 0 0 0
 D0
 ~
 ~
@@ -1358,7 +1358,7 @@ Logging Area~
    The neat rows of logs end just north of here, where the forest still stands
 strong and thick, where the army has not yet worked their way into.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -1378,7 +1378,7 @@ Logging Area~
 the forest by the army's loggers.  Neat rows of logs twice as tall as you line
 along the forest's edge to your west, unbroken forest to your north.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -1397,7 +1397,7 @@ most probably one of the oldest in the forest and because of its immensity kept
 the area around from growing up too much, its roots alone must have crowded any
 other growth away.  
 ~
-326 0 0
+326 0 0 0 0 0
 D2
 ~
 ~
@@ -1411,7 +1411,7 @@ seems just as well traveled as its western counterpart, wagon tracks and
 hoofprints galore.  The camp is off just west of here, the road follows through
 the forest to the east.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -1427,7 +1427,7 @@ Wide Road~
 faint sheen of smoke on the horizon, as is common with most large towns.  To the
 west is the encampment of the Eastern Army.  
 ~
-326 0 0
+326 0 0 0 0 0
 D1
 ~
 ~
@@ -1444,7 +1444,7 @@ giving way to small fields of tall grass and sporatic copses of trees.  The
 signs of traffic are becoming more and more abundant the farther to the east
 that is traveled.  
 ~
-326 0 0
+326 0 0 0 0 0
 D3
 ~
 ~

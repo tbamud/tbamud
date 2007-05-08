@@ -8,7 +8,7 @@ stonemanship and elven artistry.  On the wall there is an inscription:
 
    There is a door to the east.
 ~
-293 ad 0
+293 9 0 0 0 0
 D1
 ~
 door~
@@ -30,7 +30,7 @@ not sure if you feel comfortable about this...
 
    The passage continues south.
 ~
-293 ad 0
+293 9 0 0 0 0
 D2
 ~
 ~
@@ -42,7 +42,7 @@ Passageway~
 spotting such work would keel over in disbelief.  The passage
 continues westwards, and back to the north.
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 ~
@@ -58,7 +58,7 @@ Passageway~
 might disappear as well once you pass through.  The passageway leads
 east back the way you came, and the door is to your south.
 ~
-293 ad 0
+293 9 0 0 0 0
 D1
 ~
 ~
@@ -75,7 +75,7 @@ octagonal room.  Also, there are many bones of prior adventurers
 strewn about.  Unfortunately, the door DID disappear behind you
 again...  the only way out is east.
 ~
-293 d 0
+293 8 0 0 0 0
 D1
 ~
 door~
@@ -86,7 +86,7 @@ Passageway~
    Back into passageway, and, once again, the door has disappeared
 behind you.  The only way to go is north.
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 ~
@@ -98,7 +98,7 @@ Passageway~
 the north wall.  The passageway leads a little way south, and then
 runs up against a dead end.  One way to go, again.
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 door~
@@ -115,7 +115,7 @@ north, east and west.  The door you've come from has...disappeared!
 You are not surprised, however.  There are some strange scuff marks on
 the floor, and you'd swear that discoloration is an old bloodstain.
 ~
-293 d 0
+293 8 0 0 0 0
 D0
 ~
 north~
@@ -135,7 +135,7 @@ Passageway~
 old.  This is just a tiny room with a door to the south.  You feel you
 know that door already.
 ~
-293 ad 0
+293 9 0 0 0 0
 D2
 ~
 door~
@@ -148,7 +148,7 @@ Whomever wasted the magical energies to these doors certainly had
 flair, if not a sense of humor.
    The passage continues southward.
 ~
-293 ad 0
+293 9 0 0 0 0
 D2
 ~
 ~
@@ -160,7 +160,7 @@ Passageway~
 door, its a trapdoor!  The excitement is palpable; a change of pace,
 perhaps?
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 ~
@@ -177,7 +177,7 @@ forgotten god.  The plaques have rusted away so you can't even read the names.
 Probably these were devotions to Gods whose time was over and whose followers
 deserted.  There is a trapdoor in the floor beyond them: the only way to go.  
 ~
-293 ad 0
+293 9 0 0 0 0
 D5
 ~
 trapdoor~
@@ -189,7 +189,7 @@ Passageway~
 It runs to the east.  You begin to wonder if you'll ever see Kerofk
 again...  this maze is awful!
 ~
-293 ad 0
+293 9 0 0 0 0
 D1
 ~
 ~
@@ -201,7 +201,7 @@ Passageway~
 of light in either direction.  There seems to be nothing interesting
 here, just stonework and you.
 ~
-293 ad 0
+293 9 0 0 0 0
 D1
 ~
 ~
@@ -216,7 +216,7 @@ End of the Passageway~
    The passageway ends here, with a door in the northern wall.  The
 passage seems still and eerie.
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 door~
@@ -233,7 +233,7 @@ gone like chaff in the wind.  There's no clue as to which door is the
 correct one to exit by, and you wonder if this is merely a test of
 guess.
 ~
-293 d 0
+293 8 0 0 0 0
 D0
 ~
 north~
@@ -248,7 +248,7 @@ Passageway~
    You feel this was the wrong decision, somehow.  There are two
 'nests' here, for the lack of a better word, looking recently used.
 ~
-293 ad 0
+293 9 0 0 0 0
 D2
 ~
 door~
@@ -259,7 +259,7 @@ Passageway~
    You feel you have made the right decision, somehow.  The door
 behind you has vanished, but the passageway leads away to the north.
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 ~
@@ -270,7 +270,7 @@ Passageway~
    Here is a door to the north.  A plaque next to it reads, 'The Trial of
 Defense!  '.  You get a BAD feeling about this room ahead.    
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 door~
@@ -285,7 +285,7 @@ Trial of Defense!~
    This is a small close room, with a door exact opposite from where
 you entered.  The door behind you is conveniently gone.
 ~
-293 d 0
+293 8 0 0 0 0
 D0
 ~
 door~
@@ -296,7 +296,7 @@ Passageway (Again!)~
    You feel relief pass over you for a moment.  This place looks to be
 a nice, safe place to rest if you've ever seen one.
 ~
-293 acd 0
+293 13 0 0 0 0
 D1
 ~
 ~
@@ -306,7 +306,7 @@ S
 Passageway~
    Now you are in a twisty set of passageways, and feel rather lost!
 ~
-293 ad 0
+293 9 0 0 0 0
 D2
 ~
 ~
@@ -320,7 +320,7 @@ S
 Passageway~
    Now you are in a twisty set of passageways, and feel rather lost!
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 ~
@@ -334,7 +334,7 @@ S
 Passageway~
    Now you are in a twisty set of passageways, and feel rather lost!
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 ~
@@ -349,7 +349,7 @@ Passageway's End~
    You seem to have come to the end of the twisty passageways, with no
 discernable exit.  Could there be something hidden here?
 ~
-293 ad 0
+293 9 0 0 0 0
 D2
 ~
 ~
@@ -361,7 +361,7 @@ Trial of Persistence~
 of the compass.  They all look exactly the same, and for a moment you
 feel confused.
 ~
-293 d 0
+293 8 0 0 0 0
 D0
 ~
 north~
@@ -384,7 +384,7 @@ Passageway~
    You feel you have chosen the wrong exit, but there seems to be a
 hole in the floor as the only exit.  Odd...
 ~
-293 ad 0
+293 9 0 0 0 0
 D5
 ~
 ~
@@ -395,7 +395,7 @@ Passageway~
    The passageway leads away to the north, and you feel you have
 chosen correctly again.  What luck!
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 ~
@@ -408,7 +408,7 @@ Passageway~
 
    Uh-oh.  You wonder if you've a scroll of recall...
 ~
-293 ad 0
+293 9 0 0 0 0
 D0
 ~
 door~
@@ -439,7 +439,7 @@ Welcome to The Builder Academy (TBA)!
 
 (and then, the illusion and shock slowly fades away.)
 ~
-293 d 0
+293 8 0 0 0 0
 D0
 ~
 ~
@@ -451,7 +451,7 @@ Alcove~
 sources you've seen.  It seems to be coming from a small globe in the next
 room, resting on a pedestal.    
 ~
-293 d 0
+293 8 0 0 0 0
 D0
 ~
 ~
@@ -466,7 +466,7 @@ pedestal is pure gold, and the orb hovers above it, humming and
 glowing with such radiance you can barely see its form.  This, then,
 is the object of your quest.
 ~
-293 cd 0
+293 12 0 0 0 0
 D0
 ~
 door~
@@ -482,7 +482,7 @@ spilling organs all over his feet and the floor.
    'Fools!'  he cries, 'I am now an immortal, I am now a liche!!'  He
 laughs, and directs his minions to attack!
 ~
-293 cd 0
+293 12 0 0 0 0
 D0
 ~
 door~
@@ -499,7 +499,7 @@ the White Temple in Kerofk.  A voice booms around you:
    "Take these toys, and remember this:  don't expect plot continuity
 from a mud!"  You feel relief.
 ~
-293 cd 0
+293 12 0 0 0 0
 S
 #29334
 View of a City~
@@ -511,7 +511,7 @@ along the edge of a cliff.  Beyond the cliff you see a dark ocean,
 reflecting the starlight above very feebly.  The road continues west
 down the rise, and east, towards the city on the edge.
 ~
-293 d 2
+293 8 0 0 0 0
 D1
 ~
 ~
@@ -529,7 +529,7 @@ surrounding the city seem impassable, but several scorch marks along
 its length tells a different stories about war and raids.  To your
 west is a rise where you may get a better vantage point of the city.
 ~
-293 d 2
+293 8 0 0 0 0
 D1
 ~
 ~
@@ -546,7 +546,7 @@ To the north you see some cultivated fields, and to the south a fork
 in the road.  The sky above seems eerie, especially to the west where
 the glow of the normal sky brightens the horizon...
 ~
-293 d 2
+293 8 0 0 0 0
 D0
 ~
 ~
@@ -565,7 +565,7 @@ you've never seen the likes of before.  From several burned out shells of
 houses you guess the farmers just try to grow what they can before the
 city is put under siege again.
 ~
-293 d 2
+293 8 0 0 0 0
 D1
 ~
 ~
@@ -582,7 +582,7 @@ walled, the other half sprawled directly on the edge of a great cliff
 which drops down into a dark ocean below.  To the east you see a small 
 gate in the city, which farmers are going into and out of sporadically.
 ~
-293 d 2
+293 8 0 0 0 0
 D1
 ~
 ~
@@ -598,7 +598,7 @@ Fields near a City~
 From the smell of charred wood and the sounds of fresh construction,
 you guess that the last raze didn't happen long ago...
 ~
-293 d 2
+293 8 0 0 0 0
 D1
 ~
 ~
@@ -614,7 +614,7 @@ Near a City~
 out of the city with their produce.  The walls seem indestructible,
 but scorch marks along its length tell a different story...
 ~
-293 d 2
+293 8 0 0 0 0
 D1
 ~
 ~
@@ -631,7 +631,7 @@ the north out of sight in the starlit sky, one leading up a hill to
 the east, and towards the mountains to the west.
    It seems very quiet and peaceful here.  A breeze caresses your face.
 ~
-293 d 2
+293 8 0 0 0 0
 D0
 ~
 ~
@@ -652,7 +652,7 @@ brightness seeping over and between the mountains.  Eastwards the
 strange, unnatural night sky spreads over anything, its permanent
 stars lighting the landscape with an eerie glow.
 ~
-293 d 2
+293 8 0 0 0 0
 D1
 ~
 ~
@@ -669,7 +669,7 @@ leads away under the starry sky to the east, and a mountain pass
 heads up and through to the north.  The scenery on this side of the
 mountains seems bleak and lifeless, probably due to the lack of sun.
 ~
-293 d 4
+293 8 0 0 0 0
 D0
 ~
 ~
@@ -687,7 +687,7 @@ an eerie glow over the stones and shrubberies around.  You can see a
 large dark plain to the east that the sun never seems to have shone
 upon, making it appear to be otherworldly somehow...
 ~
-293 d 4
+293 8 0 0 0 0
 D2
 ~
 ~
@@ -705,7 +705,7 @@ of the night is clearly delineated above you...a sharp edge separating
 night from normal, as it were.  Very odd...you wonder what could be
 causing this unnatural darkness.
 ~
-293 0 4
+293 0 0 0 0 0
 D1
 ~
 ~
@@ -722,7 +722,7 @@ its way up to the north.  The sky seems dark above the mountains,
 as if the mountains were a dividing line keeping back the night.
 The pass also leads back down to the
 ~
-293 0 4
+293 0 0 0 0 0
 D0
 ~
 ~
@@ -736,7 +736,7 @@ near the door, very much on its last legs.  The air is thick
 and humid, the decorations too garish, the space is too crowded.
 A name plaque on the desk says 'Bungle Fleecem, Esq.'
 ~
-293 d 0
+293 8 0 0 0 0
 D1
 ~
 ~
@@ -750,7 +750,7 @@ the gloom of night and the twinkling stars above, the tombstones seem
 to take a life of their own in a storybook way.  You don't think it
 would be the kind of storybook you would be interested in...
 ~
-293 cd 1
+293 12 0 0 0 0
 D0
 ~
 ~
@@ -772,7 +772,7 @@ dug up.  The bones of a dead dwarf lie exposed at the bottom of the
 grave, its hands seemingly to clutch at the sky.  The tombstone at
 the head of the grave is completely unreadable.
 ~
-293 d 1
+293 8 0 0 0 0
 D2
 ~
 ~
@@ -790,7 +790,7 @@ Some grass grows sparsely around the rocks, paled by the lack of sun.
 In this area, you feel the peace of death, instead of the decay usually
 associated with graveyards.
 ~
-293 d 1
+293 8 0 0 0 0
 D0
 ~
 ~
@@ -808,7 +808,7 @@ meeting their ends with dignity and aplomb.  Two pits are dug
 near the wall for a burial yet to take place.  You feel strangely
 chilled by the night air...
 ~
-293 d 1
+293 8 0 0 0 0
 D0
 ~
 ~
@@ -825,7 +825,7 @@ grown under this endless night sky.  This place seems to get good
 business, but not enthusiastic customers.  You can understand why from
 the quality of the wares.
 ~
-293 d 0
+293 8 0 0 0 0
 D2
 ~
 ~

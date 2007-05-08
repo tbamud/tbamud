@@ -6,7 +6,7 @@ The Maid is waiting for your order.
    She is very beautiful with golden hair, and deep blue eyes.  A good reason
 for coming here more often, you think to yourself.  
 ~
-abdlno d 1000 E
+26635 0 0 0 16 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -18,7 +18,7 @@ A Sexton is sitting here, drinking hot tea.
 ~
    The Sexton looks like he is relaxing after another gravedigging job.  
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 3 19 8 0d0+30 1d2+0
 30 900
 6 6 1
@@ -30,7 +30,7 @@ The Chief Guard is looking very upset.
 ~
    A very angry chief.  
 ~
-bcdf d 800 E
+46 0 0 0 16 0 0 0 800 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -42,7 +42,7 @@ A cityguard stands here, looking very upset.
 ~
    A big, strong, angry guard.  
 ~
-bcdf 0 1000 E
+46 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -56,7 +56,7 @@ A secretary is sitting at the desk, typing away on the typewriter.
 busy today.  ' The Secretary says 'Please sit down and have a seat in the
 meantime.  '
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 2
@@ -68,7 +68,7 @@ The Mayor is sitting in his huge chair, snoring loudly.
 ~
    He is a stocky, middle-aged man with thin, grey hair.  
 ~
-abdlno d 1000 E
+26635 0 0 0 16 0 0 0 1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 4 4 1
@@ -80,7 +80,7 @@ The Town Crier is here, weeping quietly.
 ~
    He is very good at his job - completely dissolved in tears.  
 ~
-dgh 0 900 E
+200 0 0 0 0 0 0 0 900 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -92,7 +92,7 @@ A swan is swimming around in the pond.
 ~
    The white swan is very elegant.  
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -104,7 +104,7 @@ A duckling is swimming around in the pond.
 ~
    The duckling is adorable, it looks most of all like a tiny furball.  
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -116,7 +116,7 @@ A sparrow is flapping around on the ground.
 ~
    The sparrow looks like it is enjoying life.  
 ~
-dgh 0 1000 E
+200 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -128,7 +128,7 @@ A duck is here, quacking happily.
 ~
    The duck is quite fat.  It looks like it is enjoying life.  
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0

@@ -4,7 +4,7 @@ A paved path~
 paved path leads toward the east.  To the northeast is a large building, 
 its yard lined by an old fence of stone.
 ~
-281 c 1
+281 4 0 0 0 0
 D1
 ~
 ~
@@ -27,7 +27,7 @@ Before a small gate~
 the fence.  A sign has been fastened on the gate, reading "Galeaufir's
 Tavern".  A brown path leads to the east, toward light forest.
 ~
-281 0 1
+281 0 0 0 0 0
 D0
 You see the yard of the tavern.
 ~
@@ -50,7 +50,7 @@ here and there.  The paving leads straight toward the tavern, but there
 is also a faint trail to the west.  This could be a place to have fun,
 at least some voices of singing are heard from inside the building.
 ~
-281 0 1
+281 0 0 0 0 0
 D0
 You see the tavern.
 ~
@@ -73,7 +73,7 @@ On the lawn~
 foliage covers the yard in massive shadows.  The corner of the tavern is
 close to the west.
 ~
-281 0 1
+281 0 0 0 0 0
 D1
 You see the yard before the tavern.
 ~
@@ -86,7 +86,7 @@ By the side of the tavern~
 can be seen further to the west - masses of people and clamour.  To the 
 is a small, wooden, and cell-like building, obviously a lavatory.
 ~
-281 0 1
+281 0 0 0 0 0
 D0
 You see a small, wooden building.
 ~
@@ -104,7 +104,7 @@ The lavatory~
 uses to be in places like this.  However the inside is very tidy, see-
 mingly taken care often.  Anyway, you are ready to leave now...
 ~
-281 aci 0
+281 261 0 0 0 0
 D2
 You see the yard of the tavern.
 ~
@@ -121,7 +121,7 @@ west is a high, arched doorway, above which a huge bearhead has been
 fastened, welcoming the customers in.
    Broad stairs lead up.
 ~
-281 d 0
+281 8 0 0 0 0
 D2
 You see the yard of this tavern.
 ~
@@ -154,7 +154,7 @@ and elders, riches and poors, all from the different social classes.
    There is a wide collection of various hunting weapons on the western 
 wall.  The room is warmed up by a massive fireplace.
 ~
-281 d 0
+281 8 0 0 0 0
 D1
 You see the tavern.
 ~
@@ -168,7 +168,7 @@ rooms are located at.  The walls are paneled in some fine wood, and
 there hang deep green tapestries with some white decorations on them.  
 Torches cast soft light into the space.
 ~
-281 d 0
+281 8 0 0 0 0
 D0
 You see the corridor.
 ~
@@ -193,7 +193,7 @@ it won't be hired out so often, although it seems that no one has
 been here in a few weeks.  But no doubt, there is someone's property 
 around...
 ~
-281 a 0
+281 1 0 0 0 0
 D1
 ~
 door oaken~
@@ -204,7 +204,7 @@ On the top floor~
    You walk on the corridor.  A door to the west is ajar and you 
 wonder if you heard some voices from behind it...
 ~
-281 d 0
+281 8 0 0 0 0
 D0
 You see the corridor.
 ~
@@ -230,7 +230,7 @@ is sticky and covered in thousands of tiny glass fragments all around.
    Obviously there has been a festival of some kind in the City at
 last night.
 ~
-281 a 0
+281 1 0 0 0 0
 D1
 You see the corridor.
 ~
@@ -245,7 +245,7 @@ peaceful out there, despite a few alarming rumours about the Forces of
 Evil gathering their power again.
    To the west stands a wooden door.
 ~
-281 d 0
+281 8 0 0 0 0
 D2
 You see the corridor.
 ~
@@ -263,7 +263,7 @@ A tidy room~
 of any kind appear to be wiped out.  Apparently there is a possible tenant
 coming soon.
 ~
-281 a 0
+281 1 0 0 0 0
 D1
 You see the corridor.
 ~
@@ -277,7 +277,7 @@ forest to the east, and begins to wriggle its way there.  A mild
 chirping can be heard from somewhere nearby.
    The city of XXXX is further away to the west.
 ~
-281 0 2
+281 0 0 0 0 0
 D1
 You see the forest.
 ~
@@ -296,7 +296,7 @@ very narrow, wriggling by the side of some large stones.  Passing by
 a wagon of any kind would be impossible.  To the east grows dense 
 thicket.
 ~
-281 c 2
+281 4 0 0 0 0
 D0
 You see more forest.
 ~
@@ -319,7 +319,7 @@ A path~
 some sandy ground.  Also, from the same direction was heard something
 that sounded peculiar talk...
 ~
-281 c 2
+281 4 0 0 0 0
 D1
 You see a small dell.
 ~
@@ -337,7 +337,7 @@ A small dell~
 water, approximately flown here a few months ago.  The path continues to 
 the east, climbing over great roots.
 ~
-281 0 2
+281 0 0 0 0 0
 D1
 You see a small intersection of trails.
 ~
@@ -355,7 +355,7 @@ An intersection of paths~
 and east.  Since the foliage dominates your vision more or less, only the 
 highest of Towers of Midgaard can be seen farther to the west.
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see a grassy path.
 ~
@@ -379,7 +379,7 @@ grooves that are yet visible on it, this way was probably used much, a
 long time ago. 
    Leaning against a greyish tree, there is a rottening, wooden sign.
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see a hillside of some kind descending there.
 ~
@@ -405,7 +405,7 @@ A low hillside~
 toward what looks a small marshland down there.  For some reason it does 
 not look very fascinating.
 ~
-281 c 4
+281 4 0 0 0 0
 D2
 You see the grassy path.
 ~
@@ -427,7 +427,7 @@ away to the north seems to be an another hillside, growing high trees.
    Remainders of a bridge-like structure still lie here, leading
 across the marsh.
 ~
-281 0 3
+281 0 0 0 0 0
 D0
 You see more marshland.
 ~
@@ -450,7 +450,7 @@ Stepping on some hammocks~
 thus you are able to move on.  Close to the east grows a large, somewhat
 peculiar bush that covers your vision quite totally.  
 ~
-281 0 3
+281 0 0 0 0 0
 D3
 You see the marshland.
 ~
@@ -474,7 +474,7 @@ Bubbles raise to the surface and at the same moment you feel a touch
 on your feet.  This feels ominous, as though there were something
 housing the pool.
 ~
-281 ch 6
+281 132 0 0 0 0
 D4
 You see some hammocks ...*burb*.
 ~
@@ -488,7 +488,7 @@ the north is an another hillside, high and much more steeper than the
 one you just descended.  It grows some deep brown hay and tall birches.  
 A faint trail climbs on it.
 ~
-281 0 3
+281 0 0 0 0 0
 D2
 You see more marshland.
 ~
@@ -506,7 +506,7 @@ A steep hillside~
 twisted branches.  A figure of grey building begins to discern slowly 
 to the northwest.
 ~
-281 c 4
+281 4 0 0 0 0
 D0
 You see the yard of a decayed building.
 ~
@@ -526,7 +526,7 @@ of the other wooden parts are mostly gone, and the greyish walls break
 off so badly that you somewhat wonder how the building still stands.  An 
 open doorway gives passage inside.  To the north lies an old pen.
 ~
-281 0 1
+281 0 0 0 0 0
 D0
 You see a rottening pen.
 ~
@@ -548,7 +548,7 @@ Inside an old pen~
    The muddy ground here is covered in wooden fragments and old junk, 
 nothing of interest.  To the north the forest gets thicker.
 ~
-281 0 1
+281 0 0 0 0 0
 D2
 You see the yard of the building.
 ~
@@ -563,7 +563,7 @@ from the holes of the walls, almost sounding as if there were a few small
 spirits howling their regret.  To the north is a door, blackened but still 
 in existence.  Rather dangerous looking stairs lead upwards.
 ~
-281 c 0
+281 4 0 0 0 0
 D0
 You see a chaotic room.
 ~
@@ -587,7 +587,7 @@ down here, and the former furniture is now more or less buried under them.
 At the corners there lie several rottening books, bedraggled tapestries,
 and broken vessels.  Besides, the room appears partially burned.
 ~
-281 0 0
+281 0 0 0 0 0
 D2
 You see the vestibule.
 ~
@@ -601,7 +601,7 @@ swing every time you take a move.  There is no go to the north.  Once
 apparently so elegant passage has vanished, totally rottened, and col-
 lapsed away.
 ~
-281 0 0
+281 0 0 0 0 0
 S
 #28131
 A weak trail~
@@ -609,7 +609,7 @@ A weak trail~
 you feel yourself tiny and pitiful compared to those old giants.  The trail
 here is quite narrow.  
 ~
-281 c 2
+281 4 0 0 0 0
 D1
 You see more forest.
 ~
@@ -626,7 +626,7 @@ A weak trail~
    You step forward.  To the north is a small square, and to the south
 there is a grove of somekind.  The trail itself leads to the west and east.
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see a square.
 ~
@@ -654,7 +654,7 @@ A weak trail~
 leading through the dark green arch of the gigantic trees.  To the south
 lies a small grove.
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see more forest.
 ~
@@ -677,7 +677,7 @@ A square of mushrooms~
 of deep brown mushrooms grow here, seemingly alluring the animals of the 
 forest, for many of them appear munched.  The trail lies to the southeast.
 ~
-281 0 2
+281 0 0 0 0 0
 D1
 You see more forest.
 ~
@@ -696,7 +696,7 @@ apart slowly, and you hear birds singing here and there.  Way farther
 to the north raises a tremendous, grey figure, the mountainside of
 Great Aesarthwe.
 ~
-281 0 2
+281 0 0 0 0 0
 D1
 You see trees getting more apart.
 ~
@@ -719,7 +719,7 @@ A weak trail~
 on your cheeks.  The trail leads north toward the mountain, and west, into 
 the deeper forest.
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see the forest becoming lighter.
 ~
@@ -732,7 +732,7 @@ A lighter forest~
 side begins to ascend, very gentle at first.  Rippling of water can be heard 
 from nearby.
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see a small brook.
 ~
@@ -751,7 +751,7 @@ mountain.  Its water is clear and very refreshive, and you can see the
 sunshine make it sparkle splendid at the upper course of the brook where
 lies a picturesque waterfall.
 ~
-281 c 6
+281 4 0 0 0 0
 D0
 You see the mountainside.
 ~
@@ -768,7 +768,7 @@ Walking on stony soil~
    As you walk on, the mountainside begins to change much more steeper 
 before you.  However it seems that you can advance easily enough.
 ~
-281 c 4
+281 4 0 0 0 0
 D2
 You see the brook.
 ~
@@ -786,7 +786,7 @@ Climbing on the mountainside~
 continues both north and west.  Dark fungus appears to grow profuse
 here.      
 ~
-281 c 5
+281 4 0 0 0 0
 D0
 You see some large stones.
 ~
@@ -814,7 +814,7 @@ Before a gigantic boulder~
 before you.  It is black all over and partly of some glasslike material.  
 Some remnants lie under it.  The plateau extends to the east.
 ~
-281 0 5
+281 0 0 0 0 0
 D1
 You see the plateau.
 ~
@@ -832,7 +832,7 @@ be quite sharp, it is wise to be careful, this is not the day to get
 impaled.  To the north is what appears a brink.  Also, the mountain-
 side above remains climbable.
 ~
-281 0 5
+281 0 0 0 0 0
 D0
 You can walk there.
 ~
@@ -850,7 +850,7 @@ The brink of a gorge~
 very smooth and rush straight down, where nothing but a jet-black empti-
 ness can be seen.  
 ~
-281 0 5
+281 0 0 0 0 0
 D2
 You see some edges.
 ~
@@ -865,7 +865,7 @@ flying round the summit and vanishing into the canyons.  You can still
 continue to the north but it seems difficult to ascend the hillside any 
 higher...
 ~
-281 0 5
+281 0 0 0 0 0
 D0
 You see more mountainside.
 ~
@@ -883,7 +883,7 @@ On the mountainside~
 It would take a long time to find a reasonable way to climb forward.  
 And if one existed it would still be very arduous at all events.
 ~
-281 0 5
+281 0 0 0 0 0
 D2
 You see more mountainside.
 ~
@@ -900,7 +900,7 @@ revealing both the artistic and practical abilities of whoever was the
 maker.  A thick, multicolorous carpet covers the floor.
    To the west is a small, wooden door.
 ~
-281 d 0
+281 8 0 0 0 0
 D3
 You see a brownish chamberlike...
 ~
@@ -914,7 +914,7 @@ roots, from which various fibres with soil still hang down.  There
 are small footprints on the ground.  While an improvised ladder leads 
 up, there is a small, wooden door the east.
 ~
-281 ac 1
+281 5 0 0 0 0
 D1
 You see a dwelling of some kind.
 ~
@@ -932,7 +932,7 @@ Inside the hollow trunk~
 completely hollow, and enables you to move about.  Some kind of ladder 
 leads down from here.
 ~
-281 c 1
+281 4 0 0 0 0
 D3
 You see the grove.
 ~
@@ -951,7 +951,7 @@ foliage spreads in every direction like a gigantic green ball.  Its trunk
 is gnarled and carries the scars of hundreds of years.  A small hole appears 
 to penetrate into the pith of the tree.
 ~
-281 0 1
+281 0 0 0 0 0
 D0
 You see the forest.
 ~
@@ -978,7 +978,7 @@ On the hill~
    You are standing on a low and barren hill.  There are several foot-
 prints on it.  There is a small grove to the north. 
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see the grove.
 ~
@@ -994,7 +994,7 @@ but also somewhat sad.
 nearly swarms life.  A faint track leads to the north, and to the
 west there lies a ditch.
 ~
-281 0 1
+281 0 0 0 0 0
 D0
 You see the forest.
 ~
@@ -1017,7 +1017,7 @@ A grassy ditch~
 Low bushes grow around.  The ditch leads west, while there is a grove to 
 the east.
 ~
-281 c 3
+281 4 0 0 0 0
 D1
 You see a small grove.
 ~
@@ -1035,7 +1035,7 @@ Walking in the ditch~
 south you can see a grassy hillside, on where a narrow path descends.  
 The ditch leads west and east.
 ~
-281 0 3
+281 0 0 0 0 0
 D1
 You see the ditch.
 ~
@@ -1057,7 +1057,7 @@ A grassy ditch~
    You are standing on the bottom of a small and grassy ditch.  There 
 is some thicket growing around.  The ditch leads to the east.
 ~
-281 0 3
+281 0 0 0 0 0
 D0
 You see some bushes.
 ~
@@ -1075,7 +1075,7 @@ Through some bushes~
 spiders and gadflies.  Most of these bushes are unusually tough, lashing 
 your face with an unpleasant force.  There is a small ditch to the south.
 ~
-281 0 3
+281 0 0 0 0 0
 D2
 You see a small ditch.
 ~
@@ -1093,7 +1093,7 @@ The brink of the grassy hillside~
 to descend gently.  Below there lies what appears very dense forest.
 To the north is a ditch.
 ~
-281 c 4
+281 4 0 0 0 0
 D0
 You see the ditch.
 ~
@@ -1110,7 +1110,7 @@ Descending the hillside~
    You start climbing down a small worn-out path on the hillside.  Despite 
 the fresh footprints all around, the way doesn't appear very busy.   
 ~
-281 0 4
+281 0 0 0 0 0
 D4
 You see the top of the hillside.
 ~
@@ -1128,7 +1128,7 @@ On a grey trunk~
 penetrating into the forest as if it were a straight bridge.  You begin 
 to walk on it.
 ~
-281 0 1
+281 0 0 0 0 0
 D1
 You see the trunk leading there.
 ~
@@ -1148,7 +1148,7 @@ giant overturned years ago.
    Now, there lies the rhizome.  The roots appear to give passage to 
 the south.
 ~
-281 0 1
+281 0 0 0 0 0
 D2
 You see a narrow path.
 ~
@@ -1167,7 +1167,7 @@ stones make your walking quite difficult, and you are worried about
 your feet.  The foliages form a green and inpenetrable "wall" around 
 the path which seems to descend to the east. 
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see the trunk.
 ~
@@ -1185,7 +1185,7 @@ Under some massive roots~
 an ancient trench.  Tremendous, gnarled roots from some brown and black
 arches above.  The path leads both to the west and east.
 ~
-281 0 2
+281 0 0 0 0 0
 D1
 You see a small meadow.
 ~
@@ -1203,7 +1203,7 @@ A small meadow~
 slowly in the wind.  The path leads towards the north, where you make out 
 some high osiers.
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see the osiers.
 ~
@@ -1221,7 +1221,7 @@ On a trail through high osiers~
 walk on it easily.  Now your trip begins to wind downwards, from where you 
 can hear some voices.
 ~
-281 0 3
+281 0 0 0 0 0
 D2
 You see the small meadow.
 ~
@@ -1242,7 +1242,7 @@ most of them black.  Also you notice that the crater is full of small
 folk, everyone directing towards a structure of some kind further away 
 to the east. 
 ~
-281 c 2
+281 4 0 0 0 0
 D1
 You see the crater.
 ~
@@ -1263,7 +1263,7 @@ totem or a statue of some kind.  Yet you do not know what this all is
 about, but no doubt this place must be of great importance and sanctity 
 for these people.
 ~
-281 0 2
+281 0 0 0 0 0
 D1
 You see the crater.
 ~
@@ -1285,7 +1285,7 @@ Before the wooden steps~
    Just before you lie firm, wooden steps, ascending onto the dias.  
 Simple, but elegant symbols have been encarved on them.
 ~
-281 0 2
+281 0 0 0 0 0
 D3
 You see the crater.
 ~
@@ -1302,7 +1302,7 @@ Before the wooden steps~
    Just before you lie firm, wooden steps, ascending onto the dias.  
 Simple, but elegant symbols have been encarved on them.
 ~
-281 0 2
+281 0 0 0 0 0
 D0
 You see the crater.
 ~
@@ -1324,7 +1324,7 @@ leaves and garments.
    The brownies assemble to the foot of the dais and you feel the
 atmosphere running high.
 ~
-281 c 1
+281 4 0 0 0 0
 D0
 You see the steps down.
 ~
@@ -1348,7 +1348,7 @@ S
 Descending the steps~
    You start descending from the dais.
 ~
-281 0 1
+281 0 0 0 0 0
 D2
 You see the plateau.
 ~
@@ -1364,7 +1364,7 @@ S
 Descending the steps~
    You start descending from the dais.
 ~
-281 0 1
+281 0 0 0 0 0
 D1
 You see the plateau.
 ~

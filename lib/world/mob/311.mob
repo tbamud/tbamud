@@ -7,7 +7,7 @@ All three sets of a chimerae's eyes glare straight at you.
 hindquarters of a goat, the forequarters of a strong lion and the wings of a
 black dragon.  It is enormously and evilly impressive.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -20,7 +20,7 @@ A gorgimera turns two of its heads your way as you enter the cave.
    It is a grotesque abomination to nature, a freak of creation that has
 managed to stay alive due to its brute strength and ferocity.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -33,7 +33,7 @@ The undead remains of a huge dragon rises as you approach.
    Two tiny pinpoints of light glare from its eyelets, its skeletal frame
 moving jerkily as it moves to block your progress into the cave.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -46,7 +46,7 @@ A black dragon moves about in the darkness of the room.
    It is hard to make out any details of the creature save for the fact that it
 is an enormous thing, its bulk seeming endless.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -60,7 +60,7 @@ A blue dragon turns its malevolent eyes upon you.
 stature was not only stupid enough to enter into its lair, but also somehow
 wily enough to get past the guardian.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -72,7 +72,7 @@ A red dragon tosses back its head and jets a plume of fire into the air.
 ~
    The dragon appears less than pleased that you have intruded upon its domain.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -86,7 +86,7 @@ A white dragon turns it icy gaze your way, eyes narrowing.
 detracts from its powerful evil.  Do not be distracted by the beauty and wealth
 of this creature.  It will kill you.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -100,7 +100,7 @@ A green dragon mucks about in its own excrement, not even aware of you.
 its own refuse.  It is old and no longer has the desire to fight and rampage.
 It must soon find a successor.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -112,7 +112,7 @@ A topaz dragon storms in a rage at you, screeching its anger.
 ~
    So much for a little PR work, here.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -126,7 +126,7 @@ A crystal dragon appears pleased that you have come to call.
 extremely pleased that you are here, indeed looks ready to engage in
 conversation.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -138,7 +138,7 @@ An emerald dragon instantly assumes a defensive posture as you enter.
 ~
    It does not attack, however it looks more than ready for a fight.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -151,7 +151,7 @@ A strange, small lizard with wings and a big grin flies at you.
    With its full of mischief, it opens its mouth to reveal a set of long,
 spiked teeth and a forked tonuge.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -165,7 +165,7 @@ What looks to be a young red dragon flies straight for you, jetting flame.
 breath seems more than sufficient to give it some credibility as a dangerous
 foe.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -177,7 +177,7 @@ A gryphon stands proudly before the entrance into the cave.
 ~
    It blocks entry with a firm look and a level stare.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -189,7 +189,7 @@ A long, leathery brown serpent flies at you with its teeth bared.
 ~
    It speeds directly for you, intent on a strong, aggressive attack.  Run?  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0

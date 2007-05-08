@@ -5,7 +5,7 @@ A butler walks up to you and states, 'please follow me, sir.'
 ~
    Dressed all in black, looking like a very capable and dependable man.  
 ~
-dgh k 0 E
+200 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -19,7 +19,7 @@ A huge five headed demon rises up up on it's haunches and attacks!
    This demon has pure malevolence for anything living.  Oops!  You're living!
 I guess that means you!  
 ~
-bdelmnopr dk -1000 E
+194586 0 0 0 16 0 0 0 -1000 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -32,7 +32,7 @@ A man sits here, chatting happily with a handsome older woman.
 ~
    Looks like he just might get lucky.  
 ~
-bdelnopqr dk 0 E
+256026 0 0 0 16 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 6 6 1
@@ -44,7 +44,7 @@ A woman sits here, chatting with a young man.
 ~
    Looks like a socialite who has seen better days.  
 ~
-bdelnopqr dk 0 E
+256026 0 0 0 16 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 6 6 2
@@ -56,7 +56,7 @@ A balding man sits in a recliner, feet up, before the fire.
 ~
    Man, that looks comfey!  
 ~
-bdnopqr dk 0 E
+253962 0 0 0 16 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 6 6 1
@@ -68,7 +68,7 @@ A servant walks by, stiff backed and formal.
 ~
    Black slacks, white shirt, black overcoat - you know, a servant.  
 ~
-dghlm dk 0 E
+6344 0 0 0 16 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -80,7 +80,7 @@ A maid walks by, ignoring you and all others as she goes about her business.
 ~
    Black dress, white smock.  She looks quite a bit like a maid.  
 ~
-dghm 0 0 E
+4296 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -94,7 +94,7 @@ The Cook bustles about, making a mess while making a meal.
 herself.  Strangely, she seems almost proud of those stains, almost as if they
 were decorations from battles past.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 2
@@ -108,7 +108,7 @@ A HUGE FAT maid stands here, cramming all the food she can in her mouth.
    This big 'ole porker must have won at least one all-you-can-eat contest in
 her time.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -120,7 +120,7 @@ A huge slimy green thing crawls across the table, sucking at the food.
 ~
    Man, that's sick.  Sick and wrong.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -132,7 +132,7 @@ The Face suddenly comes alive, out of the picture, and attacks you!
 ~
    By the Gods, what IS it?  
 ~
-bdfpqr st -1000 E
+229418 0 0 0 1572864 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -146,7 +146,7 @@ A HUGE bear rises up on it's hind legs, looking as if it may attack!
    The image of this bear wavers in and out, flickering.  Could it be that this
 thing isn't what it seems?  
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -159,7 +159,7 @@ The man jumps up from the bed and although he has not a stitch on him, attacks!
 ~
    This guy must've been a little, err, busy?  When you landed in his room.  
 ~
-bdf df 100 E
+42 0 0 0 80 0 0 0 100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -171,7 +171,7 @@ The woman simply tries to cover herself under the blankets.
 ~
    Poor girl, looks as if maybe she was one the servants...  
 ~
-bdh 0 300 E
+138 0 0 0 0 0 0 0 300 E
 6 18 6 1d1+60 1d2+1
 60 3600
 6 6 2
@@ -183,7 +183,7 @@ A vampiress stands naked in the shower, mouth open wide, gleefully slurping the 
 ~
    As beautiful as she may seem, she is ten times as dangerous.  
 ~
-bcde hknp -1000 E
+30 0 0 0 65536 0 0 0 -1000 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -196,7 +196,7 @@ Old Marty stands behind the bar, mixing drinks.
 ~
    Good Old Marty, what a guy.  
 ~
-bdenopr h 500 E
+188442 0 0 0 0 0 0 0 500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -208,7 +208,7 @@ Ma sits here in her rockin' chair, knittin' away the time.
 ~
    -Ma asks, 'Are you one of Inna's friends?  '
 ~
-bdlm h 1000 E
+6154 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 6 6 2
@@ -221,7 +221,7 @@ Pa sits with his whittlin' knife, whittlin' on some wood.
 ~
    -'Looks like another one of them damn hippies, Ma', Pa says.  
 ~
-bdm h 1000 E
+4106 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 6 6 1
@@ -235,7 +235,7 @@ An Ancient Dragon is resting on it's haunches in the center of the floor, one ey
    Scarred, a bit withered, but definately still in good enough condition to
 whoop your ass.  
 ~
-bdl dfhmnp 0 E
+2058 0 0 0 73808 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -249,7 +249,7 @@ Martin dangles about four feet off the floor from a rope.
    Poor fella, he always said he never had enough time to get anything done.  
 Always so busy...  Guess he got this one thing done, though.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 0 0 1
@@ -264,7 +264,7 @@ A receptionist sits at her desk, filing her nails.
 Dragon is resting on it's haunches in the center of the floor, one eye cocked
 curiously upon you.  
 ~
-bd def 0 E
+10 0 0 0 112 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 6 6 2
@@ -276,7 +276,7 @@ Inna is here, busily brewing some kind of potion.
 ~
    Dressed in a white alchemist's robe, she still looks stunning.  
 ~
-bdhlm h 100 E
+6282 0 0 0 0 0 0 0 100 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 6 6 1
@@ -288,7 +288,7 @@ Igor is mixing a brew here.
 ~
    Looking tall, regal and powerful, you have to respect this man.  
 ~
-bdhlm h 100 E
+6282 0 0 0 0 0 0 0 100 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1

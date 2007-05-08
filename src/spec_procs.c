@@ -634,7 +634,7 @@ SPECIAL(pet_shops)
 
     pet = read_mobile(GET_MOB_RNUM(pet), REAL);
     GET_EXP(pet) = 0;
-    SET_BIT(AFF_FLAGS(pet), AFF_CHARM);
+    SET_BIT_AR(AFF_FLAGS(pet), AFF_CHARM);
 
     if (*pet_name) {
       snprintf(buf, sizeof(buf), "%s %s", pet->player.name, pet_name);

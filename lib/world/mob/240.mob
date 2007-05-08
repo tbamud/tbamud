@@ -7,7 +7,7 @@ A huge minotaur stands here, keeping the peace.
 bull.  His legs are also hoofed and shaped as that of a bull's.  This is a very
 strong creature, and should not be taken lightly.    
 ~
-dgmq 0 0 E
+69704 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -22,7 +22,7 @@ A minotaur sentry is here guarding the gates.
 of any possible attack.  It looks like he alone could withstand a small army.
 He stands at least 8 feet tall and must be over 300 pounds.    
 ~
-bdglq 0 0 E
+67658 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -37,7 +37,7 @@ A minotaur warrior carrying a deadly war-axe.
 stomach the second you saw him.  You are more than intimidated by this war
 machine.  The minotaur carries himself with pride and confidence.    
 ~
-dglq 0 0 E
+67656 0 0 0 0 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -52,7 +52,7 @@ is sometimes heard of that they will become warriors.  This is usually not
 acceptable and they must leave the city.  Except in the case of widows without
 any children.    
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 6 8 2
@@ -67,7 +67,7 @@ A large minotaur pushes you out of its way.
 confidence and ignores you outright.  It seems like he thinks you are not even
 worthy of notice.  Maybe you could teach him differently, or maybe not.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -81,7 +81,7 @@ A minotaur child is playing here.
 fighting some imaginary foe.  He is running around pretending to impale his foe
 with his miniature set of horns.  Those horns look awfully sharp.    
 ~
-dghl 0 300 E
+2248 0 0 0 0 0 0 0 300 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -95,7 +95,7 @@ A young, vibrant minotaur stomps past without a worry in the world.
 about seven feet tall and looks to be busy.  Probably running some errand or
 doing some task.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -111,7 +111,7 @@ been.  Scars riddle his body, you almost dismiss him as not being a threat when
 you catch a glimpse of his eyes.  Those eyes have seen and experienced more
 than you ever will in your lifetime.    
 ~
-dgl 0 200 E
+2120 0 0 0 0 0 0 0 200 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -125,7 +125,7 @@ A minotaur healer is making house calls to the sick and wounded.
 It is a rather simple job.  Either the victim can get up and continue fighting
 or the healer will finish them off.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 2
@@ -139,7 +139,7 @@ Vorn stands here conducting his business.
 conducts all business matters and has managed to build this city into what it
 is today.  He looks deceiving.    
 ~
-bdgl 0 -1000 E
+2122 0 0 0 0 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -153,7 +153,7 @@ Zarn, the Grand Master is busy ruling the city.
 the supreme ruler of the city.  But many advise him, including the war master
 who to most is the true ruler of the city.    
 ~
-bdgl 0 300 E
+2122 0 0 0 0 0 0 0 300 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -169,7 +169,7 @@ city, but also the undefeated champion of the arena.  He has more scars than
 wrinkles.  Most of his fur has turned grey.  He looks like he knows what you
 are thinking.    
 ~
-bdgl 0 300 E
+2122 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -183,7 +183,7 @@ The advisor to the grand master is doing some research here.
 mistakes.  He is responsible for more than the grand master himself, but he
 gets no credit.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -197,7 +197,7 @@ A large minotaur hides in the corner, waiting for its next victim.
 pain on others.  You wonder which is more important to him, inflicting the pain
 or getting the information out of his subjects.    
 ~
-bdg 0 -1000 E
+74 0 0 0 0 0 0 0 -1000 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -211,7 +211,7 @@ A large minotaur wielding a wicked looking pole arm struts by.
 wonder if he sleeps with it.  He has a 1000 yard gaze that is even more
 frightening.  He must have seen many battles.    
 ~
-bdgl 0 300 E
+2122 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -225,7 +225,7 @@ A large minotaur stands beside a rack of training weapons and armor.
 exactly that.  He has had years of training and even more practice at the real
 thing during the wars against the centaurs.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -240,7 +240,7 @@ unknown.  He has outlived his friends by decades.  No one alive knows when he
 was born, and he will not tell anyone his real age.  He remains a mystery to
 many.    
 ~
-dgnopqr 0 1000 E
+254024 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -254,7 +254,7 @@ A priest blesses all who worship Vardis.
 responsible for the upkeep of the sole place of worship in the city.  He often
 goes into battle to bless all those who fight for their god.    
 ~
-bdg 0 300 E
+74 0 0 0 0 0 0 0 300 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -268,7 +268,7 @@ A wealthy minotaur with a pouch full of gold walks past you.
 supply routes open between the cities.  They have all accumulated great wealth
 from their adventures and most of them live the life of the rich.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -282,7 +282,7 @@ A minotaur with its nose stuck up in the air almost walks into you.
 the hardships of battle, or the typical training given to most warriors.  
 Instead she has learned how to live off from others.  You pity her.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 2
@@ -296,7 +296,7 @@ A minotaur tradesman is busy calculating profits.
 He has lived his life eating from the silver spoon.  Some think they can avoid
 war by seperating themselves from those who fight.  They are so wrong.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -310,7 +310,7 @@ A minotaur guildsman is waiting for someone to train.
 experience they have received over generations and in numerous battles that
 make the minotaur one of the fiercest fighters in the realm.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -323,7 +323,7 @@ A lady minotaur gazes at you with total admiration, of your gold.
    If someone could ever consider a minotaur beautiful, you pity them.  This
 beastly lady is intimidating and just the thought of.....  Frightens you.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -338,7 +338,7 @@ A small minotaur is here writing something down.
 in running the estate.  It's hard to believe a minotaur could look like a geek,
 but this one does.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -353,7 +353,7 @@ A minotaur is carrying some meat to the market.
 for the city.  He is caring a few slabs of bloody meat slung over each
 shoulder.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -368,7 +368,7 @@ A young female minotaur is running some errand.
 remember the story about the young man who ran away with a beautiful minotaur
 once.  It sickens you.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -382,7 +382,7 @@ An old female minotaur is rambling about how beautiful she used to be.
    This old wrinkled hag has more stretch marks and sags than your waterskin.
 If she was beautiful once it must not have been in this century.    
 ~
-dgl 0 300 E
+2120 0 0 0 0 0 0 0 300 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -395,7 +395,7 @@ Trang, the minotaur armorer is hammering something, he ignores you.
    This burly minotaur is very scary looking.  He has huge arms and a scarred
 face and body from the heat of the furnaces.  He looks disagreeable.    
 ~
-bdglnopqr 0 1000 E
+256074 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -409,7 +409,7 @@ Targ, the supplies shop owner scowls at you.
 makes you feel very uncomfortable.  Minotaurs typically don't like the other
 races and Targ is no exception.    
 ~
-bdglnopqr 0 100 E
+256074 0 0 0 0 0 0 0 100 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -423,7 +423,7 @@ Garge, looks at you and immediately begins to ignore you.
 is very picky about who he sells to.  Don't get on his bad side or he will
 never deal with you.    
 ~
-bdgnopqr 0 100 E
+254026 0 0 0 0 0 0 0 100 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1

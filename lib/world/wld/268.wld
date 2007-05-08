@@ -4,7 +4,7 @@ Blindingly lit hallway~
 You have to shield your eyes just to see in front of you.  It appears to be
 made from the same metal as the entrance to the building does.    
 ~
-268 d 0
+268 8 0 0 0 0
 D0
 You see nothing there. Really. You don't. I promise.
 ~
@@ -51,7 +51,7 @@ but before you can, the door snaps shut.  You feel the spikes pierce your skin
 as you are about to lose consciousness the closing walls stop and you wonder at
 the luck you seem to have of late.    
 ~
-268 cj 0
+268 516 0 0 0 0
 S
 T 26800
 #26802
@@ -62,7 +62,7 @@ made from the same metal as the entrance to the building does.  Openings to
 your north and south look like they need to be examined closely before you even
 think about going those ways.  The Grand Temple of Terror is to your east.    
 ~
-268 d 0
+268 8 0 0 0 0
 D0
 It looks as if this is the true source of all the light. It, however, is NOT
 cold like the globe in the first room, and it is also not at all the kind of
@@ -94,7 +94,7 @@ The HellFire Room~
 this day.  This used to be a death trap.  Next time read the descriptions.  
 The Gods are not always forgiving.    
 ~
-268 cj 0
+268 516 0 0 0 0
 D2
 Umm...you're dead. You can't look that way. Leave us alone. We're a DT damnit!
 ~
@@ -109,7 +109,7 @@ light is so bright that even though you close your eyes to hide the awful
 sights, you can still see them!  You want to run, but are mesmerized by the
 utter horror of this place.    
 ~
-268 d 0
+268 8 0 0 0 0
 D1
 You see nothing worth mentioning...
 ~

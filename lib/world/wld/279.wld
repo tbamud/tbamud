@@ -6,7 +6,7 @@ large sign reminds visitors to be sure to visit the cathedral of Paris here.
 The street continues on to the east, the Champs Elysees lies to the north, and
 off to the south the town of Lyon can be seen.   
 ~
-279 c 1
+279 4 0 0 0 0
 D0
 ~
 ~
@@ -33,7 +33,7 @@ branching trees that grow on either side. Delicate flower petals drift lazily
 in the air, partially obscuring the more distant views of this continuing east
 to west path.    
 ~
-279 0 1
+279 0 0 0 0 0
 D1
 ~
 ~
@@ -50,7 +50,7 @@ west. At the side an immense stone wall can be seen, a massive steeple rising
 from above it. No ordinary structure, it is beautifully designed and carefully
 decorated, obviously belonging to a very important cathedral of Paris. 
 ~
-279 0 1
+279 0 0 0 0 0
 D1
 ~
 ~
@@ -68,7 +68,7 @@ evangelists.  Above the door is a breathtakingly huge rose window, alight with
 flickering candlefire from the streets below.  The street continues on to the
 east and the west, the southern way leading into the cathedral.  
 ~
-279 0 1
+279 0 0 0 0 0
 D1
 ~
 ~
@@ -88,7 +88,7 @@ The End of Notre Dame Street~
 around except for the large steeple visible to the east. Everything is still
 and quiet here, seemingly a way not travelled very often.   
 ~
-279 0 1
+279 0 0 0 0 0
 D3
 ~
 ~
@@ -102,7 +102,7 @@ imposing stone walls home to various carved statues, and the grand marble floor
 polished so that it shimmers with the surrounding candleglow. Two columns of
 doric design stand like guardians either side of the entranceway to the north. 
 ~
-279 cd 0
+279 12 0 0 0 0
 D0
 ~
 door~
@@ -127,7 +127,7 @@ walls carved here and there into statues, golden representations of angels
 embedded along the bejewelled ceiling. Dazzlingly white, the smooth floor is
 made of pale marble, stretching like untouched snow off into the east.    
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -141,7 +141,7 @@ some of his apostles can be recognized, carefully wrought from delicate red
 stone. Images of angels are inlaid into the ceiling with pure gold, amongst
 them the archangels; Raphael, Michael and Gabriel.
 ~
-279 d 0
+279 8 0 0 0 0
 D3
 ~
 ~
@@ -155,7 +155,7 @@ either side of the corridor, places for people to sit and listen to the
 preachings of the Cardinal. A chapel lies to the east, and to the west, a
 corridor to the second floor. 
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -179,7 +179,7 @@ The Eastern Corridor~
 carved benches lie to the left and right, the sounds of people's hushed
 whispering echoing along the walls like the murmurings of a subtle breeze.    
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -200,7 +200,7 @@ anticipation lingering in the air as visitors here wait for the priest to come.
 A long bench stands here, the rest of the room unremarkable and stone-grey, a
 single door lying to the east.
 ~
-279 ad 0
+279 9 0 0 0 0
 D1
 ~
 door~
@@ -217,7 +217,7 @@ population come to confess their wrongdoings. No windows are visible, leaving
 the room very dark indeed, only the dim glow of a solitary candle lighting the
 way. The only exit is the door to the west.
 ~
-279 ad 0
+279 9 0 0 0 0
 D3
 ~
 door~
@@ -230,7 +230,7 @@ believers waiting patiently for the Cardinal to arrive. Several stained-glass
 windows stand along the wall, inscribed with passages from the bible and aglow
 as if with holy light. To the west, an old wooden door stands unobtrusively.
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -251,7 +251,7 @@ dust, evidently no one has come here for a long time. There is hardly any light
 penetrating the grey darkness here, but what little there is allows for the
 sight of a small ladder within the northern room.  
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -268,7 +268,7 @@ of a single torch add a hue of warmth to these surroundings. A very old wooden
 ladder descends into the blackness below, patches of rot and decay fuelling
 obvious doubt as to its sturdiness.   
 ~
-279 acd 0
+279 13 0 0 0 0
 D2
 ~
 ~
@@ -285,7 +285,7 @@ light splaying through the large coloured window, passages from the bible
 carefully scrawled into the glass, along with a representation of Christ's
 birthday; green pastures filled with shepherds and their flocks.   
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -306,7 +306,7 @@ grey cold, the veins of gold in the ceiling yielding to the bareness of stone,
 grave concrete walls bleak and unyielding. Even the warm wooden hues of the
 many benches have been dulled with time and dust.  
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -331,7 +331,7 @@ rows of seating lining its length. In the eastern wall, a glass window stands
 aglow with candlefire and natural light from outside, its luminous surface
 portraying the last supper of Christ and his apostles.
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -352,7 +352,7 @@ many coloured rays of light, apparently turning off to the north and south.
 Here, the largest of all the visible windows portrays a mosaical crucifixion of
 Christ, a small inscription reminding visitors to give tithe.
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -374,7 +374,7 @@ France, the benches beyond the carpet more polished and padded. The roof looms
 far overhead, peaking in the middle so that it seems it must surely pierce the
 clouds.   
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -399,7 +399,7 @@ lined with the standard wooden benches that are prevalent in such cathedrals. A
 beautifully sculpted glass window shows the scene of Christ's debate with the
 powerful Scribes and Pharisees of the Sanhedrin.  
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -420,7 +420,7 @@ streaming from a large stained-glass representation of Christ's submersion by
 John the Baptist in the Jordan River. Carved benches are lined orderly here,
 polished and cushioned for the French people of privileged social class.
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -437,7 +437,7 @@ roof rising above the glorious stone altar that rises from the floor here. The
 most intricate ornamentations and gildings line the walls here, cushioned
 benches and lush carpetting catering to the upper class visitors of France.    
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -462,7 +462,7 @@ flickering with candleglow, golden hues revealing the resurrection of Christ
 surrounded by depictions of heavenly creatures; holy angels and archangels in a
 state of joyous celebration and worship.    
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -479,7 +479,7 @@ lined with glimmering blue marble. This is the place where the Cardinal of
 Paris gives mass, life-like statues of Mary and Joseph standing either side of
 the altar, and above it a carving of Christ crucified upon the cross.   
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -492,7 +492,7 @@ of flowers and cooking food from the populated area below.  All around stretches
 the beautiful city of Paris, glorious houses breaking the horizon with their
 peaked roofs.  A wooden trapdoor lies above, apparently the way to the steeple.
 ~
-279 0 0
+279 0 0 0 0 0
 D1
 ~
 ~
@@ -514,7 +514,7 @@ rustling of resident birds and bats stirs the present silence, cold, crisp air
 blowing from the east and a glorious view of beautiful Paris lying
 breathtakingly below.   
 ~
-279 dg 0
+279 72 0 0 0 0
 D5
 ~
 trapdoor~
@@ -526,7 +526,7 @@ A Corridor~
 walls present at all. Only rows upon rows of doric columns supporting the
 weight of the ceiling, standing like watchful troops of stone sentinels.   
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -548,7 +548,7 @@ animal life. Many stone columns loom from the shadows, casting bars of darkness
 over the gloomy concrete floor, a small unobtrusive room can be seen lying off
 to the east.
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -570,7 +570,7 @@ sculpture of the Cardinal is visible here, along with the carefully crafted
 figure of a dancing gypsy woman. Cold, crisp air hushes lazily around the
 place, wafting from a large arched window to the east.   
 ~
-279 d 0
+279 8 0 0 0 0
 D3
 ~
 ~
@@ -583,7 +583,7 @@ stone pillars of the open corridor. The grey stone seems to absorb any traces
 of heat, actively chilling the place and making it seem even more eerie and
 deserted than it already is.  
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -604,7 +604,7 @@ weight of this place, rough cement flooring adding to the cold, almost tomb-
 like feeling here. Enhancing this feeling is the sound of the wind; howling
 wearily as it rushes here and there amongst the columns like a restless ghost.
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -625,7 +625,7 @@ street to the north, so many so that it appears to be a station of some sort;
 the sounds of people walking and chattering echoing down the walls. Another
 corridor stretches to the east, and a dark room opens to the west.   
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -646,7 +646,7 @@ stretching far to the north, snowy peaks glistening along the horizon. It looks
 as though a ladder once led the way down here, but it has been removed, leaving
 only a sheer drop... one that surely would prove fatal.   
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -673,7 +673,7 @@ being completely different than what one would expect to find. Open breezes
 send a chill through this place, stone demons and snarling gargoyles leering
 from the darker corners.   
 ~
-279 dg 0
+279 72 0 0 0 0
 D3
 ~
 ~
@@ -683,7 +683,7 @@ S
 A Trap in Notre Dame~
    You should watch where you are going.    
 ~
-279 c 0
+279 4 0 0 0 0
 S
 #27936
 The Western Room of the Second Floor~
@@ -692,7 +692,7 @@ from the outdoors. A large menacing statue of a winged demon hangs from the
 wall with fearsome stone claws. A view of the city lies below, partially
 obscured by the green canopy of a large southern forest.  
 ~
-279 dg 0
+279 72 0 0 0 0
 D1
 ~
 ~
@@ -705,7 +705,7 @@ waters rippling leisurely below. The river of Cena stretches lazily either side
 of the bridge, the water so calm and clean that it mirrors the surroundings
 perfectly. A large crossroads sign stands prominently here. 
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -727,7 +727,7 @@ trickling water and talking people fill the atmosphere, along with delicate
 birdsong. A large board welcomes visitors to this place, proclaiming the town
 as the best maker of wines in all France.
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -745,7 +745,7 @@ People continue quietly about their normal daily living, working at their trade
 or simply bustling about on some errand. The heart of the city seems to stretch
 to the south, and the city of Paris lies to the north.   
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -770,7 +770,7 @@ structure ornamented and hung with various pictures. The ceiling is thatched
 carefully with golden straw, a wooden bed lies tucked against the western wall,
 and a writing desk to the east.    
 ~
-279 d 0
+279 8 0 0 0 0
 D3
 ~
 ~
@@ -784,7 +784,7 @@ dogwalkers. Fragile flowers sway in the breezes, filling the atmosphere with a
 heady perfumed aroma and tall, leafy trees stand around, somewhat shielding
 this little grassy area from the paving and concrete of the city around.   
 ~
-279 0 3
+279 0 0 0 0 0
 D1
 ~
 ~
@@ -798,7 +798,7 @@ heard, along with the mellow sounds of chattering people. To the east a small
 magic shop displays its wares in the window, and to the west is a small
 miscellaneous shop.   
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -823,7 +823,7 @@ shelving displaying powders and coloured glass bottles of potion. A heady scent
 fills the air, as if concoctions have only recently been brewed, and the subtle
 sound of something bubbling away can be heard.
 ~
-279 deh 0
+279 152 0 0 0 0
 D3
 ~
 ~
@@ -835,7 +835,7 @@ The End of the Principal Street~
 and the west. The clattering sound of carriages can be heard from the station
 that lies to the south, advertising trips to any city of France.  
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -861,7 +861,7 @@ the air. Various paintings are hung around the walls, the scrawled signature
 corner, covered with scattered papers and blots of ink, and a cool breeze flows
 through a broken glass window to the east.   
 ~
-279 d 0
+279 8 0 0 0 0
 D3
 ~
 ~
@@ -875,7 +875,7 @@ paintings and sketches decorate the walls, a wooden table surrounded by
 artistically carved chairs. The smell of recently baked bread fills the air,
 along with crisp floral scents from the outdoors.   
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -889,7 +889,7 @@ people. The clattering of the carriages can be heard echoing down the stone-
 paved streets, a small sign displaying local travel fares. A small dark tunnel
 lies ominously to the east.
 ~
-279 0 0
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -911,7 +911,7 @@ their breakfast. Damp and cold, the menacing shadows look like the perfect
 place for ambushers. Little rodents run here and there, beady eyes glistening
 in the dark, the ground wet and mushy with goodness knows what.  
 ~
-279 adfi 0
+279 297 0 0 0 0
 D1
 ~
 ~
@@ -928,7 +928,7 @@ shadows giving the impression that thieves and criminals are plotting an
 imminent attack. The smell too, is overpowering, stagnating in this airless
 part of the tunnel and decaying into an even fouler stench.  
 ~
-279 adfgi 0
+279 361 0 0 0 0
 D3
 ~
 ~
@@ -943,7 +943,7 @@ their tops can hardly be seen, gigantic trunks planted in the ground like the
 columns of a grand hall. To the north lies a golden gate, a prominent notice
 fixed to the bars.   
 ~
-279 c 3
+279 4 0 0 0 0
 D0
 ~
 gate~
@@ -967,7 +967,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.   
 ~
-279 a 3
+279 1 0 0 0 0
 D0
 ~
 ~
@@ -993,7 +993,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 a 3
+279 1 0 0 0 0
 D0
 ~
 ~
@@ -1019,7 +1019,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 a 3
+279 1 0 0 0 0
 D0
 ~
 ~
@@ -1045,7 +1045,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 a 3
+279 1 0 0 0 0
 D0
 ~
 ~
@@ -1071,7 +1071,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 a 3
+279 1 0 0 0 0
 D0
 ~
 ~
@@ -1097,7 +1097,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 a 3
+279 1 0 0 0 0
 D0
 ~
 ~
@@ -1123,7 +1123,7 @@ high children's voices giggling and playing. Flickering fire lights the area,
 casting the surrounding dark trees of Champs Elysees in a welcoming, almost
 protective glow.    
 ~
-279 0 2
+279 0 0 0 0 0
 D2
 ~
 ~
@@ -1141,7 +1141,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 a 3
+279 1 0 0 0 0
 D0
 ~
 ~
@@ -1167,7 +1167,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 a 3
+279 1 0 0 0 0
 D0
 ~
 ~
@@ -1192,7 +1192,7 @@ grounded centrally before the plaza of the concorde that lies to the north.
 This is the entrance to the historical center of the city of Paris, where the
 revolution of France started in the XVIII century.  
 ~
-279 c 2
+279 4 0 0 0 0
 D0
 ~
 ~
@@ -1210,7 +1210,7 @@ themselves, cool leafy branches fanning the air as they sway. Two wooden
 benches stand either side of the square, painted a pale white, a little note
 pinned to each.   
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -1239,7 +1239,7 @@ Plaza Louis XIV~
 off from the surrounding houses.  Nearby revolutionaries can be seen running
 through the town, ducking inside open doorways or hiding within the alleyways.
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -1257,7 +1257,7 @@ people's anger toward the monarchy was expressing itself in the atmosphere.
 Fluttering of wings breaks the silence every now and again, pigeons landing to
 gobble dropped seeds before hurrying away.  
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -1274,7 +1274,7 @@ and crumbs obviously left for the abundant bird population. Patches of neatly
 gardened grass lie here and there, sprinkled with droplets of moisture and
 vibrantly green. 
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -1295,7 +1295,7 @@ from nearby candles avoids it.  A huge statue of the king stands proudly here,
 its once smooth surface worn with the scratchings of birds, one or two nests
 visible in the higher nooks and crannies.  
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -1320,7 +1320,7 @@ layer of perpetual moisture from the air. The grey granite paving adds to the
 feeling of discontent and misery that hangs in the air, flickering light from
 the candle lamps casting everything in dancing shadows.  
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 ~
@@ -1343,7 +1343,7 @@ stone ground, creepings of moss beginning to grow like dark green veins along
 the paving. To the west stands a large building, apparently a large
 headquarters or school.  
 ~
-279 0 1
+279 0 0 0 0 0
 D1
 ~
 ~
@@ -1363,7 +1363,7 @@ The Entrance to Musketeer H.Q.~
 still. There appears to be no security at all, much of the place open to public
 exploration, a little unguarded door lies to the north.   
 ~
-279 0 1
+279 0 0 0 0 0
 D0
 ~
 door~
@@ -1388,7 +1388,7 @@ windows looming from the horizon to the east. Blossoming flowers and shrubbery
 border the paving here, natural hues of grassy green and the colourful splashes
 of red and purple blooms brightening the place.  
 ~
-279 0 1
+279 0 0 0 0 0
 D1
 ~
 ~
@@ -1405,7 +1405,7 @@ is the glossy white marble floor.  The rest of the building is made of cold,
 sturdy stone; both the floor and ceiling painted blue.  A smell of cooking food
 wafts in the air, perhaps originating from the cafeteria that lies to the east.
 ~
-279 cd 0
+279 12 0 0 0 0
 D0
 ~
 ~
@@ -1427,7 +1427,7 @@ chairs standing around each. It appears this place caters to many patrons,
 being of ideal location for the soldiers of the king to pause and relax in
 before going to work.  
 ~
-279 deh 0
+279 152 0 0 0 0
 D3
 ~
 ~
@@ -1440,7 +1440,7 @@ forward however. A green marble sculpture here functions as a waterfall, lazy
 trickling water filling the place with tranquil echoes. A long corridor passes
 from the east to the west, the open entrance lying to the south.  
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -1460,7 +1460,7 @@ The Eastern Passage~
 beautiful and talented paintings adorning the walls. A large patio lies to the
 east but it has been closed off for some reason, prohibiting any access.   
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -1477,7 +1477,7 @@ long corridor almost completely shut off from the outside world. Despite this
 shelter, it is breathtakingly cold, the air crisp and biting as though the
 stone walls were breathing chill into the place. 
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -1493,7 +1493,7 @@ The Eastern Intersection~
 dark and cold as the other. Drab and dreary, only the occasional floral
 painting adding a touch of colur and warmth to the grey surroundings.    
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -1514,7 +1514,7 @@ the impression that at one time this place could have been a fortress of the
 dark ages. Chilly air wafts continuously, though no windows are to be seen, as
 though invisible ghosts walked silently about stirring it.   
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -1531,7 +1531,7 @@ the brighter hues of a large northern room. A massive arched window lies to the
 east, offering a spectacular view of the spread city below, curls of smoke
 rising into the air from distant flickering fires.   
 ~
-279 cd 0
+279 12 0 0 0 0
 D0
 ~
 ~
@@ -1549,7 +1549,7 @@ the walls, and a big wooden table holds a scattered deck of playing cards. Lush
 red carpeting pads the floor, and many colourful Van Gogh paintings decorate
 the walls.   
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 wall~
@@ -1566,7 +1566,7 @@ the dungeon where the thieves and revolutionaries rot in their cells. Dusty
 cobwebs flutter silently in the cool drafts here, the sound of hollow dripping
 echoing from far away.  
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 door~
@@ -1587,7 +1587,7 @@ there over the grey concrete floor. A ladder descends down into the darkness,
 leading to the many cells, in these times probably more filled with
 revolutionaries than criminals.    
 ~
-279 cd 0
+279 12 0 0 0 0
 D2
 ~
 door~
@@ -1603,7 +1603,7 @@ The Western Intersection~
 the damper areas of the concrete walls. The mouths of three passages open here,
 an eastern, western, and southern way all joining at this point.
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -1623,7 +1623,7 @@ The Western Corridor~
 and oozing with various fungal slimes, the clicking of insect legs can be heard
 wandering along the dark corners of the floor.   
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 ~
@@ -1639,7 +1639,7 @@ The Western End of the Corridor~
 streams of natural light and a refreshing breath of outside air. To the north,
 a long tower extends up into the ceiling, most likely leading into the tower.   
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -1656,7 +1656,7 @@ obviously strong and dependable but almost dangerously narrow. The dark
 interior of the tower lies above, the place where the Musketeers look out and
 watch over the city.
 ~
-279 d 0
+279 8 0 0 0 0
 D2
 ~
 ~
@@ -1673,7 +1673,7 @@ visible to the west but blocked off with a roped chain. A feeling of dampness
 pervades the air, moisture condensing on the chilly grey walls and running in
 rivulets onto the floor. 
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -1690,7 +1690,7 @@ tomb-like cold. A big wooden door stands to the west, loud noises of movement
 coming from within along with the occasional whinneying of horses, a strong
 smell of straw and manure wafting in the air.
 ~
-279 d 0
+279 8 0 0 0 0
 D0
 ~
 ~
@@ -1711,7 +1711,7 @@ grass lying about for the horses to chew. An overpowering scent fills the air,
 of horses and sweat and rotting manure. Growing patches of black mould linger
 in the corners, adding to the lingering smell.  
 ~
-279 d 0
+279 8 0 0 0 0
 D1
 ~
 door~
@@ -1725,7 +1725,7 @@ the structure is in a sorry state of disrepair, pieces of rubble scattered on
 the floor where the walls and ceiling are beginning to crumble, a layer of dirt
 covering everything.  
 ~
-279 d 0
+279 8 0 0 0 0
 D3
 ~
 ~
@@ -1737,7 +1737,7 @@ A Corridor to the Cells~
 dips of the stone floor. This seems to lead deeper into the holding cell area,
 probably where the most dangerous of the revolutionaries are jailed.    
 ~
-279 adfh 0
+279 169 0 0 0 0
 D2
 ~
 ~
@@ -1754,7 +1754,7 @@ long. Unfortunately the same cannot be said for the rodent population, various
 rat droppings lying about, and unmistakeable tufts of grey fur lying amidst
 what looks to be dried blood.
 ~
-279 adfh 0
+279 169 0 0 0 0
 D0
 ~
 ~
@@ -1771,7 +1771,7 @@ Unnatural cold fills the place, the stone seeming to the strange ability to
 absorb both sound and magical arts alike, more than likely to hinder the escape
 of prisoners and those who would aid them. 
 ~
-279 adfh 0
+279 169 0 0 0 0
 D0
 ~
 ~
@@ -1796,7 +1796,7 @@ in the damp rat-fertilized corners. Cold stone and iron bars are all there are
 to be seen, dank air growing stagnant here, aging with the unfortunate
 prisoners that occupy these places.    
 ~
-279 adfh 0
+279 169 0 0 0 0
 D3
 ~
 door~
@@ -1808,7 +1808,7 @@ A Tomb-Like Cell~
 entry with a loud clang. Nothing is left to observe but the sound of echoing
 dripping water and the scurrying of rat claws upon jagged concrete.    
 ~
-279 adfh 0
+279 169 0 0 0 0
 S
 #27994
 A Cell in the Dungeon~
@@ -1817,7 +1817,7 @@ the last thing many of the occupants here ever saw. Dripping water collects in
 filthy little puddles, the husky shells of long dead insects decaying in the
 corners like everything else that rots here.   
 ~
-279 adh 0
+279 137 0 0 0 0
 D0
 ~
 door~
@@ -1831,7 +1831,7 @@ rush in from every direction, stirring the stagnant air from below and rocking
 the little oil lamp that hangs here, providing the only light for the night
 guards.   
 ~
-279 d 0
+279 8 0 0 0 0
 D5
 ~
 ~
@@ -1844,7 +1844,7 @@ place although there are no candles or torches to be seen. To the north and
 south, swirling magical portals can be seen, probably leading to some strange
 place, though where cannot be guessed.    
 ~
-279 dfg 0
+279 104 0 0 0 0
 D1
 ~
 ~
@@ -1861,7 +1861,7 @@ place although there are no candles or torches to be seen. To the north and
 south, swirling magical portals can be seen, probably leading to some strange
 place, though where cannot be guessed.  
 ~
-279 dfg 0
+279 104 0 0 0 0
 D1
 ~
 ~
@@ -1878,7 +1878,7 @@ various pieces of equipment and weapons hanging upon the walls. A long glass
 counter stands at the northern end, displaying various articles of clothing and
 jewellry.    
 ~
-279 deh 0
+279 152 0 0 0 0
 D1
 ~
 ~
@@ -1892,7 +1892,7 @@ the place, fine marble flooring polished and gleaming. Bright streams of light
 illuminate the place, cast from elegant candelabrums of gold suspended from the
 ceiling. 
 ~
-279 dg 0
+279 72 0 0 0 0
 D3
 ~
 wall~

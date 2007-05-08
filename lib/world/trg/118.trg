@@ -619,7 +619,7 @@ if %object.vnum%==11834
     end
     if %actor.varexists(zn118_ridleywrite)%
       wait 1 s
-      say Thank you %actor.name%, I will restore them to their natural forms.
+      say Thank you %actor.name%, I will restore them to their natural forms, evil though they be..
       wait 1 s
       %purge% box
       wait 1 s
@@ -770,11 +770,9 @@ eval actor %self.carried_by%
 if %actor.is_pc%
   %send% %actor% %self.shortdesc% suddenly squirms free from your hands and flies away.
   %echoaround% %actor% %self.shortdesc% suddenly squirms free of %actor.name%'s grasp and flies away.
-else
-  %echo% %self.shortdesc% suddenly flits into the air.
+  %load% mob 11821
+  %purge% self
 end
-%load% mob 11821
-%purge% self
 ~
 #11831
 (21) insect loads self on death~
@@ -2211,14 +2209,19 @@ emote mumbles to herself 'He took the bread and broke it, saying: this means my 
 ~
 #11871
 (60) hotdog damages when eaten~
-1 s 100
-~
-%send% %actor% You feel an excruciating burning pain as it slides down your throat.
-eval amount %actor.maxhitp%/3
-if %amount% >= %actor.hitp%
-  eval amount %actor.hitp%+3
+1 c 2
+eat~
+if %cmd.mudcommand% == eat && hotdog /= %arg%
+  %send% %actor% You feel an excruciating burning pain as it slides down your throat.
+  eval amount %actor.maxhitp%/3
+  if %amount% >= %actor.hitp%
+    eval amount %actor.hitp%+3
+  end
+  %damage% %actor% %amount%
+  %purge% self
+else
+  return 0
 end
-%damage% %actor% %amount%
 ~
 #11872
 (34) girl restores from death~

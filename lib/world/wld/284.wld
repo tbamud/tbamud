@@ -5,7 +5,7 @@ There is no vegetation inside the circle, strangely enough.  A low cumulous of
 swirling mist engulfs you from the knees down, making it look as though you are
 partially buried.    
 ~
-284 ac 3
+284 5 0 0 0 0
 D5
 ~
 mound~
@@ -27,7 +27,7 @@ rule of the hubristic Lord Suzerain.  In virtually every corner you see ruins
 of some sort or another intermingled with old, age-whitened bones from all
 manner of beasts.  Exits lead in all cardinal directions.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -61,7 +61,7 @@ has been erected here, abutting the east wall of the city - it looks quite deep
 and wide.  The water is a crystaline blue which exudes holiness, something
 quite strange for such an evil city.  Exits lead West, North and South.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -86,7 +86,7 @@ order.  And the smell, oh boy!  It's all you can do to keep from losing your
 lunch right now.  The corpses are stacked too high to exit East, but you can
 pass North, South or West.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -111,7 +111,7 @@ A culdesac~
 is a large fountain, and a door lies to the North, beneath a large tavern sign
 depicting the unspeakable.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell~
 tavern~
@@ -127,7 +127,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 ac 1
+284 5 0 0 0 0
 D0
 The twisting hedges.~
 ~
@@ -150,7 +150,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 The twisting hedges.~
 ~
@@ -177,7 +177,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 The twisting hedges.~
 ~
@@ -204,7 +204,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 The twisting hedges.~
 ~
@@ -227,7 +227,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 The twisting hedges.~
 ~
@@ -252,7 +252,7 @@ your spine.  The walls, floor and ceiling are a viscous, blood-red mass that
 eludes description.  A rift in the ceiling above you causes a slight breeze to
 ruffle your hair.  A magic portal stands south, leading into the unknown.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -276,7 +276,7 @@ causes you to stagger uncontrollably, while the ceiling rhythmically pumps
 upwards and downwards.  You can feel the lifeblood draining from your body.  
 To stay here long would surely mean the end of you.    
 ~
-284 aco 1
+284 16389 0 0 0 0
 D0
 The bottomless pit.~
 ~
@@ -326,7 +326,7 @@ The bottomless pit.~
              ||G          ||
              ||           ||
 ~
-284 cd 0
+284 12 0 0 0 0
 D0
 ~
 ~
@@ -377,7 +377,7 @@ Isnt this fun!??~
              ||G          ||
              ||           ||
 ~
-284 cd 0
+284 12 0 0 0 0
 D0
 ~
 ~
@@ -408,7 +408,7 @@ The streets of Ghenna.~
    You are standing on a non-descript city street in Ghenna.  The road
 continues East and West, rolling gently over a dale.    
 ~
-284 a 1
+284 1 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -428,7 +428,7 @@ north which seems to be moving somehow.  Next to the bar a stairwell disappears
 into blackness above.  The ceiling is vaulted, and sports three candeled
 chandeliers, which hang like victims above you.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -452,7 +452,7 @@ sturdy, the bar is very pliant to the touch, and it seems to be MOVING ever so
 slightly, as if it were ALIVE!  A stairwell is here, leading upwards into
 blackness.    
 ~
-284 a 1
+284 1 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -471,7 +471,7 @@ with a few unplayed hands left sitting upon it...  Wonder where the rest of the
 poor souls' bodies are.  The tavern door lies east of here, while to the north
 is a bar made of what appears to be human skin.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -489,7 +489,7 @@ The top of the stairs.~
 prevails in the small hallway which runs east to west.  Below you is the bar of
 human skin.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -512,7 +512,7 @@ An upstairs hallway.~
 while to the North there lies a door, behind which you can hear some faint
 singing...  The dusky voice sounds almost feminine.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -530,7 +530,7 @@ A messy bedroom.~
 and a simple roll top desk.  A window stands to the north overlooking darkness
 beyond.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -542,7 +542,7 @@ An upstairs hallway.~
    You are standing in an upstairs hallway in Blood Tavern.  A door lies South,
 while to the East is the top of the stairs.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -560,7 +560,7 @@ The master suite.~
 against one wall, filled with dusty old bottles, while a king sized bed stands
 opposite.  A half opened door to the West leads into a bathroom.    
 ~
-284 d 0
+284 8 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -578,7 +578,7 @@ The bathroom.~
 serves as the toilet - pretty primitive.  A washbasin sits on the floor, filled
 with bloodied water, and a dirty mirror reflects your image.    
 ~
-284 d 0
+284 8 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -596,7 +596,7 @@ A wrinkle in the fabric of time.~
 spin and spin, unsure of which way is which.  It seems as though you could end
 up in any of several different places by choosing an exit.    
 ~
-284 ac 0
+284 5 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -634,7 +634,7 @@ A labyrinth of bodies.~
 feet high.  It seems that some of the bodies are still warm, and an occasional
 cry of despair comes from the mass.    
 ~
-284 ae 0
+284 17 0 0 0 0
 D0
 A labyrinth of bodies.~
 ~
@@ -658,7 +658,7 @@ A labyrinth of bodies.~
 feet high.  It seems that some of the bodies are still warm, and an occasional
 moan or cry of despair comes from the mass.    
 ~
-284 ae 0
+284 17 0 0 0 0
 D0
 A labyrinth of bodies.~
 ~
@@ -682,7 +682,7 @@ A labyrinth of bodies.~
 feet high.  It seems that some of the bodies are still warm, and an occasional
 moan of despair comes from the mass.    
 ~
-284 ae 0
+284 17 0 0 0 0
 D0
 A labyrinth of bodies.~
 ~
@@ -706,7 +706,7 @@ A labyrinth of bodies.~
 feet high.  It seems that some of the bodies are still warm, and an occasional
 muffled scream comes from the mass.    
 ~
-284 ae 0
+284 17 0 0 0 0
 D0
 A labyrinth of bodies.~
 ~
@@ -730,7 +730,7 @@ A labyrinth of bodies.~
 feet high.  It seems that some of the bodies are still warm, and an occasional
 plea for aid comes from the mass.    
 ~
-284 ae 0
+284 17 0 0 0 0
 D0
 A labyrinth of bodies.~
 ~
@@ -754,7 +754,7 @@ A labyrinth of bodies.~
 feet high.  It seems that some of the bodies are still warm, and an occasional
 gurgling cry of despair comes from the mass.    
 ~
-284 ae 0
+284 17 0 0 0 0
 D0
 A labyrinth of bodies.~
 ~
@@ -778,7 +778,7 @@ A labyrinth of bodies.~
 feet high.  It seems that some of the bodies are still warm, and an occasional
 shriek of horror comes from the mass.    
 ~
-284 ae 0
+284 17 0 0 0 0
 D0
 A labyrinth of bodies.~
 ~
@@ -802,7 +802,7 @@ A labyrinth of bodies.~
 feet high.  It seems that some of the bodies are still warm, and an occasional
 cry of despair comes from the mass.    
 ~
-284 ae 0
+284 17 0 0 0 0
 D0
 A labyrinth of bones.~
 ~
@@ -826,7 +826,7 @@ The mouth of a large cave.~
 mouth of a large cave about 100 feet in diameter.  A steady trickle of blood
 runs down the stone steps which lead upwards - Dare you enter?    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 A labyrinth of bodies.~
 ~
@@ -859,7 +859,7 @@ makes you gag.  Large stone steps lead back downward to where a labyrinth of
 bodies can be seen.  A steady stream of blood seems to be trickling from
 somewhere up north, where a sound similar to a giant bellows can be heard.    
 ~
-284 ac 0
+284 5 0 0 0 0
 D0
 Eaten to death.~
 ~
@@ -881,7 +881,7 @@ here.  It looks as though the flesh was eaten off of their living bodies as
 they writhed in agony.  The stream of blood you witnessed at the entrance is
 much larger here, apparently you are onto something.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -902,7 +902,7 @@ intermingled with a slurp here and there, turns your stomach.  Then you hear
 it...  An encouraging voice which keeps repeating "Yes, yes, thats it...  Just
 a few steps more...  You're almost there.  "
 ~
-284 ad 0
+284 9 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -923,7 +923,7 @@ substance is smeared all over the walls emitting the funk.  As if this werent
 bad enough, you suddenly have the feeling that your life is about to end soon.
 ---> HASTA LA VISTA!    
 ~
-284 ad 0
+284 9 0 0 0 0
 D4
 ~
 secret~
@@ -940,7 +940,7 @@ A cramped grotto.~
 claustrophobic this place can surely make you that way.  A crawlspace leads
 West.  Watch your head.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D3
 Too dark to tell.
 ~
@@ -958,7 +958,7 @@ The adit.~
 Stalagmites and stalactites alike jut from the floor and ceiling.  There are
 exits East, North and West.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -981,7 +981,7 @@ A crawlspace.~
 the right, but you cannot possibly tell where it leads.  It is so tight here
 that there is no way you can return south.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -996,7 +996,7 @@ and candelabra are everywhere.  This definitely looks like the lap of luxury.
 To the North lies the forbidden treasure room, to enter it is to ask for
 certain death.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Certain Death.~
 ~
@@ -1018,7 +1018,7 @@ Certain Death.~
 of the forbidden fruit.  A giant hand emerges through a rift in time and
 squashes you flat, like a bug.  ------------------ SPLAT!!  . .
 ~
-284 c 0
+284 4 0 0 0 0
 D2
 ~
 ~
@@ -1033,7 +1033,7 @@ A musty area behind the wall.~
    You are in a musty, hidden area behind the wall of the bathroom.  A very
 narrow granite staircase leads downward, into darkness.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -1053,7 +1053,7 @@ excrement hovers above an enormous mountain of feces (how nice).  Walls stand
 to the west, north and south - but the way is passable towards the East, around
 the dungheap.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -1070,7 +1070,7 @@ The granite staircase.~
    You are standing on a narrow granite staircase which spirals gently
 downward.  You may ascend, or descend at will.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D4
 Too dark to tell.
 ~
@@ -1087,7 +1087,7 @@ On the stairs~
    You are standing on a narrow granite staircase which spirals gently
 downward.  You may ascend, or descend at will.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D4
 Too dark to tell.
 ~
@@ -1106,7 +1106,7 @@ telltale signs of decay - red and black flakes, which lay on the floor.  An old
 cask of port wine lies broken in one corner, a relic from happier times.  The
 only apparent exit is back to the West.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D2
 ~
 port~
@@ -1140,7 +1140,7 @@ Free fall.~
                                          to a small hole in the floor
                                          Smells like somethings cooking.
 ~
-284 ad 0
+284 9 0 0 0 0
 D5
 ~
 air~
@@ -1154,7 +1154,7 @@ eyes.  You can just barely make out a dark figure to the north.  There is
 absolutely no way you can return the way you came.  You can, however, exit
 towards the East, West, and North.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1176,7 +1176,7 @@ A makeshift bedroom.~
 inverted pentagram scribed in blood.  A bound footlocker stands opposite.  The
 only exit is back towards the West.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D3
 Too dark to tell.
 ~
@@ -1189,7 +1189,7 @@ The streets of Ghenna.~
 road is slick with the blood of many a wayward adventurer.  Watch your step!  
 
 ~
-284 a 1
+284 1 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -1208,7 +1208,7 @@ supporting a black, marble chair which is conspicuously empty.  This looks to
 be a throne of some sort.  The flames make every way impassable except the way
 you came, and the way of the holy.    
 ~
-284 a 0
+284 1 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -1226,7 +1226,7 @@ Under the bones.~
 the vacant eye socket of a human skull above you.  With a minimal amount of
 effort, you could free yourself.    
 ~
-284 ac 0
+284 5 0 0 0 0
 D4
 Too dark to tell.
 ~
@@ -1238,7 +1238,7 @@ The streets of Ghenna.~
    You are standing on of the many streets in Ghenna.  A high wall blocks the
 passage westward, but you may exit North, South or East.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1262,7 +1262,7 @@ batters your feet unmercifully.  To the west is the city wall, while a
 burnedout building is East of you, barely capable of standing in the slight
 breeze which whips through here.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1286,7 +1286,7 @@ that is bleached white with age.  To the West you can see the cobblestone
 streets of Ghenna.  You might want to exit this building soon, as it could
 crumble at any moment.    
 ~
-284 a 1
+284 1 0 0 0 0
 D3
 The streets of Ghenna.~
 ~
@@ -1297,7 +1297,7 @@ The streets of Ghenna.~
    You are standing on a corner street in Ghenna.  To the west lies the city
 wall while to the North is a door.  The street continues South, and East.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 ~
 red~
@@ -1320,7 +1320,7 @@ Whips, chains and handcuffs are displayed prominently on each of the 3 walls.
 A position chair sits in the middle of the room for your hedonistic desires.  
 
 ~
-284 a 1
+284 1 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -1333,7 +1333,7 @@ A street in Ghenna.~
 city entrance.  The rubble from fallen buildings has made any other exits
 impossible.    
 ~
-284 a 1
+284 1 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -1353,7 +1353,7 @@ the South.  The building to the North, however, looks a bit more intact.  The
 street ends towards the East, near a mountain of rubble.  To the West, the
 street goes on for some distance.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1381,7 +1381,7 @@ nothernmost end of the room with a toppled podium upon it.  Wooden benches lie
 tipped over in virtually every reach of this auditorium sized room.  The city
 streets of Ghenna lie South of here.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -1395,7 +1395,7 @@ is completely trashed is reminiscent of a victorian styled era.  A rickety
 stairwell leads upward, but doesnt look too stable.  Better watch your step.  
 
 ~
-284 a 0
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1413,7 +1413,7 @@ Upstairs in a trashed home.~
 sides, blocking the exits east and west.  Some foul smelling mildew has grown
 over most of the debris.  A door hangs by one hinge toward the North.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1432,7 +1432,7 @@ around the place.  A mattress leans against the far wall, completely slashed
 down the middle, its stuffing in a heap on the floor.  One of the dolls here
 seems strangely lifelike...  Bizarre!    
 ~
-284 a 0
+284 1 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -1450,7 +1450,7 @@ A vandalized closet.~
 boxes lie about, stinking of mildew.  There appears to be only one exit - East.
   
 ~
-284 ad 0
+284 9 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -1467,7 +1467,7 @@ A city street in Ghenna.~
 your exit.  You may leave North, South and West.  Be careful not to trip over
 the many corpses that line these streets.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1489,7 +1489,7 @@ A road in Ghenna.~
    This road is quite narrow, but seems to open up towards the South.  A fallen
 building stands to the West, and the city wall blocks the exit north.    
 ~
-284 a 1
+284 1 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -1506,7 +1506,7 @@ A north-south street in Ghenna.~
    This narrow lane runs North to South.  The city wall towers above you to the
 east, and a door lies West, beneath a glowing red light.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1528,7 +1528,7 @@ A bend in the road.~
    You are at a bend in the road.  The city wall lies north, and east of you
 prohibiting exits in those directions.  A narrow lane leads Westward.    
 ~
-284 a 1
+284 1 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -1547,7 +1547,7 @@ pleasure toys litter the floor, which is carpeted in a lovely mauve shag.  To
 the south is a waiting room where you can see a couch sitting behind a glass
 coffee table.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -1565,7 +1565,7 @@ relax and kick back at will.  A lovely floral couch is sitting here before a
 solid glass coffee table littered with lingerie magazines.  To the West is a
 staircase.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1581,7 +1581,7 @@ The bottom of the stairs.~
    A staircase is here, a crusty pair of panties stuck to the bannister.  
 Nasty!  To the East is the waiting room.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D1
 The waiting room.~
 ~
@@ -1598,7 +1598,7 @@ The top of the stairs.~
 manner of clothing on the floor - most of it soiled quite badly.  A hallway
 leads towards the West, lit by a single red lightbulb.    
 ~
-284 d 0
+284 8 0 0 0 0
 D3
 An upstairs hallway.~
 ~
@@ -1614,7 +1614,7 @@ An upstairs hallway.~
    The hallway continues towards the East and West, while to the North a door
 stands ajar, a "Do Not Disturb" sign hanging from the knob.    
 ~
-284 d 0
+284 8 0 0 0 0
 D0
 Impossible to discern.~
 ~
@@ -1635,7 +1635,7 @@ the sight of this room.  A bed is here with a big wet spot marring the middle.
 Grease stains are smeared on the wall near the head of the bed, apparently from
 someone leaning against it.  The floor is sticky - you can guess why.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D2
 An upstairs hallway.~
 ~
@@ -1646,7 +1646,7 @@ The end of the hallway.~
    You have reached the end of the hallway.  A door towards the South stands
 ajar, while the hallway continues Eastward, back where you came.    
 ~
-284 a 0
+284 1 0 0 0 0
 D1
 An upstairs hallway.~
 ~
@@ -1665,7 +1665,7 @@ either side of the bed are draped with a gauzy red material which casts an
 eerie glow on an array of dildos which are mounted on the wall like trophys.  
 
 ~
-284 d 0
+284 8 0 0 0 0
 D0
 The end of the hallway.~
 ~
@@ -1676,7 +1676,7 @@ A covered walkway.~
    This is a covered walkway which leads Downward, into darkness.  The air is
 so humid here that you can see it.  North of you the way is open as well.    
 ~
-284 a 0
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1695,7 +1695,7 @@ ectoplasm - its really gross.  The path is so slippery that you cant ascend to
 where there is a covered walkway above you.  Your only option is to go West.  
 
 ~
-284 ac 1
+284 5 0 0 0 0
 D3
 Too dark to tell.
 ~
@@ -1708,7 +1708,7 @@ A slimey footpath.~
 animals that apparently became bogged down here.  There are exits to the North,
 and East.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1726,7 +1726,7 @@ A slimey footpath.~
 the red slime.  Maybe this wasn't such a good idea...  You can exit towards the
 West, or to the South.    
 ~
-284 a 1
+284 1 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -1743,7 +1743,7 @@ A slimey footpath.~
    The slime seems to be lessening a bit here, though the way is still as
 slippery as can be.  A clearing can be seen to the South.    
 ~
-284 a 1
+284 1 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -1761,7 +1761,7 @@ consists of red clay dirt, with a few boulders lying around you.  Apparently it
 is a primitive pathway of some sort, for to the South you can see what appears
 to be the mouth of a cave.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1778,7 +1778,7 @@ The mouth of a small cave.~
 promontory.  A rough hewn staircase leads Downwards, while to the North is a
 small clearing.    
 ~
-284 a 1
+284 1 0 0 0 0
 D0
 A small clearing.~
 ~
@@ -1795,7 +1795,7 @@ An underground cavern.~
 Moisture trickles down the smooth rock walls in large rivulets, and water drips
 on your head from the ceiling above.  A passageway leads South.    
 ~
-284 ad 1
+284 9 0 0 0 0
 D2
 Too dark to tell.
 ~
@@ -1813,7 +1813,7 @@ A long sloping tunnel.~
 The smooth rock walls look like they are sweating - there is SO much moisture.
   
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1831,7 +1831,7 @@ A long sloping tunnel.~
 The smooth rock walls look like they are sweating - there is SO much moisture.
   
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1849,7 +1849,7 @@ A long sloping tunnel.~
 The smooth rock walls look like they are sweating - there is SO much moisture.
   
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1867,7 +1867,7 @@ Tunnel's end.~
 of course, North, back the way you came.  The cavern is vaulted, looming about
 25 feet over your head...  Looks pretty dark up there.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1890,7 +1890,7 @@ An east-west tunnel.~
 lichens hang from the ceiling, brushing past your face from time to time.  The
 tunnel continues East and West.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -1907,7 +1907,7 @@ An east-west tunnel.~
    This cramped little tunnel dead ends here at a huge boulder.  The only
 apparent exit seems to be back the way you came.    
 ~
-284 acd 0
+284 13 0 0 0 0
 D1
 Too dark to tell.
 ~
@@ -1924,7 +1924,7 @@ A wide tunnel.~
 have become confused...  Which way is which?  There is a hole in the wall to
 the North, and another path leads South.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1947,7 +1947,7 @@ Crawlspace.~
 weight - GROSS!  You can continue Southward this way, if the bugs dont bother
 you too much, or you can back out into the tunnel to the North.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1967,7 +1967,7 @@ insects, most of them HUGE.  Hope you aren't arachnophobic, cause if you are,
 this place would surely scare you to death.  Exits lead in all cardinal
 directions.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -1995,7 +1995,7 @@ A quivering jaunt.~
 giant beast.  The mucuslike walls are a deep red color that thrums with energy.
 The only exit is North.    
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -2009,7 +2009,7 @@ red mucus is hanging from the walls and ceiling in tenebrous strings that look
 quite sickening.  A dark spot on the West wall hints at the only possible exit.
   
 ~
-284 ad 0
+284 9 0 0 0 0
 D3
 Too dark to tell.
 ~
@@ -2023,7 +2023,7 @@ sort.  Bones lie strewn about in every corner - most of them appear to be human
 bones.  A big pile of treasure sits in the center of the room covered with the
 red mucus that lines the walls here.  Exits lead in all cardinal directions.  
 ~
-284 ad 0
+284 9 0 0 0 0
 D0
 The bottomless pit.
 ~
@@ -2050,7 +2050,7 @@ A dead end.~
    The street dead ends here in a twisted mass of brambles.  A high city wall
 looms over you to the West.  It seems the only exit is North.    
 ~
-284 ad 1
+284 9 0 0 0 0
 D0
 Too dark to tell.
 ~
@@ -2076,7 +2076,7 @@ A pit of jutting spears.~
   | |  | |  | |  | |  | |  | |  | |  | |  | |  | |  | |  | |  | |  | | 
   | |  | |  | |  | |  | |  | |  | |  | |  | |  | |  | |  | |  | |  | | 
 ~
-284 c 0
+284 4 0 0 0 0
 S
 T 28400
 $~

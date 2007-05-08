@@ -14,7 +14,7 @@ Theme        :
 Plot         : 
 Links        : 01e, 17n
 ~
-44 j 0
+44 512 0 0 0 0
 S
 #4401
 Before the Clearing~
@@ -23,7 +23,7 @@ east you see the eastern highway.  The tents are crude, made of thick cloth and
 dyed green to blend in the shades.  Occasionally you hear the sound of a dove
 or a crow.  Oh yes, and of course the clang of sword against shield.    
 ~
-44 0 3
+44 0 0 0 0 0
 D0
 The clearing continues.
 ~
@@ -37,7 +37,7 @@ planks and rough linen.  They have been dyed green so they blend in the
 surrounding forest.  North the clearing continues, while to the west and east
 are tents.  You can also go south to the eastern highway.    
 ~
-44 0 3
+44 0 0 0 0 0
 D0
 The clearing continues.
 ~
@@ -65,7 +65,7 @@ In a tent.~
 just a place to sleep for the orcs.  The only exit you see takes you back east
 to the outside.    
 ~
-44 d 0
+44 8 0 0 0 0
 D1
 The way out!
 ~
@@ -77,7 +77,7 @@ In a tent.~
    You are in a small tent with 4 bunks in a corner.  The only exit seems to be
 back west.    
 ~
-44 d 0
+44 8 0 0 0 0
 D3
 The way out!
 ~
@@ -91,7 +91,7 @@ bit larger than the rest, suggest which way to go talk to the Boss.  You can
 also enter a smaller tent with dagger symbol over the entrance to your east.  
 North and south the clearing continues.    
 ~
-44 0 3
+44 0 0 0 0 0
 D0
 The clearing continues.
 ~
@@ -122,7 +122,7 @@ you have just entered the first.  Two bunks are in the corner, and a
 weaponsrack stands here - now empty.  You can go further into the tent to the
 west, or leave to the east.    
 ~
-44 d 0
+44 8 0 0 0 0
 D1
 The way out!
 ~
@@ -146,7 +146,7 @@ combat retreat for the orcs.  They come here to get strength for yet another
 attack on the caravans on the eastern highway.  The only exit is back out into
 the clearing.    
 ~
-44 d 0
+44 8 0 0 0 0
 D3
 The way out!
 ~
@@ -160,7 +160,7 @@ West of you is a small green tent made from crude planks and rough linen, while
 to the south the clearing continues, a wide path cuts into the forest to the
 north.    
 ~
-44 0 3
+44 0 0 0 0 0
 D0
 ~
 ~
@@ -193,7 +193,7 @@ this little tent a small orc makes food for the rest of them to eat.  In the
 middle of the tent is a fireplace with a stew pot, and in one corner is a bunk.
 You can leave the tent to the east.    
 ~
-44 d 0
+44 8 0 0 0 0
 D1
 The way out!
 ~
@@ -214,7 +214,7 @@ on the tent, just over the entrance.  To your south you see the side of a crude
 tent with green linen, and a dagger in relief painted on it, while west a
 thicket blocks your way.    
 ~
-44 0 3
+44 0 0 0 0 0
 D0
 The tent is a dark shade of purple, and is very well hidden in the shade. 
 Near the entrance a small star has been painted with green paint.
@@ -240,7 +240,7 @@ this chair the Boss directs the attacks on the caravans along the eastern
 highway.  North you see yet another opening to another tent and you may leave
 to the east.    
 ~
-44 d 0
+44 8 0 0 0 0
 D0
 Through this opening in the linen you may enter the private area of the Boss.
 ~
@@ -252,13 +252,13 @@ This opening will take you to the entrance.
 ~
 0 -1 4406
 E
+skulls~
+   Human skulls, no doubt about it!  
+~
+E
 throne chair~
    A chair made from fresh wood, bound with bands of tree bark.  On the top,
 skulls smile back at you with empty eyesockets.  
-~
-E
-skulls~
-   Human skulls, no doubt about it!  
 ~
 S
 #4412
@@ -268,7 +268,7 @@ in the corner makes for a place to sleep for the Boss, and a table in the
 middle of the room contains maps of the surroundings.  You may leave to the
 south.    
 ~
-44 d 0
+44 8 0 0 0 0
 D2
 The throne room.
 ~
@@ -302,7 +302,7 @@ here...  In the middle of the tent a fire is burning with a blue flame, and
 magic seems to permeate the very fabric of the tent.  You see a bunk in the
 corner, and you can leave to the south.    
 ~
-44 d 0
+44 8 0 0 0 0
 D2
 The way out!
 ~
@@ -318,7 +318,7 @@ Deep in the forest.~
    It's totally impossible to get any further into the woods.  All around you
 is dense forest, leaving only one direction to travel, namely back south.    
 ~
-44 0 3
+44 0 0 0 0 0
 D2
 You think you might be able to push through this way.
 ~
@@ -337,7 +337,7 @@ camp.  To your north you might be able to push through the undergrowth and get
 further into the forest, while both south and east the forest is too dense.  
 
 ~
-44 0 3
+44 0 0 0 0 0
 D0
 You think you might be able to force your way through here.
 ~
@@ -355,7 +355,7 @@ A wide path through the forest~
 clearing, where some creatures can be seen moving between the trees, while to
 the north faint sounds of battle can be heard in the distance.    
 ~
-44 0 3
+44 0 0 0 0 0
 D0
 ~
 ~
@@ -372,7 +372,7 @@ the eastern and western side.  Small figures moving between the trees can be
 seen to the south, while lound noises of battle fill the air from the north,
 where the great gates of Hannah can be seen in the distance.    
 ~
-44 0 3
+44 0 0 0 0 0
 D2
 ~
 ~
@@ -382,6 +382,6 @@ S
 An unfinished room~
 You are in an unfinished room.
 ~
-44 0 0
+44 0 0 0 0 0
 S
 $~

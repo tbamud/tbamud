@@ -3,7 +3,7 @@ cleaver meat~
 a meat cleaver~
 A shadowy meat cleaver has been left here~
 ~
-5 aj an 0
+5 aj 0 0 0 an 0 0 0 0 0 0 0
 5 4 5 3
 10 549 0 0
 E
@@ -20,7 +20,7 @@ gold ring~
 a gold ring~
 A gold ring is sitting here on the ground.~
 ~
-11 a ab 0
+11 a 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 2 150 0 0
 E
@@ -36,7 +36,7 @@ necklace shark tooth~
 a shark-toothed necklace~
 A shark-toothed necklace has been left here.~
 ~
-9 aj ac 0
+9 aj 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
 1 500 0 20
 E
@@ -51,7 +51,7 @@ eyepatch~
 an eyepatch~
 An eyepatch has been left here.~
 ~
-11 b ae 0
+11 b 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 12
 A
@@ -63,7 +63,7 @@ dagger ghostly~
 a ghostly dagger~
 A ghostly dagger has been left here.~
 ~
-5 fmn an 0
+5 fmn 0 0 0 an 0 0 0 0 0 0 0
 1 2 8 11
 5 651 0 25
 A
@@ -73,7 +73,7 @@ rapier captains~
 the Captain's rapier~
 The Captain's rapier has been left here.~
 ~
-5 bmn an 0
+5 bmn 0 0 0 an 0 0 0 0 0 0 0
 4 4 8 14
 5 900 0 16
 A

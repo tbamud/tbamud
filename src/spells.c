@@ -279,7 +279,7 @@ ASPELL(spell_charm)
 
     act("Isn't $n just such a nice fellow?", FALSE, ch, 0, victim, TO_VICT);
     if (IS_NPC(victim))
-      REMOVE_BIT(MOB_FLAGS(victim), MOB_SPEC);
+      REMOVE_BIT_AR(MOB_FLAGS(victim), MOB_SPEC);
   }
 }
 
@@ -295,11 +295,11 @@ ASPELL(spell_identify)
     send_to_char(ch, "You feel informed:\r\nObject '%s', Item type: %s\r\n", obj->short_description, bitbuf);
 
     if (GET_OBJ_AFFECT(obj)) {
-      sprintbit(GET_OBJ_AFFECT(obj), affected_bits, bitbuf, sizeof(bitbuf));
+      sprintbitarray(GET_OBJ_AFFECT(obj), affected_bits, AF_ARRAY_MAX, bitbuf);
       send_to_char(ch, "Item will give you following abilities:  %s\r\n", bitbuf);
     }
 
-    sprintbit(GET_OBJ_EXTRA(obj), extra_bits, bitbuf, sizeof(bitbuf));
+    sprintbitarray(GET_OBJ_EXTRA(obj), extra_bits, AF_ARRAY_MAX, bitbuf);
     send_to_char(ch, "Item is: %s\r\n", bitbuf);
 
     send_to_char(ch, "Weight: %d, Value: %d, Rent: %d, Min. level: %d\r\n",
@@ -389,7 +389,7 @@ ASPELL(spell_enchant_weapon)
     if (obj->affected[i].location != APPLY_NONE)
       return;
 
-  SET_BIT(GET_OBJ_EXTRA(obj), ITEM_MAGIC);
+  SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_MAGIC);
 
   obj->affected[0].location = APPLY_HITROLL;
   obj->affected[0].modifier = 1 + (level >= 18);
@@ -398,10 +398,10 @@ ASPELL(spell_enchant_weapon)
   obj->affected[1].modifier = 1 + (level >= 20);
 
   if (IS_GOOD(ch)) {
-    SET_BIT(GET_OBJ_EXTRA(obj), ITEM_ANTI_EVIL);
+    SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_ANTI_EVIL);
     act("$p glows blue.", FALSE, ch, obj, 0, TO_CHAR);
   } else if (IS_EVIL(ch)) {
-    SET_BIT(GET_OBJ_EXTRA(obj), ITEM_ANTI_GOOD);
+    SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_ANTI_GOOD);
     act("$p glows red.", FALSE, ch, obj, 0, TO_CHAR);
   } else
     act("$p glows yellow.", FALSE, ch, obj, 0, TO_CHAR);

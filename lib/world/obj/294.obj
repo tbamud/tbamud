@@ -3,7 +3,7 @@ Knife madman madmans piece cutlery~
 the Madman's Knife~
 A dangerous piece of cutlery sits here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 4 3 11
 6 50 0 0
 E
@@ -17,7 +17,7 @@ Awl~
 an Awl~
 A discarded awl lies here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 3 1 11
 1 5 0 0
 E
@@ -29,7 +29,7 @@ T-Square square t~
 a T-Square~
 An architect's T-Square lies forgotten here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 30 0 0
 E
@@ -41,7 +41,7 @@ Cleaver knife meat meatcleaver~
 a Huge Meat Cleaver~
 A huge meat cleaver gathers rust here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 4 4 6
 15 100 0 0
 E
@@ -57,7 +57,7 @@ silver ring~
 a silver ring~
 A silver ring lies here.~
 ~
-9 0 abo 0
+9 0 0 0 0 abo 0 0 0 0 0 0 0
 2 0 0 0
 1 1000 0 0
 E
@@ -69,7 +69,7 @@ boots pair leather~
 a pair of Leather Boots~
 A pair of Leather Boots are sitting here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 6 200 0 0
 E
@@ -81,7 +81,7 @@ Tie leather necktie~
 a leather tie~
 A Leather tie is here.  Fashionable!~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 450 0 0
 E
@@ -93,7 +93,7 @@ jacket leather~
 a Leather Jacket~
 A nice leather jacket gathers dust on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 15 300 0 0
 E
@@ -105,7 +105,7 @@ Gloves leather~
 a pair of Leather Gloves~
 A pair of leather gloves have been discarded in a pile.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 2 0 0 0
 1 30 0 0
 E
@@ -118,7 +118,7 @@ Sapphire gem jewel~
 a Sapphire~
 A glittering blue gem sits here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 0
 E
@@ -130,7 +130,7 @@ Emerald gem jewel~
 an Emerald~
 A sparkling green jewel sits here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 500 0 0
 E
@@ -142,7 +142,7 @@ Diamond gem jewel~
 a Diamond~
 A diamond gathers dust here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 200 0 0
 E
@@ -156,7 +156,7 @@ Slab beef~
 a slab of beef~
 A fresh slab of beef is wrapped up here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 15 0 0 0
 10 50 0 0
 E
@@ -168,7 +168,7 @@ Haunch mutton~
 a haunch of mutton~
 A haunch of fresh mutton is sitting here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 8 0 0 0
 7 25 0 0
 E
@@ -180,7 +180,7 @@ Steak deer~
 a deer steak~
 A steak of deer meat is wrapped in paper here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 9 0 0 0
 5 30 0 0
 E
@@ -192,7 +192,7 @@ Rope coil~
 a coil of rope~
 A length of rope is neatly coiled here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 25 250 0 0
 E
@@ -204,7 +204,7 @@ Anchor~
 an anchor~
 A large metal anchor sits here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 1000 0 0
 #29417
@@ -212,7 +212,7 @@ Net~
 a net~
 A fishing net is lying on the ground.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 2 4 3
 10 1000 0 0
 E
@@ -224,7 +224,7 @@ Fishhook hook~
 a fishhook~
 A stray fishhook is lying here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 1 1 11
 1 1 0 0
 E
@@ -236,7 +236,7 @@ beer glass beer~
 a glass~
 A glass of beer sits forgotten here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 1 0
 2 5 0 0
 E
@@ -248,7 +248,7 @@ ale mead glass ale~
 a glass~
 A big glass of mead sits here, cool and frosty.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 3 0
 2 8 0 0
 E
@@ -261,7 +261,7 @@ whisky shot whiskey whisky~
 a shot~
 A shot of Whiskey is sitting here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 5 0
 1 10 0 0
 E
@@ -273,7 +273,7 @@ Sword Long Longsword~
 a long sword~
 A long sword gathers rust here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
 12 600 0 0
 E

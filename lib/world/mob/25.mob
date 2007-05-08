@@ -5,7 +5,7 @@ A shadow guardian screams a challenge and attacks.
 ~
    It seems to be made of nothing more than darkness...  
 ~
-cdfglmnopqr dfks -350 E
+260204 0 0 0 524368 0 0 0 -350 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 0
@@ -18,7 +18,7 @@ An emaciated adventurer is here looking lost and hopeless.
    He looks haggard and sickly; no doubt he's been lost here for quite some
 time.  
 ~
-dgh k 400 E
+200 0 0 0 0 0 0 0 400 E
 8 18 5 1d1+80 1d2+1
 80 6400
 6 8 1
@@ -33,7 +33,7 @@ Edgar the Human Swordpupil is standing here, looking quite lost.
 you, one of Midgaard's finest fighting elite, the mighty bunny slayer himself,
 Edgar the Horrible!  
 ~
-cdgh k 1000 E
+204 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -45,7 +45,7 @@ A huge diamond golem is standing guard here.
 ~
    It looks quite strong.  
 ~
-bdeglnopqr dk 500 E
+256090 0 0 0 16 0 0 0 500 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -58,7 +58,7 @@ A young mage wanders about, oblivious to all.
    He seems to be contemplating life, love and the mysteries of the universe.  
 Then again, he may just have a headache.  
 ~
-dgh dk 450 E
+200 0 0 0 16 0 0 0 450 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -71,7 +71,7 @@ Strick is here levitating drinks to his customers.
 ~
    He looks rather harmless, but then again so does a sleeping dragon.  
 ~
-bd dk 750 E
+10 0 0 0 16 0 0 0 750 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -83,7 +83,7 @@ Tatorious the wizard is here counting his earnings.
 ~
    Tatorious winks at you mischievously.  
 ~
-bd dk 900 E
+10 0 0 0 16 0 0 0 900 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -96,7 +96,7 @@ Ezmerelda the cook is here stirring a large pot of something.
    She does not look like the typical cook you would find in a kitchen, but she
 certainly fits what you would expect in a tower fulls of mages.  
 ~
-bd dk -500 E
+10 0 0 0 16 0 0 0 -500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -109,7 +109,7 @@ The cook's assistant is here assisting the cook.
 ~
    This young man is busy adding strange ingredients to the large pot.  
 ~
-bdghm dk -200 E
+4298 0 0 0 16 0 0 0 -200 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -125,7 +125,7 @@ have been fine garments.  A metal muzzle has been fitted over the poor wretch's
 mouth, whether to keep him from screaming, or to silence his spell casting you
 cannot tell.  He looks quite mad, no doubt he has been mistreated horribly.  
 ~
-bdgh 0 100 E
+202 0 0 0 0 0 0 0 100 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -137,7 +137,7 @@ The Jailor is here enjoying a comfortable nap.
 ~
    He looks rather dirty.  
 ~
-bd dk 100 E
+10 0 0 0 16 0 0 0 100 E
 17 15 0 3d3+170 2d2+2
 170 28900
 4 4 1
@@ -150,7 +150,7 @@ A straw broom is here leaning against the wall.
 ~
    The broom screams 'Take that you lout!  '
 ~
-bdefgnopqr dfk 50 E
+254074 0 0 0 80 0 0 0 50 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -163,7 +163,7 @@ A pair of disembodied hands floats in the air here.
 ~
    The hands twitch with anticipation of strangling someone.  
 ~
-dfgpqr dfk -400 E
+229480 0 0 0 80 0 0 0 -400 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 0
@@ -175,7 +175,7 @@ A pair of disembodied eyes floats here glaring at you.
 ~
    The eyes smoulder with hatred.  
 ~
-dfgpq dfk -600 E
+98408 0 0 0 80 0 0 0 -600 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -187,7 +187,7 @@ A visiting mage is here snoring away in peaceful slumber.
 ~
    He looks quite sleepy.  
 ~
-bcdgh dk 250 E
+206 0 0 0 16 0 0 0 250 E
 12 16 2 2d2+120 2d2+2
 120 14400
 4 4 1
@@ -200,7 +200,7 @@ A young apprentice magic user is here doing magical studies.
 ~
    She looks quite intent on her studies.  
 ~
-bcdgh dk 400 E
+206 0 0 0 16 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 6 2
@@ -213,7 +213,7 @@ A young apprentice is here mumbling words of magic to himself.
 ~
    He looks to be oblivious to all but the spell he is memorizing.  
 ~
-bcdgh dk 380 E
+206 0 0 0 16 0 0 0 380 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -226,7 +226,7 @@ A young apprentice is sleeping here.
 ~
    He seems to be dreaming.  
 ~
-bcdgh dk 350 E
+206 0 0 0 16 0 0 0 350 E
 7 18 5 1d1+70 1d2+1
 70 4900
 4 4 1
@@ -239,7 +239,7 @@ A young apprentice is here teasing a cornered kitten.
 ~
    He looks like a mischievous youth.  
 ~
-bcdgh dk -200 E
+206 0 0 0 16 0 0 0 -200 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -253,7 +253,7 @@ A small kitten is here meowing in terror.
    The little ball of fur looks very unhappy.  Singed fur and a few minor burns
 mark its mottled coat.  
 ~
-bcdgh dk 500 E
+206 0 0 0 16 0 0 0 500 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -265,7 +265,7 @@ A student of spells is here looking quite bored.
 ~
    The student yawns.  
 ~
-bcdgh dk 350 E
+206 0 0 0 16 0 0 0 350 E
 8 18 5 1d1+80 1d2+1
 80 6400
 6 6 1
@@ -278,7 +278,7 @@ The instructor screams at your interruption and attacks you.
 ~
    He looks quite angry at your interruption.  
 ~
-bdfh dk 300 E
+170 0 0 0 16 0 0 0 300 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -291,7 +291,7 @@ A student of spells is here trying to master invisibility.
 ~
    He blinks in and out of existence, trying to master the spell.  
 ~
-bcdgh bdk 400 E
+206 0 0 0 20 0 0 0 400 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -304,7 +304,7 @@ A spell teacher screams at your interruption and attacks.
 ~
    The teacher is quite fierce and rather frightening.  
 ~
-bdfh dk 300 E
+170 0 0 0 16 0 0 0 300 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -317,7 +317,7 @@ A student of spells has fallen asleep at her desk here.
 ~
    She looks to have collapsed from sheer boredom.  
 ~
-bcdgh dk 400 E
+206 0 0 0 16 0 0 0 400 E
 9 17 4 1d1+90 1d2+1
 90 8100
 4 4 2
@@ -333,7 +333,7 @@ man.  Of course, having heard stories about some of the magic available to the
 people living here, and what toll the magic draws...  This man might be as young
 as you.  
 ~
-bcdgh dk 400 E
+206 0 0 0 16 0 0 0 400 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -347,7 +347,7 @@ A young mage is here learning hand to hand combat.
    This young fellow looks quite confident in his abilities to defend himself.
 
 ~
-bcdgh dk 300 E
+206 0 0 0 16 0 0 0 300 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -361,7 +361,7 @@ The battle mistress is here teaching the fine uses of a dagger.
    She looks quite rugged.  In fact, she more resembles a warrior than a magic
 user.  
 ~
-bdfhlq dk 200 E
+67754 0 0 0 16 0 0 0 200 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -375,7 +375,7 @@ A spell teacher is here relaxing.
    The teacher looks to be worn out by a long day of magic working, difficult
 spells, and inattentive students.  
 ~
-bdg dk 200 E
+74 0 0 0 16 0 0 0 200 E
 15 15 1 3d3+150 2d2+2
 150 22500
 5 5 1
@@ -389,7 +389,7 @@ An aged wizard is sleeping here.
    Dreams of magic and power are probably flowing through his head right now,
 better not wake him up.  
 ~
-dfgh dk 350 E
+232 0 0 0 16 0 0 0 350 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 4 8 1
@@ -403,7 +403,7 @@ A scribe is here working on some manuscripts.
    He appears to be copying out some spell ingredients or components right now.
 
 ~
-bcdgh dk 400 E
+206 0 0 0 16 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -417,7 +417,7 @@ A scribe is here working diligently on some translations.
    She is quite cute.  Too bad her only interest seems to be the words of lore
 she is translating.  
 ~
-bcdgh dk 500 E
+206 0 0 0 16 0 0 0 500 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -431,7 +431,7 @@ The Master Scribe is here looking a little upset
    He seems to be so old, his skin has become nothing but a giant wrinkle.  The
 master scribe screams 'How dare you interrupt my important work???  '
 ~
-bdfgh dk 100 E
+234 0 0 0 16 0 0 0 100 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -445,7 +445,7 @@ The scribe's assistant is here folding parchments.
    You can tell that he isn't trusted with the more important documents, since
 those ones are rolled and sealed with wax.  
 ~
-bdfgh dk 100 E
+234 0 0 0 16 0 0 0 100 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -459,7 +459,7 @@ The Enchanter is here placing a dweomer upon well made sword.
    The Enchanter is hard at work, concentrating on a spell which could either
 destroy the weapon or make it many times more powerful than it already is.  
 ~
-bdfh dk -200 E
+170 0 0 0 16 0 0 0 -200 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -472,7 +472,7 @@ A well crafted sword lies on the work table here.
 ~
    It looks quite sharp.  
 ~
-bdfhlnopqr dk -500 E
+256170 0 0 0 16 0 0 0 -500 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -486,7 +486,7 @@ The Mad Alchemist babbles something incomprehensible and attacks.
 wildly, and he starts to drool.  The Mad Alchemist throws back his head and
 cackles with insane glee!  
 ~
-bdfgh dk 150 E
+234 0 0 0 16 0 0 0 150 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -501,7 +501,7 @@ The Master Summoner is here holding gateways open to other planes.
 the gateway before he loses his soul to the creatures on the other side of it.
 
 ~
-bdfgh dk -200 E
+234 0 0 0 16 0 0 0 -200 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -514,7 +514,7 @@ The Master Charmer utters the words, 'uuuzzldctz'.
 ~
    The Master Charmer sizes you up, always looking for a new pet.  
 ~
-bdf dk -400 E
+42 0 0 0 16 0 0 0 -400 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -527,7 +527,7 @@ A wooden golem stands a silent vigil here, guarding the stairs.
 ~
    He looks flammable.  
 ~
-bdfgmnopqr dk 100 E
+258154 0 0 0 16 0 0 0 100 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -539,7 +539,7 @@ The Master Spellbinder is here re-charging a blackened wand.
 ~
    The Master Spellbinder snarls at you and attacks.  
 ~
-bdfgh dk -500 E
+234 0 0 0 16 0 0 0 -500 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -553,7 +553,7 @@ The Golem Maker is here chiseling some stone.
    The Golem Master appears to be very meticulous about his work, to the point
 of fussing over it.  
 ~
-bdfh dk 300 E
+170 0 0 0 16 0 0 0 300 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -566,7 +566,7 @@ A granite golem stands here waiting to do its master's bidding.
 ~
    It looks like a statue, until you see it shamble towards you.  
 ~
-bdfgmnopqr dk 300 E
+258154 0 0 0 16 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -578,7 +578,7 @@ A bronze golem stands here shining in the light.
 ~
    He looks rather dim witted.  
 ~
-bdfgmnopqr dk 350 E
+258154 0 0 0 16 0 0 0 350 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -591,7 +591,7 @@ A flesh golem stands guard here
    It looks to be made of a potpourri of different body parts; some don't even
 resemble anything human.  
 ~
-bdfgmnopqr dk 200 E
+258154 0 0 0 16 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -603,7 +603,7 @@ A cloth golem wanders around here.
 ~
    It looks like a bunch of old rags, quite surprising it can actually walk.  
 ~
-bdfgmnopqr dk 350 E
+258154 0 0 0 16 0 0 0 350 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -616,7 +616,7 @@ An adamantite golem stands here looking very dangerous.
    It seems to be forged of dark metal.  It looks strong and durable, but
 somewhat un-intelligent.  
 ~
-bdfgmnopqr dk 350 E
+258154 0 0 0 16 0 0 0 350 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -628,7 +628,7 @@ A clay golem stands guard here.
 ~
    This large golem almost looks like it is made of dirt.  
 ~
-bdfgmnopqr dk 200 E
+258154 0 0 0 16 0 0 0 200 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -641,7 +641,7 @@ An enormous multi-colored three-headed dragon growls at you.
    The image of an ugly dragon flickers slightly, and where the dragon was now
 stands a small harmless looking old man.  
 ~
-bcdgh dk 150 E
+206 0 0 0 16 0 0 0 150 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -657,7 +657,7 @@ imposing figure.  A dark cowl shrouds most of his face, but two blazing embers
 which serve as eyes can be seen through the shadow.  The Necromancer shrieks
 some obscenities and orders his minions to attack.  
 ~
-bdfgh dk -950 E
+234 0 0 0 16 0 0 0 -950 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -670,7 +670,7 @@ An animated skeleton screams silently and attacks.
 ~
    It feels no pain, and hacks at you ruthlessly.  
 ~
-bdfhnopr dk -500 E
+188586 0 0 0 16 0 0 0 -500 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -683,7 +683,7 @@ An undead giant lumbers towards you.
    This thing seems to be the reanimated corpse of a giant, creating an enormous
 zombie.  
 ~
-cdfgnopr dk -500 E
+188524 0 0 0 16 0 0 0 -500 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -697,7 +697,7 @@ An ugly witch is here scrying out secrets.
 her mouth should be, comes a disgusting giggling sound that makes your skin
 crawl with revulsion.  
 ~
-cdfg dk -450 E
+108 0 0 0 16 0 0 0 -450 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -710,7 +710,7 @@ The Librarian has fallen asleep at his desk here.
 ~
    He looks like a rather peaceful old man.  
 ~
-bdfgh dk 450 E
+234 0 0 0 16 0 0 0 450 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 4 8 1
@@ -725,7 +725,7 @@ The Master's apprentice leaps to halt your passage.
 has given up his station in the mage guild hierarchy in order to serve the Great
 Master in hopes of gleaning secrets one could never hope to uncover alone.  
 ~
-bcdfg dhk 0 E
+110 0 0 0 16 0 0 0 0 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -740,7 +740,7 @@ A grey cat is lounging lazily here.
 contentedly.  It looks rather harmless, until you notice its very large claws.
 
 ~
-bdg dks 0 E
+74 0 0 0 524304 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -752,7 +752,7 @@ The Master of Neutrality is here contemplating the balance of the Universe.
 ~
    He looks quite peaceful.  
 ~
-bcdgijl dhk 0 E
+2894 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -767,7 +767,7 @@ A black robed apprentice jumps from the shadows and attacks.
 must have been beautiful, now the scar combined with what seems to be a
 permanent scowl make her looks quite fearsome.  
 ~
-bcdfg dk -750 E
+110 0 0 0 16 0 0 0 -750 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -781,7 +781,7 @@ A black cat with its fur up hisses at you.
    It looks both mean and dangerous.  Petting seems to be completely out of the
 question.  
 ~
-bdg dks -800 E
+74 0 0 0 524304 0 0 0 -800 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -793,7 +793,7 @@ The Master of the Black Robes is here plotting vile deeds.
 ~
    The Master glares at you.  
 ~
-bcdgjkl dhk -1000 E
+3662 0 0 0 16 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -807,7 +807,7 @@ A white robed apprentice screams at your desecration of goodness.
    He looks like a fanatic.  The white robed apprentice screams 'Thou art
 unworthy of this honour!  '
 ~
-bcdfh dk 750 E
+174 0 0 0 16 0 0 0 750 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -820,7 +820,7 @@ A white cat is here preening its fur.
 ~
    It seems to be nothing more than a large ball of fluff with claws.  
 ~
-bdg dks 800 E
+74 0 0 0 524304 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -832,7 +832,7 @@ The Master of Goodness is here frowning at your intrusion.
 ~
    He looks like a self-righteous bastard.  
 ~
-bcdgikl dhk 1000 E
+3406 0 0 0 16 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -846,7 +846,7 @@ A large calico cat is lounging about here.
    It looks incredibly large for a cat, no doubt a giant of its species.  A
 beautiful jewel encrusted collar about its neck is its only adornment.  
 ~
-bdg dks 0 E
+74 0 0 0 524304 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -861,7 +861,7 @@ pretty for one of such stature in the guild, no doubt she has kept her youthful
 appearance through the use of strong magics.  The Grand Mistress pets her
 familiar and smiles at you in confidence.  
 ~
-bcdl dhk 0 E
+2062 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2

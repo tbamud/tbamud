@@ -10,7 +10,7 @@ and left lying on the ground near the now open doorway.
 can be seen, creaking in the wind.  On the other side of the gate,
 there seems to be an older road leading away from the cathedral.
 ~
-299 0 2
+299 0 0 0 0 0
 D0
 A large fountain of water can be seen inside the open doorway to the
 north.
@@ -23,12 +23,6 @@ the way southwards towards the old stone road.
 ~
 gate iron wrought~
 1 -1 29955
-E
-door doors~
-   The remains of the two doors that served as the main entranceway to the
-cathedral are now lying in near ruins on the ground.  The doors are covered with
-scuff and scratch marks and are merely a shadow of their former glory.  
-~
 E
 credits info~
    Cathedral
@@ -73,6 +67,12 @@ and if possible should be given specials to suit.
 The 'boss' mobs of this area are really #03 and #06, so should
 be suitably beefed up to suit.
 ~
+E
+door doors~
+   The remains of the two doors that served as the main entranceway to the
+cathedral are now lying in near ruins on the ground.  The doors are covered with
+scuff and scratch marks and are merely a shadow of their former glory.  
+~
 S
 #29901
 The Cathedral Entrance~
@@ -86,7 +86,7 @@ here has been corrupted and spoiled.
 also continues northwards towards where the altar should be.  There
 is a large open doorway to the south, leading out to the courtyard.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 The way north looks to be almost blocked by numreous overturned pews,
 but passable all the same.
@@ -117,7 +117,7 @@ entrance.  Just to the west, you can see what is left of the font and
 spring in the cathedral.  Just to the east you can see a set of spiral
 stairs leading up and down.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 There is a set of spiral stairs just to the east.
 ~
@@ -136,7 +136,7 @@ entrance.  Just to the east, you can see what is left of the font and
 spring in the cathedral.  Just to the west you can see a set of spiral
 stairs leading up and down.
 ~
-299 d 0
+299 8 0 0 0 0
 D1
 The cathedral entrance can be seen to the east.
 ~
@@ -158,7 +158,7 @@ here, giving you the impression that nothing has been touched for years.
 located somewhere to the north.
    You hear a quiet wail coming from somewhere below.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 The mess of pews ends just to the north where the cathedral opens up
 into a sort of worship chambers.
@@ -184,7 +184,7 @@ else?
 To the north there are some more pews, and to the south, you can see the
 destruction where numerous pews have been strew about.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 Just ahead of you are some more pews, but they are much nicer than
 normal pews would be.  Just beyond them, you can see what appears
@@ -224,7 +224,7 @@ most holy of confessions here.  There is no relief now, for, those who have
 have lost their souls.
    A small and dingy curtain hangs in the entranceway to the east.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 The curtain to the east is hanging raggedly from the bar along the top of
 the entranceway.  Looking through it you can see a fairly large open area
@@ -240,7 +240,7 @@ most holy of confessions here.  There is no relief now, for, those who have
 have lost their souls.
    A small and dingy curtain hangs in the entranceway to the west.
 ~
-299 ad 0
+299 9 0 0 0 0
 D3
 The curtain to the west is hanging raggedly from the bar along the top of
 the entranceway.  Looking through it you can see a fairly large open area
@@ -260,7 +260,7 @@ worship.  Unfortunately, all has fallen into decay and neglect.
 so slightly suspicious about it.  There is an open area to the south
 just before the jumble of pews that can be seen there.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 The altar stands right before you.
 ~
@@ -282,7 +282,7 @@ some sticky footprints left on the floor.
    The cathedral continues southwards through the pews.  Just to the
 northwest there is a small curtain pulled across a doorway.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 The curtain has been pulled to across the doorway, making it slighty
 awkward to see through.
@@ -308,7 +308,7 @@ there are no beds along the north wall, but there is a narrow door at the
 east end of it.  A small curtain is located at the southern end of the room
 and small windows line the east and west walls.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 You see a narrow door at the eastern end of the north wall.
 ~
@@ -330,7 +330,7 @@ lined with chests.  There are no lights visible in the room, and even the
 door to the south seems to have been a perfect fit in its frame.
    A single door to the south blocks the entrance to this room.
 ~
-299 ad 0
+299 9 0 0 0 0
 D2
 You see a door.
 ~
@@ -345,7 +345,7 @@ continue above you and below you, leading up into the heights of the
 cathedral tower and down into the gloominess of what you suspect are
 the cathedral's crypts.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 A small hallway leads away from the staircase towards the cathedral
 proper.
@@ -374,7 +374,7 @@ the cathedral's crypts.
    Looking above you, you notice that the stairwell is swaying dangerously
 and does not seem to be firmly attached to anything at all.
 ~
-299 ad 0
+299 9 0 0 0 0
 D3
 A small hallway leads away from the staircase towards the cathedral
 proper.
@@ -399,7 +399,7 @@ at a location where, coincidentally, there does not happen to be a floor
 at all.  However, the stairwell continues above you and below you, as it
 wanders merrily on its way.
 ~
-299 d 9
+299 8 0 0 0 0
 D4
 The wooden stairs continue as normal above you.
 ~
@@ -421,7 +421,7 @@ leave your ears ringing.
 stairs below is quite disturbing, as is the unsteady floor upon which you
 stand.
 ~
-299 ad 0
+299 9 0 0 0 0
 D3
 Looking westwards, you can see the dim light creating eerie shadows with
 the objects in the room.
@@ -443,7 +443,7 @@ away from the staircase.  The wooden stairs continue above you and
 below you, continuing up into the heights of the cathedral tower and
 down into the gloom below as they probe towards the ground level.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 A hallway opens up off of this landing on the staircase.
 ~
@@ -469,7 +469,7 @@ leave your ears ringing.
    The wooden stairs lead down back towards the main section of the church
 proper.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 Looking eastwards, you can see the dim light creating eerie shadows with
 the objects in the room.
@@ -490,7 +490,7 @@ swinging to and fro lightly.  Every so often one peals out with its distinct
 ring.  The dim light in here is throwing strange shadows all over the place.
 Wait!  Did one just move?
 ~
-299 d 0
+299 8 0 0 0 0
 D1
 Through the doorway, you can only see darkness.
 ~
@@ -510,7 +510,7 @@ but it would almost appear as if this was once the residence of the
 priests, monks, and nuns who looked after the cathedral.  A narrow
 hallway also made of stone leads westwards into the darkness.
 ~
-299 ad 0
+299 9 0 0 0 0
 D0
 The hallway continues northwards from here.
 ~
@@ -537,7 +537,7 @@ along, but insuffuicient light has penetrated the darkness here to
 help your visibility at all.  There is an open wooden door on the east
 side of the hallway here, and a closed one on the west.
 ~
-299 ad 0
+299 9 0 0 0 0
 D0
 The hallway leads off towards the north, where you can see that it
 is lit somewhat better than here.  Not a difficult task mind you.
@@ -568,7 +568,7 @@ Other than the shards of wood lying about the room, there is nothing
 else out of order, no blood, no material caught anywhere, just the
 broken wood.
 ~
-299 ad 0
+299 9 0 0 0 0
 D3
 You can see darkness outside the door.  Not much of a change from
 what is in here.
@@ -587,7 +587,7 @@ difficulty.  There does not seem to be any sign of a struggle, so
 it would seem that either the Abbott was not in his room or that
 he went along willingly with whomever (or whatever) broke in.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 The door, or better yet, what is left of it, is made of wood, and hangs
 from one hinge, blocking your way through it.
@@ -603,7 +603,7 @@ that the wooden doors that were once there in their entirety are
 smashed and destroyed.  The doors on either side of the hallway here
 are no different.
 ~
-299 ad 0
+299 9 0 0 0 0
 D0
 The hallway continues northwards.
 ~
@@ -638,7 +638,7 @@ Other than the shards of wood lying about the room, there is nothing
 else out of order, no blood, no material caught anywhere, just the
 broken wood.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 The doorway to the east is clear for passage except for all of the
 shards of wood lying about the room.  The doorway appears to lead
@@ -657,7 +657,7 @@ Other than the shards of wood lying about the room, there is nothing
 else out of order, no blood, no material caught anywhere, just the
 broken wood.
 ~
-299 ad 0
+299 9 0 0 0 0
 D3
 The doorway to the west is clear for passage except for all of the
 shards of wood lying about the room.  The doorway appears to lead
@@ -676,7 +676,7 @@ are no different.  You get a strange eerie feeling as you stand in
 this part of the hallway.  Perhaps it is from the strange light source
 that seems to be just to the north.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 The hallway continues northwards towards the strange light source down
 there.
@@ -711,7 +711,7 @@ are no different.  An eerie feeling pervades your body and you notice
 that everything seems to be covered with a strange, yet bright, yellow
 glow.
 ~
-299 d 0
+299 8 0 0 0 0
 D1
 The doorway to the east is blocked by a wooden door that looks to be
 quite sturdy.
@@ -742,7 +742,7 @@ open doorway to the east where a wooden door once hung upon brass hinges.
 shards lying around the doorway and the remains of brass hinges sitting
 in the doorframe.
 ~
-299 d 0
+299 8 0 0 0 0
 D1
 The cloistered hallway lies just to the east through the open doorway.
 ~
@@ -760,7 +760,7 @@ open doorway to the west where a wooden door once hung upon brass hinges.
 shards lying around the doorway and the remains of brass hinges sitting
 in the doorframe.
 ~
-299 d 0
+299 8 0 0 0 0
 D3
 The hallway to the west can be seen through the open doorway.
 ~
@@ -778,7 +778,7 @@ open doorway to the east where a wooden door once hung upon brass hinges.
 shards lying around the doorway and the remains of brass hinges sitting
 in the doorframe.
 ~
-299 d 0
+299 8 0 0 0 0
 D1
 A hallway lies outside the door to the east.
 ~
@@ -794,7 +794,7 @@ merely presents a view of the black night outside.
    A simple wooden door serves as the entrance to this room to the
 east.
 ~
-299 d 0
+299 8 0 0 0 0
 D3
 The wooden door to the west looks to be quite sturdy as compared to
 some of those that you have seen lately.
@@ -811,7 +811,7 @@ and one to the south through a pair of archways.  Other things of note
 in here are the small metal plates in the walls with tiny brass plaques
 set into each one.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 The crypt continues through the archway to the east.
 ~
@@ -841,7 +841,7 @@ one to the east, and one to the south, all through a pair of archways.
 Other things of note in here are the small metal plates in the walls
 with tiny brass plaques set into each one.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 The crypt continues through the archway to the east.
 ~
@@ -873,7 +873,7 @@ and one to the south through a pair of archways.  Other things of note
 in here are the small metal plates in the walls with tiny brass plaques
 set into each one.
 ~
-299 d 0
+299 8 0 0 0 0
 D2
 The crypt continues through the archway to the south.
 ~
@@ -903,7 +903,7 @@ one to the east, and one to the south, all through a pair of archways.
 Other things of note in here are the small metal plates in the walls
 with tiny brass plaques set into each one.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 The crypt continues through the archway to the north.
 ~
@@ -933,7 +933,7 @@ one to the east, and one to the north, all through a pair of archways.
 Other things of note in here are the small metal plates in the walls
 with tiny brass plaques set into each one.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 The crypt continues through the archway to the north.
 ~
@@ -963,7 +963,7 @@ one to the north, and one to the south, all through a pair of archways.
 Other things of note in here are the small metal plates in the walls
 with tiny brass plaques set into each one.
 ~
-299 ad 0
+299 9 0 0 0 0
 D0
 The crypt continues through the archway to the north.
 ~
@@ -993,7 +993,7 @@ and one to the east, both through a pair of archways.  Other things
 of note in here are the small metal plates in the walls with tiny
 brass plaques set into each one.
 ~
-299 ad 0
+299 9 0 0 0 0
 D0
 The crypt continues through the archway to the north.
 ~
@@ -1018,7 +1018,7 @@ and one to the south, both through a pair of archways.  Other things
 of note in here are the small metal plates in the walls with tiny
 brass plaques set into each one.
 ~
-299 d 0
+299 8 0 0 0 0
 D2
 Through the archway to the south, you can see glimmerings of what might
 be a storage room of some kind.
@@ -1044,7 +1044,7 @@ through a stone archway.  The only other things that may be of any
 interest whatsoever is the large number of small metal plates in the
 walls with tiny brass plaques set into each one.
 ~
-299 d 0
+299 8 0 0 0 0
 D0
 The crypt continues through the archway to the north.
 ~
@@ -1067,7 +1067,7 @@ thing that strikes you as most strange about this room is perhaps the
 almost new coffin sitting in one corner of the room.  The walls are
 covered with mosaics and there is an archway set in the northern wall.
 ~
-299 acd 0
+299 13 0 0 0 0
 D0
 Through the archway to the north, you can see what looks to be a crypt.
 ~
@@ -1096,7 +1096,7 @@ took place upstairs in the cathedral proper.
 floor is rather worn down in a track leading from the eastern
 passage to the northern wall.
 ~
-299 ad 0
+299 9 0 0 0 0
 D0
 Looking carefully at the northern wall, you notice that something
 is quite out of place in it.  Staring at the worn down track in
@@ -1111,16 +1111,16 @@ The crypt continues off to the east.
 ~
 0 -1 29943
 E
-floor track~
-   The worn down track in the floor leads to the north wall.  It certainly seems
-to take a lot of hints to get this fact through to you, doesn't it?  
-~
-E
 wall~
    Looking carefully at the northern wall, you notice that something is quite
 out of place in it.  Staring at the worn down track in the floor where it meets
 the wall, you trace your eyes upwards, where they discover a well hidden door
 handle.  
+~
+E
+floor track~
+   The worn down track in the floor leads to the north wall.  It certainly seems
+to take a lot of hints to get this fact through to you, doesn't it?  
 ~
 S
 #29943
@@ -1133,7 +1133,7 @@ took place upstairs in the cathedral proper.
 also a large hole in the eastern wall, through which a fairly
 large amount of light shines through.
 ~
-299 d 0
+299 8 0 0 0 0
 D1
 Through the hole in the eastern wall you can see that a cavern
 opens up.  The cavern also seems to be fairly well lit.
@@ -1159,7 +1159,7 @@ the realm would be laid to rest after the elaborate ceremonies
 took place upstairs in the cathedral proper.
    The crypt continues to the north and east.
 ~
-299 ad 0
+299 9 0 0 0 0
 D0
 The crypt continues off to the north.
 ~
@@ -1179,7 +1179,7 @@ the realm would be laid to rest after the elaborate ceremonies
 took place upstairs in the cathedral proper.
    The crypt continues to the south and west.
 ~
-299 ad 0
+299 9 0 0 0 0
 D2
 The crypt continues off to the south.
 ~
@@ -1199,7 +1199,7 @@ the realm would be laid to rest after the elaborate ceremonies
 took place upstairs in the cathedral proper.
    The crypt continues to the north and west.
 ~
-299 ad 0
+299 9 0 0 0 0
 D0
 The crypt continues off to the north.
 ~
@@ -1221,7 +1221,7 @@ took place upstairs in the cathedral proper.
 seems to be coming from the south.  There is also a large stone
 door on the western side of the crypt.
 ~
-299 ad 0
+299 9 0 0 0 0
 D1
 The crypt continues off to the east.
 ~
@@ -1257,13 +1257,17 @@ breeze makes the candles flicker momentarily.  The walls have been
 painted with a multitude of small paintings and designs, probably
 about the life of Princess Evalynn.
 ~
-299 d 0
+299 8 0 0 0 0
 D1
 A large stone door stands just to the east, blocking all entrance into
 this wonderous place.
 ~
 door~
 2 29910 29947
+E
+coffin~
+   The coffin seems to be made of ebony and seems to be very much closed.  
+~
 E
 walls wall painting paintings~
    The paintings on the walls show various events in Princess Evalynn's life.  
@@ -1273,10 +1277,6 @@ Another shows her donning a suit of emerald armour in preparation of war.  She
 was forced to take the kingdom in hand and defend it against many attacks over
 the years by those who thought that Gildoria would fall easily without any solid
 male leadership.  
-~
-E
-coffin~
-   The coffin seems to be made of ebony and seems to be very much closed.  
 ~
 S
 #29949
@@ -1288,7 +1288,7 @@ the cavern in small piles.  There is a rather large pile off in the
 northwestern corner of the cavern.  The stone of the floor has been
 shaped to create a ledge of sorts in the southeastern corner.
 ~
-299 d 0
+299 8 0 0 0 0
 D3
 A small passageway opens up to the west, making you wonder just how
 anything bigger than an ogre could even get into this chamber.
@@ -1302,7 +1302,7 @@ A Bottomless Pit~
 your voyages.  It seems that this pit falls a long, long way, and falling
 to the bottom just might take forever...
 ~
-299 ad 9
+299 9 0 0 0 0
 D0
 Looking northwards, you notice that the crypt continues happily.
 ~
@@ -1320,7 +1320,7 @@ Down The Bottomless Pit~
 like this is going to end anytime soon.  The sides of the pit are quite
 smooth making it obviously impossible to slow your fall.
 ~
-299 ad 9
+299 9 0 0 0 0
 D4
 The pit keeps going upwards as far as you can see.
 ~
@@ -1340,7 +1340,7 @@ wonder just how far from the top you are, and then think to yourself,
 'It doesn't really matter where the top is, I just want to know where
 the bottom is.'  The pit seems to go on in darkness for a good long way.
 ~
-299 ad 9
+299 9 0 0 0 0
 D4
 The pit keeps going upwards as far as you can see.
 ~
@@ -1361,7 +1361,7 @@ point, it is probably that the stone has been melted to that consistency.
 The pits continues upwards into the darkness and down a short distance
 into the lava.
 ~
-299 d 9
+299 8 0 0 0 0
 D4
 The pit keeps going upwards as far as you can see.
 ~
@@ -1380,7 +1380,7 @@ Being Burnt Alive~
 high temperatures you are on the verge of death.  Better get out of here quick
 before there is nothing left of you but a pile of ash.    
 ~
-299 cd 0
+299 12 0 0 0 0
 D5
 This looks like the bottom of the pit.  Oh well, I guess it doesn't
 go down forever after all.
@@ -1397,7 +1397,7 @@ a large stone wall with an iron wrought gate planted firmly where the
 road would pass through it.  The building to the north appears to be
 an old church or cathedral.
 ~
-299 c 1
+299 4 0 0 0 0
 D0
 An iron wrought gate stands in the middle of the stone wall, and blocks
 the way northwards into the courtyard of the cathedral.

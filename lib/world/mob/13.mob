@@ -9,7 +9,7 @@ thinkers of the 19th century.  One of Nietzsche's fundamental contentions was
 that traditional values had lost their power in the lives of individuals.  
 Nietzsche maintained that all human behavior is motivated by the will to power.
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -29,7 +29,7 @@ philosophy through his influence on Plato.  Born in Athens, the son of
 Sophroniscus, a sculptor, and Phaenarete, a midwife, he received the regular
 elementary education in literature
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -44,7 +44,7 @@ Plato offers advice to any who are in need.
    Plato (circa 428-347 BC), Greek philosopher, one of the most creative and
 influential thinkers in Western philosophy.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -58,7 +58,7 @@ The Builder Academy librarian sorts through her inventory.
    She is in charge of keeping all articles of how to build in order and
 available to anyone who needs them.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 2
@@ -72,7 +72,7 @@ Aristotle wanders the hallways constantly in search of more knowledge.
 Plato and Socrates the distinction of being the most famous of ancient
 philosophers.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -90,7 +90,7 @@ influenced the Chinese attitude toward life, set the patterns of living and
 standards of social value, and provided the background for Chinese political
 theories and institutions.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -105,7 +105,7 @@ The evil lag monster is here eating up bandwidth.
 data flow into his gaping maw as he consumes every ounce of bandwidth possible.
   
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -118,7 +118,7 @@ A cute little rabbit hops around innocently.
    The rabbit is pure white with beady black eyes.  The ears and whiskers are
 constantly twitching as it hops around looking for something to chew on.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -137,7 +137,7 @@ distributed on Dec.  6 during the pageant of St.  Nicholas.  In many countries,
 this day is still the day of gift-giving although in America it's celebrated on
 Dec.  24 and 25.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -153,7 +153,7 @@ hairnet makes him look more like a doctor than a dentist.  He wears plastic
 gloves and matching white shoes.  The only part of his body that is visible are
 the eyes.  Very disturbing eyes.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -169,7 +169,7 @@ given to them by this old woman.  The quests are not easy, sometimes nearly
 impossible.  But they will always be a challenge.  The questmaster looks at you
 and says, 'are you up for a challenge?'
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -186,7 +186,7 @@ would strike fear into the hearts of most mortals.  Instead everything seems to
 scare it shitless.  It is as if he has seen the future and he knows he is going
 to die.    
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -202,7 +202,7 @@ The gateguard watches the gate carefully swinging the key around on its chain.
 the local government and the miserable wages has corrupted most of the
 gateguards.  A simple bribe of about 10 gold is all it takes to get past them.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -238,7 +238,7 @@ considered lucky, while in America we basically believe the opposite.
       jgs  ) /__ \__  ) (\ \___
           (___)))__))(__))(__)))
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -253,7 +253,7 @@ The Verizon Wireless guy is walking around annoying everyone while checking his 
 you wish to trade horror stories about billing and cell phones just ask Rumble.
 He has seen it all.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -267,7 +267,7 @@ A spy roams secretly about gleaning information for Rumble.
    Rumble hired this guy to delve into the underground of TBA.  He secretly
 wanders the halls of TBA looking for troublemakers.    
 ~
-bdenopqr bdfkpst 0 E
+253978 0 0 0 1638484 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -285,7 +285,7 @@ protest.  Kings challenges to segregation and racial discrimination in the
 civil rights in the United States.  After his assassination in 1968, King
 became a symbol of protest in the struggle for racial justice.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -298,7 +298,7 @@ The variable questmaster is waiting to set you.
    This questmaster will save a variable to your player file to remember wether
 or not you have done his quest.  This way you can only do this quest once.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -324,7 +324,7 @@ on this day.
 
 Six more weeks of winter for 2003!
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 0
@@ -340,7 +340,7 @@ white peppered mustache and seems to be daydreaming or in deep thought.  A
 pencil is stuck behind one ear and a notepad sticks out of his back pocket.  
 
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -363,7 +363,7 @@ to his current (16th) infomercial for his "Blast Off the Pounds" program.  He
 has released more than 30 videos and published nine books (3 best-selling
 cookbooks).    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -377,7 +377,7 @@ The protector of the magic eight balls ensures everyone gets an eight ball befor
 white robe cinched about the waist with a white rope.  It seems to have a
 strange power about it.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -392,7 +392,7 @@ A full grown turkey with a large beard struts back and forth bobbing its head.
 its bald head and neck which is a reddish-blue.  The long flap of skin under the
 chin means this is a large Tom ready to be served up for a meal.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -405,7 +405,7 @@ the hidden mob~
 ~
    This mob is hiding. You shouldn't be reading this.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 0
@@ -418,7 +418,7 @@ A bedbug lies in waiting.
    This nasty bugger sneaks up on people while they sleep and savagely bites
 them!
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -432,7 +432,7 @@ William Shakespeare is here searching for fresh talent.
 greatest of all writers in the English language and in Western literature, as
 well as one of the world's pre-eminent dramatists.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1

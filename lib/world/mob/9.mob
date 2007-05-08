@@ -6,7 +6,7 @@ The homba flits about.
    Part kestrel, part bear, part wolf.  Parts is parts, and makes an ugly whole.
 
 ~
-bdflm bdgkp -100 E
+6186 0 0 0 65684 0 0 0 -100 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -18,7 +18,7 @@ The greatest swordsman in the land is standing here with a sneer on his face.
 ~
    This is the ultimate swordsman.  
 ~
-bdflm dkp -400 E
+6186 0 0 0 65552 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -30,7 +30,7 @@ The Mummy of Rabscuttle wanders here, hands aloft, walking towards you.
 ~
    All bandages, no personality.  
 ~
-bdflm dkp -780 E
+6186 0 0 0 65552 0 0 0 -780 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -43,7 +43,7 @@ A giant lizard is here.
    This scaly creature looks like it is well adapted to its underground habitat.
 He looks very powerful.  
 ~
-bdflm dkp 100 E
+6186 0 0 0 65552 0 0 0 100 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -55,7 +55,7 @@ General Woundwort, the dark demon of Minos, awaits to maul you to shreds.
 ~
    He looks vaguely like a rabbit, but sure doesn't act like one.  
 ~
-bdflm dhkp -1000 E
+6186 0 0 0 65552 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -68,7 +68,7 @@ Franz, Minos' henchman, is here ready to pump you up.
    Franz is no girlie man.  He is very muscular and looks as if he could squeeze
 your head like a grapefruit.  
 ~
-bdflm dhkp -300 E
+6186 0 0 0 65552 0 0 0 -300 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -81,7 +81,7 @@ Hanz is here flexing his muscles and squeezing grapefruits.
    Hanz is no girlie man.  He is very muscular and looks as if he could lift a
 large dragon.  
 ~
-bdflm dhkp -300 E
+6186 0 0 0 65552 0 0 0 -300 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -93,7 +93,7 @@ King Minos the Minotaur is ready and waiting to gore you to death.
 ~
    He smells something awful.  
 ~
-bdflmnoq dfhkp -1000 E
+96298 0 0 0 65616 0 0 0 -1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -105,7 +105,7 @@ A large dragon turtle breaks the surface churning the water into huge waves.
 ~
    The turtle's shell is the size of a small house and looks as hard as rock.  
 ~
-dfgq dkp -200 E
+65640 0 0 0 65552 0 0 0 -200 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -117,7 +117,7 @@ You notice the face of an ugly hag in the sea weeds.
 ~
    The sea hag is terribly fightful and has razor sharp teeth.  
 ~
-dfg dkp -700 E
+104 0 0 0 65552 0 0 0 -700 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -129,7 +129,7 @@ There is a merman swimming here brandishing his trident at you!
 ~
    The merman has a powerful tail fin instead of legs.  
 ~
-bdflmnoq dkpst 350 E
+96298 0 0 0 1638416 0 0 0 350 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -141,7 +141,7 @@ A crusty looking crab is crawling around here searching for food.
 ~
    It looks like a crab...  What more can be said?  
 ~
-dfghq dkp 0 E
+65768 0 0 0 65552 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 0

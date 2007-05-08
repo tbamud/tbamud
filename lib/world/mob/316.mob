@@ -5,7 +5,7 @@ Cynder stands here, guarding the warrior guild entrance.
 ~
    Don't even think about it, she'll kick your head in.    
 ~
-bdenopqr dfk 0 E
+253978 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -19,7 +19,7 @@ A warrior guildmaster is here, waiting to train you.
 ~
    There is nothing special about this master.    
 ~
-bdeoqr 0 0 E
+213018 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -34,7 +34,7 @@ Nnoa is here, preventing all those who may enter the Ranger training grounds.
 He is respected by all, and feared by many, many more.  His skill of earthy
 elements will make anyone hurt.    
 ~
-bdenopqr dfk 0 E
+253978 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -48,7 +48,7 @@ A Ranger guildmaster is here, waiting to train you.
 ~
    There is nothing special about this master.    
 ~
-bdeoqr 0 0 E
+213018 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -63,7 +63,7 @@ Deke stands silently, allowing only the holiest to enter.
 hood covering his face, you can not tell his intentions, lest you try and pass
 him.    
 ~
-bdenopqr dfk 0 E
+253978 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -77,7 +77,7 @@ A Cleric guildmaster is here, waiting to train you.
 ~
    There is nothing special about this master.    
 ~
-bdeoqr 0 0 E
+213018 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -92,7 +92,7 @@ Sersin is here, guarding the mage guild.
 track of a single one.  He lifts an eye for a second, and then retrieves a
 scroll from a pouch on his belt.    
 ~
-bdenopqr dfk 0 E
+253978 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -105,7 +105,7 @@ A Mage's guildmaster is here, waiting to train you.
 ~
    There is nothing special about this master.    
 ~
-bdeoqr 0 0 E
+213018 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -118,7 +118,7 @@ Ryske peeks at you from the shadows.
 ~
    Watch It!  You'll go blind, literally, if you stare that long.    
 ~
-bdenopqr dfk 0 E
+253978 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -132,7 +132,7 @@ An assasin guild master is here, waiting to train you.
 ~
    There is nothing special about this master.    
 ~
-bdeoqr 0 0 E
+213018 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -147,7 +147,7 @@ Alexa stands with back to the wall, eying you curiously.
 it back and leans casually against the wall thinking nothing of you.  She
 crosses her arms a closes her eyes, almost daring you to pass.    
 ~
-bdenopqr dfk 0 E
+253978 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -161,7 +161,7 @@ A Deathknight guildmaster is here waiting to train you.
 ~
    There is nothing special about this master.    
 ~
-bdeoqr 0 0 E
+213018 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -174,7 +174,7 @@ A Deathknight is here, quietly waiting to sell you something.
 ~
    With no expression whatsoever, this man goes about his business.    
 ~
-bdnopr 0 -200 E
+188426 0 0 0 0 0 0 0 -200 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -187,7 +187,7 @@ A lovely female assassin is here, helping others find what they need.
    Too bad she could probably drop you with one good blow (get it, blow?  ),
 otherwise you could ask her out.    
 ~
-bdo 0 600 E
+16394 0 0 0 0 0 0 0 600 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -200,7 +200,7 @@ A monk from the guild stands here quietly, waiting on you.
    This guy looks perfectly happy to just stand and contemplate all the live
 long day.    
 ~
-bdnopr 0 500 E
+188426 0 0 0 0 0 0 0 500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -213,7 +213,7 @@ A member of the Mage's Guild awaits your purchase behind the counter.
    You cannot tell if this man be evil or good aligned, nor where his loyalties
 may lie.  Who cares, he has good stuff for sale!    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -226,7 +226,7 @@ Gendar the elven thief leans in a corner of the room, a small grin on his face.
    Gendar looks almost amused by the fact that you were startled so easily.  
 
 ~
-bdnopr 0 -200 E
+188426 0 0 0 0 0 0 0 -200 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -238,7 +238,7 @@ Wirntyn grins as you walk in.  Man, he looks even uglier when he smiles!
 ~
    Ugly, maybe, but just as deadly.  Don't piss him off.    
 ~
-bdo 0 -500 E
+16394 0 0 0 0 0 0 0 -500 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -251,7 +251,7 @@ Griselda tends bar for all her warrior friends.
    This tough little bitch has beaten down more foes than most men can boast
 their friends have all added together.  And she's a hotty.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -264,7 +264,7 @@ A drunken warrior is in the midst of hefting another chair, this time taking car
    You'd think that if you could get past the first chair tossing, they'd leave
 you alone, but it looks as if you are in for a bit of fun...  Duck!    
 ~
-bd 0 -500 E
+10 0 0 0 0 0 0 0 -500 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -276,7 +276,7 @@ A drunk warrior grins his toothy grin at you, flexing his huge biceps.
 ~
    You can smell him from here.    
 ~
-bd 0 -600 E
+10 0 0 0 0 0 0 0 -600 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -289,7 +289,7 @@ A bookie stands here, willing to take any bet.
    Dressed in the finest armor, this man obviously preys on the stupidity of
 the people of the Cove.    
 ~
-bd 0 -500 E
+10 0 0 0 0 0 0 0 -500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -302,7 +302,7 @@ The Ticket Master, a beautiful and enticing woman, waits to sell you your chance
    Just from the way she looks makes you want to get in that Pit and risk your
 life.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -315,7 +315,7 @@ An employee of the Warrior Guild is here waiting to help you.
    More of an apprentice than anything else, this employee is one who pulled
 extra duty for misconduct within the guild.    
 ~
-bdnopr 0 -100 E
+188426 0 0 0 0 0 0 0 -100 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -328,7 +328,7 @@ A member of the Mage's Guild waits patiently for you to buy something.
    This man could be good or evil, or whatver - but who gives a shit - he has
 kicka ss eq for sale!    
 ~
-bdgnopr 0 0 E
+188490 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -340,7 +340,7 @@ A member of the Mage's Guild stands behind the counter.
 ~
    She looks eager enough to sell you the goods.    
 ~
-bdgnopr 0 0 E
+188490 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -353,7 +353,7 @@ A member of the Mage's Guild waits patiently for your purchase.
    He seems intent on the workings of one of the scrolls, making sure that it
 will perform its proper function.    
 ~
-bdgnopr 0 0 E
+188490 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -366,7 +366,7 @@ An employee of the Warrior Guild is here waiting to help you.
    More of an apprentice than anything else, this employee is one who pulled
 extra duty for misconduct within the guild.    
 ~
-bdnopr 0 -100 E
+188426 0 0 0 0 0 0 0 -100 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -379,7 +379,7 @@ An employee of the Warrior Guild is here waiting to help you.
    More of an apprentice than anything else, this employee is one who pulled
 extra duty for misconduct within the guild.    
 ~
-bdnopr 0 -100 E
+188426 0 0 0 0 0 0 0 -100 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -392,7 +392,7 @@ An employee of the Warrior Guild is here waiting to help you.
    More of an apprentice than anything else, this employee is one who pulled
 extra duty for misconduct within the guild.    
 ~
-bdnopr 0 -100 E
+188426 0 0 0 0 0 0 0 -100 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -407,7 +407,7 @@ pirouette clumsily on the table, you notice a breast fall saggily and limply
 out of the loose rag she wears.  Seemingly unembarassed, Yolanda tucks her tit
 back into her rag and continues her 'extremely seductive' dance.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -420,7 +420,7 @@ A member of the Cleric's Guild waits patiently for you to shop.
    He stares into what you would assume is empty space, but for him is the
 space that his God occupies.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -433,7 +433,7 @@ A member of the Cleric's Guild waits patiently for you to shop.
    He stares into what you would assume is empty space, but for him is the
 space that his God occupies.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -446,7 +446,7 @@ A member of the Cleric's Guild waits patiently for you to shop.
    He stares into what you would assume is empty space, but for him is the
 space that his God occupies.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -459,7 +459,7 @@ A Deathknight sneers as he waits for you to buy something.
    He notices you looking and his sneer becomes even more pronounced than
 before.  Better just buy your stuff and get out of here.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -472,7 +472,7 @@ A Paladin Seamstress works diligently on some fabric as you browse the goods.
    She looks up at you as she sews and smiles a pretty smile, going back to her
 work while keeping an eye out in case you need any assistance.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -486,7 +486,7 @@ A Paladin smith works here, pounding away at the forge.
 given him.  It is a rare and fine thing to see such pride from a man who could
 be more if he desired.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -499,7 +499,7 @@ A member of the Paladin Guild is here helping the customers.
    He beams a smile your way and holds up one finger - be with you in just one
 moment!    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -512,7 +512,7 @@ Shindoz stands proudly at the entrance to the Guild, gently keeping non-members 
    Paladin through and through - you can tell this guy is the Master's Pet, a
 real ass-kiss and butt-puppy.    
 ~
-bdnopqr dfk 0 E
+253962 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -526,7 +526,7 @@ The Master stands calmly here, ready to train if that is your need.
    He smiles and looks you in the eye, as if reading your thoughts and virtue
 all in one glance.  It almost makes you uneasy.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -538,7 +538,7 @@ Alastor looks just a bit unhappy about being a monk, but guards the door just th
 ~
    It's a looooooonng story - don't ask.    
 ~
-bdnopqr dfk 0 E
+253962 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -551,7 +551,7 @@ The Monk Guildmaster awaits your need quietly.
 ~
    He speaks no word, makes no move.  He simply waits.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1

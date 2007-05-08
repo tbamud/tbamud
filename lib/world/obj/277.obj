@@ -3,7 +3,7 @@ rainbow staff~
 the rainbow staff~
 The rainbow staff lies here.~
 ~
-1 g ao 0
+1 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 8 500 0 0
 A
@@ -13,7 +13,7 @@ sting~
 Sting~
 Sting lies here.~
 ~
-5 abk an 0
+5 abk 0 0 0 an 0 0 0 0 0 0 0
 0 2 7 10
 1 1000 0 0
 A
@@ -23,7 +23,7 @@ sign~
 a sign~
 A sign demands your attention.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -43,7 +43,7 @@ pipeweed bread~
 a pipeweed bread~
 A loaf of pipeweed bread arouses your hunger.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 13 0 0
 #27704
@@ -51,7 +51,7 @@ silvery cloak~
 a silvery cloak~
 A silvery cloak lies here.~
 ~
-9 gk ak 0
+9 gk 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
 3 100 0 0
 A
@@ -61,7 +61,7 @@ one ring~
 the One Ring~
 The One Ring is here.~
 ~
-9 g abo 0
+9 g 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
 3 250 0 0
 A
@@ -73,7 +73,7 @@ elven bow~
 an elven bow~
 An elven bow lies here.~
 ~
-5 bgk an 0
+5 bgk 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 4
 10 200 0 0
 A
@@ -83,7 +83,7 @@ mithril axe~
 a mithril axe~
 A mithril axe lies here.~
 ~
-5 acmno an 0
+5 acmno 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 5
 12 400 0 0
 A
@@ -93,7 +93,7 @@ thain girth~
 the thain girth~
 The girth of the thain lies here.~
 ~
-9 n al 0
+9 n 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 0
 4 1000 0 0
 A
@@ -103,7 +103,7 @@ tiny dagger~
 a tiny dagger~
 A tiny dagger lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
 3 40 0 0
 #27710
@@ -111,7 +111,7 @@ egg~
 an egg~
 An egg lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 9 0 0
 #27711
@@ -119,7 +119,7 @@ bag~
 a bag~
 A bag is on the floor.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 0 0
 5 50 0 0
 #27712
@@ -127,7 +127,7 @@ lantern~
 a lantern~
 A lantern is on the floor.~
 ~
-1 0 a 0
+1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 20 0
 4 50 0 0
 #27713
@@ -135,7 +135,7 @@ bardiche long weapon~
 a bardiche~
 A long weapon with a sharp end is on the floor.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 3
 10 1000 0 0
 A
@@ -145,7 +145,7 @@ flail~
 a flail~
 A flail is on the floor.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 6
 8 300 0 0
 #27715
@@ -153,7 +153,7 @@ sunflower golden flower~
 a golden sunflower~
 A golden sunflower blooms here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
 1 1 0 0
 E
@@ -167,7 +167,7 @@ sunflower seeds~
 a pile of sunflower seeds~
 A pile of sunflower seeds has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 10 0 0
 E
@@ -181,7 +181,7 @@ water trickle Brandywine water~
 a trickle of water~
 A trickle of water flows from the Brandywine.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 15 0
 0 0 0 0
 E
@@ -195,7 +195,7 @@ plate toad hole toad-in-the-hole~
 a plate of toad-in-the-hole~
 A plate of toad-in-the-hole is steaming here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 25 0 0
 E
@@ -210,7 +210,7 @@ plate venison red wine~
 a plate of venison in red wine~
 A plate of venison in red wine is steaming here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 25 0 0
 E
@@ -225,7 +225,7 @@ plate suet pudding beef~
 a plate of suet pudding with beef~
 A plate of suet pudding with beef sits steaming here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 30 0 0
 E
@@ -240,7 +240,7 @@ bowl apple crumble~
 a bowl of apple crumble~
 A bowl of apple crumble sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 15 0 0
 E
@@ -255,7 +255,7 @@ bowl apricot fool~
 a bowl of apricot fool~
 A bowl of apricot fool sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 15 0 0
 E
@@ -269,7 +269,7 @@ plate bacon roly-poly~
 a plate of bacon roly-poly~
 A plate of bacon roly-poly sits steaming here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 15 0 0
 E
@@ -284,7 +284,7 @@ plate bangers mash~
 a plate of bangers and mash~
 A plate of bangers and mash smells absolutely delicious.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 20 0 0
 E
@@ -298,7 +298,7 @@ bowl bread butter pudding~
 a bowl of bread and butter pudding~
 A bowl of bread and butter pudding is soaking here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 12 0 0
 E
@@ -313,7 +313,7 @@ plate bubble squeak~
 a plate of bubble and squeak~
 A plate of bubble and squeak wafts heat into the air.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 1 25 0 0
 E
@@ -327,7 +327,7 @@ plate cauliflower cheese~
 a plate of cauliflower cheese~
 A plate of cauliflower cheese sits temptingly here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 16 0 0 0
 1 25 0 0
 E
@@ -341,7 +341,7 @@ plate chicken kiev~
 a plate of chicken kiev~
 A plate of chicken kiev steams slowly.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 30 0 0
 E
@@ -356,7 +356,7 @@ plate fried duck breast~
 a plate of fried duck breast~
 A plate of fried duck breast simmers with heat.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 30 0 0
 E
@@ -371,7 +371,7 @@ scotch egg~
 a scotch egg~
 A scotch egg has been dropped here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 15 0 0
 E
@@ -385,7 +385,7 @@ bowl bananas custard~
 a bowl of bananas and custard~
 A bowl of bananas and custard has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 15 0 0
 E
@@ -399,7 +399,7 @@ piece sticky gingerbread~
 a piece of sticky gingerbread~
 A piece of sticky gingerbread is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 10 0 0
 E
@@ -413,7 +413,7 @@ plate smoked mackerel~
 a plate of smoked mackerel~
 A plate of smoked mackerel has been set here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 25 0 0
 E
@@ -428,7 +428,7 @@ plate shepherd's pie~
 a plate of shepherd's pie~
 A plate of shepherd's pie gives off a delicious smell.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 1 25 0 0
 E
@@ -443,7 +443,7 @@ pickled onion~
 a pickled onion~
 A pickled onion lies on the ground.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 15 0 0
 E
@@ -457,7 +457,7 @@ sausage roll~
 a sausage roll~
 A sausage roll lies steaming here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 20 0 0
 E
@@ -471,7 +471,7 @@ spotted dick bowl~
 a bowl of spotted dick~
 A bowl of spotted dick is set here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 15 0 0
 E
@@ -486,7 +486,7 @@ plate baked gammon cider~
 a plate of baked gammon in cider~
 A plate of baked gammon in cider sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 1 25 0 0
 E
@@ -500,7 +500,7 @@ plate baked flounder~
 a plate of baked flounder~
 A plate of baked flounder smells delicious.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 14 0 0 0
 1 20 0 0
 E
@@ -515,7 +515,7 @@ crumpet~
 a crumpet~
 A crumpet has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 20 0 0
 E
@@ -529,7 +529,7 @@ plate lamprey brewet~
 a plate of lampery in brewet~
 A plate of lamprey in brewet sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 1 24 0 0
 E
@@ -544,7 +544,7 @@ piece lemon cake~
 a piece of lemon cake~
 A piece of lemon cake sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 15 0 0
 E
@@ -558,7 +558,7 @@ plate mushroom croustades~
 a plate of mushroom croustades~
 A plate of mushroom croustades is steaming here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 1 24 0 0
 E
@@ -573,7 +573,7 @@ bowl treacle pudding~
 a bowl of treacle pudding~
 A bowl of treacle pudding sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
 1 15 0 0
 E
@@ -587,7 +587,7 @@ plate skirlie mushrooms~
 a plate of skirlie with mushrooms~
 A plate of skirlie with mushrooms has been set here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 1 25 0 0
 E
@@ -601,7 +601,7 @@ plate quails mushrooms~
 a plate of quails on mushrooms~
 A plate of quails on mushrooms has been set here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 1 25 0 0
 E
@@ -616,7 +616,7 @@ hunter's knife~
 a hunter's knife~
 A hunter's knife lies forgotten here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 4 3 11
 1 150 0 0
 E
@@ -630,7 +630,7 @@ flowing purple skirt~
 @Ma flowing purple skirt@n~
 @MA flowing purple skirt@g lies on the ground.~
 ~
-11 0 af 0
+11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 2 150 0 0
 E
@@ -646,7 +646,7 @@ purple bodice~
 @ma purple bodice@n~
 @mA purple bodice@g lies here.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -660,7 +660,7 @@ white cotton blouse~
 @wa white cotton blouse@n~
 @wA white cotton blouse@g lies forgotten on the ground.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 90 0 0
 E
@@ -677,7 +677,7 @@ daisy chain~
 @Wa @Yd@Wa@Yi@Ws@Yy @Wc@Yh@Wa@Yi@Wn@n~
 @WA @Yd@Wa@Yi@Ws@Yy @Wc@Yh@Wa@Yi@Wn@g has been left here.~
 ~
-11 0 aeo 0
+11 0 0 0 0 aeo 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 E
@@ -690,7 +690,7 @@ sweeping green skirt~
 @Ga sweeping green skirt@n~
 @GA sweeping green skirt@g lies crumpled here.~
 ~
-11 0 af 0
+11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 2 110 0 0
 E
@@ -705,7 +705,7 @@ green bodice~
 @ga green bodice@n~
 @gA green bodice is lying here.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -721,7 +721,7 @@ light yellow skirt~
 @Ya light yellow skirt@n~
 @YA light yellow skirt@g has been left here.~
 ~
-11 0 af 0
+11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 2 120 0 0
 E
@@ -736,7 +736,7 @@ yellow bodice~
 @ya yellow bodice@n~
 @yA yellow bodice@g has been dropped here.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -752,7 +752,7 @@ flowing blue skirt~
 @Ca flowing blue skirt@n~
 @CA flowing blue skirt@g lies dropped here.~
 ~
-11 0 af 0
+11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 2 120 0 0
 E
@@ -767,7 +767,7 @@ blue bodice~
 @ca blue bodice@n~
 @cA blue bodice@g is lying here.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 90 0 0
 E
@@ -783,7 +783,7 @@ wooden crate~
 a wooden crate~
 A wooden crate stands amongst the shadows.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -798,7 +798,7 @@ string black pearls~
 @Da string of black pearls@n~
 @DA string of black pearls@g lies here.~
 ~
-11 0 ac n
+11 0 0 0 0 ac 0 0 0 o 0 0 0
 0 0 0 0
 1 500 2 0
 E
@@ -814,7 +814,7 @@ treasure chest~
 a treasure chest~
 A treasure chest stands against the wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 13 27761 0
 0 0 0 0
 E
@@ -829,7 +829,7 @@ tiny metal key~
 a tiny metal key~
 A tiny metal key glints on the ground.~
 ~
-18 q a 0
+18 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 E
@@ -843,7 +843,7 @@ pile gold coins~
 a pile of gold coins~
 A pile of gold coins glints temptingly here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1220 0 0 0
 1 1 0 0
 E
@@ -856,7 +856,7 @@ paladin's bejewelled shield~
 Paladin's shield~
 A bejewelled shield sparkles here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 3 1000 5 0
 E
@@ -872,7 +872,7 @@ chest small~
 a small chest~
 A small chest stands here, covered over with a dirty cloth.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 1 -1 0
 0 0 0 0
 E
@@ -886,7 +886,7 @@ old skeleton~
 an old skeleton~
 An old skeleton lies crumpled here.~
 ~
-13 q a 0
+13 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 E

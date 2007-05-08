@@ -29,7 +29,7 @@ extern struct char_data *combat_list;
 int apply_ac(struct char_data *ch, int eq_pos);
 void update_object(struct obj_data *obj, int use);
 void update_char_objects(struct char_data *ch);
-void affect_modify(struct char_data *ch, byte loc, sbyte mod, bitvector_t bitv, bool add);
+void affect_modify(struct char_data *ch, byte loc, sbyte mod, long bitv, bool add);
 
 /* external functions */
 int invalid_class(struct char_data *ch, struct obj_data *obj);
@@ -107,15 +107,8 @@ int isname(const char *str, const char *namelist)
   return 0;
 }
 
-void affect_modify(struct char_data *ch, byte loc, sbyte mod, bitvector_t bitv, bool add)
+void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *msg)
 {
-  if (add)
-    SET_BIT(AFF_FLAGS(ch), bitv);
-  else {
-    REMOVE_BIT(AFF_FLAGS(ch), bitv);
-    mod = -mod;
-  }
-
   switch (loc) {
   case APPLY_NONE:
     break;
@@ -214,6 +207,38 @@ void affect_modify(struct char_data *ch, byte loc, sbyte mod, bitvector_t bitv, 
   } /* switch */
 }
 
+void affect_modify(struct char_data * ch, byte loc, sbyte mod, long bitv, bool add)
+{
+  if (add) {
+    SET_BIT_AR(AFF_FLAGS(ch), bitv);
+  } else {
+    REMOVE_BIT_AR(AFF_FLAGS(ch), bitv);
+    mod = -mod;
+  }
+
+  aff_apply_modify(ch, loc, mod, "affect_modify");
+}
+
+void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bitv[], bool add)
+{
+  int i , j;
+
+  if (add) {
+    for(i = 0; i < AF_ARRAY_MAX; i++)
+      for(j = 0; j < 32; j++)
+        if(IS_SET_AR(bitv, (i*32)+j))
+          SET_BIT_AR(AFF_FLAGS(ch), (i*32)+j);
+  } else {
+    for(i = 0; i < AF_ARRAY_MAX; i++)
+      for(j = 0; j < 32; j++)
+        if(IS_SET_AR(bitv, (i*32)+j))
+          REMOVE_BIT_AR(AFF_FLAGS(ch), (i*32)+j);
+    mod = -mod;
+  }
+
+  aff_apply_modify(ch, loc, mod, "affect_modify_ar");
+}
+
 /* This updates a character by subtracting everything he is affected by 
  * restoring original abilities, and then affecting all again. */
 void affect_total(struct char_data *ch)
@@ -224,7 +249,7 @@ void affect_total(struct char_data *ch)
   for (i = 0; i < NUM_WEARS; i++) {
     if (GET_EQ(ch, i))
       for (j = 0; j < MAX_OBJ_AFFECT; j++)
-	affect_modify(ch, GET_EQ(ch, i)->affected[j].location,
+	affect_modify_ar(ch, GET_EQ(ch, i)->affected[j].location,
 		      GET_EQ(ch, i)->affected[j].modifier,
 		      GET_OBJ_AFFECT(GET_EQ(ch, i)), FALSE);
   }
@@ -237,7 +262,7 @@ void affect_total(struct char_data *ch)
   for (i = 0; i < NUM_WEARS; i++) {
     if (GET_EQ(ch, i))
       for (j = 0; j < MAX_OBJ_AFFECT; j++)
-	affect_modify(ch, GET_EQ(ch, i)->affected[j].location,
+	affect_modify_ar(ch, GET_EQ(ch, i)->affected[j].location,
 		      GET_EQ(ch, i)->affected[j].modifier,
 		      GET_OBJ_AFFECT(GET_EQ(ch, i)), TRUE);
   }
@@ -414,7 +439,7 @@ void obj_to_char(struct obj_data *object, struct char_data *ch)
 
     /* set flag for crash-save system, but not on mobs! */
     if (!IS_NPC(ch))
-      SET_BIT(PLR_FLAGS(ch), PLR_CRASH);
+      SET_BIT_AR(PLR_FLAGS(ch), PLR_CRASH);
   } else
     log("SYSERR: NULL obj (%p) or char (%p) passed to obj_to_char.", object, ch);
 }
@@ -432,7 +457,7 @@ void obj_from_char(struct obj_data *object)
 
   /* set flag for crash-save system, but not on mobs! */
   if (!IS_NPC(object->carried_by))
-    SET_BIT(PLR_FLAGS(object->carried_by), PLR_CRASH);
+    SET_BIT_AR(PLR_FLAGS(object->carried_by), PLR_CRASH);
 
   IS_CARRYING_W(object->carried_by) -= GET_OBJ_WEIGHT(object);
   IS_CARRYING_N(object->carried_by)--;
@@ -528,7 +553,7 @@ void equip_char(struct char_data *ch, struct obj_data *obj, int pos)
     log("SYSERR: IN_ROOM(ch) = NOWHERE when equipping char %s.", GET_NAME(ch));
 
   for (j = 0; j < MAX_OBJ_AFFECT; j++)
-    affect_modify(ch, obj->affected[j].location,
+    affect_modify_ar(ch, obj->affected[j].location,
 		  obj->affected[j].modifier,
 		  GET_OBJ_AFFECT(obj), TRUE);
 
@@ -562,7 +587,7 @@ struct obj_data *unequip_char(struct char_data *ch, int pos)
   GET_EQ(ch, pos) = NULL;
 
   for (j = 0; j < MAX_OBJ_AFFECT; j++)
-    affect_modify(ch, obj->affected[j].location,
+    affect_modify_ar(ch, obj->affected[j].location,
 		  obj->affected[j].modifier,
 		  GET_OBJ_AFFECT(obj), FALSE);
 
@@ -663,7 +688,7 @@ void obj_to_room(struct obj_data *object, room_rnum room)
     IN_ROOM(object) = room;
     object->carried_by = NULL;
     if (ROOM_FLAGGED(room, ROOM_HOUSE))
-      SET_BIT(ROOM_FLAGS(room), ROOM_HOUSE_CRASH);
+      SET_BIT_AR(ROOM_FLAGS(room), ROOM_HOUSE_CRASH);
   }
 }
 
@@ -681,7 +706,7 @@ void obj_from_room(struct obj_data *object)
   REMOVE_FROM_LIST(object, world[IN_ROOM(object)].contents, next_content);
 
   if (ROOM_FLAGGED(IN_ROOM(object), ROOM_HOUSE))
-    SET_BIT(ROOM_FLAGS(IN_ROOM(object)), ROOM_HOUSE_CRASH);
+    SET_BIT_AR(ROOM_FLAGS(IN_ROOM(object)), ROOM_HOUSE_CRASH);
   IN_ROOM(object) = NOWHERE;
   object->next_content = NULL;
 }
@@ -944,9 +969,9 @@ void extract_char(struct char_data *ch)
   char_from_furniture(ch);
   
   if (IS_NPC(ch))
-    SET_BIT(MOB_FLAGS(ch), MOB_NOTDEADYET);
+    SET_BIT_AR(MOB_FLAGS(ch), MOB_NOTDEADYET);
   else
-    SET_BIT(PLR_FLAGS(ch), PLR_NOTDEADYET);
+    SET_BIT_AR(PLR_FLAGS(ch), PLR_NOTDEADYET);
 
   extractions_pending++;
 }
@@ -966,9 +991,9 @@ void extract_pending_chars(void)
     next_vict = vict->next;
 
     if (MOB_FLAGGED(vict, MOB_NOTDEADYET))
-      REMOVE_BIT(MOB_FLAGS(vict), MOB_NOTDEADYET);
+      REMOVE_BIT_AR(MOB_FLAGS(vict), MOB_NOTDEADYET);
     else if (PLR_FLAGGED(vict, PLR_NOTDEADYET))
-      REMOVE_BIT(PLR_FLAGS(vict), PLR_NOTDEADYET);
+      REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_NOTDEADYET);
     else {
       /* Last non-free'd character to continue chain from. */
       prev_vict = vict;
@@ -1222,6 +1247,7 @@ struct obj_data *create_money(int amount)
   struct obj_data *obj;
   struct extra_descr_data *new_descr;
   char buf[200];
+  int y;
 
   if (amount <= 0) {
     log("SYSERR: Try to create negative or 0 money. (%d)", amount);
@@ -1261,7 +1287,9 @@ struct obj_data *create_money(int amount)
   obj->ex_description = new_descr;
 
   GET_OBJ_TYPE(obj) = ITEM_MONEY;
-  GET_OBJ_WEAR(obj) = ITEM_WEAR_TAKE;
+  for(y = 0; y < TW_ARRAY_MAX; y++)
+    obj->obj_flags.wear_flags[y] = 0;
+  SET_BIT_AR(GET_OBJ_WEAR(obj), ITEM_WEAR_TAKE);
   GET_OBJ_VAL(obj, 0) = amount;
   GET_OBJ_COST(obj) = amount;
   obj->item_number = NOTHING;

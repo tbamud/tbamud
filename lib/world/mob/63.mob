@@ -6,7 +6,7 @@ The young spider is ballooning by you.
    He looks freshly hatched and sprightly.  His young fangs are just growing in
 as of late.  
 ~
-cdg dk 0 E
+76 0 0 0 16 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -18,7 +18,7 @@ Yevaud, the Usurper of Midgaard is here, grinning evilly at you.
 ~
    Old, scaly, but still with a lot of bite in him left.  
 ~
-bcdjkl dk -1000 E
+3598 0 0 0 16 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -31,7 +31,7 @@ The wolf spider is here, licking its bloody fangs.
 ~
    The wolf spider is hairy, very hairy.  
 ~
-bdf 0 -300 E
+42 0 0 0 0 0 0 0 -300 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -44,7 +44,7 @@ The orc is stuck in the web and he can't get out.
    You notice an evil look in his eyes, but he seems quite drained of life, and
 all he can do is glare at you while he's stuck in this web.  
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 2 20 8 0d0+20 1d2+0
 20 400
 6 6 1
@@ -56,7 +56,7 @@ The queen wasp is here, thinking how tasty you look.
 ~
    You notice a glazed look in her eyes.  
 ~
-bdf 0 -800 E
+42 0 0 0 0 0 0 0 -800 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -68,7 +68,7 @@ A drone spider walks around doing its master's bidding.
 ~
    An ordinary drone spider.  
 ~
-cdg 0 -200 E
+76 0 0 0 0 0 0 0 -200 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -81,7 +81,7 @@ An ethereal spider strides here, traveling to different worlds.
    She winks in and out of reality.  It looks like it'd be difficult to hit her
 without a magical weapon.  
 ~
-cdg bcfgs 300 E
+76 0 0 0 524492 0 0 0 300 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 2
@@ -95,7 +95,7 @@ A human slave of Arachnos works here relentlessly.
 serves the spider Empress, Arachnos, though whether it is by choice or because
 he was beguiled, you are not fully certain.  
 ~
-cdgl 0 -50 E
+2124 0 0 0 0 0 0 0 -50 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -108,7 +108,7 @@ A quasit blinks in and out, grinning at you.
    Demoniac in nature, but more mischievous.  He twiddles his thumbs and creates
 a magical treasure!  
 ~
-cdgh bdfs -300 E
+204 0 0 0 524372 0 0 0 -300 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -121,7 +121,7 @@ The bird spider snaps its powerful jaws.
 ~
    The Bird Spider has very powerful jaws.  
 ~
-bdf dk -800 E
+42 0 0 0 16 0 0 0 -800 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -134,7 +134,7 @@ The hermit sits here and warns, 'Go back before it is too late!'
    A dishevelled veteran warrior in disguise is what he is, but he means well.
 
 ~
-bcdl dk 750 E
+2062 0 0 0 16 0 0 0 750 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -147,7 +147,7 @@ The Donjonkeeper eyes you and wonders how pure your soul is.
    He delves deeper into you as you stare at him.  Only those free of taint will
 be allowed to remain here safely.  
 ~
-bcdil dk 1000 E
+2318 0 0 0 16 0 0 0 1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -160,7 +160,7 @@ The guardian is obviously not doing his job.
 ~
    He looks like a lazy bum who sleeps half the time.  
 ~
-dfg dks 250 E
+104 0 0 0 524304 0 0 0 250 E
 17 15 0 3d3+170 2d2+2
 170 28900
 4 4 1
@@ -174,7 +174,7 @@ Arachnos the Empress of Spiders welcomes you with an evil smile.
 being one of her many slaves.  She does not possess the venomous fangs of normal
 spiders, but then, as you realize, she does not need them.  
 ~
-bcdjlnoq dfhkp -1000 E
+92686 0 0 0 65616 0 0 0 -1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -191,7 +191,7 @@ now the evil power of Arachnos feeds upon her intense magical energies.  She
 will never give up here fight against evil, though, and will continue her work
 in whatever manner presents itself.  
 ~
-bcdilno dk 1000 E
+26894 0 0 0 16 0 0 0 1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -204,7 +204,7 @@ A wormkin with no teeth plays here.
 ~
    It is a rather small dragon, and you almost feel sad about killing it.  
 ~
-bd dk 50 E
+10 0 0 0 16 0 0 0 50 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -217,7 +217,7 @@ A wormkin that has grown a bit stares at you inquisitively.
    A medium-sized dragon -- seems it hasn't killed anything yet by itself,
 though there is a first time for everything...  
 ~
-bd dk -300 E
+10 0 0 0 16 0 0 0 -300 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -229,7 +229,7 @@ Mahatma, that silly thief, is here, stealing everything.
 ~
    This professional thief has constructed a trap to catch unwary travellers.  
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1

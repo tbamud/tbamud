@@ -4,7 +4,7 @@ Outside the West Gate~
 equality.  The Western Road runs west from here into farmlands.  To the north is
 a deep, tangled forest.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -31,7 +31,7 @@ Western Road~
    Just west of you is a fork in the road, which splits northwest and southwest
 from the main road.  East of you is the entrance to the city of Jareth.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -48,7 +48,7 @@ again immediately.  It looks as if the northern path heads toward the mountains
 and some deep forest, while the southern road heads deep into the farmlands
 outside Jareth.  East is the entrance to the city.  
 ~
-263 0 0
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -66,7 +66,7 @@ S
 DragonTooth Road~
    Currently under construction - comr bsck soon!  
 ~
-263 0 0
+263 0 0 0 0 0
 D2
 ~
 ~
@@ -78,7 +78,7 @@ Western Road~
 from here, you see the gates to the city of Jareth.  To the south begins a long,
 dusty trail which heads out into a very desolate looking plains area.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -97,7 +97,7 @@ on their mind would be that they might be waylaid or attacked.  Northeast from
 here, you see the gates to Jareth, west the road continues toward a large lake
 and the many farms of this area.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -112,7 +112,7 @@ Western Road~
    The road runs east and west from here.  To the north, a small farm lies
 nestled in a large pasture.  From the smell of it, it must be a dairy farm.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -133,7 +133,7 @@ you realize that if you plan to stay here for any length of time, you will need
 to watch your step very carefully.  A barn lies to your north, to the south is
 the main Western Road.  
 ~
-263 0 0
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -149,7 +149,7 @@ Hay Barn~
 run.  A few stalls lie along the east wall for milking, and a ladder leads up
 into the loft.  
 ~
-263 0 0
+263 0 0 0 0 0
 D2
 ~
 ~
@@ -165,7 +165,7 @@ Hay Loft~
 breathe.  Hay lies stacked neatly on the west side of this room, ready to feed
 the cows with.  
 ~
-263 0 0
+263 0 0 0 0 0
 D5
 ~
 ~
@@ -177,7 +177,7 @@ Western Road~
 the west, you see a large lake, and to the south a dirt driveway leads to a
 large farmhouse.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -197,7 +197,7 @@ Driveway~
 horses for the city are raised, bred and sold at market.  The drive leads south
 to the farm itself or you may head north onto the Western Road.  
 ~
-263 0 0
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -213,7 +213,7 @@ Driveway~
 Girschwyn the Horseman.  To the north drive continues until it T's off on the
 Western Road.  
 ~
-263 0 0
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -229,7 +229,7 @@ Dirt Court~
 steeds Girschwyn sells to his customers.  A large barn lies to the north,
 Girschwyn's home lies to the west and the fields lie directly south.  
 ~
-263 0 0
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -253,7 +253,7 @@ Barn~
 his team of professional stablemen raise and train.  To the south is the
 entrance to the fields, and west leads out into the dirt court.  
 ~
-263 d 0
+263 8 0 0 0 0
 D2
 ~
 ~
@@ -271,7 +271,7 @@ if Farmer Girschwyn finds you here, he may get the wrong idea.  To the east is a
 huge field of corn which you may enter into.  Be careful, though, it looks like
 it would be pretty easy to get lost in there.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -287,7 +287,7 @@ Pasture~
 graze or sleep everywhere and anywhere.  To the north is the dirt court, and
 east is more field.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -304,7 +304,7 @@ from a rich horse trader like Girschwyn.  Instead, it is a comfortable country
 home, complete with worn couches and an old fireplace, which is currently not
 lit.  The exit from this fine home is to the east.  
 ~
-263 d 0
+263 8 0 0 0 0
 D1
 ~
 ~
@@ -320,7 +320,7 @@ Western Road~
 west is the shore of a huge lake.  The path seems to split, heading around the
 lake in both directions.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -336,7 +336,7 @@ Lake's Edge~
 heading north, one heading south.  The trail also heads east through the fertile
 farmlands of Jareth.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -355,7 +355,7 @@ Lake's Edge~
    The road heads west and north from here, around the lake.  You see a farm to
 the southwest.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -371,7 +371,7 @@ Lake's Edge~
 into the lake.  Across the road from the dock is farmstead, with rows upon rows
 of wheat and corn growing in the fields just south of here.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -387,7 +387,7 @@ Lake's Edge at the Dock~
 fishing.  Just south of you is a moderate-sized farmstead.  The road runs east
 and west from here.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -411,7 +411,7 @@ Dock~
 comfortable.  Doesn't seem to bother Erik, though, the little guy seems
 perfectly content here, swaying on this old construct.  
 ~
-263 0 2
+263 0 0 0 0 0
 D2
 ~
 ~
@@ -424,7 +424,7 @@ needed to plow, plant, mow the fields which this farm is responsible for
 maintaining.  South and east of you are wheat and corn fields, respectively.  
 Just west of you is a house.  The road is just north of you.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -447,7 +447,7 @@ Corn Field~
    Row upon row of corn surrounds you.  The leaves tickle you as you brush by
 them, the stalks swaying gently with the breeze.  
 ~
-263 0 2
+263 0 0 0 0 0
 D3
 ~
 ~
@@ -459,7 +459,7 @@ Wheat Field~
 ground, strewn with mud and leaves, looks as if it has seen some large machinery
 come through lately.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -471,7 +471,7 @@ Farm House~
 cooking facilities for Krandle and all of his farmhands.  Looks as if the wheat
 and corn industry may not be the most profitable one in Jareth.  
 ~
-263 d 0
+263 8 0 0 0 0
 D1
 ~
 ~
@@ -483,7 +483,7 @@ Lake's Edge~
 southeast of you, to the northeast you see a dock which leads out into the lake.
 
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -498,7 +498,7 @@ Lake's Edge~
    The road turns here, heading north and east around the lake.  Just north of
 here, the road splits off from the lake and heads west into the farmlands.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -513,7 +513,7 @@ Lake's Edge~
    The road splits here, heading north and south around the lake, but also
 heading off west into more farmland.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -533,7 +533,7 @@ Lake's Edge~
 the south you see that the road splits away from it's course around the lake and
 heads west out into farmland.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -550,7 +550,7 @@ continue north and west from here.  Strangely enough, a path seems to lead right
 into the water, and it looks as if the path continues on into the depths of the
 lake.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -565,7 +565,7 @@ Lake's Edge~
    The road turns again, running along the lake's edge.  You may head east or
 south from your current locale.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -581,7 +581,7 @@ Lake's Edge~
 You think you may see a small path leading north throught the high grass and
 into the forest, but you can't be sure.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -602,7 +602,7 @@ along seems quite large, and across on the opposite shore, you think you may see
 a bit of aqueduct work.  This lake is most probably the water source for most of
 the farmers in the area.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -619,7 +619,7 @@ lake's edge demands.  You may head west or south from here.  To the south, you
 see that the road splits away from it's travels around the lake and heads east
 into the country.  
 ~
-263 0 2
+263 0 0 0 0 0
 D2
 ~
 ~
@@ -636,7 +636,7 @@ region.  East of you, the road splits, following around a large lake's edge.
 To the north, you see the last farmstead on this western edge of Jareth's City
 Limits.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -657,7 +657,7 @@ seen better days, assuredly.  The yard is littered with debris, some of which
 you probably should not even try guessing it's origin, and the smell - whoa.  
 There is a barn north of here, it's rickety walls barely standing.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -674,7 +674,7 @@ black suede shoes if you did.  The amount of excrement piled everywhere in this
 barn makes keeping your feet clean an impossibility.  West of you is a pig yard
 and east is the chicken yard.  South exits into open, clean air.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -694,7 +694,7 @@ Chicken Yard~
 almost trip and fall.  All the chickens cluster around you, waiting for you to
 throw them some seeds.  
 ~
-263 0 2
+263 0 0 0 0 0
 D3
 ~
 ~
@@ -706,7 +706,7 @@ Pig Wallows~
 The pigs here roll on their back in shallow puddles, looking as pigs in...  
 Well, you know.  Kind of makes you glad you never decided to be a farmer, eh?  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -719,7 +719,7 @@ entered, leading eventually the city itself.  West of you the unknown begins.
 The land on either side of the road seems to be getting a bit more soft and wet,
 as if you may be coming into a swampy region.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -738,7 +738,7 @@ Western Road~
    The road still heads to the east and west from here, however there is a small
 path leading through some twisty, gnarled trees to your north.  
 ~
-263 0 2
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -759,7 +759,7 @@ farmsteads dotting the countryside, where the land flattens out and allows for
 that sort of work to be done.  The way west leads toward the ever-present Dragon
 Tooth Mountains, which seem to surround this whole land.  
 ~
-263 0 2
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -776,7 +776,7 @@ to be more prevalent the farther north you go.  The way becomes darker from the
 trees that seem to close in around the path and your senses scream at you to go
 back.  
 ~
-263 0 3
+263 0 0 0 0 0
 D2
 ~
 ~
@@ -789,7 +789,7 @@ farmlands giving way to evergreens and more versatile shrubbery.  The path
 continues it's way west and east from you and a small offshoot heads south as
 well.  
 ~
-263 0 5
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -807,7 +807,7 @@ S
 Gnarled and Twisty Path~
    This zone not yet complete - come again soon!  
 ~
-263 0 3
+263 0 0 0 0 0
 D2
 ~
 ~
@@ -820,7 +820,7 @@ south, becoming completely enclosed by trees and tall growth.  It heads north
 deeper into the dark forest, but a word to the wise, south looks much more safe
 and inviting.  
 ~
-263 ag 3
+263 65 0 0 0 0
 D2
 ~
 ~
@@ -836,7 +836,7 @@ that ahead lies trouble, pain, and possibly death.  The lake and the farmlands
 south of you begin to look very friendly through the trees, now.  This is your
 chance to turn back...  
 ~
-263 0 3
+263 0 0 0 0 0
 D2
 ~
 ~
@@ -850,7 +850,7 @@ it looks as if the path may come to a dead end.  The mountain wall rises
 alongside you to the east high into the clouds.  There is a crack in the
 mountain face just east of here.  
 ~
-263 0 5
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -870,7 +870,7 @@ A Dead End Path~
 tall rocky cliff.  The only apparent way out of here is north, the way you came
 from .
 ~
-263 0 5
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -889,7 +889,7 @@ the farmlands.  You see that the road crosses a natural bridge to the west, both
 sides of the road sloping steeply down in forestlands.  There have been no rails
 erected so you probably should watch your step.  And watch for loose gravel!  
 ~
-263 0 5
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -906,7 +906,7 @@ side of a deep, dark forest.  A forest who's floor lies close to five hundred
 feet below where you now stand.  The way to the west looks precarious, at best,
 the east looks much more safe.  Do you REALLY think you need to go west?  
 ~
-263 0 5
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -927,7 +927,7 @@ situation.  Amazingly, you see that there is some sort of trail leading down the
 north and south sides of the cliff, way down deep into the dark forests below.
 You would have to be insane to try and climb down that 'trail'!  
 ~
-263 0 5
+263 0 0 0 0 0
 D0
 ~
 ~
@@ -949,7 +949,7 @@ walkway heads toward safe, lush ground which heads toward Jareth's farmlands.
 To the west the walkway leads you deeper into a mountainous region, a region
 which is, to your knowledge, largely unexplored.  
 ~
-263 0 0
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -971,7 +971,7 @@ start, but no trace of greenery can you see anywhere.  Looking down, you see
 that the walkway spans over very large and very dark forests, one on either
 side.  Caution might be advised when crossing this bridge.  
 ~
-263 0 5
+263 0 0 0 0 0
 D1
 ~
 ~
@@ -988,7 +988,7 @@ length of a huge dark forest, miles beneath it's top.  It looks safe enough for
 crossing, but caution might be a good idea when attempting to traverse this
 precarious bridge.  
 ~
-263 0 5
+263 0 0 0 0 0
 D1
 ~
 ~

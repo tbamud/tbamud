@@ -205,6 +205,7 @@ int load_char(const char *name, struct char_data *ch)
   FILE *fl;
   char fname[40];
   char buf[128], buf2[128], line[MAX_INPUT_LENGTH + 1], tag[6];
+  char f1[128], f2[128], f3[128], f4[128];
 
   if ((id = get_ptable_by_name(name)) < 0)
     return (-1);
@@ -227,8 +228,6 @@ int load_char(const char *name, struct char_data *ch)
     GET_HEIGHT(ch) = PFDEF_HEIGHT;
     GET_WEIGHT(ch) = PFDEF_WEIGHT;
     GET_ALIGNMENT(ch) = PFDEF_ALIGNMENT;
-    PLR_FLAGS(ch) = PFDEF_PLRFLAGS;
-    AFF_FLAGS(ch) = PFDEF_AFFFLAGS;
     for (i = 0; i < NUM_OF_SAVE_THROWS; i++)
       GET_SAVE(ch, i) = PFDEF_SAVETHROW;
     GET_LOADROOM(ch) = PFDEF_LOADROOM;
@@ -239,7 +238,6 @@ int load_char(const char *name, struct char_data *ch)
     GET_COND(ch, THIRST) = PFDEF_THIRST;
     GET_COND(ch, DRUNK) = PFDEF_DRUNK;
     GET_BAD_PWS(ch) = PFDEF_BADPWS;
-    PRF_FLAGS(ch) = PFDEF_PREFFLAGS;
     GET_PRACTICES(ch) = PFDEF_PRACTICES;
     GET_GOLD(ch) = PFDEF_GOLD;
     GET_BANK_GOLD(ch) = PFDEF_BANK;
@@ -268,16 +266,33 @@ int load_char(const char *name, struct char_data *ch)
     NEXT_SITTING(ch) = NULL;
     GET_QUESTPOINTS(ch) = PFDEF_QUESTPOINTS;
 
+    for (i = 0; i < AF_ARRAY_MAX; i++)
+      AFF_FLAGS(ch)[i] = PFDEF_AFFFLAGS;
+    for (i = 0; i < PM_ARRAY_MAX; i++)
+      PLR_FLAGS(ch)[i] = PFDEF_PLRFLAGS;
+    for (i = 0; i < PR_ARRAY_MAX; i++)
+      PRF_FLAGS(ch)[i] = PFDEF_PREFFLAGS;
+
     while (get_line(fl, line)) {
       tag_argument(line, tag);
 
       switch (*tag) {
       case 'A':
-	     if (!strcmp(tag, "Ac  "))	GET_AC(ch)		= atoi(line);
-	else if (!strcmp(tag, "Act "))	PLR_FLAGS(ch)		= asciiflag_conv(line);
-	else if (!strcmp(tag, "Aff "))	AFF_FLAGS(ch)		= asciiflag_conv(line);
-	else if (!strcmp(tag, "Affs"))	load_affects(fl, ch);
-	else if (!strcmp(tag, "Alin"))	GET_ALIGNMENT(ch)	= atoi(line);
+        if (!strcmp(tag, "Ac  "))	GET_AC(ch)		= atoi(line);
+	else if (!strcmp(tag, "Act ")) {
+          sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+          PLR_FLAGS(ch)[0] = asciiflag_conv(f1);
+          PLR_FLAGS(ch)[1] = asciiflag_conv(f2);
+          PLR_FLAGS(ch)[2] = asciiflag_conv(f3);
+          PLR_FLAGS(ch)[3] = asciiflag_conv(f4);
+        } else if (!strcmp(tag, "Aff ")) {
+          sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+          AFF_FLAGS(ch)[0] = asciiflag_conv(f1);
+          AFF_FLAGS(ch)[1] = asciiflag_conv(f2);
+          AFF_FLAGS(ch)[2] = asciiflag_conv(f3);
+          AFF_FLAGS(ch)[3] = asciiflag_conv(f4);
+        } else if (!strcmp(tag, "Affs")) 	load_affects(fl, ch);
+        else if (!strcmp(tag, "Alin"))	GET_ALIGNMENT(ch)	= atoi(line);
 	else if (!strcmp(tag, "Alis"))	read_aliases_ascii(fl, ch, atoi(line));
 	break;
 
@@ -352,7 +367,12 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Plyd"))	ch->player.time.played	= atoi(line);
 	else if (!strcmp(tag, "PfIn"))	POOFIN(ch)		= strdup(line);
 	else if (!strcmp(tag, "PfOt"))	POOFOUT(ch)		= strdup(line);
-	else if (!strcmp(tag, "Pref"))	PRF_FLAGS(ch)		= asciiflag_conv(line);
+        else if (!strcmp(tag, "Pref"))
+          sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+          PRF_FLAGS(ch)[0] = asciiflag_conv(f1);
+          PRF_FLAGS(ch)[1] = asciiflag_conv(f2);
+          PRF_FLAGS(ch)[2] = asciiflag_conv(f3);
+          PRF_FLAGS(ch)[3] = asciiflag_conv(f4);
 	break;
 
       case 'R':
@@ -409,7 +429,7 @@ int load_char(const char *name, struct char_data *ch)
 void save_char(struct char_data * ch)
 {
   FILE *fl;
-  char fname[40], bits[127], buf[MAX_STRING_LENGTH];
+  char fname[40], buf[MAX_STRING_LENGTH];
   int i, id, save_index = FALSE;
   struct affected_type *aff, tmp_aff[MAX_AFFECT];
   struct obj_data *char_eq[NUM_WEARS];
@@ -506,15 +526,12 @@ void save_char(struct char_data * ch)
   if (GET_WEIGHT(ch)	   != PFDEF_HEIGHT)	fprintf(fl, "Wate: %d\n", GET_WEIGHT(ch));
   if (GET_ALIGNMENT(ch)  != PFDEF_ALIGNMENT)	fprintf(fl, "Alin: %d\n", GET_ALIGNMENT(ch));
 
-  if (PLR_FLAGS(ch)	   != PFDEF_PLRFLAGS) {
-    sprintascii(bits, PLR_FLAGS(ch));		fprintf(fl, "Act : %s\n", bits);
-  }
-  if (AFF_FLAGS(ch)	   != PFDEF_AFFFLAGS) {
-    sprintascii(bits, AFF_FLAGS(ch));		fprintf(fl, "Aff : %s\n", bits);
-  }
-  if (PRF_FLAGS(ch)	   != PFDEF_PREFFLAGS) {
-    sprintascii(bits, PRF_FLAGS(ch));		fprintf(fl, "Pref: %s\n", bits);
-  }
+    if(PLR_FLAGS(ch) != PFDEF_PLRFLAGS)
+      fprintf(fl, "Act : %u %u %u %u\n", PLR_FLAGS(ch)[0], PLR_FLAGS(ch)[1], PLR_FLAGS(ch)[2], PLR_FLAGS(ch)[3]);
+    if(AFF_FLAGS(ch) != PFDEF_AFFFLAGS)
+      fprintf(fl, "Aff : %u %u %u %u\n", AFF_FLAGS(ch)[0], AFF_FLAGS(ch)[1], AFF_FLAGS(ch)[2], AFF_FLAGS(ch)[3]);
+    if(PRF_FLAGS(ch) != PFDEF_PREFFLAGS)
+      fprintf(fl, "Pref: %d %d %d %d\n", PRF_FLAGS(ch)[0], PRF_FLAGS(ch)[1], PRF_FLAGS(ch)[2], PRF_FLAGS(ch)[3]);
 
   if (GET_SAVE(ch, 0)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr1: %d\n", GET_SAVE(ch, 0));
   if (GET_SAVE(ch, 1)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr2: %d\n", GET_SAVE(ch, 1));

@@ -6,26 +6,12 @@ shrills coming from within the city.  You think to yourself that you need to be
 ready for anything as you enter the gates.  An old sign is here, depicting a
 map of the city.
 ~
-125 c 1
+125 4 0 0 0 0
 D0
 Nothing.
 ~
 gateway~
 1 12500 12501
-E
-map sign~
-   +---------------+
-   |###############|
-   |#------#------#|
-   |#------#------#|
-   |#------#------#|
-   |########^######|
-   |#------#------#|
-   |#------#------#|
-   |#------#------#|
-   |###############|
-   +-------#-------+
-~
 E
 credits info~
    Builders  : Rhunter
@@ -44,13 +30,27 @@ Notes        : The remaining citizens are hiding out in the temple while the
 Zone: 125 was linked to the following zones:
 106 Elcardo                        at 12500 (south) ---> 10657
 ~
+E
+map sign~
+   +---------------+
+   |###############|
+   |#------#------#|
+   |#------#------#|
+   |#------#------#|
+   |########^######|
+   |#------#------#|
+   |#------#------#|
+   |#------#------#|
+   |###############|
+   +-------#-------+
+~
 S
 #12501
 Intersection of Trenton Avenue and Main Street.~
    You have entered what was once the great city of Hannah.  Main street leads
 to the north, while Trenton avenue leads east and west
 ~
-125 0 1
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -74,7 +74,7 @@ Main Street~
 the beautifully designed buildings which line the street, you expect hundreds
 of townspeople to appear going about their daily chores.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -90,7 +90,7 @@ Main Street~
 the beautifully designed buildings which line the street, you expect hundreds
 of townspeople to appear going about their daily chores.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -108,7 +108,7 @@ you can tell that someone took a lot of time designing and building them.  As
 you sit back and sip the cool, clear water from the fountain you silently
 wonder to yourself what kind of barbarians would destroy such a lovely place.
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -136,7 +136,7 @@ Main Street~
 the beautifully designed buildings which line the street, you expect hundreds
 of townspeople to appear going about their daily chores.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -152,7 +152,7 @@ Main Street~
 the beautifully designed buildings which line the street, you expect hundreds
 of townspeople to appear going about their daily chores.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -171,7 +171,7 @@ age as skeletal remains are shoveled up into large piles everywhere.  Someone
 or something must really care about this city to be working so hard to clean
 it.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -191,7 +191,7 @@ High Street~
 area is a total disaster scene.  Armor and skeletal remains are strewn about.
 It looks as if whatever battle happened here focused through this area.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -207,7 +207,7 @@ High Street~
 area is a total disaster scene.  Armor and skeletal remains are strewn about.
 It looks as if whatever battle happened here focused through this area.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -223,7 +223,7 @@ Intersection of Onyx Avenue and High Street  ~
 and the area is a total wreck.  A sign here reads that Onyx Avenue leads to the
 south while High Street leads east.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -239,7 +239,7 @@ Onyx Avenue~
 disrepair you can tell at one time this was a grand avenue.  You walk carefully
 as the onyx is very slick.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -255,7 +255,7 @@ Onyx Avenue~
 disrepair you can tell at one time this was a grand avenue.  You walk carefully
 as the onyx is very slick.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -271,7 +271,7 @@ Onyx Avenue~
 here than any other area along the avenue.  As you look around you notice a
 hidden alley to the east.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -291,7 +291,7 @@ Onyx Avenue~
 disrepair you can tell at one time this was a grand avenue.  You walk carefully
 as the onyx is very slick.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -307,7 +307,7 @@ Onyx Avenue~
 disrepair you can tell at one time this was a grand avenue.  You walk carefully
 as the onyx is very slick.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -322,7 +322,7 @@ Intersection of Onyx Avenue and Trenton Street~
    You have come upon a desolate intersection.  A lonely sign reads that Onyx
 Avenue leads to the north as Trenton Avenue leads to the east.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -338,7 +338,7 @@ Trenton Avenue~
 is trying to clean up the area as several large piles of debris are swept up
 into heaps of trash.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -354,7 +354,7 @@ Trenton Avenue~
 is trying to clean up the area as several large piles of debris are swept up
 into heaps of trash.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -370,7 +370,7 @@ Trenton Avenue~
 is trying to clean up the area as several large piles of debris are swept up
 into heaps of trash.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -386,7 +386,7 @@ Trenton Avenue~
 is trying to clean up the area as several large piles of debris are swept up
 into heaps of trash.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -402,7 +402,7 @@ Intersection of Trenton Avenue and Plexus Street~
 sign says that Plexus Avenue leads to the north while Trenton Avenue leads
 west.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -419,7 +419,7 @@ and restaurants that line the street seem to have been cleaned up and look as
 if you could start a business here.  Whomever has been working here has
 obviously spent many a day here.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -436,7 +436,7 @@ and restaurants that line the street seem to have been cleaned up and look as
 if you could start a business here.  Whomever has been working here has
 obviously spent many a day here.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -452,7 +452,7 @@ Plexus Street~
 As you look around the area you suddenly notice a hidden alley to the west.  
 
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -473,7 +473,7 @@ and restaurants that line the street seem to have been cleaned up and look as
 if you could start a business here.  Whomever has been working here has
 obviously spent many a day here.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -490,7 +490,7 @@ and restaurants that line the street seem to have been cleaned up and look as
 if you could start a business here.  Whomever has been working here has
 obviously spent many a day here.    
 ~
-125 0 0
+125 0 0 0 0 0
 D0
 ~
 ~
@@ -506,7 +506,7 @@ Intersection of High Street and Plexus Avenue~
 other intersections but it still looks as if it were well used.  A sign here
 says High Street leads to the west while Plexus Avenue leads south.    
 ~
-125 0 0
+125 0 0 0 0 0
 D2
 ~
 ~
@@ -523,7 +523,7 @@ as if the carnage that happened to the town never happened.  Whomever attacked
 this town obviously did not reach this area.  You are startled to hear voices.
 Human voices coming from further within the temple!    
 ~
-125 cd 0
+125 12 0 0 0 0
 D0
 ~
 ~
@@ -539,7 +539,7 @@ High Street~
 area is a total disaster scene.  Armor and skeletal remains are strewn about.
 It looks as if whatever battle happened here focused through this area.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -555,7 +555,7 @@ High Street~
 area is a total disaster scene.  Armor and skeletal remains are strewn about.
 It looks as if whatever battle happened here focused through this area.    
 ~
-125 0 0
+125 0 0 0 0 0
 D1
 ~
 ~
@@ -570,7 +570,7 @@ A dark, hidden alley  ~
    You have entered an area that you probably shouldn't have.  It is very dark
 here and you hear all kinds of weird noises.    
 ~
-125 a 0
+125 1 0 0 0 0
 D1
 ~
 ~
@@ -585,7 +585,7 @@ A dark, hidden alley  ~
    You have entered an area that you probably shouldn't have.  It is very dark
 here and you hear all kinds of weird noises.    
 ~
-125 a 0
+125 1 0 0 0 0
 D1
 ~
 ~
@@ -600,7 +600,7 @@ A dark, hidden alley  ~
    You have entered an area that you probably shouldn't have.  It is very dark
 here and you hear all kinds of weird noises.    
 ~
-125 a 0
+125 1 0 0 0 0
 D1
 ~
 ~
@@ -615,7 +615,7 @@ A dark, hidden alley  ~
    You have entered an area that you probably shouldn't have.  It is very dark
 here and you hear all kinds of weird noises.    
 ~
-125 ac 0
+125 5 0 0 0 0
 D1
 ~
 ~
@@ -631,7 +631,7 @@ A hall in the Temple~
 chatting with one another.  You notice that the hallway ends in the next room
 and splits off into two directions.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -647,7 +647,7 @@ An intersection inside the Temple of Hannah~
 glance at you as they walk past.  You notice several holy men standing in a
 small circle chanting.  The hallway leads to the east and west from here.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -667,7 +667,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -683,7 +683,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -699,7 +699,7 @@ A corner in a hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -715,7 +715,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -736,7 +736,7 @@ courtyard.  A row of benches sit on either side of the walkway as citizens of
 the town sit about talking with each other.  You notice a shaded empty bench
 beneath a large pin oak tree that looks like a nice place to take a break.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -752,7 +752,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -776,7 +776,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -792,7 +792,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -808,7 +808,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -824,7 +824,7 @@ A corner in the hallway in the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -840,7 +840,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -856,7 +856,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -872,7 +872,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -888,7 +888,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -904,7 +904,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -920,7 +920,7 @@ A corner in the hallway in the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D2
 ~
 ~
@@ -936,7 +936,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -952,7 +952,7 @@ A corner in the hallway in the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -968,7 +968,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -984,7 +984,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -1000,7 +1000,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -1016,7 +1016,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -1032,7 +1032,7 @@ A grand hallway inside the Temple of Hannah~
 As you walk along the plush red carpets mingling with the townspeople, you hear
 people laughing and chatting as if they are completely relaxed.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -1048,7 +1048,7 @@ Temple Hannah Market Place~
 attend to their daily chores.  The air is filled with the smell of freshly
 baked bread coming from the bakery in the near-vicinity.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -1064,7 +1064,7 @@ Temple Hannah Market Place~
 attend to their daily chores.  The air is filled with the smell of freshly
 baked bread coming from the bakery in the near-vicinity.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -1085,7 +1085,7 @@ around the bakery in a caring way.  You see a large case filled with cookies
 and other sweet baked goods.  Mikel the baker smiles at you and asks if he may
 help you.    
 ~
-125 cd 0
+125 12 0 0 0 0
 D3
 ~
 ~
@@ -1097,7 +1097,7 @@ Temple Hannah Market Place~
 attend to their daily chores.  The air is filled with the smell of freshly
 baked bread coming from the bakery in the near-vicinity.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -1116,7 +1116,7 @@ Temporary Housing~
    Since the city was ransacked everyone has taken up temporary refuge in the
 temple.  Bunks line the walls and mattresses litter the floors.    
 ~
-125 cd 0
+125 12 0 0 0 0
 D1
 ~
 ~
@@ -1128,7 +1128,7 @@ Temple Hannah Market Place~
 attend to their daily chores.  The air is filled with the smell of freshly
 baked bread coming from the bakery in the near-vicinity.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -1144,7 +1144,7 @@ Temple Hannah Market Place~
 attend to their daily chores.  The air is filled with the smell of freshly
 baked bread coming from the bakery in the near-vicinity.    
 ~
-125 cd 0
+125 12 0 0 0 0
 D0
 ~
 ~
@@ -1169,7 +1169,7 @@ You notice a short fat man with a bloodstained apron on put down a large
 cleaver and approach you smiling.  He uncovers another cabinet and asks if he
 may help you in any way.    
 ~
-125 d 0
+125 8 0 0 0 0
 D1
 ~
 ~
@@ -1181,7 +1181,7 @@ Temple of Hannah General Store and Goods~
 the walls as if begging you to buy it.  The shopkeeper turns and smiles at you
 then returns to his work.    
 ~
-125 d 0
+125 8 0 0 0 0
 D3
 ~
 ~
@@ -1194,7 +1194,7 @@ and nurses move about the room at a rapid pace trying to treat everyone.  It is
 very cool here and although it is hectic you feel like you start to relax a
 little.    
 ~
-125 d 0
+125 8 0 0 0 0
 D2
 ~
 ~
@@ -1208,7 +1208,7 @@ to sneak a weapon in brutally beaten and slain before you.  Suddenly one of the
 warriors turn towards you and motions you forward.  Several more guards enter
 the room from the guard barracks to the east.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -1228,7 +1228,7 @@ A hall in the Temple~
 chatting with one another.  You notice that the hallway ends in the next room
 and splits off into two directions.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -1246,7 +1246,7 @@ complete ruins.  As you look below you see Assassins attacking Korreds and orcs
 wondering aimlessly through out town.  You wonder to yourself if this town will
 ever be the way it once was.    
 ~
-125 d 0
+125 8 0 0 0 0
 D0
 ~
 ~
@@ -1263,7 +1263,7 @@ tending to their daily business.  You notice an arena at the far end of the
 barracks where several guards are sparring with each other.  A guard notices
 you and start to move towards you.    
 ~
-125 d 0
+125 8 0 0 0 0
 D3
 ~
 ~

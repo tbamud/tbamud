@@ -84,10 +84,45 @@ else
 end
 ~
 #1203
-free~
-2 c 100
-~
-* No Script
+Mynah Bird~
+0 d 100
+*~
+if %actor.is_pc%
+  if %c%<20
+    eval c 20
+    global c
+  end
+  if !(%speech%/=!)
+    eval c (%c%)+1
+    global c
+    set %c% %speech%
+    global %c%
+    eval 1 Hello
+    eval 2 Yes
+    eval 3 Killed him
+    eval 4 Food?
+    eval 5 Dig dig dig.
+    eval 6 Freddy says hi.
+    eval 7 Inconceivable.
+    eval 8 Stop mimicking me.
+    eval 9 I love you.
+    eval 10 Do you like me?
+    eval 11 Freak.
+    eval 12 You are not funny.
+    eval 13 Don't you ever shut up?.
+    eval 14 Eat my shorts.
+    eval 15 I'm pretty. Pretty bird.
+    eval 16 Let's tango.
+    eval 17 Doh.
+    eval 18 Who rang that bell??
+    eval 19 Beam me up.
+    eval 20 Shut up and get me a drink.
+    eval count %%random.%c%%%
+    eval ans %%%count%%%
+    wait %random.5%
+    say %ans%
+  endif
+endif 
 ~
 #1204
 Portal-Main Chamber~
@@ -275,31 +310,499 @@ nop %actor.questpoints(-1)%
 %echo% QP-1: %actor.questpoints%
 ~
 #1212
-Constant Raining~
-2 b 1
-~
-if %WeatherManivo% == bad
-%echo% The rain calms down to a subtle shower.
-set WeatherManivo good
-else
-%echo% The rain turns stronger and starts pouring bucketfulls at a time.
-set WeatherManivo bad
+Animal Chase Board Game - O1212~
+1 c 4
+go~
+* By Mordecai
+* Animal chase board game. Triggers: 1212-1214. O1212, M1212 in R1200.
+if !(%arg%==up||%arg%==down||%arg%==left||%arg%==right||!%created%||!%arg%||%arg%==stay)
+  return 0
+  if %cmd%!=gos
+    %send% %actor% Type: go < up | down | left | right >
+  end
+  halt
+end
+if %arg%
+  eval dedu %nextlev%*105
+  if %exx%>%dedu%
+    nop %actor.exp(-%dedu%)%
+    set dd %dedu%
+  end
+end
+if !%nextlev%
+  set nextlev 1
+  global nextlev
+elseif %nextlev_s%
+  eval nextlev %nextlev_s%
+  global nextlev
+end
+if !%created%
+  %force% %actor% createnewgame
+end
+if %created%
+  set p_dir %arg%
+  extract px 1 %playerco%
+  extract py 2 %playerco%
+  set [%py%][%px%] @g\*@n
+  switch %p_dir%
+    case right
+      if %px%!=10
+        eval px %px%+1
+      else
+        eval px 1
+      end
+    break
+    case left
+      if %px%!=1
+        eval px %px%-1
+      else
+        eval px 10
+      end
+    break
+    case down
+      if %py%!=1
+        eval py %py%-1
+      else
+        eval py 10
+      end
+    break
+    case up
+      if %py%!=10
+        eval py %py%+1
+      else
+        eval py 1
+      end
+    break
+  done
+  if %chase%>0
+    eval chase %chase%-1
+    global chase
+  end
+  if ([%py%][%px%]==%spec_prize%)
+    set spec_prize
+    global spec_prize
+    eval exo (%nextlev%*2000)
+    nop %actor.exp(%exo%)%
+    eval points %points%+(%nextlev%*2)
+    global points
+    set alert You can now FLY and kill the animal!
+    eval chase 5+(%nextlev%/70)+(%chase%)
+    global chase
+  end
+  eval holech %%[%py%][%px%]%%
+  if %holech%/=@@
+    if !(%chase%>0)
+      set alert @MYou fall into a bottomless pit!@n
+      unset points
+      set nextlev 0
+      global nextlev
+      unset created
+      unset exx
+      set ax 1
+      set ay 1
+      set px 10
+      set py 10
+      %force% %actor% createnewgame
+    else
+      set alert You FLY over the pit!
+    end
+  end
+  eval prz_ch %%[%py%][%px%]%%
+  if (%prz_ch.contains(p)%)
+    eval points (%points%+%nextlev%)
+    global points
+    eval exo (%nextlev%*950)
+    nop %actor.exp(%exo%)%
+    set [%py%][%px%] @c.@n
+    global [%py%][%px%]
+    eval prize_count (%prize_count%)+1
+    set winner [%prize_count%]
+    if %prize_count%>=%numofprizes%
+      eval nextlev (%nextlev%)+1
+      global nextlev
+      set winner @YYou Win!!!@n Moving to level %nextlev%.
+      set px 10
+      set py 10
+      set ax 1
+      set ay 1
+      set created
+      global created
+      set prize_count 0
+      set numofprizes 0
+      %force% %actor% createnewgame
+    end
+    global prize_count
+    set alert You collect a prize. %winner%
+  end
+  set playerco %px% %py%
+  global playerco
+  if (%random.15%==1)||(%spec_on%)
+    if !%spec_on%
+      eval spec_on %random.4%+(%nextlev%/90)
+      global spec_on
+    end
+    eval spec_on (%spec_on%)-1
+    global spec_on
+    if !%spec_prize%
+      eval spec_prize [%random.10%][%random.10%]
+      global spec_prize
+    else
+      set %spec_prize% @yY@n
+      eval spec_prize
+      global spec_prize
+    end
+  end
+  if %sizem%
+    set [%py%][%px%] @GO@n
+    unset sizem
+  else
+    set [%py%][%px%] @Go@n
+    set sizem 1
+    global sizem
+  end
+  extract ax 1 %animal%
+  extract ay 2 %animal%
+  set [%ay%][%ax%] @r\*@n
+  if !%dir_chosen%
+    set dir_chosen 1
+    if %px%>%ax%
+      eval dis_x (%px%-%ax%)
+      eval move_x 1
+    elseif %px%<%ax%
+      eval dis_x (%ax%-%px%)
+      eval move_x 2
+    end
+    if %py%>%ay%
+      eval dis_y (%py%-%ay%)
+      eval move_y 4
+    elseif %py%<%ay%
+      eval dis_y (%ay%-%py%)
+      eval move_y 3
+    end
+    if %dis_x%>%dis_y%
+      set ani_dir %move_x%
+    else %dis_x%<%dis_y%
+      set ani_dir %move_y%
+    end
+    eval dificulty 100-(%nextlev%*4)
+    if (%random.100%)<=(%dificulty%)
+      eval ani_dir %random.4%
+    end
+    if %chase%
+      if %ani_dir%==1
+        eval ani_dir 2
+      elseif %ani_dir%==2
+        eval ani_dir 1
+      elseif %ani_dir%==3
+        eval ani_dir 4
+      elseif %ani_dir%==4
+        eval ani_dir 3
+      end
+    end
+    if !%arg%
+      set ani_dir 5
+    end
+    switch %ani_dir%
+      case 1
+        if %ax%!=10
+          eval ax %ax%+1
+        else
+          eval ax 1
+        end
+      break
+      case 2
+        if %ax%!=1
+          eval ax %ax%-1
+        else
+          eval ax 10
+        end
+      break
+      case 3
+        if %ay%!=1
+          eval ay %ay%-1
+        else
+          eval ay 10
+        end
+      break
+      case 4
+        if %ay%!=10
+          eval ay %ay%+1
+        else
+          eval ay 1
+        end
+      break
+    done
+    set animal %ax% %ay%
+    global animal
+  end
+  eval [%ay%][%ax%] @Ra@n
+  eval ch_3 %%[%py%][%px%]%%
+  set ch_3 %ch_3%
+  if %ch_3.contains(a)%
+    if %chase%
+      eval pointinc %nextlev%*%random.10%
+      eval points (%points%+%pointinc%)
+      global points
+      eval exo %nextlev%*7000
+      nop %actor.exp(%exo%)%
+      eval nextlev %nextlev%+1
+      global nextlev
+      set alert You kill the animal. You gain %pointinc% points and a new level. (%nextlev%)
+      unset created
+      set ax 1
+      set ay 1
+      set px 10
+      set py 10
+      %force% %actor% createnewgame
+    else
+      set alert You have been eaten by the @Ranimal@n.
+      set points 0
+      global points
+      set nextlev 0
+      global nextlev
+      unset created
+      unset chase
+      set exx 0
+      global exx
+      %force% %actor% createnewgame
+    end
+  end
+  eval h 11
+  while (%h%>1)
+    eval h (%h%)-1
+    eval printrow%h% %%[%h%][1]%% %%[%h%][2]%% %%[%h%][3]%% %%[%h%][4]%% %%[%h%][5]%% %%[%h%][6]%% %%[%h%][7]%% %%[%h%][8]%% %%[%h%][9]%% %%[%h%][10]%%
+    *eval printrow%h% %%row%h%%%
+  done
+  if %numofprizes%<10
+    set numop 0%numofprizes%
+  else
+    set numop %numofprizes%
+  end
+  if %prize_count%<10
+    set przc 0%prize_count%
+  else
+    set przc %prize_count%
+  end
+  if %nextlev%<10
+    set levlev 000%nextlev%
+  elseif %nextlev%<100
+    set levlev 00%nextlev%
+  elseif %nextlev%<1000
+    set levlev 0%nextlev%
+  else
+    set levlev %nextlev%
+  end
+  eval exx (%exo%+%exx%)-(%dd%)
+  if %exx%<=0
+    set exx 0
+  end
+  global exx
+  eval cht %chase%-1
+  if %cht%>0
+    set chy You can FLY and chase the animal %cht% more times.
+  end
+  set snd %send% %actor% @n
+  %force% %actor% cls
+  %snd%                    )       \\   /      (
+  %snd%                   /\|\\      )\\_/(     /\|\\
+  %snd% \*                / \| \\    (/\\\|/\\)   / \| \\         \*
+  %snd% \|\`._____________/__\|__o____\\\`\|'/___o__\|__\\______.'\|
+  %snd% \|                    '\^\` \|  \\\|/   '\^\`             \|
+  %snd% \|                        \|   V   level: %levlev%      \| Dir: @C %arg%@n
+  %snd% \|   %printrow10%  \| @M@@@n = Bottomless Pit     \| Points: @Y%points%@n
+  %snd% \|   %printrow9%  \| @yY@n = Power Up           \| Exp: @C%exx%@n
+  %snd% \|   %printrow8%  \| @Wp@n = Prize              \| AMU: %dedu%
+  %snd% \|   %printrow7%  \| @Go@n = You                \|
+  %snd% \|   %printrow6%  \| @Ra@n = Animal             \|
+  %snd% \|   %printrow5%  \| @cTo Move Type:@n          \|
+  %snd% \|   %printrow4%  \| @Cgo <up\|down\|left\|right>@n\|
+  %snd% \|   %printrow3%  \|                        \|
+  %snd% \|   %printrow2%  \| @BCost of AMU exp per MV@n \|
+  %snd% \|   %printrow1%  \|    @BIf you have exp.@n    \|
+  %snd% \|                        \|                        \|
+  %snd% \|                        \|  NEEDED: @R%numop%@n HAVE: @G%przc%@n   \|
+  %snd% \| .______________________\|______________________. \|
+  %snd% \|'         l    /\\ /     \\\\            \\ /\\    l \`\|
+  %snd% \*          l  /   V       ))             V  \\  l  \*
+  %snd%            l/            //                   \\I
+  %snd%                          V
+  %snd%  %alert%
+  %snd%  %chy%
+  %snd%  Animal: ax:%ax% ay:%ay% You: px:%px% py:%py%
 end
 ~
 #1213
-new trigger~
-2 h 100
-~
-set testvar This is a Test!! :)
-%echo% %testvar%
-remote testvar %actor.id%
+Animal Chase Board - Newgame - O1212~
+1 c 100
+newgame~
+* By Mordecai
+* Animal chase board game. Triggers: 1212-1214. O1212, M1212 in R1200.
+if %arg.cdr% == %actor.id%
+  eval nextlev %arg.car%
+  global nextlev
+end
+if %nextlev%>1&&%points%>0
+  set dd scoreboardmob
+  if %dd.vnum%>0
+    set nums 1
+    while %nums%
+      eval j %j%+1
+      eval nums %dd.varexists(%j%)%
+      if %nums%
+        eval nums2 %%dd.%j%%%
+        if (%nums2%/=%actor.name%)
+          extract partlev 2 %nums2%
+          set added 1
+          if %partlev%<%nextlev%
+            set %j% %actor.name% %nextlev% %points% %exx%
+            remote %j% %dd.id%
+          end
+        end
+      else
+        if !%added%
+          set %j% %actor.name% %nextlev% %points% %exx%
+          remote %j% %dd.id%
+        end
+      end
+    done
+  end
+end
+unset chase
+set tail 1
+global tail
+eval animal 1 1
+global animal
+eval playerco 10 10
+global playerco
+set [1][1] @ra@n
+set [10][10] @Go@n
+global [1][1]
+global [10][10]
+eval numofprizes 0
+global numofprizes
+set prize_count 0
+global prize_count
+set created 1
+global created
+eval ww 11
+while (%ww%>1)
+  eval ww %ww%-1
+  eval n %ww%
+  eval row %random.10%
+  eval r_col (%random.3%-1)
+  set [%n%][1] @c.@n
+  global [%n%][1]
+  set [%n%][2] @c.@n
+  global [%n%][2]
+  set [%n%][3] @c.@n
+  global [%n%][3]
+  set [%n%][4] @c.@n
+  global [%n%][4]
+  set [%n%][5] @c.@n
+  global [%n%][5]
+  set [%n%][6] @c.@n
+  global [%n%][6]
+  set [%n%][7] @c.@n
+  global [%n%][7]
+  set [%n%][8] @c.@n
+  global [%n%][8]
+  set [%n%][9] @c.@n
+  global [%n%][9]
+  set [%n%][10] @c.@n
+  global [%n%][10]
+  if (%r_col%)
+    while (%r_col%<3)
+      eval r_col %r_col%+1
+      eval jj %random.10%
+      if !(%posis%/=[%n%][%jj%])
+        eval numofprizes %numofprizes%+1
+        global numofprizes
+        eval [%n%][%jj%] @Wp@n
+        global [%n%][%jj%]
+        set posis %posis% [%n%][%jj%]
+      end
+    done
+  end
+done
+eval r_ttt %nextlev%-35
+if (%r_ttt%>0)
+  eval hrt (%random.6%-1)+(%nextlev%/20)
+  while %hrt%>0
+    eval hrt %hrt%-1
+    eval j8 %random.10%
+    eval j9 %random.10%
+    eval cer %%[%j9%][%j8%]%%
+    if !(%cer%/=p)
+      eval [%j9%][%j8%] @M\@@@n
+      global [%j9%][%j8%]
+    end
+  done
+end
+if !(%[10][10]%/=p)
+  set [10][10] @c.@n
+  global [10][10]
+end
 ~
 #1214
-Room random echo to test spec-var's~
-2 bg 100
-~
-%echo% This trigger commandlist is not complete!
-%echo% ^% ^* test
+Scoreboard Mob~
+0 d 100
+score scores~
+* By Mordecai
+* Animal chase board game. Triggers: 1212-1214. O1212, M1212 in R1200.
+set j 1
+while %self.varexists(%j%)%
+  eval r %%self.%j%%%
+  eval nam %r.car%
+  eval k %nam.strlen%
+  while %k%<15
+    eval k %k%+1
+    eval sgg %%s%j%%%
+    set s%j% %sgg%-
+  done
+  eval j %j%+1
+done
+%echo% @yO===============SCORE======BOARD=====================O@n
+wait 1
+%echo% O=#==NAME============\|=Level=\|=Points==\|=EXP=========O
+set i 1
+set j 1
+while %self.varexists(%j%)% 
+  eval r %%self.%j%%%
+  eval nam %r.car%
+  extract ll 2 %r%
+  extract points 3 %r%
+  extract exp 4 %r%
+  eval sp %%s%j%%%
+  if %ll%<10
+    set ll 0000%ll%
+  elseif %ll%<100
+    set ll 000%ll%
+  elseif %ll%<1000
+    set ll 00%ll%
+  elseif %ll%<10000
+    set ll 0%ll%
+  end
+  if %points%<10
+    set points 000000%points%
+  elseif %points%<100
+    set points 00000%points%
+  elseif %points%<1000
+    set points 0000%points%
+  elseif %points%<10000
+    set points 000%points%
+  elseif %points%<100000
+    set points 00%points%
+  elseif %points%<1000000
+    set points 0%points%
+  end
+  eval d %j%
+  if %d%<9
+    set d 0%j%
+  end
+  %echo% \|@g%d%@n: @w%nam%@n %sp%\| @c%ll%@n \| @y%points%@n \| @W%exp%@n
+  eval j %j%+1
+done
+%echo% O=#==================================================O
 ~
 #1217
 new trigger~

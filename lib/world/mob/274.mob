@@ -6,7 +6,7 @@ Papa Smurf is here making sure everything in Smurfville is smurfy.
    Papa Smurf, the leader of the smurfs, looks like one mean dude.  Both smart
 and strong he is prepared for any obstacle.    
 ~
-dglnop m 550 E
+59464 0 0 0 8192 0 0 0 550 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -20,7 +20,7 @@ Gargamel is standing here plotting against the smurfs.
    Gargamel, the archenemy of the do-goody smurfs, is definitly evil.  He
 scowls at you and wonders why you are invading his privacy.    
 ~
-bdegjlmn cde -700 E
+14938 0 0 0 56 0 0 0 -700 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -33,7 +33,7 @@ Brainy Smurf is here pondering something.
    Brainy Smurf looks to be, of course, smart.  But he spends too much time
 with his nose in a book to be a very good fighter you imagine.    
 ~
-dghlo 0 600 E
+18632 0 0 0 0 0 0 0 600 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -47,7 +47,7 @@ Azrael is loafing around thinking about having a tasty smurf for dinner.
 ~
    Azrael the cat, Gargamel's sidekick, appears to be eyeing you as food.    
 ~
-bcdglmp k -650 E
+38990 0 0 0 0 0 0 0 -650 E
 6 18 6 1d1+60 1d2+1
 60 3600
 5 5 1
@@ -60,7 +60,7 @@ Barney, the purple dinosaur, is here.
    Barney, once every childs hero, appears now as a lean, mean, purple fighting
 machine.  He is foaming from the mouth and quite psychotic at this point.    
 ~
-bcdgo 0 0 E
+16462 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -74,7 +74,7 @@ Artist Smurf is here thinking up his next great masterpiece.
    Artist Smurf is very creative.  Making paintings ranging from Smurfette to
 the Smurfberry Patch.    
 ~
-cdglor 0 500 E
+149580 0 0 0 0 0 0 0 500 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -87,7 +87,7 @@ Fireman Smurf is watching for any sign of smoke.
    Fireman Smurf spends his day wandering around looking for fires to fight.  
 
 ~
-dglo 0 650 E
+18504 0 0 0 0 0 0 0 650 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -100,7 +100,7 @@ Smurfette is standing around looking pretty.
    Smurfette looks extremely beautiful, if you were blue and extremely small.
   
 ~
-dglno 0 550 E
+26696 0 0 0 0 0 0 0 550 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -112,7 +112,7 @@ Clumsy Smurf is here trying not to trip over his own feet.
 ~
    Clumsy Smurf is, well, clumsy.  You should put him out of his misery.    
 ~
-dglo 0 600 E
+18504 0 0 0 0 0 0 0 600 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -124,7 +124,7 @@ Grumpy Smurf is here, looking extremly annoyed.
 ~
    Grumpy Smurf is frowning at you.    
 ~
-dglno j 400 E
+26696 0 0 0 1024 0 0 0 400 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -136,7 +136,7 @@ Johann is here helping the smurfs.
 ~
    Johann is a small boy who continually helps the smurfs do thier deeds.    
 ~
-bdglmo 0 500 E
+22602 0 0 0 0 0 0 0 500 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -149,7 +149,7 @@ Sebastian is here helping the smurfs.
    Sebastian is a small boy who continually helps the smurfs do thier deeds.  
 
 ~
-bdglmo 0 500 E
+22602 0 0 0 0 0 0 0 500 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -162,7 +162,7 @@ Vainity Smurf is here checking his looks with a small mirror.
    Vainity Smurf is well groomed and fancily dressed.  You wouldn't want to get
 blood on his new outfit, now would you?    
 ~
-dglo 0 550 E
+18504 0 0 0 0 0 0 0 550 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -175,7 +175,7 @@ Athletic Smurf is doing squats here.
    Athletic Smurf is a big buff smurf.  His bulging blue biceps stick out from
 his smurfy shirt.    
 ~
-dglo 0 600 E
+18504 0 0 0 0 0 0 0 600 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -187,7 +187,7 @@ Handy Smurf is here repairing something.
 ~
    Handy Smurf appears to be a pretty normal fix-it-all smurf.    
 ~
-dglo 0 600 E
+18504 0 0 0 0 0 0 0 600 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -199,7 +199,7 @@ A smurf is here doing smurfy things.
 ~
    You see a little blue happy man.    
 ~
-dglo 0 650 E
+18504 0 0 0 0 0 0 0 650 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -212,7 +212,7 @@ Miner Smurf is here digging a hole.
 ~
    Miner Smurf's blue skin is covered with mid and lamp oil.    
 ~
-bdglo k 600 E
+18506 0 0 0 0 0 0 0 600 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1

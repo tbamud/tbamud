@@ -16,7 +16,7 @@ See room 3700 for more detail.
 Zone 38 is linked to the following zones:
 37 Capital Sewer System           at  3801 (up   ) --->  3717
 ~
-38 j 0
+38 512 0 0 0 0
 S
 #3801
 In the Northern Drainhole~
@@ -27,7 +27,7 @@ grate that seems to make the majority of the bottom of the draninhole.  The
 drainhole is only about 20' deep, but you still wouldn't be able to climb out
 easily without the ladder.    
 ~
-38 ad 0
+38 9 0 0 0 0
 D4
    As you glance upward you see a cateract of slime flowing in from the
 northern pipe of the capital sewer system above.    
@@ -42,17 +42,17 @@ it.
 grate down~
 1 3804 3802
 E
+red grate~
+   It is a large, circular grate.  It seems to be made out of iron, but it is
+too icky to tell.  It also seems that it was once painted red, but the paint
+eroded away with the sewage that constantly barrages it.    
+~
+E
 ladder~
    The ladder is simply some iron bars the bend out towards the center of the
 drainhole.  They are dripping with ooze and sewage.  You feel reluctant to
 touch them, but you eventually build up the courage.  The bars are slick in
 some parts and sticky in others.  Gross!    
-~
-E
-red grate~
-   It is a large, circular grate.  It seems to be made out of iron, but it is
-too icky to tell.  It also seems that it was once painted red, but the paint
-eroded away with the sewage that constantly barrages it.    
 ~
 S
 #3802
@@ -63,7 +63,7 @@ above.  The slime is so deep here that you are being soaked up to your knees.
 What seems like a tunnel is at the end of this pipe to the north.  The sewage
 nearly makes you slip as it flows continually towards the tunnel.    
 ~
-38 ad 0
+38 9 0 0 0 0
 D0
    You see the big pipe continuing towards a large tunnel.    
 ~
@@ -88,7 +88,7 @@ dignified person would ever spend more time then he needed to down here.  To
 the north there is a tunnel with a river of sewage, what could be down there?
   
 ~
-38 ad 0
+38 9 0 0 0 0
 D0
    You see where the big pipe ends.  It is a giant opening.    
 ~
@@ -115,7 +115,7 @@ tunnel of the sewers, only to make another one to who knows where?  The iron
 walls have been reduced to rust and rubbage from centuries of constant siege of
 refuse.    
 ~
-38 ad 0
+38 9 0 0 0 0
 D0
 ~
 ~
@@ -132,12 +132,12 @@ pipe.  You see what appears to be a crack in the roof...
 secret up~
 1 0 3805
 E
-sign~
-   It is a big, silver sign that says "Poisonous Sewage: KEEP OUT!  "
-~
-E
 Sewage~
    The digusting sewage flows on its smelly way.    
+~
+E
+sign~
+   It is a big, silver sign that says "Poisonous Sewage: KEEP OUT!  "
 ~
 S
 #3805
@@ -147,7 +147,7 @@ trap door.  The walls seem to have been crudely dug away by animal hands.  You
 fell cluastophobic in this tiny passage.  YOu should either move up towards the
 light or down to the pipe.    
 ~
-38 cdi 0
+38 268 0 0 0 0
 D4
 You see a secret chamber.
 ~
@@ -168,12 +168,18 @@ they are carved away well.  There must be a light somewhere, but you can't seem
 to find it.  There is clutter trashed about.  For a thief, there doesn't seem to
 be that many riches around.  There must be gold somewhere...  
 ~
-38 d 0
+38 8 0 0 0 0
 D5
    The chamber passage is below.    
 ~
 ~
 0 0 3805
+E
+metal box secret safe~
+   It's a secret safe!  It seems to be encased in black diamond, the strongest
+of all diamonds.  Its metal knob seems to have rusted off, rendering the safe
+useless.  That means the contents could still be inside...    
+~
 E
 clutter trash~
    You see much trash strewn about, covering the floor in filth.  You see
@@ -181,18 +187,12 @@ rusted helmets, bones, rotting backpacks, and other unusable items.  It seems
 to reflect the last fight of some unfortunate people.  You see what appears to
 be a metal box in the ins
 ~
-E
-metal box secret safe~
-   It's a secret safe!  It seems to be encased in black diamond, the strongest
-of all diamonds.  Its metal knob seems to have rusted off, rendering the safe
-useless.  That means the contents could still be inside...    
-~
 S
 #3807
 The Sewer Main~
 You are in an unfinished room.
 ~
-38 a 7
+38 1 0 0 0 0
 D1
 ~
 ~
@@ -206,7 +206,7 @@ S
 Sewer Main~
 You are in an unfinished room.
 ~
-38 0 0
+38 0 0 0 0 0
 D1
 ~
 ~
@@ -216,7 +216,7 @@ S
 Sewer Main~
 You are in an unfinished room.
 ~
-38 0 0
+38 0 0 0 0 0
 S
 #3899
 An Eternal Airplane to Nowhere~
@@ -228,6 +228,6 @@ quiet and small twinkles far below, along with your responsibilities and cares.
 All you hear is the gentle hum of the airline, and the draining of your
 thoughts.  Clear and precise you can think about what inspires.  Think
 ~
-38 defi 0
+38 312 0 0 0 0
 S
 $~

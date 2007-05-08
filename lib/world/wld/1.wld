@@ -6,7 +6,7 @@ both up and down.  Small rooms adjoin this chamber in all four cardinal
 directions.  It is here mortals come to stay informed and discuss their
 adventures.    
 ~
-1 cde 0
+1 28 0 0 0 0
 D0
 ~
 ~
@@ -82,7 +82,7 @@ walls.  Large windows reach from the floor to the ceiling, giving an excellent
 view of the city and countryside beyond.  An altar stands in the middle of the
 room with a statue on each side.    
 ~
-1 e 0
+1 16 0 0 0 0
 D2
 ~
 ~
@@ -92,18 +92,18 @@ D5
 ~
 0 0 100
 E
-statue~
-   As you examine the statues more closely you realize they must resemble the
-two gods responsible for the creation and ongoing protection of Sanctus, Ferret
-and Rumble.  They both radiate a strength and power that resembles the solid
-white marble they were crafted from.    
-~
-E
 altar~
    The altar is made from black granite and has been carved into a small basin
 with a high back.  Almost as if it was meant to be some sort of seat.  
 Inscriptions in some foreign tongue are written on every square inch of the
 altar.  You wonder what they must say and who could have written it.    
+~
+E
+statue~
+   As you examine the statues more closely you realize they must resemble the
+two gods responsible for the creation and ongoing protection of Sanctus, Ferret
+and Rumble.  They both radiate a strength and power that resembles the solid
+white marble they were crafted from.    
 ~
 S
 T 158
@@ -116,7 +116,7 @@ to become masters of their discipline.  The walls are covered in a white see-
 through cloth giving you the impression of being inside of a tent rather than
 in a room.  The room glows brightly, though you cannot tell from what source.
 ~
-1 de 0
+1 24 0 0 0 0
 D5
 ~
 ~
@@ -131,7 +131,7 @@ is in need.  A large rectangular table with thirteen chairs surrounding it
 fills the center of the room.  A large pane window overhead admits a glowing
 aura that fills the room with serenity.    
 ~
-1 d 1
+1 8 0 0 0 0
 D5
 ~
 ~
@@ -153,7 +153,7 @@ your mystical arts.  For those who have trained hard enough they shall receive
 assistance in their pursuit of knowledge and power.  Others will find peace in
 this void and never be able to return.    
 ~
-1 de 0
+1 24 0 0 0 0
 D5
 ~
 ~
@@ -173,7 +173,7 @@ most reverred of all the classes as they are the most powerful.  But that power
 has a price.  Only five Magi have survived.  Five decorative cushions are
 placed in a circle in the middle of the room.    
 ~
-1 d 1
+1 8 0 0 0 0
 D5
 ~
 ~
@@ -197,7 +197,7 @@ more than a few feet in any direction.  It reminds you of looking at a mirage.
 You can only see it if you glance to one side, it disappears as soon as you try
 to look straight at it.  Stone stairs lead down into the city wall.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -219,7 +219,7 @@ battling skills.  Racks of weapons line two of the four walls.  The room is
 filled with a smoky haze from four brass lanterns suspended from the ceiling.
 The room smells of sweat and blood.    
 ~
-1 de 0
+1 24 0 0 0 0
 D5
 ~
 ~
@@ -234,11 +234,16 @@ city in case of an attack.  The room is a mess with maps piled high and
 scattered haphazardly wherever there is room.  This is where the defense of the
 city is run from.    
 ~
-1 d 0
+1 8 0 0 0 0
 D5
 ~
 ~
 0 0 142
+E
+table~
+   The table is made out of cherry.  It is worn from years of use.  The glass
+top allows for an excellent view of the map protected within.    
+~
 E
 map~
    The map is a geographic representation of Sanctus.  Not even really a map,
@@ -246,11 +251,6 @@ more of a scaled model.  The walls and buildings of the city are raised higher
 than the rest of the map to give it a third dimension.  Small soldiers are
 scattered around the top of the table to help the War Master place his men.  
 
-~
-E
-table~
-   The table is made out of cherry.  It is worn from years of use.  The glass
-top allows for an excellent view of the map protected within.    
 ~
 S
 #109
@@ -261,7 +261,7 @@ that plays tricks on the eyes.  A few of the shadows may actually be people,
 hidden easily in the darkness Those who have chosen the discipline of thievery
 can learn invaluable skills here to further their training and wealth.    
 ~
-1 de 0
+1 24 0 0 0 0
 D5
 ~
 ~
@@ -275,7 +275,7 @@ internal affairs of the city.  They control the trade and finances of the city.
 Many disagree with this concept but none can disagree with the results.  
 Thieves are masters when it comes to politics.    
 ~
-1 d 0
+1 8 0 0 0 0
 D5
 ~
 ~
@@ -289,7 +289,7 @@ Temple of Sanctus rises above you to the southeast.  It's single spire reaching
 up into the sky higher than any other building in the realm.  A stone stairwell
 leads down to the inner city.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -304,7 +304,7 @@ and a strange smell.  Few people know, or want to know, what lies beyond the
 city walls and the safety of the dome.  A stone stairwell leads down to the
 inner city.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -318,7 +318,7 @@ small room is decorated with paintings of famous quests and the exulted hereos
 that have become common names throughout the realm.  It is said that completing
 a quest is a prerequisite towards immortality.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -341,7 +341,7 @@ as the sentinels grow weary from their standing their posts hour after hour.
 The city to the east looks tranquil and safe.  You can not see much to the west
 past the shimmering dome.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -363,7 +363,7 @@ to fight.  The city has never fallen to this day.  To the north you see the
 barracks, to the south the Hall of Clerics.  A stone stairwell leads
 down to the inner city.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -378,23 +378,23 @@ yourself to flee the second you think a portal may be falling apart.  The
 charred silhouette of what once must have been a man is blasted into one of the
 walls.    
 ~
-1 e 0
+1 16 0 0 0 0
 D1
 ~
 ~
 0 0 100
+E
+hole~
+   You can look out over the inner wall to the western side of Sanctus.  The
+smell of charred human remains and smoldering plaster makes your eyes water so
+it is difficult to see much else through the tiny hole.    
+~
 E
 man silhouette~
    The distinct outline of a human body that must have taken the brunt of the
 blast when the portal imploded.  You wonder what or who it might have been.  
 You can still see pieces of cloth and bone buried deeply into the wall inside
 the shadow of the unlucky man.    
-~
-E
-hole~
-   You can look out over the inner wall to the western side of Sanctus.  The
-smell of charred human remains and smoldering plaster makes your eyes water so
-it is difficult to see much else through the tiny hole.    
 ~
 S
 #117
@@ -405,7 +405,7 @@ are said to be able to create portals through their arcane arts.  But many die
 in the process.  The skill is as of yet unmastered.  It is rumored that the
 evil Drakkar has achieved this mastery, but none have ever witnessed it.    
 ~
-1 de 0
+1 24 0 0 0 0
 D3
 ~
 ~
@@ -419,7 +419,7 @@ of the Magi.  The Temple of Sanctus rises from the center of the city to the
 west.  All looks well from this perspective.  You cannot see beyond the city
 walls.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -434,7 +434,7 @@ have already died.  The War Master is planning for the worst, and preparing the
 army for battle.  The guards stir restlessly below you.  A stone stairwell
 leads down to the gate.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -457,7 +457,7 @@ still eratic and uncontrollabe so anyone who uses them does so at their own
 risk.  The flickering of the portal casts eerie shadows along the white walls.
 This must be the only room in the temple that has an uneasy feeling about it.
 ~
-1 de 0
+1 24 0 0 0 0
 D0
 ~
 ~
@@ -470,7 +470,7 @@ To the west you can see the Hall of Clerics.  To the south the Tower of the
 High Council of Clerics glows pristinely white.  The town seems peaceful and
 untroubled by the turmoils outside the walls.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -491,7 +491,7 @@ protecting dome that ensures your safety.  To the south the black stone of the
 Tower of the Magi glistens serenely.  To the east you can see the Mansion of
 the Magi in all its extravagance.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -513,7 +513,7 @@ Apprentices rush in and out grabbing what they need to aid the wounded.  Robes
 of fine wool hang on pegs in the back of the closet.  They look like the same
 robes the apprentices wear.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -526,24 +526,24 @@ ceiling, and walls are all bright white and almost painful to look at.  A bed,
 table, desk, and a small personal shrine are the only furniture in the room.  
 Even the highest priest is not allowed the luxuries that they deserve.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
 0 0 129
-E
-table desk chair~
-   The table, desk, and chair are made from solid oak of the highest quality.
-A thin goose down mattress and pillow are the only comfortable looking items in
-the room.  The desk is bare and all the drawers are empty.  It is as if no one
-even lives here.    
-~
 E
 shrine~
    A beutiful shrine.  It has two white marble figures facing each other with a
 painting of the city below them.  The two figures seem to be looking down at
 the city with looks of worry and hopelessness.  An unlit candle and mirror lay
 on the floor beside the small shrine.    
+~
+E
+table desk chair~
+   The table, desk, and chair are made from solid oak of the highest quality.
+A thin goose down mattress and pillow are the only comfortable looking items in
+the room.  The desk is bare and all the drawers are empty.  It is as if no one
+even lives here.    
 ~
 S
 #125
@@ -554,7 +554,7 @@ anything in three dimensions.  The floor, ceiling, and sky all are the same
 bleak grey color.  It is in the Magi come to test their mystical arts.  It is
 not a good place to get lost in.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -588,7 +588,7 @@ landmark.  A person could easily get lost in this nothingness.  It is this
 nothingness that helps the Magi hone their abilities before unleashing them
 into the real world.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -622,7 +622,7 @@ adventurers aid can be sought, but for a price.  Apprentices gowned in white
 robes bring water and fresh bandages to the experienced healers who aid the
 wounded.    
 ~
-1 d 0
+1 8 0 0 0 0
 D1
 ~
 ~
@@ -636,7 +636,7 @@ eventually restore order to the world that Drakkar had so horribly imbalanced.
 With time the High Council believes they can restore order.  With the help of
 the gods this may be possible.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -669,7 +669,7 @@ completed.  It was made from a combination of magic and manpower.  The white
 alabaster stone is said to still have some magical residue that benefits those
 who come here to seek aid.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -702,7 +702,7 @@ this is where the sick and wounded are put up for the night.  Even the
 apprentices sometimes stay here when they are too tired to go home after a hard
 days work.  The room is empty now, the healers must have done their jobs well.
 ~
-1 d 1
+1 8 0 0 0 0
 D3
 ~
 ~
@@ -716,7 +716,7 @@ for the safety of the Orb of Sanctum.  The Orb is what was given to the Magi by
 the gods to sustain the protective dome.  As long as the orb is safely in place
 and a Magi is present to sustain it the dome will remain.    
 ~
-1 d 1
+1 8 0 0 0 0
 D1
 ~
 ~
@@ -730,7 +730,7 @@ collapse and chaos would rule.  The Magi have been given the honor of it placed
 within these halls.  The orb is rumoured to have been created by the Gods
 Rumble and Ferret.  But, no one knows for sure.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -764,7 +764,7 @@ required for the world to exist.  The Orb is the last balance left in the
 realm.  If it were to be taken all hope would be lost.  Without it the city
 would quickly be overrun by Drakkar and his followers.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -798,7 +798,7 @@ pedestal sits in the center of the room surrounded by statues of every Magi to
 ever live.  It is up to them to protect the Orb from any who wish to steal or
 cause harm to it.    
 ~
-1 d 0
+1 8 0 0 0 0
 D3
 ~
 ~
@@ -811,20 +811,16 @@ are the only inhabitants.  All of them are made out of wood and are polished to
 a glossy shine.  A single window looks out over the Southern Gate.  To live a
 life as a Cleric is to life a life without desire and need.    
 ~
-1 d 1
+1 8 0 0 0 0
 D0
 ~
 ~
 0 0 128
 E
-window~
-   Overlooking the western gate you can see the shimmering protective dome.  
-You hope it lasts, peace and tranquility is a good thing.    
-~
-E
-chair~
-   It's just your standard wooden chair.  Uncomfortable and only real
-usefulness would be as firewood.    
+bed~
+   The bed is made of a sturdy pine.  A thin mattress covered in a white sheet
+with a down pillow overlaying it.  The mattress is too thin to hold anything of
+value.    
 ~
 E
 desk~
@@ -834,10 +830,14 @@ centered on the top of the desk.  The desk has three drawers.  All of them are
 empty.    
 ~
 E
-bed~
-   The bed is made of a sturdy pine.  A thin mattress covered in a white sheet
-with a down pillow overlaying it.  The mattress is too thin to hold anything of
-value.    
+chair~
+   It's just your standard wooden chair.  Uncomfortable and only real
+usefulness would be as firewood.    
+~
+E
+window~
+   Overlooking the western gate you can see the shimmering protective dome.  
+You hope it lasts, peace and tranquility is a good thing.    
 ~
 S
 #136
@@ -848,7 +848,7 @@ actually clerics and they are working over cauldrons of liquids that could not
 possibly be food.  At least it does not smell like food.  This must be where
 they make their healing elixirs, salves, and potions.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -861,7 +861,7 @@ spells line all three walls.  Everything from potions to pills and everything
 in between.  Some of the jars contain strange beasts soaking in a strange
 liquid.  The smell of dust and strange herbs permeates the room.    
 ~
-1 d 1
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -875,7 +875,7 @@ Most never make it.  The Magi of the Purple and Grey robes has never been
 achieved.  The actual testing to be a Magi remains a mystery as only the Magi
 themselves have witnessed it.    
 ~
-1 d 1
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -889,7 +889,7 @@ of the High Council and the Tower of the Magi.  All three structures are
 impressive works of architecture and magic combined.  To the south the dome
 rises above you blocking all view to the chaotic world beyond.    
 ~
-1 0 1
+1 0 0 0 0 0
 D5
 ~
 ~
@@ -910,7 +910,7 @@ guarded diligently.  These gates are normally locked at night to ensure the
 safety of the city.  Only the east and west gates remain open all day.  The
 luminescent dome encompassing the city can be seen just to the north.    
 ~
-1 0 1
+1 0 0 0 0 0
 D2
 ~
 ~
@@ -935,7 +935,7 @@ of warfare.  Not only does this include brute force and the taking up of arms,
 but also the cunning art of tactics that can decide the outcome of any battle.
 A stairwell in the back of the room leads to the training room upstairs.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -953,7 +953,7 @@ this local tavern.  Excessive drinking is looked down upon by all in Sanctus,
 but the occasional drink never hurt anyone.  Unless they were stupid enough to
 go walking through the Thieves Quarter after a few too many.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -973,7 +973,7 @@ that treat his "employees" unfairly.  The Inn appears to be well kept.
 Further to the north you can see a winding staircase and a plethra of adjoining
 rooms.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -987,7 +987,7 @@ someone honing a fine blade can be heard in the background.  Some of the finest
 weapons in the realm are made right here under the supervision of Shiro, the
 master wesponsmith.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -1003,7 +1003,7 @@ But, Sarge would never complain.  He has spent his life hammering metal into
 weapons of mass destruction or armor of superior quality.  It is rumoured that
 has never been given a task that he could not complete.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -1017,7 +1017,7 @@ your west and no sound escapes the building to the east.  The North Way splits
 the city of Sanctus into two Quarters.  The thieves quarter in the east and the
 Warriors Quarter to the west.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1035,7 +1035,7 @@ equipment.  It is often normal to purchase clothing with small tears and blood
 stains in the small of their backs, but no one ever asks questions given the
 excellent prices.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -1048,7 +1048,7 @@ that can afford them.  The prices are fair and the service is excellent.  The
 place is rather deserted and only a few customers are chatting idly in the
 back.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -1061,7 +1061,7 @@ The assortment of leather goods is very extensive and they are well made.
 Anyone needing some armor but does not want to give up alot of movement and
 flexibility need only come here.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -1075,7 +1075,7 @@ here since as soon as you are inebriated you will be relieved of any gold you
 may be carrying.  The bar seems to sell alot more than just drinks as large
 shelves walls hung with equipment fill the place.  
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -1093,7 +1093,7 @@ one goes by without his permission.  The room is shabby with little furniture.
 Just a table and a few wooden chairs.  A few expensive tapestries look out of
 place hanging on the walls.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -1110,7 +1110,7 @@ lead a life of service to protect the city.  They are all over worked and under
 paid.  But they serve their terms with pride.  You stand in the northwest
 corner of the barracks.    
 ~
-1 d 0
+1 8 0 0 0 0
 D1
 ~
 ~
@@ -1127,7 +1127,7 @@ where the army bases it's operations from.  Everything they need is located
 within this building.  Adjoining rooms are to the west and south.  The warriors
 avenue is just to the east.    
 ~
-1 d 0
+1 8 0 0 0 0
 D1
 ~
 door~
@@ -1148,7 +1148,7 @@ the north and the army barracks are in the building to the west.  Various
 stores lie further along Warriors Avenue to the east.  There is a fair amount
 of people, mostly soldiers, going about their daily lives.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1173,7 +1173,7 @@ relieve themselves of their worries.  The cobblestone street is clean and well
 maintained.  The buildings around you are made of wood and some are several
 stories tall.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1198,7 +1198,7 @@ structures in Sanctus, excluding of course the temple.  Many travellers go
 there to relax and unwind.  Several small houses are to the south along this
 road while the northern half seems to consist mostly of shops.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1223,7 +1223,7 @@ hear someone working a grindstone to the north, most likely the weaponsmith.
 A small house to the south is shadowed by the tower of Sanctus in the middle of
 the city.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1248,7 +1248,7 @@ towns Smithy.  The street continues east and west with a small house to the
 south.  Townspeople walk the streets going about their business.  You are just
 another adventurer to them.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1274,7 +1274,7 @@ in shadows and mystery.  Not a single sound escapes from that section of the
 city.  You are standing on the North Way which runs from the North Gate down to
 the Temple of Sanctus.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1300,7 +1300,7 @@ for the economic policies of the city and do a very good job.  Of course they
 are so worried about keeping one another from stealing from the city that they
 don't dare do it themselves.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1325,7 +1325,7 @@ you to hold your gold very tightly while in this quarter of the city.  The
 thieves may run the cities finances fairly, but they could care less about a
 single adventurer.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1350,7 +1350,7 @@ hides.  Must be the towns leather shop.  Tall buildings to the south must be
 the houses of the locals.  Probably shouldn't go wandering around, this place
 is full of thieves as it is and you may be mistaken for one.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1375,7 +1375,7 @@ The local bar for the thieves.  The town used to have only one bar until the
 warriors and thieves got into a huge braul and ended up burning the place to
 the ground.  A few citizens walk past staring at you curiously.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1400,7 +1400,7 @@ above you to the east.  Thieves Avenue makes a turn here to the south or west.
 You are now in the northeastern corner of the city, in the heart of the Thieves
 Quarter.  Better keep an eye on your purse.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1426,7 +1426,7 @@ get disoreientated and lost.  This is where the city keeps the majority of it's
 supplies.  Kind of an oxymoron that the thieves of the city handle the
 finances.    
 ~
-1 d 0
+1 8 0 0 0 0
 D1
 ~
 ~
@@ -1447,7 +1447,7 @@ your height with rows inbetween that barely allow you to walk through.  Hard to
 believe anyone could find their way out of this place, let alone know where to
 find anything.    
 ~
-1 d 0
+1 8 0 0 0 0
 D2
 ~
 ~
@@ -1464,7 +1464,7 @@ the city has fought in.  Sanctus has never fallen.  Various weapons and suits
 of armor are all bolted to the floor and walls.  A small doorway leads into the
 bunk room to the east.  The hall continues north and south.    
 ~
-1 d 1
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -1485,7 +1485,7 @@ sleeps.  Some people are already in their racks since a watch must be stood
 twenty four hours a day.  You here someone grumbling in their sleep about how
 they always get stuck with the midwatch.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -1506,7 +1506,7 @@ A well-travelled road continues north and south.  You are in the Warriors
 Quarter where the army of Sanctus bases it's operations.  Several recruits rush
 past on assignment.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1523,7 +1523,7 @@ roaring fire.  The house is cluttered with the usual things that makes a house
 look lived in.  You could be happy spending the rest of your life living in a
 house like this.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 door~
@@ -1536,7 +1536,7 @@ sends you immediately back out the door.  This room should not even be
 considered a home.  You can barely even stand up the ceiling is so low and
 cracks in the walls let you see outside.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 door~
@@ -1549,7 +1549,7 @@ are polished to a shine and the floor is made out of some strange type of
 cement.  Cushioned chairs surround a table set for dinner with expensive dishes
 and silverware.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 door~
@@ -1562,7 +1562,7 @@ baking oven and a few piles of straw are the only things in the room.  This
 must be the poorest house in the entire city, how could anyone live like this.
   
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 door~
@@ -1575,7 +1575,7 @@ Road is packed solid from years of traffic from people, wagons, and horses.  A
 small amount of dust is kicked up by every footstep.  Directly to the south you
 can see the Temple.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1592,7 +1592,7 @@ cover the entire floor.  A candelabra sits in the middle of a polished oak
 table.  A four post bed can be seen in the back of the house.  Nothing like
 living the good life.    
 ~
-1 d 1
+1 8 0 0 0 0
 D0
 ~
 door~
@@ -1605,7 +1605,7 @@ this house.  Small mattresses lay on the floor in the back of the room.  Not
 much hope for privacy in this house.  A few dolls are having a tea party in one
 corner.    
 ~
-1 d 1
+1 8 0 0 0 0
 D0
 ~
 door~
@@ -1618,7 +1618,7 @@ trespassing, I'm sure no one will mind.  The house is very compact.  The
 kitchen and bedrooms are not seperated by any walls.  This must be a house for
 the poor.    
 ~
-1 d 1
+1 8 0 0 0 0
 D0
 ~
 door~
@@ -1630,7 +1630,7 @@ A Clean House~
 Well maintained it seems.  Not everyone is rich enough to afford a housekeeper,
 but these folks must be.  You can hear a baby crying, sounds hungry.    
 ~
-1 d 1
+1 8 0 0 0 0
 D0
 ~
 door~
@@ -1643,7 +1643,7 @@ to the west.  The entrance looks to be a ways further north in the heart of the
 Thieve's Quarter.  South you can see another intersection and the northest
 corner of the inner wall.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1660,7 +1660,7 @@ You can hear a few workers in the distance pushing the large crates over the
 dusty floor.  A large box and tackle swings back and forth on a strangel pulley
 system above you.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -1677,7 +1677,7 @@ nailed shut, some even wrapped in chains and padlocked.  Enough stores to last
 the city for a year must be packed away in this place.  Everything is
 surpringly clean and well maintained.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -1694,7 +1694,7 @@ hear people talking behind the doors, but cannot discern what they are saying.
 The army of Sanctus is very well disciplined and your presence may not be
 exactly appreciated.  They do not take kindly to strangers.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -1715,7 +1715,7 @@ together in this confined room.  The racks are stacked four high with only a
 foot or two of space for someone to sit up.  The mattresses are only about an
 inch thick and look very uncomfortable.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -1736,7 +1736,7 @@ alley crosses the city east to west behind the homes of the local citizens.
 The alley is very narrow and dark as the inner city wall follows it on the
 southern side.  Warriors Avenue continues north and south.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1757,7 +1757,7 @@ are waiting to be cleaned up by the street sweeper.  An alley cat hisses at you
 and then bolts as you trespass on its territory.  This alley does not look safe
 and you wonder whether or not you will be running into some thugs.    
 ~
-1 0 1
+1 0 0 0 0 0
 D1
 ~
 ~
@@ -1774,7 +1774,7 @@ and the rattling of armor can be heard from the guards patrolling the top of
 the wall.  The alley is even darker here and a person could easily hide in the
 shadows.    
 ~
-1 0 1
+1 0 0 0 0 0
 D1
 ~
 ~
@@ -1791,7 +1791,7 @@ but all are bolted, locked, or nailed shut.  This is definitely not the most
 friendly section of the city.  An alley cat bolts past you as a large pile of
 garbage almost collapses on it.    
 ~
-1 0 1
+1 0 0 0 0 0
 D1
 ~
 ~
@@ -1808,7 +1808,7 @@ The sound of creaking wagons and the pound of horse hooves on the dirt road
 become trapped between the inner city wall and the houses within the alley
 making strange echoing sounds that are very distracting.    
 ~
-1 0 1
+1 0 0 0 0 0
 D1
 ~
 ~
@@ -1825,7 +1825,7 @@ seem to be surprisingly empty for some reason.  You notice shadowy alleys to
 the east and west along the inner city wall.  To the south is the Northern Gate
 to the inner city.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1850,7 +1850,7 @@ bother cleaning this place up.  The sound of a fight can be heard further to
 the east within the alley.  This is definitely the most dangerous section of
 Sanctus.    
 ~
-1 0 1
+1 0 0 0 0 0
 D1
 ~
 ~
@@ -1867,7 +1867,7 @@ that dispute was settled one way or the other.  The inner city wall to the
 south keeps the alley eternally in shadows, no matter the time of day or night.
 Houses to the north have their back doors shut and locked.    
 ~
-1 0 1
+1 0 0 0 0 0
 D1
 ~
 ~
@@ -1884,7 +1884,7 @@ garbage pile a few feet away.  A mangy mutt trots past you and starts licking
 up the pool of blood.  You should keep moving unless you want to draw attention
 to yourself.    
 ~
-1 0 1
+1 0 0 0 0 0
 D1
 ~
 ~
@@ -1901,7 +1901,7 @@ light.  The wall looks to be made from stone blocks and some sort of filler.
 You can't tell how thick it is, but judging from the height you would guess at
 least half as wide as it is tall.    
 ~
-1 0 1
+1 0 0 0 0 0
 D1
 ~
 ~
@@ -1918,7 +1918,7 @@ You are at the northeast corner of the inner city wall.  On top of the wall you
 can see some type of post where the guards watch for any trouble.  A large
 building to the east must be some sort of warehouse.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -1939,7 +1939,7 @@ They are closed, barred, and locked with a padlock the size of your head.  No
 one gets in or out without that key.  An aisle to load and unload wagons runs
 to the east.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -1961,7 +1961,7 @@ unpleasant smell. Three wagons fill the center of the room. All look empty.
 A clump of mushrooms grows in the middle of the manure. They look ripe for
 picking.
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -1989,7 +1989,7 @@ the upkeep of armor and weapons.  A grindstone is in one corner.  In another
 baskets of arrows are being sorted.  A recruit is polishing some armor and a
 large sack of equipment looks like it is ready to be taken to the Smithy.    
 ~
-1 0 0
+1 0 0 0 0 0
 D0
 ~
 ~
@@ -2010,7 +2010,7 @@ before they go on their next watch.  The food does not look very appetizing,
 but it serves it's purpose.  The army has had financial problems since it's
 inception.    
 ~
-1 d 0
+1 8 0 0 0 0
 D0
 ~
 ~
@@ -2031,7 +2031,7 @@ booming voice that echoes off the buildings and walls around you.  The clank of
 armor and weapons is all about you as guards change watches and work on their
 equipment.    
 ~
-1 0 1
+1 0 0 0 0 0
 D0
 ~
 ~

@@ -3,7 +3,7 @@ The start of the jungle~
    Going by the trees, you appear to have left the forest and entered a jungle!
 There are exotic trees and plants that you have never seen anywhere before.  
 ~
-295 0 3
+295 0 0 0 0 0
 D2
 ~
 ~
@@ -35,7 +35,7 @@ Deeper into the jungle~
 comming from all around you, and someone somewhere is beating some drums.  
 Hope the natives are friendly!    
 ~
-295 0 3
+295 0 0 0 0 0
 D0
 ~
 ~
@@ -51,7 +51,7 @@ Deeper in to the jungle~
 jungle, east appears to lead down a small trail from which the sound of drums
 can be heard, west heads in to some thicker trees 
 ~
-295 0 3
+295 0 0 0 0 0
 D0
 ~
 ~
@@ -71,7 +71,7 @@ On a small trail~
 To the east the sound of drums are getting very loud. Maybe you should turn
 back and go and get some help before you go any further!
 ~
-295 0 3
+295 0 0 0 0 0
 D1
 ~
 ~
@@ -87,7 +87,7 @@ The gate to the camp~
 to rest for a while, but the skulls that are stuck on the end of spears tell
 you different!    
 ~
-295 0 3
+295 0 0 0 0 0
 D1
 ~
 gate~
@@ -104,7 +104,7 @@ all over the place, some of them are obviously human!  It looks like you just
 missed a big feast. Maybe you should leave before they make you the guest of
 honour at the next one!
 ~
-295 0 3
+295 0 0 0 0 0
 D0
 ~
 ~
@@ -127,7 +127,7 @@ The food store~
    There are hooks dangling from the roof wich look like they are used to store
 meat, but what sort of meat? Use you imagination!
 ~
-295 0 0
+295 0 0 0 0 0
 D3
 ~
 ~
@@ -139,7 +139,7 @@ The womans room~
 women when they are out hunting.  There are animal skins waiting to be made
 into clothes for the cannibals, and a few items of high cannibal fashion!
 ~
-295 0 0
+295 0 0 0 0 0
 D2
 ~
 ~
@@ -150,7 +150,7 @@ The chiefs room~
    This is obviously the room of the chief of the cannibals.  There are animal
 skins on the wall with crude paintings on them. Could be worth a bit!
 ~
-295 0 0
+295 0 0 0 0 0
 D0
 Nothing.
 ~
@@ -163,7 +163,7 @@ To the monkeys!~
 There are vines hanging down from some of the trees that look like you could
 climb up.
 ~
-295 c 3
+295 4 0 0 0 0
 D1
 ~
 ~
@@ -182,7 +182,7 @@ In the trees~
    Wow, these trees are high!  You think you can almost see Midgaard from up
 here! Wonder if there are any animals living up here?
 ~
-295 0 3
+295 0 0 0 0 0
 D0
 ~
 ~
@@ -199,7 +199,7 @@ stable in the trees around you, maybe you should go back down.  You also notice
 what looks like a bit of snake skin hanging from a branch. Wonder where its
 owner is?
 ~
-295 0 3
+295 0 0 0 0 0
 D0
 ~
 ~
@@ -214,7 +214,7 @@ In the trees~
    It looks like you have just walked in to a nest of greater climbing tree
 snakes! Watch out, they could be poison in them there fangs!
 ~
-295 0 3
+295 0 0 0 0 0
 D2
 ~
 ~
@@ -226,7 +226,7 @@ Close to the monkeys~
 sounds like all the apes from the jungle are having some sort of a meeting!
 This has got to be worth a look at.
 ~
-295 0 3
+295 0 0 0 0 0
 D1
 ~
 ~
@@ -242,7 +242,7 @@ The meeting room~
 they have one hell of a party at these meetings, judging from all the junk
 left around.
 ~
-295 0 3
+295 0 0 0 0 0
 D0
 ~
 ~
@@ -258,7 +258,7 @@ North of the meeting place~
 There are some comfy looking leaves to rest on, and a nice fountain in the
 corner of the room.
 ~
-295 0 0
+295 0 0 0 0 0
 D2
 ~
 ~

@@ -7,7 +7,7 @@ An assistant to the baker is learning the trade.
 Obviously daydreaming of better things.  His white apron is covered in floor.
 He stands a good six feet tall, all skin and bones.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -22,7 +22,7 @@ physical or mental aid.  The clerics of Sanctus are well known for their aiding
 those physically wounded, but are seldom known for their great prowess in the
 emotoinal aid they give.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -35,7 +35,7 @@ A beautiful horse shakes it's head and swishes it's tail.
 ~
    The horse has been well groomed and seems to be in excellent shape.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -50,7 +50,7 @@ color and texture as the manure that he shovels into a wheelbarrow beside him.
 He could definitely use a bath.  But he does know his horses and makes a living
 selling, training, and breeding them.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -64,7 +64,7 @@ A gentle and kind horse stares at you.
    The horse seems to be well trained and somewhat....  Lazy.  Doesn't look
 like it would be fast, but it probably has some great endurance.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -77,7 +77,7 @@ A sleek and mean looking horse tramps impatiently.
    The horse looks about ready to bolt, a strange gleam in it's eyes makes you
 wonder why this animal is even standing here.  The animal looks wild.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -92,7 +92,7 @@ seemingly oblivious to his own girth and the world around him.  Occasionally he
 rambles on about truth, existence, and other esoteric topics that better mind
 than his have already questioned.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -107,7 +107,7 @@ Angel, the Jack Russel Terrier, is racing around looking for someone to play wit
 attention or someone to play with.  Her breath smells strangely of bacon.  She
 appears to be beggin for some treats.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -125,7 +125,7 @@ A haruspex is predicting your demise.
    She is a diviner of what the future holds.  Her predictions are gathered by
 the inspection of the entrails of sacrificial animals.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -140,7 +140,7 @@ He is desperately trying not to be trampled on or shoved out of the way.  His
 short stature puts him about waist level to most people.  Bob is an
 achondroplastic dwarf.  His torso is normal while his limbs are extremely short.
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -154,7 +154,7 @@ A shopkeeper with a variety of powerful quest items waits for a customer.
 equipment in the realm. But, the prices are steep and only the most experienced
 questors can afford to pay her.
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -168,7 +168,7 @@ A phoenix looks up at you with intelligent eyes.
    This beautiful and magical bird is the source of many tales.  Most so
 outrageous they can't be true, or can they?
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 0 900
 8 8 0
@@ -183,7 +183,7 @@ This parrot seems to have lost his pirate. He squawks incessantly.
 scratching of its small feet is punctuated by a thudding.  Upon closer
 inspection the parrot has a wooden leg and an eye patch!
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1

@@ -6,7 +6,7 @@ A large ancient tree is here, wavering in the breeze.
    Before you stands an ancient tree.  Its bark has been petrified over time and
 there appears to be a hole in the trunk, possibly a nest of sorts.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -20,7 +20,7 @@ A Hannah soldier toils away at cleaning up the streets.
 trouble and keeps an eye peeled to his surroundings, waiting for another attack.
 
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -34,7 +34,7 @@ A hannah city guard stands here, trying to prevent bloodshed.
 imperiled the city.  Until this is done the remainder of the townspeople have
 taken refuge in the temple.  
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -51,7 +51,7 @@ A disgusting orc wanders the streets here.
    This small yellow humanoid has small horns sticking out of its head and a pig
 snout.  He roams the streets looking for something to pillage or rape.  
 ~
-dg 0 -500 E
+72 0 0 0 0 0 0 0 -500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -68,7 +68,7 @@ A thief sulks along the street looting the abandoned homes.
    This looter is taking advantage of the city's downfall and has amassed a
 large sack of goodies.  
 ~
-dg 0 -500 E
+72 0 0 0 0 0 0 0 -500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -88,7 +88,7 @@ smiles then returns to his work.  You have heard a few people in the temple say
 he used to be one of the Kings most elite guards.  He truly must have been a
 fierce opponent in battle if the rumors are true.  
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -101,7 +101,7 @@ A doctor was busy performing an amputation before you interrupted him.
    He looks at you, wondering why you would intrude upon all those poor people.
 He tries to ignore you and get back to his work.  
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -113,7 +113,7 @@ A crazed troll charges anything that moves.
 ~
    This tall brown beast has gone berserk and is looking for some blood.  
 ~
-dgq u -500 E
+65608 0 0 0 0 0 0 0 -500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -126,7 +126,7 @@ A goblin can be smelled before you even see him.
    This greenish beast is covered in filth.  Snot oozes from its nose.  Spit
 drools from its mouth.  
 ~
-dg 0 -500 E
+72 0 0 0 0 0 0 0 -500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -139,7 +139,7 @@ A small girl weeps at the loss of her family.
    Her faced is smudged and filthy from wiping away her tears with grubby hands.
 She looks up at you pitifully.  
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -152,7 +152,7 @@ A woman who lost her home and husband in the battle.
    She is one of the few survivors of the battle.  She mourns the loss of her
 home and husband.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -165,7 +165,7 @@ A man weeps in misery at the loss of everything he has ever known.
    He has given up on life, everything he had is now gone, taken away from him.
 He just wants to know why.  
 ~
-dg 0 100 E
+72 0 0 0 0 0 0 0 100 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -178,7 +178,7 @@ A stray dog runs around the temple looking for its owners.
    The dogs fur is matted and filthy.  Its been running the streets for a while
 now.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -190,7 +190,7 @@ A boy is lost, from his family and friends.
 ~
    He sucks his thumb innocently looking for a friend.  
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -203,7 +203,7 @@ Atropos is here selling baked items.
    He smiles at your patronage and claps his hands together causing a spray of
 flower everwhere.  Atropos says, 'What can I get ya today?  '
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -215,7 +215,7 @@ Elina is here greeting you.
 ~
    She smiles warmly and looks like she really wants to help.  
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -230,7 +230,7 @@ his blood-stained apron makes him appear at first like a common criminal.  He
 sets his cleaver down and beams a smile at you as he begins to show you his cuts
 of meat.  
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -242,7 +242,7 @@ Ascepleptous the healer is here, tending to the wounded.
 ~
    He has a gentle hand and friendly smile as he gives aid to those in need.  
 ~
-bdmo 0 1000 E
+20490 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -256,7 +256,7 @@ An elite temple guard is here.
 present day exulted position as an elite guard.  She seems very proud of
 herself.  
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -273,7 +273,7 @@ A big temple guard is here.
    The temple guards were the ones that held the monsters at bay from entering
 the temple and slaughtering the entire city.  They are very respected.  
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1

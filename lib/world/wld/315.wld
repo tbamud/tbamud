@@ -5,7 +5,7 @@ the land and the plateau which McGintey Cove rests upon.  To the south the
 bridge leads the way into the city, to the north is a toll booth which sits on
 the side of McGintey Road.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -36,7 +36,7 @@ the anchors which hold the bridge to the cliff face are by themselves bigger
 than you.  You may enter into the city or head north back over the bridge into
 the wilderness.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -51,7 +51,7 @@ Eastern Bridge~
    The bridge heads south toward the city entrance or leads the way north to
 McGintey Road.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -66,7 +66,7 @@ Eastern Bridge~
    The bridge runs straight south into the city, or north twoard McGintey Road.
 
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -83,7 +83,7 @@ McGintey Cove over night.  The place is not all that flashy, but it always has a
 warm fire at night, plenty of ale, and the beds upstairs are always very
 comfortable.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D1
 ~
 ~
@@ -100,7 +100,7 @@ bridge which allows access to the outside world.  East of you is a small, tidy
 building with a sign out front proclaiming 'INFORMATION'.  To the west is very
 nice looking inn, the Cliffside.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -125,7 +125,7 @@ to south, from wall to wall.  On your side of the counter at the north end is a
 large rack full of maps and brochures which tell in great hype and detail all
 the wonders of McGintey Cove.  The exit to West Main lies just west of you.  
 ~
-315 dep 0
+315 32792 0 0 0 0
 D3
 ~
 ~
@@ -140,7 +140,7 @@ owner and operator, an ex-gladiator from the pits, never seems to mind any
 fights in his business.  It is even rumored that he sometimes starts them
 himself!  
 ~
-315 dep 0
+315 32792 0 0 0 0
 D1
 ~
 ~
@@ -153,7 +153,7 @@ way, both sides of the road, with the ocassional side street branching off.  To
 your west is a very loud and rustic looking tavern called Samuel Faarza's, and
 to your east is the post office.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -177,7 +177,7 @@ Post Office~
 larger building from what you saw outside.  You may either send mail to any
 player here or receive any mail you have been sent.  
 ~
-315 dep 0
+315 32792 0 0 0 0
 D3
 ~
 undefined~
@@ -189,7 +189,7 @@ North St.~
 McGintey Cove.  To your north is the southern wall of the Cliffside Inn, south
 is the wall of an unknown shop who's entrance must be on some other side.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D1
 ~
 ~
@@ -206,7 +206,7 @@ north the street heads toward the western bridge, one of the exits out of town.
 South, the street runs toward the bazaar.  North street runs west into the guild
 area or east deeper into the main section of town.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -232,7 +232,7 @@ another direction, because from this side all you see is their brick wall.  To
 the north is the Town Meeting Hall, a gloriously large place - built for a large
 town.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -252,7 +252,7 @@ North St.~
 North and E.  Main.  West the street runs past the Town Meeting Hall, north of
 you is the entrance to the Teleport Shop.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -273,7 +273,7 @@ direction.  North leads to the Eastern Bridge out of town, while south leads
 deeper into town toward the bazaar.  Heading east on North St.  Takes you up
 hill into the Wharf, the high-class, prestigious section of McGintey Cove.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -297,7 +297,7 @@ North St.~
 known for it's high prices and high class people.  To the west the street runs
 into an intersection of two of the main roads of the city.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D1
 ~
 ~
@@ -314,7 +314,7 @@ counters and shelves are filled with vials and beakers, all full of different
 colored fluids, some of which bubble, some of which fizz, some which steam.  If
 you need potions, it looks like you probably came to the right place.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D1
 ~
 ~
@@ -326,7 +326,7 @@ West Main~
 which is the center of the city.  East of you is the Jewelry shop and west is
 the local potion shop, the Libation Station.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -350,7 +350,7 @@ Jewelry Store~
 this town might be a bit too rough.  Possibly you should ask if you would like
 to take a look at what the shopkeeper has to offer.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D3
 ~
 ~
@@ -364,7 +364,7 @@ money does not belong to the bank.  Wise investments and purchases do yield a
 profit over time, however all banks seem to have way more than enough money for
 themselves.  This bank is no exception.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D1
 ~
 ~
@@ -376,7 +376,7 @@ East Main~
 the Eastern Bridge.  The city bank is just west of here, and the armory is east.
 
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -400,7 +400,7 @@ McGintey City Armory~
 repair or disrepair.  It doesn't look as if the armor here is of the absolute
 finest quality, however it does cover most of your major organs.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D3
 ~
 ~
@@ -411,7 +411,7 @@ Top of the Stairs~
    A desk has been set here for the purpose of allowing your receptionist to
 find you a room which is vacant so that you may rest in comfort.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D5
 ~
 ~
@@ -424,7 +424,7 @@ dogs braking, cats meowing and birds chirping is enough to drive you crazy and
 you just got here.  How in the world does anyone stand all the racket long
 enough to actually work here?  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D1
 ~
 ~
@@ -434,7 +434,7 @@ S
 PETSHOP STOREROOM~
    Mortals should never come here!  
 ~
-315 k 0
+315 1024 0 0 0 0
 S
 #31525
 West Main~
@@ -443,7 +443,7 @@ most of the city's center.  Vendors from all over the land come to buy, sell,
 and trade exotic goods of every kind.  The street also runs north toward the
 city gates.  East of you is the weapon shop, and to the west is the pet shop.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -470,7 +470,7 @@ a kid who's rich father bought him the shop only in an attempt to keep the kid
 occupied away from home.  Hence, the poor quality of weapon sold here, and the
 high prices, which are that way because of the low volume.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D3
 ~
 ~
@@ -482,7 +482,7 @@ Traveller's Pitstop~
 or her travelling in style, or at least in a semblance of style.  From lanterns
 to carrying cases, this store has it all.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D1
 ~
 ~
@@ -494,7 +494,7 @@ East Main~
 merchant's fair which runs all day and all night every day.  To the east is the
 local branch of law enforcement, and to the west is the town general store.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -519,7 +519,7 @@ at this time.  There are only a few officers on duty here, looks as if most of
 the officers spend their time patrolling the city rather than wasting it here in
 the office.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D3
 ~
 ~
@@ -531,7 +531,7 @@ Bazaar~
 all day, all night affair full of noise and hubbub, all from the loud haggling
 of the merchants who offer their goods and any potential customers who walk by.
 ~
-315 p 0
+315 32768 0 0 0 0
 D1
 ~
 ~
@@ -548,7 +548,7 @@ spot for some of the strangest and most exotic goods to be sold by vendors who
 have travelled far and wide to claim their treasures.  North is the entrance
 onto West Main, the bazaar leads off in every direction.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -572,7 +572,7 @@ The Bazaar~
 goods, some shopping for the hard-to-find goods that can only be found in places
 such as this.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D1
 ~
 ~
@@ -591,7 +591,7 @@ The Bazaar~
    The bazaar heads off into the east, west and south.  To the north, it butts
 up against a shop's wall.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D1
 ~
 ~
@@ -613,7 +613,7 @@ world to sell their goods here, hoping to find an open spot on the stone to set
 up shop.  You may leave the bazaar to the north onto East Main, or head off into
 the bazaar in any other direction.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -636,7 +636,7 @@ The Bazaar~
    You stand at the northeast corner of the bazaar.  You may head south or west
 into the bazaar or browse the goods offered at this locale.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D2
 ~
 ~
@@ -651,7 +651,7 @@ The Bazaar~
    The bazaar's noise and smells surround you, washing around you in an endless
 blur.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -671,7 +671,7 @@ The Bazaar~
 city, browsing and shopping for goods which are offered by these fine men and
 woman from all corners of the land.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -694,7 +694,7 @@ The Bazaar~
    The bazaar surrounds you in every direction, vendors call out to you from all
 sides.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -717,7 +717,7 @@ The Bazaar~
    You may head in any direction from here into more of the bazaar, or browse
 the good this fine merchant sells.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -740,7 +740,7 @@ The Bazaar~
    Bright colors, men and women calling their salespitches over the din, this
 place is enough to give the most stalwart man a headache.  
 ~
-315 0 0
+315 0 0 0 0 0
 D0
 ~
 ~
@@ -763,7 +763,7 @@ The Bazaar~
    You stand at far eastern side of the bazaar.  You may go south, north or west
 into more of the bazaar.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -782,7 +782,7 @@ The Bazaar~
    You stand at the western side of the bazaar.  You may head east, north or
 south into the bazaar from here.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -801,7 +801,7 @@ The Bazaar~
    The bazaar surrounds you on all sides.  You may head in any direction into
 this crazy managerie of goods.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -825,7 +825,7 @@ The Bazaar~
 shopping is the universal language.  You may head in any direction from your
 current position.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -848,7 +848,7 @@ The Bazaar~
    All around are men and women trying their damndest to get you to buy their
 products.  This is quite an exciting place.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -877,7 +877,7 @@ resting on your chest even though your head is held high.  Now the whole bazaar
 is laughing, laughing, laughing...  Just kidding.  A bit of crowd claustrophobia
 there.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -899,7 +899,7 @@ S
 The Bazaar~
    The bazaar heads south, north and east from here.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -919,7 +919,7 @@ The Bazaar~
 wall is just south of you, and the city wall is west of you.  You may head into
 the bazaar to the north and east.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -935,7 +935,7 @@ The Bazaar~
 heads off to the north, east and west.  You may exit the bazaar to the south
 onto West Main.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -958,7 +958,7 @@ The Bazaar~
    You stand at the southern end of the bazaar.  A building wall is to your
 south, the bazaar stretches out to the north, east and west.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -977,7 +977,7 @@ The Bazaar~
    You are at the south end of the bazaar.  You may head in any direction but
 south, which is the north wall of a business facing Main St.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -999,7 +999,7 @@ and sounds, most of which coming from the colorful people who push their goods
 here.  You may exit onto East Main to the south or head out into the bazaar in
 any other direction.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -1022,7 +1022,7 @@ The Bazaar~
    Your stand at the far southeastern corner of the bazaar.  Looking north and
 west, it seems that the bazaar must go on forever.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -1039,7 +1039,7 @@ who wishes to rent a home here will need to fill out an application for lease
 and leave a deposit of one hundred fifty gold coins.  Type LEASE to fill out an
 application.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D1
 ~
 ~
@@ -1052,7 +1052,7 @@ every part of the world, plying their goods.  To the south the road continues
 with shops on either side.  East of you is the Green Leaf, a local dining
 facility.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -1073,7 +1073,7 @@ common fare most people from this area would be used to.  Looks as if the
 tourist trade does not touch this homey little place, and for that reason most
 locals like it here best.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D3
 ~
 ~
@@ -1086,7 +1086,7 @@ which is failing only because of it's lack of variety and it's competition
 located in the guild area.  The scrolls offered are of fine quality and work
 with almost every use, but the scrolls offered are not popularly needed.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D1
 ~
 ~
@@ -1100,7 +1100,7 @@ crooked over the door proclaiming it the Parchment Place.  The way is impassable
 to the east, a steep hill runs up for quite some distance to the Wharf, the high
 class section of town.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D0
 ~
 ~
@@ -1120,7 +1120,7 @@ Fatima's Footwear~
 shined, all placed strategically on shelves so as to give the customer the best
 angle on them.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D1
 ~
 ~
@@ -1132,7 +1132,7 @@ West Main~
 road leads into the bazaar and south the road heads into an intersection with
 South St.  East of you is the jeweler and west is Fatima's Footwear.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D0
 ~
 ~
@@ -1156,7 +1156,7 @@ The Jeweler~
 color.  The colors are dazzling to the eye, and the temptation to rob this poor
 schmuck is almost overpowering.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D3
 ~
 ~
@@ -1167,7 +1167,7 @@ Hospital~
    This small one room whitewashed building houses just enough equipment to heal
 any standard health issues.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D2
 ~
 ~
@@ -1178,7 +1178,7 @@ East Main~
    The road runs north toward the bazaar or south past an intersection with
 South St toward the Docks.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -1199,7 +1199,7 @@ along the south wall, and behind the counter are flasks and cups of varying
 shapes and colors.  Some kind of large machine, most probably used to distill
 sea water into drinking water sits back behind the counter.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D3
 ~
 ~
@@ -1210,7 +1210,7 @@ South Street~
    The street heads west into the guild area or east into the main business
 sections of McGintey Cove.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D1
 ~
 ~
@@ -1228,7 +1228,7 @@ the area of town known as the Docks, where all the sea vessels are built and
 most sailors stay when in port.  To the west the street heads into the Guild
 area.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D0
 ~
 ~
@@ -1252,7 +1252,7 @@ South Street~
 sells all manner of hand wear.  The street here seems a bit dirtier, less kept
 up than the streets at the north end of town near the gates, almost dingy.  
 ~
-315 dp 0
+315 32776 0 0 0 0
 D1
 ~
 ~
@@ -1271,7 +1271,7 @@ South St~
    The road, seeming a bit dark and gloomy at this end of town, heads east and
 west from here.  To the north is a small hospital.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -1291,7 +1291,7 @@ East Main and South St~
 lies the Dock area, east heads uphill into the high class area of town, the
 Wharf, and north and west lead deeper into the main business district.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -1316,7 +1316,7 @@ of McGintey Cove, known as the Wharf.  A warning to all who come this way.  No
 thievery is allowed here, no crimes are allowed to be committed, and all prices
 are very high.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D1
 ~
 ~
@@ -1332,7 +1332,7 @@ West Main~
 The road leads generally downhill, sometimes down steps toward to the sea shore
 where sailors roam about, looking for food stuffs or women, as is their wont.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -1350,7 +1350,7 @@ gauntlets and glaives which would be too heavy to hang from a hook on the racks.
 It smells of frehly oiled metal and leather in here, a delightful combination
 for any seasoned adventurer such as yourself.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -1364,7 +1364,7 @@ covered in dirt and grime and the farther south you get, the worse the roads
 get.  Hard to believe that some of more high class people actually come through
 here.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D0
 ~
 ~
@@ -1381,7 +1381,7 @@ that this is a seaport town and all.  The prices offered here are substantially
 less than those found in most other towns, and the choices of travel are much
 less limited than the other, smaller inland towns.  
 ~
-315 p 0
+315 32768 0 0 0 0
 D2
 ~
 ~
@@ -1394,7 +1394,7 @@ citizens to have a place for a peaceful rest away from all the noise and hustle
 of the city.  Pity that so many of the less fortunate make it their permanent
 place of residence.  Ah well, it's still a fine place to relax.  
 ~
-315 cep 0
+315 32788 0 0 0 0
 D0
 ~
 ~
@@ -1415,7 +1415,7 @@ citizens to have a place for a peaceful rest away from all the noise and hustle
 of the city.  Pity that so many of the less fortunate make it their permanent
 place of residence.  Ah well, it's still a fine place to relax.  
 ~
-315 cep 0
+315 32788 0 0 0 0
 D0
 ~
 ~
@@ -1436,7 +1436,7 @@ citizens to have a place for a peaceful rest away from all the noise and hustle
 of the city.  Pity that so many of the less fortunate make it their permanent
 place of residence.  Ah well, it's still a fine place to relax.  
 ~
-315 cep 0
+315 32788 0 0 0 0
 D0
 ~
 ~
@@ -1457,7 +1457,7 @@ citizens to have a place for a peaceful rest away from all the noise and hustle
 of the city.  Pity that so many of the less fortunate make it their permanent
 place of residence.  Ah well, it's still a fine place to relax.  
 ~
-315 cep 0
+315 32788 0 0 0 0
 D0
 ~
 ~
@@ -1479,7 +1479,7 @@ town.  Monthly meetings are still held by either the town mayor or the immortal
 sponsor for this town.  The upper reaches of this fine place hold the various
 board rooms for McGintey Cove.  
 ~
-315 dep 0
+315 32792 0 0 0 0
 D2
 ~
 ~
@@ -1496,7 +1496,7 @@ Gods or just post whatever might be on their mind in general.  This is not a
 board to be used to post flames, if a message is considered to be a flame it
 will be removed immediately.  
 ~
-315 cdep 0
+315 32796 0 0 0 0
 D1
 ~
 ~
@@ -1517,7 +1517,7 @@ hometown is chosen instead.  The board here is intended to be used by players to
 talk about quests, request quests, or suggest new quests.  Feel free to post any
 suggestions you may have.  
 ~
-315 cdep 0
+315 32796 0 0 0 0
 D1
 ~
 ~
@@ -1530,7 +1530,7 @@ additions to Dibrova.  We encourage all players to give input regarding any and
 all aspects of the game, we want to make this a game for everyone, so don't be
 shy!  
 ~
-315 cdep 0
+315 32796 0 0 0 0
 D3
 ~
 ~

@@ -6,7 +6,7 @@ In the middle of the forest, popping out over the trees is the tall spire of
 the Citadel. The symbol of the triangled wheel on the tower's side is there
 for all to see. A trail leads eastward down the hill towards the woods.
 ~
-291 c 4
+291 4 0 0 0 0
 D1
 ~
 ~
@@ -25,7 +25,7 @@ near the outermost trees on a rapidly dwindling trail that winds into the dark
 heart of the woods.  Your know your imagination can only scratch the surface of
 the unholy terrors that lie within.  You have been warned.    
 ~
-291 0 4
+291 0 0 0 0 0
 D1
 ~
 ~
@@ -44,7 +44,7 @@ diabolical laugh drifts to your ears.  It drives shivers down your spine.  You
 can make out a trail to the south and east.  To the north there is a cabin.  
 Or you could flee the woods.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -70,7 +70,7 @@ walls.  Still, it does provide shelter from the wind.  The floor is a rough,
 clumpy packed earth.  Whoever lived here has long since abandoned it.  But if
 you take a closer look, you may find something useful.    
 ~
-291 0 0
+291 0 0 0 0 0
 D2
 ~
 ~
@@ -84,7 +84,7 @@ around, a fresh bout of evil laughter comes to your ear.  It echos off the
 trees, refusing to die.  You feel a bead of sweat form on the back of your
 neck.    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -98,7 +98,7 @@ S
 The Black Forest~
    You are in the Black Forest.  Have a Nice Day.    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -117,7 +117,7 @@ Hopelessly Lost~
    You stumbled off the path now you are Hopelessly Lost!  But don't fret.  
 There IS a way out, but can you find it?    
 ~
-291 c 0
+291 4 0 0 0 0
 D2
 ~
 ~
@@ -131,7 +131,7 @@ bark is rough and blood stained.  At the roots lie a fallen hero.  His body
 well along in decomposition, but the cause of death is obvious.  This foolish
 hero has been decapitated.    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -151,7 +151,7 @@ The dense woods~
 much further.  Every so often one of the trees carries an aged blood stain
 marring one of the trees.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -172,7 +172,7 @@ nearby trees prevent you from exploring the wall.  It is an imposing mass of
 cold, smooth, black granite.  So near the vile citadel, you know in your soul
 this is not a place you want to be caught dead at.    
 ~
-291 0 3
+291 0 0 0 0 0
 D2
 ~
 ~
@@ -186,7 +186,7 @@ provides much protection from the icy winds common to the Black Forest.  You do
 not know why, but at least here you can find some measure of sanctuary from the
 evils of the woods.    
 ~
-291 cg 0
+291 68 0 0 0 0
 D1
 ~
 ~
@@ -208,7 +208,7 @@ gravely slopes makes for difficult going.  You can surmise that this place
 would fill up rapidly in a heavy rain.  You just hope that dosen't happen while
 you are here.    
 ~
-291 0 5
+291 0 0 0 0 0
 D2
 ~
 ~
@@ -223,7 +223,7 @@ Deeper into the Black Forest~
    The deeper into the forest you press, the more you doubt the sanity of your
 choice.  But you know that with great risks come great rewards.    
 ~
-291 a 3
+291 1 0 0 0 0
 D1
 ~
 ~
@@ -244,7 +244,7 @@ A spinning disco ball hangs suspended from the ceiling spraying the insides
 with multicolored light.  The noise of the music and chatter is all but
 deafening
 ~
-291 cdf 0
+291 44 0 0 0 0
 D0
 ~
 ~
@@ -260,7 +260,7 @@ The Dance floor~
 and the dancers groove to the music of the preforming Elvis Impersonators as
 they jive around a lovely selection of rabid potted plants.    
 ~
-291 df 0
+291 40 0 0 0 0
 D0
 ~
 ~
@@ -282,7 +282,7 @@ horse.  Around the hoofmarks the earth is scorched as if by a hot flame.
 Looking around there are the signs of a strugle.  Somebody placed his bets
 against whatever made the hoofmarks, and lost.    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -303,7 +303,7 @@ quiet around the area.  You look at the clearing you are standing near and you
 recognize it for what it is.  A killing field.  Your boot crunches on the
 headless skeleton of some small woodland creature.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -326,7 +326,7 @@ sending waves rolling through the glade.  Out of the chilled wind comes a bout
 of the evil, maniacle, unholy cackles that cause your hair to stand on end.  
 
 ~
-291 0 0
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -350,7 +350,7 @@ Boogie Time!~
 to listen to the music.  A few of the Elvis Impersonators have wandered over
 here as they boogie down.    
 ~
-291 f 0
+291 32 0 0 0 0
 D0
 ~
 ~
@@ -364,7 +364,7 @@ away your nervousness and trepidation too.  From here you can push on eastward
 or you can flee west to the safety of the bridge.  Your other option is to
 follow the river to its end.    
 ~
-291 0 3
+291 0 0 0 0 0
 D1
 ~
 ~
@@ -382,7 +382,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 a 3
+291 1 0 0 0 0
 D1
 ~
 ~
@@ -396,7 +396,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 a 3
+291 1 0 0 0 0
 D2
 ~
 ~
@@ -410,7 +410,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -424,7 +424,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -438,7 +438,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 a 3
+291 1 0 0 0 0
 D1
 ~
 ~
@@ -452,7 +452,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 a 3
+291 1 0 0 0 0
 D2
 ~
 ~
@@ -469,7 +469,7 @@ eyes off the citadel, but you manage.  To the west lies a small stream.  To the
 north is a clearing, and south of you is a trail that leads to a small keep in
 ruins.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -494,7 +494,7 @@ making a path around part of the keep belonging to the mistress of the Void Far
 to the south you can see what seems to be the main gate.  To the north the wall
 disappears into the darkness of the Black Forest.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -515,7 +515,7 @@ making a path around part of the keep belonging to the mistress of the Void Far
 to the south you can see what seems to be the main gate.  To the north the wall
 disappears into the darkness of the Black Forest.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -536,7 +536,7 @@ are smooth to the touch.  The gate is a huge, cast iron affair, emblazoned with
 the symbol of the triangled wheel.  Only the bravest of souls would consider
 entering this dreadful place.  There is a gate to the east.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -558,7 +558,7 @@ making a path around part of the keep belonging to the mistress of the Void Far
 to the south you can see what seems to be the main gate.  To the north the wall
 disappears into the darkness of the Black Forest.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -579,7 +579,7 @@ making a path around part of the keep belonging to the mistress of the Void Far
 to the south you can see what seems to be the main gate.  To the north the wall
 disappears into the darkness of the Black Forest.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -601,7 +601,7 @@ scimitar, trying to lope off your head.  You manage to keep the blow from
 decapitating you, but he does connect with your head, sending you sprawling.  
 The horseman rides off cackling.    
 ~
-291 cf 0
+291 36 0 0 0 0
 S
 T 29100
 #29133
@@ -610,7 +610,7 @@ The rockey ravine~
 quartz, feldspar, limestone, calcite, and other minerals in a stunning
 disarray.    
 ~
-291 0 0
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -623,7 +623,7 @@ strain your eyesight you can barely makeout the remains of a ruined keep.  The
 few remaining walls, once a gleeming white are now a dull grey.  Evidently this
 keep was laid waste by the forces of the citadel.  Pity.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -644,7 +644,7 @@ scattered bits of shattered walls remain as testiment to what once was, now
 they are merely waiting for the forest to reclaim them.  At least the ruins
 provide some measure of shelter from the incessent, madening wind.    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -671,7 +671,7 @@ when Ilian's black citadel was erected, those protecting beings withdrew their
 protection to flee to safety, or maybe they made their stand with the occupants
 of the castle, and shared their fate.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -691,7 +691,7 @@ fresh hay on the floor.  Although you take note that some of it has been
 scorched by fire of some sort.  There is still water in the trough.  All this
 leads you to believe that someone or something still makes use of this place
 ~
-291 0 3
+291 0 0 0 0 0
 D3
 ~
 ~
@@ -708,7 +708,7 @@ shattered into a million shards of rainbow hued glass strewn over the ground.
 The east wall still seems soundly built, but you have trepidations about the
 south wall It seems like it could come crashing down at any moment.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -730,7 +730,7 @@ have fallen like the rest of the keep.  The Gigantic bell that once rang its
 clarion call of alarum now is a shattered heap of twisted bronze that sits
 amidst the rest of the rubble.    
 ~
-291 0 0
+291 0 0 0 0 0
 D1
 ~
 ~
@@ -745,7 +745,7 @@ the Wheel, thumbscrews, are all represented here along with such classics as
 red hot pokers and the Chineese Water Torture.  Each device designed to inflict
 as much pain as possible.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D0
 ~
 ~
@@ -757,7 +757,7 @@ The Antechamber~
 tower's chaple.  Off to one side are a row of pegs on which a few robs are
 hung.    
 ~
-291 0 0
+291 0 0 0 0 0
 D4
 ~
 ~
@@ -767,7 +767,7 @@ S
 The Black Forest~
    You are in the Black Forest.  Blah Blah Blah Blah
 ~
-291 a 0
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -790,7 +790,7 @@ More of the black forest~
    The Black forest extends as far as the eye can see.  Granted that's not too
 far, given how dense the forest is.    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -810,7 +810,7 @@ Disco Inferno!~
 you want you can dance the night away and disco till your feet are blistered or
 you can just kill everything in sight here.    
 ~
-291 0 0
+291 0 0 0 0 0
 D1
 ~
 ~
@@ -823,7 +823,7 @@ castle.  Now the forces of the Citadel have defiled the marble court and sacked
 it.  It once famed secure walls now can barely protect themselves from the
 ravages of the elements.    
 ~
-291 0 0
+291 0 0 0 0 0
 D1
 ~
 ~
@@ -840,7 +840,7 @@ pond scum floats in a fine skin over the surface.  This place approaces a swamp
 more than it does a pond.  This place is a prime breeding ground for mosquitoes
 and other stinging insects that buzz about your face.    
 ~
-291 0 3
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -857,7 +857,7 @@ mire.  It is little more than a patch of rock that is covered with poison ivy.
 There is little soil, but somehow the vines mamage to find enough food to
 survive.    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -868,7 +868,7 @@ Still More of the forest~
    You know the drill.  Can you tell that I was running low on my creative
 inspiration when I made this room?    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -885,7 +885,7 @@ seemingly endless cadre of oak trees that stand as omnious guardians to this
 dark place.  Press much further and you do not know if you will be able to find
 your way back.    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~
@@ -907,7 +907,7 @@ rather easily.  Lining the walls are several statues each one made of fine
 marble and totally identical.  Each one depticts the mistress of the citadel in
 her rather imposing stance.    
 ~
-291 cd 0
+291 12 0 0 0 0
 D1
 ~
 ~
@@ -924,7 +924,7 @@ Inside the Citadel~
 shell of the citadel stands as the maintainence and upkeeping fraction of this
 evil construct.    
 ~
-291 d 0
+291 8 0 0 0 0
 D0
 ~
 ~
@@ -949,7 +949,7 @@ the room the appearance of being many times larger than it is.  Occasionally a
 torch is mounted in a setting in the wall.  You can see the hall extending well
 to the north.    
 ~
-291 d 0
+291 8 0 0 0 0
 D0
 ~
 ~
@@ -966,7 +966,7 @@ the room the appearance of being many times larger than it is.  Occasionally a
 torch is mounted in a setting in the wall.  You can see the hall extending to
 the south.    
 ~
-291 d 0
+291 8 0 0 0 0
 D0
 ~
 ~
@@ -983,7 +983,7 @@ Most are thick leatherbound tomes.  Most haven't been used in months, or years
 A fine layer of dust has setteled on most of them.  The tiled floor, however is
 spotless.    
 ~
-291 d 0
+291 8 0 0 0 0
 D1
 ~
 ~
@@ -1002,7 +1002,7 @@ worked on by Durlak.  Occasionally, one will walk into the room and stand by
 the wall waiting repair.  Occasionally one of the others will become active and
 begin its patrolling duties.    
 ~
-291 d 0
+291 8 0 0 0 0
 D0
 ~
 ~
@@ -1022,7 +1022,7 @@ forever dance in crystal orbs that hang suspended from the ceiling by wrougt
 iron chains.  The strange light these provide casts long shadows that envelop
 long tracts of hall.    
 ~
-291 d 0
+291 8 0 0 0 0
 D1
 ~
 ~
@@ -1042,7 +1042,7 @@ forever dance in crystal orbs that hang suspended from the ceiling by wrougt
 iron chains.  The strange light these provide casts long shadows that envelop
 long tracts of hall.    
 ~
-291 d 0
+291 8 0 0 0 0
 D0
 ~
 door secret passage~
@@ -1065,7 +1065,7 @@ providing more than enough light to see by.  The statues seem to be writhing in
 pain.  Each one captured in a snapshot in time, displaying its agony for all to
 see.    
 ~
-291 d 0
+291 8 0 0 0 0
 D2
 ~
 ~
@@ -1082,7 +1082,7 @@ large bonefire burning with an unnatural black flame burns in the middle of the
 room.  A staircase, built into the wall, spirals upward towards the observation
 chamber.    
 ~
-291 d 0
+291 8 0 0 0 0
 D0
 ~
 ~
@@ -1103,7 +1103,7 @@ Arranged in a perfect square matrix, the two foot thick pillars stretch upward,
 reaching higher and higher until they dissappear, enveloped in the darkness
 high above where your light dares not reach.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D1
 ~
 ~
@@ -1120,7 +1120,7 @@ Arranged in a perfect square matrix, the two foot thick pillars stretch upward,
 reaching higher and higher until they dissappear, enveloped in the darkness
 high above where your light dares not reach.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D0
 ~
 ~
@@ -1137,7 +1137,7 @@ Arranged in a perfect square matrix, the two foot thick pillars stretch upward,
 reaching higher and higher until they dissappear, enveloped in the darkness
 high above where your light dares not reach.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D0
 ~
 ~
@@ -1158,7 +1158,7 @@ Arranged in a perfect square matrix, the two foot thick pillars stretch upward,
 reaching higher and higher until they dissappear, enveloped in the darkness
 high above where your light dares not reach.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D0
 ~
 ~
@@ -1175,7 +1175,7 @@ Arranged in a perfect square matrix, the two foot thick pillars stretch upward,
 reaching higher and higher until they dissappear, enveloped in the darkness
 high above where your light dares not reach.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D0
 ~
 ~
@@ -1200,7 +1200,7 @@ Arranged in a perfect square matrix, the two foot thick pillars stretch upward,
 reaching higher and higher until they dissappear, enveloped in the darkness
 high above where your light dares not reach.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D0
 ~
 ~
@@ -1221,7 +1221,7 @@ Arranged in a perfect square matrix, the two foot thick pillars stretch upward,
 reaching higher and higher until they dissappear, enveloped in the darkness
 high above where your light dares not reach.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D0
 ~
 ~
@@ -1247,7 +1247,7 @@ Arranged in a perfect square matrix, the two foot thick pillars stretch upward,
 reaching higher and higher until they dissappear, enveloped in the darkness
 high above where your light dares not reach.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D1
 ~
 ~
@@ -1264,7 +1264,7 @@ Arranged in a perfect square matrix, the two foot thick pillars stretch upward,
 reaching higher and higher until they dissappear, enveloped in the darkness
 high above where your light dares not reach.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D1
 ~
 ~
@@ -1282,7 +1282,7 @@ S
 The Room of 10,000 pillars~
    You are in the Room of 10,000 pillars.  Have a nice day.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D1
 ~
 ~
@@ -1299,7 +1299,7 @@ telescope if mounted into the wall allowing a view to the outside.  The center
 of the room has a sturdy oaken table which is has a modest collection of maps
 and charts.  A spiral starcase leads down the tower.    
 ~
-291 d 0
+291 8 0 0 0 0
 D5
 ~
 ~
@@ -1315,7 +1315,7 @@ forever dance in crystal orbs that hang suspended from the ceiling by wrougt
 iron chains.  The strange light these provide casts long shadows that envelop
 long tracts of hall.    
 ~
-291 d 0
+291 8 0 0 0 0
 D1
 ~
 ~
@@ -1335,7 +1335,7 @@ forever dance in crystal orbs that hang suspended from the ceiling by wrougt
 iron chains.  The strange light these provide casts long shadows that envelop
 long tracts of hall.    
 ~
-291 d 0
+291 8 0 0 0 0
 D1
 ~
 ~
@@ -1353,7 +1353,7 @@ you.  The effect is almost hypnotic.  A staircase is built into the wall
 allowing access to the intricate mechanisms above, if you dare to climb it.  
 
 ~
-291 d 0
+291 8 0 0 0 0
 D0
 ~
 ~
@@ -1371,7 +1371,7 @@ S
 A Connecting Corridor~
    You are in the Citadel.  Have a nice day.    
 ~
-291 ad 0
+291 9 0 0 0 0
 D0
 ~
 ~
@@ -1389,7 +1389,7 @@ much ambient motion it would be easy to ambush you here.  There is a staircase
 down to the ground floor, to go upward any more you will have to climb the
 gears.    
 ~
-291 d 0
+291 8 0 0 0 0
 D4
 ~
 ~
@@ -1407,7 +1407,7 @@ quickly to make your next move before your luck runs out.  One false step here
 could be disasterous.  Its a long way down, if you are lucky, if not you stand
 to be a red stain between two gears.    
 ~
-291 d 0
+291 8 0 0 0 0
 D0
 ~
 ~
@@ -1430,7 +1430,7 @@ warning the gear shudders to life and you fall.  You land between the teeth of
 a moving cog and come to your senses just as it starts to move.  You barely
 escape a crunching death.    
 ~
-291 d 0
+291 8 0 0 0 0
 S
 #29178
 The Top of the Clock Tower~
@@ -1438,7 +1438,7 @@ The Top of the Clock Tower~
 stand looking down.  You can try to brave the trip down of you care to, or you
 can go out onto the clock face.    
 ~
-291 d 0
+291 8 0 0 0 0
 D3
 ~
 ~
@@ -1458,7 +1458,7 @@ only slightly higher they you are now.  And then you see the spire of the
 citadel which extends high into the sky, casting its long shadow across the
 Black Forest.    
 ~
-291 0 0
+291 0 0 0 0 0
 D1
 ~
 ~
@@ -1470,7 +1470,7 @@ The Ground Floor of the Spire~
 black.  The only thing that breaks the monotony is a starcase that extends both
 up and down
 ~
-291 ad 0
+291 9 0 0 0 0
 D3
 ~
 door double~
@@ -1494,7 +1494,7 @@ torture.  The middle of the room is taken up by several implements of pain.
 There is a vat for boiling oil.  Several racks and countless hideous bladed
 instruments, old, diseased, and rusty with age.    
 ~
-291 d 0
+291 8 0 0 0 0
 D2
 ~
 ~
@@ -1512,7 +1512,7 @@ black material in the middle.  Unholy lights burn with the power of the
 symmetry, casting an unnatrual sheen on the room.  The spiral staircase that
 wraps around the room continues both up and down
 ~
-291 d 0
+291 8 0 0 0 0
 D4
 ~
 ~
@@ -1531,7 +1531,7 @@ central pillar on which the staircases are supported.  You have to marvel at
 the wonder of engineering this is.  But only the bravest souls will climb it
 because each step you take brings you that much closer to...  Her.    
 ~
-291 d 0
+291 8 0 0 0 0
 D4
 ~
 ~
@@ -1549,7 +1549,7 @@ grows noteably dimmer, as if the tower's very darkness consumes the light as
 soon as it is produced.  Your legs plead with you to decend the steps, rather
 than ascend.  For to go down is to go away from the terror at the top.    
 ~
-291 d 0
+291 8 0 0 0 0
 D4
 ~
 ~
@@ -1565,7 +1565,7 @@ The Choice~
 is has two exits to it, and to go forth you have to make a fateful choice.  
 Think carefully before you make your choice.    
 ~
-291 acd 0
+291 13 0 0 0 0
 D0
 ~
 ~
@@ -1583,13 +1583,13 @@ S
 Damned if You Do~
    You've made your choice, now live with it
 ~
-291 d 0
+291 8 0 0 0 0
 S
 #29187
 Damned if You Don't~
    You've made your choice, now live with it
 ~
-291 d 0
+291 8 0 0 0 0
 S
 #29188
 The Music Room~
@@ -1601,7 +1601,7 @@ to be used.  In the background you can hear the echos of a phantasmal orquestra
 playing in some forgotten and lost dimention, whose music somehow leaks through
 to where you now stand.    
 ~
-291 adf 0
+291 41 0 0 0 0
 D0
 ~
 ~
@@ -1617,7 +1617,7 @@ The Great Spiral Staircase~
 have a chance after all, but if you had any sense at all you'd just keep on
 going back down.    
 ~
-291 d 0
+291 8 0 0 0 0
 D4
 ~
 ~
@@ -1634,7 +1634,7 @@ Death's Door.  The Large, Iron double door stands as an obstacle to your
 passage.  Trying force the door would be futile.  To progress any further you
 will need a key.  There is a door to the north
 ~
-291 d 0
+291 8 0 0 0 0
 D0
 Death's Door stands here to block you.
 ~
@@ -1652,7 +1652,7 @@ and the walls are slick with moss.  As you walk upwards your way is lit by
 candles that are lining both sides of the starecase.  The air is thick with the
 humidity and the stench of evil.  It is still not to late to turn back.    
 ~
-291 d 0
+291 8 0 0 0 0
 D2
    Death's is here barring your progress
 ~
@@ -1669,7 +1669,7 @@ Beyond the point of no return~
 is through the mistress of the void, Ilian.  Unless you want to take the easy
 way out and just die now.    
 ~
-291 acd 0
+291 13 0 0 0 0
 D4
 ~
 ~
@@ -1684,7 +1684,7 @@ grey skies loom ominously fortelling of a coming storm.  You can step out on to
 the balcony if you like, or you can climb the staircase in the middle to
 challenge the mistress of this fortress.    
 ~
-291 d 0
+291 8 0 0 0 0
 D1
 ~
 ~
@@ -1708,7 +1708,7 @@ the western hills where you began this nightmare to the sea which lies FAR to
 the south.  The balcony extends to the south a bit, but be careful There is no
 guardrail, and that first step is a doozy.    
 ~
-291 0 1
+291 0 0 0 0 0
 D2
 ~
 ~
@@ -1725,7 +1725,7 @@ clifflike drop at the edge.  An unexpected gust of wind nearly makes you loose
 your footing, but you manage to hang on.  As nervous as you are, this place has
 an unusual serenity to it.    
 ~
-291 0 1
+291 0 0 0 0 0
 D0
 ~
 ~
@@ -1739,7 +1739,7 @@ to the north.  This chamber is the guardpost for Ilian's personal bodyguard and
 enforcer.  The Greatest and Most Powerful of all the Doomguard: The Dark and
 Stormy Knight!    
 ~
-291 ad 0
+291 9 0 0 0 0
 D0
 ~
 ~
@@ -1759,7 +1759,7 @@ mistress of the citadel, Ilian sits on her throne surrounded by a small horde
 of her children, She looks at you as her mastery of the dark symmetry probes
 your mind to find out if you are signifigant enough to be bothered with
 ~
-291 ad 0
+291 9 0 0 0 0
 D2
 ~
 ~
@@ -1774,7 +1774,7 @@ The Way Out~
    Fleeing quickly, you leave the throne room behind and make your way down a
 secret staircase
 ~
-291 ac 0
+291 5 0 0 0 0
 D5
 ~
 ~
@@ -1787,7 +1787,7 @@ seemingly endless cadre of oak trees that stand as omnious guardians to this
 dark place.  Press much further and you do not know if you will be able to find
 your way back.    
 ~
-291 a 3
+291 1 0 0 0 0
 D0
 ~
 ~

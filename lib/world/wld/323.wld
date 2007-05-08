@@ -7,7 +7,7 @@ otherwordly.  A steep slope heads east, downward into darkness.  There are no
 sounds of movement or voices at all, only the steady, quiet drip of the caverns'
 moist walls.  
 ~
-323 afg 0
+323 97 0 0 0 0
 D1
 ~
 ~
@@ -36,7 +36,7 @@ floor slopes gently at first, then with more vigor as it continues.  Soon anyone
 trying to negotiate east would have to lean back as they walk just so that they
 might keep their balance.  
 ~
-323 adf 0
+323 41 0 0 0 0
 D1
 ~
 ~
@@ -54,7 +54,7 @@ more cold.  The floor continues to slope downward to the east, the darkness as
 complete as darkness can be.  Any sounds made in this dark, lonely place echo
 back a thousand fold - making the isolation complete.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -73,7 +73,7 @@ the color or makeup of the rock walls that this tunnel runs through.  They are a
 solid, gleaming black which seems to both reflect the light and soak it up all
 at once - it is unnerving.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -90,7 +90,7 @@ track of time down in places such as these with no light and no other human
 contact.  The steady drip of the walls is still all that comes back from this
 dreary place as you make your way through.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -107,7 +107,7 @@ To the west the cavern begins its steep ascent toward the exit and open air.
 Somewhere - perhaps far away, perhaps close nearby - the sound of steady
 breathing can be heard, or at least that is what it sounds like.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D2
 ~
 ~
@@ -124,7 +124,7 @@ caverns, however here the walls and floor are unnaturally smooth, almost like
 black marble.  The sound of the breathing comes a bit louder now, a steady
 rasping breath that almost sounds like a heavy smoker asleep.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -145,7 +145,7 @@ hidden on the outside by the rock's smooth, reflective surface.  The sound of
 the breathing is no doubt coming from a small opening just to the west, a place
 that gives a certain aura of dread.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -164,7 +164,7 @@ daylight hours in places such as this and terrorize the ones who unknowingly
 created it during the night hours.  It is said only very powerful magic can
 destroy or even harm a creature such as this one.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -177,7 +177,7 @@ still quite smooth to the touch.  Certainly there are no sharp points to these
 walls.  Somewhere - perhaps far away, perhaps close nearby - the sound of steady
 breathing can be heard, or at least that is what it sounds like.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -196,7 +196,7 @@ into darkness.  These two directions are interesting enough by themselves, but
 the real interest at this juncture is the alcove just north and what lies
 within.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -218,7 +218,7 @@ this space feels no need to stay clean and tidy.  It also appears that the
 creature eats well from the number of skeletons and loose bones scattered
 through the hay and wastes.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D2
 ~
 ~
@@ -231,7 +231,7 @@ sound of running water comes from somewhere in that cavern, however exactly
 where is hard to tell, since everything here echoes.  To the west is a passage
 quite the same as the one you now stand within.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -248,7 +248,7 @@ sloping high and away from the walls.  The southeast wall glimmers and shimmers,
 this being the source of the running water, as the entire wall is covered in a
 cascade of clear water which runs down through a crack in the ceiling.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -272,7 +272,7 @@ An Enormous Cavern~
 cavalry and then some.  The ceiling is so tall that at its peak it cannot be
 seen, so lost it is in the darkness.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -288,7 +288,7 @@ An Enormous Cavern~
 cavalry and then some.  The ceiling is so tall that at its peak it cannot be
 seen, so lost it is in the darkness.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -312,7 +312,7 @@ An Enormous Cavern~
 cavalry and then some.  The ceiling is so tall that at its peak it cannot be
 seen, so lost it is in the darkness.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -336,7 +336,7 @@ An Enormous Cavern~
 angle, but making a corner nonetheless.  To the south is a small fissure in the
 rock, just wide enough for one man to squeeze through.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -358,7 +358,7 @@ unknown source out of a crack in the ceiling and disappearing into another crack
 in the floor.  The cavern itself looms ever large, the black walls glistening in
 the faint light.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -380,7 +380,7 @@ and clean, its fresh scent a nice change from the dreary stuffiness of the
 caverns.  To the east there is an opening in the ceiling above the cascade, it
 looks like you might fit up there.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -401,7 +401,7 @@ sending all sounds back to you in a chorus of clicks and scrapes.  The open air
 above your head whistles through unknown cracks and openings unseen high at the
 ceiling of the cavern.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -426,7 +426,7 @@ creak of a bat's wings ro the drip of the water on the south wall.  The darkness
 surrounding you is now not only just dark, but wide open.  That is almost worse
 than clautrophobia.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -450,7 +450,7 @@ An Enormous Cavern~
 vaulted at the top.  The cavern opens up wide and unvitingly to the west and
 south.  The sound of the water is very loud here.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -470,7 +470,7 @@ An Enormous Cavern~
 naked eye can make out from the floor.  A hall runs off the east wall just north
 of here, leading farther, deeper into caverns.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -489,7 +489,7 @@ An Enormous Cavern~
    You stand before the cascade, an opening above it appearing to lead further
 up into darkness.  The cavern opens out large and dark to the north and west.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -511,7 +511,7 @@ corner and opens to the west into small room.  It is completely dark in the
 room, but a sound can be heard - almost like someone clicking their nails loud
 enough for it to echo.  
 ~
-323 adfgi 0
+323 361 0 0 0 0
 D0
 ~
 ~
@@ -527,7 +527,7 @@ Horror Chamber~
 this place.  The stench is beyond description, the walls scratched and nicked in
 many places.  It is not a comfortable place.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -539,7 +539,7 @@ An Enormous Cavern~
 much the same.  To the west is an opening in the north wall, a wide tunnel
 heading off into darkness.  The cavern spreads out to the south.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D2
 ~
 ~
@@ -557,7 +557,7 @@ footprints having passed this way.  There is a wide passageway to the north, it
 apparently the path that is most commonly taken by whoever makes these tracks -
 the tracks lead straight north.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -577,7 +577,7 @@ A Wide Passage~
 from here.  A passage runs off east just to the north, the sound of many voices
 coming from that direction.  Many, many voices.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -594,7 +594,7 @@ also fairly wide and open in that direction.  The sound of the voices is
 extremely loud here, the noise rose to a crascendo as soon as you rounded the
 corner of the passage.  
 ~
-323 acdfg 0
+323 109 0 0 0 0
 D0
 ~
 ~
@@ -615,7 +615,7 @@ gibberlings, a small and filthy humanoid creature which always fights in large
 numbers.  They must sleep and eat and fornicate about anywhere as all the floors
 and walls are covered in grease and grime and the Gods only know what else.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -631,7 +631,7 @@ A Thousand Small Voices~
 coupled with the fact that these little buggers love raw human meat is a pretty
 disturbing fact.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -647,7 +647,7 @@ An Enormous Din~
 creatures.  The grease and slime underfoot makes it tough to negotiate, but
 negotiate you do as you work your way through their homes.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -667,7 +667,7 @@ A Private Chamber~
 that is possible.  The clatter and din of the gibberlings makes thought all but
 impossible, keeping you on the verge of madness at a constant.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -680,7 +680,7 @@ spend its entire existance like this is an atrocity.  The gibberlings take their
 delight in the mental anguish they cause their prey, watching it squirm and
 writhe just before they attack.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -701,7 +701,7 @@ they make their last stands against bugbear invasions.  Bones are strewn about,
 not in an eerie way, just sloppy.  Everything is coated with the same grime and
 goo found all over this area.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D3
 ~
 ~
@@ -713,7 +713,7 @@ A Private Chamber~
 that is possible.  The clatter and din of the gibberlings makes thought all but
 impossible, keeping you on the verge of madness at a constant.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D2
 ~
 ~
@@ -726,7 +726,7 @@ tunnel.  To the north is some sort of habitation - there is a light source of
 some sort.  It is no longer only light where your light shines, it light to
 north.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -742,7 +742,7 @@ A Wide Passage~
 burning in sconces.  Guttural sounds can be heard, rumbling voices of some sort
 of creature.  There is also the sound of movement by a number of feet.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -759,7 +759,7 @@ and spreading out for quite some area in these caverns.  It does not appear that
 they will venture forth into the cavern proper, although within their own domain
 they will certainly show no fear.  
 ~
-323 cdfg 0
+323 108 0 0 0 0
 D1
 ~
 ~
@@ -776,7 +776,7 @@ guttural language can be heard in snatches and rumblings from afar.  Every now
 again a heavy huff or thump can be heard over the voices, sometimes even the
 clang of metal on metal.  Tread lightly.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D1
 ~
 ~
@@ -793,7 +793,7 @@ protective of what little area the Pale Man allows them to occupy here and will
 fight to the death to keep it for their own.  The large stewpot to the north in
 the main room gives testament to that fact.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -810,7 +810,7 @@ protective of what little area the Pale Man allows them to occupy here and will
 fight to the death to keep it for their own.  The large stewpot to the north in
 the main room gives testament to that fact.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -826,7 +826,7 @@ Main Room in the Den~
 cerimony are held here, as well as feasts of an ugly nature.  This is considered
 sacred ground by the clan - your life is forfeit.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -851,7 +851,7 @@ protective of what little area the Pale Man allows them to occupy here and will
 fight to the death to keep it for their own.  The large waiting stewpot to the
 west gives testament to the fact that the bugbears mean business.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -867,7 +867,7 @@ Den of the Bugbears~
 protective of what little area the Pale Man allows them to occupy here and will
 fight to the death to keep it for their own.  Trespassers will be prosecuted.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D2
 ~
 ~
@@ -884,7 +884,7 @@ protective of what little area the Pale Man allows them to occupy here and will
 fight to the death to keep it for their own.  The large waiting stewpot to the
 south gives testament to the fact that the bugbears mean business.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D1
 ~
 ~
@@ -902,7 +902,7 @@ keeping the clan from spiritual danger.  Usually, the word from the Gods is that
 the clan should go out and slay as many of the neighboring gibberlings as
 possible, as the shaman is quite fond of gibebrling meat.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D2
 ~
 ~
@@ -915,7 +915,7 @@ persons of import and other, larger areas available for the general clansmen.
 Some of the more prestigious dwellings of bugbear clansmen lie to the north,
 south and west.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -941,7 +941,7 @@ discipline in the ranks that needs doled out, it is this bugbear who does the
 doling.  Being that he also leads most raids, the leader is often replaced out
 of need - bugbears are not stupid, but neither are they all that smart.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D1
 ~
 ~
@@ -956,7 +956,7 @@ then it ends there.  A chief can only be replaced through a direct challenge
 from another of the clansmen, therefore the chief always remains a young, robust
 bugbear with great physical prowess.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -968,7 +968,7 @@ A Steep Climb~
 into the rock above.  The water does not flow from this place, it is completely
 dry here and hand holds abound, making the climb relatively easy.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D4
 ~
 ~
@@ -984,7 +984,7 @@ Up Toward a Fresh Scent~
 below.  Could the source of the cascade be somewhere above?  The scent energizes
 you, giving you fresh vigor for the climb.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D4
 ~
 ~
@@ -1004,7 +1004,7 @@ stand upon must drop off quite immediately into the water.  To the west, the
 ledge curves around the 'shore' of the lake, plus a small cave leads away from
 the lake's edge even farther west.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1025,7 +1025,7 @@ this walkway.  It appears that the water flows east into the lake, which must
 then leak somewhere underneath down along the wall of the cavern below,
 cascading past the cavern down deeper into the earth.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1040,7 +1040,7 @@ Along the Tributary~
    Ahead, a stone wall prohibits any further progress east.  The water flows
 from an opening which is not large enough to accomodate your girth.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1057,7 +1057,7 @@ water comes from some place past this wall which keeps any further travel east
 impossible.  There is a narrow passage to the north, a barely noticeable thing
 leading away from the tributary's shore.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -1074,7 +1074,7 @@ and certainly not natural.  Every warning bell in your being is going off,
 telling you that this is not the place of a being that either kind nor
 honorable.  A slight chill runs through your spine.  
 ~
-323 adfgi 0
+323 361 0 0 0 0
 D0
 ~
 ~
@@ -1091,7 +1091,7 @@ stone around it, but from the thing which dwells within it.  The small crack to
 the south looks almost inviting in comparison to the feeling of horror which
 pervades this room.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D2
 ~
 ~
@@ -1104,7 +1104,7 @@ south around it for a short space and then terminates at the cavern wall.
 Small ripples dance across the surface of the lake - otherwise, it is dead calm.
 
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1125,7 +1125,7 @@ the moister of the nearby lake.  The mold glows slightly with a strange
 luminescence.  It is really quite comforting after being the complete darkness
 for so long.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D1
 ~
 ~
@@ -1141,7 +1141,7 @@ Moldy Passage~
 were walking upon a thick carpet.  As indeed in a sense you are.  A fairly large
 room opens up to the south, its walls and floor covered just the same.  
 ~
-323 cdfg 0
+323 108 0 0 0 0
 D1
 ~
 ~
@@ -1159,7 +1159,7 @@ became so accustomed to in the caves outside - the echoes, the wide open sound
 of the air blowing through - all of that is gone here, replaced by a deep
 penetrating silence.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1181,7 +1181,7 @@ became so accustomed to in the caves outside - the echoes, the wide open sound
 of the air blowing through - all of that is gone here, replaced by a deep
 penetrating silence.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D1
 ~
 ~
@@ -1198,7 +1198,7 @@ thrity degrees cooler here than just a few feet to the east.  You begin to feel
 the heat drain from your body and suddenly realize what the thing on the floor
 is!  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D1
 ~
 ~
@@ -1213,7 +1213,7 @@ of the air blowing through - all of that is gone here, replaced by a deep
 penetrating silence.  To the west is a small chamber, one which appears to hold
 a mass of something on the floor.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1235,7 +1235,7 @@ became so accustomed to in the caves outside - the echoes, the wide open sound
 of the air blowing through - all of that is gone here, replaced by a deep
 penetrating silence.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1252,7 +1252,7 @@ the east, you may either go north or south along this ledge.  You see a pile
 of...  Something just south of here heaped against the south wall on the ground.
 
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -1268,7 +1268,7 @@ The Lake's Edge~
 progress on the ledge.  Something smells quite dreadful here, very much like
 dead, decayed fish - but maginified many times over.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -1286,7 +1286,7 @@ comes to a point, the ceiling sloping down in two perfectly even archs to reach
 the walls, making this almost seem like a holy walkway - one that might lead to
 a holy man of some sort.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1303,7 +1303,7 @@ floor.  The ceiling and walls do not stray from their shape or form that began
 at the entrance to the main cavern, indeed they hold their shape right up to the
 point where they meet the far eastern wall on the other side of the hole.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1320,7 +1320,7 @@ which down deeper into the rock.  This was most definitely man-made as it is
 completely smooth walled with a set of rungs built into one side, made for easy
 climbing.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D3
 ~
 ~
@@ -1336,7 +1336,7 @@ In the Shaft~
 can be seen from here as can the floor of a chamber below.  Both seem about as
 promising as a night on the iron maiden.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D4
 ~
 ~
@@ -1352,7 +1352,7 @@ Bottom of the Shaft~
 wall of the shaft.  A vaulted passage runs off to the east, much like the one
 above.  In fact, it is exactly like the one above.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1370,7 +1370,7 @@ of litter, indeed they are free of dirt, as it appears they are swept or
 scrubbed regularly.  The passageway continues east for a short distance further
 then turns north, the vaulted ceiling turning with the rest of the cavern.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1390,7 +1390,7 @@ however the walls and ceiling become rough, no longer carved in that direction.
 The way east gains width as it runs in that direction, getting more and more
 wide with every foot east.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -1411,7 +1411,7 @@ making the way north quite enjoyable.  Ahead are torches in ornate sconces,
 burning strongly, lighting the whole way.  You can see that the caveway runs
 north for quite some distance before turning east.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1427,7 +1427,7 @@ Wide Carpeted Caveway~
 smooth and clean as any palace.  The denizens of this place seem especially
 proud of their home.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1443,7 +1443,7 @@ Wide Carpeted Caveway~
 To the south is the way back to the vaulted caves which lead back into the main
 cavern.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1460,7 +1460,7 @@ throne lies against the far east wall, quite some distance from here, small
 alcoves hold waiting attendants the length of the hall.  The black carpeting
 runs straight to the throne.  
 ~
-323 cdfg 0
+323 108 0 0 0 0
 D1
 ~
 ~
@@ -1478,7 +1478,7 @@ Legends told of the Pale Man say that he has lived for a thousand years and will
 live for a thousand more.  No one disputes them, as the Pale Man kills any being
 foolhearty enough to make an attempt on his life, even in thought.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D2
 ~
 ~
@@ -1492,7 +1492,7 @@ Legends told of the Pale Man say that he has lived for a thousand years and will
 live for a thousand more.  No one disputes them, as the Pale Man kills any being
 foolhearty enough to make an attempt on his life, even in thought.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D2
 ~
 ~
@@ -1504,7 +1504,7 @@ Entering the Chamber~
 alcoves.  The alcoves are where beings wait for their chance to speak to or make
 a request of the Pale Man.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1528,7 +1528,7 @@ Chamber of the Pale Man~
 alcoves.  The alcoves are where beings wait for their chance to speak to or make
 a request of the Pale Man.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1554,7 +1554,7 @@ over the millenia in donating some of their talent to beautifying his abode.
 All these walls pale, however, in comparison to the huge black throne which
 stands tall and proud on its dias against the far east wall.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D3
 ~
 ~
@@ -1568,7 +1568,7 @@ Legends told of the Pale Man say that he has lived for a thousand years and will
 live for a thousand more.  No one disputes them, as the Pale Man kills any being
 foolhearty enough to make an attempt on his life, even in thought.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1582,7 +1582,7 @@ Legends told of the Pale Man say that he has lived for a thousand years and will
 live for a thousand more.  No one disputes them, as the Pale Man kills any being
 foolhearty enough to make an attempt on his life, even in thought.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D0
 ~
 ~
@@ -1594,7 +1594,7 @@ The Cavern Widens~
 circular well just to the east.  A small chamber to the south looks particularly
 uninviting, however it may warrant a quick look.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1615,7 +1615,7 @@ creature which makes its home in this place is not at all what one might call a
 good host, and if it not here now, chances are that it will be back very
 quickly.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -1629,7 +1629,7 @@ it you hear...  Nothing.  That does not mean it didn't land, though - do not be
 afraid.  It appears that the rocky interior of the well would be suitable for
 climbing.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D3
 ~
 ~
@@ -1644,7 +1644,7 @@ In the Well~
    The handholds turn out to be quite stable, allowing access to both the top
 and bottom of the well.  The bottom of the well can be seen now, bone dry.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D4
 ~
 ~
@@ -1660,7 +1660,7 @@ Well's Base~
 another wide chamber leading east from down here as well.  It also seems much
 warmer down here than it did above.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1676,7 +1676,7 @@ Crosschamber~
 east.  It is much wider to the east, however the heat that you feel seems to
 radiate from that direction - a sign, perhaps?  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D1
 ~
 ~
@@ -1697,7 +1697,7 @@ draping or mound lies in that room.  The glow shimmers and dazzles as it shines.
 The heat now has become nearly unbearable, you can feel your face and hands
 burning slightly, turning red.  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D1
 ~
 ~
@@ -1714,7 +1714,7 @@ dragon's scales - that's all it was.  Maybe it would have been better had you
 stayed in Jareth, maybe tossed a couple of beers down at the Goat and called it
 a night...  
 ~
-323 dfg 0
+323 104 0 0 0 0
 D3
 ~
 ~
@@ -1726,7 +1726,7 @@ Side Tunnel~
 that does not help to ease the uneasy feeling you get from this small tunnel.  
 Something, someone lies to the south and it is not something good.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -1742,7 +1742,7 @@ Side Tunnel~
 coins!  Maybe that bad feeling was just that you weren't sure how you were going
 to carry all this gold back to the bank.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D0
 ~
 ~
@@ -1758,7 +1758,7 @@ Deep Room~
 actually the sides of the Deepspawn inhabiting this place.  Somewhere, somehow
 back just west of Jareth, you feel you must have taken a wrong turn.  
 ~
-323 adfg 0
+323 105 0 0 0 0
 D3
 ~
 ~
@@ -1769,7 +1769,7 @@ The Aboleth's Lair~
    So this is why the aboleth attacked so suddenly on the ledge!  She was
 protecting her babies.  Not to mention a considerable treasure...  
 ~
-323 afg 0
+323 97 0 0 0 0
 D4
 ~
 ~

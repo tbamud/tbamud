@@ -5,7 +5,7 @@ small brass torch set in the wall.  Flickering shadows dance about the room in
 a manner you find disorienting.  Beneath the torch is an elaborate mahogany
 door, complete with a small silver doorknob.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 You see an elaborate mahogany door.
 ~
@@ -44,7 +44,7 @@ walking on a thick woven rug.  The walls of the tunnel that you are in are
 completely smooth, and polished to a gleam.  Before you, the tunnel opens up to
 what appears to be a small chamber.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 It is difficult to see into the chamber from here.
 ~
@@ -63,7 +63,7 @@ feet, and tapestries along the walls.  There is a rectangular hole in the rug,
 revealing a trapdoor which seems to open via a small iron ring, The room's exit
 looms behind you.    
 ~
-305 d 0
+305 8 0 0 0 0
 D2
 There is a smooth tunnel back there.
 ~
@@ -81,7 +81,7 @@ The Stone Staircase~
 core of stone, descending deeper into the bowels of the earth.  Small torches
 are set into the stone, guiding your way.    
 ~
-305 d 0
+305 8 0 0 0 0
 D4
 There is a small room up there.
 ~
@@ -101,7 +101,7 @@ slope forward.  You soon find yourself sliding in circles down the tunnel,
 which has now become smooth stone, covered with very fine sand.  You faintly
 detect the sound of delighted laughter echoing in some faraway place.    
 ~
-305 d 0
+305 8 0 0 0 0
 D5
 You're gonna find out fast- cuz thats the way your sliding!
 ~
@@ -115,7 +115,7 @@ some slick metal.  You descend rapidy, being abruptly slammed against the walls
 as the slide banks through several tight corners.  Ahead of you, approaching
 rapidly is a small point of light.    
 ~
-305 d 0
+305 8 0 0 0 0
 D5
 You see a point of light..approaching fast!
 ~
@@ -134,7 +134,7 @@ the squares are giant carved wooden beings, looming and silent.  There is a
 neat wooden ladder beneath you, leading downward, and three quarters up the
 opposite wall is the small hole you just came flying out of.    
 ~
-305 d 0
+305 8 0 0 0 0
 D5
 The ladder looks safe...kinda.
 ~
@@ -147,7 +147,7 @@ The Ladder~
 metal hooks to the cavern wall.  The ledge is above you, and the cavern floor
 is below you.  There is a small sign on the wall.    
 ~
-305 d 0
+305 8 0 0 0 0
 D4
 The ledge is up there.
 ~
@@ -164,7 +164,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 ~
 ~
@@ -179,7 +179,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 ~
 ~
@@ -198,7 +198,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 ~
 ~
@@ -217,7 +217,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 ~
 ~
@@ -236,7 +236,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 ~
 ~
@@ -255,7 +255,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 ~
 ~
@@ -274,7 +274,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 ~
 ~
@@ -293,7 +293,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D2
 ~
 ~
@@ -308,7 +308,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -327,7 +327,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -350,7 +350,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -373,7 +373,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -396,7 +396,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -419,7 +419,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -442,7 +442,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -465,7 +465,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -484,7 +484,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -503,7 +503,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -526,7 +526,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -549,7 +549,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -572,7 +572,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -595,7 +595,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -618,7 +618,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -641,7 +641,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -660,7 +660,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -679,7 +679,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -702,7 +702,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -725,7 +725,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -748,7 +748,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -771,7 +771,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -794,7 +794,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -817,7 +817,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -841,7 +841,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -860,7 +860,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -883,7 +883,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -906,7 +906,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -929,7 +929,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -952,7 +952,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -975,7 +975,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -998,7 +998,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1022,7 +1022,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1041,7 +1041,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1064,7 +1064,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1087,7 +1087,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1110,7 +1110,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1133,7 +1133,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1156,7 +1156,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1179,7 +1179,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1198,7 +1198,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1217,7 +1217,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1240,7 +1240,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1268,7 +1268,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1291,7 +1291,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1314,7 +1314,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1337,7 +1337,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1360,7 +1360,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1379,7 +1379,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1394,7 +1394,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1413,7 +1413,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1432,7 +1432,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1451,7 +1451,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1470,7 +1470,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1489,7 +1489,7 @@ The Black Square~
    You are standing on a highly polished black marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1508,7 +1508,7 @@ The White Square~
    You are standing on a highly polished white marble tile, which extends about
 six feet in either direction.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1523,13 +1523,13 @@ The Lost Chamber~
    This chamber is small, dark, and cramped.  You begin to feel a bit
 claustrophobic.    
 ~
-305 d 0
+305 8 0 0 0 0
 S
 #30573
 The Joker's Teacup~
    You are sliding around in a highly polished porcelain cup.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 ~
 ~
@@ -1539,7 +1539,7 @@ S
 The Joker's Teacup~
    You are sliding around in a highly polished porcelain cup.    
 ~
-305 d 0
+305 8 0 0 0 0
 D2
 ~
 ~
@@ -1549,7 +1549,7 @@ S
 The Joker's Teacup~
    You are sliding around in a highly polished porcelain cup.    
 ~
-305 d 0
+305 8 0 0 0 0
 D3
 ~
 ~
@@ -1562,7 +1562,7 @@ rug.  Despite being very small, it looks comfortable enough to rest in for a
 bit.  As you seat yourself on the bed, you see a flicker of motion in the
 mirror..    
 ~
-305 d 0
+305 8 0 0 0 0
 D5
 You find a trapdoor under the bed!
 ~
@@ -1583,7 +1583,7 @@ rug.  Despite being very small, it looks comfortable enough to rest in for a
 bit.  As you seat yourself on the bed, you see a flicker of motion in the
 mirror..    
 ~
-305 d 0
+305 8 0 0 0 0
 D5
 You find a trapdoor under the bed!
 ~
@@ -1604,7 +1604,7 @@ inside some sort of enclave, and you see an underground river to the east.
 There is a small wooden dock extending from your enclave out into the river.  
 
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 There is a dock over there.
 ~
@@ -1618,7 +1618,7 @@ inside some sort of enclave, and you see an underground river to the west.
 There is a small wooden dock extending from your enclave out into the river.  
 
 ~
-305 d 0
+305 8 0 0 0 0
 D3
 There is a dock over there.
 ~
@@ -1633,7 +1633,7 @@ momentarily.  The light approaches closer, and you realize that it is some
 strange form of boat.  It stops at the north side of the dock, ready to be
 boarded.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1651,7 +1651,7 @@ momentarily.  The light approaches closer, and you realize that it is some
 strange form of boat.  It stops at the north side of the dock, ready to be
 boarded.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1667,7 +1667,7 @@ The Sulking Swan~
 swan.  Its wooden sides thump hollowly against the tunnel sides, as it bobs
 gently and begins to carry you downstream.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1679,7 +1679,7 @@ The Underground River~
 points, but always headed downstream.  In the distance you see another dock.  
 
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1693,7 +1693,7 @@ intertwining themselves with the boat's brass brackets.  It seems safe to step
 east onto the second dock, or you could just sit here and keep the boat
 company.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 ~
 ~
@@ -1706,7 +1706,7 @@ quite nice to stand on firm ground again.  The boat is tied to the west, and a
 nice red wooden door waits expectantly at the east end of the dock- it seems to
 lead directly into the tunnel wall.    
 ~
-305 d 0
+305 8 0 0 0 0
 D1
 There is a nice red door there.
 ~
@@ -1722,7 +1722,7 @@ The Entrance Hall~
    You find yourself standing at the beginning of a giant entrance hall.  A
 fine red carpet leads north, and extravagant silks line the walls.    
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1738,7 +1738,7 @@ The Entrance Hall~
 entrance hall.  There is retreat to the south, and a giant throne to the north.
   
 ~
-305 d 0
+305 8 0 0 0 0
 D0
 ~
 ~
@@ -1753,7 +1753,7 @@ The Joker's Throne~
    You stand before a giant throne, made entirely of fool's gold.  This seems
 to be the domain of the Joker- It may be wise to leave him to his games...    
 ~
-305 d 0
+305 8 0 0 0 0
 D2
 ~
 ~

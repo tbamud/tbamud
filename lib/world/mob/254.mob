@@ -6,7 +6,7 @@ A man is here, going about whatever business Mordecai has set him to.
    The villager looks quite like any other man you might meet on any other
 street in any other town.  
 ~
-cdg 0 -200 E
+76 0 0 0 0 0 0 0 -200 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -19,7 +19,7 @@ A skinny woman stands here. She is pale, sickly and generally pathetic to see.
    The woman would probably be quite a hotty if not for her ribs showing through
 the flimsy fabric of her grubby, raggety dress.  
 ~
-cdg 0 400 E
+76 0 0 0 0 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -33,7 +33,7 @@ Caspan recognizes you as an intruder immediately and attacks!
    Strong, tall, and mean as hell, this man could probably tear you limb from
 limb.  
 ~
-bdflpqr d -600 E
+231466 0 0 0 16 0 0 0 -600 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -47,7 +47,7 @@ Penelope stands here, looking beautiful as a Goddess.
    Slighty plump, but all in the right places, Penelope looks as if she knows a
 trick or two with the fellas.  
 ~
-bdpqr 0 600 E
+229386 0 0 0 0 0 0 0 600 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -59,7 +59,7 @@ One of Mordecai's soldiers marches by, intent on his duties.
 ~
    Dressed in matching rags, these soldiers present a pitiful ragtag bunch.  
 ~
-bdlm 0 -400 E
+6154 0 0 0 0 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -72,7 +72,7 @@ A poor twelve year old girl is here, offering herself to all men in the village.
    The girl looks worn and beaten.  Perhaps you should have pity on her?  
 Certainly, her way of life has been ordered by Mordecai.  
 ~
-dg s -50 E
+72 0 0 0 524288 0 0 0 -50 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -85,7 +85,7 @@ A child covered in nasty chankers trudges past.
    The child, dressed in the dirtiest of rags, looks up at you through his pussy
 eyes, and smiles a toothless smile.  
 ~
-dgh s -50 E
+200 0 0 0 524288 0 0 0 -50 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -97,7 +97,7 @@ A pregnant woman sits here, eating a peanut butter and pickle sandwich.
 ~
    The woman looks at you with hope and asks, "Got any ice cream?!?  "
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 12 16 2 2d2+120 2d2+2
 120 14400
 6 6 2
@@ -111,7 +111,7 @@ A three legged dog limps by you.
    This flea-bitten, beaten-half-to-death-every-day-of-its-life dog looks sadly
 at you and then continues limping along.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 0
@@ -125,7 +125,7 @@ A toothless hag lays here, smiling big, trying to look appealing.
    As the hag notices your interest, her smile gets wider.  She turns slowly
 onto her back, spreads her legs and raises a suggestive eyebrow.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 6 6 2
@@ -137,7 +137,7 @@ Mordecai stand before you; proud, defiant... and dirty.
 ~
    Mordecai is a menacing figure.  A true Lord of Grubs.  
 ~
-bcdefl dh -999 E
+2110 0 0 0 16 0 0 0 -999 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -149,7 +149,7 @@ A chicken wanders by you, no concerns in life but to cluck.
 ~
    Sometimes you wonder if life would be better as a chicken.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -162,7 +162,7 @@ A woman is here, squatting over a hole in the ground.
    The woman seems only slightly upset to see you here as she tries to shit.  
 You sense she is having a tough time with her business.  
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -177,7 +177,7 @@ A sneaky little bastard is here, counting his coins.
 criminal.  He's rooting through his purse inspecting his loot.  Perhaps some of
 it came from yours.  
 ~
-cdgh s 0 E
+204 0 0 0 524288 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -189,7 +189,7 @@ A grouchy old man is here, complaining about the weather.
 ~
    What crawled up this guys arse?  
 ~
-dgln 0 -200 E
+10312 0 0 0 0 0 0 0 -200 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1

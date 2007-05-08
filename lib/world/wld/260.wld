@@ -4,7 +4,7 @@ Grasslands~
 largest open area in all of Dibrova.  You can the propellor of a windmill high
 above the grass off to the northwest.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -45,7 +45,7 @@ Grasslands~
    Tall, brown grass grows all around you.  These grasslands must respresent the
 largest open area in all of Dibrova.  
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 ~
 ~
@@ -65,7 +65,7 @@ Grasslands~
 largest open area in all of Dibrova.  You can see what looks to be a tall
 windmill way off to the northeast.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 A small shadowy path leads away to the north.
 ~
@@ -91,7 +91,7 @@ Grasslands~
    Tall, brown grass grows all around you.  These grasslands must respresent the
 largest open area in all of Dibrova.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 A small shadowy path leads away to the north.
 ~
@@ -117,7 +117,7 @@ Grasslands~
 largest open area in all of Dibrova.  You see a windmill close by to the
 southwest.  The shimmering dome to the north envolopes the sacred city of XXXX.
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 The narrow trail leads east to a somewhat lighter part of the forest.
 ~
@@ -140,7 +140,7 @@ largest open area in all of Dibrova.  You can see the top of a windmill far off
 in the distance to the southeast.  The shimmering dome to the north envolopes
 the sacred city of XXXX.  
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 The narrow trail leads east to a somewhat lighter part of the forest.
 ~
@@ -161,7 +161,7 @@ Grasslands~
    Tall, brown grass grows all around you.  These grasslands must respresent the
 largest open area in all of Dibrova.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 A small shadowy path leads away to the north.
 ~
@@ -188,7 +188,7 @@ largest open area in all of Dibrova.  The shimmering dome to the north envolopes
 the sacred city of XXXX.  To the north through the dome you can see the southern
 wall protecting the city.  
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 ~
 ~
@@ -203,7 +203,7 @@ Grasslands~
    Tall, brown grass grows all around you.  These grasslands must respresent the
 largest open area in all of Dibrova.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 A small shadowy path leads away to the north.
 ~
@@ -224,7 +224,7 @@ Grasslands~
    Tall, brown grass grows all around you.  These grasslands must respresent the
 largest open area in all of Dibrova.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 A small shadowy path leads away to the north.
 ~
@@ -246,7 +246,7 @@ Grasslands~
 in the breeze.  You see the topmost section of windmill way far off to the
 northwest.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -272,7 +272,7 @@ Grasslands~
    The long blades of grass seem to go on forever, making long, graceful waves
 in the breeze.  
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 Grass.
 ~
@@ -293,7 +293,7 @@ Grasslands~
    The long blades of grass seem to go on forever, making long, graceful waves
 in the breeze.  You can see a windmill far off to the northeast.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -316,7 +316,7 @@ Grasslands~
    The long blades of grass seem to go on forever, making long, graceful waves
 in the breeze.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -343,7 +343,7 @@ in the breeze.  What looks to be a windmill lies far off to the southwest.  The
 shimmering dome to the north envolopes the sacred city of XXXX.  To the north
 through the dome you can see the southern wall protecting the city.  
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 ~
 ~
@@ -366,7 +366,7 @@ in the breeze.  You see the windmill directly southeast.  The shimmering dome to
 the north envelopes the entire city of XXXX.  Just to the north you can see the
 southern gate of the city.  
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 Grass.
 ~
@@ -388,7 +388,7 @@ Grasslands~
    The long blades of grass seem to go on forever, making long, graceful waves
 in the breeze.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -414,7 +414,7 @@ in the breeze.  The shimmering dome to the north envolopes the sacred city of
 XXXX.  To the north through the dome you can see the southern wall protecting
 the city.  
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 ~
 ~
@@ -435,7 +435,7 @@ Grasslands~
    The long blades of grass seem to go on forever, making long, graceful waves
 in the breeze.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -460,7 +460,7 @@ Grasslands~
    The long blades of grass seem to go on forever, making long, graceful waves
 in the breeze.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -485,7 +485,7 @@ Grasslands~
    Tufts of grass as high as your waist brush against you as you traverse this
 vast grassland area, which must be hundreds of miles in length.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -506,7 +506,7 @@ Grasslands~
 vast grassland area, which must be hundreds of miles in length.  To the east a
 small trail cuts it's way through the brush, almost unnoticeable .
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 ~
 ~
@@ -528,7 +528,7 @@ Grasslands~
 vast grassland area, which must be hundreds of miles in length.  You see a
 windmill far off the north.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands.
 ~
@@ -552,7 +552,7 @@ Grasslands~
    Tufts of grass as high as your waist brush against you as you traverse this
 vast grassland area, which must be hundreds of miles in length.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands.
 ~
@@ -576,7 +576,7 @@ vast grassland area, which must be hundreds of miles in length.  The shimmering
 dome to the north envolopes the sacred city of XXXX.  To the north through the
 dome you can see the southern wall protecting the city.  
 ~
-260 g 2
+260 64 0 0 0 0
 D3
 More grass.
 ~
@@ -590,7 +590,7 @@ vast grassland area, which must be hundreds of miles in length.  You see a
 windmill directly south of you.  The shimmering dome to the north envolopes the
 sacred city of XXXX.  
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 ~
 ~
@@ -610,7 +610,7 @@ Grasslands~
    Tufts of grass as high as your waist brush against you as you traverse this
 vast grassland area, which must be hundreds of miles in length.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands.
 ~
@@ -636,7 +636,7 @@ Grasslands~
 vast grassland area, which must be hundreds of miles in length.  The shimmering
 dome to the north envolopes the sacred city of XXXX.  
 ~
-260 g 2
+260 64 0 0 0 0
 D1
 ~
 ~
@@ -656,7 +656,7 @@ Grasslands~
    Tufts of grass as high as your waist brush against you as you traverse this
 vast grassland area, which must be hundreds of miles in length.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands.
 ~
@@ -682,7 +682,7 @@ Grasslands~
    Tufts of grass as high as your waist brush against you as you traverse this
 vast grassland area, which must be hundreds of miles in length.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands.
 ~
@@ -708,7 +708,7 @@ Grasslands~
 sneak up on someone, if that were something you wanted to do.  Now that you
 think about it, it may be wise to watch your step.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -733,7 +733,7 @@ Grasslands~
 sneak up on someone, if that were something you wanted to do.  Now that you
 think about it, it may be wise to watch your step.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -758,7 +758,7 @@ Grasslands~
 sneak up on someone, if that were something you wanted to do. Now that you
 think about it, it may be wise to watch your step. 
 ~
-260 0 0
+260 0 0 0 0 0
 D0
 ~
 ~
@@ -782,7 +782,7 @@ Grasslands~
 sneak up on someone, if that were something you wanted to do.  Now that you
 think about it, it may be wise to watch your step.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -807,7 +807,7 @@ sneak up on someone, if that were something you wanted to do.  Now that you
 think about it, it may be wise to watch your step.  A windmill lies directly
 west of you.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -832,7 +832,7 @@ sneak up on someone, if that were something you wanted to do.  Now that you
 think about it, it may be wise to watch your step.  A windmill lies far off to
 the east from here.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -858,7 +858,7 @@ Grasslands~
 sneak up on someone, if that were something you wanted to do.  Now that you
 think about it, it may be wise to watch your step.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -883,7 +883,7 @@ Grasslands~
 sneak up on someone, if that were something you wanted to do.  Now that you
 think about it, it may be wise to watch your step.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -904,7 +904,7 @@ Grasslands~
 sneak up on someone, if that were something you wanted to do.  Now that you
 think about it, it may be wise to watch your step.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -930,7 +930,7 @@ Grasslands~
 sneak up on someone, if that were something you wanted to do.  Now that you
 think about it, it may be wise to watch your step.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -955,7 +955,7 @@ Grasslands~
    All the way to the horizon the grasslands stretch, ending in forest to the
 north, east and west.  To the south, you cannot see their end.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -978,7 +978,7 @@ Grasslands~
    All the way to the horizon the grasslands stretch, ending in forest to the
 north, east and west.  To the south, you cannot see their end.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1001,7 +1001,7 @@ Grasslands~
    All the way to the horizon the grasslands stretch, ending in forest to the
 north, east and west.  To the south, you cannot see their end.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1024,7 +1024,7 @@ Grasslands~
    All the way to the horizon the grasslands stretch, ending in forest to the
 north, east and west.  To the south, you cannot see their end.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1048,7 +1048,7 @@ Grasslands~
 north, east and west.  To the south, you cannot see their end.  A windmill lies
 far off to the west from here.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1068,7 +1068,7 @@ Grasslands~
 north, east and west.  To the south, you cannot see their end.  The windmill
 lies directly east from you.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1091,7 +1091,7 @@ Grasslands~
    All the way to the horizon the grasslands stretch, ending in forest to the
 north, east and west.  To the south, you cannot see their end.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1114,7 +1114,7 @@ Grasslands~
    All the way to the horizon the grasslands stretch, ending in forest to the
 north, east and west.  To the south, you cannot see their end.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1137,7 +1137,7 @@ Grasslands~
    All the way to the horizon the grasslands stretch, ending in forest to the
 north, east and west.  To the south, you cannot see their end.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1156,7 +1156,7 @@ Grasslands~
    All the way to the horizon the grasslands stretch, ending in forest to the
 north, east and west.  To the south, you cannot see their end.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1175,7 +1175,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1200,7 +1200,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1220,7 +1220,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1245,7 +1245,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1266,7 +1266,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1283,7 +1283,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1304,7 +1304,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1329,7 +1329,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1354,7 +1354,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1379,7 +1379,7 @@ Grasslands~
    You have any direction which you can choose to travel - any way that you wish
 to go is wide open grasslands.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 Grasslands - for a looonnngg way.
 ~
@@ -1400,7 +1400,7 @@ Grasslands~
    A more peaceful setting could not be imagined.  The breeze blowing through
 this beautiful field, birds singing.  The calm before the storm, eh?  
 ~
-260 ad 3
+260 9 0 0 0 0
 D0
 ~
 ~
@@ -1423,7 +1423,7 @@ Grasslands~
    A more peaceful setting could not be imagined.  The breeze blowing through
 this beautiful field, birds singing.  The calm before the storm, eh?  
 ~
-260 ad 3
+260 9 0 0 0 0
 D0
 ~
 ~
@@ -1442,7 +1442,7 @@ Grasslands~
    A more peaceful setting could not be imagined.  The breeze blowing through
 this beautiful field, birds singing.  The calm before the storm, eh?  
 ~
-260 ad 3
+260 9 0 0 0 0
 D0
 ~
 ~
@@ -1465,7 +1465,7 @@ Grasslands~
    A more peaceful setting could not be imagined.  The breeze blowing through
 this beautiful field, birds singing.  The calm before the storm, eh?  
 ~
-260 ad 3
+260 9 0 0 0 0
 D0
 ~
 ~
@@ -1485,7 +1485,7 @@ Grasslands~
 this beautiful field, birds singing.  The calm before the storm, eh?  The
 windmill lies directly northwest from here.  
 ~
-260 ad 3
+260 9 0 0 0 0
 D0
 ~
 ~
@@ -1509,7 +1509,7 @@ Grasslands~
 this beautiful field, birds singing.  The calm before the storm, eh?  There is a
 windmill way off to the northeast.  
 ~
-260 g 3
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1532,7 +1532,7 @@ Grasslands~
    A more peaceful setting could not be imagined.  The breeze blowing through
 this beautiful field, birds singing.  The calm before the storm, eh?  
 ~
-260 ad 3
+260 9 0 0 0 0
 D0
 ~
 ~
@@ -1552,7 +1552,7 @@ Grasslands~
 this beautiful field, birds singing.  The calm before the storm, eh?  A small
 path leads west into the woods.  
 ~
-260 ad 3
+260 9 0 0 0 0
 D0
 ~
 ~
@@ -1575,7 +1575,7 @@ Grasslands~
    A more peaceful setting could not be imagined.  The breeze blowing through
 this beautiful field, birds singing.  The calm before the storm, eh?  
 ~
-260 ad 3
+260 9 0 0 0 0
 D0
 ~
 ~
@@ -1594,7 +1594,7 @@ Grasslands~
    A more peaceful setting could not be imagined.  The breeze blowing through
 this beautiful field, birds singing.  The calm before the storm, eh?  
 ~
-260 ad 3
+260 9 0 0 0 0
 D0
 ~
 ~
@@ -1618,7 +1618,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1642,7 +1642,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1662,7 +1662,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1686,7 +1686,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1706,7 +1706,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  A windmill lies way off to the northwest.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1730,7 +1730,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  The windmill lies directly northeast of you.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1754,7 +1754,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1774,7 +1774,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1798,7 +1798,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1822,7 +1822,7 @@ Grasslands~
 Windmill far in the distance and the forest trees which surround the area on
 three sides.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1841,7 +1841,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1864,7 +1864,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1879,7 +1879,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1902,7 +1902,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1917,7 +1917,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  
 ~
-260 g 2
+260 64 0 0 0 0
 D2
 ~
 ~
@@ -1932,7 +1932,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  The windmill lies directly north of you.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1955,7 +1955,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1974,7 +1974,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -1997,7 +1997,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -2020,7 +2020,7 @@ Grasslands~
    Brown grass is everywhere, all around you.  You may go in any direction you
 please.  
 ~
-260 g 2
+260 64 0 0 0 0
 D0
 ~
 ~
@@ -2038,7 +2038,7 @@ thought was a large field is actually tree tops!  The path continues east,
 becoming more and more enclosed as you move in that direction.  To the west the
 path heads uphill into a huge grassy field.  
 ~
-260 0 3
+260 0 0 0 0 0
 D1
 ~
 ~
@@ -2054,7 +2054,7 @@ Obscure Path~
 Just east of you, you think you may see some sort of break in the trees, as the
 forest you entered into seems to have come upon you quite suddenly.  
 ~
-260 0 3
+260 0 0 0 0 0
 D3
 ~
 ~

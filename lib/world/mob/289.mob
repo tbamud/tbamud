@@ -8,7 +8,7 @@ drawn upon his face.  He wears a bright blue set of overalls, with some
 protective layers of leather overtop and a white cloak to round it out.  His
 crossbow looks well-used and cared for.  You think he knows how to use it.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -22,7 +22,7 @@ A small gerbil is eating some peanuts on a table here.
 around some peanuts quietly, and then promptly shoves the lot of them in its
 mouth!    
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 6 6 0
@@ -36,7 +36,7 @@ Alerka Bardbane is resting here.
 and plain, just an ordinary man taking a break.  His knives do not look
 ordinary at all, however.    
 ~
-bd 0 -1000 E
+10 0 0 0 0 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 5 5 1
@@ -50,7 +50,7 @@ Drogo the Dwarf is polishing his axe here.
 more than once licking the blade to put a shine on it.  He seems to be having
 fun...  To each his own.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 6 6 1
@@ -63,7 +63,7 @@ A dark elf stands against the wall, watching.
    You feel his eyes bore through you for a moment, and then whisk away.  He
 stands motionless, quietly...  Awaiting a proper moment perhaps?    
 ~
-bd d 0 E
+10 0 0 0 16 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -76,7 +76,7 @@ A dog sits here, protecting his master.
    The dog growls at you as you approach, and his hackles raise menacingly.  
 You carefully stand back and consider your next move.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 6 6 1
@@ -91,7 +91,7 @@ and nods hello.  The dust on his clothes tells tales of many strange lands and
 stranger adventures, and for a moment you consider asking him to tell you a
 story.    
 ~
-dg 0 750 E
+72 0 0 0 0 0 0 0 750 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -104,7 +104,7 @@ A young kid stands out of the way here.
    On a second look, this twelve-year old kid seems completely drunk!  Hey!  
 Who gave the kid a drink?    
 ~
-bd 0 250 E
+10 0 0 0 0 0 0 0 250 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -118,7 +118,7 @@ A young woman sits here, a confused expression upon her face.
 awkwardly, as if her body doesn't fit her very well.  She smiles at you
 uncertainly, and then ignores you.    
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 8 18 5 1d1+80 1d2+1
 80 6400
 6 6 2
@@ -132,7 +132,7 @@ Jordo the Engineer is just hanging out here.
 hands tighten on his weapon, you can tell that he isn't quite as at ease as he
 would like you to believe.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -145,7 +145,7 @@ A horse stands in its stall here, munching on some grain.
    It's a fairly plain, nondescript horse.  Brown hair, brown eyes, quiet and
 pretty well-mannered.    
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -159,7 +159,7 @@ A waiter rushes by, intent on his business.
 to get food, and to the bar for drinks.  He doesn't even spare you a glance as
 he passes by.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -173,7 +173,7 @@ A waitress rushes by, intent on her business.
 back to get food, and to the bar for drinks.  She doesn't even spare you a
 glance as she passes by.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -188,7 +188,7 @@ weary, his hands calloused, and those big workboots he's wearing just can't be
 comfortable.  This man is one of the citizenry elite; he feeds the people
 through his own hard work.  Maybe you should buy him a beer.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -203,7 +203,7 @@ bet he can more than take on anyone who wants to knock over his wayhouse for a
 little cash...  This man is truly immense.  His movements sure, his eyes
 keen...  You don't think messing with him would be a good idea.    
 ~
-bdnopr 0 750 E
+188426 0 0 0 0 0 0 0 750 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -217,7 +217,7 @@ A bartender pours a drink while advising his patrons.
 he mixes a Franjie Deluxe for the guy down the ways a bit, his hands quickly
 and surely spinning the lemon over the sides of the glass.    
 ~
-bdnopr 0 200 E
+188426 0 0 0 0 0 0 0 200 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -231,7 +231,7 @@ A chef struggles to get the food out quickly.
 other hand he sprinkles some salt into the other hand which is holding...  
 Hey!  Isn't that too many hands?  This guy is good.    
 ~
-bd 0 350 E
+10 0 0 0 0 0 0 0 350 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -244,7 +244,7 @@ An adventurer babbles about some monster she killed.
    Her tales are pretty much full of it, and her equipment sucks.  Cannon
 fodder.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -257,7 +257,7 @@ An adventurer babbles about some monster he killed.
    His tales are pretty much full of it, and his equipment sucks.  Cannon
 fodder.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -269,7 +269,7 @@ A young woman watches the crowd go by.
 ~
    She seems rather secretive.  You wonder what she's hiding.    
 ~
-bdnopr 0 -500 E
+188426 0 0 0 0 0 0 0 -500 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -283,7 +283,7 @@ A bartender pours a drink while advising his patrons.
 he mixes a Franjie Deluxe for the guy down the ways a bit, his hands quickly
 and surely spinning the lemon over the sides of the glass.    
 ~
-bdnopr 0 200 E
+188426 0 0 0 0 0 0 0 200 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -297,7 +297,7 @@ A bartender pours a drink while advising his patrons.
 he mixes a Franjie Deluxe for the guy down the ways a bit, his hands quickly
 and surely spinning the lemon over the sides of the glass.    
 ~
-bdnopr 0 200 E
+188426 0 0 0 0 0 0 0 200 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1

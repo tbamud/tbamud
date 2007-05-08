@@ -169,7 +169,7 @@ ACMD(do_dig)
 ACMD(do_room_copy)
 {
    struct room_data *room_src, *room_dst;
-   int room_num, j, buf_num;
+   int room_num, j, buf_num, taeller;
    zone_rnum dst_zone;
    struct descriptor_data *dsc;
    char buf[MAX_INPUT_LENGTH];
@@ -210,8 +210,9 @@ ACMD(do_room_copy)
    room_dst->description = str_udup(world[IN_ROOM(ch)].description);
    room_dst->description = str_udup(world[IN_ROOM(ch)].description);
    room_dst->number = buf_num;
-   room_dst->room_flags = ROOM_FLAGS(IN_ROOM(ch));
    room_dst->sector_type = world[IN_ROOM(ch)].sector_type;
+   for(taeller=0; taeller < RF_ARRAY_MAX; taeller++)
+     room_dst->room_flags[taeller] = ROOM_FLAGS(IN_ROOM(ch))[taeller];
 
   /* Extra descriptions, if necessary. */
   send_to_char(ch, "Cloning extra descriptions....\r\n");

@@ -5,7 +5,7 @@ trail.  The dirt is packed solid and is several yards in width.  It almost
 looks like an army was marched through here.  A lake shrouded in fog is to 
 the west and the city wall is to the east
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -57,7 +57,7 @@ positioned over the main gate.  More guards and lookouts are keeping watch
 above you.  They must be awaiting an attack, but who or what could make it
 across that lake?    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -73,7 +73,7 @@ Courtyard~
 extends to the south and west.  While to the east a path runs along the
 castle wall.  You hear a loud clashing of metals to the north.
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -98,7 +98,7 @@ lunatic is screaming about the walking undead, the guards look around
 nervously then club him in the head with the hilt of their sword, 
 knocking him out.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -119,7 +119,7 @@ sitting here asking for money, you ignore him but then you look at his
 eyes.  He motions you over and you obey, but not of your own will.  He 
 hands you a note and tells you to read it, you do without any questions.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -144,7 +144,7 @@ voices to the north.  To the south it looks like another hall intersects
 this one.  A noblewoman storms by you in a rage.  What is wrong with these 
 people?    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -165,7 +165,7 @@ feel important.  The room is empty right now and doesn't look like it has
 been used in quite some time.  A Letter is lying on a table in the middle 
 of the room,
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -178,7 +178,7 @@ with some soapy brown water.  He smiles as you try to rub out the brown
 stains on all your clothes then he continues scrubbing at the dirty 
 pans.
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -195,7 +195,7 @@ closing behind him.  This must be how they carry the food to the different
 parts of the castle, servants aren't allowed to pass through the main 
 halls of the castle.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -216,7 +216,7 @@ patrolling the battlements above you.  This area seems to be deserted.
 The guards look down at you distrustfully, you get the feeling that they 
 don't want you here.
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -233,7 +233,7 @@ bed looks extremely comfortable.  It looks like a down mattress with a
 fleece blanket spread over it.  Several bureaus and a closet is overflowing 
 with colorful clothes that you wouldn't be caught dead in.    
 ~
-16 0 0
+16 0 0 0 0 0
 D3
 ~
 ~
@@ -245,7 +245,7 @@ Nobles Quarters~
 to lock all the doors, relying upon the honor of all within Camelot to 
 protect their posessions.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -266,7 +266,7 @@ room.  Some knights are here sleeping and healing from their war wounds.
 A simple wash stand is at the end of the quarters, and the windows are 
 shaded to darken the room.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -288,7 +288,7 @@ knights and their armor.  They are quietly discussing the last battle they
 were in.  You catch a few words about the walking dead, and some invincible 
 foe.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -300,7 +300,7 @@ Squires Quarters~
 present people are eating.  There is a rudimentry camp kitchin, with a 
 roster of the day.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -317,7 +317,7 @@ both sides of the road, with their coat of arms flapping in the breeze.
 There are available slots for other coats of arms.  A small alley to the 
 west leads into darkness.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -338,7 +338,7 @@ matter how honorable the people in this castle must be you're sure there
 are thieves among them.  You stop in suprise as you see a tower appear to 
 the west where a second before you hadn't seen anything.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -355,7 +355,7 @@ wands, staves.  There are rickety worn out tables and chairs upon which a
 variety of curiosities rest.  You take a glimpse out the open window of
 Merlin's tower and see the tournement yard below
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -371,7 +371,7 @@ Merlins Tower~
 crocks on wooden shelves.  A cat purrs softly staring up to you, a crow 
 cocks it's head sideways and a toad croaks from inside one of the jars.    
 ~
-16 0 0
+16 0 0 0 0 0
 D4
 ~
 ~
@@ -387,7 +387,7 @@ Merlins Tower~
 sift through Merlin's books, scrolls, wands, and staves.  All are inscribed 
 in a strange runic language which you can't even begin to fathom.    
 ~
-16 0 0
+16 0 0 0 0 0
 D4
 ~
 ~
@@ -403,7 +403,7 @@ Merlins Tower~
 Merlins crockery, and all you accomplish is getting a black resiny substance
 which itches all over your fingers and clothing.    
 ~
-16 0 0
+16 0 0 0 0 0
 D4
 ~
 ~
@@ -420,7 +420,7 @@ covers the floor.  Hopefully you won't meet anybody.  There isn't even
 enough room for two people to walk abreast.  Torches are spaced too far 
 apart to really help.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 door~
@@ -437,7 +437,7 @@ the walls seem to be slightly curved and you can't see more than a dozen
 feet ahead.  You hear people talking through the thin walls, but you can't 
 quite understand what they are sayin
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -453,7 +453,7 @@ Hidden Passage~
 cobwebs out of your hair and the dust off your armor.  You hear more voices 
 through to the west.  It sounds like an argument is going on.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -471,7 +471,7 @@ wonder who's land this really is.  The castle sits on an island to the
 east but you don't see any means to reach it.  The path continues north and 
 south.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -488,7 +488,7 @@ footprints that sink deep into the mud.  Who ever went through here was
 either wearing alot of armor or carrying alot of weight.  The lake and 
 the city wall is still forcing you north or south along the trail.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -506,7 +506,7 @@ immediately starts rambling on crazily about his dead friends that are
 coming back to kill him to get back the money he owes them.  You walk away 
 in disgust.
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -523,7 +523,7 @@ clothes and immediately dismisses you.  You continue into the room but he
 ignores you.  He negligently points to a sign on the wall and tells you to 
 get out.
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -542,7 +542,7 @@ weapons rack on the eastern wall.  To the west is Knight's Way.  The smith
 looks at you and says, 'can't you read, I'm closed, all my work is done 
 for the king's army now.
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -556,7 +556,7 @@ more of his hard earned taxes.  This room has only a couple chairs and
 looks to be more of a servants quarters than a waiting room for nobles.  
 Something big must be happening to bring in all these nobles at once.    
 ~
-16 0 0
+16 0 0 0 0 0
 D3
 ~
 ~
@@ -569,7 +569,7 @@ inside.  The hall continues north and south.  A noble walks from one room to
 the other muttering about not being told the truth and being treated like a
 commoner.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -595,7 +595,7 @@ rooms were created as many found normal travel difficult and dangerous.  This
 room links to the fabled castle of camelot where many adventurers go to seek
 audience with the King.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -608,7 +608,7 @@ Kitchen~
 push you out of their way and look at you like last weeks meatlof.  This 
 kitchen is humungous and continues to the south and west.    
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -626,7 +626,7 @@ meals and adding spices, one extremely fat cook is walking around with a
 large spoon, sampling the various soups with it, then hitting anyone who 
 isn't moving fast enough for her liking.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -646,7 +646,7 @@ Center Lane~
 battlements above you stare down distrustfully.  An open doorway to the east
 carries the delicious smell of baking bread and roasted meat.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -667,7 +667,7 @@ bed looks extremely comfortable.  It looks like a down mattress with a
 fleece blanket spread over it.  Several bureaus and a closet is overflowing 
 with colorful clothes that you wouldn't be caught dead in.    
 ~
-16 0 0
+16 0 0 0 0 0
 D3
 ~
 ~
@@ -679,7 +679,7 @@ Common Room~
 matters.  " Servants stand around waiting to fetch some wine or carry a 
 message for their masters.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -699,7 +699,7 @@ Knights Quarters~
 suits of armor fill the room.  Several knights are healing from their war 
 wounds.  The only conversation is in hushed tones.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -720,7 +720,7 @@ all creature comforts to serve the kingdom and it's king.  The room smells
 of leather, sweat and metal.  Alot of the knights are lying wounded in the 
 cots.
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -732,7 +732,7 @@ Squires Barracks~
 of the knights of the round table reside while their lords are in court.  
 The place is a jumble of beds, lockers, and tables.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -748,7 +748,7 @@ Knights Way~
 in the breeze.  You look at the coats of arms.  You recognize a few of the 
 devices as that of Gawaine, Tristram, and of course Lancelot.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -769,7 +769,7 @@ feast is in progress.  There are many open bench type tables with sevants
 scurrying too and fro.  The smell is intoxicating and you are drawn towards 
 the huge table running through the center of the room, ladden with food.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -785,7 +785,7 @@ Feast Hall~
 to the festive air of celebration.  A huge fire rages in a great stone 
 hearth, over which a whole boar is being slowly cooked to perfection.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -802,7 +802,7 @@ Everyone is trying to celebrate but they all look severly depressed.  The
 assorted foods and drinks make your mouth water, but as soon as you approach 
 the table a servant shoes you away.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -814,7 +814,7 @@ West Lane~
 Two towers rise above you to the east, you see no entrance on this side. 
 A few knights are out on the streets but otherwise it seems deserted.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -832,7 +832,7 @@ here with unearthly glowing red lettering which blinks over and over the
 message LOOK AT ME Your inner coice, which has always served you well 
 so far, screams at you to LEAVE IT ALONE!    
 ~
-16 c 0
+16 4 0 0 0 0
 D0
 ~
 ~
@@ -860,7 +860,7 @@ end without falling asleep.  A guard whispers something to one of the
 lookouts, you catch a couple words, something about putting you to work in 
 the army.    
 ~
-16 0 0
+16 0 0 0 0 0
 D5
 ~
 ~
@@ -873,7 +873,7 @@ they are staring at, but all you see are open fields and a decrepit stone
 tower.  Nothing threatening.  You try to strike up a conversation with the 
 guards, but they ignore you.    
 ~
-16 0 0
+16 0 0 0 0 0
 D5
 ~
 ~
@@ -884,7 +884,7 @@ Hidden Room~
    Dust covers the floor, except for a few footprints that lead to the center of
 the room and disappear.  The rest of the room is empty, the walls are bare.  
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 door~
@@ -901,7 +901,7 @@ stop occasionally and look to the north in fear as if they expect the devil
 himself to suddenly appear.  The fields are neglected and it seems they are 
 just now starting to prepare it for planting.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -919,7 +919,7 @@ moving fast to leave all this stuff behind.  The tracks look to be only a
 couple hours old.  The city wall and the lake still forces you north or 
 south.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -936,7 +936,7 @@ lookouts standing a vigilant watch are looking outwards, as if they are
 expecting an army to try and swim across the lake and attack the castle.  
 Everyone in this castle seems crazy.    
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -956,7 +956,7 @@ North Lane~
 walks by, one telling the other some outrageous story about the undead.  
 Then you realize he didn't seem to be joking.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -973,7 +973,7 @@ what they are saying.  You just catch a couple words.  "we cannot keep this
 up, we will all be dead soon" then they see you and order you to move on.  
 A sign is hanging on a door to the south.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -989,7 +989,7 @@ North Lane~
 with this castle and these people.  You try and ask someone but they look 
 at you as if you're the stupidest person alive.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1006,7 +1006,7 @@ haven't seen anyone with a smile on their face or children running around
 playing.  This castle seems to be under a siege of some sort, but not
 physically.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1026,7 +1026,7 @@ North Lane~
 almost seamless.  It would almost seem that this castle was built with the 
 help of some very powerful magic.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1042,7 +1042,7 @@ North Lane~
 like a small stone building.  Very few people are out travelling this road, 
 you only see a few patrolman and peasants.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1058,7 +1058,7 @@ North Lane~
 chimney juts out of the southern wall and heat waves make the rocks around 
 it shimmer as if alive.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1075,7 +1075,7 @@ of the north and west walls a small tower sits above you on the
 battlements. Several figures are keeping a sharp look out.  You wonder for 
 what?    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1096,7 +1096,7 @@ anticipating intrusion from scum like you.  The chambers consist of a large
 bed, several shelves and a closet stuffed with clothes.  These nobles live 
 a life of luxury.    
 ~
-16 0 0
+16 0 0 0 0 0
 D3
 ~
 ~
@@ -1109,7 +1109,7 @@ Garden~
 of the common folk.  The various flowers and plants are very well tended 
 and the aroma of spring flowers is refreshing.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1129,7 +1129,7 @@ Knights Quarters~
 the room.  Some knights are here sleeping and healing from their war 
 wounds.  A simple wash stand is at the end of the quarters.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1150,7 +1150,7 @@ have recently taken place and it looks like they lost miserably.  Servants
 are running back and forth with bandages and fresh water, trying to comfort 
 the knights, some of which are dying.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1163,7 +1163,7 @@ wrestling.  They throw each other across the room with little regard to
 life or limb.  You back out of the way.  If the squires are this tough 
 you'd hate to fight one of the knights.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1180,7 +1180,7 @@ lords.  You notice a scroll lying on the ground.  A large building to the
 north has it's wide double doors open wide, inviting you to enter.  A 
 tower rises above you to the west.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1201,7 +1201,7 @@ inscription above the archway to the tower.  Knight's way is to the east.
 You look at the inscription.  It reads: HONOR SEPERATES THE KNIGHT FROM 
 THE CRIMINAL
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1219,7 +1219,7 @@ a hollow in one of the walls in which a fire takes the edge off the cold
 of the room.  The smoke puts you in a strange daze in which the MURALS seem 
 to come to life.  Stairs lead down to the street below.    
 ~
-16 0 0
+16 0 0 0 0 0
 D4
 ~
 ~
@@ -1244,7 +1244,7 @@ ceiling. Smoke rolls out in an erie caress from the fire hollow in the
 walls.  A strange tingling sensation rushes through your body.  Stairs 
 lead to the street below.
 ~
-16 0 0
+16 0 0 0 0 0
 D5
 ~
 ~
@@ -1266,7 +1266,7 @@ West Lane~
 peak. Few people are you walking the streets and even fewer are even 
 acknowledging you.  Why is everyone so reclusive.    
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -1283,7 +1283,7 @@ blasted by a hellish heat, and cackling assails you from all sides.  Your
 entire body is wracked in pain, and you hear yourself screaming in and 
 endless cry of horror.  You are stuck here forever!!!!!!    
 ~
-16 0 0
+16 0 0 0 0 0
 S
 #1671
 Beautiful Hall~
@@ -1292,7 +1292,7 @@ eastern wall, they look down onto the courtyard of the castle, towards the
 main gate.  A servant walks by you the padding of his feet being muffled 
 by the expensive woven rugs.    
 ~
-16 d 0
+16 8 0 0 0 0
 D0
 ~
 ~
@@ -1308,7 +1308,7 @@ Neglected Hallway~
 keep the place free from dust, but that's about it.  The hall continues 
 north and south, without any sign of changing.    
 ~
-16 d 0
+16 8 0 0 0 0
 D0
 ~
 ~
@@ -1326,7 +1326,7 @@ wall beside a desk.  Several scrolls are rolled up and placed neatly on
 the desk.  You look around, no one would see you if you just took a quick 
 peek.    
 ~
-16 d 0
+16 8 0 0 0 0
 D3
 ~
 ~
@@ -1340,7 +1340,7 @@ east and the path continues north and south.  Further to the north you see
 a tower and in the middle of the lake to the east sits a massive castle on 
 an island.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1356,7 +1356,7 @@ A Wide Dirt Path~
 tracks follow the trail.  To the north you see some foothills with 
 mountians in the distance.  The city wall is to the east.    
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -1374,7 +1374,7 @@ foothills to the north look treacherous, to the south small waves lap
 against the shore of the lake.  Through the fog blanketing the lake you 
 think you see an island.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1391,7 +1391,7 @@ out and opens into a field to the west.  The foothills to the north still
 look inpassable.  You hear something to the west, you can't discern it 
 from this far away.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1408,7 +1408,7 @@ noises are coming from the west.  It almost sounds like a battle is being
 fought.  Through the fog to the south you finally can see the island and 
 what appears to be a castle built on top of it.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1426,7 +1426,7 @@ soldiers were routed, you start to notice that some of the corpses, about
 one of every ten are in an advanced state of decomposition, while most of 
 the soldiers are just now beginning to bloat from the sun.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1443,7 +1443,7 @@ starting to gather.  Strange, the vultures seem to only be feeding on the
 corpses that aren't decayed, same with the rats and other scavengers that 
 are feasting on this battle field.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1460,7 +1460,7 @@ their uniforms, while the decayed corpses wear clothes and armor that looks
 ancient and is practically falling off them.  Also the decayed corpses 
 seem to be mutilated, most of them with their heads actually lopped off.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1477,7 +1477,7 @@ them.  Blood mixed with the dirt from the path covers your boots and the
 stench is beginning to overwhelm you.  The path continues east and west.  
 The lake to the south has a slight tinge of red too it.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1494,7 +1494,7 @@ decay is overpowering you and you think about turning back.  You hear the
 clash of steel and screams of pain to the west, a new battle must have just
 started.  
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1511,7 +1511,7 @@ corpses are slaughtering what's left of the army.  The zombies decimate
 the last of the infantry, turn around, and leave to the west.  Silence once 
 again claims the battle field.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1527,7 +1527,7 @@ Foothills~
 north. Bodies are everywhere, most of them from the army.  Hard to 
 believe the number of casualties those zombies inflicted.    
 ~
-16 c 0
+16 4 0 0 0 0
 D2
 ~
 ~
@@ -1540,7 +1540,7 @@ that's all they do.  Several plump chairs line the walls and a few tables
 are loaded with papers.  Some of those papers have elaborate writing on 
 them.    
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -1552,7 +1552,7 @@ Knights Quarters~
 of armor fill the room.  Several knights are having a conversation in 
 hushed tones.  They look at you reprovingly as you try to listen in.    
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -1569,7 +1569,7 @@ all creature comforts to serve the kingdom and it's king.  The room smells
 of leather, sweat and metal.  Alot of the knights are lying wounded in the 
 cots.
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1582,7 +1582,7 @@ training, a few books are laid out on the table.  But most of the desks
 and bookshelves have been pushed aside so the squires could have room for 
 some swordplay.    
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -1597,7 +1597,7 @@ table is also round and far above you see the domed ceiling.  Light streams
 down in long rays to hit the gold and crystal candelabra, where it is 
 broken into a brilliant prismatic spray.    
 ~
-16 0 0
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -1609,7 +1609,7 @@ Study~
 keep all sound from reaching this part of the castle.  Shelves line both 
 walls and a desk, lamp and chair are to the west.    
 ~
-16 0 0
+16 0 0 0 0 0
 D3
 ~
 ~
@@ -1626,7 +1626,7 @@ starting to flicker out.  You are deep into the heart of the castle and
 the tons of stone above you make you nervous.  The desk and chair are 
 made of solid oak.    
 ~
-16 0 0
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1642,7 +1642,7 @@ Torture Room~
 stare at some tools that must be used in torturing the helpless 
 prisoners.  Who could be so cruel, certainly not king arthur.    
 ~
-16 0 0
+16 0 0 0 0 0
 D4
 ~
 door~
@@ -1654,7 +1654,7 @@ Northwest Tower~
 looking tower.  Fields stretch towards the south where the farmers, 
 peasants and serfs cultivate the fertile fields.    
 ~
-16 0 0
+16 0 0 0 0 0
 D5
 ~
 ~
@@ -1666,7 +1666,7 @@ West Lane~
 gate. You sense strange powers radiating from the toweers to the northeast, 
 as if they were alive.  The dirt lane turns into cobblestone to the south.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1682,7 +1682,7 @@ Neglected Hallway~
 line the walls, no pleasantries of any kind clutter this hall.  It doesn't 
 seem like many people use this area.    
 ~
-16 d 0
+16 8 0 0 0 0
 D0
 ~
 ~
@@ -1698,7 +1698,7 @@ Neglected Hallway~
 west.   You suddenly get the feeling of no longer being alone, of being 
 watched, it almost feels like someone is waiting for you.    
 ~
-16 d 0
+16 8 0 0 0 0
 D1
 ~
 ~
@@ -1720,7 +1720,7 @@ books.  The room looks more like a study than a bedroom.  The desk is
 covered with papers and notes that someone hastily scribbled down.  Most 
 of it is illegible, but one note stands out.    
 ~
-16 d 0
+16 8 0 0 0 0
 D1
 ~
 ~
@@ -1732,7 +1732,7 @@ Battle Field~
 rises above the foothills.  Bodies lie everywhere right up to the base 
 of the tower, there must be over a thousand dead.    
 ~
-16 0 0
+16 0 0 0 0 0
 D0
 ~
 ~

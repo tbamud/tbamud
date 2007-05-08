@@ -3,7 +3,7 @@ apprehension~
 some apprehension~
 Some apprehension lays here in waiting.~
 ~
-12 0 an st
+12 0 0 0 0 an 0 0 0 tu 0 0 0
 0 0 0 0
 1 10 0 0
 E
@@ -17,7 +17,7 @@ grenade~
 a grenade~
 A fist sized smooth metal grenade looks armed.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 1350
@@ -32,7 +32,7 @@ pile coins gold~
 free~
 A pile of gold coins is half-buried in the mud and muck.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000000 0 0 0
 1 1 0 0
 T 1351
@@ -46,7 +46,7 @@ gun~
 the gun~
 A small silver plated pistol.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 1 1 0
 1 1 0 0
 T 1352
@@ -55,7 +55,7 @@ kiss candy~
 a sweet kiss~
 A sweet kiss has lost its way and lies here waiting~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -70,7 +70,7 @@ common sense~
 some common sense~
 Some common sense has been left here. Better give it to someone that needs it.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -83,7 +83,7 @@ order events policy starting newbie builders~
 an order of events policy for starting builders~
 A policy on how to get new builders started, called "Order of Events" is hovering here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -95,7 +95,7 @@ building report example~
 a building report example~
 A building report example.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -107,7 +107,7 @@ grammar tips~
 some proper grammar tips~
 A manual of tips on how to use proper grammar.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -119,7 +119,7 @@ zone proposal guidelines~
 the zone proposal guidelines~
 The zone proposal guidelines were left here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -131,7 +131,7 @@ zone completion policy~
 the zone completion policy~
 A zone completion policy for builder's.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -143,7 +143,7 @@ swift kick ass something~
 a swift kick in the ass~
 Something you definitely deserve was left here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1312
@@ -151,7 +151,7 @@ suggestions~
 some suggestions~
 Some Suggestions for a would be builder.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -176,7 +176,7 @@ anything of value that should be saved. Once you are sure it is safe to delete
 their zone and all their work set their OLC to -1. "stat file <playername>" to
 be sure it worked and then feel free to delete away. 
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1314
@@ -184,7 +184,7 @@ graduation certificate~
 a graduation certificate~
 A certificate for graduating from TBA has been abandoned here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -197,7 +197,7 @@ staff gnarled~
 a gnarled staff~
 A gnarled wooden staff beacons you.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 T 1389
@@ -212,7 +212,7 @@ orb staff topping~
 an orb meant to top a staff~
 An orb meant to top a staff must have fallen out here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -225,7 +225,7 @@ broken staff~
 a broken staff~
 A broken and useless staff has been discarded here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -238,7 +238,7 @@ christmas hat reindeer~
 a christmas hat with reindeer horns~
 A christmas hat with reindeer horns coming out of it lies here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -252,7 +252,7 @@ a festive Christmas cracker~
 a festive @rC@wh@rr@wi@rs@wt@rm@wa@rs@n @ncracker~
 A festive @rC@wh@rr@wi@rs@wt@rm@wa@rs@n @gcracker lies here, ready to be pulled.~
 ~
-0 0 a 0
+0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -266,7 +266,7 @@ smallest violin~
 the World's smallest violin~
 The World's smallest violin is waiting for someone to play it.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -279,7 +279,7 @@ kitchen sink~
 the kitchen sink~
 Yes, this is everything including the kitchen sink.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -291,7 +291,7 @@ oath~
 an oath~
 An oath lays on the ground waiting to be sworn.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -307,7 +307,7 @@ introduction note paper~
 an intro note~
 A builder intro note has been dropped here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -319,7 +319,7 @@ test backpack~
 Test's backpack~
 A locked backpack with Test written on its front.~
 ~
-15 0 ak 0
+15 0 0 0 0 ak 0 0 0 0 0 0 0
 100 10 -1 0
 1 1 0 0
 T 1349
@@ -328,7 +328,7 @@ straightjacket jacket straitjacket~
 a bleached-white straitjacket~
 A pristine white straitjacket is waiting for you.~
 ~
-11 0 ak 0
+11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 10 100 0 0
 T 1345
@@ -338,7 +338,7 @@ cornucopia goats horn~
 a cornucopia~
 A curved goat's horn overflows with fruit, vegetables, and ears of grain.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 15 100 0 0
 E
@@ -356,7 +356,7 @@ trial vnum assigner~
 the trial vnum assigner~
 A trial vnum assigner helps people work on thier trial vnum.~
 ~
-12 q a 0
+12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 1365
@@ -372,7 +372,7 @@ postit post-it note paper pad~
 a post-it note~
 A post-it note is stuck here as a reminder to someone.~
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1334
@@ -380,7 +380,7 @@ pilot precise pen~
 a fine pen~
 A Pilot Precision Pen awaits someone's use.~
 ~
-21 0 ano 0
+21 0 0 0 0 ano 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1335
@@ -388,7 +388,7 @@ a novelty prize~
 a novelty prize~
 A novelty prize lies on the ground.~
 ~
-0 0 a 0
+0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -401,7 +401,7 @@ wrapped christmas present~
 a @RC@gh@Rr@gi@Rs@gt@Rm@ga@Rs @gp@Rr@ge@Rs@ge@Rn@gt@n~
 A beautifully wrapped @RC@gh@Rr@gi@Rs@gt@Rm@ga@Rs @gp@Rr@ge@Rs@ge@Rn@gt@g has been set here.@n~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 1973
@@ -416,7 +416,7 @@ bright christmas lights~
 @Bs@Go@Cm@Re @Mb@Yr@Wi@Bg@Gh@Ct @RC@Mh@Yr@Wi@Bs@Gt@Cm@Ra@Ms @Yl@Wi@Bg@Gh@Ct@Rs@n~
 @BS@Go@Cm@Re @Mb@Yr@Wi@Bg@Gh@Ct @RC@Mh@Yr@Wi@Bs@Gt@Cm@Ra@Ms @Yl@Wi@Bg@Gh@Ct@Rs @Ma@Yr@We @Bh@Gu@Cn@Rg @Ma@Yl@Wl @Ba@Gr@Co@Ru@Mn@Yd @Wt@Bh@Ge @Cp@Rl@Ma@Yc@We@B.@n~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -429,7 +429,7 @@ Christmas tree pine large~
 a Christmas tree decorated with tinsel and baubles~
 A large Christmas pine tree, covered with tinsel and baubles lights up the room.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -444,7 +444,7 @@ a Christmas pudding~
 a plump Christmas pudding~
 A plump Christmas pudding has been left here, what's wrong with it?~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -457,7 +457,7 @@ christmas santa claus hat~
 @Wa @RS@Wa@Rn@Wt@Ra @WC@Rl@Wa@Ru@Ws @Rh@Wa@Rt@n~
 @WA @RS@Wa@Rn@Wt@Ra @WC@Rl@Wa@Ru@Ws @Rh@Wa@Rt@n is lying here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -470,7 +470,7 @@ stocking christmas~
 a Christmas stocking~
 A Christmas stocking hangs expectantly from the wall.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 99 0 -1 0
 1 1 0 0
 E
@@ -483,7 +483,7 @@ heart candy~
 a small heart shaped candy~
 A pretty heart shaped candy with a message on it lies here.~
 ~
-0 0 a 0
+0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 1309
@@ -492,7 +492,7 @@ code conduct~
 the code of conduct~
 The Code of Conduct was placed here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -530,7 +530,7 @@ cheesy sword destruction~
 the ultimate cheesy sword of destruction~
 A sword so ultimately powerful that it is cheesy.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 4 5 14
 1 1 0 0
 #1345
@@ -538,7 +538,7 @@ key gateguard~
 a key~
 The gateguards key was left here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1369
@@ -546,14 +546,9 @@ Memorial 9.11 9/11 stone pyramid 911~
 a 911 memorial~
 A tapered pyramid of dark stone rises from floor to ceiling.~
 ~
-8 e 0 0
+8 e 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
-E
-plaque base~
-   To the memory of the thousands who died, and for the hundreds of millions
-who wept.    
-~
 E
 memorial pyramid stone~
    A tapered spire of dark grey marble rises from its four sided base to a
@@ -564,12 +559,17 @@ blasted sides of the spire.  Each of the hundreds of figures is a shade of
 either white, black, brown, yellow or red.  A bronze plaque has been set in to
 the base of the monument.    
 ~
+E
+plaque base~
+   To the memory of the thousands who died, and for the hundreds of millions
+who wept.    
+~
 #1370
 flag american mast half~
 the American flag~
 An American flag is hung at half mast to mourn the World's loss.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -627,7 +627,7 @@ gambling winnings~
 Rumble's gambling winnings~
 A large pile of cash and coins are labeled "Rumble's Gambling Winnings."~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 150 0 0 0
 1 1 0 0
 #1389
@@ -635,7 +635,7 @@ obvious award~
 the "thanks for stating the obvious" award~
 The "thanks for stating the obvious" award lies here majestically, waiting to be awarded.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -648,7 +648,7 @@ award channel mischannel~
 the "I don't know how to talk on the right channel" award~
 The "I don't know how to talk on the right channel" award is waiting to be awarded.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -662,7 +662,7 @@ deodorant bottle~
 a bottle of deodorant~
 A bottle of deodorant is begging to be sprayed~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 1 0
 1 9 0 0
 T 1362
@@ -676,7 +676,7 @@ shotgun gun postal~
 a postal worker's shotgun~
 A postal worker's shotgun is beckoning you.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 1 1 12
 1 1 0 0
 T 1361
@@ -689,7 +689,7 @@ ruby slippers~
 a pair of ruby slippers~
 Dorothy left her ruby slippers here. Maybe they can take you home.~
 ~
-11 0 a 0
+11 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 1391
@@ -703,7 +703,7 @@ quarter coin~
 a quarter~
 A typical U.S. quarter that appears to be perfect for flipping.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 1393
@@ -823,7 +823,7 @@ AND TO ALL A GOOD NIGHT."
 
 This poem was written by a Marine stationed in Okinawa Japan.
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1398
@@ -831,7 +831,7 @@ rotten mistletoe~
 some rotten mistletoe~
 This mistletoe reeks of mold and decay.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 1
 1 1 0 0
 #1399
@@ -839,7 +839,7 @@ mistletoe plant~
 some mistletoe~
 A soft woody plant with green leaves and white berries is hanging over your head.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 1 1 0 0
 E

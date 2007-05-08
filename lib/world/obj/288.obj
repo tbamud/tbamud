@@ -3,7 +3,7 @@ comet's tail~
 a comet's tail~
 A long, slender whip lies here.~
 ~
-5 ab an 0
+5 ab 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 4
 9 1000 0 0
 #28802
@@ -11,7 +11,7 @@ arm hercules~
 the Titanic Arm plates of Hercules~
 Arm plates of the Zodiac lie here.~
 ~
-9 agk ai 0
+9 agk 0 0 0 ai 0 0 0 0 0 0 0
 6 0 0 0
 10 100 0 0
 E
@@ -28,7 +28,7 @@ belt orion~
 the Titanic Belt of Orion~
 A belt of the Zodiac lies here.~
 ~
-9 agk al 0
+9 agk 0 0 0 al 0 0 0 0 0 0 0
 9 0 0 0
 7 1000 0 0
 E
@@ -43,7 +43,7 @@ skull draco~
 an ugly skull of Draco~
 A massive skull of a dead Draco lies here.~
 ~
-4 bgh ao 0
+4 bgh 0 0 0 ao 0 0 0 0 0 0 0
 15 5 5 44
 20 1000 0 0
 #28806
@@ -51,7 +51,7 @@ fleece aries~
 the Titanic Fleece of Aries~
 A fleece of the Zodiac lies here.~
 ~
-9 agk ac 0
+9 agk 0 0 0 ac 0 0 0 0 0 0 0
 9 0 0 0
 9 1000 0 0
 E
@@ -63,7 +63,7 @@ hoof taurus~
 the Titanic Hoof of Taurus~
 A hoof of the Zodiac lies here.~
 ~
-9 agk ag 0
+9 agk 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 3 1000 0 0
 E
@@ -79,7 +79,7 @@ mask gemini~
 the Titanic Mask of Gemini~
 A mask of the Zodiac lies here.~
 ~
-9 aghk 0 0
+9 aghk 0 0 0 0 0 0 0 0 0 0 0
 2 0 0 0
 0 0 0 0
 E
@@ -96,7 +96,7 @@ shell cancer~
 the Titanic Shell of Cancer~
 A shell of the Zodiac lies here.~
 ~
-9 agk 0 0
+9 agk 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -109,7 +109,7 @@ skin leo~
 the Titanic Skin of Leo~
 A skin of the Zodiac lies here.~
 ~
-9 agk 0 0
+9 agk 0 0 0 0 0 0 0 0 0 0 0
 11 0 0 0
 0 0 0 0
 E
@@ -123,7 +123,7 @@ bracelet virgo~
 the Titanic Bracelet of Virgo~
 A bracelet of the Zodiac lies here.~
 ~
-9 agk 0 0
+9 agk 0 0 0 0 0 0 0 0 0 0 0
 4 0 0 0
 0 0 0 0
 E
@@ -137,7 +137,7 @@ scale libra~
 the Titanic Scale of Libra~
 A shield of the Zodiac lies here.~
 ~
-9 agk 0 0
+9 agk 0 0 0 0 0 0 0 0 0 0 0
 8 0 0 0
 0 0 0 0
 E
@@ -153,7 +153,7 @@ scale libra~
 the Titanic Scale of Libra~
 A shield of the Zodiac lies here.~
 ~
-9 bgh 0 0
+9 bgh 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -169,7 +169,7 @@ sting scorpio~
 the Sting of Scorpio~
 Sting of the Zodiac lies here.~
 ~
-5 agk an 0
+5 agk 0 0 0 an 0 0 0 0 0 0 0
 0 4 4 11
 1 1 0 0
 E
@@ -186,7 +186,7 @@ arrow sagittarius~
 the Arrow of Sagittarius~
 The Arrow of Sagittarius lies here.~
 ~
-3 agk 0 0
+3 agk 0 0 0 0 0 0 0 0 0 0 0
 10 10 10 19
 0 0 0 0
 E
@@ -198,7 +198,7 @@ bow sagittarius~
 the Titanic Bow of Sagittarius~
 The Titanic Bow of Sagittarius lies here.~
 ~
-5 agk an 0
+5 agk 0 0 0 an 0 0 0 0 0 0 0
 0 2 9 6
 1 1 0 0
 E
@@ -214,7 +214,7 @@ horns capricorn~
 the Titanic Horns of Capricorn~
 A pair of horns of the Zodiac lies here.~
 ~
-9 agk 0 0
+9 agk 0 0 0 0 0 0 0 0 0 0 0
 4 0 0 0
 0 0 0 0
 E
@@ -231,7 +231,7 @@ vessel aquarius~
 the Ancient Vessel of Aquarius~
 A vessel of the Zodiac lies here.~
 ~
-4 agk 0 0
+4 agk 0 0 0 0 0 0 0 0 0 0 0
 10 5 5 43
 0 0 0 0
 E
@@ -244,7 +244,7 @@ tail pisces~
 the Titanic Tail of Pisces~
 A fish tail of the Zodiac lies here.~
 ~
-9 agk 0 0
+9 agk 0 0 0 0 0 0 0 0 0 0 0
 10 0 0 0
 0 0 0 0
 E
@@ -261,7 +261,7 @@ ring dignity~
 the Ring of Dignity~
 A ring of specialty lies here.~
 ~
-9 abfgk 0 0
+9 abfgk 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -278,7 +278,7 @@ sceptre might~
 the Sceptre of Might~
 A sceptre of interest lies here.~
 ~
-1 abgk 0 0
+1 abgk 0 0 0 0 0 0 0 0 0 0 0
 0 0 1 0
 0 0 0 0
 E
@@ -294,7 +294,7 @@ ring universe~
 the ring of the universe~
 Here lies a fortune ... a small ring of power.~
 ~
-9 abfgi 0 0
+9 abfgi 0 0 0 0 0 0 0 0 0 0 0
 4 0 0 0
 0 0 0 0
 E
@@ -310,7 +310,7 @@ great dipper~
 the Great Dipper of the Skies~
 A dazzling white object lies on the ground.~
 ~
-5 abfgi an 0
+5 abfgi 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 6
 1 1 0 0
 A
@@ -322,7 +322,7 @@ spring shoot~
 a spring shoot~
 A shoot grows here, covered with dew.~
 ~
-18 ab a 0
+18 ab 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 #28825
@@ -330,7 +330,7 @@ summer flower~
 a summer flower~
 A flower grows here, waiting to be picked up.~
 ~
-18 ab a 0
+18 ab 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 #28826
@@ -338,7 +338,7 @@ autumn leaf~
 an autumn leaf~
 A leaf lies here, as if just fallen from a tree.~
 ~
-18 ab a 0
+18 ab 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 #28827
@@ -346,7 +346,7 @@ winter branch~
 a winter branch~
 A branch lies here, still covered with snow.~
 ~
-18 ab a 0
+18 ab 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 #28828
@@ -354,7 +354,7 @@ chains andromeda~
 chains of Andromeda~
 Some chains lie on the floor.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 1 0 0
 E

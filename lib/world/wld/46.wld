@@ -6,7 +6,7 @@ notice anything going on around them.  There are exits in just about every
 direction possible.  There is a distinct smell of fresh air here, maybe it's
 possible to get out.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D0
 ~
 ~
@@ -52,7 +52,7 @@ Inside The Anthill~
 use.  There is a little bit of everything in this room.  And the ants just keep
 bringing more stuff in.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D0
 ~
 ~
@@ -69,7 +69,7 @@ the few ants that wander in.  Another passage can be seen to the east of here.
 The ants have dug through the dark brown soil recently.  The smell of the fresh
 earth is invigorating.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -85,7 +85,7 @@ A Hole In The Wall~
 passage but never completed it.  A ledge of rock in the southern wall explains
 why they stopped.  The ledge has a strange golden sparkle to it.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D0
 ~
 ~
@@ -97,7 +97,7 @@ Another Room In The Anthole~
 something to do.  Small dugouts in the wall can be seen that looks like they
 have tried to make more passages but never completed them.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -110,7 +110,7 @@ passages lead elsewhere in ever direction, and ants can be seen coming from
 each one.  Trails of food lead from each room to another where the ants have
 been carrying it.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D0
 ~
 ~
@@ -143,7 +143,7 @@ set and rest awhile without being in the way of others.  The wall has little
 indents where the ants lean agaist it so they don't take up as much room on the
 ground.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D2
 ~
 ~
@@ -155,7 +155,7 @@ A Tunnel~
 are laying around and others look as if they are actually doing work.  The
 earthen tunnel lead both east and west.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -171,7 +171,7 @@ A Sandy Dead End~
 continue excavation in this direction.  The ants seemed to have given up on
 this tunnel once they ran into the unsupportive soil.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D0
 ~
 ~
@@ -183,7 +183,7 @@ A Collapsed Tunnel~
 wall may have recently caved in, closing off what once used to be another
 tunnel.  Strange how the ants have not fixed it yet.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D3
 ~
 ~
@@ -196,7 +196,7 @@ one level up.  More and more ants can be seen running around back and forth
 doing there jobs.  Tunnels and passages can be seend in all the cardinal
 directions.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D0
 ~
 ~
@@ -228,7 +228,7 @@ A Small Passage~
 be heard coming from it.  It almost sounds as if the ants are fighting.  
 Probably more of the fire ants have invaded the tunnel.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -244,7 +244,7 @@ A Caved in Tunnel~
 the ceiling of the tunnel.  In the rubble you notice a large red soldier ant
 crushed from the collapse.  Maybe these collapses were planned.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D3
 ~
 ~
@@ -256,7 +256,7 @@ A Storage Room~
 are carved into the dirt walls.  Perhaps to place crumbs and other food
 particals that they picked up and brought in.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D2
 ~
 ~
@@ -269,7 +269,7 @@ that run the anthill must have caused these collapses to prevent the fire ants
 from taking over their hill.  The two species of ants must have put up home too
 close to each other.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D0
 ~
 ~
@@ -282,7 +282,7 @@ there is no way you could get back up to the other levels of the hole.  Larger
 worker ants and guards can be seen roaming in and out of the passages.  The
 queen has to be somewhere around here.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -302,7 +302,7 @@ A Rocky Tunnel~
 valuable must be contained at its end.  The tunnel here is bordered by rock and
 ledge, making more digging almost impossible.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -318,7 +318,7 @@ The Larvae Storage Room~
 male must have been busy here.  Severl soldier ants are close by to protect the
 newborn.  The tunnel exits to the north.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D0
 ~
 ~
@@ -330,7 +330,7 @@ A Large Hallway~
 forth bringing food and other supplies deep into the anthill for safety.  This
 rooms sole purpose seems to be for storage and the worker ants to live.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D3
 ~
 ~
@@ -342,7 +342,7 @@ A Large Tunnel~
 heard in almost every direction.  The tunnel floor is packed hard from the
 heavy traffic.  The tunnel continues east and west.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -358,7 +358,7 @@ A Dark Tunnel~
 interconnecting tunnels make it hard to stay orientated in which direction you
 are travelling.  East and west you see even more tunnels with side passages.  
 ~
-46 dp 0
+46 32776 0 0 0 0
 D0
 ~
 ~
@@ -378,7 +378,7 @@ A Dark Intersection~
 junction in all four cardinal directions.  It is amazing how a bug with a tiny
 brain can build things so perfectly.    
 ~
-46 d 0
+46 8 0 0 0 0
 D0
 ~
 ~
@@ -402,7 +402,7 @@ Another Branch~
 sound of running water can be heard.  The walls here appear to have been washed
 out, not dug out by ants.    
 ~
-46 d 0
+46 8 0 0 0 0
 D0
 ~
 ~
@@ -418,7 +418,7 @@ Along The Passage~
 thought of being under a lake or other large body of water is rather
 disturbing.  To the north you see a reflection off from something.    
 ~
-46 d 0
+46 8 0 0 0 0
 D0
 ~
 ~
@@ -434,7 +434,7 @@ An Underground Pond~
 floating in the dirty water.  A small river flows in from the west, into the
 room, and then exits to the east.    
 ~
-46 d 0
+46 8 0 0 0 0
 D2
 ~
 ~
@@ -446,7 +446,7 @@ A Dark Passage~
 you travel.  This hallway appears to end just to the east in a large room.  An
 intersection of tunnels is just to the west.    
 ~
-46 d 0
+46 8 0 0 0 0
 D1
 ~
 ~
@@ -463,7 +463,7 @@ you crumbles slightly and hangs over you, ready to drop at any minute.  The
 tunnel turns to the west where it looks like the slightest pressure on the
 floor could cause a collapse.    
 ~
-46 d 0
+46 8 0 0 0 0
 D0
 ~
 ~
@@ -481,7 +481,7 @@ at the base of the tunnel you get the impression that this tunnel is used quite
 frequently.  You feel a draft coming from a small hole in the ceiling, bringing
 with it the distinct smell of fresh air, maybe there is a way out.    
 ~
-46 d 0
+46 8 0 0 0 0
 D3
 ~
 ~
@@ -494,7 +494,7 @@ Buried Alive~
 unwary and stupid.  Trying to climb out only buries you further.  Now is a good
 time to either have a friend with summons or a scroll of recall.    
 ~
-46 acd 0
+46 13 0 0 0 0
 S
 #4629
 Into the Large Tunnel~
@@ -502,7 +502,7 @@ Into the Large Tunnel~
 sounds that could be heard before are even louder now but still sound as if
 they are still far away.  The large tunnel seems to make a turn to the south.
 ~
-46 d 0
+46 8 0 0 0 0
 D1
 ~
 ~
@@ -519,7 +519,7 @@ this area.  The ants here do not seem to be rushing as much.  The tunnel
 continues north and south.  It is too dark and too long of a distance to see
 where they lead.    
 ~
-46 d 0
+46 8 0 0 0 0
 D0
 ~
 ~
@@ -535,7 +535,7 @@ A Long Tunnel~
 The walls and ceiling appear to be in good shape and this part of the tunnel
 looks very strong and secure.    
 ~
-46 cd 0
+46 12 0 0 0 0
 D0
 ~
 ~
@@ -551,7 +551,7 @@ A Small Room~
 go about their business and ignore you.  A lot of commotion to the east
 attracts your attention.    
 ~
-46 d 0
+46 8 0 0 0 0
 D0
 ~
 ~
@@ -569,7 +569,7 @@ and is always heavily guarded.  The room you stand in is the largest you've
 seen.  The walls are made of a hard red clay, and are lined with stones to
 prevent intrusion.    
 ~
-46 d 0
+46 8 0 0 0 0
 D3
 A large clay door.
 ~
@@ -583,7 +583,7 @@ seem to be expanding their tunnels for some reason.  A small tunnel leads back
 to the west.  The northern wall of this room is extremely moist and small
 puddles of water are forming in the corners.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D3
 ~
 ~
@@ -596,7 +596,7 @@ like a typical dirt road.  The constant travelling of the ants has padded it
 down smoothly.  A few light brown rocks just out of the floor, ceiling, and
 walls.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -612,7 +612,7 @@ A Small Passage~
 So you can either go back to the east or go on west and see where that bend in
 the tunnel leads.  The ants seem oblivious to your intrustion so far.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -628,7 +628,7 @@ A Bend In The Tunnel~
 To the south you can make out a large room that is in the process of being dug
 out.  Ants can bee seen pushing and pulling the dirt away.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D1
 ~
 ~
@@ -644,7 +644,7 @@ A Dead End Tunnel~
 Unfortunately it is unfinished and leaves you with no choice other than to head
 back the way you came.    
 ~
-46 d 0
+46 8 0 0 0 0
 D0
 ~
 ~
@@ -656,7 +656,7 @@ A Small Crevice~
 except that it is slightly cleaner than the rest.  Maybe it is special.  Who
 knows?  A few odd objects are scattered around the room.    
 ~
-46 dp 0
+46 32776 0 0 0 0
 D2
 ~
 ~
@@ -669,6 +669,6 @@ atleast 20feet high and about 50feet wide.  It is evident that ants have been
 entering and leaving this hill for quite some time.  The hole is large enough
 for the heaviest armor adventurer.    
 ~
-46 j 0
+46 512 0 0 0 0
 S
 $~

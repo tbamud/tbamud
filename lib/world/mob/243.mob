@@ -6,7 +6,7 @@ A cold frost demon is staring at you.
    These frost demons are quite powerful.  They use their cold bodies to freeze
 their enemies to death.  Be careful!    
 ~
-cdgmr k -800 E
+135244 0 0 0 0 0 0 0 -800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -25,7 +25,7 @@ A badly deformed skeleton is standing here.
 skeleton's spine has been arched over, one of his arms is missing, and part of
 another skull has grown out of his shoulder.  Scary!    
 ~
-cdgh k -400 E
+204 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -44,7 +44,7 @@ A very small furry beast is here.
 a cat, and is only about one foot tall.  It looks quite weak.  This can't be
 real, can it?    
 ~
-bcdlopr hk -250 E
+182286 0 0 0 0 0 0 0 -250 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -63,7 +63,7 @@ An athletic looking downhill skier is here.
 zooms down the hill.  Skiers like this often get into fights with the
 snowboarders.    
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -81,7 +81,7 @@ A scuzzy looking snowboarder is standing here, smoking pot.
    Snowboarders like these are trouble.  They only seem to like the sport so
 they can have an easy place to sell drugs.    
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -100,7 +100,7 @@ An old lunch lady is here, ready to serve you.
 and beards, and they're fairly fat too.  Your typical grandmother character.  
 
 ~
-bdhnopr h 350 E
+188554 0 0 0 0 0 0 0 350 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -117,7 +117,7 @@ An annoying ski salesman is ready to sell you something.
    Geez is this guy annoying.  While he's trying to sell you those new $30k
 pair of skis, he's blabbing on his cell phone with another customer.    
 ~
-bdnopr h 0 E
+188426 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -131,7 +131,7 @@ A stinky hairy yeti is here, staring at you in awe.
 guys are supposed to be close relatives of another legendary species, bigfoot.
   
 ~
-bcdflnopqr 0 0 E
+256046 0 0 0 0 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -150,7 +150,7 @@ A ski bum is here selling ski passes.
 spend their days skiing on the hill.  They get paid for it too!  Man, what a
 hard life.    
 ~
-bdelnpqr hk 500 E
+239642 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1

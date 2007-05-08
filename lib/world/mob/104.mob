@@ -7,7 +7,7 @@ Map maker Lena sits behind the desk selling and making maps.
 nice silk shirt, and a pair of silk pants.  Her long whit hair flows gently down
 her back, and she wears a small pair of half-moon glasses.  
 ~
-bd cdefk 0 E
+10 0 0 0 120 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -21,7 +21,7 @@ Chwin stands behind his desk polishing a sword.
    Chwin has a rugged look about him, his cloths are torn in some places, and
 his hair is all messed up.  
 ~
-bd cdefk 0 E
+10 0 0 0 120 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -36,7 +36,7 @@ Arwin Mic'Zell fiddles with some armour behind his desk.
 ever seen, they seem to be custom made, and very expensive.  He has short blond
 hair, and he stands rather tall.  
 ~
-bd cdefk 0 E
+10 0 0 0 120 0 0 0 0 E
 34 9 10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -51,7 +51,7 @@ An elven townsmen walks around the city.
 all look almost exactly the same, his hair is blond, and shoulder length.  His
 cloths look new and he has a peaceful aura about him.  
 ~
-dg ef 0 E
+72 0 0 0 96 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -64,7 +64,7 @@ An elven woman walks about the city.
    She has long flowing white hair, her body is well built, but still beautiful.
 Her cloths are well crafted and she looks to be loving.  
 ~
-dg ef 0 E
+72 0 0 0 96 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -79,7 +79,7 @@ The Village Elder stands here watching you.
 his face is worn looking.  Even though he looks old, he still seems to be
 beautiful.  His clothes look to be some of the best you have seen.  
 ~
-bd ef 0 E
+10 0 0 0 96 0 0 0 0 E
 21 13 12 4d4+210 3d3+3
 210 44100
 6 6 1
@@ -98,7 +98,7 @@ light illuminates his body, makeing him seem older then he actually is.
 Although he has many scars, he looks to be strong, and more powerfulthen any
 other in the village.  
 ~
-bd ef 0 E
+10 0 0 0 96 0 0 0 0 E
 31 10 20 6d6+310 5d5+5
 310 96100
 8 8 1
@@ -111,7 +111,7 @@ A small squirrel frolics around.
    A chestnut brown squirrel, the is about medium size moves around in the
 woods.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -125,7 +125,7 @@ An ugly troll stumbles around here.
 body, and in some places it is missing skin.  He wears nothing but a loincloth,
 and a small belt.  
 ~
-dfg 0 0 E
+104 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -138,7 +138,7 @@ Jak the shop keeper sits behind his desk.
    He wears a long raddy trench coat, and his hair is all straggly.  He has
 multiple cuts on his face, and a long beard.  
 ~
-bd cdefk 0 E
+10 0 0 0 120 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -153,7 +153,7 @@ An orc moves in the shadows.
 him smells like rotting flesh.  His armor looks weak, and he wears no weapon.  
 He looks to be a little strong.  
 ~
-dfg 0 0 E
+104 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -167,7 +167,7 @@ A wood imp watches you carefully.
    This wood imp looks like a giant tree, he stands at 8'3" and has a moss
 beard.  His branches are all messed up and he has no leaves.  
 ~
-dgkl e 0 E
+3144 0 0 0 32 0 0 0 0 E
 16 15 10 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -181,7 +181,7 @@ A woman stands about the room, giving people there mail.
    She wears a pair of specticles, and a long white coat.  Her hair is a bright
 pink, and is in a pony tail.  She stands up straight looking at you sternly.  
 ~
-abdlnopr 0 0 E
+190475 0 0 0 0 0 0 0 0 E
 34 9 20 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -194,7 +194,7 @@ Jewel stands here smiling sweetle.
    Jewel looks rather pretty.  She has long brown hair, and she wears some odd
 looking clothes.  She has a well built body and looks very nice.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 20 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -206,7 +206,7 @@ A hell hound looks at you angrily.
 ~
    This is a very large dog, his hair is messed up, and he glows a bit.  
 ~
-dfg cdef 0 E
+104 0 0 0 120 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -221,7 +221,7 @@ A pretty border collie sits by the chair.
 small head.  Her head cocks sideways as you look at her, and she wears an
 expression as if asking who you are.  
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 6 6 2
@@ -235,7 +235,7 @@ A heavily armored Guard stands here.
 completely covered by armor. His face expressionless, his body motionless. He
 just looks to be one big living statue.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -248,7 +248,7 @@ The Weatherman watches the sky.
    He seems to be a regular man, wearing large glasses, and other business
 clothes.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1

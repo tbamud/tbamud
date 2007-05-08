@@ -26,6 +26,7 @@ int	rand_number(int from, int to);
 int	dice(int number, int size);
 size_t	sprintbit(bitvector_t vektor, const char *names[], char *result, size_t reslen);
 size_t	sprinttype(int type, const char *names[], char *result, size_t reslen);
+void sprintbitarray(int bitvector[], const char *names[], int maxar, char *result);
 int	get_line(FILE *fl, char *buf);
 int	get_filename(char *filename, size_t fbufsize, int mode, const char *orig_name);
 time_t	mud_time_to_secs(struct time_info_data *now);
@@ -172,6 +173,12 @@ void char_from_furniture(struct char_data *ch);
    }					\
 
 /* basic bitvector utils */
+#define Q_FIELD(x)  ((int) (x) / 32)
+#define Q_BIT(x)    (1 << ((x) % 32))
+#define IS_SET_AR(var, bit)       ((var)[Q_FIELD(bit)] & Q_BIT(bit))
+#define SET_BIT_AR(var, bit)      ((var)[Q_FIELD(bit)] |= Q_BIT(bit))
+#define REMOVE_BIT_AR(var, bit)   ((var)[Q_FIELD(bit)] &= ~Q_BIT(bit))
+#define TOGGLE_BIT_AR(var, bit)   ((var)[Q_FIELD(bit)] = (var)[Q_FIELD(bit)] ^ Q_BIT(bit))
 #define IS_SET(flag,bit)  ((flag) & (bit))
 #define SET_BIT(var,bit)  ((var) |= (bit))
 #define REMOVE_BIT(var,bit)  ((var) &= ~(bit))
@@ -198,27 +205,27 @@ void char_from_furniture(struct char_data *ch);
 #define SPELL_ROUTINES(spl)	(spell_info[spl].routines)
 
 /* IS_MOB() acts as a VALID_MOB_RNUM()-like function.*/
-#define IS_NPC(ch)	(IS_SET(MOB_FLAGS(ch), MOB_ISNPC))
+#define IS_NPC(ch)	(IS_SET_AR(MOB_FLAGS(ch), MOB_ISNPC))
 #define IS_MOB(ch)	(IS_NPC(ch) && GET_MOB_RNUM(ch) <= top_of_mobt && \
 				GET_MOB_RNUM(ch) != NOBODY)
 
-#define MOB_FLAGGED(ch, flag) (IS_NPC(ch) && IS_SET(MOB_FLAGS(ch), (flag)))
-#define PLR_FLAGGED(ch, flag) (!IS_NPC(ch) && IS_SET(PLR_FLAGS(ch), (flag)))
-#define AFF_FLAGGED(ch, flag) (IS_SET(AFF_FLAGS(ch), (flag)))
-#define PRF_FLAGGED(ch, flag) (IS_SET(PRF_FLAGS(ch), (flag)))
-#define ROOM_FLAGGED(loc, flag) (IS_SET(ROOM_FLAGS(loc), (flag)))
+#define MOB_FLAGGED(ch, flag) (IS_NPC(ch) && IS_SET_AR(MOB_FLAGS(ch), (flag)))
+#define PLR_FLAGGED(ch, flag) (!IS_NPC(ch) && IS_SET_AR(PLR_FLAGS(ch), (flag)))
+#define AFF_FLAGGED(ch, flag) (IS_SET_AR(AFF_FLAGS(ch), (flag)))
+#define PRF_FLAGGED(ch, flag) (IS_SET_AR(PRF_FLAGS(ch), (flag)))
+#define ROOM_FLAGGED(loc, flag) (IS_SET_AR(ROOM_FLAGS(loc), (flag)))
 #define EXIT_FLAGGED(exit, flag) (IS_SET((exit)->exit_info, (flag)))
 #define OBJAFF_FLAGGED(obj, flag) (IS_SET(GET_OBJ_AFFECT(obj), (flag)))
 #define OBJVAL_FLAGGED(obj, flag) (IS_SET(GET_OBJ_VAL((obj), 1), (flag)))
-#define OBJWEAR_FLAGGED(obj, flag) (IS_SET(GET_OBJ_WEAR(obj), (flag)))
-#define OBJ_FLAGGED(obj, flag) (IS_SET(GET_OBJ_EXTRA(obj), (flag)))
+#define OBJWEAR_FLAGGED(obj, flag) (IS_SET_AR(GET_OBJ_WEAR(obj), (flag)))
+#define OBJ_FLAGGED(obj, flag) (IS_SET_AR(GET_OBJ_EXTRA(obj), (flag)))
 #define HAS_SPELL_ROUTINE(spl, flag) (IS_SET(SPELL_ROUTINES(spl), (flag)))
 
 /* IS_AFFECTED for backwards compatibility */
 #define IS_AFFECTED(ch, skill) (AFF_FLAGGED((ch), (skill)))
 
-#define PLR_TOG_CHK(ch,flag) ((TOGGLE_BIT(PLR_FLAGS(ch), (flag))) & (flag))
-#define PRF_TOG_CHK(ch,flag) ((TOGGLE_BIT(PRF_FLAGS(ch), (flag))) & (flag))
+#define PLR_TOG_CHK(ch,flag) ((TOGGLE_BIT_AR(PLR_FLAGS(ch), (flag))) & (flag))
+#define PRF_TOG_CHK(ch,flag) ((TOGGLE_BIT_AR(PRF_FLAGS(ch), (flag))) & Q_BIT(flag))
 
 /* new define for quick check */
 #define DEAD(ch) (PLR_FLAGGED((ch), PLR_NOTDEADYET) || MOB_FLAGGED((ch), MOB_NOTDEADYET))
@@ -379,6 +386,7 @@ void char_from_furniture(struct char_data *ch);
 #define GET_OBJ_RENT(obj)	((obj)->obj_flags.cost_per_day)
 #define GET_OBJ_AFFECT(obj)	((obj)->obj_flags.bitvector)
 #define GET_OBJ_EXTRA(obj)	((obj)->obj_flags.extra_flags)
+#define GET_OBJ_EXTRA_AR(obj, i)   ((obj)->obj_flags.extra_flags[(i)])
 #define GET_OBJ_WEAR(obj)	((obj)->obj_flags.wear_flags)
 #define GET_OBJ_VAL(obj, val)	((obj)->obj_flags.value[(val)])
 #define GET_OBJ_WEIGHT(obj)	((obj)->obj_flags.weight)
@@ -452,7 +460,7 @@ void char_from_furniture(struct char_data *ch);
    (CAN_WEAR((obj), ITEM_WEAR_TAKE) && CAN_CARRY_OBJ((ch),(obj)) && \
     CAN_SEE_OBJ((ch),(obj)))
 
-#define PERS(ch, vict)   GET_NAME(ch)
+#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : "someone")
 
 #define OBJS(obj, vict) (CAN_SEE_OBJ((vict), (obj)) ? \
 	(obj)->short_description  : "something")

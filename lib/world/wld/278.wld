@@ -6,7 +6,7 @@ lie along the walk, and the cutting, salty smell of the ocean stings your nose.
 You feel a sense of rejuvenation as you stare out into the sea.  You know many
 adventures lie ahead.    
 ~
-278 0 1
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -17,16 +17,6 @@ To your west you can see a dark alley with a fishery.
 ~
 ~
 0 0 -1
-E
-fishnets nets~
-   The fishnets are old and are turning into dust; large holes open to the
-sides.  They don't look sturdy enough to use.    
-~
-E
-lobster crates~
-   The lobster crates are old and rotting; they look as if they couldn't hold a
-sardine.    
-~
 E
 credits info~
    This is Oceania Proper, part one of a 5-part area called Oceania General. I 
@@ -41,6 +31,16 @@ Oceania Proper, part 1 of a 5 part area. By Questor of StrangeMUD.
 Links: 00w alley/fishery
 01n island/ship, 13e white beach, 18s pier on stilts
 ~
+E
+lobster crates~
+   The lobster crates are old and rotting; they look as if they couldn't hold a
+sardine.    
+~
+E
+fishnets nets~
+   The fishnets are old and are turning into dust; large holes open to the
+sides.  They don't look sturdy enough to use.    
+~
 S
 #27801
 In the Ocean~
@@ -51,7 +51,7 @@ wind blows constantly here.  You can go your south.  To your north, you notice
 a small island with a ship that appears to have been moored.  It looks board-
 able.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the entrance to a pirate's ship.
 ~
@@ -70,7 +70,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 const- antly here.  The current keeps you from going west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -94,7 +94,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constantly here.  You can only go south and west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D2
 To your south you can see the deep, wide ocean.
 ~
@@ -114,7 +114,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 const- antly here.  The current allows passage only to the north and the south.
   
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -133,7 +133,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current allows you to go north or east.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -152,7 +152,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current allows passage to the west and south.    
 ~
-278 0 7
+278 0 0 0 0 0
 D2
 To your south is the deep, wide ocean.
 ~
@@ -173,7 +173,7 @@ constant- ly here.  To your west, a frothy system of cross-currents makes the
 passage look too dangerous to cross; the current is impassable to your south.
   
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -196,7 +196,7 @@ The Impassible Current~
 what you try to do, it won't stop churning!  Oh NO!  The current drags you and
 the boat down.    
 ~
-278 cj 1
+278 516 0 0 0 0
 S
 #27809
 In the ocean~
@@ -206,7 +206,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current bends to your south.  The only other way
 available is west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D2
 To your south is the deep, wide ocean.
 ~
@@ -226,7 +226,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  You can go every direction but south.  To your southeast
 you can see a huge island.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -256,7 +256,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current allowes passage only to the east and south.  
 
 ~
-278 0 7
+278 0 0 0 0 0
 D1
 To your east is the deep, wide ocean.
 ~
@@ -276,7 +276,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current is too strong to go to the north, and a huge
 island lies to your east.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -296,7 +296,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  A huge island lies to your east, and the current continues
 to your south and west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D1
 To your east you see a pier by a blindingly bright white beach.
 ~
@@ -321,7 +321,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  You see a huge island to your northeast; the current allows
 passage to the north and east.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -340,7 +340,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current goes east and west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D1
 To your east you can see the deep, wide ocean.
 ~
@@ -360,7 +360,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current continues east and west, and looks passable to
 the north.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -385,7 +385,7 @@ Seagulls chirp above, and wales spurt water far off into the horizon.  The wind
 blows constantly here.  To your north you can make out a pier high in the
 trees; the current continues to your north and west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -410,7 +410,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -429,7 +429,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -448,7 +448,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -467,7 +467,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current keeps you from going west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -492,7 +492,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current allowes passage only to the east and south.  
 
 ~
-278 0 7
+278 0 0 0 0 0
 D1
 To your east is the deep, wide ocean.
 ~
@@ -511,7 +511,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  You can go to your north or your east.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -531,7 +531,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current looks passable to the west and north.  A huge,
 churning whirlpool lies directly to your east.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -555,7 +555,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current keeps you from going west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -580,7 +580,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current bends to your south.  The only other way
 available is west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D2
 To your south is the deep, wide ocean.
 ~
@@ -600,7 +600,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current continues east and west, and looks passable to
 the north.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -625,7 +625,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current bends to your south.  The only other way
 available is west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D2
 To your south is the deep, wide ocean.
 ~
@@ -644,7 +644,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current keeps you from going east.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -668,7 +668,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -687,7 +687,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current keeps you from going east.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -711,7 +711,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -731,7 +731,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current bends to your south.  The only other way
 available is west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D2
 To your south is the deep, wide ocean.
 ~
@@ -752,7 +752,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current keeps you from going west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -776,7 +776,7 @@ keeping it from going off-course.  You realize this will be hard work.
 Seagulls chirp above, and whales spurt water far off into the horizon.  The
 wind blows constantly here.  The current bends to your west and north.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -796,7 +796,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current allowes passage only to the east and south.  
 
 ~
-278 0 7
+278 0 0 0 0 0
 D1
 To your east is the deep, wide ocean.
 ~
@@ -815,7 +815,7 @@ keeping it from going off-course.  You realize this will be hard work.
 Seagulls chirp above, and whales spurt water far off into the horizon.  The
 wind blows constantly here.  The current bends to your west and north.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -834,7 +834,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here, and you can see a beautiful island to your south.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -854,7 +854,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -874,7 +874,7 @@ chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  The current allowes passage only to the east and south.  
 
 ~
-278 0 7
+278 0 0 0 0 0
 D1
 To your east is the deep, wide ocean.
 ~
@@ -892,7 +892,7 @@ At the entrance to a harbor~
 huge mountain rises to your north, and the harbor seems to end at a huge cave
 in the mountain.  It appears as if you have found a new continent.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 It would be hard to enter an unconstructed area. You might want to try again 
 when it is. Riddle Mountain and the New Continent to be delivered in about a 
@@ -918,7 +918,7 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -938,7 +938,7 @@ Seagulls chirp above, and whales spurt water far off into the horizon.  The
 wind blows constantly here.  The current appears to be winding around a large
 island to your north.    
 ~
-278 0 7
+278 0 0 0 0 0
 D2
 To your south you can see the deep, wide ocean.
 ~
@@ -958,7 +958,7 @@ Seagulls chirp above, and whales spurt water far off into the horizon.  The
 wind blows constantly here.  The current appears to be winding around a large
 island to your northeast.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -983,7 +983,7 @@ Seagulls chirp above, and whales spurt water far off into the horizon.  The
 wind blows constantly here.  The current appears to be winding around a large
 island to your southeast.    
 ~
-278 0 7
+278 0 0 0 0 0
 D1
 To your east you can see the deep, wide ocean.
 ~
@@ -1008,7 +1008,7 @@ Seagulls chirp above, and whales spurt water far off into the horizon.  The
 wind blows constantly here.  The current appears to be winding around a large
 island to your south.    
 ~
-278 0 7
+278 0 0 0 0 0
 D1
 To your east you can see the deep, wide ocean.
 ~
@@ -1033,7 +1033,7 @@ Seagulls chirp above, and whales spurt water far off into the horizon.  The
 wind blows constantly here.  The current appears to be winding around a large
 island to your southwest.    
 ~
-278 0 7
+278 0 0 0 0 0
 D2
 To your south you can see the deep, wide ocean.
 ~
@@ -1058,7 +1058,7 @@ Seagulls chirp above, and whales spurt water far off into the horizon.  The
 wind blows constantly here.  The current appears to be winding around a large
 island to your west.  An island pier lies to your west.    
 ~
-278 0 7
+278 0 0 0 0 0
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -1080,6 +1080,6 @@ Schylla's Trap~
    The water here swirls into a churning whirlpool.  Try as you might, you
 cannot escape the boiling mass of water--Schylla has got you.    
 ~
-278 cj 1
+278 516 0 0 0 0
 S
 $~

@@ -3,7 +3,7 @@ dandelion~
 a dandelion~
 A dandelion is growing here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 25 0 0
 E
@@ -16,7 +16,7 @@ apple red~
 a red apple~
 A red apple lays on the ground.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 1 1 0 0
 T 505
@@ -29,7 +29,7 @@ cheese~
 a wedge of cheese~
 A wedge of cheese is molding here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 2 60 0 0
 E
@@ -42,7 +42,7 @@ boulder~
 a boulder~
 A large boulder is here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -55,7 +55,7 @@ little spring water~
 a little spring~
 A little spring babbles here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
 0 0 0 0
 E
@@ -68,7 +68,7 @@ pile corn~
 a pile of cracked corn~
 A small pile of cracked corn is here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 1 0 0
 E
@@ -81,7 +81,7 @@ small sword~
 a small sword~
 A small sword of little value was abandoned here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 2 14
 1 10 0 0
 E
@@ -93,7 +93,7 @@ gem~
 a sapphire gem~
 A sapphire gem was left here.~
 ~
-8 b ao 0
+8 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 125 0 0
 E
@@ -106,7 +106,7 @@ hunters knife~
 a hunters knife~
 A hunters knife was left here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 3 3 2 3
 4 250 0 0
 E
@@ -119,7 +119,7 @@ puddle water~
 a puddle of water~
 A puddle of water stagnates here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
 0 0 0 0
 E
@@ -133,7 +133,7 @@ water trough~
 a water trough~
 A water trough stands here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
 0 0 0 0
 E
@@ -147,7 +147,7 @@ tree leafy apple~
 a leafy apple tree~
 A leafy apple tree grows here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -160,7 +160,7 @@ brown egg~
 a brown egg~
 A brown egg lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 1 0 0
 E
@@ -173,7 +173,7 @@ swaying stalk green cornstalk~
 a green cornstalk~
 A green cornstalk is swaying gently in the breezes.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
 0 0 0 0
 E
@@ -186,7 +186,7 @@ cob corn~
 a cob of corn~
 A cob of corn lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 1 1 0 0
 E
@@ -200,7 +200,7 @@ paint can~
 an empty paint can~
 An empty paint can has been left here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 80 0 0
 E
@@ -213,7 +213,7 @@ pitchfork~
 a pitchfork~
 A pitchfork was left here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 3 2 2 14
 5 300 0 0
 E
@@ -226,7 +226,7 @@ potato~
 a potato~
 A potato has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 3 75 0 0
 E
@@ -239,7 +239,7 @@ sewing needle~
 a sewing needle~
 A sewing needle was left here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -252,7 +252,7 @@ muddy footprints~
 some muddy footprints~
 Some muddy footprints have been tracked in from outside.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -265,7 +265,7 @@ rake~
 a rake~
 A rake was left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 2 3 3
 5 200 0 0
 E
@@ -278,7 +278,7 @@ jerky~
 a piece of jerky~
 A piece of jerky was left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 2 100 0 0
 E
@@ -290,7 +290,7 @@ lucky horseshoe~
 a lucky horseshoe~
 A lucky horseshoe was left here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 150 0 0
 E
@@ -302,7 +302,7 @@ hay~
 a bale of hay~
 A bale of hay is sitting here.~
 ~
-12 a 0 0
+12 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -314,7 +314,7 @@ fireplace~
 a fireplace~
 A stone fireplace is here, hosting a warm crackling fire.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -328,7 +328,7 @@ bowl stew~
 a bowl of stew~
 A bowl of stew was left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 3 125 0 0
 E
@@ -341,7 +341,7 @@ well~
 a well~
 An enormous marble well stands before you.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
 0 0 0 0
 E

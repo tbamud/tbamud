@@ -6,7 +6,7 @@ impossible to continue downwards without meeting an untimely (?  ) death.  A
 few homes have been hidden here in the cliff face, a bit of a hike from any
 civilization.    
 ~
-272 0 5
+272 0 0 0 0 0
 D1
 ~
 ~
@@ -70,7 +70,7 @@ A home embedded in the cliff~
    This is a windowless, but airy, nook of walls built inside cliff stone.  It
 looks as though with some cleaning up it could be a comfortable place to live.
 ~
-272 d 0
+272 8 0 0 0 0
 D1
 ~
 ~
@@ -81,7 +81,7 @@ A home embedded in the cliff~
    This is a windowless, but airy, nook of walls built inside cliff stone.  It
 looks as though with some cleaning up it could be a comfortable place to live.
 ~
-272 d 0
+272 8 0 0 0 0
 D3
 ~
 ~
@@ -93,7 +93,7 @@ A path of black grass~
 black, wiry grass, that at first site gives the place a ravaged, charred look.
 However, the vegetation is living, just endowed with a dark hue.    
 ~
-272 0 2
+272 0 0 0 0 0
 D1
 ~
 ~
@@ -114,7 +114,7 @@ is little way to explain the odd feeling of foreboding about this place.  No
 birds sing, no rat scurries in the open, the leaves rustle barely enough to
 break the silence.  Yet an odd presence makes itself felt.    
 ~
-272 a 3
+272 1 0 0 0 0
 D0
 ~
 ~
@@ -141,7 +141,7 @@ A home embedded in the cliff~
    This is a windowless, but airy, nook of walls built inside cliff stone.  It
 looks as though with some cleaning up it could be a comfortable place to live.
 ~
-272 d 0
+272 8 0 0 0 0
 D0
 ~
 ~
@@ -152,7 +152,7 @@ A home embedded in the cliff~
    This is a windowless, but airy, nook of walls built inside cliff stone.  It
 looks as though with some cleaning up it could be a comfortable place to live.
 ~
-272 d 0
+272 8 0 0 0 0
 D3
 ~
 ~
@@ -163,7 +163,7 @@ A home embedded in the cliff~
    This is a windowless, but airy, nook of walls built inside cliff stone.  It
 looks as though with some cleaning up it could be a comfortable place to live.
 ~
-272 d 0
+272 8 0 0 0 0
 D0
 ~
 ~
@@ -175,7 +175,7 @@ A dwelling perched precariously on the edge~
 to wonder how long before the rains carry it over the edge.  However, if a god
 assures you it is safe, it must be....  Right?  You trust us, don't you?    
 ~
-272 d 0
+272 8 0 0 0 0
 D3
 ~
 ~
@@ -188,7 +188,7 @@ now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
 might sell it to you?    
 ~
-272 d 0
+272 8 0 0 0 0
 D1
 ~
 ~
@@ -201,7 +201,7 @@ white and red colors.  There is a grassy space in the center, circled by smooth
 grey stones, where children play and older residents of the town picnic and
 enjoy themselves.    
 ~
-272 0 2
+272 0 0 0 0 0
 D1
 ~
 ~
@@ -222,7 +222,7 @@ now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
 might sell it to you?    
 ~
-272 d 0
+272 8 0 0 0 0
 D0
 ~
 ~
@@ -235,7 +235,7 @@ now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
 might sell it to you?    
 ~
-272 d 0
+272 8 0 0 0 0
 D3
 ~
 ~
@@ -248,7 +248,7 @@ now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
 might sell it to you?    
 ~
-272 d 0
+272 8 0 0 0 0
 D1
 ~
 ~
@@ -261,7 +261,7 @@ now by only a few spiders, it looks like it could be a comfortable place to
 live, with a little work.  And gold, of course.  Perhaps it may be bought from
 one of the gods.    
 ~
-272 d 0
+272 8 0 0 0 0
 D1
 ~
 ~
@@ -273,7 +273,7 @@ Passing through a vine-wreathed gate~
 little-travelling.  You wonder if there is anything of use to you out this
 remote way, apparently passing out of the residential area.    
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -294,7 +294,7 @@ now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
 might sell it to you?    
 ~
-272 d 0
+272 8 0 0 0 0
 D2
 ~
 ~
@@ -307,7 +307,7 @@ dense illumination.  Here the lane is lined with poles hung with lanterns
 giving off a mild golden glow, swinging in the breeze.  The wind passes more
 strongly along a lane to the north.    
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -324,7 +324,7 @@ hanging golden lanterns that provide a bright radiance.  A few white stone
 houses, small but cozy-looking, lie just east and west, enjoying the
 luminescence.    
 ~
-272 0 2
+272 0 0 0 0 0
 D1
 ~
 ~
@@ -344,7 +344,7 @@ A white stone dwelling~
 mortar.  It is empty of signs of habitation.  You feel, nevertheless, that this
 could be a comfortable place to live, if bought from the gods of the realm.  
 ~
-272 d 0
+272 8 0 0 0 0
 D1
 ~
 ~
@@ -356,7 +356,7 @@ A white stone dwelling~
 It is empty of signs of habitation.  You feel, nevertheless, that this could be
 a comfortable place to live, if bought from the gods of the realm.  
 ~
-272 d 0
+272 8 0 0 0 0
 D3
 ~
 ~
@@ -368,7 +368,7 @@ A wide cart path~
 trade....  Is it a path for wide carts, or a wide path for carts?  Westwards, a
 dense forest is blurred with low-hanging clouds.    
 ~
-272 0 2
+272 0 0 0 0 0
 D1
 ~
 gate~
@@ -384,7 +384,7 @@ An untravelled path~
 between the dull grey stones.  You can only wonder if there is much of note out
 this direction, as a sense of barrenness is prominent.    
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -404,7 +404,7 @@ An untravelled path~
 between the dull grey stones.  You can only wonder if there is much of note out
 this direction, as a sense of barrenness is prominent.    
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -420,7 +420,7 @@ An untravelled path~
 between the dull grey stones.  You can only wonder if there is much of note out
 this direction, as a sense of barrenness is prominent.    
 ~
-272 0 2
+272 0 0 0 0 0
 D2
 ~
 ~
@@ -438,7 +438,7 @@ deserted, it is lonely, yet a particularly green bluff forms a plateau just
 above you.  It calls to you in an eerie way, yet emits a chaotic aura that
 might be best left alone.    
 ~
-272 0 4
+272 0 0 0 0 0
 D4
 ~
 ~
@@ -455,7 +455,7 @@ the only sound is that of the wind whistling over the moors.  A haunting,
 otherworldly presence has made this bluff its home, casting what malevolence it
 yet can on the mortal world, and giving the bluff its name.    
 ~
-272 0 2
+272 0 0 0 0 0
 D5
 ~
 ~
@@ -468,7 +468,7 @@ oaks and maples with leaves the color of honey.  To the north a black gate is
 closed against the clamor of the world, and the road continues east to town,
 and west where it vanishes into a fog banked forest.    
 ~
-272 0 3
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -488,7 +488,7 @@ The black orchard gate~
 the shallow wind.  Beyond, rows of brambles are stretching past the range of
 your vision.    
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 gate~
@@ -505,7 +505,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -526,7 +526,7 @@ blackberry shrubs that seem to form a protective shroud of thorns about the
 area.  Ivy vines hang loose from its many-cornered limbs.  Some images have
 been carved into the oak.    
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -559,7 +559,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 2
+272 0 0 0 0 0
 D1
 ~
 ~
@@ -580,7 +580,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -598,7 +598,7 @@ repelling you in another direction automatically such that it takes a great
 conscious effort for you to turn that way.  The path heads north into the
 town's mainstream, and south closer to the wildlands beyond it.    
 ~
-272 0 1
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -622,7 +622,7 @@ shelves, and tinkling against each other from strings around the stone doorway.
 A voodoo doll pinned to one wall seems to be eyeing you.  Let's hope you are
 not already earmarked for demise by someone.    
 ~
-272 acd 0
+272 13 0 0 0 0
 D4
 ~
 stone
@@ -636,7 +636,7 @@ in black iron and covered with ivy.  Beyond it, days distant, the mountains of
 black glass rise shrouded in permanent night.  Northwards lies the spread of
 the town of Sundhaven, hooded in wreaths of cooking smoke.    
 ~
-272 0 1
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -653,7 +653,7 @@ rats and smelling of..  Your imagination needs no assistance here.  The place
 gives you the creeps, particularly since there seem to be faint traces of
 recent footfalls outlined in the slime on the soiled floor..    
 ~
-272 ad 0
+272 9 0 0 0 0
 D0
 ~
 ~
@@ -672,7 +672,7 @@ are not just down by the ground but up near the ceiling.  A fetid stench rolls
 over you from within the holes.  The passage continues south and east into
 black.    
 ~
-272 ad 0
+272 9 0 0 0 0
 D1
 ~
 ~
@@ -689,7 +689,7 @@ muddy floor..  Mold?  Only inspection in better light will tell.  Eastwards the
 passage slants into a dark pool, and disappears to the west into blackness.  
 
 ~
-272 ad 0
+272 9 0 0 0 0
 D1
 ~
 ~
@@ -706,7 +706,7 @@ seeping in through cracks above you and wetting your hair with slime.  There is
 an eerie feeling about this place, as if only the few and priviledged are
 welcome here.    
 ~
-272 ad 0
+272 9 0 0 0 0
 D1
 ~
 ~
@@ -727,7 +727,7 @@ sturdy oak, scarred with daggerpoints.  The soil is wet with some dark fluid..
 Slime from the boots of passersby?  Of course.  A circular emblem is etched
 into the door.    
 ~
-272 d 0
+272 8 0 0 0 0
 D1
 ~
 door
@@ -753,7 +753,7 @@ spreads a gigantic mural of the black serpentlike naga, a model of stealth and
 intelligence, in muted blue and black.  An elegant table stands against the
 wall, laid with a simple black cloth and a few daggers.    
 ~
-272 d 0
+272 8 0 0 0 0
 D0
 ~
 ~
@@ -783,7 +783,7 @@ sunken into the far stone wall assists your dexterity..  So it is said..  And
 bunks are layer the area to the east, hung with stolen tapestries and sheets.
   
 ~
-272 d 0
+272 8 0 0 0 0
 D0
 ~
 ~
@@ -801,7 +801,7 @@ and half-full bottles of wine.  No bounty hunter could find a lounging thief
 here, sheltered away from the executioners of town.  No hunter, that is, except
 a rogue like yourself.    
 ~
-272 ad 0
+272 9 0 0 0 0
 D4
 ~
 rug~
@@ -816,7 +816,7 @@ backstab.  You may have to travel far in search of more fine-tuned skills, but
 the guildmistress is willing to give newcomers their start in the art of
 fiends.    
 ~
-272 de 0
+272 24 0 0 0 0
 D2
 ~
 ~
@@ -830,7 +830,7 @@ of your own breathing.  There seems to be tracks of footfalls in the slime
 coating the steps..  Evidently this serves as a secret passageway, regularly
 used, for some individuals of a shady nature.    
 ~
-272 ad 0
+272 9 0 0 0 0
 D4
 ~
 trapdoor
@@ -848,7 +848,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 2
+272 0 0 0 0 0
 D1
 ~
 ~
@@ -861,7 +861,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 2
+272 0 0 0 0 0
 D2
 ~
 ~
@@ -873,7 +873,7 @@ A wide cart path~
 trade....  Is it a path for wide carts, or a wide path for carts?  Westwards, a
 dense forest is blurred with low-hanging clouds.    
 ~
-272 0 2
+272 0 0 0 0 0
 D1
 ~
 ~
@@ -886,7 +886,7 @@ losses over gallons of liquid spirits.  Occasionally, one can be seen passed
 out on the floor, robbed by some thief slipping in from the Nightbreak, but
 generally the livers here are stout from long and weary experiences.    
 ~
-272 ad 0
+272 9 0 0 0 0
 D3
 ~
 ~
@@ -900,7 +900,7 @@ bunks of hearty oak, a roaring fireplace in the corner.  Several large chairs
 stuffed with coarse wool are situated round the fire for the rowdy telling of
 tales over inebriating brews.    
 ~
-272 de 0
+272 24 0 0 0 0
 D0
 ~
 ~
@@ -917,7 +917,7 @@ gift of the Archmage to the warriors guild, in return for other favors, of
 course.  Beyond the glare is a vision of the temple courtyard, the center of
 town, to the west.    
 ~
-272 d 0
+272 8 0 0 0 0
 D2
 ~
 ~
@@ -935,7 +935,7 @@ performed, of course.  Ever wonder who put the Earl of Sundhaven in power?..
 Nevermind.  Beyond the dark glare is a vision of the temple courtyard, the
 center of town, above you.    
 ~
-272 d 0
+272 8 0 0 0 0
 D2
 ~
 ~
@@ -955,7 +955,7 @@ here, provided they are not discussed too often, lest blood should be spilt.
 There are several bookshelves of varying religious works, an altar without
 ornament, and numerous cots for clerics to take their rest in.    
 ~
-272 de 0
+272 24 0 0 0 0
 D0
 ~
 ~
@@ -972,7 +972,7 @@ of the Archmage to the guild of the ministry, in return for certain blessings,
 of course.  Beyond the pale glare is a vision of the temple courtyard, the
 center of town, below you.    
 ~
-272 d 0
+272 8 0 0 0 0
 D3
 ~
 ~
@@ -991,7 +991,7 @@ and hammocks hang in rows along the walls, where the mages take their repose.
 A series of bookshelves provide ample guild literature, and an oak coffee table
 before a couch dominates the room.    
 ~
-272 de 0
+272 24 0 0 0 0
 D0
 ~
 ~
@@ -1009,7 +1009,7 @@ further portals all leading all over the known world, before the Lady Assassin
 extinguished his life.  Beyond the blue glare is a vision of the temple
 courtyard, the center of town.    
 ~
-272 d 0
+272 8 0 0 0 0
 D2
 ~
 ~
@@ -1025,7 +1025,7 @@ Some battered stone steps~
 heat of sparring warriors.  Above you the sounds of the alehouse distract you
 with bawdy laughter.  A doorway is west, bruised with sword-points.    
 ~
-272 d 0
+272 8 0 0 0 0
 D3
 ~
 ~
@@ -1042,13 +1042,13 @@ know-what, the room is quite drab, and could benefit from some fresh air.  A
 huge pile of the town's wealth lies on the tile floor, guarded from your
 meddling by a protective amber shield.    
 ~
-272 cd 0
+272 12 0 0 0 0
 D1
 ~
 ~
 0 -1 27138
 E
-pile~
+gold~
    You can't get near it.  On attempting to reach in and partake of the wealth,
 a protective amber shield balks your hand as if it were a wall of steel.  
 However, you can create your own account by depositing some money.  If you want
@@ -1057,7 +1057,7 @@ again, type withdraw (amount).  Then please put it back again.  Your support is
 appreciated, we know the town's security rests with you.  Have a nice day.  
 ~
 E
-gold~
+pile~
    You can't get near it.  On attempting to reach in and partake of the wealth,
 a protective amber shield balks your hand as if it were a wall of steel.  
 However, you can create your own account by depositing some money.  If you want
@@ -1073,7 +1073,7 @@ along the walls.  These selfsame jewels perhaps attracted you from the
 street...  Clouded pearls, white and blue diamonds, amethyst and golden tigers
 eyes.  Using 'list' will allow you to peruse the goods available.    
 ~
-272 cd 0
+272 12 0 0 0 0
 D1
 ~
 ~
@@ -1089,7 +1089,7 @@ the southeast you think you can catch glimpses of the thatched roofs of yet
 another village, this one smaller and more humble.  A trail south along the
 cobblestone wall seems to head in that direction.    
 ~
-272 0 2
+272 0 0 0 0 0
 D2
 ~
 ~
@@ -1106,7 +1106,7 @@ Sundhaven.  Moss, nourished by frequent rainfall, hides portions of the wall
 under its green tendrils.  A stony path can be made out to the north, and the
 wall makes its way southwards to a corner.    
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -1123,7 +1123,7 @@ the north and west.  Ivy growing along the wall here brushes your arm as you
 pass.  Dense shrubbery lining the path to the east renders that way
 unnavigable.    
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 ~
@@ -1140,7 +1140,7 @@ cobblestone wall of Sundhaven, which runs eastwards to a corner.  The gate of
 the town must be somewhere near.  You can make out the buzz of city life,
 hushed by the stone barrier, from the north.    
 ~
-272 0 2
+272 0 0 0 0 0
 D1
 ~
 ~
@@ -1157,7 +1157,7 @@ town wall of Sundhaven and southwards to a short drop.  Moss completely covers
 and overflows from the oaks, brushing the hair and helms of all but the
 shortest races of beings.    
 ~
-272 a 3
+272 1 0 0 0 0
 D0
 ~
 ~
@@ -1175,7 +1175,7 @@ place looks well-travelled by some hardy population of small-footed creatures.
 One path continues in a north-south vein over the cliff, another breaks off and
 leads east.    
 ~
-272 a 3
+272 1 0 0 0 0
 D2
 ~
 ~
@@ -1192,7 +1192,7 @@ with spanish moss.  (Except this was before Spain.  ) It comes to an end before
 the bubbling ebbs of a tiny stream, pouring gently forth from a hole in the
 rock on which you are poised, and flows southward.    
 ~
-272 a 3
+272 1 0 0 0 0
 D0
 ~
 ~
@@ -1209,7 +1209,7 @@ small hole in the rock to the north.  The water is clear and pure, and seems
 entirely empty of creatures..  It may be true this stream was taxed by heavy
 fishing long ago that long since cleaned it of all life.    
 ~
-272 a 7
+272 1 0 0 0 0
 D2
 ~
 ~
@@ -1226,7 +1226,7 @@ Tiny brown reeds on the banks lean downstream, sending the dragonflies airborne
 from their stalks.  A wind whistles in the leaves of the trees above and no
 sound can be made out from ahead.    
 ~
-272 a 7
+272 1 0 0 0 0
 D0
 ~
 ~
@@ -1244,7 +1244,7 @@ above your eyes as the world turns to water, and you cannot help but feel that
 what goes down, must continue down..  The waters engulf you and suck you
 downwards, where you awake with stars circling before your eyes.    
 ~
-272 a 8
+272 1 0 0 0 0
 D0
 ~
 ~
@@ -1258,7 +1258,7 @@ this way.  The dust that coats the steps lies mostly undisturbed, and an aura
 of desertion hangs about the place.  Whoever does traverse these ancient halls
 may or may not have the light of goodness in their motivations.    
 ~
-272 acd 0
+272 13 0 0 0 0
 D1
 ~
 ~
@@ -1274,7 +1274,7 @@ A stairwell~
 in darkness black as ink, leads east.  The stairs, floor, and walls are all
 wooden.    
 ~
-272 ad 0
+272 9 0 0 0 0
 D1
 ~
 ~
@@ -1291,7 +1291,7 @@ descent.  Angular shapes of lighter areas on the walls indicate this place may
 have once been hung with numerous paintings or tapestries, possibly
 comemorating the priests and gods of the past.    
 ~
-272 ad 0
+272 9 0 0 0 0
 D3
 ~
 ~
@@ -1310,7 +1310,7 @@ niche your mother liked to tell tales about by the fireside of your ancient
 home.  Do you continue, or turn back?  Sometimes shadows may form a bluff of
 great danger in the recesses of your imagination.    
 ~
-272 ad 0
+272 9 0 0 0 0
 D1
 ~
 ~
@@ -1326,7 +1326,7 @@ A dark corridor~
 penetrates either one, so as always the question of where you want to go
 depends on where you've been.    
 ~
-272 ad 0
+272 9 0 0 0 0
 D0
 ~
 stone
@@ -1349,7 +1349,7 @@ only an occasional ripple moving across the surface gives any indication of
 life, or life in death, within.  Northwards the hall disappears into the dark.
   
 ~
-272 ad 0
+272 9 0 0 0 0
 D0
 ~
 ~
@@ -1366,7 +1366,7 @@ appears this pool was once a nice pleasure bath for the priests and their
 guests, but has fallen into decay from recent lack of use.  Who knows what
 creatures make their home beneath the dark surface.    
 ~
-272 acd 6
+272 13 0 0 0 0
 D2
 ~
 ~
@@ -1384,7 +1384,7 @@ The smooth, dark bottom of the pool shows traces of faded ornamental designs,
 now mostly hidden and eroded with moss and algae.  Few can pin a name on the
 grotesque underwater creatures that now make this their home.    
 ~
-272 ad 8
+272 9 0 0 0 0
 D0
 ~
 ~
@@ -1402,7 +1402,7 @@ The smooth, dark bottom of the pool shows traces of faded ornamental designs,
 now mostly hidden and eroded with moss and algae.  Few can pin a name on the
 grotesque underwater creatures that now make this their home.    
 ~
-272 ad 8
+272 9 0 0 0 0
 D0
 ~
 ~
@@ -1424,7 +1424,7 @@ The smooth, dark bottom of the pool shows traces of faded ornamental designs,
 now mostly hidden and eroded with moss and algae.  Few can pin a name on the
 grotesque underwater creatures that now make this their home.    
 ~
-272 ad 8
+272 9 0 0 0 0
 D0
 ~
 ~
@@ -1442,7 +1442,7 @@ The smooth, dark bottom of the pool shows traces of faded ornamental designs,
 now mostly hidden and eroded with moss and algae.  Few can pin a name on the
 grotesque underwater creatures that now make this their home.    
 ~
-272 ad 8
+272 9 0 0 0 0
 D2
 ~
 ~
@@ -1459,7 +1459,7 @@ glass-fronted bookcase displays a variety of map parchments, though as they are
 curled and bound with colored ribbon, it is difficult to discern their
 contents.    
 ~
-272 cdeh 0
+272 156 0 0 0 0
 D2
 ~
 ~
@@ -1472,7 +1472,7 @@ essentially kept very tidy by someone with little else to do but revel in her
 senility.  A few crowded shelves hold items that may be of use to you in
 everyday living.    
 ~
-272 d 0
+272 8 0 0 0 0
 D3
 ~
 ~
@@ -1486,7 +1486,7 @@ ivy.  The busy murmur of citylife can be heard from beyond.  Southwards, the
 cobblestone road crosses a meadow of sorts before disappearing into a line of
 dark woods.    
 ~
-272 0 2
+272 0 0 0 0 0
 D0
 ~
 gate~
@@ -1498,7 +1498,7 @@ A crawlspace~
 long, it could be dangerous to remain, should the dweller of this place return
 and claim what is theirs.    
 ~
-272 cdj 0
+272 524 0 0 0 0
 D2
 ~
 stone

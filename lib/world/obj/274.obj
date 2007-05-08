@@ -3,7 +3,7 @@ square key~
 square key~
 A square key lies here.~
 ~
-18 q a 0
+18 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #27401
@@ -11,7 +11,7 @@ smurfberry~
 smurfberry~
 A ripe smurfberry is looking delicious here.~
 ~
-19 q a 0
+19 q 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 1 0 0
 A
@@ -21,7 +21,7 @@ blue ring~
 blue ring~
 A small blue ring lies here.~
 ~
-9 bk ab 0
+9 bk 0 0 0 ab 0 0 0 0 0 0 0
 5 0 0 0
 1 200 0 0
 A
@@ -33,7 +33,7 @@ curved dagger~
 a curved dagger~
 A curved dagger is lying here.~
 ~
-5 bj an 0
+5 bj 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 11
 3 250 0 0
 A
@@ -45,7 +45,7 @@ bag~
 a bag~
 A small bag is here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 55 0 0 0
 2 20 0 0
 #27405
@@ -53,7 +53,7 @@ smurfette's bracelet~
 Smurfette's bracelet~
 You see a VERY small bracelet here.~
 ~
-9 g ab 0
+9 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 300 0 0
 A
@@ -67,7 +67,7 @@ smurfy little wand~
 a smurfy wand~
 You happen across a smurfy little wand.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 10 5 5 8
 1 500 0 0
 #27407
@@ -75,7 +75,7 @@ small weight belt~
 a weight belt~
 A small weight belt lies here.~
 ~
-9 m al 0
+9 m 0 0 0 al 0 0 0 0 0 0 0
 1 0 0 0
 3 80 0 0
 A
@@ -85,7 +85,7 @@ small pick axe~
 a pick axe~
 A small axe rests here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 3 14
 5 400 0 0
 #27409
@@ -93,7 +93,7 @@ lump coal~
 a lump of coal~
 A lump of coal is here.~
 ~
-13 h ao 0
+13 h 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #27410
@@ -101,7 +101,7 @@ azrael's collar azerael~
 Azrael's collar~
 Azrael's collar is here~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 A
@@ -113,7 +113,7 @@ small mirror~
 a small mirror~
 A small mirror sits here.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 A

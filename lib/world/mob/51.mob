@@ -5,7 +5,7 @@ A goblin slave lies here asleep.
 ~
    The defenseless goblin begs for mercy.  
 ~
-bdh 0 350 E
+138 0 0 0 0 0 0 0 350 E
 1 20 9 0d0+10 1d2+0
 10 100
 4 4 1
@@ -17,7 +17,7 @@ A drow commoner is here, walking around on guard duty.
 ~
    I doubt he is the type to give directions.  
 ~
-dfglm dk -1000 E
+6248 0 0 0 16 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -29,7 +29,7 @@ A drow warrior stands here guarding his home.
 ~
    He looks kind of annoyed!  
 ~
-bdflm dk -1000 E
+6186 0 0 0 16 0 0 0 -1000 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -41,7 +41,7 @@ A drow mage is here protecting his home.
 ~
    The mage prepares to cast a spell...  At you!!  
 ~
-bdflm dk -1000 E
+6186 0 0 0 16 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -54,7 +54,7 @@ A drow priestess is here shouting orders.
 ~
    I wouldn't want go get on her bad side!  
 ~
-bdflm dk -1000 E
+6186 0 0 0 16 0 0 0 -1000 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -67,7 +67,7 @@ A drow master stares at you angrily.
 ~
    The drow master is ALWAYS ready for a fight.  
 ~
-bdflm dk -1000 E
+6186 0 0 0 16 0 0 0 -1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -79,7 +79,7 @@ A drow weaponsmaster is here shadow boxing.
 ~
    He definitely know his way around in combat.  
 ~
-bdflm dkp -1000 E
+6186 0 0 0 65552 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -91,7 +91,7 @@ The Matron Mother of the house is standing here.
 ~
    She looks really and truly annoyed that you have found your way here.  
 ~
-bdfl dhkp -1000 E
+2090 0 0 0 65552 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 2
@@ -104,7 +104,7 @@ The Matron Mother of the first house is waiting for you.
 ~
    She looks like she is about to rip your head of and eat it.  
 ~
-bdfl dhkp -1000 E
+2090 0 0 0 65552 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -117,7 +117,7 @@ The drider looks at you viciously while it draws its sword.
 ~
    This half-spider, half-drow creature is a formidable opponent.  
 ~
-dfgno dkp -1000 E
+24680 0 0 0 65552 0 0 0 -1000 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -129,7 +129,7 @@ The drider looks at you viciously while it draws its sword.
 ~
    This half-spider, half-drow creature is a formidable opponent.  
 ~
-bdfgno dhkp -1000 E
+24682 0 0 0 65552 0 0 0 -1000 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -141,7 +141,7 @@ A yochlol forms out of a swirling mist...
 ~
    The yochlol is not in a good mood.  
 ~
-bdeflnoqr dfhkp -1000 E
+223290 0 0 0 65616 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 2

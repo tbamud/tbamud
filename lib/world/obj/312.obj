@@ -3,7 +3,7 @@ crude sign~
 a crude sign~
 A sign made from jungle bark has been erected by the side of the path.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -22,7 +22,7 @@ water pond water~
 the clear water of the pond~
 The clear water of the pond ripples past.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 0 0 0 0
 #31202
@@ -30,7 +30,7 @@ pool tepid water~
 a pool of tepid water~
 A pool of tepid water lies underfoot.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 1
 0 0 0 0
 #31203
@@ -38,7 +38,7 @@ beaten gold cross~
 a beaten gold cross~
 A beaten gold cross with a leather strap lies on the ground.~
 ~
-9 a ac 0
+9 a 0 0 0 ac 0 0 0 0 0 0 0
 3 0 0 0
 4 500 0 25
 A
@@ -52,7 +52,7 @@ plain wool cloak~
 a plain cloak of wool~
 A plain cloak of wool lies on the ground.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
 9 100 0 25
 A
@@ -66,7 +66,7 @@ prayer book~
 a prayer book~
 A prayer book has been left here.~
 ~
-2 a ao 0
+2 a 0 0 0 ao 0 0 0 0 0 0 0
 30 3 -1 -1
 6 50 0 25
 A
@@ -78,7 +78,7 @@ willow switch~
 a willow switch~
 A willow switch has been left here.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 0 6 5 1
 4 10 0 25
 A

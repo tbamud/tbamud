@@ -3,7 +3,7 @@ pickaxe~
 a pickaxe~
 A pickaxe is here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 2 3 3
 6 350 0 7
 E
@@ -38,7 +38,7 @@ O-O-v   O-O     O
           |     |                                    
     ^-v-O-O-O-O-O                                    
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #23502
@@ -46,7 +46,7 @@ boulder~
 a boulder~
 A large boulder is here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -59,7 +59,7 @@ pebble~
 a small pebble~
 A small pebble is lying on the ground.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -72,7 +72,7 @@ rock pile~
 a pile of rocks~
 A pile of rocks have been lazily discarded here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -85,7 +85,7 @@ stone mace~
 a stone mace~
 A large stone mace.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 4 3 3 3
 6 450 0 7
 E
@@ -98,7 +98,7 @@ skeleton~
 a skeleton~
 A skeleton is lying on the ground before you.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -111,7 +111,7 @@ bag~
 a leather bag~
 A leather bag was left here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 1 -1 0
 3 350 0 0
 E
@@ -124,7 +124,7 @@ helmet~
 a workers helmet~
 A workers helmet was abandoned here.~
 ~
-9 a ae 0
+9 a 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
 4 200 0 7
 E
@@ -137,7 +137,7 @@ enormous boulder~
 an enormous boulder~
 An enormous boulder rolls past you!~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -150,7 +150,7 @@ torch~
 a torch~
 A torch is hanging from the wall beside you.~
 ~
-1 a 0 0
+1 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 -1 0
 0 0 0 0
 E
@@ -163,7 +163,7 @@ long sword~
 a long sword~
 A long sword is half-buried here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 -10 5 5 3
 6 800 0 0
 $~

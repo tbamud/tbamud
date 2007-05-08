@@ -3,7 +3,7 @@ scale armor~
 a beautiful green-metallic scale armor~
 A green scale armor has been tossed onto the ground.~
 ~
-9 agkn ad 0
+9 agkn 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 10 250 0 0
 E
@@ -21,7 +21,7 @@ dragon's claws~
 a pair of dragon's claws~
 A pair of dragon's claws have been thrown to the ground.~
 ~
-5 gjn an 0
+5 gjn 0 0 0 an 0 0 0 0 0 0 0
 0 2 7 11
 14 700 0 0
 E
@@ -36,7 +36,7 @@ staff illumination light~
 the Staff of Illumination~
 A staff lies here on the ground, collecting dust.~
 ~
-1 agkn ao 0
+1 agkn 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 15 200 0 0
 E
@@ -54,7 +54,7 @@ green gauntlets~
 some green gauntlets~
 A pair of green gauntlets has been left on the ground to tarnish.~
 ~
-9 kn ah 0
+9 kn 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
 8 300 0 0
 E
@@ -68,18 +68,18 @@ green leggings~
 some green leggings~
 A pair of greenish metal leggings have been plunked onto the ground.~
 ~
-9 gkn af 0
+9 gkn 0 0 0 af 0 0 0 0 0 0 0
 5 0 0 0
 12 150 0 0
-E
-leggings green~
-   These leggings are made of a strange green-tinted metal.  Strange
-inscriptions and runes run up the sides.  
-~
 E
 runes inscriptions~
    The runes have faded away to the point where they are unreadable.  The only
 phrase you can work out is "Forward to Orlana.  "
+~
+E
+leggings green~
+   These leggings are made of a strange green-tinted metal.  Strange
+inscriptions and runes run up the sides.  
 ~
 A
 2 1
@@ -90,7 +90,7 @@ crown coral~
 the Coral Crown~
 A crown made of red and blue coral has been unwisely thrown to the ground.~
 ~
-9 gikn ae 0
+9 gikn 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 10 250 0 0
 E
@@ -107,7 +107,7 @@ crystal trident~
 the Crystal Trident~
 A trident, made of crystal, lies on the ground.~
 ~
-5 aghkn an 0
+5 aghkn 0 0 0 an 0 0 0 0 0 0 0
 0 5 4 11
 24 950 0 0
 E

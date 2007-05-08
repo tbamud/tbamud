@@ -8,7 +8,7 @@ penetrate through your innermost being.  He is wearing a silvery cloak and
 holding a multi-colored staff.  Although he appears to be older than the oldest
 man, he seems to have an inner strength which most mortals cannot overcome.  
 ~
-bdg d 500 E
+74 0 0 0 16 0 0 0 500 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -24,7 +24,7 @@ hangs from his belt, and on his finger you see the One Ring.  Although usually a
 halfling of peace, he will fight you to the death if you attempt to take away
 that which belongs to him.  
 ~
-bdg bd 0 E
+74 0 0 0 20 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -38,7 +38,7 @@ Farmer Gamgee sniffs the air, wondering if harvest time is near.
 tanned from working the fields night and day.  He's quite a jolly chap, always
 ready to befriend an injured bunny rabbit.  
 ~
-bdh 0 350 E
+138 0 0 0 0 0 0 0 350 E
 7 18 5 1d1+70 1d2+1
 70 4900
 5 5 1
@@ -51,7 +51,7 @@ A toddler crawls about, looking for something to chew on.
    The toddler is dressed in nothing but his birthday suit.  He crawls about for
 he hasn't learned to walk yet.  He peers up at you and asks "da da?  "
 ~
-bdh 0 100 E
+138 0 0 0 0 0 0 0 100 E
 2 20 8 0d0+20 1d2+0
 20 400
 6 6 1
@@ -65,7 +65,7 @@ A nursemaid wanders about, trying to keep track of all the toddlers.
 toddlers for too long has evidently taken its toll.  She looks to you and in her
 eyes you can see her longing for a better life.  
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -79,7 +79,7 @@ A cow is here, chewing her cud.
 past her prime, you see that she still has a lot of years left, and that if
 provoked, her rear kick can be quite deadly.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 5 5 0
@@ -93,7 +93,7 @@ A pig wallows in the mud and oinks in contentment.
 and cares only for the care-free life that he leads.  It is enormously fat and
 consequently cannot move around very quickly.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 5 5 0
@@ -105,7 +105,7 @@ A chicken sits on her nest.
 ~
    The chicken is bright and healthy.  She has no weapons but her beak.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 6 6 2
@@ -119,7 +119,7 @@ A bull scratches at the ground and lowers his head.
 reckoned with.  With his horns and his hooves he can attack just about anything.
 
 ~
-bdf 0 0 E
+42 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -132,7 +132,7 @@ A horse becomes frightened by your presence.
    The horse looks at you and turns away.  You can tell that it is afraid of
 you.  
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -147,7 +147,7 @@ roaming, looking for signs of trouble from riff-raff like you.  In his belt is a
 thin dagger, and on his body he wears a suit of leather armor.  This is one
 halfling you don't want to mess with.  
 ~
-cdg 0 150 E
+76 0 0 0 0 0 0 0 150 E
 8 18 5 1d1+80 1d2+1
 80 6400
 6 6 1
@@ -162,7 +162,7 @@ roaming, looking for signs of trouble from riff raff like you.  In his belt is a
 thin dagger, and on his body he wears a suit of leather armor.  This is one
 halfling you don't want to mess with.  
 ~
-cdg 0 150 E
+76 0 0 0 0 0 0 0 150 E
 8 18 5 1d1+80 1d2+1
 80 6400
 6 6 1
@@ -176,7 +176,7 @@ The Thain commands respect from all Shire folk.
 'Hullo'.  He walks about comfortably, secure in the knowledge that as long as
 he's in office, the Shire will always remain a safe haven for Shire folk.  
 ~
-dg 0 400 E
+72 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 6 6 1
@@ -189,7 +189,7 @@ The Innkeeper stands here awaiting your order.
    The Innkeeper is a jolly old halfling who spends his days eavesdropping on
 local gossip.  In his younger days, he was quite a seasoned traveller.  
 ~
-bdg 0 200 E
+74 0 0 0 0 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -203,7 +203,7 @@ The Miller is here, overseeing his busy mill workers.
 respect from his workers than he can get.  He looks like the type of person who
 deserves a spanking but never got one.  
 ~
-cdgh 0 50 E
+204 0 0 0 0 0 0 0 50 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -217,7 +217,7 @@ The mill worker runs to and fro.
 mill.  He doesn't notice your presence, but he looks like he could break you in
 two without thinking about it.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -231,7 +231,7 @@ The elven warrior watches you solemnly.
 wears on his countenance is solemn and tragic.  He cares not for this world any
 longer and wearies of it.  
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 17 15 0 3d3+170 2d2+2
 170 28900
 6 6 1
@@ -245,7 +245,7 @@ The dwarven prince waits here patiently for the return of his king.
 dwarves of his land.  His glowing eyes peer out of his bushy face and stare
 beyond your gaze.  
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 17 15 0 3d3+170 2d2+2
 170 28900
 6 6 1
@@ -258,7 +258,7 @@ the shopkeeper smiles and patiently waits for you to buy something.
    The shopkeeper will fight like a madman to protect his store from riff-raff
 like you.  
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -272,7 +272,7 @@ The grocer offers you the finest breads in all the land.
 However, he also knows that it's worth protecting and so will do everything in
 his power to prevent riff-raff like you from stealing it.  
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -285,7 +285,7 @@ The blacksmith bids you welcome to his humble store.
    The blacksmith is a lean and mean fighting machine.  His knowledge of weapons
 and armour would certainly help him in any fight against riff-raff like you.  
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -298,7 +298,7 @@ The battle master offers to train any aspiring fighters.
    The battle master is a wizened fighter, with many scars to prove his worth.
 
 ~
-bd 0 350 E
+10 0 0 0 0 0 0 0 350 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -311,7 +311,7 @@ A halfling youth stands here, waiting for nothing in particular.
    The halfling youth is not yet quite in the prime of his youth.  He's knee
 high and you get the sudden urge to step on him.  
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -325,7 +325,7 @@ A seasoned adventurer sits here, telling tales of fame and fortune.
 past his prime, he still looks like he could put up more than his share of a
 good fight.  
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 8 18 5 1d1+80 1d2+1
 80 6400
 6 6 1
@@ -338,7 +338,7 @@ A local gossip asks you, "Have you heard the latest?"
    The gossip is all talk and no action.  You're transfixed by her ability to
 talk so much so quickly.  
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 6 6 2
@@ -354,7 +354,7 @@ stare at her, thoughts of all else vanish.  You get the sudden urge to grovel at
 her feet, hoping she'll take you in like a lost puppy.  You wouldn't dare harm a
 hair on her precious little head.  
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -368,7 +368,7 @@ A trainee screams a death cry as he delivers the fatal blow to a dummy.
 fresh, but his enthusiasm and desire to please more than make up for what he
 lacks in skill.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -382,7 +382,7 @@ A chic urbanite sits here, enjoying his class status.
 all of the latest fashions and his manners impeccable.  He offers you some coins
 if you'd be so good as to order a drink for him.  
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 6 6 1
@@ -394,7 +394,7 @@ A country bumpkin dreams of pipeweed and its many uses.
 ~
    The country bumpkin snores noisily.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 4 4 1
@@ -407,7 +407,7 @@ The Innkeeper stands here awaiting your order.
    The Innkeeper is a jolly old halfling who spends his days eavesdropping on
 local gossip.  In his younger days, he was quite a seasoned traveller.  
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -419,7 +419,7 @@ The receptionist sits here, signing forms.
 ~
    He is a very professional looking type.  
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -433,7 +433,7 @@ A shiriff of the Shire looks for the lost halfling youth.
 smiles and asks you if you have seen a halfling youth somewhere outside the
 shire.  
 ~
-bd 0 150 E
+10 0 0 0 0 0 0 0 150 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -447,7 +447,7 @@ A young hobbit waitress is taking orders for food.
 of dark curls.  Busily writing down orders, she scurries from one customer to
 another, grabbing plates and setting them down on tables.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -461,7 +461,7 @@ An elderly tailor stands here, folding fabric.
 bent and frail looking.  Wrinkled, calloused hands caress the fabric in his
 hands expertly, as though this is a trade he has held his whole life.  
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1

@@ -21,7 +21,7 @@ Glumgold's Sea [ INDEX ]~
 
 Donateable
 ~
-83 j 0
+83 512 0 0 0 0
 S
 T 8300
 #8301
@@ -31,7 +31,7 @@ can see.  The sand beneath your feet is moist, perfect for making a sand castle
 if you wanted to.  To the east, there is a path that rims the shore around this
 part of the sea.
 ~
-83 c 6
+83 4 0 0 0 0
 D3
 The sea is all that you see to the west.    
 ~
@@ -44,7 +44,7 @@ The Sea~
 sight north and east.  However, reefs, trees, and dense seaweed make it
 impossible to reach the shore from here.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 You see land to the north, but you cannot climb up on the shore from here.
 ~
@@ -72,7 +72,7 @@ The Sea~
 north, south, and east.  However, reefs, trees, and dense seaweed make it
 impossible to reach the shore from here.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 You can see land to the north.
 ~
@@ -100,7 +100,7 @@ The Sea~
 sight north and east.  However, reefs, trees, and dense seaweed make it
 impossible to reach the shore from here.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 You can see land to the north.
 ~
@@ -128,7 +128,7 @@ The Sea~
 sight north and east.  There is a clear and seemingly safe path to the shore
 due east.    
 ~
-83 c 7
+83 4 0 0 0 0
 D0
 Rippling water is all you see to the north.    
 ~
@@ -156,7 +156,7 @@ The Sea~
 sight north and east.  However, reefs, trees, and dense seaweed make it
 impossible to reach the shore from here.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.    
 ~
@@ -184,7 +184,7 @@ The Sea~
 sight north and east.  However, reefs, trees, and dense seaweed make it
 impossible to reach the shore from here.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -212,7 +212,7 @@ The Sea~
 in plain sight north and east.  However, reefs, trees, and dense seaweed make
 it impossible to reach the shore from here.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -242,7 +242,7 @@ south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
 sea looks very deep and formidable.  Not recommended for swimmers.    
 ~
-83 0 0
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -272,7 +272,7 @@ south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
 sea looks very deep and formidable.  Not recommended for swimmers.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -302,7 +302,7 @@ south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
 sea looks very deep and formidable.  Not recommended for swimmers.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see to the north.
 ~
@@ -332,7 +332,7 @@ south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
 sea looks very deep and formidable.  Not recommended for swimmers.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -362,7 +362,7 @@ but water and sky can be seen except for the faint outline of the shore
 bordering the sea just under the horizon.  Below you, the deep blue sea looks
 very deep and formidable.  It is not recommended for swimmers.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -392,7 +392,7 @@ south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
 sea looks very deep and formidable.  Not recommended for swimmers.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -422,7 +422,7 @@ south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
 sea looks very deep and formidable.  Not recommended for swimmers.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -452,7 +452,7 @@ south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
 sea looks very deep and formidable.  Not recommended for swimmers. 
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -482,7 +482,7 @@ south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
 sea looks very deep and formidable.  Not recommended for swimmers.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -511,7 +511,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 ~
 ~
@@ -536,7 +536,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -565,7 +565,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -594,7 +594,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -623,7 +623,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -652,7 +652,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -681,7 +681,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -710,7 +710,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -739,7 +739,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -768,7 +768,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -797,7 +797,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -826,7 +826,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -855,7 +855,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -884,7 +884,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -913,7 +913,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -942,7 +942,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -971,7 +971,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1000,7 +1000,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1029,7 +1029,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1058,7 +1058,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1087,7 +1087,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1116,7 +1116,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1145,7 +1145,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1174,7 +1174,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1203,7 +1203,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1232,7 +1232,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1261,7 +1261,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1290,7 +1290,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1319,7 +1319,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1348,7 +1348,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1377,7 +1377,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1406,7 +1406,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1435,7 +1435,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1464,7 +1464,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1493,7 +1493,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1522,7 +1522,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.    
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see to the north.
 ~
@@ -1551,7 +1551,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1580,7 +1580,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you see to the north.
 ~
@@ -1611,7 +1611,7 @@ center.  The hut is suspended about 3 meters from the ground by some wooden
 poles of some sort, the only means of entrance being the rope ladder hanging
 down from a hole in the center.    
 ~
-83 0 2
+83 0 0 0 0 0
 D0
 Rippling water spreads out as far as you can see in every direction.
 ~
@@ -1645,7 +1645,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 You see a small island to the north.
 ~
@@ -1674,7 +1674,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1703,7 +1703,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see to the north.
 ~
@@ -1732,7 +1732,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1761,7 +1761,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1790,7 +1790,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1819,7 +1819,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1848,7 +1848,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1877,7 +1877,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1906,7 +1906,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1935,7 +1935,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1964,7 +1964,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -1993,7 +1993,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -2022,7 +2022,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -2051,7 +2051,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -2080,7 +2080,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 0 7
+83 0 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -2109,7 +2109,7 @@ the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
 extremely dangerous.  
 ~
-83 c 7
+83 4 0 0 0 0
 D0
 Rippling water is all that you can see in every direction.    
 ~
@@ -2137,7 +2137,7 @@ The Bow of a Pirate's Ship~
 rippling water.  There is a large wheel here, obviously used to steer the
 vessel.    
 ~
-83 0 0
+83 0 0 0 0 0
 D2
 The Fore Deck is just south of here.    
 ~
@@ -2150,7 +2150,7 @@ The Starboard Side of the Boat~
 down to the water.  This could possibly be the only way off the boat, aside
 from walking the plank...    
 ~
-83 c 0
+83 4 0 0 0 0
 D3
 ~
 ~
@@ -2170,7 +2170,7 @@ nest sits atop the mast.  All around you, the sea spreads out as far as your
 eyes can see.  East of here is a wooden plank extending past the side of the
 boat.  To the west, is a life boat ready to be dropped into the water.    
 ~
-83 0 0
+83 0 0 0 0 0
 D0
 The bow of the ship is north of here.    
 ~
@@ -2203,7 +2203,7 @@ Walking the Plank...~
 falling into the churning sea below.  The salty air nearly blows you over to
 your doom.  The old board creeks beneath your weight...    
 ~
-83 0 0
+83 0 0 0 0 0
 D1
 ~
 ~
@@ -2226,7 +2226,7 @@ The Captain's Quarters~
 from the windows, the rugs on the floor are top quality, and the furniture is
 exquisite.
 ~
-83 cd 0
+83 12 0 0 0 0
 D2
 The Captain's Quarters extend to the south.    
 ~
@@ -2245,7 +2245,7 @@ the Captain's room.  To the west is a door with something written on it.
 North, there is a door that leads out on the deck.  South, the hallway
 continues.    
 ~
-83 d 0
+83 8 0 0 0 0
 D0
 The door to the north leads to the deck.    
 ~
@@ -2274,7 +2274,7 @@ provisions are kept during a voyage.  The walls of the room are covered with
 shelves of food, supplies, and the like.  A few chests are also scattered about
 the room.    
 ~
-83 d 0
+83 8 0 0 0 0
 D1
 ~
 door~
@@ -2291,7 +2291,7 @@ The Captain's Quarters~
 comfortable, and very expensive.  Oil paintings hang on the wall, showing
 various famous figures, as well as some figures you don't recognize.    
 ~
-83 d 0
+83 8 0 0 0 0
 D0
 The Captain's Quarters extend to the north.    
 ~
@@ -2304,7 +2304,7 @@ Inside a Pirate's Ship~
 the south is the stern of the ship, and the hallway continues north towards the
 bow.    
 ~
-83 d 0
+83 8 0 0 0 0
 D0
 The hallway continues north toward the bow.    
 ~
@@ -2322,7 +2322,7 @@ Near a Stairway~
 deck.  To the north is a door leading to what appears to be the galley, and the
 door to the east leads into a hallway.    
 ~
-83 d 0
+83 8 0 0 0 0
 D0
 The ship's galley is north of here.    
 ~
@@ -2347,7 +2347,7 @@ To the north, west and east, the deck spreads out more.  There is a small
 stairway leading down from here.  There is another stairway leading up to the
 top deck.  
 ~
-83 d 0
+83 8 0 0 0 0
 D0
 This large room extends to the north.    
 ~
@@ -2376,7 +2376,7 @@ boat.  You can see for many miles in every direction, but you see nothing but
 water, water, and more water.  The ladder leading back to the deck is the only
 way out of here, unless you wanted to jump...
 ~
-83 e 5
+83 16 0 0 0 0
 D0
 You have a wonderful view of the ocean from up here.  You see nothing but water to the north.
 ~
@@ -2469,7 +2469,7 @@ getting back to the surface as your arms grow tired of flailing about.  Your
 vision fades to black as you lose conciousness and drown in your sleep. 
 @n
 ~
-83 c 6
+83 4 0 0 0 0
 D0
 ~
 ~
@@ -2502,7 +2502,7 @@ The Mid-Deck~
 the main dining hall as well as the bar, dance floor, and sometimes as a bed.
 To the south and west, the deck spreads out more.  
 ~
-83 d 0
+83 8 0 0 0 0
 D2
 This large room extends to the south.    
 ~
@@ -2522,7 +2522,7 @@ relative freedom of the rest of the ship.  The north, east, and west walls of
 the cell are lined on the outside with slabs of rock and wooden slats.  
 Outside of the iron bars to the south is the rest of the filthy brig. 
 ~
-83 cdg 0
+83 76 0 0 0 0
 D0
 ~
 ~
@@ -2540,7 +2540,7 @@ the main dining hall as well as the bar, dance floor, and sometimes as a bed.
 To the south and east, the deck spreads out more.  There appears to be some
 sort of hatch on the floor. 
 ~
-83 d 0
+83 8 0 0 0 0
 D1
 This large room extends to the east.    
 ~
@@ -2564,7 +2564,7 @@ intend for prisoners to enjoy their stays here.  The walls are unpainted and
 uncovered; the bare, rotting boards show through clearly.  A single cell north
 of here takes up most of the brig. 
 ~
-83 d 0
+83 8 0 0 0 0
 D0
 There is a prison cell north of here.    
 ~
@@ -2586,7 +2586,7 @@ The Treasury~
 everything the pirates loot or steal ends up.  Needless to say, the pirates
 wouldn't be very happy to find you sneaking around in here... 
 ~
-83 d 0
+83 8 0 0 0 0
 D4
 A ladder leads back to the mid-deck.
 ~
@@ -2599,7 +2599,7 @@ A Small Hutt~
 similar to bamboo, tied together with small vines.  The only furniture in the
 hut is a small bed, a table, and a stove.    
 ~
-83 cf 0
+83 36 0 0 0 0
 D5
 A ladder leads back down to the beach.
 ~
@@ -2612,7 +2612,7 @@ On a Fishing Boat~
 river.  Tiny bones and fish scales litter the floor of this boat, making faint
 crunching noises as you walk about.    
 ~
-83 c 0
+83 4 0 0 0 0
 D0
 A large flap of canvas separates the cabin from the rest of the boat.    
 ~
@@ -2626,7 +2626,7 @@ ocean travel.  There is a roof over the stern of the boat, forming a room that
 is obviously used to provide shelter during harsh weather.  A flap of thick
 cloth acts as a door to the cabin.
 ~
-83 0 2
+83 0 0 0 0 0
 D2
 A large flap of canvas separates the cabin from the rest of the boat.    
 ~
@@ -2640,7 +2640,7 @@ the main dining hall as well as the bar, dance floor, and sometimes as a bed.
 To the north and east, the deck spreads out more.  To the south, there is a
 door that has been barred shut from the other side.    
 ~
-83 0 0
+83 0 0 0 0 0
 D0
 This large room extends to the north.    
 ~

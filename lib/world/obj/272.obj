@@ -3,7 +3,7 @@ herring salted food~
 a salted herring~
 A dried and salted fish lies at your feet.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 25 0 0 0
 2 100 0 0
 E
@@ -16,7 +16,7 @@ quill feather white swan~
 a white feather quill~
 A swan's feather drifts along the ground in the breeze.~
 ~
-21 0 ao 0
+21 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 440 0 0
 E
@@ -29,7 +29,7 @@ shard crystal pc~
 a shard of broken crystal~
 A sharp-edged shard sparkles dimly from the ground.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 0
 E
@@ -43,7 +43,7 @@ gloves silk~
 a pair of silk gloves~
 Someone has left a pair of silk gloves crumpled here.~
 ~
-11 0 ah 0
+11 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 2 400 0 0
 E
@@ -56,7 +56,7 @@ shawl blue silk~
 a laced blue shawl~
 A pile of blue silk is lying on the ground.~
 ~
-11 0 ai 0
+11 0 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
 5 700 0 0
 E
@@ -69,7 +69,7 @@ gown indigo silk~
 a gown of indigo silk~
 A pile of indigo-blue silk lies here.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 7 210 0 0
 E
@@ -84,7 +84,7 @@ wine glass drink wine~
 a glass of wine~
 A glass of white wine sits primly on the ground.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 5 5 2 0
 10 100 0 0
 E
@@ -97,7 +97,7 @@ map sundhaven~
 a map of Sundhaven~
 A colorful map is lying here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 20 0 0
 E
@@ -131,7 +131,7 @@ potion crystal~
 a crystal potion~
 A crystalline potion sits here.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 13 3 -1 -1
 2 200 0 0
 E
@@ -143,7 +143,7 @@ staff twisted~
 a twisted staff~
 A corkscrew wooden staff lies here discarded.~
 ~
-4 g ao 0
+4 g 0 0 0 ao 0 0 0 0 0 0 0
 13 10 10 10
 10 400 0 0
 E
@@ -156,7 +156,7 @@ bottle blue~
 a blue bottle~
 A blue bottle floats by in the water.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 3 0 -1 0
 0 0 0 0
 E
@@ -170,7 +170,7 @@ message paper~
 a message~
 A wet and crumpled paper lies on the ground.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 E
@@ -185,7 +185,7 @@ sword heraldry~
 a heraldry sword~
 A sword marked with the insignia of a noble house is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 3 3
 10 800 0 0
 E
@@ -198,7 +198,7 @@ mim~
 a mithril dagger~
 A shining mithril dagger lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 5 8 11
 1 500 0 0
 E
@@ -214,7 +214,7 @@ wall~
 a wall~
 .A hidden wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 100 5 -1 0
 0 0 0 0
 E
@@ -226,7 +226,7 @@ cloak taupe~
 a flowing taupe cloak~
 A billowing cloak blows in the wind nearby.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
 5 200 0 0
 E
@@ -239,7 +239,7 @@ gung ma bowl food~
 a bowl of ma gung~
 A steaming hot bowl of ma gung sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 2 10 0 0
 E
@@ -252,7 +252,7 @@ basket~
 a basket~
 A basket sits on the ground.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 20 5 -1 0
 5 40 0 0
 E
@@ -265,7 +265,7 @@ blackberries berries black food~
 a handful of blackberries~
 Some blackberries lie in a pile in the dirt.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 20 0 0
 E
@@ -278,7 +278,7 @@ message guild sign~
 a guild message~
 A message is inscribed over the doorway to the west.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -295,7 +295,7 @@ heap refuse sign guild~
 a heap of refuse~
 A heap of refuse emits a foul smell.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -309,7 +309,7 @@ potion white~
 a white potion~
 A misty-white potion sits here.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 20 19 -1 -1
 1 700 0 0
 E
@@ -322,7 +322,7 @@ potion bubbling~
 a bubbling potion~
 Bubbles rise and pop from a potion on the ground.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 20 19 20 -1
 1 210 0 0
 E
@@ -335,7 +335,7 @@ wand silver silvery~
 a silver wand~
 A silvery wand rests here.~
 ~
-3 fg ao 0
+3 fg 0 0 0 ao 0 0 0 0 0 0 0
 25 1 1 29
 4 300 0 0
 E
@@ -349,7 +349,7 @@ a bottle of Spanish wine~
 A port-red bottle of Spanish wine is resting here, its supply readily
 depleting.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 20 20 2 0
 25 550 0 0
 E
@@ -362,7 +362,7 @@ foil fencing athos rapier~
 a thin fencing foil~
 A gallant rapier of silver is lying here.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 0 6 3 3
 10 100 0 0
 E

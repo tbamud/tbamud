@@ -15,7 +15,7 @@ Objects      : 23
 Shops        : 5
 Links        : 01s
 ~
-248 j 0
+248 512 0 0 0 0
 S
 #24801
 Entrance to the Elven Forest~
@@ -23,7 +23,7 @@ Entrance to the Elven Forest~
 canopies.  A large steel reinforced wooden gate is set into a wall of wood logs
 just to the north.    
 ~
-248 0 3
+248 0 0 0 0 0
 D0
 ~
 ~
@@ -35,7 +35,7 @@ Guarded Path Through the Forest~
 yourself observed by someone.  To the east you see a wooden door in a large
 tree, and to the west you see a rope hanging down from a tree.    
 ~
-248 0 3
+248 0 0 0 0 0
 D0
 ~
 ~
@@ -59,7 +59,7 @@ A Guard Room~
 table.  To the east and west you can see doors.  The sound of footseps can be
 heard in the distance.    
 ~
-248 d 3
+248 8 0 0 0 0
 D1
 ~
 ~
@@ -75,7 +75,7 @@ A Guard Chief's Bedroom~
 and awards line the walls.  In a corner stands a large bed and there is a door
 to the west.    
 ~
-248 d 3
+248 8 0 0 0 0
 D3
 ~
 ~
@@ -87,7 +87,7 @@ A Cellar~
 Filled, almost to the point of collapse, with various dried foods and storage
 containers.    
 ~
-248 ad 3
+248 9 0 0 0 0
 D4
 ~
 ~
@@ -99,7 +99,7 @@ On the Platform~
 forest.  From here, above the tree tops, the town of Thewston is visible in the
 distance.    
 ~
-248 c 5
+248 4 0 0 0 0
 D5
 ~
 ~
@@ -111,7 +111,7 @@ A Guarded Path Through the Forest~
 is in good condition and looks well kept.  No dead branches or brush is visible
 between the trees.    
 ~
-248 0 3
+248 0 0 0 0 0
 D0
 ~
 ~
@@ -127,7 +127,7 @@ A Path Crossing~
 the crossing stands a gigantic stone obelisk with some runes engraved into it.
   
 ~
-248 0 3
+248 0 0 0 0 0
 D0
 ~
 ~
@@ -148,7 +148,7 @@ A Fine Path Through the Elven Forest~
 telling you this must be the weapon shop, and over the western door is a
 similar sign telling you it's the armoury.    
 ~
-248 0 3
+248 0 0 0 0 0
 D0
 ~
 ~
@@ -172,7 +172,7 @@ The Elven Armoury~
 odds and ends lay about that are required for the bending and pounding of the
 armour.    
 ~
-248 d 0
+248 8 0 0 0 0
 D3
 ~
 ~
@@ -184,7 +184,7 @@ The Elven Weaponry~
 the back you can hear the roar of the furnace and the pumping of the billows.
   
 ~
-248 d 0
+248 8 0 0 0 0
 D1
 ~
 ~
@@ -197,7 +197,7 @@ telling you this must be the magic shop of the elven village, and over the
 western door is a similar sign telling you it's Quintors fine shop.  To the
 north the path continues.    
 ~
-248 0 3
+248 0 0 0 0 0
 D0
 ~
 ~
@@ -221,7 +221,7 @@ Quintor's Fine Shop~
 to torches can bee seen on the shelves.  The items are of a fair quality and
 reasonably priced.    
 ~
-248 d 0
+248 8 0 0 0 0
 D1
 ~
 ~
@@ -233,7 +233,7 @@ The Elven Magic Shop~
 something wrong here or is it just the powers of all magic in here?  All around
 this room you see objects of different shapes and sizes.    
 ~
-248 d 0
+248 8 0 0 0 0
 D3
 ~
 ~
@@ -245,7 +245,7 @@ The End of the Path~
 telling you this must be the tavern of the village, and to the north you see a
 large house, about two stores high.    
 ~
-248 0 3
+248 0 0 0 0 0
 D0
 ~
 ~
@@ -266,7 +266,7 @@ northern wall, old elven writings, carvings and symbols cover its top.  A
 fireplace is built into the eastern wall, and through the door in the western
 wall you se the fine path.  This place really makes you feel at home.    
 ~
-248 d 0
+248 8 0 0 0 0
 D3
 ~
 ~
@@ -282,7 +282,7 @@ Inside a Fine House~
 the stairs two doors lead to the east or west into the house.  The house is
 well kept.    
 ~
-248 d 0
+248 8 0 0 0 0
 D1
 ~
 ~
@@ -306,7 +306,7 @@ A Guard Room~
 walls are several sets of beds.  Items are scattered about the table and the
 room is a mess.    
 ~
-248 d 0
+248 8 0 0 0 0
 D1
 ~
 ~
@@ -318,7 +318,7 @@ The Trophy Room of the Elven King~
 gifts the King has acquired during his long life.  All are exquisitely made and
 in good taste.    
 ~
-248 d 0
+248 8 0 0 0 0
 D3
 ~
 ~
@@ -330,7 +330,7 @@ The Grand Stairway~
 plush, almost like a moss which its color resembles.  The house seems to be
 another extension of the forest.    
 ~
-248 d 0
+248 8 0 0 0 0
 D4
 ~
 ~
@@ -346,7 +346,7 @@ The Upper Floor of the House~
 From the floor to the ceiling it is all well polished.  Small wooden stands
 break are scattered about the hall holding various flowers in vases.    
 ~
-248 d 0
+248 8 0 0 0 0
 D0
 ~
 ~
@@ -370,7 +370,7 @@ The Corridor~
 placed in the north and south walls.  Further to the east the corridor ends at
 a window overlooking the forest.    
 ~
-248 d 0
+248 8 0 0 0 0
 D0
 ~
 ~
@@ -394,7 +394,7 @@ The Library~
 large desk and some chairs.  The shelves are filled with books bound in leather
 and scrolls stacked high.    
 ~
-248 d 0
+248 8 0 0 0 0
 D2
 ~
 ~
@@ -406,7 +406,7 @@ The Living Room~
 with its radiant heat.  The wooden logs in the fire crack and sputter as the
 flames consume them.    
 ~
-248 d 0
+248 8 0 0 0 0
 D0
 ~
 ~
@@ -418,7 +418,7 @@ Falling ~
 Like a bug on a windshield.  Ask a wizard to get a spatula.  Perhaps your
 remains will soften the fall for the next victim.    
 ~
-248 cj 0
+248 516 0 0 0 0
 S
 T 24800
 #24826
@@ -427,7 +427,7 @@ The Guards Bedroom~
 are no other exits than the one to the south.  The beds look uncomfortable and
 unkept.    
 ~
-248 d 0
+248 8 0 0 0 0
 D0
 ~
 ~
@@ -443,7 +443,7 @@ The Training Room~
 Everything from padding to wooden weapons.  The floor is wooden with sawdust to
 help clean up any accidents.    
 ~
-248 d 0
+248 8 0 0 0 0
 D0
 ~
 ~
@@ -455,7 +455,7 @@ The Reception of the Tavern of Hope~
 the counter.  All the noise and excitement seems to be coming from the entrance
 hall.    
 ~
-248 cd 0
+248 12 0 0 0 0
 D5
 You see the Tavern of Hope.
 ~

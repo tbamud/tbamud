@@ -6,7 +6,7 @@ singing in them.  North the forest is darker and the trees much larger.  To the
 south the forest comes to an end and expands into a large open field.  A trail
 leads east and south.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D1
 Deep in the Forest.
 ~
@@ -56,7 +56,7 @@ An Open Field~
 tall green grass and wild flowers grow freely only stopping short at a trail
 that runs north and south.    
 ~
-75 p 2
+75 32768 0 0 0 0
 D0
 The Forest Edge.
 ~
@@ -80,7 +80,7 @@ a calm pool does when disturbed.  The trail disappears under patches of grass,
 it doesn't appear to have been traveled recently.  The trail here runs north
 and south, large enough for a small wagon.    
 ~
-75 p 2
+75 32768 0 0 0 0
 D0
 An Open Field.
 ~
@@ -104,7 +104,7 @@ side of the trail.  Various areas of the trail are covered with small plants
 and weeds.  The trail here runs north and south, just wide enough for a small
 wagon or a horse and rider.    
 ~
-75 p 2
+75 32768 0 0 0 0
 D0
 An Open Field.
 ~
@@ -127,7 +127,7 @@ An Open Field~
 In the northern distance the plants growing are more familar.  Something beside
 the road looks out of place.  To the south the trail begins to get thinner.  
 ~
-75 p 2
+75 32768 0 0 0 0
 D0
 An Open Field.
 ~
@@ -155,7 +155,7 @@ A Trap~
 been smoothed and are muddy.  There is nothing for you to grasp in order to get
 out.  This pit has been dug out to catch something, something very big.    
 ~
-75 a 0
+75 1 0 0 0 0
 D4
 A Trap Door.
 ~
@@ -174,7 +174,7 @@ and flowers grow everywhere some reaching heights that are as large as trees.
 Perhaps they are trees.  Unusual sounds can be heard in the distance.  The path
 runs north and south.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D0
 An Open Field.
 ~
@@ -192,7 +192,7 @@ A Narrow Path~
 flowers.  Song birds can be heard in the distance but the songs are not ones
 you have heard before.  The path twists and leads to the north and west.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D0
 A Narrow Path.
 ~
@@ -211,7 +211,7 @@ been built here.  The stones of the path are old and broken.  The strange
 noises seem to be getting louder.  The air grows thick from the sweet smell of
 the flowers.  The old, stone path leads east and west.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D1
 A Narrow Path.
 ~
@@ -236,7 +236,7 @@ of singing, screeching, and calling are becoming familiar.  But there is still a
 bizarre chatter, where it comes from is still unknown.  The stone path runs
 east and west.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D1
 The Trail to Zamba.
 ~
@@ -257,7 +257,7 @@ center of the massive gate the trail leads to a small opening.  The air is cool
 and gentle, the strong floral smell begins to weaken.  Several noises escape
 the gate, sounds of civilization.  A small path leads east and west.    
 ~
-75 cp 3
+75 32772 0 0 0 0
 D1
 The Trail to Zamba.
 ~
@@ -282,7 +282,7 @@ here look at you curiously for a moment before returning to their duties.  To
 the east stands the gates of Zamba.  The stone path leads east and west with
 many straw huts scattered about.    
 ~
-75 p 1
+75 32768 0 0 0 0
 D0
 A Straw Hut.
 ~
@@ -310,7 +310,7 @@ A Straw Hut~
 mats are neatly stacked together.  In the center of this one room home a circle
 of stones, blackened by smoke, lie cold.    
 ~
-75 dp 0
+75 32776 0 0 0 0
 D2
 A Small Street.
 ~
@@ -326,7 +326,7 @@ before being tied to the trees.  A blanket is folded and is setting in the
 middle of the net.  In the center of the room a small cluster of stones,
 blackened by smoke, surrounds a small fire.    
 ~
-75 dp 0
+75 32776 0 0 0 0
 D0
 A Small Street.
 ~
@@ -345,7 +345,7 @@ A Straw Hut~
 cloth on the east wall.  A smell of rotten fish lingers everywhere.  A straw
 mat with several dirty blankets sets to the north.    
 ~
-75 dp 0
+75 32776 0 0 0 0
 D2
 A Small Street.
 ~
@@ -364,7 +364,7 @@ the south a large window sets open with a gentle breeze blowing in.  Outside
 the window you can see several pieces of cloth hanging on a line swaying gently
 in the wind drying.    
 ~
-75 dp 0
+75 32776 0 0 0 0
 D0
 A Small Street.
 ~
@@ -377,7 +377,7 @@ A Straw Hut~
 with mud and let dry.  Other than a few footprints in the sand the room is
 completely empty.    
 ~
-75 dp 0
+75 32776 0 0 0 0
 D0
 A Small Street.
 ~
@@ -396,7 +396,7 @@ Lining the far wall is a stack of straw mats neatly put together.  In the
 center of the room is a circle of black stones surrounding small twigs and
 sticks, but no fire.    
 ~
-75 dp 0
+75 32776 0 0 0 0
 D2
 A Small Street.
 ~
@@ -417,7 +417,7 @@ buried under white sand.  Straw huts continue in all directions.  Although you
 still hear the sound of rushing water you also hear the faint sounds of music
 further west.    
 ~
-75 p 1
+75 32768 0 0 0 0
 D0
 A Straw Hut.
 ~
@@ -446,7 +446,7 @@ buried under the white sand or if it ended because the sand here is so thick.
 Straw huts stand to the north and south the huts walls look covered in mud.  
 To the east and west is a sandy path.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D0
 A Straw Hut.
 ~
@@ -479,7 +479,7 @@ A Straw Hut~
 observation shows a straw mat in the corner of the room.  Broken pieces of
 pottery are scattered about the floor.    
 ~
-75 cdp 0
+75 32780 0 0 0 0
 D2
 A Small Street.
 ~
@@ -504,7 +504,7 @@ wood, perhaps not as grand as you are familar with but a much more attractive
 building compared to the small huts.  To the west appears to be the formation
 of mountains.    
 ~
-75 p 1
+75 32768 0 0 0 0
 D0
 A Straw Hut.
 ~
@@ -539,7 +539,7 @@ made of wood.  Torches line all the walls but only give off a dim light.  To
 the south wall stands a large, well stocked bar.  Loud music comes from the
 eastern part of the room.    
 ~
-75 cdp 0
+75 32780 0 0 0 0
 D0
 A Small Street.
 ~
@@ -561,7 +561,7 @@ mountain or had built a fortress on the surface to appear as a mountain.  The
 huge stone building rises high into the sky, a long set of steps lead upward.
 To the north and south the sand continues.    
 ~
-75 p 1
+75 32768 0 0 0 0
 D0
 A Sandy Clearing.
 ~
@@ -591,7 +591,7 @@ a primitive machine used to weave cloth has been positioned under a shaded
 tree.  The sounds of crashing water is loud.  The air smells salty with a
 slight aroma of cooked fish.  The sandy track leads north, south and west.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Small Street.
 ~
@@ -621,7 +621,7 @@ north, on the string hang several fish of various shapes and sizes.  To the
 west, east and south stands an open sandy path.  North a small path leads into
 a group of large trees with huge wide leaves centered to the tops of the trees.
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Cluster of Fruit Trees.
 ~
@@ -647,7 +647,7 @@ the silence is replaced by loud frantic chattering from all around you high in
 the trees.  A large sandy path leads south.  To the east a narrow path full of
 thick vines leads deeper into the trees.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D1
 Jungle Passage.
 ~
@@ -671,7 +671,7 @@ stretching toward the sky in a oddly tilted fashion.  Other types of trees grow
 here that have sharp pointy bark.  Thick vines twist and turn clinging to
 everything.  A small path leads off to the east and west.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D1
 Jungle Passage.
 ~
@@ -694,7 +694,7 @@ The Jungle~
 growing space.  Bright, colorful butterflies flutter high in the trees.  A
 small path leads off to the east and west.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D1
 Jungle Passage.
 ~
@@ -718,7 +718,7 @@ slight wind catches the small leaves of the vines making them appear to grow as
 they sway in the wind.  A small path leads west.  Further to the east there
 seems to be a clearing.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D1
 A Clearing in the Jungle.
 ~
@@ -745,7 +745,7 @@ as if ready to bite.  In one of its clawed hands it holds a twisted dagger.
 The dagger is of fine steel and appears to have been placed in the claw after
 the statue was made.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D3
 Jungle Passage.
 ~
@@ -769,7 +769,7 @@ and thick.  A small group of butterflies busily flutter about in a cluster of
 flowers.  A large yellow flower silhouettes one of the patches of light, for
 some reason it stands alone as if the other plants fear to grow beside it.    
 ~
-75 p 3
+75 32768 0 0 0 0
 D0
 A Sandy Clearing.
 ~
@@ -782,7 +782,7 @@ The Taboo Way~
 walls are cold and clammy.  An eerie wind whispers to you from further below.
 The tunnel slopes downward.    
 ~
-75 ad 0
+75 9 0 0 0 0
 D4
 A bright light.
 ~
@@ -805,7 +805,7 @@ The Taboo Way~
 are moist and cold.  A foul smell seeps in from further below.  The tunnel
 leads up and down.    
 ~
-75 ad 0
+75 9 0 0 0 0
 D4
 To dark to tell.
 ~
@@ -828,7 +828,7 @@ The Taboo Way~
 collapsing.  The walls of the tunnel are wider from mud dripping off the walls.
 The floor is covered in slimy mud.  The tunnel leads up and down.    
 ~
-75 ad 0
+75 9 0 0 0 0
 D4
 To dark to tell.
 ~
@@ -854,7 +854,7 @@ below.  Is the wind getting louder?  Is the smell worse?  Are the walls getting
 closer together?  Perhaps, it might be a good idea to turn back and breathe
 fresh air again.    
 ~
-75 ad 0
+75 9 0 0 0 0
 D4
 To dark to tell.
 ~
@@ -876,7 +876,7 @@ The Taboo Way~
 odor.  A faint mutter seems to echo from everywhere.  The tunnel tilts up and
 down.    
 ~
-75 ad 0
+75 9 0 0 0 0
 D4
 To dark to tell.
 ~
@@ -898,7 +898,7 @@ The Taboo Way~
 placed in the four corners of the room for support.  The walls and ground are
 just slightly moist.  A tunnel leads up and down.    
 ~
-75 ad 0
+75 9 0 0 0 0
 D4
 To dark to tell.
 ~
@@ -921,7 +921,7 @@ The Taboo Way~
 to go, the dark tunnel up or the tunnel north, they are the only visible routes
 of travel.  A small light flickers in from the north tunnel.    
 ~
-75 cd 0
+75 12 0 0 0 0
 D0
 A Lighted Tunnel.
 ~
@@ -947,7 +947,7 @@ pentagram.  Inside the center of the pentagram is a pewter bowl.  A whisp of
 smoke spirals out of the bowl carrying a foul odor.  The only exit visible is
 the tunnel south.    
 ~
-75 d 0
+75 8 0 0 0 0
 D2
 To dark to tell.
 ~
@@ -966,7 +966,7 @@ At this close a distance looking upward all you can see are rows and rows of
 steps all identical as they spirial upward.  Glancing downward there is but one
 step then the sandy ground.
 ~
-75 cp 5
+75 32772 0 0 0 0
 D4
 Stone Steps.
 ~
@@ -992,7 +992,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 cp 5
+75 32772 0 0 0 0
 D4
 Stone Steps.
 ~
@@ -1018,7 +1018,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 p 5
+75 32768 0 0 0 0
 D4
 Stone Steps.
 ~
@@ -1044,7 +1044,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 p 5
+75 32768 0 0 0 0
 D4
 Stone Steps.
 ~
@@ -1070,7 +1070,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 p 5
+75 32768 0 0 0 0
 D4
 Stone Steps.
 ~
@@ -1096,7 +1096,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 p 5
+75 32768 0 0 0 0
 D4
 Stone Steps.
 ~
@@ -1122,7 +1122,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 p 5
+75 32768 0 0 0 0
 D4
 Stone Steps.
 ~
@@ -1148,7 +1148,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 p 5
+75 32768 0 0 0 0
 D4
 Stone Steps.
 ~
@@ -1174,7 +1174,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 p 5
+75 32768 0 0 0 0
 D4
 Stone Steps.
 ~
@@ -1200,7 +1200,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 p 5
+75 32768 0 0 0 0
 D4
 Iron Doors.
 ~
@@ -1230,7 +1230,7 @@ The sounds of the water roars as it echos up the mountain side.  A strong wind
 from the west threatens to push you over the side.  Should you climb down or
 should you brave the unknown and enter the doors to the south?    
 ~
-75 cp 5
+75 32772 0 0 0 0
 D2
 Iron Doors.
 ~
@@ -1249,7 +1249,7 @@ decorated.  Beautiful paintings cover the stone walls.  Giant statues of
 unusual beasts stand in a row on both the east and west side of the room.  To
 the north double doors made of iron.  An open archway leads south.    
 ~
-75 d 0
+75 8 0 0 0 0
 D0
 Iron Doors.
 ~
@@ -1274,7 +1274,7 @@ in front of it.  Centered on the room are many comfortable looking chairs and a
 long moon shaped sofa.  To the north and south ends of the room stands an open
 archway.    
 ~
-75 d 0
+75 8 0 0 0 0
 D0
 An Archway.
 ~
@@ -1286,14 +1286,14 @@ A Corridor.
 ~
 0 0 7553
 E
-fireplace~
-   The fireplace is quite large.  The mantle is decorated with a large golden
-candelabra.  The front of the fireplace is covered with a mess screen.    
-~
-E
 sofa chair~
    The chairs and sofa are thick with padding and made of a brown leather that
 has been treated to make it soft and smooth.    
+~
+E
+fireplace~
+   The fireplace is quite large.  The mantle is decorated with a large golden
+candelabra.  The front of the fireplace is covered with a mess screen.    
 ~
 S
 #7553
@@ -1302,7 +1302,7 @@ A Long Corridor~
 giving off enough light to see that the corridor is empty.  An open archway
 leads to the west.    
 ~
-75 d 0
+75 8 0 0 0 0
 D0
 An Archway.
 ~
@@ -1325,7 +1325,7 @@ A Long Corridor~
 giving enough light to see that the corridor is completly empty.  To the south
 is a very long corridor and to the north is the end.    
 ~
-75 d 0
+75 8 0 0 0 0
 D0
 A Corridor.
 ~
@@ -1343,7 +1343,7 @@ A Long Corridor~
 giving off enough light to see that the corridor is empty.  To the east you see
 a door.    
 ~
-75 0 0
+75 0 0 0 0 0
 D0
 A Corridor.
 ~
@@ -1367,7 +1367,7 @@ mounted to the walls, white candles burn brightly, to show off a tremendous
 painting of a elegant lady.  The corridor is wide and leads north and south.  
 
 ~
-75 0 0
+75 0 0 0 0 0
 D0
 A Corridor.
 ~
@@ -1379,18 +1379,18 @@ A Corridor.
 ~
 0 0 7557
 E
-plaque~
-   This portrait of the Empiress Kiona was dedicated to her from her friend and
-mentor.    
-       Shimmer
-~
-E
 painting woman~
    The woman in the painting is wearing a large crown and elegant golden robes.
 She is adorned in several expensive pieces of jewerly.  Her features are soft
 under her black hair and tan skin.  She has striking blue eyes unlike the other
 natives with their dark brown eyes.  A gold plaque is mounted to the wall under
 the painting.    
+~
+E
+plaque~
+   This portrait of the Empiress Kiona was dedicated to her from her friend and
+mentor.    
+       Shimmer
 ~
 S
 #7557
@@ -1399,7 +1399,7 @@ A Long Corridor~
 The corridor leads north and south.  To the south you can see the corridor is
 opening up into other directions.    
 ~
-75 0 0
+75 0 0 0 0 0
 D0
 A Corridor.
 ~
@@ -1417,7 +1417,7 @@ A Split in the Corridor~
 brighter.  Doors are to the east and west.  Much noise can be heard coming from
 the east and south.    
 ~
-75 d 0
+75 8 0 0 0 0
 D0
 A Corridor.
 ~
@@ -1447,7 +1447,7 @@ ceiling.  The floor, walls, and ceiling are white as snow.  Gigantic pillars
 stand at each end of the room.  To the west the room is open stepping out onto
 a balcony.    
 ~
-75 d 0
+75 8 0 0 0 0
 D0
  A Corridor.
 ~
@@ -1459,17 +1459,17 @@ The Balcony.
 ~
 0 0 7560
 E
+wall room floor~
+   The room is bright and airy.  Everything around the room and the room itself
+is a snow white giving the room an aura of purity.    
+~
+E
 pillar~
    The pillars at each corner of the room is a massive white stone that has
 been sculpted into the shape of a muscular man wearing a short toga, sandels,
 and armbands on his upper arm.  The man is standing with his hands upward
 holding up the ceiling.  The sculpture is very realistic and almost looks
 alive.    
-~
-E
-wall room floor~
-   The room is bright and airy.  Everything around the room and the room itself
-is a snow white giving the room an aura of purity.    
 ~
 S
 #7560
@@ -1481,7 +1481,7 @@ display of its grand splendor, and below the ocean, rushing toward the cliffs
 below you crashing loudly against the stones, both stretching as far as you can
 see.    
 ~
-75 d 0
+75 8 0 0 0 0
 D1
 The Gathering Room.
 ~
@@ -1499,7 +1499,7 @@ The Kitchen~
 Many tables are in this room all cluttered with food and dishes.  The air is
 warm and fragrant from all the delicious food being cooked.    
 ~
-75 d 0
+75 8 0 0 0 0
 D3
 A Swinging Door.
 ~
@@ -1518,7 +1518,7 @@ The Pantry~
 the floor huge barrels are clustered together.  Although the shelfs are clean,
 the floor is covered in dust.    
 ~
-75 a 0
+75 1 0 0 0 0
 D1
 A Thick Door.
 ~
@@ -1531,7 +1531,7 @@ A Tiny Hall~
 for light.  The air here is damp and cold.  The hall continues east.  To the
 west you see a door.    
 ~
-75 d 0
+75 8 0 0 0 0
 D1
 A Tiny Hall.
 ~
@@ -1549,7 +1549,7 @@ A Tiny Hall~
 for light.  The air here is damp and cold.  Closed doors line the north and
 south wall.  The hall continues east and west.    
 ~
-75 0 0
+75 0 0 0 0 0
 D0
 A Wooden Door.
 ~
@@ -1577,7 +1577,7 @@ A Tiny Hall~
 fireplace.  To the north and south closed doors.  The hall continues to the
 west.    
 ~
-75 0 0
+75 0 0 0 0 0
 D0
 A Wooden Door.
 ~
@@ -1602,7 +1602,7 @@ burning brightly.  At the far end of the room to the north sets an altar.  A
 long red carpet leads from the door to the altar.  The door leading out is on
 the south wall.    
 ~
-75 d 0
+75 8 0 0 0 0
 D2
 A Wooden Door.
 ~
@@ -1619,21 +1619,21 @@ A Small Bedroom~
 furniture here.  The room is cluttered and in disarray.  Black candles are lit
 on the table.    
 ~
-75 0 0
+75 0 0 0 0 0
 D2
 A Wooden Door.
 ~
 door south~
 1 0 7565
 E
-candle table~
-   Several black candles sit here on the table lit leaving a trail of fowl
-smoke.    
-~
-E
 trunk~
    The wooden trunk is plain except for having a large lock holding it shut.  
 
+~
+E
+candle table~
+   Several black candles sit here on the table lit leaving a trail of fowl
+smoke.    
 ~
 S
 #7568
@@ -1642,21 +1642,21 @@ An Office~
 bookshelf are arranged in an orderly fashion.  The room is neat and clean.  A
 few pieces of paper sit on top of the desk.    
 ~
-75 0 0
+75 0 0 0 0 0
 D0
 A Wooden Door.
 ~
 door north~
 1 0 7565
 E
-paper desk~
-   A few papers sit here on the desk.  Each having the seal of the royal crest
-of Empress Kiona.    
-~
-E
 shelf wall~
    The shelf is a display case of many unique weapons.  It is made of a strong
 oak wood.  The front of the shelf is a glass door.    
+~
+E
+paper desk~
+   A few papers sit here on the desk.  Each having the seal of the royal crest
+of Empress Kiona.    
 ~
 S
 #7569
@@ -1665,7 +1665,7 @@ A Small Bedroom~
 only furniture here.  The room is very neat and clean.  Lying on the table is a
 match set made up of a hairbrush, comb, and hand mirror.    
 ~
-75 0 0
+75 0 0 0 0 0
 D0
 A Wooden Door.
 ~
@@ -1683,7 +1683,7 @@ A Dark Corridor~
 corridor ends at a large set of double doors.  To the east lies an open
 archway.
 ~
-75 ad 0
+75 9 0 0 0 0
 D1
 A Corridor.
 ~
@@ -1695,13 +1695,13 @@ An Oak Door.
 door iron~
 1 0 7571
 E
+door~
+   The double doors are encraved with the image of a royal seal.  
+~
+E
 seal~
    The seal is of a shield containing a pair of crossed swords with the face of
 a panther growling from above the wicked looking blades.    
-~
-E
-door~
-   The double doors are encraved with the image of a royal seal.  
 ~
 S
 #7571
@@ -1712,7 +1712,7 @@ large throne.  The throne sits atop a raised dias near the western wall.  The
 room is lightly decorated with colorful flowers.  The fresh scent of flowers
 fill the room.    
 ~
-75 d 0
+75 8 0 0 0 0
 D1
 An Oak Door.
 ~
@@ -1741,7 +1741,7 @@ the other end of the room a huge bath sits, someone is sitting at the far end
 of the bath.  At the bath thin lines of steam rises and disappear.  The sounds
 of gentle splashing can be heard.    
 ~
-75 d 0
+75 8 0 0 0 0
 D0
 A Secret Door.
 ~
@@ -1761,7 +1761,7 @@ the bath.  The strong scent of flowers cling to everything.  At the other end
 of the bath you can make out the shape of a woman leaning over, her hand
 testing the water.    
 ~
-75 d 0
+75 8 0 0 0 0
 D0
 An Open Curtain.
 ~
@@ -1775,7 +1775,7 @@ sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
 carrying with it the salty smell of the ocean.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1799,7 +1799,7 @@ sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
 carrying with it the salty smell of the ocean.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1818,7 +1818,7 @@ north.  White waves roll in onto the sand washing away some of the bird prints.
 To the east a few small buildings can be seen in the distance..  The sand
 extents off to the north and south.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1838,7 +1838,7 @@ many bird shaped prints seem to run back and forth to the edge of the ocean.
 To the east stands several small buildings made of wood.  The sand leads off to
 the north, south, and east.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1862,7 +1862,7 @@ patches of wild grass grows scantly around.  Several trees grow to the north
 and east of the sand.  To the west the ocean spreads far into the distance.  
 
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1881,7 +1881,7 @@ east.  To the west the ocean washes up the beach and crash onto a group of
 jagged rocks clustered below the trees.  To the south the sandy trail leads off
 to a wider strip of beach.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D2
 A Sandy Beach.
 ~
@@ -1895,7 +1895,7 @@ north.  White waves roll in onto the sand washing away some of the bird prints.
 To the east a sandy clearing.  The sand extents off to the north and south.  
 
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1919,7 +1919,7 @@ layer of sand and leaving behind shells of various sizes most of which are just
 broken pieces.  The air is salty and warm as it blows in from the west.  The
 sand continues to the north and south.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1938,7 +1938,7 @@ sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
 carrying with it the salty smell of the ocean.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1958,7 +1958,7 @@ animal tracks lead away from the mounds toward the coast disappearing into the
 water.  The current here is gentle and softly caresses the edge of the bank.  
 The sand leads off to the north and south.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1977,7 +1977,7 @@ sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
 carrying with it the salty smell of the ocean.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -1997,7 +1997,7 @@ a drop off overlooking jagged rocks.  West the ocean rolls in onto the sand
 gently washing away several of the footprints.  East is a large cluster of
 trees.  To the north a sandy path out.    
 ~
-75 p 4
+75 32768 0 0 0 0
 D0
 A Sandy Beach.
 ~
@@ -2017,7 +2017,7 @@ out from the shops from all the activity around them.  To the north stands a
 large building made of wood and large stones.  The road leads east and west.  
 
 ~
-75 cp 1
+75 32772 0 0 0 0
 D0
 A Magic Shop.
 ~
@@ -2040,7 +2040,7 @@ Market Row~
 from the shops from all the activity around them.  To the south a native fruit
 stand sits.  To the east stands a small shop.  To road leads west.    
 ~
-75 p 1
+75 32768 0 0 0 0
 D1
 A Path.
 ~
@@ -2064,7 +2064,7 @@ are overflowing with books, flasks, bags and other things.  A thick layer of
 dust covers everything.  Many of the books are old and in bad shape.  A door to
 the west leads out.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D3
 A path
 ~
@@ -2081,7 +2081,7 @@ A Fruit Stand~
 the display of fruit he has for sale.  A small sign posted above him reads
 "Fresh Fruit."
 ~
-75 p 0
+75 32768 0 0 0 0
 D0
 A Path.
 ~
@@ -2101,7 +2101,7 @@ flasks, vials, and small pouches of magic potions and powders.  On the counter
 displayed are cloth dolls, wooden figures, bones, feathers, different color
 candles and jars.
 ~
-75 p 0
+75 32768 0 0 0 0
 D2
 A path.
 ~
@@ -2120,7 +2120,7 @@ birds nestled in the trees.  A warm breeze gently blows in.  Not very many
 trees are here, but the ones that are have many wild flowers growing around
 them.  The trail leads east and west.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D1
 The Forest.
 ~
@@ -2143,7 +2143,7 @@ Deep in the Forest~
 everything making the forest gloomy and distorts the trees.  A gust of wind
 blows a patch of dead leaves all around.  The trail leads east and west.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D1
 The Forest.
 ~
@@ -2168,7 +2168,7 @@ every second.  The trees here are not very colorful with drab brown leaves.
 Somewhere deep in the forest a howl begins growing louder as the wind grows
 stronger.  The trail leads east and west.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D1
 The Forest.
 ~
@@ -2192,7 +2192,7 @@ and the buzzing of insects are not here.  The forest is quite but not in a
 peaceful way.  This is too dreary a place perhaps for normal woodland
 creatures.  The trail lead east and west.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D1
 The Forest.
 ~
@@ -2215,7 +2215,7 @@ Deep in the Forest~
 the sky.  Many of the branches are lost in a thick fog overhead.  The forest
 grows darker with a slight chill in the air.  The trail leads east and west.  
 ~
-75 p 0
+75 32768 0 0 0 0
 D1
 The Forest.
 ~
@@ -2238,7 +2238,7 @@ A Forest Trail~
 of the trees are lost in the distance.  The forest is alive with chirping and
 singing from birds nestled in the trees.  The trail leads east and west.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D1
 The Forest.
 ~
@@ -2261,7 +2261,7 @@ The Forest Trail~
 here.  In the not so far distance the sounds of buzzing insects fill the
 forest.  The trail leads east and west.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D1
 The Forest.
 ~
@@ -2287,7 +2287,7 @@ crimson red are the main species here.  The trees open into a wide gap large
 enough for a row of wagons.  The ground is clear of rocks but show no sign of
 wagon wheels.  The trail leads west into the forest.    
 ~
-75 p 0
+75 32768 0 0 0 0
 D3
 The Forest.
 ~

@@ -5,7 +5,7 @@ away.  You wonder how this tower still stands after all these years.  High
 above in the tower a light flashes.  Do you dare enter?  Words are chiseled 
 into a tablet beside the entrance.    
 ~
-22 0 0
+22 0 0 0 0 0
 D0
 ~
 ~
@@ -36,7 +36,7 @@ A Dark Hallway~
 drawings and symbols carved into the stone walls.  A sudden gust of wind
 carries the smell of rotting flesh to you.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -54,7 +54,7 @@ remains of what might have been paintings and tapestries cover the floor.
 The stench grows worse the deeper you enter, maybe you should turn back 
 now. 
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -72,7 +72,7 @@ passageway top to bottom.  If only you could understand them.  The dark hallway
 curves to the east and south.  The walls made from mortar and stone crumble at
 the touch and are covered in dust and grime.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -88,7 +88,7 @@ A Dark Hallway~
 maggot ridden half-eaten corpse.  Strange, you only see human footprints
 encircling it.
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -104,7 +104,7 @@ A Dark Hallway~
 and confused.  You think it might be the horrible stench or maybe it's the
 intracate carvings that seem to draw your eye.
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -120,7 +120,7 @@ A Dark Hallway~
 around them.  The smell is almost unbearable and you hardly even notice 
 the symbols and carvings anymore.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 door~
@@ -141,7 +141,7 @@ higher you go.  You feel the walls starting to close in on you.  You
 wonder whether or not it's a good idea to continue.  Another hallway leads 
 to the south.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -161,7 +161,7 @@ A Dark Hallway~
 rats having a feast on the unfortunate victim.  Far off in the distance 
 you hear screams.  A passage also leads to the south.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -183,7 +183,7 @@ symbols don't seem to be carved, but scratched or clawed into the stone.
 Chunks of flesh and fingernails can be seen in the scratches, all oozing with
 blood.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 door~
@@ -203,7 +203,7 @@ A Dark Hallway~
 climbing to the top of this tower.  The screams stop with an unnatural
 abruptness.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -219,7 +219,7 @@ A Dark Hallway~
 you hear screams, but a different voice this time.  A hot breeze carries with
 it the smell of smoke and something even more unpleasant.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -235,7 +235,7 @@ A Dark Hallway~
 leg as you walk by.  One swift kick and it's head goes rolling away, but 
 the hand still reaches for you.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -252,7 +252,7 @@ tortured.  That or they have simply gone mad.  The walls, floor, and ceiling
 seem to be getting closer together.  The darkness seems to deepen and cloak
 everything in shadows.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -268,7 +268,7 @@ A Dark Hallway~
 wall.  Looking out you can see a city far below.  A fog has set in about the
 tower and the shrouds the city enough so you cannot name it.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -284,7 +284,7 @@ Stairs~
 louder in that direction.  The stone and mortar walls are damp and small
 trickles of water run down from somewhere above.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -300,7 +300,7 @@ Hidden Room~
 Unlike the rest of this decrepit tower this room is in excellent shape 
 and looks to be used as a study with books lining the walls.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 door~
@@ -312,7 +312,7 @@ Hidden Room~
 books and other assorted items.  The smell of rot and decay is not evident
 here.  Instead, everything is covered in a fine layer of powdery dust.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 door~
@@ -324,7 +324,7 @@ Red Hallway~
 nauseating and your eyes water from the acrid smoke.  You become disorientated
 and can barely see any exits through the smoke.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -341,7 +341,7 @@ Red Hallway~
 The passage seems to glow a strange reddish color further to the west.  The red
 glow is scattered by the smoke and seems to pulse with a life of its own.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -358,7 +358,7 @@ Red Hallway~
 noises to the south or you can walk through the smoke to the west.  An eerie
 red glow is barely visible through the heavy smoke.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -375,7 +375,7 @@ Red Hallway~
 touch and you feel a hot draft pushing you to the north.  You can continue 
 into the heat to the south.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -391,7 +391,7 @@ A Green Hallway~
 like you're being watched.  Will you go up to the south or down to the east.  
 Either way the hall looks dangerous.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -407,7 +407,7 @@ A Green Hallway~
 Hallway continues east or west.  Movement in your periphery makes you look for
 something that is no longer there.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -424,7 +424,7 @@ to pulse with a life of their own.  The green fungus on the walls glows a
 strange lime-green color.  The smell of fresh cut flowers seems ironic in a
 place like this.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -440,7 +440,7 @@ A Red Hallway~
 north or go back south and flee this area.  The heat is still bareable, but is
 getting even worse.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -456,7 +456,7 @@ Stairs~
 lead up to the next level of the tower.  The exit to the east is the source of
 the hot breeze and also an eerie red glow.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -473,7 +473,7 @@ live here.  You see a massive pile of bones against the wall.  The bones appear
 to be humanoid, but are scorched and scattered apart so it is difficult to
 tell.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -495,7 +495,7 @@ south or you can flee from the heat to the north.  A flickering glow that must
 come from an open flame somewhere further down the hall causes shadows to dance
 along the stone and mortar walls.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -511,7 +511,7 @@ A Green Hallway~
 clearly see your surroundings.  The passage climbs to the south or heads 
 back down to the north.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -526,7 +526,7 @@ A Dead End~
    The algae and fungus is extremely thick in this area.  You keep thinking you
 see movement out of the corner of your eye.  You can only return to the north.
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -538,7 +538,7 @@ Stairs~
 out the stone walls, floor, and ceiling.  A stone staircase leads up to the
 second level of the tower.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -554,7 +554,7 @@ A Green Hallway~
 exit west but you can't see where it leads.  The slime of algea, fungus, and
 various other forms of mold make travel difficult and treacherous.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -574,7 +574,7 @@ A Red Hallway~
 the north the heat and flames seem to intensify.  A cooler breeze to the east
 beckons you.  
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -590,7 +590,7 @@ A Red Hallway~
 breathe.  The red glow of what must be fire comes from the west.  Back east
 awaits a cooler and safer haven.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -606,7 +606,7 @@ A Red Hallway~
 also leave to the east.  The strange fire does not seem to have any fuel and
 burns an even stranger blue green flame.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -622,7 +622,7 @@ A Red Hallway~
 since standing still would probably get you burned.  The heat continues 
 from the west or you can get away from it to the north.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -638,7 +638,7 @@ A Green Hallway~
 up to the east or head back to the north.  The sound of running water echoes
 off the walls.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -654,7 +654,7 @@ A Green Hallway~
 them seem to twitch or move slightly.  You can continue up to the east 
 or go down to the west.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -671,7 +671,7 @@ unnerving.  The story behind this tower and its inhabitants is still a mystery.
 It will take a thorough search to root out the evil that caused this pitiful
 downfall.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -687,7 +687,7 @@ A Green Hallway~
 feel out of place with all of these undead creatures.  The climb 
 continues to the north or you can head down to the west.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -703,7 +703,7 @@ Bloody Stairs~
 hear screams and groans of pain coming from the south.  Paintings line the
 stairwell, depicting scenes of a great battle with undead foes.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -719,7 +719,7 @@ Bloody Hallway~
 from both east and west or you can flee to the north and south.  The once fine
 adornments to the hallway have all been torn down and shredded.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -743,7 +743,7 @@ Bloody Hallway~
 hot irons laid into it.  Various tools lay everywhere that make you cringe 
 just thinking about their purpose.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -755,7 +755,7 @@ Bloody Hallway~
 dead or at least unconscious.  Who could do such things?  You hear a 
 death cry to the north.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -771,7 +771,7 @@ Bloody Hallway~
 are stacked everywhere continuing to the east and west.  The smell of death
 fills this part of the hallway.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -796,7 +796,7 @@ laid negligently on the floor.  You should leave back south.  But, something
 compels you to stay and see the atrocities performed on the helpless souls
 within.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -808,7 +808,7 @@ Waiting Room~
 look broken and death lingers in their eyes.  They look beyond hope and may as
 well already be dead.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -820,7 +820,7 @@ Torture Chamber~
 choice is to head back south.  Various body parts, intestines, and other
 unidentifiable body parts lay neatly at the prisoners feet.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -832,7 +832,7 @@ Bloody Hallway~
 north or the bodies continue to the west.  A once fine oaken table has been
 hacked to pieces and scattered about the room.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -848,7 +848,7 @@ Empty Hallway~
 for what must have been years.  You can exit north towards the screams or 
 south into the abandoned hallway.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -865,7 +865,7 @@ hallway.  The ladder is sloped at a very slight angle and looks sturdy enough
 to hold one person at a time.  The steel steps are extremely rusted, but very
 thick and wide.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -882,7 +882,7 @@ still look strong.  An empty hallway to the south is the only other exit.
 Several paintings on the wall show the tower in its golden days.  It has fallen
 a long ways since then.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -898,7 +898,7 @@ Stairs~
 make it difficult to see very far ahead.  An exit to the east opens into an
 empty hallway.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -914,7 +914,7 @@ Empty Hallway~
 feel like someone is watching you.  The hallway continues east and west 
 or you can go north.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -934,7 +934,7 @@ Empty Hallway~
 in ages.  You can exit north towards the screams or follow the passage east or
 west.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -954,7 +954,7 @@ Empty Hallway~
 walk, leaving a clear marking of your passage.  A few other traces of passage
 are marked by the scattered dust.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -970,7 +970,7 @@ Empty Hallway~
 Your clothes have developed a fine layer of the dust and your throat, nose, and
 lungs seem filled with a chalky film.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -991,7 +991,7 @@ and fall apart when you put any sizeable force upon them.  They seem
 treacherous, but passable.  An empty hallway to the west looks far more
 inviting.    
 ~
-22 d 0
+22 8 0 0 0 0
 D3
 ~
 ~
@@ -1007,7 +1007,7 @@ A Dark Hallway~
 light.  You think it continues to the east and south.  The sound of echoing
 footsteps can be heard in the distance.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -1023,7 +1023,7 @@ A Dark Hallway~
 and inventoried.  The hall continues south and west.  You notice a small window
 in the east wall that looks out into a clouded valley.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -1039,7 +1039,7 @@ A Lighted Hallway~
 the south.  Strange how this hallway seems so clean compared to the rest of the
 tower.  Maybe some life does exist within these walls.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -1056,7 +1056,7 @@ can go south.  The floor, walls, and ceilings are freshly cleaned.  Not a speck
 of dust can be seen anywhere.  A pristine white glow is reflected on every
 surface from an overhead lamp.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -1072,7 +1072,7 @@ A Dark Hallway~
 neatly against both walls.  The hall continues north and south.  A small
 collapse in one of the walls shows nothing but darkness on the other side.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1087,7 +1087,7 @@ A Dark Hallway~
    More bodies are stacked here neatly.  They each have a tag on their toe with
 a number written on it for identification.  The hall continues north and south.
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1103,7 +1103,7 @@ A Lighted Hallway~
 the south seems very refreshing and out of place.  Paintings along the wall
 display a gathering, most likely a feast, within the tower centuries ago.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1119,7 +1119,7 @@ A Lighted Hallway~
 who in their right mind would live here?  The hallway continues north and 
 south.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1136,7 +1136,7 @@ An entire section of the wall is missing and opens into a hidden inner wall of
 the tower.  Their is neither a floor nor ceiling within, just a long drop to
 whatever lay below.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1152,7 +1152,7 @@ A Long Ramp~
 several corpses in it off to one side.  A hallway is to the north.  The
 barrow's front wheel is broken, making it unuseable.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1169,7 +1169,7 @@ comes down from somewhere above.  To the north is a hallway.  The stairs are
 carved out of what appears to be granite and are still in excellent condition
 compared to the rest of the tower.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1186,7 +1186,7 @@ hallway.  An old wooden ladder leads down into the darkness.  The remains of a
 stairway can be seen below.  The ladder must have been a substitute after a
 recent collapse of the stairs.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1202,7 +1202,7 @@ A Hall of Corpses~
 The walls here are paneled with what used to be polished pine boards.  Now they
 are warped and rotting, along with the rest of the tower.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -1218,7 +1218,7 @@ A Hall of Corpses~
 west.  Several of the corpses occasionally twitch or try to rise.  They seem to
 be transitioning from death to undeath.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -1235,7 +1235,7 @@ The hall continues south or east.  The feeling of unseen eyes comes from every
 direction.  The wooden paneling in this part of the tower has collapsed leaving
 dozens of possible unseen hideouts.  The hall continues south or east.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -1251,7 +1251,7 @@ A Cold Hallway~
 could also go west but that sounds like such a pretty voice.  You seem to have
 heard stories about a tantalizing voice like this, but who cares.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -1267,7 +1267,7 @@ Ramp~
 bodies litter the floor and the hall to the north.  The wooden ramp sags
 slightly as you walk over it.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1283,7 +1283,7 @@ A Hall of Corpses~
 trail of blood where someone must have used a wheelbarrow to move the 
 corpses.  The tracks lead north, higher into the tower.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1299,7 +1299,7 @@ A Cold Hallway~
 frost.  The unnatural chill in this area is unnerving.  The hallway continues
 north and south.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1315,7 +1315,7 @@ Ladder~
 balance and fall as you climb two rungs at a time.  Who cares where else 
 you can go, just go up to that beautiful voice.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1331,7 +1331,7 @@ Ramp~
 is to the north.  The ramp is about ready to collapse.  The sagging wood creaks
 with the slightest pressure.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1347,7 +1347,7 @@ Staircase~
 the north.  The wooden panels covering the stone walls has completely
 collapsed.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1363,7 +1363,7 @@ Hall of Rebirth~
 either drunk or incompetent.  The tracks veer back and forth running into the
 walls in several places.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -1380,7 +1380,7 @@ negligently to mix with the rest of the corpses that lay everywhere.  You
 hear moaning and chanting to the south.  You can't see past the bodies to 
 the north.
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1400,7 +1400,7 @@ A Hallway~
 changes pitch to sorrow and grief.  You charge on hardly even noticing 
 another room to the north.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1419,7 +1419,7 @@ A Hallway~
    The singing is coming from the west.  How beautiful, it must be a damsel in
 distress, trapped in this tower against her will.  She must be awaiting rescue.
 ~
-22 d 0
+22 8 0 0 0 0
 D3
 ~
 ~
@@ -1435,7 +1435,7 @@ Hall of Rebirth~
 strange words and making wild gestures.  A corpse suddenly rises at his
 command.  You should flee to the north.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1448,7 +1448,7 @@ you.  You kneel behind her and tell her your name and that you will rescue
 her.  But then she turns towards you and you see the ugliest face to ever 
 plague a human body.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1460,7 +1460,7 @@ Spiral Staircase~
 that strange flickering light.  You can go up to investigate or return
 south.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -1476,7 +1476,7 @@ A Collapsing Room~
 the east where the entire wall and half the floor has fallen to the ground
 below.  This room is the highest in the tower that still remains.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -1489,7 +1489,7 @@ flickering from the wind blowing in through a gaping hole in the east
 wall.  A coffin lays in the middle of the room.  You hear a fluttering of 
 wings to the east.    
 ~
-22 d 0
+22 8 0 0 0 0
 D5
 ~
 ~
@@ -1501,7 +1501,7 @@ Rumbles Dungeon~
 your head.  There is no turning back now.  The hall continues east and west.  
 A large cell fills the entire room just to the north.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -1517,7 +1517,7 @@ Rumbles Dungeon~
 heavily guarded and looks to be impossible to escape from.  What kind of 
 prisoner could need this much protection.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1533,7 +1533,7 @@ Rumbles Dungeon~
 This safe haven seems strangely peaceful, yet an evil presence can be detected
 through the cell to the east.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1549,7 +1549,7 @@ Rumbles Dungeon~
 mortar and stone freshly laid.  The passage is clean and well kept.  Guards
 patrol these halls constantly.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -1565,7 +1565,7 @@ Rumbles Dungeon~
 impossible to open.  The door glows with a faint aura.  There is also a 
 sign here with crossed lightning bolts above it.    
 ~
-22 d 0
+22 8 0 0 0 0
 D1
 ~
 ~
@@ -1592,7 +1592,7 @@ Rumbles Dungeon~
 strange glow seems to be coming from within it.  Some form of magical
 enchantment maybe.  The walls are heavily reinforced and recently erected.    
 ~
-22 d 0
+22 8 0 0 0 0
 D2
 ~
 ~
@@ -1608,7 +1608,7 @@ Rumbles Dungeon~
 to be the only other structure in this hidden basement and must contain someone
 of great importance to be so heavily guarded.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1624,7 +1624,7 @@ Rumbles Dungeon~
 or something to break through those impenetrable walls.  The guards are heavily
 armored and look well trained.    
 ~
-22 d 0
+22 8 0 0 0 0
 D0
 ~
 ~
@@ -1640,7 +1640,7 @@ Dungeon Cell~
 protection to hold those with special powers within.  It looks impenetrable.  
 The perfect prison for the worst type of prisoner.    
 ~
-22 dh 0
+22 136 0 0 0 0
 D0
 ~
 door~

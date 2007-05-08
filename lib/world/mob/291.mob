@@ -7,7 +7,7 @@ The Headless Horseman, riding his nightmare, comes charging down on you.
 uniform he sits on top of a powerful nightmare.  He turns toward you and levels
 his sword at your neck, just before he charges.    
 ~
-dg df -250 E
+72 0 0 0 80 0 0 0 -250 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -25,7 +25,7 @@ An Elvis Impersonator is hiding behind a potted ficus here.
 absolutely covered with flashy sequinns.  As you look at him, he snaps his
 fingers and points at you as he says, "Thank you.  Thank you very much!  "
 ~
-dglp 0 0 E
+34888 0 0 0 0 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -42,7 +42,7 @@ A Rabid Potted Ficus sits here, grooving to the music.
 ~
    It is a rabid Potted plant.    
 ~
-dg 0 -100 E
+72 0 0 0 0 0 0 0 -100 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -61,7 +61,7 @@ A gibbering lesser ghoul is scavaging for his next meal here.
 body twitches almost uncontrolably as he scans you deciding if it is worth the
 risk to try to make you his next meal.    
 ~
-dgh 0 -5 E
+200 0 0 0 0 0 0 0 -5 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -79,7 +79,7 @@ A grey-skinned goblin is prowling around here.
    The grey skinned creature is prowling here.  He carries a crude club and a
 nasty expression
 ~
-dghl 0 0 E
+2248 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -98,7 +98,7 @@ A mosnter made of crystal lurks here,
 unnoticed until it struck.  Made of crystals and minerals it is slow but
 powerful.    
 ~
-bd b -290 E
+10 0 0 0 4 0 0 0 -290 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -117,7 +117,7 @@ a red scorpion scuttles over a rocky patch of ground here.
 carapace of this creature provides it with a protective shells while its
 stinger drips with a nasty venom.    
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -136,7 +136,7 @@ One of the citadel's doomguard is patrolling the area here.
 doomguard.  Like an invisible man in visible armor it forever walks the halls
 of the citadel protecting it from outside threats.    
 ~
-dgm 0 0 E
+4168 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -154,7 +154,7 @@ A Clock Guardian lurks here waiting to get the drop on you.
 nightmare is in a vaguely humanoid shape.  It jerks and quirks as if it is not
 totally in control of its own movements.    
 ~
-bdf bk -50 E
+42 0 0 0 4 0 0 0 -50 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -173,7 +173,7 @@ The Grim Reaper himself stands here waiting for those who would challenge him
 hands clutch at his scythe.  His bony skull only partially concealed by his
 black robe.  He looks at you a moment before he attacks.    
 ~
-bdnp d 0 E
+40970 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -191,7 +191,7 @@ A shambling zombie patrols the area here
    A walking, rotting corpse.  This is one of the mistresses countless thralls.
 What they lack in individual strength, they make up for in numbers.    
 ~
-dgmp 0 -50 E
+36936 0 0 0 0 0 0 0 -50 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -212,7 +212,7 @@ arcane runes that glow with power, burnishing the dark metal with an unholy
 green glow that flows from deep within the Doomguard.  Who can guess what foul
 dwenomers have been placed on this armor to give it its vital force.    
 ~
-bdnp d -500 E
+40970 0 0 0 16 0 0 0 -500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -231,7 +231,7 @@ A Greater ghoul stands on the balcony gnawing on the leg bone of his last victim
 eternaly hungry.  He likes to take his victims here to eat in peace.  Will you
 be his next victim.    
 ~
-cdgn d -60 E
+8268 0 0 0 16 0 0 0 -60 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -250,7 +250,7 @@ A short, squat, purple child sits at the foot of Ilian's throne.
 Playing with rattles or slingshots or tops and the like.  It seems content with
 its lot in life.    
 ~
-bdm 0 -200 E
+4106 0 0 0 0 0 0 0 -200 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -267,7 +267,7 @@ A helpless prisoner is chained to the wall here.
    This pathetic individual has not been fed in weeks.  He is lean and gaunt
 from starvation.  He looks at you, pleading for mercy.    
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -288,7 +288,7 @@ Her face has a haunting beauty ensculped in her evil.  The flowing purple robes
 she wears are woven with the vastness of space.  She sits on her throne,
 glaring at you while her children scuttle about her.    
 ~
-bdnopqr f -1000 E
+253962 0 0 0 64 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -306,7 +306,7 @@ a flawed doomguard in on assingment, patrolling outside the citadel walls here.
    Like an invisible man in visible armor, the animated suit of plate was
 relegated to outerpatrol due to its inferior quality.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -321,7 +321,7 @@ One of the citadel's doomguard is patrolling the area here.
 Like an invisible man in visible armor, it forever walks the halls of the
 citadel.    
 ~
-dgm f 0 E
+4168 0 0 0 64 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -337,7 +337,7 @@ Scarlet Fever stands here with her hand on her saber
 ~
    She looks diseased.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -355,7 +355,7 @@ A dark-skinned elf is stalking through the forest.
 associated with their race.  His hair is a pale, bone white.  He stalks his
 prey with a long curved knife.    
 ~
-dg kp -200 E
+72 0 0 0 65536 0 0 0 -200 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -372,7 +372,7 @@ A bug, one of a swarm flies around here, pestering you.
 ~
    Its a mosquito, what else do you want.    
 ~
-bdm 0 0 E
+4106 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -389,7 +389,7 @@ A Large venus flytrap pokes itself out of the vines here.
 ~
    It is a venus flytrap.  What more do you people want?    
 ~
-bd f 0 E
+10 0 0 0 64 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -405,7 +405,7 @@ The Band stands here.
 ~
    The band is playing a local favorite.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0

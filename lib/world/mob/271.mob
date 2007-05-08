@@ -8,7 +8,7 @@ amiable but authoritave countenance.  Long out of knighthood, he nevertheless
 looks quite confident in his abilities to defend himself, and has gone on to
 wining, dining and governing the human population.    
 ~
-deghl 0 0 E
+2264 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -24,7 +24,7 @@ with a relaxed, alert air.  He wears in his uniform the dark gold and black
 colors of the town banner, and the sword that hangs from his hip looks more
 than idle decoration.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -38,7 +38,7 @@ The town hangman is here, idly swinging a noose.
 eyepatch, from his days as a pirate along the northern coast.  He has, of
 course, since seen the light and sticks to legal murder.    
 ~
-bdl dh 0 E
+2058 0 0 0 16 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -53,7 +53,7 @@ A black-robed priest is here, tending a candelabra.
 somber but pleasant manner.  He carries a small kaleidoscope in one hand, with
 which he watches the movements of his elusive deity.    
 ~
-bcdl dh 0 E
+2062 0 0 0 16 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -67,7 +67,7 @@ A black-robed priestess is charting a stellar calendar on the wall.
 to give you a nod as you pass in.  Her beauty, though great, is surpassed by
 the swirl of etherous colors that she busies herself with.    
 ~
-bdl dh 0 E
+2058 0 0 0 16 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -80,7 +80,7 @@ A shadow passes along the ground something flies overhead.
    Regarded in local myth as a bird of prophecy, it regards you with one eye as
 it passes over.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 0
@@ -93,7 +93,7 @@ A smoke-colored rat sits in the shadows.
    It slinks quickly from your vision, apparently nervous about eye contact.  
 
 ~
-cdg ks 0 E
+76 0 0 0 524288 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -106,7 +106,7 @@ You sense someone lurking about.
    Catching you spotting him, he gives you a quick grin and a friendly nudge.
 Better check your pockets.    
 ~
-dgh st -600 E
+200 0 0 0 1572864 0 0 0 -600 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -121,7 +121,7 @@ A blackberry picker is singing among the bushes.
 Black hair frames a gentle face and broad grey eyes accustomed to hardship.  
 She gives you a shy smile and feigns interest in a fray of her sleeve.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -136,7 +136,7 @@ kneecaps a second glance.  He seems engaged in drawing the eyes of persons of
 wealth.  He wears a tray of spices and other goods on a strap around his neck.
   
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -149,7 +149,7 @@ A mendicant in rags shoves a cup in your face.
    You are absorbed by the foul smell of his ragged body, but take pity; there
 are worse odors among the wild regions of the vast world.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -162,7 +162,7 @@ A knight in bright armor is telling tales in a roaring voice.
    His shining armor and sword of silver are so stainless that you wonder if he
 merely has a master blacksmith, or an overactive imagination.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -175,7 +175,7 @@ An eager squire stands attendant.
    He appears to be hanging on his lord's every word, but when watched closely
 seems to pay more attention to his cold mug of ale.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -188,7 +188,7 @@ A foreign princess is downing shots at the bar.
    She has a beauty that fascinates the eye, but she shows about as much
 interest in you as an empty keg.    
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -202,7 +202,7 @@ A gypsy minstrel bows a fiddle nearby.
 for the attention of the eye.  She has thrown down his feathered cap and seems
 ready for donations.    
 ~
-dg s 0 E
+72 0 0 0 524288 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -215,7 +215,7 @@ The village idiot is dancing about.
    He notices you checking him out, bounces up into your face, and begins
 reciting bad poetry.  He looks suspiciously like someone you know.    
 ~
-cdegh 0 0 E
+220 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -230,7 +230,7 @@ The Priestess of the Ministry is here, garbed in black.
 priestly arts.  The black gown that she wears flows past her toes to the stone
 floor.    
 ~
-bd h 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -244,7 +244,7 @@ The Mistress of Assassins comes half out of the shadow.
 assassins guild.  She is willing to train newcomers to her roguish trade, after
 that you must search elsewhere for learnings.    
 ~
-bd h 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -257,7 +257,7 @@ The Knightmaster fingers his beard and ponders you.
    A swarthy man clad in the padded armor standard for training newcomers.  
 Thick auburn hair and beard frame a face intelligent in battle.    
 ~
-bd h 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -271,7 +271,7 @@ The Archmage watches you through a crystal ball as you arrive.
 but his powers have only grown throughout the years.  He is willing to teach
 his mystical arts to newcomers.    
 ~
-bd h 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -285,7 +285,7 @@ The bartender is here doing his thing.
 find their way to this bar from all lands have had an effect on him.  He
 glances up and gives you a lopsided grin as he mumbles to the floor.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -299,7 +299,7 @@ A retired thief cleans a shot glass behind the counter.
 the Nightbreak Cafe for the assassins guild.  So may you, if you become
 addicted enough to caffeine.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -313,7 +313,7 @@ The falconer stands proudly before several cages.
 his taloned birds.  A magnificent white kestrel stares at you from his left
 shoulder.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -327,7 +327,7 @@ The cartographer grins at you over wire-rimmed spectacles.
 ready to cut some deals.  There is a rumour he was kicked out of the mages
 guild for fraud.  Can you trust his goods?    
 ~
-bdnopr 0 -800 E
+188426 0 0 0 0 0 0 0 -800 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -339,7 +339,7 @@ The town treasurer sits happily on a huge pile of gold.
 ~
    This little man has found his bliss.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -352,7 +352,7 @@ The blacksmith stands in the glare of the fire.
    This ex-warrior is short and brawny, looks to have some dwarf ancestry.  He
 is carrying a hot poker though, better not mess with him.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -365,7 +365,7 @@ The jeweller stands behind a glass case of rubies.
    The jeweller is a dark-skinned woman in a silken frock.  She seems to be
 doing very well for herself.  A black gem sparkles dimly round her neck.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -379,7 +379,7 @@ Phadela is here grinning maniacally in a mirror.
 superstitious.  Her dark eyes look sharply into yours in the mirror on the far
 wall.  Her black hair and turban remind you of her exotic origins.    
 ~
-bdnopr k 0 E
+188426 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -392,7 +392,7 @@ The hobbit pastry chef rolls some dough behind the counter.
    A round, short fellow covered in flour.  He looks content as a mouse in a
 corn shed, snacking on his sticky creations perpetually.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -405,7 +405,7 @@ The old alchemist stands here preparing bubbling vials.
    He is withered as a gnarled tree, but seems wise in a mad sort of way.  
 Glass vials of all colors surround him, attesting to his knowledge.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -418,7 +418,7 @@ The wise magess flies about the shop.
    An old silver haired woman levitates and sings to herself as she reshelves
 tomes and organizes scrolls and parchments.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -432,7 +432,7 @@ Mekala tosses some pad tai in a pan nearby.
 spicy-hot dishes for this heavily traversed town.  She sings a foreign song in
 a bizarre, guttaral tongue.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -446,7 +446,7 @@ The armourer is here buffing a suit of scale mail.
 hundred pounds..  Needless to say, he has many friends.  He stands rose-buffing
 a beautiful suit of scale mail.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -460,7 +460,7 @@ The weaponsmaster sharpens a kris at the back wall.
 alone in the world of blade artistry, and generally people grant him his wish
 with pleasure.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 5 8 1
@@ -473,7 +473,7 @@ A little old lady hovers around you.
    She looks a little bored, and pleased to see you, hoping for a big sale.  
 You cringe as she gives you a warm toothless smile.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -487,7 +487,7 @@ A grey and white mockingbird mimics you from an oak branch.
 impression that looks very familiar and makes your friends crack up laughing.
   
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -500,7 +500,7 @@ A paranoid adventurer hides within the town walls, afraid to leave.
    His bug eyes and electric hair show you he has perhaps seen to many beasts,
 and they were too much for him.    
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -514,7 +514,7 @@ A silk trader is strolling, looking for business.
 face.  When he notes you looking him over he smiles cunningly and shows you a
 variety of colored silk goods.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -528,7 +528,7 @@ A mischievious boy is looking for something to set on fire.
    His small, darting eyes are set off by a mess of tousled black hair.  Ever
 since his sling shot was taken away, he has been playing with torches.    
 ~
-dg s -40 E
+72 0 0 0 524288 0 0 0 -40 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -541,7 +541,7 @@ A dark-haired girl is eyeing you curiously.
    This small girl has a fine dress and precocious look that makes you feel she
 must be a wealthy citizen's daughter, perhaps a merchant or judge.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -555,7 +555,7 @@ A tabby cat is stalking a mockingbird.
 on a fluttering mockingbird, the stripes of her thick black and brown fur
 mingling with the lines of the grasses.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -568,7 +568,7 @@ An old mage studies the chessboard in rapt contemplation.
    His white beard trails down to his withered toes.  His forehead is creased
 in contemplation, but a wine-induced smile plays on his lips.    
 ~
-bdl d 0 E
+2058 0 0 0 16 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -581,7 +581,7 @@ A young warrior is sparring with his shadow.
    This brawny fellow hops about, rather gracelessly, shadow-boxing.  He is too
 absorbed to notice you watching him.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -595,7 +595,7 @@ A thief is lounging, hiding out from the bounty hunters.
 crimes.  With his feet up and margarita in hand, he kicks back in an easy chair
 and thumbs through a magazine.    
 ~
-bd 0 -1000 E
+10 0 0 0 0 0 0 0 -1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -610,7 +610,7 @@ A priestess is preparing a blindfolded animal for sacrifice.
 a dark water over the animal.  She asks that you take a seat and keep quiet.  
 
 ~
-bdl dh 0 E
+2058 0 0 0 16 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 2
@@ -624,7 +624,7 @@ An iron chain rattles as something moves in the back of the room.
 chained to the back wall.  Even its eyes are darkened as a black fold of cloth
 covers them until the moment of its departure from the world.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -637,7 +637,7 @@ A grey cat pads around, sniffing things.
    He seems vaguely interested in something beyond the range of your five
 senses, as cats often are.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -650,7 +650,7 @@ A large white cat is sunning himself on a wall.
    He's a beautiful creature, with a long snow-colored coat tinged with gold in
 the sunlight.  His eyes are closed as he lies in bliss in the heat.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -664,7 +664,7 @@ The town butcher tosses meat cleavers about listlessly.
 he hurls several sharp meat cleavers around the edge of the door without
 looking up.    
 ~
-bdnopr 0 -700 E
+188426 0 0 0 0 0 0 0 -700 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -679,7 +679,7 @@ The gate watchman stares glass-eyed at the horizon.
 but doesnt strike you as having the froth-mouthed drive to fight as seen in the
 town guards.    
 ~
-bdl d 0 E
+2058 0 0 0 16 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -693,7 +693,7 @@ A little sparrow pecks at the ground.
 someone's pet.  It regards you with one eye then the other in a nervous
 fashion, awaiting its first chance to fly to freedom.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -707,7 +707,7 @@ A red-winged blackbird is preening nearby.
 a keen eye.  The small metal clasp round one leg tells you it is someone's
 trained pet.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -721,7 +721,7 @@ A giant white kestrel is perched near its master.
 but the sharp curved beak and arched talons remind you of its predatory habits.
 A tiny metal ring is clasped round one leg..  It must be someone's pet.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -736,7 +736,7 @@ quiet words of philosophy when his tongue is loosened by drink.  His dress
 depicts a man of learning and his voice one of some foul experience.  
 Something - or someone - still haunts him to this day.    
 ~
-bdl ck 1000 E
+2058 0 0 0 8 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -752,7 +752,7 @@ in the ways of enchantment.  Golden hair falls to her waist, her eyes are cyan
 blue and widened with anger, or perhaps a tinge of fear.  Long presumed dead,
 she wears one of many guises and is accustomed to discarding lives.    
 ~
-bd hns -1000 E
+10 0 0 0 524288 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -767,7 +767,7 @@ elongate body with the head of a woman, and make no sound with her curious
 writhing.  It looks intelligent enough to judge whether you are worthy to pass
 into the guild of rogues that is its keeping.    
 ~
-bd df -900 E
+10 0 0 0 80 0 0 0 -900 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -781,7 +781,7 @@ A large guardian gryphon sits immobile before you.
 passively at you with cold red eyes.  It watches faithfully over the guild of
 physical battle that is its charge; only those worthy may enter.    
 ~
-bd df 900 E
+10 0 0 0 80 0 0 0 900 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -795,7 +795,7 @@ A basilisk summoned from the ether guards a doorway.
 Nonetheless, this reptile, a figure born of a cold wisdom, knows well enough if
 you are worthy to pass into the guild of priests.    
 ~
-bd df 900 E
+10 0 0 0 80 0 0 0 900 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 0
@@ -810,7 +810,7 @@ sort of ruler.  It is charged with the worthy task of defending the guild from
 unwelcome intruders.  Its wickedly curving horns and innocuous teeth attest to
 its ability to....  Well, dispose of you.    
 ~
-bd df -900 E
+10 0 0 0 80 0 0 0 -900 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -823,7 +823,7 @@ A warrior of the Black Watch maintains a alert vigilance here.
    A handsome, stalwart warrior of the famed elite guard of Sundhaven keeps a
 tireless watch over the peace of the town.    
 ~
-dg df 800 E
+72 0 0 0 80 0 0 0 800 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -837,7 +837,7 @@ The Lord of the Black Watch keeps the peace as he sips a scotch.
 Sundhaven, seems a fairly complacent noble confident in his own strength.  He
 surveys his surroundings casually over the rim of a glass of strong drink.    
 ~
-dgl dfk 500 E
+2120 0 0 0 80 0 0 0 500 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -851,7 +851,7 @@ A blind mage is sitting here, communing with nature.
 right through you.  His sanity, also long lost, might have made him a fine
 fellow once, but he would best be left alone now.    
 ~
-bcd k -800 E
+14 0 0 0 0 0 0 0 -800 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -866,7 +866,7 @@ Something makes an eel-like motion under the water.
 skin wet and oil-black.  The row of teeth that gapes for an instant above the
 waterline gives a hint of its hunger for prey in this deserted place.    
 ~
-dg dfgkns -900 E
+72 0 0 0 524496 0 0 0 -900 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -879,7 +879,7 @@ A small moth flits about nearby.
    The moth, pale downy white in color, beats its wings heavily above some
 ferns nearby.  It seems quite harmless.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -894,7 +894,7 @@ lack of interest.  The scars on his face are an indication that he has seen
 foul weather of all sorts on the roads, and nothing you could request would
 surprise him.    
 ~
-abd 0 0 E
+11 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -908,7 +908,7 @@ A Sundhaven noble stares past you with an aloof air.
 finery.  He appears unaware of your presence, and preoccupied with his own
 affairs.    
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -920,7 +920,7 @@ Stu the Recruit is standing here.
 ~
    Achhh!  Dont pay too much attention to him or you'll regret it.    
 ~
-cdegh 0 0 E
+220 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1

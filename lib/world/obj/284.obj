@@ -3,7 +3,7 @@ candelabra~
 a candelabra~
 A candelabra is sitting here, emitting a soft glow.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 5 0
 50 1 0 0
 A
@@ -13,7 +13,7 @@ pillow~
 a pillow~
 A pillow adorned with mirrors sits here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 1 6
 1 1 0 0
 #28402
@@ -21,7 +21,7 @@ bardiche~
 a bardiche~
 A bardiche leans against the wall, casting a long shadow.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 3
 14 950 0 0
 #28403
@@ -29,7 +29,7 @@ fly key~
 a dead fly~
 A dead fly lies on its back with its legs twitching.~
 ~
-18 mn ao 0
+18 mn 0 0 0 ao 0 0 0 0 0 0 0
 9900 2 7 3
 1 950 0 0
 #28404
@@ -37,7 +37,7 @@ heart box~
 a heart shaped box~
 A heart shaped box made of pink crepe paper sits here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 1000 0 0 0
 2 950 0 0
 #28405
@@ -45,7 +45,7 @@ corkscrew~
 the Corkscrew of the GODS~
 A corkscrew lies here, a cork still in it.~
 ~
-5 abgh an 0
+5 abgh 0 0 0 an 0 0 0 0 0 0 0
 1 3 5 11
 1 1 0 0
 #28407
@@ -53,7 +53,7 @@ ghenna blood~
 some blood~
 A large pool of blood sits here with flies buzzing about it.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #28408
@@ -61,7 +61,7 @@ ghenna hand~
 a rotting hand~
 A half decayed hand sits here (Gross!).~
 ~
-12 ehmn ao 0
+12 ehmn 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #28409
@@ -69,7 +69,7 @@ dead fly~
 a dead fly~
 A dead fly lays on its back with its legs twitching slightly.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 22 17 33 33
 1 1 0 0
 #28410
@@ -77,7 +77,7 @@ ghenna cinch~
 a genie's cinch~
 There is a gold roped cinch laying here.~
 ~
-9 abg al 0
+9 abg 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
 3 500 0 0
 #28411
@@ -85,7 +85,7 @@ spear~
 a spear~
 A wooden spear, with a crudely fashioned stone tip, sits here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 11
 8 200 0 0
 #28412
@@ -93,7 +93,7 @@ gorgimera wings~
 a pair of dragon's wings~
 A mass of black leather sits here.~
 ~
-9 abg ad 0
+9 abg 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 10 952 0 0
 #28413
@@ -101,7 +101,7 @@ jaw bone jawbone~
 the jawbone of Lord Suzerain~
 A human jawbone is laying here, biting the dirt.~
 ~
-1 gn ao 0
+1 gn 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 5 300 0 0
 #28414
@@ -109,7 +109,7 @@ hide impermeable carapace~
 an impermeable carapace~
 A leathery, red scaled hide sits here in a heap.~
 ~
-9 aln ad 0
+9 aln 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 7 600 0 0
 #28415
@@ -118,7 +118,7 @@ a scrimshaw cameo~
 A piece of carved bone attached to a leather strap sits half buried in
 the dirt.~
 ~
-9 f aco 0
+9 f 0 0 0 aco 0 0 0 0 0 0 0
 1 0 0 0
 2 500 0 0
 #28416
@@ -126,7 +126,7 @@ skeleton ring~
 a skeleton ring~
 A small ring of a human skeleton sits here.~
 ~
-18 mq abo 0
+18 mq 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #28417
@@ -134,7 +134,7 @@ loop viscera ring~
 a ring made of viscera~
 A small loop of entwined viscera lays here.~
 ~
-9 fg ab 0
+9 fg 0 0 0 ab 0 0 0 0 0 0 0
 1 0 0 0
 1 500 0 0
 #28418
@@ -142,7 +142,7 @@ ghenna dragon claw~
 a dragon's claw~
 The severed claw of a maroon colored beast squirms in the dirth here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 7 4 3
 10 1000 0 0
 #28419
@@ -150,7 +150,7 @@ oriental rug~
 an oriental rug~
 An oriental rug lays here, its fringes blowing in the breeze.~
 ~
-15 g ao 0
+15 g 0 0 0 ao 0 0 0 0 0 0 0
 1000 0 0 0
 12 1000 0 0
 E
@@ -162,7 +162,7 @@ snake crown~
 a crown of woven snakes~
 A swirling mass of snakes is writhing here.~
 ~
-9 ahj ae 0
+9 ahj 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
 7 500 0 0
 #28421
@@ -170,7 +170,7 @@ roygbv~
 a prizmatic bracelet~
 Something lies here, shimmering in spectral colors.~
 ~
-9 g amo 0
+9 g 0 0 0 amo 0 0 0 0 0 0 0
 3 0 0 0
 3 1000 0 0
 A
@@ -182,7 +182,7 @@ ghenna baggy purple pants~
 baggy purple pants~
 A pile of purple silk hovers above the ground here.~
 ~
-9 abg af 0
+9 abg 0 0 0 af 0 0 0 0 0 0 0
 5 0 0 0
 1 300 0 0
 A
@@ -194,7 +194,7 @@ n nosferatu~
 the sword of Nosferatu~
 A small sword with a zigzag blade lies here.~
 ~
-5 efg an 0
+5 efg 0 0 0 an 0 0 0 0 0 0 0
 0 8 3 11
 10 690 0 0
 E
@@ -208,7 +208,7 @@ razor boots~
 Some razor tipped boots~
 A pair of shit-kickers sits here.~
 ~
-9 b ag 0
+9 b 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 5 800 0 0
 #28425
@@ -216,7 +216,7 @@ chrome leggings~
 chrome leggings~
 Some slick, shiny chrome glints in the sunlight.~
 ~
-9 a af 0
+9 a 0 0 0 af 0 0 0 0 0 0 0
 8 0 0 0
 9 120 0 0
 #28426
@@ -224,7 +224,7 @@ chrome sleeves~
 chrome sleeves~
 Some slick, shiny chrome glints in the sunlight.~
 ~
-9 a ai 0
+9 a 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
 7 1000 0 0
 #28427
@@ -232,7 +232,7 @@ chrome shield~
 a chrome shield~
 Some slick, shiny chrome lies glinting in the sunlight.~
 ~
-9 ag aj 0
+9 ag 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
 10 1000 0 0
 #28428
@@ -240,7 +240,7 @@ vermillion cloak~
 a vermillion cloak~
 A pile of bright red fabric sits here.~
 ~
-15 g ak 0
+15 g 0 0 0 ak 0 0 0 0 0 0 0
 50 0 0 0
 4 200 0 0
 #28429
@@ -248,7 +248,7 @@ chrome gauntlets~
 chrome gauntlets~
 Some slick, shiny chrome glints in the sunlight.~
 ~
-9 ag ah 0
+9 ag 0 0 0 ah 0 0 0 0 0 0 0
 6 0 0 0
 4 300 0 0
 #28430
@@ -256,7 +256,7 @@ chrome helm~
 a chrome helm~
 Some slick, shiny chrome glints in the sunlight.~
 ~
-9 ag ae 0
+9 ag 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 4 1000 0 0
 #28431
@@ -264,7 +264,7 @@ ghenna footlocker~
 the footlocker~
 A bound footlocker of black leather sits against the wall.~
 ~
-15 ag a 0
+15 ag 0 0 0 a 0 0 0 0 0 0 0
 300 5 1 0
 50 100 0 0
 #28432
@@ -272,7 +272,7 @@ ghenna wyrm book~
 the book of the Wyrm~
 A book made from human skin sits here.~
 ~
-3 abgop ao 0
+3 abgop 0 0 0 ao 0 0 0 0 0 0 0
 29 5 5 26
 3 1000 0 30
 #28433
@@ -280,7 +280,7 @@ Whip leather cat~
 a cat 'o nine tails~
 A flimsy black leather whip lies here.~
 ~
-5 bgl an 0
+5 bgl 0 0 0 an 0 0 0 0 0 0 0
 0 1 15 2
 4 950 0 0
 #28434
@@ -288,7 +288,7 @@ Ghenna black leather bra~
 a black leather push-up bra~
 A scrap of black leather is vibrating here.~
 ~
-9 bgh ado 0
+9 bgh 0 0 0 ado 0 0 0 0 0 0 0
 4 0 0 0
 2 500 0 0
 #28435
@@ -296,7 +296,7 @@ Ghenna spiked heels~
 Spiked heels~
 A pair of do-me pumps is sitting here.~
 ~
-9 bh ag 0
+9 bh 0 0 0 ag 0 0 0 0 0 0 0
 -1 0 0 0
 2 125 0 0
 #28458
@@ -304,7 +304,7 @@ Ghenna leather thong~
 a black leather thong~
 A thin strip of black leather is wedged into a crack in the dirt.~
 ~
-9 bgh al 0
+9 bgh 0 0 0 al 0 0 0 0 0 0 0
 2 0 0 0
 1 100 0 0
 #28464
@@ -312,7 +312,7 @@ Ghenna hatpin~
 a hatpin~
 A hatpin has been left here.~
 ~
-5 abg an 0
+5 abg 0 0 0 an 0 0 0 0 0 0 0
 0 2 2 11
 1 1 0 0
 #28465
@@ -320,7 +320,7 @@ Shoe key~
 a shoe~
 A child's shoe is sitting here, none the worse for wear.~
 ~
-18 mn ao 0
+18 mn 0 0 0 ao 0 0 0 0 0 0 0
 9965 0 0 0
 1 1 0 0
 #28466
@@ -328,7 +328,7 @@ Ghenna fake voodoo totem~
 a voodoo totem~
 A voodoo totem sits here, grinning at you.~
 ~
-9 abhn ao 0
+9 abhn 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 1 1000 0 0
 #28477
@@ -336,7 +336,7 @@ ghenna sign warning~
 the sign~
 A sign sits here flashing a WARNING at you.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -356,7 +356,7 @@ mithril belt~
 a mithril belt~
 A belt of durable metal lies here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 7 0 0 0
 5 250 0 0
 A
@@ -366,7 +366,7 @@ ghenna tunic~
 a translucent tunic~
 Some celophane-like substance is laying here.~
 ~
-9 e ak 0
+9 e 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
 5 250 0 0
 A
@@ -378,7 +378,7 @@ ghenna light bow~
 a light mahogany bow~
 A thin bow hewn from mahogany lies here.~
 ~
-5 afk an 0
+5 afk 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 11
 3 400 0 0
 A
@@ -390,7 +390,7 @@ ghenna platinum ring~
 a platinum ring~
 A large ring made from precious metal is sitting here, evading the dirt.~
 ~
-9 af ab 0
+9 af 0 0 0 ab 0 0 0 0 0 0 0
 1 0 0 0
 1 500 0 0
 #28496
@@ -398,7 +398,7 @@ ghenna gelatinous skin~
 gelatinous skin~
 A pile of jello undulates here.~
 ~
-9 a ak 0
+9 a 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
 5 900 0 0
 E
@@ -414,7 +414,7 @@ ghenna gelatinous leggings~
 gelatinous leggings~
 A pile of jello undulates here.~
 ~
-9 bg af 0
+9 bg 0 0 0 af 0 0 0 0 0 0 0
 8 0 0 0
 5 250 0 0
 E
@@ -432,7 +432,7 @@ ghenna skull~
 a skull~
 A human skull sits here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 1000 0 0 0
 50 250 0 0
 A
@@ -442,7 +442,7 @@ ghenna voodoo totem~
 a voodoo totem~
 A voodoo totem sits here, grinning at you.~
 ~
-12 bef ao 0
+12 bef 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 250 0 0
 A

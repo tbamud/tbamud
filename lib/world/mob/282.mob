@@ -6,7 +6,7 @@ A small winged balrog is here gazing at you with demonic red eyes
    The Balrog is a winged creature with eyes which seem to pervade your being
 and tear your soul apart.    
 ~
-dg 0 -100 E
+72 0 0 0 0 0 0 0 -100 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 1
@@ -18,7 +18,7 @@ The Elder Balrog is here...gnawing happily on your body.
 ~
    Well hes trying to consume you, bones and all.  Yuck.    
 ~
-dgl d -150 E
+2120 0 0 0 16 0 0 0 -150 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 1
@@ -30,7 +30,7 @@ The Grand High Balrog is here, kicking your ass.
 ~
    Hes umm, killing you
 ~
-dgl dh -200 E
+2120 0 0 0 16 0 0 0 -200 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -42,7 +42,7 @@ A human slave is chained to the wall here.
 ~
    He looks pretty pathetic, maybe you should end his misery
 ~
-bcd 0 50 E
+14 0 0 0 0 0 0 0 50 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -55,7 +55,7 @@ Kerjim, lord of the balrogs sits here on his throne.
    His wings spread throughout the room blocking some exits, his demonic red
 eyes glow as red as blood.  He looks very angry.    
 ~
-bdl dh -50 E
+2058 0 0 0 16 0 0 0 -50 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 0
@@ -68,7 +68,7 @@ Lileth stands here in all her magnificence.
    She is extremely beutiful, with glowing gold hair cascading down her
 shoulders, adorned with precious jewlery from all over the cosmos.    
 ~
-bdl dh 30 E
+2058 0 0 0 16 0 0 0 30 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -80,7 +80,7 @@ The Undead Corpse is here, attempting to persuade you to join the living dead
 ~
    Hes just a rotted corpse, with gangly ripped arms and a detachable head
 ~
-bd dn -500 E
+10 0 0 0 16 0 0 0 -500 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 0

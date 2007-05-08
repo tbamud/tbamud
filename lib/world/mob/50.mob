@@ -5,7 +5,7 @@ A raggity dervish walks on aimlessly.
 ~
    Dressed in loose fitting rags, this man looks like he could use some rest.  
 ~
-cdgh st 900 E
+204 0 0 0 1572864 0 0 0 900 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -18,7 +18,7 @@ A large dervish watches for signs of trouble.
    Dressed in loose fitting rags, this man looks like he could use LOTS of rest.
 
 ~
-dfg st 650 E
+104 0 0 0 1572864 0 0 0 650 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -31,7 +31,7 @@ A brightly colored snake slithers along the sands.
    This relatively harmless snake has bright alternating bands of red, yellow
 and black.  
 ~
-dg 0 -10 E
+72 0 0 0 0 0 0 0 -10 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -43,7 +43,7 @@ A small, red scorpion scuttles away at your approach.
 ~
    The little tail is mighty dangerous for such a small creature.  
 ~
-dg 0 -50 E
+72 0 0 0 0 0 0 0 -50 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -55,7 +55,7 @@ A giant, purple sand worm thrusts up out of the sand and attacks!
 ~
    He's big, mean, and purple.  Watch out!  
 ~
-bdeflpr dfk -300 E
+165946 0 0 0 80 0 0 0 -300 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -68,7 +68,7 @@ A very large brass dragon steps out of the darkness and says 'Hello.'
 ~
    Then adds to it, 'Prepare to die, have a nice day!  '
 ~
-bdeq dhkp 950 E
+65562 0 0 0 65552 0 0 0 950 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -82,7 +82,7 @@ The nomad leader sits silently in prayer.
    He is clad in silk robes lined with gold thread.  At his side is a large,
 engraved cutlass.  He has an especially haughty air about him.  
 ~
-bdhl d 950 E
+2186 0 0 0 16 0 0 0 950 E
 14 16 1 2d2+140 2d2+2
 140 19600
 6 6 1
@@ -95,7 +95,7 @@ The nomad commander stands here staring at you suspiciously.
    This is the nomad leader's second in command.  His clothes are richly woven
 of silk and gold thread.  A nasty cutlass hangs at his side.  
 ~
-bdhl 0 900 E
+2186 0 0 0 0 0 0 0 900 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -107,7 +107,7 @@ A proud nomad warrior stands here.
 ~
    This warrior is dressed in typical nomad clothing and looks quite mean.  
 ~
-bd 0 700 E
+10 0 0 0 0 0 0 0 700 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -119,7 +119,7 @@ A young slave sits here staring at you with pleading eyes.
 ~
    She looks quite thin and weak.  
 ~
-bdh 0 1000 E
+138 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 5 5 2
@@ -132,7 +132,7 @@ A pile of bones rises up to form a skeletal dracolich.
    The dracolich is now only bone with pieces of flesh hanging from it.  
 Obviously it no longer fears death.  
 ~
-bdeflnopq bdfhkp -1000 E
+124986 0 0 0 65620 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -145,7 +145,7 @@ The drider looks at you viciously while it draws its sword.
 ~
    This half-spider, half-drow creature is a formidable opponent.  
 ~
-dfg dkp -1000 E
+104 0 0 0 65552 0 0 0 -1000 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -158,7 +158,7 @@ A duergar is here mining precious stones with his pick.
    The duergar could probably crush your head as easily as he does those rocks.
 
 ~
-dfg dkp -850 E
+104 0 0 0 65552 0 0 0 -850 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -171,7 +171,7 @@ A myconoid lumbers along peacefully.
    The myconoid looks something like a giant mushroom (and probably has the same
 effect).  
 ~
-dgh dk 850 E
+200 0 0 0 16 0 0 0 850 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -183,7 +183,7 @@ A rather large myconoid stands here chanting in a strange tongue.
 ~
    The shaman shoots spores into the air.  
 ~
-cdgil dhk 950 E
+2380 0 0 0 16 0 0 0 950 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -197,7 +197,7 @@ A small oasis invites you to dive in.
    Looking a little closer at this oasis, you begin to wonder why it seems to be
 moving about...  
 ~
-bcdfqr 0 -200 E
+196654 0 0 0 0 0 0 0 -200 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -210,7 +210,7 @@ A very dangerous creature, a camel, snorts at you.
    It is advisable not to mess with this creature.  After all, you have heard
 many a horror story about experiences with camels.  Bad experiences.  
 ~
-bdfq 0 -351 E
+65578 0 0 0 0 0 0 0 -351 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0

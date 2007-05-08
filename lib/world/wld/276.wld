@@ -7,17 +7,12 @@ moment of pondering, you realize that this is the home of the famed
 Bishop from Monty Python.  Remember... the Bishop is watching YOU!
    Second Avenue is to the south.
 ~
-276 d 0
+276 8 0 0 0 0
 D2
 You see Second Avenue.
 ~
 ~
 0 -1 27599
-E
-sign~
-   The sign reads Church of the Pythons.  Like you didn't already know that,
-duh!  
-~
 E
 credits info~
    The city of New Sparta. By Naved.
@@ -30,6 +25,11 @@ Zone 276 is linked to the following zones:
 275 New Sparta                     at 27614 (east ) ---> 27516
 275 New Sparta                     at 27616 (west ) ---> 27569
 ~
+E
+sign~
+   The sign reads Church of the Pythons.  Like you didn't already know that,
+duh!  
+~
 S
 #27601
 Fire Station~
@@ -39,7 +39,7 @@ particularly enjoy sliding down the pole to the fire engines.
    Stairs lead up to the firemen's quarters, Second Avenue is to
 the north, and to the south is Fire Marshall Bob's office.
 ~
-276 d 0
+276 8 0 0 0 0
 D0
 You see the Second Avenue.
 ~
@@ -62,7 +62,7 @@ Fire Marshall Bob's Office~
 flammable chemicals.  The Fire Marshall is obviously not very competent.
    The Fire Station is to the north.
 ~
-276 d 0
+276 8 0 0 0 0
 D0
 You see the fire station.
 ~
@@ -77,7 +77,7 @@ like this room is used for more than just sleeping.  Other discarded
 objects in the room prove that this room is frequented by call girls.
    The Fire Station is down the fire pole.
 ~
-276 d 0
+276 8 0 0 0 0
 D5
 You see the station.
 ~
@@ -95,7 +95,7 @@ started building on this section of the road.
    To the east is the intersection of Broadway and Second Ave and to the 
 west you smell something bad.
 ~
-276 0 1
+276 0 0 0 0 0
 D1
 We already told you in the description that Broadway is there.
 ~
@@ -113,7 +113,7 @@ Second Avenue~
 you can't tell whether the smell is coming from the dump to the west,
 the pigs to the south, or from the animals to the north.
 ~
-276 0 1
+276 0 0 0 0 0
 D0
 You hear lots of barking and meowing.
 ~
@@ -142,7 +142,7 @@ The Pound~
 and cats for quick experience.  Go to town on them.  Second Avenue is to the
 south.    
 ~
-276 d 0
+276 8 0 0 0 0
 D2
 You see Second Avenue.
 ~
@@ -157,7 +157,7 @@ in New Sparta.  Watch out, they might even have your name!
    Second Avenue is to the north, the Chief's office is to the south,
 and the jail is to the west.        
 ~
-276 d 0
+276 8 0 0 0 0
 D0
 You see Second Avenue.
 ~
@@ -181,7 +181,7 @@ trash, radioactive or otherwise.  Go ahead -- feel free to dump here
 too, but don't stay too long 'cause the radiation can be fatal.
    Second Avenue runs east.
 ~
-276 0 1
+276 0 0 0 0 0
 D1
 You see Second Avenue.
 ~
@@ -197,7 +197,7 @@ office is neatly decorated with bat paraphranalia on one wall, and a
 fully stocked bar on the other.
    A door to the north leads to the rest of the station.
 ~
-276 d 0
+276 8 0 0 0 0
 D0
 You see the main station.
 ~
@@ -212,7 +212,7 @@ New Sparta's notorious criminals reside.  There are only two ways
 into the cell -- get the key off of the warden, or be convicted...
    The Police Station is to the east.
 ~
-276 d 0
+276 8 0 0 0 0
 D1
 You see the Police Station.
 ~
@@ -232,7 +232,7 @@ or you may rot here indefinitely, as the cell door is extremely
 hard to open from the inside.  Oh, and just one word of advice --
 don't bend over for the soap!
 ~
-276 d 0
+276 8 0 0 0 0
 D0
 You see the cell door leading to the free world.
 ~
@@ -248,7 +248,7 @@ Goethe.
    To the north is the Statue of Goethe, and to the south is
 Broadway.
 ~
-276 0 1
+276 0 0 0 0 0
 D0
 You see the Statue of Goethe.
 ~
@@ -268,7 +268,7 @@ honour his genius and humanitarianism, and to his contribution
 to the foundation of New Sparta.
    To the south is Goethe's Garden.
 ~
-276 0 1
+276 0 0 0 0 0
 D2
 You see Goethe's Garden.
 ~
@@ -295,7 +295,7 @@ and you wonder if it is safe to find out what's going on.
    The Intersection of First and Broadway is to the east and Hell's
 Kitchen is to the west.
 ~
-276 0 1
+276 0 0 0 0 0
 D1
 You see the Intersection of First and Broadway.
 ~
@@ -319,7 +319,7 @@ rather be than in Hell's Kitchen.
    You decide that the only real exit is to First Avenue which is 
 to the east.
 ~
-276 a 1
+276 1 0 0 0 0
 D1
 You see First Avenue.
 ~
@@ -333,7 +333,7 @@ they specialize in exotic pets for today's adventurers.  There is a sign
 on the wall.
    Broadway is to the west.
 ~
-276 d 0
+276 8 0 0 0 0
 D3
 You see a doorway that leads to Broadway.
 ~
@@ -363,6 +363,6 @@ S
 PETSHOP STOREROOM~
    Mortals should never come here!  
 ~
-276 jk 0
+276 1536 0 0 0 0
 S
 $~

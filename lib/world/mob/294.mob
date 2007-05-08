@@ -8,7 +8,7 @@ Spluttering and shaking, he begins to rise to his feet, cradling the cold steel
 of his knife in his hands.  A tiny voice in your head says very clearly,
 'Uh-oh.  ' You feel chilled...  Distant.    
 ~
-bd d -1000 E
+10 0 0 0 16 0 0 0 -1000 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -20,7 +20,7 @@ A rat scurries near the wall.
 ~
    Its black, furry, and seems to have a serious problem with fleas.    
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -34,7 +34,7 @@ A Leatherworker is here...working with leather.
 rough and scarred from frequent accidents with needles and leather-knives...  
 A hazard of the trade.    
 ~
-bdnopr 0 350 E
+188426 0 0 0 0 0 0 0 350 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -49,7 +49,7 @@ be almost timeless in their looks.  Her eyes glint with laughter as she notices
 your scrutiny and slowly examines you.  You squirm under her penetrating gaze.
   
 ~
-bdnopr 0 500 E
+188426 0 0 0 0 0 0 0 500 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -64,7 +64,7 @@ He holds a cleaver loosely and easily, almost as if he were born gripping that
 thing.  His hair seems greasy and useless on his balding pate.  He sneers at
 you and motions for you to take a number.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -78,7 +78,7 @@ Sakifan the librarian looks up from his book as you enter.
 he reads.  He puts his book down with a sigh as you come in.  Sakifan says,
 'May I help you?  '
 ~
-bd 0 750 E
+10 0 0 0 0 0 0 0 750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -91,7 +91,7 @@ The Brewermaster oversees the work and marks upon a clipboard.
    The Brewermaster looks you up and down, nods approvingly, and says, 'Would
 you like to chip in with the work?  Pays well...  '
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -106,7 +106,7 @@ the finished architectural drawing up to you; a plan to rebuild the ruined
 temple to the north!  He examines it again, and then slaps it down onto a sheaf
 of similar papers on his desk.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -120,7 +120,7 @@ Grebe tends bar here between the drunkards.
 survived the holocaust with only a few minor bruises to show for it.  You're
 not sure if you want to mess with him or not.    
 ~
-bdnopr 0 -300 E
+188426 0 0 0 0 0 0 0 -300 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -134,7 +134,7 @@ A Sailor-Merchant points out his wares.
 here.  He grins snaggle-toothedly at you and tries to sell you an anchor.  You
 don't think you need it.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -147,7 +147,7 @@ The Landlord asks you how long you'll be staying.
    The landlord of this boarding house sneers at you and sticks out his hand.
 Payment in advance.    
 ~
-bd 0 -500 E
+10 0 0 0 0 0 0 0 -500 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -161,7 +161,7 @@ A cityguard is keeping the peace.
 mines or fields.  He has devoted his life to ensuring the protection of others.
   
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -173,7 +173,7 @@ A Brewery Worker rolls a barrel right on by you.
 ~
    He waves at you and keeps going on by...    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -186,7 +186,7 @@ A Boarder sighs and tromps back to his room.
    Sad, poor, and depressed.  Obviously not one of the citizenry elite of
 XXXX.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -201,7 +201,7 @@ quickly looks away.  You notice his pace has sped up slightly; in a hurry to
 get away from you?  Why would he...  Oh.  You've still got your weapon out.  
 
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -216,7 +216,7 @@ quickly looks away.  You notice her pace has sped up slightly; in a hurry to
 get away from you?  Why would she...  Oh.  You've still got your weapon out.  
 
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -230,7 +230,7 @@ A Merchant Trader is doing inventory in his head.
 training.  You don't think he would have gotten so successful by letting just
 anyone knock over his operation here.    
 ~
-bd 0 350 E
+10 0 0 0 0 0 0 0 350 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -242,7 +242,7 @@ An Old Woman sits here, rembering better times...
 ~
    Looking closer, you see that she isn't remembering; she's asleep!    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 4 4 2
@@ -255,7 +255,7 @@ A young boy plays quietly here.
    He looks up at you with watery eyes and asks for a drink.  He looks rather
 sickly.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 6 6 1
@@ -269,7 +269,7 @@ An aging housewife is waiting for her husband to return.
 with all those marauding bands of adventurers out there...  You never know!  
 
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -282,7 +282,7 @@ An utter slob of a man is curled up in his chair.
    He hasn't bathed in, what?  One, two...  You stand away quickly; the smell
 got to you.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 4 4 1
@@ -294,7 +294,7 @@ An Old Man stares at the checkerboard intently.
 ~
    He's playing checkers.  Leave him alone!    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 6 6 1
@@ -307,7 +307,7 @@ A man sits in his bachelor pad, just hanging out.
    He's cool, he's slick, he's got a job, and no woman will come near him.  
 That's life...    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 6 6 1

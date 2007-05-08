@@ -22,7 +22,7 @@ Zone 267 is linked to the following zones:
 268 Vice Island II                 at 26797 (west ) ---> 26804
 268 Vice Island II                 at 26798 (east ) ---> 26800
 ~
-267 0 0
+267 0 0 0 0 0
 S
 #26701
 Port Harem~
@@ -31,23 +31,23 @@ as far as you can see.  Hundred of beautifuly garbed women of all shades
 languish on the shore; they have stony-dull eyes that stare right past you.  
 Something looks not-quite-so-right in this pristine place.    
 ~
-267 0 2
+267 0 0 0 0 0
 D1
 To your east you can see a huge mound of dirt.
 ~
 ~
 0 0 26702
 E
-women woman~
-   Each woman is spectacularly beautiful--except for their glazed eyes and
-expressions of utter stupor.  What on earth could be wrong with them?  
-~
-E
 sand beach~
    Close examination of the beach shows that the sand is not only white--each
 and every grain is a single crystal; it reflects the light of the sun into a
 blinding display of bright white.  While each one exhibits a different color,
 they all blend into this pristine color.  
+~
+E
+women woman~
+   Each woman is spectacularly beautiful--except for their glazed eyes and
+expressions of utter stupor.  What on earth could be wrong with them?  
 ~
 S
 #26702
@@ -56,7 +56,7 @@ Beachside Harem~
 and you can hear screaming from down in the depths.  A large forest lies to
 your east, and a trail can be vaguely seen.    
 ~
-267 a 4
+267 1 0 0 0 0
 D1
 To your east you can see a beach road that leads into the forest.
 ~
@@ -82,7 +82,7 @@ fill every part of the area outside the path.  Strange noises and utterly
 blood-chilling screams fill the air.  It is very dark here.  The path leads on
 to your west, and a strange mound lies to your east.    
 ~
-267 a 2
+267 1 0 0 0 0
 D1
 The beach road continues on.
 ~
@@ -101,7 +101,7 @@ priceless vases, and piles of money and jewelry everywhere.  Beautiful, silent
 women dance before you, twirling in silk gowns that barely hide their beauty.
 A sound can be heard over all the racket, shouting, "Keep working!  "
 ~
-267 adj 1
+267 521 0 0 0 0
 D4
 You can just see from the hole in the ground that you are right by a path that leads into the woods.
 ~
@@ -117,7 +117,7 @@ fill every part of the area outside the path.  Strange noises and utterly
 blood-chilling screams fill the air.  It is very dark here.  A large hill rises
 to your east, and the beach road lies to your west.    
 ~
-267 ac 2
+267 5 0 0 0 0
 D1
 A large hill rises to your east.
 ~
@@ -135,7 +135,7 @@ Creepy Road~
 Perhaps it's the total and complete silence.  Or perhaps it's the skeletons
 strown haphazardly about.  You just don't know.    
 ~
-267 c 2
+267 4 0 0 0 0
 D1
 The creepy road continues east.
 ~
@@ -157,7 +157,7 @@ Creepy Road~
 Perhaps it's the total and complete silence.  Or perhaps it's the skeletons
 strown haphazardly about.  You just don't know.    
 ~
-267 0 2
+267 0 0 0 0 0
 D1
 The creepy road continues east.
 ~
@@ -180,7 +180,7 @@ Perhaps it's the total and complete silence.  Or perhaps it's the skeletons
 strown haphazardly about.  You just don't know.  A large building towers above
 you to the east.    
 ~
-267 c 2
+267 4 0 0 0 0
 D1
 You know, like we said, a large building lieing to your east and all.
 ~
@@ -192,13 +192,13 @@ The creepy road continues west.
 ~
 0 0 26739
 E
+skeletons~
+   They're quite real, and quite frightening.  We weren't lying to you.  
+~
+E
 building~
    The building is a dark grey shade, but it seems to have been soiled by grimy
 tar.  
-~
-E
-skeletons~
-   They're quite real, and quite frightening.  We weren't lying to you.  
 ~
 S
 #26709
@@ -209,7 +209,7 @@ To your south, you can see the beginnings of a rock-strewn-path...  Continuing
 further down, you can see the end of the hill.  The forest covers up most of
 the view from here.    
 ~
-267 0 4
+267 0 0 0 0 0
 D4
 Looking up, you can see the zenith of Vice Hill.
 ~
@@ -229,7 +229,7 @@ your south, you can see the beginnings of a rock-strewn path...  Continuing
 further down, you can see the end of the hill.  The forest covers up most of
 the view from here.    
 ~
-267 0 4
+267 0 0 0 0 0
 D4
 Looking up, you can see the zenith of Vice Hill.
 ~
@@ -247,7 +247,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your north.
 ~
@@ -269,7 +269,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your north.
 ~
@@ -291,7 +291,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your north.
 ~
@@ -313,7 +313,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your south.
 ~
@@ -335,7 +335,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your north.
 ~
@@ -357,7 +357,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your north.
 ~
@@ -379,7 +379,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your north.
 ~
@@ -401,7 +401,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your north.
 ~
@@ -423,7 +423,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your north.
 ~
@@ -445,7 +445,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 The tarry tunnel continues to your north.
 ~
@@ -467,7 +467,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ach 0
+267 133 0 0 0 0
 D1
 The tarry tunnel opens into a strange building to your east.
 ~
@@ -489,7 +489,7 @@ Tarry Tunnel~
 Your shoes half-squish, half-sink, half-stick in the disgusting substance as
 you slowly slog your way through the gunk.    
 ~
-267 ach 0
+267 133 0 0 0 0
 D2
 The tarry tunnel continues to your south.
 ~
@@ -513,7 +513,7 @@ dark openings of two tunnels to your east and west.  Of course, you could
 always go south up to the relative safety of the hill.  A huge tree here looks
 climbable, and you can vaguely see a net at the top.    
 ~
-267 c 4
+267 4 0 0 0 0
 D0
 You can see a dangerous-looking tarry road to your north.
 ~
@@ -546,7 +546,7 @@ Tarry Road~
 thicker and thicker as you venture north.  If you go south, you'll probably be
 able to turn back before it's too late.    
 ~
-267 acj 2
+267 517 0 0 0 0
 D0
 It looks very dangerous and squishy that way, but you could probably survive
 it.
@@ -566,7 +566,7 @@ thicker and thicker as you venture south.  If you go north, you'll probably be
 able to turn back before it's too late.  There is a sign on the side of the
 road here.    
 ~
-267 acj 2
+267 517 0 0 0 0
 D0
 The tar looks even more dangerous that way, but survivable.
 ~
@@ -590,7 +590,7 @@ Tarry Road~
 of escape--either go forward, or don't move at all.  Right ahead of you is a
 bubbling, boiling tar pit--it looks quite disgusting.  PANIC!    
 ~
-267 acj 2
+267 517 0 0 0 0
 D0
 Looks like that would be a VERY bad idea. I don't think you could escape
 that one.
@@ -611,7 +611,7 @@ you might, you can't get them out!  Each sinks lower and lower until your
 entire legs are encased in the pit.  You scream for help, but no one can hear
 you.    
 ~
-267 cfj 2
+267 548 0 0 0 0
 S
 #26728
 Vice Hill~
@@ -620,7 +620,7 @@ it still looks quite sinister.  You notice a rocky road to your south, and you
 can ascend the hill to take a look around you.  A road hangs a bit above you to
 your left by no supports!  Hmm...  A beautifuly made road is to your west.    
 ~
-267 0 4
+267 0 0 0 0 0
 D0
 You can see the beautiful Vice Hill.
 ~
@@ -655,7 +655,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 ac 1
+267 5 0 0 0 0
 D1
 To your east you can see the bottom of Vice Hill.
 ~
@@ -674,7 +674,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 0 1
+267 0 0 0 0 0
 D2
 The strange trail continues on.
 ~
@@ -700,7 +700,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 ac 1
+267 5 0 0 0 0
 D0
 The high path continues on.
 ~
@@ -719,7 +719,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 0 1
+267 0 0 0 0 0
 D0
 The strange trail continues on..
 ~
@@ -745,7 +745,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 ac 1
+267 5 0 0 0 0
 D0
 The high path continues on.
 ~
@@ -764,7 +764,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 0 1
+267 0 0 0 0 0
 D0
 The strange trail continues on..
 ~
@@ -790,7 +790,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 ac 1
+267 5 0 0 0 0
 D0
 The high path continues on.
 ~
@@ -809,7 +809,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 0 1
+267 0 0 0 0 0
 D0
 The strange trail continues on.
 ~
@@ -835,7 +835,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 ac 1
+267 5 0 0 0 0
 D0
 The high path continues on.
 ~
@@ -854,7 +854,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 c 1
+267 4 0 0 0 0
 D0
 The strange trail continues on.
 ~
@@ -880,7 +880,7 @@ tarry brine to your north, and to all other directions a sinister, black forest
 is eerily silent.  If you look very carefully, you can see the harbours to your
 north and east.  The exits descend in all directions.    
 ~
-267 0 4
+267 0 0 0 0 0
 D0
 The hill descends down into a tarry road, filled with the gooey stuff.
 ~
@@ -915,7 +915,7 @@ looks like a dropoff into absolute nothingness.  Rocks skitter as you slide
 around the road.  It really looks quite dangerous--the hill would be a much
 safer way to look at the view.    
 ~
-267 0 5
+267 0 0 0 0 0
 D0
 You can see the bottom of Vice Hill to your north. It looks comparatively safe.
 ~
@@ -939,7 +939,7 @@ looks like a dropoff into absolute nothingness.  Rocks skitter as you slide
 around the road.  It really looks quite dangerous--you'd be much better going
 back--now.    
 ~
-267 0 5
+267 0 0 0 0 0
 D0
 You can still go back--it's a better idea to anyways.
 ~
@@ -962,7 +962,7 @@ like a dropoff into absolute nothingness.  Rocks skitter as you slide around
 the road.  It really looks quite dangerous--you'd be much better going
 back--now.    
 ~
-267 0 5
+267 0 0 0 0 0
 D0
 You can still go back--it's a better idea to anyways.
 ~
@@ -985,7 +985,7 @@ it much better.  Each step brings you closer to the edge--it looks very danger-
 ous, and the cliff's edge is quite close now.  The ground is beginning to shake
 under your weight.    
 ~
-267 0 5
+267 0 0 0 0 0
 D0
 You can still go back--it's a better idea to anyways.
 ~
@@ -1008,7 +1008,7 @@ Cliff's Edge~
 only got a few seconds to see it, as you're squashed down below.  Too bad
 shrieks don't make you fly.    
 ~
-267 cj 5
+267 516 0 0 0 0
 S
 T 26710
 #26745
@@ -1020,7 +1020,7 @@ east, but you can't see anything in the room, because of the darkness.
 Shadows cast weird angles everywhere.  A faded plaque has hangs from a nail in
 a far corner of the room.    
 ~
-267 0 0
+267 0 0 0 0 0
 D1
 You can vaguly see some kind of picture or something on one of the walls...
 ~
@@ -1046,7 +1046,7 @@ enough, the pictures are so realistic, so clear, so true-to-life, that they
 look real.  Even closer examaniation reveals that they`re moving!  You probably
 don't want to stay here long.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D1
 You see a room filled with trophies.
 ~
@@ -1064,7 +1064,7 @@ Gargoyle Room~
 Suddenly, it seems to come to life and move slightly or was that just a shadow.
   
 ~
-267 cj 0
+267 516 0 0 0 0
 E
 gargoyle statue~
    It's a gargoyle, with a large gaping mouth.  Since you shouldn't be able to
@@ -1080,7 +1080,7 @@ room, and a strange room encased in seamless glass on the other half.  Behind
 the alter, a little uneavenness in the wall can be seen, as if someone cut
 perferations through the wall.    
 ~
-267 dj 0
+267 520 0 0 0 0
 D0
 There's something very strange up ahead. It looks like a huge statue--but you
 can clearly see a gaping maw...no human would ever make something so grotesque.
@@ -1117,7 +1117,7 @@ butcher shop--meat racks, knives of all various and sundry sizes, and other
 assorted meat-preparing items lie strewn around the room.  There is, of course,
 the paltry coatrack, with what look to be strange robes in it.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 You see the strange trophy room(which now begins to seem more a sacrificial
 chamber, as you look at it from this point of view...).
@@ -1131,7 +1131,7 @@ Wailing Tower~
 coming from above you--indeed, you can see a spiral staircase ascending into
 the building.  Should you go up?  You decide.    
 ~
-267 acdj 0
+267 525 0 0 0 0
 D3
 You can see the trophy room.
 ~
@@ -1153,7 +1153,7 @@ On the staircase~
 don't leave this stairwell.  Over and over and over the sounds shriek over you.
 Perhaps you should go up--and quickly.    
 ~
-267 acdj 0
+267 525 0 0 0 0
 D4
 You see a very weirdly shaped hallway.
 ~
@@ -1174,17 +1174,17 @@ the hole, and you can see streaks of rust where the iron bolts have oxidized.
 Manacles hang from the wall in the back of the cell, and you can see two
 skeletal hands, all that is left of what once must have been a human being.  
 ~
-267 acdj 0
+267 525 0 0 0 0
 D0
 You can see the strangely shaped hallway.
 ~
 bars cell door~
 1 26713 26753
 E
-manacles legirons irons hands skeletal~
-   Two small hands are all that remain of what must have once been a small
-child, or a very small human.  You can see teeth marks where it looks like
-someone was trying to bite their way out.  
+cot bed~
+   The cot is made of black.  A mattress made of straw lies on top of it--very
+thin, and certainly not comfortable.  Rats scuttle underneath the bed as you
+walk near it.  
 ~
 E
 hole drainage~
@@ -1193,10 +1193,10 @@ a whole lot of imagination to figure out what is supposed to go down in that
 one.  
 ~
 E
-cot bed~
-   The cot is made of black.  A mattress made of straw lies on top of it--very
-thin, and certainly not comfortable.  Rats scuttle underneath the bed as you
-walk near it.  
+manacles legirons irons hands skeletal~
+   Two small hands are all that remain of what must have once been a small
+child, or a very small human.  You can see teeth marks where it looks like
+someone was trying to bite their way out.  
 ~
 S
 #26753
@@ -1207,7 +1207,7 @@ to have something strange about it.  Perhaps it's the strange black tiling at
 certain points around the room.  There are doors leading in almost all
 directions, and the stairs continue on upward.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You see what looks to be the smoldered remains of a bonfire.
 ~
@@ -1241,7 +1241,7 @@ the room.  The coals are mushy here, and they're everywhere.  They creep
 through the soles of your boots and get caught between your toes.  What a
 disgusting place.  You can exit this gross room to your south.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D2
 You can see the strangely-shaped hallway.
 ~
@@ -1259,7 +1259,7 @@ Supply Room~
 looted a long time ago.  Some have been shattered to pieces.  You have an exit
 to your west.    
 ~
-267 acdj 0
+267 525 0 0 0 0
 D3
 You can see the strangely-shaped hallway.
 ~
@@ -1278,7 +1278,7 @@ once beautiful, has cobwebs hanging from its huge canopy.  The room is so dark
 that you can only view certain things even WITH a light.  A dresser is at the
 very back of the room.  You can exit to your north.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 You see the creepy hallway.
 ~
@@ -1297,7 +1297,7 @@ lit by some unknown source in an eerie green light.  The walls are painted a
 bright scarlet red.  Whoever painted this hallway didn't have kindness or
 bunnies and light in mind.  Exits lead in every direction but up.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You can see the creepy hallway.
 ~
@@ -1331,15 +1331,16 @@ obviously into the torture thing, as manacles, iron maidens, and racks line the
 walls.  A boiling cauldron of oil is in the very centre of the room.  A door is
 to your west.    
 ~
-267 d 0
+267 8 0 0 0 0
 D3
 You can see the creepy hallway.
 ~
 door~
 1 26732 26757
 E
-cauldron boiling oil~
-   The thing bubbles.  It curdles the brain and sends chills down your spine.  
+manacles manacle chain~
+   The manacles are small, and have spikes on the insides of them.  They look
+very painful.  
 ~
 E
 iron maidens maiden~
@@ -1347,9 +1348,8 @@ iron maidens maiden~
 it would be an unpleasant experience.  
 ~
 E
-manacles manacle chain~
-   The manacles are small, and have spikes on the insides of them.  They look
-very painful.  
+cauldron boiling oil~
+   The thing bubbles.  It curdles the brain and sends chills down your spine.  
 ~
 S
 #26759
@@ -1359,7 +1359,7 @@ lit by some unknown source in an eerie green light.  The walls are painted a
 bright scarlet red.  Whoever painted this hallway didn't have kindness or
 bunnies and light in mind.  You can go to your north or south.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You can't see much in that direction.
 ~
@@ -1377,7 +1377,7 @@ Closet~
 a good idea to try them on.  A stale musty smell has infested everything in
 this small space.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D2
 You see the creepy hallway.
 ~
@@ -1391,7 +1391,7 @@ lit by some unknown source in an eerie green light.  The walls are painted a
 bright scarlet red.  Whoever painted this hallway didn't have kindness or
 bunnies and light in mind.  You can go to your north or east.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You see the creepy hallway.
 ~
@@ -1410,7 +1410,7 @@ lit by some unknown source in an eerie green light.  The walls are painted a
 bright scarlet red.  Whoever painted this hallway didn't have kindness or
 bunnies and light in mind.  You can go to your north or south.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You see the creepy hallway.
 ~
@@ -1429,7 +1429,7 @@ lit by some unknown source in an eerie green light.  The walls are painted a
 bright scarlet red.  Whoever painted this hallway didn't have kindness or
 bunnies and light in mind.  You can go to your south or west.    
 ~
-267 d 0
+267 8 0 0 0 0
 D2
 You see the creepy hallway.
 ~
@@ -1450,7 +1450,7 @@ Most of the island is covered in forest, and extends around a huge hill.  The
 far, far north shows some absolutely huge trees, and a rather large, black pool
 of what can only be tar.  You can go back into the building by going east.    
 ~
-267 0 1
+267 0 0 0 0 0
 D1
 You see the creepy hallway.
 ~
@@ -1465,7 +1465,7 @@ rather sinister-looking magical instruments, to a yoke that is obviously fitted
 to the human body.  This isn't a pleasant place.  An interrogation room lies to
 your east, and a teleporting zone is to your north.    
 ~
-267 adj 0
+267 521 0 0 0 0
 D0
 You can see a teleportation square.
 ~
@@ -1483,7 +1483,7 @@ Screening Room~
 lacking in the information the interrogators need, they are taken to the
 torture chamber to your west.    
 ~
-267 d 0
+267 8 0 0 0 0
 D2
 You see the outlay.
 ~
@@ -1501,7 +1501,7 @@ Outlay~
 Strange pictures line the walls, and shrieks can be heard all around you.  You
 see no visible exits.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 ~
 door secret~
@@ -1513,7 +1513,7 @@ Outlay~
 Strange pictures line the walls, and shrieks can be heard all around you.  You
 see no visible exits.    
 ~
-267 d 0
+267 8 0 0 0 0
 D2
 ~
 door secret~
@@ -1525,7 +1525,7 @@ Waiting Room~
 painted a sterile white, and the air has a hint of fog in it.  There is an
 interrogation centre to your west.    
 ~
-267 d 0
+267 8 0 0 0 0
 D3
 You can see the interrogation room.
 ~
@@ -1541,7 +1541,7 @@ in the centre.  For what purpose, you shu268er to guess.  You can go back into
 the waiting room, or can go south through a teleportation device to the square
 room.    
 ~
-267 d 0
+267 8 0 0 0 0
 D1
 You see the waiting room.
 ~
@@ -1562,7 +1562,7 @@ room, but it's bolted to the ground, and there's a huge spike in the centre.
 What sicko would make a room up like this?  You can leave this place through a
 transporter to your east or go back to the waiting room to your west.    
 ~
-267 d 0
+267 8 0 0 0 0
 D1
 You see a transportation platform.
 ~
@@ -1580,7 +1580,7 @@ Waiting Room~
 painted a sterile white, and the air has a hint of fog in it.  There is an
 office to your east.    
 ~
-267 d 0
+267 8 0 0 0 0
 D3
 You can see the office of the Priest of Despair.
 ~
@@ -1593,7 +1593,7 @@ Outlay~
 Strange pictures line the walls, and shrieks can be heard all around you.  You
 see no visible exits.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 ~
 door secret~
@@ -1605,7 +1605,7 @@ Alcove~
 a large opening to a tar pit of boggling dimensions.  You can(and should) go
 back to your west.    
 ~
-267 d 0
+267 8 0 0 0 0
 D2
 DON'T GO THAT WAY! It's a tar pit, STUPID! DORK!
 ~
@@ -1624,7 +1624,7 @@ adventurers were thrown(or stupidly walked into) the tar pit.  Looks as though
 they were thrown in not far from here, as you can see telltale signs of
 scuffling around you.    
 ~
-267 d 0
+267 8 0 0 0 0
 D1
 That's probably as close as you'd want to get to the tar pit.
 ~
@@ -1637,7 +1637,7 @@ Outlay~
 Strange pictures line the walls, and shrieks can be heard all around you.  You
 see no visible exits.    
 ~
-267 d 0
+267 8 0 0 0 0
 D2
 ~
 door secret~
@@ -1650,7 +1650,7 @@ exits.  They're transporter platforms, each designed to be a room to step in to
 go to the designated areas.  A small sign is on a wall at the corner of the
 room.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You see a transporter platform.
 ~
@@ -1689,7 +1689,7 @@ see the remains of a deserted corridor.  The entire chamber is empty and devoid
 of anything of any real interest.  You can see an transporter platform to your
 north.  All around you are depictions of people in inescapable situations.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You can see a transporter platform.
 ~
@@ -1712,7 +1712,7 @@ Deserted Corridor~
 seem to be muted in this strange place.  The air seem thicker and heavier than
 usual.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You see a deserted corridor.
 ~
@@ -1735,7 +1735,7 @@ Deserted Corridor~
 all sounds seem to me muted in this strange place.  The air seem thicker and
 heavier than usual.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You see a deserted corridor.
 ~
@@ -1763,7 +1763,7 @@ Deserted Corridor~
 seem to be muted in this strange place.  The air seem thicker and heavier than
 usual.    
 ~
-267 d 0
+267 8 0 0 0 0
 D1
 You see nothing.
 ~
@@ -1786,7 +1786,7 @@ Dark Room~
 nothing short of your hand in front of your face.  The air seem thicker and
 heavier than usual.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D3
 You can see the deserted corridor.
 ~
@@ -1801,7 +1801,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or down.    
 ~
-267 0 3
+267 0 0 0 0 0
 D0
 The netting continues through the trees here.
 ~
@@ -1826,7 +1826,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or south on through the trees.    
 ~
-267 0 3
+267 0 0 0 0 0
 D0
 The netting continues through the trees here.
 ~
@@ -1851,7 +1851,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or south on through the trees.    
 ~
-267 0 3
+267 0 0 0 0 0
 D0
 The netting continues through the trees here.
 ~
@@ -1877,7 +1877,7 @@ feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or south on through the trees.  You can see a very dangerous tar pit
 right below you.    
 ~
-267 0 3
+267 0 0 0 0 0
 D0
 The netting continues through the trees here.
 ~
@@ -1902,7 +1902,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or south on through the trees.    
 ~
-267 0 3
+267 0 0 0 0 0
 D0
 The netting continues through the trees here.
 ~
@@ -1927,7 +1927,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north to a dock, or south on through the trees.    
 ~
-267 0 3
+267 0 0 0 0 0
 D0
 The netting ends at a dock.
 ~
@@ -1952,7 +1952,7 @@ to your south, keeping you from falling through the trees.  You can see a large
 tar pit to your south--good thing there's that netting to keep you from falling
 into it.    
 ~
-267 0 1
+267 0 0 0 0 0
 D2
 The netting begins to your south.
 ~
@@ -1968,7 +1968,7 @@ uncomfortable to look at is the fact that they are made from wax--and look so
 lifelike you can almost see them screaming in terror.  Do you see one move?  
 No, it must be your mind playing tricks on you.    
 ~
-267 ad 0
+267 9 0 0 0 0
 D0
 You can see a horrid hall to your north.
 ~
@@ -1983,7 +1983,7 @@ Or, perhaps the fact that it looks to be several rooms.  You really don't want
 to be here.  You can go south or north...  Neither way looks too comforting.  
 
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You see the strange trail.
 ~
@@ -2004,7 +2004,7 @@ torture lie around here, some that you'd never imagined could have been invent-
 ed.  Certainly not by a sane person.  You can go to your east(oh, so that's how
 you get back to the entrance), or to the south, into another chambre.    
 ~
-267 d 0
+267 8 0 0 0 0
 D1
 You see the entrance to the Office of the High Priest of Terror, of course.
 ~
@@ -2025,7 +2025,7 @@ were human or other.  You can get out of here by going back to the Hall of
 Torture, to the Temple of Terror to your east, or to the Office of the High
 Priest to your south.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You can see the hall of torture.
 ~
@@ -2052,17 +2052,20 @@ the frontpiece of the room, and a high-backed chair is behind it.  A plush sofa
 is in front of it, and plaques and other credentials line the walls.  An
 insignia--the cat o' nine tails--is frosted into the only window in the room.
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You, amazingly enough, end right back up at the entrance.
 ~
 ~
 0 0 26792
 E
-insignia window~
-   The cat o' nine tails, a whip with multiple straps, apparently is the
-ultimate symbol for the Reign of Terror.  It's the most painful--sometimes even
-fatal--whip known.  
+chair~
+   The chair is made of redwood, and looks very comfortable.  It also looks VERY
+heavy.  
+~
+E
+sofa~
+   This sofa looks so comfortable, you want to just sink right into it.  
 ~
 E
 plaques~
@@ -2076,13 +2079,10 @@ horrible feelings in life--Despair, Hopelessness, Fear, and the crowning
 emotion, in which all these culminate--Terror.  Not a pretty picture.  
 ~
 E
-sofa~
-   This sofa looks so comfortable, you want to just sink right into it.  
-~
-E
-chair~
-   The chair is made of redwood, and looks very comfortable.  It also looks VERY
-heavy.  
+insignia window~
+   The cat o' nine tails, a whip with multiple straps, apparently is the
+ultimate symbol for the Reign of Terror.  It's the most painful--sometimes even
+fatal--whip known.  
 ~
 S
 #26797
@@ -2093,7 +2093,7 @@ room, causing strange effects in the room.  The room is made from a metal that
 reflects the light like a mirror--but brighter.  You can go to the strange
 trail to your north, or on into the temple to your east.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You can see the strange trail.
 ~
@@ -2121,7 +2121,7 @@ You have to shield your eyes just to see in front of you.  It appears to be
 made from the same metal as the entrance to the building does.  A small room
 opens to your north.    
 ~
-267 d 0
+267 8 0 0 0 0
 D0
 You see a small shrine to your north.
 ~
@@ -2145,7 +2145,7 @@ the inscription, "You cannot take that which is not yours--but you can have as
 much of it as you want.  "...  You think you hear maniacal cackling somewhere
 around you, but when you turn, you see nothing.    
 ~
-267 d 0
+267 8 0 0 0 0
 D2
 You see the blindingly lit hallway.
 ~

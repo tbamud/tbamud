@@ -913,23 +913,23 @@ emote %speech%
 Angel Receives Treats - 207~
 0 j 100
 ~
-if %object.vnum% == 164
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A simple receive trig if you give the dog food she will eat it. If you give
+* her dog treats she will follow you. Everything else she drops.
+if %object.type% == FOOD
   wait 1 sec
   emote swallows %object.shortdesc% without even chewing.
   %purge% %object%
   wait 1 sec
   emote looks up at %actor.name%, hoping for some more.
-  wait 1 sec
-  mfollow %actor%  
-else
-  if %object.type% == FOOD
-    emote swallows %object.shortdesc% without even chewing.
-    %purge% %object%
-  else
-    wait 1 s
-    set obj_name %object.name%
-    drop %obj_name%
+  if %object.vnum% == 164
+    wait 1 sec
+    mfollow %actor%  
   end
+else
+  wait 1 s
+  set obj_name %object.name%
+  drop %obj_name%
 end
 ~
 #153
@@ -1160,9 +1160,12 @@ if %actor%
 end
 ~
 #166
-Mob Affect - 135~
+Cast spells on Greet - M135~
 0 g 10
 ~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Cast a random spell on players that enter. But, only if they are not already
+* affected and only 10% of the time.
 switch %random.12%
   case 1
     if %actor.affect(blind)%
@@ -1875,16 +1878,16 @@ say %speech%
 Confucius - 23~
 0 b 10
 ~
+* By Rumble of The Builder Academy   builderacademy.net 9091
 * Confucius - M23 - T186 By Rumble
-eval max %random.26%
+eval max %random.27%
 set txt[1] Before you embark on a journey of revenge, dig two graves. 
 set txt[2] Everything has its beauty but not everyone sees it. 
 set txt[3] Forget injuries, never forget kindnesses. 
 set txt[4] It does not matter how slowly you go so long as you do not stop. 
 set txt[5] Respect yourself and others will respect you. 
 set txt[6] Study the past if you would define the future. 
-set txt[7] The superior man, when resting in safety, does not forget that danger may come. When in a state of security he does not forget the possibility of ruin. When all is orderly, he does not forget that disorder may come. Thus his person is not endangered, and his States and all their clans are preserved. 
-set txt[8] What the superior man seeks is in himself; what the small man seeks is in others. 
+set txt[7] The superior man, when resting in safety, does not forget that danger may come. When in a state of security he does not forget the possibility of ruin. When all is orderly, he does not forget that disorder may come. Thus his person is not endanset txt[8] What the superior man seeks is in himself; what the small man seeks is in others. 
 set txt[9] Wheresoever you go, go with all your heart. 
 set txt[10] By nature, men are nearly alike; by practice, they get to be wide apart. 
 set txt[11] A man who has committed a mistake and doesn't correct it, is committing another mistake. 
@@ -1903,6 +1906,7 @@ set txt[23] What the superior man seeks is in himself. What the mean man seeks i
 set txt[24] What you do not want done to yourself, do not do to others. 
 set txt[25] When you know a thing, to hold that you know it; and when you do not know a thing, to allow that you do not know it - this is knowledge. 
 set txt[26] In any prisoner situation when you are communicating with a fellow prisoner be sure to agree about a danger signal first. Second make a cover story in case you are caught, and third, you need to decide on a backup communication system.
+set txt[27] The superior man understands what is right; the inferior man understands what is accepted by a majority. 
 set  speech %%txt[%max%]%%
 eval speech %speech%
 say %speech%

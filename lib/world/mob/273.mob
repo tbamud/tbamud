@@ -5,7 +5,7 @@ A facehugger stage alien sees you and springs!
 ~
    A facehugger is trying to wrap it's tail around your throat!    
 ~
-dfgmp ks -1000 E
+36968 0 0 0 524288 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -19,7 +19,7 @@ A slime drooling alien is here waiting for lunch!
    The alien 'smiles' back at you and extends its inner jaws!  SNAP SNAP SNAP!
   
 ~
-dfgm ks -1000 E
+4200 0 0 0 524288 0 0 0 -1000 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -35,7 +35,7 @@ The queen alien is here laying eggpods!
    The queen alien is less than pleased at your presence.  You should die now!
   
 ~
-bcdlmnopq fks -1000 E
+129038 0 0 0 524352 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 6 6 2
@@ -53,7 +53,7 @@ A Predator alien is here scouting for trophies.
 your size and already has a nice polished human skull hanging from his trophy
 belt.  It looks like you are next!    
 ~
-cdfghlmnoq bdfks 0 E
+96492 0 0 0 524372 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -70,7 +70,7 @@ Captain Vance Marshal is here in his exoskeleton armor!
    Captain Vance Marshal has obviously gone mad!  Then again you would too if
 you had survived as long as he has on this cursed space station!    
 ~
-bcdfhl dfk 0 E
+2222 0 0 0 80 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -91,7 +91,7 @@ as many at the bipedal aliens.  It also looks a lot nastier.  It moves with
 such speed on all fours that there is just no way you can out run it.  You must
 stand and fight this black monstrosity!    
 ~
-dfgl dfks -500 E
+2152 0 0 0 524368 0 0 0 -500 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -111,7 +111,7 @@ Lt. Miko Oshura is standing here in torn clothing.
 about her...  Not to mention her weapons!  Man is she ever glad to see a
 smiling HUMAN face!    
 ~
-cdghl dfk 500 E
+2252 0 0 0 80 0 0 0 500 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 2
@@ -129,7 +129,7 @@ The Predator Captain is standing here looking angry!
 have invaded his ship.  He will have to 'discuss' it with his crewmembers after
 he finishes polishing your skull!    
 ~
-bcdfghlm dfk -1000 E
+6382 0 0 0 80 0 0 0 -1000 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -145,7 +145,7 @@ A Space Station Alpha crewmember is here trying to stay alive!
 species of alien aggressors.  How he has managed to stay alive this long is
 anyone's guess.  He must be extreamly resourceful!    
 ~
-cdghil k 367 E
+2508 0 0 0 0 0 0 0 367 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1

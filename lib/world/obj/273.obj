@@ -3,7 +3,7 @@ staff Ra ra~
 the Staff of Ra~
 The Staff of Ra has been left here unguarded! What luck!~
 ~
-4 adegiklop ao 0
+4 adegiklop 0 0 0 ao 0 0 0 0 0 0 0
 30 5 5 26
 15 1000 0 0
 E
@@ -20,7 +20,7 @@ ACEPLM modules leg~
 a pair of ACELM's~
 A pair of ACE leg modules are lying here.~
 ~
-9 b af 0
+9 b 0 0 0 af 0 0 0 0 0 0 0
 7 0 0 0
 10 1000 0 0
 E
@@ -36,7 +36,7 @@ ACEMFG boots magnetic~
 some ACEMFG~
 A pair of ACEMFG are sitting here on the floor.~
 ~
-9 b ag 0
+9 b 0 0 0 ag 0 0 0 0 0 0 0
 6 0 0 0
 5 1000 0 0
 E
@@ -51,7 +51,7 @@ ACEUB belt utility~
 an advanced combat exoskeleton utility belt (ACEUB)~
 An ACEUB is hanging here~
 ~
-15 0 al 0
+15 0 0 0 0 al 0 0 0 0 0 0 0
 40 1 -1 0
 5 350 0 0
 A
@@ -61,7 +61,7 @@ ACES sleeves~
 a pair of advanced combat exoskeleton sleeves (ACES)~
 A pair of ACE sleeves are laying here!~
 ~
-9 b ai 0
+9 b 0 0 0 ai 0 0 0 0 0 0 0
 4 0 0 0
 5 330 0 0
 A
@@ -71,7 +71,7 @@ ACEG gloves~
 a pair of advanced combat exoskeletion gloves (ACEG)~
 A pair of ACEGs are laying here!~
 ~
-9 b ah 0
+9 b 0 0 0 ah 0 0 0 0 0 0 0
 2 0 0 0
 2 290 0 20
 A
@@ -83,7 +83,7 @@ ACPEH helmet~
 an advanced combat presurized exoskeleton helmet (ACPEH)~
 An ACPEH is laying laying here! ~
 ~
-9 b ae 0
+9 b 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 8 300 0 20
 A
@@ -95,7 +95,7 @@ ACEGP gravpack gravity pack~
 an advanced combat exoskeleton gravity pack (ACEGP)~
 An ACEGP is laying here!~
 ~
-22 b ak 0
+22 b 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 13 340 0 20
 A
@@ -105,7 +105,7 @@ AHHL flashlight~
 an advanced halogen helmet light (AHHL)~
 An AHHL is laying here.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 2 400 0 0
 #27309
@@ -113,7 +113,7 @@ HEPG plasmagun gun plasma~
 a High Energy Plasma Gun (HEPG)~
 A HEPG is laying here at your feet.~
 ~
-5 bm an 0
+5 bm 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 12
 21 450 0 20
 #27310
@@ -121,7 +121,7 @@ laser pistol~
 a shiny new laser pistol~
 A shiny new government issue laser pistol is lying here.~
 ~
-5 b an 0
+5 b 0 0 0 an 0 0 0 0 0 0 0
 0 3 9 12
 8 900 0 0
 E
@@ -134,7 +134,7 @@ laser rifle gun~
 a laser rifle~
 A well used laser rifle is laying here in the dust.~
 ~
-5 b an 0
+5 b 0 0 0 an 0 0 0 0 0 0 0
 0 5 8 12
 16 750 0 0
 E
@@ -147,7 +147,7 @@ IR Goggles~
 a pair of IR goggles~
 A pair of USSN Infra Red goggles lies here in the dust.~
 ~
-1 0 aeo 0
+1 0 0 0 0 aeo 0 0 0 0 0 0 0
 0 0 0 0
 2 400 0 0
 #27313
@@ -155,7 +155,7 @@ flying-blade blade~
 a Predator flying blade.~
 A Predator flying blade is lying here stuck into the ground.~
 ~
-5 abn an 0
+5 abn 0 0 0 an 0 0 0 0 0 0 0
 1 4 9 3
 10 750 0 0
 E
@@ -168,7 +168,7 @@ keycard key card red~
 a red plastic card~
 A red plastic card is laying here.~
 ~
-18 cdq ao 0
+18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #27315
@@ -176,7 +176,7 @@ keycard key card blue~
 a blue plastic card~
 A blue plastic card is laying here.~
 ~
-18 cdq ao 0
+18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #27316
@@ -184,7 +184,7 @@ keycard key card white~
 a white plastic card~
 A white plastic card lies here.~
 ~
-18 cdq ao 0
+18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #27317
@@ -192,7 +192,7 @@ keycard key card green~
 a green plastic card~
 A green plastic key card is laying here.~
 ~
-18 cdq ao 0
+18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 $~

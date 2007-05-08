@@ -6,16 +6,11 @@ and glasses, holding a variety of colored liquids.  Inside the cauldron is a
 purple-red liquid, bubbling and splashing all over the floor.  The only exit is
 back east, out of the hut.    
 ~
-96 cdg 0
+96 76 0 0 0 0
 D1
 ~
 door~
 2 9603 9602
-E
-tree oak~
-   Large oaken trees block out most of the light, giving the everything in the
-forest a dim green appearance.    
-~
 E
 credits info~
    Builder   : Kas
@@ -37,6 +32,11 @@ Links        : 03e
 Zone 96 was linked to the following zones:
  100 Northern Highway              at  9603 (east ) --->  10056
 ~
+E
+tree oak~
+   Large oaken trees block out most of the light, giving the everything in the
+forest a dim green appearance.    
+~
 S
 #9601
 On the Path into the forest~
@@ -47,7 +47,7 @@ their merry songs, voices intertangling into a mesh of sounds that faintly
 resembles a choir.  The path branches off to the west, but the main path
 continues north.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -72,7 +72,7 @@ decorated with strange runes, and animal skulls hang from the eaves.  The
 doorknob is fashioned from a human thigh bone.  Exits are back to the main
 path, or into the hut.    
 ~
-96 0 3
+96 0 0 0 0 0
 D1
 ~
 ~
@@ -93,7 +93,7 @@ A Cleared Path~
 this new path.  Very little traffic has passed this way, only a few plants and
 grass blades peeking up through the forest floor are trodden.    
 ~
-96 d 0
+96 8 0 0 0 0
 D3
 ~
 ~
@@ -108,7 +108,7 @@ The forest animals seem to take no heed of anyone, travelling along the path as
 any human would.  Squirrels, rabbits, hares, foxes, and other animals can be
 seen scurrying about.  The path continues north and south.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -126,7 +126,7 @@ are far more active here, and the ground is littered with evidence on their
 passing.  A bird chirps gleefully from a hole in a nearby tree, soon followed
 by a chorus of her chicks.  The path here splits in four directions.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -153,7 +153,7 @@ which accountrs for the increase in noise.  The tree itself is covered in moss
 and lichen, with violets and wildflowers shooting from the rotted wood.  The
 only exit is back to the intersection.    
 ~
-96 0 3
+96 0 0 0 0 0
 D1
 ~
 ~
@@ -167,7 +167,7 @@ plentiful.  The squirrels tittering, the birds chirping, and the animals just
 generally scampering about.  The path is filled with less leaves, now, and the
 ground gets even softer.  Exits are to the east and west.    
 ~
-96 0 0
+96 0 0 0 0 0
 D1
 ~
 ~
@@ -185,7 +185,7 @@ softer.  The air is beginning to take on an unpleasant odor, but it's not quite
 placeable.  The birdsong is as loud as ever, but the other animals seem to be
 strangely quiet.  The path turns south, or back west.    
 ~
-96 g 3
+96 64 0 0 0 0
 D2
 ~
 ~
@@ -202,7 +202,7 @@ A swampy pit~
 water and muck is in resting in the middle of the path.  The forest is silent,
 except the occasional bird chirping.  The only exit is back north.    
 ~
-96 ag 3
+96 65 0 0 0 0
 D0
 ~
 ~
@@ -217,7 +217,7 @@ intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
 the forest a wet sheen.  The path continues north and south.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -237,7 +237,7 @@ intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
 the forest a wet sheen.  The path continues north and south.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -255,7 +255,7 @@ many places the path is interrupted by small collapses, due to ants tunneling
 under.  In the underbrush nearby, an animal has burrowed a rather deep hole to
 make it's home.  Exits are west or back to the south.    
 ~
-96 0 3
+96 0 0 0 0 0
 D2
 ~
 ~
@@ -279,7 +279,7 @@ A three-way intersection~
 other hand, doesn't look like any animal uses it.  The path continues west and
 north, and back east.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -303,7 +303,7 @@ intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
 the forest a wet sheen.  The path continues north and south.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -321,7 +321,7 @@ many places the path is interrupted by small collapses, due to ants tunneling
 under.  In the underbrush nearby, an animal has burrowed a rather deep hole to
 make it's home.  Exits are east or back to the south.    
 ~
-96 0 3
+96 0 0 0 0 0
 D1
 ~
 ~
@@ -345,7 +345,7 @@ which accountrs for the increase in noise.  The tree itself is covered in moss
 and lichen, with violets and wildflowers shooting from the rotted wood.  The
 only exit is back west.    
 ~
-96 0 3
+96 0 0 0 0 0
 D3
 ~
 ~
@@ -361,7 +361,7 @@ intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
 the forest a wet sheen.  The path continues east and west.    
 ~
-96 0 3
+96 0 0 0 0 0
 D1
 ~
 ~
@@ -379,7 +379,7 @@ dense.  The trees are more spread apart, and flowers come less often.  The
 smaller and weaker animals seem to have disappeared, but the bigger ones seem
 to have grown more plentiful.  The path turns south, and continues back east.
 ~
-96 0 3
+96 0 0 0 0 0
 D1
 ~
 ~
@@ -399,7 +399,7 @@ of beauty about it.  Small animals scurry about, and birdsong can be heard even
 at the threshold of the forest.  Flowers line the path north into the forest,
 which is the only visible exit.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -423,7 +423,7 @@ someone wants an unobstructed view or someone's property line is near.  Far in
 the distance a cave makes a grey splotch on the horizon.  Exits are west or
 back north.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -441,7 +441,7 @@ the underbrush constantly, and the birdsong grows even fainter.  Loud roars
 come from the west, and the unmistakeable sound of an animal getting ripped in
 half.  The path continues west and east.    
 ~
-96 0 3
+96 0 0 0 0 0
 D1
 ~
 ~
@@ -459,7 +459,7 @@ seem to thrive in the silence.  The inhuman roars from the west grow louder,
 and the squelching of dead animals intensifies.  The smell of excrement floats
 through the air.  The path continues west and east.    
 ~
-96 0 3
+96 0 0 0 0 0
 D1
 ~
 ~
@@ -478,7 +478,7 @@ The shrieks of a dying creature can be heard nearby, and the roaring stops
 momentarily, replaced by a sickening squelch.  The path returns west, or
 continues north.    
 ~
-96 c 3
+96 4 0 0 0 0
 D0
 ~
 ~
@@ -496,7 +496,7 @@ excrement floats through the air, in enough potency to make one vomit.  A pair
 of red eyes peer out of the shroud of darkness in the cave.  The path continues
 north, into the cave west, or returns south.    
 ~
-96 0 3
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -517,7 +517,7 @@ in various stages of decomposition, and piles of animal excrement.  Whether
 it's from what lives in the cave or from the dead animals isn't known.  The
 only exit is back south.    
 ~
-96 0 3
+96 0 0 0 0 0
 D2
 ~
 ~
@@ -529,7 +529,7 @@ In the mouth of the cave~
 detected.  Roars from inside the cave signifies that the cave isn't exactly
 empty.  The rest of the cave lies west, and one can exit east.    
 ~
-96 d 5
+96 8 0 0 0 0
 D1
 ~
 ~
@@ -546,7 +546,7 @@ strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits in all
 directions.    
 ~
-96 ad 5
+96 9 0 0 0 0
 D0
 ~
 ~
@@ -571,7 +571,7 @@ strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits to the south
 and west.    
 ~
-96 ad 0
+96 9 0 0 0 0
 D2
 ~
 ~
@@ -588,7 +588,7 @@ strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits to the north
 and west.    
 ~
-96 ad 0
+96 9 0 0 0 0
 D0
 ~
 ~
@@ -605,7 +605,7 @@ strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits north, east,
 and south.    
 ~
-96 ad 0
+96 9 0 0 0 0
 D0
 ~
 ~
@@ -626,7 +626,7 @@ strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits to the south
 and east.    
 ~
-96 ad 0
+96 9 0 0 0 0
 D1
 ~
 ~
@@ -643,7 +643,7 @@ strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits to the north
 and east.    
 ~
-96 ad 0
+96 9 0 0 0 0
 D0
 ~
 ~
@@ -661,7 +661,7 @@ off of its hinges, and it lies on the ground near the entrance.  To the west
 and east are the stairways into the towers, and north lays the gate.  To the
 south a blue portal stretches between the walls.    
 ~
-96 0 5
+96 0 0 0 0 0
 D0
 ~
 ~
@@ -687,7 +687,7 @@ archers to fire through in case of an attack, and a murder-hole halfway up the
 stairs give soldiers something to pour burning oil or drip heavy objects
 through.  East lies the outer gate and the top of the small tower is upward.  
 ~
-96 0 5
+96 0 0 0 0 0
 D1
 ~
 ~
@@ -705,7 +705,7 @@ archers to fire through in case of an attack, and a murder-hole halfway up the
 stairs give soldiers something to pour burning oil or drip heavy objects
 through.  West lies the outer gate and the top of the small tower is upward.  
 ~
-96 0 5
+96 0 0 0 0 0
 D3
 ~
 ~
@@ -722,7 +722,7 @@ the tower is the gate area, where people would come in if the outer gate still
 existed.  There are broken pieces of bows and arrows, rusted sets of armor, and
 swords tarnished beyond recognition.  The only exit is back down.    
 ~
-96 0 0
+96 0 0 0 0 0
 D5
 ~
 ~
@@ -735,7 +735,7 @@ the tower is the gate area, where people would come in if the outer gate still
 existed.  There are broken pieces of bows and arrows, rusted sets of armor, and
 swords tarnished beyond recognition.  The only exit is back down.    
 ~
-96 0 0
+96 0 0 0 0 0
 D5
 ~
 ~
@@ -749,7 +749,7 @@ the floor, and the furniture reduced to dull colored rags.  All that remains of
 the fountain is the statue of the King, broken in half.  Exits are north and
 south.    
 ~
-96 d 0
+96 8 0 0 0 0
 D0
 ~
 ~
@@ -767,7 +767,7 @@ tapestries on the walls are untouched by rats or other vermin.  The queens
 chair holds a skeleton, but the king's chair is strangely empty.  Exits are east
 and west along the hall, north to the dining area or south to the foyer.    
 ~
-96 d 0
+96 8 0 0 0 0
 D0
 ~
 ~
@@ -792,7 +792,7 @@ itself seems sturdy enough, but those chairs remaining are in pieces or missing
 legs.  The ever-present sound of rat on stone can be heard.  Exits are north
 and south.    
 ~
-96 d 0
+96 8 0 0 0 0
 D0
 ~
 door kitchen north~
@@ -809,7 +809,7 @@ tables can be seen.  The smell of rat floats in the air, along with the smell
 of long spoiled food.  The cellar lies west, or one may exit south back into
 the dining hall.    
 ~
-96 d 0
+96 8 0 0 0 0
 D2
 ~
 door south dining~
@@ -826,7 +826,7 @@ the shelves where food use to be, and the sound of sniffing and fighting can be
 heard.  Human skeletons lie in a heap.  Perhaps this isn't the safest place to
 be?    
 ~
-96 ad 0
+96 9 0 0 0 0
 D1
 ~
 door kitchen~
@@ -839,7 +839,7 @@ Rats scurry around the hall, making clicking noises on the broken marble floor.
 Plants hang from the ceiling, and grow out of the walls.  The hall continues
 east, or one can go back west toward the throne room.    
 ~
-96 d 0
+96 8 0 0 0 0
 D1
 ~
 ~
@@ -856,7 +856,7 @@ Rats scurry around the hall, making clicking noises on the broken marble floor.
 Plants hang from the ceiling, and grow out of the walls.  The hall continues
 west, or one can go back east toward the throne room.    
 ~
-96 d 0
+96 8 0 0 0 0
 D1
 ~
 ~
@@ -874,7 +874,7 @@ Perhaps it has something to do with the inhuman howls of rage that eminate from
 the room west of hear.  Or maybe it's that there's more food nearer the
 kitchen.  Exits are up, west, and east.    
 ~
-96 cd 0
+96 12 0 0 0 0
 D1
 ~
 ~
@@ -896,7 +896,7 @@ Perhaps it has something to do with the inhuman howls of rage that eminate from
 the room east of here.  Or maybe it's that there's more food nearer the
 kitchen.  Exits are up, west, and east.    
 ~
-96 d 0
+96 8 0 0 0 0
 D1
 ~
 door~
@@ -917,7 +917,7 @@ chamberpot are all that are here.  The floor is of the same cracked marble, and
 the cold stone walls don't show the same cracking and falling that the other
 walls do.  The only exit is the way you came.    
 ~
-96 d 0
+96 8 0 0 0 0
 D3
 ~
 door~
@@ -930,7 +930,7 @@ chamberpot are all that are here.  The floor is of the same cracked marble, and
 the cold stone walls don't show the same cracking and falling that the other
 walls do.  The only exit is the way you came.    
 ~
-96 d 0
+96 8 0 0 0 0
 D1
 ~
 door~
@@ -943,7 +943,7 @@ rats are here presently, but signs of their presence are visible.  Intricate
 carvings and tapestries adorn the walls, along with a bust of the King in the
 corner.  Exits are west or back down.    
 ~
-96 d 0
+96 8 0 0 0 0
 D3
 ~
 ~
@@ -960,7 +960,7 @@ rats are here presently, but signs of their presence are visible.  Intricate
 carvings and tapestries adorn the walls, along with a bust of the King in the
 corner.  Exits are east or back down.    
 ~
-96 d 0
+96 8 0 0 0 0
 D1
 ~
 ~
@@ -977,7 +977,7 @@ crumbling, plants are still growing out of the ceiling, of which most of is
 laying on the floor.  The floor seems a little less eaten up.  The entrance to
 the King's bedroom lies east, or one may return west.    
 ~
-96 d 0
+96 8 0 0 0 0
 D1
 ~
 ~
@@ -994,7 +994,7 @@ crumbling, plants are still growing out of the ceiling, of which most of is
 laying on the floor.  The floor seems a little less eaten up.  The entrance to
 the King's bedroom lies west, or one may return east.    
 ~
-96 d 0
+96 8 0 0 0 0
 D1
 ~
 ~
@@ -1011,7 +1011,7 @@ door itself is made of marble, set on a cunningly made device that opens the
 door at the King's will.  The door is outlined in silver, and two statues in
 front of the door are made of solid gold.  Exits to the south, east, and west.
 ~
-96 d 0
+96 8 0 0 0 0
 D1
 ~
 ~
@@ -1039,7 +1039,7 @@ cedar is resting against the wall, with a matching chair.  Both are heavily
 cushioned with satin, and carved in strange and beautiful pictures.  The only
 exit is north.    
 ~
-96 d 0
+96 8 0 0 0 0
 D0
 ~
 door~
@@ -1051,7 +1051,7 @@ A Cleared Path~
 someone gave up on hacking through this dense woods.  The trees and brush are
 typical of any hardwood forest.    
 ~
-96 0 0
+96 0 0 0 0 0
 D1
 ~
 ~

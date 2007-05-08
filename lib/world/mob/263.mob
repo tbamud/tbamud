@@ -6,7 +6,7 @@ Ernie the farmer stands here, welcoming you to his home.
    Ernie looks like your typical country farmland hick, complete with cowhide
 jacket and rubber boots.  
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -18,7 +18,7 @@ Ernie's wife, Sandy, stands proudly with her husband.
 ~
    She ain't much of a looker, but for a farmer's wife, she'll do.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -30,7 +30,7 @@ Ernie's daughter, Patty, is here milking a cow.
 ~
    Wow, they sure make farm girls just right.  Think she's eighteen?  
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 5 19 7 1d1+50 1d2+0
 50 2500
 6 6 2
@@ -43,7 +43,7 @@ A man is here, bedded down in the hay, obviously a tramp looking for a free day'
    Patchwork clothes of every color and size, this man is your typical roaming
 loser.  
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -55,7 +55,7 @@ A cow patiently waits to be milked here.
 ~
    Moo.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -68,7 +68,7 @@ Girschwyn relaxes in his favorite chair near the fire.
 ~
    He looks a bit old, but just the same, very fit.  
 ~
-bdh 0 200 E
+138 0 0 0 0 0 0 0 200 E
 5 19 7 1d1+50 1d2+0
 50 2500
 6 6 1
@@ -80,7 +80,7 @@ A farmhand is here, busy at work.
 ~
    Looks like this guy spends most of his day rolling in dirt and sweating.  
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -92,7 +92,7 @@ A tractor sits in the middle of the field, looking quite unused.
 ~
    Big, green and mean - that's this tractor's story.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -105,7 +105,7 @@ A stableman works with the horses here.
 ~
    Dusty and musty, grubby and nasty, this guy LIVES for his job.  
 ~
-bdh 0 300 E
+138 0 0 0 0 0 0 0 300 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -118,7 +118,7 @@ Krandle is here, chewin' on a piece of straw.
    Krandle has that look of a man always squinting into the sun, even at night.
 His face is leathered and wrinkly from the sun.  
 ~
-bdh 0 300 E
+138 0 0 0 0 0 0 0 300 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -131,7 +131,7 @@ Erik sits here on the dock, doing a bit of fishing.
    No doubt Krandle, Erik's father, would throw a fit if he knew Erik was
 fishing and not doing his chores.  
 ~
-bdh 0 400 E
+138 0 0 0 0 0 0 0 400 E
 5 19 7 1d1+50 1d2+0
 50 2500
 6 6 1
@@ -143,7 +143,7 @@ A frog is here, relaxing in the sun and water.
 ~
    Riddip.  
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -156,7 +156,7 @@ A deer is standing here, frozen in fear by your presence.
    A beautiful doe, this beautiful creature nearly brings tears to your eyes by
 it's stunning perfection.  
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -168,7 +168,7 @@ Suzarre the Pig Woman stands here... she looks a LOT like Kathy Bates.
 ~
    She's your number one fan....  
 ~
-bd 0 -200 E
+10 0 0 0 0 0 0 0 -200 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -180,7 +180,7 @@ A pig is here, stinking and dirty.
 ~
    Oink.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -192,7 +192,7 @@ A chicken struts around the yard, hoping for some seeds.
 ~
    Cluck.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -204,7 +204,7 @@ A man is here, sloppin' the pigs.
 ~
    Grubby old man, looks like he really gets into his work.  
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -217,7 +217,7 @@ A man is here, feeding the chickens.
    With his long, beak-like nose and strange walk, this man has become his work.
 
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1

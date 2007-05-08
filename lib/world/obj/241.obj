@@ -3,7 +3,7 @@ standard issue starfleet phaser~
 a standard issue phaser~
 A standard issue Starfleet phaser has been left here.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 0 5 5 12
 3 200 500 0
 E
@@ -18,7 +18,7 @@ phaser rifle~
 a phaser rifle~
 A large phaser rifle is lying here.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 0 7 6 12
 8 400 1000 0
 E
@@ -33,7 +33,7 @@ burgandy starfleet command uniform~
 a burgandy Starfleet command uniform~
 A neatly folded burgandy Starfleet command uniform is lying here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
 5 400 500 0
 E
@@ -52,7 +52,7 @@ gold starfleet engineering uniform~
 a gold Starfleet engineering uniform~
 A neatly folded gold Starfleet engineering uniform is lying here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
 5 400 500 0
 E
@@ -71,7 +71,7 @@ blue starfleet medical uniform~
 a blue Starfleet medical uniform~
 A neatly folded blue Starfleet medical uniform is lying here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
 5 400 500 0
 E
@@ -90,7 +90,7 @@ starfleet black boots~
 a pair of Starfleet black boots~
 A pair of Starfleet black boots are sitting here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 5 0 0 0
 3 500 250 0
 E
@@ -105,7 +105,7 @@ starfleet comm com communication badge~
 a Starfleet communication badge~
 A Starfleet communication badge is lying here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 500 500 0
 T 24105
@@ -131,7 +131,7 @@ worf's worf sash~
 Worf's sash~
 Worf's silver chain sash has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 6 500 300 0
 E
@@ -146,7 +146,7 @@ geordi geordi's visor~
 Geordi's VISOR~
 Geordi's VISOR is lying here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 6 500 750 0
 T 24116
@@ -165,7 +165,7 @@ medical tricorder~
 a medical Tricorder~
 A medical Tricorder is lying here, ready to be used.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 10 5 5 28
 6 500 500 0
 T 24136
@@ -180,7 +180,7 @@ dilithium crystal~
 a dilithium crystal~
 A shard of dilithium crystal is lying here.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 2 500 250 0
 E
@@ -195,7 +195,7 @@ picard picard's flute~
 Picard's flute~
 Captain Picard's wooden flute is sitting here.~
 ~
-12 b ao 0
+12 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 500 250 0
 T 24103
@@ -213,7 +213,7 @@ riker riker's trombone~
 Riker's trombone~
 Commander Riker's trombone has been placed here.~
 ~
-12 b ao 0
+12 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 500 250 0
 T 24106
@@ -231,7 +231,7 @@ tea cup tea~
 a small cup~
 A small cup of tea is sitting here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 4 4 11 0
 9 15 10 0
 #24121
@@ -239,7 +239,7 @@ wine bottle synthehol wine~
 a synthehol~
 A bottle of synthehol is standing here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 8 8 2 0
 13 30 10 0
 #24122
@@ -247,7 +247,7 @@ ale ferengi bottle ale~
 a Ferengi bottle~
 A bottle of Ferengi ale is sitting here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 8 8 3 0
 13 30 10 0
 #24123
@@ -255,7 +255,7 @@ hisky whiskey romulan bottle whisky~
 a Romulan bottle~
 A bottle of Romulan whiskey is sitting here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 8 8 5 0
 13 45 10 0
 #24124
@@ -263,7 +263,7 @@ lemonade prune juice glass lemonade~
 a small glass~
 A small glass of prune juice is sitting here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 8 8 6 0
 13 10 10 0
 #24125
@@ -271,7 +271,7 @@ beer vulcan bottle beer~
 a Vulcan bottle~
 A bottle of Vulcan beer is standing here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 8 8 1 0
 13 10 10 0
 #24126
@@ -279,7 +279,7 @@ spacesuit suit~
 a Starfleet regulation spacesuit~
 A Starfleet regulation spacesuit lies, crumpled on the floor.~
 ~
-9 0 a 0
+9 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 0
 E
@@ -293,7 +293,7 @@ spacesuit suit~
 a row of Starfleet regulation spacesuits~
 A row of Starfleet regulation spacesuits hang along the walls.~
 ~
-9 0 0 0
+9 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 24108
@@ -308,9 +308,17 @@ replicator~
 a replicator~
 A replicator stands against one wall.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
+E
+replicator~
+   This is a very special and high-tech device used to replicatate any known
+(and programmed) food or drink.  They can be configured to reproduce other
+things, like weapons and atomic elements.  But this one hasn't got such a
+function, you'd want the ones in security for that.  One of the side-panels
+appears to have some writing on it.  
+~
 E
 side panel~
    Order:
@@ -320,20 +328,12 @@ Bread
 Coffee
 Beer
 ~
-E
-replicator~
-   This is a very special and high-tech device used to replicatate any known
-(and programmed) food or drink.  They can be configured to reproduce other
-things, like weapons and atomic elements.  But this one hasn't got such a
-function, you'd want the ones in security for that.  One of the side-panels
-appears to have some writing on it.  
-~
 #24129
 cup earl grey tea~
 a cup of earl grey tea~
 A cup of earl grey tea has been discarded.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 11 0
 1 1 0 0
 E
@@ -345,7 +345,7 @@ loaf warm bread~
 a loaf of warm bread~
 A loaf of warm bread has been dropped here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -357,7 +357,7 @@ mug black coffee~
 a mug of black coffee~
 A mug of black coffee lies steaming on the floor.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 12 0
 1 1 0 0
 E
@@ -369,7 +369,7 @@ worf batleth~
 Worf's batleth~
 A very dangerous-looking batleth has been carefully placed here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 8 8 3
 10 1 0 0
 T 24117
@@ -385,7 +385,7 @@ spots collar red~
 a small red collar~
 Spot seems to have lost his small red collar.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 1 0 0
 E

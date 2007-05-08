@@ -5,7 +5,7 @@ Your guildmaster stands here.
 ~
    An old man peering through ancient tomes rests here.  
 ~
-abdlno dhk 1000 E
+26635 0 0 0 16 0 0 0 1000 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -17,7 +17,7 @@ Your guildmaster stands here.
 ~
    An older man wrapped in purple, long-flowing robes meditates here.  
 ~
-abdlno dhk 1000 E
+26635 0 0 0 16 0 0 0 1000 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -29,7 +29,7 @@ Your guildmaster stands here.
 ~
    A smaller man dressed in black robes stands here waiting to train you.  
 ~
-abdlno dhk 1000 E
+26635 0 0 0 16 0 0 0 1000 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -43,7 +43,7 @@ Your guildmaster stands here.
 knife and throws it at you.  It lands in the wall next to your left ear.  'We
 will now begin', is all he says.  
 ~
-abdlno dhk 1000 E
+26635 0 0 0 16 0 0 0 1000 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -57,7 +57,7 @@ A dark skinned, veiled woman greets you from behind the desk.
 As you attempt to sneak a peek under her veil you notice a small moon-shaped
 birthmark on her left cheek.  
 ~
-abdlno d 800 E
+26635 0 0 0 16 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 6 6 2
@@ -69,7 +69,7 @@ An old withered man leans against the bar.
 ~
    He looks distracted as he pours five drinks at once without error.  
 ~
-bdlno d 0 E
+26634 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -82,7 +82,7 @@ Brother John, lead singer for the Lokettes stands on stage.
    You see the lead singer of the Lokettes lip synching to an old Zochan tune.
 
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -94,7 +94,7 @@ A panhandler rests here.
 ~
    A small skinny man rests here hoping to find a warm heart.  
 ~
-cdgh 0 -20 E
+204 0 0 0 0 0 0 0 -20 E
 2 20 8 0d0+20 1d2+0
 20 400
 5 5 1
@@ -106,7 +106,7 @@ A panhandler rests here.
 ~
    A small skinny man rests here staring at your clothes.  
 ~
-cdgh 0 -20 E
+204 0 0 0 0 0 0 0 -20 E
 3 19 8 0d0+30 1d2+0
 30 900
 5 5 1
@@ -118,7 +118,7 @@ A grubby beggar sits here in the filth.
 ~
    This poor soul seems down on his luck, perhaps you might spare a dime?  
 ~
-cdgh 0 -20 E
+204 0 0 0 0 0 0 0 -20 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -130,7 +130,7 @@ The baker stands here playing solitaire.
 ~
    You see a large man in a white apron covered in flour from head to toe.  
 ~
-bdlno d 100 E
+26634 0 0 0 16 0 0 0 100 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -142,7 +142,7 @@ The shopkeeper stands here.
 ~
    You see a half-elf sitting on a stool behind his counter.  
 ~
-bdlno d 100 E
+26634 0 0 0 16 0 0 0 100 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -154,7 +154,7 @@ A banker stands here waiting to help you.
 ~
    This small halfling seems adept at counting money.  
 ~
-bdlno d 0 E
+26634 0 0 0 16 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -168,7 +168,7 @@ Ahkeem the tailor welcomes you to his store.
 wardrobe.  
 
 ~
-bdlno d 0 E
+26634 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -180,7 +180,7 @@ Vera the veggie lady beems as you look over her stand.
 ~
    A tall slender woman stands before you smiling broadly.  
 ~
-bdlno d 0 E
+26634 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -193,7 +193,7 @@ Butch the meatcutter stands here in his bloodied apron.
    This stocky dwarf has a mad glint in his eye as he twirls his clever
 carelessly into the air.  
 ~
-bdlno d 0 E
+26634 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -206,7 +206,7 @@ Abdul stands here, waiting to help you.
    Abdul returns your gaze with a steady eye.  You quickly glance away under his
 cold stare and place your order.  
 ~
-bdlno d 0 E
+26634 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -218,7 +218,7 @@ Igor stands here doing... something.
 ~
    You see a small dwarf with a large hump on his left shoulder.  
 ~
-bdlno d 0 E
+26634 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -232,7 +232,7 @@ Cassandra stands proudly over her selection.
 sea.  It is only through years of fishing that she is able to withstand the
 smell that permeates the air.  
 ~
-bdlno d 0 E
+26634 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -245,7 +245,7 @@ The foreman stands here screaming at the workers.
    A worried working dwarf stands here constantly making notes in his book and
 looking at his watch.  
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -257,7 +257,7 @@ A construction worker steadily works here.
 ~
    A large sweaty looking man doesn't even return your glance.  
 ~
-bdg 0 10 E
+74 0 0 0 0 0 0 0 10 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -270,7 +270,7 @@ The statue of Brahman stands here.
    The statue made of solid marble depicts the mighty God defeating Siva in
 magical combat.  
 ~
-bdelnopqr dhk 1000 E
+256026 0 0 0 16 0 0 0 1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -284,7 +284,7 @@ The statue of Siva stands here.
    The statue of the High Lord of Destruction stands here beings attacked by
 Brahman in magical combat.  
 ~
-bdelnopqr dhk -1000 E
+256026 0 0 0 16 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -297,7 +297,7 @@ The statue of Indra stands here.
 ~
    This statue looks like an enormous elephant.  
 ~
-bdelnopqr dhk 1000 E
+256026 0 0 0 16 0 0 0 1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -310,7 +310,7 @@ The statue of Yama stands here.
 ~
    This is a statue of the God of Death.  It is covered with odd runes.  
 ~
-bdelnopqr dhk 0 E
+256026 0 0 0 16 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -324,7 +324,7 @@ The statue of Surya stands here.
    The statue of Surya, the God in charge of the Sun, almost glows with a firey
 aura.  
 ~
-bdelnopqr dhk 1000 E
+256026 0 0 0 16 0 0 0 1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -338,7 +338,7 @@ The statue of Kali stands here.
    The statue of the Black Mother, Kali, is made of black marble and is covered
 with silver runes.  
 ~
-bdelnopqr dhk -1000 E
+256026 0 0 0 16 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -352,7 +352,7 @@ The statue of Brihaspati stands here.
    The statue of Brihaspati, the God of Scholars and Knowledge is made of a
 weathered marble.  
 ~
-bdelnopqr dhk 0 E
+256026 0 0 0 16 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -366,7 +366,7 @@ The statue of Puchan stands here.
    The statue of Puchan, God of Travellers, is covered with dust and worn as if
 it had been dragged a long way down a dusty road.  
 ~
-bdelnopqr dhk 1000 E
+256026 0 0 0 16 0 0 0 1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -379,7 +379,7 @@ Aziz the Human Canon stands here.
 ~
    This big and burly man grins at you as he draws his sword.  
 ~
-dgh d 0 E
+200 0 0 0 16 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -391,7 +391,7 @@ Mustafah the Human Robber stands here.
 ~
    This man is lithe and has an evil smirk upon his face.  
 ~
-dgh d 0 E
+200 0 0 0 16 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -404,7 +404,7 @@ Fatima the Elven Invoker stands here.
    This female elf has dusky skin and black hair.  A combination you don't see
 very often on elves.  
 ~
-dgh d 0 E
+200 0 0 0 16 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 2
@@ -416,7 +416,7 @@ Kareem the Dwarven Mercenary stands here.
 ~
    This short stocky fellow has a chest the girth of a barrel.  
 ~
-dgh d 0 E
+200 0 0 0 16 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -429,7 +429,7 @@ A nomad merchant looks you over.
    This robust fellow returns your gaze with a smile, but something inside tells
 you not to trust him very far.  
 ~
-cdghlmno 0 -100 E
+30924 0 0 0 0 0 0 0 -100 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -441,7 +441,7 @@ A bodyguard sizes you up.
 ~
    The large half-orc quickly glances you over and returns to his duties.  
 ~
-bdeflm dk 0 E
+6202 0 0 0 16 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -454,7 +454,7 @@ A skinny kid wanders around.
 ~
    This small child sees you looking at him and quickly looks away.  
 ~
-cdgh 0 100 E
+204 0 0 0 0 0 0 0 100 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -467,7 +467,7 @@ A strong dockworker walks by moving crates.
    Although seemingly dull witted, this hulking mass carries the huge crates
 from the boats like it was a box of lilies.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -480,7 +480,7 @@ A small man walks around scribbling in a notebook.
    The city's taxcollextor walks from store to store collecting the Sultan's fee
 for living in his grand city.  
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -493,7 +493,7 @@ Gord the Rogue stand here.
    Gord wanders about trying to look innocent.  He fails miserably and makes
 everyone around him watch their purses guardedly.  
 ~
-cdgh dhk 1000 E
+204 0 0 0 16 0 0 0 1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -506,7 +506,7 @@ Chulainn the Knight stands here.
    This large man does not seem to be surprised at your approach and looks at
 you quizically.  
 ~
-cdghlm dk 800 E
+6348 0 0 0 16 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -519,7 +519,7 @@ Daghdha the Arch-Magi stands here.
    This man is dressed in long brown robes and has a penetrating gaze.  
 
 ~
-dg dhk 200 E
+72 0 0 0 16 0 0 0 200 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -532,7 +532,7 @@ Curley GreenLeaf stands here.
 ~
    Curley constantly fiddles with his hair that gave him his namesake.  
 ~
-cdgh d 0 E
+204 0 0 0 16 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -545,7 +545,7 @@ A small grey-haired man walks around spouting gospel.
    This sad case may have been an evangelist in another lifetime.  He is known
 to stand on corners and accost passers-by with his doomsday preaching.  
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -557,7 +557,7 @@ A small harmless feline searches for food.
 ~
    You see a small starved cat.  
 ~
-dgh 0 -10 E
+200 0 0 0 0 0 0 0 -10 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -569,7 +569,7 @@ A vulture circles above you.
 ~
    As you look up at this bird, you see the only thing it wants is a corpse.  
 ~
-dgh 0 -200 E
+200 0 0 0 0 0 0 0 -200 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -581,7 +581,7 @@ An old man sits here playing chess.
 ~
    He seems intent on winning.  
 ~
-dgh 0 200 E
+200 0 0 0 0 0 0 0 200 E
 4 19 7 0d0+40 1d2+0
 40 1600
 6 6 1
@@ -593,7 +593,7 @@ Lugh the Librarian sits behind a desk.
 ~
    The huge hulking mass rises as someone asks him a question.  
 ~
-bdelno 0 300 E
+26650 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
 100 10000
 6 6 1
@@ -605,7 +605,7 @@ The wind kicks up some dust.
 ~
    What you see before you is really a baby air elemental.  
 ~
-cdfg 0 -1000 E
+108 0 0 0 0 0 0 0 -1000 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -619,7 +619,7 @@ A strange lamia stands here waiting for her next meal.
 body of a four-legged beast.  She licks her lips as she looks at you greedily.
 
 ~
-cdgj 0 -500 E
+588 0 0 0 0 0 0 0 -500 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 2
@@ -631,7 +631,7 @@ A raggety dervish stands here.
 ~
    This man looks like he could use a lot of rest.  
 ~
-dfg p -750 E
+104 0 0 0 65536 0 0 0 -750 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -643,7 +643,7 @@ The Sultan rests here on his throne.
 ~
    You see a large wealthy man in red robes smiling at you.  
 ~
-bdeilno dhk 200 E
+26906 0 0 0 16 0 0 0 200 E
 10 17 4 2d2+100 1d2+1
 100 10000
 5 5 1
@@ -656,7 +656,7 @@ A lovely, veiled harem girl stands here.
    You see a dark skinned beauty, wearing almost transparent silks and light
 blue veil.  Her loyalty to the Sultan is unwavering.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -669,7 +669,7 @@ The Jailer sleeps here, snoring loudly.
    You see a pathetic soul lying here.  Probably some ex-nobleman that has
 fallen out of grace with the Sultan.  
 ~
-bcdh 0 -100 E
+142 0 0 0 0 0 0 0 -100 E
 18 14 0 3d3+180 3d3+3
 180 32400
 4 4 1
@@ -682,7 +682,7 @@ A eunich stands here watching over the girls.
    You see a large man whose only duty is to protect the harem.  He has been
 castrated for the ladies' safety.  
 ~
-bdf dk 0 E
+42 0 0 0 16 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -695,7 +695,7 @@ Nichole, the Sultan's favorite girl rests on a mound of pillows.
    You see the most beautiful Arabian girl that has ever meet your eyes.  Too
 bad she is about to kill you.  
 ~
-bdf dk 100 E
+42 0 0 0 16 0 0 0 100 E
 10 17 4 2d2+100 1d2+1
 100 10000
 5 5 2
@@ -707,7 +707,7 @@ Allah is here.
 ~
    You see the all-knowing Allah.  
 ~
-bdeiklnopqr dhks 1000 E
+257306 0 0 0 524304 0 0 0 1000 E
 11 17 3 2d2+110 1d2+1
 110 12100
 5 5 0
@@ -720,7 +720,7 @@ The Guard for the Guild of Mages stand here.
 ~
    This man looks like a mage/warrior, I wouldn't mess with him.  
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -733,7 +733,7 @@ The Guard for the Guild of Clerics stands here.
 ~
    This man looks like a cleric/warrior, I wouldn't mess with him.  
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -746,7 +746,7 @@ The Guard for the Guild of Warriors stands here.
 ~
    The man looks like Conan's cousin, I wouldn't mess with him.  
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -760,7 +760,7 @@ The Guard for the Guild of thieves stands here.
    You see a thief dressed all in black, he quickly stands as you enter and
 steps to bar your way.  You notice his hands resting on two sheathes.  
 ~
-bdlnopqr dfhk -100 E
+256010 0 0 0 80 0 0 0 -100 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -773,7 +773,7 @@ A servant boy is here running errands.
 ~
    You see a small boy running around the halls of the palace.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -785,7 +785,7 @@ A guard stands here, protecting the innocent.
 ~
    You see a trained fighter, ready to help those in need.  
 ~
-dgh 0 1000 E
+200 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -798,7 +798,7 @@ A guard stands here, watching the gate.
 ~
    You see a trained fighter, ready to defend the city.  
 ~
-bdg 0 1000 E
+74 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -811,7 +811,7 @@ The Chief of the Sultan's Guard stands here.
 ~
    You see a large man skilled in hunting and killing.  
 ~
-dg d 1000 E
+72 0 0 0 16 0 0 0 1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -824,7 +824,7 @@ A mercenary stands here waiting for a job.
 ~
    You see an assassin down on his luck looking to be freelanced out.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -837,7 +837,7 @@ An old captain rests here carving on a stick.
    You see the shipwright of New Thalos, waiting to make someone a boat.  He
 beams a smile at you through his beard as you walk in.  
 ~
-bdlno 0 0 E
+26634 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -850,7 +850,7 @@ The blacksmith stands here pumping air into his fire.
    You see a large human, dripping in sweat, standing before you.  He takes a
 break from his swealtering work to bid you welcome.  
 ~
-bdlno 0 0 E
+26634 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -862,7 +862,7 @@ A horse stands here.
 ~
    You see one of the fine Arabian beasts known about the land.  
 ~
-bdgh 0 0 E
+202 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -875,7 +875,7 @@ A tourist stands here looking lost.
    You see a small, rotund man, with a strange object around his neck and a nose
 guard.  He is looking at a small map that he seems to be holding upside down.  
 ~
-cdgh 0 0 E
+204 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -887,7 +887,7 @@ A very large ray with a wicked looking tail swims here.
 ~
    You see a large ray with sharp fangs and a barbed tail.  
 ~
-bdflpqr dgk -500 E
+231466 0 0 0 144 0 0 0 -500 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -899,7 +899,7 @@ The cryohydra stands here.
 ~
    A grey-brown reptillian creature with amber eyes stands before you.  
 ~
-dfglpq k 0 E
+100456 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -911,7 +911,7 @@ the minotaur lizard stands here.
 ~
    A huge lizard like reptile with horns like a minotaur.  
 ~
-dfg k 0 E
+104 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -923,7 +923,7 @@ The death dog stands here.
 ~
    A large two-headed hound barks at you vicously.  
 ~
-dfgl k 0 E
+2152 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -935,7 +935,7 @@ The spotted lion stands here.
 ~
    A large fierce dapple skinned lion glares at you.  
 ~
-dfg k 0 E
+104 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -947,7 +947,7 @@ A behir slithers on the ground.
 ~
    You see a large snake-like reptile with more than a dozen legs.  
 ~
-dfglpq kp -300 E
+100456 0 0 0 65536 0 0 0 -300 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -961,7 +961,7 @@ A creature with three heads: lion, goat, and dragon stands here.
 the hindquarters of a goat, the forepaws of a lion and the body of a red dragon.
 
 ~
-bdflq dgkp -500 E
+67626 0 0 0 65680 0 0 0 -500 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 0
@@ -974,7 +974,7 @@ A couatl hovers here.
    A beautiful creature with the body of a serpent and feathered wings the
 colour of the rainbow.  
 ~
-bdelnoq dghkp 300 E
+92186 0 0 0 65680 0 0 0 300 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -986,7 +986,7 @@ The giant hornet hovers here.
 ~
    It is a hornet, what else can be said?  
 ~
-degqr dgk 300 E
+196696 0 0 0 144 0 0 0 300 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -999,7 +999,7 @@ The pegasus stands here, flexing its wings.
    A magnificant winged steed, this horse looks much like the Arabian
 thoroughbreds you have seen in stables.  
 ~
-bdglmpq dgk 1000 E
+104522 0 0 0 144 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -1012,7 +1012,7 @@ Elriva stands here mixing a love potion.
    You see a very healthy female dressed in black, with long flowing hair to
 match her outfit.  
 ~
-bdlno 0 0 E
+26634 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -1024,7 +1024,7 @@ Braheem stands here talking to the walls.
 ~
    You see a powerful but slighty insane mage.  
 ~
-bdlno 0 0 E
+26634 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -1036,7 +1036,7 @@ The high priest rests here meditating, well he WAS meditating.
 ~
    He does NOT look real happy that you have disturbed him.  
 ~
-bdgh dhk 1000 E
+202 0 0 0 16 0 0 0 1000 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -1050,7 +1050,7 @@ An Elite Royal Guard stands here smiling happily.
    You see one of the Royal Guards of New Thalos who seems to have undergone
 some heavy training.  
 ~
-bdelmno dhk 1000 E
+30746 0 0 0 16 0 0 0 1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -1064,7 +1064,7 @@ A large half-orc with a patch over one eye pours beer behind the counter.
    You see a really big guy here who seems to have lost an eye in one manner or
 another.  
 ~
-bdlno d -500 E
+26634 0 0 0 16 0 0 0 -500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -1077,7 +1077,7 @@ Stitch, the leather dude reclines in his chair.
    You see a small hobbit with his feet kicked up on his desk waiting for some
 sucker, uhm, customer to walk in his store.  
 ~
-bdlno d -500 E
+26634 0 0 0 16 0 0 0 -500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -1090,7 +1090,7 @@ A small elf stands here tending the garden.
    A young elf stands here in dirt covered overalls.  He seems to be weeding his
 garden.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1103,7 +1103,7 @@ A large horse, black as night, stands here.
    You see the largest horse you have ever seen before.  Standing 10' at the
 shoulder it breathes flame from his nostrils and leaps to attack you.  
 ~
-bdlno dfghkps 1000 E
+26634 0 0 0 590032 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -1116,7 +1116,7 @@ A large wolf like creature leaps out from the darkness.
    You see a half wolf, half human beast wearing a glove with long thin blades
 on it.  
 ~
-bdf kps -351 E
+42 0 0 0 589824 0 0 0 -351 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -1128,7 +1128,7 @@ You see an incredibly life-like painting of the Sultan's mother.
 ~
    Boy is she ugly.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1140,7 +1140,7 @@ The Mayor of New Thalos stands here.
 ~
    You see a chubby rabbit dressed in his best suit.  
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1152,7 +1152,7 @@ The chef stands here making dinner.
 ~
    You see a very large human who seems to taste everything he makes.  
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1

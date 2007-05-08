@@ -3,7 +3,7 @@ Cave Entrance~
    You are standing in the cave entrance.  It is very dark down here.  There
 is writing on the wall.  There is an exit to the north.  A stairway leads up.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 To the north you can see a small tunnel.
 ~
@@ -24,7 +24,7 @@ Cave Tunnel~
    You are walking in a tunnel.  It is very cold.  You can feel the presence
 of a living thing... SOMEWHERE.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 To the north you can see the tunnel continuing.
 ~
@@ -40,7 +40,7 @@ S
 Cave Room~
    You are standing in a room.  It is much cooler now.  The walls are glowing.
 ~
-73 d 1
+73 8 0 0 0 0
 D1
 To the east you see the tunnel going downwards.
 ~
@@ -61,7 +61,7 @@ The Cave T-Cross~
    You are standing in a mudlike substance.  The smell here is awful, it is
 rotten.  To the west you can see some light.
 ~
-73 ad 2
+73 9 0 0 0 0
 D1
 To the east the tunnel still goes downwards.
 ~
@@ -77,12 +77,12 @@ You can see some light to the west.
 ~
 0 -1 7302
 E
-worms~
-   The worms are purple.  They do not look edible.  
-~
-E
 mud~
    When you examine the mud, you notice small worms crawling around.  
+~
+E
+worms~
+   The worms are purple.  They do not look edible.  
 ~
 S
 #7304
@@ -91,7 +91,7 @@ The Cave Turning-Point~
 leave, before I disappear?'.  To the south you notice a flat round stone
 is blocking the way.  To the west you can see mud.
 ~
-73 ad 2
+73 9 0 0 0 0
 D2
 You can see an opening behind the stone.
 ~
@@ -115,7 +115,7 @@ for ages.  In the middle of the room you see a socket with a crystal globe.
 The globe glows with a pulsing light.  To the north you see a stone door.
 To the south you see a grey block.
 ~
-73 d 1
+73 8 0 0 0 0
 D0
 You see a round stone door.
 ~
@@ -127,13 +127,13 @@ You see a grey block.
 block grey~
 1 -1 7306
 E
+socket~
+   The socket looks like the work of a dwarf.  It is VERY beautiful.  
+~
+E
 crystal globe~
    The crystal globe is glowing with a pulsing light.  It looks like there is
 smoke inside it.  
-~
-E
-socket~
-   The socket looks like the work of a dwarf.  It is VERY beautiful.  
 ~
 S
 #7306
@@ -141,7 +141,7 @@ The Mudhole~
    You are standing in a lot of mud.  The mud goes to your chest.  You feel
 the presence of something IN the mud.  The only obvious exit is to the west.
 ~
-73 ad 6
+73 9 0 0 0 0
 D0
 You can see nothing at all.
 ~
@@ -156,7 +156,7 @@ S
 A Tunnel~
    The mud goes to your knees.  Otherwise the tunnel looks very normal.
 ~
-73 ad 5
+73 9 0 0 0 0
 D0
 ~
 ~
@@ -176,7 +176,7 @@ The Long Tunnel~
    Here there is almost no mud, as you stand at the top of a small rock.  Just
 beside you there are a sign which says 'WARNING!  The worms are dangerous!'
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 You can see a lot of mud... Yuck!
 ~
@@ -194,7 +194,7 @@ The Hot Room~
 cold.  To the north it goes downwards into some mud.  There are also an
 exit to the west.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 You see a lot of mud.
 ~
@@ -211,7 +211,7 @@ The Small Room~
    As you look around you notice a small statue.  There are exits to the west
 and to the east.
 ~
-73 ad 1
+73 9 0 0 0 0
 D1
 It is pitch dark out there.
 ~
@@ -233,7 +233,7 @@ The Stalagmite Cave~
    You are standing in a stalagmite cave.  Water is dripping from the walls.
 It is very cold in here.
 ~
-73 ad 2
+73 9 0 0 0 0
 D0
 ~
 ~
@@ -257,7 +257,7 @@ The Stalagmite Tunnel~
    You has entered a small tunnel.  Here it is quite dry.  Maybe it would be a
 good idea to rest here.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 You can see a small cave to the north.
 ~
@@ -273,7 +273,7 @@ The Spongy Room~
    You definitely do NOT like this area.  It is very dank, and most of the
 room is wet.
 ~
-73 cd 3
+73 12 0 0 0 0
 D1
 ~
 ~
@@ -288,7 +288,7 @@ The Stalagmite T-Cross~
    You are standing in a cross.  To the north you can see some light.
 Otherwise it is dark.
 ~
-73 cd 1
+73 12 0 0 0 0
 D0
 You see some light ahead.
 ~
@@ -308,7 +308,7 @@ The Blind End Room~
    This room is obviously a blind end.  To the north you see a primitive
 picture.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 You see a primitive picture of some people dancing around a huge sun.  The
 sun is about 7 feet in diameter, which shows the size of the picture.
@@ -332,7 +332,7 @@ people dancing around a moon which is drawn on the floor.  It looks very
 old, and it is very dusty.  To the south you see the back side of a secret
 door.
 ~
-73 adj 1
+73 521 0 0 0 0
 D2
 You can see a picture with some people crawling around a huge moon.
 ~
@@ -344,7 +344,7 @@ The Square Lair~
    You are standing in the south-east part of the lair.  You can see a skeleton
 lying in the corner.
 ~
-73 d 1
+73 8 0 0 0 0
 D0
 Another part of the lair.
 ~
@@ -369,7 +369,7 @@ The Square Lair~
    You are standing in the north-east part of the lair.
 You see a sign on the wall.
 ~
-73 ad 1
+73 9 0 0 0 0
 D1
 You see a wooden door.
 ~
@@ -397,7 +397,7 @@ The Square Lair~
    You are standing in the north-west part of the lair.  Here there is another
 sign.  There is an exit from the lair to the north.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 You see a small tunnel leading north.
 ~
@@ -425,7 +425,7 @@ The Lair End~
    You can see a table in front of you.  It is very dusty.  Five skeletons are
 sitting around the table.  Exits are north and east.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 The northern part of the lair.
 ~
@@ -437,10 +437,9 @@ The eastern part of the lair.
 ~
 0 -1 7317
 E
-dragon statue~
-   It looks like a silver dragon.  It is nailed onto the table.  The dragon sits
-on a red dragon that looks dead.  But the eyes of the red dragon are glowing,
-pulsating red.  You feel drained.  
+table~
+   On the table there is dust, in the center there is a small statue of a Dragon
+sleeping.  
 ~
 E
 skeleton skeletons~
@@ -448,9 +447,10 @@ skeleton skeletons~
 sword or club.  
 ~
 E
-table~
-   On the table there is dust, in the center there is a small statue of a Dragon
-sleeping.  
+dragon statue~
+   It looks like a silver dragon.  It is nailed onto the table.  The dragon sits
+on a red dragon that looks dead.  But the eyes of the red dragon are glowing,
+pulsating red.  You feel drained.  
 ~
 S
 #7321
@@ -458,7 +458,7 @@ The East Tunnel~
    You are standing in dark tunnel, the exits are east and west.  To the west
 you see a wooden door.
 ~
-73 cd 1
+73 12 0 0 0 0
 D1
 You can see a muddy tunnel.
 ~
@@ -474,7 +474,7 @@ S
 The North Tunnel~
    You are standing in a dark tunnel, it leads upwards.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 The dark tunnel continues.
 ~
@@ -496,7 +496,7 @@ The L-Shaped Room~
    You are standing in deep darkness.  To the south there is a small exit.
 To the east you can see a gaping hole.
 ~
-73 ad 1
+73 9 0 0 0 0
 D1
 ~
 ~
@@ -511,7 +511,7 @@ The Circular Hall~
    You are standing in round hall.  To the north, east and south you can see
 a stone head hanging on the walls.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 You see a red dragon's head hanging on the wall.
 ~
@@ -533,22 +533,22 @@ You see a room far away.
 ~
 0 -1 7323
 E
-blue~
-   This looks like a good dragon.  
-~
-E
-red~
-   This looks like a neutral dragon.  
+head heads~
+   When you study the faces of the heads you see that they are faces of dragons.
+The face to the north is red, the face to the east is green, and the face to the
+south is blue.  
 ~
 E
 green~
    This looks like an evil dragon.  
 ~
 E
-head heads~
-   When you study the faces of the heads you see that they are faces of dragons.
-The face to the north is red, the face to the east is green, and the face to the
-south is blue.  
+red~
+   This looks like a neutral dragon.  
+~
+E
+blue~
+   This looks like a good dragon.  
 ~
 S
 #7325
@@ -557,7 +557,7 @@ A Dusty Tunnel~
 Otherwise it is quite boring here, looks like a place to rest!  To the west
 you see the outline of a door.  A tunnel leads to the east.
 ~
-73 cd 1
+73 12 0 0 0 0
 D1
 You see a tunnel which leads downwards.  It is quite dark.
 ~
@@ -575,7 +575,7 @@ The Crossing~
 in every direction, except up and down.  In the dust you notice strange
 footprints.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 ~
 ~
@@ -603,7 +603,7 @@ The L-Shaped Room~
 tunnel to the east.  You feel very afraid!
 A sign is hanging on the wall.
 ~
-73 ad 2
+73 9 0 0 0 0
 D0
 ~
 ~
@@ -624,7 +624,7 @@ of bones are scattered all over the floor.  On the walls you can see
 some burned shapes.  You smell burnt flesh.  Two creatures are half
 melted into the floor.
 ~
-73 d 2
+73 8 0 0 0 0
 D0
 You can see a long tunnel.
 ~
@@ -641,7 +641,7 @@ The Burnt Room~
    You are in a room, which once has at one time been quite burnt.  There
 is writing on the wall.
 ~
-73 ad 1
+73 9 0 0 0 0
 D2
 You can see a red glow...
 ~
@@ -660,7 +660,7 @@ S
 The Windy Tunnel~
    You are standing in a tunnel.  Above you, you can feel a breeze.
 ~
-73 ad 1
+73 9 0 0 0 0
 D1
 It is too dark to tell.
 ~
@@ -680,7 +680,7 @@ The Glittering Room~
    This room is very bright.  On the walls you can see some silver.  Exits
 are west, east and south.
 ~
-73 d 1
+73 8 0 0 0 0
 D1
 ~
 ~
@@ -702,7 +702,7 @@ S
 The Secret Passageway~
    You have entered a tiny room.  There is only an exit to the west.
 ~
-73 ad 1
+73 9 0 0 0 0
 D3
 You can see a light to the west.
 ~
@@ -715,7 +715,7 @@ The End Of Long Tunnel~
 grey mass.  To the east you can see a tremendously long tunnel, but you know
 that, you were just there.
 ~
-73 ad 5
+73 9 0 0 0 0
 D1
 A long tunnel.  JUST like in the description!
 ~
@@ -737,7 +737,7 @@ The Stair-Room~
 walls.  You can feel that darkness is ruling the place.  There is one exit:
 south.
 ~
-73 ad 1
+73 9 0 0 0 0
 D2
 Nothing but darkness...
 ~
@@ -749,7 +749,7 @@ A Dark Tunnel~
    You are standing in a dark tunnel.  It continues to the north and to the
 south.  Bones are spread on the floor.
 ~
-73 ad 1
+73 9 0 0 0 0
 D0
 ~
 ~
@@ -768,7 +768,7 @@ The Entrance To The Lair~
    The smell here is awful.  To the south you can see some smoke.  A tunnel
 leads north and east.
 ~
-73 acd 2
+73 13 0 0 0 0
 D0
 ~
 ~
@@ -789,7 +789,7 @@ The North-Eastern Part Of The Basilisk's Cave~
    It is hard to see here because of the smoke.  To the north you can barely
 see a small tunnel.  Other exits are to the south and to the west.
 ~
-73 ad 2
+73 9 0 0 0 0
 D0
 ~
 ~
@@ -808,7 +808,7 @@ The South-Eastern Part Of The Basilisk's Cave~
    There is a very small hole in wall from which the smoke is coming from. 
 Otherwise it is pitch black.  Exits are north and west.
 ~
-73 ad 2
+73 9 0 0 0 0
 D0
 You can see nothing but smoke.
 ~
@@ -830,7 +830,7 @@ The North-Western Part Of The Basilisk's Cave~
 makes you feel sick.  This place where the Basilisk sleeps.  Watch out...
 maybe it is not far from here...
 ~
-73 ad 2
+73 9 0 0 0 0
 D1
 ~
 ~
@@ -848,7 +848,7 @@ S
 The South-Western Part Of The Basilisk's Cave~
    You can see nothing but smoke.  
 ~
-73 ad 5
+73 9 0 0 0 0
 D0
 ~
 ~
@@ -867,7 +867,7 @@ The Small Cave~
    You are standing in small cave.  You can see some light at the end.  Exits
 are north and south.
 ~
-73 acd 2
+73 13 0 0 0 0
 D0
 You can see only smoke.
 ~
@@ -884,7 +884,7 @@ The Northern End Of The Pool~
    You have wet feet, you are standing in water.  The water looks calm.  You
 can see that it is a big lake.  Light seeps from the water.
 ~
-73 d 4
+73 8 0 0 0 0
 D0
 You can see a small cave.
 ~
@@ -906,7 +906,7 @@ The Pool~
    You are swimming in water.  It is getting deep here.  It is also dark in
 this end.
 ~
-73 ad 6
+73 9 0 0 0 0
 D2
 You can see some bubbles in the water.
 ~
@@ -922,7 +922,7 @@ S
 The South End Of The Pool~
    You standing in water up to your neck!  You can only see water.
 ~
-73 d 5
+73 8 0 0 0 0
 D0
 You can see calm water.
 ~
@@ -938,7 +938,7 @@ S
 The Pool~
    You are swimming in DARKNESS.  You feel something touching your right leg.
 ~
-73 ad 6
+73 9 0 0 0 0
 D0
 To dark to tell.
 ~

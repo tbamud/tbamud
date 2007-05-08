@@ -6,7 +6,7 @@ A small rodent with armored scales slowly crosses the path.
    This wee armadillo looks fairly well-armored.  Doesn't look like he could do
 much damage, but would still be difficult to kill.    
 ~
-cdghlm ks 0 E
+6348 0 0 0 524288 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -18,7 +18,7 @@ An oversized, hairy spider scuttles away.
 ~
    The tarantula loves its privacy, and hopes you will soon leave.    
 ~
-deglmr dk -400 E
+137304 0 0 0 16 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -32,7 +32,7 @@ There is a strange looking cactus here.
 position over time!  Sharp spines stick out dangerously, threatening to prick
 you.    
 ~
-dgnpr cfkpr 0 E
+172104 0 0 0 327752 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -45,7 +45,7 @@ A thin, mangy beast lurks about here.
    This dog looks like it has never been tamed.  Its fur stands on end, and it
 is full of brambles.  You don't think you should pet it.    
 ~
-cdeghlm ks -200 E
+6364 0 0 0 524288 0 0 0 -200 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -58,7 +58,7 @@ A lemming pauses here, looking for a cliff to leap off.
    This small but feisty rodent has absolutely no brains.  It is sitting here,
 just waiting to follow a crowd.    
 ~
-dgm k 200 E
+4168 0 0 0 0 0 0 0 200 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -75,7 +75,7 @@ A razorback boar stands here, looking angry as hell.
    This vicious-looking animal looks both angry and hungry.  Provocation would
 surely bring him to a spastic frenzy!    
 ~
-cdglmp fhkn 100 E
+38988 0 0 0 64 0 0 0 100 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -91,7 +91,7 @@ A rattler is coiled up here, trying to be invisible.
    This snake is doing its best to blend in with its surroundings.  Most of its
 victims usually bet attacked because they step on it.    
 ~
-bdg bnt -400 E
+74 0 0 0 1048580 0 0 0 -400 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 6 5 0
@@ -104,7 +104,7 @@ An Indian scout sneaks about here, glaring at you with suspicious eyes.
    This man is sent out into the desert for one reason, to keep you away from
 something.    
 ~
-cdeghlm dfks 0 E
+6364 0 0 0 524368 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -118,7 +118,7 @@ A mad hermit is here, getting ready to mutilate you!
 obviously very displeased with your presence, and wants to kill you for your
 knowledge of where he lives.    
 ~
-bdel ajn -300 E
+2074 0 0 0 1026 0 0 0 -300 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -132,7 +132,7 @@ A massive Indian guard is here, ready to defend his post to the death!
 sun for hours on end.  He eats cactus thorns for breakfast, and sleeps on
 rocks.  You wish you were this tough.    
 ~
-bdelmn efkmn 0 E
+14362 0 0 0 8288 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -145,7 +145,7 @@ The Indian ruler of the south is here, smoking a strange weed.
    Slashing Boar looks right back at you, and you can somehow sense that he
 would just as soon kill you as look at you.    
 ~
-bdelmo bdefhmn 1000 E
+22554 0 0 0 8308 0 0 0 1000 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 5 5 1
@@ -163,7 +163,7 @@ The Giant condor peers off into the south...
    You are amazed at this bird's size.  You are awed at its grand presence.  
 You really shouldn't kill it, it might be illegal.    
 ~
-deglmr gk 0 E
+137304 0 0 0 128 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -175,7 +175,7 @@ A spiky-looking horny toad is here, taking an afternoon nap.
 ~
    This little beast would be very frightening if it were larger.    
 ~
-dgh k 1000 E
+200 0 0 0 0 0 0 0 1000 E
 17 15 0 3d3+170 2d2+2
 170 28900
 5 5 2

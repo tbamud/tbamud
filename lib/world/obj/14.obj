@@ -3,7 +3,7 @@ apple~
 a red apple~
 A red apple lays on the ground.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1401
@@ -11,7 +11,7 @@ bed comfy~
 a comfy bed~
 A comfy bed is begging you to take a nap.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 1413

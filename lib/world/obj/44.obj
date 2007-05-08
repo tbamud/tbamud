@@ -3,7 +3,7 @@ sword bastard bastardsword~
 an orcish bastardsword~
 A big sword with crude edges is lying here.~
 ~
-5 fgjn an 0
+5 fgjn 0 0 0 an 0 0 0 0 0 0 0
 6 3 3 3
 12 480 48 0
 E
@@ -22,7 +22,7 @@ sword long longsword~
 an orcish longsword~
 A longsword of orcish origin has been thrown here.~
 ~
-5 gjn an 0
+5 gjn 0 0 0 an 0 0 0 0 0 0 0
 6 1 8 3
 5 100 10 0
 A
@@ -34,7 +34,7 @@ mace rusty~
 a rusty spiked mace~
 A wicked looking spiked iron mace has been left here.~
 ~
-5 gjo an 0
+5 gjo 0 0 0 an 0 0 0 0 0 0 0
 3 2 3 5
 10 200 20 0
 A
@@ -46,7 +46,7 @@ dagger bone bonedagger sacrificial~
 a sacrificial bonedagger~
 A dagger with a bloodstain on its tip has been plunged into the ground here.~
 ~
-5 aghj an 0
+5 aghj 0 0 0 an 0 0 0 0 0 0 0
 5 2 2 14
 1 150 15 0
 A
@@ -60,7 +60,7 @@ robe purple cloak~
 a long purple robe~
 A pile of purple cloth is here on the ground.~
 ~
-9 gjl ak 0
+9 gjl 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 4 4 0 0
 A
@@ -74,7 +74,7 @@ pot magic cauldron potion~
 a cauldron of magic brew~
 A bubbling cauldron is sending peculiar smells in your direction.~
 ~
-10 ag ao 0
+10 ag 0 0 0 ao 0 0 0 0 0 0 0
 12 1 36 2
 6 300 30 0
 E
@@ -88,7 +88,7 @@ ringmail mail bronze~
 a bronze ringmail~
 A bronze ringmail in on the ground.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 12 480 48 0
 #4408
@@ -96,7 +96,7 @@ leather scalemail mail~
 a studded leather scalemail~
 A studded leather scalemail has been left here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 6 250 25 0
 A
@@ -106,7 +106,7 @@ collar spiked iron~
 an iron spiked collar~
 A leather strap with iron spikes has been thrown in the corner.~
 ~
-12 gjmno ac 0
+12 gjmno 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 150 15 0
 A
@@ -120,7 +120,7 @@ pouch~
 a large leather pouch~
 A leather pouch with a string at the opening is lying here.~
 ~
-15 c a 0
+15 c 0 0 0 a 0 0 0 0 0 0 0
 10 5 -1 0
 1 10 1 0
 #4411
@@ -128,7 +128,7 @@ money coins~
 some coins~
 Some coins have been dropped here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 100 0 0 0
 1 100 0 0
 $~

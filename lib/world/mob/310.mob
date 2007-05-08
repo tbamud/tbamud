@@ -6,7 +6,7 @@ A forest brownie scampers about here.
    The forest brownie winks at you and scurries away.  Quite an amicable
 fellow.    
 ~
-cdgh bt 800 E
+204 0 0 0 1048580 0 0 0 800 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -19,7 +19,7 @@ a wolf trots by, looking for a rabbit
    The wolf looks rather hungry.  You see him trying to decide if YOU taste
 like rabbit.    
 ~
-cdg t -300 E
+76 0 0 0 1048576 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 0
@@ -32,7 +32,7 @@ A brown rabbit hops along merrily.
    The rabbit looks up at you with big brown eyes, then scoots away..  Hey..  
 There goes lunch!    
 ~
-dgh 0 400 E
+200 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -45,7 +45,7 @@ A woodsman watches you, a stalk of grass hanging from his mouth
    The woodsman chuckles and says, 'Howdy stranger- the name is Tomal..  Howya
 doing?  '
 ~
-cdg h 800 E
+76 0 0 0 0 0 0 0 800 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -58,7 +58,7 @@ A shadowy form steps out of the mist.
    You see a nightmarish array of teeth and claws, the guardian demon is
 determined to rip your guts out.    
 ~
-bdf cdeu -1000 E
+42 0 0 0 56 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -71,7 +71,7 @@ The Graye guardsman is posted here.
    The guardsman smiles at you kindly.  He says, 'better stick with me guy--
 its a dangerous world out there.  '
 ~
-bd h 900 E
+10 0 0 0 0 0 0 0 900 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -84,7 +84,7 @@ A tiny demon snarls at you.
    It seems like a relatively harmless little demon, but those sharp teeth
 might hurt if they were wrapped around your arm.    
 ~
-cdg t -800 E
+76 0 0 0 1048576 0 0 0 -800 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -97,7 +97,7 @@ A minor demon jumps out of the shadows at you!
    The demon resembles little, but a sinewy mass of flesh, tendons, and teeth.
 It glares at you with pure fury in it's eyes.    
 ~
-dfg bu -900 E
+104 0 0 0 4 0 0 0 -900 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 0
@@ -110,7 +110,7 @@ A citizen of Graye rushes by here, looking over his shoulder.
    The citizen looks rather nervous- You would too if your town was beseiged by
 demons.    
 ~
-dgh h 700 E
+200 0 0 0 0 0 0 0 700 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -123,7 +123,7 @@ A citizen of Graye rushes by here, looking over her shoulder.
    The citizen looks rather nervous- You would too if your town was beseiged by
 demons.    
 ~
-dgh h 700 E
+200 0 0 0 0 0 0 0 700 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -136,7 +136,7 @@ A major demon lurks about here.
    You look deep into the eyes of the beast.  You sense no absolutely no
 intellect, only raw power and rage.    
 ~
-cdfg bh -900 E
+108 0 0 0 4 0 0 0 -900 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -148,7 +148,7 @@ A shadow wraith drifts into your way.
 ~
    All you see is a fog-like apparition, with two glowing red eyes...    
 ~
-bdf bh -900 E
+42 0 0 0 4 0 0 0 -900 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -162,7 +162,7 @@ A jail guard patrols here, whipping the prisoners.
 of hair.  He glares at you with his one good eye and says, 'Put down that
 weapon, prisoner!  '
 ~
-bcdf h -800 E
+46 0 0 0 0 0 0 0 -800 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -176,7 +176,7 @@ The King's Advisor is here, weeping.
 are a great adventurer..  Please bring him back to us!  ' The advisor turns
 from you and continues to sob uncontrollably.    
 ~
-bd h 900 E
+10 0 0 0 0 0 0 0 900 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -189,7 +189,7 @@ The Arch-Demon Irgon emerges from the shadows.
    Irgon frowns down upon you.  His oily black skin reflects the torchlight.  
 A thick white claw points at you, and he utters, 'prepare to die.  '
 ~
-bdf bh -900 E
+42 0 0 0 4 0 0 0 -900 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -204,7 +204,7 @@ relaxed.  You stare directly into his eyes, and feel yourself slipping deeper
 and deeper...  NOOO!!  Scrytin growls, 'Won't become a minion of mine eh?..  
 Then you shall DIE!  '
 ~
-dfg h -999 E
+104 0 0 0 0 0 0 0 -999 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -217,7 +217,7 @@ The good king Relnar is here.
    You look into the eyes of the descendant of Graye, and know now why his city
 is so prosperous and happy.    
 ~
-bd h 999 E
+10 0 0 0 0 0 0 0 999 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1

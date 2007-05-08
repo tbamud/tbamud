@@ -8,7 +8,7 @@ sashes.  He turns his head suddenly to catch a glimpse of a young noblewoman
 and you see a small teal ornament hanging loosely from his right ear.  The
 trinket looks quite valuable.    
 ~
-dghp 0 0 E
+32968 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -22,7 +22,7 @@ Maree is here serving drinks.
    She is one of those women who could be twenty-five or could be forty.  She
 has that timeless look about her that lends a quiet, dignified beauty.    
 ~
-bdnopr 0 700 E
+188426 0 0 0 0 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -36,7 +36,7 @@ A town noble stands nearby, disgusted by your mere presence.
 shirt and tidies his hair he turns his head from you, not acknowledging your
 presence there.    
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -50,7 +50,7 @@ The proprieter of the Inn is here, making sure everything is perfect.
    He hurries here and there and everywhere, always fussing or whining that
 something is wrong or out of place.    
 ~
-bdo 0 200 E
+16394 0 0 0 0 0 0 0 200 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -64,7 +64,7 @@ A waiter is here scurrying from table to table.
 to beat at any moment.  Poor fella, he probably gets at least one good tongue
 lashing a day.    
 ~
-bdh 0 800 E
+138 0 0 0 0 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -78,7 +78,7 @@ The Mayor's wife stalks silently by.
 belong.  Her features are long and sad looking, as if she had no desire to be
 the mayor's wife.  She moves away quickly, trying to remain unseen.    
 ~
-dghor 0 0 E
+147656 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -92,7 +92,7 @@ A strikingly beautiful woman stands at the wheel, taking bets.
    She gives you a very big, very seductive smile and urges you to place a bet.
   
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -105,7 +105,7 @@ Baagh is here, dealing the next the grueling round of war.
    Baagh does not look all that smart.  Seems that this card game is just his
 speed.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -117,7 +117,7 @@ A blank-faced dealer is here, getting ready to take your money.
 ~
    This guy is the poster child for poker faces.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -130,7 +130,7 @@ A noble's wife is standing here.
    She has the same contempt of you as a nobleman has, full of disgust.  She
 tries to be as far away from you as she can.    
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -144,7 +144,7 @@ Sam the blackjack dealer is here flipping cards to players.
 barely hear him mumble, 'push, we got a winner, oh too bad, and every now and
 then an almost audible blackjack!  '
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -157,7 +157,7 @@ A stealthy burglar is attempting to hide himself in the shadows.
    Crouched back in a corner, head low, this man thinks that you are unable to
 see him.    
 ~
-bdh 0 -500 E
+138 0 0 0 0 0 0 0 -500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -170,7 +170,7 @@ The Park Ranger is here, tending to the park.
    She is dressed all in brown and green, with rake in hand.  She looks like
 she knows her way around both forest and city.    
 ~
-bdhl 0 600 E
+2186 0 0 0 0 0 0 0 600 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -183,7 +183,7 @@ A little boy plays tag with a little girl, laughing and giggling as he runs.
    With lunch stains all over his shirt and grass stains all on his knees, he
 looks like he couldn't be any happier than he is now.    
 ~
-dg 0 400 E
+72 0 0 0 0 0 0 0 400 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -196,7 +196,7 @@ A little girl laughs as a boy tries in vain to catch her by the ponytails.
    With her bright red hair up in ponytails, she kind of looks like Pippy
 Longstocking.    
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -208,7 +208,7 @@ The matre de looks disdainfully at you.
 ~
    This man may have to get a bit snooty, better watch it.    
 ~
-bd 0 -100 E
+10 0 0 0 0 0 0 0 -100 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -221,7 +221,7 @@ A well dressed waiter is moving gracefully through the room, serving customers.
    Resplendant inhis black tuxedo and shined shoes, this man would be graceful
 falling down.    
 ~
-bd 0 300 E
+10 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -234,7 +234,7 @@ A waitress moves through the room serving drinks.
    This woman could only be described as elegant the way she sways and moves
 through the clientele dining here.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -247,7 +247,7 @@ A receptionist sits behind an ornate mahoganey desk, taking reservations for the
    She looks almost bored with her job as she efficiently writes dates, names,
 and times in ledger.    
 ~
-bdo 0 100 E
+16394 0 0 0 0 0 0 0 100 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 6 6 2
@@ -260,7 +260,7 @@ A woman is planting flowers here, pulling weeds here and there.
    She looks in her element here, digging in the dirt, like she couldn't be
 happier anywhere else.    
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 17 15 0 3d3+170 2d2+2
 170 28900
 6 6 2
@@ -273,7 +273,7 @@ A man is here serving all the diners quietly, efficiently.
    A very somber seeming man, you cannot see a glint of a smile or any kind of
 emotion on his face.  His work seems to be his passion.    
 ~
-bdnopr 0 -100 E
+188426 0 0 0 0 0 0 0 -100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -286,7 +286,7 @@ A grave digger is resting under the shade of a tree, shovel on the ground next t
    He wipes the sweat from his brow, smiles, and asks if you might like to join
 him for a bit of a rest...?    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
 150 22500
 6 6 1
@@ -298,7 +298,7 @@ The hotel manager stands behind a large desk, ready to sell you a room.
 ~
    He smiles and asks how he can help you today.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -310,7 +310,7 @@ She stands smiling at you, waiting for you to take a room.
 ~
    Hmmmm....  Wonder if she is part of the price, too...    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2

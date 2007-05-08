@@ -6,7 +6,7 @@ A mountain goat nibbles at a piece of grass here.
    This goat is acclimated to the rugged terrain of the mountains.  It looks at
 you and shies away a little.  
 ~
-dgh k 0 E
+200 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -20,7 +20,7 @@ A cloaked and clawed demon of decay comes at you viciously!
    This demon has pure malevolence for anything living.  Oops!  You're living!
 I guess that means you!  
 ~
-bdeflmnopr dk -1000 E
+194618 0 0 0 16 0 0 0 -1000 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -33,7 +33,7 @@ A mound of books rise up into a human shape and tries to hit you!
 ~
    Ironically enough, the book-monster's head is War and Peace.  Hmm.  
 ~
-bdeflmnopqr dk 0 E
+260154 0 0 0 16 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -46,7 +46,7 @@ A bad feeling chokes your throat.
    It resembles a lot of other bad feelings you've had, but a lot more
 tangible...  Magic?  
 ~
-bdeflmnopqr dk 0 E
+260154 0 0 0 16 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -59,7 +59,7 @@ Your worst nightmare coalesces in front of you and attacks!
    It looks like you deepest, darkest fears personified.  Wait a minute!  It IS
 your deepest, darkest fears personified!  
 ~
-bdeflmnopqr dk 0 E
+260154 0 0 0 16 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 0
@@ -72,7 +72,7 @@ A guardian guards the door.  It looks at you and attacks!
    The guardian guards the door.  That's about all its brain can handle:
 guarding.  
 ~
-bdeflmnopr dk 0 E
+194618 0 0 0 16 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -87,7 +87,7 @@ A small god entrapped by the wizard looks at you with an insane expression.
 It looks ready and able to take out vengeance on anyone silly enough to enter
 the pentagram that contains its power.  
 ~
-bdo dfk 0 E
+16394 0 0 0 80 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 0

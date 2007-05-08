@@ -6,7 +6,7 @@ A strongarm of Iuel is not willing to trade in business.
    This ghostly apparition uses benign forces to mold and shape various
 instruments of death and destruction.  
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -20,7 +20,7 @@ The wisdom of Iuel hangs over the atmosphere.
 always been, and forever will be.  Gaining knowledge and insight into
 everything.  
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -34,7 +34,7 @@ A brewing cauldron is in the middle of the room bubbling.
 No longer a living presence in this world it has nothing to fear, but it still
 dwells in the lost arts of the arcane.  
 ~
-bdo dk 0 E
+16394 0 0 0 16 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -47,7 +47,7 @@ A stoned drugkeeper stares at you with an empty eye.
    The shade of the drugkeeper is eternally doped.  His abuses in mortality seem
 to have somehow transferred over to the other side.  It knows it's drugs.  
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -59,7 +59,7 @@ A spirit of Iuel haunting these grounds waves a shakey hand at you.
 ~
    The spirit floats towards you slowly, looking for anything of value.  
 ~
-cdgo 0 500 E
+16460 0 0 0 0 0 0 0 500 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -73,7 +73,7 @@ A spirit of Iuel haunting these grounds waves a shakey hand at you.
 real world.  It stares with dull lifeless eyes at everything around it, seeming
 to be looking for something.  
 ~
-dglo 0 500 E
+18504 0 0 0 0 0 0 0 500 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -87,7 +87,7 @@ A spirit of Iuel haunting these grounds waves a shakey hand at you.
 really even discernable, besides the fact that it looks human in form and is
 layered in armor.  
 ~
-cdgo 0 500 E
+16460 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -99,7 +99,7 @@ A spirit of Iuel haunting these grounds waves a shakey hand at you.
 ~
    An ephemereal form that almost seems to disappear when looked at directly.  
 ~
-cdgo 0 500 E
+16460 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -112,7 +112,7 @@ A spirit of Iuel haunting these grounds waves a shakey hand at you.
    This shade from another life is strangely dark, almost black and seems to
 carry with it an ill boding.  
 ~
-cdgo 0 500 E
+16460 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -125,7 +125,7 @@ A spirit of Iuel haunting these grounds waves a shakey hand at you.
    A lost soul of a long dead vampire, it's body has become lost with time and
 only it's lifeless spirit can now seek fresh blood that it cannot consume.  
 ~
-cdgo 0 500 E
+16460 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -138,7 +138,7 @@ A spirit of Iuel haunting these grounds waves a shakey hand at you.
    This hunched over spirit barely even looks human, or what was once a human,
 grotesque features marc it as a ghoul that long since died.  
 ~
-cdgo 0 500 E
+16460 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -151,7 +151,7 @@ A spirit of Iuel haunting these grounds waves a shakey hand at you.
    The wandering spirit is the remains of a powerful mage that found
 immortality.  But could not bring it's mortal body along for the ride.  
 ~
-cdgo 0 500 E
+16460 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -164,7 +164,7 @@ A spirit of Iuel haunting these grounds waves a shakey hand at you.
    This undead spirit has lost it's bodily form and now lusts for anothers to
 absorb and return to life.  
 ~
-bcdgo 0 500 E
+16462 0 0 0 0 0 0 0 500 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -176,7 +176,7 @@ A fat rat sits on a mat eating slabs of cat grining like the mad hat-ter.
 ~
    This tamed rat waddles awkwardly due to it's massive girth.  
 ~
-dg 0 200 E
+72 0 0 0 0 0 0 0 200 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -189,7 +189,7 @@ A wog dog chews on a log releasing gas, causing a fog is here.
    This trained dog can roll over like a log, go for a jog, fetch a cog, and
 maybe kill a frog.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -202,7 +202,7 @@ A small boy named Roy sits here playing with this toy, his face full of joy.
    The boy looks rather coy and begins to annoy everyone which he seems to
 enjoy.  
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -215,7 +215,7 @@ A wolverine sick with disease growls at you.
    This angry beasts fur is matted and brown from dirt.  It foams at the mouth
 and snarls at anything that moves, even it's own shadow.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -228,7 +228,7 @@ A red and black striped tiger crawls in the shadows hoping not to be seen.
    The large beast is the size of a small horse.  It's muscular body rippling as
 it stalks back and forth waiting for some easy prey.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -242,7 +242,7 @@ A huge crab scutters around in the muddy waters.
 Each limb measuring almost a span in length.  It's hard crustaceous shell and
 casings give it better armor than most other animals.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -255,7 +255,7 @@ Writing equipment floats around in the air, waiting to take a message.
    Leafs of paper and other parchment float about the room ominously.  Quills
 and ink bottles also.  It is here where you may mail anyone within the mud.  
 ~
-abdnopr 0 0 E
+188427 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0

@@ -485,7 +485,7 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) {
     char buf[MAX_STRING_LENGTH];
 
-    sprintbit(ROOM_FLAGS(IN_ROOM(ch)), room_bits, buf, sizeof(buf));
+    sprintbitarray(ROOM_FLAGS(IN_ROOM(ch)), room_bits, RF_ARRAY_MAX, buf);
     send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
 
     send_to_char(ch, "%s%s [ %s]",
@@ -1949,8 +1949,11 @@ ACMD(do_toggle)
       send_to_char(ch, "Usage: toggle color { Off | Normal | On }\r\n");
       return;
     }
-    REMOVE_BIT(PRF_FLAGS(ch), PRF_COLOR_1 | PRF_COLOR_2);
-    SET_BIT(PRF_FLAGS(ch), (PRF_COLOR_1 * (tp & 1)) | (PRF_COLOR_2 * (tp & 2) >> 1));
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_1);
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_2);
+    SET_BIT_AR(PRF_FLAGS(ch), (PRF_COLOR_1 * (tp & 1)));
+    SET_BIT_AR(PRF_FLAGS(ch), (PRF_COLOR_2 * (tp & 2) >> 1));
+
     send_to_char(ch, "Your %scolor%s is now %s.\r\n", CCRED(ch, C_SPR), CCNRM(ch, C_OFF), types[tp]);
     return;
   case SCMD_SYSLOG:
@@ -1963,8 +1966,11 @@ ACMD(do_toggle)
       send_to_char(ch, "Usage: toggle syslog { Off | Brief | Normal | On }\r\n");
       return;
     }
-    REMOVE_BIT(PRF_FLAGS(ch), PRF_LOG1 | PRF_LOG2);
-    SET_BIT(PRF_FLAGS(ch), (PRF_LOG1 * (tp & 1)) | (PRF_LOG2 * (tp & 2) >> 1));
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_LOG1);
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_LOG2);
+    SET_BIT_AR(PRF_FLAGS(ch), (PRF_LOG1 * (tp & 1)));
+    SET_BIT_AR(PRF_FLAGS(ch), (PRF_LOG2 * (tp & 2) >> 1));
+
     send_to_char(ch, "Your syslog is now %s.\r\n", types[tp]);
     return;
   case SCMD_SLOWNS:
@@ -2035,13 +2041,13 @@ ACMD(do_toggle)
       break;
   default:
     if (!*arg2) {
-      TOGGLE_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
+      TOGGLE_BIT_AR(PRF_FLAGS(ch), tog_messages[toggle].toggle);
       result = (PRF_FLAGGED(ch, tog_messages[toggle].toggle));
     } else if (!strcmp(arg2, "on")) {
-      SET_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
+      SET_BIT_AR(PRF_FLAGS(ch), tog_messages[toggle].toggle);
       result = 1;
     } else if (!strcmp(arg2, "off")) {
-      REMOVE_BIT(PRF_FLAGS(ch), tog_messages[toggle].toggle);
+      REMOVE_BIT_AR(PRF_FLAGS(ch), tog_messages[toggle].toggle);
     } else {
       send_to_char(ch, "Value for %s must either be 'on' or 'off'.\r\n", tog_messages[toggle].command);
       return;

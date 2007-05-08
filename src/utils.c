@@ -291,6 +291,32 @@ size_t sprinttype(int type, const char *names[], char *result, size_t reslen)
   return strlcpy(result, *names[nr] != '\n' ? names[nr] : "UNDEFINED", reslen);
 }
 
+void sprintbitarray(int bitvector[], const char *names[], int maxar, char *result)
+{
+  int nr, teller, found = FALSE;
+
+  *result = '\0';
+
+  for(teller = 0; teller < maxar && !found; teller++)
+    for (nr = 0; nr < 32 && !found; nr++) {
+      if (IS_SET_AR(bitvector, (teller*32)+nr)) {
+        if (*names[(teller*32)+nr] != '\n') {
+          if (*names[(teller*32)+nr] != '\0') {
+            strcat(result, names[(teller*32)+nr]);
+            strcat(result, " ");
+          }
+	} else {
+          strcat(result, "UNDEFINED ");
+        }
+      }
+      if (*names[(teller*32)+nr] == '\n')
+        found = TRUE;
+    }
+
+  if (!*result)
+    strcpy(result, "NOBITS ");
+}
+
 /* Calculate the REAL time passed over the last t2-t1 centuries (secs) */
 struct time_info_data *real_time_passed(time_t t2, time_t t1)
 {
@@ -404,7 +430,7 @@ void stop_follower(struct char_data *ch)
   }
 
   ch->master = NULL;
-  REMOVE_BIT(AFF_FLAGS(ch), AFF_CHARM | AFF_GROUP);
+  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_CHARM | AFF_GROUP);
 }
 
 int num_followers_charmed(struct char_data *ch)

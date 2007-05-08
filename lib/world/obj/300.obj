@@ -3,7 +3,7 @@ falchion sword~
 a falchion~
 A strange looking sword lies discarded here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 3
 5 900 0 0
 E
@@ -15,7 +15,7 @@ blood chalice blood~
 a chalice~
 A blood-stained chalice has been set down here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 6 6 13 1
 11 300 0 0
 E
@@ -27,7 +27,7 @@ coffer copper ornate~
 the copper coffer~
 An ornate copper coffer is set against the far wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 200 13 0 0
 0 0 0 0
 E
@@ -40,7 +40,7 @@ tonic root comfrey~
 a tonic of comfrey root~
 A tonic of comfrey root has been discarded here.~
 ~
-10 g ao 0
+10 g 0 0 0 ao 0 0 0 0 0 0 0
 15 39 39 33
 1 600 0 0
 E
@@ -52,7 +52,7 @@ elixir tongue adder~
 an elixir of Adder's Tongue~
 An elixir of Adder's Tongue lies here.~
 ~
-10 g ao 0
+10 g 0 0 0 ao 0 0 0 0 0 0 0
 15 44 21 -1
 1 600 0 0
 E
@@ -65,7 +65,7 @@ key skeleton~
 a skeleton key~
 An old skeleton key lies on the floor.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 30005 0 0 0
 2 500 0 0
 E
@@ -77,7 +77,7 @@ blowgun bamboo~
 a blowgun~
 A long, bamboo blowgun rest on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 9 2 7
 5 160 0 0
 E
@@ -92,7 +92,7 @@ blood pool blood~
 the pool~
 You seem to be standing in a pool of blood.~
 ~
-17 0 0 0
+17 0 0 0 0 0 0 0 0 0 0 0 0
 15 15 13 5
 20 0 0 0
 E
@@ -105,7 +105,7 @@ Bloodstone stone red~
 the Bloodstone~
 A large, dull red stone awaits, invitingly, to be picked up.~
 ~
-4 bgj ao 0
+4 bgj 0 0 0 ao 0 0 0 0 0 0 0
 13 7 7 25
 8 300 0 0
 E
@@ -120,7 +120,7 @@ Heartseeker stiletto blade~
 the Heartseeker~
 A nasty looking stiletto with a shiny black blade lies amid the dust.~
 ~
-5 bgj an 0
+5 bgj 0 0 0 an 0 0 0 0 0 0 0
 0 4 4 11
 3 1000 0 0
 E
@@ -136,7 +136,7 @@ shield scarab~
 a scarab shield~
 A shield with a large, dead scarab mounted in the center lies here.~
 ~
-9 g aj 0
+9 g 0 0 0 aj 0 0 0 0 0 0 0
 6 0 0 0
 17 900 0 0
 E
@@ -152,7 +152,7 @@ mace fred skull~
 the Mace of Undead Fred~
 A skull-headed mace has been left here.~
 ~
-5 bgj an 0
+5 bgj 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 6
 10 120 0 0
 E
@@ -169,7 +169,7 @@ buckler arsenal~
 an arsenal buckler~
 A spiked buckler with a circle of knives set in it, has been left here.~
 ~
-15 0 aj 0
+15 0 0 0 0 aj 0 0 0 0 0 0 0
 3 0 -1 0
 7 240 0 0
 E
@@ -185,7 +185,7 @@ knife throwing~
 a throwing knife~
 A well balanced throwing knife lies on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 3
 1 10 0 0
 E
@@ -198,7 +198,7 @@ pile debris~
 the pile~
 A pile of debris has been stacked on a small plateau, away from the acid.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 1000 0 -1 0
 0 0 0 0
 E
@@ -211,7 +211,7 @@ guisarme polearm~
 a guisarme~
 A long, sharp polearm has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 3
 16 150 0 0
 E
@@ -227,7 +227,7 @@ glove minstrels minstrel~
 a minstrel's glove~
 A single, white minstrel's glove has been discarded here.~
 ~
-9 ag ah 0
+9 ag 0 0 0 ah 0 0 0 0 0 0 0
 6 0 0 0
 8 450 0 0
 E
@@ -242,7 +242,7 @@ mail shabby~
 some shabby mail~
 A worn and shabby suit of ring mail has been cast away here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
 20 700 0 0
 E
@@ -254,7 +254,7 @@ key granite~
 a granite key~
 A key fashioned of stone has been left here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 150 0 0
 E
@@ -267,7 +267,7 @@ flesh embalmed~
 the embalmed flesh~
 A large pile of presumably human flesh has been embalmed and stored here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 600 0 0
 E
@@ -280,7 +280,7 @@ flail beater grave~
 a grave beater~
 A rusty grave beater flail has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 7 2
 12 150 0 0
 E
@@ -294,7 +294,7 @@ dagger rusty~
 a rusty dagger~
 An old and rusty dagger has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 2 3
 1 2 0 0
 E
@@ -307,7 +307,7 @@ vial potion puce~
 a puce potion~
 A small vial has been forgotten here.~
 ~
-10 g ao 0
+10 g 0 0 0 ao 0 0 0 0 0 0 0
 25 19 33 -1
 2 35 0 0
 E
@@ -320,7 +320,7 @@ shield large shiny~
 a large, shiny shield~
 A glistening metal object is here, it appears to be a shield.~
 ~
-9 g aj 0
+9 g 0 0 0 aj 0 0 0 0 0 0 0
 9 0 0 0
 1 1000 0 0
 E
@@ -338,7 +338,7 @@ torch green~
 a green torch~
 An odd torch glowing green has been left here.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 1 0 0
 E
@@ -351,26 +351,26 @@ helm silver metal~
 a silver helm~
 A helm made of a silverish metal has been left here.~
 ~
-9 0 aeo 0
+9 0 0 0 0 aeo 0 0 0 0 0 0 0
 0 0 0 0
 10 100 0 0
-E
-engravings lines pattern~
-   The lines appear to be a part of a pattern, but you cannot make out exactly
-what the pattern is.  
-~
 E
 helm silver metal~
    This helm looks to be purely ornamental, and does not look like it would
 afford the wearer any protection whatsoever.  It is finely engraven with small
 wavy lines however.  
 ~
+E
+engravings lines pattern~
+   The lines appear to be a part of a pattern, but you cannot make out exactly
+what the pattern is.  
+~
 #30026
 jacket rotted leather~
 a rotted leather jacket~
 An old, rotted leather jacket is decomposing on the ground here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 3 1 0 0
 E
@@ -383,7 +383,7 @@ rod metal strange~
 a strange metal rod~
 A rather strange rod of a metallic material has been left here.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 15 7 0 0
 E

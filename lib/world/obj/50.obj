@@ -3,7 +3,7 @@ pick mining~
 a small mining pick~
 A small mining pick made of what appears to be silver lies on the ground.~
 ~
-5 j an 0
+5 j 0 0 0 an 0 0 0 0 0 0 0
 0 1 9 11
 3 600 500 0
 #5001
@@ -11,7 +11,7 @@ suit mail banded~
 a glowing suit of banded mail~
 A glowing suit of banded mail lies on the ground.~
 ~
-9 ag ad 0
+9 ag 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 10 750 20 0
 A
@@ -23,7 +23,7 @@ halberd~
 a halberd~
 A mighty halberd lies against the wall.~
 ~
-5 gi an 0
+5 gi 0 0 0 an 0 0 0 0 0 0 0
 0 3 5 3
 16 120 100 0
 A
@@ -35,7 +35,7 @@ amulet mushroom~
 a mushroom amulet~
 A mushroom-shaped amulet lies on the ground.~
 ~
-9 gp ac 0
+9 gp 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 2 150 40 0
 A
@@ -45,7 +45,7 @@ bone leg~
 a large leg bone~
 A large leg bone rests on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 7
 5 300 60 0
 #5006
@@ -53,7 +53,7 @@ cactus cup water~
 a small cactus cup~
 A small cactus cup lies on the ground.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 0 0
 6 30 5 0
 #5007
@@ -61,7 +61,7 @@ basket wicker small~
 a small wicker basket~
 A small wicker basket sits on the ground.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 100 5 -1 0
 50 500 50 0
 #5008
@@ -69,7 +69,7 @@ basket wicker small~
 a small wicker basket~
 A small wicker basket sits on the ground.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 100 5 -1 0
 50 500 50 0
 #5009
@@ -77,7 +77,7 @@ basket wicker small~
 a small wicker basket~
 A small wicker basket sits on the ground.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 100 5 -1 0
 50 500 50 0
 #5010
@@ -85,7 +85,7 @@ basket wicker small~
 a small wicker basket~
 A small wicker basket sits on the ground.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 100 5 -1 0
 0 0 0 0
 #5011
@@ -93,7 +93,7 @@ rope coil~
 a coil of rope~
 A long coil of rope lies on the ground.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 12 450 45 0
 #5012
@@ -101,7 +101,7 @@ stakes bundle bunch~
 a bunch of stakes~
 A small bundle of stakes lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 2 11
 6 250 30 0
 #5013
@@ -109,7 +109,7 @@ ttatered old parchment~
 an old, tattered parchment~
 An old, tattered, and much faded parchment lies here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 300 20 0
 #5014
@@ -117,7 +117,7 @@ turban padded~
 a thick padded turban~
 A thick padded turban lies here.~
 ~
-9 gh ae 0
+9 gh 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 15 430 100 0
 A
@@ -127,7 +127,7 @@ coins treasure~
 a great pile of treasure~
 A great, gleaming pile of treasure lies at your feet.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 1 1 0 0
 #5016
@@ -135,7 +135,7 @@ sabre curved long~
 a long, curved sabre~
 A long, curved sabre stands upright in the ground.~
 ~
-5 l an 0
+5 l 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
 7 105 20 0
 A
@@ -145,7 +145,7 @@ scimitar curved~
 a curved scimitar~
 A curved scimitar lies at your feet.~
 ~
-5 l an 0
+5 l 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 3
 6 600 150 0
 A
@@ -155,7 +155,7 @@ cutlass pointed long~
 a long, pointed cutlass~
 A long, pointed cutlass lies here.~
 ~
-5 l an 0
+5 l 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 3
 5 550 10 0
 #5019
@@ -163,7 +163,7 @@ potion pink~
 a pink potion~
 A pink potion stands here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 25 33 17 -1
 6 600 100 0
 #5020
@@ -171,7 +171,7 @@ wand platinum~
 a platinum wand~
 A platinum wand lies here.~
 ~
-3 b ao 0
+3 b 0 0 0 ao 0 0 0 0 0 0 0
 30 10 10 32
 50 190 10 0
 #5021
@@ -179,7 +179,7 @@ bow golden~
 a golden bow~
 A powerful golden bow lies here.~
 ~
-5 abfgio an 0
+5 abfgio 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 12
 20 150 20 0
 #5022
@@ -187,7 +187,7 @@ scroll encrypted~
 an encrypted scroll~
 An encrypted scroll lies at your feet.~
 ~
-2 0 a 0
+2 0 0 0 0 a 0 0 0 0 0 0 0
 22 14 35 43
 7 150 50 0
 #5023
@@ -195,7 +195,7 @@ chest iron bound~
 an iron bound chest~
 An iron bound chest with a shiny lock sits here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 200 13 5024 0
 0 0 0 0
 #5024
@@ -203,7 +203,7 @@ key golden~
 a golden key~
 A shiny golden key lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 10 0 0 0
 1 150 0 0
 #5025
@@ -211,7 +211,7 @@ bracelet copper~
 a copper bracelet~
 A tarnished copper bracelet lies at your feet.~
 ~
-9 gh am 0
+9 gh 0 0 0 am 0 0 0 0 0 0 0
 -5 0 0 0
 10 230 25 0
 A
@@ -223,7 +223,7 @@ ruby gem~
 a large ruby~
 A large ruby lies on the ground, collecting dust.~
 ~
-8 gh ao 0
+8 gh 0 0 0 ao 0 0 0 0 0 0 0
 20 0 0 0
 9 400 20 0
 #5027
@@ -231,7 +231,7 @@ diamond gem~
 a glittering diamond~
 A glittering diamond lies at your feet.~
 ~
-8 g ao 0
+8 g 0 0 0 ao 0 0 0 0 0 0 0
 21 0 0 0
 10 950 20 0
 #5028
@@ -239,7 +239,7 @@ sapphire gem~
 a brilliant sapphire~
 A brilliant sapphire lies here, twinkling happily.~
 ~
-8 g ao 0
+8 g 0 0 0 ao 0 0 0 0 0 0 0
 22 0 0 0
 7 350 20 0
 #5029
@@ -247,7 +247,7 @@ lapis lazuli blue gem~
 a deep blue lapis lazuli~
 A deep blue lapis lazuli gem lies here.~
 ~
-8 g ao 0
+8 g 0 0 0 ao 0 0 0 0 0 0 0
 24 0 0 0
 11 850 20 0
 #5030
@@ -255,7 +255,7 @@ jewel tiger~
 the Tiger Jewel~
 The Tiger Jewel lies here blazing.~
 ~
-8 i ao 0
+8 i 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 23 430 150 0
 A
@@ -265,7 +265,7 @@ jewel red-eyed~
 the red-eyed jewel~
 The red-eyed jewel glares at you greedily.~
 ~
-8 h ao 0
+8 h 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 30 350 50 0
 A
@@ -275,7 +275,7 @@ emerald gem fiery green~
 a fiery green emerald~
 A fiery green emerald sits here.~
 ~
-8 g ao 0
+8 g 0 0 0 ao 0 0 0 0 0 0 0
 23 0 0 0
 7 550 20 0
 $~

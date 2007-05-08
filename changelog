@@ -44,7 +44,7 @@ tbaMUD 3.52
 [Mar 17 2007] - Rumble
   Fixed locate object spell (thanks JamDog).
   Added plist and and improved history command (thanks Rhade).
-  Renamed immort_level_ok to no_mort_to_immort and rewrote the convuluted comments.
+  Renamed immort_level_ok to no_mort_to_immort and rewrote the convoluted comments.
 [Mar 04 2007] - Rumble
   Fixed fight_messages not displaying (thanks Rhade).
   Removed LVL_FREEZE and set ban/freeze to LVL_GRGOD.
@@ -315,7 +315,7 @@ CircleMUD 3.5
 - Added invis level at login to prevent greeting imms who are hiding.
 - Added delete option to extra desc's. Just /c.
 - Added history command to show last 100 comms.
-- Added an export command that would QQ and compress a zone.
+- Added an export command that will QQ and compress a zone.
 - Numerous new logs for force, buildwalk, delete, snoop, etc.
 - Added vnum and TRIG tags to everything, showvnums toggles it on/off.
 - Added keyword seperation when statting extra desc. [desk] [notes papers]

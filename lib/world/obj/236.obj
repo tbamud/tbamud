@@ -39,7 +39,7 @@ O                                  O
 ^                                  O
 
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #23601
@@ -47,7 +47,7 @@ headstone head stone~
 a headstone~
 A headstone has been set in the ground here.~
 ~
-12 e a 0
+12 e 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 250 25 0
 E
@@ -70,7 +70,7 @@ onyx necklace~
 an onyx necklace~
 Someone has left a small onyx necklace here.~
 ~
-11 g ac 0
+11 g 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 205 20 0
 E
@@ -86,7 +86,7 @@ ankh bloodstone~
 a bloodstone ankh~
 A 2" ankh made from bloodstone has been dropped here.~
 ~
-11 0 ao 0
+11 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 700 70 0
 E
@@ -107,7 +107,7 @@ amethyst pendant~
 an amethyst pendant~
 A pendant made from amethyst is here on the ground.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 2 480 48 0
 E
@@ -121,7 +121,7 @@ axe dwarven~
 a dwarven axe~
 An axe, obviously of dwarven manufacture, has been left here.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 1 4 4 3
 24 210 20 0
 E
@@ -133,7 +133,7 @@ short sword shortsword dwarven~
 a dwarven shortsword~
 A short sword with a broad blade has been left here.~
 ~
-5 gn an 0
+5 gn 0 0 0 an 0 0 0 0 0 0 0
 5 3 4 11
 8 500 50 0
 E
@@ -149,7 +149,7 @@ dagger dwarven~
 a dwarven dagger~
 A large dagger, almost resembling a small sword, is here.~
 ~
-5 gn an 0
+5 gn 0 0 0 an 0 0 0 0 0 0 0
 5 3 3 11
 1 75 7 0
 E
@@ -164,7 +164,7 @@ plate mail platemail dwarven~
 a dwarven platemail~
 A platemail, obviously of crafted by dwarves, has been left here.~
 ~
-9 o ad 0
+9 o 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 7 950 95 0
 E
@@ -176,7 +176,7 @@ ring mail ringmail dwarven~
 a dwarven ringmail~
 A ringmail has been thrown in a heap here.~
 ~
-9 o ad 0
+9 o 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 2 1000 120 0
 E
@@ -189,7 +189,7 @@ bracers steel dwarven~
 some steel bracers~
 Some bracers made of the finest steel are here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 2 500 50 0
 E
@@ -202,7 +202,7 @@ gloves dwarven~
 a pair of dwarven gloves~
 Some gloves have been thrown here.~
 ~
-9 gmo ah 0
+9 gmo 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 1 210 21 0
 E
@@ -219,7 +219,7 @@ iron ore~
 a lump of ore~
 Some iron ore has been piled up here.~
 ~
-8 d a 0
+8 d 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 4 200 20 0
 E
@@ -231,7 +231,7 @@ ore gold~
 a lump of ore~
 Some gold ore has been piled up here.~
 ~
-8 d a 0
+8 d 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 820 82 0
 E
@@ -243,7 +243,7 @@ ore titanium~
 a lump of ore~
 Some titanium ore has been piled up here.~
 ~
-8 d a 0
+8 d 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 800 80 0
 E
@@ -255,7 +255,7 @@ rod iron~
 an iron rod~
 A small rod, made from iron, is here.~
 ~
-8 d a 0
+8 d 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 8 400 40 0
 E
@@ -268,7 +268,7 @@ rod gold~
 a golden rod~
 A small rod, made of gold, is here.~
 ~
-8 d a 0
+8 d 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 800 80 0
 E
@@ -281,7 +281,7 @@ rod titanium~
 a titanium rod~
 A small rod, made of titanium, is here. ~
 ~
-8 d a 0
+8 d 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 100 0
 E
@@ -294,7 +294,7 @@ bar iron~
 an iron bar~
 An iron bar is here on the ground - it looks quite heavy.~
 ~
-8 d a 0
+8 d 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 12 600 60 0
 E
@@ -306,7 +306,7 @@ bar gold~
 a gold bar~
 A gold bar is here on the ground - it looks quite heavy, but also valuable.~
 ~
-8 d a 0
+8 d 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 5 900 90 0
 E
@@ -318,7 +318,7 @@ bar titanium~
 a titanium bar~
 A titanium bar is here on the ground - it looks heavy, but also very valuable.~
 ~
-8 d a 0
+8 d 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1000 100 0
 #23621
@@ -326,7 +326,7 @@ gold foil~
 some gold foil~
 Some gold foil is here. You might pick it up - but be gentle with it.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 400 40 0
 E
@@ -340,7 +340,7 @@ rock~
 a rock~
 A piece of rock has fallen down here.~
 ~
-12 c a 0
+12 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 5 25 2 0
 E
@@ -352,7 +352,7 @@ rock large~
 a large rock~
 A large rock has dropped to the ground here.~
 ~
-12 c a 0
+12 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 50 5 0
 E
@@ -364,7 +364,7 @@ ruby~
 a small ruby~
 Someone have lost a ruby here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 450 45 0
 E
@@ -376,7 +376,7 @@ emerald~
 a small emerald~
 A little emerald is lying here on the ground.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 372 37 0
 E
@@ -388,7 +388,7 @@ key mine dwarven~
 the mine key~
 A small key has been tossed to the ground here.~
 ~
-18 cd a 0
+18 cd 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 50 5 0
 #23627
@@ -396,7 +396,7 @@ well basin spring~
 the well~
 Water runs from the spring into a basin, making a nice well for people to drink from.~
 ~
-23 i 0 0
+23 i 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 0 0 0 0
 #23628
@@ -404,7 +404,7 @@ bed dwarven small~
 a small dwarven bed~
 A bed, just the right size for a dwarf, has been set in one corner here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 200 0 -1 0
 0 0 0 0
 E
@@ -417,7 +417,7 @@ chest dwarven~
 a reinforced chest~
 A chest, heavily reinforced with iron bands, has been put here. ~
 ~
-15 g 0 0
+15 g 0 0 0 0 0 0 0 0 0 0 0
 300 15 4030 0
 0 0 0 0
 E
@@ -432,7 +432,7 @@ key dwarven~
 a small key~
 A small key has been thrown here.~
 ~
-18 cdg a 0
+18 cdg 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 50 5 0
 #23631
@@ -440,7 +440,7 @@ parade chain chainmail mail dwarven~
 a parade chainmail~
 A beautiful dwarven chainmail with a gold hammer emblem has been laid here..~
 ~
-9 ag ad 0
+9 ag 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
 5 1000 10 0
 E
@@ -461,7 +461,7 @@ bed large dwarven~
 a large bed~
 A large four-poster bed, almost your size, has been set in the corner here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 200 0 -1 0
 0 0 0 0
 E
@@ -474,7 +474,7 @@ key silver~
 a small silver key~
 A small key, made from silver, has been thrown here.~
 ~
-18 cd a 0
+18 cd 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 30 3 0
 #23635
@@ -482,7 +482,7 @@ plate silver dwarven~
 a silver breastplate~
 A silver breastplate, made for a stout dwarf, has been droppped here.~
 ~
-9 agmo ad 0
+9 agmo 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 15 500 50 0
 E
@@ -501,7 +501,7 @@ axe dwarven two~
 a two-handed dwarven axe~
 A very large axe of dwarven manufacture has been thrown here.~
 ~
-5 gmno an 0
+5 gmno 0 0 0 an 0 0 0 0 0 0 0
 1 5 5 3
 18 510 51 0
 #23637
@@ -509,7 +509,7 @@ hammer dwarven~
 a dwarven hammer~
 A hammer, ready for pounding on armor, worn or not, is here.~
 ~
-5 mo an 0
+5 mo 0 0 0 an 0 0 0 0 0 0 0
 2 2 10 7
 6 550 55 0
 E
@@ -524,7 +524,7 @@ pile titanium pieces ore~
 a pile of titanium ore~
 A large pile of very fine pieces of titanium ore is attached to a bell here.~
 ~
-8 a a 0
+8 a 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1000 100 0
 T 23610
@@ -539,7 +539,7 @@ pile titanium pieces ore~
 a pile of titanium ore~
 A large pile of very fine pieces of titanium ore is here.~
 ~
-8 a a 0
+8 a 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 4 1000 100 0
 E
@@ -552,7 +552,7 @@ mining pick dwarf~
 a dwarven mining pick~
 A small mining pick has been left here, gathering dust.~
 ~
-5 mn an 0
+5 mn 0 0 0 an 0 0 0 0 0 0 0
 0 3 7 10
 3 150 15 0
 E
@@ -564,7 +564,7 @@ helm mining dwarven~
 a dwarven mining helmet~
 An old helmet with an almost extinguished light is here.~
 ~
-9 agm ae 0
+9 agm 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 1 600 60 0
 E
@@ -577,7 +577,7 @@ key dwarven city~
 a heavy iron key~
 A key made from heavy iron is here.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 100 10 0
 $~

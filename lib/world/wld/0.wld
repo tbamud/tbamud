@@ -3,7 +3,7 @@ The Void~
    You don't think that you are not floating in nothing.  You can see
 a strange portal located above you.
 ~
-0 d 1
+0 8 0 0 0 0
 D4
 ~
 ~
@@ -16,7 +16,7 @@ Limbo~
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
 ~
-0 d 1
+0 8 0 0 0 0
 D5
 A strange portal in the floor is the only exit.
 ~
@@ -44,7 +44,7 @@ patience, and the ability to take constructive criticism.
 and they will advance you to begin your training.
 
 ~
-0 de 0
+0 24 0 0 0 0
 S
 #3
 The Builder Academy~
@@ -57,7 +57,7 @@ can be further explored by typing @RCAPITAL LETTERS@n and hitting return.
  
 Test this out, @RHELP DISCLAIMER@n.
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -73,7 +73,7 @@ the east. TBA is constantly striving to improve upon the training process so
 please use the typo and idea commands liberally. For example: idea you need
 more cow bell in the zone. Typo in help telnet teh = the.
 ~
-0 de 0
+0 24 0 0 0 0
 D0
 ~
 ~
@@ -100,7 +100,7 @@ HELP REPORT
 HELP LEVEL
 HELP ADVERTISING@n
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -131,7 +131,7 @@ HELP PREREQUISITE
 HELP BALANCE
 HELP BREATHE@n
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -164,7 +164,7 @@ HELP D-DESC
 HELP MEDIT-L-DESC
 HELP TEXT-EDITOR@n
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -191,7 +191,7 @@ Notice how each important line has an associated help topic. To learn more
 about it just see the appropriate help file. If this is your first experience
 with redit read ALL the help files. @RHELP STYLISTICS@n
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -220,7 +220,7 @@ Notice how each important line has an associated help topic. To learn more
 about it just see the appropriate help file. If this is your first experience
 with oedit read ALL the help files.
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -245,7 +245,7 @@ killing.  Medit can be used by typing "medit <VNUM>".
    Type @RHELP MEDIT-MENU@n That is an example of the medit menu you will see 
 when you edit a mobile. Each line has its own help topic you should also read.
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -278,7 +278,7 @@ time a zone is reset, the server executes all the commands in order from
 beginning to end. All zones are reset when the server first boots, and 
 periodically reset again while the game is running.
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -302,7 +302,7 @@ you will see when you edit a shop. Notice how each important line has an
 associated help topic. To learn more about it just see the appropriate help 
 file. If this is your first experience with sedit read ALL the help files.
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -325,7 +325,7 @@ Do not attempt to use trigedit until you complete your trial vnum and are
 assigned a zone. Remember you must disable @RNOHASSLE@n. Triggers will not work
 on you otherwise.
 ~
-0 d 0
+0 8 0 0 0 0
 D0
 ~
 ~
@@ -360,7 +360,7 @@ with this zone, and the help of others, you can do this.
 @RHELP ALIGNMENT@n
 @RHELP BIAS@n
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -385,7 +385,7 @@ in the past: Please mudmail me any good links to add.
 HELP OFFLINE
 HELP HCONTROL@n
 ~
-0 d 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -420,7 +420,7 @@ entries on every command!!! Do not worry too much about redit, oedit, medit,
 zedit, sedit, and trigedit. We will get to those later. Know how to use all
 the commands available to you.
 ~
-0 d 0
+0 8 0 0 0 0
 D0
 ~
 ~
@@ -443,7 +443,7 @@ much, download the free version.  You can see an in-depth list of clients under:
 @RHELP VIRTUAL-NUMBERS@n
 @RHELP TERMINOLOGY@n
 ~
-0 d 0
+0 8 0 0 0 0
 D2
 ~
 ~
@@ -457,7 +457,7 @@ See: @RHELP TRIGEDIT-MOB-TUTORIAL@n
 @RSTAT QUESTMASTER@n. Notice the attached triggers. @RTSTAT 1@n.
 
 ~
-0 de 0
+0 24 0 0 0 0
 D0
 ~
 ~
@@ -475,7 +475,7 @@ S
 A Quest Room~
    In this room you may be able to finish the Mob Quest Tutorial.    
 ~
-0 d 0
+0 8 0 0 0 0
 D3
 ~
 ~
@@ -489,7 +489,7 @@ Including triggers 4, 5, 7, 8.
 
 To pay the gateguard take the pile of coins, then: @RGIVE 10 COINS GUARD@n.
 ~
-0 de 0
+0 24 0 0 0 0
 D0
    The tutorial hallway continues.  
 ~
@@ -510,7 +510,7 @@ player_can_breathe_water and prevent a player from entering a certain room
 unless they have this variable set.  To see what variables are set on a player
 simply stat that player.  @RSTAT SELF@n.    
 ~
-0 de 0
+0 24 0 0 0 0
 D0
 ~
 ~
@@ -529,7 +529,7 @@ Quest Variables Example~
    I used triggers 1409 thru 1412 to setup this example.  Simply tstat each to
 see what they do.    
 ~
-0 d 0
+0 8 0 0 0 0
 D3
 ~
 ~
@@ -546,7 +546,7 @@ for a few. @RHELP TRIG-EXAMPLES@n for some advanced ones.
 
 @RGOTO 14@n to access the next hallway.
 ~
-0 d 0
+0 8 0 0 0 0
 D2
 ~
 ~
@@ -558,21 +558,60 @@ Rumble's Room~
 while the mark of the mature man is that he wants to live humbly for one.  
 --Wilhelm Stekel
 ~
-0 d 0
+0 8 0 0 0 0
 E
-Catcher Rye~
-   The mark of the immature man is that he wants to die nobly for a cause, 
-while the mark of the mature man is that he wants to live humbly for one.  
---Wilhelm Stekel
+.test~
+can you see this with look around?
+~
+E
+july4~
+   On July 4, 1776, we claimed our independence from England and Democracy was
+born.  Every day thousands leave their homeland to come to the "land of the
+free and the home of the brave" so they can begin their American Dream.  The
+United States is truly a diverse nation made up of dynamic people.  Each year
+on July 4, Americans celebrate that freedom and indepen-dence with barbecues,
+picnics, and family ga-therings.  Through the Internet we are learning about
+and communicat-ing with people of different nations, with different languages
+and different races throughout the world.  Bringing the world closer with
+understanding and knowledge can only benefit all nations.  We invite all
+nations to celebrate with Americans online this Fourth of July.  Happy
+Birthday, America!    
+~
+E
+oath~
+   I do solemnly swear that I will support and defend the Constitution of the
+United States against all enemies, foreign and domestic, and to bear true faith
+and allegiance to the same that I take this obligation freely, without any
+mental reservation or purpose of evasion, and that I will well and faithfully
+discharge the duties of the office upon which I am about to enter.
+~
+E
+builder~
+  
+There is one timeless way of building.
+  
+It is thousands of years old, and the same today as it has always been.
+  
+   The great traditional buildings of the past, the villages and tents and
+temples in which man feels at home, have always been made by people who were
+very close to the center of this way.  It is not possible to make great
+buildings, or great towns, beautiful places, places where you feel yourself,
+places where you feel alive, except by following this way.  And, as you will
+see, this way will lead anyone who looks for it to buildings which are
+themselves as ancient in their form, as the trees and hills, and as our faces
+are.    
+                                        --The Timeless Way of Building
+~
+E
+war~
+   War is an ugly thing, but not the ugliest of things.  The decayed and
+degraded state of moral and patriotic feeling which thinks that nothing is
+worth war is much worse.  The person who has nothing for which he is willing to
+fight, nothing which is more important than his own personal safety, is a
+miserable creature and has no chance of being free unless made and kept so by
+the exertions of better men than himself.
 
-   ...you'll find that you're not the first person who was ever confused and 
-frighteneed and even sickened by human behavior. You're by no means alone on 
-that score, you'll be excited and stimulated to know. Many, many men have been 
-just as troubled morally and spiritually as you are right now. Happily, some 
-of them kept records of their troubles. You'll learn from them-if you want to. 
-Just as someday, if you have something to offer, someone will learn something 
-from you. It's a beautiful reciprocal arrangement.
---The Catcher in the Rye   
+John Stuart Mill
 ~
 E
 old glory flag~
@@ -605,58 +644,19 @@ or daughter-I am proud.  My name is Old Glory-long may I wave.  Dear God, long
 may I wave.    
 ~
 E
-war~
-   War is an ugly thing, but not the ugliest of things.  The decayed and
-degraded state of moral and patriotic feeling which thinks that nothing is
-worth war is much worse.  The person who has nothing for which he is willing to
-fight, nothing which is more important than his own personal safety, is a
-miserable creature and has no chance of being free unless made and kept so by
-the exertions of better men than himself.
+Catcher Rye~
+   The mark of the immature man is that he wants to die nobly for a cause, 
+while the mark of the mature man is that he wants to live humbly for one.  
+--Wilhelm Stekel
 
-John Stuart Mill
-~
-E
-builder~
-  
-There is one timeless way of building.
-  
-It is thousands of years old, and the same today as it has always been.
-  
-   The great traditional buildings of the past, the villages and tents and
-temples in which man feels at home, have always been made by people who were
-very close to the center of this way.  It is not possible to make great
-buildings, or great towns, beautiful places, places where you feel yourself,
-places where you feel alive, except by following this way.  And, as you will
-see, this way will lead anyone who looks for it to buildings which are
-themselves as ancient in their form, as the trees and hills, and as our faces
-are.    
-                                        --The Timeless Way of Building
-~
-E
-oath~
-   I do solemnly swear that I will support and defend the Constitution of the
-United States against all enemies, foreign and domestic, and to bear true faith
-and allegiance to the same that I take this obligation freely, without any
-mental reservation or purpose of evasion, and that I will well and faithfully
-discharge the duties of the office upon which I am about to enter.
-~
-E
-july4~
-   On July 4, 1776, we claimed our independence from England and Democracy was
-born.  Every day thousands leave their homeland to come to the "land of the
-free and the home of the brave" so they can begin their American Dream.  The
-United States is truly a diverse nation made up of dynamic people.  Each year
-on July 4, Americans celebrate that freedom and indepen-dence with barbecues,
-picnics, and family ga-therings.  Through the Internet we are learning about
-and communicat-ing with people of different nations, with different languages
-and different races throughout the world.  Bringing the world closer with
-understanding and knowledge can only benefit all nations.  We invite all
-nations to celebrate with Americans online this Fourth of July.  Happy
-Birthday, America!    
-~
-E
-.test~
-can you see this with look around?
+   ...you'll find that you're not the first person who was ever confused and 
+frighteneed and even sickened by human behavior. You're by no means alone on 
+that score, you'll be excited and stimulated to know. Many, many men have been 
+just as troubled morally and spiritually as you are right now. Happily, some 
+of them kept records of their troubles. You'll learn from them-if you want to. 
+Just as someday, if you have something to offer, someone will learn something 
+from you. It's a beautiful reciprocal arrangement.
+--The Catcher in the Rye   
 ~
 S
 T 1200
@@ -671,7 +671,7 @@ you watch the images taking shape in the turbulent liquid.  Your mouth becomes
 dry as you see yourself in the watery panorama ...  And time stands still for
 just one moment ...  As you see your future in the depths ...    
 ~
-0 dj 0
+0 520 0 0 0 0
 S
 #88
 Advertising Room~
@@ -683,7 +683,7 @@ MUD address with /f.  Since TBA uses the @@ as a colorcode you must use 2 @@@@ w
 your email address.  Posts may be deleted if done poorly or if the MUD is no
 longer online.
 ~
-0 d 0
+0 8 0 0 0 0
 S
 #89
 The Prison Cell Corridor~
@@ -691,7 +691,7 @@ The Prison Cell Corridor~
 Along the Northern wall are steel doors spaced a few feet apart while the
 southern wall is of cynder block construction. 
 ~
-0 0 0
+0 0 0 0 0 0
 D1
 ~
 ~
@@ -712,7 +712,7 @@ the shower head has been removed and cemented a drain still exists in the floor.
 Unintelligle voices can be heard whispering through the piping in the drain
 below.
 ~
-0 d 0
+0 8 0 0 0 0
 D2
 ~
 ~
@@ -729,7 +729,7 @@ Aristotle's Prison Cell~
 pungent waste bucket. The old shower head is still sticking out of the wall
 with a steel door opposite.
 ~
-0 d 0
+0 8 0 0 0 0
 E
 shower head cap~
    The metal shower head has a plastic variable setting cap complete with a
@@ -745,7 +745,7 @@ Plato's Prison Cell~
 light bulb above flickers randomly as if it is about to burn out. The
 alternating bright and pitch black environment makes the eyes ache.
 ~
-0 d 0
+0 8 0 0 0 0
 S
 T 171
 T 172
@@ -755,7 +755,7 @@ Friedrich Nietzsche's Prison Cell~
 cell. The silence is broken only by the occasional footsteps in the corridor
 outside or a fellow prisoner tapping on the cell wall.
 ~
-0 d 0
+0 8 0 0 0 0
 S
 T 171
 T 172
@@ -765,7 +765,7 @@ Socrates' Prison Cell~
 in the plywood ceiling is out of reach. The only break in the block walls is a
 steel door that is closed and locked.
 ~
-0 d 0
+0 8 0 0 0 0
 S
 T 172
 #95
@@ -774,7 +774,7 @@ Confucius' Prison Cell~
 and another in the floor has been cemented over. They must have once been a
 shower head and a drain before this stall was converted into a prison cell.
 ~
-0 d 0
+0 8 0 0 0 0
 S
 T 171
 T 172
@@ -784,7 +784,7 @@ James Stockdale's Prison Cell~
 has various words and designs scratched into the dirt. The ceiling consists of
 a single sheet of unpainted plywood.
 ~
-0 d 0
+0 8 0 0 0 0
 S
 T 171
 T 172
@@ -794,7 +794,7 @@ A Prison Cell~
 cell complete with iron shackles. A single steel door that is closed and locked
 is the only exit. The walls are constructed of unpainted cinder blocks.
 ~
-0 d 0
+0 8 0 0 0 0
 D2
 ~
 lock~
@@ -824,7 +824,7 @@ Respectfully,
  
 Rumble
 ~
-0 d 0
+0 8 0 0 0 0
 D0
 ~
 ~
@@ -840,20 +840,20 @@ TBA Cafe 99~
 a pew and have a nice drink! If you want to have a social chat or lurk in order
 to help newer builders, this is the place to be!
 ~
-0 de 0
+0 24 0 0 0 0
 D2
 ~
 ~
 0 0 98
 E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
-~
-E
 floor~
    The stone floor is the same shade of grey as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
+~
+E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
 ~
 S
 $~

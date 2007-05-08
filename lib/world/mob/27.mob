@@ -8,7 +8,7 @@ gangly, it looks well suited to life in tunnels.  Its warty skin is the colour
 of sand and stone and two large pointed ears twitch at any sound.  Large yellow
 eyes seem to fill its face with an expression of despair and helplessness.    
 ~
-dg k 100 E
+72 0 0 0 0 0 0 0 100 E
 10 19 6 2d1+110 1d2+2
 150 10000
 8 8 0
@@ -25,7 +25,7 @@ memlin kin, but appears unnaturally muscled and strong.  His face is stern and
 grim as though he takes his duties seriously, but his wide eyes betray a sense
 of concealed desperation.    
 ~
-bde k 0 E
+26 0 0 0 0 0 0 0 0 E
 15 19 4 3d2+165 0d6+3
 225 22500
 8 8 1
@@ -40,7 +40,7 @@ A small squeaking bat dives in and out of the shadows.
 observed.  Its characteristic black furred body and webbed wings are somewhat
 harmless looking until several sharp teeth glint in the subdued light.    
 ~
-bdmr dfkp -500 E
+135178 0 0 0 65616 0 0 0 -500 E
 10 17 4 2d2+500 1d2+1
 100 10000
 8 8 0
@@ -56,7 +56,7 @@ even more deeply furrowed into an almost constant frown.  Absent-mindedly
 shuffling various items into some resemblance of order, he seems scarcely aware
 of anyone else's presence.    
 ~
-bdnopr k 0 E
+188426 0 0 0 0 0 0 0 0 E
 34 15 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -74,7 +74,7 @@ than an animal, it is easy to forget it is alive, until it hums gently and
 drifts deliberately closer.  This creature's mere presence seems to freshen the
 air, as though it were somehow filtering and replenishing it.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 15 18 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -90,7 +90,7 @@ armour that reveals none of his natural form.  Even his eyes are masked by the
 metal visor over his face, though somehow he seems to perceive his surroundings
 very well indeed.    
 ~
-bdefmr fk -50 E
+135226 0 0 0 64 0 0 0 -50 E
 16 18 3 3d2+200 1d2+3
 240 25600
 8 8 1
@@ -108,7 +108,7 @@ Startlingly luminous and brimming slightly with tears, they are almost like the
 amber eyes of a feline, only unsettlingly vacant.  She seems confused at the
 workings of the world around her and draws shyly away on approach.    
 ~
-bdh dfk 0 E
+138 0 0 0 80 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -127,7 +127,7 @@ makes its efforts at hiding almost laughable.  Its cherry-red face blends into a
 warm bespeckled brown that covers most of its body, a brilliant patch of
 eggshell blue and light purple fanning out into its tail.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 0 6400
 8 8 0
@@ -142,7 +142,7 @@ The Keeper of the Temple stands here.
 contemplation.  Tranquil yellow eyes betray no hint of emotion or thought, and
 only the faint swishing of robes can be heard as he moves about the room.    
 ~
-bdnpr 0 0 E
+172042 0 0 0 0 0 0 0 0 E
 30 15 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -160,7 +160,7 @@ gives it the ability to consume even metals and piles of rubble, making it
 useful for excavation sites.  Black smoke rises from the creature, the product
 of its constant digestion.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 15 18 1 3d3+150 3d7+2
 0 22500
 8 8 0
@@ -179,7 +179,7 @@ far beyond any chance for escape or survival.  Paper-thin skin hangs loosely in
 folds about his skeletal body, the eerie rattling sound as he struggles for
 breath a sure sign of his imminent death.  
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 8 19 5 0d0+0 1d2+1
 0 6400
 8 8 1
@@ -194,7 +194,7 @@ In fact it seems almost gelatinous, quivering slightly with every vibration and
 slowly waving as if by its own accord.  It looks as though there is more to it
 than what can be seen protruding from the ice.    
 ~
-bdeor k 0 E
+147482 0 0 0 0 0 0 0 0 E
 20 17 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -209,7 +209,7 @@ Disentangling its delicate strands slowly, it seems to grow larger as the air
 currents from its siblings dry it off, making it increasingly capable of
 navigating its way through the slight breeze.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 12 18 2 2d2+120 2d2+2
 0 14400
 8 8 0
@@ -227,7 +227,7 @@ and a hideous toothy smile splits across its face at the sight of you.  Two
 gigantic spider-like hands curl protectively around a glowing object in its
 lap.    
 ~
-bdenopr dfk 0 E
+188442 0 0 0 80 0 0 0 0 E
 15 18 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -245,7 +245,7 @@ as his skin seems slowly to darken and crack.  His entire lower body has turned
 completely into stone, the petrification creeping higher like a black spreading
 stain.  
 ~
-bdno 0 0 E
+24586 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+0 1d2+0
 120 100
 5 5 1
@@ -263,7 +263,7 @@ amounts of thick black smoke ooze from pores all over its body as it devours the
 piles of rubble, ore and all with its massive firey mouth, acting almost as
 living waste disposal.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 15 18 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -278,7 +278,7 @@ and a long worm-like tail are all of the creature that is not covered in coarse,
 matted dark fur.  Two predatory black eyes scan the surroundings as the animal
 apparantly continues its scavenges for anything edible.  
 ~
-defglm fk 0 E
+6264 0 0 0 64 0 0 0 0 E
 10 19 4 2d2+100 1d2+1
 0 10000
 8 8 0
@@ -295,7 +295,7 @@ like horns from its head.  Tiny legs move almost too quickly to be seen, as the
 creature scuttles nervously around, streaks of blue and green glinting in its
 black armour.  
 ~
-dgh k 0 E
+200 0 0 0 0 0 0 0 0 E
 5 20 7 1d1+50 1d2+0
 0 2500
 8 8 0
@@ -311,7 +311,7 @@ scales glinting as it moves.  A tiny blood-red tongue flickers in and out of its
 mouth like fire, highlighting the scarlet diamond markings all down the length
 of its body.  
 ~
-dgl k 0 E
+2120 0 0 0 0 0 0 0 0 E
 17 18 0 3d3+170 2d2+2
 170 28900
 8 8 0
@@ -327,7 +327,7 @@ following the flurry-like movements of her hands as she washes, slices, and
 kneads.  Traces of white powder and the scent of herbs and spices linger on her
 clothes and skin.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 15 18 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -344,7 +344,7 @@ about ten years old.  His large eyes are far too big for his head, which is
 likewise out of proportion to his fragile build.  Kicking his feet lazily, his
 expression is one of almost meditative calm.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 19 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -365,7 +365,7 @@ perceptive they seem to peer through things rather than at them.  The eyes are
 of odd colouring too, one glowing bright ember red and the other gleaming
 charcoal black.  
 ~
-bdenopqr k 0 E
+253978 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 0
@@ -385,7 +385,7 @@ large blue eyes seem almost eeriely perceptive, shimmering just a little to
 brightly to appear normal, vivid splashes of green fading and dying as though
 some strange force pulses through them.  
 ~
-bdenopqr 0 0 E
+253978 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -403,7 +403,7 @@ red flashes as though a very fire dances within them.  Long clawed hands hang at
 his sides and his black teeth are small and pointed.  Powerful and intimidating,
 he gives an air of formidable confidence and proud fearlessness.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -418,7 +418,7 @@ His movements are unusually fast although smooth and graceful and his pale skin
 glows like moonlight.  His soft, fair hair seems almost to float through the air
 as he moves and his large violet eyes are almost childishly innocent.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -434,7 +434,7 @@ head and his huge amber eyes fill half his face.  Peaceful in expression, he
 looks eager to learn and explore, peering easily and perceptively about in the
 shadows.  
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -448,7 +448,7 @@ The Revealer stands here, guarding the secrets of his people.
 colour as an ember about to die.  His expression is firm and troubled, as though
 he has seen enough for many lifetimes.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -465,7 +465,7 @@ A rabbit grazes peacefully here.
 dangling down either side of its head.  Oblivious to everything, it chews
 happily on the abundant grass, constantly sniffing as it hops about.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 0 6400
 8 8 0
@@ -480,7 +480,7 @@ curiousity on his face.  Fidgetting constantly, he wrings his hands as he
 glances around at everything, flickers of emotion passing over his face like
 windblown clouds.  
 ~
-bdnopqr k 0 E
+253962 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -504,7 +504,7 @@ calculating evil.  Cruel black teeth glint like coals amidst the fiery crimson
 of her lips, so sharp and pointed as to appear almost feral, her smooth scaled
 skin as dark and glossy as slick oil.  
 ~
-bd k -1000 E
+10 0 0 0 0 0 0 0 -1000 E
 25 12 -5 5d5+700 4d4+4
 500 62500
 8 8 2
@@ -522,7 +522,7 @@ A dark crow perches here, its green eyes gleaming.
 formidable beak sharply curved, obviously made for tearing flesh.  Two tiny
 gleaming eyes peer suspicously about, the colour of deep emerald green.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 23 13 -3 4d4+230 3d3+3
 0 52900
 8 8 0

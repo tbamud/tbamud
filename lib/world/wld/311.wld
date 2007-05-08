@@ -5,7 +5,7 @@ by the farmers of the Ofingian farmlands.  A long, narrow tunnel heads straight
 west toward a very bright source of light, one which is blinding to look upon
 without shading one's eyes.  
 ~
-311 dfi 0
+311 296 0 0 0 0
 D3
 ~
 ~
@@ -21,7 +21,7 @@ mountain which you currently travel through.  Just east of here is the falling
 water of the waterfall which runs down into the reservoir in the Ofingian
 farmlands.  
 ~
-311 dfi 0
+311 296 0 0 0 0
 D1
 ~
 ~
@@ -40,7 +40,7 @@ walls of the tunnel, a thick, black, phospherous soot glazes the walls,
 dwindling away to the east but getting quite thick closer toward the western
 exit.  Some sort of fire was blasted into this tunnel - and more than once.  
 ~
-311 dfi 0
+311 296 0 0 0 0
 D1
 ~
 ~
@@ -59,7 +59,7 @@ lie beyond the exit of that blinding hole, it is much too bright.  The way to
 the east is dim, yet for some reason exudes much less of a dangerous vibe than
 the way west.  
 ~
-311 dfi 0
+311 296 0 0 0 0
 D1
 ~
 ~
@@ -81,7 +81,7 @@ passing dragon - and that is just not likely to happen.  Looking directly down
 from where you perch, you see a small (or is it small, it could just appear that
 way from this height) fortress nestled quite close up to the cliff face.  
 ~
-311 dfi 0
+311 296 0 0 0 0
 D1
 ~
 ~
@@ -98,7 +98,7 @@ blackened rock which borders the entrance testament to what lives within.  This
 is the highest point that can be reached along the cliff face, the only way to
 go from here is horizontal or down.  
 ~
-311 g 0
+311 64 0 0 0 0
 D2
 ~
 ~
@@ -115,7 +115,7 @@ ground upon which to tread, better than the hazardous way of travel which you
 currently employ, but the fact that the rock entryway into the cave is scorched
 and melted and strewn about with rotted dragonscales is a definite turn-off.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -137,7 +137,7 @@ castles and keeps which dot the land mere specks.  Far away to the west is the
 glistening water of an ocean or sea, one which is as blue and clear as the sky
 above.  
 ~
-311 g 0
+311 64 0 0 0 0
 D2
 ~
 ~
@@ -155,7 +155,7 @@ castles and keeps which dot the land mere specks.  Far away to the west is the
 glistening water of an ocean or sea, one which is as blue and clear as the sky
 above.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -181,7 +181,7 @@ castles and keeps which dot the land mere specks.  Far away to the west is the
 glistening water of an ocean or sea, one which is as blue and clear as the sky
 above.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -207,7 +207,7 @@ castles and keeps which dot the land mere specks.  Far away to the west is the
 glistening water of an ocean or sea, one which is as blue and clear as the sky
 above.  To the south is the entrance to a cave opening in the cliff face.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -228,7 +228,7 @@ to this awful place.  A foul, foul stench billows forth in gusts from the
 interior to this cave, the walls and floor of the rock itself layered in a
 thick, oozing black goo.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -254,7 +254,7 @@ castles and keeps which dot the land mere specks.  Far away to the west is the
 glistening water of an ocean or sea, one which is as blue and clear as the sky
 above.  To the north is the entrance to a cave opening in the cliff face.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -276,7 +276,7 @@ castles and keeps which dot the land mere specks.  Far away to the west is the
 glistening water of an ocean or sea, one which is as blue and clear as the sky
 above.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -297,7 +297,7 @@ only be a dragon.  Sooty refuse spills from the opening of a cave just above
 you, a solid stain of black runing down the rock , dwindling into the cliff face
 below, soaking into the rock.  
 ~
-311 g 0
+311 64 0 0 0 0
 D4
 ~
 ~
@@ -316,7 +316,7 @@ to the amazing size of this cave.  The entrance is at least fifty feet in height
 and twice as wide, if not more.  A steady sound from within leads you to believe
 that someone is probably home.  
 ~
-311 g 0
+311 64 0 0 0 0
 D1
 ~
 ~
@@ -333,7 +333,7 @@ than probably the home to a creature that is best left to itself.  A very warm
 and humid waft of air comes from the cave, a thick, breathy surge of air which
 does nothing to make the place seem any more welcoming.  
 ~
-311 g 0
+311 64 0 0 0 0
 D1
 ~
 ~
@@ -354,7 +354,7 @@ along its face but offering no spots upon which to rest or get your bearings.
 Just north of here is the entrance into an opening in the rock, but it does not
 look like the sort of place that you might be able to rest a spell.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -380,7 +380,7 @@ of the world going by.  It would be a very peaceful place to be if you weren't
 flying hundreds of feet above the surface of the world snuggled against a cliff
 face which is riddled with Dragon Caves.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -406,7 +406,7 @@ of the world going by.  It would be a very peaceful place to be if you weren't
 flying hundreds of feet above the surface of the world snuggled against a cliff
 face which is riddled with Dragon Caves.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -434,7 +434,7 @@ face which is riddled with Dragon Caves.  Just below you is a smaller cave,
 maybe the entrance back into the land of mortals and low-level mob that doesn't
 hit so hard.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -460,7 +460,7 @@ of the world going by.  It would be a very peaceful place to be if you weren't
 flying hundreds of feet above the surface of the world snuggled against a cliff
 face which is riddled with Dragon Caves.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -486,7 +486,7 @@ of the world going by.  It would be a very peaceful place to be if you weren't
 flying hundreds of feet above the surface of the world snuggled against a cliff
 face which is riddled with Dragon Caves.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -512,7 +512,7 @@ of the world going by.  It would be a very peaceful place to be if you weren't
 flying hundreds of feet above the surface of the world snuggled against a cliff
 face which is riddled with Dragon Caves.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -539,7 +539,7 @@ flying hundreds of feet above the surface of the world snuggled against a cliff
 face which is riddled with Dragon Caves.  Just below you is the entrance into
 what might be the only clean-looking cave on the whole cliff face.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -557,7 +557,7 @@ your will but your hands as you pull yourself along the cliff wall, you chance
 to look down and realize that its probably a good idea if the fly spell you make
 use of is regularly maintained.  
 ~
-311 g 0
+311 64 0 0 0 0
 D2
 ~
 ~
@@ -575,7 +575,7 @@ your will but your hands as you pull yourself along the cliff wall, you chance
 to look down and realize that its probably a good idea if the fly spell you make
 use of is regularly maintained.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -601,7 +601,7 @@ your will but your hands as you pull yourself along the cliff wall, you chance
 to look down and realize that its probably a good idea if the fly spell you make
 use of is regularly maintained.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -628,7 +628,7 @@ to look down and realize that its probably a good idea if the fly spell you make
 use of is regularly maintained.  To the south is the entrance into a small cave.
 
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -656,7 +656,7 @@ use of is regularly maintained.  The safety of a narrow tunnel lies to the east,
 a solid footing on solid rock that does not pose the danger of falling hundreds
 of feet to your death below.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -683,7 +683,7 @@ to look down and realize that its probably a good idea if the fly spell you make
 use of is regularly maintained.  To the north is the entrance into a narrow
 cave.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -709,7 +709,7 @@ your will but your hands as you pull yourself along the cliff wall, you chance
 to look down and realize that its probably a good idea if the fly spell you make
 use of is regularly maintained.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -735,7 +735,7 @@ your will but your hands as you pull yourself along the cliff wall, you chance
 to look down and realize that its probably a good idea if the fly spell you make
 use of is regularly maintained.  To the south is the entrance into a cave.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -760,7 +760,7 @@ other cave entrances on the Teeth are, but clear of debris and clean.  A slow
 trickle of water runs from the interior of the cave, a cold draft accompanying
 it.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -781,7 +781,7 @@ current altitude, the castles and keeps of the land still but small dots, their
 features undescernable.  It is a steady climb down the cliff, one that would
 probably not take long . To the south is the entryway into a blackened cave.  
 ~
-311 g 0
+311 64 0 0 0 0
 D2
 ~
 ~
@@ -801,7 +801,7 @@ Entryway Into a Dark Cave~
 within.  The rock around the edges of the entrance are black and melted from
 countless bouts of DragonFire being blasted against it.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -830,7 +830,7 @@ current altitude, the castles and keeps of the land still but small dots, their
 features undescernable.  It is a steady climb down the cliff, one that would
 probably not take long .
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -855,7 +855,7 @@ current altitude, the castles and keeps of the land still but small dots, their
 features undescernable.  It is a steady climb down the cliff, one that would
 probably not take long .
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -880,7 +880,7 @@ current altitude, the castles and keeps of the land still but small dots, their
 features undescernable.  It is a steady climb down the cliff, one that would
 probably not take long .
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -905,7 +905,7 @@ current altitude, the castles and keeps of the land still but small dots, their
 features undescernable.  It is a steady climb down the cliff, one that would
 probably not take long .
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -934,7 +934,7 @@ current altitude, the castles and keeps of the land still but small dots, their
 features undescernable.  It is a steady climb down the cliff, one that would
 probably not take long .
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -957,7 +957,7 @@ and sloughed skin.  The bones of old meals lie strewn about the entrance,
 looking as they were attempted to be pushed out to fall onto the plains below,
 but the effort was only half-attempted.  
 ~
-311 g 0
+311 64 0 0 0 0
 D1
 ~
 ~
@@ -979,7 +979,7 @@ by an expert sculptor.  The entryways into the caves which dot this cliff face
 are easily found, from any vantage point.  Just north of here is the entrance
 into one of the caves.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1004,7 +1004,7 @@ creature.  The cliff is of the smoothest rock, as if carefully carved and sanded
 by an expert sculptor.  The entryways into the caves which dot this cliff face
 are easily found, from any vantage point.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1029,7 +1029,7 @@ creature.  The cliff is of the smoothest rock, as if carefully carved and sanded
 by an expert sculptor.  The entryways into the caves which dot this cliff face
 are easily found, from any vantage point.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1054,7 +1054,7 @@ creature.  The cliff is of the smoothest rock, as if carefully carved and sanded
 by an expert sculptor.  The entryways into the caves which dot this cliff face
 are easily found, from any vantage point.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1079,7 +1079,7 @@ creature.  The cliff is of the smoothest rock, as if carefully carved and sanded
 by an expert sculptor.  The entryways into the caves which dot this cliff face
 are easily found, from any vantage point.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1104,7 +1104,7 @@ creature.  The cliff is of the smoothest rock, as if carefully carved and sanded
 by an expert sculptor.  The entryways into the caves which dot this cliff face
 are easily found, from any vantage point.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1129,7 +1129,7 @@ creature.  The cliff is of the smoothest rock, as if carefully carved and sanded
 by an expert sculptor.  The entryways into the caves which dot this cliff face
 are easily found, from any vantage point.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1150,7 +1150,7 @@ entrances dotting the cliffside at irregular intervals, nearly every one of them
 marked by a blackening of the rock around their openings, a scorched, dirty
 look.  One of those very caves lies just above you.  
 ~
-311 g 0
+311 64 0 0 0 0
 D2
 ~
 ~
@@ -1167,7 +1167,7 @@ entrances dotting the cliffside at irregular intervals, nearly every one of them
 marked by a blackening of the rock around their openings, a scorched, dirty
 look.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1188,7 +1188,7 @@ entrances dotting the cliffside at irregular intervals, nearly every one of them
 marked by a blackening of the rock around their openings, a scorched, dirty
 look.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1213,7 +1213,7 @@ entrances dotting the cliffside at irregular intervals, nearly every one of them
 marked by a blackening of the rock around their openings, a scorched, dirty
 look.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1238,7 +1238,7 @@ entrances dotting the cliffside at irregular intervals, nearly every one of them
 marked by a blackening of the rock around their openings, a scorched, dirty
 look.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1263,7 +1263,7 @@ entrances dotting the cliffside at irregular intervals, nearly every one of them
 marked by a blackening of the rock around their openings, a scorched, dirty
 look.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1288,7 +1288,7 @@ entrances dotting the cliffside at irregular intervals, nearly every one of them
 marked by a blackening of the rock around their openings, a scorched, dirty
 look.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1313,7 +1313,7 @@ entrances dotting the cliffside at irregular intervals, nearly every one of them
 marked by a blackening of the rock around their openings, a scorched, dirty
 look.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1334,7 +1334,7 @@ height, the stone fortification below is a walled keep.  It doesn't look very
 large, however it does appear to be constructed for the purpose of defense.  
 Defense against what?  Or who?  
 ~
-311 cg 0
+311 68 0 0 0 0
 D2
 ~
 ~
@@ -1355,7 +1355,7 @@ height, the stone fortification below is a walled keep.  It doesn't look very
 large, however it does appear to be constructed for the purpose of defense.  
 Defense against what?  Or who?  
 ~
-311 cg 0
+311 68 0 0 0 0
 D0
 ~
 ~
@@ -1380,7 +1380,7 @@ height, the stone fortification below is a walled keep.  It doesn't look very
 large, however it does appear to be constructed for the purpose of defense.  
 Defense against what?  Or who?  
 ~
-311 cg 0
+311 68 0 0 0 0
 D0
 ~
 ~
@@ -1405,7 +1405,7 @@ height, the stone fortification below is a walled keep.  It doesn't look very
 large, however it does appear to be constructed for the purpose of defense.  
 Defense against what?  Or who?  
 ~
-311 cg 0
+311 68 0 0 0 0
 D0
 ~
 ~
@@ -1430,7 +1430,7 @@ height, the stone fortification below is a walled keep.  It doesn't look very
 large, however it does appear to be constructed for the purpose of defense.  
 Defense against what?  Or who?  
 ~
-311 cg 0
+311 68 0 0 0 0
 D0
 ~
 ~
@@ -1455,7 +1455,7 @@ height, the stone fortification below is a walled keep.  It doesn't look very
 large, however it does appear to be constructed for the purpose of defense.  
 Defense against what?  Or who?  
 ~
-311 cg 0
+311 68 0 0 0 0
 D0
 ~
 ~
@@ -1474,7 +1474,7 @@ the bones from meals long past lie in heaps upon the ground, not to mention a
 sickly black oozing substance - almost like tar - which coats much of the refuse
 and the ground.  
 ~
-311 g 0
+311 64 0 0 0 0
 D2
 ~
 ~
@@ -1493,7 +1493,7 @@ the bones from meals long past lie in heaps upon the ground, not to mention a
 sickly black oozing substance - almost like tar - which coats much of the refuse
 and the ground.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1514,7 +1514,7 @@ this land, and it appears that many who have come before you might have been
 less than friendly.  Of course, it could be that the people below who the entry
 into their land might be the unfriendly ones.  Only one way to find out...  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1537,7 +1537,7 @@ the bones from meals long past lie in heaps upon the ground, not to mention a
 sickly black oozing substance - almost like tar - which coats much of the refuse
 and the ground.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1560,7 +1560,7 @@ the bones from meals long past lie in heaps upon the ground, not to mention a
 sickly black oozing substance - almost like tar - which coats much of the refuse
 and the ground.  
 ~
-311 g 0
+311 64 0 0 0 0
 D0
 ~
 ~
@@ -1577,7 +1577,7 @@ bright light of the sun just to the west is immediately shut out.  Feeling along
 the walls, you find that the cave continues westward, deeper into the hard rock
 of the mountain.  
 ~
-311 acd 0
+311 13 0 0 0 0
 D1
 ~
 ~
@@ -1594,7 +1594,7 @@ hold it directly before your eyes.  It can only be that the darkness of this
 place is magical in nature, a cloak of obscurity maintained by the resident so
 that intruders might never have the upper hand.  
 ~
-311 acd 0
+311 13 0 0 0 0
 D1
 ~
 ~
@@ -1611,7 +1611,7 @@ your awareness.  You are no longer in a long tunnel but in a vast room with a
 great amount of space.  The steady sound of some sort of deep, heavy wind can be
 heard.  Or is that breathing?  
 ~
-311 ad 0
+311 9 0 0 0 0
 D2
 ~
 ~
@@ -1628,7 +1628,7 @@ your awareness.  You are no longer in a long tunnel but in a vast room with a
 great amount of space.  The steady sound of some sort of deep, heavy wind can be
 heard.  Or is that breathing?  
 ~
-311 ad 0
+311 9 0 0 0 0
 D0
 ~
 ~
@@ -1641,7 +1641,7 @@ scattered all about your feet in the form of thick dragonscales and the
 shattered bones of animals and people which fell prey to the appetite of the
 monster within.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -1659,7 +1659,7 @@ although the light which permeates this place is a red-hued, onholy light which
 flickers and twists almost as if alive, like that of fire.  The passage runs
 deeper into the mountain or ends just west of here in open air.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D2
 ~
 ~
@@ -1676,7 +1676,7 @@ large, and very mean-looking red dragon.  Its heaving flanks can be seen from
 this area of the cave, its deep, malevolent black eyes fixed squarely on you,
 bearing down into your soul.  
 ~
-311 d 0
+311 8 0 0 0 0
 D0
 ~
 ~
@@ -1695,7 +1695,7 @@ of space to stretch out and relax when he is slumbering.  All along the edge of
 the floor lies strewn bits and pieces of old meals, bones, treasure and other
 various objects.  
 ~
-311 d 0
+311 8 0 0 0 0
 D3
 ~
 ~
@@ -1708,7 +1708,7 @@ immediate change in the quality of the air about you.  It has become thick, warm
 and heavy to breathe.  It almost seems as if you might be able to see your
 breath, so thick it feels as it issues from your mouth.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -1725,7 +1725,7 @@ cave, one that does not really give off any uneasy or dangerous vibes.  The
 cavern slopes downward a bit before entering into a very large room just east of
 here.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -1743,7 +1743,7 @@ light which contrasts with the hot, thick air which infests this place.  Heaps
 of all manner of odds and ends, valuable and otherwise, litter the floors of the
 place.  
 ~
-311 d 0
+311 8 0 0 0 0
 D0
 ~
 ~
@@ -1761,7 +1761,7 @@ light which contrasts with the hot, thick air which infests this place.  Heaps
 of all manner of odds and ends, valuable and otherwise, litter the floors of the
 place.  
 ~
-311 d 0
+311 8 0 0 0 0
 D2
 ~
 ~
@@ -1774,7 +1774,7 @@ this place.  A thick, black goo covers the floor of the cave and sticks to your
 feet, making your footing treacherous to say the least.  Darkness and death lay
 within - beware.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -1791,7 +1791,7 @@ that this world could house.  The black goo which was only on the floor at the
 entryway now covers the walls and ceiling, as if spattered and splashed by
 something very large - and the smell, the smell is indescribable.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -1808,7 +1808,7 @@ lies the lair of a green dragon.  The oozing slime covers not only in a layer on
 the floor but covering everything in a thick, three to four inch pool of the
 stuff.  
 ~
-311 d 0
+311 8 0 0 0 0
 D1
 ~
 ~
@@ -1826,7 +1826,7 @@ floor, mired down by a thick, black, gooey substance which coats the entire
 cavern.  Heaps of junk, treasure, and bones lie scattered and jumbled, covered
 in the goo all about the room.  
 ~
-311 d 0
+311 8 0 0 0 0
 D3
 ~
 ~
@@ -1839,7 +1839,7 @@ down in a rivulet out the edge of the entrance and down the cliff face to the
 plains below.  Cold air blows from the depths of the cave, a frigid, odd air
 that smacks of the unnatural.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -1855,7 +1855,7 @@ A Cold Cave~
 take the temperature down by at least ten degrees, making your face begin to
 numb.  Just ahead is a huge cavern room draped in icicles and frost.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -1872,7 +1872,7 @@ anger and evil is matched only by a very select few of its cousins.  Frost coats
 the walls, iced over in many places to a thick, white sheen.  Stalagtites are
 replaced by sharp spikes of ice which have dripped to form gigantic icicles.  
 ~
-311 d 0
+311 8 0 0 0 0
 D2
 ~
 ~
@@ -1889,7 +1889,7 @@ anger and evil is matched only by a very select few of its cousins.  Frost coats
 the walls, iced over in many places to a thick, white sheen.  Stalagtites are
 replaced by sharp spikes of ice which have dripped to form gigantic icicles.  
 ~
-311 d 0
+311 8 0 0 0 0
 D0
 ~
 ~
@@ -1902,7 +1902,7 @@ both steady and fragile, as it flickering but not really flickering.  The walls
 of the entrance are blackened and scorched, but only at this front area.  Just a
 bit further in, the walls of the cave are smooth and clean.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -1918,7 +1918,7 @@ A Glowing Cave~
 glowing, clear shards of crystal which are melted into the walls, embedded by
 the strong heat.  The exit to this place lies just to the west.  
 ~
-311 d 0
+311 8 0 0 0 0
 D1
 ~
 ~
@@ -1936,7 +1936,7 @@ wall to another.  The place is a wonder - the dragon which resides here must
 have spent many years collecting the shards to make this place completely
 enclosed in the glimmering glow of so much crystal.  
 ~
-311 d 0
+311 8 0 0 0 0
 D1
 ~
 ~
@@ -1954,7 +1954,7 @@ wall to another.  The place is a wonder - the dragon which resides here must
 have spent many years collecting the shards to make this place completely
 enclosed in the glimmering glow of so much crystal.  
 ~
-311 d 0
+311 8 0 0 0 0
 D3
 ~
 ~
@@ -1966,7 +1966,7 @@ Entrance to the Emerald Cave~
 emanation of strength and wealth.  All but the green glow is completely dark,
 the glow making the entire scene before you seem surreal, otherwordly.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -1983,7 +1983,7 @@ could be seen from outside the cave.  All manner of treasure, mostly precious
 gems, lie scattered about in heaps all over the floor of the room.  This is
 obviously the home of a dragon - best to be extremely cautious.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -2000,7 +2000,7 @@ anywhere in the world.  The walls are aglow with a greenish light which comes
 mostly from the many emeralds which are embedded in the rock, melted and
 scorched there by the dragon's killing breath.  
 ~
-311 d 0
+311 8 0 0 0 0
 D2
 ~
 ~
@@ -2017,7 +2017,7 @@ anywhere in the world.  The walls are aglow with a greenish light which comes
 mostly from the many emeralds which are embedded in the rock, melted and
 scorched there by the dragon's killing breath.  
 ~
-311 d 0
+311 8 0 0 0 0
 D0
 ~
 ~
@@ -2030,7 +2030,7 @@ be fooled.  The creature which resides within is no easy kill.  The scorch marks
 which riddle the walls of the cave all the way through give testament to the
 fact the caution would be well advised.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -2047,7 +2047,7 @@ these caves on the Dragon's Teeth seem to be much more pronounced in this cave,
 the scorchings running all the way back into the large room which is just to the
 east of here.  
 ~
-311 cd 0
+311 12 0 0 0 0
 D1
 ~
 ~
@@ -2063,7 +2063,7 @@ Fire-Blasted Cavern~
 battles.  The walls are scorched and covered in blackish soot, the floors a
 riddle of claws gouges and blood-stains.  
 ~
-311 d 0
+311 8 0 0 0 0
 D0
 ~
 ~
@@ -2079,7 +2079,7 @@ Fire-Blasted Cavern~
 battles.  The walls are scorched and covered in blackish soot, the floors a
 riddle of claws gouges and blood-stains.  
 ~
-311 d 0
+311 8 0 0 0 0
 D2
 ~
 ~

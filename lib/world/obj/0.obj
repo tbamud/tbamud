@@ -4,7 +4,7 @@ a bug~
 This object is BAD!  If you see it, there must be a bug in the game.  Please
 report it immediately using the BUG command.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #1
@@ -12,7 +12,7 @@ wings~
 a pair of wings~
 A pair of wings is sitting here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 1 1 0 0
 #2
@@ -20,7 +20,7 @@ fire ball fireball~
 a fireball~
 A fireball lies here burning.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #3
@@ -28,7 +28,7 @@ ruby red slippers~
 a pair of ruby slippers~
 A pair of ruby slippers lies here.~
 ~
-13 0 ag 0
+13 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #4
@@ -36,7 +36,7 @@ emails listing~
 an email listing of the gods~
 The email listing of the gods is pinned against the wall.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 30
 E
@@ -65,7 +65,7 @@ foraged berries~
 some foraged berries~
 A few discolored berries that someone foraged.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 10 0 0
 E
@@ -79,7 +79,7 @@ greens forage~
 some foraged greens~
 Someone has foraged some greens to eat, but just left them here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 20 0 0
 E
@@ -93,7 +93,7 @@ foraged roots~
 some foraged roots~
 A pile of roots that someone collected for dinner.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 2 30 0 0
 E
@@ -107,7 +107,7 @@ foraged bark~
 some foraged bark~
 A pile of bark is stacked neatly infront of you.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 3 15 0 0
 E
@@ -121,7 +121,7 @@ foraged nuts~
 some foraged nuts~
 Half a dozen nuts are lined up perfectly on the ground.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 10 0 0
 E
@@ -135,7 +135,7 @@ waybread bread~
 a waybread~
 Some waybread has been put here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 50 0 0
 E
@@ -148,7 +148,7 @@ water spring water~
 the spring~
 Fresh water is bubbling up from a spring.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 100 100 0 0
 0 0 0 0
 #12
@@ -156,7 +156,7 @@ staff sanctum~
 the Staff of Sanctum~
 The Staff of Sanctum stands here waiting to be taken up by those who are worthy.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 50 10 5 7
 20 1000 0 30
 T 13
@@ -165,7 +165,7 @@ Ferret's black book~
 the little black book~
 A little black book is sitting here calling your name.~
 ~
-12 bgi 0 0
+12 bgi 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -185,7 +185,7 @@ pile stool steaming~
 a steaming pile of stool~
 A steaming pile of stool has recently been deposited here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #15
@@ -193,7 +193,7 @@ quest_token_zone_1 token~
 a quest token~
 A quest token needs to be returned to the questmaster.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 141
@@ -208,7 +208,7 @@ quest timer~
 a quest timer~
 A small quest timer is ticking away.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 140
@@ -224,7 +224,7 @@ quest mobile head~
 the head of the quest mob~
 The head of a quest mob needs to be taken back to the questmaster.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 141
@@ -238,7 +238,7 @@ portal gate gateway~
 a shimmering portal~
 A shimmering portal hovers here forming a gateway to another place and time.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #21
@@ -246,7 +246,7 @@ sword quest War's Blood~
 War's Blood~
 The sword of kings awaits a hero to wield it.~
 ~
-5 abdgimnoq ano 0
+5 abdgimnoq 0 0 0 ano 0 0 0 0 0 0 0
 8 10 9 3
 1 1000 0 20
 E
@@ -270,7 +270,7 @@ Shadow Stealer dagger quest~
 shadow stealer~
 A piece of deepest midnight calls to you here.~
 ~
-5 bdgmnpq ano 0
+5 bdgmnpq 0 0 0 ano 0 0 0 0 0 0 0
 10 10 9 11
 1 1000 0 20
 E
@@ -294,7 +294,7 @@ staff spellfire quest~
 the staff of spellfire~
 A burning staff of magical power floats in the air under its own power.~
 ~
-5 abdfginopq ano 0
+5 abdfginopq 0 0 0 ano 0 0 0 0 0 0 0
 6 10 9 7
 1 1000 0 20
 E
@@ -318,7 +318,7 @@ mace quest divine blessing~
 the mace of divine blessing~
 A gift from the gods is here seeking a worthy mortal.~
 ~
-5 abdgimopq ano 0
+5 abdgimopq 0 0 0 ano 0 0 0 0 0 0 0
 6 10 9 7
 1 1 0 20
 E
@@ -340,7 +340,7 @@ silver bow quest~
 the silver bow of the light~
 A mighty force for good seeks a champion of the light.~
 ~
-5 abdgiklq ano 0
+5 abdgiklq 0 0 0 ano 0 0 0 0 0 0 0
 8 10 9 14
 1 1000 0 20
 E
@@ -365,7 +365,7 @@ spear balance quest~
 the spear of balance~
 The greatest symbol of balance seeks the hearts of evil and good alike.~
 ~
-5 abdgjkq ano 0
+5 abdgjkq 0 0 0 ano 0 0 0 0 0 0 0
 8 10 9 11
 1 1000 0 20
 E
@@ -391,7 +391,7 @@ axe quest doomslaying~
 the axe of doomslaying~
 The axe meant to end all that is good in the realms floats here seeking a head to remove.~
 ~
-5 bdgjlq ano 0
+5 bdgjlq 0 0 0 ano 0 0 0 0 0 0 0
 10 10 9 3
 1 1000 0 20
 E
@@ -418,7 +418,7 @@ cap quickling quest~
 the cap of quickling~
 A small cap of the faerie folk seeks the grasp of a true quickling.~
 ~
-11 dfgq ae 0
+11 dfgq 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 20
 E
@@ -444,7 +444,7 @@ armbands midnight sun land quest~
 the armbands of the land of the midnight sun~
 The symbol of trollish heroes awaits the next leader of the tribes.~
 ~
-9 bdgiq ai 0
+9 bdgiq 0 0 0 ai 0 0 0 0 0 0 0
 10 0 0 0
 1 1000 0 20
 E
@@ -468,7 +468,7 @@ star man quest~
 the star of man~
 The light of humanity guides you onward here.~
 ~
-1 abdgq ao 0
+1 abdgq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 2 1000 0 20
 E
@@ -492,7 +492,7 @@ shield quest wyrmguard~
 WyrmGuard~
 The protection of dragon-kind seeks the next hero of the wryms.~
 ~
-9 abdgq aj 0
+9 abdgq 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
 5 1000 0 20
 E
@@ -517,7 +517,7 @@ heartguard armor quest~
 HeartGuard~
 The pride of the dwarven race lies here unused.~
 ~
-9 bdgiq ad 0
+9 bdgiq 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 10 1000 0 20
 E
@@ -542,7 +542,7 @@ scholar's guide jeweler's loop quest~
 Scholar's Guide~
 The Guide to all Gnomish knowledge hums here quietly.~
 ~
-11 abdgq aco 0
+11 abdgq 0 0 0 aco 0 0 0 0 0 0 0
 0 0 0 0
 3 1000 0 20
 E
@@ -567,7 +567,7 @@ boots strider quest~
 the boots of the strider~
 The companions to the wanderlust sit here waiting for travel.~
 ~
-9 bdgq ag 0
+9 bdgq 0 0 0 ag 0 0 0 0 0 0 0
 10 0 0 0
 5 1000 0 20
 E
@@ -590,7 +590,7 @@ battleaxe dragonbane quest~
 the Battleaxe of Dragonbane~
 The bane of all wyrmkin seeks the heart of a dragon.~
 ~
-5 abdgiq ano 0
+5 abdgiq 0 0 0 ano 0 0 0 0 0 0 0
 10 10 9 3
 10 1000 0 20
 E
@@ -616,7 +616,7 @@ cloak Elven court quest~
 the cloak of the elven court~
 A heavy cloak of brown and green is hear for the next elven king.~
 ~
-9 dgq ack 0
+9 dgq 0 0 0 ack 0 0 0 0 0 0 0
 10 0 0 0
 4 1000 0 20
 E
@@ -640,7 +640,7 @@ Gloves kindred quest~
 Gloves of the Kindred~
 Some fine gloves sit hear itching to grab something.~
 ~
-11 dgq ah 0
+11 dgq 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 3 1000 0 20
 E
@@ -661,7 +661,7 @@ gem sanctum~
 a gem of sanctum~
 One of the lost treasures of Sanctum is here.~
 ~
-4 a ao 0
+4 a 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 26
 1 1000 0 0
 E
@@ -673,7 +673,7 @@ staff curative~
 a curative staff~
 A staff used by the healers of Sanctum is here.~
 ~
-4 b ao 0
+4 b 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 43
 1 1000 0 0
 E
@@ -685,7 +685,7 @@ runestone sanctum church~
 a runestone of Sanctum~
 A runestone of the church of Sanctum has been left here.~
 ~
-4 b ao 0
+4 b 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 36
 1 1000 0 0
 E
@@ -699,7 +699,7 @@ the bell of Sanctum's freedom~
 The symbol of Sanctum's freedom waits to be returned to its city.~
 Nothing.
 ~
-4 b ao 0
+4 b 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 39
 1 1000 0 0
 E
@@ -711,7 +711,7 @@ hammer Sanctum~
 the hammer of Sanctum~
 The hammer used to ring Sanctum's mighty bell is here.~
 ~
-4 ab ao 0
+4 ab 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 3
 1 1000 0 0
 E
@@ -724,7 +724,7 @@ Guards Eternal Flame quest~
 Guards of the Eternal Flame~
 The spirit of Wyvern Rulers seeks a new Guardian of the flames.~
 ~
-9 adfgq af 0
+9 adfgq 0 0 0 af 0 0 0 0 0 0 0
 10 0 0 0
 5 1000 0 30
 E
@@ -751,7 +751,7 @@ questpoint setter immortal device~
 a questpoint setter~
 An immortal device to set questpoints.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 31
 T 168
@@ -760,7 +760,7 @@ pile coins gold~
 a pile of gold coins~
 A pile of gold coins is half-buried in the mud and muck.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000000 0 0 0
 0 0 0 0
 T 193
@@ -774,7 +774,7 @@ key gateguard~
 the gateguard key~
 The gateguards key was left here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #47
@@ -782,7 +782,7 @@ magic eight ball eightball~
 the magic eight ball~
 A mysterious looking magic eight ball holds the answer.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 6
@@ -795,7 +795,7 @@ bed comfy~
 a comfy bed~
 A comfy bed is begging you to take a nap.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -808,7 +808,7 @@ generic light~
 a generic light~
 A generic light is lying here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 1 0 0
 E
@@ -821,7 +821,7 @@ generic ring rfinger~
 a generic ring~
 A generic ring is lying here.~
 ~
-9 0 abo 0
+9 0 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -834,7 +834,7 @@ generic ring lfinger~
 a generic ring~
 A generic ring is lying here.~
 ~
-9 0 ab 0
+9 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -847,7 +847,7 @@ generic neck1 necklace~
 a generic necklace~
 A generic necklace is lying here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -860,7 +860,7 @@ generic neck2 necklace~
 a generic necklace~
 A generic necklace is lying here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -873,7 +873,7 @@ generic body armor~
 a set of generic body armor~
 A set of generic body armor is lying here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -886,7 +886,7 @@ generic helm~
 a generic helm~
 A generic helm is lying here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -899,7 +899,7 @@ generic leggings~
 a pair of generic leggings~
 A pair of generic leggings are lying here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -912,7 +912,7 @@ generic boots~
 a pair of generic boots~
 A pair of generic boots are lying here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -925,7 +925,7 @@ generic gloves~
 a pair of generic gloves~
 A pair of generic gloves are lying here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -938,7 +938,7 @@ generic sleeves~
 a pair of generic sleeves~
 A pair of generic sleeves are lying here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -951,7 +951,7 @@ generic shield~
 a generic shield~
 A generic shield is lying here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -964,7 +964,7 @@ generic cape~
 a generic cape~
 A generic cape is lying here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -977,7 +977,7 @@ generic belt~
 a generic belt~
 A generic belt is lying here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -990,7 +990,7 @@ generic wristguard~
 a generic wristguard~
 A generic wristguard is lying here.~
 ~
-9 0 am 0
+9 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -1003,7 +1003,7 @@ generic wristguard~
 a generic wristguard~
 A generic wristguard is lying here.~
 ~
-9 0 am 0
+9 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -1016,7 +1016,7 @@ generic weapon~
 a generic weapon~
 A generic weapon is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 2 0
 1 2 0 0
 E
@@ -1029,7 +1029,7 @@ generic staff~
 a generic staff~
 A generic staff is lying here.~
 ~
-9 0 ao 0
+9 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -1042,7 +1042,7 @@ paintball gun red~
 a red paintball gun~
 A red paintball gun was abandoned here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 T 97
@@ -1051,7 +1051,7 @@ paintball gun blue~
 a blue paintball gun~
 A blue paintball gun was abandoned here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 T 96
@@ -1060,7 +1060,7 @@ teleporter~
 the teleporter~
 A strange device labeled "teleporter" was left here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 100 0 0
 T 99
@@ -1078,7 +1078,7 @@ slip paper tapcode code~
 a slip of paper~
 A small slip of paper has something written on it.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -1100,7 +1100,7 @@ drain shower hidden~
 the shower drain~
 .a hidden object!~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 5 5 -1 0
 0 0 0 0
 E
@@ -1113,7 +1113,7 @@ pick iron~
 a small pick~
 A small piece of metal wire has been sharpened into a pick.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 0 0 0
 E
@@ -1126,7 +1126,7 @@ shackles pair~
 a pair of shackles~
 A pair of shackles have been left here open.~
 ~
-12 0 ag 0
+12 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 15 0 0 0
 E
@@ -1141,7 +1141,7 @@ throne chair bayonets~
 a throne of bayonets~
 A throne of sharp bayonets looks like the last place you would want to sit.~
 ~
-6 0 0 0
+6 0 0 0 0 0 0 0 0 0 0 0 0
 1 0 0 0
 50 100 0 0
 E
@@ -1155,7 +1155,7 @@ idleout timer stayalive bracelet~
 Rumble's stayalive bracelet~
 A bright orange plastic bracelet was left here.~
 ~
-12 0 m 0
+12 0 0 0 0 m 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 195
@@ -1170,7 +1170,7 @@ iron shackles~
 a pair of iron shackles~
 A pair of shackles are securely fastened around both of your ankles.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 89
@@ -1185,7 +1185,7 @@ ice cream 99 flake~
 an ice cream~
 An ice cream has been dropped here.~
 ~
-19 0 0 0
+19 0 0 0 0 0 0 0 0 0 0 0 0
 1 0 0 0
 1 4 0 0
 E
@@ -1199,7 +1199,7 @@ full english breakfast fatty food~
 an English Breakfast~
 A full English Breakfast is being served here in all its fatty glory.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 4 8 0 0
 E
@@ -1215,7 +1215,7 @@ tea mug cup nice tea~
 a nice mug~
 A nice mug of tea has been left here.~
 ~
-17 i a 0
+17 i 0 0 0 a 0 0 0 0 0 0 0
 2 2 11 0
 7 1 0 0
 E
@@ -1230,7 +1230,7 @@ board~
 the warriors board~
 The warriors board has been posted here to allow fellow fighters to communicate.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #94
@@ -1238,7 +1238,7 @@ clerics board~
 the clerics board~
 A bulletin board for clerics to keep in touch with each other.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #95
@@ -1246,7 +1246,7 @@ thieves board~
 the thieves board~
 A board for thieves to relate their current plots and schemes is hidden here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #96
@@ -1254,7 +1254,7 @@ mages board~
 the mages board~
 A board for mages to post to others in their class is glowing brightly here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #97
@@ -1262,7 +1262,7 @@ coffee cup mug coffee~
 a cup~
 A coffee cup has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 12 0
 2 5 0 0
 E
@@ -1279,7 +1279,7 @@ board sign notice writing~
 a sign~
 @gA small @Gsign@g hangs on the wall.@n~
 ~
-12 dq 0 0
+12 dq 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 1 0 0 0
 E
@@ -1292,7 +1292,7 @@ scythe death~
 the Scythe of Death~
 The Scythe of Death rests heavily on the ground.~
 ~
-5 jkmno an 0
+5 jkmno 0 0 0 an 0 0 0 0 0 0 0
 0 5 10 5
 40 1000 0 20
 E

@@ -3,7 +3,7 @@ generic light~
 a generic light~
 A generic light is lying here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 1 0 0
 E
@@ -16,7 +16,7 @@ generic ring rfinger~
 a generic ring~
 A generic ring is lying here.~
 ~
-9 0 abo 0
+9 0 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -29,7 +29,7 @@ generic ring lfinger~
 a generic ring~
 A generic ring is lying here.~
 ~
-9 0 ab 0
+9 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -42,7 +42,7 @@ generic neck1 necklace~
 a generic necklace~
 A generic necklace is lying here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -55,7 +55,7 @@ generic neck2 necklace~
 a generic necklace~
 A generic necklace is lying here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -68,7 +68,7 @@ generic body armor~
 a set of generic body armor~
 A set of generic body armor is lying here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -81,7 +81,7 @@ generic helm~
 a generic helm~
 A generic helm is lying here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -94,7 +94,7 @@ generic leggings~
 a pair of generic leggings~
 A pair of generic leggings are lying here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -107,7 +107,7 @@ generic boots~
 a pair of generic boots~
 A pair of generic boots are lying here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -120,7 +120,7 @@ generic gloves~
 a pair of generic gloves~
 A pair of generic gloves are lying here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -133,7 +133,7 @@ generic sleeves~
 a pair of generic sleeves~
 A pair of generic sleeves are lying here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -146,7 +146,7 @@ generic shield~
 a generic shield~
 A generic shield is lying here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -159,7 +159,7 @@ generic cape~
 a generic cape~
 A generic cape is lying here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -172,7 +172,7 @@ generic belt~
 a generic belt~
 A generic belt is lying here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -185,7 +185,7 @@ generic wristguard~
 a generic wristguard~
 A generic wristguard is lying here.~
 ~
-9 0 am 0
+9 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -198,7 +198,7 @@ generic wristguard~
 a generic wristguard~
 A generic wristguard is lying here.~
 ~
-9 0 am 0
+9 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -211,7 +211,7 @@ generic weapon~
 a generic weapon~
 A generic weapon is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 2 0
 1 2 0 0
 E
@@ -224,7 +224,7 @@ generic staff~
 a generic staff~
 A generic staff is lying here.~
 ~
-9 0 ao 0
+9 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -237,7 +237,7 @@ loaf bread~
 a loaf of bread~
 A loaf of freshly baked bread was left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 10 0 0
 #219
@@ -245,7 +245,7 @@ pile ashes~
 a pile of ashes~
 A pile of ashes is slowly being blown away by the wind.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 212
@@ -259,23 +259,10 @@ marble fountain~
 a marble fountain~
 A large fountain with two statues standing protectively above it.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 -1 -1 0 0
 0 0 0 0
 T 201
-E
-rumble names ferret~
-   To bring peace where there was only war.  To bring justice where there was
-only inequity.  To bring freedom where there was only coercion.  To bring
-balance where there was only chaos.  To bring Sanctum to the world.    
-
-DO NOTE ENTER FOUNTAIN!
-~
-E
-statues figures~
-   Below each statue is engraved a name.  Rumble and Ferret.  More is written
-below the names but you must look more closely to read it.    
-~
 E
 fountain~
    This is the most beautiful fountain you have ever set your eyes upon!  It
@@ -283,5 +270,18 @@ has a marble bottom, which is clean enough to eat off from.  In the center of
 the fountain, you see some stone FIGURES.  They have their mouths open.  As you
 look closely you can see that there is water streaming out from the mouths.  
 What a neat idea!    
+~
+E
+statues figures~
+   Below each statue is engraved a name.  Rumble and Ferret.  More is written
+below the names but you must look more closely to read it.    
+~
+E
+rumble names ferret~
+   To bring peace where there was only war.  To bring justice where there was
+only inequity.  To bring freedom where there was only coercion.  To bring
+balance where there was only chaos.  To bring Sanctum to the world.    
+
+DO NOTE ENTER FOUNTAIN!
 ~
 $~

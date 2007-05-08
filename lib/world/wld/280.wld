@@ -7,12 +7,19 @@ computer motherboard.  It must be close to a thousand times normal size.  You
 can see the SIMM slots, the PCI slots, the cpu, and various other things found
 on most motherboards.  
 ~
-280 d 0
+280 8 0 0 0 0
 D5
 You can see the corner of the motherboard.
 ~
 ~
 0 -1 28001
+E
+portal~
+   This portal has been fashioned from some sort of metal.  The portal itself
+looks very futuristic, lights flash all about the portal, and things beep.  
+This portal is probably the work of some ancient Technomancer(computer
+geek/wizard).  
+~
 E
 credits info~
    Living Motherboard by Ryan Kelley(Kinesthesia of BlueMageMUD) rkelley@@exis.net
@@ -26,13 +33,6 @@ it.  E-mail me with any comments or suggestions.  All that said, enjoy!
 
 Links: 00 portal
 ~
-E
-portal~
-   This portal has been fashioned from some sort of metal.  The portal itself
-looks very futuristic, lights flash all about the portal, and things beep.  
-This portal is probably the work of some ancient Technomancer(computer
-geek/wizard).  
-~
 S
 #28001
 The corner of the motherboard.~
@@ -43,7 +43,7 @@ telling things what to do and when.  The circuitry beneath your feet is truly
 amazing to behold.  Possible miles upon miles of high capacity circuits run
 under your feet.  You can feel the pulse of electricity through them.    
 ~
-280 d 0
+280 8 0 0 0 0
 D1
 This silicon wonder stretches to the east.
 ~
@@ -64,7 +64,7 @@ radiate an aura of power, as electrons race in and out of them.  You are also
 on the western edge of the board.  Looking over, you get queasy, as the edge
 just drops off into sheer nothingness.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 You can see the northwestern edge of the motherboard.
 ~
@@ -90,7 +90,7 @@ can see large black masses moving up closer to the surface, ever so slowly.
 You wonder what it could be.  After watching the black objects for a bit, you
 get bored, and decide to search for something new.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 You can see a large cluster of microchips.
 ~
@@ -116,7 +116,7 @@ been misshapen from the large amount of heat, it's stretching out towards the
 west.  Why it went that way, instead of sloping downwards, you have no idea.  
 
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 The motherboard goes back to the north.
 ~
@@ -145,7 +145,7 @@ all over the place, it seemed to fuse itself back together, like clotting
 blood.  The creature is not dead, nor was it ever there, it must've been some
 weird illusion caused by all the electromagnetism going on here.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 You can see the warped area of the motherboard.
 ~
@@ -168,7 +168,7 @@ Another warped area.~
 stretching to the west, instead of sloping downwards.  You *know* there's
 gravity here, or else you'd be floating around.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 You can see a large number of transistors to the north.
 ~
@@ -192,7 +192,7 @@ is dominated by jumpers, which are about your size.  The massive plastic covers
 look quite odd, and the pins that are uncovered, in their massive size, look
 quite sharp, and would probably make a formidable spear.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 Back to the warped area.
 ~
@@ -216,7 +216,7 @@ least ten chips are here, and they are massive.  You wonder why the motherboard
 requires so many of these things, it's not like they're nerve centers or
 anything.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 There are some jumpers off to the north.
 ~
@@ -245,7 +245,7 @@ comes across your face, and you find yourself short of breath.  "Great gods
 above....  " you mutter.  "This thing is....  Alive....  " you say to no one in
 particular.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 It's more of those damn microchips.
 ~
@@ -268,7 +268,7 @@ The SouthWestern edge of the motherboard.~
 This area is pretty much featureless, circuits and a few microchips dot the
 silicon landscape.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 The warped area.
 ~
@@ -286,7 +286,7 @@ The edge of the motherboard.~
 much the same as all the rest of the motherboard, cicruits all over the place,
 the occasional microchip or transistor.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 You can see a large number of electrons to the north.
 ~
@@ -309,7 +309,7 @@ A silicon expanse.~
 circuits, chips and electrons here.  The electrons seem to be heading east at
 high speeds, something important must be in that direction.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 There is a lot of crackling and sparks to the north. Scary.
 ~
@@ -339,7 +339,7 @@ you feel a tingling sensation, then it grows into a massive shock, as thousands
 of volts of electricity course through your body, causing your nerves to go
 into overload.    
 ~
-280 d 0
+280 8 0 0 0 0
 S
 #28014
 A power outlet.~
@@ -347,7 +347,7 @@ A power outlet.~
 opening in the motherboard, where all the circuits converge, and electrons fly
 in and out of the tube, zipping to some odd destination.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 Another expanse of the motherboard.
 ~
@@ -374,7 +374,7 @@ A MicroChip cluster.~
    You are standing among more massive microchips.  "Damn...  " you mutter "...
 At least they could've made this place a little less repetitive.  "
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 A barren piece of the motherboard.
 ~
@@ -399,7 +399,7 @@ Mo' motherboard.~
 criss cross randomly, and the occasional chip dots the surface.  Looking down,
 you can see more of the black masses moving slowly towards the surface.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -427,7 +427,7 @@ microchips that you see dotting the landscape.  "Heh....  This thing can grow,
 and repair damaged areas.  A true silicon based life form...  " you utter to no
 one in particular.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -451,7 +451,7 @@ A barren area of the motherboard.~
 of the typical circuitry running through here, this must be a badly damaged
 area.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -475,7 +475,7 @@ Transistors.~
 multi-colored transistors are fused to the motherboard, and the power running
 into them is awesome.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -499,7 +499,7 @@ The northern edge of the motherboard.~
 pretty much like the rest of the motherboard, except that one false step to
 your north would kill you.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 Gee, I wonder.
 ~
@@ -524,7 +524,7 @@ More Jumpers.~
    You are standing amongst more jumpers.  Looking about, you can see jumpers
 labeled "Cache", "VRAM" and one that worries you "Kill MUDders".    
 ~
-280 d 0
+280 8 0 0 0 0
 D1
 You can see one of the many SIMM slots on this motherboard.
 ~
@@ -545,7 +545,7 @@ The motherboard.~
 the exact same as the rest of the motherboard, except there's a higher amount
 of circuits fused into the board here.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -571,7 +571,7 @@ motherboard.  The electrons here seem to be going to the north and the east a
 lot more, you guess the SIMM slots or something such as that are located over
 that direction.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -595,7 +595,7 @@ The manufacturer's label.~
    Here, pasted to the surface of the motherboard, is a huge sticker showing
 the name of the manufacturer of this motherboard.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -626,7 +626,7 @@ Guess.~
    All about you, transistors tower above you, and microchips perform various
 microchip functions, emitting an odd electrical hum.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -650,7 +650,7 @@ A blasted space.~
 been charred black, and the circuits have been fused closed.  This area is
 probably never going to be used again.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -673,7 +673,7 @@ A very busy area.~
    You are standing in a very busy area of the motherboard.  Electrons dart to
 and fro, and circuits hum with energy.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -696,7 +696,7 @@ Before the FPU.~
    You are standing before the FPU.  Directly south lies the coprocessor of
 this creature.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -722,7 +722,7 @@ The FPU socket.~
 directly(or grew from) the motherboard.  Electrons are constantly darting in
 and out, delivering messages to the FPU.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -747,7 +747,7 @@ Southern Edge.~
    You are standing on the southern edge of this massive creature.  To your
 east and west, more silicon landscape, to your north, the FPU.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 You can see the FPU socket.
 ~
@@ -768,7 +768,7 @@ The southern edge of the motherboard.~
 silicon.  To the north is the CPU.  And, to your east is the south-eastern edge
 of this creature.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 You can see the CPU socket.
 ~
@@ -790,7 +790,7 @@ The CPU socket.~
 easily fit a man-sized pin, and tons of circuits lead into the socket, powering
 the massive CPU.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -815,7 +815,7 @@ A silicon landscape.~
 the eyes can see, dotted by the occasional microchip or various other
 motherboard component.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -840,7 +840,7 @@ A burned out socket.~
 The socket itself is charred black, the silicon has been melted and bubbled up.
 Their is also an odd smell from the melted silicon.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -865,7 +865,7 @@ Jumpers.~
 indications as to what they do, so they're probably not used anymore, the
 motherboard having outgrown them or something.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -889,7 +889,7 @@ An open socket.~
    You are standing near an open socket.  It looks pretty clean, so something
 must be going to be placed in there soon.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -913,7 +913,7 @@ Another area of the motherboard.~
    You are standing in another area of the motherboard.  There are lots of
 electrons zooming off to the north.  You wonder why.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 There is a SIMM slot to your north.
 ~
@@ -938,7 +938,7 @@ SIMM bank 0.~
    You are standing near a massive SIMM slot.  There are five other slots much
 like this one.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 SIMM bank 1.
 ~
@@ -963,7 +963,7 @@ SIMM bank 1.~
    This is one of the 6 SIMM slots on this motherboard.  The SIMM chips in this
 thing are huge.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 SIMM bank 2.
 ~
@@ -988,7 +988,7 @@ S
 SIMM bank 2.~
    This is the third SIMM bank on the motherboard.    
 ~
-280 d 0
+280 8 0 0 0 0
 D1
 SIMM bank 3.
 ~
@@ -1009,7 +1009,7 @@ SIMM bank 3.~
    This is SIMM bank 3.  This is also the north eastern corner of the
 motherboard.    
 ~
-280 d 0
+280 8 0 0 0 0
 D2
 SIMM bank 4.
 ~
@@ -1025,7 +1025,7 @@ S
 SIMM bank 4.~
    This is SIMM bank 4.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 SIMM bank 3.
 ~
@@ -1046,7 +1046,7 @@ S
 SIMM bank 5.~
    This is SIMM bank 5.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 SIMM bank 4.
 ~
@@ -1068,7 +1068,7 @@ A PCI slot.~
    This is your typical PCI slot, except a lot larger.  You can see the metal
 connectors for the card, whatever would go there.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 SIMM bank 5.
 ~
@@ -1088,7 +1088,7 @@ S
 The second the PCI slot.~
    This is the second PCI slot found on this motherboard.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 A PCI slot.
 ~
@@ -1108,7 +1108,7 @@ S
 Another PCI slot.~
    You are standing near another one of the PCI slots.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 Another PCI slot.
 ~
@@ -1128,7 +1128,7 @@ S
 The last PCI slot.~
    This is the last PCI slot on the motherboard.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 Another PCI slot.
 ~
@@ -1148,7 +1148,7 @@ Another area of the motherboard.~
    You are standing on the eastern edge of the motherboard.  To the east, you
 can see an eerie glow, which seems to be getting smaller over time.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 A PCI slot.
 ~
@@ -1168,7 +1168,7 @@ The eastern edge.~
    You are standing on the eastern edge of the massive motherboard.  You can
 still see the eerie light to the east.    
 ~
-280 d 0
+280 8 0 0 0 0
 D0
 ~
 ~
@@ -1189,7 +1189,7 @@ The south-eastern edge.~
    You are standing near the south-eastern edge of the motherboard.  This is
 much like the other areas of the motherboard.    
 ~
-280 d 0
+280 8 0 0 0 0
 D1
 ~
 ~
@@ -1209,7 +1209,7 @@ and fall, and fall, into the depths, you look up and see the motherboard flying
 away at high speeds.  You look down, and see nothing but mist.  You're probably
 going to be falling forever.    
 ~
-280 d 0
+280 8 0 0 0 0
 D3
 ~
 ~

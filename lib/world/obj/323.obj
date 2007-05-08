@@ -3,7 +3,7 @@ obsidian gauntlets~
 a pair of obsidian gauntlets~
 A pair of obsidian gauntlets have been left here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
 11 100 0 21
 A
@@ -15,7 +15,7 @@ obsidian girth~
 an obsidian girth~
 An obsidian girth has been left here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 6 0 0 0
 9 100 0 20
 A
@@ -27,7 +27,7 @@ blackstone amulet~
 the Blackstone Amulet~
 A shining black amulet has been dropped here.~
 ~
-11 f am 0
+11 f 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 8 100 0 20
 A
@@ -41,7 +41,7 @@ blackfire staff~
 the BlackFire Staff~
 A staff glowing with a black fire has been abandoned here.~
 ~
-4 0 ao 0
+4 0 0 0 0 ao 0 0 0 0 0 0 0
 30 3 3 26
 9 100 0 27
 A
@@ -53,7 +53,7 @@ black leggings~
 a pair of black leggings~
 A pair of black leggings have been left here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 7 0 0 0
 9 100 0 28
 A
@@ -65,7 +65,7 @@ mucus aboleth~
 a bit of aboleth mucus~
 A slimy pile of mucus lies on the ground.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 6 1 0 1
 #32306
@@ -73,7 +73,7 @@ pile gray slime~
 a pile of gray slime~
 A pile of gray slime lies disgustingly on the floor.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 1
 #32307
@@ -81,7 +81,7 @@ aboleth's treasure~
 the aboleth's treasure~
 The aboleth's treasure gleams brightly.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 4 1 0 1
 #32308
@@ -89,7 +89,7 @@ small pile guano~
 a small pile of guano~
 A small pile of guano is on the floor of the cave.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 3 1 0 1
 #32309
@@ -97,7 +97,7 @@ eyestalk tentacle~
 an eyestalk tentacle~
 An eyestalk tentacle lies severed on the ground.~
 ~
-12 b a 0
+12 b 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 20
 A
@@ -109,7 +109,7 @@ bugbear hide~
 a bugbear hide~
 A bugbear hide lies stinking in a heap.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 7 0 0 0
 9 10 0 1
 #32311
@@ -117,7 +117,7 @@ shining mace~
 a shining mace~
 A shining mace polished to a high sheen has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 5 4 5
 7 10 0 27
 A
@@ -127,7 +127,7 @@ chrome hammer~
 a chrome hammer~
 A chrome hammer has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 4 6 7
 7 10 0 29
 A
@@ -139,7 +139,7 @@ jeweled spear~
 a jeweled spear~
 A jeweled spear has been abandoned here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 4 6 1
 10 10 0 28
 A
@@ -149,7 +149,7 @@ pile slippery shifting coins~
 a pile of slippery shifting coins~
 A pile of slippery shifting coins lies here in the center of the floor.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 200 0 0 0
 50 1 0 0
 #32315
@@ -157,7 +157,7 @@ tentacle deepspawn~
 a tentacle of the DeepSpawn~
 A tentacle of the DeepSpawn has been left here.~
 ~
-12 jop am 0
+12 jop 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 10 10 0 21
 A
@@ -167,7 +167,7 @@ maroon dragon scale~
 a maroon dragon scale~
 A maroon dragon scale has been left here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 9 0 0 0
 13 10 0 20
 A
@@ -181,7 +181,7 @@ deep gem~
 the Deep Gem~
 The Deep Gem has been dropped here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 6 1000 0 26
 A
@@ -195,7 +195,7 @@ dragon's claw~
 a dragon's claw~
 A dragon's claw has been left here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 5 6 8
 11 1000 0 28
 A
@@ -205,7 +205,7 @@ jaws feyr teeth~
 the jaws of a Feyr~
 A terrible set of fanged teeth have been left here.~
 ~
-11 j ac 0
+11 j 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 21
 A
@@ -217,7 +217,7 @@ nightmare feyr~
 the nightmares of a feyr~
 An awful nightmare has been left on the ground.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 1
 A
@@ -227,7 +227,7 @@ gargoyle's horn~
 the horn of a gargoyle~
 A severed horn has been left here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 1 1 0 20
 A
@@ -239,7 +239,7 @@ gray wings of flight~
 the gray wings of flight~
 A pair of leathery, gray wings have been left here.~
 ~
-9 0 ao 0
+9 0 0 0 0 ao 0 0 0 0 0 0 0
 4 0 0 0
 14 10 0 20
 A
@@ -249,7 +249,7 @@ suit stone skin~
 a suit of stone skin~
 A suit of stone skin lies on the floor.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 15 10 0 22
 A
@@ -263,7 +263,7 @@ festering wart~
 a festering wart~
 A festering wart has been lopped off a margoyle's nose.~
 ~
-13 0 abde 0
+13 0 0 0 0 abde 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #32325
@@ -271,7 +271,7 @@ short gibberling sword~
 a short gibberling sword~
 A short gibberling sword lies in the dirt.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 3 8 3
 1 1 0 26
 A
@@ -281,7 +281,7 @@ cloth eyeshade~
 a cloth eyeshade~
 A filthy cloth eyeshade has been left here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 2 1 0 24
 A
@@ -291,7 +291,7 @@ cloven hoof~
 a cloven hoof~
 A cloven hoof has been sperated from its leg.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 6 10 0 22
 A
@@ -303,7 +303,7 @@ metal scale hide~
 a metal scale hide~
 A huge metal scale hide has been left here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
 14 10 0 20
 A
@@ -315,7 +315,7 @@ blood gorgon capilary~
 the blood of a gorgon~
 A small capilary full of the blood of a gorgon has been left here.~
 ~
-10 a ao 0
+10 a 0 0 0 ao 0 0 0 0 0 0 0
 30 33 36 4
 3 1000 0 0
 #32330
@@ -323,7 +323,7 @@ enormous battle axe~
 an enormous battle axe~
 An enormous battle axe has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 4 5 9
 1 1 0 0
 #32331
@@ -331,7 +331,7 @@ grimlock's helm~
 the Grimlock's Helm~
 An odd-shaped helm has been left here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 9 100 0 24
 A
@@ -343,7 +343,7 @@ hook hand~
 a hideous hook hand~
 A hideous-looking hook hand has been left on the floor.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 5 6 8
 5 560 0 20
 A
@@ -355,7 +355,7 @@ tough exoskeleton~
 a tough exoskeleton~
 A tough exoskeleton lies on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
 14 100 0 27
 A
@@ -369,7 +369,7 @@ moldy topknot~
 a moldy topknot~
 A moldy topknot lies severed from some poor sod's head.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
 4 10 0 22
 A
@@ -381,7 +381,7 @@ poisoned spore blade~
 a spore blade~
 A strange blade made of some sort of fungus lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 4 7 11
 7 10 0 21
 A
@@ -393,7 +393,7 @@ russet mold~
 a lump of russet mold~
 A lump of russet mold lies on the floor.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #32337
@@ -401,7 +401,7 @@ budding spore~
 a budding spore~
 A budding spore grows from one corner of the room.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #32338
@@ -409,7 +409,7 @@ water cascade fall water~
 a cascade of water~
 A cascade of water runs down the south wall into a crack in the floor.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 1000 1000 15 0
 0 0 0 0
 #32339
@@ -417,7 +417,7 @@ sconced torch~
 a sconced torch~
 A sconced torch glows brightly on the wall.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #32340
@@ -425,7 +425,7 @@ stewpot~
 a stewpot~
 A stewpot full of foul-smelling meat rests over a small fire.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 1 1 0 0
 #32341
@@ -433,7 +433,7 @@ torch arnate sconce~
 a torch in an ornate black sconce~
 A torch glows from an ornate black sconce.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 1 0
 1 1 0 0
 #32342
@@ -441,7 +441,7 @@ black rock throne~
 a carved black rock throne~
 A carved black rock throne rests against the east wall.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #32343
@@ -449,7 +449,7 @@ gibberling leg~
 a gibberling leg~
 A gibberling leg has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 1
 4 1 0 1
 #32344
@@ -457,7 +457,7 @@ eye bat~
 the eye of a bat~
 The eye of a bat has been dropped on the floor.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 1
 2 1 0 1
 $~

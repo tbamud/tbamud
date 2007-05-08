@@ -3,7 +3,7 @@ goatskin skin water~
 a goatskin~
 A skin with water seeping out of it, is lying here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 0 0
 13 10 0 0
 #23401
@@ -11,7 +11,7 @@ black berries blackberries~
 some blackberries~
 A bunch of blackberries.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 8 0 0
 #23402
@@ -19,7 +19,7 @@ pouch~
 a small pouch~
 A small pouch has been dropped here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 15 1 -1 0
 1 30 0 0
 #23403
@@ -27,7 +27,7 @@ fountain~
 a fountain~
 A drinking fountain looks out of place, here in the Arena.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 999 999 15 0
 1004 0 0 0
 #23404
@@ -35,7 +35,7 @@ leaves leaf~
 a leaf~
 A fallen leaf rests here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 5 0 0
 #23405
@@ -43,7 +43,7 @@ newbie sword short shortsword~
 a newbie shortsword~
 A newbie shortsword is sitting here.~
 ~
-5 mn an 0
+5 mn 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 3
 3 10 0 0
 #23406
@@ -51,7 +51,7 @@ Newbie mace~
 a newbie mace~
 A newbie mace has been dropped here.~
 ~
-5 op an 0
+5 op 0 0 0 an 0 0 0 0 0 0 0
 0 1 5 5
 3 10 0 0
 E
@@ -63,7 +63,7 @@ newbie dagger~
 a newbie dagger~
 A newbie dagger is resting here.~
 ~
-5 mn ano 0
+5 mn 0 0 0 ano 0 0 0 0 0 0 0
 1 1 6 11
 2 10 0 0
 E
@@ -77,7 +77,7 @@ Newbie club~
 a newbie club~
 A newbie club has been left here.~
 ~
-5 op ano 0
+5 op 0 0 0 ano 0 0 0 0 0 0 0
 1 1 4 7
 2 5 0 0
 E
@@ -91,7 +91,7 @@ Newbie chest~
 a newbie chest~
 A newbie chest plate rests here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
 6 15 0 0
 E
@@ -103,7 +103,7 @@ ring power~
 a ring of power~
 A shiny ring is trying to hide here.~
 ~
-9 amno ab 0
+9 amno 0 0 0 ab 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -117,7 +117,7 @@ ring shadows~
 a ring of shadows~
 A black ring is hiding in the shadows~
 ~
-9 mnp ab 0
+9 mnp 0 0 0 ab 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -131,7 +131,7 @@ Blessed ring~
 a blessed ring~
 A humming ring is calling out to you.~
 ~
-9 abmop ab 0
+9 abmop 0 0 0 ab 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -145,7 +145,7 @@ ring fire~
 a ring of fire~
 A ring that glows like fire is warding you off.~
 ~
-9 anop ab 0
+9 anop 0 0 0 ab 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -159,7 +159,7 @@ Warriors Amulet~
 a warriors amulet~
 An amulet is lying here.~
 ~
-9 mno ac 0
+9 mno 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -171,7 +171,7 @@ Black collar~
 a black collar~
 A black collar has been left here.~
 ~
-9 mnp ac 0
+9 mnp 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -184,7 +184,7 @@ Silver pendant~
 a silver pendant~
 A silver pendant is resting here.~
 ~
-9 mop ac 0
+9 mop 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 15 0 0
 E
@@ -196,7 +196,7 @@ Red charm~
 a red charm~
 A fire red charm is burning a hole here.~
 ~
-9 nop ac 0
+9 nop 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -208,7 +208,7 @@ Warriors Helm~
 a warriors helm~
 A large Helm is looking for an owner~
 ~
-9 mno ae 0
+9 mno 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -221,7 +221,7 @@ Leather Helm~
 a leather helm~
 A dark leather helm is sitting here.~
 ~
-9 mnp ae 0
+9 mnp 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -234,7 +234,7 @@ gold Tiara~
 a gold tiara~
 A gold tiara calls out to you.~
 ~
-9 mop ae 0
+9 mop 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 1 20 0 0
 E
@@ -246,7 +246,7 @@ Wizards Hat~
 a wizards hat~
 A pointy hat is floating here.~
 ~
-9 nop ae 0
+9 nop 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 2 10 0 0
 E
@@ -261,7 +261,7 @@ Leggings~
 some leggings~
 A pair of leggings are resting here.~
 ~
-9 mno af 0
+9 mno 0 0 0 af 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -274,7 +274,7 @@ Leather leggings~
 some leather leggings~
 A set of leather leggings.~
 ~
-9 mnp af 0
+9 mnp 0 0 0 af 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -286,7 +286,7 @@ Cleric Breeches~
 some cleric's breeches~
 A pair of breeches that allows for great movement.~
 ~
-9 mop af 0
+9 mop 0 0 0 af 0 0 0 0 0 0 0
 1 0 0 0
 1 10 0 0
 E
@@ -300,7 +300,7 @@ Leather leggings~
 some leather leggings~
 A set of leggings rest here.~
 ~
-15 nop af 0
+15 nop 0 0 0 af 0 0 0 0 0 0 0
 15 1 -1 0
 1 20 0 0
 E
@@ -312,7 +312,7 @@ mail boots plate~
 some mail boots~
 A pair plate mail boots~
 ~
-9 mno ag 0
+9 mno 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
 2 50 0 0
 E
@@ -326,7 +326,7 @@ Leather boots~
 some leather boots~
 A rugged pair of boots.~
 ~
-9 mnp ag 0
+9 mnp 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
 2 10 0 0
 E
@@ -340,7 +340,7 @@ Sandals~
 some sandals~
 A pair of Sandals.~
 ~
-9 mop ag 0
+9 mop 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
 2 10 0 0
 E
@@ -352,7 +352,7 @@ Mage boots~
 some mage boots~
 A pair of Mage boots are floating here.~
 ~
-9 nop ag 0
+9 nop 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
 2 10 0 0
 E
@@ -375,7 +375,7 @@ v              O-v-O            O-^-O-O-O-O-O
                      |   |      | | | | | | |
                      O v O      O-O-O-O-^-O-O
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #23495
@@ -383,7 +383,7 @@ Tuxedo~
 a tuxedo~
 A tuxedo sized for a dragon.~
 ~
-9 mn ad 0
+9 mn 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 E
@@ -395,7 +395,7 @@ wedding dress gown~
 a wedding dress~
 A long white gown.~
 ~
-11 mn ad 0
+11 mn 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 E
@@ -408,7 +408,7 @@ engagement ring~
 an engagement ring~
 A beautiful ring of twisted gold and platinum.~
 ~
-9 agi ab 0
+9 agi 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -427,7 +427,7 @@ wedding ring~
 a wedding ring~
 A wedding ring that shines brightly.~
 ~
-9 agi ab 0
+9 agi 0 0 0 ab 0 0 0 0 0 0 0
 5 0 0 0
 1 1 0 0
 E
@@ -445,7 +445,7 @@ little black book~
 a little black book~
 A little black book is sitting here calling your name.~
 ~
-12 bgi 0 0
+12 bgi 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E

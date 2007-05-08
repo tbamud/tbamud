@@ -6,7 +6,7 @@ Farmer Bob wanders about looking for his lost cow.
    He looks very old and tired.  A lifetime's worth of hard work on the farm has
 aged him beyond his years.  
 ~
-dg 0 400 E
+72 0 0 0 0 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -20,7 +20,7 @@ A cow roams about aimlessly, munching on any grass it can find.
 and friendly.  Domesticated to life on a farm.  Strange for it to be out roaming
 around.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -33,7 +33,7 @@ A reddish brown weasel slinks along the road.
    The weasel is a rodent that can prey on animals larger than itself.  It is
 very intelligent and resourceful.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -46,7 +46,7 @@ A newborn cow calf looks for its mother.
    The calf can barely walk on it's own four feet.  It stumbles awkwardly
 towards you looking for it's mother.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -58,7 +58,7 @@ A heifer looks up at you.
 ~
    The heifer is a young cow that has not yet calfed.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -71,7 +71,7 @@ A fisherman walks between the cities to sell his latest catch.
    He walks past with a long purposeful stride.  On his way to making some
 money.  
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -84,7 +84,7 @@ A bandit pillages everything in sight.
    The bandit has a big grin on his face and greets you with a wave.  He must
 have just made a killing.  
 ~
-dg 0 -500 E
+72 0 0 0 0 0 0 0 -500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -98,7 +98,7 @@ A merchant is here crying at his recent losses.
 his caravan was looted by bandits.  All his accumulated wealth taken away in an
 instant.  
 ~
-dg 0 400 E
+72 0 0 0 0 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -111,7 +111,7 @@ A gypsy brags of her clairvoyant ability and stares at you shocked by your futur
    She grasps your palm and stares in horror up into your eyes.  She says, 'for
 a minimal fee I can tell you of yer future.  '
 ~
-dg 0 100 E
+72 0 0 0 0 0 0 0 100 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -123,7 +123,7 @@ A greedy trader has been mugged recently and has nothing of value.
 ~
    He is upset at his loss, but knows how to get it all back.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -136,7 +136,7 @@ A small brown furry groundhog runs towards it's hole as you approach.
    It is a grizzled thickset marmot.  Built low to the ground and about the size
 of a small dog.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -149,7 +149,7 @@ The wanderer is out on one her missions.
    She is clad in only a burlap sack and roams the realm looking for something
 or someone only known to her.  
 ~
-dg 0 800 E
+72 0 0 0 0 0 0 0 800 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -162,7 +162,7 @@ Bubba staggers by, a little tipsy from his moonshine.
    He reeks of homemade moonshine.  Most likely made from corn.  He is the
 typical hillbilly, and fits his name to a tee.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1

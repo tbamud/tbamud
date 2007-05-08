@@ -6,7 +6,7 @@ lays at an angle in the middle of the floor.  Stairs lead up to the upper
 reaches where the wheel must have been maintained when this was in working
 order.  
 ~
-253 cd 0
+253 12 0 0 0 0
 D2
 ~
 ~
@@ -48,7 +48,7 @@ Upstairs - Windmill~
 thereof) has absolutely nothing of interest.  Unless you are a dust collector.
 Or some kid bringing his best girl out here.  
 ~
-253 d 0
+253 8 0 0 0 0
 D5
 ~
 ~
@@ -61,7 +61,7 @@ well equipped men who stand waiting for innocent folk just like yourself to
 blunder into this room.  A metal-made flight of stairs lead down into
 who-knows-where.  
 ~
-253 c 0
+253 4 0 0 0 0
 D1
 ~
 door~
@@ -80,7 +80,7 @@ upon, are all completely made of steel.  The effort and cost involved in the
 construction of a passage such as this is beyond your comprehension.  What kind
 of person or people decorate their walls in steel?  
 ~
-253 di 0
+253 264 0 0 0 0
 D4
 ~
 ~
@@ -96,7 +96,7 @@ Steel Clad Flight of Stairs~
 The metal which covered the walls up from here continues along these same walls.
 The door ahead appears to be made of steel as well.  
 ~
-253 0 0
+253 0 0 0 0 0
 D4
 ~
 ~
@@ -113,7 +113,7 @@ persons responsible for the construction of this passage.  You may leave this
 whole strange place, back up the stairs to a more stable world, or open the
 door.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 door metal~
@@ -132,7 +132,7 @@ see the letters 'MoS' emblazoned on the left breast of every guard's hauberk,
 but you have no clue what they signify, nor do you have much time ti think about
 as the guards attack.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 door~
@@ -148,7 +148,7 @@ Steel Clad Passage~
 down this passage, and because you can't see the end of the passage you must
 assume it's quite large.  
 ~
-253 d 0
+253 8 0 0 0 0
 D0
 ~
 ~
@@ -164,7 +164,7 @@ Steel Clad Passage~
 symbol of two swords crossed, points down on it.  The letters 'MoS' are engraved
 under the swords.  
 ~
-253 d 0
+253 8 0 0 0 0
 D0
 ~
 ~
@@ -184,7 +184,7 @@ Steel Clad Passage~
 which has the symbol of the two swords crossed, point down and the 'MoS'
 engraved underneath.  
 ~
-253 d 0
+253 8 0 0 0 0
 D0
 ~
 ~
@@ -203,7 +203,7 @@ Steel Clad Passage~
    The passage north and south from you.  A door leads east from here with the
 sword sigil and the MoS under it.  
 ~
-253 d 0
+253 8 0 0 0 0
 D0
 ~
 ~
@@ -223,7 +223,7 @@ Steel Clad Passage~
 gleaming as far as your eyes can see.  Doors lead east and west from here, and
 just to the north a passage branches east.  
 ~
-253 d 0
+253 8 0 0 0 0
 D0
 ~
 ~
@@ -246,7 +246,7 @@ Steel Clad Passage~
    The passage runs north and south from here.  A smaller passage runs east from
 here, also clad in steel.  
 ~
-253 d 0
+253 8 0 0 0 0
 D0
 ~
 ~
@@ -265,7 +265,7 @@ Steel Clad Passage~
    The passage still runs north to south here, no turns or bends visible for
 quite a ways.  There is a door on the west wall here.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 ~
@@ -284,7 +284,7 @@ Steel Clad Passage~
    The passage runs north and south.  You think that you may see the end of the
 hall to your north.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 ~
@@ -299,7 +299,7 @@ Steel Clad Passage~
    The passage runs north and south, with doors on either side of you.  The end
 of the corridor, in the form of a steel door, lies a ways north from here.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 ~
@@ -322,7 +322,7 @@ Steel Clad Passage~
    The end of this long hallway lies just north of here.  To the south, the
 hallway runs for a very long ways.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 ~
@@ -337,7 +337,7 @@ Northern End of a Steel Clad Passage~
    A door lies north of you, while a steel-walled passage runs south as far as
 your eyes can see.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 ~
@@ -354,7 +354,7 @@ steel.  It ends to the east, a ways from where you stand, at a door.  A door
 stands to your north, and to your immediate west, the main passage runs north
 and south.  
 ~
-253 d 0
+253 8 0 0 0 0
 D1
 ~
 ~
@@ -369,7 +369,7 @@ Steel Clad Passage~
    The passage continues east toward a set of doors, or you may go back west to
 the main passage.  
 ~
-253 d 0
+253 8 0 0 0 0
 D1
 ~
 ~
@@ -384,7 +384,7 @@ Steel Clad Passage~
    The passage ends just east of you at a door.  Doors lie north and south of
 your present locale, while the passage runs west back to the main passage.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 door~
@@ -408,7 +408,7 @@ Eastern End of a Steel Clad Passage~
 runs back toward the main area.  North, south, and east of you are steel doors,
 all with the double sword insignia and the letters MoS.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 door~
@@ -434,7 +434,7 @@ the door.  The etching reads; Militant Order of the Sword.  So this is a
 military compound held by the Militant Order of the Sword, but who are they, and
 what is their purpose?  
 ~
-253 d 0
+253 8 0 0 0 0
 D3
 ~
 door~
@@ -446,7 +446,7 @@ Food Stores~
 of this room.  A door leads north from here, or you may exit into the passage
 through the west door.  
 ~
-253 d 0
+253 8 0 0 0 0
 D0
 ~
 ~
@@ -463,7 +463,7 @@ There are only a few utensils lying on the one table, all utensils lined up
 perfectly.  The one thing you can say positively about this kitchen is that it
 is immaculately clean.  
 ~
-253 d 0
+253 8 0 0 0 0
 D0
 ~
 ~
@@ -485,7 +485,7 @@ soldiers must live in this compound, judging by the immense size of this table.
 A door leads south into the kitchen or you may head west out into the hallway.
 
 ~
-253 d 0
+253 8 0 0 0 0
 D2
 ~
 ~
@@ -501,7 +501,7 @@ The Head~
 a clean, no spotless affair with a polished steel floor.  Even the seats are
 polished steel which even you would feel comfortable sitting on.  
 ~
-253 d 0
+253 8 0 0 0 0
 D1
 ~
 ~
@@ -515,7 +515,7 @@ targets are lined against the west wall, obviously for archery.  Some weapon
 racks hang on the north wall, but currently there are no weapons in those racks.
 
 ~
-253 0 0
+253 0 0 0 0 0
 D1
 ~
 ~
@@ -527,7 +527,7 @@ Bunk Room~
 the north and south walls.  Every bed is made perfectly, all the sheets and
 blankets on those beds are spotlessly clean.  
 ~
-253 0 0
+253 0 0 0 0 0
 D1
 ~
 ~
@@ -539,7 +539,7 @@ Bunk Room~
 the north and south walls.  Every bed is made perfectly, all the sheets and
 blankets on those beds are spotlessly clean.  
 ~
-253 0 0
+253 0 0 0 0 0
 D3
 ~
 ~
@@ -551,7 +551,7 @@ Captain's Room~
 looks very uncomfortable.  It looks as if the only real advantage to having your
 own room is privacy.  
 ~
-253 0 0
+253 0 0 0 0 0
 D2
 ~
 door~
@@ -562,7 +562,7 @@ Lieutenant's Room~
    This room holds only a bed and a foot locker.  No pictures adorn the walls,
 of course there are no windows.  How do these people live like this?  
 ~
-253 0 0
+253 0 0 0 0 0
 D2
 ~
 door~
@@ -575,7 +575,7 @@ scene in town circle.  There is a gallows platform with townfolk all surrounding
 it cheering.  The platform itself holds sixteen swinging bodies, all of them
 elven.  The caption underneath reads "A Day of Reckoning will come".  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 door~
@@ -589,7 +589,7 @@ added touch.  The caption underneath the symbol reads When Armageddon comes, the
 Human race will be the one to triumph and rule over all other races.  How
 quaint.  
 ~
-253 0 0
+253 0 0 0 0 0
 D0
 ~
 door~
@@ -602,7 +602,7 @@ of his fellow brothers.  Although this is 'Anti-Elf Deco', it still holds some
 wood furnishings, as well as a huge four posted feather bed.  This guy must be
 old and tired...  
 ~
-253 0 0
+253 0 0 0 0 0
 D3
 ~
 door~

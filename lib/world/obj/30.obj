@@ -3,7 +3,7 @@ barrel beer~
 a barrel~
 A beer barrel has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 50 50 1 0
 50 300 100 0
 #3001
@@ -11,7 +11,7 @@ bottle beer~
 a bottle~
 A beer bottle has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 1 0
 10 20 8 0
 #3002
@@ -19,7 +19,7 @@ bottle dark ale~
 a bottle~
 A dark bottle of ale has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 3 0
 10 10 3 0
 #3003
@@ -27,7 +27,7 @@ bottle firebreather~
 a bottle~
 A bottle of firebreather has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 7 0
 10 50 17 0
 #3004
@@ -35,7 +35,7 @@ bottle local~
 a bottle~
 A dark bottle has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 8 0
 10 20 7 0
 #3005
@@ -43,7 +43,7 @@ key dull metal~
 a key of dull metal~
 A key made of a dull metal is lying on the ground here.~
 ~
-18 cdq ao 0
+18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #3009
@@ -51,7 +51,7 @@ waybread bread~
 a waybread~
 Some waybread has been put here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 50 50 0
 E
@@ -64,7 +64,7 @@ bread loaf~
 a bread~
 A loaf of bread has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 10 10 0
 #3011
@@ -72,7 +72,7 @@ danish pastry~
 a danish pastry~
 A nice looking delicious danish pastry has been placed here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 5 5 0
 #3012
@@ -80,7 +80,7 @@ taco mexican~
 a Mexican taco~
 A tasty looking Mexican taco has been dropped here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
 1 15 15 0
 #3013
@@ -88,7 +88,7 @@ burrito hot~
 a spicy hot burrito~
 A spicy looking burrito has been set here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 1 10 10 0
 #3014
@@ -96,7 +96,7 @@ nachos nacho~
 some nachos with cheese~
 Some nachos have been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 5 5 0
 E
@@ -108,7 +108,7 @@ meat chunk~
 a piece of meat~
 A rather dubious looking piece of meat is on the ground here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 14 0 0 0
 5 24 10 0
 E
@@ -123,7 +123,7 @@ dagger~
 a dagger~
 A dagger with a long thin blade is here.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
 1 10 10 0
 #3021
@@ -131,23 +131,23 @@ sword small~
 a small sword~
 A small sword lies here.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
 3 60 10 0
 E
-inscription~
-   It says: 'May this sword be a good companion.  '
-~
-E
 sword small~
    The small sword seems to have an inscription of some sort.
+~
+E
+inscription~
+   It says: 'May this sword be a good companion.  '
 ~
 #3022
 sword long~
 a long sword~
 A long sword has been left here.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
 8 600 10 0
 #3023
@@ -155,7 +155,7 @@ club wooden~
 a wooden club~
 A simple looking wooden club is here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 3 7
 3 12 10 0
 #3024
@@ -163,7 +163,7 @@ warhammer hammer~
 a warhammer~
 A medium sized warhammer is here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 5 7
 6 50 10 0
 #3025
@@ -171,7 +171,7 @@ flail large~
 a flail~
 A large flail is here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 7
 6 625 10 0
 #3030
@@ -179,7 +179,7 @@ torch~
 a torch~
 A large torch.~
 ~
-1 0 adefijklmn 0
+1 0 0 0 0 adefijklmn 0 0 0 0 0 0 0
 0 0 24 0
 1 10 10 0
 #3031
@@ -187,7 +187,7 @@ lantern brass~
 a lantern~
 A brass lantern is here.~
 ~
-1 0 adefijklmn 0
+1 0 0 0 0 adefijklmn 0 0 0 0 0 0 0
 0 0 96 0
 1 50 10 0
 #3032
@@ -195,7 +195,7 @@ bag~
 a bag~
 A small bag is here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 0 0 0
 2 20 10 0
 #3033
@@ -203,7 +203,7 @@ box~
 a box~
 A small box is here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 10 0 0 0
 5 50 10 0
 #3034
@@ -211,7 +211,7 @@ atm teller banks machine~
 an automatic teller machine~
 An automatic teller machine has been installed in the wall here.~
 ~
-12 cdeg 0 0
+12 cdeg 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -227,7 +227,7 @@ fountain water~
 the large fountain~
 A large fountain carved from blue-streaked marble is here, bubbling merrily.~
 ~
-23 cdeg 0 0
+23 cdeg 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 505 0 0 0
 E
@@ -242,7 +242,7 @@ cashcard card atm banks~
 a cashcard~
 A handy dandy cashcard is sitting on the ground here.~
 ~
-12 cdeg ao 0
+12 cdeg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 10 0
 E
@@ -258,7 +258,7 @@ candle~
 a candle~
 A candle lies here, unlit.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 4 0
 1 5 1 0
 E
@@ -270,7 +270,7 @@ nail~
 a nail~
 A penny nail lies in the dust.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 1 11
 1 5 1 0
 E
@@ -282,7 +282,7 @@ pot~
 a pot~
 A cast-iron pot sits on the ground.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 10 100 20 0
 E
@@ -294,7 +294,7 @@ plate breast~
 a breast plate~
 A breast plate is lying on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 50 180 15 0
 #3041
@@ -302,7 +302,7 @@ shirt chain mail~
 a chain mail shirt~
 A chain mail shirt is lying on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 50 250 5 0
 #3042
@@ -310,7 +310,7 @@ shield wooden~
 a shield~
 A small wooden shield is lying on the ground.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 2 0 0 0
 3 100 10 0
 #3043
@@ -318,7 +318,7 @@ jacket soft leather~
 a leather jacket~
 A soft leather jacket is lying on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
 10 200 10 0
 #3044
@@ -326,7 +326,7 @@ jacket studded leather~
 a studded leather jacket~
 A studded leather jacket is lying on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 20 500 10 0
 #3045
@@ -334,7 +334,7 @@ jacket scale mail~
 a scale mail jacket~
 A scale mail jacket is lying on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 40 1000 10 0
 #3046
@@ -342,7 +342,7 @@ plate bronze breast~
 a bronze breast plate~
 A bronze breast plate is lying on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 50 700 10 0
 #3050
@@ -350,7 +350,7 @@ scroll identify~
 a scroll of identify~
 A scroll has carelessly been left here.~
 ~
-2 g ao 0
+2 g 0 0 0 ao 0 0 0 0 0 0 0
 12 -1 -1 -1
 1 1000 10 0
 E
@@ -370,7 +370,7 @@ potion yellow~
 a yellow potion of see invisible~
 A small yellow potion has carelessly been left here.~
 ~
-10 g ao 0
+10 g 0 0 0 ao 0 0 0 0 0 0 0
 12 19 -1 -1
 1 400 10 0
 E
@@ -382,7 +382,7 @@ scroll recall~
 a scroll of recall~
 A scroll has carelessly been left here.~
 ~
-2 g ao 0
+2 g 0 0 0 ao 0 0 0 0 0 0 0
 12 42 -1 -1
 4 200 10 0
 E
@@ -394,7 +394,7 @@ wand grey~
 a grey wand of invisibility~
 A grey wand has carelessly been left here.~
 ~
-3 g ao 0
+3 g 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 29
 2 400 10 0
 E
@@ -410,7 +410,7 @@ staff gnarled~
 a gnarled staff~
 A gnarled staff has carelessly been left here.~
 ~
-4 g ao 0
+4 g 0 0 0 ao 0 0 0 0 0 0 0
 12 1 1 38
 17 700 50 0
 E
@@ -431,7 +431,7 @@ staff metal~
 a metal staff~
 A metal staff has carelessly been left here.~
 ~
-4 g ao 0
+4 g 0 0 0 ao 0 0 0 0 0 0 0
 10 8 8 15
 7 850 30 0
 E
@@ -443,7 +443,7 @@ raft~
 a raft~
 A raft has been left here.~
 ~
-22 0 a 0
+22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 400 10 0
 E
@@ -455,7 +455,7 @@ canoe~
 a canoe~
 A canoe has been left here.~
 ~
-22 0 a 0
+22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 32 1000 100 0
 E
@@ -467,7 +467,7 @@ gauntlets bronze~
 a pair of bronze gauntlets~
 A pair of bronze gauntlets is lying on the ground.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 6 0 0 0
 8 175 10 0
 #3071
@@ -475,7 +475,7 @@ gloves leather~
 a pair of leather gloves~
 A pair of leather gloves is lying on the ground.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 3 75 10 0
 #3075
@@ -483,7 +483,7 @@ helmet bronze~
 a bronze helmet~
 A bronze helmet is lying on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 8 350 10 0
 #3076
@@ -491,7 +491,7 @@ cap leather~
 a leather cap~
 A leather cap is lying on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
 3 150 10 0
 #3080
@@ -499,7 +499,7 @@ leggings bronze~
 a pair of bronze leggings~
 A pair of bronze leggings is lying on the ground.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
 8 350 10 0
 #3081
@@ -507,7 +507,7 @@ pants leather~
 a pair of leather pants~
 A pair of leather pants is lying on the ground.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
 8 150 10 0
 #3085
@@ -515,7 +515,7 @@ sleeves bronze~
 a pair of bronze sleeves~
 A pair of bronze sleeves is lying on the ground.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 6 0 0 0
 8 175 10 0
 #3086
@@ -523,7 +523,7 @@ sleeves leather~
 a pair of leather sleeves~
 A pair of leather sleeves is lying on the ground.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
 4 75 10 0
 #3096
@@ -531,63 +531,63 @@ boards social bulletin gen_boards~
 a social bulletin board~
 A large, sociable bulletin board is mounted on a wall here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
-E
-social bulletin~
-   Use 'look board' to read the board.  
-~
 E
 board~
    If you can read this, the board is not working.  
+~
+E
+social bulletin~
+   Use 'look board' to read the board.  
 ~
 #3097
 boards frozen bulletin gen_boards~
 a frozen bulletin board~
 A large bulletin board is here, carved from a block of ice.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
-E
-freeze bulletin~
-   Use 'look board' to read the board.  
-~
 E
 board~
    If you can read this, the board is not working.  
+~
+E
+freeze bulletin~
+   Use 'look board' to read the board.  
 ~
 #3098
 boards holy bulletin gen_boards~
 a holy bulletin board~
 A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
-E
-holy bulletin~
-   Use 'look board' to read the board.  
-~
 E
 board~
    If you can read this, the board is not working.  
+~
+E
+holy bulletin~
+   Use 'look board' to read the board.  
 ~
 #3099
 boards bulletin gen_boards~
 a bulletin board~
 A large bulletin board is mounted on a wall here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
-E
-bulletin~
-   Use 'look board' to read the board.  
-~
 E
 board~
    If you can read this, the board is not working.  
+~
+E
+bulletin~
+   Use 'look board' to read the board.  
 ~
 $~

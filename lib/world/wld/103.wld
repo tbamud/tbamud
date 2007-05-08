@@ -33,7 +33,7 @@ Welcome to the world of:
                                                    @b||
                                                    @b\/
 ~
-103 0 0
+103 0 0 0 0 0
 D5
 ~
 ~
@@ -45,7 +45,7 @@ Transportation Rooms~
 and ceiling.  Two sets of stairs sit in the middle of the room, one goes up, the
 other down.  
 ~
-103 cde 0
+103 28 0 0 0 0
 D4
 ~
 ~
@@ -62,7 +62,7 @@ and floor.  But there is one difference, in the middle of the room sits a
 teleporter, this device is giving off a strange light, hums constantly.  A sign
 is nailed onto the wall.  
 ~
-103 cde 0
+103 28 0 0 0 0
 D5
 ~
 <NONE>~
@@ -74,7 +74,7 @@ Namek Teleporter~
 and floor.  But there is one difference, in the middle of the room sits a
 teleporter, this device is giving off a strange light, hums constantly.  
 ~
-103 cde 0
+103 28 0 0 0 0
 D4
 ~
 ~
@@ -86,7 +86,7 @@ Kami's Lookout~
 person is kneeling here tending to a well kempt flower garden whistling happily.
 Another person stands here, a tall green man with pointy ears.  
 ~
-103 ce 1
+103 20 0 0 0 0
 S
 #10305
 Start of Planet Namek~
@@ -96,7 +96,7 @@ are also here, and many green people are walking around working here.  Some
 tending to the gardens, others training their skills.  But one thing is certain,
 all of them look male.
 ~
-103 0 1
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -113,7 +113,7 @@ Base of Korins Tower~
 allowing the sun in.  Towards the east is a dirt path in which you cannot see
 the end of.  
 ~
-103 e 3
+103 16 0 0 0 0
 D1
 ~
 ~
@@ -125,7 +125,7 @@ Forest path~
 air.  @gTrees limit you to this single path, sounds come from the woods and area
 ahead.  
 ~
-103 0 3
+103 0 0 0 0 0
 D1
 ~
 ~
@@ -141,7 +141,7 @@ Forest Intersection~
 towards the north is another small clearing.  A large gaping hole is in the
 middle of the ground here.  
 ~
-103 0 3
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -165,7 +165,7 @@ Gokus' House~
 This is a cleared out space in the forest.  @gThe house seems to make everything
 feel good again, as if it has some magical feeling to it.  
 ~
-103 0 3
+103 0 0 0 0 0
 D2
 ~
 ~
@@ -177,7 +177,7 @@ A Dark Hole~
 surrounding you.  @gThe walls are sleek, it seems that if one were to fall into
 this hole, they would not be able to escape easily.  
 ~
-103 a 3
+103 1 0 0 0 0
 D4
 ~
 ~
@@ -193,7 +193,7 @@ The Base of the Dark Hole~
 and then, strange plants grow all over the walls here. @gIt is dark, almost so
 dark it makes it hard to see, the only light comes from above you. 
 ~
-103 a 3
+103 1 0 0 0 0
 D4
 ~
 ~
@@ -205,7 +205,7 @@ A Forest Path~
 air.  @gThe trees still cover the area around the path, just limiting you to
 this one spot.  
 ~
-103 0 3
+103 0 0 0 0 0
 D1
 ~
 ~
@@ -221,7 +221,7 @@ The end of the Forest~
 still inhabbit this area, and the smell of death is still strong, but not as
 strong as it used to be.  
 ~
-103 0 3
+103 0 0 0 0 0
 D1
 ~
 ~
@@ -239,7 +239,7 @@ like it has been through many storms.  Off to the east you see a small island
 with an even smaller house, to the south is a large dome building marked with a
 large black CC.  
 ~
-103 c 2
+103 4 0 0 0 0
 D0
 ~
 ~
@@ -263,7 +263,7 @@ The Entrance to Capsul Corp~
 To the south is a large entrance to the building marked with a CC.  This dome
 shaped building seems a lot bigger than it did before.  
 ~
-103 0 2
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -281,7 +281,7 @@ says that her name is Matilda.  Lots of chairs cover the wall of the room, it is
 clear that this is no ordinary place.
 @n
 ~
-103 de 0
+103 24 0 0 0 0
 D0
 ~
 ~
@@ -298,7 +298,7 @@ about, and the smell of death lingers in the air.  @qThe walls have a reddish
 liquid like substance splattered on them, making it kind of an uncomfortable
 room.  
 ~
-103 d 0
+103 8 0 0 0 0
 D0
 ~
 ~
@@ -323,7 +323,7 @@ with some strange type of materal.  The sounds of fighting echo around you.
 @gThis room also has a random blood splatter, but the splatter here seems to be
 more consistent then in the other room.  
 ~
-103 d 0
+103 8 0 0 0 0
 D3
 ~
 ~
@@ -336,7 +336,7 @@ Vegetas Atire~
 part of the building.  @gLarge brass statues cover the walls, and even more
 strange is the fact that not a single one seems to be touching the ground.  
 ~
-103 d 0
+103 8 0 0 0 0
 D0
 ~
 ~
@@ -348,7 +348,7 @@ Teleportation Room~
 planet.  @gOne difference is that the teleportation unit seems to be more
 technilogically advanced here, but it is hard to tell.  
 ~
-103 d 0
+103 8 0 0 0 0
 D1
 ~
 ~
@@ -369,7 +369,7 @@ lies amongst the sand here and there, and small birds chirp in the forest.
 This place seems to be perfect to just relax and take a break from the everyday
 life.  @n
 ~
-103 ce 2
+103 20 0 0 0 0
 D0
 ~
 ~
@@ -392,7 +392,7 @@ destructive human hand,@n @Bthe trees to the northwest are to thick to see
 through much less walk through.  This also seems to be a perfect place to relax
 from the troubles of everyday.  @n
 ~
-103 ce 3
+103 20 0 0 0 0
 D2
 ~
 ~
@@ -428,7 +428,7 @@ Heiach@B |
 @B(____________________________________________________________________________)
 @n
 ~
-103 cde 0
+103 28 0 0 0 0
 D5
 ~
 ~
@@ -440,7 +440,7 @@ Soaring Over the Ocean~
 abundant here then they were on the beach and this does place is not as soothing
 either.  @n
 ~
-103 0 8
+103 0 0 0 0 0
 D1
 ~
 ~
@@ -456,7 +456,7 @@ Soaring Over the Ocean~
 abundant here then they were on the beach and this does place is not as soothing
 either.  @n
 ~
-103 0 8
+103 0 0 0 0 0
 D1
 ~
 ~
@@ -472,7 +472,7 @@ Soaring Over the Ocean~
 abundant here then they were on the beach and this does place is not as soothing
 either.  @n
 ~
-103 0 8
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -488,7 +488,7 @@ Soaring Over the Ocean~
 But the salt still lingers in the air and the Seaguls fly overhead.  @n @gThe
 sun seems to be harsher here then it is any other part of the ocean.  
 ~
-103 0 8
+103 0 0 0 0 0
 D1
 ~
 ~
@@ -504,7 +504,7 @@ In Shallow Water~
 a house with 'KAMI' in large red letters.  A bald old man sits out front looking
 at a dirty magazine.  @n
 ~
-103 0 8
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -520,7 +520,7 @@ Infront of Kami House~
 white facial hair and large sunglasses.  He wears a turtle shell on his back.  
 @gWaves wash gentle up onto the shore, and a gentle breeze blows here.  
 ~
-103 e 1
+103 16 0 0 0 0
 D0
 ~
 ~
@@ -536,7 +536,7 @@ Kami House~
 are an off white, and a large couch in the center of the room.  Off to the north
 seems to be the kitchin, and south is back to the shore.  
 ~
-103 d 0
+103 8 0 0 0 0
 D0
 ~
 ~
@@ -552,7 +552,7 @@ Kami Houses Kitchen~
 and whistling.  This room looks like the other but has a large table in the
 center of it, and counters around the edge.  
 ~
-103 d 0
+103 8 0 0 0 0
 D2
 ~
 ~
@@ -569,7 +569,7 @@ noticably low.
 There is a set stairs here leading up.  @gA light glows through a crack in the
 door at the top of the stairs.  
 ~
-103 d 0
+103 8 0 0 0 0
 D1
 ~
 ~
@@ -585,7 +585,7 @@ Roshis' Room~
 are covering the floor and you can barely make out the wood under them.  @gThe
 windows lie open, letting the gentle breeze into the room.  
 ~
-103 d 0
+103 8 0 0 0 0
 D5
 ~
 ~
@@ -597,7 +597,7 @@ A Small Hall~
 other areas of the building, it is a sleek marble and it has been freshly
 shined.  The hall continues to the south.  
 ~
-103 d 0
+103 8 0 0 0 0
 D0
 ~
 ~
@@ -613,7 +613,7 @@ A Small Hall~
 other areas of the building, it is a sleek marble and it has been freshly
 shined.  The hall continues to the south.  
 ~
-103 d 0
+103 8 0 0 0 0
 D0
 ~
 ~
@@ -630,7 +630,7 @@ other areas of the building, it is a sleek marble and it has been freshly
 shined.  The hall is now over, if you go west, there seems to be someone there.
 
 ~
-103 d 0
+103 8 0 0 0 0
 D0
 ~
 ~
@@ -647,7 +647,7 @@ with a rug here and there, a nice chandelier hangs from the ceiling, and the
 walls are covered in a nice flowered wallpaper.  A table only large enough for
 three sits here, and three chairs are placed comfortably around it.  
 ~
-103 d 0
+103 8 0 0 0 0
 D0
 ~
 ~
@@ -664,7 +664,7 @@ couch, and a huge plasma TV on the wall.  Pictures of Vegeta, Bulma, and Truncks
 hang from the wall.  A faint whistling comes from the west, adding to the
 homely feeling.  
 ~
-103 d 0
+103 8 0 0 0 0
 D2
 ~
 ~
@@ -681,7 +681,7 @@ another TV like the one in the Living room, but this one has a game system
 connected to it, and a young child with purple hair sits here playing it while
 whistling.  
 ~
-103 cde 0
+103 28 0 0 0 0
 D1
 ~
 ~
@@ -698,7 +698,7 @@ the arch you are able to see a magnificent lush garden, anything you could
 possibly think of resides in this place, in the its center is a huge oak tree,
 it provides shade for anyone who sits under it.  
 ~
-103 e 3
+103 16 0 0 0 0
 D1
 ~
 ~
@@ -714,7 +714,7 @@ A Garden Path~
 types of plants you have never seen before.  Large rocks seperate plant rows,
 acting as stepping stones for someone to walk through.  
 ~
-103 e 0
+103 16 0 0 0 0
 D1
 ~
 ~
@@ -732,7 +732,7 @@ area, the sun cannot get through the leaves of this tree, it seems to have been
 placed here on purpose, a magical feeling is coming from the tree, it makes
 your body tingle.  
 ~
-103 e 3
+103 16 0 0 0 0
 D0
 ~
 ~
@@ -748,7 +748,7 @@ A Garden Path~
 types of plants you have never seen before.  Large rocks seperate plant rows,
 acting as stepping stones for someone to walk through.  
 ~
-103 e 0
+103 16 0 0 0 0
 D0
 ~
 ~
@@ -764,7 +764,7 @@ A Garden Path~
 types of plants you have never seen before.  Large rocks seperate plant rows,
 acting as stepping stones for someone to walk through.  
 ~
-103 e 0
+103 16 0 0 0 0
 D0
 ~
 ~
@@ -781,7 +781,7 @@ here as they did on the path, the only exit is to the south.  @gThe smell of
 roses
 lingers about here, making it a warm relaxing place.  
 ~
-103 e 0
+103 16 0 0 0 0
 D2
 ~
 ~
@@ -794,7 +794,7 @@ here are tall with a little fluff of leaves and branches at the very top.
 There are also very few people in this village, and there are less children in
 this village, it seems to be a farming village.  
 ~
-103 e 1
+103 16 0 0 0 0
 D0
 ~
 ~
@@ -811,7 +811,7 @@ are tall with a little fluff of leaves and branches at the very top.  There are
 also very few people in this village, and there are less children in this
 village, it seems to be a farming village.  
 ~
-103 e 1
+103 16 0 0 0 0
 D0
 ~
 ~
@@ -828,7 +828,7 @@ are tall with a little fluff of leaves and branches at the very top.  There are
 also very few people in this village, and there are less children in this
 village, it seems to be a farming village.  
 ~
-103 e 1
+103 16 0 0 0 0
 D0
 ~
 ~
@@ -845,7 +845,7 @@ are tall with a little fluff of leaves and branches at the very top.  There are
 also very few people in this village, and there are less children in this
 village, it seems to be a farming village.  
 ~
-103 e 1
+103 16 0 0 0 0
 D1
 ~
 ~
@@ -862,7 +862,7 @@ are tall with a little fluff of leaves and branches at the very top.  There are
 also very few people in this village, and there are less children in this
 village, it seems to be a farming village.  
 ~
-103 e 1
+103 16 0 0 0 0
 D0
 ~
 ~
@@ -879,7 +879,7 @@ road seems to lead off to a tall mountain.  The trees here are even more scarce
 then in the village, on the side of the road, there are many large boulders on
 the side of the road.  
 ~
-103 ce 2
+103 20 0 0 0 0
 D0
 ~
 ~
@@ -896,7 +896,7 @@ taller and taller.  You wonder what the significance of the mountain could be.
 The boulders still line the road and there are less and less trees, the ground
 seems to be harder here as well.  
 ~
-103 ce 2
+103 20 0 0 0 0
 D0
 ~
 ~
@@ -912,7 +912,7 @@ Namek Road~
 barely see the top of it, and yet there is a tree here and there, and the
 boulders are still on the side of the road.  
 ~
-103 ce 2
+103 20 0 0 0 0
 D0
 ~
 ~
@@ -929,7 +929,7 @@ mountain seems to just go straight up for a ways, it seems unclimbable, for it
 is just like one jagged cylindrcal piller.  It seems you are able to fy to the
 top though.  
 ~
-103 ce 0
+103 20 0 0 0 0
 D2
 ~
 ~
@@ -945,7 +945,7 @@ Flying Up the Mountain~
 still far away, it might be easier to go back down.  @gIt seems to be getting a
 little warmer the further you go up.  
 ~
-103 c 8
+103 4 0 0 0 0
 D4
 ~
 ~
@@ -962,7 +962,7 @@ Flying Up the Mountain~
 this height, cawing and fluttering about.  @gIt seems to be getting a little
 warmer the further you go up.  
 ~
-103 c 8
+103 4 0 0 0 0
 D4
 ~
 ~
@@ -979,7 +979,7 @@ Flying Up the Mountain~
 but is not fully visible yet, it is still a little bit away.  @gIt seems to be
 getting a little warmer the further you go up.  
 ~
-103 c 8
+103 4 0 0 0 0
 D4
 ~
 ~
@@ -996,7 +996,7 @@ Flying at the Top of the Mountain~
 the sun pounds down on you.  Towards the north is a large house, with a strange
 picture on the side.  
 ~
-103 c 8
+103 4 0 0 0 0
 D0
 ~
 ~
@@ -1013,7 +1013,7 @@ Infront of the Elders House~
 large horns protruding off of the top of it.  Above the door is a large round
 glass window.  The sun shines down warming the area.  
 ~
-103 0 0
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1030,7 +1030,7 @@ platform towards the back that will take you up to see him.  @gThe walls are
 bare here, nothing but a few cobwebs here and there, but it seems to be kept
 rather neat.  
 ~
-103 de 0
+103 24 0 0 0 0
 D2
 ~
 ~
@@ -1047,7 +1047,7 @@ you saw outside.  In the back center of the room is the Elder.  He is huge,
 quite possibly the largest namek you have ever seen.  He sits in a huge white
 chair with a Dragon Ball atop it.  
 ~
-103 de 0
+103 24 0 0 0 0
 D5
 ~
 ~
@@ -1060,7 +1060,7 @@ On either side of the gate are two large Dragons, both look so real it is eerie.
 The sound of voices comes from the other side of the gate, it seems there is a
 town there.  
 ~
-103 c 3
+103 4 0 0 0 0
 D1
 ~
 ~
@@ -1077,7 +1077,7 @@ A Dirt Path~
 and it feels like it too.  @gNo creatures or people seem to come here anymore,
 it is just one deserted road.  
 ~
-103 c 3
+103 4 0 0 0 0
 D1
 ~
 ~
@@ -1093,7 +1093,7 @@ A Dirt Path~
 and it feels like it too.  @gNo creatures or people seem to come here anymore,
 it is just one deserted road.  
 ~
-103 0 3
+103 0 0 0 0 0
 D2
 ~
 ~
@@ -1109,7 +1109,7 @@ A Dirt Path~
 and it feels like it too.  @gNo creatures or people seem to come here anymore,
 it is just one deserted road.  
 ~
-103 0 3
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1125,7 +1125,7 @@ A Dirt Path~
 a large lake that seems to fill a large area.  @gNo creatures or people seem to
 come here anymore, it is just one deserted road.  
 ~
-103 0 3
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1142,7 +1142,7 @@ strange smell to it, kind of sweet in nature yet powerful.  No creatures are
 here, not even a bird.  
 @n
 ~
-103 c 3
+103 4 0 0 0 0
 D1
 ~
 ~
@@ -1160,7 +1160,7 @@ cannot see in here because the tree cover is so thick the light cannot penetrate
 it.  The air here smells stagnant and cold.  Sounds fill the area, making it
 impossible to think.  
 ~
-103 a 3
+103 1 0 0 0 0
 D1
 ~
 ~
@@ -1176,7 +1176,7 @@ A Small Clearing~
 cylindricle rock lies in the center of this area, it seems to be the cause of
 the clearing.  
 ~
-103 0 3
+103 0 0 0 0 0
 D1
 ~
 ~
@@ -1193,7 +1193,7 @@ path are thick, causing the area to be dark.  Sounds emit from this area,
 causing
 an eerie feeling.  
 ~
-103 a 3
+103 1 0 0 0 0
 D0
 ~
 ~
@@ -1209,7 +1209,7 @@ A Large Clearing~
 The grass grows freely and stands about waist high on either side of a short
 dirt path leading to a large dark cave.  
 ~
-103 0 3
+103 0 0 0 0 0
 D1
 ~
 ~
@@ -1225,7 +1225,7 @@ Opening to a Large Cave~
 from its sides, and many types of mushrooms grow here as well.  The inside of
 the cave looks dark and moist, it seems to not have been entered in years.  
 ~
-103 c 0
+103 4 0 0 0 0
 D0
 ~
 ~
@@ -1245,7 +1245,7 @@ Entering The Cave~
 torch presides on the wall here makeing only a little visible, further into the
 cave you cannot see though.  
 ~
-103 i 0
+103 256 0 0 0 0
 D1
 ~
 ~
@@ -1261,7 +1261,7 @@ Dark Cave~
 and then, it also begins to get slimier, causing your feet to slip.  @gIt seems
 rare that anyone would ever enter such a dark dank place.  
 ~
-103 ai 0
+103 257 0 0 0 0
 D1
 ~
 ~
@@ -1277,7 +1277,7 @@ Caves Intersection~
 originate from this room, the light seems to come from the north where a large
 ball of light can be seen.  
 ~
-103 i 0
+103 256 0 0 0 0
 D0
 ~
 ~
@@ -1297,7 +1297,7 @@ A Brightly Lit Cavern~
 warm.  A small orb lies in the middle of the cavern giving off a strange amount
 of light.  
 ~
-103 i 0
+103 256 0 0 0 0
 D2
 ~
 ~
@@ -1310,7 +1310,7 @@ Leaveing Dark Cave~
 back into the cave making it easier to see.  @gThe sound of rabbits comes from
 the outside, and the smell of flowers fills your nostrils.  
 ~
-103 i 0
+103 256 0 0 0 0
 D0
 ~
 ~
@@ -1326,7 +1326,7 @@ Dark Caves Exit~
 outside.  The fresh air seems to come as a shock seeing as how there was none
 inside the cave.  
 ~
-103 i 0
+103 256 0 0 0 0
 D0
 ~
 ~
@@ -1342,7 +1342,7 @@ A Flower Field~
 throught the flowers yet it seems the there is a path to the south leading you
 away from the flowers.  
 ~
-103 0 2
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1358,7 +1358,7 @@ Path To the Villa~
 perfectly round, and they glow beautifully.  The path goes south towards a small
 Villa.  
 ~
-103 0 1
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1374,7 +1374,7 @@ Infront of the Villa~
 door is slightly ajar, the path you stand on has the same circular golden stones
 as to the north.  
 ~
-103 0 1
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1390,7 +1390,7 @@ Center of the Building~
 and a wooden floor that looks to have been freshly polished.  @gAlthough the
 room is kept neat, it seems that no one has lived here for quite some time.  
 ~
-103 dl 0
+103 2056 0 0 0 0
 D0
 ~
 ~
@@ -1413,7 +1413,7 @@ Piccolo's Bedroom~
    @gThis is a small room, with a bed only large enough for one person, there is
 a small mat in the center of the room, it looks to be used for meditation.  
 ~
-103 dl 0
+103 2056 0 0 0 0
 D1
 ~
 ~
@@ -1425,7 +1425,7 @@ The Villas Kitchen~
 in the center of the room, one chair is off to the corner of the room.  This
 room seems to be well kempt.  
 ~
-103 dl 0
+103 2056 0 0 0 0
 D2
 ~
 ~
@@ -1441,7 +1441,7 @@ A Dimly Lit Room~
 distorted by the outline of your body in the doorframe.  In the center of the
 room is a hole only large enough for one person to fit in at a time.  
 ~
-103 d 0
+103 8 0 0 0 0
 D0
 ~
 ~
@@ -1457,7 +1457,7 @@ A Rusty Ladder~
 break at any time.  @gThe ladder creeks under the strain you are putting on it,
 flecks of rust fall to the ground as well.  
 ~
-103 dl 0
+103 2056 0 0 0 0
 D4
 ~
 ~
@@ -1473,7 +1473,7 @@ Bottom of the Ladder~
 ceiling, casting shadows on the walls from the boxes that cover this area.  
 @gThe exit to the south seems clear, but it also seems to be very small.  
 ~
-103 dl 0
+103 2056 0 0 0 0
 D2
 ~
 ~
@@ -1489,7 +1489,7 @@ A Small Hallway~
 nothing lining the walls here, and if there were it would make it impossible to
 travel.  To the east is a room that seems to be full of junk.  
 ~
-103 d 0
+103 8 0 0 0 0
 D0
 ~
 ~
@@ -1505,7 +1505,7 @@ Storage Room~
 with items.  There seems to be no walking space in this area, but you can see
 clearly with the light hanging from the ceiling.  
 ~
-103 dl 0
+103 2056 0 0 0 0
 D3
 ~
 ~
@@ -1517,7 +1517,7 @@ A Ruined Room~
 Rubble lies all over the ground here, and the stone that is actually standing
 has large scorch marks on it.  
 ~
-103 l 0
+103 2048 0 0 0 0
 D0
 ~
 ~
@@ -1534,7 +1534,7 @@ the other room, but an exit to the east can still be seen.  @gIt is hard to see
 what is happening in there, but sounds of gears and electricity come from the
 room to the east.  
 ~
-103 dl 0
+103 2056 0 0 0 0
 D0
 ~
 ~
@@ -1550,7 +1550,7 @@ Teleportation Room~
 walls are made of wood.  A large circular object sits in the middle of the room,
 glowing and humming.  
 ~
-103 dlm 0
+103 6152 0 0 0 0
 D3
 ~
 ~
@@ -1562,7 +1562,7 @@ Going To the Cave~
 here, it is a calm serene place, and the smell of apples lingers in the air all
 around you.  
 ~
-103 0 3
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1578,7 +1578,7 @@ An Apple Orchard~
 it is stronger here then it would be anywhere else.  Apple Trees grow wildly
 here, and there is no other tree to be seen.  
 ~
-103 0 3
+103 0 0 0 0 0
 D2
 ~
 ~
@@ -1594,7 +1594,7 @@ End of an Apple Orchard~
 it is stronger here then it would be anywhere else.  Apple Trees grow wildly
 here, and there is no other tree to be seen.  To the north is a lot of brush.  
 ~
-103 0 3
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1610,7 +1610,7 @@ Start of the Brush~
 seems to be a path leading straight through it, the sounds of people come from
 the other side of the brush.  
 ~
-103 0 3
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1626,7 +1626,7 @@ Path Through the Brush~
 walking, the brush on both sides of you looks to be dangerious.  @g It looks as
 if there are multiple animals caught in the brush on both sides.  
 ~
-103 0 3
+103 0 0 0 0 0
 D0
 ~
 ~
@@ -1642,7 +1642,7 @@ A Dangerous Path~
 seems as though it has grown there over the years, and it grows here as well,
 but not as much, for it seems to have been trodden down by people.  
 ~
-103 0 2
+103 0 0 0 0 0
 D2
 ~
 ~
@@ -1658,7 +1658,7 @@ Journeys End Inn~
 the door shows you that this place has been closed for many years.  The windows
 are broken, and a few are just missing.  
 ~
-103 0 1
+103 0 0 0 0 0
 D1
 ~
 ~

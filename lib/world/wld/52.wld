@@ -5,7 +5,7 @@ steel gates have been forced open and have rusted in place.  A hollow
 gust of wind blows by you into the deserted, and seemingly destroyed,
 city.
 ~
-52 0 1
+52 0 0 0 0 0
 D1
 The desert sands stretch on for miles and miles.
 ~
@@ -25,7 +25,7 @@ streets are barren and windswept and the silence is unending.  To the south
 you see a ruined cottage while north leads into a dark back alley.  Howls
 and screams echo through the deserted city.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 It seems to be a dark alley.
 ~
@@ -55,7 +55,7 @@ side is a collapsed house while on the other is the entrance to a large
 ruined mansion.  Eerie sounds echo within the mansion.  Near the center of 
 town you see a large domed building, relatively intact.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 The remnants of a store lie this way.
 ~
@@ -83,7 +83,7 @@ of the city.  Flowers have withered away and the once lush trees are bare.
 Vines and ivy snake up the sides of the temple and entangle themselves
 around your feet.  A sudden volley of howls pierces the air.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 The garden path continues around the building.
 ~
@@ -113,7 +113,7 @@ of the city.  Flowers have withered away and the once lush trees are bare.
 Vines and ivy snake up the sides of the temple and entangle themselves
 around your feet.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 A side street leads of to the northern half of the city.
 ~
@@ -143,7 +143,7 @@ of the city.  Flowers have withered away and the once lush trees are bare.
 Vines and ivy creep up the sides of the temple and entangle themselves 
 around your feet.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 The garden path continues around the building.
 ~
@@ -173,7 +173,7 @@ of the city.  Flowers have withered away and the once lush trees are bare.
 Vines and ivy creep up the sides of the temple and entangle themselves 
 around your feet.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 Inside the temple, small patches of light shoot through each doorway as
 well as a few cracks in the ceiling.
@@ -203,7 +203,7 @@ baskets, carts, and stands of all shapes and sizes.  Abandoned, these
 little shops still contain some of their goods once sold to a demanding
 public.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 A small table has been toppled over, spilling fine jewellery and gems
 onto the ground.
@@ -232,7 +232,7 @@ The Market Place~
    You stand at the end of the market square.  Stands and carts line
 each side, filled with remnants of fine foods and exquisite goods.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 Tattered carpets and ruined bales of silk sit idly by a run down stand.
 ~
@@ -256,7 +256,7 @@ A Side Street~
 to the south you see the temple.  The incessant howling tears at your
 mind.
 ~
-52 0 1
+52 0 0 0 0 0
 D1
 ~
 ~
@@ -278,7 +278,7 @@ nothing but piles of rubble, but some look almost safe enough to venture
 into.
    The street continues north and south and buildings line the street.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 ~
 ~
@@ -304,7 +304,7 @@ A Side Street~
 Around you stand large piles or rubble where the houses of commoners
 used to be.  A lone howl makes you worry greatly about your safety here.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 ~
 ~
@@ -333,7 +333,7 @@ biased; these important looking buildings have been almost totally
 destroyed.  There is a hole in the wall of a very large structure to the
 east.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 A small garden path encircles the temple.
 ~
@@ -362,7 +362,7 @@ buildings.  To the west is a dark, foreboding structure while to the
 east lies the entrance to a small tavern.  The street continues north
 and south.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 ~
 ~
@@ -390,7 +390,7 @@ A Side Street~
    You are at the end of a long street leading to the center of the city.
 A long dark alley runs east and west.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 ~
 ~
@@ -409,7 +409,7 @@ Under A Ruined Watchtower~
    You stand at the base of a tall watchtower built to protect the city
 from invaders.  From the looks of things, it did not do a good job.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 ~
 ~
@@ -428,7 +428,7 @@ A Back Alley~
    This alley leads to the rear of what used to be a meat stand.  You wince
 at the stench.  South is one of the city watchtowers.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 You see the back-side of the market place meat stand.
 ~
@@ -447,7 +447,7 @@ in the background.  Hanging on the hooks are very small scraps of meat
 and other game.  This stand is relatively empty, and a sudden burst of
 howling and screaming makes you realize why this is so.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 The market place lies this way.
 ~
@@ -468,7 +468,7 @@ A Back Alley~
    A narrow alley leads east to a wider street and west to one of 
 the city watchtowers.
 ~
-52 0 1
+52 0 0 0 0 0
 D1
 A small side street greets you.
 ~
@@ -488,7 +488,7 @@ the floor as if some massive battle had taken place here.  Draped along
 the back wall is a tattered, jet-black banner with the symbol of the
 Darkside set upon it.
 ~
-52 d 1
+52 8 0 0 0 0
 D1
 A small side street runs past the building.
 ~
@@ -501,7 +501,7 @@ The Produce Stand~
 swarm all about what seems to be the last remaining bits of food left
 in the city.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 The market place is deserted.
 ~
@@ -519,7 +519,7 @@ The Smithy~
 and items.  The walls have been stripped clean and only a few incomplete
 pieces of armor and weaponry are left.
 ~
-52 d 1
+52 8 0 0 0 0
 D1
 A small side street runs past the building.
 ~
@@ -533,7 +533,7 @@ robes and various articles of clothing are now just rags.  You stare at
 the strange piles for a long time until a piercing howl makes you
 think these might be beds.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 ~
 ~
@@ -554,7 +554,7 @@ A Back Alley~
    A narrow alley leads north to one of the city watchtowers while
 to the south there lies a market stand full of torn clothes and rugs.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 A tall watchtower stands a silent vigil over the city.
 ~
@@ -570,7 +570,7 @@ Under The Watchtower~
    You stand under one of the city watchtowers built to protect
 the city from invaders.  Obviously, it failed.
 ~
-52 0 1
+52 0 0 0 0 0
 D1
 ~
 ~
@@ -591,7 +591,7 @@ The Jewellery Stand~
 across the market place.  Most of these trinkets are battered and 
 tarnished and few would have any value anymore.
 ~
-52 0 1
+52 0 0 0 0 0
 D2
 The market place is deserted.
 ~
@@ -609,7 +609,7 @@ A Ruined Clay Dwelling~
 and a bed.  A cold fireplace suggests that the city has been abandoned
 for quite a while.  Almost nothing remains of this humble abode.
 ~
-52 d 1
+52 8 0 0 0 0
 D1
 Outside is a small side street.
 ~
@@ -622,7 +622,7 @@ A Collapsed Stone Dwelling~
 of debris here and there.  A few rafters still stand with thatched straw
 hanging down and a hot wind gusts through the hollow dwelling.
 ~
-52 0 1
+52 0 0 0 0 0
 D1
 A small side street runs past the house.
 ~
@@ -634,7 +634,7 @@ A Back Alley~
    A narrow alley leads west to one of the city watchtowers and east to
 a small side street.
 ~
-52 0 1
+52 0 0 0 0 0
 D1
 ~
 ~
@@ -651,7 +651,7 @@ but inside these cramped quarters you discover what used to be a shop
 filled with armor, weapons, and various other goods.  A small sign
 flutters in the wind.
 ~
-52 d 1
+52 8 0 0 0 0
 D3
 A small side street runs past the shop.
 ~
@@ -667,7 +667,7 @@ belongings lie under the rubble, but the people they once belonged to are
 not with them.  Looking up you see that the entire second floor and roof 
 has fallen in, leaving a gaping hole above.
 ~
-52 0 1
+52 0 0 0 0 0
 D3
 A small side street runs past the tavern.
 ~
@@ -682,7 +682,7 @@ and most of the valuable items have been taken, leaving worthless debris.
 A few chairs have survived, as well as a large curved desk.  To the east
 is a vine-covered archway leading out into a private courtyard.
 ~
-52 d 1
+52 8 0 0 0 0
 D0
 The long hallway leads back to the main reception area of the city hall.
 ~
@@ -701,7 +701,7 @@ A large gaping hole in the west wall allows you to see out to one of
 the city's side streets.  Obviously no one will be seeing you through today.  
 Hallways lead south and east.
 ~
-52 d 1
+52 8 0 0 0 0
 D0
 Main street runs past the city hall.
 ~
@@ -730,7 +730,7 @@ but fancy, though.  The only thing remaining intact here is a large
 glass cabinet.  A long hallway leads west back to the reception area and
 an ivy-covered archway leads south into a private courtyard.
 ~
-52 d 1
+52 8 0 0 0 0
 D2
 ~
 ~
@@ -750,7 +750,7 @@ courtyard still stands, though, defying any attempts to destroy its
 beauty.  Above stands the remnants of one of the watchtowers.  Archways 
 north and west lead back into the city hall.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 ~
 ~
@@ -766,7 +766,7 @@ A Small Guard House~
 shell, this small shack still stands guarding the entrance both to the
 city and to the city hall.
 ~
-52 d 1
+52 8 0 0 0 0
 D0
 Main street runs by this building.
 ~
@@ -779,7 +779,7 @@ A Collapsed Home~
 and a very large blast crater.  Obviously someone or something important 
 was once housed here.  A shrieking howl chills your blood.
 ~
-52 0 1
+52 0 0 0 0 0
 D2
 Main street runs past this ruined home.
 ~
@@ -795,7 +795,7 @@ entrance into another building through yet another collapsed wall.
 Between the two buildings are a few blast craters and boulders.  An old
 set of wooden steps leads up to a creaking second floor.
 ~
-52 d 1
+52 8 0 0 0 0
 D1
 ~
 ~
@@ -820,7 +820,7 @@ find broken shelves and workbenches with various vials and pouches spilling
 contents all across the floor.  This was possibly the magic shop of the
 city.  The doorway to the east is blocked, making the only exit back west.
 ~
-52 d 1
+52 8 0 0 0 0
 D3
 ~
 ~
@@ -831,7 +831,7 @@ A Back Alley~
    A narrow back alley goes south to main street and north towards
 a watchtower.  A mass of howls catches you of guard.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 ~
 ~
@@ -848,7 +848,7 @@ A Back Alley~
 and south towards main street.  To the west is a doorway to a small
 house blocked by debris.
 ~
-52 0 1
+52 0 0 0 0 0
 D0
 A tall watchtower stands a silent vigil over the city.
 ~
@@ -865,7 +865,7 @@ Under A Watchtower~
 south and a very weak looking ladder leads up into the tower.  Above you,
 you hear the screams of tens of starving lamias!  Beware!
 ~
-52 0 1
+52 0 0 0 0 0
 D2
 ~
 ~
@@ -891,7 +891,7 @@ yields a dead body floating around in it, skin melted away from months
 of floating in there.  The west wall has collapsed revealing another
 collapsed house.
 ~
-52 d 1
+52 8 0 0 0 0
 D0
 ~
 ~
@@ -909,7 +909,7 @@ A Back Alley~
 of the city watchtowers.  Great amounts of steam issue forth from the
 building to the south.
 ~
-52 0 1
+52 0 0 0 0 0
 D1
 A watchtower stands a silent vigil over the city.
 ~
@@ -932,7 +932,7 @@ Except for the massive hole in the east wall, everything else looks
 intact, including the windows.  Great amounts of steam issue forth from
 the hole in the east wall.
 ~
-52 d 1
+52 8 0 0 0 0
 D1
 ~
 ~
@@ -949,7 +949,7 @@ On The Second Floor~
 The old rotted floorboards suddenly give way and you fall down, impaling
 yourself on jagged boards below.
 ~
-52 cd 1
+52 12 0 0 0 0
 S
 T 5200
 #5246
@@ -958,7 +958,7 @@ The North-West Watchtower~
 from here and you can see all the way to the western mountains.  No wonder
 this place stood for so long.
 ~
-52 0 1
+52 0 0 0 0 0
 D5
 The city lies below.
 ~
@@ -972,7 +972,7 @@ from here and you can see all the way to the western mountains.  To the
 south the desert stretches to the horizon.  No wonder this place stood
 for so long.
 ~
-52 0 1
+52 0 0 0 0 0
 D5
 The city lies below.
 ~
@@ -986,7 +986,7 @@ from here and you the desert sand stretches to the horizon.  No wonder
 this place stood for so long.  The ladder leading down seems rotted in
 some places!
 ~
-52 c 1
+52 4 0 0 0 0
 D5
 The city lies below... far, far below.
 ~
@@ -998,7 +998,7 @@ Under A Watchtower~
    As you descend the ladder, the rotted rungs break, sending you quickly to
 your demise far below.  Splat.  
 ~
-52 cd 1
+52 12 0 0 0 0
 S
 T 5200
 #5250
@@ -1013,7 +1013,7 @@ strange tongue.
      Wind gusts through the four archways and howls and screams can be
 heard from all parts of the city.
 ~
-52 cdh 1
+52 140 0 0 0 0
 D0
 A side street leads to the northern half of the city.
 ~

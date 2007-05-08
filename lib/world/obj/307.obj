@@ -3,7 +3,7 @@ eyepiece brass~
 a brass eyepiece~
 A brass eyepiece has been left here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 21
 A
@@ -17,7 +17,7 @@ finery suit~
 a suit of elegant finery~
 A suit of elegant finery has been tossed aside.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 6 10 0 21
 A
@@ -29,7 +29,7 @@ bracelet delicate~
 a delicate bracelet~
 A delicate bracelet has been left on the ground.~
 ~
-11 a am 0
+11 a 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 21
 A
@@ -43,7 +43,7 @@ dress elegant~
 an elegant dress~
 An elegant dress has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 4 10 0 1
 A
@@ -53,7 +53,7 @@ string pearls~
 a string of pearls~
 A string of pearls have been left behind.~
 ~
-11 a ac 0
+11 a 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 21
 A
@@ -67,7 +67,7 @@ veil maiden's~
 a maiden's veil~
 A maiden's veil lies crumple on the floor.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 21
 A
@@ -81,7 +81,7 @@ light servant's~
 the servant's light~
 The servant's light has been left on the floor.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 4 10 0 21
 A
@@ -95,7 +95,7 @@ whisky whiskey bottle whisky~
 a bottle~
 A bottle of whiskey lies thrown to the floor.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 10 5 0
 15 10 0 21
 A
@@ -107,7 +107,7 @@ belt thick embossed buckle~
 a thick belt with an embossed buckle~
 A thick belt with an embossed buckle has been left here.~
 ~
-9 b al 0
+9 b 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 0
 3 10 0 21
 A
@@ -121,7 +121,7 @@ mask worked steel~
 a worked steel mask~
 A worked steel mask has been left on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 4 10 0 21
 A
@@ -135,7 +135,7 @@ boots cuffed pair~
 a pair of cuffed leather boots~
 A pair of cuffed leather boots have been left here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 5 0 0 0
 6 10 0 21
 A
@@ -149,7 +149,7 @@ gloves pair elbow length leather~
 a pair of elbow-length leather gloves~
 A pair of elbow-length leather gloves have been laft here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 21
 A
@@ -163,7 +163,7 @@ shield full length iron~
 a full-length iron shield~
 A full-length iron shield has been dropped to the ground.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 0 0 0 0
 9 9 0 21
 A
@@ -177,7 +177,7 @@ gloves white~
 a pair of white gloves ~
 A pair of white gloves have been left here. ~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 1
 #30714
@@ -185,7 +185,7 @@ specs wire pair~
 a pair of wire specs~
 A pair of wire specs have been left here.~
 ~
-11 0 aeo 0
+11 0 0 0 0 aeo 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 15
 A
@@ -199,7 +199,7 @@ bag book~
 a book bag~
 A book bag lies on the ground.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 300 0 -1 0
 1 10 0 11
 A
@@ -209,7 +209,7 @@ fiddle bowed~
 a bowed fiddle~
 A bowed fiddle lies on its back on the ground.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 1
 #30717
@@ -217,7 +217,7 @@ shoes work~
 a pair of work shoes~
 A pair of work shoes have been left here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 5 10 0 1
 #30718
@@ -225,7 +225,7 @@ ring thumb gaudy~
 a gaudy thumb ring~
 A gaudy thumb ring has been dropped here.~
 ~
-11 a ab 0
+11 a 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 21
 A
@@ -239,7 +239,7 @@ headband band jeweled~
 a jeweled headband~
 A jeweled headband has been left here.~
 ~
-11 a ae 0
+11 a 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 21
 A
@@ -251,7 +251,7 @@ ring webbed full finger~
 a webbed full-finger ring~
 A webbed full-finger ring has been left here.~
 ~
-11 b ab 0
+11 b 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 21
 A
@@ -263,7 +263,7 @@ book life~
 the Book of Life~
 The Book of Life has been left here by someone very careless.~
 ~
-2 ac ao 0
+2 ac 0 0 0 ao 0 0 0 0 0 0 0
 21 34 43 44
 5 10 0 21
 #30722
@@ -271,7 +271,7 @@ cassock black~
 a black cassock~
 A black cassock has been left in a crumpled heap on the floor.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 3 0 0 0
 5 10 0 21
 A

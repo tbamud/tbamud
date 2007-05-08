@@ -8,7 +8,7 @@ curly hair lines her face which looks very pleasant, as if smile and joy used
 to house it.  Judging by that short sword on her side, she is something else
 than just a normal housewife.    
 ~
-bd 0 570 E
+10 0 0 0 0 0 0 0 570 E
 3 19 8 0d0+30 1d2+0
 30 900
 6 6 2
@@ -21,7 +21,7 @@ A herdsman sits here, concentrating on his beer.
    Dressed in a bunch of worn-out clothes, this man does not seem to own much
 of wealth.    
 ~
-bd 0 350 E
+10 0 0 0 0 0 0 0 350 E
 4 19 7 0d0+40 1d2+0
 40 1600
 6 6 1
@@ -34,7 +34,7 @@ You barely notice a hooded man, sitting at the corner.
    As you star he turns away.  But you were quick enough to notice a tattooed
 symbol on his wrist - like a small, reddish eye.    
 ~
-bd d 600 E
+10 0 0 0 16 0 0 0 600 E
 6 18 6 1d1+60 1d2+1
 60 3600
 6 6 1
@@ -49,7 +49,7 @@ dwarf he looks very robust, and a huge rucksack and a bunch of utilities, such
 as hammers and dark chisels, seem to be carried as though they weighted
 nothing.    
 ~
-bd 0 470 E
+10 0 0 0 0 0 0 0 470 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -62,7 +62,7 @@ Barumafir, the keeper of this tavern is standing here.
    Barumafir is a middle-aged, shortlike man with a bad sciatica.  But he does
 well with his tavern.    
 ~
-bdnopr 0 200 E
+188426 0 0 0 0 0 0 0 200 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -75,7 +75,7 @@ A pale man is lying on the bed, moaning faintly.
    This guy had too much money - most of it is gone now.  Not too enviable.  
 
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 1 20 9 0d0+10 1d2+0
 10 100
 5 5 1
@@ -89,7 +89,7 @@ A fierce ragamuffin rushes from the shadows.
 sick glow in his eyes he attacks you, intending to rob every- thing you
 possess.    
 ~
-bdh 0 -150 E
+138 0 0 0 0 0 0 0 -150 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -101,7 +101,7 @@ A brown pinemarten stars at you.
 ~
    The animal looks considerably meagre.    
 ~
-deg 0 15 E
+88 0 0 0 0 0 0 0 15 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -116,7 +116,7 @@ clothes he wears are of cheerfully woven and brown leather, some of them simply
 patterned.  As he were ascertaining something, he utters odd words and beckons
 his companier.    
 ~
-dg t 400 E
+72 0 0 0 1048576 0 0 0 400 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -129,7 +129,7 @@ You barely see a short man with a greenish beard.
    He seems to have some peculiar abilities.  Perhaps these brownies are not as
 harmless as they look like.    
 ~
-bd 0 350 E
+10 0 0 0 0 0 0 0 350 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -144,7 +144,7 @@ rings of meat and vesicles.  They have several ugly heads with an eye standing
 in the each.  The land of Gwyte is where they come from.  It is rumouded that
 they serve the Evil and therefore were sent around as messengers of horror.  
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -158,7 +158,7 @@ A tall hunter stands here, glancing over the edge of the forest.
 He is hardened in his work and keeps his carriage through the years.  Though
 today's hunt does not seem a success at all.    
 ~
-bd 0 250 E
+10 0 0 0 0 0 0 0 250 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -170,7 +170,7 @@ A large steinbock is here.
 ~
    Eating in peace, it does not pay any attention to you.    
 ~
-bd 0 -1 E
+10 0 0 0 0 0 0 0 -1 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -184,7 +184,7 @@ A hobgoblin stands here, grinning at you broadly.
 although being a bit shorter.  But somehow you feel their personality might be
 entirely unlike, and include sides which are dark and strange.    
 ~
-bd t -90 E
+10 0 0 0 1048576 0 0 0 -90 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -199,7 +199,7 @@ brown skin, making no curls.  Her big eyes radiate wisdom and pleasant heat,
 making it difficult to leave this fabulous being.  No doubt she enjoys high
 esteem amidst the small folk of this forest.    
 ~
-bd ch 800 E
+10 0 0 0 8 0 0 0 800 E
 8 18 5 1d1+80 1d2+1
 80 6400
 5 5 2
@@ -213,7 +213,7 @@ An impressive brownie sits here, talking with the centaur.
 white as snow and almost reaches his feet.  The jacket he uses is decorative,
 and his hat is high and very fine in its own manner.    
 ~
-bd d 600 E
+10 0 0 0 16 0 0 0 600 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 6 1

@@ -9,7 +9,7 @@ chirp quietly to themselves and you can smell the faint scent of flowers
 and freshly cut grass.  You feel like you could lie down in the grass and
 stay here forever, surrounded by powerful beauty in all directions.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The field continues North.
 ~
@@ -59,7 +59,7 @@ feel like you could lie down in the grass and stay here forever, surrounded
 by powerful beauty in all directions. You can see a large sign on the left
 side of the road.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The field continues North.
 ~
@@ -89,7 +89,7 @@ you can see some hills to the north.  The grass is no longer cut here, and
 you can feel a cold wind coming from the north. The hills up ahead have a
 bit of snow on them.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The field continues North.
 ~
@@ -107,7 +107,7 @@ Snowy Pass Entrance~
 still grows green,  but the hills straight ahead of you are covered with
 snow. A dirt trail leads north into the hills.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 A dirt path leads North.
 ~
@@ -127,7 +127,7 @@ You find yourself at the base of a long hill that spans east and west.
 The grass is no longer cut here, and you can feel a cold wind coming from
 the north.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The field continues East.
 ~
@@ -147,7 +147,7 @@ You find yourself at the base of a long hill that spans east and west.
 The grass is no longer cut here, and you can feel a cold wind coming from
 the north.
 ~
-243 0 2
+243 0 0 0 0 0
 D2
 The field continues South.
 ~
@@ -167,7 +167,7 @@ you can see a wide expanse of deep snow. You can see a very small
 hole leading into the eastern hill. A short wooden sign has been shoved
 into the ground beside the hill.
 ~
-243 0 4
+243 0 0 0 0 0
 D0
 The trail continues North.
 ~
@@ -199,7 +199,7 @@ high and about 2 feet wide. You can see bits of hair clinging to the rocky
 walls, and you can smell rotten food. This appears to be the home for
 some sort of animal.
 ~
-243 acfgi 0
+243 357 0 0 0 0
 D1
 The hole continues East.
 ~
@@ -218,7 +218,7 @@ high and about 2 feet wide. You can see bits of hair clinging to the rocky
 walls, and you can smell rotten food. This appears to be the home for
 some sort of animal.
 ~
-243 afgi 0
+243 353 0 0 0 0
 D1
 The hole continues East.
 ~
@@ -238,7 +238,7 @@ equally small chair is set against the southern wall. A burned out candle
 sits on the table. A tiny wooden door leads east. This is definetely the home
 of something.
 ~
-243 afgi 0
+243 353 0 0 0 0
 D1
 A tiny door leads East.
 ~
@@ -255,7 +255,7 @@ A Small Room~
    You find yourself in a really tiny room. A really old wooden table
 is here, almost rotting. A small door leads west.
 ~
-243 afgi 0
+243 353 0 0 0 0
 D3
 A tiny doors leads West.
 ~
@@ -269,7 +269,7 @@ It's snowing heavily, and a strong wind is blowing it all around. Huge
 drifts of snow block your way east and west. The path has several
 inches of snow covering it.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The path continues North.
 ~
@@ -288,7 +288,7 @@ and a strong wind is blowing it all around. A huge drift of snow blocks your
 way west, but a very narrow path has been shoveled east. The path has 
 several inches of snow covering it.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The path continues North.
 ~
@@ -312,7 +312,7 @@ and a strong wind is blowing it all around. Huge drifts of snow block your
 way north and south. You can see some old frozen steps leading up to a
 wooden shack to the east.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 An old shack is East.
 ~
@@ -331,7 +331,7 @@ roof is beginning to cave in. A crumbling stone fireplace is built into
 the northern wall, and a boarded up window faces south. A sturdy trapdoor
 with a rusting latch is located in the southeastern corner of the room.
 ~
-243 d 0
+243 8 0 0 0 0
 D3
 A narrow trail is west.
 ~
@@ -349,7 +349,7 @@ Icy Ladder~
 you have to be careful not to fall. The ladder appears to descend fairly
 deeply into the frozen ground.
 ~
-243 ad 0
+243 9 0 0 0 0
 D4
 The trapdoor leads to the old Shack.
 ~
@@ -367,7 +367,7 @@ Icy Ladder~
 you have to be careful not to fall. The ladder appears to descend fairly
 deeply into the frozen ground.
 ~
-243 ad 0
+243 9 0 0 0 0
 D4
 The ladder continues Up.
 ~
@@ -385,7 +385,7 @@ Icy Ladder~
 you have to be careful not to fall. The ladder appears to descend fairly
 deeply into the frozen ground.
 ~
-243 ad 0
+243 9 0 0 0 0
 D4
 The ladder continues Up.
 ~
@@ -403,7 +403,7 @@ Icy Ladder~
 you have to be careful not to fall. The ladder appears to descend fairly
 deeply into the frozen ground.
 ~
-243 acd 0
+243 13 0 0 0 0
 D4
 The ladder continues Up.
 ~
@@ -421,7 +421,7 @@ Ski Hill Road~
 hill, which must be the Cooland Ski Hill. To the east you can see a log
 cabin. 
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The cabin is East.
 ~
@@ -441,7 +441,7 @@ ceiling, and you can see two large chandeliers hanging from the rafters.
 Two windows look out onto the dark snowy plains to the south. A wide set
 of double doors leads to Cooland Ski Hill to the west.
 ~
-243 d 0
+243 8 0 0 0 0
 D1
 The main path is East.
 ~
@@ -459,7 +459,7 @@ A Snowy Path~
 and a strong wind is blowing it all around. A huge drift of snow blocks your 
 way east, but a huge log cabin lies directly west. The path continues north.
 ~
-243 c 2
+243 4 0 0 0 0
 D0
 The path continues North.
 ~
@@ -482,7 +482,7 @@ A Snowy Path~
 a strong wind is blowing all around.  Huge snow drifts block your way to the
 east, west and north.  
 ~
-243 0 2
+243 0 0 0 0 0
 D2
 The path continues South.
 ~
@@ -496,7 +496,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D1
 Another room lies to the East.
 ~
@@ -510,7 +510,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D1
 Another room lies to the East.
 ~
@@ -534,7 +534,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D3
 Another room lies to the West.
 ~
@@ -548,7 +548,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D2
 Another room lies to the South.
 ~
@@ -561,7 +561,7 @@ A Cold Corridor~
 covers everything. The ceiling here is slightly higher than in the rooms, and
 no straw or wood bits litter the floors.
 ~
-243 adg 0
+243 73 0 0 0 0
 D0
 A cold room is North.
 ~
@@ -580,7 +580,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D2
 Another room lies to the South.
 ~
@@ -594,7 +594,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D0
 Another room lies to the North.
 ~
@@ -617,7 +617,7 @@ A Cold Corridor~
 covers everything. The ceiling here is slightly higher than in the rooms, and
 no straw or wood bits litter the floors.
 ~
-243 adg 0
+243 73 0 0 0 0
 D1
 A Cold Intersection is East.
 ~
@@ -637,7 +637,7 @@ stones. A thick frost covers many parts of the walls and ceiling. A darkened
 skeleton lies in the middle of the floor, obviously from someone who fell down
 the icy ladder.
 ~
-243 adg 0
+243 73 0 0 0 0
 D0
 A corridor leads North.
 ~
@@ -670,7 +670,7 @@ A Cold Corridor~
 covers everything. The ceiling here is slightly higher than in the rooms, and
 no straw or wood bits litter the floors.
 ~
-243 adg 0
+243 73 0 0 0 0
 D1
 A cold room is East.
 ~
@@ -689,7 +689,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D0
 Another room lies to the North.
 ~
@@ -713,7 +713,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D0
 Another room lies to the North.
 ~
@@ -726,7 +726,7 @@ A Cold Corridor~
 covers everything. The ceiling here is slightly higher than in the rooms, and
 no straw or wood bits litter the floors.
 ~
-243 adg 0
+243 73 0 0 0 0
 D0
 The corridor leads North.
 ~
@@ -745,7 +745,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D0
 Another room lies to the North.
 ~
@@ -759,7 +759,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D1
 Another room lies to the East.
 ~
@@ -773,7 +773,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D0
 A corridor leads North.
 ~
@@ -797,7 +797,7 @@ covers everything. The low hanging ceiling seems ready to collapse. Bits of
 straw and wood are scattered out on the stone floor, and a burned out torch
 is on the wall. This reminds you of a meat locker.
 ~
-243 adg 0
+243 73 0 0 0 0
 D3
 Another room lies to the West.
 ~
@@ -810,7 +810,7 @@ A Snowy Path~
 and a strong wind is blowing all around. Huge snow drifts block your way to
 the east and west. The path continues north and south.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The path continues North.
 ~
@@ -828,7 +828,7 @@ A Snowy Path~
 and a strong wind is blowing all around. Huge snow drifts block your way to
 the east and west. The path continues north and south.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The path continues North.
 ~
@@ -846,7 +846,7 @@ Newbie ski trail~
 so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north and west.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The trail continues East.
 ~
@@ -864,7 +864,7 @@ Newbie ski trail~
 so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The trail continues East.
 ~
@@ -887,7 +887,7 @@ Newbie ski trail~
 so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The trail continues East.
 ~
@@ -911,7 +911,7 @@ so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north. You can see the back
 of the chalet to the south.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The trail continues East.
 ~
@@ -930,7 +930,7 @@ so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north. You can see the back
 of the chalet to the south.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The trail continues East.
 ~
@@ -950,7 +950,7 @@ by, but this trail is fairly empty. A thick forest blocks your way north
 and east. The chalet is to the southwest. A wide path (almost a road) 
 leads south to the ski hill's main entrance.
 ~
-243 0 2
+243 0 0 0 0 0
 D2
 The path continues South.
 ~
@@ -968,7 +968,7 @@ Newbie ski trail~
 so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way west.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The trail continues North.
 ~
@@ -991,7 +991,7 @@ Forest~
 see the ski trail to the north and west. Since this place is more hidden
 than the open trails, snowboarders like to come here to smoke up.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The newbie run is North.
 ~
@@ -1020,7 +1020,7 @@ see the ski trail to the north. Since this place is more hidden than the open
 trails, snowboarders like to come here to smoke up. The back of the chalet is
 directly east, blocking your way.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The newbie run is North.
 ~
@@ -1046,7 +1046,7 @@ against the northern wall. A large chandelier hangs from the high peaked
 ceiling. A beautifully carved double width stairway leads down to the
 cafateria. This is where people can relax while they aren't skiing.
 ~
-243 d 0
+243 8 0 0 0 0
 D5
 The cafateria is Down.
 ~
@@ -1058,7 +1058,7 @@ Main Path~
    You find yourself at the top of the ski hill on a wide path. The chalet 
 blocks your way west, while a thick forest blocks your way east.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The path continues North.
 ~
@@ -1077,7 +1077,7 @@ too steep, so this must be a newbie trail. You see the odd skier go by, but
 thistrail is fairly empty. A thick forest blocks your way west and south. 
 Since there aren't any ski lifts at this hill, you'll have to walk back up.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The trail continues North.
 ~
@@ -1095,7 +1095,7 @@ Forest~
 see the newbie trail to the west. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The forest continues North.
 ~
@@ -1124,7 +1124,7 @@ see the newbie trail to the west. The chalet blocks your way east. Since this
 place is more hidden than the open trails, snowboarders like to come here to 
 smoke up.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The forest continues North.
 ~
@@ -1150,7 +1150,7 @@ sold. Long, wide tables are lined up in the middle of the room, with about a
 dozen chairs around each one. A beautifully carved double width stairway leads 
 up to the lounge.  Surprisingly, this place is fairly empty.
 ~
-243 d 0
+243 8 0 0 0 0
 D1
 The cafateria continues East.
 ~
@@ -1171,7 +1171,7 @@ and several chairs are arranged around the fireplace. Four large tables are
 lined up in the middle of the room, and you can see that the cafateria extends 
 west where you can buy your food. You can see the ski shop the north.
 ~
-243 d 0
+243 8 0 0 0 0
 D0
 The ski shop is North.
 ~
@@ -1195,7 +1195,7 @@ blocks your way east. A large wooden building is built right into the hill to
 the west. Several ski racks sit outside the door, and a huge chimney is 
 billowing out smoke from the side of the chalet.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The path continues North.
 ~
@@ -1219,7 +1219,7 @@ the intermediate trail to the south. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The forest thickens
 and blocks your way west.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The forest continues North.
 ~
@@ -1242,7 +1242,7 @@ Forest~
 the intermediate trail to the south. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The forest continues North.
 ~
@@ -1271,7 +1271,7 @@ see the newbie trail to the west. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The chalet blocks 
 your way north.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The forest continues East.
 ~
@@ -1295,7 +1295,7 @@ see the newbie trail to the west. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The chalet blocks 
 your way north, while you can see the main path east.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The main path is East.
 ~
@@ -1318,7 +1318,7 @@ Main Path~
 north, while the more advanced runs are south. A forest lies west, and the
 steel entrance gate is east.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The main path continues North.
 ~
@@ -1343,7 +1343,7 @@ west and down. except east where the trail leads up. The snow is rather deep
 here, and it isn't groomed. You can see large ape-like footprints in the snow. 
 You get the feeling no one comes down here very often.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The intermediate trail continues East.
 ~
@@ -1362,7 +1362,7 @@ up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. A thick forest blocks your
 way north.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The intermediate trail continues East.
 ~
@@ -1385,7 +1385,7 @@ Intermediate ski trail~
 up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 A forest is North.
 ~
@@ -1413,7 +1413,7 @@ Intermediate ski trail~
 up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 A forest is North.
 ~
@@ -1441,7 +1441,7 @@ Intermediate ski trail~
 up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 A forest is North.
 ~
@@ -1469,7 +1469,7 @@ Intermediate ski trail~
 up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 A forest is North.
 ~
@@ -1496,7 +1496,7 @@ Start of the intermediate trailt~
    You're on the main path of the ski hill, at the entrance to the
 intermediate run. A thick forest blocks your way east.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The main path continues North.
 ~
@@ -1521,7 +1521,7 @@ branches. Clumps of hair can be seen all over. Now that your eyes have
 adjusted, you can see a low entry way into a cave to the south. Human
 bones are scattered around the entrance. 
 ~
-243 d 0
+243 8 0 0 0 0
 D2
 A cave is South.
 ~
@@ -1539,7 +1539,7 @@ Small Cave~
 against the southern wall, and a crude firepit has been built into the
 eastern wall. This is the home of the Yeti!
 ~
-243 d 0
+243 8 0 0 0 0
 D0
 A narrow trail is North.
 ~
@@ -1553,7 +1553,7 @@ the intermediate trail to the north. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The forest thickens
 and completely blocks your way west and south. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The intermediate trail is North.
 ~
@@ -1571,7 +1571,7 @@ Forest~
 the intermediate trail to the north. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The intermediate trail is North.
 ~
@@ -1599,7 +1599,7 @@ Forest~
 the intermediate trail to the north. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The intermediate trail is North.
 ~
@@ -1627,7 +1627,7 @@ Forest~
 the intermediate trail to the north. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The intermediate trail is North.
 ~
@@ -1655,7 +1655,7 @@ Forest~
 the intermediate trail to the north. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The intermediate trail is North.
 ~
@@ -1682,7 +1682,7 @@ Main Path~
    You're on the main path of the ski hill, at the entrance to the
 intermediate run. A thick forest blocks your way east.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The main path continues North.
 ~
@@ -1707,7 +1707,7 @@ is very steep. This place is definitely not for beginners. A high cliff is
 directly south. A large sign sits on the left side of the trail. (You should 
 read it!)
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 A forest is North.
 ~
@@ -1746,7 +1746,7 @@ snow, and huge jumps and bumps sit right in the middle of the trail. The slope
 is very steep. This place is definitely not for beginners. A thick forest blocks
 your way south.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 A forest is North.
 ~
@@ -1770,7 +1770,7 @@ snow, and huge jumps and bumps sit right in the middle of the trail. The slope
 is very steep. This place is definitely not for beginners. A thick forest blocks
 your way south.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 A forest is North.
 ~
@@ -1794,7 +1794,7 @@ snow, and huge jumps and bumps sit right in the middle of the trail. The slope
 is very steep. This place is definitely not for beginners. A thick forest blocks
 your way south.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 A forest is North.
 ~
@@ -1818,7 +1818,7 @@ snow, and huge jumps and bumps sit right in the middle of the trail. The slope
 is very steep. This place is definitely not for beginners. A thick forest 
 blocks your way west and south.
 ~
-243 0 2
+243 0 0 0 0 0
 D0
 The main path is North.
 ~
@@ -1838,7 +1838,7 @@ forest below. Hey, now it doesn't look so far anymore. Oh, now you're impaled
 on a tall icy pine tree. Right before you black out, you feel the coldness of
 the wood in your chest.
 ~
-243 c 3
+243 4 0 0 0 0
 S
 T 24300
 #24392
@@ -1853,7 +1853,7 @@ A small booth stands here, where people must buy their lift tickets to get
 in. A small wooden sign has been nailed to the booth. A steel gate lies 
 west.
 ~
-243 cg 2
+243 68 0 0 0 0
 D1
 The road continues East.
 ~
@@ -1885,7 +1885,7 @@ Main Path~
 you can see the entry gates, while to the west you can see the ski hill.
 A thick forest blocks your way north and south.
 ~
-243 0 2
+243 0 0 0 0 0
 D1
 The main entrance is East.
 ~
@@ -1903,7 +1903,7 @@ Ski Shop~
 are packed on hangers, shelves, walls, just about everywhere. A small glass 
 countertop contains various pairs of expensive ski goggles and sun glasses.
 ~
-243 d 0
+243 8 0 0 0 0
 D2
 The cafateria is South.
 ~

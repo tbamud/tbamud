@@ -3,7 +3,7 @@ crate~
 a crate~
 A wooden crate has been dropped here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #32201
@@ -11,7 +11,7 @@ rope thick~
 a length of thick rope~
 A length of thick rope hangs down from the docks.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 9 10 0 0
 #32202
@@ -19,7 +19,7 @@ hawser~
 a hawser~
 A long hawser keeps a boat tied here securely.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 9 10 0 0
 #32203
@@ -27,7 +27,7 @@ suit body tight~
 a tight fitting body suit~
 Someone left a suit of clothing here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 6 10 0 1
 #32204
@@ -35,7 +35,7 @@ suitcase case~
 a large suitcase~
 A large suitcase has been left here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 250 1 -1 0
 4 10 0 1
 #32205
@@ -43,7 +43,7 @@ ring thumb opal~
 a bright opal thumb ring~
 Someone dropped some jewelry here.~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 4 100 0 15
 #32206
@@ -51,7 +51,7 @@ crate~
 a large wooden crate~
 A large wooden crate lies on the dock, waiting to be loaded.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #32207
@@ -59,7 +59,7 @@ sea algae~
 a clump of sea algae~
 A formless clump of sea algae floats on the water's surface.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 3 1 0 0
 #32208
@@ -67,7 +67,7 @@ buoy~
 a bouy~
 A red and white bouy floats here, anchored to the bottom by a chain.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #32209
@@ -75,7 +75,7 @@ boat fishing~
 a small fishing boat~
 A small fishing boat has been left here.~
 ~
-22 0 ao 0
+22 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 22 500 0 1
 #32210
@@ -83,7 +83,7 @@ flotsam~
 a lump of flotsam~
 A lump of flotsam bobs on the surface of the water.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 7 1 0 1
 #32211
@@ -91,7 +91,7 @@ jetsam~
 a floating clump of jetsam~
 A clump of formless jetsam floats by.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 8 1 0 1
 #32212
@@ -99,7 +99,7 @@ pole fishing~
 a fishing pole~
 A fishing pole has been carelessly left here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 6 10 0 1
 #32213
@@ -107,7 +107,7 @@ tattoo~
 a tough-looking tattoo~
 There is a tough-looking tattoo is lying on the ground here.~
 ~
-11 0 acfi 0
+11 0 0 0 0 acfi 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 20
 A
@@ -119,7 +119,7 @@ hat wide straw~
 a wide straw hat~
 A wide straw hat has been left here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 4 10 0 1
 #32215
@@ -127,7 +127,7 @@ boots thick sailor~
 a pair of thick sailor's boots~
 A pair of thick sailor's boots lie in a grungy heap.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 8 10 0 1
 #32216
@@ -135,7 +135,7 @@ shirt tight sleeveless~
 a tight, sleeveless workman's shirt~
 A small black shirt without sleeves has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 3 10 0 1
 #32217
@@ -143,7 +143,7 @@ shirt blue~
 a blue shirt~
 A blue shirt has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 3 10 0 1
 #32218
@@ -151,7 +151,7 @@ slacks pair white~
 a pair of white slacks~
 A pair of white slacks have been left here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
 5 10 0 1
 #32219
@@ -159,7 +159,7 @@ undergarments garments~
 a pair of clean undergarments~
 A pair of clean undergarments have been left here.~
 ~
-9 0 afo 0
+9 0 0 0 0 afo 0 0 0 0 0 0 0
 2 0 0 0
 2 10 0 1
 #32220
@@ -167,7 +167,7 @@ socks pair~
 a pair of green socks~
 A pair of cool green socks have been left here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 1 10 0 1
 #32221
@@ -175,7 +175,7 @@ whisky whiskey pint whisky~
 a pint of whiskey~
 A pint of whiskey has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 6 6 5 0
 11 10 0 1
 #32222
@@ -183,7 +183,7 @@ rigging~
 a rigging line~
 A rigging line hangs down from the docks into the water.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 $~

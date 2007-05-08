@@ -3,7 +3,7 @@ giant anthill~
 a giant anthill~
 There is a particularly large anthill here. ~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 4601
@@ -17,7 +17,7 @@ giant ant feeler~
 a feeler from a giant ant~
 A long whip, looking like a piece of a bug is lying here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 3 2 2
 3 30 3 0
 #4602
@@ -25,7 +25,7 @@ exoskeleton shell~
 an exoskeleton shell~
 An exoskeleton shell is lying here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 4 40 4 0
 #4603
@@ -33,7 +33,7 @@ ant pincher~
 an ant's pincher~
 Some insect pinchers have been hacked off and left here, oozing green slime.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 5 1
 1 10 1 0
 A
@@ -45,7 +45,7 @@ gqueen ants stinger~
 a stinger from the queen ant~
 Looks like someone ripped off the tip of a Queen ant's butt.~
 ~
-5 ag an 0
+5 ag 0 0 0 an 0 0 0 0 0 0 0
 0 4 4 1
 1 40 0 0
 A
@@ -55,7 +55,7 @@ red ant eye~
 a red ant's eye~
 A bright shining eye is here looking back at you.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 3 90 10 0
 A
@@ -65,7 +65,7 @@ poisoned metasoma~
 a poisoned metasoma~
 A small sac of sweet smelling liquid oozing out from a metasoma.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 33
 5 50 5 0
 #4607
@@ -73,7 +73,7 @@ sleeves exoskeleton~
 a pair of exoskeleton sleeves~
 Small bits of exoskeleton stiched together lay here in armor form.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 3 0 0 0
 2 20 2 0
 #4608
@@ -81,7 +81,7 @@ legging exoskeleton~
 a pair of exoskeleton leggings~
 Long pieces of exoskeleton lay here in armor form.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
 2 20 2 0
 #4609
@@ -89,7 +89,7 @@ larvae~
 an ant larvae~
 A small ant larvae has been left behind here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 1 0 0
 #4610
@@ -97,7 +97,7 @@ junk~
 some junk~
 Broken shells, unborn larvae and heaps of other junk have been thrown here in an untidy pile.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #4611
@@ -105,7 +105,7 @@ red exoskeleton~
 a leather underlined red plated exoskeleton~
 Slabs of an exoskeleton bounded together on a large piece of leather lays here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 9 140 15 0
 A
@@ -115,7 +115,7 @@ red ant stinger~
 a red ant's stinger~
 Someone has ripped the butt off a red ant and threw it here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 1
 3 30 3 0
 #4613
@@ -123,7 +123,7 @@ leg broken red ant~
 a broken red ant's leg~
 The remaining leg of a red ant lays here, it's never gonna walk again.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #4616
@@ -131,7 +131,7 @@ sharp claws~
 a pair of sharp claws~
 A pair of sharp claws, taken from an extremely large ant is here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 8 3 3 8
 5 150 20 0
 A
@@ -141,7 +141,7 @@ antenna~
 an antennae~
 An ant antennae still twitches on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 2 20 2 0
 A

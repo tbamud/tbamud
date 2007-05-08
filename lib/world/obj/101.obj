@@ -3,7 +3,7 @@ irrigation ditch~
 an irrigation ditch~
 An irrigation ditch has been dug across the road to water the fields.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
 505 0 0 0
 E
@@ -16,7 +16,7 @@ caravan~
 the caravan~
 A caravan of wagons lay burnt in ruins from a recent raid.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -30,7 +30,7 @@ salmon~
 some salmon~
 Several fresh cuts of salmon that have been recently filleted.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 10 500 0 0
 E
@@ -43,7 +43,7 @@ large assortment crops fish~
 a large assortment of crops and fish~
 A large assortment of crops and fish.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 50 1000 0 0
 E
@@ -56,7 +56,7 @@ shovel maneur~
 a shovel covered in maneur~
 A shovel covered in cow maneur smells here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 7
 7 350 35 0
 E
@@ -69,7 +69,7 @@ worn coveralls~
 some worn coveralls~
 Some coveralls that have been worn and abused were discarded.~
 ~
-11 g ak 0
+11 g 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 3 25 3 0
 E
@@ -84,7 +84,7 @@ cow bell~
 a cow bell~
 A cow's bell, made to hang around a cow's neck.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 9 180 18 0
 E
@@ -98,7 +98,7 @@ small cow nose ring~
 a nose ring for a cow~
 A small cow's nose ring glistens brightly.~
 ~
-9 0 ab 0
+9 0 0 0 0 ab 0 0 0 0 0 0 0
 1 0 0 0
 1 20 2 0
 E
@@ -113,7 +113,7 @@ fishing pole~
 a fishing pole~
 A fishing pole without a line, hook, or sinkers.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 7 2 5 2
 5 25 2 0
 E
@@ -126,7 +126,7 @@ bandit mask~
 a mask for a bandit~
 A bandit's mask is waiting to be worn.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 1 1 0 0
 E
@@ -139,7 +139,7 @@ camouflage pants~
 some camouflage pants~
 A set of camouflaged pants, died black and brown blend into their surroundings.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
 3 15 1 0
 E
@@ -152,7 +152,7 @@ camouflage moccassins~
 some camouflage moccassins~
 A pair of camouflage moccassins blend into their surroundings.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 3 15 1 0
 E
@@ -165,7 +165,7 @@ camouflage gloves~
 some camouflage gloves~
 A set of camouflaged gloves blend into their surroundings.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 3 15 1 0
 E
@@ -178,7 +178,7 @@ torn sleeves coat~
 some torn sleeves~
 A once fine coat has had it's sleeves torn off and left here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
 3 3 0 0
 E
@@ -191,7 +191,7 @@ local bottle rum local~
 a bottle~
 A bottle of cheap rum.~
 ~
-17 0 aj 0
+17 0 0 0 0 aj 0 0 0 0 0 0 0
 3 3 8 0
 8 120 12 0
 E
@@ -204,7 +204,7 @@ beltpouch pouch~
 a beltpouch~
 A fancy beltpouch made from a fine leather.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 3 0 0 0
 3 30 3 0
 E
@@ -217,7 +217,7 @@ gypsy bracelet~
 a bracelet of the gypsy~
 A gypsy's bracelet sparkles brightly.~
 ~
-12 g am 0
+12 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 130 15 0
 E

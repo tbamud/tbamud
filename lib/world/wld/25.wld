@@ -6,7 +6,7 @@ menace permeates the surrounding area.  You have a strange urge to turn
 back and go back the way you've come.
    A small path leads north into the shadows and back south to the plains.
 ~
-25 cg 3
+25 68 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -29,7 +29,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -58,7 +58,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 You see a small clearing in the shadows.
 ~
@@ -87,7 +87,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -116,7 +116,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -145,7 +145,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -174,7 +174,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -203,7 +203,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -232,7 +232,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -261,7 +261,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All directions lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -290,7 +290,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All directions lead into shadows, you are very confused.
 ~
-25 acfg 3
+25 101 0 0 0 0
 D0
 The shadows obscure your vision.
 ~
@@ -321,7 +321,7 @@ your view into the grove.
    A small path leads north to some shadowy structure.  All other exits are
 shrouded in shadowy mist.
 ~
-25 ag 3
+25 65 0 0 0 0
 D0
 You can barely make out some sort of building to the north.
 ~
@@ -351,7 +351,7 @@ into the storm clouds above.
    A diamond gate is to the north, whilst the trail back south has
 disappeared behind you.
 ~
-25 g 0
+25 64 0 0 0 0
 D0
 The diamond gate looks incredibly strong.
 ~
@@ -367,7 +367,7 @@ oblivious to your presence.
    Exits lead north to the common room, west to the dinning room, east
 to a plain hallway and back south through the gate.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 The common room looks quite busy and noisy.
 ~
@@ -395,7 +395,7 @@ tables and a small water fountain here, otherwise the room is quite
 unremarkable.
    Exits lead off in all directions.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -419,7 +419,7 @@ The Hallway~
    You are in a long hallway, it seems rather unremarkable.  The
 hallway continues east and back west.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -437,7 +437,7 @@ several hundred people.  It is oddly deserted here, obviously not meal
 time.
    Exits lead west to the kitchen, and back east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -454,7 +454,7 @@ used by the regular occupants of the tower.  Dust covers the floors
 here.
    The faint outline of a trapdoor can be seen in the dust.
 ~
-25 adg 0
+25 73 0 0 0 0
 D2
 ~
 ~
@@ -471,7 +471,7 @@ smells of foreign food and drink.  The other patrons pay you little heed,
 as they obviously have more interesting things to contemplate.
    The only exit leads back west.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 ~
@@ -483,7 +483,7 @@ The Magic Shop~
 sorts of herbs, parchment and other reagents used in magical studies.
    The only exit leads back east to the common room.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -498,7 +498,7 @@ a huge black oven against one wall, it must be at least 12 feet high.
 to comfortably store several hapless adventurers no doubt.  In the middle
 of the room, hanging in mid-air is a spice rack.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 door wooden~
@@ -511,7 +511,7 @@ little light filters through from above.  A faint sound of dripping
 water can be heard in the distance below.
    A rope ladder leads down.
 ~
-25 adg 0
+25 73 0 0 0 0
 D4
 ~
 trapdoor~
@@ -528,7 +528,7 @@ the tower.  The sound of running water can be heard coming from the
 south, other than that, an almost tangible stillness fills the air.
    Passages lead off in all directions, and a ladder leads up.
 ~
-25 adg 0
+25 73 0 0 0 0
 D0
 ~
 ~
@@ -557,7 +557,7 @@ A Dark Passage~
 Other then through the door, the only apparent exit is back the way you
 came.
 ~
-25 adg 0
+25 73 0 0 0 0
 D0
 ~
 door oak~
@@ -574,7 +574,7 @@ east, shedding soft light around the edges.  Faint snoring sounds can
 be heard behind the door.
    Exits lead east through the door, or back west.
 ~
-25 adg 0
+25 73 0 0 0 0
 D1
 ~
 door~
@@ -593,7 +593,7 @@ pool.
    Exits lead back north, or perhaps for the very adventurous, down into the
 pool.
 ~
-25 adg 0
+25 73 0 0 0 0
 D0
 ~
 ~
@@ -611,7 +611,7 @@ to be a cave-in to the west.  It is certainly unpassable, and perhaps quite
 dangerous just being this close.
    The only exit leads back east.
 ~
-25 adg 0
+25 73 0 0 0 0
 D1
 ~
 ~
@@ -623,7 +623,7 @@ A Dark Cell~
 very dark.  Someone, or something seems to be chained to the far wall.
    The only exit is back south.
 ~
-25 adg 0
+25 73 0 0 0 0
 D2
 ~
 door oak~
@@ -637,7 +637,7 @@ few, if any prisoners survive long enough to spend much time in these
 dank dungeons.
    The only exit leads back west.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 door~
@@ -650,7 +650,7 @@ whirlpool drags you under.  You are sucked into blackness.  You feel
 your lungs burst from lack of oxygen.  Just as you feel your life fading,
 you notice a change in direction... and are sucked under by a rip tide.
 ~
-25 acdg 0
+25 77 0 0 0 0
 S
 T 2500
 #2530
@@ -658,7 +658,7 @@ The Hallway~
    You are in a long hallway leading east and west.  The walls emit a faint
 magical glow which provides enough light to see by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door wooden~
@@ -681,7 +681,7 @@ A Bend In The Hallway~
    You are at a bend in the hallway.  The walls emit a faint magical glow
 which provides enough light to see by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door wooden~
@@ -705,7 +705,7 @@ A Store Room~
 leaning against walls.
    The only apparent exit it back south.
 ~
-25 adg 0
+25 73 0 0 0 0
 D2
 ~
 door wooden~
@@ -718,7 +718,7 @@ instruments have been left here, apparently unused (perhaps the maid
 quit?).
    The only exit leads back north to the hallway.
 ~
-25 adg 0
+25 73 0 0 0 0
 D0
 ~
 door wooden~
@@ -729,7 +729,7 @@ A Hallway~
    You are in a long hallway leading north and south.  The walls emit a
 faint magical glow which provides enough light to see by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -753,7 +753,7 @@ The Guardians' chamber~
 furnished, but then again the odd occupants don't look to need furniture.
 Here and there a disembodied pair of hands or eyes flits about.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door wooden~
@@ -766,7 +766,7 @@ dusty mirror on one wall, other than that the room looks quite bare, and
 unused.
    The only apparent exit leads back west to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 door wooden~
@@ -784,7 +784,7 @@ looking ever so comfortable, so comfortable in fact... someone is sleeping
 in it.
    The only apparent exit leads back west to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 door wooden~
@@ -796,7 +796,7 @@ A hallway~
 faint magical glow which provides enough light to see by.
    Stairs lead up to the next level and the hallway leads back south.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 door wooden~
@@ -817,7 +817,7 @@ are blackened and burnt by what you could only imagine to be magical fire.
 There is no sign of the previous occupant, undoubtedly he left in a hurry.
    The only exit leads back west to the hallway.
 ~
-25 adg 0
+25 73 0 0 0 0
 D3
 ~
 door charred~
@@ -830,7 +830,7 @@ faint magical glow which provides enough light to see by.  Some faint
 moonlight can be seen in the cul de sac to the east.
    The hallway continues west and stairs lead down to the level below.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door oak~
@@ -856,7 +856,7 @@ moonlight and a pleasant breeze.  Through it, the surrounding country
 side can be seen.
    The only apparent exit leads back west to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 Stretching out as far as the eye can see is a canopy of dark tree
 tops which can only be the Haon-Dor-Dark Forest.  A faint light in
@@ -882,7 +882,7 @@ The Apprentices' Barracks~
 a young apprentice sits engrossed in magical study, or practicing a feeble
 cantrip.  Cots line the walls, and the room continues west.
 ~
-25 dg 0
+25 72 0 0 0 0
 D2
 ~
 door oak~
@@ -899,7 +899,7 @@ faint magical glow which provides enough light to see by.
    There is a door to the north, and the hallway continues west or back
 east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door oak~
@@ -919,7 +919,7 @@ The Apprentices' Barracks~
 a young apprentice sits engrossed in magical study, or practicing a feeble
 cantrip.  Cots line the walls, and the room continues east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -935,7 +935,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.  Flashes of
 light can be seen under the doorway to the north.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 A flash of blue light momentarily lights up the door's outline.
 ~
@@ -957,7 +957,7 @@ strewn about on a few worktables.  In the far corner several young mages
 have a small kitten cornered and seem to be testing spells upon it.
    The only apparent exit leads back south to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D2
 ~
 door oak~
@@ -969,7 +969,7 @@ A Bend In The Hallway~
 which provides enough light to see by.
    The hallway continues south and back east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -985,7 +985,7 @@ The Hallway~
 faint magical glow which provides enough light to see by.
    There is a closed metal door to the west.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1006,7 +1006,7 @@ art.  The instructor stops in his lecture on the fine uses of magic missile
 at your entry and lunges to attack you.
    The only apparent exit is back east to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 door metal~
@@ -1017,7 +1017,7 @@ A Hallway~
    You are in a long hallway leading north and south.  The walls emit a
 faint magical glow which provides enough light to see by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1036,7 +1036,7 @@ A Hallway~
    You are in a long hallway leading north and south.  The walls emit a
 faint magical glow which provides enough light to see by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1057,7 +1057,7 @@ blackboard which is floating in the air here.  Other than a few desks,
 it is bare of furnishings.
    The only apparent exit leads back east to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 door metal~
@@ -1069,7 +1069,7 @@ A Bend In The Hallway~
 which provides enough light to see by.
    The hallway continues east and north.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1085,7 +1085,7 @@ An Empty Classroom~
 watched comes over you, and you hear the faint rustle of robes.
    The only apparent exit is back east to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 door metal~
@@ -1097,7 +1097,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    A sturdy iron door can be seen to the south.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -1117,7 +1117,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    There is a large oaken door to the south.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -1137,7 +1137,7 @@ The Amphitheater~
 circle a large podium.  The echos of your footsteps seem very loud here.
    The only apparent exit leads north to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door sturdy iron~
@@ -1149,7 +1149,7 @@ A Hallway~
 faint magical glow providing enough light to see by.
    A small door can be seen to the south.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -1168,7 +1168,7 @@ The Training Room~
    You are in a large training room.  It is filled with battle scared
 manikins, and many other devices used in the practice of fighting.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door~
@@ -1180,7 +1180,7 @@ A Bend In The Hallway~
 which provides enough light to see by.
    The hallway continues north and west.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1197,7 +1197,7 @@ floor all bare the scars of many fiery spells, but still look quite strong
 and hold fast.
    The only exit leads north to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door small~
@@ -1209,7 +1209,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    A doorway can be seen to the east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1229,7 +1229,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    A wooden door can been seen to the east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1250,7 +1250,7 @@ are here relaxing in their idle time.  A large coffee machine is against
 the far wall.
    The only apparent exit leads back west to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 door wooden~
@@ -1264,7 +1264,7 @@ and a scrying globe sit on a stand in the middle of the room.  An enormous
 bed can be seen floating about a meter above the floor.
    The only exit leads back west to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 door wooden~
@@ -1276,7 +1276,7 @@ A Hallway~
 faint magical glow providing enough light to see by.
    A glass door can be seen to the east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1298,7 +1298,7 @@ weighted down upon it.  The only light source here comes from an
 interestingly non-magical oil lamp.
    The only apparent exit leads back west to the hallway.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 door glass~
@@ -1311,7 +1311,7 @@ glow which provides enough light to see by.  A lesser guardian is here
 keeping silent watch on the entrance to the levels above.
    Stairs lead up and the hallway continues back south.
 ~
-25 dg 0
+25 72 0 0 0 0
 D2
 ~
 ~
@@ -1329,7 +1329,7 @@ to those of the upper echelon of mages.  The walls here emit a faint blue
 magical aura which provides some light.
    The hallway leads west from here and the stairs go down.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 ~
@@ -1345,7 +1345,7 @@ A Hallway~
 a faint magical energy providing enough light to see by.
    There is a thick looking wooden door to the north.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door wooden~
@@ -1367,7 +1367,7 @@ desks and worktables.
    A section to the west seems to be curtained off, but the
 flicker of a candle can be seen through the curtain.
 ~
-25 dg 0
+25 72 0 0 0 0
 D2
 ~
 door wooden~
@@ -1382,7 +1382,7 @@ A Hallway~
    You are in a long hallway leading east and west.  The walls emit a
 faint magical glow which provides enough light to see by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -1400,7 +1400,7 @@ A giant candle flickering with soft blue flames provides the only
 light here.
    The only apparent exit is the way you came in.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 curtain~
@@ -1412,7 +1412,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    A half-closed door can be seen to the north.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 A dark room can be seen through the half-opened door.
 ~
@@ -1432,7 +1432,7 @@ A Store Room~
    You are in a small dark store room.  A few common items are stacked
 upon the shelves here, but very little looks interesting.
 ~
-25 adg 0
+25 73 0 0 0 0
 D2
 ~
 door wooden~
@@ -1444,7 +1444,7 @@ A Bend In The Hallway~
 glow which provides enough light to see by.
    The hallway continues south and east from here.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -1460,7 +1460,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    An iron bound door can be seen to the west.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1480,7 +1480,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    The sharp sound of metal on metal can be heard to the west.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1502,7 +1502,7 @@ piles of precious metals.  The ring of metal on metal can be
 heard to the south.  A large cabinet with sigils of warding
 is bolted to one wall.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 door iron~
@@ -1517,7 +1517,7 @@ A Hallway~
    You are in a long hallway leading north and south.  The walls emit a
 faint magical glow which provides enough light to see by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1535,7 +1535,7 @@ A rune-encrusted mithril anvil is in the center of the room, looking well
 used.  Other tools of metallurgy hang on a rack which floats about three
 meters in the air of its own force.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door~
@@ -1560,7 +1560,7 @@ here are racks of finely crafted weapons.  A huge chest with a glowing
 lock is set to one side.  Several unfinished looking blades rest atop a
 small work table.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door~
@@ -1572,7 +1572,7 @@ A Bend In The Hallway~
 glow which provides enough light to see by.
    The hallway continues north and east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1588,7 +1588,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    A steel door can be seen to the south.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -1607,7 +1607,7 @@ A Hallway~
    You are in a long hallway leading east and west.  The walls emit a
 faint magical glow which provides enough light to see by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -1624,7 +1624,7 @@ and some scrawled notes are piled about a workbench.  This room is very
 untidy, looking almost abandoned, or used by a madman.
    The only apparent exits are east and north.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door steel~
@@ -1640,7 +1640,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    You can see a steel door to the south.
 ~
-25 dg 0
+25 72 0 0 0 0
 D1
 ~
 ~
@@ -1662,7 +1662,7 @@ everywhere.  It is incredibly messy here, crushed glass and other
 trash litter the floor.
    The only apparent exit is the one you entered by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 ~
@@ -1674,7 +1674,7 @@ A Bend In The Hallway~
 glow which provides enough light to see by.
    The hallway continues north and west.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1690,7 +1690,7 @@ The Pentagram Chamber~
 floor.  A crackling energy field can be seen to the south, it looks
 quite dangerous.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 door steel~
@@ -1707,7 +1707,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    A bronze door can be seen to the east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1727,7 +1727,7 @@ Inside The Energy Field~
 Nice going!  You might as well wait here until the wizard who built this
 trap comes back to imprison your soul as well as your body.
 ~
-25 cdefgj 0
+25 636 0 0 0 0
 S
 #2593
 A Hallway~
@@ -1735,7 +1735,7 @@ A Hallway~
 faint magical glow which provides enough light to see by.
    A bronze door can be seen to the east.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1754,7 +1754,7 @@ An Empty Room~
    You are in an empty room.  It is both quiet and comfortable here, it
 looks like a safe place to rest.
 ~
-25 cdg 0
+25 76 0 0 0 0
 D3
 ~
 door bronze~
@@ -1767,7 +1767,7 @@ and dirt litters the floor here, it looks to have been recently used by
 wild animals.
    Strange sounds can be heard through the bars to the north.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 cage bars~
@@ -1782,7 +1782,7 @@ A Hallway~
    You are in a long hallway leading north and south.  The walls emit a
 faint magical glow which provides enough light to see by.
 ~
-25 dg 0
+25 72 0 0 0 0
 D0
 ~
 ~
@@ -1798,7 +1798,7 @@ The Animal Pens~
 Obviously they are destined to be enslaved, or used in some cruel magical
 experimentation.
 ~
-25 dg 0
+25 72 0 0 0 0
 D2
 ~
 cage bars~
@@ -1811,7 +1811,7 @@ a faint magical glow which provides enough light to see by.
    Stairs here lead up to the next level, and the hallway continues
 south.
 ~
-25 dg 0
+25 72 0 0 0 0
 D2
 ~
 ~
@@ -1827,7 +1827,7 @@ Atop The Stairway~
 walls emit a faint magical glow which provides enough light to see by.
    A hallway leads west from here, and the stairs lead down.
 ~
-25 dg 0
+25 72 0 0 0 0
 D3
 ~
 ~

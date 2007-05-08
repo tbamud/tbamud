@@ -7,7 +7,7 @@ The Lord gives you a sloppy smile and nods your way.
 Being married to the dreadful wench of a Lady must be quite demanding on one's
 nerves.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -21,7 +21,7 @@ The Lady narrows here eyes at you, wondering who you are.
 been favorable on your part, because she suddenly dons a bright smile and comes
 walking your way.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -35,7 +35,7 @@ The Lady's handmaiden fusses about the castle, making sure all is perfect.
 pleasantness.  Her manners in court are unmatched and yet she knows her place
 enough to never overstep her bounds.    
 ~
-dg 0 780 E
+72 0 0 0 0 0 0 0 780 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 2
@@ -48,7 +48,7 @@ The Lord's manservant regards you solemnly.
    He regards you with calm, clear eyes that reflect almost nothing at all
 within them.  His only desire seems to be to serve his Lord.    
 ~
-dg 0 200 E
+72 0 0 0 0 0 0 0 200 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -63,7 +63,7 @@ and her husband throw a nonstop party appeals greatly to this man.  Coupled
 with the fact that everything is free plus whatever gold he can sponge from his
 sister, he has it made.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -76,7 +76,7 @@ A very militaristic man stands rigidly while the gala goes on around him.
    He is abviously unused to the informalities of court life and spends most of
 his time in the field, doing whatever it is that knights do best.    
 ~
-bd 0 700 E
+10 0 0 0 0 0 0 0 700 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -89,7 +89,7 @@ A soldier from the Lord's brother's contingent beds down in the hay.
    He seems more than content to relax for this short duration, even though it
 be out in this barn rather than indoors where it is much more festive.    
 ~
-bdm 0 500 E
+4106 0 0 0 0 0 0 0 500 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -102,7 +102,7 @@ An impatient soldier paces back and forth, waiting for his captain.
    Some of his other men may feel comfortable standing still, but this one is
 ready to get back out into action.    
 ~
-bdm 0 800 E
+4106 0 0 0 0 0 0 0 800 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -115,7 +115,7 @@ A bored soldier leans against a wood post in the barn, waiting for something to 
    He stares off into space with a vacant look, idly picking at the hay beneath
 him.    
 ~
-bdm 0 300 E
+4106 0 0 0 0 0 0 0 300 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -128,7 +128,7 @@ A lady-in-waiting fusses and fritters about the Lady's bedroom, tidying up.
    This one is a neat freak, for sure.  She seems almost on the verge of tears
 when she finds the slightest smudge of dirt anywhere.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -141,7 +141,7 @@ A lady-in-waiting wanders about the keep, searching for her Lady.
    After all, what good is a lady-in-waiting if she can't wait on her Lady?  
 
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 2
@@ -154,7 +154,7 @@ A visiting scholar rests from a long day in the Grand Ballroom.
    The man is obviously not one for the party life and hasn't the stamina that
 the Lord and Lady possess for drinking and carousing.    
 ~
-bd 0 700 E
+10 0 0 0 0 0 0 0 700 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -167,7 +167,7 @@ A scantily-clad woman pats the drunk man's back soothingly, giving you a wink.
    She is obviously hired company for the awful man who probably is leaving
 most of his dinner on the ground outside the castle at this very moment.    
 ~
-bd 0 300 E
+10 0 0 0 0 0 0 0 300 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -180,7 +180,7 @@ A man with a bowed fiddle plays with vigor for the room.
    He is older, with crows feet in the corners of his eyes that he scrunches up
 everytime he gets going really well into an overture.    
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -193,7 +193,7 @@ A cook works about the kitchen, keeping the food fresh and tasty.
    He and his co-workers look more than pleased to be doing to be doing what
 they are for the Lord and Lady.  They must be well paid.    
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -206,7 +206,7 @@ The stable boy smiles up at you, looking to take your horse.
    He says nothing, only looks you dead in the eye and smiles.  Its actually
 sort of annoying.    
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -219,7 +219,7 @@ An ale salesman lies stretched out on the bed, catching some Z's.
    He must have had himself a few too many tastes of his own product last night
 and now has to sleep it off.    
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -232,7 +232,7 @@ Alanis the sorceress waits patiently for the Lady to return.
    It seems the Lady has been dabbling in magic of late and has asked Alanis to
 join the staff permanently - unbeknownst to the Lord.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 2
@@ -245,7 +245,7 @@ Felice, the castle healer, relaxes on the bed, reading a thick book.
    He smiles at you as you enter, inviting you to come sit near him and talk.
   
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1

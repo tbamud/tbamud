@@ -9,7 +9,7 @@ that it lives in.  Its long, grey tail flicks about as it claws the ground with
 its large, ugly talons.  It stops clawing just enough to see you and bare its
 hideous teeth in a screeching hiss.  
 ~
-bcd 0 0 E
+14 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -26,7 +26,7 @@ found.  The bones seem misshapen in places, and the carcass gives off a nasty
 odor.  The corpse seems to be human, but the head has been horribly bashed in.
 
 ~
-bde p -100 E
+26 0 0 0 65536 0 0 0 -100 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -42,7 +42,7 @@ the most disgustuing hair you've ever seen, with deathly looking lice running
 through the small pricks of hair.  It has a bald, grey head with a long, white
 tail.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0

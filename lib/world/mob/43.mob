@@ -7,7 +7,7 @@ A black penguin waddles around here.
 toward the large body of water to the east propably waiting for food to come
 from the females.  
 ~
-cdg 0 -135 E
+76 0 0 0 0 0 0 0 -135 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -26,7 +26,7 @@ A new born penguin is standing here.
 human.  It is very fluffy with down to keep it warm.  The little penguins
 parents are never too far away from it if ever.  
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -46,7 +46,7 @@ white as usual with penguins, but he is the most well groomed penguin you've
 seen.  On his head sits a crown of ice and in his hand a scepter of great power.
 
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 6 8 1
@@ -63,7 +63,7 @@ The royal penguin's guard is here, protecting his king.
 here with a blank stare.  He seems to be looking at absolutly nothing but you
 feel his eyes looking you over.  Should you be here?  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -81,7 +81,7 @@ An orphaned penguin stands here, lonely.
    This penguin looks so depressed.  You can't help but feel sorry for it.  
 It's cute little eyes and fluffy self...  Snap out of it!  Muahahahaha!  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -98,7 +98,7 @@ The penguin caretaker stands here, watching her adopted childern.
    This penguin looks just like-a- house wife!  The tired eyes and the whole get
 up.  That has not got to be fun.  
 ~
-bde 0 0 E
+26 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -115,7 +115,7 @@ The penguin caretaker is standing here, keeping a watchful eye out.
    The penguin looks a little better trimed than the female but just as
 exhasted.  
 ~
-bde 0 0 E
+26 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -133,7 +133,7 @@ A walrus is here, flopping around.
    This walrus is a fine looking specimen.  Fat, blubbery, and well, fat.  It's
 tucks are at least a foot and a half long and the shinyest white.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -151,7 +151,7 @@ and fur.  He stands behind the counter of this igloo with meat of different
 kinds hanging from the walls.  He turns toward you as you enter, ready to serve.
 
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -166,7 +166,7 @@ The weponrist is here shaping a new spear.
 long, thin sheet of metal with a point at one end.  She is sweating bullets as
 you freeze your bum off outside.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -181,7 +181,7 @@ The outfitter is here ready to send you away warmly clothed.
 eyes pierce your soul though you cannot see her exept for those eyes.  She
 stands as you enter trying to help as much as possible.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -195,7 +195,7 @@ The butcher is here hacking away at another piece of meat.
    He looks very pleased with himself as he hacks down another mass of flesh and
 bones.  He looks very fierce with that large butchers knife in his hand.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1

@@ -25,13 +25,13 @@ Bill Pelletier
 wjp@hopper.unh.edu
 Aten/Talisman of GenericMUD
 ~
-310 0 0
+310 0 0 0 0 0
 S
 #31001
 The attachment room~
    This room can be used to attach this area to da mud.    
 ~
-310 0 0
+310 0 0 0 0 0
 S
 #31002
 The Great Field~
@@ -40,7 +40,7 @@ and sunlight surrounds you.  The air is filled with the sound of chirping birds
 happily building their nests in the depths of the knotted grass.  A wagon trail
 runs in an east-south direction.    
 ~
-310 0 2
+310 0 0 0 0 0
 D3
 ~
 ~
@@ -54,7 +54,7 @@ strangely enough it is still quite pleasant out.  Crickets chirp merrily, and
 the sun's rays warm your skin.  The wagon trail leads eastwards back into the
 grassland, and dissapears westwards into the forest.    
 ~
-310 0 3
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -73,7 +73,7 @@ wider here, showing signs of recent heavy use.  The wagon trail runs from west
 to east here, and it looks possible to venture into the forest to the north and
 south.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -95,7 +95,7 @@ S
 The Forest of Graye~
    You in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D2
 ~
 ~
@@ -109,7 +109,7 @@ S
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -127,7 +127,7 @@ S
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -145,7 +145,7 @@ S
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -161,7 +161,7 @@ The Forest of Graye~
 sheer cliff face to the west, rising up above the forest.  There is a sign
 nailed neatly on the cliff wall.    
 ~
-310 0 3
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -170,6 +170,10 @@ D2
 ~
 ~
 0 0 31010
+E
+cliff sheer face~
+   The face of the cliff seems impossible to scale.  
+~
 E
 sign~
    The sign reads:
@@ -185,17 +189,13 @@ sign~
 *                            *
 ******************************
 ~
-E
-cliff sheer face~
-   The face of the cliff seems impossible to scale.  
-~
 S
 #31010
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.  There is a
 sheer cliff face to the west, rising above the forest.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -218,7 +218,7 @@ The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.  The wagon trail
 ends abruptly here.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -240,7 +240,7 @@ S
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -262,7 +262,7 @@ S
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -277,7 +277,7 @@ The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.  There is a
 sheer cliff face to the north, rising above the forest.    
 ~
-310 0 3
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -299,7 +299,7 @@ S
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -321,7 +321,7 @@ S
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -340,7 +340,7 @@ The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.  There is a
 cliff face to the north.    
 ~
-310 0 3
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -363,7 +363,7 @@ S
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -381,7 +381,7 @@ S
 The Forest of Graye~
    You are in a hardwood forest, walking through noisy leaves.    
 ~
-310 0 3
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -397,7 +397,7 @@ The Cliff Wall~
 Sweat stings your eyes, and your breathing becomes ragged.  You can still drop
 safely to the forest floor, or madly continue upwards.    
 ~
-310 0 5
+310 0 0 0 0 0
 D4
 ~
 ~
@@ -413,7 +413,7 @@ The Overhang~
 be a nice place to stop an rest..  If you weren't underneath it.  You glance
 around for an alternate path..    
 ~
-310 0 5
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -431,7 +431,7 @@ desperately to the rock face with your other hand.  Returning back west is out
 of the question, but you might be able to pull yourself upwards onto a very
 thin ledge.    
 ~
-310 0 5
+310 0 0 0 0 0
 D4
 ~
 ~
@@ -446,7 +446,7 @@ The Thin Ledge~
    You are standing on a very thin ledge, just wide enough for your feet to
 stand on it widthwise.  The ledge widens to the west and east.    
 ~
-310 0 5
+310 0 0 0 0 0
 D1
 The rocks look kinda unstable over there.~
 ~
@@ -467,7 +467,7 @@ a nap if you wanted too.  To the south you get a fantastic view of the entire
 forest.  There is perhaps another forty feet to the top of the cliff, all of
 which appears to be an easy climb.    
 ~
-310 0 5
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -485,7 +485,7 @@ there is a flash of blinding light, and you feel yourself floating in white
 light.  You notice a glint in Aten's eye.  "Your time has not yet come..  ", he
 utters.    
 ~
-310 0 0
+310 0 0 0 0 0
 S
 #31026
 Top of the Cliff~
@@ -494,7 +494,7 @@ moments just turning around, taking in all that you see.  To the south and east
 you see the forest sweeping outwards from the cliff wall, and to the north you
 see a clearing surrounding a small town.    
 ~
-310 0 2
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -509,7 +509,7 @@ The Clearing~
    You are in a wide clearing between the city walls and the forest.  You see
 men atop the walls pointing at you and gesturing frantically.    
 ~
-310 0 2
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -528,7 +528,7 @@ The Clearing~
    You are in a wide clearing between the city walls and the forest.  You see
 men atop the walls pointing at you and gesturing frantically.    
 ~
-310 0 2
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -551,7 +551,7 @@ The Clearing~
    You are in a wide clearing between the city walls and the forest.  You see
 men atop the walls pointing at you and gesturing frantically.    
 ~
-310 0 2
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -570,7 +570,7 @@ The Clearing~
    You are in a wide clearing between the city walls and the forest.  You see
 men atop the walls pointing at you and gesturing frantically.    
 ~
-310 0 2
+310 0 0 0 0 0
 D2
 ~
 ~
@@ -585,7 +585,7 @@ Entrance to the City of Graye~
    You are standing before the great gate of Graye.  Crimson plumed soldiers
 raise the portcullis and urge you the enter quickly.    
 ~
-310 0 2
+310 0 0 0 0 0
 D0
 Looks like safety.~
 ~
@@ -596,7 +596,7 @@ The Clearing~
    You are in a wide clearing between the city walls and the forest.  You see
 men atop the walls pointing at you and gesturing frantically.    
 ~
-310 0 2
+310 0 0 0 0 0
 D1
 The forest look VERY dark.~
 ~
@@ -611,7 +611,7 @@ The Demon's Wood~
    You find yourself among the twisted, gnarled trunks of giant thorn trees.  
 Mist covers the forest floor and everything is completely silent.    
 ~
-310 a 3
+310 1 0 0 0 0
 D0
 ~
 ~
@@ -626,7 +626,7 @@ The Demon's Wood~
    You find yourself among the twisted, gnarled trunks of giant thorn trees.  
 Mist covers the forest floor and everything is completely silent.    
 ~
-310 a 3
+310 1 0 0 0 0
 D1
 Safety!~
 ~
@@ -641,7 +641,7 @@ The Demon's Wood~
    You find yourself among the twisted, gnarled trunks of giant thorn trees.  
 Mist covers the forest floor, and everything is completely silent.    
 ~
-310 a 3
+310 1 0 0 0 0
 D2
 ~
 ~
@@ -656,7 +656,7 @@ The Demon's Wood~
    You find yourself among the twisted, gnarled trunks of giant thorn trees.  
 Mist covers the forest floor, and everything is completely silent.    
 ~
-310 a 3
+310 1 0 0 0 0
 D0
 ~
 ~
@@ -672,7 +672,7 @@ The City Street~
 junction.  There is a castle to the north, and more streets to the east and
 west.  There is a large sign posted on a wall here.    
 ~
-310 0 1
+310 0 0 0 0 0
 D0
 You see the castle.~
 ~
@@ -708,7 +708,7 @@ The City Streets~
    Small houses line both sides of the street, and armed guards are posted at
 every junction.  You see a small poster pasted to the wall here.    
 ~
-310 0 1
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -726,7 +726,7 @@ The City Streets~
    Small houses line both sides of the street, and armed guards are posted at
 every junction.    
 ~
-310 0 1
+310 0 0 0 0 0
 D3
 ~
 ~
@@ -737,7 +737,7 @@ Inside the Castle~
    Everything here is a mess.  Furniture has been overturned, paintings
 slashed, even the gold inlaid tiles have been torn up.    
 ~
-310 0 1
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -748,7 +748,7 @@ Entrance to Relnar's Castle~
    You stand before the ajar gate of the castle.  You here complete silence
 from inside.  City life continues to bustle around you.    
 ~
-310 0 1
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -771,7 +771,7 @@ Inside the Castle~
    Everything here is a mess.  Furniture has been overturned, paintings
 slashed, even the gold inlaid tiles have been torn up.    
 ~
-310 0 0
+310 0 0 0 0 0
 D3
 ~
 ~
@@ -782,7 +782,7 @@ Relnar's Study~
    As soon as you enter this room, you feel it.  A magical aura of goodness
 fills this room, and everything is in a neat and tidy condition.    
 ~
-310 0 0
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -797,7 +797,7 @@ The Throne Room~
    King Relnar's throne sits here, empty.  There are rooms to the east and
 west.    
 ~
-310 c 0
+310 4 0 0 0 0
 D1
 ~
 ~
@@ -820,22 +820,22 @@ Rymat's Chamber~
    You find yourself in a small undecorated chamber.  There is a bed, desk, and
 finely crafted washbasin.    
 ~
-310 0 0
+310 0 0 0 0 0
 D3
 ~
 ~
 0 0 31044
 E
-basin wash washbasin~
-   It is a very nice washbasin.  
+bed~
+   It is a tidy, well made bed.  
 ~
 E
 desk~
    It is a bare desk, no drawers or anything.  
 ~
 E
-bed~
-   It is a tidy, well made bed.  
+basin wash washbasin~
+   It is a very nice washbasin.  
 ~
 S
 #31046
@@ -843,7 +843,7 @@ The Tunnel~
    The tunnel has a bare dirt floor, and its sides are of rough-hewn rock.  
 Magical torches are set in each side of the tunnel wall, providing light.    
 ~
-310 c 0
+310 4 0 0 0 0
 D0
 ~
 ~
@@ -861,7 +861,7 @@ S
 The Tunnel~
    The tunnel begins to curve upwards.    
 ~
-310 c 0
+310 4 0 0 0 0
 D0
 ~
 ~
@@ -876,7 +876,7 @@ Tunnel's End~
    You reach the end of the tunnel.  Just above you, sunlight peeks around the
 edge of a trapdoor.    
 ~
-310 c 0
+310 4 0 0 0 0
 D2
 ~
 ~
@@ -893,7 +893,7 @@ you can just barely see one of the castle's towers over the trees.  To the
 north, the land sloped downward, and thick, gnarled thorn trees prevent
 movement to the east or west.    
 ~
-310 c 4
+310 4 0 0 0 0
 D0
 ~
 ~
@@ -911,7 +911,7 @@ thick choking vegetation grabbing your boots.  The path back to the south
 disappears in darkness, and your path continues to dip as you head to the
 north.    
 ~
-310 0 4
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -927,7 +927,7 @@ The Valley Floor~
 the east and west.  A sudden gust of wind brings you the smell of sulphur from
 the north.    
 ~
-310 0 4
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -943,7 +943,7 @@ The Rift~
 waft their way upwards, stinging your nose sharply.  You sense that a great
 evil is near.    
 ~
-310 0 4
+310 0 0 0 0 0
 D2
 ~
 ~
@@ -958,7 +958,7 @@ Inside the Rift~
    There is a ledge here, and a tunnel which leads into the earth.  Far below
 you, lava churns and bubbles.    
 ~
-310 a 0
+310 1 0 0 0 0
 D0
 ~
 ~
@@ -974,7 +974,7 @@ The Tunnel~
 Peeking in a smudged window, you see human prisoners, many of them wearing the
 uniform of the Graye Guard.    
 ~
-310 a 0
+310 1 0 0 0 0
 D0
 ~
 ~
@@ -990,7 +990,7 @@ Irgon's Guard Room~
 house prisoners, and an ebony door blocks the way north.  Instruments of
 torture line the walls, and blood is splattered everywhere.    
 ~
-310 a 0
+310 1 0 0 0 0
 D0
 An ebony door is there.~
 door ebony~
@@ -1005,7 +1005,7 @@ Scrytin's Chamber of Doom~
    This chamber is COVERED in blood.  The Arch-Demon Scrytin has made this foul
 place his abode.  There is an Ivory door to the east.    
 ~
-310 a 0
+310 1 0 0 0 0
 D1
 There is an ivory door there.~
 ivory door~
@@ -1019,7 +1019,7 @@ S
 Relnar's Cell~
    You stumble into a tiny cell, lit by a single candle.    
 ~
-310 0 0
+310 0 0 0 0 0
 D1
 ~
 ~
@@ -1038,14 +1038,14 @@ The Lava~
                            Hot
                                 HOT!!
 ~
-310 0 0
+310 0 0 0 0 0
 S
 #31059
 The secret passage~
    You step into the musty passage and let your eyes grow accustomed to the
 light.  Stone walls block every direction save north.    
 ~
-310 a 0
+310 1 0 0 0 0
 D0
 ~
 ~
@@ -1062,7 +1062,7 @@ of Graye are buried on either side of you.  You can see in the room, but there
 is no discernable source of light.  The passage continues on to the north and
 south.    
 ~
-310 0 0
+310 0 0 0 0 0
 D0
 ~
 ~
@@ -1078,18 +1078,18 @@ The Tomb of Graye~
 atop at stone tablet.  Treasure is piled high against all the walls.  You have
 found the final resting place of the paladin knight Graye.    
 ~
-310 0 0
+310 0 0 0 0 0
 D2
 ~
 ~
 0 0 31060
 E
-stone tablet~
-   It is a giant stone tablet supporting the coffin of Graye.  
-~
-E
 coffin~
    The coffin holds the remains of Graye.  His gift to you is not within it.  
+~
+E
+stone tablet~
+   It is a giant stone tablet supporting the coffin of Graye.  
 ~
 S
 $~

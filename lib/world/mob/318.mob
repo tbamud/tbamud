@@ -7,7 +7,7 @@ A drunken sailor stumbles past you, the fumes all whiskey and vomit.
 meal.  The stubble on his face is only overshadowed by the hair which grows out
 of the top of the back of his shirt.    
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -20,7 +20,7 @@ A gambler is here, shouting at the top of his lungs at the cocks fighting in the
    You want to tell him the cocks don't understand, but then you realize that
 HE would probably not understand.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -33,7 +33,7 @@ A Dead Boy eyes you evilly.
    The unwashed boy seems to be eying you rather fiercely.  You don't know what
 you did to offend him but hey, it could be any...  Nothing.    
 ~
-dgjm 0 -700 E
+4680 0 0 0 0 0 0 0 -700 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -47,7 +47,7 @@ A member of Bloody Scythe eyes you evilly.
    The unwashed boy seems to be eyeing you rather fiercely.  You don't know
 what you did to offend him but hey, it could be any...  Nothing.    
 ~
-dgjm 0 -700 E
+4680 0 0 0 0 0 0 0 -700 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -60,7 +60,7 @@ A giant cochroach looks about ready to eat you.
 ~
    QUICK!!!  Squish it, before it squishes you!!    
 ~
-bdf 0 0 E
+42 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -73,7 +73,7 @@ A beggar stands here, pleading for a few coins.
    You see an old dirty beggar with no teeth trying to get coins by passer
 byes.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -88,7 +88,7 @@ Marcko, gives you a slight smirk.
 you, almost pleasantly, until he flashes the knife in his hand, in which his
 pleasant smile fades.    
 ~
-bdjmor 0 -1000 E
+152074 0 0 0 0 0 0 0 -1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -105,7 +105,7 @@ down to pick it up she notices your boot and gets up suddenly, preparing for
 your attack.  She taps her boot heel to the ground and a razor juts out the toe
 of her boot.  You sense that this isn't going to be pretty.    
 ~
-bdlmor 0 -1000 E
+153610 0 0 0 0 0 0 0 -1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 6 6 2
@@ -119,7 +119,7 @@ A man is here, hammering on some rounded ship's boards.
    Bathed in sweat and looking quite the strong type, you can't help but wonder
 what motivates a man who does a job such as this to get up every morning.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -132,7 +132,7 @@ The shipyard foreman struts through the room, kicking his workers, telling them 
    Complete with his fat cigar, this man is the poster child for alchoholics
 anonymous.    
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -145,7 +145,7 @@ A hard working sailor struggles along, loaded down with nets and rigging.
    Poor fella, almost makes you want to help him with his load, but then,
 nahhhh...    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -158,7 +158,7 @@ A very self important woman stands here with a clipboard.
    She supervises and regulates the loading and unloading of cargo and
 passengers to every ship that docks in this cove.    
 ~
-dghl 0 0 E
+2248 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -171,7 +171,7 @@ The Dockmaster's assistant proudly follows along beside her.
    This little guy looks like he finally found someone bigger than him that
 wouldn't kick his ass, so he's hanging on for dear life.    
 ~
-dglm 0 300 E
+6216 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -184,7 +184,7 @@ A bum lays on a bench, snoring softly.
    You might even be doing this guy a favor...  One good bop to the noggin and
 he's done.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -197,7 +197,7 @@ A woman sits behind the glass, selling boat tickets.
    She moves at lightning speed, with the assurance of one who has done her job
 for a long time.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -211,7 +211,7 @@ A midshipman passes by you, mumbling something.
 something to himself.  Perhaps he's looking for a bar or a fight, who knows.  
 
 ~
-dfg 0 0 E
+104 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -224,7 +224,7 @@ A pack rat is sifting through trash.
 ~
    It's a large, fat rat, what else would it be.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -238,7 +238,7 @@ Cap'n Darby is here, fighting.
    It seems like everytime you see Cap'n Darby, the guy is fighting.  Doesn't
 this old sailor EVER take a break?!?    
 ~
-dglnopr 0 0 E
+190536 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 7 7 1
@@ -252,7 +252,7 @@ The netweaver is here, sewing some netting together.
    He has small, horn rimmed glasses, and a large net draped across his body,
 which he is currently working on.    
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 6 6 1
@@ -265,7 +265,7 @@ A street punk is here, getting to throw a set of dice.
    He looks up and growls.  It must be that no one usually upsets the game.  
 
 ~
-bdf 0 -300 E
+42 0 0 0 0 0 0 0 -300 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -278,7 +278,7 @@ A sailor is lounging near the piano, singing his heart out.
    He looks like if he were to let go of the piano, he may not end up on his
 feet still.    
 ~
-bd 0 -100 E
+10 0 0 0 0 0 0 0 -100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -291,7 +291,7 @@ Madame Myra is here, selling herself and any of her girls for the right price.
    Large breasted, large assed, and smothered in make-up and perfume, this lady
 is one nasty speciman.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -303,7 +303,7 @@ The man reads his book behind the glass without glancing up.
 ~
    You clear your throat, but he just continues to ignore you.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1

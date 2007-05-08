@@ -3,7 +3,7 @@ wedding ring~
 a wedding ring~
 A simple ring made out of gold, it looks like a ring one would recieve at a wedding from their spouse.~
 ~
-11 q ab 0
+11 q 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #11701
@@ -12,7 +12,7 @@ a sign~
 A sign is posted in the ground~
 Tower #1: Shops and excecutive officing
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 1 0 0
 #11702
@@ -20,7 +20,7 @@ yellow straightsword~
 @YYellow@n straightsword~
 A @YYellow@n straightsword is lying here.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 2 3 6 3
 6 475 0 15
 E
@@ -35,7 +35,7 @@ yellow field plate~
 @YYellow@n field plate~
 A @YYellow@n field plate is lying here.~
 ~
-9 bo ad 0
+9 bo 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 9 1 0 15
 E
@@ -49,7 +49,7 @@ silver scimitar~
 @DSilver@n scimitar~
 A @DSilver@n scimitar has been left here.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 3 2 9 3
 7 500 0 15
 E
@@ -63,7 +63,7 @@ broiled turkey~
 a Broiled Turkey~
 A Broiled Turkey has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
 3 1250 0 20
 E
@@ -78,7 +78,7 @@ silver splint mail~
 a @DSilver@n splint mail~
 A @DSilver@n splint mail has been left here.~
 ~
-9 bm ad 0
+9 bm 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 10 550 0 15
 E
@@ -92,7 +92,7 @@ turkey sandwich~
 a Turkey Sandwich~
 A Turkey Sandwich has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 2 30 0 0
 E
@@ -104,7 +104,7 @@ wooden cello~
 a wooden cello~
 A wooden cello has been left here.~
 ~
-12 q a 0
+12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 8 1 0 0
 T 11705
@@ -118,7 +118,7 @@ turkey soup~
 a Turkey Soup~
 A Turkey Soup has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 5 100 0 0
 E
@@ -132,7 +132,7 @@ turkey surprise~
 a Turkey Surprise~
 A Turkey Surprise has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 4 75 0 0
 E
@@ -145,7 +145,7 @@ cranberry juice~
 a Cranberry Juice~
 A Cranberry Juice has been left here.~
 ~
-23 0 a 0
+23 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 0 0
 3 60 0 0
 E
@@ -159,7 +159,7 @@ pumpkin ale~
 a Pumpkin Ale~
 A Pumpkin Ale has been left here.~
 ~
-23 0 a 0
+23 0 0 0 0 a 0 0 0 0 0 0 0
 21 7 3 0
 10 200 0 0
 E
@@ -173,7 +173,7 @@ pumpkin pie~
 a Pumpkin Pie~
 A Pumpkin Pie has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 9 300 0 0
 E
@@ -186,7 +186,7 @@ road heaven wine~
 @RRoad@n @Yto@n @CHeaven@n~
 A @RRoad@n @Yto@n @CHeaven@n has been left here.~
 ~
-23 0 a 0
+23 0 0 0 0 a 0 0 0 0 0 0 0
 100 10 2 0
 15 750 0 0
 E
@@ -201,7 +201,7 @@ wine flask~
 a Flask of White Wine~
 A Flask of White Wine has been left here.~
 ~
-23 0 a 0
+23 0 0 0 0 a 0 0 0 0 0 0 0
 12 3 2 0
 5 75 0 0
 E
@@ -214,7 +214,7 @@ estanzia~
 an Estanzia~
 An Estanzia has been left here.~
 ~
-23 0 a 0
+23 0 0 0 0 a 0 0 0 0 0 0 0
 15 5 2 0
 10 300 0 0
 E
@@ -227,7 +227,7 @@ glass wine~
 a glass of wine~
 A glass of wine has been left here.~
 ~
-23 0 a 0
+23 0 0 0 0 a 0 0 0 0 0 0 0
 8 2 2 0
 5 50 0 0
 E
@@ -241,7 +241,7 @@ cellar key~
 the wine cellar key~
 The wine cellar key has been left here.~
 ~
-18 q a 0
+18 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -254,7 +254,7 @@ chalice red something~
 a Chalice of Red Something~
 A Chalice of Red Something has been left here.~
 ~
-23 0 a 0
+23 0 0 0 0 a 0 0 0 0 0 0 0
 7 7 13 0
 7 400 0 0
 E
@@ -266,7 +266,7 @@ defender~
 the @rD@n@me@n@rf@n@me@n@rn@n@md@n@re@n@mr@n~
 The @rD@n@me@n@rf@n@me@n@rn@n@md@n@re@n@mr@n has been left here.~
 ~
-5 abdmnoq an 0
+5 abdmnoq 0 0 0 an 0 0 0 0 0 0 0
 4 7 3 10
 15 2000000 0 20
 E
@@ -282,7 +282,7 @@ optical blue helm~
 an @DOptical@n @bBlue@n helm~
 An @DOptical@n @bBlue@n helm has been left here.~
 ~
-9 0 ae d
+9 0 0 0 0 ae 0 0 0 e 0 0 0
 10 0 0 0
 7 2750 0 12
 E
@@ -298,7 +298,7 @@ large boots~
 some Large Boots~
 Some Large Boots have been left here.~
 ~
-9 0 afg 0
+9 0 0 0 0 afg 0 0 0 0 0 0 0
 10 0 0 0
 10 2500 0 11
 T 11708
@@ -313,7 +313,7 @@ titanium gauntlets~
 some Titanium Gauntlets~
 Some Titanium Gauntlets have been left here.~
 ~
-9 b ah 0
+9 b 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
 5 2200 0 11
 E
@@ -328,7 +328,7 @@ pair greaves~
 a pair of greaves~
 A pair of greaves have been left here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
 10 1500 0 10
 E
@@ -341,7 +341,7 @@ white chainmail~
 a White Chainmail~
 A White Chainmail has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
 13 4000 0 0
 E
@@ -355,7 +355,7 @@ red wood bow~
 a bow made of dark, red wood~
 A bow made of dark, red wood has been left here.~
 ~
-5 mn ano 0
+5 mn 0 0 0 ano 0 0 0 0 0 0 0
 3 3 4 1
 10 600 0 14
 E
@@ -375,7 +375,7 @@ ousishi katana~
 an Ousishi Katana~
 An Ousishi Katana has been left here.~
 ~
-5 p an s
+5 p 0 0 0 an 0 0 0 t 0 0 0
 3 5 4 3
 20 1500 0 13
 E
@@ -393,7 +393,7 @@ red arrow~
 a red arrow~
 A red arrow has been left here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 0
 E
@@ -407,7 +407,7 @@ redwood quiver~
 a Redwood Quiver~
 A Redwood Quiver has been left here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 10 0 -1 0
 3 200 0 0
 E
@@ -423,7 +423,7 @@ obscenity~
 an @WO@n@Yb@n@Rs@n@Mc@n@Be@n@Cn@n@Gi@n@Kt@n@Wy@n~
 An @WO@n@Yb@n@Rs@n@Mc@n@Be@n@Cn@n@Gi@n@Kt@n@Wy@n has been left here.~
 ~
-11 abdq ao h
+11 abdq 0 0 0 ao 0 0 0 i 0 0 0
 0 0 0 0
 2 5 0 20
 A
@@ -437,7 +437,7 @@ beam light~
 a beam of light~
 A Beam of Light has been left here.~
 ~
-1 a a 0
+1 a 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
 1 500 0 17
 E
@@ -451,7 +451,7 @@ kard~
 a Kard~
 A Kard has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 5 14
 3 350 0 13
 E
@@ -467,7 +467,7 @@ red cloth costume~
 a @RRed Cloth Costume@n~
 A @RRed Cloth Costume@n has been left here.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 5 475 0 15
 E
@@ -487,7 +487,7 @@ pewter key~
 a pewter key~
 A pewter key has been left here.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -499,7 +499,7 @@ bouquet exotic flowers~
 a bouquet of exotic flowers~
 A bouquet of exotic flowers has been left here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -512,7 +512,7 @@ red breaker~
 a red breaker~
 A Red Breaker has been left here.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 2 3 6 9
 12 900 0 17
 E
@@ -527,7 +527,7 @@ broken chandelier~
 a broken chandelier~
 A broken chandelier has been left here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 15 1 0 0
 E
@@ -540,7 +540,7 @@ marble fountain~
 a Marble Fountain~
 A Marble Fountain stands in the center of the plaza.~
 ~
-23 0 a 0
+23 0 0 0 0 a 0 0 0 0 0 0 0
 500 500 15 0
 505 1000 0 0
 E
@@ -554,7 +554,7 @@ paintbrush~
 a paintbrush~
 A paintbrush has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 1 6 0
 3 60 0 6
 E
@@ -566,7 +566,7 @@ chef's knife~
 a Chef's Knife~
 A Chef's Knife has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 4 2 14
 5 70 0 10
 E
@@ -580,7 +580,7 @@ a note~
 A note has been left here.~
    barbatsis
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 12 0 0
 #11742
@@ -588,7 +588,7 @@ black belt~
 a black belt~
 A black belt has been left here.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 4 150 0 13
 E
@@ -603,7 +603,7 @@ feather duster~
 a Feather Duster~
 A Feather Duster has been left here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 75 0 0
 E
@@ -636,7 +636,7 @@ In 11719- say barbatsis
 Get to 11720
 *QUEST COMPLETE*
 ~
-16 ab 0 0
+16 ab 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 $~

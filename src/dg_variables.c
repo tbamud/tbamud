@@ -716,9 +716,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "is_killer")) {
             if (subfield && *subfield) {
               if (!str_cmp("on", subfield))
-                SET_BIT(PLR_FLAGS(c), PLR_KILLER);
+                SET_BIT_AR(PLR_FLAGS(c), PLR_KILLER);
               else if (!str_cmp("off", subfield))
-                REMOVE_BIT(PLR_FLAGS(c), PLR_KILLER);
+                REMOVE_BIT_AR(PLR_FLAGS(c), PLR_KILLER);
             }
             if (PLR_FLAGGED(c, PLR_KILLER))
               strcpy(str, "1");
@@ -729,9 +729,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "is_thief")) {
             if (subfield && *subfield) {
               if (!str_cmp("on", subfield))
-                SET_BIT(PLR_FLAGS(c), PLR_THIEF);
+                SET_BIT_AR(PLR_FLAGS(c), PLR_THIEF);
               else if (!str_cmp("off", subfield))
-                REMOVE_BIT(PLR_FLAGS(c), PLR_THIEF);
+                REMOVE_BIT_AR(PLR_FLAGS(c), PLR_THIEF);
             }
             if (PLR_FLAGGED(c, PLR_THIEF))
               strcpy(str, "1");
@@ -1260,7 +1260,7 @@ o->contains) ? "1" : "0"));
           "lightning"
         };
 
-        if (!IS_SET(r->room_flags, ROOM_INDOORS))
+        if (!IS_SET_AR(r->room_flags, ROOM_INDOORS))
           snprintf(str, slen, "%s", sky_look[weather_info.sky]);
         else
           *str = '\0';

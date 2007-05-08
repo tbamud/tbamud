@@ -3,7 +3,7 @@ orange~
 an orange~
 An orange lies on the ground here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 8 8 0
 E
@@ -15,7 +15,7 @@ bale wheat~
 a bale of wheat~
 There is a bale of wheat here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 50 100 10 0
 E
@@ -27,7 +27,7 @@ zither~
 a big zither~
 A HUGE zither made of gold rests in the corner~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 40 1000 100 0
 E
@@ -40,7 +40,7 @@ barrel perfume~
 a barrel of perfume~
 You can smell a barrel on the other side of the room from here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 20 1000 100 0
 E
@@ -53,7 +53,7 @@ statue~
 a statue~
 There is a statue of Aglandiir here, made of solid gold.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 30 900 90 0
 E
@@ -65,7 +65,7 @@ halberd~
 a halberd~
 A runed halberd lies on the ground here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 12 3
 16 1000 300 0
 E
@@ -80,7 +80,7 @@ potion protection dun vial~
 a potion of protection~
 A vial of a dun fluid is here.~
 ~
-10 a a 0
+10 a 0 0 0 a 0 0 0 0 0 0 0
 20 36 1 3
 1 1000 200 0
 E
@@ -92,7 +92,7 @@ crown~
 a dragon's crown~
 Aglandiir's crown sits here, radiating a shield.~
 ~
-8 a 0 0
+8 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -105,7 +105,7 @@ apple~
 an apple~
 A scrawny red apple sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 5 2 0
 E
@@ -117,7 +117,7 @@ bread loaf~
 a loaf of bread~
 A fresh loaf of bread lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 10 5 0
 E
@@ -129,7 +129,7 @@ melon~
 a melon~
 A melon sits here, discarded evidently.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 3 8 3 0
 E
@@ -141,7 +141,7 @@ knife~
 a knife~
 An exquisitely crafted knife rests here.~
 ~
-5 dn ano 0
+5 dn 0 0 0 ano 0 0 0 0 0 0 0
 0 3 5 11
 8 1000 200 0
 E
@@ -159,7 +159,7 @@ sword long~
 a long sword~
 A superb long sword sticks in the earth.~
 ~
-5 dmn ano 0
+5 dmn 0 0 0 ano 0 0 0 0 0 0 0
 0 2 7 3
 15 750 150 0
 E
@@ -177,7 +177,7 @@ sword short~
 a short sword~
 A short sword lies here... a work of art!~
 ~
-5 adimn ano 0
+5 adimn 0 0 0 ano 0 0 0 0 0 0 0
 0 4 6 3
 10 100 30 0
 E
@@ -194,7 +194,7 @@ cadaver~
 a dismembered and burnt cadaver~
 A dismembered and burnt cadaver lies on the ground here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -206,7 +206,7 @@ scimitar~
 a scimitar~
 A scimitar as long as your arm lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 3
 10 500 50 0
 E
@@ -218,7 +218,7 @@ crate~
 a crate~
 A crate is stacked here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 200 5 0 0
 50 100 20 0
 E
@@ -230,7 +230,7 @@ bow hunting~
 a hunting bow~
 A hunting bow lies here, unwanted~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 5 11
 6 400 40 0
 E
@@ -245,7 +245,7 @@ vest leather~
 a leather vest~
 A nice leather vest lies here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 6 500 50 0
 E
@@ -257,7 +257,7 @@ glass beer~
 a glass~
 A glass of beer sits forgotten here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 1 0
 2 5 1 0
 E
@@ -270,7 +270,7 @@ glass mead ale~
 a glass~
 A big glass of mead sits here, cool and frosty.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 3 0
 2 8 3 0
 E
@@ -282,7 +282,7 @@ shot whisky~
 a shot~
 A shot of whisky is sitting here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 5 0
 1 10 5 0
 E

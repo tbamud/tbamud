@@ -3,7 +3,7 @@ fur strap piece hide~
 a strip of fur hide ~
 A long strip of hide is lying here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 1 0 0 0
 1 5 0 0
 E
@@ -15,7 +15,7 @@ white toga~
 a white toga~
 A large white piece of cloth is lying here.~
 ~
-9 ag ak 0
+9 ag 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
 1 5 0 0
 E
@@ -27,7 +27,7 @@ leather sandal~
 a pair of sandals~
 A wellcrafted pair of leather sandals set here. ~
 ~
-9 g ag 0
+9 g 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
 1 10 1 0
 E
@@ -39,7 +39,7 @@ gold medallion chain~
 a golden medallion~
 A golden chain is lying here.~
 ~
-12 g ac 0
+12 g 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 650 65 0
 E
@@ -55,7 +55,7 @@ ring diamond~
 a diamond ring~
 A diamond ring is lying here.~
 ~
-11 g ab 0
+11 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 100 0
 E
@@ -70,7 +70,7 @@ golden armband~
 a golden armband~
 A golden armband is lying here.~
 ~
-12 g ai 0
+12 g 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
 2 800 80 0
 E
@@ -84,7 +84,7 @@ wand stick~
 a long stick~
 A long stick is lying here twitching.~
 ~
-3 ag ao 0
+3 ag 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 6
 1 250 25 0
 E
@@ -96,7 +96,7 @@ banana~
 a yellow banana~
 A yellow banana is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 7 2 0
 E
@@ -108,7 +108,7 @@ mango~
 a ripe mango~
 A ripe mango is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 5 0 0
 E
@@ -120,7 +120,7 @@ coconut milk~
 a coconut~
 A coconut of milk is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 8 10 2 0
 E
@@ -133,7 +133,7 @@ pineapple~
 a pineapple~
 A pineapple is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 12 2 0
 E
@@ -145,7 +145,7 @@ sword blade~
 a large Zamba sword~
 A large sword from a Zamba warrior is lying here.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 5 4 5 3
 14 700 70 0
 E
@@ -158,7 +158,7 @@ plate fish~
 a plate of fish~
 A plate of fish is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 20 2 0
 E
@@ -170,7 +170,7 @@ short table~
 a short table~
 A short table rests in the center of the room.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 100 0 -1 0
 0 0 0 0
 E
@@ -184,7 +184,7 @@ doll toy~
 toy doll~
 A toy doll is lying here abandoned on the floor.~
 ~
-12 agh ao 0
+12 agh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 10 1 0
 E
@@ -197,7 +197,7 @@ shelf~
 a shelf~
 A tall shelf sets against the east wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 300 1 -1 0
 0 0 0 0
 E
@@ -211,7 +211,7 @@ statue clay~
 a small statue~
 A small statue made of clay is lying here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 25 3 0
 E
@@ -226,7 +226,7 @@ cog shell~
 a cog shell~
 A large cog shell is lying here.~
 ~
-11 0 ao 0
+11 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 10 1 0
 E
@@ -240,7 +240,7 @@ red candle~
 a red candle~
 A red candle is lying here.~
 ~
-1 0 a 0
+1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 4 0
 1 1 0 0
 E
@@ -253,7 +253,7 @@ tea drink glass island madness cup tea~
 a glass of Island Madness~
 A glass of Island Madness has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 11 0
 8 50 1 0
 #7521
@@ -261,7 +261,7 @@ wind drink glass spirit wine~
 a glass of spirits full~
 A glass of spirits has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 2 0
 7 100 0 0
 #7522
@@ -269,7 +269,7 @@ firebreather coconut cup firebreather~
 a coconut cup~
 A cup made from a coconut has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 7 0
 10 125 0 0
 E
@@ -281,7 +281,7 @@ tail whip iguana~
 a green tail~
 A green tail is lying here twitching.~
 ~
-5 j an 0
+5 j 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 10
 2 10 1 0
 E
@@ -294,7 +294,7 @@ feather anklet~
 a feather anklet~
 A feather anklet is lying here.~
 ~
-11 g af 0
+11 g 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 1 75 7 0
 E
@@ -309,7 +309,7 @@ shark tooth necklace~
 a shark tooth necklace~
 A shark tooth necklace is lying here.~
 ~
-11 gi ac 0
+11 gi 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 110 11 0
 E
@@ -324,7 +324,7 @@ basket~
 an empty basket~
 An empty basket is lying here.~
 ~
-15 0 aeo 0
+15 0 0 0 0 aeo 0 0 0 0 0 0 0
 20 0 -1 0
 1 5 0 0
 E
@@ -337,7 +337,7 @@ bow~
 a small bow~
 A small bow and arrow is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 12
 2 10 1 0
 E
@@ -350,7 +350,7 @@ metal box~
 a metal box~
 A metal box rests on the floor.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 800 0 -1 0
 0 0 0 0
 E
@@ -364,15 +364,9 @@ book journal~
 a large book~
 A heavy book is lying here.~
 ~
-12 g a 0
+12 g 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 5 550 55 0
-E
-book journal~
-   The large book is quite heavy and made of leather.  On the front the
-embossed letters are too faded to read.  But a bookmark page at the end of the
-book looks readable.    
-~
 E
 bookmarked page writing ~
    Today many of the merchants left to find a better location for their wares.
@@ -385,12 +379,18 @@ common people have always had to make do.  I think Zamba is better off without
 all the tourist and having to follow the laws of all the surrounding town.  We
 are much better off being apart from outsiders.    
 ~
+E
+book journal~
+   The large book is quite heavy and made of leather.  On the front the
+embossed letters are too faded to read.  But a bookmark page at the end of the
+book looks readable.    
+~
 #7530
 black robe~
 a black robe~
 A black robe is lying here.~
 ~
-9 ab ak 0
+9 ab 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 2 2 0 0
 E
@@ -404,7 +404,7 @@ petal shield yellow ~
 a yellow petal~
 A yellow petal from the Zamba hook plant is lying here.~
 ~
-9 g aj 0
+9 g 0 0 0 aj 0 0 0 0 0 0 0
 1 0 0 0
 5 25 2 0
 E
@@ -420,7 +420,7 @@ pearl hair comb~
 a pearl hair comb~
 A pearl hair comb is lying here.~
 ~
-9 agkl ae 0
+9 agkl 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 1 300 30 0
 E
@@ -435,7 +435,7 @@ ring ~
 a golden ring~
 A golden ring is lying here.~
 ~
-11 gik a 0
+11 gik 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 450 60 0
 E
@@ -449,7 +449,7 @@ ruby bracer~
 a ruby bracer~
 A ruby bracer is lying here.~
 ~
-12 kl am 0
+12 kl 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 2 210 21 0
 E
@@ -464,7 +464,7 @@ emerald bracer~
 an emerald bracer~
 An emerald bracer is lying here.~
 ~
-12 g am 0
+12 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 125 13 0
 E
@@ -479,7 +479,7 @@ skull helmet~
 a skull helm~
 A skull helmet is lying here.~
 ~
-9 gjl ae 0
+9 gjl 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 3 321 35 0
 E
@@ -496,7 +496,7 @@ black powder vial~
 a vial of black powder~
 A vial of black powder is lying here.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 12 16 -1 -1
 5 750 75 0
 E
@@ -509,7 +509,7 @@ a torch~
 a torch~
 A small torch is mounted to the wall.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 6 0
 2 10 1 0
 #7539
@@ -517,7 +517,7 @@ breastplate bone ~
 a bone breastplate~
 A bone breastplate made of human bones is lying here.~
 ~
-9 egjl ad 0
+9 egjl 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 12 125 12 0
 E
@@ -532,7 +532,7 @@ skeleton bone~
 a human skeleton~
 The skeleton remains of a human lie here.~
 ~
-13 h a 0
+13 h 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 500 50 0
 E
@@ -546,7 +546,7 @@ wooden cabinet~
 a  wall sized cabinet~
 A oak cabinet sets against the east wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 1 -1 0
 0 0 0 0
 E
@@ -560,7 +560,7 @@ monocle glass eyewear~
 a clear monocle~
 A monocle is lying here.~
 ~
-11 g ao 0
+11 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 527 52 0
 E
@@ -576,7 +576,7 @@ fountain ice sculpture~
 a fountain ~
 A fountain sets in the center of the room.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 505 0 0 0
 E
@@ -591,7 +591,7 @@ wheel cheese~
 a wheel of cheese~
 A wheel of cheese is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 4 100 10 0
 E
@@ -604,7 +604,7 @@ wine barrel wine~
 a barrel~
 A barrel of wine sets here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 25 25 2 0
 30 87 9 0
 E
@@ -617,7 +617,7 @@ blood decanter blood~
 a tiny decanter~
 A tiny decanter is lying here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 13 1
 10 200 0 0
 E
@@ -629,7 +629,7 @@ silver boots~
 a pair of silver boots~
 A set of silver boots is lying here.~
 ~
-9 ag ag 0
+9 ag 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 3 90 9 0
 E
@@ -644,7 +644,7 @@ key collar~
 a collar~
 A large pet collar is lying here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 50 5 0
 E
@@ -656,7 +656,7 @@ pewter wristband~
 a pewter wristband~
 A pewter wristband is lying here.~
 ~
-11 g am 0
+11 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 3 243 25 0
 E
@@ -673,7 +673,7 @@ seashell necklace~
 a seashell necklace~
 A necklace adorned with seashells is lying here.~
 ~
-11 g ac 0
+11 g 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 10 1 0
 E
@@ -685,7 +685,7 @@ torch~
 a wooden torch~
 A wooden torch is lying here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 6 0
 2 10 1 0
 E
@@ -698,7 +698,7 @@ leather bag~
 a leather bag~
 A leather bag is lying here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 1 -1 0
 3 30 3 0
 E
@@ -710,7 +710,7 @@ scroll~
 an old scroll~
 An old scroll is lying here.~
 ~
-2 ag a 0
+2 ag 0 0 0 a 0 0 0 0 0 0 0
 12 42 -1 -1
 1 750 1 0
 E

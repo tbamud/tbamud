@@ -14,7 +14,7 @@ inerested in a few fish.  This has not really changed, even with the coming of
 the south road, since regular patrols of elite soldiers are assigned to protect
 it and garrison the city itself.    
 ~
-39 adgj 0
+39 585 0 0 0 0
 E
 credits~
    Nivan
@@ -32,7 +32,7 @@ a small stove here, next to the writing desk.  All of the furniture is securely
 bolted to the floor, thus unaffected by the ship's rocking.  The door to the
 north leads back out onto the decks.    
 ~
-39 d 0
+39 8 0 0 0 0
 D0
 ~
 north cabin~
@@ -46,7 +46,7 @@ over the floor, looking comfortable to just rest in.  There is a particularly
 large pile of the softest pillows against the west wall.  Maybe they are for
 Degruziel's favorite girl.    
 ~
-39 d 0
+39 8 0 0 0 0
 D5
 ~
 down~
@@ -63,7 +63,7 @@ and hold your attention, however, is the huge bed in the center of the room.
 It could comfortably sleep three, but looks more to the liking of two.  It
 looks comfortable.    
 ~
-39 0 0
+39 0 0 0 0 0
 D3
 ~
 west door~
@@ -81,7 +81,7 @@ the tower of Degruziel's Manor, the door up there being barred with a very
 LARGE lock.  There is a curtained window looking outside, to the south and the
 sea.  To the north is a plain, low door.    
 ~
-39 d 0
+39 8 0 0 0 0
 D0
 ~
 north~
@@ -108,7 +108,7 @@ south.  There are several mats lying out on the middle of the floor, and a
 drawn-back curtain seperates the room into sections.  The mats, though only
 filled with straw, look pretty comfortable.    
 ~
-39 d 0
+39 8 0 0 0 0
 D2
 ~
 south~
@@ -121,7 +121,7 @@ door swings swiftly shut behind you!  You are trapped in the dank room.  You
 are able to make out manacles on the north wall.  A filthy pile of cloth is
 heaped against the west wall.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D3
 ~
 pile secret cloth~
@@ -141,7 +141,7 @@ perched on its tail, water spurting from its mouth.  Back to the east the red
 carpet begins again, while the stairs lead up to the second floor of the Manor.
   
 ~
-39 d 0
+39 8 0 0 0 0
 D1
 ~
 ~
@@ -161,7 +161,7 @@ marble stands that are themselves sculptures.  Here the stone floor has been
 covered in rich red carpet.  To the north is a small plain door, and to the
 west is a twin set of double, majestically curving staircases.    
 ~
-39 d 0
+39 8 0 0 0 0
 D0
 ~
 north~
@@ -188,7 +188,7 @@ walls are lined in shelves which are covered in books.  Behind the high-backed
 wooden chair is a small painting, and on the north wall is a window facing into
 the garden.    
 ~
-39 d 0
+39 8 0 0 0 0
 D2
 ~
 south~
@@ -209,7 +209,7 @@ enough to seat twelve.  Tapestries cover the stone walls.  From the archway to
 the east drift pleasant smells, while to the west, across a distance filled
 with art, you can see a double curving stairway.    
 ~
-39 d 0
+39 8 0 0 0 0
 D0
 ~
 door north~
@@ -233,7 +233,7 @@ while the posts are exquisitely carved into fish sitting on their tails, with
 their mouths around the railing.  Their jeweled eyes wink in the light.  The
 door is a large, fanciful myriad of carvings depicting a local legend.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -248,6 +248,12 @@ D2
 door south~
 1 0 3910
 E
+door legend~
+   The carvings on the door show a scene of one of Haven's greatest heros,
+Delegarthe Haven himself, slaying the dreaded sea dragon and making Haven a
+safe place to fish.    
+~
+E
 railing fish carving porch~
    Before you is the masterfully decorated porch.  It is roofed in red tiles.
 The railings are all one piece of wood, a flowing flowery vine.  The flowers
@@ -256,12 +262,6 @@ railing up are of the same piece of wood as the railing itself, and are of
 Haven's main export, fish, standing on their tails and supporting the vine with
 thier mouths.  The sapphires that form the eyes of the fish twinkle merrily,
 almost making you believe the fish to be alive.    
-~
-E
-door legend~
-   The carvings on the door show a scene of one of Haven's greatest heros,
-Delegarthe Haven himself, slaying the dreaded sea dragon and making Haven a
-safe place to fish.    
 ~
 S
 #3912
@@ -273,7 +273,7 @@ are the bustling serving girls.  A cooling rack for bread is fastened against
 one wall, while a cellar entrance is not to far away from the archway leading
 back to the parlor.    
 ~
-39 d 0
+39 8 0 0 0 0
 D3
 ~
 ~
@@ -292,7 +292,7 @@ are strong, and the soft sounds of stable boys calming some of the more skitish
 horses that were startled by your entry can be heard in the far back of the
 complex over the swish of tails and the periodic whinny.    
 ~
-39 d 0
+39 8 0 0 0 0
 D3
 ~
 west stable door~
@@ -309,7 +309,7 @@ festively from the branches of the many trees, and animals cavort under them,
 unafraid.  The cart path continues both toward the street and toward the porch,
 up to you to choose the way.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -319,15 +319,15 @@ D2
 ~
 0 0 3911
 E
-animal animals~
-   Rabbits, foxes, birds, and other small mammals dart under the trees and
-across your path, absoluetly unafraid.    
-~
-E
 flower everblooming flowers ever blooming vine vines~
    The flowers are in many hues and give off meny scents that mix to make an
 overall pleasant purfume.  The plants have been magically altered to produce
 sweet blooms, even in the dead of winter.    
+~
+E
+animal animals~
+   Rabbits, foxes, birds, and other small mammals dart under the trees and
+across your path, absoluetly unafraid.    
 ~
 S
 #3915
@@ -339,7 +339,7 @@ high that if you are not careful and wary of your step they might collapse,
 crushing you.  This is obviously where the current inhabitants of the Hideout
 store the majority of their booty.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D0
 ~
 ~
@@ -358,7 +358,7 @@ room is way to dim to see the edges of, but it echos as though the chamber is
 very large.  Water drips somewhere to the east, pinging in the bottom of an
 unseen pot.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D3
 ~
 ~
@@ -372,7 +372,7 @@ expensive imported rugs on the floor.  The shadows in this room are deep and
 sinister.  You get the feeling it would be wise to keep an eye open for
 trouble.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D0
 ~
 ~
@@ -392,7 +392,7 @@ but now its bright tapestries are faded and covered in dust, the red carpet
 rotten and ready to fall apart.  Even the full-sized portrait on the east wall
 is faded beyond recognition.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D1
    The portrait here is faded beyond recognition, but perhaps in the shadows of
 dust you can make out the form of a smiling woman.    
@@ -415,7 +415,7 @@ mournful, with the boards of the floor and both the stone walls and ceiling
 painted black.  The small current of flowing air ripples the black fabric
 covering the arch to the north.    
 ~
-39 d 0
+39 8 0 0 0 0
 D0
 ~
 ~
@@ -435,7 +435,7 @@ Golden nuggets and jewels of all colors sparkle through the gaps in the wood,
 reflecting light from the light spell cast upon a globe of rock in the center
 of the room.  So tantalizing...  Too bad you can't touch them.
 ~
-39 d 0
+39 8 0 0 0 0
 D3
 ~
 west~
@@ -448,7 +448,7 @@ shadows cast by the single black candle, whose flame burns blue in the room.
 It sets on the simple table, the only furniture.  A rather plain tapestry rests
 hanging from the east wall.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D1
 ~
 secret tapestry~
@@ -466,7 +466,7 @@ it, the north a wolf's, and the south a bear's.  Another single candle lights
 this room, casting long shadows around the mismatches furniture and stolen
 tapestries.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D0
 ~
 ~
@@ -494,7 +494,7 @@ scattered around on the wooden floor.  The light is dim - a single candle
 leaves many conspicuous shadows around the room.  There is a glow through the
 archway to the east, also.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D1
 ~
 ~
@@ -515,7 +515,7 @@ wouldn't even want to think of.  The much is shallow, only up to your knees.
 It churns violently in some places, as if there are living things under it.  
 There is a wooden crate in the corner here, sunk into the muck.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D0
 ~
 ~
@@ -541,7 +541,7 @@ aboe, green with moss that thrives in the moist air.  It would be a tight
 squeeze, but you also think you might be able to edge between the wood and the
 rocks to the north, but your ability to return is indeed questionable.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 <NONE>~
@@ -566,7 +566,7 @@ wouldn't even want to think of.  The much is shallow, only up to your knees.
 It churns violently in some places, as if there are living things under it.  
 
 ~
-39 ad 0
+39 9 0 0 0 0
 D0
 ~
 ~
@@ -582,7 +582,7 @@ Knee Deep~
 Will you not reconsider and turn back?  The waters are dark and you can not see
 anything below the surface except for a few small fish.    
 ~
-39 0 0
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -599,7 +599,7 @@ wouldn't even want to think of.  The muck is shallow, only up to your knees.
 It churns violently in some places, as if there are living things under it.  
 Against the wall there is a ladder, ending in a trap door.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D3
 ~
 ~
@@ -621,7 +621,7 @@ wouldn't even want to think of.  The much is shallow, only up to your knees.
 It churns violently in some places, as if there are living things under it.  
 
 ~
-39 ad 0
+39 9 0 0 0 0
 D1
 ~
 ~
@@ -646,7 +646,7 @@ wouldn't even want to think of.  The much is shallow, only up to your knees.
 It churns violently in some places, as if there are living things under it.  
 
 ~
-39 ad 0
+39 9 0 0 0 0
 D1
 ~
 ~
@@ -666,7 +666,7 @@ blur.  Skinnier men dart here and there, what they are doing quite unapparent
 to you.  There is a trap door leading to below the decks not far from where you
 stand, while to the south is the door of a cabin.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -687,7 +687,7 @@ dark.  Apparently they have finished unloading cargo and have let their men go
 into the city.  To the east is a bare, wet, windswept area of docks.  Funny,
 but for all the traffic elsewhere nobody is on that section.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -707,7 +707,7 @@ all the way out to the jagged rocks that waves crash against the other side of,
 throwing spray into the air.  It is a good thing those rocks are there to act
 as breakers, or this beautiful beach wouldn't be swimable.    
 ~
-39 0 2
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -728,7 +728,7 @@ rocks below.  It would be wise not to step to close - the wind past the
 entrance is swift, though the inside of the workroom is strangely calm.  There
 is a heavy sea chest against the east wall.    
 ~
-39 d 0
+39 8 0 0 0 0
 D2
 ~
 ~
@@ -748,7 +748,7 @@ line, waiting for the front cart to be filled and rush off to the market so
 that they may move up and have their own filled.  A plank ramp leads up onto
 the deck.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -772,7 +772,7 @@ the shore, while further out waves crash into treacherous rocks.  There is a
 slippery rope ladder over the side here, hanging down into the darkness under
 docks.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -790,7 +790,7 @@ rushing both to the market and to the docks, the wideness of the road makes it
 somehow less crowded.  There is loud, bawdy singing to the east somewhere, and
 a sandy beach to the south, strangely flat.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -816,7 +816,7 @@ open door spills the smells of beer and heavier drinks out onto the street,
 along with the bawdy drinking songs the patrons are singing.  Above the door is
 nailed a cracked mug.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 north~
@@ -843,7 +843,7 @@ rush of the ever-present sea breeze.  Looking to the east you can see the rush
 of men on to and off of the dock entrance that is there, while to the west the
 area is peaceful.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -862,7 +862,7 @@ heavily in the air in the hazy room, and the tables are spread near together on
 the dirty floor.  To the north a short, muscular, young bar keeper is polishing
 glasses with a dirty rag when he isn't serving drinks.    
 ~
-39 d 0
+39 8 0 0 0 0
 D2
 ~
 south~
@@ -876,7 +876,7 @@ through the residential section of Haven, and to the south are mostly houses.
 The cobbles here are clean, and the smell of salt is strong.  To the north the
 land slopes upward, keeping Haven in its beautiful vale.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -893,7 +893,7 @@ you can see to the east and west.  To the south is Market Path, and beyond that
 you can see flashes of color.  To the north the land continues to slope
 upwards, keeping Haven in its beautiful vale.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -915,7 +915,7 @@ It runs through the residential section of Haven, and to the south are mostly
 houses.  The cobbles here are clean, and the smell of salt is strong.  To the
 north the land slopes upward, keeping Haven in its beautiful vale.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -933,7 +933,7 @@ section of Haven, and to the south are mostly houses.  The cobbles here are
 clean, and the smell of salt is strong.  To the north the land slopes upward,
 keeping Haven in its beautiful vale.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -951,7 +951,7 @@ It runs through the residential section of Haven, and to the south are mostly
 houses.  The cobbles here are clean, and the smell of salt is strong.  To the
 north the land slopes upward, keeping Haven in its beautiful vale.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -970,7 +970,7 @@ you.  Cackling, insane laughter and assorted gibberish can also be heard from
 the darkness created by the overhanging roofs.  It really isn't a wonder people
 hurry past with their noses covered by handkerchiefs.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -993,7 +993,7 @@ cobbles here are clean, and the smell of salt is strong.  To the north the land
 slopes upward, keeping Haven in its beautiful vale.  To the south the town
 spreads before your view like a colorful map.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -1012,7 +1012,7 @@ the vale that Haven now lies in is now nothing more than quick stream.  On the
 other side of the stream begins a dense forest, the leafy foliage and dense
 undergrowth so thick that you can see nothing else.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -1032,7 +1032,7 @@ residents occasionally pass you, smiling happily.  To the west is the
 intersection with Riverwalk, which hardly has any more people than South Gull
 Road has.  There are white benches that you might rest on, however.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -1051,7 +1051,7 @@ tables near here, obviously a mess.  To the north barrels of water are securely
 tied, in the case of the sailors and fishermen getting struck at sea by a
 storm.    
 ~
-39 ad 0
+39 9 0 0 0 0
 D4
 ~
 up hatch trap door trapdoor~
@@ -1064,7 +1064,7 @@ road, in small areas before pleasant homes.  To the east beyond a small grassy
 bank the quick stream gurgles merrily on its way to the south and the sea.  
 People stroll slowly along, enjoying the shade and looking at the river.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1083,7 +1083,7 @@ People stroll slowly along, enjoying the shade and looking at the river.  A few
 couples sit on the grass on the bank of the river, talking in low voices as the
 look at each other with love.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1101,7 +1101,7 @@ up and down South Gull Road, and those just resting on the benches.  There is
 even a platform here where a bard might perform.  It is a very peaceful
 intersection.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1124,7 +1124,7 @@ People stroll slowly along, enjoying the shade and looking at the river.  This
 is such a nice place, it is no wonder some people just walk along Riverwalk all
 day, enjoying the scenery.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1142,7 +1142,7 @@ bank the quick stream gurgles merrily on its way to the south and the sea.
 People stroll slowly along, enjoying the shade and looking at the river, which
 gurgles even louder as it flows over the small rocks here.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1160,7 +1160,7 @@ bank the quick stream gurgles merrily on its way to the south and the sea.
 People stroll slowly along, enjoying the shade and looking at the river.  To
 the south there is an intersection, marking the southern end of Riverwalk.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1182,7 +1182,7 @@ utmost caution.  The open door to the west leads back to Market Path, while
 Mithroq the minotaur stands behind a counter to the east, sharpening a giant
 sword and looking ready to help you.    
 ~
-39 cdeh 0
+39 156 0 0 0 0
 D3
 ~
 ~
@@ -1199,7 +1199,7 @@ sword.  There is also a short, thin gentleman here in rich silk clothes, quite
 obviously Milos the Banker of Haven.  The door to the south leads back to South
 Gull Road.    
 ~
-39 deh 0
+39 152 0 0 0 0
 D2
 ~
 ~
@@ -1213,7 +1213,7 @@ waves crashing against rocks somewhere to the south fills the air, along with
 the screams of assorted seabirds.  The salty breeze blows a fine, refreshing
 mist onto you face.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1235,7 +1235,7 @@ The far-off sound of waves pounding rocks comes faintly to your ears.  To the
 south there is a beautiful sandy beach, and the screams of children can be
 heard mingled with the cries of gulls.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -1254,7 +1254,7 @@ south there is a beautiful sandy beach, and the screams of playing children can
 be heard mingled with the cries of gulls.  You can also see the outline of
 jagged rocks far off on the horizon.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -1277,7 +1277,7 @@ far-off sound of waves pounding rocks comes faintly to your ears.  To the south
 there is a beautiful sandy beach, and the screams of children can be heard
 mingled with the hungry cries of gulls.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -1301,7 +1301,7 @@ left in a hurry to the beach to retrieve a child, or maye they went to the
 market for some last minute supplies.  The wind whistles through the cracks on
 the boulders and would set all but a deaf person's teeth on edge.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1325,7 +1325,7 @@ Shops line the east, but it appears most of the owners are out to the market.
 One shop is still open, one with a hanging sign nailed above the door,
 portraying a smoking vial.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1347,7 +1347,7 @@ day's find at the market back to their homes.  There is only one shop with its
 door still left open, begging for buisness.  It has a sign nailed above the
 door, one of a crossed sword and mace.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1369,7 +1369,7 @@ your presence before turning back to her cauldron, adding a pinch of a
 strange-smelling herb to the foaming pot.  Other assorted herbs hang from the
 ceiling and both empty and full vials and bottles fill the shelves on the wall.
 ~
-39 cdeh 0
+39 156 0 0 0 0
 D3
 ~
 ~
@@ -1385,7 +1385,7 @@ do for the ships further down.  The merchant vessels have sails of many colors,
 with flags from assorted kingdoms.  To the north the street is a bit far off,
 while to the south there are some of Haven's famous fishing vessels.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1406,7 +1406,7 @@ merrily, all the way out to the jagged rocks that waves crash against the other
 side of, throwing spray into the air.  It is a good thing those rocks are there
 to act as breakers, or this beautiful beach wouldn't be swimable.    
 ~
-39 0 2
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1425,7 +1425,7 @@ is another small stretch of quicksand beach before the docks begin.  To the
 south the sea begins, pounding aginst the jagged rocks in the quickly deepening
 water.    
 ~
-39 0 6
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1444,7 +1444,7 @@ Are the thick, tall pillars that support the huge docks.  The area under the
 docks is dark.  To the south the sea begins, pounding aginst the jagged rocks
 in the quickly deepening water.    
 ~
-39 0 6
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1467,7 +1467,7 @@ many jagged rocks upon which the waves break.  To the west Sandy Path, earned
 of its name, travels unbroken.  To the east is a wooden shack with a sign
 depicting a boat nailed over the door.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1500,7 +1500,7 @@ The old man looks up as you enter, quickly jumping behind a counter against the
 eastern wall.  Behind the counter there is a squat door leading to a back room,
 presumably Aramut's workshop.    
 ~
-39 cdeh 0
+39 156 0 0 0 0
 D1
 ~
 ~
@@ -1522,7 +1522,7 @@ inhabitants of this alley shy away from the small amount of light streaming in
 from the south and the intersection, their eyes accustomed to darkness and hurt
 by the natural light.    
 ~
-39 a 1
+39 1 0 0 0 0
 D0
 ~
 ~
@@ -1543,7 +1543,7 @@ not much of a wonder that the people of Haven avoid this place.  The people at
 the comparatively light intersection to the north hurry past with their heads
 down.    
 ~
-39 a 1
+39 1 0 0 0 0
 D0
 ~
 ~
@@ -1562,7 +1562,7 @@ throws you down into the bone-chilling water with a SPLASH!!  As you surface,
 before you have even the slightest time to react, you are dashed against the
 jagged rocks by the pounding waves.    
 ~
-39 c 0
+39 4 0 0 0 0
 S
 T 3911
 #3976
@@ -1576,7 +1576,7 @@ crash hard against the other side of those rocks, throwing spray into the air.
 It is a good thing those rocks are there to act as breakers, or this beautiful
 beach wouldn't be swimable.    
 ~
-39 0 2
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1600,7 +1600,7 @@ the south you can hear the crash of waves breaking on rocks.  If you squint
 perhaps you can see a bit of the shimmering blue of reflected light where the
 winding road breaks between the many houses and establishments.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1622,7 +1622,7 @@ people moving in all directions.  You can also glimpse the great gate of Haven
 to the south, and flashes of colorful canopies to the north.  One might wonder
 why so many people would be attracted to a fish market, of all things.    
 ~
-39 0 0
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1641,7 +1641,7 @@ outrageous costumes and with all sorts of accents merchants yell of their
 wares, vying for your attention.  In a crowd such as this, one to make even you
 claustrophobic, it would be wise to keep you hands near your belt pouch.    
 ~
-39 0 0
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -1664,7 +1664,7 @@ outrageous costumes and with all sorts of accents merchants yell of their
 wares, vying for your attention.  In a crowd such as this, one to make even you
 claustrophobic, it would be wise to keep you hands near your belt pouch.    
 ~
-39 0 0
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1688,7 +1688,7 @@ across the single window facing to the south and Sandy Path, serving as a
 curtain.  There is a bin of fish, Haven's main staple, against the west wall.
 The small floor, what isn't covered by a rug, is neatly swept dirt.    
 ~
-39 0 1
+39 0 0 0 0 0
 D2
 ~
 ~
@@ -1705,7 +1705,7 @@ the iron maiden.  Some of those instruments would make even the most
 hard-hearted and evil of the realm balk.  There is a heavy iron door to the
 west, with a small slit for looking inside to check on the prisoners.    
 ~
-39 d 0
+39 8 0 0 0 0
 D3
 ~
 west door prison~
@@ -1730,7 +1730,7 @@ might have been magnificant, the square, but now the once-beautiful fountain is
 just a granite-incased stagnant puddle, and the square itself is horribly dirty
 and in disrepair.    
 ~
-39 0 1
+39 0 0 0 0 0
 D3
 ~
 ~
@@ -1759,7 +1759,7 @@ not much of a wonder that the people of Haven avoid this place, using it only
 as a dump.  Light streams in from the east, almost allowing you to see the
 path.    
 ~
-39 a 1
+39 1 0 0 0 0
 D0
 ~
 ~
@@ -1779,7 +1779,7 @@ watch you from the shadows, hostile and almost as large as small cats.  It is
 not much of a wonder that the people of Haven avoid this place.  Somewhere to
 the south there is the soft glow of light.    
 ~
-39 a 1
+39 1 0 0 0 0
 D0
 ~
 ~
@@ -1798,7 +1798,7 @@ to come from everywhere and nowhere at once.  Rats scurry around your feet and
 watch you from the shadows, hostile and almost as large as small cats.  It is
 not much of a wonder that the people of Haven avoid this place.    
 ~
-39 a 1
+39 1 0 0 0 0
 D0
 ~
 ~
@@ -1817,7 +1817,7 @@ alley might be reflections of light in animal...  or human...  eyes.  It isn't
 a wonder people hurry past this intersection with worried glances to the north
 and south.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1844,7 +1844,7 @@ their scents to the breeze that sweeps across the clean cobbles.  Strolling
 residents occasionally pass you, smiling happily.  Perhaps they don't hear the
 soft maniacal laughter that comes from somewhere to the east.    
 ~
-39 0 1
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -1866,7 +1866,7 @@ golden light onto the street.  Through the tiny, barred window you can catchi
 glimpses of well-armed guards and a sparkling pile of what appears to be gold
 coins.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1889,7 +1889,7 @@ their scents to the breeze that sweeps across the clean cobbles.  Strolling
 residents occasionally pass you, smiling happily.  Somewhere to the southeast
 you can see the tall white tower of the Lord of Haven's Manor House.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1910,7 +1910,7 @@ way.  To the south the white tallness of the tower protruding from the manor
 that lies there is like a bone finger raised in realization of the answer to a
 pressing question.    
 ~
-39 0 0
+39 0 0 0 0 0
 D1
 ~
 ~
@@ -1934,7 +1934,7 @@ wares, vying for your attention.  In a crowd such as this, one to make even you
 claustrophobic, it would be wise to keep you hands near your belt pouch.  To
 the west you spot a small, uncrowded opening leading to blue sky.    
 ~
-39 0 0
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1957,7 +1957,7 @@ outrageous costumes and with all sorts of accents merchants yell of their
 wares, vying for your attention.  In a crowd such as this, one to make even you
 claustrophobic, it would be wise to keep you hands near your belt pouch.    
 ~
-39 0 0
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -1981,7 +1981,7 @@ wares and people yelling to each other in general are almost overwhelming.  To
 the south the throng thins into a crowd, and to the north you see the same sort
 of encounter you see here.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -2005,7 +2005,7 @@ wares and people yelling to each other in general are almost overwhelming.  To
 the north the throng thins into a crowd, and to the south you see the same sort
 of encounter you see here.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
    The road is in the same condition as here - CROWDED.    
 ~
@@ -2029,7 +2029,7 @@ people moving in all directions.  You can also glimpse the great gate of Haven
 to the north, and flashes of colorful canopies to the south.  One might wonder
 why so many people would be attracted to a fish market, of all things.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
 ~
 ~
@@ -2040,6 +2040,14 @@ D2
 ~
 0 0 3995
 E
+color canopies colorful~
+   As you look intently to the south and the flashes of color you can see that
+the canopies are really lots of tightly woven blankets stitched together.  It
+probably serves to keep the sun off the customers and merchants.  It doesn't
+really look like a canopy, but more of a colorful roof over the marketplace,
+billowing in the wind.    
+~
+E
 traffic people~
    People, mules, horses, and all manner of things race along the road here, in
 a hurry to get to wherever it is they want to go.  The ones headed to the south
@@ -2047,14 +2055,6 @@ carry empty baskets, the cartsmen with their full loads yelling loudly at their
 straining animals.  The ones heading north lug heavy baskets full of the day's
 find at the market, their expressions pleased that they got the best of the
 pesky merchants.  Didn't they?    
-~
-E
-color canopies colorful~
-   As you look intently to the south and the flashes of color you can see that
-the canopies are really lots of tightly woven blankets stitched together.  It
-probably serves to keep the sun off the customers and merchants.  It doesn't
-really look like a canopy, but more of a colorful roof over the marketplace,
-billowing in the wind.    
 ~
 S
 #3997
@@ -2066,7 +2066,7 @@ Over the clacking of hooves on cobbles and catcalls from neighbors to each
 other you can hear the dull, background roar of sea surf crashing onto rocks.
 The air is hot and humid enough to make the slight breeze refreshing.    
 ~
-39 0 1
+39 0 0 0 0 0
 D0
    To the north there is a magnificant city gate.    
 ~
@@ -2079,14 +2079,6 @@ toward the market.
 ~
 0 0 3996
 E
-color canopies colorful~
-   As you look intently to the south and the flashes of color you can see that
-the canopies are really lots of tightly woven blankets stitched together.  It
-probably serves to keep the sun off the customers and merchants.  It doesn't
-really look like a canopy, but more of a colorful roof over the marketplace,
-billowing in the wind.    
-~
-E
 people traffic~
    People, mules, horses, and all manner of things race along the road here, in
 a hurry to get to wherever it is they want to go.  The ones headed to the south
@@ -2094,6 +2086,14 @@ carry empty baskets, the cartsmen with their full loads yelling loudly at their
 straining animals.  The ones heading north lug heavy baskets full of the day's
 find at the market, their expressions pleased that they got the best of the
 pesky merchants.  Didn't they?    
+~
+E
+color canopies colorful~
+   As you look intently to the south and the flashes of color you can see that
+the canopies are really lots of tightly woven blankets stitched together.  It
+probably serves to keep the sun off the customers and merchants.  It doesn't
+really look like a canopy, but more of a colorful roof over the marketplace,
+billowing in the wind.    
 ~
 S
 #3998
@@ -2107,7 +2107,7 @@ leaping fish.  Five feet tall themselves, their jeweled eyes winking, they are
 in the direct center of each gate.  You can tell by the reverant glances of
 those passing by that the people of the town are very proud of their gate.    
 ~
-39 0 1
+39 0 0 0 0 0
 D2
    To the south you see a relatively narrow, crowded winding road leading
 toward the market.    
@@ -2131,6 +2131,6 @@ A Linking Room~
    This zone will link north to room 3472.  Build all rooms south of that
 connection point.  
 ~
-39 j 0
+39 512 0 0 0 0
 S
 $~

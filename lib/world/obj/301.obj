@@ -3,7 +3,7 @@ key small red~
 a red key~
 A small red key has been left here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -15,7 +15,7 @@ key brass~
 a brass key~
 An worn brass key lies idlely on the ground here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -27,24 +27,24 @@ oreo~
 an Oreo(tm) cookie~
 A moldy, dust covered Oreo(tm) cookie has been discarded here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
-E
-oreo~
-   It isn't a pretty sight.  You could not bring yourself to eat this!  
-~
 E
 tm trademark~
    Oreo is a registered trademark of Christie Brown & Co.  A division of Nabisco
 Brands Ltd.  
+~
+E
+oreo~
+   It isn't a pretty sight.  You could not bring yourself to eat this!  
 ~
 #30103
 key small iron~
 a small iron key~
 A small iron key hangs from a hook here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -56,7 +56,7 @@ key small iron~
 a small iron key~
 A small iron key lies on a desk here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -68,7 +68,7 @@ steak salisbury tray~
 a salisbury steak~
 A tray of Mary Rotte salisbury steak has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 1
 2 10 0 0
 E
@@ -80,7 +80,7 @@ burger garden~
 a garden burger~
 A Mary Rotte garden burger lies here, lonely.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 1
 1 8 0 0
 E
@@ -92,7 +92,7 @@ eggs fried~
 some fried eggs~
 Some Mary Rotte fried eggs sit here slowly hardening.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 1
 1 2 0 0
 E
@@ -104,7 +104,7 @@ dish lyonnaise potatoes~
 a dish of lyonnaise potatoes~
 A dish of Mary Rotte lyonnaise potatoes wobbles around here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 1
 1 5 0 0
 E
@@ -116,7 +116,7 @@ calzone~
 a calzone~
 A Mary Rotte calzone cools here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 10 0 0
 E
@@ -128,7 +128,7 @@ barbells~
 a set of barbells~
 A HUGE set of barbells lies here, gathering dust.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 100 0 0
 E
@@ -140,7 +140,7 @@ condom~
 a condom~
 A condom has been carefully placed here.~
 ~
-9 g ae 0
+9 g 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 5 0 0
 E
@@ -154,7 +154,7 @@ tam~
 a tam~
 A tam is here...~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 E
@@ -168,7 +168,7 @@ tray blue~
 a blue tray~
 No it couldn't be... a blue tray!~
 ~
-9 g aj 0
+9 g 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
 1 100 0 0
 E
@@ -181,7 +181,7 @@ hairnet~
 a hairnet~
 A hairnet has been thrown away here.~
 ~
-9 a ae 0
+9 a 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 1 1 0 0
 E
@@ -193,7 +193,7 @@ flashlight light~
 a flashlight~
 A long flashlight has been dropped here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 2 4 7
 8 150 0 0
 E
@@ -205,7 +205,7 @@ jacket yellow~
 a yellow jacket~
 A nice yellow jacket has been carefully hung here.~
 ~
-9 gk ak 0
+9 gk 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
 15 200 0 0
 E
@@ -217,7 +217,7 @@ knife evil~
 an evil knife~
 An evil knife lies on the ground here.~
 ~
-5 k an 0
+5 k 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 11
 5 300 0 0
 E
@@ -229,7 +229,7 @@ key silver~
 a small silver key~
 A small silver key lies forgotten here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -241,7 +241,7 @@ key brass~
 a small brass key~
 A small brass key lies forgotten here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -253,7 +253,7 @@ blade darkness~
 the Blade of Darkness~
 A dark, incredibly sharp blade lies on the ground here.~
 ~
-5 fgjl an 0
+5 fgjl 0 0 0 an 0 0 0 0 0 0 0
 0 3 7 11
 10 500 0 5
 E
@@ -268,7 +268,7 @@ cloak twilight~
 Twilight cloak~
 A dark brown-to-black cloak has been left here.~
 ~
-9 fgjl ak 0
+9 fgjl 0 0 0 ak 0 0 0 0 0 0 0
 6 0 0 0
 11 102 0 0
 #30122
@@ -276,7 +276,7 @@ sword mage bane magebane~
 Magebane~
 An oddly shaped sword lies here.~
 ~
-5 abh ano 0
+5 abh 0 0 0 ano 0 0 0 0 0 0 0
 0 2 9 11
 10 1000 0 0
 E
@@ -292,7 +292,7 @@ orb obsidian~
 the obsidian orb~
 An Obsidian orb is emoting darkness here.~
 ~
-1 fjk ao 0
+1 fjk 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -308,17 +308,17 @@ gpa golden party armor~
 Golden Party Armor~
 A beautiful Golden jacket has been left here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
 22 543 22 0
+E
+crest~
+   The crest seems to portray the numbers 9 and 7.  
+~
 E
 gpa golden party armor~
    This gold leather jacket looks rather beaten up, but it still looks like it
 will last forever.  You can see a crest of sorts on the left breast.  
-~
-E
-crest~
-   The crest seems to portray the numbers 9 and 7.  
 ~
 A
 9 2
@@ -327,7 +327,7 @@ furry hat~
 a Furry Hat~
 An extremely Furry Hat has been carefully hung on the wall here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 3 133 0 0
 E
@@ -341,7 +341,7 @@ boots work~
 an old pair of work boots~
 A pair of boots has been left here.~
 ~
-9 a ag 0
+9 a 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 10 65 0 0
 E
@@ -353,7 +353,7 @@ vest silver~
 a shiny silver vest~
 A nice, shiny, silver vest has been lost here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 20 100 0 0
 E
@@ -365,7 +365,7 @@ hairbrush silver hair brush object~
 a lovely silver hairbrush~
 A silver object has been dropped here.~
 ~
-22 0 ae 0
+22 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 30 143 0 0
 E
@@ -378,7 +378,7 @@ extension cord~
 the extension cord~
 A long extension cord stretches to the north and south.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -391,7 +391,7 @@ extension cord~
 the extension cord~
 A cord comes in from the street and is plugged in an outlet to the east.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -404,7 +404,7 @@ extension cord~
 the extension cord~
 An cord comes from the back of the Coke Machine and stretches to the north.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -417,7 +417,7 @@ extension cord~
 the extension cord~
 A long extension cord stretches to the south and into a building to the east.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -431,25 +431,25 @@ world xeen~
 the World of Xeen(tm)~
 The World of Xeen(tm) game is sitting here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 42 123 0 0
-E
-tm trademark~
-   World of Xeen is a registered trademark of New World Computing.  As are the
-Might & Magic games (IV and V).  
-~
 E
 world xeen~
    This game is a combination of Might & Magic IV and V (tm) and takes up a lot
 of hard drive space.  Almost 42 megabytes in fact!  
+~
+E
+tm trademark~
+   World of Xeen is a registered trademark of New World Computing.  As are the
+Might & Magic games (IV and V).  
 ~
 #30134
 sword long longsword~
 a long sword~
 An ordinary long sword gathers dust here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
 12 600 0 0
 E
@@ -461,7 +461,7 @@ t-square t square death~
 a T-square of Death~
 A T-square has been carelessly discarded here.~
 ~
-5 agh an 0
+5 agh 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 3
 9 250 0 0
 E
@@ -475,7 +475,7 @@ apple~
 a pale apple~
 An extremely pale apple sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 3 0 0
 E
@@ -487,7 +487,7 @@ milk bottle milk~
 a bottle~
 A bottle with a brightly colored label sits here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 4 4 10 0
 9 10 0 0
 E
@@ -500,7 +500,7 @@ wine carafe wine~
 a carafe~
 A wooden carafe sits on a table here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 2 0
 13 20 0 0
 E
@@ -512,7 +512,7 @@ firebreather glass shotglass firebreather~
 a shotglass~
 A shotglass has been discarded here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 7 0
 7 15 0 0
 E
@@ -524,7 +524,7 @@ water popcoke coke pop can water~
 a can of PopCoke~
 A can of PopCoke awaits you here, cool and refreshing.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 15 0
 1 10 0 0
 E
@@ -538,7 +538,7 @@ candy bar~
 a candy bar~
 A candy bar is here!~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 3 0 0
 E
@@ -551,7 +551,7 @@ key steel~
 a large steel key~
 A large steel key lies hidden here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 7 1 0 0
 E
@@ -563,7 +563,7 @@ copy golden world~
 a copy of Golden World~
 A copy of Golden World lies here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -576,7 +576,7 @@ water bottle water~
 a bottle~
 A large Water Bottle stands in the corner.~
 ~
-17 0 0 0
+17 0 0 0 0 0 0 0 0 0 0 0 0
 2000 2000 0 0
 2005 0 0 0
 E
@@ -589,7 +589,7 @@ key vic~
 the Key to Vic~
 A key elusively lies quite convincingly.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -602,7 +602,7 @@ computer~
 a computer~
 A computer sits quietly in the corner.~
 ~
-13 ab 0 0
+13 ab 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -622,7 +622,7 @@ letter~
 a letter~
 A letter lies here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -635,7 +635,7 @@ mail~
 some mail~
 A piece of mail is here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -648,7 +648,7 @@ parcel~
 a parcel~
 A large parcel stands here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 25 13 30199 0
 10 1 0 0
 E
@@ -661,7 +661,7 @@ milk dispenser milk~
 a milk dispenser~
 A milk dispenser sits at the back of the auditorium.~
 ~
-13 b a 0
+13 b 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 1 0 0
 E
@@ -673,7 +673,7 @@ milk carton white milk~
 a carton of white milk~
 A cool carton of refreshing milk catches your eye.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 10 0
 2 20 0 0
 E
@@ -685,7 +685,7 @@ milk chocolate carton milk~
 a carton of chocolate milk~
 A cool carton of refreshing milk catches your eye.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 10 0
 2 21 0 0
 E
@@ -697,24 +697,20 @@ map~
 a map of the campus~
 A handy-dandy map of the campus is standing here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
-part2~
-   .
-                      |                                   |
-                      |                                   |
-          Ellis - University -- Corry-Mack    Campus - Division
-           Hall     Avenue       Building    Bookstore   Road
-                      |             |            |        |
-                      |             |            |        |
-<--To ------ Campus - Crossroads - C.C -------- C.C. - Division
-< Entrance  Crescent  |             |                    Road
-               |      |             |                     |
-         Mary Rotte - U.A.       Student                 \|/
-          Cafeteria   |          Health                 Wally
-                     \|/         Services               World
+map~
+   To see the map, type "look part1" and "look part2".  There is also an
+inscription on the map.  
+~
+E
+inscription~
+   The inscription reads:
+
+        i'd rather die than give you control...
+
 ~
 E
 part1~
@@ -737,23 +733,27 @@ part1~
                       |                                   |
 ~
 E
-inscription~
-   The inscription reads:
-
-        i'd rather die than give you control...
-
-~
-E
-map~
-   To see the map, type "look part1" and "look part2".  There is also an
-inscription on the map.  
+part2~
+   .
+                      |                                   |
+                      |                                   |
+          Ellis - University -- Corry-Mack    Campus - Division
+           Hall     Avenue       Building    Bookstore   Road
+                      |             |            |        |
+                      |             |            |        |
+<--To ------ Campus - Crossroads - C.C -------- C.C. - Division
+< Entrance  Crescent  |             |                    Road
+               |      |             |                     |
+         Mary Rotte - U.A.       Student                 \|/
+          Cafeteria   |          Health                 Wally
+                     \|/         Services               World
 ~
 #30154
 key ghostly~
 a ghostly key~
 You can see through an object resembling a key.~
 ~
-18 f ao 0
+18 f 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -766,7 +766,7 @@ nothing~
 some nothing~
 .A hidden nothing.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 1 0 0
 #30156
@@ -774,7 +774,7 @@ pendulum~
 a pendulum~
 A large pendulum swings here.~
 ~
-13 b 0 0
+13 b 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -788,7 +788,7 @@ water fountain water~
 a water fountain~
 A drinking fountain is firmly attached to the wall here.~
 ~
-17 b 0 0
+17 b 0 0 0 0 0 0 0 0 0 0 0
 200 200 0 0
 205 0 0 0
 E
@@ -800,7 +800,7 @@ chest wooden~
 a wooden chest~
 There is a wooden chest here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 15 30154 0
 0 0 0 0
 E
@@ -812,7 +812,7 @@ ledger book~
 a ledger~
 A large book with the word "Ledger" written on it has been forgotten here.~
 ~
-2 0 ao 0
+2 0 0 0 0 ao 0 0 0 0 0 0 0
 25 38 4 -1
 10 200 0 0
 E
@@ -825,7 +825,7 @@ chest wooden~
 a wooden chest~
 There is a wooden chest here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 15 30154 0
 0 0 0 0
 E
@@ -837,7 +837,7 @@ bag coins gold~
 a bag of coins~
 A small bag filled with coins lies here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 1 1 0 0
 E

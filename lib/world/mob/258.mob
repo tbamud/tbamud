@@ -6,7 +6,7 @@ A man dressed in dusty clothes gives you a smile and a wave as he walks by.
    The glint in his eye as he watches you pass doesn't make you feel all that
 comfortable.  
 ~
-cdg 0 -100 E
+76 0 0 0 0 0 0 0 -100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -19,7 +19,7 @@ A man wearing a blue and gray uniform reading 'XXXX POSTAL SERVICE' runs by.
    You barely get a look as this man keeps on going toward the next town, just
 doing his job.  
 ~
-dgh 0 -250 E
+200 0 0 0 0 0 0 0 -250 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -31,7 +31,7 @@ A small, white rabbit hops by you, making it's way into the woods.
 ~
    Cute little guy - but he IS in your way.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -44,7 +44,7 @@ A hiker trudges by, loaded down with his backpack.
 ~
    This man looks as if he could walk you into the ground and then some.  
 ~
-dgl 0 500 E
+2120 0 0 0 0 0 0 0 500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1

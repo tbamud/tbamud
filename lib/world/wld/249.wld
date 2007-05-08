@@ -9,7 +9,7 @@ Jedi Zone Description Room~
    Objects      : 2
    Links        : 
 ~
-249 0 0
+249 0 0 0 0 0
 S
 #24901
 The Entrance of JEDI CLAN house~
@@ -19,7 +19,7 @@ You have a strange feeling, you feel the FORCE getting stronger in you.
 You see a sign. To the north, you find the JEDI clan atrium.
 
 ~
-249 dg 0
+249 72 0 0 0 0
 D0
 You see a central room, an atrium, that way.
 ~
@@ -43,7 +43,7 @@ their ideas. The walls are white with some inscriptions in it. You also
 see a Code of Laws where can be read the JEDI's rules. To the east you 
 see the Library, to the west the Treasury.
 ~
-249 dg 0
+249 72 0 0 0 0
 D0
 You see the Hall.
 ~
@@ -65,10 +65,6 @@ You see the Treasury.
 ~
 0 0 24904
 E
-inscription wall~
-   May the Force be with you.  
-~
-E
 code laws~
    .                     The Jedi Member Rules                          .
 ----------------------------------------------------------------------------
@@ -89,6 +85,10 @@ Punishments
      ....                                                     ....
           ....       May the Force be with you!         ....
 ~
+E
+inscription wall~
+   May the Force be with you.  
+~
 S
 #24903
 The Library~
@@ -98,7 +98,7 @@ many candeladra, which makes this room very clear. You also perceive some
 desks and a bench where a scribe works hard. Here the JEDI members exercise
 their mental faculty. To the west you see the atrium.
 ~
-249 dfg 0
+249 104 0 0 0 0
 D3
 You see the Atrium.
 ~
@@ -116,7 +116,7 @@ You see a big bin that seems to be impossible to open. Here is protected
 the gold and the values of the JEDI members.
 To the east you get to the Atrium.
 ~
-249 dg 0
+249 72 0 0 0 0
 D1
 You see the Atrium.
 ~
@@ -130,7 +130,7 @@ There is a big stair made of old good oak just in front of you.
 Where does it lead?, you inquire yourself.
 To the south you get to the Atrium.
 ~
-249 dg 0
+249 72 0 0 0 0
 D0
 You see the High Members Hall.
 ~
@@ -154,7 +154,7 @@ drawn on the walls. Undoubtly, holy pictures. You note the existence of
 three rooms adjacents to this one. You see a yellow glow coming from the 
 west room. What is there?
 ~
-249 deg 0
+249 88 0 0 0 0
 D0
 You see the Threepwood's Office.
 ~
@@ -184,7 +184,7 @@ imposing statue of an Old Jedi situated in front of you.
 To down you reach the downstairs, to the east there is a corridor,
 to the west you see the training center.
 ~
-249 dg 0
+249 72 0 0 0 0
 D0
 You see nothing important.
 ~
@@ -214,7 +214,7 @@ dark. There are paintings hanged on the wall. The light comes from a very
 small hole in the ceiling.
 
 ~
-249 dg 0
+249 72 0 0 0 0
 D1
 You see the tunnel.
 ~
@@ -233,7 +233,7 @@ The inscriptions and the pictures on the walls are almost invisible.
 Althrough you are in this strange ambient, you get the impression that you
 have been here before... How odd!
 ~
-249 adgi 0
+249 329 0 0 0 0
 D1
 You see the Holy Chamber.
 ~
@@ -258,12 +258,16 @@ beautiful holy altar with a great ark on it. A Jedi Member get here to rise
 his spiritual status. You understand that religion is taken serious by 
 the JEDI. A Jedi have his inicialization here during the Holy Ritual.
 ~
-249 deg 0
+249 88 0 0 0 0
 D3
 You see the tunnel.
 ~
 ~
 0 0 24909
+E
+ark~
+   It is so bright that you cannot perceive its details.  
+~
 E
 rules~
    .                     The Jedi Member Rules                          .
@@ -285,10 +289,6 @@ Punishments
      ....                                                   ....
           ....        May the Force be with you!       ....
 ~
-E
-ark~
-   It is so bright that you cannot perceive its details.  
-~
 S
 #24911
 The JEDI's Donation Room~
@@ -297,7 +297,7 @@ some unknow, at least for you, hanging objects. The floor is covered with
 a white painting, with many symbols. Holy symbols? Here you find equipments 
 and weapons that were donated by other members of the clan. 
 ~
-249 dg 0
+249 72 0 0 0 0
 D2
 You see the Upper Floor.
 ~
@@ -311,7 +311,7 @@ feel in jail. There is on the floor a big soft carpet ornated this many
 geometric figures, you feel like stepping in a cloud. The walls are covered 
 with a special paint.
 ~
-249 dg 0
+249 72 0 0 0 0
 D0
 You see a big wall, seems to be indestructible.
 ~
@@ -339,7 +339,7 @@ filled with all sorts of boxes. You see many containers, crates and sacks
 everywhere. The Jedi members' equipment can be left here save from disasters. 
 Cool!!
 ~
-249 0 0
+249 0 0 0 0 0
 D2
 You see the Upper floor.
 ~
@@ -353,7 +353,7 @@ very tasteful food is being made here. A incredible sort of bread is here.
 Danish, croissant, french... Uhmmm! Your stomach moves. You see many drinks
 being sold here. This remembers you you are thirsty.
 ~
-249 0 0
+249 0 0 0 0 0
 D0
 You see the Upper floor.
 ~
@@ -367,7 +367,7 @@ fighting experience to youngers. You hear some shouts and noises
 from the west. To the east you see the Upper Floor, and to the west 
 the Jedi Arena.
 ~
-249 dg 0
+249 72 0 0 0 0
 D1
 You see the Upper foor.
 ~
@@ -386,7 +386,7 @@ exercise their physicals habilities. The ground is covered with sand,
 compacted sand. Outside the this area, there is a sitting in which 
 people watch the trainment of the members. 
 ~
-249 0 0
+249 0 0 0 0 0
 D1
 You see the trainnig center.
 ~
@@ -403,7 +403,7 @@ magic objects. On the corner you see a small desk with some scrolls.
 A floating magic light illumines the room. Surrounded by this magic
 atmosphere you realize that the FORCE is strong here.
 ~
-249 cdegj 0
+249 604 0 0 0 0
 D1
 You see the High Members Hall.
 ~
@@ -414,7 +414,7 @@ S
 Sneaky's Room~
    Sneaky's room description must be setted here!!  
 ~
-249 cdegj 0
+249 604 0 0 0 0
 D3
 You see the High Member Hall.
 ~
@@ -432,27 +432,27 @@ your back. You turn around, and see nothing. Although the lack of
 illumination you can positively realize holy inscriptions written on the 
 walls.
 ~
-249 cdegj 0
+249 604 0 0 0 0
 D2
 You see the High Members Hall.
 ~
 ~
 0 0 24906
 E
-blood~
-   My God!!  This blood is still warm!!  
-~
-E
-inscription~
-   Qui spernit consilium, spernit auxilium.  
+wall~
+   Unum castigabis, centum emendabis.  
 ~
 E
 collection~
    You have never seen so many daggers.  And how sharp!!  Ouch!  
 ~
 E
-wall~
-   Unum castigabis, centum emendabis.  
+inscription~
+   Qui spernit consilium, spernit auxilium.  
+~
+E
+blood~
+   My God!!  This blood is still warm!!  
 ~
 S
 $~

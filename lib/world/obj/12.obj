@@ -3,7 +3,7 @@ email list staff~
 a list of the staff's emails~
 A list of the staff's emails has been left here.~
 ~
-14 0 ao 0
+14 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -29,7 +29,7 @@ pamphlet trigedit~
 a pamphlet advertising the wonderful world of triggers~
 A small pamphlet advertising the wonderful world of Trigedit.~
 ~
-12 0 an 0
+12 0 0 0 0 an 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -46,7 +46,7 @@ scroll~
 a scroll~
 A scroll.~
 ~
-2 0 a 0
+2 0 0 0 0 a 0 0 0 0 0 0 0
 1 31 -1 -1
 1 7 0 0
 #1203
@@ -54,7 +54,7 @@ color test object~
 a color test object~
 This is a @Rred@n test object~
 ~
-1 0 a 0
+1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 23 0
 1 1 0 0
 #1204
@@ -62,7 +62,7 @@ wand~
 the wand~
 A test wand~
 ~
-3 0 a 0
+3 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 1 31
 1 1 0 0
 T 1284
@@ -71,7 +71,7 @@ staff~
 staff~
 Staff~
 ~
-4 0 a 0
+4 0 0 0 0 a 0 0 0 0 0 0 0
 1 3 3 31
 1 1 0 0
 #1209
@@ -79,7 +79,7 @@ squishy armchair chair~
 a squishy armchair~
 A large squishy armchair sits in front of the fireplace.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 1209
@@ -96,15 +96,33 @@ Straight Jacket~
 a straight jacket~
 You can't see it...it isn't here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
+#1212
+game console~
+a game console~
+A game console sits in one corner of the room~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+T 1212
+T 1213
+E
+game console~
+To start a game type: go
+To move around type: go <up | down | left | right>
+ 
+You must collect the prizes and avoid the animal to obtain maximum points.
+Each prize is worth 500 * game_level in experience.
+~
 #1218
 spring fountain water~
 a spring well~
 A mountain spring bubbles up fresh water here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 0 0 0 0
 E
@@ -116,7 +134,7 @@ near-transparent small garmet~
 the near-transparent, small garmet~
 A pile of sheer silk is here, almost transparent.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -133,7 +151,7 @@ boards builder's bulletin gen_boards~
 a builder's bulletin board~
 A builder's bulletin board is floating here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #1227
@@ -141,7 +159,7 @@ staff bulletin boards gen_boards~
 a staff bulletin board~
 A staff only board is floating here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #1228
@@ -149,7 +167,7 @@ advertising bulletin boards gen_boards~
 a advertising bulletin board~
 A advertising board is hovering here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #1229
@@ -157,7 +175,7 @@ Couch~
 Smaug's Couch~
 Smaug's Couch is standing here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -172,7 +190,7 @@ test scroll~
 a torn scroll~
 It looks like a half finished spell~
 ~
-2 g ao 0
+2 g 0 0 0 ao 0 0 0 0 0 0 0
 12 51 -1 -1
 1 250 10 0
 #1231
@@ -180,7 +198,7 @@ test object~
 the test object~
 A test object.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1233
@@ -188,7 +206,7 @@ trial vnum assigner limiter~
 free~
 A trial vnum assigner helps people work on thier trial vnum.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -201,7 +219,7 @@ Black Staff of Immortality~
 the black staff of immortality~
 A Gigantic Black Staff rests here.~
 ~
-4 b ao 0
+4 b 0 0 0 ao 0 0 0 0 0 0 0
 1 10 10 23
 5 1 0 30
 E
@@ -213,7 +231,7 @@ switch~
 a switch from a willow tree~
 A magical switch from a willow tree has carelessly been discarded here.~
 ~
-5 b an 0
+5 b 0 0 0 an 0 0 0 0 0 0 0
 7 10 5 2
 2 1000 0 0
 T 1270
@@ -226,7 +244,7 @@ uniform~
 a Builder Academy uniform~
 A Builder Academy uniform has been left here.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1290
@@ -234,7 +252,7 @@ fountain poisoned~
 poisoned fountain~
 A poisoned fountain is here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 1
 505 0 0 0
 #1291
@@ -242,7 +260,7 @@ fountain unpoisoned~
 an unpoisoned fountain~
 An unpoisoned fountain is here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
 505 0 0 0
 #1292
@@ -250,7 +268,7 @@ american flag~
 an American flag~
 An American flag waves proudly in the wind, marking wishes for the safe return of Rumble from the foreign lands.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -266,7 +284,7 @@ notebook notes book~
 Elaseth's notebook~
 @nA book entitled "@YElaseth's Notes: A Madwoman's Account@n" lies here.~
 ~
-9 0 ao 0
+9 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #1296
@@ -274,7 +292,7 @@ lamp hanukah~
 a hanukah lamp~
 A Hanukah lamp lies here on the floor, all eight candles lit up.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #1297
@@ -282,7 +300,7 @@ Desk~
 Large desk~
 A large blackened desk~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 20000 3 0 0
 0 0 0 0
 #1298
@@ -290,25 +308,25 @@ firework new year piece~
 a piece of fireworks~
 A piece of fireworks is planted in a champagne bottle.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 1297
 E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
-~
-E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
+~
+E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~
 a christmas tree~
 A festive christmas tree is covered in various ornaments and lights.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E

@@ -260,7 +260,6 @@ int save_rooms(zone_rnum rzone)
   char filename[128];
   char buf[MAX_STRING_LENGTH];
   char buf1[MAX_STRING_LENGTH];
-  char bit[64];
 
 #if CIRCLE_UNSIGNED_INDEX
   if (rzone == NOWHERE || rzone > top_of_zone_table) {
@@ -293,15 +292,15 @@ int save_rooms(zone_rnum rzone)
       strip_cr(buf);
 
       /* Save the numeric and string section of the file. */
-      sprintascii(bit, room->room_flags);
       fprintf(sf, 	"#%d\n"
 			"%s%c\n"
 			"%s%c\n"
-			"%d %s %d\n",
-		room->number,
-		room->name ? room->name : "Untitled", STRING_TERMINATOR,
-		buf, STRING_TERMINATOR,
-		zone_table[room->zone].number, bit, room->sector_type
+			"%d %d %d %d %d %d\n",
+	room->number,
+	room->name ? room->name : "Untitled", STRING_TERMINATOR,
+	buf, STRING_TERMINATOR,
+	zone_table[room->zone].number, room->room_flags[0], room->room_flags[1], room->room_flags[2], 
+	  room->room_flags[3], room->sector_type 
       );
 
       /* Now you write out the exits for the room. */

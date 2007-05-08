@@ -3,7 +3,7 @@ gothic kris obsidian demonic blade~
 the gothic kris~
 A demonic blade of obsidian lies on the ground.~
 ~
-5 jlmn an 0
+5 jlmn 0 0 0 an 0 0 0 0 0 0 0
 3 2 10 11
 5 1 0 30
 A
@@ -15,7 +15,7 @@ crown emerald~
 an emerald crown~
 An Emerald crown is here glittering magnificently in the sunshine~
 ~
-9 jop ae 0
+9 jop 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 3 1 0 20
 A
@@ -29,7 +29,7 @@ armplates glowing arm armor~
 a set of glowing armplates~
 An armplate glows here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 -9 0 0 0
 50 1 0 0
 A
@@ -43,7 +43,7 @@ belt jeweled~
 a jeweled belt~
 A sparkling jeweled belt is lying on the ground here.~
 ~
-9 jno al 0
+9 jno 0 0 0 al 0 0 0 0 0 0 0
 2 0 0 0
 4 1 0 0
 A
@@ -57,7 +57,7 @@ spear death~
 a death spear~
 A death spear is lying here~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 2 3 7 11
 4 1 0 30
 A

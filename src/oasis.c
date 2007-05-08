@@ -168,7 +168,7 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
 
   /* Restore descriptor playing status. */
   if (d->character) {
-    REMOVE_BIT(PLR_FLAGS(d->character), PLR_WRITING);
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
     act("$n stops using OLC.", TRUE, d->character, NULL, NULL, TO_ROOM);
 
     if (cleanup_type == CLEANUP_CONFIG)

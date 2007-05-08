@@ -5,7 +5,7 @@ The Immortal Innkeeper is organizing her books here.
 ~
    She appears to be having no problem tallying things up.  
 ~
-bdnopr p 0 E
+188426 0 0 0 65536 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -17,7 +17,7 @@ The Immortal Postmaster is hard at work here.
 ~
    Scary...  A postal worker...  Working?  
 ~
-abdnopr kp 0 E
+188427 0 0 0 65536 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -31,7 +31,7 @@ A strange amorphous being wanders these halls eternally cleaning.
 final sins by doing menial labour in this realm's purgatory.  In this case,
 those chores seem to be cleaning up after the immortals of the land.  
 ~
-cdgnopqr dkps 0 E
+254028 0 0 0 589840 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -45,7 +45,7 @@ Malikar the Janitor stands here, looking lost.
    It looks like Malikar is suffering from a bad concience he must have buggered
 Emershia one time too many.  
 ~
-cdgnpr a -1000 E
+172108 0 0 0 2 0 0 0 -1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -58,7 +58,7 @@ A small imp sits here, grinning devilishly.
 ~
    This small imp is used for testing.  
 ~
-cdeglnopqr bdhk -1000 E
+256092 0 0 0 20 0 0 0 -1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -72,7 +72,7 @@ a nasty little bug is crawling around here, annoying the implementors.
 numbers.  000@r1@n0@r1@n00 00@r1@n00@r1@n0@r1@n @r1@n0@r11111@n0 @r11111111@n
 @r11111111@n @r1@n0@r11111@n0 00@r1@n0@r1@n00@r1@n 00@r1@n00@r1@n00
 ~
-dfgnopq np -1000 E
+122984 0 0 0 65536 0 0 0 -1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -88,7 +88,7 @@ normal ice cube, only now it has little arms and feet made out of ice.  From
 what you can see, it has no eyes, yet it can make it's way about without bumping
 into things.  
 ~
-bdenopqr cdefkp 1000 E
+253978 0 0 0 65656 0 0 0 1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -103,7 +103,7 @@ different shade from its friends.  They are all female and continually giggle
 and dart around sharing their own jokes and keeping forbidden people out of this
 holy sanctuary.  
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -118,7 +118,7 @@ Taylor's secretary stands here holding a note pad.
 brown, and here body is slim and curvey.  She stands about 5'4" and looks to be
 light.  
 ~
-bdelnopqr cdef 0 E
+256026 0 0 0 120 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -130,7 +130,7 @@ Puff the @gMagic @rDragon
 ~
    A Large Dragon
 ~
-dgoq dhr -1000 E
+81992 0 0 0 262160 0 0 0 -1000 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 1
@@ -151,11 +151,24 @@ you may speak to Rumble, but as he is not here right now the desision lays upon
 me.  If you wish to know who altered it, my name is Shamra and I am a level 33,
 please do not make mobs/objects/rooms/triggers like this again.  
 ~
-bcdfnoq djp -1000 E
+90158 0 0 0 66576 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
 E
+#1212
+scoreboard mob~
+the scoreboard mob~
+A mob is here keeping score for everyone that uses the game console.
+~
+It looks unfinished.
+~
+10 0 0 0 0 0 0 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 2
+E
+T 1214
 #1217
 dog puppy peishu~
 a shitzu puppy dog~
@@ -165,7 +178,7 @@ A friendly Shitzu puppy dog named Peishu is playing here.
 has a long line of geneology dating back to the times of Confucius.  He is
 Gina's favorite pet and doesn't look too dangerous.  
 ~
-bdegnopr dfk 0 E
+188506 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -178,7 +191,7 @@ the hidden mob~
 ~
    This mob is hidden so no one can see it.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -190,7 +203,7 @@ The color test mob.
 ~
    The color test mob is so colorful.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -202,7 +215,7 @@ the test mob~
 ~
    Test mobs can be whatever you want them to be.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0

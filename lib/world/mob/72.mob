@@ -7,7 +7,7 @@ The master mindflayer is here, looking at you with an evil look.
 black and purple rod above its head as if it was going to attack you any moment
 now.  In the middle of its head are four tentacles with sharp points.  
 ~
-cdefglm dfk -800 E
+6268 0 0 0 80 0 0 0 -800 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -22,7 +22,7 @@ The senior mindflayer walks around here, looking for something useful.
 and carrying a large mace in its hand.  In the center of its head are four large
 tentacles with very sharp points.  
 ~
-cdegjklm dfk -600 E
+7772 0 0 0 80 0 0 0 -600 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -37,7 +37,7 @@ The junior mindflayer is here, watching you carefully from the corner.
 dressed in purple and black cloth.  It has four small tentacles in the center of
 its head.  
 ~
-cdeghlm dfk -350 E
+6364 0 0 0 80 0 0 0 -350 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -51,7 +51,7 @@ An ugly wererat is here, looking at you with a strange flick in his eyes.
    The wererat is about four feet tall.  It looks very much like rat, except
 that it is standing.  
 ~
-cdgjkl k -700 E
+3660 0 0 0 0 0 0 0 -700 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -64,7 +64,7 @@ There is a gigantic rat here, looking at you with a hungry look.
    The gigantic rat is about ten feet long from head to tail and has claws the
 size of your head, looking very nasty.  
 ~
-bdf k -800 E
+42 0 0 0 0 0 0 0 -800 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1

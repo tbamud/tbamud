@@ -11,14 +11,14 @@ one piece to her father, get a large pile of gold.  There is some mid- to
 upper-level eq and mobs here, as well as some fun areas to explore.  This zone
 is meant to connect to Jareth.  
 ~
-256 j 0
+256 512 0 0 0 0
 S
 #25601
 Cobbled Street~
    The street continues with parks and lush, well-kept grass on either side.  
 To the north you see the Lord's Keep, to the south the city awaits.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 The street continues.~
 ~
@@ -34,7 +34,7 @@ Guard Tower~
 upper ramparts of Lords Keep.  A small, stone, spiral staircase leads up to the
 parapet from here, or you may leave through the door to the north.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 door~
@@ -50,7 +50,7 @@ Guard Tower~
 upper ramparts of the Keep.  A steep, stone, spiral staircase leads to the
 parapet from here, or you may leave through the door to the south.  
 ~
-256 d 0
+256 8 0 0 0 0
 D2
 ~
 door~
@@ -65,15 +65,11 @@ The Armoury~
    All weapons used by the Lord's Guards are made, stored, and maintained here.
 Racks of weapons and armor line the walls in various states of repair.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 door~
 1 -1 25658
-E
-tracks dust~
-   Three sets of prints lead out where the back door used to stand.  
-~
 E
 bed~
    Ha!  Lucky, you were always lucky!  Under the pillow is a half-written
@@ -83,6 +79,10 @@ and two swords that came before, discarded as 'Not quite what I was working
 towards'.  Looking around, you notice a distinct lack of any swords.  You think
 you may have a motive now...  
 ~
+E
+tracks dust~
+   Three sets of prints lead out where the back door used to stand.  
+~
 S
 #25605
 Guest Room~
@@ -91,7 +91,7 @@ four poster feather bed, paintings done in lighter hues, and a full length
 mirroe are just some of the luxuries.  A window set into the west wall offers a
 view of most of Jareth.  Your only exit is to the east.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 door~
@@ -108,7 +108,7 @@ the eastern wall, sufficient to heat the entire room and then some.  You may
 leave through the main entrance to the north or through a set of swinging doors
 leading into the kitchen to the west.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -126,7 +126,7 @@ mountain streams, and a full length mirror are just some of the luxuries
 offered.  A window in the west wall covered with silk drapes offers a view of
 most of Jareth.  Your only exit is to the east.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 door~
@@ -140,7 +140,7 @@ animals, and a full length mirror are just some of the luxuries this room
 boasts.  A window covered in silk drapes commands a view of most of Jareth.  
 Your only exit is to the east.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 door~
@@ -152,7 +152,7 @@ The Lord's Stables~
 used by the Lord's Guard and by the Lord himself.  Spaces are provided for any
 visitor's steeds as well, and a stablehand is on duty at all times.  
 ~
-256 d 0
+256 8 0 0 0 0
 D2
 ~
 ~
@@ -164,7 +164,7 @@ Guest Room~
 dark oak dresser, and a water basin.  A window set into the western wall offers
 a view of the Alquandon River and the northern reaches of Jareth.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 ~
@@ -177,7 +177,7 @@ bed, dark oak dresser, and a water basin for light washing.  A window set into
 the eastern wall offers a view of the Alquandon River and the northern reaches
 of Jareth.  
 ~
-256 0 4
+256 0 0 0 0 0
 D1
 ~
 ~
@@ -190,7 +190,7 @@ botanical fragrance filling the air.  Lines of bathing vessels line both north
 and south walls.  A huge cauldron rests over a fire in the fireplace, being
 constantly tended by the girls on hand.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 door~
@@ -202,7 +202,7 @@ Bath Room~
 south walls.  A huge fireplace set into the west wall constantly burns keeping
 an enormous kettle of water steaming hot.  Have time for a bath?  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 door~
@@ -215,7 +215,7 @@ bed, dark oak dresser, and a water basin.  A window set into the western-most
 wall offers a great view of the Alquandon River and some of the northern reaches
 of Jareth.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 ~
@@ -227,7 +227,7 @@ Hallway~
 the Keep.  Doors line the west wall in both directions.  A window set into the
 east wall provides a view of a fabulous garden.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -247,7 +247,7 @@ Hallway~
 the Keep.  Doors line the west wall in both directions.  A window set into the
 east wall provides the view of a fabulous garden.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -266,7 +266,7 @@ Hallway~
    You stand in a north-south running hallway which seeems to run the length of
 the Keep.  Doors line the west wall in both directions.  
 ~
-256 0 0
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -287,7 +287,7 @@ the Keep.  Doors line the western wall beginning here and running north as far
 as your eyes allow.  Another hallway branches off to the east, and from the
 smells coming from that direction, the kitchen must be that way.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -312,7 +312,7 @@ length of the Keep.  Directly north of you, doors line the west wall, leading to
 what you assume would be apartments.  A door to the south leads into the Grand
 Reception Hall.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -329,7 +329,7 @@ of strength and goodness.  A dias sits at the far eastern end of the hall, used
 by the Lord to address new arrivals.  Doors are available in the north, south,
 and east walls here, or you may leave to the west.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 Closed door.~
 door~
@@ -354,7 +354,7 @@ enitire length of the Keep.  Just south of you, a row of doors line the western
 walls to the end of the hall.  A door to the north allows passage back into the
 main section of the Keep.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 door~
@@ -369,7 +369,7 @@ Hallway~
    You stand in a north-south running hallway which seems to run the length of
 the Keep.  Doors line the western wall the entire length of the hall.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -389,7 +389,7 @@ Hallway~
 length of the Keep.  Doors line the west wall the entire way.  A door set into
 the eastern wall allows entrance to the courtyard.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -413,7 +413,7 @@ Hallway~
 length of the Keep.  Doors line the wall to the west, while to the east you can
 view the courtyard through a window set into the wall.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -433,7 +433,7 @@ Hallway~
 length of the Keep.  Doors line the west wall and a door to the east allows
 entrance to the courtyard.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -458,7 +458,7 @@ folk, be they Lord's guest or servant.  Trees dot the yard, all in full bloom,
 with a walk way made from red wood chips showing the way through the trees.  
 The path leads north, south and east, or you may enter the Keep to the west.  
 ~
-256 0 4
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -483,7 +483,7 @@ folk, be they Lord's guest or servant.  Beautiful trees dot the yard, all im
 full bloom, with a walk way made from red wood chips showing you the way through
 the trees.  
 ~
-256 0 4
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -506,7 +506,7 @@ out of hard clay, without supports.  You begin to feel a chill, and even a bit
 damp, although the walls themselves are not wet or even clammy, just cold.  The
 tunnel heads east into darkness or you may climb back out into the gazebo.  
 ~
-256 adi 0
+256 265 0 0 0 0
 D1
 ~
 ~
@@ -524,7 +524,7 @@ the southwest is beautiful rolling hills.  Looking down on the courtyard, you
 see guards on break, sweethearts strolling hand in hand, and common folk out
 enjoying the sunshine.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -537,7 +537,7 @@ in this room.  The south wall, mostly glass, offers a fabulous view of the
 courtyard and much of the land south and east of the Keep's walls.  You can exit
 south onto the balcony, or leave to the east into the bedroom.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 ~
@@ -557,7 +557,7 @@ chairs are resting along the south wall, although from the grooves worn in the
 wood from centuries of nervous pacing, most people who enter this room don't use
 the chairs very often.  Doors are to the east and west.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 Closed door.~
 door~
@@ -575,7 +575,7 @@ hang everywhere overhead, fireplaces abound, and servants scurry to and fro in a
 seemingly mad and mindless frenzy.  A long table off to the side seats servants
 who are on their break, but currently there are none there.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -595,7 +595,7 @@ Hallway~
 access to the Dining Hall, the Library, and the Tea Room.  Doors lead north and
 south from here, and the hallway runs to the east and west.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 door~
@@ -621,7 +621,7 @@ fireplace crackles warmly in the north wall.  Books lie on end tables at easy
 arm's length and servants enter at intervals to ask if any refreshment is
 desired.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 door~
@@ -638,7 +638,7 @@ wish that you could stay in its embrace forever.  Such care is given to these
 rows of life, the keeper of this garden must be almost fanactical in their
 attention.  The winding path conitinues north and east from here.  
 ~
-256 0 2
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -658,7 +658,7 @@ sits closed at present.  Pleasantly surprised by the simplicity of this office,
 you feel that the Lord must be a kind and just man and deserves the priviledges
 his title offers.  A door to the west allows exit.  
 ~
-256 d 0
+256 8 0 0 0 0
 D2
 ~
 door~
@@ -676,7 +676,7 @@ attention to detail the craftsmen put into it.  The statue sits in the center of
 a fountain upon a dias.  An inscription at the base reads; In loving memory The
 stone path continues to wend it's way north, south, and west.  
 ~
-256 0 2
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -696,7 +696,7 @@ Lord's Garden~
 tended paths.  Flowers of all shapes, size and color abound.  The stone path
 meanders east, south, and north from here.  
 ~
-256 0 2
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -720,7 +720,7 @@ perfection that gives those flaws their very reason for existance.  A winding
 stone path wends it's way through the garden, heading north and west, and a door
 to your south allows entrance back into the keep.  
 ~
-256 0 2
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -742,7 +742,7 @@ and two long tables sit side by side in the center of the room.  The north wall,
 mostly glass with a door set into the center, boasts a view of the Lord's
 garden.  You may leave to the south through the main door.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 door~
@@ -761,7 +761,7 @@ Hallway~
    The short hallway ends here, opening south into a spacious dining hall.  A
 door to the north leads to the library, or you may go west into the hallway.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 door~
@@ -786,7 +786,7 @@ the standard for Jareth.  A closed door blocks the entrance to the south and an
 archway leading into the Lord's private dining room leads west, or you may exit
 the Lord's Suite to your north.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 door~
@@ -807,7 +807,7 @@ here, so the water must be either kept warm underneath the pool, or must be kept
 hot through magical means.  Whatever the case, this hot tub looks more than
 inviting and if you have the guts, some casual bathing may be in order.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 door~
@@ -820,7 +820,7 @@ folk, be they Lord's guest or servant.  Trees dot the yard, all in full bloom,
 with a walk way made from red wood chips showing you the way through the trees
 to the west and south.  
 ~
-256 0 4
+256 0 0 0 0 0
 D2
 ~
 ~
@@ -837,7 +837,7 @@ folk, be they Lord's guest or servant.  A small man made pool of clear blue
 water is here, stocked with imported golden fish.  A walk way made from red wood
 chips allows passage through the trees to the north, west and south.  
 ~
-256 0 4
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -858,7 +858,7 @@ folk, be they Lord's guest or servant.  Trees dot the yard, all in full bloom,
 with a walk way made from red wood chips showing you the way through the trees
 west, north, and south.  
 ~
-256 0 4
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -879,7 +879,7 @@ beautiful paintings of angels and wildlife, and an armoir are just some of the
 luxuries.  A window draped in silk curtains in the west wall allows a view of
 most of Jareth.  Your only exit is to the east.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 door~
@@ -890,7 +890,7 @@ Hallway~
    You stand at the end of a north-south running hallway.  Doors line the west
 wall, while a set of doors in the east wall allow entrance to the courtyard.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -911,7 +911,7 @@ folk, be they Lord's guest or servant.  Beautiful trees dot the yard, all in
 full bloom.  A trail made from wood chips wends its way through the trees and
 around benches.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -934,7 +934,7 @@ of an octagon with long planks of flooring running outward from it like long
 spokes.  This looks as if it would be a good place to rest, if that is your
 inclination.  You may leave back into the courtyard to the west or north.  
 ~
-256 0 4
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -950,7 +950,7 @@ Along the Parapet~
 guard towers.  This narrow stone walkway also provides a means for defense in
 times of war.  
 ~
-256 0 1
+256 0 0 0 0 0
 D1
 A normal, wooden front door to a normal looking home.  It is
 nothing to write home about.
@@ -969,7 +969,7 @@ Doors line the western wall, leading to what you assume would be apartments.
 To you east, a window offers a great view of the most fantastic garden you have
 ever seen.  
 ~
-256 d 0
+256 8 0 0 0 0
 D2
 ~
 ~
@@ -986,7 +986,7 @@ Lord's Garden~
 beautiful flowers wreath the wall, lending a timeless look to these already
 beautiful gardens.  The stone path continues east and south from here.  
 ~
-256 0 2
+256 0 0 0 0 0
 D1
 ~
 ~
@@ -1003,7 +1003,7 @@ Lord's Garden~
 you can see the top of the wall where the Lord's Guard patrols the parapet.  
 The winding stone path winds west and south here.  
 ~
-256 0 2
+256 0 0 0 0 0
 D2
 ~
 ~
@@ -1020,7 +1020,7 @@ folk, be they Lord's guest or servant.  Trees dot the yard, all in full bloom,
 with a walk way made from red wood chips showing you the way through the trees
 to the south and east, or you may enter the Keep to the west.  
 ~
-256 0 4
+256 0 0 0 0 0
 D1
 ~
 ~
@@ -1042,7 +1042,7 @@ a set of rickety wooden stairs lead up to the rooms are.  A thread- bare rug
 lies in the middle of the floor, evidently well- loved by a cat or two from the
 quantity of hair on it.  
 ~
-256 d 0
+256 8 0 0 0 0
 D2
 ~
 door doors double~
@@ -1055,7 +1055,7 @@ bed, dark oak dresser, water basin, and even a mirror.  A window on the western
 wall offers a view of the River Alquandon and some of the northern reaches of
 Jareth.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 door front~
@@ -1070,7 +1070,7 @@ what seems wrong now.  To your east the Grand Reception Hall continues, to your
 north a stable is provided, south you see a wooden door bound in iron, and to
 your west you may leave to the outside.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 The stablehand will take your horse to the north.~
 ~
@@ -1094,7 +1094,7 @@ North Drawbridge Guard Tower~
 A parapet runs between each of the towers, encircling the Keep, and allowing for
 defense in times of war.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -1110,7 +1110,7 @@ Along the Parapet~
 walkway connects all the guard towers to one another and allows the Lord's Guard
 to defend their Lord's home.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1126,7 +1126,7 @@ Northeast Guard Tower~
 be seen through arrow holes in the north and east walls.  The parapet continues
 here to the west and south.  
 ~
-256 d 1
+256 8 0 0 0 0
 D2
 ~
 ~
@@ -1142,7 +1142,7 @@ Along the Parapet~
 walkway connects all the guard towers to one another and provides a defendable
 position for the Lord's Guard in times of war.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1160,7 +1160,7 @@ well-kept here, but not as many people lounge on it here as there were closer to
 the city.  Although not threatening in any way, the mood of this street seems to
 get a bit gloomier with each step you take toward the keep.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 The street continues.~
 ~
@@ -1177,7 +1177,7 @@ north here toward the keep.  Just north of here, you see that the street opens
 into a large court and turns to the east, where it enters the majestic halls of
 Lord's Keep.  South of you the city awaits.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 The street opens into a wide court.~
 ~
@@ -1193,7 +1193,7 @@ Lord's Court~
 visiting royalty.  Flags from all royal and noble houses fly bravely here,
 welcoming all to the splendor and majesty that is Jareth and Lord's Keep.  
 ~
-256 0 1
+256 0 0 0 0 0
 D1
 The Keep looms close by.~
 ~
@@ -1214,7 +1214,7 @@ merriment or laughter, as is usually the case in the entryway of the Lord's
 Keep.  The Lord's Court lies west of you, while the twin guard towers flank your
 entry to the east into Lord's Keep.  
 ~
-256 0 1
+256 0 0 0 0 0
 D1
 You may enter the Keep to the east.~
 ~
@@ -1233,7 +1233,7 @@ almost threatening.  The Twin towers rising out of stone foundations as big as a
 house themselves seem to leer at you from their arrowholes inlaid in the walls.
 You can proceed into the Keep to the east or leave the Keep to the west.  
 ~
-256 d 0
+256 8 0 0 0 0
 D0
 Closed door.~
 door~
@@ -1257,7 +1257,7 @@ Along the Parapet~
 walkway connects all the guard towers at Lord's Keep.  It also provides a
 defndable position for the Lord's Guard in times of war.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1273,7 +1273,7 @@ Northwest Guard Tower~
 to fire arrows from this height at any would be aggressors in times of war.  
 The parapet continues along to the east and south from here.  
 ~
-256 d 1
+256 8 0 0 0 0
 D1
 ~
 ~
@@ -1289,7 +1289,7 @@ A Sloping Tunnel~
 breeze riffles your clothing from ahead somewhere.  The claw marks in the stone
 floor continue up the passage, through the darkness.  
 ~
-256 adgj 0
+256 585 0 0 0 0
 D0
 ~
 ~
@@ -1306,15 +1306,14 @@ stronger yet.  The claw tracks in the stone stop abruptly here, where there
 seems to be a lot of unearthed dirt and stone around, heaped upon the floor.  
 You feel uneasy about this place.  
 ~
-256 adgj 4
+256 585 0 0 0 0
 D2
 ~
 ~
 0 -1 25674
 E
-floor~
-   The floor up ahead looks...  Strange.  You don't think going ahead would be a
-good idea.  
+dirt stone~
+   It has been dug from somewhere, but where?  
 ~
 E
 claw claws track tracks mark marks~
@@ -1322,8 +1321,9 @@ claw claws track tracks mark marks~
 
 ~
 E
-dirt stone~
-   It has been dug from somewhere, but where?  
+floor~
+   The floor up ahead looks...  Strange.  You don't think going ahead would be a
+good idea.  
 ~
 S
 #25672
@@ -1333,7 +1333,7 @@ the entire perimeter of Lord's Keep, connecting all the guard towers.  It also
 supplies a defendable position for the Lord's Guard so that in times of war,
 they can protect their Lord and his home.  
 ~
-256 0 1
+256 0 0 0 0 0
 D1
 ~
 ~
@@ -1350,7 +1350,7 @@ and uncomfortably warm, despite the closeness of the cave's entrance above you.
 There's a deep, musky odor in the air, and the giant claw marks continue
 downwards.  
 ~
-256 adgj 4
+256 585 0 0 0 0
 D0
 ~
 ~
@@ -1369,7 +1369,7 @@ drowning out everything else in the air and making it hard to breathe.
 Something in your gut begins squirming uncomfortably as you wonder what's
 ahead...  
 ~
-256 adgj 4
+256 585 0 0 0 0
 D0
 ~
 ~
@@ -1385,7 +1385,7 @@ Along the Parapet~
 connects all the guard towers and provides a means for defense in times of war.
 
 ~
-256 0 1
+256 0 0 0 0 0
 D1
 ~
 ~
@@ -1400,7 +1400,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower
 and the southeast guard tower.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1415,7 +1415,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower to
 the southeast guard tower.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1430,7 +1430,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower to
 the southeast guard tower.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1445,7 +1445,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower to
 the south east guard tower.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1460,7 +1460,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower to
 the southeast guard tower.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1475,7 +1475,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower
 and the southeast guard tower.  The southeast tower is directly south of you.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1491,7 +1491,7 @@ Southeast Guard Tower~
 Small chunks of stone are missing around the arrow slits, and many nicks and
 chunks are missing from the walls themselves.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1506,7 +1506,7 @@ Along the Parapet~
    The parpet runs east to west here, connecting the southeast guard tower to
 the southwest guard tower.  The southeast tower is directly east of you.  
 ~
-256 0 1
+256 0 0 0 0 0
 D1
 ~
 ~
@@ -1521,7 +1521,7 @@ Along the Parapet~
    The parapet runs east to west here, connecting the southeastern guard tower
 to the southwestern guard tower.  
 ~
-256 0 1
+256 0 0 0 0 0
 D1
 ~
 ~
@@ -1536,7 +1536,7 @@ Along the Parapet~
    The parapet runs east to west here, connecting the southeastern guard tower
 to the southwestern guard tower.  
 ~
-256 0 1
+256 0 0 0 0 0
 D1
 ~
 ~
@@ -1552,7 +1552,7 @@ Southwestern Guard Tower~
 are piled in one corner, and the remains of someone's lunch sits in another.  
 The parapet continues to the east and to the north from here.  
 ~
-256 d 1
+256 8 0 0 0 0
 D0
 ~
 ~
@@ -1568,7 +1568,7 @@ Along the Parapet~
 tower to the southern bridge guard tower.  The southeastern tower is directly
 south of you.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1583,7 +1583,7 @@ Along the Parapet~
    The parapet continues north to south here, connecting the southeastern guard
 tower to the south bridge guard tower.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1599,7 +1599,7 @@ Along the Parapet~
 to the south bridge guard tower.  The south bridge guard tower is directly north
 of you.  
 ~
-256 0 1
+256 0 0 0 0 0
 D0
 ~
 ~
@@ -1615,7 +1615,7 @@ South Drawbridge Guard Tower~
 This is one of six towers which ring the Keep to allow for defense in times of
 war.  
 ~
-256 d 0
+256 8 0 0 0 0
 D2
 ~
 ~
@@ -1630,7 +1630,7 @@ Wine Cellar~
    This room, though as cob-webby and musty as is earthly possible, seems clean
 enough.  The racks are dust free and the bottles are all tended.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 ~
@@ -1641,7 +1641,7 @@ Musty Dusty Corrider~
    This short corrider leads into two different rooms, one to the east and one
 to the west.  
 ~
-256 d 0
+256 8 0 0 0 0
 D1
 ~
 ~
@@ -1660,7 +1660,7 @@ Root Cellar~
    All non-perishable foodstuffs for the Keep are kept in this room on shelves,
 in crates, and stacked on pallets.  
 ~
-256 d 0
+256 8 0 0 0 0
 D3
 ~
 ~

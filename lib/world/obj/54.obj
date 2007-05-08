@@ -3,7 +3,7 @@ palace key~
 the palace key of New Thalos~
 A large key bearing the crest of New Thalos lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 #5401
@@ -11,7 +11,7 @@ city key~
 the Key to the City of New Thalos~
 The heavy city key lies here in the dust~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 #5402
@@ -19,7 +19,7 @@ fountain water~
 the large central fountain~
 The large central fountain domintating the central square rests here.~
 ~
-23 ce 0 0
+23 ce 0 0 0 0 0 0 0 0 0 0 0
 9999 9999 0 0
 9999 0 0 0
 #5403
@@ -27,7 +27,7 @@ morningstar morning star~
 a morningstar~
 A small spiked metal ball connected to a rod by links of chain lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 6
 5 800 50 0
 #5404
@@ -35,7 +35,7 @@ awl-pike~
 an awl-pike~
 An awl pike lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 12 5
 3 210 10 0
 #5405
@@ -43,7 +43,7 @@ bardiche~
 a bardiche~
 A bardiche lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 3
 4 190 11 0
 #5406
@@ -51,7 +51,7 @@ corbin bec~
 a bec de corbin~
 A bec de corbin lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
 3 540 50 0
 #5407
@@ -59,7 +59,7 @@ guisarme bill~
 a bill-guisarme~
 A bill-guisarme lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 10 3
 3 130 50 0
 #5408
@@ -67,7 +67,7 @@ fauchard~
 a fauchard~
 A fauchard lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 1
 3 125 20 0
 #5409
@@ -75,7 +75,7 @@ glaive~
 a glaive~
 A glaive lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 10 5
 3 187 20 0
 #5410
@@ -83,7 +83,7 @@ guisarme~
 a guisarme~
 A guisarme lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 4
 4 195 20 0
 #5411
@@ -91,7 +91,7 @@ sickle~
 a sickle~
 A sickle lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 3
 1 500 10 0
 #5412
@@ -99,7 +99,7 @@ sword bastard two-handed~
 a two-handed bastard sword~
 A two handed bastard sword lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 3
 18 625 10 0
 #5413
@@ -107,7 +107,7 @@ scimitar~
 a scimitar~
 A scimitar lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 9 3
 10 120 15 0
 A
@@ -117,7 +117,7 @@ rapier~
 a rapier~
 A rapier lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
 10 310 10 0
 A
@@ -127,7 +127,7 @@ suit mail banded~
 a suit of banded mail~
 A suit of banded mail lies here.~
 ~
-9 agmno ad 0
+9 agmno 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 25 340 80 0
 #5416
@@ -135,7 +135,7 @@ suit brigandine~
 a suit of brigandine~
 A suit of brigandine lies here.~
 ~
-9 agmo ad 0
+9 agmo 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 20 200 42 0
 #5417
@@ -143,7 +143,7 @@ suit plate field~
 a suit of field plate~
 A suit of field plate lies here.~
 ~
-9 agmno ad 0
+9 agmno 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
 28 400 100 0
 #5418
@@ -151,7 +151,7 @@ suit ringmail ring mail~
 a suit of ringmail~
 A suit of ringmail lies here.~
 ~
-9 n ad 0
+9 n 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 6 138 10 0
 #5419
@@ -159,7 +159,7 @@ suit splintmail splint mail~
 a suit of splintmail~
 A suit of splintmail aromr lies here.~
 ~
-9 m ad 0
+9 m 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 5 250 10 0
 #5420
@@ -167,7 +167,7 @@ shield wooden~
 a wooden shield~
 A wooden shield lies here~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 1 0 0 0
 1 10 1 0
 #5421
@@ -175,7 +175,7 @@ shield splinted~
 a splinted shield~
 A splinted shield lies here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 7 0 0 0
 8 175 17 0
 #5422
@@ -183,7 +183,7 @@ buckler shield~
 a buckler~
 A buckler lies here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 1 0 0 0
 6 30 7 0
 #5423
@@ -191,7 +191,7 @@ jacket leather~
 a leather jacket~
 A leather jacket lies here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 6 600 200 0
 #5424
@@ -199,7 +199,7 @@ sleeves leather~
 a pair of leather sleeves~
 A pair of leather sleeves lies here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
 2 350 200 0
 #5425
@@ -207,7 +207,7 @@ cap leather~
 a leather cap~
 A leather cap lies here~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 2 65 200 0
 #5426
@@ -215,7 +215,7 @@ pants leather~
 a pair of leather pants~
 A pair of leather pants lies here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
 2 850 200 0
 #5427
@@ -223,7 +223,7 @@ gloves leather~
 a pair of leather gloves~
 A pair of leather gloves lies here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 2 0 0 0
 2 150 200 0
 #5428
@@ -231,7 +231,7 @@ boots padded leather~
 a pair of padded leather boots~
 A pair of padded leather boots lies here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 2 410 200 0
 #5429
@@ -239,7 +239,7 @@ jacket studded leather~
 a studded leather jacket~
 A studded leather jacket lies here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 10 650 200 0
 #5430
@@ -247,7 +247,7 @@ sleeves studded leather~
 a pair of studded leather sleeves~
 A pair of studded leather sleeves lie here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 3 0 0 0
 3 500 200 0
 #5431
@@ -255,7 +255,7 @@ pants studded leather~
 a pair of studded leather pants~
 A pair of studded leather pants lie here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
 3 500 200 0
 #5432
@@ -263,7 +263,7 @@ gloves studded leather~
 a pair of studded leather gloves~
 A pair of studded leather gloves lie here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 3 500 200 0
 #5433
@@ -271,7 +271,7 @@ shield leather~
 a leather shield~
 A leather shield lies here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 3 50 200 0
 #5434
@@ -279,7 +279,7 @@ sack~
 a sack~
 A sack lies here~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 0 0 0
 1 20 200 0
 #5435
@@ -287,7 +287,7 @@ lamp oil oillamp~
 an oil lamp~
 An oil lamp lies here~
 ~
-1 0 a 0
+1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 48 0
 1 100 200 0
 #5436
@@ -295,7 +295,7 @@ backpack back pack~
 a backpack~
 A backpack lies here~
 ~
-15 0 ak 0
+15 0 0 0 0 ak 0 0 0 0 0 0 0
 75 1 0 0
 8 100 100 0
 #5437
@@ -303,7 +303,7 @@ basket~
 a basket~
 A basket lies here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 0 0
 4 250 50 0
 #5438
@@ -311,7 +311,7 @@ pouch belt~
 a belt pouch~
 A belt pouch lies here~
 ~
-15 0 al 0
+15 0 0 0 0 al 0 0 0 0 0 0 0
 25 0 0 0
 3 100 20 0
 #5439
@@ -319,7 +319,7 @@ candle~
 a candle~
 A candle lies here~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 50 0
 1 35 10 0
 #5440
@@ -327,7 +327,7 @@ cheese~
 a hunk of cheese~
 A hunk of cheese lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 5 10 0
 #5441
@@ -335,7 +335,7 @@ bread~
 some bread~
 Some bread lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 1 3 10 0
 #5442
@@ -343,7 +343,7 @@ rations dry~
 some dry rations~
 Some dry rations lie here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 2 20 30 0
 #5443
@@ -351,7 +351,7 @@ rations iron~
 some iron rations~
 A tin of iron rations lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
 3 25 50 0
 #5445
@@ -359,7 +359,7 @@ nuts~
 some nuts~
 Some nuts lie scatterd on the ground.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 1 10 0
 #5446
@@ -367,7 +367,7 @@ belt~
 a belt~
 A nicely made belt lies here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 2 2 10 0
 #5447
@@ -375,7 +375,7 @@ boots hiking~
 a pair of hiking boots~
 A nicely made pair of boots lies here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 3 390 10 0
 #5448
@@ -383,7 +383,7 @@ cloak fur~
 a fur cloak~
 A nicely made fur cloak lies here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 2 455 50 0
 #5449
@@ -391,7 +391,7 @@ girdle~
 a girdle~
 A nicely made girdle lies here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 375 10 0
 #5450
@@ -399,7 +399,7 @@ hose~
 a pair of hose~
 A nicely made pair of hose lies here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 1 120 10 0
 #5451
@@ -407,7 +407,7 @@ robe common~
 a common robe~
 A nicely made robe of common cloth lies here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 2 90 20 0
 #5452
@@ -415,7 +415,7 @@ robe embroidered~
 an embroidered robe~
 A nicely made robe of embroidered cloth lies here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 2 250 5 0
 #5453
@@ -423,7 +423,7 @@ sandals~
 a pair of sandals~
 A nicely made pair of sandals lies here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 1 15 10 0
 #5454
@@ -431,7 +431,7 @@ sash~
 a sash~
 A nicely made sash lies here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 1 20 10 0
 #5455
@@ -439,7 +439,7 @@ jacket silk~
 a silk jacket~
 A nicely made silk jacket lies here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 1 380 100 0
 #5456
@@ -447,7 +447,7 @@ egg~
 an egg~
 An egg lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 3 10 0
 #5457
@@ -455,7 +455,7 @@ carrot~
 a carrot~
 A carrot lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 1 4 10 0
 #5458
@@ -463,7 +463,7 @@ tomato~
 a tomato~
 A tomato lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 8 10 0
 #5459
@@ -471,7 +471,7 @@ fig~
 a fig~
 A fig lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 2 10 0
 #5460
@@ -479,7 +479,7 @@ dates~
 some dates~
 A bunch of dates lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 4 10 0
 #5461
@@ -487,7 +487,7 @@ lamb leg~
 a leg of lamb~
 A leg of lamb lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 2 10 20 0
 #5462
@@ -495,7 +495,7 @@ beef side~
 a side of beef~
 A side of beef lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
 5 20 50 0
 #5463
@@ -503,7 +503,7 @@ chicken whole~
 a whole chicken~
 A whole skinned chicken lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 3 12 30 0
 #5464
@@ -511,7 +511,7 @@ herring salted~
 a salted herring~
 A salted herring lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 8 10 0
 #5465
@@ -519,7 +519,7 @@ muscle~
 a muscle~
 A muscle lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 4 10 0
 #5467
@@ -527,7 +527,7 @@ glass liquor blue oasis whisky~
 a glass~
 A glass of blue alcohol rests here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 5 0
 10 180 10 0
 #5468
@@ -535,7 +535,7 @@ glass wine~
 a glass~
 A glass rests here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 2 0
 1 380 10 0
 #5469
@@ -543,7 +543,7 @@ bottle grog ale~
 a bottle of grog~
 A bottle lies here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 3 0
 7 800 10 0
 #5470
@@ -551,7 +551,7 @@ vial glowing blue~
 a glowing blue vial~
 A glowing blue vial lies here.~
 ~
-10 ag ao 0
+10 ag 0 0 0 ao 0 0 0 0 0 0 0
 12 1 3 -1
 1 800 15 0
 E
@@ -564,7 +564,7 @@ potion green~
 a deep-green potion~
 A deep-green potion lies here.~
 ~
-10 ag ao 0
+10 ag 0 0 0 ao 0 0 0 0 0 0 0
 10 15 35 -1
 1 500 15 0
 E
@@ -577,7 +577,7 @@ potion crystal clear~
 a crystal clear potion~
 A crystal clear potion lies here.~
 ~
-10 g ao 0
+10 g 0 0 0 ao 0 0 0 0 0 0 0
 10 50 51 35
 1 300 15 0
 E
@@ -590,7 +590,7 @@ potion white~
 an off-white potion~
 An off-white potion lies here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 15 14 16 -1
 1 800 15 0
 E
@@ -603,7 +603,7 @@ potion dark blue~
 a dark blue potion~
 A dark blue potion lies here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 10 35 14 -1
 1 400 15 0
 E
@@ -615,7 +615,7 @@ bottle scorpion flaming beer~
 a flaming scorpion~
 A bottle of strong beer lies here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 1 0
 10 500 10 0
 #5476
@@ -623,7 +623,7 @@ barrel beer~
 a barrel~
 A barrel of beer lies here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 1 0
 15 900 50 0
 #5477
@@ -631,7 +631,7 @@ shot whisky~
 a shot~
 A shot of strong liquor lies here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 5 0
 1 350 10 0
 #5478
@@ -639,7 +639,7 @@ scroll recall~
 a scroll of recall~
 A scroll of recall lies here.~
 ~
-2 g ao 0
+2 g 0 0 0 ao 0 0 0 0 0 0 0
 12 42 -1 -1
 4 200 25 0
 #5479
@@ -647,7 +647,7 @@ wand grey silver~
 a grey-silver wand~
 A grey-silver wand lies here.~
 ~
-3 gnop ao 0
+3 gnop 0 0 0 ao 0 0 0 0 0 0 0
 15 1 1 6
 1 1000 15 0
 E
@@ -659,7 +659,7 @@ wand yellow~
 a wand of glinting yellow~
 A wand of glinting yellow lies here.~
 ~
-3 g ao 0
+3 g 0 0 0 ao 0 0 0 0 0 0 0
 1 1 1 19
 1 666 15 0
 E
@@ -671,7 +671,7 @@ wand oak~
 an oak wand~
 A wand of oak lies here.~
 ~
-3 g ao 0
+3 g 0 0 0 ao 0 0 0 0 0 0 0
 5 1 1 32
 1 500 15 0
 #5482
@@ -679,7 +679,7 @@ wand pink~
 a pink wand~
 A pink wand lies here~
 ~
-3 g ao 0
+3 g 0 0 0 ao 0 0 0 0 0 0 0
 3 1 1 38
 1 500 15 0
 #5483
@@ -687,7 +687,7 @@ shears sewing~
 a pair of sewing shears~
 A pair of sewing shears lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 1
 2 100 50 0
 #5484
@@ -695,7 +695,7 @@ cleaver meat~
 a meat cleaver~
 A meat cleaver lies here~
 ~
-5 cd an 0
+5 cd 0 0 0 an 0 0 0 0 0 0 0
 0 1 5 0
 5 100 10 0
 #5485
@@ -703,7 +703,7 @@ pen fountain~
 a fountain pen~
 A fountain pen lies here.~
 ~
-5 b an 0
+5 b 0 0 0 an 0 0 0 0 0 0 0
 0 1 3 11
 1 100 5 0
 #5486
@@ -711,7 +711,7 @@ hammer sledge~
 a sledge hammer~
 A sledge hammer lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 3 6
 24 200 40 0
 #5487
@@ -719,7 +719,7 @@ shoe horse~
 a horse shoe~
 A horse shoe lies here.~
 ~
-9 bg aco 0
+9 bg 0 0 0 aco 0 0 0 0 0 0 0
 1 0 0 0
 2 1000 200 0
 A
@@ -729,7 +729,7 @@ saddle~
 a saddle~
 A saddle lies here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 4 100 50 0
 #5489
@@ -737,7 +737,7 @@ crop riding~
 a riding crop~
 A riding crop lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 2
 1 50 10 0
 #5490
@@ -745,7 +745,7 @@ chessboard~
 a chessboard~
 A heavy marble chessboard lies here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 1 30 6
 10 100 20 0
 #5491
@@ -753,7 +753,7 @@ seed sesame~
 a sesame seed~
 A sesame seed lies here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 6 0 0 0
 1 10 0 0
 #5492
@@ -761,7 +761,7 @@ spear gae bolg~
 Gae Bolg~
 A beautiful spear is lying on the ground here.~
 ~
-5 agmno an 0
+5 agmno 0 0 0 an 0 0 0 0 0 0 0
 0 5 3 11
 12 180 12 0
 E
@@ -775,7 +775,7 @@ key~
 the jail key~
 The key to the jail lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 5493 0 0 0
 1 100 200 0
 #5494
@@ -783,7 +783,7 @@ key~
 the dungeon key~
 The dungeon key lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 5494 0 0 0
 1 100 200 0
 #5495
@@ -791,7 +791,7 @@ claw wolverine~
 the wolverine claw~
 A claw from some animal lies here.~
 ~
-5 bl an 0
+5 bl 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 8
 2 400 50 0
 A
@@ -801,7 +801,7 @@ wrath allah mace~
 the wrath of Allah~
 A large ornate mace floats above the ground here.~
 ~
-5 agmop an 0
+5 agmop 0 0 0 an 0 0 0 0 0 0 0
 0 4 4 6
 16 250 125 0
 E

@@ -9,7 +9,7 @@ pedestal labelling the suit to be the 'Authentic Armor worn by an Ionion Knight
 during the 2nd Crusade'.  A sign on the front of the counter reads; Better to
 die on your feet than live on your knees.  
 ~
-257 d 0
+257 8 0 0 0 0
 D1
 You see the exit to North Bourbon St.
 ~
@@ -58,7 +58,7 @@ convenient, wouldn't you say?  Obviously, Maris the arms dealer thinks so, too,
 since his name is on both store fronts, proclaiming him the procurer of the
 finest armor and weapons in all of Jareth.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 Looking north you see Bourbon Street stretch off into the distance.
 
@@ -92,7 +92,7 @@ To the north you see The Bootery.  It appears that to the east, the avenue opens
 into a large square of some kind, while to the west Floris Avenue runs
 uninterrupted.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see the entrance to the Bootery.
 ~
@@ -121,7 +121,7 @@ To the north you may enter the Constabulary, the main office and station of
 Jareth's law enforcemnt professionals.  To the south begins Worship Way, the
 road leading to Jareth's famed Temple of All and None.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see the main office of the Constabulary.
 ~
@@ -152,7 +152,7 @@ Because it is a non-profit service, the room is not designed for comfort but to
 accomplish it's purpose.  A slightly reclined chair sits in the center of the
 room.  
 ~
-257 d 0
+257 8 0 0 0 0
 D1
 You may enter onto Worship Way.
 ~
@@ -168,7 +168,7 @@ you whatsoever.  To the north, Bourbon street continues to a dead end at the
 river bank, to the south Bourbon St.  Offers a slew of inns and taverns, and
 east and west Floris St lines itself with shops of every description.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 Bourbon St heads north from here.
 ~
@@ -197,7 +197,7 @@ north you see an entrance to Maris' Weapon Shop, and to your south lies an
 entrance to the Kitty-Kat Club, a local fine dining and entertainment
 establishment.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see the entrance to Maris' Weaponry.
 ~
@@ -228,7 +228,7 @@ building with worked stone, polished glass, and a great deal of copper trimming.
 To the south lies the entrance to the City Provisioner.  Any and all foodstuffs
 needed can be purchased in his shop.  East and west Floris Ave continues.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You may enter Jareth City Bank to the north.
 ~
@@ -256,7 +256,7 @@ The Reception~
 hall.  An exit to the north leads to the Cryogenic Center.  There is a small
 sign on the counter.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 You see the Cryogenic Center.
 ~
@@ -289,7 +289,7 @@ true, but mostly because it's the only shop in Jareth that sells purified water.
 The wellmaster stands in the center of his shop, hands on his ample belly,
 waiting for your pleasure.  
 ~
-257 d 0
+257 8 0 0 0 0
 D1
 You see the exit out to Bourbon St.
 ~
@@ -308,7 +308,7 @@ in one corner, obviously Vulcevic's bed.  There is no counter or area where one
 would expect to get helped, so you must just wait upon the Captain for his
 appearance.  
 ~
-257 d 0
+257 8 0 0 0 0
 D3
 You see River St.
 ~
@@ -330,7 +330,7 @@ vault, although this is only conjecture because at this time the door stands
 closed, and it looks as though it would take Dibrova's most skillful lockpick
 and the strength of ten giants to open it.  South is the exit to Floris Ave.  
 ~
-257 dh 0
+257 136 0 0 0 0
 D2
 You see Floris Ave.
 ~
@@ -343,7 +343,7 @@ River St~
 part of Jareth, south is a Constable's Outpost.  To the east is the Jeweler and
 to the west is the Mage's Guild.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 River St continues north.
 ~
@@ -374,7 +374,7 @@ in battle and damsels in distress waving white handkerchieves.  To the south is
 the northernmost wall of Grainy's Tavern, famous for their malt liquor and great
 entertainment.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 You see the City Proper.
 ~
@@ -400,7 +400,7 @@ from the look of the servers you can see through the windows, they serve more
 than bar burgers.  To the south are more shops of ill repute, and the town
 square opens up to the north.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see the City Proper.
 ~
@@ -435,7 +435,7 @@ establishment, and the man you must speak to if you wish to enjoy a meal and/or
 the main dining area and a set of stairs lead upwards into what you assume would
 be the 'entertainers' quarters.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 You see the exit to Floris Ave.
 ~
@@ -459,7 +459,7 @@ hoping to make a sale.  Many shelves and racks stand all over this small shop
 waiting for your purchase.  The only available exit is to the north, leading to
 Floris Ave.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see Floris Ave.
 ~
@@ -478,7 +478,7 @@ There is only a small area for you to stand in, the rest is blocked off by a
 long counter which stretches the length of the shop.  Shelves and drawers are
 built into the back wall with glass vials filling every nook and cranny.  
 ~
-257 cdh 0
+257 140 0 0 0 0
 D0
 You see Floris Ave.
 ~
@@ -503,7 +503,7 @@ bootery, where you may windowif so desired.  North is more of River St, which
 crosses the river further up, and south, River St crosses Floris St in a square.
 
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 River St runs north over the River Alquandon.
 ~
@@ -525,7 +525,7 @@ kind of place.  Most of the patrons of Jahred's look as if they'd rather stick a
 knife in your back than let you buy them a drink, so a friendly game of cards is
 probably out of the question.  
 ~
-257 d 0
+257 8 0 0 0 0
 D3
 You see the bar.
 ~
@@ -540,7 +540,7 @@ of all the inventory she carries, she must do quite well.  New, used, drab,
 colorful, all sorts of quilts drape over racks and hang on the walls.  Most are
 knit, but there are some patchwork and full length available.  
 ~
-257 de 0
+257 24 0 0 0 0
 D0
 You see Bourbon street.
 ~
@@ -561,7 +561,7 @@ reputation which has spread far beyond the boundaries of Jareth.  He seems not
 to notice as you walk in, so intent on his work he seems, and almost startles
 you when he asks if he can help you, without looking up.  
 ~
-257 d 0
+257 8 0 0 0 0
 D1
 You may enter onto Worship Way.
 ~
@@ -577,7 +577,7 @@ requires you to first take a deep breath, so that doesn't work.  Instead, you
 decide to give in and inhale all the sights and sounds and soon you get so used
 the intense stench that you don't even notice it anymore.  
 ~
-257 d 0
+257 8 0 0 0 0
 D3
 You see Worship Way.
 ~
@@ -588,7 +588,7 @@ S
 PETSHOP STOREROOM~
    Mortals should never come here!    
 ~
-257 jk 0
+257 1536 0 0 0 0
 S
 #25724
 The Bloated Goat~
@@ -600,7 +600,7 @@ entrance into the Goat, the quieter it gets.  Soon it is completely silent.
 Everyone is looking at you.  "What'll it be?  ", the bartender growls at you
 from under his thick beard.  
 ~
-257 de 0
+257 24 0 0 0 0
 D1
 You see the exit to South Bourbon St.
 ~
@@ -623,7 +623,7 @@ To your east you can peer through windows into the dining area of The Kitty-Kat
 club, and what you see is very enticing.  To your west is The Bloated Goat, a
 tavern for wayward adventurers.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see more of Bourbon St.
 ~
@@ -651,7 +651,7 @@ realize that there is a man standing directly before you.  How could you have
 missed him when you first walked in?  There is a large tree to your east which
 looks to be hollow, and the exit into the reception room is north.  
 ~
-257 cdej 1
+257 540 0 0 0 0
 D0
 ~
 ~
@@ -673,7 +673,7 @@ their life, and a brief explanation why you wish them killed.  East is the
 entrance to the Assassin's Guild, and west is the main room for Contracts, Ltd.
 
 ~
-257 d 0
+257 8 0 0 0 0
 D1
 You see the thieves bar, where everything disappears.
 ~
@@ -690,7 +690,7 @@ Floris Ave~
 east of here.  To the west, the City of Jareth awaits your pleasure.  North of
 you are the stables and south is the horse trader.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see the stables.
 ~
@@ -723,7 +723,7 @@ leave the city, you need only to move east, but to enter it may prove to be a
 bit more difficult.  Although Jareth does boast the title 'The Free City', it
 does have laws and they are enforced.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 ~
 ~
@@ -747,7 +747,7 @@ although in a rough part of town, has nevertheless perservered and even been
 able to thrive on a healthy chunk of business, or so it seems from the way the
 building is maintained.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 Bars bars bars and Bourbon St.
 ~
@@ -781,7 +781,7 @@ hands you your menu, and asks if you would like any drinks, you realize that if
 there is any other place in Dibrova you would like to be more than where you are
 now, it really doesn't matter.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 You see the reception area.
 ~
@@ -819,7 +819,7 @@ all the wrong chords to a popular bar tune in the realm.  A long bar to your
 left offers a wood stool to rest on and a cold drink to quench your thirst and
 you have the choice of half a dozen empty tables as well.  
 ~
-257 d 0
+257 8 0 0 0 0
 D1
 You see the exit to South Bourbon St.
 ~
@@ -832,7 +832,7 @@ The Bootery~
 worked leather and oils.  Shelves line the walls to your left and right and
 boots of all size, make, and color await your eager feet.  
 ~
-257 cdh 0
+257 140 0 0 0 0
 D2
 You see Floris Ave.
 ~
@@ -845,7 +845,7 @@ Jeweler~
 on the far wall displaying the many fine items for sale in this shop.  
 Necklaces, earrings, rings, pendants, rough- and fine-cut stones abound.  
 ~
-257 0 0
+257 0 0 0 0 0
 D3
 ~
 ~
@@ -859,7 +859,7 @@ dazzle your eyes in an attempt to create a magical atmosphere.  This must be in
 hopes that the crazy colors will build a desire in you to buy, buy, buy.  
 (scroll maker)
 ~
-257 d 0
+257 8 0 0 0 0
 D1
 You see the exit to River St.
 ~
@@ -873,7 +873,7 @@ is nothing but dust.  A sign hanging over the eastern doorway reads: No Refunds
 Given.  This is Final!  You may leave out onto Worship Way to the west or head
 east into the hire room.  
 ~
-257 d 0
+257 8 0 0 0 0
 D1
 ~
 ~
@@ -892,7 +892,7 @@ unknown source, and although you may not be a big harp fan, the music is not
 unappealing.  A doorway to the west leads to what must be the main guild area
 and the exit to River St.  Is east.  
 ~
-257 d 0
+257 8 0 0 0 0
 D1
 You see the exit to River St.
 ~
@@ -911,7 +911,7 @@ to the proper section for the spell or skill you would like to train in will be
 no problem.  A partitioned off space has also been set aside for the studying of
 spells and magic.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 A curtained doorway leads you to your Guildmaster.
 ~
@@ -931,7 +931,7 @@ etched into the floor here, with incense burning at each of the eight points.
 At each point there reads a word which identifies one of the eight duties of all
 mages.  
 ~
-257 cdej 0
+257 540 0 0 0 0
 D2
 A curtained doorway leads to the Practice and Reading Room.
 ~
@@ -949,7 +949,7 @@ entertaining side of town.  To the south lies more of River St and what looks to
 be a number of shops, while to the east, Floris Ave offers a variety of shops
 which gradually give way to Jareth's city proper.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 River St runs north.
 ~
@@ -980,7 +980,7 @@ Twon Provisioner's small shop, while to the east, you see the westren wall of
 the Cartwright's shop.  North you can enter back into the hustle and bustle of
 regular city traffic on Floris Ave.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You may enter onto Floris Ave.
 ~
@@ -1012,7 +1012,7 @@ wandering adventurer.  North you see Floris Ave crossing River St and to the
 south, more shops and at a cul-de-sac where the road ends, a constable's
 outpost.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 River St continues north.
 ~
@@ -1043,7 +1043,7 @@ exchange weapons for better killing power, and stretch out in anticipation of a
 good fight.  You can't help but feel just a bit apprehensive as the group begins
 their approach.  
 ~
-257 a 1
+257 1 0 0 0 0
 D0
 ~
 ~
@@ -1062,7 +1062,7 @@ perturbed.  You can leave to the north or south, though neither choice seems all
 that inviting since both directions lead to more of what you're standing in now.
 
 ~
-257 a 1
+257 1 0 0 0 0
 D0
 The alley seems to get a bit brighter in that direction.
 ~
@@ -1081,7 +1081,7 @@ firepit in the center glows with hot coals.  It seems the tree itself serves as
 a chimney for the smoke from the hot coals, but you cannot be certain of that,
 because looking up into the tree, you see only darkness.  
 ~
-257 cdej 1
+257 540 0 0 0 0
 D3
 The alley leads west.
 ~
@@ -1094,7 +1094,7 @@ Floris Ave~
 of the city.  To the south is the Ranger Guild and to the north begins a
 cobblestone street which leads to Lord's Keep, home of the Lord of Jareth.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see the beginning of a Cobbled St.
 ~
@@ -1129,7 +1129,7 @@ numbers will prevent you from any advantages.  Your only chance to run like hell
 is now, and although a cowardly way to deal with the situation, it is
 recommended.  
 ~
-257 a 1
+257 1 0 0 0 0
 D1
 You see a nondescript brick wall.
 ~
@@ -1152,19 +1152,19 @@ corner, a chest heaped with coins lays on it's side, while in another, a rack of
 glowing, golden armour and weapons sits propped against the wall.  Your only
 exit is to the west.  
 ~
-257 cdj 0
+257 524 0 0 0 0
 D3
 ~
 door~
 1 -1 25747
 E
-chest coins~
-   There could be as much as one million gold in that chest...  
-~
-E
 rack armor~
    The value of that armor must be twenty times the value of any other armor in
 all the land..  
+~
+E
+chest coins~
+   There could be as much as one million gold in that chest...  
 ~
 S
 #25749
@@ -1175,7 +1175,7 @@ very walls seem to ooze into every part of your being.  A soft, slightly padded
 mat lies on the floor, offering you the chance to rest or meditate, as you will.
 
 ~
-257 cdehj 0
+257 668 0 0 0 0
 D2
 You see the river flowing west.
 ~
@@ -1194,7 +1194,7 @@ mobile transportation enabling easier transport of larger and/or heavier loads
 over long distances.  North is the windowless wall of the city jail, which can
 be entered through the Constabulary to the northwest.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 Floris Ave runs east.
 ~
@@ -1218,7 +1218,7 @@ the river bank trying their luck while others relax on benches here enjoying the
 sights and sounds of the river.  You can enter the Bait & Tackle to the north or
 continue along the Boardwalk.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see the Bait and Tackle.
 ~
@@ -1241,7 +1241,7 @@ Floris Ave~
 dirtier and worn the closer you get to the west gate.  The paving is chipped,
 cracked, and in some places entirely gone, making the way somewhat bumpy.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 Floris Ave opens into a square.
 ~
@@ -1261,7 +1261,7 @@ are inside for inspections, but many well drawn sketches of blueprints, load
 maximums, and actual pictures of what the product should look like are on the
 walls.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 You see Floris Ave.
 ~
@@ -1284,7 +1284,7 @@ Dalston the Wanderer began way back when he was still a strapping young man.
 It is said that now his children run the franchise, and the rumor is, they do a
 handsome business by being fair priced and always giving a quality product.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 You see the entrance to Dalston Outfitters.
 ~
@@ -1309,7 +1309,7 @@ get the hell out of here!  Three street toughs lounge against the alley wall,
 not moving, not talking, they just stare intently at you, as if waiting for some
 unseen signal.  
 ~
-257 a 1
+257 1 0 0 0 0
 D1
 ~
 ~
@@ -1331,7 +1331,7 @@ only head west.  Entering, however, may prove to be a bit more difficult.
 Although Jareth does boast the title Free City, it does have laws and they are
 enforced.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 Floris Ave runs east.
 ~
@@ -1352,7 +1352,7 @@ Constabulary, you feel much more at ease about walking the streets of Jareth.
 Whether that is because you feel you are better protected or you can better get
 away with what you would like to, well, that remains to be seen.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 You see the exit to River St.
 ~
@@ -1366,7 +1366,7 @@ temple in all Dibrova where all races and classes are welcome and all forms of
 worship are embraced.  To the west you see the entrance to the blacksmith's and
 to the east is the pet shop.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 Worship Way runs north.
 ~
@@ -1399,7 +1399,7 @@ the long tall building which houses flats for any who wish to lease, although
 the entrance is southwest.  Directly west only leads to a tall, windowless wall.
 
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 River St crosses a beautiful bridge to the north.
 ~
@@ -1425,7 +1425,7 @@ the east is Contracts, Ltd.  , where one may offer gold in return for the
 service of a professional assassin.  North is Worship Way and the many shops it
 offers.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 Worship Way runs north.
 ~
@@ -1453,7 +1453,7 @@ Assassin's Weaponry~
 professional killing community.  All manner of weapons hang on the walls, rest
 in glass display cases, and lay on shelves.  
 ~
-257 cdj 0
+257 524 0 0 0 0
 D0
 The path continues northwards bringing you ever closer to the Dragonhelm
 Mountains.
@@ -1473,7 +1473,7 @@ places making pass-through impossible.  You finally make it to the counter,
 behind which stands a clerk in a blue and green striped shirt with the Dalston
 logo emblazoned on the left breast.  The only exit is to the west.  
 ~
-257 d 1
+257 8 0 0 0 0
 D3
 You see the exit out to Bourbon St.
 ~
@@ -1489,7 +1489,7 @@ the ceiling and walls, giving the shop a look of both nostalgia and rugged
 strength.  A sign over the doorway leading to the backroom reads; Better to be a
 Lion for a day than a sheep for a whole lifetime.  
 ~
-257 cdeh 0
+257 156 0 0 0 0
 D2
 ~
 ~
@@ -1506,7 +1506,7 @@ The Cryogenic Center~
 body-length canisters lined up against the walls.  The Reception is to the
 south.  
 ~
-257 d 1
+257 8 0 0 0 0
 D2
 The Reception is to the south.
 ~
@@ -1520,7 +1520,7 @@ money pass through it's coffers than the Jareth City Bank.  A small desk sits in
 corner of the room, and a small man sits behind it waiting for you to begin
 dealing on the steed of your choice.  
 ~
-257 0 0
+257 0 0 0 0 0
 D0
 You may enter onto Floris Ave.
 ~
@@ -1540,7 +1540,7 @@ offered by others of the same kind.  The entrance to the main Ranger Guild Hall
 lies south through an archway which shimmers with a light not unlike that of a
 warm spring day.  North is the exit to Floris Ave.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 You see Floris Ave.
 ~
@@ -1560,7 +1560,7 @@ here looking bored makes you think that either he is a complete moron to be here
 alone selling wares, or he could simply be the baddest sonofabitch (in disguise)
 that you've ever laid eyes on.  Take your pick.  The exit is west.  
 ~
-257 0 1
+257 0 0 0 0 0
 D3
 ~
 afghan secret door~
@@ -1579,7 +1579,7 @@ the Magistrate's Office.  From the way voices are kept to a low murmur in this
 room, you figure the Magistrate must be a tough cookie, at least on his workers.
 The exit to Floris Ave is south.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 You see a closed door.
 ~
@@ -1605,7 +1605,7 @@ of the cell is intended for you to relieve yourself.  West of you, beyond the
 bars, is the Constabulary, where a flurry of efficient activity goes on without
 intermission.  
 ~
-257 d 0
+257 8 0 0 0 0
 D3
 ~
 cell door~
@@ -1621,7 +1621,7 @@ east wall hangs the many awards and plaques given to the Magistrate by the
 grateful people of Jareth.  The north wall is mostly glass, a window offering a
 beautiful view of the Alquandon River and the boardwalk on the far side.  
 ~
-257 d 0
+257 8 0 0 0 0
 D2
 ~
 door office~
@@ -1670,7 +1670,7 @@ Cobbled St~
 east you may enter the stables, west is the windowless wall of the City Jail,
 and south is the hustle and bustle of Floris Ave.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 ~
 ~
@@ -1688,7 +1688,7 @@ your needs dictate otherwise.  Great care is given to each and every animal,
 whether thoroughbread or jackass they receive the best of oats, a nightly sponge
 bath and rub down, and twice daily they are run in the yard for excercise.  
 ~
-257 d 0
+257 8 0 0 0 0
 D2
 You may eneter onto Floris Ave.
 ~
@@ -1702,7 +1702,7 @@ Grigor's.  Grigor, being a fisherman by trade for most of his younger years,
 knows all the best spots on the river and all the best tackle to use.  You may
 exit south to the Boardwalk.  
 ~
-257 d 0
+257 8 0 0 0 0
 D2
 ~
 ~
@@ -1720,7 +1720,7 @@ fine, cutting edge, but it also gives those seated some entertainment watching
 their peers make asses of themselves while practicing new moves not quite
 perfected.  
 ~
-257 dj 0
+257 520 0 0 0 0
 D3
 ~
 ~
@@ -1737,7 +1737,7 @@ would be your guildmaster seated on it.  Flanked by guards on either side, both
 carrying spears the size of a large tree, you can't help but feel just a bit
 intimidated.  
 ~
-257 dj 0
+257 520 0 0 0 0
 D1
 ~
 ~
@@ -1753,7 +1753,7 @@ alignment, a following of belief.  The fourth point is the entrance to the
 temple itself, which is north.  A door in the wall near the temple exit allows
 access to the Cleric's Guild.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 You may enter onto Worship Way.
 ~
@@ -1772,7 +1772,7 @@ kneeling pads line the floor along the north and south walls, allowing comfort
 while in prayer.  A flight of stairs lead up to the Temple of All and None, and
 to the west, the High Priest of Jareth.  
 ~
-257 dej 0
+257 536 0 0 0 0
 D3
 ~
 ~
@@ -1788,7 +1788,7 @@ Cleric's Guild~
 Draped in red and purple silk tapestries, the room makes you feel both majestic
 and at peace.  
 ~
-257 dej 0
+257 536 0 0 0 0
 D1
 ~
 ~
@@ -1805,7 +1805,7 @@ work could only be the work of the fabled dwarven metalsmiths at Krat.  North of
 you the boardwalk begins, south is a square and most of Jareth, and you may
 enter the Alquandon River from a path leading down.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 River St runs north into the more 'upper class' section of Jareth.
 ~
@@ -1824,7 +1824,7 @@ district of Jareth.  South of you is the Bridge, north the road makes a turn to
 the west before a Constable's Ouptost, and east begins the Boardwalk along the
 river.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 River St runs north.
 ~
@@ -1847,7 +1847,7 @@ Ulath Way~
 Outpost is north of you, offering protection to any in need.  To the east Ulath
 Way continues with the city wall to the north and River St to the south.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see a Constable's Outpost.
 ~
@@ -1874,7 +1874,7 @@ you feel much more at ease about walking the streets of Jareth.  Whether that is
 because you feel that you are better protected, or simply more able to get away
 with whatever it is you would like, well, that remains to be seen.  
 ~
-257 d 0
+257 8 0 0 0 0
 D2
 ~
 ~
@@ -1887,7 +1887,7 @@ wall.  Here you may post a message to any other player on the MUD or get any
 messages you may have waiting for you.  A clerk, wearing a visor and a thumb
 rubber stands behind a desk. 
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 ~
 ~
@@ -1900,7 +1900,7 @@ Cots line one wall, where a number of sick people lay, some resting peacefully,
 some moaning in pain.  Here you may receive attention for any wounds you may
 have incurred or simply get a 'recharge'.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 ~
 ~
@@ -1913,7 +1913,7 @@ both fictional and nonfictional.  An attendant is always on hand to help locate
 any works you may be looking for, and also to help those who have difficulty in
 reading.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 ~
 ~
@@ -1926,7 +1926,7 @@ concerned.  Franz, designer and operator of this establishment, takes a great
 deal of time in locating the finest materials for his garments.  You see no sale
 signs, which means that Franz must deserve his reputation.  
 ~
-257 d 0
+257 8 0 0 0 0
 D2
 ~
 ~
@@ -1938,7 +1938,7 @@ Training Hall~
 be used for training.  All sorts of people train or work out in various places
 around you.  
 ~
-257 d 0
+257 8 0 0 0 0
 D0
 ~
 ~
@@ -1953,7 +1953,7 @@ about the room.  Men in dark armor stand with their arms crossed at 3 foot
 intervals along the walls watching and making sure no one cheats.  The exit is
 south, or you may sit down and try and win some fast cash.  
 ~
-257 d 0
+257 8 0 0 0 0
 D2
 ~
 ~
@@ -1969,7 +1969,7 @@ walls east and west, a long bar next to the bandstand offers drinks to your
 north, and the dance floor, smack dab in the center of the room, simply calls to
 you.  
 ~
-257 d 0
+257 8 0 0 0 0
 D2
 ~
 ~
@@ -1980,7 +1980,7 @@ Ulath Way~
    Ulath Way continues east and west along the north wall.  To the south, you
 may enter the Post Office.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 Ulath Way runs east.
 ~
@@ -2002,7 +2002,7 @@ Ulath Way~
    The road continues east and west along the north wall.  You may enter the
 Hospital to the south.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 Ulath Way runs east.
 ~
@@ -2024,7 +2024,7 @@ Ulath Way~
    The road continues east and west here along the north wall.  You may enter
 the Library to the south.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 Did I say you could look east, punk?
 ~
@@ -2047,7 +2047,7 @@ Ulath Way~
 see that Ulath Way makes a turn south, onto the boardwalk.  Directly south of
 you is the Training Hall.  
 ~
-257 0 1
+257 0 0 0 0 0
 D1
 Ulath Way runs east.
 ~
@@ -2069,7 +2069,7 @@ Boardwalk~
    You stand on a wooden road which runs south along the river bank.  To your
 west is Ulath Way, the northernmost road in Jareth.  
 ~
-257 0 1
+257 0 0 0 0 0
 D2
 The boardwalk runs south.
 ~
@@ -2087,7 +2087,7 @@ Boardwalk  ~
 the Karafa meet.  Fishermen line the bank, trying their luck, while others
 lounge on benches just enjoying the sights and sounds along the river.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 The boardwalk runs north
 ~
@@ -2106,7 +2106,7 @@ following the course of the river.  Fishermen line the river bank, trying their
 luck, while others just lounge on benches here, enjoying the sights and sounds
 of the river.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 The boardwalk runs north.
 ~
@@ -2124,7 +2124,7 @@ Boardwalk~
 or relaxation, as you will.  Les Franz, a well reknowned clothing shop in
 Jareth, is to your north.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see a clothing shop.
 ~
@@ -2149,7 +2149,7 @@ simply sit on benches here enjoying the sights and sounds of the river.  Loud
 music can be heard to the north, coming from a bar and to your west you may
 enter onto River St.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 You see a bar.
 ~
@@ -2171,7 +2171,7 @@ The Boardwalk~
    The boardwalk runs east and west along the riverbank.  There is a casino to
 the north and if one has the desire, on may try fishing here in the river.  
 ~
-257 0 1
+257 0 0 0 0 0
 D0
 ~
 ~

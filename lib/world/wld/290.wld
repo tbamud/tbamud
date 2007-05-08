@@ -7,7 +7,7 @@ the Golden treasure in the depths of the lair of the lizardmen.  If you wish to
 test your luck, you can push your way through the exit to the south...  If not,
 you can leave the Safari Park to the east.  There is a large sign here.    
 ~
-290 cd 4
+290 12 0 0 0 0
 D1
 The Real World is to the east.
 ~
@@ -18,6 +18,19 @@ The quest begins to the south.
 ~
 ~
 0 -1 29001
+E
+sign large~
+   The sign reads as follows:
+ 
+   This area is not suggested if your character is less than 15th level
+   since there are several tough aggressive monsters.  There are one or
+   two essential skills to have... either a knock spell or item, or the
+         ability to pick locks.  If you are LUCKY you might find
+                  an item to open locks....
+ 
+                                                Matrix
+ 
+~
 E
 credits info~
    The Lizard Lair Safari
@@ -42,19 +55,6 @@ chance, and another, and...
 
 Links: 17
 ~
-E
-sign large~
-   The sign reads as follows:
- 
-   This area is not suggested if your character is less than 15th level
-   since there are several tough aggressive monsters.  There are one or
-   two essential skills to have... either a knock spell or item, or the
-         ability to pick locks.  If you are LUCKY you might find
-                  an item to open locks....
- 
-                                                Matrix
- 
-~
 S
 #29001
 The Quest Preparation Room~
@@ -66,7 +66,7 @@ quest, the guide gives you a potion and tells you to quaff it.  You do so and
 feel like your movements are easier, and much more free.  The guide suddenly
 vanishes and you begin the quest.    
 ~
-290 cd 0
+290 12 0 0 0 0
 D5
 The water below you looks rather ominous.
 ~
@@ -79,7 +79,7 @@ A Tunnel~
 gives you visibility here.  There are two exits.  One is to the east and one
 above you.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D0
 A LUCKY blocks your view of whatever is north.
 ~
@@ -101,7 +101,7 @@ A Tunnel~
    This tunnel is filled with water.  There are exits to the east and west.  
 The tunnel stretches off in both directions.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D1
 The tunnel stretches off to the east.
 ~
@@ -119,7 +119,7 @@ A Tunnel~
 you.  Fortunately, there are two exits, one to the west and one through a hole
 in the floor.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D3
 The tunnel stretches off to the west.
 ~
@@ -140,7 +140,7 @@ Tunnel End~
    The tunnel ends here.  There is a hole in the ceiling and a large door to
 the west.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D3
 There is a door here.
 ~
@@ -152,12 +152,12 @@ There is a hole in the ceiling leading up.
 ~
 0 -1 29004
 E
-door~
-   You have to be able to Pick or Knock this door open, unless you got LUCKY.  
-~
-E
 hole~
    The hole leads up.  Big surprise since you've already seen it.  
+~
+E
+door~
+   You have to be able to Pick or Knock this door open, unless you got LUCKY.  
 ~
 S
 #29006
@@ -167,7 +167,7 @@ east you can see a door and to the west you can see a waterfilled hallway
 stretching off.  The whirlpool is threatening to pull you down, but you are
 certain that you would drown in it.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D0
 There is a strange store that seems suspiciously out of place just to
 the north.
@@ -191,19 +191,19 @@ The whirlpool is threatening to pull you down to your death.
 ~
 0 -1 29007
 E
-whirlpool~
-   This just looks scary and EXTREMELY dangerous.  
-~
-E
 door~
    This is a big door, but not as big as it looked from the other side.  
+~
+E
+whirlpool~
+   This just looks scary and EXTREMELY dangerous.  
 ~
 S
 #29007
 The Whirlpool~
    It was not a good idea to come here.    
 ~
-290 d 0
+290 8 0 0 0 0
 D4
 ~
 ~
@@ -214,7 +214,7 @@ A Hallway~
    The hallway naturally twists so that is seems to head east and down, but the
 hallway doesn't seem to be curved or bent in any way.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D1
 There is a large room to the east.
 ~
@@ -235,7 +235,7 @@ S
 A Hallway~
    The hallway here is bent in a big way.  It goes up and east.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D1
 There is a large chamber to the east.
 ~
@@ -258,7 +258,7 @@ than that it serves no purpose.  This area was conceived and built by Matrix of
 The Curious Area Workshop If you have questions or complaints please contact
 <fletcher@@cspo.queensu.ca>
 ~
-290 0 0
+290 0 0 0 0 0
 S
 #29011
 The Throne Room Annex~
@@ -266,7 +266,7 @@ The Throne Room Annex~
 leads off to the west.  The room is lavishly decorated but there is not much to
 see.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D1
 The Throne Room looms to the east.
 ~
@@ -289,7 +289,7 @@ hole in the ceiling.  The throne almost dominates the room.  No one is sitting
 in it.  The wall is decorated to look like pillars surround the room.  The
 annex is to the west whilst you are not sure what is above.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D3
 The Throne Room Annex is to the west.
 ~
@@ -301,14 +301,14 @@ You can't see what is above this room.
 ~
 0 -1 29013
 E
-pillars wall~
-   What a useless concept.  Why didn't the designer just put actual pillars in?
-
-~
-E
 throne~
    This is a large ugly thing that you are repulsed by.  You can think of no
 conceivable reason why the lizardmen keep it here.  
+~
+E
+pillars wall~
+   What a useless concept.  Why didn't the designer just put actual pillars in?
+
 ~
 S
 #29013
@@ -318,7 +318,7 @@ ugly.  At least in your opinion it is...  You are certain that the lizardmen
 like it though.  There are two exits.  Down and through the large door to the
 east.    
 ~
-290 ad 6
+290 9 0 0 0 0
 D1
 A large door blocks your way.
 ~
@@ -340,7 +340,7 @@ Quest End~
 into the quest through the door and back to the outer world which lies to the
 east.    
 ~
-290 c 0
+290 4 0 0 0 0
 D1
 The way back to te real world is to the east.
 ~
@@ -356,7 +356,7 @@ S
 Quest Preparation Room~
    This room is exactly as you left it.  One exit...  Down...    
 ~
-290 cd 0
+290 12 0 0 0 0
 D5
 The water below still looks ominous.
 ~
@@ -368,7 +368,7 @@ LUCKY~
    This room is empty.  There is a LUCKY blocking your way to the south.  
 There is a sign on the wall.    
 ~
-290 d 0
+290 8 0 0 0 0
 D2
 The is a LUCKY blocking your view.
 ~
@@ -384,7 +384,7 @@ The Real World Ends Here~
    This is the point where the real world ends...  PROCEED AT YOUR OWN RISK!  
 The entrance to the Lizard Lair Safari is to the west.  
 ~
-290 0 0
+290 0 0 0 0 0
 D3
 This is the entrance way to the Safari.
 ~
@@ -400,7 +400,7 @@ Mr. Hooper's store~
    This is your friendly neighbourhood convenience store and restaurant.  
 There are many interesting things that you can buy here.    
 ~
-290 cd 1
+290 12 0 0 0 0
 D2
 The conjuring chamber is still to the south.
 ~

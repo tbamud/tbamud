@@ -3,7 +3,7 @@ pixie sword~
 a very tiny sword~
 A very petite sword lies here on the ground, you almost didn't see it.~
 ~
-5 k an 0
+5 k 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
 1 10 1 0
 E
@@ -20,7 +20,7 @@ white dragon claw key~
 a small white key shaped like a claw~
 A small white claw is sitting here, lost.~
 ~
-18 m ao 0
+18 m 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 1 1 0 0
 E
@@ -33,7 +33,7 @@ door key~
 a door key~
 There is a door key sitting here.~
 ~
-18 m ao 0
+18 m 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 1 1 0 0
 E
@@ -45,7 +45,7 @@ gate keeper key~
 the gatekeeper's key~
 A large bronze key sits upon the ground, covered with dust.~
 ~
-18 m ao 0
+18 m 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 1 1 0 0
 E
@@ -58,7 +58,7 @@ copper dragon claw key~
 a small copper key shaped like a claw~
 A small copper claw lies here, abonded by everyone~
 ~
-18 m ao 0
+18 m 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 1 1 0 0
 E
@@ -71,7 +71,7 @@ pixie king key~
 a very small key~
 The key to the Pixie King's bedroom is here, it is almost impossible find.~
 ~
-18 m ao 0
+18 m 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 1 1 0 0
 E
@@ -83,7 +83,7 @@ white pendant dragon scale~
 a white dragon scale pendant~
 Upon the ground lies a solid white pendant, it issues forth an aura of cold.~
 ~
-9 agi aco 0
+9 agi 0 0 0 aco 0 0 0 0 0 0 0
 5 0 0 0
 5 1000 50 0
 E
@@ -100,7 +100,7 @@ copper pendant dragon scale~
 a copper dragon scale pendant~
 Upon the ground lies a solid copper pendant, as you reach for it, time seems to slow.~
 ~
-9 agi aco 0
+9 agi 0 0 0 aco 0 0 0 0 0 0 0
 5 0 0 0
 5 1000 50 0
 E
@@ -118,7 +118,7 @@ pixie wings~
 a pair of pixie wings~
 A pair of translucent wings lie upon the ground, their is an eerie glow about them.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 250 150 0
 E
@@ -133,7 +133,7 @@ pendant eternity~
 the pendant of eternity~
 A small pendant is here on the ground, you almost ignore it, til it calls out your name.~
 ~
-9 agi aco 0
+9 agi 0 0 0 aco 0 0 0 0 0 0 0
 5 0 0 0
 1 1 0 0
 E
@@ -146,7 +146,7 @@ white dragon scale breast plate~
 a white dragonscale breast plate~
 A shimmering white breast plate lies here, it is cold to the touch.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 12 200 100 0
 E
@@ -161,7 +161,7 @@ copper dragon scale breast plate~
 a copper dragonscale breast plate~
 An elegant copper breast plate lies here, it looks very new.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 12 200 100 0
 E
@@ -178,7 +178,7 @@ carcass~
 a carcass~
 A carcass is lying on the ground, mangled beyond recognition.~
 ~
-9 0 0 0
+9 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -192,7 +192,7 @@ spray paint can~
 a can of spraypaint~
 A can of spraypaint is sitting here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 10 25 0
 #25014
@@ -200,7 +200,7 @@ pixie stick~
 a Pixie Stick~
 A Pixie Stick lies here on the ground, it looks tasty.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 6
 2 1 1 0
 E
@@ -217,7 +217,7 @@ pixie plate breast~
 a Pixie breast plate~
 There is a very small piece of metal lying here.~
 ~
-9 a ad 0
+9 a 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 5 1000 100 0
 E
@@ -234,7 +234,7 @@ pixie greaves~
 a pair of Pixie greaves~
 A pair of very small metallic pants lie here.~
 ~
-9 a af 0
+9 a 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
 3 1000 100 0
 E
@@ -250,7 +250,7 @@ pixie arm plates~
 a pair of Pixie armplates~
 A pair of small metal sleeves lie here, glowing~
 ~
-9 a ai 0
+9 a 0 0 0 ai 0 0 0 0 0 0 0
 3 0 0 0
 3 1000 100 0
 E
@@ -267,7 +267,7 @@ wisp dragon fire~
 a wisp of DragonFyre~
 There is a small flame sitting here.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 2 1000 100 0
 E
@@ -282,7 +282,7 @@ helm dragon~
 a white dragon scale helm~
 A white dragon scale helm with a plume of dragon mane lies here.~
 ~
-9 a ae 0
+9 a 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
 6 500 50 0
 E
@@ -299,7 +299,7 @@ helm dragon~
 a copper dragon scale helm~
 A copper helm made from the scales of a dragon is here.~
 ~
-9 a ae 0
+9 a 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
 5 500 50 0
 E
@@ -317,7 +317,7 @@ staff magius~
 the Staff of the Magius~
 A gnarled wooden shaft lies here, pulsing slightly.~
 ~
-5 abcfg an 0
+5 abcfg 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 7
 4 900 100 0
 E

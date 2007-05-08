@@ -3,7 +3,7 @@ scimitar sword saber~
 a curved scimitar~
 An old rusted sword that barely looks usable is lying here.~
 ~
-5 mn an 0
+5 mn 0 0 0 an 0 0 0 0 0 0 0
 6 3 5 3
 4 300 30 20
 E
@@ -16,7 +16,7 @@ black chainmail~
 the black chainmail~
 A dark chainmail shirt covered in grime was left here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 11 825 82 21
 E
@@ -32,7 +32,7 @@ ferret pelt~
 a ferret pelt~
 A ferret skin is lying here.~
 ~
-9 p ac 0
+9 p 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 2 400 50 0
 E
@@ -47,7 +47,7 @@ vampire heart~
 a vampire heart~
 A heart lying on the floor is still beating.~
 ~
-12 agjl ao 0
+12 agjl 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 1000 500 0
 E
@@ -64,7 +64,7 @@ gloves ferret~
 a pair of ferret skin gloves~
 A pair of gloves made of fine fur lay here.~
 ~
-9 gjp ah 0
+9 gjp 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 2 200 25 0
 E
@@ -80,7 +80,7 @@ gloves~
 the animators gloves~
 A pair of black velvet gloves are lying here.~
 ~
-9 op ah 0
+9 op 0 0 0 ah 0 0 0 0 0 0 0
 2 0 0 0
 2 500 50 5
 E
@@ -97,7 +97,7 @@ stiletto~
 a stiletto~
 A finely crafted stiletto is lying on the ground.~
 ~
-5 an ano 0
+5 an 0 0 0 ano 0 0 0 0 0 0 0
 5 4 2 11
 5 500 55 21
 E
@@ -113,7 +113,7 @@ corset~
 a queens corset~
 A smelly and stained corset was discarded here.~
 ~
-9 jp ad 0
+9 jp 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 10 100 10 0
 E
@@ -127,7 +127,7 @@ sword~
 a zombie sword~
 An old sword was left here.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 3 2 8 14
 4 300 30 12
 E
@@ -144,7 +144,7 @@ boots~
 the zombie boots~
 A pair of old leather boots lie here.~
 ~
-9 j ag 0
+9 j 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 4 240 30 4
 E
@@ -159,7 +159,7 @@ helm~
 a zombie helm~
 An old dented helm is lying here, with a head still in it.~
 ~
-9 j ae 0
+9 j 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 2 40 4 3
 E
@@ -172,7 +172,7 @@ grey robe~
 a grey robe~
 A grey robe with two lightning bolts crossed on the chest is hanging here.~
 ~
-9 k ak 0
+9 k 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
 7 7 0 0
 E
@@ -188,7 +188,7 @@ masters sword~
 a masters sword~
 A finely crafted sword with lightning bolts engraved on the handle lies here.~
 ~
-5 kmn an 0
+5 kmn 0 0 0 an 0 0 0 0 0 0 0
 6 3 9 3
 10 900 300 30
 E
@@ -206,7 +206,7 @@ brass knuckles~
 the brass knuckles~
 A pair of brass knuckles are lying here.~
 ~
-9 gj ah 0
+9 gj 0 0 0 ah 0 0 0 0 0 0 0
 2 0 0 0
 2 240 24 3
 E
@@ -224,7 +224,7 @@ flames~
 some flames~
 Flames flicker across the floor, burning everything in their path.~
 ~
-14 0 0 0
+14 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -237,7 +237,7 @@ cadaver hidden~
 a half-eaten cadaver~
 .This is a hidden object. The long description can only be seen with holylight. If you see this as a mortal please report the bug.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -251,7 +251,7 @@ emerald ring~
 an emerald ring~
 A beatiful ring with a large emerald set in it's face.~
 ~
-12 g ab 0
+12 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 30 3 10
 E
@@ -265,7 +265,7 @@ flickering candle~
 a flickering candle~
 A candle lies here~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 50 0
 3 3 0 0
 E
@@ -279,7 +279,7 @@ leg plates steel~
 some steel leg plates~
 Some steel leg plates are in need of some legs to protect.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 8 0 0 0
 4 300 30 20
 E
@@ -292,7 +292,7 @@ steel arm plates~
 some steel arm plates~
 Some steel arm plates have been abandoned.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 8 0 0 0
 5 375 37 20
 E
@@ -305,7 +305,7 @@ shield blackened~
 a blackened shield~
 A blackened shield is propped up here, waiting to be carried into battle.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
 10 750 75 20
 E
@@ -318,7 +318,7 @@ thick braided twine~
 some thick braided twine~
 Some twine that has been braided into a belt.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
 2 10 1 0
 E
@@ -331,7 +331,7 @@ leather wristguard~
 a leather wristguard~
 A leather wristguard lies in the dirt.~
 ~
-9 0 am 0
+9 0 0 0 0 am 0 0 0 0 0 0 0
 1 0 0 0
 3 30 3 0
 E

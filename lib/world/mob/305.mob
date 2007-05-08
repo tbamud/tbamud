@@ -6,7 +6,7 @@ A tunnel troll wanders about here.
    The troll is small, dark, and smelly.  You would be willing to bet that he
 has never seen the light of day.    
 ~
-cdgh 0 -500 E
+204 0 0 0 0 0 0 0 -500 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 0
@@ -19,7 +19,7 @@ A Black Pawn shuffles around nervously here.
    The pawn seems to be made of carved wood, and animated by some magical
 means.    
 ~
-bcdh 0 -200 E
+142 0 0 0 0 0 0 0 -200 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -32,7 +32,7 @@ A White Pawn shuffles around nervously here.
    The pawn seems to be made of carved wood, and animated by some magical
 means.    
 ~
-bcdh 0 200 E
+142 0 0 0 0 0 0 0 200 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -45,7 +45,7 @@ A black Rook stands here, having linear thoughts.
    The black Rook stares absently into space, he doesn't seem to notice you.  
 
 ~
-bcdh 0 -300 E
+142 0 0 0 0 0 0 0 -300 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -58,7 +58,7 @@ A white Rook stands here, having linear thoughts.
    The white Rook stares absently into space, he doesn't seem to notice you.  
 
 ~
-bcdh 0 300 E
+142 0 0 0 0 0 0 0 300 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -71,7 +71,7 @@ A black Knight is here, looking for his horse.
    The black Knight would probably look alot more noble if he was astride a
 horse.    
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -84,7 +84,7 @@ A white knight is here, looking for his horse.
    The white Knight would probably look alot more noble if he was astride a
 horse.    
 ~
-cdg 0 400 E
+76 0 0 0 0 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -96,7 +96,7 @@ A black bishop stands here quietly.
 ~
    The bishop looks at you, then stares at the ceiling and yawns.    
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -108,7 +108,7 @@ A white bishop stands here quietly.
 ~
    The bishop looks at you, then stares at the ceiling and yawns.    
 ~
-cdg 0 400 E
+76 0 0 0 0 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -121,7 +121,7 @@ The Black Queen stands here, blocking a door.
    The black Queen stares into you eyes and screams, "Mop the floor, you
 nitwit!  "
 ~
-bd 0 -600 E
+10 0 0 0 0 0 0 0 -600 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -134,7 +134,7 @@ The white Queen stands here, blocking a door.
    The white Queen stares into you eyes and screams, "Mop the floor, you
 nitwit!  "
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -147,7 +147,7 @@ A black King stands here, looking grumpy.
    The black King looks rather haggard.  He tells you, "Take my wife...  
 Pleeeaase.  " You decide that the king is not much of a comedian.    
 ~
-bd 0 -700 E
+10 0 0 0 0 0 0 0 -700 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 0
@@ -160,7 +160,7 @@ A white King stands here, looking grumpy.
    The white King looks rather haggard.  He tells you, "Take my wife...  
 Pleeeaase.  " You decide that the king is not much of a comedian.    
 ~
-bd 0 700 E
+10 0 0 0 0 0 0 0 700 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 0
@@ -172,7 +172,7 @@ A flying fish jumps out of the water at you!
 ~
    The fish winks at you?!    
 ~
-bdf 0 0 E
+42 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -184,7 +184,7 @@ A playing card shuffles around here.
 ~
    The playing card grins at you evilly.  He is of the suit diamonds.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -196,7 +196,7 @@ A playing card shuffles around here.
 ~
    The playing card grins at you evilly.  He is of the suit hearts.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -208,7 +208,7 @@ A playing card shuffles around here.
 ~
    The playing card grins at you evilly.  He is of the suit clubs.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -220,7 +220,7 @@ A playing card shuffles around here.
 ~
    The playing card grins at you evilly.  He is of the suit spades.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -233,7 +233,7 @@ The Joker bounces around, happy to see you.
    The Joker cackles happily and ruffles your hair.  "So nice to see you
 dearie, would you like some tea?  " The Joker is NUTS!    
 ~
-bd 0 -900 E
+10 0 0 0 0 0 0 0 -900 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0

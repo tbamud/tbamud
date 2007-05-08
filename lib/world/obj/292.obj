@@ -3,7 +3,7 @@ white glove~
 a white glove~
 There is a small white glove on the ground here.~
 ~
-3 g aho 0
+3 g 0 0 0 aho 0 0 0 0 0 0 0
 30 25 20 1
 1 525 12 0
 E
@@ -15,7 +15,7 @@ crystal shard~
 a crystal shard~
 There is a tiny piece of broken crystal on the ground.~
 ~
-9 a ao 0
+9 a 0 0 0 ao 0 0 0 0 0 0 0
 3 0 0 0
 2 750 20 0
 A
@@ -25,7 +25,7 @@ book dragons~
 the book of dragons~
 There is a book here with a scaled cover.~
 ~
-3 g ao 0
+3 g 0 0 0 ao 0 0 0 0 0 0 0
 18 3 3 26
 10 1000 200 0
 E
@@ -38,7 +38,7 @@ robe liche~
 the robe of the Liche~
 A partly rotted robe lies in the corner.~
 ~
-9 g ak 0
+9 g 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
 5 150 10 0
 E
@@ -55,7 +55,7 @@ epee~
 an epee~
 A nice looking epee lies here, begging to be picked up.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 12 1 11
 12 250 17 0
 A
@@ -65,7 +65,7 @@ powwee~
 a powwee~
 There is a strange blue spiraled fruit on the ground here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 3 12 2 0
 E
@@ -77,7 +77,7 @@ war ribbon~
 a war ribbon~
 There is a coiled up piece of ribbon here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 8 2 2
 11 200 25 0
 E
@@ -95,7 +95,7 @@ zucchini~
 a zucchini~
 A pale, light green zucchini.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 4 0 0 0
 2 6 2 0
 E
@@ -107,7 +107,7 @@ manual protection~
 a manual of protection~
 There is a thin manual with big red letters here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 1 3 3 1
 5 300 36 0
 E
@@ -120,7 +120,7 @@ brochure~
 a travel brochure~
 There is a travel brochure here, inviting you to see the sights.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 8 1 1 2
 1 100 10 0
 E
@@ -133,7 +133,7 @@ bird perch plate~
 a plate bird perch~
 There is some sort of bird perch here, attached to something metal.~
 ~
-9 h ai 0
+9 h 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 12 180 30 0
 E
@@ -148,7 +148,7 @@ arbalest~
 an arbalest~
 There is an arbalest here, nearly as tall as you!~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 5 6 11
 24 500 34 0
 A
@@ -159,7 +159,7 @@ a suit of target armor~
 There is a light set of armor here, with a big bulls-eye painted on 
 the front...~
 ~
-9 bg ad 0
+9 bg 0 0 0 ad 0 0 0 0 0 0 0
 -10 0 0 0
 15 300 10 0
 A
@@ -171,7 +171,7 @@ quick sheathe~
 a quick sheathe~
 There is a nice-looking break-away sheathe discarded here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 10 500 25 0
 A
@@ -181,7 +181,7 @@ tin can worms nightcrawlers~
 a tin of nightcrawlers~
 There is a tin can of worms lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 5 4 1 0
 #29215
@@ -189,7 +189,7 @@ amulet~
 an amulet of Rumble~
 There is a valuble amulet inscribed with Rumble's symbol here.~
 ~
-9 afg ac 0
+9 afg 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
 5 300 40 0
 A
@@ -199,7 +199,7 @@ eagle pendant~
 an eagle pendant~
 There is a pendant in the shape of an eagle here.~
 ~
-9 afg ac 0
+9 afg 0 0 0 ac 0 0 0 0 0 0 0
 3 0 0 0
 7 250 45 0
 A
@@ -211,7 +211,7 @@ fly lure~
 a fly lure~
 There is a small fishing lure here.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 10 5 0
 #29218
@@ -219,7 +219,7 @@ dusk basil~
 a dusk of basil~
 You see a small dusk of an herb here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 9 1 1 3
 1 500 50 0
 #29219
@@ -227,7 +227,7 @@ fern seed~
 a fern seed~
 You see a very tiny seed here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 4 1 1 29
 1 300 0 0
 #29220
@@ -235,7 +235,7 @@ clump hemlock~
 a clump of hemlock~
 There is a clump of hemlock lying on the ground.~
 ~
-3 a ao 0
+3 a 0 0 0 ao 0 0 0 0 0 0 0
 5 1 1 4
 1 400 35 0
 #29221
@@ -243,7 +243,7 @@ leaf betony~
 a betony leaf~
 A small bright green leaf lies on the ground.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 7 1 1 38
 1 750 75 0
 #29222
@@ -251,7 +251,7 @@ crown elder berries~
 a crown of elder berries~
 A ring of red berries lies here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 200 40 0
 A
@@ -261,7 +261,7 @@ guild key~
 a guild key~
 There is a small green key on the floor.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 29252 0 0 0
 1 1 0 0
 #29224
@@ -269,7 +269,7 @@ blank key~
 a blank key~
 There is a blank key here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #29225
@@ -277,7 +277,7 @@ odd scroll~
 an odd scroll~
 There is an odd-looking scroll here.~
 ~
-18 ag ao 0
+18 ag 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #29226
@@ -285,7 +285,7 @@ jailer's key~
 a jailer's key~
 There is a jailer's key here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #29227
@@ -293,7 +293,7 @@ flaming sword~
 a flaming sword~
 There is a sword here with a blade of red.~
 ~
-5 agk an 0
+5 agk 0 0 0 an 0 0 0 0 0 0 0
 0 4 3 3
 12 180 18 0
 A
@@ -303,7 +303,7 @@ dreamblade blade~
 the dreamblade~
 A sword lies here with a shifting blade that hurts your eyes.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
 5 500 10 0
 E
@@ -317,7 +317,7 @@ chimaera cloak~
 a chimaera cloak~
 You spot a cloak out of the corner of your eye.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
 15 250 25 0
 A
@@ -327,7 +327,7 @@ jerkin~
 a magic jerkin~
 There is a nice looking shirt here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 3 360 80 0
 #29231
@@ -335,7 +335,7 @@ space warp wand space-warp~
 the space-warp wand~
 A wand might be here.~
 ~
-15 g a 0
+15 g 0 0 0 a 0 0 0 0 0 0 0
 200 0 0 0
 1 500 15 0
 #29232
@@ -343,7 +343,7 @@ elite sword~
 an elite sword~
 A beautiful sword has been discarded here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 3
 8 800 80 0
 #29233
@@ -351,7 +351,7 @@ amulet protection~
 an amulet of protection~
 An amulet is here, not wanted by anybody.~
 ~
-9 ag ac 0
+9 ag 0 0 0 ac 0 0 0 0 0 0 0
 8 0 0 0
 7 750 20 0
 #29234
@@ -359,7 +359,7 @@ staff memory~
 the memory staff~
 A staff stands against the wall here.~
 ~
-1 ag ao 0
+1 ag 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 10 200 30 0
 A
@@ -369,7 +369,7 @@ flail~
 a flail~
 A sharp-looking flail is here.~
 ~
-5 ag an 0
+5 ag 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 6
 10 600 10 0
 A
@@ -379,7 +379,7 @@ painting~
 a painting~
 A painting of the goddess of healing hangs here.~
 ~
-3 gk ao 0
+3 gk 0 0 0 ao 0 0 0 0 0 0 0
 10 5 5 15
 15 150 30 0
 E
@@ -392,7 +392,7 @@ axe~
 an axe~
 A big axe is here.~
 ~
-5 ag an 0
+5 ag 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 3
 14 900 20 0
 A
@@ -402,7 +402,7 @@ talisman hope~
 a talisman of hope~
 A talisman lies here, filleted in gold.~
 ~
-9 ag ac 0
+9 ag 0 0 0 ac 0 0 0 0 0 0 0
 4 0 0 0
 1 400 10 0
 A
@@ -412,7 +412,7 @@ armor living blob~
 a blob of living armor~
 A blob of something that pulses slightly is lumped here.~
 ~
-9 g acdfgilm 0
+9 g 0 0 0 acdfgilm 0 0 0 0 0 0 0
 5 0 0 0
 5 100 20 0
 E
@@ -426,7 +426,7 @@ apple~
 a pale apple~
 An extremely pale apple sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 3 1 0
 E
@@ -438,7 +438,7 @@ potato potatoe~
 a potato~
 A potato sits here, eyeing you.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 2 1 0
 E
@@ -450,7 +450,7 @@ onion~
 an onion~
 You can smell that onion from here!~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 1 1 0
 E
@@ -462,7 +462,7 @@ plate breast~
 a breast plate~
 A steel breast plate lies here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 15 1000 100 0
 #29244
@@ -470,7 +470,7 @@ cap steel round~
 a round, steel cap~
 A round, steel cap lies here, discarded.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
 5 100 30 0
 #29245
@@ -478,7 +478,7 @@ leggings chain~
 a pair of chain leggings~
 A pair of chain leggings are piled here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 5 0 0 0
 20 600 75 0
 #29246
@@ -486,7 +486,7 @@ chest~
 a chest~
 An ornate looking chest sits here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 200 5 -1 0
 0 0 0 0
 #29247
@@ -494,7 +494,7 @@ water well water~
 a well~
 A well sits in the center of the intersection here.~
 ~
-17 0 0 0
+17 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
 505 0 0 0
 E
@@ -507,7 +507,7 @@ beer bottle beer~
 a bottle~
 A bottle with a brightly colored label sits here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 4 4 1 0
 9 10 2 0
 #29249
@@ -515,7 +515,7 @@ wine carafe wine~
 a carafe~
 A wooden carafe sits on a table here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 2 0
 13 20 5 0
 #29250
@@ -523,7 +523,7 @@ firebreather shotglass glass firebreather~
 a shotglass~
 A shotglass has been discarded here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 7 0
 7 15 4 0
 $~

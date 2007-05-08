@@ -12,7 +12,7 @@ Zone 286 is linked to the following zones:
 285 Descent to Hell                at 28698 (south) ---> 28508
 285 Descent to Hell                at 28699 (east ) ---> 28500
 ~
-286 0 0
+286 0 0 0 0 0
 S
 #28601
 Stone Archway~
@@ -20,7 +20,7 @@ Stone Archway~
 pictures are painted onto it.  Stone gargoyles and demons glare down at you
 from atop the arch.  There is a bronze plaque above the archway.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D3
 It's too dark to see.
 ~
@@ -46,7 +46,7 @@ of Hell and punishment cover the walls.  In the middle of the room are stairs
 that lead down in to the darkness.  From the stairway you can smell brimstone
 and sulfur.  To the west it looks as if there is a shrine.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 It is too dark to see.
 ~
@@ -70,7 +70,7 @@ brimstone and sulfur choke you.  Screams of pain and terror fill the air.
 Stone faces carved into the walls seem to laugh at you.  Maybe this is not such
 a good idea after all....    
 ~
-286 ad 0
+286 9 0 0 0 0
 D3
 Its too dark to see.
 ~
@@ -90,7 +90,7 @@ flawlessly smooth and the ceiling is covered with carved faces and ancient
 symbols and runes.  A large black iron gates tower over you to the west.  You
 see a large gateway to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 Its too dark to see.
 ~
@@ -115,7 +115,7 @@ sounds of torture and pain.  Screams pierce the air and rattle your nerves.
 Displays of the treats of Hell are in all directions.  A large black iron gates
 tower over you to the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too smoky to see.
 ~
@@ -150,7 +150,7 @@ walls are made up of various body parts and other unidentifiable things.  Many
 of the faces that make up the wall scream out to you for help.  Their arms
 desperately grasp at your clothing as you pass.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too smoky to see.
 ~
@@ -179,7 +179,7 @@ walls are made up of various body parts and other unidentifiable things.  Many
 of the faces that make up the wall scream out to you for help.  Their arms
 desperately grasp at your clothing as you pass.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too smoky to see.
 ~
@@ -208,7 +208,7 @@ walls are made up of various body parts and other unidentifiable things.  Many
 of the faces that make up the wall scream out to you for help.  Their arms
 desperately grasp at your clothing as you pass.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too smoky to see.
 ~
@@ -237,7 +237,7 @@ walls are made up of various body parts and other unidentifiable things.  Many
 of the faces that make up the wall scream out to you for help.  Their arms
 desperately grasp at your clothing as you pass.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too smoky to see.
 ~
@@ -271,7 +271,7 @@ walls are made up of various body parts and other unidentifiable things.  Many
 of the faces that make up the wall scream out to you for help.  Their arms
 desperately grasp at your clothing as you pass.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too smoky to see.
 ~
@@ -289,7 +289,7 @@ Mural of the Dead~
 piled up to the sky.  The mural covers the whole north wall from floor to
 ceiling.  You can almost smell the stench of decaying flesh.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 Its too smoky to see.
 ~
@@ -307,7 +307,7 @@ Living Walls~
 broken bones, feet, and toes jutting from the surface.  You hear low moans of
 horror, pain, and sorrow issuing from the walls.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 Its too smoky to see.
 ~
@@ -330,7 +330,7 @@ Trapped souls~
 trapped beneath the surface of a frozen lake.  Even the floor and ceiling show
 the screaming faces behind them.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 Its too smoky to see.
 ~
@@ -354,7 +354,7 @@ sizes are being brought to the thresholds of pain and beyond.  Some are being
 sliced into thousands of pieces.  Others stretched until it seems as if they
 are made of rubber.  All caught in an unending play of agony.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 Its too smoky to see.
 ~
@@ -378,7 +378,7 @@ and Hamburger assault your senses.  All sorts of food lay everywhere you look.
 Cookies, twinkies, steak, prime rib, almost anything you can think of, call out
 to you.  You suddenly feel VERY hungry.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 Its too smoky to see.
 ~
@@ -403,7 +403,7 @@ Someone is taking your treasure.  They have no right!  It is yours!  You found
 it first.  Let them go get thier own treasures!  You see a door to the east.  
 
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a bedroom door.
 ~
@@ -427,7 +427,7 @@ room you just stepped out of.  A bed stands against the far wall.  Upon the
 headboard of the bed are carved two cherub looking figures, with the words 'DEE
 & DEE' written below them.  The door to the bedroom is to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D3
 You see a bedroom door.
 ~
@@ -443,7 +443,7 @@ been spray painted on the walls and floor.  Nailed to the ceiling are an
 assortement of skeletons.  All seem to have been dead for a very long time.  
 All surfaces of the room are covered with dried blood and dust.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 It is too dark to see.
 ~
@@ -456,7 +456,7 @@ Room full of Body Parts.~
 parts of many different creatures.  The stench is overwhelming.  The body parts
 seem to wiggle and scream as you get closer.  They are still alive!!    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 It is too dark to see.
 ~
@@ -474,7 +474,7 @@ Fountain of Blood.~
 sludge.  In the middle of the room stands a stone fountain of a demon spitting
 blood.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 It is too dark to see.
 ~
@@ -493,7 +493,7 @@ covered with blood and gore.  Pieces of goo and ooze drip from the ceiling
 overhead.  You almost slip a couple times on the stairway.  The stench here is
 overwhelming.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D4
 It is too dark to see.
 ~
@@ -510,7 +510,7 @@ Ancient Room~
    This is a very old and dusty room.  It looks empty except for a few shards
 or bone and flesh.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 It is too dark to see.
 ~
@@ -529,7 +529,7 @@ Wooden benches line the walls.  A digital number sign is posted on the wall.
 It currently reads, 'Now Serving Number 1'.  A ticket dispenser is bolted to
 the wall.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 It is too dark to see.
 ~
@@ -557,7 +557,7 @@ Wooden benches line the walls.  A digital number sign is posted on the wall.
 It currently reads, 'Now Serving Number 1'.  A ticket dispenser is bolted to
 the wall.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 It is too dark to see.
 ~
@@ -585,7 +585,7 @@ you look closer at the pit you realize that hundreds of people are being burned
 inside it.  They Scream out to you.  The noise is deafening.  Several minor
 imps and workers push more people into the pit, whistling while
 ~
-286 d 0
+286 8 0 0 0 0
 D0
 It is too dark to see.
 ~
@@ -608,7 +608,7 @@ Blackened Hallway~
 in it are melted and burnt.  The smell of brimstone and sulfur fill the air.  
 
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 It is too dark to see.
 ~
@@ -631,7 +631,7 @@ Blackened Hallway~
 in it are melted and burnt.  The smell of brimstone and sulfur fill the air.  
 
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 It is too dark to see.
 ~
@@ -649,7 +649,7 @@ Blood Room~
 flesh and blood.  The walls are covered with the crimson fluid as it runs down
 from the ceiling.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 It is too dark to see.
 ~
@@ -667,7 +667,7 @@ Living Walls~
 broken bones, feet, and toes jutting from the surface.  You hear low moans of
 horror, pain, and sorrow issuing from the walls.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 It is too dark to see.
 ~
@@ -691,7 +691,7 @@ graveyards.  The room is simply littered with bones.  A poster on the wall
 reads, "Remember ....  The head bone is connected to the neck bone..  " The
 poster continues on...  But it seems to get very technical and boring..    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 It is too dark to see.
 ~
@@ -710,7 +710,7 @@ thought it was a stairway.  It seems to be just a painting the the wall.  This
 roughly carved room with evil runes carved in to the stone floor.  There is a
 hallway to the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 It is too dark to see.
 ~
@@ -724,7 +724,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hall continues to the south and the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 It is too dark to see.
 ~
@@ -742,7 +742,7 @@ Cell~
 and dirt.  The smell of urine is very potent here.  The steel bars to the cell
 are to the south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 You see bars
 ~
@@ -756,7 +756,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway continues to the east and the south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 It is too dark to see.
 ~
@@ -775,7 +775,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  To the south you see the steel bars of a cell.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 It is too dark to see.
 ~
@@ -799,7 +799,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway contines to the south and the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 It is too dark to see.
 ~
@@ -817,7 +817,7 @@ Cell~
 and dirt.  The smell of urine is very potent here.  The steel bars to the cell
 are to the south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 You see bars
 ~
@@ -831,7 +831,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway contines to the south and the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 It is too dark to see.
 ~
@@ -850,7 +850,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway contines to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see the steel bars to a cell.
 ~
@@ -878,7 +878,7 @@ Cell~
 and dirt.  The smell of urine is very potent here.  The steel bars to the cell
 are to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D3
 You see bars
 ~
@@ -891,7 +891,7 @@ Hidden Room~
 collecting dust.  Most of this stuff was probably replace with modern hi tech
 torture devices and for sentimental reasons wasn't thrown away.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 Its too dark to see.
 ~
@@ -905,7 +905,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway contines to the north and east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too dark to see.
 ~
@@ -925,7 +925,7 @@ hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway contines to the east and west.  The bars to a cell are to
 the north.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see bars to a cell.
 ~
@@ -949,7 +949,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway contines to the north and west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too dark to see.
 ~
@@ -967,7 +967,7 @@ Cell~
 and dirt.  The smell of urine is very potent here.  The steel bars to the cell
 are to the north.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see bars
 ~
@@ -981,7 +981,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway contines to the north and east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too dark to see.
 ~
@@ -1001,7 +1001,7 @@ hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway contines to the east and west.  You see bars to a cell to
 the north.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see bars to a cell.
 ~
@@ -1025,7 +1025,7 @@ the sound of something dripping in the distance.  Your footsteps echo down the
 hall as you walk.  There is a strange and deathly silence that fills these
 halls...  The hallway contines to the north and west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 Its too dark to see.
 ~
@@ -1043,7 +1043,7 @@ Cell~
 and dirt.  The smell of urine is very potent here.  The steel bars to the cell
 are to the north.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see bars
 ~
@@ -1057,7 +1057,7 @@ The stone walls are hot to the touch and your sweat sizzles as it hits the
 ground.  Cool air flows out from a crack in the wall to the east.  The smell of
 brimstone and smoke is all around you.  The stairs continue down.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D4
 It is too dark to see.
 ~
@@ -1076,7 +1076,7 @@ to be a passageway that was closed off long ago.  It was probably reopened by
 an earthquake or something.  An ancient passageway continues to the north.  
 Hot gusts of air come from the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 It is too dark to see.
 ~
@@ -1096,7 +1096,7 @@ the east is a hallway of fire.  To the south you see a large metal door with
 the words, 'FOREMAN' written on the door.  There is a dark stairway down in the
 corner of the room.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a hall of fire.
 ~
@@ -1122,7 +1122,7 @@ feet and hungrily drinks up every drop of sweat as they fall from your body.
 The hall of fire continues to the east.  You see a stone archway to the west.
   
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a hall of fire.
 ~
@@ -1142,7 +1142,7 @@ you inhale, and dry your mouth as you exhale.  The stone floor burns at your
 feet and hungrily drinks up every drop of sweat as they fall from your body.  
 The hall of fire continues to the south and west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 You see a hall of fire.
 ~
@@ -1162,7 +1162,7 @@ many gas lines and electrical conduits within the dismantled walls.  Partially
 hidden fire sprinklers are being installed in the ceilings.  You see more
 contruction to the east and south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a construction area.
 ~
@@ -1182,7 +1182,7 @@ many gas lines and electrical conduits within the dismantled walls.  Partially
 hidden fire sprinklers are being installed in the ceilings.  You see more
 contruction to the east and west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a construction area.
 ~
@@ -1202,7 +1202,7 @@ many gas lines and electrical conduits within the dismantled walls.  Partially
 hidden fire sprinklers are being installed in the ceilings.  You see more
 contruction to the south and west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 You see a construction area.
 ~
@@ -1222,7 +1222,7 @@ you inhale, and dry your mouth as you exhale.  The stone floor burns at your
 feet and hungrily drinks up every drop of sweat as they fall from your body.  
 The hall of fire continues to the east and south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a hall of fire.
 ~
@@ -1243,7 +1243,7 @@ feet and hungrily drinks up every drop of sweat as they fall from your body.
 The hall of fire continues to the west.  A room full of fire pits lies to the
 east.  A wall of fire crackles merrily to the south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a room full of fire pits.
 ~
@@ -1267,7 +1267,7 @@ being burnt and roasted within the the white flames that erupt from the many
 pits.  Wailing and screams of pain chill your bones in this hot room.  To the
 south you see a lake of fire.  A fire hall lies to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 You see a lake of fire.
 ~
@@ -1289,7 +1289,7 @@ smells of sulfur and methane.  To the south you see a stone hallway.  Hot air
 blows in at you from the doorway.  The air stirs up the methane and steals your
 breath.  You choke and gag...    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 You see a stone hallway.
 ~
@@ -1303,7 +1303,7 @@ scattered everywhere.  A metal filing cabinet stands in the corner.  Before you
 stands a stone table covered with blueprints.  On the wall is a construction
 plaque that reads, "4th DEMONsion Contruction"
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see the door to the office.
 ~
@@ -1317,7 +1317,7 @@ up the stairwell.  From below you a freezing gusts bite at your skin and make
 you shiver.  Icicles drip slowly from the ceiling onto the frosted stone floor.
   
 ~
-286 ad 0
+286 9 0 0 0 0
 D4
 It is too dark to see.
 ~
@@ -1337,7 +1337,7 @@ you inhale, and dry your mouth as you exhale.  The stone floor burns at your
 feet and hungrily drinks up every drop of sweat as they fall from your body.  
 The hall of fire continues to the north and east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see a hall of fire.
 ~
@@ -1357,7 +1357,7 @@ many gas lines and electrical conduits within the dismantled walls.  Partially
 hidden fire sprinklers are being installed in the ceilings.  You see more
 contruction to the north and east.  A hall of fire is to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see a construction area.
 ~
@@ -1382,7 +1382,7 @@ many gas lines and electrical conduits within the dismantled walls.  Partially
 hidden fire sprinklers are being installed in the ceilings.  You see more
 contruction to the east and west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a construction area.
 ~
@@ -1402,7 +1402,7 @@ many gas lines and electrical conduits within the dismantled walls.  Partially
 hidden fire sprinklers are being installed in the ceilings.  You see more
 contruction to the north and west.  A hall of fire lies to the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see a construction area.
 ~
@@ -1428,7 +1428,7 @@ feet and hungrily drinks up every drop of sweat as they fall from your body.
 The hall of fire continues to the north.  There are loud noises of contruction
 to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see a hall of fire.
 ~
@@ -1452,7 +1452,7 @@ deaths seem like minutes of agony and pain, and even as they burst into flames
 they seem incapable of grasping the merciful attention of death...  To the
 north you see a hall of fire.  To the east you see a lake of fire.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see a hall of fire.
 ~
@@ -1470,7 +1470,7 @@ Lake of Fire~
 this enormous room.  You can barely make out shapes of something moving withing
 the dancing flames of blue and gold..    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 It is too smoky to see.
 ~
@@ -1492,7 +1492,7 @@ Hot Hall~
    The stone floor below you heats your feet uncomfortably.  The ceiling and
 walls glow a dull red and you sweat uncomfortably under the heat.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see a Mural Room.
 ~
@@ -1511,7 +1511,7 @@ hunting scenes in bas-relief.  These carved scenes show ice devils slaying
 angels, hunting mortals and other gruesome pictures.  To the east you see a
 room of ice.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a room of ice.
 ~
@@ -1525,7 +1525,7 @@ ceiling.  Some shake with every sound.  Your reflection off the ice walls seems
 to dance and wiggle as you move about.  To the south you see more of the frozen
 room.  To the west you see an Icy landing.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 You see a room of ice.
 ~
@@ -1545,7 +1545,7 @@ hanging from the hooks are corpses of people.  They reach out to you as you
 pass them as if to plead for help from their frozen mouths.  The meat locker
 continues to the east and south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see more of the Meat locker
 ~
@@ -1565,7 +1565,7 @@ out to you as you pass them as if to plead for help from their frozen mouths.
 The meat locker continues to the south and west.  There is a freezer door to
 the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a freezer door.
 ~
@@ -1585,7 +1585,7 @@ be outside, as the walls are painted to seem as if you are standing on a vast
 icy slab with nothing but ocean around you.  The iceberg continues to the south
 and east.  There is a freezer door to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see lots and lots of ice.
 ~
@@ -1610,7 +1610,7 @@ be outside, as the walls are painted to seem as if you are standing on a vast
 icy slab with nothing but ocean around you.  The iceberg continues to the south
 and east.  There is a freezer door to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 You see lots and lots of ice.
 ~
@@ -1628,7 +1628,7 @@ Ice Creamery~
 frantically around tending to the various machines.  The factory continues to
 the east and south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see lots of ice-cream machines.
 ~
@@ -1647,7 +1647,7 @@ people here shouting into containers and then quickly covering them.  How
 odd...  The factory continues to the south and west.  There is a steel door to
 the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a steel door.
 ~
@@ -1670,7 +1670,7 @@ White Marble Hall~
 portraits of demons and devils in business suits adorn the walls on either side
 of you.  The hall continues to the south.  To the west is a steel door.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D2
 You see a marble hallway.
 ~
@@ -1687,7 +1687,7 @@ Refrigerator Room~
    This room is filled with giant refrigerators.  All of them have no doors and
 their contents have spilled onto the floor.  The only exit is east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a room of ice.
 ~
@@ -1701,7 +1701,7 @@ ceiling.  Some shake with every sound.  Your reflection off the ice walls seems
 to dance and wiggle as you move about.  To the north and east you see more of
 the frozen room.  To the west you see a room full of refrigerators.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see a room of ice.
 ~
@@ -1725,7 +1725,7 @@ ceiling.  Some shake with every sound.  Your reflection off the ice walls seems
 to dance and wiggle as you move about.  To the north and west you see more of
 the frozen room.  To the east you see a freezer door.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see a room of ice.
 ~
@@ -1749,7 +1749,7 @@ larger corpses hang from steel hooks.  Frozen blood and other unrecognizable
 pieces are littered on the floor.  The meat locker continues to the north and
 east.  There is a freezer door to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see more of the Meat locker
 ~
@@ -1771,7 +1771,7 @@ Meat Locker~
    Rows of beef and other meats hang from large steel hooks.  The meat locker
 continues to the north and west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see more of the Meat locker
 ~
@@ -1791,7 +1791,7 @@ be outside, as the walls are painted to seem as if you are standing on a vast
 icy slab with nothing but ocean around you.  The iceberg continues to the north
 and east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see lots and lots of ice.
 ~
@@ -1811,7 +1811,7 @@ be outside, as the walls are painted to seem as if you are standing on a vast
 icy slab with nothing but ocean around you.  The iceberg continues to the north
 and west.  You can hear sounds of machinery to the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see lots and lots of ice.
 ~
@@ -1830,7 +1830,7 @@ ice-cream and other deserts are made by these machines.  Above one of the
 machines a sign reads, 'Eye Splean I Screamery'.  The factory continues to the
 north and east.  You can hear sounds of penguins to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see lots of ice-cream machines.
 ~
@@ -1853,7 +1853,7 @@ Ice-Creamery~
 machine to machine, adjusting dials and checking gauges.  The factory continues
 to the north and west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see lots of ice-cream machines.
 ~
@@ -1873,7 +1873,7 @@ that they aren't demons and devils after all, but lawyers....  Well ok...
 Depends on your point of view...  The hallway continues to the north.  There is
 an office to the south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D0
 You see a white marble hallway.
 ~
@@ -1892,7 +1892,7 @@ are kept here detailing the status of peoples lives.  These are confidential
 files and only authorized personnel are allowed to view them.  The records room
 continues to the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see rows and rows of records.
 ~
@@ -1906,7 +1906,7 @@ are kept here detailing the status of peoples lives.  These are confidential
 files and only authorized personnel are allowed to view them.  The records room
 continues to the east and west.  There is another hallway to the south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see rows and rows of records.
 ~
@@ -1930,7 +1930,7 @@ are kept here detailing the status of peoples lives.  These are confidential
 files and only authorized personnel are allowed to view them.  The records room
 continues to the east and west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see rows and rows of records.
 ~
@@ -1949,7 +1949,7 @@ are kept here detailing the status of peoples lives.  These are confidential
 files and only authorized personnel are allowed to view them.  The records room
 continues to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D3
 You see rows and rows of records.
 ~
@@ -1963,7 +1963,7 @@ against the west wall.  Evil symbols and pictures are plastered everywhere.
 The new propaganda posters for hell are posted behind the altar.  You see a
 blackened hall to the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a blackened hallway.
 ~
@@ -1986,7 +1986,7 @@ down the hall.  A sign on the wall reads, 'No Non-smoking Please'.  The hall
 continues to the south.  There is a stone door to the east and a prayer room to
 the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a stone door.
 ~
@@ -2010,7 +2010,7 @@ before you.  The office is lavishly furnished with gold, gems and many
 antiques.  A large portrait of a demons face is on the wall behind his desk.  
 You see a stone door to the west.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D3
 You see a stone door.
 ~
@@ -2024,7 +2024,7 @@ smoking.  Ashes and bits of burnt timber crunch under your feet as you walk
 down the hall.  A sign on the wall reads, 'No Non-smoking Please'.  The hall
 continues to the east and south.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a blackened hall.
 ~
@@ -2043,7 +2043,7 @@ smoking.  Ashes and bits of burnt timber crunch under your feet as you walk
 down the hall.  A sign on the wall reads, 'No Non-smoking Please'.  The hall
 continues to the west.  A glass door is to the east.    
 ~
-286 ad 0
+286 9 0 0 0 0
 D1
 You see a glass door.
 ~

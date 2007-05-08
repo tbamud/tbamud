@@ -42,8 +42,8 @@ struct bfs_queue_struct {
 static struct bfs_queue_struct *queue_head = 0, *queue_tail = 0;
 
 /* Utility macros */
-#define MARK(room)	(SET_BIT(ROOM_FLAGS(room), ROOM_BFS_MARK))
-#define UNMARK(room)	(REMOVE_BIT(ROOM_FLAGS(room), ROOM_BFS_MARK))
+#define MARK(room)	(SET_BIT_AR(ROOM_FLAGS(room), ROOM_BFS_MARK))
+#define UNMARK(room)	(REMOVE_BIT_AR(ROOM_FLAGS(room), ROOM_BFS_MARK))
 #define IS_MARKED(room)	(ROOM_FLAGGED(room, ROOM_BFS_MARK))
 #define TOROOM(x, y)	(world[(x)].dir_option[(y)]->to_room)
 #define IS_CLOSED(x, y)	(EXIT_FLAGGED(world[(x)].dir_option[(y)], EX_CLOSED))

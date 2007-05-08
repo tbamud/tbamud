@@ -8,7 +8,7 @@ to be called 'in shape'.  His eyes are a bit hollowed, as are most men's eyes
 spent too long reading from books.  His hair is all but vanished except for two
 thin lines on the sides of his head.    
 ~
-bdo 0 800 E
+16394 0 0 0 0 0 0 0 800 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -23,7 +23,7 @@ skilled and shrewd politician.  It is an unspoken agreement between the Baron
 and his wife that she deal with the more mundane matters so that he might
 continue his studies without significant interruption.    
 ~
-bdno 0 900 E
+24586 0 0 0 0 0 0 0 900 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -38,7 +38,7 @@ and his wife have passed on.  Gilzaan does not take this responsibility
 lightly, and makes it a point to make himself known to as many of the prominent
 men of the area that he can.    
 ~
-dglm 0 500 E
+6216 0 0 0 0 0 0 0 500 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -53,7 +53,7 @@ has his strength in other areas.  He has a highly developed intellect, bred
 from many years of study and dedication.  His father's work with healing will
 certainly go on even after his father has passed on.    
 ~
-bdmo 0 600 E
+20490 0 0 0 0 0 0 0 600 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -67,7 +67,7 @@ The court astronomer peers with one eye closed through the telescope.
 plane of existance.  He scratches notes in a small pad of paper every now and
 again.    
 ~
-bd 0 300 E
+10 0 0 0 0 0 0 0 300 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -80,7 +80,7 @@ A quiet servant glides about the tower, keeping the guests happy.
    He is a stately old gentleman with long, fine wisps of hair that delicately
 brush the back of his coat.    
 ~
-cdg 0 400 E
+76 0 0 0 0 0 0 0 400 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -94,7 +94,7 @@ A robed man patiently awaits his time to speak with the Baron.
 thick, full robe of dark wool with the hood pulled up over his head.  He
 radiates a very mysterious aura.    
 ~
-bd 0 -500 E
+10 0 0 0 0 0 0 0 -500 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -107,7 +107,7 @@ A humble petitioner pleads his cause with the Baroness.
    He looks as if he might be a woodcutter or perhaps a simple worker, however
 he bravely stands his ground and speaks with a strong voice to the Baroness.  
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -121,7 +121,7 @@ An arrogant land owner noisily clears her throat as she waits in annoyance.
 her bodice so that she might coury even more favor with the locals.  It ain't
 workin'.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 2
@@ -134,7 +134,7 @@ A pious farmer patiently awaits his audience with his head bowed.
    He holds his rumpled hat in his hands, fretfully twisting and turning it in
 nervous anticipation.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -147,7 +147,7 @@ A lab assistant works about the tables, mixing various chemicals.
    She looks to be about middle-aged with severe features which almost seem to
 be held in place with an iron will.  Her work is her life.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 2
@@ -160,7 +160,7 @@ A door guard stands post at the door, clicking his heels sharply as you enter.
    He looks more for decoration and ceremony than anything else, but he
 certainly seems to take his job very seriously.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 1
@@ -173,7 +173,7 @@ A chamber maid efficiently cleans and organizes the room.
    She hums as she works, apparently enjoying what she does for a living a
 great deal.  She apparent hasn't noticed your entry into the room.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 2
@@ -187,7 +187,7 @@ A visiting cousin leans back contentedly in his chair, enjoying a meal.
 Cailveh would come through with a few meals and maybe a bit of spare change for
 the road.    
 ~
-bdlo 0 100 E
+18442 0 0 0 0 0 0 0 100 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 1
@@ -201,7 +201,7 @@ An old farmhand makes his way about the barn, going through his work day.
 to perform his regular duties without much trouble.  He notices you looking his
 way and gives a smile and a wink.    
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -214,7 +214,7 @@ A fat cow waddles about, lazily chewing on some grass.
    No matter how long you stare, it still looks like nothing more than a big
 fat cow chewing grass.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -226,7 +226,7 @@ A busy housewife skitters about the house, cleaning everything.
 ~
    She must not have seen you enter yet or else your shoes would be *off*.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 2
@@ -239,7 +239,7 @@ A farmer snoozes in his favorite chair, his nose hairs vibrating as he snores.
    He is your average typical farmer - a tall, lanky guy dressed in servicable
 clothing that smells of cow.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -252,7 +252,7 @@ A woodsman, still dressed in his work clothes, lounges iin a chair.
    He looks so relaxed there in that chair - is it really necessary to kill the
 poor chap?    
 ~
-bd 0 300 E
+10 0 0 0 0 0 0 0 300 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -265,7 +265,7 @@ An old man sits humbly in an old wooden chair staring up at you.
    He almost looks as if he might have something to say, but he just sits
 there, mouth half open and quiet.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -277,7 +277,7 @@ A poor, quiet housewife looks up in fear as you enter into her home.
 ~
    She says nothing, only stares at you with fear-filled eyes.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 2
@@ -290,7 +290,7 @@ A man sits at his small table, eating the last part of a meal.
    He nods at you as you enter into his home, a slightly confused expression on
 his face.    
 ~
-bd 0 499 E
+10 0 0 0 0 0 0 0 499 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -303,7 +303,7 @@ The school marm sits at her desk, scribbling some notes.
    She barely glances at you as you enter, giving you a 'May I help you?  '
 sort of look.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -316,7 +316,7 @@ The barkeep gives you a warm smile and bids you welcome.
    He waves his arm expansively at one of his many tables, bidding that you sit
 down, relax a while and enjoy a fine meal.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 1
@@ -330,7 +330,7 @@ A man speaks in a loud voice, telling tales of heroism and bravery.
 characters of his stories.  Whether these people he tells of ever lived is a
 tale in itself, but it matters little - the stories are all good.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -343,7 +343,7 @@ A man lounges back in a chair, listening good-naturedly to the storyteller.
    His eyes look only a little bleary - undoubtedly he has had some of the
 Hall's finest after a long day's work.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -356,7 +356,7 @@ A well-dressed gentleman sits at the bar, sipping a tankard of ale.
    He appears to be keeping to himself, having no desire to interact with
 anyone.  He is obviously not a local.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -369,7 +369,7 @@ A woman leans over her small table, smiling up at the storyteller.
    She never takes her eyes from him, intent on his story and intent on showing
 as much of her bosom as she might be able to.    
 ~
-bd 0 300 E
+10 0 0 0 0 0 0 0 300 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 2
@@ -383,7 +383,7 @@ Calintra the herbalist grinds some herbs in a bowl, smiling as you enter.
 in the towne, and beautiful as well.  Her long, dark hair falls in her face as
 grinds the herbs, causing her to brush it back with her fingers every so often.
 ~
-bdnopr 0 600 E
+188426 0 0 0 0 0 0 0 600 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 2
@@ -396,7 +396,7 @@ A kind, plump woman beams a broad smile your way as you enter the restaurant.
    She wipes her hands on an apron, happily clucking over you as she leads you
 toward an empty table.    
 ~
-bdnopr 0 800 E
+188426 0 0 0 0 0 0 0 800 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -410,7 +410,7 @@ A short, stocky man grinds at a piece of steel.
 envision a blacksmith to look like.  Strong, gruff, a bit dirty - this man is
 it.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -423,7 +423,7 @@ The master apothecary is here, resting in a comfortable chair.
    It looks as if he must have already done the brunt of his work for the day
 and is now taking the time to rest and relax a bit.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 1
@@ -436,7 +436,7 @@ Mochaaska stands amid his many fine barrels of water, smiling you way.
    Mochaaska is obviously not originally from these parts.  His skin is of a
 darker complexion, his teeth very large and white.    
 ~
-bdnopr 0 400 E
+188426 0 0 0 0 0 0 0 400 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -449,7 +449,7 @@ The owner of the store wipes down her main counter, keeping things clean.
    She glances up at you as you enter, giving you a nod and leaving you to
 browse for yourself.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -465,7 +465,7 @@ settlement giving ministery to those who might need it, talking to those who
 might wish to sit and talk a while.  And every day, he looks just a little
 worse for the wear.    
 ~
-dg 0 900 E
+72 0 0 0 0 0 0 0 900 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -478,7 +478,7 @@ A townesman makes his way through the settlement.
    He looks as if he couldn't be much happier - bright and cheery, full of
 vigor.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -491,7 +491,7 @@ A young lass skips past, her pigtails bouncing.
    Her freckled face squinches up at you in a smile.  She winks and skips right
 on past.    
 ~
-dg 0 800 E
+72 0 0 0 0 0 0 0 800 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -503,7 +503,7 @@ The tailor awaits to serve you.
 ~
    He says nothing to you, only nods a great deal and smiles.    
 ~
-bdnopr 0 200 E
+188426 0 0 0 0 0 0 0 200 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 1

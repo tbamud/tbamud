@@ -5,7 +5,7 @@ called a castle.  Direclty in front of you (west) a hallway runs into the
 interior of the castle.  North of you is a door which looks to house a coat
 closet.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 door closet~
@@ -40,7 +40,7 @@ Closet~
 you first thought it to be.  In fact, it is immense.  You cannot see the walls
 in any direction, nor the ceiling.  
 ~
-261 d 0
+261 8 0 0 0 0
 D2
 ~
 ~
@@ -55,7 +55,7 @@ and south, and west there is a closed door.  There is even a large, grand
 staircase leading to a higher level, not to mention a set of stairs leading
 downward into the basement.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -90,7 +90,7 @@ and south, and west there is a closed door.  There is even a large, grand
 staircase leading to a higher level, not to mention a set of stairs leading
 downward into the basement.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -125,7 +125,7 @@ and south, and west there is a closed door.  There is even a large, grand
 staircase leading to a higher level, not to mention a set of stairs leading
 downward into the basement.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -160,7 +160,7 @@ and south, and west there is a closed door.  There is even a large, grand
 staircase leading to a higher level, not to mention a set of stairs leading
 downward into the basement.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -195,7 +195,7 @@ and south, and west there is a closed door.  There is even a large, grand
 staircase leading to a higher level, not to mention a set of stairs leading
 downward into the basement.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -230,7 +230,7 @@ and south, and west there is a closed door.  There is even a large, grand
 staircase leading to a higher level, not to mention a set of stairs leading
 downward into the basement.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -265,7 +265,7 @@ and south, and west there is a closed door.  There is even a large, grand
 staircase leading to a higher level, not to mention a set of stairs leading
 downward into the basement.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -305,7 +305,7 @@ and south, and west there is a closed door.  There is even a large, grand
 staircase leading to a higher level, not to mention a set of stairs leading
 downward into the basement.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -337,7 +337,7 @@ Sitting Room~
 are scattered throughout the room, people seated here and there, enjoying the
 day, chatting away about everything and nothing.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -358,7 +358,7 @@ stocked a whole town could eat here for a month and never have to get any more
 food.  It seems strange that only one cook would be on staff for such a large
 facility.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -372,12 +372,12 @@ D3
 ~
 0 0 26113
 E
-desk~
-   The desk is basically uninteresting, as are the papers on top of it...  
-~
-E
 closet~
    Nice clothes, but not your size at all.  
+~
+E
+desk~
+   The desk is basically uninteresting, as are the papers on top of it...  
 ~
 S
 #26112
@@ -385,7 +385,7 @@ Pantry~
    This small space is cramped enough without this huge woman stuffing her face
 full of anything edible she can get her hands on.  
 ~
-261 ad 0
+261 9 0 0 0 0
 D2
 ~
 ~
@@ -400,7 +400,7 @@ Dining Room~
    A table laden with food lies in the center of this room, inviting any and all
 to partake of this great bounty.  
 ~
-261 d 0
+261 8 0 0 0 0
 D1
 ~
 ~
@@ -416,7 +416,7 @@ Portrait Studio~
 Hanging from every angle, every height, you can't help but stop and peruse all
 of this fine art.  A staircase leads up from here to another level.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -435,7 +435,7 @@ A Stairwell~
    This stairwell continues up or down, you see no end or landing in your
 immediate line of sight.  
 ~
-261 d 0
+261 8 0 0 0 0
 D4
 ~
 ~
@@ -451,7 +451,7 @@ Stairwell~
 allows.  Strange, this building didn't seem this tall when you saw it from the
 outside.  
 ~
-261 d 0
+261 8 0 0 0 0
 D4
 ~
 ~
@@ -466,7 +466,7 @@ Stairwell~
    Still you climb, up and up, or down and down, whichever as it may be in
 relation to the direction you're heading.  
 ~
-261 d 0
+261 8 0 0 0 0
 D4
 ~
 ~
@@ -482,7 +482,7 @@ Stairwell~
 You must be in a tower on the backside of the building and that's why you never
 noticed this immense height from outside.  
 ~
-261 d 0
+261 8 0 0 0 0
 D1
 ~
 wall~
@@ -501,7 +501,7 @@ Stairwell~
    The gray stone and motar walls are getting just a bit old now.  Myabe if
 called out for help, or just sat and waited for someone to come along...?  
 ~
-261 d 0
+261 8 0 0 0 0
 D4
 ~
 ~
@@ -517,7 +517,7 @@ Stairwell~
 as far as you can see.  It's been going up forever.  It's been going down
 forever.  Where is the top?  Where is the bottom?  Where?!  
 ~
-261 d 0
+261 8 0 0 0 0
 D4
 ~
 ~
@@ -534,7 +534,7 @@ size of three men side by side rise from the forest floor, towering high above
 you.  Birds sing, branches creak, and you have to wonder...  -What the Hell am I
 doing here?!  -
 ~
-261 0 3
+261 0 0 0 0 0
 S
 #26122
 Bedroom~
@@ -544,7 +544,7 @@ and not on the floor, or it might've hurt!  The only bad thing about this
 experience is that the man and woman who were in the bed seem to be just a bit
 perturbed that landed on them, too.  
 ~
-261 d 0
+261 8 0 0 0 0
 D3
 ~
 door~
@@ -559,7 +559,7 @@ some unknown source, a soft but bright light keeps this place lit up, and from
 the same source, soft orchestra music plays quietly.  The walls here are white
 as any you've ever seen, with not a mark or mar upon them.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 door~
@@ -583,7 +583,7 @@ Hallway~
    The walls still glisten white, doors still line those walls, and the music
 plays on and on in accompaniment to the soft light all around you.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 door~
@@ -607,7 +607,7 @@ Spotless White Hallway~
 really is getting on your nerves now, it sounds to be the same song being played
 over and over and over...  Who ARE these people who live here?  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 door~
@@ -631,7 +631,7 @@ Bathroom~
 normal enough.  The only out-of-the-ordinary thing about there being a shower is
 the shower itself and the occupant within.  
 ~
-261 d 0
+261 8 0 0 0 0
 D2
 ~
 door~
@@ -648,7 +648,7 @@ spotlessly clean hallways you just left are replaced by cold grey walls of
 stone.  The chamber itself could easily house a full grown dragon, it is so big.
 As a matter of fact, it does house a full grown dragon.  
 ~
-261 ad 5
+261 9 0 0 0 0
 D1
 ~
 door~
@@ -662,7 +662,7 @@ S
 undefined~
    It is pitch black...  
 ~
-261 ad 0
+261 9 0 0 0 0
 D0
 ~
 door~
@@ -674,7 +674,7 @@ The Bar~
 the Bar.  All your favorite drinks are on hand, anything you want, just ask Old
 Marty, the bartender, who is always more than happy to get you what you need.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 door~
@@ -686,7 +686,7 @@ Martin's Rest~
 tied to a support in the ceiling and the over-turned chair which you assume is
 the very chair he must have used to get himself into his current situation.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 door~
@@ -699,7 +699,7 @@ a butler's room could be, with the bed made without a wrinkle, clothing all hung
 neatly in a closet alcove.  Inna and Igor are lucky to have this man, this
 beacon of normalcy, on staff.  
 ~
-261 ad 0
+261 9 0 0 0 0
 D1
 ~
 closet~
@@ -714,7 +714,7 @@ Ma & Pa's Home~
    This is a simply furnished room, with a fire crackling merrily in the
 fireplace, keeping time with Ma's knitting needles and Pa's wittlin' knife.  
 ~
-261 cd 0
+261 12 0 0 0 0
 D2
 ~
 door~
@@ -726,7 +726,7 @@ Waiting Room~
 end table holds literature to read while passing time waiting for an audience
 with the master and mistress of this place.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -742,7 +742,7 @@ A Hallway~
 you came from.  To the north the hallway continues on, eventually opening up
 into a large room.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -758,7 +758,7 @@ A Hallway~
 ways south of you and what you presume to be Inna and Igor's office or reception
 room lies north.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -785,7 +785,7 @@ A Hallway~
    The entance to a large room lies just north of you, while the length of the
 hallway runs south into the waiting room.  
 ~
-261 d 0
+261 8 0 0 0 0
 D0
 ~
 ~
@@ -811,7 +811,7 @@ this strange castle.  Pictures line the mantle of the fireplace, awards hang on
 the walls from various mage academies.  These people seem to have been
 socialites in their time.  
 ~
-261 d 0
+261 8 0 0 0 0
 D2
 ~
 ~
@@ -834,7 +834,7 @@ the southern wall, but for the most part, they look as if they are usually
 unread.  Seems strange that a famous illiusionist would have these sorts of
 things on his office...  
 ~
-261 ad 0
+261 9 0 0 0 0
 D1
 ~
 ~
@@ -847,7 +847,7 @@ chair.  Book shelves line the walls both to the south and the north.  A small
 window in the eastern wall affords a view of the forest outside.  Strangely
 enough, it seems you are still on the ground floor.  
 ~
-261 d 0
+261 8 0 0 0 0
 D3
 ~
 ~
@@ -859,7 +859,7 @@ Inna & Igor's Bedroom~
 Lots of lace on the bed covers, pictures on the dressers of Ma and Pa, the whole
 normal old person's place.  Maybe these guys aren't so wierd after all...  
 ~
-261 d 0
+261 8 0 0 0 0
 D1
 ~
 ~
@@ -872,17 +872,17 @@ mortars and pestles, jars filled with normal things, jars filled with abnormal
 things, jars filled with things you'd rather not think about...  A search could
 reveal many things...  Inna and Igor both seem surprised to see you.  
 ~
-261 d 0
+261 8 0 0 0 0
 D3
 ~
 door~
 1 0 26135
 E
-beaker beakers flask flasks burner burners tong tongs~
+mortar mortars pestle pestles jar jars~
    Looks like normal, fragile lab equipment to you.  
 ~
 E
-mortar mortars pestle pestles jar jars~
+beaker beakers flask flasks burner burners tong tongs~
    Looks like normal, fragile lab equipment to you.  
 ~
 S
@@ -892,7 +892,7 @@ Entrance to a Large Home~
 definately large by most standards.  The door lies directly west of you or you
 may head back along the path through the forest to the grasslands.  
 ~
-261 0 1
+261 0 0 0 0 0
 D1
 ~
 ~
@@ -909,7 +909,7 @@ married couple who used to be Head Enchanter and Enchantress to the Lord at
 Lord's Keep, maybe this is it...  The path also heads north through the forest.
 
 ~
-261 0 3
+261 0 0 0 0 0
 D0
 ~
 ~
@@ -925,7 +925,7 @@ Twisty Path~
 anywhere.  There are a great many leaves strewn in the path, giving you the
 impression that not many people travel this way very often.  
 ~
-261 0 3
+261 0 0 0 0 0
 D1
 ~
 ~
@@ -940,7 +940,7 @@ Start of a Twisty Path~
    You stand at the edge of the field and the edge of a forest.  The way to the
 forest is west, and the grasslands spread out to your east.  
 ~
-261 0 3
+261 0 0 0 0 0
 D1
 ~
 ~

@@ -154,14 +154,14 @@ ACMD(do_hide)
   send_to_char(ch, "You attempt to hide yourself.\r\n");
 
   if (AFF_FLAGGED(ch, AFF_HIDE))
-    REMOVE_BIT(AFF_FLAGS(ch), AFF_HIDE);
+    REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_HIDE);
 
   percent = rand_number(1, 101);	/* 101% is a complete failure */
 
   if (percent > GET_SKILL(ch, SKILL_HIDE) + dex_app_skill[GET_DEX(ch)].hide)
     return;
 
-  SET_BIT(AFF_FLAGS(ch), AFF_HIDE);
+  SET_BIT_AR(AFF_FLAGS(ch), AFF_HIDE);
 }
 
 ACMD(do_steal)
@@ -341,7 +341,7 @@ int perform_group(struct char_data *ch, struct char_data *vict)
   if (AFF_FLAGGED(vict, AFF_GROUP) || !CAN_SEE(ch, vict))
     return (0);
 
-  SET_BIT(AFF_FLAGS(vict), AFF_GROUP);
+  SET_BIT_AR(AFF_FLAGS(vict), AFF_GROUP);
   if (ch != vict)
     act("$N is now a member of your group.", FALSE, ch, 0, vict, TO_CHAR);
   act("You are now a member of $n's group.", FALSE, ch, 0, vict, TO_VICT);
@@ -422,7 +422,7 @@ ACMD(do_group)
 	act("$N is no longer a member of your group.", FALSE, ch, 0, vict, TO_CHAR);
       act("You have been kicked out of $n's group!", FALSE, ch, 0, vict, TO_VICT);
       act("$N has been kicked out of $n's group!", FALSE, ch, 0, vict, TO_NOTVICT);
-      REMOVE_BIT(AFF_FLAGS(vict), AFF_GROUP);
+      REMOVE_BIT_AR(AFF_FLAGS(vict), AFF_GROUP);
     }
   }
 }
@@ -444,14 +444,14 @@ ACMD(do_ungroup)
     for (f = ch->followers; f; f = next_fol) {
       next_fol = f->next;
       if (AFF_FLAGGED(f->follower, AFF_GROUP)) {
-	REMOVE_BIT(AFF_FLAGS(f->follower), AFF_GROUP);
+	REMOVE_BIT_AR(AFF_FLAGS(f->follower), AFF_GROUP);
         act("$N has disbanded the group.", TRUE, f->follower, NULL, ch, TO_CHAR);
         if (!AFF_FLAGGED(f->follower, AFF_CHARM))
 	  stop_follower(f->follower);
       }
     }
 
-    REMOVE_BIT(AFF_FLAGS(ch), AFF_GROUP);
+    REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_GROUP);
     send_to_char(ch, "You disband the group.\r\n");
     return;
   }
@@ -469,7 +469,7 @@ ACMD(do_ungroup)
     return;
   }
 
-  REMOVE_BIT(AFF_FLAGS(tch), AFF_GROUP);
+  REMOVE_BIT_AR(AFF_FLAGS(tch), AFF_GROUP);
 
   act("$N is no longer a member of your group.", FALSE, ch, 0, tch, TO_CHAR);
   act("You have been kicked out of $n's group!", FALSE, ch, 0, tch, TO_VICT);
@@ -663,28 +663,28 @@ ACMD(do_display)
   }
 
   if (!str_cmp(argument, "auto")) {
-    TOGGLE_BIT(PRF_FLAGS(ch), PRF_DISPAUTO);
+    TOGGLE_BIT_AR(PRF_FLAGS(ch), PRF_DISPAUTO);
     send_to_char(ch, "Auto prompt %sabled.\r\n", PRF_FLAGGED(ch, PRF_DISPAUTO) ? "en" : "dis");
     return;
   }
 
   if (!str_cmp(argument, "on") || !str_cmp(argument, "all"))
-    SET_BIT(PRF_FLAGS(ch), PRF_DISPHP | PRF_DISPMANA | PRF_DISPMOVE);
+    SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP | PRF_DISPMANA | PRF_DISPMOVE);
   else if (!str_cmp(argument, "off") || !str_cmp(argument, "none"))
-    REMOVE_BIT(PRF_FLAGS(ch), PRF_DISPHP | PRF_DISPMANA | PRF_DISPMOVE);
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP | PRF_DISPMANA | PRF_DISPMOVE);
   else {
-    REMOVE_BIT(PRF_FLAGS(ch), PRF_DISPHP | PRF_DISPMANA | PRF_DISPMOVE);
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP | PRF_DISPMANA | PRF_DISPMOVE);
 
     for (i = 0; i < strlen(argument); i++) {
       switch (LOWER(argument[i])) {
       case 'h':
-	SET_BIT(PRF_FLAGS(ch), PRF_DISPHP);
+        SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP);
 	break;
       case 'm':
-	SET_BIT(PRF_FLAGS(ch), PRF_DISPMANA);
+        SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
 	break;
       case 'v':
-	SET_BIT(PRF_FLAGS(ch), PRF_DISPMOVE);
+        SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
 	break;
       default:
 	send_to_char(ch, "Usage: prompt { { H | M | V } | all | auto | none }\r\n");
@@ -763,7 +763,6 @@ ACMD(do_gen_write)
 
 #define TOG_OFF 0
 #define TOG_ON  1
-#define PRF_TOG_CHK(ch,flag) ((TOGGLE_BIT(PRF_FLAGS(ch), (flag))) & (flag))
 ACMD(do_gen_tog)
 {
   long result;

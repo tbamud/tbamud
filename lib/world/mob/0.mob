@@ -3,7 +3,7 @@ An undefined string.~
 an undefined string.~
 An undefined string.~
 An undefined string.~
-d 0 0 E
+8 0 0 0 0 0 0 0 0 E
 0 20 0 0d0+0 0d0+0
 0 0
 0 0 0
@@ -20,14 +20,13 @@ Puff the Fractal Dragon is here, contemplating a higher reality.
    Is that some type of differential curve involving some strange, and unknown
 calculus that she seems to be made out of?  
 ~
-bdnopqr dkp 1000 E
+253962 0 0 0 65552 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
 BareHandAttack: 12
 E
 T 95
-T 8927
 #2
 cleric healer~
 the healer~
@@ -38,7 +37,7 @@ skills to any in need.  But times are rough and now she can only afford to help
 those that are just starting their adventures.  Type 'heal' to see what services
 she offers.  
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -53,7 +52,7 @@ given to them by this old man.  The quests are not easy, sometimes nearly
 impossible.  But they will always be a challenge.  The questmaster looks at you
 and says, 'help autoquest should show you all you need to know'.  
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -71,7 +70,7 @@ any in need.  But times are rough and now she can only afford to help those that
 are just starting their adventures.  Type 'heal' to see what services she
 offers.  Type 'heal <spell>' to buy one of her spells.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -88,7 +87,7 @@ activities, had a passion for fox hunting and the breeding of fox hunting dogs
 he is also said to be a rather flamboyant character, probably accounting for his
 strain of terrier's notability and the name of our terrier today.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -104,7 +103,7 @@ pre-1900's fox terrier.  The Jack Russell has survived the changes that have
 occured in the modern-day Fox Terrier because it has been preserved by working
 terrier enthusiasts in England for more than 100 years.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -122,7 +121,7 @@ longer legs.  This is a result of having been bred strictly for hunting since
 their beginning in the early 1800's, and their preservation as a working breed
 since.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -138,7 +137,7 @@ children to over 40 stories from classic literature.  Wishbone became so popular
 after his series started in 1994 that he now has his own line of children's
 books and plush toys.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -151,7 +150,7 @@ A sick looking dog gags on something in its mouth.
    The dog is unkept and unhealthy.  It does not look like it has been eating
 very well.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -164,7 +163,7 @@ A boring old clone is standing here.
 ~
    This clone is nothing to look at.  No, really, it is quite boring.  
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -177,7 +176,7 @@ A strange humanoid is here.  How odd, its flesh seems to be falling off!
    This strange humanoid is moving rather slowly, and appears to be a corpse, a
 walking corpse!  It must be a zombie or something of the sort.  
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -194,7 +193,7 @@ leading star in the movie My Dog Skip and is known for his performances
 throughout the U.  S.  Currently Moose lives in Los Angeles with two of his
 sons, Enzo and Moosie.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -208,7 +207,7 @@ A very kind and caring soul is here looking out for those who need it.
 everyone and everything.  She is always around to help out those who have hit
 hard times and need a little boost.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -224,7 +223,7 @@ given to them by this old woman. The quests are not easy, sometimes nearly
 impossible. But they will always be a challenge. The questmaster looks at you
 and says, 'are you up for a challenge? '
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -238,7 +237,7 @@ A quest mob wanders around aimlessly waiting to be slaughtered.
 ~
    This mobiles sole purpose is to be hunted down and killed.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -255,7 +254,7 @@ scare it to death. It is as if he has seen the future and he knows he is going
 to die. A crude pair of small wings are attached to its back and it seems to be
 trying to fly away.
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 1 20 10 0d0+10 0d0+0
 10 100
 8 8 1
@@ -271,7 +270,7 @@ philosophy through his influence on Plato. Born in Athens, the son of
 Sophroniscus, a sculptor, and Phaenarete, a midwife, he received the regular
 elementary education in literature.
 ~
-bdnopqr dfk 0 E
+253962 0 0 0 80 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -290,7 +289,7 @@ thinkers of the 19th century. One of Nietzsche's fundamental contentions was
 that traditional values had lost their power in the lives of individuals. 
 Nietzsche maintained that all human behavior is motivated by the will to power.
 ~
-bdnopqr dfk 0 E
+253962 0 0 0 80 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -304,7 +303,7 @@ An amorphous shape is floating in the air.
    As you stare at this amorphous shape, it begins to appear to take the shape
 of a cloud-like humanoid.  
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -317,7 +316,7 @@ An elemental is standing patiently here.
    This creature is the essence of the elements, and appears to be waiting
 patiently for something to occur.  
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -330,7 +329,7 @@ Plato offers advice to any who are in need.
    Plato (circa 428-347 BC), Greek philosopher, one of the most creative and
 influential thinkers in Western philosophy. 
 ~
-bdnopqr dfk 0 E
+253962 0 0 0 80 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -346,7 +345,7 @@ Aristotle wanders the hallways constantly in search of more knowledge.
 Plato and Socrates the distinction of being the most famous of ancient
 philosophers. 
 ~
-bdnopqr dfk 0 E
+253962 0 0 0 80 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -365,7 +364,7 @@ influenced the Chinese attitude toward life, set the patterns of living and
 standards of social value, and provided the background for Chinese political
 theories and institutions. 
 ~
-bdnopqr dfk 0 E
+253962 0 0 0 80 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -380,7 +379,7 @@ The gateguard watches the gate carefully swinging the key around on its chain.
 local government and the miserable wages has corrupted most of the gateguards.
 A simple bribe of about 10 gold is all it takes to get past them.
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -397,7 +396,7 @@ The variable questmaster is waiting to set you.
    This questmaster will save a variable to your player file to remember wether
 or not you have done his quest. This way you can only do this quest once. 
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 0 20 10 1d1+0 1d1+0
 0 0
 8 8 1
@@ -414,7 +413,7 @@ The protector of the magic eight balls ensures everyone gets an eight ball befor
 white robe cinched about the waist with a white rope. It seems to have a
 strange power about it. 
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 0
@@ -438,7 +437,7 @@ than allow himself to be used or let down his fellow POW's. His captors found
 him unconscious and near death. The torture stopped after that and they no
 longer attempted to use him. He received the Medal of Honor for his actions.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -455,7 +454,7 @@ Prussian military service at the age of twelve years, eventually attaining the
 rank of Major General. He is most famous for his military treatise Vom Kriege,
 translated into English as On War.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -473,7 +472,7 @@ lived a relatively hard life in ill health in Rome, during which time he became
 a cripple due to a bad knee. He was exiled along with other philosophers by the
 emperor Domitian sometime between 89 and 95.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -488,7 +487,7 @@ A spy from the underground resistance is discreetly looking for some new recruit
 and it has been rumoured that many new recruits often end up missing. The few
 that do manage to come back are often damaged both physically and mentally.
 ~
-d 0 0 E
+8 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -502,7 +501,7 @@ The prison commissar walks with his back straight and his nose held high.
    The Commissar is the highest ranking official in the prison and is
 responsible for all interrogation and the propaganda it produces.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -517,7 +516,7 @@ Some hired muscle is willing to do just about anything for the right price.
 show an intense hatred and a blankness of intelligence that seems to convey the
 truth about brawn without brains.
 ~
-d 0 0 E
+8 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -531,7 +530,7 @@ Homer Simpson is wandering around aimlessly in a dream like state.
 words of wisdom to fellow travellers. He is decked out in his usual blue pants
 and food stained white t-shirt.
 ~
-d 0 0 E
+8 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -547,7 +546,7 @@ including being a six-time undefeated World Professional MiddleWeight Karate
 Champion with a record of 65-5. He is also a renowned teacher in the martial
 arts and if you are lucky he may pass on some of his wisdom to you.
 ~
-bdnopqr dkp 0 E
+253962 0 0 0 65552 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -562,7 +561,7 @@ The waitress is waiting with a pot of coffee.
 spoon, and enjoys serving the builders who come here in their overalls after a
 hard day laying bricks and writing triggers.
 ~
-bdno 0 10 E
+24586 0 0 0 0 0 0 0 10 E
 10 10 4 10d10+100 10d10+10
 100 10000
 8 8 2
@@ -576,7 +575,7 @@ This saleswoman is laden with gagdets and gizmos that are outrageously priced.
 has made her a success at pushing useless products on uneducated buyers.  Only
 on a rare occasion does she sell anything useful.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -591,7 +590,7 @@ Death the Grim Reaper is smoking a Hookah.
 however, his day off, and he is using a water pipe that he picked up in
 Istanbul. It smells like he is smoking strawberries.
 ~
-bdelnopqr dfkp 0 E
+256026 0 0 0 65616 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0

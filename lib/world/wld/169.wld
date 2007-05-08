@@ -6,7 +6,7 @@ bloodthirsty gibberlings. The area starts out in room 16999 (where it connects
 to the south road) and continues eastward to a mountain cave where you finally
 battle the gibberling chieftain and shaman. 
 ~
-169 0 2
+169 0 0 0 0 0
 S
 #16901
 A Mountain Trail~
@@ -15,7 +15,7 @@ east or west along the trail.  You can see the footprints of small animals and
 something else, here in the dirt.  This trail must be used more often than you
 suspected at first glance.    
 ~
-169 0 2
+169 0 0 0 0 0
 D1
 ~
 ~
@@ -34,7 +34,7 @@ south begins a steep drop away from the hills you are walking across, forming a
 valley, however the trees to the north and south are too thick for travel
 anyway.    
 ~
-169 0 2
+169 0 0 0 0 0
 D1
 ~
 ~
@@ -51,7 +51,7 @@ continues to the east and west.  The sounds of rustling leaves, and small
 animals in the brush scurrying about reminds you that dangerous creatures could
 be lurking nearby in the shadows, waiting for you to rest until they strike.  
 ~
-169 0 2
+169 0 0 0 0 0
 D1
 ~
 ~
@@ -68,7 +68,7 @@ and the brush is too dense to head north or south.  The only way to continue
 farther into the trees, is to climb a steep BANK covered in vines and tree
 roots, up into the hilly regions to the east.    
 ~
-169 0 4
+169 0 0 0 0 0
 D3
 ~
 ~
@@ -93,7 +93,7 @@ soil makes a naturul ladder of sorts, so you would have no trouble climbing
 down.  A small path to the south seems to have been intentionally cleared for
 travel through the unlevel terrain.    
 ~
-169 0 5
+169 0 0 0 0 0
 D2
 ~
 ~
@@ -111,7 +111,7 @@ cliff with them, over time.  Howling winds occasionally sweep down from the
 eastern mountains, further weathering the stones of the slope, and blowing a
 few more pebbles over the edge.    
 ~
-169 0 5
+169 0 0 0 0 0
 D0
 ~
 ~
@@ -131,7 +131,7 @@ point, it's apparent that you probably wouldn't survive a fall from this
 height.  The face of the rock appears to have enough deep, natural grooves to
 use as footholds, if you were to decide to climb it.    
 ~
-169 0 5
+169 0 0 0 0 0
 D3
 ~
 ~
@@ -148,7 +148,7 @@ boulders, which provides a momentary rest from the harsh eastern winds.
 However because of the amount of rocks blocking your path here, you can only
 travel north, or down, to a narrow cliff.    
 ~
-169 0 5
+169 0 0 0 0 0
 D0
 ~
 ~
@@ -164,7 +164,7 @@ A Mountainside~
 north-east, you can see more mountains on the horizon.  Ths South Road is also
 slighty visible as a small line in the trees, far down to the west.    
 ~
-169 0 5
+169 0 0 0 0 0
 D1
 ~
 ~
@@ -181,7 +181,7 @@ vegetation, overlooking a steep drop off the side of the mountain.  You have
 two choices to continue from here, up the face of the mountain, to the east, or
 down to the west, in the direction of the South Road, leading to the capitol.
 ~
-169 0 2
+169 0 0 0 0 0
 D1
 ~
 ~
@@ -198,7 +198,7 @@ through the rocky terrain, which is almost barren save for a few small plants
 here and there.  Small humanoid footprints in the soil, trace a winding trail
 up the western face of the mountain, continuing eastward.    
 ~
-169 0 5
+169 0 0 0 0 0
 D3
 ~
 ~
@@ -215,7 +215,7 @@ from a large cave which lies to the east, in the side of the mountain.  As
 harsh winds blow past you bearing a fine mist, it would probably be wise to
 continue onward, rather than stay here.    
 ~
-169 0 5
+169 0 0 0 0 0
 D1
 ~
 ~
@@ -233,7 +233,7 @@ surface, making the cliff even more dangerous.  Through the deafening sound of
 the gusts in your ears, a kind of chattering noise, or perhaps even voices,
 hauntingly fades in and out of existence...  Or was it just the wind?    
 ~
-169 0 5
+169 0 0 0 0 0
 D1
 ~
 ~
@@ -256,7 +256,7 @@ pieces of decaying carcasses, and bones, lining the floor of the cavern.  The
 howling of the wind at the mouth of the cave is deafening, but still, you think
 you hear a sound like many animals chattering and shrieking through the echoes.
 ~
-169 cd 0
+169 12 0 0 0 0
 D1
 ~
 ~
@@ -281,7 +281,7 @@ chopped and broken to make travel easier.  Many small footprints blanket the
 dirt floor, accompanied by a powerful, musky aroma of wild beasts, or so it
 would appear.    
 ~
-169 d 0
+169 8 0 0 0 0
 D1
 ~
 ~
@@ -297,7 +297,7 @@ A Dark Cave~
 definitely be advisable by the hungry looks you get from every hideous
 gibberling passing through.    
 ~
-169 d 0
+169 8 0 0 0 0
 D1
 ~
 ~
@@ -316,7 +316,7 @@ these crazed, ill-mannered beasts exist in such a small area.  There is barely
 even room to manuever here, so they simply rush through, trampling anything in
 thier path.    
 ~
-169 d 0
+169 8 0 0 0 0
 D2
 ~
 ~
@@ -335,7 +335,7 @@ across the area.  The room looks like it's been through at least one cave in,
 or a collapse, perhaps the gibberlings just dug thier way through after being
 trapped in the cave by enemies long ago.    
 ~
-169 d 0
+169 8 0 0 0 0
 D0
 ~
 ~
@@ -356,7 +356,7 @@ dried blood, and even a few broken weapons from previous battles.  However, the
 gibberlings, who pass through this room daily, seem to have no trouble at all
 navigating the tunnel.    
 ~
-169 d 0
+169 8 0 0 0 0
 D0
 ~
 ~
@@ -381,7 +381,7 @@ than the northern rooms as well.  A few clay pots and other handmade tools lie
 on makeshift shelves dug into the walls, affirming this as a room of daily
 importance.    
 ~
-169 d 0
+169 8 0 0 0 0
 D0
 ~
 ~
@@ -398,7 +398,7 @@ and east from here.  You smell a faint aroma of food to the east, and
 gibberlings coming from that direction appear to be even more rambunctious and
 energetic than usual.    
 ~
-169 d 0
+169 8 0 0 0 0
 D0
 ~
 ~
@@ -419,7 +419,7 @@ inhale the thick aroma of a gibberling feast nearby.  The smell is definitely
 of meat, and even now, bits of refuse, bone, and small portions of meat litter
 the ground around your feet.    
 ~
-169 d 0
+169 8 0 0 0 0
 D0
    You see a large, wooden door in the cave wall, with a rounded opening set in
 the center, from which you can smell an aroma of meat wafting out into the
@@ -439,7 +439,7 @@ gibberlings that inhabit this area.  Stacks of assorted meat are heaped in
 corners here, most of which have already been partially eaten and thrown back
 into the pile.    
 ~
-169 d 0
+169 8 0 0 0 0
 D2
    You see a large wooden door set in the cave wall.    
 ~
@@ -453,7 +453,7 @@ rising stench and mist, wafting up from a hole leading downward into the lower
 chamber of the tunnels, from which you can hear the unmistakable sounds of a
 torture chamber.    
 ~
-169 d 0
+169 8 0 0 0 0
 D3
 ~
 ~
@@ -476,7 +476,7 @@ has been constructed here using heavy iron chains, hooked onto pulleys across
 the ceiling, a few pairs of shackles nailed into the walls, and various sharp
 iron and steel makeshift instruments.    
 ~
-169 d 0
+169 8 0 0 0 0
 D0
 ~
 ~
@@ -496,7 +496,7 @@ parts, cold, sharp instruments lining the stone walls, while horrible sounds of
 anguish, escape the lips of dying and dismembered animals and unlucky
 travellers.    
 ~
-169 d 0
+169 8 0 0 0 0
 D2
 ~
 ~
@@ -509,7 +509,7 @@ cave must be used for a sleeping area, as you can tell by the numerous
 makeshift cots of animal hides lying about.  A shabby rope ladder swinging from
 a hole in the stone ceiling, beckons you to explore further.    
 ~
-169 d 0
+169 8 0 0 0 0
 D1
 ~
 ~
@@ -519,15 +519,15 @@ D4
 ~
 0 0 16928
 E
+ladder~
+   It's a surprisingly sturdy looking makeshift, braided, rope ladder, swinging
+from an opening in the ceiling above your head.    
+~
+E
 hides cots~
    Animal hides are piled up in the corners, obviously meant for use as
 blankets during cold nights spent on the hard, cold, cave floors.  Strangely
 the heads of the animals have not been removed from the hides.    
-~
-E
-ladder~
-   It's a surprisingly sturdy looking makeshift, braided, rope ladder, swinging
-from an opening in the ceiling above your head.    
 ~
 S
 #16928
@@ -538,7 +538,7 @@ continuous inhuman sounds of gibberlings shrieking, howling and chattering echo
 of the walls, making this seem more like some kind of demonic tomb for the
 undead, than a mere cave.    
 ~
-169 d 0
+169 8 0 0 0 0
 D2
 ~
 ~
@@ -564,7 +564,7 @@ of many a gibberling who died, either after falling from the bridge, or during
 periodic breaks in the ropes, which appear to have been repaired numerous
 times.    
 ~
-169 d 0
+169 8 0 0 0 0
 D0
 ~
 ~
@@ -574,16 +574,16 @@ D2
 ~
 0 0 16930
 E
-chasm~
-   It is too deep and dark, to see much more than what appears to be a
-bottomless pit, reaching far into the subterranean regions.  
-~
-E
 bridge~
    The bridge is crafted from thick, wide planks of wood, bound together by
 many lengths of salvaged rope, of various types and thickness.  It's connected
 to the ground on either side of the chasm by large wood posts, each roughly the
 same thickness as a pine tree, planted in deep holes dug into the stone floor.
+~
+E
+chasm~
+   It is too deep and dark, to see much more than what appears to be a
+bottomless pit, reaching far into the subterranean regions.  
 ~
 S
 #16930
@@ -592,7 +592,7 @@ A Stony Landing~
 in shape, the ground builds upward to another hole high in the south wall, that
 appears to be the entrance to another level of the cave.    
 ~
-169 d 0
+169 8 0 0 0 0
 D0
 ~
 ~
@@ -612,7 +612,7 @@ the caverns you've been to thus far, and to the north lies a large crudely
 constructed wooden door.  The only other exit, besides the door, is a large
 hole in the floor, west of the doorway.    
 ~
-169 d 0
+169 8 0 0 0 0
 D0
    The door is unusually wide, and cut to fit the somewhat irregular shape of
 the hole it is set in, which is simply a large hole dug into the stone wall.  
@@ -640,7 +640,7 @@ human stretched hides and other various gifts to the king, from blood-drenched
 gibberling raids line the walls, while the bones of a mighty giant, killed in
 battle, irreverently form the throne itself.    
 ~
-169 d 0
+169 8 0 0 0 0
 D2
    The door is unusually wide, and cut to fit the somewhat irregular shape of
 the hole it is set in, which is simply a large hole dug into the stone wall.  
@@ -653,18 +653,18 @@ D3
 passage~
 1 0 16935
 E
-throne bones giant~
-   The gibberling throne is crafted from the bones of a slain giant, who met his
-fate at the hands of gibberling raiders years ago in battle.  The bones are
-bound together by the dried sinew of a dragon, and the seat is covered with
-various hides skinned from all the myriad races.  
-~
-E
 hides skins~
    The stretched and dried skins of warriors and adventurers killed in battle,
 adorn the throne itself, as well as many of the walls in the room.  The heads
 have not been removed, as the gibberlings wish to preserve the indescribable
 horror frozen in the faces of thier many victims, when they die.    
+~
+E
+throne bones giant~
+   The gibberling throne is crafted from the bones of a slain giant, who met his
+fate at the hands of gibberling raiders years ago in battle.  The bones are
+bound together by the dried sinew of a dragon, and the seat is covered with
+various hides skinned from all the myriad races.  
 ~
 S
 #16935
@@ -675,7 +675,7 @@ for a very long time.  Each turn you make, seems to result in more dust rising,
 and spiderwebs clinging to your form, as small rodents and insects scurry away
 into the dark corners.    
 ~
-169 d 0
+169 8 0 0 0 0
 D1
 ~
 passage~
@@ -691,7 +691,7 @@ flat, yet consists only of a flat, woven mat, lain over the soft soil beneath.
 From the east, you can feel a slight breeze, from an open flap in the tent,
 which acts as the door.  
 ~
-169 dgj 0
+169 584 0 0 0 0
 D1
 ~
 ~
@@ -705,11 +705,19 @@ by thick vines growing, intertwined with the trees themselves.  A few stone
 benches are placed near the south end of the yard, next to a small, well-tended
 garden, filled with strange looking fruits and herbs.    
 ~
-169 j 0
+169 512 0 0 0 0
 D3
 ~
 ~
 0 0 16977
+E
+trees fence vines~
+   The living fence surrounding Tanto's yard is a masterpiece, which took much
+time, and careful attention to make.  Stout trees grown seemingly impossibly
+close together, linked by a growing trellis of green and purple vines climbing
+thier length, and the tangled mass of hardy roots , extending their protection
+a few feet into the yard from each direction.    
+~
 E
 stone benches~
    There are two, magnificent stone benches, which appear to have been crafted
@@ -719,14 +727,6 @@ horde of monstrous warriors.  The top of each bench is a single rectangular
 stone slab, supported by four stone legs, shaped like the hind legs of a lion,
 or griffon.    
 ~
-E
-trees fence vines~
-   The living fence surrounding Tanto's yard is a masterpiece, which took much
-time, and careful attention to make.  Stout trees grown seemingly impossibly
-close together, linked by a growing trellis of green and purple vines climbing
-thier length, and the tangled mass of hardy roots , extending their protection
-a few feet into the yard from each direction.    
-~
 S
 #16999
 A Mountain Trail~
@@ -735,7 +735,7 @@ and marked by many booted footprints in the soft soil.  A gust of cold wind is
 blowing in from the east, and you think you can make out rocky mountains in the
 distance, if you look through the fog to the east.    
 ~
-169 0 0
+169 0 0 0 0 0
 D1
 ~
 ~

@@ -3,7 +3,7 @@ red cape Cardinal's cloak~
 a Cardinal's red cloak~
 A red cloak is lying here.~
 ~
-9 a ak 0
+9 a 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 5 175 0 0
 A
@@ -15,7 +15,7 @@ brown boots~
 a pair of brown boots~
 A pair of brown boots are lying here.~
 ~
-11 0 ag 0
+11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 6 1000 0 0
 A
@@ -29,7 +29,7 @@ water vase wood water~
 a wood vase~
 A wood, and old vase has been left here.~
 ~
-17 g a 0
+17 g 0 0 0 a 0 0 0 0 0 0 0
 12 12 15 0
 12 150 0 0
 E
@@ -43,7 +43,7 @@ water plate silver water~
 a silver plate~
 A silver plate is stuck to the wall.~
 ~
-17 aik 0 0
+17 aik 0 0 0 0 0 0 0 0 0 0 0
 10 10 14 0
 0 0 0 0
 E
@@ -55,7 +55,7 @@ sweater~
 a cool sweater~
 A sweater is lying here.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 3 400 0 0
 A
@@ -65,7 +65,7 @@ bible~
 a Bible~
 A bible has been left here.~
 ~
-1 amo ao 0
+1 amo 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 5 50 0 0
 A
@@ -79,7 +79,7 @@ slab~
 a wood slab~
 A wood slab has been left here.~
 ~
-22 0 ak 0
+22 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 28 120 0 0
 A
@@ -93,7 +93,7 @@ tithe basket~
 a tithe basket~
 A basket has been left here.~
 ~
-15 i ao 0
+15 i 0 0 0 ao 0 0 0 0 0 0 0
 150 1 -1 0
 3 100 0 0
 #27924
@@ -101,7 +101,7 @@ ring Cardinal Cardinal's ruby~
 Cardinal's ruby ring~
 A ruby ring has been left here.~
 ~
-9 a ab 0
+9 a 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 2 440 0 0
 A
@@ -115,7 +115,7 @@ pants dirty~
 a pair of dirty pants~
 A pair of dirty pants has been left here.~
 ~
-11 k af 0
+11 k 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 4 1000 0 0
 A
@@ -127,7 +127,7 @@ green shirt~
 a green shirt~
 A green piece of cloth is lying here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 4 125 0 0
 A
@@ -141,7 +141,7 @@ sacred sandals~
 a pair of sacred sandals~
 A pair of sandals are lying here.~
 ~
-11 a ag 0
+11 a 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 2 250 0 0
 A
@@ -155,7 +155,7 @@ stone shield~
 a stone shield~
 A stone shield has been left here.~
 ~
-9 bh aj 0
+9 bh 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 10 1000 0 0
 A
@@ -169,7 +169,7 @@ stone sleeves~
 a pair of stone sleeves~
 A pair of stone sleeves are lying here.~
 ~
-9 bh ai 0
+9 bh 0 0 0 ai 0 0 0 0 0 0 0
 4 0 0 0
 12 275 0 0
 A
@@ -183,7 +183,7 @@ stone leggings~
 a pair of stone leggings~
 A pair of leggings made out of stone are lying here.~
 ~
-9 bdh af 0
+9 bdh 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
 15 257 0 0
 A
@@ -197,7 +197,7 @@ silver sword~
 a silver sword~
 A shiny sword is lying here.~
 ~
-5 ckmno an 0
+5 ckmno 0 0 0 an 0 0 0 0 0 0 0
 2 6 6 0
 5 825 0 0
 A
@@ -211,7 +211,7 @@ rosary~
 a rosary~
 A chain has been left here.~
 ~
-11 ao acm 0
+11 ao 0 0 0 acm 0 0 0 0 0 0 0
 0 0 0 0
 3 853 0 0
 A
@@ -225,7 +225,7 @@ collar dog~
 a bright dog collar~
 A bright collar has been left here.~
 ~
-11 b ac 0
+11 b 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 3 150 0 0
 A
@@ -239,7 +239,7 @@ Lyon fountain~
 a fountain~
 A grey stone fountain babbles here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 2 0
 505 0 0 0
 E
@@ -251,7 +251,7 @@ magic potion~
 a magic potion~
 A magic potion has been left here~
 ~
-2 c a 0
+2 c 0 0 0 a 0 0 0 0 0 0 0
 30 3 43 3
 2 562 0 0
 #27945
@@ -259,7 +259,7 @@ lamp copper~
 a copper lamp~
 A copper lamp has been left here.~
 ~
-1 adhn ao 0
+1 adhn 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 6 500 0 0
 A
@@ -273,7 +273,7 @@ flowers~
 a bunch of flowers~
 Some flowers have been left here.~
 ~
-12 ck ao 0
+12 ck 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 A
@@ -283,7 +283,7 @@ bloody doagger~
 a bloody dagger~
 A dagger stained with blood has been left here.~
 ~
-5 djnp an 0
+5 djnp 0 0 0 an 0 0 0 0 0 0 0
 2 2 12 0
 7 120 0 0
 A
@@ -297,7 +297,7 @@ hermit mace~
 a hermit mace~
 A hermit mace has been left here.~
 ~
-5 jp an 0
+5 jp 0 0 0 an 0 0 0 0 0 0 0
 1 2 6 10
 8 500 0 0
 #27955
@@ -305,7 +305,7 @@ magical key~
 a magical key~
 A magical key has been left here.~
 ~
-18 cf a 0
+18 cf 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 #27957
@@ -313,7 +313,7 @@ magic belt~
 a magic belt~
 A magic belt is lying here.~
 ~
-9 aop al 0
+9 aop 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 0
 10 120 0 20
 A
@@ -325,7 +325,7 @@ statue~
 a statue of Louis XIV~
 A bronze statue of Louis XIV is here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -337,7 +337,7 @@ dress white~
 a white dress~
 A white dress is lying here.~
 ~
-11 a adk 0
+11 a 0 0 0 adk 0 0 0 0 0 0 0
 0 0 0 0
 4 500 0 0
 E
@@ -353,7 +353,7 @@ hood~
 a black hood~
 A black hood is lying here.~
 ~
-11 jnp aek 0
+11 jnp 0 0 0 aek 0 0 0 0 0 0 0
 0 0 0 0
 2 500 0 0
 A
@@ -367,7 +367,7 @@ bronze key~
 a bronze key~
 A bronze key is lying here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 8 1 0 0
 E
@@ -379,7 +379,7 @@ guillotine~
 a guillotine~
 A blody guillotine is here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -391,7 +391,7 @@ French cake~
 a French cake~
 A French cake has been left here it looks delicius.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 50 0 0
 #27972
@@ -399,7 +399,7 @@ Musketeer hat~
 a Musketeer hat~
 A brown hat has been left here.~
 ~
-11 kn ae 0
+11 kn 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 5 120 0 0
 A
@@ -413,7 +413,7 @@ rapier~
 a golden rapier~
 A sword has been left here.~
 ~
-5 fl an 0
+5 fl 0 0 0 an 0 0 0 0 0 0 0
 3 4 6 3
 1 100 0 0
 A
@@ -427,7 +427,7 @@ foil~
 a foil~
 A sword is lying here.~
 ~
-5 aop an 0
+5 aop 0 0 0 an 0 0 0 0 0 0 0
 3 4 5 3
 3 500 0 0
 A
@@ -441,7 +441,7 @@ brown gloves~
 a pair of brown gloves~
 A pair of brown gloves has been left here.~
 ~
-11 mn ah 0
+11 mn 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 1 5 0 0
 A
@@ -455,7 +455,7 @@ baggete~
 a baggete~
 A peace of bread has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 3 58 0 0
 #27987
@@ -463,7 +463,7 @@ horseshoes~
 a set of horseshoes~
 A set of horseshoes has been left here.~
 ~
-11 c ag 0
+11 c 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 12 400 0 0
 E
@@ -482,7 +482,7 @@ magic staff~
 a magic staff~
 A staff has been left here.~
 ~
-4 gi ao 0
+4 gi 0 0 0 ao 0 0 0 0 0 0 0
 30 5 5 3
 1 180 0 0
 E
@@ -495,7 +495,7 @@ key oxided~
 an oxided key~
 An oxided key has been left here.~
 ~
-18 bcdh ao 0
+18 bcdh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 8 100 0 0
 E
@@ -508,7 +508,7 @@ cadaver~
 a cadaver~
 The cadaver of a man is lying here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -520,7 +520,7 @@ key platinum~
 a platinum key~
 A platinum key is lying here.~
 ~
-18 f ao 0
+18 f 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 100 0 0
 E
@@ -533,7 +533,7 @@ crown royal~
 a royal crown~
 A royal crown has been left here.~
 ~
-11 a ae 0
+11 a 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 8 250 0 0
 A
@@ -545,7 +545,7 @@ mask iron~
 an iron mask~
 An iron mask is lying here.~
 ~
-11 b ae 0
+11 b 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 12 180 0 0
 A
@@ -557,7 +557,7 @@ cape Musketeer~
 a Musketeer cape~
 A Musketeer cape is lying here.~
 ~
-9 ekn adk 0
+9 ekn 0 0 0 adk 0 0 0 0 0 0 0
 0 0 0 0
 4 150 0 0
 A
@@ -571,7 +571,7 @@ pearl necklace~
 a pearl necklace~
 A necklace has been left here.~
 ~
-11 jk ac 0
+11 jk 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 3 250 0 0
 A
@@ -585,7 +585,7 @@ spiritual gloves~
 a pair of spiritual gloves~
 A pair of gloves have been left here.~
 ~
-11 afop ah 0
+11 afop 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 6 1000 0 0
 A
@@ -597,7 +597,7 @@ iron chain~
 an iron chain~
 A chain has been left here~
 ~
-9 0 acdhklm 0
+9 0 0 0 0 acdhklm 0 0 0 0 0 0 0
 0 0 0 0
 16 500 0 0
 A
@@ -609,7 +609,7 @@ dark mask~
 a dark mask~
 A dark mask is lying here.~
 ~
-11 bmn ae 0
+11 bmn 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 A

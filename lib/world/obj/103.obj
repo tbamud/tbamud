@@ -3,7 +3,7 @@ Zone Description Sign~
 the Zone Description Sign~
 The Zone Description Sign is staked in the ground here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -26,7 +26,7 @@ sign~
 a sign~
 A sign is nailed in to the wall here.~
 ~
-12 q 0 0
+12 q 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -41,7 +41,7 @@ teleporter~
 a teleporter~
 A teleporter sits in the middle of the room.~
 ~
-12 ab 0 0
+12 ab 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 10302
@@ -50,7 +50,7 @@ teleporter~
 a teleporter~
 A teleporter sits in the middle of the room.~
 ~
-18 ab 0 0
+18 ab 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 10303
@@ -59,7 +59,7 @@ yellow cloud~
 a yellow cloud~
 A yellow cloud hovers here, makeing a slight noise~
 ~
-18 aq 0 0
+18 aq 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 10306
@@ -72,7 +72,7 @@ Ruby Emerald Necklace~
 a Ruby Emerald Necklace~
 A Ruby Emerald Necklace has fallen here.~
 ~
-11 a ac 0
+11 a 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 10308
@@ -81,7 +81,7 @@ sign~
 a sign~
 A sign is on the wall here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -94,7 +94,7 @@ test~
 a test~
 This is a test~
 ~
-0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #10318
@@ -102,7 +102,7 @@ fighters carcass~
 a fighters carcass~
 A newbie fighters carcass lies here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 10315
@@ -111,7 +111,7 @@ vegetas~
 Vegetas corpse~
 Vegetas corpse lies here slain.~
 ~
-13 0 k f
+13 0 0 0 0 k 0 0 0 g 0 0 0
 0 0 0 0
 0 0 0 30
 T 10316
@@ -120,7 +120,7 @@ Teleporter~
 a teleporter~
 A teleporter sits in the middle of the room glowing and humming.~
 ~
-12 ab 0 0
+12 ab 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 10320
@@ -129,7 +129,7 @@ Turtle Hermit headband~
 a Turlte Hermit headband~
 It looks like an ordinary headband, but it looks a bit different.~
 ~
-9 0 aen 0
+9 0 0 0 0 aen 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 T 10330
@@ -138,7 +138,7 @@ Turtle Shell~
 a Turtle Shell~
 A Turtle Shell that looks like Master Roshis' is here.~
 ~
-9 dq ak 0
+9 dq 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 50 25 0 0
 A
@@ -148,7 +148,7 @@ book~
 a book~
 A book lies here open on the table~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -171,7 +171,7 @@ Dragon Statue~
 a Dragon Statue~
 A Dragon Statue is on the side of the gate.~
 ~
-12 g 0 0
+12 g 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #10363
@@ -179,7 +179,7 @@ Gate Key~
 a Gate Key~
 A Gate Key is here.~
 ~
-18 0 0 0
+18 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #10369
@@ -187,7 +187,7 @@ circular rock~
 a circular rock~
 A circular rock lies right in the middle the trees.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #10373
@@ -195,7 +195,7 @@ tourch~
 a tourch~
 A tourch rest in a crevice in the wall.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #10376
@@ -203,7 +203,7 @@ orb~
 a orb~
 A orb sits in the middle of the room letting off light.~
 ~
-1 0 0 0
+1 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #10389
@@ -211,7 +211,7 @@ Teleporter~
 a Teleporter~
 A Teleporter sits in the middle of the room.~
 ~
-12 ab 0 0
+12 ab 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 10389

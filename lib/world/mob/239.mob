@@ -6,7 +6,7 @@ A red coral snake squirms among the rocks here.
    A slippery red coral snake slides about on his belly through the rocks and sand
 looking for something to eat, it may even try to eat you.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -20,7 +20,7 @@ A diamond-back rattle snake is coiled up ready to strike.
    A diamond-back rattle snake is coiled up amongst the rocks here ready to
 strike at anything that moves or trys to step on it.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 0
@@ -34,7 +34,7 @@ A brown scorpion crawls around the rocks stalking its prey.
    A brown scorpion stalks amongst the rocks looking for victims to attack with
 it's sharp stinger and suck its life force dry.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -48,7 +48,7 @@ A red scorpion quivers its posion stinger at you.
    A red scorpion is the largest of all scorpions and quivers its deadly
 stinger at you with confidence of victory.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 0
@@ -62,7 +62,7 @@ A black scorpion is sharpening its viscious stinger here.
    A black scorpion passes its time while waiting for victims by polishing its
 armor and sharpening its deadly stinger.    
 ~
-dghn bs 0 E
+8392 0 0 0 524292 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -76,7 +76,7 @@ A red spider is building a trap in the desert floor.
    A red spider is passing time building a web trap in the desert floor in
 hopes of catching some food for her new born babies.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 0
@@ -90,7 +90,7 @@ A hairy black spider crawls amongst the rocks of slate.
    A hairy black spider is crawling in the rocks in quest of things to dine
 upon.  It looks famished and would probably eat anything, even you.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -104,7 +104,7 @@ A weary travelling bugbear is limping aimlessly about the desert.
    A weary travelling bugbear seems lost and dying as he wanders aimlessly
 about the desert.  He seems lost and confused.    
 ~
-cdeghlnq dhks 0 E
+75996 0 0 0 524304 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -118,7 +118,7 @@ A twirling sand storm spins about picking up dust along its path.
    A twirling cloud of dust raises up sand and dust and spins it around and
 around in a fearful vortex.    
 ~
-cdeghmno bdk 0 E
+28892 0 0 0 20 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -133,7 +133,7 @@ An angry thorn cactus is looking for some water.
 and at this point would even take the blood of any animal that it happens to
 wander into because its throat is so dry and parched.    
 ~
-cdghlm 0 0 E
+6348 0 0 0 0 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 0
@@ -147,7 +147,7 @@ A hairy cave dweller is hiding behind a rock waiting to ambush you.
    A hairy cave dweller is covered with matted hair and a long scraggly beard.
 He is hungry and would do almost anything for some food.    
 ~
-dg dk 0 E
+72 0 0 0 16 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 0
@@ -162,7 +162,7 @@ A gargantuan hairy beast with big feet is walking in the snow.
 feet is roaming around the mountain top looking for something to eat, maybe
 it's gonna be you?    
 ~
-cdegmoq 0 0 E
+86108 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -180,7 +180,7 @@ here.  The eyes stare northward and into the Southern Desert far below.  The
 Sentinel has a stern countenance and wields a stone hammer and finely crafted
 shield.    
 ~
-bcdeglnopq dfhk 1000 E
+125022 0 0 0 80 0 0 0 1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -194,7 +194,7 @@ The pitch black of the dark surrounds you.
    The sea of dark around you in these chambers surrounds you, scares you,
 engulfs you in a total pitch black sea of nothing, leaving you all alone.    
 ~
-cdegloq bdfks 0 E
+84060 0 0 0 524372 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -208,7 +208,7 @@ A hawk with sharp talons is on a limb here.
    A hawk with sharp talons is guarding it's territory.  It hates competition and
 you.    
 ~
-degl 0 0 E
+2136 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -222,7 +222,7 @@ A brown eagle has sharp claws of steel.
    The eagle is a magnificant bird of prey, has sharp eyesight, claws to grasp
 it's prey, and a 15 macra wingspan.    
 ~
-cdegl dsu 0 E
+2140 0 0 0 524304 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -236,7 +236,7 @@ A red-chested cardinal flies around gathering pinion nuts.
    A beautiful red cardinal is busy gathering food and insects around the limbs
 of the tree.  It is too busy to notice you.    
 ~
-cdgh 0 0 E
+204 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -250,7 +250,7 @@ A dark root of the tree penetrates the hard soil and supporting the tree.
 The fingers of the hand of the tree grasping deep into the earth with the grip
 of a giant.    
 ~
-bcdegopqr bdfu 0 E
+245854 0 0 0 84 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -268,7 +268,7 @@ so busy that she can't help you with what you need.  The shop isn't doing that
 well but the owner still keeps her on because she does such a good job and
 works for nothing.    
 ~
-bdenopq dfh 1000 E
+122906 0 0 0 80 0 0 0 1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 2
@@ -283,7 +283,7 @@ A small chipmunk with puffy cheeks chatters and barks here.
 is running around the shrubs and trees gathering fruit and nuts for its young.
   
 ~
-cdghmnr 0 0 E
+143564 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -298,7 +298,7 @@ A man in black robes stands here.
 other cultures.  He is unhappy with his position in the Matriarch society of the
 Drow and could probably easily be angered into a fight.    
 ~
-dgmnopr dfkn -500 E
+192584 0 0 0 80 0 0 0 -500 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -313,7 +313,7 @@ A drow cleric walks along the passage.
 is a young drow matriarch with potential to be a drow priestess some day in her
 future.    
 ~
-deghopqr bdfkt -500 E
+245976 0 0 0 1048660 0 0 0 -500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -327,7 +327,7 @@ An enormous cyclops guardian is protecting the entrance.
    An enormous cyclops guards the entrance.  It is about 8 metrons tall, weight
 is about 350 stonga, very large muscles, one eye, and a bald head.    
 ~
-bdelopr cdfmp 0 E
+182298 0 0 0 73816 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -342,7 +342,7 @@ A drow guard patrols the hallways.
 sanctum.  The life of a drow guard is usually short and honorable.  They would
 gladly sacrifice their lives to defend the colony.    
 ~
-dgnopr dfk 0 E
+188488 0 0 0 80 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -358,7 +358,7 @@ and pale white skin.  The priestess eyes are pitch black and deep as the ocean
 and you can see the evil forces that dwell within her dark soul through these
 windows of her mind.    
 ~
-degjnopqr bdfkn 0 E
+254552 0 0 0 84 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -374,7 +374,7 @@ A drow guard keeps watch here with a vigilance.
 rank within the Matriarch society.  He would gladly die defending the inner
 sanctum of the drow chapel.    
 ~
-cdegnopqr dfkns 0 E
+254044 0 0 0 524368 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -391,7 +391,7 @@ goblin culture, some think it was an early model of the orc, crafted by some
 evil wizard in search of a slave type race that he could use in fighting his
 battle and building his fortress.    
 ~
-cdgmopr bdk 0 E
+184396 0 0 0 20 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -406,7 +406,7 @@ An older goblin guard tries to hold in his pot belly as he keeps watch.
 and there is no retirement in the goblin society, they work till they die.  
 This one looks like he won't have to work too much longer.    
 ~
-dglmor fk 0 E
+153672 0 0 0 64 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -422,7 +422,7 @@ warriors and have not ever won a major battle in the history of the world.
 They are not known for their weapons or armor.  They defend their lands out of
 necessity rather than desire.    
 ~
-degpq 0 0 E
+98392 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 0
@@ -437,7 +437,7 @@ An old and decrepit hermit smokes his pipe here.
 anymore.  He has a wrinkled brow, long scraggly gray beard, bent back, weak and
 frail arms and legs, and is smoking his pipe.    
 ~
-bdeglopqr dfgkmn 1000 E
+247898 0 0 0 8400 0 0 0 1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -453,7 +453,7 @@ An orc slave lays here grunting.
 He is forced to mine adamite along with all the other slaves that have been
 captured by the drow.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -468,7 +468,7 @@ to find NewHaven.  Now he must live here till he can escape or is rescued by
 his fellow dwarves.  Until then he will be forced to work in the slave labor
 camps of the drow.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -483,7 +483,7 @@ drow captors.  He has been forced to mine for them and has been beaten,
 whipped, and humilitated by the drow guards.  He is weak and has lost hope of
 rescue by his friends.    
 ~
-bdg dk 1000 E
+74 0 0 0 16 0 0 0 1000 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -498,7 +498,7 @@ inside these caves, working in the drow mines pulling carts of ore instead of
 roaming the surface of the world out in the open and free, with fresh air and
 green grass.    
 ~
-bdgnoq dfku 0 E
+90186 0 0 0 80 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1

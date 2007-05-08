@@ -22,7 +22,7 @@ Zone: 200 was linked to the following zones:
  75 Zamba                          at: 20038 (west ) --->  7598
  78 Gideon                         at: 20039 (south) --->  7801
 ~
-200 dj 0
+200 520 0 0 0 0
 S
 #20001
 Western Highway~
@@ -31,7 +31,7 @@ Capital while to the west the highway continues.  A gravelled path leads
 northward, away from this boring highway, towards some rocks a bit further
 north.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D3
 ~
 ~
@@ -43,7 +43,7 @@ Western Highway~
 be seen to the east.  The highway stretches from the west towards the gates.  
 A light forest to the north of pines and small saplings looks peaceful.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -59,7 +59,7 @@ Western Highway~
 the south as well as the highway continuing off to the east and west.  The
 forest to the north seems to thin out a little allowing entrance.  
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -75,7 +75,7 @@ Western Highway~
 the Capital and west deeper into the wilderness, plains to the south and thick
 forest to the north.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -91,7 +91,7 @@ Western Highway~
 west as well as to the east.  The forest to the north looks peaceful and
 inviting, though it seems too dense to enter.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -107,7 +107,7 @@ Western Highway~
 has thinned out and a large wooden building with smoke trailing out of a stone
 chimney is visible between the trees.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -124,7 +124,7 @@ is in disrepair, with shingles lying on the ground and a porch that looks like
 it could collapse any second.  A faded sign swings on rusty hinges that squeak
 annoyingly.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -148,7 +148,7 @@ Western Highway~
 west and to the east.  To the northeast a wooden building can be seen set back
 a little ways in the forest.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -164,7 +164,7 @@ Western Highway~
 to the east and west where the road continues on and to the south where the
 trees open up into a barren plain.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -180,7 +180,7 @@ Western Highway~
 south while the highway continues on to the east and to the west.  The road
 heads south through the plains.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -200,7 +200,7 @@ Western Highway~
 northwest to allow entry into the forest.  The plains to the south appear
 barren.  The highway continues onto the west and east.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -216,7 +216,7 @@ Western Highway~
 directly into the forest and disappears around a bend a short distance through
 the trees.  The more heavily travelled western highway continues east and west.
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -237,7 +237,7 @@ breeze blows to you from over the plains to the south.  It carries a slight
 hint of smoke with it, civilization must be near.  To the north a thick forest
 blocks your view.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -254,7 +254,7 @@ the Southwest.  To the north a thick grove of pines lays in deep shadow while
 to the south an open plain is broken by a few scattered hills.  The highway
 continues on to the west and east.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -270,7 +270,7 @@ Western Highway~
 south.  It appears to be heavily travelled and the wind carries the smell of
 smoke with it from the south.  The highway continues on to the west and east.
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -290,7 +290,7 @@ Western Highway~
 distance to the southeast.  The highway continues east or west.  To the west
 the sound of rushing water can be heard.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -307,7 +307,7 @@ flows beneath it slowly washing the remains of the bridge away.  Debris and
 sand has been scattered everywhere.  The river must have overflown and washed
 the bridge away.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 ~
@@ -320,7 +320,7 @@ travelled.  It seems to lead on to the north as well as to the south, where you
 can see the Western Highway.  The thick forest continues on both sides of the
 dirt road.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -336,7 +336,7 @@ Dirt Road~
 from seeing very far.  A few small animals scamper here and there around your
 feet.  The road continues to the north and south.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -353,7 +353,7 @@ travelled in that direction.  The thick coniferous forest seems to be starting
 to thin out into a variety of hard woods.  Young maple trees seem to be
 dominating this part of the forest.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -370,7 +370,7 @@ the path, hanging around you.  Thick underbrush has begun to form to the sides
 and the road looks unkept.  It is slowly being consumed by the forest around
 it.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -386,7 +386,7 @@ Dirt Road~
 animals stay just out of sight.  They seem unused to travellers and are very
 wary.  The trees continue to thin to the north.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -402,7 +402,7 @@ Dirt Road~
 saplings.  The path is barely distinguishable from the rest of the overgrowth.
 The smell of the forest is very strong.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -418,7 +418,7 @@ Dirt Road~
 The path continues north and south between the columns of thick trees and
 brush.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -435,7 +435,7 @@ cut down and fallen over the path, as if to block it.  The smell of fresh pine
 must mean they were cut recently.  Through the brush and trees to the north you
 can just barely make out what looks like a gate and a city wall.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D2
 ~
 ~
@@ -447,7 +447,7 @@ Dirt Road~
 north and the dirt road continuing to the south.  The forest around the road
 diminishes to plains the further south you travel.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -464,7 +464,7 @@ to the north.  Tall fields of wild grass, weeds, and other small brush borderw
 the road.  The fields have grown to about waist height and could be used easily
 to conceal oneself within.  The grass sways gently in the breeze.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -482,7 +482,7 @@ around a huge pile of rocks to the southeast.  The remains of a stone wall runs
 through the middle of the pile.  Once used to mark out boundaries between land
 owners.  Now it seems no one is farming on these plains.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D1
 ~
 undefined~
@@ -500,7 +500,7 @@ so close to the Capital.  Instead they appear empty and deserted.  Very little
 sign of travel or civilization can be seen, except for a plume of smoke rising
 far to the west.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -516,7 +516,7 @@ Dirt Road~
 north and also to the south.  The grassy plains sway gently in the breeze.  
 Occasionally the grass will rustle as some animal flees at your approach.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -532,7 +532,7 @@ Dirt Road~
 in places.  You guess the road isn't used very often.  The road continues off
 to the north and south.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -549,7 +549,7 @@ on the road.  The road continues to the north and south.  To the north a field
 of swaying grass stretches to a forest in the distance.  South the plain gives
 way to a light forest.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -565,7 +565,7 @@ Dirt Road~
 north.  The road curves around a large steep hill to the south.  The hill looks
 somewhat unnatural, and out of place.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -581,7 +581,7 @@ Dirt Road~
 and south.  You stand alongside a steep hill covered in grass and moss.  The
 hill rises so steeply above you that you doubt it could be climbed.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D2
 ~
 ~
@@ -597,7 +597,7 @@ Dirt Road~
 north and south.  A large hill directly to the west looms above you.  Strange,
 when the rest of the rolling hills around here are so small.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -613,7 +613,7 @@ Dirt Road~
 animals seem to be taking refuge in some of the small bushes to the side of the
 road.  The road continues off to the north and south.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -629,7 +629,7 @@ Dirt Road~
 south.  The brush is broken up by small trees which seem to grow even thicker
 further south.  To the north the road opens up into the plains.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -645,7 +645,7 @@ Dirt Road~
 The road bends to the west into a dense forest.  Their seems to be an absence
 of wildlife in this area, the forest is strangely silent.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -658,7 +658,7 @@ Somewhere in the distance to the south-west you can make out some small streaks
 of smoke, as if coming from the chimneys in a small village, while to the
 north you see the busy Western Highway.    
 ~
-200 p 2
+200 32768 0 0 0 0
 D0
 ~
 ~
@@ -671,7 +671,7 @@ The horrible stench from the tanning and curing of the hides fills your
 nostrils.  Pelts and various types of clothing hang from the walls and rafters.
 A man behind the counter grins
 ~
-200 cde 0
+200 28 0 0 0 0
 D2
 ~
 ~

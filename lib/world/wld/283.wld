@@ -6,7 +6,7 @@ end of the path.  It is a very stormy night, with rain pouring down and
 lightning striking in the distance.  Thunder claps and booms as you head up the
 path hoping for a place to stay until the storm passes over.    
 ~
-283 cgh 5
+283 196 0 0 0 0
 D1
 You don't feel like looking, you just want to get out of this rain!!
 ~
@@ -43,7 +43,7 @@ puddles, and places where the path is practically gone.  By now all of your
 clothes are soaked, and most of your legs are all muddy.  Ewwwwwwwwwwww!!  If
 you don't get somewhere soon, you're going to catch a cold!    
 ~
-283 gh 5
+283 192 0 0 0 0
 D3
 You're soaked with muddy water, and are caught in a HUGE thunderstorm. 
 Do you really feel like looking back?
@@ -66,7 +66,7 @@ Suddenly, lightning strikes only a few feet away from where you were.
 Unprepared, you almost fall to the mud.  Now you are running as fast as one can
 go.    
 ~
-283 gh 5
+283 192 0 0 0 0
 D0
 A house is north, waiting for you to get inside...
 ~
@@ -86,7 +86,7 @@ you walk on is creaking with every step, and the shudders and the walls look
 chipped, and just bent out of shape.  Well, going inside would be better than
 staying out here in the rain all night, wouldn't it?    
 ~
-283 gh 1
+283 192 0 0 0 0
 D0
 The front door is north.
 ~
@@ -105,7 +105,7 @@ very much now.  Noises appear from nowhere, and small shadows lurk on the
 walls.  Rodent problem, maybe.  Every so often lightning strikes and lights up
 the house for a split second, and then the thunder booms loudly.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D0
 Nothing special north...
 ~
@@ -135,7 +135,7 @@ east to somewhere.  It is very dark in here, and if you look back you can
 barely catch a glimpse of the quick flashes of light flickering through the
 windows.  The hallway leads farther east.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D1
 The hallway continues east through darkness.
 ~
@@ -154,7 +154,7 @@ you cannot see because it's totally black inside here.  If you would look back
 now, you can't even see the flashes of lightning.  Up ahead to the east you are
 now beginning to make out something...    
 ~
-283 ad 0
+283 9 0 0 0 0
 D1
 You cannot make out the thing that is east.
 ~
@@ -173,7 +173,7 @@ perfectly even though you stand in darkness.  Every little detail can be seen
 strangely.  You're not sure that if you go down you would be entering a
 nightmare.  Be brave, and go find out!    
 ~
-283 acd 0
+283 13 0 0 0 0
 D3
 The hallway goes back west.
 ~
@@ -193,7 +193,7 @@ come down here, you know.  It is very damp down here, and also very cool.
 Well you could chicken out and go back upstairs, or face your fears and explore
 down here.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D0
 A tunnel is north, along with a small shining light.
 ~
@@ -213,7 +213,7 @@ the tunnel, and what you see amazes you.  The tunnel is rounded at the top,
 with dirt as the ground.  Bugs and other living things crawl all around inside
 of the tunnel, bothering you to the point where you're going crazy.    
 ~
-283 dg 0
+283 72 0 0 0 0
 D2
 Nothing special back that way...
 ~
@@ -231,7 +231,7 @@ At the End of the Tunnel~
 comes from torches on either side of you, and from up ahead on both sides.  Up
 ahead looks to be a dungeon-type place.  Kind of spooky, don't you think?    
 ~
-283 dg 0
+283 72 0 0 0 0
 D1
 The tunnel goes farther east until it turns and heads south.
 ~
@@ -251,7 +251,7 @@ together.  Anyway, there are cells to the north and south, with a torch on both
 sides of you, making the dungeon light up, like someone, or something, has been
 around recently...    
 ~
-283 dg 0
+283 72 0 0 0 0
 D0
 A cell is to the north.
 ~
@@ -280,7 +280,7 @@ house.  There is blood on the walls, and on the floor lies a pool of blood.
 Bones are hanging on the walls and on the floor, with blood constantly dripping
 off of the ones hanging.    
 ~
-283 dfg 0
+283 104 0 0 0 0
 D2
 Nothing special there...
 ~
@@ -295,7 +295,7 @@ floor.  Bones hang off the walls, and lay in piles on the floor, with blood
 smeared all over them and blood is even dripping off of the hanging skeletons.
   
 ~
-283 dfg 0
+283 104 0 0 0 0
 D0
 You see nothing special...
 ~
@@ -309,7 +309,7 @@ be found almost everywhere, as torches light up the rooms from their spot on
 the walls.  Sometimes shadows can be seen on the walls, making this a very
 frightening place.    
 ~
-283 d 0
+283 8 0 0 0 0
 D0
 You see a cell to the north.
 ~
@@ -338,7 +338,7 @@ so far.  Blood drenches the cell, and the bones stand out so much you could
 have seen them from the tunnel.  Oh well, better get out of here anyway.  No
 sense in staying here your whole life.    
 ~
-283 dfg 0
+283 104 0 0 0 0
 D2
 Nothing special back there...
 ~
@@ -352,7 +352,7 @@ blood all over the floor, making you slip and lose your balance.  Lucky you
 didn't fall in that mess!  Yuck!  Red bones lie in a corner, their color
 changed as an effect to the blood.    
 ~
-283 dfg 0
+283 104 0 0 0 0
 D0
 You see nothing special north...
 ~
@@ -365,7 +365,7 @@ The Entrance to the Death Chambers~
 to be the most happenin' places either.  A skull lies in front of you with a
 rat crawling inside of it.  A small sign sticks up from the ground here.    
 ~
-283 dfgh 0
+283 232 0 0 0 0
 D0
 You don't want to look at what's north. Take the sign's warning.
 ~
@@ -405,7 +405,7 @@ disappeared behind you.  You are trapped inside this room now.  This room must
 be used to kill prisoners slowly, as you see a pair of evil-looking yellow eyes
 staring at you...    
 ~
-283 adfghj 0
+283 745 0 0 0 0
 D0
 Nothing special there...
 ~
@@ -417,7 +417,7 @@ Stepping into the Pit~
    Not realizing what you've just done, you step off of the ground, and plunge
 into a pit.    
 ~
-283 adfghj 0
+283 745 0 0 0 0
 S
 #28320
 The Lair of the Dungeon Ruler~
@@ -426,7 +426,7 @@ sits in his huge chair watching your every move and tapping his unbelievably
 long claws.  His red eyes seem to penetrate yours, telling you to leave this
 moment...    
 ~
-283 adfghj 0
+283 745 0 0 0 0
 D1
 Don't look, just get out of here, and FAST!
 ~
@@ -445,7 +445,7 @@ from time.  Lightning still flashes outside of the house, as you can barely see
 anything except for when the light flashes in.  To the east looks to be a
 bookshelf with a door near it, and north is the deck.    
 ~
-283 adg 0
+283 73 0 0 0 0
 D0
 The deck is north.
 ~
@@ -475,7 +475,7 @@ hidden.  You can barely see anything, but the flashes of lightning sure do help
 with the total darkness in here.  Rain hits the windows and is constantly
 making a sound, which gets a little annoying after a while.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D0
 Nothing special is there...
 ~
@@ -494,7 +494,7 @@ much of your attention.  There are sheets draped over the furniture in this
 room, just like all of the rooms.  To the west you can just make out a
 staircase leading up, and to the east the back door is seen.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D1
 The back door is east.
 ~
@@ -518,7 +518,7 @@ stairs are an accident waiting to happen.  They look so old and so unsteady,
 that even a mouse might break them.  The wood used for them is chipped and in
 some spots cut, but this is the only way to the next floor.    
 ~
-283 adg 0
+283 73 0 0 0 0
 D1
 Nothing very special over there...
 ~
@@ -537,7 +537,7 @@ you walk on it, and then it starts to get louder.  The stairs lead down to the
 ground.  When you look over the side you can see a path, and then in the
 distance a small outhouse.    
 ~
-283 acg 1
+283 69 0 0 0 0
 D2
 You can go back inside if you wish.
 ~
@@ -556,7 +556,7 @@ north to the outhouse.  A path leads east from here too, which doesn't look to
 be going anywhere.  The lightning is still striking, and therefore the thunder
 is still hurting your ears.    
 ~
-283 acg 2
+283 69 0 0 0 0
 D0
 A path leads to the outhouse.
 ~
@@ -580,7 +580,7 @@ really stinks.  The path is getting you all muddy again, as the rain pours down
 harder than before.  The outhouse is north and another path breaks off this one
 and heads east.    
 ~
-283 acg 2
+283 69 0 0 0 0
 D0
 The outhouse is north.
 ~
@@ -608,7 +608,7 @@ The Outhouse~
 have just went into the spooky old house.  The smell is beginning to get to you
 now.  Get out of here before you faint!    
 ~
-283 adefghj 0
+283 761 0 0 0 0
 D2
 The path that brought you inside here is south.
 ~
@@ -623,7 +623,7 @@ your eyes.  It is very dark outside, and lightning flashes nearby.  Thunder
 shortly follows, making a very loud "BOOM".  To the east is where the stairs
 lead up to the back deck.    
 ~
-283 acg 2
+283 69 0 0 0 0
 D1
 The bottom of the stairs is east.
 ~
@@ -648,7 +648,7 @@ in this area and it's raining pretty hard now.  Suddenly, lightning strikes a
 tree, which makes a loud noise before falling to the ground with a loud "THUD".
   
 ~
-283 ag 2
+283 65 0 0 0 0
 D1
 You can go back east if you want to...
 ~
@@ -666,7 +666,7 @@ A Path Through the Forest~
 Winds blow around leaves and other small objects, as lightning and thunder do
 their work.  Rain pours down on you, getting you all wet and very cold.    
 ~
-283 acg 2
+283 69 0 0 0 0
 D3
 The path goes east some more.
 ~
@@ -679,7 +679,7 @@ At the Bookshelf~
 contains very old books, which look to be ruined from the affects of time.  
 There is a door to the east, which is probably a closet.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D0
 The bookshelf takes up the whole northern wall.
 ~
@@ -702,7 +702,7 @@ A Closet~
 hanging in it, with nothing else there.  It is very dark inside here, making it
 a very frightening place to be in.    
 ~
-283 adfghj 0
+283 745 0 0 0 0
 D3
 Nothing special over there.
 ~
@@ -716,7 +716,7 @@ this room.  There is nothing in here actually, except for a pile of coins in
 the corner which will be nice in their new home: your pocket.  Everything else
 is just plain.    
 ~
-283 acdefghj 0
+283 765 0 0 0 0
 D2
 You see nothing special...
 ~
@@ -730,7 +730,7 @@ You're sure glad to be off of those stairs, you could have broken through them
 at any moment.  It's not much different then downstairs up here, very dark,
 with flashes of light sometimes showing through the few small windows.    
 ~
-283 adg 0
+283 73 0 0 0 0
 D1
 You see a hallway leading east.
 ~
@@ -749,7 +749,7 @@ more to the east until it stops with a door to the north and east, and another
 hallway south.  There are no windows at all in this passageway, making it very
 dark and scary.  The stairs are to the west.    
 ~
-283 adg 0
+283 73 0 0 0 0
 D1
 Nothing special over there...
 ~
@@ -767,7 +767,7 @@ Before the Porch~
 The glass looks to be scratched, and the porch is very tiny.  There is a closet
 to the east through another door, and a dark hallway heads south of here.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D0
 There is a porch to the north.
 ~
@@ -795,7 +795,7 @@ The Closet~
 see that it is bare except for a huge pile of clothes and other things laying
 in the corner.  Oh well, what did you expect?    
 ~
-283 adfghj 0
+283 745 0 0 0 0
 D3
 The stairs can be seen farther down the hallway. Much more interesting
 than in here.
@@ -814,7 +814,7 @@ The Southern Hallway~
 here, just like everywhere else you've been.  There are doors on either side of
 you, probably rooms.  The hallway continues south.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D0
 The porch can be seen through the glass doors.
 ~
@@ -843,7 +843,7 @@ inside of it.  The walls are without decorations, and there is some furniture
 and a large bed near the walls.  Some of the things are even covered in spider
 webs.  Looks like no one has been around here for ages.    
 ~
-283 adfg 0
+283 105 0 0 0 0
 D1
 The hallway is through the doorway.
 ~
@@ -857,7 +857,7 @@ A small bed lies in the corner near a large window, and a clock hangs on the
 wall, busted from time.  Flashes of light shine through the window for a half
 second and then stop.    
 ~
-283 adfg 0
+283 105 0 0 0 0
 D3
 The hallway is to the west.
 ~
@@ -870,7 +870,7 @@ More of the Hallway~
 enter.  The rooms are on your west and east as before, and the doors to them
 are shut except for the one on your east.  The hallway goes farther south.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D0
 The hallway goes north.
 ~
@@ -899,7 +899,7 @@ in dust and cobwebs.  The walls are stained and rotting.  The ceiling and floor
 look ready to collapse.  The creaking and groaning seems to be escalating
 towards snapping and cracking.    
 ~
-283 acdfg 0
+283 109 0 0 0 0
 D3
 The hallway is west.
 ~
@@ -914,7 +914,7 @@ turned over in the corner, and boxes have been thrown in another.  The walls
 are scratched up like some animal went through here.  A sword sticks into the
 wall nearest you.    
 ~
-283 adfg 0
+283 105 0 0 0 0
 D1
 You see the hallway east.
 ~
@@ -927,7 +927,7 @@ The Room of the Golden Lance~
 weapon looks rather nice, and would do you greatly.  Pick it up and get out of
 here fast.    
 ~
-283 adefghi 0
+283 505 0 0 0 0
 D1
 The dungeon ruler is east of you.
 ~
@@ -941,7 +941,7 @@ south of you a little bit.  There are no doors anywhere in this part of the
 hallway, but the ones north look pretty interesting.  South is the end of the
 hallway.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D0
 The hallway continues north.
 ~
@@ -960,7 +960,7 @@ the north if you feel like exploring them again, and a closet lies to the south
 with a small door closed.  More stairs are to the east, climbing way up to the
 attic.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D0
 The hallway goes back north.
 ~
@@ -983,7 +983,7 @@ Stairs to the Attic~
 up.  They look very unstable, like they would break at any moment.  Other than
 that this room is bare.    
 ~
-283 ad 0
+283 9 0 0 0 0
 D1
 The stairs are in the eastern part of this room.
 ~
@@ -1008,7 +1008,7 @@ high.  The attic has lots of old junk in it, mostly covered in old white
 sheets, some of them torn.  Spider webs drape the corners of the rooms and hang
 over some of the stuff laying around.    
 ~
-283 adghj 0
+283 713 0 0 0 0
 D3
 There is a wall over there.
 ~
@@ -1027,7 +1027,7 @@ passage leading out here.  The night is still very stormy, as you try to walk
 as carefully as you can without fatally falling off.  That might hurt a little,
 don't you agree?    
 ~
-283 agh 1
+283 193 0 0 0 0
 D0
 You can travel north on this roof.
 ~
@@ -1046,7 +1046,7 @@ you are going to be picked up and thrown into the ground at any moment, so you
 try to move slowly and steadily.  Carefully you make your way around a section
 of the roof that is unfinished, and try to head north.    
 ~
-283 gh 1
+283 192 0 0 0 0
 D0
 The roof goes north more.
 ~
@@ -1066,7 +1066,7 @@ escape from this nightmare.  The roof ends by the looks of it...  North of
 here.  The rain is making it very slippery up here, as you can barely walk
 without slipping a little.    
 ~
-283 ah 1
+283 129 0 0 0 0
 D0
 The roof heads north a bit.
 ~
@@ -1090,7 +1090,7 @@ here have been washed away from the rain, making it look bare.  It's beginning
 to get very slipper up here.  By the looks of it, there seems to be nowhere to
 go from here.  A small chimney is directly east of you.    
 ~
-283 ag 1
+283 65 0 0 0 0
 D2
 The roof extends south.
 ~
@@ -1109,7 +1109,7 @@ big enough for one to fit in it.  It is made of big red bricks which are also
 chipped.  All over.  No smoke is coming up, so why not check out where it
 leads?    
 ~
-283 aghi 1
+283 449 0 0 0 0
 D1
 The roof is over there.
 ~
@@ -1128,7 +1128,7 @@ and the ground, as the lightning flashes and the thunder booms.  The porch is
 made of wood just like everything else in this dumb old house.  There is a
 small railing lining the outside of the balcony, so people don't fall off.    
 ~
-283 acghj 1
+283 709 0 0 0 0
 D2
 Nothing special back there...
 ~
@@ -1141,7 +1141,7 @@ The Closet~
 in here that you can see, it's very dark inside here.  A few pieces of clothing
 and that is about it.    
 ~
-283 adfghj 0
+283 745 0 0 0 0
 D1
 It's too dark in here.
 ~
@@ -1156,7 +1156,7 @@ scratches.  The old woman looks to be very old, as in centuries!  You try to
 smile, but she stands up and releases venom from her huge fangs!  Get out of
 here and fast!!    
 ~
-283 adfghj 0
+283 745 0 0 0 0
 D4
 Nothing special...
 ~
@@ -1168,7 +1168,7 @@ Behind the Stairs~
    You are strangely behind the stairs to the attic.  This room is bare.  It's
 completely empty.  No prizes or rewards or anything.    
 ~
-283 adfghj 0
+283 745 0 0 0 0
 D3
 Nothing special there...
 ~
@@ -1182,7 +1182,7 @@ gust of wind comes along and hits you hard.  Unprepared, you lose your grip on
 the very wet ropes, and fly head first into the ground below you.  OUCH!!!!!  
 
 ~
-283 acfghj 1
+283 741 0 0 0 0
 D4
 You see nothing special...
 ~
@@ -1194,7 +1194,7 @@ At the Well~
    You are now standing at a well in the back yard of the house.  The
 thunderstorm still rocks on as you examine the well.    
 ~
-283 agj 2
+283 577 0 0 0 0
 D1
 Nothing special there...
 ~
@@ -1207,7 +1207,7 @@ The Storm Cellar~
 would hold up to a huge storm.  In fact, it is.  Right now.  Boxes of small
 foods and drinks are in the one corner, along with a bench in another.    
 ~
-283 adefghj 0
+283 761 0 0 0 0
 D4
 The ground is up.
 ~
@@ -1221,7 +1221,7 @@ used to get you through the trapdoor and down to where you are right now.
 There is a small, strange vent in the corner of the room, where sounds and
 strange shadows pop out of.  This is a very spooky place...    
 ~
-283 adfgj 0
+283 617 0 0 0 0
 D4
 The closet is up from here. Get out NOW!!!
 ~

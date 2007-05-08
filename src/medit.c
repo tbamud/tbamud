@@ -160,7 +160,7 @@ ACMD(do_oasis_medit)
   /* Display the OLC messages to the players in the same room as the
      builder and also log it. */
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
-  SET_BIT(PLR_FLAGS(ch), PLR_WRITING);
+  SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
   mudlog(CMP, LVL_IMMORT, TRUE,"OLC: %s starts editing zone %d allowed zone %d",
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
@@ -234,7 +234,7 @@ void init_mobile(struct char_data *mob)
   mob->real_abils.dex = mob->real_abils.con = mob->real_abils.cha = 11;
   mob->aff_abils = mob->real_abils;
 
-  SET_BIT(MOB_FLAGS(mob), MOB_ISNPC);
+  SET_BIT_AR(MOB_FLAGS(mob), MOB_ISNPC);
   mob->player_specials = &dummy_mob;
 }
 
@@ -350,7 +350,7 @@ void medit_disp_mob_flags(struct descriptor_data *d)
     write_to_output(d, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, action_bits[i],
 		!(++columns % 2) ? "\r\n" : "");
   }
-  sprintbit(MOB_FLAGS(OLC_MOB(d)), action_bits, flags, sizeof(flags));
+  sprintbitarray(MOB_FLAGS(OLC_MOB(d)), action_bits, AF_ARRAY_MAX, flags);
   write_to_output(d, "\r\nCurrent flags : %s%s%s\r\nEnter mob flags (0 to quit) : ",
 		  cyn, flags, nrm);
 }
@@ -364,10 +364,10 @@ void medit_disp_aff_flags(struct descriptor_data *d)
   get_char_colors(d->character);
   clear_screen(d);
   for (i = 0; i < NUM_AFF_FLAGS; i++) {
-    write_to_output(d, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, affected_bits[i],
+    write_to_output(d, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, affected_bits[i+1],
 			!(++columns % 2) ? "\r\n" : "");
   }
-  sprintbit(AFF_FLAGS(OLC_MOB(d)), affected_bits, flags, sizeof(flags));
+  sprintbitarray(AFF_FLAGS(OLC_MOB(d)), affected_bits, AF_ARRAY_MAX, flags);
   write_to_output(d, "\r\nCurrent flags   : %s%s%s\r\nEnter aff flags (0 to quit) : ",
 			  cyn, flags, nrm);
 }
@@ -414,8 +414,8 @@ void medit_disp_menu(struct descriptor_data *d)
 	  grn, nrm, cyn, GET_GOLD(mob), nrm
 	  );
 
-  sprintbit(MOB_FLAGS(mob), action_bits, flags, sizeof(flags));
-  sprintbit(AFF_FLAGS(mob), affected_bits, flag2, sizeof(flag2));
+  sprintbitarray(MOB_FLAGS(mob), action_bits, AF_ARRAY_MAX, flags);
+  sprintbitarray(AFF_FLAGS(mob), affected_bits, AF_ARRAY_MAX, flag2);
   write_to_output(d,
 	  "%sI%s) Position  : %s%s\r\n"
 	  "%sJ%s) Default   : %s%s\r\n"
@@ -458,7 +458,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
   switch (OLC_MODE(d)) {
   case MEDIT_CONFIRM_SAVESTRING:
     /* Ensure mob has MOB_ISNPC set. */
-    SET_BIT(MOB_FLAGS(OLC_MOB(d)), MOB_ISNPC);
+    SET_BIT_AR(MOB_FLAGS(OLC_MOB(d)), MOB_ISNPC);
     switch (*arg) {
     case 'y':
     case 'Y':
@@ -669,7 +669,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
     if ((i = atoi(arg)) <= 0)
       break;
     else if (i <= NUM_MOB_FLAGS)
-      TOGGLE_BIT(MOB_FLAGS(OLC_MOB(d)), 1 << (i - 1));
+      TOGGLE_BIT_AR(MOB_FLAGS(OLC_MOB(d)), 1 << (i - 1));
     medit_disp_mob_flags(d);
     return;
 
@@ -677,11 +677,10 @@ void medit_parse(struct descriptor_data *d, char *arg)
     if ((i = atoi(arg)) <= 0)
       break;
     else if (i <= NUM_AFF_FLAGS)
-      TOGGLE_BIT(AFF_FLAGS(OLC_MOB(d)), 1 << (i - 1));
+      TOGGLE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), 1 << (i - 1));
 
     /* Remove unwanted bits right away. */
-    REMOVE_BIT(AFF_FLAGS(OLC_MOB(d)),
-               AFF_CHARM | AFF_POISON | AFF_GROUP | AFF_SLEEP);
+    REMOVE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), AFF_CHARM | AFF_POISON | AFF_GROUP | AFF_SLEEP);
     medit_disp_aff_flags(d);
     return;
 

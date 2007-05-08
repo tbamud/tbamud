@@ -7,7 +7,7 @@ A guardsman stands at ease near the barrier, casually watching your arrival.
 Seeing that you wear no colors for any of the Barons, he is not sure what to
 make of you.    
 ~
-bdelm 0 500 E
+6170 0 0 0 0 0 0 0 500 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -21,7 +21,7 @@ A tradesman laden down with barrels of Westlawn's finest trudges past.
 can make so well.  He carries the barrels, one on each shoulder, a bead of
 sweat running down the bridge of his nose.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -35,7 +35,7 @@ A man with a crude wheel barrow works on the road.
 from the workers of the area.  The serf carts dirt from dry areas onto the
 road, trying to dry up the areas of the road that are muddiest.    
 ~
-bdm 0 300 E
+4106 0 0 0 0 0 0 0 300 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -49,7 +49,7 @@ A little boy covered in mud and filth plays with a pile of mud.
 that his life is less than perect with such a fine pile of mud right outside
 his front door?    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -63,7 +63,7 @@ A little girl stands forlornly at the door to her family's hut.
 will instantly be a mess from the muddy yard, but she does not wish to stay
 indoors all day.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -76,7 +76,7 @@ A man makes his way home after a long day's work.
    He is filthy, covered in dirt and grime that seems almost a pigment to his
 skin rather than a covering of extra mess.    
 ~
-dg 0 700 E
+72 0 0 0 0 0 0 0 700 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -89,7 +89,7 @@ An old woman with a wrinkled and careworn face stands outside her hovel.
    Her eyes perpetually squint from the sun, her face pinched and leathery as
 she watches the children at play.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -102,7 +102,7 @@ A young child plays outside his home under the watchful eyes of his mother.
    He is a dirty, filthy child - a child of the dregs, who's lot it is in life
 to do nothing but labor for others.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -117,7 +117,7 @@ before Westlawn took on the mantle of Baron.  Gilsby has seen them come and
 seen them go and holds within his old head many secrets to the keep and the
 surrounding area.    
 ~
-bdo 0 800 E
+16394 0 0 0 0 0 0 0 800 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -130,7 +130,7 @@ A tired-looking man leans on a table, tiredly sipping at his ale.
    He sits at a chair at a table, both elbows propped up on the table, slumped
 over with all his weight on those elbows.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -144,7 +144,7 @@ A man leans against the far side of the bar, his eyes trained upon you.
 way.  He is certainly not one of the serfs of the area, and does not wear the
 red of Baron Westlawn.    
 ~
-bdnoq 0 -400 E
+90122 0 0 0 0 0 0 0 -400 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -157,7 +157,7 @@ A woman sits upon a barrel working the leather of a harness.
    Her wrinkled hands move with strength and fluidity which belies the image
 she presents upon first look.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 2
@@ -170,7 +170,7 @@ A little boy plays on the stacks of hay, laughing in delight.
    He climbs high up into the heights of the hay stacks, looking down every
 once in a while to assure himself that he is truly ascending.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -185,7 +185,7 @@ that all of this hay climbing is foolish and beneath her, but she never takes
 her eyes of the boy and there is a slight smile at the corners of her mouth.  
 
 ~
-bd 0 700 E
+10 0 0 0 0 0 0 0 700 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -198,7 +198,7 @@ An old cow with sagging udders lazily wanders the field.
    Its tail swishes back and forth, lazily swatting the flies that buzz about.
   
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -211,7 +211,7 @@ An old nag slowly makes its way around the area, looking for fresh grass.
    Her back is bowed in the center, her coat patched and in poor condition.  
 
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -225,7 +225,7 @@ One of the locals sits on the bridge's edge with a fishing pole.
 passes.  It doesn't appear that he really cares whether or not he catches
 anything, he is just enjoying the quiet.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -238,7 +238,7 @@ A woman hoists a large wicker basket on one shoulder, carrying it through the ya
    She walks slightly bent over to one side, the contents of the basket
 obviously heavy and awkward.    
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -251,7 +251,7 @@ A man pushes a wooden keg through the keep, taking it to another room.
    This man is one of Westlawn's many servants whose main job it is to make
 sure that the dining and kitchen area is always well-stocked with ale.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -265,7 +265,7 @@ A soldier stands at post, scanning the horizon for any signs of invasion.
 the lands around the keep.  If this man fails in his job, many people could
 die.    
 ~
-bdelnopq 0 500 E
+124954 0 0 0 0 0 0 0 500 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -278,7 +278,7 @@ A soldier tromps about the keep, stepping in clean rythym even though he is alon
    All of Westlawn's men have been trained so well that they continue to march
 in formation even when there is no formation.    
 ~
-cdglm 0 500 E
+6220 0 0 0 0 0 0 0 500 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -292,7 +292,7 @@ A soldier wearing the sigil of an Elite strides past.
 folk alike.  They have been trained in the arts of battle to such a degree as
 to be masters, respected as the best in nearly every fight.    
 ~
-deglmq 0 700 E
+71768 0 0 0 0 0 0 0 700 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -309,7 +309,7 @@ folk of the keep or the surrounding land, but the stories of his tirades on his
 men are legendary - thus the reason for the wide berth that people give when he
 passes.    
 ~
-dglmn 0 700 E
+14408 0 0 0 0 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -322,7 +322,7 @@ A raggedy commoner walks past.
    He is nondescript in nearly every way possible.  His clothes are those of a
 common man's - brown jerkin with a pair of sandals.    
 ~
-dg 0 200 E
+72 0 0 0 0 0 0 0 200 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -335,7 +335,7 @@ The foreman of the farm crew stands scribbling in a clipboard.
    He is probably the only man in the immediate area who is not covered in mud
 and filth from head to toe.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -349,7 +349,7 @@ Donld the smithy pounds away at his anvil.
 smiths of the area.  He looks up at you without stopping pounding, winks with a
 sligh smile, and goes back to concentrating on his anvil.    
 ~
-bdlnopq 0 800 E
+124938 0 0 0 0 0 0 0 800 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -363,7 +363,7 @@ The Baron Westlawn is here, talking with Donld.
 better than average looking, about six foot even in height and carries himself
 with a strong dignity.    
 ~
-bdl 0 750 E
+2058 0 0 0 0 0 0 0 750 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -377,7 +377,7 @@ A serving wench moves about the keep, performing her duties.
 to the full extent.  Her hair is done up high in a nest of sorts, stray wisps
 falling about her face.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -390,7 +390,7 @@ A cook hustles about the kitchen, staying clear of Salida's spoon.
    He is dressed in a white kitchen-workers outfit, stained and nastified by
 the many juices and fluids of the food he prepares.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -403,7 +403,7 @@ A cook works feverishly at scrubbing the pots and pans for the next meal.
    She is up to her elbows in dirty dish water, her face covered in a sheen of
 sweat and grime.  But she is smiling.  Who can understand women?    
 ~
-bd 0 300 E
+10 0 0 0 0 0 0 0 300 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -417,7 +417,7 @@ Salida booms orders in her huge voice, her large wooden spoon held at ready.
 woman's spoon and the lashings it will endow.  Just the same, she runs a great
 kitchen with great food.    
 ~
-bd 0 -50 E
+10 0 0 0 0 0 0 0 -50 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 2
@@ -430,7 +430,7 @@ A stray pig runs about the yard, snorting and oinking.
    From the looks of it, this nasty creature couldn't be happier as it rolls
 and twists about in the mud.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -443,7 +443,7 @@ An old man, one of the original serfs of the area, lounges on the floor.
    He looks up at you pitifully with pain-filled eyes, silently beseeching that
 you let him alone.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -458,7 +458,7 @@ to make a go at becoming one of the Elite.  All of the younger generation here
 at Warrior's Keep have that same desire - to one day be a proud warrior who
 fights at the Baron's side.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -471,7 +471,7 @@ Roscoe, the chief stablemaster and horsebreaker, leans on the fence.
    He chews a piece of straw slowly, deliberately, as he watches one of the
 newest of the steeds trot about the field.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -484,7 +484,7 @@ A soldier lounges on a cot, taking a break before he goes on watch.
    He stares up at the ceiling, not really paying any attention to anything at
 all.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -497,7 +497,7 @@ A mischievous child darts through the kitchen, stealing any scraps she can find.
    She somehow stays just of reach from Salida's spoon, winking slyly and
 dodging around piles of pots and pans.    
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -510,7 +510,7 @@ A noble whispers quietly to the others gathered around him.
    He has a look of confidentiality about him - as if what he whispers is of
 great import and groundbreaking news.    
 ~
-bd 0 -200 E
+10 0 0 0 0 0 0 0 -200 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -523,7 +523,7 @@ A young noble listens as the secretive one whispers.
    The young man looks quite open and trusting - perhaps too trusting.  He
 listens raptly, nodding every now and again to what is being said.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -536,7 +536,7 @@ A haughty noble listens to it all with an air of disdain.
    He frequently rolls his eyes, looking for all the world as if he couldn't
 disagree more or be more bored - but he doesn't leave.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -549,7 +549,7 @@ A noblewoman stands boldly with the men, taking her chances at being laughed out
    She holds her head defiantely, listening only slightly to what the noble
 whispers, worried more about her status being called down.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -562,7 +562,7 @@ A visiting merchant walks through the yard, enjoying some time to himself.
    He carries most of what he owns in a bag slung over one shoulder - the rest
 must be stashed away somewhere in one of the guest rooms.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -577,7 +577,7 @@ their ability to fight, others love the adevnture of learning new spells.  Bud
 is proud of one thing only - the man loves his beer.  Crisp and clean, alway
 cold-filtered, never heat pasturized.    
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1

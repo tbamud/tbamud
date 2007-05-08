@@ -3,7 +3,7 @@ dragontooth necklace~
 a dragontooth necklace~
 A dragontooth necklace is here.~
 ~
-8 a ac 0
+8 a 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 480 0 0
 E
@@ -21,7 +21,7 @@ pile sticks~
 a pile of sticks~
 A pile of sticks is lying on the ground.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 50 0 0
 E
@@ -80,7 +80,7 @@ O-O-O-O-O-O-O-O-O-O-O-O
                 O-O-O      
 
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 #23303
@@ -88,7 +88,7 @@ bird feather~
 a bird feather~
 A colorful bird feather has dropped on the ground before you.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 E
@@ -101,7 +101,7 @@ weed tumbleweed~
 some tumbleweed~
 A large tumbleweed is blowing around in the wind.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -114,7 +114,7 @@ skull~
 a skull~
 A fragile looking skull is sitting on the ground.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 0
 E
@@ -127,7 +127,7 @@ large rock~
 a rock~
 A large rock is sitting here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -139,7 +139,7 @@ pile dust~
 a pile of dust~
 There is a pile of dust at your feet.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -151,7 +151,7 @@ broken lantern~
 a broken lantern~
 A broken lantern has been left here.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 10 0
 3 125 0 0
 E
@@ -164,7 +164,7 @@ shirt~
 a torn shirt~
 A torn shirt has been left here.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 0
 E
@@ -177,7 +177,7 @@ ring~
 an onyx ring~
 A beautiful onyx ring has been left here.~
 ~
-8 a ab 0
+8 a 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -191,7 +191,7 @@ stone~
 a glass stone~
 A shimmering glass stone is here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 E
@@ -204,7 +204,7 @@ candle~
 a candle~
 A small candle is lying on the floor in front of you.~
 ~
-1 0 a 0
+1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 E
@@ -217,7 +217,7 @@ water canteen water~
 canteen~
 A canteen is here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 0 0
 15 1 0 0
 E
@@ -230,7 +230,7 @@ rope~
 50' of rope~
 A coil of rope is here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 0
 E
@@ -243,7 +243,7 @@ burnt out torch~
 a brunt out torch~
 A burnt out torch has been left here.~
 ~
-1 0 a 0
+1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 2 0
 3 75 0 0
 E
@@ -256,7 +256,7 @@ red dagger~
 a red dagger~
 A red dagger is here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 2 2 3
 4 150 0 0
 E
@@ -274,7 +274,7 @@ torch~
 a torch~
 A torch is here.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 10 0
 2 200 0 0
 E
@@ -287,7 +287,7 @@ mace~
 a mace~
 A mace is lying on the ground.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 1 2 11
 4 900 0 0
 E
@@ -300,7 +300,7 @@ dirk~
 a dirk~
 A small dirk has been left here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 1 3 14
 3 500 0 0
 E
@@ -313,7 +313,7 @@ dragonmail gloves~
 a pair of dragonmail gloves~
 A pair of dragonmail gloves are here.~
 ~
-9 a aho 0
+9 a 0 0 0 aho 0 0 0 0 0 0 0
 2 0 0 0
 7 700 0 0
 E
@@ -326,7 +326,7 @@ toy top~
 a toy top~
 A toy top is here.~
 ~
-8 a ao 0
+8 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 125 0 0
 E
@@ -339,7 +339,7 @@ backpack~
 a dragonscale backpack~
 A large dragonscale backpack has been left here.~
 ~
-15 0 ad 0
+15 0 0 0 0 ad 0 0 0 0 0 0 0
 250 1 -1 0
 5 140 0 0
 E
@@ -352,7 +352,7 @@ feather~
 a feather~
 A feather is here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 E
@@ -364,7 +364,7 @@ boots~
 a pair of dragonscale boots~
 A pair of dragonscale boots is here.~
 ~
-9 0 ago 0
+9 0 0 0 0 ago 0 0 0 0 0 0 0
 2 0 0 0
 8 850 0 0
 E
@@ -378,7 +378,7 @@ dragonscale armour~
 a suit of dragonscale armour~
 A suit of dragonscale armour is here.~
 ~
-9 b ad 0
+9 b 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 10 400 0 0
 E
@@ -394,7 +394,7 @@ dragonscale warhelm~
 a dragonscale warhelm~
 A dragonscale warhelm is here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 8 150 0 0
 E
@@ -406,7 +406,7 @@ ruby gem~
 a ruby gem~
 A ruby gem is lying on the ground before you.~
 ~
-8 a ao 0
+8 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 600 0 0
 E

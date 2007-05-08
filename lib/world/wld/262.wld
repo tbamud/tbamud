@@ -12,7 +12,7 @@ Links: 17s, 18se, 20e, 45n, 56esw
 26233 west to 3053
 26239 east to silverthorne
 ~
-262 j 0
+262 512 0 0 0 0
 S
 #26201
 Woods~
@@ -21,7 +21,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D1
 The woods continue to the east.
 ~
@@ -40,7 +40,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D2
 The woods continues to the south.
 ~
@@ -61,7 +61,7 @@ luck in not being caught in the tangled boughs and matted twigs beneath.  To the
 north you can see the spires of a huge castle rising high above the forest
 around you.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 ~
 ~
@@ -79,7 +79,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D1
 The woods continue to the east.
 ~
@@ -98,7 +98,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -127,7 +127,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -156,7 +156,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D2
 The woods continue to the south.
 ~
@@ -175,7 +175,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -199,7 +199,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -223,7 +223,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -252,7 +252,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -281,7 +281,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -310,7 +310,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D2
 The woods continue to the south.
 ~
@@ -329,7 +329,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -353,7 +353,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -382,7 +382,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -411,7 +411,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -435,7 +435,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -454,7 +454,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -478,7 +478,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -502,7 +502,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D1
 The woods continue to the east.
 ~
@@ -521,7 +521,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D1
 The woods continue to the east.
 ~
@@ -545,7 +545,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D1
 The woods continue to the east.
 ~
@@ -564,7 +564,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continues to the north.
 ~
@@ -593,7 +593,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continues to the north.
 ~
@@ -622,7 +622,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -646,7 +646,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D1
 The woods continue to the east.
 ~
@@ -665,7 +665,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -694,7 +694,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -723,7 +723,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -752,7 +752,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -781,7 +781,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D2
 The woods continue to the south.
 ~
@@ -800,7 +800,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -819,7 +819,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -843,7 +843,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -872,7 +872,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -901,7 +901,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -930,7 +930,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -959,7 +959,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D2
 The woods continue to the south.
 ~
@@ -978,7 +978,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -997,7 +997,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1021,7 +1021,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1050,7 +1050,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1074,7 +1074,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D2
 The woods continue to the south.
 ~
@@ -1093,7 +1093,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1122,7 +1122,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1151,7 +1151,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D2
 The woods continue to the south.
 ~
@@ -1170,7 +1170,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1194,7 +1194,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D2
 The woods continue to the south.
 ~
@@ -1213,7 +1213,7 @@ the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  A
 large keep lies just west of here.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1232,7 +1232,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1261,7 +1261,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1290,7 +1290,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1319,7 +1319,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D2
 The woods continue to the south.
 ~
@@ -1338,7 +1338,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1352,7 +1352,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1371,7 +1371,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1390,7 +1390,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1414,7 +1414,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1438,7 +1438,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~
@@ -1462,7 +1462,7 @@ side, a sort of darkend green glimmer.  Ocassionally a slender beam of sun has
 the luck to slip in through some opening in the leaves far above, and still more
 luck in not being caught in the tangled boughs and matted twigs beneath.  
 ~
-262 p 3
+262 32768 0 0 0 0
 D0
 The woods continue to the north.
 ~

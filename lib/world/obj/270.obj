@@ -3,7 +3,7 @@ stone club~
 a large stone club~
 A large stone club lies here.~
 ~
-5 jmop an 0
+5 jmop 0 0 0 an 0 0 0 0 0 0 0
 0 3 8 6
 17 500 0 20
 A
@@ -15,7 +15,7 @@ trollhelm helm~
 a trollhelm~
 A huge trollhelm lies here.~
 ~
-9 jlm ae 0
+9 jlm 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 10 200 0 30
 A
@@ -25,7 +25,7 @@ ice club~
 an ice club~
 A large ice club lies here.~
 ~
-5 jmo an 0
+5 jmo 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 6
 18 200 0 30
 A
@@ -35,7 +35,7 @@ robe white~
 the robe of the ice wizard~
 A white robe lies on the ground.~
 ~
-9 agjnop ak 0
+9 agjnop 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
 1 120 0 30
 A
@@ -47,7 +47,7 @@ cloak stormbringer~
 the cloak of the stormbringer~
 A dull cloak lies here.~
 ~
-9 agjp ac 0
+9 agjp 0 0 0 ac 0 0 0 0 0 0 0
 6 0 0 0
 1 120 0 0
 A
@@ -57,7 +57,7 @@ sleeves iron~
 a pair of iron sleeves~
 A pair of iron sleeves lies on the ground.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 10 245 0 20
 A
@@ -69,7 +69,7 @@ cube ice translucent~
 a translucent ice cube~
 Someone has left a translucent ice cube here.~
 ~
-8 gh ao 0
+8 gh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 500 0 0
 A
@@ -81,7 +81,7 @@ cube white ice~
 a white ice cube~
 Someone has left a white ice cube here.~
 ~
-8 gj ao 0
+8 gj 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 550 0 0
 A
@@ -93,7 +93,7 @@ cube white ice~
 a white ice cube~
 Someone has left a white ice cube here.~
 ~
-8 gh ao 0
+8 gh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 500 0 0
 A
@@ -105,7 +105,7 @@ cube white ice~
 a white ice cube~
 Someone has left a white ice cube here.~
 ~
-8 gj ao 0
+8 gj 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 500 0 0
 A
@@ -117,7 +117,7 @@ cube pearly blue ice~
 a pearly blue ice cube~
 Someone has left a pearly blue ice cube here.~
 ~
-8 gj ao 0
+8 gj 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 550 0 0
 A
@@ -129,7 +129,7 @@ golden crystal~
 a golden crystal~
 A golden crystal lies here.~
 ~
-8 agjlnop ao 0
+8 agjlnop 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 10 1000 0 30
 A

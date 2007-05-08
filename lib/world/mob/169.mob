@@ -8,7 +8,7 @@ feared race of gibberlings.  The creature utters howls, shrieks, and insane
 chattering noises from it's grinning, canine visage, which is encircled by a
 wild black mane, almost covering it's pointed ears.  
 ~
-dfg k 0 E
+104 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -23,7 +23,7 @@ A cougar is on the prowl here.
    It is a muscular cougar with gleaming fangs, stealthily searching the area
 for fresh meat to fill it's savage belly until the next kill.  
 ~
-dgi 0 0 E
+328 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -38,7 +38,7 @@ A shifty gibberling is lingering here.
 the shadows, and you can almost see a glint of unusually high intellect in the
 creatures' beady black eyes.  
 ~
-cdgh k 0 E
+204 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -55,7 +55,7 @@ average gibberling, not to mention larger in girth.  The shrieking and clicking
 noises it continually makes, are enough to unnerve even the most experienced
 warriors.  
 ~
-dfg k 0 E
+104 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -69,7 +69,7 @@ A mutant gibberling is going completely insane here!
 into an even more disgusting expression, than the usual horrific scowl of these
 vicious creatures.  Even the other gibberlings seem to avoid contact with it.  
 ~
-cdfg k 0 E
+108 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -87,7 +87,7 @@ living creatures save his own kind, for which he merely feels no emotion.  A
 white mane frames his terrible face, and each rasping breath he takes, seems to
 drain some of your lifeforce, to replenish his own horrifying being.  
 ~
-bdl k 0 E
+2058 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 8 1
@@ -106,7 +106,7 @@ met one face to face.  She is just as horrific as any of the other gibberlings,
 and of course completely insane, as she leaps and pounces around you, baring her
 razor-sharp teeth!  
 ~
-dfg k 0 E
+104 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -125,7 +125,7 @@ is almost completely covered in refuse, and scraps of half-eaten meat.  Her
 beady eyes gleam with a maniacal glint as she consumes any and all edible
 materials in sight!  
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -144,7 +144,7 @@ vital fluids of kills made in or near the caves.  His glowing green eyes peer
 out, sunken deep into his dog-face, with a sadistic intelligence found seldom
 among the savage hordes of gibberlings.  
 ~
-bdf k 0 E
+42 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -159,7 +159,7 @@ A small marmot is scurrying about.
    It's a small, furry mammal found in the mountainous regions, and it appears
 to be in a playful mood.  
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -176,7 +176,7 @@ to this dark chamber either as a punishment, or because he is too crazed and
 bloodthirsty to dwell even among the general population of gibberlings in the
 cave.  
 ~
-bdf ku 0 E
+42 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1

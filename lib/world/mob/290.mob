@@ -6,7 +6,7 @@ A sea serpent swims around here.
    Looking closely at this creature reveals its large teeth...  Heading your
 way.    
 ~
-cdg dt 0 E
+76 0 0 0 1048592 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -18,7 +18,7 @@ A lizardman sentry sentries here.
 ~
    He seems to be doing a good job sentrying.    
 ~
-bdfh d -150 E
+170 0 0 0 16 0 0 0 -150 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -31,7 +31,7 @@ A lizardman wizard is conjuring here.
    This wizard is deeply involved in his conjuring and hasn't noticed you...  
 Yet.    
 ~
-bd 0 -200 E
+10 0 0 0 0 0 0 0 -200 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 6 1
@@ -43,7 +43,7 @@ A large water elemental is swimming about here.
 ~
    It seems to be part of the conjuring spell the wizard is casting.    
 ~
-bdf dh 0 E
+42 0 0 0 16 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -56,7 +56,7 @@ A lizardman guard is guarding this area from people like you.
    This Guard is guarding.  Obviously he is not doing a good job.  This is
 proven by the simple fact that you are still here.    
 ~
-bcd d -100 E
+14 0 0 0 16 0 0 0 -100 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -68,7 +68,7 @@ The lizardman prince glares at you.
 ~
    His glare is very unnerving.  Maybe you should attack him...    
 ~
-bcd dh -350 E
+14 0 0 0 16 0 0 0 -350 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -82,7 +82,7 @@ From behind the counter, Mr. Hooper smiles at you.
 his head forward and looks over his glasses at you.  'Is there something that
 you would like to buy?  ', he asks politely.    
 ~
-bdghnopr d 250 E
+188618 0 0 0 16 0 0 0 250 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1

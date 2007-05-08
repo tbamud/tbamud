@@ -4,7 +4,7 @@ a spiked collar~
 A spiked collar has been dropped here.~
 If this is a dog's collar, then it must've been one huge dog.    
 ~
-9 aj ac 0
+9 aj 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
 10 1 0 18
 E
@@ -24,7 +24,7 @@ A black pile of cloth is in the ground.~
 This beautiful cape looks to be made from an unknown material, at least unknown
 to this world.    
 ~
-9 bjl ak 0
+9 bjl 0 0 0 ak 0 0 0 0 0 0 0
 6 0 0 0
 6 1 0 20
 E
@@ -45,7 +45,7 @@ The Gloves of Soul Stealing have been dropped here.~
 These black chain mesh gloves have stolen many souls and taken them straight to
 Hell.    
 ~
-9 ajl ah 0
+9 ajl 0 0 0 ah 0 0 0 0 0 0 0
 8 0 0 0
 8 1 0 25
 E
@@ -65,7 +65,7 @@ a shimmering helm~
 A shimmering helm is the ground.~
 This ethereal helm shimmers faintly with arcane energies.
 ~
-9 aj ae 0
+9 aj 0 0 0 ae 0 0 0 0 0 0 0
 9 0 0 0
 10 1 0 20
 E
@@ -82,7 +82,7 @@ some glowing red eyelets~
 Some glowing red eyelets are glowing on the floor.~
 They look as if they radiate evil's essence.
 ~
-9 a ae 0
+9 a 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
 3 1 0 15
 E
@@ -101,7 +101,7 @@ a spectral breast plate~
 A strange looking breast plate is here.~
 It is engraved and carved in intricate ancient symbols.
 ~
-9 a ad 0
+9 a 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 15 1 0 20
 E
@@ -116,7 +116,7 @@ a backpack~
 A strong looking brown leather backpack lays here on the floor.~
 Dusty and worn, it looks very usable.
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 300 1 -1 0
 10 1 0 0
 E
@@ -129,7 +129,7 @@ a wooden stake~
 Someone left a wooden stake here.~
 It looks to have been fashioned more as a weapon than as a tool for anchoring.
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 2 4 14
 5 1 0 0
 E
@@ -147,7 +147,7 @@ a string of garlic~
 A string of garlic has been left here.~
 It is long enough to be worn around neck or waist, take your pick.
 ~
-11 gi acl 0
+11 gi 0 0 0 acl 0 0 0 0 0 0 0
 0 0 0 0
 7 1 0 0
 E

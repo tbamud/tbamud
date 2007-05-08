@@ -6,7 +6,7 @@ A tall man wearing a wizards hat stands behind a counter.
    The wizard is tall man with a grey beard.  You can see such great wisdom in
 his eyes.  His hat makes him look very comical.  
 ~
-bcdelnopqr dfhmp 600 E
+256030 0 0 0 73808 0 0 0 600 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -20,7 +20,7 @@ A beautiful Baker stands behind a counter full of goodies.
    You see a tall slender woman with some flour over her close and a touch on
 her nose.  She is very attractive and has a friendly attitude.  
 ~
-bcdelnopqr dfhkm 150 E
+256030 0 0 0 8272 0 0 0 150 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 2
@@ -34,7 +34,7 @@ Zorg the shopkeeper sits behind a table with his feet proped up.
 questionable.  His beard needs to be tended to.  He looks as though he could get
 out and excercise ALOT!  
 ~
-bdelnopqr dfhn -200 E
+256026 0 0 0 80 0 0 0 -200 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -47,7 +47,7 @@ You see Lora Croft examining some of the weapons she sells.
    You see a beautiful well built woman.  She wears a white tank top shirt that
 is almost see through.  She looks very strong yet femanine
 ~
-bdelnopqr dfhkm 250 E
+256026 0 0 0 8272 0 0 0 250 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 2
@@ -62,7 +62,7 @@ causal day doesn't mean to just prance around in a short cloth wrapped around
 his waist.  He seems to know what he is doing though, all the Pets seem to
 worship him.  
 ~
-bcdelnopqr dfhkm 300 E
+256030 0 0 0 8272 0 0 0 300 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -75,7 +75,7 @@ A Sabertooth Tiger stands here protecting it's owner.
    You see a large feline with very long, very sharp teeth.  The tiger watches
 you suspiciously, growling at you as you try to approach.  
 ~
-bcdenpqr dfp -100 E
+237598 0 0 0 65616 0 0 0 -100 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -89,7 +89,7 @@ A large anaconda watches you closely.
    The snake looks at you evilly, flicking it's tongue to you, wondering how
 good you taste.  
 ~
-bcdlnqr dfk -100 E
+206862 0 0 0 80 0 0 0 -100 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -104,7 +104,7 @@ The armourer is here forging new items.
 he swings the hammer.  He is very strong and has a soft smile.  He looks pleased
 to see you.  
 ~
-bdnopr df 0 E
+188426 0 0 0 80 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1

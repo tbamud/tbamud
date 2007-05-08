@@ -5,7 +5,7 @@ You feel the forces of evil approach you from the north.  Off
 in the distance to the northeast you can see the beginning of
 a large mountain range.
 ~
-40 c 4
+40 4 0 0 0 0
 D0
 ~
 ~
@@ -22,7 +22,7 @@ surround you on almost all sides.  A fair distance off to the
 north, you can see the enormous shadow of a strangely solitaire
 mountain.
 ~
-40 c 4
+40 4 0 0 0 0
 D0
 ~
 ~
@@ -40,7 +40,7 @@ through the rocks to a dark cave located to the north.  Off to the
 northeast, you can see the southern end of what appears to be a large
 mountain range.
 ~
-40 c 4
+40 4 0 0 0 0
 D0
 ~
 ~
@@ -58,7 +58,7 @@ sense fresh air and you surmise that the entrance must be located
 off in that direction.  To the north a small tunnel continues into
 the mountain.
 ~
-40 ad 2
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -75,7 +75,7 @@ which help you slide through the passageway.  The smell of mouldy
 moss is growing greater the farther north you head, but you can smell
 fresh air off to the south as a light breeze wafts past you.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -91,7 +91,7 @@ The Tunnel~
 appears to open up to the north into a cave of some sort while to
 the east it leads onwards through the mountain.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -107,7 +107,7 @@ The Tunnel~
 see that it is not a highly travelled passageway.  It looks to lead
 in an east-west direction.
 ~
-40 ad 3
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -124,7 +124,7 @@ The main tunnel appears to curve from south to west but there is an
 entrance into a cave to the north.  The entrance itself looks to be
 unnatural and much more recent than the tunnel or even the cave.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -145,7 +145,7 @@ with condensation and the weight of the rock above you is beginning
 to make you feel almost claustrophobic.  The tunnel makes a jagged
 turn from west to north here.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -162,7 +162,7 @@ eastern and western ends are almots completely shrouded in darkness.
 A small tunnel breaks through the southern wall, and it too is full
 of shadows.
 ~
-40 ad 2
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -183,7 +183,7 @@ appears to be no other exit from here.  The walls are fairly smooth
 and look to have been naturally carved out of the rock by the passage
 of water.
 ~
-40 ad 2
+40 9 0 0 0 0
 D3
 ~
 ~
@@ -196,7 +196,7 @@ to turn into a tunnel which leads off to the south.  The cave
 continues northwards deeper into the darkness.
 You notice a large pile of bones in the corner.
 ~
-40 ad 2
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -216,7 +216,7 @@ The Tunnel~
 in a north-south direction.  The walls are quite smooth, almost as
 if a river had gouged them out of the earth.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -232,7 +232,7 @@ The Hole~
 a fairly wide hole broken through the floor of the alcove.  The only
 other exit is to the north.
 ~
-40 acd 3
+40 13 0 0 0 0
 D0
 ~
 ~
@@ -249,7 +249,7 @@ sitting in the floor by the northwestern corner of the walls.  The
 tunnel itself leads off towards the east.  The air here feels very
 damp and you feel like your clothes are becoming sticky with sweat.
 ~
-40 acd 3
+40 13 0 0 0 0
 D1
 ~
 ~
@@ -266,7 +266,7 @@ in the air is so thick that you can almost seem it seeping into your
 clothes.  The tunnel continues to the north and west.  A large cave
 opens up to the east.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -288,7 +288,7 @@ giving you a feeling as if you were standing in the rain.  The walls
 of the cave are almost totally shrouded in darkness and shadow as is
 the southern end of the cavern.
 ~
-40 ad 2
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -306,7 +306,7 @@ and the ground is covered with small pools of stagnent water.
    The tunnel leads away to the south, and to the west you can feel that
 the air is even damper than here.
 ~
-40 ad 3
+40 9 0 0 0 0
 D2
 ~
 ~
@@ -322,7 +322,7 @@ The Cave~
 large cave.  The cave wall to the east has an opening that appears
 to lead to a junction of several tunnels.
 ~
-40 ad 2
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -340,7 +340,7 @@ tunnel to the north, whilst the one to the west appears to open
 up almost immediately into a cave.  The tunnels to the south and
 east are totally shrouded in darkness.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -365,7 +365,7 @@ west and north.  You spot a small alcove hidden in the shadows just to
 the south of you, and you can feel a breeze coming from somewhere to the
 north you believe.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -385,7 +385,7 @@ The Smelly Tunnel~
 is a a small light visible off to the north.  As you stop for a
 moment, you notice a strange smell from the north.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -401,7 +401,7 @@ The Cave~
 wind blowing from the north.  To the south you see a small tunnel
 continue into the mountain.
 ~
-40 ad 2
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -418,7 +418,7 @@ see the sky.  A small tunnel to the south is the only way out.
 You notice the source of the strange smell, all around you there
 are corpses of several monsters.
 ~
-40 d 2
+40 8 0 0 0 0
 D2
 ~
 ~
@@ -437,7 +437,7 @@ the south.  In the mountain there is a cave.  To the north you can
 enter the hills.  There is a small trail leading up a steep hill to
 the east.
 ~
-40 0 2
+40 0 0 0 0 0
 D0
 ~
 ~
@@ -457,7 +457,7 @@ The Foothills~
    You are on a winding path that leads through the foothills on the
 north side of Mount Moria.  The path continues north.
 ~
-40 0 4
+40 0 0 0 0 0
 D0
 ~
 ~
@@ -473,7 +473,7 @@ The Intersection In The Foothills~
 path continues north and south while a rough trail leads east into
 the mountains.
 ~
-40 0 4
+40 0 0 0 0 0
 D0
 ~
 ~
@@ -495,7 +495,7 @@ very large rocks litter this area.  You can go north towards the end
 of the foothills, west to go deeper into the foothills, or south to
 a small path intersection.
 ~
-40 0 2
+40 0 0 0 0 0
 D0
 ~
 ~
@@ -515,7 +515,7 @@ At The Foothills' End~
 where they meet the plains which lie to the north.  You can head back
 into the foothills to the south or the plains to the north.
 ~
-40 0 4
+40 0 0 0 0 0
 D0
 ~
 ~
@@ -531,7 +531,7 @@ The Plains~
 around you notice a small almost invisible trail leading away to the
 west towards a copse of trees.
 ~
-40 0 2
+40 0 0 0 0 0
 D2
 ~
 ~
@@ -549,7 +549,7 @@ a small intersection of paths and off to the east you see that
 the path seems to come to an end as part of the mountain chain
 juts out of the ground, blocking your view of the sky.
 ~
-40 0 4
+40 0 0 0 0 0
 D1
 ~
 ~
@@ -568,7 +568,7 @@ foothills towards the west, where you can see plains quite a ways
 away.  To the east you spot a small worn trail leading up the side
 of the mountain.
 ~
-40 0 5
+40 0 0 0 0 0
 D1
 ~
 ~
@@ -584,7 +584,7 @@ A Trail Up The Mountain~
 trail.  The trail curves its way up the side of the mountain towards
 the top and westwards down the mountain into the foothills below.
 ~
-40 0 5
+40 0 0 0 0 0
 D3
 ~
 ~
@@ -602,7 +602,7 @@ stand on is close to thirty metres across and a small gouge in the north
 side of it looks to lead to a small cavern.  A small trail leads down
 towards a valley that was hidden away on the east side of the mountain.
 ~
-40 0 5
+40 0 0 0 0 0
 D0
 ~
 ~
@@ -622,7 +622,7 @@ The Lion's Den~
 the small entranceway only to find yourself in what appears to be the
 living den of a large carnivorous animal!
 ~
-40 ad 2
+40 9 0 0 0 0
 D2
 ~
 ~
@@ -636,7 +636,7 @@ the side of a large hill.  The hill seems to jut up from the rest of
 the foothills quite unnaturally.  A path leads off towards the east
 as it seems to begin from nothing here.
 ~
-40 0 2
+40 0 0 0 0 0
 D1
 ~
 ~
@@ -654,7 +654,7 @@ width of the tunnel runs at least fifteen feet.  You can feel the
 fresh air coming from the east, and off to the west, it looks to
 lead into darkness.
 ~
-40 d 2
+40 8 0 0 0 0
 D1
 ~
 ~
@@ -675,7 +675,7 @@ sandy floor.  It stands tall enough for you to walk under it without the
 need to hunch over.  A large tunnel leads out of the eastern wall of the
 cavern.
 ~
-40 ad 2
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -687,7 +687,7 @@ The Steep Trail~
 it begins to pass between the mountains that surround you.  It continues
 through the hills to the east and heads down to the valley to the west.
 ~
-40 c 5
+40 4 0 0 0 0
 D1
 The rocky trail continues.
 ~
@@ -704,7 +704,7 @@ Between The Mountains~
    The trail between the mountains seems almost endless as you continue
 to trek along it.  It continues to both the east and west.
 ~
-40 c 5
+40 4 0 0 0 0
 D1
 The trail continues eastwards.
 ~
@@ -722,7 +722,7 @@ The Foothills~
 a narrow trail leading away to the northwest not too far distant to the
 west.
 ~
-40 c 5
+40 4 0 0 0 0
 D1
 You can head towards the narrow trail this way.
 ~
@@ -741,7 +741,7 @@ trail that leads between the mountains to the west.  The trail through
 them looks to be very long and probably quite tiring.  You spot a narrow
 trail leading away to the northwest not too far distant to the west.
 ~
-40 c 5
+40 4 0 0 0 0
 D1
 You can head towards the narrow trail this way.
 ~
@@ -759,7 +759,7 @@ The Foothills~
 almost straight westwards trail into a trail meandering towards
 the northwest. 
 ~
-40 c 4
+40 4 0 0 0 0
 D0
 A small trail leads away to the northwest.
 ~
@@ -778,7 +778,7 @@ heading to a southwards one.  The walls are cold and seem to be damp
 with moisture.  you can see some greenish moss growing up near the
 roof of the passageway on the northern wall.
 ~
-40 ad 3
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -796,7 +796,7 @@ nearly as smooth as it was before.  In fact, the floor drops almost
 five feet in jagged steps as you look eastward.  The western path
 seems to be quite smooth however.
 ~
-40 ad 3
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -812,7 +812,7 @@ The Tunnel~
 to smooth itself out once more.  Looking about, you notice a small
 spring of water bubbling up near the southern wall.
 ~
-40 ad 3
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -832,7 +832,7 @@ is a fresh change from what would normally be found this far
 underground in that the tunnel seems to open  up into a fairly
 large and well lit cave.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -852,7 +852,7 @@ almost frightening shadows on the walls, almost hiding the two
 tunnels that lead away from here, one to the east and one to the
 west.
 ~
-40 d 2
+40 8 0 0 0 0
 D1
 ~
 ~
@@ -872,7 +872,7 @@ The Maze~
 quite low overhead and the passage twists off into darkness.  The only
 exit from here looks to be off to the west.
 ~
-40 ad 3
+40 9 0 0 0 0
 D3
 ~
 ~
@@ -886,7 +886,7 @@ front of you in the middle of this large cave.  The fire gives
 off more than enough light to see both the north and south ends
 of the cave.
 ~
-40 d 2
+40 8 0 0 0 0
 D0
 ~
 ~
@@ -908,7 +908,7 @@ The Maze~
 quite low overhead and the passage twists off into darkness.  The only
 exits from here look to be off to the north and south.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -924,7 +924,7 @@ The Maze~
 quite low overhead and the passage twists off into darkness.  The only
 exits from here look to be off to the south and west.
 ~
-40 ad 3
+40 9 0 0 0 0
 D2
 ~
 ~
@@ -942,7 +942,7 @@ seems to lead slightly down towards the east.
    The tunnel continues on to the east as it plunges deeper into the earth,
 and upwards a bit towards the west where the air seems to be quite damp.
 ~
-40 acd 3
+40 13 0 0 0 0
 D1
 ~
 ~
@@ -964,7 +964,7 @@ does not seem to be changing.
 climbs to the west, and to the east, a strange flickering light
 shows that the tunnel opens up into a cave of sorts.
 ~
-40 ad 3
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -984,7 +984,7 @@ almost frightening shadows on the walls, almost hiding the two
 tunnels that lead away from here, one to the west and one to the
 south.
 ~
-40 d 2
+40 8 0 0 0 0
 D0
 ~
 ~
@@ -1004,7 +1004,7 @@ The Maze~
 quite low overhead and the passage twists off into darkness.  The only
 exits from here look to be off to the east and west.
 ~
-40 ad 3
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -1020,7 +1020,7 @@ The Maze~
 quite low overhead and the passage twists off into darkness.  The only
 exits from here look to be off to the east and north.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -1039,7 +1039,7 @@ decide to look around the cave.  The walls are slightly damp to
 the touch, and the ceiling is very smooth.  Almost right in the
 centre of the ceiling, a well rounded hole has been made.
 ~
-40 ad 3
+40 9 0 0 0 0
 D3
 ~
 ~
@@ -1056,7 +1056,7 @@ quite low overhead and the passage twists off into darkness.  The only
 exits from here look to be off to the east and north.  To the north,
 you can see the entrance to what looks to be a large and well lit cave.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -1073,7 +1073,7 @@ quite low overhead and the passage twists off into darkness.  The only
 exits from here look to be off to the east, south, and north.  To the
 south, the tunnel looks to open up into a cavern.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -1093,7 +1093,7 @@ The Maze~
 quite low overhead and the passage twists off into darkness.  The only
 exits from here look to be off to the west and north.
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -1112,7 +1112,7 @@ by the sound of your breathing.  Stalactites and stalagmites
 hang down from the ceiling and climb upwards from the ground
 of the cavern respectively.
 ~
-40 ad 2
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -1132,7 +1132,7 @@ hang down from the ceiling and climb upwards from the ground
 of the cavern respectively.  A narrow tunnel leads away from
 the cave to the north.
 ~
-40 ad 2
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -1155,7 +1155,7 @@ by the sound of your breathing.  Stalactites and stalagmites
 hang down from the ceiling and climb upwards from the ground
 of the cavern respectively.
 ~
-40 ad 2
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -1175,7 +1175,7 @@ hang down from the ceiling and climb upwards from the ground
 of the cavern respectively.  A narrow tunnel leads away from
 the cave to the east.
 ~
-40 ad 2
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -1196,7 +1196,7 @@ here as it heads through the rock of the mountain.  The western wall
 of the tunnel looks to have broken through a small, natural crack in
 the rock to lead into what appears to be a fairly large cave.
 ~
-40 ad 3
+40 9 0 0 0 0
 D1
 ~
 ~
@@ -1217,7 +1217,7 @@ only exit is back to the west, where the tunnel leads back through
 the mountain.  There is absolutely nothing of any interest down at
 the end of this passageway either.  How odd.
 ~
-40 ad 3
+40 9 0 0 0 0
 D3
 ~
 ~
@@ -1229,7 +1229,7 @@ The Hole~
 north because to leave down into the unknown, you must be able to
 fit through the hole, which is far too small for you!
 ~
-40 ad 3
+40 9 0 0 0 0
 D0
 ~
 ~
@@ -1253,7 +1253,7 @@ the east you can see the plains, and just to the north a strange shadow
 seems to be changing shape constantly and almost seems to beckon you to
 enter it. 
 ~
-40 0 4
+40 0 0 0 0 0
 D0
 There is a strange shadow forming before you.
 ~
@@ -1275,7 +1275,7 @@ is much smaller than you had expected, being maybe thirty feet long.  It
 is quite surprising how deceptive distances can be this high up in the
 mountains, isn't it?
 ~
-40 0 5
+40 0 0 0 0 0
 D3
 ~
 ~
@@ -1293,7 +1293,7 @@ trail that you just noticed on the eastern side of the valley,
 leading up the eastern mountain that is blocking most of the sky
 from you.
 ~
-40 0 5
+40 0 0 0 0 0
 D1
 ~
 ~
@@ -1310,7 +1310,7 @@ mountain to the east.  The trail leading up it to the east seems
 to vanish before your eyes, but you are quickly able to find it
 once again.  A trail leads up the mountain to the west as well.
 ~
-40 0 5
+40 0 0 0 0 0
 D1
 ~
 ~

@@ -7,7 +7,7 @@ home in the midst of a forest such as this is beyond your comprehension.  Be
 careful on those steps, they are old and gray and appear to be rotted in many
 places.  
 ~
-259 0 3
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -44,7 +44,7 @@ Northeast Corner of the House~
 things that appear to be just about to fall into decay.  Listening for any sound
 from within the house reveals nothing, it appears that it may be deserted.  
 ~
-259 0 3
+259 0 0 0 0 0
 D2
 ~
 ~
@@ -62,7 +62,7 @@ be deserted, however you still have the sensation of being watched.  You cannot
 see any sort of entrance from here, save the windows, and just in case someone
 does live here, it would be best to leave those windows intact.  
 ~
-259 0 3
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -82,7 +82,7 @@ Northwest Corner of the House~
 must be the doors that lead into the cellar.  No other entrances are visible to
 you from your current vantage point.  
 ~
-259 0 3
+259 0 0 0 0 0
 D1
 ~
 ~
@@ -100,7 +100,7 @@ mostly chipped or worn away, leaving the doors a sort of dirty, brown and white
 and gray combo color.  Leaves blow past you, the breeze which carries them
 smelling of something familiar - almost like blood.  
 ~
-259 0 3
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -125,7 +125,7 @@ The walls of the house are of chipped wood siding, the paint that once covered
 the walls flaking and peeling,completely gone even in some places.  You cannot
 see any other ways into the house from here except the cellar.  
 ~
-259 0 3
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -143,7 +143,7 @@ type which is built for politicians or persons of extreme wealth.  It has long
 since fallen into decay - a crumbling, wasted ruin.  There could be no chance
 that anyone might still live here - could there?  
 ~
-259 0 3
+259 0 0 0 0 0
 D1
 ~
 ~
@@ -165,7 +165,7 @@ enter into this place?  There is obviously no one living here anymore - at least
 it seems that way.  You hear a small skittering and a thump from within.  
 Probably just a rat or a squirrel.  
 ~
-259 0 3
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -184,7 +184,7 @@ that the items were never taken when the old occupants left, or at least
 auctioned off by relatives.  The hallway heads into the house to the west.  To
 the east is the front door .
 ~
-259 ci 0
+259 260 0 0 0 0
 D1
 ~
 door~
@@ -205,7 +205,7 @@ it not for the fact that the signs of abandonment were so clear.  There is a
 small coat closet to the north, the main living through an entryway to the
 south.  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -232,7 +232,7 @@ master had his back turned.  Now the shelves and racks which would have held the
 coats has long since fallen into ruin, a crumbling mass of splintered, rotted
 wood falling in on itself.  
 ~
-259 a 0
+259 1 0 0 0 0
 D2
 ~
 ~
@@ -247,7 +247,7 @@ were brought in in this room.  The torn wallpaper, the broken chandeliers, and
 the rotted furniture gives you a terrible feeling of sadness, a feeling of
 immense regret.  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -270,7 +270,7 @@ in many places - the footing here quite treacherous.  There seems to be nothing
 of value left in this place, only a lingering feeling of overwhelming loss and
 sadness.  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -287,7 +287,7 @@ the east, your choices are basically the same.  Too much ruin, too much lost,
 you can understand why the old occupants of this home might never ever want to
 leave.  But what purpose would they serve - staying here for all eternity?  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -307,7 +307,7 @@ chandeliers that you are finding typical of this place hangs above the table,
 long trails of cobwebs streaming down from its decor.  The main room is to the
 east and south, the hallway to the north.  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -331,7 +331,7 @@ what the time of day or night.  Just north of you lies a swinging door,
 presumably to the kitchen, for through an open way to the south lies the dining
 room.  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -359,7 +359,7 @@ the holes drilled deep into the far side of it where the knives were to go.
 Steel tables line most of the walls, an old broken down cooler resting in the
 northwest corner.  
 ~
-259 0 0
+259 0 0 0 0 0
 D2
 ~
 ~
@@ -374,7 +374,7 @@ flowered wallpaper lines the walls here, with the same type of sconces set into
 the walls as downstairs.  Doors lead off from this hallway at inetrvals,
 presumably into bedrooms.  
 ~
-259 0 0
+259 0 0 0 0 0
 D2
 ~
 ~
@@ -393,7 +393,7 @@ staircase and a landing at the top where a hallway heads off into darkness.
 You have an uneasy feeling, peering into that darkness, as if you were violating
 someone's private sanctuary no matter how long ago they passed away.  
 ~
-259 a 0
+259 1 0 0 0 0
 D2
 ~
 ~
@@ -412,7 +412,7 @@ the way to the living quarters.  The carpet is still robust in some spots, but
 wet and mottled, with what sort of substance it is probably best that you do not
 investigate all too much.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 ~
@@ -431,7 +431,7 @@ room, where the men could take leave of their women in order to find a bit of
 sport in competing with each other.  To the north is a narrow hallway leading
 off in darkness.  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -457,7 +457,7 @@ fallen into wooden clumps after having its legs all rot our from beneath it.  A
 dart board lays against the wall on the floor, askew and broken in the center
 most probably by its fall from the wall where it must have hung.  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -472,7 +472,7 @@ have to cut through them with a blade so as not to get them stuck to your
 clothing.  A set of wooden double doors rest closed against the north wall and
 to the south is a short alcove, a closed door against its west wall.  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 door~
@@ -500,7 +500,7 @@ elements . A layer of thick dust covers the desk and the shelves which line the
 walls, books seem a bit crisp but other than that it all seems in perfect shape!
 How astonishing!  
 ~
-259 0 0
+259 0 0 0 0 0
 D2
 ~
 door~
@@ -513,7 +513,7 @@ in fact it almost seems out of place.  The area you stand in is only wide enough
 for one person to stand, almost too small to turn around in.  This door
 obviously leads somewhere private.  
 ~
-259 0 0
+259 0 0 0 0 0
 D0
 ~
 ~
@@ -529,7 +529,7 @@ the outer hallway also ring this chamber, with an extremely large oen directly
 in the center.  The lights in this room must have been fantastic when they were
 all lit during a ball or masquerade.  
 ~
-259 0 0
+259 0 0 0 0 0
 D1
 ~
 ~
@@ -546,7 +546,7 @@ Attempting to shine your light east and west down the hall reveals nothing
 except the fact that you still cannot see farther than the ten feet your light
 illuminates.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 ~
@@ -570,7 +570,7 @@ you, to stab you in your back.  For that matter, anyone could now be downstairs
 in the main hall, listening as your steps creak down this old hall.  There is a
 closed door to the north.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 door~
@@ -594,7 +594,7 @@ marking this a bedroom fo importance, possibly even the Master Bedroom.  There
 is a door to the south, slightly cracked open but certainly not inviting by the
 looks of the darkness beyond.  
 ~
-259 a 0
+259 1 0 0 0 0
 D1
 ~
 ~
@@ -621,7 +621,7 @@ doors.  One lies just south, one lies north, and one lies to the east.  The only
 one which has its door open is the one to the south.  You hear a muffled banging
 to the north - could it be that someone still lives here?!?  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 door~
@@ -646,7 +646,7 @@ way the entire structure sways beneath you as you climb to the front door, you
 wonder if maybe this wasn't a bad idea.  Better hurry up that front door and get
 inside before the whole thing collapses!  
 ~
-259 0 3
+259 0 0 0 0 0
 D4
 ~
 ~
@@ -662,7 +662,7 @@ Top of the Steps at the Front Door~
 creak and groan under your weight, swaying with every step that you take no
 matter how careful you are.  
 ~
-259 c 3
+259 4 0 0 0 0
 D3
 ~
 door~
@@ -681,7 +681,7 @@ direction or another.  The tattered wastes of a down comforter lie all around
 the bed, its mattress torn to shreds.  The dresser still seems intact for the
 most part, but filthy from the dirty feet of rodents scurrying about on it.  
 ~
-259 a 0
+259 1 0 0 0 0
 D2
 ~
 door~
@@ -694,7 +694,7 @@ bit more run down than many of the others on this level.  There is vitually
 nothing left of the bed which used to occupy the room, only some torn bits of
 cloth and some timber which the bedframe was made from.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 ~
@@ -710,7 +710,7 @@ almost beyond recognition besides the fact that it once was a fireplace and the
 bath tub is so stained with rot and grime that it is almost impossible to
 believe that someone may have once gotten clean in it all.  
 ~
-259 a 0
+259 1 0 0 0 0
 D1
 ~
 door~
@@ -725,7 +725,7 @@ amplified to the point of hurting your ears.  This bedroom looks much like any
 of the other rooms on this level, quite a disaster with no hope of any type of
 remod.  
 ~
-259 a 0
+259 1 0 0 0 0
 D2
 ~
 door~
@@ -740,7 +740,7 @@ people of this home must have been either torn from or killed in this home.
 They must have enjoyed a tremendous happiness while here and to have it taken
 away...  Such a pity.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 ~
@@ -755,7 +755,7 @@ boasts its own bathing vessel and a larger bed than most of the other rooms.  A
 large fireplace lies in the northeast corner, an amenity that all the other
 rooms on this level lack, excepting the master bedroom, of course.  
 ~
-259 a 0
+259 1 0 0 0 0
 D3
 ~
 door~
@@ -770,7 +770,7 @@ It must be told that many an adventurer has turned from this cellar in fear,
 without humiliation or any feelings of inadequacies - this is not a pleasant
 place.  
 ~
-259 c 3
+259 4 0 0 0 0
 D4
 ~
 door~
@@ -791,7 +791,7 @@ you may travel in.  All you can see is the dirt wall on the west side with solid
 wooden support beams running up the walls to the ceiling, holding this old home
 up.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 ~
@@ -817,7 +817,7 @@ mortar and stone, roughly hewn as most cellar walls tend to be.  The west wall
 is dirt, marking it as the west end of the cellar - you may continue no farther
 west in this damp place.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 door~
@@ -839,7 +839,7 @@ is as strong as you have noticed it to be at any place in this cellar.  An
 unshakeable feeling of being watched by some malevolent presence also forces its
 way into your conciousness, but your limited sight tells you nothing.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 ~
@@ -860,7 +860,7 @@ partially stocked with old, dirty bottles.  You can see that the cellar
 continues south past the rack, but the only thing you can see past the rack is
 darkness - quite complete darkness.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 ~
@@ -879,7 +879,7 @@ weight of the jars, but not rotting away like so much else in this house.  You
 can attempt to chow on some of the goods in those jars, but it isn't recommended
 by the general staff here at Dibrova...  
 ~
-259 a 0
+259 1 0 0 0 0
 D2
 ~
 ~
@@ -896,7 +896,7 @@ foodstuffs such as potatoes and beets were kept.  There are, of course, no such
 kinds of food left here, only a few dried out huskes that could once have been
 potato skins but are so hard and crusty that they would be inedible.  
 ~
-259 a 0
+259 1 0 0 0 0
 D2
 ~
 door~
@@ -909,7 +909,7 @@ the master of the house went traveling.  There appears to be an open area just
 south of here - further travel eastward is cut off by the dirt wall of the
 cellar.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 ~
@@ -930,7 +930,7 @@ have been used as a workshop of sorts by either the master of the house or -more
 likely- the servants of the place.  The feeling of death, the smell of blood, is
 strong as ever - its still not too late to turn back.  
 ~
-259 a 0
+259 1 0 0 0 0
 D0
 ~
 ~
@@ -947,7 +947,7 @@ such sturdy materials, it still remains on all four legs against the south wall
 of the room.  A few small tools were left on the table, most of which are
 useless now.  
 ~
-259 a 0
+259 1 0 0 0 0
 D1
 ~
 ~

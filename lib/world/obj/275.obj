@@ -3,7 +3,7 @@ key jail~
 a jail key~
 A jail key has been carelessly left here.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -15,7 +15,7 @@ handgun gun~
 a handgun~
 A handgun has been left here.  Looks pretty dangerous.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 10
 12 250 0 0
 E
@@ -31,7 +31,7 @@ slippers doggie~
 a pair of doggie slippers~
 A pair of doggie slippers are on the floor.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
 2 50 0 0
 E
@@ -43,7 +43,7 @@ sneakers nike~
 a pair of Nike sneakers~
 A pair of Nike sneakers are on the ground.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 14 60 0 0
 E
@@ -55,7 +55,7 @@ jeans blue~
 a pair of blue jeans~
 A pair of blue jeans is lying on the ground.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
 8 150 0 0
 #27505
@@ -63,7 +63,7 @@ sweatshirt sweat shirt~
 a sweatshirt~
 A sweatshirt is lying on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
 10 200 0 0
 #27506
@@ -71,7 +71,7 @@ overcoat coat~
 an overcoat~
 An overcoat was thrown on the ground here.~
 ~
-11 0 ad 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 20 500 0 0
 A
@@ -81,7 +81,7 @@ sweatpants pants~
 a pair of sweatpants~
 A pair of sweatpants has been left here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 1 0 0 0
 8 150 0 0
 #27508
@@ -89,7 +89,7 @@ pads shoulder~
 a pair of shoulder pads~
 A pair of shoulder pads is sitting here.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 50 500 0 0
 A
@@ -99,7 +99,7 @@ bat baseball~
 a baseball bat~
 A baseball bat is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 7
 10 1000 0 0
 E
@@ -113,7 +113,7 @@ nightstick stick~
 a nightstick~
 A nightstick is has been left here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 7
 6 600 0 0
 E
@@ -127,7 +127,7 @@ switchblade knife blade~
 a switchblade knife~
 A switchblade knife has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 3 11
 6 60 0 0
 E
@@ -139,7 +139,7 @@ chain~
 a chain~
 A long chain is lying on the ground.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 3 3 2
 10 300 0 0
 #27513
@@ -147,7 +147,7 @@ rod connecting~
 a connecting rod~
 A connecting rod is lying on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 3
 20 500 0 0
 E
@@ -160,7 +160,7 @@ dildo silver~
 a silver dildo~
 A silver dildo is vibrating on the ground.~
 ~
-5 b ano 0
+5 b 0 0 0 ano 0 0 0 0 0 0 0
 0 1 4 11
 3 160 0 0
 E
@@ -173,7 +173,7 @@ set pom-poms~
 a set of pom-poms~
 A set of pom-poms is lying here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 1 3 3
 3 30 0 0
 #27516
@@ -181,7 +181,7 @@ fish~
 a fish~
 A dead fish has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 10 0 0
 #27517
@@ -189,7 +189,7 @@ belt tool~
 a tool belt~
 A tool belt has been left here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 2 0 0 0
 13 1000 0 0
 E
@@ -201,7 +201,7 @@ hardhat hat~
 a hardhat~
 A hardhat is lying on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 6 150 0 0
 E
@@ -213,7 +213,7 @@ axe fireman~
 a fireman's axe~
 A fireman's axe lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 3
 10 50 0 0
 #27520
@@ -221,7 +221,7 @@ doughnut~
 a doughnut~
 A doughnut is here, waiting to be eaten.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 5 0 0
 #27521
@@ -229,7 +229,7 @@ lobster~
 a lobster~
 A lobster is here, ready to be eaten.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 25 0 0
 #27522
@@ -237,7 +237,7 @@ bag potato chips~
 a bag of potato chips~
 A bag of potato chips has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 1 15 0 0
 #27523
@@ -245,7 +245,7 @@ box pretzels~
 a box of pretzels~
 A box of pretzels is here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 9 0 0 0
 1 18 0 0
 #27524
@@ -253,7 +253,7 @@ water coke bottle litre water~
 a two litre bottle~
 A two litre of Coke is here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 4 4 15 0
 9 20 0 0
 #27525
@@ -261,7 +261,7 @@ tea carton iced tea~
 a carton~
 A carton of iced tea is here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 11 0
 7 10 0 0
 #27526
@@ -269,7 +269,7 @@ milk carton milk~
 a carton~
 A carton of milk is here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 10 0
 7 15 0 0
 #27527
@@ -277,7 +277,7 @@ hoagie italian~
 an Italian hoagie~
 An Italian hoagie is sitting here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 11 0 0 0
 1 18 0 0
 #27528
@@ -285,7 +285,7 @@ jacket suit~
 a suit jacket~
 A suit jacket is lying here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
 3 100 0 0
 #27529
@@ -293,7 +293,7 @@ necktie tie neck~
 a necktie~
 A necktie has been left here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 2 0 0 0
 1 25 0 0
 E
@@ -305,7 +305,7 @@ camera~
 a camera~
 A camera is on the ground.~
 ~
-3 g aco 0
+3 g 0 0 0 aco 0 0 0 0 0 0 0
 8 3 3 4
 24 150 0 0
 E
@@ -317,7 +317,7 @@ water canteen water~
 a canteen~
 A hard leather canteen was left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 0 0
 15 50 0 0
 $~

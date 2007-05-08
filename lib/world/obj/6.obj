@@ -3,7 +3,7 @@ pebble~
 a shiny pebble~
 A shiny pebble is lying in the sand.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 75 0 0
 E
@@ -16,7 +16,7 @@ seagull feather~
 a seagull feather~
 A seagull feather is lying on the ground.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 50 0 0
 E
@@ -29,7 +29,7 @@ pearl~
 a pearl~
 A beautiful pearl was dropped here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 200 0 0
 E
@@ -42,7 +42,7 @@ log~
 a log~
 A large log is lying in the sand.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 70 0 0
 E
@@ -56,7 +56,7 @@ twig~
 a twig~
 There is a small twig on the ground.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 35 0 0
 E
@@ -68,7 +68,7 @@ flower red rose~
 a red rose~
 A beautiful red rose has been left here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 200 0 0
 E
@@ -81,7 +81,7 @@ hat~
 a hat~
 A straw hat is floating in the water.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 4 125 0 0
 E
@@ -94,7 +94,7 @@ dead fish~
 a dead fish~
 A dead fish is here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -107,7 +107,7 @@ coconut~
 a coconut~
 A large coconut has fallen from one of the palm trees, and lies on the ground.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 3 75 0 0
 E
@@ -120,7 +120,7 @@ shield~
 a marble shield~
 A marble shield lies here.~
 ~
-9 0 a 0
+9 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 8 200 0 10
 E
@@ -133,7 +133,7 @@ banana~
 a banana~
 A yellow banana is ripening here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 3 50 0 0
 E
@@ -145,7 +145,7 @@ ale glass ale~
 a glass~
 A glass with a dark foamy liquid in it.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 3 0
 3 100 0 0
 E
@@ -157,7 +157,7 @@ lobster~
 a red lobster~
 A red lobster looks good enough to eat.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 4 250 0 0
 E
@@ -169,7 +169,7 @@ clams~
 some clams~
 Some clams have been gathered here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 100 0 0
 E
@@ -182,7 +182,7 @@ eels~
 some eels~
 Some eels have been collected together.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 3 150 0 0
 E
@@ -194,7 +194,7 @@ shrimp~
 some shrimp~
 Some shrimp have been prepared for eating.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 3 300 0 0
 E
@@ -207,7 +207,7 @@ milk glass milk~
 a glass~
 A glass full of a white liquid lies here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 10 0
 3 75 0 0
 E

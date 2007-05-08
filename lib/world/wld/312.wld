@@ -6,7 +6,7 @@ to the east, some of them very small - obviously single person occupied - others
 are a bit more large with space for more than a few.  To the north a way leads
 through the thick jungle which covers most of the top of this island.  
 ~
-312 c 1
+312 4 0 0 0 0
 D0
 A well-marked path leads deep into the jungle.
 ~
@@ -49,7 +49,7 @@ looks to have a capacity of at least three to four people.  Ways through the
 small village lie to the east and south both of them seeming just as gloomy and
 unappealing as the other.  
 ~
-312 0 1
+312 0 0 0 0 0
 D0
 A small hut lies to the north.
 ~
@@ -79,7 +79,7 @@ floor and clay walls.  There are few personal affects in the place, however
 those that there are are kept in order and quite tidy.  A small row of beds lie
 along the north wall, all of them made and clean.  
 ~
-312 d 0
+312 8 0 0 0 0
 D2
 The exit to this hut lies south.
 ~
@@ -93,7 +93,7 @@ small, well kept bed lies in the center of the room, a small dresser made from
 rough jungle wood in the northwestern corner.  No personal affects adorn the
 walls, no signs of personality in this home are evident.  
 ~
-312 d 0
+312 8 0 0 0 0
 D1
 The exit lies to the east.
 ~
@@ -107,7 +107,7 @@ timber and clay with a bit of yellow jungle grass tossed in the cracks.  To the
 south is more of the small footpath that weaves through the small village, a
 small coop for chickens visible in that direction.  
 ~
-312 0 1
+312 0 0 0 0 0
 D0
 The main path through the clearing lies to the north.
 ~
@@ -130,7 +130,7 @@ Footpath Through Leper's Village~
 To the east is a small chicken coop where clucks and squawks can be heard in a
 constant cacaphony.  
 ~
-312 0 1
+312 0 0 0 0 0
 D0
 The path leads north past a few huts.
 ~
@@ -155,7 +155,7 @@ evidence it is tough to judge whether or not those huts actually have any
 inhabitants.  To the east is a small fenced-in pig pen with a couple of warty,
 dirty wild boars who glare balefully at any who pass.  
 ~
-312 0 1
+312 0 0 0 0 0
 D0
 The path leads past a few huts to the main path.
 ~
@@ -184,7 +184,7 @@ made from jungle leaves and vine lies in the center of the room, kept neat and
 tidy by way of simple bedding sheets.  No windows have been cut into the walls,
 but the place is not stuffy.  
 ~
-312 d 0
+312 8 0 0 0 0
 D1
 ~
 ~
@@ -197,7 +197,7 @@ the lepers who get left on this island are left with nothing more than the
 clothes on their back, as most of the dwellings in this place are much the same
 - without decor or appeal.  
 ~
-312 d 0
+312 8 0 0 0 0
 D0
 ~
 ~
@@ -210,7 +210,7 @@ which surrounds the pen.  Strangely, the ground is not strewn with waste and mud
 like most pig's pens are, but well tended with fresh soil spread over top of
 whatever mess the boars make.  
 ~
-312 0 0
+312 0 0 0 0 0
 D3
 ~
 ~
@@ -225,7 +225,7 @@ Jareth's orders.  Everytime new chickens are brought in by way of ship, the best
 are kept to produce eggs while all others over the number of five are
 slaughtered and used as community meat.  
 ~
-312 d 0
+312 8 0 0 0 0
 D3
 The path lies to the west.
 ~
@@ -239,18 +239,18 @@ simple.  A small straw bed is tightly bound and covered by thick cloth, allowing
 no straw to protrude from the interior.  A very small stack of clothing lies in
 a small wicker basket.  
 ~
-312 d 0
+312 8 0 0 0 0
 D0
 ~
 ~
 0 -1 31212
 E
-basket~
+clothing~
    The clothing is folded very neatly within, kept in an exact spot on the floor
 away from the main walkthrough.  
 ~
 E
-clothing~
+basket~
    The clothing is folded very neatly within, kept in an exact spot on the floor
 away from the main walkthrough.  
 ~
@@ -262,7 +262,7 @@ most of these huts are comprised; straw, clay and rough-hewn timbers.  The path
 continues to the east and west past a number of huts, both directions eventually
 leading back into the jungle.  
 ~
-312 0 1
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -287,7 +287,7 @@ perfectly straight rows with no weeds visible whatsoever.  A path south of here
 runs east and west through the jumble of huts which comprise this small
 community.  
 ~
-312 0 1
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -305,7 +305,7 @@ source of food should the supply ships miss a week or for some reason stop
 bringing shipments.  The food grows in arrow-straight lines with no weeds
 whatsoever growing between the harvest.  
 ~
-312 0 0
+312 0 0 0 0 0
 D2
 ~
 ~
@@ -317,7 +317,7 @@ A Tidy Hut~
 sharp edges anywhere, nor are there any protrusions from the walls of the hut
 which might snag skin or poke through clothing.  
 ~
-312 d 0
+312 8 0 0 0 0
 D2
 ~
 ~
@@ -330,7 +330,7 @@ something quite curious a sign or proclamation of some sort has been erected and
 stands quite large in the center of the community.  To the east and west the
 footpath continues through the village.  
 ~
-312 0 1
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -355,7 +355,7 @@ end.  The names of all those who have been sent to this isle to live out there
 last miserable years and have perished have been engraved into the wood so that
 there at least will be one place in Dibrova where their memory will remain.  
 ~
-312 0 0
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -380,7 +380,7 @@ A Well-kept Hut Made From Clay~
 wash basin.  No clutter whatsoever lies upon the floor or on the bed, everything
 is placed very deliberately about the space provided.  
 ~
-312 d 0
+312 8 0 0 0 0
 D0
 ~
 ~
@@ -395,7 +395,7 @@ clay and rough timbers, north is another such hut but much larger and with a
 cross affixed to the outer wall just right of the door.  This must obviously be
 the chapel for the village.  
 ~
-312 0 1
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -421,7 +421,7 @@ floor just in front of a cross made from wood timber from the jungle trees.
 Log benches are lined in straight lines before the podium for attendants during
 service hours.  
 ~
-312 d 0
+312 8 0 0 0 0
 D2
 ~
 ~
@@ -434,7 +434,7 @@ into the thick jungle foliage.  The way north is engulfed in deep greenery which
 obscures vision past a point not far distant along the path.  To the west is the
 way into a small community of huts nestled in a clearing in the jungle.  
 ~
-312 c 3
+312 4 0 0 0 0
 D0
 ~
 ~
@@ -450,7 +450,7 @@ Trail Through the Jungle~
 impassable as can be.  The trail itself, however, is well-groomed and kept free
 of debris and obstacles which might trip or scratch a passerby.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -467,7 +467,7 @@ raked or broomed making the way along the path easy and quick.  On either side
 the jungle looms in, its presence huge and unmistakable.  There may be a slight
 break to the west, allowing travel in that direction.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -488,7 +488,7 @@ brightly in the moonlight.  This must be a safeguard put in by the locals so
 that if one were to be wandering along this path late at night there would be no
 way to wander off and get lost in the jungle.  
 ~
-312 0 3
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -506,7 +506,7 @@ are lined in white stones - markers for any who might be traveling the path by
 moonlight so that they might keep their bearings along the path and not wander
 off into the jungle.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -522,7 +522,7 @@ Trail Through the Jungle~
 south.  Must be some sort of water source north of here.  The path is extremely
 well-kept here as it wends its way through the thick jungle.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -539,7 +539,7 @@ set of log steps lead out to the very edge, allowing for dry feet when drawing
 water.  The path ends at this northern boundary, leading only back to the south
 through the jungle.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -559,7 +559,7 @@ Pond~
    The water ripples slightly underneath, the bottom of the pond visible as if
 viewed through a thick pane of moving glass.  
 ~
-312 0 7
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -579,7 +579,7 @@ Pond~
 meandering path the whole way.  The pond itself must be fed from a spring of
 some sort which replenishes the supply in a constant flow.  
 ~
-312 0 7
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -599,7 +599,7 @@ Pond~
 presence.  This place seems so serene, so calm and peaceful it is almost
 impossible to believe any sort of scourge could exist on this isle.  
 ~
-312 0 7
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -615,7 +615,7 @@ Pond~
 even the smallest amounts of light.  The water is so crystal clear that the
 bottom of the pond can be seen simply by looking down.  
 ~
-312 0 7
+312 0 0 0 0 0
 D2
 ~
 ~
@@ -633,7 +633,7 @@ the south is the start of an open area where a few huts have been erected in a
 small conglomeration.  To the north is a trail, less kept than the western path
 but still quite traversable.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -653,7 +653,7 @@ Well-used Trail Through the Jungle~
 footpath with no roots or snags at any point.  The path wends its way south
 through the jungle foliage, the way clear and open.  
 ~
-312 0 3
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -670,7 +670,7 @@ obstacles or obstructions whatsoever.  The ground which the path travels along
 is so free of debris that it almost appears as if it might have been recently
 swept.  Quite odd for a jungle path.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -687,7 +687,7 @@ leading the way through the thick tangle of the jungle.  From all appearances,
 this trail is cut back daily so that growth from the trees nearby might snag a
 passerby's clothing or skin.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -703,7 +703,7 @@ Well-used Trail Through the Jungle~
 fidgetings of many jungle animals can be heard, their disquiet from your passage
 very evident.  
 ~
-312 0 3
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -720,7 +720,7 @@ flat top which affords a beautiful view of the sea.  Not only is the view
 beautiful, but it is the exact part of the sea where the suplly ships come in
 and drop off the foodstuffs which the inhabitants of this place thrive upon.  
 ~
-312 0 5
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -737,7 +737,7 @@ Trail Through the Jungle~
 with no sign of lessening or narrowing.  To the south is an enrance into a large
 clearing in the jungle.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -754,7 +754,7 @@ which might make travel at all hazardous.  The path leads far to the north into
 the jungle or south toward a large opening in the thick, twisted growth of this
 place.  A way through the trees may be available to the east.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -775,7 +775,7 @@ cared for the further it travels in that direction.  It does not get bad enough
 to be called neglected by any means, however it does not hold much of the
 perfection that is evident in the path south of here.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -793,7 +793,7 @@ regularly swept or raked to keep it free of debris.  The branches of the trees
 which normally would hang over the path have been cut and sand down to a dull
 edge to avoid any piercings.  
 ~
-312 0 3
+312 0 0 0 0 0
 D2
 ~
 ~
@@ -809,7 +809,7 @@ Trail Through the Jungle~
 south.  Small white stones have been placed along the sides of the path to help
 night time passers better see the direction of the path .
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -827,7 +827,7 @@ if someone or someones may be making a point of keeping the trail clear.  The
 trees also look to be cut back from the trail, keeping it free of snags and
 annoying branches.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -843,7 +843,7 @@ Trail Through the Jungle~
 the north.  To the south the path has the look of an oft-traveled path that is
 kept up with some regularity.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -860,7 +860,7 @@ it had not been traveled upon or tended to in quite some time.  To the south the
 trail grows noticably wider as it continues, the trail becoming more and more
 defined the further south the path gets.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -878,7 +878,7 @@ North from here is an opening in the jungle foliage, the volcano rising high
 beyond the clearing's boundaries.  South, the path leads deep into the jungle.
 
 ~
-312 c 3
+312 4 0 0 0 0
 D0
 ~
 ~
@@ -899,7 +899,7 @@ puddle than anything else, lies just to the west.  The water does NOT look as if
 it were very good drinking water at all - the surface carries a slight film of
 grease or oily grime.  
 ~
-312 0 0
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -915,7 +915,7 @@ A Tepid Pond~
 of noxious chemicals.  A faint glaze lies across the surface of the pond, the
 slime of dirt and grime from the diseased people which use this water.  
 ~
-312 0 7
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -930,7 +930,7 @@ from its deep innards.  Camped directly at the base is a small cluster of
 dwellings, actually only two dwellings and a rickety-looking pen which holds
 barely a-livestock.  
 ~
-312 0 2
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -949,7 +949,7 @@ to the white sand beaches at the shore of the sea.  East a ways there is a small
 log pen for any livestock that might get given to these poor folk by the
 healthier lepers in the village south of here.  
 ~
-312 0 2
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -974,7 +974,7 @@ be in pretty bad shape, many holes evident in the roof and walls.  Flys buzz
 about this area, making an annoying buzz.  Most probably they are attracted by
 the stink of the animal pen to the southeast and the hut to the east.  
 ~
-312 0 2
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -997,7 +997,7 @@ North is a large hut, almost large enough to be called a hall, a set of steps
 leading up and into the interior.  South is small open area with a pile of ash
 in the center.  
 ~
-312 0 2
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -1018,7 +1018,7 @@ still move about come to be together.  Not much talking goes on and certainly no
 dancing, however the idea of being together - nearby another human - sometimes
 is all it takes to give the comfort needed by these doomed people.  
 ~
-312 0 2
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1032,7 +1032,7 @@ seperating their livestock, there are droppings from many different kinds of
 animals from pig to chicken to unidentifiable.  The entire affair is ringed by a
 set of logs from the trees of the jungle, tied loosely at the corners.  
 ~
-312 0 2
+312 0 0 0 0 0
 D3
 ~
 ~
@@ -1045,7 +1045,7 @@ almost discolored.  The walls are made of the same logs stacked, tied and mudded
 together in a very loose, haphazard fashion.  The leaf and thatch roof of this
 place has many small holes and is even missing entirely in some places.  
 ~
-312 d 0
+312 8 0 0 0 0
 D3
 ~
 ~
@@ -1060,7 +1060,7 @@ rotting skin has been so long in this place that even when no one is lying amid
 the soiled blankets that litter the floor, the smell of the rotteed flesh still
 lingers.  
 ~
-312 d 0
+312 8 0 0 0 0
 D3
 ~
 ~
@@ -1074,7 +1074,7 @@ irregular spurts.  The pathetic excuse for an encampment crouches pitifully in
 the presence of this volcano, a constant reminder that sooner or later anyone
 living here will be one with the Eternal Flame which burns within.  
 ~
-312 0 2
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -1096,7 +1096,7 @@ was most probably some of their last breaths, those men and women made it so
 that future generations would not have to labor so long or hard to consecrate
 the bodies of fallen friends to the volcano and the Eternal Flame within.  
 ~
-312 0 2
+312 0 0 0 0 0
 D4
 ~
 ~
@@ -1113,7 +1113,7 @@ the climb a bit less effort.  Being that most of the men and women who climb
 this trail are living their last days in pain and misery, this path was made
 with their incapabilities in mind.  
 ~
-312 0 2
+312 0 0 0 0 0
 D4
 ~
 ~
@@ -1132,7 +1132,7 @@ any time.  It is never contested by any who dwell upon the island whether or not
 the timing is right for the one who is jumping, it is simply accepted that that
 person has had enough of the disease and horror that is leprosy.  
 ~
-312 0 2
+312 0 0 0 0 0
 D5
 ~
 ~
@@ -1145,7 +1145,7 @@ can no longer be walked along to the north, as the volcano rises high into the
 sky here.  No trail leads up the volcano from this point, however one is visible
 around the base a bit to the east.  
 ~
-312 0 5
+312 0 0 0 0 0
 D2
 ~
 ~
@@ -1157,7 +1157,7 @@ Cliff's Edge~
 low huts and an animal pen in sight.  South of here is a trail skirting the edge
 of the cliff which descends down to the beach below.  
 ~
-312 0 5
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1177,7 +1177,7 @@ Cliff's Edge~
 access to the beach below.  A trail follows along the edge of the cliff to the
 north, a small encampment visible in that direction.  
 ~
-312 c 5
+312 4 0 0 0 0
 D0
 ~
 ~
@@ -1193,7 +1193,7 @@ Cliff~
 and the top.  The steps look natural, made by nature to have happened to have
 worked well as steps.  
 ~
-312 0 4
+312 0 0 0 0 0
 D4
 ~
 ~
@@ -1211,7 +1211,7 @@ clean, very white - almost bleached.  It is a very fine sand that makes walking
 a bit more of an effort than normal packed beach sand, however it makes fro such
 beautiful scenery that it is not unpleasant at all.  
 ~
-312 0 2
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1232,7 +1232,7 @@ the east - inland - a steep cliff rises up, cutting off any progress.  The way
 north is cut off by the steep outer wall of a large volcano, one which sends
 plumes of black smoke rising high into the air intermittantly.  
 ~
-312 0 2
+312 0 0 0 0 0
 D2
 ~
 ~
@@ -1247,7 +1247,7 @@ wall which rises from the sea high into the sky.  Just south from this locale is
 a cliff wall, one which cuts off both south and eastward travel as it is
 certainly too steep to climb.  
 ~
-312 0 2
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1261,7 +1261,7 @@ a few inches deep at its deepest point.  Just up the hill a bit is the pond from
 this water emanates.  Through a tangle of bracken and jungle foliage, the
 trickle flows downhill toward the waiting sea.  
 ~
-312 i 6
+312 256 0 0 0 0
 D1
 ~
 ~
@@ -1277,7 +1277,7 @@ Narrow Gully~
 albeit a bit muffled, just below.  Off to the west and uphill a bit the water
 runs in this direction in a light but continuous flow.  
 ~
-312 i 6
+312 256 0 0 0 0
 D3
 ~
 ~
@@ -1295,7 +1295,7 @@ sea, running down in a light but steady flow.  Jungle foliage encroaches on both
 sides, making the way quite cramped, sometimes only allowing passage to one who
 would turn sideways to pass.  
 ~
-312 i 6
+312 256 0 0 0 0
 D4
 ~
 ~
@@ -1314,7 +1314,7 @@ a very short distance.  A flow of water runs from a small overgrown gully just
 west of here, making its way down a small four inch sand canyon down into the
 sea.  
 ~
-312 0 2
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1332,7 +1332,7 @@ seen growing in abundance.  No signs of habitation are visible, although black
 smoke continues to rise in constant puffs from somewhere on the isle.  Of
 course, it could simply be the volcano that was visible from the sea.  
 ~
-312 0 2
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1349,7 +1349,7 @@ of the sun's rays pounding down upon it.  A steep cliff rises directly to the
 north, prohibiting travel in that direction, however the beach does stretch to
 the south for some distance.  
 ~
-312 0 2
+312 0 0 0 0 0
 D2
 ~
 ~
@@ -1361,7 +1361,7 @@ In Thick Bracken~
 slow.  Visibility is reduced immediately to almost nothing, the way ahead just
 as mysterious as if it were the darkest of night and there was no light.  
 ~
-312 c 3
+312 4 0 0 0 0
 D1
 ~
 ~
@@ -1377,7 +1377,7 @@ A Tangle of Vines~
 trees in every direction.  The ground is mazed with their clusters of
 criss-crossings, making it easy to trip and fall at any time.  
 ~
-312 0 3
+312 0 0 0 0 0
 D2
 ~
 ~
@@ -1393,7 +1393,7 @@ Near an Old, Wet, Fallen Tree~
 and the ravages that time brings.  It is covered in thick, green moss from top
 to bottom, crumbling away at the merest of touches.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1409,7 +1409,7 @@ Through a Tangle of Jungle Brush~
 overgrown jungle just to get through.  Every direction looks just as impossible
 to get through as the next, making muscles ache and strain with every move.  
 ~
-312 0 3
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -1426,7 +1426,7 @@ sky.  Patches of moss and wraps of vines climb its trunk, clinging to the
 ancient life within.  Looking up into the branches, branches as wide as a normal
 full-grown tree trunk protrude from the higher reaches.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1448,7 +1448,7 @@ only goes as far as an arm's length as the weeds which grow here are taller than
 most ordinary men and then some.  Its a good possibility that you may be lost.
 
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1465,7 +1465,7 @@ obscuring vision and impeding travel.  The branches are strong and somewhat
 damp, making it difficult to slash through as it would normally be for the
 stiff, brittle branches of the mainland forest trees.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1482,7 +1482,7 @@ about four feet high dig into its side.  The interior is dark - it does not
 appear that there is any sort of human life within, however one can never be too
 sure.  
 ~
-312 0 3
+312 0 0 0 0 0
 D1
 ~
 ~
@@ -1498,7 +1498,7 @@ Outside a Hollow Tree~
 east.  The smell of smoke issues from the interior, giving a pretty good
 indication that someone of at least limited intelligence must live within.  
 ~
-312 0 3
+312 0 0 0 0 0
 D0
 ~
 ~
@@ -1523,7 +1523,7 @@ brittle with age.  No blankets lie upon the ground - the only change from
 nature's intent here is the small firepit which glows red in the center of this
 place.  
 ~
-312 cdi 0
+312 268 0 0 0 0
 D0
 ~
 ~
@@ -1534,7 +1534,7 @@ In a Lion's Den~
    Now this can not have been a choice made intentionally.  Who in the world
 would walk into a lion's den by themselves and attempt to do battle...?  
 ~
-312 di 0
+312 264 0 0 0 0
 D3
 ~
 ~
@@ -1546,7 +1546,7 @@ A Leaf Shrouded Section of the Jungle~
 the leaves which block all sight and direction are easily removable.  Any
 direction looks as good as the other - its all leaves every which way.  
 ~
-312 0 3
+312 0 0 0 0 0
 D1
 ~
 ~

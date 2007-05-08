@@ -19,7 +19,7 @@ Zone 37 is linked to the following zones:
   
 Links: 02u, 17d, 28w
 ~
-37 aj 0
+37 513 0 0 0 0
 S
 #3701
 Entering the sewers~
@@ -28,7 +28,7 @@ the city, you can't help noticing how much waste, so many people create.  And
 it's all here under your feet - and in your boots!  You see water filled with
 all kinds of bad things coming from east and west, drifting north from here.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 A pipe leads north. It's filled with muck.
 ~
@@ -61,7 +61,7 @@ either venture north and deeper in to the sewers, and meet what ever creatures
 might dwell in this filthy place, or attempt to go up through that pipe, with a
 chance of getting out of this dark and gloomy place.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 You see the entrance to the sewers.
 ~
@@ -76,7 +76,7 @@ getting your feet wet.  Still, sewage is trickling through the pipe and you come
 to the conclusion, that you're happy you chose to come here in the dry season.
 
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 The pipe continues north, as far as your light extends.
 ~
@@ -94,7 +94,7 @@ A pipe deep underground.~
 From the north you hear some scratching and the sound of small animals.  You've
 seen rat tracks earlier, and they were a bit too large for your taste.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 The pipe continues.
 ~
@@ -113,7 +113,7 @@ markings of claws and fangs.  It is clear, that whatever lives here is too big
 to be ordinary rats.  North of here you can barely make out a crossing, and
 south the pipe continues.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 A three-way crossing.
 ~
@@ -134,7 +134,7 @@ Some quite large, toothmarks along the perimeter suggest it was done by some of
 the rodents inhabiting the sewers.  The sound of rats moving about is strong
 from both the east and the west.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D1
 The tunnel continues and turns north.
 ~
@@ -152,13 +152,13 @@ Behind it you see dirt walls.
 ~
 0 -1 3714
 E
-bite marks bitemarks~
-   The bitemarks are deep, and approximately 8" wide.  
-~
-E
 hole~
    The hole is about 3 feet high, and must've been dug out by big rats.  It's
 full of marks of teeth.  
+~
+E
+bite marks bitemarks~
+   The bitemarks are deep, and approximately 8" wide.  
 ~
 S
 #3708
@@ -169,7 +169,7 @@ is stuck in it's current position.  It's hopeless getting past it.  Behind it
 you hear the sound of animals.  Again you think of rats, but they sound so BIG!.
 
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 The grate obviously has rusted in the hinges, and is covered in muck. 
 ~
@@ -189,7 +189,7 @@ dropping from the walls, a profound smell of rats, fungus growing on the
 ceiling.  You feel very dirty just being here.  Also you can't help hearing lots
 of noises from the north-west.  Sounds like something's having a feast.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 A bend in the pipe is here.
 ~
@@ -209,7 +209,7 @@ walls are luminous, so you have every chance to study the dirty ceiling, the
 green slime, and the big rats.  From the west you hear the sounds of big
 creatures eating - or is it many small?  
 ~
-37 dp 0
+37 32776 0 0 0 0
 D2
 The pipe continues south.
 ~
@@ -232,7 +232,7 @@ way inhere, even if it was originally so intended.  The ceiling is overgrown
 with luminous fungus, making the room bright as day.  You can hear the sounds of
 creatures eating, bones being crushed.  The source seems to be south of here.  
 ~
-37 dp 0
+37 32776 0 0 0 0
 D1
 The pipe extends east.
 ~
@@ -264,7 +264,7 @@ of here you see a domed chamber, nothing like the dirt you're crawling in, but
 south you just see more and more of it.  You are also aware of a loud sound from
 your east - almost like chewing.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D1
 The northern drainhole.
 ~
@@ -284,7 +284,7 @@ the markings of claws suggest large amounts of rats of dog-like proportions in
 your immediate vicinity.  And to top that off, you are hearing strange sounds
 from the north.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 The dirt tunnel continues.
 ~
@@ -304,7 +304,7 @@ However, you have no doubt that the tunnel leads somewhere, as it's obviously
 being used often, judging from the marks on the walls.  You can crawl on north,
 or make your way to the intersection to the east.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 The dirt tunnel continues.
  
@@ -327,7 +327,7 @@ of them, which seems to have at least some intelligence.  Glittering objects,
 reflecting the dim light from the luminous fungus, litter the nest.  It seems
 the Rat King has gathered what others has dropped.  
 ~
-37 dp 0
+37 32776 0 0 0 0
 D0
 The northern drainhole.
 ~
@@ -344,7 +344,7 @@ The Northern Pipe~
 northward.  You are able to stand tall in this room, and as far as you can tell,
 there is a large drainhole to your north.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 You see a domed chamber with a drainhole.
 ~
@@ -365,7 +365,7 @@ drop of about 20', before the bottom is reached.  Not caring to try if you can
 climb down, you also notice a ladder carved into the wall of the hole.  As you
 examine the hole closer you see a grate further down.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D2
 A large pipe leads southwards.
 ~
@@ -383,7 +383,7 @@ This chamber in itself is but a mere junction of pipes.  Stinking water comes
 drifting from the west and north, flowing out to your east.  The smell inhere is
 torture to your nose, but luckily you are starting to get used to it.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -404,7 +404,7 @@ straight north, a lot of small pipes - too small to be entered - join in from
 the sides, randomly spilling sewage in your path.  The pipe leads north as far
 as your light lets you see.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -427,7 +427,7 @@ your path.  It seems this pipe has been blocked by a very strong grate with
 small holes in it.  Through the small holes you see a lot of bats.  It seems the
 grating was put here for a reason.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 grate~
@@ -445,7 +445,7 @@ there to stop the bats from infecting the whole sewer system.  You can see the
 pipe through it.  You can also enter the bats' territory by going west or north.
 
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -467,7 +467,7 @@ understand the fresh air you're smelling from the north.  It also helps explain
 the millions of bats you see on the ceiling, ignoring you totally.  You can
 continue north through a jagged opening, and south to the pipes.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -490,7 +490,7 @@ foot.  Through the hole bats are swarming in and out.  As far as you can tell
 going up would take you out of the capital.  You can also go south to a large
 chamber.  
 ~
-37 dp 0
+37 32776 0 0 0 0
 D2
 ~
 ~
@@ -508,7 +508,7 @@ stories you have heard of bats sucking the blood of their victims, and a shiver
 runs down your spine.  You can leave this side tunnel to your east, and it
 continues north.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -526,7 +526,7 @@ matter where you look there seem to be more bats.  These bats however does not
 try to harm you - at the moment.  The tunnel continues north and south of here.
 
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -542,7 +542,7 @@ Turn in a side tunnel~
 place on the ceiling.  Some seem a little hostile to your presence.  The tunnel
 turns here, going west and south.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D2
 ~
 ~
@@ -558,7 +558,7 @@ The west tunnel~
 dripping onto the floor, and bats are everywhere, almost driving you crazy.  
 The tunnel stretches west to east.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D1
 ~
 ~
@@ -574,7 +574,7 @@ The west tunnel~
 dripping onto the floor, and bats are everywhere, almost driving you crazy.  
 The tunnel stretches west to east.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D1
 ~
 ~
@@ -589,7 +589,7 @@ just leaks into your boots.  High on the western wall you notice a small hole,
 seemingly shut with a couple of nailed-in boards.  However it is too high for
 you to reach.  The pipe continues north and a junction is to the east.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -611,7 +611,7 @@ be surprised to be able to walk on it.  Unfortunately it doesn't keep you up,
 just leaks into your boots.  Nothing much of interest here.  The pipe continues
 north and south.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -630,7 +630,7 @@ just leaks into your boots.  Small pipes coming out of the walls leak ooze into
 the sewage around you.  To your west the water seem cleaner.  South the boring
 pipe continues.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D2
 ~
 ~
@@ -648,7 +648,7 @@ polluted than it is east of here.  Unfortunately it still doesn't keep you up,
 just leaks into your boots.  Small pipes coming out of the walls leak ooze into
 the sewage around you.  Both to your west and east you see turns in the pipe.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D1
 ~
 ~
@@ -666,7 +666,7 @@ It IS still polluted though.  Small pipes coming out of the walls leak ooze into
 the sewage around you.  To your south the water seems even clearer yet.  East
 the boring pipe continues.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D1
 ~
 ~
@@ -684,7 +684,7 @@ here.  It IS still a little polluted though.  A few small pipes coming out of
 the walls leak ooze into the water around you.  To the south the water seems
 even clearer.  North is a turn in the pipe.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -706,7 +706,7 @@ south however, a metal door, with a heavy padlock blocks your passage.  Through
 some bars in the door you see still water, and a moored boat.  Some of the water
 also runs through the pipe to your north, creating a natural flow.  
 ~
-37 adp 0
+37 32777 0 0 0 0
 D0
 ~
 ~
@@ -731,7 +731,7 @@ hidden by someone who thought this a safe place.  You can't fight the water
 without risking to fall into the hole, so you can only get out through a little
 hole high up on the eastern wall.  Q y redit 3737 2
 ~
-37 adp 0
+37 32777 0 0 0 0
 D1
 ~
 hole planks~
@@ -744,7 +744,7 @@ By an underground fishing pond~
 lake.  There are moorings for a boats here, and you see fish swimming in the
 water.  They're attracted to your light.  
 ~
-37 ad 0
+37 9 0 0 0 0
 D0
 ~
 steel door padlock~
@@ -764,7 +764,7 @@ The pool.~
 rise above the water, blocking your way.  South and west the pool continues and
 north you see the mooring.  
 ~
-37 ad 6
+37 9 0 0 0 0
 D0
 ~
 ~
@@ -784,7 +784,7 @@ The pool~
 the cliff rise above the water, blocking your way.  North and west the pool
 continues and east you see the mooring.  
 ~
-37 ad 6
+37 9 0 0 0 0
 D0
 ~
 ~
@@ -800,7 +800,7 @@ The pool~
 the cliff rise above the water, blocking your way.  North and east the pool
 continues.  
 ~
-37 ad 6
+37 9 0 0 0 0
 D0
 ~
 ~
@@ -816,7 +816,7 @@ The pool~
 rise above the water, blocking your way.  To the north, east and south the pool
 continues.  The water looks quite deep here.  
 ~
-37 ad 7
+37 9 0 0 0 0
 D0
 ~
 ~
@@ -836,7 +836,7 @@ The pool~
 the cliff rise above the water, blocking your way, south the pool continues and
 east you see the mooring.  
 ~
-37 ad 6
+37 9 0 0 0 0
 D1
 ~
 ~
@@ -852,7 +852,7 @@ Through the hole~
 down you see a jagged opening, which you might enter by an old wooden ladder.  
 Swarms of bats fly around you, almost making you panic.  
 ~
-37 dp 0
+37 32776 0 0 0 0
 D0
 Well, you see the outside, of course..
 ~
@@ -869,7 +869,7 @@ Outside the cave~
 out around you.  You may enter the cave by going south, but can head back toward
 the city by going west from here.  
 ~
-37 p 5
+37 32768 0 0 0 0
 D2
 The cave opening looks inviting - kind of like a mouth, waiting to feed..
 ~
@@ -887,7 +887,7 @@ Outside the capital~
 itself.  You're standing in some low foothils near some rocky ground to your
 east.  South of here a gravelled path leads towards the western highway.  
 ~
-37 p 2
+37 32768 0 0 0 0
 D1
 The gravelled path ends and the ground becomes rocky.
 ~
@@ -904,7 +904,7 @@ On a gravelled path~
    You are walking along a gravelled path.  North of here the gravel path
 continues, while to the south you enter the bustle of the western highway.  
 ~
-37 0 2
+37 0 0 0 0 0
 D0
 The gravelled path continues...
 ~

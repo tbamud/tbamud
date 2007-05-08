@@ -3,7 +3,7 @@ sign~
 a sign~
 An old, battered sign lies on the ground.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 2 2 0
 E
@@ -22,26 +22,26 @@ tree opening~
 a colossal tree~
 A colossal tree blocks the way westward.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 1000 0 0 0
 0 0 0 0
-E
-opening~
-   The opening is far too narrow for you to squeeze through but it looks as if
-the tree is hollow.  
-~
 E
 tree~
    This enormous tree must be a thousand years old.  Its rough bark looks grey
 and pale and is decorated with scratches and clawmarks.  On its west side is a
 small opening just above ground level.  
 ~
+E
+opening~
+   The opening is far too narrow for you to squeeze through but it looks as if
+the tree is hollow.  
+~
 #6103
 branch grey long~
 a long, grey branch~
 A long, grey branch rests heavily on the ground.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 25 0
 20 1 3 0
 E
@@ -54,7 +54,7 @@ branch grey long~
 a long, grey branch~
 A long, grey branch rests heavily on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 7
 18 60 20 0
 E
@@ -71,7 +71,7 @@ branch grey long~
 a long, grey branch~
 A long, grey branch rests heavily on the ground.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 40 1 0 0
 E
@@ -84,7 +84,7 @@ toadstool~
 a toadstool~
 A large toadstool grows nearby.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 5 20 20 0
 E
@@ -98,7 +98,7 @@ toadstool~
 a toadstool~
 A large toadstool grows nearby.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 1
 5 20 20 0
 E
@@ -113,7 +113,7 @@ coins gold~
 a big pile of gold coins~
 A big pile of gold coins is lying here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 15 1000 0 0
 #6109
@@ -121,7 +121,7 @@ potion blue~
 a blue potion~
 A blue potion has been left here.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 15 28 -1 -1
 2 680 50 0
 E
@@ -133,7 +133,7 @@ potion yellow musky~
 a musky yellow potion~
 A yellow potion has been left here.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 15 39 -1 -1
 2 1000 200 0
 E
@@ -145,7 +145,7 @@ shield round large~
 a large round shield~
 A large round shield has been left here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 15 300 800 0
 E
@@ -157,7 +157,7 @@ crown iron~
 an iron crown~
 An iron crown rests on the ground.~
 ~
-9 g ae 0
+9 g 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 20 700 50 0
 E
@@ -169,7 +169,7 @@ sceptre iron~
 an iron sceptre~
 An iron sceptre lies on the ground.~
 ~
-1 g ao 0
+1 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 10 500 70 0
 E
@@ -181,7 +181,7 @@ ring iron~
 an iron ring~
 An iron ring has been left here.~
 ~
-11 g ab 0
+11 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 10 500 50 0
 E
@@ -198,7 +198,7 @@ star morning-star~
 the morning star~
 The morning star is here collecting dust while it lies on the ground.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 2 9 7
 10 150 20 0
 A
@@ -208,7 +208,7 @@ shirt scale~
 a black dragon scale shirt~
 A black dragon scale shirt has been left here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 10 1000 10 0
 E
@@ -223,7 +223,7 @@ skirt scale~
 a black dragon scale skirt~
 A black dragon scale skirt has been left here.~
 ~
-9 g af 0
+9 g 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
 8 500 10 0
 E
@@ -238,7 +238,7 @@ cloak black~
 a black, hooded cloak~
 A large, hooded cloak, as dark as the night, has been left here.~
 ~
-11 g ak 0
+11 g 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 20 800 40 0
 E
@@ -255,7 +255,7 @@ belt silver~
 a broad silver belt~
 A broad silver belt has been left here.~
 ~
-9 ag al 0
+9 ag 0 0 0 al 0 0 0 0 0 0 0
 6 0 0 0
 4 500 35 0
 E
@@ -267,7 +267,7 @@ sword long slender~
 a long, slender sword~
 A long, slender sword lies on the ground.~
 ~
-5 agjl an 0
+5 agjl 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 3
 4 300 60 0
 E

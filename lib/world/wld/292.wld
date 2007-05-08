@@ -5,7 +5,7 @@ marble sweep up to the ceiling, melting into the dome overhead without
 a seam.  A blazing red carpet leads from the entrance to the throne in
 the center of the room.  This is truly the home of a great sage!
 ~
-292 cde 0
+292 28 0 0 0 0
 D0
 ~
 ~
@@ -14,6 +14,10 @@ D2
 ~
 ~
 0 -1 29202
+E
+throne~
+   Its nice, for a chair, but drab, for a throne.    
+~
 E
 credits info~
    Kerofk by Amanda Eterniale & Builder_5
@@ -62,10 +66,6 @@ of George Essl's Dikued program. Even more thanks to the brothers of
 FORCE and all the players at VieMud, for some of the most painful 
 playtesting ever seen.
 ~
-E
-throne~
-   Its nice, for a chair, but drab, for a throne.    
-~
 S
 #29201
 MouseRider's Bedroom~
@@ -76,7 +76,7 @@ lights up that small area, leaving the rest of the room enshrouded in
 darkness.  In the gloom to the west, you can barely make out a large
 steel door.
 ~
-292 d 0
+292 8 0 0 0 0
 D2
 ~
 ~
@@ -94,7 +94,7 @@ white temple to your north.  To the south is a smaller blue temple,
 its doors locked by great bands of magic.  Several people glare at
 you, wondering if you're going to cut through the line.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -124,7 +124,7 @@ that it was built by elves and dwarves together during a peaceful age
 long ago.  Dust covers almost everything, especially the stairs
 leading down into the earth by the nave.
 ~
-292 cd 0
+292 12 0 0 0 0
 D0
 ~
 gates~
@@ -141,7 +141,7 @@ citizens of Kerofk are here, bustling and jostling each other in an
 attempt to get all they have to do done as fast as possible.  Bump Oof
 Excuse Me!  There is a Mage's Guild to the north.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -163,7 +163,7 @@ clue how to get across...  Wait, there's an opening!  Sprint, Turn,
 Jab!  Run, Run, Run...  you're across! You look up at the never-ending
 twilight and wonder how so many people could bear to live here.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -188,7 +188,7 @@ Road, and for a moment you forget what kind of strange place you're
 in.  A flowerbox filled with wilted flowers brings you back to
 reality; this city hasn't seen the sun for decades...
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -207,7 +207,7 @@ bored fashion, and then hasten to fill them before the customers
 leave.  Something crunches under your step, and you're afraid to look
 down to see what it was....stay awhile?
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -223,7 +223,7 @@ it would be a good idea to step off, but you've already guessed that,
 haven't you?
    Cliffside Road runs north and south from here.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -251,7 +251,7 @@ the citzenry of Kerofk walk up and down the street, almost oblivious to
 the incredible drop mere feet away.
    Cliffside Road continues North and South.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -278,7 +278,7 @@ further east.  Northwards is Cliffside Road, to the west is Moon Gate
 Road, and to the east a vast expanse of stars shine over the dark
 ocean below.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -300,7 +300,7 @@ picture of a trout in full plate hanging out front.  'Bob's Armoury
 and Tackle' it proclaims.  Armoury? Tackle Shop?!?  How curious!
    Moon Gate Road continues to the east and west.
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -321,7 +321,7 @@ walk about under the starlight here, in a hurry to get to shops, their
 homes, to work, et cetera.  Citizen's Road is to the north, Moon Gate
 Road continues east and west.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -342,7 +342,7 @@ district. It suddenly strikes you how orderly this city is planned...
 done that way on purpose?  Well, it doesn't look like there's anything
 interesting here, but the road continues north and south.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -360,7 +360,7 @@ the cliff's edge.  That cliff looks kind of dangerous actually.  The
 Cliffhanger looks good, though.
    Cliff Side Road continues to the north and south.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -386,7 +386,7 @@ foot drop off just to your east with the ocean below.  Hmm...something
 tells you not to go east...must be that brain thing, eh?
    Cliffside road leads south, Star Gate Road leads west.
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -407,7 +407,7 @@ shine down as you look around for the source of the silence.  Ah,
 there's a bookstore/library to your north!  Moon Gate Road continues
 to the east and west as well.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -428,7 +428,7 @@ around and do their business.  Looks like there's some private homes
 on Citizen's Road to your south, and Star Gate Road continues to the
 east and west.
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -450,7 +450,7 @@ sagging demeanor seem to eminate an air of death and decay and
 cliche's.  Could anyone possibly live in there?
    Citizen's Road continues north and south.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -472,7 +472,7 @@ Card'.  The smell wafting out its doors is enough to make a dead man
 turn away in disgust...how about you?
    Star Gate Road continues to the east and west
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -492,7 +492,7 @@ Star Gate Road~
 but not by much.  To the north is a large farmer's stand where a lot
 of the citizenry seem to be going in and out of.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -515,7 +515,7 @@ laughing inside; it's obviously a tavern or an inn, and popular to
 boot.
    Star Gate Road continues east and west
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -537,7 +537,7 @@ and west.
 
    There is an odd feeling of power to your north.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -563,7 +563,7 @@ arrayed outside its doors under heavy lamplight, and a sign proclaims
 assorted types of herbs on special today.
    Business Road continues north and south.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -586,7 +586,7 @@ over.  Your reflexes save you, but you feel you better get out of this
 intersection soon.
    Center Road is east-west, Business road is north-south.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -613,7 +613,7 @@ chambers, not to mention Mayor Kell's office.  To the east you see a
 huge white temple with a line outside, and a smaller blue temple.
    Center Road continues east and west.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -635,7 +635,7 @@ front.  The keep looks like it was built to withstand floods,
 earthquakes, and even acts of God!
    Moon Gate Road continues east and west.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -656,7 +656,7 @@ vacant lot to your south.  Also, Moon Gate Road continues east-west.
 The air seems to crackle with energy here, but you can find no source
 for such power.
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -678,7 +678,7 @@ on.  There's a few shops along this road, but they don't look terribly
 interesting under this aspect.  Looking around, you notice the
 entrance to the city graveyard to the south.
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -699,7 +699,7 @@ area as people go about their business.  Along Business Road to the
 north you see many types of different shops lining the street, and
 Moon Gate Road continues east-west.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -720,7 +720,7 @@ see the intersection of of Center Road and Business Road, and
 southwards is another intersection--Business Road and Moon Gate Road.
    There is a shop to the west, a dirty sign proclaiming it 'OPEN'.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -742,7 +742,7 @@ be some sort of 'catch-all' general store.  Also, Moon Gate Road
 continues east towards the cliff, and west towards the actual Moon
 Gate.
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -764,7 +764,7 @@ has some bustle to it...must be all that night life!  Feeling pleased
 at your prospects, you look around for something to do...
    Wall Side Road leads north, Moon Gate Road leads east.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -785,7 +785,7 @@ raid or war it seems.  There are some signs of construction about, but
 it seems that there is no great need for more buildings right now.
    Wall Side Road continues north and south.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -805,7 +805,7 @@ architecture, and the majesty of the starry skies above, you know this
 is a sight you'll never forget.
    Center Road leads east, Wall Side Road continues north-south.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -825,7 +825,7 @@ Wall Side Road, North~
 city's wall.  To your east is a recruiting office for the city militia
 of Kerofk.  Wall Side Road continues north and south.
 ~
-292 d 1
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -848,7 +848,7 @@ in a world of eternal twilight.  A street sign informs you that this
 is Wall Side Road running south from here, and Star Gate Road leads
 away to the east.
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -869,7 +869,7 @@ this busy street between and through them.  It seems that they're used
 to adventurers, or just don't care. Star Gate Road continues east and
 west, intersecting Business Road and Wall Side Road respectively.
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -887,7 +887,7 @@ for a temple, this building is big!  Perhaps it would be worth a look
 around?
    Center Road continues to the east and west.
 ~
-292 d 1
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -911,7 +911,7 @@ look for it...
 crossbows around the room.  Maybe it wouldn't be a hot idea to try
 tosteal something after all...
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -928,7 +928,7 @@ The Back Room~
 the one entrance you came through, and virtually nothing else but for a
 rickety table, a worn chair and a lantern hanging from the ceiling.
 ~
-292 cd 0
+292 12 0 0 0 0
 D3
 ~
 door~
@@ -944,7 +944,7 @@ cliff-- evidently to give the gamblers within that feeling of danger.
 The elegance is fabulous, and you feel as if you might want to join
 in.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -963,19 +963,19 @@ members show that Ben might have a nice side, but you suspect that
 they are there just for show.  A few vicious exotic weapons are also
 hanging up, looking very sharp.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
 0 -1 29241
 E
-weapons~
-   A closer examinations reveal the weapons are all junk.  
-~
-E
 pictures~
    With a closer look, you realize the pictures are all of someone else's
 family.  
+~
+E
+weapons~
+   A closer examinations reveal the weapons are all junk.  
 ~
 S
 #29243
@@ -987,7 +987,7 @@ etc, etc.  The shopkeeper has made this nightmare somewhat homey,
 though, with doileys and pictures scattered about in a pleasing
 display.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1003,7 +1003,7 @@ you notice that everyone here is carrying some sort of weapon, and
 carry themselves like they know how to use it.  Seems like a fairly
 safe place!
 ~
-292 d 0
+292 8 0 0 0 0
 D2
 ~
 ~
@@ -1021,7 +1021,7 @@ clenched fist.  A sign here proclaims the safeties of the fortress,
 including 'Barred Windows, and Guards You Can Really Count On!'  A
 small desk is here, a bored receptionist behind it.
 ~
-292 d 0
+292 8 0 0 0 0
 D5
 ~
 ~
@@ -1036,7 +1036,7 @@ future.  As you look around, you see lots of people passed out on the
 floor--this is obviously a lower class dive.  The room is dark, the
 people sweaty, the barmaids tired, and you want a drink.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1050,7 +1050,7 @@ goats, moats, croats, money, honey, spells, bells, Hell, smells, and
 on and on and on!  You think that you might be able to find something
 interesting here...
 ~
-292 d 0
+292 8 0 0 0 0
 D2
 ~
 ~
@@ -1067,7 +1067,7 @@ and you find yourself in complete darkness.  You feel the presence of
 someone in the room with you--was that a finger on your purse?!?
 Quick!  Make a light!
 ~
-292 ad 0
+292 9 0 0 0 0
 D1
 ~
 bookcase~
@@ -1081,7 +1081,7 @@ deeper into the guild: the east marked, 'Library', the north marked,
 'Leonna's Office', and the west marked, 'Storeroom'.  You can't but help to
 feel that this is a SMALL guild for such a large city...
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 north door~
@@ -1105,7 +1105,7 @@ The Kerofk MobChute~
 reachable to player characters.  Thanks to Locke of Cthulhu mud for
 use of this idea!
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1140,7 +1140,7 @@ at a moment ago.  Black satin-covered chairs are arranged for comfort
 of her guests, and you have a sudden urge to just sit and rest snd
 perhaps talk a bit.
 ~
-292 d 0
+292 8 0 0 0 0
 D2
 ~
 door~
@@ -1153,7 +1153,7 @@ neat stacks of blank scrolls, quills, ink, unenchanted wands and
 staves, empty vials, and everything else the professional mage could
 want.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 door~
@@ -1168,7 +1168,7 @@ with those mages.  The books seem very well organized by the 'Tewey
 Teleportation System', another one of those mage gimmicks.  You wonder
 what you'd like to read.
 ~
-292 d 0
+292 8 0 0 0 0
 D3
 ~
 door~
@@ -1183,7 +1183,7 @@ Extremely bright lanterns keep the place perpetually lit and the
 plants healthy.  You feel perfectly at home here, and the atmosphere
 is such that you can hardly pull yourself away...
 ~
-292 d 0
+292 8 0 0 0 0
 D3
 ~
 ~
@@ -1201,7 +1201,7 @@ appointments, WHEW!  You're suddenly glad you don't work here!
 		North-Courtroom
 		West-Council Chambers
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1229,7 +1229,7 @@ Outer Office~
 middle.  The secretary's desk is a mess of unfinished work, and the
 wastecan looks full to the brimming.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1248,7 +1248,7 @@ touches of a well lived-in office.  There is also a well stocked bar
 here, probably stocked by Kell's own tavern in the northern part of
 town.
 ~
-292 cd 0
+292 12 0 0 0 0
 D2
 ~
 ~
@@ -1260,7 +1260,7 @@ Courtroom~
 general populace. At the moment there is no court case going on, but
 it looks like they are setting up for one soon.
 ~
-292 d 0
+292 8 0 0 0 0
 D2
 ~
 ~
@@ -1272,7 +1272,7 @@ Outer Chamber~
 paneling is wood grain, the guards are big.  Waiting might be a good
 idea...
 ~
-292 cd 0
+292 12 0 0 0 0
 D1
 ~
 ~
@@ -1291,7 +1291,7 @@ ATTACK!!!
    There is a big round table here with 6 seats.  Otherwise, this room
 seems plain, to minimize the distractions upon the Council Members.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 door~
@@ -1307,7 +1307,7 @@ Jailer's Room~
 hook on the wall.  In one corner near the chair, there is a pile of
 discarded newspapers.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 door~
@@ -1317,12 +1317,12 @@ D4
 ~
 0 -1 29255
 E
-chair~
-   There's a tag on it: 'Laz-E-Goblin'
-~
-E
 newspaper~
    Seems all it is is war news.  How boring!  
+~
+E
+chair~
+   There's a tag on it: 'Laz-E-Goblin'
 ~
 S
 #29262
@@ -1332,7 +1332,7 @@ cold... its only damp, musty and cold--they must air this place out
 every once in a while.  There is a bit of grime here, but most of its
 associated with the prisoner...
 ~
-292 acd 0
+292 13 0 0 0 0
 D3
 ~
 door~
@@ -1345,7 +1345,7 @@ tavern he and his family run, and to the south is the reception area
 for the inn part of this establishment.  Somehow, this place manages
 to feel homey and efficient, as well as giving people a place to meet.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1365,7 +1365,7 @@ Reception~
 big and clean, and you'll never have a more comfortable stay than at
 Kell's House.
 ~
-292 cd 0
+292 12 0 0 0 0
 D0
 ~
 ~
@@ -1378,7 +1378,7 @@ talking about everything from politics to hunting.  Is seems as if
 this is more of a thinker's bar than a drinker's, however.  The
 barmaids seem efficient, though, and the bar is very well stocked.
 ~
-292 d 0
+292 8 0 0 0 0
 D3
 ~
 ~
@@ -1394,7 +1394,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHH!!!!
    	   (that wasn't a good idea, but now you know that, eh?)
 
 ~
-292 c 0
+292 4 0 0 0 0
 S
 T 29204
 #29267
@@ -1403,7 +1403,7 @@ Whoops...~
 have a...  SSSSSSPPPPPPPLLLLLLAAAAAAAAATTTTTTTTT!!!!!
 
 ~
-292 c 0
+292 4 0 0 0 0
 S
 T 29204
 #29268
@@ -1412,7 +1412,7 @@ The Kerofk MobChute~
 reachable to player characters.  Thanks to Locke of Cthulhu mud for
 use of this idea!
 ~
-292 0 0
+292 0 0 0 0 0
 D0
 ~
 ~
@@ -1446,7 +1446,7 @@ statue stands proud...an aura around one upheld hand, the other
 holding an open book.  To the west are the living areas of the Priests
 of XXXX, but you think those are restricted to the devout.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1468,7 +1468,7 @@ a small stool and writing desk is in one corner, a old looking man
 working quietly behind it.  A window lets dim light in to supplement
 the lanterns hanging on the brick walls.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1481,7 +1481,7 @@ a grizzled sergeant behind it.  He turns the paperwork in front of him
 around for you... 'Name, Race, Sex, Age, Address...'.  Behind him you
 see the office of the Captain of the Guard.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1498,7 +1498,7 @@ you've never seen before line the walls, and you notice some
 bloodstains on the floor.  A large area in the center is bared,
 allowing sparring room.
 ~
-292 d 0
+292 8 0 0 0 0
 D3
 ~
 ~
@@ -1510,7 +1510,7 @@ Vacant Lot~
 feeling that something SHOULD be here, but isn't.  How Odd!  Moon Gate Road is
 to the north.    
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1539,7 +1539,7 @@ is what you have now.
    Both of us hope you enjoy this area, over a year in the making...
 	Amanda Eterniale			Builder_5
 ~
-292 d 1
+292 8 0 0 0 0
 S
 #29275
 Shrine to the Emperor~
@@ -1550,7 +1550,7 @@ toppled over here, a strange eye-shaped stone embedded in it pointing
 at the sky.  A strange thrum of power in the background raises your
 hackles...remnants and echoes of Rand's power, evidently.
 ~
-292 cd 0
+292 12 0 0 0 0
 D2
 ~
 ~
@@ -1570,7 +1570,7 @@ entering the city with their produce.  Guards wave everyone through
 without a second glance.  There is a big sign here that you might want
 to read.
 ~
-292 cd 0
+292 12 0 0 0 0
 D1
 ~
 ~
@@ -1594,7 +1594,7 @@ defended.  The guards look at you suspiciously, but let you by with
 little or no hassle. There is also a big sign here that you may want
 to read.
 ~
-292 cd 0
+292 12 0 0 0 0
 D1
 ~
 ~
@@ -1620,7 +1620,7 @@ ever-so-slightly ajar, seemingly to beckon the wary to enter.  The
 strange feelings you're getting you can't seem to attribute to horror
 or evil, so why push your luck?
 ~
-292 cd 0
+292 12 0 0 0 0
 D1
 ~
 ~
@@ -1638,7 +1638,7 @@ and you whirl about, expecting it to slam shut.  It doesn't and you
 feel kind of silly.  'No one lives here,' you say to yourself quietly,
 just as footsteps upstairs sound...
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1657,7 +1657,7 @@ floor, and below it's peak is a set of cracked glass doors that open
 up into the backyard.  The hall of the house leads north-south,
 gaining access to some of the interior rooms.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1688,7 +1688,7 @@ inside the house, although there is a looming presence from the garden
 area opening up to your west.  A slight stench of decay passes over
 you, and you consider going back inside the house to your east.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1708,7 +1708,7 @@ of water to a northernly direction, and you can go deeper into the
 garden to the east, but you definitely think going west might be the
 best idea...
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1732,7 +1732,7 @@ know exactly what they are.
    You can head south, to the garden's entrance, or west, to a more
 open area in the garden.
 ~
-292 ad 0
+292 9 0 0 0 0
 D2
 ~
 ~
@@ -1750,7 +1750,7 @@ ground, waiting to be used.  Faint light trickles down through the
 leaves like water on this scene, and you feel strangely at peace with
 the garden, recognizing it for the single growing entity it is.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1766,7 +1766,7 @@ In the Garden~
 plant matter make you dizzy and nauseous.  What ever killed the plants
 you want no part of.  Perhaps leaving post-haste would be wise.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1786,7 +1786,7 @@ to your right, both slightly ajar.  A window to your north looks out
 to an alley behind a gambling parlor, and to the south is the main
 room of the mansion.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1809,7 +1809,7 @@ like one of those rooms that are just for show and not for everyday
 use.  However, the thick layer of dust covering everything belies the
 neatness of the arrangement of furniture.
 ~
-292 d 0
+292 8 0 0 0 0
 D3
 ~
 ~
@@ -1823,7 +1823,7 @@ It looks like a great deal of violence has occurred in this room, as
 if thousands of fights have occurred here over the years.  You wonder
 who could be capable of such wanton destruction.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1837,7 +1837,7 @@ west, and northwards is the main room of the mansion.  A window once
 graced the south end of this hallway, but it has since been boarded up
 from the outside.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1859,7 +1859,7 @@ a small folding table and a few chairs taking its place.  Obviously
 the current owners of this mansion don't care much about this place to
 let it fall into ruin so.
 ~
-292 d 0
+292 8 0 0 0 0
 D3
 ~
 ~
@@ -1874,7 +1874,7 @@ wall of the stairwell seemed to have been a stained-glass window once,
 but has been worn and cracked by time to just be shards of colored
 glass that doesn't even keep the wind out.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1897,7 +1897,7 @@ and you see small insects scuttling about in the trash on the floor.
 The one thing that is sure is that you don't want to eat anything that
 was prepared here!
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1909,7 +1909,7 @@ Hallway~
 reach the roof.  A single door is set in the east wall, and the hall
 leads north to where the stairwell leads down.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 ~
@@ -1928,7 +1928,7 @@ drawers, and on the left there is just a mess of clothes, papers,
 books, and half-eaten food.  There isn't much interesting here,
 though.
 ~
-292 d 0
+292 8 0 0 0 0
 D3
 ~
 ~
@@ -1944,7 +1944,7 @@ parlor to the north, where you see several low-life types walking and
 staggering in and out.  The starlight filtering in through the window
 makes this hall a bit more illuminated than the rest of the house.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -1966,7 +1966,7 @@ wall in one corner.  A lot of disturbed dust on the floor makes you
 wonder what this room is being used for, since it is obvious no one
 has used the bed for a _long_ time.
 ~
-292 d 0
+292 8 0 0 0 0
 D3
 ~
 ~
@@ -1986,7 +1986,7 @@ the floor neatly, and you notice that there is hardly any dust
 anywhere in this room, making it seem somewhat 'fresh' despite the
 run-down-ness of the rest of the household.
 ~
-292 d 0
+292 8 0 0 0 0
 D1
 ~
 ~
@@ -2000,7 +2000,7 @@ stacked on them.  The smell of formaldehyde is very strong here and
 you begin to feel faint.  There's a door built into a partition to the
 south...maybe you can make it...
 ~
-292 ad 0
+292 9 0 0 0 0
 D2
 ~
 door~
@@ -2025,7 +2025,7 @@ made.  A single chair is pulled up to a writing desk, where it looks
 like someone works frequently.  Up here it is very chill, much colder
 than it is outside.
 ~
-292 d 0
+292 8 0 0 0 0
 D0
 ~
 door~

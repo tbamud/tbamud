@@ -6,7 +6,7 @@ A brain dead zombie is here, drooling all over himself.
    It was once a corpse but has somehow been brought back to life.  It's very
 slow and very stupid.  It looks back at you and says 'fooooooood.  '
 ~
-dg 0 -500 E
+72 0 0 0 0 0 0 0 -500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -19,7 +19,7 @@ A mourner stands here weeping over a lost love.
    This lady is dressed all in black.  Tears stream down her veil covered face.
 She has been paying her last respects for the third time this week.    
 ~
-dghl 0 500 E
+2248 0 0 0 0 0 0 0 500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -34,7 +34,7 @@ overalls and wears a Midgaard ball cap.  He was once an adventurer but decided
 to dig graves instead of ascending to immortality.  You'd best keep out of his
 way.    
 ~
-cdgl hs 1000 E
+2124 0 0 0 524288 0 0 0 1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -48,7 +48,7 @@ The chapel priest is standing here, conducting service.
 of as "father".  He stands at the podium and lectures over some drivel that you
 really don't care about.    
 ~
-dghl hks 1000 E
+2248 0 0 0 524288 0 0 0 1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -63,7 +63,7 @@ An altar boy sits here, bored out of his mind.
 through the corner of his eyes as if he's expecting another flogging at any
 moment.    
 ~
-bdhl 0 1000 E
+2186 0 0 0 0 0 0 0 1000 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 5 5 1
@@ -76,7 +76,7 @@ A nasty ghoul is here, and it wants to eat you for dinner.
    Its claws are filthy, its fangs look sharp.  Fresh blood drips down the side
 of its face, probably the remains of whatever it caught last.    
 ~
-bd dfk -1000 E
+10 0 0 0 80 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -91,7 +91,7 @@ The barrow wight is here standing atop a pile of decaying corpses.
 to toe in a thick blanket of dirt.  Its claws look very nasty and the mere
 thought of being struck by them sends shivers up and down your spine.    
 ~
-bd dfs -1000 E
+10 0 0 0 524368 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -104,7 +104,7 @@ A mean looking skeleton warrior is here grinning at you.
    There's no flesh on it at all -- just bones covered by armor.  You wonder
 what kind of forces keep it from collapsing into a heap on the floor.    
 ~
-dg dfs -1000 E
+72 0 0 0 524368 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -117,7 +117,7 @@ The shadows in this room seem to move of their own will.
    It is pitch black.  The mere thought of being touched by it makes you feel
 weak.    
 ~
-dg dfs -1000 E
+72 0 0 0 524368 0 0 0 -1000 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -130,7 +130,7 @@ A rotting mummy wrapped in dirty cloth is here.
    It looks ancient.  The rank smell of decay reeks from its body.  Worms crawl
 in its eye sockets and pus drips from between bandages.    
 ~
-bd dfs -1000 E
+10 0 0 0 524368 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -143,7 +143,7 @@ A banshee is here, leaning on a sarcophagus and crying loudly.
    Even undead, she is quite beautiful.  Tears streak down her high, elven
 cheek bones.  You wonder why she is so upset.    
 ~
-bd hs 0 E
+10 0 0 0 524288 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 6 6 2
@@ -156,7 +156,7 @@ You glance right through the spectre and see the wall on the other side.
    You see the faint outline of a man.  You see right through him, and judging
 by the way he's coming after you, he'd like to see through you.    
 ~
-bd bdfhs -1000 E
+10 0 0 0 524372 0 0 0 -1000 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -169,7 +169,7 @@ A jeweled skull is sitting here, grinning at you.
    It is the most ancient creature you have ever seen.  All that is left is the
 jewel encrusted skull and a pile of fine dust.    
 ~
-bd hk -1000 E
+10 0 0 0 0 0 0 0 -1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -183,7 +183,7 @@ A huge guardian daemon with huge teeth is guarding the door.
    It is a huge beast with huge teeth and claws.  It looks very pissed off.  
 
 ~
-bd dfhs -750 E
+10 0 0 0 524368 0 0 0 -750 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -197,7 +197,7 @@ The Death Master is here trying to animate a corpse.
 trying to raise an army of undead with which to destroy Midgaard.  You must
 stop him!    
 ~
-bd dfhs -1000 E
+10 0 0 0 524368 0 0 0 -1000 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -209,7 +209,7 @@ An Imp is here, don't even ask it for reimbursement.
 ~
    Well, you've always wanted to talk to an IMP.  Now here's your chance!    
 ~
-bcdh stu -1000 E
+142 0 0 0 1572864 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -222,7 +222,7 @@ A man sits here, snoring loudly.
    He's dressed in his Sunday best, but apparently the boring sermon has put
 him to sleep.    
 ~
-dghl 0 500 E
+2248 0 0 0 0 0 0 0 500 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 4 4 1
@@ -235,7 +235,7 @@ An undead spider is here, spinning more cobwebs.
    Looks like just the exoskeleton, a dried out husk remains.  Yet, it still
 moves about on its thin legs and still spins its ghostlike cobwebs.    
 ~
-bd bdf -500 E
+10 0 0 0 84 0 0 0 -500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0

@@ -8,7 +8,7 @@ small child and then the light shifts and she seems a woman.  The only thing
 remaining constant is her peaceful expression and her eyes, which remain
 serenely closed as though she is deep in some dream state.  
 ~
-bdnopr fk 0 E
+188426 0 0 0 64 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 0 10000
 6 6 2
@@ -24,7 +24,7 @@ hair poking out from a tightly woven braid and fresh smears of dust and dirt
 streaking her face.  Her expression is focused and intense, piercingly aware of
 all around her.  
 ~
-bde k 0 E
+26 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -44,7 +44,7 @@ A coloured crayon moves back and forth as she draws around her splayed fingers,
 leaving the white canvas of paper covered with the smeared dark outlines of
 hands.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -63,7 +63,7 @@ male or female, but its little navy jumpsuit is distinctly boyish.  The only
 thing unusual is its ghostly transparence, fading in and out of visibility like
 a flickering shadow.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -79,7 +79,7 @@ face.  Bright starry eyes peer keenly around as though everything is new and
 exciting.  She fidgets constantly, as though a little hyper, and her small
 fingers are blistered from constant colouring or writing.  
 ~
-bd cdk 0 E
+10 0 0 0 24 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -96,7 +96,7 @@ glittering wings beating so rapidly they can only be seen in a blur.  A long
 slender beak curves delicately from its irridescent green head, shimmering blue
 feathers continuing down its body.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 0 2500
 8 8 0
@@ -114,7 +114,7 @@ or early twenties, the slight swell of her belly announcing the coming birth of
 another child.  Her long dark hair is uncut, and her naturally pretty face has
 been carefully made up, eyes sparkling as she prepares food for the family.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -132,7 +132,7 @@ somewhat unsuccessful music playing, the only thing remarkable about him is the
 fact that his hand is mauled and deformed, only three fingers grasping the
 trumpet where there should be five.  
 ~
-bd 0 -1000 E
+10 0 0 0 0 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -150,7 +150,7 @@ mountains.  Her whole form flickers, as a flame that is dying, one moment solid
 and the next transparent and fading, a shadow-grey hue darkening her features.
 
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -167,7 +167,7 @@ imaginary toys, but her eyes are strangely cold and distant.  Her bitten nails
 are painted a pretty girly pink and her long brown hair is tied into two woven
 plaits, long blue ribbons trailing down her back.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -183,7 +183,7 @@ The ghostly figure of a rearing spider creeps here.
 twitching like a demon's hand.  Moving fast and furtively, it makes no sound as
 it stalks its potential prey, an unnatural chill clouding the air around it.  
 ~
-dfg dfks 0 E
+104 0 0 0 524368 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 0 10000
 8 8 0
@@ -199,7 +199,7 @@ small forehead furrowed in concentration as she continually stacks and restacks
 the lettered blocks.  Her lips move silently as she mumbles words to herself,
 intensely focused blue eyes far too old for the rest of her face.  
 ~
-bdnopqr k 0 E
+253962 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -218,7 +218,7 @@ theirs.  His face is unusual, almost too bland as though he were a painting
 half-finished, and his expression is cold and distant, firmly fixed on the
 strange magic his hands are creating.  
 ~
-bdenopqr k 0 E
+253978 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -234,7 +234,7 @@ sides of his highchair.  Bright blue eyes sparkle happily from his cherubic
 face, and little wisps of blonde hair stick haphazardly out from all sides of
 his head.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -250,7 +250,7 @@ Her little round face is flushed and chubby-cheeked, fine black hair fastened
 neatly into pigtails.  Humming happily to herself, she pauses only now and again
 to suck at her bottle.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -266,7 +266,7 @@ and mischief.  Long uncut hair cascades down her back, shimmering shades of gold
 in the light.  Smiling widely, she sings in a high-pitched little voice as she
 claps her hands to the rhythm of the nursery rhyme.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -284,7 +284,7 @@ sprinklings of freckles standing out prominently against his skin.  Tufts of
 untamed dark hair stick out all over the place, his wide grin revealing several
 gaps where his adult teeth are beginning to grow in.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -302,7 +302,7 @@ work, frail dark hair beginning to thin in places, the first signs of wrinkles
 cracking across his face.  His hands move quickly, roughly adjusting the live
 roses, crushing the thorny dead ones, his hands scarlet-stained with blood.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -318,7 +318,7 @@ the first shadows of time and stress creeping across her face.  Long, uncut
 brown hair cascades down her back, tied into a rough ponytail and greyed here
 and there with pats of flour.  
 ~
-bdmnopqr 0 0 E
+258058 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -335,7 +335,7 @@ have had a ghostly appearance even in life.  Her fingers clutch the branches of
 the tree as she climbs amongst them, peering out towards the garden and the
 flowers dancing there.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -350,7 +350,7 @@ An insect flits unobtrusively amongst the shadows.
 glossy and segmented.  Two sleek silver-webbed wings extend from either side of
 its back, several wirey black legs curled cautiously close to its abdomen.  
 ~
-dghnopqr 0 0 E
+254152 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 0 10000
 8 8 0
@@ -369,7 +369,7 @@ fast as it melds in and out of surrounding shadows.  Its face is eerily blank,
 just darkness where its mouth, nose, and ears should be.  Only two red eyes
 blaze like burning coals from the blackness.  
 ~
-dg k -1000 E
+72 0 0 0 0 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -387,7 +387,7 @@ face flushed with exertion as she breathes deeply.  Her large blue eyes seem
 intently focused on what she is doing as if she pursues a goal that eludes her.
 
 ~
-bdnopqr k 0 E
+253962 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -405,7 +405,7 @@ of her eyes.  There are no wounds or visible scars indicating how they were
 lost, just two gaping holes where they should be; the blackness within
 unnaturally and chillingly dark.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -422,7 +422,7 @@ been repeatedly applied and washed away.  Her smoothly featured face is vividly
 streaked with the phosphorescent stuff, two black gaping holes staring blankly
 where her eyes should be.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -441,7 +441,7 @@ torso.  His eyes are glazed and dull from watching television, a dark shadow of
 stubble spreading over his face and rust-coloured stains covering his
 three-fingered right hand.  
 ~
-bd 0 -1000 E
+10 0 0 0 0 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -458,7 +458,7 @@ shattering violently on the surface of the counter.  Her hands fidget
 restlessly, streaked with blood as she plays with the broken tears and mirror
 shards.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -474,7 +474,7 @@ large mushroom-domed head.  A tiny, black gaping eye is its only human-like
 feature, even its movements clumsy and unnatural as it waddles on two bloated,
 hairy legs.  
 ~
-dg 0 -1000 E
+72 0 0 0 0 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -491,7 +491,7 @@ from one object to another.  Constantly playing and touching, she seems like an
 average curious kid except for the long angry cuts that line the insides of her
 arms, red blood spilling over her skin like crimson tears.  
 ~
-bdnopqr k 0 E
+253962 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -508,7 +508,7 @@ struck with light.  Its large glassy eyes seem vacant and unperceiving, although
 there is a strange surrealism to the creature; almost as if it were some dream
 object instead of an actual fish.  
 ~
-bdno 0 0 E
+24586 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 0 3600
 8 8 0
@@ -525,7 +525,7 @@ tail fanning out as the creature fluffs up and preens itself, the rustling of
 its feathers sounding eerily like whispering.  Large black eyes peer warily but
 innocently about as the dove coos quietly to itself.  
 ~
-bdno 0 0 E
+24586 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 0 3600
 8 8 0
@@ -542,7 +542,7 @@ clump of mud than any animal.  Its tiny black beaded eyes look particularly
 perceptive, and there is a strange shimmering effect to the creature, indicating
 that it is not quite what it seems.  
 ~
-bdno 0 0 E
+24586 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 0 3600
 8 8 0
@@ -558,7 +558,7 @@ A small girl hides quietly here.
 fear than her age merits.  White-knuckled, she clutches the carpet anxiously,
 glancing constantly outward as though waiting for someone to come.
 ~
-bdnopqr k 0 E
+253962 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -575,7 +575,7 @@ soft curves should be developing.  Most haunting of all are her large blue eyes,
 deeply hollow and vacant, as though some torment has simply driven her soul
 away.  
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 0 6400
 8 8 2
@@ -596,7 +596,7 @@ around her lips; sealing them together.  The wire stitches glow vaguely as if
 protected by some evil magic, indicating that it will take a very special kind
 of blade to 'cut' them.
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 0 6400
 8 8 2
@@ -613,7 +613,7 @@ fiercely blue as she eyes her surroundings and everything in them with almost
 paranoid suspicion.  Her movements are rapid and unpredictable, small fists
 clenching and unclenching as she bares her teeth like an animal about to bite.
 ~
-bdenopqr dfk 0 E
+253978 0 0 0 80 0 0 0 0 E
 8 18 5 1d1+100 1d2+1
 0 6400
 8 8 2
@@ -631,7 +631,7 @@ the ground like the shadow of some dancing flame.  Two evil emerald eyes seem
 uncannily intelligent as the creature surveys its surroundings, a bright ruby
 tongue flickering out in a gentle hiss.  
 ~
-dg 0 -1000 E
+72 0 0 0 0 0 0 0 -1000 E
 8 18 5 1d1+80 1d2+1
 0 6400
 8 8 0
@@ -650,7 +650,7 @@ of her features are irretrievably marred, it looks as though she is walking
 dead, her skin literally slashed into ribbons, and her large blue eyes eerily
 glazed.
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 0 6400
 8 8 2
@@ -666,7 +666,7 @@ were just about to hit her teen years.  Some strange event has frozen her in
 place however, and a perpetual ghost of a child is all that remains, her faded
 blue eyes dulled with time and the loss of innocence without the loss of youth.
 ~
-bdnopqr dk 0 E
+253962 0 0 0 16 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 0 6400
 8 8 2
@@ -683,7 +683,7 @@ mischief and humour dancing in her large blue eyes.  Long wisps of wavy brown
 hair trail down her back, drifting in front of her face as she wanders,
 examining everything curiously.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -700,7 +700,7 @@ with time and stresses.  Her blue eyes look as if they were once full of light,
 but now they are dimmed and dull, her eyelids half closed as if she were about
 to fall asleep, and her body slumped dejectedly as she lies resting.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -716,7 +716,7 @@ corner with her knees pulled up to her chest and her head hidden in her arms.
 She looks so still as to almost be mistaken for a doll if it weren't for the
 heaving of her shoulders with slow breaths and the occasional fidget.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -732,7 +732,7 @@ deep thought and his large blue eyes look slightly puzzled.  A smattering of
 freckles darkens his face, thick eyebrows and a tangle of dark hair flickering
 slightly in the stirring air.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -748,7 +748,7 @@ length of blonde hair shimmering down her back.  Her small eyes are a deep ocean
 blue, and her face is perfectly shaped as if sculpted, relaxed into a restful
 yet focused expression.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -764,7 +764,7 @@ speckling of freckles, large blue eyes concentrating playfully on her work as
 she sculpts lego into a spaceship.  Long dark hair flows down her back, smooth
 and shimmering like liquid as she moves.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -780,7 +780,7 @@ grin full of gaps where his adult teeth are still growing in.  Scruffy blonde
 hair swirls itself carelessly around his head, sticking up haphazardly as if he
 had just crawled out of bed.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -795,7 +795,7 @@ A mischievous looking shadow-girl sits watching television.
 into a bob around her rosy face.  Bright eyes peer thoughtfully at the
 television she is watching, lighting up with the sparks of some imagination.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -811,7 +811,7 @@ face illuminated by two wide blue eyes, rimmed with heavy sweeping lashes.
 Soft blonde hair cascades down her back in a shimmering wave, tumbling in front
 of her face as she plays.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -826,7 +826,7 @@ A freckled shadow-girl dances here, lost in a daydream.
 and big blue eyes surrounded with an abundance of freckles.  She hums quietly to
 herself, stumbling rather ungracefully about the room as she attempts to dance.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 0 20 10 1d1+0 1d1+0
 0 0
 8 8 2
@@ -842,7 +842,7 @@ blank expression on her face.  Careless wisps of blonde hair stick up all around
 her head, and her face is dirty and smudged where she has been eating whatever
 she can find.
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 2

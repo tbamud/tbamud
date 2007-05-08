@@ -3,7 +3,7 @@ key golden heavy~
 a golden key~
 A heavy golden key lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 900 0 0 0
 1 1 0 0
 #901
@@ -11,7 +11,7 @@ shield minotaur~
 a dark minotaur shield~
 A dark minotaur shield has been left here.~
 ~
-9 dgh aj 0
+9 dgh 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
 12 500 135 0
 E
@@ -26,7 +26,7 @@ potion speckled~
 a speckled potion~
 A speckled potion speckles here.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 15 15 15 15
 2 130 50 0
 #903
@@ -34,7 +34,7 @@ gauntlets troll~
 a pair of troll gauntlets~
 A pair of gauntlets made from troll skin lie on the ground.~
 ~
-9 g ah 0
+9 g 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
 8 200 135 0
 #904
@@ -42,7 +42,7 @@ ring platinum~
 a platinum ring~
 A shining ring of platinum lies here.  It has a tiny inscription.~
 ~
-1 ag abo 0
+1 ag 0 0 0 abo 0 0 0 0 0 0 0
 0 0 -1 0
 1 200 550 0
 E
@@ -63,7 +63,7 @@ flail~
 a flail~
 A flail has been carelessly left here.~
 ~
-5 fgh an 0
+5 fgh 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 7
 8 500 350 0
 A
@@ -73,7 +73,7 @@ coins gold treasure~
 a great pile of treasure~
 A great, gleaming pile of treasure lies at your feet.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 43500 0 0 0
 20 1 0 0
 #907
@@ -81,7 +81,7 @@ spear heavy~
 a heavy spear~
 A heavy spear has been tossed on the ground here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 11
 8 450 200 0
 A
@@ -91,7 +91,7 @@ trident~
 a trident~
 There is a warrior's trident here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 11
 8 350 200 0
 E
@@ -105,7 +105,7 @@ boots boat~
 a pair of boots~
 A pair of boots sit here in a puddle of water.~
 ~
-22 deq ag 0
+22 deq 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 1 500 185 0
 E

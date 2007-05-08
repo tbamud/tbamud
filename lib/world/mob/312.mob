@@ -11,7 +11,7 @@ When he finially came to his senses, he vowed that no leper would ever again be
 prosecuted, and so he set about protecting them and their awful home as best he
 could.    
 ~
-deglm hp 800 E
+6232 0 0 0 65536 0 0 0 800 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -25,7 +25,7 @@ A man in flowing robes sits upon the crest of the volcano, eyes closed in a tran
 down at his hands, you see that two of his fingers are missing.  This man is a
 leper!    
 ~
-bd h 700 E
+10 0 0 0 0 0 0 0 700 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -38,7 +38,7 @@ the wild old hermit~
    This poor man is obviously in the grips of some sort of dillusionary side
 affect from his leprosy.    
 ~
-bdf 0 100 E
+42 0 0 0 0 0 0 0 100 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -52,7 +52,7 @@ A lioness looks up at you with a slow, purring growl and licks her lips.
 appears to be sizing you up in proportion to a dinner plate does not give much
 time for admiration, though.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -66,7 +66,7 @@ A man riddled with pussing postules walks vacant-eyed about the area.
 he is going.  In fact - it doesn't even appear that he looks straight ahead, so
 mechanical is his gait.    
 ~
-dgn 0 300 E
+8264 0 0 0 0 0 0 0 300 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -80,7 +80,7 @@ A woman stares off into space, no longer caring about much of anything.
 swathed from head to toe in wet bandages which soak up most of the festering
 wounds all over her body.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -93,7 +93,7 @@ A terribly diseased man stands at the fence to the pen, gripping the rail.
    He does not move nor speak.  He stares into open air, his mouth half open
 with the occassional spittle dripping down his chin.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -106,7 +106,7 @@ An awfully disfigured woman walks through the camp, head down.
    She does not look up, even when she stumbles over something.  She simply
 wanders this small area in hopelessness.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 2
@@ -119,7 +119,7 @@ Tomm Walker strides about the community, encouraging faith in the Gods.
    Tomm truly believes that through supplication to the Gods, some lepers may
 find absolution and be heals through divine power.    
 ~
-dg 0 900 E
+72 0 0 0 0 0 0 0 900 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -132,7 +132,7 @@ A dying leper lies amid stained sheets and cloths, gasping his last breathes.
    His face is beyond description, the disease having such a hold on him that
 it is a wonder why he has not been thrown to the Sternal Flame as of yet.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -145,7 +145,7 @@ A boa constrictor lazily unwinds from a tree branch, eyeing you thoughtfully.
    It is roughly eight feet in length and it does not look all that fat right
 now.  It might be a good idea to sort of back up - real slow-like.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -158,7 +158,7 @@ A wild boar snorts a couple of times and then lowers its tusks.
    The snorting, the lowering of the tusks.  It seems to spark a small rule of
 thumb for wild boars...    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -172,7 +172,7 @@ Argus walks about the area, tidying up here and there.
 Most of their extremities are numbed or missing, making it easy to receive a
 wound without noticing it.    
 ~
-dg 0 200 E
+72 0 0 0 0 0 0 0 200 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -187,7 +187,7 @@ disease - a very important job which she herself takes quite seriously.  This
 garden is the area's main source and backup for foodstuffs when the Lord of
 Jareth runs into snags or delays in sending shipments.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 2
@@ -200,7 +200,7 @@ A horribly scarred man kneels at the altar, praying feverishly.
    His eyes are closed tightly, hios hands clasped together in the traditional
 position of prayer and supplication.    
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 5 5 1
@@ -214,7 +214,7 @@ A crazed, half-naked man leaps from behind a tree, assaulting you with a cry.
 itself, but the fact that he is a leper with pussy postules all over his body
 is enough to make even the most stalwart of men retch in agony.    
 ~
-dfg qu -200 E
+104 0 0 0 131072 0 0 0 -200 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -227,7 +227,7 @@ A pathetic excise for a chicken clucks about half-heartedly.
    It is dirty and mangy as a chicken can be, its feathers covered in muck and
 filth.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -240,7 +240,7 @@ Dalgon walks about the village trying his best to remain productive for the comm
    He has the age lines of a man of advanced years, the permanent frown that
 only age can bring.  He is twenty-two.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -253,7 +253,7 @@ A tall gangly man ambles through the area.
    Alvah is the village idiot, so to speak.  He is liked by everyone but
 respected by none.    
 ~
-cdg 0 700 E
+76 0 0 0 0 0 0 0 700 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1

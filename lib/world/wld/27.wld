@@ -1,32 +1,38 @@
 #2700
 Detta's [Memlin Caverns] Description Room~
 
-   @BTheme:@n This zone is the under-mountain homeland of a group of neutral
+@BTheme:@n This zone is the under-mountain homeland of a group of neutral
 peace-loving creatures called memlins.  Their humble network of caverns has
 been infiltrated by a sorceress who has recently risen to power and is seeking
 to build her palace beneath the mountain with the help of the enslaved memlin
 race.  The basic objective then is to destroy the sorceress, though she has her
 ways of staying alive!  For players interested in a deeper knowledge of the
 zone, there is @Ynow a little tour guide available@n in the temple who will
-explain all sorts of things about the storyline behind it.                                                                                                         @GPlayers:@n This zone is geared towards players
+explain all sorts of things about the storyline behind it
+
+@GPlayers:@n This zone is geared towards players
 between levels 17-25, and is slightly evil aligned with most of the mobs being
 either neutral or evil.  It is primarily a quest zone with killing the
 sorceress not being just your usual hack n slash job ;-) Lots of xp to be
 gained however if you feel like slaughtering the helpless community instead of
-helping them!                                                                                                                                                      @RLocation:@n The zone itself is almost entirely underground,
+helping them!
+
+@RLocation:@n The zone itself is almost entirely underground,
 and made up of a network of caverns.  Its sole exit however, opens out into a
 forest and this is the area it would be most seamlessly attached to.              
-@M   Secrets:@n There are quite a few here now. I'd recommend exploring
+
+@MSecrets:@n There are quite a few here now. I'd recommend exploring
 the zone without taking a peek at these little spoilers..  But if you
 must, just type LOOK SPOILERS to reveal all.    
 
-   @CNote:@n If you have any suggestions, spot any typos, bugs, or weirdnesses, please mudmail me - Detta. :-) All input appreciated!
+@CNote:@n If you have any suggestions, spot any typos, bugs, or weirdnesses,
+please mudmail me - Detta. :-) All input appreciated!
 You can also email me at detta@@builderacademy.net
 East takes you through the other zones I have built here.
 Down takes you to the starting room of this zone.
 
 ~
-27 dj 0
+27 520 0 0 0 0
 D1
 ~
 ~
@@ -138,7 +144,7 @@ from the opening, and a faint sound of clanging can be heard from within.
 Large amounts of rubble are piled up at the entrance as though there has been a
 lot of digging activity.    
 ~
-27 cd 3
+27 12 0 0 0 0
 D0
    The cave is too dark to see very far inside, but figures can be glimpsed
 moving in and out of shadows.    
@@ -174,7 +180,7 @@ edges stick out from the stone walls as though it has been dug in a hurry, and
 a thin slime coats every surface, sticky moisture hanging in the air.  From far
 below, sounds of footsteps and the clanging of iron on rock can be heard.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D2
    Fresh air seems to be wafting from this direction, and the cave entrance can
 be spotted a little further along, opening into a thick forest.    
@@ -202,7 +208,7 @@ down to the bottom at the slightest disturbance.  The air here is suffocatingly
 humid and this is intensified by the wafts of heat coming from the lower end of
 the passage.    
 ~
-27 acd 0
+27 13 0 0 0 0
 D0
    A small puddle marks the end of the passage where the floor flattens out
 into what appears to be a larger room.    
@@ -231,7 +237,7 @@ has been passed through many times.  Sharp stalactites hang down like teeth
 from the entrance of each connecting tunnel, giving the impression of standing
 in a creature's jaws.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
    A puff of dust hangs about this small entrance into a dimly lit cave and
 every now and again the clang of a metal object being dropped can be heard.  
@@ -276,7 +282,7 @@ to the cavern walls by a natural dribble of resin that has subsequently
 hardened.  This gives the tunnel an almost gilded appearance, delicate veins of
 smooth glassy amber lining its length.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D1
    The tunnel carries onward, curving gently around into darkness so that
 nothing can be seen ahead.
@@ -297,7 +303,7 @@ moisture and making it easier to walk without slipping.  A flickering lantern
 is fixed here, sending shadows dancing across the walls and small memlin
 footprints lead to the north.    
 ~
-27 d 0
+27 8 0 0 0 0
 D0
    Small memlin footprints lead this way, growing slightly more faded as the
 sandy ground becomes carpeted with moss.    
@@ -330,7 +336,7 @@ an old mine cart.  This room is far smaller than is comfortable, and a
 lingering cloud of dust makes it feel even more claustrophobic.  To the north a
 small back door is partially covered by a ragged curtain.    
 ~
-27 acd 0
+27 13 0 0 0 0
 D0
    A strange mist surrounds the northern curtain, circulating slowly but not
 dispersing, as if it guarded the way.
@@ -368,7 +374,7 @@ carefully, sanded smooth and polished so that the silvery hue of the rock has a
 metallic shine to it.  Somewhere nearby, several drops of liquid can be heard
 dripping constantly onto rock.    
 ~
-27 d 0
+27 8 0 0 0 0
 D0
    A sound of dripping echoes prominently from this end of the tunnel, and a
 slight reddish stain spreads across the floor.    
@@ -390,7 +396,7 @@ crimson liquid seem to ooze from the ceiling, staining the walls blood red as
 they weep their way slowly down, collecting like a spreading wound on the
 ground.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
    A cool white light emanates from this end of the tunnel, and the air seems to
 grow colder as it is approached, perhaps the influence of some unwelcoming
@@ -413,7 +419,7 @@ into the tunnel.  Diamond-hard and flawless, they seem strikingly out of place
 in the dusty passage, illuminating it with refracted light.  Blood-red beryll
 is embedded carefully into the glassy surface, inscribing some evil spell.    
 ~
-27 cd 0
+27 12 0 0 0 0
 D0
    A cool draft breezes from this direction, and the cold light of the gates
 gives the impression that the tunnel turns to ice.    
@@ -441,7 +447,7 @@ that seems to reflect an inner source of light.  Colours dance and sparkle on
 the faceted surface of the walls and the air here is cool enough to chill
 breath.  To the south, two large clear gates block the exit.  
 ~
-27 d 0
+27 8 0 0 0 0
 D2
    A bright glow shimmers from this end of the passage, tinted only by the
 blood red hue of some gem refracting light.    
@@ -469,7 +475,7 @@ welcome scent of greenery that freshens the atmosphere.  A bubbling fountain
 murmurs quietly at one end of the room, and a prominent sign displays dates and
 times of apparent significance.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
    The tunnel seems to get much narrower and the roof much lower, sticky slime
 indicates that this passage is quite slippery.    
@@ -522,7 +528,7 @@ here and there with a small sprouting mushroom.  The fungi seem almost to be
 cultivated here as a source of light, for they illuminate the darkness with a
 soft green glow, thriving off the ever present film of mineral-rich moisture.
 ~
-27 d 0
+27 8 0 0 0 0
 D0
    A floral scent wafts from this direction, and the carpet of moss becomes
 more lush.    
@@ -550,7 +556,7 @@ allowing natural sunlight and warmth to fill the room.  Creeping vines twist
 their way across the walls, along with splashes of pink and purple flora.  The
 intense evaporation causes a constant indoor rain to drip from the ceiling.  
 ~
-27 d 0
+27 8 0 0 0 0
 D2
    A green glow comes from this direction, and the rich carpet of grass gives
 way to a sandy path.    
@@ -577,7 +583,7 @@ waft on the air, and children can be heard playing nearby.  The sandy floor
 takes on a greenish hue where an abundance of soft moss begins to carpet the
 area.    
 ~
-27 d 0
+27 8 0 0 0 0
 D0
    Aromatic smells of various cooking foods waft from this direction, and the
 sound of simmering pots can be heard.    
@@ -611,7 +617,7 @@ pot sits on the counter emitting some unnameable aroma.  Huge stacks of plates
 indicate the usage of this kitchen by the majority, if not the entire memlin
 population.    
 ~
-27 d 0
+27 8 0 0 0 0
 D0
    The ceiling dips lower here and framing the entrance are many decorative
 herbs, but not nearly enough to create the overpowering mix of scents that
@@ -649,7 +655,7 @@ horticulture in memlin living.  Though looking closer, these tools appear
 neglected and rusted, while newer and more recently used mining picks occupy
 the majority of the small space.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
    The area beyond looks well-travelled and well-lit, the sounds of life and
 activity filling the air.    
@@ -676,7 +682,7 @@ that a fall here would mean definite injury, as indicated by the faded blood
 streaks on the rock.  A film of slimy moisture makes the ground even more
 treacherous to navigate, and the wisdom of staying here is questionable.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
    The tunnel slopes downward, a slight breeze of hot humid air wafting up from
 below.
@@ -708,7 +714,7 @@ remnants of broken toys and useless tools littering the floor.  Old cobwebs
 coat everything in a film of dust and time, but even the spider weavers seem to
 have forsaken this place, abandoning it and its contents to slow decay.    
 ~
-27 acd 0
+27 13 0 0 0 0
 D3
    The door is so well designed that when it closes it blends seamlessly into
 the surrounding rock, making the cupboard appear inescapable.    
@@ -739,7 +745,7 @@ walls and making the air shimmer.  The slime everywhere seems to have congealed
 into sticky pools of fungus and mineral-saturated water, coating every jagged
 rock as though the cavern bleeds.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
    The way ahead is dimmed with the darkness of swirling debris, smoke and dust
 filling the air in waves of hot grimy air.
@@ -762,7 +768,7 @@ is heavy with humidity.  In the middle of the room there is a large stone
 sculpture of weighing scales depicting the central memlin belief of balance and
 moderation.    
 ~
-27 d 0
+27 8 0 0 0 0
 D0
    A gentle mist of moisture fills the entrance to this cavern, the lazy sound
 of stirring water coming from within.
@@ -804,7 +810,7 @@ air seem to shimmer, and the sound of dripping echoes off the jagged walls.  A
 small row of towels are hung neatly to the side, along with some lumps of
 sweet-smelling soap.    
 ~
-27 acd 0
+27 13 0 0 0 0
 D2
    A large cave stands to the south, a tall sculpture only just visible through
 the swirling droplets of water.
@@ -831,7 +837,7 @@ be seen carved into the walls.  A few trailing vines act as ladders to the ones
 nearest the roof, and inside the lower ones tufts of fresh and dry moss can be
 seen heaped together as bedding.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
    A small opening leads into a very tiny hollow, barely big enough for a small
 memlin to move comfortably around in.
@@ -863,7 +869,7 @@ walls have been carefully sanded smooth and child's drawings hang on the wall.
 A few scattered toys stick out of the moss bedding and a tiny chair sits in the
 corner.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D2
    Dark green mosses carpet the way south, the larger cavern dim and hot with
 humidity.
@@ -890,7 +896,7 @@ too, is obscured by dried spices and herbs, filling the air with a heady
 mixture of scents.  A dip in the middle of the roof allows a strange tubed
 contraption to collect the dripping condensation.    
 ~
-27 d 0
+27 8 0 0 0 0
 D2
 ~
 ~
@@ -903,7 +909,7 @@ talented sculptors.  Smooth green and almost phosphorescent, the massive arch
 is the only thing approaching light in this room.  All else extends coldly and
 ominously into darkness.    
 ~
-27 d 0
+27 8 0 0 0 0
 D0
 ~
 ~
@@ -924,7 +930,7 @@ intruders.  Delicate patterns of crystalline frost weave their way up the vast
 sculpted walls, complimenting the deep green veins of the polished marble
 floor.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
 ~
 ~
@@ -945,7 +951,7 @@ amplified by the smooth walls, and emerald-flecked marble floor.  Darkness
 closes like a predator on the periphery of vision, shrouding the finer details
 of the place in blackness.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
 ~
 ~
@@ -966,7 +972,7 @@ deep and foreboding about the place as though a living entity.  A cool chill
 swirls about the place, the slightest sound echoing off the distant, unyielding
 walls and ceiling.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
 ~
 ~
@@ -983,7 +989,7 @@ high that they seem to reach endlessly into night.  Perfectly flawless and
 diamond-hard they seem almost as indestructable as the mountainous cavern
 itself.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D1
 ~
 ~
@@ -1004,7 +1010,7 @@ massive staircase here.  Deep forest green colours swirl about the floor,
 reflecting the surroundings perfectly on the polished surface.  The great stone
 walls chisled almost to glassy smoothness.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D2
 ~
 ~
@@ -1024,7 +1030,7 @@ Bottom of a Spiral Stair~
 Each high step is polished and sculpted to a slippery razor-sharp edge and only
 the one-sided banister gives any indication that it may be safe to climb.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D2
 ~
 ~
@@ -1041,7 +1047,7 @@ mountainside itself.  Glisteningly smooth, the rich deposits of chromite ore
 give it a deep silvery-black lustre, making it even harder to see beyond the
 darkness that shrouds each step.
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
 ~
 ~
@@ -1058,7 +1064,7 @@ jade-like green of the mineral Serpentine.  Apart from its obvious ornamental
 beauty, the metamorphic nature of this stone indicates that at one time intense
 heat flowed through this area.    
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
 ~
 ~
@@ -1075,7 +1081,7 @@ view of the regal surroundings if they were not so shrouded in dark.  Faded
 smoke stains smear the mountainous walls here, and tiny black garnets sprout
 from the rock, the products of some past raging inferno.    
 ~
-27 acd 0
+27 13 0 0 0 0
 D2
 ~
 ~
@@ -1091,7 +1097,7 @@ Icy Dome~
 of ice.  Cool air wafts about the place and the walls and ceiling are glassy
 smooth as though this cavern were simply melted away.    
 ~
-27 d 0
+27 8 0 0 0 0
 D1
 ~
 ~
@@ -1112,7 +1118,7 @@ Icy Dome~
 beneath as though something were frozen into the glacier itself.  Frost weaves
 its way up the walls, gilding delicate silver patterns around the dome.    
 ~
-27 d 0
+27 8 0 0 0 0
 D2
 ~
 ~
@@ -1128,7 +1134,7 @@ Icy Dome~
 of wailing.  Tiny crystals of ice sprinkle from the ceiling with each breeze,
 tinkling like chimes as they hit the floor and shatter into pieces.    
 ~
-27 d 0
+27 8 0 0 0 0
 D0
 ~
 ~
@@ -1148,7 +1154,7 @@ Icy Dome~
 surrounding mountainous range visible through the panoramic wall of ice that
 curves completely around this gigantic dome.    
 ~
-27 d 0
+27 8 0 0 0 0
 D0
 ~
 ~
@@ -1165,7 +1171,7 @@ infinitely below, preserved within frozen cobwebs of time.  Dancing and
 shifting all around the sky, spectacular blue and green aurora borealis splash
 their colours upon the vast white canvas of snow.    
 ~
-27 c 5
+27 4 0 0 0 0
 D3
 ~
 ~
@@ -1178,7 +1184,7 @@ through which nothing can be seen.  Dark figures quiver eerily on the periphery
 of vision, and the mist itself seems to coalesce into strange shapes, wispy
 tendrils weaving as though to some unheard music.    
 ~
-27 acd 0
+27 13 0 0 0 0
 D0
 ~
 ~
@@ -1198,7 +1204,7 @@ cavern reveals no source of the ghostly figures and it almost seems as though
 they have a life of their own, their alien forms twisting and weaving in
 perpetual motion as the illumination throughout the cave flickers.    
 ~
-27 adh 0
+27 137 0 0 0 0
 D0
 ~
 ~
@@ -1218,7 +1224,7 @@ the rounded walls, filling the room with the tranquil sapphire hue of twilight.
 The roof of the cave is high and peaks into a slight dome, tiny crystalized
 stalactites bejewelling the ceiling and reflecting the light like stars.    
 ~
-27 dh 0
+27 136 0 0 0 0
 D0
 ~
 ~
@@ -1250,7 +1256,7 @@ and murmuring in some unfelt breeze.  Floor tiles of ebony and ivory depict an
 image of balancing scales, and a magnificent altar stands at the far end of the
 room.    
 ~
-27 dh 0
+27 136 0 0 0 0
 D2
 ~
 ~
@@ -1263,7 +1269,7 @@ moss grows from the ground and walls, sprinkled with a dew-like moisture and
 elaborate paintings of the rising sun accompanied with dawn colours decorates
 the corridor.    
 ~
-27 dh 0
+27 136 0 0 0 0
 D1
 ~
 ~
@@ -1281,7 +1287,7 @@ alight with sunfire.  The atmosphere seems immensely energized, almost
 prickling with some sort of static, and the place itself seems to hum quietly,
 tiny sparks igniting randomly in the air.    
 ~
-27 dh 0
+27 136 0 0 0 0
 D2
 ~
 ~
@@ -1301,7 +1307,7 @@ lovers, of smiling families, of beauty, bejewelled castles and powerful thrones
 shaping themselves in the mist as though every lingering daydream found its way
 into this room.    
 ~
-27 dh 0
+27 136 0 0 0 0
 D0
 ~
 ~
@@ -1327,7 +1333,7 @@ pool on the ground that sends ripples of light reflecting throughout the cave.
 Soft moss and dried bracken carpet the floor, filling the air with a soothing
 green scent.    
 ~
-27 dh 0
+27 136 0 0 0 0
 D3
 ~
 ~
@@ -1341,7 +1347,7 @@ undecorated on every side of the room.  Only two White Ash trees grow smoothly
 from the ground, their heads bowed to cross each other, forming the frame for a
 flawless glass mirror in the center of the room.    
 ~
-27 dh 0
+27 136 0 0 0 0
 D1
 ~
 ~
@@ -1355,7 +1361,7 @@ light shines from an equally invisible source.  No shadows or colours of any
 sort are evident, only the overwhelming glow of illumination in every
 direction.    
 ~
-27 dh 0
+27 136 0 0 0 0
 D0
 ~
 ~
@@ -1369,7 +1375,7 @@ mosaic path.  Sapphire streaks glisten darkly in the cavern walls and the sound
 of crickets chirping echoes faintly though none can be seen.  Splashes of
 silver portray the rising of the moon, and emerging of the stars.    
 ~
-27 adh 0
+27 137 0 0 0 0
 D1
 ~
 ~
@@ -1387,7 +1393,7 @@ breeze wafts about, the otherwise muggy air seems unbearably close, clinging
 like a smothering film to everything it touches.  Soft, dark moss carpets the
 entire floor, and a slight sticky residue dampens the oddly stained walls.    
 ~
-27 adh 0
+27 137 0 0 0 0
 D1
 ~
 ~
@@ -1405,7 +1411,7 @@ and slight rumbling vibrates the floor and walls.  In the smokey air, it seems
 as though strange creatures come to life, distorted faces and whispering voices
 linger just on the periphery of perception.    
 ~
-27 adh 0
+27 137 0 0 0 0
 D0
 ~
 ~
@@ -1431,7 +1437,7 @@ shadows.  In the center of the room two gnarled trees of Black Ash twist into
 each other, a shattered mirror embedded between them, shards of glass
 sprinkling the floor around.    
 ~
-27 adh 0
+27 137 0 0 0 0
 D3
 ~
 ~
@@ -1445,7 +1451,7 @@ flickering fire when any light falls their way.  Smouldering heat seems to
 emanate from the floor, steam rising lazily out of holes in the ground, filling
 the cavern with the sound of slow breathing.    
 ~
-27 acdh 0
+27 141 0 0 0 0
 D1
 ~
 ~
@@ -1459,7 +1465,7 @@ depths of an inescapable abyss, not even the faintest flicker penetrates this
 place.  In fact the dark seems to have a life of its own, actively swallowing
 any potential source of light.    
 ~
-27 adh 0
+27 137 0 0 0 0
 D0
 ~
 ~
@@ -1472,7 +1478,7 @@ Heart of the Mines~
 rhythm of metal striking rock.  Small rocks and debris line either side of the
 path, which is thick with the muddy sludge of loose dirt and water.  
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
 ~
 ~
@@ -1493,7 +1499,7 @@ cast from the collection of little graves that fill this room.  Careful
 newly-placed piles of stones lie restfully side by side, not yet covered with
 dust though the air hangs heavy with it.    
 ~
-27 acd 0
+27 13 0 0 0 0
 D1
 ~
 ~
@@ -1511,7 +1517,7 @@ ceiling have all collapsed in, leaving nothing but the fine rivulets of water
 that seep from the wreckage, trickling like tears along the battered,
 darkly-stained floor.  
 ~
-27 acd 0
+27 13 0 0 0 0
 D1
 ~
 ~
@@ -1524,7 +1530,7 @@ particles of grime that dance in the turbulent, smokey air.  An intensely acrid
 smell of sweat hangs heavily over the place, along with the metallic tang of raw
 minerals and recently spilt blood.  
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
 ~
 ~
@@ -1544,7 +1550,7 @@ Breezy Cavern~
 fresh, sweet-scented air blows continuously, circulating itself into the staler,
 musty air of the deeper caves.  
 ~
-27 acd 0
+27 13 0 0 0 0
 D1
 ~
 ~
@@ -1561,7 +1567,7 @@ towards the north end of the corridor where digging appears to be ongoing.
 Huge piles of loose rock and stone crowd the already cramped tunnel, and the
 choking smell of burning stifles the place.  
 ~
-27 ad 0
+27 9 0 0 0 0
 D1
 ~
 ~
@@ -1585,7 +1591,7 @@ the ceiling.  Some sort of sort of phosphorus sap has been used to paint a
 large circle all the way around the center of the room, the same substance
 marking strange symbols along the walls.    
 ~
-27 cdh 0
+27 140 0 0 0 0
 D1
 ~
 ~
@@ -1599,7 +1605,7 @@ T 2754
 liberally decorated with everything that used to make up the insides of your
 body.  
 ~
-27 b 0
+27 2 0 0 0 0
 S
 T 2735
 #2765
@@ -1609,7 +1615,7 @@ piles of dust and rock leach slowly into murky puddles of condensation, and
 every slight echo causes a brief rain of pebbles from the ceiling, indicating
 that this cave may not be safe to stand in, let alone excavate.    
 ~
-27 acd 0
+27 13 0 0 0 0
 D1
 ~
 ~
@@ -1623,7 +1629,7 @@ effect.  Delicate creeping vines adorn the walls, and dozens of long green
 stalks sway gently, dancing in the air currents produced by the hundreds of
 teeny @Cwishes@n growing like tufts of cotton up their lengths.    
 ~
-27 d 0
+27 8 0 0 0 0
 D1
 ~
 ~
@@ -1636,7 +1642,7 @@ are battered and marred with hundreds of gashes.  A strange bitter smell lingers
 on the air, and a kind of energy prickles in the room as though traces of some
 powerful magic remain.  
 ~
-27 acd 0
+27 13 0 0 0 0
 D2
 ~
 IvoryDoor~
@@ -1653,7 +1659,7 @@ walls, a slick slime covering every surface and making them glisten wetly as if
 coated with oil.  Heat wafts slowly through the room, intensifying toward the
 northern part of the corridor.  
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
 ~
 ~
@@ -1670,7 +1676,7 @@ hot air.  The sound of desperate wailing accompanies the continuous breeze that
 churns indecisively about the room, rippling the ominous puddles that darken the
 floor.  
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
 ~
 ~
@@ -1695,7 +1701,7 @@ howling as it rushes along the jagged cavern as though seeking an escape, and
 clinking the many hanging chains like some restless ghost.  The smell of decay
 hangs heavy here, the lingering presence of rotting flesh and hope alike.  
 ~
-27 ad 0
+27 9 0 0 0 0
 D3
 ~
 ~
@@ -1708,7 +1714,7 @@ center of the room, dark bloodied chains draped carelessly over it.  Against the
 western wall a massive steel stove burns, flickering firelight illuminating a
 selection of terrifying metal instruments hung upon the walls.  
 ~
-27 d 0
+27 8 0 0 0 0
 D1
 ~
 ~
@@ -1721,7 +1727,7 @@ giant monolith they stand unyielding and unnaturally black, offering no hint of
 what lies beyond them except for their burning surfaces, and the bright scarlet
 glow that shines around the seams.  
 ~
-27 ad 0
+27 9 0 0 0 0
 D0
    Jet-black gates loom menacingly from the floor, towering like dark shadow
 guardians, blocking the passage forward.  
@@ -1753,7 +1759,7 @@ posts along the walls.  A floating orb of fire flickers within the obsidian
 hands of a dark humanoid statue, illuminating various scrolls and parchments
 scattered about the room.  
 ~
-27 ad 0
+27 9 0 0 0 0
 D1
 ~
 ~
@@ -1767,7 +1773,7 @@ portrayals of dragons and monsters are carved into every polished surface.
 Flickering firelight casts the whole room in and out of shadows, making it seem
 as though the carvings move just in the periphery of vision.  
 ~
-27 d 0
+27 8 0 0 0 0
 D3
 ~
 ~
@@ -1780,7 +1786,7 @@ haze.  In the center of the room the enormous gelatinous mass of the Receptacle
 pulsates slowly and continuously, surface contractions spreading down each of
 the massive tentacles that reach in every direction.  
 ~
-27 d 0
+27 8 0 0 0 0
 D0
 ~
 ~
@@ -1809,7 +1815,7 @@ They become smaller as they reach outwards, all attaching to one parent tentacle
 that throbs rhythmically, a vague stirring shape only just visible through the
 semi-transparent surface.  
 ~
-27 d 0
+27 8 0 0 0 0
 D2
 ~
 ~
@@ -1823,7 +1829,7 @@ rocky floor and walls in a thin layer of slick, transparant slime.  A
 particularly thick coating covers the central main tentacle, obscuring a clear
 view of the shadowy movements within.  
 ~
-27 d 0
+27 8 0 0 0 0
 D3
 ~
 ~
@@ -1836,7 +1842,7 @@ pod than part of an organism, this womb-like structure pulses rhythmically.
 Some form of stirring life can be seen inside, but the surrounding tissues are
 too opaque to allow a close examination.  
 ~
-27 d 0
+27 8 0 0 0 0
 D0
 ~
 ~
@@ -1848,7 +1854,7 @@ Tentacle Tunnel~
 waves as a blurry form moves within.  Several slimy offshoots sprout from the
 center like spindley fingers, clawing their way up the slippery, jagged walls.
 ~
-27 d 0
+27 8 0 0 0 0
 D1
 ~
 ~
@@ -1861,7 +1867,7 @@ and billows of dark smoke rising from the molten chasm below, the intense heat
 stifling the air and making it difficult to breathe.  Two large gates guard the
 passage to the south.  
 ~
-27 cd 0
+27 12 0 0 0 0
 D0
 ~
 ~
@@ -1890,7 +1896,7 @@ old grey dust cover the once beautiful surfaces of wood and satin.  Dreary
 cobwebs linger in the corners like ghostly shadows, whispering silent words in
 the cool breeze.  
 ~
-27 ad 0
+27 9 0 0 0 0
 D3
 ~
 ~
@@ -1905,7 +1911,7 @@ changing into various humanoid forms as it fills the room with heat and a film
 of moisture.  Scarlet symbols of passion and possession paint the floor and
 ceiling alike, splashed liberally here and there like splatters of blood.  
 ~
-27 d 0
+27 8 0 0 0 0
 D1
 ~
 ~
@@ -1917,7 +1923,7 @@ Firey Hall~
 across the firey pit beneath, swirling heat distorts the view of everything.  
 The air itself burning and shimmering like a blast from a powerful oven.  
 ~
-27 d 0
+27 8 0 0 0 0
 D0
 ~
 ~
@@ -1938,7 +1944,7 @@ throne stands in the center, formed magically from red beryll and studded with
 glimmering blooddrop rubies.  A feeling of intense anger and energy fills the
 air, tiny static sparks igniting randomly here and there.  
 ~
-27 d 0
+27 8 0 0 0 0
 D2
 ~
 ~
@@ -1954,7 +1960,7 @@ the vast dark canvas of deep space.  Burning suns and icy moons light the
 blackness, shimmering gaseous clouds sparkling with stardust and cosmic debris
 as they wander past.  
 ~
-27 de 0
+27 24 0 0 0 0
 D0
 ~
 ~
@@ -1979,7 +1985,7 @@ they are merely illusions of walls.  A faint breeze whispers gently through the
 air and silvery blue veins of electricity lick around the borders of this room,
 bright sparks randomly igniting like tiny winking fireflies.  
 ~
-27 d 0
+27 8 0 0 0 0
 D1
 ~
 ~
@@ -1992,7 +1998,7 @@ cemented together and solid beyond breaking.  Hard flawless gems twinkle
 brightly amongst the mosaic slate pieces of the floor, a coolness emanating from
 every elemental substance in this room.  
 ~
-27 d 0
+27 8 0 0 0 0
 D3
 ~
 ~
@@ -2009,7 +2015,7 @@ the great cosmic dance and maintaining the equilbrium of order.  The exertion of
 their efforts can be seen influencing all that exists, continuously pulling
 everything to a state of balance, dark to light and light to dark.  
 ~
-27 d 0
+27 8 0 0 0 0
 D0
 ~
 ~
@@ -2028,7 +2034,7 @@ the initial sprouts of growth and life colouring its dusky surface with splashes
 of green, the nearby stars starting to glow brightly as if emblazened with
 unnatural fire.  
 ~
-27 d 0
+27 8 0 0 0 0
 D2
 ~
 ~
@@ -2047,7 +2053,7 @@ around.  Only in the distance can the dark shapes of gigantic creatures be seen
 moving slowly across the horizon.  In the sky, an enormously bright wave of
 light can be seen slowly moving away into the recesses of space.  
 ~
-27 e 2
+27 16 0 0 0 0
 D0
 ~
 ~
@@ -2073,7 +2079,7 @@ odd, as though peering through a bent glass.  Several paintings adorn the darkly
 painted walls, all imagery of the forbidden union of Cui with Cui, and the
 unnatural creature that is the consequence.  
 ~
-27 d 0
+27 8 0 0 0 0
 D1
 ~
 ~
@@ -2087,7 +2093,7 @@ stirs the hanging tapestries on the walls.  Each woven artwork depicting the
 joining of Cui with their lesser Denuo kin, powerful and beautiful Ve offspring
 populating the world.  
 ~
-27 d 0
+27 8 0 0 0 0
 D3
 ~
 ~
@@ -2100,7 +2106,7 @@ growing that will soon be massive trees.  Figures of both Cui and humanoid life
 can be seen moving across the terrain, a moderate glow of light sweeping
 steadily across the sky.  
 ~
-27 0 2
+27 0 0 0 0 0
 D0
 ~
 ~
@@ -2130,7 +2136,7 @@ some invisible force.  The weapons of warriors are proudly displayed, sharp
 spears and shining metal swords, the heat in this place making the air shimmer
 as though merely a mirage.  
 ~
-27 d 0
+27 8 0 0 0 0
 D3
 ~
 ~
@@ -2144,7 +2150,7 @@ be heard gurgling amidst nearby rocks and leading into a small luminous pond.
 Plant life blooms abundantly here, grasses and mosses covering every surface,
 colourful flower blossoms and tree sprouts beginning to show through the green.
 ~
-27 0 2
+27 0 0 0 0 0
 D1
 ~
 ~
@@ -2157,7 +2163,7 @@ trees and plant life.  Many varieties of animal can be glimpsed wandering
 through the grasses and brush, the signs of humanoid civilization visible in the
 form of distant villages.  
 ~
-27 0 2
+27 0 0 0 0 0
 D2
 ~
 ~
@@ -2170,7 +2176,7 @@ Lightly sanded, the floor is speckled here and there with a fungi growth or
 patch of moss.  Trickling water can be heard although not seen, and a film of
 moisture covers the slick ceiling, sparkling stalactites beginning to form.  
 ~
-27 d 0
+27 8 0 0 0 0
 D4
 ~
 ~
@@ -2183,7 +2189,7 @@ ground, the aftermath of a felling in recent years.  Brown grasses rustle
 restlessly in the somewhat smokey air, and the peaks of a mountain range are
 only just visible to the north.  
 ~
-27 0 3
+27 0 0 0 0 0
 D0
 ~
 ~
@@ -2201,7 +2207,7 @@ of musk and gentle wood-wind music can only vaguely be heard beneath the
 meditative murmuring of a central glass fountain, adding to the almost ethereal
 tranquility of this place.  
 ~
-27 d 0
+27 8 0 0 0 0
 E
 wall-hung wall hung candles~
    These tall elegant candles burn brightly, scarlet flickers of flame dancing

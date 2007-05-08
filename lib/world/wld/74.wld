@@ -19,7 +19,7 @@ Plot         : A giant ant hill.
 Notes        : LOOK CODEX, LOOK ZEDIT
 Links        : 01
 ~
-74 dj 0
+74 520 0 0 0 0
 E
 ZEDIT~
     Zone 74 by Jojen
@@ -121,7 +121,7 @@ clusters of drooping white hyacinths.  Soft white cobbles have been trod into
 the ground to create this functional and beautiful pathway.  This appears to be
 the beginning or end of the path.    
 ~
-74 c 2
+74 4 0 0 0 0
 D3
 ~
 ~
@@ -141,7 +141,7 @@ the ground to create this functional and beautiful pathway.  The path ends to
 the east at the entrance to the cemetery.  The noises of the city have faded
 away.    
 ~
-74 0 2
+74 0 0 0 0 0
 D1
 ~
 ~
@@ -159,7 +159,7 @@ white blossoms on to the grass.  Yet another large bed of hyacinths grows
 around the base of the willow, lending its scent to the sweetness of the willow
 blossoms.  The very air is charged with energy and serenity.    
 ~
-74 0 0
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -187,7 +187,7 @@ flowers has been uprooted violently, leaving a shallow hole in the dirt near
 the path.  A few dismembered hyacinth petals litter the ground near the hole.
 A hole has been dug in the ground here.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -210,7 +210,7 @@ clusters of drooping white hyacinths.  Soft white cobbles have been trod into
 the ground to create this functional and beautiful pathway.  The path ends at a
 large iron-worked gate to the north.    
 ~
-74 0 0
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -227,7 +227,7 @@ Intricate in design and strong of structure, this gate looks adequate enough at
 keeping people out when closed and locked.  The round, cobbled path ends here,
 leaving visitors to tread on the lawn while visiting the cemetary.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -252,7 +252,7 @@ groundskeepers can easily access all the plots without disturbing the graves
 themselves.  Far to the east, you can just make out the roof of a large, marble
 mausoleum.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -270,7 +270,7 @@ more than a name carved into it.  These look to be rather new in comparison to
 some of the larger and more elaborate grave markers to the north.  One grave
 lies open and waiting to be filled, its tombstone unmarked as of yet.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -293,7 +293,7 @@ alone.  The tombstones are mostly standard marble or granite squares with no
 more than a name carved into it.  The gravemarkers here are a bit more
 weathered than those to the south.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -316,7 +316,7 @@ alone.  The tombstones are mostly standard marble or granite squares with no
 more than a name carved into it.  The gravemarkers here are a bit more
 elaborate and older by generations.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -339,7 +339,7 @@ markers draw the eye to the dainty-sized graves where children who have passed
 are laid to rest.  Enormous bouquets of flowers decorate each melancholy grave,
 a tribute to the tiny lives snuffed out before their time.    
 ~
-74 0 2
+74 0 0 0 0 0
 D1
 ~
 ~
@@ -349,15 +349,15 @@ D2
 ~
 0 0 7410
 E
+bouquet bouquets flower flowers~
+   Beautiful clusters of wildflowers are arranged here daily by the staff of
+the cemetary.  The sweet scent of so many flowers is strong, but pleasant.    
+~
+E
 statue statues marker gravemarker markers gravemarkers~
    Most of the gravemarkers here are carved statues of children and marble
 renditions of mournful mothers.  Each gravesite is smaller than an adult grave
 by nearly half.    
-~
-E
-bouquet bouquets flower flowers~
-   Beautiful clusters of wildflowers are arranged here daily by the staff of
-the cemetary.  The sweet scent of so many flowers is strong, but pleasant.    
 ~
 S
 #7412
@@ -367,7 +367,7 @@ markers draw the eye to the dainty-sized graves where children who have passed
 are laid to rest.  Enormous bouquets of flowers decorate each melancholy grave,
 a tribute to the tiny lives snuffed out before their time.    
 ~
-74 0 2
+74 0 0 0 0 0
 D1
 ~
 ~
@@ -388,7 +388,7 @@ two or three grave markers, but some support as many as a dozen.  In general,
 the tombstones here are less expensive, granite blocks with very few elaborate
 statues or sculptures.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -405,7 +405,7 @@ two or three grave markers, but some support as many as a dozen.  In general,
 the tombstones here are less expensive, granite blocks with very few elaborate
 statues or sculptures.    
 ~
-74 0 4
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -422,7 +422,7 @@ two or three grave markers, but some support as many as a dozen.  In general,
 the tombstones here are less expensive, granite blocks with very few elaborate
 statues or sculptures.    
 ~
-74 0 4
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -438,7 +438,7 @@ Empty Plots~
 grass is, as of yet, a blanket of untouched greenery.  Here and there a stake
 has been driven in the ground to mark future sites.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -454,7 +454,7 @@ Empty Plots~
 grass is, as of yet, a blanket of untouched greenery.  Here and there a stake
 has been driven in the ground to mark future sites.    
 ~
-74 0 0
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -476,7 +476,7 @@ the deceased in classic art.  Here and there a monument stands among the
 majestic statues.  If possible, it appears as if the grass is even more
 meticulously maintained here.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -494,7 +494,7 @@ the deceased in classic art.  Here and there a monument stands among the
 majestic statues.  If possible, it appears as if the grass is even more
 meticulously maintained here.    
 ~
-74 0 0
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -513,7 +513,7 @@ majestic statues.  If possible, it appears as if the grass is even more
 meticulously maintained here.  A tall elm tree shadows this corner of the
 cemetery..    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -536,7 +536,7 @@ markers draw the eye to the dainty-sized graves where children who have passed
 are laid to rest.  Enormous bouquets of flowers decorate each melancholy grave,
 a tribute to the tiny lives snuffed out before their time.    
 ~
-74 0 0
+74 0 0 0 0 0
 D2
 ~
 ~
@@ -554,7 +554,7 @@ maintained daily, is free of footprints and the gravesites are clear of
 flowers.  It is eerily quiet here.  To the east you see a large circle of
 burned grass.    
 ~
-74 0 2
+74 0 0 0 0 0
 D1
 ~
 ~
@@ -571,7 +571,7 @@ service tables and chairs would be set up here, along with a podium for the
 head cleric.  A low white chain circles the area, marking it off from the rest
 of the graveyard.    
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -595,7 +595,7 @@ keep graverobbers from disturbing these great heroes.  Each crypt is a work of
 art in marble or stone unrivaled by any other architecture in the graveyard.  
 A copper-walled crypt, highly polished and gleaming, is to the east.
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -610,16 +610,16 @@ D2
 ~
 0 0 7425
 E
-strong steel door~
-   Sturdy and unbreachable, this door is a massive slab of steel with a small
-copper lock near the lower half of the door.    
-~
-E
 copper copper-walled crypt~
    This crypt is made of tall sheets of highly polished copper.  An artistic
 piece, it seems functional as well with sturdy copper bindings and copper
 rivets to hold the whole thing together.  Only the strong steel door breaks the
 continuous field of shining copper.    
+~
+E
+strong steel door~
+   Sturdy and unbreachable, this door is a massive slab of steel with a small
+copper lock near the lower half of the door.    
 ~
 S
 #7425
@@ -632,7 +632,7 @@ keep graverobbers from disturbing these great heroes.  Each crypt is a work of
 art in marble or stone unrivaled by any other architecture in the graveyard.  
 A round crypt with flag-bearing pinnacles is to the east.
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -648,16 +648,16 @@ D2
 ~
 0 0 7426
 E
-steel door~
-   Heavy steel and reinforced with iron bindings, this door does not look
-breachable.  Even the narrow steel lock appears pickproof.    
-~
-E
 round crypt pinnacles flag~
    Built much like a short tower, this crypt bears massive waving flags atop
 it's tall pinnacles.  It is formed of solid stone and the only entrance is a
 massive steel door with a narrow steel lock.  Above the entrance is a crest
 depicting a crown and a dragon.    
+~
+E
+steel door~
+   Heavy steel and reinforced with iron bindings, this door does not look
+breachable.  Even the narrow steel lock appears pickproof.    
 ~
 S
 #7426
@@ -670,7 +670,7 @@ keep graverobbers from disturbing these great heroes.  Each crypt is a work of
 art in marble or stone unrivaled by any other architecture in the graveyard.  
 A low crypt crowned with gargoyles sits to the east.
 ~
-74 0 2
+74 0 0 0 0 0
 D0
 ~
 ~
@@ -687,17 +687,17 @@ D3
 ~
 0 0 7417
 E
+door strong steel heavy iron lock~
+   This door is thick and made of solid steel.  Iron rivets and great steel
+bands reinforce the door and a heavy stone lock is situated directly in the
+center of the door.    
+~
+E
 low crypt gargoyles~
    The crypt is a squat building crowned with massive stone gargoyles.  Two
 windows have been placed on the front of the crypt, but were since covered with
 thick iron bars.  A large stone plaque above the door depicts two vials crossed
 on a field of black.    
-~
-E
-door strong steel heavy iron lock~
-   This door is thick and made of solid steel.  Iron rivets and great steel
-bands reinforce the door and a heavy stone lock is situated directly in the
-center of the door.    
 ~
 S
 #7427
@@ -708,7 +708,7 @@ organics fills the tiny room like a palpable fog, soaking into clothing, hair,
 and skin.  Nothing could enter here without smelling of the place for some time
 to come.    
 ~
-74 adf 0
+74 41 0 0 0 0
 D3
    The heavy steel door is just as menacing from the inside.  Almost as if it
 was made to keep something IN instead of OUT!    
@@ -724,7 +724,7 @@ finest heroes.  Lord Mycea was a courageous swordsman who supposedly slew more
 than a hundred dragons in his time.  The massive gilded dragon statue near the
 casket itself might lend some credibility to that story.    
 ~
-74 a 0
+74 1 0 0 0 0
 D3
    As menacing from this side as the outside, this door seems insurmountable.
   
@@ -740,7 +740,7 @@ she transformed amid her victory feast, the townsfolk quickly smashed her skull
 and boxed her body into six separate chests.  Still, no expense was spared on
 her tomb.  Gems and gold line the walls and columns here.    
 ~
-74 a 0
+74 1 0 0 0 0
 D3
    Quite a door, really.    
 ~
@@ -754,7 +754,7 @@ doors are two matched statues of the snake-headed god of death in the primitive
 cultures.  The doors are left unlocked so that families may view the deceased
 before the ceremonies that put them in the ground permanently.    
 ~
-74 0 2
+74 0 0 0 0 0
 D1
 ~
 ~
@@ -773,7 +773,7 @@ spirit, releasing it from the body.  The grass here is burned to black ash, but
 the area immediately surrounding it is carpetted with lush greenery and clumps
 of sweet-smelling flowers.    
 ~
-74 0 2
+74 0 0 0 0 0
 D3
 ~
 ~
@@ -786,7 +786,7 @@ of eerie phosphorescent light that emanates from the walls themselves.  The
 surface of floor, walls, and ceiling hum vibrantly, resounding with the sounds
 of deep earth.    
 ~
-74 0 0
+74 0 0 0 0 0
 D3
 ~
 ~

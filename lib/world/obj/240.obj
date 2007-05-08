@@ -3,7 +3,7 @@ robe~
 a grey robe~
 A nice robe is laying abandoned on the ground.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
 3 3 0 0
 E
@@ -16,7 +16,7 @@ mantle~
 a cloth mantle~
 Someone left a bright white mantle here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 2 0 0 0
 3 3 0 0
 E
@@ -28,7 +28,7 @@ axe~
 a battle axe~
 A large battle axe is stuck into the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 7 3 6
 16 800 120 0
 E
@@ -40,7 +40,7 @@ axe~
 a double headed axe~
 A massive double headed axe is half buried in the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 4 6 3
 18 850 135 0
 E
@@ -52,7 +52,7 @@ lochaber~
 a lochaber~
 An expertly crafted lochaber is hidden in the dirt.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 8 3 3
 12 600 0 0
 E
@@ -65,7 +65,7 @@ axe~
 a broad axe~
 A large axe was left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 4 5 6
 8 300 0 0
 E
@@ -77,7 +77,7 @@ bardiche~
 a bardiche~
 A bardiche was negligently left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 4 7 4 10
 7 525 52 0
 E
@@ -90,7 +90,7 @@ halberd~
 a halberd~
 A halberd is rusting in the damp air.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 4 3 10 6
 8 600 60 0
 E
@@ -102,7 +102,7 @@ hatchet~
 a hatchet~
 A small hatchet has been abandoned by its owner.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 5 3 3
 3 150 15 0
 E
@@ -114,7 +114,7 @@ polearm~
 a polearm~
 A expertly crafted polearm is lying here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 4 5 5 10
 13 465 47 0
 E
@@ -128,7 +128,7 @@ loincloth~
 a leather loincloth~
 A leather loincloth is laying on the ground.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 3 0 0 0
 2 20 2 0
 E
@@ -141,7 +141,7 @@ bear meat~
 some bear meat~
 A large side of meat is lying here attracting flies.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 15 3 0
 E
@@ -154,7 +154,7 @@ elk meat~
 some elk meat~
 A side of meat was left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 2 10 2 0
 E
@@ -167,7 +167,7 @@ salmon fish~
 some salmon~
 A large fish stinks here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 2 50 5 0
 E
@@ -180,7 +180,7 @@ loincloth fur~
 a fur loincloth~
 A loincloth made of soft fur has your name on it.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 2 0 0 0
 3 15 1 0
 E
@@ -193,7 +193,7 @@ minotaur horns~
 a set of minotaur horns~
 A set of minotaur horns was left here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 350 35 0
 E
@@ -206,7 +206,7 @@ nosering~
 a minotaur's nosering~
 A gold nosering is covered in dust.~
 ~
-12 0 am 0
+12 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 2 260 26 0
 E
@@ -222,7 +222,7 @@ quarterstaff oak~
 an oak quarterstaff~
 A large oak quarterstaff is perfectly straight and smooth without imperfection.~
 ~
-5 go an 0
+5 go 0 0 0 an 0 0 0 0 0 0 0
 4 3 7 7
 5 125 12 0
 E
@@ -237,7 +237,7 @@ brass knuckles~
 a set of brass knuckles~
 A set of brass knuckles is lying in the dirt.~
 ~
-9 ag ah 0
+9 ag 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
 4 280 28 0
 E
@@ -251,7 +251,7 @@ hooded lantern~
 a hooded lantern~
 A large hooded lantern is unlit.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 36 0
 3 60 6 0
 E
@@ -265,7 +265,7 @@ belt pouch~
 a belt pouch~
 A small belt pouch was left here, maybe there is some money in it.~
 ~
-15 0 al 0
+15 0 0 0 0 al 0 0 0 0 0 0 0
 50 1 -1 0
 2 2 1 0
 E
@@ -278,7 +278,7 @@ cape~
 a fancy cape~
 A fancy cape was left here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
 4 204 20 0
 E
@@ -293,7 +293,7 @@ sandals~
 a pair of sandals~
 A pair of hoof looking sandals are lying here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 6 30 3 0
 E
@@ -307,7 +307,7 @@ scourge~
 a scourge~
 A wicked looking whip is coiled up neatly in a circle.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 7 4 5 2
 8 500 0 0
 E
@@ -323,7 +323,7 @@ sceptre~
 a bronze sceptre~
 A large bronze sceptre sparkles brightly.~
 ~
-1 0 a 0
+1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
 15 1000 0 0
 E
@@ -336,7 +336,7 @@ purse~
 a purse~
 A fancy fur purse is hidden in the shadows.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 50 1 -1 0
 9 100 0 0
 E
@@ -349,7 +349,7 @@ gold band~
 a gold band~
 A gold band, signifying an arena win has been lost here.~
 ~
-9 jk ab 0
+9 jk 0 0 0 ab 0 0 0 0 0 0 0
 5 0 0 0
 3 1000 0 0
 E
@@ -367,7 +367,7 @@ fountain~
 the fountain~
 A pool of clear water is contained within a large fountain made of stone.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
 0 0 0 0
 $~

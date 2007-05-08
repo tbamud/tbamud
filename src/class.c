@@ -1466,7 +1466,7 @@ void do_start(struct char_data *ch)
   GET_COND(ch, DRUNK) = 0;
 
   if (CONFIG_SITEOK_ALL)
-    SET_BIT(PLR_FLAGS(ch), PLR_SITEOK);
+    SET_BIT_AR(PLR_FLAGS(ch), PLR_SITEOK);
 }
 
 /* This function controls the change to maxmove, maxmana, and maxhp for each 
@@ -1520,13 +1520,12 @@ void advance_level(struct char_data *ch)
   if (GET_LEVEL(ch) >= LVL_IMMORT) {
     for (i = 0; i < 3; i++)
       GET_COND(ch, i) = (char) -1;
-    SET_BIT(PRF_FLAGS(ch), PRF_HOLYLIGHT);
+    SET_BIT_AR(PRF_FLAGS(ch), PRF_HOLYLIGHT);
   }
 
   snoop_check(ch);
   save_char(ch);
 }
-
 
 /* This simply calculates the backstab multiplier based on a character's level.
  * This used to be an array, but was changed to be a function so that it would 

@@ -8,7 +8,7 @@ Ahead is a largish building that seems to block out the sun nearby:
 a big, squat, dark brown building that exudes lifelessness.  You see
 several people going in and out its doors, shoulders slumped in defeat.
 ~
-296 c 1
+296 4 0 0 0 0
 D0
 ~
 ~
@@ -54,7 +54,7 @@ see the building, with the logo emblazoned:
               'Froboz's Fun Factory of Doom!'
 
 ~
-296 0 1
+296 0 0 0 0 0
 D0
 ~
 ~
@@ -75,7 +75,7 @@ wagons and carts parked everywhere, all as close as possible to
 the main building while staying nicely between the little yellow
 lines drawn in the dirt.
 ~
-296 0 1
+296 0 0 0 0 0
 D1
 ~
 ~
@@ -97,7 +97,7 @@ are the more expensive vehicles -- some taking up two parking spaces
 so no one scratches the trim.  Way, way in the back is a huge wagon
 with harness for four animals!  Talk about major horsepower!!!
 ~
-296 0 1
+296 0 0 0 0 0
 D0
 ~
 ~
@@ -115,7 +115,7 @@ lot, and a small access road winds north around the west side
 of the building.  There aren't as many wagons and carts here,
 since the walk to the front entrance is kind of long...
 ~
-296 0 1
+296 0 0 0 0 0
 D0
 ~
 ~
@@ -137,7 +137,7 @@ the entrance of the building.  You do see a couple of old, decrepit
 vehicles around with broken wheels and such, but there just isn't
 much here of interest.
 ~
-296 0 1
+296 0 0 0 0 0
 D0
 ~
 ~
@@ -156,7 +156,7 @@ seemingly impenatrable, and have Froboz's curly-Q sigil worked
 in on the front.  You are not sure if the doors are meant to
 keep intruders out, or workers in...
 ~
-296 0 1
+296 0 0 0 0 0
 D0
 ~
 ~
@@ -177,7 +177,7 @@ to be going, and a nice, oak door to the west with some sort of
 wierd lock on it.  This room is tastefully done in a black and
 dark green decor which makes it feel somewhat drab.
 ~
-296 d 0
+296 8 0 0 0 0
 D1
 ~
 ~
@@ -200,7 +200,7 @@ carpeted stairwell leading up to the second floor.  There is a
 mini kitchen near the windows, for the employee's lunches, and
 overall, you wish you worked here too!
 ~
-296 d 0
+296 8 0 0 0 0
 D1
 ~
 door~
@@ -219,7 +219,7 @@ play with their paperwork.  There is a nice, carpeted set of
 stairs that leads downwards to the lounge, which looks nice and
 inviting from up here.  Looks like these people here are well-kept!
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -238,7 +238,7 @@ task. To the south is the end of the hallway with stairs leading
 down, and to the north is more hall and more cubicles, ending
 finally in a largish office.
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -262,7 +262,7 @@ with an odd desk standing out because of its spot-lessness.
    Overall, it looks like your standard corporate-type working
 area.
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -282,7 +282,7 @@ going in and out of the cubicles to the office and back...
 perhaps this office is the office of the head honcho of this
 place?
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -305,7 +305,7 @@ seems to be an odd device on each that blinks and buzzes
 and that some people seem to be ignoring while others are
 talking and fondling theirs... how odd!
 ~
-296 d 0
+296 8 0 0 0 0
 D2
 ~
 ~
@@ -327,7 +327,7 @@ trying to hustle pass the secretary to get into, to the west a
 lavatory area and to the east a storage closet.  A large hall
 that runs the length of the building starts to your south.
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -355,7 +355,7 @@ place to raid.  However, being the adventurer that you are, you
 simply take a pen and some Post-It notes and make a mental note to
 come back later.
 ~
-296 d 0
+296 8 0 0 0 0
 D3
 ~
 ~
@@ -369,7 +369,7 @@ looks rather clean and spotless, with white tiling and porcelan
 fixtures.  A very nice place.  In fact, you wouldn't mind... um,
 nevermind.
 ~
-296 d 0
+296 8 0 0 0 0
 D1
 ~
 ~
@@ -385,7 +385,7 @@ over an idyllic garden scene that seems very out-of-place near
 this factory.  The room is done in subdued colours, and seems
 like a nice, spacious area.
 ~
-296 d 0
+296 8 0 0 0 0
 D2
 ~
 ~
@@ -401,7 +401,7 @@ spot.  This would not be a good place to work you would guess...
 but many of the inhabitants of Midgaard may not have the pleasure
 of choosing a better career option.
 ~
-296 cd 0
+296 12 0 0 0 0
 D0
 ~
 ~
@@ -423,7 +423,7 @@ complicated, technical things you do not understand.  It looks
 fairly busy here, people feverishly doing their job, just to keep
 from being whipped.  How horrible!
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -449,7 +449,7 @@ emptying bags of powder.  Finally, one worker comes out with
 a really nice glowing breastplate.  He throws it in the vat,
 where it is dissolved almost instantly!  What a waste!
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -472,7 +472,7 @@ that the workers are tearing up.  The title, from what you can
 see, is '..emistry'.  Evidently, this is the awesome might that
 magically can put people to sleep.
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -502,7 +502,7 @@ they haven't been enchanted yet! *sigh*  Oh well, maybe next time...
 pigeon and a machine that looks like a twisted dream of M.C. Escher,
 and decide that you don't want to know.
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -525,7 +525,7 @@ box with a small slit on the side.  The box looks impossible
 to open, even by an angry god!!!  Hmmm, looks like the Froboz
 Fun Factory of Doom is used to having adventurers looking about.
 ~
-296 d 0
+296 8 0 0 0 0
 D1
 ~
 ~
@@ -535,14 +535,14 @@ D2
 ~
 0 -1 29622
 E
-machine~
-   Parchment in one end, scrolls out the other.  No moving parts that you can
-see!  Magic!  Ain't it wonderful???  
-~
-E
 box~
    Wow!  The twin power-mages Black and Decker themselves couldn't get into this
 box if they tried!  This isn't a safe...  It is a safer!  
+~
+E
+machine~
+   Parchment in one end, scrolls out the other.  No moving parts that you can
+see!  Magic!  Ain't it wonderful???  
 ~
 S
 #29624
@@ -554,7 +554,7 @@ for further movement to the wagons waiting outside -- to be
 delivered to all of Froboz's magic shop chains all over the
 planes.
 ~
-296 cd 0
+296 12 0 0 0 0
 D0
 ~
 ~
@@ -590,7 +590,7 @@ fluid is being poured into small vials.  You look closer...
 potions that allow one to view the invisible?  Your stomach
 roils as you imagine what may be really going on here...
 ~
-296 d 0
+296 8 0 0 0 0
 D1
 ~
 ~
@@ -604,14 +604,14 @@ D3
 ~
 0 -1 29624
 E
-grinder~
-   Looks real disgusting.  Looks real painful.  You are glad you are not going
-anywhere near it, aren't you?  
-~
-E
 crates crates~
    On the side of the crate, barely legible from scratchmarks and age, is the
 legend: 'stbusters Inc.  One Type III enclosed.  DANGER.  This end up.  
+~
+E
+grinder~
+   Looks real disgusting.  Looks real painful.  You are glad you are not going
+anywhere near it, aren't you?  
 ~
 S
 #29626
@@ -622,7 +622,7 @@ product to mass market.  A lot of junk is lying about here,
 and occasionally you hear the boom of someone accidentally
 starting off a chain reaction...
 ~
-296 d 0
+296 8 0 0 0 0
 D2
 ~
 ~
@@ -646,7 +646,7 @@ parts room for all the machines in the factory.  The machine
 room continues to your south and east, and you feel a monstrous
 thrumming from somewhere nearby...
 ~
-296 d 0
+296 8 0 0 0 0
 D1
 ~
 ~
@@ -670,7 +670,7 @@ the south that makes all the loose parts rattle about a bit.
    There is a large red door to the south with big yellow writing
 on it that you may want to examine closer.
 ~
-296 d 0
+296 8 0 0 0 0
 D2
 ~
 door~
@@ -697,7 +697,7 @@ coming from the east that sets your teeth on edge.
    There is a big red door to the east with big yellow writing
 on it.
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -707,14 +707,14 @@ D1
 door~
 1 -1 29630
 E
-door writing~
-   The writing on the door is in large yellow print and reads: DANGER!!!  DO NOT
-ENTER!!!  
-~
-E
 magazines~
    These magazines seem to be filled with pictures of woman in various clothing
 crises.  Hmm.  
+~
+E
+door writing~
+   The writing on the door is in large yellow print and reads: DANGER!!!  DO NOT
+ENTER!!!  
 ~
 S
 #29630
@@ -726,7 +726,7 @@ velocities, making this room very dangerous.  The thrumming
 in the room makes your head want to pop from the pressure of
 it all!
 ~
-296 ad 0
+296 9 0 0 0 0
 D0
 ~
 door north~
@@ -744,7 +744,7 @@ doesn't feel too safe up here, after watching the others up here
 walk, and even run as if normal, you guess that it just takes time
 to get used to the feeling.  Still doesn't seem that sturdy, though.
 ~
-296 d 0
+296 8 0 0 0 0
 D1
 ~
 ~
@@ -767,7 +767,7 @@ be painful, no?   The catwalks give access above many of the most
 busy areas of the factory for the cruel foremen to oversee their
 charges.  Efficient, yes.  Humanitarian, no.
 ~
-296 d 0
+296 8 0 0 0 0
 D2
 ~
 ~
@@ -786,7 +786,7 @@ doing their jobs while trying not to get fired or beaten.
 Geez!  This place is so gloomy that you'll have to go to Arachnos
 next to cheer yourself up...
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -803,7 +803,7 @@ in the center of the catwalk, just in case.  Doesn't look like
 many foreman come to this section of the walkways, due to the ill
 repair.  Maybe you should leave yourself...
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~
@@ -822,7 +822,7 @@ still wouldn't want to work there.  Many heavy  carts and
 wagons slowly make their way up and down this road, wearing
 the ruts in the road even deeper into the earth.
 ~
-296 0 1
+296 0 0 0 0 0
 D0
 ~
 ~
@@ -840,7 +840,7 @@ to be loaded or unloaded by the factory workers, and then sent
 on their delivery routes.  As you watch, they all slowly move
 up one cart-length, and then the drivers continue their snoozing.
 ~
-296 c 1
+296 4 0 0 0 0
 D1
 ~
 ~
@@ -860,7 +860,7 @@ you are sure you just saw one crate loaded, then unloaded at
 least three times.  Oh well, they are Union... they probably
 know what they are doing...
 ~
-296 d 0
+296 8 0 0 0 0
 D2
 ~
 ~
@@ -880,7 +880,7 @@ embezzelment, etc.  Each crate might contain a fortune, or
 absolutely nothing, but from the rumours of Froboz, you decide
 not to find out...
 ~
-296 d 0
+296 8 0 0 0 0
 D0
 ~
 ~

@@ -5,7 +5,7 @@ A huge, black doglike thing blasts from behind trees, attacking you!
 ~
    This demon dog is a Barghest, guardian of all things evil and cruel.  
 ~
-cdfg 0 -800 E
+108 0 0 0 0 0 0 0 -800 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -18,7 +18,7 @@ A corpse candle shimmers before you, trying to find it's way to Peace.
    This unlucky soul lost it's way to Heaven or Hell, wherever it was headed,
 and wound up roaming this forest in search of the Way.  
 ~
-dghnpqr 0 -300 E
+237768 0 0 0 0 0 0 0 -300 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -31,7 +31,7 @@ A strange, pale manlike thing ambles into view, slowly turning it's head your wa
    This thing, half blood sucker and half were-man looks as if it has not fed in
 some time.  
 ~
-dgjnpr n -900 E
+172616 0 0 0 0 0 0 0 -900 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -44,7 +44,7 @@ Lord Ankou, King of the Dead, rides his ghostly cart through the forest.
    This awful spectre of death rides his cart throught the forest searching for
 dead souls that he may claim as his own.  
 ~
-degnopqr dfhknp -1000 E
+254040 0 0 0 65616 0 0 0 -1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -57,7 +57,7 @@ A ghostly spectre follows alongside it's Lord, guarding the captured souls.
    With no distinct facial features it is hard to tell if this thing was once a
 man or woman or if it ever was alive at all.  
 ~
-dgmnopqr dfh -900 E
+258120 0 0 0 80 0 0 0 -900 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -70,7 +70,7 @@ A man stands here, a wooden stake sticking out of a backpack he is wearing.
    He gives you a piercing look, one that seems to borrow down into your soul.
 He raises one side of his upper lip in a snarl and attacks.  
 ~
-dg 0 100 E
+72 0 0 0 0 0 0 0 100 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -82,7 +82,7 @@ A buzzard spots you and heads your way, watch out!
 ~
    This nasty, dirty bird looks hungry and mean and ready to bite your face off.
 ~
-bdf 0 -500 E
+42 0 0 0 0 0 0 0 -500 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0

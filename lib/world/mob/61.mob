@@ -6,7 +6,7 @@ A vicious warg is here, snarling angrily at you.
    It is an exceptionally large wolf with thick, black fur.  Saliva is dripping
 quickly from its long, white fangs.  It looks quite dangerous and very angry.  
 ~
-dfg k -350 E
+104 0 0 0 0 0 0 0 -350 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -19,7 +19,7 @@ A ferocious warg is here, snarling angrily at you.
    It is an exceptionally large wolf with thick, black fur.  Saliva is dripping
 quickly from its long, white fangs.  It looks quite dangerous and very angry.  
 ~
-dfg k -350 E
+104 0 0 0 0 0 0 0 -350 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -31,7 +31,7 @@ A large, grey wolf is here, glaring hungrily at you.
 ~
    The large, grey wolf eyes you with interest while licking its lips.  
 ~
-dfg k -150 E
+104 0 0 0 0 0 0 0 -150 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -43,7 +43,7 @@ A large, black wolf is here, glaring hungrily at you.
 ~
    The large, black wolf eyes you with interest while licking its lips.  
 ~
-dfg k -150 E
+104 0 0 0 0 0 0 0 -150 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -57,7 +57,7 @@ A huge, ancient tree towers above you.
 Something about it makes you think that this is not a normal oak tree.  The
 enormous grey trunk shivers slightly, as if sighing deeply.  
 ~
-dglnopqr dfkpst 0 E
+256072 0 0 0 1638480 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -71,7 +71,7 @@ A huge, ancient tree towers above you.
 Something about it makes you think that this is not a normal oak tree.  The
 enormous grey trunk emits a deep, moaning sound.  
 ~
-dglnopqr dfkpst 0 E
+256072 0 0 0 1638480 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -86,7 +86,7 @@ colossal body.  Numerous holes in its heavy wings tell of many fights as does
 the nicks in the horns on its head.  It smells as disgusting as only dragons do.
 
 ~
-dfgnoq dk -1000 E
+90216 0 0 0 16 0 0 0 -1000 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -101,7 +101,7 @@ A huge, poisonous spider is here.
 has eight hairy legs that gives it a tremendous speed on almost any surface and
 sharp poisonous fangs to paralyze or kill its prey.  
 ~
-bdg dk -350 E
+74 0 0 0 16 0 0 0 -350 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -116,7 +116,7 @@ The huge, bulky Queen spider is here.
 huge, hairy legs that would give it a tremendous speed on almost any surface if
 it wasn't so immensely fat.  Its large, bulbous eyes stare back at you.  
 ~
-bdgjl dfkp -1000 E
+2634 0 0 0 65616 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -131,7 +131,7 @@ Shargugh the Forest Brownie is here, grinning broadly at you.
 long tangled brown beard.  He wears ragged brown and green clothing and looks as
 if he is having great fun.  
 ~
-cdghl bdfgkpst 1000 E
+2252 0 0 0 1638612 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -145,7 +145,7 @@ The Elder druid is here.  He looks very upset about your presence in his home.
    The druid looks quite old.  You would think of him as venerable but yet you
 know he would be a tough foe.  
 ~
-bdij dfk 0 E
+778 0 0 0 80 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -162,7 +162,7 @@ shirt and a short skirt made from black scales joined with silver threads.  Her
 back is covered by a large, hooded cloak as black as her skin and in her broad
 silver belt hangs a long, slender sword in a silver scabbard.  
 ~
-bdlm dks -1000 E
+6154 0 0 0 524304 0 0 0 -1000 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2

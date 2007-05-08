@@ -3,7 +3,7 @@ sword small~
 a small sword~
 A small sword lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
 3 60 10 0
 #3501
@@ -11,7 +11,7 @@ sword long~
 a fine long sword~
 A long sword has been left here.~
 ~
-5 an an 0
+5 an 0 0 0 an 0 0 0 0 0 0 0
 0 1 9 3
 8 600 10 0
 A
@@ -21,7 +21,7 @@ club wooden~
 a wooden club~
 A simple looking wooden club is here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 3 7
 3 12 10 0
 #3503
@@ -29,7 +29,7 @@ jacket studded leather~
 a studded leather jacket~
 A studded leather jacket is lying on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 20 500 10 0
 #3504
@@ -37,7 +37,7 @@ spear small~
 a small spear~
 A small spear lies here.~
 ~
-5 m an 0
+5 m 0 0 0 an 0 0 0 0 0 0 0
 0 5 1 11
 15 500 120 0
 #3505
@@ -45,7 +45,7 @@ corpse mutilated~
 a mutilated corpse~
 A mutilated corpse has been left on the ground here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 20 0 -1 0
 0 0 0 0
 E
@@ -57,7 +57,7 @@ mutilated carcass~
 a mutilated carcass~
 A mutilated carcass has been left on the ground here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 20 0 -1 0
 0 0 0 0
 E
@@ -69,7 +69,7 @@ dagger ornate~
 an ornate dagger~
 A beautiful looking dagger is stuck in the ground.~
 ~
-5 dfghkmnpq an 0
+5 dfghkmnpq 0 0 0 an 0 0 0 0 0 0 0
 0 3 3 11
 4 1000 500 0
 E
@@ -86,7 +86,7 @@ gyroscope toy~
 the gyroscope~
 A small toy is spinning about on the ground here.~
 ~
-9 b abo 0
+9 b 0 0 0 abo 0 0 0 0 0 0 0
 5 0 0 0
 1 25 600 0
 E

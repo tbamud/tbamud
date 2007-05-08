@@ -3,7 +3,7 @@ hannah key~
 a key~
 A golden key to the gates of hannah is lying here~
 ~
-18 cd a 0
+18 cd 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #12501
@@ -11,7 +11,7 @@ temple sword~
 an elite temple guard sword~
 A black temple guard's sword is here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 6 2 13 3
 18 135 13 0
 A
@@ -21,7 +21,7 @@ moki bird feather~
 a golden moki bird feather~
 A golden moki bird feather is here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 10 10 -1
 1 1 0 0
 T 12500
@@ -30,7 +30,7 @@ lamb chop~
 a lamb chop~
 A cooked lamb chop was left here, uneaten.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 10 0 0
 #12504
@@ -38,7 +38,7 @@ granite fountain~
 a granite fountain~
 A fountain, carved from a single block of granite, bubbles merrily here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 0 0 0 0
 #12505
@@ -46,7 +46,7 @@ golden orb~
 a golden orb~
 A golden orb is floating about here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 2 60 6 0
 #12507
@@ -54,7 +54,7 @@ amputating saw~
 an amputating saw~
 A saw used to amputate limbs is here covered in blood.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 5 4
 6 240 24 0
 #12508
@@ -62,7 +62,7 @@ side beef~
 a side of beef~
 A side of beef hangs on a hook.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 15 20 5 0
 #12509
@@ -70,7 +70,7 @@ pastry~
 a small pastry~
 A small pastry lathered with butter is attracting flies.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 15 3 0
 #12510
@@ -78,7 +78,7 @@ croissant~
 a fluffly croissant~
 A fluffy croissant is collecting dust.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 14 4 0
 #12511
@@ -86,7 +86,7 @@ thieves dagger~
 a thieves dagger~
 A dagger belonging to some thief tribes lay here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 1 10 14
 1 50 5 0
 #12512
@@ -94,7 +94,7 @@ soldiers lance~
 a soldiers lance~
 A soldiers lance is propped up here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 4 2 12 12
 10 500 50 0
 #12520
@@ -102,7 +102,7 @@ moki bird feather~
 a golden moki bird feather~
 A golden moki bird feather is here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 10 10 -1
 1 1000 0 0
 T 12500
@@ -111,7 +111,7 @@ moki bird feather~
 a golden moki bird feather~
 A golden moki bird feather is here.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 0
 T 12500
@@ -120,7 +120,7 @@ moki bird feather~
 a golden moki bird feather~
 A golden moki bird feather is here.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 0
 T 12500
@@ -129,7 +129,7 @@ silver key hannah~
 a silver key~
 A key of brilliant silver is here.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #12562
@@ -137,7 +137,7 @@ bread pound~
 a pound of bread~
 A large pound of bread is here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 1 5 1 0
 #12567
@@ -145,7 +145,7 @@ beef cutlet~
 a beef cutlet~
 A big beef cutlet is here, waiting to be eaten.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 2 200 20 0
 #12568
@@ -153,7 +153,7 @@ Hannah pack~
 a pack~
 A pack with the seal of Hannah is here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 80 0 -1 0
 9 120 12 0
 #12569
@@ -161,7 +161,7 @@ bandages~
 some bloody bandages~
 A few strips of blooded cloth lies here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 #12570
@@ -169,7 +169,7 @@ recall scroll~
 a scroll of recall~
 A fine looking scroll lies on the grouns here.~
 ~
-2 g a 0
+2 g 0 0 0 a 0 0 0 0 0 0 0
 12 42 -1 -1
 1 150 14 0
 #12599
@@ -177,7 +177,7 @@ oaken boots~
 a pair of oaken boots~
 A pair of heavy oaken boots are here.~
 ~
-9 g ag 0
+9 g 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 12 60 6 0
 A

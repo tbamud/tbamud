@@ -10,7 +10,7 @@ His glance scans the room and focuses on you intently.  He crooks one huge talon
 as you look at him as if to ask what you want from him, better not waist his
 time.  
 ~
-bdeglno cdefkn -400 E
+26714 0 0 0 120 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -25,7 +25,7 @@ A small tornado of dust spins here.
 up sand and dust as it goes.  There looks to be a human face within the tiny
 storm.  
 ~
-cdgq 0 0 E
+65612 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -40,7 +40,7 @@ A small crab is crawling across the sand here.
 hide under.  Looks like you wouldn't want it to get a good hold of you with
 those pincers.  
 ~
-degl fk 0 E
+2136 0 0 0 64 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -56,7 +56,7 @@ Waves of heated air flow from it and you wonder what kind of energy it took to
 create this thing.  The fiendish face of the monster grins demonically at you.
 
 ~
-dgln k 0 E
+10312 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -74,7 +74,7 @@ imbedded in its belli.  Its eyes are closed and although it is over 100 feet
 long if it is sleeping..  You might be able to get passed it.  What a guardian!
 
 ~
-bcdeglo cdefhkn -1000 E
+18526 0 0 0 120 0 0 0 -1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -88,7 +88,7 @@ A working class wyvern walks these streets without fear.
    This is an adult wyvern on his way to run some errands.  His gaze passes over
 you and dismisses you as soon as it does.  How pathetic you are.  
 ~
-cdgl k -200 E
+2124 0 0 0 0 0 0 0 -200 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -103,7 +103,7 @@ A newly hatched wyvern is here.
 so young that its scales are still shiny from birth.  The baby wyvern looks back
 at you with curiosity, who is this strange being?  
 ~
-cdghl k -100 E
+2252 0 0 0 0 0 0 0 -100 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -119,7 +119,7 @@ watches the crowds intently looking for signs of trouble within his city.  His
 dull red scales glint faintly in the light and his footsteps echo heavily over
 the voices of those of his lighter brethren.  A deadly opponent.  
 ~
-deglnop fkmn -250 E
+59480 0 0 0 8256 0 0 0 -250 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -136,7 +136,7 @@ everything around her a bluish tinge.  She looks at you as if assessing your
 possible danger to her.  A forked tung flickers in and out of her mouth tasting
 the air.  
 ~
-bdeglmo cfkn -350 E
+22618 0 0 0 72 0 0 0 -350 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -152,7 +152,7 @@ Deep red scales match a set of glowing red eyes which look at you distastefully.
 Though he says nothing the 15 foot long reptile conveys a feeling of great
 arrogance and disdain.  He must be very important.  
 ~
-cdglno cdekmn -400 E
+26700 0 0 0 8248 0 0 0 -400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -169,7 +169,7 @@ crimson.  There is an other difference as well, he has a set of huge wings
 folded across his back.  His eyes pass serenely over you and the rest of the
 room.  You represent no threat to such a creature.  
 ~
-bdeglnopqr cdefhkmn -500 E
+256090 0 0 0 8312 0 0 0 -500 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -184,7 +184,7 @@ A wyvern wizard is here researching new items to sell.
 at you carefully to make sure you don't try to walk off with anything from his
 shop.  
 ~
-bcdeghnopr cdefghkmn 0 E
+188638 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -199,7 +199,7 @@ A wyvern stands here filling cups and barrels with water.
 other.  He watches you with interest.  Wonder if he's hungry or looking for
 business?  
 ~
-bcdeghnopr cdefghkmn 0 E
+188638 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -213,7 +213,7 @@ A wyvern is here checking over his goods.
    This wyvern holds a jeweler's monocle in one hand and a tablet in the other.
 There is a shrewd look in his eye.  Looks like he drives a hard bargain.  
 ~
-bcdeghlnopr cdefghkmn 0 E
+190686 0 0 0 8440 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -227,7 +227,7 @@ A huge wyvern is here sharpening his claws.
    He looks very well capable of crushing you with one claw tied behind his
 back.  It's a good thing he's selling weapons and not using them...  On you.  
 ~
-bcdeglnopqr cdefghkmn 0 E
+256094 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -241,7 +241,7 @@ A wyvern is here tanning some hides.
    This wyvern holds a knife in one hand and a piece of hide in the other.  
 Wonder if she wants your hide too?  
 ~
-bcdglnopqr cdefghkmn 0 E
+256078 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -255,7 +255,7 @@ A big wyvern is here selling his home cooked meals.
    This wyvern looks like he's had a few too many of his own creations.  On the
 other hand maybe he's had a few too many of his customers.  
 ~
-bcdeghlnopr cdefghkmn 0 E
+190686 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -270,7 +270,7 @@ A wyvern in the garb of a healer stands here.
 that a smile on his face?  Or is he just thinking of how much he can charge you?
 
 ~
-bcdghlnopr cdefghkmn 0 E
+190670 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1

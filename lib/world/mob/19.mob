@@ -8,7 +8,7 @@ only slightly paler and less muscular.  Its mottled hide looks soft in places,
 affording it less protection than the armour-like skin of a full grown bullywug.
 
 ~
-bdm k -200 E
+4106 0 0 0 0 0 0 0 -200 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -24,7 +24,7 @@ perhaps evolved to survive the attacks of local predators.  Large multi-faceted
 eyes peer alertly about and every few seconds the creature announces its
 presence with its characteristic chirp.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 0 2500
 8 8 0
@@ -40,7 +40,7 @@ black eyes peer out from the scale armour of its gigantic face.  Deep below the
 water, the enormous undulating shadow of its body sends waves rippling across
 the surface.  
 ~
-bdfnop k -100 E
+57386 0 0 0 0 0 0 0 -100 E
 22 13 -3 4d4+220 3d3+3
 0 48400
 8 8 0
@@ -57,7 +57,7 @@ A menacing lizard warrior stands at post.
 scales armour almost his entire body, making him blend seamlessly into shadow,
 only his fierce yellow eyes piercingly obvious.  
 ~
-defgno dfk -200 E
+24696 0 0 0 80 0 0 0 -200 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -72,7 +72,7 @@ A menacing lizard warrior stands at post.
 scales armour almost his entire body, making him blend seamlessly into shadow,
 only his fierce yellow eyes piercingly obvious.  
 ~
-bdefnopr k -200 E
+188474 0 0 0 0 0 0 0 -200 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -87,7 +87,7 @@ A tiny lizard hatchling crawls about.
 newly-born.  Soft transluscent scales cover its whole body and its small eyes
 are still squinted shut as though asleep.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 0 4900
 8 8 0
@@ -102,7 +102,7 @@ An enormously tall lizard man lounges on the throne.
 magnificent flecked green scales.  His long sweeping tail flicks restlessly from
 side to side, and his cruel black eyes seem extraordinarily intelligent.  
 ~
-bdefno k 18 E
+24634 0 0 0 0 0 0 0 18 E
 19 14 -1 3d3+190 3d3+3
 500 43320
 8 8 1
@@ -117,7 +117,7 @@ mottled olive green hide he looks naturally well-armoured.  A wide gaping mouth
 covers much of his face, the only other noteworthy feature being his large
 bulbousy eyes that peer keenly about.  
 ~
-degmo k -200 E
+20568 0 0 0 0 0 0 0 -200 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -132,7 +132,7 @@ A jet-black crow hops warily along the ground.
 irridescent in any light.  Its large, sharp beak is curved and predatory, as is
 the look in its tiny beaded eyes.  
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 0 10000
 8 8 0
@@ -149,7 +149,7 @@ caverns, though the damp of the swampland is equally acceptable as long as there
 is food to be found.  Incredibly large, effective eyes ensure that even the dark
 cannot serve as a hiding place from this predator.  
 ~
-defgm fk 12 E
+4216 0 0 0 64 0 0 0 12 E
 12 16 2 2d2+120 2d2+2
 0 14400
 8 8 2
@@ -165,7 +165,7 @@ caverns, though the damp of the swampland is equally acceptable as long as there
 is food to be found.  Incredibly large, effective eyes ensure that even the dark
 cannot serve as a hiding place from this predator.  
 ~
-bdefgm fk -400 E
+4218 0 0 0 64 0 0 0 -400 E
 10 17 4 2d2+100 1d2+1
 0 10000
 8 8 0
@@ -182,7 +182,7 @@ fangs of its more dangerous arachnoid kin.  Large bulbous eyes peer keenly and
 evily about, watching for any opportunity this creature could take to capture a
 new meal.  
 ~
-dfg k -400 E
+104 0 0 0 0 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
 0 22500
 8 8 0
@@ -198,7 +198,7 @@ hypnotising scent wafting around it.  The natural pheremones of this animal are
 apparantly as deadly as they are intoxicating, judging by the predatory gleam in
 its calculating eyes.  
 ~
-dg k -400 E
+72 0 0 0 0 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
 0 22500
 8 8 0
@@ -215,7 +215,7 @@ surface of still waters with its long, slender legs.  Small in size and almost
 fragile in appearance, only its large glistening fangs betray the ferocity of
 this creature.  
 ~
-dg gkp -400 E
+72 0 0 0 65664 0 0 0 -400 E
 17 15 0 3d3+170 2d2+2
 0 28900
 8 8 0
@@ -231,7 +231,7 @@ rapidly from one hiding place to another.  Its tiny beady eyes take in the
 surroundings with ease, its relatively small fangs clicking almost impatiently
 with the urge to kill.  
 ~
-dfgl ks -400 E
+2152 0 0 0 524288 0 0 0 -400 E
 17 15 0 3d3+170 2d2+2
 0 28900
 8 8 0
@@ -247,7 +247,7 @@ markings decorating its black hide like fresh blood.  Abnormally large poison
 sacks are visible behind its substantial fangs, indicating that this spider's
 bite could be worse than most.  
 ~
-dg ks -400 E
+72 0 0 0 524288 0 0 0 -400 E
 17 15 0 3d3+170 2d2+2
 0 28900
 8 8 0
@@ -263,7 +263,7 @@ A beautiful mangora spider shimmers as it hurries along.
 Shimmering like a large jewel, the deep reddish purple colouring of its soft
 hide stands out strikingly.  
 ~
-dgh dek -400 E
+200 0 0 0 48 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
 0 32400
 8 8 0
@@ -279,7 +279,7 @@ A bird-eating spider lies in wait here, cleaning its pincers.
 coupled with a sturdy hairy body and long well-armoured forearms.  Although its
 pincers are slick with fresh blood, its eyes look almost murderously hungry.  
 ~
-dg k -400 E
+72 0 0 0 0 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
 0 32400
 8 8 0
@@ -295,7 +295,7 @@ A jumping spider crouches here, ready to spring.
 great distances forward and into the air.  Long, lean pincers glisten unsheathed
 and ready for striking as its body stays tense for a leap.  
 ~
-bdf k -400 E
+42 0 0 0 0 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
 0 22500
 8 8 0
@@ -310,7 +310,7 @@ A funnel spider's large eyes gleam in the shadows.
 Enormously large, vulnerable looking eyes peer cautiously about, so keenly able
 in the dark, this spider is probably all but blind in sunlight.  
 ~
-bd k -400 E
+10 0 0 0 0 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
 0 32400
 8 8 0
@@ -325,7 +325,7 @@ A crab spider darts over the landscape in sudden bursts.
 random directions whilst managing to stay in the same area.  Highly intelligent
 eyes survey the surroundings, burning with a fierce predatory lust.  
 ~
-bdf k -400 E
+42 0 0 0 0 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
 0 22500
 8 8 0
@@ -341,7 +341,7 @@ attacking its prey with a quick ambush.  Dark shades of drab colours, its
 relatively small body is easy to conceal, only the glint of its smooth fangs and
 dark eyes easily betray its presence.  
 ~
-bdf k -400 E
+42 0 0 0 0 0 0 0 -400 E
 19 14 -1 3d3+190 3d3+3
 0 36100
 8 8 0
@@ -357,7 +357,7 @@ air around the creature, allowing it to breathe underwater.  Its round dark eyes
 appear slightly clouded, as though some mucusy residue protects them from the
 water.  
 ~
-bd gk -400 E
+10 0 0 0 128 0 0 0 -400 E
 19 14 -1 3d3+190 3d3+3
 0 36100
 8 8 0
@@ -374,7 +374,7 @@ sticking up like spines all over its body.  Large glands sit behind its front
 fangs, producing copious amounts of sticky webbing that the creature can project
 at will from its mouth.  
 ~
-dg k -400 E
+72 0 0 0 0 0 0 0 -400 E
 19 14 -1 3d3+190 3d3+3
 0 36100
 8 8 0
@@ -390,7 +390,7 @@ wasp spider~
 sticky web-like substance that it coats its legs with, particularly useful for
 capturing and entangling unobservant prey.  
 ~
-dfg k -400 E
+104 0 0 0 0 0 0 0 -400 E
 17 15 0 3d3+170 2d2+2
 0 28900
 8 8 0
@@ -408,7 +408,7 @@ its movements are quick and elegant.  Blackberry clusters of gleaming eyes watch
 the entrance way without let up, seeing through cloaks of darkness and magic
 alike.  
 ~
-bdelnopr dfk -400 E
+190490 0 0 0 80 0 0 0 -400 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -426,7 +426,7 @@ slightly as they support the weight of its huge bulbousy black body.  The two
 signature grey stripes of the whisper species mark this creature's underbelly,
 and two blood red eyes peer effortlessly through the dark.  
 ~
-bdnp dfk 0 E
+40970 0 0 0 80 0 0 0 0 E
 23 13 -3 4d4+500 3d3+3
 230 52900
 8 8 2
@@ -443,7 +443,7 @@ shimmering slightly as though moonlit, complimenting the silvery hair that
 cascades down his back.  Bloodlust burns in his fierce eyes, like burning coals
 they glow vaguely red, casting his regal features in an eerie crimson hue.  
 ~
-bdnor ck -500 E
+155658 0 0 0 8 0 0 0 -500 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -461,7 +461,7 @@ Long silver hair floats softly about her face in a starlit haze, casting her
 delicate features in and out of shadows as her entire slender form flickers
 eerily.  
 ~
-bdenopqr dfk 500 E
+253978 0 0 0 80 0 0 0 500 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 2
@@ -477,7 +477,7 @@ lower body of a giant spider.  Evil and unnaturally bloodthirsty, its scarlet
 glowing eyes show no sign of any remaining higher emotion, just an insatiable
 lust for killing.  
 ~
-dfg dfk -500 E
+104 0 0 0 80 0 0 0 -500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -493,7 +493,7 @@ its pale skin offers absolutely no protection from the sun.  Its light-pink eyes
 are almost completely useless, gazing blindly about as it moves cautiously from
 rock to rock.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 0 3600
 8 8 0
@@ -509,7 +509,7 @@ A tiny glittering dragonfly flexes its wings.
 colours.  Fragile silvery wings open and close reflexively as it rests, delicate
 metallic veins sparkling as they catch the light.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 0 400
 8 8 0
@@ -527,7 +527,7 @@ stick out haphazardly from both his head and his large, pointed ears.
 Friendly-faced, his skin is lined with many years of laughter and sorrow alike,
 wise grey eyes twinkling with a stubborn humour.  
 ~
-bd k 100 E
+10 0 0 0 0 0 0 0 100 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -545,7 +545,7 @@ pierce all darkness.  Extremely intelligent, these spiders are often used as
 viciously effective guards, eager to kill and devour even those of their own
 kind.  
 ~
-dfgr k -500 E
+131176 0 0 0 0 0 0 0 -500 E
 19 14 -1 3d3+190 3d3+3
 0 36100
 8 8 0

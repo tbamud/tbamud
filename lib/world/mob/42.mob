@@ -6,7 +6,7 @@ A red dragon is curled up here.
    As you get close enough to see the small details, the dragon whips its snout
 toward you, breathing a small cloud of smoke.  
 ~
-bdefnopr 0 -1000 E
+188474 0 0 0 0 0 0 0 -1000 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -21,7 +21,7 @@ The King of the Dragons reclines on his tail here.
 narrows his eyes and breathes a cloud of sulfur smoke into your face, making you
 cough and take a step backwards.  
 ~
-bdf dek -1000 E
+42 0 0 0 48 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -39,7 +39,7 @@ A dragon hatchling is lying here curled up into a ball
 ~
    It looks up at you and breathes a small tougue of flame.  
 ~
-bcdenopqr cdek -10 E
+253982 0 0 0 56 0 0 0 -10 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -52,7 +52,7 @@ A large, hulking troll is standing here.
 ~
    It looks big, and very hungry...  
 ~
-bdenopqr cde -1000 E
+253978 0 0 0 56 0 0 0 -1000 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -64,7 +64,7 @@ A dragon is here, blocking your way
 ~
    He lookes at you, and you see a dangerous glint in his eye...  
 ~
-bdenopqr cdefk -1000 E
+253978 0 0 0 120 0 0 0 -1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -78,7 +78,7 @@ An elf is here, mopping the floor.
    She looks up at you sadly, and you can tell by her eyes that she was broken
 by the dragons long ago.  
 ~
-bdlnopqr 0 1000 E
+256010 0 0 0 0 0 0 0 1000 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -92,7 +92,7 @@ A green dragon is standing here!
    The green dragon is big, strong, and dangerous, Unfortunately for you, it has
 already seen you, so there is no good in running.  
 ~
-cdefgnopqr 0 0 E
+254076 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -107,7 +107,7 @@ The King of the Dragons reclines on his tail here.
 narrows his eyes and breathes a cloud of sulfur smoke into your face, making you
 cough and take a step backwards.  
 ~
-bcdloq dk -800 E
+83982 0 0 0 16 0 0 0 -800 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -124,7 +124,7 @@ Guldane's Income mob.
 ~
    I have not idea what this is for.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -137,7 +137,7 @@ Guldane's Shopkeeper stands here
 ~
    He has only 2 items....  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 6 6 1

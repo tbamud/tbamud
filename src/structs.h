@@ -53,22 +53,22 @@
 
 /* Room flags: used in room_data.room_flags */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
-#define ROOM_DARK		(1 << 0)   /* Dark			*/
-#define ROOM_DEATH		(1 << 1)   /* Death trap		*/
-#define ROOM_NOMOB		(1 << 2)   /* MOBs not allowed		*/
-#define ROOM_INDOORS		(1 << 3)   /* Indoors			*/
-#define ROOM_PEACEFUL		(1 << 4)   /* Violence not allowed	*/
-#define ROOM_SOUNDPROOF		(1 << 5)   /* Shouts, gossip blocked	*/
-#define ROOM_NOTRACK		(1 << 6)   /* Track won't go through	*/
-#define ROOM_NOMAGIC		(1 << 7)   /* Magic not allowed		*/
-#define ROOM_TUNNEL		(1 << 8)   /* room for only 1 pers	*/
-#define ROOM_PRIVATE		(1 << 9)   /* Can't teleport in		*/
-#define ROOM_GODROOM		(1 << 10)  /* LVL_GOD+ only allowed	*/
-#define ROOM_HOUSE		(1 << 11)  /* (R) Room is a house	*/
-#define ROOM_HOUSE_CRASH	(1 << 12)  /* (R) House needs saving	*/
-#define ROOM_ATRIUM		(1 << 13)  /* (R) The door to a house	*/
-#define ROOM_OLC		(1 << 14)  /* (R) Modifyable/!compress	*/
-#define ROOM_BFS_MARK		(1 << 15)  /* (R) breath-first srch mrk	*/
+#define ROOM_DARK           0   /* Dark */
+#define ROOM_DEATH          1   /* Death trap */
+#define ROOM_NOMOB          2   /* MOBs not allowed */
+#define ROOM_INDOORS        3   /* Indoors */
+#define ROOM_PEACEFUL       4   /* Violence not allowed	*/
+#define ROOM_SOUNDPROOF     5   /* Shouts, gossip blocked */
+#define ROOM_NOTRACK        6   /* Track won't go through */
+#define ROOM_NOMAGIC        7   /* Magic not allowed */
+#define ROOM_TUNNEL         8   /* room for only 1 pers	*/
+#define ROOM_PRIVATE        9   /* Can't teleport in */
+#define ROOM_GODROOM       10   /* LVL_GOD+ only allowed */
+#define ROOM_HOUSE         11   /* (R) Room is a house */
+#define ROOM_HOUSE_CRASH   12   /* (R) House needs saving */
+#define ROOM_ATRIUM        13   /* (R) The door to a house */
+#define ROOM_OLC           14   /* (R) Modifyable/!compress */
+#define ROOM_BFS_MARK      15   /* (R) breath-first srch mrk */
 
 /* Exit info: used in room_data.dir_option.exit_info */
 #define EX_ISDOOR		(1 << 0)   /* Exit is a door		*/
@@ -137,102 +137,102 @@
 #define POS_STANDING   8	/* standing		*/
 
 /* Player flags: used by char_data.char_specials.act */
-#define PLR_KILLER	(1 << 0)   /* Player is a player-killer		*/
-#define PLR_THIEF	(1 << 1)   /* Player is a player-thief		*/
-#define PLR_FROZEN	(1 << 2)   /* Player is frozen			*/
-#define PLR_DONTSET     (1 << 3)   /* Don't EVER set (ISNPC bit)	*/
-#define PLR_WRITING	(1 << 4)   /* Player writing (board/mail/olc)	*/
-#define PLR_MAILING	(1 << 5)   /* Player is writing mail		*/
-#define PLR_CRASH	(1 << 6)   /* Player needs to be crash-saved	*/
-#define PLR_SITEOK	(1 << 7)   /* Player has been site-cleared	*/
-#define PLR_NOSHOUT	(1 << 8)   /* Player not allowed to shout/goss	*/
-#define PLR_NOTITLE	(1 << 9)   /* Player not allowed to set title	*/
-#define PLR_DELETED	(1 << 10)  /* Player deleted - space reusable	*/
-#define PLR_LOADROOM	(1 << 11)  /* Player uses nonstandard loadroom	*/
-#define PLR_NOWIZLIST	(1 << 12)  /* Player shouldn't be on wizlist	*/
-#define PLR_NODELETE	(1 << 13)  /* Player shouldn't be deleted	*/
-#define PLR_INVSTART	(1 << 14)  /* Player should enter game wizinvis	*/
-#define PLR_CRYO	(1 << 15)  /* Player is cryo-saved (purge prog)	*/
-#define PLR_NOTDEADYET	(1 << 16)  /* (R) Player being extracted.	*/
+#define PLR_KILLER        0   /* Player is a player-killer */
+#define PLR_THIEF         1   /* Player is a player-thief */
+#define PLR_FROZEN        2   /* Player is frozen */
+#define PLR_DONTSET       3   /* Don't EVER set (ISNPC bit) */
+#define PLR_WRITING       4   /* Player writing (board/mail/olc) */
+#define PLR_MAILING       5   /* Player is writing mail	*/
+#define PLR_CRASH         6   /* Player needs to be crash-saved	*/
+#define PLR_SITEOK        7   /* Player has been site-cleared */
+#define PLR_NOSHOUT       8   /* Player not allowed to shout/goss */
+#define PLR_NOTITLE       9   /* Player not allowed to set title */
+#define PLR_DELETED      10   /* Player deleted - space reusable */
+#define PLR_LOADROOM     11   /* Player uses nonstandard loadroom */
+#define PLR_NOWIZLIST    12   /* Player shouldn't be on wizlist	*/
+#define PLR_NODELETE     13   /* Player shouldn't be deleted */
+#define PLR_INVSTART     14   /* Player should enter game wizinvis */
+#define PLR_CRYO         15   /* Player is cryo-saved (purge prog) */
+#define PLR_NOTDEADYET   16   /* (R) Player being extracted */
 
 /* Mobile flags: used by char_data.char_specials.act */
-#define MOB_SPEC         (1 << 0)  /* Mob has a callable spec-proc	*/
-#define MOB_SENTINEL     (1 << 1)  /* Mob should not move		*/
-#define MOB_SCAVENGER    (1 << 2)  /* Mob picks up stuff on the ground	*/
-#define MOB_ISNPC        (1 << 3)  /* (R) Automatically set on all Mobs	*/
-#define MOB_AWARE	 (1 << 4)  /* Mob can't be backstabbed		*/
-#define MOB_AGGRESSIVE   (1 << 5)  /* Mob auto-attacks everybody nearby	*/
-#define MOB_STAY_ZONE    (1 << 6)  /* Mob shouldn't wander out of zone	*/
-#define MOB_WIMPY        (1 << 7)  /* Mob flees if severely injured	*/
-#define MOB_AGGR_EVIL	 (1 << 8)  /* Auto-attack any evil PC's		*/
-#define MOB_AGGR_GOOD	 (1 << 9)  /* Auto-attack any good PC's		*/
-#define MOB_AGGR_NEUTRAL (1 << 10) /* Auto-attack any neutral PC's	*/
-#define MOB_MEMORY	 (1 << 11) /* remember attackers if attacked	*/
-#define MOB_HELPER	 (1 << 12) /* attack PCs fighting other NPCs	*/
-#define MOB_NOCHARM	 (1 << 13) /* Mob can't be charmed		*/
-#define MOB_NOSUMMON	 (1 << 14) /* Mob can't be summoned		*/
-#define MOB_NOSLEEP	 (1 << 15) /* Mob can't be slept		*/
-#define MOB_NOBASH	 (1 << 16) /* Mob can't be bashed (e.g. trees)	*/
-#define MOB_NOBLIND	 (1 << 17) /* Mob can't be blinded		*/
-#define MOB_NOTDEADYET   (1 << 18) /* (R) Mob being extracted.		*/
+#define MOB_SPEC            0   /* Mob has a callable spec-proc	*/
+#define MOB_SENTINEL        1   /* Mob should not move */
+#define MOB_SCAVENGER       2   /* Mob picks up stuff on the ground */
+#define MOB_ISNPC           3   /* (R) Automatically set on all Mobs */
+#define MOB_AWARE	    4   /* Mob can't be backstabbed */
+#define MOB_AGGRESSIVE      5   /* Mob auto-attacks everybody nearby */
+#define MOB_STAY_ZONE       6   /* Mob shouldn't wander out of zone */
+#define MOB_WIMPY           7   /* Mob flees if severely injured */
+#define MOB_AGGR_EVIL       8   /* Auto-attack any evil PC's */
+#define MOB_AGGR_GOOD       9   /* Auto-attack any good PC's */
+#define MOB_AGGR_NEUTRAL   10   /* Auto-attack any neutral PC's	*/
+#define MOB_MEMORY	   11   /* remember attackers if attacked */
+#define MOB_HELPER	   12   /* attack PCs fighting other NPCs */
+#define MOB_NOCHARM	   13   /* Mob can't be charmed	*/
+#define MOB_NOSUMMON	   14   /* Mob can't be summoned */
+#define MOB_NOSLEEP	   15   /* Mob can't be slept */
+#define MOB_NOBASH	   16   /* Mob can't be bashed (e.g. trees) */
+#define MOB_NOBLIND	   17   /* Mob can't be blinded	*/
+#define MOB_NOTDEADYET     18   /* (R) Mob being extracted */
 
 /* Preference flags: used by char_data.player_specials.pref */
-#define PRF_BRIEF       (1 << 0)  /* Room descs won't normally be shown	*/
-#define PRF_COMPACT     (1 << 1)  /* No extra CRLF pair before prompts	*/
-#define PRF_NOSHOUT	(1 << 2)  /* Can't hear shouts			*/
-#define PRF_NOTELL	(1 << 3)  /* Can't receive tells		*/
-#define PRF_DISPHP	(1 << 4)  /* Display hit points in prompt	*/
-#define PRF_DISPMANA	(1 << 5)  /* Display mana points in prompt	*/
-#define PRF_DISPMOVE	(1 << 6)  /* Display move points in prompt	*/
-#define PRF_AUTOEXIT	(1 << 7)  /* Display exits in a room		*/
-#define PRF_NOHASSLE	(1 << 8)  /* Aggr mobs won't attack		*/
-#define PRF_QUEST	(1 << 9)  /* On quest				*/
-#define PRF_SUMMONABLE	(1 << 10) /* Can be summoned			*/
-#define PRF_NOREPEAT	(1 << 11) /* No repetition of comm commands	*/
-#define PRF_HOLYLIGHT	(1 << 12) /* Can see in dark			*/
-#define PRF_COLOR_1	(1 << 13) /* Color (low bit)			*/
-#define PRF_COLOR_2	(1 << 14) /* Color (high bit)			*/
-#define PRF_NOWIZ	(1 << 15) /* Can't hear wizline			*/
-#define PRF_LOG1	(1 << 16) /* On-line System Log (low bit)	*/
-#define PRF_LOG2	(1 << 17) /* On-line System Log (high bit)	*/
-#define PRF_NOAUCT	(1 << 18) /* Can't hear auction channel		*/
-#define PRF_NOGOSS	(1 << 19) /* Can't hear gossip channel		*/
-#define PRF_NOGRATZ	(1 << 20) /* Can't hear grats channel		*/
-#define PRF_SHOWVNUMS	(1 << 21) /* Can see VNUMs               	*/
-#define PRF_DISPAUTO	(1 << 22) /* Show prompt HP, MP, MV when < 25%.	*/
-#define PRF_CLS         (1 << 23) /* Clear screen in OLC                */
-#define PRF_BUILDWALK   (1 << 24) /* Build new rooms while walking ?    */
-#define PRF_AFK         (1 << 25) /* AFK flag                           */
-#define PRF_AUTOLOOT    (1 << 26) /* Loot everything from a corpse      */
-#define PRF_AUTOGOLD    (1 << 27) /* Loot gold from a corpse            */
-#define PRF_AUTOSPLIT   (1 << 28) /* Split gold with group              */
-#define PRF_AUTOSAC     (1 << 29) /* Sacrifice a corpse                 */
-#define PRF_AUTOASSIST  (1 << 30) /* Auto-assist toggle                 */
+#define PRF_BRIEF         0   /* Room descs won't normally be shown */
+#define PRF_COMPACT       1   /* No extra CRLF pair before prompts */
+#define PRF_NOSHOUT	  2   /* Can't hear shouts */
+#define PRF_NOTELL        3   /* Can't receive tells */
+#define PRF_DISPHP        4   /* Display hit points in prompt */
+#define PRF_DISPMANA      5   /* Display mana points in prompt */
+#define PRF_DISPMOVE      6   /* Display move points in prompt */
+#define PRF_AUTOEXIT      7   /* Display exits in a room */
+#define PRF_NOHASSLE      8   /* Aggr mobs won't attack	*/
+#define PRF_QUEST         9   /* On quest */
+#define PRF_SUMMONABLE   10   /* Can be summoned */
+#define PRF_NOREPEAT     11   /* No repetition of comm commands	*/
+#define PRF_HOLYLIGHT    12   /* Can see in dark */
+#define PRF_COLOR_1      13   /* Color (low bit) */
+#define PRF_COLOR_2      14   /* Color (high bit) */
+#define PRF_NOWIZ        15   /* Can't hear wizline */
+#define PRF_LOG1         16   /* On-line System Log (low bit) */
+#define PRF_LOG2         17   /* On-line System Log (high bit) */
+#define PRF_NOAUCT       18   /* Can't hear auction channel */
+#define PRF_NOGOSS       19   /* Can't hear gossip channel */
+#define PRF_NOGRATZ      20   /* Can't hear grats channel */
+#define PRF_SHOWVNUMS    21   /* Can see VNUMs */
+#define PRF_DISPAUTO     22   /* Show prompt HP, MP, MV when < 25% */
+#define PRF_CLS          23   /* Clear screen in OLC */
+#define PRF_BUILDWALK    24   /* Build new rooms while walking */
+#define PRF_AFK          25   /* AFK flag */
+#define PRF_AUTOLOOT     26   /* Loot everything from a corpse */
+#define PRF_AUTOGOLD     27   /* Loot gold from a corpse */
+#define PRF_AUTOSPLIT    28   /* Split gold with group */
+#define PRF_AUTOSAC      29   /* Sacrifice a corpse */
+#define PRF_AUTOASSIST   30   /* Auto-assist toggle */
 
 /* Affect bits: used in char_data.char_specials.saved.affected_by */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
-#define AFF_BLIND             (1 << 0)	   /* (R) Char is blind		*/
-#define AFF_INVISIBLE         (1 << 1)	   /* Char is invisible		*/
-#define AFF_DETECT_ALIGN      (1 << 2)	   /* Char is sensitive to align*/
-#define AFF_DETECT_INVIS      (1 << 3)	   /* Char can see invis chars  */
-#define AFF_DETECT_MAGIC      (1 << 4)	   /* Char is sensitive to magic*/
-#define AFF_SENSE_LIFE        (1 << 5)	   /* Char can sense hidden life*/
-#define AFF_WATERWALK	      (1 << 6)	   /* Char can walk on water	*/
-#define AFF_SANCTUARY         (1 << 7)	   /* Char protected by sanct.	*/
-#define AFF_GROUP             (1 << 8)	   /* (R) Char is grouped	*/
-#define AFF_CURSE             (1 << 9)	   /* Char is cursed		*/
-#define AFF_INFRAVISION       (1 << 10)	   /* Char can see in dark	*/
-#define AFF_POISON            (1 << 11)	   /* (R) Char is poisoned	*/
-#define AFF_PROTECT_EVIL      (1 << 12)	   /* Char protected from evil  */
-#define AFF_PROTECT_GOOD      (1 << 13)	   /* Char protected from good  */
-#define AFF_SLEEP             (1 << 14)	   /* (R) Char magically asleep	*/
-#define AFF_NOTRACK	      (1 << 15)	   /* Char can't be tracked	*/
-#define AFF_UNUSED16	      (1 << 16)	   /* Room for future expansion	*/
-#define AFF_UNUSED17	      (1 << 17)	   /* Room for future expansion	*/
-#define AFF_SNEAK             (1 << 18)	   /* Char can move quietly	*/
-#define AFF_HIDE              (1 << 19)	   /* Char is hidden		*/
-#define AFF_UNUSED20	      (1 << 20)	   /* Room for future expansion	*/
-#define AFF_CHARM             (1 << 21)	   /* Char is charmed		*/
+#define AFF_BLIND           0   /* (R) Char is blind	*/
+#define AFF_INVISIBLE       1   /* Char is invisible	*/
+#define AFF_DETECT_ALIGN    2   /* Char is sensitive to align*/
+#define AFF_DETECT_INVIS    3   /* Char can see invis chars */
+#define AFF_DETECT_MAGIC    4   /* Char is sensitive to magic*/
+#define AFF_SENSE_LIFE      5   /* Char can sense hidden life*/
+#define AFF_WATERWALK       6   /* Char can walk on water */
+#define AFF_SANCTUARY       7   /* Char protected by sanct */
+#define AFF_GROUP           8   /* (R) Char is grouped */
+#define AFF_CURSE           9   /* Char is cursed */
+#define AFF_INFRAVISION    10   /* Char can see in dark */
+#define AFF_POISON         11   /* (R) Char is poisoned */
+#define AFF_PROTECT_EVIL   12   /* Char protected from evil */
+#define AFF_PROTECT_GOOD   13   /* Char protected from good */
+#define AFF_SLEEP          14   /* (R) Char magically asleep	*/
+#define AFF_NOTRACK        15   /* Char can't be tracked */
+#define AFF_UNUSED16       16   /* Room for future expansion	*/
+#define AFF_UNUSED17       17   /* Room for future expansion	*/
+#define AFF_SNEAK          18   /* Char can move quietly */
+#define AFF_HIDE           19   /* Char is hidden */
+#define AFF_UNUSED20       20   /* Room for future expansion	*/
+#define AFF_CHARM          21   /* Char is charmed */
 
 /* Modes of connectedness: used by descriptor_data.state */
 #define CON_PLAYING	 0	/* Playing - Nominal state		*/
@@ -315,40 +315,40 @@
 #define ITEM_FOUNTAIN  23		/* Item is a fountain		*/
 
 /* Take/Wear flags: used by obj_data.obj_flags.wear_flags */
-#define ITEM_WEAR_TAKE		(1 << 0)  /* Item can be taken		*/
-#define ITEM_WEAR_FINGER	(1 << 1)  /* Can be worn on finger	*/
-#define ITEM_WEAR_NECK		(1 << 2)  /* Can be worn around neck 	*/
-#define ITEM_WEAR_BODY		(1 << 3)  /* Can be worn on body 	*/
-#define ITEM_WEAR_HEAD		(1 << 4)  /* Can be worn on head 	*/
-#define ITEM_WEAR_LEGS		(1 << 5)  /* Can be worn on legs	*/
-#define ITEM_WEAR_FEET		(1 << 6)  /* Can be worn on feet	*/
-#define ITEM_WEAR_HANDS		(1 << 7)  /* Can be worn on hands	*/
-#define ITEM_WEAR_ARMS		(1 << 8)  /* Can be worn on arms	*/
-#define ITEM_WEAR_SHIELD	(1 << 9)  /* Can be used as a shield	*/
-#define ITEM_WEAR_ABOUT		(1 << 10) /* Can be worn about body 	*/
-#define ITEM_WEAR_WAIST 	(1 << 11) /* Can be worn around waist 	*/
-#define ITEM_WEAR_WRIST		(1 << 12) /* Can be worn on wrist 	*/
-#define ITEM_WEAR_WIELD		(1 << 13) /* Can be wielded		*/
-#define ITEM_WEAR_HOLD		(1 << 14) /* Can be held		*/
+#define ITEM_WEAR_TAKE      0   /* Item can be taken */
+#define ITEM_WEAR_FINGER    1   /* Can be worn on finger */
+#define ITEM_WEAR_NECK      2   /* Can be worn around neck */
+#define ITEM_WEAR_BODY      3   /* Can be worn on body */
+#define ITEM_WEAR_HEAD      4   /* Can be worn on head */
+#define ITEM_WEAR_LEGS      5   /* Can be worn on legs */
+#define ITEM_WEAR_FEET      6   /* Can be worn on feet */
+#define ITEM_WEAR_HANDS	    7   /* Can be worn on hands	*/
+#define ITEM_WEAR_ARMS      8   /* Can be worn on arms */
+#define ITEM_WEAR_SHIELD    9   /* Can be used as a shield */
+#define ITEM_WEAR_ABOUT	   10   /* Can be worn about body */
+#define ITEM_WEAR_WAIST    11   /* Can be worn around waist */
+#define ITEM_WEAR_WRIST	   12   /* Can be worn on wrist */
+#define ITEM_WEAR_WIELD	   13   /* Can be wielded */
+#define ITEM_WEAR_HOLD     14   /* Can be held */
 
 /* Extra object flags: used by obj_data.obj_flags.extra_flags */
-#define ITEM_GLOW          (1 << 0)	/* Item is glowing		*/
-#define ITEM_HUM           (1 << 1)	/* Item is humming		*/
-#define ITEM_NORENT        (1 << 2)	/* Item cannot be rented	*/
-#define ITEM_NODONATE      (1 << 3)	/* Item cannot be donated	*/
-#define ITEM_NOINVIS	   (1 << 4)	/* Item cannot be made invis	*/
-#define ITEM_INVISIBLE     (1 << 5)	/* Item is invisible		*/
-#define ITEM_MAGIC         (1 << 6)	/* Item is magical		*/
-#define ITEM_NODROP        (1 << 7)	/* Item is cursed: can't drop	*/
-#define ITEM_BLESS         (1 << 8)	/* Item is blessed		*/
-#define ITEM_ANTI_GOOD     (1 << 9)	/* Not usable by good people	*/
-#define ITEM_ANTI_EVIL     (1 << 10)	/* Not usable by evil people	*/
-#define ITEM_ANTI_NEUTRAL  (1 << 11)	/* Not usable by neutral people	*/
-#define ITEM_ANTI_MAGIC_USER (1 << 12)	/* Not usable by mages		*/
-#define ITEM_ANTI_CLERIC   (1 << 13)	/* Not usable by clerics	*/
-#define ITEM_ANTI_THIEF	   (1 << 14)	/* Not usable by thieves	*/
-#define ITEM_ANTI_WARRIOR  (1 << 15)	/* Not usable by warriors	*/
-#define ITEM_NOSELL	   (1 << 16)	/* Shopkeepers won't touch it	*/
+#define ITEM_GLOW              0   /* Item is glowing */
+#define ITEM_HUM               1   /* Item is humming */
+#define ITEM_NORENT            2   /* Item cannot be rented */
+#define ITEM_NODONATE          3   /* Item cannot be donated */
+#define ITEM_NOINVIS           4   /* Item cannot be made invis	*/
+#define ITEM_INVISIBLE         5   /* Item is invisible */
+#define ITEM_MAGIC             6   /* Item is magical */
+#define ITEM_NODROP            7   /* Item is cursed: can't drop */
+#define ITEM_BLESS             8   /* Item is blessed */
+#define ITEM_ANTI_GOOD         9   /* Not usable by good people	*/
+#define ITEM_ANTI_EVIL        10   /* Not usable by evil people	*/
+#define ITEM_ANTI_NEUTRAL     11   /* Not usable by neutral people */
+#define ITEM_ANTI_MAGIC_USER  12   /* Not usable by mages */
+#define ITEM_ANTI_CLERIC      13   /* Not usable by clerics */
+#define ITEM_ANTI_THIEF	      14   /* Not usable by thieves */
+#define ITEM_ANTI_WARRIOR     15   /* Not usable by warriors */
+#define ITEM_NOSELL           16   /* Shopkeepers won't touch it */
 
 /* Modifier constants used with obj affects ('A' fields) */
 #define APPLY_NONE              0	/* No effect			*/
@@ -426,6 +426,14 @@
 #define RENT_CRYO       3
 #define RENT_FORCED     4
 #define RENT_TIMEDOUT   5
+
+/* 128 Bits */
+#define RF_ARRAY_MAX    4
+#define PM_ARRAY_MAX    4
+#define PR_ARRAY_MAX    4
+#define AF_ARRAY_MAX    4
+#define TW_ARRAY_MAX    4
+#define EF_ARRAY_MAX    4
 
 /* other #defined constants */
 /* **DO**NOT** blindly change the number of levels in your MUD merely by
@@ -545,13 +553,13 @@ struct obj_flag_data {
    int	value[NUM_OBJ_VAL_POSITIONS];	/* Values of the item (see list)    */
    byte type_flag;			/* Type of item			    */
    int level;				/* Minimum level of object	    */
-   int /*bitvector_t*/	wear_flags;	/* Where you can wear it	    */
-   int /*bitvector_t*/	extra_flags;	/* If it hums, glows, etc.	    */
+   int  wear_flags[TW_ARRAY_MAX];       /* Where you can wear it	    */
+   int  extra_flags[EF_ARRAY_MAX];      /* If it hums, glows, etc.	    */
    int	weight;				/* Weight what else                 */
    int	cost;				/* Value when sold (gp.)            */
    int	cost_per_day;			/* Cost to keep pr. real day        */
    int	timer;				/* Timer for object                 */
-   long /*bitvector_t*/	bitvector;	/* To set chars bits                */
+   int  bitvector[AF_ARRAY_MAX];        /* To set chars bits                */
 };
 
 /* Used in obj_file_elem *DO*NOT*CHANGE* */
@@ -597,10 +605,10 @@ struct obj_file_elem {
    sh_int location;
 #endif
    int	value[NUM_OBJ_VAL_POSITIONS];
-   int /*bitvector_t*/	extra_flags;
+   int  extra_flags[EF_ARRAY_MAX];
    int	weight;
    int	timer;
-   long /*bitvector_t*/	bitvector;
+   int  bitvector[AF_ARRAY_MAX];
    struct obj_affected_type affected[MAX_OBJ_AFFECT];
 };
 
@@ -635,23 +643,20 @@ struct room_direction_data {
 
 /* Memory Structure for room */
 struct room_data {
-   room_vnum number;		/* Rooms number	(vnum)		      */
-   zone_rnum zone;              /* Room zone (for resetting)          */
-   int	sector_type;            /* sector type (move/hide)            */
-   char	*name;                  /* Rooms name 'You are ...'           */
-   char	*description;           /* Shown when entered                 */
-   struct extra_descr_data *ex_description; /* for examine/look       */
+   room_vnum number;               /* Rooms number (vnum) */
+   zone_rnum zone;                 /* Room zone (for resetting) */
+   int sector_type;                /* sector type (move/hide) */
+   int room_flags[RF_ARRAY_MAX];   /* DEATH, DARK, etc */
+   char	*name;                     /* Rooms name */
+   char	*description;              /* Shown when entered */
+   struct extra_descr_data *ex_description; /* for look/examine */
    struct room_direction_data *dir_option[NUM_OF_DIRS]; /* Directions */
-   int /*bitvector_t*/ room_flags;		/* DEATH,DARK ... etc */
-
-   byte light;                  /* Number of lightsources in room     */
+   byte light;                     /* Number of lightsources in room */
    SPECIAL(*func);
-
-   struct trig_proto_list *proto_script; /* list of default triggers  */
-   struct script_data *script;  /* script info for the room           */
-
-   struct obj_data *contents;   /* List of items in room              */
-   struct char_data *people;    /* List of NPC / PC in room           */
+   struct trig_proto_list *proto_script; /* list of default triggers */
+   struct script_data *script;     /* script info for the room */
+   struct obj_data *contents;      /* List of items in room */
+   struct char_data *people;       /* List of NPC / PC in room */
 };
 
 /* char-related structures */
@@ -736,10 +741,8 @@ struct char_point_data {
 struct char_special_data_saved {
    int	alignment;		/* +-1000 for alignments                */
    long	idnum;			/* player's idnum; -1 for mobiles	*/
-   long /*bitvector_t*/ act;	/* act flag for NPC's; player flag for PC's */
-
-   long /*bitvector_t*/	affected_by;
-				/* Bitvector for spells/skills affected by */
+   int act[PM_ARRAY_MAX];	/* act flag for NPC's; player flag for PC's */
+   int affected_by[AF_ARRAY_MAX]; /* Bitvector for spells/skills affected by */
    sh_int apply_saving_throw[5]; /* Saving throw (Bonuses)		*/
 };
 
@@ -760,21 +763,21 @@ struct char_special_data {
 };
 
 struct player_special_data_saved {
-   byte skills[MAX_SKILLS+1];	/* array of skills plus skill 0		*/
-   byte PADDING0;		/* used to be spells_to_learn		*/
-   bool talks[MAX_TONGUE];	/* PC s Tongues 0 for NPC		*/
-   int	wimp_level;		/* Below this # of hit points, flee!	*/
-   byte freeze_level;		/* Level of god who froze char, if any	*/
-   sh_int invis_level;		/* level of invisibility		*/
-   room_vnum load_room;		/* Which room to place char in		*/
-   long /*bitvector_t*/	pref;	/* preference flags for PC's.		*/
-   ubyte bad_pws;		/* number of bad password attemps	*/
-   sbyte conditions[3];         /* Drunk, hunger, thirst		*/
-   struct txt_block *comm_hist[NUM_HIST]; /* Player's communcations history     */
-   ubyte page_length;
-   int spells_to_learn;		/* How many can you learn yet this level*/
-   int olc_zone;
-   int questpoints;
+   byte skills[MAX_SKILLS+1];   /* array of skills plus skill 0 */
+   byte PADDING0;               /* used to be spells_to_learn */
+   bool talks[MAX_TONGUE];      /* PC s Tongues 0 for NPC */
+   int	wimp_level;             /* Below this # of hit points, flee! */
+   byte freeze_level;           /* Level of god who froze char, if any */
+   sh_int invis_level;          /* level of invisibility */
+   room_vnum load_room;         /* Which room to place char in */
+   int pref[PR_ARRAY_MAX];      /* preference flags for players */
+   ubyte bad_pws;               /* number of bad password attemps */
+   sbyte conditions[3];         /* Drunk, hunger, thirst */
+   struct txt_block *comm_hist[NUM_HIST]; /* Player's comms history */
+   ubyte page_length;           /* How long a players page is */
+   int spells_to_learn;         /* How many spells you can learn */
+   int olc_zone;                /* A players olc access */
+   int questpoints;             /* A players questpoints earned */
 };
 
 /* Specials needed only by PCs, not NPCs.  Space for this structure is

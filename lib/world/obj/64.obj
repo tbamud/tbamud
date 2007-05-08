@@ -3,7 +3,7 @@ dagger glowing~
 a glowing dagger~
 A glowing dagger glows here.~
 ~
-5 ag an 0
+5 ag 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
 1 1000 300 0
 A
@@ -13,7 +13,7 @@ platemail glowing plate mail~
 the glowing platemail~
 Some glowing platemail lies in a heap here.~
 ~
-9 ag ad 0
+9 ag 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 50 300 10 0
 #6402
@@ -21,7 +21,7 @@ agate gem~
 an agate~
 A small gem lies here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 500 50 0
 #6403
@@ -29,7 +29,7 @@ jade jewel~
 a piece of jade~
 A small jewel gleams here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 100 0
 #6404
@@ -37,7 +37,7 @@ sculpture~
 a piece of sculpture~
 A nice piece of sculpture is here.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 50 200 20 0
 E
@@ -50,7 +50,7 @@ vial dragons blood~
 a vial of dragon's blood~
 A small vial filled with a red fluid lies in the dust here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 7 39 39 39
 5 480 21 0
 #6406
@@ -58,7 +58,7 @@ amulet~
 an amulet~
 An odd looking amulet has been discarded here.~
 ~
-9 ag ac 0
+9 ag 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 3 200 30 0
 A
@@ -68,7 +68,7 @@ pole tent~
 a tent pole~
 A tent pole has been tossed away here.~
 ~
-3 ag ao 0
+3 ag 0 0 0 ao 0 0 0 0 0 0 0
 25 5 5 38
 10 250 50 0
 #6408
@@ -76,7 +76,7 @@ bag powder wealth~
 a bag of powder of wealth~
 A small bag filled with powder of wealth lies here.~
 ~
-20 ag a 0
+20 ag 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 1 1000 0 0
 #6409
@@ -84,7 +84,7 @@ desk~
 a desk~
 There is an ebony desk here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 100 13 0 0
 0 0 0 0
 #6410
@@ -92,7 +92,7 @@ book chaos~
 the Book of Chaos~
 A book with a title written in moving letters rests here.~
 ~
-3 abgh ao 0
+3 abgh 0 0 0 ao 0 0 0 0 0 0 0
 20 1 1 26
 25 1000 250 0
 #6411
@@ -100,7 +100,7 @@ book elder~
 the Book of the Elder~
 A grey-bound book lies here.~
 ~
-3 abg ao 0
+3 abg 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 28
 25 300 50 0
 #6412
@@ -108,7 +108,7 @@ lens occluded~
 the Occluded Lens~
 A smoky lens about a foot around has been scuffled in the dirt here.~
 ~
-1 aghjk ao 0
+1 aghjk 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 20 200 50 0
 A
@@ -120,7 +120,7 @@ mevais herb leaf~
 a leaf of mevais~
 A small black leaf of a mevais plant lies here, well preserved.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 30 27 33 4
 1 1 1 0
 E
@@ -132,7 +132,7 @@ bottle peska~
 a bottle of peska~
 There is a bottle of a milky fluid here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 30 28 3 1
 12 150 30 0
 E
@@ -144,7 +144,7 @@ staff rand~
 Rand's staff~
 There is a metal-shod staff here.~
 ~
-9 agnop ao 0
+9 agnop 0 0 0 ao 0 0 0 0 0 0 0
 8 0 0 0
 7 1000 250 0
 A
@@ -156,7 +156,7 @@ chest wooden~
 a wooden chest~
 There is a wooden chest here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 13 0 0
 0 0 0 0
 #6417
@@ -164,7 +164,7 @@ chest wooden~
 a wooden chest~
 There is a wooden chest here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 13 0 0
 0 0 0 0
 #6418
@@ -172,7 +172,7 @@ chest wooden~
 a wooden chest~
 There is a wooden chest here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 13 0 0
 0 0 0 0
 #6419
@@ -180,7 +180,7 @@ basin water~
 a water basin~
 A basin filled with crisp, clean water is here.~
 ~
-17 a 0 0
+17 a 0 0 0 0 0 0 0 0 0 0 0
 100 100 0 0
 100 0 0 0
 #6420
@@ -188,7 +188,7 @@ food~
 some food~
 There's some food lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
 3 20 10 0
 E

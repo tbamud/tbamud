@@ -6,7 +6,7 @@ Lieutenant Commander Geordi LaForge appears to be very busy.
    Geordi is the Chief Engineer of the Enterprise.  He's blind, so he wears a
 special VISOR that lets him see things.    
 ~
-dglmnqr dp 350 E
+211016 0 0 0 65552 0 0 0 350 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -24,7 +24,7 @@ Lieutenant Commander Data is here, trying to be more human.
    Data is the only android on the Enterprise, and the only android in all of
 Starfleet.  He possesses super-human strength, and is extremely tough.    
 ~
-deglmnopqr dp 350 E
+260184 0 0 0 65552 0 0 0 350 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -44,7 +44,7 @@ Lieutenant Worf is here, patrolling and generally keeping everything secure.
    Worf is the first Klingon to have joined Starfleet.  He's Chief of Security
 of the Enterprise, and he's plenty strong.    
 ~
-dglmnqr dp 350 E
+211016 0 0 0 65552 0 0 0 350 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -64,7 +64,7 @@ Lieutenant Beverly Crusher seemingly very serious, is looking for someone to hea
 son.  Her husband was killed years ago in an accident on another starship which
 was also commanded by Captain Picard.    
 ~
-dglmnqr dp 350 E
+211016 0 0 0 65552 0 0 0 350 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -83,7 +83,7 @@ Counselor Deanna Troi walks past with a knowing smile on her face.
    Counselor Troi is the ship's main counselor.  She's half betazoid, which
 means that she can read people's minds.    
 ~
-dglmnqr dp 350 E
+211016 0 0 0 65552 0 0 0 350 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 2
@@ -102,7 +102,7 @@ Commander William Riker is here, looking for someone to impress.
    Commander Riker is the Enterprise's first officer.  He's in charge of
 keeping the crew in line.    
 ~
-dglmnqr dp 350 E
+211016 0 0 0 65552 0 0 0 350 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -123,7 +123,7 @@ Captain Jean-Luc Picard proudly stands here, thinking deeply.
 flagship, the Enterprise.  He's very smart, and very wise.  Don't mess with
 him!    
 ~
-deglmnopqr dhp 350 E
+260184 0 0 0 65552 0 0 0 350 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -144,7 +144,7 @@ Guinan is here, tending the bar.
 experienced many things, but now she's decided to work on the Enterprise as a
 bartender.    
 ~
-bdglmnqr dp 350 E
+211018 0 0 0 65552 0 0 0 350 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -164,7 +164,7 @@ Chief O'Brien is here, waiting to teleport you somewhere.
 make sure everyone arrives (and leaves) in one piece, instead of trillions of
 atoms.    
 ~
-bdglmnqr dp 350 E
+211018 0 0 0 65552 0 0 0 350 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -184,7 +184,7 @@ Wesley Crusher is here, eagerly trying to earn your praise.
 Ensign on the bridge.  He got this position only because Captain Picard feels
 guilty about killing his father.    
 ~
-dghlmnqr dp 350 E
+211144 0 0 0 65552 0 0 0 350 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -203,7 +203,7 @@ Livingston the fish is here, swimming about in his tank.
    Livingston is Captain Picard's pet fish.  He's some sort of exotic breed, and
 he's expensive to FEED and keep alive.  
 ~
-bdglmn dp 350 E
+14410 0 0 0 65552 0 0 0 350 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -222,7 +222,7 @@ Spot, Data's pet cat, is sitting washing himself happily.
    Spot is Data's orange coloured cat.  Data is always trying to become more
 human, so he thinks that having a pet might help him achieve his goal.    
 ~
-bdglmn dp 350 E
+14410 0 0 0 65552 0 0 0 350 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -242,7 +242,7 @@ A nervous looking ensign is standing here, waiting for orders.
 jobs the higher ups won't even consider doing, and get yelled at all the time.
   
 ~
-dglmnqr dp 350 E
+211016 0 0 0 65552 0 0 0 350 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -262,7 +262,7 @@ Alexander Rozhenko is here, practicing laughing hour.
 Klingon, so Alexander is 3/4 Klingon.  He's quite small, but since he's a
 Klingon he's very strong.    
 ~
-dglmnqr dp 0 E
+211016 0 0 0 65552 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -281,7 +281,7 @@ Drooling everywhere is a slightly dangerous-looking alien.
    This alien has brown and green scales, 4 limbs and 2 tentacles.  He has evil
 green eyes and rows of sharp teeth pertruding from his dog-like mouth.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 0 41000
 8 8 1
@@ -295,7 +295,7 @@ Snarling with rage, a very dangerous-looking alien salivates.
 reach from the two at the eides of his head, down his spine and to the tip of
 his devil-like tail.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -309,7 +309,7 @@ Practicing with his batleth, is a fearsome-looking Klingon warrior.
 forehead scales and his devious-looking eyes.  He is fully armoured and appears
 to be quite skilled with his batleth.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -322,7 +322,7 @@ A small grey mouse carefully explores the office.
    Her fur is a pale grey and her ears, tail and claws are a bright, clean pink.
 She peers around with large black eyes and constantly twitches her nose.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -342,7 +342,7 @@ re-activated by pressing a switch up behind it's left shoulder-blade.
 
 <press switch>
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -360,7 +360,7 @@ of this, the android looks spotched with a disease.  Where the skin failed to
 cover, silvery mechanical parts and micro-chips can be seen.  It has been
 re-activated and is ready to accept vocal command programming.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0

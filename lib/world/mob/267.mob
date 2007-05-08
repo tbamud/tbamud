@@ -7,7 +7,7 @@ A woman wearing a pretty pink taffeta dress trudges along the beach.
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
 seem to work with her beautiful face.    
 ~
-cdegh k 0 E
+220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -23,7 +23,7 @@ A woman wearing a pretty blue silk dress trudges along the beach.
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
 seem to work with her beautiful face.    
 ~
-cdegh k 0 E
+220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -39,7 +39,7 @@ A woman wearing a pretty pristine white cotton dress trudges along the beach.
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
 seem to work with her beautiful face.    
 ~
-cdegh 0 0 E
+220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -55,7 +55,7 @@ A woman wearing a drab beige burlap dress trudges along the beach.
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
 seem to work with her beautiful face.    
 ~
-cdegh k 0 E
+220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -71,7 +71,7 @@ A slave for the master works endlessly at his will.
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
 seem to work with her beautiful face.    
 ~
-cdegh 0 0 E
+220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -85,7 +85,7 @@ A very fat harem master orders his concubines around.
 women, because he certainly doesn't have the face for it.  He looks somewhat
 like a cross between a pear and a potato, but without the good looks.    
 ~
-bd d -1000 E
+10 0 0 0 16 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -100,7 +100,7 @@ A small, red crab scuttles along the beach.
    This small creature has rather large pincers for its negligble size.  It
 looks benign, but probably wouldn't appreciate being attacked.    
 ~
-deg 0 0 E
+88 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -114,7 +114,7 @@ A cute, cuddly little tar baby is here, ready to follow the first person it sees
 first sign of human life.  And it's just so cute you can't want to kill it!  
 
 ~
-cdegh dk 500 E
+220 0 0 0 16 0 0 0 500 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -128,7 +128,7 @@ A seagull flies about the cliff.
    Hmm...  It's a bird, that much you can tell.  It doesn't appear to care
 whether you look closely at it or not.    
 ~
-bde 0 0 E
+26 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -143,7 +143,7 @@ to meet on the street every day.  He certainly inspires fear in your heart.
 You'd most likely *NOT* want to attempt to kill this man!  He's one mean
 fellow!    
 ~
-deg dhk -1000 E
+88 0 0 0 16 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -157,7 +157,7 @@ A wailing ghost floats about the halls.
    You look and look but all you can really see is the wall behind it, and a 
 faint outline of something making the wall shimmer.
 ~
-defgh cfhmpt -750 E
+248 0 0 0 1122376 0 0 0 -750 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -172,7 +172,7 @@ A prisoner, locked up for crimes against Fear, is raving here.
 and almost naked--his rags barely cover him.  He is covered in his own filth.
 Just looking at him makes you want to retch.    
 ~
-bcd d -900 E
+14 0 0 0 16 0 0 0 -900 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -185,7 +185,7 @@ The butcher stands here, waiting for his next kill.
    He's rather ordinary, except for the humongous knife he holds in his hand.
   
 ~
-bd hk -1000 E
+10 0 0 0 0 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -202,7 +202,7 @@ kind- looking.  She stands about 2 meters tall, and while she is obviously very
 strong, she is also quite voluptious.  She looks at you with the most
 sympathetic eyes--you just want to give yourself over to her.    
 ~
-deg dh -1000 E
+88 0 0 0 16 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 2
@@ -216,7 +216,7 @@ The Keeper of the Shrine of Vice guards the alter from desecration.
    This man is covered in the blood of his former kills. He looks as if 
 he would like to make you his next. Keep clear of this guy.
 ~
-bcd dh -800 E
+14 0 0 0 16 0 0 0 -800 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -234,7 +234,7 @@ of smoke curl from its nose.  It looks at you with infinite intelligence and a
 little bit of resignation, as though it knows you will eventually get around to
 attacking it.    
 ~
-bdeg d -750 E
+90 0 0 0 16 0 0 0 -750 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 5 5 0
@@ -248,7 +248,7 @@ The torturer stands here, brandishing a cat o' nine tails.
 the air with a mad cackle, and looks at you.  With an evil grin, he says, "ah,
 my next victim!  Yessssss" and launches himself at you.    
 ~
-bde dh -1000 E
+26 0 0 0 16 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -262,7 +262,7 @@ An interrogator sits here, ready to grill you for information.
 dangerous to attack.  He looks at you with steel-rimmed glasses and says,
 "shall ve beegeen?  "
 ~
-degh k -1000 E
+216 0 0 0 0 0 0 0 -1000 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 6 6 1
@@ -276,7 +276,7 @@ The Grand Inquisitor of Despair looks you up and down appraisingly.
 his eye.  He looks quite sinister, as though he expects to get information out
 of you--whether you know it or not.    
 ~
-degh hk -1000 E
+216 0 0 0 0 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -290,7 +290,7 @@ The Priest of Hopelessness stands here, waiting to remove all hope of leaving.
    The priest looks back at you indignantly and says, "how dare you attempt to
 look at me!?  " and prompty attacks you.    
 ~
-bd t -1000 E
+10 0 0 0 1048576 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1

@@ -7,7 +7,7 @@ An old grounds keeper works here.
 already skinny body. His eyes shown with he light of madness. He wears denim
 overalls with a dirt stained white t-shirt.
 ~
-bdgl 0 -350 E
+2122 0 0 0 0 0 0 0 -350 E
 6 18 6 10d5+60 2d4+1
 100 1000
 8 8 1
@@ -25,7 +25,7 @@ A ghost floats here looking for its next victim.
 nearby asylum. Already insane in life, death has turned it into an unrelenting
 killer.
 ~
-dfgnp fp -1000 E
+41064 0 0 0 65600 0 0 0 -1000 E
 7 18 6 10d7+70 2d5+1
 100 3000
 8 8 0
@@ -40,7 +40,7 @@ His eyes are sunken in to his skull and shown with the madness that affected
 some many others in this place. Perhaps the most startling aspect of him is his
 white lab coat that is now almost red wit the stains of blood. 
 ~
-bdelo 0 0 E
+18458 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -60,7 +60,7 @@ coming from him is horrendous at best. Unable to figure out what he is doing,
 he is doomed to roam these halls forever. Even death is not a barrier for his
 suffering. 
 ~
-cdghn 0 0 E
+8396 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -75,7 +75,7 @@ losing blood a fire burns in his eyes. Having his mind completely shattered by
 the ordeal that he has just gone through, he rages against anyone foolish enough
 to get in his way.
 ~
-dfgln 0 -750 E
+10344 0 0 0 0 0 0 0 -750 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -89,7 +89,7 @@ A tortured patient stands here.
 facility that it is no longer possible to tell if they are a man or a woman. 
 It wears a tattered hospital gown and cowers in fear at almost everything.
 ~
-dghlm 0 -350 E
+6344 0 0 0 0 0 0 0 -350 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0

@@ -3,24 +3,24 @@ desk~
 a desk~
 There is a mahogney desk here, up against the east wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 2000 5 -1 0
 0 0 0 0
-E
-drawer~
-   Looks like any other drawer you've seen before - knob and all.  
-~
 E
 desk~
    It looks as if any business the Lighthouse Keeper may need to do is done
 here, at this desk.  It has a drawer in it and implements for writing.  
+~
+E
+drawer~
+   Looks like any other drawer you've seen before - knob and all.  
 ~
 #26501
 key figure eight~
 a figure-eight key~
 A key in the shape of a figure-eight is here.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #26502
@@ -28,7 +28,7 @@ key cell~
 a cell key~
 A cell key lies here in the dirt.~
 ~
-18 0 a 0
+18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 650 0 0
 A

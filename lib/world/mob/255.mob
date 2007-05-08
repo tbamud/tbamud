@@ -5,7 +5,7 @@ A ghost parrot suddenly appears before you in a flurry of motion.
 ~
    Man that thing is fast!  
 ~
-bdeilnopqr bkp -1000 E
+256282 0 0 0 65540 0 0 0 -1000 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -19,7 +19,7 @@ A pirate ghost fades into existence, intent on getting you off his ship.
    The image of this being flickers in and out of existance, making it hard for
 you to distinguish any specific features.  
 ~
-defglpqr bdkp -1000 E
+231544 0 0 0 65556 0 0 0 -1000 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -33,7 +33,7 @@ The Captain blurs into focus, just as he slams his weapon into your head!
    The ghost of the captain is much larger than the other ghosts you've seen.  
 And much meaner!  
 ~
-bdeflnpqr bdkp -1000 E
+239674 0 0 0 65556 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -47,7 +47,7 @@ The ghost of the pirate cook blurs into focus before your eyes.  Is that a meat 
    You cannot get a solid look at the cook, the apparition is not distinct
 enough for that.  
 ~
-bdeflpqr bkp -1000 E
+231482 0 0 0 65540 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -60,7 +60,7 @@ The ghost of the First Mate comes flying at you, a silent scream of fury on it's
 ~
    This man must have been a maniac even when he was alive!  
 ~
-defgnopr bkp -1000 E
+188536 0 0 0 65540 0 0 0 -1000 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -74,7 +74,7 @@ An old sailor sits before the fire, cross-legged, staring at the flames.
    The old man does not even seem to notice that you have entered into his
 domain.  
 ~
-bdel 0 0 E
+2074 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 6 6 1
@@ -87,7 +87,7 @@ A pile of bones suddenly rises up, comes to life and attacks!
 ~
    Horror of horrors, RUN!  
 ~
-bdfpqr bk -1000 E
+229418 0 0 0 4 0 0 0 -1000 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 0

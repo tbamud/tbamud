@@ -6,7 +6,7 @@ A teacher of skills and spells sits here, waiting for someone to teach.
    He looks skinny and has heavy glasses.  Also he looks rather intelligent.  
 To be taught what you can, type <prac> now.  
 ~
-bdenopqr dfhk 0 E
+253978 0 0 0 80 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 6 6 1
@@ -21,7 +21,7 @@ A small piglet is sleeping here.
 Type <consider piglet> first and read what you're told.  Then <kill piglet> to
 start fighting it.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 4 4 0
@@ -35,7 +35,7 @@ The shopkeeper for Mudschool is ready to sell newbie-items.
    He looks like any other merchant, only his clothes are ragged.  He must have
 too low prices.  To see what he sells type <list>, then <buy> to buy it.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1

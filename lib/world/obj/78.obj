@@ -3,7 +3,7 @@ fountain water~
 a fountain of water~
 A fountain flowing with cool, clear water is here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 0 0 0 0
 E
@@ -16,7 +16,7 @@ black silk dress~
 a long black tight-fitting silk dress~
 A discarded black piece of silk lies here.~
 ~
-11 acd ad 0
+11 acd 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 2 2 0 0
 #7803
@@ -24,7 +24,7 @@ blueberry tart~
 a yummy blueberry tart~
 A delectible pastry has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
 1 30 3 0
 #7804
@@ -32,7 +32,7 @@ an apple pie~
 a freshly baked apple pie~
 A pie has been dropped here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 40 5 0
 #7805
@@ -40,7 +40,7 @@ a slice of cake~
 a slice of cake~
 A slice of cake has been dropped here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 20 2 0
 #7806
@@ -48,7 +48,7 @@ a muffin~
 a hot muffin~
 A muffin has been tossed to the side here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 10 2 0
 #7807
@@ -56,7 +56,7 @@ a huge chocolate chip cookie~
 a huge chocolate chip cookie~
 A rather large circular object has been left here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 15 2 0
 #7808
@@ -64,7 +64,7 @@ milk glass cold milk~
 a glass~
 A glass of white liquid has been dropped here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 10 0
 1 15 1 0
 #7809
@@ -72,7 +72,7 @@ a small fuzzy pouch~
 a small fuzzy pouch~
 A small fuzzy pouch has been left here. ~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 8 1 -1 0
 3 15 1 0
 #7810
@@ -80,7 +80,7 @@ a large travelers pack~
 a large travelers pack~
 A lump of material lies here.~
 ~
-15 0 ad 0
+15 0 0 0 0 ad 0 0 0 0 0 0 0
 45 1 -1 0
 5 50 5 0
 #7811
@@ -88,7 +88,7 @@ some soft tanned leather boots~
 some soft tanned leather boots~
 A pair of boots have been tossed aside here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
 5 50 5 0
 #7812
@@ -96,7 +96,7 @@ a leather haversack~
 a leather haversack~
 A crumpled piece of leather has been tossed here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 65 1 -1 0
 5 60 7 0
 #7814
@@ -104,7 +104,7 @@ grey leather armor~
 some grey leather armor~
 Some grey leather has been carelessly left here.~
 ~
-9 np ad 0
+9 np 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 12 120 12 0
 #7815
@@ -112,7 +112,7 @@ grey leather boots~
 a pair of grey leather boots~
 Some grey boots lay on their sides here.~
 ~
-9 g ag 0
+9 g 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
 4 95 10 0
 A
@@ -122,7 +122,7 @@ slender dagger~
 a slender dagger~
 A slender shiney dagger is half buried in the dirt here.~
 ~
-5 ep an 0
+5 ep 0 0 0 an 0 0 0 0 0 0 0
 5 2 2 11
 3 120 12 0
 #7817
@@ -130,7 +130,7 @@ rainbow stripped pants~
 a pair of rainbow stripped pants~
 Some colorful pants have been discarded here.~
 ~
-13 0 af 0
+13 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #7818
@@ -138,7 +138,7 @@ a pink polkadot frock~
 a pink polkadot frock~
 A colorful heap of cloth lies here.~
 ~
-13 0 ad 0
+13 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #7819
@@ -146,7 +146,7 @@ tri-cornered hat~
 a tri-cornered hat~
 A strange looking hat has been dropped here.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 2 2 0 0
 #7820
@@ -154,7 +154,7 @@ red stripped juggling pin~
 a red stripped juggling pin~
 A stripped object was tossed here carelessly.~
 ~
-5 cd an 0
+5 cd 0 0 0 an 0 0 0 0 0 0 0
 3 2 3 7
 6 120 12 0
 #7821
@@ -162,7 +162,7 @@ pitchfork~
 a pitchfork~
 A pitchfork has been shoved into the ground here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 4 3 4 14
 5 100 10 0
 #7822
@@ -170,7 +170,7 @@ spiked club~
 a spiked club~
 A spiked club has been left carelessly here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 3 2 5
 6 150 15 0
 $~

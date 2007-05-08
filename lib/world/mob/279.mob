@@ -8,7 +8,7 @@ pointed ears and webbed wings that it curls around itself whilst hanging.
 Glistening fangs and keen beady eyes seem ever ready for a chance to attack
 fresh prey.    
 ~
-dglmr adfk -15 E
+137288 0 0 0 82 0 0 0 -15 E
 10 17 4 2d2+100 1d2+1
 100 10000
 4 8 0
@@ -23,7 +23,7 @@ A poor citizen of France is sitting here.
 unashamedly begging, the state of his appearance and the lingering smell around
 him leaves no doubt that he is in the very desperate depths of poverty.    
 ~
-dgl fk -20 E
+2120 0 0 0 64 0 0 0 -20 E
 12 16 2 2d2+120 2d2+2
 120 14400
 6 8 1
@@ -38,7 +38,7 @@ A priest is standing here.
 concentration and devout prayer. His eyes look far away, as though he has
 already half passed from this world into the next.    
 ~
-bdlo hk 50 E
+18442 0 0 0 0 0 0 0 50 E
 12 16 2 2d2+120 2d2+2
 120 14400
 6 8 1
@@ -54,7 +54,7 @@ Clean-shaven and reasonably neat, he is most likely of French middle class. His
 dark eyes look humble and repentant, as though he seeks atonement for his sins
 here.    
 ~
-dghlm fk 10 E
+6344 0 0 0 64 0 0 0 10 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -69,7 +69,7 @@ recent singing. Pale and solemn, it looks as though he must have spent most of
 his life within stone walls, his slight buld made even frailer through lack of
 work or play.   
 ~
-dghm f 20 E
+4296 0 0 0 64 0 0 0 20 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -83,7 +83,7 @@ A believer woman is praying here.
 fervent and concentrated as she prays. Apparently she is also one of the many
 who value their riches, her garb wealthy and well-adorned with gold. 
 ~
-dglm kp 20 E
+6216 0 0 0 65536 0 0 0 20 E
 10 17 4 2d2+100 1d2+1
 100 10000
 6 8 2
@@ -98,7 +98,7 @@ mustache, identifying him to most as Richelieu, the cardinal of France and
 minister of Louis XIV. He appears completely absorbed in what he is saying, his
 eyes bright and fierce with righteous fervour.    
 ~
-bdl dhk 50 E
+2058 0 0 0 16 0 0 0 50 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -112,7 +112,7 @@ A white pigeon is here.
 for any left over morsels of food. Its wide black eyes peer cautiously about,
 ever alert for some predator.
 ~
-dg 0 1 E
+72 0 0 0 0 0 0 0 1 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -128,7 +128,7 @@ for someone named Esmerelda. His back is strangely bent, a large hump rising
 from between his shoulders, but he looks incredibly muscular and strong, his
 strength no doubt more powerful because of his anger.    
 ~
-bdlo cdfh 10 E
+18442 0 0 0 88 0 0 0 10 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -143,7 +143,7 @@ mumbles unhappily to himself as he goes about the menial chore of floor-
 cleaning.  Short and stout, his beady eyes look more like those of a
 troublemaker than a man of God.  
 ~
-dghm fp -25 E
+4296 0 0 0 65600 0 0 0 -25 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -158,7 +158,7 @@ of dust. It seems to have become the home of several pigeons and insects,
 layers of grime and dried on feathers making it truly grotesque, quite apart
 from the evil and leering face.  
 ~
-bdlo hp -100 E
+18442 0 0 0 65536 0 0 0 -100 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -174,7 +174,7 @@ unusal power and certainty as though he has great potential for leadership.
 Still scrawny and small built, he is nonetheless quick and agile in movement,
 his demeanour almost too confident for one so young.   
 ~
-dgm ch 10 E
+4168 0 0 0 8 0 0 0 10 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -189,7 +189,7 @@ A citizen of Lyon is standing here.
 town, his expression seems humble and worn as though he has worked long and
 hard, no energy left for protest or conflict. 
 ~
-dghm p 10 E
+4296 0 0 0 65536 0 0 0 10 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -203,7 +203,7 @@ A white poodle is tied to a tree here.
 sculpted from head to foot. Its smooth grey face has been clean shaven, two
 large black eyes blinking at the surroundings as it waits for its owner.  
 ~
-bdlm dfhk -15 E
+6154 0 0 0 80 0 0 0 -15 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -219,7 +219,7 @@ what he is doing, aged hands steadily pouring colourful potions into glass
 vials. His expression is stern and wise, as though he has learned much of the
 world in his years.   
 ~
-bdnopr dh 100 E
+188426 0 0 0 16 0 0 0 100 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -233,7 +233,7 @@ A French merchant is here, trying to make a deal.
 all his life. Honest faced and smiling, he nonetheless looks haggard, as though
 it is a daily struggle just to bring money in for basic living.  
 ~
-bdlm h 18 E
+6154 0 0 0 0 0 0 0 18 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -248,7 +248,7 @@ perfume lingering about her presence, indicating her upper class status.
 Waiting patiently, whe watches the surroundings dreamily with large chocolate-
 brown eyes.    
 ~
-dghm f 8 E
+4296 0 0 0 64 0 0 0 8 E
 12 16 2 2d2+120 2d2+2
 120 14400
 5 8 2
@@ -263,7 +263,7 @@ ridden rodents so prevalent in the filthier places of France. Sharp yellowed
 teeth glint menacingly beneath its twitching whiskers, piercing black eyes on
 the look out for prey. 
 ~
-bd gk -100 E
+10 0 0 0 128 0 0 0 -100 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -279,7 +279,7 @@ dangerously into the shadows, his squinting grey eyes watching everything
 suspiciously. His constant sharpening of his dagger is an indication that he
 must use it often.   
 ~
-bdl dfgkt -100 E
+2058 0 0 0 1048784 0 0 0 -100 E
 15 15 1 3d3+150 2d2+2
 150 22500
 6 8 1
@@ -295,7 +295,7 @@ revolutionary standing, both these lifestyles well-funded by his less well-
 known occupation as a thief. Busying himself picking, he nonetheless can be
 seen glancing furtively at the pockets of passing citizens. 
 ~
-dghlm kp -20 E
+6344 0 0 0 65536 0 0 0 -20 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -310,7 +310,7 @@ A brown squirrel scurries about collecting nuts.
 albeit a little cuter. Bright black eyes scavenge the surroundings for food,
 its little whiskers twitching nervously as it stands up and peers around.    
 ~
-dghm k 0 E
+4296 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -326,7 +326,7 @@ cascading down her back in loose curls as she dances. Smiling flirtatiously,
 her emerald green eyes flicker with firey personality and an almost devilish
 enjoyment of life.    
 ~
-bdl bh -50 E
+2058 0 0 0 4 0 0 0 -50 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -341,7 +341,7 @@ A citizen of Paris is standing here.
 all the insecurity within France around this time. Plain-faced and wide-eyed he
 glances around as though expecting trouble at any moment.    
 ~
-dghlm m 10 E
+6344 0 0 0 8192 0 0 0 10 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -357,7 +357,7 @@ stone-grey eyes look ready to take on almost anyone who would disagree with
 him. He does not look strong enough to be a fighter although his movements are
 fast and decisive.  
 ~
-dglm dfs 0 E
+6216 0 0 0 524368 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -373,7 +373,7 @@ fact he seems more inclined to sleep than to do much of anything else. His face
 is carefree and bland in expression as though there is little in life he would
 fight for.  
 ~
-bdlm fo -25 E
+6154 0 0 0 32832 0 0 0 -25 E
 14 16 1 2d2+140 2d2+2
 140 19600
 4 8 1
@@ -389,7 +389,7 @@ catering for the royal guards of king Louis XIV. Jovial in expression, his dark
 twinkling eyes seem to indicate that he loves his job, his hands moving in a
 flurry of busy preparation.
 ~
-bdlnopr dfh 100 E
+190474 0 0 0 80 0 0 0 100 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -403,7 +403,7 @@ Porthos the Musketeer is here, looking for trouble.
 Musketeers. His wide frame and intimidating height make him slower in movement
 and reaction, but he is nevertheless one of the best fighters in all France.   
 ~
-dglm ch 25 E
+6216 0 0 0 8 0 0 0 25 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -418,7 +418,7 @@ a man of conviction, demanding respect for his sheer loyalty and sense of duty.
 Neatly groomed, he is mostly sombre in expression, lines of time and hardship
 creasing his face.    
 ~
-bdlm hnp 12 E
+6154 0 0 0 65536 0 0 0 12 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -433,7 +433,7 @@ Aramis the Musketeer is standing here.
 quick wit and intelligence. A gleam catches in his eye as he glances around,
 always on the ready for a good scuffle in the name of duty. 
 ~
-bdlm hkp 12 E
+6154 0 0 0 65536 0 0 0 12 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -449,7 +449,7 @@ groomed, already saddled and prepared for the guards of the French king. Large,
 impossibly dark eyes blink at any visitors as the horse chews slowly, shuffling
 the grass with its hooves.    
 ~
-bdn dfp 20 E
+8202 0 0 0 65616 0 0 0 20 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -465,7 +465,7 @@ smiling welcomingly at all who pass. Sleek brown hair is pulled back into a
 shiny ponytail, her smooth face powdered subtley and a hint of red gloss
 flushing her lips.   
 ~
-bdlm m 15 E
+6154 0 0 0 8192 0 0 0 15 E
 12 16 2 2d2+120 2d2+2
 120 14400
 6 8 2
@@ -480,7 +480,7 @@ place of honour, that of personally guarding the life of the King. Stern in
 expression, his countenance is one of unyielding loyalty and determination, his
 keen eyes on the lookout for any danger.  
 ~
-dglm kp 10 E
+6216 0 0 0 65536 0 0 0 10 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -495,7 +495,7 @@ lack of use. His face is completely obscured from view but his presence is
 somewhat powerful despite his state, as though he once held a position of great
 importance.    
 ~
-bdl kp -10 E
+2058 0 0 0 65536 0 0 0 -10 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -511,7 +511,7 @@ little legs allowing it to jump higher and further than would have been thought
 possible, allowing it to attach itself to almost any warm-blooded creature for
 a feed.    
 ~
-dghm k -100 E
+4296 0 0 0 0 0 0 0 -100 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -527,7 +527,7 @@ though he has betrayed many and would not hesitate to do it again. Agile and
 muscular, he seems a formidable enough warrior, almost looking for an excuse to
 kill.   
 ~
-bd dfhkt -500 E
+10 0 0 0 1048656 0 0 0 -500 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -543,7 +543,7 @@ almost fighting to keep his eyelids open. Humming gently to himself, it seems
 almost as if the forlorn tune is more to keep him awake than offer any source
 of amusement.   
 ~
-bdlmnq dfhk 10 E
+79882 0 0 0 80 0 0 0 10 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -559,7 +559,7 @@ deep-set grey eyes filled with a wisdom rarely seen. Although he does not look
 particularly strong, something about his presence gives the impression that he
 is a force to be reckoned with.    
 ~
-dgq bdfhp 0 E
+65608 0 0 0 65620 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -574,7 +574,7 @@ Toulouse waits quietly here, ready to help.
 many merchants to be found here, he does not appear to be wealthy although he
 seems more than content with his lifestyle and trade.   
 ~
-bdlmnopr dfhp 10 E
+194570 0 0 0 65616 0 0 0 10 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -589,7 +589,7 @@ betray no hint of uncertainty though this is the man held responsible for all
 of the problems in France. He looks completely sure of himself, and this
 despite the circulating rumours that he is not even really the king.    
 ~
-bdlm hk -50 E
+6154 0 0 0 0 0 0 0 -50 E
 15 15 1 3d3+150 2d2+2
 150 22500
 6 8 1

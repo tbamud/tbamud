@@ -3,7 +3,7 @@ The City Entrance~
    You are at the entrance to a small underground city.  A great adamantite
 gate lies open to the west allowing entrance into the city.
 ~
-51 acd 0
+51 13 0 0 0 0
 D3
 A huge gate opens to the west allowing entrance into the city.
 ~
@@ -24,7 +24,7 @@ A City Street~
    You walk along a highly ornate street going north-south.  A large gate
 lies to the east while a building lies to the west.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -46,7 +46,7 @@ S
 A City Street~
    You walk along a highly ornate city street going north and west.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -61,7 +61,7 @@ A City Street~
    You walk along a highly ornate city street going east-west.  A large house
 stands to the south.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -81,7 +81,7 @@ The 3rd House~
 by drow standards having a few statues, murals and such.  A door leads to the 
 south.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -96,7 +96,7 @@ The Throne Room~
    The throne room of the 3rd house is about as decorated as the inner
 courtyard except with a blood covered altar in the center of the room.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 door~
@@ -107,7 +107,7 @@ A City Street~
    You walk along a highly ornate city street going east-west.  To the north
 is a large building.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -126,7 +126,7 @@ A City Street~
    You walk along a highly ornate city street leading north and east.  To the
 south is an extremely large house.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -145,7 +145,7 @@ The 2nd House~
    You stand inside the 2nd house of the city.  The room is highly decorated
 with statues of spiders and murals everywhere.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -160,7 +160,7 @@ The Throne Room~
    The throne room of the 2nd house is just a little more decorative than
 the inner courtyard having an altar in the center of the room.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 door~
@@ -172,7 +172,7 @@ The Main Gate~
 almost as big and elegant as the one at the entrance to the city, stands
 here.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -193,7 +193,7 @@ The 1st House~
 The room is extremely large and decorative.  Mural and paintings hang on the 
 walls depicting some battles and a spider queen.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 gate~
@@ -208,7 +208,7 @@ The Throne Room~
    The throne room of the 1st house is in one word...awesome.  It is so
 horrifying it is almost beautiful.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 door~
@@ -223,7 +223,7 @@ The Main Chamber~
    This is the council chamber for the Matron Mother herself.  A huge table
 and chairs surrounding it sits in the center of the room.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 door~
@@ -233,7 +233,7 @@ S
 A City Street~
    You walk along a highly ornate city street leading north-south and east.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -252,7 +252,7 @@ A City Street~
    You walk along a highly ornate city street leading south.  A building is
 to the west.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 ~
@@ -266,7 +266,7 @@ S
 The Clerics' Academy~
    This is the most lavish of the academies being that it is for the clerics.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -277,7 +277,7 @@ A City Street~
    You walk along a highly ornate city street going east-west.  To the north
 is a giant temple.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 The entrance to the temple of Lloth is blocked by large ornamental gates.
 ~
@@ -296,7 +296,7 @@ S
 The Warriors' Academy~
    This looks more like a barracks than a school.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 ~
@@ -308,7 +308,7 @@ The Entrance To The Temple Of Lloth~
 imagination.  Inside of the temple entrance, the walls are made of gold and 
 adamantite.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 gates gate~
@@ -323,7 +323,7 @@ The Mages' Academy~
    The Mages' Academy is fairly well decorated and you can see that the
 drow prefer magic over physical power greatly.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 ~
@@ -334,7 +334,7 @@ A City Street~
    You walk along a highly ornate city street going eastward.  To the north
 is a building.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -353,7 +353,7 @@ The Slave Chamber~
    The room is in shambles.  Straw is strewn all about the room as beds for
 the unfortunate creatures who have fallen prey to drow imperialism.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -364,7 +364,7 @@ A City Street~
    You walk along a highly ornate city street leading west and south.  To
 the north is a relatively small house.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 gate~
@@ -383,7 +383,7 @@ The 4th House~
    You stand inside the 4th house of the city.  Its inner courtyard is rather 
 dull by drow standards and rather small as well.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -398,7 +398,7 @@ The Throne Room~
    The throne room is basically similar to the inner courtyard in regards
 to decor.  there is a small throne behind the altar but that is about it.
 ~
-51 ad 0
+51 9 0 0 0 0
 D3
 ~
 ~
@@ -410,7 +410,7 @@ The Entrance Hall~
 a large hallway going east and west.  Small statues of spiders line the entrance
 way's walls.  
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -428,7 +428,7 @@ you look down the hallway you can make out one or two figures moving away from
 you.
 To the north is a obsidian stairway.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -453,7 +453,7 @@ with pictures of elves and spiders.  The hallway continues east and west.  As
 you look down the hallway you can make out one or two figures moving away from
 you.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -471,7 +471,7 @@ you look down the hallway you can make out one or two figures moving away from
 you.
 To the north is a door.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 door~
@@ -492,7 +492,7 @@ with pictures of elves and spiders.  The hallway continues east and west.  As
 you look down the hallway you can make out one or two figures moving away from
 you.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -509,7 +509,7 @@ with pictures of elves and spiders.  The hallway continues east and west.  As
 you look down the hallway you can make out one or two figures moving away from
 you.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -527,7 +527,7 @@ you look down the hallway you can make out one or two figures moving away from
 you.
 To the south is a door.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -547,7 +547,7 @@ The Warriors' Barracks~
 items have been left all about the room.  Well drow warriors never were known
 for neatness.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 door~
@@ -560,7 +560,7 @@ with pictures of elves and spiders.  The hallway continues east and west.  As
 you look down the hallway you can make out one or two figures moving away from
 you.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -575,7 +575,7 @@ The Grand Stairway~
    You are standing at the bottom of a giant obsidian and adamantite 
 stairway.  The edges are trimmed with gold.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 ~
@@ -590,7 +590,7 @@ The Grand Hallway~
    You are standing in the middle of a grand hallway.  The walls are 
 of the purest adamantite with gold trim.  Mosaics line the walls.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -610,7 +610,7 @@ The Mages' Barracks~
 used component containers.  It is rather well decorated as well.  Cots line
 the floor for the mages to sleep on.  The only door is to the west.
 ~
-51 ad 0
+51 9 0 0 0 0
 D3
 ~
 door~
@@ -622,7 +622,7 @@ The Grand Hallway~
 and gold.  To the north the hall goes down a flight of stairs while a door is 
 to the west.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 ~
@@ -642,7 +642,7 @@ The Clerics' Barracks~
 and the like.  Large beds line the floor making this a comfortable room to
 live in.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 door~
@@ -653,7 +653,7 @@ The Grand Stairway~
    You are climbing a set of obsidian stairs surrounded by adamantite walls.
 To the north are a set of large golden doors.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 doors door golden gold~
@@ -669,7 +669,7 @@ The Main Chamber~
 drow priestesses.  In the center is a large sacrificial pit and beyond that
 is an altar.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 ~
@@ -688,7 +688,7 @@ The Eastern Side Of The Main Chamber~
    You are on the eastern side of the chamber overlooking the pit.  To the
 east is a door while to the north is an altar.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -710,7 +710,7 @@ your fragile body to shreds.
 Lloth thanks you for your sacrifice.
 
 ~
-51 cd 0
+51 12 0 0 0 0
 S
 T 5100
 #5144
@@ -718,7 +718,7 @@ The Western Side Of The Main Chamber~
    You are on the western side of the main chamber overlooking a sacrificial
 pit.  To the north is an altar.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -735,7 +735,7 @@ Engraved on the top of the altar is a giant spider with a human head.  Looking
 down from the altar you see a large sacrificial pit with thousands of swarming
 spiders looking for their next meal!
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 ~
@@ -759,7 +759,7 @@ The Slave Cells~
    This is the main room to the cell chambers for the slaves to be 
 sacrificed.  You notice there are no guards around.
 ~
-51 ad 0
+51 9 0 0 0 0
 D0
 ~
 cell~
@@ -775,7 +775,7 @@ The Slave Pen~
 walls.  The room reeks of death.  You almost become nauseous and decide to
 leave the room since you were obviously too late to save the slave.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 cell~
@@ -787,7 +787,7 @@ The Dias~
 of a female drow turning into a giant spider and back again.  There is a door 
 to the west.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 ~
@@ -802,7 +802,7 @@ The Treasury~
    This is obviously only a temporary storage place for the collected 
 treasure being rather bare.
 ~
-51 ad 0
+51 9 0 0 0 0
 D1
 ~
 door~
@@ -813,7 +813,7 @@ The Weaponsmaster's Chamber~
    This one-person bedchamber is very elegant.  The owner must be held in
 high regard to get this kind of treatment.
 ~
-51 ad 0
+51 9 0 0 0 0
 D2
 ~
 door~

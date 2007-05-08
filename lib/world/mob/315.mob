@@ -8,7 +8,7 @@ closer, you notice a long scar running down the left side of his face.  You
 think that perhaps looks can be deceiving and that you might not want to mess
 with him.    
 ~
-dglopr 0 500 E
+182344 0 0 0 0 0 0 0 500 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -22,7 +22,7 @@ A commoner is here searching for goods.
    She is rather plain, wearing her hair up in a bun, and she's dressed,
 well...  Plain.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -35,7 +35,7 @@ A street rat is here, begging for food.
    The boy is caked in dirt, and smells of dead fish.  You may want to give him
 a few coins just to go away.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -48,7 +48,7 @@ A peddler tries to do business with you.
    The man is uninteresting, except for his dirty turbin, which seems unusually
 large.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -61,7 +61,7 @@ A guardsman patrols the streets and shops of McGintey Cove.
 ~
    He looks to be a kind, jovial man.  But I wouldn't test it.    
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -73,7 +73,7 @@ A toll booth worker is here, taking your fare for crossing into the city.
 ~
    She notices you looking and smiles at you.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -86,7 +86,7 @@ Jon the barkeep is here serving dinner and drinks.
    This man looks as if there could be no other place he'd rather be then here
 at this inn, serving drinks and making everyone's food.    
 ~
-bdenopqr 0 500 E
+253978 0 0 0 0 0 0 0 500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -98,7 +98,7 @@ The receptionist waits patiently for you to decide on a room.
 ~
    Such a bright and cheery lady, she beams a happy smile at you.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 6 6 2
@@ -111,7 +111,7 @@ Cindii the Info Lady sits behind the desk, smiling happily.
    She looks so pathetically blonde, you are almost afraid to ask for any
 assistance.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 6 6 2
@@ -123,7 +123,7 @@ Samuel himself is here, pouring the drinks and getting rich.
 ~
    Samuel looks like he may have poured a few extra tonight.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -135,7 +135,7 @@ A postal worker is here, ready to send or get your mail.
 ~
    Be careful.  No sudden moves.  You know how these guys get....    
 ~
-abdo 0 0 E
+16395 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -147,7 +147,7 @@ Juan the potion pusher is here, trying sell you some potions.
 ~
    He's got that money-hungry glint in his eyes.  Watch your wallet.    
 ~
-bdnopr 0 -200 E
+188426 0 0 0 0 0 0 0 -200 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -159,7 +159,7 @@ Alandra the jewelry maker is here, working on some pieces.
 ~
    She almost didn't notice you come in, so focused on her craft was she.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -172,7 +172,7 @@ The armourer waits patiently to help you.
    He looks quite competent, quite relaxed.  He must make a good living in
 spite of his reputation.    
 ~
-bdnopr 0 100 E
+188426 0 0 0 0 0 0 0 100 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -185,7 +185,7 @@ Shellee waits here, hoping to find good homes for her little friends.
    Shellee is quite an attractive woman, however you notice that she lacks a
 bit upstairs.  Yes, she is blonde.    
 ~
-bdo 0 500 E
+16394 0 0 0 0 0 0 0 500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -198,7 +198,7 @@ Jak the weaponsmith is here, currently taking a break.
    Man, this guy is ALWAYS taking a break.  Must be because he sells no
 weaponry.    
 ~
-bdnopr 0 100 E
+188426 0 0 0 0 0 0 0 100 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -210,7 +210,7 @@ A clerk is here, waiting to take your money.
 ~
    Poor guy looks a little bored - must be the only job available in town.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -223,7 +223,7 @@ Pauletra the pottery woman stands next to her cart, selling her goods.
    She looks like she's come a long way to sell her goods in this famous market
 place.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -235,7 +235,7 @@ Herb stands here.  Know what he's selling?
 ~
    Kind of makes you wonder if Herb was always his name, doesn't it?    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -247,7 +247,7 @@ Bones stands here, selling his exotic jewelry.
 ~
    Bones has all kinds of strange bone-made jewelry hanging from his body.    
 ~
-bdnopr 0 100 E
+188426 0 0 0 0 0 0 0 100 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -259,7 +259,7 @@ Farah has a nice little booth set up to display her wares.
 ~
    Although tired, she looks very happy.    
 ~
-bdnopr 0 500 E
+188426 0 0 0 0 0 0 0 500 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 2
@@ -271,7 +271,7 @@ A farmer stands next to cart selling fresh vegetables.
 ~
    Just a normal, average, every day country bumpkin.    
 ~
-bdnopr 0 350 E
+188426 0 0 0 0 0 0 0 350 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -284,7 +284,7 @@ A man is here selling candles.
    Numerous little burn scars mark his hands.  Dangerous job, this man has.  
 
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 32 10 -9 6d6+320 5d5+5
 320 102400
 8 8 1
@@ -297,7 +297,7 @@ A fisherman sells good quality fish fresh from the sea.
    This guy...  There's something fishy about him...  Get it?  Fishy?  You
 know, he's a fisherman, and...  Forget it.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -310,7 +310,7 @@ A glass blower is here, her items carefully stacked on portable wooden shelf.
    She looks like a world traveler, one who has seen and been almost
 everywhere.    
 ~
-bdnopr 0 200 E
+188426 0 0 0 0 0 0 0 200 E
 31 10 -8 6d6+310 5d5+5
 310 96100
 8 8 2
@@ -322,7 +322,7 @@ A carpenter is here, selling his woodwork.
 ~
    Big, strong with hands as big as sledgehammers.    
 ~
-bdnopr 0 400 E
+188426 0 0 0 0 0 0 0 400 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -335,7 +335,7 @@ Darva, the cape maker, is here with his many fine threads for sale.
    The man wears a very fine looking cape.  You notice that his isn't for sale,
 it must be a special one.    
 ~
-bdnopr 0 -500 E
+188426 0 0 0 0 0 0 0 -500 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -347,7 +347,7 @@ A robed man with the power to heal stands here, hands folded before him.
 ~
    This cleric looks quite at peace with himself, tranquil even.    
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -359,7 +359,7 @@ The Leatherman stands next to his cart, his many leather goods for sale.
 ~
    Clad all in leather, this guy looks like he could be friend or foe.    
 ~
-bdnopr 0 100 E
+188426 0 0 0 0 0 0 0 100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -372,7 +372,7 @@ Shantar sits under an umbrella, relaxing as she sells an assortment of rings.
    Sipping her cool drink, you cannot help but feel just a bit jealous of her
 comfort and ease.    
 ~
-bdnopr 0 100 E
+188426 0 0 0 0 0 0 0 100 E
 18 14 0 3d3+180 3d3+3
 180 32400
 6 6 2
@@ -386,7 +386,7 @@ Shades the eyewear man displays his assortment of eyepieces and glasses.
 makes him look a bit sinsiter, you know - cool.  I think that was his intended
 effect there.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -399,7 +399,7 @@ A blacksmith sells assorted daggers here.
    This huge man seems very out of place here in the middle of this bazaar,
 where he is forced to remain in one spot.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -411,7 +411,7 @@ A man is here selling various burlap goods.
 ~
    This huge guy seems quite comfortable relaxing and selling his goods.    
 ~
-bdnopr 0 100 E
+188426 0 0 0 0 0 0 0 100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -423,7 +423,7 @@ A woman is here selling scarves.
 ~
    She has a whole lot of scarves, a whole lot.  Buy one.    
 ~
-bdnopr 0 100 E
+188426 0 0 0 0 0 0 0 100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -435,7 +435,7 @@ A man is here with stacks and stacks of hats, all of them for sale.
 ~
    The is wearing like ten hats on his own head.  What a goof.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -448,7 +448,7 @@ An elven vendor is here offering an assortment of drinking vessels.
    This elf has the look of one who has been down a few rocky roads in his
 time.  His mistrust of most everyone is quite apparent.    
 ~
-bdnopr 0 -100 E
+188426 0 0 0 0 0 0 0 -100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -461,7 +461,7 @@ A baker stands proudly next to her fine baked goods.
    It is quite obvious that she loves her vocation from the look of enormous
 pride on her face.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -474,7 +474,7 @@ A very large man stands next to his display case.
    This man is so large, he almost seems intimidating enough to MAKE you buy
 something.    
 ~
-bdnopr 0 500 E
+188426 0 0 0 0 0 0 0 500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -486,7 +486,7 @@ A dwarven smith stands here selling helms.
 ~
    This stocky little guy has arms that look like miniature tree trunks.    
 ~
-bdnopr 0 100 E
+188426 0 0 0 0 0 0 0 100 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -499,7 +499,7 @@ Shalaylia sits peacefully, selling rolling papers to any who are in need.
    She sure looks comfortable.  In fact, she looks as if she might even be a
 bit sleepy.  Her eyelids droop and she has this sloppy grin on her face.    
 ~
-bdnopr 0 500 E
+188426 0 0 0 0 0 0 0 500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 6 6 2
@@ -512,7 +512,7 @@ Sazaindin the mage rests comfortably here, ready to brew you a potion.
    You have to wonder just what type of potions she is selling, the way she is
 huddled into this far corner of the bazaar.    
 ~
-bdnopr 0 -200 E
+188426 0 0 0 0 0 0 0 -200 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -524,7 +524,7 @@ The lease manager is here, ready to take your application.
 ~
    She smiles prettily at you and thanks you for stopping by.    
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -536,7 +536,7 @@ The jeweler stands behind the counter waiting to help you.
 ~
    Tall, thin, and wiry.    
 ~
-bdnopr 0 500 E
+188426 0 0 0 0 0 0 0 500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -550,7 +550,7 @@ A physician is here, ready to tend to your wounds.
 They seem eager to get your business, and take care of whatever wounds you may
 have.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -564,7 +564,7 @@ Aelsa, one of Fatima's full timers, is here working on some boots.
 leather apron she's wearing is caked in soot, and doesn't appear to be in a
 good mood, so you should better hurry up with whatever you want.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -576,7 +576,7 @@ Randon stands ready to sell you a scroll or two.
 ~
    He looks like a nice young man.  A man who never cheats his customers.    
 ~
-bdnopr 0 800 E
+188426 0 0 0 0 0 0 0 800 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -589,7 +589,7 @@ Curley hustles about the room, tending to his customers in a very timely fashion
    From the way this guy runs around this place, you would think it was all he
 ever wanted out of life.    
 ~
-bdnopr 0 500 E
+188426 0 0 0 0 0 0 0 500 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -602,7 +602,7 @@ Tephe, the water guy, sits on a stool behind a counter, twiddling his fingers.
    An overweight man looks at you with pleading eyes, begging you to buy
 something to liven up his day.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 6 6 1
@@ -615,7 +615,7 @@ A man sits at a desk patiently sewing a pair of leather gauntlets.
    He looks up and tells you that if you need anything just ask.  Then he goes
 back to his sewing.    
 ~
-bdnopr 0 300 E
+188426 0 0 0 0 0 0 0 300 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 6 6 1
@@ -628,7 +628,7 @@ A merchant stands here trying to persuade you to buy his goods.
    You can tell this man knows what he's doing when it comes to sales.  He's
 almost gotten you to buy several of his items more than a few times.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -640,7 +640,7 @@ A local youth walks by, looking for something.
 ~
    They seem eager to find something to spend their money on.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -653,7 +653,7 @@ A gull flits about, pecking the ground for dropped food.
    WHOOA!  The bird just tried to attack you, better give it some food
 before...  Ooops...  It just shit on your boots.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 0
@@ -666,7 +666,7 @@ An albatross rests on a nearby post.
 ~
    A large, white bird rests its wings from a long flight.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 5 5 0
@@ -680,7 +680,7 @@ You see McHale, the patrol lieutenant, out of the corner of your eye.
    A silohette of a man lurks in the distance, you can' tell much about him
 except that he is avoiding being seen.    
 ~
-dglmpq 0 -350 E
+104520 0 0 0 0 0 0 0 -350 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -696,7 +696,7 @@ peers in your direction, making sure you have no plans of doing any harm.  She
 smiles and you can see chunks of her last "victim" in her teeth, you turn away
 quickly in disgust.    
 ~
-dglmpr 0 500 E
+170056 0 0 0 0 0 0 0 500 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -710,7 +710,7 @@ A young deputy is here.
    They look vibrant and full of life as if never even seen any action in their
 entire lives.    
 ~
-dghm 0 50 E
+4296 0 0 0 0 0 0 0 50 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -724,7 +724,7 @@ A fearless wildcat is waiting here patiently.
    Though this cat has a wild look in its eyes, it waits here patiently for
 something to happen.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -738,7 +738,7 @@ A hawk waits faithfully for an order to be given.
    This beautiful winged creature is faithful only to it's master.  Don't mess
 with it, it may decide to peck your eyes out!    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -754,7 +754,7 @@ professional.  It seems the Mage's Guild in this town must have a hard time
 making the rent payment, so they rely heavily on the business from this shop to
 support most of their payment.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -768,7 +768,7 @@ Alaantra the Newbie Helper is here, helping newbies go to the Newbie Headquarter
 Headquarters in a snap - just type NEWBIE and you will be instantly
 transported.  '
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -781,7 +781,7 @@ The city banker waits impatiently behind the counter.
    He sneers a welcome at you and asks in a nasal voice if he might be able to
 help you.    
 ~
-bdgo 0 -300 E
+16458 0 0 0 0 0 0 0 -300 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1

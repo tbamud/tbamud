@@ -3,7 +3,7 @@ rod devil~
 the devil rod~
 The mysterious devil rod lies on the floor.~
 ~
-5 gj an 0
+5 gj 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 3
 6 160 80 0
 E
@@ -20,7 +20,7 @@ mace large~
 the large mace~
 A large mace lies here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 7
 10 1000 400 0
 E
@@ -35,7 +35,7 @@ mace small~
 the small mace~
 A small mace has been left here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 7
 6 600 200 0
 E
@@ -50,7 +50,7 @@ cloak purple~
 a purple cloak~
 A purple cloak lies on the floor.~
 ~
-11 g ac 0
+11 g 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 20 500 60 0
 E
@@ -67,7 +67,7 @@ potion blue neon~
 a neon blue potion~
 A neon blue potion stands on the floor.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 14 6 15 16
 4 100 1000 0
 E
@@ -79,7 +79,7 @@ key black~
 a black key~
 A black key has been left on the floor.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 E
@@ -91,17 +91,17 @@ skull white~
 a strange white skull~
 A strange white skull lies on the floor looking at you.~
 ~
-9 abh ae 0
+9 abh 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 30 1 250 0
-E
-writing text~
-   You read the number '666'.  
-~
 E
 white skull~
    The skull has two small horns in the forehead.  You notice some writing on
 the inside.  
+~
+E
+writing text~
+   You read the number '666'.  
 ~
 A
 2 -4
@@ -110,7 +110,7 @@ gauntlets muddy~
 a pair of muddy gauntlets~
 A pair of muddy gauntlets have been thrown away here.~
 ~
-9 g ah 0
+9 g 0 0 0 ah 0 0 0 0 0 0 0
 6 0 0 0
 10 600 150 0
 E
@@ -124,24 +124,24 @@ stick small~
 a small stick~
 A small stick lies here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 4 200 200 0
-E
-letters letter~
-   They read: Hold me
-~
 E
 small stick~
    The small stick does not look interesting at all.  But just as you are going
 to throw it away you notice some small letters.  
+~
+E
+letters letter~
+   They read: Hold me
 ~
 #7209
 boots muddy~
 a pair of muddy boots~
 A pair of muddy boots has been dropped here.~
 ~
-9 g ag 0
+9 g 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 10 75 500 0
 E
@@ -155,7 +155,7 @@ treasure coins~
 a huge treasure~
 There is a huge treasure here, looking very valuable.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 652 0 0 0
 5 652 0 0
 E
@@ -167,7 +167,7 @@ sword short~
 a short sword~
 A short sword is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 3 3
 4 100 300 0
 E

@@ -562,7 +562,7 @@ void command_interpreter(struct char_data *ch, char *argument)
   char *line;
   char arg[MAX_INPUT_LENGTH];
 
-  REMOVE_BIT(AFF_FLAGS(ch), AFF_HIDE);
+  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_HIDE);
 
   /* just drop to next line for hitting CR */
   skip_spaces(&argument);
@@ -1208,8 +1208,8 @@ int perform_dupe_check(struct descriptor_data *d)
   d->character->desc = d;
   d->original = NULL;
   d->character->char_specials.timer = 0;
-  REMOVE_BIT(PLR_FLAGS(d->character), PLR_MAILING | PLR_WRITING);
-  REMOVE_BIT(AFF_FLAGS(d->character), AFF_GROUP);
+  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING | PLR_WRITING);
+  REMOVE_BIT_AR(AFF_FLAGS(d->character), AFF_GROUP);
   STATE(d) = CON_PLAYING;
 
   switch (mode) {
@@ -1383,9 +1383,8 @@ void nanny(struct descriptor_data *d, char *arg)
 	  STATE(d) = CON_NAME_CNFRM;
 	} else {
 	  /* undo it just in case they are set */
-	  REMOVE_BIT(PLR_FLAGS(d->character),
-		     PLR_WRITING | PLR_MAILING | PLR_CRYO);
-	  REMOVE_BIT(AFF_FLAGS(d->character), AFF_GROUP);
+	  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING | PLR_MAILING | PLR_CRYO);
+	  REMOVE_BIT_AR(AFF_FLAGS(d->character), AFF_GROUP);
           d->character->player.time.logon = time(0);
 	  write_to_output(d, "Password: ");
 	  echo_off(d);
@@ -1640,7 +1639,7 @@ void nanny(struct descriptor_data *d, char *arg)
       }
       d->has_prompt = 0;
       /* We've updated to 3.1 - some bits might be set wrongly: */
-      REMOVE_BIT(PRF_FLAGS(d->character), PRF_BUILDWALK);
+      REMOVE_BIT_AR(PRF_FLAGS(d->character), PRF_BUILDWALK);
       break;
 
     case '2':
@@ -1714,7 +1713,7 @@ void nanny(struct descriptor_data *d, char *arg)
 	return;
       }
       if (GET_LEVEL(d->character) < LVL_GRGOD)
-	SET_BIT(PLR_FLAGS(d->character), PLR_DELETED);
+	SET_BIT_AR(PLR_FLAGS(d->character), PLR_DELETED);
       save_char(d->character);
       Crash_delete_file(GET_NAME(d->character));
       /* If the selfdelete_fastwipe flag is set (in config.c), remove all the 

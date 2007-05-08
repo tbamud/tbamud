@@ -7,7 +7,7 @@ The assistant to the stonewright is here, ready to sell you some stones.
 helping the stonewright with the rocks.  And he obviously has been sent here,
 because he's expendable - the stonewright wasn't...    
 ~
-bdeo dk 650 E
+16410 0 0 0 16 0 0 0 650 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -22,7 +22,7 @@ these halls.  His assistant, on the other hand, is still a young dwarf, who
 knows a little about the making of weapons, but is, as they say in these parts,
 worth a dime a dozen.    
 ~
-bdo 0 650 E
+16394 0 0 0 0 0 0 0 650 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -40,7 +40,7 @@ let his age fool you.  He knows how to wield the hammer to make the armor last.
 Having discovered the possibilities in trade, the dwarves have decided to make
 the armor in your size too.    
 ~
-bdo 0 650 E
+16394 0 0 0 0 0 0 0 650 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -54,7 +54,7 @@ A guard is here, keeping an eye on the trade halls.
 payed for.  Also he seems to be ready to to use force if necessary to avoid
 trouble with the likes of you.    
 ~
-dglm 0 650 E
+6216 0 0 0 0 0 0 0 650 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -68,7 +68,7 @@ A guard is here, keeping an eye on the flow of traders.
 carrying stolen goods from the trade area.  He looks ready to call for backup,
 if needed.    
 ~
-bdlm 0 650 E
+6154 0 0 0 0 0 0 0 650 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -84,7 +84,7 @@ open sky, compared to his warm cosy bunk in the barraks in the town itself.
 He seems to be just on the verge of becoming provocative just to get a fight
 going.  He still keeps his poor men busy, though.    
 ~
-dgilm 0 650 E
+6472 0 0 0 0 0 0 0 650 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -98,7 +98,7 @@ A dwarven gateguard is keeping an eye on the gates.
 say out of his city.  You are convinced he wouldn't hesitate a second if you
 tried to walk by him, but just throw you back from where you came.    
 ~
-bdlm 0 650 E
+6154 0 0 0 0 0 0 0 650 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -114,7 +114,7 @@ one to talk to, if you would ever dream of getting inside the city.  Come to
 think of it, he looks like he might accept a small bribe, should you be
 interested.    
 ~
-bdlmnop 0 280 E
+63498 0 0 0 0 0 0 0 280 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -133,7 +133,7 @@ smoky smithy.  You notice he is very careful about striking at the right angle
 with every stroke, and you realise you're standing in front of one of the
 masters of forgery, Torg himself.    
 ~
-bdenopqr 0 650 E
+253978 0 0 0 0 0 0 0 650 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -150,7 +150,7 @@ old dwarf, yet he uses his hammer like it was made of air.  Again and again it
 pounds on the metal, making those small dents that will strengthen the armour
 rather than weaken it.    
 ~
-bdenopqr 0 650 E
+253978 0 0 0 0 0 0 0 650 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -165,7 +165,7 @@ the headstones on the floor.  He isn't really concentrating at the moment,
 though.  It seems he's more interested in keeping an eye on you, making sure
 nothing is removed from his workshop.    
 ~
-bdelnopqr 0 650 E
+256026 0 0 0 0 0 0 0 650 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -178,7 +178,7 @@ You are being watch by a dwarf, who spends most of his time watching others work
    The foreman stares back at you.  He says, 'You are interupting the work - Go
 away !'
 ~
-dglm 0 450 E
+6216 0 0 0 0 0 0 0 450 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -191,7 +191,7 @@ A small spider scurries along, oblivious.
    It's small has eight legs and doesn't care about you.  It's nothing but a
 baby spider.    
 ~
-dfg 0 7 E
+104 0 0 0 0 0 0 0 7 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -204,7 +204,7 @@ A large spider has decided that your middle name is 'lunch'.
 ~
    Eight legs - one mouth - a poisonous sting.  And it doesn't like YOU!    
 ~
-dfgq 0 0 E
+65640 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -219,7 +219,7 @@ A dwarven guard, with the emblem of the kings guard on his armor stands here.
 very strong and able, and you're certain the axe he's wielding could cleave you
 just like a log...    
 ~
-bdlm 0 650 E
+6154 0 0 0 0 0 0 0 650 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -233,7 +233,7 @@ A sergeant of the kings guard is getting his people lined up for inspection.
 expect an old military career-dwarf to look.  You don't think irritating him
 would be such a good idea.    
 ~
-bdlm 0 500 E
+6154 0 0 0 0 0 0 0 500 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -249,7 +249,7 @@ trying to make you look bad in front of the captain.  This lieutenant looks
 quite strong and ready to beat the crap out of anyone disrupting his chances of
 promotion.    
 ~
-dglm d 500 E
+6216 0 0 0 16 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -263,7 +263,7 @@ A captain of the guard is looking extremely important here.
 absolutely nothing right now, but the scars on his face, the muscles on his
 arms suggest he is ready for combat, should it be necessary.    
 ~
-dglm 0 500 E
+6216 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -277,7 +277,7 @@ A young dwarf is here, sleeping.
 of the dwarves.  He is asleep, but you quickly realise if you woke him, he'd
 beat the living crap out of you.    
 ~
-dgo h 500 E
+16456 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 4 4 1
@@ -291,7 +291,7 @@ The dwarven minister of trade is an important person. And he's here.
 today.  He is a master of retoric and can talk almost any salesman down in
 price, while sellig his own goods more and more expensively.    
 ~
-bdl 0 400 E
+2058 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 6 6 1
@@ -306,7 +306,7 @@ walls around you.  He looks at you with eyes sad with age.  He slowly lowers
 his head, while mumbling something like 'Too late for saving..  ..  Had I been
 younger...  '
 ~
-bdlo hm 400 E
+18442 0 0 0 8192 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -323,7 +323,7 @@ the real trick is staying there.  Many dwarves would like to be the king, so he
 has developed a very good technique; If in doubt about your opponents
 intentions, force him to understand yours.    
 ~
-bdl h 400 E
+2058 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 6 6 1
@@ -336,7 +336,7 @@ A longbearded dwarf is walking here.
    He has got a long beard, a small body and strong limbs.  A dwarf if you ever
 saw one.    
 ~
-dgl k 400 E
+2120 0 0 0 0 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -351,7 +351,7 @@ A longbearded dwarf woman is walking here.
 might have mistaken her for one.  The beard, stoutness and strong limbs are all
 there.  Obviously a dwarf.    
 ~
-dgl 0 400 E
+2120 0 0 0 0 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -366,7 +366,7 @@ You see an very small person here. Must be a kid.
 You however, think he looks just like his father except this young dwarf has
 not had all the training his father has.  He can strike you back, though.    
 ~
-dghl 0 400 E
+2248 0 0 0 0 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -380,7 +380,7 @@ A dwarven miner has heard the bell and is now looking for whoever stole the tita
 stealing the hardearned titanium he and his fellow miners has been mining
 lately.    
 ~
-bdfl k 800 E
+2090 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -393,7 +393,7 @@ A dwarven miner is here, taking a break.
    This old dwarf has a beard that almost reaches his toes.  He's so used to
 walkng around in the mines he almost needs no light.    
 ~
-dg 0 800 E
+72 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -409,7 +409,7 @@ eyes and won't tolerate any laziness on the part of his workers.  However, as
 he seldom enters the mine itself, the miners have started going there to avoid
 him...    
 ~
-bd k 400 E
+10 0 0 0 0 0 0 0 400 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1

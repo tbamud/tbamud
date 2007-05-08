@@ -6,7 +6,7 @@ The big, ugly lag beast is standing here sizing you up.
    Ick...  What a disgusting creature!  It is black and green and slimy and it
 is drooling everywhere...  Looks mean too.    
 ~
-bcd 0 -750 E
+14 0 0 0 0 0 0 0 -750 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -20,7 +20,7 @@ The lag monster stands here looking confused.  Kill him!  Kill him!
 tell.  He is only about 4 feet tall, but he pretty muscular looking...  Maybe
 you should ask if he needs help?  Nah...  Kill him.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -34,7 +34,7 @@ Someone's little pet lag has gotten loose, and is sniffing about here.
 want to cuddle him to death...  No, you really want to kill him to tell the
 truth.  But, remember, even a little lag can be a big problem.    
 ~
-dg 0 100 E
+72 0 0 0 0 0 0 0 100 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -48,7 +48,7 @@ The lag Guard is here wondering where that lag went.
 he doesn't seem to be doing a good job of it.  He looks at you and says, 'Have
 you seen that lag?  Master will have my head if I don't find him.  '
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -61,7 +61,7 @@ The court jester is here trying to make something.
    He is a funny looking, furry little dude.  He looks really busy trying to
 mix up a batch of something or other.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 0
@@ -74,7 +74,7 @@ A creepy little crawling lag thing is scuttling along the floor at your feet.
    Yuck!  If they'd ever clean this place maybe it wouldn't attract vermin like
 this disgusting, little, six-legged, brown bug.    
 ~
-dg 0 -250 E
+72 0 0 0 0 0 0 0 -250 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -87,7 +87,7 @@ A VERY gaunt looking lag... it looks like a zombie!
    This guy has been lost in here too long...  It is more zombie than man now.
 You would feel sorry for it, but it is moving in to attack!    
 ~
-cdfg 0 -500 E
+108 0 0 0 0 0 0 0 -500 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -101,7 +101,7 @@ A funny little imp-like lag thing (a quasit perhaps?) is sneaking about here.
 It is hard to say because before you ever get a good look at it, it darts back
 into the shadows.    
 ~
-cdfgh 0 -800 E
+236 0 0 0 0 0 0 0 -800 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -116,7 +116,7 @@ not nearly as smart.  Actually, now that you consider it...  He looks a heck of
 a lot meaner than any bull you have ever seen...  And he is coming this way!  
 
 ~
-dgjk 0 -1000 E
+1608 0 0 0 0 0 0 0 -1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -129,7 +129,7 @@ The dark spectre is lurking in the shadows.
    The soul of a long since passed on adventurer...  It lurks here waiting for
 a chance to bring death to any who cross its path.    
 ~
-bdgl bdt -850 E
+2122 0 0 0 1048596 0 0 0 -850 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 0
@@ -143,7 +143,7 @@ A lag is here annoying the hell out of you.
 comments about everything.  Better silence him with cold, tempered steel
 MUHAHAHAHAHAHAHAHAHAHA!    
 ~
-cdg 0 -500 E
+76 0 0 0 0 0 0 0 -500 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -157,7 +157,7 @@ A lag is here looking terribly confused.
 ask and he will probably ask 2 or 3 times too.  This guy just doesn't get it,
 best put him out of his misery.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -171,7 +171,7 @@ A lag is here talking a lot.
 friendly, interesting sort.  Seems to have a clue what she's doing also, unlike
 some others you might see.    
 ~
-dg 0 100 E
+72 0 0 0 0 0 0 0 100 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -185,7 +185,7 @@ A lag is here wandering about aimlessly.
 far from home this time.  Don't think he knows quite where he is, maybe you
 should help him out?    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -198,7 +198,7 @@ A lag is here, and he looks quite sure of himself.
    Here is a guy who has it all together.  Nice equipment too, must have read
 the help files, Eh?    
 ~
-cdg 0 500 E
+76 0 0 0 0 0 0 0 500 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -212,7 +212,7 @@ You see a Gateguard standing here waiting for orders.
 His armor is shiny and black.  He stands ready to give his life for the Crown.
   
 ~
-dg d -400 E
+72 0 0 0 16 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -225,7 +225,7 @@ You see a very large Royalty Guard.
    The Royalty Guard is a very large man.  Just from the looks of Him, this
 could very well be your doom should you tangle with him!    
 ~
-cdefglp d -600 E
+34940 0 0 0 16 0 0 0 -600 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -238,7 +238,7 @@ Here stands a magnificent Knight of the dark realm.
    The Black Knight is here, riding his ebony black war horse.  His eyes flash
 behind his visor in vengence.    
 ~
-cdefgl d -400 E
+2172 0 0 0 16 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -251,7 +251,7 @@ Here stands a magnificent knight of the light realm.
    The White Knight is here, riding his ivory white war horse.  His eyes gleam
 behind his visor in joy.    
 ~
-cdefgl d 400 E
+2172 0 0 0 16 0 0 0 400 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -264,7 +264,7 @@ A Dungeon Master stands here.
    The Dungeon Master seems willing to help you straight into your grave so he
 can bless you properly.    
 ~
-bcdefgl d -500 E
+2174 0 0 0 16 0 0 0 -500 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -278,7 +278,7 @@ The Queen of the Castle of Desire stands here.
 hair that crowns her head like a black cloud.  If looks could kill, you would
 already be dead.    
 ~
-bcdefgl dh -750 E
+2174 0 0 0 16 0 0 0 -750 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -291,7 +291,7 @@ The King of the Castle of Desire stands here.
    The King is a menacing figure.  You can easily understand why he is the king
 and you are not.    
 ~
-bcdefgl dh -999 E
+2174 0 0 0 16 0 0 0 -999 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0

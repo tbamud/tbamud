@@ -3,7 +3,7 @@ gloves~
 rabbit skin gloves~
 A pair of rabbit skin gloves.~
 ~
-9 0 aho 0
+9 0 0 0 0 aho 0 0 0 0 0 0 0
 2 0 0 0
 6 250 0 10
 E
@@ -17,7 +17,7 @@ boots~
 rabbit skin boots~
 A pair of rabbit skin boots.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 8 400 0 10
 E
@@ -31,7 +31,7 @@ shrub~
 a small shrub~
 A small shrub is here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -44,7 +44,7 @@ whip~
 rawhide whip~
 A rawhide whip~
 ~
-5 b ano 0
+5 b 0 0 0 ano 0 0 0 0 0 0 0
 2 2 3 2
 7 300 0 10
 E
@@ -58,7 +58,7 @@ tree stump~
 tree stump~
 There is a tree stump here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -71,7 +71,7 @@ teddybear~
 a teddybear~
 A teddybear was abandoned here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 4 450 0 0
 E
@@ -84,7 +84,7 @@ armour~
 wooden armour~
 A suit of wooden armour~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 11 300 0 10
 E
@@ -97,7 +97,7 @@ helmet~
 wooden warhelm~
 A wooden warhelm~
 ~
-9 0 a 0
+9 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 8 550 0 10
 E
@@ -110,7 +110,7 @@ pebble rock~
 Onyx pebble~
 An onyx pebble is lying on the ground.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 300 0 10
 E
@@ -127,7 +127,7 @@ tree~
 a large tree is here.~
 A large tree is here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -140,7 +140,7 @@ plant~
 colorful plant~
 A colorful plant is growing here.~
 ~
-12 a 0 0
+12 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -153,7 +153,7 @@ egg~
 bird egg~
 A bird egg is lying on the ground.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 125 0 0
 E
@@ -165,7 +165,7 @@ apple~
 apple~
 An apple~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 3 50 0 0
 E
@@ -177,7 +177,7 @@ rock~
 magical rock~
 A magical rock~
 ~
-8 a ao 0
+8 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 400 0 0
 E
@@ -194,7 +194,7 @@ painting~
 painting~
 A beautiful painting is hanging on the wall.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E

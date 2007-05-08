@@ -6,7 +6,7 @@ A chimpanzee is standing here.
    This intelligent chimpanzee is one of the many inhabitants of Ape Village.
   
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -19,7 +19,7 @@ A chimpanzee is standing here.
    This intelligent chimpanzee is one of the many inhabitants of Ape Village.
   
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -32,7 +32,7 @@ A regal looking Orangutan is standing here.
    The Orangutans are the rulers of the Ape Village, and they are the most
 intelligent.    
 ~
-dgh 0 -350 E
+200 0 0 0 0 0 0 0 -350 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -50,7 +50,7 @@ A savage Gorilla soldier is here, looking for something to kill.
    The Gorilla Soldiers make up the army and police forces of Ape Village.  
 Don't mess with them!    
 ~
-dg 0 -500 E
+72 0 0 0 0 0 0 0 -500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -68,7 +68,7 @@ A Gorilla Hunter is here, looking for something to kill.
    The Gorilla Hunters hunt down humans for sport.  They also round up humans
 for the ape scientists to use in experiments.    
 ~
-dg 0 -500 E
+72 0 0 0 0 0 0 0 -500 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -85,7 +85,7 @@ A small Ape Child is standing here.
 ~
    Ape children are stupid and weak.  Perfect for killing!    
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -98,7 +98,7 @@ A wild human is here, eyeing you nervously.
    These wild humans are crazy.  They can't speak or write, and they are hunted
 by the apes.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -111,7 +111,7 @@ A caged human is here, eyeing you nervously.
    These wild humans are crazy.  They can't speak or write, and they are hunted
 by apes.  Captivity has made these humans weaker than the wild ones.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -124,7 +124,7 @@ Ursus, the Gorilla Captain, is glaring at you.
    Ursus is the captain of the Gorilla Soldiers.  He's very mean and very
 strong.  Picking a fight with him would surely result in death!    
 ~
-dglnr 0 -500 E
+141384 0 0 0 0 0 0 0 -500 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -142,7 +142,7 @@ Dr. Zaius, the ruler of Ape Village, is standing here.
    Dr.  Zaius knows the truth behind Ape Village.  He knows that apes were once
 dominated by man, but he doesn't like to share information.    
 ~
-dghn 0 -200 E
+8392 0 0 0 0 0 0 0 -200 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -160,7 +160,7 @@ Cornelius the chimpanzee is standing here.
    Cornelius is an archeologist.  He is simpathetic towards humans, unlike the
 other apes.    
 ~
-dgn 0 200 E
+8264 0 0 0 0 0 0 0 200 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -179,7 +179,7 @@ Zira the chimpanzee is standing here.
 speak.  Although she doesn't know it, she performs evil operations with Dr.  
 Zaius.    
 ~
-bdn 0 200 E
+8202 0 0 0 0 0 0 0 200 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 2
@@ -198,7 +198,7 @@ A large rock is resting here.
 past.  For some reason, they have developed an intelligence and are able to
 move around.  Beware!    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -217,7 +217,7 @@ The Keeper is here, watching out onto the ocean.
 hairy apes touching one of mankind's last relics.  He's an avid steroid user,
 so he's pretty tough.    
 ~
-bcdlp h -600 E
+34830 0 0 0 0 0 0 0 -600 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -234,7 +234,7 @@ An ape shopkeeper is here, staring at you.
 ~
    This ape likes to buy and sell stuff.  He has a very short temper.    
 ~
-bdlnr dh -300 E
+141322 0 0 0 16 0 0 0 -300 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1

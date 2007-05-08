@@ -7,7 +7,7 @@ You meet a beholder's deadly gaze!
 atop the round body which can do anything from charm you to disintegrate you.  
 Beholders are not known for their personality.  
 ~
-bdflnoq dhkp -870 E
+92202 0 0 0 65552 0 0 0 -870 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -22,7 +22,7 @@ A strange lamia stands here waiting for her next meal.
 body of a four-legged beast.  She licks her lips as she looks at you greedily.
 
 ~
-cdgj 0 -1000 E
+588 0 0 0 0 0 0 0 -1000 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 2
@@ -36,7 +36,7 @@ A strong chest lies in one corner of the room.
    A strong, wooden chest bound with iron straps and a heavy padlock on the
 front.  
 ~
-bdqr 0 10 E
+196618 0 0 0 0 0 0 0 10 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -51,7 +51,7 @@ aren't any boulders native to this area.  The two skeletons beneath it are
 simply that, bones...  No rags or anything else appears to be attached to them.
 
 ~
-bdqr 0 -10 E
+196618 0 0 0 0 0 0 0 -10 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -64,7 +64,7 @@ The stone floor of this house has been ripped apart.
    What a mess, you wonder to yourself what could have caused this rampant
 destruction.  
 ~
-bdqr 0 -140 E
+196618 0 0 0 0 0 0 0 -140 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -77,7 +77,7 @@ Some broken shards of pottery lie strewn about the floor.
    The pottery shards appear to have been part of a large vase at one point,
 probably before the city fell.  
 ~
-bdqr 0 200 E
+196618 0 0 0 0 0 0 0 200 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -90,7 +90,7 @@ A few wooden planks lie stacked on a low shelf.
    The fact that these planks still rest on this shelf leads you to believe that
 someone has been here before you...  
 ~
-bdqr 0 0 E
+196618 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -102,7 +102,7 @@ A small horned lizard flicks his tongue and slithers away.
 ~
    A cute little lizard -- that is, if you like reptiles!  
 ~
-bdh 0 300 E
+138 0 0 0 0 0 0 0 300 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -115,7 +115,7 @@ In the corner you see a large, stone golem faithfully standing watch.
    It is a big chunk of rock that has been magically formed into a giant stone
 creature.  He stands here still guarding the city.  
 ~
-bdilnopqr dfk 800 E
+256266 0 0 0 80 0 0 0 800 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -129,7 +129,7 @@ A strange lamia stands here waiting for her next meal.
 body of a four-legged beast.  She licks her lips as she looks at you greedily.
 
 ~
-bdfg f -500 E
+106 0 0 0 64 0 0 0 -500 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 2

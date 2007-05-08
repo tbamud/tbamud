@@ -3,7 +3,7 @@ eventru war hammer~
 Eventru~
 A large war hammer rests here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 7 4 9
 12 100 0 24
 A
@@ -15,7 +15,7 @@ armor hard dragonskin~
 a hard Dragonskin armor~
 Some finely crafted dragonskin armor lies here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 37 1 0 16
 A
@@ -27,7 +27,7 @@ spear long~
 a long spear~
 A long spear rests undisturbed on the ground.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 3 3 11
 4 10 0 6
 #31503
@@ -35,7 +35,7 @@ garden hoe~
 a garden hoe~
 A garden hoe encrusted in dirt lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 1 7
 5 10 0 1
 #31504
@@ -43,7 +43,7 @@ falconblade~
 Falconblade~
 A blade seems to quiet the air around it.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 5 4 14
 20 1000 0 23
 A
@@ -55,7 +55,7 @@ McHale's Cape~
 McHale's Cape~
 Some cloth is neatly set here.~
 ~
-11 0 ak 0
+11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 10
 A
@@ -69,7 +69,7 @@ fishing pole~
 a fishermans' pole~
 A fisherman's pole lies here, ready to catch some fish.~
 ~
-4 0 ao 0
+4 0 0 0 0 ao 0 0 0 0 0 0 0
 10 7 7 12
 2 1 0 0
 #31507
@@ -77,7 +77,7 @@ carpenter hammer~
 a carpenters' hammer~
 A larger hammer lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 1 1 9
 10 1 0 1
 #31508
@@ -85,7 +85,7 @@ deputy badge~
 a deputy's badge~
 A small golden symbol is here.~
 ~
-11 a al 0
+11 a 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 19
 A
@@ -97,7 +97,7 @@ battered war helm~
 a battered war helm~
 Tess' battered helm rolls along on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 10 250 0 21
 A
@@ -111,7 +111,7 @@ small crested shield~
 a small crested shield~
 A crested disc leans on some nearby bricks.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
 12 10 0 14
 #31511
@@ -119,7 +119,7 @@ dried sea bass~
 some dried sea bass~
 A well preserved fish litters the ground.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 6 0 0 0
 3 12 0 0
 #31512
@@ -127,7 +127,7 @@ colored gems~
 several colored gems~
 There are several colored gems piled here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 4 100 0 0
 #31513
@@ -135,7 +135,7 @@ oil lamp~
 a large oil lamp~
 An old oil lamp is here, waiting to be used again.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 2 0 0
 #31514
@@ -143,7 +143,7 @@ rye bread~
 a Rye bread~
 A loaf of Rye bread lies here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 4 0 0 0
 1 1 0 0
 #31515
@@ -151,7 +151,7 @@ cornbread~
 a square of cornbread~
 A square of cornbread was carelessly left here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 1 4 0 0
 #31516
@@ -159,7 +159,7 @@ broken costume mask~
 a broken costume mask~
 An ancient mask of some sort, lies in pieces.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 23
 A
@@ -173,7 +173,7 @@ shield strength~
 Shield of Strength~
 A mighty shield lies here gathering dust.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
 23 10 0 24
 A
@@ -183,7 +183,7 @@ steel bracelet~
 a steel bracelet~
 A hoop of steel lies on the ground.~
 ~
-9 0 am 0
+9 0 0 0 0 am 0 0 0 0 0 0 0
 3 0 0 0
 1 400 0 0
 #31519
@@ -191,7 +191,7 @@ thick gloves~
 a pair of thick gloves~
 Some thick gloves seem to be tossed to the ground.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 2 20 0 10
 #31520
@@ -199,7 +199,7 @@ red steel gauntlets~
 a pair of red steel gauntlets~
 A pair of gauntlets are tucked away in a corner.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 14 1 0 20
 A
@@ -211,7 +211,7 @@ boots leather~
 a pair of leather boots~
 A pair of leather boots lie in a puddle of water.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 5 230 0 0
 #31522
@@ -219,7 +219,7 @@ brown green sleeves~
 a set of brown and green sleeves~
 A set of sleeves appear to blend in with the ground.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
 2 1 0 13
 A
@@ -233,7 +233,7 @@ bag wonders~
 the Bag of Wonders~
 A large, magical bag has been left here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 200 0 -1 0
 10 1 0 0
 E
@@ -246,7 +246,7 @@ hat dusty~
 a dusty old hat~
 An old rumpled hat has been dropped here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 5 20 0 1
 E
@@ -260,7 +260,7 @@ bardiche spiked~
 a spiked bardiche~
 A spiked bardiche is on the ground here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 2 7 3
 10 20 0 11
 E
@@ -272,7 +272,7 @@ guardsman's armour~
 a guardsman's armour~
 A guards piece of expensive lightweight armour rest on the floor.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 25 60 0 23
 A
@@ -286,7 +286,7 @@ Boots~
 a pair of nickel plated boots~
 A pair of fancy boots sit together nicely.~
 ~
-9 g ag 0
+9 g 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 12 1000 0 20
 A
@@ -298,7 +298,7 @@ sign~
 a sign~
 A sign hangs on the side of the toll booth.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -316,7 +316,7 @@ floppy hat~
 a floppy hat~
 A floppy hat has been left here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
 3 10 0 1
 E
@@ -329,7 +329,7 @@ ale glass ale~
 a foamy glass~
 A glass has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 3 0
 8 3 0 0
 #31531
@@ -337,7 +337,7 @@ steak~
 a juicy hunk of steak~
 A big, juicy hunk of steak has been dropped here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 5 0 0 0
 2 5 0 0
 #31532
@@ -345,7 +345,7 @@ badge courage~
 a badge of courage~
 A silvery badge has been left behind.~
 ~
-11 f ac 0
+11 f 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 6 800 0 12
 E
@@ -360,7 +360,7 @@ brochure information~
 a brochure~
 A simple brochure with 'McGintey Cove' stenciled on the front is here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -406,7 +406,7 @@ rack~
 a brochure rack~
 A brochure rack hangs from a wall.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 20000 0 -1 0
 0 0 0 0
 #31535
@@ -414,7 +414,7 @@ ring silver~
 a small silver ring~
 A small silver ring has been dropped here.~
 ~
-11 0 abo 0
+11 0 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
 4 20 0 3
 A
@@ -424,7 +424,7 @@ bracelet pewter~
 a pewter bracelet~
 Someone has left a pewter bracelet here.~
 ~
-11 0 am 0
+11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 5 22 0 1
 A
@@ -434,7 +434,7 @@ ring quartz stone~
 a ring with a quartz stone~
 Someone dropped a ring adorned with a quartz stone here.~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 3 30 0 1
 A
@@ -444,7 +444,7 @@ necklace bismuth~
 a necklace made of bismuth~
 A necklace made of some kind of element lies here.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 4 12 0 1
 A
@@ -454,7 +454,7 @@ potion white fizzy~
 a fizzy white potion~
 A fizzy white potion has been dropped here.~
 ~
-10 a ao 0
+10 a 0 0 0 ao 0 0 0 0 0 0 0
 1 16 -1 -1
 2 700 0 1
 #31540
@@ -462,7 +462,7 @@ potion gray thick~
 a thick grey potion~
 A small grey vial has been left here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 10 1 -1 -1
 1 520 0 0
 #31541
@@ -470,7 +470,7 @@ potion blue sizzling~
 a sizzling blue potion~
 A sizzling blue potion has been left here.~
 ~
-10 b ao 0
+10 b 0 0 0 ao 0 0 0 0 0 0 0
 1 47 -1 -1
 2 40 0 0
 #31542
@@ -478,7 +478,7 @@ potion blue recall~
 a blue potion of recall~
 A blue potion of recall fizzes here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 20 42 -1 -1
 2 230 0 0
 #31543
@@ -486,7 +486,7 @@ sabre~
 a sabre~
 A sabre has been left behind.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 3 4 3
 7 450 0 0
 E
@@ -500,7 +500,7 @@ mace studded nail~
 a nail-studded mace~
 A mace, bristling with sharp nails, lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 6 5
 10 30 0 8
 E
@@ -512,7 +512,7 @@ bola weapon~
 a simple bola~
 A bola is here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 3 4 5
 6 34 0 9
 E
@@ -526,7 +526,7 @@ ale glass ale~
 a glass~
 A glass of dark lager has been left here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 4 4 4 0
 4 10 0 0
 #31547
@@ -534,7 +534,7 @@ ale pint ale~
 a pint~
 A pint of Samuel's Own Firebreather has been left here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 4 4 7 0
 5 8 0 0
 #31548
@@ -542,7 +542,7 @@ local speciality mug local~
 a mug~
 A mug of Samuel's House Special has been left here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 6 6 8 0
 11 12 0 0
 #31549
@@ -550,7 +550,7 @@ beer flask beer~
 a flask~
 A flask of home made beer lies on the ground fermenting.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 50 50 5 0
 50 20 0 0
 #31550
@@ -558,7 +558,7 @@ whisky whiskey bag paper whisky~
 a bottle~
 A bottle wrapped inside a paper bag lies here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 50 50 5 0
 50 50 0 0
 #31551
@@ -566,7 +566,7 @@ beer fruit bag beer~
 a paper bag~
 Some strange tasting wiskey lies here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 50 50 5 0
 50 20 0 0
 #31552
@@ -574,7 +574,7 @@ local special drink local~
 a local special drink~
 A dark red drink bubbles and frothes here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 30 30 7 0
 35 15 0 0
 #31553
@@ -582,7 +582,7 @@ lantern hooded~
 a hooded lantern~
 A hooded lantern has been dropped here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 20 0
 9 12 0 1
 #31554
@@ -590,7 +590,7 @@ bag sack~
 a large sack~
 A large sack has been discarded on the ground.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 200 0 -1 0
 3 10 0 0
 #31555
@@ -598,7 +598,7 @@ scroll~
 a small, red scroll~
 A small red scroll has been left here.~
 ~
-2 0 ao 0
+2 0 0 0 0 ao 0 0 0 0 0 0 0
 1 18 -1 -1
 4 30 0 1
 #31556
@@ -606,7 +606,7 @@ scroll~
 a wide, green scroll~
 A wide, green scroll was dropped here.~
 ~
-2 0 ao 0
+2 0 0 0 0 ao 0 0 0 0 0 0 0
 1 14 -1 -1
 4 35 0 1
 #31557
@@ -614,7 +614,7 @@ water flask water~
 a flask~
 A small flask has been left here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 10 15 0
 10 15 0 1
 #31558
@@ -622,7 +622,7 @@ gauntlet nickle plated~
 a nickle plated gauntlet~
 A nickel plated gauntlet has been dropped here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 4 0 0 0
 8 20 0 7
 #31559
@@ -630,7 +630,7 @@ glaive spiked~
 a spiked glaive~
 A spiked glaive is on the ground.~
 ~
-9 0 an 0
+9 0 0 0 0 an 0 0 0 0 0 0 0
 5 0 0 0
 7 31 0 4
 #31560
@@ -638,7 +638,7 @@ special house~
 the House Special~
 One of Curley's own House Specials has been left here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 4 0 0 0
 3 7 0 0
 #31561
@@ -646,7 +646,7 @@ fries curley side~
 a side of Curley's fries~
 A side of Curley's fries have been left for anyone to grab an/d munch con.0~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 3 5 0 0
 #31562
@@ -654,7 +654,7 @@ lemonade glass lemonade~
 a glass~
 A tall glass of lemonade has been left here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 3 3 6 0
 8 3 0 0
 #31563
@@ -662,7 +662,7 @@ ale mug ale~
 a mug~
 A wide mug of ale is here, warming on the ground.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 4 4 4 0
 9 4 0 0
 #31564
@@ -670,7 +670,7 @@ ruby red~
 a large ruby~
 A large glittering ruby is on the floor.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 35 0 0
 #31565
@@ -678,7 +678,7 @@ diamond glittering~
 a glittering diamond~
 A glittering diamond lies here.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 4 70 0 0
 #31566
@@ -686,7 +686,7 @@ opal dark~
 a dark opal~
 A dark opal lies on the ground darkly.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 1000 0 0
 #31567
@@ -694,7 +694,7 @@ shoe boot concept~
 a pair of leather concept shoes~
 A pair of new aged leather shoes lie here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 4 40 0 1
 A
@@ -706,7 +706,7 @@ boots climbing~
 some climbing boots~
 Some sturdy looking boots have been left here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 10 20 0 1
 #31569
@@ -714,7 +714,7 @@ wizard pointed shoes~
 a pair of pointed wizard shoes~
 A pair of wizards shoes lie here stacked nicely.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 5 799 0 10
 A
@@ -726,7 +726,7 @@ pot clay~
 a clay pot~
 A clay pot lies here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 80 1 -1 0
 1 100 0 0
 #31571
@@ -734,7 +734,7 @@ molded clay jar~
 a moulded clay jar~
 A moulded clay jar lies here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 70 0 -1 0
 2 70 0 0
 #31572
@@ -742,7 +742,7 @@ leaf hergin~
 some hergin leaf~
 A bit of hergin leaf has been dropped here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 35 0 0
 #31573
@@ -750,7 +750,7 @@ bracelet bone curved~
 a curved bone bracelet~
 A bracelet made of bone has been left here.~
 ~
-11 0 amo 0
+11 0 0 0 0 amo 0 0 0 0 0 0 0
 0 0 0 0
 4 40 0 10
 A
@@ -762,7 +762,7 @@ ring bone carved~
 a carved bone ring~
 A ring carved from bone has been dropped here.~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 2 30 0 1
 A
@@ -772,7 +772,7 @@ sabre tooth ring~
 a sabre tooth ring~
 A ring made from a tiger's tooth has been left here.~
 ~
-11 0 abo 0
+11 0 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
 3 40 0 1
 A
@@ -784,7 +784,7 @@ root fisca~
 some fisca root~
 A bit of fisca root has been left here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 27 0 0
 #31577
@@ -792,7 +792,7 @@ bark bismure~
 a bit of bismure bark~
 Someone dropped some bismure bark here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 4 45 0 0
 #31578
@@ -800,7 +800,7 @@ water glass-blown colorful water~
 a glass-blown cup~
 A exspensive cup lies here full of fluid.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 10 0 0
 15 25 0 0
 #31579
@@ -808,7 +808,7 @@ red celery glass bowl~
 a red glass celery bowl~
 A bowl lies here right side up.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 0 -1 0
 3 50 0 0
 #31580
@@ -816,7 +816,7 @@ handmade glass pipe~
 a handmade glass pipe~
 A valuable and fragile glass pipe lies here.~
 ~
-4 0 ao 0
+4 0 0 0 0 ao 0 0 0 0 0 0 0
 5 15 15 15
 1 70 0 0
 #31581
@@ -824,7 +824,7 @@ fish salmon~
 a silver salmon~
 A dead fish lies here stinking.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 10 0 0 0
 3 10 0 0
 #31582
@@ -832,7 +832,7 @@ mud sucker fish~
 a mud-sucking brown fish~
 A very ugly, dead fish degrades here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 5 0 0 0
 4 5 0 0
 #31583
@@ -840,7 +840,7 @@ shark~
 a dead baby shark~
 A choped up uterus of a shark lies here waiting from someone to eat it.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 33 0 0 0
 2 15 0 0
 #31584
@@ -848,7 +848,7 @@ holy fish angel~
 an angelfish~
 A holy dead fish hovers here.~
 ~
-19 a ao 0
+19 a 0 0 0 ao 0 0 0 0 0 0 0
 24 0 0 0
 1 15 0 0
 #31585
@@ -856,7 +856,7 @@ emerald jewel~
 a beautiful emerald~
 A giant emerald sparkles in the light.~
 ~
-8 a ao 0
+8 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 14 950 0 0
 #31586
@@ -864,7 +864,7 @@ leaves hergin~
 some hergin leaves~
 Some hergin leaves have been dropped here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 27 0 0
 #31587
@@ -872,7 +872,7 @@ carrot~
 a carrot~
 A carrot has been left here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 3 4 0 0
 #31588
@@ -880,7 +880,7 @@ potato~
 a potato~
 A potato has been dropped here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 3 0 0 0
 3 5 0 0
 #31589
@@ -888,7 +888,7 @@ tomato~
 a tomato~
 Someone has left their tomato here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 2 2 0 0
 #31590
@@ -896,7 +896,7 @@ candle dragon~
 a dragon-shaped candle~
 A dragon-shaped candle has been dropped here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 40 0
 5 15 0 0
 A
@@ -906,7 +906,7 @@ candle green~
 a large green candle~
 Someone has left a large green candle here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 10 0
 6 10 0 0
 #31592
@@ -914,7 +914,7 @@ candle curved purple~
 a curved purple candle~
 A candle glows here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 6 0
 2 7 0 0
 #31593
@@ -922,7 +922,7 @@ wrap gold handsome~
 a handsome gold-stiched wrap~
 A gold-stitched wrap of some sort has been left here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
 10 24 0 4
 A
@@ -932,7 +932,7 @@ mantle lord~
 a Lord's Mantle~
 A beautiful cape fit for a Lord has been left here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 9 0 0 0
 8 31 0 1
 #31595
@@ -940,7 +940,7 @@ pelerine white~
 a white pelerine~
 A white pelerine lies in a clump of cloth.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
 6 17 0 0
 A
@@ -950,7 +950,7 @@ pony toy wooden~
 a small wooden toy pony~
 Someone left their toy pony here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 4 5 0 0
 #31597
@@ -958,7 +958,7 @@ sword wooden~
 a small wooden sword~
 A small wooden play sword has been dropped here.~
 ~
-12 0 ano 0
+12 0 0 0 0 ano 0 0 0 0 0 0 0
 0 0 0 0
 3 6 0 0
 A
@@ -968,7 +968,7 @@ hat pointed feather~
 a pointed hat with a feather in it~
 Someone dropped their hat here - oh well, finders keepers!~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 4 20 0 0
 A
@@ -978,7 +978,7 @@ papers rolling~
 some rolling papers~
 Someone dropped their rolling papers here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 5 0 0
 $~

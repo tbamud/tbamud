@@ -7,7 +7,7 @@ A grey dove coos softly from the branches of the willow tree.
 song for any to hear.  Now and again it appears to lean and breathe deeply the
 scents of the nearby blossoms.  
 ~
-bcdnopr 0 1000 E
+188430 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -23,7 +23,7 @@ reddish hair stands about unkempt and his clothing is streaked with dirt.  As
 you look on, he wanders around, digging holes in the carefully maintained lawn.
 
 ~
-bcdho 0 0 E
+16526 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -44,7 +44,7 @@ firmly in the awkward age.  Her homespun dress is simple and fairly clean.  As
 you watch, she trots around the path, uprooting flowers violently from the
 ground.  
 ~
-bcdo 0 0 E
+16398 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -61,7 +61,7 @@ is dressed for heavy work.  He is rather short and more than a bit overweight,
 but intent on his job nonetheless.  His russet hair is in a bit of a disarray
 and his fingers are stained with iron polish.  
 ~
-bcdo 0 0 E
+16398 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -78,7 +78,7 @@ of relieving the dead of their valuables.  His face and clothes are streaked
 with gravedirt and sweat, testimony to the amount of work required to avoid
 honest labor.  
 ~
-bcdho s 0 E
+16526 0 0 0 524288 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -98,7 +98,7 @@ An angry young man stands screaming at a redstone grave marker.
 redstone grave marker.  His arms flail about wildly as he screams and shouts at
 the unhearing tomb.  
 ~
-bdo u 0 E
+16394 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -113,7 +113,7 @@ A distressed mother mourns her child's death.
 stress and sadness.  Tears slide slowly down her cheeks as she cries selflessly
 for the loss of her poor, sweet child.  
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -128,7 +128,7 @@ A groundskeeper is here, keeping busy.
 or polishing marble statues.  His face is set and he keeps his attention to his
 duties, ignoring the passing mourners.  
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -143,7 +143,7 @@ An old woman is here, considering the purchase of a new plot.
 woman looks briefly over at a couple empty plots and sinks deep into thought.  
 In time, she turns and moves on in search of another plot.  
 ~
-dgho 0 0 E
+16584 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -160,7 +160,7 @@ cleanliness with a stern hand.  The beauty and order of the cemetery is a
 responsibility he takes very seriously.  With a loud bark, he scares a young man
 off the soft grass.  
 ~
-bcdo df 0 E
+16398 0 0 0 80 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -176,7 +176,7 @@ A tawny owl is perched in the lower branches of the tree.
 owl is fairly sedate and unconcerned with its surroundings.  A thin leather
 thong is wrapped around one leg, apparently for carrying messages.  
 ~
-bdoq p 0 E
+81930 0 0 0 65536 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 5 5 0
@@ -192,7 +192,7 @@ woman looks to be nearly as old as some of the pitted and weathered statues
 nearby.  While you look on, she pokes at the pigeons roosting on the crypt here
 with a long, ashwood staff.  
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -208,7 +208,7 @@ His clothing is the drab black most often worn by mourners, yet he hardly seems
 to be here to grieve a friend or family member.  His eyes dart back and forth as
 he lurks here, watching everyone.  
 ~
-bcd st -250 E
+14 0 0 0 1572864 0 0 0 -250 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -227,7 +227,7 @@ A badly burned corpse haunts the place it was accidentally burned alive.
 moving about as no corpse was meant to do and it is covered in huge, weeping
 wounds and crisp, blackened skin.  Even its armour is seared and burned.  
 ~
-bdnopr ju 0 E
+188426 0 0 0 1024 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -247,7 +247,7 @@ discernible among the shadows.  In life, it was a man of great stature in
 society and much loved by the people of the realm.  Now, however, the shade
 seems more a forgotten past than legend made to live again.  
 ~
-bdeoq j 0 E
+81946 0 0 0 1024 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -261,7 +261,7 @@ The bones of Lord Mycea reanimate in the center of the room.
 rags of the great Lord Mycea.  Rather than eyes, twin orbs of glowing greenish
 light rest inside the sockets of his skull.  
 ~
-bdnopr j 0 E
+188426 0 0 0 1024 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -276,7 +276,7 @@ the ghost of the great hlafling hero, Fennywen.  A bit translucent and
 thoroughly dead, the ghost is having some time adjusting to its new
 circumstances.  
 ~
-bdinopq m 0 E
+123146 0 0 0 8192 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -290,7 +290,7 @@ A mourner, dressed all in black, wanders around consumed by grief.
    Upset by a loved one's death and in no mood for socializing, the mourner
 turns away before you can get a really good look.  
 ~
-cdgh 0 0 E
+204 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0

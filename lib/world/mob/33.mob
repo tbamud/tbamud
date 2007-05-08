@@ -6,7 +6,7 @@ A farmer walks around, looking for something to do.
    This farmer is a resident of Stanneg by the Mountains, and as such, is one of
 the most boring people on earth.  
 ~
-cdgh 0 500 E
+204 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -19,7 +19,7 @@ A bored storekeeper waits for you to do something.
    The bored storekeeper keeps a lazy eye on you as he waits for you to buy
 something.  Whee.  
 ~
-bd 0 750 E
+10 0 0 0 0 0 0 0 750 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -32,7 +32,7 @@ A cowgirl stand here ready to defend her horses...
    This woman seems ready for anything you might do...  She is truly a woman to
 be reckoned with...  
 ~
-bdlm dst 750 E
+6154 0 0 0 1572880 0 0 0 750 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -45,7 +45,7 @@ A horse does horsely things here.
    This horse looks like a nice horse.  It looks at you with soft brown eyes and
 you want to give it a carrot.  
 ~
-bd 0 250 E
+10 0 0 0 0 0 0 0 250 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -59,7 +59,7 @@ A farmer's wife offers you some vegetables.
    This woman has many different types of fruits and vegetables for you to buy.
 She looks bored, though.  
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 2
@@ -72,7 +72,7 @@ The Dragon Prince, Aglandiir, sits here looking at you curiously.
    Aglandiir is a prince of his kind, and he didn't get where he is today by
 letting people steal from his horde!  
 ~
-bdeflnopqr dh 750 E
+256058 0 0 0 16 0 0 0 750 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -90,7 +90,7 @@ A Cyclops is here, trying to judge range with no depth perception.
    This Cyclops throws rocks real good.  With one eye though, hitting the target
 is another matter.  He looks at you and growls as he misses again!  
 ~
-bcdflnq 0 -500 E
+75822 0 0 0 0 0 0 0 -500 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -105,7 +105,7 @@ A woman ignores you completely, so intent is she upon her sword.
 same tawny brown of her skin and hair.  Her blue eyes look at you appraisingly,
 seemingly to show great intelligence.  Her mouth twitches into a sneer...  
 ~
-bdm 0 -600 E
+4106 0 0 0 0 0 0 0 -600 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -120,7 +120,7 @@ feet toe to head, and weighs a good three hundred pounds -- mostly on his biceps
 and pectorals it appears.  An ornate scabbard slaps by his side, with the pommel
 of a silvered dagger sticking out...  A tiny weapon for such a large man!  
 ~
-bdm 0 -900 E
+4106 0 0 0 0 0 0 0 -900 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -133,7 +133,7 @@ A receptionist offers you a room.
    He looks like a retired farmer now making an honest living in an inn.  More
 power to him!  
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -148,7 +148,7 @@ faculties through the years.  A large woolen sweater is wrapped about him for
 warmth.  His blue eyes dance with amusement as he notices your weapons, but he
 doesn't seem too terribly startled.  
 ~
-bd 0 750 E
+10 0 0 0 0 0 0 0 750 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -162,7 +162,7 @@ A hunter walks through the town streets on his own time.
 with hardness.  His stride is purposeful, his face weathered, his eyes cold and
 dark.  Others are standing out of his way as he walks on by.  
 ~
-cdgm 0 500 E
+4172 0 0 0 0 0 0 0 500 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -176,7 +176,7 @@ A waiter rushes by, intent on his business.
 to get food, and to the bar for drinks.  He doesn't even spare you a glance as
 he passes by.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -190,7 +190,7 @@ A waitress rushes by, intent on her business.
 back to get food, and to the bar for drinks.  She doesn't even spare you a
 glance as she passes by.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -204,7 +204,7 @@ A bartender washes a glass idly here.
 he slowly polishes a glass with an old bar rag.  The glass is completely clean,
 but he polishes it anyway.  Go figure.  
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -218,7 +218,7 @@ A bandit springs into action upon seeing you.
 bit of him is covered with grime, dust, dirt and decay.  His sword is polished
 and cleaned though...  
 ~
-cdghjk 0 -500 E
+1740 0 0 0 0 0 0 0 -500 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -232,7 +232,7 @@ A bandit guard stands at attention here.
 keep these bandits in line enough to pull a good guard duty...  (boy is this guy
 DIRTY!!!  )
 ~
-bdjk 0 -500 E
+1546 0 0 0 0 0 0 0 -500 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -246,7 +246,7 @@ A slave here is mining out a new passageway.
 chains around his ankles are tight, and you wonder if you should set him free,
 and if you even can.  
 ~
-bdh 0 1000 E
+138 0 0 0 0 0 0 0 1000 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -259,7 +259,7 @@ A farmer walks around, looking for something to do.
    This farmer is a resident of Stanneg by the Mountains, and as such, is one of
 the most boring people on earth.  
 ~
-bcdgh 0 500 E
+206 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -273,7 +273,7 @@ A hunter walks through the town streets on his own time.
 with hardness.  His stride is purposeful, his face weathered, his eyes cold and
 dark.  Others are standing out of his way as he walks on by.  
 ~
-bcdgm 0 500 E
+4174 0 0 0 0 0 0 0 500 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1

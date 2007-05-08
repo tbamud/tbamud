@@ -5,7 +5,7 @@ A pelican is here, taking a break in the sun.
 ~
    Looks like every other pelican you've seen....  
 ~
-dgh g 0 E
+200 0 0 0 128 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -18,7 +18,7 @@ A sea otter is here, basking in the warmth of the sun.
 ~
    Cute little guy, even though he looks a bit slimy.  
 ~
-cdgh g 0 E
+204 0 0 0 128 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 6 8 0
@@ -31,7 +31,7 @@ A seagull pokes about, looking for scraps.
 ~
    Dirty little bird, you wish you had a wrist-rocket (more fun).  
 ~
-dgh g 0 E
+200 0 0 0 128 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -46,7 +46,7 @@ The Lighthouse Keeper is here, looking unsure of what he should do about you bei
 "I never intended to hurt anyone, it seems that this all;just got a bit out of
 hand....  "
 ~
-bdgh h -200 E
+202 0 0 0 0 0 0 0 -200 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -59,7 +59,7 @@ A strange looking.. thing(?) is standing here, no expression on it's face at all
    It looks as if it may be a man, but then, being that it is naked, you can see
 that it is just a bit of both.  
 ~
-bdg 0 800 E
+74 0 0 0 0 0 0 0 800 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -72,7 +72,7 @@ A woman lies here on her cot, bruised, naked, and bleeding.
    It looks as if she may have been a very beautiful woman at one time, however
 she is now so covered in dirt and grime, it is hard to tell.  
 ~
-bdg 0 800 E
+74 0 0 0 0 0 0 0 800 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 5 8 2
@@ -85,7 +85,7 @@ A naked man stands, boasting a HUGE set of knockers.
    You're not sure what he is, how he came to be what he is now, and you're not
 sure you want to know.  
 ~
-bdg 0 800 E
+74 0 0 0 0 0 0 0 800 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -97,7 +97,7 @@ The Perfect Companion lies stretched out on the bed, waiting to give pleasure.
 ~
    It is not describable, simply not describable.  
 ~
-bdg h 900 E
+74 0 0 0 0 0 0 0 900 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 6 6 0
@@ -110,7 +110,7 @@ The Lighthouse Keeper's wife is here, sewing and humming a happy song.
    Such a kind looking lady, I'm sure she'd let you stay to dinner if you had
 the urge.  
 ~
-bdg 0 900 E
+74 0 0 0 0 0 0 0 900 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 6 8 2
@@ -123,7 +123,7 @@ Max, the Lighthouse Keeper's dog rests before the fire.
    Mostly mutt, but very friendly, this black dog looks like the stereo- typical
 house-dog.  
 ~
-bdgm 0 900 E
+4170 0 0 0 0 0 0 0 900 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -137,7 +137,7 @@ The Lighthouse Keeper's Daughter is here, playing house.
    Although she looks as if she must be at least fifteen or sixteen years old,
 she still seems quite content with her dolls.  What a nice girl!  
 ~
-bdg 0 900 E
+74 0 0 0 0 0 0 0 900 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 6 8 2
@@ -151,7 +151,7 @@ Old man Takker sits here, fishing away his life.
 His disciples bring him any food he needs, and they say he never sleeps - just
 fishes.  
 ~
-bdg h 900 E
+74 0 0 0 0 0 0 0 900 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -163,7 +163,7 @@ A fisherman sits here, trying to imitate Takker as best he can.
 ~
    Man this guy smells bad!  
 ~
-bdg 0 900 E
+74 0 0 0 0 0 0 0 900 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 6 6 1
@@ -175,7 +175,7 @@ With a tremendous blast of force, the Kracken lunges up from the water!
 ~
    This creature is larger than a city block and older than the Gods themselves.
 ~
-bdfgnopqr defhkpst 0 E
+254058 0 0 0 1638512 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0

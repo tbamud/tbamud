@@ -7,7 +7,7 @@ An Elcardorian orthodox priest stands here with a stern look on his face.
 with.  Than again, with the aura of calmness oozing out of him.  Maybe taking a
 rest next to him would not be such a big risk.  
 ~
-bdnopr h 1000 E
+188426 0 0 0 0 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -26,7 +26,7 @@ The Executioner stands here waiting for his next beheading.
 dark cloth.  The eyes peering out behind the mask look to be slightly crazed and
 definitely blood thirsty.  
 ~
-bdefnopqr cdefhmn 0 E
+254010 0 0 0 8312 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -45,7 +45,7 @@ A rebel from the Suncas clan looks at you, paranoia in his eyes.
 of the Elcardian Empire.  No more than a boy this teenager stands before you
 waiting for the overthrow of the Elcardorian Empire.  
 ~
-cdglm 0 0 E
+6220 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 7 1
@@ -59,7 +59,7 @@ An elite Suncas rebel soldier is standing here.
 fact may actually be the case.  The Suncas rebels have been known to hire help
 when they need it.  
 ~
-cdgln 0 0 E
+10316 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -72,7 +72,7 @@ A rebel commando from the Suncas clan stands here.
    Scars seem to cover this middle-aged man from head to toe.  He appears to be
 missing a few fingers and he walks with a favoring to his left leg.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -87,7 +87,7 @@ young, but a brilliant fire burns in his eyes that some people would call
 craziness, but he calls eccentricity.  He is the motivation behind all the
 rebels.  
 ~
-bdjnopqr 0 -350 E
+254474 0 0 0 0 0 0 0 -350 E
 10 17 4 2d2+100 1d2+1
 100 10000
 6 8 1
@@ -101,7 +101,7 @@ An Elcardorian infantry man stands here.
 maybe take a few enemies out in the pursuit of that end.  He is heavily muscled
 and adequately trained.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -115,7 +115,7 @@ An officer of the Elcardorian military guards his township here.
 years of experience and training.  He has probably led more men into battle than
 you've ever met.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -129,7 +129,7 @@ An Elcardorian military captain struts his sword around here.
 the Captain's responsibility that everyone within the city behaves.  More often
 than not this includes crushing any rebel uprisings.  
 ~
-dgi hk 0 E
+328 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -143,7 +143,7 @@ A man is slowly dying from loss of blood.
 others from piercing weapons and hot brands.  This poor soul looks to have been
 broken with pain to spill his guts and tell his story.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 2 6 1
@@ -157,7 +157,7 @@ Grandfather sunshine is here tending the cash.
 grandfather he looks very trusting and kind.  White hair, beard, and mustache
 give him a jovial look.  
 ~
-bcdnpr 0 10 E
+172046 0 0 0 0 0 0 0 10 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -175,7 +175,7 @@ A member of the Elcardorian parliaments stands before you, now as a prisoner.
 was above the law because of his position he held within the government.  Now he
 has been humbled by chains and torture.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -189,7 +189,7 @@ The Suncas prison guard is here making sure that no one leaves the dungeons.
 bored and lax.  Of course so few of the prisoners stay long enough down here to
 even attempt to escape so a guard is more for looks than need.  
 ~
-dglmnopqr hk 0 E
+260168 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -203,7 +203,7 @@ A panhandler broke off his ass, begging for your charity is sitting here.
 her soul body.  That will probably come later.  She looks up at you with those
 pitiful puppy-dog eyes trying to find a little sympathy.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 6 2
@@ -218,7 +218,7 @@ only word to describe him.  He definitely knows his metal-working though.  He
 holds his tools and works the forge with a love for the craft that only the
 gifted can possess.  
 ~
-bd h 1000 E
+10 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -237,7 +237,7 @@ counter.  She does not look like the kind of person you would want to trust your
 fortune with.  She immediately puts on a facade when she realizes you are
 staring.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -255,7 +255,7 @@ Tring, the armourer pounds away at a stubborn cast.
 realm.  It is just about as famous as its outrageous prices.  This stocky old
 man makes some of the finest in the city, and he prices it that way too.  
 ~
-bd h 1000 E
+10 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -273,7 +273,7 @@ The mayor's wife is here hinting at you to leave.
    They say behind every great man there is a woman, and she is one of those
 women.  She has long black here with green eyes and looks deceivingly frail.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -287,7 +287,7 @@ Coughing in bed, the Elcadorian mayor really doesn't want to fight any more.
 and will has been drained from him.  Too bad it will soon be too late for you to
 know what happened to him.  
 ~
-bd h 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 5 5 1
@@ -305,7 +305,7 @@ Grandmother sunshine is here baking goodies.
 grandson and immediately makes you feel at home.  Her kindness and sincerity
 puts you to ease immediately.  The cookies she is baking smell delicious.  
 ~
-bcdnopr 0 1000 E
+188430 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -319,7 +319,7 @@ The grocer of Elcardo smiles at you in hopes of a sale.
 running what.  The grocer could care less about rebels.  As long as people need
 food and suppies, he's happy.  
 ~
-bd h 1000 E
+10 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -337,7 +337,7 @@ Lara is here looking you up and down.
 was caught up in some horrible feud and had no choice but to flee.  So she setup
 shop in Elcardo and seems happy and successful with the change.  
 ~
-bcdnopr 0 0 E
+188430 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -357,7 +357,7 @@ eyes.  Odds are this man would like to be left alone.  He is almost certainly a
 rebel which is apperant by the symbol on the head hilt of the dagger.  Who is he
 stalking?  
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1

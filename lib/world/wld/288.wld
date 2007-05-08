@@ -26,7 +26,7 @@ the mage one will do in a pinch)
 
 Links: 01w, 30s
 ~
-288 0 0
+288 0 0 0 0 0
 S
 #28801
 Inside a Tavern~
@@ -36,7 +36,7 @@ fate and destiny lie beyond this world.  ' You are still wondering what she
 means when you suddenly notice the crystal ball ...  It glows fiercely and
 displays the Universe!    
 ~
-288 d 0
+288 8 0 0 0 0
 D5
 ~
 ~
@@ -48,7 +48,7 @@ Inside the Crystal Ball~
 world of stars and wonders!  As you look back you figure out there is no choice
 but to go forward.    
 ~
-288 0 2
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -61,7 +61,7 @@ at your presence, and comets and meteors wandering around you.  You realize
 that this world may not be the true galaxy after all, but just another fantasy
 zone.  Exits lie virtually in all directions.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -85,7 +85,7 @@ On an InterGalactic Walkway~
 visitors like you.  The walkway continues north and a small exit lies west.  
 
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -105,7 +105,7 @@ End of the InterGalactic Walkway~
 see that there is still a small path which leads north and one to the west.  
 To the east lies a bridge.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -128,7 +128,7 @@ At the Undeveloped Part of the Galaxy~
    This place looks deserted, covered with space debris.  Not a sign of life is
 around.    
 ~
-288 0 1
+288 0 0 0 0 0
 D2
 ~
 ~
@@ -145,7 +145,7 @@ bridge itself shines brightly and makes you feel that you are walking on a path
 of light.  An entrance to an ancient building lies north and to the east lies
 the Milky Way.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -165,7 +165,7 @@ On the Bridge of Nebulae~
 make one just to show that they are as capable as the stars.  North lies a
 throne room.    
 ~
-288 a 1
+288 1 0 0 0 0
 D0
 ~
 ~
@@ -185,7 +185,7 @@ The Throne Room of the Nebula King~
 here.  In the middle is an empty throne.  You wonder where the King has gone,
 maybe he is hiding from you?    
 ~
-288 ad 0
+288 9 0 0 0 0
 D2
 ~
 ~
@@ -197,7 +197,7 @@ At the Start of the Milky Way~
 by streams of mist the moment you tread on it.  You can't see well in here ...
 Luckily you haven't fallen yet!    
 ~
-288 0 4
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -212,7 +212,7 @@ Along the Milky Way~
    You are still travelling inside this path of mist.  You notice a small
 opening to the east.    
 ~
-288 0 4
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -231,7 +231,7 @@ At the End of the Milky Way~
    Just as you started enjoying this journey inside the mist, you have come to
 the end of it.  West leads to a bridge and east leads to somewhere else.    
 ~
-288 0 4
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -250,7 +250,7 @@ A Small Clearing~
    You are inside a small clearing.  You can see that there are signs of a
 living creature nearby.    
 ~
-288 0 2
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -265,7 +265,7 @@ An Edge of the Galaxy~
    You are on the very edge of the galaxy.  Nothing is here except that there
 is a path which leads down.    
 ~
-288 0 1
+288 0 0 0 0 0
 D2
 ~
 ~
@@ -285,7 +285,7 @@ Very Near to a Gigantic Star~
 its beauty, the star keeps on growing ...  Suddenly you realize that you'd
 better leave.    
 ~
-288 c 1
+288 4 0 0 0 0
 D0
 ~
 ~
@@ -309,14 +309,14 @@ Too Bright to Tell~
 rare event of a Supernova, how a star explodes itself into galactic dust.  You
 may find yourself lucky to witness this rare event and still live.    
 ~
-288 c 0
+288 4 0 0 0 0
 S
 #28821
 The Star Cluster~
    You are inside the home of the stars.  All you can see around you are stars
 and nothing else.  You eyes become pretty hurt as you look at them.    
 ~
-288 d 1
+288 8 0 0 0 0
 D0
 ~
 ~
@@ -330,7 +330,7 @@ S
 Another Edge of the Galaxy~
    This is another uninhabited place.  Exits lie north, east and south.    
 ~
-288 0 2
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -349,7 +349,7 @@ Corner of the Galaxy~
    You wonder why the galaxy is limited.  All you have done in Astronomy
 courses now prove worthless.  Well who told you to take one at the start?    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -368,7 +368,7 @@ Lost in Space~
    You are now lost in space.  Compasses don't work here, sorry.  What's more
 you can sense darkness engulfing you.  You'd better get out quick.    
 ~
-288 a 2
+288 1 0 0 0 0
 D0
 ~
 ~
@@ -387,14 +387,14 @@ Black Hole~
    Well you have chosen the wrong path, sorry.  Nothing can escape from this
 monster, not even light.  PANIC!  You can't escape!    
 ~
-288 0 0
+288 0 0 0 0 0
 S
 #28826
 The Homes of the Pleiades~
    This is where the famous Seven Sisters live.  You'd better not disturb them.
   
 ~
-288 0 1
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -409,7 +409,7 @@ Western Side of the Temple~
    You are still wandering around this temple.  You notice exits lie in all
 directions except west.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -428,7 +428,7 @@ Orion's Hunting Lodge~
    This is dedicated to the Great Hunter of all time -- Orion.  Scattered on
 the floor is the famous hunting equipment used by him.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -443,7 +443,7 @@ Northern Side of the Temple~
    You are still wandering around this temple.  You notice exits lie in all
 directions except north.    
 ~
-288 0 1
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -463,7 +463,7 @@ The Offering Chamber~
 young girl here, chained to the wall, as if she is waiting for execution.  You
 look up and realize the chains are sent down directly from above.  
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -491,7 +491,7 @@ The Entrance of the Ancient Temple~
 gods in Mount Olympia, but it is now deserted as someone took over this part of
 the Universe.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -514,7 +514,7 @@ Hercules' Mighty Throne~
    You stand before the throne of a long-forgotten hero.  It is full of bounty
 that he got from the Ten Labours.    
 ~
-288 0 1
+288 0 0 0 0 0
 D2
 ~
 ~
@@ -529,7 +529,7 @@ Eastern Side of the Temple~
    You are still wandering around this temple.  You notice exits lie in all
 directions except east.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -548,7 +548,7 @@ Perseus' Chamber~
    It is the chamber of the prince, Perseus.  However, he seems not to be here.
 Maybe he has gone to get Pegasus to save Andromeda?    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -564,7 +564,7 @@ On the Mystic Chains~
 Up above you see the chains continue upwards.  But a forcefield prevents you
 from going further upwards.    
 ~
-288 0 5
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -596,7 +596,7 @@ On a Hill~
    Suddenly you find yourself on a hillside.  As you look around, you notice
 that Spring has descended upon you.    
 ~
-288 0 4
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -615,7 +615,7 @@ Inside a Spanish Bull-Ring~
    You are inside what used to be a ground for bull fighting.  But you notice
 there are no Matadors around.  Maybe they are all dead?    
 ~
-288 0 2
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -631,7 +631,7 @@ Inside a study~
 mirror in the middle.  So, you wonder, is this how you make a Gemini into two
 Gemini?    
 ~
-288 0 0
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -642,7 +642,7 @@ Along the seashore~
    You start to feel the heat of Summer.  Amongst the rocky beach you notice
 hidden forms which could be camouflaged crabs.    
 ~
-288 0 2
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -657,7 +657,7 @@ Within the Deep Jungle~
    Nearby you can hear the roar of an animal.  Peering through the dense
 overgrowth you think you glimpse a pair of menacing eyes.    
 ~
-288 0 3
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -668,7 +668,7 @@ Inside a Luxurious Bedroom~
    A peaceful feeling overtakes you.  You see a magnificent four-poster bed.  
 It's a double bed and there is only room for one more!  Well, what now ...  ?
 ~
-288 d 1
+288 8 0 0 0 0
 D3
 ~
 ~
@@ -680,7 +680,7 @@ The Supreme Court~
 of guilt and you want to protest your innocence!  You fear retribution and feel
 yourself exposed, just like the trees in Autumn.    
 ~
-288 d 1
+288 8 0 0 0 0
 D2
 ~
 ~
@@ -695,7 +695,7 @@ In the Dry Desert~
    You are confused by the shifting sands around you.  Through the shimmering
 heat you see the hazy outline of a giant scorpion ...  Is this a mirage?    
 ~
-288 0 2
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -710,7 +710,7 @@ In the Woods~
    You find yourself in the center of a Centaurion hunting party.  You'd better
 hide yourself before you become the 'center attraction'!    
 ~
-288 0 3
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -721,7 +721,7 @@ On a Mountain Peak~
    You are on the highest peak of the Universe.  You look around and notice
 clouds below you.  One of the clouds resembles a goat-like form.    
 ~
-288 0 5
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -736,7 +736,7 @@ Inside a Waterfall~
    The noise is deafening.  You are about to take a drink when you realize that
 the water is being poured out of a vessel of mind-boggling proportions!    
 ~
-288 0 5
+288 0 0 0 0 0
 D3
 ~
 ~
@@ -747,7 +747,7 @@ Inside a Gigantic Clam~
    You feel uneasy here as if some evil magic is being cast on you.  You
 suspect something fishy is going on in here.    
 ~
-288 0 5
+288 0 0 0 0 0
 D3
 ~
 ~
@@ -759,7 +759,7 @@ End of the Mystic Chains~
 small landing on which you can climb.  However, there seems to be another
 forcefield blocking your way.    
 ~
-288 0 5
+288 0 0 0 0 0
 D4
 You see the forcefield of Summer.
 ~
@@ -776,7 +776,7 @@ On the Draco~
    You realize you are standing on scaly ground.  As you wonder what the ground
 is made of, you feel the ground move.    
 ~
-288 a 4
+288 1 0 0 0 0
 D0
 ~
 ~
@@ -792,7 +792,7 @@ Tail of the Draco~
 Draco, the guardian of the inner galaxy.  You realize that the Draco is
 actually flying now!    
 ~
-288 a 4
+288 1 0 0 0 0
 D0
 ~
 ~
@@ -807,7 +807,7 @@ Path of the Draco~
    As you struggle along this scaly creature you realize that the only way you
 can reach to the inner galaxy is by going all the way to the head.    
 ~
-288 a 4
+288 1 0 0 0 0
 D0
 ~
 ~
@@ -823,7 +823,7 @@ Near the Legs of Draco~
 that the surrounding is all dark except for some faint lights from the distant
 stars.    
 ~
-288 a 4
+288 1 0 0 0 0
 D0
 ~
 ~
@@ -838,7 +838,7 @@ On the Back of Draco~
    At last you are half way through this long, weary journey.  You can see the
 wings are to the east but it seems that another forcefield is in the way.    
 ~
-288 a 4
+288 1 0 0 0 0
 D1
 You see the forcefield of Autumn.
 ~
@@ -854,7 +854,7 @@ Between the Wings of Draco~
    You hear some giant flapping sounds nearby.  You desperately try to get hold
 of something as the forceful gusts sweep you away.    
 ~
-288 a 4
+288 1 0 0 0 0
 D1
 ~
 ~
@@ -869,7 +869,7 @@ Near the Arms of Draco~
    From above you can faintly make out the gigantic arms which extend far
 beyond into the darkness.    
 ~
-288 a 4
+288 1 0 0 0 0
 D2
 ~
 ~
@@ -884,7 +884,7 @@ On the Neck of Draco~
    Your journey is now approaching the end.  However, this neck seems to be
 endless.    
 ~
-288 a 4
+288 1 0 0 0 0
 D0
 ~
 ~
@@ -900,7 +900,7 @@ Approaching the Head of Draco~
 forcefield to the south, some distance away, beyond reach.  If only the head
 were here ...    
 ~
-288 a 4
+288 1 0 0 0 0
 D1
 ~
 ~
@@ -916,7 +916,7 @@ At the Entrance of the Great Dipper~
 now is the path of the Great Dipper or the Plough.  You notice that there are
 seven rooms in this zone, representing the seven stars of the Dipper.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 You see the forcefield of Winter.~
 forcefield~
@@ -935,7 +935,7 @@ Cassiopeia's Throne~
    This is the Throne room of the Queen of the Universe.  From here you can see
 every star and constellation in the Universe.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -949,7 +949,7 @@ S
 Along the Path of the Dipper~
    You see stars around you but nothing of special interest.    
 ~
-288 0 1
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -964,7 +964,7 @@ Cepheus' Throne~
    This is the Throne room of the King of the Universe.  From here you can see
 every star and constellation in the Universe.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -982,7 +982,7 @@ S
 Along the path of the Dipper~
    You see stars around you but nothing of special interest.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -996,7 +996,7 @@ S
 Along the path of the Dipper~
    You see stars around you but nothing of special interest.    
 ~
-288 0 1
+288 0 0 0 0 0
 D1
 ~
 ~
@@ -1012,7 +1012,7 @@ End of the Dipper~
 is a set of claw-marks.  You also notice a room to the south; it looks as if
 Polaris could lie here.    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~
@@ -1029,7 +1029,7 @@ significance.  You can see a powerful telescope pointing down towards the
 Universe (SNOOPING!  ).  It is from here that Polaris commands the Universe.  
 You feel you have come to end of your search in this galaxy ...    
 ~
-288 0 1
+288 0 0 0 0 0
 D0
 ~
 ~

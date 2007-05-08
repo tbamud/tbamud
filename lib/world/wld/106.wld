@@ -19,7 +19,7 @@ Zone: 106 was linked to the following zones:
 175 The Cardinal Wizards           at 10613 (east ) ---> 17525
 125 Hannah                         at 10657 (north) ---> 12500
 ~
-106 j 0
+106 512 0 0 0 0
 S
 #10601
 Cathedral Altar~
@@ -27,7 +27,7 @@ Cathedral Altar~
 room is very dimly lit from the blood red candles which lie before you.  The
 candles appear to be made out of some sort of fat.    
 ~
-106 d 0
+106 8 0 0 0 0
 D2
 ~
 ~
@@ -40,7 +40,7 @@ room is well lit by over a thousand holy white candles.  On the far wall in
 front of you there hangs a large cross.  The friendly Healer stands here
 reading a book that appears to be the bible.    
 ~
-106 d 0
+106 8 0 0 0 0
 D0
 ~
 ~
@@ -58,7 +58,7 @@ to be from many years ago.  Standing right in front of the main doors is the
 Executioner guarding the door quite well and watching each and every person
 that is planning on entering the cathedral.    
 ~
-106 d 0
+106 8 0 0 0 0
 D0
 ~
 ~
@@ -74,7 +74,7 @@ Cathedral Square~
 you.  You can hear the sound of trickling water from a few steps in front of
 you.  The big marble fountain flows crystal clear water right in front of you.
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -91,7 +91,7 @@ Peddler's Way.  The smell of freshly baked bread breezes by your nose.  In the
 distance you can see the Executioner guarding the cathedral.  A panhandler begs
 the passersby for money.  Some actually feel sorry for the worthless bum.    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -118,7 +118,7 @@ see a strange glowing, It seems to be coming from the spell casting area.  To
 the east you feel a strong magical presence, and to the west you can smell the
 sweat of hard work.    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -143,7 +143,7 @@ screaming their heads off.  Poor men sit all over the roads begging for money
 it really is a sin.  It is very strange, the rest of the city is well off money
 wise but as soon as you get here it is very poor.    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -169,7 +169,7 @@ locked up for the night.  Two large Elcardo Knights stand here guarding the
 gate with their lives.  You can hear children playing from up the road.  The
 gate is made out of steel.  It looks almost impossible to break in to the city.
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -186,7 +186,7 @@ beyond the gate and walls.  You remember rumors of the city being overthrown by
 a new political faction.  But who listens to politics.  "Poli" meaning many,
 "tics" meaning blood sucking insects.    
 ~
-106 0 3
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -198,7 +198,7 @@ Peddler's Road~
 city's that you've seen.  The clanging of metal rings in your ears, it seems to
 be comming from the north.  There is a bank close to the south.    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -222,7 +222,7 @@ Peddler's Road~
 going to the Armor Shop which is to the north of where you are standing.  To
 the south you see a strange hut.    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -247,7 +247,7 @@ exit.  The Elcardorian leaders try to keep strict control through the use of
 the knights and soldiers.  But, with rumors of the Mayor falling ill many
 rebels have begun to combine forces within the city walls.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -265,7 +265,7 @@ or possible overthrowing.  Many cunning politicians have plans for this city.
 A gravel path continues east out the gate.  The north is blocked by a tall
 cliff face.    
 ~
-106 0 3
+106 0 0 0 0 0
 D3
 ~
 ~
@@ -278,7 +278,7 @@ and home-made cookies comes from the north.  You definately want to check this
 place out.  To the south you see a small shop and a sign with the words Elcaro
 Grocer on it.    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -302,7 +302,7 @@ Peddler's Road~
 you realize that the Magic shop is directly in front of you to the south.  
 There is a small sign here that says the words, Lara's Magic supplies.    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -323,7 +323,7 @@ passerby looks at you warily.  Everyone in the city just wants peace, but the
 Mayor has failed to maintain order and the revolts have begun.  Revolutionists
 are coming forth.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -341,7 +341,7 @@ ill and rumors abound.  Everything from him being poisoned to an illness sent
 from the Gods because of the Mayor's betrayal to the upkeep of the citizens.  
 A thick forest can be seen to the west.    
 ~
-106 0 3
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -358,7 +358,7 @@ guilds in this section.  To the north is the Cleric guildmaster and to the
 south is the Paladin guildmaster.  Signs are placed over both doors stating
 that the guilds are closed.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -375,7 +375,7 @@ it must be the Vampire guild that is to the north.  More elves walk in and out
 of the guild to the south, shall you take a closer look at the Mage guild.  
 Signs are placed over both doors stating that the guilds are closed.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -393,7 +393,7 @@ you hear strange sounds unlike the other guilds.  The Psionicist guild is to
 the north.  Signs are placed over both doors stating that the guilds are
 closed.    
 ~
-106 0 0
+106 0 0 0 0 0
 D3
 ~
 ~
@@ -408,7 +408,7 @@ light.  North of here is the Warriors Guild.  To the east is the safety and
 comfort of the Guild Halls.  Signs are placed over both doors stating that the
 guilds are closed.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -426,7 +426,7 @@ here.  The Barbarian guild is to the north.  But as you turn your head towards
 the south a peaceful feeling fills you body.  The Ranger guild is to the south.
 Signs are placed over both doors stating that the guilds are closed.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -439,7 +439,7 @@ their poverty fool you, they have spent much time training in combat since the
 city requires all citizens to serve in the army.  Decrepit looking shacks are
 closed and boarded up to the north and south of you.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -456,7 +456,7 @@ this part of Elcardo, much louder then the other parts.  If it is not the
 screaming children that deafens you it is the mothers yelling for or at their
 children.  More shacks are to the north and south.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -473,7 +473,7 @@ rich as you in their neighborhood.  You are quite annoyed that all these
 children are pulling at your clothes and digging in your pockets.  To the north
 and south are the shacks that these children live in.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -490,7 +490,7 @@ reasonably nicer then the rest.  The children are each holding a spear and have
 body paint around their eyes and on their cheeks.  Each one with a look of hate
 and disgust on their face.  Shall you enter...    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -507,7 +507,7 @@ all those old Elcaro Knights.  But watch out, they are quite bitter with their
 old age.  The Saloon is a great place to glean the latest gossip from the
 locals.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -524,7 +524,7 @@ the Saloon.  He doesnt look very intimidating at all.  But, he must be
 qualified or he wouldn't have the job and be able to handle the soldiers and
 rebels.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -542,7 +542,7 @@ age.  It is quite hard to breathe in here but these old timers are very use to
 it.  You notice an odd back room with a sign on the door to the east saying Do
 Not Enter.    
 ~
-106 d 0
+106 8 0 0 0 0
 D1
 ~
 ~
@@ -560,7 +560,7 @@ olden days.  Not quite the spot you find exciting but you wonder what is going
 on in that back room.  An old veteran flashes his gums at you.  The back room is
 close to the north.    
 ~
-106 d 0
+106 8 0 0 0 0
 D0
 ~
 ~
@@ -577,7 +577,7 @@ many of the different rebellious factions in the city meet.  They sometimes
 work together, sometimes oppose each other.  It all depends which they think is
 most beneficial.    
 ~
-106 ad 0
+106 9 0 0 0 0
 D2
 ~
 ~
@@ -590,7 +590,7 @@ from a large man perfecting a silver sword.  The smell of his sweat is enough
 to change your mind from entering this shop again, You should purchase your
 weapon and get out as fast as possible.    
 ~
-106 d 0
+106 8 0 0 0 0
 D1
 ~
 ~
@@ -606,7 +606,7 @@ The Bank of Elcardo~
 on the walls all of which say something good about the city of Elcardo.  Quite
 the rich looking establishment it is.    
 ~
-106 d 0
+106 8 0 0 0 0
 D0
 ~
 ~
@@ -618,7 +618,7 @@ The weapon shop~
 windows.  You see helmets, shields and chain shirts to name a few.  To the
 south is the main street.    
 ~
-106 d 0
+106 8 0 0 0 0
 D2
 ~
 ~
@@ -635,7 +635,7 @@ Mayor of the city.  A middle-aged women informs you that the Mayor is sick in
 bed and is taking no visitors.  You should leave.  To the south is a closed
 wooden door with the words "Do Not Disturb" on it.    
 ~
-106 cd 0
+106 12 0 0 0 0
 D0
 ~
 ~
@@ -652,7 +652,7 @@ fills the center of the room.  An ornately carved dresser and desk cover the
 western wall.  A light fragrance attempts to cover the smell of death in the
 room.    
 ~
-106 d 0
+106 8 0 0 0 0
 D0
 ~
 door~
@@ -665,7 +665,7 @@ you've ever been in your life.  Directly behind the counter you see an elderly
 man playing with an antique cash register.  In the kitchen you see a little old
 lady baking cookies and other goodies.  You know you wanna have some.    
 ~
-106 d 0
+106 8 0 0 0 0
 D2
 ~
 ~
@@ -677,7 +677,7 @@ Elcardo Grocer~
 behind the counter, safely out of your reach.  None of the items seem to be of
 special interest, just your everyday requirements.    
 ~
-106 d 0
+106 8 0 0 0 0
 D0
 ~
 ~
@@ -690,7 +690,7 @@ mason jars with pig eyes, cow tongues, and chicken brains.  It is not the most
 pleasant sight in the world.  Lara is quite the odd looking individual, wearing
 all black with the Skull of Hakanda around here neck.    
 ~
-106 cd 0
+106 12 0 0 0 0
 D2
 ~
 ~
@@ -703,7 +703,7 @@ teenage kids.  What could they possibly be guarding you wonder.  There are
 doors to the west and east of you and also a large solid stone door to the
 north.    
 ~
-106 d 0
+106 8 0 0 0 0
 D0
 A large solid stone door.
 ~
@@ -728,7 +728,7 @@ Poor Barracks~
 the corner of the room.  Some teenage children are sleeping in the bunks while
 some are choosing a weapon.  Should You really be here...    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -741,7 +741,7 @@ children look very tired and look as though they are far over-worked.  A Young
 child quietly crys on a bunk to your left, all he really needs is some comfort.
 An open hatch leads down.    
 ~
-106 cd 0
+106 12 0 0 0 0
 D3
 ~
 ~
@@ -757,7 +757,7 @@ An Empty Room~
 are very dirty and the floor is made of dirt.  A shudder goes through your
 spine, You can sense the hatred in this place.    
 ~
-106 ad 0
+106 9 0 0 0 0
 D4
 ~
 ~
@@ -775,7 +775,7 @@ rebellion.  Rebellions never last very long once people start starving.
 Perhaps that is the Mayor's strategy.  A few wooden chairs are placed around an
 empty table.    
 ~
-106 ad 0
+106 9 0 0 0 0
 D2
 A solid stone door.
 ~
@@ -788,7 +788,7 @@ Entrance to the Dungeon~
 of a brownish liquid on the floor and stains of blood on the walls.  The sound
 of moaning rings through-out the dungeon.    
 ~
-106 ad 0
+106 9 0 0 0 0
 D0
 ~
 ~
@@ -812,7 +812,7 @@ Death Chamber~
 at all.  You wonder why the citizens of Elcardo would allow people to be
 imprisoned down here in the dungeons.    
 ~
-106 ad 0
+106 9 0 0 0 0
 D1
 ~
 ~
@@ -824,7 +824,7 @@ Torture Room~
 would they torture people in a dungeon, Sick SICK people.  It appears that
 there are some bodies still alive in here.    
 ~
-106 ad 0
+106 9 0 0 0 0
 D3
 ~
 ~
@@ -837,7 +837,7 @@ few small candles mounted on the dungeon walls just enough light to see your
 own hands but thats about the only thing visible.  A gaping hole in the dungeon
 floor to the west looks bottomless.    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -855,7 +855,7 @@ S
 Body Count~
    FALLING, FELL, NEAR-DEAD!  Should have read the room descriptions.    
 ~
-106 acfh 0
+106 165 0 0 0 0
 S
 T 10601
 #10651
@@ -865,7 +865,7 @@ way.  You do not feel safe at all when you are down here all alone.  There are
 a few small candles mounted on the dungeon walls just enough light to see your
 own hands but thats about the only thing visible.    
 ~
-106 d 0
+106 8 0 0 0 0
 D0
 ~
 ~
@@ -889,7 +889,7 @@ A Black Cell~
 your heart pounding as you look around the room trying to see if something is
 here...  Is alive.    
 ~
-106 ad 0
+106 9 0 0 0 0
 D1
 ~
 ~
@@ -902,7 +902,7 @@ hands and feet.  They seem to have been driven into the walls on long steel
 poles.  A few leg shackles are scattered about the center of the room.  This
 appears to be a jail cell for prisoners.    
 ~
-106 ad 0
+106 9 0 0 0 0
 D3
 ~
 ~
@@ -915,7 +915,7 @@ though a few prisoners escaped and came after the guards.  It is even more
 gross that part of the guts have been eaten.  They must not feed the prisoners
 very well.    
 ~
-106 d 0
+106 8 0 0 0 0
 D2
 ~
 ~
@@ -927,7 +927,7 @@ A Path between Hannah and Elcardo~
 Elcardo.  While to the west and north some you have heard lies the city of
 Hannah.  The path looks relatively empty, and unused here.    
 ~
-106 0 0
+106 0 0 0 0 0
 D1
 ~
 ~
@@ -944,7 +944,7 @@ cities were once strong allies until the City of Hannah started having problems
 with strange creatures storming the city walls.  All communication between the
 cities has been cut off for some time now.    
 ~
-106 0 0
+106 0 0 0 0 0
 D0
 ~
 ~
@@ -961,7 +961,7 @@ have been closed for a long time and rumours of the city within being destroyed
 or deserted abound.  The city walls stretching to the east and west are crumbled
 in some places, even torn down.  
 ~
-106 0 0
+106 0 0 0 0 0
 D2
 ~
 ~

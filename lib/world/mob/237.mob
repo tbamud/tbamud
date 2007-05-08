@@ -6,7 +6,7 @@ A dwarven construction worker is here, tending the road.
    He's small and quite ugly.  But the way he takes care of the road, you know
 he loves his work.    
 ~
-dglm 0 100 E
+6216 0 0 0 0 0 0 0 100 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -20,7 +20,7 @@ The foreman for the construction workers is here, getting an overview.
 instructed by his superiors to keep an eye on his fellow workers.  He rather
 enjoys that power...    
 ~
-dglm 0 100 E
+6216 0 0 0 0 0 0 0 100 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -34,7 +34,7 @@ A dwarven guard is standing here, guarding.
 he's look like he might actually pose a threat, should you encounter him in
 battle.    
 ~
-bdlm 0 300 E
+6154 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -48,7 +48,7 @@ A dwarven guard is walking here, guarding the area.
 he's look like he might actually pose a threat, should you encounter him in
 battle.    
 ~
-dglm 0 300 E
+6216 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -62,7 +62,7 @@ The dwarven lookout is here, watching over the traderoute.
 that he alone can determine when to set off the traps, you've noticed further
 down the road.    
 ~
-bdlmr dk 500 E
+137226 0 0 0 16 0 0 0 500 E
 10 17 4 2d2+100 1d2+1
 100 10000
 6 6 1
@@ -79,7 +79,7 @@ been assigned an escort.  He walks as if he owns the world, as traders have
 always done, and keeps his money in his hands always, lest someone steal them.
   
 ~
-bcdelmno dfk 400 E
+30750 0 0 0 80 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -96,7 +96,7 @@ A bodyguard for the dwarven trader, is here, guarding.
 sure enough.  Following the trader whereever he goes, takes him around to parts
 of the world he only dreamed about.    
 ~
-bdlm k 400 E
+6154 0 0 0 0 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -113,7 +113,7 @@ A cur dog is here, barking at you.
    It looks as though it's almost starved to death.  And smells if its been
 buried a week.    
 ~
-dfgh s -100 E
+232 0 0 0 524288 0 0 0 -100 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -126,7 +126,7 @@ A small mouse scurries about here.
 ~
    It looks soft and ready for your blade..    
 ~
-dg s 0 E
+72 0 0 0 524288 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -140,7 +140,7 @@ A crow is flying around here, looking for carcasses.
    A black crow.  Just another black crow.  How should that be anything worth
 looking at.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -153,7 +153,7 @@ A hawk has landed not far from you. It stares at you with one eye.
 ~
    A hawk, seemingly untamed and ready to put both beak and claws to use.    
 ~
-dfgh 0 0 E
+232 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -167,7 +167,7 @@ A small white centipede tries to hide under a nearby rock.
    Well, it doesn't have a hundred legs.  But it's a close race.  And it's
 really not worth looking at.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0

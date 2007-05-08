@@ -3,7 +3,7 @@ tablet message iuel~
 the Tablet of Ieul~
 A large tablet of Ieul hangs on the wall bearing messages for the common folk.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -33,7 +33,7 @@ odylic face mask~
 an odylic face mask~
 A face mask gathering the surrounding forces of nature lays here translucent.~
 ~
-9 f ae 0
+9 f 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 4 200 20 0
 E
@@ -46,7 +46,7 @@ odylic breastplate~
 an odylic breastplate~
 An enchanted translucent breastplate lays here.~
 ~
-9 f ad 0
+9 f 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 4 200 20 0
 E
@@ -59,7 +59,7 @@ odylic sandals~
 some odylic sandals~
 A pair of barely visible odylic sandals lay here collecting energy.~
 ~
-9 f ag 0
+9 f 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 4 40 4 0
 E
@@ -72,7 +72,7 @@ odylic wristlock~
 a broken odylic wristlock~
 Looks like someone has escaped an odylic wristlock, and just left it here.~
 ~
-12 g am 0
+12 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 310 31 0
 E
@@ -92,7 +92,7 @@ odylic ring~
 an odylic ring~
 Small rings eluminating with odylic energy lays here nearly unseen.~
 ~
-12 fg ab 0
+12 fg 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 500 50 0
 E
@@ -109,7 +109,7 @@ odylic shield~
 an odylic shield~
 A large shield bursting with energy lays here.~
 ~
-9 f aj 0
+9 f 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
 10 750 75 0
 E
@@ -122,7 +122,7 @@ odylic amulet~
 an odylic amulet~
 An odylic amulet lays here collecting impurities.~
 ~
-12 f ac 0
+12 f 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 4 470 47 0
 E
@@ -139,7 +139,7 @@ odylic greaves leg plates~
 some odylic greaves~
 A pair of darken, battered odylic leg plates lay here.~
 ~
-9 f af 0
+9 f 0 0 0 af 0 0 0 0 0 0 0
 7 0 0 0
 6 450 45 0
 E
@@ -152,7 +152,7 @@ odylic shoulder plates~
 some odylic shoulder plates~
 Some odylic should plates lay here.~
 ~
-9 f ai 0
+9 f 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 5 375 37 0
 E
@@ -165,7 +165,7 @@ vampire cloak~
 a red velvet vampire's cloak~
 A stunning cloak made from an erotic red velvet lays here wasted.~
 ~
-9 p ak 0
+9 p 0 0 0 ak 0 0 0 0 0 0 0
 3 0 0 0
 6 350 35 0
 E
@@ -180,7 +180,7 @@ odylic gauntlets~
 a pair of odylic gauntlets~
 Some odylic gauntlets lay here absorbing odylic energy.~
 ~
-9 f ah 0
+9 f 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
 4 300 30 0
 E
@@ -193,7 +193,7 @@ odylic scabbard slate piece~
 an odylic scabbard~
 A piece of odylic slate lays here.~
 ~
-9 f al 0
+9 f 0 0 0 al 0 0 0 0 0 0 0
 3 0 0 0
 4 40 4 0
 E
@@ -206,7 +206,7 @@ long bone~
 a long bone ~
 A really long bone, belonging to a incredibly huge creature lays here now.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 3 4 7
 4 40 4 0
 E
@@ -219,7 +219,7 @@ spiked handwrap~
 a spiked handwrap~
 A handwrap with elugated spikes pertuding is here on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 8 3 3 8
 4 40 4 0
 E
@@ -232,7 +232,7 @@ broad tempered scimitar fillet knife~
 a broad tempered scimitar~
 An enormously huge fillet knife is here, ready to fillet the world's largest tuna.~
 ~
-12 0 an 0
+12 0 0 0 0 an 0 0 0 0 0 0 0
 0 0 0 0
 16 800 80 0
 E
@@ -244,7 +244,7 @@ dancing fire soul weapon~
 a dancing fire soul~
 A rough looking weapon is here burnt for all it's made for.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 25 0
 4 20 2 0
 E
@@ -257,7 +257,7 @@ twig spikey~
 a spikey twig~
 A spikey twig lays on the ground waiting for you to step on.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 19
 3 150 15 0
 E
@@ -270,7 +270,7 @@ water soaked branch moss wood greeny~
 a water soaked branch~
 A greeny moss covered piece of wood lays here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 18
 1 1000 100 0
 E
@@ -283,7 +283,7 @@ algae green blue stick~
 a blue and green algae covered stick~
 A green and blue stick covered in algae lays here on the ground.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 21
 1 550 55 0
 E
@@ -296,7 +296,7 @@ red yellow algae stick~
 a red and yellow algae covered stick~
 A red and yellow algae covered stick lays here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 39
 1 175 17 0
 E
@@ -308,7 +308,7 @@ blue brown algae stick~
 a blue and brown algae covered stick~
 A blue and brown algae covered stick lays here on the ground.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 42
 1 250 25 0
 E
@@ -320,7 +320,7 @@ brown maroon algae stick~
 a brown and maroon algae covered stick~
 A brown and marron algae covered stick lays here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 51
 1 180 18 0
 E
@@ -332,7 +332,7 @@ slimy green moss covered twig~
 a slimy green moss covered twig~
 A slimy green moss covered twig lays here on the ground.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 -1
 1 500 50 0
 E
@@ -344,7 +344,7 @@ dead olive twig~
 a dead olive twig~
 A twig taken from a dead olive tree lays here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 43
 1 1000 100 0
 E
@@ -357,7 +357,7 @@ rotting white bark~
 a rotting white bark~
 A piece of bark ripped from a tree has been left here rotting.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 -1
 1 120 12 0
 E
@@ -370,7 +370,7 @@ water damaged tree bark~
 a water damaged tree bark~
 A tree bark soaked too long in water has been left here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 20
 1 750 75 0
 E
@@ -382,7 +382,7 @@ dried deer penis~
 a dried up penis of a deer~
 A dried up animal's groin lays here smelling really bad.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 35
 1 600 60 0
 E
@@ -394,7 +394,7 @@ rhino horn~
 a freshly cut rhino's horn~
 A rhino's horn lays here on the ground.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 29
 1 160 16 0
 E
@@ -407,7 +407,7 @@ nun nipple~
 a nun's nipple~
 A very disgusting nipple has been ripped off some poor woman and sits here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 -1
 1 900 90 0
 E
@@ -419,7 +419,7 @@ good knight testicle~
 a good knight's testicle~
 A pair of very small testicles sits here.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 50
 1 120 12 0
 E
@@ -432,7 +432,7 @@ mind altering smelling bag~
 a mind altering smelling bag~
 A bag sits here on the ground smelling very tempting.~
 ~
-3 0 ao 0
+3 0 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 -1
 1 200 20 0
 E
@@ -445,7 +445,7 @@ brass visor~
 a brass visor~
 A brass rim made from badly forged brass lays here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
 3 60 6 0
 E
@@ -457,7 +457,7 @@ brass chestplate~
 a brass chestplate~
 A long slate of brass lays here covering alot of other equipment.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 15 300 30 0
 E
@@ -470,7 +470,7 @@ horn scaled sleeve~
 a pair of horn scaled sleeves~
 A sleeve made from boiled and cut horn lays here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
 3 30 3 0
 E
@@ -483,7 +483,7 @@ horn scaled leg plates~
 a horn scaled leg plate ~
 A longish plate made from scaled horns lay here~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 5 0 0 0
 4 40 4 0
 E
@@ -496,7 +496,7 @@ brass gauntlets~
 a pair of brass gauntlets~
 A pair of gauntlets made from shining brass lays here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 3 60 6 0
 E
@@ -509,7 +509,7 @@ brass wrist wrap~
 a brass supported cloth wrist wrap~
 A piece of cloth with a brass bar in the middle lays here on the ground.~
 ~
-12 0 am 0
+12 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 2 40 4 0
 E
@@ -524,7 +524,7 @@ brass neck piece~
 a brass neck piece~
 A ring of brass lays here on the ground.~
 ~
-12 g ac 0
+12 g 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 3 250 25 0
 E
@@ -541,7 +541,7 @@ mossy webbed feet~
 some mossy webbed feet~
 A pair of green covered slimy mossy feet lay here.~
 ~
-12 0 ag 0
+12 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 3 135 13 0
 E
@@ -554,7 +554,7 @@ black wood buckler~
 a black wood buckler~
 A flat piece of black wood lays here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 4 0 0 0
 7 35 3 0
 E
@@ -567,7 +567,7 @@ phoenix wings~
 a pair of phoenix wings~
 A pair of red and gold wings is here half burried.~
 ~
-12 g ak 0
+12 g 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 4 350 35 0
 E
@@ -579,7 +579,7 @@ broadsword Iuel~
 a broadsword from Ieul~
 A broadsword made from an incredible weaponsmith lays here.~
 ~
-12 0 an 0
+12 0 0 0 0 an 0 0 0 0 0 0 0
 0 0 0 0
 7 525 52 0
 E
@@ -592,7 +592,7 @@ Ieulish grey sword~
 a grey sword from Ieul~
 A medium sized sword made from a land far away sits here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 6 4 5 3
 5 375 37 0
 E
@@ -605,7 +605,7 @@ ieulish battleaxe~
 an ieulic battleaxe~
 A battleaxe from the land of Ieul is sits here humming.~
 ~
-5 b an 0
+5 b 0 0 0 an 0 0 0 0 0 0 0
 1 10 4 3
 20 150 15 0
 E
@@ -618,7 +618,7 @@ iuelish polearm~
 an Iuelic polearm~
 A polearm from the land of Ieul stands against the wall.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 5 5 5 3
 9 675 67 0
 E
@@ -631,7 +631,7 @@ war mallet iuel~
 a war mallet from Iuel~
 A large headed war mallet from the land of Iuel is here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 5 5 7
 15 112 11 0
 E
@@ -644,7 +644,7 @@ tiger sabertooth tooth~
 a long sabertooth tiger's tooth~
 The tooth of a grand sabertooth now lays here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 8 5 5 4
 3 30 3 0
 E
@@ -657,7 +657,7 @@ ieulic spiked ball chain~
 an Iuelic spiked ball and chain~
 A spiked ball connected to a long wooden handle lays here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 6 3 6
 10 750 75 0
 E
@@ -670,7 +670,7 @@ weed vine iuel~
 a weed vine from the wetlands of Iuel~
 A short rope made from vines lay here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 7 4 4 2
 3 30 3 0
 E
@@ -682,7 +682,7 @@ odylic spike iuel~
 an odylic spike from Iuel~
 A sharp very long spiked jets out from the ground here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 4 3 4 11
 2 100 10 0
 E
@@ -694,7 +694,7 @@ vault banks~
 the bank vault~
 The bank vault lies open, waiting for someone to try to enter.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -710,7 +710,7 @@ rare gem~
 a sparkling rare gem~
 A gem, sparkling and rare in all favours is stuck in the ground~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 5 0 0
 #10753
@@ -718,7 +718,7 @@ lower gem~
 a lower gem~
 A blackish gem with the weight of a dead corpse is stuck here in the ground~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 5 0 0
 #10774
@@ -726,7 +726,7 @@ middle gem~
 a middle gem~
 A piece of mud like solid is stuck in the ground.~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 5 0 0
 #10775
@@ -734,7 +734,7 @@ level gem~
 a level gem~
 A long flat gem is here balancing itself one a small twig~
 ~
-18 c a 0
+18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 5 0 0
 $~

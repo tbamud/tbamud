@@ -3,7 +3,7 @@ key steel~
 a large key~
 A large steel key has been left here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 E
@@ -15,7 +15,7 @@ key copper~
 a copper key~
 A copper key has been left on the floor.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 1 0 0
 E
@@ -27,7 +27,7 @@ key brass~
 a small brass key~
 A small brass key lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 7902 0 0 0
 1 10 4 0
 E
@@ -39,7 +39,7 @@ treasure coins~
 a huge treasure~
 There is a huge treasure here, looking moderately valuable.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 799 0 0 0
 5 1 0 0
 E
@@ -51,7 +51,7 @@ chest wooden~
 a wooden chest~
 A wooden chest stands in the corner.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 100 15 7902 0
 0 0 0 0
 E
@@ -64,7 +64,7 @@ chest~
 a chest~
 A heavy iron chest sits in one corner of the room.~
 ~
-15 f 0 0
+15 f 0 0 0 0 0 0 0 0 0 0 0
 15 15 7902 0
 0 0 0 0
 #7906
@@ -72,7 +72,7 @@ dagger plain black~
 a plain dagger~
 A long black, but very plain, dagger rests here.~
 ~
-5 dfhn an 0
+5 dfhn 0 0 0 an 0 0 0 0 0 0 0
 0 5 3 11
 3 650 150 0
 A
@@ -84,7 +84,7 @@ bracelet spiked~
 a large spiked bracelet~
 A large spiked bracelet has been left here.~
 ~
-11 g am 0
+11 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 1 120 20 0
 A
@@ -94,7 +94,7 @@ waybread bread~
 a waybread~
 Some waybread has been put here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 50 50 0
 E
@@ -107,7 +107,7 @@ ring gold goldring~
 a golden ring~
 A shiny goldring has been abandoned here.~
 ~
-11 dfmpq ab 0
+11 dfmpq 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 20 350 20 0
 A
@@ -117,7 +117,7 @@ sword bastard~
 a huge bastard sword~
 There is a huge bastard sword here.~
 ~
-5 gklmn an 0
+5 gklmn 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 3
 18 170 80 0
 E
@@ -131,7 +131,7 @@ helmet large~
 a large helmet~
 There is a large helmet on the floor.~
 ~
-9 g ae 0
+9 g 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 5 450 150 0
 E
@@ -143,7 +143,7 @@ helmet chaos~
 a chaos helmet~
 On the floor is a grand evil-looking chaos helmet.~
 ~
-9 fgj ae 0
+9 fgj 0 0 0 ae 0 0 0 0 0 0 0
 8 0 0 0
 8 230 100 0
 E
@@ -160,17 +160,17 @@ sword two-handed~
 a two-handed sword~
 On the floor rests a enormous two-handed sword.~
 ~
-5 gjkm an 0
+5 gjkm 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 3
 22 350 350 0
-E
-runes~
-   On the blade you can read 'Flame And Strength United Are My Soul Power'.  
-~
 E
 two-handed sword~
    You notice that there has been inscribed some runes and a sort of pattern,
 which resembles flames running along the edge.  
+~
+E
+runes~
+   On the blade you can read 'Flame And Strength United Are My Soul Power'.  
 ~
 A
 17 10
@@ -181,7 +181,7 @@ plate breast silvery silver~
 a silvery breast plate~
 There is a silvery breast plate on the floor.~
 ~
-9 gkl ad 0
+9 gkl 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 50 200 50 0
 E
@@ -194,7 +194,7 @@ plates leg silvery~
 some silvery leg plates~
 On the floor you see some leg plates.~
 ~
-9 gkl af 0
+9 gkl 0 0 0 af 0 0 0 0 0 0 0
 7 0 0 0
 40 125 50 0
 E
@@ -207,7 +207,7 @@ gloves silvery silver~
 a pair of silvery gloves~
 You can see a pair of gloves on the floor.~
 ~
-9 gkl ah 0
+9 gkl 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
 14 250 20 0
 E
@@ -221,7 +221,7 @@ helmet silvery silver~
 a silvery helmet~
 The silvery helmet lies here.~
 ~
-9 gkl ae 0
+9 gkl 0 0 0 ae 0 0 0 0 0 0 0
 8 0 0 0
 35 900 50 0
 E
@@ -234,24 +234,24 @@ shield rose~
 the shield of the rose~
 The shield of the rose rests on the floor.~
 ~
-9 gkl aj 0
+9 gkl 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
 50 800 75 0
-E
-inscription~
-   The inscription reads: Pax Est Sanctuum
-~
 E
 shield rose~
    On the shield you see a clear and perfect painting of a dark red rose on a
 white background.  You also notice an inscription.  
+~
+E
+inscription~
+   The inscription reads: Pax Est Sanctuum
 ~
 #7919
 boots heavy plated~
 a pair of heavy plated boots~
 A pair of heavy plated boots stand on the floor.~
 ~
-9 gkl ag 0
+9 gkl 0 0 0 ag 0 0 0 0 0 0 0
 5 0 0 0
 40 350 35 0
 E
@@ -263,7 +263,7 @@ plates arm silvery silver~
 some silvery arm plates~
 On the floor you see some arm plates.~
 ~
-9 gkl ai 0
+9 gkl 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 40 800 50 0
 E
@@ -276,7 +276,7 @@ barrel water~
 a barrel~
 A water barrel has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 40 40 15 0
 45 60 20 0
 $~

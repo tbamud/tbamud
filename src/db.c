@@ -64,6 +64,7 @@ int circle_restrict = 0;	/* level of game restriction	 */
 room_rnum r_mortal_start_room;	/* rnum of mortal start room	 */
 room_rnum r_immort_start_room;	/* rnum of immort start room	 */
 room_rnum r_frozen_start_room;	/* rnum of frozen start room	 */
+int converting = FALSE;
 
 char *credits = NULL;		/* game credits			 */
 char *news = NULL;		/* mud news			 */
@@ -132,6 +133,7 @@ void free_followers(struct follow_type *k);
 void load_default_config( void );
 void load_config( void );
 void free_extra_descriptions(struct extra_descr_data *edesc);
+bitvector_t asciiflag_conv_aff(char *flag);
 
 /* external functions */
 void paginate_string(char *str, struct descriptor_data *d);
@@ -154,12 +156,17 @@ void clean_llog_entries(void);
 void create_command_list(void);
 void build_player_index(void);
 void clean_pfiles(void);
+int add_to_save_list(zone_vnum, int type);
+int save_all(void);
+extern zone_rnum real_zone_by_thing(room_vnum vznum);
 
 /* external vars */
 extern struct descriptor_data *descriptor_list;
 extern const char *unused_spellname;	/* spell_parser.c */
 extern int no_specials;
 extern int scheck;
+extern int bitwarning;
+extern int bitsavetodisk;
 extern struct player_index_element *player_table;
 extern int top_of_p_table;
 extern long top_idnum;
@@ -457,6 +464,11 @@ void boot_world(void)
   log("Renumbering zone table.");
   renum_zone_table();
 
+  if(converting) {
+    log("Saving 128bit worldfiles to disk.");
+    save_all();
+  }
+	  
   if (!no_specials) {
     log("Loading shops.");
     index_boot(DB_BOOT_SHP);
@@ -1117,12 +1129,35 @@ bitvector_t asciiflag_conv(char *flag)
   return (flags);
 }
 
+bitvector_t asciiflag_conv_aff(char *flag)
+{
+  bitvector_t flags = 0;
+  int is_num = TRUE;
+  char *p;
+
+  for (p = flag; *p; p++) {
+    if (islower(*p))
+      flags |= 1 << (*p - 'a' + 1);
+    else if (isupper(*p))
+      flags |= 1 << (26 + (*p - 'A' + 1));
+
+    if (!isdigit(*p))
+      is_num = FALSE;
+  }
+
+  if (is_num)
+    flags = atol(flag);
+
+  return (flags);
+}
+
 /* load the rooms */
 void parse_room(FILE *fl, int virtual_nr)
 {
   static int room_nr = 0, zone = 0;
-  int t[10], i;
-  char line[READ_SIZE], flags[128], buf2[MAX_STRING_LENGTH], buf[128];
+  int t[10], i, retval;
+  char line[READ_SIZE], flags[128], flags2[128], flags3[128]; 
+  char flags4[128], buf2[MAX_STRING_LENGTH], buf[128];
   struct extra_descr_data *new_descr;
   char letter;
 
@@ -1149,16 +1184,46 @@ void parse_room(FILE *fl, int virtual_nr)
     exit(1);
   }
 
-  if (sscanf(line, " %d %s %d ", t, flags, t + 2) != 3) {
-    log("SYSERR: Format error in roomflags/sector type of room #%d",
-	virtual_nr);
+  if (((retval = sscanf(line, " %d %s %s %s %s %d ", t, flags, flags2, flags3, flags4, t + 2)) == 3) && (bitwarning == TRUE)) {
+    log("WARNING: Conventional worldfiles detected. Please read 128bit.readme.");
+    exit(1);
+  } else if ((retval == 3) && (bitwarning == FALSE)) {
+    /* Looks like the implementor is ready, so let's load the worldfiles. We 
+     * load the extra three flags as 0, since they won't be anything anyway. We
+     * will save the entire world later on, when every room, mobile, and object
+     * is converted. */
+    log("Converting room #%d to 128bits..", virtual_nr);
+    world[room_nr].room_flags[0] = asciiflag_conv(flags);
+    world[room_nr].room_flags[1] = 0;
+    world[room_nr].room_flags[2] = 0;
+    world[room_nr].room_flags[3] = 0;
+
+    sprintf(flags, "room #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
+
+    /* No need to scan the other three sections; they're 0 anyway. */
+    check_bitvector_names(world[room_nr].room_flags[0], room_bits_count, flags, "room"); 
+
+    if(bitsavetodisk) { /* Maybe the implementor just wants to look at the 128bit files */
+      add_to_save_list(zone_table[real_zone_by_thing(virtual_nr)].number, 3);
+      converting = TRUE;
+    }
+
+  log("   done.");
+  } else if (retval == 6) {
+    int taeller;
+
+    world[room_nr].room_flags[0] = asciiflag_conv(flags);
+    world[room_nr].room_flags[1] = asciiflag_conv(flags2);
+    world[room_nr].room_flags[2] = asciiflag_conv(flags3);
+    world[room_nr].room_flags[3] = asciiflag_conv(flags4);
+
+    sprintf(flags, "object #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
+    for(taeller=0; taeller < AF_ARRAY_MAX; taeller++) 
+      check_bitvector_names(world[room_nr].room_flags[taeller], room_bits_count, flags, "room");
+  } else {
+    log("SYSERR: Format error in roomflags/sector type of room #%d", virtual_nr);
     exit(1);
   }
-  /* t[0] is the zone number; ignored with the zone-file system */
-
-  world[room_nr].room_flags = asciiflag_conv(flags);
-  sprintf(flags, "object #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
-  check_bitvector_names(world[room_nr].room_flags, room_bits_count, flags, "room");
 
   world[room_nr].sector_type = t[2];
 
@@ -1538,9 +1603,9 @@ void parse_enhanced_mob(FILE *mob_f, int i, int nr)
 void parse_mobile(FILE *mob_f, int nr)
 {
   static int i = 0;
-  int j, t[10];
+  int j, t[10], retval;
   char line[READ_SIZE], *tmpptr, letter;
-  char f1[128], f2[128], buf2[128];
+  char f1[128], f2[128], f3[128], f4[128], f5[128], f6[128], f7[128], f8[128], buf2[128];
 
   mob_index[i].vnum = nr;
   mob_index[i].number = 0;
@@ -1572,33 +1637,81 @@ void parse_mobile(FILE *mob_f, int nr)
     exit(1);
   }
 
-#ifdef CIRCLE_ACORN	/* Ugh. */
-  if (sscanf(line, "%s %s %d %s", f1, f2, t + 2, &letter) != 4) {
-#else
-  if (sscanf(line, "%s %s %d %c", f1, f2, t + 2, &letter) != 4) {
-#endif
-    log("SYSERR: Format error after string section of mob #%d\n"
-	"...expecting line of form '# # # {S | E}'", nr);
+  if (((retval = sscanf(line, "%s %s %s %s %s %s %s %s %d %c", f1, f2, f3, f4, f5, f6, f7, f8, t + 2, &letter)) == 10) && (bitwarning == TRUE)) {
+    /* Let's make the implementor read some, before converting his worldfiles. */
+    log("WARNING: Conventional mobilefiles detected. Please read 128bit.readme.");
+    exit(1);
+  } else if ((retval == 4) && (bitwarning == FALSE)) {
+    log("Converting mobile #%d to 128bits..", nr);
+    MOB_FLAGS(mob_proto + i)[0] = asciiflag_conv(f1);
+    MOB_FLAGS(mob_proto + i)[1] = 0;
+    MOB_FLAGS(mob_proto + i)[2] = 0;
+    MOB_FLAGS(mob_proto + i)[3] = 0;
+    check_bitvector_names(MOB_FLAGS(mob_proto + i)[0], action_bits_count, buf2, "mobile");
+    
+    AFF_FLAGS(mob_proto + i)[0] = asciiflag_conv_aff(f2);
+    AFF_FLAGS(mob_proto + i)[1] = 0;
+    AFF_FLAGS(mob_proto + i)[2] = 0;
+    AFF_FLAGS(mob_proto + i)[3] = 0;
+
+    GET_ALIGNMENT(mob_proto + i) = atoi(f3);
+
+    /* Make some basic checks. */
+    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_CHARM); 
+    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_POISON);
+    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_GROUP);
+    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_SLEEP);
+    if (MOB_FLAGGED(mob_proto + i, MOB_AGGRESSIVE) && MOB_FLAGGED(mob_proto + i, MOB_AGGR_GOOD)) 
+      REMOVE_BIT_AR(MOB_FLAGS(mob_proto + i), MOB_AGGR_GOOD);
+    if (MOB_FLAGGED(mob_proto + i, MOB_AGGRESSIVE) && MOB_FLAGGED(mob_proto + i, MOB_AGGR_NEUTRAL))
+      REMOVE_BIT_AR(MOB_FLAGS(mob_proto + i), MOB_AGGR_NEUTRAL);
+    if (MOB_FLAGGED(mob_proto + i, MOB_AGGRESSIVE) && MOB_FLAGGED(mob_proto + i, MOB_AGGR_EVIL))
+      REMOVE_BIT_AR(MOB_FLAGS(mob_proto + i), MOB_AGGR_EVIL);
+
+    check_bitvector_names(AFF_FLAGS(mob_proto + i)[0], affected_bits_count, buf2, "mobile affect");
+
+    /* This is necessary, since if we have conventional worldfiles, &letter is 
+     * loaded into f4 instead of the letter characters. So what we do, is copy 
+     * f4 into letter. Disadvantage is that &letter cannot be longer then 128 
+     * characters, but this shouldn't occur anyway. */
+    letter = *f4;
+
+    if(bitsavetodisk) {
+      add_to_save_list(zone_table[real_zone_by_thing(nr)].number, 0);
+      converting =TRUE;
+    }
+
+  log("   done.");
+  } else if (retval == 10) {
+    int taeller;
+
+    MOB_FLAGS(mob_proto + i)[0] = asciiflag_conv(f1);
+    MOB_FLAGS(mob_proto + i)[1] = asciiflag_conv(f2);
+    MOB_FLAGS(mob_proto + i)[2] = asciiflag_conv(f3);
+    MOB_FLAGS(mob_proto + i)[3] = asciiflag_conv(f4);
+    for(taeller=0; taeller < AF_ARRAY_MAX; taeller++) 
+      check_bitvector_names(MOB_FLAGS(mob_proto + i)[taeller], action_bits_count, buf2, "mobile");
+  
+    AFF_FLAGS(mob_proto + i)[0] = asciiflag_conv(f5);
+    AFF_FLAGS(mob_proto + i)[1] = asciiflag_conv(f6);
+    AFF_FLAGS(mob_proto + i)[2] = asciiflag_conv(f7);
+    AFF_FLAGS(mob_proto + i)[3] = asciiflag_conv(f8);
+
+    GET_ALIGNMENT(mob_proto + i) = t[2];
+  
+    for(taeller=0; taeller < AF_ARRAY_MAX; taeller++) 
+      check_bitvector_names(AFF_FLAGS(mob_proto + i)[taeller], affected_bits_count, buf2, "mobile affect");
+  } else {
+    log("SYSERR: Format error after string section of mob #%d\n ...expecting line of form '# # # {S | E}'", nr);
     exit(1);
   }
 
-  MOB_FLAGS(mob_proto + i) = asciiflag_conv(f1);
-  SET_BIT(MOB_FLAGS(mob_proto + i), MOB_ISNPC);
+  SET_BIT_AR(MOB_FLAGS(mob_proto + i), MOB_ISNPC);
   if (MOB_FLAGGED(mob_proto + i, MOB_NOTDEADYET)) {
     /* Rather bad to load mobiles with this bit already set. */
     log("SYSERR: Mob #%d has reserved bit MOB_NOTDEADYET set.", nr);
-    REMOVE_BIT(MOB_FLAGS(mob_proto + i), MOB_NOTDEADYET);
+    REMOVE_BIT_AR(MOB_FLAGS(mob_proto + i), MOB_NOTDEADYET);
   }
-  check_bitvector_names(MOB_FLAGS(mob_proto + i), action_bits_count, buf2, "mobile");
-
-  AFF_FLAGS(mob_proto + i) = asciiflag_conv(f2);
-  check_bitvector_names(AFF_FLAGS(mob_proto + i), affected_bits_count, buf2, "mobile affect");
-
-  GET_ALIGNMENT(mob_proto + i) = t[2];
-
-  /* AGGR_TO_ALIGN is ignored if the mob is AGGRESSIVE. */
-  if (MOB_FLAGGED(mob_proto + i, MOB_AGGRESSIVE) && MOB_FLAGGED(mob_proto + i, MOB_AGGR_GOOD | MOB_AGGR_EVIL | MOB_AGGR_NEUTRAL))
-    log("SYSERR: Mob #%d both Aggressive and Aggressive_to_Alignment.", nr);
 
   switch (UPPER(letter)) {
   case 'S':	/* Simple monsters */
@@ -1639,8 +1752,9 @@ char *parse_object(FILE *obj_f, int nr)
   static int i = 0;
   static char line[READ_SIZE];
   int t[10], j, retval;
-  char *tmpptr;
-  char f1[READ_SIZE], f2[READ_SIZE], f3[READ_SIZE], buf2[128];
+  char *tmpptr, buf2[128], f1[READ_SIZE], f2[READ_SIZE], f3[READ_SIZE], f4[READ_SIZE];
+  char f5[READ_SIZE], f6[READ_SIZE], f7[READ_SIZE], f8[READ_SIZE];
+  char f9[READ_SIZE], f10[READ_SIZE], f11[READ_SIZE], f12[READ_SIZE];
   struct extra_descr_data *new_descr;
 
   obj_index[i].vnum = nr;
@@ -1673,20 +1787,61 @@ char *parse_object(FILE *obj_f, int nr)
     log("SYSERR: Expecting first numeric line of %s, but file ended!", buf2);
     exit(1);
   }
-  if ((retval = sscanf(line, " %d %s %s %s", t, f1, f2, f3)) != 4) {
+
+  if (((retval = sscanf(line, " %d %s %s %s %s %s %s %s %s %s %s %s %s", t, f1, f2, f3, 
+      f4, f5, f6, f7, f8, f9, f10, f11, f12)) == 4) && (bitwarning == TRUE)) {
+    /* Let's make the implementor read some, before converting his worldfiles. */
+    log("WARNING: Conventional objectfiles detected. Please read 128bit.readme.");
+    exit(1);
+  } else if (((retval == 4) || (retval == 3)) && (bitwarning == FALSE)) {
+    
     if (retval == 3)
-      *f3 = '\0';
-    else {
-      log("SYSERR: Format error in first numeric line (expecting 4 args, got %d), %s", retval, buf2);
-      exit(1);
+      t[3] = 0;
+    else if (retval == 4)
+      t[3] = asciiflag_conv_aff(f3);
+ 
+    log("Converting object #%d to 128bits..", nr);
+    GET_OBJ_EXTRA(obj_proto + i)[0] = asciiflag_conv(f1);
+    GET_OBJ_EXTRA(obj_proto + i)[1] = 0;
+    GET_OBJ_EXTRA(obj_proto + i)[2] = 0;
+    GET_OBJ_EXTRA(obj_proto + i)[3] = 0;
+    GET_OBJ_WEAR(obj_proto + i)[0] = asciiflag_conv(f2);
+    GET_OBJ_WEAR(obj_proto + i)[1] = 0;
+    GET_OBJ_WEAR(obj_proto + i)[2] = 0;
+    GET_OBJ_WEAR(obj_proto + i)[3] = 0;
+    GET_OBJ_PERM(obj_proto + i)[0] = asciiflag_conv_aff(f3);
+    GET_OBJ_PERM(obj_proto + i)[1] = 0;
+    GET_OBJ_PERM(obj_proto + i)[2] = 0;
+    GET_OBJ_PERM(obj_proto + i)[3] = 0;
+    
+    if(bitsavetodisk) { 
+      add_to_save_list(zone_table[real_zone_by_thing(nr)].number, 1);
+      converting = TRUE;
     }
+
+    log("   done.");
+  } else if (retval == 13) {
+ 
+    GET_OBJ_EXTRA(obj_proto + i)[0] = asciiflag_conv(f1);
+    GET_OBJ_EXTRA(obj_proto + i)[1] = asciiflag_conv(f2);
+    GET_OBJ_EXTRA(obj_proto + i)[2] = asciiflag_conv(f3);
+    GET_OBJ_EXTRA(obj_proto + i)[3] = asciiflag_conv(f4);
+    GET_OBJ_WEAR(obj_proto + i)[0] = asciiflag_conv(f5);
+    GET_OBJ_WEAR(obj_proto + i)[1] = asciiflag_conv(f6);
+    GET_OBJ_WEAR(obj_proto + i)[2] = asciiflag_conv(f7);
+    GET_OBJ_WEAR(obj_proto + i)[3] = asciiflag_conv(f8);
+    GET_OBJ_PERM(obj_proto + i)[0] = asciiflag_conv(f9);
+    GET_OBJ_PERM(obj_proto + i)[1] = asciiflag_conv(f10);
+    GET_OBJ_PERM(obj_proto + i)[2] = asciiflag_conv(f11);
+    GET_OBJ_PERM(obj_proto + i)[3] = asciiflag_conv(f12);
+
+  } else {
+    log("SYSERR: Format error in first numeric line (expecting 13 args, got %d), %s", retval, buf2);
+    exit(1);
   }
 
   /* Object flags checked in check_object(). */
   GET_OBJ_TYPE(obj_proto + i) = t[0];
-  GET_OBJ_EXTRA(obj_proto + i) = asciiflag_conv(f1);
-  GET_OBJ_WEAR(obj_proto + i) = asciiflag_conv(f2);
-  GET_OBJ_PERM(obj_proto + i) = asciiflag_conv(f3);
 
   if (!get_line(obj_f, line)) {
     log("SYSERR: Expecting second numeric line of %s, but file ended!", buf2);
@@ -2776,7 +2931,8 @@ void init_char(struct char_data *ch)
       SET_SKILL(ch, i, 100);
   }
 
-  AFF_FLAGS(ch) = 0;
+  for (i = 0; i < AF_ARRAY_MAX; i++)
+    AFF_FLAGS(ch)[i] = 0;
 
   for (i = 0; i < 5; i++)
     GET_SAVE(ch, i) = 0;
@@ -2899,7 +3055,7 @@ zone_rnum real_zone(zone_vnum vnum)
 int check_object(struct obj_data *obj)
 {
   char objname[MAX_INPUT_LENGTH + 32];
-  int error = FALSE;
+  int error = FALSE, y;
 
   if (GET_OBJ_WEIGHT(obj) < 0 && (error = TRUE))
     log("SYSERR: Object #%d (%s) has negative weight (%d).",
@@ -2910,9 +3066,11 @@ int check_object(struct obj_data *obj)
 	GET_OBJ_VNUM(obj), obj->short_description, GET_OBJ_RENT(obj));
 
   snprintf(objname, sizeof(objname), "Object #%d (%s)", GET_OBJ_VNUM(obj), obj->short_description);
-  error |= check_bitvector_names(GET_OBJ_WEAR(obj), wear_bits_count, objname, "object wear");
-  error |= check_bitvector_names(GET_OBJ_EXTRA(obj), extra_bits_count, objname, "object extra");
-  error |= check_bitvector_names(GET_OBJ_AFFECT(obj), affected_bits_count, objname, "object affect");
+  for(y = 0; y < TW_ARRAY_MAX; y++) {
+    error |= check_bitvector_names(GET_OBJ_WEAR(obj)[y], wear_bits_count, objname, "object wear");
+    error |= check_bitvector_names(GET_OBJ_EXTRA(obj)[y], extra_bits_count, objname, "object extra");
+    error |= check_bitvector_names(GET_OBJ_AFFECT(obj)[y], affected_bits_count, objname, "object affect");
+  }
 
   switch (GET_OBJ_TYPE(obj)) {
   case ITEM_DRINKCON:

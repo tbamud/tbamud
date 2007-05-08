@@ -9,7 +9,7 @@ dangerous foe, but together they are near unstoppable.  Perhaps, before they
 grow any more in numbers, or torment your soul any further you should just kill
 yourself and end your pain.
 ~
-bdefglmnpr fk -1000 E
+178298 0 0 0 64 0 0 0 -1000 E
 20 14 -2 4d4+200 3d3+3
 0 40000
 8 8 2
@@ -27,7 +27,7 @@ dangerous foe, but together they are near unstoppable.  Perhaps, before they
 grow any more in numbers, or torment your soul any further you should just kill
 yourself and end your pain.
 ~
-bdefglmnopr defhk -1000 E
+194682 0 0 0 112 0 0 0 -1000 E
 21 13 -2 4d4+210 3d3+3
 0 44100
 8 8 2
@@ -45,7 +45,7 @@ dangerous foe, but together they are near unstoppable.  Perhaps, before they
 grow any more in numbers, or torment your soul any further you should just kill
 yourself and end your pain.
 ~
-bcdefglmnpr defhkmn -1000 E
+178302 0 0 0 8304 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 0 62500
 8 8 1
@@ -63,7 +63,7 @@ dangerous foe, but together they are near unstoppable.  Perhaps, before they
 grow any more in numbers, or torment your soul any further you should just kill
 yourself and end your pain.
 ~
-bdefglmnopr defhkmn -1000 E
+194682 0 0 0 8304 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 0 62500
 8 8 0
@@ -81,7 +81,7 @@ the mist beckons and draws you toward it.  Draws you in to it.  Something about
 it forces you to wield whatever weapons are at your disposal and defend
 yourself.
 ~
-bdefglnopr bdfhk 0 E
+190586 0 0 0 84 0 0 0 0 E
 32 10 -9 10d10+320 7d5+6
 50000 102400
 8 8 0
@@ -99,7 +99,7 @@ this is it really suicide?  Or is it murder?  Whatever this is, it is dangerous
 and may be the cause of feelings that keep spreading through you and attepting
 to drag down your soul.
 ~
-bdefgmop bfhp 0 E
+53370 0 0 0 65604 0 0 0 0 E
 32 10 -9 6d6+320 6d5+6
 50000 102400
 8 8 0

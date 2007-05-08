@@ -15,7 +15,7 @@ Plot         : This zone features the signs of the zodiac plus a few other
                little things.
 Links        :
 ~
-57 j 0
+57 512 0 0 0 0
 S
 #5701
 Gemini's Hideaway~
@@ -24,7 +24,7 @@ possession has a double, probably so they each have their own things.  One of
 the twins doesn't seem to be here right now.  The tracks continue through here
 and so does the tail mark even though they are faint and hard to see.    
 ~
-57 df 0
+57 40 0 0 0 0
 D1
 ~
 Iron door~
@@ -45,7 +45,7 @@ Pisces Lagoon~
 formed by something that is gliding below the surface, wait, TWO THINGS!!!  
 This is starting to get a little scary, you had better move on...    
 ~
-57 ad 0
+57 9 0 0 0 0
 D2
 ~
 <NONE>~
@@ -61,7 +61,7 @@ Chamber of Aquarius~
 thing people see in museums.  Looking closely there is a partially hidden
 stairwell leading up.    
 ~
-57 d 0
+57 8 0 0 0 0
 D0
 ~
 <NONE>~
@@ -77,7 +77,7 @@ Leo's Den~
 The stench of rotting meat greets your nostrils, escape seems like your only
 option at this point in time.  There are exits going down and east.    
 ~
-57 ad 0
+57 9 0 0 0 0
 D1
 ~
 ~
@@ -94,7 +94,7 @@ messed with.  The tracks that were on the floor earlier start here again,
 covered in faeces.  Whatever walked through here must be regretting it now
 because its feet must really reek...    
 ~
-57 ad 0
+57 9 0 0 0 0
 D2
 Nothing.
 ~
@@ -111,7 +111,7 @@ Aries Shearing Shed~
 smell of faeces eminates from a large bucket in the corner.  The ground slopes
 away sharply to the east, it looks like it falls away altogether.    
 ~
-57 ad 0
+57 9 0 0 0 0
 D0
 ~
 Crystal door~
@@ -147,7 +147,7 @@ D
 
 Too bad, you seem to have fallen into a never ending abyss.
 ~
-57 bc 0
+57 6 0 0 0 0
 S
 T 5799
 #5708
@@ -157,7 +157,7 @@ it. The animal tracks continue through here, they have three claws, two of
 which are to the front and one to the rear. A long mark has been etched into
 the roof.
 ~
-57 d 0
+57 8 0 0 0 0
 D0
 ~
 ~
@@ -174,7 +174,7 @@ been piled neatly into a corner.  There is a door leading into a room out back,
 it is really dark in there and there are strange noises eminating from inside.
 It sounds like a kind of grunting noise, could it be the Bear?    
 ~
-57 dl 0
+57 2056 0 0 0 0
 D1
 ~
 ~
@@ -193,7 +193,7 @@ of a man.  With sudden realisation you see that is a Centaur!  These creatures
 are rarely seen in the wild because they favor seclusion.  The most famous of
 these would definately be Sagittarius the 9th sign of the zodiac.    
 ~
-57 d 0
+57 8 0 0 0 0
 D0
 ~
 ~
@@ -214,7 +214,7 @@ but still readable.  Following the tracks is a small trail of blood, or what
 looks like blood.  It's a bit darker than most blood you've seen as it has more
 black in it.  Could this be a trap?    
 ~
-57 0 0
+57 0 0 0 0 0
 D0
 ~
 ~
@@ -233,7 +233,7 @@ very aggressive carnivore.  She is represented by a crab and her pincers are
 extremely deadly, so deadly they could cut a persons head off by merely running
 them along a persons neck.  Be warned, this is a place of death.    
 ~
-57 ad 0
+57 9 0 0 0 0
 D1
 ~
 ~
@@ -246,7 +246,7 @@ stubbornn fellow and rather fat, he is usually seen with his head on the
 counter drooling over Starsigns like Virgo and the female Gemini twin.  Most
 classify him as wierd.    
 ~
-57 0 0
+57 0 0 0 0 0
 D3
 ~
 ~
@@ -261,7 +261,7 @@ solid oak, there is also a table and chairs.  The roof is covered with a star
 chart, certain parts are glowing dimly.  The most brightly shining sign on the
 chart appears to be Scorpio.  How very strange.    
 ~
-57 d 0
+57 8 0 0 0 0
 D1
 ~
 ~
@@ -278,7 +278,7 @@ squelches underfoot, it reeks worse than Leos' room, and that is something to
 be said.  There is a faint glimmer of light at the end of the tunnel.  Exits
 face north and south towards the light.    
 ~
-57 0 0
+57 0 0 0 0 0
 D0
 ~
 ~
@@ -295,7 +295,7 @@ of the light coming from the portal in front of you.  The portal has the color
 of blood, deep red.  Looking through it seems to go on forever although there
 is a bright green spot in the distance.    
 ~
-57 0 0
+57 0 0 0 0 0
 D0
 ~
 ~
@@ -312,7 +312,7 @@ south??  ) where the speck of green seen from outside this place has grown to
 the size of a fingernail.  Sounds of the ocean fill what otherwise would be
 silence.  This place is kind of spooky but peaceful.    
 ~
-57 0 0
+57 0 0 0 0 0
 D0
 ~
 ~
@@ -329,7 +329,7 @@ to stretch the limits of space and time.  Red fills the eyes and a chilly wind
 has started to blow through the doorway.  Through the door there looks to be a
 mountain valley, and by the sounds of it there is a herd of goats as well.    
 ~
-57 0 0
+57 0 0 0 0 0
 D0
 ~
 ~
@@ -348,7 +348,7 @@ possibly small mountains stretch up to the east and west and they have snow
 covered peaks.  There are exits north back into the portal and south into the
 pass.    
 ~
-57 e 5
+57 16 0 0 0 0
 D0
 ~
 ~
@@ -364,7 +364,7 @@ In the Pass~
 to come through the portal the goat herd raise the alarm and an impenetrable
 mist descends upon the valley thwarting any attempt to lay siege to it.    
 ~
-57 0 5
+57 0 0 0 0 0
 D0
 ~
 ~
@@ -384,7 +384,7 @@ goats are standing under them sleeping and just lazing about.  Rivers
 criss-cross the valley and at the far end is a waterfall.  Exits lead back into
 the pass and down into the valley.    
 ~
-57 0 4
+57 0 0 0 0 0
 D0
 ~
 ~
@@ -404,7 +404,7 @@ the bottom of the waterfall.  Exits lead east and west toward groups of goats
 and and west, further into the valley.  Of course there is also and exit back
 into the pass.    
 ~
-57 0 2
+57 0 0 0 0 0
 D0
 ~
 ~
@@ -425,7 +425,7 @@ the 10th sign of the zodiac.  Bones litter the ground around him, most are
 skulls and spines.  Those strange tracks from before are here and they are more
 discernable.  What could they mean?    
 ~
-57 0 4
+57 0 0 0 0 0
 D1
 ~
 ~
@@ -435,13 +435,13 @@ D4
 ~
 0 0 5724
 E
+bones~
+   These bones are mostly crushed and powdered but most of them look human...  
+~
+E
 tracks~
    These tracks are insect like and very large.  Whatever made these must be
 huge.  
-~
-E
-bones~
-   These bones are mostly crushed and powdered but most of them look human...  
 ~
 S
 #5724
@@ -450,7 +450,7 @@ Capricorns' Hill~
 a couch where the lord of the goats rests, and thick moss cushions his head.  
 The air is fetid with the smell of the dead.    
 ~
-57 0 4
+57 0 0 0 0 0
 D0
 ~
 ~
@@ -466,7 +466,7 @@ Descending towards the Waterfall~
 about 300 feet!  Behind the lower part of of it there seems to be a cave.  A
 faint glow can be seen inside.  Whatever could it be?    
 ~
-57 e 4
+57 16 0 0 0 0
 D0
 ~
 ~
@@ -482,7 +482,7 @@ Outside the Cave~
 shape of a pair of scales.  Could it be Libra?  There is a walkway through here
 and the ground falls away on both sides.    
 ~
-57 c 5
+57 4 0 0 0 0
 D0
 ~
 ~
@@ -503,7 +503,7 @@ all their headbutting and grunting.  This tree is very large and stripes that
 have been scored into the tree form a ladder.  Tree sap oozes down the ladder
 and it has a sweet smell.  Little red eyes can be seen up the ladder.    
 ~
-57 0 2
+57 0 0 0 0 0
 D3
 ~
 ~
@@ -514,12 +514,12 @@ The sap is dribbling down the trunk forming a pool at the base of the tree.
 ~
 0 0 5731
 E
-ladder~
-   Sap oozes down this ladder forming a sticky covering.  
-~
-E
 eyes~
    The eyes are small and beady, they look evil.  
+~
+E
+ladder~
+   Sap oozes down this ladder forming a sticky covering.  
 ~
 S
 #5728
@@ -529,7 +529,7 @@ scales.  They dont seem to move or even be alive, the tracks continue through
 here and into a hole at the back of the cave.  The hole is very large and
 dirty, bones surround the entrance.  Where do they go?    
 ~
-57 ad 0
+57 9 0 0 0 0
 D0
 ~
 ~
@@ -546,7 +546,7 @@ large room.  In the center a fire burns and the tracks stop at the far end in
 front of a large throne.  Shadows caused by the fire dance across the tunnels
 walls making eerie shapes.  Your adventure looks to be almost finished.    
 ~
-57 adi 0
+57 265 0 0 0 0
 D0
 ~
 ~
@@ -564,7 +564,7 @@ anticipation of his next meal which is squirming behind his throne.  It's
 Virgo!  That sleazy freak has zodianapped her!  It's time someone taught him a
 lesson.    
 ~
-57 ad 0
+57 9 0 0 0 0
 D2
 ~
 ~
@@ -575,7 +575,7 @@ On the oaken ladder~
    This ladder is covered in tree sap, you are almost adhered to the trunk.  
 There are noises coming from the top of the tree, slight but still noticable.
 ~
-57 c 4
+57 4 0 0 0 0
 D4
 The sap is runnier above here, probably because its fresher. There's only one way to find out, and that's to go up.
 ~
@@ -599,7 +599,7 @@ Halfway up the Tree~
 sap below.  It gives off a sweet smell that makes a person want to taste it.  
 The noises are more audible here and those ever staring red eyes look menacing.
 ~
-57 0 4
+57 0 0 0 0 0
 D4
 ~
 ~
@@ -622,7 +622,7 @@ noises are now very loud and mournful.  Maybe somethings hurt!  Whatever it is,
 it doesnt sound too good.  Could the thing with red eyes be the one
 moaning?  Or is it something else?    
 ~
-57 c 4
+57 4 0 0 0 0
 D4
 An feeling of oppression coming from above.
 ~
@@ -641,17 +641,17 @@ It is plain to see that the owner of this place was a female because of all the
 photos of male Nymphs on one of the branches that obviously serves as a
 mantlepiece.    
 ~
-57 h 0
+57 128 0 0 0 0
 D5
 ~
 ~
 0 0 5733
 E
-pool~
+blood~
    A pool of bluey gray blood has collected in the corner.  
 ~
 E
-blood~
+pool~
    A pool of bluey gray blood has collected in the corner.  
 ~
 S
@@ -660,7 +660,7 @@ A Bloodied Room~
    This room is covered in blood.  It has dried all over the walls and drips
 from the roof.  A skeleton is hanging on a sign that stands next to the door.
 ~
-57 cj 0
+57 516 0 0 0 0
 E
 sign~
    +--------------------+
@@ -677,6 +677,6 @@ The Portal Room~
    This room is to serve the perpose of teleportation, but to find the portal
 you'll have to look.    
 ~
-57 0 0
+57 0 0 0 0 0
 S
 $~

@@ -7,7 +7,7 @@ You resist the urge to avert your eyes from the sight of the one true God.
 person's body and soul.  At first a proud, bitter old man, but just as easily a
 gentle extended hand, a smile, and gardens...  Gardens.  
 ~
-bdeilnopqr h 1000 E
+256282 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -21,7 +21,7 @@ The archangel Michael turns and begins to look you over.
 sharpens suddenly, and you see a face, eyes, hands, but then that too fades, and
 you see nothing.  
 ~
-bdl h 1000 E
+2058 0 0 0 0 0 0 0 1000 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -35,7 +35,7 @@ The archangel Gabriel smiles, and begins to tell you something.
 the chosen prophets, and in turn brought the Seal of the Prophets on a
 miraculous journey to the holy city of Jerusalem.  
 ~
-bdl h 1000 E
+2058 0 0 0 0 0 0 0 1000 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -49,7 +49,7 @@ The archangel Raphael looks up and frowns at you in disapproval.
 is human, and with a mere whisper, he dispels every image that you attempt to
 create in your mind.  
 ~
-bdl h 1000 E
+2058 0 0 0 0 0 0 0 1000 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -62,7 +62,7 @@ Uriel, the angel of darkness, stands here guarding the way forward.
    After the Fall of the bringer of light, the Lord had need for the service of
 a fourth, and it was this angel, Uriel, that rose to the highest ranks.  
 ~
-bdl h 1000 E
+2058 0 0 0 0 0 0 0 1000 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -76,7 +76,7 @@ The cherubin of the blazing sword looks at you and begins to chuckle.
 wrapped in a glowing white cloth, but as you try to walk past, the beast grins
 and cackles, drawing its sword and blocking the way.  
 ~
-bdf h 0 E
+42 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 0
@@ -90,7 +90,7 @@ A mad, drunken jester is sitting here, lost in his deepening stupor.
 something obscure: dragons, the temple, the falling of great empires.  He laughs
 at you and takes another drink.  
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
 130 16900
 6 6 1
@@ -104,7 +104,7 @@ One of the jinn dances in and out of the air before your eyes, taunting you.
 to be trapped in lamps and bottles, capable of granting all kinds of powerful
 wishes.  To you, it looks like nothing more than an annoying little sprite.  
 ~
-cdg b 0 E
+76 0 0 0 4 0 0 0 0 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -119,7 +119,7 @@ slackened jaws and pasty white bags sagging under his ugly, hating eyes.  A tuft
 of reckless dark hair scatters across his forehead, and his right hand shakes
 and shakes.  
 ~
-bdf dk -1000 E
+42 0 0 0 16 0 0 0 -1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -133,7 +133,7 @@ The mad Caliph al-Hakim is here, dissecting a young boy.
 he has not bathed in months nor eaten in days, and yet his smile, so charming.
 
 ~
-bdf dk -1000 E
+42 0 0 0 16 0 0 0 -1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -145,7 +145,7 @@ The wayward apostle approaches slowly, extending his arms in a hug.
 ~
    You see nothing but the sadness of a man who would sell his own God.  
 ~
-bcd dk -1000 E
+14 0 0 0 16 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -158,7 +158,7 @@ Pharoah has been sent here in retribution for a lifetime of evils.
    Richly clothed and postured in arrogance and love of power, he looks at you
 with nothing more than a smirk of contempt.  
 ~
-bd dk -1000 E
+10 0 0 0 16 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -171,7 +171,7 @@ Abu Bakr, first of the Rashidun, mourns over the death of the Prophet.
    You see a simple man, dressed in dark and unadorned robes, bent over and
 pensive, reliving the memories of a man he never thought would die.  
 ~
-bd dk 1000 E
+10 0 0 0 16 0 0 0 1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -185,7 +185,7 @@ You see Umar, second of the Rashidun, the successors of the Prophet.
 "I do not wish to fight you, but if you refuse the truth of the Word, then I
 must.  "
 ~
-bd dk 1000 E
+10 0 0 0 16 0 0 0 1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -199,7 +199,7 @@ The third of the rightly-guided Caliphs, Uthman, stands before you.
 other.  The memory of the Prophet fading quickly from the minds of the faithful,
 he could do little, and was in the end killed by his enemies.  
 ~
-bdf dk 1000 E
+42 0 0 0 16 0 0 0 1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -214,7 +214,7 @@ deserving of our respect and reverence.  Still others saw him as a schismatic, a
 heretic, one to be killed and forgotten.  To look at him now is for you to
 decide for yourself.  
 ~
-bdf dk 1000 E
+42 0 0 0 16 0 0 0 1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -229,7 +229,7 @@ would not prostrate himself before the first human beings.  And then he gestures
 at you, smiling, and conjures an image of all the temptations that will be yours
 if you in turn but follow him.  
 ~
-bcdf dk -1000 E
+46 0 0 0 16 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -242,7 +242,7 @@ You pause nervously as a voice whispers at you from over your shoulder.
    There is no physical figure attached to the presence that dominates this
 place, just tormented laughter, moaning, screaming, and begging.  
 ~
-bcdf dk -1000 E
+46 0 0 0 16 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -255,7 +255,7 @@ A raging dragon turns to you in violent lust for your soul.
    The serpent of babylon, the aged and violet hued monster that has watched all
 of mankind succumb before its power, turns to you as its last victim.  
 ~
-bcdf dk -1000 E
+46 0 0 0 16 0 0 0 -1000 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -268,7 +268,7 @@ The hell-fire around you is dominated by a massive, burning demon.
    You see nothing but the inexorably red and burning anger of the lord of the
 underworld that you fear to be your fate.  
 ~
-bcdf dk -1000 E
+46 0 0 0 16 0 0 0 -1000 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 1
@@ -281,7 +281,7 @@ Lying on the ground wrapped in blankets is the most innocent of babies.
    The baby is barely aware of your presence, lost in a sleepy and contented
 yawn.  
 ~
-bd dk 1000 E
+10 0 0 0 16 0 0 0 1000 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 4 4 1
@@ -295,7 +295,7 @@ You stop in surprise at the sight of a teenage boy staring off to the distance.
 his gaze and notice that he is gazing in wonderment at the fullness of the moon.
 
 ~
-bd dk 1000 E
+10 0 0 0 16 0 0 0 1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -308,7 +308,7 @@ A middle-aged man is here, kneeling in prayer.
    He is tired, the lines of age marking his face, but in his robe, kneeling, he
 is the image of perfect contentment.  
 ~
-bdl dk 1000 E
+2058 0 0 0 16 0 0 0 1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 5 5 1
@@ -321,7 +321,7 @@ You are overwhelmed by the presence of a soul that has transcended its body.
    You sense certain tastes and smells, the winds through the gardens.  Nothing
 can explain or describe this perfection, this utter bliss.  
 ~
-bdf dk 1000 E
+42 0 0 0 16 0 0 0 1000 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1

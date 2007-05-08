@@ -6,7 +6,7 @@ A young man is here smoking a cigarette.
    Dressed in drab clothes he looks tired and over worked.  He is one of the
 few men who did not sign up for military service.    
 ~
-dghl 0 900 E
+2248 0 0 0 0 0 0 0 900 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -20,7 +20,7 @@ Ian stands here ready to serve your needs.
 as you peruse his wares.  He is a small man, by anyone's standards.  He has a
 strange glint in his eyes which some men get when obsessed with money.    
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -35,7 +35,7 @@ Liam waits impatiently while you shop.
 an ordered disarray that only he can fathom.  Just ask him for help and he can
 probably find what you need.    
 ~
-bdlno d 900 E
+26634 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -51,7 +51,7 @@ one can come close to his skill in designing and forging weapons.  He is still
 very much in shape in spite of his years.  He looks very capable of using any
 of his fine weapons.    
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -66,7 +66,7 @@ Shiro's daughter, Rhian, stands here waiting to help you.
 she sells more weapons when she wears that dress.  She is easily one of the
 more stunning woman you have ever come across.    
 ~
-bdlno d 900 E
+26634 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -81,7 +81,7 @@ An old, balding man slowly walks past, leaning heavily on his cane.
 spend many a sleepless night wondering about their safety.  This old man seems
 to have aged prematurely due to his worrying.  
 ~
-degl 0 900 E
+2136 0 0 0 0 0 0 0 900 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -94,7 +94,7 @@ Captain Lugdach, a retired sailor, is steaming some white oak to make a canoe.
    Years at sea have hardened this already tough man.  He looks like he could
 tear your arms out at the socket without an upwards glance.    
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -108,7 +108,7 @@ Branwen, the leatherworker stands behind the counter.
    Using hides bought from the local farms this young man makes some of the
 finest leather products in Sanctus.  His wares are guaranteed for life.    
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -123,7 +123,7 @@ Sarge, the blacksmith is here, pounding on his anvil.
 when he asks, "may I help you?  " without looking.  Not a man to be kept
 waiting, Sarge begins to tap his foot impatiently.    
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -138,7 +138,7 @@ Hazel, the Wellmaster is sealing a barrel of water.
 everyone worrying about the dome collapsing and chaos befalling the city.  She
 looks competent in her work and enjoys it immensely.    
 ~
-bdlnopr d 800 E
+190474 0 0 0 16 0 0 0 800 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -154,7 +154,7 @@ worries about the reputation of the Time Warp Mail Service, as many people seem
 to think that it is slow.  Perhaps if he were to brush the cobwebs from his
 uniform it would help to make a better impression.    
 ~
-bdlnopr d 1000 E
+190474 0 0 0 16 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -169,7 +169,7 @@ Rowin, the jeweler, stands behind his display case.
 may be a tough bargainer.  You won't have much luck swindling this swindler.  
 
 ~
-bdlnopr d 1000 E
+190474 0 0 0 16 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -184,7 +184,7 @@ A young woman strolls by, smiling at you.
 it.  She keeps smiling at you, and she's not a bad looker, but I wouldn't get
 your hopes up.    
 ~
-dgl 0 1000 E
+2120 0 0 0 0 0 0 0 1000 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -197,7 +197,7 @@ An old lady is taking a break, just sitting on the ground
    She looks frail and withered.  The kind of lady you're supposed to help
 cross the road.    
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 6 6 2
@@ -210,7 +210,7 @@ A man pushes past you in a rush to get somewhere.
    The man gives a little smirk as you look at him.  He acknowlegdes you with a
 simple nod and then moves on.    
 ~
-dgl 0 1000 E
+2120 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -223,7 +223,7 @@ A fisherman stalks past, obviously he didn't catch anything.
    He looks very disgruntled, another long day of fishing with nothing to bring
 home.  You feel sorry for the guy.    
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -237,7 +237,7 @@ A old man is reminiscing about the old days.
 words like "the old school" and how he was so popular back then.  You pity him.
   
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -252,7 +252,7 @@ more than a big bully stuck in a little body.  He seems to have learned to get
 by with his big mouth rather than brawn or brain.  Someone should teach him a
 lesson.    
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -267,7 +267,7 @@ A woman is here gossipping with anyone that will listen.
 She would probably give all she owns for a good man, maybe you should find out.
   
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -279,7 +279,7 @@ The banker greets you as you enter, smiling.
 ~
    A very rich man, one of the richest alive.  He loves money.    
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -294,7 +294,7 @@ Your guildmaster is meditating here.
 vast amount of knowledge she possesses.  She is wearing fine magic clothing,
 and you notice that she is surrounded by a blue shimmering aura.    
 ~
-bdelnop dh 1000 E
+59418 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -308,7 +308,7 @@ Your guildmaster is praying here.
 a peaceful, loving look.  You notice that he is surrounded by a white aura.  
 
 ~
-bdelnop dh 1000 E
+59418 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -322,7 +322,7 @@ Your guildmaster is hiding here.
 the way of the true thief.  He is dressed in the finest clothing, having the
 appearance of an ignorant fop.    
 ~
-bdelnop dh 1000 E
+59418 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -337,7 +337,7 @@ Your guildmaster is sitting here sharpening a sword.
 across his body proves that he was using arms before you were born.  He has a
 calm look on his face.    
 ~
-bdelnop dh 1000 E
+59418 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 6 6 1
@@ -352,7 +352,7 @@ never trust a skinny cook, you would think it would also apply here.  She
 smiles and looks friendly enough.  I guess if the rest of Sanctus trusts
 her....    
 ~
-bdnopr 0 900 E
+188426 0 0 0 0 0 0 0 900 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -367,7 +367,7 @@ A young girl is playing with a little doll.
 is a powerful Magi and is fighting the evil Drakkar.  She is almost as filthy
 and ragged as the doll that she plays with.    
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -381,7 +381,7 @@ An man dressed all in black stalks past you.
 his price is high, but many think it is well worth it.  Have someone you would
 rather see dead?  Just ask this guy for some help.    
 ~
-deglo dfhs 0 E
+18520 0 0 0 524368 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -395,7 +395,7 @@ A warrior is guarding a set of stairs in the back.
 fighting machine, only a fool would ever try to kill someone with as much skill
 as this man.  Then again, fools are born everyday.    
 ~
-bdlnopqr dfhk 800 E
+256010 0 0 0 80 0 0 0 800 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -410,7 +410,7 @@ A Red Magi watches you careful, as if you have done something wrong.
 stare at you so.  He is dressed in a long flowing red robe with the hood pulled
 down.  Various pouches hang from a red belt.    
 ~
-dgl d 0 E
+2120 0 0 0 16 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 6 6 1
@@ -424,7 +424,7 @@ The town thief is trying to hide from the authorities.
 is always present.  This small man lives off of the fortune of others by
 stealing whatever he needs.    
 ~
-dg 0 -700 E
+72 0 0 0 0 0 0 0 -700 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -438,7 +438,7 @@ A maid scurries about trying to finish up all her chores.
    She smiles kindly as you look her up and down.  She definitely enjoys her
 work.  With a sigh of regret she moves on to finish her chores.    
 ~
-dg 0 700 E
+72 0 0 0 0 0 0 0 700 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -451,7 +451,7 @@ A hoodlum waits for an innocent victim.
    He starts to walk away slowly eyeing you carefully as he realizes he is
 being stared at.    
 ~
-cdfghm 0 0 E
+4332 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -465,7 +465,7 @@ A butler bows says, 'good day sir' as he walks by with his nose in the air.
 others.  Not exactly the most prestigious job, but it seems to make him think
 that he is important.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -479,7 +479,7 @@ A member of the blue magi floats past you.
 and is slowly moving along.  What next?  Someone will probably fly past you.  
 
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -492,7 +492,7 @@ A Master Magi is in deep contemplation of the universe.
    The red robe signifies his order.  He is one of the five Master Magi alive
 today.  He holds himself with a dignity that astonishes even you.    
 ~
-bdl d 0 E
+2058 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -505,7 +505,7 @@ A man in a blue robe is studying a book intently.
    The Master Magi before you is enthralled in the book he is reading.  He is
 oblivious to the world around him.    
 ~
-dg d 0 E
+72 0 0 0 16 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 0
@@ -521,7 +521,7 @@ orders of the Magi only 5 have Master Magi's.  The orders of the purple and
 grey robe have yet to select a master magi as none of them are powerful enough.
   
 ~
-dg d 0 E
+72 0 0 0 16 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -535,7 +535,7 @@ A man in a black flowing robe is chanting something under his breath.
 He has mastered the arts of his order and can call down upon his foes the power
 of the gods.    
 ~
-dg d 0 E
+72 0 0 0 16 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -548,7 +548,7 @@ A Master Magi in a yellow robe strolls by.
    One of the seven orders of the Magi, This Master Magi is well known
 throughout the city and is reverred almost as much as the gods.    
 ~
-dg d 0 E
+72 0 0 0 16 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -562,7 +562,7 @@ An ugly white cat with dirty matted hair is pawing through the garbage.
 around its ribcage.  The cat is filthy and needs a good hosing down.  It is
 extremely wary of you and shies away at your approach.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -579,7 +579,7 @@ date on all happenings withing Sanctus.  If you need some information this is
 the man to go to.  He shouts over the other customers to you, 'What can I
 getcha?  '
 ~
-bdnopr d 900 E
+188426 0 0 0 16 0 0 0 900 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -594,7 +594,7 @@ A corporal is making his rounds.
 to become a war hero went down the drain when he signed up for the army of
 Sanctus.  Now all he does is stand watch and clean latrines.    
 ~
-dg 0 900 E
+72 0 0 0 0 0 0 0 900 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 2
@@ -608,7 +608,7 @@ A member of the green magi flys past, literally.
 their knowledge.  Seeking to invent some new spell to help restore the balance
 that Drakkar ruined.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -622,7 +622,7 @@ A scantily clad waitress waits to fulfill your every need.
 pints of ale on a platter while skillfully avoiding the attempted slaps at her
 fine ass.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -636,7 +636,7 @@ A black magi walks past in a state of deep concentration.
 into the the more abstract forms of magic.  The other Magi will not even
 associate with them sometimes because of this.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -650,7 +650,7 @@ A yellow magi chants some arcane words and is suddenly standing behind you.
    The magi are known for thier experience with magic.  Many study decades to
 reach the title of Master Magi.  Very few actually make it.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -663,7 +663,7 @@ A man in a flowing grey robe is resting here.
    He carries himself with a confidence that is almost frightening.  You
 realize he must be a magi.    
 ~
-dg d 600 E
+72 0 0 0 16 0 0 0 600 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -678,7 +678,7 @@ you that you carry if your not careful.  He runs the town pawnshop.  Though the
 prices aren't great he carries alot of equipment that cannot be found anywhere
 else.    
 ~
-bdnopqr defh 0 E
+253962 0 0 0 112 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 6 6 2
@@ -693,7 +693,7 @@ A magi in a purple robe is making a fashion statement.
 dare not laugh or even smirk since you know they take offense to such things.
   
 ~
-dg d -400 E
+72 0 0 0 16 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -707,7 +707,7 @@ A sargeant is trying to find his corporal so he can put him to work.
 enjoy tearing the corporal a new one.  More latrine duty is in the corporals
 future.    
 ~
-dg 0 -400 E
+72 0 0 0 0 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -721,7 +721,7 @@ A mangy mutt is looking for some scraps to eat.
 your distance.  It notices you looking at it and trots towards you hoping for
 some handouts, its tail wagging.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -736,7 +736,7 @@ A midwife is tidying up the house.
 must have once been very attractive, but not any longer.  She looks worn down
 and tired from her daily chores.    
 ~
-bdm 0 0 E
+4106 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -750,7 +750,7 @@ A newborn baby is rocking peacefully in his crib.
 starting to get some hair.  He looks up at you and giggles softly, expecting
 some attention.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -764,7 +764,7 @@ A pickpocket brushes up against you.
 Like taking candy from a baby.  Any thief can swipe gold, only the more
 experienced thieves can swipe equipment.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -777,7 +777,7 @@ A patrolman is making sure everyone behaves.
    The patrolman keeps a keen eye out for any trouble and is quick to respond.
 Only the foolish mess with these trained and disciplined men.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -792,7 +792,7 @@ very old.  His hair a bright white and hanging below his shoulders.  Other than
 his hair he shows no signs of his age.  He is still built like an ogre and just
 about as evil tempered.    
 ~
-bdlopqr h 0 E
+247818 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -806,7 +806,7 @@ The Great Speaker of the Land greets all who enter the realm.
 glaring red vest this man's voice can be heard throughout the realm.  He waits
 to greet new travellers and bestow upon them his sagely advice.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -823,7 +823,7 @@ if nothing could ever scare him again.  As if he had seen everything this life
 can throw at him and already overcome every obstacle in his life.  He is
 unafraid of death.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -838,7 +838,7 @@ wonder how she could possibly keep up with it.  Maybe she uses some kind of
 magic to weave those clothes?  Probably just years of experience.  She can make
 almost anything out of cloth.    
 ~
-bdo 0 0 E
+16394 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -853,7 +853,7 @@ A lieutenant is cursing up a storm as he looks for his sargeant.
 Looks like alot of heads are going to roll when he finds who he is looking for.
 He looks very strong and wise.    
 ~
-deglm d 1000 E
+6232 0 0 0 16 0 0 0 1000 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -867,7 +867,7 @@ A general is planning his next strategic victory.
 Trying to account for every possible outcome he carries a heavy responsibility
 that few people never appreciate.  He orders men to their death.    
 ~
-dglm d 1000 E
+6216 0 0 0 16 0 0 0 1000 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -880,7 +880,7 @@ A streetsweeper pushes a broom infront of him, picking up any trash he finds.
    He is out here, day and night, picking up the garbage people leave behind.
 Do him a favor and don't litter.  He looks miserable from his job.    
 ~
-dg d 800 E
+72 0 0 0 16 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -895,7 +895,7 @@ A statesman holds himself in very high regard.
 title of statesman.  He is prized within the city because during a time of war
 his land and property will help to protect the city.    
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -909,7 +909,7 @@ A hired hand is waiting for a job here.
 price.  Few people can afford him though.  So don't expect him to jump at your
 first offer.    
 ~
-dg 0 -330 E
+72 0 0 0 0 0 0 0 -330 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -922,7 +922,7 @@ A pathetic drunk is here, passed out.
    He probably won't last very long.  Some hoodlums or a thieve will come along
 and relieve him of his money and maybe his life.    
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -935,7 +935,7 @@ A beggar looks up hopefully into your eyes.
    He has mastered a pathetic puppy dog look that would cause most people to
 give in to his plead.  But you're not that weak, are you?    
 ~
-dg 0 400 E
+72 0 0 0 0 0 0 0 400 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -951,7 +951,7 @@ A lance corporal struts past, looking very tough and conceited.
 bright future in the army.  Too bad he will probably be dead before he can get
 that far.    
 ~
-dg 0 -200 E
+72 0 0 0 0 0 0 0 -200 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -964,7 +964,7 @@ A staff sargeant walks by, keeping step to a cadence in his head.
    This guy has been around.  He could probably teach you a thing or two on
 fighting styles.    
 ~
-dgl 0 1000 E
+2120 0 0 0 0 0 0 0 1000 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -977,7 +977,7 @@ A starving bum is trying to get to the good garbage before the streetsweeper.
    This guy must have run into some bad luck to end up where he is right now.
 He is covered in a film of dirt and grime.  He smells even worse than you.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -990,7 +990,7 @@ A loyal citizen of Sanctus wanders past.
    The man seems lost in his own thoughts.  He has a grin on his face and seems
 to think something is funny.  He doesn't have a care in the world.    
 ~
-dg 0 350 E
+72 0 0 0 0 0 0 0 350 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -1003,7 +1003,7 @@ One of the many townsman of Sanctus wanders past.
    He seems content with his life.  He walks past briskly mumbling something to
 himself.    
 ~
-dg 0 350 E
+72 0 0 0 0 0 0 0 350 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -1017,7 +1017,7 @@ A townswoman is heading out to buy some supplies.
    Dressed in a simple floral print dress so looks nothing other than ordinary.
   
 ~
-dg 0 350 E
+72 0 0 0 0 0 0 0 350 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1030,7 +1030,7 @@ A farmer has come in off the fields to see something of the city.
    He looks lost in the hustle and bustle of the city.  It looks like he wants
 to get back to his farm as soon as possible.    
 ~
-dg 0 350 E
+72 0 0 0 0 0 0 0 350 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -1043,7 +1043,7 @@ The magi stands infront of a set of stairs with his arms crossed.
    He doesn't seem to be happy just standing there, he seems to be protecting
 or standing watch over something, but you can't tell what.    
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -1056,7 +1056,7 @@ A cleric carefully watches a set of stairs leading up.
 ~
    He looks intent on whatever purpose he has been given
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -1070,7 +1070,7 @@ A sentry is watching the gates, ensuring your protection.
    They stand their post with dedication and determination.  They seem very
 competent and will warn of any attack upon the city.    
 ~
-bdl 0 0 E
+2058 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -1084,7 +1084,7 @@ Gunney stand here shouting orders.
 army.  He pretends to hate his job, but deep down you know he loves making the
 recruits lives miserable.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -1097,7 +1097,7 @@ A thief watches the entrance to the upstairs warily.
    He seems content twirling a dagger between his fingers and occasionally
 glancing towards the stairs in the back.    
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -1113,7 +1113,7 @@ far up in the air that it seems she must not be able to see where she is
 placing her feet.  Yup, you were right.  She just stepped in a pile of dog
 shit.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -1126,7 +1126,7 @@ A miserable recruit is carrying out Gunney's orders.
    This guy is exhausted.  The typical over worked and under paid army recruit.
 This guy needs a beer, a woman, and some time off.    
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -1141,7 +1141,7 @@ positions within Sanctus.  Javier is known for his common sense and appeal to
 those who live hard lives.  He was himself just a farmer before he his calling
 to become a Cleric.    
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -1156,7 +1156,7 @@ It is up to him to warn the town in case of an attack.  The position has alot
 of responsibility and is only given to those who show promise within the army.
   
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -1170,7 +1170,7 @@ Ingrid stands over a boiling pot of foul smelling liquids.
 approach to living.  She sells her potions and other concoctions for a fair
 price to any who may be in need.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -1186,7 +1186,7 @@ He looks hard, the kind of hardness that comes from watching people die and
 seeing how fragile life can be.  He acknowledges you with a nod and seems to
 wait patiently for something.  G
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 6 6 1
@@ -1200,7 +1200,7 @@ Morgan, the bartender, looks you over carefully.
    He serves his customers with ease and experience.  He wears a spotty apron
 and has a dirty towl is over one shoulder.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -1215,7 +1215,7 @@ Sareth flips through a book hardly paying any attention to you.
 His powerful scrolls can be used by anyone and are a very valuable asset to any
 adventurer.    
 ~
-bdno 0 0 E
+24586 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -1230,7 +1230,7 @@ A healer is bent over from old age.
 listen and instead opened up his own shop.  For a small fee he can fix you
 right up.    
 ~
-bdno 0 0 E
+24586 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -1246,7 +1246,7 @@ Very scary, especially considering she is bigger than most smithy's you've
 seen.  She smiles kindly and tells you to let her know when you see something
 you'd like.    
 ~
-bdno 0 0 E
+24586 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 0
@@ -1261,7 +1261,7 @@ The butcher's assistant is learning the trade.
 works in is almost always what they end up doing.  He seems resigned to his
 fate of cutting meat for the rest of his life.    
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -1276,7 +1276,7 @@ A commander of the army overseas the protection of the city.
 carries out their orders and makes a good job of it.  He has been fighting more
 years than you've been living.    
 ~
-bdl 0 1000 E
+2058 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -1290,7 +1290,7 @@ A cat rubs up against your leg hoping for some food or affection.
 they are considered good luck.  All other cats are either served up for dinner
 or let loose outside the city.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -1303,7 +1303,7 @@ A small puppy has lost his way and is wimpering pathetically.
    How cute, you feel pity for him as he tries to work his way between peoples
 legs trying to find his way home.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -1319,7 +1319,7 @@ others for protection, and even a few simply as pets.  They are very smart and
 have evolved beyond normal animal intelligence due to Drakkar's expirements with
 animals.  
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 0
@@ -1333,7 +1333,7 @@ A small delicate dove pecks at the ground.
    The dove is pure white, almost looks like an albino except it has black eyes
 instead of pink.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -1347,7 +1347,7 @@ A mouse scurries into the gutter, trying to avoid being stept on.
    This little rodent looks more like someone's pet than a street rat.  It is
 pure white with black eyes and seems unafraid.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -1360,7 +1360,7 @@ A cute little kitten is ready to pounce, it's tail twitching back and forth
 ~
    The kitten seems intent on attacking your feet for some reason.    
 ~
-dg 0 900 E
+72 0 0 0 0 0 0 0 900 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -1375,7 +1375,7 @@ who are new to this dangerous realm.  She has travelled far and seen many
 things.  For the right reasons she has been known to help those who request it
 of her.  She always is willing to give advice to those in need.    
 ~
-bdnopqr 0 0 E
+253962 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -1389,7 +1389,7 @@ The carpenter frowns at your intrusion.
    He is loaded down with a tool belt full of various items he uses in his
 building of houses.  He looks very busy and should not be bothered.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -1404,7 +1404,7 @@ A temple cleric tends to the sick and wounded.
 for nothing more than a warm smile.  He is very gentle and looks like he cares
 deeply about all of his patients.  He smiles at you warmly.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -1418,7 +1418,7 @@ The butcher is covered in blood and guts.
 He has a strange look in his eyes, a lust of some kind.  Some inner instinct
 warns you to be careful around this guy.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1

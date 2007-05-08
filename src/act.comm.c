@@ -146,7 +146,7 @@ int is_tell_ok(struct char_data *ch, struct char_data *vict)
   return (FALSE);
 }
 
-/* Yes, do_tell probably could be combined with whisper and ask, but
+/* Yes, do_tell probably could be combined with whisper and ask, but it is
  * called frequently, and should IMHO be kept as tight as possible. */
 ACMD(do_tell)
 {

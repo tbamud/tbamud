@@ -7,7 +7,7 @@ A hermit is standing here, oblivious to you and the rest of the world.
 disheveled and in depserate need of a bath and clean clothes.  He must be strong
 and determined to survive out here on his own.  
 ~
-cdgl f 0 E
+2124 0 0 0 64 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -23,7 +23,7 @@ young close by and will not leave them.  You have heard about how ferocious
 animals can become when protecting their young.  Now you are about to experience
 it first hand.  
 ~
-bdgm 0 0 E
+4170 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -39,7 +39,7 @@ explode.  It must be gathering food to stash away for emergencies.  It's a small
 brown furry critter with black and white strips running from the top of it's
 head all the way down to it's tail.  
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -55,7 +55,7 @@ coming to fine points listening for any sound of danger.  It's big bushy tail is
 a sure sign of it's good health.  It saw you coming a mile away and does not
 seem very scared.  
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -71,7 +71,7 @@ good shape.  This scavenger has learned to live off the land and has become a
 common nuisance to the farmers in the area.  Entire packs have been known to
 take down a stray cow
 ~
-cdeg 0 0 E
+92 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -86,7 +86,7 @@ A graceful doe flicks it's white tail at you.
 of it's tail as it warns other deer of your presence.  It looks very frightened
 of you and could run at any second.  
 ~
-dgh 0 0 E
+200 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -101,7 +101,7 @@ A large buck with a full rack of antlers stares back at you.
 wielding.  You wonder what it would feel like to be butted with those things.  
 Maybe you're about to find out.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -117,7 +117,7 @@ He is definitely gifted at the art of selling useless junk that no one really
 needs.  He looks experienced and you wonder how many times he's had to defend
 himself being out in the wilderness like this.  
 ~
-bdgl 0 0 E
+2122 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -131,7 +131,7 @@ A peddler is bringing his wares to the city to sell.
 a profit to the suckers in the city.  He looks very untrustworthy.  You hold
 your purse a little tighter as you walk by.  
 ~
-bdgl 0 0 E
+2122 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -144,7 +144,7 @@ A possum is hanging from a tree by it's tail.
    This odd creature has eyes that look to be made for seeing in the dark.  
 It's about 2 feet long including a hairless tail.  It looks stupid and slow.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -159,7 +159,7 @@ An alligator crawls slowly towards you.
 steps back.  It looks extremely tough and you doubt many weapons could penetrate
 that thick hide.  
 ~
-bdfg 0 0 E
+106 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -175,7 +175,7 @@ you without any sign of fear.  It uses it's human like hands to climb around in
 the trees.  It is grey and black with the unforgettable mask around it's eyes.
 
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -190,7 +190,7 @@ A skunk waddles slowly past.
 white stripe down it's back and on it's tail.  This animal is scared of no one
 since only an idiot would attack it and chance being skunked.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -205,7 +205,7 @@ A little baby bobcat is playing here.
 claws and teeth that it must just be learning how to use.  It's tempting to go
 ahead and pet the cute little fella.  
 ~
-bdg 0 0 E
+74 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -221,7 +221,7 @@ ears have small tufts of hair sticking out of the ends.  It is about two or
 three times the size of any cat you've ever seen.  It walks with agility and
 purpose.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -235,7 +235,7 @@ A hunter roams these woods in pursuit of a big buck.
    Clad in hides from his latest kills this veteran of the wilderness stalks his
 prey silently.  Waiting for the opportunity to strike.  
 ~
-dg s 0 E
+72 0 0 0 524288 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -248,7 +248,7 @@ The huntress tracks her prey with skill and determination.
    Covered in hides and fur from her past killings she looks very experienced
 and adept.  
 ~
-dg s 0 E
+72 0 0 0 524288 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2

@@ -3,7 +3,7 @@ noose death~
 a noose~
 A bit of sinister-looking coiled rope is lying here.~
 ~
-11 h ac 0
+11 h 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 3 30 0 0
 E
@@ -17,7 +17,7 @@ kaleidoscope light~
 a kaleidoscope~
 A kaleidoscope is lying here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 2 60 0 0
 E
@@ -32,7 +32,7 @@ tunic gold~
 a frayed golden tunic~
 A frayed golden tunic lies crumpled here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 2 30 0 0
 E
@@ -46,7 +46,7 @@ black leggings pants~
 a pair of black leggings~
 A pair of black leggings has been left here.~
 ~
-11 0 af 0
+11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 3 340 0 0
 E
@@ -60,7 +60,7 @@ boots leather~
 old leather boots~
 A pair of old leather boots are here.~
 ~
-11 0 ag 0
+11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 2 270 0 0
 E
@@ -74,7 +74,7 @@ dagger black~
 a small black dagger~
 A tiny black dagger has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
 1 20 0 0
 E
@@ -87,7 +87,7 @@ staff gnarled~
 a gnarled staff~
 A thin gnarled staff has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 7
 2 20 0 0
 E
@@ -101,7 +101,7 @@ mace iron~
 an iron mace~
 An iron mace is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 5
 2 20 0 0
 E
@@ -115,7 +115,7 @@ sword short~
 a short sword~
 A short sword is lying on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 3
 2 20 0 0
 E
@@ -128,7 +128,7 @@ candelabra candle~
 a candelabra~
 A candelabra glows dimly with a golden light.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 1 1 0 0
 E
@@ -141,7 +141,7 @@ water fountain marble black water~
 a black marble fountain~
 A black marble fountain flows with a clear water.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 100 100 0 0
 105 0 0 0
 E
@@ -154,7 +154,7 @@ axe severance~
 the axe of severance~
 A bloody axe has been left here.~
 ~
-5 mn an 0
+5 mn 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 0
 10 1000 0 0
 E
@@ -171,7 +171,7 @@ gold vault pile atm~
 a huge pile of gold~
 A huge pile of gold is guarded by a magical force.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -184,7 +184,7 @@ quesadilla food~
 a quesadilla~
 A quesadilla is here, hot and steaming.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 1 21 0 0
 E
@@ -196,7 +196,7 @@ coffee brewer drink coffee~
 a coffee brewer~
 A coffee brewer purcolates in the corner of the room.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 20 0 -1 0
 0 0 0 0
 E
@@ -209,7 +209,7 @@ rose gold black~
 a golden rose with black leaves and stem~
 A golden rose with leaves and stem of black is growing here.~
 ~
-11 0 ao 0
+11 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 E
@@ -221,7 +221,7 @@ coffee iced cappuccino drink coffee~
 an iced cappuccino~
 A foamy iced cappuccino is sitting here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 12 0
 8 15 0 0
 E
@@ -234,7 +234,7 @@ coffee irish cream latte drink coffee~
 an irish cream latte~
 A hot latte is sitting here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 12 0
 10 18 0 0
 E
@@ -247,7 +247,7 @@ coffee black cup drink coffee~
 a black cup~
 A black cup of coffee rests here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 12 0
 8 7 0 0
 E
@@ -259,7 +259,7 @@ tea cup drink hot tea~
 a hot cup~
 A cup of hot tea is resting here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 11 0
 8 11 0 0
 E
@@ -272,7 +272,7 @@ ale rogue brew ale~
 a rogue's brew~
 The mascot brew of the assassins guild is resting here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 7 7 4 0
 12 20 0 0
 E
@@ -284,7 +284,7 @@ local speciality black adder drink local~
 the black adder special~
 A black metal flask is sitting here.~
 ~
-17 b a 0
+17 b 0 0 0 a 0 0 0 0 0 0 0
 1 1 8 0
 1 25 0 0
 E
@@ -297,7 +297,7 @@ whisky shot drink whisky~
 a shot~
 A shot of whisky emits an alluring scent from the ground.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 5 0
 1 20 0 0
 E
@@ -309,7 +309,7 @@ victim sandwich food~
 a victim sandwich~
 The specialty sandwich of the Nightbreak Cafe is sitting here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
 2 30 0 0
 E
@@ -322,7 +322,7 @@ firebreather mug flames drink firebreather~
 a black mug filled with leaping flames~
 A large black mug rimming with flames sits here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 7 0
 15 66 0 0
 E
@@ -335,7 +335,7 @@ beer mug cold drink beer~
 a cold mug~
 The air is condensing on a cold mug of beer.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 1 0
 8 10 0 0
 E
@@ -347,7 +347,7 @@ wine keg wine~
 a keg of wine~
 A keg of wine rests on the floor.~
 ~
-17 0 0 0
+17 0 0 0 0 0 0 0 0 0 0 0 0
 200 200 2 0
 205 205 0 0
 #27127
@@ -355,7 +355,7 @@ wine flask leather drink red wine~
 a leather flask~
 A flask of red wine has been dropped here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 4 4 2 0
 9 20 0 0
 E
@@ -367,7 +367,7 @@ roast rabbit food~
 a rabbit roast~
 A tasty-looking roast is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 2 14 0 0
 E
@@ -379,7 +379,7 @@ stew dragon pot food~
 a pot of dragon stew~
 A pot of delicious stew is steaming away.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 40 0 0 0
 8 55 0 0
 E
@@ -393,7 +393,7 @@ bread rye food~
 a rye bread~
 A bread baked from rye is sitting here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 2 11 0 0
 E
@@ -405,7 +405,7 @@ cake saffron food~
 a cake baked from wild saffron~
 A cake baked from wild saffron is resting at your feet.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
 3 20 0 0
 E
@@ -417,7 +417,7 @@ pastry blackberry food~
 a blackberry pastry~
 A sticky black pastry is sitting here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 15 0 0
 E
@@ -429,7 +429,7 @@ dish pad tai food~
 a dish of pad tai~
 A spicy dish of Thai food is sitting here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 2 20 0 0
 E
@@ -442,7 +442,7 @@ sack leather deer~
 a sack of deer leather~
 A strapped leather sack has been left here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 70 1 -1 0
 5 25 0 0
 E
@@ -457,7 +457,7 @@ torch light~
 a torch~
 A torch is lying on the ground.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 25 0
 1 5 0 0
 E
@@ -469,7 +469,7 @@ quill black pen~
 a black feather quill~
 A black inky feather is lying nearby.~
 ~
-21 0 ao 0
+21 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 13 0 0
 E
@@ -481,7 +481,7 @@ paper~
 a piece of paper~
 A piece of paper is fluttering in the wind.~
 ~
-16 0 a 0
+16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 12 0 0
 #27138
@@ -489,7 +489,7 @@ lamp copper light~
 a copper lamp~
 A lamp glints copper in the faint light.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 60 0
 2 20 0 0
 E
@@ -501,7 +501,7 @@ sword quartz~
 a sword of quartz hilt~
 A sword with a pale quartz hilt has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 3
 8 550 0 0
 E
@@ -515,7 +515,7 @@ dagger crescent mithril~
 a mithril dagger~
 A dagger with a blade curved like a crescent is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
 3 535 0 0
 E
@@ -529,7 +529,7 @@ mace fire~
 a fire-headed mace~
 Still hot from the forge, a mace burns a black space on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 5
 5 545 0 0
 E
@@ -544,7 +544,7 @@ staff rock crystal~
 a rock crystal staff~
 A staff crowned with a cloudy crystal is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 6
 4 540 0 0
 E
@@ -559,7 +559,7 @@ shield black sandstone~
 a black sandstone shield~
 A dark sandstone plate is lying here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 6 400 0 0
 E
@@ -572,7 +572,7 @@ tunic golden guard~
 a guard's golden tunic~
 A tunic of dark gold is crumpled here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 4 158 0 0
 E
@@ -584,7 +584,7 @@ boots black~
 sturdy black boots~
 A pair of sturdy black boots lie scattered on the ground.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 3 200 0 0
 E
@@ -597,7 +597,7 @@ sword broadsword silver~
 a silver broadsword~
 A silver, straight-edge sword has been left here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 3
 10 770 0 0
 E
@@ -610,7 +610,7 @@ marbles set~
 a set of marbles~
 Red, purple and black marbles are set up in a circular game.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 14 0 0
 T 27108
@@ -625,7 +625,7 @@ chess board set glass~
 a glass chessboard~
 A black and rose glass chessboard is set up in mid-game.~
 ~
-8 0 ao 0
+8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 4 500 0 0
 E
@@ -638,7 +638,7 @@ ribbon velvet~
 a velvet ribbon~
 A dark velvet ribbon is coiled here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 1 30 0 0
 E
@@ -653,7 +653,7 @@ dagger shattered~
 a shattered dagger~
 Something that used to be a dagger has been abandoned here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 1 11
 2 1 0 0
 E
@@ -667,7 +667,7 @@ curse luck ill~
 a curse of ill luck~
 You sense something unlucky about this room.~
 ~
-13 h ao 0
+13 h 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -684,7 +684,7 @@ gallows platform death~
 the gallows platform~
 The gallows platform rises ominously before you.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -699,7 +699,7 @@ fountain cracked drink~
 a cracked stone fountain~
 A cracked stone fountain holds a supply of mossy-green water.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 -1 -1 0 0
 0 0 0 0
 E
@@ -713,7 +713,7 @@ altar amber~
 an altar carved from amber~
 An altar of dark amber stands here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -726,7 +726,7 @@ cleaver meat~
 a meat cleaver~
 A large meat cleaver is stuck in the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 10
 5 115 0 0
 E
@@ -738,7 +738,7 @@ amber stone gem~
 an amber stone~
 An amber stone glints dully in the light.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 400 0 0
 E
@@ -751,7 +751,7 @@ amethyst violet gem~
 an amethyst~
 An amethyst of pure violet glints from the ground.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 832 0 0
 E
@@ -764,7 +764,7 @@ diamond gem~
 a diamond~
 A small diamond twinkles from the ground.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 500 0 0
 E
@@ -776,7 +776,7 @@ sunstone golden gem~
 a sunstone~
 A golden sunstone shines with a celestial glow.~
 ~
-8 0 a 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 1000 0 0
 E
@@ -789,7 +789,7 @@ necklace tiger eye eyes~
 a necklace of tiger eyes~
 A gold and brown necklace lies on the ground.~
 ~
-8 0 ac 0
+8 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 700 0 0
 E
@@ -802,7 +802,7 @@ ring agate black~
 a black agate ring~
 A black agate ring lies half-buried on the ground.~
 ~
-8 g ab 0
+8 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 200 0 0
 E
@@ -816,7 +816,7 @@ shard obsidian gem~
 a shard of snowflake obsidian~
 A black, white-flecked shard is lying here.~
 ~
-8 g ao 0
+8 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 0
 E
@@ -830,7 +830,7 @@ suit chain mail~
 a suit of chain mail~
 A heap of chain mail is lying here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 10 900 0 0
 E
@@ -842,7 +842,7 @@ helm bright~
 a bright helm~
 A bright helm has been left nearby.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
 8 780 0 0
 E
@@ -856,7 +856,7 @@ bracers silver~
 silver bracers~
 A pair of silver bracers is here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 4 0 0 0
 7 845 0 0
 E
@@ -868,7 +868,7 @@ boots sharp~
 a pair of sharp-toed boots~
 A pair of boots with razor-sharp toes is sitting here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
 6 950 0 0
 E
@@ -883,7 +883,7 @@ shield scale~
 a scale shield~
 A shield of the scales of an unknown creature is lying here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 10 110 0 0
 E
@@ -896,7 +896,7 @@ water skin waterskin water~
 a waterskin~
 A waterskin has been left here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 17 17 0 0
 22 150 0 0
 E
@@ -909,7 +909,7 @@ chair lounger black~
 a black lounger~
 A black lounger chair looks very relaxing.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -923,7 +923,7 @@ magazine rogue book bartending~
 the Rogue's book of bartending~
 A magazine is lying open on the floor.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 30 0 0
 E
@@ -939,7 +939,7 @@ sword gilded fencing~
 a gilded fencing sword~
 A beautiful gilded sword lies at your feet.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 4 2 3
 7 850 0 0
 E
@@ -954,7 +954,7 @@ scabbard silver~
 a silver scabbard~
 A scabbard of bright silver lies on the ground.~
 ~
-15 0 al 0
+15 0 0 0 0 al 0 0 0 0 0 0 0
 13 0 -1 0
 6 120 0 0
 E
@@ -970,7 +970,7 @@ sword stone~
 a stone-hilted sword~
 A short sword with a hilt of finished stone has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 3
 10 200 0 0
 E
@@ -984,7 +984,7 @@ notice sign disclaimer~
 the cartographer's disclaimer~
 A notice is posted on the wall.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -997,7 +997,7 @@ mutton leg meat food~
 a leg of mutton~
 A leg of mutton is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
 4 120 0 0
 E
@@ -1009,7 +1009,7 @@ heart boar food~
 a wild boar heart~
 A heart is lying in a pool of blood.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 3 172 0 0
 E
@@ -1022,7 +1022,7 @@ wings bowl dragon food~
 a bowl of little dragon wings~
 A bowl of tasty dragon wings is resting here.~
 ~
-19 f a 0
+19 f 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
 5 122 0 0
 E
@@ -1035,7 +1035,7 @@ sandwich troll grilled food~
 a grilled troll sandwich~
 A hot sandwich with a putrid odor is here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
 2 110 0 0
 E
@@ -1048,7 +1048,7 @@ key black gold sundhaven~
 a black and gold key~
 A key fashioned of black and gold metal is lying in the dust.~
 ~
-18 f ao 0
+18 f 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -1061,7 +1061,7 @@ doll voodoo hex~
 a voodoo doll~
 A corn straw doll is lying in the dust.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -1075,7 +1075,7 @@ lock hair red mercy~
 a lock of someone's hair~
 A lock of red hair is lying coiled on the ground.~
 ~
-13 0 ao 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
 E
@@ -1087,7 +1087,7 @@ sword black watch~
 a sword of the Black Watch~
 A beautiful black sword emblazoned with a triskelion lies here.~
 ~
-5 fo an 0
+5 fo 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 3
 10 250 0 0
 E
@@ -1101,7 +1101,7 @@ blade iron~
 an iron blade~
 A short iron blade has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 1
 6 200 0 0
 E
@@ -1114,7 +1114,7 @@ plate steel black~
 a plate of black steel~
 A black breast plate is lying face up.~
 ~
-9 o ad 0
+9 o 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 10 250 0 0
 E
@@ -1127,7 +1127,7 @@ cloak gold black~
 a handsome black and gold cloak~
 A handsome black and gold cloak is folded on the ground.~
 ~
-9 g ak 0
+9 g 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
 5 660 0 0
 E
@@ -1142,7 +1142,7 @@ whisky scotch glass whisky~
 a glass~
 A tall glass of scotch is sitting nearby.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 1 5 0
 1 50 0 0
 E
@@ -1161,7 +1161,7 @@ skirt gypsy red~
 a colorful gypsy skirt~
 A patchwork of red and purple lies on the ground.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
 3 53 0 0
 E
@@ -1173,7 +1173,7 @@ blouse shirt red blood~
 a blood red blouse~
 A dark red blouse is crumpled here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 3 40 0 0
 E
@@ -1186,7 +1186,7 @@ violin old~
 an old violin~
 An old violin has been tossed in the dust.~
 ~
-9 0 ao 0
+9 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 4 220 0 0
 E
@@ -1200,7 +1200,7 @@ mushroom white food pc~
 a white spotted mushroom~
 A mushroom with white spots is growing in the water.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 20 0 0
 E
@@ -1213,7 +1213,7 @@ blossom flower hibiscus red pc~
 a red hibiscus blossom~
 A lovely red hibiscus flower is lying here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 120 0 0
 E
@@ -1226,7 +1226,7 @@ eye toad~
 an eye of toad~
 A small slimy eye stares up at you from the ground.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 600 0 0
 E
@@ -1239,7 +1239,7 @@ mortar pestle pc~
 a mortar and pestle~
 A mortar and pestle of black marble sits here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 10 0 -1 0
 1 300 0 0
 E
@@ -1252,7 +1252,7 @@ tunic red dusty~
 a dusty red tunic~
 A dusty pile of red canvas is here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 5 70 0 0
 E
@@ -1265,7 +1265,7 @@ tray goodies~
 a tray of goodies~
 A tray of goodies sits invitingly on the ground.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 200 0 -1 0
 30 120 0 0
 E
@@ -1279,7 +1279,7 @@ pipe wooden~
 a wooden pipe~
 An old wooden pipe sits in the dust.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 3 0 -1 0
 1 35 0 0
 E
@@ -1292,7 +1292,7 @@ candle candlestick black light~
 a black candle~
 A black candlestick glows with a dim light.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 30 0
 1 40 0 0
 E
@@ -1304,7 +1304,7 @@ incense stick light~
 a stick of incense~
 A plume of smoke drifts from an incense stick in the room.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 20 0
 1 30 0 0
 E
@@ -1317,7 +1317,7 @@ honey jar food~
 a jar of honey~
 Flies are buzzing round a honey jar on the ground.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 3 220 0 0
 E

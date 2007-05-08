@@ -3,19 +3,19 @@ sword diamond edge edged long~
 a diamond-edged sword~
 A long sharp-edged sword is stuck half into a stone.~
 ~
-5 k an 0
+5 k 0 0 0 an 0 0 0 0 0 0 0
 0 6 5 4
 15 1000 1000 0
+E
+writings~
+   You can't make out anything of it, sorry.  Maybe you should ask a sage or a
+wizard for help in this matter...  
+~
 E
 diamond edge edged sword long~
    This is a long slim sword with diamond edges on its silver blade.  On the
 silver blade are some writings in a long forgotten language.  The diamond edges
 of the blade are as sharp as razors and hard as dimonds.  
-~
-E
-writings~
-   You can't make out anything of it, sorry.  Maybe you should ask a sage or a
-wizard for help in this matter...  
 ~
 A
 18 5
@@ -26,7 +26,7 @@ Sword long longsword weapon~
 a fine Longsword~
 A shiny longsword is lying on the ground.~
 ~
-5 k an 0
+5 k 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 3
 8 600 200 0
 #24802
@@ -34,7 +34,7 @@ armor elven chain chainmail~
 an Elven chainmail~
 A nice looking chainmail is lying on the ground here.~
 ~
-9 k ado 0
+9 k 0 0 0 ado 0 0 0 0 0 0 0
 6 0 0 0
 15 800 80 0
 #24803
@@ -42,7 +42,7 @@ mithril elven armor chain~
 a Mithril chainmail~
 A white chainmail is lying on the ground.~
 ~
-9 k ado 0
+9 k 0 0 0 ado 0 0 0 0 0 0 0
 6 0 0 0
 15 1000 85 0
 A
@@ -54,7 +54,7 @@ mithril sword twohanded~
 a Two-handed Mithril Sword~
 A large sword is stuck into the ground.~
 ~
-5 agik an 0
+5 agik 0 0 0 an 0 0 0 0 0 0 0
 0 4 4 3
 18 1000 100 0
 A
@@ -66,7 +66,7 @@ scope telescope large~
 a large telescope~
 A large telescope is fastened on a tree.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #24806
@@ -74,7 +74,7 @@ bow hunting elven~
 an Elven hunting bow~
 A wooden bow has been left here lying on the ground.~
 ~
-5 k an 0
+5 k 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 7
 1 1000 330 0
 A
@@ -84,7 +84,7 @@ cap coif chain elven~
 an Elven Chaincoif~
 A chainmail coif has been left here on the ground.~
 ~
-9 k ae 0
+9 k 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 20 400 20 0
 #24808
@@ -92,7 +92,7 @@ leggings chain elven~
 a pair of Elven Chain leggings~
 Some chain leggings has been left here unguarded.~
 ~
-9 abk af 0
+9 abk 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
 25 750 84 0
 #24809
@@ -100,7 +100,7 @@ green leafgreen potion~
 a Leaf-green potion~
 A green potion is standing on the ground.~
 ~
-10 gk ao 0
+10 gk 0 0 0 ao 0 0 0 0 0 0 0
 30 25 28 15
 1 900 50 0
 #24810
@@ -108,7 +108,7 @@ oak branch staff~
 an oak branch staff~
 A long, grey branch rests heavily on the ground. ~
 ~
-4 gk ao 0
+4 gk 0 0 0 ao 0 0 0 0 0 0 0
 30 15 5 42
 2 500 20 0
 #24811
@@ -116,7 +116,7 @@ potion ocean blue~
 an Ocean-blue potion~
 An ocean-blue potion is resting on the ground.~
 ~
-10 gk ao 0
+10 gk 0 0 0 ao 0 0 0 0 0 0 0
 30 3 1 36
 2 250 50 0
 #24812
@@ -124,7 +124,7 @@ flute mithril~
 a Mithril flute~
 A glittring flute has carelessly been dropped here.~
 ~
-3 gk ao 0
+3 gk 0 0 0 ao 0 0 0 0 0 0 0
 26 4 4 34
 2 1000 40 0
 #24813
@@ -132,7 +132,7 @@ bag green small~
 a small green bag~
 A green bag has been left here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 0 0 0
 1 18 6 0
 #24814
@@ -140,7 +140,7 @@ sack green large~
 a large green sack~
 A green sack has been left here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 100 0 0 0
 2 25 10 0
 #24815
@@ -148,7 +148,7 @@ papyrus paper~
 a papyrus note~
 A papyrus roll is lying on the ground.~
 ~
-16 k ao 0
+16 k 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 15 1 0
 #24816
@@ -156,7 +156,7 @@ swan quill feather pen white~
 a swan-feather quill~
 A small white feather is flying around in mid-air.~
 ~
-21 k ao 0
+21 k 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 #24817
@@ -164,17 +164,17 @@ small jar glass worm~
 a small glass jar with a glowing worm in it~
 A small glass jar has been left on the ground.~
 ~
-1 k ao 0
+1 k 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 2 100 3 0
+E
+worm glowing~
+   The worm looks friendly...  :-)
+~
 E
 small jar glass~
    You see a small perfectly made glass jar.  In the jar you can see a small
 worm glowing brightly.  
-~
-E
-worm glowing~
-   The worm looks friendly...  :-)
 ~
 A
 18 2
@@ -183,7 +183,7 @@ milk skin milk~
 a homemade milk skin~
 A nice looking skin, with white traces of milk on it, has been left here.~
 ~
-17 k a 0
+17 k 0 0 0 a 0 0 0 0 0 0 0
 20 20 10 0
 25 333 10 0
 #24819
@@ -191,7 +191,7 @@ rabbit meat rosted~
 a nicely rosted rabbit~
 A very good smelling rosted rabbit has been left on the ground.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 24 0 0 0
 3 25 2 0
 #24820
@@ -199,7 +199,7 @@ bisquet elven~
 a fine elven bisquet~
 A small bisquet lies on the ground.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 12 0 0 0
 1 5 1 0
 #24821
@@ -207,7 +207,7 @@ cape wool woolen ~
 a warm woolen cape~
 Someone has left something wooly on the ground.~
 ~
-9 0 ack 0
+9 0 0 0 0 ack 0 0 0 0 0 0 0
 9 0 0 0
 10 1000 200 0
 #24822
@@ -215,7 +215,7 @@ ring fire opal~
 a small fire-opal ring ~
 A small glowing ring has been left on the ground.~
 ~
-9 a ab 0
+9 a 0 0 0 ab 0 0 0 0 0 0 0
 10 0 0 0
 10 950 100 0
 E

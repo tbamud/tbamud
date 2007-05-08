@@ -3,7 +3,7 @@ blood ring ancients blood~
 the Blood Ring of the Ancients~
 A bloody red ring is here on the ground.~
 ~
-11 a ab 0
+11 a 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 35
 E
@@ -22,7 +22,7 @@ cape vampyre~
 a vampyre's cape~
 A black cape has been left here.~
 ~
-9 a ak 0
+9 a 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
 10 1 0 40
 E
@@ -41,7 +41,7 @@ ring~
 a glowing green ring~
 A glowing green ring has been dropped here.~
 ~
-11 b ab 0
+11 b 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 25
 E
@@ -57,7 +57,7 @@ blood stone amulet blood~
 a Bloodstone Amulet~
 A strange, red amulet has been left here.~
 ~
-11 a ac 0
+11 a 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 7 1 0 15
 E
@@ -75,7 +75,7 @@ belt jeweled~
 a jeweled belt~
 A beautifully jeweled belt is on the ground.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 10 1 0 5
 E
@@ -91,7 +91,7 @@ ring thumb topaz~
 a topaz thumb ring~
 A bright, jeweled ring has been dropped here.~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 4 1 0 10
 E
@@ -107,7 +107,7 @@ ruby ring~
 a ruby ring~
 A ruby ring is here~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 4 1 0 20
 E
@@ -122,7 +122,7 @@ armband band studded~
 a studded armband~
 A small strap of leather studded with gems has been left here.~
 ~
-11 0 ai 0
+11 0 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
 6 1 0 0
 E
@@ -140,7 +140,7 @@ bracelet shining silver~
 a shining silver bracelet~
 A shiny bracelet is here.~
 ~
-11 0 am 0
+11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 5
 E

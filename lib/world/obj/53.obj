@@ -3,7 +3,7 @@ mace egyptian~
 an egyptian mace~
 A hierogylph-engraved mace has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 7
 10 800 50 0
 E
@@ -15,7 +15,7 @@ robe sand~
 some sand-colored robes~
 Sand-colored robes lie here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
 5 500 40 0
 E
@@ -29,7 +29,7 @@ dirk obsidian~
 an obsidian dirk~
 A flat dirk made of chipped obsidian lies here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 3 3 11
 8 1000 100 0
 E
@@ -45,7 +45,7 @@ turban cloth~
 a dirty cloth turban~
 A dirty cloth turban has been forgotten here.~
 ~
-9 g ae 0
+9 g 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 10 150 25 0
 E
@@ -62,7 +62,7 @@ wrappings cloth~
 some cloth wrappings~
 Long cloth wrappings lie on the ground in a pile.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 15 125 17 0
 E
@@ -74,7 +74,7 @@ bottle fluid~
 a bottle of embalming fluid~
 A dusty bottle lies here on the ground.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 5 33 -1 -1
 5 250 50 0
 E
@@ -86,7 +86,7 @@ jar formaldehyde~
 a jar of formaldehyde~
 A small jar lies here on the ground.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 10 16 -1 -1
 6 300 60 0
 E
@@ -98,7 +98,7 @@ ball fire~
 a small hot ball of fire~
 A little ball of fire hovers in the air before your eyes.~
 ~
-1 agp ao 0
+1 agp 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 10 350 50 0
 E
@@ -114,7 +114,7 @@ scimitar stone~
 a stone scimitar~
 A curved scimitar made of stone rests on the ground.~
 ~
-5 bgmno an 0
+5 bgmno 0 0 0 an 0 0 0 0 0 0 0
 0 4 3 3
 18 1000 75 0
 E
@@ -131,7 +131,7 @@ key stone~
 a stone key~
 A stone key has been dropped here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 15 1 0 0
 E
@@ -143,7 +143,7 @@ sarcophagus stone~
 a mighty stone sarcophagus~
 A mighty stone sarcophagus lies in the center of the tomb.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 15 5309 0
 0 0 0 0
 E
@@ -159,7 +159,7 @@ dust~
 some ancient dust~
 A small pile of dust is being scattered by the breeze.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 1 0
 E
@@ -172,7 +172,7 @@ scarab emerald~
 a small emerald scarab~
 A small emerald scarab lies here on the ground.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 E
@@ -185,7 +185,7 @@ lamp~
 the lamp~
 A small, tarnished, battered lamp has been dropped here.~
 ~
-4 abgk ao 0
+4 abgk 0 0 0 ao 0 0 0 0 0 0 0
 25 5 5 51
 10 250 60 0
 E
@@ -202,7 +202,7 @@ ankh~
 an ankh~
 A small brass ankh has been left here.~
 ~
-9 ik ao 0
+9 ik 0 0 0 ao 0 0 0 0 0 0 0
 7 0 0 0
 9 1000 30 0
 E
@@ -219,7 +219,7 @@ book riddles~
 a book of riddles~
 A medium-sized parchment book with well-worn pages lies here.~
 ~
-2 0 a 0
+2 0 0 0 0 a 0 0 0 0 0 0 0
 21 1 20 21
 15 750 25 0
 E
@@ -233,7 +233,7 @@ paw lion~
 a lion's paw~
 The mighty paw of a lion-like creature has been dropped here.~
 ~
-5 g an 0
+5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 14 5
 20 180 60 0
 E
@@ -251,7 +251,7 @@ parchment answer~
 the answer~
 A small piece of parchment covered in hieroglyphics lies here.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 5317 0 0 0
 1 1 1 0
 E
@@ -264,7 +264,7 @@ treasure~
 the treasure of the sphinx~
 The massive treasure of the sphinx lies here in a big pile.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 23 1000 0 0
 E
@@ -277,7 +277,7 @@ sand pile~
 a pile of sand~
 You see a small pile of sand.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 12 1000 0 0
 E
@@ -290,7 +290,7 @@ curse mummy~
 the curse of the mummy~
 Some fortunate soul has escaped the mummy's curse, for now.~
 ~
-13 cdfgh ao 0
+13 cdfgh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 500 50 0
 E
@@ -308,7 +308,7 @@ elixir small glass~
 a small elixir~
 A small glass elixir lies under your feet.~
 ~
-10 g a 0
+10 g 0 0 0 a 0 0 0 0 0 0 0
 30 39 1 36
 2 1000 50 0
 E
@@ -322,7 +322,7 @@ mask golden~
 a golden mask~
 A beautiful, intricately detailed mask has been forgotten here.~
 ~
-9 g ae 0
+9 g 0 0 0 ae 0 0 0 0 0 0 0
 10 0 0 0
 10 150 75 0
 E
@@ -341,7 +341,7 @@ diamond~
 the diamond~
 .A hidden diamond.~
 ~
-13 0 a 0
+13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 5 1 0 0
 E
@@ -354,7 +354,7 @@ wand sun brass pipe~
 a blazing sun wand~
 A small length of brass pipe shines here with its own light.~
 ~
-3 agp ao 0
+3 agp 0 0 0 ao 0 0 0 0 0 0 0
 25 5 5 27
 10 250 10 0
 E
@@ -372,7 +372,7 @@ ring sandy~
 a sandy-coloured ring~
 A small sandy-coloured ring has been carelessly dropped here.~
 ~
-9 bg ab 0
+9 bg 0 0 0 ab 0 0 0 0 0 0 0
 8 0 0 0
 5 200 75 0
 E
@@ -389,7 +389,7 @@ sphinx golden~
 a small golden sphinx~
 A small golden sphinx glints in the light.~
 ~
-8 g ao 0
+8 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 5 500 75 0
 E
@@ -405,7 +405,7 @@ leggings sphinxian~
 a pair of sphinxian leggings~
 Massive leggings formed from the body of a sphinx stand here.~
 ~
-9 gk af 0
+9 gk 0 0 0 af 0 0 0 0 0 0 0
 10 0 0 0
 20 200 50 0
 E

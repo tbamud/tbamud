@@ -3,7 +3,7 @@ axe dwarven~
 a dwarven axe~
 An axe, obviously of dwarven manufacture, has been left here.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 1 3 6 3
 12 600 60 0
 E
@@ -15,7 +15,7 @@ short sword shortsword dwarven~
 a dwarven shortsword~
 A short sword with a broad blade has been left here.~
 ~
-5 gn an 0
+5 gn 0 0 0 an 0 0 0 0 0 0 0
 5 2 6 11
 8 700 70 0
 E
@@ -31,7 +31,7 @@ dagger dwarven~
 a dwarven dagger~
 A large dagger, almost resembling a small sword, is here.~
 ~
-5 gn an 0
+5 gn 0 0 0 an 0 0 0 0 0 0 0
 5 2 4 11
 1 175 17 0
 A
@@ -41,7 +41,7 @@ pick dwarven~
 a dwarven pick~
 A small pick has been left here, gathering dust.~
 ~
-5 mn an 0
+5 mn 0 0 0 an 0 0 0 0 0 0 0
 0 3 5 10
 4 200 20 0
 E
@@ -53,7 +53,7 @@ hammer dwarven~
 a dwarven hammer~
 A hammer, ready for pounding on armor, worn or not, is here.~
 ~
-5 mo an 0
+5 mo 0 0 0 an 0 0 0 0 0 0 0
 2 2 8 7
 6 300 30 0
 E
@@ -68,7 +68,7 @@ studded leather dwarven~
 a studded leather armor~
 A dwarven made studded leather armor has been thrown in a pile here.~
 ~
-9 g ad 0
+9 g 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 6 160 6 0
 A
@@ -78,7 +78,7 @@ ring mail ringmail dwarven~
 a dwarven ringmail~
 A ringmail has been thrown in a heap here.~
 ~
-9 o ad 0
+9 o 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 2 750 75 0
 #23707
@@ -86,7 +86,7 @@ chain chainmail dwarven~
 a dwarven chainmail~
 A chainmail is here, abandoned.~
 ~
-9 mo ad 0
+9 mo 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 3 850 85 0
 #23708
@@ -94,7 +94,7 @@ shield dwarven kite~
 a dwarven shield~
 A shield, bearing the insignia of the dwarves, has been left here.~
 ~
-9 o aj 0
+9 o 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 2 100 10 0
 E
@@ -107,7 +107,7 @@ buckler dwarven shield~
 a dwarven buckler~
 A small round shield has been thrown here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 2 0 0 0
 1 50 5 0
 E
@@ -120,7 +120,7 @@ gauntlets plate dwarven~
 some plate gauntlets~
 Some plate gauntlets, with the dwarven insignia on them, are here.~
 ~
-9 go ah 0
+9 go 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
 1 250 25 0
 E
@@ -135,7 +135,7 @@ chain sleeves~
 a set of chain sleeves~
 Some chain mail sleeves has been abandoned here.~
 ~
-9 o ai 0
+9 o 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 3 150 15 0
 #23712
@@ -143,7 +143,7 @@ chain leggings~
 a set of chain leggings~
 Some chain mail leggings are here on the ground.~
 ~
-9 o af 0
+9 o 0 0 0 af 0 0 0 0 0 0 0
 7 0 0 0
 3 150 15 0
 #23713
@@ -151,7 +151,7 @@ overalls dwarven dwarf~
 some overalls~
 A pair of workers overalls lie here in an uneven pile.~
 ~
-11 g af 0
+11 g 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 1 2 1 0
 A
@@ -161,7 +161,7 @@ helmet plate dwarven~
 a dwarven plate helmet~
 A helmet bearing the dwarven insignia has been thrown here.~
 ~
-9 o ae 0
+9 o 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 3 150 15 0
 E
@@ -174,7 +174,7 @@ purse traders leather~
 a large leather purse~
 A large leather purse with the dwarven insignia has been thrown here.~
 ~
-15 e a 0
+15 e 0 0 0 a 0 0 0 0 0 0 0
 30 5 -1 0
 5 50 5 0
 E
@@ -187,7 +187,7 @@ pile coins~
 quite a large amount of coins~
 Quite a large amount of coins is lying here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 1 1000 0 0
 #23717
@@ -195,7 +195,7 @@ looking glass dwarven~
 a looking glass~
 A copper tube about 3' long has been left here.~
 ~
-12 g ao 0
+12 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 220 22 0
 E
@@ -208,7 +208,7 @@ skullcap cap iron~
 an iron skullcap~
 A skullcap, made from iron, has been thrown here.~
 ~
-9 m ae 0
+9 m 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
 2 100 10 0
 #23719
@@ -216,7 +216,7 @@ boots leather~
 some soft leather boots~
 Some rather soft leather boots have been left behind.~
 ~
-9 g ag 0
+9 g 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
 2 220 22 0
 A

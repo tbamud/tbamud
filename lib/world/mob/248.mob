@@ -6,7 +6,7 @@ An Elven Guardian is standing here guarding the portal.
    This is a robust built elf in his best years and as far as you can tell.  
 
 ~
-bd d 1000 E
+10 0 0 0 16 0 0 0 1000 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -19,7 +19,7 @@ An Elven Soldier is standing here guarding the path.
    This is an elf in his youth, sent by the chief of the village guards, to
 guard the path from any intruder not wanted here.    
 ~
-bd d 1000 E
+10 0 0 0 16 0 0 0 1000 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -32,7 +32,7 @@ An Elven Guard is walking around, protecting the villagers.
    This is an elf in her youth, sent by the chief of the village guards, to
 guard the village from unwanted intruders.    
 ~
-dg d 1000 E
+72 0 0 0 16 0 0 0 1000 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -44,7 +44,7 @@ A Large Elven weaponsmith is walking behind the counter.
 ~
    You notice a tired look on his face.    
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -56,7 +56,7 @@ A Large Elven armoursmith is walking around behind the counter.
 ~
    You notice a tired look on his face.    
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -68,7 +68,7 @@ A Tiny Elven mage is floating behind the counter.
 ~
    You notice a tired look on his face.    
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -80,7 +80,7 @@ An Elf named Quintor is here counting money behind the counter.
 ~
    You notice a tired look on his face.    
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -92,7 +92,7 @@ A fat Elf is standing behind the bar taking orders.
 ~
    You notice a tired look on his face.    
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -104,7 +104,7 @@ A nice-looking Elf is standing in the reception.
 ~
    You notice a tired look on her face.    
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -119,7 +119,7 @@ By the look of the uniform he is probably the chief of the village guard.  You
 notice some scars on the hands and one on the neck of the elf.  He has
 obviously been in battle in his days.    
 ~
-dg dh 1000 E
+72 0 0 0 16 0 0 0 1000 E
 17 15 0 3d3+170 2d2+2
 170 28900
 4 4 1

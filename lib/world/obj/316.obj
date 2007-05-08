@@ -3,7 +3,7 @@ pie spiced~
 a spiced pie~
 A hot spiced pie is here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 4 0 0 0
 3 7 0 0
 #31604
@@ -11,7 +11,7 @@ muffler silk~
 a silk muffler~
 A strip of silk has been dropped here.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 1
 A
@@ -21,7 +21,7 @@ bandanna red~
 a large red bandanna~
 A red bandanna has been left here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 2 7 0 1
 A
@@ -31,7 +31,7 @@ bandana~
 a blue bandanna~
 A blue bandanna has been left here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 2 5 0 1
 A
@@ -41,7 +41,7 @@ sack burlap~
 a burlap sack~
 A burlap sack has been left here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 100 0 -1 0
 3 350 0 0
 #31608
@@ -49,7 +49,7 @@ jerkin burlap~
 a burlap jerkin~
 A length of burlap has been left here.~
 ~
-9 0 ao 0
+9 0 0 0 0 ao 0 0 0 0 0 0 0
 5 0 0 0
 6 12 0 1
 #31609
@@ -57,7 +57,7 @@ dagger dark~
 a dark dagger~
 A dark-looking dagger has been dropped here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 3 4 11
 9 25 0 9
 #31610
@@ -65,7 +65,7 @@ dagger ruby~
 a ruby-hilted dagger~
 An exquisitely crafted dagger has been left here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 3 3 11
 7 56 0 5
 #31611
@@ -73,7 +73,7 @@ shades~
 a pair of dark-tinted shades~
 Someone dropped their shades here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 3 15 0 1
 A
@@ -83,7 +83,7 @@ glasses read~
 a pair of reading glasses~
 A pair of glasses are here - be careful, don't step on them!~
 ~
-9 p ae 0
+9 p 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
 3 75 0 1
 A
@@ -93,7 +93,7 @@ ring emerald carved~
 a carved emerald ring~
 An emerald ring has been left here.~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 3 34 0 12
 A
@@ -105,7 +105,7 @@ band golden ring~
 a golden band~
 A beautiful gold ring has been dropped here.~
 ~
-9 0 ab 0
+9 0 0 0 0 ab 0 0 0 0 0 0 0
 2 0 0 0
 3 56 0 1
 #31615
@@ -113,7 +113,7 @@ ring silver wide~
 a wide silver ring~
 A silver ring has been dropped here.~
 ~
-9 0 ab 0
+9 0 0 0 0 ab 0 0 0 0 0 0 0
 3 0 0 0
 3 21 0 1
 #31616
@@ -121,7 +121,7 @@ water cup water~
 a cup~
 A cup has been left here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 3 0 0 0
 3 3 0 0
 #31617
@@ -129,7 +129,7 @@ water goblet water~
 a goblet~
 A goblet is here on the ground.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 5 0 0 0
 4 10 0 0
 #31618
@@ -137,7 +137,7 @@ water grail water~
 a grail~
 A grail has been left on the ground.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 8 0 0 0
 3 21 0 0
 #31619
@@ -145,7 +145,7 @@ potion~
 a glowing potion of invisibility~
 A glowing potion of invisibility~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 1 29 -1 -1
 2 500 0 0
 #31620
@@ -153,7 +153,7 @@ potion green bright~
 a bright green potion~
 A bright green potion is on the ground.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 1 39 1 1
 3 66 0 0
 #31621
@@ -161,7 +161,7 @@ potion cure blind~
 a potion of cure blindness~
 A potion of cure blindness is fizzing here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 1 14 -1 -1
 3 700 0 0
 #31622
@@ -169,7 +169,7 @@ staff magi glowing~
 the Staff of the Magi~
 A glowing staff lays here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 3 8 12
 6 233 0 25
 E
@@ -186,7 +186,7 @@ hat mage's runed~
 a runed mage's hat~
 A runed hat lies on the ground.~
 ~
-9 b ae 0
+9 b 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
 6 555 0 5
 E
@@ -203,7 +203,7 @@ sword short encrypted~
 an encrypted short sword~
 A small glowing sword has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 4 3 3
 10 342 0 13
 E
@@ -216,7 +216,7 @@ dagger glowing~
 a glowing dagger~
 A glowing dagger has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 3
 6 386 0 20
 E
@@ -231,7 +231,7 @@ robe magi~
 the Robe of the Magi~
 A crumpled pile of cloth lies here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
 11 222 0 17
 E
@@ -245,7 +245,7 @@ sash magician's~
 a Magician's Sash~
 A length of cloth lies here.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
 6 177 0 12
 E
@@ -261,7 +261,7 @@ a vellum scroll~
 A vellum scroll has been left here.~
 It glows with its own bright light, almost as if it were alive.
 ~
-2 a ao 0
+2 a 0 0 0 ao 0 0 0 0 0 0 0
 5 1 16 19
 7 145 0 0
 #31629
@@ -270,7 +270,7 @@ a frayed scroll~
 A frayed scroll has been dropped here.~
 Its edges seem almost as if they might crumble with the slightest touch.
 ~
-2 0 ao 0
+2 0 0 0 0 ao 0 0 0 0 0 0 0
 5 26 -1 -1
 9 177 0 0
 #31630
@@ -279,7 +279,7 @@ a tightly bound scroll~
 A tightly bound scroll has been dropped here.~
 A thin piece of string secures this scroll, keeping it tightly bound.
 ~
-2 0 ao 0
+2 0 0 0 0 ao 0 0 0 0 0 0 0
 5 -1 -1 -1
 8 123 0 0
 #31631
@@ -287,7 +287,7 @@ boots sneaking~
 the boots of sneaking~
 A pair of sneaking boots have been left here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 10 455 0 15
 E
@@ -303,7 +303,7 @@ cloak shadows~
 the cloak of shadows~
 A shadowy cloak has been dropped here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
 11 565 0 10
 E
@@ -316,7 +316,7 @@ hood identity hidden~
 the hood of hidden identity~
 A dark hood has been left here.~
 ~
-9 0 ace 0
+9 0 0 0 0 ace 0 0 0 0 0 0 0
 3 0 0 0
 7 777 0 15
 E
@@ -329,7 +329,7 @@ gloves snatching~
 the gloves of snatching~
 A pair of thieven gloves have been left here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 4 0 0 0
 4 644 0 10
 E
@@ -344,7 +344,7 @@ face plate darkened~
 a darkened face plate~
 A darkened face plate lies discarded on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 6 375 0 10
 E
@@ -360,7 +360,7 @@ dirk snake blade~
 a Snake-blade dirk~
 A strange dirk with a curving blade has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 7 11
 8 877 0 10
 E
@@ -375,7 +375,7 @@ sword short glowing~
 a glowing short sword~
 A glowing short sword has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 5 5 11
 12 267 0 30
 E
@@ -392,7 +392,7 @@ beer tankard heavy beer~
 a heavy tankard~
 A heavy tankard has been dropped here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 30 30 1 0
 35 5 0 0
 E
@@ -405,7 +405,7 @@ sword short blade warrior's companion~
 the Warrior's Companion~
 A small sword with a wolf's head pommel has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 3 5 14
 11 460 0 10
 E
@@ -422,7 +422,7 @@ sword deathbringer~
 DeathBringer~
 A huge sword made of blazing gold has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 8 3
 14 800 0 25
 E
@@ -439,7 +439,7 @@ sword bastard~
 a huge bastard sword~
 A huge bastard sword lies on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 5 8 14
 18 400 0 25
 E
@@ -458,7 +458,7 @@ knuckles brass~
 a pair of brass knuckles~
 A pair of brass knuckles have been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 2 5 5 7
 7 210 0 30
 E
@@ -477,7 +477,7 @@ bola~
 a black bola~
 A black bola has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 7 5
 12 460 0 10
 E
@@ -492,7 +492,7 @@ club death~
 a huge club, Death~
 A very huge and very nasty looking club has been dropped here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 5 8 9
 25 750 0 25
 E
@@ -512,7 +512,7 @@ helm horns~
 the helm of horns~
 A huge helm with two bull horns on top has been left here.~
 ~
-9 a ae 0
+9 a 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 13 477 0 10
 E
@@ -527,7 +527,7 @@ shield agate glowing~
 a glowing agate shield~
 A glowing agate shield has been discarded here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 9 0 0 0
 8 400 0 10
 E
@@ -544,7 +544,7 @@ buckler black stone blackstone~
 a blackstone buckler~
 A blackstone buckler has been left on the ground.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 10 0 0 0
 12 650 0 20
 E
@@ -558,7 +558,7 @@ plate chest crested eagle~
 an eagle crested chest plate~
 A chest plate bearing the crest of an eagle has been left here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 10 450 0 10
 E
@@ -573,7 +573,7 @@ arm guard spiked~
 a set of spiked arm guards~
 A set of arm guards have been left here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 7 650 0 15
 E
@@ -590,7 +590,7 @@ diamond-chip chip gauntlets~
 a pair of diamond-chip gauntlets~
 A pair of gauntlets lie on the ground.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
 9 777 0 20
 E
@@ -608,7 +608,7 @@ Someone left the Book of Krolar here.~
 The Holy Book of Krolar emenates a power, a presence unmatched by any
 other book you ever have held.    
 ~
-2 0 ao 0
+2 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 3 22
 7 389 0 10
 #31652
@@ -616,7 +616,7 @@ mace~
 a glowing mace~
 A mace infused with the power of a God has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 7 5
 8 300 0 10
 E
@@ -636,7 +636,7 @@ sceptre holy~
 Krolar's Holy Sceptre~
 Someone in their haste has dropped their sceptre.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 3 5 8 6
 12 321 0 25
 E
@@ -655,7 +655,7 @@ whip power~
 the Power Whip~
 A whip glowing with energy lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 2
 5 997 0 20
 E
@@ -674,7 +674,7 @@ A book has been dropped here.~
 You can only see one word on the interior of this book - only one page
 fills it's entire content.    
 ~
-2 0 ao 0
+2 0 0 0 0 ao 0 0 0 0 0 0 0
 1 47 33 43
 4 278 0 1
 #31656
@@ -682,7 +682,7 @@ amulet sacred~
 a sacred amulet~
 A small clear stone on a chain has been left here.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 5 567 0 10
 E
@@ -699,7 +699,7 @@ wristlet glory~
 the Wristlet of Glory~
 A small wristlet has been left here.~
 ~
-11 0 am 0
+11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 5 340 0 10
 E
@@ -714,7 +714,7 @@ ring krolar holy~
 Krolar's Holy Stone~
 A small holy, red ring has been left here.~
 ~
-11 0 aim 0
+11 0 0 0 0 aim 0 0 0 0 0 0 0
 0 0 0 0
 3 200 0 14
 E
@@ -730,7 +730,7 @@ robe yellow~
 a yellow robe~
 A yellow robe has been dropped here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
 9 699 0 10
 E
@@ -742,7 +742,7 @@ robe bright~
 a bright robe~
 A bright robe lies crumpled in a corner.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
 9 900 0 20
 E
@@ -759,7 +759,7 @@ robe white~
 a white robe~
 A beautiful white robe has been left here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
 9 235 0 20
 E
@@ -778,7 +778,7 @@ shield rose~
 a grey shield emblazoned with the Black Rose~
 A grey shield of the Deathknight has been left here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 9 0 0 0
 12 766 0 20
 E
@@ -797,7 +797,7 @@ armor body black onyx~
 some black onyx body armor~
 Someone left their black onyx body armor here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
 22 890 0 25
 E
@@ -816,7 +816,7 @@ cape rose black~
 the Black Rose Cape~
 Some Deathknight left their cape laying here.~
 ~
-9 q ak 0
+9 q 0 0 0 ak 0 0 0 0 0 0 0
 6 0 0 0
 8 666 0 20
 E
@@ -833,7 +833,7 @@ sword rose black~
 the Sword of the Black Rose~
 A Deathknight has left their sword here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 3
 9 600 0 20
 E
@@ -850,7 +850,7 @@ mace nail studded~
 a nail-studded mace~
 A mean-looking mace with nails studding its length has been dropped here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 2 7 7
 10 300 0 10
 E
@@ -863,7 +863,7 @@ water fountain mermaid water~
 a beautiful mermaid fountain~
 An inticately carved fountain with a naked mermaid in the center sprays a fine geyser of clear water into its basin.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 505 0 0 0
 E

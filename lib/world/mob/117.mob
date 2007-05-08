@@ -7,7 +7,7 @@ Tower Guard Holden is here inspecting visitors.
 visitor into the tower before they enter for security.  He is rather satisfied
 with his duties now and carries an arrogant smirk.  
 ~
-bdegmn kn 150 E
+12378 0 0 0 0 0 0 0 150 E
 15 15 1 3d3+150 2d2+2
 300 25000
 8 8 1
@@ -23,7 +23,7 @@ inventories for security here.  The ladies (and a few men) seem to flock to him
 for inspection.  He stands proud and tall for the safety of the people of Los
 Torres.  
 ~
-bdegmn n 175 E
+12378 0 0 0 0 0 0 0 175 E
 15 15 1 3d3+150 2d2+2
 325 24000
 8 8 1
@@ -38,7 +38,7 @@ A citizen stands here.
 not want to be bothered, she has many, many errands to run.  She looks in her
 purse, counts her money and checks for her ID cards.  
 ~
-dg 0 25 E
+72 0 0 0 0 0 0 0 25 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -53,7 +53,7 @@ the leaves and be unseen.  He crunches on the twigs making it a dead giveaway as
 to where he is.  He has been ordered by the government to kidnap any people who
 are planning to attack them.
 ~
-cdefgn k -200 E
+8316 0 0 0 0 0 0 0 -200 E
 13 16 2 2d2+130 2d2+2
 200 18000
 8 8 1
@@ -68,7 +68,7 @@ seems very busy, but he is very happy doing what he does. He has brown hair and
 is very short. He is also a bit on the pudgy side as well, though he doesn't
 seem to care. 
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -84,7 +84,7 @@ all messed up.  She must be drunk.  She is wearing a white dress with some red
 and purple stains on it.  She lazily will take her customer's orders and she
 seems to have an obsession with lace, due to the decor in the room.  
 ~
-bdnopr 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -100,7 +100,7 @@ white tie and brown pants.  He has brown hair and seems to be very tall.  He has
 a scar in his left cheek that looks like a slash from a weapon or a claw of
 sorts.  
 ~
-bdo hp 0 E
+16394 0 0 0 65536 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 4 8 1
@@ -116,7 +116,7 @@ and ask him questions on 'What does this armor do' and 'How much are these
 boots'.  He is wearing a black robe over what seems to be flowing black pants
 and a black shirt.  
 ~
-bdg d 0 E
+74 0 0 0 16 0 0 0 0 E
 20 14 -2 4d4+200 4d5+4
 0 0
 8 8 1
@@ -134,7 +134,7 @@ sniping skills as well as some interesting close up combat technique to boot.
 She is mumbling to herself as she carefully watches to anyone opposing the
 government.  
 ~
-bdel s -200 E
+2074 0 0 0 524288 0 0 0 -200 E
 14 16 1 3d2+140 2d4+2
 450 21000
 8 8 2
@@ -150,7 +150,7 @@ orders to her assassins from the government and checks over her prisoner.  She
 has long black hair that flies out from behind her veiled head.  She has a very
 tall and skinny figure and she stands with her hand on her hip.  
 ~
-bdeln dfk -200 E
+10266 0 0 0 80 0 0 0 -200 E
 17 15 0 3d3+170 2d2+2
 1000 29500
 8 8 2
@@ -166,7 +166,7 @@ in the second tower, is covered in dirt, with ragged clothing and a bruised
 face.  He has a stubbled beard growing from lack of grooming and he smells like
 a skunk in an exhaust pipe!  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 4 8 1
@@ -183,7 +183,7 @@ deep end easily when someone comments on one of his flaws.  He snorts loudly at
 random people for a laugh, and makes lewd gestures at those who have
 disrespected him before.  
 ~
-bd 0 -50 E
+10 0 0 0 0 0 0 0 -50 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -199,7 +199,7 @@ brown overcoat and pink dress are all tattered, torn and wet.  Her face is
 covered in dirt, though it is hard to tell through her bushy medium length hair.
 
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
 120 12500
 8 8 2
@@ -216,7 +216,7 @@ trustworthy or not.  He wears a dark green suit as he works his busy day.  His
 hair is blonde with a white streak of hair down the right.  His eyes are colored
 differentyly, one being brown and one being hazel.  
 ~
-bde 0 -100 E
+26 0 0 0 0 0 0 0 -100 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -230,7 +230,7 @@ The Government Official Gertrude sneers wickedly as she works.
 interest instead of who she is supposed to represent.  She constantly sends off
 any messages of complaint to her, and is blatantly corrupt.  
 ~
-bd 0 -150 E
+10 0 0 0 0 0 0 0 -150 E
 14 16 1 2d2+140 2d2+2
 140 17500
 8 8 2
@@ -245,7 +245,7 @@ pink buttoned shirt and a matching skirt.  She is humming a song that she made
 up five seconds ago and its rather irritating.  She seems like she would be
 easily persuaded to believe one way or the other even if its unjust.  
 ~
-bdln 0 0 E
+10250 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 11500
 8 8 2
@@ -262,7 +262,7 @@ a red suit and has medium length black hair.  He always wears a rather fake grin
 as he meets with people.  He tends to favor those who agree with him, and maybe
 he's a bit irrational when it comes to those who don't...  
 ~
-bdeln 0 -250 E
+10266 0 0 0 0 0 0 0 -250 E
 18 14 0 3d3+180 3d3+3
 250 32400
 8 8 1
@@ -279,7 +279,7 @@ very short brown hair with deep blue eyes.  He is scrambling to save the city
 from the council, though he looks like he could use some help.  Maybe you should
 say hello to him?  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -295,7 +295,7 @@ waistline.  He is wearing a standard black tuxedo and he has his arms folded,
 stepping right in front of the path so that no one will go through.  He has a
 bald head and is also wearing a pair of black sunglasses.  
 ~
-bde 0 0 E
+26 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -315,7 +315,7 @@ several chains hanging from various spots.  The pants are flared a lot at the
 bottom, so much that it totally covers her feet.  She has long blonde hair and
 sky blue colored eyes.  Her lips are the scarlet of her robe.  
 ~
-bdegnopr defhk 0 E
+188506 0 0 0 112 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -330,7 +330,7 @@ The artist paints another picture.
    The artist wears a paint covered smock and a black beret.  He stands in
 disgust trying to think of ideas for his next masterpiece.  
 ~
-bd 0 50 E
+10 0 0 0 0 0 0 0 50 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -344,7 +344,7 @@ A journalist wanders around asking people questions.
 sheet of questions to ask the citizens of Los Torres.  The questions mainly deal
 with the government, though most people seem unwilling to answer them.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -358,7 +358,7 @@ A really fat chef stands behind the counter chopping onions.
 curly mustache.  He is wearing a big poofy hat that chefs normally wear and a
 big white apron that somehow manages to fit around his grandiose waist.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -371,7 +371,7 @@ A crying man mopes on one of the pews about how he lost his wedding ring.
    The man has totally wrinkled clothing and bangs his fist on the pew
 repeatedly for some reason, making all the citizens nearby uncomfortable.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -384,7 +384,7 @@ The Government Official Johanes works on his papers.
 ~
    He looks busy and self important.
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -398,7 +398,7 @@ The maid stands here doing laundry.
 She carries a bunch of towels in her hand and is busy doing the laundrywork to
 care about anything else.  
 ~
-bd 0 150 E
+10 0 0 0 0 0 0 0 150 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -413,7 +413,7 @@ He wears a white uniform with a black belt tied around the waist.  He is
 currently practicing one of his forms right now with his eyes closed, thinking
 about what he is doing.  
 ~
-bd f 100 E
+10 0 0 0 64 0 0 0 100 E
 15 15 1 3d3+150 3d2+3
 150 23500
 8 8 1
@@ -429,7 +429,7 @@ eyes.  She stands aware, looking t the air.  She seems very conscious about
 having dust in the room, as she keept slapping them out of the air with a
 feather duster.  
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 2
@@ -442,7 +442,7 @@ Little Alex is here running around in circles.
    The confused little boy named Alex is bored, so he'll just run around in
 circles now.  H is wearing blue overalls and a red striped T-shirt.  
 ~
-bcd 0 0 E
+14 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -457,7 +457,7 @@ corner quietly.  She is the only one of the children that is behaving nicely.
 She has medium length brown heair and cat-shaped black glasses.  She is wearing
 a brown dress with pockets at the front.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -471,7 +471,7 @@ The teacher stands here cleaning up after her kids.
 has a green dress on and she is aggravated by the mess that all of her students
 had made when they left.  
 ~
-bd 0 50 E
+10 0 0 0 0 0 0 0 50 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 2
@@ -485,7 +485,7 @@ The janitor kneels here, cleaning something off the walls.
 T-shirt and blue jeans, and seems very cranky.  HE is unhappy that he has to
 clean up the messes that people make on the walls.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1

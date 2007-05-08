@@ -3,7 +3,7 @@ small boat dingy~
 a small boat~
 A small boat is tied up here.~
 ~
-22 0 a 0
+22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 100 10 0
 E
@@ -32,7 +32,7 @@ An old wooden sign is stuck in the ground here.~
 @y        | |
 @y         \|@n
 ~
-16 0 0 0
+16 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #8303
@@ -40,7 +40,7 @@ mop old~
 an old mop~
 A dirty, old mop lies here in a puddle of its own filth.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 5 5 5 7
 3 1 1 0
 #8304
@@ -48,7 +48,7 @@ rations iron~
 some iron rations~
 A packet of iron rations lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 2 1 0
 E
@@ -62,7 +62,7 @@ key golden small~
 a small golden key~
 A small key made of solid gold lies here.~
 ~
-18 c ac 0
+18 c 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 0
 #8306
@@ -70,7 +70,7 @@ crate wooden~
 a large crate~
 A large, wooden crate stands here.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 1000 1 -1 0
 0 0 0 0
 E
@@ -82,7 +82,7 @@ key iron large~
 an iron key~
 A large, iron key lies here.~
 ~
-18 c ac 0
+18 c 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 0
 #8308
@@ -90,7 +90,7 @@ money gold cash coins~
 a huge mound of gold coins~
 A huge mound of gold coins is lying here.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 842 0 0 0
 10 842 0 0
 #8309
@@ -98,7 +98,7 @@ key small steel~
 a small, steel key~
 A small, steel key lies here.~
 ~
-18 c ac 0
+18 c 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #8312
@@ -106,7 +106,7 @@ saber sabre pirate sword~
 a pirate's saber~
 A pirate has left his saber here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 3 3 10 3
 3 500 10 0
 #8313
@@ -114,7 +114,7 @@ eyepatch patch pirate~
 an eyepatch~
 Someone is missing an eye, and also an eyepatch, since it is lying here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
 1 10 1 0
 A
@@ -124,7 +124,7 @@ barrel wooden cask~
 a large barrel~
 A large barrel stands here.~
 ~
-23 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 1 0
 505 0 0 0
 E
@@ -137,7 +137,7 @@ bucket tar oil~
 a bucket of steaming tar~
 A bucket of steaming tar sits here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 20 50 5 0
 T 8315
@@ -153,7 +153,7 @@ bucket tar oil~
 a bucket of tar~
 A bucket of tar sits here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 20 1 1 0
 E
@@ -166,7 +166,7 @@ tar clump spill~
 a clump of tar~
 Someone has carelessly spilled a clump of tar here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 T 8317
@@ -180,7 +180,7 @@ hook pirate~
 a pirate's hook~
 A steel hook, often used to replace a hand, lies here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 3 1 10 8
 2 100 10 0
 A
@@ -190,7 +190,7 @@ crab meat~
 some crab meat~
 A piece of crab meat is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 25 1 0
 #8320
@@ -198,7 +198,7 @@ life boat dingy~
 a life boat~
 A life boat hangs from the side of the ship here.~
 ~
-22 0 a 0
+22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 10 100 10 0
 T 8320
@@ -207,7 +207,7 @@ dice die chinchirorin bones~
 @yA set of @o@gChinchirorin@n @ydice@n~
 @yA set of @o@gChinchirorin@n @ydice lie here, waiting for someone to roll them.@n~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 200 10 0
 T 8397
@@ -216,7 +216,7 @@ fish~
 a small fish~
 A small fish is lying here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 1 10 1 0
 $~

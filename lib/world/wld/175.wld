@@ -16,7 +16,7 @@ Notes        : This is not an easy zone. The riddles are very tough and I doubt
                guesses them though.
 Links        : 01s, 25w
 ~
-175 dj 0
+175 520 0 0 0 0
 D5
 ~
 ~
@@ -28,7 +28,7 @@ A Gravel Path~
 east.  To the north a large complex is visible, with a tower peaking into the
 sky to the northwest.  To the south lies a granite castle.    
 ~
-175 0 0
+175 0 0 0 0 0
 D0
 ~
 ~
@@ -44,7 +44,7 @@ A Dead End~
 a cliff.  But upon closer examination, the cliff is revealed to be part of a
 wall that extends to the east and west as far as the eye can see.    
 ~
-175 0 0
+175 0 0 0 0 0
 D0
    Looking closer at the sheer wall before you, it becomes obvious that there
 is a finely constructed door here, designed to merge seamlessly into the
@@ -64,7 +64,7 @@ tapestries hanging from the walls.  To the west lies a staircase, and to the
 east you can hear the gurgling of water.  On the north wall hangs a curious
 quicksilver mirror.    
 ~
-175 d 0
+175 8 0 0 0 0
 D0
 The mirror is a grey stone frame the size of a door set against the wall. Within it, a vertical pool of quicksilver ripples gently, held in place by some magical means.
 ~
@@ -102,7 +102,7 @@ water into the hallway and sends it flowing to the east, where it quickly
 becomes rapid and hostile.  On the north wall is a large tapestry, which
 appears suspiciously door-like.    
 ~
-175 d 0
+175 8 0 0 0 0
 D0
 The brilliant tapestry is a rich and colorful depiction of a violent clash of four armies, each led by it's own Wizardly commander. It is so realistic, it could almost be moving.
 
@@ -127,7 +127,7 @@ A Tight Space~
 smells of moist, moldy stone.  The only thing of intrest is an inscription on
 the wall.    
 ~
-175 adi 0
+175 265 0 0 0 0
 D2
 From behind, the tapestry is merly thick cloth.
 
@@ -141,7 +141,7 @@ The River Quickens~
 to make your way back upstream.  The brick walls around you become coarse and
 poorly cut as you move downstream.    
 ~
-175 dg 6
+175 72 0 0 0 0
 D1
 To the east, the indoor river turns towards the north.
 ~
@@ -154,7 +154,7 @@ A Bend in the River~
 continue to deteriorate closer towards that of a cavern, and you can see what
 looks like daylight ahead to the north.    
 ~
-175 d 0
+175 8 0 0 0 0
 D0
 The river continues on to the north, and you see daylight ahead.
 ~
@@ -167,7 +167,7 @@ The River Continues~
 see what looks like the exit of a cave's mouth up ahead.  The walls have
 degenerated into uncut stone.    
 ~
-175 d 6
+175 8 0 0 0 0
 D0
 To the north lies the exit from the hallway (tunnel?) you are in, and the river turns to the east.
 ~
@@ -180,7 +180,7 @@ A Bend to the East~
 However, the banks of the river are too steep to climb, and you are forced
 along a tight bend to the east.    
 ~
-175 0 6
+175 0 0 0 0 0
 D1
 To the east, the river pours into a lake.
 ~
@@ -193,7 +193,7 @@ Out on the Lake~
 shimmering white light, and far to the east you can see a door-sized mirror
 hovering vertically above the water.    
 ~
-175 0 6
+175 0 0 0 0 0
 D0
 To the north the flickering white light grows stronger. It seems to be congregating about a point.
 ~
@@ -216,7 +216,7 @@ Beneath you, water laps gently through the void of brightness, and to the south
 you hear the sounds of a lake.  To the west, you can hear the muffled bickering
 of two guards.    
 ~
-175 0 6
+175 0 0 0 0 0
 D2
 ~
 ~
@@ -233,7 +233,7 @@ The Mirror on the Lake~
 symbols.  Within the frame ripples quicksilver, and your warped reflection
 stares back at you.  The mirror could be easily walked through.    
 ~
-175 0 6
+175 0 0 0 0 0
 D2
 The mirror completely restricts your sight to what may possibly lie beyond.
 ~
@@ -253,7 +253,7 @@ attached, pure blackness inside.  The east is the inverse of the first, a
 carved ivory frame with glowing white light.  The south has a grey stone frame,
 and liquid quicksilver ripples gently on the surface.    
 ~
-175 d 0
+175 8 0 0 0 0
 D1
 To the east, a doorframe surrounds a flat, flickering window of white light.
 ~
@@ -277,7 +277,7 @@ The Flowing River~
    The river soon turns out to become to powerful an opponent to battle, and it
 unceremoniously forces you back to the east.    
 ~
-175 0 6
+175 0 0 0 0 0
 D1
 The lake opens before you to the east.
 ~
@@ -290,7 +290,7 @@ Inside the Mirror~
 Beneath your feet, up above, and to either side all you can see is your own
 reflection, warped into odd contorted shapes.    
 ~
-175 d 0
+175 8 0 0 0 0
 D2
 To the south, the mirror thins and the faint impression of a room can be seen behind the reflection.
 ~
@@ -303,7 +303,7 @@ The Base of the Stairs~
 leads upwards into the level above, and a small sign is attached to the rail.
 To the east you can see the entrance to the wizards mansion.    
 ~
-175 0 0
+175 0 0 0 0 0
 D1
 The entrance to the Wizard's Mansion lies to the east.
 ~
@@ -329,7 +329,7 @@ occasional blood red splash of a rug or a tapestry.  There is a desk to the west
 that you could easily fit behind.  The stairwell continues up before coming to
 an abrubt halt at the ceiling.  
 ~
-175 d 0
+175 8 0 0 0 0
 D3
 ~
 ~
@@ -364,7 +364,7 @@ Behind the Desk~
    The desk is cluttered with papers and records, but nothing is of exceptional
 notice here.    
 ~
-175 d 0
+175 8 0 0 0 0
 D1
 ~
 ~
@@ -379,7 +379,7 @@ to see by.  Before you lies a rock carved with what looks like crude poetry.
 You see no reason to explore the desert.  It's absolutely empty as far as the
 eye can see, and probably further.    
 ~
-175 d 0
+175 8 0 0 0 0
 D0
 ~
 ~
@@ -406,6 +406,13 @@ You, my friend, cannot come through."
 porthole~
 0 0 17517
 E
+look porthole~
+   The inscription on the porthole reads:
+
+"This way is now barred to you,
+You, my friend, cannot come through."
+~
+E
 rock stone poetry~
    "_____ smother light,
 Black bleak land,
@@ -423,13 +430,6 @@ I call it back!"
  
 - Trickster
 ~
-E
-look porthole~
-   The inscription on the porthole reads:
-
-"This way is now barred to you,
-You, my friend, cannot come through."
-~
 S
 T 17506
 T 17503
@@ -441,7 +441,7 @@ stands in the center of the room, and several huge smithy weapons adorn the
 walls.  The chimeny to the forge looks safe to climb, but a large grate blocks
 your path upwards.    
 ~
-175 0 0
+175 0 0 0 0 0
 D4
 The grate is huge, thick and immovable. There is writing here:
 
@@ -454,12 +454,6 @@ And you will find they be of like kind."
 grate~
 0 0 17521
 E
-anvil~
-   Upon close inspection you find the following is engraved into the metal:
-
-"abcdefghijklmnopqrstuvwkyz."
-~
-E
 grate door plaque poetry~
    The grate is huge, thick and immovable.  There is writing here:
 
@@ -467,6 +461,12 @@ grate door plaque poetry~
 Five keys you need to find,
 Look for them all in your forge's anvil,
 And you will find they be of like kind."
+~
+E
+anvil~
+   Upon close inspection you find the following is engraved into the metal:
+
+"abcdefghijklmnopqrstuvwkyz."
 ~
 S
 T 17508
@@ -476,7 +476,7 @@ The Windy Chimney~
 rushing air howls and wails, pulling and pushing at anything not fixed to the
 wall.  Above you is another grate, with a plaque fixed in the center.    
 ~
-175 0 0
+175 0 0 0 0 0
 D5
 The grate can only open inwards, and if it did so it would crush you. Probably better not to mess with it.
 
@@ -500,7 +500,7 @@ see nothing whatsoever beyond the outer limit of your light's glow.  But to the
 south you can hear an echo, as if there is more space in that direction than in
 the others.    
 ~
-175 ad 0
+175 9 0 0 0 0
 D1
 To the east the darkness grows more solid. An echo can be heard far off in this direction.
 
@@ -524,7 +524,7 @@ see nothing whatsoever beyond the outer limit of your light's glow.  But to the
 north you can hear an echo, as if there is more space in that direction than in
 the others.    
 ~
-175 ad 0
+175 9 0 0 0 0
 D0
 ~
 ~
@@ -537,7 +537,7 @@ desert.  A small fire burns giving off light, and comfortable pillows lie
 scattered across the ground.  There is a desk in one corner, with papers and
 pens scattered across it.    
 ~
-175 0 0
+175 0 0 0 0 0
 D1
 ~
 darkness~
@@ -549,7 +549,7 @@ Before a Cliff Face~
 above you, too steep to climb.  It stretches to the east and west just north of
 the path.    
 ~
-175 0 0
+175 0 0 0 0 0
 D1
 ~
 ~
@@ -561,7 +561,7 @@ Before a Cliff Face~
 field to the south.  A turn in the path can be seen to the east while the city
 of Elcardo is visible to the west.    
 ~
-175 0 0
+175 0 0 0 0 0
 D1
 ~
 ~

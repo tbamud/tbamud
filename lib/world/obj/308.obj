@@ -3,7 +3,7 @@ key old brittle~
 an old and brittle key~
 An old and brittle key lies on the ground.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 1
 #30801
@@ -11,7 +11,7 @@ flail baron~
 the Baron's Flail~
 A strange, silver flail has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 6 8 10
 7 560 0 25
 A
@@ -25,7 +25,7 @@ adornment holy white shroud cloth~
 a holy adornment~
 A brilliant white shroud of cloth has been dropped here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
 6 10 0 23
 A
@@ -39,7 +39,7 @@ bracelet white bead~
 a white bead bracelet~
 A white bead bracelet has been left here.~
 ~
-11 0 am 0
+11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
 5 10 0 20
 A
@@ -53,7 +53,7 @@ pewter cross~
 a pewter cross~
 An earring in the shape of a pewter cross has been left here.~
 ~
-11 0 ao 0
+11 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 21
 A
@@ -67,7 +67,7 @@ gown flowing white~
 a flowing white gown~
 A pile of thin white fabric lies upon the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
 3 10 0 24
 A
@@ -79,7 +79,7 @@ crest cailveh ring~
 the Crest of Cailveh~
 A silver ring lies upon the ground.~
 ~
-11 0 ab 0
+11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 21
 A
@@ -93,7 +93,7 @@ sandals scholar's~
 some scholar's sandals~
 Some scholar's sandals lie upon the ground.~
 ~
-11 0 ag 0
+11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 5 10 0 27
 A
@@ -107,7 +107,7 @@ book warding~
 the Book of Warding~
 A glowing book lies upon the ground.~
 ~
-2 0 ao 0
+2 0 0 0 0 ao 0 0 0 0 0 0 0
 30 3 1 24
 4 10 0 0
 #30809
@@ -115,7 +115,7 @@ paper wadded piece~
 a wadded piece of paper~
 A wadded piece of paper lies crumpled on the ground.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 1
 #30810
@@ -123,7 +123,7 @@ ring diamond sparkling~
 a sparkling diamond~
 A diamond ring~
 ~
-11 0 abo 0
+11 0 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
 2 10 0 12
 A
@@ -137,7 +137,7 @@ maul two handed~
 a two-handed maul~
 A two-handed maul has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 8 8 9
 9 10 0 21
 A
@@ -149,7 +149,7 @@ shield silver face~
 a silver face shield~
 A silver face shield has been left here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 4 10 0 24
 A
@@ -163,7 +163,7 @@ plates set scuffed thigh~
 a set of scuffed thigh plates~
 A set of scuffed thigh plates have been tossed aside.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 8 0 0 0
 7 10 0 17
 A
@@ -177,7 +177,7 @@ belt weapons tarnished~
 a tarnished weapons belt~
 A tarnished weapons belt has been dropped here.~
 ~
-15 0 ao 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 150 0 -1 0
 4 10 0 23
 A
@@ -191,7 +191,7 @@ tie waist beaded~
 a white beaded waist tie~
 A white beaded waist tie has been left here.~
 ~
-11 0 al 0
+11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
 3 10 0 21
 A
@@ -205,7 +205,7 @@ potion refresh~
 a refreshing potion~
 A potion lies upon the ground, untouched.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 10 1 17 35
 2 103 0 1
 #30817
@@ -213,7 +213,7 @@ potion curing~
 a potion of curing~
 A potion lies upon the ground, untouched.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 10 3 39 18
 2 184 0 1
 #30818
@@ -221,7 +221,7 @@ pork roast platter potatoes~
 a pork roast platter with potatoes~
 A pork roast platter with potatoes has been thrown to the ground.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 8 0 0 0
 3 9 0 1
 #30819
@@ -229,7 +229,7 @@ sandwich supreme deluxe salaylia~
 a Deluxe Salaylia Sandwich Supreme~
 The biggest damn sandwich you've ever seen has been dropped here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 15 0 0 0
 3 12 0 1
 #30820
@@ -237,7 +237,7 @@ water barrel small water~
 a small barrel~
 A small barrel of water has been left here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 40 40 15 0
 45 200 0 1
 #30821
@@ -245,7 +245,7 @@ water barrel large water~
 a large barrel~
 A large barrel of water has been left here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 80 80 15 0
-50 300 0 1
+85 300 0 1
 $~

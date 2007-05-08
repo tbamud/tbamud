@@ -3,7 +3,7 @@ bunk~
 a dirty bunk~
 A flee-infested bunk filled with rags sits in one corner.~
 ~
-15 e 0 0
+15 e 0 0 0 0 0 0 0 0 0 0 0
 100 0 -1 0
 0 0 0 0
 E
@@ -16,7 +16,7 @@ stove~
 a stove~
 An old stove is slowly rusting away to nothing here.~
 ~
-15 e 0 0
+15 e 0 0 0 0 0 0 0 0 0 0 0
 400 0 -1 0
 0 0 0 0
 E
@@ -29,24 +29,24 @@ river~
 the river~
 A clear river with small trout swimming lazily in the current flows by.~
 ~
-15 e 0 0
+15 e 0 0 0 0 0 0 0 0 0 0 0
 400 0 -1 0
 0 0 0 0
+E
+fish~
+   They are small trout of some kind. They look very tasty.
+~
 E
 river~
    The river here is gently flowing by. Small trout float close to the surface.
 You wonder if you could catch one of them.
-~
-E
-fish~
-   They are small trout of some kind. They look very tasty.
 ~
 #10003
 lake~
 the lake~
 A beautiful, calm lake is sparkling here.~
 ~
-23 e 0 0
+23 e 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
 505 0 0 0
 E
@@ -59,7 +59,7 @@ pond~
 the pond~
 A murky pond is stagnating here.~
 ~
-23 e 0 0
+23 e 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
 505 0 0 0
 E
@@ -72,7 +72,7 @@ river~
 the river~
 A fast moving river flows by you with a roar.~
 ~
-23 e 0 0
+23 e 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 505 0 0 0
 E
@@ -85,7 +85,7 @@ trout~
 a small trout~
 A small trout is squirming in your hands.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 1 0 0
 E
@@ -98,7 +98,7 @@ pants~
 some pants~
 A pair of dirty pants~
 ~
-11 e af 0
+11 e 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
 3 3 0 0
 E
@@ -113,7 +113,7 @@ shirt~
 a shirt~
 A filthy looking shirt has been left here.~
 ~
-11 e ad 0
+11 e 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 3 3 0 0
 E
@@ -128,7 +128,7 @@ coins~
 a few coins~
 A few coins have been left here.~
 ~
-20 e a 0
+20 e 0 0 0 a 0 0 0 0 0 0 0
 50 7 2 0
 1 1 0 0
 E
@@ -140,7 +140,7 @@ oak~
 the oak~
 A huge oak towers above you.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -154,7 +154,7 @@ maple~
 the maple~
 A maple tree sways gently in the breeze here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -168,7 +168,7 @@ elm~
 the elm~
 A gigantic elm reaches towards the sky.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -182,7 +182,7 @@ ash~
 the ash~
 A tall, straight ash tree stretches towards the sky.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -196,7 +196,7 @@ brass lantern~
 a brass lantern~
 A brass lantern is extinguished here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 8 0
 6 120 12 0
 E
@@ -210,7 +210,7 @@ fur backpack~
 a fur backpack~
 A pile of fur with straps on it looks like it might be a backpack.~
 ~
-15 0 ak 0
+15 0 0 0 0 ak 0 0 0 0 0 0 0
 50 1 -1 0
 5 25 2 0
 E
@@ -223,7 +223,7 @@ deer venison meat~
 some venison~
 A slab of venison from a large, well-fed deer.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 3 10 0 0
 E

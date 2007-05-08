@@ -7,7 +7,7 @@ A desert fox watches you carefully, trying to keep a safe distance away.
 meager wildlife.  His tan coat blends with the sand around him, making him
 almost impossible to follow as he never stays out in the open for long.  
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -23,7 +23,7 @@ victim to walk over them and then they attack.  Poisioning their prey with their
 deadly venom.  It's been rumoured that these spiders can even take down full
 grown camels.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -39,7 +39,7 @@ reek and have a bad habit of spitting on people.  This four legged animal not
 only resembles but also acts like a mule.  But they are invaluable to someone
 trying to cross the desert.  They have been known to go months without water.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -54,7 +54,7 @@ A coyote slinks away as you approach.
 deserts.  They are known for thier intelligence and cunning fighting skills.  
 They sometimes wander in packs and have been known to attack travellers.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -68,7 +68,7 @@ A huge scorpion raises it's tail and prepares to strike.
 in these parts.  They are very quick and can attack even when unprovoked.  Many
 a traveller has been killed simply because they almost stepped on one.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -83,7 +83,7 @@ A hyeena cackles insanely as you pass.
 packs to take down large animals.  They have an impressive set of sharp small
 teeth.  They are rarely found alone and always rely on strength in numbers.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -99,7 +99,7 @@ twice before approaching.  But then you look at his face and realize he means no
 one any harm.  He is just here to train those seeking to learn the ways of the
 Ranger.  
 ~
-bdlmnopqr dfhk 1000 E
+260106 0 0 0 80 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -114,7 +114,7 @@ He seems in no hurry and you almost wonder if he is guarding something.  He is
 in his middle years and has several scars from what must have been some
 horrendous battles.  
 ~
-bdlmnopr dfhkp 0 E
+194570 0 0 0 65616 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1

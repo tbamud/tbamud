@@ -3,7 +3,7 @@ key~
 a password key~
 A key with a password written on it is lying here.~
 ~
-18 ac ao 0
+18 ac 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 #1804
@@ -11,7 +11,7 @@ key card~
 a key card~
 An electronic key card is hidden here~
 ~
-18 acd ao 0
+18 acd 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 10 0 0
 #1805
@@ -19,7 +19,7 @@ battle rifle~
 a battle rifle~
 A wicked looking rifle is lying here.~
 ~
-5 mn ano 0
+5 mn 0 0 0 ano 0 0 0 0 0 0 0
 0 5 6 12
 10 1000 0 0
 A

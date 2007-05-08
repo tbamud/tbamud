@@ -4,7 +4,7 @@ The Northwest End Of The Concourse~
 goes east, and the bridge is just north of here.  The concourse continues
 south along the city wall.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 You see the Bridge.
 ~
@@ -27,7 +27,7 @@ The Promenade~
 continues further east and to the west you see the city wall.  Park Road
 leads south from here.
 ~
-31 0 1
+31 0 0 0 0 0
 D1
 The promenade continues.
 ~
@@ -50,7 +50,7 @@ The Promenade~
 continues both east and west.  South of here you see the entrance to
 the park, and a small building seems to be just west of the entrance.
 ~
-31 0 1
+31 0 0 0 0 0
 D1
 You see the promenade.
 ~
@@ -73,7 +73,7 @@ The Promenade~
 continues both east and west.  A small path leads south.  Looking across
 the river you see the levee.
 ~
-31 0 1
+31 0 0 0 0 0
 D1
 You see the Concourse.
 ~
@@ -97,7 +97,7 @@ promenade goes west.  Looking across the river you see a building that
 resembles a warehouse.  The Concourse continues south along the city
 wall.
 ~
-31 0 1
+31 0 0 0 0 0
 D2
 The Concourse continues south.
 ~
@@ -120,7 +120,7 @@ The Park Entrance~
 the promenade and a small path leads south into the park.  To your east is
 the famous Park Cafe.
 ~
-31 c 1
+31 4 0 0 0 0
 D0
 You see the promenade.
 ~
@@ -143,7 +143,7 @@ Park Cafe~
 seats where you can relax and enjoy the view.  To the east you can
 see the entrance to the park.
 ~
-31 dh 0
+31 136 0 0 0 0
 D3
 You see the park entrance.
 ~
@@ -155,7 +155,7 @@ A Small Path In The Park~
    You are walking along a small path through the park.  The path continues
 south and east.
 ~
-31 0 1
+31 0 0 0 0 0
 D1
 ~
 ~
@@ -171,7 +171,7 @@ A Small Path In The Park~
 just north of here, and Park Cafe is just east of the entrance.  The path
 leads further east and west.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 You see the northern park entrance.
 ~
@@ -191,7 +191,7 @@ A Small Path In The Park~
    You are on a small path running through the park.  It continues west and
 south and just north of here you see the southern wall of Park Cafe.
 ~
-31 0 1
+31 0 0 0 0 0
 D2
 ~
 ~
@@ -205,7 +205,7 @@ S
 Cityguard HeadQuarters~
    You are inside a tidy office.
 ~
-31 d 0
+31 8 0 0 0 0
 D1
 You see Park Road.
 ~
@@ -217,7 +217,7 @@ Park Road~
    The road continues north and south.  A building is just west of here, you
 notice a sign on the door.  The park entrance is to the east.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -250,7 +250,7 @@ The Western Park Entrance~
    You are standing at the western end of the park.  A small path leads east
 into the park and going west through the entrance you will reach Park Road.
 ~
-31 c 1
+31 4 0 0 0 0
 D1
 ~
 ~
@@ -265,7 +265,7 @@ A Path In The Park~
    You are in the park.  The paths lead north and west.  Westward is the
 park entrance and to the east you see a small pond.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -286,7 +286,7 @@ The Pond~
    You are swimming around in the pond, feeling rather stupid.  You can get
 back on the path from the eastern and western end of the pond.
 ~
-31 0 6
+31 0 0 0 0 0
 D1
 ~
 ~
@@ -301,7 +301,7 @@ A Path In The Park~
    You are in the park.  The paths lead north and east.  Eastward is the
 park entrance and to the west you see a small pond.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -321,7 +321,7 @@ The Eastern Park Entrance~
 into the park.  Going east through the entrance you will reach Emerald
 Avenue.
 ~
-31 c 1
+31 4 0 0 0 0
 D1
 ~
 ~
@@ -337,7 +337,7 @@ Emerald Avenue~
 promenade and to the west is the park entrance.  To the east is the not very
 big Town Hall of Midgaard.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -359,7 +359,7 @@ S
 Park Road~
    You are on Park Road which leads north and south.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -374,7 +374,7 @@ Emerald Avenue~
    You are standing at a bend on Emerald Avenue.  The road leads north and
 west.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -392,7 +392,7 @@ at the center of the road cross.  Its other end leads directly upwards towards
 the sky.
 A road sign is here.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -415,11 +415,6 @@ The chain disappears in the clouds.
 ~
 0 -1 7914
 E
-chain~
-   The chain reaches the clouds high above you.  It must take some really
-powerful magic to hold such a chain in place.  
-~
-E
 sign~
    The sign points in all directions:
 
@@ -433,13 +428,18 @@ Someone has added the following with red paint:
    Up    - Redferne's Flying Citadel.
 
 ~
+E
+chain~
+   The chain reaches the clouds high above you.  It must take some really
+powerful magic to hold such a chain in place.  
+~
 S
 #3121
 Emerald Avenue~
    You are standing at a bend on Emerald Avenue.  The road leads south and
 east.
 ~
-31 0 1
+31 0 0 0 0 0
 D1
 ~
 ~
@@ -454,7 +454,7 @@ Park Road~
    You are on Park Road which leads south and north.  Elm Street is east of
 here.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -473,7 +473,7 @@ Elm Street~
    You are on Elm street.  Park Road is to the west and Elm Street continues
 in eastward direction.
 ~
-31 0 1
+31 0 0 0 0 0
 D1
 ~
 ~
@@ -487,7 +487,7 @@ S
 The End Of Elm Street~
    You are at the end of Elm Street.
 ~
-31 0 1
+31 0 0 0 0 0
 D3
 ~
 ~
@@ -498,7 +498,7 @@ Emerald Avenue~
    You are on Emerald Avenue which continues north.  The Concourse is south
 of here.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -513,7 +513,7 @@ Park Road~
    You are on Park Road which continues north.  The Concourse is south of
 here.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -528,7 +528,7 @@ On The Concourse~
    You are at the southwest corner of the city wall.  The Concourse leads
 both north and east.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -548,7 +548,7 @@ On The Concourse~
    The Concourse continues both east and west.  Emerald Avenue is north of
 here.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -567,7 +567,7 @@ On The Concourse~
    The Concourse continues both east and west.  Park Road is north of here
 and an iron grate leads south to the graveyard.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -591,7 +591,7 @@ On The Concourse~
    You are at the southeast corner of the city wall.  The Concourse leads
 both north and west.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -605,7 +605,7 @@ S
 Park Road~
    You are at Park Road which continues north and south.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -620,7 +620,7 @@ Emerald Avenue~
    You are at Emerald Avenue which continues north and south.  Penny Lane leads
 east from here.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -639,7 +639,7 @@ Emerald Avenue~
    You are standing at a bend on Emerald Avenue.  To the east the road goes on
 and to the south is the Road Crossing.
 ~
-31 0 1
+31 0 0 0 0 0
 D1
 ~
 ~
@@ -654,7 +654,7 @@ Emerald Avenue~
    You are standing at a bend on Emerald Avenue.  To the west the road goes on
 and to the north is the Road Crossing.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -669,7 +669,7 @@ Park Road~
    You are at a bend on Park Road.  To the north the road goes on and to the
 east is the Road Crossing.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -684,7 +684,7 @@ Park Road~
    You are at a bend on Park Road.  To the south the road goes on and to the
 west is the Road Crossing.
 ~
-31 0 1
+31 0 0 0 0 0
 D2
 ~
 ~
@@ -700,7 +700,7 @@ The Waiting Room~
 along the walls and a long desk with a typewriter is placed in the middle of
 the room.
 ~
-31 d 0
+31 8 0 0 0 0
 D1
 It looks like some kind of office.
 ~
@@ -712,10 +712,8 @@ The exit west leads to Emerald Avenue.
 ~
 0 -1 3117
 E
-typewriter~
-   It is an ancient Quifatronic T-1000 mk I.  These machines are known for their
-incredible durability, and for their even more incredible weight.  They make a
-Cray II look like a laptop.  
+chair chairs~
+   Not the very least comfortable.  
 ~
 E
 desk~
@@ -723,8 +721,10 @@ desk~
 Everything can be stored on its top.  
 ~
 E
-chair chairs~
-   Not the very least comfortable.  
+typewriter~
+   It is an ancient Quifatronic T-1000 mk I.  These machines are known for their
+incredible durability, and for their even more incredible weight.  They make a
+Cray II look like a laptop.  
 ~
 S
 #3138
@@ -734,22 +734,22 @@ polished but completely empty desk is standing in front of an armchair that
 looks so comfortable that it most of all resembles a bed with the head end
 raised slightly.
 ~
-31 d 0
+31 8 0 0 0 0
 D3
 The waiting room is to the west.
 ~
 ~
 0 -1 3137
 E
+desk~
+   This desk is obviously very old.  Nevertheless it looks as if has never been
+used.  
+~
+E
 chair armchair~
    This chair is really a masterpiece.  A chair where one can sit as comfortably
 as in a bed.  All auditoriums should be equipped with these things.  A shame
 that there wouldn't be room for the students too, though.  
-~
-E
-desk~
-   This desk is obviously very old.  Nevertheless it looks as if has never been
-used.  
 ~
 S
 #3139
@@ -757,7 +757,7 @@ Penny Lane~
    You are on Penny Lane.  Emerald Avenue is to the west and Penny Lane
 continues in eastward direction.
 ~
-31 0 1
+31 0 0 0 0 0
 D1
 ~
 ~
@@ -771,7 +771,7 @@ S
 Penny Lane~
    You are on Penny Lane.  The narrow road continues north and west.
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 ~
 ~
@@ -785,7 +785,7 @@ S
 The End Of Penny Lane~
    You are at the end of Penny Lane.  The only exit appears to be south.
 ~
-31 0 1
+31 0 0 0 0 0
 D2
 ~
 ~
@@ -797,7 +797,7 @@ A Gravel Road In The Graveyard~
 graveyard.  On both sides of the road grow dark evergreen trees.  An iron
 grate is to the north.
 ~
-31 0 2
+31 0 0 0 0 0
 D0
 Through the solid iron bars you see the Concourse.
 ~
@@ -814,7 +814,7 @@ A Gravel Road In The Graveyard~
    You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.  
 ~
-31 0 2
+31 0 0 0 0 0
 D0
 The gravel road continues northwards.
 ~
@@ -831,7 +831,7 @@ A Gravel Road In The Graveyard~
    You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.  
 ~
-31 0 2
+31 0 0 0 0 0
 D0
 The gravel road continues northwards.
 ~
@@ -848,7 +848,7 @@ A Gravel Road In The Graveyard~
    You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.  
 ~
-31 0 1
+31 0 0 0 0 0
 D0
 The gravel road continues northwards.
 ~
@@ -866,7 +866,7 @@ In Front Of The Chapel~
    You are on an open space before a small chapel.  A gravel road leads north
 through the graveyard and the chapel entrance is to the south.
 ~
-31 0 2
+31 0 0 0 0 0
 D0
 The gravel road continues northwards.
 ~
@@ -884,15 +884,15 @@ Inside The Chapel~
 do not let much light through.  A few rows of worn wooden benches stand here
 and an ancient altar sits in the middle of the floor.
 ~
-31 ad 0
+31 9 0 0 0 0
 D0
 The chapel door is made of dark wood.
 ~
 door~
 1 -1 3154
 E
-benches rows~
-   The benches are not of the comfortable kind.  
+glass windows~
+   The windows must be meant to be dark.  At least they are completely clean.  
 ~
 E
 altar~
@@ -902,8 +902,8 @@ here regularly...  Maybe that old guy in Park Cafe, he looked like that sort...
 
 ~
 E
-glass windows~
-   The windows must be meant to be dark.  At least they are completely clean.  
+benches rows~
+   The benches are not of the comfortable kind.  
 ~
 S
 $~

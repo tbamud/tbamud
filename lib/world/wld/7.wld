@@ -18,7 +18,7 @@ Plot         : The zone is based off the theme of Camelot: king arthur, the
  
 LOOK LINKS
 ~
-7 j 0
+7 512 0 0 0 0
 E
 links credits info~
    Zone 7 is linked to the following zones:
@@ -61,7 +61,7 @@ The Forest Arden~
 and unknown wildlife.  A path leads north and south into the forest.  There is a
 guilded plaque affixed to a boulder.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -87,7 +87,7 @@ Entrance~
 portcullis gapes open invitingly.  Several guards inspect all passers-by.  A
 small ferry is available to cross back to the mainland.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -104,7 +104,7 @@ about their daily business.  The courtyard extends in all directions except to
 the east which leads to the gate of the castle.  A steady flow of peasants
 merchants and a few nobles pass by.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -130,7 +130,7 @@ other.  A knight strolls through the courtyard and the peasants and merchants
 stare at his back after he passes with a look of hate.  They do not seem to be
 very happy.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -156,7 +156,7 @@ overhead providing a sense of security.  A couple of beggars look up imploringly
 hoping for some chairty, everyone ignores them.  To the west lies the main
 entrance to the castle.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -180,7 +180,7 @@ Main Hall~
 Tapestries of battles and portraits of rulers line each wall.  The castle proper
 is to the west or the courtyard is to the east.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -204,7 +204,7 @@ Audience Chamber~
 south.  The room only has a few people in it.  None of them look like they are
 of any importance.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -225,7 +225,7 @@ floor slopes down to a intracate throne plated in gold.  A page scurries past as
 he runs one of his errands.  Further to the east and west you see exits, while
 the throne lies to the south.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -247,7 +247,7 @@ dressed nobles are discussing important matters amongst themselves, even a
 few are involved in heated discussions.  Probably just the usual bickering 
 about who owns what land.    
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -268,7 +268,7 @@ defense in case the castle's defenses can not hold the outer wall.  The outer
 wall is set aside for the poor quarter while the wealthier inhabitants crowd the
 inner circle.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -293,7 +293,7 @@ the castle The stone walls shine a bright white from heavy polishing and the
 massive blocks fit together seamlessly.  To the west a fountain flows underneath
 a large statue of Uther Pendragon.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 a door
 ~
@@ -314,7 +314,7 @@ Cobblestone Road~
 statue of Uther Pendragon and three women.  The sounds and smells to the south
 must be from the castle stables.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -338,7 +338,7 @@ Cobblestone Road~
 fly from the towers high above and all of the buildings gleam of white stone.  
 Several knights seem to be coming and going to the North.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -358,7 +358,7 @@ Cobblestone Road~
 breeze on every tower.  The buildings to the south seem to be filled with the
 sounds of women laughing and gossiping.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -379,7 +379,7 @@ in the wind, everything looks perfect, except for the fact that the general mood
 in the castle seem to be depressing.  A tall fence to the south blocks the view
 but not the sound of men on horseback.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -400,7 +400,7 @@ be heard and their is some excitement in the crowd.  Several knights in full
 combat gear are among the crowd.  It is easy to pick out those who won and those
 who lost recently.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -424,7 +424,7 @@ Cobblestone Road~
 blocks placed so precisely that seams are barely visible.  Pennants and
 different seals adorn the spires and walls.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -440,7 +440,7 @@ Cobblestone Road~
 alleys travelling north and south.  A small friendly building to the south looks
 inviting.  A nice change from the majority of the people in Camelot.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -460,7 +460,7 @@ Cobblestone Road~
 Everyone seems subdued and to have accepted some fate they did not want.  It is
 as if the spirit had been taken away from the city.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -480,7 +480,7 @@ Cobblestone Road~
 A drunken ruckus can be heard to the south.  It sounds like it may be the only
 place in Camelot having a good time.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -500,7 +500,7 @@ West Lane~
 rusted and look like they haven't been used for a very long time.  A dirt path
 follows the wall to the north and south.  
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -521,7 +521,7 @@ boat is tied up to a small dock here.  A cloaked figure is sitting in the back,
 holding a long pole.  This boat looks to be a ferry between the shore and some
 unseen destination through the fog to the west.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -538,7 +538,7 @@ blows from the north but not enough to dispell the fog.  The owner of the boat
 slowly pushes the boat westward with his pole.  The fog is too think to discern
 a destination.  
 ~
-7 0 0
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -554,7 +554,7 @@ The Lake~
 entire island.  Its spires shrouded fog.  Lights are visible in several windows
 and the noise of its inhabitants echo across the still lake.  
 ~
-7 c 0
+7 4 0 0 0 0
 D1
 ~
 ~
@@ -571,7 +571,7 @@ stands the massive castle resting in the middle of the lake on a small
 sland.  The sky looks darker to the north and you catch a scent of death 
 and decay from a gust of wind in that direction.    
 ~
-7 0 0
+7 0 0 0 0 0
 D0
 ~
 ~

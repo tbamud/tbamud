@@ -75,7 +75,7 @@ void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *co
 
     /* Yes, I realize this is strange until we have auto-equip on rent. -gg */
     if (OBJ_FLAGGED(obj, ITEM_NODROP) && !OBJ_FLAGGED(cont, ITEM_NODROP)) {
-      SET_BIT(GET_OBJ_EXTRA(cont), ITEM_NODROP);
+      SET_BIT_AR(GET_OBJ_EXTRA(cont), ITEM_NODROP);
       act("You get a strange feeling as you put $p in $P.", FALSE,
                 ch, obj, cont, TO_CHAR);
     } else

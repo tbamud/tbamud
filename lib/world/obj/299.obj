@@ -3,15 +3,9 @@ cadaver altar~
 a cadaver~
 A cadaver is pinned to the altar with a large knife~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
 25 1 0 0
-E
-corpse fresh~
-   The corpse lying here is disgusting at best.  Looking closely at it, you
-notice that it has been disembowled, but can find no trace of the entrails
-whatsoever.  
-~
 E
 altar~
    The altar before you is covered with glyphs and symbols that mean nothing to
@@ -19,12 +13,18 @@ you.  It obviously is not the original altar that was in this cathedral.  There
 are fresh blood stains down the side of it and the top is stained a very deep
 brown.  
 ~
+E
+corpse fresh~
+   The corpse lying here is disgusting at best.  Looking closely at it, you
+notice that it has been disembowled, but can find no trace of the entrails
+whatsoever.  
+~
 #29901
 knife long curved~
 a long, curved knife~
 A long curved knife.~
 ~
-5 j an 0
+5 j 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 3
 2 350 0 0
 E
@@ -39,18 +39,18 @@ amulet sapphire~
 a sapphire amulet~
 A strange sapphire amulet rests on the ground here.~
 ~
-9 g ac 0
+9 g 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 10 200 0 0
+E
+runes~
+   My mistake.  They are *totally* indecipherable.  
+~
 E
 amulet sapphire~
    This necklace is comprised of a large sapphire hanging on a brass chain.  
 There are some runes in the back of the sapphire, but they are almost totally
 indecipherable.  
-~
-E
-runes~
-   My mistake.  They are *totally* indecipherable.  
 ~
 A
 2 -1
@@ -61,7 +61,7 @@ key ivory bone~
 an ivory key~
 An ivory key has been left here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 29909 0 0 0
 10 5 0 0
 E
@@ -75,7 +75,7 @@ coffin ebony~
 the coffin~
 &n~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 500 5 0 0
 0 0 0 0
 #29905
@@ -83,7 +83,7 @@ carcass evalynn~
 the carcass of Evalynn~
 The carcass of Evalynn is lying here almost as if she had just died~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
 29 1 0 0
 E
@@ -96,7 +96,7 @@ potion dark~
 a dark potion~
 A dark potion is sitting here on the floor, sucking up all the light.~
 ~
-10 g ao 0
+10 g 0 0 0 ao 0 0 0 0 0 0 0
 30 38 -1 -1
 10 200 0 0
 E
@@ -109,7 +109,7 @@ staff ivory~
 an ivory staff~
 An elegant ivory staff rests here, giving off a strange pure white light.~
 ~
-4 g ao 0
+4 g 0 0 0 ao 0 0 0 0 0 0 0
 15 3 3 36
 20 800 0 0
 E
@@ -123,7 +123,7 @@ coins pile~
 a mid-sized pile of coins~
 A not-too-small, not-too-large pile of coins glistens in the light.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1500 0 0 0
 15 150 0 0
 E
@@ -137,7 +137,7 @@ sword rune~
 the rune sword~
 A strange sword lies here.~
 ~
-5 j an 0
+5 j 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 3
 10 500 0 0
 E
@@ -152,7 +152,7 @@ key gold golden~
 a beautiful golden key~
 A key made of gold seems to have been forgotten on the ground here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 3 1 0 0
 E
@@ -165,7 +165,7 @@ key blood~
 a strange blood key~
 A sinister key of blood beckons...~
 ~
-18 gh ao 0
+18 gh 0 0 0 ao 0 0 0 0 0 0 0
 29911 0 0 0
 1 1 0 0
 E
@@ -178,7 +178,7 @@ bones pile crushed~
 a pile of crushed bones~
 A pile of well-crushed bones is lying on the floor here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -193,7 +193,7 @@ cape black satin~
 a black cape with a red satin lining~
 A strange black cape lies here.~
 ~
-9 j ak 0
+9 j 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
 3 400 0 0
 E
@@ -211,7 +211,7 @@ necklace onyx~
 an onyx necklace~
 A strange necklace made of onyx stones lies here.~
 ~
-9 gh ac 0
+9 gh 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
 5 1 0 0
 E
@@ -227,7 +227,7 @@ halberd giant~
 a giant halberd~
 A tremendously large halberd stained with blood rests here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 15 3
 30 800 0 0
 E
@@ -246,7 +246,7 @@ avenger holy sword~
 the Holy Avenger~
 A beautiful sword glowing white is floating upright here.~
 ~
-5 akl an 0
+5 akl 0 0 0 an 0 0 0 0 0 0 0
 0 2 10 3
 10 800 0 0
 E

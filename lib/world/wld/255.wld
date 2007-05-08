@@ -5,7 +5,7 @@ light you noticed earlier comes from a campfire in the center of the floor.
 Crude furniture made from driftwood and rocks lies strewn about, and some
 raggety clothing hangs on a peg of wood jammed into a crack in the stone wall.
 ~
-255 di 0
+255 264 0 0 0 0
 D3
 ~
 ~
@@ -31,7 +31,7 @@ who commited crimes or for unwanted stowaways.  A pile of human bones sits in a
 corner, being the only thing in the room except, of course, for the ever
 lingering stale smell of death.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D4
 ~
 ~
@@ -50,7 +50,7 @@ above, near the sea.  You can hear a creaking noise, a noise made up of many
 different pitches, all blended into one, like a hundred grannies rocking in old
 chairs all at once.  
 ~
-255 di 0
+255 264 0 0 0 0
 D4
 ~
 ~
@@ -71,7 +71,7 @@ mast of this ship.  You see no movement on deck, not that you expected to, as it
 looks as if this ship has been here for many decades, possibly even centuries.
 
 ~
-255 di 0
+255 264 0 0 0 0
 D4
 ~
 ~
@@ -88,7 +88,7 @@ A set of small iron rungs lead down the mast to the deck at midships.  Rigging
 surrounds you on all sides, but none of it looks too stable.  The rope ladder
 ascends up through the mists.  
 ~
-255 0 5
+255 0 0 0 0 0
 D4
 ~
 ~
@@ -106,7 +106,7 @@ the crew that ran this proud ship must have long since deserted it or died
 trying to get it out of this cavern.  The gangway runs north to south the length
 of the ship.  The gunwales lies east and west of you.  
 ~
-255 0 5
+255 0 0 0 0 0
 D0
 ~
 ~
@@ -134,7 +134,7 @@ Gangway~
    Your footsteps echo hollowly on the old planking, giving you a sense of
 danger impending.  A hatch in the floor here gives you access to the lower deck.
 ~
-255 0 5
+255 0 0 0 0 0
 D0
 ~
 ~
@@ -157,7 +157,7 @@ Gangway at Foremast~
    The foremast raises from the deck here, rotted rigging still attached to
 tattered sails.  The ganway continues on north and south of you.  
 ~
-255 i 0
+255 256 0 0 0 0
 D0
 ~
 ~
@@ -175,7 +175,7 @@ cavern.  It looks as if at one time this was a small cove with deep enough
 waters to harbor a ship.  The northern wall, now a tremendous pile of rubble,
 must have come down, sealing the ship in.  
 ~
-255 di 0
+255 264 0 0 0 0
 D0
 ~
 ~
@@ -190,7 +190,7 @@ Bow~
    You stand at the very front of the ship.  There is a small square hole
 leading down from here or you may head south along the gangway.  
 ~
-255 di 0
+255 264 0 0 0 0
 D2
 ~
 ~
@@ -205,7 +205,7 @@ Poopdeck~
    You stand on the poop deck, the main section of the upper deck, where most of
 the sailing must have been done when this craft was seaworthy.  
 ~
-255 di 0
+255 264 0 0 0 0
 D0
 ~
 ~
@@ -221,7 +221,7 @@ At the Wheel~
 on it.  A compass sits in its stand here as well, also still in fine condition.
 You may head north along the gangway or south to the stern.  
 ~
-255 di 0
+255 264 0 0 0 0
 D0
 ~
 ~
@@ -237,7 +237,7 @@ Stern~
 The floors here still seem to be free of any litter or debris, strange for a
 ship that appears to have been stuck in one place for so long.  
 ~
-255 di 0
+255 264 0 0 0 0
 D0
 ~
 ~
@@ -247,7 +247,7 @@ S
 Port Gunwale~
    The sides of the ship are roughly 3 ft in height.  
 ~
-255 d 0
+255 8 0 0 0 0
 D1
 ~
 ~
@@ -257,7 +257,7 @@ S
 Starboard Gunwale~
    The sides of the ship are roughly 3 ft in height.  
 ~
-255 0 0
+255 0 0 0 0 0
 D3
 ~
 ~
@@ -269,7 +269,7 @@ In a Corridor - Lower Deck~
 doors spaced at intervals in front and behind you, but none next to you.  Doors
 stand closed at the end of the hall at both ends.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D0
 ~
 ~
@@ -288,7 +288,7 @@ In a Corridor - Lower Deck~
    The corridor ends just north of you at a door.  Doors flank you on both east
 and west sides.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D0
 ~
 ~
@@ -311,7 +311,7 @@ North End of Corridor~
    You stand in front of a closed door at the north end of the corridor.  No
 markings or signs adorn the door, so it could lead anywhere.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D0
 door
 ~
@@ -328,7 +328,7 @@ In a Corridor - Lower Deck~
 closed door.  Doors flank either side of you, east and west, or you may go back
 north.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D0
 ~
 ~
@@ -351,7 +351,7 @@ South End of Corridor~
    You stand at the southern end of the corridor in front of a large oak door.
 You may go back north or try the door.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D0
 ~
 ~
@@ -369,7 +369,7 @@ not that that is saying too much.  A large, quite comfortable looking bed rests
 against one wall, a desk, nailed to the floor, sits at another end with a stool
 similarly attached to floor.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D0
 ~
 door~
@@ -382,7 +382,7 @@ into the walls of this room make small alcoves for each sailor.  The cushions in
 each have long since rotted into decay, and even the wood which fashioned these
 walls looks now so rotted as not to be able hold any one man's weight.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D2
 ~
 door~
@@ -394,7 +394,7 @@ Galley and Mess Room~
 servicable kitchen is set up at one end of the room, while a long table which
 benches lining either side is set up at the other side.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D1
 ~
 ~
@@ -406,7 +406,7 @@ The Latrine~
 it must have when in operation.  A small, dirty basin sits in the center of the
 room, awaiting use, seeming almost to smile at you, daring you to use it.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D3
 ~
 ~
@@ -418,7 +418,7 @@ Rowing Room - Starboard Side~
 oars to match.  What a joy it must have been to be down here when there was no
 wind!  
 ~
-255 ad 0
+255 9 0 0 0 0
 D3
 ~
 ~
@@ -430,7 +430,7 @@ Rowing Room - Port Side~
 resting on each.  You can smell the sweat still in the air from the men who must
 have worked their heart and soul to keep this vessel moving in calm waters.  
 ~
-255 ad 0
+255 9 0 0 0 0
 D1
 ~
 ~
@@ -442,7 +442,7 @@ Cave Entrance~
 flickering light inside which could be a campfire, could be a lantern.  It also
 could be a cook fire - a cook fire to cook you!  
 ~
-255 i 5
+255 256 0 0 0 0
 D1
 ~
 ~

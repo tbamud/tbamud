@@ -3,7 +3,7 @@ ring yellow green~
 a yellow and green ring~
 A ring is here, with yellow and green ornamentation.  It looks very old.~
 ~
-9 dhq ab 0
+9 dhq 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 1 50 20 0
 E
@@ -17,7 +17,7 @@ carcass goblin~
 a goblin's carcass~
 A halfway decayed carcass of a goblin is here, giving off a foul odor.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 -1 0
 20 1 500 0
 #4002
@@ -25,7 +25,7 @@ coins~
 some coins~
 A small pile of coins is on the ground.~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 500 0 0 0
 1 1 0 0
 #4050
@@ -33,7 +33,7 @@ potion purple~
 a purple potion~
 A purple potion is here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 17 14 36 33
 1 355 20 0
 E
@@ -45,7 +45,7 @@ helmet metal~
 a metal helmet~
 A metal helmet in here.~
 ~
-9 g ae 0
+9 g 0 0 0 ae 0 0 0 0 0 0 0
 -5 0 0 0
 4 300 100 0
 E
@@ -61,7 +61,7 @@ mushroom~
 a mushroom~
 A small mushroom is here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 1
 1 9 3 0
 E
@@ -73,7 +73,7 @@ dirk~
 a thieves' dirk~
 A beautifully crafted dirk is lying here.~
 ~
-5 np an 0
+5 np 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 11
 2 850 500 0
 E

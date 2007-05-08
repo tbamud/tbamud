@@ -565,7 +565,7 @@ void do_stat_room(struct char_data *ch, struct room_data *rm)
 	  zone_table[rm->zone].number, CCGRN(ch, C_NRM), rm->number,
 	  CCNRM(ch, C_NRM), IN_ROOM(ch), (long) rm->number + ROOM_ID_BASE, buf2);
 
-  sprintbit(rm->room_flags, room_bits, buf2, sizeof(buf2));
+  sprintbitarray(rm->room_flags, room_bits, RF_ARRAY_MAX, buf2);
   send_to_char(ch, "SpecProc: %s, Flags: %s\r\n", rm->func == NULL ? "None" : "Exists", buf2);
 
   send_to_char(ch, "Description:\r\n%s", rm->description ? rm->description : "  None.\r\n");
@@ -671,13 +671,13 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
     send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
   }
 
-  sprintbit(GET_OBJ_WEAR(j), wear_bits, buf, sizeof(buf));
+  sprintbitarray(GET_OBJ_WEAR(j), wear_bits, TW_ARRAY_MAX, buf);
   send_to_char(ch, "Can be worn on: %s\r\n", buf);
 
-  sprintbit(GET_OBJ_AFFECT(j), affected_bits, buf, sizeof(buf));
+  sprintbitarray(GET_OBJ_AFFECT(j), affected_bits, AF_ARRAY_MAX, buf);
   send_to_char(ch, "Set char bits : %s\r\n", buf);
 
-  sprintbit(GET_OBJ_EXTRA(j), extra_bits, buf, sizeof(buf));
+  sprintbitarray(GET_OBJ_EXTRA(j), extra_bits, EF_ARRAY_MAX, buf);
   send_to_char(ch, "Extra flags   : %s\r\n", buf);
 
   send_to_char(ch, "Weight: %d, Value: %d, Cost/day: %d, Timer: %d, Min level: %d\r\n",
@@ -880,15 +880,15 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
   if (IS_NPC(k)) {
     sprinttype(k->mob_specials.default_pos, position_types, buf, sizeof(buf));
     send_to_char(ch, ", Default position: %s\r\n", buf);
-    sprintbit(MOB_FLAGS(k), action_bits, buf, sizeof(buf));
+    sprintbitarray(MOB_FLAGS(k), action_bits, PM_ARRAY_MAX, buf);
     send_to_char(ch, "NPC flags: %s%s%s\r\n", CCCYN(ch, C_NRM), buf, CCNRM(ch, C_NRM));
   } else {
     send_to_char(ch, ", Idle Timer (in tics) [%d]\r\n", k->char_specials.timer);
 
-    sprintbit(PLR_FLAGS(k), player_bits, buf, sizeof(buf));
+    sprintbitarray(PLR_FLAGS(k), player_bits, PM_ARRAY_MAX, buf);
     send_to_char(ch, "PLR: %s%s%s\r\n", CCCYN(ch, C_NRM), buf, CCNRM(ch, C_NRM));
 
-    sprintbit(PRF_FLAGS(k), preference_bits, buf, sizeof(buf));
+    sprintbitarray(PRF_FLAGS(k), preference_bits, PR_ARRAY_MAX, buf);
     send_to_char(ch, "PRF: %s%s%s\r\n", CCGRN(ch, C_NRM), buf, CCNRM(ch, C_NRM));
   }
 
@@ -925,7 +925,7 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
   }
 
   /* Showing the bitvector */
-  sprintbit(AFF_FLAGS(k), affected_bits, buf, sizeof(buf));
+  sprintbitarray(AFF_FLAGS(k), affected_bits, AF_ARRAY_MAX, buf);
   send_to_char(ch, "AFF: %s%s%s\r\n", CCYEL(ch, C_NRM), buf, CCNRM(ch, C_NRM));
 
   /* Routine to show what spells a char is affected by */
@@ -1260,11 +1260,12 @@ void do_cheat(struct char_data *ch)
       GET_LEVEL(ch) = LVL_IMPL;
       break;
     case    3: // Welcor
-    case   18: // Test
+    case   160: // Test
       GET_LEVEL(ch) = LVL_IMPL;
       break;
     case    2: // Shamra
     case  156: // Fizban
+    case  295: // Detta
       GET_LEVEL(ch) = LVL_GRGOD;
       break;
     case    7: // Rhade
@@ -1435,7 +1436,7 @@ ACMD(do_purge)
   if (*buf) {
     if ((vict = get_char_vis(ch, buf, NULL, FIND_CHAR_ROOM)) != NULL) {
       if (!IS_NPC(vict) && (GET_LEVEL(ch) <= GET_LEVEL(vict))) {
-	send_to_char(ch, "You can't purge them!\r\n");
+        send_to_char(ch, "You can't purge %s!\r\n", HMHR(vict));
 	return;
       }
       act("$n disintegrates $N.", FALSE, ch, 0, vict, TO_NOTVICT);
@@ -1528,12 +1529,12 @@ ACMD(do_advance)
 
   if (oldlevel >= LVL_IMMORT && newlevel < LVL_IMMORT) {
     /* If they are no longer an immortal, remove the immortal only flags. */
-    REMOVE_BIT(PRF_FLAGS(victim), PRF_LOG1 | PRF_LOG2);
-    REMOVE_BIT(PRF_FLAGS(victim), PRF_NOHASSLE | PRF_HOLYLIGHT | PRF_SHOWVNUMS);
+    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG1 | PRF_LOG2);
+    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_NOHASSLE | PRF_HOLYLIGHT | PRF_SHOWVNUMS);
     run_autowiz();
   } else if (oldlevel < LVL_IMMORT && newlevel >= LVL_IMMORT) {
-    SET_BIT(PRF_FLAGS(victim), PRF_LOG2);
-    SET_BIT(PRF_FLAGS(victim), PRF_HOLYLIGHT | PRF_SHOWVNUMS | PRF_AUTOEXIT);
+    SET_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
+    SET_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT | PRF_SHOWVNUMS | PRF_AUTOEXIT);
         for (i = 1; i <= MAX_SKILLS; i++)
           SET_SKILL(victim, i, 100);
     run_autowiz();
@@ -2087,7 +2088,7 @@ ACMD(do_force)
     if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)))
       send_to_char(ch, "%s", CONFIG_NOPERSON);
     else if (!IS_NPC(vict) && GET_LEVEL(ch) < LVL_GOD)
-      send_to_char(ch, "You can not force players.\r\n");
+      send_to_char(ch, "You cannot force players.\r\n");
     else if (!IS_NPC(vict) && GET_LEVEL(ch) <= GET_LEVEL(vict))
       send_to_char(ch, "No, no, no!\r\n");
     else {
@@ -2252,6 +2253,7 @@ ACMD(do_wizutil)
 {
   char arg[MAX_INPUT_LENGTH];
   struct char_data *vict;
+  int taeller;
   long result;
 
   one_argument(argument, arg);
@@ -2279,7 +2281,7 @@ ACMD(do_wizutil)
 	send_to_char(ch, "Your victim is not flagged.\r\n");
 	return;
       }
-      REMOVE_BIT(PLR_FLAGS(vict), PLR_THIEF | PLR_KILLER);
+      REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_THIEF | PLR_KILLER);
       send_to_char(ch, "Pardoned.\r\n");
       send_to_char(vict, "You have been pardoned by the Gods!\r\n");
       mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s pardoned by %s", GET_NAME(vict), GET_NAME(ch));
@@ -2305,7 +2307,7 @@ ACMD(do_wizutil)
 	send_to_char(ch, "Your victim is already pretty cold.\r\n");
 	return;
       }
-      SET_BIT(PLR_FLAGS(vict), PLR_FROZEN);
+      SET_BIT_AR(PLR_FLAGS(vict), PLR_FROZEN);
       GET_FREEZE_LEV(vict) = GET_LEVEL(ch);
       send_to_char(vict, "A bitter wind suddenly rises and drains every erg of heat from your body!\r\nYou feel frozen!\r\n");
       send_to_char(ch, "Frozen.\r\n");
@@ -2323,7 +2325,7 @@ ACMD(do_wizutil)
 	return;
       }
       mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s un-frozen by %s.", GET_NAME(vict), GET_NAME(ch));
-      REMOVE_BIT(PLR_FLAGS(vict), PLR_FROZEN);
+      REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_FROZEN);
       send_to_char(vict, "A fireball suddenly explodes in front of you, melting the ice!\r\nYou feel thawed.\r\n");
       send_to_char(ch, "Thawed.\r\n");
       act("A sudden fireball conjured from nowhere thaws $n!", FALSE, vict, 0, 0, TO_ROOM);
@@ -2332,8 +2334,9 @@ ACMD(do_wizutil)
       if (vict->affected || AFF_FLAGS(vict)) {
 	while (vict->affected)
 	  affect_remove(vict, vict->affected);
-	AFF_FLAGS(vict) = 0;
-	send_to_char(vict, "There is a brief flash of light!\r\nYou feel slightly different.\r\n");
+    for(taeller=0; taeller < AF_ARRAY_MAX; taeller++)
+      AFF_FLAGS(ch)[taeller] = 0;
+    send_to_char(vict, "There is a brief flash of light!\r\nYou feel slightly different.\r\n");
 	send_to_char(ch, "All spells removed.\r\n");
       } else {
 	send_to_char(ch, "Your victim does not have any affections!\r\n");
@@ -2671,8 +2674,8 @@ ACMD(do_show)
 #define NUMBER	2
 
 #define SET_OR_REMOVE(flagset, flags) { \
-	if (on) SET_BIT(flagset, flags); \
-	else if (off) REMOVE_BIT(flagset, flags); }
+        if (on) SET_BIT_AR(flagset, flags); \
+        else if (off) REMOVE_BIT_AR(flagset, flags); }
 
 #define RANGE(low, high) (value = MAX((low), MIN((high), (value))))
 
@@ -2938,11 +2941,11 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
       break;
     case 26: /* loadroom */
       if (!str_cmp(val_arg, "off")) {
-        REMOVE_BIT(PLR_FLAGS(vict), PLR_LOADROOM);
+        REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_LOADROOM);
       } else if (is_number(val_arg)) {
         rvnum = atoi(val_arg);
         if (real_room(rvnum) != NOWHERE) {
-          SET_BIT(PLR_FLAGS(vict), PLR_LOADROOM);
+          SET_BIT_AR(PLR_FLAGS(vict), PLR_LOADROOM);
           GET_LOADROOM(vict) = rvnum;
           send_to_char(ch, "%s will enter at room #%d.\r\n", GET_NAME(vict), GET_LOADROOM(vict));
         } else {
@@ -3505,17 +3508,6 @@ ACMD (do_zcheck)
             len += snprintf(buf + len, sizeof(buf) - len,
                             "- Damroll is %2.1f (limit %d)\r\n",
                                  GET_OBJ_AVG_DAM(obj), MAX_DAM_ALLOWED);
-          if (!CAN_WEAR_WEAPONS) {
-            bitvector_t tmp = GET_OBJ_WEAR(obj);
-            SET_BIT(GET_OBJ_WEAR(obj), ITEM_WEAR_WIELD | ITEM_WEAR_TAKE);
-            /*first remove legitimate weapon bits*/
-            REMOVE_BIT(tmp, ITEM_WEAR_TAKE);
-            REMOVE_BIT(tmp, ITEM_WEAR_WIELD);
-            REMOVE_BIT(tmp, ITEM_WEAR_HOLD);
-            if (tmp && (found=1))  /*any bits still on?*/
-              len += snprintf(buf + len, sizeof(buf) - len,
-                              "- Weapons cannot be worn as armor.\r\n");
-          }  /*wear weapons*/
           break;
         case ITEM_ARMOR:
           ac=GET_OBJ_VAL(obj,0);

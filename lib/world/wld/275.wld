@@ -12,7 +12,7 @@ Zone 275 is linked to the following zones:
 
 guildmaster: 72, 73, 74, 75
 ~
-275 0 0
+275 0 0 0 0 0
 S
 #27501
 The Port Of New Sparta~
@@ -26,7 +26,7 @@ power comes DANGER!!"
 A feeling of hope and uneasiness pervades your body as you think about the
 city of New Sparta!
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 You see a bustling harbourplace.
 ~
@@ -42,7 +42,7 @@ as suddenly as they appeared.
    The harbourplace continues to the east and west.  To the north you 
 see the downtown section of New Sparta.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 To the north lies Broadway, the main street of New Sparta.
 ~
@@ -74,7 +74,7 @@ confident that this city is at least 1000 times better than Midgaard.
 the economically challenged neighborhood (note the PC terminology).
 Broadway continues to the north.
 ~
-275 c 1
+275 4 0 0 0 0
 D0
 You see Broadway continues.
 ~
@@ -103,7 +103,7 @@ of those annoying salespeople here, but there are more and more foreign
 tourists flashing their cameras.
    The harbour continues to the south and west.
 ~
-275 0 1
+275 0 0 0 0 0
 D2
 You see the harbour continuing to the south.
 ~
@@ -125,7 +125,7 @@ camera back and the man yells expletives back at you in a strange
 tongue.
    To the harbour continues to the south and east.
 ~
-275 0 1
+275 0 0 0 0 0
 D1
 You see the central harbourplace.
 ~
@@ -143,7 +143,7 @@ Broadway~
 entrance to the Cafe.  When you turn to face the west you see the
 entrance to the Pharmacy.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 Broadway continues.
 ~
@@ -173,7 +173,7 @@ a while, you realize that the fish is Charlie Tuna.  You see one of those
 dusty chalk boards with a list of delectables from which you can choose.
    Type <list> to see a list of products.
 ~
-275 d 0
+275 8 0 0 0 0
 D3
 You can barely see Broadway through the dirty window.
 ~
@@ -188,7 +188,7 @@ to you rich and sheltered people.
    You see the entrance to the thieves guild to the south.  The alley
 continues to the west.  Broadway lies to the east.
 ~
-275 0 1
+275 0 0 0 0 0
 D1
 You see Broadway.
 ~
@@ -212,7 +212,7 @@ By The Shore~
 with other various sea vessels.  To the south you can see the river.
    To the north is the east end of the harbourplace.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 You see the east end of the harbour.
 ~
@@ -227,7 +227,7 @@ here shooting an Old Midgaard beer commercial (It is REALLY too bad
 it is not a topless beach!).  
    To the north is the west end of the harbourplace.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 You see the west end of the harbour.
 ~
@@ -242,7 +242,7 @@ a bunch of bored college students).
    To the east is the Weapons Shop, and to the west is the Seven-
 Eleven.  Broadway continues north and south of here.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 More Broadway.
 ~
@@ -274,7 +274,7 @@ walls.  You see what you think is a marijuana plant growing in the
 corner.
    To the west, you can return to Broadway (and the real world).
 ~
-275 d 0
+275 8 0 0 0 0
 D3
 You can make out Broadway through the mass of bodies between 
 you and the door.
@@ -292,7 +292,7 @@ A small price to pay for the goods you may obtain here.
    The entrance to the Clerics' Guild is to the west.  Broadway is to
 the east.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see Broadway.
 ~
@@ -309,7 +309,7 @@ The Entrance To The Thieves' Guild~
    This is the entrance to the Guild of Thieves.  The Rogues' Bar is
 south of here, and Tin Can Alley is to the North.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 You see Tin Can Alley.
 ~
@@ -328,7 +328,7 @@ part of town.  Considering the situation here, you wonder how
 much worse it can get.
    Tin Can Alley continues to the east and west.
 ~
-275 0 1
+275 0 0 0 0 0
 D1
 Still Tin Can Alley.
 ~
@@ -349,7 +349,7 @@ stadium.
    Broadway continues north and south; First Avenue extends west
 towards Hell's Kitchen and east to the stadium.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 More Broadway.
 ~
@@ -377,7 +377,7 @@ The Weapons Shop~
 and sell weapons (what else would you expect?).  
    The Warriors' Guild is to the east and Broadway is to the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see the entrance to the Warrior's Guild.
 ~
@@ -396,7 +396,7 @@ New Sparta.  Much like any other 7-11, here you can purchase many
 necessities at inflated prices all hours of the night.  And what
 would a 7-11 be without a foreign clerk with a funny accent?
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 It is Broadway.
 ~
@@ -409,7 +409,7 @@ The Entrance To The Clerics' Guild~
 of the Clerics.  
    Harry's Pharmacy is to the east and the bar is to the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 Harry's Pharmacy is there.
 ~
@@ -427,7 +427,7 @@ The Clerics' Bar~
 only.  Fine furniture is set all around the room.  A small sign is hanging
 on the wall.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 Entrance to the Clerics' Guild.
 ~
@@ -445,7 +445,7 @@ The Inner Sanctum~
 nature here as well as a strange sense of power.
    The Clerics' bar is to the east.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 The Clerics' Bar.
 ~
@@ -460,7 +460,7 @@ in New Sparta (like the public beach) and how much you'd rather be there!
    To the south is Baltimore Ave. and Tin Can Alley continues east 
 towards Broadway.
 ~
-275 0 1
+275 0 0 0 0 0
 D1
 You see Tin Can Alley.
 ~
@@ -479,7 +479,7 @@ one has to be careful not to say something wrong (or right).
    The Swordsmens' Bar is to the south and the Weapons Shop is to 
 the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D2
 You see the Bar of Swordsmen.
 ~
@@ -499,7 +499,7 @@ a Frat House).
    To the south you see the Tournament and Practice Yard and to the 
 north is the Entrance to the Guild of Swordsmen.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 You see the Entrance to the Guild of Swordsmen.
 ~
@@ -515,7 +515,7 @@ S
 The Tournament And Practice Yard~
    The practice yard of the fighters.  To the north is the bar.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 You see the Bar of Swordsmen.
 ~
@@ -530,7 +530,7 @@ town has one), a wonderful place to spend your money on a rainy day
    To the east is Pee Wee's Peep Show and to the south, Baltimore 
 Avenue continues.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 You see Tin Can Alley.
 ~
@@ -555,7 +555,7 @@ corner doing something you would rather not think about.  Good
 thing there are no police here!  
    Baltimore Avenue is to the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D3
 Had you succeeded in removing your gaze from the gyrating women in front
 of you, you would have seen that Baltimore Avenue lies to the west.     
@@ -570,7 +570,7 @@ district, but did you expect the good people of New Sparta to put up with
 anymore!!!).  There is some graffiti on the south wall.
    Baltimore Avenue is to the north.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 You see Baltimore Avenue.
 ~
@@ -591,7 +591,7 @@ First Avenue~
    You are on the west side of First Avenue.  In the distance to the
 east you can see the WarDome. Broadway is to the west.
 ~
-275 0 1
+275 0 0 0 0 0
 D1
 You see the entrance to the WarDome.
 ~
@@ -614,7 +614,7 @@ conditions (rain, sleet, wind and hail).  A large electronic screen
 adorns the side of the edifice, promoting today's event.
    First street is to the west, east takes you into the WarDome.
 ~
-275 0 1
+275 0 0 0 0 0
 D1
 You see the inside of WarDome.
 ~
@@ -658,7 +658,7 @@ though not strongly recommended.
    To the east are the Blue Seats, to the north are the West Stands.
 Going west, you exit the stadium.
 ~
-275 cd 0
+275 12 0 0 0 0
 D0
 You see the West Stands.
 ~
@@ -683,7 +683,7 @@ game.  The stands overlook New Sparta's goal line.
    The West Stands continue north, and the southwest corner of
 the stadium is to the south.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see more of the West Stands.
 ~
@@ -707,7 +707,7 @@ section of WarDome.  Various spectators are here, viewing the
 game.  The stands overlook New Sparta's defensive zone.
    The West Stands continue north and south.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see more of the West Stands.
 ~
@@ -733,7 +733,7 @@ you wonder if you should go down....
    The West Stands continue north and south, stairs go down to the
 field level.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see more of the West Stands.
 ~
@@ -762,7 +762,7 @@ section of WarDome.  Various spectators are here, viewing the
 game.  The stands overlook Orcland's defensive zone.
    The stands continue north and south.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the West Stands.
 ~
@@ -787,7 +787,7 @@ but the best place to eye the hometown cheerleaders.
    The West Stands continue to the south, to the north is the
 northwest corner of WarDome.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the northwest corner of WarDome.
 ~
@@ -818,7 +818,7 @@ staff.
    The West Stands are to the south and to the east is WarVision,
 the stadium's extensive scoreboard.
 ~
-275 cd 0
+275 12 0 0 0 0
 D1
 You see the back of the scoreboard.
 ~
@@ -839,7 +839,7 @@ Home Locker room, which has been closed off to the public.
    The concourse behind the scoreboard continues east, to the
 west is the northwest corner of WarDome.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 You see the locked door to the Warriors' Locker room.  You do not see
 a keyhole.
@@ -868,7 +868,7 @@ The Concourse Behind WarVision~
    You are walking behind WarVision in the vicinity of the players'
 locker rooms.  The concourse continues east and west.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see what you think is the end of the concourse.
 ~
@@ -898,7 +898,7 @@ inviting someone to walk in.
    The concourse runs west, to the north you may enter the locker-
 room.
 ~
-275 cd 0
+275 12 0 0 0 0
 D0
 You see the open door to the Visitor's Locker room.
 ~
@@ -943,7 +943,7 @@ assorted pieces of equipment and body parts.
    To the west is the shower room, to the south you exit onto
 the concourse.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 What a mess!
 ~
@@ -974,7 +974,7 @@ As you peer through what little light there is, you notice a loose grate
 in the far corner.  Letting curiosity get the best of you, you lift
 up the grate and find a long ladder descending into darkness.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see the locker room.
 ~
@@ -995,7 +995,7 @@ this is not the place to be for the faint of heart.
    The Blue Seats continue to the east, to the west is the exit 
 from WarDome.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the corner of the Warriors' end zone.
 ~
@@ -1020,7 +1020,7 @@ climb down the steps leading towards the playing field.
    The Blue Seats continue east and west, stairs go down to the
 field level.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the Warriors' end zone.
 ~
@@ -1053,7 +1053,7 @@ anyone has ever seen or heard.  You Clerics had better cover
 your ears.
    The Blue Seats continue west.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the Warriors' end zone.
 ~
@@ -1075,7 +1075,7 @@ and begin to feel your animalistic instincts rise inside of you.
 Can you take that long walk...?
    Above you are the stands, to your east is the playing field.
 ~
-275 cd 0
+275 12 0 0 0 0
 D1
 You see the gridiron awaiting you.
 ~
@@ -1097,7 +1097,7 @@ animalistic instincts rise inside of you.  Can you take that
 long walk...?
    Above you are the stands, to your north is the playing field.
 ~
-275 cd 0
+275 12 0 0 0 0
 D0
 You see the gridiron awaiting you.
 ~
@@ -1115,7 +1115,7 @@ The 50-Meter Line~
 game.  To the south is the Warriors' zone, to the north is the
 Raiders'.  Centrefield is east, and the tunnel is west.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the Raiders' zone.
 ~
@@ -1143,7 +1143,7 @@ The Warriors' Zone~
 50-Meter Line, to the south is the end zone.  The field also
 continues east.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the 50-Meter Line.
 ~
@@ -1168,7 +1168,7 @@ logo, a fierce warrior.
    The end zone continues to the east.  To the north is the Warriors'
 defensive zone.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the defensive zone.
 ~
@@ -1186,7 +1186,7 @@ The Warriors' Zone~
 field, to the south is the end zone.  The field also continues east 
 and west.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see Centrefield.
 ~
@@ -1216,7 +1216,7 @@ logo, a fierce warrior.
    The end zone continues to the east and west.  To the north is 
 the Warriors' defensive zone, to the south is the tunnel.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the defensive zone.
 ~
@@ -1247,7 +1247,7 @@ course, just the Bloodbowl logo painted on the surface of the field.
    The respective defensive zones are to the north and south, and
 the 50-Meter Line runs east-west.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see Orcland's defensive zone.
 ~
@@ -1275,7 +1275,7 @@ The Raiders' Zone~
 field, to the north is the end zone.  The field continues east and
 west.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see Orcland's end zone.
 ~
@@ -1303,7 +1303,7 @@ The 50-Meter Line~
 game.  To the south is the Warriors' zone, to the north is the
 Raiders'.  Centrefield is to the west.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the Raiders' zone.
 ~
@@ -1328,7 +1328,7 @@ logo, a fierce warrior.
    The end zone continues to the west.  To the north is the Warriors'
 defensive zone.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the defensive zone.
 ~
@@ -1346,7 +1346,7 @@ The Warriors' Zone~
 50-Meter Line, to the south is the end zone.  The field also
 continues west.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see the 50-Meter Line.
 ~
@@ -1369,7 +1369,7 @@ The Raiders' Zone~
 50-Meter Line, to the north is the end zone.  The field also
 continues west.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see Orcland's end zone.
 ~
@@ -1395,7 +1395,7 @@ of a pirate's flag.
    The end zone continues to the west.  To the south is the Raiders'
 defensive zone.
 ~
-275 d 1
+275 8 0 0 0 0
 D2
 You see the defensive zone.
 ~
@@ -1416,7 +1416,7 @@ of a pirate's flag.
    The end zone continues to the east.  To the south is the Raiders'
 defensive zone.
 ~
-275 d 1
+275 8 0 0 0 0
 D1
 The end zone continues.
 ~
@@ -1434,7 +1434,7 @@ The Raiders' Zone~
 50-Meter Line, to the north is the end zone.  The field also
 continues east.
 ~
-275 d 1
+275 8 0 0 0 0
 D0
 You see Orcland's end zone.
 ~
@@ -1460,7 +1460,7 @@ of a pirate's flag.
    The end zone continues east and west.  To the south is the Raiders'
 defensive zone.
 ~
-275 d 1
+275 8 0 0 0 0
 D1
 The end zone continues.
 ~
@@ -1485,7 +1485,7 @@ everywhere.
    Broadway continues to the north and south. The armoury is to the
 east and the magic shop is to the west.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 You see Broadway.
 ~
@@ -1513,7 +1513,7 @@ The Armoury~
 of armour and other assorted goodies.
    Broadway is to the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D3
 You see Broadway.
 ~
@@ -1531,7 +1531,7 @@ high stake frog races).
    Broadway is to the east and the Entrance to the Mages' Guild is to
 the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see Broadway.
 ~
@@ -1549,7 +1549,7 @@ Broadway~
 is to the east and the New Spartan Bank is to the west.  Broadway
 continues to the north and south.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 Broadway continues.
 ~
@@ -1577,7 +1577,7 @@ Intersection of Broadway and Second Avenue~
 Avenue leads west to the dump and east to the church and fire station.    
    Broadway runs north-south and Second Avenue runs east-west.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 Broadway continues.
 ~
@@ -1608,7 +1608,7 @@ upper class neighborhood of New Sparta.
 the entrance to the Museum of National History and to the west
 is the entrance to the Waldorf Astoria.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 Broadway continues.
 ~
@@ -1640,7 +1640,7 @@ the museum's progress.  After a long and boring story, you jump at the
 chance to make a polite exit and quickly make your departure.
    Broadway is to the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D3
 You see Broadway.
 ~
@@ -1657,7 +1657,7 @@ would readily bite your head off if you even thought about trying.
    To the east is Broadway.  Follow the stairs up to check in at the
 Reception.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see Broadway.
 ~
@@ -1675,7 +1675,7 @@ Broadway~
 west and the Goethe Library is to the east.  Broadway continues to
 the north and south.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 You see more of Broadway.
 ~
@@ -1701,7 +1701,7 @@ S
 The Entrance To The Mages' Guild~
    The entrance is a small, poor lighted room.  
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 You see the Mages' Bar.
 ~
@@ -1719,7 +1719,7 @@ The Mages' Bar~
 around the air.  Illusions of fine furniture appear all around the
 room.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see the Mages' Laboratory.
 ~
@@ -1739,7 +1739,7 @@ with strange and even weirder symbols, and a blackboard in a dark
 corner has only been partially cleaned, some painful-looking letters
 are faintly visible.  
 ~
-275 d 0
+275 8 0 0 0 0
 D3
 You see the Mages' Bar.
 ~
@@ -1754,7 +1754,7 @@ safe is completed in order to protect your money from all the punks
 in town!
    Broadway is to the east.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see Broadway.
 ~
@@ -1768,7 +1768,7 @@ doubles as the entrance to the park. You see the park to the north,
 Broadway to the south, a department store to the west and the City
 Hall of New Sparta is to the east.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 You see Goethe's Garden.
 ~
@@ -1801,7 +1801,7 @@ knowledge seekers.  The library also serves as the source of magic
 scrolls to adventurers in New Sparta.
    Broadway continues to the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D3
 You see Broadway.
 ~
@@ -1818,7 +1818,7 @@ gets old, (it sure hasn't with Norm) you're sure to find something
 else to do.
    The Main Bar is to the west, Broadway is to the east.
 ~
-275 cd 0
+275 12 0 0 0 0
 D1
 You see Broadway.
 ~
@@ -1838,7 +1838,7 @@ face here.
    The bar continues north and west. To the south are the stairs
 to Melville's, to the east is the exit.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 You see tables in the bar.
 ~
@@ -1867,7 +1867,7 @@ stools are personally melded to certain individuals' posteriors.
    The main bar is to the east. The pool room is to the west.
 The bar also continues north and south.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 The bar continues.
 ~
@@ -1895,7 +1895,7 @@ Inside The Bar~
 at tables moving towards intoxication.
    The bar continues to the west, to the south is the Main Bar.
 ~
-275 d 0
+275 8 0 0 0 0
 D2
 You see the Main Bar.
 ~
@@ -1918,7 +1918,7 @@ you need a coat and tie.  Oh, and don't forget to wipe your feet.
    The stairs lead up to Melville's, to the north is the Main Bar
 and to the west the bar continues.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 You see the Main Bar.
 ~
@@ -1942,7 +1942,7 @@ bar table that has been used for everything from seances to Monopoly
 games with fuzzy dice.
    The bar continues east, the bar stools are to the south.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 The bar continues east
 ~
@@ -1963,7 +1963,7 @@ hung here in loving memory of Coach Ernie Pantuzzo.
 Cheers, behind a door.  To the east, you see the stairs to Melville's 
 Restaurant.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 You see the bar stools (like duh!).
 ~
@@ -1994,7 +1994,7 @@ that 1) you couldn't afford the money it would take to get him drunk, and
 see a pool table and pool sticks.
    The bar stools are to east.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see the bar stools.
 ~
@@ -2016,7 +2016,7 @@ Mr. Hill gets snotty and throws you out (but you can always steal their
 mints!).
    The Cheers Bar is downstairs.
 ~
-275 d 0
+275 8 0 0 0 0
 D5
 You see Cheers Bar (wow!).
 ~
@@ -2032,19 +2032,19 @@ been used for more than business work (well, maybe it's been used
 for a different kind of business).
    The bar is to east.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see the door to the office.
 ~
 door~
 1 -1 27588
 E
-desk~
-   This is a large desk, good for doing many various things.  
-~
-E
 couch~
    This is one comfortable couch.  
+~
+E
+desk~
+   This is a large desk, good for doing many various things.  
 ~
 S
 #27592
@@ -2054,7 +2054,7 @@ things in town don't get done.  Underworked and overpaid civil servants
 are everywhere, planning this year's family reunion.
    Broadway is to the west, the Mayor's Office is to the east.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see Mayor Abe's Office.
 ~
@@ -2075,7 +2075,7 @@ rumors you heard about the mayor's link to Satan himself (which would
 explain him damning everyone).
    City Hall is to the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D3
 You see City Hall.
 ~
@@ -2089,7 +2089,7 @@ is proven by the sheer beauty of the receptionist.  Hey, they can afford
 to pay for the high prices of supermodels and Playboy Playmates.
    The lobby to the Waldorf is downstairs.
 ~
-275 d 0
+275 8 0 0 0 0
 D5
 You see the lobby.
 ~
@@ -2104,7 +2104,7 @@ authorities or any other persons who are after your head!
    The Entrance to the Thieves' Guild is to the north and the Secret
 Yard is to the west.
 ~
-275 d 0
+275 8 0 0 0 0
 D0
 You see the Entrance to the Guild of Thieves.
 ~
@@ -2121,7 +2121,7 @@ The Secret Yard~
    This is the secret practice yard of assassins and thieves.  The
 Rogues' Bar is to the east.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see the bar.
 ~
@@ -2134,7 +2134,7 @@ The Renaissance Department Store~
 adventurer can do without.
    Broadway is to the east.
 ~
-275 d 0
+275 8 0 0 0 0
 D1
 You see Broadway.
 ~
@@ -2148,7 +2148,7 @@ From the condition of the street, it seems that the inhabitants haven't
 been paying their taxes lately.
    Broadway is to the west and the end of Second Avenue is to the east.
 ~
-275 0 1
+275 0 0 0 0 0
 D1
 You see the east end of Second Avenue.
 ~
@@ -2165,7 +2165,7 @@ The East End Of Second Avenue~
    This is the east end of the very short Second Avenue.  The Church 
 is to the north and the fire station is to the south.
 ~
-275 0 1
+275 0 0 0 0 0
 D0
 You see the church.
 ~

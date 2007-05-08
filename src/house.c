@@ -146,7 +146,7 @@ void House_crashsave(room_vnum vnum)
   }
   fclose(fp);
   House_restore_weight(world[rnum].contents);
-  REMOVE_BIT(ROOM_FLAGS(rnum), ROOM_HOUSE_CRASH);
+  REMOVE_BIT_AR(ROOM_FLAGS(rnum), ROOM_HOUSE_CRASH);
 }
 
 /* Delete a house save file */
@@ -275,8 +275,8 @@ void House_boot(void)
 
     house_control[num_of_houses++] = temp_house;
 
-    SET_BIT(ROOM_FLAGS(real_house), ROOM_HOUSE | ROOM_PRIVATE);
-    SET_BIT(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
+    SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE | ROOM_PRIVATE);
+    SET_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
     House_load(temp_house.vnum);
   }
 
@@ -425,8 +425,8 @@ void hcontrol_build_house(struct char_data *ch, char *arg)
 
   house_control[num_of_houses++] = temp_house;
 
-  SET_BIT(ROOM_FLAGS(real_house), ROOM_HOUSE | ROOM_PRIVATE);
-  SET_BIT(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
+  SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE | ROOM_PRIVATE);
+  SET_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
   House_crashsave(virt_house);
 
   send_to_char(ch, "House built.  Mazel tov!\r\n");
@@ -449,12 +449,12 @@ void hcontrol_destroy_house(struct char_data *ch, char *arg)
   if ((real_atrium = real_room(house_control[i].atrium)) == NOWHERE)
     log("SYSERR: House %d had invalid atrium %d!", atoi(arg), house_control[i].atrium);
   else
-    REMOVE_BIT(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
+    REMOVE_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
 
   if ((real_house = real_room(house_control[i].vnum)) == NOWHERE)
     log("SYSERR: House %d had invalid vnum %d!", atoi(arg), house_control[i].vnum);
   else
-    REMOVE_BIT(ROOM_FLAGS(real_house), ROOM_HOUSE | ROOM_PRIVATE | ROOM_HOUSE_CRASH);
+    REMOVE_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE | ROOM_PRIVATE | ROOM_HOUSE_CRASH);
 
   House_delete_file(house_control[i].vnum);
 
@@ -470,7 +470,7 @@ void hcontrol_destroy_house(struct char_data *ch, char *arg)
    * case the house we just deleted shared an atrium with another house. -JE */
   for (i = 0; i < num_of_houses; i++)
     if ((real_atrium = real_room(house_control[i].atrium)) != NOWHERE)
-      SET_BIT(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
+      SET_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
 }
 
 void hcontrol_pay_house(struct char_data *ch, char *arg)
@@ -729,7 +729,7 @@ struct obj_data *Obj_from_store(struct obj_file_elem object, int *location)
 {
   struct obj_data *obj;
   obj_rnum itemnum;
-  int j;
+  int j, taeller;
 
   *location = 0;
   if ((itemnum = real_object(object.item_number)) == NOTHING)
@@ -743,10 +743,12 @@ struct obj_data *Obj_from_store(struct obj_file_elem object, int *location)
   GET_OBJ_VAL(obj, 1) = object.value[1];
   GET_OBJ_VAL(obj, 2) = object.value[2];
   GET_OBJ_VAL(obj, 3) = object.value[3];
-  GET_OBJ_EXTRA(obj) = object.extra_flags;
+  for(taeller = 0; taeller < EF_ARRAY_MAX; taeller++)
+    GET_OBJ_EXTRA(obj)[taeller] = object.extra_flags[taeller];
   GET_OBJ_WEIGHT(obj) = object.weight;
   GET_OBJ_TIMER(obj) = object.timer;
-  GET_OBJ_AFFECT(obj) = object.bitvector;
+  for(taeller = 0; taeller < AF_ARRAY_MAX; taeller++)
+    GET_OBJ_AFFECT(obj)[taeller] = object.bitvector[taeller];
 
   for (j = 0; j < MAX_OBJ_AFFECT; j++)
     obj->affected[j] = object.affected[j];

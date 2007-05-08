@@ -166,7 +166,7 @@ ACMD(do_oasis_hedit)
 
   STATE(d) = CON_HEDIT;
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
-  SET_BIT(PLR_FLAGS(ch), PLR_WRITING);
+  SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
   mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing help files.", GET_NAME(d->character));
 }
 

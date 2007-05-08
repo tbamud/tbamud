@@ -3,7 +3,7 @@ Crossbow cross bow~
 a crossbow~
 A huge crossbow is leaning against the wall here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 3 11
 10 500 0 0
 E
@@ -20,7 +20,7 @@ axe sturdy~
 a sturdy axe~
 A thick, well-crafted axe lies here, well-polished.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 3
 10 200 0 0
 E
@@ -36,7 +36,7 @@ Sword bastard~
 an immense bastard sword~
 An astoundingly big bastard sword stands here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 15 6
 10 750 0 0
 E
@@ -52,9 +52,9 @@ water rain barrel water~
 a rain barrel~
 A rain barrel stands here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 300 300 0 0
-50 50 0 0
+305 50 0 0
 E
 rain barrel~
    That's one big rain barrel!  The water looks cool and clear inside...  
@@ -64,7 +64,7 @@ slingshot sling shot~
 a slingshot~
 A slingshot of wood has been discarded here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 2 11
 2 25 0 0
 E
@@ -78,7 +78,7 @@ dart~
 a dart~
 A dart is stuck in the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 2 11
 1 5 0 0
 E
@@ -91,7 +91,7 @@ pike~
 a pike~
 A nasty looking pike is lying on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 3
 20 500 0 0
 E
@@ -103,7 +103,7 @@ knife wicked~
 a wicked knife~
 A wickedly curved knife sits here.~
 ~
-5 0 ano 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 2 5 11
 5 300 0 0
 E
@@ -117,7 +117,7 @@ staff quarter quarterstaff~
 a quarterstaff~
 A metal-shod quarterstaff has been stuck in the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 7
 12 100 0 0
 E
@@ -131,7 +131,7 @@ Bevgul weapon wood spike spikes~
 Bevgul~
 A strange weapon made of wood and spikes sits here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 2 6
 8 1000 0 0
 E
@@ -146,7 +146,7 @@ scarf silk~
 a silk scarf~
 A silk scarf has been folded neatly here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 500 0 0
 E
@@ -160,7 +160,7 @@ scarf silk~
 a silk scarf~
 A silk scarf has been folded neatly here.~
 ~
-9 0 ac 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 500 0 0
 E
@@ -174,7 +174,7 @@ Pot cooking~
 a big pot~
 A big cooking pot sits here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 0 0
 15 200 0 0
 E
@@ -186,7 +186,7 @@ Pan frying~
 a frying pan~
 A frying pan has been put aside here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
 10 100 0 0
 E
@@ -198,23 +198,23 @@ Plate Jumbalaya~
 a plate of jumbalaya~
 A plate of HOT jumbalaya gives off steam.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 15 0 0 0
 3 20 0 0
 E
-shrimp plate jumbalaya~
-   Shrimp, rice, sausage, and lots and LOTS of cayenne pepper!  Whew!  
-~
-E
 Plate Jumbalaya~
    This is a Dummy, please make me valid!!  Some  XèÂ°O
+~
+E
+shrimp plate jumbalaya~
+   Shrimp, rice, sausage, and lots and LOTS of cayenne pepper!  Whew!  
 ~
 #28915
 Plate spaghetti~
 a plate of spaghetti~
 A plate of spaghetti sits here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 14 0 0 0
 3 18 0 0
 E
@@ -226,7 +226,7 @@ Bowl soup~
 a bowl of soup~
 A bowl of soup is cooling here.~
 ~
-19 0 ao 0
+19 0 0 0 0 ao 0 0 0 0 0 0 0
 6 0 0 0
 1 10 0 0
 E
@@ -238,7 +238,7 @@ beer glass beer~
 a glass~
 A glass of beer sits forgotten here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 1 0
 2 5 0 0
 E
@@ -250,7 +250,7 @@ ale glass ale~
 a glass~
 A big glass of mead sits here, cool and frosty.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 3 0
 2 8 0 0
 E
@@ -263,7 +263,7 @@ whisky shot whiskey whisky~
 a shot~
 A shot of Whiskey is sitting here.~
 ~
-17 0 ao 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 5 0
 1 10 0 0
 E

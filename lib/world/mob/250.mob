@@ -7,7 +7,7 @@ The Copper Dragon of Time stands before you
 copper scales seems to stop time.  The Dragon does not seem happy that you are
 here.  It ATTACKS.    
 ~
-bdl dfh 350 E
+2058 0 0 0 80 0 0 0 350 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -20,7 +20,7 @@ The White Dragon of Ice stands before you
    A intimidating Dragon stands before you.  The icy glare blinds you long
 enough for the Ice Dragon to devour you.    
 ~
-bdl dfh -350 E
+2058 0 0 0 80 0 0 0 -350 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -33,7 +33,7 @@ A Pixie flits about the room
    This winged creature is the epitome of mischief.  He loves to pick on
 travelers, and guess what....  It's your turn :).    
 ~
-dgh 0 500 E
+200 0 0 0 0 0 0 0 500 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -47,7 +47,7 @@ The translucent Spirit of the Dragon stares at you through uncaring eyes
 dragons who have stood sentinel over this spot.  The Spirit lunges for your
 SOUL!!!!!!!    
 ~
-bdl bdfhs 0 E
+2058 0 0 0 524372 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -61,7 +61,7 @@ The shimmering Spirit of the Dragon freezes you in your steps
 dragon guardians.  The Spirit attempts to leech you life blood from your body.
   
 ~
-bdl bdfhs 0 E
+2058 0 0 0 524372 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -75,7 +75,7 @@ The Pixie King looks at you with a merry glint in his eyes and nods
 The King loves to frolic and play, especially with new friends.  He asks you
 "Will you be my fwiend?  ".    
 ~
-bdl df 1000 E
+2058 0 0 0 80 0 0 0 1000 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -89,7 +89,7 @@ The GateKeeper appears to look right through you as he stands at his post.
 carrying a large burden for some time.  You feel sorry for him, but he does
 have the key that you need to continue on through the cave.    
 ~
-bdl df 0 E
+2058 0 0 0 80 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -106,7 +106,7 @@ mountain, is completely filled by the dragon.  At the time it seems peaceful,
 but you can tell that attacking it would be the dumbest, and last thing you
 ever did.    
 ~
-dg bdfhs 0 E
+72 0 0 0 524372 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -120,7 +120,7 @@ The Pixie Guard stands here, prepared to loose his life for the king.
 you suppose that if pressed, he could fight quite visciously compared to most
 Pixies.    
 ~
-bdm t 1000 E
+4106 0 0 0 1048576 0 0 0 1000 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -135,7 +135,7 @@ encountered.  His glow has taken on a pale green color, and he is staring at
 you maliciously.  The Staff he carries seems familiar, but you are not sure
 from where you remember it.    
 ~
-bdl dh -500 E
+2058 0 0 0 16 0 0 0 -500 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1

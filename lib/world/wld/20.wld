@@ -5,7 +5,7 @@ cheering and the sounds of battle.  The walls are covered with posters
 announcing future bouts in the arena with some of the famous gladiators.  
 One poster catches your eye as it is written in blood red ink.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 Nothing.
 ~
@@ -39,7 +39,7 @@ points north towards the Gladiators Entrance.  The cheering is even louder
 here.  You can barely hear the clash of weapons and screams of pain over it
 all.
 ~
-20 c 0
+20 4 0 0 0 0
 D0
 ~
 ~
@@ -73,7 +73,7 @@ is the Warriors Arena.  East is the Thieves Arena and west is the Clerics
 arena.  Stairs leading up take you into the Main arena in the center of the
 Ampitheater.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -116,7 +116,7 @@ is being sharpened, there someone is heating metal plates to be used on fallen
 gladiators, to see if they are dead, here rods are produced, there whips to
 encourage unwilling participants.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -140,7 +140,7 @@ Training Room~
 vairous moves and attacks seem to be more for looks than anything else.  
 Gladiators always have to play to the crowd.  
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 ~
@@ -152,7 +152,7 @@ Training Room~
 dirt covers the floor.  Everything in the room is spartan and dull.  The only
 thing extravagant is a few bits of the gladiators weaponry and armor.  
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -165,7 +165,7 @@ new meaning.  First, his status is now voluntary rather than involuntary.  He
 also becomes a member of a cohesive group that is known for its courage, good
 morale, and absolute fidelity to their master to the point of death.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -189,7 +189,7 @@ Training Room~
 Many are scarred gladiator veterans themselves and know very well how to please
 the crowd.  
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 door~
@@ -201,7 +201,7 @@ Training Room~
 ropes.  The motivation to learn is high since failing at this usually costs
 someone their life or limbs.  
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 door~
@@ -216,7 +216,7 @@ a misunderstanding.  Becoming a gladiator is obviously better fate
 than being put to death by being set upon by wield animals or being 
 tortured in the amphitheater
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -240,7 +240,7 @@ Training Room~
 either fighting to the death in the arena or being hung for not fighting.  
 Either way death is assured with time.  
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 ~
@@ -252,7 +252,7 @@ Gladiators Room~
 lanista by swearing an oath "to endure branding, chains, flogging or death 
 by the sword" and to do whatever the master ordered.   
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -265,7 +265,7 @@ and train gladiators, who could be easily turned into a private army for
 revolutionary purposes.  Therefore, with very few exceptions, gladiators are
 under the control and ownership of the emperor.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -289,7 +289,7 @@ Gladiators Room~
 lanista by swearing an oath "to endure branding, chains, flogging or death 
 by the sword" and to do whatever the master ordered.
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 door~
@@ -301,7 +301,7 @@ Retiarius Cell~
 trident and a dagger.  The floor is lined with straw and a smelly pot sits 
 in the corner, how could anyone live in these conditions?
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 door~
@@ -313,7 +313,7 @@ Gladiators Cells~
 courageous behavior he is also now capable of achieving honor similar to 
 that enjoyed by Roman soldiers on the battlefield.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -337,7 +337,7 @@ Mirmillones Cell~
 ornament on their helmets, armed with a short, thick sword, an oblong shield 
 and leg and arm shields of metal.  A smelly pot sits in the corner.
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 door~
@@ -349,7 +349,7 @@ Retiarrus Cell~
 bouts.  Most of them are dressed up in funny armor and look like common
 thieves. 
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 door~
@@ -362,7 +362,7 @@ lanistas school . Training involves the learning of a series of figures,
 which are broken down into various phases.  The training of gladiators has 
 been taken over by the state.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -386,7 +386,7 @@ Mirmillones Cell~
 their bouts.  Most of them are dressed up in funny armor and look like common
 thieves.
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 door~
@@ -398,7 +398,7 @@ Samnites Cell~
 bouts.  Most of them are dressed up in funny armor and look like common
 thieves. 
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 door~
@@ -409,7 +409,7 @@ Prisons~
    Cell doors to the east and west are closed and barred from the outside, you
 hear voices muttering in a different and very strange language behind each door.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -433,7 +433,7 @@ Thraecian Cell~
 bouts.  Most of them are dressed up in funny armor and look like common
 thieves.    
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 door~
@@ -446,7 +446,7 @@ needed.  Straw lines the floor and the animals refuse is thick on the floor.
 The animals are starved before the games so they will be crazed and 
 aggressive. 
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 door~
@@ -458,7 +458,7 @@ Prisons~
 the victims to be led into the arena are kept down here until their fight.  
 Those that do not fight are killed.  
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -482,7 +482,7 @@ Animals Cell~
 lines the floor and the animals refuse is thick on the floor.  The animals 
 are starved before the games so they will be crazed and aggressive.
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 door~
@@ -494,7 +494,7 @@ Elephants Cell~
 needed.  Straw lines the floor and the animals refuse is thick on the floor.  The
 animals are starved before the games so they will be crazed and aggressive.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 door~
@@ -506,7 +506,7 @@ Prisons~
 doors to the east and west.  The prisons continue north and south with a long
 hallway of cells.  
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -531,7 +531,7 @@ needed.  Straw lines the floor and the animals refuse is thick on the
 floor.  The animals are starved before the games so they will be crazed 
 and aggressive.
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 door~
@@ -544,7 +544,7 @@ needed.  Straw lines the floor and the animals refuse is thick on the floor.
 The animals are starved before the games so they will be crazed and 
 aggressive.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 door~
@@ -556,7 +556,7 @@ Prisons~
 snarling in both directions.  The prisons continue north and south with no end
 in sight.  
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -581,7 +581,7 @@ needed.  Straw lines the floor and the animals refuse is thick on the floor.
 The animals are starved before the games so they will be crazed and 
 aggressive.
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 door~
@@ -593,7 +593,7 @@ Prisons~
 trail of blood.  You also notice light filtering in from the north penetrating
 the gloom.  
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -609,7 +609,7 @@ Prisons~
 deeper into the prisons.  A trail of blood leads to the east.  Wheelbarrow
 treadmarks are visible in the blood.  
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -629,7 +629,7 @@ Training Room~
 competition is intense and a good gladiator can make their owner very wealthy
 and famous.  
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 door~
@@ -643,7 +643,7 @@ of forces that have been unleashed during previous battles.  The walls glow
 with a faint phosphurescent light, making the paintings of various mages 
 locked in battle along the walls seem alive.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -661,7 +661,7 @@ of forces that have been unleashed during previous battles.  The walls glow
 with a faint phosphurescent light, making the paintings of various mages 
 locked in battle along the walls seem alive.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -683,7 +683,7 @@ of forces that have been unleashed during previous battles.  The walls glow
 with a faint phosphurescent light, making the paintings of various mages 
 locked in battle along the walls seem alive.
 ~
-20 0 0
+20 0 0 0 0 0
 D2
 ~
 ~
@@ -701,7 +701,7 @@ of forces that have been unleashed during previous battles.  The walls glow
 with a faint phosphurescent light, making the paintings of various mages 
 locked in battle along the walls seem alive.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -723,7 +723,7 @@ forces that have been unleashed during previous battles.  The walls glow with a
 faint phosphurescent light, making the paintings of various mages locked in
 battle along the walls seem alive.  Are you ready to Rumble?    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -749,7 +749,7 @@ forces that have been unleashed during previous battles.  The walls glow with a
 faint phosphurescent light, making the paintings of various mages locked in
 battle along the walls seem alive.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -771,7 +771,7 @@ forces that have been unleashed during previous battles.  The walls glow with a
 faint phosphurescent light, making the paintings of various mages locked in
 battle along the walls seem alive.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -789,7 +789,7 @@ forces that have been unleashed during previous battles.  The walls glow with a
 faint phosphurescent light, making the paintings of various mages locked in
 battle along the walls seem alive.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -815,7 +815,7 @@ forces that have been unleashed during previous battles.  The walls glow with a
 faint phosphurescent light, making the paintings of various mages locked in
 battle along the walls seem alive.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -833,7 +833,7 @@ around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
 walls, which one of them isn't a drawing?    
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -851,7 +851,7 @@ around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
 walls, which one of them isn't a drawing?    
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -873,7 +873,7 @@ around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
 walls, which one of them isn't a drawing?    
 ~
-20 0 0
+20 0 0 0 0 0
 D2
 ~
 ~
@@ -891,7 +891,7 @@ around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
 walls, which one of them isn't a drawing?    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -917,7 +917,7 @@ around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
 walls, which one of them isn't a drawing?  Are you ready to Rumble?    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -943,7 +943,7 @@ around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
 walls, which one of them isn't a drawing?    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -965,7 +965,7 @@ around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
 walls, which one of them isn't a drawing?    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -983,7 +983,7 @@ around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
 walls, which one of them isn't a drawing?  
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1005,7 +1005,7 @@ around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
 walls, which one of them isn't a drawing?    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1022,7 +1022,7 @@ The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
 clerics from the past hang on all the walls.    
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1039,7 +1039,7 @@ The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
 clerics from the past hang on all the walls.    
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1060,7 +1060,7 @@ The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
 clerics from the past hang on all the walls.    
 ~
-20 0 0
+20 0 0 0 0 0
 D2
 ~
 ~
@@ -1077,7 +1077,7 @@ The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
 clerics from the past hang on all the walls.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1098,7 +1098,7 @@ The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
 clerics from the past hang on all the walls.  Are you ready to Rumble?    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1123,7 +1123,7 @@ The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
 clerics from the past hang on all the walls.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1148,7 +1148,7 @@ The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
 clerics from the past hang on all the walls.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1165,7 +1165,7 @@ The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
 clerics from the past hang on all the walls.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1186,7 +1186,7 @@ The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
 clerics from the past hang on all the walls.    
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1204,7 +1204,7 @@ smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.    
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1222,7 +1222,7 @@ smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1244,7 +1244,7 @@ smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
-20 0 0
+20 0 0 0 0 0
 D2
 ~
 ~
@@ -1262,7 +1262,7 @@ smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1284,7 +1284,7 @@ smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling. Are you ready to Rumble?
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1310,7 +1310,7 @@ smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1336,7 +1336,7 @@ smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1354,7 +1354,7 @@ smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1376,7 +1376,7 @@ smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1392,7 +1392,7 @@ Main Arena~
 inward to climb to the north or west.  The crowd above starts yelling at 
 you to begin fighting soon or they would send in some real gladiators.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1408,7 +1408,7 @@ Main Arena~
 anticipation of the fighting and blood shed.  The sound is deafening and
 definitely distracting.  
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1432,7 +1432,7 @@ Main Arena~
 your feet.  This is where the gladiators fight to the death for the pleasure of
 the citizens of Rome.  
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1448,7 +1448,7 @@ Main Arena~
 your stomach turn.  Above you is the Imperial Box where Emporer Titus 
 commands the fights of the arena.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1468,7 +1468,7 @@ Main Arena~
 silence blankets the arena as everyone waits in anticipation.  Are you 
 ready to Rumble?
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1492,7 +1492,7 @@ Main Arena~
 arena floor a sickly brown.  Slaves are dumping fresh sand over the 
 stains, but it doesn't seem to be helping.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 Nothing.
 ~
@@ -1513,7 +1513,7 @@ Main Arena~
 down into the arena after you.  In the crowd above you sits the prestigous
 magistrates senators augurs and priests of Rome.
 ~
-20 0 0
+20 0 0 0 0 0
 D2
 ~
 ~
@@ -1529,7 +1529,7 @@ Main Arena~
 heat and noise of the crowd is very aggravating.  Your foot sinks into 
 a puddle  of blood from the last person who came into this arena.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1549,7 +1549,7 @@ Main Arena~
 some good money or even better become a famous gladiator and be in awe 
 from all the citizens of Rome.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1565,7 +1565,7 @@ Roman Ampitheatre~
 crowd you expect the games are about to begin.  The crowd that seems to 
 be more of a mob than anything else is growing impatient.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1585,7 +1585,7 @@ men, from bachelors.  Boys and their tutors sit together.  Women, except
 for the Vestal Virgins who sit in the best seats with religious officials, 
 sit with the poorest men in the top tier.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1602,7 +1602,7 @@ provided for his people so they will look upon him with favor.  The Vestal
 Virgins sit to both sides of the emporer fanning themselves from the 
 opressive heat.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1621,7 +1621,7 @@ or forced to fight each other as gladiators.  But for the professional
 gladiator it is also a place of redemption, in which one can overcome death 
 by victory or by stoically accepting it.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1637,7 +1637,7 @@ Roman Ampitheatre~
 blood stains and prepare for the next bout.  The populace is once again 
 getting restless.
 ~
-20 0 0
+20 0 0 0 0 0
 D2
 ~
 ~
@@ -1654,7 +1654,7 @@ building the very amphitheatre in which they are to die, are pushed into the
 arena.  As the mob screams, howls and roars, barred doors are lifted, 
 releasing man-eating lions and tigers who have not been fed for quite a time. 
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1675,7 +1675,7 @@ retrieved and sorted out.  The gasping, bleeding, groaning and wounded are
 finished off.  The bodies are then piled into carts to be taken and flung 
 into a nameless common grave.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1696,7 +1696,7 @@ blood and one Thracian after another crumbles with a Samnite sword through
 his chest.  Reinforcements are rushed in to restore the balance and to add 
 to the pile of bleeding, writhing bodies on the sand-strewn floor. 
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1717,7 +1717,7 @@ Samnites, Rome's oldest enemies, face 24 lightly clad and lightly armed
 the Emperor in his resplendent Imperial Box to shout as one man: 'Hail, 
 Caesar.  Those about to die salute you.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1735,7 +1735,7 @@ sworn to the gladiators' oath to suffer death by fire, in chains, under
 the lash or by the sword as their master might decide and to obey as a 
 true gladiator should.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1755,7 +1755,7 @@ performers, together with images of the gods, the entry of the Emperor
 Titus across the floor of the arena is the signal for renewed frenzied 
 applause from the restive crowd. 
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1773,7 +1773,7 @@ with the worthy citizens of wealth and standing.  Above them and entirely
 filling the second and third rows up to the very top is the mob making up 
 the great mass of the inhabitants of the Imperial City.
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~
@@ -1791,7 +1791,7 @@ near-animal instincts and passions unrestrained by education, good manners
 or breeding, are squashed promiscuously together, men, women and children, 
 crying, shouting and sweating in a deafening crescendo of noise.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1808,7 +1808,7 @@ man or man against beast.  Trap doors in the floor allow famous gladiators
 to make grand entrances, or to allow the Caesar to spring animals into the 
 arena.  The Colosseum looks like it could hold about 50,000 spectators,
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1825,7 +1825,7 @@ crowds of people pour in through the entrance, pushing, shoving and
 scrambling to fill the top half of the immense number of seats looking down 
 on the huge arena.  It looks like the whole of Rome is here.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1847,7 +1847,7 @@ Gladiators fight for money or in order to compensate for crimes they have
 comitted.  The money is good and the adoration of the people of Rome is even
 better.
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1863,7 +1863,7 @@ Mortuary Cell~
 through the corpses retrieving the weapons and armor for a future battle.  
 Flies are everywhere and you gag at the stench.
 ~
-20 0 0
+20 0 0 0 0 0
 D3
 ~
 ~
@@ -1875,7 +1875,7 @@ Outside the Ampitheater~
 roman architecture.  The smell of death hangs heavy in the air.  So many
 gladiators have fought and died in this place.  
 ~
-20 0 0
+20 0 0 0 0 0
 D0
 ~
 ~
@@ -1891,7 +1891,7 @@ Common Grave~
 fights.  A few beggars scrounge through the corpses looking for valuables.  The
 stench is overpowering.  
 ~
-20 0 0
+20 0 0 0 0 0
 D2
 ~
 ~
@@ -1906,7 +1906,7 @@ for the strongest gladiator alive, no matter what class.  Do you think you
 could compete for and win one of them?  A sign listing the rules of the 
 arena is posted here. 
 ~
-20 0 0
+20 0 0 0 0 0
 D1
 ~
 ~

@@ -3,7 +3,7 @@ water fizzypop pop can water~
 a can of FizzyPop~
 A can of FizzyPop sits here, cool and refreshing.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 15 0
 1 10 0 0
 #29601
@@ -11,7 +11,7 @@ AXE~
 the AXE~
 The AXE sits here, waiting to be given to someone.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 3 4 3
 15 500 0 0
 #29602
@@ -19,7 +19,7 @@ sandwich~
 an old sandwich~
 A vending machine sandwich sits here till the end of time.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
 1 5 0 0
 #29603
@@ -27,7 +27,7 @@ froboz candy bar crunchie chewie~
 a Froboz candy bar~
 A Froboz Crunchie-Chewie candy bar is here!  Yum!~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
 1 3 0 0
 #29604
@@ -35,7 +35,7 @@ cart chevvy lay~
 the cart~
 A brand new Magic-cart creation of Wizard Chevvy Lay is parked here.~
 ~
-15 b 0 0
+15 b 0 0 0 0 0 0 0 0 0 0 0
 500 5 -1 0
 0 0 0 0
 #29605
@@ -44,7 +44,7 @@ the beat up too-yoto~
 A beat up Too-yoto wagon is parked here.
 ~
 ~
-15 b 0 0
+15 b 0 0 0 0 0 0 0 0 0 0 0
 300 5 -1 0
 0 0 0 0
 #29606
@@ -52,7 +52,7 @@ beanie propeller hat~
 the propeller hat~
 A nice looking hat with a propeller on top is here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
 3 1000 0 0
 A
@@ -62,7 +62,7 @@ gear magic~
 the magic gear~
 A magic gear sits here.~
 ~
-1 ag ao 0
+1 ag 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 15 1000 0 0
 A

@@ -692,7 +692,7 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
     char_to_room(mob, IN_ROOM(ch));
     IS_CARRYING_W(mob) = 0;
     IS_CARRYING_N(mob) = 0;
-    SET_BIT(AFF_FLAGS(mob), AFF_CHARM);
+    SET_BIT_AR(AFF_FLAGS(mob), AFF_CHARM);
     if (spellnum == SPELL_CLONE) {
       /* Don't mess up the prototype; use new string copies. */
       mob->player.name = strdup(GET_NAME(ch));
@@ -798,13 +798,13 @@ void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj,
     case SPELL_BLESS:
       if (!OBJ_FLAGGED(obj, ITEM_BLESS) &&
 	  (GET_OBJ_WEIGHT(obj) <= 5 * GET_LEVEL(ch))) {
-	SET_BIT(GET_OBJ_EXTRA(obj), ITEM_BLESS);
+	SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_BLESS);
 	to_char = "$p glows briefly.";
       }
       break;
     case SPELL_CURSE:
       if (!OBJ_FLAGGED(obj, ITEM_NODROP)) {
-	SET_BIT(GET_OBJ_EXTRA(obj), ITEM_NODROP);
+	SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_NODROP);
 	if (GET_OBJ_TYPE(obj) == ITEM_WEAPON)
 	  GET_OBJ_VAL(obj, 2)--;
 	to_char = "$p briefly glows red.";
@@ -812,7 +812,7 @@ void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj,
       break;
     case SPELL_INVISIBLE:
       if (!OBJ_FLAGGED(obj, ITEM_NOINVIS | ITEM_INVISIBLE)) {
-        SET_BIT(GET_OBJ_EXTRA(obj), ITEM_INVISIBLE);
+        SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_INVISIBLE);
         to_char = "$p vanishes.";
       }
       break;
@@ -826,7 +826,7 @@ void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj,
       break;
     case SPELL_REMOVE_CURSE:
       if (OBJ_FLAGGED(obj, ITEM_NODROP)) {
-        REMOVE_BIT(GET_OBJ_EXTRA(obj), ITEM_NODROP);
+        REMOVE_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_NODROP);
         if (GET_OBJ_TYPE(obj) == ITEM_WEAPON)
           GET_OBJ_VAL(obj, 2)++;
         to_char = "$p briefly glows blue.";

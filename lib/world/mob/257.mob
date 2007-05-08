@@ -6,7 +6,7 @@ A young man wearing mirrored sunglasses and a tie-dyed robe stands smoking a hom
    Not a mage himself, this young man has found enough suppliers in town to keep
 his shop well stocked, even overstocked at times.  
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -19,7 +19,7 @@ The town provisioner stands here ready to serve your needs.
    A small man, by anyone's standards.  He has a strange glint in his eyes which
 some men get when obsessed with money.  
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -32,7 +32,7 @@ Elias Dalston, son of the original Dalston, waits impatiently while you shop.
    Elias carries the haughty look that says, "My daddy is an important man, so
 respect me, or I'll tell.  "
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -45,7 +45,7 @@ Maris waits with a smile while you browse his goods.
    Maris is a large man, still very much in shape in spite of his years.  He
 looks very capable of using any of his fine weapons.  
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -58,7 +58,7 @@ Maris' wife, Ilena, stands here waiting to help you.
    Probably one of the more stunning older woman you have ever come across,
 Ilena exudes confidence and knowledge.  
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -71,7 +71,7 @@ The balding man is sitting here at his desk, busily counting the day's sales.
    You notice a tired look in his face.  He looks like he is a bit too worried
 about his fortune to worry about sleep.  
 ~
-bdelnop dfp 900 E
+59418 0 0 0 65616 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 6 6 1
@@ -83,7 +83,7 @@ Captain Vulcevic, a retired captain from the naval forces, impatiently stands he
 ~
    Not a man to be kept waiting, Vulcevic begins to tap his foot impatiently.  
 ~
-bdlnopr d 900 E
+190474 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -95,7 +95,7 @@ Daron the Bootmaster stands behind the counter with a shoe horn in one hand and 
 ~
    He looks like a competent, young bootmaker.  
 ~
-bdlnopr 0 900 E
+190474 0 0 0 0 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -109,7 +109,7 @@ it gives you small start when he asks, "may I help you?" without looking up.
    He looks like he could tear your arms out at the socket without an upwards
 glance.  
 ~
-bdlno 0 900 E
+26634 0 0 0 0 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -122,7 +122,7 @@ The Wellmaster is standing behind the counter.
    The Wellmaster looks tired, but in a good way.  It must be true when they say
 that Alquandon river water is the best in Dibrova.  
 ~
-bdlnopr d 800 E
+190474 0 0 0 16 0 0 0 800 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -137,7 +137,7 @@ about the reputation of the DMS (Dibrova Mail Service), as many people seem to
 think that it is slow.  Perhaps if he were to brush the cobwebs from his uniform
 it would help to make a better impression.  
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -150,7 +150,7 @@ The lease manager sits behind her desk, smiling at you.
    True enough, she is smiling at you, and she's not a bad looker, but I think
 it's all part of the job.  Don't get your hopes up.  
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 6 6 2
@@ -163,7 +163,7 @@ Granny sits here in here rocker, calmly knitting an afghan. "Kin ah hilp yus?", 
    Granny looks as if she could be 110 years old, so frail and withered she
 seems.  
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 6 6 2
@@ -175,7 +175,7 @@ A man dealing cards in a dark suit sits behind a table, waiting to win your mone
 ~
    The man gives a little smirk as you look him over.  "Nervous?  ", he asks.  
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 6 6 1
@@ -188,7 +188,7 @@ Grigor leans on his counter here, tying lures.
    Grigor wears a round fishing hat covered in lures and smells like bad...  
 Well, like fish.  
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -200,7 +200,7 @@ Franz stands here, sizing you up, one hand resting delicately under one chin, th
 ~
    Franz may not be what many would term a CONFIDENT heterosexual.  
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -212,7 +212,7 @@ The trainer stands ready, waiting to train you in whatever stat you wish to incr
 ~
    A solidly built 6'5, this man could wallup three of you.  
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -226,7 +226,7 @@ novel.
    Obviously a spinster, this woman would most probably give all she owns for a
 man of her own.  
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 6 6 2
@@ -238,7 +238,7 @@ The banker stands behind one of his tellers, smiling.
 ~
    A man used to seeing vast sums of gold.  
 ~
-bdlnopr dp 1000 E
+190474 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -252,7 +252,7 @@ Your guildmaster is studying a spellbook while preparing to cast a spell.
 vast amount of knowledge she possesses.  She is wearing fine magic clothing, and
 you notice that she is surrounded by a blue shimmering aura.  
 ~
-bdelnop dh 1000 E
+59418 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 2
@@ -265,7 +265,7 @@ Your guildmaster is praying to your God here.
    You are in no doubt that this guildmaster is truly close to your God; he has
 a peaceful, loving look.  You notice that he is surrounded by a white aura.  
 ~
-bdelnop dh 1000 E
+59418 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -280,7 +280,7 @@ sitting here, could he be a guildmaster?
 way of the true thief.  He is dressed in the finest clothing, having the
 appearance of an ignorant fop.  
 ~
-bdelnop dh 1000 E
+59418 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -294,7 +294,7 @@ Your guildmaster is sitting here picking his teeth with a dagger.
 across his body proves that he was using arms before you were born.  He has a
 calm look on his face.  
 ~
-bdelnop 0 1000 E
+59418 0 0 0 0 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
@@ -308,7 +308,7 @@ her ample bosom, awaiting your pleasure.
    Not a mage herself, Clariss was once married to a mage who taught her many of
 his secrets, including those secrets dealing with the making of potions.  
 ~
-bdnopr 0 900 E
+188426 0 0 0 0 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -321,7 +321,7 @@ The horse trader sits behind his desk, patiently waiting.
    His intense knowledge of every kind of steed makes him seem almost bookish,
 but when he talks, you can see his knowledge also comes from experience.  
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 6 6 1
@@ -335,7 +335,7 @@ An man dressed all in black stands here.
 assassins.  Every idea, concept, and belief that is instilled in every assassin
 while training came straight from this man.  
 ~
-bdelnop dfhs 0 E
+59418 0 0 0 524368 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -349,7 +349,7 @@ A knight is guarding the entrance.
 chivalrous deeds.  His duty is to protect the Guild of Swordsmen and his extreme
 skill combined with his experience in warfare makes him a deadly opponent.  
 ~
-bdlnop dh 800 E
+59402 0 0 0 16 0 0 0 800 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -363,7 +363,7 @@ something wrong.
    This man is obviously used to the power he wields.  A man to be reckoned
 with.  
 ~
-bdlnopr dp 0 E
+190474 0 0 0 65552 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 6 6 1
@@ -375,7 +375,7 @@ Rapas the Rat stands in this small shop, ready to serve your needs.
 ~
    Obviously not only a skilled thief, but a trained killer.  
 ~
-bdlnopr dp -700 E
+190474 0 0 0 65552 0 0 0 -700 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -387,7 +387,7 @@ A nurse waits here, syringe in hand.
 ~
    A kind smile on her care worn face, this woman is perfect for her job.  
 ~
-bdlnopr dp 700 E
+190474 0 0 0 65552 0 0 0 700 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -399,7 +399,7 @@ A street tough stands here, looking angry at the world.
 ~
    What the hell are you looking at, dickweed?  
 ~
-bdlmnopr dkp 0 E
+194570 0 0 0 65552 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -412,7 +412,7 @@ you to the next level.
 ~
    Lean and wiry, this man almost blends into the wall he leans against.  
 ~
-bdelnopr dfhps 0 E
+190490 0 0 0 589904 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -424,7 +424,7 @@ A man tends shop here, a wry smile on face.
 ~
    It is apparent that this man would much rather be out killing someone.  
 ~
-bdlnopr dp 0 E
+190474 0 0 0 65552 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -438,7 +438,7 @@ how he can help you.
    A young, quick-witted man, the bartender loves to meet new people and hear
 their stories as they rest in his bar.  
 ~
-bdno 0 900 E
+24586 0 0 0 0 0 0 0 900 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -450,7 +450,7 @@ A nurse is here, making her rounds.
 ~
    A tired looking nurse.  
 ~
-bdno 0 900 E
+24586 0 0 0 0 0 0 0 900 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 2
@@ -463,7 +463,7 @@ The bartender turns to you, folds his massive arms, and growls from under his th
    This man obviously will brook no argument in his place.  A real his way or
 the highway kind of guy.  
 ~
-bdnopr 0 600 E
+188426 0 0 0 0 0 0 0 600 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -475,7 +475,7 @@ A scantily clad waitress hands you your menu with a more-than-friendly smile and
 ~
    This woman may not be quite a goddess, but she sure comes close.  
 ~
-bdnopr 0 600 E
+188426 0 0 0 0 0 0 0 600 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 2
@@ -487,7 +487,7 @@ A waiter who knows where all his customers keep their money is standing here.
 ~
    Hmmm...  Wonder where he got that coin he is playing with.  
 ~
-bdnopr 0 600 E
+188426 0 0 0 0 0 0 0 600 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -500,7 +500,7 @@ A waiter is here.
    This guy looks like he could easily kill you while still carrying quite a few
 firebreathers.  
 ~
-bdno 0 600 E
+24586 0 0 0 0 0 0 0 600 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -513,7 +513,7 @@ Salazar is standing here, eager to serve you a special drink.
    Salazar looks like quite an entrepreneur.  He knows how to keep his customers
 happy, but that doesn't mean he's a pushover!  
 ~
-bdelnopr d 600 E
+190490 0 0 0 16 0 0 0 600 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 1
@@ -527,7 +527,7 @@ A young, pert, beautiful, and dangerous woman sits behind the desk.
 then she probably could pull your nails out one by one without you even
 noticing.  
 ~
-bdelnopqr defh 0 E
+256026 0 0 0 112 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 6 6 2
@@ -540,7 +540,7 @@ A man hurries by, head down, dressed all in black.
    This man, wearing a jet black cloak pulled high over his face and black
 boots, looks like a rough customer.  
 ~
-dgh s -400 E
+200 0 0 0 524288 0 0 0 -400 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -552,7 +552,7 @@ A man hurries by, head down, dressed all in brown.
 ~
    This man must be the most nondescript man you've ever seen.  
 ~
-dgh s -400 E
+200 0 0 0 524288 0 0 0 -400 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -564,7 +564,7 @@ A Peacekeeper is standing here, ready to jump in at the first sign of trouble.
 ~
    He looks very strong and wise.  Looks like he doesn't answer to ANYONE.  
 ~
-deglm d 1000 E
+6232 0 0 0 16 0 0 0 1000 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -577,7 +577,7 @@ A member of the City Constable stands here.
    A large man with no expression whatsoever showing beneath his visored helm.
 
 ~
-dglm d 1000 E
+6216 0 0 0 16 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -589,7 +589,7 @@ A sanitary engineer is walking around, cleaning up.
 ~
    What a tough job he has.  
 ~
-dgl 0 800 E
+2120 0 0 0 0 0 0 0 800 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -602,7 +602,7 @@ A member of the city constable stands here.
    A large man with no expression whatsoever showing beneath his visored helm.
 
 ~
-dglm d 1000 E
+6216 0 0 0 16 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -614,7 +614,7 @@ A mercenary is waiting for a job here.
 ~
    He looks pretty mean, and you imagine he'd do anything for money.  
 ~
-bdl 0 -330 E
+2058 0 0 0 0 0 0 0 -330 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -627,7 +627,7 @@ A sullen, sloppy drunk is here practically laying on the bar.
    A drunk who seems to not be able to handle his drink, and to carry too much
 money.  
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -639,7 +639,7 @@ A beggar is here, asking for a few coins.
 ~
    The beggar looks up at you with pleading eyes.  
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -652,7 +652,7 @@ A stableman is here, ready to take your steed.
    The stableman, or more aptly put, stableboy, is a young man earning extra
 money to help support his family.  
 ~
-bdfghq p -200 E
+65770 0 0 0 65536 0 0 0 -200 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -664,7 +664,7 @@ A member of the City Constable is here, guarding against trouble.
 ~
    A big, strong, helpful, trustworthy constable.  
 ~
-bdglm 0 1000 E
+6218 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -678,7 +678,7 @@ valuable garbage.
    Grubby from head to toe, this poor fella looks like he was born on the
 streets.  
 ~
-deghlnopqr d 0 E
+256216 0 0 0 16 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -690,7 +690,7 @@ A Jareth commoner walks by you.
 ~
    The man looks at you, tips his hat, and say,"good day to you, my friend.  "
 ~
-dgh 0 350 E
+200 0 0 0 0 0 0 0 350 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -702,7 +702,7 @@ One of the town folk of Jareth is here.
 ~
    Prosperous, this man walks by whistling a merry tune.  
 ~
-dgh 0 350 E
+200 0 0 0 0 0 0 0 350 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -714,7 +714,7 @@ A sniveling fop of a courtier walks by you, his nose in the air.
 ~
    Dressed in his finest, this little man must have been to see the Lord.  
 ~
-dgh 0 350 E
+200 0 0 0 0 0 0 0 350 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -728,7 +728,7 @@ A woman wearing a bikini and a sash reading Miss Hawaii stands here proudly.
 that mark on her left boob?  Well, I'll be damned!  It's a tatoo!  It reads
 "Rodger's a sex-machine!  "
 ~
-bdgh dfk 350 E
+202 0 0 0 80 0 0 0 350 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -740,7 +740,7 @@ The Guard for the Guild of Mages stands here.
 ~
    Pretty mean looking for a mage, better be cool.  
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -753,7 +753,7 @@ The Guard for the Guild of Clerics stands here.
 ~
    He may be wearing a robe, but I bet he could still kick your ass.  
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -766,7 +766,7 @@ The Guard for the Guild of Warriors stands here.
 ~
    Now THIS is one mean motherfucker.  
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -779,7 +779,7 @@ The Guard for the Guild of Rangers stands here.
 ~
    Wiry, lean and ready to beat your ass.  
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -792,7 +792,7 @@ The Guard for the Guild of Assassins stands here.
 ~
    Do NOT mess with this man.  
 ~
-bdlnopqr dfhk 0 E
+256010 0 0 0 80 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -807,7 +807,7 @@ A woman wearing a thong and pasties wearing a bright sash reading Miss Florida s
 out though...  What's that tatooed on her ass???  Ahh, it's some letters that
 spell, "Djinn's MY pimp!  " hmm, how interesting.  
 ~
-bdopqr h 1000 E
+245770 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2
@@ -820,7 +820,7 @@ Wayn stands here, smiling, waiting to help you.  You wonder how he could possibl
    As you get in closer for a better look, you see that Wayn has a set of nose
 plugs in, attached to a head strap.  So that's his trick!  
 ~
-bdlno 0 1000 E
+26634 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -833,7 +833,7 @@ The cartwright waits here, ready to answer any questions.
    The cartwright looks to be owner, operator, and builder of these fine carts.
 
 ~
-bcdnopr 0 0 E
+188430 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -845,7 +845,7 @@ A small loyal puppy is here.
 ~
    The puppy looks like a cute, little, fierce fighter.  
 ~
-bcd 0 0 E
+14 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -857,7 +857,7 @@ A small, quick, loyal beagle is here.
 ~
    The beagle looks like a fierce fighter.  
 ~
-bcd 0 0 E
+14 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 0
@@ -869,7 +869,7 @@ A large, loyal rottweiler is here.
 ~
    The rottweiler looks like a strong, fierce fighter.  
 ~
-bcd 0 0 E
+14 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -881,7 +881,7 @@ A large, trained wolf is here.
 ~
    The wolf looks like a strong, fearless fighter.  
 ~
-bcd 0 0 E
+14 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0
@@ -894,7 +894,7 @@ The cryogenicist is here, playing with a canister of liquid nitrogen.
    You notice a tired look in her face.  She looks like she isn't paid well
 enough to put up with any crap from mud players with attitudes.  
 ~
-bdlno dfp 900 E
+26634 0 0 0 65616 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
 330 108900
 8 8 2
@@ -907,7 +907,7 @@ The jeweler stands behind his display case.
    The jeweler has an eyepiece shoved in one squinted eye, and looks if he may
 be a tough bargainer.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0

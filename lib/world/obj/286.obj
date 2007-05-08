@@ -3,7 +3,7 @@ wicked trident~
 a wicked looking trident~
 A wicked looking trident is stuck into the ground here.~
 ~
-5 aegmnq an 0
+5 aegmnq 0 0 0 an 0 0 0 0 0 0 0
 0 4 5 11
 7 20 0 0
 #28602
@@ -11,7 +11,7 @@ black leather whip~
 a black leather whip~
 A black leather whip lies on the ground here.~
 ~
-5 j an 0
+5 j 0 0 0 an 0 0 0 0 0 0 0
 3 7 3 2
 7 20 0 0
 #28603
@@ -19,7 +19,7 @@ hickey maker~
 hickey maker~
 A hickey maker lies on the ground here making a soft sucking sound.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 3 12
 7 20 0 0
 #28604
@@ -27,7 +27,7 @@ farslayer sword~
 a black hilted sword called, "Farslayer"~
 A black hilted sword with engravings on the blade lies here.~
 ~
-5 deghjmnoq an 0
+5 deghjmnoq 0 0 0 an 0 0 0 0 0 0 0
 0 1 20 11
 7 1000 0 0
 E
@@ -52,7 +52,7 @@ angel's skull~
 angel's skull~
 An angel's skull lies here on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 10 0 0 0
 4 20 0 0
 #28606
@@ -60,7 +60,7 @@ rotting flesh~
 rotting flesh~
 Some rotting flesh lies here in a pile.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
 3 20 0 0
 #28607
@@ -68,7 +68,7 @@ sword vorpal blade~
 vorpal blade~
 A magnificently crafted blade lies here humming softly.~
 ~
-5 b an 0
+5 b 0 0 0 an 0 0 0 0 0 0 0
 0 1 20 1
 6 20 0 0
 #28608
@@ -76,7 +76,7 @@ flaming claw~
 flaming claw~
 A flaming claw lies here burning brightly.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 25 5
 4 20 0 0
 #28609
@@ -84,7 +84,7 @@ Demonskin~
 demonskin~
 A black scaley pile of demonskin lies here.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 4 20 0 0
 #28610
@@ -92,7 +92,7 @@ demon teeth~
 demon teeth~
 A bunch of very sharp slimy teeth lie here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 4 5 10
 1 20 0 0
 #28611
@@ -100,7 +100,7 @@ burning flesh~
 burning flesh~
 A pile of burning flesh lies here.~
 ~
-9 0 ai 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
 5 20 0 0
 #28612
@@ -108,7 +108,7 @@ rivet gun~
 rivet gun~
 A rivet gun loaded with hot rivets lies here.~
 ~
-3 0 a 0
+3 0 0 0 0 a 0 0 0 0 0 0 0
 4 3 3 30
 7 20 0 15
 #28613
@@ -116,7 +116,7 @@ circular saw~
 circular saw~
 A circular saw lies here humming.~
 ~
-5 b an 0
+5 b 0 0 0 an 0 0 0 0 0 0 0
 0 5 4 0
 7 20 0 0
 #28614
@@ -124,7 +124,7 @@ box matches~
 box of matches~
 A box of matches lies here ready to light something.~
 ~
-4 a a 0
+4 a 0 0 0 a 0 0 0 0 0 0 0
 4 3 3 26
 2 20 0 0
 #28615
@@ -132,7 +132,7 @@ bloody black talon~
 bloody black talon~
 A severed bloody black talon lies here.~
 ~
-5 jn an 0
+5 jn 0 0 0 an 0 0 0 0 0 0 0
 0 4 5 5
 6 20 0 0
 #28616
@@ -140,7 +140,7 @@ jar blood~
 jar of blood~
 A dark jar of blood lies here.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 30 17 46 20
 1 20 0 0
 #28617
@@ -148,7 +148,7 @@ hell hound teeth~
 hell hound teeth~
 The bloody teeth of a hell hound sit here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 6 3 10
 2 20 0 0
 #28618
@@ -156,7 +156,7 @@ icy bottle~
 icy bottle~
 An icy bottle sits here sits on the floor.~
 ~
-10 0 a 0
+10 0 0 0 0 a 0 0 0 0 0 0 0
 30 22 15 15
 1 20 0 10
 #28619
@@ -164,7 +164,7 @@ ice spear~
 ice spear~
 A spear made out of ice lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 11
 5 20 0 0
 #28620
@@ -172,7 +172,7 @@ large meat hook~
 large meat hook~
 A large meat hook is stuck into the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 5 4 4
 3 20 0 0
 #28621
@@ -180,7 +180,7 @@ meat~
 meat~
 A chuck of meat lies here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 30 0 0 0
 2 20 0 0
 #28622
@@ -188,7 +188,7 @@ blueprint~
 blueprint~
 A construction blueprint lies on the ground.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 31 0 0 0
 1 20 0 0
 #28623
@@ -196,7 +196,7 @@ electric eraser~
 electric eraser~
 A electric eraser lies on the ground waiting an erasermate.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 6 3 0
 1 20 0 0
 #28624
@@ -204,7 +204,7 @@ spectacles~
 spectacles~
 A set of spectacles lies here on the ground. Don't step on them.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 1 20 0 0
 A
@@ -214,7 +214,7 @@ unholy symbol~
 unholy symbol~
 A sinistar looking symbol of evil lies here smoldering.~
 ~
-3 0 ac 0
+3 0 0 0 0 ac 0 0 0 0 0 0 0
 30 1 1 42
 2 20 0 0
 #28626
@@ -222,7 +222,7 @@ unholy robe pile cloth~
 unholy robe~
 A stinking pile of cloth lies here.~
 ~
-9 aj ad 0
+9 aj 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 4 20 0 0
 A
@@ -232,7 +232,7 @@ sharp teeth lawyer~
 sharp teeth of a lawyer~
 A set of sharp evil looking teeth lie here. Probably a lawyer's.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 6 4 0
 2 20 0 0
 #28628
@@ -240,7 +240,7 @@ golden ring~
 golden ring~
 A golden ring lies on the ground here.~
 ~
-20 0 ab 0
+20 0 0 0 0 ab 0 0 0 0 0 0 0
 5000 0 0 0
 1 20 0 0
 #28629
@@ -248,7 +248,7 @@ engagement ring~
 engagement ring~
 An engagement ring lies here.~
 ~
-20 0 ab 0
+20 0 0 0 0 ab 0 0 0 0 0 0 0
 7000 0 0 0
 1 20 0 0
 #28630
@@ -256,7 +256,7 @@ prenuptial agreement~
 prenuptial agreement~
 A prenuptial agreement lies here.~
 ~
-2 0 a 0
+2 0 0 0 0 a 0 0 0 0 0 0 0
 30 29 42 16
 1 20 0 0
 #28631
@@ -264,7 +264,7 @@ ionic torque wrench~
 ionic torque wrench~
 You see an ionic torque wrench on the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 5 4 7
 3 20 0 0
 #28632
@@ -272,7 +272,7 @@ figurine horse~
 figurine of a horse~
 You see a small figurine of a horse on the ground.~
 ~
-9 0 a 0
+9 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 3 20 0 0
 A
@@ -282,7 +282,7 @@ figurine winged horse pegasus~
 figurine of a winged horse~
 You see a small figurine of a winged horse on the ground.~
 ~
-3 0 a 0
+3 0 0 0 0 a 0 0 0 0 0 0 0
 30 3 3 42
 3 20 0 0
 A
@@ -292,7 +292,7 @@ figurine dark horse nightmare~
 figurine of a nightmare~
 You see a small figurine of a dark horse on the ground.~
 ~
-3 0 a 0
+3 0 0 0 0 a 0 0 0 0 0 0 0
 30 3 3 17
 3 20 0 0
 A
@@ -302,7 +302,7 @@ figurine black dragon~
 figurine of a black dragon~
 You see a small figurine of a black dragon on the ground.~
 ~
-3 0 a 0
+3 0 0 0 0 a 0 0 0 0 0 0 0
 10 1 1 32
 3 20 0 0
 #28636
@@ -310,7 +310,7 @@ figurine red dragon~
 a figurine of a red dragon~
 You see a small figurine of a red dragon on the ground.~
 ~
-3 0 a 0
+3 0 0 0 0 a 0 0 0 0 0 0 0
 30 1 1 37
 3 20 0 0
 A
@@ -320,7 +320,7 @@ figurine white dragon~
 figurine of a white dragon~
 You see a small figurine of a white dragon on the ground.~
 ~
-3 0 a 0
+3 0 0 0 0 a 0 0 0 0 0 0 0
 30 1 1 16
 3 20 0 0
 A
@@ -330,7 +330,7 @@ figurine green dragon~
 figurine of a green dragon~
 You see a small figurine of a green dragon on the ground.~
 ~
-3 0 a 0
+3 0 0 0 0 a 0 0 0 0 0 0 0
 30 1 1 30
 3 20 0 0
 A
@@ -340,7 +340,7 @@ figurine blue dragon~
 figurine of a blue dragon~
 You see a small figurine of a blue dragon on the ground.~
 ~
-3 0 a 0
+3 0 0 0 0 a 0 0 0 0 0 0 0
 30 1 1 6
 3 20 0 0
 A
@@ -350,7 +350,7 @@ geiger counter~
 geiger counter~
 You see a geiger counter here.~
 ~
-3 a a 0
+3 a 0 0 0 a 0 0 0 0 0 0 0
 10 1 1 31
 2 20 0 0
 #28641
@@ -358,7 +358,7 @@ photon displacement matrix~
 photon displacement matrix~
 You see a photon displacement matrix on the ground.~
 ~
-5 a an 0
+5 a 0 0 0 an 0 0 0 0 0 0 0
 0 1 24 6
 7 20 0 0
 #28642
@@ -366,7 +366,7 @@ black jumpsuit~
 black jumpsuit~
 You see a black jumpsuit on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 4 20 0 0
 #28643
@@ -374,7 +374,7 @@ antacid pill~
 antacid pill~
 You see an antacid pill here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 54 0 0 0
 1 20 0 0
 #28644
@@ -382,7 +382,7 @@ manes claw claws~
 mane's claws~
 The severed claws of a sub-demon lie here, twitching.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 5 6 5
 4 20 0 0
 #28645
@@ -390,7 +390,7 @@ welding torch~
 welding torch~
 A welding torch sits on the ground here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 30 0
 7 20 0 0
 #28646
@@ -398,7 +398,7 @@ blond wig~
 blond wig~
 A blond wig lies on the ground.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
 2 20 0 0
 #28647
@@ -406,7 +406,7 @@ yellow jumpsuit nuclear symbol~
 yellow jumpsuit~
 You see a yellow jumpsuit with a nuclear warning symbol.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 3 20 0 0
 #28648
@@ -414,7 +414,7 @@ cleaver~
 cleaver~
 You see a nasty looking cleaver stuck in the ground.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 5 3 1
 6 20 0 0
 $~

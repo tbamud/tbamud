@@ -3,7 +3,7 @@ rat tail~
 a rat tail~
 A disgusting, fat tail is slowly rotting away here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 7 1 10 2
 3 15 1 0
 E
@@ -18,7 +18,7 @@ secret safe~
 a secret safe~
 It's a secret safe.~
 ~
-15 0 0 0
+15 0 0 0 0 0 0 0 0 0 0 0 0
 100 5 -1 0
 0 0 0 0
 T 3801
@@ -33,7 +33,7 @@ Backstabber~
 Backstabber~
 The legendary Backstabber has been left here.~
 ~
-5 bc an 0
+5 bc 0 0 0 an 0 0 0 0 0 0 0
 5 2 6 11
 5 250 25 0
 T 3802
@@ -58,7 +58,7 @@ pile riches~
 huge pile of stolen riches~
 A huge pile of stolen riches lies here!~
 ~
-20 0 a 0
+20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 1 1000 0 0
 E
@@ -71,7 +71,7 @@ smelly key~
 a red smelly key~
 A smelly key with flaking red paint is lying on the floor.~
 ~
-18 c ao 0
+18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 100 10 0
 E
@@ -89,7 +89,7 @@ crap pile~
 a stinking pile of crap~
 A stinking pile of crap is lying here, filling the whole place with a nasty stink!~
 ~
-19 d a 0
+19 d 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 1
 10 1 0 0
 $~

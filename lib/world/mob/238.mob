@@ -5,7 +5,7 @@ A large fish swims here.
 ~
    This fish looks very mean and hungry.    
 ~
-cdg 0 -20 E
+76 0 0 0 0 0 0 0 -20 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -19,7 +19,7 @@ A large swordfish swims here.
    This fish has a very long and sharp looking nose and appears to not notice
 you.    
 ~
-dg h -20 E
+72 0 0 0 0 0 0 0 -20 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -34,7 +34,7 @@ A large ugly monster stands here.
 mouth and about his body.  Many different bones line his neck connected by some
 kind of metal.    
 ~
-bcde u -100 E
+30 0 0 0 0 0 0 0 -100 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -55,7 +55,7 @@ A small rat is here running in circles.
 attacked it or something.  The rat itself looks all but sick, it has a lot of
 energy and appears to have been running in circles for hours.    
 ~
-bde j 0 E
+26 0 0 0 1024 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -74,7 +74,7 @@ A large statue stands firm here.
 fast but it seems to not be moving at all.  The statue stands firm looking east
 towards where you came from.    
 ~
-bd b 0 E
+10 0 0 0 4 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -92,7 +92,7 @@ A large spider with a look for blood is stuck to the wall here.
    This spider has many corpses strown about his web and it seems to want to
 add you.    
 ~
-bde 0 -100 E
+26 0 0 0 0 0 0 0 -100 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -108,7 +108,7 @@ be experienced in the art of war.  The old man looks not to be a warrior or
 fighter but rather a spell caster.  Wearing many valuable looking pieces of eq
 makes you wonder can this guy be serious.    
 ~
-bdn 0 0 E
+8202 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -125,7 +125,7 @@ A large troll with markings of some king of clan stands here.
 ~
    The troll looks to be tired and stressed.    
 ~
-bd 0 -100 E
+10 0 0 0 0 0 0 0 -100 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -151,7 +151,7 @@ Queen Plegia sits atop her throne here.
 beautifull white hair and baby blue eyes.  She appears to not question your
 intrusion rather seems glad you came.    
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -166,7 +166,7 @@ A large crystal covered dragon rests here.
 wounds on it's back and wings.  The dragon looks very tough and seems to be
 made of crystal.    
 ~
-bd t 0 E
+10 0 0 0 1048576 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 5 5 1
@@ -184,7 +184,7 @@ A large trout swims here.
    This trout looks a little bit mean.  His eyes are glowing red and his scales
 are slightly glowing.  The fish swims here unaware of your entrance.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0
@@ -197,7 +197,7 @@ A swift blue bird is flying here.
    This bird seems very fast not very strong but very fast.  This bird is
 flying around very fast making it hard for you to keep up with.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -215,7 +215,7 @@ A small crab sits here.
 enough to keep it alive so far.  The crab also is missing a leg which appears
 to have been eaten.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -230,7 +230,7 @@ A swimming duck is here in the water.
 of it's feathers.  The duck itself seems very calm and easy.  The water around
 the duck seems to be cleaner than the rest.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -244,7 +244,7 @@ A large swallow is here hunting fish.
 no luck as of yet.  The bird is very persistant and seems almost dead from
 hunger but he keeps searching.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 0

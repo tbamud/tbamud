@@ -7,7 +7,7 @@ You see a pawn standing here waiting for orders.
 His armor is shiny and black.  He stands ready to give his life for the Crown.
 
 ~
-bcdgh d -400 E
+206 0 0 0 16 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -21,7 +21,7 @@ You see a pawn standing here waiting for orders.
 His armor is spotless and white.  He stands ready to give his life for the
 Crown.  
 ~
-bcdgh d 400 E
+206 0 0 0 16 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -34,7 +34,7 @@ In the corner you see a large, black, stone castle on wheels.
    The Black Rook is a very large man-made tomb on wheels.  Just from the looks
 of it, it will probably be YOUR tomb.  
 ~
-bdpqr d -600 E
+229386 0 0 0 16 0 0 0 -600 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -47,7 +47,7 @@ In the corner you see a large, white, stone castle on wheels.
    The White Rook is a very large man-made tomb on wheels.  Just from the looks
 of it, it will probably be YOUR tomb.  
 ~
-bdpqr d 600 E
+229386 0 0 0 16 0 0 0 600 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -60,7 +60,7 @@ Here stands a magnificent knight of the dark realm.
    The Black Knight is here, riding his ebony black war horse.  His eyes flash
 behind his visor in vengence.  
 ~
-bdf d -400 E
+42 0 0 0 16 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -73,7 +73,7 @@ Here stands a magnificent knight of the light realm.
    The White Knight is here, riding his ivory white war horse.  His eyes gleam
 behind his visor in joy.  
 ~
-bdf d 400 E
+42 0 0 0 16 0 0 0 400 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -86,7 +86,7 @@ A dark priest stands here.
    The Black Bishop seems willing to help you straight into your grave so he can
 bless you properly.  
 ~
-bd d -500 E
+10 0 0 0 16 0 0 0 -500 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -99,7 +99,7 @@ A light priest stands here.
    The White Bishop seems willing to help you in any possible so that he can
 attain a higher spirituality.  
 ~
-bd d 500 E
+10 0 0 0 16 0 0 0 500 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -113,7 +113,7 @@ The Black Queen stands here.
 dark hair that crowns her head like a black cloud.  If looks could kill, you
 would already be dead.  
 ~
-bcdfl dh -750 E
+2094 0 0 0 16 0 0 0 -750 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -127,7 +127,7 @@ The White Queen stands here.
 light hair that frames her head like the sun.  This is surely love at first
 sight for you.  
 ~
-bcdfl dh 750 E
+2094 0 0 0 16 0 0 0 750 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -140,7 +140,7 @@ The Black King stands here.
    The Black King is a menacing figure.  You can easily understand why he is the
 king and you are not.  
 ~
-bcdefl dh -999 E
+2110 0 0 0 16 0 0 0 -999 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -153,7 +153,7 @@ The White King stands here.
    The White King is a stately figure.  You can easily understand why he is the
 king and you are not.  
 ~
-bcdefl dh 999 E
+2110 0 0 0 16 0 0 0 999 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0

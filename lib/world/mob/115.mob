@@ -6,7 +6,7 @@ A woodchuck runs for its hole.
    This small brown animal is covered in thick fur and is about the size of a
 small dog.  It is built very low to the ground and is actually pretty quick.  
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -18,7 +18,7 @@ A large dusty rat crawls around here.
 ~
    This rat seems to be oblivious to all around it.  
 ~
-cdeg 0 500 E
+92 0 0 0 0 0 0 0 500 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -32,7 +32,7 @@ A goblin raider stands here with a really angry look on his face.
    The goblin charges around looking for anything valuable to loot.  He eyes you
 up and down trying to determine what you might have of value.  
 ~
-dg 0 -400 E
+72 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -44,7 +44,7 @@ A mon's goblin is walking around looking for more artifacts to steal.
 ~
    He carries a sack of useless loot.  Loot only to him you guess.  
 ~
-dg 0 -400 E
+72 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -56,7 +56,7 @@ A hulk goblin is here tearing the place down.
 ~
    Larger than the typical goblin this beast relies on his brawn to win.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -69,7 +69,7 @@ This is a small unfeathered viscious looking bat.
    It squeaks and flutters its wings in anticipation to flight, and possibly a
 feast.  
 ~
-deg 0 500 E
+88 0 0 0 0 0 0 0 500 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -83,7 +83,7 @@ A goblin bomber is here setting up an explosive.
    He carries a flask of gunpowder, flint, and some wicks.  Hardly the type of
 person you would trust with explosives.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -97,7 +97,7 @@ A centaur archer looks for a point of elevation to fire his arrows from.
 proof to his earned position within the military ranks of centaurs as an expert
 archer.  
 ~
-cdg 0 -500 E
+76 0 0 0 0 0 0 0 -500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -110,7 +110,7 @@ A peaceful monk wanders the halls in thought.
    He looks peaceful until you notice what looks like troll armour hidden
 underneath his robes.  
 ~
-bdgln 0 1000 E
+10314 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -128,7 +128,7 @@ A centaur warrior runs around the area looking for someone to kill
    The brown coat of this centaurs body is thick and matted with dirt and grime.
 It looks like she has had a long battle.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -140,7 +140,7 @@ An oversized rat with large fangs looks at you curiously.
 ~
    This one looks weak.  Though those fangs look deadly.  
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -153,7 +153,7 @@ A crazy monk stands her muttering gibberish.
 ~
    It appears he saw some things that he really wished he hadn't.  
 ~
-bcdln 0 800 E
+10254 0 0 0 0 0 0 0 800 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -167,7 +167,7 @@ A deranged monk screams in fear at your presence and cowers in the corner.
    His eyes have become unfocused and seem to be looking within.  No one is home
 upstairs.  
 ~
-bdegnop ap 500 E
+57434 0 0 0 65538 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -185,7 +185,7 @@ A centaur swordswoman stands here looking pretty.
    She simply stomps over any remaining monks that live.  Crushin skulls and
 breaking bones as she passes.  
 ~
-cdg 0 400 E
+76 0 0 0 0 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -197,7 +197,7 @@ A monk who was kneeling in prayer before you interrupted him.
 ~
    The monk looks upset to have been interrupted from his daily ritual.  
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -209,7 +209,7 @@ A centaur axeman is here waiting to pick a fight.
 ~
    He looks crazed and in pursuit of more blood.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -222,7 +222,7 @@ A centaur warpriest stands his ground, casting spells on all the enemies.
    Some centaurs have taken up the arcane arts.  Before you stands one of them.
 
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -234,7 +234,7 @@ A centaur samite healer runs around trying to revive the wounded centaurs
 ~
    He dwells in the arcane art of healing and looks to be very gifted at it.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -248,7 +248,7 @@ The Doom Priest guildmaster assesses your abilities and prepares for your traini
 and the cold stare from his green eyes shows a wisdom and intelligence
 unparalleled.  
 ~
-bdenopr dfhk 0 E
+188442 0 0 0 80 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -260,7 +260,7 @@ A goblin horde rushes in, attacking you from all directions.
 ~
    These goblins are short, fat, and smelly.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -273,7 +273,7 @@ An obese goblin charges in, trying to run you over.
    She is damn ugly, and smells funny.  Hard to believe something as disgusting
 as this creature can survive its own breath.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -285,7 +285,7 @@ A white and tan centaur gallops in your direction.
 ~
    This massive beast is half horse and half man.  
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -298,7 +298,7 @@ A heavily armoured centaur points an intimidating finger in your direction.
    This centaur has been equipped for battle with chainmail.  He stomps around
 heavily from the added weight.  
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -310,7 +310,7 @@ A dying monk sits here in agony.
 ~
    This man looks as if he has been attacked by a pack of some wild beasts.  
 ~
-bdh 0 1000 E
+138 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 5 5 0
@@ -327,7 +327,7 @@ An ensign goblin straight out from military camp, leads the raid at the frontlin
    He looks a little bit cleaner than the typical goblin, must be more educated.
 
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -340,7 +340,7 @@ A raging troll cletches his fist in anger pulling the surroundings down.
    This troll looks to be in a battle frenzy.  A glazed look covers his eyes as
 he snorts and grunts in anger.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -353,7 +353,7 @@ With skin of stone hardness, this troll runs up and down the monestary crashing 
    The skin of this troll looks like rock!  He uses his arms and legs as
 bludgeoning weapons against anything he comes across.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -366,7 +366,7 @@ An enormously huge troll stands his ground, ready to take on a whole party of wa
    This troll is in a blood rage looking for another innocent victim to
 slaughter.  He looks your way.  
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -381,7 +381,7 @@ himself.  A power and intelligence can be seen when looking at this priest.  He
 acknowledges your presence and stands even closer to the Doom Priest guild
 entrance.  
 ~
-bdenopr dfhk 0 E
+188442 0 0 0 80 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -393,7 +393,7 @@ A small lamb is here looking for little boo peek.
 ~
    This poor lamb looks lost and lonely.  
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -405,7 +405,7 @@ Little bow peek is here looking for her lost sheep
 ~
    Nothing.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -417,7 +417,7 @@ A very small white bird is pirched here.
 ~
    This bird looks very gentle and sweet.  
 ~
-bdepr 0 1000 E
+163866 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -434,7 +434,7 @@ A small black fish swims here.
 ~
    This fish looks good.  
 ~
-bde 0 500 E
+26 0 0 0 0 0 0 0 500 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -451,7 +451,7 @@ A small piglet dashes around.
 ~
    The small pig is covered in mud and is enjoying the mess it is making.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -463,7 +463,7 @@ A small snake lurks here waiting for something to eat.
 ~
    This snake looks as if it has been waiting for a while.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -481,7 +481,7 @@ A goblin is sneaking around looking for some backup.
    This goblin seems to have lost his counterparts.  He is not quite so sure of
 himself without friends to hide behind.  
 ~
-bdl 0 -400 E
+2058 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -498,7 +498,7 @@ A large purple toad squats here.
 ~
    This thing looks uninterested in everything.  
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -512,7 +512,7 @@ A goblin soldier is finishing off a few of the remaining monks.
    This yellow-green beast is barely even humanoid in resemblance.  You can
 smell him from here.  
 ~
-dg 0 -400 E
+72 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -529,7 +529,7 @@ The ghost of a monk who died in an unfair game of politics haunts this room fore
 ~
    Nothing.  
 ~
-bcdfnoq cdfhk 0 E
+90158 0 0 0 88 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -543,7 +543,7 @@ A small troll stomps around trying to look tough.
    This thing looks pretty weak Though it is a troll and shouldn't be
 underestimated.  
 ~
-dg 0 -400 E
+72 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 0
@@ -560,7 +560,7 @@ A heap of grass lies here.
 ~
    The grass looks like some kind of weed.  
 ~
-bd 0 500 E
+10 0 0 0 0 0 0 0 500 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -576,7 +576,7 @@ A wounded monk is scrunched up here in the corner.
 ~
    The monk looks as if he had been attacked.  
 ~
-bd 0 400 E
+10 0 0 0 0 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -593,7 +593,7 @@ A very large orc is here dead.
 ~
    This orc looks as if it was torn apart by a pack of wolves.  
 ~
-bd 0 -500 E
+10 0 0 0 0 0 0 0 -500 E
 3 19 8 0d0+30 1d2+0
 30 900
 0 0 1

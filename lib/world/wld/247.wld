@@ -4,7 +4,7 @@ A Gravel Road on the Graveyard~
 graveyard.  On both sides of the road, grave markers poke up out of the ground.
 An iron grate is to the north.    
 ~
-247 0 1
+247 0 0 0 0 0
 D1
 Headstones are arranged in neat rows to the east.
 ~
@@ -51,7 +51,7 @@ A Gravel Road on the Graveyard~
 graveyard.  Both sides of the road are lined with grave markers poking up out
 of the ground.    
 ~
-247 0 1
+247 0 0 0 0 0
 D0
 The gravel road continues northward.
 ~
@@ -79,7 +79,7 @@ A Gravel Road on the Graveyard~
 graveyard.  Both sides of the road are lined with grave markers poking up out
 of the ground.    
 ~
-247 0 1
+247 0 0 0 0 0
 D0
 The gravel road continues northward.
 ~
@@ -107,7 +107,7 @@ A Gravel Road on the Graveyard~
 graveyard.  Both sides of the road are lined with grave markers poking up out
 of the ground.    
 ~
-247 0 1
+247 0 0 0 0 0
 D0
 The gravel road continues northward.
 ~
@@ -136,7 +136,7 @@ In front of the Chapel~
 through the graveyard and the chapel entrance is to the south.  A few flowers
 have been trampled into the dirt.    
 ~
-247 0 1
+247 0 0 0 0 0
 D0
 The gravel road continues northward.
 ~
@@ -153,19 +153,19 @@ Inside the Chapel~
    You are in a small, dark chapel.  The dark brown glass in the tiny windows
 does not let much light through.  A few rows of worn wooden benches stand here.
 ~
-247 0 1
+247 0 0 0 0 0
 D0
 The chapel door is made of dark wood.
 ~
 door~
 1 -1 24704
 E
-glass windows~
-   The windows must be meant to be dark.  At least they are completely clean.  
-~
-E
 benches rows~
    The benches are not of the comfortable kind.  
+~
+E
+glass windows~
+   The windows must be meant to be dark.  At least they are completely clean.  
 ~
 S
 #24706
@@ -175,7 +175,7 @@ beneath your feet and the smell of freshly dug dirt hits your nostrils.  The
 gravel path is to the west and there are more graves to the east and south.  
 
 ~
-247 0 2
+247 0 0 0 0 0
 D1
 To the east lies another cemetery plot.
 ~
@@ -203,7 +203,7 @@ beneath your feet and the smell of freshly dug dirt hits your nostrils.  The
 gravel path is to the west and there are more graves to the east and south.  
 
 ~
-247 0 2
+247 0 0 0 0 0
 D1
 A small shack is east of here.
 ~
@@ -230,7 +230,7 @@ The undertaker's cottage~
 anything here at all.  Sections of the wall have been scarred by what appears
 to be someone trying to break out.    
 ~
-247 d 0
+247 8 0 0 0 0
 D3
 The doorway leads back out into the cemetery.
 ~
@@ -243,7 +243,7 @@ A Grave~
 in his work.  The gravel path is to the west and more plots lie to the north,
 east and south.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -275,7 +275,7 @@ A Grave~
 in his work.  Dark evergreen trees grow to the east.  More plots lie to the
 north, west and south.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -302,7 +302,7 @@ A Grave~
 in his work.  More plots lie to the north, east and south and the gravel path
 lies west.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -333,7 +333,7 @@ A Grave~
 in his work.  Dark evergreen trees grow east of here.  More plots lie to the
 north, west and south.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -360,7 +360,7 @@ A Grave~
 in his work.  Dark evergreen trees grow to the south.  To the west is the
 gravel path and more plots lie to the north and east.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -390,7 +390,7 @@ evergreen trees grow to the south and east, although there is an opening to
 east where something has smashed through the tree limbs.  More plots lie to the
 north and west.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -414,7 +414,7 @@ trees and broken branches litter the ground.  Although the trail is dark, these
 markers clearly show you the path.  The trail continues to the east, the
 cemetery lies west.    
 ~
-247 c 3
+247 4 0 0 0 0
 D1
 Without the broken branches to show you the way, the trail would be impossible
 to follow.
@@ -435,7 +435,7 @@ over creating impassable deadfalls to the north and east.  Similar dead trees
 have form what resembles a cave to the south.  The nauseating stench of decay
 drifts from somewhere and you sense a powerful evil nearby.    
 ~
-247 0 2
+247 0 0 0 0 0
 D2
 It looks very dark and foreboding in there.
 ~
@@ -453,7 +453,7 @@ The barrow~
 This place reeks of decay.  Bones and decaying corpses are strewn about the
 place, and you really hope that you don't become part of this carnage.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D0
 The clearing lies back to the north.
 ~
@@ -467,7 +467,7 @@ path.  A light fog seems to hang over this part of the cemetery and the mist
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the west and south.  The gravel path is back to the east.    
 ~
-247 0 2
+247 0 0 0 0 0
 D1
 To the east lies the gravel path.
 ~
@@ -494,7 +494,7 @@ A Grave~
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the west, south and east.    
 ~
-247 0 2
+247 0 0 0 0 0
 D1
 To the east lies another cemetery plot.
 ~
@@ -521,7 +521,7 @@ A Grave~
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the east, south and west.    
 ~
-247 0 2
+247 0 0 0 0 0
 D1
 To the east lies the another cemetery plot.
 ~
@@ -550,7 +550,7 @@ sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the north, west and south.  The gravel path is back to the east.
   
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -583,7 +583,7 @@ to take humanoid forms as ghostly apparitions.  You feel a rising power of some
 sort emanating from the southwest.  The cemetery continues in all directions.
   
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -615,7 +615,7 @@ A Grave~
 to take humanoid forms as ghostly apparitions.  You feel a rising power
 emanating from the south.  The cemetery continues in all directions.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -649,7 +649,7 @@ sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the north, west and south.  The gravel path is back to the east.
   
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -681,7 +681,7 @@ A Grave~
 to take humanoid forms as ghostly apparitions.  You feel a rising power
 emanating from the west.  The cemetery continues in all directions.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -714,7 +714,7 @@ take humanoid forms as ghostly apparitions.  There is a very strong power field
 of some sort emanating from a mausoleum to the west.  The cemetery continues to
 the north, east and south.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -737,12 +737,12 @@ on the door.
 door~
 1 24730 24730
 E
-grave stone~
-   Here lies Someone.  R.  I.  P.  
-~
-E
 door writing~
    The Great Tomb
+~
+E
+grave stone~
+   Here lies Someone.  R.  I.  P.  
 ~
 S
 #24727
@@ -753,7 +753,7 @@ sometimes seems to take humanoid forms as ghostly apparitions.  Dark evergreen
 trees grow to the south.  The cemetery continues north and west.  The gravel
 path is back to the east.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -781,7 +781,7 @@ take humanoid forms as ghostly apparitions.  A rising power emanates from the
 northwest.  Dark evergreen trees grow to the south.  The cemetery continues to
 the north, east and west.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -808,7 +808,7 @@ A Grave~
 take humanoid forms as ghostly apparitions.  A rising power emanates from the
 north.  The cemetery continues to the north, east and west.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -835,7 +835,7 @@ The Great Tomb~
 peaceful enough.  The very walls seem to glow blue and it showers the room in a
 ghostly light.  There is an iron vault embedded into the west wall.    
 ~
-247 d 0
+247 8 0 0 0 0
 D1
 The iron door leads back out into the cemetery.
 ~
@@ -859,7 +859,7 @@ rest your hand on the north wall of the vault for support, except that your
 hand disappears into the darkness.  This north wall must be only a clever
 illusion and not really exist at all!  You wonder what lies down there.    
 ~
-247 acd 0
+247 13 0 0 0 0
 D0
 Total darkness.
 ~
@@ -879,7 +879,7 @@ doorway behind you seems to have disappeared.  Suddenly something occurs to you
 that sends chills up and down your spine.  You get a bad feeling that you are
 not alone in here!    
 ~
-247 adj 0
+247 521 0 0 0 0
 D1
 You can't see a blasted thing!
 ~
@@ -894,7 +894,7 @@ killing) run around on the floor.  There is a door to the west which is pitch
 black in color.  The hallway continues to the east, you hear a faint moaning
 coming from that direction.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 The hallway continues to the east.
 ~
@@ -917,7 +917,7 @@ The Catacombs~
 cobwebs hang from the ceiling corners and small bones litter the floor.  A
 faint moaning is coming from the east.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 The corridor continues in that direction.
 ~
@@ -936,7 +936,7 @@ and south.  The passage way east looks as it hasn't been disturbed for some
 time and cobwebs seem to grow thick in that direction.  A faint moaning sound
 can be heard to the south.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 The corridor continues in that direction.
 ~
@@ -959,7 +959,7 @@ The Catacombs~
 cobwebs hang from the ceiling corners and small bones litter the floor.  A
 faint moaning is coming from the west.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 The corridor continues in that direction.
 ~
@@ -978,7 +978,7 @@ cobwebs are everywhere and seem to be getting thicker to the east.  You have a
 feeling that it's been a very long time since anyone has been in this part of
 the catacombs.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 The corridor continues in that direction.
 ~
@@ -999,7 +999,7 @@ spider, however.  The northern wall is in ruins as if something has broken it's
 way through.  Large blocks of stone litter the corridor.  You could probably
 squeeze through the hole if you so desired.    
 ~
-247 acd 0
+247 13 0 0 0 0
 D1
 The corridor continues in that direction.
 ~
@@ -1019,7 +1019,7 @@ Closer examination reveals an archway to the south.  But so many cobwebs cover
 the archway that they've formed a completely opaque door.  The corridor
 continues back to the west.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D2
 The archway is blocked by a wall of cobwebs.
 ~
@@ -1038,7 +1038,7 @@ the middle of the room is relatively clear of them.  In each corner of this
 chamber, an ancient sarcophagus lies against the wall.  There is a low grinding
 noise as they all start to open.  The only exit is north.    
 ~
-247 dj 0
+247 520 0 0 0 0
 D0
 A thick wall of cobwebs.
 ~
@@ -1051,7 +1051,7 @@ The Catacombs~
 broken bits of bone and small scraps of burial wrappings.  You hear a distinct
 moaning sound coming from the south.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D0
 The corridor continues in that direction.
 ~
@@ -1070,7 +1070,7 @@ broken bits of bone and small scraps of burial wrappings.  There is an iron
 door to the south and a loud moaning seems to be coming from the other side of
 it.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D0
 The corridor continues in that direction.
 ~
@@ -1095,7 +1095,7 @@ in the center of the room, and leaning over it, sobbing deeply, rests a
 banshee.  She seems to be too interested in crying and wailing than to notice
 you.  The door stands to the north and there are no other exits.    
 ~
-247 adj 0
+247 521 0 0 0 0
 D0
 The catacombs are back to the north.
 ~
@@ -1108,7 +1108,7 @@ The Catacombs~
 broken bits of bone and small scraps of burial wrappings.  A distinct moaning
 sound can be heard back to the west.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 The corridor continues in that direction.
 ~
@@ -1127,7 +1127,7 @@ moaning sound can be heard to the west.  The air is very stale in here.  The
 floor is littered with the decaying corpses of small rodents and splinters of
 broken bones.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D2
 The corridor continues in that direction.
 ~
@@ -1145,7 +1145,7 @@ The Catacombs~
 air seems hot and dry and reeks of staleness.  Splinters of broken bone litter
 the floor and a few cobwebs hang from the ceiling.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D0
 The corridor continues in that direction.
 ~
@@ -1168,7 +1168,7 @@ The Catacombs~
 and a warped looking hardwood door to the east.  You fell chills up and down
 your spine as you approach the door.  You wonder what might lie behind it.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 There lies before you a wooden door.
 ~
@@ -1187,7 +1187,7 @@ with age throughout the centuries.  There must be a fortune in here and you
 wonder who it once belonged to.  Transparent figures guard this treasure and
 they don't look happy that you have found it.    
 ~
-247 adj 0
+247 521 0 0 0 0
 D3
 The doorway leads back into the catacombs.
 ~
@@ -1200,7 +1200,7 @@ The Catacombs~
 the smell of decay and dry rot reeks heavily.  You wonder where exactly these
 catacombs lead.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D0
 The corridor continues in that direction.
 ~
@@ -1219,7 +1219,7 @@ golden door to the east with a flaming skull emblazoned on it.  The air is cold
 here and there is sort of a light draft.  The air seems to seep out from the
 cracks in the doorframe.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D0
 The corridor continues in that direction.
 ~
@@ -1243,7 +1243,7 @@ hall running east to west.  This corridor looks ancient.  Chunks of ceiling
 have fallen to the floor and there are small scraps of leather, bone, cloth,
 and other such items strewn about.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 The corridor continues in that direction.
 ~
@@ -1262,7 +1262,7 @@ hall running east to west.  This corridor looks ancient.  Chunks of ceiling
 have fallen to the floor and there are small scraps of leather, bone, cloth,
 and other such items strewn about.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 The corridor continues in that direction.
 ~
@@ -1281,7 +1281,7 @@ hall running east to west.  This corridor looks ancient.  Chunks of ceiling
 have fallen to the floor and there are small scraps of leather, bone, cloth,
 and other such items strewn about.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D1
 The corridor continues in that direction.
 ~
@@ -1301,7 +1301,7 @@ longer see the floor in that direction.  There is another passageway to the
 north.  The there are small cracks in the walls here and the floor is littered
 with debris from the ceiling.    
 ~
-247 ad 0
+247 9 0 0 0 0
 D0
 The corridor continues in that direction.
 ~
@@ -1326,7 +1326,7 @@ However, moments before you would have splattered to your death, a decaying
 corpse breaks your fall.  Looking around, you see that corpses fill this room.
 There are no exits.    
 ~
-247 acdhj 0
+247 653 0 0 0 0
 E
 corpse body~
    They look like they've been here a while.  You hope you don't have to stay
@@ -1340,7 +1340,7 @@ and the ceiling seems to want to cave in.  There are larger and larger chunks
 of stone that have fallen in.  You wonder just how save this passageway is.  
 
 ~
-247 ad 0
+247 9 0 0 0 0
 D0
 The corridor continues in that direction.
 ~
@@ -1359,7 +1359,7 @@ and you feel that if the passage did continue it wouldn't go much further
 without being blocked by rubble anyway.  The passageway heads south and there
 is a stone door to the west.  Looks like there is an inscription on the door.
 ~
-247 ad 0
+247 9 0 0 0 0
 D2
 The corridor continues in that direction.
 ~
@@ -1388,7 +1388,7 @@ diamonds.  You do not like the way it looks back at you and seems to grin.
 You feel a presence of great evil in this room and you feel that you should
 turn back, before something bad happens.    
 ~
-247 adj 0
+247 521 0 0 0 0
 D1
 The only exit to this room lies in that direction.
 ~
@@ -1402,7 +1402,7 @@ ceiling here and an archway leads to the east.  There is a faint red light
 coming from the east and you hear what sounds like high voltage electricity.  
 
 ~
-247 adj 0
+247 521 0 0 0 0
 D1
 You wonder what must lie beyond that archway.
 ~
@@ -1421,7 +1421,7 @@ level cleric, but laughed in the face of the gods, so we put him down here for
 you to try and kill.  Black candles provide light as the Death Master attempts
 to bring life back into a once dead corpse.    
 ~
-247 adj 0
+247 521 0 0 0 0
 D3
 The waiting room from which you came.
 ~
@@ -1434,7 +1434,7 @@ A Grave~
 peace.  Figures move through the swirling fog.  The cemetery continues to the
 west east and south.    
 ~
-247 0 2
+247 0 0 0 0 0
 D1
 To the east lies another cemetery plot.
 ~
@@ -1462,7 +1462,7 @@ peace.  Figures move through the swirling fog.  The smooth stone wall of a
 mausoleum is to the south.  The cemetery continues to the north, east and west.
   
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -1491,7 +1491,7 @@ swirling fog.  Dark evergreen trees grow to the south.  The smooth stone wall
 of a mausoleum is to the north, and the cemetery continues to the east and
 west.    
 ~
-247 0 2
+247 0 0 0 0 0
 D1
 To the east lies another cemetery plot.
 ~
@@ -1513,7 +1513,7 @@ A Grave~
 exhale.  The still clam put your thoughts at ease as you stare into the
 swirling fog.  The cemetery continues to the west, north and east.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -1541,7 +1541,7 @@ exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  The smooth stone wall of a mausoleum is to the east, and the
 cemetery continues to the north, south and west.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -1568,7 +1568,7 @@ A Grave~
 exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  The cemetery continues in all directions.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -1601,7 +1601,7 @@ cold clammy feel.  A faint sweet smell of decay hangs in the air, yet you feel
 calm and at peace in this place.  The cemetery continues to the west, east and
 south.    
 ~
-247 0 2
+247 0 0 0 0 0
 D1
 To the east lies another cemetery plot.
 ~
@@ -1629,7 +1629,7 @@ exhale.  The still calm puts your thoughts at ease as you stare into the
 swirling fog.  Dark evergreen trees grow to the south and west.  The cemetery
 continues to the north and east.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -1653,7 +1653,7 @@ swirling fog.  Dark evergreen trees grow to the west.  The smooth stone wall of
 a mausoleum is to the east, and the cemetery continues to the north and south.
   
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -1681,7 +1681,7 @@ exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  Dark evergreen trees grow to the west.  The cemetery continues
 to the north, east and south.    
 ~
-247 0 2
+247 0 0 0 0 0
 D0
 To the north lies another cemetery plot.
 ~
@@ -1709,7 +1709,7 @@ cold clammy feel.  A faint sweet smell of decay hangs in the air, yet you feel
 calm and at peace in this place.  Dark evergreen trees grow to the west and the
 cemetery continues to the east and south.    
 ~
-247 0 2
+247 0 0 0 0 0
 D1
 To the east lies another cemetery plot.
 ~

@@ -4,7 +4,7 @@ A Dimly Lit Path~
 silently in the mild air.  Ahead the lights and sounds of a peaceful village can
 be heard faintly, smells of farm animals and cooking food wafting on the breeze.
 ~
-277 0 3
+277 0 0 0 0 0
 D0
 The dimly lit path leads north through the dense forest.
 ~
@@ -45,7 +45,7 @@ deep, dark forest all around.  The bustling sounds of people and the workings of
 a little village can be heard coming from the north, the light shining brighter
 from that direction.  
 ~
-277 0 3
+277 0 0 0 0 0
 D0
 The dimly lit path leads north through the dense forest.
 ~
@@ -63,7 +63,7 @@ A Dimly Lit Path~
 to the north.  Waving shadows dance across the ongoing path, growing less and
 less noticeable as the radiating light from the northern village increases.  
 ~
-277 0 3
+277 0 0 0 0 0
 D0
 The dimly lit path leads to a village.
 ~
@@ -82,7 +82,7 @@ amongst peaceful animals and gently waving crops.  Lush grasses thrive here,
 wisps of smoke unfurling from the tiny embedded chimneys in the hillsides.  
 Bywater road can be seen travelling from east to west.  
 ~
-277 0 1
+277 0 0 0 0 0
 D1
 To the east runs Bywater Road.
 ~
@@ -106,7 +106,7 @@ well evidenced by the worn surface, smoothed by the constant travels of hobbit
 feet.  Much of the lush, flourishing Shire stretches to the west, and a little
 general store stands to the north.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 The general store lies to the north.
 ~
@@ -130,7 +130,7 @@ with various items of usefulness and other goodies.  The smell of pipeweed
 lingers warmly in the air, along with miscellaneous spices from some nearby
 cooking.  The only exit is to the south.  
 ~
-277 d 0
+277 8 0 0 0 0
 D2
 The only exit lies to the south.
 ~
@@ -144,7 +144,7 @@ sounds of Shire life breaking the quietness.  A few wooden steps lead to the
 north and a little blacksmith's shop there, while to the south lies a pleasant
 looking nursery.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 Steps lead to a friendly looking weaponry and armory.
 ~
@@ -173,7 +173,7 @@ daggers and other blades displayed proudly along the walls and within various
 cabinets.  A few humble pieces of armour can be seen, most in fine shape
 although they look rarely used.  
 ~
-277 d 0
+277 8 0 0 0 0
 D2
 The only exit lies to the south.
 ~
@@ -188,7 +188,7 @@ the air while the nursemaids can be heard sighing in exasperation.  Little
 wooden toys scattered across the floor where little feet have kicked them in
 their haste to run around and play.  
 ~
-277 d 0
+277 8 0 0 0 0
 D0
 The only exit lies to the north.
 ~
@@ -202,7 +202,7 @@ orchard trees filling the air with the scent of plant life, as well as the
 buzzing of various bees about their work.  A large, imposing building lies to
 the east and a homey looking Inn stands further to the south.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 ~
 ~
@@ -230,7 +230,7 @@ nucleus for the three shiriffs of the Eastern Shire.  Rich, warm hues of
 polished wood make the place seem welcoming, despite its stern purpose of
 keeping the local law in place.  A door offers passage to the east.  
 ~
-277 d 0
+277 8 0 0 0 0
 D1
 A door offers passage to the office of the Thain.
 ~
@@ -250,7 +250,7 @@ air of importance and respect not common to hobbit dwellings.  An open window
 allows fresh green-scented air to flow in, a door to the west leading the way to
 the Shiriff Post.  
 ~
-277 d 0
+277 8 0 0 0 0
 D3
 A door offers passage to the Shiriff Post.
 ~
@@ -265,7 +265,7 @@ fruits.  Bright pollen sparkles here and there like tiny fireflies dancing in
 the breeze.  The sounds of an instructor's monotone voice can be heard faintly,
 perhaps from the grounds to the east.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 To the north runs Bywater Road.
 ~
@@ -289,7 +289,7 @@ passage through much of Shiredom.  Strong smells of baking and frying mushrooms
 permeate the air from the residences to the east and west.  To the south, the
 Ivy Bush inn stands, much fabled for its hospitality and services.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 To the north runs Bywater Road.
 ~
@@ -319,7 +319,7 @@ proper dwelling place for halflings.  Little round windows allow a view of the
 green Shirelands outside, the curving walls and gentle colours making this home
 a very restful place to be in.  
 ~
-277 d 0
+277 8 0 0 0 0
 D1
 The only exit lies to the east.
 ~
@@ -333,7 +333,7 @@ comfortably padded wooden furniture making it a most hospitable place.  Gentle
 heat wafts from a flickering fireplace, the smells of some savoury stew filling
 the room deliciously.  
 ~
-277 d 0
+277 8 0 0 0 0
 D3
 The only exit lies to the west.
 ~
@@ -347,7 +347,7 @@ Shiredom.  Local folk and seasoned travelers alike fill the confines of the room
 with gay and lively talk.  Hearty laughter echoes off the rounded walls, and the
 high notes of inebriated hobbits singing from time to time.  
 ~
-277 d 0
+277 8 0 0 0 0
 D0
 The only exit lies to the north.
 ~
@@ -361,7 +361,7 @@ place, clanging of weapons and scuffling as young halflings train in defence.
 The ground is grassless and muddy where grappling hobbits have worn away the
 grass, the air saturated with the smell of sweat.  
 ~
-277 0 0
+277 0 0 0 0 0
 D3
 The only exit lies to the west.
 ~
@@ -375,7 +375,7 @@ straggling bits of grass and plantlife gradually pushing at the borders as they
 flourish.  Cattle can be seen grazing lazily amongst the fields, small rabbits
 and other creatures scurrying about obliviously.  
 ~
-277 0 1
+277 0 0 0 0 0
 D1
 To the east you see the entrance to the Shire.
 ~
@@ -399,7 +399,7 @@ windows allowing an unblocked watch of the road for the Shiriffs on duty.  The
 clear Brandywine River can be seen gurgling smoothly past, tall reeds swaying
 gently beside it.  
 ~
-277 d 0
+277 8 0 0 0 0
 D0
 The only exit is to the north.
 ~
@@ -413,7 +413,7 @@ west road.  The ruts of wagon wheels line the path here as though this section
 is well travelled, a small grocery shop to the south catering to hungry
 venturers.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 Brandywine Bridge offers safe passage across the tumultuous river.
 ~
@@ -443,7 +443,7 @@ metal hooks against the wall, salted pork and beef jerky amongst them.  A small
 section is set aside for the locally made treats; apple tarts and hard toffees
 set just high enough to escape little hobbit childrens reach.  
 ~
-277 d 0
+277 8 0 0 0 0
 D0
 The only exit is to the north.
 ~
@@ -457,7 +457,7 @@ Brandywine River winding through the land to the north.  The air is crisp and
 slightly moist, the only sounds the babbling river and louder trickling from a
 southern watermill.  
 ~
-277 0 1
+277 0 0 0 0 0
 D1
 To the east runs Bywater Road.
 ~
@@ -481,7 +481,7 @@ creaking of the mill itself breaking the characteristic serenity of this place.
 Rough, red stones make up the majority of the structure, emanating a cool
 dampness.  
 ~
-277 0 0
+277 0 0 0 0 0
 D0
 You see Bywater Road to the north.
 ~
@@ -500,7 +500,7 @@ is loud with the sound of scurrying workers and the splashing of continuously
 churning water.  The air is cold and wet, a slight film of moisture clinging to
 most of the stone surfaces.  
 ~
-277 d 0
+277 8 0 0 0 0
 D0
 You see the entrance.
 ~
@@ -519,7 +519,7 @@ staining the curving stony walls.  The place is slightly grimy where water has
 mixed with dust, the sound of miserable dripping echoing in the empty space,
 apparently abandoned for the most part.  
 ~
-277 d 0
+277 8 0 0 0 0
 D0
 A watermill meets your gaze.
 ~
@@ -540,7 +540,7 @@ and deer peacefully grazing in the far stretching fields.  Sounds of joyful
 celebration can be heard coming from the west, wisps of smoke unfurling like
 banners on the horizon.  
 ~
-277 0 4
+277 0 0 0 0 0
 D1
 To the east runs Bywater Road.
 ~
@@ -559,7 +559,7 @@ serenly past.  Splashes of white and yellow stand out brightly where patches of
 clover and daisies grow, puffy dandelion heads explode into seedlings, sending
 miniature twirling parachutes through the air.  
 ~
-277 0 2
+277 0 0 0 0 0
 D2
 You see a grassy field.
 ~
@@ -573,7 +573,7 @@ colourful banners strewn about the trees.  It seems to be a birthday party
 judging by the joyful chants and songs that spontaneously erupt, filling the air
 with the sound of laughter and merriment.  
 ~
-277 0 2
+277 0 0 0 0 0
 D0
 You see a grassy field.
 ~
@@ -602,7 +602,7 @@ clapping coming from the north.  Little pieces of coloured party confetti floats
 in the breeze along with the seedlings, smells of fresh cooking and baking
 saturating the air.  
 ~
-277 0 2
+277 0 0 0 0 0
 D0
 You see a grassy field.
 ~
@@ -616,7 +616,7 @@ clover and vibrant red poppies dancing in the breeze.  The sounds of partying
 and joyful shouts fill the air, several tables laid out to the east and the
 smell of all sorts of food wafting temptingly.  
 ~
-277 0 2
+277 0 0 0 0 0
 D1
 You see a grassy field.
 ~
@@ -631,7 +631,7 @@ invitingly refreshing, pale smooth pebbles lining the ground beneath and tall
 reeds bending in the breeze, caressing the water as it rushes past.  Delving
 Lane extends to the north, while Bywater Road can be seen to the south.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 You see Delving Lane.
 ~
@@ -651,7 +651,7 @@ art of innkeeping, offers rest and comfort to the east.  Little fireflies dance
 in clusters here beneath the larger trees, glowing lights winking in and out of
 exis tance from the shadows.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 You see Delving Lane.
 ~
@@ -675,7 +675,7 @@ east.  The road is gently paved here, cobbled stone carefully laid to ease the
 passage of riders and wagons.  An unpleasant smell lingers in the air of various
 farm animals, the sounds of braying and mooing coming from the west.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 You see Delving Lane.
 ~
@@ -704,7 +704,7 @@ flowers of various colours blooming on either side, and large trees lining the
 path, shading it with long graceful branches.  Little sunflower seeds lie
 scattered around, as if some traveller stopped for a brief snack.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 A large, magnificent house meets your steady gaze.  Above the round door a
 sign reads 'Bag End'.
@@ -724,7 +724,7 @@ standards.  On the wall, a banner reads "Home Sweet Home", and various drawings
 of maps can be seen pinned here and there.  A solid oak door to the east leads
 to a pantry, while a cozy bedroom lies to the west.  
 ~
-277 d 0
+277 8 0 0 0 0
 D1
 Through the keyhole you see what looks like a well stocked pantry.
 ~
@@ -749,7 +749,7 @@ which are made, and portraits of halflings hang on the wall, apparently the
 likenesses of a long family line of distinguished hobbits.  A cozy flame
 flickers in the stone fireplace, keeping the room warm and comfortable.  
 ~
-277 d 0
+277 8 0 0 0 0
 D1
 Through the doorway you see the main room of Bag End.
 ~
@@ -764,7 +764,7 @@ feeling of some unnatural magic in this part of the house, a slight chill to the
 atmosphere, and occasionally it seems as though the floor creaks of its own
 accord.  
 ~
-277 d 0
+277 8 0 0 0 0
 D3
 Beyond the door you see the main room of Bag End.
 ~
@@ -783,7 +783,7 @@ hands.  The grass has been left to grow wild and plentiful, kept trimmed by the
 constant munching of the various cattle animals here.  The smell of a pig pen is
 unmistakeable in the air, sounds of scuffling and grunts coming from the south.
 ~
-277 0 2
+277 0 0 0 0 0
 D0
 You see a large barn.
 ~
@@ -807,7 +807,7 @@ touches.  Various slops and leftovers have been spilt on the ground, being
 scavenged and trodden into the mud by the resident farm animals, their smell
 hanging rankly in the air.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 You see a grassy field.
 ~
@@ -826,7 +826,7 @@ winds through the grass.  A small residence can be seen at the northern end of
 the trail.  The rest of the land seemingly left to the farm animals, the noisy
 din of pigs grunting and scuffling coming from the east.  
 ~
-277 0 1
+277 0 0 0 0 0
 D0
 To the north you see a modest house.
 ~
@@ -845,7 +845,7 @@ lands.  The air is somewhat musty and the smell is reminiscent of a stable.  In
 fact, in comparison to the urban riches of the Shire proper, this is little more
 than a shack.  
 ~
-277 d 0
+277 8 0 0 0 0
 D2
 You see a small path winding its way southward.
 ~
@@ -859,7 +859,7 @@ unfortunately the smell lingers along with them.  The atmosphere is restful and
 feels very safe, as though nothing bad in the world could touch these
 garden-like lands.  
 ~
-277 d 0
+277 8 0 0 0 0
 D0
 You see a chicken coop to the north.
 ~
@@ -878,7 +878,7 @@ scattered corn for the feeding chickens.  The sound of clucking and claws
 scratching at ground can be heard continuously as the resident animals go about
 their normal living.  
 ~
-277 d 0
+277 8 0 0 0 0
 D2
 You see a large barn.
 ~
@@ -894,7 +894,7 @@ constant murmur of local gossip.  A flickering fire lights the place with a
 gentle glow, warming it cozily and providing a center of gathering for the
 joyful storytellers.  
 ~
-277 d 0
+277 8 0 0 0 0
 D3
 You see Delving Lane.
 ~
@@ -913,7 +913,7 @@ of Delving Lane.  As you examine the shiriffs on duty, you come to realize
 that the halflings of the Shire are not to be reckoned with.  You cower with
 awe.  The only exit is to the west.
 ~
-277 d 0
+277 8 0 0 0 0
 D3
 You see Delving Lane.
 ~
@@ -927,7 +927,7 @@ dripping echoes along the stoney walls, and perhaps the sound of faint
 whipsering.  Bone-chillingly cold, this passage seems to actively discourage
 travellers from continuing further.  
 ~
-277 ad 0
+277 9 0 0 0 0
 D1
 You see a dark tunnel.
 ~
@@ -946,7 +946,7 @@ that lie scattered around.  The place seems to echo with random scuffling and
 scurrying sounds, as it would if infested with rats; although the noises are
 somewhat too loud.  
 ~
-277 ad 0
+277 9 0 0 0 0
 D1
 You see a dark tunnel.
 ~
@@ -964,7 +964,7 @@ Smuggler's Storage~
 beams of light that pierce from the west.  Rivulets of cold water trickle lazily
 along the stone, mixing with the dust to create a layer of slippery mud.  
 ~
-277 ad 0
+277 9 0 0 0 0
 D1
 You see a dark tunnel.
 ~
@@ -982,7 +982,7 @@ A Three-way Intersection~
 cold as the others, although the sounds of scurrying seem to grow louder to the
 north, the path perhaps a little lighter to the west.  
 ~
-277 ad 0
+277 9 0 0 0 0
 D0
 You see a dark tunnel.
 ~
@@ -1006,7 +1006,7 @@ almost absolute darkness and musty with dampness and age.  The black floor is
 slick with mud and various slimes, sticky cobwebs clinging to every dreary
 surface.  
 ~
-277 ad 0
+277 9 0 0 0 0
 D3
 You see a dark tunnel.
 ~
@@ -1020,7 +1020,7 @@ you must crouch to avoid hitting your head.  The tunnel continues north and
 south.  To the west you see a Shirriff Post while to the east lies a small
 home.  All you can see is darkness.
 ~
-277 ad 0
+277 9 0 0 0 0
 D0
 You see a dark tunnel.
 ~
@@ -1048,7 +1048,7 @@ A dark tunnel~
 you must crouch to avoid hitting your head.  The tunnel continues north and
 south.  To the west lies a small home.  All you can see is darkness.
 ~
-277 ad 0
+277 9 0 0 0 0
 D0
 You see a dark tunnel.
 ~
@@ -1072,7 +1072,7 @@ of the Lower Shire.  As you examine the shiriffs on duty, you come to realize
 that the halflings of the Shire are not to be reckoned with.  You cower with
 awe.  The only exit is to the east.
 ~
-277 ad 0
+277 9 0 0 0 0
 D1
 You see a dark tunnel.
 ~
@@ -1085,7 +1085,7 @@ A halfling hole~
 and winding paths remind you of a rodent's lair.  The air is musty and damp
 and you feel the need for fresh air.
 ~
-277 ad 0
+277 9 0 0 0 0
 D3
 You see a dark tunnel.
 ~
@@ -1098,7 +1098,7 @@ A halfling hole~
 and winding paths remind you of a rodent's lair.  The air is musty and damp
 and you feel the need for fresh air.
 ~
-277 ad 0
+277 9 0 0 0 0
 D1
 You see a dark tunnel.
 ~
@@ -1110,7 +1110,7 @@ End of a dark tunnel~
    You are at one end of a dark tunnel.  The tunnel continues to the south
 while on the ceiling you can make out a trapdoor.
 ~
-277 ad 0
+277 9 0 0 0 0
 D2
 You see a dark tunnel.
 ~
@@ -1128,7 +1128,7 @@ The Inn of the Green Dragon~
 halflings at work, and halflings at play adorn the walls.  Comfortable 
 benches and seats line the walls.  A stairway leads down.
 ~
-277 de 0
+277 24 0 0 0 0
 D5
 ~
 ~
@@ -1142,7 +1142,7 @@ wooden stick figures.  Baskets of different coloured threads and ribbons sit on
 a table in the center of the room, allowing the buyer to choose exactly what
 they want.  
 ~
-277 d 0
+277 8 0 0 0 0
 D2
 ~
 ~

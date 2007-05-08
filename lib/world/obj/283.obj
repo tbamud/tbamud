@@ -3,7 +3,7 @@ ring devil evil~
 a ring of the devil~
 Something very evil lies here haunting you.~
 ~
-9 dfhj ab 0
+9 dfhj 0 0 0 ab 0 0 0 0 0 0 0
 5 0 0 0
 1 564 0 20
 A
@@ -17,7 +17,7 @@ shield dead evil~
 the shield of the dead~
 A shield lies here, with an evil aura to it...~
 ~
-9 bdfhj aj 0
+9 bdfhj 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
 3 780 0 0
 A
@@ -31,7 +31,7 @@ skeleton key bone~
 a skeleton key~
 There is a key-shaped item here, which looks to be made from real bone.~
 ~
-18 cdfhjq ao 0
+18 cdfhjq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 0
 A
@@ -43,7 +43,7 @@ secret key~
 a secret key~
 Something lies here...~
 ~
-18 cdfjq ao 0
+18 cdfjq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 500 0 0
 #28304
@@ -51,7 +51,7 @@ fireplace~
 the fireplace~
 The fireplace sits here in the corner.~
 ~
-13 e 0 0
+13 e 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #28305
@@ -59,7 +59,7 @@ special key~
 a special key~
 A key lays here, and somehow you think it is very special.~
 ~
-18 fj ao 0
+18 fj 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #28306
@@ -67,7 +67,7 @@ well~
 an old well~
 A well sits here, mangled from time.~
 ~
-12 e 0 0
+12 e 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #28307
@@ -75,7 +75,7 @@ key treasure~
 the key to the treasure~
 A golden key lays here.~
 ~
-18 f a 0
+18 f 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1000 0 0
 #28308
@@ -83,7 +83,7 @@ small bed~
 a small bed~
 A tiny bed sits here.~
 ~
-13 0 0 0
+13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #28309
@@ -91,7 +91,7 @@ golden lance~
 a golden lance~
 A large weapon sticks into the ground here, glowing a golden color.~
 ~
-5 i an 0
+5 i 0 0 0 an 0 0 0 0 0 0 0
 1 5 4 6
 4 700 0 0
 #28310
@@ -99,7 +99,7 @@ torch~
 a torch~
 An unlit torch hangs on the wall here.~
 ~
-1 j ao 0
+1 j 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 3 208 0 0
 A
@@ -111,7 +111,7 @@ bloody claws~
 a pair of bloody claws~
 Claws lay here in a pool of blood.~
 ~
-5 e an 0
+5 e 0 0 0 an 0 0 0 0 0 0 0
 3 3 6 5
 2 907 0 0
 E
@@ -129,7 +129,7 @@ punisher~
 the PUNISHER~
 A huge weapon lays here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 5 6 3
 5 909 0 30
 E
@@ -147,7 +147,7 @@ rusty sword~
 a rusty sword~
 A sword has been stuck in the wall here.~
 ~
-5 e an 0
+5 e 0 0 0 an 0 0 0 0 0 0 0
 0 1 2 0
 4 1 0 0
 #28314
@@ -155,7 +155,7 @@ potion purple~
 a purple potion~
 A potion lays here.~
 ~
-10 f a 0
+10 f 0 0 0 a 0 0 0 0 0 0 0
 20 1 1 1
 1 150 0 0
 #28315
@@ -163,7 +163,7 @@ leather old belt~
 an old leather belt~
 A belt made of leather lays here.~
 ~
-9 ej al 0
+9 ej 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
 1 560 0 0
 E
@@ -179,7 +179,7 @@ jacket old~
 an old jacket~
 A jacket, which is torn from wear, is here.~
 ~
-9 ej ak 0
+9 ej 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
 1 607 0 0
 A
@@ -191,7 +191,7 @@ scarf~
 a scarf~
 A scarf lays here.~
 ~
-9 ej ac 0
+9 ej 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
 1 207 0 0
 A
@@ -203,7 +203,7 @@ gold coins~
 lots of gold coins~
 There are quite a few gold coins in a pile here.~
 ~
-20 f a 0
+20 f 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
 2 100 0 0
 #28319
@@ -211,7 +211,7 @@ ghost head~
 a ghosts' head~
 The head of a ghost lays here making a huge pool of blood.~
 ~
-15 f ao 0
+15 f 0 0 0 ao 0 0 0 0 0 0 0
 14 1 -1 0
 2 500 0 0
 A
@@ -221,7 +221,7 @@ stupid brain ghost~
 a stupid ghost's brain~
 A brain lays here. How sick!~
 ~
-13 f aeo 0
+13 f 0 0 0 aeo 0 0 0 0 0 0 0
 0 0 0 0
 1 500 0 0
 A
@@ -233,7 +233,7 @@ skull~
 a skull~
 A skull lays here.~
 ~
-13 e ae 0
+13 e 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 50 10 0 0
 #28322
@@ -241,7 +241,7 @@ bench~
 a bench~
 A bench sits in the corner.~
 ~
-13 e 0 0
+13 e 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #28323
@@ -249,7 +249,7 @@ box~
 a box~
 A box sits in another corner.~
 ~
-15 e a 0
+15 e 0 0 0 a 0 0 0 0 0 0 0
 49 5 -1 0
 20 900 0 0
 #28324
@@ -257,7 +257,7 @@ water bottle water~
 a bottle~
 A bottle of water sits here.~
 ~
-17 fj a 0
+17 fj 0 0 0 a 0 0 0 0 0 0 0
 17 17 0 0
 22 125 0 0
 #28325
@@ -265,7 +265,7 @@ whisky bottle old whisky~
 an old bottle~
 A bottle of whisky sits here.~
 ~
-17 e ao 0
+17 e 0 0 0 ao 0 0 0 0 0 0 0
 34 26 5 1
 31 470 0 0
 #28326
@@ -273,7 +273,7 @@ old bread~
 an old bread~
 Mold grows all over a small piece of bread here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 1
 1 238 0 0
 #28327
@@ -281,7 +281,7 @@ dark sword power~
 the dark sword of power~
 A shadowy sword lies here, deserted.~
 ~
-5 f an 0
+5 f 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 3
 4 543 0 0
 A
@@ -295,7 +295,7 @@ file rusted~
 a rusted file~
 A file sits here looking very rusted.~
 ~
-13 e ao 0
+13 e 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 870 0 0
 A
@@ -307,7 +307,7 @@ glowing wand~
 a glowing wand~
 A wand is glowing here.~
 ~
-3 a ao 0
+3 a 0 0 0 ao 0 0 0 0 0 0 0
 18 3 2 16
 3 304 0 0
 #28330
@@ -315,7 +315,7 @@ violet scroll~
 a violet scroll~
 A violet scroll sits here, crumbled into a big ball.~
 ~
-2 df ao 0
+2 df 0 0 0 ao 0 0 0 0 0 0 0
 10 1 33 17
 1 123 0 0
 #28331
@@ -323,7 +323,7 @@ dragon tail~
 a dragon tail~
 A dragon's tail sits here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 5 5 10
 6 450 0 0
 A
@@ -335,7 +335,7 @@ bull skull~
 a bull skull~
 A bull's skull lays here. ~
 ~
-9 dfhjq ae 0
+9 dfhjq 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
 4 800 0 0
 A
@@ -349,7 +349,7 @@ key rugged~
 a rugged key~
 A dirty key lays on the ground here...~
 ~
-9 f ano 0
+9 f 0 0 0 ano 0 0 0 0 0 0 0
 3 0 0 0
 1 651 0 0
 A
@@ -363,7 +363,7 @@ jagged piece stone~
 a jagged piece of stone~
 A very sharp and jagged stone is laying here...~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 6 4 6
 4 508 0 0
 A

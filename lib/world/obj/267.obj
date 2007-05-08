@@ -3,7 +3,7 @@ dress pink taffeta~
 a pretty pink taffeta dress~
 A pretty pink taffeta dress lies crumpled on the ground.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 5 300 0 0
 E
@@ -15,7 +15,7 @@ dress blue silk~
 a pretty blue silk dress~
 A pretty blue silk dress is getting wrinkled and dirty lying on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
 5 300 0 0
 E
@@ -27,7 +27,7 @@ dress white cotton~
 a pretty pristine white cotton dress~
 A pretty white cotton dress has been tossed to the ground.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 5 300 0 0
 E
@@ -39,7 +39,7 @@ dress beige burlap~
 an ugly beige burlap dress~
 An ugly beige burlap dress looks very like a sack of potatoes on the ground.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
 5 300 0 0
 E
@@ -51,7 +51,7 @@ dress swirling beautiful multi-colored~
 a beautiful swirling multi-colored dress~
 A beautiful, swirling, multi-colored dress is getting soiled on the ground.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 3 0 0 0
 5 700 0 0
 E
@@ -69,7 +69,7 @@ talisman demon-faced demon faced charming~
 a demon-faced talisman~
 A talisman with the face of a demon on it has been thrown to the ground.~
 ~
-4 aejlo aco 0
+4 aejlo 0 0 0 aco 0 0 0 0 0 0 0
 30 3 3 7
 10 500 0 0
 E
@@ -83,7 +83,7 @@ robe leisure~
 a robe of leisure~
 A robe of leisure is on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
 5 800 0 0
 E
@@ -100,7 +100,7 @@ rattle tar~
 a tar rattle~
 A tar rattle just insists on your getting it.~
 ~
-8 h ao 0
+8 h 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 2 1000 0 0
 E
@@ -116,7 +116,7 @@ scroll fear~
 a screaming scroll~
 A scroll with the description of a man screaming at the top of his lungs has been left here.~
 ~
-2 gn ao 0
+2 gn 0 0 0 ao 0 0 0 0 0 0 0
 20 30 30 30
 15 400 0 0
 E
@@ -128,7 +128,7 @@ crown spikes~
 a Crown of Spikes~
 A crown with very sharp spikes has been very carelessly left here to rust.~
 ~
-9 egjlnp ae 0
+9 egjlnp 0 0 0 ae 0 0 0 0 0 0 0
 8 0 0 0
 20 750 0 0
 E
@@ -146,7 +146,7 @@ robe fear~
 a black, bloodstained robe~
 A black, bloodstained robe is crumpled on the floor.~
 ~
-9 ejlnp ak 0
+9 ejlnp 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
 20 800 0 0
 E
@@ -163,7 +163,7 @@ ball chain~
 a ball and chain~
 A ball and chain lies on the ground.~
 ~
-14 cfglno ag 0
+14 cfglno 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
 30 100 0 0
 E
@@ -180,7 +180,7 @@ manacles handcuffs~
 some manacles~
 Some manacles are on the ground.~
 ~
-14 cfglno ah 0
+14 cfglno 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
 15 100 0 0
 A
@@ -192,7 +192,7 @@ key cell cellkey~
 a cellkey~
 A cellkey has been hung on the wall.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 3 20 0 0
 #26714
@@ -200,7 +200,7 @@ knife butcher~
 a huge butcher knife~
 A huge butcher knife has been left on the ground.~
 ~
-5 abejl an 0
+5 abejl 0 0 0 an 0 0 0 0 0 0 0
 0 2 9 3
 26 1000 0 0
 E
@@ -217,7 +217,7 @@ armbands pitch black~
 a pair of pitch black armbands~
 A pair of pitch black armbands has been thrown to the ground.~
 ~
-9 bgjlnp ai 0
+9 bgjlnp 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
 10 400 0 0
 E
@@ -233,7 +233,7 @@ leggings pitch black~
 a pair of pitch black leggings~
 A pair of pitch black leggings lie on the ground.~
 ~
-9 agjln af 0
+9 agjln 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
 15 200 0 0
 E
@@ -250,7 +250,7 @@ boots pitch black~
 a pair of pitch black boots~
 A pair of pitch black boots lie on the ground.~
 ~
-9 bgjlnp ag 0
+9 bgjlnp 0 0 0 ag 0 0 0 0 0 0 0
 6 0 0 0
 15 300 0 0
 E
@@ -265,7 +265,7 @@ gloves pitch black~
 a pair of pitch black gloves~
 A pair of pitch black gloves are on the ground.~
 ~
-9 bgjlnp ah 0
+9 bgjlnp 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
 15 1000 0 0
 E
@@ -280,7 +280,7 @@ blade terror~
 the terror-blade~
 The Blade of Terror has been thrown to the ground.~
 ~
-5 aejl an 0
+5 aejl 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 3
 15 1000 0 0
 E
@@ -297,7 +297,7 @@ armor pitch black plate~
 a pitch-black plate armor~
 A pitch black plate armor has been carelessly left behind.~
 ~
-9 bgjlnp ad 0
+9 bgjlnp 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 20 1000 0 0
 E
@@ -310,7 +310,7 @@ headdress terror~
 the Headdress of Terror~
 The Headdress of Terror has been dropped here.~
 ~
-9 bgjlnp ae 0
+9 bgjlnp 0 0 0 ae 0 0 0 0 0 0 0
 9 0 0 0
 30 1000 0 0
 E
@@ -327,7 +327,7 @@ ring pitch black~
 a ring of pitch-black metal~
 A ring of pitch-black metal is half-sticking out of the floor.~
 ~
-8 bgjlnp ab 0
+8 bgjlnp 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 2 800 0 0
 E
@@ -342,7 +342,7 @@ cloak darkness~
 a cloak of the purest black~
 A cloak of darkness is in a heap on the ground.~
 ~
-9 bgjlnp ac 0
+9 bgjlnp 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
 20 1000 0 0
 E
@@ -359,7 +359,7 @@ armor scale iridescent~
 an irridescent scale armor~
 An armor made out of the irridescent scales of a dragon is on the floor.~
 ~
-9 bdefjlp ad 0
+9 bdefjlp 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
 25 900 0 0
 A
@@ -371,7 +371,7 @@ whip cat o' nine tails~
 a cat o' nine tails~
 A cat o' nine tails is on the ground here.~
 ~
-5 bdghijkn an 0
+5 bdghijkn 0 0 0 an 0 0 0 0 0 0 0
 0 4 5 2
 20 920 0 20
 A
@@ -381,7 +381,7 @@ spectacles rimmed 4-eyes four-eyes four eyes~
 a pair of wire-rimmed spectacles~
 A pair of wire-rimmed spectacles is about to get crushed if it is left on the ground.~
 ~
-8 0 ae 0
+8 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 5 1000 0 0
 #26727
@@ -389,7 +389,7 @@ key strangely shaped~
 a strangely shaped key~
 A strangely shaped key is lying on the ground.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 3 100 0 0
 #26728
@@ -397,7 +397,7 @@ key black pitch~
 a pitch-black key~
 A pitch-black key is lying on the ground.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 3 100 0 0
 #26729
@@ -405,7 +405,7 @@ key glass~
 a transparent glass key~
 A transparent glass key lies on the ground.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 3 100 0 0
 #26730
@@ -413,7 +413,7 @@ key stone~
 a stone key~
 A stone key lies on the ground.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 3 100 0 0
 #26731
@@ -421,7 +421,7 @@ key redwood~
 a redwood key~
 A redwood key lies on the ground.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
 3 100 0 0
 #26732
@@ -429,7 +429,7 @@ key iron dull~
 a dull iron key~
 A dull iron key lies on the ground. *yawn*~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 3 100 0 0
 #26733
@@ -437,7 +437,7 @@ key tiny~
 a tiny key~
 You almost miss a tiny key on the ground.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 3 100 0 0
 #26734
@@ -445,7 +445,7 @@ key burning~
 a red-hot key~
 A red-hot key glows brightly on the ground.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
 3 100 0 0
 #26735
@@ -453,7 +453,7 @@ potion red glowing~
 a glowing red potion~
 A glowing red potion bubbles in a canister on the ground.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 15 2 17 33
 3 1000 0 50
 E
@@ -466,7 +466,7 @@ potion blue shining~
 a shining blue potion~
 A shining blue potion is in a canister on the ground.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 20 18 18 18
 3 1000 0 0
 E
@@ -478,7 +478,7 @@ potion green~
 a green potion~
 A green potion is in a canister on the ground.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 15 29 29 29
 3 1000 0 0
 E
@@ -490,7 +490,7 @@ purple potion~
 a purple potion of giant strength~
 A purple potion of giant strength.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 30 39 39 39
 3 1000 0 0
 E
@@ -502,7 +502,7 @@ cloak wisdom~
 a cloak of wisdom~
 A green cloak of wisdom is in a heap on the ground.~
 ~
-9 aghjl ac 0
+9 aghjl 0 0 0 ac 0 0 0 0 0 0 0
 3 0 0 0
 3 1000 0 30
 E
@@ -518,7 +518,7 @@ cloak forgetfulness~
 a cloak of forgetfulness~
 A hazel cloak of forgetfulness is in a big heap on the ground.~
 ~
-9 aghjl ac 0
+9 aghjl 0 0 0 ac 0 0 0 0 0 0 0
 3 0 0 0
 3 1000 0 0
 E

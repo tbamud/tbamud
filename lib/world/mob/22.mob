@@ -6,7 +6,7 @@ A decomposing guard is still standing watch here.
    The flesh is falling off this guy, while green puss oozes from old wounds.
 He looks Dead!    
 ~
-bdlm k -750 E
+6154 0 0 0 0 0 0 0 -750 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -21,7 +21,7 @@ A rotten knight in black armor is standing here.
 out in the sun and has shriveled up.  His black armor sits loosely over the
 remains of this undead monsters body.    
 ~
-cdgl dfk -750 E
+2124 0 0 0 80 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -34,7 +34,7 @@ A zombie servants rotten head almost falls off as he bows before you.
 ~
    This dead servant was brought back to life.  You wonder why!    
 ~
-dgnopr k -750 E
+188488 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -48,7 +48,7 @@ A zombie maid picks up after all the zombies.
    She might have once been an attractive woman, but now she's just another
 soulless husk of a human being.    
 ~
-dgnopr k -750 E
+188488 0 0 0 0 0 0 0 -750 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -64,7 +64,7 @@ glimpses of gold trimming on the old rotten clothing, hints of this mans
 greatness at one time.  The downfall of his empire seems to weep in his sunken
 eyes.    
 ~
-dg k -750 E
+72 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -78,7 +78,7 @@ A smelly zombie brushes up against you seductively.
    Dressed in clothes that were once very flattering, the decaying flesh and
 oozing green puss don't do much to help this lady now.    
 ~
-dg k -750 E
+72 0 0 0 0 0 0 0 -750 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -92,7 +92,7 @@ A pile of human bones is lying here.
    What you first think is just a pile of bones, you now realize that it is
 actually alive and looks ready to attack.    
 ~
-bd k -750 E
+10 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -105,7 +105,7 @@ An undead corpse walks past you.
 ~
    This corpse just stood up and walked past you.  How unnerving.    
 ~
-dg k -750 E
+72 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -119,7 +119,7 @@ A zombie head maid is supervising the cleaning of the tower.
    She looks tough, all the other maids cower towards her.  She holds herself
 with an air of authority that is expected to be respected and followed.    
 ~
-bd k -750 E
+10 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -133,7 +133,7 @@ A blistered zombie is smoldering from the heat.
    The heat has caused this zombie to be covered in blisters.  Very little
 clothing remains, what does is slowly smoldering into ash.    
 ~
-bd k -750 E
+10 0 0 0 0 0 0 0 -750 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -147,7 +147,7 @@ A zombie stands here negligent to the heat.
    This zombie is charred and smoke pours off his smoldering flesh.  The smell
 is none too appealing and makes your eyes burn.    
 ~
-bd k -750 E
+10 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -161,7 +161,7 @@ A zombie has caught on fire here.
    Smoke and flames roll off this zombie causing the horrible stench of burnt
 hair and flesh to make you gag.  It seems oblivious to the world.    
 ~
-bd k -750 E
+10 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -176,7 +176,7 @@ An algae monster is trying to hide from you.
 impossible to tell for sure.  It looks very hostile.  Claws and teeth protrude
 from the fungus covered beast.    
 ~
-bcdefl bdfkt 0 E
+2110 0 0 0 1048660 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -191,7 +191,7 @@ A vampire looks at you and grins evilly.
 disturbing him.  He wears a black cape that fails to conceal his broad
 shoulders.  He looks to be much more than just your average vampire.    
 ~
-bcdefnpqr dfkt -750 E
+237630 0 0 0 1048656 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -205,7 +205,7 @@ A damsel in distress sings so beautifully.
    Such a beautiful voice, but such an ugly face.  She reminds you of those
 sirens you've heard of.    
 ~
-bd k 0 E
+10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -219,7 +219,7 @@ A prisoner is standing here, looking hopeless.
    The blank eyes seem to already have seen the future and the fate that will
 become of him.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -233,7 +233,7 @@ An inquisitor is here, applying her trade to the prisoners.
    She seems to enjoy her work a little too much.  She is dressed in tight
 black leather and various tools of her trade hang about her.    
 ~
-bdjl k -750 E
+2570 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -247,7 +247,7 @@ The head inquisitor is supervising the interrogations.
    She really seems to enjoy inflicting pain on others, she suddenly notices
 you and smiles seductively.  Yet another prisoner in her eyes.    
 ~
-bdf k -750 E
+42 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -262,7 +262,7 @@ An animator of the dead is weaving an intricate spell.
 intricate gestures while mumbling incomprehensible words.  He suddenly notices
 you, and loses his concentration.    
 ~
-bdfnpr k -750 E
+172074 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -276,7 +276,7 @@ A zombie stumbles past you.
    This guy has been dead for a long time.  The body is decomposed and ridden
 with maggots.    
 ~
-dg k -750 E
+72 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -289,7 +289,7 @@ A zombie covered in mold is lying on the floor.
 ~
    This zombie has been lying on the ground too long and has gotten moldy.    
 ~
-dg k -750 E
+72 0 0 0 0 0 0 0 -750 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -304,7 +304,7 @@ A wraith floats past you.
 fade in and out of existence, you can't tell if it's real or just your
 imagination.    
 ~
-dgjl k -750 E
+2632 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -317,7 +317,7 @@ A shade is slowly fading in and out of existence.
 ~
    It looks unreal, and definitely undead.    
 ~
-bdf k -750 E
+42 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -331,7 +331,7 @@ A zombie with icicles hanging on it shuffles by.
    The cold has taken ahold of this zombie and turned it into a popsicle.  It
 moves even slower than normal.    
 ~
-dg k -750 E
+72 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -346,7 +346,7 @@ A zombie king orders you to leave at once.
 rulership has left him with a smug arrogance in which he expects everything and
 everyone to obey his every command.    
 ~
-bdfl dfk -750 E
+2090 0 0 0 80 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -359,7 +359,7 @@ A zombie queen sniffs in disdain at you.
 ~
    Once beautiful, she is now just another one of the rotting undead.    
 ~
-bdflmpr k 30 E
+170026 0 0 0 0 0 0 0 30 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -373,7 +373,7 @@ A dungeon guard stands his watch vigilantly.
    He stands with pride and honor, the perfect guard.  He wears a grey robe
 over his armor with two crossed thunderbolts emblazoned on it.    
 ~
-cdgl dfk 750 E
+2124 0 0 0 80 0 0 0 750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -388,7 +388,7 @@ This sentry is standing watch over a large locked door to the south.
 degree angle, back straight, closed hands against the seam of her trousers.  
 She doesn't move an inch.    
 ~
-bdlm dfk 750 E
+6154 0 0 0 80 0 0 0 750 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -402,7 +402,7 @@ The dungeon master is here protecting the cell to the south.
    She looks tough and very serious, She carries a wicked sword with two
 crossed lightning bolts engraved on the handle.    
 ~
-bdlnpqr dfhk 750 E
+239626 0 0 0 80 0 0 0 750 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -416,7 +416,7 @@ The princess is sitting in a corner, cowering in fear.
    Her face is streaked with dried tears, she looks like she has given up hope
 on life, will you save her?    
 ~
-bdgh k 750 E
+202 0 0 0 0 0 0 0 750 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -431,7 +431,7 @@ The Lord of the Undead ignores your pitiful existence.
    The master of the tower, his only equal is the gods, that is if he ever
 escapes confinement from his warded cell.    
 ~
-bcde dfk -1000 E
+30 0 0 0 80 0 0 0 -1000 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1

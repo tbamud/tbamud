@@ -174,7 +174,7 @@ ACMD(do_oasis_oedit)
 
   /* Send the OLC message to the players in the same room as the builder. */
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
-  SET_BIT(PLR_FLAGS(ch), PLR_WRITING);
+  SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
   /* Log the OLC message. */
   mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing zone %d allowed zone %d",
@@ -189,7 +189,7 @@ void oedit_setup_new(struct descriptor_data *d)
   OLC_OBJ(d)->name = strdup("unfinished object");
   OLC_OBJ(d)->description = strdup("An unfinished object is lying here.");
   OLC_OBJ(d)->short_description = strdup("an unfinished object");
-  GET_OBJ_WEAR(OLC_OBJ(d)) = ITEM_WEAR_TAKE;
+  SET_BIT_AR(GET_OBJ_WEAR(OLC_OBJ(d)), ITEM_WEAR_TAKE);
   OLC_VAL(d) = 0;
   OLC_ITEM_TYPE(d) = OBJ_TRIGGER;
 
@@ -433,7 +433,7 @@ void oedit_disp_val1_menu(struct descriptor_data *d)
     write_to_output(d, "Spell level : ");
     break;
   case ITEM_WEAPON:
-    /* This doesn't seem to be used if I remembe right. */
+    /* This doesn't seem to be used if I remember right. */
     write_to_output(d, "Modifier to Hitroll : ");
     break;
   case ITEM_ARMOR:
@@ -578,7 +578,7 @@ void oedit_disp_extra_menu(struct descriptor_data *d)
     write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm,
 		extra_bits[counter], !(++columns % 2) ? "\r\n" : "");
   }
-  sprintbit(GET_OBJ_EXTRA(OLC_OBJ(d)), extra_bits, bits, sizeof(bits));
+  sprintbitarray(GET_OBJ_EXTRA(OLC_OBJ(d)), extra_bits, EF_ARRAY_MAX, bits);
   write_to_output(d, "\r\nObject flags: %s%s%s\r\n"
 	  "Enter object extra flag (0 to quit) : ",
 	  cyn, bits, nrm);
@@ -596,7 +596,7 @@ void oedit_disp_perm_menu(struct descriptor_data *d)
   for (counter = 0; counter < NUM_AFF_FLAGS; counter++) {
     write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm, affected_bits[counter], !(++columns % 2) ? "\r\n" : "");
   }
-  sprintbit(GET_OBJ_PERM(OLC_OBJ(d)), affected_bits, bits, sizeof(bits));
+  sprintbitarray(GET_OBJ_PERM(OLC_OBJ(d)), affected_bits, EF_ARRAY_MAX, bits);
   write_to_output(d, "\r\nObject permanent flags: %s%s%s\r\n"
           "Enter object perm flag (0 to quit) : ", cyn, bits, nrm);
 }
@@ -614,7 +614,7 @@ void oedit_disp_wear_menu(struct descriptor_data *d)
     write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm,
 		wear_bits[counter], !(++columns % 2) ? "\r\n" : "");
   }
-  sprintbit(GET_OBJ_WEAR(OLC_OBJ(d)), wear_bits, bits, sizeof(bits));
+  sprintbitarray(GET_OBJ_WEAR(OLC_OBJ(d)), wear_bits, TW_ARRAY_MAX, bits);
   write_to_output(d, "\r\nWear flags: %s%s%s\r\n"
 	  "Enter wear flag, 0 to quit : ", cyn, bits, nrm);
 }
@@ -632,7 +632,7 @@ void oedit_disp_menu(struct descriptor_data *d)
 
   /* Build buffers for first part of menu. */
   sprinttype(GET_OBJ_TYPE(obj), item_types, buf1, sizeof(buf1));
-  sprintbit(GET_OBJ_EXTRA(obj), extra_bits, buf2, sizeof(buf2));
+  sprintbitarray(GET_OBJ_EXTRA(obj), extra_bits, EF_ARRAY_MAX, buf2);
 
   /* Build first half of menu. */
   write_to_output(d,
@@ -653,8 +653,8 @@ void oedit_disp_menu(struct descriptor_data *d)
 	  grn, nrm, cyn, buf2
 	  );
   /* Send first half then build second half of menu. */
-  sprintbit(GET_OBJ_WEAR(obj), wear_bits, buf1, sizeof(buf1));
-  sprintbit(GET_OBJ_PERM(obj), affected_bits, buf2, sizeof(buf2));
+  sprintbitarray(GET_OBJ_WEAR(OLC_OBJ(d)), wear_bits, EF_ARRAY_MAX, buf1);
+  sprintbitarray(GET_OBJ_PERM(OLC_OBJ(d)), affected_bits, EF_ARRAY_MAX, buf2);
 
   write_to_output(d,
 	  "%s7%s) Wear flags  : %s%s\r\n"
@@ -889,7 +889,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     } else if (number == 0)
       break;
     else {
-      TOGGLE_BIT(GET_OBJ_EXTRA(OLC_OBJ(d)), 1 << (number - 1));
+      TOGGLE_BIT_AR(GET_OBJ_EXTRA(OLC_OBJ(d)), 1 << (number - 1));
       oedit_disp_extra_menu(d);
       return;
     }
@@ -903,7 +903,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     } else if (number == 0)	/* Quit. */
       break;
     else {
-      TOGGLE_BIT(GET_OBJ_WEAR(OLC_OBJ(d)), 1 << (number - 1));
+      TOGGLE_BIT_AR(GET_OBJ_WEAR(OLC_OBJ(d)), 1 << (number - 1));
       oedit_disp_wear_menu(d);
       return;
     }
@@ -931,11 +931,11 @@ void oedit_parse(struct descriptor_data *d, char *arg)
   case OEDIT_PERM:
     if ((number = atoi(arg)) == 0)
       break;
-    if (number > 0 && number <= NUM_AFF_FLAGS)
-      TOGGLE_BIT(GET_OBJ_PERM(OLC_OBJ(d)), 1 << (number - 1));
-    if (IS_SET(GET_OBJ_PERM(OLC_OBJ(d)), AFF_BLIND | AFF_GROUP | AFF_POISON | AFF_SLEEP | AFF_CHARM)) {
-      write_to_output(d, "Illegal bit(s) not set.\r\n");
-      REMOVE_BIT(GET_OBJ_PERM(OLC_OBJ(d)), AFF_BLIND | AFF_GROUP | AFF_POISON | AFF_SLEEP | AFF_CHARM);
+    if (number > 0 && number <= NUM_AFF_FLAGS) {
+      /* Setting AFF_CHARM on objects like this is dangerous. */
+      if (number != AFF_CHARM) {
+        TOGGLE_BIT_AR(GET_OBJ_PERM(OLC_OBJ(d)), number);
+      }
     }
     oedit_disp_perm_menu(d);
     return;

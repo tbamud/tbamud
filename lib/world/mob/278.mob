@@ -8,7 +8,7 @@ positively ancient; yet his muscles and his countenance show that he is a
 capable warrior.  He glares at you menacingly, suggesting you go away unless
 you want to <Buy ship>
 ~
-bcdegh d 125 E
+222 0 0 0 16 0 0 0 125 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -22,7 +22,7 @@ The huge, green Sea Serpent is swimming in the ocean, hunting for food.
 terrify you.  Green scales provide a spectacular defense armor.  They would
 prob- ably make great armor on you too.    
 ~
-dg d -875 E
+72 0 0 0 16 0 0 0 -875 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -36,7 +36,7 @@ A mean barracuda is flopping around in the sea.
    This horrid-looking fish looks very unhappy that you've infested his sea.  
 His sharp, huge teeth show just how unhappy he is as they clamp into you.    
 ~
-dg 0 -150 E
+72 0 0 0 0 0 0 0 -150 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -50,7 +50,7 @@ Leviathan is here, looking at you with a quizzical expresion.
 to keep an eye on all those travelers that enter Oceania.  He is totally green,
 and has seaweed as his garb.  His ancient eyes belie his youthful countenance.
 ~
-bde d 1000 E
+26 0 0 0 16 0 0 0 1000 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1

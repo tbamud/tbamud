@@ -1,31 +1,36 @@
 #11800
 Detta's [Dollhouse] Description Room~
 
-@B   @BTheme:@n@n This zone is a little abstract, more a sort of 
+@BTheme:@n This zone is a little abstract, more a sort of 
 Alice-in-Wonderland experience that revolves around a strange dollhouse in 
 an antique shop. The idea is to get out once you're in, which basically entails 
 completing the quest... a series of mini-quests.
 Note that to get any sense of this zone, you pretty much need to start in
 the room down from here, and nohassle needs to be off. ;)
 
-@G   @GPlayers:@n@n Mainly for players around level 10-ish, this zone is primarily 
+@GPlayers:@n Mainly for players around level 10-ish, this zone is primarily
 neutral with a couple evil places and a couple good ones. Its been designed as 
 mostly a puzzle-solving, quest area, but opportunity for xp to be gained as 
 well, as each completed quest gives 10,000 xp.
 
-@R   @RLocation:@n@n The only concrete location in the zone is the beginning 
+@RLocation:@n The only concrete location in the zone is the beginning
 room which is a London street leading into an antiques shop.
 
-   @MSecrets:@n There are now absolutely loads up :), just type LOOK SPOILERS to see them, but you'll have more fun here if you don't ;).
+@MSecrets:@n There are now absolutely loads up :), just type LOOK SPOILERS
+to see them, but you'll have more fun here if you don't ;).
 
-@C   @CNote:@n@n If you have any suggestions, spot any typos, bugs, or 
+@CNote:@n If you have any suggestions, spot any typos, bugs, or
 weirdnesses, please mudmail me - Detta. :-) All input appreciated!
 You can also email me at detta@@builderacademy.net
 East takes you through the other zones I have built here.
 Down takes you to the starting room of this zone.
 
 ~
-118 dj 0
+118 520 0 0 0 0
+D1
+~
+~
+0 0 -1
 D3
 ~
 ~
@@ -35,71 +40,129 @@ D5
 ~
 0 0 11899
 E
-17~
-   Once you are returned to the antique shop, a young woman will approach you
-with an interest in the journal.  If you give it to her she will exchange it for
-a fiery bloodstone amulet.  This amulet has the power to move you to a safe
-place whenever you use it.  This can however, only be used about once every 20
-minutes, as the amulet needs to recharge itself.
+14~
+   In room 11859 you can find the angry girl.  She will attack you instantly
+when you walk in and the key to completing this quest is to let her tire herself
+out attacking you while keeping both her and yourself alive.  Once you let her
+wear herself out she will apologize and ask for a hug, give it to her and she
+will suddenly be a lot more receptive to writing in the journal.  
 ~
 E
-16~
-   The ghostly girl can be found in room 11848 and is the last mob that must be
-approached.  If you approach her before completing every one of the other quests
-she will remind you of this.  If they are already completed and you give her the
-journal she will make the request that you kill her and bury the corpse in the
-room.  Once you do this, her invisible spirit will complete the last entry in
-the journal for you, and you will be returned to the antique shop where the
-entire quest started.
+12~
+   In room 11844 is the emaciated girl, mumbling away absent-mindedly to
+herself.  To trigger this quest, as with almost all the others; just give her
+the journal.  She will give a little speech about sacrifice before asking you to
+make the ultimate one, and handing you a hotdog.  Now, not being any ordinary
+hotdog, eating it will take a huge chunk out of your hps.  If it doesn't kill
+you she will hand you another one, reminding you that the sacrifice is death.  
+Once you have eaten enough of them to render you incapacitated, she will heal
+you and explain that it was your willingness to make the sacrifice that she
+wanted.  Giving her the journal at any time after this point will cause her to
+write in it for you.  
 ~
 E
-15~
-   The scarred child hangs out in room 11872 (Inside the Gazebo), giving her the
-journal will launch her into a speech about her own lost story.  Choked by the
-pines she says it is, and the only way to get it back is to burn them down and
-recover the pages from the ashes.  With this task set, she gives you a
-flickering candle and asks you to return all the pages to her.  There are five
-pines throughout the zone and all must be burned down to retrieve the right
-amount of pages.  In rooms (11850, 11849, 11848, 11820, 11837) is where they can
-all be found.  As long as you have the candle somewhere on your person, typing
-BURN PINES will set the trees on fire.  They will burn for about three minutes
-before leaving nothing but a black page.  Return all five pages to the girl and
-she will offer to write in the journal.  Once this is done, she will also give
-you the completed book and ask you to return it to the house somewhere, just as
-a favour to her.
+11~
+   If you enter room 11870 (The Bunkbed Room) you will hear a child's voice
+telling you to "crawl in here".  The command crawl will cause you to crawl under
+the bed and enter room 11871 where the hiding girl is.  Giving her the journal
+will make her ask you for three things...  Three corpses in particular.  
+
+The corpse of a fish (the red trout - mobvnum: 11830, objvnum: 11856)
+The corpse of a bird (the taildove - mobvnum: 11831, objvnum: 11857)
+The corpse of a toad (the vile toad - mobvnum: 11832, objvnum: 11858)
+
+Once you have brought her all three of those things she will apologize and ask
+for one further thing... a secret that Ridley guards.
+If you go to Ridley and ask her a question with the word secret in it she will
+consent to give it to you.
+Once you have this item, just return to the hiding girl, give it to her and
+she will offer to write in the journal for you... give it to her and the job
+is done.
 ~
 E
-13~
-   The silent girl can be found in room 11852, and is silent for one major
-reason - her lips have been stitched together.  She will indicate this when you
-give her the journal, hopefully providing the hint that she wants something done
-about it.  Examining her will offer the idea that you have to cut them, and with
-no ordinary sword.  The sword you need is the sword of words (obj 11835), which
-Ridley gives you upon completion of her quest.  If you have it, just type cut,
-and the stitching will weaken enough to allow her to speak, and agree to write
-in the journal.  
+09~
+   The weeping girl is found in room 11864.  As with all of the quests, giving
+her the journal is what triggers it.  She will explain that she is upset because
+she can no longer spend time in her garden because of the monster there.  The
+quest then is to find is search out the garden west of the porch (room 11846)
+until you see a hideous looking creature.  Kill it, return to the weeping girl
+and give her the journal, and she will write in it for you.  As a side note,
+examining the mirror in the room with her will give you some dynamic information
+on your character ;)
 ~
 E
-10~
-   The fidgety girl hangs out in room 11863 and is a pretty unstable character.
-Once you give her the journal she'll ask you to play a game with her...  If you
-win three times she'll write in the book for you.  The bad part?  Every time you
-lose she slashes her arm with frustration, if she does that three times without
-healing she'll die.  Its a simple cup and ball game though, so hopefully not too
-difficult..  She just puts the ball under a random cup, and then randomly mixes
-them around.  If you pick the right cup you win.  She keeps track of your score
-and once you have won three times (it does not have to be concurrently), just
-give her the journal again.  
+08~
+   The blind girl can be found in room 11854.  Giving her the journal triggers
+her giving you a pair of eyes and telling you to examine the walls.  All you
+have to do is wear the eyes, examine the walls as she says, and say aloud the
+word you see written there.  If its correct she'll agree to write in the
+journal.  
 ~
 E
-6~
-   The tunnel-man can be found in room 11831, once you give him the journal he
-asks you to enter the tunnel and destroy some of the secrets there.  Typing
-ENTER will put you through the vortex and into another area where secrets are
-roaming wildly in the form of dark figures.  Once you've killed fifteen of them,
-the tunnel-man will accept the journal and write in it.  He'll also tell you of
-how many you've killed if you hand the journal to him before you've killed all
-fifteen.  
+07~
+   The running girl can be found running up and down inside the tunnel in room
+11831.  She moves fast, so the only way to really interact with her is to follow
+her..  Which will take you on a bit of a spammy ride.  As soon as you give her
+the journal however, she will come to a halt and tell you that all she wants is
+to be taken out of there.  She agrees to write in it if you will show her the
+way out and agrees to do whatever you say.  The key here is that she does just
+that, whatever you speak she does...  So if you say north, she moves north etc.
+All you have to do is lead her with speech to the vortex and through it.  Once
+on the other side she will happily write in the journal when you give it to her.
+
+~
+E
+05~
+   Ridley can be found playing with alphabet blocks in room 11836.  If you give
+her the journal she'll launch into a little speech and finally decide to write
+in it if you bring her three things.  She'll give you a black box and ask for a
+fruit, a flower, and a flying thing, and for you to return them in the box.  
+The fruit is obj 11828 and loads in room 11837.
+The flower is obj 11832 and loads in room 11831.
+And the flying thing is a little mob (11821) that basically wanders all over.
+The trick to giving her this thing is to type CAPTURE INSECT in the same room as
+it. This will then let you put it in the box with the rest of the things.
+Once all three things are in the box, just give it to her, and she'll write in
+the journal as well as giving you a sword that you'll need for later. ;)
+Oh, the insect will escape from you after a while, so make sure to put it in the box if you don't want to lose it.
+~
+E
+04~
+   The colouring child is super easy to deal with, she is in room 11809 and just
+wants a red crayon.  Give her the journal as always to trigger the quest, then
+find the red crayon in room 11812 (where the playing child is).  Once you give
+her the crayon she'll accept the journal and write in it.  
+~
+E
+03~
+   The playing child can be found in room 11812 (Their Room), once you give her
+the journal she will hand it back and tell you she wants you to release the bird
+kept in the house.  She'll also give you a key (referred to as Pin) so that you
+can unlock the cage.  You'll find the bird inside a cage in room 11818, just
+unlock the cage and take the bird out to release it.  Then the playing child
+will write in the journal when you give it to her.  Additionally, the key she
+gave you will open the door that The Way to the Middle leads to from The
+Crossroads.  
+~
+E
+02~
+   Okay, this is basically the main point of the zone.  When you are teleported
+by the dollshouse you find yourself in a room with a girl who gives you an eye.
+If you OPEN EYE you will continue with the quest, CLOSE EYE to hightail it out
+of there.  For those who continue on, they will be teleported to a crossroads
+and given a journal.  The basic idea behind the journal is that its empty when
+you start off, the only way to get it filled is to give it to the various mobs
+you find, and complete their mini quests to get them to write in it.  The goal
+is to find all those mobs, get them all to write in it, and complete the
+journal.  :)
+~
+E
+01~
+   Once you enter the Antique shop, the saleswoman should greet you.  The main
+item to look out for here is of course the dollshouse ;).  Looking at it or
+examining it should trigger some prompts from the saleswoman as to the doll that
+came with it.  Removing the doll from the dollshouse will cause you to be
+teleported, essentially triggering your quest within the zone.  
 ~
 E
 spoilers~
@@ -144,129 +207,71 @@ at each one (look 1 for example).
 
 ~
 E
-01~
-   Once you enter the Antique shop, the saleswoman should greet you.  The main
-item to look out for here is of course the dollshouse ;).  Looking at it or
-examining it should trigger some prompts from the saleswoman as to the doll that
-came with it.  Removing the doll from the dollshouse will cause you to be
-teleported, essentially triggering your quest within the zone.  
+6~
+   The tunnel-man can be found in room 11831, once you give him the journal he
+asks you to enter the tunnel and destroy some of the secrets there.  Typing
+ENTER will put you through the vortex and into another area where secrets are
+roaming wildly in the form of dark figures.  Once you've killed fifteen of them,
+the tunnel-man will accept the journal and write in it.  He'll also tell you of
+how many you've killed if you hand the journal to him before you've killed all
+fifteen.  
 ~
 E
-02~
-   Okay, this is basically the main point of the zone.  When you are teleported
-by the dollshouse you find yourself in a room with a girl who gives you an eye.
-If you OPEN EYE you will continue with the quest, CLOSE EYE to hightail it out
-of there.  For those who continue on, they will be teleported to a crossroads
-and given a journal.  The basic idea behind the journal is that its empty when
-you start off, the only way to get it filled is to give it to the various mobs
-you find, and complete their mini quests to get them to write in it.  The goal
-is to find all those mobs, get them all to write in it, and complete the
-journal.  :)
+10~
+   The fidgety girl hangs out in room 11863 and is a pretty unstable character.
+Once you give her the journal she'll ask you to play a game with her...  If you
+win three times she'll write in the book for you.  The bad part?  Every time you
+lose she slashes her arm with frustration, if she does that three times without
+healing she'll die.  Its a simple cup and ball game though, so hopefully not too
+difficult..  She just puts the ball under a random cup, and then randomly mixes
+them around.  If you pick the right cup you win.  She keeps track of your score
+and once you have won three times (it does not have to be concurrently), just
+give her the journal again.  
 ~
 E
-03~
-   The playing child can be found in room 11812 (Their Room), once you give her
-the journal she will hand it back and tell you she wants you to release the bird
-kept in the house.  She'll also give you a key (referred to as Pin) so that you
-can unlock the cage.  You'll find the bird inside a cage in room 11818, just
-unlock the cage and take the bird out to release it.  Then the playing child
-will write in the journal when you give it to her.  Additionally, the key she
-gave you will open the door that The Way to the Middle leads to from The
-Crossroads.  
+13~
+   The silent girl can be found in room 11852, and is silent for one major
+reason - her lips have been stitched together.  She will indicate this when you
+give her the journal, hopefully providing the hint that she wants something done
+about it.  Examining her will offer the idea that you have to cut them, and with
+no ordinary sword.  The sword you need is the sword of words (obj 11835), which
+Ridley gives you upon completion of her quest.  If you have it, just type cut,
+and the stitching will weaken enough to allow her to speak, and agree to write
+in the journal.  
 ~
 E
-04~
-   The colouring child is super easy to deal with, she is in room 11809 and just
-wants a red crayon.  Give her the journal as always to trigger the quest, then
-find the red crayon in room 11812 (where the playing child is).  Once you give
-her the crayon she'll accept the journal and write in it.  
+15~
+   The scarred child hangs out in room 11872 (Inside the Gazebo), giving her the
+journal will launch her into a speech about her own lost story.  Choked by the
+pines she says it is, and the only way to get it back is to burn them down and
+recover the pages from the ashes.  With this task set, she gives you a
+flickering candle and asks you to return all the pages to her.  There are five
+pines throughout the zone and all must be burned down to retrieve the right
+amount of pages.  In rooms (11850, 11849, 11848, 11820, 11837) is where they can
+all be found.  As long as you have the candle somewhere on your person, typing
+BURN PINES will set the trees on fire.  They will burn for about three minutes
+before leaving nothing but a black page.  Return all five pages to the girl and
+she will offer to write in the journal.  Once this is done, she will also give
+you the completed book and ask you to return it to the house somewhere, just as
+a favour to her.
 ~
 E
-05~
-   Ridley can be found playing with alphabet blocks in room 11836.  If you give
-her the journal she'll launch into a little speech and finally decide to write
-in it if you bring her three things.  She'll give you a black box and ask for a
-fruit, a flower, and a flying thing, and for you to return them in the box.  
-The fruit is obj 11828 and loads in room 11837.
-The flower is obj 11832 and loads in room 11831.
-And the flying thing is a little mob (11821) that basically wanders all over.
-The trick to giving her this thing is to type CAPTURE INSECT in the same room as
-it. This will then let you put it in the box with the rest of the things.
-Once all three things are in the box, just give it to her, and she'll write in
-the journal as well as giving you a sword that you'll need for later. ;)
-Oh, the insect will escape from you after a while, so make sure to put it in the box if you don't want to lose it.
+16~
+   The ghostly girl can be found in room 11848 and is the last mob that must be
+approached.  If you approach her before completing every one of the other quests
+she will remind you of this.  If they are already completed and you give her the
+journal she will make the request that you kill her and bury the corpse in the
+room.  Once you do this, her invisible spirit will complete the last entry in
+the journal for you, and you will be returned to the antique shop where the
+entire quest started.
 ~
 E
-07~
-   The running girl can be found running up and down inside the tunnel in room
-11831.  She moves fast, so the only way to really interact with her is to follow
-her..  Which will take you on a bit of a spammy ride.  As soon as you give her
-the journal however, she will come to a halt and tell you that all she wants is
-to be taken out of there.  She agrees to write in it if you will show her the
-way out and agrees to do whatever you say.  The key here is that she does just
-that, whatever you speak she does...  So if you say north, she moves north etc.
-All you have to do is lead her with speech to the vortex and through it.  Once
-on the other side she will happily write in the journal when you give it to her.
-
-~
-E
-08~
-   The blind girl can be found in room 11854.  Giving her the journal triggers
-her giving you a pair of eyes and telling you to examine the walls.  All you
-have to do is wear the eyes, examine the walls as she says, and say aloud the
-word you see written there.  If its correct she'll agree to write in the
-journal.  
-~
-E
-09~
-   The weeping girl is found in room 11864.  As with all of the quests, giving
-her the journal is what triggers it.  She will explain that she is upset because
-she can no longer spend time in her garden because of the monster there.  The
-quest then is to find is search out the garden west of the porch (room 11846)
-until you see a hideous looking creature.  Kill it, return to the weeping girl
-and give her the journal, and she will write in it for you.  As a side note,
-examining the mirror in the room with her will give you some dynamic information
-on your character ;)
-~
-E
-11~
-   If you enter room 11870 (The Bunkbed Room) you will hear a child's voice
-telling you to "crawl in here".  The command crawl will cause you to crawl under
-the bed and enter room 11871 where the hiding girl is.  Giving her the journal
-will make her ask you for three things...  Three corpses in particular.  
-
-The corpse of a fish (the red trout - mobvnum: 11830, objvnum: 11856)
-The corpse of a bird (the taildove - mobvnum: 11831, objvnum: 11857)
-The corpse of a toad (the vile toad - mobvnum: 11832, objvnum: 11858)
-
-Once you have brought her all three of those things she will apologize and ask
-for one further thing... a secret that Ridley guards.
-If you go to Ridley and ask her a question with the word secret in it she will
-consent to give it to you.
-Once you have this item, just return to the hiding girl, give it to her and
-she will offer to write in the journal for you... give it to her and the job
-is done.
-~
-E
-12~
-   In room 11844 is the emaciated girl, mumbling away absent-mindedly to
-herself.  To trigger this quest, as with almost all the others; just give her
-the journal.  She will give a little speech about sacrifice before asking you to
-make the ultimate one, and handing you a hotdog.  Now, not being any ordinary
-hotdog, eating it will take a huge chunk out of your hps.  If it doesn't kill
-you she will hand you another one, reminding you that the sacrifice is death.  
-Once you have eaten enough of them to render you incapacitated, she will heal
-you and explain that it was your willingness to make the sacrifice that she
-wanted.  Giving her the journal at any time after this point will cause her to
-write in it for you.  
-~
-E
-14~
-   In room 11859 you can find the angry girl.  She will attack you instantly
-when you walk in and the key to completing this quest is to let her tire herself
-out attacking you while keeping both her and yourself alive.  Once you let her
-wear herself out she will apologize and ask for a hug, give it to her and she
-will suddenly be a lot more receptive to writing in the journal.  
+17~
+   Once you are returned to the antique shop, a young woman will approach you
+with an interest in the journal.  If you give it to her she will exchange it for
+a fiery bloodstone amulet.  This amulet has the power to move you to a safe
+place whenever you use it.  This can however, only be used about once every 20
+minutes, as the amulet needs to recharge itself.
 ~
 S
 #11801
@@ -278,7 +283,7 @@ of the room shimmering transparantly now and again and allowing glimpses of
 other places.  There are no windows, no doors or exits, but then it seems that
 not much here actually exists at all.  
 ~
-118 de 0
+118 24 0 0 0 0
 E
 gentle light~
    Smoothly dome-shaped and a subtle cream colour, this melon-sized light sends
@@ -293,7 +298,7 @@ ceiling beams, weary wood panelling flaking slightly with dried paint.  Various
 old and forgotten items lie cluttered around the place, even the shop counter is
 cracked and sagging beyond repair.  
 ~
-118 de 0
+118 24 0 0 0 0
 D3
    The sound of splashing puddles and car engines can be heard, a cool draft
 wafting from the damp, grey street outside.
@@ -301,21 +306,9 @@ wafting from the damp, grey street outside.
 ~
 0 0 11899
 E
-shop counter~
-   It looks almost as if someone had a fit of rage and pounded on it, a long
-black crack running along its length so that it barely holds up its own weight.
-~
-E
-old forgotten items~
-   Old-fashioned children's toys seem to make up the bulk of the items here,
-tiny china dolls and wooden cars.  Some delicate jewellry boxes can be spied
-glinting from the higher shelves, along with crystal ornaments of many kinds.
-~
-E
-weary wood panelling dried paint~
-   A sombre dark wood has been painted with a cheerful lick of paint, presumably
-to brighten it up.  However the paint has been left to flake and peel away,
-leaving the walls looking even more ghastly.
+sparkling particles dust~
+   These silver specks dance carelessly in the gentle wafts of air, turning and
+sparkling like tiny stars in each shaft of light.
 ~
 E
 cobwebs darker corners ceiling beams~
@@ -324,9 +317,21 @@ parts of the room.  Some of the older webs are dimmed and grey with time,
 flapping like indignant hands trying to shoo visitors away.
 ~
 E
-sparkling particles dust~
-   These silver specks dance carelessly in the gentle wafts of air, turning and
-sparkling like tiny stars in each shaft of light.
+weary wood panelling dried paint~
+   A sombre dark wood has been painted with a cheerful lick of paint, presumably
+to brighten it up.  However the paint has been left to flake and peel away,
+leaving the walls looking even more ghastly.
+~
+E
+old forgotten items~
+   Old-fashioned children's toys seem to make up the bulk of the items here,
+tiny china dolls and wooden cars.  Some delicate jewellry boxes can be spied
+glinting from the higher shelves, along with crystal ornaments of many kinds.
+~
+E
+shop counter~
+   It looks almost as if someone had a fit of rage and pounded on it, a long
+black crack running along its length so that it barely holds up its own weight.
 ~
 S
 #11803
@@ -336,7 +341,7 @@ artificial light dance across the surface.  It appears this is the entrance to a
 rather grand house, large adjacent rooms are openly visible and soft woodwind
 music echoes off the distant walls and ceiling.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    The hallway continues on to the north, the hard flooring covered with a rug.
 
@@ -370,7 +375,7 @@ decoratively in the corners, the rest of the substantial floor left open and
 spotlessly clean.  A subtle perfumed scent fills the air, creating a peaceful
 sleepy atmosphere.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    The hallway stretches spaciously to the north, a gentle draft coming from the
 entrance of the house just ahead.
@@ -400,7 +405,7 @@ neatly next to bookshelves full of brightly coloured books.  A little plastic
 teaparty set sits carefully arranged on a round table, and several metal cars
 sparkle from where they sit lined against the southern wall.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    A large wood-panelled room lies to the north, filled with pieces of what look
 to be electronic equipment.
@@ -420,21 +425,9 @@ a hall, the green leaves of some tall plant just in view.
 ~
 0 0 11804
 E
-horizontal windows~
-   These little windows are trimmed with lacey curtains, a few purple flowers
-nodding lazily just outside.
-~
-E
-several metal cars~
-   These little cars have smoothly rounded edges, and are too large for a young
-child to swallow, glistening brightly in every colour of the rainbow they look
-as if they'd be almost irresistable to play with.  
-~
-E
-little plastic teaparty set round table~
-   A low plastic table holds an assortment of pretty little cups and saucers,
-make believe biscuits made out of cardboard sit almost too perfectly in a plate
-on the little lacey tablecloth.  
+tiny children's chairs~
+   These vibrantly coloured plastic chairs sit low to the ground, just perfect
+for young children and toddlers.  
 ~
 E
 bookshelves brightly coloured books~
@@ -443,9 +436,21 @@ mathematical titles display themselves proudly.  One shelf holds an assortment
 of Disney and fantasy stories, and yet another holds several colouring books.  
 ~
 E
-tiny children's chairs~
-   These vibrantly coloured plastic chairs sit low to the ground, just perfect
-for young children and toddlers.  
+little plastic teaparty set round table~
+   A low plastic table holds an assortment of pretty little cups and saucers,
+make believe biscuits made out of cardboard sit almost too perfectly in a plate
+on the little lacey tablecloth.  
+~
+E
+several metal cars~
+   These little cars have smoothly rounded edges, and are too large for a young
+child to swallow, glistening brightly in every colour of the rainbow they look
+as if they'd be almost irresistable to play with.  
+~
+E
+horizontal windows~
+   These little windows are trimmed with lacey curtains, a few purple flowers
+nodding lazily just outside.
 ~
 S
 #11806
@@ -456,7 +461,7 @@ as the sound of churning laundry echoes along the unyielding walls and ceiling.
 Little oily handprints smudge here and there on the otherwise clean surfaces,
 and one or two toys lie recently dropped.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
    The hall seems to end at a corner to the east, perhaps one more little door
 visible further ahead.
@@ -476,16 +481,16 @@ furniture settled against the near wall.
 ~
 0 0 11805
 E
-oily handprints~
-   These are very small handprints indeed, and freshly made, perhaps those of a
-very young child, or a baby just learning to walk.  
-~
-E
 toys~
    These toys look a little out of place in such tidy surroundings, little lego
 bricks and a jigsaw puzzle piece lie dropped along the center of the floor, as
 though someone carried a pile of toys too large for their arms and lost a few
 along the way.  
+~
+E
+oily handprints~
+   These are very small handprints indeed, and freshly made, perhaps those of a
+very young child, or a baby just learning to walk.  
 ~
 S
 #11807
@@ -496,7 +501,7 @@ window letting in natural lighting that cascades gently along the sky-blue
 walls.  A little music box plays quietly, filling the room with tinkling melody
 that echoes vibrantly off the hard floor and walls.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    A brightly lit hallway lies ahead, a shiny appliance standing against the far
 wall amidst scattered toys.
@@ -504,19 +509,9 @@ wall amidst scattered toys.
 ~
 0 0 11806
 E
-music box~
-   The shape of a little piano, this clear plastic music box tinkles gently with
-the sleepy tune of Twinkle Twinkle Little Star.
-~
-E
-high window~
-   Green grasses obscure much of the view, little yellow dandelions growing in
-what seems to be a neglected part of the garden outside.
-~
-E
-toy box~
-   Little toys spill out of this brightly coloured but unremarkable box, the odd
-stuffed arm of a doll or teddybear amongst little lego bricks and crayons.
+tall wooden cot~
+   This little cot is somewhat reminiscent of a cage, the long wooden bars
+painted a cheerful white but covered with smudgy handprints.
 ~
 E
 changing table~
@@ -524,9 +519,19 @@ changing table~
 table is stocked with all things necessary for, well, changing nappies.
 ~
 E
-tall wooden cot~
-   This little cot is somewhat reminiscent of a cage, the long wooden bars
-painted a cheerful white but covered with smudgy handprints.
+toy box~
+   Little toys spill out of this brightly coloured but unremarkable box, the odd
+stuffed arm of a doll or teddybear amongst little lego bricks and crayons.
+~
+E
+high window~
+   Green grasses obscure much of the view, little yellow dandelions growing in
+what seems to be a neglected part of the garden outside.
+~
+E
+music box~
+   The shape of a little piano, this clear plastic music box tinkles gently with
+the sleepy tune of Twinkle Twinkle Little Star.
 ~
 S
 #11808
@@ -537,7 +542,7 @@ the floor, snagging here and there and wriggling in the air currents like little
 spiders.  Cheerful licks of paint attempt to brighten the walls and floor,
 succeeding in opening the space up a little, making it look larger and lighter.
 ~
-118 d 0
+118 8 0 0 0 0
 D2
    It seems a little bedroom lies in this direction, a few flecks of light
 dancing along the floor from some crystal ornament.
@@ -565,7 +570,7 @@ fluffs blow quickly across the hard floor from the corridor outside, giving the
 somewhat uncomfortable impression that little insects are darting in and out of
 the flickering shadows.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    A somewhat dim hallway lies ahead, the stark coldness of concrete walls
 contrasting with the coziness of this little room.
@@ -573,9 +578,9 @@ contrasting with the coziness of this little room.
 ~
 0 0 11808
 E
-high window~
-   Tall grasses can be seen waving just slightly above window level, indicating
-that this room is below ground.
+low bed~
+   This child's bed is made from a light coloured wood that has been smoothly
+polished, tiny little pieces of glitter have been stuck to it as decoration.
 ~
 E
 delicate hanging ornaments~
@@ -583,9 +588,9 @@ delicate hanging ornaments~
 long crystal spiral plays with any light as it twirls.
 ~
 E
-low bed~
-   This child's bed is made from a light coloured wood that has been smoothly
-polished, tiny little pieces of glitter have been stuck to it as decoration.
+high window~
+   Tall grasses can be seen waving just slightly above window level, indicating
+that this room is below ground.
 ~
 S
 #11810
@@ -595,7 +600,7 @@ neatly woven rug lessening the effect, but even the amber walls seem to shine
 almost white.  A few family photos decorate the walls, the rest of this spacious
 area left pleasingly uncluttered.  
 ~
-118 d 0
+118 8 0 0 0 0
 D2
    The hall grows colder to the south, probably because of the large entrance
 way and the fact that not even a rug softens the floor.
@@ -609,17 +614,17 @@ carpeted stairs leading upward..
 ~
 0 0 11811
 E
+small neatly woven rug~
+   This little rug has been delicately woven from fine materials, dark greens
+and blues backing a purplish flower pattern that stands out vibrantly in the
+otherwise stark surroundings.  
+~
+E
 few family photos~
    These neatly framed pictures look to be recent snapshots of the family here.
 A solemn unshaven man and a starry-eyed young woman hold two tiny children on
 their laps.  The small girl has her arm around what presumably is her baby
 brother, both smiling toothlessly.  
-~
-E
-small neatly woven rug~
-   This little rug has been delicately woven from fine materials, dark greens
-and blues backing a purplish flower pattern that stands out vibrantly in the
-otherwise stark surroundings.  
 ~
 S
 #11811
@@ -630,7 +635,7 @@ subtle orange glow comes from several plugged in nightlights, flickering gently
 almost like firelight, and the lingering smell of aromatic candles dances in the
 air.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    A small cupboard can be seen, its contents hidden in the shadows of dim
 yellow lighting.
@@ -656,13 +661,13 @@ subtle light at the bottom of the stairs.
 ~
 0 0 11810
 E
+sign~
+   @BMUM AND DAD'S ROOM@n
+~
+E
 nightlights~
    These small plastic lights give off just enough illumination for walking
 around without bumping into things.
-~
-E
-sign~
-   @BMUM AND DAD'S ROOM@n
 ~
 S
 #11812
@@ -673,7 +678,7 @@ flecks of light dancing over the softly coloured walls and lush cream carpet.
 A large double bed stands centrally against the northern wall, neatly made with
 slippery satiny quilts and plump pillows.  
 ~
-118 d 0
+118 8 0 0 0 0
 D3
    A dark red wood door frames the exit to the hallway, its pretty ceramic
 doorknob decorated with paintings of flowers.
@@ -681,10 +686,9 @@ doorknob decorated with paintings of flowers.
 door red wood~
 1 0 11811
 E
-delicate chandelier~
-   This pretty little light fixture has been made from glass beads and pendants
-dangling from delicate metal chains.  The resulting effect is one of a brilliant
-shimmering dome of light.
+slippery satiny quilts plump pillows~
+   These soft padded blankets and pillows are covered with a shimmering red
+fabric, the same rich colour as a deep glass of wine.
 ~
 E
 large double bed~
@@ -692,9 +696,10 @@ large double bed~
 four-poster bed, large enough for two adults to sleep comfortably.
 ~
 E
-slippery satiny quilts plump pillows~
-   These soft padded blankets and pillows are covered with a shimmering red
-fabric, the same rich colour as a deep glass of wine.
+delicate chandelier~
+   This pretty little light fixture has been made from glass beads and pendants
+dangling from delicate metal chains.  The resulting effect is one of a brilliant
+shimmering dome of light.
 ~
 S
 #11813
@@ -705,7 +710,7 @@ cleansers and lotions.  Against the northern wall, a rather large and deep bath
 is surrounded with a pretty blue shower curtain, and a little oil burner stands
 next to the sink, filling the room with the fragrance of lavender.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
    A black door frames the entrance to a hallway, an elegant brass handle
 slightly askew as if the locking mechanism has been sabotaged.
@@ -713,14 +718,9 @@ slightly askew as if the locking mechanism has been sabotaged.
 door~
 1 0 11811
 E
-various bottles cleansers lotions~
-   Amongst these relatively unremarkable supplies are the visible brand names of
-moisturisers and perfumes, most of them half-used.
-~
-E
-large deep bath~
-   Sparkling white, this bathtub looks almost as if it is never used at all,
-except for the big opened bottle of bubble bath that sits to the side.
+little oil burner~
+   This small cermaic pot holds a basin full of sweet smelling oil, a flickering
+candle beneath it heating the liquid and filling the air with the aroma.
 ~
 E
 pretty blue shower curtain~
@@ -728,9 +728,14 @@ pretty blue shower curtain~
 jumping dolphins making up the rest of the scenery.
 ~
 E
-little oil burner~
-   This small cermaic pot holds a basin full of sweet smelling oil, a flickering
-candle beneath it heating the liquid and filling the air with the aroma.
+large deep bath~
+   Sparkling white, this bathtub looks almost as if it is never used at all,
+except for the big opened bottle of bubble bath that sits to the side.
+~
+E
+various bottles cleansers lotions~
+   Amongst these relatively unremarkable supplies are the visible brand names of
+moisturisers and perfumes, most of them half-used.
 ~
 S
 #11814
@@ -740,7 +745,7 @@ this cupboard, making it almost stiflingly hot.  The smell of fresh, warm fabric
 fills the air from the various piles of quilts, blankets and towels that fill
 each wooden shelf.  
 ~
-118 d 0
+118 8 0 0 0 0
 D2
    A long hallway can be seen stretching to the south, filled with soft lighting
 and lush, padded carpet.
@@ -761,7 +766,7 @@ electronic games stand against the walls.  A large stereo system hums quietly
 with unused volume, and a dart board hangs amidst several pinholes on the
 northern wall.  
 ~
-118 d 0
+118 8 0 0 0 0
 D2
    A large room to the south can be seen filled with various toys and children's
 furniture.
@@ -769,14 +774,9 @@ furniture.
 ~
 0 0 11805
 E
-soft lamp shades~
-   These shades are made from cream-coloured tassled fabric, the kind that shows
-any speck of dust, only these are in absolutely pristine condition.
-~
-E
-electronic games~
-   These large machines are reminiscent of what you'd find in an arcade game
-facility, amongst the various flashing lights pinball and pacman can be seen.
+dart board~
+   Seemingly well used, this circular board is filled with hundreds and hundreds
+of tiny black holes, a great deal of them within the bullseye.
 ~
 E
 large stereo system~
@@ -785,9 +785,14 @@ Two massive speakers stand either side of it, practically prickling with the
 static of potential sound.
 ~
 E
-dart board~
-   Seemingly well used, this circular board is filled with hundreds and hundreds
-of tiny black holes, a great deal of them within the bullseye.
+electronic games~
+   These large machines are reminiscent of what you'd find in an arcade game
+facility, amongst the various flashing lights pinball and pacman can be seen.
+~
+E
+soft lamp shades~
+   These shades are made from cream-coloured tassled fabric, the kind that shows
+any speck of dust, only these are in absolutely pristine condition.
 ~
 S
 #11816
@@ -798,7 +803,7 @@ hard flooring is somewhat darker, laid in long wooden strips and polished until
 gleaming.  The smell of spices and fresh baking bread fills the air, along with
 the fading aroma of burning citrus candles.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
    Dark red carpet leads the way into a spacious livingroom, the sound of birds
 chirping coming from an open window.
@@ -820,7 +825,7 @@ playing softly from nearby.  Rich mahogany sofas padded with black leather stand
 against the eastern wall and a glass cabinet full of crystal stands to the north
 along with three small steps continuing on.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    The sound of gentle music wafts on the air, three steps leading up into a
 smaller but nevertheless spacious room.
@@ -840,14 +845,14 @@ with smells of cooking.
 ~
 0 0 11816
 E
-righ mahogany sofas~
-   Carefully sculpted wooden frames hold a luxurious array of padded leather
-cushions, the smooth black texture of the sofa looking comfortable and inviting.
-~
-E
 glass cabinet crystal~
    Smooth glassy shelves hold an array of crystal ornaments, tiny glittering
 swans and teddy bears sparkling in rows.
+~
+E
+righ mahogany sofas~
+   Carefully sculpted wooden frames hold a luxurious array of padded leather
+cushions, the smooth black texture of the sofa looking comfortable and inviting.
 ~
 S
 #11818
@@ -858,7 +863,7 @@ sound system, and several cd racks are lined up against the wall.  Rich burgundy
 carpet covers the whole of the floor, deep blood-red in stark contrast to the
 pale cream coloured walls.  
 ~
-118 d 0
+118 8 0 0 0 0
 D2
    Three small steps lead down into a larger livingroom, fresh air breezing in
 through all the large open windows.
@@ -880,7 +885,7 @@ with glossy sealant so that it shines as though marble.  Creeping plants wind
 their way around each wooden post, bright fuschia and pink clematus flowers
 blossming abundantly.  
 ~
-118 0 5
+118 0 0 0 0 0
 D1
    A clear swimmingpool shimmers gently as the watery surface stirs, green
 leaves from the surrounding trees twirling in the air.
@@ -902,7 +907,7 @@ deeper, a small metal ladder attached to the side at the deepest end.  Green,
 blooming plants grow all around, large trees overhanging so that their trailing
 branches caress the water with each breeze.  
 ~
-118 0 6
+118 0 0 0 0 0
 D0
    Mountain landscape stretches all around, the gentle babbling of a small
 stream breaking the silence of the air.
@@ -916,9 +921,9 @@ music coming from within.
 ~
 0 0 11819
 E
-small metal ladder~
-   This simple ladder is fastened to the side of the pool, enabling swimmers to
-climb either in or out.
+large trees~
+   These gently swaying trees appear to be weeping willows, long trailing stems
+hanging gracefully down from the bent trunks.
 ~
 E
 green blooming plants~
@@ -926,9 +931,9 @@ green blooming plants~
 large red and magenta blossoms splashing colourfully through the green.
 ~
 E
-large trees~
-   These gently swaying trees appear to be weeping willows, long trailing stems
-hanging gracefully down from the bent trunks.
+small metal ladder~
+   This simple ladder is fastened to the side of the pool, enabling swimmers to
+climb either in or out.
 ~
 S
 #11821
@@ -939,7 +944,7 @@ clouds.  Soft open breeze carries the green scent of growth and life, new grass
 and dark fragrant pine trees.  Beautiful untouched landscape spans all around,
 the grassy paths sparkling softly with a sprinkling of fresh dewy tears.  
 ~
-118 c 5
+118 4 0 0 0 0
 D1
    This large oakdoor is as magnificent as the expensive house that lies beyond
 it, carved with beautiful patterning and polished until smooth and glossy.  
@@ -963,7 +968,7 @@ warm and soft one moment before changing to frosty chill the next.  Little
 sparks flicker randomly in the air, murmuring as they linger, only to fade and
 die like half spoken words.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
    A quaint English house lies to the north, a little cobblestone road winding
 its way to the modest front door.
@@ -999,7 +1004,7 @@ into a garage at the side.  The sounds of birds chirping can be heard all
 around, and the subtle tinkling of a windchime though the air is still and
 breathtakingly cold.  To the north, a wooden door guards the way.
 ~
-118 0 1
+118 0 0 0 0 0
 D0
    This painted wooden door is relatively unnoteworthy, apart from its bright
 blue colour.  Time and dampness are already making their presence known through
@@ -1028,7 +1033,7 @@ plastic covering every window, and trees growing closely around as though
 huddled in some secret understanding.  A dark black door guards the way to the
 west.
 ~
-118 0 2
+118 0 0 0 0 0
 D1
    A white dome-shaped structure can be seen, adorned with pale green leaves and
 large red blossoms.
@@ -1056,7 +1061,7 @@ walls.  Scattered shoes are half heartedly flung onto and beneath the provided
 shoe rack, scrapes of dried mud and dirt darkening the faded yellow floor.  A
 slightly mouldy wooden door stands to the south, apparently the way outside.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
    A moderate-sized livingroom opens to the east, filled with patterned
 furniture and wooden shelving.
@@ -1089,7 +1094,7 @@ few little tacks that look painful to step on, a few half bent nails lying off
 to the sides as if renovation is being done here.  Fresh breeze drafts in from
 an window to the west, allowing a clear view out onto the street.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
    A wooden banister winds its way around to the east, separating the stretch of
 hallway from the descending stairs.
@@ -1121,7 +1126,7 @@ western side, guarding a potentially nasty slip down the stairs, and a single
 light hangs here, dark blotches visible on the light shade where various bugs
 have been attracted to an untimely death.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    A white door leads into a small bathroom, soft carpet giving way to smooth
 hard tiles.
@@ -1160,7 +1165,7 @@ the deep bathtub surrounded by a pale bule shower curtain.  A small frosted
 window looks out over the back garden, the glass pane propped up slightly so
 that fresh air drifts around the room.  
 ~
-118 0 0
+118 0 0 0 0 0
 D2
    A white door leads into an open hallway, smooth hard tiles giving way to soft
 carpeting.
@@ -1180,7 +1185,7 @@ from the ceiling, casting a soft glow around the room.  Dark wood furniture
 stands either side of the large double bed, a thick flowery quilt spread neatly
 over it and several pillows propped against the headboard.  
 ~
-118 d 0
+118 8 0 0 0 0
 D3
    A wooden door leads the way into the hallway, its smooth brass doorknob
 slightly worn with use.
@@ -1201,7 +1206,7 @@ carved posts standing far enough apart to allow a good view of the stairs
 stretching beneath.  The light coloured carpet is a bit worn, old stains and
 fraying edges indicating its long overdue replacement.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    The hallway extends onward to the north, leading past another bedroom and a
 bathroom before curving around into a flight of stairs.
@@ -1235,7 +1240,7 @@ capturing any rays of light and scattering them dancing around the room.
 Little wooden dressers stand against the western wall, colourfully handpainted
 with images from Bambi and Snow White.  
 ~
-118 d 0
+118 8 0 0 0 0
 D3
    A wooden door guards the way into the outer hallway, a few flakes of white
 paint peeling from its surface.
@@ -1243,14 +1248,14 @@ paint peeling from its surface.
 door~
 1 0 11830
 E
-stickers cartoon characters wooden dressers images~
-   Various depictions of Disney characters cover most of the wooden surfaces,
-brightly and carefully hand-painted, although smudged with little fingerprints.
-~
-E
 twirling suncatchers~
    These pretty little suncatchers are made from long spirals of glass, attached
 to a silver thread and hung from the ceiling to twirl in the stirring air.
+~
+E
+stickers cartoon characters wooden dressers images~
+   Various depictions of Disney characters cover most of the wooden surfaces,
+brightly and carefully hand-painted, although smudged with little fingerprints.
 ~
 S
 T 11834
@@ -1261,22 +1266,22 @@ strangely where it allows room for the stairs beneath.  Brown carpet lines the
 flooring here, barely noticeable as the room is almost entirely filled with the
 space of the bed and dresser alone.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    A heavy rectangular door guards the way out into the main hallway.
 ~
 door~
 1 0 11830
 E
-bed~
-   Just a regular wooden bed, this little piece of furniture stands tucked as
-closely against the wall as it can get, made with blue bedding.
-~
-E
 dresser~
    Made of plain, unfinished wood, this small dresser looks as if it were thrown
 together by hand, pressed tightly into the corner so as to take up the least
 amount of room.
+~
+E
+bed~
+   Just a regular wooden bed, this little piece of furniture stands tucked as
+closely against the wall as it can get, made with blue bedding.
 ~
 S
 #11833
@@ -1288,7 +1293,7 @@ and a hanging light fixture casts the room in a warm subtle glow.  Several
 family photos can be seen lining the walls, along with various cross-stitchings
 and paintings.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
    A small kitchen stretches to the north, smells of fresh baking and more
 distant garden flowers wafting on the air.
@@ -1302,10 +1307,10 @@ shoes and coats.
 ~
 0 0 11825
 E
-television~
-   This television is covered in a very fine layer of dust, indicating that it
-has not been turned on for some time though it is large and prominent in the
-room.  
+cross-stitchings paintings~
+   These little works of art are obviously amateur but nonetheless very pretty,
+portrayals of flowers and landscapes are the main subject, with one elaborate
+stitching of a tiger placed in clear view.  
 ~
 E
 several family photos~
@@ -1315,10 +1320,10 @@ about seven, whereas the younger two girls are barely out of their toddler
 years, one sucking contendedly on a dummy.  
 ~
 E
-cross-stitchings paintings~
-   These little works of art are obviously amateur but nonetheless very pretty,
-portrayals of flowers and landscapes are the main subject, with one elaborate
-stitching of a tiger placed in clear view.  
+television~
+   This television is covered in a very fine layer of dust, indicating that it
+has not been turned on for some time though it is large and prominent in the
+room.  
 ~
 S
 #11834
@@ -1329,7 +1334,7 @@ all the way around the room, a few plates stacked next to the metal sink.  A
 large window looks out onto the back garden, the sound of gentle breezes
 tinkling a windchime drifting through the house.  
 ~
-118 d 0
+118 8 0 0 0 0
 D2
 ~
 ~
@@ -1348,7 +1353,7 @@ handprint darkening the pale walls.  Golden light streams from the overhead
 hanging lamps, an open window in the northern door displaying a beautiful view
 of the garden.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
 ~
 ~
@@ -1370,7 +1375,7 @@ pieces of broken furniture discarded and left to rot in the shadows.  The air is
 musty and chill, the low moaning of the wind echoing forlonly along the bare
 walls.  
 ~
-118 ad 0
+118 9 0 0 0 0
 D1
 ~
 ~
@@ -1384,7 +1389,7 @@ the breeze.  A row of bright yellow daffodils dance innocently to the east like
 golden bursts of sunfire, dark red roses spreading like a wound to the west,
 scarlet petals dripping slowly onto the ground as the flowers wilt.  
 ~
-118 0 1
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -1403,7 +1408,7 @@ branches, coloured chalk pictures drawn here and there on the wood, and a large
 bundle of leaves carpets the ground, obviously meant to make this little
 treecamp more comfortable.  
 ~
-118 d 0
+118 8 0 0 0 0
 D2
 ~
 ~
@@ -1418,7 +1423,7 @@ little brick houses can be seen, wisps of smoke unfurling lazily in the crisp
 air.  Distant smokestacks rise high above the horizon, the twinkling of car
 headlights passing through the shadowy air like shooting stars.  
 ~
-118 0 1
+118 0 0 0 0 0
 D1
    This large wooden window looks as though it is normally propped open, chips
 of paint peeling off the window frame around.  
@@ -1433,7 +1438,7 @@ of various sizes.  Scattered shoes in various states of disrepair lie kicked
 about, pieces of tape sticking out here and there from the more ragged ones,
 streaks of mud and dirt darkening the scuffed floor.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
    This large door has been painted with a thick layer of black paint, making it
 seem more like a yawning hole than a doorway.  A layer of sticky tape has been
@@ -1453,7 +1458,7 @@ passage of dirty feet has left its mark.  The wallpapered wall is stained with
 the oily marks of handprints and is made to look even dingier by the lack of
 proper lighting, just a dim yellow glow illuminating the place.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -1479,7 +1484,7 @@ disrepair and neglect leaving them worn and filthy.  Pieces of food and mud are
 mingled together and tangled disgustingly in the unravelling fabric of the
 floor.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
 ~
 ~
@@ -1496,7 +1501,7 @@ together to form a temporary kind of barrier between this room and the next.
 Three desks stand against the walls, each holding various pieces of electronic
 equipment and stationary supplies.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -1511,7 +1516,7 @@ have been kicked to the perimeters of the room, empty cereal boxes and souring
 milk cartons, pencils, hairbrushes, and cutlery all jumbled together with the
 dirt.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -1532,7 +1537,7 @@ sink and soggy dishclothes alike.  Dirty kitchen plates are stacked in fungating
 piles or simply dropped on the floor in places, pieces of broken ceramic brushed
 to the sides amidst rusty streaks of blood.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -1548,7 +1553,7 @@ A Mud-slicked Back Porch~
 floor, partially trodden into the dumped coats here.  Bits of dead grass and
 leaves lie liberally about the room, almost as if it were more outdoors than in.
 ~
-118 cd 0
+118 12 0 0 0 0
 D0
 ~
 ~
@@ -1564,7 +1569,7 @@ A Massive Garden~
 grasses dried brown by the dry climate.  Only the flourishing yellow heads of
 dandelions brighten the place with colour.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -1584,7 +1589,7 @@ A Massive Garden~
 broken bicycles.  The grasses too seem stained with the colour of bleeding
 metal, the copper colour making the place seem even more dry and desert-like.  
 ~
-118 0 2
+118 0 0 0 0 0
 D2
 ~
 ~
@@ -1602,7 +1607,7 @@ uncertainly in the air, tiny seedlings and leaves wafting dreamily about.  The
 hard ground is slightly cracked, blistering with dryness benath the thick matted
 carpet of dead and dying grass.  
 ~
-118 0 2
+118 0 0 0 0 0
 D1
 ~
 ~
@@ -1620,7 +1625,7 @@ off to the east surrounded by flat brown grasses.  Few flowers grow here, only
 scattered weeds and a few dark shrubs, most of the land too dry to support much
 growth.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -1642,7 +1647,7 @@ open area, the large room extending off to the north and to the east.  Pieces of
 food have scattered down from the stairs to the south, sticky black masses of
 unidentifiable substance staining the floor.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
 ~
 ~
@@ -1667,7 +1672,7 @@ dark shadows from the furnace flame that dances here.  Smooth metal panelling
 contains the fire, a small grid allowing the light and heat to fill the room,
 large pipes carrying the warmth to the rest of the house.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -1680,7 +1685,7 @@ permeating the air.  Dark, sticky stains blacken the carpet, piles and piles of
 dirty laundry scattered about.  The smell of must and mould fills the place, and
 some other disgusting scent, metallic and nauseating.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
 ~
 ~
@@ -1710,7 +1715,7 @@ places, contrasting noticeably with the darker patches of dirt as if it had been
 bleached in areas, and a streak of bloodied fingerprints smears the eastern
 wall.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -1724,7 +1729,7 @@ substances, and the room stinks as if it has never been cleaned.  The flickering
 light strip has had all the light bulbs but one removed, the dim glow mercifully
 casting much of the sight here in shadow.  
 ~
-118 d 0
+118 8 0 0 0 0
 D2
 ~
 ~
@@ -1739,7 +1744,7 @@ although no doors or solid walls seal it off.  A television set flickers dimly
 in the shadows, unwatched but left to buzz continually, as if there was a need
 to fill the place with constant noise.  
 ~
-118 d 0
+118 8 0 0 0 0
 D3
 ~
 ~
@@ -1752,7 +1757,7 @@ despite the coldness of the hard flooring.  This appears to be a kind of reading
 area for children, a few cushions lie strewn about, as well as several well-used
 children's books, and an old television set buzzes quietly to itself.  
 ~
-118 d 0
+118 8 0 0 0 0
 D2
 ~
 ~
@@ -1769,7 +1774,7 @@ whilst stooping.  Several thick wooden beams run crisscrossed along the ceiling,
 supporting the floor above, and metal heating and water pipes run like veins in
 and out of the structure.  
 ~
-118 ad 0
+118 9 0 0 0 0
 D0
 ~
 ~
@@ -1790,7 +1795,7 @@ the freezing floor.  A pingpong table has been turned on its side to separate
 this half of the crawl-space from the other.  This side seemingly dedicated to
 the storage of various items and foods.  
 ~
-118 ad 0
+118 9 0 0 0 0
 D0
 ~
 ~
@@ -1803,7 +1808,7 @@ a little more cheery despite the coldness.  Hand-drawn cartoon characters
 decorate most of the surfaces, various toys lying scattered about or set up in
 various stages of play.  
 ~
-118 ad 0
+118 9 0 0 0 0
 D1
 ~
 ~
@@ -1821,7 +1826,7 @@ place as heat and water flow throuh the many pipes to the rest of the house.
 It is very dark in this corner of the room, the brightness of the toys and
 cartoon drawings contrasting with the sinister feel of the shadows.  
 ~
-118 ad 0
+118 9 0 0 0 0
 D0
 ~
 ~
@@ -1834,7 +1839,7 @@ pulled from its place and left dangling at the side of the stairs.  The carpet
 is thick and padded but beginning to fray in places, exposing sharp nails
 beneath.  
 ~
-118 ad 0
+118 9 0 0 0 0
 D0
 ~
 ~
@@ -1861,7 +1866,7 @@ smell of must and mould wafting in the otherwise stagnant air.  Yellowing and
 torn books are strewn haphazardly here and there, most covered with a thick
 layer of cobwebs and dust.  
 ~
-118 ad 0
+118 9 0 0 0 0
 D3
    A dark door is attached crookedly with metal hinges, several slashes carved
 through the surface; exposing the pale inner wood like glowing wounds.  
@@ -1876,7 +1881,7 @@ grunge making it appear more green and filling the air with a revolting acrid
 smell.  The toilet and counters look as though they have never been cleaned,
 ugly stains and sticky grime covering almost every surface.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -1889,7 +1894,7 @@ ripples of light contrasting with the dark shadows that creep in from the rest
 of the surroundings.  Streaked with grime, it is hard to separate the darkness
 of the walls from the dirt.  
 ~
-118 d 0
+118 8 0 0 0 0
 D0
 ~
 ~
@@ -1915,7 +1920,7 @@ runs around the top of the walls.  Scattered lego bricks are embedded into the
 grey carpet, various lego spacecraft in the works or completed, hanging from
 invisible thread and lego stands.  
 ~
-118 d 0
+118 8 0 0 0 0
 D3
 ~
 ~
@@ -1928,7 +1933,7 @@ quilts the deep colour of fresh blood.  Dark wooden furniture accessorizes the
 rest of the room, piles of dirty laundry strewn all over the floor and draped
 over the various furnishings.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -1945,7 +1950,7 @@ by one of the resident children.  Bright red nail polish has been used to paint
 a glaring @RX@n on almost every surface visible.  The smeared mirror, the dirty
 walls, the yellowing toilet; all marked irreversibly with the same angry sign.
 ~
-118 d 0
+118 8 0 0 0 0
 D0
 ~
 ~
@@ -1959,7 +1964,7 @@ only one remaining in its socket.  The room is long and wide, filled with as
 many beds and dressers as it can hold, what little remaining floorspace filled
 with dirty laundry and piles of rubbish.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -1977,7 +1982,7 @@ sugar-backed papering.  The wall appears cracked beneath, a long split working
 its way up to the ceiling where a pretty unicorn border contrasts the ugly
 darkness of the rest of the room.  
 ~
-118 d 0
+118 8 0 0 0 0
 D3
 ~
 ~
@@ -1994,7 +1999,7 @@ the occasional flicker of a creeping insect running across the floor, and the
 creaking of footsteps seems to disturb the stillness.  The only way to get out
 seems to be to crawl through the small gap.  
 ~
-118 ad 0
+118 9 0 0 0 0
 S
 T 11869
 #11872
@@ -2004,7 +2009,7 @@ posts supporting the domed hexagonal roof.  Various climbing flowers crawl up
 the sides, most of them drying in the heat, filling the air with a condensed
 perfume scent.  
 ~
-118 c 0
+118 4 0 0 0 0
 D0
 ~
 ~
@@ -2020,7 +2025,7 @@ splotches or perhaps more disturbingly, smudged letters and words.  The
 naturally grey carpet is now luminous blue, brighter splashes here and there as
 if some glowing paintball gun had been liberally used to decorate the place.  
 ~
-118 d 0
+118 8 0 0 0 0
 D1
 ~
 ~
@@ -2034,7 +2039,7 @@ trickling along the grassless ground, making it glisten and shine even more.
 The surface slopes gently upward to the south, curving again abruptly down so
 that only horizon can be seen.  
 ~
-118 0 4
+118 0 0 0 0 0
 D1
 ~
 ~
@@ -2051,7 +2056,7 @@ On the Tip of a Hill~
 it an almost purposefully polished appearance.  The gently curving surfaces are
 flawless and almost reflective, covered in a fine sheen of moisture.  
 ~
-118 0 4
+118 0 0 0 0 0
 D2
 ~
 ~
@@ -2067,7 +2072,7 @@ A Sloping Ridge~
 colour veining through the rock as though mineral rich waters once ran in
 rivulets here, the tinted surface eroded until glossy and flawless.  
 ~
-118 0 4
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2091,7 +2096,7 @@ A Sloping Ridge~
 south, rosy hues of purple mixing with the cool grey.  Splotches of deeper
 colour blossom here and there, permanent stains on the smooth stony canvas.  
 ~
-118 0 4
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2116,7 +2121,7 @@ its surface as if brine water flowed through here at some point.  Perfectly
 eroded, the chalk-like blemishes are all that spoil the smoothness, dulling the
 natural shine of the stone.  
 ~
-118 0 4
+118 0 0 0 0 0
 D1
 ~
 ~
@@ -2129,7 +2134,7 @@ here, a faint vibration throbbing through the rock from some unseen source.  A
 feeling of heat rises in the air, the very surface of the stone hot to the touch
 as if warmed from within.  
 ~
-118 0 4
+118 0 0 0 0 0
 D3
 ~
 ~
@@ -2141,7 +2146,7 @@ A Grave Plain~
 breeze has stirred it.  No grass, rocks, or other features of any kind can be
 seen, just the ground untouched and bare like a vast sandy canvas.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2162,7 +2167,7 @@ of unused parchment.  Void of all plantlife and rockery, the only things
 noticeable are the slight ripples that work through the fine earth with each
 breeze.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2182,7 +2187,7 @@ A Grave Plain~
 smooth, pale soil.  Gentle heat wafts from all around, a thick muggy humidity
 lingering in the air and coating everything in sight with a subtle sheen.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2203,7 +2208,7 @@ and stubborn against the breezes, almost more like the spines of cacti than any
 green flora.  A deep shadow shrouds the place in gloom, the atmosphere clinging
 and moist.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2227,7 +2232,7 @@ Dark Grasses~
 crisp and dry though the surrounding air is hot and humid.  Thick black grasses
 stand rigidly, covered with a slick shine of moisture.  
 ~
-118 0 2
+118 0 0 0 0 0
 D2
 ~
 ~
@@ -2243,7 +2248,7 @@ Dark Grasses~
 stubbornly straining against the attempts of the breeze to move them.  Stifling
 muggy air swirls aimlessly about, leaving glistening droplets on every surface.
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2259,7 +2264,7 @@ Dark Grasses~
 too weary to stand tall.  The soft sandy soil is dark and ribbed, alive with the
 dancing shadows of the swaying plant life.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2275,7 +2280,7 @@ Dark Grasses~
 glossy with moisture and shining like black stalactites of oil.  An oppressive
 heat lingers in this place, a greasy film of wetness covering everything.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2299,7 +2304,7 @@ Dark Grasses~
 bend reluctantly to the wafting air.  Sticky and claustrophobic, the damp
 atmosphere seems to smother everything, filling the place with a tangy odour.  
 ~
-118 0 2
+118 0 0 0 0 0
 D1
 ~
 ~
@@ -2315,7 +2320,7 @@ Dark Grasses~
 seem to infuse this place with any life.  Muggy and clinging the air seems
 almost to coat everything with slime.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2331,7 +2336,7 @@ Dark Grasses~
 Sinewy grasses whisper mournfully, bent and stiff as though aging black ghosts
 that haunt the place.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2347,7 +2352,7 @@ A Grave Plain~
 glistening and stirring gently as the currents of air move, warmer air rising
 from the ground itself as if some heat source lay somewhere far beneath.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2367,7 +2372,7 @@ A Grave Plain~
 like gently rippled icing over the flat terrain.  A subtle heat stirs the air,
 making it shimmer and shift slightly as though part of some mirage.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2388,7 +2393,7 @@ continuous plane.  The air is warm and humid, the sticky atmosphere smelling
 vaguely of salt as if this were at the side of some ocean, though there is no
 sound of waves to be heard.  
 ~
-118 0 2
+118 0 0 0 0 0
 D0
 ~
 ~
@@ -2413,7 +2418,14 @@ EXPERIENCE OF YEARS...
 
 Once you have counted them all, type look next
 ~
-118 de 0
+118 24 0 0 0 0
+E
+two 2~
+@y@RF@yINISHED @RF@yILES ARE THE RE-
+SULT O@RF@y YEARS O@RF@y SCIENTI@RF@y-
+IC STUDY COMBINED WITH THE
+EXPERIENCE O@RF@y YEARS...@n
+~
 E
 next~
 How many F's did you get?
@@ -2424,13 +2436,6 @@ Most people only count three as the brain does not process the F in the word of
 
 PS. if you are really stuck, type LOOK TWO, to see exactly where the F's are
 ~
-E
-two 2~
-@y@RF@yINISHED @RF@yILES ARE THE RE-
-SULT O@RF@y YEARS O@RF@y SCIENTI@RF@y-
-IC STUDY COMBINED WITH THE
-EXPERIENCE O@RF@y YEARS...@n
-~
 S
 #11895
 By a Gentle Stream~
@@ -2439,7 +2444,7 @@ smooth pebbles and the falling petals from nearby trees.  Clear mountain breezes
 wash cleanly over the land, filling the atmosphere with a peaceful, serene
 feeling; a beautiful jagged view of the mountainsides spreading out below.  
 ~
-118 0 5
+118 0 0 0 0 0
 D2
 ~
 ~
@@ -2454,7 +2459,7 @@ all the world pulsing as if a giant heart beat.  Everything of the normal world
 becomes jaded and still, only a vague awareness lingering of the ability to
 'awaken'.
 ~
-118 d 0
+118 8 0 0 0 0
 S
 T 11899
 T 11856
@@ -2466,7 +2471,7 @@ all the world pulsing as if a giant heart beat.  Everything of the normal world
 becomes jaded and still, only a vague awareness lingering of the ability to
 'awaken'.
 ~
-118 d 0
+118 8 0 0 0 0
 S
 T 11899
 #11899
@@ -2478,7 +2483,7 @@ few people to be seen scurrying quickly about, faces down as they rush to their
 destinations.  All seems dim and dreary, the only warmth is the subtle glow of
 light coming from a shop to the east.  
 ~
-118 0 1
+118 0 0 0 0 0
 D1
 ~
 ~

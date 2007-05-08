@@ -7,7 +7,7 @@ Shadimar, the Wizard of the East stands here.
 His thin, stick-like limbs and torso look frail, but for some reason give a
 formidable impression of strength.  
 ~
-bd h 0 E
+10 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -23,7 +23,7 @@ A large squid rests just beneath the surface of the water here.
    This squid is absolutely huge!  It's almost half the size of a man,
 discounting the tentacles, and it looks hungry.  Not to mention dangerous.  
 ~
-bdfm 0 125 E
+4138 0 0 0 0 0 0 0 125 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -39,7 +39,7 @@ A lesser Kraken is here, eyeing you with hunger.
 tentacles.  Which is hard to do, due to the sharp, claw-like tip on on the end
 of all eight limbs.  
 ~
-bdfm 0 225 E
+4138 0 0 0 0 0 0 0 225 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -54,7 +54,7 @@ A Kraken swims here, growling menacingly.
    The Kraken is massive, larger than a man and with powerful stingers on the
 end of each tentacle.  
 ~
-bdfm 0 300 E
+4138 0 0 0 0 0 0 0 300 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -71,7 +71,7 @@ too long to see in your field of vision to estimate its size.  You notice the
 little beady eyes looking back at you, and the large beak opening and closing in
 anticipation.  
 ~
-bdfm 0 410 E
+4138 0 0 0 0 0 0 0 410 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -86,7 +86,7 @@ A Water Elemental stands before you, rippling to faint vibrations.
    The Water Elemental is a vaguely man shaped statue of liquid water.  It may
 be liquid, but it looks tough.  
 ~
-bdfm 0 410 E
+4138 0 0 0 0 0 0 0 410 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0
@@ -102,7 +102,7 @@ She wears white robes, and she gives forth an aura of purity and goodness.  The
 only splash of color in her form is her eyes, which are a shade of piercing
 electric blue.  
 ~
-bdi dfghm 1000 E
+266 0 0 0 8400 0 0 0 1000 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -118,7 +118,7 @@ The Light Guardian stands here, glowing with intense light.
    A glowing figure in brightly luminous armour, the Light Guardian looks to be
 a formidable foe.  
 ~
-bdm 0 1000 E
+4106 0 0 0 0 0 0 0 1000 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -136,7 +136,7 @@ A Dark Sentinel watches vigilantly, sucking light from the room.
    The black, light-absorbing armour of the Dark Sentinel draws you in, and it
 becomes an effort not to fall over.  
 ~
-bdm n -1000 E
+4106 0 0 0 0 0 0 0 -1000 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -153,7 +153,7 @@ Shadimar's Spectre floats here, glowing with faint grey light.
    This is not the true Shadimar, it is but a pale vision of him.  You can see
 the background through the Spectre's form.  
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -169,7 +169,7 @@ Carcophan's Spectre floats here, absorbing the little light availible.
 must haunt these halls looking for revenge on the one that sent him to hell, or
 at least this eternal limbo.  
 ~
-bd dfk 0 E
+10 0 0 0 80 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -185,7 +185,7 @@ old man with salt-and-peppered hair and a dignified stance.  But the dark
 flowing robes and occolt sigils adorning them let you know that this is not
 someone to be trifled with.  
 ~
-bdj hn -1000 E
+522 0 0 0 0 0 0 0 -1000 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -207,7 +207,7 @@ fire and light.  The reptillian form you see before you looks to be the exact
 opposite, as it sucks the light and warmth from the room with its dark, liquid
 eyes.  
 ~
-bdm 0 -900 E
+4106 0 0 0 0 0 0 0 -900 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 0

@@ -7,7 +7,7 @@ A merchant is trying to you sell you something.
 He immediately begins his speech on all the fine wares he could sell you...  
 For the right price of course.    
 ~
-cdg k 0 E
+76 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -21,7 +21,7 @@ This guard is protecting the outskirts of the city from attack.
    A veteran warrior, this guard was enlisted by the city to protect it from
 attack.    
 ~
-bdmpqr k 0 E
+233482 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -34,7 +34,7 @@ The outpost commander is here, safe in the respect of her men.
    The outpost commander is a hardened, grizzled veteran with the cunning that
 comes from a life of leading men in endless battle.    
 ~
-bdl dfk 0 E
+2058 0 0 0 80 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -49,7 +49,7 @@ A trader tries to barter with you.
 explains to you how he could trade you some much better equipment for a small
 few or an extra item or two.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -63,7 +63,7 @@ A hermit looks nervous with all these people around.
    This guy spends his life living alone in the wilderness, it's a wonder he
 can survive.    
 ~
-dgh k 0 E
+200 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -77,7 +77,7 @@ A patrolman is keeping an eye out for any trouble.
    One of the many protectors of the city, his job is to protect the outskirts
 of the city and give warning in case of trouble.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -91,7 +91,7 @@ A warden is patrolling the outskirts of the city.
    He looks more like he's seen his fair share of action in his time.  He looks
 at you suspiciously.    
 ~
-dg k 0 E
+72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -105,7 +105,7 @@ A woodsman walks by, he needs a shower, Bad!
    Born and raised in the woods, he looks like more a part of the wilderness
 than most animals you've seen.    
 ~
-dfgh k 0 E
+232 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -118,7 +118,7 @@ A guard is standing watch here.
 ~
    He looks very well trained.    
 ~
-bdl cfk 0 E
+2058 0 0 0 72 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -131,7 +131,7 @@ A woodswoman is looking for a woodsman to nag.
 ~
    She looks upset about something.    
 ~
-dg km 0 E
+72 0 0 0 8192 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2
@@ -144,7 +144,7 @@ A messenger runs by on an errand.
 ~
    He looks fit from running on all those errands.    
 ~
-cdg k 0 E
+76 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -157,7 +157,7 @@ This scoundrel is looking for some easy prey.
 ~
    She lives off the misfortune of others.  She looks at you warily.    
 ~
-dgq bdfkt 0 E
+65608 0 0 0 1048660 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 2

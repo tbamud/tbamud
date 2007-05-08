@@ -3,25 +3,25 @@ snake ring~
 a snake ring~
 A snake ring is sitting here peacefully.~
 ~
-9 abgi ab 0
+9 abgi 0 0 0 ab 0 0 0 0 0 0 0
 5 0 0 0
 1 1 0 0
-E
-snake ring~
-   You see a ring that is in a shape of a snake.  The eyes are made from
-Sapphires.  
-~
 E
 wedding~
    A ring that shows that the wearer is commited to the most lovely woman
 around, Midnight.  The ring is a symbol of the wearers devoted Love to her.  
+~
+E
+snake ring~
+   You see a ring that is in a shape of a snake.  The eyes are made from
+Sapphires.  
 ~
 #23201
 fountain~
 a fountain~
 A large fountain with a dolphin statue.~
 ~
-23 b 0 0
+23 b 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
 505 0 0 0
 #23202
@@ -29,7 +29,7 @@ Raspberry tart~
 a raspberry tart~
 A sweet tart filled with a raspberry filling is calling out to you.~
 ~
-19 e a 0
+19 e 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
 1 200 0 0
 #23203
@@ -37,7 +37,7 @@ Chocolate eclairs~
 a chocolate eclair~
 A large chocolate eclair calls you over to eat it.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 16 0 0 0
 1 250 0 0
 #23204
@@ -45,7 +45,7 @@ Apple pie~
 an apple pie~
 A steaming hot Apple pie rests here.. waiting to be eaten.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
 2 300 0 0
 #23205
@@ -53,7 +53,7 @@ bread~
 a slice of bread~
 A slice of bread has fallen and can't get up.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
 1 25 0 0
 #23206
@@ -61,7 +61,7 @@ German Chocolate cake~
 a German chocolate cake~
 An awesome German chocolate cake sits here waiting for you to eat it.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 26 0 0 0
 5 500 0 0
 #23207
@@ -69,7 +69,7 @@ Pound cake~
 a pound cake~
 A heavy looking cake sits here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 5 100 0 0
 #23208
@@ -77,7 +77,7 @@ bag~
 a small bag~
 A small bag lies here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 30 1 -1 0
 2 150 0 0
 #23209
@@ -85,7 +85,7 @@ Rucksack~
 a rucksack~
 A large rucksack rests here.~
 ~
-15 0 ak 0
+15 0 0 0 0 ak 0 0 0 0 0 0 0
 60 1 -1 0
 4 500 0 0
 #23210
@@ -93,7 +93,7 @@ Flashlight~
 a flashlight~
 A flashlight is lying here.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 150 0
 2 120 0 0
 #23211
@@ -101,7 +101,7 @@ Lantern~
 a lantern~
 A lantern with energizer batteries is sitting here lighting your way.~
 ~
-1 0 ao 0
+1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 3 350 0 0
 E
@@ -113,7 +113,7 @@ Flail~
 a flail~
 A flail lies here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 4 0
 6 625 0 0
 #23213
@@ -121,7 +121,7 @@ warhammer~
 a warhammer~
 A warhammer rests here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 1 5 7
 6 50 0 0
 #23214
@@ -129,7 +129,7 @@ Club~
 a club~
 A club is lying here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 1 1 3 0
 3 12 0 0
 #23215
@@ -137,7 +137,7 @@ Long sword~
 a long sword~
 A long sword rests up against the wall.~
 ~
-5 mn an 0
+5 mn 0 0 0 an 0 0 0 0 0 0 0
 1 1 8 3
 8 600 0 0
 #23216
@@ -145,7 +145,7 @@ Small sword~
 a small sword~
 A small sword is sitting here looking for a master.~
 ~
-5 n an 0
+5 n 0 0 0 an 0 0 0 0 0 0 0
 1 1 6 3
 3 60 0 0
 #23217
@@ -153,7 +153,7 @@ dagger~
 a dagger~
 A dagger is waiting here for a back to pierce.~
 ~
-5 n ano 0
+5 n 0 0 0 ano 0 0 0 0 0 0 0
 1 1 4 11
 1 10 0 0
 #23218
@@ -161,7 +161,7 @@ Black ringmail ring mail~
 some black ringmail~
 An all black ringmail is lying here.~
 ~
-9 mn ad 0
+9 mn 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 11 500 0 0
 #23219
@@ -169,7 +169,7 @@ Studded leather~
 some studded leather armor~
 A leather suit with studs is resting here.~
 ~
-9 mn ad 0
+9 mn 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
 8 200 0 0
 #23220
@@ -177,7 +177,7 @@ Plate platemail mail leggings~
 a pair of platemail leggings~
 A pair of platemail leggings are stacked here.~
 ~
-9 mn af 0
+9 mn 0 0 0 af 0 0 0 0 0 0 0
 8 0 0 0
 15 300 0 0
 #23221
@@ -185,7 +185,7 @@ Banded leggings~
 some banded leggings~
 A set of binding leggings.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 5 0 0 0
 7 200 0 0
 #23296
@@ -193,7 +193,7 @@ quest flag~
 a quest flag~
 A Quest flag is hiding here.~
 ~
-8 dgq a 0
+8 dgq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 #23297
@@ -201,7 +201,7 @@ ring power~
 a ring of power~
 A ring of power is lying here.~
 ~
-22 gi ab 0
+22 gi 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 4 1000 0 0
 #23298
@@ -209,7 +209,7 @@ black book blackbook~
 a blackbook~
 A large blackbook is resting here, with its' pages open.~
 ~
-12 g 0 0
+12 g 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -226,7 +226,7 @@ Ferrets necklace~
 Ferret's necklace~
 Ferret's necklace is lying here.~
 ~
-9 abfgi ac 0
+9 abfgi 0 0 0 ac 0 0 0 0 0 0 0
 7 0 0 0
 5 1000 0 30
 A

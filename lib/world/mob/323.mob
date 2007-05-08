@@ -6,7 +6,7 @@ The wall seems to shift slightly, as a rockman makes himself visible to you.
    This huge slab of rock shaped into something vaguely humanoid looks massive
 and powerful enough to blast anyone or thing to smithereens.    
 ~
-bdjmnpqr 0 0 E
+242186 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -20,7 +20,7 @@ The Pale Man regards you intently, as if forming a plan with you in mind.
 at his side, he needs not stature to seem impressive.  His skin is milky white,
 his eyes a dark charcoal black.  He has no hair upon his head.    
 ~
-bdepr 0 -900 E
+163866 0 0 0 0 0 0 0 -900 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -33,7 +33,7 @@ An aboleth lumbers toward you, intent on devouring you in one gulp.
    It looks almost like a very large but intelligent fish, about twenty feet in
 length, its skin blue-green with splotches of gray.    
 ~
-bcdf 0 -700 E
+46 0 0 0 0 0 0 0 -700 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -46,7 +46,7 @@ An aboleth baby follows its mother in anticipation of a good supper.
    It looks much the same as it its mother, only smaller and with no splotches
 of gray.    
 ~
-bdfqr 0 -200 E
+196650 0 0 0 0 0 0 0 -200 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -59,7 +59,7 @@ A large bat swoops down at you from the ceiling!
    Its eyes are shot through with red, its fangs bared as it moves in for the
 attack.  
 ~
-dgl 0 0 E
+2120 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -72,7 +72,7 @@ A rot grub slunks toward you, sucking debris from the floor.
    It is a lump of grayish flesh and blood that has almost no mind - it only
 knows to consume.    
 ~
-cdg 0 -100 E
+76 0 0 0 0 0 0 0 -100 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 0
@@ -85,7 +85,7 @@ A carrion crawler moves about the caverns, taking scraps where it can.
    This thing looks like a giant grub with teeth.  It takes whatever leftovers
 there are from scraps left behind in battle.    
 ~
-cdg 0 -400 E
+76 0 0 0 0 0 0 0 -400 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 0
@@ -98,7 +98,7 @@ A Death Kiss floats toward you, its tentacles reaching out.
    It looks like a beholder kin, but larger and with more tentacles.  Its many
 eyes rotate this way and that, a few always upon you.    
 ~
-bdf 0 -1000 E
+42 0 0 0 0 0 0 0 -1000 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -111,7 +111,7 @@ The bugbear chief growls angrily from his place of rest.
    This thing does not look as if it desired to be intruded upon.  Possibly a
 hasty departure might be in order...    
 ~
-dfgm 0 -400 E
+4200 0 0 0 0 0 0 0 -400 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -125,7 +125,7 @@ The bugbear leader howls a mindless warcry and charges!
 sight.  He looks like many of the other bugbears, just larger and meaner with
 larger fangs.    
 ~
-dgm 0 -700 E
+4168 0 0 0 0 0 0 0 -700 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 0
@@ -138,7 +138,7 @@ The bugbear shaman looks up at you in anger. You interrupted it.
    It appears that even bugbears can read - somewhat.  This one was reading
 from an old tome.    
 ~
-dgm 0 -900 E
+4168 0 0 0 0 0 0 0 -900 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 0
@@ -151,7 +151,7 @@ A DeepSpawn sits in the center of the room, its many eyes glaring at you.
    This abomination of nature rests casually in this dark, stinking place
 creating minions of Hell, sending them out to wreck havoc upon the lands.    
 ~
-bdf 0 -1000 E
+42 0 0 0 0 0 0 0 -1000 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -165,7 +165,7 @@ Gasp! You have stumbled upon a sleeping Feyr.
 deepest, darkest fears of many coalescing into one single horror.  This must be
 a melding of all the horrors in the minds of those at X'Raantra's.    
 ~
-bdnpqr 0 -1000 E
+237578 0 0 0 0 0 0 0 -1000 E
 27 11 -6 5d5+270 4d4+4
 270 72900
 8 8 0
@@ -178,7 +178,7 @@ The statue of a gargoyle stands against the far wall.
    It appears almost as if it might really BE a gargoyle, almost as if it were
 alive.  Did its right fore-claw just move?    
 ~
-bdf 0 -900 E
+42 0 0 0 0 0 0 0 -900 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 0
@@ -193,7 +193,7 @@ An extremely large statue of a gargoyle rests on its laurels in the corner.
 Its head is in its arms, however it almost appears as if one eye might be
 watching you.    
 ~
-bdf 0 -990 E
+42 0 0 0 0 0 0 0 -990 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 0
@@ -207,7 +207,7 @@ A small, vocal, hunchbacked man rushes at you with sword drawn.
    This screaming, jabbering, howling hunchback seems more an annoyance than a
 threat, however you never know.    
 ~
-cdfgm 0 -500 E
+4204 0 0 0 0 0 0 0 -500 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -220,7 +220,7 @@ A huge gorgon stamps its feet and snorts, eyeing you with hunger.
    It is a huge bull-thing with horns as large as a minotaur's.  In fact, it
 almost looks like a minotaur but less humanoid.    
 ~
-bdnq 0 -400 E
+73738 0 0 0 0 0 0 0 -400 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 8 8 1
@@ -235,7 +235,7 @@ A disgusting manlike thing ambles toward you, arms outstretched toward you.
 is covered in long, dirty, black hair.  Any skin which shows through is grey
 and scaly.    
 ~
-bdef 0 -800 E
+58 0 0 0 0 0 0 0 -800 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -248,7 +248,7 @@ A hook horror spots you and immediately rushes!
    It is huge, almost nine feet tall and at least three hundred pounds.  It is
 a cross between a vulture and a man and has hooks for claws.    
 ~
-bdefnor 0 -1000 E
+155706 0 0 0 0 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -264,7 +264,7 @@ Whenever directly approached whether by animate or inanimate, its shoots a
 tentacle from its center, grabbing the offender of its space and killing it.  
 
 ~
-bdf 0 -200 E
+42 0 0 0 0 0 0 0 -200 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 0
@@ -278,7 +278,7 @@ A mold man sees you and squats down in a fight-ready stance.
 particular strength.  He does appear to know his way around a spear, though.  
 
 ~
-dgm 0 -300 E
+4168 0 0 0 0 0 0 0 -300 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -291,7 +291,7 @@ A bugbear clansman lumbers along.
    He is covered in thick fur, his large shaggy eyebrows drooping low over his
 eyes lending him both a sad and sinister look at the same time.    
 ~
-dgjm 0 -200 E
+4680 0 0 0 0 0 0 0 -200 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -305,7 +305,7 @@ A Deep Dragon regards you with curiousity.
 that only a fool human would walk straight into a Deep Dragon's den and stand
 there.    
 ~
-bdnopqr 0 -1000 E
+253962 0 0 0 0 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 2

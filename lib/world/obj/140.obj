@@ -3,7 +3,7 @@ wyvern scale armor~
 some wyvern scale armor~
 Some tough blue tinged scale armor has been left here.~
 ~
-9 agimo ad 0
+9 agimo 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 5 200 0 0
 E
@@ -20,7 +20,7 @@ Red dragon orb wyv~
 a red dragon orb~
 A glowing red ball floats in the air here.~
 ~
-3 aghjl ao 0
+3 aghjl 0 0 0 ao 0 0 0 0 0 0 0
 30 3 1 36
 4 600 0 0
 E
@@ -35,7 +35,7 @@ wyvern claw wyv~
 a wyvern claw~
 A dull red claw has been dropped here.~
 ~
-5 b an 0
+5 b 0 0 0 an 0 0 0 0 0 0 0
 1 1 6 8
 2 500 0 0
 E
@@ -50,7 +50,7 @@ wyvern foreclaw wyv~
 the foreclaw of a wyvern~
 The great foreclaw of a wyvern lies here.~
 ~
-9 0 aho 0
+9 0 0 0 0 aho 0 0 0 0 0 0 0
 6 0 0 0
 2 500 0 0
 E
@@ -68,7 +68,7 @@ crested wyvern helm wyv~
 a crested wyvern helm~
 A helm made of blue scales has been dropped here.~
 ~
-9 agim ae 0
+9 agim 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 2 100 0 0
 E
@@ -86,7 +86,7 @@ greater wyvern talon wyv~
 a greater wyvern talon~
 A huge talon rests here looking very dangerous.~
 ~
-5 bimn an 0
+5 bimn 0 0 0 an 0 0 0 0 0 0 0
 1 2 8 3
 6 300 0 0
 E
@@ -105,7 +105,7 @@ hind claws wyvern wyv~
 the hind claws of a wyvern~
 Someone has left a set of wyvern claws here.~
 ~
-9 ai ag 0
+9 ai 0 0 0 ag 0 0 0 0 0 0 0
 5 0 0 0
 4 300 0 0
 E
@@ -122,7 +122,7 @@ claw ring wyv~
 a claw ring~
 A ring made of an old claw has been dropped here.~
 ~
-9 abfgi abo 0
+9 abfgi 0 0 0 abo 0 0 0 0 0 0 0
 4 0 0 0
 1 400 0 0
 E
@@ -143,7 +143,7 @@ wyvern wings wyv~
 some wyvern wings~
 A huge set of wings float in the air here.~
 ~
-22 dfh ak 0
+22 dfh 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 8 700 0 0
 E
@@ -162,7 +162,7 @@ royal wyvern shield wyv~
 a royal wyvern shield~
 A shield of red and blue scales lies here.~
 ~
-9 agimo aj 0
+9 agimo 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
 5 500 0 0
 E
@@ -178,7 +178,7 @@ red wyvern eyes wyv~
 a set of glowing red eyes~
 The glowing eyes of some great animal have been forgotten here.~
 ~
-1 aghijn aeo 0
+1 aghijn 0 0 0 aeo 0 0 0 0 0 0 0
 0 0 -1 0
 3 800 0 0
 E
@@ -198,7 +198,7 @@ fountain red blood wyv~
 a fountain flowing with blood~
 A fountain full of a red liquid is flowing here.~
 ~
-23 b 0 0
+23 b 0 0 0 0 0 0 0 0 0 0 0
 500 500 13 0
 505 0 0 0
 E
@@ -214,7 +214,7 @@ statue dragon god~
 a statue of the dragon God Ferret~
 A statue of the dragon God Ferret has been placed here.~
 ~
-8 ag 0 0
+8 ag 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -230,7 +230,7 @@ statue god elf~
 a statue of the god Ilsensine~
 A statue of the god Ilsensine has been constructed here.~
 ~
-8 ab 0 0
+8 ab 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -246,7 +246,7 @@ alter gods telemacos balm wyv~
 an alter to the gods Balm and Telemacos~
 An alter to the gods Balm and Telemacos is here.~
 ~
-8 a 0 0
+8 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -262,7 +262,7 @@ willow wyv statue goddess~
 a statue of the goddess Willow~
 A statue of the Goddess Willow has been placed here.~
 ~
-8 b 0 0
+8 b 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -278,7 +278,7 @@ scroll recall wyv~
 a scroll of recall~
 A scroll of recall has been dropped here.~
 ~
-2 g a 0
+2 g 0 0 0 a 0 0 0 0 0 0 0
 30 42 -1 -1
 1 200 0 0
 #14017
@@ -286,7 +286,7 @@ scroll seeing wyv~
 a scroll of seeing~
 A magical scroll has been left here.~
 ~
-2 g a 0
+2 g 0 0 0 a 0 0 0 0 0 0 0
 30 19 44 50
 1 800 0 0
 #14018
@@ -294,7 +294,7 @@ water cup wyv water~
 a cup~
 A small cup is here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 15 -1
 2 10 0 0
 #14019
@@ -302,7 +302,7 @@ water Barrel wyv water~
 a barrel~
 A large barrel has been dropped here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 15 0
 10 1000 0 0
 #14020
@@ -310,7 +310,7 @@ ring holding wyv~
 a ring of holding~
 An old ring of brass has been dropped here.~
 ~
-15 agi abo 0
+15 agi 0 0 0 abo 0 0 0 0 0 0 0
 200 5 -1 0
 2 1000 0 0
 #14021
@@ -318,7 +318,7 @@ pine torch wyv~
 a pine torch~
 Someone left you a perfectly good torch.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 24 0
 1 100 0 0
 #14022
@@ -326,7 +326,7 @@ wyvern fang wyv~
 a wyvern fang~
 A sharp animal's fang is in the dirt here.~
 ~
-5 i ano 0
+5 i 0 0 0 ano 0 0 0 0 0 0 0
 1 1 5 11
 3 110 0 0
 A
@@ -336,7 +336,7 @@ wyvern tail wyv~
 a wyvern tail~
 The tail of a wyvern is in the dust here.~
 ~
-5 i an 0
+5 i 0 0 0 an 0 0 0 0 0 0 0
 1 2 5 10
 4 200 0 0
 A
@@ -348,7 +348,7 @@ hide helm wyv~
 a hide helm~
 A helm of tanned hide is here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
 3 150 0 0
 #14025
@@ -356,7 +356,7 @@ hide cloak wyv~
 a hide cloak~
 A cloak of tough hide is here.~
 ~
-9 0 ack 0
+9 0 0 0 0 ack 0 0 0 0 0 0 0
 4 0 0 0
 15 400 0 0
 #14026
@@ -364,7 +364,7 @@ hide bracer wyv~
 a hide bracer~
 A strip of thick hide is here.~
 ~
-9 0 aim 0
+9 0 0 0 0 aim 0 0 0 0 0 0 0
 3 0 0 0
 3 1000 0 0
 A
@@ -374,7 +374,7 @@ hide armor wyv~
 a suit of hide armor~
 Someone has left you a suit of hide armor.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
 10 200 0 0
 A
@@ -384,7 +384,7 @@ hide gauntlets wyv~
 some hide gauntlets~
 Some sturdy hide gauntlets are here.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
 2 150 0 0
 #14029
@@ -392,7 +392,7 @@ hide leggings wyv~
 some hide leggings~
 A set of hide leggings have been dropped here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
 3 150 0 0
 #14030
@@ -400,7 +400,7 @@ hide boots wyv~
 a pair of hide boots~
 Some heavy hide boots have been left here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 4 170 0 0
 #14031
@@ -408,7 +408,7 @@ hide shield wyv~
 a hide shield~
 A tough hide shield was dropped here.~
 ~
-9 0 aj 0
+9 0 0 0 0 aj 0 0 0 0 0 0 0
 0 0 0 0
 4 170 0 0
 A
@@ -418,7 +418,7 @@ ale pint wyv ale~
 a pint~
 A pint of thick dark stout is here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 4 0
 7 20 0 0
 #14033
@@ -426,7 +426,7 @@ ale keg wyv ale~
 a large Keg~
 A large keg is standing here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 4 0
 20 200 0 0
 #14034
@@ -434,7 +434,7 @@ steak wyv~
 a 16oz steak~
 A huge steak has been left on a plate here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 36 0 0 0
 1 90 0 0
 #14035
@@ -442,7 +442,7 @@ huge roast wyv~
 a huge roast~
 A huge slab of meat is on a spit here.~
 ~
-19 0 a 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 3 200 0 0
 #14036
@@ -450,7 +450,7 @@ scroll remove curse wyv~
 a scroll of remove curse~
 A scroll of great power is here.~
 ~
-2 gi a 0
+2 gi 0 0 0 a 0 0 0 0 0 0 0
 30 35 -1 -1
 1 300 0 0
 #14037
@@ -458,7 +458,7 @@ potion healing wyv~
 a potion of healing~
 A potion of great curative power lies here.~
 ~
-10 agi a 0
+10 agi 0 0 0 a 0 0 0 0 0 0 0
 1 16 -1 -1
 10 1000 0 0
 #14038
@@ -466,7 +466,7 @@ wand aid wyv~
 a wand of aid~
 A long thin wand lies here.~
 ~
-3 bgi ao 0
+3 bgi 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 1
 10 1000 0 0
 #14039
@@ -474,7 +474,7 @@ staff wounding wyv~
 a staff of wounding~
 A heavy black staff lies here in a corner.~
 ~
-4 abgi ao 0
+4 abgi 0 0 0 ao 0 0 0 0 0 0 0
 30 6 6 27
 2 600 0 0
 A
@@ -484,7 +484,7 @@ god springfire statue wyv~
 a statue of the Air God Springfire~
 A statue of the God Springfire is here.~
 ~
-8 bfgi 0 0
+8 bfgi 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -500,7 +500,7 @@ statue khelben god knight wyv~
 a statue of the mighty God Khelben~
 There is a statue of the God Khelben, Lord of The Elements here.~
 ~
-8 agi 0 0
+8 agi 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -517,7 +517,7 @@ god statue thunder~
 a statue of the Thunder God Rumble~
 A statue of the mighty God Rumble has been built here.~
 ~
-8 abgi 0 0
+8 abgi 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -536,7 +536,7 @@ sexykitty magic goddess statue wyv~
 a statue of the goddess Sexykitty~
 A statue of the Goddess Sexykitty has been placed here.~
 ~
-8 a 0 0
+8 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -553,7 +553,7 @@ Gnoff god statue wyv~
 a statue of the God Gnoff~
 A statue of the God Gnoff is here.~
 ~
-8 b 0 0
+8 b 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E

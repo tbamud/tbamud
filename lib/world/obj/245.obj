@@ -3,7 +3,7 @@ piece skull blackened~
 a blackened skull piece~
 A charred piece of skull lies on the floor.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 10 0 0 0
 3 176 0 0
 A
@@ -17,7 +17,7 @@ mask anguish~
 a mask of anguish~
 A mask is on the floor, emitting pain and anguish.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 8 154 0 0
 A
@@ -31,7 +31,7 @@ eyes orange red peryton~
 the dull, orange-red eyes of a peryton~
 A strange set of eyes lie here.~
 ~
-11 0 ae 0
+11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
 4 100 0 0
 A
@@ -45,7 +45,7 @@ shawl glimmering white~
 a glimmering white shawl~
 A glimmering white shawl lies upon the ground.~
 ~
-11 0 ac 0
+11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
 6 104 0 0
 A
@@ -57,7 +57,7 @@ trappings power body armor~
 the Trappings of Power~
 A glowing set of body armor lies on the ground.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
 21 556 0 0
 A
@@ -71,7 +71,7 @@ brace wrist warrior's~
 a warrior's wrist brace~
 A large metal wrist brace has been left here.~
 ~
-9 b am 0
+9 b 0 0 0 am 0 0 0 0 0 0 0
 8 0 0 0
 7 543 0 0
 A
@@ -85,7 +85,7 @@ claws ghoul~
 the claws of a ghoul~
 A set of moldy, green claws lie on the ground.~
 ~
-9 0 ah 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
 12 165 0 19
 A
@@ -99,7 +99,7 @@ twine nether lord ring~
 the Twine of the Nether Lord~
 A twined ring lies on the ground, thrumming with power.~
 ~
-11 afjmn ab 0
+11 afjmn 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
 5 10 0 21
 A
@@ -113,7 +113,7 @@ dress remnants tattered banshee's cloth~
 the tattered remnants of a banshee's dress~
 A soiled scrap of cloth lies upon the ground.~
 ~
-9 p ak 0
+9 p 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
 11 543 0 0
 A
@@ -127,7 +127,7 @@ tail barbed ixitxachitl~
 the barbed tail of an ixitxachitl~
 A greenish, barbed-tail lies upon the ground.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 8 0 0 0
 14 104 0 19
 A
@@ -141,7 +141,7 @@ bone piece brittle~
 a brittle piece of bone~
 A human bone lies upon the ground.~
 ~
-12 bjmn ao 0
+12 bjmn 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 11 143 0 21
 A
@@ -153,7 +153,7 @@ wisp darkness~
 a wisp of darkness~
 A rolling darkness floats just above the ground.~
 ~
-12 gmno ak 0
+12 gmno 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
 1 776 0 22
 A
@@ -167,7 +167,7 @@ essence nether light coalescation~
 the Essence of the Nether~
 A glowing coalescation of light lies gleaming upon the ground.~
 ~
-1 a ao 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
 15 767 0 22
 A
@@ -181,7 +181,7 @@ scale translucent~
 a translucent scale~
 A translucent scale lies upon the ground.~
 ~
-9 fj aj 0
+9 fj 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
 11 721 0 22
 A

@@ -6,7 +6,7 @@ A large earthworm is here.
    The worm is almost as big as you are and looks quite tough.  You notice
 several scars on this creature.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -21,7 +21,7 @@ A huge vulture is busily flying around you.
 sharp.  She appears to be blind in one eye, making it more difficult to see her
 enemies.    
 ~
-dgh 0 -300 E
+200 0 0 0 0 0 0 0 -300 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 2
@@ -36,7 +36,7 @@ A small roach is crawling around in the sand by your feet.
 has 5 legs instead of four.  This gives him the ability to move much more
 quickly.    
 ~
-bd 0 -275 E
+10 0 0 0 0 0 0 0 -275 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -50,7 +50,7 @@ A mean looking black beetle is here.
    The beetle is the size of a small bird and is missing a leg.  He probably
 lost it in combat, but that doesnt make him any less strong.    
 ~
-bd 0 -250 E
+10 0 0 0 0 0 0 0 -250 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -65,7 +65,7 @@ A large sand dragon is here.
 badly need of being cut.  Her sharp teeth are slightly discolored, dripping
 with saliva.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -79,7 +79,7 @@ A small snake is coiled up in an eye of one of the skulls looking at you.
    The snake must be a baby for it to be able to curl up inside an eye socket
 like it has.  It watches you with its deadly eyes, ready to attack.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -93,7 +93,7 @@ A beautiful butterfly is flying around your head.
    Her wings look like silk.  When she moves you could swear you hear music.  
 
 ~
-dg 0 250 E
+72 0 0 0 0 0 0 0 250 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -107,7 +107,7 @@ An apparition is floating before your eyes!
    You can see right through the creature.  Could this be a figment of your
 imagination?    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -122,7 +122,7 @@ A giant spider is standing here.
 It almost looks to have been made out of metal.  It chitters evilly at you.  
 
 ~
-bd 0 -275 E
+10 0 0 0 0 0 0 0 -275 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 0
@@ -136,7 +136,7 @@ A mutant spider is here chittering evilly at you.
    He is quite a bit smaller than you are, but is obviously much tougher.  
 Maybe you should think twice before attacking him.    
 ~
-bd 0 -350 E
+10 0 0 0 0 0 0 0 -350 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -150,7 +150,7 @@ A giant bat is flying around in here.
    The bat is quite large.  Her wings stretch from wall to wall, making you
 feel rather small.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -163,7 +163,7 @@ A beautiful ladybug is here.
 ~
    The creature is rather delicate looking, but looks can be deceiving.    
 ~
-bd 0 -250 E
+10 0 0 0 0 0 0 0 -250 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -177,7 +177,7 @@ A lonely hermit is here.
    He is very dirty and could use a good bath.  He appears to be harmless, but
 you should still keep your distance.    
 ~
-bd 0 250 E
+10 0 0 0 0 0 0 0 250 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -191,7 +191,7 @@ A large red dragon is here.
    She looks at you with glowing yellow eyes.  Her nails are long and sharp and
 could easily rip you apart.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -204,7 +204,7 @@ A large blue dragon stands here, blocking your way.
 ~
    The creature is quite large.  You can smell a foul odor coming from it.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 0
@@ -218,7 +218,7 @@ A two-headed cat is here, hissing at you.
    The creature looks quite grotesque.  Drool hangs from both of its mouths,
 making it look rather unattractive.    
 ~
-bd 0 -325 E
+10 0 0 0 0 0 0 0 -325 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 0
@@ -232,7 +232,7 @@ A rather large dragonfly is here.
    Her wings flap at a tremendous speed, sending a breeze cascading across your
 face.  She looks rather tough.    
 ~
-bd 0 -250 E
+10 0 0 0 0 0 0 0 -250 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 2
@@ -247,7 +247,7 @@ A yellow dragon is standing here.
 and notice it has puss oozing from its eyes.  It will probably go blind soon.
   
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 0
@@ -261,7 +261,7 @@ A small dragon child is sitting here watching you.
    The child is rather small, but he looks tough.  His family probably isn't
 far away.    
 ~
-bd 0 -275 E
+10 0 0 0 0 0 0 0 -275 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -275,7 +275,7 @@ An adventurer has lost his way and is trying to figure out how to get home.
    He looks hungry and dehydrated.  He is slowly losing his wits as he realizes
 how lost and how much trouble he is in.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -288,7 +288,7 @@ A hawk is flying around above you.
    You see nothing special about the creature.  He looks mean and could
 probably kill you easily.    
 ~
-bd 0 -250 E
+10 0 0 0 0 0 0 0 -250 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -302,7 +302,7 @@ A dragon is here.
    This particular dragon looks rather small, possibly due to a growth stunt.
 It could still more than likely kill you.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -316,7 +316,7 @@ The dragon queen is here, looking directly at YOU!
    She is very large in size, and appears to be very tough.  Maybe with some
 help you could take her out.    
 ~
-bd 0 -500 E
+10 0 0 0 0 0 0 0 -500 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -330,7 +330,7 @@ A green dragon is standing before you.
    The dragon is completely green.  Its eyes glow yellow, making you cringe in
 fear.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1

@@ -7,7 +7,7 @@ west, you see only the walls of the rocky cliffs.  Off to the
 north a strange path seems to lead straight into the depths of
 the mountain.
 ~
-15 c 4
+15 4 0 0 0 0
 D0
 A strange path leads northwards.
 ~
@@ -26,7 +26,7 @@ path.  Your honest submission has already been made, but the truth of your
 heart has yet to be told.  Leave here now, and do not come back until
 you have grown.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -43,7 +43,7 @@ sin that was avoidable, of all that you regret.  The hitting and the hurting
 flash briefly before you.  Moments later the pain passes, and the straight
 path reveals itself before you.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -59,7 +59,7 @@ A Long Road~
 you.  Despite the sudden clarity, your mind is still haunted, images of
 an old woman kneeling in prayer, eyes closing, smiling and crying.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -75,7 +75,7 @@ A Long Road~
 soon come to an end, but something in the cold and the breeze tells you
 that that will be only the beginning of the journey.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -92,7 +92,7 @@ confronts you is simple enough, to walk in the darkness, or to walk in
 the light.  Only the depths of your soul can decide, but remember this
 much: the same truth lies at the end of both paths.
 ~
-15 d 0
+15 8 0 0 0 0
 D4
 ~
 ~
@@ -108,7 +108,7 @@ Halls of the Forgotten~
 place, so empty and forgotten, that God has chosen the worst, and brought
 them close to Him for one last time.
 ~
-15 d 0
+15 8 0 0 0 0
 D1
 ~
 ~
@@ -129,7 +129,7 @@ script, that there is in fact no god but Allah, and that Muhammad was
 the last of His Prophets.  With this recognition, all else became empty
 and meaningless.
 ~
-15 d 0
+15 8 0 0 0 0
 D1
 ~
 ~
@@ -149,7 +149,7 @@ Earthly Evil~
 all with arms.  When an angry man thirsts for blood anything will serve
 him for a spear.  Fury turns a stick into a cudgel.
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -166,7 +166,7 @@ failed to do.  It is these, the poor souls that were presented the
 fair evidence and rejected it with an honest mind, that deserve our
 pity the most of all.
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -183,7 +183,7 @@ Jesus: the devil offered him a kingdom, vast riches, the temptation of
 a glorious near-death saved by his angels.  Even this Messenger of God
 was forced to stop and think.  Imagine how hard it could be for the rest.
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -202,7 +202,7 @@ riches and riding in tattered rags through his capital on the back of a
 donkey.  Despite all this, remember.  Behind closed doors, all men are
 hypocrites.
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -221,7 +221,7 @@ much louder, a mechanical preaching that drowns your ears in anger.  You
 hear a steady, repetitive litany of the same phrase, over and over again:
 "I go the way history dictates with the blind assurance of a sleep-walker."
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -238,7 +238,7 @@ the face.  Others are more clever, more subtle, and it is these that present
 the greatest danger.  Looking down the hall before you, a great fear fills
 your heart, and a great, heavy longing.
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -254,7 +254,7 @@ The Fall~
 and God's most loved creation.  Look at your own beauty, human, and do what
 he could not.  Look at your beauty, and learn to kneel!
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -271,7 +271,7 @@ be a better man... if..."  And that if is usually taken, sitting alone,
 listening to that voice, calling you, offering such an easy way, but such
 a crooked one.
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -287,7 +287,7 @@ The Last Day~
 erupting at the shakings of the End Time.  Be ready for that day, be very
 ready, for if you are not, he will claim you for one of his own.
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -304,7 +304,7 @@ burning anguish, the inextinguishable fire coming not from some burning
 wood or molten lava but from the brightness and pain of the horrible,
 tortured souls that surround, everywhere you turn.
 ~
-15 ad 0
+15 9 0 0 0 0
 D0
 ~
 ~
@@ -322,7 +322,7 @@ at least once in their lives, and there are still some living who curse
 the very sound of their names.  Despite all this, confront them now, and
 let their actions serve as your example.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -340,7 +340,7 @@ for the future.  The four that came after are called the Rashidun, the
 rightly-guided Caliphs that would spread the word and the light, and with
 it forge one of history's greatest empires.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -358,7 +358,7 @@ to elect the one amongst them they thought was the weakest.  Each time,
 they were wrong.  Each one was more noble, more upright than the one
 before.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -375,7 +375,7 @@ it was with the golden age of the Caliphate.  The Rashidun were pure men,
 good men, true to the path, but their followers soon began to bicker, and
 civil war was on the horizon.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -393,7 +393,7 @@ insufficient example to the faithful.  Ali died, and some say that
 with him the Caliphate died too, a martyr, his blood still flowing in
 the nameless river.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -410,7 +410,7 @@ his believers to walk the path of light without guidance.  He provided the
 Prophets, may peace be upon them, and in the examples of their own growth,
 we shall find the truth of our own.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -426,7 +426,7 @@ Creation~
 night and day, there are signs for men of sense; those that remember Allah
 say: "Lord, You have not created this in vain!"
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -443,7 +443,7 @@ cannot!"  The order was repeated three times, until the Angel himself
 said: "Read, in the name of your Lord who created man from clots of blood.
 Praise be to God, Lord of the Universe."
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -460,7 +460,7 @@ what I worship.  I shall never worship what you worship, nor will you
 ever worship what I worship.  You have your own religion, and I have
 mine.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -476,7 +476,7 @@ Deliverance~
 measurement taken.  For those that have come this far, surely this is the
 day of immortality!
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -492,7 +492,7 @@ Repentance~
 and wise.  But He will not forgive those who do evil, and when death comes
 to them, say: "Now we repent!"  For those We have prepared a woeful scourge.
 ~
-15 ad 0
+15 9 0 0 0 0
 D1
 ~
 ~
@@ -513,7 +513,7 @@ in their lifetime, if they are able, and for those unfortunate enough to
 follow the lives of the lower evils, such a pilgrimage with an open and
 contrite heart shall absolve them of all.
 ~
-15 ad 0
+15 9 0 0 0 0
 D1
 ~
 ~
@@ -533,7 +533,7 @@ Intercession~
 No prayers from another may save the soul of a doomed man; his only hope
 is prayers of his own.
 ~
-15 ad 0
+15 9 0 0 0 0
 D2
 ~
 ~
@@ -553,7 +553,7 @@ The Upper Reaches~
 of the true models of the Prophet.  Only the final journey awaits you;
 live like this and you shall live forever.
 ~
-15 d 0
+15 8 0 0 0 0
 D1
 ~
 ~
@@ -573,7 +573,7 @@ The Upper Reaches~
 bare; when Hell burns fiercely and Paradise is brought near: then each
 soul shall know what it has done.
 ~
-15 d 0
+15 8 0 0 0 0
 D1
 ~
 ~
@@ -594,7 +594,7 @@ imitated the evolution of the most perfect soul.  Only one final
 path awaits you; die as the one in the room before, and your death
 will mean nothing.
 ~
-15 d 0
+15 8 0 0 0 0
 D2
 ~
 ~
@@ -614,7 +614,7 @@ The Final Facing~
 remains.  Go forth with a clean heart.  Only the penitent shall find
 what they seek. Continue to receive the reward you deserve.
 ~
-15 cd 0
+15 12 0 0 0 0
 D1
 ~
 ~
@@ -634,7 +634,7 @@ The Final Facing~
 remains.  Go forth with a clean heart.  Only the penitent shall find
 what they seek. Continue to receive the reward you deserve.
 ~
-15 cd 0
+15 12 0 0 0 0
 D0
 ~
 ~
@@ -662,7 +662,7 @@ The Final Facing~
 remains.  Go forth with a clean heart.  Only the penitent shall find
 what they seek. Continue to receive the reward you deserve.
 ~
-15 cd 0
+15 12 0 0 0 0
 D3
 ~
 ~
@@ -683,7 +683,7 @@ You alone we worship, and to You alone we turn for help.  Guide us to
 the Straight Path, the path of those whom You have favored, not of
 those who have gone astray.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -699,7 +699,7 @@ Progression~
 a new creation.  WE created man.  We know the promptings of his soul,
 and are closer to him than his jugular vein.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -715,7 +715,7 @@ Judgment~
 step awaits before a final decision is made and a home given to you for
 all eternity.
 ~
-15 d 0
+15 8 0 0 0 0
 D0
 ~
 ~
@@ -733,7 +733,7 @@ the periphery of the throne and all is bathed in a warm and clean light.
 It is here that the final choice is to be made, and no defiance of yours
 can change the outcome.
 ~
-15 d 0
+15 8 0 0 0 0
 D2
 ~
 ~

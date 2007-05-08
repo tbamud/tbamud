@@ -1484,7 +1484,7 @@ free~
 Drop While Example - Grenade 01301~
 1 h 100
 ~
-* By Rumble of The Builder Academy builderacademy.net 9091
+* By Rumble of The Builder Academy    builderacademy.net 9091
 * A small script to make a grenade go off 3 seconds after it is dropped.
 * Set the rooms ID to a variable.
 set room_var %actor.room%

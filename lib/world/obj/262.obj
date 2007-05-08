@@ -5,7 +5,7 @@ A terribly wicked looking set of bear's claws have been left here.~
 They look as if they might fit well into the palms of your hand -
 maybe to use as weapon, hmm...    
 ~
-5 0 24577 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 2 7 8
 10 200 0 10
 A
@@ -17,7 +17,7 @@ A pile of rattlesnake skin has been dropped here.~
 The skin is naturally decorated by the diamonds that cover the skin of
 most rattlesnakes from the forest area east of Midgaard.    
 ~
-9 0 2049 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 0
 6 40 0 7
 #26202
@@ -26,7 +26,7 @@ a rattlesnake's rattle~
 A severed rattle from a rattlesnake has been dropped here.~
 If there's a rattle here, then where's the rest of the snake?
 ~
-12 0 16385 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 6 30 0 7
 A
@@ -37,7 +37,7 @@ a Wolf's Tooth~
 A wolf's tooth is on the ground.~
 It is slightly yellowed, but still razor sharp.
 ~
-9 0 5 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 4 0 0 0
 4 200 0 12
 #26204
@@ -47,7 +47,7 @@ A set of wolf's paws have been left here.~
 They seem like they would fit right over your own hands as a defense
 against blows and an attack with the claws they still boast.    
 ~
-9 0 129 0
+9 0 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
 10 300 0 12
 A
@@ -58,7 +58,7 @@ a Bear's Fang Necklace~
 A necklace made from bear fangs has been left here.~
 It is long, curved, and scythe-like.
 ~
-9 0 5 0
+9 0 0 0 0 ac 0 0 0 0 0 0 0
 3 0 0 0
 3 100 0 13
 A
@@ -68,7 +68,7 @@ hide bear~
 a bear's hide~
 A furry, shaggy brown hide has been left here.~
 ~
-9 0 1025 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 9 0 0 0
 18 20 0 15
 A
@@ -79,7 +79,7 @@ a bear skull~
 A bear's skull shines with a strange brightness.~
 Strange that a bear's skull would shine with a light - must be enchanted.
 ~
-1 1 16385 0
+1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 200 0
 9 10 0 15
 A

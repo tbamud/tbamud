@@ -3,7 +3,7 @@ water pail water~
 a pail~
 A small metal pail is lying here on the floor.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 20 20 0 0
 20 150 0 0
 E
@@ -15,7 +15,7 @@ bag patchwork~
 a patchwork bag~
 A patchwork bag lies on the ground here.~
 ~
-15 0 a 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
 500 0 -1 0
 2 1 0 0
 E
@@ -27,7 +27,7 @@ boots rubber~
 a pair of rubber boots~
 A pair of rubber boots have been left here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 2 1 0 0
 E
@@ -39,7 +39,7 @@ jacket cowhide~
 a cowhide jacket~
 A cowhide jacket has been left here.~
 ~
-9 0 ak 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
 2 1 0 0
 E
@@ -51,7 +51,7 @@ hat floppy cloth~
 a floppy cloth hat~
 A floppy cloth hat has been tossed on the ground here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 2 1 0 0
 E
@@ -64,7 +64,7 @@ cloak patchwork~
 a patchwork cloak~
 A patchwork cloak lies here, discarded.~
 ~
-9 a ak 0
+9 a 0 0 0 ak 0 0 0 0 0 0 0
 6 0 0 0
 2 1 0 0
 E
@@ -80,7 +80,7 @@ dress flowered~
 a flowered dress~
 A flowered dress has been tossed away in a corner.~
 ~
-9 0 ad 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
 2 79 0 0
 E
@@ -95,7 +95,7 @@ stool~
 a stool~
 A milking stool sits here.~
 ~
-12 0 ao 0
+12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -109,7 +109,7 @@ piano~
 a piano~
 A piano sits in the middle of the floor, looking very lonely.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 E
@@ -121,7 +121,7 @@ whip horse~
 a horse whip~
 A horse whip has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 5 2
 2 1 0 0
 E
@@ -133,7 +133,7 @@ rope~
 some rope~
 A pile of rope has been left here.~
 ~
-12 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0
 #26311
@@ -141,7 +141,7 @@ boots riding~
 a pair of riding boots~
 A pair of riding boots have been left here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 2 1 0 0
 E
@@ -155,7 +155,7 @@ hat horseman~
 a horseman's hat~
 A horseman's hat has been left here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 9 0 0 0
 2 1 0 0
 E
@@ -167,7 +167,7 @@ straw piece~
 a piece of straw~
 A piece of straw has been left here.~
 ~
-9 0 a 0
+9 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
 1 1 0 0
 E
@@ -179,7 +179,7 @@ pants rawhide~
 a pair of rawhide pants~
 A pair of rawhide pants have been left here.~
 ~
-9 0 af 0
+9 0 0 0 0 af 0 0 0 0 0 0 0
 7 0 0 0
 2 1 0 0
 E
@@ -192,7 +192,7 @@ scythe~
 a scythe~
 A field scythe is laying on the floor.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 7 3
 1 1 0 0
 E
@@ -204,7 +204,7 @@ stone skipping~
 a skipping stone~
 A round, flattened stone is here.~
 ~
-12 a ao 0
+12 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -218,7 +218,7 @@ pole fishing bamboo~
 a bamboo fishing pole~
 A bamboo fishing pole has been left here.~
 ~
-12 0 a 0
+12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
 E
@@ -230,7 +230,7 @@ hat straw~
 a straw hat~
 A straw hat has been left here.~
 ~
-9 0 ae 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
 2 1 0 0
 E
@@ -243,7 +243,7 @@ boots steel toed rubber~
 some steel-toed boots~
 Some steel-toed, rubber boots are here.~
 ~
-9 0 ag 0
+9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
 2 300 0 0
 E

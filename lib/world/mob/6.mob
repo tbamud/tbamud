@@ -6,7 +6,7 @@ A snail is here, nestled in the sand.
    The snail looks quite comfortable sitting there in the sand.  You can see
 his small little eyes looking at you, almost watching you.    
 ~
-bd 0 250 E
+10 0 0 0 0 0 0 0 250 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -20,7 +20,7 @@ A clam is here.
    The clam looks dead.  It's just lying there in the sand, but looks can be
 deceiving.    
 ~
-bd 0 -220 E
+10 0 0 0 0 0 0 0 -220 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -34,7 +34,7 @@ An ugly fishfly is here.
    Her wings are quite long and make a soft humming noise when she moves.  He
 is quite ugly, and could easily scare her enemies away.    
 ~
-bd 0 -200 E
+10 0 0 0 0 0 0 0 -200 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 2
@@ -48,7 +48,7 @@ A small crab is crawling around in the sand.
    The claws of this creature are huge!  He could easily tear you apart if you
 provoked him.  His eyes are small and black, almost like death.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -62,7 +62,7 @@ A seagull is here.
    The bird is filthy.  His feather that were once white are now brown from the
 dirt.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 2
@@ -75,7 +75,7 @@ A water snake is at the waters edge.
    He is small and black.  He almost looks like an eel.  He appears to be
 harmless, but looks can be deceiving.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -89,7 +89,7 @@ A large mosquito is here.
    The creature is rather large.  You can see blood sitting in its stomach.  
 How revolting!    
 ~
-bd 0 -220 E
+10 0 0 0 0 0 0 0 -220 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -103,7 +103,7 @@ A beautiful parrot is here.
    The colors of the creature blend like paint on a canvas.  You wonder why
 such a beautiful bird would be on such a small island like this.    
 ~
-bd 0 -250 E
+10 0 0 0 0 0 0 0 -250 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -119,7 +119,7 @@ An ugly little crayfish is here.
    Her eyes are tiny are black, they watch you very cautiously.  She may be
 small, but can move quite fast.    
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -132,7 +132,7 @@ A mean looking lobster is here.
 ~
    His claws are enormous!  He could easily tear you apart if provoked.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -146,7 +146,7 @@ A sparrow is flying around above you.
    She is a beautiful creature.  Her feathers are a light brown.  You see them
 glistening in the sunlight.    
 ~
-bd 0 200 E
+10 0 0 0 0 0 0 0 200 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 2
@@ -160,7 +160,7 @@ The waitress is here, ready to serve you.
    She is a pretty little thing, slender with long brown hair.  She has the
 most friendliest smile you have ever seen.    
 ~
-bdnopr 0 500 E
+188426 0 0 0 0 0 0 0 500 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 2
@@ -175,7 +175,7 @@ Herman the shopkeeper is here.
 some hair on the sides.  He's a short, husky man.  One who would be good at
 protecting what he owns.    
 ~
-bdnopr 0 500 E
+188426 0 0 0 0 0 0 0 500 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -189,7 +189,7 @@ A black widow spider is here.
    The spider is small, but fierce looking.  She looks to be in excellent
 condition.    
 ~
-bd 0 -330 E
+10 0 0 0 0 0 0 0 -330 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -197,13 +197,13 @@ BareHandAttack: 4
 E
 #643
 snake rattlesnake~
-A coiled up rattlesnake is here.~
+a coiled up rattlesnake is here.~
 A coiled up rattle snake is here.
 ~
    The snake is coiled up on the ground, looking at you, ready to attack.  
 Maybe you should just leave it alone.    
 ~
-bd c -400 E
+10 0 0 0 8 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -217,7 +217,7 @@ A wasp is flying around you.
    The wasp is rather large.  You see its incredibly large stinger, waiting to
 dive into your skin!    
 ~
-bd 0 -275 E
+10 0 0 0 0 0 0 0 -275 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 0
@@ -231,7 +231,7 @@ A scorpion is here.
    She is nasty little thing and would kill you without a second thought.  She
 should be the least of your worries.  
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 2
@@ -245,7 +245,7 @@ The scorpion queen is here.
    She looks much tougher than the average scorpion.  She has two stingers
 instead of one!  Maybe you should stay away.  
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -259,7 +259,7 @@ The scorpion leader is standing here.
    He looks at you as his stinger shakes slightly.  You suddenly feel terror
 run through you.  Maybe you shouldn't have come here.    
 ~
-bd 0 -500 E
+10 0 0 0 0 0 0 0 -500 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -273,7 +273,7 @@ Earth dragon is here.
    The creature is quite large.  It towers over you, drooling.  You suddenly
 feel like someones lunch.    
 ~
-bd 0 -350 E
+10 0 0 0 0 0 0 0 -350 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -287,7 +287,7 @@ Purple dragon is here.
    The dragon is purple with glowing yellow eyes.  You are frozen in terror.  
 
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -301,7 +301,7 @@ Ice dragon is here.
    The creture is white and gives off a cold mist of steam.  You can see she
 ice hanging off her scales.    
 ~
-bd c -600 E
+10 0 0 0 8 0 0 0 -600 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -315,7 +315,7 @@ A large polar bear is standing here.
    The bear looks cuddly, but as you look closer you can tell he has long fangs
 stained with blood.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -329,7 +329,7 @@ A cute penguin is here.
    It looks like an average looking penguin.  You see nothing special about it.
   
 ~
-bd 0 -100 E
+10 0 0 0 0 0 0 0 -100 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -342,7 +342,7 @@ A bear is standing in front of you.
 ~
    He is mean looking.  You can hear a sofy growl coming from within him.    
 ~
-bd 0 -300 E
+10 0 0 0 0 0 0 0 -300 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -356,7 +356,7 @@ A fox is here.
    The creature is slightly larger than normal, but looks nice enough.  You
 notice a large scar down the side of it's stomach.    
 ~
-bd 0 -200 E
+10 0 0 0 0 0 0 0 -200 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1

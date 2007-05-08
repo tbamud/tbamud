@@ -6,7 +6,7 @@ A fat cow stand here chewing her cud.
    She may not be the most hygenic animal, but she sure has a good load of fat
 meat on her!  And look at them tits!    
 ~
-bdnq 0 0 E
+73738 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -20,7 +20,7 @@ A mean bull stamps it feet and snorts at you.
    Papa always said make sure you never get behind an angry bull.  Also said
 never get in front of one.  So where does that leave?    
 ~
-bdfnq 0 -200 E
+73770 0 0 0 0 0 0 0 -200 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -34,7 +34,7 @@ A proud war horse tosses its head whinnies.
    This large animal is trained to hate every human except the one who rides
 him.  Beware his kicking hooves!    
 ~
-bdfnpq 0 0 E
+106538 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -47,7 +47,7 @@ A sturdy work horse grazes the tall grass.
 ~
    It takes almost no notice of you, just continues on with it's lunch.    
 ~
-bdnp 0 0 E
+40970 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 2
@@ -61,7 +61,7 @@ The Forgemaster stands near the fire directing his workers in their labors.
    He is quite large with tree-trunk arms.  He is definately not someone to
 trifle with even on one of his bad days.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -74,7 +74,7 @@ A sweating smithy soldier pumps the coals with a bellows.
    The sweat drips from his bare back as makes sure that the fire does not get
 low.    
 ~
-dg 0 200 E
+72 0 0 0 0 0 0 0 200 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -86,7 +86,7 @@ A smithy pounds away at a piece of metal, shaping it into a usable piece.
 ~
    His muscles bulge and the hammer rings.  This guy could do commercials.    
 ~
-dg 0 350 E
+72 0 0 0 0 0 0 0 350 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -99,7 +99,7 @@ A soldier works diligently at tanning hides.
    He wipes his sweating brow and gives a smile.  At least he seems to enjoy
 his work a bit.    
 ~
-dg 0 400 E
+72 0 0 0 0 0 0 0 400 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -112,7 +112,7 @@ A soldier grunts as he lifts a bale of hay up onto the stack.
    He is sweating from most every pore in his body - it does not appear that he
 is enjoying his labors.    
 ~
-dg 0 100 E
+72 0 0 0 0 0 0 0 100 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -125,7 +125,7 @@ A soldier is here branding the cattle and the horses of the Eastern Army.
    He stands with a sly grin on his face, as if he might enjoy his work just a
 bit too much.    
 ~
-cdg 0 -100 E
+76 0 0 0 0 0 0 0 -100 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -137,7 +137,7 @@ A soldier rustles a cow into a prone position so that the brander might place hi
 ~
    He looks strong enough to wrestle an ox - indeed he often does.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 1
@@ -149,7 +149,7 @@ A footman trudges wearily back toward the barracks tents.
 ~
    His job is done for the day and he is quite glad of it!    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -162,7 +162,7 @@ General Tso walks among his troops, a look of disapproval fixed upon his face.
    Tso appears the type that would never be satisfied no matter what the length
 a soldier might go to to obtain his approval.    
 ~
-dg 0 200 E
+72 0 0 0 0 0 0 0 200 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -175,7 +175,7 @@ A patrolman walks his rounds, watching for signs of invasion.
    He does not appear all that concerned about invaders as he drearily walks
 his rounds.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -188,7 +188,7 @@ An army scout walks lithely through the camp.
    He moves with a sinous grace that speaks well of his abilities in the
 forest.    
 ~
-dg 0 700 E
+72 0 0 0 0 0 0 0 700 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -201,7 +201,7 @@ The camp surgeon is here tending to the wounded.
    He is a very energetic young man, fully trained by the Eastern Army's best
 surgeons.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -214,7 +214,7 @@ A medic bustles along self-importantly.
    He gives you a look and sees that you don't appear hurt.  He then pointedly
 ignores you and continues on.    
 ~
-dg 0 100 E
+72 0 0 0 0 0 0 0 100 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -227,7 +227,7 @@ A marksman keeps a keen eye out for trouble.
    He looks a bit startled at your intrusion, but quickly recovers seeing that
 you are not the enemy and goes back to watching out the peepholes.    
 ~
-bdg 0 400 E
+74 0 0 0 0 0 0 0 400 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -239,7 +239,7 @@ A wounded soldier limps past.
 ~
    He gives you a curt nod and then continues on his way.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -252,7 +252,7 @@ An off-duty cavalry officer walks past.
    He has that odd gait that suggests that more of his time is spent in the
 saddle than on his feet.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -265,7 +265,7 @@ A young soldier is here filling his water pails to carry them up to the mess ten
    He grumbles under his breath as he works, feeling that his position in the
 Army's ranks are very unfair.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -278,7 +278,7 @@ A soldier looks up in shock as you enter into this small and private area with h
    He clutches to the sides of the seat, wondering just what sort of person
 would intrude on one in such a place!    
 ~
-dg 0 800 E
+72 0 0 0 0 0 0 0 800 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1

@@ -5,7 +5,7 @@ Goethe is here, staring blindly into space.
 ~
    Goethe exudes an aura of verbosity.    
 ~
-bdnopr h 1000 E
+188426 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 6 6 1
@@ -18,7 +18,7 @@ Harry the Hare Krishna is busy burning incense and singing.
    Harry is a tall man with a shaven head and a long pony tail...  Gee I wonder
 if he is a Hare Krishna.    
 ~
-bdnopr 0 900 E
+188426 0 0 0 0 0 0 0 900 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -32,7 +32,7 @@ Wally the Wizard is busy playing with his magical items.
 unusual magic items.  When he looks at you, he doesn't seem to be completely
 there.    
 ~
-bdnopr 0 1000 E
+188426 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -45,7 +45,7 @@ A policeman is here, walking his beat.
    Specifically recruited by the upper class people of New Sparta, there is no
 one more respectable and honest than the on-duty policeman.    
 ~
-dgl 0 1000 E
+2120 0 0 0 0 0 0 0 1000 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -59,7 +59,7 @@ A cop is wandering around looking for doughnuts.
 tends to look the other way.  He seems to be more interested in filling his
 belly with doughnuts than in protecting the city.    
 ~
-dghl 0 0 E
+2248 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -72,7 +72,7 @@ A mugger is thinking about taking your money or your life.
    Driven to desperate measures, this leech of society is after one thing...  
 Your money.  He'll do anything to get it too.    
 ~
-cdg 0 -350 E
+76 0 0 0 0 0 0 0 -350 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -85,7 +85,7 @@ A tourist is here, taking in the sights.
    Every metropolis has them, well so does New Sparta.  Be careful not to get
 caught in their line of sight.    
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 0
@@ -98,7 +98,7 @@ Norm is drinking another beer.
    You see Norm from Cheers, he is big, fat, drinks a lot and is an overall
 jolly fellow.    
 ~
-bde 0 800 E
+26 0 0 0 0 0 0 0 800 E
 6 18 6 1d1+60 1d2+1
 60 3600
 6 6 1
@@ -111,7 +111,7 @@ Cliff is rattling off useless trivia.
    A postal worker who never seems to be doing his job, Cliff is out of touch
 with reality and tends to be annoying--even to his friends.    
 ~
-bcdeh 0 1000 E
+158 0 0 0 0 0 0 0 1000 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -123,7 +123,7 @@ Carla is waiting on tables.
 ~
    Carla splashes a drink in your face.    
 ~
-cdg 0 -800 E
+76 0 0 0 0 0 0 0 -800 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 2
@@ -136,7 +136,7 @@ Woody is waiting to serve you a drink.
    A farm boy from Indiana, he has not quite fit into the atmosphere of the big
 city yet.    
 ~
-bdnopr 0 1000 E
+188426 0 0 0 0 0 0 0 1000 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -150,7 +150,7 @@ Mayor Abe is about, inspecting the city.
 helping the community.  Not a man to be trifled with, the Mayor is reputed to
 have ties with the mob kingpin -- Lucifer.    
 ~
-dg 0 -900 E
+72 0 0 0 0 0 0 0 -900 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -163,7 +163,7 @@ Rebecca Howe is hurrying about making sure Cheers is in order.
    A very harried but yet beautiful woman.  Most of her anguish stems from her
 sexual frustrations and from attempting to keep Cheers in order.    
 ~
-dg 0 900 E
+72 0 0 0 0 0 0 0 900 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 2
@@ -176,7 +176,7 @@ Sam is here, hitting on the women.
    A very handsome, self-assured ex-baseball player who is very popular with
 the ladies, but often finds himself in sticky situations.    
 ~
-dg 0 900 E
+72 0 0 0 0 0 0 0 900 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -189,7 +189,7 @@ Frasier is here psychoanalyzing patrons in the bar.
    Though very emotionally unstable for a psychiatrist, Dr.  Crane tries to aid
 people with their problems while creating his own.    
 ~
-dg 0 900 E
+72 0 0 0 0 0 0 0 900 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -202,7 +202,7 @@ Lilith is sitting at the bar, keeping a watchful eye on Frasier.
    A calm, thoroughly rational and logical thinker on the outside -- a wild,
 crazy, sexual goddess on the inside.    
 ~
-bdg 0 900 E
+74 0 0 0 0 0 0 0 900 E
 9 17 4 1d1+90 1d2+1
 90 8100
 6 6 2
@@ -215,7 +215,7 @@ Paul is here, drinking a beer.
    Paul is a robust man, who tends to be a bit childish when around Norm and
 Cliff.    
 ~
-deg 0 800 E
+88 0 0 0 0 0 0 0 800 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -228,7 +228,7 @@ An alley cat is looking for food.
    This is an everyday unwanted alley cat who spends most of his day looking
 for food.    
 ~
-bdh 0 0 E
+138 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -240,7 +240,7 @@ Pee Wee is doing something you would rather not like to know.
 ~
    Pee Wee is the owner of this peep show, so you'd better not piss him off.  
 ~
-bcd 0 -500 E
+14 0 0 0 0 0 0 0 -500 E
 3 19 8 0d0+30 1d2+0
 30 900
 6 6 1
@@ -253,7 +253,7 @@ A punk is here, deciding what colour to spray paint your back.
    You see a punk who is more than willing to knock off an old lady for a few
 bucks.    
 ~
-cdg t -400 E
+76 0 0 0 1048576 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -265,7 +265,7 @@ A skinhead is here, looking for a punk to kill.
 ~
    Skinheads are mean and nasty...  Better not stare too long.    
 ~
-cdg 0 -500 E
+76 0 0 0 0 0 0 0 -500 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -277,7 +277,7 @@ A prostitute is soliciting you.
 ~
    When you look at her she says, 'Hey baby, wanna party?  '
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -289,7 +289,7 @@ Jonathan Hill is here, welcoming his costumers.
 ~
    This is the evil bald-headed guy who runs Melville's.    
 ~
-bd 0 -1000 E
+10 0 0 0 0 0 0 0 -1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -301,7 +301,7 @@ The Bishop is here, looking for a crime to solve.
 ~
    Da Da Deah (sorry for the bad sound effects)!  It's the Bishop!    
 ~
-deg 0 1000 E
+88 0 0 0 0 0 0 0 1000 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -314,7 +314,7 @@ A dockworker is busy moving crates.
    Dockworkers get very strong from lifting crates and the size of his muscles
 make you think twice about attacking him.    
 ~
-cdg 0 500 E
+76 0 0 0 0 0 0 0 500 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -327,7 +327,7 @@ A prostitute is here, looking for customers.
    When you take a closer look, you realize that this is not the lovely lady
 you first laid eyes on, but is really just a female impersonator.    
 ~
-cdg 0 -350 E
+76 0 0 0 0 0 0 0 -350 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -342,7 +342,7 @@ A pimp is busy counting his money to see if his women have been cheating him.
         not some, not half
         but all my cash!
 ~
-cdg 0 -700 E
+76 0 0 0 0 0 0 0 -700 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -355,7 +355,7 @@ A Raiders' lineman is here hunting for the ball.
    This is one of Orcland's lineman.  He is a balanced player, but has no
 outstanding abilities.    
 ~
-cdg 0 -700 E
+76 0 0 0 0 0 0 0 -700 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -368,7 +368,7 @@ A Warriors' lineman is here hunting for the ball.
    This is one of New Sparta's lineman.  He is a balanced player, but has no
 outstanding abilities.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -381,7 +381,7 @@ A Raiders' receiver is here running a pattern.
    This is one of the Orcs' skilled receivers.  He is quick, but not very
 powerful.    
 ~
-cdg 0 -700 E
+76 0 0 0 0 0 0 0 -700 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -394,7 +394,7 @@ A Warriors' receiver is here running a pattern.
    This is one of the Warriors' skilled receiver.  He is quick, but not very
 powerful.    
 ~
-cdg 0 700 E
+76 0 0 0 0 0 0 0 700 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -408,7 +408,7 @@ A Raiders' blocker is trying to pave an open pathway.
 However, he is also very large and powerful, so be careful when tangling with
 him.    
 ~
-cdg 0 -700 E
+76 0 0 0 0 0 0 0 -700 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -422,7 +422,7 @@ A Warriors' blocker is trying to pave an open pathway.
 However, he is also very large and powerful, so be careful when tangling with
 him.    
 ~
-cdg 0 700 E
+76 0 0 0 0 0 0 0 700 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -435,7 +435,7 @@ A Raiders' thrower, attempting a pass.
    Similar to a quarterback, this is a player with both mobility and a cannon
 for an arm.  He can also hold his own when hitting with the big boys.    
 ~
-cdg 0 -700 E
+76 0 0 0 0 0 0 0 -700 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -448,7 +448,7 @@ A Warriors' thrower, attempting a pass.
    Similar to a quarterback, this is a player with both mobility and a cannon
 for an arm.  He can also hold his own when hitting with the big boys.    
 ~
-cdg 0 700 E
+76 0 0 0 0 0 0 0 700 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -461,7 +461,7 @@ A fierce Raiders' blitzer, waiting to tear someone limb from limb.
    An all-around fearsome athlete, the blitzer is the toughest most aggressive
 player on the bloodbowl field.    
 ~
-bcd 0 -800 E
+14 0 0 0 0 0 0 0 -800 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -474,7 +474,7 @@ A fierce Warriors' blitzer, waiting to tear someone limb from limb.
    An all-around fearsome athlete, the blitzer is the toughest most aggressive
 player on the bloodbowl field.    
 ~
-cdg 0 800 E
+76 0 0 0 0 0 0 0 800 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -486,7 +486,7 @@ A loyal fan is here enjoying the game.
 ~
    Your average sports fan, who attends a game now and then.    
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -498,7 +498,7 @@ A child is here, wandering around.
 ~
    Awww, how cute!!!    
 ~
-dg 0 1000 E
+72 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -510,7 +510,7 @@ A vendor is here peddling his goods.
 ~
    A merchant with a variety of goods, with nothing you particularly need.    
 ~
-cdg 0 700 E
+76 0 0 0 0 0 0 0 700 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -522,7 +522,7 @@ A construction worker is here on his break.
 ~
    A strong, dirty, harsh-talking construction worker.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -534,7 +534,7 @@ A drunk, rowdy fan is here, making an ass of himself.
 ~
    Sit down, sit down, sit down, sit down -- sit down you're rocking the boat.
 ~
-dg 0 -400 E
+72 0 0 0 0 0 0 0 -400 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -546,7 +546,7 @@ A Security Guard is here, attempting to maintain order.
 ~
    Not as efficient as a police officer, but then not as expensive either.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -560,7 +560,7 @@ Fire Marshall Bob is busy trying to extinguish the fire that is on his back.
 fires in his day than he's actually extinguished.  Just another sad example of
 nepotism in today's world!    
 ~
-cdg d 350 E
+76 0 0 0 16 0 0 0 350 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -574,7 +574,7 @@ A fireman is here, looking rather useless.
 somewhere, so they wound up here.  Obviously, it is a very cushy job because
 there are no real fires in New Sparta.    
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -587,7 +587,7 @@ A whore is looking for customers.
    The only good attribute of this beast is her low prices, which would explain
 why she is always busy with punks and skinheads.    
 ~
-bd 0 -400 E
+10 0 0 0 0 0 0 0 -400 E
 4 19 7 0d0+40 1d2+0
 40 1600
 5 5 2
@@ -600,7 +600,7 @@ A minor throat is busy doing homework.
    This is one of the weakest of the evil inhabitants of the library.  They
 will do anything for a good grade or to keep a good man down.    
 ~
-cdg t -1000 E
+76 0 0 0 1048576 0 0 0 -1000 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -613,7 +613,7 @@ A throat is here, looking for someone's notes to steal.
    This is one of the most populated species of the library.  They are really
 desperate for a good grade.    
 ~
-cdg dt -1000 E
+76 0 0 0 1048592 0 0 0 -1000 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -626,7 +626,7 @@ A major throat is busy hiding all the science reference books.
    You see a barely human creature that has absolutely no morals or sense of
 dignity.    
 ~
-cdg dt -1000 E
+76 0 0 0 1048592 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -639,7 +639,7 @@ A senior throat is burning all the useful books.
    You see a devilish looking creature that would gladly sell its sister into
 slavery for a good grade.    
 ~
-cdg dt -1000 E
+76 0 0 0 1048592 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -652,7 +652,7 @@ The master throat is here, trying to break into the school records.
    The master throat is the devilish and desperate creature that lacks any
 morals or self dignity.  Watch out, its' eyeing your stuff right now!    
 ~
-bcd dt -1000 E
+14 0 0 0 1048592 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -668,7 +668,7 @@ not always matched by their brains (unfortunately for them, but lucky for YOU!!
 ), though you are positive you could forget about that fact for just a few
 hours.    
 ~
-bdeh 0 1000 E
+154 0 0 0 0 0 0 0 1000 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 2
@@ -683,7 +683,7 @@ face, firm, ample...  And a body that just screams...!  You snap out of your
 daydream and notice that she is frowning at you, as she does not appreciate
 people undressing her with their eyes.    
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -698,7 +698,7 @@ years of eating doughnuts.  He is a jolly Irishman, who for the first time will
 have to do his job without the services of Batman.  Unfortunately for you, he
 actually looks up to the job now!  Looks like he has finally gotten a clue.  
 ~
-bdl dg 1000 E
+2058 0 0 0 144 0 0 0 1000 E
 6 18 6 1d1+60 1d2+1
 60 3600
 6 6 1
@@ -710,7 +710,7 @@ The Warden is here guarding the jail.
 ~
    A staunch proponent of the death penalty, and the keeper of the jail key.  
 ~
-bd 0 1000 E
+10 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -723,7 +723,7 @@ A maid is here cleaning up after the guests.
    The maid is a lady weary from constant upkeep of the hotel who views most of
 mankind as slobs.    
 ~
-bcd 0 900 E
+14 0 0 0 0 0 0 0 900 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -736,7 +736,7 @@ Esprit is behind bars, where he belongs.
    The law finally caught up to this character killer, who is serving an
 indefinite sentence.  May this be a lesson to you all.    
 ~
-bd d -1000 E
+10 0 0 0 16 0 0 0 -1000 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -749,7 +749,7 @@ A cashier is busy filing her nails.
    You see a student working at her part-time job.  She really would rather be
 somewhere else, but needs the money for tuition.    
 ~
-bdnopr 0 900 E
+188426 0 0 0 0 0 0 0 900 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -763,7 +763,7 @@ The cop is sitting here eating doughnuts.
 tends to look the other way.  He seems to be more interested in filling his
 belly with doughnuts than in protecting the city.    
 ~
-bdghl 0 0 E
+2250 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
 70 4900
 6 6 1
@@ -777,7 +777,7 @@ The cop is sitting here having a drink.
 tends to look the other way.  He seems to be more interested in filling his
 belly with beer than in protecting the city.    
 ~
-bdghl 0 0 E
+2250 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 6 6 1
@@ -790,7 +790,7 @@ A shoplifter is busy stuffing things into her pockets.
    From the size of her pockets, you can see that this is one busy
 kleptomaniac.    
 ~
-bcd 0 -350 E
+14 0 0 0 0 0 0 0 -350 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -803,7 +803,7 @@ A fisherman is waiting to serve you.
    This guy's been around fish so long that he is beginning to look and smell
 like one.    
 ~
-bdnopr 0 900 E
+188426 0 0 0 0 0 0 0 900 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -815,7 +815,7 @@ An arms dealer is cleaning his guns.
 ~
    Like most arms dealers, he has got greased back hair and a slimy moustache.
 ~
-bdnopr 0 350 E
+188426 0 0 0 0 0 0 0 350 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -828,7 +828,7 @@ Raghuram the 7-11 Manager is here.
    Like most 7-11 managers, Raghuram is Indian, and speaks with a near
 incomprehensible accent.    
 ~
-bdnopr 0 900 E
+188426 0 0 0 0 0 0 0 900 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -842,7 +842,7 @@ Launchpad McQuack is here following Darkwing.
 definitely no duck to mess with.  You instinctively retch in reaction to
 looking at this horrible thing!    
 ~
-cdegh dh 1000 E
+220 0 0 0 16 0 0 0 1000 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -855,7 +855,7 @@ A bleached blonde bimbo is bouncing around.
    You can almost feel the intelligence and wisdom points being reduced as you
 feel the blood rush from your head to another part of your anatomy.    
 ~
-bd 0 0 E
+10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -868,7 +868,7 @@ A stripper is here, undressing for your entertainment.
    Wow, you have never seen such large breasts before in your life, it really
 makes you believe that there is a God!  (and he likes big butts too)
 ~
-bd 0 100 E
+10 0 0 0 0 0 0 0 100 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
@@ -882,7 +882,7 @@ A sorcerer is guarding the entrance.
 He is here to guard the Mage's Guild and his superior knowledge of offensive as
 well as defensive spells make him a deadly opponent.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -898,7 +898,7 @@ Faith.  His duty is to protect the faithful from persecution and infidel
 attacks and his religious devotion combined with his superior skill makes him a
 deadly opponent.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -914,7 +914,7 @@ possible, using all sorts of weapons.  His superior knowledge of how and where
 to use them combined with his extraordinary stealth makes him a deadly
 opponent.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -930,7 +930,7 @@ chivalrous deeds.  His duty is to protect the Guild of Swordsmen and his
 extreme skill combined with his experience in warfare makes him a deadly
 opponent.    
 ~
-bd 0 800 E
+10 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -945,7 +945,7 @@ The Mages' Guildmaster is standing here.
 vast amount of knowledge she possesses.  She is wearing fine magic clothing,
 and you notice that she is surrounded by a blue shimmering aura.    
 ~
-bdo 0 1000 E
+16394 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -958,7 +958,7 @@ The Clerics' Guildmaster is standing here.
    You are in no doubt that this Guildmaster is truly close to your god; he has
 a peaceful, loving look.  You notice that he is surrounded by a white aura.  
 ~
-bdo h 1000 E
+16394 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -972,7 +972,7 @@ The Thieves' Guildmaster is standing here.
 the way of the true thief.  She is to be dressed in poor clothing, having the
 appearance of a beggar.    
 ~
-bdo 0 1000 E
+16394 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -986,7 +986,7 @@ The Warriors' Guildmaster is standing here.
 across his body proves that he was using arms before you were born.  He has a
 calm look on his face.    
 ~
-bdo 0 1000 E
+16394 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -998,7 +998,7 @@ A retired Captain stands here, selling boats.
 ~
    This Captain has eaten more sharks than you have killed peas.    
 ~
-bdnopr 0 900 E
+188426 0 0 0 0 0 0 0 900 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -1011,7 +1011,7 @@ An Armourer stands here displaying his shiny new (and previously owned) armour.
    An old but very strong armourer.  He has made more armour in his life than
 you have ever seen.    
 ~
-bdnopr 0 900 E
+188426 0 0 0 0 0 0 0 900 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -1024,7 +1024,7 @@ A receptionist stands in front of you, looking quite bored.
    You notice a tired look in her face.  She looks like she isn't paid well
 enough to put up with any crap from mud players with attitudes.    
 ~
-bd 0 900 E
+10 0 0 0 0 0 0 0 900 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
@@ -1036,7 +1036,7 @@ A waiter is going around from one place to another.
 ~
    A tired looking waiter.    
 ~
-bdnopr 0 900 E
+188426 0 0 0 0 0 0 0 900 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -1049,7 +1049,7 @@ A waiter is going around from one place to another.
    This man was a famous sorcerer in his young days but now leads a quiet,
 peaceful life as a waiter.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 5 19 7 1d1+50 1d2+0
 50 2500
 8 8 1
@@ -1061,7 +1061,7 @@ A waiter is going around from one place to another.
 ~
    This waiter seems to have reach contact with God.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -1073,7 +1073,7 @@ A waiter is going around from one place to another.
 ~
    This waiter knows where all his customers has their money.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 1
@@ -1086,7 +1086,7 @@ A waiter is going around from one place to another.
    The waiter looks like he could easily kill you while still carrying quite a
 few firebreathers.    
 ~
-bd 0 600 E
+10 0 0 0 0 0 0 0 600 E
 7 18 5 1d1+70 1d2+1
 70 4900
 8 8 1
@@ -1098,7 +1098,7 @@ A janitor is walking around, cleaning up.
 ~
    What is there to say?  He is cleaning stuff up.  Wow.  What a thrill.    
 ~
-dgl 0 900 E
+2120 0 0 0 0 0 0 0 900 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -1111,7 +1111,7 @@ A beastly fido is here.
    A fido is a small dog that has a foul smell and pieces of rotted meat
 hanging around its teeth.    
 ~
-dgh 0 -200 E
+200 0 0 0 0 0 0 0 -200 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -1123,7 +1123,7 @@ A singing, happy drunk.
 ~
    A drunk who seems to be too happy, and to carry too much money.    
 ~
-dg 0 400 E
+72 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 1
@@ -1135,7 +1135,7 @@ A small loyal kitten is here.
 ~
    The kitten looks like a cute, little, fierce fighter.    
 ~
-bcd 0 400 E
+14 0 0 0 0 0 0 0 400 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -1147,7 +1147,7 @@ A small loyal puppy is here.
 ~
    The puppy looks like a cute, little, fierce fighter.    
 ~
-bcd 0 400 E
+14 0 0 0 0 0 0 0 400 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -1159,7 +1159,7 @@ A small, quick, loyal beagle is here.
 ~
    The beagle looks like a fierce fighter.    
 ~
-bcd 0 400 E
+14 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
 20 400
 8 8 0
@@ -1171,7 +1171,7 @@ A large, loyal rottweiler is here.
 ~
    The rottweiler looks like a strong, fierce fighter.    
 ~
-bcd 0 400 E
+14 0 0 0 0 0 0 0 400 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -1183,7 +1183,7 @@ A large, trained wolf is here.
 ~
    The wolf looks like a strong, fearless fighter.    
 ~
-bcd 0 0 E
+14 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 0

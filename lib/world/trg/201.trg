@@ -300,46 +300,48 @@ done
 Underwater currents - 20139 20145 20144 20143~
 2 g 100
 ~
-if !(%actor.varexists(breath_air)%)
-  %send% %actor% @WPANIC! You ran out of oxygen and feel as if your lungs are going to burst!@n
-  %damage% %actor% 10
-else
-  %send% %actor% @WYou hold your breath as long as you can before they escape through your mouth as bubbles...@n
-  rdelete breath_air %actor.id%
+if %actor.is_pc%
+  if !(%actor.varexists(breath_air)%)
+    %send% %actor% @WPANIC! You ran out of oxygen and feel as if your lungs are going to burst!@n
+    %damage% %actor% 10
+  else
+    %send% %actor% @WYou hold your breath as long as you can before they escape through your mouth as bubbles...@n
+    rdelete breath_air %actor.id%
+  end
+  eval line %random.10%
+  switch %line%
+    case 1
+      wait 1 secs
+      %send% %actor% @BUnderwater sea currents hauls you @Cnorth@B!@n
+      %echoaround% %actor% @B %actor.name% is pulled @Cnorth@B by invisible hands!@n
+      %force% %actor% north
+    break
+    case 2
+      wait 1 secs
+      %send% %actor% @BUnderwater sea currents hauls you @Csouth@B!@n
+      %echoaround% %actor% @B %actor.name% is pulled @Csouth@B by invisible hands!@n
+      %force% %actor% south
+    break
+    case 3
+      wait 1 secs
+      %send% %actor% @BUnderwater sea currents hauls you @Ceast@B!@n
+      %echoaround% %actor% @B %actor.name% is pulled @Ceast@B by invisible hands!@n
+      %force% %actor% east
+    break
+    case 4
+      wait 1 secs
+      %send% %actor% @BUnderwater sea currents hauls you @Cwest@B!@n
+      %echoaround% %actor% @B %actor.name% is pulled screaming @Cwest@B by the forceful currents!@n
+      %force% %actor% west
+    break
+    default
+      wait 1 secs
+      %send% %actor% @BThe currents suddenly go @Cup@B, and you are dragged above the surface!@n
+      %echoaround% %actor% @BThe currents drags %actor.name% @Cup@B@n
+      %force% %actor% up
+    break
+  done
 end
-eval line %random.10%
-switch %line%
-  case 1
-    wait 1 secs
-    %send% %actor% @BUnderwater sea currents hauls you @Cnorth@B!@n
-    %echoaround% %actor% @B %actor.name% is pulled @Cnorth@B by invisible hands!@n
-    %force% %actor% north
-  break
-  case 2
-    wait 1 secs
-    %send% %actor% @BUnderwater sea currents hauls you @Csouth@B!@n
-    %echoaround% %actor% @B %actor.name% is pulled @Csouth@B by invisible hands!@n
-    %force% %actor% south
-  break
-  case 3
-    wait 1 secs
-    %send% %actor% @BUnderwater sea currents hauls you @Ceast@B!@n
-    %echoaround% %actor% @B %actor.name% is pulled @Ceast@B by invisible hands!@n
-    %force% %actor% east
-  break
-  case 4
-    wait 1 secs
-    %send% %actor% @BUnderwater sea currents hauls you @Cwest@B!@n
-    %echoaround% %actor% @B %actor.name% is pulled screaming @Cwest@B by the forceful currents!@n
-    %force% %actor% west
-  break
-  default
-    wait 1 secs
-    %send% %actor% @BThe currents suddenly go @Cup@B, and you are dragged above the surface!@n
-    %echoaround% %actor% @BThe currents drags %actor.name% @Cup@B@n
-    %force% %actor% up
-  break
-done
 ~
 #20118
 Haplessness - 20146~

@@ -6,7 +6,7 @@ A man runs past, flipping and somersaulting his body in the air as he runs.
    His only break from the constant flips and jumps are when he runs along at a
 steady pace.  He looks your way and gives a wink.    
 ~
-cdg 0 400 E
+76 0 0 0 0 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -20,7 +20,7 @@ A juggler walks slowly past juggling five colored balls in rapid succession.
 gasps of astonishment at her ability in juggling and smiles to excited
 children.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 2
@@ -34,7 +34,7 @@ A street bard wanders past strumming on a lute.
 creating a soulful melody that uplifts spirits and makes the day just a bit
 brighter.    
 ~
-bcdg 0 600 E
+78 0 0 0 0 0 0 0 600 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -47,7 +47,7 @@ A wandering minstrel strolls past, her voice raised in jubilent song.
    She seems entranced by her own song - she sings with eyes closed, with such
 feeling and power.    
 ~
-cdg 0 500 E
+76 0 0 0 0 0 0 0 500 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -61,7 +61,7 @@ A man in bright traveler's garb bids you welcome.
 that his tonics can make a man think better, run quicker and cause the woman of
 his dreams to fall immediately in love with him.    
 ~
-bcdnopr 0 600 E
+188430 0 0 0 0 0 0 0 600 E
 21 13 -2 4d4+210 3d3+3
 210 44100
 8 8 1
@@ -75,7 +75,7 @@ Milissin reads from her tome, her voice changing with each character's lines.
 She can sound mean, sad, scared or happy at will, making her a very effective
 storyteller.    
 ~
-bdnopr 0 800 E
+188426 0 0 0 0 0 0 0 800 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -88,7 +88,7 @@ A small monkey dances in time with the melody of the bard.
    The monkey keeps tethered to the bard's waist by means of a thin rope which
 is attached to a collar around the monkey's neck.    
 ~
-bcdnopr 0 100 E
+188430 0 0 0 0 0 0 0 100 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 0
@@ -101,7 +101,7 @@ A parentless little kid runs past, screaming in delight at the wonders around hi
    He seems to be everywhere at once, a flurry of movement and noise that no
 one can get a lid on.    
 ~
-cdg 0 700 E
+76 0 0 0 0 0 0 0 700 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -115,7 +115,7 @@ An old crone sits unmoving in the darkness of this place.
 toward you or away from you.  Looking closer, you begin to think that she may
 be very blind.    
 ~
-bcd 0 300 E
+14 0 0 0 0 0 0 0 300 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 2
@@ -128,7 +128,7 @@ A woman sits cross-legged on the ground, a deck of strange cards spread out befo
    She concentrates on the cards before her, as if reading something of some
 important in the way they lay on the ground.    
 ~
-bcd 0 300 E
+14 0 0 0 0 0 0 0 300 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -141,7 +141,7 @@ A gypsy dancer sways with the beat of the music, her hips a gyrating phenomenon.
    It is hard not to blush watching this full grown woman go through her
 sensuous moves - but then, it is just as hard to look away.    
 ~
-bcd 0 400 E
+14 0 0 0 0 0 0 0 400 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -154,7 +154,7 @@ A gypsy man attempts to keep time with his female counterpart.
    He is a wondeful dancer in all rights - she is simply a bit more interesting
 to watch than he is .
 ~
-bcd 0 200 E
+14 0 0 0 0 0 0 0 200 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -167,7 +167,7 @@ A man covered in tattoos and piercings serves food from a large grill.
    The man sings and talks jovially to all of his customers, as if there is no
 other place in Dibrova that he would rather be.    
 ~
-bcdnopr 0 800 E
+188430 0 0 0 0 0 0 0 800 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -180,7 +180,7 @@ A little kid bumps into you and goes off running in another direction.
    That almost felt like the little punk was trying to lighten your load a bit.
 Best to try and ask him what his intentions were.    
 ~
-cdg 0 -100 E
+76 0 0 0 0 0 0 0 -100 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -193,7 +193,7 @@ A woman sits upon the grass, watching the performance on the stage.
    She seems riveted by the performance, although there really isn't much to it
 - the actors are definitely not professionals.    
 ~
-bcd 0 800 E
+14 0 0 0 0 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 2
@@ -206,7 +206,7 @@ A vendor walks the festival, carrying a crate filled with foodstuffs.
    She calls in a loud voice to all who will listen to get what she has while
 she still has it - only a few left and going quick.    
 ~
-bcdnopr 0 400 E
+188430 0 0 0 0 0 0 0 400 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -220,7 +220,7 @@ A rootless man roams the festival, heading in no particular direction at all.
 left shoulder.  He meets no eyes nor does he evade them, he simply strolls
 along minding his own business.    
 ~
-cdg 0 200 E
+76 0 0 0 0 0 0 0 200 E
 25 12 -5 5d5+250 4d4+4
 250 62500
 8 8 1
@@ -234,7 +234,7 @@ A bard rests upon the stump, lost in song as he strums his lute.
 song his lute carries.  It must be a fine thing indeed to be so very in tune
 with one's inner self.    
 ~
-bcd 0 600 E
+14 0 0 0 0 0 0 0 600 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -248,7 +248,7 @@ A woman sits at the riverbank, softly playing a song through a bamboo reed.
 flute.  She plays with such skill and feeling that even the wind seems to
 listen to her song.    
 ~
-bcd 0 900 E
+14 0 0 0 0 0 0 0 900 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -261,7 +261,7 @@ A woman dressed as a cat enacts her part in the production.
    The woman sports a long tail and a set of whiskers made to make even the
 most stoic of onlookers grin.  She plays her part well.    
 ~
-bcd 0 89 E
+14 0 0 0 0 0 0 0 89 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -274,7 +274,7 @@ A man dressed as a huge mushroom stands still as he recites his lines.
    It really does not take a great deal of talent to play the part of a
 mushroom, however the man recites his line with precision and clarity.    
 ~
-bcd 0 500 E
+14 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -287,7 +287,7 @@ A gypsy woman kneels at water's edge cleaning her clothes.
    She hums as she scrubs and cleans, apparently happy with her lot in life and
 pleased to be cleaning clothes in a river.    
 ~
-bcd 0 800 E
+14 0 0 0 0 0 0 0 800 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -300,7 +300,7 @@ A burly gypsy mends a broken wheel on the wagon.
    He wears only the baggy pants commonly worn by the gypsy clans, sweat
 pouring from his body.  Maybe you ought to help the poor fella?    
 ~
-bcd 0 400 E
+14 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -313,7 +313,7 @@ A gypsy man shoes a horse, tapping nails in gently.
    He is quite stout but makes up for his lack in height in strength.  His arms
 are heavily muscled and tanned.    
 ~
-bcd 0 600 E
+14 0 0 0 0 0 0 0 600 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -326,7 +326,7 @@ A mime silently moves past, acting as if trapped in a moving glass prison.
    There really is nothing worse than a mime, except maybe a politician.  
 Please put this one out of its misery.    
 ~
-cdg 0 200 E
+76 0 0 0 0 0 0 0 200 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -340,7 +340,7 @@ A smiling gypsy woman paints the faces of delighted children.
 when a new face is painted on and the child leaps from his or her chair,
 laughing in delight.    
 ~
-bcd 0 800 E
+14 0 0 0 0 0 0 0 800 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 2
@@ -353,7 +353,7 @@ One of the performers rests after a gruelling performance on stage.
    He massages his shins and lower legs, getting the cramps out from the
 performances onstage.    
 ~
-bcd 0 600 E
+14 0 0 0 0 0 0 0 600 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -365,7 +365,7 @@ A woman lies on her back, catching her breath after a tiring show.
 ~
    She stares at the sky as she breathes, lost in thought.    
 ~
-bcd 0 600 E
+14 0 0 0 0 0 0 0 600 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 2
@@ -378,7 +378,7 @@ A townsman walks along, taking in the sights and sounds of the festival.
    He walks along attempting to appear unimpressed by the antics of the
 gypsies, however his open eyes and twisting neck give him away.    
 ~
-cdg 0 500 E
+76 0 0 0 0 0 0 0 500 E
 29 11 -7 5d5+290 4d4+4
 290 84100
 8 8 1
@@ -391,7 +391,7 @@ A wide-eyed countryman walks the festival, amazed at all the people and sights.
    This bumpkin makes no attempt to hide the fact that he only sees this many
 people when he comes to town once a month - and then only the same faces.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -405,7 +405,7 @@ A townswoman sniffs at the workers of the festival, taken aback at their filthin
 level of stature as she and that they should pay heed to where she treads.  
 Most of them pay her no heed at all.    
 ~
-cdg 0 500 E
+76 0 0 0 0 0 0 0 500 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -419,7 +419,7 @@ An elven wanderer walks the festival, his gait steady and dextrous.
 he still keeps one hand on his dagger - just in case any of those MoS types
 show up.    
 ~
-cdg 0 600 E
+76 0 0 0 0 0 0 0 600 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 1
@@ -432,7 +432,7 @@ A stout countryman's wife bounces through the festival, smiling warmly.
    She seems so happy, so pleased to be out and about among people.  Poor
 thing, she must not get out very much.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 2
@@ -445,7 +445,7 @@ A farmer walks through the festival with a disbelieving look fixed upon his face
    This is a simple man, a man of low birth who has never known much of the
 fine life or wandering.  All of this is almost too much.    
 ~
-cdg 0 600 E
+76 0 0 0 0 0 0 0 600 E
 19 14 -1 3d3+190 3d3+3
 190 36100
 8 8 1
@@ -457,7 +457,7 @@ A woman in a simple spun dress looks around in joy and wonder.
 ~
    She looks around in all directions, trying to see everything at once.    
 ~
-cdg 0 700 E
+76 0 0 0 0 0 0 0 700 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 2
@@ -470,7 +470,7 @@ A midget runs through the crowds, backflipping and somersaulting.
    He does all of his tricks with a smile and a flourish, sometimes including
 people in his routine as he dives and rolls between their legs.    
 ~
-cdg 0 0 E
+76 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 1
@@ -483,7 +483,7 @@ A man walks through the festival on tall wooden poles.
    The poles seem almost an extension of his own legs.  He never falters,
 stumbles or rests for any period of time.    
 ~
-cdg 0 600 E
+76 0 0 0 0 0 0 0 600 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -497,7 +497,7 @@ A gyspsy lounges on the grass, arms folded under his head.
 put, nap in the middle of this throng of people.  He rests easily, his chest
 rising and falling in rythymic sleeping patterns.    
 ~
-bcd 0 600 E
+14 0 0 0 0 0 0 0 600 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
@@ -510,7 +510,7 @@ A man in a silver tunic juggles curved broadswords with his partner.
    He tosses the swords, spinning them away as fast as he catches them toward
 his partner in red who does just the same right back.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -524,7 +524,7 @@ A man in a red tunic juggles curved broadswords with his partner.
 talks animatedly with the crowd, urging them to throw a coin or two their way.
   
 ~
-dg 0 500 E
+72 0 0 0 0 0 0 0 500 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -537,7 +537,7 @@ A woman tends to the animals, keeping a close watch on them.
    Her main function is to be sure that these animals do not injure the
 children who pet them.  And that is exactly what she does.    
 ~
-dg 0 700 E
+72 0 0 0 0 0 0 0 700 E
 24 12 -4 4d4+240 4d4+4
 240 57600
 8 8 2
@@ -549,7 +549,7 @@ A child runs past, his face painted like a lion.
 ~
    He looks up at you.  He smirks and says, 'Roar.  '
 ~
-cdg 0 800 E
+76 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -562,7 +562,7 @@ A man stares off into space, reciting his lines quickly and quietly.
    He bobs his head with each word he whispers, as if agreeing that what he is
 saying are the proper lines, psyching himself for his time on stage.    
 ~
-bcd 0 600 E
+14 0 0 0 0 0 0 0 600 E
 17 15 0 3d3+170 2d2+2
 170 28900
 8 8 1
@@ -575,7 +575,7 @@ A woman nervously paces back and forth at the edge of the stage.
    As she paces along she mutters to herself, praising her own ability to sing
 and dance, giving herself confidence for her time on stage.    
 ~
-bcd 0 300 E
+14 0 0 0 0 0 0 0 300 E
 18 14 0 3d3+180 3d3+3
 180 32400
 8 8 2
@@ -588,7 +588,7 @@ A child pushes past, her face painted up like a kitty-cat.
    She squeals in delight as she runs along, meowing and purring at intervals.
   
 ~
-cdg 0 800 E
+76 0 0 0 0 0 0 0 800 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 2
@@ -601,7 +601,7 @@ A child with a painted-on skeleton face looks somberly up at you.
    It is only face paint, but he appears to be taking his role quite seriously.
   
 ~
-cdg 0 900 E
+76 0 0 0 0 0 0 0 900 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 1
@@ -615,7 +615,7 @@ A man leans out of his cart, bidding you to take a look at his fine goods.
 set of soiled robes which have at least on hue of every color under the sun on
 them.    
 ~
-bcdnopr 0 600 E
+188430 0 0 0 0 0 0 0 600 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -628,7 +628,7 @@ A woman draped in awful-colored clothing stands proudly at her wagon.
    She offers the 'finest in all the land' for exotic cloth, found only at the
 outer fringes of the world and beyond.    
 ~
-bdgnopr 0 300 E
+188490 0 0 0 0 0 0 0 300 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -641,7 +641,7 @@ A woman draped in cheap jewelry beckons you in closer.
    She bids you to take a look at her fine wares, all at a price which can be
 made specially for you - but only today, right now!    
 ~
-bdnopr 0 400 E
+188426 0 0 0 0 0 0 0 400 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -654,7 +654,7 @@ The puppet master causes his little creatures to dance and cavort comically.
    He looks up from time to time to make sure his audience is enjoying the
 show, but for the most part this rat-nosed man seems engrossed in his job.    
 ~
-bcd 0 800 E
+14 0 0 0 0 0 0 0 800 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -667,7 +667,7 @@ A sturdy pack horse patiently waits on his shoes.
    Every now again a muffled snort or a swish of the tail is affected - other
 than that, it just stands there looking bored.    
 ~
-dg 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -680,7 +680,7 @@ A gypsy man with a big sloppy grin serves the ale.
    His eyes are a bit red around the edges, his smile a bit too loose.  He may
 have taken a couple swills himself...    
 ~
-bcdnopr 0 500 E
+188430 0 0 0 0 0 0 0 500 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 1
@@ -692,7 +692,7 @@ A man is here throwing back the beers.
 ~
    He is a tall, broad-shouldered man who takes his drink very seriously.    
 ~
-dg 0 600 E
+72 0 0 0 0 0 0 0 600 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -705,7 +705,7 @@ A farmer drinks some ale as he watches the stage show.
    It doesn't appear that he is a heavy drinker, but he does keep a firm grip
 on his mug.  Maybe he is afraid the missus will take it away...    
 ~
-dg 0 400 E
+72 0 0 0 0 0 0 0 400 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -718,7 +718,7 @@ One of the locals of the area stands near the keg, refilling his glass frequentl
    He tries to start conversations with just about anyone who will listen - he
 has a story for just about everything.    
 ~
-dg 0 300 E
+72 0 0 0 0 0 0 0 300 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -730,7 +730,7 @@ A farmhand watches starry-eyed as the gypsy dancer moves her hips.
 ~
    He looks no older than fifteen or sixteen, with freckles and all.    
 ~
-bcd 0 500 E
+14 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -742,7 +742,7 @@ A young lad of the city blushes as he watches the gypsy dancer move.
 ~
    He may be blushing, but he sure ain't turning around, either.    
 ~
-bcd 0 800 E
+14 0 0 0 0 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
@@ -755,7 +755,7 @@ An older woman clucks in disapproval at the display onstage.
    She sure makes a lot of racket for someone who hasn't moved from her spot in
 front of male gypsy dancer for the last hour and a half.    
 ~
-bcd 0 500 E
+14 0 0 0 0 0 0 0 500 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 2
@@ -767,7 +767,7 @@ A gypsy watches his fellow brethren as they go about their dance.
 ~
    He must be on break or between shows, the lucky guy.    
 ~
-bcd 0 700 E
+14 0 0 0 0 0 0 0 700 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 1
@@ -780,7 +780,7 @@ A young country girl watches in rapture as the dancers make their exotic moves.
    This poor little dear is certainly a candidate for recruitment into the
 gypsy band.    
 ~
-bcd 0 700 E
+14 0 0 0 0 0 0 0 700 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 2
@@ -793,7 +793,7 @@ A gypsy woman prepares food for the hungry festival-goers.
    She is spattered in stains and grease, but seems to be enjoying herself just
 the same.    
 ~
-bcd 0 600 E
+14 0 0 0 0 0 0 0 600 E
 22 13 -3 4d4+220 3d3+3
 220 48400
 8 8 2
@@ -806,7 +806,7 @@ An excited child waits as he gets his face painted.
    He tries not to appear too excited, but he bounces from foot to foot with
 anticipation in his eyes.    
 ~
-dg 0 800 E
+72 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -820,7 +820,7 @@ A wide-eyed child listens raptly to the story.
 notice it.  He stares up in awe at the storyteller as the relates the story.  
 
 ~
-bcd 0 900 E
+14 0 0 0 0 0 0 0 900 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -833,7 +833,7 @@ A little girl listens raptly as the story unfolds.
    Her ponytails droop unmoving as she listens to the story, not moving muscle,
 listening with every part of her being.    
 ~
-bcd 0 800 E
+14 0 0 0 0 0 0 0 800 E
 12 16 2 2d2+120 2d2+2
 120 14400
 8 8 2
@@ -846,7 +846,7 @@ A young lad listens to the story with wonder in his eyes.
    He almost looks as if he were in a trance of some sort, lost so deeply in
 the plot of the story that he lost track of the real world.    
 ~
-bcd 0 800 E
+14 0 0 0 0 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 1
@@ -861,7 +861,7 @@ features are warm and friendly, and he seems overly exciting to satisfy your
 request.  He is dressed in the traditional butler's garb and is standing
 upright like a englishman should.    
 ~
-bdelnopqr 0 0 E
+256026 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0

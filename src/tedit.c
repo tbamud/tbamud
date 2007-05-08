@@ -150,6 +150,6 @@ ACMD(do_tedit)
   string_write(ch->desc, (char **)fields[l].buffer, fields[l].size, 0, backstr);
 
   act("$n begins editing a scroll.", TRUE, ch, 0, 0, TO_ROOM);
-  SET_BIT(PLR_FLAGS(ch), PLR_WRITING);
+  SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
   STATE(ch->desc) = CON_TEDIT;
 }

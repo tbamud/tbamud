@@ -3,7 +3,7 @@ vase painted~
 a painted vase~
 A painted vase lies in the corner.~
 ~
-15 a ao 0
+15 a 0 0 0 ao 0 0 0 0 0 0 0
 10 5 -1 4
 1 100 0 0
 E
@@ -15,7 +15,7 @@ key silver~
 a silver key~
 A silver key waits in the dust here.~
 ~
-18 q ao 0
+18 q 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 4
 1 10 0 0
 E
@@ -27,7 +27,7 @@ key white queen~
 a queens white key~
 A white key is here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 4
 1 10 0 0
 E
@@ -39,7 +39,7 @@ key black queen~
 a queens black key~
 A black key is here.~
 ~
-18 0 ao 0
+18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 4
 1 10 0 0
 E
@@ -51,7 +51,7 @@ loincloth~
 a dirty loincloth~
 A trolls dirty loincloth lies crumpled in the corner.~
 ~
-9 0 al 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 1
 3 100 0 0
 E
@@ -63,7 +63,7 @@ potion vial~
 a pawn's potion~
 A tiny vial lies on the ground here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 10 3 4 14
 1 100 0 0
 #30506
@@ -71,7 +71,7 @@ scroll~
 a rook's scroll~
 A yellowed scroll has been left on the ground here.~
 ~
-2 0 ao 0
+2 0 0 0 0 ao 0 0 0 0 0 0 0
 10 29 -1 -1
 1 100 0 0
 #30507
@@ -79,7 +79,7 @@ lance~
 a knight's lance~
 A sturdy lance has been left here.~
 ~
-5 0 an 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 2 5
 5 100 0 0
 #30508
@@ -87,7 +87,7 @@ staff~
 a bishop's staff~
 A polished staff lies on the ground here.~
 ~
-4 0 ao 0
+4 0 0 0 0 ao 0 0 0 0 0 0 0
 10 3 3 4
 3 100 0 0
 #30509
@@ -95,7 +95,7 @@ skin~
 a silvery skin~
 A silvery skin lies on the ground here.~
 ~
-4 0 ao 0
+4 0 0 0 0 ao 0 0 0 0 0 0 0
 10 3 3 21
 3 100 0 0
 #30510
@@ -103,7 +103,7 @@ shield~
 a king's shield~
 A large shield is here.~
 ~
-15 0 aj 0
+15 0 0 0 0 aj 0 0 0 0 0 0 0
 100 5 -1 21
 10 100 0 0
 #30511
@@ -111,7 +111,7 @@ potion diamond~
 a diamond potion~
 A potion with a diamond scratched in it is here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 10 35 -1 -1
 1 100 0 0
 #30512
@@ -119,7 +119,7 @@ potion heart~
 a heart potion~
 A potion with a heart scratched in it is here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 10 39 -1 -1
 1 100 0 0
 #30513
@@ -127,7 +127,7 @@ potion club~
 a club potion~
 A potion with a club scratched in it is here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 10 -1 -1 -1
 1 100 0 0
 #30514
@@ -135,7 +135,7 @@ potion spade~
 a spade potion~
 A potion with a spade scratched in it is here.~
 ~
-10 0 ao 0
+10 0 0 0 0 ao 0 0 0 0 0 0 0
 10 -1 -1 -1
 1 100 0 0
 #30515
@@ -143,7 +143,7 @@ cap dunce~
 the Joker's cap~
 A Joker's cap is crumpled up on the floor here.~
 ~
-15 0 ae 0
+15 0 0 0 0 ae 0 0 0 0 0 0 0
 100 5 -1 1
 2 100 0 0
 #30516
@@ -151,7 +151,7 @@ circlet~
 the Joker's circlet~
 A circlet lies on the floor here.~
 ~
-15 0 ae 0
+15 0 0 0 0 ae 0 0 0 0 0 0 0
 100 5 -1 1
 2 100 0 0
 #30517
@@ -159,7 +159,7 @@ teacup cup tea~
 a teacup~
 A small teacup rests here.~
 ~
-17 0 a 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 30 30 11 -1
 35 1 0 1
 $~
