@@ -86,7 +86,8 @@ void appear(struct char_data *ch)
   if (affected_by_spell(ch, SPELL_INVISIBLE))
     affect_from_char(ch, SPELL_INVISIBLE);
 
-  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_INVISIBLE | AFF_HIDE);
+  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_INVISIBLE);
+  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_HIDE);
 
   if (GET_LEVEL(ch) < LVL_IMMORT)
     act("$n slowly fades into existence.", FALSE, ch, 0, 0, TO_ROOM);
@@ -371,8 +372,10 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
 void die(struct char_data * ch, struct char_data * killer)
 {
   gain_exp(ch, -(GET_EXP(ch) / 2));
-  if (!IS_NPC(ch))
-    REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_KILLER | PLR_THIEF);
+  if (!IS_NPC(ch)) {
+    REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_KILLER);
+    REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_THIEF);
+  }
   raw_kill(ch, killer);
 }
 

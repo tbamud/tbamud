@@ -275,7 +275,8 @@ void House_boot(void)
 
     house_control[num_of_houses++] = temp_house;
 
-    SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE | ROOM_PRIVATE);
+    SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE);
+    SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_PRIVATE);
     SET_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
     House_load(temp_house.vnum);
   }
@@ -425,7 +426,8 @@ void hcontrol_build_house(struct char_data *ch, char *arg)
 
   house_control[num_of_houses++] = temp_house;
 
-  SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE | ROOM_PRIVATE);
+  SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE);
+  SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_PRIVATE);
   SET_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
   House_crashsave(virt_house);
 
@@ -453,9 +455,11 @@ void hcontrol_destroy_house(struct char_data *ch, char *arg)
 
   if ((real_house = real_room(house_control[i].vnum)) == NOWHERE)
     log("SYSERR: House %d had invalid vnum %d!", atoi(arg), house_control[i].vnum);
-  else
-    REMOVE_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE | ROOM_PRIVATE | ROOM_HOUSE_CRASH);
-
+  else {
+    REMOVE_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE);
+    REMOVE_BIT_AR(ROOM_FLAGS(real_house), ROOM_PRIVATE);
+    REMOVE_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE_CRASH);
+  }
   House_delete_file(house_control[i].vnum);
 
   for (j = i; j < num_of_houses - 1; j++)

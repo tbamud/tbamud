@@ -1529,12 +1529,17 @@ ACMD(do_advance)
 
   if (oldlevel >= LVL_IMMORT && newlevel < LVL_IMMORT) {
     /* If they are no longer an immortal, remove the immortal only flags. */
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG1 | PRF_LOG2);
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_NOHASSLE | PRF_HOLYLIGHT | PRF_SHOWVNUMS);
+    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG1);
+    REMOVE_BIT_AR(PLR_FLAGS(victim), PRF_LOG2);
+    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_NOHASSLE);
+    REMOVE_BIT_AR(PLR_FLAGS(victim), PRF_HOLYLIGHT);
+    REMOVE_BIT_AR(PLR_FLAGS(victim), PRF_SHOWVNUMS);
     run_autowiz();
   } else if (oldlevel < LVL_IMMORT && newlevel >= LVL_IMMORT) {
     SET_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
-    SET_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT | PRF_SHOWVNUMS | PRF_AUTOEXIT);
+    SET_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
+    SET_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
+    SET_BIT_AR(PRF_FLAGS(victim), PRF_AUTOEXIT);
         for (i = 1; i <= MAX_SKILLS; i++)
           SET_SKILL(victim, i, 100);
     run_autowiz();
@@ -2281,7 +2286,8 @@ ACMD(do_wizutil)
 	send_to_char(ch, "Your victim is not flagged.\r\n");
 	return;
       }
-      REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_THIEF | PLR_KILLER);
+      REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_THIEF);
+      REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_KILLER);
       send_to_char(ch, "Pardoned.\r\n");
       send_to_char(vict, "You have been pardoned by the Gods!\r\n");
       mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s pardoned by %s", GET_NAME(vict), GET_NAME(ch));

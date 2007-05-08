@@ -449,9 +449,11 @@ void copyover_recover()
 
     if ((player_i = load_char(name, d->character)) >= 0) {
       GET_PFILEPOS(d->character) = player_i;
-      if (!PLR_FLAGGED(d->character, PLR_DELETED))
-        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING | PLR_MAILING | PLR_CRYO);
-      else
+      if (!PLR_FLAGGED(d->character, PLR_DELETED)) {
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+	REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
+      } else
         fOld = FALSE;
     } else
       fOld = FALSE;
@@ -1073,7 +1075,7 @@ void echo_on(struct descriptor_data *d)
   write_to_output(d, "%s", on_string);
 }
 
-#define COLOR_ON(ch) (!IS_NPC(ch) ? (PRF_FLAGGED((ch), PRF_COLOR_1 | PRF_COLOR_2) ? 1 : 0) : 0)
+#define COLOR_ON(ch) (!IS_NPC(ch) ? (PRF_FLAGGED((ch), PRF_COLOR_1) || PRF_FLAGGED((ch), PRF_COLOR_2) ? 1 : 0) : 0)
 
 /* Color replacement arrays. Renx -- 011100 */
 #define A "\x1B["

@@ -430,7 +430,8 @@ void stop_follower(struct char_data *ch)
   }
 
   ch->master = NULL;
-  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_CHARM | AFF_GROUP);
+  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_CHARM);
+  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_GROUP);
 }
 
 int num_followers_charmed(struct char_data *ch)

@@ -1208,7 +1208,8 @@ int perform_dupe_check(struct descriptor_data *d)
   d->character->desc = d;
   d->original = NULL;
   d->character->char_specials.timer = 0;
-  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING | PLR_WRITING);
+  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
   REMOVE_BIT_AR(AFF_FLAGS(d->character), AFF_GROUP);
   STATE(d) = CON_PLAYING;
 
@@ -1383,7 +1384,9 @@ void nanny(struct descriptor_data *d, char *arg)
 	  STATE(d) = CON_NAME_CNFRM;
 	} else {
 	  /* undo it just in case they are set */
-	  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING | PLR_MAILING | PLR_CRYO);
+	  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
+	  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+	  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
 	  REMOVE_BIT_AR(AFF_FLAGS(d->character), AFF_GROUP);
           d->character->player.time.logon = time(0);
 	  write_to_output(d, "Password: ");

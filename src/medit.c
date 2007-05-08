@@ -680,7 +680,10 @@ void medit_parse(struct descriptor_data *d, char *arg)
       TOGGLE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), i);
 
     /* Remove unwanted bits right away. */
-    REMOVE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), AFF_CHARM | AFF_POISON | AFF_GROUP | AFF_SLEEP);
+    REMOVE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), AFF_CHARM);
+    REMOVE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), AFF_POISON);
+    REMOVE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), AFF_GROUP);
+    REMOVE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), AFF_SLEEP);
     medit_disp_aff_flags(d);
     return;
 

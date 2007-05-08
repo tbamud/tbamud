@@ -668,12 +668,18 @@ ACMD(do_display)
     return;
   }
 
-  if (!str_cmp(argument, "on") || !str_cmp(argument, "all"))
-    SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP | PRF_DISPMANA | PRF_DISPMOVE);
-  else if (!str_cmp(argument, "off") || !str_cmp(argument, "none"))
-    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP | PRF_DISPMANA | PRF_DISPMOVE);
-  else {
-    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP | PRF_DISPMANA | PRF_DISPMOVE);
+  if (!str_cmp(argument, "on") || !str_cmp(argument, "all")) {
+    SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP);
+    SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
+    SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
+  } else if (!str_cmp(argument, "off") || !str_cmp(argument, "none")) {
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP);
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
+  } else {
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP);
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
 
     for (i = 0; i < strlen(argument); i++) {
       switch (LOWER(argument[i])) {

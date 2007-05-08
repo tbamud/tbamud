@@ -201,8 +201,10 @@ void string_add(struct descriptor_data *d, char *str)
     d->str = NULL;
     d->mail_to = 0;
     d->max_str = 0;
-    if (d->character && !IS_NPC(d->character))
-      REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING | PLR_WRITING);
+    if (d->character && !IS_NPC(d->character)) {
+      REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+      REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
+    }
   } else if (action != STRINGADD_ACTION && strlen(*d->str) + 3 <= d->max_str) /* 3 = \r\n\0 */
      strcat(*d->str, "\r\n");
 }
