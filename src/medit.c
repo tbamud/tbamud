@@ -669,7 +669,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
     if ((i = atoi(arg)) <= 0)
       break;
     else if (i <= NUM_MOB_FLAGS)
-      TOGGLE_BIT_AR(MOB_FLAGS(OLC_MOB(d)), 1 << (i - 1));
+      TOGGLE_BIT_AR(MOB_FLAGS(OLC_MOB(d)), (i - 1));
     medit_disp_mob_flags(d);
     return;
 
@@ -677,7 +677,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
     if ((i = atoi(arg)) <= 0)
       break;
     else if (i <= NUM_AFF_FLAGS)
-      TOGGLE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), 1 << (i - 1));
+      TOGGLE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), i);
 
     /* Remove unwanted bits right away. */
     REMOVE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), AFF_CHARM | AFF_POISON | AFF_GROUP | AFF_SLEEP);
