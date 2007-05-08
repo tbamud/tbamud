@@ -498,8 +498,16 @@ int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 	ddesc, STRING_TERMINATOR
   );
 
-  sprintascii(bit1, MOB_FLAGS(mob));
-  sprintascii(bit2, AFF_FLAGS(mob));
+  fprintf(fd, "%d %d %d %d %d %d %d %d %d E\n"
+      "%d %d %d %dd%d+%d %dd%d+%d\n",
+      MOB_FLAGS(mob)[0], MOB_FLAGS(mob)[1],
+      MOB_FLAGS(mob)[2], MOB_FLAGS(mob)[3],
+      AFF_FLAGS(mob)[0], AFF_FLAGS(mob)[1],
+      AFF_FLAGS(mob)[2], AFF_FLAGS(mob)[3],
+      GET_ALIGNMENT(mob),
+      GET_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
+      GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
+      GET_DAMROLL(mob));
 
   fprintf(fd,	"%s %s %d E\n"
 		"%d %d %d %dd%d+%d %dd%d+%d\n",
@@ -651,7 +659,10 @@ int export_save_zone(zone_rnum zrnum)
 
 int export_save_objects(zone_rnum zrnum)
 {
-  char buf[MAX_STRING_LENGTH], bit1[64], bit2[64];
+  char buf[MAX_STRING_LENGTH];
+  char ebuf1[MAX_STRING_LENGTH], ebuf2[MAX_STRING_LENGTH], ebuf3[MAX_STRING_LENGTH], ebuf4[MAX_STRING_LENGTH];
+  char wbuf1[MAX_STRING_LENGTH], wbuf2[MAX_STRING_LENGTH], wbuf3[MAX_STRING_LENGTH], wbuf4[MAX_STRING_LENGTH];
+  char pbuf1[MAX_STRING_LENGTH], pbuf2[MAX_STRING_LENGTH], pbuf3[MAX_STRING_LENGTH], pbuf4[MAX_STRING_LENGTH];
   obj_rnum ornum;
   obj_vnum ovnum;
   int i;
@@ -685,13 +696,25 @@ int export_save_objects(zone_rnum zrnum)
 	      (obj->description && *obj->description) ?	obj->description : "undefined",
 	      buf);
 
-      sprintascii(buf, GET_OBJ_EXTRA(obj));
-      sprintascii(bit1, GET_OBJ_WEAR(obj));
-      sprintascii(bit2, GET_OBJ_PERM(obj));
+      sprintascii(ebuf1, GET_OBJ_EXTRA(obj)[0]);
+      sprintascii(ebuf2, GET_OBJ_EXTRA(obj)[1]);
+      sprintascii(ebuf3, GET_OBJ_EXTRA(obj)[2]);
+      sprintascii(ebuf4, GET_OBJ_EXTRA(obj)[3]);
+      sprintascii(wbuf1, GET_OBJ_WEAR(obj)[0]);
+      sprintascii(wbuf2, GET_OBJ_WEAR(obj)[1]);
+      sprintascii(wbuf3, GET_OBJ_WEAR(obj)[2]);
+      sprintascii(wbuf4, GET_OBJ_WEAR(obj)[3]);
+      sprintascii(pbuf1, GET_OBJ_PERM(obj)[0]);
+      sprintascii(pbuf2, GET_OBJ_PERM(obj)[1]);
+      sprintascii(pbuf3, GET_OBJ_PERM(obj)[2]);
+      sprintascii(pbuf4, GET_OBJ_PERM(obj)[3]);
 
       fprintf(obj_file,
-	      "%d %s %s %s\n",
-	      GET_OBJ_TYPE(obj), buf, bit1, bit2);
+          "%d %s %s %s %s %s %s %s %s %s %s %s %s\n",
+          GET_OBJ_TYPE(obj),
+          ebuf1, ebuf2, ebuf3, ebuf4,
+          wbuf1, wbuf2, wbuf3, wbuf4,
+          pbuf1, pbuf2, pbuf3, pbuf4);
 
       if (GET_OBJ_TYPE(obj) != ITEM_CONTAINER)
         fprintf(obj_file,
@@ -752,7 +775,6 @@ int export_save_rooms(zone_rnum zrnum)
   FILE *room_file;
   char buf[MAX_STRING_LENGTH];
   char buf1[MAX_STRING_LENGTH];
-  char bit[64];
 
   if (!(room_file = fopen("world/export/qq.wld", "w"))) {
     mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_rooms : Cannot open file!");
@@ -772,15 +794,15 @@ int export_save_rooms(zone_rnum zrnum)
       strip_cr(buf);
 
       /* Save the numeric and string section of the file. */
-      sprintascii(bit, room->room_flags);
       fprintf(room_file, 	"#QQ%02d\n"
 			"%s%c\n"
 			"%s%c\n"
-			"QQ %s %d\n",
+			"QQ %d %d %d %d %d %d\n",
 		room->number%100,
 		room->name ? room->name : "Untitled", STRING_TERMINATOR,
 		buf, STRING_TERMINATOR,
-		bit, room->sector_type
+		zone_table[room->zone].number, room->room_flags[0], room->room_flags[1],
+                room->room_flags[2], room->room_flags[3], room->sector_type
       );
 
       /* Now you write out the exits for the room. */
