@@ -456,7 +456,7 @@ ACMD(do_exits)
 
     len++;
 
-    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS)) 
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) 
       send_to_char(ch, "%-5s - [%5d] %s\r\n", dirs[door], GET_ROOM_VNUM(EXIT(ch, door)->to_room),
 		world[EXIT(ch, door)->to_room].name);
     else
@@ -1280,9 +1280,9 @@ ACMD(do_who)
           send_to_char(ch, " (Buildwalking)");
         if (PRF_FLAGGED(tch, PRF_AFK))
           send_to_char(ch, " (AFK)");
-        if (PRF_FLAGGED(ch, PRF_NOGOSS))
+        if (PRF_FLAGGED(tch, PRF_NOGOSS))
           send_to_char(ch, " (nogos)");
-        if (PRF_FLAGGED(ch, PRF_NOWIZ))
+        if (PRF_FLAGGED(tch, PRF_NOWIZ))
           send_to_char(ch, " (nowiz)");
         if (PRF_FLAGGED(tch, PRF_NOSHOUT))
           send_to_char(ch, " (noshout)");

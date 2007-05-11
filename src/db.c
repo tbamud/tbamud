@@ -2568,7 +2568,7 @@ int is_empty(zone_rnum zone_nr)
       continue;
     /* If an immortal has nohassle off, he counts as present. Added for testing 
      * zone reset triggers -Welcor */
-    if ((GET_LEVEL(i->character) >= LVL_IMMORT) && (PRF_FLAGGED(i->character, PRF_NOHASSLE)))
+    if ((!IS_NPC(i->character)) && (GET_LEVEL(i->character) >= LVL_IMMORT) && (PRF_FLAGGED(i->character, PRF_NOHASSLE)))
       continue;
 
     return (0);

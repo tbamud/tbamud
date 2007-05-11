@@ -99,7 +99,7 @@ ACMD(do_gsay)
       if (AFF_FLAGGED(f->follower, AFF_GROUP) && (f->follower != ch))
         act(buf, FALSE, ch, 0, f->follower, TO_VICT | TO_SLEEP);
     
-    if (PRF_FLAGGED(ch, PRF_NOREPEAT))
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else
       send_to_char(ch, "You tell the group, '%s@n'\r\n", argument);
@@ -263,7 +263,7 @@ ACMD(do_spec_comm)
     snprintf(buf1, sizeof(buf1), "$n %s you, '%s'", action_plur, buf2);
     act(buf1, FALSE, ch, 0, vict, TO_VICT);
 
-    if (PRF_FLAGGED(ch, PRF_NOREPEAT))
+    if ((!IS_NPC(ch)) && (PRF_FLAGGED(ch, PRF_NOREPEAT))) 
       send_to_char(ch, "%s", CONFIG_OK);
     else
       send_to_char(ch, "You %s %s, '%s'\r\n", action_sing, GET_NAME(vict), buf2);
@@ -375,7 +375,7 @@ ACMD(do_page)
     }
     if ((vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)) != NULL) {
       act(buf, FALSE, ch, 0, vict, TO_VICT);
-      if (PRF_FLAGGED(ch, PRF_NOREPEAT))
+      if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
 	send_to_char(ch, "%s", CONFIG_OK);
       else
 	act(buf, FALSE, ch, 0, vict, TO_CHAR);
@@ -502,7 +502,7 @@ ACMD(do_gen_comm)
   strlcpy(color_on, com_msgs[subcmd][3], sizeof(color_on));
 
   /* first, set up strings to be given to the communicator */
-  if (PRF_FLAGGED(ch, PRF_NOREPEAT))
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
     send_to_char(ch, "%s", CONFIG_OK);
   else {
     snprintf(buf1, sizeof(buf1), "%sYou %s, '%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], argument, CCNRM(ch, C_CMP));
@@ -516,10 +516,10 @@ ACMD(do_gen_comm)
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING || i == ch->desc || !i->character )
       continue;
-    if(PRF_FLAGGED(i->character, channels[subcmd]) || PLR_FLAGGED(i->character, PLR_WRITING))
+    if (!IS_NPC(ch) && (PRF_FLAGGED(i->character, channels[subcmd]) || PLR_FLAGGED(i->character, PLR_WRITING)))
       continue;
 
-    if(ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD))
+    if (ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD))
       continue;
 
     if (subcmd == SCMD_SHOUT &&
@@ -547,7 +547,7 @@ ACMD(do_qcomm)
     char buf[MAX_STRING_LENGTH];
     struct descriptor_data *i;
 
-    if (PRF_FLAGGED(ch, PRF_NOREPEAT))
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else if (subcmd == SCMD_QSAY) {
       snprintf(buf, sizeof(buf), "You quest-say, '%s'", argument);

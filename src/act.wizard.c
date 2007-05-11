@@ -191,7 +191,7 @@ ACMD(do_send)
   send_to_char(vict, "%s\r\n", buf);
   mudlog(CMP, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s sent %s: %s", GET_NAME(ch), GET_NAME(vict), buf);
 
-  if (PRF_FLAGGED(ch, PRF_NOREPEAT))
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
     send_to_char(ch, "Sent.\r\n");
   else
     send_to_char(ch, "You send '%s' to %s.\r\n", buf, GET_NAME(vict));
