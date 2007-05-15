@@ -1009,8 +1009,9 @@ int search_help(char *argument, int level)
       while (level < help_table[mid].min_level && mid < (bot + top) / 2) 
         mid++; 
 
-      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
-	break; 
+//      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
+      if (strn_cmp(argument, help_table[mid].keywords, minlen))
+	      break; 
 
       return mid;
     }
@@ -1054,8 +1055,7 @@ ACMD(do_help)
     for (i = 0; i <= top_of_h_table; i++)  {
       if (help_table[i].min_level > GET_LEVEL(ch))
         continue;
-      /* to help narrow down results, if they don't
-         start with the same letters, move on */
+      /* To help narrow down results, if they don't start with the same letters, move on. */
       if (*argument != *help_table[i].keywords)
         continue;
       if (levenshtein_distance(argument, help_table[i].keywords) <= 2) {

@@ -12,7 +12,6 @@
 #define PFDEF_SEX		0
 #define PFDEF_CLASS		0
 #define PFDEF_LEVEL		0
-#define PFDEF_HOMETOWN		0
 #define PFDEF_HEIGHT		0
 #define PFDEF_WEIGHT		0
 #define PFDEF_ALIGNMENT		0

@@ -2573,7 +2573,7 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
     char buf[MAX_STRING_LENGTH];
     
     for (i = descriptor_list; i; i = i->next) {
-      if (!IS_NPC(i->character) && !i->connected && i->character &&
+      if (!i->connected && i->character &&
           !PRF_FLAGGED(i->character, PRF_NOGOSS) &&
           !PLR_FLAGGED(i->character, PLR_WRITING) &&
           !ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF)) {

@@ -480,7 +480,7 @@ OCMD(do_dgoload)
       }
       char_to_room(mob, rnum);
 
-      if (SCRIPT(obj)) { // it _should_ have, but it might be detached.
+      if (SCRIPT(obj)) { /* It _should_ have, but it might be detached. */
         char buf[MAX_INPUT_LENGTH];
         sprintf(buf, "%c%ld", UID_CHAR, GET_ID(mob));
         add_var(&(SCRIPT(obj)->global_vars), "lastloaded", buf, 0);
@@ -495,7 +495,7 @@ OCMD(do_dgoload)
         return;
       }
 
-      if (SCRIPT(obj)) { // it _should_ have, but it might be detached.
+      if (SCRIPT(obj)) { /* It _should_ have, but it might be detached. */
         char buf[MAX_INPUT_LENGTH];
         sprintf(buf, "%c%ld", UID_CHAR, GET_ID(object));
         add_var(&(SCRIPT(obj)->global_vars), "lastloaded", buf, 0);

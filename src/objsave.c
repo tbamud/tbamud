@@ -728,12 +728,12 @@ void Crash_rentsave(struct char_data *ch, int cost)
 int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char_data *ch)
 {
   if (fprintf(fl, "%d %ld %d %d %d %d\r\n",
-          rentcode,					// rentcode
-          (long) time(0),		// time of save
-          cost_per_day,			// cost per day
-          GET_GOLD(ch),			// current gold balance
-          GET_BANK_GOLD(ch),	// current account balance
-          0)							    // number of items - not used atm
+          rentcode,
+          (long) time(0),
+          cost_per_day,
+          GET_GOLD(ch),
+          GET_BANK_GOLD(ch),
+          0)
        < 1)
     {
        perror("Syserr: Writing rent code");

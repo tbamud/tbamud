@@ -457,7 +457,7 @@ WCMD(do_wload)
         return;
       }
       char_to_room(mob, rnum);
-      if (SCRIPT(room)) { // it _should_ have, but it might be detached.
+      if (SCRIPT(room)) { /* It _should_ have, but it might be detached. */
         char buf[MAX_INPUT_LENGTH];
         sprintf(buf, "%c%ld", UID_CHAR, GET_ID(mob));
         add_var(&(SCRIPT(room)->global_vars), "lastloaded", buf, 0);
@@ -473,7 +473,7 @@ WCMD(do_wload)
       /* special handling to make objects able to load on a person/in a container/worn etc. */
       if (!target || !*target) {
         obj_to_room(object, real_room(room->number));
-        if (SCRIPT(room)) { // it _should_ have, but it might be detached.
+        if (SCRIPT(room)) { /* It _should_ have, but it might be detached. */
           char buf[MAX_INPUT_LENGTH];
           sprintf(buf, "%c%ld", UID_CHAR, GET_ID(object));
           add_var(&(SCRIPT(room)->global_vars), "lastloaded", buf, 0);

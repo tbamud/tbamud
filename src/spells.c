@@ -153,7 +153,7 @@ ASPELL(spell_summon)
 /* Used by the locate object spell to check the alias list on objects */
 int isname_obj(char *search, char *list)
 {
-  char *found_in_list; //but could be something like 'ring' in 'shimmering'
+  char *found_in_list; /* But could be something like 'ring' in 'shimmering.' */
   char searchname[128];
   char namelist[MAX_STRING_LENGTH];
   int found_pos = -1;

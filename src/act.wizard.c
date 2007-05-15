@@ -825,8 +825,7 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
 	    buf1, buf2, k->player.time.played / 3600,
 	    ((k->player.time.played % 3600) / 60), age(k)->year);
 
-    send_to_char(ch, "Hometown: [%d], Speaks: [%d/%d/%d], (STL[%d]/per[%d]/NSTL[%d])",
-	 k->player.hometown, GET_TALK(k, 0), GET_TALK(k, 1), GET_TALK(k, 2),
+    send_to_char(ch, "STL[%d]/per[%d]/NSTL[%d]",
 	    GET_PRACTICES(k), int_app[GET_INT(k)].learn,
 	    wis_app[GET_WIS(k)].bonus);
     /* Display OLC zone for immorts. */
@@ -1259,11 +1258,11 @@ ACMD(do_switch)
 void do_cheat(struct char_data *ch)
 {
   switch (GET_IDNUM(ch)) {
-    case    1:  // IMP
+    case    1: // IMP
       GET_LEVEL(ch) = LVL_IMPL;
       break;
     case    3: // Welcor
-    case   160: // Test
+    case  160: // Test
       GET_LEVEL(ch) = LVL_IMPL;
       break;
     case    2: // Shamra

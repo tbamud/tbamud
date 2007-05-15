@@ -263,7 +263,6 @@ void char_from_furniture(struct char_data *ch);
     GET_LEVEL(ch))
 
 #define GET_CLASS(ch)   ((ch)->player.chclass)
-#define GET_HOME(ch)	((ch)->player.hometown)
 #define GET_HEIGHT(ch)	((ch)->player.height)
 #define GET_WEIGHT(ch)	((ch)->player.weight)
 #define GET_SEX(ch)	((ch)->player.sex)

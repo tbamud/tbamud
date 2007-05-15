@@ -1529,7 +1529,7 @@ struct cmdlist_element *find_end(trig_data *trig, struct cmdlist_element *cl)
       return c;
 
     /* thanks to Russell Ryan for this fix */
-    if(!c->next) { //rryan: this is the last line, we didn't find an end
+    if(!c->next) { /* rryan: this is the last line, we didn't find an end. */
       script_log("Trigger VNum %d has 'if' without 'end'. (error 2)", GET_TRIG_VNUM(trig));
       return c;
     }
@@ -1573,7 +1573,7 @@ struct cmdlist_element *find_else_end(trig_data *trig,
       return c;
 
     /* thanks to Russell Ryan for this fix */
-    if(!c->next) { //rryan: this is the last line, return
+    if(!c->next) { /* rryan: this is the last line, return. */
       script_log("Trigger VNum %d has 'if' without 'end'. (error 4)", GET_TRIG_VNUM(trig));
       return c;
     }

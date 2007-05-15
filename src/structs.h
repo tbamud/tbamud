@@ -493,7 +493,6 @@
 #define MAX_TITLE_LENGTH	80
 #define HOST_LENGTH		40
 #define PLR_DESC_LENGTH		512
-#define MAX_TONGUE		3
 #define MAX_SKILLS		200
 #define MAX_AFFECT		32
 #define MAX_OBJ_AFFECT		6     /* Used in obj_file_elem */
@@ -702,7 +701,6 @@ struct char_player_data {
    byte sex;           /* PC / NPC's sex                       */
    byte chclass;       /* PC / NPC's class		       */
    byte level;         /* PC / NPC's level                     */
-   sh_int hometown;    /* PC s Hometown (zone)                 */
    struct time_data time;  /* PC's AGE in days                 */
    ubyte weight;       /* PC / NPC's weight                    */
    ubyte height;       /* PC / NPC's height                    */
@@ -766,7 +764,6 @@ struct char_special_data {
 struct player_special_data_saved {
    byte skills[MAX_SKILLS+1];   /* array of skills plus skill 0 */
    byte PADDING0;               /* used to be spells_to_learn */
-   bool talks[MAX_TONGUE];      /* PC s Tongues 0 for NPC */
    int	wimp_level;             /* Below this # of hit points, flee! */
    byte freeze_level;           /* Level of god who froze char, if any */
    sh_int invis_level;          /* level of invisibility */

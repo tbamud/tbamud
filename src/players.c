@@ -224,7 +224,6 @@ int load_char(const char *name, struct char_data *ch)
     GET_SEX(ch) = PFDEF_SEX;
     GET_CLASS(ch) = PFDEF_CLASS;
     GET_LEVEL(ch) = PFDEF_LEVEL;
-    GET_HOME(ch) = PFDEF_HOMETOWN;
     GET_HEIGHT(ch) = PFDEF_HEIGHT;
     GET_WEIGHT(ch) = PFDEF_WEIGHT;
     GET_ALIGNMENT(ch) = PFDEF_ALIGNMENT;
@@ -330,7 +329,6 @@ int load_char(const char *name, struct char_data *ch)
       case 'H':
 	     if (!strcmp(tag, "Hit "))	load_HMVS(ch, line, LOAD_HIT);
 	else if (!strcmp(tag, "Hite"))	GET_HEIGHT(ch)		= atoi(line);
-	else if (!strcmp(tag, "Home"))	GET_HOME(ch)		= atoi(line);
 	else if (!strcmp(tag, "Host"))	GET_HOST(ch)		= strdup(line);
 	else if (!strcmp(tag, "Hrol"))	GET_HITROLL(ch)		= atoi(line);
 	else if (!strcmp(tag, "Hung"))	GET_COND(ch, HUNGER)	= atoi(line);
@@ -514,7 +512,6 @@ void save_char(struct char_data * ch)
   if (GET_SEX(ch)	     != PFDEF_SEX)	fprintf(fl, "Sex : %d\n", GET_SEX(ch));
   if (GET_CLASS(ch)	   != PFDEF_CLASS)	fprintf(fl, "Clas: %d\n", GET_CLASS(ch));
   if (GET_LEVEL(ch)	   != PFDEF_LEVEL)	fprintf(fl, "Levl: %d\n", GET_LEVEL(ch));
-  if (GET_HOME(ch)	   != PFDEF_HOMETOWN)	fprintf(fl, "Home: %d\n", GET_HOME(ch));
 
   fprintf(fl, "Id  : %ld\n", GET_IDNUM(ch));
   fprintf(fl, "Brth: %ld\n", ch->player.time.birth);

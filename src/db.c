@@ -2901,11 +2901,7 @@ void init_char(struct char_data *ch)
   ch->player.time.logon = time(0);
   ch->player.time.played = 0;
 
-  GET_HOME(ch) = 1;
   GET_AC(ch) = 100;
-
-  for (i = 0; i < MAX_TONGUE; i++)
-    GET_TALK(ch, i) = 0;
 
   /* Bias the height and weight of the character depending on what gender 
    * they have chosen. While it is possible to have a tall, heavy female it's 

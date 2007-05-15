@@ -211,8 +211,6 @@ void convert(char *filename)
       fprintf(outfile, "Clas: %d\n", (int)player.chclass); 
     if (player.level != PFDEF_LEVEL)
       fprintf(outfile, "Levl: %d\n", (int)player.level); 
-    if (player.hometown != PFDEF_HOMETOWN)
-      fprintf(outfile, "Home: %d\n", (int)player.hometown); 
     fprintf(outfile, "Brth: %d\n", (int)player.birth);
     fprintf(outfile, "Plyd: %d\n", (int)player.played);
     fprintf(outfile, "Last: %d\n", (int)player.last_logon);

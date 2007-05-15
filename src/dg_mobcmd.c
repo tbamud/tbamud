@@ -371,7 +371,7 @@ ACMD(do_mload)
         return;
       }
       char_to_room(mob, rnum);
-      if (SCRIPT(ch)) { // it _should_ have, but it might be detached.
+      if (SCRIPT(ch)) { /* It _should_ have, but it might be detached. */
         char buf[MAX_INPUT_LENGTH];
         sprintf(buf, "%c%ld", UID_CHAR, GET_ID(mob));
         add_var(&(SCRIPT(ch)->global_vars), "lastloaded", buf, 0);
@@ -384,7 +384,7 @@ ACMD(do_mload)
           mob_log(ch, "mload: bad object vnum");
           return;
       }
-      if (SCRIPT(ch)) { // it _should_ have, but it might be detached.
+      if (SCRIPT(ch)) { /* It _should_ have, but it might be detached. */
         char buf[MAX_INPUT_LENGTH];
         sprintf(buf, "%c%ld", UID_CHAR, GET_ID(object));
         add_var(&(SCRIPT(ch)->global_vars), "lastloaded", buf, 0);
@@ -565,10 +565,7 @@ ACMD(do_mat)
     char_to_room(ch, location);
     command_interpreter(ch, argument);
 
-    /*
-     * See if 'ch' still exists before continuing!
-     * Handles 'at XXXX quit' case.
-     */
+    /* See if 'ch' still exists before continuing! Handles 'at XXXX quit' case. */
     if (IN_ROOM(ch) == location) {
         char_from_room(ch);
         char_to_room(ch, original);
