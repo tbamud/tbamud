@@ -306,9 +306,6 @@ int same_obj(struct obj_data *obj1, struct obj_data *obj2)
   if (GET_OBJ_COST(obj1) != GET_OBJ_COST(obj2))
     return (FALSE);
 
-  if (GET_OBJ_EXTRA(obj1) != GET_OBJ_EXTRA(obj2))
-    return (FALSE);
-
   for (aindex = 0; aindex < MAX_OBJ_AFFECT; aindex++)
     if ((obj1->affected[aindex].location != obj2->affected[aindex].location) ||
 	(obj1->affected[aindex].modifier != obj2->affected[aindex].modifier))
@@ -820,8 +817,7 @@ char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr, struct
   }
   CAP(itemname);
 
-  snprintf(result, sizeof(result), " %2d)  %9s   %-*s %6d\r\n", aindex, quantity, 
-      48 - count_color_chars(itemname), itemname, buy_price(obj, shop_nr, keeper, ch));
+  snprintf(result, sizeof(result), " %2d)  %9s   %-*s %6d\r\n", aindex, quantity, 48 - count_color_chars(itemname), itemname, buy_price(obj, shop_nr, keeper, ch));
 
   return (result);
 }
