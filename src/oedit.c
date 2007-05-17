@@ -593,8 +593,8 @@ void oedit_disp_perm_menu(struct descriptor_data *d)
   get_char_colors(d->character);
   clear_screen(d);
 
-  for (counter = 0; counter < NUM_AFF_FLAGS; counter++) {
-    write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm, affected_bits[counter], !(++columns % 2) ? "\r\n" : "");
+  for (counter = 1; counter < NUM_AFF_FLAGS; counter++) {
+    write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter, nrm, affected_bits[counter], !(++columns % 2) ? "\r\n" : "");
   }
   sprintbitarray(GET_OBJ_PERM(OLC_OBJ(d)), affected_bits, EF_ARRAY_MAX, bits);
   write_to_output(d, "\r\nObject permanent flags: %s%s%s\r\n"

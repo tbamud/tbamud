@@ -193,17 +193,13 @@ room_vnum donation_room_3 = 235;
 
 /* GAME OPERATION OPTIONS */
 
-/*
- * Please read 128bit.readme before setting this to true. Set this
- * flag if you want the conversion to take place.
- */
+/* If false stock world files will be converted to 128bit. If true the MUD will
+ * exit with a warning when encountering stock world files. */
 int bitwarning = FALSE;
 
-/*
- * If you want to look at normal worldfiles but DO NOT want to save
- * to 128bit format, turn this to false. However, do not save through
- * olc, or your worldfiles will be 128bit anyway.
- */
+/* If you want to look at normal world files but DO NOT want to save to 128bit 
+ * format, turn this to false. However, do not save through olc, or your 
+ * world files will be 128bit anyway. */
 int bitsavetodisk = TRUE;
 
 /* This is the default port on which the game should run if no port is given on 

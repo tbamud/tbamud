@@ -87,7 +87,6 @@
 #define GREETINGS_FILE	LIB_TEXT"greetings"	/* The opening screen.	*/
 #define HELP_PAGE_FILE	LIB_TEXT_HELP"screen"	/* for HELP <CR>	*/
 #define IHELP_PAGE_FILE LIB_TEXT_HELP"iscreen" /* for HELP <CR> imms   */
-#define CONTEXT_HELP_FILE LIB_TEXT"contexthelp"	/* context help for olc	*/
 #define INFO_FILE	LIB_TEXT"info"		/* for INFO		*/
 #define WIZLIST_FILE	LIB_TEXT"wizlist"	/* for WIZLIST		*/
 #define IMMLIST_FILE	LIB_TEXT"immlist"	/* for IMMLIST		*/

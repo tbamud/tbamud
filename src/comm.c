@@ -2568,7 +2568,7 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
   }
 
 #include "screen.h"
-  if (type == TO_GMOTE) {
+  if (type == TO_GMOTE && !IS_NPC(ch)) {
     struct descriptor_data *i;
     char buf[MAX_STRING_LENGTH];
     

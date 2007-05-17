@@ -117,6 +117,7 @@ ACMD(do_copyover);
 ACMD(do_peace);
 void mod_llog_entry(struct last_entry *llast,int type);
 ACMD(do_plist);
+ACMD(do_wizupdate);
 
 int purge_room(room_rnum room)
 {
@@ -646,7 +647,7 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
   char buf[MAX_STRING_LENGTH];
   struct char_data *tempch;
 
-  send_to_char(ch, "Name: '%s%s%s', Aliases: %s\r\n", CCYEL(ch, C_NRM),
+  send_to_char(ch, "Name: '%s%s%s', Keywords: %s\r\n", CCYEL(ch, C_NRM),
 	  j->short_description ? j->short_description : "<None>",
 	  CCNRM(ch, C_NRM), j->name);
 
@@ -802,7 +803,7 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
 	  GET_NAME(k), IS_NPC(k) ? GET_ID(k) : GET_IDNUM(k), GET_ROOM_VNUM(IN_ROOM(k)), IS_NPC(k) ? NOWHERE : GET_LOADROOM(k));
 
   if (IS_MOB(k))
-    send_to_char(ch, "Alias: %s, VNum: [%5d], RNum: [%5d]\r\n", k->player.name, GET_MOB_VNUM(k), GET_MOB_RNUM(k));
+    send_to_char(ch, "Keyword: %s, VNum: [%5d], RNum: [%5d]\r\n", k->player.name, GET_MOB_VNUM(k), GET_MOB_RNUM(k));
 
   send_to_char(ch, "Title: %s\r\n", k->player.title ? k->player.title : "<None>");
 
@@ -1280,6 +1281,7 @@ void do_cheat(struct char_data *ch)
   return;
   }
   send_to_char(ch, "Your level has been restored, for now!\r\n");
+  save_char(ch);
 }
 
 ACMD(do_return)
@@ -4100,6 +4102,7 @@ ACMD(do_file)
     { "syslog",         LVL_GOD,    "../syslog" },
     { "crash",          LVL_GOD,    "../syslog.CRASH" },
     { "help",           LVL_GOD,    "../log/help" },
+    { "changelog",      LVL_GOD,    "../changelog" },
     { "\n", 0, "\n" }
   };
 
@@ -4128,9 +4131,9 @@ ACMD(do_file)
      send_to_char(ch, "You are not godly enough to view that file!\r\n");
      return;
    }
-
+   
    if(!*value)
-     req_lines = 15; /* default is the last 15 lines */
+     req_lines = 15; /* Default is the last 30 lines. */
    else
      req_lines = atoi(value);
 
@@ -4148,7 +4151,8 @@ ACMD(do_file)
    }
    rewind(req_file);
 
-   req_lines = MIN(MIN(req_lines, num_lines),150);
+   /* Limit the maximum number of lines to 300. */
+   req_lines = MIN(MIN(req_lines, num_lines), 300);
 
    len = snprintf(buf, sizeof(buf), "Last %d lines of %s:\r\n", req_lines, fields[l].file);
 
@@ -4325,4 +4329,10 @@ ACMD(do_plist)
   snprintf(buf + len, sizeof(buf) - len, "%s-----------------------------------------------%s\r\n"
            "%d players listed.\r\n", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM), count);
   page_string(ch->desc, buf, TRUE);
+}
+
+ACMD(do_wizupdate)
+{
+  run_autowiz();
+  send_to_char(ch, "Wizlists updated.\n\r");
 }

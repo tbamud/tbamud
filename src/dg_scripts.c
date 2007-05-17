@@ -2093,7 +2093,7 @@ ACMD(do_vdelete)
 
 
   if (!*buf || !*buf2) {
-    send_to_char(ch, "Usage: vdelete { <variablename> | * } <id>\r\n");
+    send_to_char(ch, "Usage: vdelete { <variablename> | * | all } <id>\r\n");
     return;
   }
 
@@ -2126,7 +2126,7 @@ ACMD(do_vdelete)
     return;
   }
 
-  if (*var == '*') {
+  if (*var == '*' || is_abbrev(var, "all")) {
     struct trig_var_data *vd_next;
     for (vd = sc_remote->global_vars; vd; vd = vd_next) {
       vd_next = vd->next;

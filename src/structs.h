@@ -228,11 +228,11 @@
 #define AFF_PROTECT_GOOD   14   /* Char protected from good */
 #define AFF_SLEEP          15   /* (R) Char magically asleep */
 #define AFF_NOTRACK        16   /* Char can't be tracked */
-#define AFF_UNUSED16       17   /* Room for future expansion */
-#define AFF_UNUSED17       18   /* Room for future expansion */
+#define AFF_FLYING         17   /* Char is flying */
+#define AFF_SCUBA          18   /* Room for future expansion */
 #define AFF_SNEAK          19   /* Char can move quietly */
 #define AFF_HIDE           20   /* Char is hidden */
-#define AFF_UNUSED20       21   /* Room for future expansion */
+#define AFF_FREE           21   /* Room for future expansion */
 #define AFF_CHARM          22   /* Char is charmed */
 
 /* Modes of connectedness: used by descriptor_data.state 		*/

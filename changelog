@@ -5,6 +5,21 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.52
+[May 17 2007] - Rumble
+  Added AFF_FLYING/SCUBA and appropriate checks in act.movement.c. Room sector types IN FLIGHT and UNDERWATER are finally being used!
+  Removed all of the Dragon_Breathes.
+  Removed context help system.
+  Added invis level on reconnect.
+[May 15 2007] - Rumble
+  Fixed object stacking to match s-desc and item_number.
+  Added wizupdate command.
+  Added valid_dg_target check to object remove trigs.
+  Fixed shops and affects to work with 128 bits.
+  Removed Hometown and Languages.
+[May 09 2007] - Rumble
+  Fixed nogos/nowiz from flagging everyone in who.
+  Fixed numerous SYSERR's where mobs were using player only specials.
+  Added 128 bits patch by Niese Petersen with numerous updates and fixes.
 [Apr 14 2007] - Rumble
   IP's only visible to LVL_GOD and above now for the paranoid people out there.
 [Apr 13 2007] - Rumble

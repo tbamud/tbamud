@@ -465,7 +465,7 @@ void boot_world(void)
   renum_zone_table();
 
   if(converting) {
-    log("Saving 128bit worldfiles to disk.");
+    log("Saving 128bit world files to disk.");
     save_all();
   }
 	  
@@ -642,8 +642,6 @@ void destroy_db(void)
   /* Events */
   event_free_all();
 
-  /* context sensitive help system */
-  free_context_help();
 }
 
 /* body of the booting system */
@@ -679,9 +677,6 @@ void boot_db(void)
 
   log("Loading help entries.");
   index_boot(DB_BOOT_HLP);
-
-  log("Setting up context sensitive help system for OLC");
-  boot_context_help();
 
   log("Generating player index.");
   build_player_index();
@@ -1185,10 +1180,10 @@ void parse_room(FILE *fl, int virtual_nr)
   }
 
   if (((retval = sscanf(line, " %d %s %s %s %s %d ", t, flags, flags2, flags3, flags4, t + 2)) == 3) && (bitwarning == TRUE)) {
-    log("WARNING: Conventional worldfiles detected. Please read 128bit.readme.");
+    log("WARNING: Conventional world files detected. See config.c.");
     exit(1);
   } else if ((retval == 3) && (bitwarning == FALSE)) {
-    /* Looks like the implementor is ready, so let's load the worldfiles. We 
+    /* Looks like the implementor is ready, so let's load the world files. We 
      * load the extra three flags as 0, since they won't be anything anyway. We
      * will save the entire world later on, when every room, mobile, and object
      * is converted. */
@@ -1638,8 +1633,8 @@ void parse_mobile(FILE *mob_f, int nr)
   }
 
   if (((retval = sscanf(line, "%s %s %s %s %s %s %s %s %d %c", f1, f2, f3, f4, f5, f6, f7, f8, t + 2, &letter)) == 10) && (bitwarning == TRUE)) {
-    /* Let's make the implementor read some, before converting his worldfiles. */
-    log("WARNING: Conventional mobilefiles detected. Please read 128bit.readme.");
+    /* Let's make the implementor read some, before converting his world files. */
+    log("WARNING: Conventional mobile files detected. See config.c.");
     exit(1);
   } else if ((retval == 4) && (bitwarning == FALSE)) {
     log("Converting mobile #%d to 128bits..", nr);
@@ -1670,7 +1665,7 @@ void parse_mobile(FILE *mob_f, int nr)
 
     check_bitvector_names(AFF_FLAGS(mob_proto + i)[0], affected_bits_count, buf2, "mobile affect");
 
-    /* This is necessary, since if we have conventional worldfiles, &letter is 
+    /* This is necessary, since if we have conventional world files, &letter is 
      * loaded into f4 instead of the letter characters. So what we do, is copy 
      * f4 into letter. Disadvantage is that &letter cannot be longer then 128 
      * characters, but this shouldn't occur anyway. */
@@ -1790,8 +1785,8 @@ char *parse_object(FILE *obj_f, int nr)
 
   if (((retval = sscanf(line, " %d %s %s %s %s %s %s %s %s %s %s %s %s", t, f1, f2, f3, 
       f4, f5, f6, f7, f8, f9, f10, f11, f12)) == 4) && (bitwarning == TRUE)) {
-    /* Let's make the implementor read some, before converting his worldfiles. */
-    log("WARNING: Conventional objectfiles detected. Please read 128bit.readme.");
+    /* Let's make the implementor read some, before converting his world files. */
+    log("WARNING: Conventional object files detected. Please see config.c.");
     exit(1);
   } else if (((retval == 4) || (retval == 3)) && (bitwarning == FALSE)) {
     

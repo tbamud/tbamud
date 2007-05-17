@@ -785,6 +785,9 @@ int remove_otrigger(obj_data *obj, char_data *actor)
   if (!SCRIPT_CHECK(obj, OTRIG_REMOVE))
     return 1;
 
+  if (!valid_dg_target(actor, 0))
+    return 1;
+
   for (t = TRIGGERS(SCRIPT(obj)); t; t = t->next) {
     if (TRIGGER_CHECK(t, OTRIG_REMOVE)) {
       ADD_UID_VAR(buf, t, actor, "actor", 0);

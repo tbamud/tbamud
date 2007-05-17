@@ -221,6 +221,7 @@ ACMD(do_who);
 ACMD(do_wield);
 ACMD(do_wizlock);
 ACMD(do_wiznet);
+ACMD(do_wizupdate);
 ACMD(do_wizutil);
 ACMD(do_write);
 ACMD(do_zcheck);
@@ -494,6 +495,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { ";"        , ";"       , POS_DEAD    , do_wiznet   , LVL_IMMORT, 0 },
   { "wizhelp"  , "wizhelp" , POS_SLEEPING, do_commands , LVL_IMMORT, SCMD_WIZHELP },
   { "wizlist"  , "wizlist" , POS_DEAD    , do_gen_ps   , 0, SCMD_WIZLIST },
+  { "wizupdate", "wizupde" , POS_DEAD    , do_wizupdate, LVL_GRGOD, 0 },
   { "wizlock"  , "wizlock" , POS_DEAD    , do_wizlock  , LVL_IMPL, 0 },
   { "write"    , "write"   , POS_STANDING, do_write    , 1, 0 },
 
@@ -1327,9 +1329,6 @@ void nanny(struct descriptor_data *d, char *arg)
   /* Quick check for the OLC states. */
   for (player_i = 0; olc_functions[player_i].state >= 0; player_i++)
     if (STATE(d) == olc_functions[player_i].state) {
-      /* send context-sensitive help if need be */
-      if (context_help(d, arg)) return;
-
       (*olc_functions[player_i].func)(d, arg);
       return;
     }

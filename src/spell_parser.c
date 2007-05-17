@@ -924,28 +924,6 @@ void mag_assign_spells(void)
 	TAR_CHAR_ROOM | TAR_OBJ_INV | TAR_OBJ_ROOM, FALSE, MAG_MANUAL,
 	NULL);
 
-  /* These spells are currently not used, not implemented, and not castable.
-   * Values for the 'breath' spells are filled in assuming a dragon's breath. */
-  spello(SPELL_FIRE_BREATH, "fire breath", 0, 0, 0, POS_SITTING,
-	TAR_IGNORE, TRUE, 0,
-	NULL);
-
-  spello(SPELL_GAS_BREATH, "gas breath", 0, 0, 0, POS_SITTING,
-	TAR_IGNORE, TRUE, 0,
-	NULL);
-
-  spello(SPELL_FROST_BREATH, "frost breath", 0, 0, 0, POS_SITTING,
-	TAR_IGNORE, TRUE, 0,
-	NULL);
-
-  spello(SPELL_ACID_BREATH, "acid breath", 0, 0, 0, POS_SITTING,
-	TAR_IGNORE, TRUE, 0,
-	NULL);
-
-  spello(SPELL_LIGHTNING_BREATH, "lightning breath", 0, 0, 0, POS_SITTING,
-	TAR_IGNORE, TRUE, 0,
-	NULL);
-
   /* you might want to name this one something more fitting to your theme -Welcor*/
   spello(SPELL_DG_AFFECT, "Script-inflicted", 0, 0, 0, POS_SITTING,
 	TAR_IGNORE, TRUE, 0,

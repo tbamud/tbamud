@@ -107,11 +107,6 @@
  * SPELL_IDENTIFY used with scrolls of identify) or non-players (such as NPC
  * only spells). */
 #define SPELL_IDENTIFY               201
-#define SPELL_FIRE_BREATH            202
-#define SPELL_GAS_BREATH             203
-#define SPELL_FROST_BREATH           204
-#define SPELL_ACID_BREATH            205
-#define SPELL_LIGHTNING_BREATH       206
 
 /* To make an affect induced by dg_affect look correct on 'stat' we need to 
  * define it with a 'spellname'. */

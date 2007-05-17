@@ -2042,9 +2042,10 @@ end
 ~
 #87
 Obj Remove Example~
-1 l 90
+1 l 100
 ~
 return 0
+%send% %actor% You can't remove it.
 ~
 #88
 Obj Load Example~
@@ -2539,48 +2540,9 @@ end
 ~
 #98
 Mob Act - 98 Teleporter Give~
-0 e 0
-has entered the game.~
-* By Rumble
-if %actor.is_pc%  
-  if !%actor.eq(*)%
-    %load% obj 50 %actor% light
-    %load% obj 51 %actor% rfinger
-    %load% obj 52 %actor% lfinger
-    %load% obj 53 %actor% neck1
-    %load% obj 54 %actor% neck2
-    %load% obj 55 %actor% body
-    %load% obj 56 %actor% head
-    %load% obj 57 %actor% legs
-    %load% obj 58 %actor% feet
-    %load% obj 59 %actor% hands
-    %load% obj 60 %actor% arms
-    %load% obj 61 %actor% shield
-    %load% obj 62 %actor% about
-    %load% obj 63 %actor% waist
-    %load% obj 64 %actor% rwrist
-    %load% obj 65 %actor% lwrist
-    %load% obj 66 %actor% wield
-    %load% obj 67 %actor% hold
-  end
-  wait 2 sec
-  if !(%actor.inventory(82)%)
-    wait 1 s
-    say You are not prepared to travel these realms to their fullest.
-    wait 1 s
-    say Maybe I can help you.
-    %load% obj 82
-    give teleporter %actor.name%
-    *could actor carry the weight?
-    if !%actor.inventory(82)%
-      drop teleporter
-    end
-    wait 2 s
-    say With this you may teleport to areas that may not be accessible in any other way.
-    wait 2 s
-    say HELP AREAS
-  end
-end
+0 g 100
+~
+whisper %actor% this is a crash test
 ~
 #99
 Obj Command 82 - Teleporter~

@@ -52,7 +52,7 @@ int has_boat(struct char_data *ch)
   if (GET_LEVEL(ch) > LVL_IMMORT)
     return (1);
 
-  if (AFF_FLAGGED(ch, AFF_WATERWALK))
+  if (AFF_FLAGGED(ch, AFF_WATERWALK) || AFF_FLAGGED(ch, AFF_FLYING))
     return (1);
 
   /* non-wearable boats in inventory will do it */
@@ -63,6 +63,56 @@ int has_boat(struct char_data *ch)
   /* and any boat you're wearing will do it too */
   for (i = 0; i < NUM_WEARS; i++)
     if (GET_EQ(ch, i) && GET_OBJ_TYPE(GET_EQ(ch, i)) == ITEM_BOAT)
+      return (1);
+
+  return (0);
+}
+
+/* Simple function to determine if char can fly. */
+int has_flight(struct char_data *ch)
+{
+  struct obj_data *obj;
+  int i;
+
+  if (GET_LEVEL(ch) > LVL_IMMORT)
+    return (1);
+
+  if (AFF_FLAGGED(ch, AFF_FLYING))
+    return (1);
+
+  /* Non-wearable flying items in inventory will do it. */
+  for (obj = ch->carrying; obj; obj = obj->next_content)
+    if (OBJAFF_FLAGGED(obj, AFF_FLYING) && OBJAFF_FLAGGED(obj, AFF_FLYING))
+      return (1);
+
+  /* Any equipped objects with AFF_FLYING will do it too. */
+  for (i = 0; i < NUM_WEARS; i++)
+    if (GET_EQ(ch, i) && OBJAFF_FLAGGED(obj, AFF_FLYING))
+      return (1);
+
+  return (0);
+}
+
+/* Simple function to determine if char can scuba. */ 
+int has_scuba(struct char_data *ch)
+{
+  struct obj_data *obj;
+  int i;
+
+  if (GET_LEVEL(ch) > LVL_IMMORT)
+    return (1);
+
+  if (AFF_FLAGGED(ch, AFF_SCUBA))
+    return (1);
+
+  /* Non-wearable scuba items in inventory will do it. */
+  for (obj = ch->carrying; obj; obj = obj->next_content)
+    if (OBJAFF_FLAGGED(obj, AFF_SCUBA) && (find_eq_pos(ch, obj, NULL) < 0))
+      return (1);
+
+  /* Any equipped objects with AFF_SCUBA will do it too. */
+  for (i = 0; i < NUM_WEARS; i++)
+    if (GET_EQ(ch, i) && OBJAFF_FLAGGED(obj, AFF_SCUBA))
       return (1);
 
   return (0);
@@ -100,6 +150,22 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
       (SECT(EXIT(ch, dir)->to_room) == SECT_WATER_NOSWIM)) {
     if (!has_boat(ch)) {
       send_to_char(ch, "You need a boat to go there.\r\n");
+      return (0);
+    }
+  }
+
+  /* If this room or the one we're going to needs flight, check for it. */
+  if ((SECT(IN_ROOM(ch)) == SECT_FLYING) || (SECT(EXIT(ch, dir)->to_room) == SECT_FLYING)) {
+    if (!has_flight(ch)) {
+      send_to_char(ch, "You need to be flying to go there!\r\n");
+      return (0);
+    }
+  }
+
+  /* If this room or the one we're going to needs scuba, check for it. */
+  if ((SECT(IN_ROOM(ch)) == SECT_UNDERWATER) || (SECT(EXIT(ch, dir)->to_room) == SECT_UNDERWATER)) {
+    if (!has_scuba(ch)) {
+      send_to_char(ch, "You need to be able to breathe water to go there!\r\n");
       return (0);
     }
   }

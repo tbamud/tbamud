@@ -7,7 +7,7 @@ a strange portal located above you.
 D4
 ~
 ~
-0 0 100
+0 0 -1
 S
 T 1200
 #1
@@ -21,7 +21,7 @@ D5
 A strange portal in the floor is the only exit.
 ~
 ~
-0 0 100
+0 0 -1
 S
 #2
 Welcome to the Builder Academy~
@@ -552,6 +552,16 @@ D2
 ~
 0 0 21
 S
+#32
+An unfinished room~
+You are in an unfinished room.
+~
+0 0 0 0 0 9
+D1
+~
+~
+0 0 33
+S
 #33
 Rumble's Room~
    The mark of the immature man is that he wants to die nobly for a cause, 
@@ -559,6 +569,14 @@ while the mark of the mature man is that he wants to live humbly for one.
 --Wilhelm Stekel
 ~
 0 8 0 0 0 0
+D1
+~
+~
+0 0 33
+D3
+~
+~
+0 0 32
 E
 .test~
 can you see this with look around?
@@ -703,7 +721,7 @@ D3
 D4
 ~
 trapdoor~
-1 0 130
+1 0 -1
 S
 #90
 Epictetus' Prison Cell~

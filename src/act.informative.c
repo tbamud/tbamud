@@ -211,12 +211,12 @@ void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int
   for (i = list; i; i = i->next_content) {
     num = 0;
     for (j = list; j != i; j = j->next_content)
-      if (!strcmp(j->short_description, i->short_description))
+      if (!strcmp(j->short_description, i->short_description) && (!strcmp(j->name, i->name)))
       break;
     if (j != i)
       continue;
     for (j = i; j; j = j->next_content)
-      if (!strcmp(j->short_description, i->short_description))
+      if (!strcmp(j->short_description, i->short_description) && (!strcmp(j->name, i->name)))
         num++;
     if (CAN_SEE_OBJ(ch, i) && (*i->description != '.' || (IS_NPC(ch) || PRF_FLAGGED(ch, PRF_HOLYLIGHT)))) {
       if (mode == SHOW_OBJ_LONG) 
