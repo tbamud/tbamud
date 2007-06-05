@@ -384,12 +384,23 @@ ACMD(do_page)
   }
 }
 
+int first_word_is_name(struct char_data *ch, char * argument) {
+    char buf[MAX_INPUT_LENGTH];
+    char name_p[MAX_INPUT_LENGTH];
+    if (argument == NULL || IS_NPC(ch))
+        return 0;
+    strlcpy(buf, argument, sizeof(buf));
+    one_argument(buf, name_p);
+    return !str_cmp(GET_NAME(ch), name_p);
+}
+
 /* generalized communication func, originally by Fred C. Merkel (Torg) */
 ACMD(do_gen_comm)
 {
   struct descriptor_data *i;
   char color_on[24];
   char buf1[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH], *msg;
+  bool emoting = FALSE;
 
   /* Array of flags which must _not_ be set in order for comm to be heard */
   int channels[] = {
@@ -505,12 +516,17 @@ ACMD(do_gen_comm)
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
     send_to_char(ch, "%s", CONFIG_OK);
   else {
-    snprintf(buf1, sizeof(buf1), "%sYou %s, '%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], argument, CCNRM(ch, C_CMP));
+    if (!first_word_is_name(ch, argument)) {
+      snprintf(buf1, sizeof(buf1), "%sYou %s, '%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], argument, CCNRM(ch, C_CMP));
+    } else {
+      emoting = TRUE;
+      snprintf(buf1, sizeof(buf1), "%s%s: %s%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], CAP(argument), CCNRM(ch, C_CMP));
+    }
     msg = act(buf1, FALSE, ch, 0, 0, TO_CHAR);
     add_history(ch, msg, hist_type[subcmd]);
   }
-
-  snprintf(buf1, sizeof(buf1), "$n %ss, '%s'", com_msgs[subcmd][1], argument);
+  if (!emoting)
+    snprintf(buf1, sizeof(buf1), "$n %ss, '%s'", com_msgs[subcmd][1], argument);
 
   /* now send all the strings out */
   for (i = descriptor_list; i; i = i->next) {

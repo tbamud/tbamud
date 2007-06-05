@@ -1267,12 +1267,12 @@ void do_cheat(struct char_data *ch)
       GET_LEVEL(ch) = LVL_IMPL;
       break;
     case    2: // Shamra
-    case  156: // Fizban
     case  295: // Detta
       GET_LEVEL(ch) = LVL_GRGOD;
       break;
     case    7: // Rhade
     case   19: // Amber
+    case  156: // Fizban
     case  253: // Mordecai
       GET_LEVEL(ch) = LVL_GOD;
       break;
@@ -2302,11 +2302,11 @@ ACMD(do_wizutil)
 		ONOFF(result), GET_NAME(vict), GET_NAME(ch));
       send_to_char(ch, "(GC) Notitle %s for %s by %s.\r\n", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
       break;
-    case SCMD_SQUELCH:
+    case SCMD_MUTE:
       result = PLR_TOG_CHK(vict, PLR_NOSHOUT);
-      mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) Squelch %s for %s by %s.",
+      mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) Mute %s for %s by %s.",
 		ONOFF(result), GET_NAME(vict), GET_NAME(ch));
-      send_to_char(ch, "(GC) Squelch %s for %s by %s.\r\n", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
+      send_to_char(ch, "(GC) Mute %s for %s by %s.\r\n", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
       break;
     case SCMD_FREEZE:
       if (ch == vict) {

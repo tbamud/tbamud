@@ -246,7 +246,7 @@ ACMD(do_gmote)
         break;
 
   if ((act_nr = find_action(cmd)) < 0) {
-    snprintf(buf, sizeof(buf), "Gossip: $n%s", argument);
+    snprintf(buf, sizeof(buf), "Gemote: $n%s", argument);
     act(buf, FALSE, ch, 0, vict, TO_GMOTE);
     return;
   }
@@ -266,7 +266,7 @@ action = &soc_mess_list[act_nr];
       send_to_char(ch, "Who are you going to do that to?\r\n");
       return;
     }
-    snprintf(buf, sizeof(buf), "Gossip: %s", action->others_no_arg);
+    snprintf(buf, sizeof(buf), "Gemote: %s", action->others_no_arg);
   } else if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD))) {
     send_to_char(ch, "%s\r\n", action->not_found);
     return;
@@ -275,14 +275,14 @@ action = &soc_mess_list[act_nr];
       send_to_char(ch, "%s\r\n", action->char_auto);
       return;
     }
-    snprintf(buf, sizeof(buf), "Gossip: %s", action->others_auto);
+    snprintf(buf, sizeof(buf), "Gemote: %s", action->others_auto);
   } else {
     if (GET_POS(vict) < action->min_victim_position) {
       act("$N is not in a proper position for that.",
            FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
       return;
     }
-    snprintf(buf, sizeof(buf), "Gossip: %s", action->others_found);
+    snprintf(buf, sizeof(buf), "Gemote: %s", action->others_found);
   }
   act(buf, FALSE, ch, 0, vict, TO_GMOTE);
 }

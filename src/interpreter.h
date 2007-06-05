@@ -126,7 +126,7 @@ struct alias_data {
 #define SCMD_REROLL	0
 #define SCMD_PARDON     1
 #define SCMD_NOTITLE    2
-#define SCMD_SQUELCH    3
+#define SCMD_MUTE       3
 #define SCMD_FREEZE	4
 #define SCMD_THAW	5
 #define SCMD_UNAFFECT	6

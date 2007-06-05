@@ -2020,11 +2020,11 @@ ACMD(do_toggle)
         else if (wimp_lev > (GET_MAX_HIT(ch) / 2))
           send_to_char(ch, "You can't set your wimp level above half your hit points.\r\n");
         else {
-          send_to_char(ch, "Okay, you'll wimp out if you drop below %d hit points.\r\n", wimp_lev);
+          send_to_char(ch, "Okay, you'll wimp out if you drop below %d hit points.", wimp_lev);
           GET_WIMP_LEV(ch) = wimp_lev;
         }
       } else {
-        send_to_char(ch, "Okay, you'll now tough out fights to the bitter end.\r\n");
+        send_to_char(ch, "Okay, you'll now tough out fights to the bitter end.");
         GET_WIMP_LEV(ch) = 0;
       }
     } else
@@ -2032,12 +2032,12 @@ ACMD(do_toggle)
     break;
   case SCMD_PAGELENGTH:
     if (!*arg2)
-      send_to_char(ch, "You current page length is set to %d lines.\r\n", GET_PAGE_LENGTH(ch));
+      send_to_char(ch, "You current page length is set to %d lines.", GET_PAGE_LENGTH(ch));
     else if (is_number(arg2)) {
       GET_PAGE_LENGTH(ch) = MIN(MAX(atoi(arg2), 5), 255);
-      send_to_char(ch, "Okay, your page length is now set to %d lines.\r\n", GET_PAGE_LENGTH(ch));
+      send_to_char(ch, "Okay, your page length is now set to %d lines.", GET_PAGE_LENGTH(ch));
     } else
-      send_to_char(ch, "Please specify a number of lines (5 - 255).\r\n");
+      send_to_char(ch, "Please specify a number of lines (5 - 255).");
       break;
   default:
     if (!*arg2) {
