@@ -972,7 +972,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       if (number == 0 || number == -1)
 	GET_OBJ_VAL(OLC_OBJ(d), 1) = -1;
       else
-	GET_OBJ_VAL(OLC_OBJ(d), 1) = LIMIT(number, 1, NUM_SPELLS-1);
+	GET_OBJ_VAL(OLC_OBJ(d), 1) = LIMIT(number, 1, NUM_SPELLS);
 
       oedit_disp_val3_menu(d);
       break;
@@ -1010,7 +1010,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
 	return;
       }
       min_val = 1;
-      max_val = NUM_SPELLS - 1;
+      max_val = NUM_SPELLS;
       break;
     case ITEM_WEAPON:
       min_val = 1;
@@ -1049,12 +1049,12 @@ void oedit_parse(struct descriptor_data *d, char *arg)
 	return;
       }
       min_val = 1;
-      max_val = NUM_SPELLS - 1;
+      max_val = NUM_SPELLS;
       break;
     case ITEM_WAND:
     case ITEM_STAFF:
       min_val = 1;
-      max_val = NUM_SPELLS - 1;
+      max_val = NUM_SPELLS;
       break;
     case ITEM_WEAPON:
       min_val = 0;

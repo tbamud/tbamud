@@ -84,7 +84,7 @@ ACMD(do_hit)
   char arg[MAX_INPUT_LENGTH];
   struct char_data *vict;
 
-  one_argument(argument, arg);
+ one_argument(argument, arg);
 
   if (!*arg)
     send_to_char(ch, "Hit who?\r\n");
@@ -406,6 +406,7 @@ ACMD(do_kick)
     send_to_char(ch, "You have no idea how.\r\n");
     return;
   }
+
   one_argument(argument, arg);
 
   if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_ROOM))) {

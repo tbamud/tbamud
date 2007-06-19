@@ -2662,6 +2662,8 @@ void free_char(struct char_data *ch)
       free(ch->player.long_descr);
     if (ch->player.description)
       free(ch->player.description);
+    if (ch->player_specials)
+      free(ch->player_specials); 
 
     for (i = 0; i < NUM_HIST; i++)
       if (GET_HISTORY(ch, i))
