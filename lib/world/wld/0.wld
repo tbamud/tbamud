@@ -3,11 +3,11 @@ The Void~
    You don't think that you are not floating in nothing.  You can see
 a strange portal located above you.
 ~
-0 8 0 0 0 0
+0 0 0 0 0 0
 D4
 ~
 ~
-0 0 -1
+0 0 100
 S
 T 1200
 #1
@@ -21,7 +21,7 @@ D5
 A strange portal in the floor is the only exit.
 ~
 ~
-0 0 -1
+0 0 100
 S
 #2
 Welcome to the Builder Academy~
@@ -552,16 +552,6 @@ D2
 ~
 0 0 21
 S
-#32
-An unfinished room~
-You are in an unfinished room.
-~
-0 0 0 0 0 9
-D1
-~
-~
-0 0 33
-S
 #33
 Rumble's Room~
    The mark of the immature man is that he wants to die nobly for a cause, 
@@ -569,14 +559,6 @@ while the mark of the mature man is that he wants to live humbly for one.
 --Wilhelm Stekel
 ~
 0 8 0 0 0 0
-D1
-~
-~
-0 0 33
-D3
-~
-~
-0 0 32
 E
 .test~
 can you see this with look around?
@@ -677,7 +659,6 @@ from you. It's a beautiful reciprocal arrangement.
 --The Catcher in the Rye   
 ~
 S
-T 1200
 #34
 Pool of Images~
    A broad mosaic walkway wraps around the natural hotsprings in this cavernous
@@ -721,7 +702,7 @@ D3
 D4
 ~
 trapdoor~
-1 0 -1
+1 0 130
 S
 #90
 Epictetus' Prison Cell~

@@ -399,15 +399,17 @@ done
 Slipping on Marbles - 27147~
 1 q 100
 ~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A leave trigger that checks for low dexterity.
 if %actor.is_pc%
-  if %random.100% + %actor.dex% > 50
-    %send% %actor% You slip on %self.shortdesc% and fall.
-    %echoaround% %actor% %actor.name% slips on %self.shortdesc% and falls.
+  if %actor.dex% < 15
+    %send% %actor% You slip on %self.shortdesc% and fall flat on your face.
+    %echoaround% %actor% %actor.name% slips on %self.shortdesc% and falls on his face.
     return 0
-    %force% %actor% sit
+    nop %actor.pos(sitting)%
   else
-    %send% %actor% You slip on %self.shortdesc%, but manage to retain your balance.
-    %echoaround% %actor% %actor.name% slips on %self.shortdesc%, but manages to retain %actor.hisher% balance.
+    %send% %actor% You slip on %self.shortdesc%, but manage to regain your balance.
+    %echoaround% %actor% %actor.name% slips on %self.shortdesc%, but manages to regain %actor.hisher% balance.
   end
 end
 ~

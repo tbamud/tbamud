@@ -40,10 +40,6 @@ The email listing of the gods is pinned against the wall.~
 0 0 0 0
 1 1 0 30
 E
-emails listing~
-   HELP CONTACT
-~
-E
 wizlist~
                                  Implementors
                                  ~~~~~~~~~~~ 
@@ -59,6 +55,10 @@ wizlist~
         Kyr   Macros   Meyekul   Mick   Minisham   Mythran   Neela   Poiu
     Santa   Shamra   Shimmer   Silvanos   Smaug   Snowlock   Talgard   Taylor
        Theophilus   Tocamat   Torpidai   Treestump   Tuskony   Zizazat   
+~
+E
+emails listing~
+   HELP CONTACT
 ~
 #5
 foraged berries~
@@ -135,7 +135,7 @@ waybread bread~
 a waybread~
 Some waybread has been put here.~
 ~
-19 0 0 0 0 a 0 0 0 rs 0 0 0
+19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
 1 50 0 0
 E
@@ -693,6 +693,19 @@ runestone Sanctum church~
    This is one of the runestones used by the priests of Sanctum in their duties.
 
 ~
+#41
+Bell sanctum freedom~
+the bell of Sanctum's freedom~
+The symbol of Sanctum's freedom waits to be returned to its city.~
+Nothing.
+~
+4 b 0 0 0 ao 0 0 0 0 0 0 0
+30 1 1 39
+1 1000 0 0
+E
+bell sanctum's freedom~
+   This is the bell that represents the freedom of the city of Sanctum.  
+~
 #42
 hammer Sanctum~
 the hammer of Sanctum~
@@ -742,6 +755,20 @@ An immortal device to set questpoints.~
 0 0 0 0
 1 1 0 31
 T 168
+#45
+pile coins gold~
+a pile of gold coins~
+A pile of gold coins is half-buried in the mud and muck.~
+~
+20 0 0 0 0 a 0 0 0 0 0 0 0
+1000000 0 0 0
+0 0 0 0
+T 193
+E
+pile coins gold~
+   The glittering gold catches your eye. Though covered in dirt and grime money
+is money. 
+~
 #46
 key gateguard~
 the gateguard key~
@@ -775,6 +802,19 @@ E
 comfy bed~
    This bed is beckoning you to lay down and get some much needed sleep.
 Just "sleep bed"
+~
+#50
+generic light~
+a generic light~
+A generic light is lying here.~
+~
+1 0 0 0 0 ao 0 0 0 0 0 0 0
+0 0 -1 0
+1 1 0 0
+E
+generic light~
+   Since this light is completely generic there are no distinctive features
+worth noticing.    
 ~
 #51
 generic ring rfinger~

@@ -22,6 +22,14 @@ A dark bottle of ale has been left here.~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 3 0
 10 10 3 0
+#3003
+bottle firebreather~
+a bottle~
+A bottle of firebreather has been left here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+8 8 7 0
+10 50 17 0
 #3004
 bottle local~
 a bottle~
@@ -127,12 +135,12 @@ A small sword lies here.~
 0 1 6 11
 3 60 10 0
 E
-inscription~
-   It says: 'May this sword be a good companion.  '
-~
-E
 sword small~
    The small sword seems to have an inscription of some sort.
+~
+E
+inscription~
+   It says: 'May this sword be a good companion.  '
 ~
 #3022
 sword long~
@@ -281,6 +289,14 @@ E
 pot~
    It is a nice pot.  You could use it, if you ever settled down.  
 ~
+#3040
+plate breast~
+a breast plate~
+A breast plate is lying on the ground.~
+~
+9 0 0 0 0 ad 0 0 0 0 0 0 0
+7 0 0 0
+50 180 15 0
 #3041
 shirt chain mail~
 a chain mail shirt~
@@ -519,12 +535,12 @@ A large, sociable bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-social bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+social bulletin~
+   Use 'look board' to read the board.  
 ~
 #3097
 boards frozen bulletin gen_boards~
@@ -535,12 +551,12 @@ A large bulletin board is here, carved from a block of ice.~
 0 0 0 0
 0 0 0 0
 E
-freeze bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+freeze bulletin~
+   Use 'look board' to read the board.  
 ~
 #3098
 boards holy bulletin gen_boards~
@@ -551,12 +567,12 @@ A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 0 0 0 0
 0 0 0 0
 E
-holy bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+holy bulletin~
+   Use 'look board' to read the board.  
 ~
 #3099
 boards bulletin gen_boards~
@@ -567,11 +583,11 @@ A large bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+bulletin~
+   Use 'look board' to read the board.  
 ~
 $~

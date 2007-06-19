@@ -551,4 +551,64 @@ kind.
 8 8 0
 BareHandAttack: 4
 E
+#1943
+spider ball~
+a spider ball~
+A spider ball stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+0 20 10 1d1+0 1d1+0
+0 0
+8 8 0
+E
+T 1133
+#1997
+sexy stripper~
+a sexy stripper~
+A sexy stripper poses flirtatiously.
+~
+   Skimpily dressed, this curvacious woman is posing in ways that show off her
+ample assets.  Long platinum blonde hair swishes around her hips, and a
+mischievous sparkle glimmers in her green eyes.
+~
+8 0 0 0 0 0 0 0 0 E
+0 20 10 1d1+0 1d1+0
+0 0
+8 8 2
+E
+T 1930
+T 1932
+#1998
+gorilla man suit~
+a hairy gorilla~
+A man in a gorilla suit stands here.
+~
+   This gorilla suit is very realistic, right down to the smell!  Black tufts of
+matted hair spring out haphazardly from this creature's sweaty body.  The only
+thing revealing that there is in fact a man inside, are the human eyes blinking
+from two cut-out sockets.
+~
+8 0 0 0 0 0 0 0 0 E
+0 20 10 1d1+0 0d1+0
+0 0
+8 8 1
+E
+T 1932
+T 1933
+#1999
+mob deliverer~
+the deliverer~
+A deliverer stands here.
+~
+   This mob is in neutral form, ready to take on whatever shape you request for
+your singing telegram!
+~
+8 0 0 0 0 0 0 0 0 E
+0 20 10 1d1+0 1d1+0
+0 0
+8 8 0
+E
+T 1949
 $

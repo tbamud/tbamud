@@ -4,7 +4,16 @@ Rumble
 The Builder Academy
 builderacademy.net 9091
  
-tbaMUD 3.52
+tbaMUD 3.53
+[Jun 28 2007]
+  Updated World and files for 3.53 release.
+[Jun 16 2007] - Rumble
+  Missed replacing NUM_SPELLS -1 with NUM_SPELLS, corrected. (thanks Kyle)
+[Jun 01 2007] - Rumble
+  Renamed Gossip: to Gemote: to match the command when players use gemote.
+  Added channel emotes by matching player name to first word. i.e. gossip
+  rumble sporks Manivo ruthlessly. (thanks Mordecai)
+  Renamed squelch to mute to match the command.
 [May 17 2007] - Rumble
   Added AFF_FLYING/SCUBA and appropriate checks in act.movement.c. Room sector types IN FLIGHT and UNDERWATER are finally being used!
   Removed all of the Dragon_Breathes.
@@ -20,6 +29,8 @@ tbaMUD 3.52
   Fixed nogos/nowiz from flagging everyone in who.
   Fixed numerous SYSERR's where mobs were using player only specials.
   Added 128 bits patch by Niese Petersen with numerous updates and fixes.
+
+tbaMUD 3.52
 [Apr 14 2007] - Rumble
   IP's only visible to LVL_GOD and above now for the paranoid people out there.
 [Apr 13 2007] - Rumble
@@ -337,6 +348,7 @@ CircleMUD 3.5
 - Added buildwalk and dig.
  
 Release history:
+Version 3.53 release: July, 2007
 Version 3.52 release: April, 2007
 Version 3.51 release: February, 2007
 Version 3.5 release: December, 2006

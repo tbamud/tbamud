@@ -482,15 +482,18 @@ end
 %echo% @BA partially-petrified memlin gasps with his dying breath: my daughter... find her... in the Sandy... Tunn...@n
 ~
 #2725
-testrandom~
-1 b 100
+test for Tink~
+2 b 100
 ~
-eval actor %self.worn_by%
-if !%actor%
-  halt
-endif
-%echoaround% %actor% Lightning cackles around %actor.name%
-%send% %actor% Lightning cackles around you.
+eval tar 2700
+while %tar%
+  if %tar% < 2720
+    %at% %tar% %echo% This is a test message.
+    eval tar %tar%+1
+  else
+    eval tar 0
+  end
+done
 ~
 #2726
 test randomroom~
@@ -1396,6 +1399,7 @@ switch %random.2%
     wear cloth
   break
 done
+wear all
 ~
 #2773
 (2708) Keeper gives book~
@@ -1543,7 +1547,7 @@ test corpse purge (use with 2784)~
 otimer 5
 ~
 #2788
-test purge~
+test time~
 0 c 100
 test~
 %purge% %self%

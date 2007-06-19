@@ -1,4 +1,12 @@
 #1200
+General trigger keeper. Only for use in room 0.~
+2 a 100
+~
+* Not used for anything but variable storage. No Script!
+* Without this trig attached you will get the error:
+* Trying to access Global var list of void. Apparently this has not been set up!
+~
+#1201
 Calculator By Mordecai~
 2 d 100
 *~
@@ -56,13 +64,6 @@ if %actor.is_pc%
     end
   end
 end
-~
-#1201
-No Recall~
-1 c 100
-recall~
-*This trigger prevents people from recalling.
-%send% %actor% Divine forces prevent you from doing that.
 ~
 #1202
 Justice sword~

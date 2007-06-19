@@ -231,7 +231,7 @@ water leathery pouch water~
 a leathery pouch~
 A leathery pouch is lying here.~
 ~
-17 0 0 0 0 a 0 0 0 0 0 0 0
+17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 10 0 0
 15 50 0 1
 E
@@ -1315,4 +1315,13 @@ birthday cake~
    This birthday cake is Detta's, created on August 5th, to commemorate her last
 ever day of being 22 years old.  *breaks down and sobs about not being old*
 ~
+#2784
+xxxspiderball spider ball~
+a spider ball~
+A spider ball sits here.~
+~
+0 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 100 0 0
+T 1133
 $~

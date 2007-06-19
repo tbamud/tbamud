@@ -1,10 +1,10 @@
 #200
 The Northern Road~
-   You find yourself standing in the middle of a very mysterious looking road.
-Everything to the east appears to be dark and gloomy, giving you the feeling
-that maybe you shouldn't have come here.  However, things in the west change
-dramatically.  You can hear the shouts of soldiers in training.  The road
-continues to the north and south.    
+   This seems to be the middle of a very mysterious looking road.  Everything to
+the east appears to be dark and gloomy, giving off the impression that maybe
+travelers would better avoid coming here.  However, things in the west change
+dramatically.  The shouts of soldiers in training can be heard.  The road
+continues to the north and south.
 ~
 2 0 0 0 0 0
 D0
@@ -59,10 +59,10 @@ Zone 2 is linked to the following zones:
 S
 #201
 Thieves Avenue~
-   You walk between the inner city wall and the warehouse.  The warehouse is
-made from sturdy timber with a set of wide double doors that appear to open
-outwards.  Wagon tracks lead right up to the warehouse.  This must be where
-traders come to unload their supplies.    
+   This avenue passes between the inner city wall and the warehouse.  The
+warehouse is made from sturdy timber with a set of wide double doors that appear
+to open outwards.  Wagon tracks lead right up to the warehouse.  This must be
+where traders come to unload their supplies.  
 ~
 2 0 0 0 0 0
 D0
@@ -163,8 +163,8 @@ S
 Warriors Avenue~
    The inner city wall and the army barracks guide the avenue north and south
 through the Warriors Quarter.  Very few people are around, but plenty of
-soldiers rush about.  You wonder why anyone would sign up for the army after
-all the stories you've heard.    
+soldiers rush about.  One might wonder why anyone would sign up for the army
+after all the stories flying around.
 ~
 2 0 0 0 0 0
 D0
@@ -178,9 +178,9 @@ D2
 S
 #207
 The Northern Temple Circle~
-   You continue walking along the cobblestone road.  You can see the temple
-towering over you, shimmering in the light.  The road continues to the south
-and east.  A stairwell leads up onto the top of the inner city wall.    
+   As one continues walking along the cobblestone road the temple can be seen
+towering high above, shimmering in the light.  The road continues to the south
+and east.  A stairwell leads up onto the top of the inner city wall.
 ~
 2 0 0 0 0 0
 D1
@@ -198,10 +198,10 @@ D4
 S
 #208
 The Northern Temple Circle~
-   The road ahead of you is long.  You can see an intersection up ahead, to the
-east.  It looks like it leads into the temple.  The smell of some sort of vile
-concoction emanates from a building to the south.  You think you can hear
-someone chanting within.    
+   The road ahead is long, and an intersection can be seen up ahead to the east.
+It looks like it leads into the temple.  The smell of some sort of vile
+concoction emanates from a building to the south.  The sound of someone chanting
+can be heard coming from within.
 ~
 2 0 0 0 0 0
 D1
@@ -219,10 +219,10 @@ D3
 S
 #209
 The Northern Temple Circle~
-   You can see an intersection just ahead to the east.  It's leading directly
+   An intersection can be seen just ahead to the east.  Its leading directly
 into the temple of Sanctus.  The road continues to the east and west.  A small
 building to the south has boxes and envelopes stacked on both sides of the
-entrance.  You can hear someone cursing within.    
+entrance.  The sound of someone cursing can be heard coming from within.
 ~
 2 0 0 0 0 0
 D1
@@ -240,10 +240,11 @@ D3
 S
 #210
 The Northern Temple Circle Intersection~
-   A large intersection is before you.  If you go south, you will go into the
-wonderful Temple of Sanctus.  To the east and west is a road that looks to wind
-around the temple.  To the north you can't see anything but open road.  
-Everything around is silent, making you feel all alone.    
+   A large intersection spreads out in all directions.  The southern path
+appears to lead to the wonderful Temple of Sanctus.  To the east and west is a
+road that looks to wind around the temple.  To the north nothing can be seen but
+open road.  Everything around is silent, making the area seem abandoned and
+alone.
 ~
 2 0 0 0 0 0
 D0
@@ -265,10 +266,11 @@ D3
 S
 #211
 The Northern Temple Circle~
-   You can see an intersection just ahead to the west.  It's leading directly
+   An intersection can be seen just ahead to the west.  Its leading directly
 into the temple of Sanctus.  The road continues to the east and west.  To the
 south is a building with barred windows and a reinforced door that currently
-stands open.  A sign above the door informs you that it is the Bank of Sanctus.
+stands open.  A sign above the door informs passing people that it is the Bank
+of Sanctus.
 ~
 2 0 0 0 0 0
 D1
@@ -286,11 +288,11 @@ D3
 S
 #212
 The Northern Temple Circle~
-   You can see an intersection just ahead to the west.  It looks to be leading
+   An intersection can be seen just ahead to the west.  It looks to be leading
 directly into the temple of Sanctus.  The road continues east and west.  The
-sound of running water to the south and the squeak of a water pump can only
-mean one thing.  It must be the infamous Sanctus Water Hole run by none other
-than Hazel herself.    
+sound of running water to the south and the squeak of a water pump can only mean
+one thing.  It must be the infamous Sanctus Water Hole run by none other than
+Hazel herself.
 ~
 2 0 0 0 0 0
 D1
@@ -308,10 +310,10 @@ D3
 S
 #213
 The Northern Temple Circle~
-   The road makes a sharp turn here, heading to the south.  You can see an
+   The road makes a sharp turn here, heading to the south.  One can see an
 intersection just up ahead.  A set of stone stairs leads up into the
 northeastern lookout tower of the inner city wall.  From there guards can
-oversee the entire Thieves Quarter.    
+oversee the entire Thieves Quarter.  
 ~
 2 0 0 0 0 0
 D2
@@ -329,10 +331,10 @@ D4
 S
 #214
 Thieves Avenue~
-   Wagons of supplies and loud mouthed traders pass by, looking you over to see
-if they might be able to swindle some of your gold.  Most look at you with
+   Wagons of supplies and loud mouthed traders pass by, looking travelers over
+to see if they might be able to swindle some of your gold.  Most look with
 disappointment as everyone knows few adventurers are rich these days.  The
-avenue follows along the inner city wall to the north and south.    
+avenue follows along the inner city wall to the north and south.  
 ~
 2 0 0 0 0 0
 D0
@@ -423,10 +425,10 @@ D3
 S
 #219
 Warriors Avenue~
-   The building to your west is made out of stone, sealed with mortar.  It must
-have taken years to construct it.  The inner city wall to your east is made of
+   The building to the west is made out of stone, sealed with mortar.  It must
+have taken years to construct it.  The inner city wall to the east is made of
 the same material.  That must have been one of the many foul jobs given to new
-recruits.    
+recruits.  
 ~
 2 0 0 0 0 0
 D0
@@ -440,10 +442,11 @@ D2
 S
 #220
 The Western Temple Circle~
-   You are in the western sector of the inner city, beside the Temple of
-Sanctus.  The tall reinforced western wall rises above you.  Few people roam
-the streets and the area has a very peaceful feeling.  The sound of muttering
-voices seems to be coming from within or on top of the wall to your west.    
+   This circle lies within the western sector of the inner city, beside the
+Temple of Sanctus.  The tall reinforced western wall rises high into the air.  
+Few people roam the streets and the area has a very peaceful feeling.  The sound
+of muttering voices seems to be coming from within or on top of the wall to the
+west.
 ~
 2 0 0 0 0 0
 D0
@@ -457,10 +460,10 @@ D2
 S
 #221
 Ingrid's Potions~
-   A foul smelling yellow mist hugs the floor.  Billowing around your feet as
-you work your way to the counter.  Several kettles are boiling over woodless
+   A foul smelling yellow mist hugs the floor.  Billowing around the floor as
+one works their way to the counter.  Several kettles are boiling over woodless
 fires that put off no smoke.  The yellow fog overflows the top of one of the
-kettles, giving the room an awful aroma.    
+kettles, giving the room an awful aroma.  
 ~
 2 8 0 0 0 0
 D0
@@ -472,7 +475,7 @@ S
 Post Office~
    Piles of mail are stacked in every nook and cranny of this small room.  The
 postal service of Sanctus is heavily overworked it seems.  Somewhere amidst the
-piles of mail you hear someone snoring.  Maybe not overworked, just lazy.    
+piles of mail someone can be heard snoring.  Maybe not overworked, just lazy.  
 ~
 2 8 0 0 0 0
 D0
@@ -482,10 +485,10 @@ D0
 S
 #223
 Northern Temple Entrance~
-   You're standing in the entrance to the temple.  Hundreds of small lit
-candles surround you in a blanket of light.  You can hear a soft humming noise
-coming from within the depths of the temple.  Maybe it would be worth your time
-to go have a look.    
+   This appears to be the northernmost entrance to the temple.  Hundreds of
+small lit candles surround the place in a blanket of light.  A soft humming
+noise can be heard coming from within the depths of the temple.  An adventurous
+traveler would certainly be drawn to go and have a look.  
 ~
 2 0 0 0 0 0
 D0
@@ -525,10 +528,10 @@ D0
 S
 #226
 The Eastern Temple Circle~
-   The inner city wall rises above you to the east.  The sound of armor
-clanking can be heard as some guards must be making their rounds on top of the
-wall.  This road winds around the Temple of Sanctus allowing you to enter from
-either the north or south.    
+   The inner city wall rises above to the east.  The sound of armor clanking can
+be heard as some guards must be making their rounds on top of the wall.  This
+road winds around the Temple of Sanctus allowing one to enter from either the
+north or south.  
 ~
 2 0 0 0 0 0
 D0
@@ -626,10 +629,10 @@ D0
 S
 #232
 Warriors Avenue~
-   You are just north of the center of the western half of Sanctus where the
-Warriors Quarter and Clerics Quarters meet.  The Western Road runs from the
+   This avenue is just north of the center of the western half of Sanctus where
+the Warriors Quarter and Clerics Quarters meet.  The Western Road runs from the
 temple to the west gate.  Very few people are about, mostly just soldiers on
-patrol.    
+patrol.  
 ~
 2 0 0 0 0 0
 D0
@@ -643,10 +646,10 @@ D2
 S
 #233
 The Western Temple Circle~
-   To the south you see the western gate to leave the inner city.  The Temple
-of Sanctus can only be entered from the north or south.  A small shed of some
-sort has been erected to the east.  It was recently made from wood and appears
-to have been constructed in a hurry.    
+   To the south one see the western gate to leave the inner city.  The Temple of
+Sanctus can only be entered from the north or south.  A small shed of some sort
+has been erected to the east.  It was recently made from wood and appears to
+have been constructed in a hurry.  
 ~
 2 0 0 0 0 0
 D0
@@ -664,10 +667,10 @@ D2
 S
 #234
 Captain Lugdach's~
-   Every imaginable type of watercraft fills this room.  From canoes, to
-buoyant vests.  An old salty sailor sits in the back carving out what must be a
-canoe from a huge oak.  He looks about as tough as they come.  You can't help
-but look for a parrot and peg leg.    
+   Every imaginable type of watercraft fills this room.  From canoes, to buoyant
+vests.  An old salty sailor sits in the back carving out what must be a canoe
+from a huge oak.  He looks about as tough as they come.  He inspires the urge to
+look for a parrot and peg leg.
 ~
 2 0 0 0 0 0
 D3
@@ -677,10 +680,10 @@ D3
 S
 #235
 Donation Room~
-   A large area has been set aside for those of great wealth and power to
-donate to those who are less fortunate.  Racks and shelves line the walls to
-supply ample storage for those who wish to donate.  Be a good citizen and leave
-something for the poor.    
+   A large area has been set aside for those of great wealth and power to donate
+to those who are less fortunate.  Racks and shelves line the walls to supply
+ample storage for those who wish to donate.  This is the ideal place to be a
+good citizen and leave something for the poor.
 ~
 2 12 0 0 0 0
 D1
@@ -694,11 +697,10 @@ D2
 S
 #236
 Inside the Temple of Sanctus~
-   You find yourself walking down a small hallway.  You look around at your
-surroundings.  To the south you see a large room containing a beautiful stone
-fountain!  Maybe you could get a drink there.  The floor at your feet is made
-from marble, and looks flawless.  A lot of time and effort must have been put
-into this temple.    
+   The floor spreads out lengthwise into a small hallway.  To the south a large
+room containing a beautiful stone fountain is visible, tempting travelers to
+drink from it.  The polished floor is made from smooth marble, and looks
+flawless.  A lot of time and effort must have been put into this temple.
 ~
 2 8 0 0 0 0
 D0
@@ -738,9 +740,9 @@ S
 #238
 Carla the Cloth Mistress~
    The room is filled to overflowing with bundles of wool, cloth, velvet, silk.
-Everything a person could imagine. All used to make some of the finest clothes
-in the realm. Every type of clothing can be found here. What you don't see,
-Carla can make. 
+Everything a person could imagine.  All used to make some of the finest clothes
+in the realm.  Every type of clothing can be found here.  Anything that can't be
+seen, Carla can make.
 ~
 2 8 0 0 0 0
 D1
@@ -750,10 +752,10 @@ D1
 S
 #239
 The Eastern Temple Circle~
-   The western gate of the inner city wall is just to the south where you can
-venture out into the city.  The Tower of Sanctus shines brightly, it's white
+   The western gate of the inner city wall is just to the south where one can
+venture out into the city.  The Tower of Sanctus shines brightly, its white
 marble reflecting all light that strikes it.  The Tower is rumoured to be a
-combination of magic and perfect architecture.    
+combination of magic and perfect architecture.
 ~
 2 0 0 0 0 0
 D0
@@ -771,10 +773,10 @@ D3
 S
 #240
 Thieves Avenue~
-   From here you have an excellent view of the temple to the west.  It reflects
-any light that shines at it, the smooth white walls seem almost magical.  To
-the south the avenue reaches an intersection.  The meeting of the Thieves
-Quarter and the Magi's Quarter.    
+   From here one has an excellent view of the temple to the west.  It reflects
+any light that shines at it, the smooth white walls seem almost magical.  To the
+south the avenue reaches an intersection.  The meeting of the Thieves Quarter
+and the Magi Quarter.
 ~
 2 0 0 0 0 0
 D0
@@ -814,10 +816,10 @@ D0
 S
 #243
 The West Gate~
-   The dome can be seen just to the west.  The gate you stand in is normally
+   The dome can be seen just to the west.  The gate standing here is normally
 kept open, the tall wooden beams are reinforced with metal bars.  Guards can be
-heard above you, lookouts to warn in the case of an attack.  The town looks
-very safe and secure from here.    
+heard high above, lookouts to warn in the case of an attack.  The town looks
+very safe and secure from here.  
 ~
 2 0 0 0 0 0
 D1
@@ -840,9 +842,9 @@ S
 #244
 The Western Road~
    The road leads directly from the Temple to the western gate.  To the north
-you can see the Warriors Barracks and to the south the Hall of Clerics.  The
+one can see the Warriors Barracks and to the south the Hall of Clerics.  The
 road consists of hard packed dirt with a few ruts from wagons.  The hustle and
-bustle of the city can be heard all around you.    
+bustle of the city can be heard all around.  
 ~
 2 0 0 0 0 0
 D1
@@ -856,10 +858,10 @@ D3
 S
 #245
 The Western Road~
-   In the western half of the city you can see a large building set aside for
+   In the western half of the city one can see a large building set aside for
 the army to the north while a smaller building to the south appears to be part
-of the clerics quarter.  The temple rises above you to the east.  You could
-leave the protection of the city and go west through the gate.    
+of the clerics' quarter.  The temple rises high above to the east.  Here, one
+could leave the protection of the city and go west through the gate.
 ~
 2 0 0 0 0 0
 D1
@@ -898,10 +900,11 @@ D3
 S
 #247
 Under the Inner Wall~
-   You walk through the western inner wall gate.  It is extremely dark in here.
-The inner wall appears to be about twenty feet in thickness.  No one could ever
-batter down this wall.  Looking up you see a portculis built into the wall.  
-You wonder what would happen if it were to suddenly let go and crush you.    
+   This path passes through the western inner wall gate.  It is extremely dark
+in here.  The inner wall appears to be about twenty feet in thickness.  No one
+could ever batter down this wall.  Looking up, one can see a portculis built
+into the wall.  Its probably best not to wonder what would happen if it were to
+suddenly let go and come crashing down.
 ~
 2 0 0 0 0 0
 D1
@@ -942,8 +945,9 @@ S
 The Mortal Board Room~
    A large board hangs on the western wall to allow for mortals to keep in
 contact with the gods or each other.  The board is monitored and any questions
-should be promptly answered.  If the board is not the place to solve your
-problems simply go to the post office and mail a god.    
+should be promptly answered.  If the board is not the right place for a
+particular problem to be solved, it is possible to go to the post office and
+mail a god.
 ~
 2 8 0 0 0 0
 D1
@@ -953,10 +957,10 @@ D1
 S
 #250
 Inside the Temple~
-   The white marble floor has been polished to the point where you can see your
+   The white marble floor has been polished to the point where one can see their
 own reflection perfectly.  Not a single marr or scratch on it's flawless
 surface.  The echo of people walking inside the temple can be heard, though not
-pinpointed.    
+pinpointed.
 ~
 2 8 0 0 0 0
 D0
@@ -978,10 +982,10 @@ D3
 S
 #251
 The Center of Sanctus~
-   You stand in the exact center of the city of Sanctus.  From this spot is
-where Rumble and Ferret began restoring order to the world.  Many tales abound
-about this fabled temple and its founders.  Most are just that, tales, but many
-hold truths beyond what even the storytellers realize.    
+   This open space seems to be the exact center of the city of Sanctus.  From
+this spot is where Rumble and Ferret began restoring order to the world.  Many
+tales abound about this fabled temple and its founders.  Most are just that,
+tales, but many hold truths beyond what even the storytellers realize.  
 ~
 2 24 0 0 0 0
 D0
@@ -1007,12 +1011,12 @@ D4
 S
 #252
 Inside the Temple of Sanctus~
-   The fluted columns of white marble laced with gold sets your mouth agape.  
-The workmanship required to create this place must have been unbelievable.  
-Must be the rumours that it was created by the gods are true.  Several benches
-can be seen to the north.  The sound of running water can be heard to the west.
-To the south you see people in prayer, while to the east you see a small room
-with several people gossiping.    
+   The fluted columns of white marble laced with gold are enough to make
+anyone's mouth gape.  The workmanship required to create this place must have
+been unbelievable.  Must be the rumours that it was created by the gods are
+true.  Several benches can be seen to the north.  The sound of running water can
+be heard to the west.  To the south people can be seen, busy in prayer, while to
+the east a small room lies, full of several people gossiping.
 ~
 2 8 0 0 0 0
 D0
@@ -1035,9 +1039,9 @@ S
 #253
 The Social Board Room~
    It is here the people of Sanctus come to discuss anything and everything.  
-This board is used for no other reason than to socialize with one and another.
+This board is used for no other reason than to socialize with one another.  
 Various boards can be found throughout the realm.  This one can be viewed by
-anyone.    
+anyone.  
 ~
 2 8 0 0 0 0
 D3
@@ -1072,10 +1076,10 @@ D4
 S
 #255
 Under the Inner Wall~
-   This passage through the inner city wall reminds you of a tunnel.  The wall
-is so thick that no matter the time of day shadows still lurk everywhere under
-here.  A portculis is built into the ceiling above you.  Must be the controls
-for it are on top of it.    
+   This passage through the inner city wall is reminiscent of of a tunnel.  The
+wall is so thick that no matter the time of day shadows still lurk everywhere
+under here.  A portculis is built into the ceiling high above.  Must be the
+controls for it are on top of it.  
 ~
 2 0 0 0 0 0
 D1
@@ -1089,10 +1093,10 @@ D3
 S
 #256
 The Eastern Intersection~
-   You stand on the Eastern Road that travels from the east gate to the Temple
-of Sanctus.  North lies the Thieves Quarter while to the South you can enter
-the Magi's Quarter.  This road bustles with activity as people go about their
-daily lives.    
+   This intersection stands on the Eastern Road that travels from the east gate
+to the Temple of Sanctus.  North lies the Thieves Quarter while to the South one
+can enter the Magi's Quarter.  This road bustles with activity as people go
+about their daily lives.  
 ~
 2 0 0 0 0 0
 D0
@@ -1114,10 +1118,10 @@ D3
 S
 #257
 The Eastern Road~
-   The Eastern intersection is just to your west.  To the north lies the
-Thieves Quarter and their warehouse.  South is the Magi's Mansion and the
-Magi's Quarter.  To the east you can exit the city through the Eastern Gate.  
-The infamous Temple of Sanctus can be seen rising from the center of the city.
+   The Eastern intersection is just to the west.  To the north lies the Thieves
+Quarter and their warehouse.  South is the Magi's Mansion and the Magi's
+Quarter.  To the east one can exit the city through the Eastern Gate.  The
+infamous Temple of Sanctus can be seen rising from the center of the city.
 ~
 2 0 0 0 0 0
 D1
@@ -1131,10 +1135,10 @@ D3
 S
 #258
 The Eastern Road~
-   You travel along the Eastern Road.  The gate lies to the east while the
-entire city spreads out before you to the west.  The safety of the city is
-preferred by almost everyone.  But, some people choose to live outside the east
-gate where there are very few troubles or mishaps.    
+   This road passes along the Eastern Road.  The gate lies to the east while the
+entire city spreads out to the west.  The safety of the city is preferred by
+almost everyone.  But, some people choose to live outside the east gate where
+there are very few troubles or mishaps.  
 ~
 2 0 0 0 0 0
 D1
@@ -1148,10 +1152,10 @@ D3
 S
 #259
 The Eastern Gate~
-   The dome stretches out further than usual here, covering some sections of
-the residential district.  This area is known for it's relative safety.  Very
-few problems arise from beyond the east gate.  The city of Sanctus lies to the
-west.  To the east you can see the remains of an old gatheouse.    
+   The dome stretches out further than usual here, covering some sections of the
+residential district.  This area is known for it's relative safety.  Very few
+problems arise from beyond the east gate.  The city of Sanctus lies to the west.
+To the east one can see the remains of an old gatehouse.  
 ~
 2 0 0 0 0 0
 D3
@@ -1192,10 +1196,10 @@ D2
 S
 #262
 Clerics Avenue~
-   To the north you can leave the Clerics Quarter and either continue to the
+   To the north one can leave the Clerics Quarter and either continue to the
 Warriors Quarter, go east into the Temple of Sanctus or west to the western
-gate.  A large building and the inner city wall on each side of this north
-south street leaves little room for walking.    
+gate.  A large building and the inner city wall on each side of this north south
+street leaves little room for walking.  
 ~
 2 0 0 0 0 0
 D0
@@ -1211,8 +1215,8 @@ S
 The Western Temple Circle~
    The inner city not only holds the temple, but also numerous shops for the
 town folk.  Everything, well almost everything, can be found within these walls
-to support the town.  A woman lugging a sack full of groceries arrives from the
-east.    
+to support the town.  Women lugging sacks full of groceries arrive from the east
+and pass down the street.
 ~
 2 0 0 0 0 0
 D0
@@ -1232,8 +1236,8 @@ S
 The Town Grocer~
    Chunks of ice lie in crates of sawdust to cool the perishable items.  Fruit
 and vegetable stands line both walls.  This shop seems to carry everything,
-except bread and meat.  Must be the Baker, Butcher, and Grocer have an
-understanding.    
+except bread and meat.  Must be the baker, butcher, and grocer have an
+understanding.  
 ~
 2 8 0 0 0 0
 D3
@@ -1262,8 +1266,8 @@ S
 Inside the Temple of Sanctus~
    This is the main passage through the temple.  Small rooms to each side are
 unusually quiet.  It appears people are in prayer inside.  The center of the
-Temple lies to the north.  The white marble floor, walls, and ceilings of the
-temple are spotless.    
+temple lies to the north.  The white marble floor, walls, and ceilings of the
+temple are spotless.  
 ~
 2 8 0 0 0 0
 D0
@@ -1285,10 +1289,10 @@ D3
 S
 #267
 A Room of Prayer~
-   The room surrounds you in a soft glow from dozens of candles lining the
-walls, filling the alter and even hanging from the ceiling by chandeliers.  
-The candles are scented, leaving a faint aroma of spring flowers.  Cushions of
-various colors cover the floor in precise rows.    
+   The room is surrounded with a soft glow from dozens of candles lining the
+walls, filling the alter and even hanging from the ceiling by chandeliers.  The
+candles are scented, leaving a faint aroma of spring flowers.  Cushions of
+various colors cover the floor in precise rows.
 ~
 2 0 0 0 0 0
 D0
@@ -1315,10 +1319,10 @@ D1
 S
 #269
 The Eastern Temple Circle~
-   The smell of tanned hides and flowers comes from the east, how strange.  
-You are just inside the market center of Sanctus.  The stores have all taken up
-shop surrounding the Temple.  They originally were afraid the outer city could
-be overrun, but now they are just too lazy to move.    
+   The smell of tanned hides and flowers comes from the west, how strange.  
+This circle lies just inside the market center of Sanctus.  The stores have all
+taken up shop surrounding the Temple.  They originally were afraid the outer
+city could be overrun, but now they are just too lazy to move.  
 ~
 2 0 0 0 0 0
 D0
@@ -1335,12 +1339,12 @@ D3
 0 0 268
 S
 #270
-Magis Avenue~
+Magi Avenue~
    A fabulous mansion sits on a small hill to the east.  The entrance is far to
-the south . To the north you can leave the Magi's Quarter and travel along the
+the south .  To the north one can leave the Magi's Quarter and travel along the
 Eastern Road or head further north into the Thieves Quarter.  This Quarter of
 the city is very well maintained, decorative streetlamps line both sides of the
-wide street.    
+wide street.  
 ~
 2 0 0 0 0 0
 D0
@@ -1423,10 +1427,10 @@ D3
 S
 #275
 Clerics Avenue~
-   The building to your west is the Hall of Clerics were the High Council holds
-audience with any who request it.  To the east the inner city wall look about
-as impenetrable as any wall you have ever seen.  Clerics Avenue continues north
-and south.    
+   The building to the west is the Hall of Clerics where the High Council holds
+audience with any who request it.  To the east the inner city wall looks about
+as impenetrable as any wall ever seen.  Clerics Avenue continues north and
+south.  
 ~
 2 0 0 0 0 0
 D0
@@ -1463,8 +1467,8 @@ S
 The Town Jeweler~
    Display cases of very nice looking gems sit in the back of the room behind
 some steel bars.  Must be the jeweler has had problems with thieves.  Several
-nuggets of strang minerals are display on shelves all around you.  Lucky is the
-individual who can find some of these valuable items to sell.    
+nuggets of strange minerals are display on shelves all around.  Lucky is the
+individual who can find some of these valuable items to sell.  
 ~
 2 8 0 0 0 0
 D3
@@ -1475,9 +1479,9 @@ S
 #278
 The Butcher~
    Slabs of meat are suspended from hooks hanging from the rafters overhead.  
-Everything from rabbit, to cow, to...  That one looks an awful lot like a cat.
-Any meat you may need, this guy sells it.  Blood covers the counter and the
-small cutting area behind it.    
+Everything from rabbit, to cow, to goodness knows what.  One of the pieces looks
+an awful lot like a cat.  Any meat a person may need, this guy sells it.  Blood
+covers the counter and the small cutting area behind it.
 ~
 2 8 0 0 0 0
 D2
@@ -1487,10 +1491,10 @@ D2
 S
 #279
 Southern Temple Entrance~
-   You stand in a small foyier at the southern end of the Temple of Sanctus.  
-The white marble walls have been polished smooth.  A small road to the south
-leads to the Cleric's and Magi's quarters of the city.  The scent of flowers
-soothes you.    
+   This appears to be a small foyer at the southern end of the Temple of
+Sanctus.  The white marble walls have been polished smooth.  A small road to the
+south leads to the Cleric's and Magi's quarters of the city.  The scent of
+flowers fills the air with a soothing aroma.
 ~
 2 8 0 0 0 0
 D0
@@ -1506,8 +1510,8 @@ S
 The Bakery~
    Everything is covered in dust, or actually maybe that is flour.  A hefty
 woman behind the counter is pounding relentlessly on a stubborn hunk of dough.
-Those arms on her remind you of the smithy.  Various baked goods fill the
-entire room.  Baked fresh daily of course.    
+Those arms on her are similar to those of the smithy.  Various baked goods fill
+the entire room.  Baked fresh daily of course.  
 ~
 2 8 0 0 0 0
 D2
@@ -1517,10 +1521,10 @@ D2
 S
 #281
 The General Store~
-   Various types of hardware needed by any wanna be adventurer fills bins and
+   Various types of hardware needed by any wanna be adventurer fill bins and
 buckets around the store.  The items look second hand, but they would all serve
-their purpose.  A few other customers wander the store.  They can't seem to
-find what they are looking for either.    
+their purpose.  A few other customers wander the store.  They can't seem to find
+what they are looking for either.  
 ~
 2 0 0 0 0 0
 D1
@@ -1531,9 +1535,8 @@ S
 #282
 The Eastern Temple Circle~
    A large shop to the west displays a few packs, some lanterns, and even some
-mining equipment.  The cobblestone road is blocked to the east by the inner
-city wall and several stores crowd against the Temple of Sanctus to the west.
-  
+mining equipment.  The cobblestone road is blocked to the east by the inner city
+wall and several stores crowd against the Temple of Sanctus to the west.  
 ~
 2 8 0 0 0 0
 D0
@@ -1550,11 +1553,11 @@ D3
 0 0 281
 S
 #283
-Magis Avenue~
-   The streetlamps glow an unnatural white, upon closer examination you realize
-they must be magical in nature since no oil you've ever seen burns that color.
-The beautiful cobblestone road meanders north and south.  The Magi Mansion to
-the east looks glorious.    
+Magi Avenue~
+   The streetlamps glow an unnatural white, upon closer examination it becomes
+obvious that they must be magical in nature since no oil you've ever seen burns
+that color.  The beautiful cobblestone road meanders north and south.  The Magi
+Mansion to the east looks glorious.  
 ~
 2 0 0 0 0 0
 D0
@@ -1644,11 +1647,11 @@ D2
 S
 #288
 Clerics Avenue~
-   The inner city wall to your east consists of large boulders, that look to be
-too big to move by any humans, and some sort of filler.  The wall rises at
-least three times your height and you can not tell how thick it must be.  You
-hear the sound of clanking armor and idle chat as guards on the wall above you
-make their rounds.    
+   The inner city wall to the east consists of large boulders, that look to be
+too big to move by any humans, and some sort of filler.  The wall rises at least
+three times the average man's height and one can not tell how thick it must be.
+YouThe sound of clanking armor can be heard, along with idle chat as guards on
+the wall above you make their rounds.
 ~
 2 0 0 0 0 0
 D0
@@ -1662,10 +1665,10 @@ D2
 S
 #289
 The Southern Temple Circle~
-   You've reached the southeastern intersection of the inner city.  The south
-and west inner city walls merge here.  A set of stone stairs lead up into a
-small lookout post above you.  The street turns here, wrapping around the
-Temple of Sanctus.    
+   This circle appears to be the southeastern intersection of the inner city.  
+The south and west inner city walls merge here.  A set of stone stairs lead up
+into a small lookout post high above.  The street turns here, wrapping around
+the Temple of Sanctus.
 ~
 2 0 0 0 0 0
 D0
@@ -1683,10 +1686,10 @@ D4
 S
 #290
 The Southern Temple Circle~
-   The cobblestone street continues to the east and west along the southern
-wall of the inner city.  Small shops line the road to your north.  The Tower of
-Sanctus, with it's single tall spire reaching to the heavens, looks
-magnificient.  A style of workmanshi that has never been surpassed.    
+   The cobblestone street continues to the east and west along the southern wall
+of the inner city.  Small shops line the road to the north.  The Tower of
+Sanctus, with its single tall spire reaching to the heavens, looks magnificent.
+A style of workmanship that has never been surpassed.
 ~
 2 0 0 0 0 0
 D1
@@ -1701,9 +1704,9 @@ S
 #291
 The Southern Temple Circle~
    The smell of fresh, and not so fresh, meat wafts in from the north.  A sign
-swaying above the door in the breeze depicts a hunk of meat crosse with a
-butcher's axe.  You can see an intersection just to the east where you can exit
-the inner city or enter the Temple.    
+swaying above the door in the breeze depicts a hunk of meat crossed with a
+butcher's axe.  An intersection can be seen just to the east where one can exit
+the inner city or enter the temple.
 ~
 2 0 0 0 0 0
 D0
@@ -1721,9 +1724,9 @@ D3
 S
 #292
 The Southern Temple Circle Intersection~
-   The southern entrance to the Temple of Sanctus lies just to your north.  
-You may also travel along the Temple Circle east and west.  To the south you
-can exit the inner city and work your way into the Magi's or Cleric's Quarters.
+   The southern entrance to the Temple of Sanctus lies just to the north.  It is
+also possible to travel along the Temple Circle east and west.  To the south one
+can exit the inner city and work their way into the magi or clerics' Quarters.
 ~
 2 0 0 0 0 0
 D0
@@ -1745,10 +1748,10 @@ D3
 S
 #293
 The Southern Temple Circle~
-   The smell of freshly baked bread assails your nostrils and makes your
-stomach rumble.  To the west you can see an intersection that can lead into the
-Temple to the north or exit the inner city to the south.  The inner city wall
-stretches east and west alon the Temple Circle.    
+   The smell of freshly baked bread wafts heavily through the air, tempting
+feelings of hunger.  To the west can be seen an intersection that can lead into
+the temple to the north or exit the inner city to the south.  The inner city
+wall stretches east and west along the Temple Circle.
 ~
 2 0 0 0 0 0
 D0
@@ -1766,10 +1769,10 @@ D3
 S
 #294
 The Southern Temple Circle~
-   The cobblestone street continues to the east and west along the southern
-wall of the inner city.  Small shops line the road to your north.  The Tower of
-Sanctus, with it's single tall spire reaching to the heavens, looks
-magnificient.  A style of workmanshi that has never been surpassed.    
+   The cobblestone street continues to the east and west along the southern wall
+of the inner city.  Small shops line the road to the north.  The Tower of
+Sanctus, with its single tall spire reaching to the heavens, looks magnificent.
+A style of workmanship that has never been surpassed.
 ~
 2 0 0 0 0 0
 D1
@@ -1804,12 +1807,11 @@ D4
 0 0 122
 S
 #296
-Magis Avenue~
-   The stark inner city wall to the west bears a sharp contrast to the
-luxurious mansion to the east.  The Magi have trained hard to become very
-powerful within the city and have begun living the life that shows it.  Unlike
-the Clerics who do not believe in worldly possessions the Magi surround
-themselves with it.    
+Magi Avenue~
+   The stark inner city wall to the west bears a sharp contrast to the luxurious
+mansion to the east.  The magi have trained hard to become very powerful within
+the city and have begun living the life that shows it.  Unlike the clerics who
+do not believe in worldly possessions the Magi surround themselves with it.  
 ~
 2 0 0 0 0 0
 D0

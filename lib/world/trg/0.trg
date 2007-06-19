@@ -8,7 +8,9 @@ Non-attachable trigger~
 Mob Tutorial Example Quest Offer - M14~
 0 g 100
 ~
-* we don't want him to tell this to mobs. Check if actor is a player.
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A very basic 3 trigger receive quest. Trigs 1-3.
+* Make sure the actor is a player first.
 if %actor.is_pc%
   * only greet players coming from the south.
   if %direction% == south
@@ -28,27 +30,32 @@ end
 Mob Tutorial Example Kill Ogre - 16~
 0 f 100
 ~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A very basic 3 trigger receive quest. Trigs 1-3.
 say you got the best of me %actor.name%. But I'll be back.
-* load the wings
+* Load the wings to be returned to the questmaster.
 %load% obj 1
-* reload the mob for the next questor
+* Reload the mob for the next questor.
 %load% mob 16
 ~
 #3
 Mob Tutorial Example Completion - 14~
 0 j 100
 ~
-* check if this was indeed the right object
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A very basic 3 trigger receive quest. Trigs 1-3.
+* Check if this was indeed the right object.
 if %object.vnum% == 1
   wait 1 sec
   say Thank you, %actor.name%
   %send% %actor% %self.name% gives you a gold piece.
   %echoaround% %actor% %actor.name% is rewarded for his valor.
+  * Reward the actor with an entire gold coin!
   nop %actor.gold(1)%
   wait 5 sec
   %purge% obj 1
 else
-  * this wasn't the right object - don't accept it
+  * This isn't the right object - don't accept it.
   say I don't want that - bring me back my wings.
   return 0
 end
@@ -57,26 +64,31 @@ end
 Tutorial II Guard Greet - 24~
 0 g 100
 ~
-if %direction% == south
- wait 1 sec
- emote snaps to attention as you approach. 
- wait 1 sec
- say Admittance to the city is 10 coins. 
-end 
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A basic guard bribe trigger. Trigs 4, 5, 7, 8.
+* This is a N S road so only greet players arriving from the south.
+if %direction% == south && %actor.is_pc%
+  wait 1 sec
+  emote snaps to attention. 
+  wait 1 sec
+  say Admittance to the city is 10 coins. 
+end
 ~
 #5
 Tutorial II Guard Bribe 10 - 24~
 0 m 1
 ~
-* This is a comment. Always use amplifying comment to explain your Triggers!
-* If actor gives 10 coins or more
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A basic guard bribe trigger. Trigs 4, 5, 7, 8.
+* This is a comment. Always use amplifying comments to explain your Triggers!
+* If actor gives 10 coins or more.
 if %amount% >= 10
-  * if actor gives more than 10 then give them change
+  * If more than 10 give them change.
   if %amount% > 10
     eval change %amount% - 10
     give %change% coin %actor.name%
   end
-  * otherwise they must have given exactly 10 coins, open the gate.
+  * Otherwise they must have given exactly 10 coins, open the gate.
   say thank you.
   wait 1 sec
   unlock gateway
@@ -86,7 +98,7 @@ if %amount% >= 10
   close gateway 
   wait 1 sec
   lock gateway 
-  * else they gave too few! be nice and refund them
+  * Else they gave too few! be nice and refund them.
 else
   say only %amount% coins, I require 10.
   give %amount% coin %actor.name%
@@ -96,7 +108,7 @@ end
 Obj Command Magic Eight Ball - O47~
 1 c 2
 shake~
-* By Rumble of The Builder Academy builderacademy.net 9091
+* By Rumble of The Builder Academy    builderacademy.net 9091
 * Numeric Arg: 2 means in character's carried inventory.
 * Command trigs do not work for level 32 and above.
 * There are 20 possible answers that the Magic Eight Ball can give. 
@@ -191,26 +203,36 @@ end
 Tutorial II Guard Closes Gate - 24~
 0 e 0
 The gate is opened from~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A basic guard bribe trigger. Trigs 4, 5, 7, 8.
+* This is required to close the gate after someone opens it from the other
+* side.
 wait 5 sec 
 close gate 
 wait 1 sec
-lock gate 
+lock gate
 ~
 #8
 Tutorial II Guard Closes Gate 2 - 24~
 0 e 0
 leaves north.~
-wait 5 sec
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* A basic guard bribe trigger. Trigs 4, 5, 7, 8.
+* This is required to close the gate after the guard is bribed and someone
+* leaves to the north.
+wait 5 sec 
 close gate 
 wait 1 sec
-lock gate 
+lock gate
 ~
 #9
 Tutorial Quest 1317 - Starter~
 0 g 100
 ~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Quest Trigs 9-12. If the player comes from the south and has not done the quest.
 if %direction% == south
-  if %actor.varexists(solved_example_quest_zone_14)%
+  if %actor.varexists(solved_tutorial_quest_zone_0)%
     wait 1 sec
     say you have already completed this quest.
     halt
@@ -225,9 +247,9 @@ end
 Tutorial Quest 1317 - Accept~
 0 d 1
 yes~
-if %actor.varexists(solved_example_quest_zone_14)%
-  halt
-else
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Quest Trigs 9-12. If the player has not done the quest give them a hint.
+if !%actor.varexists(solved_tutorial_quest_zone_0)%
   wait 1 sec
   say Perfect, %actor.name%. I'll make this easy. It is to the east.
   wait 3 sec
@@ -239,12 +261,9 @@ end
 Tutorial Quest 1317 - Completion~
 0 j 100
 ~
-   if %actor.varexists(solved_example_quest_zone_14)%
-  halt
-end
-*
-wait 1 sec
-if %object.vnum% == 1394
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Quest Trigs 9-12. If the player returns the right object reward them.
+if !%actor.varexists(solved_tutorial_quest_zone_0)%  && %object.vnum% == 1394
   dance
   wait 1 sec
   say Thank you, %actor.name%.
@@ -255,8 +274,8 @@ if %object.vnum% == 1394
   emote shakes the magic eight ball vigorously.
   wait 1 sec
   emote does not seem too pleased with his answer.
-  set solved_example_quest_zone_14 1
-  remote solved_example_quest_zone_14 %actor.id%
+  set solved_tutorial_quest_zone_0 1
+  remote solved_tutorial_quest_zone_0 %actor.id%
   %purge% %object%
 else
   say I don't want that!
@@ -267,7 +286,9 @@ end
 Tutorial Quest 1441 - Load 8ball~
 2 g 100
 ~
-wait 2 sec
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* Quest Trigs 9-12. Drop the 8ball on their head when they enter.
+wait 1 sec
 %echoaround% %actor.name% A magic eight ball drops from the sky striking %actor.name% on the head.
 %send% %actor% A magic eight ball drops from the sky striking you on the head.
 %load% obj 1394
@@ -310,7 +331,7 @@ end
 Damage Example~
 2 g 100
 ~
-* By Rumble
+* By Rumble of The Builder Academy    builderacademy.net 9091
 * First put a wait in so the echo waits for the player to get into the room.
 wait 1 sec
 %echo% As %actor.name% enters the room a bolt of lightning smites %actor.himher%.
@@ -1988,8 +2009,7 @@ end
 Obj Timer Example~
 1 f 100
 ~
-* %echo% The trigger fires now!
-* otimer 3
+* This object will disappear once its timer value reaches 0.
 %echo% The ice cream melts away.
 %purge% %self%
 ~
@@ -2042,10 +2062,9 @@ end
 ~
 #87
 Obj Remove Example~
-1 l 100
+1 l 90
 ~
 return 0
-%send% %actor% You can't remove it.
 ~
 #88
 Obj Load Example~
@@ -2540,9 +2559,48 @@ end
 ~
 #98
 Mob Act - 98 Teleporter Give~
-0 g 100
-~
-whisper %actor% this is a crash test
+0 e 0
+has entered the game.~
+* By Rumble
+if %actor.is_pc%  
+  if !%actor.eq(*)%
+    %load% obj 50 %actor% light
+    %load% obj 51 %actor% rfinger
+    %load% obj 52 %actor% lfinger
+    %load% obj 53 %actor% neck1
+    %load% obj 54 %actor% neck2
+    %load% obj 55 %actor% body
+    %load% obj 56 %actor% head
+    %load% obj 57 %actor% legs
+    %load% obj 58 %actor% feet
+    %load% obj 59 %actor% hands
+    %load% obj 60 %actor% arms
+    %load% obj 61 %actor% shield
+    %load% obj 62 %actor% about
+    %load% obj 63 %actor% waist
+    %load% obj 64 %actor% rwrist
+    %load% obj 65 %actor% lwrist
+    %load% obj 66 %actor% wield
+    %load% obj 67 %actor% hold
+  end
+  wait 2 sec
+  if !(%actor.inventory(82)%)
+    wait 1 s
+    say You are not prepared to travel these realms to their fullest.
+    wait 1 s
+    say Maybe I can help you.
+    %load% obj 82
+    give teleporter %actor.name%
+    *could actor carry the weight?
+    if !%actor.inventory(82)%
+      drop teleporter
+    end
+    wait 2 s
+    say With this you may teleport to areas that may not be accessible in any other way.
+    wait 2 s
+    say HELP AREAS
+  end
+end
 ~
 #99
 Obj Command 82 - Teleporter~

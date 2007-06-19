@@ -70,10 +70,10 @@ D2
 S
 #302
 The Southern Road~
-   You walk underneath the inner city wall.  The road turns into hard packed
-dirt.  To the north you may enter the inner city towards the Temple of Sanctus
-or go south towards the southern gate.  The southern half of the city consists
-of the magi's and cleric' quarters.  
+   This road passes underneath the inner city wall.  The surface turns into hard
+packed dirt.  To the north one may enter the inner city towards the Temple of
+Sanctus or go south towards the southern gate.  The southern half of the city
+consists of the magi and clerics' quarters.
 ~
 3 0 0 0 0 0
 D0
@@ -86,11 +86,11 @@ D2
 0 0 313
 S
 #303
-Magi's Avenue~
-   The Tower of the Magi lies to the southwest.  Just to the south you can see
-where the inner city wall turns to the west.  You are deep within the Magi's
-Quarter.  Accidents have been known to happen around here.  People must be
-careful for who knows what an inexperienced student may do.    
+Magi Avenue~
+   The Tower of the Magi lies to the southwest.  Just to the south one can see
+where the inner city wall turns to the west.  This avenue runs deep within the
+Magi's Quarter.  Accidents have been known to happen around here.  People must
+be careful for who knows what an inexperienced student may do.  
 ~
 3 0 0 0 0 0
 D0
@@ -203,8 +203,8 @@ D2
 0 0 323
 S
 #309
-Clerics' Alley~
-   Within the Cleric's Quarters an adventurer has very little to worry about.  
+Clerics Alley~
+   Within the Clerics' Quarters an adventurer has very little to worry about.  
 Even those would be vandals, pickpockets, and thugs shy away out of their
 respect of the clerics.  To be a cleric is to be respected second only to that
 of the Master Magi.
@@ -220,11 +220,12 @@ D3
 0 0 308
 S
 #310
-Clerics' Alley~
-   The southern section of the inner city wall towers over you to the north.  
+Clerics Alley~
+   The southern section of the inner city wall towers high above to the north.
 The massive fortification of rock and mortar is impressive, rising at least two
-or maybe three times your own height.  You can just make out a small walkway on
-the top of the wall, too bad only the guards know where the entrance is.  
+or maybe three times the average man's height.  One can just make out a small
+walkway on the top of the wall, too bad only the guards know where the entrance
+is.
 ~
 3 0 0 0 0 0
 D1
@@ -237,8 +238,8 @@ D3
 0 0 309
 S
 #311
-Clerics' Alley~
-   The Tower of the High Council of Clerics' is almost as impressive as the
+Clerics Alley~
+   The Tower of the High Council of Clerics is almost as impressive as the
 Temple of Sanctus.  They look very similiar, except of course the Tower is much
 smaller.  Far up in the tower you can see people walking by windows in white
 flowing robes.  The healers within are known for their miraculous abilities in
@@ -255,7 +256,7 @@ D3
 0 0 310
 S
 #312
-Clerics' Alley~
+Clerics Alley~
    The inner city wall opens up just to the east into the southern road which
 runs from the south gate directly to the heart of Sanctus inside the temple.  A
 few apprentice healers in flowing robes rush between the Temple and the Clerics'
@@ -274,10 +275,10 @@ S
 #313
 The Southern Road~
    A large gate has been built into the inner city wall here to allow
-adventurers to pass between the Temple and the southern half of the city.  The
-Clerics' Quarters lie to the west while the Magis' Quarters are to the east.  
-Within their centers rises the Tower of the High Council of Clerics' and the
-Tower of the Magi respectively.  
+adventurers to pass between the temple and the southern half of the city.  The
+clerics' quarters lie to the west while the magi quarters are to the east.  
+Within their centers rises the Tower of the High Council of Clerics and the
+Tower of the Magi respectively.
 ~
 3 0 0 0 0 0
 D0
@@ -298,11 +299,11 @@ D3
 0 0 312
 S
 #314
-Magis' Alley~
-   The black Tower of the Magi casts an intimidating shadow over you and the
-alley you walk in.  Within the tower lie many secrets that the average citizen
-is not privileged enough to be told about.  Rumours abound, especially about the
-Orb of Sanctum the gods left in the Master Magi's care.  
+Magi Alley~
+   The black Tower of the Magi casts an intimidating shadow over the
+surroundings and the underlying alley.  Within the tower lie many secrets that
+the average citizen is not privileged enough to be told about.  Rumours abound,
+especially about the Orb of Sanctum the gods left in the Master Magi's care.  
 ~
 3 0 0 0 0 0
 D1
@@ -315,11 +316,11 @@ D3
 0 0 313
 S
 #315
-Magis' Alley~
+Magi Alley~
    The sound of voices from above are impossible to locate.  They could be
 coming either from on top of the inner city wall to the north or from an open
-window of the Tower of the Magi south of you.  The voices are too low to be
-discernable.    
+window of the Tower of the Magi south of here.  The voices are too low to be
+discernable.  
 ~
 3 0 0 0 0 0
 D1
@@ -332,7 +333,7 @@ D3
 0 0 314
 S
 #316
-Magis' Alley~
+Magi Alley~
    The inner city wall is used to seperate the city into two seperate
 battlefields.  In case of an attack by superior numbers the citizens will fall
 back into the inner city as a last measure of defense.  Luckily, the army has
@@ -349,11 +350,11 @@ D3
 0 0 315
 S
 #317
-Magis' Alley~
-   You have reached the southeastern corner of the inner city wall where it
-turns north along the Magis' Avenue.  The Tower of the Magi still looms over you
-oppressively.  The sounds of voices echo between the tower and the inner city
-wall, very disturbing.  
+Magi Alley~
+   This alley has reached the southeastern corner of the inner city wall where
+it turns north along the Magi Avenue.  The Tower of the Magi still looms heavy
+over the surroundings oppressively.  The sounds of voices echo between the tower
+and the inner city wall, very disturbing.
 ~
 3 0 0 0 0 0
 D1
@@ -368,9 +369,9 @@ S
 #318
 The Southeastern Intersection~
    A small alley ducks between the Tower of the Magi and the southern section of
-the inner city wall.  The Magi Mansion is so extravagant, almost to the point of
-becoming an eyesore, is just to the east.  The Tower contains the fabled Orb of
-Sanctum, but few are ever lucky enough to lay their eyes on it.  
+the inner city wall.  The Magi Mansion lies just to the east, so extravagant
+that it is almost at the point of becoming an eyesore.  The Tower contains the
+fabled Orb of Sanctum, but few are ever lucky enough to lay their eyes on it.
 ~
 3 0 0 0 0 0
 D0
@@ -473,9 +474,9 @@ D3
 0 0 321
 S
 #323
-Clerics' Avenue~
+Clerics Avenue~
    The entrance to both the Hall of Clerics and the Tower of the High Council
-are just to the south.  You see a small intersection to the north where the
+are just to the south.  One can see a small intersection to the north where the
 inner city wall begins.  Many people come to this quarter to seek aid from the
 clerics, whether it be healing in the tower or to settle disputes within the
 Hall.  
@@ -551,10 +552,10 @@ S
 #327
 An Advanced Training Room~
    A small child lay on a cot circled by several young clerics dressed in white
-robes.  As you watch one of them lays a gentle hand on the child's forehead
-causing the young boy to instantly fall asleep.  Another cleric takes the boys
-arm which has been badly bruised and possibly broken and begins chanting
-mysterious words.  The bruises fade away without a trace.  
+robes.  One of them lays a gentle hand on the child's forehead causing the young
+boy to instantly fall asleep.  Another cleric takes the boys arm which has been
+badly bruised and possibly broken and begins chanting mysterious words.  The
+bruises fade away without a trace.  
 ~
 3 8 0 0 0 0
 D2
@@ -568,10 +569,10 @@ D3
 S
 #328
 The Southern Road~
-   You walk between the pristine Tower of the High Council of Clerics and the
-oppressive Tower of the Magi.  This section of the city has a very solemn
-feeling overshadowing it.  The magic of healing on one side and the magic of
-power and destruction on the other.    
+   This path passes between the pristine Tower of the High Council of Clerics
+and the oppressive Tower of the Magi.  This section of the city has a very
+solemn feeling overshadowing it.  The magic of healing on one side and the magic
+of power and destruction on the other.
 ~
 3 0 0 0 0 0
 D0
@@ -602,7 +603,7 @@ D2
 S
 #330
 The Training Room~
-   The Magiwithin the tower train to help protect the city from invasion.  
+   The Magi within the tower train to help protect the city from invasion.  
 Though the army is generally all that is required to handle most battles, the
 Magi are sometimes called upon to prevent heavy casualties or counter any
 magical abilities the attackers may possess.  
@@ -624,9 +625,9 @@ S
 #331
 The Training Room~
    Several older students are sitting in on a class about the protective dome
-that upholds the balance within the city.  You hear the mention of the Orb of
-Sanctus and of how the gods bestowed it upon the Master Magi to preserve and
-protect.  Without the Orb the city would surely fall.    
+that upholds the balance within the city.  Mention of the Orb of Sanctus
+whispers around the room, and of how the gods bestowed it upon the Master Magi
+to preserve and protect.  Without the Orb the city would surely fall.
 ~
 3 8 0 0 0 0
 D1
@@ -645,9 +646,9 @@ S
 #332
 The Training Room~
    A Master Magi overlooks several students as they pass between themselves a
-small flickering ball of light.  The Master Magi notices you watching and
-motions you away.  No one disagrees with a Master Magi, at least no one that
-wishes to live.    
+small flickering ball of light.  The Master Magi casts a stern eye over anyone
+watching and motions them away.  No one disagrees with a Master Magi, at least
+no one that wishes to live.
 ~
 3 8 0 0 0 0
 D2
@@ -660,12 +661,12 @@ D3
 0 0 331
 S
 #333
-Magis Avenue~
-   The street narrows here as it passes between the Tower and the Mansion.  
-You can hear strange incantations coming from an open window in the black
-tower, far above your head.  The Magi train young students within to take their
+Magi Avenue~
+   The street narrows here as it passes between the tower and the mansion.  One
+can hear strange incantations coming from an open window in the black tower, far
+above the other buildings.  The Magi train young students within to take their
 place, but fewer and fewer meet the requirements and actually survive the
-training.    
+training.  
 ~
 3 0 0 0 0 0
 D0
@@ -756,9 +757,9 @@ S
 The Clerics' Quarters~
    Large doors to the east and west lead into the Hall of Clerics and the Tower
 of the High Council respectively.  To the south a small shop displaying a sign
-with multi-colored herbs swings in the gentle breeze.  The Tower rises far above
-you, its two spires reaching almost as high as the Temple.  In contrast the hall
-looks very mundane.  
+with multi-colored herbs swings in the gentle breeze.  The Tower rises far
+above, its two spires reaching almost as high as the Temple.  In contrast the
+hall looks very mundane.  
 ~
 3 0 0 0 0 0
 D0
@@ -781,9 +782,9 @@ S
 #339
 The Tower of the High Council of Clerics~
    A large archway leads into the center of the Clerics' Quarters just to the
-west.  The Tower around you is bathed in bright white light that reflects off
-every surface around you.  All around you the soft murmur of healers in training
-or going about their daily routine can be heard.  
+west.  The Tower is bathed in bright white light that reflects off every
+surface.  All around, the soft murmur of healers in training or going about
+their daily routine can be heard.
 ~
 3 0 0 0 0 0
 D0
@@ -863,9 +864,10 @@ S
 #342
 The Tower of the High Council of Clerics~
    The east end of the Tower opens into the Southern Road which passes between
-the Southern Towers and the Temple of Sanctus.  You are in the entrance of the
-revered Tower of the High Council.  High above you is where the councillors make
-many important decisions on how to uphold the welfare and health of the city.  
+the Southern Towers and the Temple of Sanctus.  This junction lies at the
+entrance of the revered Tower of the High Council.  High above is where the
+councillors make many important decisions on how to uphold the welfare and
+health of the city.  
 ~
 3 8 0 0 0 0
 D0
@@ -887,10 +889,10 @@ D3
 S
 #343
 The Southern Road~
-   The entrance to both towers of the Southern half of Sanctus open before you.
-To the west the Tower of the High Council of Clerics, to the east the Tower of
-the Magi.  Both impressive structures were built by both master architects and
-the use of magic.
+   The entrance to both towers of the southern half of Sanctus open before this
+part of the road.  To the west the Tower of the High Council of Clerics, to the
+east the Tower of the Magi.  Both impressive structures were built by both
+master architects and the use of magic.
 ~
 3 0 0 0 0 0
 D0
@@ -912,10 +914,10 @@ D3
 S
 #344
 The Tower of the Magi~
-   The black floor, walls, and ceiling of this tower brings about a feeling of
-oppression, as if something or someone is holding something back from you.  A
-large doorway to the west leads to the Southern Road or you may explore deeper
-into the temple to the east.  
+   The black floor, walls, and ceiling of this tower bring about a feeling of
+oppression, as if something or someone is holding something deliberately back.
+A large doorway to the west leads to the Southern Road or it is possible to
+explore deeper into the temple to the east.
 ~
 3 0 0 0 0 0
 D0
@@ -940,7 +942,7 @@ The Tower of the Magi~
    A large spiral staircase winds up into the heart of the tower.  A slight
 tinge of sulphur hangs in the air, probably a spell that went haywire.  
 Students roam the halls in deep thought, oblivious to the normal reality you
-live in.  Training Rooms lie all around you.    
+live in.  Training Rooms lie in all directions.  
 ~
 3 0 0 0 0 0
 D0
@@ -998,7 +1000,7 @@ The Tower of the Magi~
 marble, but upon closer examination has no grain within it.  Looking into the
 wood causes one to lose themselves as they peer further and further into the
 blackness.  It is impossible to tell if this is caused by magic or just a simple
-trick of the eye.  To the east is the center of the Magis' Quarters.
+trick of the eye.  To the east is the center of the Magi Quarters.
 ~
 3 0 0 0 0 0
 D0
@@ -1019,10 +1021,10 @@ D3
 0 0 346
 S
 #348
-The Magis Quarter~
-   This is the heart of the Magis' Quarters.  The Magis' Mansion where they can
-be found when they are not guarding the orb is to the east.  The pure black
-Tower of the Magi which houses the sacred orb that protects the city.
+The Magi Quarters~
+   This is the heart of the Magi Quarters.  The Magi Mansion where they can be
+found when they are not guarding the orb is to the east.  Also nearby is the
+pure black Tower of the Magi which houses the sacred orb that protects the city.
 ~
 3 0 0 0 0 0
 D0
@@ -1099,11 +1101,11 @@ door~
 1 0 338
 S
 #352
-Cleric's in Training~
+Clerics in Training~
    Several beds lie in columns and rows spaced evenly apart.  The smell of some
-form of antiseptic stings your nose and eyes.  All the beds are empty, must be
-the healers here are well-versed in their craft.  The Temple continues to the
-north and west.    
+form of antiseptic stings in the air.  All the beds are empty, must be the
+healers here are well-versed in their craft.  The Temple continues to the north
+and west.  
 ~
 3 0 0 0 0 0
 D0
@@ -1176,10 +1178,10 @@ D3
 S
 #356
 The Southern Road~
-To the east the Tower of the High Council of Clerics glows a bright white,
-its polished surfaces reflecting all light down onto the Clerics' Quarters which it
-protects.  To the west the Tower of the Magi does the exact opposite, seeming
-to absorb all light surround it.  Their must be balance in all things.    
+   To the east the Tower of the High Council of Clerics glows a bright white,
+its polished surfaces reflecting all light down onto the Clerics' Quarters which
+it protects.  To the west the Tower of the Magi does the exact opposite, seeming
+to absorb all light surrounding it.  There must be balance in all things.  
 ~
 3 0 0 0 0 0
 D0
@@ -1196,7 +1198,7 @@ The Magi Training Room~
    Bookshelves line the two walls of this small open area within the tower.  
 The smell of dust and musty old papers emanates from them.  Many centuries of
 knowledge lie within these books that were salvaged from the lands beyond.  
-Many more have yet to be foun
+Many more have yet to be found.
 ~
 3 0 0 0 0 0
 D0
@@ -1210,10 +1212,10 @@ D1
 S
 #358
 A Tower Hallway~
-   Through a small door to the north you can see the center of the tower where
-a set of spiral staircases lead to the second floor.  The Orb of Sanctum is
-protected somewhere within this tower.  The Master Magi have been given the
-task of ensuring it's safety.    
+   Through a small door to the north one can see the center of the tower where a
+set of spiral staircases lead to the second floor.  The Orb of Sanctum is
+protected somewhere within this tower.  The Master Magi have been given the task
+of ensuring its safety.
 ~
 3 8 0 0 0 0
 D0
@@ -1230,7 +1232,7 @@ D3
 0 0 357
 S
 #359
-The Magi's Hallway~
+The Magi Hallway~
    The seven Orders of the Magi are slowly dying out.  That is why they rarely
 fight in battles any longer.  They have instead devoted their time to training
 future Magi to take their places.  But, good students have become even harder
@@ -1304,11 +1306,11 @@ D4
 S
 #363
 The Stables~
-   The smell of hay and manure clings to the room like a cheap cologne your
-grandmother used to wear.  Stalls line both sides of the cramped building with
-bales of hay stacked everywhere the horses can't reach though they all seem to
-still try.  It is possible to buy a horse for a minimal fee, but not all of
-them are well tamed and have been known to become ornery.    
+   The smell of hay and manure clings to the room like a cheap cologne
+somebody's grandmother might wear.  Stalls line both sides of the cramped
+building with bales of hay stacked everywhere.  The horses can't reach the hay
+though they all seem to still try.  It is possible to buy a horse for a minimal
+fee, but not all of them are well tamed and have been known to become ornery.
 ~
 3 0 0 0 0 0
 D1
@@ -1330,9 +1332,10 @@ modified. Just ask Rumble to do it for you.
 S
 #365
 On the Window Ledge~
-   From this perilous perch you have an excellent view of the southern half of
-the city.  A gust of wind howls past trying to pull you with it.  The only exit
-is back into the tower or a deadly jump to the cobblestone road below.    
+   From this perilous perch an excellent view is available of the southern half
+of the city.  A gust of wind howls past threatening to pull anything along with
+it.  The only exit is back into the tower or a deadly jump to the cobblestone
+road below.
 ~
 3 0 0 0 0 0
 D0
@@ -1361,14 +1364,14 @@ starless sky tear savagely at your fragile body.
 ~
 3 520 0 0 0 0
 E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
-~
-E
 floor~
    The stone floor is the same shade of grey as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
+~
+E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
 ~
 S
 $~

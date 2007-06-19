@@ -199,7 +199,7 @@ elseif %cmd% == test
 return 0
 elseif %cmd% == gozz
 return 0
-elseif %cmd.mudcommand% == tell
+elseif %cmd.mudcommand% == gossip
 return 0
 elseif %cmd% == who
 return 0
@@ -273,6 +273,277 @@ end
 0 f 100
 ~
 %load% obj 1900
+~
+#1926
+(99) deliverer takes name~
+0 d 100
+*~
+if %1999_place% == 2
+  set age1 %speech%
+  eval age2 %age1%+2
+  eval age3 %age2%-2
+  set 1999_age %age3%
+  global 1999_age
+  wait 2s
+  %echo% %self.name% scribbles in a notepad.
+  wait 2s
+  if %1999_age% > 0
+    %echo% %self.name% mumbles "Ok, %1999_recip% is...  %1999_age% years old."
+  else
+    %echo% %self.name% mumbles "Ok, you don't know how old %1999_recip% is.
+  end
+  wait 2s
+  set 1999_place 3
+  global 1999_place
+  say Aaaand, you've got two choices...
+  wait 2s
+  say who will deliver your telegram?
+  wait 2s
+  say A man in a gorilla suit?
+  wait 2s
+  say Or a sexy stripper?
+elseif %1999_place% == 3
+  wait 2s
+  if %speech.contains(sexy)% || %speech.contains(stripper)%
+    say Ok then! Thats one sexy stripper.. about to deliver a special something to %1999_recip%.
+    set 1999_choice stripper
+    global 1999_choice
+    set 1999_place 0
+    global 1999_place
+    wait 2s
+    say If everything sounds right to you, nod your head. Or you can shake to start over.
+    attach 1927 %self.id%
+    detach 1926 %self.id%
+  elseif %speech.contains(man)% || %speech.contains(gorilla)%
+    say Ok then! Thats one hairy gorilla.. about to deliver a special something to %1999_recip%.
+    set 1999_choice gorilla
+    global 1999_choice
+    set 1999_place 0
+    global 1999_place
+    wait 2s
+    say If everything sounds right to you, nod your head. Or you can shake to start over.
+    attach 1927 %self.id%
+    detach 1926 %self.id%
+  else
+    say I'm sorry, thats not one of your choices.
+    wait 2s
+    say You can choose a sexy stripper, or a man in a gorilla suit.
+  end
+else
+  set 1999_recip %speech%
+  global 1999_recip
+  wait 2s
+  if %1999_recip.is_pc%
+    %echo% %self.name% scribbles in a notepad.
+    wait 2s
+    %echo% %self.name% mumbles "Ok, thats for...  %1999_recip%."
+    set 1999_place 2
+    global 1999_place
+    wait 2s
+    say "And how old will they be? Say 0 if you don't know."
+  else
+    say I'm sorry, according to our records "%1999_recip%" is not accepting telegrams right now.
+    wait 2s
+    say Feel free to call again if you get someone in mind.
+    wait 1s
+    %echo% %self.name% bows low and disappears into thin air.
+    %purge% %self%
+  end
+end
+~
+#1927
+(99) deliverer confirms~
+0 c 100
+*~
+if %cmd% == nod
+  say Ok %actor.name%, that telegram is on its way now!
+  if %1999_choice% == gorilla
+    %at% %1999_recip% %load% mob 1998
+  elseif %1999_choice% == stripper
+    %at% %1999_recip% %load% mob 1997
+  end
+  %at% %1999_recip% xxrecipxx %1999_recip%
+%at% %1999_recip% xxagexx %1999_age%
+  detach 1927 %self.id%
+%purge% %self%
+elseif %cmd% == shake
+  say Ok %actor.name%, lets just start all over again shall we!
+  %load% %self.vnum%
+  %purge% %self%
+else
+  return 0
+  say If everything sounds right to you, nod your head. Or you can shake to start over.
+end
+~
+#1928
+(99) testing~
+0 d 100
+*~
+set tar %speech%
+%echo% Target vnum: %tar.vnum%
+if %tar.is_pc%
+  %echo% Target is a PC
+else
+  %echo% Target is not a PC.
+end
+~
+#1929
+(67) lipstick disappears when removed~
+1 l 100
+~
+%send% %actor% You wipe away %self.shortdesc%.
+%echoaround% %actor% %actor.name% wipes away %self.shortdesc%.
+%purge% %self%
+~
+#1930
+(97) stripper enters~
+0 c 0
+xxrecipxx~
+set 1999_recip %arg%
+global 1999_recip
+%load% obj 1965 %self% body
+%load% obj 1966 %self% legs
+%load% obj 1968 %self% feet
+eval tar %1999_recip%
+if %tar.sex% == male
+  set nick1 hunk o'man
+  set nick2 you big beast
+  set nick3 stud
+elseif %tar.sex% == female
+  set nick1 gorgeous beauty
+  set nick2 my princess
+  set nick3 siren
+else
+  set nick1 gorgeous creature
+  set nick2 my lovely
+  set nick3 thing
+end
+%echo% You hear the clacking of stilettos as %self.name% struts saucily into the room.
+wait 4s
+say Oooh %tar.name%, I've been looking for a %nick1% like you.
+wait 4s
+%load% obj 1967 %tar% neck1
+%send% %tar% %self.name% wraps her arms around you and plants a big kiss on your neck.
+%echoaround% %tar% %self.name% wraps her arms around %tar.name% and plants a big kiss on %tar.hisher% neck.
+wait 4s
+say And now %nick2%, I've got a present for you!
+wait 4s
+%echo% %self.name% starts to sing as she unfastens her top.
+wait 4s
+say Happy birthday to you...
+wait 2s
+remove top
+wait 4s
+say Happy birthday to you...
+wait 2s
+%load% obj 1965 %tar% inv
+%purge% top
+%send% %tar% %self.name% twirls her bikini top in the air and throws it to you.
+%echoaround% %tar% %self.name% twirls her bikini top in the air and throws it to %tar.name%.
+wait 4s
+say Happy birthday... dear %tar.name%...
+wait 2s
+remove thong
+wait 4s
+say Happy birthday to you!
+wait 2s
+%load% obj 1966 %tar% inv
+%purge% thong
+%send% %tar% %self.name% does a little twirl and throws you her thong.
+%echoaround% %tar% %self.name% does a little twirl and throws %tar.name% her thong.
+wait 2s
+if %1999_age% > 0
+  say This sexy %nick3% %tar.name% is %1999_age% years old everybody!
+else
+  say Congratulations %tar.name%, you sexy %nick3%!
+end
+wait 4s
+%send% %tar% %self.name% blows you a kiss, and runs away giggling.
+%echoaround% %tar% %self.name% blows %tar.name% a kiss, and runs away giggling.
+%teleport% %self% 1900
+%purge% %self%
+~
+#1931
+(97) command gives recip~
+0 c 100
+xxrecipxx~
+set 1999_recip %arg%
+global 1999_recip
+%echo% recip is %1999_recip%
+~
+#1932
+(97) mob takes age from deliverer~
+0 c 100
+xxagexx~
+set 1999_age %arg%
+global 1999_age
+~
+#1933
+(98) gorilla sequence~
+0 c 100
+xxrecipxx~
+set 1999_recip %arg%
+global 1999_recip
+%load% obj 1969 %self% about
+eval tar %1999_recip%
+if %tar.sex% == male
+  set nick1 hunk o'man
+  set nick2 you big beast
+  set nick3 stud
+elseif %tar.sex% == female
+  set nick1 gorgeous beauty
+  set nick2 my princess
+  set nick3 siren
+else
+  set nick1 gorgeous creature
+  set nick2 my lovely
+  set nick3 thing
+end
+%echo% You hear some loud grunting and thumping as %self.name% crashes into the room.
+wait 4s
+say Oooh %tar.name%, I've been looking for a %nick1% like you.
+wait 4s
+%load% obj 1969 %tar% about
+%send% %tar% %self.name% gives you a bear-hug, rubbing his big sweaty body against you.
+%echoaround% %tar% %self.name% gives %tar.name% a bear-hug, rubbing his big sweaty body against %tar.himher%.
+wait 4s
+say And now %nick2%, I've got a present for you!
+wait 4s
+%send% %tar% %self.name% grabs your hand and twirls you around.
+%echoaround% %tar% %self.name% grabs %tar.name%'s hand and twirls %tar.himher% around.
+wait 4s
+say Happy birthday to you...
+wait 2s
+wink %tar.name%
+wait 4s
+say Happy birthday to you...
+wait 2s
+%send% %tar% %self.name% bends you low in a sweeping dance move.
+%echoaround% %tar% %self.name% bends %tar.name% low in a sweeping move.
+wait 4s
+say Happy birthday... dear %tar.name%...
+wait 2s
+lick
+wait 4s
+say Happy birthday to you!
+wait 2s
+%load% obj 1971 %tar% neck1
+%send% %tar% %self.name% straightens you up and gives you a big slobbery kiss.
+%echoaround% %tar% %self.name% straightens %tar.name% up and gives %tar.himher% a big slobbery kiss.
+wait 2s
+if %1999_age% > 0
+  say This sexy %nick3% %tar.name% is %1999_age% years old everybody!
+else
+  say Congratulations %tar.name%, you sexy %nick3%!
+end
+wait 4s
+%load% obj 1970
+give %tar.name% rose
+drop rose
+%send% %tar% %self.name% grunts a goodbye, and stomps away.
+%echoaround% %tar% %self.name% grunts a goodbye, and stomps away.
+%teleport% %self% 1900
+%purge% %self%
 ~
 #1935
 (1993) person dies if not freed~
@@ -470,21 +741,18 @@ end
 %door% 1982 north purge
 ~
 #1949
-test load 2~
-2 c 100
-xxtestxx~
- %load% obj 1923
-%load% obj 1924
- %load% obj 1934
- %load% obj 1935
- %load% obj 1936
- %load% obj 1937
- %load% obj 1938
- %load% obj 1939
- %load% obj 1960
- %load% obj 1961
- %load% obj 1962
-%echo% An incredible force sweeps from your hands, summoning a great gift from the air as if by magic.
+(99) delivery mob loads~
+0 n 100
+~
+wait 2s
+%echo% %self.name% bows with a flourish.
+wait 1s
+say Hi! I'm a singing telegram mob!
+wait 2s
+say I'm guessing you'd like to send a telegram...
+wait 2s
+say so why don't you give me the name of the lucky recipient?
+attach 1926 %self.id%
 ~
 #1950
 (1945) red vial effects~
@@ -895,52 +1163,52 @@ switch %random.15%
     %echo% You hear a rustling sound as some animal scrambles frantically away.
   break
   case 1
-  %echo% A fine mist wafts on the air, coating your body with sticky moisture.
+    %echo% A fine mist wafts on the air, coating your body with sticky moisture.
   break
   case 2
-%echo% You feel a stab of pain as an engorged leech releases its grip on your skin.
+    %echo% You feel a stab of pain as an engorged leech releases its grip on your skin.
   break
   case 3
- %echo% A swarm of midges dances momentarily around your head before moving on.
+    %echo% A swarm of midges dances momentarily around your head before moving on.
   break
   case 4
-%echo% The awful sound of some animal's dying shrieks pierces the air.
+    %echo% The awful sound of some animal's dying shrieks pierces the air.
   break
   case 5
-%echo% You feel a tickling sensation as some insect runs down your back.
+    %echo% You feel a tickling sensation as some insect runs down your back.
   break
   case 6
- %echo% The distant sound of primal war drums pounds out a rhythm.
+    %echo% The distant sound of primal war drums pounds out a rhythm.
   break
-case 7
-%echo% A long black centipede wriggles out of the ground, only to burrow back in.
-break
-case 8
-%echo% You feel slightly short of breath as the air becomes muggier.
-break
-case 9
-%echo% The sickly scent of cooking meat wafts in the sweltering air.
-break
-case 10
-%echo% You hear the sound of several crows suddenly screeching.
-break
-case 11
-%echo% A little firefly winks in and out of existance.
-break
-case 12
-%echo% A putrid stench fills the air as some vile animal rustles past.
-break
-case 13
-%echo% A fly buzzes annoyingly around your face.
-break
-case 14
-%echo% Ribbit... ribbit... a frog's croaking call echoes through the still air.
-break
-case 15
-%echo% A droplet of moisture runs down your forehead.
-break
+  case 7
+    %echo% A long black centipede wriggles out of the ground, only to burrow back in.
+  break
+  case 8
+    %echo% You feel slightly short of breath as the air becomes muggier.
+  break
+  case 9
+    %echo% The sickly scent of cooking meat wafts in the sweltering air.
+  break
+  case 10
+    %echo% You hear the sound of several crows suddenly screeching.
+  break
+  case 11
+    %echo% A little firefly winks in and out of existance.
+  break
+  case 12
+    %echo% A putrid stench fills the air as some vile animal rustles past.
+  break
+  case 13
+    %echo% A fly buzzes annoyingly around your face.
+  break
+  case 14
+    %echo% Ribbit... ribbit... a frog's croaking call echoes through the still air.
+  break
+  case 15
+    %echo% A droplet of moisture runs down your forehead.
+  break
   default
-%echo% A fly buzzes annoyingly around your face.
+    %echo% A fly buzzes annoyingly around your face.
   break
 done
 ~

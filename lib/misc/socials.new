@@ -824,19 +824,19 @@ $n breathes onto $s hand and sniffs it.
 #
 
 ~burn burn 0 8 8 0
-You just got burned.
-$n just got BURNED!
-You burn $N.
-$N just got burned by $n.
-BURNED! Thanks to $n.
-No one here to burn by that name.
-Fire is dangerous. Don't play with it!
-$n burns himself at the stakes.
-#
-#
-#
-#
-#
+You shriek for the witch to be BURNED!
+$n shrieks for the witch to be BURNED!
+You shriek that $N is a witch! BURN $M!
+$n shrieks that $N is a witch! BURN $M!
+$n shrieks that you are a witch! Do you smell smoke?
+You need to find them first!
+You're a witch, BURN!
+$n shrieks that $e's a witch, and promptly BURNS $mself!
+You shriek that $N's $t is the sign of a witch! BURN $M!
+$n shrieks that $N's $t is the sign of a witch! BURN $M!
+$n shrieks that your $t is the sign of a witch! Do you smell smoke?
+You shriek that $p is the sign of a witch! BURN it!
+$n shrieks that $p is the sign of a witch! BURN it!
 
 ~burp burp 0 5 0 0
 You burp loudly! Better excuse yourself.
@@ -927,6 +927,21 @@ $n gently caresses $N's $t.
 $n gently caresses your $t, it feels nice.
 You gently caress $p.
 $n gently caresses $p.
+
+~carrot carrot 0 8 8 0
+What would you possibly do with a carrot.....?
+$n whips out a firm carrot!
+You whip out a carrot and wink at $N.
+$n whips a carrot out of $s pocket and winks at $N.
+$n whips a carrot out of $s pocket and winks at you.
+You try penetrating the air with your carrot!
+You whip out a carrot with a demented look on your face.
+$n whips out a carrot with an odd look on $s face.
+You prod $N's $t with your carrot.
+$n prods $N's $t with $s carrot!
+$n prods your $t with $s carrot.
+You stick your carrot in $p.
+$n sticks $s carrot into $p.
 
 ~cartwheel cartwheel 0 5 0 0
 You do a cartwheel. Wheeee!
@@ -6072,6 +6087,21 @@ $n stomps on $N's $t.
 $n stomps on your $t.
 You stomp on $p, breaking it into a million pieces.
 $n stomps on $p, breaking it into a million pieces.
+
+~stone stone 0 8 8 0
+You call for a stoning! Theres a SINNER about!
+$n calls for a stoning! Theres a SINNER about!
+You start hurling stones at $N, SINNER!
+$n starts hurling stones at $N the SINNER!
+$n starts hurling stones at you, what did you do?
+The stone whistles through the empty air.
+You start pummeling yourself with stones, feel better yet?
+$n starts pummeling $mself with stones, $e must be feeling guilty!
+You hurl stones at $N's $t, it must have sinned!
+$n hurls stones at $N's $t, it must have sinned!
+$n hurls stones at your $t, what did it do?
+You start hurling stones at $p, it must be evil!
+$n starts hurling stones at $p, it must be evil!
 
 ~strangle strangle 0 5 0 0
 You look around for a victim...
