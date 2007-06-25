@@ -1465,6 +1465,8 @@ void do_start(struct char_data *ch)
   GET_COND(ch, HUNGER) = 24;
   GET_COND(ch, DRUNK) = 0;
 
+  SET_BIT_AR(PRF_FLAGS(ch), PRF_AUTOEXIT);  
+
   if (CONFIG_SITEOK_ALL)
     SET_BIT_AR(PLR_FLAGS(ch), PLR_SITEOK);
 }

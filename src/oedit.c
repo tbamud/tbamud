@@ -981,7 +981,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       if (number < 0 || number > 4)
 	oedit_disp_container_flags_menu(d);
       else if (number != 0) {
-        TOGGLE_BIT(GET_OBJ_VAL(OLC_OBJ(d), 1), (number - 1));
+        TOGGLE_BIT(GET_OBJ_VAL(OLC_OBJ(d), 1), 1 << (number - 1));
         OLC_VAL(d) = 1;
 	oedit_disp_val2_menu(d);
       } else

@@ -7,6 +7,10 @@ builderacademy.net 9091
 tbaMUD 3.53
 [Jun 28 2007]
   Updated World and files for 3.53 release.
+[Jun 25 2007] - Rumble
+  Added questpoints to load_char and set autoexit on by default. (thanks Trulight)
+[Jun 20 2007]
+  Fixed many more bugs from the 128 bit patch.
 [Jun 16 2007] - Rumble
   Missed replacing NUM_SPELLS -1 with NUM_SPELLS, corrected. (thanks Kyle)
 [Jun 01 2007] - Rumble
@@ -29,7 +33,6 @@ tbaMUD 3.53
   Fixed nogos/nowiz from flagging everyone in who.
   Fixed numerous SYSERR's where mobs were using player only specials.
   Added 128 bits patch by Niese Petersen with numerous updates and fixes.
-
 tbaMUD 3.52
 [Apr 14 2007] - Rumble
   IP's only visible to LVL_GOD and above now for the paranoid people out there.

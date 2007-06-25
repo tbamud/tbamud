@@ -373,6 +373,10 @@ int load_char(const char *name, struct char_data *ch)
           PRF_FLAGS(ch)[3] = asciiflag_conv(f4);
 	break;
 
+      case 'Q':
+	     if (!strcmp(tag, "Qstp"))  GET_QUESTPOINTS(ch)     = atoi(line);
+        break;
+
       case 'R':
 	     if (!strcmp(tag, "Room"))	GET_LOADROOM(ch)	= atoi(line);
 	break;
