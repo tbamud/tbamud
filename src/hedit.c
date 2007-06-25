@@ -1,8 +1,13 @@
 /**************************************************************************
 *  File: hedit.c                                           Part of tbaMUD *
-*  Usage: Help Editor.                                                    *
+*  Usage: Oasis OLC Help Editor.                                          *
+* Author: Steve Wolfe, Scott Meisenholder, Rhade                          *
 *                                                                         *
-*  By Steve Wolfe. Updated by Scott Meisenholder.                         *
+*  All rights reserved.  See license.doc for complete information.        *
+*                                                                         *
+*  Copyright (C) 2007 by Rhade                                            *
+*  InfoTechMUD is based on CircleMUD, Copyright (C) 1993, 1994.           *
+*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
 #include "conf.h"
@@ -19,98 +24,30 @@
 #include "handler.h"
 #include "improved-edit.h"
 
-/* external data structures */
-extern struct descriptor_data *descriptor_list;
-void hedit_disp_menu(struct descriptor_data *d);
-
 /* external variables */
+extern int top_of_helpt;
 extern struct help_index_element *help_table;
-void get_one_line(FILE *fl, char *buf);
-int search_help(char *argument, int level);
-ACMD(do_reboot);
 
-/* local variables */
-int top_of_h_table = 0;         /* ref to top of help table      */
+/* external functions */
+int search_help(char *argument, int level);
+void index_boot(int mode);
 
 /* local functions */
-void hedit_save_internally(struct descriptor_data *d);
-void hedit_save_to_disk(struct descriptor_data *d);
-void hedit_setup_new(struct descriptor_data *d, char *new_key);
-void hedit_setup_existing(struct descriptor_data *d, int rnum);
-
-void load_help(FILE *fl, char *name)
-{
-  char key[READ_SIZE + 1], next_key[READ_SIZE + 1], entry[32384];
-  size_t entrylen;
-  char line[READ_SIZE + 1], hname[READ_SIZE + 1],  *scan;
-  struct help_index_element el;
-
-  strlcpy(hname, name, sizeof(hname));
-  /* get the first keyword line */
-  get_one_line(fl, key);
-  while (*key != '$') {
-    strcat(key, "\r\n");	/* strcat: OK (READ_SIZE - "\n"  "\r\n" == READ_SIZE  1) */
-    entrylen = strlcpy(entry, key, sizeof(entry));
-    /* read in the corresponding help entry */
-    get_one_line(fl, line);
-    while (*line != '#' && entrylen < sizeof(entry) - 1) {
-      entrylen += strlcpy(entry + entrylen, line, sizeof(entry) - entrylen);
-
-      if (entrylen + 2 < sizeof(entry) - 1) {
-        strcpy(entry + entrylen, "\r\n");	/* strcpy: OK (size checked above) */
-        entrylen += 2;
-      }
-      get_one_line(fl, line);
-    }
-
-    if (entrylen >= sizeof(entry) - 1) {
-      int keysize;
-      const char *truncmsg = "\r\n*TRUNCATED*\r\n";
-
-      strcpy(entry + sizeof(entry) - strlen(truncmsg) - 1, truncmsg);	/* strcpy: OK (assuming sane 'entry' size) */
-
-      keysize = strlen(key) - 2;
-      log("SYSERR: Help entry exceeded buffer space: %.*s", keysize, key);
-
-      /* If we ran out of buffer space, eat the rest of the entry. */
-      while (*line != '#')
-        get_one_line(fl, line);
-    }
-
-    if (*line == '#') {
-      if (sscanf(line, "#%d", &el.min_level) != 1){
-        log("SYSERR: Help entry does not have a min level. %s", key);
-        el.min_level = 0;
-      }
-    }
-    el.duplicate = 0;
-    el.entry = strdup(entry);
-    scan = one_word(key, next_key);
-    while (*next_key) {
-      el.keywords = strdup(next_key);
-      help_table[top_of_h_table++] = el;
-      el.duplicate++;
-      scan = one_word(scan, next_key);
-     }
-   /* get next keyword line (or $) */
-    get_one_line(fl, key);
-  }
-}
-
-int hsort(const void *a, const void *b)
-{
-  const struct help_index_element *a1, *b1;
-
-  a1 = (const struct help_index_element *) a;
-  b1 = (const struct help_index_element *) b;
-
-  return (str_cmp(a1->keywords, b1->keywords));
-}
+ACMD(do_oasis_hedit);
+void hedit_disp_menu(struct descriptor_data *);
+void hedit_parse(struct descriptor_data *, char *);
+void hedit_setup_new(struct descriptor_data *);
+void hedit_setup_existing(struct descriptor_data *, int);
+void hedit_save_to_disk(struct descriptor_data *);
+void hedit_save_internally(struct descriptor_data *);
+void hedit_string_cleanup(struct descriptor_data *, int);
+ACMD(do_helpcheck);
+ACMD(do_hindex);
 
 ACMD(do_oasis_hedit)
 {
+  char arg[MAX_INPUT_LENGTH];
   struct descriptor_data *d;
-  int i;
 
   /* No building as a mob or while being forced. */
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
@@ -121,15 +58,16 @@ ACMD(do_oasis_hedit)
     return;
   }
 
-  for (d = descriptor_list; d; d = d->next)
+  for (d = descriptor_list; d; d = d->next) {
     if (STATE(d) == CON_HEDIT) {
       send_to_char(ch, "Sorry, only one can person can edit help files at a time.\r\n");
       return;
     }
+  }
 
-  skip_spaces(&argument);
+  one_argument(argument, arg);
 
-  if (!*argument) {
+  if (!*arg) {
     send_to_char(ch, "Please specify a help entry to edit.\r\n");
     return;
   }
@@ -137,10 +75,10 @@ ACMD(do_oasis_hedit)
   d = ch->desc;
 
   if (!str_cmp("save", argument)) {
-    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves help files.", GET_NAME(ch));
-    send_to_char(ch, "Writing help file..\r\n");
+    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves help files.",
+           GET_NAME(ch));
     hedit_save_to_disk(d);
-    send_to_char(ch, "Done.\r\n");
+    send_to_char(ch, "Saving help files.\r\n");
     return;
   }
 
@@ -152,17 +90,16 @@ ACMD(do_oasis_hedit)
 
   CREATE(d->olc, struct oasis_olc_data, 1);
   OLC_NUM(d) = 0;
-  OLC_STORAGE(d) = strdup(argument);
+  OLC_STORAGE(d) = strdup(arg);
   OLC_ZNUM(d) = search_help(OLC_STORAGE(d), LVL_IMPL);
 
-  for(i = 0; i < (int)strlen(argument); i++)
-    argument[i] = toupper(argument[i]);
-
-  if (OLC_ZNUM(d) == NOWHERE)
-     hedit_setup_new(d, OLC_STORAGE(d));
-  else
-     hedit_setup_existing(d, OLC_ZNUM(d));
-
+  if (OLC_ZNUM(d) == NOWHERE) {
+    send_to_char(ch, "Do you wish to add the '%s' help file? ", OLC_STORAGE(d));
+    OLC_MODE(d) = HEDIT_CONFIRM_ADD;
+  } else {
+    send_to_char(ch, "Do you wish to edit the '%s' help file? ", help_table[OLC_ZNUM(d)].keywords);
+    OLC_MODE(d) = HEDIT_CONFIRM_EDIT;
+  }
 
   STATE(d) = CON_HEDIT;
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
@@ -170,57 +107,56 @@ ACMD(do_oasis_hedit)
   mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing help files.", GET_NAME(d->character));
 }
 
-/* Utils and exported functions. */
-void hedit_setup_new(struct descriptor_data *d, char *new_key)
+void hedit_setup_new(struct descriptor_data *d)
 {
   CREATE(OLC_HELP(d), struct help_index_element, 1);
 
-  OLC_HELP(d)->keywords = strdup(new_key);
-  OLC_HELP(d)->entry = strdup("This is an unfinished help entry.\r\n");
-  OLC_HELP(d)->min_level = 0;
-  hedit_disp_menu(d);
+  OLC_HELP(d)->keywords		= strdup(OLC_STORAGE(d));
+  OLC_HELP(d)->entry		= strdup("This help file is unfinished.\r\n");
+  OLC_HELP(d)->min_level	= 0;
+  OLC_HELP(d)->duplicate	= 0;
   OLC_VAL(d) = 0;
+
+  hedit_disp_menu(d);
 }
 
 void hedit_setup_existing(struct descriptor_data *d, int rnum)
 {
-  /* Build a copy of the help entry for editing.*/
   CREATE(OLC_HELP(d), struct help_index_element, 1);
-  /* Allocate space for all strings. */
-  OLC_HELP(d)->keywords = strdup(help_table[rnum].keywords ?
-	help_table[rnum].keywords : "UNDEFINED\r\n");
-  OLC_HELP(d)->entry = strdup(help_table[rnum].entry ?
-	help_table[rnum].entry : "undefined\r\n");
-  OLC_HELP(d)->min_level = help_table[rnum].min_level;
 
-  /* Attach copy of help entry to player's descriptor. */
+  OLC_HELP(d)->keywords		= str_udup(help_table[rnum].keywords);
+  OLC_HELP(d)->entry		= str_udup(help_table[rnum].entry);
+  OLC_HELP(d)->duplicate	= help_table[rnum].duplicate;
+  OLC_HELP(d)->min_level	= help_table[rnum].min_level;
   OLC_VAL(d) = 0;
+
   hedit_disp_menu(d);
 }
 
 void hedit_save_internally(struct descriptor_data *d)
 {
   struct help_index_element *new_help_table = NULL;
-  int i;
 
-  if (OLC_ZNUM(d) > top_of_h_table) {
-    CREATE(new_help_table, struct help_index_element, top_of_h_table + 2);
-    new_help_table[0] = *OLC_HELP(d);
-    for (i = 0; i <= top_of_h_table; i++)
-      new_help_table[i + 1] = help_table[i];
+  if (OLC_ZNUM(d) > top_of_helpt) {
+    CREATE(new_help_table, struct help_index_element, top_of_helpt + 2);
+
+    int i;
+    for (i = 0; i <= top_of_helpt; i++)
+      new_help_table[i] = help_table[i];
+    new_help_table[++top_of_helpt] = *OLC_HELP(d);
     free(help_table);
     help_table = new_help_table;
-    top_of_h_table ++;
   } else
     help_table[OLC_ZNUM(d)] = *OLC_HELP(d);
-    hedit_save_to_disk(d);
+
+  add_to_save_list(HEDIT_PERMISSION, SL_HLP);
+  hedit_save_to_disk(d);
 }
 
 void hedit_save_to_disk(struct descriptor_data *d)
 {
   FILE *fp;
-  char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE], buf[READ_SIZE];
-  int i;
+  char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE];
 
   snprintf(index_name, sizeof(index_name), "%s%s", HLP_PREFIX, HELP_FILE);
   if (!(fp = fopen(index_name, "w"))) {
@@ -228,43 +164,48 @@ void hedit_save_to_disk(struct descriptor_data *d)
     return;
   }
 
-  for (i = 0; i <= top_of_h_table; i++){
-    if (help_table[i].entry && help_table[i].duplicate)
+  int i;
+  for (i = 0; i <= top_of_helpt; i++) {
+    if (help_table[i].duplicate)
       continue;
-    strncpy(buf1, help_table[i].entry ? help_table[i].entry : "Empty\n\r", sizeof(buf1) - 1);
+    strncpy(buf1, help_table[i].entry ? help_table[i].entry : "Empty\r\n", sizeof(buf1) - 1);
     strip_cr(buf1);
 
     /* Forget making a buffer, lets just write the thing now. */
-    fprintf(fp, "%s" "#%d\n", buf1, help_table[i].min_level);
+    fprintf(fp, "%s#%d\n", buf1, help_table[i].min_level);
   }
   /* Write final line and close. */
   fprintf(fp, "$~\n");
   fclose(fp);
-  do_reboot(d->character, strcpy(buf, "xhelp"), 0, 0);
+
+  remove_from_save_list(HEDIT_PERMISSION, SL_HLP);
+
+  /* Reboot the help files. */
+  free_help_table();     
+  index_boot(DB_BOOT_HLP);
 }
 
-/* Menu functions */
 /* The main menu. */
 void hedit_disp_menu(struct descriptor_data *d)
 {
-  clear_screen(d);
+  get_char_colors(d->character);
+
   write_to_output(d,
-
-         "-- Help file editor\r\n"
-         "@g1@n) Keywords    : @y%s@n\r\n"
-         "@g2@n) Entry       :\r\n@y%s@n"
-	 "@g3@n) Min Level   : @c%d@n\r\n"
-	  "@gQ@n) Quit\r\n"
-	  "Enter choice : ",
-
-	  OLC_HELP(d)->keywords,
-	  OLC_HELP(d)->entry,
-	  OLC_HELP(d)->min_level
-	  );
-   OLC_MODE(d) = HEDIT_MAIN_MENU;
+      "%s-- Help file editor\r\n"
+      "%s1%s) Keywords    : %s%s\r\n"
+      "%s2%s) Entry       :\r\n%s%s"
+      "%s3%s) Min Level   : %s%d\r\n"
+      "%sQ%s) Quit\r\n"
+      "Enter choice : ",
+       nrm,
+       grn, nrm, yel, OLC_HELP(d)->keywords,
+       grn, nrm, yel, OLC_HELP(d)->entry,
+       grn, nrm, yel, OLC_HELP(d)->min_level,
+       grn, nrm
+  );
+  OLC_MODE(d) = HEDIT_MAIN_MENU;
 }
 
-/* The main loop */
 void hedit_parse(struct descriptor_data *d, char *arg)
 {
   char buf[MAX_STRING_LENGTH];
@@ -276,11 +217,13 @@ void hedit_parse(struct descriptor_data *d, char *arg)
     switch (*arg) {
     case 'y':
     case 'Y':
-      snprintf(buf, sizeof(buf), "OLC: %s edits help for %s.", GET_NAME(d->character), OLC_HELP(d)->keywords);
+      snprintf(buf, sizeof(buf), "OLC: %s edits help for %s.", GET_NAME(d->character),
+               OLC_HELP(d)->keywords);
       mudlog(TRUE, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), CMP, buf);
-      write_to_output(d, "Help files saved to disk.\r\n");
+      write_to_output(d, "Help saved to disk.\r\n");
       hedit_save_internally(d);
-      /* Do NOT free strings! Just the help structure. */
+
+      /* Do not free strings, just the help structure. */
       cleanup_olc(d, CLEANUP_STRUCTS);
       break;
     case 'n':
@@ -294,17 +237,67 @@ void hedit_parse(struct descriptor_data *d, char *arg)
     }
     return;
 
+  case HEDIT_CONFIRM_EDIT:
+    switch (*arg)  {
+    case 'y': case 'Y':
+      hedit_setup_existing(d, OLC_ZNUM(d));
+      break;
+    case 'q': case 'Q': 
+      cleanup_olc(d, CLEANUP_ALL);
+      break;       
+    case 'n': case 'N':
+      OLC_ZNUM(d)++;
+      for (; OLC_ZNUM(d) <= top_of_helpt; OLC_ZNUM(d)++)
+        if (is_abbrev(OLC_STORAGE(d), help_table[OLC_ZNUM(d)].keywords))
+          break;
+        else
+          OLC_ZNUM(d) = top_of_helpt + 1;
+
+      if (OLC_ZNUM(d) > top_of_helpt) {
+        write_to_output(d, "Do you wish to add the '%s' help file? ",
+            OLC_STORAGE(d));
+        OLC_MODE(d) = HEDIT_CONFIRM_ADD;
+      } else {
+        write_to_output(d, "Do you wish to edit the '%s' help file? ",
+            help_table[OLC_ZNUM(d)].keywords);
+        OLC_MODE(d) = HEDIT_CONFIRM_EDIT;
+      }     
+      break;
+    default:
+      write_to_output(d, "Invalid choice!\r\n"
+                         "Do you wish to edit the '%s' help file? ",
+                         help_table[OLC_ZNUM(d)].keywords);
+      break;
+    }
+    return;
+
+  case HEDIT_CONFIRM_ADD:
+    switch (*arg)  {
+      case 'y': case 'Y':
+      hedit_setup_new(d);
+      break;
+    case 'n': case 'N': case 'q': case 'Q':
+      cleanup_olc(d, CLEANUP_ALL);
+      break;
+    default:
+      write_to_output(d, "Invalid choice!\r\n"
+                         "Do you wish to add the '%s' help file? ",
+                         OLC_STORAGE(d));
+      break;
+    }
+    return;
+
   case HEDIT_MAIN_MENU:
     switch (*arg) {
     case 'q':
     case 'Q':
-      if (OLC_VAL(d)) { /* Something has been modified. */
-	write_to_output(d, "Do you wish to save your changes? : ");
-	OLC_MODE(d) = HEDIT_CONFIRM_SAVESTRING;
+      if (OLC_VAL(d)) {
+        /* Something has been modified. */
+        write_to_output(d, "Do you wish to save your changes? : ");
+        OLC_MODE(d) = HEDIT_CONFIRM_SAVESTRING;
       } else {
-        log("this is a test of quit out of hedit");
-	write_to_output(d, "No changes made.\r\n");
-	cleanup_olc(d, CLEANUP_ALL);
+        write_to_output(d, "No changes made.\r\n");
+        cleanup_olc(d, CLEANUP_ALL);
       }
       break;
     case '1':
@@ -317,14 +310,14 @@ void hedit_parse(struct descriptor_data *d, char *arg)
       send_editor_help(d);
       write_to_output(d, "Enter help entry: (/s saves /h for help)\r\n");
       if (OLC_HELP(d)->entry) {
-	write_to_output(d, "%s", OLC_HELP(d)->entry);
-	oldtext = strdup(OLC_HELP(d)->entry);
+        write_to_output(d, "%s", OLC_HELP(d)->entry);
+        oldtext = strdup(OLC_HELP(d)->entry);
       }
-      string_write(d, &OLC_HELP(d)->entry, 8052, 0, oldtext);
+      string_write(d, &OLC_HELP(d)->entry, MAX_MESSAGE_LENGTH, 0, oldtext);
       OLC_VAL(d) = 1;
       break;
     case '3':
-      write_to_output(d, "Enter min level:-\r\n] ");
+      write_to_output(d, "Enter min level : ");
       OLC_MODE(d) = HEDIT_MIN_LEVEL;
       break;
     default:
@@ -340,7 +333,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
     if (strlen(arg) > MAX_HELP_KEYWORDS)
       arg[MAX_HELP_KEYWORDS - 1] = '\0';
     strip_cr(arg);
-    OLC_HELP(d)->keywords = strdup((arg && *arg) ? arg : "UNDEFINED");
+    OLC_HELP(d)->keywords = str_udup(arg);
     break;
 
   case HEDIT_ENTRY:
@@ -363,6 +356,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
     mudlog(TRUE, LVL_BUILDER, BRF, "SYSERR: Reached default case in parse_hedit");
     break;
   }
+
   /* If we get this far, something has been changed. */
   OLC_VAL(d) = 1;
   hedit_disp_menu(d);
@@ -371,10 +365,9 @@ void hedit_parse(struct descriptor_data *d, char *arg)
 void hedit_string_cleanup(struct descriptor_data *d, int terminator)
 {
   switch (OLC_MODE(d)) {
-    case HEDIT_ENTRY:
-    default:
-      hedit_disp_menu(d);
-      break;
+  case HEDIT_ENTRY:
+    hedit_disp_menu(d);
+    break;
   }
 }
 
@@ -387,14 +380,13 @@ ACMD(do_helpcheck)
   size_t len = 0, nlen;
 
   send_to_char(ch, "Commands without help entries:\r\n");
-  send_to_char(ch, "-------------------------------------------------------------------\r\n");
 
   for (i = 1; *(complete_cmd_info[i].command) != '\n'; i++) {
-    if (complete_cmd_info[i].command_pointer != do_action) {
-      if (search_help((char *) complete_cmd_info[i].command, LVL_IMPL) == NOWHERE) {
-        nlen = snprintf(buf + len, sizeof(buf) - len, " %-20.20s%s",
-            complete_cmd_info[i].command, (++count % 3 ? "|":"\r\n"));
-        if (len + nlen >= sizeof(buf) || nlen < 0)
+    if (complete_cmd_info[i].command_pointer != do_action && complete_cmd_info[i].minimum_level >= 0) {
+      if (search_help((char *)(complete_cmd_info[i].command), LVL_IMPL) == NOWHERE) {
+        nlen = snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", complete_cmd_info[i].command,
+                        (++count % 3 ? "" : "\r\n"));
+        if (len + nlen >= sizeof(buf))
           break;
         len += nlen;
       }
@@ -422,43 +414,18 @@ ACMD(do_hindex)
   }
 
   len = sprintf(buf, "Help index entries based on '%s':\r\n", argument);
-  for (i = 0; i <= top_of_h_table; i++)
-    if (is_abbrev(argument, help_table[i].keywords) && (GET_LEVEL(ch) >= help_table[i].min_level))
-      len += snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s",
-    help_table[i].keywords, (++count % 3 ? "" : "\r\n"));
+  for (i = 0; i <= top_of_helpt; i++)
+    if (is_abbrev(argument, help_table[i].keywords)
+        && (GET_LEVEL(ch) >= help_table[i].min_level))
+      len +=
+          snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", help_table[i].keywords,
+                   (++count % 3 ? "" : "\r\n"));
 
-    if (count % 3)
-      len += snprintf(buf + len, sizeof(buf) - len, "\r\n");
+  if (count % 3)
+    len += snprintf(buf + len, sizeof(buf) - len, "\r\n");
 
-    if (!count)
-      len += snprintf(buf + len, sizeof(buf) - len, "  None.\r\n");
+  if (!count)
+    len += snprintf(buf + len, sizeof(buf) - len, "  None.\r\n");
 
   page_string(ch->desc, buf, TRUE);
-}
-
-void free_help(struct help_index_element *help)
-{
-
-  if (help->keywords)
-    free(help->keywords);
-  if (help_table->entry && !help_table->duplicate)
-    free(help->entry);
-
-  free(help);
-}
-
-void free_help_table(void)
-{
-  int i;
-
-  if (help_table) {
-    for (i = 0; i <= top_of_h_table; i++) {
-      if (help_table[i].keywords)
-        free(help_table[i].keywords);
-      if (help_table[i].entry && !help_table[i].duplicate)
-        free(help_table[i].entry);
-    }
-    free(help_table);
-  }
-  top_of_h_table = 0;
 }

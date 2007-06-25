@@ -80,9 +80,8 @@ char *background = NULL;	/* background story		 */
 char *handbook = NULL;		/* handbook for new immortals	 */
 char *policies = NULL;		/* policies page		 */
 
+int top_of_helpt = 0;
 struct help_index_element *help_table = NULL;
-void load_help(FILE *fl, char *name);
-extern int top_of_h_table;
 
 struct social_messg *soc_mess_list = NULL;      /* list of socials */
 int top_of_socialt = -1;                        /* number of socials */
@@ -1028,10 +1027,10 @@ void index_boot(int mode)
   }
   fclose(db_index);
 
-  /* sort the help index */
+  /* Sort the help index. */
   if (mode == DB_BOOT_HLP) {
-    qsort(help_table, top_of_h_table, sizeof(struct help_index_element), hsort);
-    top_of_h_table--;
+    qsort(help_table, top_of_helpt, sizeof(struct help_index_element), hsort);
+    top_of_helpt--;
   }
 }
 
@@ -2079,6 +2078,102 @@ void get_one_line(FILE *fl, char *buf)
   }
 
   buf[strlen(buf) - 1] = '\0'; /* take off the trailing \n */
+}
+
+void free_help(struct help_index_element *help) {
+  if (help->keywords)
+    free(help->keywords);
+  if (help->entry && !help->duplicate)
+    free(help->entry);
+
+  free(help);
+}
+
+void free_help_table(void)
+{
+  if (help_table) {
+    int hp;
+    for (hp = 0; hp <= top_of_helpt; hp++) {
+      if (help_table[hp].keywords)
+        free(help_table[hp].keywords);
+      if (help_table[hp].entry && !help_table[hp].duplicate)
+        free(help_table[hp].entry);
+    }
+    free(help_table);
+    help_table = NULL;
+  }
+  top_of_helpt = 0;
+}
+
+void load_help(FILE * fl, char *name)
+{
+  char key[READ_SIZE + 1], next_key[READ_SIZE + 1], entry[32384];
+  size_t entrylen;
+  char line[READ_SIZE + 1], hname[READ_SIZE + 1], *scan;
+  struct help_index_element el;
+
+  strlcpy(hname, name, sizeof(hname));
+
+  get_one_line(fl, key);
+  while (*key != '$') {
+    strcat(key, "\r\n"); /* strcat: OK (READ_SIZE - "\n"  "\r\n" == READ_SIZE  1) */
+    entrylen = strlcpy(entry, key, sizeof(entry));
+
+    /* Read in the corresponding help entry. */
+    get_one_line(fl, line);
+    while (*line != '#' && entrylen < sizeof(entry) - 1) {
+      entrylen += strlcpy(entry + entrylen, line, sizeof(entry) - entrylen);
+
+      if (entrylen + 2 < sizeof(entry) - 1) {
+        strcpy(entry + entrylen, "\r\n"); /* strcpy: OK (size checked above) */
+        entrylen += 2;
+      }
+      get_one_line(fl, line);
+    }
+
+    if (entrylen >= sizeof(entry) - 1) {
+      int keysize;
+      const char *truncmsg = "\r\n*TRUNCATED*\r\n";
+
+      strcpy(entry + sizeof(entry) - strlen(truncmsg) - 1, truncmsg); /* strcpy: OK (assuming sane 'entry' size) */
+
+      keysize = strlen(key) - 2;
+      log("SYSERR: Help entry exceeded buffer space: %.*s", keysize, key);
+
+      /* If we ran out of buffer space, eat the rest of the entry. */
+      while (*line != '#')
+      get_one_line(fl, line);
+    }
+
+    if (*line == '#') {
+      if (sscanf(line, "#%d", &el.min_level) != 1) {
+        log("SYSERR: Help entry does not have a min level. %s", key);
+        el.min_level = 0;
+      }
+    }
+
+    el.duplicate = 0;
+    el.entry = strdup(entry);
+    scan = one_word(key, next_key);
+
+    while (*next_key) {
+      el.keywords = strdup(next_key);
+      help_table[top_of_helpt++] = el;
+      el.duplicate++;
+      scan = one_word(scan, next_key);
+    }
+  get_one_line(fl, key);
+  }
+}
+
+int hsort(const void *a, const void *b) 
+{
+  const struct help_index_element *a1, *b1;
+
+  a1 = (const struct help_index_element *) a;
+  b1 = (const struct help_index_element *) b;
+
+  return (str_cmp(a1->keywords, b1->keywords)); 
 }
 
 int vnum_mobile(char *searchname, struct char_data *ch)

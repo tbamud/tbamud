@@ -195,7 +195,7 @@ void aedit_save_internally(struct descriptor_data *d) {
    create_command_list();
    sort_commands();
 
-   add_to_save_list(AEDIT_PERMISSION, SL_ACTION);
+   add_to_save_list(AEDIT_PERMISSION, SL_ACT);
    aedit_save_to_disk(d); /* autosave by Rumble */
 }
 
@@ -238,7 +238,7 @@ void aedit_save_to_disk(struct descriptor_data *d) {
 
    fprintf(fp, "$\n");
    fclose(fp);
-   remove_from_save_list(AEDIT_PERMISSION, SL_ACTION);
+   remove_from_save_list(AEDIT_PERMISSION, SL_ACT);
 }
 
 /* The Main Menu. */

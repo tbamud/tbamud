@@ -22,7 +22,7 @@
 #include "dg_scripts.h"
 
 /* extern variables */
-extern int top_of_h_table;
+extern int top_of_helpt;
 extern struct help_index_element *help_table;
 extern char *help;
 extern char *ihelp;
@@ -996,7 +996,7 @@ int search_help(char *argument, int level)
   int chk, bot, top, mid, minlen; 
 
    bot = 0; 
-   top = top_of_h_table; 
+   top = top_of_helpt; 
    minlen = strlen(argument); 
 
   while (bot <= top) { 
@@ -1052,7 +1052,7 @@ ACMD(do_help)
     mudlog(NRM, MAX(LVL_IMPL, GET_INVIS_LEV(ch)), TRUE,
       "%s tried to get help on %s", GET_NAME(ch), argument);
     int i, found = 0;
-    for (i = 0; i <= top_of_h_table; i++)  {
+    for (i = 0; i <= top_of_helpt; i++)  {
       if (help_table[i].min_level > GET_LEVEL(ch))
         continue;
       /* To help narrow down results, if they don't start with the same letters, move on. */

@@ -37,12 +37,9 @@ extern int top_shop_offset;
 #define SL_WLD	3
 #define SL_ZON	4
 #define SL_CFG	5
-#define SL_ACT  6
-#define SL_MAX	6
-
-#ifndef STOCK_CIRCLE
-#define SL_ACTION 100 /* must be above MAX */
-#endif
+#define SL_MAX  5	
+#define SL_ACT SL_MAX + 1 /* must be above MAX */ 
+#define SL_HLP SL_MAX + 2
 
 #define ZCMD(zon, cmds)	zone_table[(zon)].cmd[(cmds)]
 

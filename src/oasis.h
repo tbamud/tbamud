@@ -354,13 +354,13 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define CEDIT_MIN_WIZLIST_LEV		53
 
 /* Hedit Submodes of connectedness. */
-#define HEDIT_MAIN_MENU                0
-#define HEDIT_ENTRY                    1
-#define HEDIT_MIN_LEVEL                2
-#define HEDIT_KEYWORDS                 3
-#define HEDIT_CONFIRM_SAVESTRING       4
-
-#define HEDIT_LIST                     0  /* Define True, for logging help - FUTURE USE */
+#define HEDIT_CONFIRM_SAVESTRING        0
+#define HEDIT_CONFIRM_EDIT              1
+#define HEDIT_CONFIRM_ADD               2
+#define HEDIT_MAIN_MENU                 3
+#define HEDIT_ENTRY                     4   
+#define HEDIT_KEYWORDS                  5
+#define HEDIT_MIN_LEVEL                 6
 
 #ifndef __GENOLC_C__
 

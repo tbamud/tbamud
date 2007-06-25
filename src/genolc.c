@@ -44,7 +44,8 @@ struct {
   { SL_WLD, save_rooms, "room" },
   { SL_ZON, save_zone, "zone" },
   { SL_CFG, save_config, "config" },
-  { SL_ACTION, NULL, "social" },
+  { SL_ACT, NULL, "social" },
+  { SL_HLP, NULL, "help" },
   { -1, NULL, NULL },
 };
 
@@ -64,16 +65,23 @@ int save_all(void)
 {
   while (save_list) {
     if (save_list->type < 0 || save_list->type > SL_MAX) {
-      if (save_list->type == SL_ACTION) {
-        log("Actions not saved - cannot autosave. Use 'aedit save'.");
-        save_list = save_list->next;	/* Fatal error, skip this one. */
-      } else
-        log("SYSERR: GenOLC: Invalid save type %d in save list.\n", save_list->type);
-    } else if ((*save_types[save_list->type].func)(real_zone(save_list->zone)) < 0)
-      save_list = save_list->next;	/* Fatal error, skip this one. */
-  }
-
-  return TRUE;
+      switch (save_list->type) {
+        case SL_ACT:
+          log("Actions not saved - can not autosave. Use 'aedit save'.");
+          save_list = save_list->next;    /* Fatal error, skip this one. */
+          break;
+        case SL_HLP:
+          log("Help not saved - can not autosave. Use 'hedit save'.");
+          save_list = save_list->next;    /* Fatal error, skip this one. */
+          break;
+        default:
+          log("SYSERR: GenOLC: Invalid save type %d in save list.\n", save_list->type);
+          break;
+        }
+      } else if ((*save_types[save_list->type].func) (real_zone(save_list->zone)) < 0)
+        save_list = save_list->next;      /* Fatal error, skip this one. */
+    }
+    return TRUE;
 }
 
 /* NOTE: This changes the buffer passed in. */
