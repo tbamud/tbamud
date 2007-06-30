@@ -785,8 +785,6 @@ ACMD(do_wake)
   else {
     send_to_char(ch, "You awaken, and sit up.\r\n");
     act("$n awakens.", TRUE, ch, 0, 0, TO_ROOM);
-    /* Were they asleep while sitting? */
-    char_from_furniture(ch);
     GET_POS(ch) = POS_SITTING;
   }
 }

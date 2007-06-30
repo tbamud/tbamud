@@ -859,24 +859,6 @@ void trigedit_string_cleanup(struct descriptor_data *d, int terminator)
   }
 }
 
-#if 0 /* change to 1 if you get messages telling you you don't have strncasecmp() */
-int strncasecmp (const char *s1, const char *s2, int n)
-{
-	unsigned char c1, c2;
-	while(*s1 && *s2 && n--) {
-		c1 = ((*s1 >= 'A') && (*s1 <= 'Z')) ? (*s1++) + ('a' - 'A') : (*s1++);
-		c2 = ((*s2 >= 'A') && (*s2 <= 'Z')) ? (*s2++) + ('a' - 'A') : (*s2++);
-		if (c1 != c2)
-			return (c1 > c2) ? 1 : -1;
-	}
-	if (*s1 && !*s2)
-		return 1;
-	if (!*s1 && *s2)
-		return -1;
-	return 0;
-}
-#endif
-
 int format_script(struct descriptor_data *d)
 {
   char nsc[MAX_CMD_LENGTH], *t, line[READ_SIZE];
@@ -894,14 +876,14 @@ int format_script(struct descriptor_data *d)
   while (t) {
     line_num++;
     skip_spaces(&t);
-    if (!strncasecmp(t, "if ", 3) ||
-        !strncasecmp(t, "switch ", 7)) {
+    if (!strn_cmp(t, "if ", 3) ||
+        !strn_cmp(t, "switch ", 7)) {
       indent_next = TRUE;
-    } else if (!strncasecmp(t, "while ", 6)) {
+    } else if (!strn_cmp(t, "while ", 6)) {
       found_case = TRUE;  /* so you can 'break' a loop without complains */
       indent_next = TRUE;
-    } else if (!strncasecmp(t, "end", 3) ||
-               !strncasecmp(t, "done", 4)) {
+    } else if (!strn_cmp(t, "end", 3) ||
+               !strn_cmp(t, "done", 4)) {
       if (!indent) {
         write_to_output(d, "Unmatched 'end' or 'done' (line %d)!\r\n", line_num);
         free(sc);
@@ -909,7 +891,7 @@ int format_script(struct descriptor_data *d)
       }
       indent--;
       indent_next = FALSE;
-    } else if (!strncasecmp(t, "else", 4)) {
+    } else if (!strn_cmp(t, "else", 4)) {
       if (!indent) {
         write_to_output(d, "Unmatched 'else' (line %d)!\r\n", line_num);
         free(sc);
@@ -917,8 +899,8 @@ int format_script(struct descriptor_data *d)
       }
       indent--;
       indent_next = TRUE;
-    } else if (!strncasecmp(t, "case", 4) ||
-               !strncasecmp(t, "default", 7)) {
+    } else if (!strn_cmp(t, "case", 4) ||
+               !strn_cmp(t, "default", 7)) {
       if (!indent) {
         write_to_output(d, "Case/default outside switch (line %d)!\r\n", line_num);
         free(sc);
@@ -927,7 +909,7 @@ int format_script(struct descriptor_data *d)
       if (!found_case) /* so we don't indent multiple case statements without a break */
         indent_next = TRUE;
       found_case = TRUE;
-    } else if (!strncasecmp(t, "break", 5)) {
+    } else if (!strn_cmp(t, "break", 5)) {
       if (!found_case || !indent ) {
         write_to_output(d, "Break not in case (line %d)!\r\n", line_num);
         free(sc);

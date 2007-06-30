@@ -2061,7 +2061,7 @@ ACMD(do_last)
     fseek(fp,-1* (sizeof(struct last_entry)),SEEK_CUR);
     fread(&mlast,sizeof(struct last_entry),1,fp);
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
-    if(!*name ||(*name && !strcasecmp(name, mlast.username))) {
+    if(!*name ||(*name && !str_cmp(name, mlast.username))) {
       send_to_char(ch,"%10.10s %20.20s %16.16s - ",
         mlast.username, mlast.hostname, ctime(&mlast.time));
       if((temp=is_in_game(mlast.idnum)) && mlast.punique == GET_PREF(temp)) {

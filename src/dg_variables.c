@@ -24,6 +24,7 @@
 /* External variables and functions */
 extern const char *pc_class_types[];
 extern struct time_info_data time_info;
+int find_eq_pos_script(char *arg);
 
 /* Utility functions */
 
@@ -1149,7 +1150,16 @@ o->contains) ? "1" : "0"));
             snprintf(str, slen, "%d", GET_OBJ_VAL(o, 3));
           break;
         case 'w':
-          if (!str_cmp(field, "weight")){
+          if (!str_cmp(field, "wearflag")) { 
+	    if (subfield && *subfield) {
+	      if (can_wear_on_pos(o, find_eq_pos_script(subfield))) 
+	        snprintf(str, slen, "1"); 
+	      else 
+	         snprintf(str, slen, "0"); 
+	    }
+	  }
+
+	  else if (!str_cmp(field, "weight")){
             if (subfield && *subfield) {
               int addition = atoi(subfield);
               GET_OBJ_WEIGHT(o) = MAX(1, addition + GET_OBJ_WEIGHT(o));
