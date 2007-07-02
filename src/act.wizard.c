@@ -1076,7 +1076,7 @@ ACMD(do_stat)
     }
   } else if (is_abbrev(buf1, "zone")) {
     if (!*buf2) {
-      send_to_char(ch, "Stats on which zone?\r\n");
+      print_zone(ch, zone_table[world[IN_ROOM(ch)].zone].number);
       return;
     } else {
       print_zone(ch, atoi(buf2));
@@ -1288,6 +1288,7 @@ ACMD(do_return)
 {
   if (!IS_NPC(ch) && !ch->desc->original) {
     do_cheat(ch);
+    run_autowiz();
   }
 
   if (ch->desc && ch->desc->original) {

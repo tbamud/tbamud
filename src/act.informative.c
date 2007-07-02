@@ -1009,7 +1009,7 @@ int search_help(char *argument, int level)
       while (level < help_table[mid].min_level && mid < (bot + top) / 2) 
         mid++; 
 
-//      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
+//to allow morts access to helpfiles on TBA, delete next line.      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
       if (strn_cmp(argument, help_table[mid].keywords, minlen))
 	      break; 
 

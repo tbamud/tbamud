@@ -1156,7 +1156,8 @@ o->contains) ? "1" : "0"));
 	        snprintf(str, slen, "1"); 
 	      else 
 	         snprintf(str, slen, "0"); 
-	    }
+	    } else
+              snprintf(str, slen, "0");
 	  }
 
 	  else if (!str_cmp(field, "weight")){

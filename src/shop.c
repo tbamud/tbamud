@@ -817,7 +817,7 @@ char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr, struct
   }
   CAP(itemname);
 
-  snprintf(result, sizeof(result), " %2d)  %9s   %-*s %6d\r\n", aindex, quantity, 48 - count_color_chars(itemname), itemname, buy_price(obj, shop_nr, keeper, ch));
+  snprintf(result, sizeof(result), " %2d)  %9s   %-*s %6d\r\n", aindex, quantity, count_color_chars(itemname)+48, itemname, buy_price(obj, shop_nr, keeper, ch));
 
   return (result);
 }
