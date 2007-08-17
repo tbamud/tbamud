@@ -269,7 +269,9 @@ ACMD(do_flee)
       was_fighting = FIGHTING(ch);
       if (do_simple_move(ch, attempt, TRUE)) {
 	send_to_char(ch, "You flee head over heels.\r\n");
-	if (was_fighting && !IS_NPC(ch)) {
+        stop_fighting(ch); 
+        stop_fighting(was_fighting);
+     if (was_fighting && !IS_NPC(ch)) {
 	  loss = GET_MAX_HIT(was_fighting) - GET_HIT(was_fighting);
 	  loss *= GET_LEVEL(was_fighting);
 	  gain_exp(ch, -loss);

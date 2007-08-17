@@ -1192,7 +1192,10 @@ void parse_room(FILE *fl, int virtual_nr)
     world[room_nr].room_flags[2] = 0;
     world[room_nr].room_flags[3] = 0;
 
-    sprintf(flags, "room #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
+    /* In the old-style files, the 3rd item was the sector-type */ 
+    world[room_nr].sector_type = atoi(flags2); 
+   
+   sprintf(flags, "room #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
 
     /* No need to scan the other three sections; they're 0 anyway. */
     check_bitvector_names(world[room_nr].room_flags[0], room_bits_count, flags, "room"); 
@@ -1214,12 +1217,15 @@ void parse_room(FILE *fl, int virtual_nr)
     sprintf(flags, "object #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
     for(taeller=0; taeller < AF_ARRAY_MAX; taeller++) 
       check_bitvector_names(world[room_nr].room_flags[taeller], room_bits_count, flags, "room");
-  } else {
-    log("SYSERR: Format error in roomflags/sector type of room #%d", virtual_nr);
+
+    /* Added Sanity check */ 
+    if (t[2] > NUM_ROOM_SECTORS) t[2] = SECT_INSIDE; 
+
+    world[room_nr].sector_type = t[2];
+    } else {
+      log("SYSERR: Format error in roomflags/sector type of room #%d", virtual_nr);
     exit(1);
   }
-
-  world[room_nr].sector_type = t[2];
 
   world[room_nr].func = NULL;
   world[room_nr].contents = NULL;

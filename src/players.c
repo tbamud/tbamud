@@ -279,18 +279,23 @@ int load_char(const char *name, struct char_data *ch)
       case 'A':
         if (!strcmp(tag, "Ac  "))	GET_AC(ch)		= atoi(line);
 	else if (!strcmp(tag, "Act ")) {
-          sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+         if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
           PLR_FLAGS(ch)[0] = asciiflag_conv(f1);
           PLR_FLAGS(ch)[1] = asciiflag_conv(f2);
           PLR_FLAGS(ch)[2] = asciiflag_conv(f3);
           PLR_FLAGS(ch)[3] = asciiflag_conv(f4);
-        } else if (!strcmp(tag, "Aff ")) {
-          sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+        } else
+          PLR_FLAGS(ch)[0] = asciiflag_conv(line);
+      } else if (!strcmp(tag, "Aff ")) {
+        if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
           AFF_FLAGS(ch)[0] = asciiflag_conv(f1);
           AFF_FLAGS(ch)[1] = asciiflag_conv(f2);
           AFF_FLAGS(ch)[2] = asciiflag_conv(f3);
           AFF_FLAGS(ch)[3] = asciiflag_conv(f4);
-        } else if (!strcmp(tag, "Affs")) 	load_affects(fl, ch);
+        } else 
+          AFF_FLAGS(ch)[0] = asciiflag_conv(line);	
+	}
+	if (!strcmp(tag, "Affs")) 	load_affects(fl, ch);
         else if (!strcmp(tag, "Alin"))	GET_ALIGNMENT(ch)	= atoi(line);
 	else if (!strcmp(tag, "Alis"))	read_aliases_ascii(fl, ch, atoi(line));
 	break;
@@ -399,6 +404,7 @@ int load_char(const char *name, struct char_data *ch)
 
       case 'V':
 	     if (!strcmp(tag, "Vars"))	read_saved_vars_ascii(fl, ch, atoi(line));
+      break;
 
       case 'W':
 	     if (!strcmp(tag, "Wate"))	GET_WEIGHT(ch)		= atoi(line);
@@ -431,7 +437,7 @@ int load_char(const char *name, struct char_data *ch)
 void save_char(struct char_data * ch)
 {
   FILE *fl;
-  char fname[40], buf[MAX_STRING_LENGTH];
+  char fname[40], buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127]; 
   int i, id, save_index = FALSE;
   struct affected_type *aff, tmp_aff[MAX_AFFECT];
   struct obj_data *char_eq[NUM_WEARS];
@@ -527,14 +533,26 @@ void save_char(struct char_data * ch)
   if (GET_WEIGHT(ch)	   != PFDEF_HEIGHT)	fprintf(fl, "Wate: %d\n", GET_WEIGHT(ch));
   if (GET_ALIGNMENT(ch)  != PFDEF_ALIGNMENT)	fprintf(fl, "Alin: %d\n", GET_ALIGNMENT(ch));
 
-    if(PLR_FLAGS(ch) != PFDEF_PLRFLAGS)
-      fprintf(fl, "Act : %u %u %u %u\n", PLR_FLAGS(ch)[0], PLR_FLAGS(ch)[1], PLR_FLAGS(ch)[2], PLR_FLAGS(ch)[3]);
-    if(AFF_FLAGS(ch) != PFDEF_AFFFLAGS)
-      fprintf(fl, "Aff : %u %u %u %u\n", AFF_FLAGS(ch)[0], AFF_FLAGS(ch)[1], AFF_FLAGS(ch)[2], AFF_FLAGS(ch)[3]);
-    if(PRF_FLAGS(ch) != PFDEF_PREFFLAGS)
-      fprintf(fl, "Pref: %d %d %d %d\n", PRF_FLAGS(ch)[0], PRF_FLAGS(ch)[1], PRF_FLAGS(ch)[2], PRF_FLAGS(ch)[3]);
 
-  if (GET_SAVE(ch, 0)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr1: %d\n", GET_SAVE(ch, 0));
+  sprintascii(bits,  PLR_FLAGS(ch)[0]); 
+  sprintascii(bits2, PLR_FLAGS(ch)[1]); 
+  sprintascii(bits3, PLR_FLAGS(ch)[2]); 
+  sprintascii(bits4, PLR_FLAGS(ch)[3]); 
+  fprintf(fl, "Act : %s %s %s %s\n", bits, bits2, bits3, bits4); 
+ 
+  sprintascii(bits,  AFF_FLAGS(ch)[0]); 
+  sprintascii(bits2, AFF_FLAGS(ch)[1]); 
+  sprintascii(bits3, AFF_FLAGS(ch)[2]); 
+  sprintascii(bits4, AFF_FLAGS(ch)[3]); 
+  fprintf(fl, "Aff : %s %s %s %s\n", bits, bits2, bits3, bits4); 
+ 
+  sprintascii(bits,  PRF_FLAGS(ch)[0]); 
+  sprintascii(bits2, PRF_FLAGS(ch)[1]); 
+  sprintascii(bits3, PRF_FLAGS(ch)[2]); 
+  sprintascii(bits4, PRF_FLAGS(ch)[3]); 
+  fprintf(fl, "Pref: %s %s %s %s\n", bits, bits2, bits3, bits4); 
+ 
+ if (GET_SAVE(ch, 0)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr1: %d\n", GET_SAVE(ch, 0));
   if (GET_SAVE(ch, 1)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr2: %d\n", GET_SAVE(ch, 1));
   if (GET_SAVE(ch, 2)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr3: %d\n", GET_SAVE(ch, 2));
   if (GET_SAVE(ch, 3)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr4: %d\n", GET_SAVE(ch, 3));

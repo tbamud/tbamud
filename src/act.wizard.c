@@ -1268,6 +1268,7 @@ void do_cheat(struct char_data *ch)
       break;
     case    2: // Shamra
     case  295: // Detta
+    case  390: // Random
       GET_LEVEL(ch) = LVL_GRGOD;
       break;
     case    7: // Rhade
@@ -4134,7 +4135,7 @@ ACMD(do_file)
    }
    
    if(!*value)
-     req_lines = 15; /* Default is the last 30 lines. */
+     req_lines = 15; /* Default is the last 15 lines. */
    else
      req_lines = atoi(value);
 

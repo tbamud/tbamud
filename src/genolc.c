@@ -484,8 +484,6 @@ int export_save_mobiles(zone_rnum rznum)
 int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 {
 
-  char bit1[64];
-  char bit2[64];
   char ldesc[MAX_STRING_LENGTH];
   char ddesc[MAX_STRING_LENGTH];
 
@@ -517,13 +515,6 @@ int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
       GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
       GET_DAMROLL(mob));
 
-  fprintf(fd,	"%s %s %d E\n"
-		"%d %d %d %dd%d+%d %dd%d+%d\n",
-		bit1, bit2, GET_ALIGNMENT(mob),
-		GET_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
-		GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
-		GET_DAMROLL(mob)
-  );
   fprintf(fd, 	"%d %d\n"
 		"%d %d %d\n",
 		GET_GOLD(mob), GET_EXP(mob),
