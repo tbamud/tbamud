@@ -2,7 +2,6 @@
 # autorun -- maintain a Circle V3.0 mud server
 # Copyright (c)1995 Vi'Rage Studios
 
-
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2, or (at your option)
