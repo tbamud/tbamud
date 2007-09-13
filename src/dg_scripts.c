@@ -2625,25 +2625,26 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
 /* returns the real number of the trigger with given virtual number */
 trig_rnum real_trigger(trig_vnum vnum)
 {
-  int bot = 0, mid;
-  int top = top_of_trigt-1;
+  trig_rnum bot, top, mid;
+
+  bot = 0;
+  top = top_of_trigt - 1;
+
+  if (!top_of_trigt || trig_index[bot]->vnum > vnum || trig_index[top]->vnum < vnum)
+    return (NOTHING);
 
   /* perform binary search on trigger-table */
-  for (;;) {
+  while (bot <= top) {
     mid = (bot + top) / 2;
 
-  /* Thanks to Derek Fisk for fixing this loop */
-    if (bot > top)
-      return (NOTHING);
     if (trig_index[mid]->vnum == vnum)
       return (mid);
-    if (top == 0)
-      return (NOTHING);
     if (trig_index[mid]->vnum > vnum)
       top = mid - 1;
     else
       bot = mid + 1;
   }
+  return (NOTHING);
 }
 
 ACMD(do_tstat)

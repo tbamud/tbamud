@@ -47,11 +47,11 @@ ACMD(do_say)
     send_to_char(ch, "Yes, but WHAT do you want to say?\r\n");
   else {
     char buf[MAX_INPUT_LENGTH + 14], *msg;
+    struct char_data *vict;
 
     snprintf(buf, sizeof(buf), "$n@n says, '%s@n'", argument);
     msg = act(buf, FALSE, ch, 0, 0, TO_ROOM | DG_NO_TRIG);
 
-    struct char_data *vict;
     for (vict = world[IN_ROOM(ch)].people; vict; vict = vict->next_in_room)
       if (vict != ch && GET_POS(vict) > POS_SLEEPING)
         add_history(vict, msg, HIST_SAY);
@@ -59,7 +59,6 @@ ACMD(do_say)
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else {
-      delete_doubledollar(argument);
       sprintf(buf, "You say, '%s@n'", argument);
       msg = act(buf, FALSE, ch, 0, 0, TO_CHAR | DG_NO_TRIG);
       add_history(ch, msg, HIST_SAY);

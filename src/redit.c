@@ -483,12 +483,15 @@ void redit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d, "Room saved to disk.\r\n");
       } else
         write_to_output(d, "Room saved to memory.\r\n");
-      /* Do NOT free strings! Just the room structure. */
-      cleanup_olc(d, CLEANUP_STRUCTS);
+      /* Free everything. */
+      cleanup_olc(d, CLEANUP_ALL);
       break;
     case 'n':
     case 'N':
-      /* Free everything up, including strings, etc. */
+      /* If not saving, we must free the script_proto list. We do so by 
+       * assigning it to the edited room and letting free_room in 
+       * cleanup_olc handle it. */
+      OLC_ROOM(d)->proto_script = OLC_SCRIPT(d);
       cleanup_olc(d, CLEANUP_ALL);
       break;
     default:

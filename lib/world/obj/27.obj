@@ -20,15 +20,15 @@ A glistening black axe is lying here.~
 2 2 6 3
 5 100 0 5
 E
-evil runes~
-   The runes are unreadable but unmistakably Khan-li in origin, testifying to
-the evil magic bestowed upon this weapon.    
-~
-E
 blackened axe black glistening~
    This incredibly sharp axe looks to be made of some normal metal which has
 then been blackened with magic.  Only the handle appears naturally dark, carved
 out of glistening obsidian and inscribed with evil runes.    
+~
+E
+evil runes~
+   The runes are unreadable but unmistakably Khan-li in origin, testifying to
+the evil magic bestowed upon this weapon.    
 ~
 A
 1 2
@@ -100,20 +100,12 @@ A ragged book has been left here.~
 0 0 0 0
 5 1 0 0
 E
-1~
-@gEntry 1@n
-   I have lost all interest in keeping this diary.  Since the sorceress has
-taken over, life has not been worth writing about.  I shall instead record
-anything I observe that may aid in her demise, though it will mean my death
-should this book be found.    
-~
-E
-2~
-@gEntry 2@n
-   Someone came to help us today, he told me he knew how to destroy the
-sorceress once and for all.  I thought he would be the one to succeed but he
-was killed by the toothy one.  Now the abominable creature has holed itself
-into a cave from which there is no return... or so it is claimed.    
+ragged diary~
+   This dark leather book is almost falling apart, although there appears to be
+very little written inside it. The word @gPRIVATE@n has been carefully carved
+into the cover.
+
+           (type look 1, 2, or 3 to view pages)
 ~
 E
 3~
@@ -124,12 +116,20 @@ I do not yet know, but I know that the sorceress has a particular way of
 keeping her secrets, and it does not involve the survival of witnesses.    
 ~
 E
-ragged diary~
-   This dark leather book is almost falling apart, although there appears to be
-very little written inside it. The word @gPRIVATE@n has been carefully carved
-into the cover.
-
-           (type look 1, 2, or 3 to view pages)
+2~
+@gEntry 2@n
+   Someone came to help us today, he told me he knew how to destroy the
+sorceress once and for all.  I thought he would be the one to succeed but he
+was killed by the toothy one.  Now the abominable creature has holed itself
+into a cave from which there is no return... or so it is claimed.    
+~
+E
+1~
+@gEntry 1@n
+   I have lost all interest in keeping this diary.  Since the sorceress has
+taken over, life has not been worth writing about.  I shall instead record
+anything I observe that may aid in her demise, though it will mean my death
+should this book be found.    
 ~
 #2707
 carcass stone~
@@ -297,14 +297,14 @@ A mouldy puddle stagnates in the corner.~
 50 5 -1 0
 0 0 0 0
 E
-loose floorboards~
-   These floorboards look a little loose, as though they have been pried open
-and set carefully back into place.    
-~
-E
 mouldy puddle~
    This looks like it may have once been water, but has turned into a greenish
 glob of undrinkable slime from the influence of mould and various fungi.    
+~
+E
+loose floorboards~
+   These floorboards look a little loose, as though they have been pried open
+and set carefully back into place.    
 ~
 #2721
 white bone key~
@@ -969,31 +969,26 @@ A silver-leafed book lies here.~
 0 0 0 0
 1 1 0 0
 E
-silver-leafed book time~
-   This beautiful shimmering book is bound with leather and overlaid with fine
-silver leafing.  Carefully scrawled letters glow vaguely phosphorescent on the
-cover, spelling out Book of Time.  There appears to be three chapters (look 1,
-2, or 3).  
-~
-E
-1 one~
-                        FIRST AGE - AGE OF SORROW
+3 three~
+                       THIRD AGE - AGE OF REBIRTH
 
- This is an accounting of things past, the first age.
+This is an accounting of things future, the third age.
 
-The first efforts of the Cui in shaping their world resulted in the separating
-of Denuo  into two major root forms - Khan'li, those of darkness, and Dynar,
-those of light, the intention being that the interactions between the two would 
-allow for motion of forces whilst keeping the balance relatively stable.
+With the canvass wiped clean and the hearts of the Cui weighed heavy with 
+grief and regret, they will invest their last energies in creating a new race. A
+form of life that embodies the whole scope of the balance, having the ability to
+sway itself to dark or light as it pleases.
 
-However, the Cui were not prepared for the outright carnage that resulted. 
-Dynar and Khan'li both working to slaughter the other and spilling oceans of 
-blood, destroying many of their sub-races that Cui had sacrificed themselves to 
-create. 
+The internal nature of these opposing forces means that the race will have to 
+keep peace within itself or suffer complete self-inflicted destruction. Thus, 
+along with the power to choose, this life will have the burning desire of its
+Cui makers to continue itself, to survive, to flourish and grow.
 
-Dismayed, the Cui sought to make peace between the two, realising that all 
-they had worked for was about to destroy itself. Finally, they sought to make 
-a more drastic change...
+With only one of the Cui remaining, this race is left almost entirely to its own
+devices, only a few perceiving and heeding the whisperings of their sole 
+remaining parent and the occassional Ve offspring.
+
+Beyond this point no speaking creature can see.
 
 ~
 E
@@ -1025,27 +1020,32 @@ and uninhabited the third age will begin.
 
 ~
 E
-3 three~
-                       THIRD AGE - AGE OF REBIRTH
+1 one~
+                        FIRST AGE - AGE OF SORROW
 
-This is an accounting of things future, the third age.
+ This is an accounting of things past, the first age.
 
-With the canvass wiped clean and the hearts of the Cui weighed heavy with 
-grief and regret, they will invest their last energies in creating a new race. A
-form of life that embodies the whole scope of the balance, having the ability to
-sway itself to dark or light as it pleases.
+The first efforts of the Cui in shaping their world resulted in the separating
+of Denuo  into two major root forms - Khan'li, those of darkness, and Dynar,
+those of light, the intention being that the interactions between the two would 
+allow for motion of forces whilst keeping the balance relatively stable.
 
-The internal nature of these opposing forces means that the race will have to 
-keep peace within itself or suffer complete self-inflicted destruction. Thus, 
-along with the power to choose, this life will have the burning desire of its
-Cui makers to continue itself, to survive, to flourish and grow.
+However, the Cui were not prepared for the outright carnage that resulted. 
+Dynar and Khan'li both working to slaughter the other and spilling oceans of 
+blood, destroying many of their sub-races that Cui had sacrificed themselves to 
+create. 
 
-With only one of the Cui remaining, this race is left almost entirely to its own
-devices, only a few perceiving and heeding the whisperings of their sole 
-remaining parent and the occassional Ve offspring.
+Dismayed, the Cui sought to make peace between the two, realising that all 
+they had worked for was about to destroy itself. Finally, they sought to make 
+a more drastic change...
 
-Beyond this point no speaking creature can see.
-
+~
+E
+silver-leafed book time~
+   This beautiful shimmering book is bound with leather and overlaid with fine
+silver leafing.  Carefully scrawled letters glow vaguely phosphorescent on the
+cover, spelling out Book of Time.  There appears to be three chapters (look 1,
+2, or 3).  
 ~
 #2766
 strip white meat~
@@ -1323,5 +1323,4 @@ A spider ball sits here.~
 0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 1 100 0 0
-T 1133
 $~

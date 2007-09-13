@@ -202,4 +202,42 @@ painting~
    Color flowers fills your eyes as they stretch off the canvas of the
 painting.  The picture gives the room a cheerful feeling.    
 ~
+#484
+stream water~
+a stream of water~
+A stream of water babbles as it rushes past.~
+~
+23 0 0 0 0 0 0 0 0 0 0 0 0
+-1 -1 15 0
+0 0 0 0
+E
+stream water~
+   This clear water looks refreshing and safe to drink.
+~
+#485
+pool murky water~
+a pool of murky water~
+A pool of murky water stagnates slowly.~
+~
+23 0 0 0 0 0 0 0 0 0 0 0 0
+-1 -1 0 0
+0 0 0 0
+E
+pool murky water~
+   This water looks as though it has been stewing for a long time, a slight
+greenish film coating its surface, though it is probably still safe to drink.
+~
+#486
+stone well~
+a stone well~
+A stone well stands here.~
+~
+23 0 0 0 0 0 0 0 0 0 0 0 0
+-1 -1 0 0
+0 0 0 0
+E
+stone well~
+   This basic stone well appears reasonably well maintained, a simple wooden
+bucket allowing water to be drawn from it.
+~
 $~

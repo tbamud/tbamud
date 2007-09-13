@@ -7,7 +7,7 @@ a strange portal located above you.
 D4
 ~
 ~
-0 0 100
+0 0 -1
 S
 T 1200
 #1
@@ -21,7 +21,7 @@ D5
 A strange portal in the floor is the only exit.
 ~
 ~
-0 0 100
+0 0 -1
 S
 #2
 Welcome to the Builder Academy~
@@ -38,7 +38,7 @@ patience, and the ability to take constructive criticism.
 
    Your first task is to apply for builder status at: 
 
-             http://geocities.com/buildersacademy/
+http://www.geocities.com/buildersacademy/
 
    When you finish and submit the application tell anyone level 32 or higher
 and they will advance you to begin your training.
@@ -553,7 +553,7 @@ D2
 0 0 21
 S
 #33
-Rumble's Room~
+6~
    The mark of the immature man is that he wants to die nobly for a cause, 
 while the mark of the mature man is that he wants to live humbly for one.  
 --Wilhelm Stekel
@@ -702,7 +702,7 @@ D3
 D4
 ~
 trapdoor~
-1 0 130
+1 0 -1
 S
 #90
 Epictetus' Prison Cell~

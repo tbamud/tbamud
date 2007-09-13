@@ -109,6 +109,19 @@ eval say %%speech[%r%]%%
 eval say %say%
 say %say%
 ~
+#205
+Crystal Ball to Locate a Mob.~
+1 c 7
+locate~
+set find %arg% 
+if !%find.is_pc%
+  eval rname %find.room% 
+  %send% %actor% As you gaze into the ring, it starts to glow. You see an image of %find.name% in %rname.name%. 
+else 
+  %send% %actor% All that you see is a blurry haze. 
+end 
+%echoaround% %actor% %actor.name% peers into %actor.hisher% gently glowing ring. 
+~
 #212
 Phoenix Rising - 219~
 1 c 4

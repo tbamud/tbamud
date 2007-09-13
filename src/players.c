@@ -17,6 +17,7 @@
 #include "pfdefaults.h"
 #include "dg_scripts.h"
 #include "comm.h"
+#include "interpreter.h"
 
 #define LOAD_HIT	0
 #define LOAD_MANA	1
@@ -258,7 +259,6 @@ int load_char(const char *name, struct char_data *ch)
     GET_MOVE(ch) = PFDEF_MOVE;
     GET_MAX_MOVE(ch) = PFDEF_MAXMOVE;
     GET_OLC_ZONE(ch) = PFDEF_OLC;
-    GET_HOST(ch) = NULL;
     GET_PAGE_LENGTH(ch) = PFDEF_PAGELENGTH;
     GET_ALIASES(ch) = NULL;
     SITTING(ch) = NULL;
@@ -334,8 +334,12 @@ int load_char(const char *name, struct char_data *ch)
       case 'H':
 	     if (!strcmp(tag, "Hit "))	load_HMVS(ch, line, LOAD_HIT);
 	else if (!strcmp(tag, "Hite"))	GET_HEIGHT(ch)		= atoi(line);
-	else if (!strcmp(tag, "Host"))	GET_HOST(ch)		= strdup(line);
-	else if (!strcmp(tag, "Hrol"))	GET_HITROLL(ch)		= atoi(line);
+        else if (!strcmp(tag, "Host")) { 
+          if (GET_HOST(ch)) 
+            free(GET_HOST(ch)); 
+          GET_HOST(ch) = strdup(line); 
+        }
+        else if (!strcmp(tag, "Hrol"))	GET_HITROLL(ch)		= atoi(line);
 	else if (!strcmp(tag, "Hung"))	GET_COND(ch, HUNGER)	= atoi(line);
 	break;
 
@@ -370,13 +374,22 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Plyd"))	ch->player.time.played	= atoi(line);
 	else if (!strcmp(tag, "PfIn"))	POOFIN(ch)		= strdup(line);
 	else if (!strcmp(tag, "PfOt"))	POOFOUT(ch)		= strdup(line);
-        else if (!strcmp(tag, "Pref"))
-          sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
-          PRF_FLAGS(ch)[0] = asciiflag_conv(f1);
-          PRF_FLAGS(ch)[1] = asciiflag_conv(f2);
-          PRF_FLAGS(ch)[2] = asciiflag_conv(f3);
-          PRF_FLAGS(ch)[3] = asciiflag_conv(f4);
-	break;
+/*       else if (!strcmp(tag, "Pref")) 
+          sscanf(line, "%s %s %s %s", f1, f2, f3, f4); 
+          PRF_FLAGS(ch)[0] = asciiflag_conv(f1); 
+          PRF_FLAGS(ch)[1] = asciiflag_conv(f2); 
+          PRF_FLAGS(ch)[2] = asciiflag_conv(f3); 
+          PRF_FLAGS(ch)[3] = asciiflag_conv(f4); 
+*/
+        else if (!strcmp(tag, "Pref")) { 
+          char *temp = line; 
+          temp = one_argument(temp, line); 
+          for (i = 0; *line && i < PR_ARRAY_MAX; i++) { 
+            PRF_FLAGS(ch)[i] = asciiflag_conv(line); 
+            temp = one_argument(temp, line); 
+          } 
+        }
+break;
 
       case 'Q':
 	     if (!strcmp(tag, "Qstp"))  GET_QUESTPOINTS(ch)     = atoi(line);

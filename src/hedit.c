@@ -112,7 +112,7 @@ void hedit_setup_new(struct descriptor_data *d)
   CREATE(OLC_HELP(d), struct help_index_element, 1);
 
   OLC_HELP(d)->keywords		= strdup(OLC_STORAGE(d));
-  OLC_HELP(d)->entry		= strdup("This help file is unfinished.\r\n");
+  OLC_HELP(d)->entry		= strdup("KEYWORDS\r\n\r\nThis help file is unfinished.\r\n");
   OLC_HELP(d)->min_level	= 0;
   OLC_HELP(d)->duplicate	= 0;
   OLC_VAL(d) = 0;
@@ -138,9 +138,9 @@ void hedit_save_internally(struct descriptor_data *d)
   struct help_index_element *new_help_table = NULL;
 
   if (OLC_ZNUM(d) > top_of_helpt) {
+    int i;
     CREATE(new_help_table, struct help_index_element, top_of_helpt + 2);
 
-    int i;
     for (i = 0; i <= top_of_helpt; i++)
       new_help_table[i] = help_table[i];
     new_help_table[++top_of_helpt] = *OLC_HELP(d);
@@ -157,6 +157,7 @@ void hedit_save_to_disk(struct descriptor_data *d)
 {
   FILE *fp;
   char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE];
+  int i;
 
   snprintf(index_name, sizeof(index_name), "%s%s", HLP_PREFIX, HELP_FILE);
   if (!(fp = fopen(index_name, "w"))) {
@@ -164,7 +165,6 @@ void hedit_save_to_disk(struct descriptor_data *d)
     return;
   }
 
-  int i;
   for (i = 0; i <= top_of_helpt; i++) {
     if (help_table[i].duplicate)
       continue;
@@ -192,13 +192,11 @@ void hedit_disp_menu(struct descriptor_data *d)
 
   write_to_output(d,
       "%s-- Help file editor\r\n"
-      "%s1%s) Keywords    : %s%s\r\n"
-      "%s2%s) Entry       :\r\n%s%s"
-      "%s3%s) Min Level   : %s%d\r\n"
+      "%s1%s) Entry       :\r\n%s%s"
+      "%s2%s) Min Level   : %s%d\r\n"
       "%sQ%s) Quit\r\n"
       "Enter choice : ",
        nrm,
-       grn, nrm, yel, OLC_HELP(d)->keywords,
        grn, nrm, yel, OLC_HELP(d)->entry,
        grn, nrm, yel, OLC_HELP(d)->min_level,
        grn, nrm
@@ -301,10 +299,6 @@ void hedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
     case '1':
-      write_to_output(d, "Enter keywords:-\r\n] ");
-      OLC_MODE(d) = HEDIT_KEYWORDS;
-      break;
-    case '2':
       OLC_MODE(d) = HEDIT_ENTRY;
       clear_screen(d);
       send_editor_help(d);
@@ -316,7 +310,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
       string_write(d, &OLC_HELP(d)->entry, MAX_MESSAGE_LENGTH, 0, oldtext);
       OLC_VAL(d) = 1;
       break;
-    case '3':
+    case 'M':
       write_to_output(d, "Enter min level : ");
       OLC_MODE(d) = HEDIT_MIN_LEVEL;
       break;

@@ -189,6 +189,16 @@ int in_save_list(zone_vnum zone, int type)
   return FALSE;
 }
 
+void free_save_list(void)
+{
+  struct save_list_data *sld, *next_sld;
+
+  for (sld = save_list; sld; sld = next_sld) {
+    next_sld = sld->next;
+    free(sld);
+  }
+}
+
 /* Used from do_show(), ideally. */
 ACMD(do_show_save_list)
 {

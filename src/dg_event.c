@@ -99,14 +99,6 @@ long event_time(struct event *event)
 /* frees all events in the queue */
 void event_free_all(void)
 {
-  struct event *the_event;
-
-  while ((the_event = (struct event *) queue_head(event_q))) {
-    if (the_event->event_obj)
-      free(the_event->event_obj);
-    free(the_event);
-  }
-
   queue_free(event_q);
 }
 
@@ -237,13 +229,19 @@ void queue_free(struct queue *q)
 {
   int i;
   struct q_element *qe, *next_qe;
+  struct event *event;
 
   for (i = 0; i < NUM_EVENT_QUEUES; i++)
     for (qe = q->head[i]; qe; qe = next_qe) {
       next_qe = qe->next;
+      if ((event = (struct event *) qe->data) != NULL) {
+	if (event->event_obj)
+	  free(event->event_obj);
+	free(event);
+      }
       free(qe);
     }
 
   free(q);
- }
+}
 

@@ -479,6 +479,7 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
   int line_chars, cap_next = TRUE, cap_next_next = FALSE, color_chars = 0, i, pass_line = 0;
   char *flow, *start = NULL, temp;
   char formatted[MAX_STRING_LENGTH] = "";
+  char str[MAX_STRING_LENGTH];
 
   /* Fix memory overrun. */
   if (d->max_str > MAX_STRING_LENGTH) {
@@ -490,7 +491,6 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
   if ((flow = *ptr_string) == NULL)
     return 0;
 
-  char str[MAX_STRING_LENGTH];
   strcpy(str, flow);
 
   for (i = 0; i < low - 1; i++) {

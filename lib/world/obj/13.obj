@@ -352,7 +352,7 @@ The filled horn (or a receptacle resembling it) has long served as a traditional
 symbol in art and decoration to suggest a store of abundance.  
 ~
 #1332
-trial vnum assigner~
+trial vnum assigner limiter~
 the trial vnum assigner~
 A trial vnum assigner helps people work on thier trial vnum.~
 ~
@@ -550,6 +550,11 @@ A tapered pyramid of dark stone rises from floor to ceiling.~
 0 0 0 0
 0 0 0 0
 E
+plaque base~
+   To the memory of the thousands who died, and for the hundreds of millions
+who wept.    
+~
+E
 memorial pyramid stone~
    A tapered spire of dark grey marble rises from its four sided base to a
 blunted tip near the ceiling.  Two adjacent sides of the spire have been
@@ -558,11 +563,6 @@ jagged.  Small sculpted figures of police, fire, and paramedics climb the
 blasted sides of the spire.  Each of the hundreds of figures is a shade of
 either white, black, brown, yellow or red.  A bronze plaque has been set in to
 the base of the monument.    
-~
-E
-plaque base~
-   To the memory of the thousands who died, and for the hundreds of millions
-who wept.    
 ~
 #1370
 flag american mast half~

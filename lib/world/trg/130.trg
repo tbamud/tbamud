@@ -883,51 +883,55 @@ eval numOne %random.8%
 eval numTwo %random.6%
 eval numThr %random.16%
 *
-set fruit[1] apple
-set fruit[2] banana
-set fruit[3] pear
-set fruit[4] orange
-set fruit[5] kiwi
-set fruit[6] starfruit
-set fruit[7] peach
-set fruit[8] strawberry
-set color[1] red
-set color[2] orange
-set color[3] yellow
-set color[4] green
-set color[5] blue
-set color[6] purple
-set spell[1] cure light
-set spell[2] heal
-set spell[3] poison
-set spell[4] blind
-set spell[5] curse
-set spell[6] cure blind
-set spell[7] armor
-set spell[8] bless
-set spell[9] cure light
-set spell[10] invisibility
-set spell[11] strength
-set spell[12] sense life
-set spell[13] bless
-set spell[14] sleep
-set spell[15] sanc
-set spell[16] chill touch
+set fruit1 apple
+set fruit2 banana
+set fruit3 pear
+set fruit4 orange
+set fruit5 kiwi
+set fruit6 starfruit
+set fruit7 peach
+set fruit8 strawberry
+set color1 @Rred@n
+set color2 @ybrown@n
+set color3 @Yyellow@n
+set color4 @Ggreen@n
+set color5 @Bblue@n
+set color6 @Mpurple@n
+set spell1 cure light
+set spell2 heal
+set spell3 poison
+set spell4 blind
+set spell5 bestow curse
+set spell6 remove blind
+set spell7 inflict light
+set spell8 bless
+set spell9 cure light
+set spell10 invisibility
+set spell11 bull strength
+set spell12 sense life
+set spell13 bless
+set spell14 sleep
+set spell15 sanc
+set spell16 chill touch
 *
-set type %%fruit[%numOne%]%%
-set desc %%color[%numTwo%]%%
-set affect %%spell[%numThr%]%%
+set type %%fruit%numOne%%%
+set desc %%color%numTwo%%%
+set affect %%spell%numThr%%%
 *
 eval type %type%
 eval desc %desc%
 eval affect %affect%
 eval target %random.char%
 *
-%send% %target% A %desc% %type% falls from the tree and hits you.
-%echoaround% %target% A %desc% %type% falls from the tree and hits %target.name%.
-dg_cast '%affect%' %target%
-wait 1 sec
-%echo% The %type% falls to the ground and vanishes.
+eval thisRoom %self.vnum%
+eval total %%people.%thisRoom%%%
+if %total% != 0
+  %send% %target% A %desc% %type% falls from the tree and hits you.
+  %echoaround% %target% A %desc% %type% falls from the tree and hits %target.name%.
+  dg_cast '%affect%' %target%
+  wait 1 sec
+  %echo% The %type% falls to the ground and vanishes.
+end
 ~
 #13018
 ray of light portal back to midgaard~

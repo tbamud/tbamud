@@ -24,7 +24,7 @@ void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...)
     __attribute__ ((format (printf, 3, 4)));
 
 void close_socket(struct descriptor_data *d);
-char * perform_act(const char *orig, struct char_data *ch, struct obj_data *obj, const void *vict_obj, const struct char_data *to);
+void perform_act(const char *orig, struct char_data *ch, struct obj_data *obj, const void *vict_obj, const struct char_data *to); 
 char * act(const char *str, int hide_invisible, struct char_data *ch, struct obj_data *obj, const void *vict_obj, int type);
 
 #define TO_ROOM		1

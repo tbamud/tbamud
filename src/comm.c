@@ -109,6 +109,7 @@ static bool fCopyOver;          /* Are we booting in copyover mode? */
 ush_int port;
 socket_t mother_desc;
 int log_this_messg;
+char *last_act_message = NULL;
 
 /* local functions */
 RETSIGTYPE reread_wizlists(int sig);
@@ -172,6 +173,7 @@ void board_clear_all(void);
 void free_social_messages(void);
 void free_invalid_list(void);
 void free_command_list(void);
+void free_save_list(void);
 void load_config(void);
 void new_hist_messg(struct descriptor_data *d, const char *msg);
 #ifdef __CXREF__
@@ -209,6 +211,10 @@ int main(int argc, char **argv)
 {
   int pos = 1;
   const char *dir;
+
+#ifdef MEMORY_DEBUG 
+  zmalloc_init(); 
+#endif
 
 #if CIRCLE_GNU_LIBC_MEMORY_TRACK
   mtrace();	/* This must come before any use of malloc(). */
@@ -373,8 +379,12 @@ int main(int argc, char **argv)
     free_social_messages();	/* act.social.c */
     free_help_table();		/* db.c */
     free_invalid_list();	/* ban.c */
+    free_save_list();		/* genolc.c */
     free_strings(&config_info, OASIS_CFG); /* oasis_delete.c */
   }
+
+  if (last_act_message) 
+    free(last_act_message);
 
   /* probably should free the entire config here.. */
   free(CONFIG_CONFFILE);
@@ -2402,7 +2412,7 @@ const char *ACTNULL = "<NULL>";
 #define CHECK_NULL(pointer, expression) \
   if ((pointer) == NULL) i = ACTNULL; else i = (expression);
 /* higher-level communication: the act() function */
-char *perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
+void perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
 		const void *vict_obj, const struct char_data *to)
 {
   const char *i = NULL;
@@ -2525,13 +2535,14 @@ char *perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
   if ((IS_NPC(to) && dg_act_check) && (to != ch))
     act_mtrigger(to, lbuf, ch, dg_victim, obj, dg_target, dg_arg);
 
-  return strdup(lbuf);
+  if (last_act_message) 
+    free(last_act_message); 
+  last_act_message = strdup(lbuf); 
 }
 
 char *act(const char *str, int hide_invisible, struct char_data *ch,
 	 struct obj_data *obj, const void *vict_obj, int type)
 {
-  char *msg = NULL;
   const struct char_data *to;
   int to_sleeping;
 
@@ -2556,14 +2567,18 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
     REMOVE_BIT(type, DG_NO_TRIG);
 
   if (type == TO_CHAR) {
-    if (ch && SENDOK(ch))
-      return perform_act(str, ch, obj, vict_obj, ch);
+    if (ch && SENDOK(ch)) { 
+      perform_act(str, ch, obj, vict_obj, ch); 
+      return last_act_message; 
+    }
     return NULL;
   }
 
   if (type == TO_VICT) {
-    if ((to = (const struct char_data *) vict_obj) != NULL && SENDOK(to))
-      return perform_act(str, ch, obj, vict_obj, to);
+    if ((to = (const struct char_data *) vict_obj) != NULL && SENDOK(to)) { 
+      perform_act(str, ch, obj, vict_obj, to); 
+      return last_act_message; 
+    }
     return NULL;
   }
 
@@ -2579,10 +2594,10 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
           !ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF)) {
 
         sprintf(buf, "%s%s%s", CCYEL(i->character, C_NRM), str, CCNRM(i->character, C_NRM));
-        msg = perform_act(buf, ch, obj, vict_obj, i->character);
+        perform_act(buf, ch, obj, vict_obj, i->character); 
       }
     }
-    return msg;
+    return last_act_message;
   }
   /* ASSUMPTION: at this point we know type must be TO_NOTVICT or TO_ROOM */
 
@@ -2602,9 +2617,9 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
       continue;
     if (type != TO_ROOM && to == vict_obj)
       continue;
-    msg = perform_act(str, ch, obj, vict_obj, to);
+    perform_act(str, ch, obj, vict_obj, to); 
   }
-  return msg;
+  return last_act_message;
 }
 
 /* Prefer the file over the descriptor. */

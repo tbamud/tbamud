@@ -5,9 +5,46 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.53
-[Jun 28 2007]
+[Sep 13 2007] - Rumble
+  Changed binary search functions (real_xxxx, real_zone_by_thing), except real_shop. (thanks Neme)
+  script_proto list freed when exiting without saving in oedit/medit/redit.  (thanks Neme)
+  dg_olc.c, trigedit_save(): trig name and arg duping removed. (thanks Neme)
+  genobj.c, update_all_obects(): object ID copied, no more 0 uid. (thanks Neme)
+  CLEANUP_ALL in redit after saving a room.  (thanks Neme)
+  new function in genolc.c: free_save_list(), called during shutdown.  (thanks Neme)
+  Event_free_all() now frees all events. (thanks Neme)
+  Fixed memory leak in perform_act(). (thanks Rhade)
+  Changed NUM_BOARDS from 10 to 7 (the actual num of boards). (thanks Neme)
+  Removed the Keywords option in hedit since they have to be in the body.
+[Sep 12 2007] - Rumble
+  Fixed crash bug caused by olist with no objects. (Thanks Rhade)
+  Several changes made to compile clean on older versions of GCC. (Thanks Neme)
+[Sep 10 2007] - Rumble
+  Fixed items with rnum = NOTHING or NOBODY being changed to rnum = 0.  (Thanks Neme)
+  Fixed memory leak in dg_olc.c trigedit save. (Thanks Neme)
+[Sep 04 2007] - Rumble
+  Changed CLSOLC to LVL_BUILDER.
+  removed delete_doubledollar from do_say. (thanks Rhade)
+[Sep 01 2007] - Rumble
+  Made Puff a hidden mob since she is used on room entry trigs to do dg_cast.
+  Fixed dg_affect to not add 1 to the desired affect duration.
+  Fixed dg_affect to work with 128 bits.
+[Aug 17 2007] - Rumble
+  128 bit fixes: pfile conversion, world sector conversion, and player flags. Thanks Jamdog
+  Added stop_fighting calls in do_flee to fix stock bug. Thanks Juras
+[Jul 01 2007] - Rumble
+  Added run_autowiz to do_cheat. (thanks Fizban)
   Updated World and files for 3.53 release.
+[Jul 30 2007] - Rumble
+  Fixed bad color counting in shop listing. (thanks Ziz)
+  Stat zone without arg displays current zone.
+[Jun 29 2007] - Rumble
+  Added new object variable wearflag.
+[Jun 28 2007] - Rumble
+  Removed char_from_furniture in do_sit. (Thanks Jamdog)
+  Replaced strcasecmp and strncasecmp with str_cmp and strn_cmp. (Thanks Khorlane)
 [Jun 26 2007] - Rumble
+  Added Jamdog's "complete" screen.h. (Thanks Jamdog)
   Updated hedit to Rhade's cleaner version. (thanks Rhade)
 [Jun 25 2007] - Rumble
   Added questpoints to load_char and set autoexit on by default. (thanks Trulight)

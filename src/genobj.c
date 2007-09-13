@@ -65,6 +65,7 @@ int update_all_objects(struct obj_data *refobj)
     *obj = *refobj;
 
     /* Copy game-time dependent variables over. */
+    GET_ID(obj) = swap.id;
     IN_ROOM(obj) = swap.in_room;
     obj->carried_by = swap.carried_by;
     obj->worn_by = swap.worn_by;
@@ -96,7 +97,7 @@ obj_rnum adjust_objects(obj_rnum refpt)
 
   /* Renumber live objects. */
   for (obj = object_list; obj; obj = obj->next)
-    GET_OBJ_RNUM(obj) += (GET_OBJ_RNUM(obj) >= refpt);
+    GET_OBJ_RNUM(obj) += (GET_OBJ_RNUM(obj) != NOTHING && GET_OBJ_RNUM(obj) >= refpt);
 
   /* Renumber zone table. */
   for (zone = 0; zone <= top_of_zone_table; zone++) {
@@ -374,15 +375,16 @@ int copy_object_main(struct obj_data *to, struct obj_data *from, int free_object
 int delete_object(obj_rnum rnum)
 {
   obj_rnum i;
+  zone_rnum zrnum;
   struct obj_data *obj, *tmp;
-  int shop, j;
+  int shop, j, zone, cmd_no;
 
   if (rnum == NOTHING || rnum > top_of_objt)
     return NOTHING;
   
   obj = &obj_proto[rnum];
 
-  zone_rnum zrnum = real_zone_by_thing(GET_OBJ_VNUM(obj));
+  zrnum = real_zone_by_thing(GET_OBJ_VNUM(obj));
 
   /* This is something you might want to read about in the logs. */
   log("GenOLC: delete_object: Deleting object #%d (%s).", GET_OBJ_VNUM(obj), obj->short_description);
@@ -443,7 +445,6 @@ int delete_object(obj_rnum rnum)
       SHOP_PRODUCT(shop, j) -= (SHOP_PRODUCT(shop, j) > rnum);
 
   /* Renumber zone table. */
-  int zone, cmd_no;
   for (zone = 0; zone <= top_of_zone_table; zone++) {
     for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++) {
       switch (ZCMD(zone, cmd_no).command) {

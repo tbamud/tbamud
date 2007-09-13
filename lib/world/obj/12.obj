@@ -200,8 +200,8 @@ test object~
 the test object~
 A test object.~
 ~
-12 0 0 0 0 a 0 0 0 0 0 0 0
-0 0 0 0
+15 0 0 0 0 a 0 0 0 0 0 0 0
+1 0 0 0
 1 1 0 0
 #1233
 trial vnum assigner limiter~
@@ -315,13 +315,13 @@ A piece of fireworks is planted in a champagne bottle.~
 0 0 0 0
 T 1297
 E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
-~
-E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
+~
+E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~

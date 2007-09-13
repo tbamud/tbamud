@@ -263,7 +263,7 @@ char *read_delete(long recipient)
     to = get_name_by_id(record_to_keep->recipient);
 
  		snprintf(buf, sizeof(buf),
-             " * * * * Midgaard Mail System * * * *\r\n"
+             " * * * * tbaMUD Mail System * * * *\r\n"
              "Date: %s\r\n"
              "To  : %s\r\n"
              "From: %s\r\n"

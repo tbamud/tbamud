@@ -8,7 +8,7 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
-#define NUM_OF_BOARDS		10	/* change if needed! */
+#define NUM_OF_BOARDS		7	/* change if needed! */
 #define MAX_BOARD_MESSAGES 	60      /* arbitrary -- change if needed */
 #define MAX_MESSAGE_LENGTH	4096	/* arbitrary -- change if needed */
 

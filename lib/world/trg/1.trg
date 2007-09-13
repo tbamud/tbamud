@@ -1770,7 +1770,7 @@ set txt[4] The purpose of power is to permit moral ideas to take root.
 set txt[5] Rights incur obligations.
 set txt[6] In war, the moral is to the physical as three is to one.
 set txt[7] Education is what's left over after you've forgotten all the facts you learned.
-set txt[8] We have devised a series of operating signals. The first one says "no," "danger," "stop," or any connotation of the negative. For this use any one signal - a signle thump, a signle noise, a single flash, a single wave.
+set txt[8] We have devised a series of operating signals. The first one says "no," "danger," "stop," or any connotation of the negative. For this use any one signal - a single thump, a single noise, a single flash, a single wave.
 set txt[9] There are advantages to a commander when his troops know he cannot be contacted. They cannot ask for relief.
 set txt[10] Those who expect to reap the blessing of freedom must, like men, undergo the fatigue of supporting it.
 set txt[11] Sentiment rules the world, and he who fails to take that into account can never hope to lead.
@@ -2140,7 +2140,7 @@ if %actor.is_pc% && %actor.level% == 1
     wait 2 sec
     say If you are interested in learning how to build, or want to teach others, then you have come to the right place.
     wait 2 sec
-    say Please fill out the application at: geocities.com/buildersacademy/
+    say Please fill out the application at: http://tbamud.com/builderapplication
     set TBA_mortal_greeting 1
     remote TBA_mortal_greeting %actor.id%
     if !%actor.has_item(1332)%

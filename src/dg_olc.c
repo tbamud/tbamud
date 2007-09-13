@@ -513,11 +513,6 @@ void trigedit_save(struct descriptor_data *d)
           new_index[rnum]->proto = proto;
           trig_data_copy(proto, trig);
 
-          if (trig->name)
-            proto->name = strdup(trig->name);
-          if (trig->arglist)
-            proto->arglist = strdup(trig->arglist);
-
           new_index[rnum + 1] = trig_index[rnum];
 
           proto = trig_index[rnum]->proto;
@@ -543,11 +538,6 @@ void trigedit_save(struct descriptor_data *d)
       CREATE(proto, struct trig_data, 1);
       new_index[rnum]->proto = proto;
       trig_data_copy(proto, trig);
-
-      if (trig->name)
-        proto->name = strdup(trig->name);
-      if (trig->arglist)
-        proto->arglist = strdup(trig->arglist);
     }
 
     free(trig_index);
@@ -557,7 +547,7 @@ void trigedit_save(struct descriptor_data *d)
 
     /* HERE IT HAS TO GO THROUGH AND FIX ALL SCRIPTS/TRIGS OF HIGHER RNUM */
     for (live_trig = trigger_list; live_trig; live_trig = live_trig->next_in_world)
-      GET_TRIG_RNUM(live_trig) += (GET_TRIG_RNUM(live_trig) > rnum);
+      GET_TRIG_RNUM(live_trig) += (GET_TRIG_RNUM(live_trig) != NOTHING && GET_TRIG_RNUM(live_trig) > rnum);
 
     /* Update other trigs being edited. */
      for (dsc = descriptor_list; dsc; dsc = dsc->next)

@@ -27,8 +27,11 @@ zone_rnum real_zone_by_thing(room_vnum vznum)
   bot = 0;
   top = top_of_zone_table;
 
+  if (genolc_zone_bottom(bot) > vznum || zone_table[top].top < vznum)
+    return (NOWHERE);
+  
   /* perform binary search on zone-table */
-  for (;;) {
+  while (bot <= top) {
     mid = (bot + top) / 2;
 
     /* Upper/lower bounds of the zone. */
@@ -37,13 +40,12 @@ zone_rnum real_zone_by_thing(room_vnum vznum)
 
     if (low <= vznum && vznum <= high)
       return mid;
-    if (bot >= top)
-      return NOWHERE;
     if (low > vznum)
       top = mid - 1;
     else
       bot = mid + 1;
   }
+  return (NOWHERE);
 }
 
 zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, const char **error)

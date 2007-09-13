@@ -152,6 +152,9 @@ void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum 
   "Index VNum    Room Name                                Exits\r\n"
   "----- ------- ---------------------------------------- -----\r\n");
 
+  if (!top_of_world) 
+    return;
+  
   for (i = 0; i <= top_of_world; i++) {
 
     /** Check to see if this room is one of the ones needed to be listed.    **/
@@ -202,6 +205,9 @@ void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mob_vnum 
   "Index VNum    Mobile Name                                   Level\r\n"
   "----- ------- --------------------------------------------- -----\r\n");
 
+  if (!top_of_mobt) 
+    return;
+  
   for (i = 0; i <= top_of_mobt; i++) {
     if (mob_index[i].vnum >= bottom && mob_index[i].vnum <= top) {
       counter++;
@@ -238,6 +244,9 @@ void list_objects(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnu
   "Index VNum    Object Name                                  Object Type\r\n"
   "----- ------- -------------------------------------------- ----------------\r\n");
 
+  if (!top_of_objt) 
+    return;
+  
   for (i = 0; i <= top_of_objt; i++) {
     if (obj_index[i].vnum >= bottom && obj_index[i].vnum <= top) {
       counter++;
@@ -320,6 +329,9 @@ void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum 
   "VNum  Zone Name                      Builder(s)\r\n"
   "----- ------------------------------ --------------------------------------\r\n");
 
+  if (!top_of_zone_table) 
+    return;
+  
   for (i = 0; i <= top_of_zone_table; i++) {
     if (zone_table[i].number >= bottom && zone_table[i].number <= top) {
       send_to_char(ch, "[%s%3d%s] %s%-*s %s%-1s%s\r\n",

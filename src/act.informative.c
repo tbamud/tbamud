@@ -1048,10 +1048,10 @@ ACMD(do_help)
   space_to_minus(argument);
 
   if ((mid = search_help(argument, GET_LEVEL(ch))) == NOWHERE) {
+    int i, found = 0;
     send_to_char(ch, "There is no help on that word.\r\n");
     mudlog(NRM, MAX(LVL_IMPL, GET_INVIS_LEV(ch)), TRUE,
       "%s tried to get help on %s", GET_NAME(ch), argument);
-    int i, found = 0;
     for (i = 0; i <= top_of_helpt; i++)  {
       if (help_table[i].min_level > GET_LEVEL(ch))
         continue;
@@ -1085,6 +1085,17 @@ ACMD(do_who)
   int low = 0, high = LVL_IMPL, localwho = 0, questwho = 0;
   int showclass = 0, short_list = 0, outlaws = 0;
   int who_room = 0, showgroup = 0, showleader = 0;
+
+  struct {
+    char *disp;
+    int min_level;
+    int max_level;
+    int count; /* must always start as 0 */
+  } rank[] = {
+    { "Immortals\r\n---------\r\n", LVL_IMMORT, LVL_IMPL, 0},
+    { "Mortals\r\n-------\r\n", 1, LVL_IMMORT - 1, 0 },
+    { "\n", 0, 0, 0 }
+  };
 
   skip_spaces(&argument);
   strcpy(buf, argument);   /* strcpy: OK (sizeof: argument == buf) */
@@ -1144,17 +1155,6 @@ ACMD(do_who)
       return;
     }
   }
-
-  struct {
-    char *disp;
-    int min_level;
-    int max_level;
-    int count; /* must always start as 0 */
-  } rank[] = {
-    { "Immortals\r\n---------\r\n", LVL_IMMORT, LVL_IMPL, 0},
-    { "Mortals\r\n-------\r\n", 1, LVL_IMMORT - 1, 0 },
-    { "\n", 0, 0, 0 }
-  };
 
   for (d = descriptor_list; d && !short_list; d = d->next) {
     if (d->original)
@@ -1733,6 +1733,95 @@ ACMD(do_toggle)
   int toggle, tp, wimp_lev, result = 0, len = 0;
   const char *types[] = { "off", "brief", "normal", "on", "\n" };
 
+  const struct {
+    char *command;
+    bitvector_t toggle; /* this needs changing once hashmaps are implemented */
+    char min_level;
+    char *disable_msg;
+    char *enable_msg;
+  } tog_messages[] = {
+    {"summonable", PRF_SUMMONABLE, 0,
+    "You are now safe from summoning by other players.\r\n",
+    "You may now be summoned by other players.\r\n"},
+    {"nohassle", PRF_NOHASSLE, LVL_IMMORT,
+    "Nohassle disabled.\r\n",
+    "Nohassle enabled.\r\n"},
+    {"brief", PRF_BRIEF, 0,
+    "Brief mode off.\r\n",
+    "Brief mode on.\r\n"},
+    {"compact", PRF_COMPACT, 0,
+    "Compact mode off.\r\n",
+    "Compact mode on.\r\n"},
+    {"notell", PRF_NOTELL, 0,
+    "You can now hear tells.\r\n",
+    "You are now deaf to tells.\r\n"},
+    {"noauction", PRF_NOAUCT, 0,
+    "You can now hear auctions.\r\n",
+    "You are now deaf to auctions.\r\n"},
+    {"noshout", PRF_NOSHOUT, 0,
+    "You can now hear shouts.\r\n",
+    "You are now deaf to shouts.\r\n"},
+    {"nogossip", PRF_NOGOSS, 0,
+    "You can now hear gossip.\r\n",
+    "You are now deaf to gossip.\r\n"},
+    {"nograts", PRF_NOGRATZ, 0,
+    "You can now hear gratz.\r\n",
+    "You are now deaf to gratz.\r\n"},
+    {"nowiz", PRF_NOWIZ, LVL_IMMORT,
+    "You can now hear the Wiz-channel.\r\n",
+    "You are now deaf to the Wiz-channel.\r\n"},
+    {"quest", PRF_QUEST, 0,
+    "Okay, you are part of the Quest.\r\n",
+    "You are no longer part of the Quest.\r\n"},
+    {"showvnums", PRF_SHOWVNUMS, LVL_IMMORT,
+    "You will no longer see the vnums.\r\n",
+    "You will now see the vnums.\r\n"},
+    {"norepeat", PRF_NOREPEAT, 0,
+    "You will now have your communication repeated.\r\n",
+    "You will no longer have your communication repeated.\r\n"},
+    {"holylight", PRF_HOLYLIGHT, LVL_IMMORT,
+    "HolyLight mode off.\r\n",
+    "HolyLight mode on.\r\n"},
+    {"slownameserver", 0, LVL_IMPL,
+    "Nameserver_is_slow changed to OFF; IP addresses will now be resolved.\r\n",
+    "Nameserver_is_slow changed to ON; sitenames will no longer be resolved.\r\n"},
+    {"autoexits", PRF_AUTOEXIT, 0,
+    "Autoexits disabled.\r\n",
+    "Autoexits enabled.\r\n"},
+    {"trackthru", 0, LVL_IMPL,
+    "Players can no longer track through doors.\r\n",
+    "Players can now track through doors.\r\n"},
+    {"clsolc", PRF_CLS, LVL_BUILDER,
+    "You will no longer clear screen in OLC.\r\n",
+    "You will now clear screen in OLC.\r\n"},
+    {"buildwalk", PRF_BUILDWALK, LVL_BUILDER,
+    "Buildwalk is now Off.\r\n",
+    "Buildwalk is now On.\r\n"},
+    {"afk", PRF_AFK, 0,
+    "AFK is now Off.\r\n",
+    "AFK is now On.\r\n"},
+    {"color", 0, 0, "\n", "\n"},
+    {"syslog", 0, LVL_IMMORT, "\n", "\n"},
+    {"wimpy", 0, 0, "\n", "\n"},
+    {"pagelength", 0, 0, "\n", "\n"},
+    {"autoloot", PRF_AUTOLOOT, 0,
+    "Autoloot disabled.\r\n",
+    "Autoloot enabled.\r\n"},
+    {"autogold", PRF_AUTOGOLD, 0,
+    "Autogold disabled.\r\n",
+    "Autogold enabled.\r\n"},
+    {"autosplit", PRF_AUTOSPLIT, 0,
+    "Autosplit disabled.\r\n",
+    "Autosplit enabled.\r\n"},
+    {"autosac", PRF_AUTOSAC, 0,
+    "Autosac disabled.\r\n",
+    "Autosac enabled.\r\n"},
+    {"autoassist", PRF_AUTOASSIST, 0,
+    "Autoassist disabled.\r\n",
+    "Autoassist enabled.\r\n"},
+    {"\n", 0, -1, "\n", "\n"} /* must be last */
+  };
+
   if (IS_NPC(ch))
     return;
 
@@ -1838,95 +1927,6 @@ ACMD(do_toggle)
     types[COLOR_LEV(ch)]);
     return;
   }
-
-  const struct {
-    char *command;
-    bitvector_t toggle; /* this needs changing once hashmaps are implemented */
-    char min_level;
-    char *disable_msg;
-    char *enable_msg;
-  } tog_messages[] = {
-    {"summonable", PRF_SUMMONABLE, 0,
-    "You are now safe from summoning by other players.\r\n",
-    "You may now be summoned by other players.\r\n"},
-    {"nohassle", PRF_NOHASSLE, LVL_IMMORT,
-    "Nohassle disabled.\r\n",
-    "Nohassle enabled.\r\n"},
-    {"brief", PRF_BRIEF, 0,
-    "Brief mode off.\r\n",
-    "Brief mode on.\r\n"},
-    {"compact", PRF_COMPACT, 0,
-    "Compact mode off.\r\n",
-    "Compact mode on.\r\n"},
-    {"notell", PRF_NOTELL, 0,
-    "You can now hear tells.\r\n",
-    "You are now deaf to tells.\r\n"},
-    {"noauction", PRF_NOAUCT, 0,
-    "You can now hear auctions.\r\n",
-    "You are now deaf to auctions.\r\n"},
-    {"noshout", PRF_NOSHOUT, 0,
-    "You can now hear shouts.\r\n",
-    "You are now deaf to shouts.\r\n"},
-    {"nogossip", PRF_NOGOSS, 0,
-    "You can now hear gossip.\r\n",
-    "You are now deaf to gossip.\r\n"},
-    {"nograts", PRF_NOGRATZ, 0,
-    "You can now hear gratz.\r\n",
-    "You are now deaf to gratz.\r\n"},
-    {"nowiz", PRF_NOWIZ, LVL_IMMORT,
-    "You can now hear the Wiz-channel.\r\n",
-    "You are now deaf to the Wiz-channel.\r\n"},
-    {"quest", PRF_QUEST, 0,
-    "Okay, you are part of the Quest.\r\n",
-    "You are no longer part of the Quest.\r\n"},
-    {"showvnums", PRF_SHOWVNUMS, LVL_IMMORT,
-    "You will no longer see the vnums.\r\n",
-    "You will now see the vnums.\r\n"},
-    {"norepeat", PRF_NOREPEAT, 0,
-    "You will now have your communication repeated.\r\n",
-    "You will no longer have your communication repeated.\r\n"},
-    {"holylight", PRF_HOLYLIGHT, LVL_IMMORT,
-    "HolyLight mode off.\r\n",
-    "HolyLight mode on.\r\n"},
-    {"slownameserver", 0, LVL_IMPL,
-    "Nameserver_is_slow changed to OFF; IP addresses will now be resolved.\r\n",
-    "Nameserver_is_slow changed to ON; sitenames will no longer be resolved.\r\n"},
-    {"autoexits", PRF_AUTOEXIT, 0,
-    "Autoexits disabled.\r\n",
-    "Autoexits enabled.\r\n"},
-    {"trackthru", 0, LVL_IMPL,
-    "Players can no longer track through doors.\r\n",
-    "Players can now track through doors.\r\n"},
-    {"clsolc", PRF_CLS, LVL_BUILDER,
-    "You will no longer clear screen in OLC.\r\n",
-    "You will now clear screen in OLC.\r\n"},
-    {"buildwalk", PRF_BUILDWALK, LVL_BUILDER,
-    "Buildwalk is now Off.\r\n",
-    "Buildwalk is now On.\r\n"},
-    {"afk", PRF_AFK, 0,
-    "AFK is now Off.\r\n",
-    "AFK is now On.\r\n"},
-    {"color", 0, 0, "\n", "\n"},
-    {"syslog", 0, LVL_IMMORT, "\n", "\n"},
-    {"wimpy", 0, 0, "\n", "\n"},
-    {"pagelength", 0, 0, "\n", "\n"},
-    {"autoloot", PRF_AUTOLOOT, 0,
-    "Autoloot disabled.\r\n",
-    "Autoloot enabled.\r\n"},
-    {"autogold", PRF_AUTOGOLD, 0,
-    "Autogold disabled.\r\n",
-    "Autogold enabled.\r\n"},
-    {"autosplit", PRF_AUTOSPLIT, 0,
-    "Autosplit disabled.\r\n",
-    "Autosplit enabled.\r\n"},
-    {"autosac", PRF_AUTOSAC, 0,
-    "Autosac disabled.\r\n",
-    "Autosac enabled.\r\n"},
-    {"autoassist", PRF_AUTOASSIST, 0,
-    "Autoassist disabled.\r\n",
-    "Autoassist enabled.\r\n"},
-    {"\n", 0, -1, "\n", "\n"} /* must be last */
-  };
 
 	len = strlen(arg);
   for (toggle = 0; *tog_messages[toggle].command != '\n'; toggle++)
@@ -2149,10 +2149,11 @@ void free_history(struct char_data *ch, int type)
 ACMD(do_history)
 {
   char arg[MAX_INPUT_LENGTH];
+  int type;
 
   one_argument(argument, arg);
 
-  int type = search_block(arg, history_types, FALSE);
+  type = search_block(arg, history_types, FALSE);
   if (!*arg || type < 0) {
     int i;
 
@@ -2184,12 +2185,14 @@ void add_history(struct char_data *ch, char *str, int type)
 {
   int i = 0;
   char time_str[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
+  struct txt_block *tmp;
+  time_t ct;
 
   if (IS_NPC(ch)) 
     return;
 
-  struct txt_block *tmp = GET_HISTORY(ch, type);
-  time_t ct = time(0);
+  tmp = GET_HISTORY(ch, type);
+  ct = time(0);
   strftime(time_str, sizeof(time_str), "%H:%M ", localtime(&ct));
 
   sprintf(buf, "%s%s", time_str, str);

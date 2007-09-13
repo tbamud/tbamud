@@ -711,10 +711,13 @@ void oedit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d, "Object saved to disk.\r\n");
       } else
         write_to_output(d, "Object saved to memory.\r\n");
-
-      /* Fall through. */
+      cleanup_olc(d, CLEANUP_ALL);
+      return;
     case 'n':
     case 'N':
+      /* If not saving, we must free the script_proto list. */
+      OLC_OBJ(d)->proto_script = OLC_SCRIPT(d);
+      free_proto_script(OLC_OBJ(d), OBJ_TRIGGER);
       cleanup_olc(d, CLEANUP_ALL);
       return;
     case 'a': /* abort quit */

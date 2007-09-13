@@ -93,6 +93,8 @@ else
   if %victim.is_pc%
     if purge /= %arg.cdr% && %victim.has_item(1332)%
       %send% %actor% %arg.car%'s assigner has been %arg.cdr%'d.
+      eval TBA_trial_vnum %victim.TBA_trial_vnum% - (2 * %victim.TBA_trial_vnum%)
+      remote TBA_trial_vnum %victim.id%
       %purge% %victim.inventory(1332)%
     else
       set TBA_trial_vnum %arg.cdr%
@@ -1822,6 +1824,9 @@ Trial Vnum Assigner - 1332~
 *~
 * Player must have nohassle off! To junk assigner use tbalim purge <player>.
 if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 31
+  if %actor.TBA_trial_vnum% < 0
+    return 0
+  end
   if (%cmd.mudcommand% == redit && ((%arg% && %arg% != %actor.TBA_trial_vnum%) || (%actor.room.vnum% != %actor.TBA_trial_vnum%)))
     %send% %actor% GOTO %actor.TBA_trial_vnum% to edit your room.
   elseif %cmd.mudcommand% == oedit && %arg% != %actor.TBA_trial_vnum%
@@ -1832,7 +1837,7 @@ if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 31
     %send% %actor% GOTO %actor.TBA_trial_vnum% to edit your trial vnums zone information.
   elseif %cmd.mudcommand% == purge && ((%arg% && %arg% != %actor.TBA_trial_vnum%) || (%actor.room.vnum% != %actor.TBA_trial_vnum%)))
     %send% %actor% GOTO %actor.TBA_trial_vnum% to purge your room.
-elseif %cmd.mudcommand% == nohassle || (%cmd.mudcommand% == toggle && nohassle /= %arg.car%)
+  elseif %cmd.mudcommand% == nohassle || (%cmd.mudcommand% == toggle && nohassle /= %arg.car%)
     %send% %actor% You cannot enable nohassle until you finish your trial vnum.
   elseif %cmd.mudcommand% == sedit || %cmd.mudcommand% == trigedit || %cmd.mudcommand% == buildwalk || %cmd.mudcommand% == dig || %cmd.mudcommand% == rclone || %cmd.mudcommand% == attach || %cmd.mudcommand% == detach || %cmd.mudcommand% == vdelete 
     %send% %actor% Sedit, Trigedit, Buildwalk, Dig, Rclone, Attach, Detach, and Vdelete are not required for your trial vnum.

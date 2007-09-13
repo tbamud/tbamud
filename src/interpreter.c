@@ -279,7 +279,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "close"    , "cl"      , POS_SITTING , do_gen_door , 0, SCMD_CLOSE },
   { "clear"    , "cle"     , POS_DEAD    , do_gen_ps   , 0, SCMD_CLEAR },
   { "cls"      , "cls"     , POS_DEAD    , do_gen_ps   , 0, SCMD_CLEAR },
-  { "clsolc"   , "clsolc"  , POS_DEAD    , do_gen_tog  , 0, SCMD_CLS },
+  { "clsolc"   , "clsolc"  , POS_DEAD    , do_gen_tog  , LVL_BUILDER, SCMD_CLS },
   { "consider" , "con"     , POS_RESTING , do_consider , 0, 0 },
   { "commands" , "com"     , POS_DEAD    , do_commands , 0, SCMD_COMMANDS },
   { "compact"  , "comp"    , POS_DEAD    , do_gen_tog  , 0, SCMD_COMPACT },
@@ -1193,8 +1193,10 @@ int perform_dupe_check(struct descriptor_data *d)
 
   /* no target for switching into was found - allow login to continue */
   if (!target) {
-    GET_PREF(d->character)= rand_number(1, 128000);
-    GET_HOST(d->character)= strdup(d->host);
+    GET_PREF(d->character) = rand_number(1, 128000); 
+    if (GET_HOST(d->character)) 
+      free(GET_HOST(d->character)); 
+    GET_HOST(d->character) = strdup(d->host);
     return 0;
   }
 
@@ -1340,7 +1342,7 @@ void nanny(struct descriptor_data *d, char *arg)
       CREATE(d->character, struct char_data, 1);
       clear_char(d->character);
       CREATE(d->character->player_specials, struct player_special_data, 1);
-		  GET_HOST(d->character) = strdup(d->host);
+      GET_HOST(d->character) = strdup(d->host);
       d->character->desc = d;
     }
     if (!*arg)

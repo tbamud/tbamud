@@ -230,7 +230,7 @@ void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
 
   /* add the affect */
   af.type = SPELL_DG_AFFECT;
-  af.duration = duration;
+  af.duration = duration -1;
   af.modifier = value;
 
   if (type == APPLY_TYPE) {
@@ -238,7 +238,7 @@ void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
     af.bitvector = 0;
   } else {
     af.location = 0;
-    af.bitvector = (1<<i);
+    af.bitvector = (i);
   }
 
   affect_to_char(ch, &af);

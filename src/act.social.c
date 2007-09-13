@@ -85,7 +85,7 @@ ACMD(do_action)
     if (action->char_auto)
       send_to_char(ch, "%s\r\n", action->char_auto);
     else
-      send_to_char(ch, "Erm, no.");
+      send_to_char(ch, "Erm, no.\r\n");
     act(action->others_auto, action->hide, ch, 0, 0, TO_ROOM);
     return;
   }

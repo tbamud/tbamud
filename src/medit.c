@@ -281,9 +281,9 @@ void medit_save_internally(struct descriptor_data *d)
   /* Update keepers in shops being edited and other mobs being edited. */
   for (dsc = descriptor_list; dsc; dsc = dsc->next) {
     if (STATE(dsc) == CON_SEDIT)
-      S_KEEPER(OLC_SHOP(dsc)) += (S_KEEPER(OLC_SHOP(dsc)) >= new_rnum);
+      S_KEEPER(OLC_SHOP(dsc)) += (S_KEEPER(OLC_SHOP(dsc)) != NOTHING && S_KEEPER(OLC_SHOP(dsc)) >= new_rnum);
     else if (STATE(dsc) == CON_MEDIT)
-      GET_MOB_RNUM(OLC_MOB(dsc)) += (GET_MOB_RNUM(OLC_MOB(dsc)) >= new_rnum);
+      GET_MOB_RNUM(OLC_MOB(dsc)) += (GET_MOB_RNUM(OLC_MOB(dsc)) != NOTHING && GET_MOB_RNUM(OLC_MOB(dsc)) >= new_rnum);
   }
 
   /* Update other people in zedit too. From: C.Raehl 4/27/99 */
@@ -470,9 +470,14 @@ void medit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d, "Mobile saved to disk.\r\n");
       } else
         write_to_output(d, "Mobile saved to memory.\r\n");
-      /* FALL THROUGH */
+      cleanup_olc(d, CLEANUP_ALL);
+      return;
     case 'n':
     case 'N':
+      /* If not saving, we must free the script_proto list. We do so by 
+       * assigning it to the edited mob and letting free_mobile in 
+       * cleanup_olc handle it. */
+      OLC_MOB(d)->proto_script = OLC_SCRIPT(d);
       cleanup_olc(d, CLEANUP_ALL);
       return;
     default:

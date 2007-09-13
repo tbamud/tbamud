@@ -2086,7 +2086,8 @@ void get_one_line(FILE *fl, char *buf)
   buf[strlen(buf) - 1] = '\0'; /* take off the trailing \n */
 }
 
-void free_help(struct help_index_element *help) {
+void free_help(struct help_index_element *help) 
+{
   if (help->keywords)
     free(help->keywords);
   if (help->entry && !help->duplicate)
@@ -2762,13 +2763,13 @@ void free_char(struct char_data *ch)
       free(ch->player.long_descr);
     if (ch->player.description)
       free(ch->player.description);
-    if (ch->player_specials)
-      free(ch->player_specials); 
-
     for (i = 0; i < NUM_HIST; i++)
       if (GET_HISTORY(ch, i))
         free(GET_HISTORY(ch, i));
   
+    if (ch->player_specials) 
+      free(ch->player_specials);
+
     /* free script proto list */
     free_proto_script(ch, MOB_TRIGGER);
 
@@ -3052,21 +3053,21 @@ room_rnum real_room(room_vnum vnum)
   bot = 0;
   top = top_of_world;
 
+  if (world[bot].number > vnum || world[top].number < vnum)
+    return (NOWHERE);
+
   /* perform binary search on world-table */
-  for (;;) {
+  while (bot<= top) {
     mid = (bot + top) / 2;
 
     if ((world + mid)->number == vnum)
       return (mid);
-    if (bot > top)
-      return (NOWHERE);
-    if (top == 0)
-      return (NOWHERE);
     if ((world + mid)->number > vnum)
       top = mid - 1;
     else
       bot = mid + 1;
   }
+  return (NOWHERE);
 }
 
 /* returns the real number of the monster with given virtual number */
@@ -3077,21 +3078,22 @@ mob_rnum real_mobile(mob_vnum vnum)
   bot = 0;
   top = top_of_mobt;
 
+  /* quickly reject out-of-range vnums */ 
+  if (mob_index[bot].vnum > vnum || mob_index[top].vnum < vnum) 
+    return (NOBODY); 
+  
   /* perform binary search on mob-table */
-  for (;;) {
+  while (bot <= top) {
     mid = (bot + top) / 2;
 
     if ((mob_index + mid)->vnum == vnum)
       return (mid);
-    if (bot > top)
-      return (NOBODY);
-    if (top == 0)
-      return (NOBODY);
     if ((mob_index + mid)->vnum > vnum)
       top = mid - 1;
     else
       bot = mid + 1;
   }
+  return (NOBODY);
 }
 
 /* returns the real number of the object with given virtual number */
@@ -3102,21 +3104,22 @@ obj_rnum real_object(obj_vnum vnum)
   bot = 0;
   top = top_of_objt;
 
+  /* quickly reject out-of-range vnums */ 
+  if (obj_index[bot].vnum > vnum || obj_index[top].vnum < vnum) 
+    return (NOTHING); 
+
   /* perform binary search on obj-table */
-  for (;;) {
+  while (bot <= top) {
     mid = (bot + top) / 2;
 
     if ((obj_index + mid)->vnum == vnum)
       return (mid);
-    if (bot > top)
-      return (NOTHING);
-    if (top == 0)
-      return (NOTHING);
     if ((obj_index + mid)->vnum > vnum)
       top = mid - 1;
     else
       bot = mid + 1;
   }
+  return (NOTHING);
 }
 
 /* returns the real number of the zone with given virtual number */
@@ -3127,21 +3130,21 @@ zone_rnum real_zone(zone_vnum vnum)
   bot = 0;
   top = top_of_zone_table;
 
+  if (zone_table[bot].number > vnum || zone_table[top].number < vnum)
+    return (NOWHERE);
+  
   /* perform binary search on zone-table */
-  for (;;) {
+  while (bot <= top) {
     mid = (bot + top) / 2;
 
     if ((zone_table + mid)->number == vnum)
       return (mid);
-    if (bot > top)
-      return (NOWHERE);
-    if (top == 0)
-      return (NOWHERE);
     if ((zone_table + mid)->number > vnum)
       top = mid - 1;
     else
       bot = mid + 1;
   }
+  return (NOWHERE);
 }
 
 /* Extend later to include more checks and add checks for unknown bitvectors. */
