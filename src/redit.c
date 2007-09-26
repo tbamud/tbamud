@@ -315,7 +315,7 @@ void redit_disp_extradesc_menu(struct descriptor_data *d)
 	  grn, nrm
 	  );
 
-  write_to_output(d, !extra_desc->next ? "<NOT SET>\r\n" : "Set.\r\n");
+  write_to_output(d, !extra_desc->next ? "Not Set.\r\n" : "Set.\r\n");
   write_to_output(d, "Enter choice (0 to quit) : ");
   OLC_MODE(d) = REDIT_EXTRADESC_MENU;
 }

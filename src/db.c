@@ -2100,7 +2100,7 @@ void free_help_table(void)
 {
   if (help_table) {
     int hp;
-    for (hp = 0; hp <= top_of_helpt; hp++) {
+    for (hp = 0; hp < top_of_helpt; hp++) {
       if (help_table[hp].keywords)
         free(help_table[hp].keywords);
       if (help_table[hp].entry && !help_table[hp].duplicate)

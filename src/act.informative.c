@@ -131,17 +131,21 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
     if (*obj->description == '.' && (IS_NPC(ch) || !PRF_FLAGGED(ch, PRF_HOLYLIGHT)))
       return;
 
-    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS))
-      send_to_char(ch, "[%d] %s", GET_OBJ_VNUM(obj), SCRIPT(obj) ? "[TRIG] " : "");
-
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) {
+      send_to_char(ch, "[%d] ", GET_OBJ_VNUM(obj));
+      if (SCRIPT(obj))
+        send_to_char(ch, "[T%d] ", obj->proto_script->vnum);
+    }
     send_to_char(ch, "%s", CCGRN(ch, C_NRM));
     send_to_char(ch, "%s", obj->description);
     break;
 
   case SHOW_OBJ_SHORT:
-    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS))
-      send_to_char(ch, "[%d] %s", GET_OBJ_VNUM(obj), SCRIPT(obj) ? "[TRIG] " : "");
-
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) {
+      send_to_char(ch, "[%d] ", GET_OBJ_VNUM(obj));
+      if (SCRIPT(obj))
+        send_to_char(ch, "[T%d] ", obj->proto_script->vnum);
+    }
     send_to_char(ch, "%s", obj->short_description);
     break;
 
@@ -321,8 +325,11 @@ void list_one_char(struct char_data *i, struct char_data *ch)
     " is standing here."
   };
 
-  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IS_NPC(i))
-     send_to_char(ch, "[%d] %s", GET_MOB_VNUM(i), SCRIPT(i) ? "[TRIG] " : "");
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IS_NPC(i)) {
+    send_to_char(ch, "[%d]", GET_MOB_VNUM(i));
+    if (SCRIPT(i))
+      send_to_char(ch, "[T%d] ", i->proto_script->vnum);
+  }
 
   if (IS_NPC(i) && i->player.long_descr && GET_POS(i) == GET_DEFAULT_POS(i)) {
     if (AFF_FLAGGED(i, AFF_INVISIBLE))
@@ -488,8 +495,10 @@ void look_at_room(struct char_data *ch, int ignore_brief)
     sprintbitarray(ROOM_FLAGS(IN_ROOM(ch)), room_bits, RF_ARRAY_MAX, buf);
     send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
 
-    send_to_char(ch, "%s%s [ %s]",
-                     SCRIPT(rm) ? "[TRIG] " : "",
+    if (SCRIPT(rm))
+      send_to_char(ch, "[T%d] ", rm->proto_script->vnum);
+
+    send_to_char(ch, "%s [ %s]",
                      world[IN_ROOM(ch)].name, buf);
   } else
     send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
@@ -561,7 +570,7 @@ void look_in_obj(struct char_data *ch, char *arg)
 	list_obj_to_char(obj->contains, ch, SHOW_OBJ_SHORT, TRUE);
       }
     } else {		/* item must be a fountain or drink container */
-      if (GET_OBJ_VAL(obj, 1) <= 0)
+      if ((GET_OBJ_VAL(obj, 1) == 0) && (!GET_OBJ_VAL(obj, 0) == 1))
 	send_to_char(ch, "It is empty.\r\n");
       else {
         if (GET_OBJ_VAL(obj, 0) < 0)
@@ -1554,7 +1563,7 @@ void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
     send_to_char(ch, "%33s", " - ");
 
   if (obj->proto_script)
-    send_to_char(ch, "[TRIG]");
+    send_to_char(ch, "[%d]", obj->proto_script->vnum);
 
   if (IN_ROOM(obj) != NOWHERE)
     send_to_char(ch, "[%5d] %s%s\r\n", GET_ROOM_VNUM(IN_ROOM(obj)), world[IN_ROOM(obj)].name, QNRM);
@@ -1595,9 +1604,11 @@ void perform_immort_where(struct char_data *ch, char *arg)
     for (i = character_list; i; i = i->next)
       if (CAN_SEE(ch, i) && IN_ROOM(i) != NOWHERE && isname(arg, i->player.name)) {
 	found = 1;
-	send_to_char(ch, "M%3d. %-25s%s - [%5d] %-25s%s %s\r\n", ++num, GET_NAME(i), QNRM,
-		GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM,
-		(IS_NPC(i) && i->proto_script) ? "[TRIG]" : "");
+        send_to_char(ch, "M%3d. %-25s%s - [%5d] %-25s%s", ++num, GET_NAME(i), QNRM,
+               GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM);
+        if (SCRIPT(i))
+          send_to_char(ch, "[T%d] ", i->proto_script->vnum);
+        send_to_char(ch, "%s\r\n", QNRM);
       }
     for (num = 0, k = object_list; k; k = k->next)
       if (CAN_SEE_OBJ(ch, k) && isname(arg, k->name)) {

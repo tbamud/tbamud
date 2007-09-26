@@ -141,7 +141,7 @@ void hedit_save_internally(struct descriptor_data *d)
     int i;
     CREATE(new_help_table, struct help_index_element, top_of_helpt + 2);
 
-    for (i = 0; i <= top_of_helpt; i++)
+    for (i = 0; i < top_of_helpt; i++)
       new_help_table[i] = help_table[i];
     new_help_table[++top_of_helpt] = *OLC_HELP(d);
     free(help_table);
@@ -165,7 +165,7 @@ void hedit_save_to_disk(struct descriptor_data *d)
     return;
   }
 
-  for (i = 0; i <= top_of_helpt; i++) {
+  for (i = 0; i < top_of_helpt; i++) {
     if (help_table[i].duplicate)
       continue;
     strncpy(buf1, help_table[i].entry ? help_table[i].entry : "Empty\r\n", sizeof(buf1) - 1);
@@ -245,7 +245,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
       break;       
     case 'n': case 'N':
       OLC_ZNUM(d)++;
-      for (; OLC_ZNUM(d) <= top_of_helpt; OLC_ZNUM(d)++)
+      for (; OLC_ZNUM(d) < top_of_helpt; OLC_ZNUM(d)++)
         if (is_abbrev(OLC_STORAGE(d), help_table[OLC_ZNUM(d)].keywords))
           break;
         else
@@ -310,7 +310,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
       string_write(d, &OLC_HELP(d)->entry, MAX_MESSAGE_LENGTH, 0, oldtext);
       OLC_VAL(d) = 1;
       break;
-    case 'M':
+    case '2':
       write_to_output(d, "Enter min level : ");
       OLC_MODE(d) = HEDIT_MIN_LEVEL;
       break;
@@ -408,7 +408,7 @@ ACMD(do_hindex)
   }
 
   len = sprintf(buf, "Help index entries based on '%s':\r\n", argument);
-  for (i = 0; i <= top_of_helpt; i++)
+  for (i = 0; i < top_of_helpt; i++)
     if (is_abbrev(argument, help_table[i].keywords)
         && (GET_LEVEL(ch) >= help_table[i].min_level))
       len +=

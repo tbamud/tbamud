@@ -125,7 +125,7 @@ a spring well~
 A mountain spring bubbles up fresh water here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
-500 500 15 0
+-1 1 15 0
 0 0 0 0
 E
 spring fountain water~
@@ -208,9 +208,9 @@ trial vnum assigner limiter~
 free~
 A trial vnum assigner helps people work on thier trial vnum.~
 ~
-12 0 0 0 0 a 0 0 0 0 0 0 0
+12 0 0 0 0 acno 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 34
 E
 trial vnum assigner limiter~
    This object was created to help new builders follow the directions under HELP

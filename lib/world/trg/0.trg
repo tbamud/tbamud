@@ -53,7 +53,7 @@ if %object.vnum% == 1
   * Reward the actor with an entire gold coin!
   nop %actor.gold(1)%
   wait 5 sec
-  %purge% obj 1
+%purge% %object%
 else
   * This isn't the right object - don't accept it.
   say I don't want that - bring me back my wings.

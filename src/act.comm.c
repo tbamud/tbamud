@@ -516,7 +516,8 @@ ACMD(do_gen_comm)
     send_to_char(ch, "%s", CONFIG_OK);
   else {
     if (!first_word_is_name(ch, argument)) {
-      snprintf(buf1, sizeof(buf1), "%sYou %s, '%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], argument, CCNRM(ch, C_CMP));
+      snprintf(buf1, sizeof(buf1), "%sYou %s, '%s%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], argument, COLOR_LEV(ch) >= C_CMP
+      ? color_on : "", CCNRM(ch, C_CMP));
     } else {
       emoting = TRUE;
       snprintf(buf1, sizeof(buf1), "%s%s: %s%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], CAP(argument), CCNRM(ch, C_CMP));

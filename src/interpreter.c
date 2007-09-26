@@ -1375,6 +1375,9 @@ void nanny(struct descriptor_data *d, char *arg)
 	  CREATE(d->character, struct char_data, 1);
 	  clear_char(d->character);
 	  CREATE(d->character->player_specials, struct player_special_data, 1);
+
+          if (GET_HOST(d->character))
+	    free(GET_HOST(d->character));
 	  GET_HOST(d->character) = strdup(d->host);
 
 	  d->character->desc = d;

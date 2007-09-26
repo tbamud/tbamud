@@ -328,7 +328,7 @@ void oedit_disp_extradesc_menu(struct descriptor_data *d)
 
      	  grn, nrm, yel, (extra_desc->keyword && *extra_desc->keyword) ? extra_desc->keyword : "<NONE>",
 	  grn, nrm, yel, (extra_desc->description && *extra_desc->description) ? extra_desc->description : "<NONE>",
-	  grn, nrm, !extra_desc->next ? "<Not set>\r\n" : "Set.", grn, nrm);
+	  grn, nrm, !extra_desc->next ? "Not set." : "Set.", grn, nrm);
   OLC_MODE(d) = OEDIT_EXTRADESC_MENU;
 }
 
@@ -444,7 +444,7 @@ void oedit_disp_val1_menu(struct descriptor_data *d)
     break;
   case ITEM_DRINKCON:
   case ITEM_FOUNTAIN:
-    write_to_output(d, "Max drink units : ");
+    write_to_output(d, "Max drink units (-1 for unlimited) : ");
     break;
   case ITEM_FOOD:
     write_to_output(d, "Hours to fill stomach : ");
@@ -488,7 +488,7 @@ void oedit_disp_val2_menu(struct descriptor_data *d)
     break;
   case ITEM_DRINKCON:
   case ITEM_FOUNTAIN:
-    write_to_output(d, "Initial drink units (-1 for unlimited) : ");
+    write_to_output(d, "Initial drink units : ");
     break;
   default:
     oedit_disp_menu(d);
@@ -648,7 +648,7 @@ void oedit_disp_menu(struct descriptor_data *d)
 	  grn, nrm, yel, (obj->name && *obj->name) ? obj->name : "undefined",
 	  grn, nrm, yel, (obj->short_description && *obj->short_description) ? obj->short_description : "undefined",
 	  grn, nrm, yel, (obj->description && *obj->description) ? obj->description : "undefined",
-	  grn, nrm, yel, (obj->action_description && *obj->action_description) ? obj->action_description : "<not set>\r\n",
+	  grn, nrm, yel, (obj->action_description && *obj->action_description) ? obj->action_description : "Not Set.\r\n",
 	  grn, nrm, cyn, buf1,
 	  grn, nrm, cyn, buf2
 	  );
@@ -664,7 +664,7 @@ void oedit_disp_menu(struct descriptor_data *d)
 	  "%sB%s) Timer       : %s%d\r\n"
 	  "%sC%s) Values      : %s%d %d %d %d\r\n"
 	  "%sD%s) Applies menu\r\n"
-	  "%sE%s) Extra descriptions menu\r\n"
+	  "%sE%s) Extra descriptions menu: %s%s%s\r\n"
           "%sM%s) Min Level   : %s%d\r\n"
           "%sP%s) Perm Affects: %s%s\r\n"
 	  "%sS%s) Script      : %s%s\r\n"
@@ -681,7 +681,7 @@ void oedit_disp_menu(struct descriptor_data *d)
 	  GET_OBJ_VAL(obj, 1),
 	  GET_OBJ_VAL(obj, 2),
 	  GET_OBJ_VAL(obj, 3),
-	  grn, nrm, grn, nrm,
+	  grn, nrm, grn, nrm, cyn, GET_OBJ_EXTRA(obj) ? "Set." : "Not Set.", grn,
           grn, nrm, cyn, GET_OBJ_LEVEL(obj),
           grn, nrm, cyn, buf2,
           grn, nrm, cyn, OLC_SCRIPT(d) ? "Set." : "Not Set.",

@@ -2,21 +2,14 @@
 *  File: zmalloc.c                                         Part of tbaMUD *
 *  Usage: A simple memory allocation monitor.                             *
 *                                                                         *
-*  Version 2. Copyright 1996, 1998, 1999, 2000 Eric Murray.               *
+*  Version 2. Copyright 1996, 1998, 1999, 2000 Eric Murray ericm@lne.com  *
 **************************************************************************/
 
-/*
-** Zmalloc, a simple memory-allocation monitor.
-**
-** Copyright 1996,1998,1999,2000 Eric Murray, ericm@lne.com
-** You may make free use of this code but please give me credit.
-** Documentation: http://www.lne.com/ericm/zmalloc
-*
-*  Usage: to enable call zmalloc_init() at the very start of your
-*  program to open the logfile and call zmalloc_check() at the end
-*  to display memory leaks and free all allocated mem.
-*  See the main() test function at the bottom for an example.
-*/
+/*  Usage: To run tbaMUD in debug mode change the flags line in your Makefile
+ *  as below, make clean, and reboot.
+ *
+ *  Makefile: # Any special flags you want to pass to the compiler
+ *  Makefile: MYFLAGS = -Wall -DMEMORY_DEBUG */
 
 /* protect our calloc() and free() calls from recursive redefinition: */
 #define ZMALLOC_H
@@ -25,6 +18,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+
+#define NUM_ZBUCKETS 256
+#define GET_ZBUCKET(addr) (((int)(addr) >> 3) & 0xFF)
 
 //#define NO_MEMORY_PADDING
 
@@ -47,7 +43,7 @@ typedef struct meminfo {
   int line; /* line in the code where malloc was called */
 } meminfo;
 
-static meminfo *memlist = NULL;
+static meminfo *memlist[NUM_ZBUCKETS];
 
 /*
  * 0 = only end summary
@@ -69,7 +65,13 @@ void pad_check(meminfo *m);
 void zmalloc_free_list(meminfo *m);
 
 
-void zmalloc_init(void) {
+void zmalloc_init(void)
+{
+  int i;
+
+  for (i = 0; i < NUM_ZBUCKETS; i++)
+    memlist[i] = NULL;
+
   zfd = fopen("zmalloc.log","w+");
 }
 
@@ -146,18 +148,18 @@ unsigned char *zmalloc(int len, char *file, int line)
     return NULL;
   }
   m->line = line;
-  m->next = memlist;
-  memlist = m;
+  m->next = memlist[GET_ZBUCKET(ret)];
+  memlist[GET_ZBUCKET(ret)] = m;
   return (ret);
 }
 
 unsigned char *zrealloc(unsigned char *what, int len, char *file, int line)
 {
   unsigned char *ret;
-  meminfo *m;
+  meminfo *m, *prev_m;
 
   if (what) {
-    for (m = memlist; m; m = m->next) {
+    for (prev_m = NULL, m = memlist[GET_ZBUCKET(what)]; m; prev_m = m, m = m->next) {
       if (m->addr == what) {
 #ifndef NO_MEMORY_PADDING
 	ret = (unsigned char *) realloc(what - sizeof(beginPad), len + sizeof(beginPad) + sizeof(endPad));
@@ -186,6 +188,17 @@ unsigned char *zrealloc(unsigned char *what, int len, char *file, int line)
 	if (m->file) free(m->file);
 	m->file = strdup(file);
 	m->line = line;
+
+        /* detach node */
+        if (prev_m)
+          prev_m->next = m->next;
+        else
+          memlist[GET_ZBUCKET(what)] = m->next;
+
+        /* readd to proper bucket */
+        m->next = memlist[GET_ZBUCKET(ret)];
+        memlist[GET_ZBUCKET(ret)] = m;
+
 	/* could continue the loop to check for multiply-allocd memory */
 	/* but that's highly improbable so lets just return instead. */
 	return (ret);
@@ -212,7 +225,7 @@ void zfree(unsigned char *what, char *file, int line)
   }
 
   /* look up allocated mem in list: */
-  for (m = memlist; m; m = m->next) {
+  for (m = memlist[GET_ZBUCKET(what)]; m; m = m->next) {
     if (m->addr == what) {
       /* got it.  Print it if verbose: */
       if (zmalloclogging > 2) {
@@ -268,26 +281,36 @@ char *zstrdup(const char *src, char *file, int line)
 
 void zmalloc_check()
 {
-  meminfo *m;
+  meminfo *m, *next_m;
   char *admonishemnt;
-  int total_leak = 0;
-  int num_leaks = 0;
+  int total_leak = 0, num_leaks = 0, i;
 
   fprintf(zfd, "\n------------ Checking leaks ------------\n\n");
-  /* look up allocated mem in list: */
-  for(m = memlist; m; m = m->next) {
-    if (m->addr != 0 && m->frees <= 0) {
-      fprintf(zfd,"zmalloc: UNfreed memory 0x%4.4x %d bytes mallocd at %s:%d\n",
+
+  for (i = 0; i < NUM_ZBUCKETS; i++) {
+    for (m = memlist[i]; m; m = next_m) {
+      next_m = m->next;
+      if (m->addr != 0 && m->frees <= 0) {
+        fprintf(zfd,"zmalloc: UNfreed memory 0x%4.4x %d bytes mallocd at %s:%d\n",
 		(int)m->addr, m->size, m->file, m->line);
-      if (zmalloclogging > 1) zdump(m);
+        if (zmalloclogging > 1) zdump(m);
 
-      /* check padding on un-freed memory too: */
-      pad_check(m);
+        /* check padding on un-freed memory too: */
+        pad_check(m);
 
-      total_leak += m->size;
-      num_leaks++;
+        total_leak += m->size;
+        num_leaks++;
+      }
+#ifndef NO_MEMORY_PADDING
+      if (m->addr) free(m->addr - sizeof(beginPad));
+#else
+      if (m->addr) free(m->addr);
+#endif
+      if (m->file) free(m->file);
+      free(m);
     }
   }
+
   if (total_leak) {
     if (total_leak > 10000)
       admonishemnt = "you must work for Microsoft.";
@@ -305,9 +328,6 @@ void zmalloc_check()
   else {
     fprintf(zfd,"zmalloc: Congratulations: leak-free code!\n");
   }
-
-  /* free up our own internal list */
-  zmalloc_free_list(memlist);
 
   if (zfd) {
     fflush(zfd);
@@ -330,22 +350,6 @@ void pad_check(meminfo *m)
 #endif
 }
 
-
-void zmalloc_free_list(meminfo *m)
-{
-  meminfo *next_m;
-  for (; m; m = next_m) {
-    next_m = m->next;
-#ifndef NO_MEMORY_PADDING
-    if (m->addr) free(m->addr - sizeof(beginPad));
-#else
-    if (m->addr) free(m->addr);
-#endif
-    if (m->file) free(m->file);
-    free(m);
-  }
-}
-      
 
 #ifdef ZTEST
 #undef ZMALLOC_H

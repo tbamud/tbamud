@@ -509,6 +509,11 @@ ACMD(do_gen_door)
   if (!generic_find(type, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &victim, &obj))
     door = find_door(ch, type, dir, cmd_door[subcmd]);
 
+  if ((obj) && (GET_OBJ_TYPE(obj) != ITEM_CONTAINER)) {
+    obj = NULL;
+    door = find_door(ch, type, dir, cmd_door[subcmd]);
+  }
+
   if ((obj) || (door >= 0)) {
     keynum = DOOR_KEY(ch, obj, door);
     if (!(DOOR_IS_OPENABLE(ch, obj, door)))

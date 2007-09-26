@@ -810,7 +810,7 @@ void script_stat (char_data *ch, struct script_data *sc)
 
 void do_sstat_room(struct char_data * ch, struct room_data *rm)
 {
-  send_to_char(ch, "Script information:\r\n");
+  send_to_char(ch, "Triggers:\r\n");
   if (!SCRIPT(rm)) {
     send_to_char(ch, "  None.\r\n");
     return;
@@ -821,7 +821,7 @@ void do_sstat_room(struct char_data * ch, struct room_data *rm)
 
 void do_sstat_object(char_data *ch, obj_data *j)
 {
-  send_to_char(ch, "Script information:\r\n");
+  send_to_char(ch, "Triggers:\r\n");
   if (!SCRIPT(j)) {
     send_to_char(ch, "  None.\r\n");
     return;
@@ -832,7 +832,7 @@ void do_sstat_object(char_data *ch, obj_data *j)
 
 void do_sstat_character(char_data *ch, char_data *k)
 {
-  send_to_char(ch, "Script information:\r\n");
+  send_to_char(ch, "Triggers:\r\n");
   if (!SCRIPT(k)) {
     send_to_char(ch, "  None.\r\n");
     return;

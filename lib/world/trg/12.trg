@@ -7,62 +7,16 @@ General trigger keeper. Only for use in room 0.~
 * Trying to access Global var list of void. Apparently this has not been set up!
 ~
 #1201
-Calculator By Mordecai~
-2 d 100
-*~
-* By Mordecai
-if %actor.is_pc%
-  Return 0
-  Eval sum %speech%
-  Eval test1 "%speech%"
-  Eval test %test1.strlen%
-  Eval che %sum%/1
-  If %che% == %sum%
-    %echo% @WComputing results...@n
-    if (%speech%/===)
-      if (%sum%==1)
-        set sum Yes
-      elseif (%sum%==0)
-        set sum No
-      end
-    end
-    Eval st 2+%test%
-    Eval o .
-    Eval sumslen "%sum%
-    Eval len %st% - (%sumslen.strlen%-2)
-    If %len% > 0
-      Eval dif (%len%/2)
-      While %y.strlen% < %st%
-        Eval o .%o%
-        Eval y %o%
-        Eval m ?%m%
-        Eval p %m%
-        If %dif% == %y.strlen%
-          Eval wid1 %p%
-        end
-      done
-    end
-    eval opt1 8 + %test%
-    eval opt2 (2*%wid1.strlen%)+%sumslen.strlen%+5
-    %echo% @WWizzzzzzzzzz....@n
-    if (%opt1%-2) == (%opt2%)
-      %echo% @c...%y%...@n
-      %echo% @c:@C..%y%..@c:@n
-      %echo% @c:@C:@G   %speech% @C  :@c:@n
-      %echo% @c:@C:.%y%.:@c:@n
-      %echo% @c:@C: %wid1%@G %sum% @C%wid1% :@c:@n
-      %echo% @c:@C:.%y%.:@c:@n
-      %echo% @c:..%y%..:@n
-    else
-      %echo% @r....%y%...@n
-      %echo% @r:@R...%y%..@r:@n
-      %echo% @r:@R:@G    %speech% @R  :@r:@n
-      %echo% @r:@R:..%y%.:@r:@n
-      %echo% @r:@R: %wid1%@G %sum% @R%wid1% :@r:@n
-      %echo% @r:@R:..%y%.:@r:@n
-      %echo% @r:...%y%..:@n
-    end
-  end
+crash test trigger~
+2 c 100
+target~
+%echo% %actor.name% is targetting %%arg.name%% IS_PC: %arg.is_pc%
+if %arg.is_pc% == 1
+%echo% It is a player.
+elseif %arg.is_pc% == 0
+%echo% It is a mob.
+else
+%echo It is an object.
 end
 ~
 #1202
@@ -804,6 +758,36 @@ while %self.varexists(%j%)%
   eval j %j%+1
 done
 %echo% O=#==================================================O
+~
+#1215
+Hunger, Thirst, Drunk Test Trigger~
+2 g 100
+~
+wait 1
+%echo% Hello %actor.name%
+%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
+nop %actor.hunger(50)
+nop %actor.thirst(50)
+nop %actor.drunk(50)
+%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
+nop %actor.hunger(-10)
+nop %actor.thirst(-10)
+nop %actor.drunk(-10)
+%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
+nop %actor.hunger(20)
+nop %actor.thirst(21)
+nop %actor.drunk(22)
+%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
+*
+while %actor.hunger% >= 0
+  nop %actor.hunger(-1)
+done
+while %actor.thirst% >= 0
+  nop %actor.thirst(-1)
+done
+while %actor.drunk% >= 0
+  nop %actor.drunk(-1)
+done
 ~
 #1217
 new trigger~

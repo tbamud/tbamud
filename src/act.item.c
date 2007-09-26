@@ -854,8 +854,8 @@ ACMD(do_drink)
     send_to_char(ch, "Your stomach can't contain anymore!\r\n");
     return;
   }
-  if (!GET_OBJ_VAL(temp, 1)) {
-    send_to_char(ch, "It's empty.\r\n");
+  if ((GET_OBJ_VAL(temp, 1) == 0) && (!GET_OBJ_VAL(temp, 0) == 1)) {
+    send_to_char(ch, "It is empty.\r\n");
     return;
   }
 
@@ -1330,8 +1330,12 @@ ACMD(do_wear)
     for (obj = ch->carrying; obj; obj = next_obj) {
       next_obj = obj->next_content;
       if (CAN_SEE_OBJ(ch, obj) && (where = find_eq_pos(ch, obj, 0)) >= 0) {
-	items_worn++;
-	perform_wear(ch, obj, where);
+        if (GET_LEVEL(ch) < GET_OBJ_LEVEL(obj))
+          send_to_char(ch, "You are not experienced enough to use that.\r\n");
+        else {
+          items_worn++;
+	  perform_wear(ch, obj, where);
+	}
       }
     }
     if (!items_worn)
@@ -1357,6 +1361,8 @@ ACMD(do_wear)
   } else {
     if (!(obj = get_obj_in_list_vis(ch, arg1, NULL, ch->carrying)))
       send_to_char(ch, "You don't seem to have %s %s.\r\n", AN(arg1), arg1);
+    else if (GET_LEVEL(ch) < GET_OBJ_LEVEL(obj))
+      send_to_char(ch, "You are not experienced enough to use that.\r\n");
     else {
       if ((where = find_eq_pos(ch, obj, arg2)) >= 0)
 	perform_wear(ch, obj, where);
@@ -1382,6 +1388,8 @@ ACMD(do_wield)
       send_to_char(ch, "You can't wield that.\r\n");
     else if (GET_OBJ_WEIGHT(obj) > str_app[STRENGTH_APPLY_INDEX(ch)].wield_w)
       send_to_char(ch, "It's too heavy for you to use.\r\n");
+    else if (GET_LEVEL(ch) < GET_OBJ_LEVEL(obj))
+      send_to_char(ch, "You are not experienced enough to use that.\r\n");
     else
       perform_wear(ch, obj, WEAR_WIELD);
   }
@@ -1398,6 +1406,8 @@ ACMD(do_grab)
     send_to_char(ch, "Hold what?\r\n");
   else if (!(obj = get_obj_in_list_vis(ch, arg, NULL, ch->carrying)))
     send_to_char(ch, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+  else if (GET_LEVEL(ch) < GET_OBJ_LEVEL(obj))
+    send_to_char(ch, "You are not experienced enough to use that.\r\n");
   else {
     if (GET_OBJ_TYPE(obj) == ITEM_LIGHT)
       perform_wear(ch, obj, WEAR_LIGHT);

@@ -4,7 +4,19 @@ Rumble
 The Builder Academy
 builderacademy.net 9091
  
-tbaMUD 3.53
+tbaMUD 3.54
+[Sep 25 2007] - Rumble
+  Added set/not set to extra descriptions menu in oedit so a builder can tell if they exist or not without having to enter the extra desc menu or stat the object.
+  Replaced [TRIG] flag (showvnum enabled) with [T<vnum>] to make things easier to stat.
+[Sep 24 2007] - Rumble
+  Added %is_pc% to return -1 for objects. (thanks Jamdog)
+  Fixed do_gen_comm color bleed into last apostrophe in gossip/shout/grat/etc.
+  Fixed bug where object keywords took precedence over door keywords. i.e. open door would try to open an object with keyword door. (thanks Trulight)
+[Sep 23 2007] - Rumble
+  Fixed minlev checks in do_grab, do_wield, and do_wear. (thanks Trulight)
+  Added trigedit variables(modifiable) Hunger, Thirst, and Drunk.
+[Sep 15 2007] - Rumble
+  Fixed bug in unlimited drinks showing as empty. (thanks AaronGoulet)
 [Sep 13 2007] - Rumble
   Changed binary search functions (real_xxxx, real_zone_by_thing), except real_shop. (thanks Neme)
   script_proto list freed when exiting without saving in oedit/medit/redit.  (thanks Neme)
@@ -17,11 +29,11 @@ tbaMUD 3.53
   Changed NUM_BOARDS from 10 to 7 (the actual num of boards). (thanks Neme)
   Removed the Keywords option in hedit since they have to be in the body.
 [Sep 12 2007] - Rumble
-  Fixed crash bug caused by olist with no objects. (Thanks Rhade)
-  Several changes made to compile clean on older versions of GCC. (Thanks Neme)
+  Fixed crash bug caused by olist with no objects. (thanks Rhade)
+  Several changes made to compile clean on older versions of GCC. (thanks Neme)
 [Sep 10 2007] - Rumble
-  Fixed items with rnum = NOTHING or NOBODY being changed to rnum = 0.  (Thanks Neme)
-  Fixed memory leak in dg_olc.c trigedit save. (Thanks Neme)
+  Fixed items with rnum = NOTHING or NOBODY being changed to rnum = 0.  (thanks Neme)
+  Fixed memory leak in dg_olc.c trigedit save. (thanks Neme)
 [Sep 04 2007] - Rumble
   Changed CLSOLC to LVL_BUILDER.
   removed delete_doubledollar from do_say. (thanks Rhade)
@@ -30,8 +42,10 @@ tbaMUD 3.53
   Fixed dg_affect to not add 1 to the desired affect duration.
   Fixed dg_affect to work with 128 bits.
 [Aug 17 2007] - Rumble
-  128 bit fixes: pfile conversion, world sector conversion, and player flags. Thanks Jamdog
-  Added stop_fighting calls in do_flee to fix stock bug. Thanks Juras
+  128 bit fixes: pfile conversion, world sector conversion, and player flags.
+  (thanks Jamdog)
+  Added stop_fighting calls in do_flee to fix stock bug. (thanks Juras)
+tbaMUD 3.53
 [Jul 01 2007] - Rumble
   Added run_autowiz to do_cheat. (thanks Fizban)
   Updated World and files for 3.53 release.

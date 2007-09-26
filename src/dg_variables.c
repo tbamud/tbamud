@@ -604,6 +604,13 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             }
             snprintf(str, slen, "%d", GET_DEX(c));
           }
+          else if (!str_cmp(field, "drunk")) {
+            if (subfield && *subfield) {
+              int addition = atoi(subfield);
+	     GET_COND(c, DRUNK) = MAX(-1, MIN(addition, 24));
+            }
+            snprintf(str, slen, "%d", GET_COND(c, DRUNK));
+          }
           break;
         case 'e':
           if (!str_cmp(field, "exp")) {
@@ -681,6 +688,13 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
               update_pos(c);
             }
             snprintf(str, slen, "%d", GET_HIT(c));
+          }
+          else if (!str_cmp(field, "hunger")) {
+            if (subfield && *subfield) {
+              int addition = atoi(subfield);
+              GET_COND(c, HUNGER) = MAX(-1, MIN(addition, 24));
+            }
+            snprintf(str, slen, "%d", GET_COND(c, HUNGER));
           }
           break;
         case 'i':
@@ -970,7 +984,15 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             }
             snprintf(str, slen, "%s", IS_NPC(c) ? "" : GET_TITLE(c));
           }
-        case 'v':
+          else if (!str_cmp(field, "thirst")) {
+            if (subfield && *subfield) {
+              int addition = atoi(subfield);
+              GET_COND(c, THIRST) = MAX(-1, MIN(addition, 24));
+            }
+            snprintf(str, slen, "%d", GET_COND(c, THIRST));
+          }
+	  break;
+	case 'v':
           if (!str_cmp(field, "vnum")) {
             if (subfield && *subfield) {
               snprintf(str, slen, "%d", IS_NPC(c) ? (int)(GET_MOB_VNUM(c) == atoi(subfield)) : -1 );
@@ -1099,7 +1121,10 @@ o->contains) ? "1" : "0"));
             else
               *str = '\0';
           }
-          break;
+          else if (!str_cmp(field, "is_pc")) { 
+            strcpy(str, "-1"); 
+          } 
+	  break;
         case 'n':
           if (!str_cmp(field, "name"))
             snprintf(str, slen, "%s",  o->name);

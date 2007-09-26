@@ -374,22 +374,14 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Plyd"))	ch->player.time.played	= atoi(line);
 	else if (!strcmp(tag, "PfIn"))	POOFIN(ch)		= strdup(line);
 	else if (!strcmp(tag, "PfOt"))	POOFOUT(ch)		= strdup(line);
-/*       else if (!strcmp(tag, "Pref")) 
-          sscanf(line, "%s %s %s %s", f1, f2, f3, f4); 
-          PRF_FLAGS(ch)[0] = asciiflag_conv(f1); 
-          PRF_FLAGS(ch)[1] = asciiflag_conv(f2); 
-          PRF_FLAGS(ch)[2] = asciiflag_conv(f3); 
-          PRF_FLAGS(ch)[3] = asciiflag_conv(f4); 
-*/
-        else if (!strcmp(tag, "Pref")) { 
-          char *temp = line; 
-          temp = one_argument(temp, line); 
-          for (i = 0; *line && i < PR_ARRAY_MAX; i++) { 
-            PRF_FLAGS(ch)[i] = asciiflag_conv(line); 
-            temp = one_argument(temp, line); 
-          } 
-        }
-break;
+        else if (!strcmp(tag, "Pref"))
+          if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
+            PRF_FLAGS(ch)[0] = asciiflag_conv(f1);
+            PRF_FLAGS(ch)[1] = asciiflag_conv(f2);
+            PRF_FLAGS(ch)[2] = asciiflag_conv(f3);
+            PRF_FLAGS(ch)[3] = asciiflag_conv(f4);
+          }
+        break;
 
       case 'Q':
 	     if (!strcmp(tag, "Qstp"))  GET_QUESTPOINTS(ch)     = atoi(line);

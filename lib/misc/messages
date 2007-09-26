@@ -1,10 +1,9 @@
 * Note: all lines between records which start with '*' are comments and
 * are ignored.  Comments can only be between records, not within them.
 *
-* This file is where the damage messages go for offensive spells, and
-* skills such as kick and backstab.  Also, starting with Circle 3.0, these
-* messages are used for failed spells, and weapon messages for misses and
-* death blows.
+* This file is where the damage messages go for offensive spells, skills 
+* (such as kick and backstab), failed spells, and weapon messages for 
+* misses and death blows.
 *
 * All records must start with 'M' in the first column (for 'Message').
 * The next line must contain the damage number (defined in spells.h),

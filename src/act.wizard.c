@@ -1521,8 +1521,14 @@ ACMD(do_advance)
     GET_LEVEL(victim) = newlevel;
     send_to_char(victim, "You are momentarily enveloped by darkness!\r\nYou feel somewhat diminished.\r\n");
   } else {
-    act("$n advances you.\r\n" , FALSE, ch, 0, victim, TO_VICT);
-  }
+    act("$n makes some strange gestures. A strange feeling comes upon you,\r\n"
+      "Like a giant hand, light comes down from above, grabbing your body,\r\n"
+      "that begins to pulse with colored lights from inside.\r\n\r\n" 
+      "Your head seems to be filled with demons from another plane as your\r\n"
+      "your body dissolves to the elements of time and space itself.\r\n" 
+      "Suddenly a silent explosion of light snaps you back to reality.\r\n\r\n"
+      "You feel slightly different.", FALSE, ch, 0, victim, TO_VICT); 
+}
 
   send_to_char(ch, "%s", CONFIG_OK);
 
@@ -3033,7 +3039,11 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
     case 38: /* poofin */
       if ((vict == ch) || (GET_LEVEL(ch) == LVL_IMPL)) {
         skip_spaces(&val_arg);
-        if (!*val_arg)
+
+        if (POOFIN(vict)) 
+          free(POOFIN(vict)); 
+
+      if (!*val_arg)
           POOFIN(vict) = NULL;
         else
           POOFIN(vict) = strdup(val_arg);
@@ -3042,7 +3052,11 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
     case 39: /* poofout */
       if ((vict == ch) || (GET_LEVEL(ch) == LVL_IMPL)) {
         skip_spaces(&val_arg);
-        if (!*val_arg)
+
+        if (POOFOUT(vict)) 
+          free(POOFOUT(vict)); 
+	
+	if (!*val_arg)
           POOFOUT(vict) = NULL;
         else
           POOFOUT(vict) = strdup(val_arg);

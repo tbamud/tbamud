@@ -1,16 +1,9 @@
 /**************************************************************************
-*  File: zmalloc.h                                                                                            Part of tbaMUD *
-*  Usage: A simple memory allocation monitor, header.                                                         *
-*                                                                                                                                                  *
-*  Version 1.1 Copyright 1996, 1998, 1999, 2000 Eric Murray.                                           *
+*  File: zmalloc.h                                         Part of tbaMUD *
+*  Usage: A simple memory allocation monitor, header.                     *
+*                                                                         *
+*  Version 1.1 Copyright 1996, 1998, 1999, 2000 Eric Murray ericm@lne.com *
 **************************************************************************/
-/*
-** Zmalloc, a simple memory-allocation monitor.
-**
-** Copyright 1996 Eric Murray, ericm@lne.com
-** You may make free use of this code but please give me credit.
-** Documentation: http://www.lne.com/ericm/zmalloc
-*/
 
 #ifndef ZMALLOC_H
 #define ZMALLOC_H
