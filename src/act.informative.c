@@ -434,10 +434,12 @@ void do_auto_exits(struct char_data *ch)
   for (door = 0; door < NUM_OF_DIRS; door++) {
     if (!EXIT(ch, door) || EXIT(ch, door)->to_room == NOWHERE)
       continue;
-    if (EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED))
+    if (EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) && !CONFIG_DISP_CLOSED_DOORS)
       continue;
-
-    send_to_char(ch, "%c ", LOWER(*dirs[door]));
+    if (EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED))
+      send_to_char(ch, "%s(%c)%s ", CCRED(ch, C_NRM), LOWER(*dirs[door]), CCCYN(ch, C_NRM));
+    else
+      send_to_char(ch, "%c ", LOWER(*dirs[door]));
     slen++;
   }
 
@@ -458,14 +460,18 @@ ACMD(do_exits)
   for (door = 0; door < NUM_OF_DIRS; door++) {
     if (!EXIT(ch, door) || EXIT(ch, door)->to_room == NOWHERE)
       continue;
-    if (EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED))
+    if (EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) && !CONFIG_DISP_CLOSED_DOORS)
       continue;
 
     len++;
 
-    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) 
-      send_to_char(ch, "%-5s - [%5d] %s\r\n", dirs[door], GET_ROOM_VNUM(EXIT(ch, door)->to_room),
-		world[EXIT(ch, door)->to_room].name);
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS) && !EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED)) 
+      send_to_char(ch, "%-5s - [%5d] %s\r\n", dirs[door], GET_ROOM_VNUM(EXIT(ch, door)->to_room), world[EXIT(ch, door)->to_room].name);
+    else if (CONFIG_DISP_CLOSED_DOORS && EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED)) {
+      /* But we tell them the door is closed */
+      send_to_char(ch, "%-5s - The %s is closed.\r\n", dirs[door],
+                  (EXIT(ch, door)->keyword)? fname(EXIT(ch, door)->keyword) : "opening" );
+      }
     else
       send_to_char(ch, "%-5s - %s\r\n", dirs[door], IS_DARK(EXIT(ch, door)->to_room) &&
 		!CAN_SEE_IN_DARK(ch) ? "Too dark to tell." : world[EXIT(ch, door)->to_room].name);
@@ -1607,7 +1613,7 @@ void perform_immort_where(struct char_data *ch, char *arg)
         send_to_char(ch, "M%3d. %-25s%s - [%5d] %-25s%s", ++num, GET_NAME(i), QNRM,
                GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM);
         if (SCRIPT(i))
-          send_to_char(ch, "[T%d] ", i->proto_script->vnum);
+          send_to_char(ch, "[T%5d] ", i->proto_script->vnum);
         send_to_char(ch, "%s\r\n", QNRM);
       }
     for (num = 0, k = object_list; k; k = k->next)

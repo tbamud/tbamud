@@ -40,7 +40,7 @@ OBJFILES = comm.obj act.comm.obj act.informative.obj act.movement.obj act.item.o
         castle.obj class.obj config.obj constants.obj db.obj fight.obj graph.obj handler.obj \
         house.obj interpreter.obj limits.obj magic.obj mail.obj mobact.obj modify.obj \
         objsave.obj shop.obj spec_assign.obj spec_procs.obj spell_parser.obj \
-        spells.obj utils.obj weather.obj random.obj alias.obj players.obj
+        spells.obj utils.obj weather.obj random.obj players.obj
 
 default: circle.exe
         $(MAKE) circle.exe
@@ -52,8 +52,6 @@ circle.exe : $(OBJFILES)
 # Dependencies for the object files (automagically generated with
 # gcc -MM)
 
-alias.obj: alias.c conf.h sysdep.h structs.h utils.h interpreter.h db.h
-	$(CC) -c $(CFLAGS) alias.c
 act.comm.obj: act.comm.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
   handler.h db.h screen.h
 	$(CC) -c $(CFLAGS) act.comm.c

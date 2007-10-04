@@ -14,18 +14,152 @@
 #include "interpreter.h"
 #include "handler.h"
 #include "db.h"
+#include "shop.h"
+#include "genshp.h"
 #include "genolc.h"
 #include "genzon.h"
 #include "genwld.h"
 #include "oasis.h"
 #include "improved-edit.h"
 #include "constants.h"
+#include "dg_scripts.h"
 
 /* Internal Functions */
 ACMD(do_dig);
-ACMD(do_room_copy);
 room_vnum redit_find_new_vnum(zone_rnum zone);
 int buildwalk(struct char_data *ch, int dir);
+
+/* External Functions */
+void trigedit_save(struct descriptor_data *d);
+void redit_save_internally(struct descriptor_data *d);
+void oedit_save_internally(struct descriptor_data *d);
+void medit_save_internally(struct descriptor_data *d);
+void sedit_save_internally(struct descriptor_data *d);
+void trigedit_setup_existing(struct descriptor_data *d, int rnum);
+void redit_setup_existing(struct descriptor_data *d, int rnum);
+void oedit_setup_existing(struct descriptor_data *d, int rnum);
+void medit_setup_existing(struct descriptor_data *d, int rnum);
+void sedit_setup_existing(struct descriptor_data *d, int rnum);
+
+
+/***********************************************************
+* This function makes use of the high level OLC functions  *
+* to copy most types of mud objects. The type of data is   *
+* determined by the subcmd variable and the functions are  *
+* looked up in a table.                                    *
+***********************************************************/
+ACMD(do_oasis_copy)
+{
+  int i, src_vnum, src_rnum, dst_vnum, dst_rnum;
+  char buf1[MAX_INPUT_LENGTH];
+  char buf2[MAX_INPUT_LENGTH];
+  struct descriptor_data *d;
+
+  struct {
+    int con_type;
+    IDXTYPE (*binary_search)(IDXTYPE vnum);
+    void (*save_func)(struct descriptor_data *d);
+    void (*setup_existing)(struct descriptor_data *d, int rnum);
+    const char *command;
+    const char *text;
+  } oasis_copy_info[] = {
+    { CON_REDIT,  real_room,   redit_save_internally, redit_setup_existing, "rcopy", "room" },
+    { CON_OEDIT,  real_object, oedit_save_internally, oedit_setup_existing, "ocopy", "object" },
+    { CON_MEDIT,  real_mobile, medit_save_internally, medit_setup_existing, "mcopy", "mobile" },
+    { CON_SEDIT,  real_shop,   sedit_save_internally, sedit_setup_existing, "scopy", "shop" },
+    { CON_TRIGEDIT, real_trigger, trigedit_save,   trigedit_setup_existing, "tcopy", "trigger" },
+    { -1,         NULL,        NULL,                  NULL,                 "\n", "\n" }
+  };
+
+  /* Find the given connection type in the table (passed in subcmd). */
+  for (i = 0; *(oasis_copy_info[i].text) != '\n'; i++)
+    if (subcmd == oasis_copy_info[i].con_type)
+      break;
+  /* If not found, we don't support copying that type of data. */
+  if (*(oasis_copy_info[i].text) == '\n')
+    return;
+
+  /* No copying as a mob or while being forced. */
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING) 
+    return;
+
+  /* We need two arguments. */
+  two_arguments(argument, buf1, buf2);
+
+  /* Both arguments are required and they must be numeric. */
+  if (!*buf2 || !is_number(buf1) || !is_number(buf2)) {
+    send_to_char(ch, "Syntax: %s <source vnum> <target vnum>\r\n", oasis_copy_info[i].command);
+    return;
+  }
+
+  /* We can't copy non-existing data. */
+  /* Note: the source data can be in any zone. It's not restricted */
+  /* to the builder's designated OLC zone. */
+  src_vnum = atoi(buf1);
+  src_rnum = (*oasis_copy_info[i].binary_search)(src_vnum);
+  if (src_rnum == NOWHERE) {
+    send_to_char(ch, "The source %s (#%d) does not exist.\r\n", oasis_copy_info[i].text, src_vnum);
+    return;
+  }
+
+  /* Don't copy if the target already exists. */
+  dst_vnum = atoi(buf2);
+  dst_rnum = (*oasis_copy_info[i].binary_search)(dst_vnum);
+  if (dst_rnum != NOWHERE) {
+    send_to_char(ch, "The target %s (#%d) already exists.\r\n", oasis_copy_info[i].text, dst_vnum);
+    return;
+  }
+
+  /* Check that whatever it is isn't already being edited. */
+  for (d = descriptor_list; d; d = d->next) {
+    if (STATE(d) == subcmd) {
+      if (d->olc && OLC_NUM(d) == dst_vnum) {
+	send_to_char(ch, "The target %s (#%d) is currently being edited by %s.\r\n",
+	oasis_copy_info[i].text, dst_vnum, GET_NAME(d->character));
+        return;
+      }
+    }
+  }
+
+  d = ch->desc;
+
+  /* Give the descriptor an OLC structure. */
+  if (d->olc) {
+    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis_copy: Player already had olc structure.");
+    free(d->olc);
+  }
+
+  /* Create the OLC structure. */
+  CREATE(d->olc, struct oasis_olc_data, 1);
+
+  /* Find the zone. */
+  if ((OLC_ZNUM(d) = real_zone_by_thing(dst_vnum)) == NOWHERE) {
+    send_to_char(ch, "Sorry, there is no zone for the given vnum (#%d)!\r\n", dst_vnum);
+    free(d->olc);
+    d->olc = NULL;
+    return;
+  }
+
+  /* Make sure the builder is allowed to modify the target zone. */
+  if (!can_edit_zone(ch, OLC_ZNUM(d))) {
+    send_cannot_edit(ch, zone_table[OLC_ZNUM(d)].number);
+    free(d->olc);
+    d->olc = NULL;
+    return;
+  }
+
+  /* We tell the OLC functions that we want to save to the target vnum. */
+  OLC_NUM(d) = dst_vnum;
+
+  /* Perform the copy. */
+  send_to_char(ch, "Copying %s: source: #%d, dest: #%d.\r\n", oasis_copy_info[i].text, src_vnum, dst_vnum);
+  (*oasis_copy_info[i].setup_existing)(d, src_rnum);
+  (*oasis_copy_info[i].save_func)(d);
+
+  /* Currently CLEANUP_ALL should be used for everything. */
+  cleanup_olc(d, CLEANUP_ALL);
+  send_to_char(ch, "Done.\r\n");
+}
 
 /* Commands */
 ACMD(do_dig)
@@ -138,7 +272,7 @@ ACMD(do_dig)
     OLC_VAL(d) = 0;
 
     send_to_char(ch, "New room (%d) created.\r\n", rvnum);
-    cleanup_olc(d, CLEANUP_STRUCTS);
+    cleanup_olc(d, CLEANUP_ALL);
     /* Update rrnum to the correct room rnum after adding the room. */
     rrnum = real_room(rvnum);
   }
@@ -164,111 +298,6 @@ ACMD(do_dig)
     W_EXIT(rrnum, rev_dir[dir])->to_room = IN_ROOM(ch);
     add_to_save_list(zone_table[world[rrnum].zone].number, SL_WLD);
   }
-}
-
-ACMD(do_room_copy)
-{
-   struct room_data *room_src, *room_dst;
-   int room_num, j, buf_num, taeller;
-   zone_rnum dst_zone;
-   struct descriptor_data *dsc;
-   char buf[MAX_INPUT_LENGTH];
-
-   one_argument(argument, buf);
-
-   if (!*buf) {
-     send_to_char(ch, "Usage: rclone <target room>\r\n");
-     return;
-   }
-
-   if (real_room((buf_num = atoi(buf))) != NOWHERE) {
-     send_to_char(ch, "That room already exist!\r\n");
-     return;
-   }
-
-   if ((dst_zone = real_zone_by_thing(buf_num)) == NOWHERE) {
-     send_to_char(ch, "Sorry, there is no zone for that number!\r\n");
-     return;
-   }
-
-   if (!can_edit_zone(ch, dst_zone) ||
-       !can_edit_zone(ch, world[IN_ROOM(ch)].zone) ) {
-     send_to_char(ch, "You may only copy rooms within your designated zone(s)!\r\n");
-     return;
-   }
-
-
-   room_src = &world[IN_ROOM(ch)];
-   CREATE(room_dst, struct room_data, 1);
-
-   room_dst->zone = dst_zone;
-
-   /* Allocate space for all strings. */
-   send_to_char(ch, "Cloning room....\r\n");
-
-   room_dst->name = str_udup(world[IN_ROOM(ch)].name);
-   room_dst->description = str_udup(world[IN_ROOM(ch)].description);
-   room_dst->description = str_udup(world[IN_ROOM(ch)].description);
-   room_dst->number = buf_num;
-   room_dst->sector_type = world[IN_ROOM(ch)].sector_type;
-   for(taeller=0; taeller < RF_ARRAY_MAX; taeller++)
-     room_dst->room_flags[taeller] = ROOM_FLAGS(IN_ROOM(ch))[taeller];
-
-  /* Extra descriptions, if necessary. */
-  send_to_char(ch, "Cloning extra descriptions....\r\n");
-  if (world[IN_ROOM(ch)].ex_description) {
-    struct extra_descr_data *tdesc, *temp, *temp2;
-    CREATE(temp, struct extra_descr_data, 1);
-
-    room_dst->ex_description = temp;
-    for (tdesc = world[IN_ROOM(ch)].ex_description; tdesc; tdesc = tdesc->next) {
-      temp->keyword = strdup(tdesc->keyword);
-      temp->description = strdup(tdesc->description);
-      if (tdesc->next) {
-	CREATE(temp2, struct extra_descr_data, 1);
-	temp->next = temp2;
-	temp = temp2;
-      } else
-	temp->next = NULL;
-    }
-  }
-   /* Now save the room in the right place. */
-  send_to_char(ch, "Saving new room...\r\n");
-
-  if ((room_num = add_room(room_dst)) == NOWHERE) {
-    send_to_char(ch, "Something went wrong...\r\n");
-    log("SYSERR: do_room_copy: Something failed! (%d)", room_num);
-    return;
-  }
-  /* Idea contributed by C.Raehl. */
-  for (dsc = descriptor_list; dsc; dsc = dsc->next) {
-    if (dsc == ch->desc)
-      continue;
-
-    if (STATE(dsc) == CON_ZEDIT) {
-      for (j = 0; OLC_ZONE(dsc)->cmd[j].command != 'S'; j++)
-        switch (OLC_ZONE(dsc)->cmd[j].command) {
-          case 'O':
-          case 'M':
-            OLC_ZONE(dsc)->cmd[j].arg3 += (OLC_ZONE(dsc)->cmd[j].arg3 >= room_num);
-            break;
-          case 'D':
-            OLC_ZONE(dsc)->cmd[j].arg2 += (OLC_ZONE(dsc)->cmd[j].arg2 >= room_num);
-            /* Fall through */
-          case 'R':
-            OLC_ZONE(dsc)->cmd[j].arg1 += (OLC_ZONE(dsc)->cmd[j].arg1 >= room_num);
-            break;
-          }
-    } else if (STATE(dsc) == CON_REDIT) {
-      for (j = 0; j < NUM_OF_DIRS; j++)
-        if (OLC_ROOM(dsc)->dir_option[j])
-          if (OLC_ROOM(dsc)->dir_option[j]->to_room >= room_num)
-            OLC_ROOM(dsc)->dir_option[j]->to_room++;
-    }
-  }
-  add_to_save_list(real_zone_by_thing(atoi(buf)), SL_WLD);
-  redit_save_to_disk(real_zone_by_thing(atoi(buf)));
-  send_to_char(ch, "Room cloned to %d.\r\nAll Done.\r\n", buf_num);
 }
 
 /* BuildWalk - OasisOLC Extension by D. Tyler Barnes. */

@@ -96,6 +96,7 @@ ACMD(do_oasis_trigedit)
   else
     trigedit_setup_existing(d, real_num);
 
+  trigedit_disp_menu(d);
   STATE(d) = CON_TRIGEDIT;
 
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
@@ -150,8 +151,6 @@ void trigedit_setup_new(struct descriptor_data *d)
 
   OLC_TRIG(d) = trig;
   OLC_VAL(d) = 0;  /* Has changed flag. (It hasn't so far, we just made it.) */
-
-  trigedit_disp_menu(d);
 }
 
 void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
@@ -179,8 +178,6 @@ void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
 
   OLC_TRIG(d) = trig;
   OLC_VAL(d) = 0;  /* Has changed flag. (It hasn't so far, we just made it.) */
-
-  trigedit_disp_menu(d);
 }
 
 void trigedit_disp_menu(struct descriptor_data *d)

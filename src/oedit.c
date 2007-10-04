@@ -170,6 +170,7 @@ ACMD(do_oasis_oedit)
   else
     oedit_setup_new(d);
 
+  oedit_disp_menu(d);
   STATE(d) = CON_OEDIT;
 
   /* Send the OLC message to the players in the same room as the builder. */
@@ -195,8 +196,6 @@ void oedit_setup_new(struct descriptor_data *d)
 
   SCRIPT(OLC_OBJ(d)) = NULL;
   OLC_OBJ(d)->proto_script = OLC_SCRIPT(d) = NULL;
-
-  oedit_disp_menu(d);
 }
 
 void oedit_setup_existing(struct descriptor_data *d, int real_num)
@@ -216,8 +215,6 @@ void oedit_setup_existing(struct descriptor_data *d, int real_num)
    * obj later, after editing. */
   SCRIPT(obj) = NULL;
   OLC_OBJ(d)->proto_script = NULL;
-
-  oedit_disp_menu(d);
 }
 
 void oedit_save_internally(struct descriptor_data *d)

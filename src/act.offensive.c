@@ -105,7 +105,7 @@ ACMD(do_hit)
 	  check_killer(ch, vict);
 	}
       }
-      if (AFF_FLAGGED(ch, AFF_CHARM) && !IS_NPC(ch->master) && !IS_NPC(vict))
+      if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && !IS_NPC(ch->master) && vict && !IS_NPC(vict)) 
 	return;			/* you can't order a charmed pet to attack a
 				 * player */
     }
@@ -273,9 +273,11 @@ ACMD(do_flee)
 	  loss = GET_MAX_HIT(was_fighting) - GET_HIT(was_fighting);
 	  loss *= GET_LEVEL(was_fighting);
 	  gain_exp(ch, -loss);
-          stop_fighting(ch);
-	  stop_fighting(was_fighting);
-	}
+        }
+      if (FIGHTING(ch)) 
+        stop_fighting(ch); 
+      if (was_fighting && ch == FIGHTING(was_fighting))
+        stop_fighting(was_fighting); 
       } else {
 	act("$n tries to flee, but can't!", TRUE, ch, 0, 0, TO_ROOM);
       }

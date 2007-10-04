@@ -20,11 +20,13 @@
 #include "screen.h"
 #include "constants.h"
 #include "spells.h"
+#include "oasis.h"
 
 /* External variables and functions */
 extern const char *pc_class_types[];
 extern struct time_info_data time_info;
 int find_eq_pos_script(char *arg);
+bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *namelist[]);
 
 /* Utility functions */
 
@@ -1062,7 +1064,17 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 
       *str = '\x1';
       switch (LOWER(*field)) {
-        case 'c':
+        case 'a':
+          if (!str_cmp(field, "affects")) { 
+            if (subfield && *subfield) { 
+              if (check_flags_by_name_ar(GET_OBJ_AFFECT(o), NUM_AFF_FLAGS, subfield, affected_bits) == TRUE)
+                snprintf(str, slen, "1"); 
+              else 
+                snprintf(str, slen, "0"); 
+            } else
+              snprintf(str, slen, "0"); 
+          } 
+	case 'c':
           if (!str_cmp(field, "cost")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
@@ -1300,6 +1312,20 @@ o->contains) ? "1" : "0"));
           snprintf(str, slen, "%s", sky_look[weather_info.sky]);
         else
           *str = '\0';
+      }
+      else if (!str_cmp(field, "zonenumber")) 
+        snprintf(str, slen, "%d",  zone_table[r->zone].number); 
+      else if (!str_cmp(field, "zonename")) 
+        snprintf(str, slen, "%s",  zone_table[r->zone].name);
+      else if (!str_cmp(field, "roomflag")) { 
+        if (subfield && *subfield) { 
+          room_rnum thisroom = real_room(r->number); 
+          if (check_flags_by_name_ar(ROOM_FLAGS(thisroom), NUM_ROOM_FLAGS, subfield, room_bits) == TRUE) 
+            snprintf(str, slen, "1"); 
+          else 
+            snprintf(str, slen, "0"); 
+        } else
+          snprintf(str, slen, "0"); 
       }
       else if (!str_cmp(field, "north")) {
         if (R_EXIT(r, NORTH)) {

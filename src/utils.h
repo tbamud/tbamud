@@ -108,10 +108,9 @@ void char_from_furniture(struct char_data *ch);
 /* get_filename() */
 #define CRASH_FILE	 0
 #define ETEXT_FILE       1
-#define ALIAS_FILE	 2
-#define SCRIPT_VARS_FILE 3
-#define PLR_FILE         4
-#define MAX_FILES        5
+#define SCRIPT_VARS_FILE 2
+#define PLR_FILE         3
+#define MAX_FILES        4
 
 /* breadth-first searching */
 #define BFS_ERROR		(-1)
@@ -548,6 +547,7 @@ void char_from_furniture(struct char_data *ch);
 #define CONFIG_OK               config_info.play.OK
 #define CONFIG_NOPERSON         config_info.play.NOPERSON
 #define CONFIG_NOEFFECT         config_info.play.NOEFFECT
+#define CONFIG_DISP_CLOSED_DOORS config_info.play.disp_closed_doors
 
 /* Crash Saves */
 #define CONFIG_FREE_RENT        config_info.csd.free_rent

@@ -526,10 +526,6 @@ int get_filename(char *filename, size_t fbufsize, int mode, const char *orig_nam
     prefix = LIB_PLROBJS;
     suffix = SUF_OBJS;
     break;
-  case ALIAS_FILE:
-    prefix = LIB_PLRALIAS;
-    suffix = SUF_ALIAS;
-    break;
   case ETEXT_FILE:
     prefix = LIB_PLRTEXT;
     suffix = SUF_TEXT;

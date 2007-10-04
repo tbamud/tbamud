@@ -169,6 +169,7 @@ extern int bitsavetodisk;
 extern struct player_index_element *player_table;
 extern int top_of_p_table;
 extern long top_idnum;
+extern int display_closed_doors;
 
 /* external ASCII Player Files vars */
 extern int auto_pwipe;
@@ -3364,6 +3365,7 @@ void load_default_config( void )
   CONFIG_NOEFFECT		= strdup(NOEFFECT);
   CONFIG_TRACK_T_DOORS          = track_through_doors;
   CONFIG_NO_MORT_TO_IMMORT	= no_mort_to_immort;
+  CONFIG_DISP_CLOSED_DOORS      = display_closed_doors;
 
   /* Rent / crashsave options. */
   CONFIG_FREE_RENT              = free_rent;
@@ -3451,7 +3453,9 @@ void load_config( void )
         break;
 
       case 'd':
-        if (!str_cmp(tag, "dts_are_dumps"))
+        if (!str_cmp(tag, "display_closed_doors"))
+          CONFIG_DISP_CLOSED_DOORS = num;
+        else if (!str_cmp(tag, "dts_are_dumps"))
           CONFIG_DTS_ARE_DUMPS = num;
         else if (!str_cmp(tag, "donation_room_1"))
           if (num == -1)

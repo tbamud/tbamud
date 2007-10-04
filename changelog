@@ -5,6 +5,16 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.54
+[Oct 04 2007] - Rumble
+  Changed autoexit to display doors as Exits: n (e) w s. DISP_CLOSED_DOORS added to cedit.
+  Added rcopy, ocopy, etc. for all forms of OLC. (thanks Neme)
+[Oct 01 2007] - Rumble
+  Added trigedit variables %zonename% and %zonenumber%. (thanks Drefs)
+  Fixed memory leak in do_dig. (thanks Neme)
+  Added trigedit variables %roomflag% and object %affects%. (thanks Jamdog)
+[Sep 27 2007] - Rumble
+  Update to do_hit to prevent crash if the player is AFF_CHARM somehow without a master. (thanks Jamdog)
+  Removed alias.c. New ASCII aliases handled in players.c and saved in plrfiles.
 [Sep 25 2007] - Rumble
   Added set/not set to extra descriptions menu in oedit so a builder can tell if they exist or not without having to enter the extra desc menu or stat the object.
   Replaced [TRIG] flag (showvnum enabled) with [T<vnum>] to make things easier to stat.

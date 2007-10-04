@@ -49,8 +49,6 @@ int parse_class(char arg);
 int special(struct char_data *ch, int cmd, char *arg);
 int isbanned(char *hostname);
 int valid_name(char *newname);
-void read_aliases(struct char_data *ch);
-void delete_aliases(const char *charname);
 void remove_player(int pfilepos);
 
 /* local functions */
@@ -62,7 +60,6 @@ int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen);
 int reserved_word(char *argument);
 int _parse_name(char *arg, char *name);
 int enter_player_game (struct descriptor_data *d);
-void write_aliases(struct char_data *ch);
 
 /* prototypes for all do_x functions. */
 ACMD(do_action);
@@ -157,6 +154,7 @@ ACMD(do_mtransform);
 ACMD(do_mzoneecho);
 ACMD(do_mrecho);
 ACMD(do_not_here);
+ACMD(do_oasis_copy);
 ACMD(do_order);
 ACMD(do_page);
 ACMD(do_peace);
@@ -175,7 +173,6 @@ ACMD(do_rescue);
 ACMD(do_rest);
 ACMD(do_restore);
 ACMD(do_return);
-ACMD(do_room_copy);
 ACMD(do_save);
 ACMD(do_saveall);
 ACMD(do_say);
@@ -366,6 +363,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "mail"     , "mail"    , POS_STANDING, do_not_here , 1, 0 },
   { "medit"    , "med"     , POS_DEAD    , do_oasis_medit, LVL_BUILDER, 0 },
   { "mlist"    , "mlist"   , POS_DEAD    , do_oasis_list , LVL_BUILDER, SCMD_OASIS_MLIST },
+  { "mcopy"    , "mcopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_MEDIT },
   { "mute"     , "mute"    , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_MUTE },
 
   { "news"     , "news"    , POS_SLEEPING, do_gen_ps   , 0, SCMD_NEWS },
@@ -386,6 +384,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "olc"      , "olc"     , POS_DEAD    , do_show_save_list, LVL_BUILDER, 0 },
   { "olist"    , "olist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_OLIST },
   { "oedit"    , "oedit"   , POS_DEAD    , do_oasis_oedit, LVL_BUILDER, 0 },
+  { "ocopy"    , "ocopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_OEDIT },
 
   { "put"      , "p"       , POS_RESTING , do_put      , 0, 0 },
   { "peace"    , "pe"      , POS_DEAD    , do_peace    , LVL_BUILDER, 0 },
@@ -421,11 +420,12 @@ cpp_extern const struct command_info cmd_info[] = {
   { "return"   , "retu"    , POS_DEAD    , do_return   , 0, 0 },
   { "redit"    , "redit"   , POS_DEAD    , do_oasis_redit, LVL_BUILDER, 0 },
   { "rlist"    , "rlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_RLIST },
-  { "rclone"   , "rclone"  , POS_DEAD    , do_room_copy, LVL_BUILDER, 0 },
+  { "rcopy"    , "rcopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_REDIT },
   { "roomflags", "roomflags", POS_DEAD   , do_gen_tog  , LVL_IMMORT, SCMD_SHOWVNUMS },
 
   { "say"      , "s"       , POS_RESTING , do_say      , 0, 0 },
   { "score"    , "sc"      , POS_DEAD    , do_score    , 0, 0 },
+  { "scopy"    , "scopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_SEDIT },
   { "sit"      , "si"      , POS_RESTING , do_sit      , 0, 0 },
   { "'"        , "'"       , POS_RESTING , do_say      , 0, 0 },
   { "save"     , "sav"     , POS_SLEEPING, do_save     , 0, 0 },
@@ -465,6 +465,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "trigedit" , "trigedit", POS_DEAD    , do_oasis_trigedit, LVL_BUILDER, 0 },
   { "typo"     , "typo"    , POS_DEAD    , do_gen_write, 0, SCMD_TYPO },
   { "tlist"    , "tlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_TLIST },
+  { "tcopy"    , "tcopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_TRIGEDIT },
   { "tstat"    , "tstat"   , POS_DEAD    , do_tstat    , LVL_BUILDER, 0 },
 
   { "unlock"   , "unlock"  , POS_SITTING , do_gen_door , 0, SCMD_UNLOCK },
@@ -1250,19 +1251,10 @@ int perform_dupe_check(struct descriptor_data *d)
 /* load the player, put them in the right room - used by copyover_recover too */
 int enter_player_game (struct descriptor_data *d)
 {
-
     int load_result;
     room_vnum load_room;
 
       reset_char(d->character);
-      /* See if there might be some aliases in the old alias file. Only do this 
-       * if there were no aliases in the pfile. */
-		if (GET_ALIASES(d->character) == NULL)
-		{
-      read_aliases(d->character);
-      /* delete the old file - player will be saved in a second. */
-      delete_aliases(GET_NAME(d->character));
-    }
 
       if (PLR_FLAGGED(d->character, PLR_INVSTART))
 	GET_INVIS_LEV(d->character) = GET_LEVEL(d->character);
@@ -1731,7 +1723,6 @@ void nanny(struct descriptor_data *d, char *arg)
           remove_player(player_i);
         }
 
-      delete_aliases(GET_NAME(d->character));
       delete_variables(GET_NAME(d->character));
       write_to_output(d, "Character '%s' deleted! Goodbye.\r\n", GET_NAME(d->character));
       mudlog(NRM, LVL_GOD, TRUE, "%s (lev %d) has self-deleted.", GET_NAME(d->character), GET_LEVEL(d->character));

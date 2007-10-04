@@ -382,41 +382,6 @@ int copy_room(struct room_data *to, struct room_data *from)
   return TRUE;
 }
 
-/* Idea by Cris Jacob. */
-room_rnum duplicate_room(room_vnum dest_vnum, room_rnum orig)
-{
-  int new_rnum, znum;
-  struct room_data nroom;
-
-#if CIRCLE_UNSIGNED_INDEX
-  if (orig == NOWHERE || orig > top_of_world) {
-#else
-  if (orig < 0 || orig > top_of_world) {
-#endif
-    log("SYSERR: GenOLC: copy_room: Given bad original real room.");
-    return NOWHERE;
-  } else if ((znum = real_zone_by_thing(dest_vnum)) == NOWHERE) {
-    log("SYSERR: GenOLC: copy_room: No such destination zone.");
-    return NOWHERE;
-  }
-
-  /* add_room will make its own copies of strings. */
-  if ((new_rnum = add_room(&nroom)) == NOWHERE) {
-    log("SYSERR: GenOLC: copy_room: Problem adding room.");
-    return NOWHERE;
-  }
-
-  nroom = world[new_rnum];
-  nroom.number = dest_vnum;
-  nroom.zone = znum;
-
-  /* So the people and objects aren't in two places at once. */
-  nroom.contents = NULL;
-  nroom.people = NULL;
-
-  return new_rnum;
-}
-
 /* Copy strings over so bad things don't happen.  We do not free the existing 
  * strings here because copy_room() did a shallow copy previously and we'd be 
  * freeing the very strings we're copying.  If this function is used elsewhere,

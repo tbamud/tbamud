@@ -298,3 +298,7 @@ int use_autowiz = YES;
 /* If yes, what is the lowest level which should be on the wizlist?  (All immort
  * levels below the level you specify will go on the immlist instead.) */
 int min_wizlist_lev = LVL_GOD;
+
+/* To mimic stack behavior set to NO. To allow mortals to see doors in exits
+ * set to YES. */
+int display_closed_doors = YES;

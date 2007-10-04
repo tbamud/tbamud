@@ -164,6 +164,7 @@ ACMD(do_oasis_sedit)
   else
     sedit_setup_new(d);
 
+  sedit_disp_menu(d);
   STATE(d) = CON_SEDIT;
 
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
@@ -206,7 +207,6 @@ void sedit_setup_new(struct descriptor_data *d)
 
    /* Presto! A shop. */
   OLC_SHOP(d) = shop;
-  sedit_disp_menu(d);
 }
 
 void sedit_setup_existing(struct descriptor_data *d, int rshop_num)
@@ -216,7 +216,6 @@ void sedit_setup_existing(struct descriptor_data *d, int rshop_num)
 
   /* don't waste time trying to free NULL strings -- Welcor */
   copy_shop(OLC_SHOP(d), shop_index + rshop_num, FALSE);
-  sedit_disp_menu(d);
 }
 
 /* Menu functions */

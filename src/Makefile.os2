@@ -26,7 +26,7 @@ OBJFILES = comm.o act.comm.o act.informative.o act.movement.o act.item.o \
         castle.o class.o config.o constants.o db.o fight.o graph.o handler.o \
         house.o interpreter.o limits.o magic.o mail.o mobact.o modify.o \
         objsave.o shop.o spec_assign.o spec_procs.o spell_parser.o \
-        spells.o utils.o weather.o random.o alias.o players.o
+        spells.o utils.o weather.o random.o players.o
 
 default: .accepted
         $(MAKE) ../bin/circle
@@ -93,8 +93,6 @@ clean:
 # Dependencies for the object files (automagically generated with
 # gcc -MM)
 
-alias.o: alias.c conf.h sysdep.h structs.h utils.h interpreter.h db.h
-	$(CC) -c $(CFLAGS) alias.c
 act.comm.o: act.comm.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
   handler.h db.h screen.h
         $(CC) -c $(CFLAGS) act.comm.c

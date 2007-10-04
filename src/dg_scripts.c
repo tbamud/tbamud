@@ -2984,3 +2984,17 @@ void remove_from_lookup_table(long uid)
 
   log("remove_from_lookup. UID %ld not found.", uid);
 }
+
+bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *namelist[]) 
+{ 
+  int i, item=-1; 
+
+  for (i=0; i<numflags && item < 0; i++) 
+    if (!strcmp(search, namelist[i])) item = i; 
+
+  if (item < 0) return FALSE; 
+
+  if (IS_SET_AR(array, item)) return TRUE; 
+
+  return FALSE; 
+}

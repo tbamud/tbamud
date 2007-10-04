@@ -726,6 +726,8 @@ Room Variables Example~
 %echo% WEATHER:  %self.weather%
 %echo% SECTOR:   %self.sector%
 %echo% CONTENTS: %self.contents%
+%echo% ZONENAME: %self.zonename%
+%echo% ZONEID: %self.zoneid%
 ~
 #30
 Text Variables Example~

@@ -155,6 +155,7 @@ ACMD(do_oasis_medit)
   else
     medit_setup_existing(d, real_num);
 
+  medit_disp_menu(d);
   STATE(d) = CON_MEDIT;
 
   /* Display the OLC messages to the players in the same room as the
@@ -193,8 +194,6 @@ void medit_setup_new(struct descriptor_data *d)
   /* Has changed flag. (It hasn't so far, we just made it.) */
   OLC_VAL(d) = FALSE;
   OLC_ITEM_TYPE(d) = MOB_TRIGGER;
-
-  medit_disp_menu(d);
 }
 
 void medit_setup_existing(struct descriptor_data *d, int rmob_num)
@@ -215,8 +214,6 @@ void medit_setup_existing(struct descriptor_data *d, int rmob_num)
    */
   SCRIPT(mob) = NULL;
   OLC_MOB(d)->proto_script = NULL;
-
-  medit_disp_menu(d);
 }
 
 /* Ideally, this function should be in db.c, but I'll put it here for portability. */
@@ -787,8 +784,8 @@ void medit_parse(struct descriptor_data *d, char *arg)
       return;
     } else
       write_to_output(d, "Please answer 'Y' or 'N': ");
-	    break;
-
+    break;
+ 
   default:
     /* We should never get here. */
     cleanup_olc(d, CLEANUP_ALL);
@@ -814,4 +811,3 @@ void medit_string_cleanup(struct descriptor_data *d, int terminator)
      break;
   }
 }
-

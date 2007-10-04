@@ -102,6 +102,7 @@ void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->play.load_into_inventory = CONFIG_LOAD_INVENTORY;
   OLC_CONFIG(d)->play.track_through_doors = CONFIG_TRACK_T_DOORS;
   OLC_CONFIG(d)->play.no_mort_to_immort   = CONFIG_NO_MORT_TO_IMMORT;
+  OLC_CONFIG(d)->play.disp_closed_doors   = CONFIG_DISP_CLOSED_DOORS;
 
   /* Crash Saves */
   OLC_CONFIG(d)->csd.free_rent            = CONFIG_FREE_RENT;
@@ -194,6 +195,7 @@ void cedit_save_internally(struct descriptor_data *d)
   CONFIG_LOAD_INVENTORY = OLC_CONFIG(d)->play.load_into_inventory;
   CONFIG_TRACK_T_DOORS = OLC_CONFIG(d)->play.track_through_doors;
   CONFIG_NO_MORT_TO_IMMORT   = OLC_CONFIG(d)->play.no_mort_to_immort;
+  CONFIG_DISP_CLOSED_DOORS   = OLC_CONFIG(d)->play.disp_closed_doors;
 
   /* Crash Saves */
   CONFIG_FREE_RENT            = OLC_CONFIG(d)->csd.free_rent;
@@ -350,6 +352,8 @@ int save_config( IDXTYPE nowhere )
               "track_through_doors = %d\n\n", CONFIG_TRACK_T_DOORS);
   fprintf(fl, "* Should players who reach enough exp automatically level to immortal?\n"
               "no_mort_to_immort = %d\n\n", CONFIG_NO_MORT_TO_IMMORT);
+  fprintf(fl, "* Should closed doors be shown on autoexit / exit?\n"
+              "disp_closed_doors = %d\n\n", CONFIG_DISP_CLOSED_DOORS);
 
   strcpy(buf, CONFIG_OK);
   strip_cr(buf);
@@ -568,8 +572,9 @@ void cedit_disp_game_play_options(struct descriptor_data *d)
         "%sM%s) Death Traps Junk Items      : %s%s\r\n"
         "%sN%s) Objects Load Into Inventory : %s%s\r\n"
         "%sO%s) Track Through Doors         : %s%s\r\n"
-        "%sP%s) Mortals Level To Immortal   : %s%s\r\n"
-        "%s1%s) OK Message Text         : %s%s"
+        "%sP%s) Display Closed Doors        : %s%s\r\n"
+        "%sR%s) Mortals Level To Immortal   : %s%s\r\n"
+	"%s1%s) OK Message Text         : %s%s"
         "%s2%s) NOPERSON Message Text   : %s%s"
         "%s3%s) NOEFFECT Message Text   : %s%s"
         "%sQ%s) Exit To The Main Menu\r\n"
@@ -590,7 +595,8 @@ void cedit_disp_game_play_options(struct descriptor_data *d)
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.dts_are_dumps),
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.load_into_inventory),
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.track_through_doors),
-        grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.no_mort_to_immort),
+        grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.disp_closed_doors),
+	grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.no_mort_to_immort),
 
         grn, nrm, cyn, OLC_CONFIG(d)->play.OK,
         grn, nrm, cyn, OLC_CONFIG(d)->play.NOPERSON,
@@ -881,7 +887,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         case 'p':
         case 'P':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.no_mort_to_immort);
+          TOGGLE_VAR(OLC_CONFIG(d)->play.disp_closed_doors);
+          break;
+
+        case 'r':
+        case 'R':
+	  TOGGLE_VAR(OLC_CONFIG(d)->play.no_mort_to_immort);
           break;
 
         case '1':

@@ -1047,6 +1047,7 @@ struct game_data {
   int load_into_inventory;/* Objects load in immortals inventory. */
   int track_through_doors;/* Track through doors while closed?    */
   int no_mort_to_immort;  /* Prevent mortals leveling to imms?    */
+  int disp_closed_doors;  /* Display closed doors in autoexit?    */
 
   char *OK;               /* When player receives 'Okay.' text.	  */
   char *NOPERSON;         /* 'No one by that name here.'	  */

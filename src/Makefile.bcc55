@@ -44,7 +44,6 @@ circle : BccW32.cfg $(Dep_circle)
   echo MakeNode
 
 Dep_circledexe = \
-   alias.obj\
    act.comm.obj\
    act.movement.obj\
    act.item.obj\
@@ -86,7 +85,6 @@ circle.exe : $(Dep_circledexe)
   $(TLINK32) @&&|
  /v $(IDE_LinkFLAGS32) $(LinkerOptsAt_circledexe) $(LinkerInheritOptsAt_circledexe) +
 C:\BORLAND\BCC55\LIB\c0x32.obj+
-alias.obj+
 act.comm.obj+
 act.movement.obj+
 act.item.obj+
@@ -128,11 +126,6 @@ C:\BORLAND\BCC55\LIB\import32.lib+
 C:\BORLAND\BCC55\LIB\cw32i.lib
 
 |
-alias.obj : alias.c
-  $(BCC32) -P- -c @&&|
- $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ alias.c
-|
-
 act.comm.obj :  act.comm.c
   $(BCC32) -P- -c @&&|
  $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ act.comm.c

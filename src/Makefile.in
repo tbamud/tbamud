@@ -24,7 +24,7 @@ CFLAGS = @CFLAGS@ $(MYFLAGS) $(PROFILE)
 LIBS = @LIBS@ @CRYPTLIB@ @NETLIB@
 
 OBJFILES = act.comm.o act.informative.o act.item.o act.movement.o \
-	act.offensive.o act.other.o act.social.o act.wizard.o aedit.o alias.o \
+	act.offensive.o act.other.o act.social.o act.wizard.o aedit.o \
 	ban.o boards.o bsd-snprintf.o castle.o cedit.o class.o comm.o config.o \
 	constants.o db.o dg_comm.o dg_db_scripts.o dg_event.o \
 	dg_handler.o dg_misc.o dg_mobcmd.o dg_objcmd.o dg_olc.o dg_scripts.o \
@@ -37,7 +37,7 @@ OBJFILES = act.comm.o act.informative.o act.item.o act.movement.o \
 	weather.o zedit.o zmalloc.o 
 
 CXREF_FILES = act.comm.c act.informative.c act.item.c act.movement.c \
-	act.offensive.c act.other.c act.social.c act.wizard.c aedit.c alias.c \
+	act.offensive.c act.other.c act.social.c act.wizard.c aedit.c \
 	ban.c boards.c bsd-snprintf.c castle.c cedit.c class.c comm.c config.c \
 	constants.c db.c dg_comm.c dg_db_scripts.c dg_event.c \
 	dg_handler.c dg_misc.c dg_mobcmd.c dg_objcmd.c dg_olc.c dg_scripts.c \

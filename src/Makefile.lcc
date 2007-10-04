@@ -52,7 +52,6 @@ OBJS=\
 	act.item.obj \
 	act.informative.obj \
 	act.comm.obj \
-	alias.obj
 
 LIBS=$(LCCDIR)\lib\wsock32.lib
 
@@ -550,15 +549,4 @@ ACT_COMM_C=\
 
 act.comm.obj: $(ACT_COMM_C) $(DISTDIR)\src\act.comm.c
     $(CC)  $(CFLAGS) $(DISTDIR)\src\act.comm.c
-
-# Build ALIAS.C
-ALIAS_C=\
-    $(DISTDIR)\src\sysdep.h\
-    $(DISTDIR)\src\structs.h\
-    $(DISTDIR)\src\utils.h\
-    $(DISTDIR)\src\interpreter.h\
-    $(DISTDIR)\src\db.h\
-
-alias.obj: $(ALIAS_C) $(DISTDIR)\src\alias.c
-    $(CC)  $(CFLAGS) $(DISTDIR)\src\alias.c
 

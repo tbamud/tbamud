@@ -26,7 +26,7 @@ OBJFILES = o.comm act.o.comm act.o.informative act.o.movement act.o.item \
 	o.castle o.class o.config o.constants o.db o.fight o.graph o.handler \
 	o.house o.interpreter o.limits o.magic o.mail o.mobact o.modify \
 	o.objsave o.random o.shop o.spec_assign o.spec_procs \
-	o.spell_parser o.spells o.utils o.weather o.players o.alias
+	o.spell_parser o.spells o.utils o.weather o.players 
 
 default:	all
 
@@ -41,8 +41,6 @@ clean:
 # Dependencies for the object files (automagically generated with
 # gcc -MM)
 
-o.alias: c.alias h.conf h.sysdep h.structs h.utils h.interpreter h.db
-        $(CC) -c $(CFLAGS) c.alias -o o.alias
 act.o.comm: act.c.comm h.conf h.sysdep h.structs \
   h.utils h.comm h.interpreter h.handler \
   h.db h.screen

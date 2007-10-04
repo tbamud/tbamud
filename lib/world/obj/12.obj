@@ -148,6 +148,31 @@ A
 6 2
 A
 2 1
+#1223
+scholar's guide jeweler's loop quest~
+Scholar's Guide~
+The Guide to all Gnomish knowledge hums here quietly.~
+~
+11 abdgq 0 0 0 aco 0 0 0 0 0 0 0
+0 0 0 0
+3 1000 0 20
+E
+scholar's guide jeweler's loop quest~
+   You are looking at what could quite possibly be one of the most beautiful
+peaces of artistry ever made.  This finely crafted jeweler's loop is suspended
+from a chain of golden links.  The loop itself is a perfectly made combination
+of grounned glass, perfectly crafted silver, and precision gnomish workmanship.
+It is so simple as to be elegant.  A tiny plaque hangs from the chain that
+suspends the loop.  "To you who would sacrifice for life, join me.  To you who
+would become a slave to wonder, hold me.  To you who seek riches through
+learning, I am yours.  "
+~
+A
+3 3
+A
+12 50
+A
+4 3
 #1226
 boards builder's bulletin gen_boards~
 a builder's bulletin board~
@@ -315,13 +340,13 @@ A piece of fireworks is planted in a champagne bottle.~
 0 0 0 0
 T 1297
 E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
+~
+E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
-~
-E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~

@@ -31,12 +31,12 @@ void tag_argument(char *argument, char *tag);
 void load_affects(FILE *fl, struct char_data *ch);
 void load_skills(FILE *fl, struct char_data *ch);
 void load_HMVS(struct char_data *ch, const char *line, int mode);
+void write_aliases_ascii(FILE *file, struct char_data *ch);
+void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
 
 /* external fuctions */
 bitvector_t asciiflag_conv(char *flag);
 void save_char_vars(struct char_data *ch);
-void write_aliases_ascii(FILE *file, struct char_data *ch);
-void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
 void save_char_vars_ascii(FILE *file, struct char_data *ch);
 void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count);
 void strip_cr(char *buffer);
@@ -100,7 +100,6 @@ int create_entry(char *name)
   int i, pos;
 
   if (top_of_p_table == -1) {	/* no table */
-    CREATE(player_table, struct player_index_element, 1);
     pos = top_of_p_table = 0;
   } else if ((pos = get_ptable_by_name(name)) == -1) {	/* new name */
     i = ++top_of_p_table + 1;
@@ -813,3 +812,63 @@ void load_HMVS(struct char_data *ch, const char *line, int mode)
     break;
   }
 }
+
+/* until further notice, the alias->pfiles save and load functions will
+ *  * function along side the old seperate alias file load, for compatibility. */
+void write_aliases_ascii(FILE *file, struct char_data *ch)
+{
+  struct alias_data *temp;
+    int count = 0;
+
+      if (GET_ALIASES(ch) == NULL)
+          return;
+
+	    for (temp = GET_ALIASES(ch); temp; temp = temp->next)
+	        count++;
+
+		  fprintf(file, "Alis: %d\n", count);
+		    /* the +1 thing below is due to alias replacements having a space prepended
+		     *    * in memory. The reason for this escapes me. Welcor 27/12/06 */
+		      for (temp = GET_ALIASES(ch); temp; temp = temp->next) {
+		          fprintf(file, "%s\n"        /* Alias */
+                    "%s\n"        /* Replacement */
+                      "%d\n",       /* Type */
+                      temp->alias,
+                      temp->replacement+1,
+                     temp->type);
+  }
+}
+
+void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
+{
+  int i;
+    struct alias_data *temp;
+      char abuf[MAX_INPUT_LENGTH], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
+
+        if (count == 0) {
+	    GET_ALIASES(ch) = NULL;
+	        return; /* No aliases in the list. */
+		  }
+
+		    for (i = 0; i < count; i++) {
+		        /* Read the aliased command. */
+			    get_line(file, abuf);
+
+			        /* Read the replacement. */
+				    get_line(file, tbuf);
+				        strcpy(rbuf, " ");
+					    strcat(rbuf, tbuf); /* strcat: OK */
+
+					        /* read the type */
+						    get_line(file, tbuf);
+
+						        if (abuf && *abuf && tbuf && *tbuf && rbuf && *rbuf) {
+							      CREATE(temp, struct alias_data, 1);
+							            temp->alias = strdup(abuf);
+								          temp->replacement = strdup(rbuf);
+									        temp->type = atoi(tbuf);
+										      temp->next = GET_ALIASES(ch);
+										            GET_ALIASES(ch) = temp;
+											        }
+												  }
+												  }

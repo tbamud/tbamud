@@ -139,6 +139,7 @@ ACMD(do_oasis_redit)
   else
     redit_setup_new(d);
 
+  redit_disp_menu(d);
   STATE(d) = CON_REDIT;
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
@@ -157,7 +158,6 @@ void redit_setup_new(struct descriptor_data *d)
   OLC_ITEM_TYPE(d) = WLD_TRIGGER;
   OLC_ROOM(d)->proto_script = OLC_SCRIPT(d) = NULL;
 
-  redit_disp_menu(d);
   OLC_VAL(d) = 0;
 }
 
@@ -215,8 +215,6 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   dg_olc_script_copy(d);
   room->proto_script = NULL;
   SCRIPT(room) = NULL;
-
-  redit_disp_menu(d);
 }
 
 void redit_save_internally(struct descriptor_data *d)
@@ -224,10 +222,10 @@ void redit_save_internally(struct descriptor_data *d)
   int j, room_num, new_room = FALSE;
   struct descriptor_data *dsc;
 
-  if (OLC_ROOM(d)->number == NOWHERE) {
+  if (OLC_ROOM(d)->number == NOWHERE)
     new_room = TRUE;
-    OLC_ROOM(d)->number = OLC_NUM(d);
-  }
+
+  OLC_ROOM(d)->number = OLC_NUM(d); 
   /* FIXME: Why is this not set elsewhere? */
   OLC_ROOM(d)->zone = OLC_ZNUM(d);
 

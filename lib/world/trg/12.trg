@@ -763,31 +763,45 @@ done
 Hunger, Thirst, Drunk Test Trigger~
 2 g 100
 ~
-wait 1
-%echo% Hello %actor.name%
-%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
-nop %actor.hunger(50)
-nop %actor.thirst(50)
-nop %actor.drunk(50)
-%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
-nop %actor.hunger(-10)
-nop %actor.thirst(-10)
-nop %actor.drunk(-10)
-%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
-nop %actor.hunger(20)
-nop %actor.thirst(21)
-nop %actor.drunk(22)
-%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
-*
-while %actor.hunger% >= 0
-  nop %actor.hunger(-1)
-done
-while %actor.thirst% >= 0
-  nop %actor.thirst(-1)
-done
-while %actor.drunk% >= 0
-  nop %actor.drunk(-1)
-done
+if %self.roomflag(DARK)% 
+%echo% This is a dark room. 
+end 
+if %self.roomflag(DEATH)% 
+%echo% This is a death trap - goodbye! 
+end 
+if %self.roomflag(NO_MOB)% 
+%echo% Mobiles cannot enter this room. 
+end 
+if %self.roomflag(INDOORS)% 
+%echo% This room is indoors. 
+end 
+if %self.roomflag(PEACEFUL)% 
+%echo% You can't kill anything in this room. 
+end 
+if %self.roomflag(NO_TRACK)% 
+%echo% You cannot track anything through this room. 
+end 
+if %self.roomflag(NO_MAGIC)% 
+%echo% You cannot cast spells in here! 
+end 
+if %self.roomflag(TUNNEL)% 
+%echo% This room is a narrow tunnel. 
+end 
+if %self.roomflag(PRIVATE)% 
+%echo% This is a private room. 
+end 
+if %self.roomflag(GODROOM)% 
+%echo% Only Gods can enter this room. 
+end 
+if %self.roomflag(HOUSE)% 
+%echo% This is a house. 
+end 
+if %self.roomflag(HCRSH)% 
+%echo% This is a house which will crash-save. 
+end 
+if %self.roomflag(ATRIUM)% 
+%echo% This is an atrium for a house. 
+end 
 ~
 #1217
 new trigger~
@@ -912,6 +926,154 @@ elseif %direction% == west
   %send% %actor% The door slides open, you leave, and it quickly slides shut behind you.
   %echoaround% %actor% The door slides open, %actor.name% walks out, and the door slides shut.
 end
+~
+#1256
+Mob Quote Using Arrays~
+0 d 100
+quote~
+* By Jamie Nelson from the forum http://groups.yahoo.com/group/dg_scripts/
+eval w1max %random.20%
+eval w2max %random.20%
+eval w3max %random.20%
+eval w4max %random.20%
+eval w5max %random.11%
+eval w6max %random.20%
+set  w1[0] phenomenal
+set  w1[1] rapid
+set w1[2] chilling
+set  w1[3] insipid
+set  w1[4] nauseating
+set  w1[5] astronomical
+set  w1[6] austere
+set  w1[7] inevitable
+set  w1[8] inescapable
+set  w1[9] reckless
+set  w1[10] haphazard
+set  w1[11] accelerating
+set  w1[12] profound
+set  w1[13] awesome
+set  w1[14] terrifying
+set  w1[15] ubiquitous
+set  w1[16] ignominious
+set  w1[17] unprecedented
+set  w1[18] unparalleled
+set  w1[19] insidious
+set  w1[20] broad
+set  w2[0] growth
+set  w2[1] decline
+set  w2[2] prospects
+set  w2[3] acceleration
+set  w2[4] threat
+set  w2[5] expansion
+set  w2[6] oneness
+set  w2[7] outgrowth
+set  w2[8] madness
+set  w2[9] evacuation
+set  w2[10] diminishment
+set  w2[11] consumption
+set  w2[12] decay
+set  w2[13] putrefaction
+set  w2[14] vapidity
+set  w2[15] downsizing
+set  w2[16] degeneration
+set  w2[17] litigation
+set  w2[18] declivity
+set  w2[19] hastening
+set  w2[20] paradigm shifting
+set  w3[0] the Internet
+set  w3[1] urban tax dollars
+set  w3[2] new technologies
+set  w3[3] gender identification disorders
+set  w3[4] censorship
+set  w3[5] interpersonal communications
+set  w3[6] modern life
+set  w3[7] rampant paradigm shifts
+set  w3[8] consumer spending
+set  w3[9] rain forests
+set  w3[10] human literacy
+set  w3[11] natural resources
+set  w3[12] traditional values
+set  w3[13] media junk food
+set  w3[14] family values
+set  w3[15] corporate mentality
+set  w3[16] the American justice system
+set  w3[17] technological change
+set  w3[18] the ozone layer
+set  w3[19] human resources
+set  w3[20] current epistemologies
+set  w4[0] forever dissipate
+set  w4[1] escalate
+set  w4[2] aggrandize
+set  w4[3] overhaul
+set  w4[4] deteriorate
+set  w4[5] revolutionize
+set  w4[6] uglify
+set  w4[7] put an end to
+set  w4[8] enslave
+set  w4[9] bankrupt
+set  w4[10] truncate
+set  w4[11] nullify
+set  w4[12] sabotage
+set  w4[13] destabilize
+set  w4[14] incapacitate
+set  w4[15] hasten
+set  w4[16] dehumanize
+set  w4[17] evaporate
+set  w4[18] indenture
+set  w4[19] intensify
+set  w4[20] undermine
+set  w5[0] today's
+set  w5[1] tomorrow's
+set  w5[2] the entrenchment of our
+set  w5[3] worldwide
+set  w5[4] our children's
+set  w5[5] modern
+set  w5[6] all of our
+set  w5[7] our future
+set  w5[8] our
+set  w5[9] the demise of our
+set  w5[10] our grandchildren's
+set  w5[11] all hope for
+set  w6[0] business models
+set  w6[1] re-ruralization
+set  w6[2] human condition
+set  w6[3] family values
+set  w6[4] self-esteem
+set  w6[5] medical insights
+set  w6[6] human psyche
+set  w6[7] human depth
+set  w6[8] egalitarianism
+set  w6[9] World Wide Web
+set  w6[10] future values
+set  w6[11] hopes and dreams
+set  w6[12] business models
+set  w6[13] political climate
+set  w6[14] education
+set  w6[15] cultural heritage
+set  w6[16] lifestyles
+set  w6[17] fiduciary responsibility
+set  w6[18] genetic diversity
+set  w6[19] intestinal fortitude
+set  w6[20] computer literacy
+set w1 %%w1[%w1max%]%%
+eval w1 %w1%
+set msg The %w1%
+set w2 %%w2[%w2max%]%%
+eval w2 %w2%
+set msg %msg% %w2% of
+set w3 %%w3[%w3max%]%%
+eval w3 %w3%
+set msg %msg% %w3%
+set w4 %%w4[%w4max%]%%
+eval w4 %w4%
+set msg %msg% will %w4%
+set w5 %%w5[%w5max%]%%
+eval w5 %w5%
+set msg %msg% %w5%
+set w6 %%w6[%w6max%]%%
+eval w6 %w6%
+set msg %msg% %w6%
+say %msg%
 ~
 #1267
 secret drawer magic~
