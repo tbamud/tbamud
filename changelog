@@ -5,6 +5,12 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.54
+[Oct 10 2007] - Rumble
+  Added OLC menu options for Copying. The Xcopy option is still available for GODs and above.
+  Player table is now created if it does not exist. (thanks Rhade)
+[Oct 08 2007] - Rumble
+  Removed top_shop_offset variable, hopefully fixing the infamous sedit bug.
+  Fixed memory leaks from not freeing new zone builders and new zone commands. (thanks Neme)
 [Oct 04 2007] - Rumble
   Changed autoexit to display doors as Exits: n (e) w s. DISP_CLOSED_DOORS added to cedit.
   Added rcopy, ocopy, etc. for all forms of OLC. (thanks Neme)
@@ -52,9 +58,9 @@ tbaMUD 3.54
   Fixed dg_affect to not add 1 to the desired affect duration.
   Fixed dg_affect to work with 128 bits.
 [Aug 17 2007] - Rumble
-  128 bit fixes: pfile conversion, world sector conversion, and player flags.
-  (thanks Jamdog)
+  128 bit fixes: pfile conversion, world sector conversion, and player flags. (thanks Jamdog)
   Added stop_fighting calls in do_flee to fix stock bug. (thanks Juras)
+
 tbaMUD 3.53
 [Jul 01 2007] - Rumble
   Added run_autowiz to do_cheat. (thanks Fizban)

@@ -101,6 +101,7 @@ int create_entry(char *name)
 
   if (top_of_p_table == -1) {	/* no table */
     pos = top_of_p_table = 0;
+    CREATE(player_table, struct player_index_element, 1);
   } else if ((pos = get_ptable_by_name(name)) == -1) {	/* new name */
     i = ++top_of_p_table + 1;
 

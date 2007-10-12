@@ -255,7 +255,7 @@ shop_rnum real_shop(shop_vnum vnum)
   int bot, top, mid;
 
   bot = 0;
-  top = top_shop - top_shop_offset;
+  top = top_shop;
 
   /* perform binary search on shop_table */
   while (bot < top) {
@@ -307,9 +307,9 @@ int add_shop(struct shop_data *nshp)
   }
 
   top_shop++;
-  RECREATE(shop_index, struct shop_data, top_shop - top_shop_offset + 1);
+  RECREATE(shop_index, struct shop_data, top_shop + 1);
 
-  for (rshop = top_shop - top_shop_offset; rshop > 0; rshop--) {
+  for (rshop = top_shop; rshop > 0; rshop--) {
     if (nshp->vnum > SHOP_NUM(rshop - 1)) {
       found = rshop;
 

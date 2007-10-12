@@ -309,13 +309,18 @@ end
 Restorative Comfy Bed 1401 - Heal~
 1 b 100
 ~
-if %random.char%
-  set actor %random.char%
-  if %actor.varexists(laying_in_comfy_bed_14)%
-    %damage% %actor% -10
-    %echo% %actor.name% seems refreshed from sleeping in the comfy bed.
-  end
-end
+* By Rumble of The Builder Academy    builderacademy.net 9091 
+* Healing Bed Trigs 13-15. Heals those who sleep on it. 
+set room_var %actor.room% 
+set target_char %room_var.people% 
+while %target_char% 
+  set tmp_target %target_char.next_in_room% 
+  if %target_char.varexists(laying_in_comfy_bed_14)% 
+    %damage% %target_char% -10 
+    %send% %target_char% You feel refreshed from sleeping in the comfy bed. 
+  end 
+  set target_char %tmp_target% 
+done 
 ~
 #15
 Restorative Comfy Bed 1401 - Wake~
@@ -365,7 +370,7 @@ if %arg% == chest
   *Send text to player to show effect of command
   %send% %actor% You move the chest across the floor, revealing a trapdoor underneath!!
   *Send text to other players in room to inform them of Player's discovery
-  %echoaround% %actor.name% %actor.name% has discovered a hidden trapdoor under a chest!
+  %echoaround% %actor% %actor.name% has discovered a hidden trapdoor under a chest!
   * Set door flags to 'ab' - Exit is a door that can be opened and closed, then close door
   %door% 14520 down flags ab
   * Change door name to 'trapdoor' (used in door commands, eg open trapdoor, lock trapdoor)
@@ -405,7 +410,7 @@ end
 Switch Echo Example~
 2 g 100
 ~
-* By Rumble
+* By Rumble of The Builder Academy    builderacademy.net 9091
 * put a wait in here so it doesn't fire before the player enters the room
 wait 1
 switch %random.3%
@@ -413,7 +418,7 @@ switch %random.3%
     * only the person entering the room will see this.
     %send% %actor% You trip over a root as you walk into the room. 
     * everyone in the room except the actor will see this.
-%echoaround% %actor% %actor.name% trips on a root while walking into the room.
+    %echoaround% %actor% %actor.name% trips on a root while walking into the room.
     * everyone in the room will see this.
     %echo% The root suddenly springs to life and attacks!
     * let everyone in the zone hear about this.
@@ -437,6 +442,8 @@ done
 AT Example~
 2 b 100
 ~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* put a wait in here so it doesn't fire before the player enters the room
 %at% 33 %echo% at'd to a room
 %at% Rumble %echo% at'd to Rumble
 ~
@@ -444,6 +451,8 @@ AT Example~
 Rumble's Spy~
 0 d 100
 *~
+* By Rumble of The Builder Academy    builderacademy.net 9091
+* put a wait in here so it doesn't fire before the player enters the room
 * Arguments: * means all speech will trigger this.
 * This will echo all speech to Rumble.
 %at% rumble %echo% %actor.name% says, '%speech%'
@@ -726,8 +735,6 @@ Room Variables Example~
 %echo% WEATHER:  %self.weather%
 %echo% SECTOR:   %self.sector%
 %echo% CONTENTS: %self.contents%
-%echo% ZONENAME: %self.zonename%
-%echo% ZONEID: %self.zoneid%
 ~
 #30
 Text Variables Example~

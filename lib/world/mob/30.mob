@@ -386,6 +386,7 @@ A janitor is walking around, cleaning up.
 10 100
 8 8 1
 E
+T 3011
 #3062
 fido dog~
 the beastly fido~
@@ -400,6 +401,7 @@ hanging around his teeth.
 8 8 1
 BareHandAttack: 4
 E
+T 3010
 #3063
 mercenary~
 the mercenary~
@@ -449,6 +451,7 @@ An odif yltsaeb is here, walking backwards.
 8 8 1
 BareHandAttack: 4
 E
+T 3010
 #3067
 cityguard guard~
 the cityguard~
@@ -475,6 +478,7 @@ An oozing green gelatinous blob is here, sucking in bits of debris.
 8 8 0
 BareHandAttack: 6
 E
+T 3011
 #3089
 petshops shop boy~
 the Pet Shop Boy~

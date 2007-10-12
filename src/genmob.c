@@ -82,7 +82,7 @@ int add_mobile(struct char_data *mob, mob_vnum vnum)
 
   /* Update shop keepers. */
   if (shop_index)
-    for (shop = 0; shop <= top_shop - top_shop_offset; shop++)
+    for (shop = 0; shop <= top_shop; shop++)
       SHOP_KEEPER(shop) += (SHOP_KEEPER(shop) != NOTHING && SHOP_KEEPER(shop) >= found);
 
   add_to_save_list(zone_table[real_zone_by_thing(vnum)].number, SL_MOB);
@@ -150,7 +150,7 @@ int delete_mobile(mob_rnum refpt)
 
   /* Update shop keepers. */
   if (shop_index)
-    for (counter = 0; counter <= top_shop - top_shop_offset; counter++)
+    for (counter = 0; counter <= top_shop; counter++)
       SHOP_KEEPER(counter) -= (SHOP_KEEPER(counter) >= refpt);
 
   save_mobiles(real_zone_by_thing(vnum));

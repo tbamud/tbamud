@@ -326,7 +326,7 @@ void list_one_char(struct char_data *i, struct char_data *ch)
   };
 
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IS_NPC(i)) {
-    send_to_char(ch, "[%d]", GET_MOB_VNUM(i));
+    send_to_char(ch, "[%d] ", GET_MOB_VNUM(i));
     if (SCRIPT(i))
       send_to_char(ch, "[T%d] ", i->proto_script->vnum);
   }
@@ -501,11 +501,10 @@ void look_at_room(struct char_data *ch, int ignore_brief)
     sprintbitarray(ROOM_FLAGS(IN_ROOM(ch)), room_bits, RF_ARRAY_MAX, buf);
     send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
 
-    if (SCRIPT(rm))
+    if (rm->proto_script)
       send_to_char(ch, "[T%d] ", rm->proto_script->vnum);
-
-    send_to_char(ch, "%s [ %s]",
-                     world[IN_ROOM(ch)].name, buf);
+      
+    send_to_char(ch, "%s [ %s]", world[IN_ROOM(ch)].name, buf);
   } else
     send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
 
@@ -1569,7 +1568,7 @@ void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
     send_to_char(ch, "%33s", " - ");
 
   if (obj->proto_script)
-    send_to_char(ch, "[%d]", obj->proto_script->vnum);
+    send_to_char(ch, "[T%d]", obj->proto_script->vnum);
 
   if (IN_ROOM(obj) != NOWHERE)
     send_to_char(ch, "[%5d] %s%s\r\n", GET_ROOM_VNUM(IN_ROOM(obj)), world[IN_ROOM(obj)].name, QNRM);
@@ -1596,20 +1595,20 @@ void perform_immort_where(struct char_data *ch, char *arg)
     send_to_char(ch, "Players\r\n-------\r\n");
     for (d = descriptor_list; d; d = d->next)
       if (IS_PLAYING(d)) {
-	i = (d->original ? d->original : d->character);
-	if (i && CAN_SEE(ch, i) && (IN_ROOM(i) != NOWHERE)) {
-	  if (d->original)
-	    send_to_char(ch, "%-20s%s - [%5d] %s%s (in %s%s)\r\n",
-		GET_NAME(i), QNRM, GET_ROOM_VNUM(IN_ROOM(d->character)),
-		world[IN_ROOM(d->character)].name, QNRM, GET_NAME(d->character), QNRM);
-	  else
-	    send_to_char(ch, "%-20s%s - [%5d] %s%s\r\n", GET_NAME(i), QNRM, GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM);
-	}
+        i = (d->original ? d->original : d->character);
+        if (i && CAN_SEE(ch, i) && (IN_ROOM(i) != NOWHERE)) {
+          if (d->original)
+            send_to_char(ch, "%-20s%s - [%5d] %s%s (in %s%s)\r\n",
+              GET_NAME(i), QNRM, GET_ROOM_VNUM(IN_ROOM(d->character)),
+              world[IN_ROOM(d->character)].name, QNRM, GET_NAME(d->character), QNRM);
+          else
+            send_to_char(ch, "%-20s%s - [%5d] %s%s\r\n", GET_NAME(i), QNRM, GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM);
+        }
       }
   } else {
     for (i = character_list; i; i = i->next)
       if (CAN_SEE(ch, i) && IN_ROOM(i) != NOWHERE && isname(arg, i->player.name)) {
-	found = 1;
+        found = 1;
         send_to_char(ch, "M%3d. %-25s%s - [%5d] %-25s%s", ++num, GET_NAME(i), QNRM,
                GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM);
         if (SCRIPT(i))
@@ -1618,8 +1617,8 @@ void perform_immort_where(struct char_data *ch, char *arg)
       }
     for (num = 0, k = object_list; k; k = k->next)
       if (CAN_SEE_OBJ(ch, k) && isname(arg, k->name)) {
-	found = 1;
-	print_object_location(++num, k, ch, TRUE);
+        found = 1;
+        print_object_location(++num, k, ch, TRUE);
       }
     if (!found)
       send_to_char(ch, "Couldn't find any such thing.\r\n");

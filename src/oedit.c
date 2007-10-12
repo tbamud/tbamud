@@ -665,7 +665,8 @@ void oedit_disp_menu(struct descriptor_data *d)
           "%sM%s) Min Level   : %s%d\r\n"
           "%sP%s) Perm Affects: %s%s\r\n"
 	  "%sS%s) Script      : %s%s\r\n"
-          "%sX%s) Delete object\r\n"
+          "%sW%s) Copy object\r\n"
+	  "%sX%s) Delete object\r\n"
 	  "%sQ%s) Quit\r\n"
 	  "Enter choice : ",
 
@@ -682,6 +683,7 @@ void oedit_disp_menu(struct descriptor_data *d)
           grn, nrm, cyn, GET_OBJ_LEVEL(obj),
           grn, nrm, cyn, buf2,
           grn, nrm, cyn, OLC_SCRIPT(d) ? "Set." : "Not Set.",
+          grn, nrm,
 	  grn, nrm,
           grn, nrm
   );
@@ -830,6 +832,11 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       OLC_SCRIPT_EDIT_MODE(d) = SCRIPT_MAIN_MENU;
       dg_script_menu(d);
       return;
+    case 'w':
+    case 'W':
+      write_to_output(d, "Copy what object? ");
+      OLC_MODE(d) = OEDIT_COPY;
+      break;
     case 'x':
     case 'X':
       write_to_output(d, "Are you sure you want to delete this object? ");
@@ -1174,6 +1181,14 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       return;
     }
     break;
+
+  case OEDIT_COPY:
+    if ((number = real_object(atoi(arg))) != NOWHERE) {
+      oedit_setup_existing(d, number);
+    } else
+      write_to_output(d, "That object does not exist.\r\n");
+    break;
+
   case OEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
       if (delete_object(GET_OBJ_RNUM(OLC_OBJ(d))) != NOTHING)

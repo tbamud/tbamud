@@ -403,6 +403,7 @@ void sedit_disp_menu(struct descriptor_data *d)
 	  "%sR%s) Rooms Menu\r\n"
 	  "%sP%s) Products Menu\r\n"
 	  "%sT%s) Accept Types Menu\r\n"
+          "%sW%s) Copy Shop\r\n"
 	  "%sQ%s) Quit\r\n"
 	  "Enter Choice : ",
 
@@ -424,7 +425,7 @@ void sedit_disp_menu(struct descriptor_data *d)
 	  grn, nrm, yel, S_SELL(shop),
 	  grn, nrm, cyn, buf1,
 	  grn, nrm, cyn, buf2,
-	  grn, nrm, grn, nrm, grn, nrm, grn, nrm
+	  grn, nrm, grn, nrm, grn, nrm, grn, nrm, grn, nrm
   );
 
   OLC_MODE(d) = SEDIT_MAIN_MENU;
@@ -471,6 +472,11 @@ void sedit_parse(struct descriptor_data *d, char *arg)
   case SEDIT_MAIN_MENU:
     i = 0;
     switch (*arg) {
+    case 'w':
+    case 'W':
+      write_to_output(d, "Copy what shop? ");
+      OLC_MODE(d) = SEDIT_COPY;
+      return;
     case 'q':
     case 'Q':
       if (OLC_VAL(d)) {		/* Anything been changed? */
@@ -758,6 +764,12 @@ void sedit_parse(struct descriptor_data *d, char *arg)
       sedit_no_trade_menu(d);
       return;
     }
+    break;
+  case SEDIT_COPY:
+    if ((i = real_room(atoi(arg))) != NOWHERE) {
+      sedit_setup_existing(d, i);
+    } else
+      write_to_output(d, "That shop does not exist.\r\n");
     break;
 
   default:

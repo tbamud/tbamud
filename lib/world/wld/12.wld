@@ -9,7 +9,7 @@ D0
 The Immortal Board Room can be seen to the north.
 ~
 ~
-0 -1 -1
+0 -1 1204
 S
 #1201
 The Inn Of The Gods~
@@ -23,7 +23,7 @@ D2
 The Immortal Board Room can be seen to the south.
 ~
 ~
-0 -1 -1
+0 -1 1204
 S
 #1202
 The Ice Box Of The Gods~
@@ -43,7 +43,65 @@ D3
 The Immortal Board Room can be seen to the west.
 ~
 ~
-0 -1 -1
+0 -1 1204
+S
+#1204
+The Immortal Board Room~
+   The main hang out of the Gods, the Immortal Board Room is the place to be.  
+Gods exchange messages here most every day.  The mortal board room is to the
+east and the meeting room for the gods is to the south.  To the north is the
+Gods' Inn and to the west is a post office for Gods.  In the northeast corner
+you spot a small staircase leading upwards.
+~
+12 8 0 0 0 0
+D0
+The Gods' Inn can be seen just to the north.
+~
+~
+0 -1 1201
+D1
+The Immortal Board Hall can be seen just to the east.
+~
+~
+0 -1 1290
+D2
+The Gods' Meeting Room is located to the south.
+~
+~
+0 -1 1200
+D3
+The Gods' Post Office is just to the west.
+~
+~
+0 -1 1205
+D4
+There is a small stair in the corner leading up to the social room of
+the Gods.
+~
+~
+0 -1 1206
+E
+original~
+   The main hang out of the Gods, the Immortal Board Room is the place to be.  
+Gods exchange messages here most every day.  The mortal board room is to the
+east and the meeting room for the gods is to the south.  To the north is the
+Gods' Inn and to the west is a post office for Gods.  In the northeast corner
+you spot a small staircase leading upwards.  
+~
+S
+#1205
+The Post Office Of The Gods~
+   The Post Office Of The Gods is the same as most Post Offices except that
+it is not as slow.  Even the Postal service knows not to anger the Gods.
+Piles of junk mail line the walls.  I guess even Gods get on mailing lists.
+The Immortal Board Room is to the east.
+~
+12 8 0 0 0 0
+D1
+The Immortal Board Room is just to the east.
+~
+~
+0 -1 1204
 S
 #1206
 The Social Gathering Room~
@@ -56,7 +114,7 @@ The Immortal Board Room is just down through the floor.  Funny how you
 didn't notice that exit before isn't it?
 ~
 ~
-0 -1 -1
+0 -1 1204
 S
 #1290
 The Immortal Board Hall~
@@ -76,7 +134,7 @@ D2
 D3
 ~
 ~
-0 0 -1
+0 0 1204
 S
 #1291
 The Builders' Board Room~
@@ -114,255 +172,5 @@ D0
 ~
 ~
 0 0 1290
-S
-#1297
-6~
-   The mark of the immature man is that he wants to die nobly for a cause, 
-while the mark of the mature man is that he wants to live humbly for one.  
---Wilhelm Stekel
-~
-12 8 0 0 0 0
-D0
-~
-~
-0 0 33
-D2
-~
-~
-0 0 33
-E
-Catcher Rye~
-   The mark of the immature man is that he wants to die nobly for a cause, 
-while the mark of the mature man is that he wants to live humbly for one.  
---Wilhelm Stekel
-
-   ...you'll find that you're not the first person who was ever confused and 
-frighteneed and even sickened by human behavior. You're by no means alone on 
-that score, you'll be excited and stimulated to know. Many, many men have been 
-just as troubled morally and spiritually as you are right now. Happily, some 
-of them kept records of their troubles. You'll learn from them-if you want to. 
-Just as someday, if you have something to offer, someone will learn something 
-from you. It's a beautiful reciprocal arrangement.
---The Catcher in the Rye   
-~
-E
-old glory flag~
-   I fly atop the world's tallest buildings.  I stand watch in America's Halls
-of Justice.  I fly majestically over great institutions of learning.  I stand
-guard with the greatest military power in the world.  Look up and see me!  I
-stand for peace, honor, truth, and justice.  I stand for freedom.  I am
-confident, I am arrogant, I am proud.  When I am flown with my banners, my head
-is a little higher, my colors a little truer, I bow to no one!  I am recognized
-all over the world.  I am worshipped, I am loved, and I am feared!  I have
-fought in every battle of every war for more than 200 years: Gettysburg,
-Shiloh, Appomattox, San Juan Hill, the trenches of France, the Argonne Forest,
-Anzio, Rome, the beaches of Normandy, Guam, Okinawa, Japan, Korea, Vietnam, the
-Persian Gulf, and a score of places long forgotten by all, but those who were
-there with me...  I was there!  I led my Soldiers, Sailors, Airmen, and
-Marines.  I followed them and watched over them.  They loved me.  I was on a
-small hill in Iwo Jima.  I was dirty, battle-worn, and tired.  But my Soldiers
-cheered me!  And I was proud!  I have been soiled, burned, torn, and trampled
-on the streets of countries that I have helped set free.  It does not hurt, for
-I am invincible.  I have also been soiled, burned, torn, and trampled on the
-streets of my own country and, when it is by those whom I have served with in
-battle-it hurts.  But I shall overcome, for I am strong!  I have slipped the
-bonds of Earth and, from my vantage point on the Moon, I stand watch over the
-uncharted new frontiers of Space.  I have been a silent witness to all of
-America's finest hours.  But my finest hour comes when I am torn in strips to
-be used as bandages for my wounded comrades on the field of battle-when I fly
-at half-mast to honor my Soldiers, Sailors, Airmen, and Marines, and-when I lie
-in the trembling arms of a grieving mother, at the gravesite of her fallen son
-or daughter-I am proud.  My name is Old Glory-long may I wave.  Dear God, long
-may I wave.    
-~
-E
-war~
-   War is an ugly thing, but not the ugliest of things.  The decayed and
-degraded state of moral and patriotic feeling which thinks that nothing is
-worth war is much worse.  The person who has nothing for which he is willing to
-fight, nothing which is more important than his own personal safety, is a
-miserable creature and has no chance of being free unless made and kept so by
-the exertions of better men than himself.
-
-John Stuart Mill
-~
-E
-builder~
-  
-There is one timeless way of building.
-  
-It is thousands of years old, and the same today as it has always been.
-  
-   The great traditional buildings of the past, the villages and tents and
-temples in which man feels at home, have always been made by people who were
-very close to the center of this way.  It is not possible to make great
-buildings, or great towns, beautiful places, places where you feel yourself,
-places where you feel alive, except by following this way.  And, as you will
-see, this way will lead anyone who looks for it to buildings which are
-themselves as ancient in their form, as the trees and hills, and as our faces
-are.    
-                                        --The Timeless Way of Building
-~
-E
-oath~
-   I do solemnly swear that I will support and defend the Constitution of the
-United States against all enemies, foreign and domestic, and to bear true faith
-and allegiance to the same that I take this obligation freely, without any
-mental reservation or purpose of evasion, and that I will well and faithfully
-discharge the duties of the office upon which I am about to enter.
-~
-E
-july4~
-   On July 4, 1776, we claimed our independence from England and Democracy was
-born.  Every day thousands leave their homeland to come to the "land of the
-free and the home of the brave" so they can begin their American Dream.  The
-United States is truly a diverse nation made up of dynamic people.  Each year
-on July 4, Americans celebrate that freedom and indepen-dence with barbecues,
-picnics, and family ga-therings.  Through the Internet we are learning about
-and communicat-ing with people of different nations, with different languages
-and different races throughout the world.  Bringing the world closer with
-understanding and knowledge can only benefit all nations.  We invite all
-nations to celebrate with Americans online this Fourth of July.  Happy
-Birthday, America!    
-~
-E
-.test~
-can you see this with look around?
-~
-S
-T 1201
-#1298
-6~
-   The mark of the immature man is that he wants to die nobly for a cause, 
-while the mark of the mature man is that he wants to live humbly for one.  
---Wilhelm Stekel
-~
-12 8 0 0 0 0
-D0
-~
-~
-0 0 33
-D2
-~
-~
-0 0 33
-E
-Catcher Rye~
-   The mark of the immature man is that he wants to die nobly for a cause, 
-while the mark of the mature man is that he wants to live humbly for one.  
---Wilhelm Stekel
-
-   ...you'll find that you're not the first person who was ever confused and 
-frighteneed and even sickened by human behavior. You're by no means alone on 
-that score, you'll be excited and stimulated to know. Many, many men have been 
-just as troubled morally and spiritually as you are right now. Happily, some 
-of them kept records of their troubles. You'll learn from them-if you want to. 
-Just as someday, if you have something to offer, someone will learn something 
-from you. It's a beautiful reciprocal arrangement.
---The Catcher in the Rye   
-~
-E
-old glory flag~
-   I fly atop the world's tallest buildings.  I stand watch in America's Halls
-of Justice.  I fly majestically over great institutions of learning.  I stand
-guard with the greatest military power in the world.  Look up and see me!  I
-stand for peace, honor, truth, and justice.  I stand for freedom.  I am
-confident, I am arrogant, I am proud.  When I am flown with my banners, my head
-is a little higher, my colors a little truer, I bow to no one!  I am recognized
-all over the world.  I am worshipped, I am loved, and I am feared!  I have
-fought in every battle of every war for more than 200 years: Gettysburg,
-Shiloh, Appomattox, San Juan Hill, the trenches of France, the Argonne Forest,
-Anzio, Rome, the beaches of Normandy, Guam, Okinawa, Japan, Korea, Vietnam, the
-Persian Gulf, and a score of places long forgotten by all, but those who were
-there with me...  I was there!  I led my Soldiers, Sailors, Airmen, and
-Marines.  I followed them and watched over them.  They loved me.  I was on a
-small hill in Iwo Jima.  I was dirty, battle-worn, and tired.  But my Soldiers
-cheered me!  And I was proud!  I have been soiled, burned, torn, and trampled
-on the streets of countries that I have helped set free.  It does not hurt, for
-I am invincible.  I have also been soiled, burned, torn, and trampled on the
-streets of my own country and, when it is by those whom I have served with in
-battle-it hurts.  But I shall overcome, for I am strong!  I have slipped the
-bonds of Earth and, from my vantage point on the Moon, I stand watch over the
-uncharted new frontiers of Space.  I have been a silent witness to all of
-America's finest hours.  But my finest hour comes when I am torn in strips to
-be used as bandages for my wounded comrades on the field of battle-when I fly
-at half-mast to honor my Soldiers, Sailors, Airmen, and Marines, and-when I lie
-in the trembling arms of a grieving mother, at the gravesite of her fallen son
-or daughter-I am proud.  My name is Old Glory-long may I wave.  Dear God, long
-may I wave.    
-~
-E
-war~
-   War is an ugly thing, but not the ugliest of things.  The decayed and
-degraded state of moral and patriotic feeling which thinks that nothing is
-worth war is much worse.  The person who has nothing for which he is willing to
-fight, nothing which is more important than his own personal safety, is a
-miserable creature and has no chance of being free unless made and kept so by
-the exertions of better men than himself.
-
-John Stuart Mill
-~
-E
-builder~
-  
-There is one timeless way of building.
-  
-It is thousands of years old, and the same today as it has always been.
-  
-   The great traditional buildings of the past, the villages and tents and
-temples in which man feels at home, have always been made by people who were
-very close to the center of this way.  It is not possible to make great
-buildings, or great towns, beautiful places, places where you feel yourself,
-places where you feel alive, except by following this way.  And, as you will
-see, this way will lead anyone who looks for it to buildings which are
-themselves as ancient in their form, as the trees and hills, and as our faces
-are.    
-                                        --The Timeless Way of Building
-~
-E
-oath~
-   I do solemnly swear that I will support and defend the Constitution of the
-United States against all enemies, foreign and domestic, and to bear true faith
-and allegiance to the same that I take this obligation freely, without any
-mental reservation or purpose of evasion, and that I will well and faithfully
-discharge the duties of the office upon which I am about to enter.
-~
-E
-july4~
-   On July 4, 1776, we claimed our independence from England and Democracy was
-born.  Every day thousands leave their homeland to come to the "land of the
-free and the home of the brave" so they can begin their American Dream.  The
-United States is truly a diverse nation made up of dynamic people.  Each year
-on July 4, Americans celebrate that freedom and indepen-dence with barbecues,
-picnics, and family ga-therings.  Through the Internet we are learning about
-and communicat-ing with people of different nations, with different languages
-and different races throughout the world.  Bringing the world closer with
-understanding and knowledge can only benefit all nations.  We invite all
-nations to celebrate with Americans online this Fourth of July.  Happy
-Birthday, America!    
-~
-E
-.test~
-can you see this with look around?
-~
-S
-T 1201
-#1299
-The Immortal Board Room~
-   The main hang out of the Gods, the Immortal Board Room is the place to be.  
-Gods exchange messages here most every day.  The mortal board room is to the
-east and the meeting room for the gods is to the south.  To the north is the
-Gods' Inn and to the west is a post office for Gods.  In the northeast corner
-you spot a small staircase leading upwards.
-~
-12 65535 0 0 0 0
-E
-original~
-   The main hang out of the Gods, the Immortal Board Room is the place to be.  
-Gods exchange messages here most every day.  The mortal board room is to the
-east and the meeting room for the gods is to the south.  To the north is the
-Gods' Inn and to the west is a post office for Gods.  In the northeast corner
-you spot a small staircase leading upwards.  
-~
 S
 $~

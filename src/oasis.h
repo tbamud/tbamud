@@ -194,7 +194,8 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define OEDIT_EXTRADESC_MENU        	24
 #define OEDIT_LEVEL                 	25
 #define OEDIT_PERM			26
-#define OEDIT_DELETE                   27
+#define OEDIT_DELETE                    27
+#define OEDIT_COPY                      28
 
 /* Submodes of REDIT connectedness. */
 #define REDIT_MAIN_MENU 		1
@@ -214,6 +215,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define REDIT_EXTRADESC_KEY 		15
 #define REDIT_EXTRADESC_DESCRIPTION 	16
 #define REDIT_DELETE			17
+#define REDIT_COPY			18
 
 /* Submodes of ZEDIT connectedness. */
 #define ZEDIT_MAIN_MENU              	0
@@ -264,6 +266,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define MEDIT_LEVEL			25
 #define MEDIT_ALIGNMENT			26
 #define MEDIT_DELETE                    27
+#define MEDIT_COPY                      28
 
 /* Submodes of SEDIT connectedness. */
 #define SEDIT_MAIN_MENU              	0
@@ -279,8 +282,8 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define SEDIT_ROOMS_MENU		12
 #define SEDIT_NAMELIST_MENU		13
 #define SEDIT_NAMELIST			14
+#define SEDIT_COPY                      15
 
-/* Numerical responses. */
 #define SEDIT_NUMERICAL_RESPONSE	20
 #define SEDIT_OPEN1			21
 #define SEDIT_OPEN2			22

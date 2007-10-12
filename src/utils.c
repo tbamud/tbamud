@@ -658,33 +658,33 @@ int room_is_dark(room_rnum room)
 }
 
 int levenshtein_distance(char *s1, char *s2)
-{
+{   
   int s1_len = strlen(s1), s2_len = strlen(s2);
-  int *d = NULL;
-  int i, j, k;       
+  int **d, i, j; 
 
-  s1_len++;
-  s2_len++;
+  CREATE(d, int *, s1_len + 1);
 
-  CREATE(d, int, (s1_len * s2_len));
+  for (i = 0; i <= s1_len; i++) {   
+    CREATE(d[i], int, s2_len + 1);
+    d[i][0] = i;
+  }
 
-  for (i = 0; i < s1_len; i++)
-    d[i] = i;   
-  for (j = 0; j < s2_len; j++)
-    d[j*s1_len] = j;   
+  for (j = 0; j <= s2_len; j++)
+    d[0][j] = j; 
+  for (i = 1; i <= s1_len; i++)
+    for (j = 1; j <= s2_len; j++)
+      d[i][j] = MIN(d[i - 1][j] + 1, MIN(d[i][j - 1] + 1,
+      d[i - 1][j - 1] + ((s1[i - 1] == s2[j - 1]) ? 0 : 1)));
 
-  for (i = 1; i < s1_len; i++)
-    for (j = 1; j < s2_len; j++)
-      d[(j*s1_len)+i] = MIN(d[(j*s1_len) + i - 1] + 1, MIN(d[i+((j-1)*s1_len)]
-        + 1, d[((j-1)*s1_len) + i - 1] + ((s1[i - 1] == s2[j - 1]) ? 0 : 1)));
+  i = d[s1_len][s2_len];
 
-  k = d[s1_len*s2_len-1];
+  for (j = 0; j <= s1_len; j++)
+    free(d[j]);
+  free(d);
 
-  free (d);
-
-  return k; 
-}
-
+  return i;
+} 
+													   
 void char_from_furniture(struct char_data *ch)
 {
   struct obj_data *furniture;

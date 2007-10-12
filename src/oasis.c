@@ -110,8 +110,12 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
 
   /* Check for a zone.  cleanup_type is irrelevant here, free() everything. */
   if (OLC_ZONE(d)) {
-    free(OLC_ZONE(d)->name);
-    free(OLC_ZONE(d)->cmd);
+    if (OLC_ZONE(d)->builders) 
+      free(OLC_ZONE(d)->builders); 
+    if (OLC_ZONE(d)->name) 
+      free(OLC_ZONE(d)->name);
+    if (OLC_ZONE(d)->cmd)
+      free(OLC_ZONE(d)->cmd);
     free(OLC_ZONE(d));
   }
 

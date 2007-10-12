@@ -27,7 +27,6 @@
 #include "interpreter.h"
 
 int save_config( IDXTYPE nowhere );        /* Exported from cedit.c */
-int top_shop_offset = 0;
 
 /* List of zones to be saved. */
 struct save_list_data *save_list;

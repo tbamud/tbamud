@@ -420,7 +420,8 @@ void medit_disp_menu(struct descriptor_data *d)
 	  "%sL%s) NPC Flags : %s%s\r\n"
 	  "%sM%s) AFF Flags : %s%s\r\n"
           "%sS%s) Script    : %s%s\r\n"
-          "%sX%s) Delete mob\r\n"
+          "%sW%s) Copy mob\r\n"
+	  "%sX%s) Delete mob\r\n"
 	  "%sQ%s) Quit\r\n"
 	  "Enter choice : ",
 
@@ -431,6 +432,7 @@ void medit_disp_menu(struct descriptor_data *d)
 	  grn, nrm, cyn, flag2,
           grn, nrm, cyn, OLC_SCRIPT(d) ?"Set.":"Not Set.",
           grn, nrm,
+	  grn, nrm,
 	  grn, nrm
 	  );
 
@@ -603,6 +605,11 @@ void medit_parse(struct descriptor_data *d, char *arg)
       OLC_MODE(d) = MEDIT_AFF_FLAGS;
       medit_disp_aff_flags(d);
       return;
+    case 'w':
+    case 'W':
+      write_to_output(d, "Copy what mob? ");
+      OLC_MODE(d) = MEDIT_COPY;
+      return;
     case 'x':
     case 'X':
       write_to_output(d, "Are you sure you want to delete this mobile? ");
@@ -769,6 +776,13 @@ void medit_parse(struct descriptor_data *d, char *arg)
     GET_ALIGNMENT(OLC_MOB(d)) = LIMIT(i, -1000, 1000);
     break;
 
+  case MEDIT_COPY:
+    if ((i = real_mobile(atoi(arg))) != NOWHERE) {
+      medit_setup_existing(d, i);
+    } else
+      write_to_output(d, "That mob does not exist.\r\n");
+    break;
+  
   case MEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
       if (delete_mobile(GET_MOB_RNUM(OLC_MOB(d))) != NOBODY) 

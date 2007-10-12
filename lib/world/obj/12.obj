@@ -10,21 +10,6 @@ E
 list email staff~
 @RHELP CONTACT@n for the most recent listing or:
 
-Name     Email                      ICQ #      AIM             MSN 
-Welcor                              18755607
-Rumble   rumble@t@@tbamud.com          100121659  admwint         wintersn
-Shamra   shamra@t@@tbamud.com                     BlackdemonRahl
-Amber    amber@t@@tbamud.com
-Detta    detta@t@@tbamud.com
-Elaseth  elaseth@t@@tbamud.com                    ParaVox3
-Elorien  elorien@t@@tbamud.com
-Ferret   ferret@t@@tbamud.com                                     radiax01
-Fizban   fizban@t@@tbamud.com                     Fizban1216      fizban1216@@hotmail.com
-Fyre     fyre@t@@tbamud.com
-Heiach   heiach@t@@tbamud.com                     heiach          heiach
-Random   random@t@@tbamud.com          219948345
-Relsqui  relsqui@t@@tbamud.com         72136407   spiritethereal
-Rhade    rhade@t@@tbamud.com
 ~
 #1201
 pamphlet trigedit~
@@ -120,12 +105,12 @@ You must collect the prizes and avoid the animal to obtain maximum points.
 Each prize is worth 500 * game_level in experience.
 ~
 #1218
-spring fountain water~
+spring fountain water well~
 a spring well~
 A mountain spring bubbles up fresh water here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
--1 1 15 0
+500 500 15 0
 0 0 0 0
 E
 spring fountain water~
@@ -148,31 +133,6 @@ A
 6 2
 A
 2 1
-#1223
-scholar's guide jeweler's loop quest~
-Scholar's Guide~
-The Guide to all Gnomish knowledge hums here quietly.~
-~
-11 abdgq 0 0 0 aco 0 0 0 0 0 0 0
-0 0 0 0
-3 1000 0 20
-E
-scholar's guide jeweler's loop quest~
-   You are looking at what could quite possibly be one of the most beautiful
-peaces of artistry ever made.  This finely crafted jeweler's loop is suspended
-from a chain of golden links.  The loop itself is a perfectly made combination
-of grounned glass, perfectly crafted silver, and precision gnomish workmanship.
-It is so simple as to be elegant.  A tiny plaque hangs from the chain that
-suspends the loop.  "To you who would sacrifice for life, join me.  To you who
-would become a slave to wonder, hold me.  To you who seek riches through
-learning, I am yours.  "
-~
-A
-3 3
-A
-12 50
-A
-4 3
 #1226
 boards builder's bulletin gen_boards~
 a builder's bulletin board~
@@ -229,18 +189,13 @@ A test object.~
 1 0 0 0
 1 1 0 0
 #1233
-trial vnum assigner limiter~
-free~
-A trial vnum assigner helps people work on thier trial vnum.~
+weapon level 34~
+a level 34 weapon~
+A level 34 weapon is used to test level restrictions~
 ~
-12 0 0 0 0 acno 0 0 0 0 0 0 0
+12 0 0 0 0 ano 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 34
-E
-trial vnum assigner limiter~
-   This object was created to help new builders follow the directions under HELP
-TRIAL. 
-~
 #1266
 Black Staff of Immortality~
 the black staff of immortality~

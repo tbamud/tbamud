@@ -123,7 +123,7 @@ obj_rnum adjust_objects(obj_rnum refpt)
     BOARD_RNUM(i) += (BOARD_RNUM(i) >= refpt);
 
   /* Renumber shop produce. */
-  for (shop = 0; shop <= top_shop - top_shop_offset; shop++)
+  for (shop = 0; shop <= top_shop; shop++)
     for (i = 0; SHOP_PRODUCT(shop, i) != NOTHING; i++)
       SHOP_PRODUCT(shop, i) += (SHOP_PRODUCT(shop, i) >= refpt);
 
@@ -440,7 +440,7 @@ int delete_object(obj_rnum rnum)
     BOARD_RNUM(j) -= (BOARD_RNUM(j) > rnum);
 
   /* Renumber shop produce. */
-  for (shop = 0; shop <= top_shop - top_shop_offset; shop++)
+  for (shop = 0; shop <= top_shop; shop++)
     for (j = 0; SHOP_PRODUCT(shop, j) != NOTHING; j++)
       SHOP_PRODUCT(shop, j) -= (SHOP_PRODUCT(shop, j) > rnum);
 

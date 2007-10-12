@@ -426,7 +426,8 @@ void redit_disp_menu(struct descriptor_data *d)
 	  "%sA%s) Exit down   : %s%d\r\n"
 	  "%sB%s) Extra descriptions menu\r\n"
 	  "%sS%s) Script      : %s%s\r\n"
-          "%sX%s) Delete Room\r\n"
+          "%sW%s) Copy Room\r\n"
+	  "%sX%s) Delete Room\r\n"
 	  "%sQ%s) Quit\r\n"
 	  "Enter choice : ",
 
@@ -457,6 +458,7 @@ void redit_disp_menu(struct descriptor_data *d)
 	  grn, nrm,
           grn, nrm, cyn, OLC_SCRIPT(d) ? "Set." : "Not Set.",
           grn, nrm,
+	  grn, nrm,
 	  grn, nrm
 	  );
 
@@ -563,6 +565,11 @@ void redit_parse(struct descriptor_data *d, char *arg)
 	CREATE(OLC_ROOM(d)->ex_description, struct extra_descr_data, 1);
       OLC_DESC(d) = OLC_ROOM(d)->ex_description;
       redit_disp_extradesc_menu(d);
+      break;
+    case 'w':
+    case 'W':
+      write_to_output(d, "Copy what room? ");
+      OLC_MODE(d) = REDIT_COPY;
       break;
     case 'x':
     case 'X':
@@ -783,6 +790,13 @@ void redit_parse(struct descriptor_data *d, char *arg)
     }
     break;
 
+  case REDIT_COPY:
+    if ((number = real_room(atoi(arg))) != NOWHERE) {
+      redit_setup_existing(d, number);
+    } else
+      write_to_output(d, "That room does not exist.\r\n");
+    break;
+  
   case REDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
       if (delete_room(real_room(OLC_ROOM(d)->number)))

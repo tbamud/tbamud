@@ -97,4 +97,28 @@ if !%self.fighting%
   end
 end
 ~
+#12015
+Room Zone Number~
+2 bg 100
+~
+set room %room.vnum% 
+eval number %room.strlen% 
+switch %number% 
+  case 3 
+    set zone %room.charat(1)% 
+  break 
+  case 4 
+    set 1st %room.charat(1)% 
+    set 2nd %room.charat(2)% 
+    set zone %1st%%2nd% 
+  break 
+  case 5 
+    set 1st %room.charat(1)% 
+    set 2nd %room.charat(2)% 
+    set 3rd %room.charat(3)% 
+    set zone %1st%%2nd%3rd% 
+  break 
+done 
+%echo% Room #%room.vnum% is part of zone: %zone% 
+~
 $~

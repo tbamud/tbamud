@@ -401,7 +401,7 @@ a backpack~
 A backpack is here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
-0 0 -1 0
+40 5 -1 0
 5 250 0 0
 E
 backpack~
@@ -981,7 +981,7 @@ a canteen~
 A canteen has been set on the ground here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
-15 15 15 0
+-1 0 15 0
 20 100 0 0
 E
 canteen water~

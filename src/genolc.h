@@ -28,7 +28,6 @@ struct save_list_data {
 };
 
 extern struct save_list_data *save_list;
-extern int top_shop_offset;
 
 /* save_list_data.type */
 #define SL_MOB	0

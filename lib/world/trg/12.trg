@@ -7,16 +7,62 @@ General trigger keeper. Only for use in room 0.~
 * Trying to access Global var list of void. Apparently this has not been set up!
 ~
 #1201
-crash test trigger~
-2 c 100
-target~
-%echo% %actor.name% is targetting %%arg.name%% IS_PC: %arg.is_pc%
-if %arg.is_pc% == 1
-%echo% It is a player.
-elseif %arg.is_pc% == 0
-%echo% It is a mob.
-else
-%echo It is an object.
+Calculator By Mordecai~
+2 d 100
+*~
+* By Mordecai
+if %actor.is_pc%
+  Return 0
+  Eval sum %speech%
+  Eval test1 "%speech%"
+  Eval test %test1.strlen%
+  Eval che %sum%/1
+  If %che% == %sum%
+    %echo% @WComputing results...@n
+    if (%speech%/===)
+      if (%sum%==1)
+        set sum Yes
+      elseif (%sum%==0)
+        set sum No
+      end
+    end
+    Eval st 2+%test%
+    Eval o .
+    Eval sumslen "%sum%
+    Eval len %st% - (%sumslen.strlen%-2)
+    If %len% > 0
+      Eval dif (%len%/2)
+      While %y.strlen% < %st%
+        Eval o .%o%
+        Eval y %o%
+        Eval m ?%m%
+        Eval p %m%
+        If %dif% == %y.strlen%
+          Eval wid1 %p%
+        end
+      done
+    end
+    eval opt1 8 + %test%
+    eval opt2 (2*%wid1.strlen%)+%sumslen.strlen%+5
+    %echo% @WWizzzzzzzzzz....@n
+    if (%opt1%-2) == (%opt2%)
+      %echo% @c...%y%...@n
+      %echo% @c:@C..%y%..@c:@n
+      %echo% @c:@C:@G   %speech% @C  :@c:@n
+      %echo% @c:@C:.%y%.:@c:@n
+      %echo% @c:@C: %wid1%@G %sum% @C%wid1% :@c:@n
+      %echo% @c:@C:.%y%.:@c:@n
+      %echo% @c:..%y%..:@n
+    else
+      %echo% @r....%y%...@n
+      %echo% @r:@R...%y%..@r:@n
+      %echo% @r:@R:@G    %speech% @R  :@r:@n
+      %echo% @r:@R:..%y%.:@r:@n
+      %echo% @r:@R: %wid1%@G %sum% @R%wid1% :@r:@n
+      %echo% @r:@R:..%y%.:@r:@n
+      %echo% @r:...%y%..:@n
+    end
+  end
 end
 ~
 #1202
@@ -763,88 +809,51 @@ done
 Hunger, Thirst, Drunk Test Trigger~
 2 g 100
 ~
-if %self.roomflag(DARK)% 
-%echo% This is a dark room. 
-end 
-if %self.roomflag(DEATH)% 
-%echo% This is a death trap - goodbye! 
-end 
-if %self.roomflag(NO_MOB)% 
-%echo% Mobiles cannot enter this room. 
-end 
-if %self.roomflag(INDOORS)% 
-%echo% This room is indoors. 
-end 
-if %self.roomflag(PEACEFUL)% 
-%echo% You can't kill anything in this room. 
-end 
-if %self.roomflag(NO_TRACK)% 
-%echo% You cannot track anything through this room. 
-end 
-if %self.roomflag(NO_MAGIC)% 
-%echo% You cannot cast spells in here! 
-end 
-if %self.roomflag(TUNNEL)% 
-%echo% This room is a narrow tunnel. 
-end 
-if %self.roomflag(PRIVATE)% 
-%echo% This is a private room. 
-end 
-if %self.roomflag(GODROOM)% 
-%echo% Only Gods can enter this room. 
-end 
-if %self.roomflag(HOUSE)% 
-%echo% This is a house. 
-end 
-if %self.roomflag(HCRSH)% 
-%echo% This is a house which will crash-save. 
-end 
-if %self.roomflag(ATRIUM)% 
-%echo% This is an atrium for a house. 
-end 
+wait 1
+%echo% Hello %actor.name%
+%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
+nop %actor.hunger(50)
+nop %actor.thirst(50)
+nop %actor.drunk(50)
+%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
+nop %actor.hunger(-10)
+nop %actor.thirst(-10)
+nop %actor.drunk(-10)
+%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
+nop %actor.hunger(20)
+nop %actor.thirst(21)
+nop %actor.drunk(22)
+%echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
+*
+while %actor.hunger% >= 0
+  nop %actor.hunger(-1)
+done
+while %actor.thirst% >= 0
+  nop %actor.thirst(-1)
+done
+while %actor.drunk% >= 0
+  nop %actor.drunk(-1)
+done
+~
+#1216
+Crash Test Trigger~
+1 g 100
+~
+wait 1
+%force% %random.char% get %self.shortdesc%
+return 0
 ~
 #1217
-new trigger~
-1 c 1
-use~
-eval objectname %arg.car%
-if %objectname% != feather
-  return 0
-  halt
-end
- 
-eval targetname %arg.cdr%
-if !(%targetname%)
-  return 0
-  halt
-end
- 
-switch %self.vnum%
-  case 12502
-    set new_vnum 12520
-    set fire 1
-    break
-  case 12520
-    set new_vnum 12521
-    set fire 1
-    break
-  case 12521
-    set new_vnum 12522
-    set fire 1
-    break
-  case 12522
-    set new_vnum 12522
-    set fire 0
-    break
-done
- 
-otransform %new_vnum%
- 
-if %fire%
-  dg_cast 'portal' %targetname%
-  %echo% A portal springs to life in front of you.
+Argument Testing Trigger~
+2 c 100
+target~
+%echo% %actor.name% is targetting %arg% IS_PC: %arg.is_pc%
+if %arg.is_pc% == 1
+  %echo% It is a player.
+elseif %arg.is_pc% == 0
+  %echo% It is a mob.
 else
-  %send% %actor% The feather seems powerless.
+  %echo It is an object.
 end
 ~
 #1218
@@ -867,15 +876,48 @@ if %cmd% == test
 end
 ~
 #1220
-book keeping~
-2 c 100
-heh~
-if %actor.name% == Rhunter
-wait 1
-%echoaround% Jennie smiles and says, 'Hello hubby, how is it going?'
-wait 1
-%echoaround% Jennie kisses %actor% lovingly.
-end
+Roomflag Test Trigger~
+2 g 100
+~
+if %self.roomflag(DARK)% 
+  %echo% This is a dark room. 
+end 
+if %self.roomflag(DEATH)% 
+  %echo% This is a death trap - goodbye! 
+end 
+if %self.roomflag(NO_MOB)% 
+  %echo% Mobiles cannot enter this room. 
+end 
+if %self.roomflag(INDOORS)% 
+  %echo% This room is indoors. 
+end 
+if %self.roomflag(PEACEFUL)% 
+  %echo% You can't kill anything in this room. 
+end 
+if %self.roomflag(NO_TRACK)% 
+  %echo% You cannot track anything through this room. 
+end 
+if %self.roomflag(NO_MAGIC)% 
+  %echo% You cannot cast spells in here! 
+end 
+if %self.roomflag(TUNNEL)% 
+  %echo% This room is a narrow tunnel. 
+end 
+if %self.roomflag(PRIVATE)% 
+  %echo% This is a private room. 
+end 
+if %self.roomflag(GODROOM)% 
+  %echo% Only Gods can enter this room. 
+end 
+if %self.roomflag(HOUSE)% 
+  %echo% This is a house. 
+end 
+if %self.roomflag(HCRSH)% 
+  %echo% This is a house which will crash-save. 
+end 
+if %self.roomflag(ATRIUM)% 
+  %echo% This is an atrium for a house. 
+end 
 ~
 #1221
 Test Trigger~
@@ -927,154 +969,6 @@ elseif %direction% == west
   %echoaround% %actor% The door slides open, %actor.name% walks out, and the door slides shut.
 end
 ~
-#1256
-Mob Quote Using Arrays~
-0 d 100
-quote~
-* By Jamie Nelson from the forum http://groups.yahoo.com/group/dg_scripts/
-eval w1max %random.20%
-eval w2max %random.20%
-eval w3max %random.20%
-eval w4max %random.20%
-eval w5max %random.11%
-eval w6max %random.20%
-set  w1[0] phenomenal
-set  w1[1] rapid
-set w1[2] chilling
-set  w1[3] insipid
-set  w1[4] nauseating
-set  w1[5] astronomical
-set  w1[6] austere
-set  w1[7] inevitable
-set  w1[8] inescapable
-set  w1[9] reckless
-set  w1[10] haphazard
-set  w1[11] accelerating
-set  w1[12] profound
-set  w1[13] awesome
-set  w1[14] terrifying
-set  w1[15] ubiquitous
-set  w1[16] ignominious
-set  w1[17] unprecedented
-set  w1[18] unparalleled
-set  w1[19] insidious
-set  w1[20] broad
-set  w2[0] growth
-set  w2[1] decline
-set  w2[2] prospects
-set  w2[3] acceleration
-set  w2[4] threat
-set  w2[5] expansion
-set  w2[6] oneness
-set  w2[7] outgrowth
-set  w2[8] madness
-set  w2[9] evacuation
-set  w2[10] diminishment
-set  w2[11] consumption
-set  w2[12] decay
-set  w2[13] putrefaction
-set  w2[14] vapidity
-set  w2[15] downsizing
-set  w2[16] degeneration
-set  w2[17] litigation
-set  w2[18] declivity
-set  w2[19] hastening
-set  w2[20] paradigm shifting
-set  w3[0] the Internet
-set  w3[1] urban tax dollars
-set  w3[2] new technologies
-set  w3[3] gender identification disorders
-set  w3[4] censorship
-set  w3[5] interpersonal communications
-set  w3[6] modern life
-set  w3[7] rampant paradigm shifts
-set  w3[8] consumer spending
-set  w3[9] rain forests
-set  w3[10] human literacy
-set  w3[11] natural resources
-set  w3[12] traditional values
-set  w3[13] media junk food
-set  w3[14] family values
-set  w3[15] corporate mentality
-set  w3[16] the American justice system
-set  w3[17] technological change
-set  w3[18] the ozone layer
-set  w3[19] human resources
-set  w3[20] current epistemologies
-set  w4[0] forever dissipate
-set  w4[1] escalate
-set  w4[2] aggrandize
-set  w4[3] overhaul
-set  w4[4] deteriorate
-set  w4[5] revolutionize
-set  w4[6] uglify
-set  w4[7] put an end to
-set  w4[8] enslave
-set  w4[9] bankrupt
-set  w4[10] truncate
-set  w4[11] nullify
-set  w4[12] sabotage
-set  w4[13] destabilize
-set  w4[14] incapacitate
-set  w4[15] hasten
-set  w4[16] dehumanize
-set  w4[17] evaporate
-set  w4[18] indenture
-set  w4[19] intensify
-set  w4[20] undermine
-set  w5[0] today's
-set  w5[1] tomorrow's
-set  w5[2] the entrenchment of our
-set  w5[3] worldwide
-set  w5[4] our children's
-set  w5[5] modern
-set  w5[6] all of our
-set  w5[7] our future
-set  w5[8] our
-set  w5[9] the demise of our
-set  w5[10] our grandchildren's
-set  w5[11] all hope for
-set  w6[0] business models
-set  w6[1] re-ruralization
-set  w6[2] human condition
-set  w6[3] family values
-set  w6[4] self-esteem
-set  w6[5] medical insights
-set  w6[6] human psyche
-set  w6[7] human depth
-set  w6[8] egalitarianism
-set  w6[9] World Wide Web
-set  w6[10] future values
-set  w6[11] hopes and dreams
-set  w6[12] business models
-set  w6[13] political climate
-set  w6[14] education
-set  w6[15] cultural heritage
-set  w6[16] lifestyles
-set  w6[17] fiduciary responsibility
-set  w6[18] genetic diversity
-set  w6[19] intestinal fortitude
-set  w6[20] computer literacy
-set w1 %%w1[%w1max%]%%
-eval w1 %w1%
-set msg The %w1%
-set w2 %%w2[%w2max%]%%
-eval w2 %w2%
-set msg %msg% %w2% of
-set w3 %%w3[%w3max%]%%
-eval w3 %w3%
-set msg %msg% %w3%
-set w4 %%w4[%w4max%]%%
-eval w4 %w4%
-set msg %msg% will %w4%
-set w5 %%w5[%w5max%]%%
-eval w5 %w5%
-set msg %msg% %w5%
-set w6 %%w6[%w6max%]%%
-eval w6 %w6%
-set msg %msg% %w6%
-say %msg%
-~
 #1267
 secret drawer magic~
 1 c 4
@@ -1118,10 +1012,12 @@ osend %actor% The switch says, 'Fine... fine.'
 end
 ~
 #1282
-test~
-0 g 100
+Teleport room enter test~
+2 g 100
 ~
 %echo% %self.name% squints at ~%actor.name%  asdf'
+%echo% buh-bye
+%teleport% %actor% 3
 ~
 #1283
 deal deck~

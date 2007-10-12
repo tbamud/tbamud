@@ -1,10 +1,10 @@
 #400
 grass snake~
-Grass Snake~
-A grass snake is coiled up in the grass looking at you.
+a grass snake~
+A grass snake is coiled up in the grass.
 ~
-   He really isnt very big, but he looks very mean.  He watches you with his
-yellow eyes, ready to attack.    
+   He really isnt very big, but he looks very mean.  He watches the surroundings
+with his yellow eyes, ready to attack.
 ~
 10 0 0 0 0 0 0 0 -250 E
 10 17 4 2d2+100 1d2+1
@@ -14,7 +14,7 @@ BareHandAttack: 11
 E
 #401
 Giant Mosquito~
-Giant Mosquito~
+a giant mosquito~
 A giant mosquito is here.
 ~
    The creature is rather large looking.  She is almost the size of a bird!  
@@ -28,11 +28,11 @@ BareHandAttack: 1
 E
 #403
 firefly~
-firefly~
+a firefly~
 A firefly is here.
 ~
-   You see the creature flying around through the weeds.  She looks much larger
-than any other firefly you have ever seen before!    
+   This creature flits around through the various tangled weeds.  She appears
+much larger than any average firefly would be.
 ~
 10 0 0 0 0 0 0 0 -225 E
 10 17 4 2d2+100 1d2+1
@@ -41,8 +41,8 @@ than any other firefly you have ever seen before!
 BareHandAttack: 4
 E
 #406
-bluebird~
-bluebird~
+bluebird bird~
+a bluebird~
 A bluebird flies past you and lands on a nearby branch.
 ~
    The creature is rather small, but looks to be quite tough.  It would be a
@@ -56,11 +56,11 @@ BareHandAttack: 8
 E
 #410
 bear~
-bear~
+a bear~
 A large bear is standing here.
 ~
-   The creature is enormous and could very easily rip you to shreds.  Maybe you
-should just leave him alone.    
+   The creature is enormous and could very easily rip an average humanoid to
+shreds.  Maybe it would be wise to just leave him alone.  
 ~
 10 0 0 0 0 0 0 0 -300 E
 15 15 1 3d3+150 2d2+2
@@ -70,11 +70,12 @@ BareHandAttack: 9
 E
 #412
 chipmunk~
-chipmunk~
+a chipmunk~
 A small chipmunk is here looking at you.
 ~
-   She chitters at you, warning you to stay away.  Her teeth are razor sharp
-and one of her ears has a small hole in it.  No doubt a battle scar.    
+   She chitters at any intruders, warning them to stay away.  Her teeth are
+razor sharp and one of her ears has a small hole in it.  No doubt a battle scar.
+
 ~
 10 0 0 0 0 0 0 0 -200 E
 14 16 1 2d2+140 2d2+2
@@ -84,7 +85,7 @@ BareHandAttack: 4
 E
 #415
 cricket~
-cricket~
+a cricket~
 A cricket is sitting here.
 ~
    The creature blends in with the grass and she is very hard to see.  She can
@@ -98,11 +99,11 @@ BareHandAttack: 1
 E
 #416
 mouse~
-mouse~
+a mouse~
 A cute little mouse is here.
 ~
-   The mouse looks up at you with his big black eyes.  He looks to be harmless,
-but looks can be deceiving.    
+   The mouse looks up with his big black eyes.  He looks to be harmless, but
+looks can be deceiving.  
 ~
 10 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -112,13 +113,12 @@ BareHandAttack: 8
 E
 #421
 zombie~
-zombie~
-A zombie is staggering around before you.
+a zombie~
+A zombie staggers limply around.
 ~
    The creature is quite horrid looking.  His skin has just about completely
-rotted away.  The skin that is left is grey and holds a nasty odor.  As you
-look closer at the creature you see his teeth are in perfect condition.  How
-can this be?    
+rotted away.  The skin that is left is grey and holds a nasty odor.  Strangely
+enough, his teeth are in perfectly chiseled condition.
 ~
 10 0 0 0 0 0 0 0 -300 E
 11 17 3 2d2+110 1d2+1
@@ -128,11 +128,11 @@ BareHandAttack: 13
 E
 #422
 ghoul~
-ghoul~
+a ghoul~
 A mean looking ghoul is here.
 ~
-   The creature looks at you, watching every move you make.  You suddenly get
-the feeling that maybe you shouldn't have come here.    
+   This strange creature shimmers in and out of existence, its body shadowy and
+surreal.
 ~
 10 0 0 0 0 0 0 0 -200 E
 10 17 4 2d2+100 1d2+1
@@ -142,11 +142,11 @@ BareHandAttack: 5
 E
 #423
 skeleton~
-skeleton~
+a skeleton~
 A skeleton stands before you.
 ~
-   There is not much left to this creature.  It's just a stack of bones, but
-for some reason you think you'd better leave it alone.    
+   There is not much left to this creature.  It's just a stack of bones, but its
+grinning teeth and large empty eyes seem to have a predatory gleam.
 ~
 10 0 0 0 0 0 0 0 -300 E
 15 15 1 3d3+150 2d2+2
@@ -156,12 +156,11 @@ BareHandAttack: 9
 E
 #426
 slug~
-slug~
+a slug~
 An enormous slug is here.
 ~
    The creature is filthy from the dirt and looks to be very slimy.  It doesn't
-look like it could do much to protect itself, but don't believe everything you
-hear.    
+look like it could do much to protect itself, but looks can be deceiving.
 ~
 10 0 0 0 0 0 0 0 -200 E
 12 16 2 2d2+120 2d2+2
@@ -171,11 +170,11 @@ BareHandAttack: 10
 E
 #430
 rat~
-rat~
-A rat is here.
+a rat~
+A rat sniffs about for food.
 ~
-   The rat watches you with his glowing eyes.  You suddenly feel like you don't
-belong here.    
+   This large hairy rat looks insatiably hungry, its nose twitching
+uncontrollably as it scuttles about searching for something to eat.
 ~
 10 0 0 0 0 0 0 0 -200 E
 12 16 2 2d2+120 2d2+2
@@ -184,12 +183,12 @@ belong here.
 BareHandAttack: 4
 E
 #433
-redbird~
-redbird~
+redbird bird~
+a redbird~
 A beautiful redbird is sitting on the side of the bridge.
 ~
-   The bird is rather simple looking.  You notice he is missing a few feathers,
-but is tough just the same.    
+   The bird is rather simple looking.  He appears to be missing a few feathers,
+likely from previous battles.
 ~
 10 0 0 0 0 0 0 0 -200 E
 16 15 0 3d3+160 2d2+2
@@ -199,11 +198,11 @@ BareHandAttack: 11
 E
 #434
 muskrat~
-muskrat~
+a muskrat~
 A muskrat is here.
 ~
-   She looks at you with her mangled face.  You notice her face is covered in
-battle scars.  She hisses at you, warning you to stay away.  
+   She glances around warily with her mangled face.  Her face is covered in
+battle scars.  She hisses at any intruders, warning them to stay away.  
 ~
 10 0 0 0 0 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
@@ -213,11 +212,11 @@ BareHandAttack: 11
 E
 #435
 leech~
-leech~
+a leech~
 A slimy leech is here.
 ~
    The creature sticks to some weeds that are sticking out of the water.  She
-watches you very closely, ready to attack.    
+watches for intruders very closely, ready to attack.  
 ~
 10 0 0 0 0 0 0 0 -250 E
 14 16 1 2d2+140 2d2+2
@@ -227,11 +226,11 @@ BareHandAttack: 4
 E
 #440
 bullfrog frog~
-bullfrog~
+a bullfrog~
 A bullfrog is sitting here.
 ~
-   The creature looks at you as you slowly walk by.  He is by far the biggest
-bullfrog you have ever seen!    
+   The creature ribbits leisurely to itself as various other animals wander by.
+He is by far most bigger than most bullfrogs would ever naturally be.
 ~
 10 0 0 0 0 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
@@ -240,11 +239,12 @@ bullfrog you have ever seen!
 E
 #441
 crow~
-crow~
+a crow~
 A crow is flying around above you.
 ~
-   Her beak is enormous and she could probably swallow you whole!  Her claws
-are in bad need of clipping.  You notice she is missing a few feathers.    
+   Her beak is enormous and she could probably swallow a large animal whole!  
+Her claws are in bad need of clipping.  You notice she is missing a few
+feathers.  
 ~
 10 0 0 0 0 0 0 0 -300 E
 14 16 1 2d2+140 2d2+2
@@ -254,11 +254,11 @@ BareHandAttack: 4
 E
 #444
 grasshopper~
-grasshopper~
-A grasshopper is hopping around in front of you.
+a grasshopper~
+A grasshopper hops from place to place.
 ~
-   She looks like any other grasshopper, but you shouldnt underestimate her.  
-She could be quite tough.    
+   She looks like any other grasshopper, but it wouldn't be wise to
+underestimate her.  She could be quite tough.
 ~
 10 0 0 0 0 0 0 0 200 E
 14 16 1 2d2+140 2d2+2
@@ -268,11 +268,11 @@ BareHandAttack: 9
 E
 #447
 small boy child~
-Small Boy~
+a small boy~
 A small boy is here playing in the dirt.
 ~
-   He looks up at you.  His hands are covered in dirt.  You can see a slight
-glowing aura within his eyes.    
+   He looks up at the hint of any disruption.  His hands are covered in dirt.  
+You can see a slight glowing aura within his eyes.  
 ~
 10 0 0 0 0 0 0 0 200 E
 15 15 1 3d3+150 2d2+2
@@ -282,7 +282,7 @@ BareHandAttack: 6
 E
 #449
 jedidiah~
-jedidiah~
+Jedidiah~
 Jedidiah is standing here, waiting to help you.
 ~
    Jedidiah is a tall man with dark eyes.  He looks very mysterious, but
@@ -296,7 +296,7 @@ BareHandAttack: 7
 E
 #450
 teenager~
-teenager~
+a teenager~
 A teenager is standing here.
 ~
    She stands at the side of the road looking at you.  You suddenly feel like a
@@ -310,7 +310,7 @@ BareHandAttack: 10
 E
 #453
 samuel~
-samuel~
+Samuel~
 Samuel the shopkeeper is here.
 ~
    He is a shorter man with no hair.  He is slightly on the chubby side, but
@@ -324,7 +324,7 @@ BareHandAttack: 7
 E
 #460
 caterpillar~
-caterpillar~
+a caterpillar~
 A caterpillar is here.
 ~
    The creature is covered in fur, ranging from brown to black.  She looks much
@@ -338,7 +338,7 @@ BareHandAttack: 4
 E
 #466
 rabbit~
-rabbit~
+a rabbit~
 A rabbit is here.
 ~
    He looks at you curiously, watching your every move.  His fur is very fluffy
@@ -366,7 +366,7 @@ BareHandAttack: 8
 E
 #475
 coyote~
-coyote~
+a coyote~
 A mean looking coyote is here.
 ~
    He looks at you with his cold dark eyes.  You suddenly feel like maybe you
@@ -381,7 +381,7 @@ BareHandAttack: 10
 E
 #480
 ghost~
-ghost~
+a ghost~
 A ghost is floating around before you.
 ~
    You can see right through the creature, almost as if it wasn't there at all.
@@ -395,7 +395,7 @@ BareHandAttack: 5
 E
 #481
 zachary~
-zachary~
+Zachary~
 Zachary the shopkeep is standing here.
 ~
    He is a rather small man, but appears to be very tough.  You probably
@@ -409,7 +409,7 @@ BareHandAttack: 11
 E
 #491
 finch~
-finch~
+a finch~
 A finch is here.
 ~
    The creature is very small and delicate looking.  She seems to be in
@@ -423,7 +423,7 @@ BareHandAttack: 4
 E
 #493
 wolf~
-wolf~
+a wolf~
 A wolf is standing here.
 ~
    He looks at you with his cold eyes, ready to attack.  Maybe if you're quiet

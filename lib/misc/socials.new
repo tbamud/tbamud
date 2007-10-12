@@ -1096,12 +1096,12 @@ $n wishes $mself a very Merry Christmas.
 ~chuckles chu 0 5 0 0
 You chuckle politely.
 $n chuckles politely.
-You chuckle at $M.
+You chuckle at $N.
 $n chuckles at $N.
 $n chuckles at you.
 Hmm... No one like that seems to be about.
 You chuckle quietly to yourself.
-$n chuckle quietly to $mself, obviously some private joke.
+$n chuckles quietly to $mself, obviously some private joke.
 You chuckle at $S $t.
 $n chuckles at $N's $t.
 $n chuckles at your $t.
@@ -5461,7 +5461,7 @@ $n sidles up cozily to $p.
 ~sigh sigh 0 5 0 0
 You sigh.
 $n sighs loudly.
-You look at $M and sigh.
+You look at $N and sigh.
 $n sighs at $N.
 $n sighs at you.
 You sigh in a halfhearted way.
@@ -6121,7 +6121,7 @@ $n strangles $p.
 ~stretch stretch 0 5 0 0
 You stretch your tired muscles.  That feels so good.
 $n stretches $s aching muscles.
-You stretch $M.
+You stretch $N.
 $n stretches $N.
 $n stretches you.
 I hope you know this person!

@@ -209,6 +209,7 @@ void trigedit_disp_menu(struct descriptor_data *d)
   "%s4)%s Numeric Arg  : %s%d\r\n"
   "%s5)%s Arguments    : %s%s\r\n"
   "%s6)%s Commands:\r\n%s%s\r\n"
+  "%sW%s) Copy Trigger\r\n"
   "%sQ)%s Quit\r\n"
   "Enter Choice :",
 
@@ -219,7 +220,7 @@ void trigedit_disp_menu(struct descriptor_data *d)
   grn, nrm, yel, trig->narg,			/* numeric arg            */
   grn, nrm, yel, trig->arglist?trig->arglist:"",/* strict arg             */
   grn, nrm, cyn, OLC_STORAGE(d),		/* the command list       */
-  grn, nrm);                                    /* quit colors            */
+  grn, nrm, grn, nrm);                          /* quit colors            */
 
   OLC_MODE(d) = TRIGEDIT_MAIN_MENU;
 }
@@ -308,6 +309,11 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
            OLC_VAL(d) = 1;
 
            break;
+         case 'w':
+         case 'W':
+           write_to_output(d, "Copy what trigger? ");
+           OLC_MODE(d) = TRIGEDIT_COPY;
+           break;
          default:
            trigedit_disp_menu(d);
            return;
@@ -367,6 +373,13 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
       OLC_VAL(d)++;
       trigedit_disp_types(d);
       return;
+
+    case TRIGEDIT_COPY:
+      if ((i = real_room(atoi(arg))) != NOWHERE) {
+        trigedit_setup_existing(d, i);
+      } else
+        write_to_output(d, "That trigger does not exist.\r\n");
+      break;
 
     case TRIGEDIT_COMMANDS:
       break;
