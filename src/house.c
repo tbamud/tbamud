@@ -244,7 +244,7 @@ void House_boot(void)
 
   if (!(fl = fopen(HCONTROL_FILE, "rb"))) {
     if (errno == ENOENT)
-      log("   House control file '%s' does not exist.", HCONTROL_FILE);
+      log("   No houses to load. File '%s' does not exist.", HCONTROL_FILE);
     else
       perror("SYSERR: " HCONTROL_FILE);
     return;

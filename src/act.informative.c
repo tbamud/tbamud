@@ -1984,8 +1984,8 @@ ACMD(do_toggle)
     }
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_LOG1);
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_LOG2);
-    SET_BIT_AR(PRF_FLAGS(ch), (PRF_LOG1 * (tp & 1)));
-    SET_BIT_AR(PRF_FLAGS(ch), (PRF_LOG2 * (tp & 2) >> 1));
+    if (tp & 1) SET_BIT_AR(PRF_FLAGS(ch), PRF_LOG1);
+    if (tp & 2) SET_BIT_AR(PRF_FLAGS(ch), PRF_LOG2);
 
     send_to_char(ch, "Your syslog is now %s.\r\n", types[tp]);
     return;

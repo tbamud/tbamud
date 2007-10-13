@@ -1,0 +1,448 @@
+#1100
+table end~
+the end of a table~
+The end of a long dining table protrudes from the west.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+end table~
+   Majestic and intricately carved, this massive table fills the entire
+stretching hall to the west.  A finely embroidered tablecloth can be glimpsed in
+places, most of the smooth surface covered with a layer of powdery white snow.
+~
+#1101
+end table~
+the end of a table~
+The end of a long dining table protrudes from the east.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+end table~
+   Majestic and intricately carved, this massive table fills the entire
+stretching hall to the east.  A finely embroidered tablecloth can be glimpsed in
+places, most of the smooth surface covered with a layer of powdery white snow.
+~
+#1102
+long dining table~
+a long dining table~
+A long dining table stretches to the east and west.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+long dining table~
+   Made by the finest of carpenters, this immensely long table has several legs
+bearing its weight, each carved into the shape of a dragon's scaled foot, the
+elegant curving claws formed of ivory.  The rest of the table is smoothly
+polished dark mahogany, coated with a fine powder of pure white snow.
+~
+#1103
+throne quartz beryl~
+a throne of quartz and beryl~
+A throne of quartz and beryl stands frozen in the center of the room.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+throne quartz beryl~
+   Sculpted as if from ice itself, the transparent quartz of this throne
+reflects and illuminates, filling the room with hundreds of tiny sparkles.  
+Pale blue beryl gilds the back and armrests, lending its immensely rare value to
+the immense beauty of the sculpting work.
+~
+#1104
+grand glass piano~
+a grand glass piano~
+A grand glass piano stands abandoned to dust and snow.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+T 1107
+E
+grand glass piano~
+   A work of breathtaking beauty, this gently curving piano is as delicate and
+light-filled as the ice that holds it in place.  Sparkles of blue and green and
+purple dance like tiny fireflies within its transparent structure, tiny luminous
+strips of aquamarine used for the chord keys.  Despite its age, however, it
+appears it is still possible to 'play' this instrument.
+~
+#1105
+case jewellery~
+a case of jewellery~
+A case of jewellery glistens in the light.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+case jewellery~
+   Once polished and transparent, this delicate case is now slightly frosted
+with ice, offering only a vague glimpse of the unreachable gems within.  
+Sparkling and lustrous hues of every colour are visible, from blood red rubies
+to the delicate purples of amethyst, and cool green of emerald, each gem
+fashioned expertly into a breathtaking piece of jewellery.
+~
+#1106
+silver flame crystal stand~
+a silver flame~
+A silver flame writhes silently on a crystal stand.~
+~
+1 dq 0 0 0 a 0 0 0 0 0 0 0
+0 0 -1 0
+1 1000 0 0
+E
+silver flame crystal stand~
+   Slowly undulating, the ripples of this fire are cool and reflective, giving
+off a light brighter than any natural fire could, and filling the surrounding
+atmosphere with a sense of intense cold rather than heat.  A slender stand of
+crystal spirals beneath it, allowing the flame to be carried without the
+bearer's hand being frozen.
+~
+#1107
+blossoms edelweiss flowers~
+blossoms of edelweiss~
+Blossoms of edelweiss nod sorrowfully in the stirring air.~
+~
+11 0 0 0 0 ae 0 0 0 0 0 0 0
+0 0 0 0
+1 10 0 0
+E
+blossoms flowers edelweiss~
+   Delicately star-shaped, and the pure colour of spun white wool, these tiny
+flowers convey an image of beauty and innocence.  Slender stems support the
+blossoms, extending elegantly beneath the buds like tiny emerald pedestals.
+~
+#1108
+diamond bracelet~
+a diamond bracelet~
+A diamond bracelet glints brightly from the shadows.~
+~
+11 0 0 0 0 am 0 0 0 0 0 0 0
+0 0 0 0
+1 400 0 0
+T 1109
+E
+diamond bracelet~
+   Beautiful, shimmering diamonds are set in a delicate spiral of white gold,
+made to decorate a slender wrist.  A cool aura of magical power whispers amongst
+the twinkling stones, and the surrounding wind seems to stir uneasily in answer.
+Glowing faintly, this jewellery seems to possess some strange force that can be
+imbued upon the wearer, all they need do is 'draw' upon it.
+~
+#1109
+ivory bed silk~
+an ivory bed spread with silk~
+An ivory bed spread with silk stands in the center of the room.~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+ivory bed silk~
+   Smooth creamy curving lines make up the white frame of this bed, polished
+until shining and silver-veined with ice.  Soft, lush bedding is spread
+generously over the padded mattress, white pillows and downy quilts giving it a
+beautifully inviting appearance if it wasn't for the layers of snow.
+~
+#1110
+crystal chalice~
+a crystal chalice~
+A crystal chalice sparkles with holy light.~
+~
+15 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 10 0 0
+E
+crystal chalice~
+   Clear as pure water, this delicate chalice sparkles as though imbued with its
+own holy internal light.  The cup itself is wreathed with fragile silver vines,
+spiralling down into a slender braided stem.
+~
+#1111
+pewter blade~
+a pewter blade~
+A pewter blade glints sharply.~
+~
+5 0 0 0 0 ano 0 0 0 0 0 0 0
+0 0 0 0
+1 5 0 0
+E
+pewter blade~
+   Beautifully fashioned, this blade is extremely sharp along both its edges.  
+A cool blue hue lights the pewter from within, giving the weapon a slight icy
+glow.  Arcane symbols have been engraved along the hilt, old magic filling the
+metal with an unnatural cold.
+~
+#1112
+sleep ring~
+a sleep ring~
+A sleep ring lies here~
+~
+11 0 0 0 0 ab 0 0 0 0 0 0 0
+0 0 0 0
+2 4 0 0
+#1113
+rosewood bed~
+a rosewood bed, covered with satin~
+A bed of rosewood stands undisturbed, covered with satin.~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+rosewood bed~
+   Darkly beautiful, this bed has been carved from richly-hued rosewood.  
+Symbols and runes are etched along the framework, and a thin veil hangs torn
+from its overhead canopy.  Scarlet satin sheets lie almost buried beneath
+coatings of snow, deep reds contrasting with the purity as spatterings of blood
+on a white canvas.
+~
+#1114
+mahogany bed velvet~
+a bed of mahogany and velvet~
+A bed of mahogany and velvet stands frozen with ice.~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+bed mahogany velvet~
+   The deep, dark wood of this bedframe glistens as though freshly polished, a
+thick coating of ice making it glassy and cold.  Even darker velvet has been
+spread generously over the solidly frozen bed, its rich hues of red and purple
+deceptively soft-looking.
+~
+#1115
+crystalline bed~
+a crystalline bed, covered with feather-down~
+A crystalline bed stands here, covered with feather-down.~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+crystalline bed~
+   This bed's slender frame has been carved from some crystalline substance,
+glittering as though covered in diamonds.  A fluffy feather down is piled
+luxuriously on top of it, piles of the soft, white bedding mingling with pillows
+of snow.
+~
+#1116
+frosted plum~
+a frosted plum~
+A frosted plum has been left here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+5 0 0 0
+1 1 0 0
+E
+frosted plum~
+   Richly purple, this fruit is blossoming with beads of frozen juice.  Its
+glistening skin is dusted with a light coat of snow, making it look as though it
+has been rolled in powdered sugar.
+~
+#1117
+brick cheeze frozen~
+a frozen brick of cheese~
+A brick of cheese stands frozen in place.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+7 0 0 0
+1 1 0 0
+E
+frozen brick cheese~
+   This rich-coloured cheese looks as though it was once smooth and creamy.  
+Now, however, it is unnaturally frozen solid, silver veins of ice criss-crossing
+its surface.
+~
+#1118
+water pewter goblet water~
+a pewter goblet~
+A pewter goblet glints subtly.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+30 30 15 0
+35 10 0 0
+E
+pewter goblet~
+   This pretty goblet has been engraved with the image of a winged dragon.  The
+creature's tail winds down around the stem of the cup, and its eyes are embedded
+with two sparkling green jewels.
+~
+#1119
+barrel ale~
+a barrel of ale~
+A barrel of ale has been cracked open.~
+~
+23 0 0 0 0 0 0 0 0 0 0 0 0
+60 60 3 0
+0 0 0 0
+E
+barrel ale~
+   This large wooden barrel has had its top deliberately cracked and forced off.
+Within, a swirling amber liquid looks invitingly thirst-quenching.
+~
+#1120
+iron maiden~
+an iron maiden~
+An iron maiden stands against the wall.~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+E
+iron maiden~
+   This medival torture device is visciously built, designed to cause
+excruciating pain and slow death to any unfortunate soul placed inside.  
+Engraved with arcane symbols, the sleek exterior bears the resemblance of some
+terrible goddess.  However, her evil eyes and sharp fangs are nothing compared
+to the cruel glistening spikes that overlay the interior, rust-coloured stains
+silent evidence of previous victims.
+~
+#1121
+bucket~
+a bucket~
+A bucket dangles above the well.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+T 1127
+E
+bucket rope~
+   Old brown rope is coiled around a windlass, a large handle projecting from
+the side so that one may 'lower' the bucket into the well.  Once the bucket has
+been raised, one must 'empty' it in order to see its contents.
+~
+#1122
+rope~
+a rope~
+A rope hangs down into the well.~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+T 1126
+E
+rope~
+   This long frayed rope hangs deep into the darkness of the well.  There is
+probably a bucket attached to the end of it, just waiting for someone to come
+and 'raise' it.
+~
+#1123
+gold coin~
+a gold coin~
+A gold coin shines brightly here.~
+~
+8 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 0 0 0
+E
+gold coin~
+   This shiny, round coin has been abandoned for some strange reason.  Perhaps
+it was somebody's wish, or maybe a curse.
+~
+#1124
+handful sludge~
+a handful of sludge~
+A handful of sludge lies in a lumpy pile.~
+~
+13 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 0 0 0
+E
+handful sludge~
+   Mostly consisting of mud and a few green tufts of moss or fungi, this handful
+of sludge is hardly a great prize.  In fact, it seems to be moving here and
+there, a few maggots or earthworms poking their slimy appendages out.
+~
+#1125
+object triggers xxobject~
+an object for helping with triggers~
+An object for helping with triggers lies here.~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+#1126
+white key~
+@Wa white key@n~
+@WA white key@g lies gathering dust.~
+~
+18 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 0 0 0
+E
+white key~
+   This pale key is elegant and intricately carved.  It seems to have been
+wrought from smooth ivory and polished, a long spiralling stem branching into
+complex notches.
+~
+#1127
+dark key~
+@Da dark key@n~
+@DA dark key@g lies gathering dust.~
+~
+18 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0
+E
+dark key~
+   Oily black and glistening, this dark key looks as though it has been carved
+from rich obsidian.  Strange magical symbols and letters are etched along its
+length, giving it an ominous quality.
+~
+#1128
+crystal tiara~
+@Wa crystal tiara@n~
+@WA crystal tiara@c sparkles brightly here.@n~
+~
+11 0 0 0 0 ae 0 0 0 0 0 0 0
+0 0 0 0
+1 300 0 0
+E
+crystal tiara~
+   Delicate and shimmering, a thin band of crystal has been twisted by some
+strange means into a tiara.  Icy blue and faintly glowing, it radiates an aura
+of magic and unnatural chill.
+~
+A
+24 2
+#1129
+snow-speckled gown~
+@Wa @Cs@Wn@Co@Ww@C-@Ws@Cp@We@Cc@Wk@Cl@We@Cd @Wg@Co@Ww@Cn@n~
+@WA @Cs@Wn@Co@Ww@C-@Ws@Cp@We@Cc@Wk@Cl@We@Cd @Wg@Co@Ww@Cn@n lies crumpled here.~
+~
+11 0 0 0 0 ad 0 0 0 0 0 0 0
+0 0 0 0
+2 400 0 0
+E
+snow-speckled gown~
+   Long and flowing, this elegant white gown appears to made out of an extremely
+fine wool.  A fine sheen of frozen droplets covers this it, studding it with ice
+crystals as if bejewelled, and its long train sparkles with diamond flecks of
+snow.
+~
+A
+24 2
+#1130
+DG test map~
+a test DG map~
+A DG test map lies here.~
+~
+12 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 0 0 0
+T 1134
+E
+DG test map~
+   Type 'map' to use.
+~
+$~

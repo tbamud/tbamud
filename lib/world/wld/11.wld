@@ -1,0 +1,1846 @@
+#1100
+Detta's [Frozen Castle] Description Room~
+
+   @BTheme:@n The cliche fantasy castle with a curse. Am hoping to build a big
+stone fortress that is all frozen in ice, complete with its occupants.
+There will probably be a couple big specially-triggered mobs to defeat and some
+wandering salespeople around the permiter selling the spoils from the castle.
+There will be a couple secrets within the zone, and a tragic tale to uncover
+if the player is so inclined ;).
+
+   @GPlayers:@n Meant to be for players about level 15 to 20, with some of the
+perimeter mobs being lower level, and ones deeper and higher within the castle
+of higher level. Primarily an evil zone.
+
+   @RLocation:@n The castle is set in the middle of a forest with a river running
+through it.
+Note that Indoor flags are deliberately set on outdoor rooms as the
+zone has its own trigger-run weather messages.
+
+   @MSecrets:@n None yet, but there will be ;). Will keep posted.
+
+   @CNote:@n If you have any suggestions, spot any typos, bugs, or 
+weirdnesses, please mudmail me - Detta. :-) All input appreciated!
+You can also email me at detta@@builderacademy.net
+East takes you through the other zones I have built here.
+Down takes you to the starting room of this zone.
+
+~
+11 520 0 0 0 0
+D1
+~
+~
+0 0 1900
+D3
+~
+~
+0 0 11800
+D5
+~
+~
+0 0 1101
+S
+#1101
+A Luminous Path~
+   Startlingly white compared to the rest of the dark surroundings, this shining
+path flows like a glowing stream to a massive building of stone on the northern
+horizon.  Southward it winds deeper into the silent grasp of the trees, its path
+illuminating the forest gently like a ray of moonlight.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1102
+S
+T 1100
+#1102
+The White Drawbridge~
+   This ancient drawbridge lies in the lowered position, covered with layers of
+fluffy white snow that swirl restlessly about.  A cool wind bites at the air,
+whipping against the stone blocks of the surrounding castle like an angry ghost,
+beating with futility upon the unyielding fortress walls.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1103
+D2
+~
+~
+0 0 1101
+S
+T 1100
+#1103
+A Frozen Portcullis~
+   A jagged toothy gate hangs suspended from the southern part of the ceiling,
+frozen in place and coated with layers of smooth glassy ice.  Spikes hang
+menacingly down, formed from the stalactites of slowly dripping water, every now
+and again trembling slightly with the rumbling of thunder outside.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1116
+D2
+~
+~
+0 0 1102
+D3
+~
+~
+0 0 1114
+S
+#1104
+Stalagmitic Armoury~
+   Various pieces of armour and weaponry lie embedded in the glassy walls, the
+metal and ice reflecting light from all around.  Frozen stalagmites protrude
+menacingly from the floor, formed from the dripping of hanging icicles which
+have since fallen and shattered, leaving tiny shards sprinkled throughout the
+room.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1105
+D1
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1120
+D3
+~
+~
+0 0 1116
+S
+#1105
+Hall of Legends~
+   Coloured murals adorn either side of this lengthy hall, their depictions
+those of fierce battles and strong warriors standing victorious over fallen foe.
+Amongst the faded illustrations are the likenesses of dragons as well as men,
+fighting together against some common enemy.  Once undoubtedly bright and
+glorious, the carefully crafted representations are now dull and worn, coated
+with spidery-thin strands of frost and snow, everything glazed and foggy as if
+part of some dream world.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1106
+D2
+~
+~
+0 0 1104
+S
+#1106
+Lords' Chamber~
+   Decorated with all the noblest of tapestries and furnishings, this room is
+sombre and dreary in feel.  All is covered in a sheen of white and frozen
+moisture, the effect being one of almost timeless age.  Various archaic board
+games and glasses of drink lie sculpted in place, cocooned within the same icy
+curse as the inhabitants themselves.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1117
+D2
+~
+~
+0 0 1105
+D3
+   Smooth and reflective, this perfectly sculpted door glistens with moisture
+like drops of dew, its delicate appearance and transparency providing a
+beautiful frame for the surroundings on the other side.
+~
+glassdoor~
+1 0 1125
+S
+#1107
+A Cold Throneroom~
+   The air hangs damp and chill, heaving softly and whispering as with the
+breathing of lingering spirits.  The towering stone walls and smooth white
+marble floor can be seen to have given the place a cold regal air, long before
+its wintery fate.  Now only wisps of snow flicker here and there like tendrils
+of mist, all else still and undisturbed.  
+~
+11 8 0 0 0 0
+D1
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1121
+D2
+~
+~
+0 0 1117
+D3
+~
+~
+0 0 1108
+S
+#1108
+A Frosty Dining Hall~
+   Stretching far to the west, this lengthy corridor is filled with a myriad of
+dancing coloured lights from some nearby source.  The forlorn grey of the
+surroundings seems almost alive with the movement, flickering here and there as
+though lit with hundreds of tiny candles, each shimmering with a different hue
+of the rainbow.
+~
+11 24 0 0 0 0
+D1
+~
+~
+0 0 1107
+D3
+~
+~
+0 0 1109
+S
+T 1102
+#1109
+A Frosty Dining Hall~
+   A high gilded ceiling sparkles with prisms of light from a dazzling
+chandelier.  Emptied of candles, only the shards of crystal and glass remain,
+each dangling from delicate silver chains and shivering slightly every time the
+castle reverberates with thunder, tinkling lightly in a fragile contrast to the
+ominous booms, flooding the lengthy hall with a variety of speckled colours.
+~
+11 24 0 0 0 0
+D1
+~
+~
+0 0 1108
+D3
+~
+~
+0 0 1118
+S
+T 1102
+#1110
+A Glacial Music Room~
+   Bitterly cold, all that remains of melody in this room is the delicate
+chiming of ice crystals hitting the floor, and the mournful moan of a chill wind
+that stirs the atmosphere.  Miniscule sculpted snowflakes swirl restlessly about
+the place, making the air sparkle with thousands of frozen particles.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1118
+D2
+~
+~
+0 0 1115
+D3
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1122
+S
+#1111
+Ladies' Chamber~
+   A cool blue hue illuminates this room, every surface slick and shiny with icy
+wetness.  Elegant chairs stand about, coatings of fluffy snow giving the
+impression they are padded with cotton wool.  A desolate fireplace decorates the
+western wall, long frosted over and wailing eerily with every movement of the
+outside wind.  Within its recesses, clumps of coal sit never to be used, their
+dark surfaces speckled with snow as if they were powdered chocolates.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1115
+D1
+   Smooth and reflective, this perfectly sculpted door glistens with moisture
+like drops of dew, its delicate appearance and transparency providing a
+beautiful frame for the surroundings on the other side.
+~
+glassdoor~
+1 0 1123
+D2
+~
+~
+0 0 1112
+S
+#1112
+Hall of Forgotten Arts~
+   The art of old magics and illusions seems to be the focus of this room's
+adornments.  Strange light flickers upon the walls and ceiling from tiny green
+candles that line the upper border, and yet strangely, the coating of ice and
+snow shows no sign of melting.  Grim eyes watch over the place from ancient
+tapestries that line either side of the hall, their icy glazed expressions
+seeming every now and again to shift in the shadows.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1111
+D2
+~
+~
+0 0 1113
+S
+#1113
+Fissured Gallery~
+   Some incredible heat has caused this room to completely splinter, several
+large spidery cracks sapnning the surfaces of the frozen stone walls and leaving
+a large crevass splitting its way along the floor.  A few masterful paintings
+remain hung here, but many been smashed upon the floor, pieces of broken silver
+and glass frames mingling with the shards of ice.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1112
+D1
+~
+~
+0 0 1114
+D3
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1119
+S
+#1114
+Sphalerite Stair~
+   Made from a dark, glassy mineral, this elegant stair curves eastward, meeting
+a sister stair in the middle and ascending upward like a towering guardian
+shadow, its smooth surface covered with an intricate webwork of frost, giving it
+the appearance of white-veined marble.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1103
+D3
+~
+~
+0 0 1113
+D4
+~
+~
+0 0 1134
+S
+T 1136
+#1115
+Hall of Forgotten Arts~
+   In a striking tribute to craftsmanship, beautifully cut gems and jewels of
+every description decorate the walls and silver-gilded ceiling of this hall.  
+Sapphire and azure lend their regal blue hue to the surroundings, contrasting
+with the pure whiteness of the blanketing snow and creamy irridescent opals that
+line the length of the walls.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1110
+D2
+~
+~
+0 0 1111
+S
+#1116
+Sphalerite Stair~
+   Black and ominous, a tall metallic stair slopes gracefully westward, joining
+its path with another stair and continuing up into the high parts of the castle.
+Dark and metallic, the whole structure shimmers with tiny ice crystals,
+twinkling like a night sky full of shining stars.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1104
+D3
+~
+~
+0 0 1103
+D4
+~
+~
+0 0 1136
+S
+#1117
+Hall of Legends~
+   Softly drifting flakes of snow cover every surface in this stretching
+corridor.  Beneath the layer of almost unblemished white glimpses of the
+original dark red carpeting can be seen, giving the illusion that the floor is
+stained with pools of spilt blood.  All around, images of fallen heroes glorify
+the walls, misted with a fine coat of ice that glazes the eyes of the watchful
+dead.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1107
+D2
+~
+~
+0 0 1106
+S
+#1118
+A Frosty Dining Hall~
+   Shimmering swirls of coloured light twirl about the room like a flurry of
+snowflakes, filling the place with a sense of fragility despite the immovable
+presence of the stony walls and the dark brooding tones of the wooden beams high
+above.  An immense ceiling slopes up toward the east, illumination flooding the
+corridor from the peak of its height.
+~
+11 24 0 0 0 0
+D1
+~
+~
+0 0 1109
+D3
+~
+~
+0 0 1110
+S
+T 1102
+#1119
+The Southwest Stair~
+   Flickering shadows and the silent waving of long abandoned cobwebs are all
+that decorate this once well-used stair.  The frost-coated wood can be seen to
+be worn in places, from the long ago passing of servants' feet, from the lower
+staff quarters to the upper noble bedrooms.  A subtle wooden door stands settled
+into the eastern wall.
+~
+11 8 0 0 0 0
+D1
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1113
+D4
+~
+~
+0 0 1130
+D5
+~
+~
+0 0 1180
+S
+#1120
+The Southeast Stair~
+   Discreetly tucked away, this tiny winding stair is surrounded on all sides by
+the sombre grey of stonework, leading both up and down, nothing can be seen of
+the destination on either end.  Only black grasping shadows and bitter wind lead
+the way.  A subtle wooden door stands settled into the western wall.
+~
+11 8 0 0 0 0
+D3
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1104
+D4
+~
+~
+0 0 1131
+D5
+~
+~
+0 0 1179
+S
+#1121
+The Northeast Stair~
+   Hidden away from the nobler parts of the castle, this private little stair
+extends upward into the upper level, and downward into the lowest floor.  A
+biting breeze whirls its way around the circular chamber stirring the cobwebs
+and snow.  A subtle wooden door stands settled into the western wall.
+~
+11 8 0 0 0 0
+D3
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1107
+D4
+~
+~
+0 0 1132
+D5
+~
+~
+0 0 1185
+S
+#1122
+The Northwest Stair~
+   Cold and grey, pieces of old dust and debris stir in the disturbed air,
+floating along with snowflakes down into the deeper parts of the stair.  
+Darkness looms overhead as well, the spiralling wooden planks leading to a
+higher story of the castle, as well as a lower.  A subtle wooden door stands
+settled into the eastern wall.
+~
+11 8 0 0 0 0
+D1
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1110
+D4
+~
+~
+0 0 1133
+D5
+~
+~
+0 0 1157
+S
+#1123
+Snowy Courtyard~
+   Silent, and seemingly undisturbed, this entire courtyard is covered in a
+thick blanket of pure unblemished snow.  The skeletal branches of long dead
+trees reach wearily overhead, as if to catch the delicate snowflakes that
+flutter continuously down.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1126
+D1
+~
+~
+0 0 1124
+D2
+~
+~
+0 0 1127
+D3
+   Smooth and reflective, this perfectly sculpted door glistens with moisture
+like drops of dew, its delicate appearance and transparency providing a
+beautiful frame for the surroundings on the other side.
+~
+glassdoor~
+1 0 1111
+S
+T 1100
+#1124
+Fountain of Light~
+   A majestic fountain has been sculpted from a spiral of transluscent sparkling
+admantine, rising from the very center of the snow-covered grounds.  The water
+that once spilled freely from its pinnacle has frozen solid in place, leaving
+only shimmering cascades of light and ice, swooping and curving as if part of
+the sculputre itself, reflecting the wintry surroundings and filling the place
+with radiance.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1125
+D3
+~
+~
+0 0 1123
+S
+T 1100
+#1125
+Snowy Courtyard~
+   Serene and hushed, only the restless whispering of long dead leaves stirs the
+respectful silence that preserves this place.  A smooth layer of glistening
+white snow covers everything as if thick cream had been poured over the entire
+yard, silver grasses protruding from the shadowed corners.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1128
+D1
+   Smooth and reflective, this perfectly sculpted door glistens with moisture
+like drops of dew, its delicate appearance and transparency providing a
+beautiful frame for the surroundings on the other side.
+~
+glassdoor~
+1 0 1106
+D2
+~
+~
+0 0 1129
+D3
+~
+~
+0 0 1124
+S
+T 1100
+#1126
+A Forsaken Statuette~
+   Sparkling citrine crystals cast a slight yellowish hue over the surrounding
+snow, their fragile beauty decorating the base of a curving amber sculpture that
+fills this corner of the courtyard.  Meant to represent air, one of the four
+locally worshipped elements, this artwork has no real concrete shape, abstract
+and formless in an intriguingly beautiful way.
+~
+11 8 0 0 0 0
+D2
+~
+~
+0 0 1123
+S
+T 1100
+#1127
+A Forsaken Statuette~
+   Shimmering azurite, and the royal blue of sapphires decorate this prominent
+sculpture.  Towering proudly above the blanched snow and ice of the courtyard,
+this artwork almost resembles a giant wave.  A tribute to water, one of the four
+locally worshipped elements, a light coating of snowflakes has dulled it
+considerably, subtle patterns of silver frost weaving their way across its
+smooth surface.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1123
+S
+T 1100
+#1128
+A Smashed Statuette~
+   An awesome sculpture once stood here, as evidenced by the smatterings of ruby
+and red beryl that still adorn the ground like drops of blood.  A round metal
+base stands in the midst of the snow, upon which the artwork would have once
+stood, apparently a tribute to one of the four locally worshipped elements.  
+Completely destroyed now, only the tiniest scarlet gems remain frozen in the
+surrounding ice, evidence of the desecrated statue that once stood proudly here.
+~
+11 8 0 0 0 0
+D2
+~
+~
+0 0 1125
+S
+T 1100
+#1129
+A Forsaken Statuette~
+   Smooth rocks of green malachite, and expertly cut emeralds make up the razor
+lines and geometric shapes of this large regal sculpture.  Fashioned as a
+tribute to earth and soil, one of the four locally worshipped elements, this
+artwork is still stunning despite the slight icy cracks that marr its surface
+like pale scars.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1125
+S
+T 1100
+#1130
+Upper Part of the Southwest Stair~
+   A chill air circulates slowly here, moaning as it brushes against the
+ice-frosted stone walls and creaking the cold wood of the stairs that descend
+below.  Only darkness can be seen, and the odd glimmer of a drifting snowflake.
+A subtle wooden door stands settled into the eastern wall, and a strangely
+artifical looking tapestry lies to the north.
+~
+11 8 0 0 0 0
+D0
+   A subtle tapestry guards the way, delicately hung and fitted so that upon
+closing the passage beyond cannot be seen.
+~
+tapestry~
+1 0 1154
+D1
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1139
+D5
+~
+~
+0 0 1119
+S
+#1131
+Upper Part of the Southeast Stair~
+   A black chasm yawns below, only the fragile winding wood of the stairs
+offering the hope of a safely descending passage.  Cold air whimpers as it
+circulates wearily, stirring the dust and snowflakes endlessly about this tiny
+enclosed space.  A subtle wooden door stands settled into the western wall, and
+a strangely artifical looking tapestry lies to the north.
+~
+11 8 0 0 0 0
+D0
+   A subtle tapestry guards the way, delicately hung and fitted so that upon
+closing the passage beyond cannot be seen.
+~
+tapestry~
+1 0 1156
+D3
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1151
+D5
+~
+~
+0 0 1120
+E
+tapestry~
+   A subtle tapestry guards the way to the north, delicately hung and fitted so
+that upon closing the passage beyond cannot be seen.
+~
+S
+#1132
+Upper Part of the Northeast Stair~
+   Dark, dreary boards and the cool grey of stone descend into shadow below, a
+slight creaking echoing from beneath as though some apparition wandered
+invisibly here.  Tiny specks of snow float in the chilled air, a sense of
+silence and secrecy lingering here.  A subtle wooden door stands settled into
+the western wall.
+~
+11 8 0 0 0 0
+D3
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1147
+D5
+~
+~
+0 0 1121
+S
+#1133
+Upper Part of the Northwest Stair~
+   A mournful silence seems to envelop this hidden-away corner of the castle.  
+A neglected wooden stair descends steeply below, a path for the resident
+servants to take discreetly as they went about their duties, although now it
+seems nothing lingers but the cobwebs.  A subtle wooden door stands settled into
+the eastern wall.
+~
+11 8 0 0 0 0
+D1
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1143
+D5
+~
+~
+0 0 1122
+S
+#1134
+Sphalerite Stair~
+   Tiny strands of frozen webbing decorate the black shimmering surface of this
+regal stair. Carved by some meticulous craftsman, its surface is perfectly
+smooth and its stone of the highest quality. Its dark presence stands out
+strikingly to the rest of the sparkling room, a solitary shadow amongst light
+and snow.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1135
+D3
+~
+~
+0 0 1139
+D5
+~
+~
+0 0 1114
+S
+#1135
+A Snow-covered Windlass~
+   A large barrel-shaped contraption lies on its side, wound around with thick
+metal chain that extends to the drawbridge far below. A massive crank protrudes
+from the side, webbed with frost and ancient cobwebs, evidence of its neglect
+for many years.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1138
+D1
+~
+~
+0 0 1136
+D2
+~
+~
+0 0 1137
+D3
+~
+~
+0 0 1134
+S
+#1136
+Sphalerite Stair~
+   Sleek and dark as frozen oil, a tall stair swoops gracefully to the icy floor
+below, its black reflective surface contrasting with the purity of the ice and
+snow that coat the rest of the surroundings. A tiny tinkling sound echoes
+throughout the place, as small ice shards crack and shatter with the booms of
+outside thunder.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1151
+D3
+~
+~
+0 0 1135
+D5
+~
+~
+0 0 1116
+S
+#1137
+Freezing Balcony~
+   Glassy and dangerous, the peril of remaining long on this high balcony is
+increased further by the angry winds that whip and howl against it, physical
+forces lashing at the castle as if an army of ghosts were battering to get in.
+The years of constant abuse are evidenced on the weary stone walls, which
+although sturdy, are cracked and broken in several places.  Far in the distance,
+a jagged mountain blazes with fire and smoke, a red glow facing the castle as if
+it were being watched.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1135
+S
+T 1100
+#1138
+A Chilly Oratory~
+   Breathlessly cold, this room is gleaming with white marble tiles and sharp
+icicles.  A large altar stands in the center of the room, shrouded with a deep
+layer of snow, although shadows of books can be seen concealed beneath.  A low
+rhythmic sound of murmuring fills the room, as if ghosts still chanted their
+prayers here.
+~
+11 8 0 0 0 0
+D2
+~
+~
+0 0 1135
+S
+#1139
+Icicle-adorned Hall~
+   Filled with light and a misty chill, this long hall extends to the north, a
+collection of doors visible along the western side. Large cones of ice hang
+suspended from the ceiling like glittering fangs, a cold feel of menace
+emanating from the very structure of the castle, as if it were laying
+deliberately and deceptively motionless.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1140
+D1
+~
+~
+0 0 1134
+D3
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1130
+S
+#1140
+Icicle-adorned Hall~
+   Long and forlorn, the size of this hall only emphasizes its emptiness.  
+Clear jagged spikes of ice dangle from above, shimmering with light and
+vibration.  Sparkles of frost drift wearily in the air, settling on every
+surface like ancient dust.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1141
+D2
+~
+~
+0 0 1139
+S
+#1141
+Icicle-adorned Hall~
+   A thousand glassy spears protrude from the ceiling, poised as though about to
+strike.  The air is still, and yet the icicles seem to shiver tensely, their
+glistening surfaces cracking here and there.  Splinters break and fall, a
+perpetual rain of glass tinkling against the frozen floor.  Wooden doors stand
+against the north and west.
+~
+11 8 0 0 0 0
+D0
+   A simple wooden door fits nicely into its stonework frame, offering privacy.
+~
+door~
+1 0 1142
+D2
+~
+~
+0 0 1140
+D3
+~
+door~
+1 0 1153
+S
+#1142
+The Lady's Sitting Room~
+   Smooth and soft with layers of delicate puffy snow, this room looks as though
+it has been vacant for many years, an unnatural stillness suffocating the air,
+and the unblemished surfaces of snowflakes and dust betraying a long
+abandonment.  A few indiscernible pieces of furniture lie formless and frozen
+beneath the ice, and what once must have been magnificent tapestries hang stiff
+and glazed against the walls, watching forlornly over the place.  A wooden door
+stands to the south.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1143
+D2
+   A simple wooden door fits nicely into its stonework frame, offering privacy.
+~
+door~
+1 0 1141
+S
+#1143
+The Lady's Garderobe~
+   Long, snow-covered shelves run along the walls of this room, stacked with
+piles of neatly folded clothing.  A few wooden mannequins stand half-dressed
+here and there, frozen in place and ghost-like in the eerie abandoned cold.  
+Sequins and embroidered jewels glitter through the snow and ice as though the
+last flickering embers of a slow dying fire.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1144
+D2
+~
+~
+0 0 1142
+D3
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1133
+S
+#1144
+The Lady's Bower~
+   This entire spacious room is decorated with cool hues of cream and silver as
+if moonlit.  A slight frosting of ice adds to this illusion, making every regal
+surface glisten and twinkle as if bejewelled with stars.  Beautiful but
+sorrowful, the atmosphere is cold and haunted, filled with the murmurings of
+restless whispers.
+~
+11 8 0 0 0 0
+D1
+   A subtle crack along the wall reveals the outline of a hidden door.
+~
+hiddendoor hid hidden door~
+1 1126 1145
+D3
+~
+~
+0 0 1143
+S
+T 1118
+#1145
+A Glittering Secret Chamber~
+   Frosty air circulates the room slowly, delicate snowflakes drifting aimlessly
+in through small slitted windows.  White candles line the ice-veined walls and
+frozen petals lie brittle on the floor, remnants of the romantic atmosphere that
+must have once existed here.
+~
+11 8 0 0 0 0
+D1
+   A subtle crack along the wall reveals the outline of a secret door.
+~
+secretdoor door secret sec~
+1 1127 1146
+D2
+~
+~
+0 0 1152
+D3
+   A subtle crack along the wall reveals the outline of a hidden door.
+~
+hiddendoor hid hidden door~
+1 1126 1144
+S
+T 1118
+#1146
+The Lord's Solar~
+   Large and forlorn, this room has been draped in earthy tones of green and
+russet brown.  The bright sheen of intruding snow seems an unnatural and
+unwelcome lightening of the place.  The solemn mood here almost calls for
+darkness, and the walls themselves seem to grumble with displeasure.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1147
+D3
+   A subtle crack along the wall reveals the outline of a secret door.
+~
+secretdoor door secret sec~
+2 1127 1145
+S
+T 1118
+#1147
+The Lord's Garderobe~
+   Snow-capped spikes protrude from the walls, each hung with regal garments and
+robes.  Dark shadows cast eerily about from several wooden clothes dummies, each
+frozen in place as if dutifully guarding the room.  Lower shelves contain
+leather shoes and accessories, all protectively encased in thick ice.
+~
+11 8 0 0 0 0
+D1
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1132
+D2
+~
+~
+0 0 1148
+D3
+~
+~
+0 0 1146
+S
+#1148
+The Lord's Study~
+   Although whitewashed with snow, this room smells earthy and fresh, as if it
+were part of a forest, wet with dew.  Long-ingrained aromas of spice and smoked
+herb linger subtly in the air, mixed with animal musks.  Hunter's trophies line
+the walls, antlers reaching like icicle-covered trees from the periphery.  A
+wooden door stands to the south.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1147
+D2
+   A simple wooden door fits nicely into its stonework frame, offering privacy.
+~
+door~
+1 0 1149
+S
+#1149
+Hall of Stalactites~
+   The ceiling here has sunk significantly, bowed low under the pressure of
+building snow.  As a result, the dangling icicles reach almost to the floor,
+making passage difficult, and causing it to seem as if the hall were literally
+gripped in winter's jaws.  Wooden doors stand to the north and east.
+~
+11 8 0 0 0 0
+D0
+   A simple wooden door fits nicely into its stonework frame, offering privacy.
+~
+door~
+1 0 1148
+D1
+~
+door~
+1 0 1155
+D2
+~
+~
+0 0 1150
+S
+#1150
+Hall of Stalactites~
+   Coated with a moist sheen of frozen water, the entire hall shimmers slightly,
+glowing as if with an internal light. The surface of the walls and ceiling are
+smooth and blemish-free, the only thing of note being the spears of ice that
+dangle precariously from above, threatening to fall and shatter at any moment.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1149
+D2
+~
+~
+0 0 1151
+S
+#1151
+Hall of Stalactites~
+   High above the floor, a long ceiling stretches northward, curving gently
+where it meets the walls so that the entire corridor resembles an archway. The
+smooth design is strangely contrasted by the collection of sharp spikes that
+hang menacingly, quivering every now and again as if about to drop.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1150
+D1
+   A subtle wooden door guards the way, delicately hinged and fitted so that
+upon closing it is almost seamless.
+~
+door~
+1 0 1131
+D3
+~
+~
+0 0 1136
+S
+#1152
+An Arctic Aumbry~
+   Ancient prayers murmur softly in the echoing groans of this room, wooden
+beams creaking with age and the weight of falling snow.  Icicles hang
+tremulously from various cracks in the ceiling, drops of water dangling like
+tears from their frozen tips, suspended in time.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1145
+D4
+~
+~
+0 0 1190
+S
+#1153
+Crystalline Chamber of the Princess~
+   Smooth cascades of frozen water flow over every surface in this room, caught
+motionless and sparkling for indefinite time. Cool blue shadows shift in the
+darker recesses, reflective surfaces of ice throwing any speck of light into a
+thousand different dancing shards.
+~
+11 8 0 0 0 0
+D1
+~
+door~
+1 0 1141
+D2
+~
+~
+0 0 1154
+S
+#1154
+Wintry Privy~
+   A perpetual winter lingers here, soft white snowflakes twirling lazily in the
+air, mingling with sparkles of stirring dust.  Against the western side of the
+wall, low shelving holds a covered privy.  Fortunately, the murky water splashed
+around it has long since frozen.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1153
+D2
+   A subtle tapestry guards the way, delicately hung and fitted so that upon
+closing the passage beyond cannot be seen.
+~
+tapestry~
+1 0 1130
+S
+#1155
+A Glassy Guestroom~
+   Elegant and airy, this large room has been decorated with crystal and silver
+birch.  The pale wood has been used to frame the room and fashion its
+furnishings, made even brighter by a soft carpetting of snow.  Slender
+candle-holders reach from the walls, offering warmth that no longer exists.
+~
+11 8 0 0 0 0
+D2
+~
+~
+0 0 1156
+D3
+~
+door~
+1 0 1149
+S
+#1156
+A Bitterly Cold Privy~
+   Of modest size, this room may have once felt cozy, its multiple candles and
+warm hues of wood overcome with thick blankets of snow.  Despite its clean
+apperance, an unpleasant smell wafts about the place.  This seems to emanate
+more strongly from a square block sitting against the eastern wall, a thick
+frozen board covering the hole on top of it.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1155
+D2
+   A subtle tapestry guards the way, delicately hung and fitted so that upon
+closing the passage beyond cannot be seen.
+~
+tapestry~
+1 0 1131
+S
+#1157
+Lower Part of the Northeast Stair~
+   Dank and dreary, the stones here creak as if weighed down with an unbearable
+burden.  Slivers of ice glisten here and there amongst the cobwebs like tears
+and a frozen spider hangs forlornly in the gloom, casting an eerie shadow
+against the wall.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1158
+D4
+~
+~
+0 0 1122
+S
+#1158
+A Frozen Kitchen~
+   Incandescent ice coats everything in this kitchen with a glossy shine, each
+crystalline surface twinkling blue and silver.  From the ceiling, large metal
+hooks hang ominously, probably once hung with spices and meats, now only cruel
+and glinting in the cold silence.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1159
+D2
+~
+~
+0 0 1161
+D3
+~
+~
+0 0 1157
+S
+#1159
+A Silver Scullery~
+   All of the kitchen utensils and cutlery appear to be stored here, silver
+spoons and plates bejewelled with ice.  Pots and pans lie piled in rows on the
+wide wooden shelving, polished and gleaming.  A few unwashed pieces lie
+abandoned in the corner, frozen pieces of food stuck forever in place.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1160
+D3
+~
+~
+0 0 1158
+S
+#1160
+A Chilled Pantry~
+   Lined with shelves and cobwebs, this large pantry is filled with all kinds of
+foodstuffs.  Apples, pears, and plums lie sugar-dusted with snow, breads and
+cheeses silver-shrouded and sparkling.  Onions and garlic hang frozen from the
+ceiling, and on the floor are piled turnips and potatoes.
+~
+11 8 0 0 0 0
+D3
+~
+~
+0 0 1159
+S
+#1161
+A Frozen Kitchen~
+   Eerie and silent, this large room is coated all around with ice, as if a
+flood cascaded through here at some point before freezing.  Every surface is
+gleaming and slippery, a large chopping counter extending from here into the
+east, its partially-chopped contents long since buried in snow.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1158
+D1
+~
+~
+0 0 1162
+D2
+~
+~
+0 0 1164
+D3
+~
+~
+0 0 1187
+S
+#1162
+A Frozen Kitchen~
+   Brutally cold, the air here is filled with a moist fog, swirling about the
+place as if stirred by ghosts.  A cold light fills the place, every icy surface
+giving off a lustrous hue, as if lit by some strange magic.  A long chopping
+counter extends from this room into the west, shrouded with snow and dust.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1163
+D3
+~
+~
+0 0 1161
+S
+#1163
+A Blustery Buttery~
+   A strange wind whips about this storage room, clinking and clanging against
+the bottles and barrels that lie here, as if a ghost was rattling its chains.  
+Powdered butts of beer stand against the walls, shrouded in deep layers of snow,
+and scattered shards of glass lie sprinkled across the floor, along with frozen
+droplets of wine.
+~
+11 8 0 0 0 0
+D3
+~
+~
+0 0 1162
+S
+#1164
+Collapsing Corridor~
+   The ceiling of this corridor bows along the middle, stooped under the
+pressure of thick ice and snow.  The stone walls are silver-grey and coated with
+a fine sheen of dust, threads of spider webbing drifting like living tendrils
+from the walls.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1161
+D2
+~
+~
+0 0 1165
+S
+#1165
+The Servants' Lounge~
+   This room appears to have been quite cozy at one point, dark hues of wood and
+animal furs generously adorning the place.  The wood however, has become
+silver-veined with frost, overhead rafters hung with glittering stalactites.  
+The furs that would have once been soft and warm, are frozen brittle, each fine
+hair a needle of ice.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1164
+D1
+~
+~
+0 0 1166
+D2
+~
+~
+0 0 1168
+S
+#1166
+Bards' Retreat~
+   The resting place of the bards and poets, this room is filled with musical
+instruments and basic props.  A fine smattering of hay carpets the area, though
+the arctic temperature has frozen it, making it seem as if the floor was
+overlaid with sparkling gold.  Old scrolls and storybooks lie piled against the
+walls, their contents forever sealed in ice.
+~
+11 8 0 0 0 0
+D2
+~
+~
+0 0 1167
+D3
+~
+~
+0 0 1165
+S
+#1167
+Seamstresses' Corner~
+   Pieces of clothing and fabric are hung from clotheswires, making this little
+corner seem sheltered and private.  Here must have been where the women gathered
+to sew and gossip, small stools standing powdered with snow as if cushioned.  
+Various knitting and sewing needles lie strewn about, glistening brightly
+amongst splinters of ice.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1166
+D1
+~
+~
+0 0 1169
+D3
+~
+~
+0 0 1168
+S
+#1168
+A Snowed-in Roasting Pit~
+   Although bitterly cold now, this room shows all the signs of having once been
+filled with blasting heat.  Smoke and soot have been preserved in the ice-coated
+walls, making every surface black and glossy as ink.  A large firepit lies
+abandoned to snow and ash, an unidentifiable carcass still suspended on a spit
+above it.  
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1165
+D1
+~
+~
+0 0 1167
+D3
+~
+~
+0 0 1180
+S
+#1169
+A Cracked Corridor~
+   Ancient stone creaks and groans under the weight of the castle, the strain of
+it visibly cracking several of the bricks.  Bright blossoms of ice spring from
+the fissures, further compromising the strength of these corridors, a low
+painful moan echoing down its length.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1170
+D3
+~
+~
+0 0 1167
+S
+#1170
+A Crumbling Corridor~
+   Pieces of stonework are slowly crumbling from the ceiling and walls, piles of
+powdered brick mingling with the layers of snow and dust here.  Veins of ice run
+shimmering down the length of the corridor, filling the place with fragile
+incandescent light.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1171
+D1
+~
+~
+0 0 1178
+D3
+~
+~
+0 0 1169
+S
+#1171
+A Whispering Corridor~
+   Hushed and dreary, this corridor flickers subtly as if lit with blue fire,
+sparkles of colour reflecting in the solid ice that coats its walls.  
+Whispering echoes travel down the length of this tunnel, stirring the few tufts
+of plant life that grow amongst the cracked stone, cobwebs fluttering forlornly.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1173
+D1
+~
+~
+0 0 1177
+D2
+~
+~
+0 0 1170
+D3
+~
+~
+0 0 1172
+S
+#1172
+Steward's Room~
+   Glistening wetly with frost and dewy moisture, the whole room glistens
+brightly.  This place is richly and regally decorated, only the finest woods and
+tapestries adorning the walls.  A dark crimson rug lays upon the stone floor,
+frozen into place with black glossy ice.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1171
+S
+#1173
+Corridor of Shadows~
+   The dark walls bow low as if hunched, meeting together in the wide arching
+structure of this corridor.  Large tufts of moss and bracken spring out here and
+there from the fissures in the wall, their black shadows reaching like skeletal
+hands across the white carpetted snow.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1176
+D2
+~
+~
+0 0 1171
+D3
+~
+~
+0 0 1174
+S
+#1174
+Priest's Chamber~
+   This pale, spacious room is filled with a holy glow, sparkling facets of ice
+casting rays of brightness about the place as if lit by celestial lights.  
+Silver threads of cobweb and dust dance lazily in the breeze, catching the light
+and glimmering like strands of angel's hair.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1173
+D3
+~
+~
+0 0 1175
+S
+#1175
+Treasury~
+   Thick white snow shrouds this entire room, as if to conceal the treasures
+beneath.  Piles of gold and gems glint subtly beneath their icy veil, glowing
+warmly like dying embers.  Rich hues of ruby and emerald dance in the light,
+rays of prismic colour washing over the walls.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1174
+S
+#1176
+Keeper of the Dungeon~
+   This granite room glowers with a strange menace, as if an evil presence
+watched over it from the shadows.  Dark wood, and cruel glinting metal make up
+the furnishings, even darker shadows flickering from some unnatural light
+source.  The air is chill, but colder than one would expect from mere ice and
+snow.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1181
+D3
+~
+~
+0 0 1173
+S
+#1177
+Healer's Abode~
+   The air here is crisp and fresh, cool breezes subtly refreshing as they sigh
+through the room.  An azure glow fills the room with soothing light, frozen
+crystalline patterns decorating the walls and floor, traced with delicate,
+invisible fingers.
+~
+11 8 0 0 0 0
+D3
+~
+~
+0 0 1171
+S
+#1178
+Servants' Sleeping Quarters~
+   Piles of blankets and linen lie discarded here, fresh layers of white puffy
+snow making the place appear cozier than the chill air allows.  Feathery
+snowflakes drift lazily from the ceiling, an occasional glimmering shard of ice
+tinkling as it shatters on the floor.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1179
+D3
+~
+~
+0 0 1170
+S
+#1179
+Lower Part of the Southeast Stair~
+   A chasm yawns blackly overhead, the stair winding around so that its
+destination cannot be seen.  An unnatural darkness seems to grip this little
+corner, as if it were bathed in the shadow of some unseen entity.  A faint
+breeze rustles uneasily around the walls, hushing and whispering through the
+crevasses.
+~
+11 8 0 0 0 0
+D3
+~
+~
+0 0 1178
+D4
+~
+~
+0 0 1120
+S
+#1180
+Lower Part of the Southwest Stair~
+   Curving stone walls hide any view of the upper stair, only strange shadows
+can be seen casting their darkness upon the stone floor.  The creaking of the
+castle's foundation echoes loudly in this space, the stones grey and bent as old
+men, complaining at the weight and bitter cold.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1168
+D4
+~
+~
+0 0 1119
+S
+#1181
+Misty Dungeon~
+   The forlorn grey of this corridor is made even more despondent by the cool
+droplets of mist that float aimlessly here.  The ground is shiny with
+translucent puddles of ice, and specks of dust sparkle amongst the darkness like
+tiny stars in an ocean of cold, black hopelessness.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1183
+D2
+~
+~
+0 0 1176
+D3
+~
+~
+0 0 1182
+S
+#1182
+Blood-spattered Cell~
+   Bright splatters of blood blossom from the walls and floor, preserved in
+sparkling ice as though the room was decorated with ruby gems.  Darker crimson
+and black stains underlay the red, evidence of many forgotten victims passing
+through here, lost to torture and grief.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1181
+D5
+~
+~
+0 0 1186
+S
+#1183
+Dungeon of Tears~
+   Sorrow weighs heavy in the air, low despairing moans rumbling through the
+stone, and a biting chill permeates the place.  Frozen icicles hang jagged from
+the ceiling, twinkling droplets dangling from their tips like everlasting tears.
+Subtle shudders rack the walls and floor every now and again, as if the place
+itself were weeping.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1185
+D2
+~
+~
+0 0 1181
+D3
+~
+~
+0 0 1184
+S
+#1184
+A Haunted Prison Cell~
+   Soft whispering voices waft through the air here, stirring shadows and
+glimmers of light that writhe upon the icy walls as if trying to escape.  
+Gentle breezes shift unnaturally in the near silence, as if ancient ghosts were
+still breathing in the darkness, or pacing away the time.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1183
+S
+#1185
+Lower Part of the Northeast Stair~
+   The deepest part of a long winding stair, the atmosphere here is especially
+heavy, and the air numbingly cold.  Low creaks and groans echo overhead, as if
+someone were perpetually walking up and down.  Delicate tendrils of webbing
+flutter from the walls, grasping at anything that passes.
+~
+11 8 0 0 0 0
+D3
+~
+~
+0 0 1183
+D4
+~
+~
+0 0 1121
+S
+#1186
+The Oubliette~
+   Cramped and dark, this room is a place where one could pass out of all
+memory.  It appears to be nothing more than a chasm in the earth, a yawning
+grave for the living.  Only damp, frozen soil closes in around, and above narrow
+iron grating offers the only glimpse of light.
+~
+11 8 0 0 0 0
+D4
+~
+~
+0 0 1182
+S
+#1187
+Underground Passage~
+   Damp and dank with mildew, a thick mouldy smell clings to every surface of
+this miserable tunnel.  Sprouts of blue and green fungus blossom from the ice,
+continuing to thrive despite the biting chill.  The ground is dark with dirt and
+dust that has muddied, frozen into black slush.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1161
+D2
+~
+~
+0 0 1189
+D3
+~
+~
+0 0 1188
+S
+#1188
+The Well-House~
+   This flimsy wooden shed creaks as the winds buffet it, swaying slightly from
+side to side in the perpetual storm.  A deep well is buried in the ground,
+surrounded with a low stone wall.  Within, the water has turned mostly to ice,
+but a shadowy stirring motion can still be seen beneath, as if something were
+moving in those dark waters.
+~
+11 8 0 0 0 0
+D1
+~
+~
+0 0 1187
+S
+T 1100
+#1189
+Dove-Cote~
+   A wirey cage stands hung with trembling cobwebs and icicles.  Inside,
+clusters of birds sit huddled together as if for warmth, although they have
+already been frozen solid.  Their glazed eyes are sorrowful and knowing, as if
+they have never accepted their fate.
+~
+11 8 0 0 0 0
+D0
+~
+~
+0 0 1187
+S
+T 1100
+#1190
+High in a Castle Tower~
+   This circular stone tower creaks and groans wearily, seeming almost to sway
+as the winds buffet it violently from outside.  A small oval window offers a
+bleak view over the wintry terrain, and overhead, tendrils of cobweb hang from a
+long-abandoned hatch.
+~
+11 8 0 0 0 0
+D4
+   This wooden hatch has been left to fall into disrepair, mould and ice
+rendering the wood almost rotten.
+~
+hatch~
+2 0 1191
+D5
+~
+~
+0 0 1152
+S
+#1191
+On Top of the Castle~
+   This tower feels cold and dreary, unprotected from the elements that howl
+around the castle.  Continuous storms rage and clash overhead, casting the stone
+here in alternating hues of black and silver.  The wind wails loudly, making its
+presence unescapable as it whips frantically around.
+~
+11 8 0 0 0 0
+D5
+   This wooden hatch has been left to fall into disrepair, mould and ice
+rendering the wood almost rotten.
+~
+hatch~
+2 0 1190
+S
+T 1100
+#1199
+Room for Trigs~
+   This room is just to hold a mob that can put things into containers for
+certain quests.  Please don't edit or delete it as it will stop some of the
+triggers working or cause errors.
+~
+11 8 0 0 0 0
+S
+$~

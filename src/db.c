@@ -3428,7 +3428,6 @@ void load_config( void )
   snprintf(buf, sizeof(buf), "%s/%s", DFLT_DIR, CONFIG_CONFFILE);
   if ( !(fl = fopen(CONFIG_CONFFILE, "r")) && !(fl = fopen(buf, "r")) ) {
     snprintf(buf, sizeof(buf), "No %s file, using defaults", CONFIG_CONFFILE);
-    perror(buf);
     return;
   }
 

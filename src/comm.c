@@ -345,7 +345,7 @@ int main(int argc, char **argv)
 
   /* Moved here to distinguish command line options and to show up
    * in the log if stderr is redirected to a file. */
-  log("Using %s for configuration.", CONFIG_CONFFILE);
+  log("Loading configuration.");
   log("%s", tbamud_version);
   log("%s", oasisolc_version);
   log("%s", DG_SCRIPT_VERSION);
