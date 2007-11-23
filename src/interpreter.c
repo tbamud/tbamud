@@ -1222,12 +1222,7 @@ int perform_dupe_check(struct descriptor_data *d)
   case RECON:
     write_to_output(d, "Reconnecting.\r\n");
     act("$n has reconnected.", TRUE, d->character, 0, 0, TO_ROOM);
-
-    if (GET_INVIS_LEV(d->character))
-      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "%s has reconnected. (invis %d)", GET_NAME(d->character), GET_INVIS_LEV(d->character));
-    else
-      mudlog(BRF, LVL_IMMORT, TRUE, "%s has reconnected.", GET_NAME(d->character));
-
+    mudlog(NRM, MAX(0, GET_INVIS_LEV(d->character)), TRUE, "%s [%s] has reconnected.", GET_NAME(d->character), d->host);
     if (has_mail(GET_IDNUM(d->character)))
       write_to_output(d, "You have mail waiting.\r\n");
     break;

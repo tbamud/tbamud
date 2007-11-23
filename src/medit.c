@@ -447,7 +447,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
   if (OLC_MODE(d) > MEDIT_NUMERICAL_RESPONSE) {
     i = atoi(arg);
     if (!*arg || (!isdigit(arg[0]) && ((*arg == '-') && !isdigit(arg[1])))) {
-      write_to_output(d, "Field must be numerical, try again : ");
+      write_to_output(d, "Try again : ");
       return;
     }
   } else {	/* String response. */

@@ -18,7 +18,7 @@
 #define STAMP_PRICE 150
 
 /* Maximum size of mail in bytes (arbitrary)	*/
-#define MAX_MAIL_SIZE 4096
+#define MAX_MAIL_SIZE 8192
 
 /* size of mail file allocation blocks		*/
 #define BLOCK_SIZE 100

@@ -402,7 +402,7 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal)
   if (!str || !*str)
     return;
 
-  if ((GET_PAGE_LENGTH(d->character) < 5 || GET_PAGE_LENGTH(d->character) > 254))
+  if ((GET_PAGE_LENGTH(d->character) < 5 || GET_PAGE_LENGTH(d->character) > 255))
     GET_PAGE_LENGTH(d->character) = PAGE_LENGTH;
   d->showstr_count = count_pages(str, d->character);
   CREATE(d->showstr_vector, char *, d->showstr_count);

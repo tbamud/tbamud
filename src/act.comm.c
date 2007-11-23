@@ -33,9 +33,6 @@ ACMD(do_page);
 ACMD(do_gen_comm);
 ACMD(do_qcomm);
 void handle_webster_file(void);
-ACMD(do_list_history);
-void new_hist_messg(struct descriptor_data *d, const char *msg);
-void free_hist_messg(struct descriptor_data *d);
 
 static long last_webster_teller = -1L;
 

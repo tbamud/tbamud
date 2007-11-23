@@ -1113,7 +1113,20 @@ o->contains));
             	strcpy(str, "0");
           }
           break;
-        case 'h':
+        case 'e':
+          if (!str_cmp(field, "extra")) {
+            if (subfield && *subfield) {
+              if (check_flags_by_name_ar(GET_OBJ_EXTRA(o), NUM_ITEM_FLAGS, subfield, extra_bits) > 0)
+                snprintf(str, slen, "1");
+              else
+                snprintf(str, slen, "0");
+            } else 
+              snprintf(str, slen, "0");
+          } else {
+            sprintbitarray(GET_OBJ_EXTRA(o), extra_bits, EF_ARRAY_MAX, str);
+          }
+          break;
+	case 'h':
           /* thanks to Jamie Nelson (Mordecai of 4 Dimensions MUD) */
           if (!str_cmp(field, "has_in")) {
             if (GET_OBJ_TYPE(o) == ITEM_CONTAINER)

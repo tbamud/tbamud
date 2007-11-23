@@ -246,15 +246,18 @@ void sedit_products_menu(struct descriptor_data *d)
 void sedit_compact_rooms_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
-  int i, count = 0;
+  int i;
 
   shop = OLC_SHOP(d);
   get_char_colors(d->character);
 
   clear_screen(d);
   for (i = 0; S_ROOM(shop, i) != NOWHERE; i++) {
-    write_to_output(d, "%2d - [%s%5d%s]  | %s", i, cyn, S_ROOM(shop, i), nrm,
-			!(++count % 5) ? "\r\n" : "");
+    if (real_room(S_ROOM(shop, i)) != NOWHERE) {
+      write_to_output(d, "%2d - [@c%5d@n] - @y%s@n\r\n", i, S_ROOM(shop, i), world[real_room(S_ROOM(shop, i))].name);
+    } else {
+      write_to_output(d, "%2d - [@R!Removed Room!@n]\r\n", i);
+    }
   }
   write_to_output(d, "\r\n"
 	  "%sA%s) Add a new room.\r\n"

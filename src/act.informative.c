@@ -1419,7 +1419,7 @@ ACMD(do_users)
 	continue;
       if (showclass && !(showclass & (1 << GET_CLASS(tch))))
 	continue;
-      if (GET_INVIS_LEV(ch) > GET_LEVEL(ch))
+      if (GET_INVIS_LEV(tch) > GET_LEVEL(ch))
 	continue;
 
       if (d->original)
@@ -1967,8 +1967,8 @@ ACMD(do_toggle)
     }
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_1);
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_2);
-    SET_BIT_AR(PRF_FLAGS(ch), (PRF_COLOR_1 * (tp & 1)));
-    SET_BIT_AR(PRF_FLAGS(ch), (PRF_COLOR_2 * (tp & 2) >> 1));
+    if (tp & 1) SET_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_1);
+    if (tp & 2) SET_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_2);
 
     send_to_char(ch, "Your %scolor%s is now %s.\r\n", CCRED(ch, C_SPR), CCNRM(ch, C_OFF), types[tp]);
     return;

@@ -1317,35 +1317,43 @@ ACMD(do_return)
 
 ACMD(do_load)
 {
-  char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
+  char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH], buf3[MAX_INPUT_LENGTH];
+  int i=0, n=1;
 
-  two_arguments(argument, buf, buf2);
+  one_argument(two_arguments(argument, buf, buf2), buf3);
 
   if (!*buf || !*buf2 || !isdigit(*buf2)) {
-    send_to_char(ch, "Usage: load { obj | mob } <number>\r\n");
+    send_to_char(ch, "Usage: load < obj | mob > <vnum> <number>\r\n");
     return;
   }
-  if (!is_number(buf2)) {
+  if (!is_number(buf2) || !is_number(buf3)) {
     send_to_char(ch, "That is not a number.\r\n");
     return;
   }
 
+  if (atoi(buf3) > 0 ) {
+    n = atoi(buf3);
+  } else {
+    n = 1;
+  }
+
   if (is_abbrev(buf, "mob")) {
-    struct char_data *mob;
+    struct char_data *mob=NULL;
     mob_rnum r_num;
 
     if ((r_num = real_mobile(atoi(buf2))) == NOBODY) {
       send_to_char(ch, "There is no monster with that number.\r\n");
       return;
     }
-    mob = read_mobile(r_num, REAL);
-    char_to_room(mob, IN_ROOM(ch));
+    for (i=0; i < n; i++) {
+      mob = read_mobile(r_num, REAL);
+      char_to_room(mob, IN_ROOM(ch));
 
-    act("$n makes a quaint, magical gesture with one hand.", TRUE, ch,
-	0, 0, TO_ROOM);
-    act("$n has created $N!", FALSE, ch, 0, mob, TO_ROOM);
-    act("You create $N.", FALSE, ch, 0, mob, TO_CHAR);
-    load_mtrigger(mob);
+      act("$n makes a quaint, magical gesture with one hand.", TRUE, ch, 0, 0, TO_ROOM);
+      act("$n has created $N!", FALSE, ch, 0, mob, TO_ROOM);
+      act("You create $N.", FALSE, ch, 0, mob, TO_CHAR);
+      load_mtrigger(mob);
+    }
   } else if (is_abbrev(buf, "obj")) {
     struct obj_data *obj;
     obj_rnum r_num;
@@ -1354,15 +1362,17 @@ ACMD(do_load)
       send_to_char(ch, "There is no object with that number.\r\n");
       return;
     }
-    obj = read_object(r_num, REAL);
-    if (CONFIG_LOAD_INVENTORY)
-      obj_to_char(obj, ch);
-    else
-      obj_to_room(obj, IN_ROOM(ch));
-    act("$n makes a strange magical gesture.", TRUE, ch, 0, 0, TO_ROOM);
-    act("$n has created $p!", FALSE, ch, obj, 0, TO_ROOM);
-    act("You create $p.", FALSE, ch, obj, 0, TO_CHAR);
-    load_otrigger(obj);
+    for (i=0; i < n; i++) {
+      obj = read_object(r_num, REAL);
+      if (CONFIG_LOAD_INVENTORY)
+        obj_to_char(obj, ch);
+      else
+        obj_to_room(obj, IN_ROOM(ch));
+      act("$n makes a strange magical gesture.", TRUE, ch, 0, 0, TO_ROOM);
+      act("$n has created $p!", FALSE, ch, obj, 0, TO_ROOM);
+      act("You create $p.", FALSE, ch, obj, 0, TO_CHAR);
+      load_otrigger(obj);
+    }
   } else
     send_to_char(ch, "That'll have to be either 'obj' or 'mob'.\r\n");
 }

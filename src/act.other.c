@@ -202,9 +202,8 @@ ACMD(do_steal)
   if (!AWAKE(vict))	/* Easier to steal from sleeping people. */
     percent -= 50;
 
-  /* NO NO With Imp's and Shopkeepers, and if player thieving is not allowed */
-  if (GET_LEVEL(vict) >= LVL_IMMORT || pcsteal ||
-      GET_MOB_SPEC(vict) == shop_keeper)
+  /* No stealing if not allowed. If it is no stealing from Imm's or Shopkeepers. */
+  if (GET_LEVEL(vict) >= LVL_IMMORT || pcsteal || GET_MOB_SPEC(vict) == shop_keeper)
     percent = 101;		/* Failure */
 
   if (str_cmp(obj_name, "coins") && str_cmp(obj_name, "gold")) {

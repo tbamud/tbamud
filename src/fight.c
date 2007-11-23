@@ -1005,7 +1005,7 @@ void perform_violence(void)
     /* should master auto-assist followers?  */
     if (ch->master && PRF_FLAGGED(ch->master, PRF_AUTOASSIST) &&
         FIGHTING(ch) && !FIGHTING(ch->master) &&
-        (IN_ROOM(ch->master) == IN_ROOM(ch)))
+        (IN_ROOM(ch->master) == IN_ROOM(ch)) && !IS_NPC(ch->master))
       do_assist(ch->master, GET_NAME(ch), 0, 0);
 
     hit(ch, FIGHTING(ch), TYPE_UNDEFINED);

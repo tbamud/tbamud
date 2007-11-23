@@ -5,6 +5,22 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.54
+[Nov 12 2007] - Rumble
+  Updated users command to fix GET_INVIS_LEV bug.
+  Updated the drink command to work in rooms where the sector type should logically allow it.
+[Oct 04 2007] - Rumble
+Increased the size of a mail message from 4k to 8k.
+  Updated remove_player so that the players command would not show phantom users when someone self-deletes.
+  Updated sedit_rooms_menu to prevent a crash bug when trying to display a shop with rooms that have been removed.
+[Nov 01 2007] - Rumble
+  Updated mag_objectmagic bug where action description was not being used correctly on scrolls.
+  Increased the size of MAX_RAW_INPUT_LENGTH and PLR_DESC_LENGTH.
+[Oct 19 2007] - Rumble
+  Fixed a few more 128 bit MOB_FLAGGED bugs.
+[Oct 17 2007] - Rumble
+  Fixed loading of non-128 bit prefs in load_char. (thanks Ziz)
+[Oct 15 2007] - Rumble
+  Removed some prototypes leftover from the old history command. (thanks Rhade)
 [Oct 13 2007] - Rumble
   Updated World, Help, News, Socials, and src for tbaMUD3.54rc.
   Fixed bug where toggling syslog enabled brief. (thanks Rhade)

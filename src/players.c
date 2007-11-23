@@ -374,13 +374,15 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Plyd"))	ch->player.time.played	= atoi(line);
 	else if (!strcmp(tag, "PfIn"))	POOFIN(ch)		= strdup(line);
 	else if (!strcmp(tag, "PfOt"))	POOFOUT(ch)		= strdup(line);
-        else if (!strcmp(tag, "Pref"))
+        else if (!strcmp(tag, "Pref")) {
           if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
             PRF_FLAGS(ch)[0] = asciiflag_conv(f1);
             PRF_FLAGS(ch)[1] = asciiflag_conv(f2);
             PRF_FLAGS(ch)[2] = asciiflag_conv(f3);
             PRF_FLAGS(ch)[3] = asciiflag_conv(f4);
-          }
+          } else
+	    PRF_FLAGS(ch)[0] = asciiflag_conv(f1);
+	  }
         break;
 
       case 'Q':
@@ -704,6 +706,9 @@ void remove_player(int pfilepos)
 
   if (!*player_table[pfilepos].name)
     return;
+
+  /* Update top_of_p_table. */
+  top_of_p_table -= 1;
 
   /* Unlink all player-owned files */
   for (i = 0; i < MAX_FILES; i++) {

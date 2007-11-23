@@ -240,7 +240,7 @@ int evaluate_expression(struct obj_data *obj, char *expr)
 	name[ptr - end] = '\0';
 	for (eindex = 0; *extra_bits[eindex] != '\n'; eindex++)
 	  if (!str_cmp(name, extra_bits[eindex])) {
-	    push(&vals, OBJ_FLAGGED(obj, 1 << eindex));
+	    push(&vals, OBJ_FLAGGED(obj, eindex));
 	    break;
 	  }
 	if (*extra_bits[eindex] == '\n')

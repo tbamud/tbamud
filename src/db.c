@@ -3233,7 +3233,7 @@ int check_object_spell_number(struct obj_data *obj, int val)
   int error = FALSE;
   const char *spellname;
 
-  if (GET_OBJ_VAL(obj, val) == -1)	/* i.e.: no spell */
+  if (GET_OBJ_VAL(obj, val) == -1 || GET_OBJ_VAL(obj, val) == 0) /* no spell */
     return (error);
 
   /* Check for negative spells, spells beyond the top define, and any spell 
@@ -3428,6 +3428,7 @@ void load_config( void )
   snprintf(buf, sizeof(buf), "%s/%s", DFLT_DIR, CONFIG_CONFFILE);
   if ( !(fl = fopen(CONFIG_CONFFILE, "r")) && !(fl = fopen(buf, "r")) ) {
     snprintf(buf, sizeof(buf), "No %s file, using defaults", CONFIG_CONFFILE);
+    perror(buf);
     return;
   }
 

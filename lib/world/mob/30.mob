@@ -530,32 +530,6 @@ A small, quick, loyal beagle is here.
 8 8 0
 BareHandAttack: 4
 E
-#3093
-rottweiler pets~
-the rottweiler~
-A large, loyal rottweiler is here.
-~
-   The rottweiler looks like a strong, fierce fighter.  
-~
-16398 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
-8 8 0
-BareHandAttack: 4
-E
-#3094
-wolf pets~
-the wolf~
-A large, trained wolf is here.
-~
-   The wolf looks like a strong, fearless fighter.  
-~
-16398 0 0 0 0 0 0 0 0 E
-4 19 7 0d0+40 1d2+0
-40 1600
-8 8 0
-BareHandAttack: 4
-E
 #3095
 cryogenicist cryo~
 the cryogenicist~

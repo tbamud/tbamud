@@ -386,7 +386,7 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj,
 
     act("You recite $p which dissolves.", TRUE, ch, obj, 0, TO_CHAR);
     if (obj->action_description)
-      act(obj->action_description, FALSE, ch, obj, NULL, TO_ROOM);
+      act(obj->action_description, FALSE, ch, obj, tch, TO_ROOM);
     else
       act("$n recites $p.", FALSE, ch, obj, NULL, TO_ROOM);
 

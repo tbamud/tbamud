@@ -825,8 +825,25 @@ ACMD(do_drink)
     return;
 
   if (!*arg) {
+    char buf[MAX_STRING_LENGTH];
+    switch (SECT(IN_ROOM(ch))) {
+      case SECT_WATER_SWIM:
+      case SECT_WATER_NOSWIM:
+      case SECT_UNDERWATER:
+        if ((GET_COND(ch, HUNGER) > 20) && (GET_COND(ch, THIRST) > 0)) {
+          send_to_char(ch, "Your stomach can't contain anymore!\r\n");
+        }
+        snprintf(buf, sizeof(buf), "$n takes a refreshing drink.");
+        act(buf, TRUE, ch, 0, 0, TO_ROOM);
+        send_to_char(ch, "You take a refreshing drink.\r\n");
+        gain_condition(ch, THIRST, 1);
+        if (GET_COND(ch, THIRST) > 20)
+          send_to_char(ch, "You don't feel thirsty any more.\r\n");
+        return;
+      default:
     send_to_char(ch, "Drink from what?\r\n");
     return;
+    }
   }
   if (!(temp = get_obj_in_list_vis(ch, arg, NULL, ch->carrying))) {
     if (!(temp = get_obj_in_list_vis(ch, arg, NULL, world[IN_ROOM(ch)].contents))) {
