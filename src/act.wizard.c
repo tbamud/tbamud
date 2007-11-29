@@ -1326,12 +1326,12 @@ ACMD(do_load)
     send_to_char(ch, "Usage: load < obj | mob > <vnum> <number>\r\n");
     return;
   }
-  if (!is_number(buf2) || !is_number(buf3)) {
+  if (!is_number(buf2)) {
     send_to_char(ch, "That is not a number.\r\n");
     return;
   }
 
-  if (atoi(buf3) > 0 ) {
+  if (atoi(buf3) > 0  && atoi(buf3) <= 100) {
     n = atoi(buf3);
   } else {
     n = 1;

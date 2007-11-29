@@ -488,11 +488,10 @@
 #define MAX_RAW_INPUT_LENGTH	1024  /* Max size of *raw* input */
 #define MAX_MESSAGES		60
 #define MAX_NAME_LENGTH		20
-/* ** MAX_PWD_LENGTH changed from 10 to 30 for ascii test - Sam ** */
 #define MAX_PWD_LENGTH		30
 #define MAX_TITLE_LENGTH	80
 #define HOST_LENGTH		40
-#define PLR_DESC_LENGTH		2048
+#define PLR_DESC_LENGTH		4096
 #define MAX_SKILLS		200
 #define MAX_AFFECT		32
 #define MAX_OBJ_AFFECT		6     /* Used in obj_file_elem */

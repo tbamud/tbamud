@@ -26,9 +26,9 @@ Slaive Attack~
 0 g 100
 ~
 wait 10s
-%echoaround% The carcass rises up and plants his dagger in %actor.name%'s back!
+%echoaround% %actor% The carcass rises up and plants his dagger in %actor.name%'s back!
 %send% %actor% The corpse of Slaive rises up and plants his dagger in your back!
 %damage% %actor% 100
-attack %actor%
+mkill %actor%
 ~
 $~

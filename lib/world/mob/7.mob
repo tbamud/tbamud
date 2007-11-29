@@ -124,6 +124,19 @@ A guard is standing watch here.
 8 8 1
 BareHandAttack: 10
 E
+#709
+woodswoman~
+a woodswoman~
+A woodswoman is looking for a woodsman to nag.
+~
+   She looks upset about something.    
+~
+72 0 0 0 8192 0 0 0 0 E
+7 18 5 1d1+70 1d2+1
+70 4900
+8 8 2
+BareHandAttack: 8
+E
 #710
 messenger~
 a messenger~
