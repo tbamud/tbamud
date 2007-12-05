@@ -375,7 +375,7 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
       return;
 
     case TRIGEDIT_COPY:
-      if ((i = real_room(atoi(arg))) != NOWHERE) {
+      if ((i = real_trigger(atoi(arg))) != NOWHERE) {
         trigedit_setup_existing(d, i);
       } else
         write_to_output(d, "That trigger does not exist.\r\n");

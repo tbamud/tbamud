@@ -1183,7 +1183,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     break;
 
   case OEDIT_COPY:
-    if ((number = real_object(atoi(arg))) != NOWHERE) {
+    if ((number = real_object(atoi(arg))) != NOTHING) {
       oedit_setup_existing(d, number);
     } else
       write_to_output(d, "That object does not exist.\r\n");

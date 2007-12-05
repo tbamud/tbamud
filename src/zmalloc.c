@@ -358,41 +358,41 @@ void pad_check(meminfo *m)
 
 int main()
 {
-  unsigned char * shit;
+  unsigned char * tmp;
 
   zmalloc_init();
 
 /* You should see no error here. */
-  shit = (unsigned char*)malloc(200);
-  free(shit);
+  tmp = (unsigned char*)malloc(200);
+  free(tmp);
 
 /* Multiple frees test */
-  shit = (unsigned char*)malloc(200);
-  strcpy(shit, "This should show up in the dump but truncated to MAX_ZDUMP_SIZE chars");
-  free(shit);
-  free(shit);
+  tmp = (unsigned char*)malloc(200);
+  strcpy(tmp, "This should show up in the dump but truncated to MAX_ZDUMP_SIZE chars");
+  free(tmp);
+  free(tmp);
 
 /* Free unallocated mem test */
-  shit += 4;
-  free(shit);
+  tmp += 4;
+  free(tmp);
 
 /* Unfreed mem test... You should see "UNfreed mem at line 370" (at end) because of this */
-  shit = (unsigned char*)malloc(200);
-  strcpy(shit, "This is unfreed memory!");
+  tmp = (unsigned char*)malloc(200);
+  strcpy(tmp, "This is unfreed memory!");
 
 /* Buffer overrun test... You should see an ERR:endPad here */
-  shit = (unsigned char*)malloc(200);
-  shit[202] = 0xbb;
-  free(shit);
+  tmp = (unsigned char*)malloc(200);
+  tmp[202] = 0xbb;
+  free(tmp);
 
 /* Buffer underrun test... You should see an ERR:beginPad here */
-  shit = (unsigned char*)malloc(200);
-  shit[-3] = 0x0f;
-  free(shit);
+  tmp = (unsigned char*)malloc(200);
+  tmp[-3] = 0x0f;
+  free(tmp);
 
 /* Free NULL pointer test... */
-  shit = NULL;
-  free(shit);
+  tmp = NULL;
+  free(tmp);
 
   printf("Test completed. See zmalloc.log for the messages.\n");
 

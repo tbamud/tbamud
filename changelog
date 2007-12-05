@@ -4,11 +4,21 @@ Rumble
 The Builder Academy
 builderacademy.net 9091
  
+tbaMUD 3.55
+[Dec 29 2007] - Rumble
+  Fixed top_of_helpt bug being off by one. (thanks Jamdog)
+  Fixed trigedit copy bug where it used real_room and not real_trigger. (thanks Jamdog)
+[Dec 21 2007] - Rumble
+  Fixed dg_affect crash caused by a typo on my part.
+  Renamed shit again! No really in zmalloc.c unsigned char * shit.
+[Dec 15 2007] - Rumble
+  Showvnums shows [T#] for a single attached trig or [TRIGS] for multiple attached trigs (except for rooms since there is plenty of room to list all attached trigs).
+  Fixed bug where showvnums would not show if attached. (thanks Sryth)
 tbaMUD 3.54
 [Nov 12 2007] - Rumble
   Updated users command to fix GET_INVIS_LEV bug.
   Updated the drink command to work in rooms where the sector type should logically allow it.
-[Oct 04 2007] - Rumble
+[Nov 04 2007] - Rumble
 Increased the size of a mail message from 4k to 8k.
   Updated remove_player so that the players command would not show phantom users when someone self-deletes.
   Updated sedit_rooms_menu to prevent a crash bug when trying to display a shop with rooms that have been removed.
@@ -439,6 +449,7 @@ CircleMUD 3.5
 - Added buildwalk and dig.
  
 Release history:
+Version 3.54 release: December, 2007
 Version 3.53 release: July, 2007
 Version 3.52 release: April, 2007
 Version 3.51 release: February, 2007

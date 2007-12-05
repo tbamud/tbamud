@@ -143,7 +143,7 @@ void hedit_save_internally(struct descriptor_data *d)
 
     for (i = 0; i < top_of_helpt; i++)
       new_help_table[i] = help_table[i];
-    new_help_table[++top_of_helpt] = *OLC_HELP(d);
+    new_help_table[top_of_helpt++] = *OLC_HELP(d);
     free(help_table);
     help_table = new_help_table;
   } else

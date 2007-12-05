@@ -819,8 +819,7 @@ void load_HMVS(struct char_data *ch, const char *line, int mode)
   }
 }
 
-/* until further notice, the alias->pfiles save and load functions will
- *  * function along side the old seperate alias file load, for compatibility. */
+/* Aliases are now saved in pfiles only. */
 void write_aliases_ascii(FILE *file, struct char_data *ch)
 {
   struct alias_data *temp;

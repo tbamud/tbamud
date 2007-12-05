@@ -19,7 +19,6 @@
 #define MAX_PWD_LENGTH		30  /* Used in char_file_u *DO*NOT*CHANGE* */
 #define MAX_TITLE_LENGTH	80  /* Used in char_file_u *DO*NOT*CHANGE* */
 #define HOST_LENGTH		40  /* Used in char_file_u *DO*NOT*CHANGE* */
-#define PLR_DESC_LENGTH		512 /* Used in char_file_u *DO*NOT*CHANGE* */
 #define MAX_TONGUE		3   /* Used in char_file_u *DO*NOT*CHANGE* */
 #define MAX_SKILLS		200 /* Used in char_file_u *DO*NOT*CHANGE* */
 #define MAX_AFFECT		32  /* Used in char_file_u *DO*NOT*CHANGE* */

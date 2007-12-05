@@ -133,8 +133,12 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) {
       send_to_char(ch, "[%d] ", GET_OBJ_VNUM(obj));
-      if (SCRIPT(obj))
-        send_to_char(ch, "[T%d] ", obj->proto_script->vnum);
+      if (SCRIPT(obj)) { 
+        if (!TRIGGERS(SCRIPT(obj))->next) 
+          send_to_char(ch, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(obj)))); 
+        else 
+          send_to_char(ch, "[TRIGS] ");
+      }
     }
     send_to_char(ch, "%s", CCGRN(ch, C_NRM));
     send_to_char(ch, "%s", obj->description);
@@ -143,8 +147,12 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
   case SHOW_OBJ_SHORT:
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) {
       send_to_char(ch, "[%d] ", GET_OBJ_VNUM(obj));
-      if (SCRIPT(obj))
-        send_to_char(ch, "[T%d] ", obj->proto_script->vnum);
+      if (SCRIPT(obj)) { 
+        if (!TRIGGERS(SCRIPT(obj))->next) 
+          send_to_char(ch, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(obj)))); 
+        else 
+          send_to_char(ch, "[TRIGS] "); 
+      }
     }
     send_to_char(ch, "%s", obj->short_description);
     break;
@@ -325,10 +333,14 @@ void list_one_char(struct char_data *i, struct char_data *ch)
     " is standing here."
   };
 
-  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IS_NPC(i)) {
-    send_to_char(ch, "[%d] ", GET_MOB_VNUM(i));
-    if (SCRIPT(i))
-      send_to_char(ch, "[T%d] ", i->proto_script->vnum);
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IS_NPC(i)) { 
+    send_to_char(ch, "[%d] ", GET_MOB_VNUM(i)); 
+    if SCRIPT(i) { 
+      if (!TRIGGERS(SCRIPT(i))->next) 
+        send_to_char(ch, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(i)))); 
+      else 
+        send_to_char(ch, "[TRIGS] "); 
+    } 
   }
 
   if (IS_NPC(i) && i->player.long_descr && GET_POS(i) == GET_DEFAULT_POS(i)) {
@@ -483,7 +495,9 @@ ACMD(do_exits)
 
 void look_at_room(struct char_data *ch, int ignore_brief)
 {
+  trig_data *t;
   struct room_data *rm = &world[IN_ROOM(ch)];
+  
   if (!ch->desc)
     return;
 
@@ -500,14 +514,17 @@ void look_at_room(struct char_data *ch, int ignore_brief)
 
     sprintbitarray(ROOM_FLAGS(IN_ROOM(ch)), room_bits, RF_ARRAY_MAX, buf);
     send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
-
-    if (rm->proto_script)
-      send_to_char(ch, "[T%d] ", rm->proto_script->vnum);
-      
-    send_to_char(ch, "%s [ %s]", world[IN_ROOM(ch)].name, buf);
-  } else
+    send_to_char(ch, "%s [ %s] ", world[IN_ROOM(ch)].name, buf);
+    
+    if (SCRIPT(rm)) {
+      send_to_char(ch, "[T");
+      for (t = TRIGGERS(SCRIPT(rm)); t; t = t->next)
+        send_to_char(ch, " %d", GET_TRIG_VNUM(t));
+      send_to_char(ch, "]");
+    }
+  } 
+  else
     send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
-
   send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
 
   if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
@@ -1066,7 +1083,7 @@ ACMD(do_help)
     send_to_char(ch, "There is no help on that word.\r\n");
     mudlog(NRM, MAX(LVL_IMPL, GET_INVIS_LEV(ch)), TRUE,
       "%s tried to get help on %s", GET_NAME(ch), argument);
-    for (i = 0; i <= top_of_helpt; i++)  {
+    for (i = 0; i < top_of_helpt; i++)  {
       if (help_table[i].min_level > GET_LEVEL(ch))
         continue;
       /* To help narrow down results, if they don't start with the same letters, move on. */
@@ -1567,8 +1584,12 @@ void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
   else
     send_to_char(ch, "%33s", " - ");
 
-  if (obj->proto_script)
-    send_to_char(ch, "[T%d]", obj->proto_script->vnum);
+  if (SCRIPT(obj)) { 
+    if (!TRIGGERS(SCRIPT(obj))->next) 
+      send_to_char(ch, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(obj)))); 
+    else 
+      send_to_char(ch, "[TRIGS] "); 
+  } 
 
   if (IN_ROOM(obj) != NOWHERE)
     send_to_char(ch, "[%5d] %s%s\r\n", GET_ROOM_VNUM(IN_ROOM(obj)), world[IN_ROOM(obj)].name, QNRM);
@@ -1611,9 +1632,13 @@ void perform_immort_where(struct char_data *ch, char *arg)
         found = 1;
         send_to_char(ch, "M%3d. %-25s%s - [%5d] %-25s%s", ++num, GET_NAME(i), QNRM,
                GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM);
-        if (SCRIPT(i))
-          send_to_char(ch, "[T%5d] ", i->proto_script->vnum);
-        send_to_char(ch, "%s\r\n", QNRM);
+        if (IS_NPC(i) && SCRIPT(i)) { 
+          if (!TRIGGERS(SCRIPT(i))->next) 
+            send_to_char(ch, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(i)))); 
+          else 
+            send_to_char(ch, "[TRIGS] "); 
+        } 
+      send_to_char(ch, "%s\r\n", QNRM);
       }
     for (num = 0, k = object_list; k; k = k->next)
       if (CAN_SEE_OBJ(ch, k) && isname(arg, k->name)) {

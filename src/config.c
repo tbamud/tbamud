@@ -299,6 +299,6 @@ int use_autowiz = YES;
  * levels below the level you specify will go on the immlist instead.) */
 int min_wizlist_lev = LVL_GOD;
 
-/* To mimic stack behavior set to NO. To allow mortals to see doors in exits
+/* To mimic stock behavior set to NO. To allow mortals to see doors in exits
  * set to YES. */
 int display_closed_doors = YES;

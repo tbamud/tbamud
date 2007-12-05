@@ -238,7 +238,7 @@ void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
     af.bitvector = 0;
   } else {
     af.location = 0;
-    af.bitvector = (i);
+    af.bitvector = i;
   }
 
   affect_to_char(ch, &af);
