@@ -711,7 +711,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     stop_follower(victim);
 
   /* If the attacker is invisible, he becomes visible */
-  if (AFF_FLAGGED(ch, AFF_INVISIBLE | AFF_HIDE))
+  if (AFF_FLAGGED(ch, AFF_INVISIBLE) || AFF_FLAGGED(ch, AFF_HIDE))
     appear(ch);
 
   /* Cut damage in half if victim has sanct, to a minimum 1 */

@@ -208,6 +208,7 @@
 #define PRF_AUTOSPLIT    28   /* Split gold with group */
 #define PRF_AUTOSAC      29   /* Sacrifice a corpse */
 #define PRF_AUTOASSIST   30   /* Auto-assist toggle */
+#define NUM_PRF_FLAGS    31
 
 /* Affect bits: used in char_data.char_specials.saved.affected_by */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
@@ -431,7 +432,7 @@
 /* 128 Bits */
 #define RF_ARRAY_MAX    4
 #define PM_ARRAY_MAX    4
-#define PR_ARRAY_MAX    4
+#define PR_ARRAY_MAX    NUM_PRF_FLAGS / 32 + 1 
 #define AF_ARRAY_MAX    4
 #define TW_ARRAY_MAX    4
 #define EF_ARRAY_MAX    4
@@ -767,7 +768,7 @@ struct player_special_data_saved {
    byte freeze_level;           /* Level of god who froze char, if any */
    sh_int invis_level;          /* level of invisibility */
    room_vnum load_room;         /* Which room to place char in */
-   int pref[PR_ARRAY_MAX];      /* preference flags for players */
+   int pref[NUM_PRF_FLAGS /32 + 1]; /* preference flags for players */
    ubyte bad_pws;               /* number of bad password attemps */
    sbyte conditions[3];         /* Drunk, hunger, thirst */
    struct txt_block *comm_hist[NUM_HIST]; /* Player's comms history */

@@ -362,13 +362,12 @@ void affect_join(struct char_data *ch, struct affected_type *af,
     if ((hjp->type == af->type) && (hjp->location == af->location)) {
       if (add_dur)
 	af->duration += hjp->duration;
-      if (avg_dur)
-	af->duration /= 2;
-
+      else if (avg_dur)
+        af->duration = (af->duration+hjp->duration)/2;
       if (add_mod)
 	af->modifier += hjp->modifier;
-      if (avg_mod)
-	af->modifier /= 2;
+      else if (avg_mod)
+        af->modifier = (af->modifier+hjp->modifier)/2;
 
       affect_remove(ch, hjp);
       affect_to_char(ch, af);

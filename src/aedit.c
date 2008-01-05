@@ -69,7 +69,7 @@ ACMD(do_oasis_aedit)
 
   if (!str_cmp("save", arg)) {
     mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves socials.", GET_NAME(ch));
-    send_to_char(ch, "Writing social file..\r\n");
+    send_to_char(ch, "Writing social file.\r\n");
     aedit_save_to_disk(d);
     send_to_char(ch, "Done.\r\n");
     return;

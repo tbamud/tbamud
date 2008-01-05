@@ -684,12 +684,6 @@ cpp_extern const struct wis_app_type wis_app[] = {
   {7}  /* wis = 25 */
 };
 
-const char *npc_class_types[] = {
-  "Normal",
-  "Undead",
-  "\n"
-};
-
 int rev_dir[] =
 {
   2,

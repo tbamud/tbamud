@@ -1772,7 +1772,7 @@ ACMD(do_toggle)
 {
   char buf2[4], arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
   int toggle, tp, wimp_lev, result = 0, len = 0;
-  const char *types[] = { "off", "brief", "normal", "on", "\n" };
+  const char *types[] = { "OFF", "BRIEF", "NORMAL", "ON", "\n" };
 
   const struct {
     char *command;
@@ -1987,7 +1987,7 @@ ACMD(do_toggle)
     }
 
     if (((tp = search_block(arg2, types, FALSE)) == -1)) {
-      send_to_char(ch, "Usage: toggle color { Off | Normal | On }\r\n");
+      send_to_char(ch, "Usage: toggle color { Off | Brief | Normal | On }\r\n");
       return;
     }
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_1);

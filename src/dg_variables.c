@@ -871,31 +871,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             snprintf(str, slen, "%d", (IN_ROOM(c)!= NOWHERE) ? world[IN_ROOM(c)].number : 0);
 #endif
           }
-#ifdef GET_RACE
-          else if (!str_cmp(field, "race")) {
-            if IS_NPC(c) {
-              *str='\0';
-            } else {
-              sprinttype(GET_RACE(c), race_types, str, slen);
-            }
-          }
-#endif
 
-#ifdef RIDING
-          else if (!str_cmp(field, "riding")) {
-            if (RIDING(c))
-              snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(RIDING(c)));
-            else *str = '\0';
-          }
-#endif
-
-#ifdef RIDDEN_BY
-          else if (!str_cmp(field, "ridden_by")) {
-            if (RIDDEN_BY(c))
-              snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(RIDDEN_BY(c)));
-            else *str = '\0';
-          }
-#endif
           break;
         case 's':
           if (!str_cmp(field, "sex"))

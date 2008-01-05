@@ -71,7 +71,7 @@ void affect_update(void)
       if (af->duration >= 1)
 	af->duration--;
       else if (af->duration == -1)	/* No action */
-	af->duration = -1;	/* GODs only! unlimited */
+	;
       else {
 	if ((af->type > 0) && (af->type <= MAX_SPELLS))
 	  if (!af->next || (af->next->type != af->type) ||

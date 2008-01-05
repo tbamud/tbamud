@@ -810,9 +810,9 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
   send_to_char(ch, "L-Des: %s", k->player.long_descr ? k->player.long_descr : "<None>\r\n");
   send_to_char(ch, "D-Des: %s", k->player.description ? k->player.description : "<None>\r\n");
 
-  sprinttype(k->player.chclass, IS_NPC(k) ? npc_class_types : pc_class_types, buf, sizeof(buf));
-  send_to_char(ch, "%sClass: %s, Lev: [%s%2d%s], XP: [%s%7d%s], Align: [%4d]\r\n",
-	IS_NPC(k) ? "Monster " : "", buf, CCYEL(ch, C_NRM), GET_LEVEL(k), CCNRM(ch, C_NRM),
+  sprinttype(k->player.chclass, pc_class_types, buf, sizeof(buf));
+  send_to_char(ch, "%s%s, Lev: [%s%2d%s], XP: [%s%7d%s], Align: [%4d]\r\n",
+	IS_NPC(k) ? "Mobile" : "Class: ", IS_NPC(k) ? "" : buf, CCYEL(ch, C_NRM), GET_LEVEL(k), CCNRM(ch, C_NRM),
 	CCYEL(ch, C_NRM), GET_EXP(k), CCNRM(ch, C_NRM), GET_ALIGNMENT(k));
 
   if (!IS_NPC(k)) {
@@ -943,7 +943,7 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
 	if (aff->modifier)
 	  send_to_char(ch, ", ");
 
-	sprintbit(aff->bitvector, affected_bits, buf, sizeof(buf));
+        strcpy(buf, affected_bits[aff->bitvector]);
         send_to_char(ch, "sets %s", buf);
       }
       send_to_char(ch, "\r\n");
@@ -1289,7 +1289,8 @@ ACMD(do_return)
 {
   if (!IS_NPC(ch) && !ch->desc->original) {
     do_cheat(ch);
-    run_autowiz();
+    if (!PLR_FLAGGED(ch, PLR_NOWIZLIST))
+      run_autowiz();
   }
 
   if (ch->desc && ch->desc->original) {
@@ -1556,7 +1557,8 @@ ACMD(do_advance)
     REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_NOHASSLE);
     REMOVE_BIT_AR(PLR_FLAGS(victim), PRF_HOLYLIGHT);
     REMOVE_BIT_AR(PLR_FLAGS(victim), PRF_SHOWVNUMS);
-    run_autowiz();
+    if (!PLR_FLAGGED(victim, PLR_NOWIZLIST))
+      run_autowiz();
   } else if (oldlevel < LVL_IMMORT && newlevel >= LVL_IMMORT) {
     SET_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
     SET_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
@@ -1564,7 +1566,8 @@ ACMD(do_advance)
     SET_BIT_AR(PRF_FLAGS(victim), PRF_AUTOEXIT);
         for (i = 1; i <= MAX_SKILLS; i++)
           SET_SKILL(victim, i, 100);
-    run_autowiz();
+    if (!PLR_FLAGGED(victim, PLR_NOWIZLIST))
+      run_autowiz();
    GET_OLC_ZONE(victim) = NOWHERE;
   }
 
@@ -1615,7 +1618,7 @@ ACMD(do_restore)
 
 void perform_immort_vis(struct char_data *ch)
 {
-  if (GET_INVIS_LEV(ch) == 0 && !AFF_FLAGGED(ch, AFF_HIDE | AFF_INVISIBLE)) {
+  if ((GET_INVIS_LEV(ch) == 0) && (!AFF_FLAGGED(ch, AFF_HIDE) || !AFF_FLAGGED(ch, AFF_INVISIBLE))) {
     send_to_char(ch, "You are already fully visible.\r\n");
     return;
   }
@@ -2304,7 +2307,7 @@ ACMD(do_wizutil)
 	      GET_DEX(vict), GET_CON(vict), GET_CHA(vict));
       break;
     case SCMD_PARDON:
-      if (!PLR_FLAGGED(vict, PLR_THIEF | PLR_KILLER)) {
+      if (!PLR_FLAGGED(vict, PLR_THIEF) || !PLR_FLAGGED(vict, PLR_KILLER)) {
 	send_to_char(ch, "Your victim is not flagged.\r\n");
 	return;
       }
@@ -3475,9 +3478,8 @@ ACMD (do_zcheck)
           len += snprintf(buf + len, sizeof(buf) - len,
                           "- Needs to be fixed - %sAutogenerate!%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
 
-        if (MOB_FLAGGED(mob, MOB_AGGRESSIVE) &&
-            MOB_FLAGGED(mob, MOB_AGGR_GOOD | MOB_AGGR_EVIL | MOB_AGGR_NEUTRAL) && (found=1))
-          len += snprintf(buf + len, sizeof(buf) - len,
+        if (MOB_FLAGGED(mob, MOB_AGGRESSIVE) && (MOB_FLAGGED(mob, MOB_AGGR_GOOD) || MOB_FLAGGED(mob, MOB_AGGR_EVIL) || MOB_FLAGGED(mob, MOB_AGGR_NEUTRAL)) && (found=1))
+	 len += snprintf(buf + len, sizeof(buf) - len,
           "- Both aggresive and agressive to align.\r\n");
 
         if ((GET_GOLD(mob) > MAX_GOLD_ALLOWED) && (found=1))
@@ -3490,8 +3492,8 @@ ACMD (do_zcheck)
           len += snprintf(buf + len, sizeof(buf) - len,
                           "- Has %d experience (limit: %d)\r\n",
                               GET_EXP(mob), MAX_EXP_ALLOWED);
-        if (AFF_FLAGGED(mob, AFF_GROUP | AFF_CHARM | AFF_POISON) && (found = 1))
-          len += snprintf(buf + len, sizeof(buf) - len,
+        if ((AFF_FLAGGED(mob, AFF_GROUP) || AFF_FLAGGED(mob, AFF_CHARM) || AFF_FLAGGED(mob, AFF_POISON)) && (found = 1))
+	  len += snprintf(buf + len, sizeof(buf) - len,
                           "- Has illegal affection bits set (%s %s %s)\r\n",
                               AFF_FLAGGED(mob, AFF_GROUP) ? "GROUP" : "",
                               AFF_FLAGGED(mob, AFF_CHARM) ? "CHARM" : "",

@@ -5,6 +5,16 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.55
+[Jan 05 2008] - Rumble
+  Fixed improper display of affections in stat player. (thanks Rhade)
+[Jan 04 2008] - Rumble
+  Removed the unused npc_class_types.
+  Fix to affect_update and affect_join. (thanks Kyle and Jamdog)
+[ 2007] - Rumble
+  Removed the clsolc command. This option can still be set via "toggle clsolc."
+[Jan 03 2007] - Rumble
+  PLR_NOWIZLIST actually used now to prevent run_autowiz.
+  Several _FLAGGED checks that I fixed for 128 bit in the wrong SVN directory and failed to committ.
 [Dec 29 2007] - Rumble
   Fixed top_of_helpt bug being off by one. (thanks Jamdog)
   Fixed trigedit copy bug where it used real_room and not real_trigger. (thanks Jamdog)
