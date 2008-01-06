@@ -943,8 +943,7 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
 	if (aff->modifier)
 	  send_to_char(ch, ", ");
 
-        strcpy(buf, affected_bits[aff->bitvector]);
-        send_to_char(ch, "sets %s", buf);
+        send_to_char(ch, "sets %s", affected_bits[aff->bitvector]);
       }
       send_to_char(ch, "\r\n");
     }

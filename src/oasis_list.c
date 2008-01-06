@@ -460,6 +460,10 @@ void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vn
     }
   }
 
-  if (counter == 0)
-    send_to_char(ch, "No triggers found for zone #%d\r\n", zone_table[rnum].number);
+ if (counter == 0) { 
+   if (rnum == NOWHERE) 
+     send_to_char(ch, "No triggers found from %d to %d\r\n", vmin, vmax); 
+   else 
+     send_to_char(ch, "No triggers found for zone #%d\r\n", zone_table[rnum].number); 
+  } 
 }

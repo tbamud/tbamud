@@ -1772,7 +1772,7 @@ ACMD(do_toggle)
 {
   char buf2[4], arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
   int toggle, tp, wimp_lev, result = 0, len = 0;
-  const char *types[] = { "OFF", "BRIEF", "NORMAL", "ON", "\n" };
+  const char *types[] = { "off", "brief", "normal", "on", "\n" };
 
   const struct {
     char *command;

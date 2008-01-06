@@ -5,6 +5,9 @@ The Builder Academy
 builderacademy.net 9091
  
 tbaMUD 3.55
+[Jan 06 2008] - Rumble
+  Removed break in oedit_disp_val1_menu ITEM_NOTE that caused a delay. (thanks Rhade)
+  Fixed tlist when specifying a range. (thanks Rhade)
 [Jan 05 2008] - Rumble
   Fixed improper display of affections in stat player. (thanks Rhade)
 [Jan 04 2008] - Rumble
