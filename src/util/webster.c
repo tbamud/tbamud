@@ -26,10 +26,10 @@ int main(int argc, char **argv)
     return 0; /* no word/pid given */
   }
   pid = atoi(argv[2]);
-  
+
   snprintf(buf, sizeof(buf), 
-    "wget http://www.thefreedictionary.com/%s"
-    " -Owebster.html -o/dev/null", argv[1]);
+    "lynx -accept_all_cookies -source http://www.thefreedictionary.com/%s"
+    " >webster.html", argv[1]);
   system(buf);
 
   parse_webster_html(argv[1]);
@@ -55,7 +55,7 @@ void parse_webster_html(char *arg) {
     return;
   }
 
-  unlink("webster.html"); /* We can still read */
+//  unlink("webster.html"); /* We can still read */
   
   for ( ; get_line(infile, buf)!=0; ) {
     
