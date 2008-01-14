@@ -107,7 +107,7 @@ void parse_webster_html(char *arg) {
      			q = outline;
      			
      			while (*p != '<')
-     			  *q++ = p++;
+     			  *q++ = *p++;
      			  
        		if (!strncmp(p, "<td ", 4))
        			*q++ = '\n';
