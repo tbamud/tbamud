@@ -28,11 +28,11 @@ int main(int argc, char **argv)
   pid = atoi(argv[2]);
   
   snprintf(buf, sizeof(buf), 
-    "wget http://www.m-w.com/cgi-bin/dictionary?book=Dictionary\\&va=%s"
+    "wget http://www.thefreedictionary.com/%s"
     " -Owebster.html -o/dev/null", argv[1]);
   system(buf);
 
-  parse_webster_html();
+  parse_webster_html(argv[1]);
 
   if (pid)
     kill(pid, SIGUSR2);
@@ -40,9 +40,9 @@ int main(int argc, char **argv)
   return (0);
 }
 
-void parse_webster_html(void) {
+void parse_webster_html(char *arg) {
   FILE *infile, *outfile;
-  char scanbuf[MEM_USE], *p, *q;
+  char scanbuf[MEM_USE], outline[MEM_USE], *p, *q;
   
   outfile = fopen("websterinfo", "w");
   if (!outfile) 
@@ -58,78 +58,81 @@ void parse_webster_html(void) {
   unlink("webster.html"); /* We can still read */
   
   for ( ; get_line(infile, buf)!=0; ) {
-    p = buf;
-    skip_spaces(&p);
-    /* <PRE> tag means word wasn't found in dictionary */
-    /* list on the form 
+    
+    if (strncmp(buf, "<script>write_ads(AdsNum, 0)</script>", 37) != 0)
+    	continue; // read until we hit the line with results in it.
+    
+    p = buf+37;
 
-	 1. <a href="/cgi-bin/dictionary?va=XXX">XXX</a>
-	 2. <a href="/cgi-bin/dictionary?va=YYY">YYY</a>
-         ...
-         </PRE>
-       follows */
-    if (!strncmp(p, "<PRE>", 5)) {
-      fprintf(outfile, "Did you really mean any of these instead ?\n");
-      for (; get_line(infile, buf) != 0;) {
-        p = buf;
-        skip_spaces(&p);
-        if (!strncmp(p, "</PRE>", 6))
-          break;
-        p = strchr(p, '>');
-        p++; /* p now points to first letter of word. */
-        q = strchr(p, '<');
-        *q = '\0';
-        fprintf(outfile, "%s\n", p);
-      }
-      break;
-    } else if (!strncmp(p, "Main Entry:", 10)) {
-      int coloumn = 0;
-      /* Date: means word was found in dictionary */
-      /* M-W has changed their site layout, so we need to find the correct line :*/
-      while (*p != '<') {
-        get_line(infile, buf);
-        p = buf;
-        skip_spaces(&p);
-      }  
-      /* The next line contains ALL info on that word. 
-       * Including html tags, this can be very much 
-       */
-      fprintf(outfile, "That means:\n");
-      /* remove all tags from this line - ALL tags */
-      for (q = scanbuf; *p && q - scanbuf < sizeof(scanbuf); p++) {
-        if (*p == '&') {
-          /* &gt; and &lt; translates into '"' */
-          if ((*(p+1) == 'l' || *(p+1) == 'g') && *(p+2) == 't' && *(p+3) == ';') {
-            *q++='"';
-            coloumn++;
-            p += 3;
-            continue;
-          }
-        }
-        if (*p == '<') {
-          /* <br> tags translate into '\n' */
-          if (*(p+1) == 'b' && *(p+2) == 'r') {
-            *q++='\n';
-            coloumn = 0;
-          }
-          for (; *p && *p != '>';p++) ;
-          continue;
-        }
-        if (isspace(*p) && coloumn > 70) { /* wrap at first space after 70th coloumn */
-          *q++='\n';
-          coloumn = 0;
-          continue;
-        }
-          
-        *q++ = *p;
-        coloumn++;
-      }
-      *q = '\0';
+    if (strncmp(p, "<br>", 4) == 0)
+    	{
+    		fprintf(outfile, "That word could not be found.\n");
+    		goto end;
+    	}
+		else if (strncmp(p, "<div ", 5) == 0) // definition is here, all in one line.
+			{
+        while (strncmp(p, "ds-list", 7)) //seek to the definition
+          p++;
+        
+        strncpy(scanbuf, p, sizeof(scanbuf)); // strtok on a copy.
+        
+        p = strtok(scanbuf, ">"); // chop the line at the end of tags: <br><b>word</b> becomes "<br>" "<b>" "word</b>"
+        while (p != NULL)
+        {
+     			q = outline;
+     			
+     			while (*p != '<')
+     			  q++ = p++;
+     			  
+       		if (!strncmp(p, "<br>", 4) || !strncmp(p, "<p>", 3) || !strncmp(p, "<div class=\"sds-list\">", 24) || !strncmp(p, "<div class=\"sds-list\">", 25))
+       			q++ = '\n';
+        	  // if it's not a <br> tag or a <div class="sds-list"> or <div class="ds-list"> tag, ignore it.
 
-      fprintf(outfile, "%s\n", scanbuf);
-      break;
+					q++='\0';
+					fprintf(outfile, "%s", outline);
+					
+					if (!strncmp(p, "</table>", 8))
+						goto end;
+						
+				  p = strtok(NULL, ">");        	  
+       	}	
+			}
+		else if (strncmp(p, "<div>", 5) == 0) // not found, but suggestions are ample:
+			{
+        strncpy(scanbuf, p, sizeof(scanbuf)); // strtok on a copy.
+        
+        p = strtok(scanbuf, ">"); // chop the line at the end of tags: <br><b>word</b> becomes "<br>" "<b>" "word</b>"
+        while (p != NULL)
+        {
+     			q = outline;
+     			
+     			while (*p != '<')
+     			  q++ = p++;
+     			  
+       		if (!strncmp(p, "<td ", 4))
+       			q++ = '\n';
+        	  // if it's not a <td> tag, ignore it.
+
+					q++='\0';
+					fprintf(outfile, "%s", outline);
+					
+					if (!strncmp(p, "</table>", 8))
+						goto end;
+						
+				  p = strtok(NULL, ">");        	  
+       	}	
+			}
+		else
+			{
+				// weird.. one of the above should be correct.
+				fprintf(outfile, "It would appear that the free online dictionary has changed their format.\n"
+				                 "Sorry, but you might need a webrowser instead.\n\n"
+				                 "See http://www.thefreedictionary.com/%s", arg);
+				goto end;
+		  }
     }
-  }
+    
+end:
   fclose(infile);
  
   fprintf(outfile, "~");
