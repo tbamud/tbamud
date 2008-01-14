@@ -55,7 +55,7 @@ void parse_webster_html(char *arg) {
     return;
   }
 
-//  unlink("webster.html"); /* We can still read */
+  unlink("webster.html"); /* We can still read */
   
   for ( ; get_line(infile, buf)!=0; ) {
     
