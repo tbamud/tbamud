@@ -78,6 +78,9 @@ void parse_webster_html(char *arg) {
         
         p = strtok(scanbuf, ">"); // chop the line at the end of tags: <br><b>word</b> becomes "<br" "<b" "word</b"
         p = strtok(NULL, ">"); // skip the rest of this tag.
+
+        fprintf(outfile, "Info on: %s\n\n", arg);
+
         while (1)
         {
      			q = outline;
@@ -87,7 +90,7 @@ void parse_webster_html(char *arg) {
      				assert(p < scanbuf+sizeof(scanbuf));
      			  *q++ = *p++;
      			 } 
-       		if (!strncmp(p, "<br", 3) || !strncmp(p, "<p", 2) || !strncmp(p, "<div class=\"sds-list\"", 23) || !strncmp(p, "<div class=\"sds-list\"", 24))
+       		if (!strncmp(p, "<br", 3) || !strncmp(p, "<p", 2) || !strncmp(p, "<div class=\"ds-list\"", 23) || !strncmp(p, "<div class=\"sds-list\"", 24))
        			*q++ = '\n';
         	  // if it's not a <br> tag or a <div class="sds-list"> or <div class="ds-list"> tag, ignore it.
 
@@ -106,6 +109,7 @@ void parse_webster_html(char *arg) {
         
         p = strtok(scanbuf, ">"); // chop the line at the end of tags: <br><b>word</b> becomes "<br>" "<b>" "word</b>"
         p = strtok(NULL, ">"); // skip the rest of this tag.
+        
         while (1)
         {
      			q = outline;
