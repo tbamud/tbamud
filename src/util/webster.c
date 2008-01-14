@@ -18,7 +18,7 @@ char buf[MEM_USE];
 
 int get_line(FILE * fl, char *buf);
 void skip_spaces(char **string);
-void parse_webster_html(void);
+void parse_webster_html(char *arg);
 int main(int argc, char **argv)
 {
   int pid = 0;
@@ -82,13 +82,13 @@ void parse_webster_html(char *arg) {
      			q = outline;
      			
      			while (*p != '<')
-     			  q++ = p++;
+     			  *q++ = *p++;
      			  
        		if (!strncmp(p, "<br>", 4) || !strncmp(p, "<p>", 3) || !strncmp(p, "<div class=\"sds-list\">", 24) || !strncmp(p, "<div class=\"sds-list\">", 25))
-       			q++ = '\n';
+       			*q++ = '\n';
         	  // if it's not a <br> tag or a <div class="sds-list"> or <div class="ds-list"> tag, ignore it.
 
-					q++='\0';
+					*q++='\0';
 					fprintf(outfile, "%s", outline);
 					
 					if (!strncmp(p, "</table>", 8))
