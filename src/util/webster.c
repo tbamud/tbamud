@@ -76,15 +76,17 @@ void parse_webster_html(char *arg) {
         
         strncpy(scanbuf, p, sizeof(scanbuf)); // strtok on a copy.
         
-        p = strtok(scanbuf, ">"); // chop the line at the end of tags: <br><b>word</b> becomes "<br>" "<b>" "word</b>"
-        while (p != NULL)
+        p = strtok(scanbuf, ">"); // chop the line at the end of tags: <br><b>word</b> becomes "<br" "<b" "word</b"
+        while (TRUE)
         {
      			q = outline;
      			
      			while (*p != '<')
+     			{
+     				assert(p < scanbuf+sizeof(scanbuf));
      			  *q++ = *p++;
-     			  
-       		if (!strncmp(p, "<br>", 4) || !strncmp(p, "<p>", 3) || !strncmp(p, "<div class=\"sds-list\">", 24) || !strncmp(p, "<div class=\"sds-list\">", 25))
+     			 } 
+       		if (!strncmp(p, "<br", 3) || !strncmp(p, "<p", 2) || !strncmp(p, "<div class=\"sds-list\"", 23) || !strncmp(p, "<div class=\"sds-list\"", 24))
        			*q++ = '\n';
         	  // if it's not a <br> tag or a <div class="sds-list"> or <div class="ds-list"> tag, ignore it.
 
