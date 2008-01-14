@@ -107,13 +107,13 @@ void parse_webster_html(char *arg) {
      			q = outline;
      			
      			while (*p != '<')
-     			  q++ = p++;
+     			  *q++ = p++;
      			  
        		if (!strncmp(p, "<td ", 4))
-       			q++ = '\n';
+       			*q++ = '\n';
         	  // if it's not a <td> tag, ignore it.
 
-					q++='\0';
+					*q++='\0';
 					fprintf(outfile, "%s", outline);
 					
 					if (!strncmp(p, "</table>", 8))
