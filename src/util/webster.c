@@ -77,7 +77,8 @@ void parse_webster_html(char *arg) {
         strncpy(scanbuf, p, sizeof(scanbuf)); // strtok on a copy.
         
         p = strtok(scanbuf, ">"); // chop the line at the end of tags: <br><b>word</b> becomes "<br" "<b" "word</b"
-        while (TRUE)
+        p = strtok(NULL, ">"); // skip the rest of this tag.
+        while (1)
         {
      			q = outline;
      			
@@ -93,7 +94,7 @@ void parse_webster_html(char *arg) {
 					*q++='\0';
 					fprintf(outfile, "%s", outline);
 					
-					if (!strncmp(p, "</table>", 8))
+					if (!strncmp(p, "</table", 7))
 						goto end;
 						
 				  p = strtok(NULL, ">");        	  
@@ -104,7 +105,8 @@ void parse_webster_html(char *arg) {
         strncpy(scanbuf, p, sizeof(scanbuf)); // strtok on a copy.
         
         p = strtok(scanbuf, ">"); // chop the line at the end of tags: <br><b>word</b> becomes "<br>" "<b>" "word</b>"
-        while (p != NULL)
+        p = strtok(NULL, ">"); // skip the rest of this tag.
+        while (1)
         {
      			q = outline;
      			
@@ -118,7 +120,7 @@ void parse_webster_html(char *arg) {
 					*q++='\0';
 					fprintf(outfile, "%s", outline);
 					
-					if (!strncmp(p, "</table>", 8))
+					if (!strncmp(p, "</table", 7))
 						goto end;
 						
 				  p = strtok(NULL, ">");        	  
