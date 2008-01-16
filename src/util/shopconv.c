@@ -1,4 +1,8 @@
-/* code to convert 2.20 shop files to 3.0 shop files - written by Jeff Fink */
+/* ************************************************************************
+*  file:  shopconv.c                                       Part of tbaMUD *
+*  Usage: code to convert 2.20 shop files to 3.0 shop files               *
+*  Written by Jeff Fink                                                   *
+************************************************************************* */
 
 #include "conf.h"
 #include "sysdep.h"

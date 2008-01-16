@@ -679,7 +679,7 @@ A postal worker's shotgun is beckoning you.~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 1 1 12
 1 1 0 0
-T 1361
+T 45
 E
 shotgun~
    A shotgun with the emblem of the USPS on the hilt.    
@@ -697,20 +697,6 @@ E
 ruby slippers~
    The depp red slippers sparkle with magic and energy.  They are rumored to be
 able to take you home if you say there is no place like home.    
-~
-#1396
-quarter coin~
-a quarter~
-A typical U.S. quarter that appears to be perfect for flipping.~
-~
-12 0 0 0 0 a 0 0 0 0 0 0 0
-0 0 0 0
-1 1 0 0
-T 1393
-E
-coin quarter~
-   This quarter is perfect for deciding those difficult boolean questions you
-may have. Just "flip quarter"
 ~
 #1397
 christmas poem soldiers~

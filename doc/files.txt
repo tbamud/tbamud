@@ -1,0 +1,133 @@
+If you have any additions, corrections, ideas, or bug reports please stop by the
+Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
+
+tbaMUD File Manifest 
+
+The main ‘tbaMUD/’ directory has the following subdirectories and files: 
+
+autorun - Shell script to run the MUD (./autorun &).
+FAQ - Frequently Aske Questions with answers.
+README - Information for the new tbaMUDder.
+changelog - A log of changes that can be added to and viewed in game.
+syslog - The current system log. Also viewed in game with the file command.
+bin/ - Directory of all the compiled programs (binaries).
+doc/ - Documentation.
+lib/ - MUD data.
+log/ - System logs.
+src/ - Source code.
+
+The bin/directory contains only binaries: ‘circle’ (the main MUD) and its
+utilities, which are described in utils.txt. 
+
+The doc/ directory has its own README file, describing the contents of each 
+of the documentation files. 
+
+etc/      - Files maintained by the game which you should not touch while the 
+            game is running.
+house/    - Crash-save files for player houses.
+misc/     - Miscellaneous database files such as fight messages, invalid names,
+            and socials.
+plrfiles/ - ASCII files which combined the player, alias, and variable files.
+plrobjs/  - The hierarchy containing player object files (i.e. crash files,
+            rent files, cryo-rent files, etc.) and utility scripts.
+text/     - Files meant to be directly read by players such as MOTD (message of
+            the day), help files, and the immortal handbook.  You can change
+            these files while the game is running, and then have the mud reload
+            them using the reload command.
+world/    - The hierarchy of the world files (mobiles, objects, shops, rooms,
+            triggers, and zones).
+
+The lib/etc/ directory contains the following files (the MUD actively 
+maintains these files while it is running; they should not be modified 
+unless the game is down): 
+
+badsites - List of banned sites.
+Board.<name> - Binary files with the contents of the bulletin boards.
+config - Configuration file you can modify via CEDIT.
+hcontrol - Binary file with the state of the house control system. 
+last - File storing information for the last command. Delete occasionally.
+plrmail - Binary file containing player mail.
+time - Where the MUD time is saved.
+
+The lib/misc/ directory contains the following files: 
+
+bugs - Bugs reported by players with the ’bug’ command.
+ideas - Ideas from players from ’idea’ command.
+messages - Spell and skill damage messages. 
+socials - Text file with text of the socials.
+socials.new - New format of socials you can edit via AEDIT.
+typos - Typos reported by players with the ’typo’ command.
+xnames - Text file of invalid names.
+
+The lib/plrobjs/ contains the following files and directories: 
+
+a-e \ 
+f-j \ 
+k-o \ Subdirectories where player objects files are stored. 
+p-t / 
+u-z / 
+zzz/ 
+
+The lib/plrfiles/ combined player, alias, and variable files in ASCII format.
+
+a-e \ 
+f-j \ 
+k-o \ Subdirectories where player data is stored.
+p-t / 
+u-z / 
+zzz/
+
+The lib/text/ directory contains the following files: 
+
+background - Background story (for option 3 from main menu).
+credits - Text for ’credits’ command.
+greetings - Greeting message.
+handbook - Text for Immortal Handbook (’handbook’ command).
+immlist - Text for ’immlist’ command.
+imotd - Immortal MOTD --seen by immortals on login.
+info - Text for ’info’ command.
+motd - MOTD --seen by mortals on login.
+news - Text for ’news’ command.
+policies - Text for ’policy’ command.
+wizlist - Text for ’wizlist’ command.
+/help/screen - Text for ’help’ command as a mortal with no arguments.
+/help/iscreen - Text for ’help’ command an an immortal with no arguments.
+
+The lib/world/directory contains the following subdirectories: 
+
+mob - Contains *.mob files (mobile files) 
+obj - Contains *.obj files (object files) 
+shp - Contains *.shp files (shop files) 
+trg - Contains *.trg files (trigger files) 
+wld - Contains *.wld files (world files) 
+zon - Contains *.zon files (zone files) 
+
+Each of the 6 subdirectories in the lib/world/ directory also contains two 
+additional files – one called ‘index’, which specifies which files in that 
+directory should be loaded when the MUD boots, and ‘index.mini’, which 
+specifies which files should be loaded if the MUD is booted with the -m 
+(mini-mud) option. 
+
+The log/ directory contains several files of the form syslog.n, where n is a 
+small number. These are the most recent tbaMUD syslogs. In addition, it 
+contains the following more permanent system logs: 
+
+badpws - Records of bad password attempts.
+delete - Players who have self-deleted.
+dts - Players who have hit death traps.
+errors - MUD system errors ("SYSERR" messages).
+godcmds - All logged god commands.
+help - All help queries that are not found.
+levels - Records of all levels gained by all players.
+newplayers - Records of the creation of new players.
+olc - OLC log messages.
+rentgone - Players who have lost their items in rent.
+restarts - List of times at which the MUD rebooted.
+rip - Player deaths.
+trigger - Trigedit log messages.
+usage - Mud system usage (player load & memory usage info).
+
+The src/ directory contains all of the C and header files for the MUD, along 
+with a Makefile. The src/util/ directory contains source for tbaMUD’s utility 
+programs. See admin.txt for more information on how to compile the MUD. See 
+utils.txt for more information on how to use tbaMUD’s utilities. 

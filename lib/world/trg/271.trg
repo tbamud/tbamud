@@ -399,7 +399,7 @@ done
 Slipping on Marbles - 27147~
 1 q 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A leave trigger that checks for low dexterity.
 if %actor.is_pc%
   if %actor.dex% < 15

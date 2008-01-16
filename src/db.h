@@ -82,8 +82,8 @@
 #define MOTD_FILE	LIB_TEXT"motd"	/* messages of the day / mortal	*/
 #define IMOTD_FILE	LIB_TEXT"imotd"	/* messages of the day / immort	*/
 #define GREETINGS_FILE	LIB_TEXT"greetings"	/* The opening screen.	*/
-#define HELP_PAGE_FILE	LIB_TEXT_HELP"screen"	/* for HELP <CR>	*/
-#define IHELP_PAGE_FILE LIB_TEXT_HELP"iscreen" /* for HELP <CR> imms   */
+#define HELP_PAGE_FILE	LIB_TEXT_HELP"help"	/* for HELP <CR>	*/
+#define IHELP_PAGE_FILE LIB_TEXT_HELP"ihelp"    /* for HELP <CR> imms   */
 #define INFO_FILE	LIB_TEXT"info"		/* for INFO		*/
 #define WIZLIST_FILE	LIB_TEXT"wizlist"	/* for WIZLIST		*/
 #define IMMLIST_FILE	LIB_TEXT"immlist"	/* for IMMLIST		*/

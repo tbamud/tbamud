@@ -14,7 +14,7 @@
  * account the version and supply their own definition for the macro if used 
  * on an older version. You are supposed to compare this with the macro 
  * TBAMUD_VERSION() in utils.h. */
-#define _TBAMUD    0x030540 /* Major/Minor/Patchlevel - MMmmPP */
+#define _TBAMUD    0x030550 /* Major/Minor/Patchlevel - MMmmPP */
 
 /* If you want equipment to be automatically equipped to the same place
  * it was when players rented, set the define below to 1. */
@@ -763,7 +763,6 @@ struct char_special_data {
 
 struct player_special_data_saved {
    byte skills[MAX_SKILLS+1];   /* array of skills plus skill 0 */
-   byte PADDING0;               /* used to be spells_to_learn */
    int	wimp_level;             /* Below this # of hit points, flee! */
    byte freeze_level;           /* Level of god who froze char, if any */
    sh_int invis_level;          /* level of invisibility */

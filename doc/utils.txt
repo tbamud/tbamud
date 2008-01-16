@@ -1,0 +1,148 @@
+If you have any additions, corrections, ideas, or bug reports please stop by the
+Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
+
+tbaMUD Utility Programs 
+Originally by Alex Fletcher 
+
+This document gives a brief summary of the various utility programs that come 
+with the tbaMUD distribution. The summaries include the description of the 
+utility, how it is called, and any caveats to watch out for when using them. 
+
+Contents 
+
+1 Conversion Utilities
+
+1.1 shopconv
+1.2 split
+1.3 wld2html
+1.4 webster
+
+2 Maintenance Utilities
+2.1 asciipasswd
+2.2 sign
+
+3 Informational Utilities
+3.1 listrent
+
+4 Internal Utilities
+4.1 autowiz
+
+1 Conversion Utilities 
+
+These utilities are generally one-time use utilities. Some are for converting
+older CircleMUD data files to the versions used in CircleMUD v3, while others
+are used to convert currently existing files into different formats. 
+
+Overall, these utilities have been created in an attempt to make the tbaMUD 
+administrator’s life a bit easier, and to give the administrator some ideas of
+further and more grandiose utilities to create. Some are no longer applicable
+but are retained as examples.
+
+Please note that these utilities are not as rigorously tested as the rest of 
+the tbaMUD server, and you should be certain to backup your data before using 
+these utilities on it. Also note that the code layout and design for these 
+utilities is not as tight and as thought out as the rest of the source code 
+distributed with tbaMUD. 
+
+1.1 shopconv 
+The format of shops changed between CircleMUD 2.20 and CircleMUD v3. To make 
+the transition easier, Jeff Fink submitted a shop conversion utility, shopconv.
+Similar to the player file converter, this should only be run against any file 
+once. It is best to run this immediately before the initial v2.20 to v3 
+changeover. The command line syntax for shopconvis as follows: 
+
+shopconv <file1> [<file2> .. <filen>] 
+
+where <file1> 
+is the first file to convert, <file2> 
+the second, and so forth. 
+
+1.2 split 
+The split utility is designed to split large world files into smaller, zone 
+sized files that are easier to manage and maintain. The utility reads its input
+from the standard input and writes the output to files with names specified 
+within the larger world file. This is done by inserting ‘=filename’ into the 
+world file at the appropriate points, where filename is the name of the file 
+for the following section. 
+
+The command line syntax for splitis as follows: 
+
+split < [filename] 
+
+where [filename] is the file to redirect into the utility. The syntax above 
+indicates how to do this on platforms that support command line redirection. 
+
+1.3 wld2html 
+This utility began its life as a small toy written by Jeremy Elson to put a 
+CircleMUD world file on the world wide web. It converts the world file into a 
+series of HTML files, one per room, all named according to the virtual number 
+of the room, and linked via their exits. 
+
+The command line syntax for wld2htmlis as follows: 
+
+wld2html <wldfile> 
+
+where <wldfile> 
+is the world file to be turned into web pages. 
+
+
+2 Maintenance Utilities 
+
+2.1 asciipasswd 
+This utility generates hashed passwords for ASCII player files.
+
+2.2 sign 
+This utility allows you to display some static text on a port when anyone 
+connects to it. This is useful when the mud server is moving, changing ports, 
+or is down for maintenance. 
+
+The command line syntax for signis as follows: 
+
+sign <port> <filename | -(for stdin)> 
+
+where <port> 
+is the tcp port to put the information on. This is usually the same as the mud
+server port (when the server is not running), which defaults to 4000. The 
+<filename> is an ASCII file to display on the port when a connection is made 
+to it. If -is specified as a filename, the utility will wait for you to enter 
+the text to be displayed and will take in all text until ended by an EOF marker
+(ctrl-D on Unix based systems). 
+
+
+3 Informational Utilities 
+
+3.1 listrent 
+This utility allows you to view player rent files offline. It displays the type
+of rent; Rent, Crash, Cryo, or lost link (TimedOut). It also displays the 
+object vnum and first keyword. 
+
+The command line syntax for listrentis as follows: 
+
+listrent <objfile1> [<objfile2> .. <objfilen>] 
+
+where <objfile1> 
+is the first object file to view, <objfile2> the second, and so forth. 
+
+This utility must be recompiled if you make any changes to the rent file 
+structure. 
+
+
+4 Internal Utilities 
+
+4.1 autowiz 
+This utility is called from within the tbaMUD server and manages the self 
+updating Wizlist and Immlist. At this point, it only works on Unix-based 
+systems, but a solution for all other systems is being designed. If you wish 
+to change the text in the headers of the Wizlist or the Immlist, this is 
+the utility to edit. 
+
+The command line syntax for autowizis as follows: 
+
+autowiz <wizlev> <wizlistfile> <immlev> <immlistfile> [pid to signal] 
+
+where <wizlev> is equal to whatever LVL_GOD is set to in your tbaMUD server, 
+<wizlistfile> is the filename for the file containing the game’s Wizlist. 
+<immlev> should be set to your game’s LVL_IMMORT, while <immlistfile> 
+is the name of the Immlist file. 
+
+This utility must be recompiled if you make any changes to the player file structure. 

@@ -3272,7 +3272,7 @@ ACMD(do_links)
   skip_spaces(&argument);
   one_argument(argument, arg);
 
-  if (!arg || !*arg) {
+  if (!is_number(arg)) { 
     zrnum = world[IN_ROOM(ch)].zone;
     zvnum = zone_table[zrnum].number;
   } else {
@@ -3409,7 +3409,7 @@ ACMD (do_zcheck)
   struct extra_descr_data *ext, *ext2;
   one_argument(argument, buf);
 
-  if (!buf || !*buf || !strcmp(buf, "."))
+  if (!is_number(buf) || !strcmp(buf, "."))
     zrnum = world[IN_ROOM(ch)].zone;
   else
     zrnum = real_zone(atoi(buf));

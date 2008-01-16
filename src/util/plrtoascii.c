@@ -1,5 +1,5 @@
 /* ************************************************************************
-*  file:  plrtoascii.c                                  Part of CircleMud *
+*  file:  plrtoascii.c                                     Part of tbaMUD *
 *  Copyright (C) 1990, 1991 - see 'license.doc' for complete information. *
 *  All Rights Reserved                                                    *
 ************************************************************************* */

@@ -1,11 +1,10 @@
    There are many common errors that can be created by changing things in the
-code or having  builders try inappropriate things. Here are a few, this is list
-will be continually developed, if you have any additions or corrections please
-stop by the Builder Academy: builderacademy.net 9091
+code or having  builders try inappropriate things. Here are a few, this list
+will be continually developed. If you have any additions or corrections please 
+stop by the Builder Academy at telnet://tbamud.com:9091 or email: 
+rumble@tbamud.com -- Rumble
 
---Rumble
-
-1. Errant Rooms (show error)
+1. Errant Rooms (show error command)
 2. SYSERR: Object # (oedit-s-desc) doesn't have drink type as last alias.
 3. SYSERR: Mob # both Aggressive and Aggressive_to_Alignment.
 4. SYSERR: Object # (oedit-s-desc) has out of range level #.
@@ -14,24 +13,27 @@ stop by the Builder Academy: builderacademy.net 9091
 6. SYSERR: Object # (oedit-s-desc) uses 'UNDEFINED' spell #.
 7. SYSERR: Object # (oedit-s-desc) contains (5) more than maximum (3).
 8. Char is already equipped: (medit-s-desc), (oedit-s-desc)
-
+9. SYSERR: Attempt to assign spec to non-existant mob #
 
 1: Errant Rooms
 ------------
- 1: [ 1233] Rumble's Room
+12: (Nowhere) [ 8868] House of Elders Chamber in Silverwood City (south)
 
-   The most common are exits to 0 (the void). This happens when a builder 
+   The most common are exits to Nowhere. This happens when a builder 
 modifies a room exit but does not include an exit room vnum. These errant 
 rooms are listed by the command 'show error' The fix is simple, remove the 
-exit by purge exit in redit exit menu or by using 'dig <direction> -1'
+exit by purge exit in redit exit menu or by using 'dig <direction> -1' A few
+builders actually create exits to nowhere just so they can set the exit
+descriptions. So only delete if there is no exit description.
 
 2: SYSERR: Object # (oedit-s-desc) doesn't have drink type as last alias. 
 
    Another common error is caused by how shop code handles drink containers 
-poorly. In order for shops to display a jug as a jug of <drink type> they 
+poorly. In order for shops to display a jug as "a jug of <drink type>" they 
 must have the drink type as the last alias. It is good practice to put the 
 drink type as the first and last word of an objects namelist (older verions 
-of CircleMUD expect it first).
+of CircleMUD expect it first and once the object is empty it removes one of
+the drink aliases).
 i.e. a shot of whisky should have the namelist: whisky shot whisky
      a cup of slime mold juice namelist should be: juice cup slime juice
 
@@ -44,21 +46,21 @@ to all.
  
 4: SYSERR: Object # (oedit-s-desc) has out of range level #.
 
-   A simple one. Limit spell levels to the levels available, on TBA that would 
-be 1-34.
+   A simple one. Limit spell levels to the levels available, on tbaMUD that 
+would be 1-34.
 
 5: SYSERR: Object # (oedit-s-desc) has negative weight (-2147483644).
    SYSERR: Object # (oedit-s-desc) has out of range level #2147483647.
 
-   These are really annoying. This happens when you use numbers larger than 
-necessary. This will actually crash many older versions of CircleMUD. Just do
-not do it. Use realistic numbers.
+   These are really annoying. This happens on older versions of CircleMUD when 
+you use numbers larger than necessary. This will actually crash many older 
+versions of CircleMUD. Just do not do it. Use realistic numbers.
 
 6: SYSERR: Object # (oedit-s-desc) uses 'UNDEFINED' spell #.
 
    There is no spell zero. Either select a spell or put -1 for none. 
 
-7: SYSERR: Object # (oedit-s-desc) contains (5) more than maximum (3).
+7: SYSERR: Object # (oedit-s-desc) contains (#) more than maximum (#).
 
    When making a drink container you will set how much it initially contains 
 on creation and the max it can hold if a player were to fill it. Common sense 
@@ -72,3 +74,13 @@ the initial amount.
 a single location. HELP ZEDIT-EQUIP for all the possible object equipping 
 locations. All you have to do to fix this is pick a different equip location
 that is not used. 
+
+9: SYSERR: Attempt to assign spec to non-existant mob #
+
+   To get rid of this "grep # spec_assign.c" and remove this assignment.
+  
+10: No associated object exists when attempting to create a board [vnum #]. 
+
+   You need to delete this board from lib/etc/boards/ and modify boards.c and 
+boards.h. Again "grep #" *.[ch] to search for this vnum in all of your .c and 
+.h files to remove the reference. 

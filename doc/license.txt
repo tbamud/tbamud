@@ -237,3 +237,5 @@ If you make any major improvements on DikuMud we would be happy to
 hear from you. As you will naturally honor the above rules, you will receive
 new updates and improvements made to the game.
 
+If you have any additions or corrections please stop by the Builder Academy at
+telnet://tbamud.com:9091 or email: rumble@tbamud.com -- Rumble

@@ -356,7 +356,7 @@ with this zone, and the help of others, you can do this.
 @RHELP LOCATION@n
 @RHELP THEME@n
 @RHELP PLOT@n
-@RHELP SIZE@n
+@RHELP ZONE-SIZE@n
 @RHELP ALIGNMENT@n
 @RHELP BIAS@n
 ~
@@ -667,7 +667,6 @@ from you. It's a beautiful reciprocal arrangement.
 --The Catcher in the Rye   
 ~
 S
-T 1217
 #34
 Pool of Images~
    A broad mosaic walkway wraps around the natural hotsprings in this cavernous

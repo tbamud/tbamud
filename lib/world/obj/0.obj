@@ -40,6 +40,10 @@ The email listing of the gods is pinned against the wall.~
 0 0 0 0
 1 1 0 30
 E
+emails listing~
+   HELP CONTACT
+~
+E
 wizlist~
                                  Implementors
                                  ~~~~~~~~~~~ 
@@ -55,10 +59,6 @@ wizlist~
         Kyr   Macros   Meyekul   Mick   Minisham   Mythran   Neela   Poiu
     Santa   Shamra   Shimmer   Silvanos   Smaug   Snowlock   Talgard   Taylor
        Theophilus   Tocamat   Torpidai   Treestump   Tuskony   Zizazat   
-~
-E
-emails listing~
-   HELP CONTACT
 ~
 #5
 foraged berries~
@@ -802,6 +802,20 @@ E
 comfy bed~
    This bed is beckoning you to lay down and get some much needed sleep.
 Just "sleep bed"
+~
+#49
+quarter coin~
+a quarter~
+A typical U.S. quarter that appears to be perfect for flipping.~
+~
+12 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0
+T 37
+E
+coin quarter~
+   This quarter is perfect for deciding those difficult boolean questions you
+may have. Just "flip quarter"
 ~
 #50
 generic light~

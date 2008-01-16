@@ -1,5 +1,5 @@
 /* ************************************************************************
-*  file:  autowiz.c                                     Part of CircleMUD *
+*  file:  autowiz.c                                        Part of tbaMUD *
 *  Usage: self-updating wizlists                                          *
 *  Written by Jeremy Elson                                                *
 *  All Rights Reserved                                                    *

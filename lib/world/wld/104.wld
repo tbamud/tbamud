@@ -1210,10 +1210,6 @@ of life.  The darkness engulfs the northern exit while the life fills the
 surrounding area.
 ~
 104 0 0 0 0 0
-D0
-~
-~
-0 0 20901
 D2
 ~
 ~
@@ -1228,10 +1224,6 @@ papers with writing on them scatter this desk as well.  The ceiling above is
 nothing but a thick looking glass with bars filling in for support.
 ~
 104 8196 0 0 0 0
-D0
-~
-~
-0 0 -1
 D2
 ~
 ~
@@ -1253,10 +1245,6 @@ A large squishy looking armchair sits in the middle of the room only a few feet
 from the fireplace. @n
 ~
 104 24 0 0 0 0
-D0
-~
-~
-0 0 -1
 E
 main chamber room taylors tays~
    @WA small lamp sits in the center of the room letting off a small amount of

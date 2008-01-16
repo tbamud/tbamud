@@ -1,0 +1,168 @@
+If you have any additions, corrections, ideas, or bug reports please stop by the
+Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
+
+A social is the easiest command to add to the game thanks to the social editor; 
+aedit. Socials serve as a means of expression among players, and have no effect
+on gameplay itself (unless you make a trigger to fire off a social). Socials 
+can be used locally or globally with gemote.
+
+HELP AEDIT
+
+Syntax: aedit <social>
+
+   Aedit is an online action (social) editor that allows you to create socials
+on the fly. Anyone can add new socials just ask a level 33 or above to set your
+OLC to 999 and explain how it works. Use astat to see examples.
+
+Here is the much coveted list of $ codes applicable to socials: There are six 
+different dollar-sign codes which can be inserted into the messages. Each is a 
+dollar-sign followed by a letter. If the letter is lowercase, the player using 
+the social is referenced. If the letter is capital, the target character is 
+referenced. The letter N inserts the character's name, an E inserts a subject 
+pronoun (he, she, it), an S inserts a possessive pronoun (his, hers, its), and 
+an M inserts an object pronoun (him, her, it). 
+
+$e he/she/it person doing social
+$E he/she target of social
+$m him/her person doing social
+$M him/her target of social
+$n char name person doing social (your name)
+$N char name target of social (other persons name)
+$s his/her/its person doing social
+$S his/her target of social
+$t body part of victim
+$p object
+
+See also: ASTAT, SOCIALS, AUTOSAVE
+
+This is all you really need to know to make socials. Now if you want to edit 
+the socials file directly or understand the format in depth keep reading. 
+
+The file is formatted as follows: 
+
+<command> <command sort name> <hide flag> <min pos of vict> <min pos of char> 
+<min level>
+<messg to character if no argument>
+<messg to others if no argument>
+<messg to char if victim not found>
+<messg to char if vict is char> 
+<messg to others if vict is char> 
+<messg to char if victim found>
+<messg to others if victim found>
+<messg to victim> 
+<messg to char if body part found>
+<messg to others if body part found>
+<messg to victim if body part found>
+<messg to char if object found>
+<messagee to others if object found>
+
+All socials are 14 lines followed by a blank line. After the blank line is 
+either the beginning of the next social or a dollar sign which marks the end of 
+the file. The first line of any social has six elements: the command name, the 
+abbreviated version of the command, the "hide-flag", the minimum position of the 
+victim, the min pos of the char (below), and the minimum level. that any victim 
+must be. The hide-flag is a Boolean value. If it is 0, the social is visible to 
+anyone in the room. If it is 1, the social is only visible to the character who 
+uses it and the character who is the "victim". Most such socials are only usable 
+on characters who are awake, meaning that they are either resting or more alert, 
+and so the minimum position value we will use is 5.
+
+Positions:
+Dead 0 = POS_DEAD
+Mortally Wounded 1 = POS_MORTALLYW
+Incapacitated 2 = POS_INCAP
+Stunned 3 = POS_STUNNED
+Sleeping 4 = POS_SLEEPING
+Resting 5 = POS_RESTING
+Sitting 6 = POS_SITTING
+Fighting 7 = POS_FIGHTING
+Standing 8 = POS_STANDING 
+
+The next 13 message lines contain the statements that will be shown to various
+characters in certain conditions. The first line is the message sent to the 
+player who uses a social when the social has no argument. The second line 
+contains the message sent to others in the room when the social has no argument. 
+The third message is sent to the player using the social when the player names 
+a target, and that target is present in the room. The fourth message is sent to 
+others in the room under the same circumstances. The fifth message is sent to 
+the target character. The sixth message is sent to the player who uses the 
+social when the player supplies a target, and that target is not available. The 
+seventh message is sent to the player who uses the social when they player 
+supplies his or herself as a target. The eighth message is sent to others in 
+the room under the same circumstances. The remaining follow the same theme but 
+for body parts and objects. A pound sign in any message line means that there 
+is no message.
+
+Keep in mind that "messages", "socials", and the world files are not part of 
+the source code, but rather are strictly data files. They are read by the game 
+at runtime and throughout the course of the game. Changes made to them do not 
+require recompiling the executable, they only need for the game to stop running 
+and be restarted. You can change information in these files at any time. In the 
+tbaMUD codebase the socials appear in alphabetical order in the file, but they 
+can appear in any order and can be rearranged if necessary. The socials file is 
+located in the lib/misc/ directory. Socials are all handled through the 
+generalized command do_action where the $ codes listed above are parsed.
+
+Each social must contain the first two messages (if the social ignores 
+arguments), or all thirteen messages (if the social takes an argument). Each 
+message must be contained in one line. The command-name indicates which social 
+is being specified. The command sort name is the shortest part of the command a 
+player must type for it to match. The hide-flag can be either 0 or 1; if 1, the 
+social is hidden from OTHERS if they cannot see the character performing the 
+social. The action is not hidden from the VICTIM, even if s/he cannot see the 
+character performing the social, although in such cases the character’s name 
+will, of course, be replaced with “someone”. The min positions should be set to 
+dictate the minimum position a player must be in to target the victim and 
+perform the social. Min level allows you to further customize who can use what 
+socials.Where it makes sense to do so, text fields may be left empty. If 
+editing manually you should by put a ‘#’ in the first column on the line. Aedit 
+does this automatically.
+
+Examples:
+
+A social only requires 2 message lines. This is the simplest form of a social.
+
+~ack ack 0 0 0 0
+ACK!
+$n goes ACK!!
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+~lick lick 0 5 0 0
+You lick your lips and smile.
+$n licks $s lips and smiles.
+You lick $M.
+$n licks $N.
+$n licks you.
+Lick away, nobody's here with that name.
+You lick yourself.
+$n licks $mself -- YUCK.
+You lick $S $t.
+$n licks $N's $t.
+$n licks your $t.
+You lick $p.
+$n licks $p.
+
+~comfort com 0 5 5 0
+Do you feel uncomfortable?
+#
+You comfort $M.
+$n comforts $N.
+$n comforts you.
+Comfort who?
+You make a vain attempt to comfort yourself.
+#
+#
+#
+#
+You comfort $p.
+$n comforts $p.

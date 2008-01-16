@@ -8,7 +8,7 @@ Non-attachable trigger~
 Mob Tutorial Example Quest Offer - M14~
 0 g 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A very basic 3 trigger receive quest. Trigs 1-3.
 * Make sure the actor is a player first.
 if %actor.is_pc%
@@ -30,7 +30,7 @@ end
 Mob Tutorial Example Kill Ogre - 16~
 0 f 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A very basic 3 trigger receive quest. Trigs 1-3.
 say you got the best of me %actor.name%. But I'll be back.
 * Load the wings to be returned to the questmaster.
@@ -42,7 +42,7 @@ say you got the best of me %actor.name%. But I'll be back.
 Mob Tutorial Example Completion - 14~
 0 j 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A very basic 3 trigger receive quest. Trigs 1-3.
 * Check if this was indeed the right object.
 if %object.vnum% == 1
@@ -64,7 +64,7 @@ end
 Tutorial II Guard Greet - 24~
 0 g 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A basic guard bribe trigger. Trigs 4, 5, 7, 8.
 * This is a N S road so only greet players arriving from the south.
 if %direction% == south && %actor.is_pc%
@@ -78,7 +78,7 @@ end
 Tutorial II Guard Bribe 10 - 24~
 0 m 1
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A basic guard bribe trigger. Trigs 4, 5, 7, 8.
 * This is a comment. Always use amplifying comments to explain your Triggers!
 * If actor gives 10 coins or more.
@@ -108,7 +108,7 @@ end
 Obj Command Magic Eight Ball - O47~
 1 c 2
 shake~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Numeric Arg: 2 means in character's carried inventory.
 * Command trigs do not work for level 32 and above.
 * There are 20 possible answers that the Magic Eight Ball can give. 
@@ -203,7 +203,7 @@ end
 Tutorial II Guard Closes Gate - 24~
 0 e 0
 The gate is opened from~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A basic guard bribe trigger. Trigs 4, 5, 7, 8.
 * This is required to close the gate after someone opens it from the other
 * side.
@@ -216,7 +216,7 @@ lock gate
 Tutorial II Guard Closes Gate 2 - 24~
 0 e 0
 leaves north.~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A basic guard bribe trigger. Trigs 4, 5, 7, 8.
 * This is required to close the gate after the guard is bribed and someone
 * leaves to the north.
@@ -229,7 +229,7 @@ lock gate
 Tutorial Quest 1317 - Starter~
 0 g 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Quest Trigs 9-12. If the player comes from the south and has not done the quest.
 if %direction% == south
   if %actor.varexists(solved_tutorial_quest_zone_0)%
@@ -247,7 +247,7 @@ end
 Tutorial Quest 1317 - Accept~
 0 d 1
 yes~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Quest Trigs 9-12. If the player has not done the quest give them a hint.
 if !%actor.varexists(solved_tutorial_quest_zone_0)%
   wait 1 sec
@@ -261,32 +261,32 @@ end
 Tutorial Quest 1317 - Completion~
 0 j 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
-* Quest Trigs 9-12. If the player returns the right object reward them.
-if !%actor.varexists(solved_tutorial_quest_zone_0)%  && %object.vnum% == 1394
-  dance
-  wait 1 sec
-  say Thank you, %actor.name%.
-  nop %actor.exp(50)%
-  nop %actor.gold(50)%
-  say finally, now I can get some answers.
-  wait 1 sec
-  emote shakes the magic eight ball vigorously.
-  wait 1 sec
-  emote does not seem too pleased with his answer.
-  set solved_tutorial_quest_zone_0 1
-  remote solved_tutorial_quest_zone_0 %actor.id%
-  %purge% %object%
-else
-  say I don't want that!
-  junk %object.name%
+* By Rumble of The Builder Academy    tbamud.com 9091 
+* Quest Trigs 9-12. If the player returns the right object reward them. 
+if !%actor.varexists(solved_tutorial_quest_zone_0)%  && %object.vnum% == 1394 
+  set solved_tutorial_quest_zone_0 1 
+  remote solved_tutorial_quest_zone_0 %actor.id% 
+  %purge% %object% 
+  dance 
+  wait 1 sec 
+  say Thank you, %actor.name%. 
+  nop %actor.exp(50)% 
+  nop %actor.gold(50)% 
+  say finally, now I can get some answers. 
+  wait 1 sec 
+  emote shakes the magic eight ball vigorously. 
+  wait 1 sec 
+  emote does not seem too pleased with his answer. 
+else 
+  say I don't want that! 
+  junk %object.name% 
 end
 ~
 #12
 Tutorial Quest 1441 - Load 8ball~
 2 g 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Quest Trigs 9-12. Drop the 8ball on their head when they enter.
 wait 1 sec
 %echoaround% %actor.name% A magic eight ball drops from the sky striking %actor.name% on the head.
@@ -309,7 +309,7 @@ end
 Restorative Comfy Bed 1401 - Heal~
 1 b 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091 
+* By Rumble of The Builder Academy    tbamud.com 9091 
 * Healing Bed Trigs 13-15. Heals those who sleep on it. 
 set room_var %actor.room% 
 set target_char %room_var.people% 
@@ -336,7 +336,7 @@ end
 Damage Example~
 2 g 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * First put a wait in so the echo waits for the player to get into the room.
 wait 1 sec
 %echo% As %actor.name% enters the room a bolt of lightning smites %actor.himher%.
@@ -410,7 +410,7 @@ end
 Switch Echo Example~
 2 g 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * put a wait in here so it doesn't fire before the player enters the room
 wait 1
 switch %random.3%
@@ -442,7 +442,7 @@ done
 AT Example~
 2 b 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * put a wait in here so it doesn't fire before the player enters the room
 %at% 33 %echo% at'd to a room
 %at% Rumble %echo% at'd to Rumble
@@ -451,7 +451,7 @@ AT Example~
 Rumble's Spy~
 0 d 100
 *~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * put a wait in here so it doesn't fire before the player enters the room
 * Arguments: * means all speech will trigger this.
 * This will echo all speech to Rumble.
@@ -461,16 +461,13 @@ Rumble's Spy~
 Transform Example~
 0 g 100
 ~
-* %transform% test
-* as a greet trigger, entering the room will cause
-* the mob this is attached to, to toggle between mob 1 and 99.
-say Beginning transform.
-if %self.vnum%==1
-  %transform% 99
-else
-  %transform% -1
-end
-say Transform complete.
+* By Rumble of The Builder Academy    tbamud.com 9091
+* As a greet trigger, entering the room will cause this mob to transform into
+* a random mob vnum 100-199.
+emote starts to twist and contort into something different.
+eval number %random.100% + 99
+%transform% %number%
+say Transform complete to mob %number%.
 ~
 #22
 IF Example~
@@ -541,32 +538,7 @@ end
 While Damage Example - Grenade O1301~
 1 h 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
-* A small script to make a grenade go off 3 seconds after it is dropped.
-* Set the rooms ID to a variable.
-set room_var %actor.room%
-wait 3 s
-* Send a message when the bomb goes off.
-%echo% The Grenade blasts into smithereens, striking everyone here.
-* Target the first char.
-set target_char %room_var.people%
-* Now loop through everyone in the room and hurt them.
-while %target_char%
-  %send% %actor% People: %target_char.name%
-  %send% %actor% Next_in_room: %self.next_in_room%
-  * Set the next target before this one perhaps dies.
-  set tmp_target %target_char.next_in_room%
-  * This is where the good/bad things are supposed to happen.
-  %send% %target_char% The explosion hurts you.
-  * Damage them... 30 hitpoints. To heal use -#.
-  %damage% %target_char% 30
-  * Set the next target.
-  set target_char %tmp_target%
-  * Loop back.
-done
-* After we go through everyone get rid of the grenade.
-%purge% %self%
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A small script to make a grenade go off 3 seconds after it is dropped.
 * Set the rooms ID to a variable.
 set room_var %actor.room%
@@ -594,7 +566,7 @@ done
 Room While Teleport Example~
 2 b 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Target the first person or mob in the room.
 eval person %self.people%
 wait 1 sec
@@ -612,69 +584,98 @@ done
 Command Example~
 2 c 100
 l~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* A command trigger to demonstrate basic usage. The Arg list 'l' will capture
+* any 'l' word. We are looking specifically for the MUD command (all commands
+* are listed under COMMANDS) 'look' with the abbreviated argument of 'window.'
 if %cmd.mudcommand% == look && window /= %arg%
-  %echo% %actor.name% %arg% at the %arg%.
+  %echo% %actor.name% typed %cmd% to %cmd.mudcommand% at the %arg%.
+else
+  * Without this return zero a player would be unable to look at anything else
+  * in the room, leave, list, etc.
+  return 0
 end
 ~
 #26
 Blocks Mobs Not Following~
 2 g 100
 ~
-* This trigger blocks all mobs except those that are charmed, pets, etc.
+Name: 'Blocks Mobs Not Following',  VNum: [   26], RNum: [   26]
+Trigger Intended Assignment: Rooms
+Trigger Type: Enter , Numeric Arg: 100, Arg list: None
+Commands:
+* By Rumble of The Builder Academy    tbamud.com 9091
+* This trigger blocks all mobs except those that are following.
+* If actor is a mob, !is_pc actually means not a PC.
 if !%actor.is_pc%
-  * If the mob does not have a master than do not let it enter.
+  * If the mob does not have a master.
   if !%actor.master%
+    * Return 0 prevents the mob from entering.
     return 0
   end
 end
 ~
 #27
-Character Variables Example~
+Actor Variables Example~
 0 b 100
 ~
-* Variables Example by Rumble
-* Random trigger so we must define actor
+* By Rumble of The Builder Academy    tbamud.com 9091
+* A listing and demonstration of all actor variables.
+* Random triggers do not have actors so we must define one.
 set actor %random.char%
-* Make sure actor can be seen and is a player.
+* Make sure the actor can be seen and is a player.
 if %actor.canbeseen% && %actor.is_pc%
-  %echo% ACTOR.NAME:      %actor.name%
-%echo% AGE:             %actor.age%
-  %echo% ALIAS:           %actor.alias%
-  %echo% CANBESEEN:       %actor.canbeseen%
   %echo% CHARISMA:        %actor.cha%
-  %echo% CLASS:           %actor.class%
   %echo% CONSTITUTION:    %actor.con%
   %echo% DEXTERITY:       %actor.dex%
+  %echo% INTELLIGENCE:    %actor.int%
+  %echo% STRENGTH/STRADD: %actor.str%/%actor.stradd%
+  %echo% WISDOM:          %actor.wis%
+  %echo% ALIAS:           %actor.alias%
+  %echo% ALIGN:           %actor.align%
+  %echo% AFFECT:          %actor.affect%
+  %echo% CANBESEEN:       %actor.canbeseen%
+  %echo% CLASS:           %actor.class%
+  %echo% DRUNK:           %actor.drunk%
   %echo% EXPERIENCE:      %actor.exp%
   %echo% FIGHTING:        %actor.fighting%
-  %echo% GOLD:            %actor.gold%
-*  %echo% HAS_ITEM:       %actor.has_item(1300)%
-  %echo% ID:              %actor.id%
-  %echo% INTELLIGENCE:    %actor.int%
-  %echo% IS_KILLER:       %actor.is_killer%
-  %echo% IS_THIEF:        %actor.is_thief%
-  %echo% LEVEL:           %actor.level%
-  %echo% HITPOINTS:       %actor.hitp%
-  %echo% MANA:            %actor.mana%
-  %echo% MOVEMENT POINTS: %actor.move%
-  %echo% MASTER:          %actor.master%
   %echo% FOLLOWER:        %actor.follower%
-  %echo% MAX HITPOINTS:   %actor.maxhitp%
-  %echo% MAX MANA:        %actor.maxmana%
-  %echo% MAX MOVE:        %actor.maxmove%
-  %echo% NEXT_IN_ROOM:    %actor.next_in_room%
-  %echo% PRACTICES        %actor.prac%
-  %echo% ROOM:            %actor.room%
-  %echo% SEX:             %actor.sex%
-  %echo% HISHER:          %actor.hisher%
+  %echo% GOLD:            %actor.gold%
+  %echo% HAS_ITEM:        %actor.has_item(1332)%
   %echo% HESHE:           %actor.heshe%
   %echo% HIMHER:          %actor.himher%
-  %echo% INVENTORY:       %actor.inventory%
+  %echo% HISHER:          %actor.hisher%
+  %echo% HITPOINTS:       %actor.hitp%
+  %echo% HUNGER:          %actor.hunger%
+  %echo% ID:              %actor.id%
+  %echo% INV:             %actor.inventory%
+  %echo% IS_KILLER:       %actor.is_killer%
+  %echo% IS_PC:           %actor.is_pc%
+  %echo% IS_THIEF:        %actor.is_thief%
+  %echo% LEVEL:           %actor.level%
+  %echo% MANA:            %actor.mana%
+  %echo% MASTER:          %actor.master%
+  %echo% MAX HP:          %actor.maxhitp%
+  %echo% MAX MANA:        %actor.maxmana%
+  %echo% MAX MOVE:        %actor.maxmove%
+  %echo% MOVE:            %actor.move%
+  %echo% NAME:            %actor.name%
+  %echo% NEXT_IN_ROOM:    %actor.next_in_room%
+  %echo% POSITION:        %actor.pos%
+  %echo% PRACTICES:       %actor.prac%
+  %echo% QUESTPOINTS:     %actor.questpoints%
+  %echo% ROOM:            %actor.room%
+  %echo% SAVING_PARA:     %actor.saving_para%
+  %echo% SAVING_ROD:      %actor.saving_rod%
+  %echo% SAVING_PETRI:    %actor.saving_petri%
+  %echo% SAVING_BREATH:   %actor.saving_breath%
+  %echo% SAVING_SPELL:    %actor.saving_spell%
+  %echo% SEX:             %actor.sex%
   %echo% SKILL BACKSTAB:  %actor.skill(backstab)%
-  %echo% STRENGTH/STRADD: %actor.str%/%actor.stradd%
+  %echo% THIRST:          %actor.thirst%
   %echo% TITLE:           %actor.title%
+  %echo% VAREXISTS:       %actor.varexists(tba_greeting)%
   %echo% VNUM:            %actor.vnum%
-  %echo% WISDOM:          %actor.wis%
   %echo% WEIGHT:          %actor.weight%
   * Objects TSTAT 28, Rooms TSTAT 29, Text TSTAT 30, Special TSTAT 31.
   *
@@ -693,9 +694,19 @@ end
 Object Variables Example~
 1 b 100
 ~
-* By Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
+* A listing and demonstration of all object variables.
+%echo% CARRIED_BY:   %self.carried_by%
+%echo% CONTENTS:     %self.contents%
+%echo% COST:         %self.cost%
+%echo% COST_PER_DAY: %self.cost_per_day%
+%echo% COUNT:        %self.count%
+%echo% HAS_IN:       %self.has_in%
 %echo% ID:           %self.id%
+%echo% IS_INROOM:    %self.is_inroom%
 %echo% NAME:         %self.name%
+%echo% NEXT_IN_LIST: %self.next_in_list%
+%echo% ROOM:         %self.room%
 %echo% SHORTDESC:    %self.shortdesc%
 %echo% TIMER:        %self.timer%
 %echo% TYPE:         %self.type%
@@ -704,44 +715,39 @@ Object Variables Example~
 %echo% VAL2:         %self.val2%
 %echo% VAL3:         %self.val3%
 %echo% VNUM:         %self.vnum%
-%echo% CARRIED_BY:   %self.carried_by%
-%echo% NEXT_IN_LIST: %self.next_in_list%
-%echo% WORN_BY:      %self.worn_by%
+%echo% WEARFLAG:     %self.wearflag%
 %echo% WEIGHT:       %self.weight%
-%echo% COST:         %self.cost%
-%echo% COST_PER_DAY: %self.cost_per_day%
-%echo% CONTENTS:     %self.contents%
-%echo% IS_INROOM:    %self.is_inroom%
-%echo% ROOM:         %self.room%
-%echo% VNUM:         %self.room.vnum%
+%echo% WORN_BY:      %self.worn_by%
 %purge% self
 ~
 #29
 Room Variables Example~
 2 b 100
 ~
-* By Rumble
-%echo% ID:       %self.id%
-%echo% NAME:     %self.name%
-%echo% NORTH:    %self.north% %self.north(vnum)% 
-%echo% SOUTH:    %self.south% %self.south(key)%
-%echo% SOUTH:    %self.south% %self.south(vnum)%
-%echo% EAST:     %self.east% %self.east(bits)%
-%echo% WEST:     %self.west% %self.west(room)%
-%echo% UP:       %self.up%
-%echo% DOWN:     %self.down%
-%echo% VNUM:     %self.vnum%
-%echo% PEOPLE:   %self.people%
-%echo% WEATHER:  %self.weather%
-%echo% SECTOR:   %self.sector%
-%echo% CONTENTS: %self.contents%
+* By Rumble of The Builder Academy    tbamud.com 9091
+* A listing and demonstration of all room variables.
+%echo% CONTENTS:   %self.contents%
+%echo% NORTH:      %self.north% %self.north(vnum)% 
+%echo% SOUTH:      %self.south% %self.south(key)%
+%echo% SOUTH:      %self.south% %self.south(vnum)%
+%echo% EAST:       %self.east% %self.east(bits)%
+%echo% WEST:       %self.west% %self.west(room)%
+%echo% UP:         %self.up%
+%echo% DOWN:       %self.down%
+%echo% ID:         %self.id%
+%echo% NAME:       %self.name%
+%echo% PEOPLE:     %self.people%
+%echo% RANDOM.DIR: %self.random.dir%
+%echo% SECTOR:     %self.sector%
+%echo% VNUM:       %self.vnum%
+%echo% WEATHER:    %self.weather%
 ~
 #30
 Text Variables Example~
 2 d 100
 *~
-* By Rumble
-* The Arguments: * means all speech will fire the trigger.
+* By Rumble of The Builder Academy    tbamud.com 9091
+* A listing and demonstration of all text variables.
 %echo% SPEECH:     %speech%
 %echo% STRLEN:     %speech.strlen%
 %echo% TRIM:       %speech.trim%
@@ -749,38 +755,34 @@ Text Variables Example~
 %echo% CDR:        %speech.cdr%
 %echo% MUDCOMMAND: %speech.mudcommand%
 %echo% CONTAINS:   %speech.contains(test)%
+%echo% CHARAT 3:   %speech.charat(3)%
 ~
 #31
 Special Variables Example~
 2 d 100
 *~
-* By Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
+* A listing and demonstration of all special variables.
 %echo% SELF ID:    %self.id%
 %echo% HOUR:       %time.hour%
 %echo% DAY:        %time.day%
 %echo% MONTH:      %time.month%
 %echo% YEAR:       %time.year%
-%echo% PEOPLE:     %people.1233%
+%echo% PEOPLE:     %people.3%
 %echo% RANDOM NUM: %random.99%
 %echo% RANDOM PC:  %random.char%
 %echo% SPEECH:     %speech%
-%echo% FINDOBJ:    There are %findobj.1233(1300)% objects of vnum 1300 in room 1233.
-%echo%             There is %findobj.1233(1346356)% object of ID 1346356 in room 1233.
-%echo%             There are %findobj.1233(app)% objects of name app in room 1233.
-%echo%             There are %findobj.1233(apprehension)% objects of name apprehension in room 1233.
-%echo% FINDMOB:    There are %findmob.1233(1300)% mobs of vnum 1300 in room 1233.
-%echo%             There is %findmob.1233(64741)% mobs of ID 64741 in room 1233.
-* not working
-%echo%             There are %findmob.1233(fried)% mobs of name fried in room 1233.
-%echo%             There are %findmob.1233(friedrich)% mobs of name friedrich in room 1233.
-%echo%             There are %findmob.self(fried)% mobs of name fried in room 1233.
-%echo%             There are %findmob.self(friedrich)% mobs of name friedrich in room 1233.
+%echo% FINDOBJ:    There are %findobj.3(33)% objects of vnum 33 in room 3.
+%echo%             There are %findobj.3(guide)% objects of name guide in room 3.
+%echo% FINDMOB:    There are %findmob.3(33)% mobs of vnum 33 in room 3.
 ~
 #32
 Mob Checks Player Inventory~
 0 g 100
 ~
-* By Jamie Nelson modified by Rumble* Checks if the actor is wielding the item
+* By Rumble of The Builder Academy    tbamud.com 9091
+* This trigger has been replaced by the has_item variable. But this is still a
+* good example. if %actor.has_item(1300)% does the same thing.
 if %actor.eq(wield)%
   eval wep %actor.eq(wield)%
   if %wep.vnum%==1300
@@ -967,44 +969,41 @@ say %msg%
 Switch Example~
 0 g 100
 ~
-* By Falstar
-switch %random.6%
-  case 0
+* By Falstar of The Builder Academy    tbamud.com 9091
+* Pick a random number 1-7, 7 is actually for the default case.
+switch %random.7%
+  case 1
     set book 'Creative cooking with human flesh'
   break
-  case 1
+  case 2
     set book 'Re-animating the Dead for Dummies'
   break
-  case 2
+  case 3
     set book 'How to teach your henchman to rob graves in 7 days'
   break
-  case 3
+  case 4
     set book 'An A-Z guide of Mage-induced maladies and mutations'
   break
-  case 4
+  case 5
     set book '101 Easy ways to rescue a damsel in distress'
   break
-  case 5
+  case 6
     set book 'Witch Hazel's Bumper Book of rare herbs and potions'
   break
-  case 6
-    set book 'Arcane Artifacts made easy'
-  break
   default
-    * this should be here, even if it's never reached
-    set book default reached
-done
-*
-wait 1 s
-%echo% Dr. Von Erhartz seems engrossed in reading a large leatherbound book through a battered pair
-%echo% of reading glasses. The title reads: %book%.
-%echo% The doctor looks up at you, seeming to notice you for the first time.
-wait 1 s
-say ah %actor.name%, I was wondering when you'd drop by.
+    set book 'Arcane Artifacts made easy'
+  done
+  *
+  wait 1 s
+  %echo% Dr. Von Erhartz seems engrossed in reading a large leatherbound book through a battered pair
+  %echo% of reading glasses. The title reads: %book%.
+  %echo% The doctor looks up at you, seeming to notice you for the first time.
+  wait 1 s
+  say ah %actor.name%, I was wondering when you'd drop by.
 ~
 #35
-Mob Room Wander Switch~
-0 b 100
+Mob Room Specific Speeches~
+0 b 5
 ~
 * By Rumble
 * So we don't get problems if more than one is loaded.
@@ -1065,7 +1064,7 @@ done
 Time Example~
 0 b 1
 ~
-* By Rumble w/help from Jamie Nelson on http://groups.yahoo.com/group/dg_scripts/
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A replica of the "time" command.
 * Convert hour from 24 hour to 12 hour clock with am/pm
 if %time.hour% > 12
@@ -1188,28 +1187,44 @@ eval months %%m%time.month%%%
 %echo% The %time.day%%suf% Day of the %months%, Year %time.year%.
 ~
 #37
-Emote Copycat~
-0 c 100
-e~
-if %cmd.mudcommand% == emote && %arg%
-  wait 2 sec
-  emote %arg%
+Obj Command quarter flip example~
+1 c 2
+flip~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Numeric Arg: 2 means in character's carried inventory
+* does not work for level 32 and above.
+if coin /= %arg% || quarter /= %arg%
+  %echoaround% %actor%  %actor.name% flips a coin high up into the air.
+  %send% %actor% You flip the coin up into the air.
+  switch %random.2%
+    case 1
+      %echo% The coin falls to the ground, bounces, rolls, and ends up showing heads!
+    break
+    case 2
+      %echo% The coin falls to the ground, bounces, rolls, and ends up showing tails!
+    break
+    default
+      %echo% The coin falls on its edge and balances perfectly.
+    break
+  done
+else
+  %send% %actor% flip What?
 end
 ~
 #38
 Mob Receive and Assemble Example~
 0 j 100
 ~
-* Example by Aeon
-wait 2 sec
-* Check mob's inventory (this does not include equipped items)
+* By Aeon of The Builder Academy    tbamud.com 9091
+* Check mob's inventory (this does not include equipped items).
 if %self.inventory(16701)% && %self.inventory(16702)% && %self.inventory(16703)% && %self.inventory(16704)% && %self.inventory(16705)%
-  * Removing items from the mob
-  %purge% flour
-  %purge% salt
-  %purge% sugar
-  %purge% soda
-  %purge% egg
+  * Removing items from the mob.
+  %purge% %self.inventory(16701)%
+  %purge% %self.inventory(16702)%
+  %purge% %self.inventory(16703)%
+  %purge% %self.inventory(16704)%
+  %purge% %self.inventory(16705)%
+  wait 2 sec
   * For roleplay sake
   say Thank you %actor.name%! Now here is the cake.
   * Give the reward
@@ -1222,7 +1237,8 @@ end
 Mob Following Assist Master~
 0 b 100
 ~
-* By Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Make following mob assist.
 if %self.master%
   eval master %self.master%
   if %master.fighting%
@@ -1233,33 +1249,65 @@ if %self.master%
 end
 ~
 #40
-mfollow Example~
-0 b 100
+Random Equipment Scatter and Teleport~
+2 g 100
 ~
-* By Welcor
-set actor %random.char%
-mfollow %actor%
-say I follow you now %actor.name%
-say self.master: %self.master%
-say actor: %actor%
-eval follower %self.master%
-say follower: %follower%
-say follower.name : %follower.name%
+* By Random of The Builder Academy    tbamud.com 9091
+* Scatter the player and all of their equipment randomly across the zone.
+wait 1 sec
+%send% %actor% You feel you must not have been worthy when a powerful force hurls you back through the gates.
+wait 2 sec
+eval stunned %actor.hitp% -1 
+%damage% %actor% %stunned%
+eval num %random.99% + 20300
+%teleport% %actor% %num%
+while %actor.inventory%
+  eval item %actor.inventory%
+  if %item.type% == CONTAINER
+    while %item.contents%
+      eval stolen %item.contents.vnum%
+      %echo% purging %item.contents.shortdesc% in container.
+      %purge% %item.contents% 
+      eval num %random.99% + 2300
+      %at% %num% %load% obj %stolen%
+    done
+  end
+  eval item_to_purge %actor.inventory%
+  eval stolen %item.vnum%
+  %purge% %item_to_purge% 
+  eval num %random.99% + 2300
+  %at% %num% %load% obj %stolen%
+done
+eval i 0
+while %i% < 18
+  eval item %%actor.eq(%i%)%%
+  if %item%
+    eval stolen %item.vnum%
+    eval item_to_purge %%actor.eq(%i%)%%
+    %send% %actor% You drop %item.shortdesc%
+    %purge% %item_to_purge% 
+    eval num %random.99% + 20300
+    %at% %num% %load% obj %stolen%
+  end
+  eval i %i%+1 
+done
+%force% %actor% look
 ~
 #41
-Hunt Example~
+Memory and Mhunt Example~
 0 o 100
 ~
-* Mob must first have a memory trig, attach 74.
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Fires if player is in mobs memory via mremember and the mob sees the actor.
 %echo% Sleeping for 10 secs, give %actor.name% a head start.
 sleep
 %echo% Targetting %actor.name%
 wait 10 s
 wake
 stand
-north
-north
-up
+%random.dir%
+%random.dir%
+%random.dir%
 %echo% Hunting...%actor.name%
 mhunt %actor%
 ~
@@ -1380,15 +1428,13 @@ done
 Rumble's Shotgun~
 1 b 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * If the object is being wielded.
 if %self.worn_by%
   * This is a random trigger so actor has to be defined.
   eval actor %self.worn_by%
   * If the person wielding the object is fighting.
   if %actor.fighting%
-    * Evaluate uniquely to this player.
-    context %actor.id%
     * Count the shots.
     eval shotgun_rounds %shotgun_rounds% + 1
     * Remember the count for the next time this trig fires.
@@ -1500,7 +1546,7 @@ end
 Eval and Set Example~
 2 d 100
 test~
-* By Rumble of The Builder Academy builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * This is a speech trig @RHELP TRIGEDIT ROOM SPEECH@n, say 'test' to activate.
 * There is much confusion about the difference between set and eval. So this is
 * the simplest way I can think of to explain it (assume %actor.level% = 34):
@@ -1818,7 +1864,7 @@ Mob Entry Example~
 * first find the room the mob is in and put the value in %inroom%
 eval inroom %self.room%
 * then check on the rooms vnum
-if %inroom.vnum% == 1233
+if %inroom.vnum% == 33
   say I, %self.name%, declare this room Rumble's.
 end
 eval person %inroom.people%
@@ -1923,7 +1969,8 @@ done
 Mob Memory Example Part 1~
 0 g 100
 ~
-* This must be set by another trigger first before the mem trigger can be used.
+* By Rumble of The Builder Academy    tbamud.com 9091
+* mremember must be used before you can use the trigger type memory.
 mremember %actor.name%
 say I'll remember you now, %actor.name%
 ~
@@ -1931,6 +1978,8 @@ say I'll remember you now, %actor.name%
 Mob Memory Example Part 2~
 0 o 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Fires if player is in mobs memory via mremember and the mob sees the actor.
 wait 4 s
 poke %actor.name%
 say i've seen you before, %actor.name%.

@@ -203,10 +203,14 @@ quit~
    %send% %actor% Powerful forces keep you here. 
 ~
 #315
-Room Command - No Recall~
-2 c 100
-recall ~
-   %send% %actor% Divine forces prevent you from doing that.
+Obj Command - No quit~
+1 c 3
+q~
+if %cmd.mudcommand% == quit
+  %send% %actor% Divine forces prevent you from doing that.
+else
+  return 0
+end
 ~
 #316
 Mob Fight - generic poison~

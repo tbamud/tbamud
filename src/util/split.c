@@ -1,5 +1,5 @@
 /* ************************************************************************
-*  file:  split.c                                     Part of CircleMud   *
+*  file:  split.c                                          Part of tbaMUD *
 *  Usage: split one large file into multiple smaller ones, with index     *
 *  Written by Jeremy Elson                                                *
 *  All Rights Reserved                                                    *

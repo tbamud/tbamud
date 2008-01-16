@@ -1,9 +1,13 @@
 (lib/text/news)
-			   THE 2007 tbaMUD HERALD
+			   THE 2008 tbaMUD HERALD
    		 "We addict players for their own enjoyment."
 
 NEW COMMANDS AND NEW MUD BEHAVIOR:
 ---------------------------------
+** Check out the latest news and information on the tbaMUD codebase with 
+   tbaMUDs new content management system (drupal) at http://tbamud.com.
+   Forums, blogs, etc. (thanks Mordecai)
+
 **  Doors are now visible in the exits menu. i.e. Exits: n (e) w s.
 
 **  Added questpoints so be sure to ask about quests.

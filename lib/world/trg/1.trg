@@ -443,7 +443,7 @@ end
 Mob Act - 156 speaker greet~
 0 e 0
 has entered the game.~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Num Arg 0 means the argument has to match exactly. So trig will only fire off:
 * "has entered game." and not "has" or "entered" etc. (that would be num arg 1).
 * Figure out what vnum the mob is in so we can use zoneecho.
@@ -602,7 +602,7 @@ end
 Thief Guildguard - 177~
 0 q 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * This replaces stock guildguard spcial procedure that stops non-class members.
 if %direction% == up
   * Let the guildmaster pass to pawn players items. T137.
@@ -624,7 +624,7 @@ end
 Thief Guildmaster Steals - M122~
 0 b 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Idea taken from cheesymud.com
 * Thief guildmaster steals from players who idle in his guild. Then pawns the
 * item in the shop downstairs so player has to buy their equipment back :-P
@@ -665,74 +665,111 @@ end
 Questmaster Greet - 3~
 0 g 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
-* Part of a timed quest to kill a mob or find an object. Trigs 138-144.
-* Simple quests, probably too simple so only let players earn 50 qp's doing this.
-if %actor.is_pc% && %actor.questpoints% < 50
-  wait 2 sec
-  * Check to see if they are not on a zone 1 quest.
-  if !%actor.varexists(on_quest_zone_1)%
-    say Welcome %actor.name%, are you interested in a simple quest?
-  else
-    say How is your quest going %actor.name%, do you have a quest token or the quest mobs head for me?
-  end
+* By Rumble of The Builder Academy    builderacademy.net 9091 
+* Part of a timed quest to kill a mob or find an object. Trigs 138-144. 
+* A simple automated quest so only let players earn up to 50 questpoints.
+if %actor.is_pc% && %actor.questpoints% < 50 
+  wait 2 sec 
+  * Check to see if they are not on a zone 1 quest. 
+  if !%actor.varexists(on_quest_zone_1)% 
+    say Welcome %actor.name%, are you interested in a simple quest? 
+  else 
+    *get the values from the player variable 
+    extract day 1 %actor.on_quest_zone_1% 
+    extract hour 2 %actor.on_quest_zone_1% 
+    * Set  this value to the number of mud hours in a mud day 
+    set HOURS_IN_DAY 24 
+    * Compare the values to the current time 
+    * (Your hours per day and days per year vary on each mud.) 
+    * (You may also want to check for 'time.year') 
+    eval current_ticks (%time.day%/%HOURS_IN_DAY%)+%time.hour% 
+    eval start_ticks (%day%/%HOURS_IN_DAY%)+%hour% 
+    *find out the time difference in ticks 
+    eval ticks_passed %current_ticks%-%start_ticks% 
+    *check if 10 ticks (~10 mins) have passed 
+    if %ticks_passed% > 10 
+      rdelete on_quest_zone_1 %actor.id% 
+      say Welcome %actor.name%, are you interested in a simple quest? 
+    else 
+      say How is your quest going %actor.name%, do you have a quest token or the quest mobs head for me? 
+    end 
+  end 
 end
 ~
 #139
 Questmaster Quest Assignment - 3~
 0 d 1
 *~
-* By Rumble of The Builder Academy    builderacademy.net 9091
-* Part of a timed quest to kill a mob or find an object. Trigs 138-144.
-* Don't let them do more than one quest at a time or earn more than 50 qp.
-if %actor.varexists(on_quest_zone_1)% || %actor.questpoints% > 50
-  halt
-end
+* By Rumble of The Builder Academy    builderacademy.net 9091 
+* Part of a timed quest to kill a mob or find an object. Trigs 138-144. 
+if %actor.varexists(on_quest_zone_1)% 
+  *get the values from the player variable 
+  extract day 1 %actor.on_quest_zone_1% 
+  extract hour 2 %actor.on_quest_zone_1% 
+  * Set  this value to the number of mud hours in a mud day 
+  set HOURS_IN_DAY 24 
+  * Compare the values to the current time 
+  * (Your hours per day and days per year vary on each mud.) 
+  * (You may also want to check for 'time.year') 
+  eval current_ticks (%time.day%/%HOURS_IN_DAY%)+%time.hour% 
+  eval start_ticks (%day%/%HOURS_IN_DAY%)+%hour% 
+  *find out the time difference in ticks 
+  eval ticks_passed %current_ticks%-%start_ticks% 
+  *check if 10 ticks (~10 mins) have passed 
+  if %ticks_passed% > 10 
+    rdelete on_quest_zone_1 %actor.id% 
+  else 
+    halt 
+  end 
+end 
+if %actor.questpoints% > 50 
+  halt 
+end 
 * This loop goes through the entire string of words the actor says. .car is the
-* word and .cdr is the remaining string.
-eval word %speech.car%
-eval rest %speech.cdr%
-while %word%
-  * Check to see if the word is yes or an abbreviation of yes.
-  if yes /= %word%
-    say Very well %actor.name%. Would you like to find an object or hunt a mobile?
-    halt
-  end
-  * Pick a room from 100 to 365.
+* word and .cdr is the remaining string. 
+eval word %speech.car% 
+eval rest %speech.cdr% 
+while %word% 
+  * Check to see if the word is yes or an abbreviation of yes. 
+  if yes /= %word% 
+    say Very well %actor.name%. Would you like to find an object or hunt a mobile? 
+    halt 
+  end 
+  * Pick a room from 100 to 365. 
   eval loadroom 99 + %random.265%  
-  if mobile /= %word% || hunt /= %word%
-    * Load the mob in the random room picked above.
-    %at% %loadroom% %load% m 15
-    say Go kill the quest mob and bring me its head %actor.name%. You only have 10 minutes!
-    * Load an object on the player that counts down from 10 minutes.
-    %load% obj 16 %actor% inv
-    %send% %actor% Gives you the quest timer.
-    %echoaround% %actor% %self.name% gives %actor.name% the quest timer.
-    set on_quest_zone_1 1
-    remote on_quest_zone_1 %actor.id%
-    halt
-  elseif object /= %word% || find /= %word%
-    say Go find the quest token and return it to me. You only have 10 minutes %actor.name%!
-    %load% o 15
-    %at% %loadroom% drop quest_token_zone_1
-    %load% obj 16 %actor% inv
-    %send% %actor% Gives you the quest timer.
-    %echoaround% %actor% %self.name% gives %actor.name% the quest timer.
-    set on_quest_zone_1 1
-    remote on_quest_zone_1 %actor.id%
-    halt
-  end
+  if mobile /= %word% || hunt /= %word% 
+    * Load the mob in the random room picked above. 
+    %at% %loadroom% %load% m 15 
+    say Go kill the quest mob and bring me its head %actor.name%. You only have 10 minutes! 
+    * Load an object on the player that counts down from 10 minutes. 
+    %load% obj 16 %actor% inv 
+    %send% %actor% %self.name% gives you the quest timer. 
+    %echoaround% %actor% %self.name% gives %actor.name% the quest timer. 
+    set on_quest_zone_1 %time.day% %time.hour% 
+    remote on_quest_zone_1 %actor.id% 
+    halt 
+  elseif object /= %word% || find /= %word% 
+    say Go find the quest token and return it to me. You only have 10 minutes %actor.name%! 
+    %load% o 15 
+    %at% %loadroom% drop quest_token_zone_1 
+    %load% obj 16 %actor% inv 
+    %send% %actor% %self.name% gives you the quest timer. 
+    %echoaround% %actor% %self.name% gives %actor.name% the quest timer. 
+    set on_quest_zone_1 %time.day% %time.hour% 
+    remote on_quest_zone_1 %actor.id% 
+    halt 
+  end 
   * End of the loop we need to take the next word in the string and save the 
-  * remainder for the next pass.
-  eval word %rest.car%
-  eval rest %rest.cdr%
+  * remainder for the next pass. 
+  eval word %rest.car% 
+  eval rest %rest.cdr% 
 done
 ~
 #140
 Quest Timer - 16~
 1 c 7
 l~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Part of a timed quest to kill a mob or find an object. Trigs 138-144.
 * Let a player see how much time they have left.
 if %cmd.mudcommand% == look && timer /= %arg%
@@ -747,7 +784,7 @@ end
 Quest 10 min Purge - 15, 16, 17~
 1 f 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Part of a timed quest to kill a mob or find an object. Trigs 138-144.
 * Attached to quest objects 15-17. Purges itself 10 minutes after loading if 
 * player does not finish the quest.
@@ -767,7 +804,7 @@ end
 Quest Timer Random - 16~
 1 b 10
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Part of a timed quest to kill a mob or find an object. Trigs 138-144.
 * If timer is being carried by a player, warn them every 2 minutes.
 if %self.carried_by%
@@ -781,7 +818,7 @@ end
 Questmaster Receive - 3~
 0 j 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Part of a timed quest to kill a mob or find an object. Trigs 138-144.
 * Check if they are on the quest.
 if !%actor.varexists(on_quest_zone_1)%
@@ -791,13 +828,13 @@ if !%actor.varexists(on_quest_zone_1)%
 end
 *
 wait 1 sec
-* If they have the head or the token.
+* If they had the head or the token.
 if %object.vnum% == 15 || %object.vnum% == 17
+  rdelete on_quest_zone_1 %actor.id%   
   say Well done, %actor.name%.
   * Give them 50 gold and experience. Delete the on quest variable and purge.
   nop %actor.exp(50)%
   nop %actor.gold(50)%
-  rdelete on_quest_zone_1 %actor.id%   
   %purge% %object%
   * Reward them with 1 questpoint. Cheap I know but these quests are not hard.
   nop %actor.questpoints(1)%
@@ -812,7 +849,7 @@ end
 Quest Mob Loads Head - 15~
 0 n 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Part of a timed quest to kill a mob or find an object. Trigs 138-144.
 * This is a load instead of a death trig because I want the head to purge 10 
 * minutes after loading.
@@ -913,7 +950,7 @@ emote %speech%
 Angel Receives Treats - 207~
 0 j 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A simple receive trig if you give the dog food she will eat it. If you give
 * her dog treats she will follow you. Everything else she drops.
 if %object.type% == FOOD
@@ -1007,14 +1044,20 @@ end
 Check for treats - 207~
 0 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* My dog is looking if people have some beggin strips.
 if %actor.has_item(164)%
   wait 1 sec
-  emote sits down and stands up on %self.hisher% hind legs, then starts whining pitifully staring at %actor.name%.
+  %send% %actor% %self.name% sits down and stands up on %self.hisher% hind legs, then starts whining pitifully staring at you.
+  %echoaround% %actor% %self.name% sits down and stands up on %self.hisher% hind legs, then starts whining pitifully staring at %actor.name%.
+  * Or if they have her rubber chicken.
 elseif %actor.has_item(172)%
+  wait 1 sec
   emote sniff %actor.name%
   wait 1 sec
   growl %actor.name%
-  emote tries to get at something you are carrying.
+  %send% %actor% %self.name% tries to get at something you are carrying.
+  %echoaround% %actor% %self.name% tries to get at something %actor.name% is carrying.
 end
 ~
 #156
@@ -1163,7 +1206,7 @@ end
 Cast spells on Greet - M135~
 0 g 10
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Cast a random spell on players that enter. But, only if they are not already
 * affected and only 10% of the time.
 switch %random.12%
@@ -1236,7 +1279,7 @@ done
 Mob Questshop Example~
 0 c 100
 *~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A questshop that uses questpoints!
 * Command triggers do not work for level 32 and above.
 if %cmd.mudcommand% == list
@@ -1878,7 +1921,7 @@ say %speech%
 Confucius - 23~
 0 b 10
 ~
-* By Rumble of The Builder Academy   builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Confucius - M23 - T186 By Rumble
 eval max %random.27%
 set txt[1] Before you embark on a journey of revenge, dig two graves. 
@@ -2131,7 +2174,10 @@ say The best advice for new builders is under @RHELP SUGGESTIONS@n.
 TBA Welcome - 18~
 0 e 1
 entered reconnected~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* TBA mortal greet to fill out the application.
 if %actor.is_pc% && %actor.level% == 1
+  context %actor.id%
   wait 1 sec
   if %actor.varexists(TBA_mortal_greeting)%
     say Welcome back %actor.name%. Tell someone level 32 or above when you complete the application.
@@ -2140,7 +2186,9 @@ if %actor.is_pc% && %actor.level% == 1
     wait 2 sec
     say If you are interested in learning how to build, or want to teach others, then you have come to the right place.
     wait 2 sec
-    say Please fill out the application at: http://tbamud.com/builderapplication
+say Please fill out the application at: http://www.geocities.com/buildersacademy
+    nop %actor.thirst(-1)%
+    nop %actor.hunger(-1)%
     set TBA_mortal_greeting 1
     remote TBA_mortal_greeting %actor.id%
     if !%actor.has_item(1332)%

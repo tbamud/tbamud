@@ -1,0 +1,335 @@
+If you have any additions, corrections, ideas, or bug reports please stop by the
+Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
+
+The Art of Debugging 
+Originally by Michael Chastain and Sammy
+
+The following documentation is excerpted from Merc 2.0’s hacker.txt file. It 
+was written by Furey of MERC Industries and is included here with his 
+permission. We have packaged it with tbaMUD (changed in a couple of places, 
+such as specific filenames) because it offers good advice and insight into the 
+art and science of software engineering. More information about tbaMUD, 
+can be found at the tbaMUD home page http://tbamud.com.
+
+1 “I’m running a Mud so I can learn C programming!” 
+
+Yeah, right. The purpose of this document is to record some of our knowledge,
+experience and philosophy. No matter what your level, we hope that this 
+document will help you become a better software engineer. Remember that 
+engineering is work, and no document will substitute for your own thinking, 
+learning and experimentation. 
+
+2 How to Learn in the First Place 
+
+Play with something. 
+Read the documentation on it. 
+Play with it some more. 
+Read documentation again. 
+Play with it some more. 
+Read documentation again. 
+Play with it some more. 
+Read documentation again. 
+Get the idea? 
+
+The idea is that your mind can accept only so much “new data” in a single 
+session. Playing with something doesn’t introduce very much new data, but it 
+does transform data in your head from the “new” category to the “familiar” 
+category. Reading documentation doesn’t make anything “familiar,” but it 
+refills your “new” hopper. 
+
+Most people, if they even read documentation in the first place, never return
+to it. They come to a certain minimum level of proficiency and then never 
+learn any more. But modern operating systems, languages, networks, and even 
+applications simply cannot be learned in a single session. You have to work 
+through the two-step learning cycle many times to master it. 
+
+3 Basic Unix Tools 
+
+man gives you online manual pages.
+
+grep stands for “global regular expression print;” searches for strings in text 
+files. 
+
+vi, emacs, jove use whatever editor floats your boat, but learn the hell out 
+of it; you should know every command in your editor.
+
+ctags mags “tags” for your editor which allows you to go to functions by name 
+in any source file.
+
+>, >>, <, | input and output redirection at the command line; get someone to 
+show you, or dig it out of “man csh” 
+
+These are the basic day-in day-out development tools. Developing without 
+knowing how to use all of these well is like driving a car without knowing 
+how to change gears. 
+
+4 Debugging: Theory 
+
+Debugging is a science. You formulate a hypothesis, make predictions based on 
+the hypothesis, run the program and provide it experimental input, observe its 
+behavior, and confirm or refute the hypothesis. 
+
+A good hypothesis is one which makes surprising predictions which then come 
+true; predictions that other hypotheses don’t make. 
+
+The first step in debugging is not to write bugs in the first place. This 
+sounds obvious, but sadly, is all too often ignored. 
+
+If you build a program, and you get any errors or any warnings, you should fix
+them before continuing. C was designed so that many buggy ways of writing code
+are legal, but will draw warnings from a suitably smart compiler (such as “gcc”
+with the -Wall flag enabled). It takes only minutes to check your warnings and
+ to fix the code that generates them, but it takes hours to find bugs otherwise.
+
+“Desk checking” (proof reading) is almost a lost art these days. Too bad. You 
+should desk check your code before even compiling it, and desk-check it again 
+periodically to keep it fresh in mind and find new errors. If you have someone
+in your group whose only job it is to desk-check other people’s code, that 
+person will find and fix more bugs than everyone else combined. 
+
+One can desk-check several hundred lines of code per hour. A top-flight 
+software engineer will write, roughly, 99% accurate code on the first pass, 
+which still means one bug per hundred lines. And you are not top flight. So...
+you will find several bugs per hour by desk checking. This is a very rapid bug
+fixing technique. Compare that to all the hours you spend screwing around with
+broken programs trying to find one bug at a time. 
+
+The next technique beyond desk-checking is the time-honored technique of 
+inserting “print” statements into the code, and then watching the logged 
+values. Within tbaMUD code, you can call printf(), fprintf(), or log()to dump 
+interesting values at interesting times. Where and when to dump these values 
+is an art, which you will learn only with practice. 
+
+If you don’t already know how to redirect output in your operating system, now 
+is the time to learn. On Unix, type the command “man csh”, and read the part 
+about the “>” operator. You should also learn the difference between “standard 
+output” (for example, output from “printf”) and “standard error” (for example, 
+output from “fprintf(stderr, ...)”). 
+
+Ultimately, you cannot fix a program unless you understand how it is operating 
+in the first place. Powerful debugging tools will help you collect data, but 
+they can’t interpret it, and they can’t fix the underlying problems. Only you 
+can do that. 
+
+When you find a bug... your first impulse will be to change the code, kill the 
+manifestation of the bug, and declare it fixed. Not so fast! The bug you 
+observe is often just the symptom of a deeper bug. You should keep pursuing the
+bug, all the way down. You should grok the bug and cherish it in fullness 
+before causing its discorporation. 
+
+Also, when finding a bug, ask yourself two questions: “What design and 
+programming habits led to the introduction of the bug in the first place?” And:
+“What habits would systematically prevent the introduction of bugs like this?” 
+
+5 Debugging: Tools 
+
+When a Unix process accesses an invalid memory location, or (more rarely) 
+executes an illegal instruction, or (even more rarely) something else goes 
+wrong, the Unix operating system takes control. The process is incapable of 
+further execution and must be killed. Before killing the process, however, the
+operating system does something for you: it opens a file named “core” and 
+writes the entire data space of the process into it. 
+
+Thus, “dumping core” is not a cause of problems, or even an effect of problems.
+It’s something the operating system does to help you find fatal problems which 
+have rendered your process unable to continue. 
+
+One reads a “core” file with a debugger. The two most popular debuggers on Unix
+are adb and gdb, although occasionally one finds dbx. Typically one starts a 
+debugger like this: “gdb bin/circle” or “gdb bin/circle lib/core”. 
+
+The first thing, and often the only thing, you need to do inside the debugger 
+is take a stack trace. In adb, the command for this is “$c”. In gdb, the 
+command is “backtrace”. In dbx, the command is “where”. The stack trace will 
+tell you what function your program was in when it crashed, and what functions
+were calling it. The debugger will also list the arguments to these functions. 
+Interpreting these arguments, and using more advanced debugger features, 
+requires a fair amount of knowledge about assembly language programming. 
+
+6 Using GDB
+
+GDB has some online help, though it is not the best.  It does at least give
+a summary of commands and what they're supposed to do.  What follows is
+Sammy's short intro to gdb with some bughunting notes following it:
+
+tbaMUD allows multiple core files to be created. Be sure to delete them when
+you are done. If you've got a core file, go to your lib directory and type:
+
+> dir
+
+You should see the core files listed, something like:
+core.#
+
+To use the core file type:
+> gdb ../bin/circle core.#
+
+If you want to hunt bugs in real time (causing bugs to find the cause as
+opposed to checking a core to see why the MUD crashed earlier) use:
+
+> gdb bin/circle
+
+If you're working with a core, gdb should show you where the crash occurred. 
+If you get an actual line that failed, you've got it made. If not, the
+included message should help.  If you're working in real time, now's the
+time to crash the MUD so you can see what gdb catches.
+
+When you've got the crash info, you can type ``where'' to see which function
+called the crash function, which function called that one, and so on all the
+way up to ``main()''.
+
+I should explain about ``context''  You may type ``print ch'' which you
+would expect to show you the ch variable, but if you're in a function that
+doesn't get a ch passed to it (real_mobile, etc), you can't see ch because
+it's not in that context.  To change contexts (the function levels you saw
+with where) type ``up'' to go up.  You start at the bottom, but once you go
+up, and up, and up, you can always go back ``down''.  You may be able to go
+up a couple functions to see a function with ch in it, if finding out who
+caused the crash is useful (it normally isn't).
+
+The ``print'' command is probably the single most useful command, and lets
+you print any variable, and arithmetic expressions (makes a nice calculator
+if you know C math).  Any of the following are valid and sometimes useful:
+
+print ch (fast way to see if ch is a valid pointer, 0 if it's not)
+print *ch (prints the contents of ch, rather than the pointer address)
+print ch->player.name (same as GET_NAME(ch))
+print world[ch->in_room].number (vnum of the room the char is in)
+etc..
+
+Note that you can't use macros (all those handy psuedo functions like GET_NAME
+and GET_MAX_HIT), so you'll have to look up the full structure path of 
+variables you need.
+
+Type ``list'' to see the source before and after the line you're currently
+looking at.  There are other list options but I'm unfamiliar with them.
+
+There are only a couple of commands to use in gdb, though with some patience
+they can be very powerful.  The only commands I've ever used are:
+
+run                     well, duh.
+print [variable]        also duh, though it does more than you might think
+list                    shows you the source code in context
+break [function]        set a breakpoint at a function
+clear [function]        remove a breakpoint
+step                    execute one line of code
+cont                    continue running after a break or ctrl-c
+
+I've run into nasty problems quite a few times.  The cause is often a memory
+problem, usually with pointers, pointers to nonexistent memory. If you free
+a structure, or a string or something, the pointer isn't always set to NULL,
+so you may have code that checks for a NULL pointer that thinks the pointer
+is ok since it's not NULL.  You should make sure you always set pointers to
+NULL after freeing them.
+
+Ok, now for the hard part.  If you know where the problem is, you should be
+able to duplicate it with a specific sequence of actions. That makes things
+much easier.  What you'll have to do is pick a function to ``break'' at. 
+The ideal place to break is immediately before the crash.  For example, if
+the crash occurred when you tried to save a mob with medit, you might be
+able to ``break mobs_to_file''.  Try that one first.
+
+When you `medit save', the MUD will hang.  GDB will either give you segfault
+info, or it will be stopped at the beginning of mobs_to_file.  If it
+segfaulted, pick an earlier function, like copy_mobile, or even do_medit.
+
+When you hit a breakpoint, print the variables that are passed to the
+function to make sure they look ok.  Note that printing the contents of
+pointers is possible with a little playing around.  For example, if you
+print ch, you get a hex number that shows you the memory location where ch
+is at.  It's a little helpful, but try print *ch and you'll notice that it
+prints the contents of the ch structure, which is usually more useful. 
+print ch->player will give you the name of the person who entered the
+command you're looking at, and some other info. If you get a no ch in this
+context it is because the ch variable wasn't passed to the function you're
+currently looking at.
+
+Ok, so now you're ready to start stepping.  When GDB hit your breakpoint, it
+showed you the first line of executable code in your function, which will
+sometimes be in your variable declarations if you initialized any variables
+(ex: int i = 0).  As you're stepping through lines of code, you'll see one
+line at a time.  Note that the line you see hasn't been run yet.  It's
+actually the _next_ line to be executed.  So if the line is a = b + c;,
+printing a will show you what a was before this line, not the sum of b and
+c. If you have an idea of where the crash is occurring, you can keep
+stepping till you get to that part of the code (tip: pressing return will
+repeat the last GDB command, so you can type step once, then keep pressing
+return to step quickly).  If you have no idea where the problem is, the
+quick and dirty way to find your crash is to keep pressing return rapidly
+(don't hold the eturn key or you'll probably miss it).  When you get the seg
+fault, you can't step any more, so it should be obvious when that happens.
+
+Now that you've found the exact line where you get the crash, you should
+start the MUD over and step more slowly this time. What I've found that
+works really well to save time is to create a dummy function.  This one will
+work just fine:
+
+void dummy(void){}
+
+Put that somewhere in the file you're working on.  Then, right before the
+crash, put a call to dummy in the code (ex: dummy();).  Then set your
+breakpoint at dummy, and when you hit the breakpoint, step once to get back
+to the crashing code.
+
+Now you're in total control.  You should be looking at the exact line that
+gave you the crash last time.  Print *every* variable on this line.  Chances
+are one of them will be a pointer to an unaccessable memory location.  For
+example, printing ch->player.name may give you an error.  If it does, work
+your way back and print ch->player to make sure that one's valid, and if it
+isn't, try printing ch.
+
+Somewhere in there you're going to have an invalid pointer.  Once you know
+which one it is, it's up to you to figure out why it's invalid. You may have
+to move dummy() up higher in the code and step slowly, checking your pointer
+all the way to see where it changes from valid to invalid.  You may just
+need to NULL a free'd pointer, or you may have to add a check for a NULL
+pointer, or you may have screwed up a loop.  I've done all that and more :)
+
+Well, that's it in a nutshell.  There's a lot more to GDB that I haven't
+even begun to learn, but if you get comfortable with print and stepping you
+can fix just about any bug.  I spent hours on the above procedure trying to
+get my ascii object and mail saving working right, but it could have taken
+weeks without gdb.  The only other suggestion I have is to check out the
+online gdb help.  It's not very helpful for learning, but you can see what
+commands are available and play around with them to see if you can find any
+new tools.
+
+7 Profiling 
+
+Another useful technique is “profiling,” to find out where your program is 
+spending most of its time. This can help you to make a program more efficient.
+
+Here is how to profile a program: 
+
+1. Remove all the .o files and the “circle” executable: 
+make clean 
+
+2. Edit your Makefile, and change the PROFILE=line: 
+PROFILE = -p 
+
+3. Remake circle: 
+make 
+
+4. Run circle as usual. Shutdown the game with the shutdown command when you 
+have run long enough to get a good profiling base under normal usage 
+conditions. If you crash the game, or kill the process externally, you won’t 
+get profiling information. 
+
+5. Run the profcommand: 
+prof bin/circle > prof.out 
+
+6. Read prof.out. Run “man prof” to understand the format of the output. For 
+advanced profiling, you can use “PROFILE = -pg” in step 2, and use the “gprof” 
+command in step 5. The “gprof” form of profiling gives you a report which lists
+exactly how many times any function calls any other function. This information
+is valuable for debugging as well as performance analysis. 
+
+Availability of “prof” and “gprof” varies from system to system. Almost every
+Unix system has “prof”. Only some systems have “gprof”. 
+
+7 Books for Serious Programmers 
+
+Out of all the thousands of books out there, three stand out: 
+
+Kernighan and Plaugher, “The Elements of Programming Style” 
+Kernighan and Ritchie, “The C Programming Language” 
+Brooks, “The Mythical Man Month” 

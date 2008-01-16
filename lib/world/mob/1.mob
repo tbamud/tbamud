@@ -982,6 +982,7 @@ He is covered in a film of dirt and grime.  He smells even worse than you.
 80 6400
 8 8 1
 E
+T 206
 #169
 citizen~
 a citizen~
@@ -1277,10 +1278,11 @@ carries out their orders and makes a good job of it.  He has been fighting more
 years than you've been living.    
 ~
 2058 0 0 0 0 0 0 0 1000 E
-30 10 -8 6d6+300 5d5+5
-300 90000
+5 19 7 1d1+50 1d2+0
+50 2500
 8 8 1
 E
+T 207
 #190
 cat pussy~
 the cat~

@@ -231,4 +231,10 @@ while %item%
   * Loop back
 done
 ~
+#3012
+Newbie Tour Guide~
+0 e 0
+has entered the game.~
+%echo% This trigger commandlist is not complete!
+~
 $~

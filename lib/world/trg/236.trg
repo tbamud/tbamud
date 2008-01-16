@@ -419,7 +419,7 @@ mkill %bad_guy%
 Lieutenant Door Bribe - M23608~
 0 m 1
 ~
-* By Welcor of The Builder Academy builderacademy.net 9091
+* By Welcor of The Builder Academy    tbamud.com 9091
 wait 1
 * The price is 400 coins to pass. Player must 'give 400 coin leader.'
 if %amount% < 400
@@ -440,7 +440,7 @@ end
 Lieutenant Door Bribe 2 - M23608~
 0 r 100
 ~
-* By Welcor of The Builder Academy builderacademy.net 9091
+* By Welcor of The Builder Academy    tbamud.com 9091
 * Allows more than one instance of this trigger to run.
 context %actor.id%
 * Checks a global variable to see if this mob has been bribed. TSTAT 23612.
@@ -466,7 +466,7 @@ end
 Lieutenant Leave - 23608~
 0 q 100
 ~
-* By Welcor of The Builder Academy builderacademy.net 9091
+* By Welcor of The Builder Academy    tbamud.com 9091
 * If the player is trying to leave to the East.
 if %direction% == east
   context %actor.id%
@@ -483,20 +483,16 @@ if %direction% == east
 end
 ~
 #23615
-Check for Dwarf - 23610~
-2 c 100
-e~
-if %cmd.mudcommand% == east
-  if %actor.race%==dwarf
-    %send% %actor% The door vanishes as if it was never there, and you step through.
-    %echoaround% %actor% As %actor.name% steps through the doorway, the door disappears for an instant.
-    %teleport% %actor% 23611
-    %echoaround% %actor% %actor.name% has arrived.
-    %force% %actor% look
-    return 1
-  else
-    return 0
-  end
+FREE~
+2 q 100
+~
+if %direction% == east
+return 0
+  %send% %actor% The door vanishes as if it was never there, and you step through.
+  %echoaround% %actor% As %actor.name% steps through the doorway, the door disappears for an instant.
+  %teleport% %actor% 23611
+  %echoaround% %actor% %actor.name% has arrived.
+  %force% %actor% look
 end
 ~
 #23616

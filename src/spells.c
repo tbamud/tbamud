@@ -23,7 +23,7 @@
 /* external variables */
 extern room_rnum r_mortal_start_room;
 extern int mini_mud;
-extern char cast_arg2[MAX_STRING_LENGTH];
+extern char cast_arg2[MAX_INPUT_LENGTH];
 
 /* external functions */
 void weight_change_object(struct obj_data *obj, int weight);

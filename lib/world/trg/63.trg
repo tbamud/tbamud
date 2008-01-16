@@ -2,7 +2,7 @@
 Near Death Trap Mahatma - 6318~
 0 g 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Near Death Trap - Mahatma stuns actor and then takes all of their equipment.
 wait 3 sec
 say Here, have a quick trip to the Temple of Midgaard.

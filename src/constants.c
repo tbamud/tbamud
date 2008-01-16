@@ -13,7 +13,7 @@
 #include "structs.h"
 #include "interpreter.h"	/* alias_data */
 
-cpp_extern const char *tbamud_version = "tbaMUD, version 3.54";
+cpp_extern const char *tbamud_version = "tbaMUD, version 3.55";
 cpp_extern const char *oasisolc_version = "OasisOLC 2.0.6";
 cpp_extern const char *ascii_pfiles_version = "ASCII Player Files 3.0.1";
 

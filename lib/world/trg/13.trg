@@ -48,20 +48,29 @@ CAPITAL~
 %send% %actor% @RSocrates tells you, 'Good job, that is correct. Be on the lookout for more of those.'@n
 ~
 #1304
-free~
-0 g 100
+Sanct check on enter~
+2 g 100
 ~
-wait 1 sec
-say some more good advice may be found under @RHELP GRAMMAR@n and @RHELP REPORT@n.
+if %actor.affect(SANCT)%
+  %echo% checked sanct
+else
+  %echo% sanct check failed
+end
 ~
 #1305
 TBA Greeting - 1301~
 0 e 1
 arrives entered appears~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* TBA start room greeting for anyone that enters, poofs, or is transferred.
+* Simple remote to remember if this is a newbie or someone returning.
+* Only fire on players.
 if %actor.is_pc%
   wait 1 sec
+  * If they have already been greeted welcome them back.
   if %actor.varexists(TBA_greeting)%
     say Welcome back %actor.name%. Read through these rooms whenever you need a refresher.
+    * First greeting, give them instructions.
   else
     say Welcome to The Builder Academy %actor.name%. 
     wait 1 sec
@@ -70,8 +79,11 @@ if %actor.is_pc%
     say This zone is like a newbie zone, except for gods. All you have to do is walk through the zone and read every room description.
     wait 3 sec
     say Be sure to do everything the room descriptions tell you to do. You should read and comprehend everything contained within these walls.
+    * Now create a variable to remember they have been greeted.
     set TBA_greeting 1
+    * Save it to the player file.
     remote TBA_greeting %actor.id%
+    * Give them a trial vnum assigner if they don't have one yet.
     if !%actor.has_item(1332)%
       %load% obj 1332 %actor% inv
     end
@@ -1486,7 +1498,7 @@ free~
 Drop While Example - Grenade 01301~
 1 h 100
 ~
-* By Rumble of The Builder Academy    builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * A small script to make a grenade go off 3 seconds after it is dropped.
 * Set the rooms ID to a variable.
 set room_var %actor.room%
@@ -1727,35 +1739,10 @@ while (%person%)
 done
 ~
 #1361
-Postal Shotgun - 1392~
+Free~
 1 b 100
 ~
-* if the object is being wielded
-if %self.worn_by%
-  * a random trigger so actor has to be defined
-  eval actor %self.worn_by%
-  * if the person wielding the object is fighting
-  if %actor.fighting%
-    * evaluate uniquely to this player
-    context %actor.id%
-    * count the shots
-    eval shotgun_rounds %shotgun_rounds% + 1
-    * remember the count for the next time this trig fires
-    global shotgun_rounds
-    * double barrel shotgun, only has 2 rounds
-    if %shotgun_rounds% > 2
-      * detaching trig since gun is out of ammo.
-      detach 1361 %self.id%
-      halt
-    end  
-    * have to define the victim
-    eval victim %actor.fighting%
-    * send the message and do the damage
-    %echoaround% %actor% %actor.name% points %self.shortdesc% at %victim.name% and pulls the trigger.
-    %send% %actor% You point %self.shortdesc% at %victim.name% and pull the trigger.
-    %damage% %victim% 10
-  end
-end
+* No Script
 ~
 #1362
 Deodorant Bottle - 1391~
@@ -2182,60 +2169,63 @@ if (%cmd.mudcommand% == bash || %cmd.mudcommand% == backstab || %cmd.mudcommand%
 Rumble's Poofs~
 0 e 0
 has entered the game.~
-* does not work for level 32 and above.
-eval maxpoofin %random.24% -1
-set  poofins[0] appears with a strange wooshing sound and climbs out of a pneumatic air tube like they use at the bank.
-set  poofins[1] thinks himself into existence.
-set  poofins[2] soars into the room like a bird, and THWAP! right into a window.
-set  poofins[3] crawls out of the ground gasping for air.
-set  poofins[4] appears in a flash of blinding nothingness!
-set  poofins[5] falls from the sky above, screaming until he hits the ground. SPLAT! like a bug on a windshield.
-set  poofins[6] appears with a dulcet bang.
-set  poofins[7] appears with a sonic boom.
-set  poofins[8] wanders into the room while practicing omphaloskepsis.
-set  poofins[9] somersaults into the room.
-set  poofins[10] stumbles into the room, tripping over his own feet and falling flat on his face.
-set  poofins[11] dives into the room doing a two and a half tuck gainer, right into the dirt.
-set  poofins[12] runs into the room screaming and looking over his shoulder.
-set  poofins[13] steps out of your shadow.
-set  poofins[14] forms out of the very essence of your shadow to hang in the air before you.
-set  poofins[15] climbs out of your left nostril.
-set  poofins[16] has abandoned his search for truth and is now looking for a good fantasy.
-set  poofins[17] wishes he was a donut specialist.
-set  poofins[18] can resist everything but temptation.
-set  poofins[19] is searching for a near life experience.
-set  poofins[20] walks into the room fashionably early.
-set  poofins[21] hanglides into the room.
-set  poofins[22] parachutes into the room performing a perfect parachute landing fall, except for the fact that he landed backside first.
-set  poofins[23] does a cannonball into room, injuring himself on the hard ground.
-set  poofin %%poofins[%maxpoofin%]%%
-eval poofin %poofin%
-%force% %actor% poofin %poofin%
+* By Rumble of The Builder Academy    tbamud.com 9091
+* To generate random poofs at login just set your loadroom to wherever this
+* mob is. Does not work for level 32 and above.
+eval maxpoofin %random.24%
+set  poofins[1] appears with a strange wooshing sound and climbs out of a pneumatic air 
+tube like they use at the bank.
+set  poofins[2] thinks himself into existence.
+set  poofins[3] soars into the room like a bird, and THWAP! right into a window.
+set  poofins[4] crawls out of the ground gasping for air.
+set  poofins[5] appears in a flash of blinding nothingness!
+set  poofins[6] falls from the sky above, screaming until he hits the ground. SPLAT! like a 
+bug on a windshield.
+set  poofins[7] appears with a dulcet bang.
+set  poofins[8] appears with a sonic boom.
+set  poofins[9] wanders into the room while practicing omphaloskepsis.
+set  poofins[10] somersaults into the room.
+set  poofins[11] stumbles into the room, tripping over his own feet and falling flat on his face.
+set  poofins[12] dives into the room doing a two and a half tuck gainer, right into the dirt.
+set  poofins[13] runs into the room screaming and looking over his shoulder.
+set  poofins[14] steps out of your shadow.
+set  poofins[15] forms out of the very essence of your shadow to hang in the air before you.
+set  poofins[16] climbs out of your left nostril.
+set  poofins[17] has abandoned his search for truth and is now looking for a good fantasy.
+set  poofins[18] wishes he was a donut specialist.
+set  poofins[19] can resist everything but temptation.
+set  poofins[20] is searching for a near life experience.
+set  poofins[21] walks into the room fashionably early.
+set  poofins[22] hanglides into the room.
+set  poofins[23] parachutes into the room performing a perfect parachute landing fall, 
+except for the fact that he landed backside first.
+set  poofins[24] does a cannonball into room, injuring himself on the hard ground.
+eval  poofin %%poofins[%maxpoofin%]%%
+%force% %actor% set self poofin %poofin%
 *
-eval maxpoofout %random.20% -1
-set  poofouts[0] is chased out of the room by a barrel of rabid monkeys.
-set  poofouts[1] creates a pneumatic air tube, like they use at the banks, and steps in. He is sucked out of sight.
-set  poofouts[2] thinks himself out of existence.
-set  poofouts[3] walks out saying 'time to make the donuts.'
-set  poofouts[4] goes super critical and has a meltdown. Nothing remains but a pile of steaming radioactive mush.
-set  poofouts[5] disappears in a flash of blinding nothingness!
-set  poofouts[6] merges with his surroundings and vanishes.
-set  poofouts[7] morphs into millions of ants, which run off in all directions.
-set  poofouts[8] senses that everything is well, so he floats away.
-set  poofouts[9] goes to hell in a handbasket.
-set  poofouts[10] does somersaults out of the room.
-set  poofouts[11] dives out of the room doing three rotations in the jackknife position.
-set  poofouts[12] stumbles out of the room with a look of confusion on his face, must have forgotten where he parked.
-set  poofouts[13] steps into your shadow and disappears.
-set  poofouts[14] points behind you with a look of horror. While you turn away he disappears chuckling 'made you look'.
-set  poofouts[15] doesn't like saying goodbye, so he didn't.
-set  poofouts[16] completes an intricate spell of chantings and gestures that creates an inter-dimensional portal of space and time. Before he steps through it and disappears you notice a 'made in china' sticker on its bottom.
-set  poofouts[17] creates a huge rubber band, straps himself into the middle of it and stretches it back like a slingshot. With a wave he releases it and is hurtled out of sight.
-set  poofouts[18] straps an ACME rocket to his back and asks, 'got a light?' right before it explodes and sends him soaring.
-set  poofouts[19] puts on a helmet and climbs into the barrel of an ACME cannon. It explodes sending pieces of Rumble off into the distance.
-set  poofout %%poofouts[%maxpoofout%]%%
-eval poofout %poofout%
-%force% %actor% poofout %poofout%
+eval maxpoofout %random.20%
+set  poofouts[1] is chased out of the room by a barrel of rabid monkeys.
+set  poofouts[2] creates a pneumatic air tube, like they use at the banks, and steps in. He is sucked out of sight.
+set  poofouts[3] thinks himself out of existence.
+set  poofouts[4] walks out saying 'time to make the donuts.'
+set  poofouts[5] goes super critical and has a meltdown. Nothing remains but a pile of steaming radioactive mush.
+set  poofouts[6] disappears in a flash of blinding nothingness!
+set  poofouts[7] merges with his surroundings and vanishes.
+set  poofouts[8] morphs into millions of ants, which run off in all directions.
+set  poofouts[9] senses that everything is well, so he floats away.
+set  poofouts[10] goes to hell in a handbasket.
+set  poofouts[11] does somersaults out of the room.
+set  poofouts[12] dives out of the room doing three rotations in the jackknife position.
+set  poofouts[13] stumbles out of the room with a look of confusion on his face, must have forgotten where he parked.
+set  poofouts[14] steps into your shadow and disappears.
+set  poofouts[15] points behind you with a look of horror. While you turn away he disappears chuckling 'made you look'.
+set  poofouts[16] doesn't like saying goodbye, so he didn't.
+set  poofouts[17] completes an intricate spell of chantings and gestures that creates an inter-dimensional portal of space and time. Before he steps through it and disappears you notice a 'made in china' sticker on its bottom.
+set  poofouts[18] creates a huge rubber band, straps himself into the middle of it and stretches it back like a slingshot. With a wave he releases it and is hurtled out of sight.
+set  poofouts[19] straps an ACME rocket to his back and asks, 'got a light?' right before it explodes and sends him soaring.
+set  poofouts[20] puts on a helmet and climbs into the barrel of an ACME cannon. It explodes sending pieces of Rumble off into the distance.
+eval  poofout %%poofouts[%maxpoofout%]%%
+%force% %actor% set self poofout %poofout%
 ~
 #1373
 Present Unwrapping~
@@ -2962,7 +2952,7 @@ say 24
 Random Rabbit Decapitates Mobs - M1307~
 0 b 100
 none~
-* By Rumble of The Builder Academy builderacademy.net 9091
+* By Rumble of The Builder Academy    tbamud.com 9091
 * This is for any Monty Python Fans.
 * First figure out what room you are in.
 eval room_var %self.room%

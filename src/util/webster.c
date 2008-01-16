@@ -1,10 +1,8 @@
 /* ************************************************************************
-*   File: wld2html.c                                                      *
-*  Usage: Convert a DikuMUD .wld file into a series of .html files        *
+*  File: webster.c                                         Part of tbaMUD *
+*  Usage: Use an online dictionary via tell m-w <word>.                   *
 *                                                                         *
-*  This program is in the public domain.                                  *
-*  Written (QUICKLY AND DIRTILY) by Jeremy Elson (jelson@circlemud.org)   *
-*  Based on the Circle 3.0 syntax checker program (scheck.c)              *
+*  Based on the Circle 3.0 syntax checker and wld2html programs.          *
 ************************************************************************ */
 
 #define log(msg) fprintf(stderr, "%s\n", msg)

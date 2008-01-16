@@ -1,5 +1,5 @@
 /* ************************************************************************
-*  file: listrent.c                                  Part of CircleMUD *
+*  file: listrent.c                                        Part of tbaMUD *
 *  Usage: list player rent files                                          *
 *  Written by Jeremy Elson                                                *
 *  All Rights Reserved                                                    *

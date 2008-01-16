@@ -1,6 +1,6 @@
 /* ************************************************************************
-*  file:  asciipasswd.c (derived from mudpasswd.c)    Part of CircleMud   *
-*  Usage: generating hashed passwords for an ascii playerfile             *
+*  file:  asciipasswd.c (derived from mudpasswd.c)         Part of tbaMUD *
+*  Usage: generating hashed passwords for an ascii playerfile.            *
 *  Copyright (C) 1990, 1991 - see 'license.doc' for complete information. *
 *  All Rights Reserved                                                    *
 ************************************************************************* */

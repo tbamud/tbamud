@@ -122,6 +122,63 @@ else
 end 
 %echoaround% %actor% %actor.name% peers into %actor.hisher% gently glowing ring. 
 ~
+#206
+Smelly Bum - M168~
+0 i 100
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* A trig to let people smell the bum from 1 room away.
+* For the first move there is no from_room so set it.
+if !%from_room%
+  eval from_room %self.room.vnum%
+  global from_room
+  halt
+end
+wait 1 sec
+eval inroom %self.room%
+*
+%at% %from_room% %echo% %self.name%'s smell slowly dissipates with %self.himher%.
+if %inroom.north% && %inroom.north(vnum)% != %from_room%
+  %at% %inroom.north(vnum)% %echo% You notice a nasty smell to the south.
+end
+if %inroom.south% && %inroom.south(vnum)% != %from_room%
+  %at% %inroom.south(vnum)% %echo% You notice a nasty smell to the north.
+end
+if %inroom.east% && %inroom.east(vnum)% != %from_room%
+  %at% %inroom.east(vnum)% %echo% You notice a nasty smell to the west.
+end
+if %inroom.west% && %inroom.west(vnum)% != %from_room%
+  %at% %inroom.west(vnum)% %echo% You notice a nasty smell to the east.
+end
+if %inroom.up% && %inroom.up(vnum)% != %from_room%
+  %at% %inroom.up(vnum)% %echo% You notice a nasty smell below you.
+end
+if %inroom.down% && %inroom.down(vnum)% != %from_room%
+  %at% %inroom.down(vnum)% %echo% You notice a nasty smell above you.
+end
+*
+eval from_room %self.room.vnum%
+global from_room
+~
+#207
+Mob Blocks opening of chest~
+0 c 100
+o~
+* By Rumble of The Builder Academy    tbamud.com 9091 
+* does not work for level 32 and above.
+* Make sure the command is open, check for any abbrev of chest
+if %cmd.mudcommand% == open && chest /= %arg%
+  * findmob checks if the mob is in the room.
+  if %findmob.230(189)%
+    %echoaround% %actor% As %actor.name% tries to approach the chest %self.name% looks up.
+    wait 1 sec
+    say get away from there.
+  end
+else
+  * If it doesn't match let the command continue.
+  return 0
+end
+~
 #212
 Phoenix Rising - 219~
 1 c 4

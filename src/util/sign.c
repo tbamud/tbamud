@@ -1,17 +1,9 @@
-/*
- * sign.c: a program to present text on a TCP port
- *
- * Author: Jeremy Elson (jelson@circlemud.org)
- *  Usage: sign <port> <filename> or
- *         sign <port> -
- *
- * '-' indicates file should be read from stdin.
- *
- * This program is in the public domain.  It may be copied, redistributed,
- * reused, modified, etc., but a notice of my authorship must be maintained.
- *
- * This program comes with no warranty of any kind, expressed or implied.
- */
+/* ************************************************************************
+*  file: sign.c                                            Part of tbaMUD *
+*  Usage: A program to present text on a TCP port.                        *
+*         sign <port> <filename | port>                                   *
+*  Written by Jeremy Elson                                                *
+************************************************************************* */
 
 #define MAX_FILESIZE	8192
 #define LINEBUF_SIZE	128
