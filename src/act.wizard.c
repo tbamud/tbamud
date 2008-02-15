@@ -1534,7 +1534,7 @@ ACMD(do_advance)
     act("$n makes some strange gestures. A strange feeling comes upon you,\r\n"
       "Like a giant hand, light comes down from above, grabbing your body,\r\n"
       "that begins to pulse with colored lights from inside.\r\n\r\n" 
-      "Your head seems to be filled with demons from another plane as your\r\n"
+      "Your head seems to be filled with demons from another plane as\r\n"
       "your body dissolves to the elements of time and space itself.\r\n" 
       "Suddenly a silent explosion of light snaps you back to reality.\r\n\r\n"
       "You feel slightly different.", FALSE, ch, 0, victim, TO_VICT); 
@@ -1565,13 +1565,10 @@ ACMD(do_advance)
     SET_BIT_AR(PRF_FLAGS(victim), PRF_AUTOEXIT);
         for (i = 1; i <= MAX_SKILLS; i++)
           SET_SKILL(victim, i, 100);
-    if (!PLR_FLAGGED(victim, PLR_NOWIZLIST))
-      run_autowiz();
    GET_OLC_ZONE(victim) = NOWHERE;
   }
 
-  gain_exp_regardless(victim,
-	 level_exp(GET_CLASS(victim), newlevel) - GET_EXP(victim));
+  gain_exp_regardless(victim, level_exp(GET_CLASS(victim), newlevel) - GET_EXP(victim));
   save_char(victim);
 }
 
