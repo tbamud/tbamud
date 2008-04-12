@@ -18,11 +18,11 @@
 /* NOTE (gg): Didn't modify sedit much. Don't consider it as 'recent' as the 
  * other editors with regard to updates or style. */
 
-/* local functions */
-void copy_shop_list(IDXTYPE **tlist, IDXTYPE *flist);
-void copy_shop_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist);
-void free_shop_strings(struct shop_data *shop);
-void free_shop_type_list(struct shop_buy_data **list);
+/* local (file scope) functions */
+static void copy_shop_list(IDXTYPE **tlist, IDXTYPE *flist);
+static void copy_shop_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist);
+static void free_shop_strings(struct shop_data *shop);
+static void free_shop_type_list(struct shop_buy_data **list);
 
 void copy_shop(struct shop_data *tshop, struct shop_data *fshop, int free_old_strings)
 {
@@ -61,7 +61,7 @@ void copy_shop(struct shop_data *tshop, struct shop_data *fshop, int free_old_st
 }
 
 /* Copy a 'NOTHING' terminated integer array list. */
-void copy_shop_list(IDXTYPE **tlist, IDXTYPE *flist)
+static void copy_shop_list(IDXTYPE **tlist, IDXTYPE *flist)
 {
   int num_items, i;
 
@@ -81,7 +81,7 @@ void copy_shop_list(IDXTYPE **tlist, IDXTYPE *flist)
 }
 
 /* Copy a -1 terminated (in the type field) shop_buy_data array list. */
-void copy_shop_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist)
+static void copy_shop_type_list(struct shop_buy_data **tlist, struct shop_buy_data *flist)
 {
   int num_items, i;
 
@@ -193,7 +193,7 @@ void remove_shop_from_int_list(IDXTYPE **list, IDXTYPE num)
 }
 
 /* Free all the notice character strings in a shop structure. */
-void free_shop_strings(struct shop_data *shop)
+static void free_shop_strings(struct shop_data *shop)
 {
   if (S_NOITEM1(shop)) {
     free(S_NOITEM1(shop));
@@ -226,7 +226,7 @@ void free_shop_strings(struct shop_data *shop)
 }
 
 /* Free a type list and all the strings it contains. */
-void free_shop_type_list(struct shop_buy_data **list)
+static void free_shop_type_list(struct shop_buy_data **list)
 {
   int i;
 
@@ -343,7 +343,7 @@ int add_shop(struct shop_data *nshp)
 
 int save_shops(zone_rnum zone_num)
 {
-  int i, j, rshop;
+  int i, j, rshop, num_shops = 0;
   FILE *shop_file;
   char fname[128], oldname[128];
   struct shop_data *shop;
@@ -423,7 +423,8 @@ int save_shops(zone_rnum zone_num)
 
       /* Save open/closing times. */
       fprintf(shop_file, "%d\n%d\n%d\n%d\n", S_OPEN1(shop), S_CLOSE1(shop),
-		S_OPEN2(shop), S_CLOSE2(shop));
+          S_OPEN2(shop), S_CLOSE2(shop));
+      num_shops++;
     }
   }
   fprintf(shop_file, "$~\n");
@@ -431,6 +432,9 @@ int save_shops(zone_rnum zone_num)
   snprintf(oldname, sizeof(oldname), "%s/%d.shp", SHP_PREFIX, zone_table[zone_num].number);
   remove(oldname);
   rename(fname, oldname);
+  
+  if (num_shops > 0)
+    create_world_index(zone_table[zone_num].number, "shp");
 
   if (in_save_list(zone_table[zone_num].number, SL_SHP))
     remove_from_save_list(zone_table[zone_num].number, SL_SHP);

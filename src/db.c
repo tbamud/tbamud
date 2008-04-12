@@ -25,6 +25,17 @@
 #include "oasis.h"
 #include "dg_scripts.h"
 #include "dg_event.h"
+#include "act.h"
+#include "ban.h"
+#include "spec_procs.h"
+#include "genzon.h"
+#include "genolc.h"
+#include "genobj.h" /* for free_object_strings */
+#include "config.h" /* for the default config values. */
+#include "fight.h"
+#include "modify.h"
+#include "shop.h"
+#include "quest.h"
 
 /*  declarations of most of the 'global' variables */
 struct config_data config_info; /* Game configuration list.	 */
@@ -42,8 +53,16 @@ struct index_data *obj_index;	/* index table for object file	 */
 struct obj_data *obj_proto;	/* prototypes for objs		 */
 obj_rnum top_of_objt = 0;	/* top of object index table	 */
 
-struct zone_data *zone_table;	/* zone table			 */
-zone_rnum top_of_zone_table = 0;/* top element of zone tab	 */
+struct zone_data *zone_table; /* zone table      */
+zone_rnum top_of_zone_table = 0;/* top element of zone tab   */
+
+/* begin previously located in players.c */
+struct player_index_element *player_table = NULL; /* index to plr file   */
+int top_of_p_table = 0;   /* ref to top of table     */
+int top_of_p_file = 0;    /* ref of size of p file   */
+long top_idnum = 0;       /* highest idnum in use    */
+/* end previously located in players.c */
+
 struct message_list fight_messages[MAX_MESSAGES];	/* fighting messages	 */
 
 struct index_data **trig_index; /* index table for triggers      */
@@ -53,18 +72,20 @@ long max_mob_id = MOB_ID_BASE;  /* for unique mob id's           */
 long max_obj_id = OBJ_ID_BASE;  /* for unique obj id's           */
 int dg_owner_purged;            /* For control of scripts        */
 
+struct aq_data *aquest_table;   /* Autoquests table              */
+qst_rnum total_quests = 0;      /* top of autoquest table        */
+
 struct shop_data *shop_index;   /* index table for shops         */
 int top_shop = -1;              /* top of shop table             */
 
-int no_mail = 0;		/* mail disabled?		 */
-int mini_mud = 0;		/* mini-mud mode?		 */
-int no_rent_check = 0;		/* skip rent check on boot?	 */
-time_t boot_time = 0;		/* time of mud boot		 */
-int circle_restrict = 0;	/* level of game restriction	 */
+int no_mail = 0;                /* mail disabled?		 */
+int mini_mud = 0;               /* mini-mud mode?		 */
+int no_rent_check = 0;          /* skip rent check on boot?	 */
+time_t boot_time = 0;           /* time of mud boot		 */
+int circle_restrict = 0;        /* level of game restriction	 */
 room_rnum r_mortal_start_room;	/* rnum of mortal start room	 */
 room_rnum r_immort_start_room;	/* rnum of immort start room	 */
 room_rnum r_frozen_start_room;	/* rnum of frozen start room	 */
-int converting = FALSE;
 
 char *credits = NULL;		/* game credits			 */
 char *news = NULL;		/* mud news			 */
@@ -86,93 +107,41 @@ struct help_index_element *help_table = NULL;
 struct social_messg *soc_mess_list = NULL;      /* list of socials */
 int top_of_socialt = -1;                        /* number of socials */
 
-struct time_info_data time_info;/* the infomation about the time    */
+struct time_info_data time_info;  /* the infomation about the time    */
 struct weather_data weather_info;	/* the infomation about the weather */
 struct player_special_data dummy_mob;	/* dummy spec area for mobs	*/
-struct reset_q_type reset_q;	/* queue of zones to be reset	 */
+struct reset_q_type reset_q;	    /* queue of zones to be reset	 */
 
-/* local functions */
-int check_bitvector_names(bitvector_t bits, size_t namecount, const char *whatami, const char *whatbits);
-int check_object_spell_number(struct obj_data *obj, int val);
-int check_object_level(struct obj_data *obj, int val);
-void setup_dir(FILE *fl, int room, int dir);
-void index_boot(int mode);
-void discrete_load(FILE *fl, int mode, char *filename);
-int check_object(struct obj_data *);
-void parse_room(FILE *fl, int virtual_nr);
-void parse_mobile(FILE *mob_f, int nr);
-char *parse_object(FILE *obj_f, int nr);
-void load_zones(FILE *fl, char *zonename);
-void assign_mobiles(void);
-void assign_objects(void);
-void assign_rooms(void);
-void assign_the_shopkeepers(void);
-int is_empty(zone_rnum zone_nr);
-void reset_zone(zone_rnum zone);
-int file_to_string(const char *name, char *buf);
-int file_to_string_alloc(const char *name, char **buf);
-void reboot_wizlists(void);
-ACMD(do_reboot);
-void boot_world(void);
-int count_alias_records(FILE *fl);
-int count_hash_records(FILE *fl);
-bitvector_t asciiflag_conv(char *flag);
-void parse_simple_mob(FILE *mob_f, int i, int nr);
-void interpret_espec(const char *keyword, const char *value, int i, int nr);
-void parse_espec(char *buf, int i, int nr);
-void parse_enhanced_mob(FILE *mob_f, int i, int nr);
-void get_one_line(FILE *fl, char *buf);
-void check_start_rooms(void);
-void renum_world(void);
-void renum_zone_table(void);
-void log_zone_error(zone_rnum zone, int cmd_no, const char *message);
-void reset_time(void);
-char fread_letter(FILE *fp);
-void free_followers(struct follow_type *k);
-void load_default_config( void );
-void load_config( void );
-void free_extra_descriptions(struct extra_descr_data *edesc);
-bitvector_t asciiflag_conv_aff(char *flag);
 
-/* external functions */
-void paginate_string(char *str, struct descriptor_data *d);
-struct time_info_data *mud_time_passed(time_t t2, time_t t1);
-void free_alias(struct alias_data *a);
-void load_messages(void);
-void mag_assign_spells(void);
-void update_obj_file(void);	/* In objsave.c */
-void sort_commands(void);
-void sort_spells(void);
-void load_banned(void);
-void read_invalid_list(void);
-void boot_the_shops(FILE *shop_f, char *filename, int rec_count);
-int hsort(const void *a, const void *b);
-void prune_crlf(char *txt);
-void destroy_shops(void);
-void free_object_strings(struct obj_data *obj);
-void free_object_strings_proto(struct obj_data *obj);
-void clean_llog_entries(void);
-void create_command_list(void);
-void build_player_index(void);
-void clean_pfiles(void);
-int add_to_save_list(zone_vnum, int type);
-int save_all(void);
-extern zone_rnum real_zone_by_thing(room_vnum vznum);
+/* declaration of local (file scope) variables */
+static int converting = FALSE;
 
-/* external vars */
-extern struct descriptor_data *descriptor_list;
-extern const char *unused_spellname;	/* spell_parser.c */
-extern int no_specials;
-extern int scheck;
-extern int bitwarning;
-extern int bitsavetodisk;
-extern struct player_index_element *player_table;
-extern int top_of_p_table;
-extern long top_idnum;
-extern int display_closed_doors;
 
-/* external ASCII Player Files vars */
-extern int auto_pwipe;
+
+/* Local (file scope) utility functions */
+static int check_bitvector_names(bitvector_t bits, size_t namecount, const char *whatami, const char *whatbits);
+static int check_object_spell_number(struct obj_data *obj, int val);
+static int check_object_level(struct obj_data *obj, int val);
+static int check_object(struct obj_data *);
+static void load_zones(FILE *fl, char *zonename);
+static int file_to_string(const char *name, char *buf);
+static int file_to_string_alloc(const char *name, char **buf);
+static int count_alias_records(FILE *fl);
+static void parse_simple_mob(FILE *mob_f, int i, int nr);
+static void interpret_espec(const char *keyword, const char *value, int i, int nr);
+static void parse_espec(char *buf, int i, int nr);
+static void parse_enhanced_mob(FILE *mob_f, int i, int nr);
+static void get_one_line(FILE *fl, char *buf);
+static void check_start_rooms(void);
+static void renum_zone_table(void);
+static void log_zone_error(zone_rnum zone, int cmd_no, const char *message);
+static void reset_time(void);
+static char fread_letter(FILE *fp);
+static void free_followers(struct follow_type *k);
+static void load_default_config( void );
+static void free_extra_descriptions(struct extra_descr_data *edesc);
+static bitvector_t asciiflag_conv_aff(char *flag);
+static int hsort(const void *a, const void *b);
 
 /* routines for booting the system */
 char *fread_action(FILE *fl, int nr)
@@ -473,9 +442,13 @@ void boot_world(void)
     log("Loading shops.");
     index_boot(DB_BOOT_SHP);
   }
+  
+  log("Loading quests.");
+  index_boot(DB_BOOT_QST);
+  
 }
 
-void free_extra_descriptions(struct extra_descr_data *edesc)
+static void free_extra_descriptions(struct extra_descr_data *edesc)
 {
   struct extra_descr_data *enext;
 
@@ -582,6 +555,9 @@ void destroy_db(void)
   /* Shops */
   destroy_shops();
 
+  /* Quests */
+  destroy_quests();
+  
   /* Zones */
 #define THIS_CMD zone_table[cnt].cmd[itr]
 
@@ -706,6 +682,8 @@ void boot_db(void)
     assign_objects();
     log("   Rooms.");
     assign_rooms();
+    log("   Questmasters.");
+    assign_the_quests();
   }
 
   log("Assigning spell and skill levels.");
@@ -742,7 +720,6 @@ void boot_db(void)
 #if 1
 {
   int i;
-  extern SPECIAL(shop_keeper);
 
   for (i = 0 ; i < top_of_objt; i++) {
   	if (obj_proto[i].script == (struct script_data *)&shop_keeper) {
@@ -768,7 +745,7 @@ void boot_db(void)
 }
 
 /* reset the time in the game from file */
-void reset_time(void)
+static void reset_time(void)
 {
   time_t beginning_of_time = 0;
   FILE *bgtime;
@@ -776,7 +753,7 @@ void reset_time(void)
   if ((bgtime = fopen(TIME_FILE, "r")) == NULL)
     log("No time file '%s' starting from the beginning.", TIME_FILE);
   else {
-    fscanf(bgtime, "%ld\n", &beginning_of_time);
+    fscanf(bgtime, "%ld\n", (long *)&beginning_of_time);
     fclose(bgtime);
   }
 
@@ -825,14 +802,14 @@ void save_mud_time(struct time_info_data *when)
   if ((bgtime = fopen(TIME_FILE, "w")) == NULL)
     log("SYSERR: Can't write to '%s' time file.", TIME_FILE);
   else {
-    fprintf(bgtime, "%ld\n", mud_time_to_secs(when));
+    fprintf(bgtime, "%ld\n", (long)mud_time_to_secs(when));
     fclose(bgtime);
   }
 }
 
 /* Thanks to Andrey (andrey@alex-ua.com) for this bit of code, although I did 
  * add the 'goto' and changed some "while()" into "do { } while()". -gg */
-int count_alias_records(FILE *fl)
+static int count_alias_records(FILE *fl)
 {
   char key[READ_SIZE], next_key[READ_SIZE];
   char line[READ_SIZE], *scan;
@@ -914,6 +891,9 @@ void index_boot(int mode)
   case DB_BOOT_TRG:
     prefix = TRG_PREFIX;
     break;
+  case DB_BOOT_QST:
+    prefix = QST_PREFIX;
+    break;
   default:
     log("SYSERR: Unknown subcommand %d to index_boot!", mode);
     exit(1);
@@ -954,7 +934,7 @@ void index_boot(int mode)
 
   /* Exit if 0 records, unless this is shops */
   if (!rec_count) {
-    if (mode == DB_BOOT_SHP)
+    if (mode == DB_BOOT_SHP || mode == DB_BOOT_QST)
       return;
     log("SYSERR: boot error - 0 records counted in %s/%s.", prefix,
 	index_filename);
@@ -995,6 +975,11 @@ void index_boot(int mode)
     size[0] = sizeof(struct help_index_element) * rec_count;
     log("   %d entries, %d bytes.", rec_count, size[0]);
     break;
+  case DB_BOOT_QST:
+    CREATE(aquest_table, struct aq_data, rec_count);
+    size[0] = sizeof(struct aq_data) * rec_count;
+    log("   %d entries, %d bytes.", rec_count, size[0]);
+    break;
   }
 
   rewind(db_index);
@@ -1010,6 +995,7 @@ void index_boot(int mode)
     case DB_BOOT_OBJ:
     case DB_BOOT_MOB:
     case DB_BOOT_TRG:
+    case DB_BOOT_QST:
       discrete_load(db_file, mode, buf2);
       break;
     case DB_BOOT_ZON:
@@ -1040,7 +1026,7 @@ void discrete_load(FILE *fl, int mode, char *filename)
   int nr = -1, last;
   char line[READ_SIZE];
 
-  const char *modes[] = {"world", "mob", "obj", "ZON", "SHP", "HLP", "trg"};
+  const char *modes[] = {"world", "mob", "obj", "ZON", "SHP", "HLP", "trg", "qst"};
   /* modes positions correspond to DB_BOOT_xxx in db.h */
 
   for (;;) {
@@ -1083,6 +1069,9 @@ void discrete_load(FILE *fl, int mode, char *filename)
 	case DB_BOOT_OBJ:
 	  strlcpy(line, parse_object(fl, nr), sizeof(line));
 	  break;
+  case DB_BOOT_QST:
+    parse_quest(fl, nr);
+    break;
 	}
     } else {
       log("SYSERR: Format error in %s file %s near %s #%d", modes[mode],
@@ -1093,7 +1082,7 @@ void discrete_load(FILE *fl, int mode, char *filename)
   }
 }
 
-char fread_letter(FILE *fp)
+static char fread_letter(FILE *fp)
 {
   char c;
   do {
@@ -1114,7 +1103,8 @@ bitvector_t asciiflag_conv(char *flag)
     else if (isupper(*p))
       flags |= 1 << (26 + (*p - 'A'));
 
-    if (!isdigit(*p))
+    /* Allow the first character to be a minus sign */
+    if (!isdigit(*p) && (*p != '-' || p != flag))
       is_num = FALSE;
   }
 
@@ -1124,7 +1114,7 @@ bitvector_t asciiflag_conv(char *flag)
   return (flags);
 }
 
-bitvector_t asciiflag_conv_aff(char *flag)
+static bitvector_t asciiflag_conv_aff(char *flag)
 {
   bitvector_t flags = 0;
   int is_num = TRUE;
@@ -1136,7 +1126,8 @@ bitvector_t asciiflag_conv_aff(char *flag)
     else if (isupper(*p))
       flags |= 1 << (26 + (*p - 'A' + 1));
 
-    if (!isdigit(*p))
+    /* Allow the first character to be a minus sign */
+    if (!isdigit(*p) && (*p != '-' || p != flag))
       is_num = FALSE;
   }
 
@@ -1317,7 +1308,7 @@ void setup_dir(FILE *fl, int room, int dir)
 }
 
 /* make sure the start rooms exist & resolve their vnums to rnums */
-void check_start_rooms(void)
+static void check_start_rooms(void)
 {
   if ((r_mortal_start_room = real_room(CONFIG_MORTAL_START)) == NOWHERE) {
     log("SYSERR:  Mortal start room does not exist.  Change in config.c.");
@@ -1348,6 +1339,11 @@ void renum_world(void)
 	    real_room(world[room].dir_option[door]->to_room);
 }
 
+/** This is not the same ZCMD as used elsewhere. GRUMBLE... namespace conflict
+ * @todo refactor this particular ZCMD and remove this redefine. */
+#ifdef ZCMD
+#undef ZCMD
+#endif
 #define ZCMD zone_table[zone].cmd[cmd_no]
 
 /* Resolve vnums into rnums in the zone reset tables. In English: Once all of 
@@ -1356,7 +1352,7 @@ void renum_world(void)
  * is running.  This does make adding any room, mobile, or object a little more
  * difficult while the game is running. Assumes NOWHERE == NOBODY == NOTHING.
  * Assumes sizeof(room_rnum) >= (sizeof(mob_rnum) and sizeof(obj_rnum)) */
-void renum_zone_table(void)
+static void renum_zone_table(void)
 {
   int cmd_no;
   room_rnum a, b, c, olda, oldb, oldc;
@@ -1415,7 +1411,7 @@ void renum_zone_table(void)
     }
 }
 
-void parse_simple_mob(FILE *mob_f, int i, int nr)
+static void parse_simple_mob(FILE *mob_f, int i, int nr)
 {
   int j, t[10];
   char line[READ_SIZE];
@@ -1510,7 +1506,7 @@ void parse_simple_mob(FILE *mob_f, int i, int nr)
 #define RANGE(low, high)	\
 	(num_arg = MAX((low), MIN((high), (num_arg))))
 
-void interpret_espec(const char *keyword, const char *value, int i, int nr)
+static void interpret_espec(const char *keyword, const char *value, int i, int nr)
 {
   int num_arg = 0, matched = FALSE;
 
@@ -1569,7 +1565,7 @@ void interpret_espec(const char *keyword, const char *value, int i, int nr)
 #undef BOOL_CASE
 #undef RANGE
 
-void parse_espec(char *buf, int i, int nr)
+static void parse_espec(char *buf, int i, int nr)
 {
   char *ptr;
 
@@ -1581,7 +1577,7 @@ void parse_espec(char *buf, int i, int nr)
   interpret_espec(buf, ptr, i, nr);
 }
 
-void parse_enhanced_mob(FILE *mob_f, int i, int nr)
+static void parse_enhanced_mob(FILE *mob_f, int i, int nr)
 {
   char line[READ_SIZE];
 
@@ -1946,7 +1942,7 @@ char *parse_object(FILE *obj_f, int nr)
 
 #define Z	zone_table[zone]
 /* load the zone table and command tables */
-void load_zones(FILE *fl, char *zonename)
+static void load_zones(FILE *fl, char *zonename)
 {
   static zone_rnum zone = 0;
   int cmd_no, num_of_cmds = 0, line_num = 0, tmp, error;
@@ -2077,7 +2073,7 @@ void load_zones(FILE *fl, char *zonename)
 }
 #undef Z
 
-void get_one_line(FILE *fl, char *buf)
+static void get_one_line(FILE *fl, char *buf)
 {
   if (fgets(buf, READ_SIZE, fl) == NULL) {
     log("SYSERR: error reading help file: not terminated with $?");
@@ -2174,7 +2170,7 @@ void load_help(FILE * fl, char *name)
   }
 }
 
-int hsort(const void *a, const void *b) 
+static int hsort(const void *a, const void *b) 
 {
   const struct help_index_element *a1, *b1;
 
@@ -2409,7 +2405,7 @@ void zone_update(void)
     }
 }
 
-void log_zone_error(zone_rnum zone, int cmd_no, const char *message)
+static void log_zone_error(zone_rnum zone, int cmd_no, const char *message)
 {
   mudlog(NRM, LVL_GOD, TRUE, "SYSERR: zone file: %s", message);
   mudlog(NRM, LVL_GOD, TRUE, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d",
@@ -2720,7 +2716,7 @@ char *fread_string(FILE *fl, const char *error)
 }
 
 /* Called to free all allocated follow_type structs */
-void free_followers(struct follow_type *k)
+static void free_followers(struct follow_type *k)
 {
    if (!k)
     return;
@@ -2747,6 +2743,8 @@ void free_char(struct char_data *ch)
       free(ch->player_specials->poofin);
     if (ch->player_specials->poofout)
       free(ch->player_specials->poofout);
+    if (ch->player_specials->saved.completed_quests)
+      free(ch->player_specials->saved.completed_quests);
     if (GET_HOST(ch))
       free(GET_HOST(ch));
     if (IS_NPC(ch))
@@ -2843,7 +2841,7 @@ void free_obj(struct obj_data *obj)
  * interested in and not a copy. If someone is reading a global copy we're 
  * trying to replace, give everybody using it a different copy so as to avoid 
  * special cases. */
-int file_to_string_alloc(const char *name, char **buf)
+static int file_to_string_alloc(const char *name, char **buf)
 {
   int temppage;
   char temp[MAX_STRING_LENGTH];
@@ -2875,7 +2873,7 @@ int file_to_string_alloc(const char *name, char **buf)
 }
 
 /* read contents of a text file, and place in buf */
-int file_to_string(const char *name, char *buf)
+static int file_to_string(const char *name, char *buf)
 {
   FILE *fl;
   char tmp[READ_SIZE + 3];
@@ -2996,6 +2994,10 @@ void init_char(struct char_data *ch)
   ch->player.long_descr = NULL;
   ch->player.description = NULL;
 
+  GET_NUM_QUESTS(ch) = 0;
+  ch->player_specials->saved.completed_quests = NULL;
+  GET_QUEST(ch) = -1;
+  
   ch->player.time.birth = time(0);
   ch->player.time.logon = time(0);
   ch->player.time.played = 0;
@@ -3044,6 +3046,7 @@ void init_char(struct char_data *ch)
     GET_COND(ch, i) = (GET_LEVEL(ch) == LVL_IMPL ? -1 : 24);
 
   GET_LOADROOM(ch) = NOWHERE;
+  GET_SCREEN_WIDTH(ch) = PAGE_WIDTH;
 }
 
 /* returns the real number of the room with given virtual number */
@@ -3149,7 +3152,7 @@ zone_rnum real_zone(zone_vnum vnum)
 }
 
 /* Extend later to include more checks and add checks for unknown bitvectors. */
-int check_object(struct obj_data *obj)
+static int check_object(struct obj_data *obj)
 {
   char objname[MAX_INPUT_LENGTH + 32];
   int error = FALSE, y;
@@ -3205,7 +3208,6 @@ int check_object(struct obj_data *obj)
     break;
   case ITEM_NOTE:
     if (obj->ex_description) {
-      extern char *find_exdesc(char *word, struct extra_descr_data *list);
       char onealias[MAX_INPUT_LENGTH],*next_name;
       next_name = any_one_arg(obj->name, onealias);
       do {
@@ -3228,7 +3230,7 @@ int check_object(struct obj_data *obj)
   return (error);
 }
 
-int check_object_spell_number(struct obj_data *obj, int val)
+static int check_object_spell_number(struct obj_data *obj, int val)
 {
   int error = FALSE;
   const char *spellname;
@@ -3262,7 +3264,7 @@ int check_object_spell_number(struct obj_data *obj, int val)
   return (error);
 }
 
-int check_object_level(struct obj_data *obj, int val)
+static int check_object_level(struct obj_data *obj, int val)
 {
   int error = FALSE;
 
@@ -3273,7 +3275,7 @@ int check_object_level(struct obj_data *obj, int val)
   return (error);
 }
 
-int check_bitvector_names(bitvector_t bits, size_t namecount, const char *whatami, const char *whatbits)
+static int check_bitvector_names(bitvector_t bits, size_t namecount, const char *whatami, const char *whatbits)
 {
   unsigned int flagnum;
   bool error = FALSE;
@@ -3284,64 +3286,14 @@ int check_bitvector_names(bitvector_t bits, size_t namecount, const char *whatam
 
   for (flagnum = namecount; flagnum < sizeof(bitvector_t) * 8; flagnum++)
     if ((1 << flagnum) & bits) {
-      log("SYSERR: %s has unknown %s flag, bit %d (0 through %d known).", whatami, whatbits, flagnum, namecount - 1);
+      log("SYSERR: %s has unknown %s flag, bit %d (0 through %d known).", whatami, whatbits, flagnum, (int)namecount - 1);
       error = TRUE;
     }
 
   return (error);
 }
 
-/* External variables from config.c */
-extern int pk_allowed;
-extern int pt_allowed;
-extern int level_can_shout;
-extern int holler_move_cost;
-extern int tunnel_size;
-extern int max_exp_gain;
-extern int max_exp_loss;
-extern int max_npc_corpse_time;
-extern int max_pc_corpse_time;
-extern int idle_void;
-extern int idle_rent_time;
-extern int idle_max_level;
-extern int dts_are_dumps;
-extern int load_into_inventory;
-extern int track_through_doors;
-extern int no_mort_to_immort;
-extern int free_rent;
-extern int max_obj_save;
-extern int min_rent_cost;
-extern int auto_save;
-extern int autosave_time;
-extern int crash_file_timeout;
-extern int rent_file_timeout;
-extern room_vnum mortal_start_room;
-extern room_vnum immort_start_room;
-extern room_vnum frozen_start_room;
-extern room_vnum donation_room_1;
-extern room_vnum donation_room_2;
-extern room_vnum donation_room_3;
-extern ush_int DFLT_PORT;
-extern const char *DFLT_IP;
-extern const char *DFLT_DIR;
-extern const char *LOGNAME;
-extern int max_playing;
-extern int max_filesize;
-extern int max_bad_pws;
-extern int siteok_everyone;
-extern int nameserver_is_slow;
-extern int use_new_socials;
-extern int auto_save_olc;
-extern const char *MENU;
-extern const char *WELC_MESSG;
-extern const char *START_MESSG;
-extern int use_autowiz;
-extern int min_wizlist_lev;
-extern const char *OK;
-extern const char *NOPERSON;
-extern const char *NOEFFECT;
-
-void load_default_config( void )
+static void load_default_config( void )
 {
   /* This function is called only once, at boot-time. We assume config_info is 
    * empty. -Welcor */
@@ -3366,6 +3318,9 @@ void load_default_config( void )
   CONFIG_TRACK_T_DOORS          = track_through_doors;
   CONFIG_NO_MORT_TO_IMMORT	= no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS      = display_closed_doors;
+  CONFIG_MAP                    = map_option;
+  CONFIG_MAP_SIZE               = default_map_size;
+  CONFIG_MINIMAP_SIZE           = default_minimap_size;
 
   /* Rent / crashsave options. */
   CONFIG_FREE_RENT              = free_rent;
@@ -3425,7 +3380,7 @@ void load_config( void )
 
   load_default_config();
 
-  snprintf(buf, sizeof(buf), "%s/%s", DFLT_DIR, CONFIG_CONFFILE);
+  snprintf(buf, sizeof(buf), "%s/%s", CONFIG_DFLT_DIR, CONFIG_CONFFILE);
   if ( !(fl = fopen(CONFIG_CONFFILE, "r")) && !(fl = fopen(buf, "r")) ) {
     snprintf(buf, sizeof(buf), "No %s file, using defaults", CONFIG_CONFFILE);
     perror(buf);
@@ -3488,6 +3443,10 @@ void load_config( void )
             CONFIG_DFLT_IP = NULL;
         } else if (!str_cmp(tag, "dflt_port"))
           CONFIG_DFLT_PORT = num;
+        else if (!str_cmp(tag, "default_map_size"))
+          CONFIG_MAP_SIZE = num;
+        else if (!str_cmp(tag, "default_minimap_size"))
+          CONFIG_MINIMAP_SIZE = num;
         break;
 
       case 'f':
@@ -3558,6 +3517,8 @@ void load_config( void )
           CONFIG_MIN_WIZLIST_LEV = num;
         else if (!str_cmp(tag, "mortal_start_room"))
           CONFIG_MORTAL_START = num;
+        else if (!str_cmp(tag, "map_option"))
+          CONFIG_MAP = num;
         break;
 
       case 'n':

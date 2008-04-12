@@ -18,9 +18,6 @@
 #include "shop.h"
 #include "dg_olc.h"
 
-extern room_rnum r_mortal_start_room;
-extern room_rnum r_immort_start_room;
-extern room_rnum r_frozen_start_room;
 
 /* This function will copy the strings so be sure you free your own copies of 
  * the description, title, and such. */

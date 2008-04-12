@@ -1,11 +1,16 @@
-/**************************************************************************
-*  File: dg_scripts.c                                      Part of tbaMUD *
-*  Usage: Contains the main script driver interface.                      *
-*                                                                         *
-*  $Author: Mark A. Heilpern/egreen/Welcor $                              *
-*  $Date: 2004/10/11 12:07:00$                                            *
-*  $Revision: 1.0.14 $                                                    *
-**************************************************************************/
+/**
+* @file dg_scripts.c
+* Contains the main script driver interface.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+* 
+* This source code, which was not part of the CircleMUD legacy code,
+* was created by the following people:                                      
+* $Author: Mark A. Heilpern/egreen/Welcor $                              
+* $Date: 2004/10/11 12:07:00$                                            
+* $Revision: 1.0.14 $                                                    
+*/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -21,71 +26,64 @@
 #include "constants.h"
 #include "spells.h"
 #include "oasis.h"
+#include "genzon.h" /* for real_zone_by_thing */
+#include "act.h"
+#include "modify.h"
 
 #define PULSES_PER_MUD_HOUR     (SECS_PER_MUD_HOUR*PASSES_PER_SEC)
 
-/* external vars */
-extern unsigned long pulse;
-extern struct spell_info_type spell_info[];
-extern struct time_info_data time_info;
-
-/* external functions */
-int is_empty(zone_rnum zone_nr);
-room_rnum find_target_room(struct char_data *ch, char *rawroomstr);
-zone_rnum real_zone_by_thing(room_vnum vznum);
-
 /* Local functions not used elsewhere */
-obj_data *find_obj(long n);
-room_data *find_room(long n);
-void do_stat_trigger(struct char_data *ch, trig_data *trig);
-void script_stat (char_data *ch, struct script_data *sc);
-int remove_trigger(struct script_data *sc, char *name);
-int is_num(char *arg);
-void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
-             struct script_data *sc, trig_data *trig);
-char *matching_paren(char *p);
-void eval_expr(char *line, char *result, void *go, struct script_data *sc,
-               trig_data *trig, int type);
-int eval_lhs_op_rhs(char *expr, char *result, void *go, struct script_data *sc,
-                    trig_data *trig, int type);
-int process_if(char *cond, void *go, struct script_data *sc,
-               trig_data *trig, int type);
-struct cmdlist_element *find_end(trig_data *trig, struct cmdlist_element *cl);
-struct cmdlist_element *find_else_end(trig_data *trig,
-                                      struct cmdlist_element *cl, void *go,
-                                      struct script_data *sc, int type);
-void process_wait(void *go, trig_data *trig, int type, char *cmd,
-                  struct cmdlist_element *cl);
-void process_set(struct script_data *sc, trig_data *trig, char *cmd);
-void process_attach(void *go, struct script_data *sc, trig_data *trig,
-                    int type, char *cmd);
-void process_detach(void *go, struct script_data *sc, trig_data *trig,
-                    int type, char *cmd);
-void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
-                 int type, char *cmd);
-int process_return(trig_data *trig, char *cmd);
-void process_unset(struct script_data *sc, trig_data *trig, char *cmd);
-void process_remote(struct script_data *sc, trig_data *trig, char *cmd);
-void process_rdelete(struct script_data *sc, trig_data *trig, char *cmd);
-void process_global(struct script_data *sc, trig_data *trig, char *cmd, long id);
-void process_context(struct script_data *sc, trig_data *trig, char *cmd);
-void extract_value(struct script_data *sc, trig_data *trig, char *cmd);
-void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd);
-struct cmdlist_element *
-find_case(struct trig_data *trig, struct cmdlist_element *cl,
+static obj_data *find_obj(long n);
+static room_data *find_room(long n);
+static void do_stat_trigger(struct char_data *ch, trig_data *trig);
+static void script_stat(char_data *ch, struct script_data *sc);
+static int remove_trigger(struct script_data *sc, char *name);
+static int is_num(char *arg);
+static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
+          struct script_data *sc, trig_data *trig);
+static char *matching_paren(char *p);
+static void eval_expr(char *line, char *result, void *go, struct script_data *sc,
+          trig_data *trig, int type);
+static int eval_lhs_op_rhs(char *expr, char *result, void *go, struct script_data *sc,
+          trig_data *trig, int type);
+static int process_if(char *cond, void *go, struct script_data *sc,
+          trig_data *trig, int type);
+static struct cmdlist_element *find_end(trig_data *trig, struct cmdlist_element *cl);
+static struct cmdlist_element *find_else_end(trig_data *trig,
+          struct cmdlist_element *cl, void *go, struct script_data *sc, int type);
+static void process_wait(void *go, trig_data *trig, int type, char *cmd,
+          struct cmdlist_element *cl);
+static void process_set(struct script_data *sc, trig_data *trig, char *cmd);
+static void process_attach(void *go, struct script_data *sc, trig_data *trig,
+          int type, char *cmd);
+static void process_detach(void *go, struct script_data *sc, trig_data *trig,
+          int type, char *cmd);
+static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
+          int type, char *cmd);
+static int process_return(trig_data *trig, char *cmd);
+static void process_unset(struct script_data *sc, trig_data *trig, char *cmd);
+static void process_remote(struct script_data *sc, trig_data *trig, char *cmd);
+static void process_rdelete(struct script_data *sc, trig_data *trig, char *cmd);
+static void process_global(struct script_data *sc, trig_data *trig, char *cmd, long id);
+static void process_context(struct script_data *sc, trig_data *trig, char *cmd);
+static void extract_value(struct script_data *sc, trig_data *trig, char *cmd);
+static void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd);
+static struct cmdlist_element * find_case(struct trig_data *trig, struct cmdlist_element *cl,
           void *go, struct script_data *sc, int type, char *cond);
-struct cmdlist_element *find_done(struct cmdlist_element *cl);
-int fgetline(FILE *file, char *p);
-struct char_data *find_char_by_uid_in_lookup_table(long uid);
-struct obj_data *find_obj_by_uid_in_lookup_table(long uid);
-EVENTFUNC(trig_wait_event);
-ACMD(do_attach) ;
-ACMD(do_detach);
-ACMD(do_vdelete);
-ACMD(do_tstat);
+static struct cmdlist_element *find_done(struct cmdlist_element *cl);
+static struct char_data *find_char_by_uid_in_lookup_table(long uid);
+static struct obj_data *find_obj_by_uid_in_lookup_table(long uid);
+static EVENTFUNC(trig_wait_event);
+
 
 /* Return pointer to first occurrence of string ct in cs, or NULL if not 
- * present.  Case insensitive */
+ * present.  Case insensitive. All of ct must be found in cs for it to be 
+ * a match.
+ * @todo Move this function to string util library.
+ * @param cs The string to search.
+ * @param ct What to search for in cs.
+ * @retval char * NULL if ct is not a substring of cs, or pointer to the
+ * location in cs where substring ct begins. */
 char *str_str(char *cs, char *ct)
 {
   char *s, *t;
@@ -106,6 +104,8 @@ char *str_str(char *cs, char *ct)
       cs++;
     }
 
+    /* If there we haven reached the end of ct via t,
+     * then the whole string was found. */
     if (!*t)
       return s;
   }
@@ -113,7 +113,12 @@ char *str_str(char *cs, char *ct)
   return NULL;
 }
 
-int trgvar_in_room(room_vnum vnum) {
+/** Returns the number of people in a room.
+ * @param vnum The virtual number of a room.
+ * @retval int Returns -1 if the room does not exist, or the total number of
+ * PCs and NPCs in the room. */
+int trgvar_in_room(room_vnum vnum) 
+{
     room_rnum rnum = real_room(vnum);
     int i = 0;
     char_data *ch;
@@ -129,6 +134,14 @@ int trgvar_in_room(room_vnum vnum) {
     return i;
 }
 
+
+/** Find out if an object is within a list of objects.
+ * @param name Either the unique id of an object or a string identifying the
+ * object. Note the unique id must be prefixed with UID_CHAR.
+ * @param list The list of objects to look through.
+ * @retval obj_data * Pointer to the object if it is found in the list of 
+ * objects, NULL if the object is not found in the list. 
+ */
 obj_data *get_obj_in_list(char *name, obj_data *list)
 {
     obj_data *i;
@@ -140,6 +153,7 @@ obj_data *get_obj_in_list(char *name, obj_data *list)
       for (i = list; i; i = i->next_content)
         if (id == GET_ID(i))
           return i;
+      
     } else {
       for (i = list; i; i = i->next_content)
         if (isname(name, i->name))
@@ -149,6 +163,13 @@ obj_data *get_obj_in_list(char *name, obj_data *list)
     return NULL;
 }
 
+/** Find out if an NPC or PC is carrying an object.
+ * @param ch Pointer to the NPC/PC to search through.
+ * @param name String describing either the name of the object or the unique
+ * id of the object. Note the unique id must be prefixed with UID_CHAR.
+ * @retval obj_data * Either a pointer to the first object found that matches
+ * the name argument, or the NULL if the object isn't found.
+ */
 obj_data *get_object_in_equip(char_data * ch, char *name)
 {
   int j, n = 0, number;
@@ -185,8 +206,14 @@ obj_data *get_object_in_equip(char_data * ch, char *name)
   return NULL;
 }
 
-/* Handles 'held', 'light' and 'wield' positions - Welcor. After idea from 
- * Byron Ellacott. */
+/** Figures out if the argument is a valid location to 'wear' equipment.
+ * Handles 'held', 'light' and 'wield' positions - Welcor. After idea from 
+ * Byron Ellacott. 
+ * @param arg Either the name of the position, or the number of a wear
+ * location definition to check for.
+ * @retval int If arg is not a valid wear location name or number, return
+ * -1, else return the defined number of the wear location.
+ */
 int find_eq_pos_script(char *arg)
 {
   int i;
@@ -226,6 +253,11 @@ int find_eq_pos_script(char *arg)
   return (-1);
 }
 
+/** Figures out if an object can be worn on a defined wear location.
+ * @param obj The object to check.
+ * @param pos The defined wear location to check.
+ * @retval int TRUE if obj can be worn on pos, FALSE if not.
+ */
 int can_wear_on_pos(struct obj_data *obj, int pos)
 {
   switch (pos) {
@@ -251,7 +283,11 @@ int can_wear_on_pos(struct obj_data *obj, int pos)
   }
 }
 
-/* Search by number routines. Return char with UID n. */
+/** Search for an NPC or PC by number routines.
+ * @param n The unique ID (PC or NPC) to look for.
+ * @retval char_data * Pointer to the character structure if it exists, or NULL
+ * if it cannot be found.
+ */
 struct char_data *find_char(long n)
 {
   if (n>=ROOM_ID_BASE) /* See note in dg_scripts.h */
@@ -260,8 +296,12 @@ struct char_data *find_char(long n)
   return find_char_by_uid_in_lookup_table(n);
 }
 
-/* return object with UID n */
-obj_data *find_obj(long n)
+/** Search for an object by number routines.
+ * @param n The unique ID to look for.
+ * @retval obj_data * Pointer to the object if it exists, or NULL if it cannot
+ * be found.
+ */
+static obj_data *find_obj(long n)
 {
   if (n < OBJ_ID_BASE) /* see note in dg_scripts.h */
     return NULL;
@@ -269,8 +309,12 @@ obj_data *find_obj(long n)
   return find_obj_by_uid_in_lookup_table(n);
 }
 
-/* return room with UID n */
-room_data *find_room(long n)
+/* Search for a room with UID n.
+ * @param n the Unique ID to look for.
+ * @retval room_data * Pointer to the room if it exists, or NULL if it cannot
+ * be found.
+ */
+static room_data *find_room(long n)
 {
   room_rnum rnum;
 
@@ -286,7 +330,10 @@ room_data *find_room(long n)
 }
 
 /* Generic searches based only on name. */
-/* search the entire world for a char, and return a pointer */
+/** Search the entire world for an NPC or PC by name. 
+ * @param name String describing the name or the unique id of the char. 
+ * Note the unique id must be prefixed with UID_CHAR.
+ * @retval char_data * Pointer to the char or NULL if char is not found. */
 char_data *get_char(char *name)
 {
   char_data *i;
@@ -306,7 +353,15 @@ char_data *get_char(char *name)
   return NULL;
 }
 
-/* Finds a char in the same room as the object with the name 'name.' */
+/** Find a character by name in the same room as a known object.
+ * @todo Should this function not be constrained to the same room as an object
+ * if 'name' is a unique id? 
+ * @param obj An object that will constrain the search to the location that
+ * the object is in *if* the name argument is not a unique id.
+ * @param name Character name keyword to search for, or unique ID. Unique
+ * id must be prefixed with UID_CHAR. 
+ * @retval char_data * Pointer to the the char if found, NULL if not. Will
+ * only find god characters if DG_ALLOW_GODS is on. */
 char_data *get_char_near_obj(obj_data *obj, char *name)
 {
   char_data *ch;
@@ -328,8 +383,15 @@ char_data *get_char_near_obj(obj_data *obj, char *name)
   return NULL;
 }
 
-/* Returns a pointer to the first character in world by name name, or NULL if 
- * none found.  Starts searching in room room first. */
+/** Find a character by name in a specific room.
+ * @todo Should this function not be constrained to the room 
+ * if 'name' is a unique id? 
+ * @param room A room that will constrain the search to that location 
+ * *if* the name argument is not a unique id.
+ * @param name Character name keyword to search for, or unique ID. Unique
+ * id must be prefixed with UID_CHAR. 
+ * @retval char_data * Pointer to the the char if found, NULL if not. Will
+ * only find god characters if DG_ALLOW_GODS is on. */
 char_data *get_char_in_room(room_data *room, char *name)
 {
   char_data *ch;
@@ -349,7 +411,13 @@ char_data *get_char_in_room(room_data *room, char *name)
   return NULL;
 }
 
-/* searches the room with the object for an object with name 'name'*/
+/** Find a named object near another object (either in the same room, as
+ * a container or contained by).
+ * @param obj The obj with which to constrain the search.
+ * @param name The keyword of the object to search for. If 'self' or 'me'
+ * are passed in as arguments, obj is returned. Can also be a unique object
+ * id, and if so it must be prefixed with UID_CHAR.
+ * @retval obj_data * Pointer to the object if found, NULL if not. */
 obj_data *get_obj_near_obj(obj_data *obj, char *name)
 {
   obj_data *i = NULL;
@@ -635,7 +703,7 @@ void check_time_triggers(void)
   }
 }
 
-EVENTFUNC(trig_wait_event)
+static EVENTFUNC(trig_wait_event)
 {
   struct wait_event_data *wait_event_obj = (struct wait_event_data *)event_obj;
   trig_data *trig;
@@ -684,7 +752,7 @@ EVENTFUNC(trig_wait_event)
   return 0;
 }
 
-void do_stat_trigger(struct char_data *ch, trig_data *trig)
+static void do_stat_trigger(struct char_data *ch, trig_data *trig)
 {
     struct cmdlist_element *cmd_list;
     char sb[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
@@ -749,7 +817,7 @@ void find_uid_name(char *uid, char *name, size_t nlen)
 }
 
 /* general function to display stats on script sc */
-void script_stat (char_data *ch, struct script_data *sc)
+static void script_stat (char_data *ch, struct script_data *sc)
 {
   struct trig_var_data *tv;
   trig_data *t;
@@ -1009,7 +1077,7 @@ ACMD(do_attach)
  * trigger, otherwise 1.  If it matters, you might need to check to see if all 
  * the triggers were removed after this function returns, in order to remove 
  * the script. */
-int remove_trigger(struct script_data *sc, char *name)
+static int remove_trigger(struct script_data *sc, char *name)
 {
   trig_data *i, *j;
   int num = 0, string = FALSE, n;
@@ -1256,7 +1324,7 @@ void script_log(const char *format, ...)
 
 /* Returns 1 if string is all digits, else 0. Bugfixed - would have returned 
  * true on num="------". */
-int is_num(char *arg)
+static int is_num(char *arg)
 {
    if (*arg == '\0')
       return FALSE;
@@ -1274,7 +1342,7 @@ int is_num(char *arg)
 }
 
 /* evaluates 'lhs op rhs', and copies to result */
-void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
+static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
              struct script_data *sc, trig_data *trig)
 {
   unsigned char *p;
@@ -1389,7 +1457,7 @@ char *matching_quote(char *p)
 
 /* p points to the first paren.  returns a pointer to the matching closing 
  * paren, or the last non-null char in p. */
-char *matching_paren(char *p)
+static char *matching_paren(char *p)
 {
   int i;
 
@@ -1406,7 +1474,7 @@ char *matching_paren(char *p)
 }
 
 /* evaluates line, and returns answer in result */
-void eval_expr(char *line, char *result, void *go, struct script_data *sc,
+static void eval_expr(char *line, char *result, void *go, struct script_data *sc,
                trig_data *trig, int type)
 {
   char expr[MAX_INPUT_LENGTH], *p;
@@ -1429,7 +1497,7 @@ void eval_expr(char *line, char *result, void *go, struct script_data *sc,
 
 /* Evaluates expr if it is in the form lhs op rhs, and copies answer in result.
  * Returns 1 if expr is evaluated, else 0. */
-int eval_lhs_op_rhs(char *expr, char *result, void *go, struct script_data *sc,
+static int eval_lhs_op_rhs(char *expr, char *result, void *go, struct script_data *sc,
                     trig_data *trig, int type)
 {
   char *p, *tokens[MAX_INPUT_LENGTH];
@@ -1492,7 +1560,7 @@ int eval_lhs_op_rhs(char *expr, char *result, void *go, struct script_data *sc,
 }
 
 /* returns 1 if cond is true, else 0 */
-int process_if(char *cond, void *go, struct script_data *sc,
+static int process_if(char *cond, void *go, struct script_data *sc,
                trig_data *trig, int type)
 {
   char result[MAX_INPUT_LENGTH], *p;
@@ -1510,7 +1578,7 @@ int process_if(char *cond, void *go, struct script_data *sc,
 
 /* Scans for end of if-block.  returns the line containg 'end', or the last
  * line of the trigger if not found. */
-struct cmdlist_element *find_end(trig_data *trig, struct cmdlist_element *cl)
+static struct cmdlist_element *find_end(trig_data *trig, struct cmdlist_element *cl)
 {
   struct cmdlist_element *c;
   char *p;
@@ -1542,7 +1610,7 @@ struct cmdlist_element *find_end(trig_data *trig, struct cmdlist_element *cl)
 
 /* Searches for valid elseif, else, or end to continue execution at. Returns 
  * line of elseif, else, or end if found, or last line of trigger. */
-struct cmdlist_element *find_else_end(trig_data *trig,
+static struct cmdlist_element *find_else_end(trig_data *trig,
     struct cmdlist_element *cl, void *go, struct script_data *sc, int type)
 {
   struct cmdlist_element *c;
@@ -1587,7 +1655,7 @@ struct cmdlist_element *find_else_end(trig_data *trig,
 }
 
 /* processes any 'wait' commands in a trigger */
-void process_wait(void *go, trig_data *trig, int type, char *cmd,
+static void process_wait(void *go, trig_data *trig, int type, char *cmd,
                   struct cmdlist_element *cl)
 {
   char buf[MAX_INPUT_LENGTH], *arg;
@@ -1644,7 +1712,7 @@ void process_wait(void *go, trig_data *trig, int type, char *cmd,
 }
 
 /* processes a script set command */
-void process_set(struct script_data *sc, trig_data *trig, char *cmd)
+static void process_set(struct script_data *sc, trig_data *trig, char *cmd)
 {
   char arg[MAX_INPUT_LENGTH], name[MAX_INPUT_LENGTH], *value;
 
@@ -1685,7 +1753,7 @@ void process_eval(void *go, struct script_data *sc, trig_data *trig,
 }
 
 /* script attaching a trigger to something */
-void process_attach(void *go, struct script_data *sc, trig_data *trig,
+static void process_attach(void *go, struct script_data *sc, trig_data *trig,
                     int type, char *cmd)
 {
   char arg[MAX_INPUT_LENGTH], trignum_s[MAX_INPUT_LENGTH];
@@ -1767,7 +1835,7 @@ void process_attach(void *go, struct script_data *sc, trig_data *trig,
 }
 
 /* script detaching a trigger from something */
-void process_detach(void *go, struct script_data *sc, trig_data *trig,
+static void process_detach(void *go, struct script_data *sc, trig_data *trig,
     int type, char *cmd)
 {
   char arg[MAX_INPUT_LENGTH], trignum_s[MAX_INPUT_LENGTH];
@@ -1864,7 +1932,7 @@ struct room_data *dg_room_of_obj(struct obj_data *obj)
 }
 
 /* create a UID variable from the id number */
-void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
+static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
                  int type, char *cmd)
 {
   char junk[MAX_INPUT_LENGTH], varname[MAX_INPUT_LENGTH];
@@ -1963,7 +2031,7 @@ void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
 
 /* Processes a script return command. Returns the new value for the script to 
  * return. */
-int process_return(trig_data *trig, char *cmd)
+static int process_return(trig_data *trig, char *cmd)
 {
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
 
@@ -1981,7 +2049,7 @@ int process_return(trig_data *trig, char *cmd)
 
 /* Removes a variable from the global vars of sc, or the local vars of trig if 
  * not found in global list. */
-void process_unset(struct script_data *sc, trig_data *trig, char *cmd)
+static void process_unset(struct script_data *sc, trig_data *trig, char *cmd)
 {
   char arg[MAX_INPUT_LENGTH], *var;
 
@@ -2001,7 +2069,7 @@ void process_unset(struct script_data *sc, trig_data *trig, char *cmd)
 
 /* Copy a locally owned variable to the globals of another script.
  * 'remote <variable_name> <uid>' */
-void process_remote(struct script_data *sc, trig_data *trig, char *cmd)
+static void process_remote(struct script_data *sc, trig_data *trig, char *cmd)
 {
   struct trig_var_data *vd;
   struct script_data *sc_remote=NULL;
@@ -2182,7 +2250,7 @@ int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_a
 
 /* Delete a variable from the globals of another script.
  * 'rdelete <variable_name> <uid>' */
-void process_rdelete(struct script_data *sc, trig_data *trig, char *cmd)
+static void process_rdelete(struct script_data *sc, trig_data *trig, char *cmd)
 {
   struct trig_var_data *vd, *vd_prev=NULL;
   struct script_data *sc_remote=NULL;
@@ -2249,7 +2317,7 @@ void process_rdelete(struct script_data *sc, trig_data *trig, char *cmd)
 }
 
 /* Makes a local variable into a global variable. */
-void process_global(struct script_data *sc, trig_data *trig, char *cmd, long id)
+static void process_global(struct script_data *sc, trig_data *trig, char *cmd, long id)
 {
   struct trig_var_data *vd;
   char arg[MAX_INPUT_LENGTH], *var;
@@ -2279,7 +2347,7 @@ void process_global(struct script_data *sc, trig_data *trig, char *cmd, long id)
 }
 
 /* set the current context for a script */
-void process_context(struct script_data *sc, trig_data *trig, char *cmd)
+static void process_context(struct script_data *sc, trig_data *trig, char *cmd)
 {
   char arg[MAX_INPUT_LENGTH], *var;
 
@@ -2296,7 +2364,7 @@ void process_context(struct script_data *sc, trig_data *trig, char *cmd)
   sc->context = atol(var);
 }
 
-void extract_value(struct script_data *sc, trig_data *trig, char *cmd)
+static void extract_value(struct script_data *sc, trig_data *trig, char *cmd)
 {
   char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
   char *buf3;
@@ -2331,7 +2399,7 @@ void extract_value(struct script_data *sc, trig_data *trig, char *cmd)
  *   dg_letter var2 11 %string%
  *   now %var1% == 7 and %var2% == g
  *   Note that the index starts at 1. */
-void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd)
+static void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd)
 {
   /* Set the letter/number at position 'num' as the variable. */
   char junk[MAX_INPUT_LENGTH];
@@ -2667,7 +2735,7 @@ ACMD(do_tstat)
 
 /* Scans for a case/default instance. Returns the line containg the correct 
  * case instance, or the last line of the trigger if not found. */
-struct cmdlist_element *
+static struct cmdlist_element *
 find_case(struct trig_data *trig, struct cmdlist_element *cl,
           void *go, struct script_data *sc, int type, char *cond)
 {
@@ -2704,7 +2772,7 @@ find_case(struct trig_data *trig, struct cmdlist_element *cl,
 /* Scans for end of while/switch-blocks. Returns the line containg 'end', or 
  * the last line of the trigger if not found. Malformed scripts may cause NULL 
  * to be returned. */
-struct cmdlist_element *find_done(struct cmdlist_element *cl)
+static struct cmdlist_element *find_done(struct cmdlist_element *cl)
 {
   struct cmdlist_element *c;
   char *p;
@@ -2724,23 +2792,6 @@ struct cmdlist_element *find_done(struct cmdlist_element *cl)
   return c;
 }
 
-/* read a line in from a file, return the number of chars read */
-int fgetline(FILE *file, char *p)
-{
-  int count = 0;
-
-  do {
-    *p = fgetc(file);
-    if (*p != '\n' && !feof(file)) {
-      p++;
-      count++;
-    }
-  } while (*p != '\n' && !feof(file));
-
-  if (*p == '\n') *p = '\0';
-
-  return count;
-}
 
 /* load in a character's saved variables */
 void read_saved_vars(struct char_data *ch)
@@ -2916,7 +2967,7 @@ void init_lookup_table(void)
   }
 }
 
-struct char_data *find_char_by_uid_in_lookup_table(long uid)
+static struct char_data *find_char_by_uid_in_lookup_table(long uid)
 {
   int bucket = (int) (uid & (BUCKET_COUNT - 1));
   struct lookup_table_t *lt = &lookup_table[bucket];
@@ -2930,7 +2981,7 @@ struct char_data *find_char_by_uid_in_lookup_table(long uid)
   return NULL;
 }
 
-struct obj_data *find_obj_by_uid_in_lookup_table(long uid)
+static struct obj_data *find_obj_by_uid_in_lookup_table(long uid)
 {
   int bucket = (int) (uid & (BUCKET_COUNT - 1));
   struct lookup_table_t *lt = &lookup_table[bucket];

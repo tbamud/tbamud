@@ -1,13 +1,17 @@
-/**************************************************************************
-*  File: mail.h                                            Part of tbaMUD *
-*  Usage: header file for mudmail system                                  *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-*  By Jeremy Elson.                                                       *
-**************************************************************************/
+/**
+* @file mail.h
+* Public procs, macro defs, subcommand defines mudmail system.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
+* By Jeremy Elson.
+*/
+#ifndef _MAIL_H_
+#define _MAIL_H_
 
 /* You can modify the following constants to fit your own MUD.  */
 
@@ -22,6 +26,9 @@
 
 /* size of mail file allocation blocks		*/
 #define BLOCK_SIZE 100
+
+/* General, publicly available functions */
+SPECIAL(postmaster);
 
 /* NOTE:  Make sure that your block size is big enough. If not, HEADER_BLOCK_
  * DATASIZE will end up negative.  This is a bad thing. Check the define below 
@@ -97,3 +104,5 @@ struct mail_index_type_d {
 };
 
 typedef struct mail_index_type_d mail_index_type;
+
+#endif /* _MAIL_H_ */

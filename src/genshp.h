@@ -1,10 +1,16 @@
-/**************************************************************************
-*  File: genshp.h                                          Part of tbaMUD *
-*                                                                         *
-*  Usage: Generic OLC Library - Shops.                                    *
-*                                                                         *
-*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
-**************************************************************************/
+/**
+* @file genshp.h
+* Generic OLC Library - Shops.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+* 
+* This source code, which was not part of the CircleMUD legacy code,
+* is attributed to:
+* Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.                                                    
+*/
+#ifndef _GENSHP_H_
+#define _GENSHP_H_
 
 void copy_shop(struct shop_data *tshop, struct shop_data *fshop, int free_old_strings);
 void remove_shop_from_type_list(struct shop_buy_data **list, int num);
@@ -49,3 +55,5 @@ shop_rnum real_shop(shop_vnum vnum);
 #define S_NOBUY(i)		((i)->do_not_buy)
 #define S_BUY(i)		((i)->message_buy)
 #define S_SELL(i)		((i)->message_sell)
+
+#endif /* _GENSHP_H_ */

@@ -2,6 +2,9 @@
 
 /* src/conf.h.in.  Generated automatically from configure.in by autoheader.  */
 
+#ifndef _CONF_H_
+#define _CONF_H_
+
 #undef CIRCLE_WINDOWS
 
 #define AMIGA 1
@@ -102,3 +105,4 @@
 /* Define if your compiler does not prototype strerror().  */
 /* #undef NEED_STRERROR_PROTO */
 
+#endif /* _CONF_H_ */

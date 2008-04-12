@@ -40,7 +40,7 @@ OBJFILES = comm.obj act.comm.obj act.informative.obj act.movement.obj act.item.o
         castle.obj class.obj config.obj constants.obj db.obj fight.obj graph.obj handler.obj \
         house.obj interpreter.obj limits.obj magic.obj mail.obj mobact.obj modify.obj \
         objsave.obj shop.obj spec_assign.obj spec_procs.obj spell_parser.obj \
-        spells.obj utils.obj weather.obj random.obj players.obj
+        spells.obj utils.obj weather.obj random.obj players.obj quest.obj qedit.obj genqst.obj
 
 default: circle.exe
         $(MAKE) circle.exe
@@ -153,3 +153,12 @@ utils.obj: utils.c conf.h sysdep.h structs.h utils.h comm.h screen.h spells.h \
 weather.obj: weather.c conf.h sysdep.h structs.h utils.h comm.h handler.h \
   interpreter.h db.h
 	$(CC) -c $(CFLAGS) weather.c
+quest.obj: quest.c conf.h sysdep.h structs.h utils.h interpreter.h handler.h \
+  comm.h db.h screen.h quest.h
+	$(CC) -c $(CFLAGS) quest.c
+qedit.obj: qedit.c conf.h sysdep.h structs.h utils.h comm.h db.h oasis.h \
+  improved-edit.h screen.h genolc.h genzon.h interpreter.h quest.h
+	$(CC) -c $(CFLAGS) qedit.c
+genqst.obj: genqst.c conf.h sysdep.h structs.h utils.h db.h quest.h \
+  genolc.h genzon.h 
+	$(CC) -c $(CFLAGS) genqst.c

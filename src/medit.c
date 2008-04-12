@@ -8,10 +8,10 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "interpreter.h"
 #include "comm.h"
 #include "spells.h"
-#include "utils.h"
 #include "db.h"
 #include "shop.h"
 #include "genolc.h"
@@ -24,22 +24,19 @@
 #include "improved-edit.h"
 #include "dg_olc.h"
 #include "screen.h"
-
-/* external variables */
-extern struct attack_hit_type attack_hit_text[];
+#include "fight.h"
+#include "modify.h"      /* for smash_tilde */
 
 /* local functions */
-void medit_setup_new(struct descriptor_data *d);
-void medit_setup_existing(struct descriptor_data *d, int rmob_num);
-void init_mobile(struct char_data *mob);
-void medit_save_internally(struct descriptor_data *d);
-void medit_save_to_disk(zone_vnum zone_num);
-void medit_disp_positions(struct descriptor_data *d);
-void medit_disp_sex(struct descriptor_data *d);
-void medit_disp_attack_types(struct descriptor_data *d);
-void medit_disp_mob_flags(struct descriptor_data *d);
-void medit_disp_aff_flags(struct descriptor_data *d);
-void medit_disp_menu(struct descriptor_data *d);
+static void medit_setup_new(struct descriptor_data *d);
+static void init_mobile(struct char_data *mob);
+static void medit_save_to_disk(zone_vnum zone_num);
+static void medit_disp_positions(struct descriptor_data *d);
+static void medit_disp_sex(struct descriptor_data *d);
+static void medit_disp_attack_types(struct descriptor_data *d);
+static void medit_disp_mob_flags(struct descriptor_data *d);
+static void medit_disp_aff_flags(struct descriptor_data *d);
+static void medit_disp_menu(struct descriptor_data *d);
 
 /*  utility functions */
 ACMD(do_oasis_medit)
@@ -167,12 +164,12 @@ ACMD(do_oasis_medit)
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-void medit_save_to_disk(zone_vnum foo)
+static void medit_save_to_disk(zone_vnum foo)
 {
   save_mobiles(real_zone(foo));
 }
 
-void medit_setup_new(struct descriptor_data *d)
+static void medit_setup_new(struct descriptor_data *d)
 {
   struct char_data *mob;
 
@@ -217,7 +214,7 @@ void medit_setup_existing(struct descriptor_data *d, int rmob_num)
 }
 
 /* Ideally, this function should be in db.c, but I'll put it here for portability. */
-void init_mobile(struct char_data *mob)
+static void init_mobile(struct char_data *mob)
 {
   clear_char(mob);
 
@@ -294,7 +291,7 @@ void medit_save_internally(struct descriptor_data *d)
 
 /* Menu functions 
    Display positions. (sitting, standing, etc) */
-void medit_disp_positions(struct descriptor_data *d)
+static void medit_disp_positions(struct descriptor_data *d)
 {
   int i;
 
@@ -308,7 +305,7 @@ void medit_disp_positions(struct descriptor_data *d)
 }
 
 /* Display the gender of the mobile. */
-void medit_disp_sex(struct descriptor_data *d)
+static void medit_disp_sex(struct descriptor_data *d)
 {
   int i;
 
@@ -322,7 +319,7 @@ void medit_disp_sex(struct descriptor_data *d)
 }
 
 /* Display attack types menu. */
-void medit_disp_attack_types(struct descriptor_data *d)
+static void medit_disp_attack_types(struct descriptor_data *d)
 {
   int i;
 
@@ -336,41 +333,43 @@ void medit_disp_attack_types(struct descriptor_data *d)
 }
 
 /* Display mob-flags menu. */
-void medit_disp_mob_flags(struct descriptor_data *d)
+static void medit_disp_mob_flags(struct descriptor_data *d)
 {
-  int i, columns = 0;
-  char flags[MAX_STRING_LENGTH];
+  char buf[MAX_STRING_LENGTH];
 
   get_char_colors(d->character);
   clear_screen(d);
-  for (i = 0; i < NUM_MOB_FLAGS; i++) {
-    write_to_output(d, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, action_bits[i],
-		!(++columns % 2) ? "\r\n" : "");
-  }
-  sprintbitarray(MOB_FLAGS(OLC_MOB(d)), action_bits, AF_ARRAY_MAX, flags);
+
+  column_list(buf, sizeof(buf), 0, 0,
+              2, action_bits, NUM_MOB_FLAGS, 0,
+              "%s$2i%s) $20l", grn, nrm);
+  write_to_output(d, buf);
+
+  sprintbitarray(MOB_FLAGS(OLC_MOB(d)), action_bits, AF_ARRAY_MAX, buf);
   write_to_output(d, "\r\nCurrent flags : %s%s%s\r\nEnter mob flags (0 to quit) : ",
-		  cyn, flags, nrm);
+		  cyn, buf, nrm);
 }
 
 /* Display affection flags menu. */
-void medit_disp_aff_flags(struct descriptor_data *d)
+static void medit_disp_aff_flags(struct descriptor_data *d)
 {
-  int i, columns = 0;
-  char flags[MAX_STRING_LENGTH];
+  char buf[MAX_STRING_LENGTH];
 
   get_char_colors(d->character);
   clear_screen(d);
-  for (i = 0; i < NUM_AFF_FLAGS; i++) {
-    write_to_output(d, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, affected_bits[i+1],
-			!(++columns % 2) ? "\r\n" : "");
-  }
-  sprintbitarray(AFF_FLAGS(OLC_MOB(d)), affected_bits, AF_ARRAY_MAX, flags);
+
+  column_list(buf, sizeof(buf), 0, 0,
+              2, affected_bits, NUM_AFF_FLAGS, 1,
+              "%s$2i%s) $20l", grn, nrm);
+  write_to_output(d, buf);
+
+  sprintbitarray(AFF_FLAGS(OLC_MOB(d)), affected_bits, AF_ARRAY_MAX, buf);
   write_to_output(d, "\r\nCurrent flags   : %s%s%s\r\nEnter aff flags (0 to quit) : ",
-			  cyn, flags, nrm);
+			  cyn, buf, nrm);
 }
 
 /* Display main menu. */
-void medit_disp_menu(struct descriptor_data *d)
+static void medit_disp_menu(struct descriptor_data *d)
 {
   struct char_data *mob;
   char flags[MAX_STRING_LENGTH], flag2[MAX_STRING_LENGTH];

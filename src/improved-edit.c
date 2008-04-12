@@ -11,8 +11,9 @@
 #include "comm.h"
 #include "interpreter.h"
 #include "improved-edit.h"
+#include "dg_scripts.h"
+#include "modify.h"
 
-int format_script(struct descriptor_data *d);
 
 void send_editor_help(struct descriptor_data *d)
 {

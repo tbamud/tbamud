@@ -7,6 +7,7 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "interpreter.h"
 #include "handler.h"
 #include "comm.h"
@@ -16,20 +17,19 @@
 #include "screen.h"
 #include "constants.h"
 #include "genolc.h"
+#include "act.h"
 
-/* external functions */
-int sort_command_helper(const void *a, const void *b);
-void sort_commands(void); /* aedit patch -- M. Scott */
-void create_command_list(void);
 
-/* local functions */
-ACMD(do_astat);
-int aedit_find_command(const char *txt);
-void aedit_disp_menu(struct descriptor_data * d);
-void aedit_setup_new(struct descriptor_data *d);
-void aedit_setup_existing(struct descriptor_data *d, int real_num);
-void aedit_save_internally(struct descriptor_data *d);
-void aedit_save_to_disk(struct descriptor_data *d);
+/* local utility functions */
+static int aedit_find_command(const char *txt);
+static void aedit_disp_menu(struct descriptor_data * d);
+static void aedit_save_to_disk(struct descriptor_data *d);
+/* used in aedit parse */
+static void aedit_setup_new(struct descriptor_data *d);
+static void aedit_setup_existing(struct descriptor_data *d, int real_num);
+static void aedit_save_internally(struct descriptor_data *d);
+
+
 
 /* Utils and exported functions. */
 ACMD(do_oasis_aedit)
@@ -107,7 +107,7 @@ ACMD(do_oasis_aedit)
   mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing actions.", GET_NAME(ch));
 }
 
-void aedit_setup_new(struct descriptor_data *d) {
+static void aedit_setup_new(struct descriptor_data *d) {
    CREATE(OLC_ACTION(d), struct social_messg, 1);
    OLC_ACTION(d)->command             = strdup(OLC_STORAGE(d));
    OLC_ACTION(d)->sort_as             = strdup(OLC_STORAGE(d));
@@ -132,7 +132,7 @@ void aedit_setup_new(struct descriptor_data *d) {
    OLC_VAL(d) = 0;
 }
 
-void aedit_setup_existing(struct descriptor_data *d, int real_num) {
+static void aedit_setup_existing(struct descriptor_data *d, int real_num) {
    CREATE(OLC_ACTION(d), struct social_messg, 1);
    OLC_ACTION(d)->command             = strdup(soc_mess_list[real_num].command);
    OLC_ACTION(d)->sort_as             = strdup(soc_mess_list[real_num].sort_as);
@@ -170,7 +170,7 @@ void aedit_setup_existing(struct descriptor_data *d, int real_num) {
    aedit_disp_menu(d);
 }
 
-void aedit_save_internally(struct descriptor_data *d) {
+static void aedit_save_internally(struct descriptor_data *d) {
    struct social_messg *new_soc_mess_list = NULL;
    int i;
 
@@ -193,13 +193,14 @@ void aedit_save_internally(struct descriptor_data *d) {
    }
 
    create_command_list();
+   /* aedit patch -- M. Scott */
    sort_commands();
 
    add_to_save_list(AEDIT_PERMISSION, SL_ACT);
    aedit_save_to_disk(d); /* autosave by Rumble */
 }
 
-void aedit_save_to_disk(struct descriptor_data *d) {
+static void aedit_save_to_disk(struct descriptor_data *d) {
    FILE *fp;
    int i;
    if (!(fp = fopen(SOCMESS_FILE_NEW, "w+")))  {
@@ -242,7 +243,7 @@ void aedit_save_to_disk(struct descriptor_data *d) {
 }
 
 /* The Main Menu. */
-void aedit_disp_menu(struct descriptor_data * d) {
+static void aedit_disp_menu(struct descriptor_data * d) {
    struct social_messg *action = OLC_ACTION(d);
    struct char_data *ch        = d->character;
 
@@ -798,7 +799,7 @@ ACMD(do_astat)
 
 }
 
-int aedit_find_command(const char *txt)
+static int aedit_find_command(const char *txt)
 {
   int cmd;
 

@@ -16,6 +16,9 @@ DISTDIR=c:\circle
 CFLAGS=-c -I$(LCCDIR)\include -DLCC_WIN32
 CC=lcc
 OBJS=\
+	genqst.obj \
+	qedit.obj \
+	quest.obj \
 	weather.obj \
 	utils.obj \
 	spells.obj \
@@ -57,6 +60,52 @@ LIBS=$(LCCDIR)\lib\wsock32.lib
 
 circle.exe:	$(OBJS)
         lcclnk  -subsystem console -o $(DISTDIR)\bin\circle.exe $(OBJS) $(LIBS)
+
+# Build GENQST.C
+GENQST_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\genolc.h\
+    $(DISTDIR)\src\genzon.h\
+    $(DISTDIR)\src\quest.h\
+    $(DISTDIR)\src\db.h\
+
+genqst.obj: $(GENQST_C) $(DISTDIR)\src\genqst.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\genqst.c
+
+# Build QEDIT.C
+QEDIT_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\oasis.h\
+    $(DISTDIR)\src\improved-edit.h\
+    $(DISTDIR)\src\screen.h\
+    $(DISTDIR)\src\genolc.h\
+    $(DISTDIR)\src\genzon.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\quest.h\
+
+qedit.obj: $(QEDIT_C) $(DISTDIR)\src\qedit.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\qedit.c
+
+# Build QUEST.C
+QUEST_C=\
+    $(DISTDIR)\src\sysdep.h\
+    $(DISTDIR)\src\structs.h\
+    $(DISTDIR)\src\utils.h\
+    $(DISTDIR)\src\comm.h\
+    $(DISTDIR)\src\handler.h\
+    $(DISTDIR)\src\interpreter.h\
+    $(DISTDIR)\src\db.h\
+    $(DISTDIR)\src\screen.h\
+    $(DISTDIR)\src\quest.h\
+
+quest.obj: $(QUEST_C) $(DISTDIR)\src\quest.c
+    $(CC)  $(CFLAGS) $(DISTDIR)\src\quest.c
 
 # Build WEATHER.C
 WEATHER_C=\

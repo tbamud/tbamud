@@ -18,16 +18,24 @@
 #include "handler.h"
 #include "db.h"
 #include "constants.h"
+#include "genzon.h" /* for zone_rnum real_zone_by_thing */
+#include "fight.h"  /* for die() */
 
-/* External functions. */
-void die(struct char_data * ch, struct char_data * killer);
-zone_rnum real_zone_by_thing(room_vnum vznum);
-bitvector_t asciiflag_conv(char *flag);
-
-/* Local functions. */
+/* Local functions, macros, defines and structs */
 
 #define WCMD(name)  \
     void (name)(room_data *room, char *argument, int cmd, int subcmd)
+
+/* for do_wsend */
+#define SCMD_WSEND        0
+#define SCMD_WECHOAROUND  1
+
+struct wld_command_info {
+    char *command;
+    void (*command_pointer)
+           (room_data *room, char *argument, int cmd, int subcmd);
+    int        subcmd;
+};
 
 void wld_log(room_data *room, const char *format, ...);
 void act_to_room(char *str, room_data *room);
@@ -43,18 +51,8 @@ WCMD(do_wpurge);
 WCMD(do_wload);
 WCMD(do_wdamage);
 WCMD(do_wat);
-void wld_command_interpreter(room_data *room, char *argument);
 
-struct wld_command_info {
-    char *command;
-    void (*command_pointer)
-           (room_data *room, char *argument, int cmd, int subcmd);
-    int        subcmd;
-};
 
-/* do_wsend */
-#define SCMD_WSEND        0
-#define SCMD_WECHOAROUND  1
 
 /* attaches room vnum to msg and sends it to script_log */
 void wld_log(room_data *room, const char *format, ...)

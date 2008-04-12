@@ -1,5 +1,8 @@
 /* src/conf.h.in.  Generated automatically from configure.in by autoheader.  */
 
+#ifndef _CONF_H_
+#define _CONF_H_
+
 /* Define to empty if the keyword does not work.  */
 #undef const
 
@@ -330,3 +333,5 @@
 /* Check for a prototype to write. */
 #undef NEED_WRITE_PROTO
 
+
+#endif /* _CONF_H_ */

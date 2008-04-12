@@ -1,12 +1,14 @@
-/**************************************************************************
-*  File: utils.c                                           Part of tbaMUD *
-*  Usage: Various internal functions of a utility nature.                 *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+/**
+* @file utils.c                                          
+* Various utility functions used within the core mud code.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -19,15 +21,11 @@
 #include "handler.h"
 #include "interpreter.h"
 
-/* external globals */
-extern struct time_data time_info;
 
-/* local functions */
-struct time_info_data *real_time_passed(time_t t2, time_t t1);
-struct time_info_data *mud_time_passed(time_t t2, time_t t1);
-void prune_crlf(char *txt);
-
-/* creates a random number in interval [from;to] */
+/** Aportable random number function.
+ * @param from The lower bounds of the random number.
+ * @param to The upper bounds of the random number.
+ * @retval int The resulting randomly generated number. */
 int rand_number(int from, int to)
 {
   /* error checking in case people call this incorrectly */
@@ -47,7 +45,11 @@ int rand_number(int from, int to)
   return ((circle_random() % (to - from + 1)) + from);
 }
 
-/* simulates dice roll */
+/** Simulates a single dice roll from one to many of a certain sized die. 
+ * @param num The number of dice to roll.
+ * @param size The number of sides each die has, and hence the number range
+ * of the die. 
+ * @retval int The sum of all the dice rolled. A random number. */
 int dice(int num, int size)
 {
   int sum = 0;
@@ -61,19 +63,27 @@ int dice(int num, int size)
   return (sum);
 }
 
-/* Be wary of sign issues with this. */
+/** Return the smaller number. Original note: Be wary of sign issues with this. 
+ * @param a The first number.
+ * @param b The second number.
+ * @retval int The smaller of the two, a or b. */
 int MIN(int a, int b)
 {
   return (a < b ? a : b);
 }
 
-/* Be wary of sign issues with this. */
+/** Return the larger number. Original note: Be wary of sign issues with this. 
+ * @param a The first number.
+ * @param b The second number.
+ * @retval int The larger of the two, a or b. */
 int MAX(int a, int b)
 {
   return (a > b ? a : b);
 }
 
-/* color issue fix -- skip color codes, _then_ capitalize */
+/** Used to capitalize a string. Will not change any mud specific color codes. 
+ * @param txt The string to capitalize.
+ * @retval char* Pointer to the capitalized string. */
 char *CAP(char *txt)
 {
   char *p = txt;
@@ -86,12 +96,13 @@ char *CAP(char *txt)
 }
 
 #if !defined(HAVE_STRLCPY)
-/* A 'strlcpy' function in the same fashion as 'strdup' below. This copies up 
+/** A 'strlcpy' function in the same fashion as 'strdup' below. This copies up 
  * to totalsize - 1 bytes from the source string, placing them and a trailing 
  * NUL into the destination string. Returns the total length of the string it 
  * tried to copy, not including the trailing NUL.  So a '>= totalsize' test 
  * says it was truncated. (Note that you may have _expected_ truncation 
- * because you only wanted a few characters from the source string.) */
+ * because you only wanted a few characters from the source string.) Portable
+ * function, in case your system does not have strlcpy. */
 size_t strlcpy(char *dest, const char *source, size_t totalsize)
 {
   strncpy(dest, source, totalsize - 1);	/* strncpy: OK (we must assume 'totalsize' is correct) */
@@ -101,7 +112,7 @@ size_t strlcpy(char *dest, const char *source, size_t totalsize)
 #endif
 
 #if !defined(HAVE_STRDUP)
-/* Create a duplicate of a string */
+/** Create a duplicate of a string function. Portable. */
 char *strdup(const char *source)
 {
   char *new_z;
@@ -111,7 +122,10 @@ char *strdup(const char *source)
 }
 #endif
 
-/* Strips \r\n from end of string. */
+/** Strips "\r\n" from just the end of a string. Will not remove internal
+ * "\r\n" values to the string.
+ * @post Replaces any "\r\n" values at the end of the string with null.
+ * @param txt The writable string to prune. */
 void prune_crlf(char *txt)
 {
   int i = strlen(txt) - 1;
@@ -121,7 +135,7 @@ void prune_crlf(char *txt)
 }
 
 #ifndef str_cmp
-/* str_cmp: a case-insensitive version of strcmp(). Returns: 0 if equal, > 0 
+/** a portable, case-insensitive version of strcmp(). Returns: 0 if equal, > 0 
  * if arg1 > arg2, or < 0 if arg1 < arg2. Scan until strings are found 
  * different or we reach the end of both. */
 int str_cmp(const char *arg1, const char *arg2)
@@ -142,7 +156,7 @@ int str_cmp(const char *arg1, const char *arg2)
 #endif
 
 #ifndef strn_cmp
-/* strn_cmp: a case-insensitive version of strncmp(). Returns: 0 if equal, > 0 
+/** a portable, case-insensitive version of strncmp(). Returns: 0 if equal, > 0 
  * if arg1 > arg2, or < 0 if arg1 < arg2. Scan until strings are found 
  * different, the end of both, or n is reached. */
 int strn_cmp(const char *arg1, const char *arg2, int n)
@@ -162,8 +176,13 @@ int strn_cmp(const char *arg1, const char *arg2, int n)
 }
 #endif
 
-/* New variable argument log() function.  Works the same as the old for
- * previously written code but is very nice for new code. */
+/** New variable argument log() function; logs messages to disk.  
+ * Works the same as the old for previously written code but is very nice 
+ * if new code wishes to implment printf style log messages without the need 
+ * to make prior sprintf calls.
+ * @param format The message to log. Standard printf formatting and variable
+ * arguments are allowed. 
+ * @param args The comma delimited, variable substitutions to make in str. */
 void basic_mud_vlog(const char *format, va_list args)
 {
   time_t ct = time(0);
@@ -185,7 +204,13 @@ void basic_mud_vlog(const char *format, va_list args)
   fflush(logfile);
 }
 
-/* So mudlog() can use the same function. */
+/** Log messages directly to syslog on disk, no display to in game immortals.
+ * Supports variable string modification arguments, a la printf. Most likely
+ * any calls to plain old log() have been redirected, via macro, to this
+ * function.
+ * @param format The message to log. Standard printf formatting and variable
+ * arguments are allowed. 
+ * @param ... The comma delimited, variable substitutions to make in str. */
 void basic_mud_log(const char *format, ...)
 {
   va_list args;
@@ -195,7 +220,12 @@ void basic_mud_log(const char *format, ...)
   va_end(args);
 }
 
-/* the "touch" command, essentially. */
+/** Essentially the touch command. Create an empty file or update the modified
+ * time of a file. 
+ * @param path The filepath to "touch." This filepath is relative to the /lib
+ * directory relative to the root of the mud distribution.
+ * @retval int 0 on a success, -1 on a failure; standard system call exit
+ * values. */
 int touch(const char *path)
 {
   FILE *fl;
@@ -209,7 +239,16 @@ int touch(const char *path)
   }
 }
 
-/* Log mud messages to a file & to online imm's syslogs. - Fen */
+/** Log mud messages to a file & to online imm's syslogs. 
+ * @param type The minimum syslog level that needs be set to see this message.
+ * OFF, BRF, NRM and CMP are the values from lowest to highest. Using mudlog
+ * with type = OFF should be avoided as every imm will see the message even
+ * if they have syslog turned off.
+ * @param level Minimum character level needed to see this message. 
+ * @param file TRUE log this to the syslog file, FALSE do not log this to disk.
+ * @param str The message to log. Standard printf formatting and variable
+ * arguments are allowed. 
+ * @param ... The comma delimited, variable substitutions to make in str. */
 void mudlog(int type, int level, int file, const char *str, ...)
 {
   char buf[MAX_STRING_LENGTH];
@@ -250,9 +289,24 @@ void mudlog(int type, int level, int file, const char *str, ...)
 
 
 
-/* If you don't have a 'const' array, just cast it as such.  It's safer to cast
- * a non-const array as const than to cast a const one as non-const. Doesn't 
- * really matter since this function doesn't change the array though. */
+/** Take a bitvector and return a human readable 
+ * description of which bits are set in it. 
+ * @pre The final element in the names array must contain a one character
+ * string consisting of a single newline character "\n". Caller of function is
+ * responsible for creating the memory buffer for the result string.
+ * @param[in] bitvector The bitvector to test for set bits. 
+ * @param[in] names An array of human readable strings describing each possible
+ * bit. The final element in this array must be a string made of a single 
+ * newline character (eg "\n").  
+ * If you don't have a 'const' array for the names param, cast it as such.  
+ * @param[out] result Holds the names of the set bits in bitvector. The bit
+ * names will be delimited by a single space. 
+ * Caller of sprintbit is responsible for creating the buffer for result. 
+ * Will be set to "NOBITS" if no bits are set in bitvector (ie bitvector = 0).
+ * @param[in] reslen The length of the available memory in the result buffer.
+ * Ideally, results will be large enough to hold the description of every bit
+ * that could possibly be set in bitvector.
+ * @retval size_t The length of the string copied into result. */
 size_t sprintbit(bitvector_t bitvector, const char *names[], char *result, size_t reslen)
 {
   size_t len = 0;
@@ -279,6 +333,20 @@ size_t sprintbit(bitvector_t bitvector, const char *names[], char *result, size_
   return (len);
 }
 
+/** Return the human readable name of a defined type.
+ * @pre The final element in the names array must contain a one character
+ * string consisting of a single newline character "\n". Caller of function is
+ * responsible for creating the memory buffer for the result string.
+ * @param[in] type The type number to be translated.
+ * @param[in] names An array of human readable strings describing each possible
+ * bit. The final element in this array must be a string made of a single 
+ * newline character (eg "\n").
+ * @param[out] result Holds the translated name of the type. 
+ * Caller of sprintbit is responsible for creating the buffer for result. 
+ * Will be set to "UNDEFINED" if the type is greater than the number of names
+ * available.
+ * @param[in] reslen The length of the available memory in the result buffer.
+ * @retval size_t The length of the string copied into result. */ 
 size_t sprinttype(int type, const char *names[], char *result, size_t reslen)
 {
   int nr = 0;
@@ -291,6 +359,26 @@ size_t sprinttype(int type, const char *names[], char *result, size_t reslen)
   return strlcpy(result, *names[nr] != '\n' ? names[nr] : "UNDEFINED", reslen);
 }
 
+/** Take a bitarray and return a human readable description of which bits are 
+ * set in it. 
+ * @pre The final element in the names array must contain a one character
+ * string consisting of a single newline character "\n". Caller of function is
+ * responsible for creating the memory buffer for the result string large enough
+ * to hold all possible bit translations. There is no error checking for
+ * possible array overflow for result.
+ * @param[in] bitvector The bitarray in which to test for set bits.
+ * @param[in] names An array of human readable strings describing each possible
+ * bit. The final element in this array must be a string made of a single 
+ * newline character (eg "\n").  
+ * If you don't have a 'const' array for the names param, cast it as such.  
+ * @param[in] maxar The number of 'bytes' in the bitarray. This number will
+ * usually be pre-defined for the particular bitarray you are using.
+ * @param[out] result Holds the names of the set bits in bitarray. The bit
+ * names are delimited by a single space. Ideally, results will be large enough 
+ * to hold the description of every bit that could possibly be set in bitvector. 
+ * Will be set to "NOBITS" if no bits are set in bitarray (ie all bits in the
+ * bitarray are equal to 0).
+ */
 void sprintbitarray(int bitvector[], const char *names[], int maxar, char *result)
 {
   int nr, teller, found = FALSE;
@@ -298,26 +386,41 @@ void sprintbitarray(int bitvector[], const char *names[], int maxar, char *resul
   *result = '\0';
 
   for(teller = 0; teller < maxar && !found; teller++)
-    for (nr = 0; nr < 32 && !found; nr++) {
-      if (IS_SET_AR(bitvector, (teller*32)+nr)) {
-        if (*names[(teller*32)+nr] != '\n') {
-          if (*names[(teller*32)+nr] != '\0') {
+  {
+    for (nr = 0; nr < 32 && !found; nr++) 
+    {
+      if (IS_SET_AR(bitvector, (teller*32)+nr)) 
+      {
+        if (*names[(teller*32)+nr] != '\n') 
+        {
+          if (*names[(teller*32)+nr] != '\0') 
+          {
             strcat(result, names[(teller*32)+nr]);
             strcat(result, " ");
           }
-	} else {
+        } 
+        else 
+        {
           strcat(result, "UNDEFINED ");
         }
       }
       if (*names[(teller*32)+nr] == '\n')
         found = TRUE;
     }
+  }
 
   if (!*result)
     strcpy(result, "NOBITS ");
 }
 
-/* Calculate the REAL time passed over the last t2-t1 centuries (secs) */
+/** Calculate the REAL time passed between two time invervals.
+ * @todo Recommend making this function foresightedly useful by calculating
+ * real months and years, too. 
+ * @param t2 The later time.
+ * @param t1 The earlier time.
+ * @retval time_info_data The real hours and days passed between t2 and t1. Only 
+ * the hours and days are returned, months and years are ignored and returned
+ * as -1 values. */
 struct time_info_data *real_time_passed(time_t t2, time_t t1)
 {
   long secs;
@@ -337,7 +440,12 @@ struct time_info_data *real_time_passed(time_t t2, time_t t1)
   return (&now);
 }
 
-/* Calculate the MUD time passed over the last t2-t1 centuries (secs) */
+/** Calculate the MUD time passed between two time invervals.
+ * @param t2 The later time.
+ * @param t1 The earlier time.
+ * @retval time_info_data A pointer to the mud hours, days, months and years 
+ * that have passed between the two time intervals. DO NOT FREE the structure
+ * pointed to by the return value. */
 struct time_info_data *mud_time_passed(time_t t2, time_t t1)
 {
   long secs;
@@ -359,6 +467,10 @@ struct time_info_data *mud_time_passed(time_t t2, time_t t1)
   return (&now);
 }
 
+/** Translate the current mud time to real seconds (in type time_t).
+ * @param now The current mud time to translate into a real time unit.
+ * @retval time_t The real time that would have had to have passed
+ * to represent the mud time represented by the now parameter. */
 time_t mud_time_to_secs(struct time_info_data *now)
 {
   time_t when = 0;
@@ -370,6 +482,12 @@ time_t mud_time_to_secs(struct time_info_data *now)
   return (time(NULL) - when);
 }
 
+/** Calculate a player's MUD age.
+ * @todo The minimum starting age of 17 is hardcoded in this function. Recommend
+ * changing the minimum age to a property (variable) external to this function.
+ * @param ch A valid player character.
+ * @retval time_info_data A pointer to the mud age in years of the player 
+ * character. DO NOT FREE the structure pointed to by the return value. */
 struct time_info_data *age(struct char_data *ch)
 {
   static struct time_info_data player_age;
@@ -381,7 +499,13 @@ struct time_info_data *age(struct char_data *ch)
   return (&player_age);
 }
 
-/* Check if making CH follow VICTIM will create an illegal Follow Loop. */
+/** Check if making ch follow victim will create an illegal follow loop. In
+ * essence, this prevents someone from following a character in a group that
+ * is already being lead by the character. 
+ * @param ch The character trying to follow.
+ * @param victim The character being followed.
+ * @retval bool TRUE if ch is already leading someone in victims group, FALSE
+ * if it is okay for ch to follow victim. */
 bool circle_follow(struct char_data *ch, struct char_data *victim)
 {
   struct char_data *k;
@@ -394,12 +518,20 @@ bool circle_follow(struct char_data *ch, struct char_data *victim)
   return (FALSE);
 }
 
-/* Called when stop following persons, or stopping charm. This will NOT do if 
- * a character quits or dies. */
+/** Call on a character (NPC or PC) to stop them from following someone and 
+ * to break any charm affect.
+ * @todo Make the messages returned from the broken charm affect more
+ * understandable. 
+ * @pre ch MUST be following someone, else core dump. 
+ * @post The charm affect (AFF_CHARM) will be removed from the character and
+ * the character will stop following the "master" they were following.
+ * @param ch The character (NPC or PC) to stop from following.
+ * */
 void stop_follower(struct char_data *ch)
 {
   struct follow_type *j, *k;
 
+  /* Makes sure this function is not called when it shouldn't be called. */
   if (ch->master == NULL) {
     core_dump();
     return;
@@ -434,6 +566,11 @@ void stop_follower(struct char_data *ch)
   REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_GROUP);
 }
 
+/** Finds the number of follows that are following, and charmed by, the
+ * character (PC or NPC).
+ * @param ch The character to check for charmed followers.
+ * @retval int The number of followers that are also charmed by the character. 
+ */
 int num_followers_charmed(struct char_data *ch)
 {
   struct follow_type *lackey;
@@ -446,7 +583,12 @@ int num_followers_charmed(struct char_data *ch)
   return (total);
 }
 
-/* Called when a character that follows/is followed dies */
+/** Called when a character that follows/is followed dies. If the character
+ * is the leader of a group, it stops everyone in the group from following
+ * them. Despite the title, this function does not actually perform the kill on 
+ * the character passed in as the argument.
+ * @param ch The character (NPC or PC) to stop from following.
+ * */
 void die_follower(struct char_data *ch)
 {
   struct follow_type *j, *k;
@@ -460,8 +602,12 @@ void die_follower(struct char_data *ch)
   }
 }
 
-/* Do NOT call this before having checked if a circle of followers will arise. 
- * CH will follow leader. */
+/** Adds a new follower to a group.
+ * @todo Maybe make circle_follow an inherent part of this function?
+ * @pre Make sure to call circle_follow first. ch may also not already
+ * be following anyone, otherwise core dump. 
+ * @param ch The character to follow.
+ * @param leader The character to be followed. */
 void add_follower(struct char_data *ch, struct char_data *leader)
 {
   struct follow_type *k;
@@ -485,10 +631,17 @@ void add_follower(struct char_data *ch, struct char_data *leader)
   act("$n starts to follow $N.", TRUE, ch, 0, leader, TO_NOTVICT);
 }
 
-/* get_line reads the next non-blank line off of the input stream. The newline 
- * character is removed from the input.  Lines which begin with '*' are 
- * considered to be comments. Returns the number of lines advanced in the file.
- * Buffer given must be at least READ_SIZE (256) characters large. */
+/** Reads the next non-blank line off of the input stream. Empty lines are 
+ * skipped. Lines which begin with '*' are considered to be comments and are
+ * skipped.
+ * @pre Caller must allocate memory for buf. 
+ * @post If a there is a line to be read, the newline character is removed from
+ * the file line ending and the string is returned. Else a null string is 
+ * returned in buf. 
+ * @param[in] fl The file to be read from.
+ * @param[out] buf The next non-blank line read from the file. Buffer given must
+ * be at least READ_SIZE (256) characters large.
+ * @retval int The number of lines advanced in the file. */
 int get_line(FILE *fl, char *buf)
 {
   char temp[READ_SIZE];
@@ -510,6 +663,21 @@ int get_line(FILE *fl, char *buf)
   return (lines);
 }
 
+/** Create the full path, relative to the library path, of the player type
+ * file to open.
+ * @todo Make the return type bool. 
+ * @pre Caller is responsible for allocating memory buffer for the created
+ * file name.
+ * @post The potential file path to open is created. This function does not
+ * actually open any file descriptors.
+ * @param[out] filename Buffer to store the full path of the file to open.
+ * @param[in] fbufsize The maximum size of filename, and the maximum size
+ * of the path that can be written to it.
+ * @param[in] mode What type of files can be created. Currently, recognized
+ * modes are CRASH_FILE, ETEXT_FILE, SCRIPT_VARS_FILE and PLR_FILE.
+ * @param[in] orig_name The player name to create the filepath (of type mode)
+ * for.
+ * @retval int 0 if filename cannot be created, 1 if it can. */
 int get_filename(char *filename, size_t fbufsize, int mode, const char *orig_name)
 {
   const char *prefix, *middle, *suffix;
@@ -571,6 +739,9 @@ int get_filename(char *filename, size_t fbufsize, int mode, const char *orig_nam
   return (1);
 }
 
+/** Calculate the number of player characters (PCs) in the room. Any NPC (mob)
+ * is not returned in the count. 
+ * @param room The room to check for PCs. */
 int num_pc_in_room(struct room_data *room)
 {
   int i = 0;
@@ -583,14 +754,16 @@ int num_pc_in_room(struct room_data *room)
   return (i);
 }
 
-/* This function (derived from basic fork() abort() idea by Erwin S. Andreasen)
+
+/** This function (derived from basic fork() abort() idea by Erwin S Andreasen)
  * causes your MUD to dump core (assuming you can) but continue running. The 
  * core dump will allow post-mortem debugging that is less severe than assert();
  * Don't call this directly as core_dump_unix() but as simply 'core_dump()' so 
  * that it will be excluded from systems not supporting them. You still want to
  * call abort() or exit(1) for non-recoverable errors, of course. Wonder if 
- * flushing streams includes sockets? */
-extern FILE *player_fl;
+ * flushing streams includes sockets? 
+ * @param who The file in which this call was made.
+ * @param line The line at which this call was made. */
 void core_dump_real(const char *who, int line)
 {
   log("SYSERR: Assertion failed at %s:%d!", who, line);
@@ -612,6 +785,10 @@ void core_dump_real(const char *who, int line)
 #endif
 }
 
+/** Count the number bytes taken up by color codes in a string that will be
+ * empty space once the color codes are converted and made non-printable.
+ * @param string The string in which to check for color codes.
+ * @retval int the number of color codes found. */
 int count_color_chars(char *string)
 {
   int i, len;
@@ -633,8 +810,12 @@ int count_color_chars(char *string)
   return num;
 }
 
-/* Rules (unless overridden by ROOM_DARK): Inside and City rooms are always 
- * lit. Outside rooms are dark at sunset and night. */
+/** Tests to see if a room is dark. Rules (unless overridden by ROOM_DARK): 
+ * Inside and City rooms are always lit. Outside rooms are dark at sunset and 
+ * night. 
+ * @todo Make the return value a bool.
+ * @param room The real room to test for.
+ * @retval int FALSE if the room is lit, TRUE if the room is dark. */
 int room_is_dark(room_rnum room)
 {
   if (!VALID_ROOM_RNUM(room)) {
@@ -657,6 +838,15 @@ int room_is_dark(room_rnum room)
   return (FALSE);
 }
 
+/** Calculates the Levenshtein distance between two strings. Currently used
+ * by the mud to make suggestions to the player when commands are mistyped.
+ * This function is most useful when an index of possible choices are available
+ * and the results of this function are constrained and used to help narrow
+ * down the possible choices. For more information about Levenshtein distance,
+ * recommend doing an internet or wikipedia search.
+ * @param s1 The input string.
+ * @param s2 The string to be compared to.
+ * @retval int The Levenshtein distance between s1 and s2. */ 
 int levenshtein_distance(char *s1, char *s2)
 {   
   int s1_len = strlen(s1), s2_len = strlen(s2);
@@ -685,6 +875,11 @@ int levenshtein_distance(char *s1, char *s2)
   return i;
 } 
 													   
+/** Removes a character from a piece of furniture. Unlike some of the other
+ * _from_ functions, this does not place the character into NOWHERE.
+ * @post ch is unattached from the furniture object.
+ * @param ch The character to remove from the furniture object.
+ */
 void char_from_furniture(struct char_data *ch)
 {
   struct obj_data *furniture;
@@ -734,4 +929,644 @@ void char_from_furniture(struct char_data *ch)
   NEXT_SITTING(ch) = NULL;
 
  return;
+}
+
+
+/* Helper function for column_list. */
+void process_column_list_format(char **out_buffer, const char *format,
+                                int buf_left, int index,
+                                const char *item)
+{
+  /* Initialize the index format with a % */
+  char index_format[80] = {'%'};
+  int i;
+
+  /* Copy the format to the output buffer character by character. */
+  while (*format && buf_left >= 2) {
+
+    /* A '$' signifies a 'control-code'. */
+    if (*format == '$') {
+      ++format;
+
+      /*
+       * Begin by assuming the caller has supplied a number here
+       * (something that looks like $3i).  Then collect this number
+       * into the index_format after the %.
+       */
+      i = 1;
+      while (isdigit(*format) && i < 78)
+        index_format[i++] = *(format++);
+      index_format[i++] = 'd';
+      index_format[i] = '\0';
+
+      /* There may not be enough space left for the index. */
+      if (buf_left < 12)
+        break;
+
+      /*
+       * Okay, output the current index using the index format
+       * we already constructed above.
+       */
+      else if (*format == 'i')
+        *out_buffer += sprintf(*out_buffer, index_format, index);
+
+      /*
+       * Or output the current list item.  Use part of the
+       * index format collected above to decide how wide the
+       * list item should be displayed.
+       */
+      else if (*format == 'l') {
+        /* skip the %.  atoi ignores the d too */
+        i = atoi(index_format + 1);
+        /* if no width, set to -1 (any width) */
+        if (!i) --i;
+
+        /* copy the list item to the output buffer */
+        while (*item && buf_left >= 2 && i != 0) {
+          *((*out_buffer)++) = *(item++);
+          --buf_left;
+          --i;
+        }
+
+        /* if width was specified above, pad the list item */
+        while (i-- > 0 && buf_left >= 2) {
+          *((*out_buffer)++) = ' ';
+          --buf_left;
+        }
+      }
+
+      /* Or just output a $ */
+      else if (*format == '$') {
+        *((*out_buffer)++) = '$';
+        --buf_left;
+      }
+
+      /* Whoa, at the end of the format already? */
+      else if (!*format)
+        break;
+
+      ++format;
+    }
+
+    /* Not a '$' control code.  Simply copy the character. */
+    else {
+      *((*out_buffer)++) = *(format++);
+      --buf_left;
+    }
+  }
+
+  /* Make sure it's nul-terminated. */
+  **out_buffer = '\0';
+}
+
+/**
+ * Takes a list of strings and a display format, and formats them
+ * in a list by column (sequential items in the list are aligned
+ * vertically, then horizontally).  This function supports varargs
+ * for the format string that describes how each item should look.
+ * @param[out] out_buffer The buffer to write to.
+ * @param[in] buf_left The size of the buffer.
+ * @param[in] page_length How many lines per page?  0 means no paging.
+ * @param[in] skip_lines How many lines to skip on the first page?
+ * @param[in] columns How many columns should be displayed?
+ * @param[in] list The array of strings to format.
+ * @param[in] list_length How many elements are in the list?  We won't rely on
+ * lists ending with a newline element.
+ * @param[in] list_offset Is the list offset and by how much? For instance, 
+ * affect flags are offset by one when displayed in medit.
+ * @param[in] format The format string for displaying each
+ * item in the list.  Use "$#i" and "$#l" in the format string to determine 
+ * how wide the index position and list item should be.  For instance, 
+ * "$2i $20l" would be equivalent to a printf "%2d %-20.20s".
+ * @param[in] ... Additional args for formatting the list display.
+ */
+void column_list(char *out_buffer, int buf_left, int page_length,
+                 int skip_lines, int columns, const char **list,
+                 int list_length, int list_offset,
+                 const char *format, ...)
+{
+  int i, j = 0, k, rows, visited = 0;
+  char line[80];
+  va_list args;
+
+  --buf_left;
+
+  /* We only need to parse the given format string for %'s once. */
+  va_start(args, format);
+  vsnprintf(line, sizeof(line), format, args);
+  va_end(args);
+
+  /* A page_length <= 0 means don't page output. */
+  if (page_length <= 0)
+    page_length = list_length;
+
+  /*
+   * The list index jumps around, since we want to display
+   * the list items by columns.  For instance, in the first
+   * row, the second column's item will be approximately
+   * page_length positions in the list away from the item
+   * in the first column of the same row.
+   * So we use this macro.
+   */
+  #define LIST_INDEX (page_length * columns * k + rows * j + i - \
+                      (k == 0 ? 0 : skip_lines * columns))
+
+  /* Traverse by page... */
+  for (k = 0; k <= list_length / (page_length * columns); ++k) {
+    rows = MIN(page_length, (list_length - visited) / columns + 1);
+    if (k == 0)
+      rows -= skip_lines;
+    /* And then by row... */
+    for (i = 0; i < rows; ++i) {
+      /* And then by column... */
+      for (j = 0; j < columns; ++j) {
+        /* If the index is too high, break out. */
+        if (LIST_INDEX >= list_length)
+          break;
+      
+        /*
+         * If space still remains in the buffer, process the next
+         * list item and print it to the buffer.  Otherwise,
+         * complain about an overflow.
+         */
+        if (buf_left > sizeof(line)) {
+          /*
+           * Now the real magic.  Replace $i and $l with the index
+           * and list item.  Don't let each displayed list item be wider 
+           * than (an arbitrary) 80 characters.  Also, allow a list 
+           * offset in case we want to skip the first list item or 
+           * something (like for affection flags).
+           */
+          process_column_list_format(&out_buffer, line, sizeof(line),
+                                     LIST_INDEX + 1,
+                                     list[LIST_INDEX + list_offset]);
+          ++visited;
+        }
+        else {
+          strcpy(out_buffer + (buf_left < 17 ? buf_left - 17 : 0), 
+                 "\r\n**OVERFLOW**\r\n");
+          return;
+        }
+      }
+      /*
+       * We're at the end of a row.  Print a newline, advance the
+       * buffer, and decrement the amount of space left in the buffer.
+       */
+      strcpy(out_buffer, "\r\n");
+      out_buffer += 2;
+      buf_left -= 2;
+    }
+  }
+
+  #undef LIST_INDEX
+
+}
+
+/** 
+ * Search through a string array of flags for a particular flag.
+ * @param flag_list An array of flag name strings. The final element must 
+ * be a string made up of a single newline.
+ * @param flag_name The name to search in flag_list.
+ * @retval int Returns the element number in flag_list of flag_name or
+ * NOFLAG (-1) if no match.
+ */ 
+int get_flag_by_name(const char *flag_list[], char *flag_name) 
+{ 
+  int i=0; 
+  for (;flag_list[i] && *flag_list[i] && strcmp(flag_list[i], "\n") != 0; i++) 
+    if (!strcmp(flag_list[i], flag_name)) 
+      return (i); 
+  return (NOFLAG); 
+}
+
+/**
+ * Reads a certain number of lines from the begining of a file, like performing
+ * a 'head'.
+ * @pre Expects an already open file and the user to supply enough memory
+ * in the output buffer to hold the lines read from the file. Assumes the
+ * file is a text file. Expects buf to be nulled out if the entire buf is
+ * to be used, otherwise, appends file information beyond the first null 
+ * character. lines_to_read is assumed to be a positive number.
+ * @post Rewinds the file pointer to the beginning of the file. If buf is
+ * too small to handle the requested output, **OVERFLOW** is appended to the
+ * buffer.
+ * @param[in] file A pointer to an already successfully opened file.
+ * @param[out] buf Buffer to hold the data read from the file. Will not
+ * overwrite preexisting information in a non-null string.
+ * @param[in] bufsize The total size of the buffer.
+ * @param[in] lines_to_read The number of lines to be read from the front of
+ * the file.
+ * @retval int The number of lines actually read from the file. Can be used
+ * the compare with the number of lines requested to be read to determine if the
+ * entire file was read. If lines_to_read is <= 0, no processing occurs
+ * and lines_to_read is returned.
+ */
+int file_head( FILE *file, char *buf, size_t bufsize, int lines_to_read )
+{
+  /* Local variables */
+  int lines_read = 0;   /* The number of lines read so far. */
+  char line[READ_SIZE]; /* Retrieval buffer for file. */
+  size_t buflen;        /* Amount of previous existing data in buffer. */
+  int readstatus = 1;   /* Are we at the end of the file? */
+  int n = 0;            /* Return value from snprintf. */
+  const char *overflow = "\r\n**OVERFLOW**\r\n"; /* Appended if overflow. */
+
+  /* Quick check for bad arguments. */
+  if (lines_to_read <= 0)
+  {
+    return lines_to_read;
+  }
+  
+  /* Initialize local variables not already initialized. */
+  buflen  = strlen(buf);
+  
+  /* Read from the front of the file. */
+  rewind(file);
+  
+  while ( (lines_read < lines_to_read) && 
+      (readstatus > 0) && (buflen < bufsize) )
+  {
+    /* Don't use get_line to set lines_read because get_line will return
+     * the number of comments skipped during reading. */
+    readstatus = get_line( file, line );
+
+    if (readstatus > 0)
+    {
+      n = snprintf( buf + buflen, bufsize - buflen, "%s\r\n", line);
+      buflen += n;
+      lines_read++;
+    }
+  }
+  
+  /* Check to see if we had a potential buffer overflow. */
+  if (buflen >= bufsize)
+  {
+    /* We should never see this case, but... */
+    if ( (strlen(overflow) + 1) >= bufsize )
+    {
+      core_dump();
+      snprintf( buf, bufsize, "%s", overflow);      
+    }
+    else
+    {
+      /* Append the overflow statement to the buffer. */ 
+      snprintf( buf + buflen - strlen(overflow) - 1, strlen(overflow) + 1, "%s", overflow);
+    }
+  }
+  
+  rewind(file);
+  
+  /* Return the number of lines. */
+  return lines_read;
+}
+
+/**
+ * Reads a certain number of lines from the end of the file, like performing
+ * a 'tail'.
+ * @pre Expects an already open file and the user to supply enough memory
+ * in the output buffer to hold the lines read from the file. Assumes the
+ * file is a text file. Expects buf to be nulled out if the entire buf is
+ * to be used, otherwise, appends file information beyond the first null 
+ * character in buf. lines_to_read is assumed to be a positive number.
+ * @post Rewinds the file pointer to the beginning of the file. If buf is
+ * too small to handle the requested output, **OVERFLOW** is appended to the
+ * buffer.
+ * @param[in] file A pointer to an already successfully opened file.
+ * @param[out] buf Buffer to hold the data read from the file. Will not
+ * overwrite preexisting information in a non-null string.
+ * @param[in] bufsize The total size of the buffer.
+ * @param[in] lines_to_read The number of lines to be read from the back of
+ * the file.
+ * @retval int The number of lines actually read from the file. Can be used
+ * the compare with the number of lines requested to be read to determine if the
+ * entire file was read. If lines_to_read is <= 0, no processing occurs
+ * and lines_to_read is returned.
+ */
+int file_tail( FILE *file, char *buf, size_t bufsize, int lines_to_read )
+{
+  /* Local variables */
+  int lines_read = 0;   /* The number of lines read so far. */
+  int total_lines = 0;  /* The total number of lines in the file. */
+  char c;               /* Used to fast forward the file. */
+  char line[READ_SIZE]; /* Retrieval buffer for file. */
+  size_t buflen;        /* Amount of previous existing data in buffer. */
+  int readstatus = 1;   /* Are we at the end of the file? */
+  int n = 0;            /* Return value from snprintf. */
+  const char *overflow = "\r\n**OVERFLOW**\r\n"; /* Appended if overflow. */
+  
+  /* Quick check for bad arguments. */
+  if (lines_to_read <= 0)
+  {
+    return lines_to_read;
+  }
+  
+  /* Initialize local variables not already initialized. */
+  buflen  = strlen(buf);
+  total_lines = file_numlines(file); /* Side effect: file is rewound. */
+  
+  /* Fast forward to the location we should start reading from */
+  while (((lines_to_read + lines_read) < total_lines))
+  {
+    do {
+      c = fgetc(file);
+    } while(c != '\n');
+    
+    lines_read++;
+  }
+
+  /* We reuse the lines_read counter. */
+  lines_read = 0;
+  
+  /** From here on, we perform just like file_head */
+  while ( (lines_read < lines_to_read) && 
+      (readstatus > 0) && (buflen < bufsize) )  
+  {
+    /* Don't use get_line to set lines_read because get_line will return
+     * the number of comments skipped during reading. */
+    readstatus = get_line( file, line );
+
+    if (readstatus > 0)
+    {
+      n = snprintf( buf + buflen, bufsize - buflen, "%s\r\n", line);
+      buflen += n;
+      lines_read++;
+    }
+  }
+  
+  /* Check to see if we had a potential buffer overflow. */
+  if (buflen >= bufsize)
+  {
+    /* We should never see this case, but... */
+    if ( (strlen(overflow) + 1) >= bufsize )
+    {
+      core_dump();
+      snprintf( buf, bufsize, "%s", overflow);      
+    }
+    else
+    {
+      /* Append the overflow statement to the buffer. */ 
+      snprintf( buf + buflen - strlen(overflow) - 1, strlen(overflow) + 1, "%s", overflow);
+    }
+  }
+  
+  rewind(file);
+  
+  /* Return the number of lines read. */
+  return lines_read;
+  
+}
+
+/** Returns the byte size of a file. We assume size_t to be a large enough type
+ * to handle all of the file sizes in the mud, and so do not make SIZE_MAX
+ * checks.
+ * @pre file parameter must already be opened.
+ * @post file will be rewound.
+ * @param file The file to determine the size of.
+ * @retval size_t The byte size of the file (we assume no errors will be 
+ * encountered in this function).
+ */
+size_t file_sizeof( FILE *file )
+{
+  size_t numbytes = 0;
+  
+  rewind(file);
+
+  /* It would be so much easier to do a byte count if an fseek SEEK_END and
+   * ftell pair of calls was portable for text files, but all information
+   * I've found says that getting a file size from ftell for text files is
+   * not portable. Oh well, this method should be extremely fast for the
+   * relatively small filesizes in the mud, and portable, too. */
+  while (!feof(file))
+  {
+    fgetc(file);
+    numbytes++; 
+  }
+  
+  rewind(file);
+  
+  return numbytes;
+}
+
+/** Returns the number of newlines '\n' in a file, which we equate to number of
+ * lines. We assume the int type more than adequate to count the number of lines
+ * and do not make checks for overrunning INT_MAX.
+ * @pre file parameter must already be opened.
+ * @post file will be rewound.
+ * @param file The file to determine the size of.
+ * @retval size_t The byte size of the file (we assume no errors will be 
+ * encountered in this function).
+ */
+int file_numlines( FILE *file )
+{
+  int numlines = 0;
+  char c;
+  
+  rewind(file);
+
+  while (!feof(file))
+  {
+    c = fgetc(file);
+    if (c == '\n')
+    {
+      numlines++;
+    }
+  }
+  
+  rewind(file);
+  
+  return numlines;
+}
+
+
+/** A string converter designed to deal with the compile sensitive IDXTYPE.
+ * Relies on the friendlier strtol function.
+ * @pre Assumes that NOWHERE, NOTHING, NOBODY, NOFLAG, etc are all equal.
+ * @param str_to_conv A string of characters to attempt to convert to an
+ * IDXTYPE number.
+ * @retval IDXTYPE A valid index number, or NOWHERE if not valid. 
+ */
+IDXTYPE atoidx( const char *str_to_conv )
+{
+  long int result;
+  
+  /* Check for errors */
+  errno = 0;
+  
+  result = strtol(str_to_conv, NULL, 10);
+  
+  if ( errno || (result > IDXTYPE_MAX) || (result < 0) )
+    return NOWHERE; /* All of the NO* settings should be the same */
+  else
+    return (IDXTYPE) result;
+}
+
+
+/*
+   strfrmt (String Format) function
+   Used by automap/map system
+   Re-formats a string to fit within a particular size box.
+   Recognises @ color codes, and if a line ends in one color, the
+   next line will start with the same color.
+   Ends every line with @n to prevent color bleeds.
+*/
+char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
+{
+  static char ret[MAX_STRING_LENGTH];
+  char line[MAX_INPUT_LENGTH];
+  char *sp = str;
+  char *lp = line;
+  char *rp = ret;
+  char *wp;
+  int wlen = 0, llen = 0, lcount = 0;
+  char last_color='n';
+  bool new_line_started = FALSE;
+
+  memset(line, '\0', MAX_INPUT_LENGTH);
+  /* Nomalize spaces and newlines */
+  /* Split into lines, including convert \\ into \r\n */
+  while(*sp) {
+    /* eat leading space */
+    while(*sp && isspace(*sp)) sp++;
+    /* word begins */
+    wp = sp;
+    wlen = 0;
+    while(*sp) { /* Find the end of the word */
+      if(isspace(*sp)) break;
+      if(*sp=='\\' && sp[1] && sp[1]=='\\') {
+        if(sp!=wp)
+          break; /* Finish dealing with the current word */
+        sp += 2; /* Eat the marker and any trailing space */
+        while(*sp && isspace(*sp)) sp++;
+        wp = sp;
+        /* Start a new line */
+        if(hpad)
+          for(; llen < w; llen++)
+            *lp++ = ' ';
+        *lp++ = '\r';
+        *lp++ = '\n';
+        *lp++ = '\0';
+        rp += sprintf(rp, "%s", line);
+        llen = 0;
+        lcount++;
+        lp = line;
+      } else if (*sp=='`'||*sp=='$'||*sp=='#'||*sp=='@') {
+        if (sp[1] && (sp[1]==*sp))
+          wlen++; /* One printable char here */
+        if (*sp=='@' && (sp[1]!=*sp)) /* Color code, not @@ */
+          last_color = sp[1];
+        sp += 2; /* Eat the whole code regardless */
+      } else {
+        wlen++;
+        sp++;
+      }
+    }
+    if(llen + wlen + (lp==line ? 0 : 1) > w) {
+      /* Start a new line */
+      if(hpad)
+        for(; llen < w; llen++)
+          *lp++ = ' ';
+      *lp++ = '@';  /* 'normal' color */
+      *lp++ = 'n';
+      *lp++ = '\r'; /* New line */
+      *lp++ = '\n';
+      *lp++ = '\0';
+      sprintf(rp, "%s", line);
+      rp += strlen(line);
+      llen = 0;
+      lcount++;
+      lp = line;
+      if (last_color != 'n') {
+        *lp++ = '@';  /* restore previous color */
+        *lp++ = last_color;
+        new_line_started = TRUE;
+      }
+    }
+    /* add word to line */
+    if (lp!=line && new_line_started!=TRUE) {
+      *lp++ = ' ';
+      llen++;
+    }
+    new_line_started = FALSE;
+    llen += wlen ;
+    for( ; wp!=sp ; *lp++ = *wp++);
+  }
+  /* Copy over the last line */
+  if(lp!=line) {
+    if(hpad)
+      for(; llen < w; llen++)
+        *lp++ = ' ';
+    *lp++ = '\r';
+    *lp++ = '\n';
+    *lp++ = '\0';
+    sprintf(rp, "%s", line);
+    rp += strlen(line);
+    lcount++;
+  }
+  if(vpad) {
+    while(lcount < h) {
+      if(hpad) {
+        memset(rp, ' ', w);
+        rp += w;
+      }
+      *rp++ = '\r';
+      *rp++ = '\n';
+      lcount++;
+    }
+    *rp = '\0';
+  }
+  return ret;
+}
+
+/**
+   Takes two long strings (multiple lines) and joins them side-by-side.
+   Used by the automap/map system
+   @param str1 The string to be displayed on the left.
+   @param str2 The string to be displayed on the right.
+   @param joiner ???.
+   @retval char * Pointer to the output to be displayed?
+*/
+char *strpaste(char *str1, char *str2, char *joiner)
+{
+  static char ret[MAX_STRING_LENGTH+1];
+  char *sp1 = str1;
+  char *sp2 = str2;
+  char *rp = ret;
+  int jlen = strlen(joiner);
+
+  while((rp - ret) < MAX_STRING_LENGTH && (*sp1 || *sp2)) {
+     /* Copy line from str1 */
+    while((rp - ret) < MAX_STRING_LENGTH && *sp1 && !ISNEWL(*sp1))
+      *rp++ = *sp1++;
+    /* Eat the newline */
+    if(*sp1) {
+      if(sp1[1] && sp1[1]!=sp1[0] && ISNEWL(sp1[1]))
+        sp1++;
+      sp1++;
+    }
+
+    /* Add the joiner */
+    if((rp - ret) + jlen >= MAX_STRING_LENGTH)
+      break;
+    strcpy(rp, joiner);
+    rp += jlen;
+
+     /* Copy line from str2 */
+    while((rp - ret) < MAX_STRING_LENGTH && *sp2 && !ISNEWL(*sp2))
+      *rp++ = *sp2++;
+    /* Eat the newline */
+    if(*sp2) {
+      if(sp2[1] && sp2[1]!=sp2[0] && ISNEWL(sp2[1]))
+        sp2++;
+      sp2++;
+    }
+
+    /* Add the newline */
+    if((rp - ret) + 2 >= MAX_STRING_LENGTH)
+      break;
+    *rp++ = '\r';
+    *rp++ = '\n';
+  }
+  /* Close off the string */
+  *rp = '\0';
+  return ret;
 }

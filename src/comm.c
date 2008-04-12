@@ -13,6 +13,8 @@
 #include "conf.h"
 #include "sysdep.h"
 
+/* Begin conf.h dependent includes */
+
 #if CIRCLE_GNU_LIBC_MEMORY_TRACK
 # include <mcheck.h>
 #endif
@@ -47,6 +49,14 @@
 # include <sys/ioctl.h>
 #endif
 
+#ifdef HAVE_ARPA_TELNET_H
+#include <arpa/telnet.h>
+#else
+#include "telnet.h"
+#endif
+
+/* end conf.h dependent includes */
+
 /* Note, most includes for all platforms are in sysdep.h.  The list of
  * files that is included is controlled by conf.h for that platform. */
 
@@ -61,121 +71,95 @@
 #include "genolc.h"
 #include "dg_scripts.h"
 #include "dg_event.h"
-
-#ifdef HAVE_ARPA_TELNET_H
-#include <arpa/telnet.h>
-#else
-#include "telnet.h"
-#endif
+#include "screen.h" /* to support the gemote act type command */
+#include "constants.h" /* For mud versions */
+#include "boards.h"
+#include "act.h"
+#include "ban.h"
+#include "fight.h"
+#include "spells.h" /* for affect_update */
+#include "modify.h"
+#include "quest.h"
 
 #ifndef INVALID_SOCKET
 #define INVALID_SOCKET (-1)
 #endif
 
-/* externs */
-extern struct ban_list_element *ban_list;
-extern int num_invalid;
-extern char *GREETINGS;
-extern const char *tbamud_version;
-extern const char *oasisolc_version;
-extern const char *ascii_pfiles_version;
-extern int circle_restrict;
-extern int mini_mud;
-extern int no_rent_check;
-extern int *cmd_sort_info;
-
-extern struct time_info_data time_info;		/* In db.c */
-extern char *help;
-
-/* local globals */
-struct descriptor_data *descriptor_list = NULL;		/* master desc list */
-struct txt_block *bufpool = 0;	/* pool of large output buffers */
-int buf_largecount = 0;		/* # of large buffers which exist */
-int buf_overflows = 0;		/* # of overflows of output */
-int buf_switches = 0;		/* # of switches from small to large buf */
-int circle_shutdown = 0;	/* clean shutdown */
-int circle_reboot = 0;		/* reboot the game after a shutdown */
-int no_specials = 0;		/* Suppress ass. of special routines */
-int max_players = 0;		/* max descriptors available */
-int tics_passed = 0;			/* for extern checkpointing */
-int scheck = 0;			/* for syntax checking mode */
-struct timeval null_time;	/* zero-valued time structure */
-byte reread_wizlist;		/* signal: SIGUSR1 */
-byte emergency_unban;		/* signal: SIGUSR2 */
-FILE *logfile = NULL;		/* Where to send the log messages. */
-int dg_act_check;		/* toggle for act_trigger */
-unsigned long pulse = 0;        /* number of pulses since game start */
-static bool fCopyOver;          /* Are we booting in copyover mode? */
+/* locally defined globals, used externally */
+struct descriptor_data *descriptor_list = NULL;   /* master desc list */
+int buf_largecount = 0;   /* # of large buffers which exist */
+int buf_overflows = 0;    /* # of overflows of output */
+int buf_switches = 0;     /* # of switches from small to large buf */
+int circle_shutdown = 0;  /* clean shutdown */
+int circle_reboot = 0;    /* reboot the game after a shutdown */
+int no_specials = 0;      /* Suppress ass. of special routines */
+int scheck = 0;           /* for syntax checking mode */
+FILE *logfile = NULL;     /* Where to send the log messages. */
+unsigned long pulse = 0;  /* number of pulses since game start */
 ush_int port;
 socket_t mother_desc;
-int log_this_messg;
-char *last_act_message = NULL;
+/* used with do_tell and handle_webster_file utility */
+long last_webster_teller = -1L;
 
-/* local functions */
-RETSIGTYPE reread_wizlists(int sig);
-RETSIGTYPE unrestrict_game(int sig);
-RETSIGTYPE reap(int sig);
-RETSIGTYPE checkpointing(int sig);
-RETSIGTYPE hupsig(int sig);
-ssize_t perform_socket_read(socket_t desc, char *read_point,size_t space_left);
-ssize_t perform_socket_write(socket_t desc, const char *txt,size_t length);
-void echo_off(struct descriptor_data *d);
-void echo_on(struct descriptor_data *d);
-void circle_sleep(struct timeval *timeout);
-int get_from_q(struct txt_q *queue, char *dest, int *aliased);
-void init_game(ush_int port);
-void signal_setup(void);
-void game_loop(socket_t mother_desc);
-socket_t init_socket(ush_int port);
-int new_descriptor(socket_t s);
-int get_max_players(void);
-int process_output(struct descriptor_data *t);
-int process_input(struct descriptor_data *t);
-void timediff(struct timeval *diff, struct timeval *a, struct timeval *b);
-void timeadd(struct timeval *sum, struct timeval *a, struct timeval *b);
-void flush_queues(struct descriptor_data *d);
-void nonblock(socket_t s);
-int perform_subst(struct descriptor_data *t, char *orig, char *subst);
-void record_usage(void);
-char *make_prompt(struct descriptor_data *point);
-void check_idle_passwords(void);
-void heartbeat(int heart_pulse);
-void init_descriptor (struct descriptor_data *newd, int desc);
+/* static local global variable declarations (current file scope only) */
+static struct txt_block *bufpool = 0;  /* pool of large output buffers */
+static int max_players = 0;   /* max descriptors available */
+static int tics_passed = 0;     /* for extern checkpointing */
+static struct timeval null_time; /* zero-valued time structure */
+static byte reread_wizlist;   /* signal: SIGUSR1 */
+/* normally signal SIGUSR2, currently orphaned in favor of Webster dictionary
+ * lookup
+static byte emergency_unban;
+*/   
+static int dg_act_check;         /* toggle for act_trigger */
+static bool fCopyOver;          /* Are we booting in copyover mode? */
+static char *last_act_message = NULL;
+static byte webster_file_ready = FALSE;/* signal: SIGUSR2 */
 
-struct in_addr *get_bind_addr(void);
-int parse_ip(const char *addr, struct in_addr *inaddr);
-int set_sendbuf(socket_t s);
-void free_bufpool(void);
-void setup_log(const char *filename, int fd);
-int open_logfile(const char *filename, FILE *stderr_fp);
+/* static local function prototypes (current file scope only) */
+static RETSIGTYPE reread_wizlists(int sig);
+/* Appears to be orphaned right now...
+static RETSIGTYPE unrestrict_game(int sig);
+*/
+static RETSIGTYPE reap(int sig);
+static RETSIGTYPE checkpointing(int sig);
+static RETSIGTYPE hupsig(int sig);
+static ssize_t perform_socket_read(socket_t desc, char *read_point,size_t space_left);
+static ssize_t perform_socket_write(socket_t desc, const char *txt,size_t length);
+static void circle_sleep(struct timeval *timeout);
+static int get_from_q(struct txt_q *queue, char *dest, int *aliased);
+static void init_game(ush_int port);
+static void signal_setup(void);
+static socket_t init_socket(ush_int port);
+static int new_descriptor(socket_t s);
+static int get_max_players(void);
+static int process_output(struct descriptor_data *t);
+static int process_input(struct descriptor_data *t);
+static void timediff(struct timeval *diff, struct timeval *a, struct timeval *b);
+static void timeadd(struct timeval *sum, struct timeval *a, struct timeval *b);
+static void flush_queues(struct descriptor_data *d);
+static void nonblock(socket_t s);
+static int perform_subst(struct descriptor_data *t, char *orig, char *subst);
+static void record_usage(void);
+static char *make_prompt(struct descriptor_data *point);
+static void check_idle_passwords(void);
+static void init_descriptor (struct descriptor_data *newd, int desc);
+
+static struct in_addr *get_bind_addr(void);
+static int parse_ip(const char *addr, struct in_addr *inaddr);
+static int set_sendbuf(socket_t s);
+static void free_bufpool(void);
+static void setup_log(const char *filename, int fd);
+static int open_logfile(const char *filename, FILE *stderr_fp);
 #if defined(POSIX)
-sigfunc *my_signal(int signo, sigfunc *func);
+static sigfunc *my_signal(int signo, sigfunc *func);
 #endif
+/* Webster Dictionary Lookup functions */
+static RETSIGTYPE websterlink(int sig);
+static size_t proc_colors(char *txt, size_t maxlen, int parse);
+static void handle_webster_file();
 
-byte webster_file_ready = FALSE;/* signal: SIGUSR2 */
-RETSIGTYPE websterlink(int sig);
-extern void handle_webster_file();
-void copyover_recover(void);
-size_t proc_colors(char *txt, size_t maxlen, int parse);
-
-/* extern functions */
-void reboot_wizlists(void);
-void boot_world(void);
-void affect_update(void);	/* In magic.c */
-void mobile_activity(void);
-void perform_violence(void);
-void show_string(struct descriptor_data *d, char *input);
-int isbanned(char *hostname);
-void weather_and_time(int mode);
-int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen);
-void free_messages(void);
-void board_clear_all(void);
-void free_social_messages(void);
-void free_invalid_list(void);
-void free_command_list(void);
-void free_save_list(void);
-void load_config(void);
-void new_hist_messg(struct descriptor_data *d, const char *msg);
+/* externally defined functions, used locally */
 #ifdef __CXREF__
 #undef FD_ZERO
 #undef FD_SET
@@ -369,17 +353,17 @@ int main(int argc, char **argv)
 
   if (!scheck) {
     log("Clearing other memory.");
-    free_bufpool();             /* comm.c */
-    free_player_index();	/* players.c */
-    free_messages();		/* fight.c */
-    free_text_files();		/* db.c */
-    board_clear_all();		/* boards.c */
-    free(cmd_sort_info);	/* act.informative.c */
-    free_command_list();        /* act.informative.c */
-    free_social_messages();	/* act.social.c */
-    free_help_table();		/* db.c */
-    free_invalid_list();	/* ban.c */
-    free_save_list();		/* genolc.c */
+    free_bufpool();         /* comm.c */
+    free_player_index();    /* players.c */
+    free_messages();        /* fight.c */
+    free_text_files();      /* db.c */
+    board_clear_all();      /* boards.c */
+    free(cmd_sort_info);    /* act.informative.c */
+    free_command_list();    /* act.informative.c */
+    free_social_messages(); /* act.social.c */
+    free_help_table();      /* db.c */
+    free_invalid_list();    /* ban.c */
+    free_save_list();       /* genolc.c */
     free_strings(&config_info, OASIS_CFG); /* oasis_delete.c */
   }
 
@@ -397,9 +381,6 @@ int main(int argc, char **argv)
 
   return (0);
 }
-
-int enter_player_game(struct descriptor_data *d);
-extern time_t boot_time;
 
 /* Reload players after a copyover */
 void copyover_recover()
@@ -426,7 +407,7 @@ void copyover_recover()
   unlink (COPYOVER_FILE);
 
   /* read boot_time - first line in file */
-  fscanf(fp, "%ld\n", &boot_time);
+  fscanf(fp, "%ld\n", (long *)&boot_time);
 
   for (;;) {
     fOld = TRUE;
@@ -484,7 +465,7 @@ void copyover_recover()
 }
 
 /* Init sockets, run game, and cleanup sockets */
-void init_game(ush_int port)
+static void init_game(ush_int port)
 {
   /* We don't want to restart if we crash before we get up. */
   touch(KILLSCRIPT_FILE);
@@ -545,7 +526,7 @@ void init_game(ush_int port)
 
 /* init_socket sets up the mother descriptor - creates the socket, sets
  * its options up, binds it, and listens. */
-socket_t init_socket(ush_int port)
+static socket_t init_socket(ush_int port)
 {
   socket_t s;
   struct sockaddr_in sa;
@@ -633,7 +614,7 @@ socket_t init_socket(ush_int port)
   return (s);
 }
 
-int get_max_players(void)
+static int get_max_players(void)
 {
 #ifndef CIRCLE_UNIX
   return (CONFIG_MAX_PLAYING);
@@ -929,6 +910,7 @@ void game_loop(socket_t mother_desc)
       mudlog(CMP, LVL_IMMORT, TRUE, "Signal received - rereading wizlists.");
       reboot_wizlists();
     }
+/* Orphaned right now as signal trapping is used for Webster lookup
     if (emergency_unban) {
       emergency_unban = FALSE;
       mudlog(BRF, LVL_IMMORT, TRUE, "Received SIGUSR2 - completely unrestricting game (emergent)");
@@ -936,6 +918,7 @@ void game_loop(socket_t mother_desc)
       circle_restrict = 0;
       num_invalid = 0;
     }
+*/
     if (webster_file_ready) {
       webster_file_ready = FALSE;
       handle_webster_file();
@@ -969,11 +952,12 @@ void heartbeat(int heart_pulse)
   if (!(heart_pulse % PULSE_VIOLENCE))
     perform_violence();
 
-  if (!(heart_pulse % (SECS_PER_MUD_HOUR * PASSES_PER_SEC))) {
+  if (!(heart_pulse % (SECS_PER_MUD_HOUR * PASSES_PER_SEC))) {  /* Tick ! */
     weather_and_time(1);
     check_time_triggers();
     affect_update();
     point_update();
+    check_timed_quests();
   }
 
   if (CONFIG_AUTO_SAVE && !(heart_pulse % PULSE_AUTOSAVE)) {	/* 1 minute */
@@ -999,7 +983,7 @@ void heartbeat(int heart_pulse)
  * Based on code submitted by ss@sirocco.cup.hp.com. Code to return the time 
  * difference between a and b (a-b). Always returns a nonnegative value 
  * (floors at 0). */
-void timediff(struct timeval *rslt, struct timeval *a, struct timeval *b)
+static void timediff(struct timeval *rslt, struct timeval *a, struct timeval *b)
 {
   if (a->tv_sec < b->tv_sec)
     *rslt = null_time;
@@ -1021,7 +1005,7 @@ void timediff(struct timeval *rslt, struct timeval *a, struct timeval *b)
 }
 
 /* Add 2 time values.  Patch sent by "d. hall" to fix 'static' usage. */
-void timeadd(struct timeval *rslt, struct timeval *a, struct timeval *b)
+static void timeadd(struct timeval *rslt, struct timeval *a, struct timeval *b)
 {
   rslt->tv_sec = a->tv_sec + b->tv_sec;
   rslt->tv_usec = a->tv_usec + b->tv_usec;
@@ -1032,7 +1016,7 @@ void timeadd(struct timeval *rslt, struct timeval *a, struct timeval *b)
   }
 }
 
-void record_usage(void)
+static void record_usage(void)
 {
   int sockets_connected = 0, sockets_playing = 0;
   struct descriptor_data *d;
@@ -1097,7 +1081,7 @@ const char *ANSI[] = { "@", A"0m",A"0m",A"0;30m",A"0;34m",A"0;32m",A"0;36m",A"0;
 #undef A
 const char CCODE[] = "@nNdbgcrmywDBGCRMYW01234567luoe!";
 
-size_t proc_colors(char *txt, size_t maxlen, int parse)
+static size_t proc_colors(char *txt, size_t maxlen, int parse)
 {
   char *d, *s, *c, *p;
   int i;
@@ -1158,7 +1142,7 @@ size_t proc_colors(char *txt, size_t maxlen, int parse)
   return strlen(txt);
 }
 
-char *make_prompt(struct descriptor_data *d)
+static char *make_prompt(struct descriptor_data *d)
 {
   static char prompt[MAX_PROMPT_LENGTH];
 
@@ -1262,7 +1246,7 @@ void write_to_q(const char *txt, struct txt_q *queue, int aliased)
 }
 
 /* NOTE: 'dest' must be at least MAX_INPUT_LENGTH big. */
-int get_from_q(struct txt_q *queue, char *dest, int *aliased)
+static int get_from_q(struct txt_q *queue, char *dest, int *aliased)
 {
   struct txt_block *tmp;
 
@@ -1282,7 +1266,7 @@ int get_from_q(struct txt_q *queue, char *dest, int *aliased)
 }
 
 /* Empty the queues before closing connection */
-void flush_queues(struct descriptor_data *d)
+static void flush_queues(struct descriptor_data *d)
 {
   if (d->large_outbuf) {
     d->large_outbuf->next = bufpool;
@@ -1373,7 +1357,7 @@ size_t vwrite_to_output(struct descriptor_data *t, const char *format, va_list a
   return (t->bufspace);
 }
 
-void free_bufpool(void)
+static void free_bufpool(void)
 {
   struct txt_block *tmp;
 
@@ -1392,7 +1376,7 @@ void free_bufpool(void)
  * address, we try to bind to it; otherwise, we bind to INADDR_ANY.
  * Note that inet_aton() is preferred over inet_addr() so we use it if
  * we can.  If neither is available, we always bind to INADDR_ANY. */
-struct in_addr *get_bind_addr()
+static struct in_addr *get_bind_addr()
 {
   static struct in_addr bind_addr;
 
@@ -1423,7 +1407,7 @@ struct in_addr *get_bind_addr()
 #ifdef HAVE_INET_ATON
 /* inet_aton's interface is the same as parse_ip's: 0 on failure, non-0 if
  * successful. */
-int parse_ip(const char *addr, struct in_addr *inaddr)
+static int parse_ip(const char *addr, struct in_addr *inaddr)
 {
   return (inet_aton(addr, inaddr));
 }
@@ -1454,7 +1438,7 @@ int parse_ip(const char *addr, struct in_addr *inaddr)
 #endif /* INET_ATON and INET_ADDR */
 
 /* Sets the kernel's send buffer size for the descriptor */
-int set_sendbuf(socket_t s)
+static int set_sendbuf(socket_t s)
 {
 #if defined(SO_SNDBUF) && !defined(CIRCLE_MACINTOSH)
   int opt = MAX_SOCK_BUF;
@@ -1469,7 +1453,7 @@ int set_sendbuf(socket_t s)
 }
 
 /* Initialize a descriptor */
-void init_descriptor (struct descriptor_data *newd, int desc)
+static void init_descriptor (struct descriptor_data *newd, int desc)
 {
     static int last_desc = 0;	/* last descriptor number */
 
@@ -1488,7 +1472,7 @@ void init_descriptor (struct descriptor_data *newd, int desc)
   newd->desc_num = last_desc;
 }
 
-int new_descriptor(socket_t s)
+static int new_descriptor(socket_t s)
 {
   socket_t desc;
   int sockets_connected = 0;
@@ -1496,6 +1480,7 @@ int new_descriptor(socket_t s)
   struct descriptor_data *newd;
   struct sockaddr_in peer;
   struct hostent *from;
+  char greet_copy[MAX_STRING_LENGTH];
 
   /* accept the new connection */
   i = sizeof(peer);
@@ -1556,7 +1541,12 @@ int new_descriptor(socket_t s)
   newd->next = descriptor_list;
   descriptor_list = newd;
 
-  write_to_output(newd, "%s", GREETINGS);
+  /* This is where the greetings are actually sent to the new player */ 
+  /* Adjusted by Jamdog to show color codes on the greetings page    */ 
+  *greet_copy = '\0'; 
+  sprintf(greet_copy, "%s", GREETINGS); 
+  proc_colors(greet_copy, MAX_STRING_LENGTH, TRUE); 
+  write_to_output(newd, "%s", greet_copy); 
 
   return (0);
 }
@@ -1567,7 +1557,7 @@ int new_descriptor(socket_t s)
  *	14 bytes: overflow message
  *	 2 bytes: extra \r\n for non-comapct
  *      14 bytes: unused */
-int process_output(struct descriptor_data *t)
+static int process_output(struct descriptor_data *t)
 {
   char i[MAX_SOCK_BUF], *osb = i + 2;
   int result;
@@ -1691,7 +1681,7 @@ ssize_t perform_socket_write(socket_t desc, const char *txt, size_t length)
 #endif
 
 /* perform_socket_write for all Non-Windows platforms */
-ssize_t perform_socket_write(socket_t desc, const char *txt, size_t length)
+static ssize_t perform_socket_write(socket_t desc, const char *txt, size_t length)
 {
   ssize_t result;
 
@@ -1763,7 +1753,7 @@ int write_to_descriptor(socket_t desc, const char *txt)
 
 /* Same information about perform_socket_write applies here. I like
  * standards, there are so many of them. -gg 6/30/98 */
-ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space_left)
+static ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space_left)
 {
   ssize_t ret;
 
@@ -1834,7 +1824,7 @@ ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space_left)
  * above, 'tmp' lost the '+8' since it doesn't need it and the code has been 
  * changed to reserve space by accepting one less character. (Do you really 
  * need 256 characters on a line?) -gg 1/21/2000 */
-int process_input(struct descriptor_data *t)
+static int process_input(struct descriptor_data *t)
 {
   int buf_length, failed_subst;
   ssize_t bytes_read;
@@ -1985,7 +1975,7 @@ int process_input(struct descriptor_data *t)
 /* Perform substitution for the '^..^' csh-esque syntax orig is the orig string, 
  * i.e. the one being modified.  subst contains the substition string, i.e. 
  * "^telm^tell" */
-int perform_subst(struct descriptor_data *t, char *orig, char *subst)
+static int perform_subst(struct descriptor_data *t, char *orig, char *subst)
 {
   char newsub[MAX_INPUT_LENGTH + 5];
 
@@ -2115,7 +2105,7 @@ void close_socket(struct descriptor_data *d)
   free(d);
 }
 
-void check_idle_passwords(void)
+static void check_idle_passwords(void)
 {
   struct descriptor_data *d, *next_d;
 
@@ -2182,7 +2172,7 @@ void nonblock(socket_t s)
 #define O_NONBLOCK O_NDELAY
 #endif
 
-void nonblock(socket_t s)
+static void nonblock(socket_t s)
 {
   int flags;
 
@@ -2198,25 +2188,28 @@ void nonblock(socket_t s)
 
 /*  signal-handling functions (formerly signals.c).  UNIX only. */
 #if defined(CIRCLE_UNIX) || defined(CIRCLE_MACINTOSH)
-RETSIGTYPE reread_wizlists(int sig)
+static RETSIGTYPE reread_wizlists(int sig)
 {
   reread_wizlist = TRUE;
 }
 
-RETSIGTYPE unrestrict_game(int sig)
+/* Orphaned right now in place of Webster ...
+static RETSIGTYPE unrestrict_game(int sig)
 {
   emergency_unban = TRUE;
 }
+*/
 
-RETSIGTYPE websterlink(int sig)
+static RETSIGTYPE websterlink(int sig)
 {
   webster_file_ready = TRUE;
 }
 
+
 #ifdef CIRCLE_UNIX
 
 /* clean up our zombie kids to avoid defunct processes */
-RETSIGTYPE reap(int sig)
+static RETSIGTYPE reap(int sig)
 {
   while (waitpid(-1, NULL, WNOHANG) > 0);
 
@@ -2224,7 +2217,7 @@ RETSIGTYPE reap(int sig)
 }
 
 /* Dying anyway... */
-RETSIGTYPE checkpointing(int sig)
+static RETSIGTYPE checkpointing(int sig)
 {
 #ifndef MEMORY_DEBUG
   if (!tics_passed) {
@@ -2236,7 +2229,7 @@ RETSIGTYPE checkpointing(int sig)
 }
 
 /* Dying anyway... */
-RETSIGTYPE hupsig(int sig)
+static RETSIGTYPE hupsig(int sig)
 {
   log("SYSERR: Received SIGHUP, SIGINT, or SIGTERM.  Shutting down...");
   exit(1); /* perhaps something more elegant should substituted */
@@ -2257,7 +2250,7 @@ RETSIGTYPE hupsig(int sig)
 #ifndef POSIX
 #define my_signal(signo, func) signal(signo, func)
 #else
-sigfunc *my_signal(int signo, sigfunc *func)
+static sigfunc *my_signal(int signo, sigfunc *func)
 {
   struct sigaction sact, oact;
 
@@ -2275,7 +2268,7 @@ sigfunc *my_signal(int signo, sigfunc *func)
 }
 #endif				/* POSIX */
 
-void signal_setup(void)
+static void signal_setup(void)
 {
 #ifndef CIRCLE_MACINTOSH
   struct itimerval itime;
@@ -2582,7 +2575,6 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
     return NULL;
   }
 
-#include "screen.h"
   if (type == TO_GMOTE && !IS_NPC(ch)) {
     struct descriptor_data *i;
     char buf[MAX_STRING_LENGTH];
@@ -2623,7 +2615,7 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
 }
 
 /* Prefer the file over the descriptor. */
-void setup_log(const char *filename, int fd)
+static void setup_log(const char *filename, int fd)
 {
   FILE *s_fp;
 
@@ -2667,7 +2659,7 @@ void setup_log(const char *filename, int fd)
   exit(1);
 }
 
-int open_logfile(const char *filename, FILE *stderr_fp)
+static int open_logfile(const char *filename, FILE *stderr_fp)
 {
   if (stderr_fp)	/* freopen() the descriptor. */
     logfile = freopen(filename, "w", stderr_fp);
@@ -2692,7 +2684,7 @@ void circle_sleep(struct timeval *timeout)
 }
 
 #else
-void circle_sleep(struct timeval *timeout)
+static void circle_sleep(struct timeval *timeout)
 {
   if (select(0, (fd_set *) 0, (fd_set *) 0, (fd_set *) 0, timeout) < 0) {
     if (errno != EINTR) {
@@ -2703,3 +2695,41 @@ void circle_sleep(struct timeval *timeout)
 }
 
 #endif /* CIRCLE_WINDOWS */
+
+static void handle_webster_file(void) {
+  FILE *fl;
+  struct char_data *ch = find_char(last_webster_teller);
+  char info[MAX_STRING_LENGTH], line[READ_SIZE];
+  size_t len = 0, nlen = 0;
+
+  last_webster_teller = -1L;
+
+  if (!ch) /* they quit ? */
+    return;
+
+  fl = fopen("websterinfo", "r");
+  if (!fl) {
+    send_to_char(ch, "It seems Merriam-Webster is offline..\r\n");
+    return;
+  }
+
+  unlink("websterinfo");
+
+  get_line(fl, line);
+  while (!feof(fl)) {
+    nlen = snprintf(info + len, sizeof(info) - len, "%s\r\n", line);
+    if (len + nlen >= sizeof(info) || nlen < 0)
+      break;
+    len += nlen;
+    get_line(fl, line);
+  }
+
+  if (len >= sizeof(info)) {
+    const char *overflow = "\r\n**OVERFLOW**\r\n";
+    strcpy(info + sizeof(info) - strlen(overflow) - 1, overflow); /* strcpy: OK */
+  }
+  fclose(fl);
+
+  send_to_char(ch, "You get this feedback from Merriam-Webster:\r\n");
+  page_string(ch->desc, info, 1);
+}

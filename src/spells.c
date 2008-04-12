@@ -19,18 +19,11 @@
 #include "constants.h"
 #include "interpreter.h"
 #include "dg_scripts.h"
+#include "act.h"
+#include "fight.h"
 
-/* external variables */
-extern room_rnum r_mortal_start_room;
-extern int mini_mud;
-extern char cast_arg2[MAX_INPUT_LENGTH];
 
-/* external functions */
-void weight_change_object(struct obj_data *obj, int weight);
-int mag_savingthrow(struct char_data *ch, int type, int modifier);
-void name_to_drinkcon(struct obj_data *obj, int type);
-void name_from_drinkcon(struct obj_data *obj);
-int compute_armor_class(struct char_data *ch);
+
 
 /* Special spells appear below. */
 ASPELL(spell_create_water)
@@ -85,7 +78,7 @@ ASPELL(spell_teleport)
 
   do {
     to_room = rand_number(0, top_of_world);
-  } while (ROOM_FLAGGED(to_room, ROOM_PRIVATE | ROOM_DEATH | ROOM_GODROOM));
+  } while (ROOM_FLAGGED(to_room, ROOM_PRIVATE) || ROOM_FLAGGED(to_room, ROOM_DEATH) || ROOM_FLAGGED(to_room, ROOM_GODROOM));
 
   act("$n slowly fades out of existence and is gone.",
       FALSE, victim, 0, 0, TO_ROOM);

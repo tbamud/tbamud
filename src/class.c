@@ -8,6 +8,9 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
+/** Help buffer the global variable definitions */
+#define __CLASS_C__
+
 /* This file attempts to concentrate most of the code which must be changed
  * in order for new classes to be added.  If you're adding a new class, you 
  * should go through this entire file from beginning to end and add the 
@@ -16,25 +19,13 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
-#include "db.h"
 #include "utils.h"
+#include "db.h"
 #include "spells.h"
 #include "interpreter.h"
 #include "constants.h"
+#include "act.h"
 
-/* local functions */
-void snoop_check(struct char_data *ch);
-int parse_class(char arg);
-bitvector_t find_class_bitvector(const char *arg);
-byte saving_throws(int class_num, int type, int level);
-int thaco(int class_num, int level);
-void roll_real_abils(struct char_data *ch);
-void do_start(struct char_data *ch);
-int backstab_mult(int level);
-int invalid_class(struct char_data *ch, struct obj_data *obj);
-int level_exp(int chclass, int level);
-const char *title_male(int chclass, int level);
-const char *title_female(int chclass, int level);
 
 /* Names first */
 const char *class_abbrevs[] = {
@@ -135,13 +126,13 @@ int prac_params[4][NUM_CLASSES] = {
 struct guild_info_type guild_info[] = {
 
 /* Midgaard */
-  { CLASS_MAGIC_USER,	3017,	SCMD_SOUTH	},
-  { CLASS_CLERIC,	3004,	SCMD_NORTH	},
-  { CLASS_THIEF,	3027,	SCMD_EAST	},
-  { CLASS_WARRIOR,	3021,	SCMD_EAST	},
+ { CLASS_MAGIC_USER,    3017,    SOUTH   }, 
+ { CLASS_CLERIC,        3004,    NORTH   }, 
+ { CLASS_THIEF,         3027,    EAST   }, 
+ { CLASS_WARRIOR,       3021,    EAST   }, 
 
 /* Brass Dragon */
-  { -999 /* all */ ,	5065,	SCMD_WEST	},
+  { -999 /* all */ ,	5065,	WEST	},
 
 /* this must go last -- add new guards above! */
   { -1, NOWHERE, -1}

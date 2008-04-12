@@ -21,12 +21,8 @@
 #include "constants.h"
 #include "spells.h"
 #include "oasis.h"
+#include "class.h"
 
-/* External variables and functions */
-extern const char *pc_class_types[];
-extern struct time_info_data time_info;
-int find_eq_pos_script(char *arg);
-bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *namelist[]);
 
 /* Utility functions */
 
@@ -141,7 +137,7 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
   char tmpvar[MAX_STRING_LENGTH];
 
   if (!str_cmp(field, "strlen")) {                     /* strlen    */
-    snprintf(str, slen, "%d", strlen(vd->value));
+    snprintf(str, slen, "%d", (int)strlen(vd->value));
     return TRUE;
   } else if (!str_cmp(field, "trim")) {                /* trim      */
     /* trim whitespace from ends */
@@ -188,7 +184,6 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
     /* find the mud command returned from this text */
 /* NOTE: you may need to replace "cmd_info" with "complete_cmd_info", */
 /* depending on what patches you've got applied.                      */
-    extern const struct command_info cmd_info[];
 /* on older source bases:    extern struct command_info *cmd_info; */
     int length, cmd;
     for (length = strlen(vd->value), cmd = 0;
@@ -851,9 +846,21 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             }
             snprintf(str, slen, "%d", GET_PRACTICES(c));
           }
+          else if (!str_cmp(field, "pref")) { 
+            if (subfield && *subfield) { 
+              int pref = get_flag_by_name(preference_bits, subfield); 
+              if (pref != NOFLAG && PRF_FLAGGED(c, pref)) 
+                strcpy(str, "1"); 
+              else 
+                strcpy(str, "0"); 
+            } else 
+              strcpy(str, "0"); 
+          }
           break;
         case 'q':
-          if (!str_cmp(field, "questpoints")) {
+          if (!str_cmp(field, "questpoints") || 
+              !str_cmp(field, "qp") || !str_cmp(field, "qpnts")) 
+          {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
               GET_QUESTPOINTS(c) += addition;

@@ -18,37 +18,35 @@
 #include "dg_scripts.h"
 #include "comm.h"
 #include "interpreter.h"
+#include "genolc.h" /* for strip_cr */
+#include "config.h" /* for pclean_criteria[] */
+#include "spells.h" /* for NUM_OF_SAVING_THROWS */
+#include "dg_scripts.h" /* To enable saving of player variables to disk */
+#include "quest.h"
 
 #define LOAD_HIT	0
 #define LOAD_MANA	1
 #define LOAD_MOVE	2
 #define LOAD_STRENGTH	3
 
+/* 'global' vars defined here and used externally */
+/** @deprecated Since this file really is basically a functional extension
+ * of the database handling in db.c, until the day that the mud is broken
+ * down to be less monolithic, I don't see why the following should be defined
+ * anywhere but there.
+struct player_index_element *player_table = NULL;
+int top_of_p_table = 0;   
+int top_of_p_file = 0;    
+long top_idnum = 0;       
+*/
+
 /* local functions */
-void build_player_index(void);
-int sprintascii(char *out, bitvector_t bits);
-void tag_argument(char *argument, char *tag);
-void load_affects(FILE *fl, struct char_data *ch);
-void load_skills(FILE *fl, struct char_data *ch);
-void load_HMVS(struct char_data *ch, const char *line, int mode);
-void write_aliases_ascii(FILE *file, struct char_data *ch);
-void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
-
-/* external fuctions */
-bitvector_t asciiflag_conv(char *flag);
-void save_char_vars(struct char_data *ch);
-void save_char_vars_ascii(FILE *file, struct char_data *ch);
-void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count);
-void strip_cr(char *buffer);
-
-/* 'global' vars */
-struct player_index_element *player_table = NULL;	/* index to plr file	 */
-int top_of_p_table = 0;		/* ref to top of table		 */
-int top_of_p_file = 0;		/* ref of size of p file	 */
-long top_idnum = 0;		/* highest idnum in use		 */
-
-/* external ASCII Player Files vars */
-extern struct pclean_criteria_data pclean_criteria[];
+static void load_affects(FILE *fl, struct char_data *ch);
+static void load_skills(FILE *fl, struct char_data *ch);
+static void load_quests(FILE *fl, struct char_data *ch);
+static void load_HMVS(struct char_data *ch, const char *line, int mode);
+static void write_aliases_ascii(FILE *file, struct char_data *ch);
+static void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
 
 /* New version to build player index for ASCII Player Files. Generate index 
  * table for the player file. */
@@ -81,7 +79,7 @@ void build_player_index(void)
   for (i = 0; i < rec_count; i++) {
     get_line(plr_index, line);
     sscanf(line, "%ld %s %d %s %ld", &player_table[i].id, arg2,
-      &player_table[i].level, bits, &player_table[i].last);
+      &player_table[i].level, bits, (long *)&player_table[i].last);
     CREATE(player_table[i].name, char, strlen(arg2) + 1);
     strcpy(player_table[i].name, arg2);
     player_table[i].flags = asciiflag_conv(bits);
@@ -139,7 +137,7 @@ void save_player_index(void)
       sprintascii(bits, player_table[i].flags);
       fprintf(index_file, "%ld %s %d %s %ld\n", player_table[i].id,
 	player_table[i].name, player_table[i].level, *bits ? bits : "0",
-	player_table[i].last);
+        (long)player_table[i].last);
     }
   fprintf(index_file, "~\n");
 
@@ -196,8 +194,6 @@ char *get_name_by_id(long id)
 }
 
 /* Stuff related to the save/load player system. */
-#define NUM_OF_SAVE_THROWS	5
-
 /* New load_char reads ASCII Player Files. Load a char, TRUE if loaded, FALSE
  * if not. */
 int load_char(const char *name, struct char_data *ch)
@@ -228,7 +224,7 @@ int load_char(const char *name, struct char_data *ch)
     GET_HEIGHT(ch) = PFDEF_HEIGHT;
     GET_WEIGHT(ch) = PFDEF_WEIGHT;
     GET_ALIGNMENT(ch) = PFDEF_ALIGNMENT;
-    for (i = 0; i < NUM_OF_SAVE_THROWS; i++)
+    for (i = 0; i < NUM_OF_SAVING_THROWS; i++)
       GET_SAVE(ch, i) = PFDEF_SAVETHROW;
     GET_LOADROOM(ch) = PFDEF_LOADROOM;
     GET_INVIS_LEV(ch) = PFDEF_INVISLEV;
@@ -260,11 +256,15 @@ int load_char(const char *name, struct char_data *ch)
     GET_MAX_MOVE(ch) = PFDEF_MAXMOVE;
     GET_OLC_ZONE(ch) = PFDEF_OLC;
     GET_PAGE_LENGTH(ch) = PFDEF_PAGELENGTH;
+    GET_SCREEN_WIDTH(ch) = PFDEF_SCREENWIDTH;
     GET_ALIASES(ch) = NULL;
     SITTING(ch) = NULL;
     NEXT_SITTING(ch) = NULL;
     GET_QUESTPOINTS(ch) = PFDEF_QUESTPOINTS;
-
+    GET_QUEST_COUNTER(ch) = PFDEF_QUESTCOUNT;
+    GET_QUEST(ch) = PFDEF_CURRQUEST;
+    GET_NUM_QUESTS(ch) = PFDEF_COMPQUESTS;
+    
     for (i = 0; i < AF_ARRAY_MAX; i++)
       AFF_FLAGS(ch)[i] = PFDEF_AFFFLAGS;
     for (i = 0; i < PM_ARRAY_MAX; i++)
@@ -387,6 +387,10 @@ int load_char(const char *name, struct char_data *ch)
 
       case 'Q':
 	     if (!strcmp(tag, "Qstp"))  GET_QUESTPOINTS(ch)     = atoi(line);
+       else if (!strcmp(tag, "Qpnt")) GET_QUESTPOINTS(ch) = atoi(line); /* Backward compatibility */
+       else if (!strcmp(tag, "Qcur")) GET_QUEST(ch) = atoi(line);
+       else if (!strcmp(tag, "Qcnt")) GET_QUEST_COUNTER(ch) = atoi(line);
+       else if (!strcmp(tag, "Qest")) load_quests(fl, ch);
         break;
 
       case 'R':
@@ -395,6 +399,7 @@ int load_char(const char *name, struct char_data *ch)
 
       case 'S':
 	     if (!strcmp(tag, "Sex "))	GET_SEX(ch)		= atoi(line);
+  else if (!strcmp(tag, "ScrW"))  GET_SCREEN_WIDTH(ch) = atoi(line);
 	else if (!strcmp(tag, "Skil"))	load_skills(fl, ch);
 	else if (!strcmp(tag, "Str "))	load_HMVS(ch, line, LOAD_STRENGTH);
 	break;
@@ -531,9 +536,9 @@ void save_char(struct char_data * ch)
   if (GET_LEVEL(ch)	   != PFDEF_LEVEL)	fprintf(fl, "Levl: %d\n", GET_LEVEL(ch));
 
   fprintf(fl, "Id  : %ld\n", GET_IDNUM(ch));
-  fprintf(fl, "Brth: %ld\n", ch->player.time.birth);
+  fprintf(fl, "Brth: %ld\n", (long)ch->player.time.birth);
   fprintf(fl, "Plyd: %d\n",  ch->player.time.played);
-  fprintf(fl, "Last: %ld\n", ch->player.time.logon);
+  fprintf(fl, "Last: %ld\n", (long)ch->player.time.logon);
 
   if (GET_HOST(ch))				fprintf(fl, "Host: %s\n", GET_HOST(ch));
   if (GET_HEIGHT(ch)	   != PFDEF_HEIGHT)	fprintf(fl, "Hite: %d\n", GET_HEIGHT(ch));
@@ -598,8 +603,18 @@ void save_char(struct char_data * ch)
   if (GET_DAMROLL(ch)	   != PFDEF_DAMROLL)	fprintf(fl, "Drol: %d\n", GET_DAMROLL(ch));
   if (GET_OLC_ZONE(ch)     != PFDEF_OLC)        fprintf(fl, "Olc : %d\n", GET_OLC_ZONE(ch));
   if (GET_PAGE_LENGTH(ch)  != PFDEF_PAGELENGTH) fprintf(fl, "Page: %d\n", GET_PAGE_LENGTH(ch));
+  if (GET_SCREEN_WIDTH(ch) != PFDEF_SCREENWIDTH) fprintf(fl, "ScrW: %d\n", GET_SCREEN_WIDTH(ch));
   if (GET_QUESTPOINTS(ch)  != PFDEF_QUESTPOINTS) fprintf(fl, "Qstp: %d\n", GET_QUESTPOINTS(ch));
+  if (GET_QUEST_COUNTER(ch)!= PFDEF_QUESTCOUNT)  fprintf(fl, "Qcnt: %d\n", GET_QUEST_COUNTER(ch));
+  if (GET_NUM_QUESTS(ch)   != PFDEF_COMPQUESTS) {
+    fprintf(fl, "Qest:\n");
+    for (i = 0; i < GET_NUM_QUESTS(ch); i++)
+      fprintf(fl, "%d\n", ch->player_specials->saved.completed_quests[i]);
+    fprintf(fl, "%d\n", NOTHING);
+  }
+  if (GET_QUEST(ch)        != PFDEF_CURRQUEST)  fprintf(fl, "Qcur: %d\n", GET_QUEST(ch));
 
+  
   /* Save skills */
   if (GET_LEVEL(ch) < LVL_IMMORT) {
     fprintf(fl, "Skil:\n");
@@ -755,7 +770,7 @@ void clean_pfiles(void)
    * entries of the players that were just deleted. */
 }
 
-void load_affects(FILE *fl, struct char_data *ch)
+static void load_affects(FILE *fl, struct char_data *ch)
 {
   int num = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0, i;
   char line[MAX_INPUT_LENGTH + 1];
@@ -777,7 +792,7 @@ void load_affects(FILE *fl, struct char_data *ch)
   } while (num != 0);
 }
 
-void load_skills(FILE *fl, struct char_data *ch)
+static void load_skills(FILE *fl, struct char_data *ch)
 {
   int num = 0, num2 = 0;
   char line[MAX_INPUT_LENGTH + 1];
@@ -790,7 +805,20 @@ void load_skills(FILE *fl, struct char_data *ch)
   } while (num != 0);
 }
 
-void load_HMVS(struct char_data *ch, const char *line, int mode)
+void load_quests(FILE *fl, struct char_data *ch)
+{
+  int num = NOTHING;
+  char line[MAX_INPUT_LENGTH + 1];
+
+  do {
+    get_line(fl, line);
+    sscanf(line, "%d", &num);
+    if (num != NOTHING)
+      add_completed_quest(ch, num);
+  } while (num != NOTHING);
+}
+
+static void load_HMVS(struct char_data *ch, const char *line, int mode)
 {
   int num = 0, num2 = 0;
 
@@ -820,7 +848,7 @@ void load_HMVS(struct char_data *ch, const char *line, int mode)
 }
 
 /* Aliases are now saved in pfiles only. */
-void write_aliases_ascii(FILE *file, struct char_data *ch)
+static void write_aliases_ascii(FILE *file, struct char_data *ch)
 {
   struct alias_data *temp;
     int count = 0;
@@ -844,7 +872,7 @@ void write_aliases_ascii(FILE *file, struct char_data *ch)
   }
 }
 
-void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
+static void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
 {
   int i;
     struct alias_data *temp;

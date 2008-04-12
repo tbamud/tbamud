@@ -23,15 +23,17 @@ CFLAGS = @CFLAGS@ $(MYFLAGS) $(PROFILE) -I$(INCDIR)
 
 default: all
 
-all: $(BINDIR)/asciipasswd $(BINDIR)/autowiz $(BINDIR)/listrent \
-	$(BINDIR)/plrtoascii $(BINDIR)/shopconv $(BINDIR)/sign \
-	$(BINDIR)/split $(BINDIR)/wld2html 
+all: $(BINDIR)/asciipasswd \
+	$(BINDIR)/autowiz \
+	$(BINDIR)/plrtoascii \
+	$(BINDIR)/shopconv \
+	$(BINDIR)/sign \
+	$(BINDIR)/split \
+	$(BINDIR)/wld2html 
 
 asciipasswd: $(BINDIR)/asciipasswd
 
 autowiz: $(BINDIR)/autowiz
-
-listrent: $(BINDIR)/listrent
 
 plrtoascii: $(BINDIR)/plrtoascii
 
@@ -45,34 +47,34 @@ wld2html: $(BINDIR)/wld2html
 
 webster: $(BINDIR)/webster
 
-$(BINDIR)/asciipasswd: asciipasswd.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
-        $(INCDIR)/structs.h $(INCDIR)/utils.h
+$(BINDIR)/asciipasswd: asciipasswd.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/asciipasswd asciipasswd.c @CRYPTLIB@
 
-$(BINDIR)/autowiz: autowiz.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
-	$(INCDIR)/structs.h $(INCDIR)/utils.h $(INCDIR)/db.h
+$(BINDIR)/autowiz: autowiz.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/autowiz autowiz.c
 
-$(BINDIR)/listrent: listrent.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
-	$(INCDIR)/structs.h
-	$(CC) $(CFLAGS) -o $(BINDIR)/listrent listrent.c
-
-$(BINDIR)/plrtoascii: plrtoascii.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
-	$(INCDIR)/db.h $(INCDIR)/pfdefaults.h
+$(BINDIR)/plrtoascii: plrtoascii.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/plrtoascii plrtoascii.c
 
-$(BINDIR)/shopconv: shopconv.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h \
-	$(INCDIR)/structs.h $(INCDIR)/db.h $(INCDIR)/utils.h $(INCDIR)/shop.h
+$(BINDIR)/shopconv: shopconv.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/shopconv shopconv.c
 
-$(BINDIR)/sign: sign.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h
+$(BINDIR)/sign: sign.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/sign sign.c @NETLIB@
 
-$(BINDIR)/split: split.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h
+$(BINDIR)/split: split.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/split split.c
 
-$(BINDIR)/wld2html: wld2html.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h
+$(BINDIR)/wld2html: wld2html.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/wld2html wld2html.c
 
-$(BINDIR)/webster: webster.c $(INCDIR)/conf.h $(INCDIR)/sysdep.h
+$(BINDIR)/webster: webster.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/webster webster.c
+
+# Dependencies for the object files (automagically generated with
+# gcc -MM)
+
+depend:
+	$(CC) -I$(INCDIR) -MM *.c > depend
+
+-include depend

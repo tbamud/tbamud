@@ -21,23 +21,20 @@
 #include "boards.h"
 #include "improved-edit.h"
 #include "oasis.h"
+#include "dg_scripts.h" /* for trigedit_string_cleanup */
+#include "modify.h"
+#include "quest.h"
 
-void show_string(struct descriptor_data *d, char *input);
+/* local (file scope) function prototpyes  */
+static char *next_page(char *str, struct char_data *ch);
+static int count_pages(char *str, struct char_data *ch);
+static void playing_string_cleanup(struct descriptor_data *d, int action);
+static void exdesc_string_cleanup(struct descriptor_data *d, int action);
 
-extern struct spell_info_type spell_info[];
-extern const char *unused_spellname;	/* spell_parser.c */
-
-/* local functions */
-void smash_tilde(char *str);
-ACMD(do_skillset);
-char *next_page(char *str, struct char_data *ch);
-int count_pages(char *str, struct char_data *ch);
-void paginate_string(char *str, struct descriptor_data *d);
-void playing_string_cleanup(struct descriptor_data *d, int action);
-void exdesc_string_cleanup(struct descriptor_data *d, int action);
-void trigedit_string_cleanup(struct descriptor_data *d, int terminator);
-
-const char *string_fields[] =
+/* Local (file scope) global variables */
+/* @deprecated string_fields appears to be no longer be used. 
+ * Left in but commented out.
+static const char *string_fields[] =
 {
   "name",
   "short",
@@ -47,9 +44,11 @@ const char *string_fields[] =
   "delete-description",
   "\n"
 };
+*/
 
-/* maximum length for text field x+1 */
-int length[] =
+/** maximum length for text field x+1
+ *  @deprecated length appears to no longer be used. Left in but commented out.
+static int length[] =
 {
   15,
   60,
@@ -57,6 +56,7 @@ int length[] =
   240,
   60
 };
+*/
 
 /* modification of malloc'ed strings */
 /* Put '#if 1' here to erase ~, or roll your own method.  A common idea is 
@@ -151,6 +151,7 @@ void string_add(struct descriptor_data *d, char *str)
         case CON_PLR_DESC:
         case CON_TRIGEDIT:
         case CON_HEDIT:
+        case CON_QEDIT:
 	  free(*d->str);
           *d->str = d->backstr;
           d->backstr = NULL;
@@ -190,6 +191,7 @@ void string_add(struct descriptor_data *d, char *str)
       { CON_PLR_DESC , exdesc_string_cleanup },
       { CON_PLAYING, playing_string_cleanup },
       { CON_HEDIT, hedit_string_cleanup },
+      { CON_QEDIT  , qedit_string_cleanup },
       { -1, NULL }
     };
 
@@ -209,7 +211,7 @@ void string_add(struct descriptor_data *d, char *str)
      strcat(*d->str, "\r\n");
 }
 
-void playing_string_cleanup(struct descriptor_data *d, int action)
+static void playing_string_cleanup(struct descriptor_data *d, int action)
 {
   if (PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
@@ -231,7 +233,7 @@ void playing_string_cleanup(struct descriptor_data *d, int action)
     }
 }
 
-void exdesc_string_cleanup(struct descriptor_data *d, int action)
+static void exdesc_string_cleanup(struct descriptor_data *d, int action)
 {
   if (action == STRINGADD_ABORT)
     write_to_output(d, "Description aborted.\r\n");
@@ -325,7 +327,7 @@ ACMD(do_skillset)
 
 /* By Michael Buselli. Traverse down the string until the begining of the next 
  * page has been reached.  Return NULL if this is the last page of the string. */
-char *next_page(char *str, struct char_data *ch)
+static char *next_page(char *str, struct char_data *ch)
 {
   int col = 1, line = 1;
 
@@ -367,7 +369,7 @@ char *next_page(char *str, struct char_data *ch)
 }
 
 /* Function that returns the number of pages in the string. */
-int count_pages(char *str, struct char_data *ch)
+static int count_pages(char *str, struct char_data *ch)
 {
   int pages;
 

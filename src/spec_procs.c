@@ -21,42 +21,24 @@
 #include "db.h"
 #include "spells.h"
 #include "constants.h"
+#include "act.h"
+#include "spec_procs.h"
+#include "class.h"
+#include "fight.h"
+#include "modify.h"
 
-/*   external vars  */
-extern struct time_info_data time_info;
-extern struct spell_info_type spell_info[];
-extern struct guild_info_type guild_info[];
 
-/* extern functions */
-ACMD(do_drop);
-ACMD(do_gen_door);
-ACMD(do_say);
-ACMD(do_action);
+/* locally defined functions of local (file) scope */
+static int compare_spells(const void *x, const void *y);
+static const char *how_good(int percent);
+static void npc_steal(struct char_data *ch, struct char_data *victim);
 
-/* local functions */
-void sort_spells(void);
-int compare_spells(const void *x, const void *y);
-const char *how_good(int percent);
-void list_skills(struct char_data *ch);
-SPECIAL(guild);
-SPECIAL(dump);
-SPECIAL(mayor);
-void npc_steal(struct char_data *ch, struct char_data *victim);
-SPECIAL(snake);
-SPECIAL(thief);
-SPECIAL(magic_user);
-SPECIAL(guild_guard);
-SPECIAL(puff);
-SPECIAL(fido);
-SPECIAL(janitor);
-SPECIAL(cityguard);
-SPECIAL(pet_shops);
-SPECIAL(bank);
+/* Special procedures for mobiles. */
+static int spell_sort_info[MAX_SKILLS + 1];
 
-/* Special procedures for mobiles */
-int spell_sort_info[MAX_SKILLS + 1];
 
-int compare_spells(const void *x, const void *y)
+
+static int compare_spells(const void *x, const void *y)
 {
   int	a = *(const int *)x,
 	b = *(const int *)y;
@@ -75,7 +57,7 @@ void sort_spells(void)
   qsort(&spell_sort_info[1], MAX_SKILLS, sizeof(int), compare_spells);
 }
 
-const char *how_good(int percent)
+static const char *how_good(int percent)
 {
   if (percent < 0)
     return " error)";
@@ -108,9 +90,6 @@ const char *prac_types[] = {
 #define MAX_PER_PRAC	1	/* max percent gain in skill per practice */
 #define MIN_PER_PRAC	2	/* min percent gain in skill per practice */
 #define PRAC_TYPE	3	/* should it say 'spell' or 'skill'?	 */
-
-/* actual prac_params are in class.c */
-extern int prac_params[4][NUM_CLASSES];
 
 #define LEARNED(ch) (prac_params[LEARNED_LEVEL][(int)GET_CLASS(ch)])
 #define MINGAIN(ch) (prac_params[MIN_PER_PRAC][(int)GET_CLASS(ch)])
@@ -314,7 +293,7 @@ SPECIAL(mayor)
 
 /* General special procedures for mobiles. */
 
-void npc_steal(struct char_data *ch, struct char_data *victim)
+static void npc_steal(struct char_data *ch, struct char_data *victim)
 {
   int gold;
 
@@ -440,34 +419,43 @@ SPECIAL(magic_user)
 }
 
 /* Special procedures for mobiles. */
-SPECIAL(guild_guard)
-{
-  int i;
-  struct char_data *guard = (struct char_data *)me;
-  const char *buf = "The guard humiliates you, and blocks your way.\r\n";
-  const char *buf2 = "The guard humiliates $n, and blocks $s way.";
+SPECIAL(guild_guard) 
+{ 
+  int i, direction; 
+  struct char_data *guard = (struct char_data *)me; 
+  const char *buf = "The guard humiliates you, and blocks your way.\r\n"; 
+  const char *buf2 = "The guard humiliates $n, and blocks $s way."; 
 
-  if (!IS_MOVE(cmd) || AFF_FLAGGED(guard, AFF_BLIND))
-    return (FALSE);
+  if (!IS_MOVE(cmd) || AFF_FLAGGED(guard, AFF_BLIND)) 
+    return (FALSE); 
+     
+  if (GET_LEVEL(ch) >= LVL_IMMORT) 
+    return (FALSE); 
+   
+  /* find out what direction they are trying to go */ 
+  for (direction = 0; direction < NUM_OF_DIRS; direction++) 
+    if (!strcmp(cmd_info[cmd].command, dirs[direction])) 
+      break; 
 
-  if (GET_LEVEL(ch) >= LVL_IMMORT)
-    return (FALSE);
+  for (i = 0; guild_info[i].guild_room != NOWHERE; i++) { 
+    /* Wrong guild. */ 
+    if (GET_ROOM_VNUM(IN_ROOM(ch)) != guild_info[i].guild_room) 
+      continue; 
 
-  for (i = 0; guild_info[i].guild_room != NOWHERE; i++) {
-    /* Wrong guild or not trying to enter. */
-    if (GET_ROOM_VNUM(IN_ROOM(ch)) != guild_info[i].guild_room || cmd != guild_info[i].direction)
-      continue;
+    /* Wrong direction. */ 
+    if (direction != guild_info[i].direction) 
+      continue; 
 
-    /* Allow the people of the guild through. */
-    if (!IS_NPC(ch) && GET_CLASS(ch) == guild_info[i].pc_class)
-      continue;
-
-    send_to_char(ch, "%s", buf);
-    act(buf2, FALSE, ch, 0, 0, TO_ROOM);
-    return (TRUE);
-  }
-  return (FALSE);
-}
+    /* Allow the people of the guild through. */ 
+    if (!IS_NPC(ch) && GET_CLASS(ch) == guild_info[i].pc_class) 
+      continue; 
+     
+    send_to_char(ch, "%s", buf); 
+    act(buf2, FALSE, ch, 0, 0, TO_ROOM); 
+    return (TRUE); 
+  } 
+  return (FALSE); 
+} 
 
 SPECIAL(puff)
 {

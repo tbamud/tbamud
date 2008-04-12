@@ -1,5 +1,8 @@
 /* src/conf.h.os2.  Manually written by David Carver. */
 
+#ifndef _CONF_H_
+#define _CONF_H_
+
 /* Define if we are compiling under OS2 */
 #define CIRCLE_OS2
  
@@ -102,3 +105,4 @@
 /* Define if your crypt isn't safe with only 10 characters. */
 #undef HAVE_UNSAFE_CRYPT
 
+#endif /* _CONF_H_ */

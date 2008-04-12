@@ -1,12 +1,18 @@
-/**************************************************************************
-*  File: db.h                                              Part of tbaMUD *
-*  Usage: Header file for database handling.                              *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+/**
+* @file db.h
+* Header file for database handling.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+*/
+#ifndef _DB_H_
+#define _DB_H_
+
 
 /* arbitrary constants used by index_boot() (must be unique) */
 #define DB_BOOT_WLD	0
@@ -16,6 +22,7 @@
 #define DB_BOOT_SHP	4
 #define DB_BOOT_HLP	5
 #define DB_BOOT_TRG	6
+#define DB_BOOT_QST 7
 
 #if defined(CIRCLE_MACINTOSH)
 #define LIB_WORLD	":world:"
@@ -69,13 +76,14 @@
 /* names of various files and directories */
 #define INDEX_FILE	"index"		/* index of world files		*/
 #define MINDEX_FILE	"index.mini"	/* ... and for mini-mud-mode	*/
-#define WLD_PREFIX	LIB_WORLD"wld"SLASH	/* room definitions	*/
-#define MOB_PREFIX	LIB_WORLD"mob"SLASH	/* monster prototypes	*/
-#define OBJ_PREFIX	LIB_WORLD"obj"SLASH	/* object prototypes	*/
-#define ZON_PREFIX	LIB_WORLD"zon"SLASH	/* zon defs & command tables */
-#define SHP_PREFIX	LIB_WORLD"shp"SLASH	/* shop definitions	*/
-#define TRG_PREFIX	LIB_WORLD"trg"SLASH	/* trigger files	*/
-#define HLP_PREFIX      LIB_TEXT"help"SLASH     /* Help files           */
+#define WLD_PREFIX  LIB_WORLD"wld"SLASH	/* room definitions	*/
+#define MOB_PREFIX  LIB_WORLD"mob"SLASH	/* monster prototypes	*/
+#define OBJ_PREFIX  LIB_WORLD"obj"SLASH	/* object prototypes	*/
+#define ZON_PREFIX  LIB_WORLD"zon"SLASH	/* zon defs & command tables */
+#define SHP_PREFIX  LIB_WORLD"shp"SLASH	/* shop definitions	*/
+#define TRG_PREFIX  LIB_WORLD"trg"SLASH	/* trigger files	*/
+#define HLP_PREFIX  LIB_TEXT"help"SLASH /* Help files           */
+#define QST_PREFIX  LIB_WORLD"qst"SLASH /* quest files          */
 
 #define CREDITS_FILE	LIB_TEXT"credits" /* for the 'credits' command	*/
 #define NEWS_FILE	LIB_TEXT"news"	/* for the 'news' command	*/
@@ -100,6 +108,27 @@
 #define SOCMESS_FILE_NEW LIB_MISC"socials.new"  /* messages for social acts with aedit patch*/
 #define XNAME_FILE	LIB_MISC"xnames"   /* invalid name substrings	*/
 
+/* BEGIN: Assumed default locations for logfiles, mainly used in do_file. */
+/**/
+#define SYSLOG_LOGFILE     "../syslog"
+#define CRASH_LOGFILE      "../syslog.CRASH"
+#define PREFIX_LOGFILE     "../log/"
+#define LEVELS_LOGFILE     PREFIX_LOGFILE"levels"
+#define RIP_LOGFILE        PREFIX_LOGFILE"rip"
+#define NEWPLAYERS_LOGFILE PREFIX_LOGFILE"newplayers"
+#define RENTGONE_LOGFILE   PREFIX_LOGFILE"rentgone"
+#define ERRORS_LOGFILE     PREFIX_LOGFILE"errors"
+#define GODCMDS_LOGFILE    PREFIX_LOGFILE"godcmds"
+#define HELP_LOGFILE       PREFIX_LOGFILE"help"
+#define DELETES_LOGFILE    PREFIX_LOGFILE"delete"
+#define RESTARTS_LOGFILE   PREFIX_LOGFILE"restarts"
+#define USAGE_LOGFILE      PREFIX_LOGFILE"usage"
+#define BADPWS_LOGFILE     PREFIX_LOGFILE"badpws"
+#define OLC_LOGFILE        PREFIX_LOGFILE"olc"
+#define TRIGGER_LOGFILE    PREFIX_LOGFILE"trigger"
+/**/
+/* END: Assumed default locations for logfiles, mainly used in do_file. */
+
 #define CONFIG_FILE	LIB_ETC"config"    /* OasisOLC * GAME CONFIG FL */
 #define PLAYER_FILE	LIB_ETC"players"   /* the player database	*/
 #define MAIL_FILE	LIB_ETC"plrmail"   /* for the mudmail system	*/
@@ -114,47 +143,6 @@
 #define PINDEX_NODELETE		(1 << 1)	/* protected player	*/
 #define PINDEX_SELFDELETE	(1 << 2)	/* player is selfdeleting*/
 #define PINDEX_NOWIZLIST	(1 << 3)	/* Player shouldn't be on wizlist*/
-
-/* public procedures in db.c */
-void	boot_db(void);
-void	destroy_db(void);
-int	create_entry(char *name);
-void	zone_update(void);
-char	*fread_string(FILE *fl, const char *error);
-long	get_id_by_name(const char *name);
-char	*get_name_by_id(long id);
-void	save_mud_time(struct time_info_data *when);
-void	free_text_files(void);
-void	free_help_table(void);
-void	free_player_index(void);
-void    load_help(FILE *fl, char *name);
-void    clean_pfiles(void);
-
-zone_rnum real_zone(zone_vnum vnum);
-room_rnum real_room(room_vnum vnum);
-mob_rnum real_mobile(mob_vnum vnum);
-obj_rnum real_object(obj_vnum vnum);
-
-int	load_char(const char *name, struct char_data *ch);
-void	save_char(struct char_data *ch);
-void	init_char(struct char_data *ch);
-struct char_data* create_char(void);
-struct char_data *read_mobile(mob_vnum nr, int type);
-int	vnum_mobile(char *searchname, struct char_data *ch);
-void	clear_char(struct char_data *ch);
-void	reset_char(struct char_data *ch);
-void	free_char(struct char_data *ch);
-void	save_player_index(void);
-long    get_ptable_by_name(const char *name);
-void    remove_player(int pfilepos);
-
-struct obj_data *create_obj(void);
-void	clear_object(struct obj_data *obj);
-void	free_obj(struct obj_data *obj);
-struct obj_data *read_object(obj_vnum nr, int type);
-int	vnum_object(char *searchname, struct char_data *ch);
-int     vnum_room(char *, struct char_data *);
-int     vnum_trig(char *, struct char_data *);
 
 #define REAL 0
 #define VIRTUAL 1
@@ -233,20 +221,7 @@ struct help_index_element {
    int min_level;    /*Min Level to read help entry*/
 };
 
-/* don't change these */
-#define BAN_NOT 	0
-#define BAN_NEW 	1
-#define BAN_SELECT	2
-#define BAN_ALL		3
-
-#define BANNED_SITE_LENGTH    50
-struct ban_list_element {
-   char	site[BANNED_SITE_LENGTH+1];
-   int	type;
-   time_t date;
-   char	name[MAX_NAME_LENGTH+1];
-   struct ban_list_element *next;
-};
+/* The ban defines and structs were moved to ban.h */
 
 /* for the "buffered" rent and house object loading */
 struct obj_save_data_t {
@@ -257,10 +232,125 @@ struct obj_save_data_t {
 typedef struct obj_save_data_t obj_save_data;
 
 
+/* public procedures in db.c */
+void  boot_db(void);
+void  destroy_db(void);
+char *fread_action(FILE *fl, int nr);
+int   create_entry(char *name);
+void  zone_update(void);
+char  *fread_string(FILE *fl, const char *error);
+long  get_id_by_name(const char *name);
+char  *get_name_by_id(long id);
+void  save_mud_time(struct time_info_data *when);
+void  free_text_files(void);
+void  free_help_table(void);
+void  free_player_index(void);
+void  load_help(FILE *fl, char *name);
+
+zone_rnum real_zone(zone_vnum vnum);
+room_rnum real_room(room_vnum vnum);
+mob_rnum real_mobile(mob_vnum vnum);
+obj_rnum real_object(obj_vnum vnum);
+
+/* Public Procedures from objsave.c */
+void  Crash_save_all(void);
+void  Crash_idlesave(struct char_data *ch);
+void  Crash_crashsave(struct char_data *ch);
+int Crash_load(struct char_data *ch);
+void  Crash_listrent(struct char_data *ch, char *name);
+int Crash_clean_file(char *name);
+int Crash_delete_crashfile(struct char_data *ch);
+int Crash_delete_file(char *name);
+void update_obj_file(void);
+void Crash_rentsave(struct char_data *ch, int cost);
+obj_save_data *objsave_parse_objects(FILE *fl);
+int objsave_save_obj_record(struct obj_data *obj, FILE *fl, int location);
+/* Special functions */
+SPECIAL(receptionist);
+SPECIAL(cryogenicist);
+
+/* Functions from players.c */
+void   tag_argument(char *argument, char *tag);
+int    load_char(const char *name, struct char_data *ch);
+void   save_char(struct char_data *ch);
+void   init_char(struct char_data *ch);
+struct char_data* create_char(void);
+struct char_data *read_mobile(mob_vnum nr, int type);
+int    vnum_mobile(char *searchname, struct char_data *ch);
+void   clear_char(struct char_data *ch);
+void   reset_char(struct char_data *ch);
+void   free_char(struct char_data *ch);
+void   save_player_index(void);
+long   get_ptable_by_name(const char *name);
+void   remove_player(int pfilepos);
+void   clean_pfiles(void);
+void   build_player_index(void);
+
+struct obj_data *create_obj(void);
+void   clear_object(struct obj_data *obj);
+void   free_obj(struct obj_data *obj);
+struct obj_data *read_object(obj_vnum nr, int type);
+int    vnum_object(char *searchname, struct char_data *ch);
+int    vnum_room(char *, struct char_data *);
+int    vnum_trig(char *, struct char_data *);
+
+void setup_dir(FILE *fl, int room, int dir);
+void index_boot(int mode);
+void discrete_load(FILE *fl, int mode, char *filename);
+void parse_room(FILE *fl, int virtual_nr);
+void parse_mobile(FILE *mob_f, int nr);
+char *parse_object(FILE *obj_f, int nr);
+int is_empty(zone_rnum zone_nr);
+void reset_zone(zone_rnum zone);
+void reboot_wizlists(void);
+ACMD(do_reboot);
+void boot_world(void);
+int count_hash_records(FILE *fl);
+bitvector_t asciiflag_conv(char *flag);
+void renum_world(void);
+void load_config( void );
+
+
+
 /* global buffering system */
 
 #ifndef __DB_C__
+
+/* Various Files */
+extern char *credits;
+extern char *news;
+extern char *motd;
+extern char *imotd;
+extern char *GREETINGS;
+extern char *help;
+extern char *ihelp;
+extern char *info;
+extern char *wizlist;
+extern char *immlist;
+extern char *background;
+extern char *handbook;
+extern char *policies;
+
+/* The ingame helpfile */
+extern int top_of_helpt;
+extern struct help_index_element *help_table;
+
+/* Mud configurable variables */
+extern int no_mail;                
+extern int mini_mud;               
+extern int no_rent_check;          
+extern time_t boot_time;           
+extern int circle_restrict;        
+extern room_rnum r_mortal_start_room;
+extern room_rnum r_immort_start_room;
+extern room_rnum r_frozen_start_room;
+
 extern struct config_data config_info;
+
+extern struct time_info_data time_info;
+extern struct weather_data weather_info; 
+extern struct player_special_data dummy_mob;
+extern struct reset_q_type reset_q;     
 
 extern struct room_data *world;
 extern room_rnum top_of_world;
@@ -268,7 +358,6 @@ extern room_rnum top_of_world;
 extern struct zone_data *zone_table;
 extern zone_rnum top_of_zone_table;
 
-extern struct descriptor_data *descriptor_list;
 extern struct char_data *character_list;
 extern struct player_special_data dummy_mob;
 
@@ -294,4 +383,19 @@ extern long max_mob_id;
 extern long max_obj_id;
 extern int dg_owner_purged;
 
+extern struct message_list fight_messages[MAX_MESSAGES];
+
+/* autoquest globals */
+extern struct aq_data *aquest_table;
+extern qst_rnum total_quests;
+
+/* begin previously located in players.c, returned to db.c */
+extern struct player_index_element *player_table;
+extern int top_of_p_table;
+extern int top_of_p_file;
+extern long top_idnum;
+/* end previously located in players.c */
+
 #endif /* __DB_C__ */
+
+#endif /* _DB_H_ */

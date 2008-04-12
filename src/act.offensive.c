@@ -17,22 +17,8 @@
 #include "handler.h"
 #include "db.h"
 #include "spells.h"
-
-/* extern functions */
-void raw_kill(struct char_data *ch, struct char_data * killer);
-void check_killer(struct char_data *ch, struct char_data *vict);
-int compute_armor_class(struct char_data *ch);
-
-/* local functions */
-ACMD(do_assist);
-ACMD(do_hit);
-ACMD(do_kill);
-ACMD(do_backstab);
-ACMD(do_order);
-ACMD(do_flee);
-ACMD(do_bash);
-ACMD(do_rescue);
-ACMD(do_kick);
+#include "act.h"
+#include "fight.h"
 
 ACMD(do_assist)
 {

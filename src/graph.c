@@ -17,21 +17,17 @@
 #include "handler.h"
 #include "db.h"
 #include "spells.h"
-
-/* external functions */
-ACMD(do_say);
-
-/* external variables */
-extern const char *dirs[];
+#include "act.h" /* for the do_say command */
+#include "constants.h"
+#include "graph.h"
+#include "fight.h"
 
 /* local functions */
-int VALID_EDGE(room_rnum x, int y);
-void bfs_enqueue(room_rnum room, int dir);
-void bfs_dequeue(void);
-void bfs_clear_queue(void);
-int find_first_step(room_rnum src, room_rnum target);
-ACMD(do_track);
-void hunt_victim(struct char_data *ch);
+static int VALID_EDGE(room_rnum x, int y);
+static void bfs_enqueue(room_rnum room, int dir);
+static void bfs_dequeue(void);
+static void bfs_clear_queue(void);
+static int find_first_step(room_rnum src, room_rnum target);
 
 struct bfs_queue_struct {
   room_rnum room;
@@ -48,7 +44,7 @@ static struct bfs_queue_struct *queue_head = 0, *queue_tail = 0;
 #define TOROOM(x, y)	(world[(x)].dir_option[(y)]->to_room)
 #define IS_CLOSED(x, y)	(EXIT_FLAGGED(world[(x)].dir_option[(y)], EX_CLOSED))
 
-int VALID_EDGE(room_rnum x, int y)
+static int VALID_EDGE(room_rnum x, int y)
 {
   if (world[x].dir_option[y] == NULL || TOROOM(x, y) == NOWHERE)
     return 0;
@@ -60,7 +56,7 @@ int VALID_EDGE(room_rnum x, int y)
   return 1;
 }
 
-void bfs_enqueue(room_rnum room, int dir)
+static void bfs_enqueue(room_rnum room, int dir)
 {
   struct bfs_queue_struct *curr;
 
@@ -76,7 +72,7 @@ void bfs_enqueue(room_rnum room, int dir)
     queue_head = queue_tail = curr;
 }
 
-void bfs_dequeue(void)
+static void bfs_dequeue(void)
 {
   struct bfs_queue_struct *curr;
 
@@ -87,7 +83,7 @@ void bfs_dequeue(void)
   free(curr);
 }
 
-void bfs_clear_queue(void)
+static void bfs_clear_queue(void)
 {
   while (queue_head)
     bfs_dequeue();
@@ -97,7 +93,7 @@ void bfs_clear_queue(void)
  * on the shortest path from the source to the target. Intended usage: in 
  * mobile_activity, give a mob a dir to go if they're tracking another mob or a
  * PC.  Or, a 'track' skill for PCs. */
-int find_first_step(room_rnum src, room_rnum target)
+static int find_first_step(room_rnum src, room_rnum target)
 {
   int curr_dir;
   room_rnum curr_room;

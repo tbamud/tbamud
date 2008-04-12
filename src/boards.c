@@ -8,6 +8,8 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
+#define __BOARDS_C__
+
 /* FEATURES & INSTALLATION INSTRUCTIONS
  * - Arbitrary number of boards handled by one set of generalized routines.
  *   Adding a new board is as easy as adding another entry to an array.
@@ -38,6 +40,7 @@
 #include "interpreter.h"
 #include "handler.h"
 #include "improved-edit.h"
+#include "modify.h"
 
 /* Board appearance order. */
 #define	NEWEST_AT_TOP	FALSE
@@ -54,20 +57,20 @@ struct board_info_type board_info[NUM_OF_BOARDS] = {
   {1228, 0, 0, LVL_IMPL, LIB_ETC "board.advertising", 0},
 };
 
-/* local functions */
-SPECIAL(gen_board);
-int find_slot(void);
-int find_board(struct char_data *ch);
-void init_boards(void);
-char *msg_storage[INDEX_SIZE];
-int msg_storage_taken[INDEX_SIZE];
-int num_of_msgs[NUM_OF_BOARDS];
-int ACMD_READ, ACMD_LOOK, ACMD_EXAMINE, ACMD_WRITE, ACMD_REMOVE;
-struct board_msginfo msg_index[NUM_OF_BOARDS][MAX_BOARD_MESSAGES];
-void board_reset_board(int board_type);
-void board_clear_board(int board_type);
+/* local (file scope) global variables */
+static char *msg_storage[INDEX_SIZE];
+static int msg_storage_taken[INDEX_SIZE];
+static int num_of_msgs[NUM_OF_BOARDS];
+static struct board_msginfo msg_index[NUM_OF_BOARDS][MAX_BOARD_MESSAGES];
 
-int find_slot(void)
+/* local static utility functions */
+static int find_slot(void);
+static int find_board(struct char_data *ch);
+static void init_boards(void);
+static void board_reset_board(int board_type);
+static void board_clear_board(int board_type);
+
+static int find_slot(void)
 {
   int i;
 
@@ -80,7 +83,7 @@ int find_slot(void)
 }
 
 /* search the room ch is standing in to find which board he's looking at */
-int find_board(struct char_data *ch)
+static int find_board(struct char_data *ch)
 {
   struct obj_data *obj;
   int i;
@@ -99,7 +102,7 @@ int find_board(struct char_data *ch)
   return (-1);
 }
 
-void init_boards(void)
+static void init_boards(void)
 {
   int i, j, fatal_error = 0;
 
@@ -132,6 +135,9 @@ SPECIAL(gen_board)
   static int loaded = 0;
   struct obj_data *board = (struct obj_data *)me;
 
+  /* These were originally globals for some unknown reason. */
+  int ACMD_READ, ACMD_LOOK, ACMD_EXAMINE, ACMD_WRITE, ACMD_REMOVE;
+  
   if (!loaded) {
     init_boards();
     loaded = 1;
@@ -514,7 +520,7 @@ void board_clear_board(int board_type)
 }
 
 /* Destroy the on-disk and in-memory board. */
-void board_reset_board(int board_type)
+static void board_reset_board(int board_type)
 {
   board_clear_board(board_type);
   remove(FILENAME(board_type));

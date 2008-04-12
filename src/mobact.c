@@ -18,19 +18,13 @@
 #include "handler.h"
 #include "spells.h"
 #include "constants.h"
+#include "act.h"
+#include "graph.h"
+#include "fight.h"
 
-/* external globals */
-extern int no_specials;
 
-/* external functions */
-ACMD(do_get);
-ACMD(do_action);
-void hunt_victim(struct char_data *ch);
-
-/* local functions */
-void mobile_activity(void);
-void clearMemory(struct char_data *ch);
-bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack);
+/* local file scope only function prototypes */
+static bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack);
 
 void mobile_activity(void)
 {
@@ -84,12 +78,15 @@ void mobile_activity(void)
 
     /* Mob Movement */
     if (!MOB_FLAGGED(ch, MOB_SENTINEL) && (GET_POS(ch) == POS_STANDING) &&
-	((door = rand_number(0, 18)) < NUM_OF_DIRS) && CAN_GO(ch, door) &&
-	!ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_NOMOB) &&
-	!ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_DEATH) &&
-	(!MOB_FLAGGED(ch, MOB_STAY_ZONE) ||
-	 (world[EXIT(ch, door)->to_room].zone == world[IN_ROOM(ch)].zone))) {
-      perform_move(ch, door, 1);
+       ((door = rand_number(0, 18)) < NUM_OF_DIRS) && CAN_GO(ch, door) &&
+       !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_NOMOB) &&
+       !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_DEATH) &&
+       (!MOB_FLAGGED(ch, MOB_STAY_ZONE) ||
+           (world[EXIT(ch, door)->to_room].zone == world[IN_ROOM(ch)].zone))) 
+    {
+      /* If the mob is charmed, do not move the mob. */
+      if (ch->master != NULL)
+        perform_move(ch, door, 1);
     }
 
     /* Aggressive Mobs */
@@ -152,17 +149,19 @@ void mobile_activity(void)
     }
 
     /* Helper Mobs */
-    if (MOB_FLAGGED(ch, MOB_HELPER) && !AFF_FLAGGED(ch, AFF_BLIND | AFF_CHARM)) {
+    if (MOB_FLAGGED(ch, MOB_HELPER) && (!AFF_FLAGGED(ch, AFF_BLIND) || !AFF_FLAGGED(ch, AFF_CHARM))) 
+    {
       found = FALSE;
-      for (vict = world[IN_ROOM(ch)].people; vict && !found; vict = vict->next_in_room) {
-	if (ch == vict || !IS_NPC(vict) || !FIGHTING(vict))
-	  continue;
-	if (IS_NPC(FIGHTING(vict)) || ch == FIGHTING(vict))
-	  continue;
+      for (vict = world[IN_ROOM(ch)].people; vict && !found; vict = vict->next_in_room) 
+      {
+	      if (ch == vict || !IS_NPC(vict) || !FIGHTING(vict))
+          continue; 
+	      if (IS_NPC(FIGHTING(vict)) || ch == FIGHTING(vict))
+          continue;
 
-	act("$n jumps to the aid of $N!", FALSE, ch, 0, vict, TO_ROOM);
-	hit(ch, FIGHTING(vict), TYPE_UNDEFINED);
-	found = TRUE;
+	      act("$n jumps to the aid of $N!", FALSE, ch, 0, vict, TO_ROOM);
+	      hit(ch, FIGHTING(vict), TYPE_UNDEFINED);
+	      found = TRUE;
       }
     }
 
@@ -236,7 +235,7 @@ void clearMemory(struct char_data *ch)
 /* An aggressive mobile wants to attack something.  If they're under the 
  * influence of mind altering PC, then see if their master can talk them out 
  * of it, eye them down, or otherwise intimidate the slave. */
-bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack)
+static bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack)
 {
   static int snarl_cmd;
   int dieroll;

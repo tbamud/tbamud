@@ -3,6 +3,9 @@
  * Created by Jeremy Elson, 1 July 1998
  */
 
+#ifndef _CONF_H_
+#define _CONF_H_
+
 #define CIRCLE_WINDOWS
 
 /* Define to empty if the keyword does not work.  */
@@ -334,3 +337,5 @@
 
 /* Check for a prototype to write. */
 #undef NEED_WRITE_PROTO
+
+#endif /* _CONF_H_ */

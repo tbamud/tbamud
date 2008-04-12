@@ -8,8 +8,8 @@
 #include "sysdep.h"
 
 #include "structs.h"
-#include "db.h"
 #include "utils.h"
+#include "db.h"
 #include "shop.h"
 
 void basic_mud_log(const char *x, ...)
@@ -104,7 +104,7 @@ void do_string(FILE * shop_f, FILE * newshop_f, char *msg)
 }
 
 
-int boot_the_shops(FILE * shop_f, FILE * newshop_f, char *filename)
+static int boot_the_shops_conv(FILE * shop_f, FILE * newshop_f, char *filename)
 {
   char *buf, buf2[150];
   int temp, count;
@@ -176,7 +176,7 @@ int main(int argc, char *argv[])
 	continue;
       }
       printf("%s:\n", fn);
-      result = boot_the_shops(sfp, nsfp, fn);
+      result = boot_the_shops_conv(sfp, nsfp, fn);
       fclose(nsfp);
       fclose(sfp);
       if (result) {

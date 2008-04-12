@@ -10,8 +10,8 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
-#include "dg_scripts.h"
 #include "utils.h"
+#include "dg_scripts.h"
 #include "comm.h"
 #include "interpreter.h"
 #include "handler.h"
@@ -20,14 +20,12 @@
 #include "screen.h"
 #include "spells.h"
 #include "constants.h"
+#include "fight.h"
 
-void die(struct char_data *ch, struct char_data * killer);
 
 /* copied from spell_parser.c: */
 #define SINFO spell_info[spellnum]
 
-/* external vars */
-extern struct spell_info_type spell_info[];
 
 /* Cast a spell; can be called by mobiles, objects and rooms, and no level 
  * check is required. Note that mobs should generally use the normal 'cast' 

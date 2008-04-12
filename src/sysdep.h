@@ -1,12 +1,16 @@
-/**************************************************************************
-*  File: sysdep.h                                          Part of tbaMUD *
-*  Usage: Machine-specific defs based on values in conf.h (from configure)*
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+/**
+* @file sysdep.h
+* Machine-specific defs based on values in conf.h (from configure)
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*/
+#ifndef _SYSDEP_H_
+#define _SYSDEP_H_
 
 /* Configurables: tbaMUD uses the crypt(3) function to encrypt player passwords
  * in the players file so that they are never stored in plaintext form. However,
@@ -571,3 +575,6 @@ struct in_addr {
 #endif /* __COMM_C__ */
 
 #endif /* NO_LIBRARY_PROTOTYPES */
+
+#endif /* _SYSDEP_H_ */
+

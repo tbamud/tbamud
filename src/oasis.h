@@ -1,9 +1,18 @@
-/**************************************************************************
-*  File: oasis.c                                           Part of tbaMUD *
-*  Usage: Oasis - General.                                                *
-*                                                                         *
-* By Levork. Copyright 1996 Harvey Gilpin. 1997-2001 George Greer.        *
-**************************************************************************/
+/**
+* @file oasis.h
+* Oasis online creation general defines.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* This source code, which was not part of the CircleMUD legacy code,
+* is attributed to:
+* By Levork. Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.
+*/
+#ifndef _OASIS_H_
+#define _OASIS_H_
+
+#include "utils.h" /* for ACMD macro */
 
 #define _OASISOLC	0x206   /* 2.0.6 */
 
@@ -16,25 +25,8 @@
 #define ALL_PERMISSION    666  /* arbitrary number higher then max zone vnum*/
 
 /* Macros, defines, structs and globals for the OLC suite.  You will need
-   to adjust these numbers if you ever add more. */
-#define NUM_ROOM_FLAGS 		16
-#define NUM_ROOM_SECTORS	10
-
-#define NUM_MOB_FLAGS		18
-#define NUM_AFF_FLAGS		22
-#define NUM_ATTACK_TYPES	15
-
-#define NUM_ITEM_TYPES		24
-#define NUM_ITEM_FLAGS		17
-#define NUM_ITEM_WEARS 		15
-#define NUM_APPLIES		25
-#define NUM_LIQ_TYPES 		16
-#define NUM_POSITIONS		15
-#define NUM_SPELLS		51
-
-#define NUM_GENDERS		3
-#define NUM_SHOP_FLAGS 		3
-#define NUM_TRADERS 		7
+   to adjust these numbers if you ever add more. Note: Most of the NUM_ and
+   MAX_ limits have been moved to more appropriate locations. */
 
 #define MAX_PEOPLE 10 /* Max # of people you want to sit in furniture. */
 
@@ -85,9 +77,7 @@ void split_argument(char *argument, char *tag);
 void send_cannot_edit(struct char_data *ch, zone_vnum zone);
 
 /* OLC structures. */
-/* The following defines used to be in config.c. */
-#define NO	0
-#define YES	1
+/* NO and YES are defined in utils.h. Removed from here. */
 
 struct oasis_olc_data {
   int mode;                      /* how to parse input       */
@@ -101,6 +91,7 @@ struct oasis_olc_data {
   struct zone_data *zone;        /* used for 'zedit'         */
   struct shop_data *shop;        /* used for 'sedit'         */
   struct config_data *config;    /* used for 'cedit'         */
+  struct aq_data *quest;         /* used for 'qedit'         */
   struct extra_descr_data *desc; /* used in '[r|o|m]edit'    */
   struct social_messg *action;   /* Aedit uses this one      */
   struct trig_data *trig;
@@ -115,24 +106,25 @@ struct oasis_olc_data {
 extern const char *nrm, *grn, *cyn, *yel;
 
 /* Descriptor access macros. */
-#define OLC(d)		((d)->olc)
-#define OLC_MODE(d) 	(OLC(d)->mode)		/* Parse input mode.	*/
-#define OLC_NUM(d) 	(OLC(d)->number)	/* Room/Obj VNUM.	*/
-#define OLC_VAL(d) 	(OLC(d)->value)		/* Scratch variable.	*/
-#define OLC_ZNUM(d) 	(OLC(d)->zone_num)	/* Real zone number.	*/
+#define OLC(d)         ((d)->olc)
+#define OLC_MODE(d)    (OLC(d)->mode)     /**< Parse input mode.	*/
+#define OLC_NUM(d)     (OLC(d)->number)   /**< Room/Obj VNUM.	*/
+#define OLC_VAL(d)     (OLC(d)->value)    /**< Scratch variable.	*/
+#define OLC_ZNUM(d)    (OLC(d)->zone_num) /**< Real zone number.	*/
 
-#define OLC_STORAGE(d)  (OLC(d)->storage)	/* char pointer.	*/
-#define OLC_ROOM(d) 	(OLC(d)->room)		/* Room structure.	*/
-#define OLC_OBJ(d) 	(OLC(d)->obj)		/* Object structure.	*/
-#define OLC_ZONE(d)     (OLC(d)->zone)          /* Zone structure.	*/
-#define OLC_MOB(d)	(OLC(d)->mob)		/* Mob structure.	*/
-#define OLC_SHOP(d) 	(OLC(d)->shop)		/* Shop structure.	*/
-#define OLC_DESC(d) 	(OLC(d)->desc)		/* Extra description.	*/
-#define OLC_CONFIG(d)	(OLC(d)->config)	/* Config structure.	*/
-#define OLC_TRIG(d)     (OLC(d)->trig)          /* Trigger structure.   */
+#define OLC_STORAGE(d) (OLC(d)->storage)  /**< char pointer.	*/
+#define OLC_ROOM(d)    (OLC(d)->room)     /**< Room structure.	*/
+#define OLC_OBJ(d)     (OLC(d)->obj)      /**< Object structure.	*/
+#define OLC_ZONE(d)    (OLC(d)->zone)     /**< Zone structure.	*/
+#define OLC_MOB(d)     (OLC(d)->mob)      /**< Mob structure.	*/
+#define OLC_SHOP(d)    (OLC(d)->shop)     /**< Shop structure.	*/
+#define OLC_DESC(d)    (OLC(d)->desc)     /**< Extra description.	*/
+#define OLC_CONFIG(d)  (OLC(d)->config)   /**< Config structure.	*/
+#define OLC_TRIG(d)    (OLC(d)->trig)     /**< Trigger structure.   */
+#define OLC_QUEST(d)   (OLC(d)->quest)    /**< Quest structure      */
 
-#define OLC_ACTION(d)   (OLC(d)->action)        /* Action structure     */
-#define OLC_HELP(d)     (OLC(d)->help)          /* Hedit structure      */
+#define OLC_ACTION(d)  (OLC(d)->action)   /**< Action structure     */
+#define OLC_HELP(d)    (OLC(d)->help)     /**< Hedit structure      */
 
 /* Other macros. */
 #define OLC_EXIT(d)		(OLC_ROOM(d)->dir_option[OLC_VAL(d)])
@@ -355,6 +347,9 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define CEDIT_NAMESERVER_IS_SLOW	51
 #define CEDIT_USE_AUTOWIZ		52
 #define CEDIT_MIN_WIZLIST_LEV		53
+#define CEDIT_MAP_OPTION   54
+#define CEDIT_MAP_SIZE     55
+#define CEDIT_MINIMAP_SIZE   56
 
 /* Hedit Submodes of connectedness. */
 #define HEDIT_CONFIRM_SAVESTRING        0
@@ -365,25 +360,29 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define HEDIT_KEYWORDS                  5
 #define HEDIT_MIN_LEVEL                 6
 
-#ifndef __GENOLC_C__
+int  save_config( IDXTYPE nowhere );
 
 /* Prototypes to keep. */
-#ifndef ACMD
-#define ACMD(name)  \
-   void name(struct char_data *ch, char *argument, int cmd, int subcmd)
-#endif
 void clear_screen(struct descriptor_data *);
 int can_edit_zone(struct char_data *ch, zone_rnum rnum);
 ACMD(do_oasis);
 
+/* public functions from medit.c */
+void medit_setup_existing(struct descriptor_data *d, int rnum);
+void medit_save_internally(struct descriptor_data *d);
 void medit_parse(struct descriptor_data *d, char *arg);
 void medit_string_cleanup(struct descriptor_data *d, int terminator);
 ACMD(do_oasis_medit);
 
+/* public functions from oedit.c */
+void oedit_setup_existing(struct descriptor_data *d, int rnum);
+void oedit_save_internally(struct descriptor_data *d);
 void oedit_parse(struct descriptor_data *d, char *arg);
 void oedit_string_cleanup(struct descriptor_data *d, int terminator);
 ACMD(do_oasis_oedit);
 
+/* public functions from redit.c */
+void redit_setup_existing(struct descriptor_data *d, int rnum);
 void redit_string_cleanup(struct descriptor_data *d, int terminator);
 void redit_save_internally(struct descriptor_data *d);
 void redit_save_to_disk(zone_vnum zone_num);
@@ -391,36 +390,56 @@ void redit_parse(struct descriptor_data *d, char *arg);
 void free_room(struct room_data *room);
 ACMD(do_oasis_redit);
 
+/* public functions from sedit.c */
+void sedit_setup_existing(struct descriptor_data *d, int rnum);
+void sedit_save_internally(struct descriptor_data *d);
 void sedit_parse(struct descriptor_data *d, char *arg);
 ACMD(do_oasis_sedit);
 
+/* public functions from zedit.c */
 void zedit_parse(struct descriptor_data *d, char *arg);
 ACMD(do_oasis_zedit);
 
+/* public functions from cedit.c */
+void cedit_save_to_disk( void );
 void cedit_parse(struct descriptor_data *d, char *arg);
 void cedit_string_cleanup(struct descriptor_data *d, int terminator);
 ACMD(do_oasis_cedit);
 
+/* public functions from dg_olc.c */
 void trigedit_parse(struct descriptor_data *d, char *arg);
 ACMD(do_oasis_trigedit);
 
+/* public functions from from aedit.c */
 void aedit_parse(struct descriptor_data * d, char *arg);
-void free_action(struct social_messg *mess);
 ACMD(do_oasis_aedit);
+ACMD(do_astat);
 
+/* public functions from hedit.c */
 void hedit_parse(struct descriptor_data *d, char *arg);
 void hedit_string_cleanup(struct descriptor_data *d, int terminator);
 void free_help(struct help_index_element *help);
 ACMD(do_oasis_hedit);
 
+/* public functions from tedit.c */
 void tedit_string_cleanup(struct descriptor_data *d, int terminator);
 ACMD(do_tedit);
 
-/* oasis_delete.c */
+/* public functions from qedit.c */
+ACMD(do_oasis_qedit);
+
+/* public functions from oasis_copy.c */
+int buildwalk(struct char_data *ch, int dir);
+ACMD(do_dig);
+ACMD(do_oasis_copy);
+
+/* public functions from oasis_delete.c */
 int free_strings(void *data, int type);
 
-/* oasis_list.c */
-ACMD(do_oasis_list);
-ACMD(do_oasis_links);
+/* public functions from oasis_list.c */
 void print_zone(struct char_data *ch, zone_rnum rnum);
-#endif
+/** @deprecated is do_oasis_links intentionally dead code? */
+ACMD(do_oasis_links);
+ACMD(do_oasis_list);
+
+#endif /* _OASIS_H_ */

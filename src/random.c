@@ -19,6 +19,11 @@
  * THIS GENERATOR REPRESENTS THE MINIMUM STANDARD AGAINST WHICH OTHER 
  * GENERATORS SHOULD BE JUDGED. */
 
+#include "conf.h"
+#include "sysdep.h"
+#include "structs.h"
+#include "utils.h" /* for function prototypes */
+
 #define	m  (unsigned long)2147483647
 #define	q  (unsigned long)127773
 
@@ -36,10 +41,6 @@
 ** 	 = a(z%q)- rz/q+ m(z/q) - az */
 
 static unsigned long seed;
-
-/* local functions */
-void circle_srandom(unsigned long initial_seed);
-unsigned long circle_random(void);
 
 void circle_srandom(unsigned long initial_seed)
 {

@@ -1,12 +1,18 @@
-/**************************************************************************
-*  File: dg_olc.h                                          Part of tbaMUD *
-*                                                                         *
-*  Usage: This source file is used in extending Oasis OLC for trigedit.   *
-*                                                                         *
-*  $Author: Mark A. Heilpern/egreen/Welcor $                              *
-*  $Date: 2004/10/11 12:07:00$                                            *
-*  $Revision: 1.0.14 $                                                    *
-**************************************************************************/
+/**
+* @file dg_olc.h
+* This source file is used in extending Oasis OLC for trigedit.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+* 
+* This source code, which was not part of the CircleMUD legacy code,
+* was created by the following people:                                      
+* $Author: Mark A. Heilpern/egreen/Welcor $                              
+* $Date: 2004/10/11 12:07:00$                                            
+* $Revision: 1.0.14 $                                                    
+*/
+#ifndef _DG_OLC_H_
+#define _DG_OLC_H_
 
 #include "dg_scripts.h"
 
@@ -39,3 +45,5 @@ void dg_olc_script_copy(struct descriptor_data *d);
 void dg_script_menu(struct descriptor_data *d);
 int dg_script_edit_parse(struct descriptor_data *d, char *arg);
 
+
+#endif /* _DG_OLC_H_ */

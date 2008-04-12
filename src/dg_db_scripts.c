@@ -22,12 +22,10 @@
 #include "dg_event.h"
 #include "comm.h"
 #include "constants.h"
-
-extern void half_chop(char *string, char *arg1, char *arg2);
-extern bitvector_t asciiflag_conv(char *flag);
+#include "interpreter.h" /* For half_chop */
 
 /* local functions */
-void trig_data_init(trig_data *this_data);
+static void trig_data_init(trig_data *this_data);
 
 void parse_trigger(FILE *trig_f, int nr)
 {
@@ -93,7 +91,7 @@ trig_data *read_trigger(int nr)
     return trig;
 }
 
-void trig_data_init(trig_data *this_data)
+static void trig_data_init(trig_data *this_data)
 {
     this_data->nr = NOTHING;
     this_data->data_type = 0;

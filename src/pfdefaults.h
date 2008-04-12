@@ -1,8 +1,12 @@
-/**************************************************************************
-*  File: pfdefaults.h                                      Part of tbaMUD *
-*  Usage: ASCII player file defaults.                                     *
-**************************************************************************/
-
+/**
+* @file pfdefaults.h
+* ASCII player file defaults.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*
+* This set of code was not originally part of the circlemud distribution.
+*/
 #ifndef _PFDEFAULTS_H_
 #define _PFDEFAULTS_H_
 
@@ -50,7 +54,10 @@
 #define PFDEF_DRUNK		0
 #define PFDEF_OLC               NOWHERE 
 #define PFDEF_PAGELENGTH        22
+#define PFDEF_SCREENWIDTH       80
 #define PFDEF_QUESTPOINTS       0
+#define PFDEF_QUESTCOUNT        0
+#define PFDEF_COMPQUESTS        0
+#define PFDEF_CURRQUEST         NOTHING
 
-#endif
-
+#endif /* _PFDEFAULTS_H_ */

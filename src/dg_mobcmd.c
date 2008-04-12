@@ -10,48 +10,26 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "screen.h"
 #include "dg_scripts.h"
 #include "db.h"
-#include "utils.h"
 #include "handler.h"
 #include "interpreter.h"
 #include "comm.h"
 #include "spells.h"
 #include "constants.h"
+#include "genzon.h" /* for real_zone_by_thing */
+#include "act.h"
+#include "fight.h"
 
-/* External functions */
-bitvector_t asciiflag_conv(char *flag);
-zone_rnum real_zone_by_thing(room_vnum vznum);
-void die(struct char_data *ch, struct char_data *killer);
-room_rnum find_target_room(struct char_data *ch, char *rawroomstr);
 
-/* Local functions. */
-void mob_log(char_data *mob, const char *format, ...);
-ACMD(do_masound);
-ACMD(do_mkill);
-ACMD(do_mjunk);
-ACMD(do_mechoaround);
-ACMD(do_msend);
-ACMD(do_mecho);
-ACMD(do_mzoneecho);
-ACMD(do_mload);
-ACMD(do_mpurge);
-ACMD(do_mgoto);
-ACMD(do_mat);
-ACMD(do_mteleport);
-ACMD(do_mdamage);
-ACMD(do_mforce);
-ACMD(do_mhunt);
-ACMD(do_mremember);
-ACMD(do_mforget);
-ACMD(do_mtransform);
-ACMD(do_mdoor);
-ACMD(do_mfollow);
-ACMD(do_mrecho);
+/* Local file scope functions. */
+static void mob_log(char_data *mob, const char *format, ...);
+
 
 /* attaches mob's name and vnum to msg and sends it to script_log */
-void mob_log(char_data *mob, const char *format, ...)
+static void mob_log(char_data *mob, const char *format, ...)
 {
   va_list args;
   char output[MAX_STRING_LENGTH];

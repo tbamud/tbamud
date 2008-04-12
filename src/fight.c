@@ -8,6 +8,8 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
+#define __FIGHT_C__
+
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
@@ -20,64 +22,51 @@
 #include "screen.h"
 #include "constants.h"
 #include "dg_scripts.h"
+#include "act.h"
+#include "class.h"
+#include "fight.h"
+#include "shop.h"
+#include "quest.h"
 
-/* Structures */
-struct char_data *combat_list = NULL;	/* head of l-list of fighting chars */
-struct char_data *next_combat_list = NULL;
 
-/* External structures */
-extern struct message_list fight_messages[MAX_MESSAGES];
-
-/* External procedures */
-char *fread_action(FILE *fl, int nr);
-ACMD(do_flee);
-ACMD(do_get);
-ACMD(do_split);
-ACMD(do_sac);
-ACMD(do_assist);
-int backstab_mult(int level);
-int thaco(int ch_class, int level);
-int ok_damage_shopkeeper(struct char_data *ch, struct char_data *victim);
-
-/* local functions */
-void perform_group_gain(struct char_data *ch, int base, struct char_data *victim);
-void dam_message(int dam, struct char_data *ch, struct char_data *victim, int w_type);
-void appear(struct char_data *ch);
-void load_messages(void);
-void free_messages(void);
-void free_messages_type(struct msg_type *msg);
-void check_killer(struct char_data *ch, struct char_data *vict);
-void make_corpse(struct char_data *ch);
-void change_alignment(struct char_data *ch, struct char_data *victim);
-void death_cry(struct char_data *ch);
-void raw_kill(struct char_data * ch, struct char_data * killer);
-void die(struct char_data * ch, struct char_data * killer);
-void group_gain(struct char_data *ch, struct char_data *victim);
-void solo_gain(struct char_data *ch, struct char_data *victim);
-char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural);
-void perform_violence(void);
-int compute_armor_class(struct char_data *ch);
-int compute_thaco(struct char_data *ch, struct char_data *vict);
-
+/* locally defined global variables, used externally */
+/* head of l-list of fighting chars */
+struct char_data *combat_list = NULL; 
 /* Weapon attack texts */
 struct attack_hit_type attack_hit_text[] =
 {
-  {"hit", "hits"},		/* 0 */
+  {"hit", "hits"},    /* 0 */
   {"sting", "stings"},
   {"whip", "whips"},
   {"slash", "slashes"},
   {"bite", "bites"},
-  {"bludgeon", "bludgeons"},	/* 5 */
+  {"bludgeon", "bludgeons"},  /* 5 */
   {"crush", "crushes"},
   {"pound", "pounds"},
   {"claw", "claws"},
   {"maul", "mauls"},
-  {"thrash", "thrashes"},	/* 10 */
+  {"thrash", "thrashes"}, /* 10 */
   {"pierce", "pierces"},
   {"blast", "blasts"},
   {"punch", "punches"},
   {"stab", "stabs"}
 };
+
+/* local (file scope only) variables */
+static struct char_data *next_combat_list = NULL;
+
+/* local file scope utility functions */
+static void perform_group_gain(struct char_data *ch, int base, struct char_data *victim);
+static void dam_message(int dam, struct char_data *ch, struct char_data *victim, int w_type);
+static void free_messages_type(struct msg_type *msg);
+static void make_corpse(struct char_data *ch);
+static void change_alignment(struct char_data *ch, struct char_data *victim);
+static void group_gain(struct char_data *ch, struct char_data *victim);
+static void solo_gain(struct char_data *ch, struct char_data *victim);
+/** @todo refactor this function name */
+static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural);
+static int compute_thaco(struct char_data *ch, struct char_data *vict);
+
 
 #define IS_WEAPON(type) (((type) >= TYPE_HIT) && ((type) < TYPE_SUFFERING))
 /* The Fight related routines */
@@ -106,7 +95,7 @@ int compute_armor_class(struct char_data *ch)
   return (MAX(-100, armorclass));      /* -100 is lowest */
 }
 
-void free_messages_type(struct msg_type *msg)
+static void free_messages_type(struct msg_type *msg)
 {
   if (msg->attacker_msg)	free(msg->attacker_msg);
   if (msg->victim_msg)		free(msg->victim_msg);
@@ -257,7 +246,7 @@ void stop_fighting(struct char_data *ch)
   update_pos(ch);
 }
 
-void make_corpse(struct char_data *ch)
+static void make_corpse(struct char_data *ch)
 {
   char buf2[MAX_NAME_LENGTH + 64];
   struct obj_data *corpse, *o;
@@ -328,7 +317,7 @@ void make_corpse(struct char_data *ch)
 }
 
 /* When ch kills victim */
-void change_alignment(struct char_data *ch, struct char_data *victim)
+static void change_alignment(struct char_data *ch, struct char_data *victim)
 {
   /* new alignment change algorithm: if you kill a monster with alignment A,
    * you move 1/16th of the way to having alignment -A.  Simple and fast. */
@@ -363,10 +352,18 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   } else
     death_cry(ch);
 
+  if (killer)
+    autoquest_trigger_check(killer, ch, NULL, AQ_MOB_KILL);
+  
   update_pos(ch);
 
   make_corpse(ch);
   extract_char(ch);
+
+  if (killer) {
+    autoquest_trigger_check(killer, NULL, NULL, AQ_MOB_SAVE);
+    autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
+  }
 }
 
 void die(struct char_data * ch, struct char_data * killer)
@@ -379,7 +376,7 @@ void die(struct char_data * ch, struct char_data * killer)
   raw_kill(ch, killer);
 }
 
-void perform_group_gain(struct char_data *ch, int base,
+static void perform_group_gain(struct char_data *ch, int base,
 			     struct char_data *victim)
 {
   int share;
@@ -395,7 +392,7 @@ void perform_group_gain(struct char_data *ch, int base,
   change_alignment(ch, victim);
 }
 
-void group_gain(struct char_data *ch, struct char_data *victim)
+static void group_gain(struct char_data *ch, struct char_data *victim)
 {
   int tot_members, base, tot_gain;
   struct char_data *k;
@@ -433,7 +430,7 @@ void group_gain(struct char_data *ch, struct char_data *victim)
       perform_group_gain(f->follower, base, victim);
 }
 
-void solo_gain(struct char_data *ch, struct char_data *victim)
+static void solo_gain(struct char_data *ch, struct char_data *victim)
 {
   int exp;
 
@@ -456,7 +453,7 @@ void solo_gain(struct char_data *ch, struct char_data *victim)
   change_alignment(ch, victim);
 }
 
-char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural)
+static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural)
 {
   static char buf[256];
   char *cp = buf;
@@ -484,7 +481,7 @@ char *replace_string(const char *str, const char *weapon_singular, const char *w
 }
 
 /* message for doing damage with a weapon */
-void dam_message(int dam, struct char_data *ch, struct char_data *victim,
+static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
 		      int w_type)
 {
   char *buf;
@@ -856,7 +853,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 /* Calculate the THAC0 of the attacker. 'victim' currently isn't used but you 
  * could use it for special cases like weapons that hit evil creatures easier 
  * or a weapon that always misses attacking an animal. */
-int compute_thaco(struct char_data *ch, struct char_data *victim)
+static int compute_thaco(struct char_data *ch, struct char_data *victim)
 {
   int calc_thaco;
 

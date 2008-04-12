@@ -18,61 +18,18 @@
 #include "interpreter.h"
 #include "handler.h"
 #include "mail.h"
+#include "modify.h"
 
-/* external variables */
-extern int no_mail;
-extern struct player_index_element *player_table;
+/* local (file scope) function prototypes */
+static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
+static void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
+static void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
+static int mail_recip_ok(const char *name);
+static void write_mail_record(FILE *mail_file, struct mail_t *record);
+static void free_mail_record(struct mail_t *record);
+static struct mail_t *read_mail_record(FILE *mail_file);
 
-/* external functions */
-SPECIAL(postmaster);
-
-/* local functions */
-void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
-void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
-void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
-int mail_recip_ok(const char *name);
-void write_mail_record(FILE *mail_file, struct mail_t *record);
-
-char *decrypt_hex(char *string, size_t len)
-{
-	static char output[MAX_STRING_LENGTH];
-	char *p;
-	char *src = string;
-	int i;
-
-	p = output;
-	for (i = 0;i<len/2;++i) {
-		unsigned char hi = *src++;
-		unsigned char lo = *src++;
-		hi -= (hi<'A' ? '0' : 'A'-10);
-		lo -= (lo<'A' ? '0' : 'A'-10);
-		*p++ = (hi<<4) | (lo & 0x0F);
-  }
-  return output;
-}
-
-char *encrypt_hex(char *string, size_t len)
-{
-	static char output[MAX_STRING_LENGTH];
-	char *p;
-  char *src = string;
-  int i;
-
-	if (len == 0)
-		return "";
-
-  p = output;
-	for (i=0 ; i<len; i++) {
-    unsigned char lo=*src++;
-    unsigned char hi=lo>>4;
-    lo&=0x0F;
-    *p++ = hi+(hi>9 ? 'A'-10 : '0');
-    *p++ = lo+(lo>9 ? 'A'-10 : '0');
-  }
-  return output;
-}
-
-int mail_recip_ok(const char *name)
+static int mail_recip_ok(const char *name)
 {
   int player_i, ret = FALSE;
 
@@ -83,14 +40,14 @@ int mail_recip_ok(const char *name)
   return ret;
 }
 
-void free_mail_record(struct mail_t *record)
+static void free_mail_record(struct mail_t *record)
 {
 	if (record->body)
 		free(record->body);
   free(record);
 }
 
-struct mail_t *read_mail_record(FILE *mail_file)
+static struct mail_t *read_mail_record(FILE *mail_file)
 {
   char line[READ_SIZE];
   long sender, recipient;
@@ -100,7 +57,7 @@ struct mail_t *read_mail_record(FILE *mail_file)
   if (!get_line(mail_file, line))
   	return NULL;
 
-  if (sscanf(line, "### %ld %ld %ld", &recipient, &sender, &sent_time) != 3) {
+  if (sscanf(line, "### %ld %ld %ld", &recipient, &sender, (long *)&sent_time) != 3) {
   	log("Mail system - fatal error - malformed mail header");
   	log("Line was: %s", line);
   	return NULL;
@@ -116,13 +73,13 @@ struct mail_t *read_mail_record(FILE *mail_file)
   return record;
 }
 
-void write_mail_record(FILE *mail_file, struct mail_t *record)
+static void write_mail_record(FILE *mail_file, struct mail_t *record)
 {
 	fprintf(mail_file, "### %ld %ld %ld\n"
 	                   "%s~\n",
                      record->recipient,
                      record->sender,
-                     record->sent_time,
+                     (long)record->sent_time,
                      record->body );
 }
 
@@ -313,7 +270,7 @@ SPECIAL(postmaster)
     return (0);
 }
 
-void postmaster_send_mail(struct char_data *ch, struct char_data *mailman,
+static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman,
 			  int cmd, char *arg)
 {
   long recipient;
@@ -360,7 +317,7 @@ void postmaster_send_mail(struct char_data *ch, struct char_data *mailman,
   string_write(ch->desc, mailwrite, MAX_MAIL_SIZE, recipient, NULL);
 }
 
-void postmaster_check_mail(struct char_data *ch, struct char_data *mailman,
+static void postmaster_check_mail(struct char_data *ch, struct char_data *mailman,
 			  int cmd, char *arg)
 {
   if (has_mail(GET_IDNUM(ch)))
@@ -369,7 +326,7 @@ void postmaster_check_mail(struct char_data *ch, struct char_data *mailman,
     act("$n tells you, 'Sorry, you don't have any mail waiting.'", FALSE, mailman, 0, ch, TO_VICT);
 }
 
-void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
+static void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
 			  int cmd, char *arg)
 {
   char buf[256];

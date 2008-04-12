@@ -23,101 +23,30 @@
 #include "oasis.h"
 #include "dg_scripts.h"
 #include "shop.h"
+#include "act.h"
+#include "genzon.h" /* for real_zone_by_thing */
+#include "class.h"
+#include "genolc.h"
+#include "fight.h"
+#include "house.h"
+#include "modify.h"
+#include "quest.h"
 
-/* external vars */
-extern FILE *player_fl;
-extern struct attack_hit_type attack_hit_text[];
-extern char *class_abbrevs[];
-extern time_t boot_time;
-extern int circle_shutdown, circle_reboot;
-extern int circle_restrict;
-extern int buf_switches, buf_largecount, buf_overflows;
-extern int top_of_p_table;
-extern socket_t mother_desc;
-extern ush_int port;
-extern const char *pc_class_types[];
-extern int top_of_p_table;
-extern struct player_index_element *player_table;
+/* local utility functions with file scope */
+static int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *val_arg);
+static void perform_immort_invis(struct char_data *ch, int level);
+static void list_zone_commands_room(struct char_data *ch, room_vnum rvnum);
+static void do_stat_room(struct char_data *ch, struct room_data *rm);
+static void do_stat_object(struct char_data *ch, struct obj_data *j);
+static void do_stat_character(struct char_data *ch, struct char_data *k);
+static void stop_snooping(struct char_data *ch);
+static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int listall);
+static struct char_data *is_in_game(long idnum);
+static void mob_checkload(struct char_data *ch, mob_vnum mvnum);
+static void obj_checkload(struct char_data *ch, obj_vnum ovnum);
+static void trg_checkload(struct char_data *ch, trig_vnum tvnum);
+static void mod_llog_entry(struct last_entry *llast,int type);
 
-/* external functions */
-int level_exp(int chclass, int level);
-void show_shops(struct char_data *ch, char *value);
-void hcontrol_list_houses(struct char_data *ch, char *arg);
-void do_start(struct char_data *ch);
-void appear(struct char_data *ch);
-void reset_zone(zone_rnum zone);
-void roll_real_abils(struct char_data *ch);
-int parse_class(char arg);
-void run_autowiz(void);
-int save_all(void);
-zone_rnum real_zone_by_thing(room_vnum vznum);
-SPECIAL(shop_keeper);
-void Crash_rentsave(struct char_data * ch, int cost);
-void new_hist_messg(struct descriptor_data *d, const char *msg);
-void clearMemory(struct char_data *ch);
-int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_arg);
-struct time_info_data *real_time_passed(time_t t2, time_t t1);
-
-/* local functions */
-int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *val_arg);
-void perform_immort_invis(struct char_data *ch, int level);
-ACMD(do_echo);
-ACMD(do_send);
-room_rnum find_target_room(struct char_data *ch, char *rawroomstr);
-ACMD(do_at);
-ACMD(do_goto);
-ACMD(do_trans);
-ACMD(do_teleport);
-ACMD(do_vnum);
-void list_zone_commands_room(struct char_data *ch, room_vnum rvnum);
-void do_stat_room(struct char_data *ch, struct room_data *rm);
-void do_stat_object(struct char_data *ch, struct obj_data *j);
-void do_stat_character(struct char_data *ch, struct char_data *k);
-ACMD(do_stat);
-ACMD(do_shutdown);
-void stop_snooping(struct char_data *ch);
-ACMD(do_snoop);
-ACMD(do_switch);
-ACMD(do_return);
-ACMD(do_load);
-ACMD(do_vstat);
-ACMD(do_purge);
-ACMD(do_syslog);
-ACMD(do_advance);
-ACMD(do_restore);
-void perform_immort_vis(struct char_data *ch);
-ACMD(do_invis);
-ACMD(do_gecho);
-ACMD(do_poofset);
-ACMD(do_dc);
-ACMD(do_wizlock);
-ACMD(do_date);
-ACMD(do_last);
-ACMD(do_force);
-ACMD(do_wiznet);
-ACMD(do_zreset);
-ACMD(do_wizutil);
-size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int listall);
-ACMD(do_show);
-ACMD(do_set);
-void snoop_check(struct char_data *ch);
-ACMD(do_saveall);
-ACMD(do_zpurge);
-void clean_llog_entries(void);
-ACMD(do_list_llog_entries);
-struct char_data *is_in_game(long idnum);
-ACMD(do_links);
-void mob_checkload(struct char_data *ch, mob_vnum mvnum);
-void obj_checkload(struct char_data *ch, obj_vnum ovnum);
-void trg_checkload(struct char_data *ch, trig_vnum tvnum);
-ACMD(do_zcheck);
-ACMD(do_checkloadstatus);
-ACMD(do_poofs);
-ACMD(do_copyover);
-ACMD(do_peace);
-void mod_llog_entry(struct last_entry *llast,int type);
-ACMD(do_plist);
-ACMD(do_wizupdate);
 
 int purge_room(room_rnum room)
 {
@@ -431,7 +360,7 @@ ACMD(do_vnum)
 
 #define ZOCMD zone_table[zrnum].cmd[subcmd]
 
-void list_zone_commands_room(struct char_data *ch, room_vnum rvnum)
+static void list_zone_commands_room(struct char_data *ch, room_vnum rvnum)
 {
   zone_rnum zrnum = real_zone_by_thing(rvnum);
   room_rnum rrnum = real_room(rvnum), cmd_room = NOWHERE;
@@ -551,7 +480,7 @@ void list_zone_commands_room(struct char_data *ch, room_vnum rvnum)
 }
 #undef ZOCMD
 
-void do_stat_room(struct char_data *ch, struct room_data *rm)
+static void do_stat_room(struct char_data *ch, struct room_data *rm)
 {
   char buf2[MAX_STRING_LENGTH];
   struct extra_descr_data *desc;
@@ -638,7 +567,7 @@ void do_stat_room(struct char_data *ch, struct room_data *rm)
   list_zone_commands_room(ch, rm->number);
 }
 
-void do_stat_object(struct char_data *ch, struct obj_data *j)
+static void do_stat_object(struct char_data *ch, struct obj_data *j)
 {
   int i, found;
   obj_vnum vnum;
@@ -789,7 +718,7 @@ void do_stat_object(struct char_data *ch, struct obj_data *j)
   do_sstat_object(ch, j);
 }
 
-void do_stat_character(struct char_data *ch, struct char_data *k)
+static void do_stat_character(struct char_data *ch, struct char_data *k)
 {
   char buf[MAX_STRING_LENGTH];
   int i, i2, column, found = FALSE;
@@ -862,7 +791,9 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
 	  GET_GOLD(k), GET_BANK_GOLD(k), GET_GOLD(k) + GET_BANK_GOLD(k));
 
   if (!IS_NPC(k))
-    send_to_char(ch, "Questpoints: [%d]\r\n", GET_QUESTPOINTS(k));
+    send_to_char(ch, "Questpoints: [%d]    Screen %s[%s%d%sx%s%d%s]%s\r\n", GET_QUESTPOINTS(k),
+                      CCCYN(ch, C_NRM), CCYEL(ch, C_NRM), GET_SCREEN_WIDTH(k), CCNRM(ch, C_NRM),
+                      CCYEL(ch, C_NRM), GET_PAGE_LENGTH(k), CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
   
   send_to_char(ch, "AC: [%d%+d/10], Hitroll: [%2d], Damroll: [%2d], Saving throws: [%d/%d/%d/%d/%d]\r\n",
 	  GET_AC(k), dex_app[GET_DEX(k)].defensive, k->points.hitroll,
@@ -893,6 +824,12 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
 
     sprintbitarray(PRF_FLAGS(k), preference_bits, PR_ARRAY_MAX, buf);
     send_to_char(ch, "PRF: %s%s%s\r\n", CCGRN(ch, C_NRM), buf, CCNRM(ch, C_NRM));
+
+    send_to_char(ch, "Quest Points: [%9d] Quests Completed: [%5d]\r\n",
+       GET_QUESTPOINTS(ch), GET_NUM_QUESTS(ch));
+    if (GET_QUEST(ch) != NOTHING)
+      send_to_char(ch, "Current Quest: [%5d] Time Left: [%5d]\r\n",
+      GET_QUEST(ch), GET_QUEST_TIME(ch));
   }
 
   if (IS_MOB(k))
@@ -1120,7 +1057,8 @@ ACMD(do_shutdown)
     log("(GC) Reboot by %s.", GET_NAME(ch));
     send_to_all("Rebooting.. come back in a few minutes.\r\n");
     touch(FASTBOOT_FILE);
-    circle_shutdown = circle_reboot = 1;
+    circle_shutdown = 1;
+    circle_reboot = 2; /* do not autosave olc */
   } else if (!str_cmp(arg, "die")) {
     log("(GC) Shutdown by %s.", GET_NAME(ch));
     send_to_all("Shutting down for maintenance.\r\n");
@@ -1160,7 +1098,7 @@ void snoop_check(struct char_data *ch)
   }
 }
 
-void stop_snooping(struct char_data *ch)
+static void stop_snooping(struct char_data *ch)
 {
   if (!ch->desc->snooping)
     send_to_char(ch, "You aren't snooping anyone.\r\n");
@@ -1624,7 +1562,7 @@ void perform_immort_vis(struct char_data *ch)
   send_to_char(ch, "You are now fully visible.\r\n");
 }
 
-void perform_immort_invis(struct char_data *ch, int level)
+static void perform_immort_invis(struct char_data *ch, int level)
 {
   struct char_data *tch;
 
@@ -1857,7 +1795,7 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
 }
 
 /* mod_llog_entry assumes that llast is accurate */
-void mod_llog_entry(struct last_entry *llast,int type) {
+static void mod_llog_entry(struct last_entry *llast,int type) {
   FILE *fp;
   struct last_entry mlast;
   int size,recs,tmp;
@@ -1998,7 +1936,7 @@ ACMD(do_list_llog_entries) {
   }
 }
 
-struct char_data *is_in_game(long idnum) {
+static struct char_data *is_in_game(long idnum) {
   struct descriptor_data *i;
 
   for (i = descriptor_list; i; i = i->next) {
@@ -2382,7 +2320,7 @@ ACMD(do_wizutil)
 
 /* single zone printing fn used by "show zone" so it's not repeated in the
    code 3 times ... -je, 4/6/93 FIXME: overflow possible */
-size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int listall)
+static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int listall)
 {
   size_t tmp;
 
@@ -2592,8 +2530,8 @@ ACMD(do_show)
 	"  %5d mobiles          %5d prototypes\r\n"
 	"  %5d objects          %5d prototypes\r\n"
 	"  %5d rooms            %5d zones\r\n"
-        "  %5d triggers         %5d shops\r\n"
-      	"  %5d large bufs\r\n"
+  "  %5d triggers         %5d shops\r\n"
+  "  %5d large bufs       %5d autoquests\r\n"
 	"  %5d buf switches     %5d overflows\r\n",
 	i, con,
 	top_of_p_table + 1,
@@ -2601,7 +2539,7 @@ ACMD(do_show)
 	k, top_of_objt + 1,
 	top_of_world + 1, top_of_zone_table + 1,
 	top_of_trigt + 1, top_shop + 1,
-	buf_largecount,
+	buf_largecount, total_quests,
 	buf_switches, buf_overflows
 	);
     break;
@@ -2756,24 +2694,26 @@ ACMD(do_show)
    { "practices", 	LVL_GOD, 	PC, 	NUMBER },   /* 40 */
    { "quest",		LVL_GOD, 	PC, 	BINARY },
    { "room",		LVL_BUILDER, 	BOTH, 	NUMBER },
+   { "screenwidth", LVL_GOD,  PC,   NUMBER },
    { "sex", 		LVL_GOD, 	BOTH, 	MISC },
-   { "showvnums", 	LVL_BUILDER, 	PC,	BINARY },
-   { "siteok",		LVL_GOD, 	PC, 	BINARY },  /* 45 */
+   { "showvnums",  LVL_BUILDER,  PC, BINARY },  /* 45 */
+   { "siteok",   LVL_GOD,  PC,   BINARY },
    { "str",		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "stradd",		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "thief",		LVL_GOD, 	PC, 	BINARY },
-   { "thirst",		LVL_BUILDER, 	BOTH, 	MISC },
-   { "title",		LVL_GOD, 	PC, 	MISC   },  /* 50 */
+   { "thirst",		LVL_BUILDER, 	BOTH, 	MISC }, /* 50 */
+   { "title",		LVL_GOD, 	PC, 	MISC   }, 
    { "variable",        LVL_GRGOD,	PC,	MISC },
    { "weight",		LVL_BUILDER,	BOTH,	NUMBER },
    { "wis", 		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "questpoints",     LVL_GOD,        PC,     NUMBER },
+   { "questpoints",     LVL_GOD,        PC,     NUMBER }, /* 55 */
+   { "questhistory",    LVL_GOD,        PC,   NUMBER },
    { "\n", 0, BOTH, MISC }
   };
 
-int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *val_arg)
+static int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *val_arg)
 {
-  int i, on = 0, off = 0, value = 0;
+  int i, on = 0, off = 0, value = 0, qvnum;
   room_rnum rnum;
   room_vnum rvnum;
 
@@ -2859,7 +2799,8 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
       GET_CLASS(vict) = i;
       break;
     case 8:  /* color */
-      SET_OR_REMOVE(PRF_FLAGS(vict), (PRF_COLOR_1 | PRF_COLOR_2));
+      SET_OR_REMOVE(PRF_FLAGS(vict), (PRF_COLOR_1));
+      SET_OR_REMOVE(PRF_FLAGS(vict), (PRF_COLOR_2));
       break;
     case 9: /* con */
       if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
@@ -3086,20 +3027,23 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
         char_from_room(vict);
       char_to_room(vict, rnum);
       break;
-    case 43: /* sex */
+    case 43: /* screenwidth */
+      GET_SCREEN_WIDTH(vict) = RANGE(40, 200);
+      break;
+    case 44: /* sex */
       if ((i = search_block(val_arg, genders, FALSE)) < 0) {
         send_to_char(ch, "Must be 'male', 'female', or 'neutral'.\r\n");
         return (0);
       }
       GET_SEX(vict) = i;
       break;
-    case 44: /* showvnums */
+    case 45: /* showvnums */
       SET_OR_REMOVE(PRF_FLAGS(vict), PRF_SHOWVNUMS);
       break;
-    case 45: /* siteok */
+    case 46: /* siteok */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_SITEOK);
       break;
-    case 46: /* str */
+    case 47: /* str */
       if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
         RANGE(3, 25);
       else
@@ -3108,16 +3052,16 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
       vict->real_abils.str_add = 0;
       affect_total(vict);
       break;
-    case 47: /* stradd */
+    case 48: /* stradd */
       vict->real_abils.str_add = RANGE(0, 100);
       if (value > 0)
         vict->real_abils.str = 18;
       affect_total(vict);
       break;
-    case 48: /* thief */
+    case 49: /* thief */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_THIEF);
       break;
-    case 49: /* thirst */
+    case 50: /* thirst */
       if (!str_cmp(val_arg, "off")) {
         GET_COND(vict, THIRST) = -1;
         send_to_char(ch, "%s's thirst is now off.\r\n", GET_NAME(vict));
@@ -3131,18 +3075,18 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
         return (0);
       }
       break;
-  case 50: /* title */
+    case 51: /* title */
       set_title(vict, val_arg);
       send_to_char(ch, "%s's title is now: %s\r\n", GET_NAME(vict), GET_TITLE(vict));
       break;
-    case 51: /* variable */
+    case 52: /* variable */
       return perform_set_dg_var(ch, vict, val_arg);
       break;
-    case 52: /* weight */
+    case 53: /* weight */
       GET_WEIGHT(vict) = value;
       affect_total(vict);
       break;
-    case 53: /* wis */
+    case 54: /* wis */
       if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
         RANGE(3, 25);
       else
@@ -3150,9 +3094,26 @@ int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *va
       vict->real_abils.wis = value;
       affect_total(vict);
       break;
-    case 54: /* questpoints */
+    case 55: /* questpoints */
       GET_QUESTPOINTS(vict) = RANGE(0, 100000000);
       break;
+    case 56: /* questhistory */
+      qvnum = atoi(val_arg);
+      if (real_quest(qvnum) == NOTHING) {
+        send_to_char(ch, "That quest doesn't exist.\r\n");
+        return FALSE;
+      } else {
+        if (is_complete(vict, qvnum)) {
+          remove_completed_quest(vict, qvnum);
+          send_to_char(ch, "Quest %d removed from history for player %s.\r\n",
+     qvnum, GET_NAME(vict));
+        } else {
+          add_completed_quest(vict, qvnum);
+          send_to_char(ch, "Quest %d added to history for player %s.\r\n",
+     qvnum, GET_NAME(vict));
+        }
+        break;
+      }
     default:
       send_to_char(ch, "Can't set that!\r\n");
       return (0);
@@ -3676,7 +3637,7 @@ ACMD (do_zcheck)
         } /* for (k.. */
       } /* cycle directions */
 
-     if (ROOM_FLAGGED(i, ROOM_ATRIUM | ROOM_HOUSE | ROOM_HOUSE_CRASH | ROOM_OLC | ROOM_BFS_MARK))
+     if (ROOM_FLAGGED(i, ROOM_ATRIUM) || ROOM_FLAGGED(i, ROOM_HOUSE) || ROOM_FLAGGED(i, ROOM_HOUSE_CRASH) || ROOM_FLAGGED(i, ROOM_OLC) || ROOM_FLAGGED(i, ROOM_BFS_MARK))
          len += snprintf(buf + len, sizeof(buf) - len,
          "- Has illegal affection bits set (%s %s %s %s %s)\r\n",
                             ROOM_FLAGGED(i, ROOM_ATRIUM) ? "ATRIUM" : "",
@@ -3687,8 +3648,8 @@ ACMD (do_zcheck)
 
       if ((MIN_ROOM_DESC_LENGTH) && strlen(world[i].description)<MIN_ROOM_DESC_LENGTH && (found=1))
         len += snprintf(buf + len, sizeof(buf) - len,
-                        "- Room description is too short. (%4.4d of min. %d characters).\r\n",
-                             strlen(world[i].description), MIN_ROOM_DESC_LENGTH);
+          "- Room description is too short. (%4.4d of min. %d characters).\r\n",
+          (int)strlen(world[i].description), MIN_ROOM_DESC_LENGTH);
 
       if (strncmp(world[i].description, "   ", 3) && (found=1))
         len += snprintf(buf + len, sizeof(buf) - len,
@@ -3735,7 +3696,7 @@ ACMD (do_zcheck)
 
 }
 
-void mob_checkload(struct char_data *ch, mob_vnum mvnum)
+static void mob_checkload(struct char_data *ch, mob_vnum mvnum)
 {
   int cmd_no;
   zone_rnum zone;
@@ -3765,7 +3726,7 @@ void mob_checkload(struct char_data *ch, mob_vnum mvnum)
   }
 }
 
-void obj_checkload(struct char_data *ch, obj_vnum ovnum)
+static void obj_checkload(struct char_data *ch, obj_vnum ovnum)
 {
   int cmd_no;
   zone_rnum zone;
@@ -3837,7 +3798,7 @@ void obj_checkload(struct char_data *ch, obj_vnum ovnum)
   }  /*for zone...*/
 }
 
-void trg_checkload(struct char_data *ch, trig_vnum tvnum)
+static void trg_checkload(struct char_data *ch, trig_vnum tvnum)
 {
   int cmd_no, found = 0;
   zone_rnum zone;
@@ -3998,7 +3959,7 @@ ACMD(do_copyover)
    sprintf (buf, "\n\r *** COPYOVER by %s - please remain seated!\n\r", GET_NAME(ch));
 
    /* write boot_time as first line in file */
-   fprintf(fp, "%ld\n", boot_time);
+   fprintf(fp, "%ld\n", (long)boot_time);
 
    /* For each playing descriptor, save its state */
    for (d = descriptor_list; d ; d = d_next) {
@@ -4100,105 +4061,177 @@ ACMD(do_zpurge)
   }
 }
 
+/** Used to read and gather a bit of information about external log files while
+ * in game. 
+ * Makes use of the '@' color codes in the file status information.
+ * Some of the methods used are a bit wasteful (reading through the file 
+ * multiple times to gather diagnostic information), but it is
+ * assumed that the files read with this function will never be very large.
+ * Files to be read are assumed to exist and be readable and if they aren't, 
+ * log the name of the missing file.  
+ */
 ACMD(do_file)
 {
-  FILE *req_file;
-  int cur_line = 0, num_lines = 0, req_lines = 0, i, j, l;
-  char field[MAX_INPUT_LENGTH], value[MAX_INPUT_LENGTH], line[READ_SIZE];
-  char buf[MAX_STRING_LENGTH];
-  size_t len = 0, nlen;
+  /* Local variables */
+  int def_lines_to_read = 15;  /* Set the default num lines to be read. */
+  int max_lines_to_read = 300; /* Maximum number of lines to read. */
+  FILE *req_file;              /* Pointer to file to be read. */
+  size_t req_file_size = 0;    /* Size of file to be read. */
+  int req_file_lines = 0;      /* Number of total lines in file to be read. */
+  int lines_read = 0; /* Counts total number of lines read from the file. */
+  int req_lines = 0;  /* Number of lines requested to be displayed. */
+  int i, j;           /* Generic loop counters. */
+  int l;              /* Marks choice of file in fields array. */
+  char field[MAX_INPUT_LENGTH];  /* Holds users choice of file to be read. */
+  char value[MAX_INPUT_LENGTH];  /* Holds # lines to be read, if requested. */
+  char buf[MAX_STRING_LENGTH];   /* Display buffer for req_file. */
 
+  /* Defines which files are available to read. */
   struct file_struct {
-    char *cmd;
-    char level;
-    char *file;
+    char *cmd;          /* The 'name' of the file to view */
+    char level;         /* Minimum level needed to view. */
+    char *file;         /* The file location, relative to the working dir. */
+    int read_backwards; /* Should the file be read backwards by default? */
   } fields[] = {
-    { "bugs",           LVL_GOD,    "../lib/misc/bugs"},
-    { "typos",          LVL_GOD,    "../lib/misc/typos"},
-    { "ideas",          LVL_GOD,    "../lib/misc/ideas"},
-    { "xnames",         LVL_GOD,    "../lib/misc/xnames"},
-    { "levels",         LVL_GOD,    "../log/levels" },
-    { "rip",            LVL_GOD,    "../log/rip" },
-    { "players",        LVL_GOD,    "../log/newplayers" },
-    { "rentgone",       LVL_GOD,    "../log/rentgone" },
-    { "errors",         LVL_GOD,    "../log/errors" },
-    { "godcmds",        LVL_GOD,    "../log/godcmds" },
-    { "syslog",         LVL_GOD,    "../syslog" },
-    { "crash",          LVL_GOD,    "../syslog.CRASH" },
-    { "help",           LVL_GOD,    "../log/help" },
-    { "changelog",      LVL_GOD,    "../changelog" },
-    { "\n", 0, "\n" }
+    { "bugs",           LVL_GOD,    BUG_FILE,            TRUE},
+    { "typos",          LVL_GOD,    TYPO_FILE,           TRUE},
+    { "ideas",          LVL_GOD,    IDEA_FILE,           TRUE},
+    { "xnames",         LVL_GOD,    XNAME_FILE,          TRUE},
+    { "levels",         LVL_GOD,    LEVELS_LOGFILE,      TRUE},
+    { "rip",            LVL_GOD,    RIP_LOGFILE,         TRUE},
+    { "players",        LVL_GOD,    NEWPLAYERS_LOGFILE,  TRUE},
+    { "rentgone",       LVL_GOD,    RENTGONE_LOGFILE,    TRUE},
+    { "errors",         LVL_GOD,    ERRORS_LOGFILE,      TRUE},
+    { "godcmds",        LVL_GOD,    GODCMDS_LOGFILE,     TRUE},
+    { "syslog",         LVL_GOD,    SYSLOG_LOGFILE,      TRUE},
+    { "crash",          LVL_GOD,    CRASH_LOGFILE,       TRUE},
+    { "help",           LVL_GOD,    HELP_LOGFILE,        TRUE},
+    { "changelog",      LVL_GOD,    CHANGE_LOG_FILE,     FALSE},
+    { "deletes",        LVL_GOD,    DELETES_LOGFILE,     TRUE},
+    { "restarts",       LVL_GOD,    RESTARTS_LOGFILE,    TRUE},
+    { "usage",          LVL_GOD,    USAGE_LOGFILE,       TRUE},
+    { "badpws",         LVL_GOD,    BADPWS_LOGFILE,      TRUE},
+    { "olc",            LVL_GOD,    OLC_LOGFILE,         TRUE},
+    { "trigger",        LVL_GOD,    TRIGGER_LOGFILE,     TRUE},
+    { "\n", 0, "\n", FALSE } /* This must be the last entry */
   };
+
+   /* Initialize buffer */
+   buf[0] = '\0';
+   
+   /**/
+   /* End function variable set-up and initialization. */
 
    skip_spaces(&argument);
 
+   /* Display usage if no argument. */
    if (!*argument) {
-     send_to_char(ch, "USAGE: file <option> <num lines>\r\n\r\nFile options:\r\n");
+     send_to_char(ch, "USAGE: file <filename> <num lines>\r\n\r\nFile options:\r\n");
      for (j = 0, i = 0; fields[i].level; i++)
        if (fields[i].level <= GET_LEVEL(ch))
          send_to_char(ch, "%-15s%s\r\n", fields[i].cmd, fields[i].file);
      return;
    }
-
+   
+   /* Begin validity checks. Is the file choice valid and accessible? */
+   /**/
+   /* There are some arguments, deal with them. */
    two_arguments(argument, field, value);
-
+   
    for (l = 0; *(fields[l].cmd) != '\n'; l++)
+   {
      if (!strncmp(field, fields[l].cmd, strlen(field)))
-     break;
-
-   if(*(fields[l].cmd) == '\n') {
-     send_to_char(ch, "That is not a valid option!\r\n");
-     return;
+       break;
    }
-
-   if (GET_LEVEL(ch) < fields[l].level) {
-     send_to_char(ch, "You are not godly enough to view that file!\r\n");
+   
+   if(*(fields[l].cmd) == '\n') {
+     send_to_char(ch, "'%s' is not a valid file.\r\n", field);
      return;
    }
    
+   if (GET_LEVEL(ch) < fields[l].level) {
+     send_to_char(ch, "You have not achieved a high enough level to view '%s'.\r\n", 
+         fields[l].cmd);
+     return;
+   }
+   
+   /* Number of lines to view. Default is 15. */
    if(!*value)
-     req_lines = 15; /* Default is the last 15 lines. */
+     req_lines = def_lines_to_read;
+   else if (!isdigit(*value))
+   {
+     /* This check forces the requisite positive digit and prevents negative
+      * numbers of lines from being read. */
+     send_to_char(ch, "'%s' is not a valid number of lines to view.\r\n", value);
+     return;
+   }
    else
+   {
      req_lines = atoi(value);
-
+     /* Limit the maximum number of lines */
+     req_lines = MIN( req_lines, max_lines_to_read );
+   }
+ 
+   /* Must be able to access the file on disk. */
    if (!(req_file=fopen(fields[l].file,"r"))) {
+     send_to_char(ch, "The file %s can not be opened.\r\n", fields[l].file);
      mudlog(BRF, LVL_IMPL, TRUE,
             "SYSERR: Error opening file %s using 'file' command.",
             fields[l].file);
      return;
    }
+   /**/
+   /* End validity checks. From here on, the file should be viewable. */
+   
+   /* Diagnostic information about the file */
+   req_file_size = file_sizeof(req_file);
+   req_file_lines = file_numlines(req_file);
+   
+   snprintf( buf, sizeof(buf), 
+       "@gFile:@n %s@g; Min. Level to read:@n %d@g; File Location:@n %s@g\r\n"
+       "File size (bytes):@n %ld@g; Total num lines:@n %d\r\n",
+       fields[l].cmd, fields[l].level, fields[l].file, (long) req_file_size,
+       req_file_lines);
 
-   get_line(req_file, line);
-   while (!feof(req_file)) {
-     num_lines++;
-     get_line(req_file,line);
+   /* Should the file be 'headed' or 'tailed'? */
+   if ( (fields[l].read_backwards == TRUE) && (req_lines < req_file_lines) )
+   {
+     snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
+               "@gReading from the tail of the file.@n\r\n\r\n" );
+     lines_read = file_tail( req_file, buf, sizeof(buf), req_lines );
    }
-   rewind(req_file);
-
-   /* Limit the maximum number of lines to 300. */
-   req_lines = MIN(MIN(req_lines, num_lines), 300);
-
-   len = snprintf(buf, sizeof(buf), "Last %d lines of %s:\r\n", req_lines, fields[l].file);
-
-   if (req_lines == num_lines)
-     len += snprintf(buf + len, sizeof(buf) - len, "Top of file.\r\n");
-   get_line(req_file,line);
-   while (!feof(req_file)) {
-     cur_line++;
-     if(cur_line > (num_lines - req_lines)) {
-       nlen = snprintf(buf + len, sizeof(buf) - len, "%s\r\n", line);
-       if (len + nlen >= sizeof(buf) || nlen < 0)
-         break;
-       len += nlen;
-     }
-     get_line(req_file,line);
+   else
+   {
+     snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
+              "@gReading from the head of the file.@n\r\n\r\n" );
+     lines_read = file_head( req_file, buf, sizeof(buf), req_lines );
    }
+
+   /** Since file_head and file_tail will add the overflow message, we
+    * don't check for status here. */ 
+   if ( lines_read == req_file_lines )
+   {
+     /* We're reading the entire file */
+     snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
+         "\r\n@gEntire file returned (@n%d @glines).@n\r\n",
+         lines_read );
+   }
+   else if ( lines_read == max_lines_to_read )
+   {
+     snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
+         "\r\n@gMaximum number of @n%d @glines returned.@n\r\n",
+         lines_read );     
+   }
+   else
+   {
+     snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
+         "\r\n%d @glines returned.@n\r\n",
+         lines_read );
+   }
+
+   /* Clean up before return */
    fclose(req_file);
 
-   if (len >= sizeof(buf)) {
-     const char *overflow = "\r\n**OVERFLOW**\r\n";
-     strcpy(buf + sizeof(buf) - strlen(overflow) - 1, overflow); /* strcpy: OK */
-   }
    page_string(ch->desc, buf, 1);
 }
 

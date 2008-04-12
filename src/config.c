@@ -13,7 +13,10 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "interpreter.h"	/* alias_data definition for structs.h */
+#include "config.h"
+#include "asciimap.h"
 
 /* Update:  The following constants and variables are now the default values
  * for backwards compatibility with the new cedit game configurator.  If you
@@ -33,22 +36,7 @@
  * I've decided the convenience of having all your options in this one file 
  * outweighs the efficency of doing it the other way. */
 
-/* GAME PLAY OPTIONS */
-#if !defined(NO)
-#define NO 0
-#endif
-
-#if !defined(YES)
-#define YES 1
-#endif
-
-#if !defined(FALSE)
-#define FALSE 0
-#endif
-
-#if !defined(TRUE)
-#define TRUE  (!FALSE)
-#endif
+/* YES / NO; TRUE / FALSE are all defined in utils.h */
 
 /* pk_allowed sets the tone of the entire game.  If pk_allowed is set to NO, 
  * then players will not be allowed to kill, summon, charm, or sleep other 
@@ -302,3 +290,10 @@ int min_wizlist_lev = LVL_GOD;
 /* To mimic stock behavior set to NO. To allow mortals to see doors in exits
  * set to YES. */
 int display_closed_doors = YES;
+
+
+/* Automap and map options */
+/* Default is to have automap and map command only enabled for immortals */
+int map_option = MAP_IMM_ONLY;
+int default_map_size = 6;
+int default_minimap_size = 2;

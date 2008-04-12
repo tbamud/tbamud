@@ -8,6 +8,7 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
+/* needed by sysdep.h to allow for definition of <sys/stat.h> */
 #define __ACT_OTHER_C__
 
 #include "conf.h"
@@ -23,41 +24,19 @@
 #include "house.h"
 #include "constants.h"
 #include "dg_scripts.h"
+#include "act.h"
+#include "spec_procs.h"
+#include "class.h"
+#include "fight.h"
+#include "mail.h"  /* for has_mail() */
+#include "shop.h"
+#include "quest.h"
 
-/* extern variables */
-extern struct spell_info_type spell_info[];
-extern const char *class_abbrevs[];
+/* Local defined utility functions */
+/* do_group utility functions */
+static int perform_group(struct char_data *ch, struct char_data *vict);
+static void print_group(struct char_data *ch);
 
-/* extern functions */
-void list_skills(struct char_data *ch);
-void appear(struct char_data *ch);
-void perform_immort_vis(struct char_data *ch);
-SPECIAL(shop_keeper);
-ACMD(do_gen_comm);
-void die(struct char_data *ch, struct char_data * killer);
-void Crash_rentsave(struct char_data *ch, int cost);
-int has_mail(long id);
-
-/* local functions */
-ACMD(do_quit);
-ACMD(do_save);
-ACMD(do_not_here);
-ACMD(do_sneak);
-ACMD(do_hide);
-ACMD(do_steal);
-ACMD(do_practice);
-ACMD(do_visible);
-ACMD(do_title);
-int perform_group(struct char_data *ch, struct char_data *vict);
-void print_group(struct char_data *ch);
-ACMD(do_group);
-ACMD(do_ungroup);
-ACMD(do_report);
-ACMD(do_split);
-ACMD(do_use);
-ACMD(do_display);
-ACMD(do_gen_tog);
-ACMD(do_gen_write);
 
 ACMD(do_quit)
 {
@@ -74,6 +53,10 @@ ACMD(do_quit)
   } else {
     act("$n has left the game.", TRUE, ch, 0, 0, TO_ROOM);
     mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has quit the game.", GET_NAME(ch));
+
+    if (GET_QUEST_TIME(ch) != -1)
+      quest_timeout(ch);
+
     send_to_char(ch, "Goodbye, friend.. Come back soon!\r\n");
 
     /* We used to check here for duping attempts, but we may as well do it right
@@ -335,7 +318,7 @@ ACMD(do_title)
   }
 }
 
-int perform_group(struct char_data *ch, struct char_data *vict)
+static int perform_group(struct char_data *ch, struct char_data *vict)
 {
   if (AFF_FLAGGED(vict, AFF_GROUP) || !CAN_SEE(ch, vict))
     return (0);
@@ -348,7 +331,7 @@ int perform_group(struct char_data *ch, struct char_data *vict)
   return (1);
 }
 
-void print_group(struct char_data *ch)
+static void print_group(struct char_data *ch)
 {
   struct char_data *k;
   struct follow_type *f;

@@ -11,35 +11,21 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "db.h"
 #include "interpreter.h"
-#include "utils.h"
+#include "spec_procs.h"
+#include "ban.h" /* for SPECIAL(gen_board) */
+#include "boards.h"
+#include "mail.h"
 
-/* external globals */
-extern int mini_mud;
-
-/* external functions */
-SPECIAL(dump);
-SPECIAL(pet_shops);
-SPECIAL(postmaster);
-SPECIAL(receptionist);
-SPECIAL(cryogenicist);
-SPECIAL(guild);
-SPECIAL(mayor);
-SPECIAL(bank);
-SPECIAL(gen_board);
-void assign_kings_castle(void);
-
-/* local functions */
-void assign_mobiles(void);
-void assign_objects(void);
-void assign_rooms(void);
-void ASSIGNROOM(room_vnum room, SPECIAL(fname));
-void ASSIGNMOB(mob_vnum mob, SPECIAL(fname));
-void ASSIGNOBJ(obj_vnum obj, SPECIAL(fname));
+/* local (file scope only) functions */
+static void ASSIGNROOM(room_vnum room, SPECIAL(fname));
+static void ASSIGNMOB(mob_vnum mob, SPECIAL(fname));
+static void ASSIGNOBJ(obj_vnum obj, SPECIAL(fname));
 
 /* functions to perform assignments */
-void ASSIGNMOB(mob_vnum mob, SPECIAL(fname))
+static void ASSIGNMOB(mob_vnum mob, SPECIAL(fname))
 {
   mob_rnum rnum;
 
@@ -49,7 +35,7 @@ void ASSIGNMOB(mob_vnum mob, SPECIAL(fname))
     log("SYSERR: Attempt to assign spec to non-existant mob #%d", mob);
 }
 
-void ASSIGNOBJ(obj_vnum obj, SPECIAL(fname))
+static void ASSIGNOBJ(obj_vnum obj, SPECIAL(fname))
 {
   obj_rnum rnum;
 
@@ -59,7 +45,7 @@ void ASSIGNOBJ(obj_vnum obj, SPECIAL(fname))
     log("SYSERR: Attempt to assign spec to non-existant obj #%d", obj);
 }
 
-void ASSIGNROOM(room_vnum room, SPECIAL(fname))
+static void ASSIGNROOM(room_vnum room, SPECIAL(fname))
 {
   room_rnum rnum;
 

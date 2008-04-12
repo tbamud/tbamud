@@ -4,13 +4,13 @@
 *  All Rights Reserved                                                    *
 ************************************************************************* */
 
-#include "../conf.h"
-#include "../sysdep.h"
+#include "conf.h"
+#include "sysdep.h"
 
-#include "../structs.h"
-#include "../utils.h"
-#include "../db.h"
-#include "../pfdefaults.h"
+#include "structs.h"
+#include "utils.h"
+#include "db.h"
+#include "pfdefaults.h"
 
 
 // first some stock circle 3.0 defines. Change where appropriate.
@@ -188,7 +188,7 @@ void convert(char *filename)
 
     fprintf(index_file, "%ld %s %d 0 %ld\n", 
 	player.char_specials_saved.idnum, bits, player.level,
-	player.last_logon);
+	(long)player.last_logon);
 
     if (!(outfile = fopen(outname, "w"))) {
       printf("error opening output file");

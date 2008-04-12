@@ -1,12 +1,16 @@
-/**************************************************************************
-*  File: constants.h                                       Part of tbaMUD *
-*  Usage: Header file for constants.                                      *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+/**
+* @file constants.h
+* Declares the global constants defined in constants.c.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*/
+#ifndef _CONSTANTS_H_
+#define _CONSTANTS_H_
 
 extern const char *tbamud_version;
 extern const char *oasisolc_version;
@@ -53,3 +57,5 @@ extern size_t action_bits_count;
 extern size_t affected_bits_count;
 extern size_t extra_bits_count;
 extern size_t wear_bits_count;
+
+#endif /* _CONSTANTS_H_ */

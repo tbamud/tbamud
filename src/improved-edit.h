@@ -1,8 +1,14 @@
-/**************************************************************************
-*  File: improved-edit.h                                   Part of tbaMUD *
-*                                                                         *
-*  Usage: The basic and improved editor.                                  *
-**************************************************************************/
+/**
+* @file improved-edit.h
+* The basic and improved editor.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+* 
+* This set of code was not originally part of the circlemud distribution.                                                                                       
+*/
+#ifndef _IMPROVED_EDIT_H_
+#define _IMPROVED_EDIT_H_
 
 /* This is here to allow different code for the basic and improved editor. If 
  * you do not wish to use the improved editor, put #if 0 below, otherwise you 
@@ -35,3 +41,5 @@ void send_editor_help(struct descriptor_data *d);
 
 /* Settings for formatter. */
 #define FORMAT_INDENT	(1 << 0)
+
+#endif /* _IMPROVED_EDIT_H_ */

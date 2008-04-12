@@ -79,7 +79,10 @@ Dep_circledexe = \
    spec_procs.obj\
    spec_assign.obj\
    utils.obj\
-   weather.obj
+   weather.obj\
+   quest.obj\
+   qedit.obj\
+   genqst.obj
 
 circle.exe : $(Dep_circledexe)
   $(TLINK32) @&&|
@@ -120,7 +123,10 @@ spell_parser.obj+
 spec_procs.obj+
 spec_assign.obj+
 utils.obj+
-weather.obj
+weather.obj+
+quest.obj+
+qedit.obj+
+genqst.obj
 $<,$*
 C:\BORLAND\BCC55\LIB\import32.lib+
 C:\BORLAND\BCC55\LIB\cw32i.lib
@@ -304,6 +310,21 @@ utils.obj :  utils.c
 weather.obj :  weather.c
   $(BCC32) -P- -c @&&|
  $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ weather.c
+|
+
+quest.obj :  quest.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ quest.c
+|
+
+qedit.obj :  qedit.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ qedit.c
+|
+
+genqst.obj :  genqst.c
+  $(BCC32) -P- -c @&&|
+ $(CompOptsAt_circledexe) $(CompInheritOptsAt_circledexe) -o$@ genqst.c
 |
 
 # Compiler configuration file

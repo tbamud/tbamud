@@ -25,14 +25,17 @@
 #include "dg_olc.h"
 #include "constants.h"
 #include "interpreter.h"
+#include "act.h"        /* for the space_to_minus function */
+#include "modify.h"      /* for smash_tilde */
+#include "quest.h"
 
-int save_config( IDXTYPE nowhere );        /* Exported from cedit.c */
-
+/* Global variables defined here, used elsewhere */
 /* List of zones to be saved. */
 struct save_list_data *save_list;
 
+/* Local (file scope) variables */
 /* Structure defining all known save types. */
-struct {
+static struct {
   int save_type;
   int (*func)(IDXTYPE rnum);
   const char *message;
@@ -43,10 +46,26 @@ struct {
   { SL_WLD, save_rooms, "room" },
   { SL_ZON, save_zone, "zone" },
   { SL_CFG, save_config, "config" },
+  { SL_QST, save_quests, "quest" },
   { SL_ACT, NULL, "social" },
   { SL_HLP, NULL, "help" },
   { -1, NULL, NULL },
 };
+/* for Zone Export */
+static int zone_exits = 0;
+
+/* Local (file scope) functions */
+/* Zone export functions */
+static int export_save_shops(zone_rnum zrnum);
+static int export_save_mobiles(zone_rnum rznum);
+static int export_save_zone(zone_rnum zrnum);
+static int export_save_objects(zone_rnum zrnum);
+static int export_save_rooms(zone_rnum zrnum);
+static int export_save_triggers(zone_rnum zrnum);
+static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd);
+static void export_script_save_to_disk(FILE *fp, void *item, int type);
+static int export_info_file(zone_rnum zrnum);
+
 
 int genolc_checkstring(struct descriptor_data *d, char *arg)
 {
@@ -57,6 +76,20 @@ int genolc_checkstring(struct descriptor_data *d, char *arg)
 char *str_udup(const char *txt)
 {
   return strdup((txt && *txt) ? txt : "undefined");
+}
+
+char *str_udupnl(const char *txt)
+{
+  char *str = NULL, undef[] = "undefined";
+  const char *ptr = NULL;
+
+  ptr = (txt && *txt) ? txt : undef;
+  CREATE(str, char, strlen(ptr) + 3);
+
+  strlcpy(str, ptr, strlen(ptr));
+  strcat(str, "\r\n");
+
+  return str;
 }
 
 /* Original use: to be called at shutdown time. */
@@ -244,67 +277,109 @@ int sprintascii(char *out, bitvector_t bits)
   return j;
 }
 
-/* Zone export functions */
-int export_save_shops(zone_rnum zrnum);
-int export_save_mobiles(zone_rnum rznum);
-int export_save_zone(zone_rnum zrnum);
-int export_save_objects(zone_rnum zrnum);
-int export_save_rooms(zone_rnum zrnum);
-int export_save_triggers(zone_rnum zrnum);
-int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd);
-void export_script_save_to_disk(FILE *fp, void *item, int type);
-int export_info_file(zone_rnum zrnum);
-static int zone_exits = 0;
-ACMD(do_export_zone);
-
-ACMD(do_export_zone)
-{
-  zone_rnum zrnum;
-  zone_vnum zvnum;
-  char sysbuf[MAX_INPUT_LENGTH];
-  char fn[MAX_INPUT_LENGTH], *f;
-  void space_to_minus(char *str);
-
-  if (IS_NPC(ch) || GET_LEVEL(ch) < LVL_IMPL)
-    return;
-
-  skip_spaces(&argument);
-  zvnum = atoi(argument);
-  zrnum = real_zone(zvnum);
-
-  if (zrnum == NOWHERE) {
-    send_to_char(ch, "Export which zone?\r\n");
-    return;
-  }
-
-  if (!export_info_file(zrnum))
-    send_to_char(ch, "Info file not saved!\r\n");
-  if (!export_save_shops(zrnum))
-    send_to_char(ch, "Shops not saved!\r\n");
-  if (!export_save_mobiles(zrnum))
-    send_to_char(ch, "Mobiles not saved!\r\n");
-  if (!export_save_objects(zrnum))
-    send_to_char(ch, "Objects not saved!\r\n");
-  if (!export_save_zone(zrnum))
-    send_to_char(ch, "Zone info not saved!\r\n");
-  if (!export_save_rooms(zrnum))
-    send_to_char(ch, "Rooms not saved!\r\n");
-  if (!export_save_triggers(zrnum))
-    send_to_char(ch, "Triggers not saved!\r\n");
-
-  send_to_char(ch, "Files saved to /lib/world/export.\r\n");
-  snprintf(fn, sizeof(fn), "%d_%s.tgz", zvnum, zone_table[zrnum].name);
-  f = fn;
-  space_to_minus(f);
-  snprintf(sysbuf, sizeof(sysbuf),
-           LIB_ETC "export_script.sh %s &",
-           fn);
-  system(sysbuf);
-  send_to_char(ch, "Files tar'ed to \"%s\"\r\n", fn);
-
+/* converts illegal filename chars into appropriate equivalents */ 
+char *fix_filename(char *str) 
+{ 
+  static char good_file_name[MAX_STRING_LENGTH]; 
+  char *index = good_file_name; 
+ 
+  while(*str) { 
+    switch(*str) { 
+      case ' ': *index = '_'; index++; break; 
+      case '(': *index = '{'; index++; break; 
+      case ')': *index = '}'; index++; break; 
+ 
+      /* skip the following */ 
+      case '\'':             break; 
+      case '"':              break; 
+ 
+      /* Legal character */ 
+      default: *index = *str;  index++;break; 
+    } 
+    str++; 
+  } 
+  *index = '\0'; 
+ 
+  return good_file_name; 
 }
 
-int export_info_file(zone_rnum zrnum)
+/* Export command by Kyle */ 
+ACMD(do_export_zone) 
+{ 
+  zone_rnum zrnum; 
+  zone_vnum zvnum; 
+  char sysbuf[MAX_INPUT_LENGTH]; 
+  char zone_name[MAX_INPUT_LENGTH], *f; 
+  int success; 
+
+  /* system command locations are relative to 
+   * where the binary IS, not where it was run 
+   * from, thus we act like we are in the bin 
+   * folder, because we are*/ 
+  char *path = "../lib/world/export/"; 
+
+  if (IS_NPC(ch) || GET_LEVEL(ch) < LVL_IMPL) 
+    return; 
+
+  skip_spaces(&argument); 
+  zvnum = atoi(argument); 
+  zrnum = real_zone(zvnum); 
+
+  if (zrnum == NOWHERE) { 
+    send_to_char(ch, "Export which zone?\r\n"); 
+    return; 
+  } 
+
+  /* If we fail, it might just be because the 
+   *   directory didn't exist.  Can't hurt to try 
+   *     again. Do it silently though ( no logs ). */ 
+  if (!export_info_file(zrnum)) { 
+    sprintf(sysbuf, "mkdir %s", path); 
+    system(sysbuf); 
+  } 
+						      
+  if (!(success = export_info_file(zrnum))) 
+    send_to_char(ch, "Info file not saved!\r\n"); 
+  if (!(success = export_save_shops(zrnum))) 
+    send_to_char(ch, "Shops not saved!\r\n"); 
+  if (!(success = export_save_mobiles(zrnum))) 
+    send_to_char(ch, "Mobiles not saved!\r\n"); 
+  if (!(success = export_save_objects(zrnum))) 
+    send_to_char(ch, "Objects not saved!\r\n"); 
+  if (!(success = export_save_zone(zrnum))) 
+    send_to_char(ch, "Zone info not saved!\r\n"); 
+  if (!(success = export_save_rooms(zrnum))) 
+    send_to_char(ch, "Rooms not saved!\r\n"); 
+  if (!(success = export_save_triggers(zrnum))) 
+    send_to_char(ch, "Triggers not saved!\r\n"); 
+
+  /* If anything went wrong, don't try to tar the files. */ 
+  if (success) { 
+    send_to_char(ch, "Individual files saved to /lib/world/export.\r\n"); 
+    snprintf(zone_name, sizeof(zone_name), "%s", zone_table[zrnum].name); 
+  } else { 
+    send_to_char(ch, "Ran into problems writing to files.\r\n"); 
+    return; 
+  }
+  /* Make sure the name of the zone doesn't make the filename illegal. */ 
+  f = fix_filename(zone_name); 
+
+  /* Remove the old copy. */ 
+  sprintf(sysbuf, "rm %s%s.tar.gz", path, f); 
+  system(sysbuf); 
+
+  /* Tar the new copy. */ 
+  sprintf(sysbuf, "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg", path, f, path, path, path, path, path, path); 
+  system(sysbuf); 
+
+  /* Gzip it. */ 
+  sprintf(sysbuf, "gzip %s%s.tar", path, f); 
+  system(sysbuf); 
+
+  send_to_char(ch, "Files tar'ed to \"%s%s.tar.gz\"\r\n", path, f); 
+}
+
+static int export_info_file(zone_rnum zrnum)
 {
   int i;
   FILE *info_file;
@@ -312,7 +387,7 @@ int export_info_file(zone_rnum zrnum)
   if (!(info_file = fopen("world/export/qq.info", "w"))) {
     mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_info_file : Cannot open file!");
     return FALSE;
-  } else if (fprintf(info_file, "CircleMUD v3.1 Area file.\n") < 0) {
+  } else if (fprintf(info_file, "tbaMUD Area file.\n") < 0) {
     mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_info_file: Cannot write to file!");
     fclose(info_file);
     return FALSE;
@@ -357,26 +432,26 @@ int export_info_file(zone_rnum zrnum)
     zone_exits = 0;
   } else {
     fprintf(info_file, "2. This area doesn't have any exits _out_ of the zone.\n");
-    fprintf(info_file, "   More info on connections in the zone description room.\n");
+    fprintf(info_file, "   More info on connections can be found in the zone description room (QQ00).\n");
   }
 
   fprintf(info_file, "\nAdditional zone information is available in the zone description room QQ00.\n");
   fprintf(info_file, "The Builder's Academy is maintaining and improving these zones. Any typo or\n");
-  fprintf(info_file, "bug reports should be reported to rumble@builderacademy.net or stop by The Builder Academy\n");
-  fprintf(info_file, "port telnet://builderacademy.net:9091\n");
+  fprintf(info_file, "bug reports should be reported to rumble@tbamud.com or stop by The Builder Academy\n");
+  fprintf(info_file, "port telnet://tbamud.com:9091\n");
   fprintf(info_file, "\nAnyone interested in submitting areas or helping improve the existing ones\n");
   fprintf(info_file, "please stop by TBA and talk to Rumble.\n\n");
   fprintf(info_file, "We at The Builder's Academy hope you will enjoy using the area.\n\n");
 
   fprintf(info_file, "Rumble - Admin of TBA\n");
   fprintf(info_file, "Welcor - Coder of TBA\n");
-  fprintf(info_file, "\ntelnet://builderacademy.net:9091/\n");
+  fprintf(info_file, "\ntelnet://tbamud.com:9091/\n");
 
   fclose(info_file);
   return TRUE;
 }
 
-int export_save_shops(zone_rnum zrnum)
+static int export_save_shops(zone_rnum zrnum)
 {
   int i, j, rshop;
   FILE *shop_file;
@@ -466,7 +541,7 @@ int export_save_shops(zone_rnum zrnum)
   return TRUE;
 }
 
-int export_save_mobiles(zone_rnum rznum)
+static int export_save_mobiles(zone_rnum rznum)
 {
   FILE *mob_file;
   mob_vnum i;
@@ -490,7 +565,7 @@ int export_save_mobiles(zone_rnum rznum)
   return TRUE;
 }
 
-int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
+static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 {
 
   char ldesc[MAX_STRING_LENGTH];
@@ -538,7 +613,7 @@ int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
   return TRUE;
 }
 
-int export_save_zone(zone_rnum zrnum)
+static int export_save_zone(zone_rnum zrnum)
 {
   int subcmd;
   FILE *zone_file;
@@ -665,7 +740,7 @@ int export_save_zone(zone_rnum zrnum)
   return TRUE;
 }
 
-int export_save_objects(zone_rnum zrnum)
+static int export_save_objects(zone_rnum zrnum)
 {
   char buf[MAX_STRING_LENGTH];
   char ebuf1[MAX_STRING_LENGTH], ebuf2[MAX_STRING_LENGTH], ebuf3[MAX_STRING_LENGTH], ebuf4[MAX_STRING_LENGTH];
@@ -776,7 +851,7 @@ int export_save_objects(zone_rnum zrnum)
   return TRUE;
 }
 
-int export_save_rooms(zone_rnum zrnum)
+static int export_save_rooms(zone_rnum zrnum)
 {
   int i;
   struct room_data *room;
@@ -891,7 +966,7 @@ int export_save_rooms(zone_rnum zrnum)
   return TRUE;
 }
 
-void export_script_save_to_disk(FILE *fp, void *item, int type)
+static void export_script_save_to_disk(FILE *fp, void *item, int type)
 {
   struct trig_proto_list *t;
 
@@ -914,7 +989,7 @@ void export_script_save_to_disk(FILE *fp, void *item, int type)
 }
 
 /* save the zone's triggers to internal memory and to disk */
-int export_save_triggers(zone_rnum zrnum)
+static int export_save_triggers(zone_rnum zrnum)
 {
   int i;
   trig_data *trig;

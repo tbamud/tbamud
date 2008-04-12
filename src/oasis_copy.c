@@ -24,22 +24,9 @@
 #include "constants.h"
 #include "dg_scripts.h"
 
-/* Internal Functions */
-ACMD(do_dig);
-room_vnum redit_find_new_vnum(zone_rnum zone);
-int buildwalk(struct char_data *ch, int dir);
-
-/* External Functions */
-void trigedit_save(struct descriptor_data *d);
-void redit_save_internally(struct descriptor_data *d);
-void oedit_save_internally(struct descriptor_data *d);
-void medit_save_internally(struct descriptor_data *d);
-void sedit_save_internally(struct descriptor_data *d);
-void trigedit_setup_existing(struct descriptor_data *d, int rnum);
-void redit_setup_existing(struct descriptor_data *d, int rnum);
-void oedit_setup_existing(struct descriptor_data *d, int rnum);
-void medit_setup_existing(struct descriptor_data *d, int rnum);
-void sedit_setup_existing(struct descriptor_data *d, int rnum);
+/* Local, filescope function prototypes */
+/* Utility function for buildwalk */
+static room_vnum redit_find_new_vnum(zone_rnum zone);
 
 
 /***********************************************************
@@ -302,7 +289,7 @@ ACMD(do_dig)
 
 /* BuildWalk - OasisOLC Extension by D. Tyler Barnes. */
 /* For buildwalk. Finds the next free vnum in the zone */
-room_vnum redit_find_new_vnum(zone_rnum zone)
+static room_vnum redit_find_new_vnum(zone_rnum zone)
 {
   room_vnum vnum = genolc_zone_bottom(zone);
   room_rnum rnum = real_room(vnum);

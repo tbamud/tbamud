@@ -1,13 +1,16 @@
-/**************************************************************************
-*  File: handler.h                                         Part of tbaMUD *
-*                                                                         *
-*  Usage: header file: prototypes of handling and utility functions       *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+/**
+* @file handler.h
+* Prototypes of handling and utility functions.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*/
+#ifndef _HANDLER_H_
+#define _HANDLER_H_
 
 /* handling the affected-structures */
 void	affect_total(struct char_data *ch);
@@ -41,6 +44,8 @@ void	obj_from_obj(struct obj_data *obj);
 void	object_list_new_owner(struct obj_data *list, struct char_data *ch);
 
 void	extract_obj(struct obj_data *obj);
+
+void update_char_objects(struct char_data *ch);
 
 /* characters*/
 struct char_data *get_char_room(char *name, int *num, room_rnum room);
@@ -85,28 +90,15 @@ int	generic_find(char *arg, bitvector_t bitvector, struct char_data *ch,
 #define FIND_OBJ_EQUIP     (1 << 5)
 
 
-/* prototypes from crash save system */
-int	Crash_delete_file(char *name);
-int	Crash_delete_crashfile(struct char_data *ch);
-int	Crash_clean_file(char *name);
-void	Crash_listrent(struct char_data *ch, char *name);
-int	Crash_load(struct char_data *ch);
-void	Crash_crashsave(struct char_data *ch);
-void	Crash_idlesave(struct char_data *ch);
-void	Crash_save_all(void);
+/* prototypes from mobact.c */
+void forget(struct char_data *ch, struct char_data *victim);
+void remember(struct char_data *ch, struct char_data *victim);
+void mobile_activity(void);
+void clearMemory(struct char_data *ch);
 
-/* prototypes from fight.c */
-void	set_fighting(struct char_data *ch, struct char_data *victim);
-void	stop_fighting(struct char_data *ch);
-void	hit(struct char_data *ch, struct char_data *victim, int type);
-void	forget(struct char_data *ch, struct char_data *victim);
-void	remember(struct char_data *ch, struct char_data *victim);
-int	damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype);
-int	skill_message(int dam, struct char_data *ch, struct char_data *vict,
-		      int attacktype);
 
 /* For new last command: */
-#define LAST_FILE LIB_ETC"last"
+#define LAST_FILE LIB_ETC       "last"
 
 #define LAST_CONNECT            0
 #define LAST_ENTER_GAME         1
@@ -132,3 +124,5 @@ struct last_entry {
 
 void add_llog_entry(struct char_data *ch, int type);
 struct last_entry *find_llog_entry(int punique, long idnum);
+
+#endif /* _HANDLER_H_ */

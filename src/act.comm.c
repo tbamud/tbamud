@@ -19,22 +19,13 @@
 #include "screen.h"
 #include "improved-edit.h"
 #include "dg_scripts.h"
+#include "act.h"
+#include "modify.h"
 
-/* local functions */
-void perform_tell(struct char_data *ch, struct char_data *vict, char *arg);
-int is_tell_ok(struct char_data *ch, struct char_data *vict);
-ACMD(do_say);
-ACMD(do_gsay);
-ACMD(do_tell);
-ACMD(do_reply);
-ACMD(do_spec_comm);
-ACMD(do_write);
-ACMD(do_page);
-ACMD(do_gen_comm);
-ACMD(do_qcomm);
-void handle_webster_file(void);
-
-static long last_webster_teller = -1L;
+/* prototypes of local functions */
+/* do_tell utility functions */
+static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg);
+static int is_tell_ok(struct char_data *ch, struct char_data *vict);
 
 ACMD(do_say)
 {
@@ -102,7 +93,7 @@ ACMD(do_gsay)
   }
 }
 
-void perform_tell(struct char_data *ch, struct char_data *vict, char *arg)
+static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg)
 {
   char buf[MAX_STRING_LENGTH], *msg;
 
@@ -122,7 +113,7 @@ void perform_tell(struct char_data *ch, struct char_data *vict, char *arg)
     GET_LAST_TELL(vict) = GET_IDNUM(ch);
 }
 
-int is_tell_ok(struct char_data *ch, struct char_data *vict)
+static int is_tell_ok(struct char_data *ch, struct char_data *vict)
 {
   if (ch == vict)
     send_to_char(ch, "You try to tell yourself something.\r\n");
@@ -471,7 +462,6 @@ ACMD(do_gen_comm)
   }
 
   if (subcmd == SCMD_GEMOTE) {
-    ACMD(do_gmote);
     if (*argument == '*')
       do_gmote(ch, argument + 1, 0, 1);
     else
@@ -580,40 +570,3 @@ ACMD(do_qcomm)
   }
 }
 
-void handle_webster_file(void) {
-  FILE *fl;
-  struct char_data *ch = find_char(last_webster_teller);
-  char info[MAX_STRING_LENGTH], line[READ_SIZE];
-  size_t len = 0, nlen = 0;
-
-  last_webster_teller = -1L;
-
-  if (!ch) /* they quit ? */
-    return;
-
-  fl = fopen("websterinfo", "r");
-  if (!fl) {
-    send_to_char(ch, "It seems Merriam-Webster is offline..\r\n");
-    return;
-  }
-
-  unlink("websterinfo");
-
-  get_line(fl, line);
-  while (!feof(fl)) {
-    nlen = snprintf(info + len, sizeof(info) - len, "%s\r\n", line);
-    if (len + nlen >= sizeof(info) || nlen < 0)
-      break;
-    len += nlen;
-    get_line(fl, line);
-  }
-
-  if (len >= sizeof(info)) {
-    const char *overflow = "\r\n**OVERFLOW**\r\n";
-    strcpy(info + sizeof(info) - strlen(overflow) - 1, overflow); /* strcpy: OK */
-  }
-  fclose(fl);
-
-  send_to_char(ch, "You get this feedback from Merriam-Webster:\r\n");
-  page_string(ch->desc, info, 1);
-}

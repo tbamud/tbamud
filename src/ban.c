@@ -8,6 +8,8 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
+#define __BAN_C__
+
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
@@ -16,22 +18,21 @@
 #include "interpreter.h"
 #include "handler.h"
 #include "db.h"
+#include "ban.h"
 
-/* local globals */
+/* global variables locally defined, used externally */
 struct ban_list_element *ban_list = NULL;
+int num_invalid = 0;
 
-/* local functions */
-void load_banned(void);
-int isbanned(char *hostname);
-void _write_one_node(FILE *fp, struct ban_list_element *node);
-void write_ban_list(void);
-ACMD(do_ban);
-ACMD(do_unban);
-int valid_name(char *newname);
-void read_invalid_list(void);
-void free_invalid_list(void);
+/* Local (file) scope variables */
+#define MAX_INVALID_NAMES 200
+static char *invalid_list[MAX_INVALID_NAMES];
 
-const char *ban_types[] = {
+/* local utility functions */
+static void write_ban_list(void);
+static void _write_one_node(FILE *fp, struct ban_list_element *node);
+
+static const char *ban_types[] = {
   "no",
   "new",
   "select",
@@ -95,7 +96,7 @@ int isbanned(char *hostname)
   return (i);
 }
 
-void _write_one_node(FILE *fp, struct ban_list_element *node)
+static void _write_one_node(FILE *fp, struct ban_list_element *node)
 {
   if (node) {
     _write_one_node(fp, node->next);
@@ -104,7 +105,7 @@ void _write_one_node(FILE *fp, struct ban_list_element *node)
   }
 }
 
-void write_ban_list(void)
+static void write_ban_list(void)
 {
   FILE *fl;
 
@@ -224,11 +225,9 @@ ACMD(do_unban)
   write_ban_list();
 }
 
-/* Check for invalid names (i.e., profanity, etc.) Written by Sharon P Garza. */
-#define MAX_INVALID_NAMES	200
-char *invalid_list[MAX_INVALID_NAMES];
-int num_invalid = 0;
 
+
+/* Check for invalid names (i.e., profanity, etc.) Written by Sharon P Garza. */
 int valid_name(char *newname)
 {
   int i, vowels = 0;

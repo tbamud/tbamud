@@ -8,9 +8,9 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
-#include "utils.h"
 #include "db.h"
 #include "constants.h"
 #include "genolc.h"
@@ -24,16 +24,16 @@
 #define MAX_DUPLICATES 100
 
 /* local functions */
-int start_change_command(struct descriptor_data *d, int pos);
-void zedit_setup(struct descriptor_data *d, int room_num);
-void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top);
-void zedit_save_internally(struct descriptor_data *d);
-void zedit_save_to_disk(int zone_num);
-void zedit_disp_menu(struct descriptor_data *d);
-void zedit_disp_comtype(struct descriptor_data *d);
-void zedit_disp_arg1(struct descriptor_data *d);
-void zedit_disp_arg2(struct descriptor_data *d);
-void zedit_disp_arg3(struct descriptor_data *d);
+static int start_change_command(struct descriptor_data *d, int pos);
+static void zedit_setup(struct descriptor_data *d, int room_num);
+static void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top);
+static void zedit_save_internally(struct descriptor_data *d);
+static void zedit_save_to_disk(int zone_num);
+static void zedit_disp_menu(struct descriptor_data *d);
+static void zedit_disp_comtype(struct descriptor_data *d);
+static void zedit_disp_arg1(struct descriptor_data *d);
+static void zedit_disp_arg2(struct descriptor_data *d);
+static void zedit_disp_arg3(struct descriptor_data *d);
 
 ACMD(do_oasis_zedit)
 {
@@ -58,7 +58,7 @@ ACMD(do_oasis_zedit)
       save = TRUE;
 
       if (is_number(buf2))
-        number = atoi(buf2);
+        number = atoidx(buf2);
       else if (GET_OLC_ZONE(ch) > 0) {
         zone_rnum zlok;
 
@@ -83,11 +83,11 @@ ACMD(do_oasis_zedit)
         skip_spaces(&buf3);
         two_arguments(buf3, sbot, stop);
 
-        number = atoi(buf2);
+        number = atoidx(buf2);
         if (number < 0)
           number = NOWHERE;
-        bottom = atoi(sbot);
-        top = atoi(stop);
+        bottom = atoidx(sbot);
+        top = atoidx(stop);
 
         /* Setup the new zone (displays the menu to the builder). */
         zedit_new_zone(ch, number, bottom, top);
@@ -104,7 +104,7 @@ ACMD(do_oasis_zedit)
 
   /* If a numeric argumentwas given, retrieve it. */
   if (number == NOWHERE)
-    number = atoi(buf1);
+    number = atoidx(buf1);
 
   /* Check that nobody is currently editing this zone. */
   for (d = descriptor_list; d; d = d->next) {
@@ -187,7 +187,7 @@ ACMD(do_oasis_zedit)
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-void zedit_setup(struct descriptor_data *d, int room_num)
+static void zedit_setup(struct descriptor_data *d, int room_num)
 {
   struct zone_data *zone;
   int subcmd = 0, count = 0, cmd_room = NOWHERE;
@@ -242,7 +242,7 @@ void zedit_setup(struct descriptor_data *d, int room_num)
 }
 
 /* Create a new zone. */
-void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top)
+static void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top)
 {
   int result;
   const char *error;
@@ -263,6 +263,7 @@ void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom,
       case CON_SEDIT:
       case CON_OEDIT:
       case CON_TRIGEDIT:
+      case CON_QEDIT:
         OLC_ZNUM(dsc) += (OLC_ZNUM(dsc) >= result);
         break;
       default:
@@ -278,7 +279,7 @@ void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom,
 
 /* Save all the information in the player's temporary buffer back into
  * the current zone table. */
-void zedit_save_internally(struct descriptor_data *d)
+static void zedit_save_internally(struct descriptor_data *d)
 {
   int	mobloaded = FALSE,
 	objloaded = FALSE,
@@ -343,13 +344,13 @@ void zedit_save_internally(struct descriptor_data *d)
   add_to_save_list(zone_table[OLC_ZNUM(d)].number, SL_ZON);
 }
 
-void zedit_save_to_disk(int zone)
+static void zedit_save_to_disk(int zone)
 {
   save_zone(zone);
 }
 
 /* Error check user input and then setup change */
-int start_change_command(struct descriptor_data *d, int pos)
+static int start_change_command(struct descriptor_data *d, int pos)
 {
   if (pos < 0 || pos >= count_commands(OLC_ZONE(d)->cmd))
     return 0;
@@ -361,7 +362,7 @@ int start_change_command(struct descriptor_data *d, int pos)
 
 /* Menu functions */
 /* the main menu */
-void zedit_disp_menu(struct descriptor_data *d)
+static void zedit_disp_menu(struct descriptor_data *d)
 {
   int subcmd = 0, room, counter = 0;
 
@@ -493,7 +494,7 @@ void zedit_disp_menu(struct descriptor_data *d)
 }
 
 /* Print the command type menu and setup response catch. */
-void zedit_disp_comtype(struct descriptor_data *d)
+static void zedit_disp_comtype(struct descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -514,7 +515,7 @@ void zedit_disp_comtype(struct descriptor_data *d)
 
 /* Print the appropriate message for the command type for arg1 and set
    up the input catch clause */
-void zedit_disp_arg1(struct descriptor_data *d)
+static void zedit_disp_arg1(struct descriptor_data *d)
 {
   write_to_output(d, "\r\n");
 
@@ -552,7 +553,7 @@ void zedit_disp_arg1(struct descriptor_data *d)
 
 /* Print the appropriate message for the command type for arg2 and set
    up the input catch clause. */
-void zedit_disp_arg2(struct descriptor_data *d)
+static void zedit_disp_arg2(struct descriptor_data *d)
 {
   int i;
 
@@ -593,7 +594,7 @@ void zedit_disp_arg2(struct descriptor_data *d)
 
 /* Print the appropriate message for the command type for arg3 and set
    up the input catch clause. */
-void zedit_disp_arg3(struct descriptor_data *d)
+static void zedit_disp_arg3(struct descriptor_data *d)
 {
   int i = 0;
 

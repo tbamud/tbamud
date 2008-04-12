@@ -8,6 +8,8 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
+#define __SPELL_PARSER_C__
+
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
@@ -18,32 +20,26 @@
 #include "comm.h"
 #include "db.h"
 #include "dg_scripts.h"
+#include "fight.h"  /* for hit() */
 
 #define SINFO spell_info[spellnum]
 
-/* local globals */
+/* Global Variables definitions, used elsewhere */
 struct spell_info_type spell_info[TOP_SPELL_DEFINE + 1];
 char cast_arg2[MAX_INPUT_LENGTH];
+const char *unused_spellname = "!UNUSED!"; /* So we can get &unused_spellname */
 
-/* local functions */
-void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct obj_data *tobj);
-void spello(int spl, const char *name, int max_mana, int min_mana, int mana_change, int minpos, int targets, int violent, int routines, const char *wearoff);
-int mag_manacost(struct char_data *ch, int spellnum);
-ACMD(do_cast);
-void unused_spell(int spl);
-void mag_assign_spells(void);
+/* Local (File Scope) Function Prototypes */
+static void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct obj_data *tobj);
+static void spello(int spl, const char *name, int max_mana, int min_mana, int mana_change, int minpos, int targets, int violent, int routines, const char *wearoff);
+static int mag_manacost(struct char_data *ch, int spellnum);
 
-/* This arrangement is pretty stupid, but the number of skills is limited by
- * the playerfile.  We can arbitrarily increase the number of skills by
- * increasing the space in the playerfile. Meanwhile, 200 should provide
- * ample slots for skills. */
-
+/* Local (File Scope) Variables */
 struct syllable {
   const char *org;
   const char *news;
 };
-
-struct syllable syls[] = {
+static struct syllable syls[] = {
   {" ", " "},
   {"ar", "abra"},
   {"ate", "i"},
@@ -78,15 +74,16 @@ struct syllable syls[] = {
   {"v", "z"}, {"w", "x"}, {"x", "n"}, {"y", "l"}, {"z", "k"}, {"", ""}
 };
 
-const char *unused_spellname = "!UNUSED!"; /* So we can get &unused_spellname */
-int mag_manacost(struct char_data *ch, int spellnum)
+
+
+static int mag_manacost(struct char_data *ch, int spellnum)
 {
   return MAX(SINFO.mana_max - (SINFO.mana_change *
 		    (GET_LEVEL(ch) - SINFO.min_level[(int) GET_CLASS(ch)])),
 	     SINFO.mana_min);
 }
 
-void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
+static void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
 	            struct obj_data *tobj)
 {
   char lbuf[256], buf[256], buf1[256], buf2[256];	/* FIXME */
@@ -652,7 +649,7 @@ void spell_level(int spell, int chclass, int level)
 
 
 /* Assign the spells on boot up */
-void spello(int spl, const char *name, int max_mana, int min_mana,
+static void spello(int spl, const char *name, int max_mana, int min_mana,
 	int mana_change, int minpos, int targets, int violent, int routines, const char *wearoff)
 {
   int i;
@@ -753,7 +750,7 @@ void mag_assign_spells(void)
 	"You feel your strength return.");
 
   spello(SPELL_CLONE, "clone", 80, 65, 5, POS_STANDING,
-	TAR_SELF_ONLY, FALSE, MAG_SUMMONS,
+	TAR_IGNORE, FALSE, MAG_SUMMONS,
 	NULL);
 
   spello(SPELL_COLOR_SPRAY, "color spray", 30, 15, 3, POS_FIGHTING,

@@ -24,7 +24,7 @@ OBJFILES = comm.o act.comm.o act.informative.o act.movement.o act.item.o \
 	castle.o class.o config.o constants.o db.o fight.o graph.o handler.o \
 	house.o interpreter.o limits.o magic.o mail.o mobact.o modify.o \
 	objsave.o shop.o spec_assign.o spec_procs.o spell_parser.o \
-	spells.o utils.o weather.o players.o
+	spells.o utils.o weather.o players.o quest.o qedit.o genqst.o
 
 default: .accepted
 	$(MAKE) ../bin/circle
@@ -192,3 +192,12 @@ utils.o: utils.c conf.h sysdep.h structs.h utils.h comm.h screen.h spells.h \
 weather.o: weather.c conf.h sysdep.h structs.h utils.h comm.h handler.h \
   interpreter.h db.h
 	$(CC) -c $(CFLAGS) weather.c
+quest.o: quest.c conf.h sysdep.h structs.h utils.h interpreter.h handler.h \
+  comm.h db.h screen.h quest.h
+	$(CC) -c $(CFLAGS) quest.c
+qedit.o: qedit.c conf.h sysdep.h structs.h utils.h comm.h db.h oasis.h \
+  improved-edit.h screen.h genolc.h genzon.h interpreter.h quest.h
+	$(CC) -c $(CFLAGS) qedit.c
+genqst.o: genqst.c conf.h sysdep.h structs.h utils.h db.h quest.h \
+  genolc.h genzon.h 
+	$(CC) -c $(CFLAGS) genqst.c

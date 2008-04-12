@@ -19,20 +19,14 @@
 #include "interpreter.h"
 #include "constants.h"
 #include "dg_scripts.h"
+#include "class.h"
+#include "fight.h"
 
-/* external variables */
-extern int mini_mud;
-extern struct spell_info_type spell_info[];
 
-/* external functions */
-byte saving_throws(int class_num, int type, int level); /* class.c */
-void clearMemory(struct char_data *ch);
+/* local file scope function prototypes */
+static int mag_materials(struct char_data *ch, IDXTYPE item0, IDXTYPE item1, IDXTYPE item2, int extract, int verbose);
+static void perform_mag_groups(int level, struct char_data *ch, struct char_data *tch, int spellnum, int savetype);
 
-/* local functions */
-int mag_materials(struct char_data *ch, int item0, int item1, int item2, int extract, int verbose);
-void perform_mag_groups(int level, struct char_data *ch, struct char_data *tch, int spellnum, int savetype);
-int mag_savingthrow(struct char_data *ch, int type, int modifier);
-void affect_update(void);
 
 /* Negative apply_saving_throw[] values make saving throws better! So do 
  * negative modifiers.  Though people may be used to the reverse of that. 
@@ -83,56 +77,113 @@ void affect_update(void)
     }
 }
 
-/* mag_materials: Checks for up to 3 vnums (spell reagents) in the player's 
- * inventory. No spells currently use mag_materials, but you can use it to 
- * implement your own spells which require ingredients (i.e. heal spells which 
- * requires a rare herb or some such.) */
-int mag_materials(struct char_data *ch, int item0, int item1, int item2,
-		      int extract, int verbose)
+/* Checks for up to 3 vnums (spell reagents) in the player's inventory. If
+ * multiple vnums are passed in, the function ANDs the items together as
+ * requirements (ie. if one or more are missing, the spell will not fail).
+ * @param ch The caster of the spell.
+ * @param item0 The first required item of the spell, NOTHING if not required.
+ * @param item1 The second required item of the spell, NOTHING if not required.
+ * @param item2 The third required item of the spell, NOTHING if not required.
+ * @param extract TRUE if mag_materials should consume (destroy) the items in
+ * the players inventory, FALSE if not. Items will only be removed on a
+ * successful cast.
+ * @param verbose TRUE to provide some generic failure or success messages,
+ * FALSE to send no in game messages from this function.
+ * @retval int TRUE if ch has all materials to cast the spell, FALSE if not.
+ */
+static int mag_materials(struct char_data *ch, IDXTYPE item0, 
+    IDXTYPE item1, IDXTYPE item2, int extract, int verbose)
 {
-  struct obj_data *tobj;
+  /* Begin Local variable definitions. */
+  /*------------------------------------------------------------------------*/
+  /* Used for object searches. */
+  struct obj_data *tobj = NULL;
+  /* Points to found reagents. */
   struct obj_data *obj0 = NULL, *obj1 = NULL, *obj2 = NULL;
+  /*------------------------------------------------------------------------*/
+  /* End Local variable definitions. */
 
-  for (tobj = ch->carrying; tobj; tobj = tobj->next_content) {
-    if ((item0 > 0) && (GET_OBJ_VNUM(tobj) == item0)) {
+  /* Begin success checks. Checks must pass to signal a success. */
+  /*------------------------------------------------------------------------*/
+  /* Check for the objects in the players inventory. */
+  for (tobj = ch->carrying; tobj; tobj = tobj->next_content) 
+  {
+    if ((item0 != NOTHING) && (GET_OBJ_VNUM(tobj) == item0)) 
+    {
       obj0 = tobj;
-      item0 = -1;
-    } else if ((item1 > 0) && (GET_OBJ_VNUM(tobj) == item1)) {
+      item0 = NOTHING;
+    } 
+    else if ((item1 != NOTHING) && (GET_OBJ_VNUM(tobj) == item1)) 
+    {
       obj1 = tobj;
-      item1 = -1;
-    } else if ((item2 > 0) && (GET_OBJ_VNUM(tobj) == item2)) {
+      item1 = NOTHING;
+    } 
+    else if ((item2 != NOTHING) && (GET_OBJ_VNUM(tobj) == item2)) 
+    {
       obj2 = tobj;
-      item2 = -1;
+      item2 = NOTHING;
     }
   }
-  if ((item0 > 0) || (item1 > 0) || (item2 > 0)) {
-    if (verbose) {
-      switch (rand_number(0, 2)) {
+  
+  /* If we needed items, but didn't find all of them, then the spell is a 
+   * failure. */
+  if ((item0 != NOTHING) || (item1 != NOTHING) || (item2 != NOTHING)) 
+  {
+    /* Generic spell failure messages. */
+    if (verbose) 
+    {
+      switch (rand_number(0, 2)) 
+      {
       case 0:
-	send_to_char(ch, "A wart sprouts on your nose.\r\n");
-	break;
+        send_to_char(ch, "A wart sprouts on your nose.\r\n");
+        break;
       case 1:
-	send_to_char(ch, "Your hair falls out in clumps.\r\n");
-	break;
+        send_to_char(ch, "Your hair falls out in clumps.\r\n");
+        break;
       case 2:
-	send_to_char(ch, "A huge corn develops on your big toe.\r\n");
-	break;
+        send_to_char(ch, "A huge corn develops on your big toe.\r\n");
+        break;
       }
     }
+    /* Return fales, the material check has failed. */
     return (FALSE);
   }
-  if (extract) {
-    if (item0 < 0)
+  /*------------------------------------------------------------------------*/
+  /* End success checks. */
+  
+  /* From here on, ch has all required materials in their inventory and the
+   * material check will return a success. */
+  
+  /* Begin Material Processing. */
+  /*------------------------------------------------------------------------*/
+  /* Extract (destroy) the materials, if so called for. */
+  if (extract) 
+  {
+    if (obj0 != NULL)
       extract_obj(obj0);
-    if (item1 < 0)
+    if (obj1 != NULL)
       extract_obj(obj1);
-    if (item2 < 0)
+    if (obj2 != NULL)
       extract_obj(obj2);
+    /* Generic success messages that signals extracted objects. */
+    if (verbose) 
+    {
+      send_to_char(ch, "A puff of smoke rises from your pack.\r\n");
+      act("A puff of smoke rises from $n's pack.", TRUE, ch, NULL, NULL, TO_ROOM);
+    }
   }
-  if (verbose) {
-    send_to_char(ch, "A puff of smoke rises from your pack.\r\n");
-    act("A puff of smoke rises from $n's pack.", TRUE, ch, NULL, NULL, TO_ROOM);
+  
+  /* Don't extract the objects, but signal materials successfully found. */
+  if(!extract && verbose)
+  {
+    send_to_char(ch, "Your pack rumbles.\r\n");
+    act("Something rumbles in $n's pack.", TRUE, ch, NULL, NULL, TO_ROOM);    
   }
+  /*------------------------------------------------------------------------*/
+  /* End Material Processing. */
+  
+  /* Signal to calling function that the materials were successfully found
+   * and processed. */
   return (TRUE);
 }
 
@@ -489,7 +540,7 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
 
 /* This function is used to provide services to mag_groups.  This function is 
  * the one you should change to add new group spells. */
-void perform_mag_groups(int level, struct char_data *ch,
+static void perform_mag_groups(int level, struct char_data *ch,
 			struct char_data *tch, int spellnum, int savetype)
 {
   switch (spellnum) {
@@ -605,9 +656,13 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
   }
 }
 
+/*----------------------------------------------------------------------------*/
+/* Begin Magic Summoning - Generic Routines and Local Globals */
+/*----------------------------------------------------------------------------*/
+
 /* Every spell which summons/gates/conjours a mob comes through here. */
 /* These use act(), don't put the \r\n. */
-const char *mag_summon_msgs[] = {
+static const char *mag_summon_msgs[] = {
   "\r\n",
   "$n makes a strange magical gesture; you feel a strong breeze!",
   "$n animates a corpse!",
@@ -624,7 +679,7 @@ const char *mag_summon_msgs[] = {
 };
 
 /* Keep the \r\n because these use send_to_char. */
-const char *mag_summon_fail_msgs[] = {
+static const char *mag_summon_fail_msgs[] = {
   "\r\n",
   "There are no such creatures.\r\n",
   "Uh oh...\r\n",
@@ -635,11 +690,10 @@ const char *mag_summon_fail_msgs[] = {
   "There is no corpse!\r\n"
 };
 
-/* Defined mobiles. */
-#define MOB_ELEMENTAL_BASE	20
-#define MOB_CLONE		10
-#define MOB_ZOMBIE		11
-#define MOB_AERIALSERVANT	19
+/* Defines for Mag_Summons */
+#define MOB_CLONE            10   /**< vnum for the clone mob. */
+#define OBJ_CLONE            161  /**< vnum for clone material. */
+#define MOB_ZOMBIE           11   /**< vnum for the zombie mob. */
 
 void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
 		      int spellnum, int savetype)
@@ -657,7 +711,19 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
     msg = 10;
     fmsg = rand_number(2, 6);	/* Random fail message. */
     mob_num = MOB_CLONE;
-    pfail = 50;	/* 50% failure, should be based on something later. */
+    /* 
+     * We have designated the clone spell as the example for how to use the
+     * mag_materials function.
+     * In stock tbaMUD it checks to see if the character has item with 
+     * vnum 161 which is a set of sacrificial entrails. If we have the entrails
+     * the spell will succeed,  and if not, the spell will fail 102% of the time
+     * (prevents random success... see below).
+     * The object is extracted and the generic cast messages are displayed.
+     */
+    if( !mag_materials(ch, OBJ_CLONE, NOTHING, NOTHING, TRUE, TRUE) )
+      pfail = 102; /* No materials, spell fails. */
+    else
+      pfail = 0;	/* We have the entrails, spell is successfully cast. */
     break;
 
   case SPELL_ANIMATE_DEAD:
@@ -711,6 +777,16 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
     extract_obj(obj);
   }
 }
+
+/* Clean up the defines used for mag_summons. */
+#undef MOB_CLONE
+#undef OBJ_CLONE
+#undef MOB_ZOMBIE
+
+/*----------------------------------------------------------------------------*/
+/* End Magic Summoning - Generic Routines and Local Globals */
+/*----------------------------------------------------------------------------*/
+
 
 void mag_points(int level, struct char_data *ch, struct char_data *victim,
 		     int spellnum, int savetype)
@@ -811,7 +887,7 @@ void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj,
       }
       break;
     case SPELL_INVISIBLE:
-      if (!OBJ_FLAGGED(obj, ITEM_NOINVIS | ITEM_INVISIBLE)) {
+      if (!OBJ_FLAGGED(obj, ITEM_NOINVIS) || !OBJ_FLAGGED(obj, ITEM_INVISIBLE)) {
         SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_INVISIBLE);
         to_char = "$p vanishes.";
       }

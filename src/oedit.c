@@ -8,10 +8,10 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
 #include "spells.h"
-#include "utils.h"
 #include "db.h"
 #include "boards.h"
 #include "constants.h"
@@ -22,33 +22,28 @@
 #include "oasis.h"
 #include "improved-edit.h"
 #include "dg_olc.h"
-
-/* external variables */
-extern struct attack_hit_type attack_hit_text[];
-extern struct spell_info_type spell_info[];
-extern struct board_info_type board_info[];
+#include "fight.h"
+#include "modify.h"
 
 /* local functions */
-void oedit_setup_new(struct descriptor_data *d);
-void oedit_setup_existing(struct descriptor_data *d, int real_num);
-void oedit_save_internally(struct descriptor_data *d);
-void oedit_save_to_disk(int zone_num);
-void oedit_disp_container_flags_menu(struct descriptor_data *d);
-void oedit_disp_extradesc_menu(struct descriptor_data *d);
-void oedit_disp_prompt_apply_menu(struct descriptor_data *d);
-void oedit_liquid_type(struct descriptor_data *d);
-void oedit_disp_apply_menu(struct descriptor_data *d);
-void oedit_disp_weapon_menu(struct descriptor_data *d);
-void oedit_disp_spells_menu(struct descriptor_data *d);
-void oedit_disp_val1_menu(struct descriptor_data *d);
-void oedit_disp_val2_menu(struct descriptor_data *d);
-void oedit_disp_val3_menu(struct descriptor_data *d);
-void oedit_disp_val4_menu(struct descriptor_data *d);
-void oedit_disp_type_menu(struct descriptor_data *d);
-void oedit_disp_extra_menu(struct descriptor_data *d);
-void oedit_disp_wear_menu(struct descriptor_data *d);
-void oedit_disp_menu(struct descriptor_data *d);
-void oedit_disp_perm_menu(struct descriptor_data *d);
+static void oedit_setup_new(struct descriptor_data *d);
+static void oedit_disp_container_flags_menu(struct descriptor_data *d);
+static void oedit_disp_extradesc_menu(struct descriptor_data *d);
+static void oedit_disp_prompt_apply_menu(struct descriptor_data *d);
+static void oedit_liquid_type(struct descriptor_data *d);
+static void oedit_disp_apply_menu(struct descriptor_data *d);
+static void oedit_disp_weapon_menu(struct descriptor_data *d);
+static void oedit_disp_spells_menu(struct descriptor_data *d);
+static void oedit_disp_val1_menu(struct descriptor_data *d);
+static void oedit_disp_val2_menu(struct descriptor_data *d);
+static void oedit_disp_val3_menu(struct descriptor_data *d);
+static void oedit_disp_val4_menu(struct descriptor_data *d);
+static void oedit_disp_type_menu(struct descriptor_data *d);
+static void oedit_disp_extra_menu(struct descriptor_data *d);
+static void oedit_disp_wear_menu(struct descriptor_data *d);
+static void oedit_disp_menu(struct descriptor_data *d);
+static void oedit_disp_perm_menu(struct descriptor_data *d);
+static void oedit_save_to_disk(int zone_num);
 
 /* handy macro */
 #define S_PRODUCT(s, i) ((s)->producing[(i)])
@@ -182,7 +177,7 @@ ACMD(do_oasis_oedit)
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-void oedit_setup_new(struct descriptor_data *d)
+static void oedit_setup_new(struct descriptor_data *d)
 {
   CREATE(OLC_OBJ(d), struct obj_data, 1);
 
@@ -284,14 +279,14 @@ void oedit_save_internally(struct descriptor_data *d)
         }
 }
 
-void oedit_save_to_disk(int zone_num)
+static void oedit_save_to_disk(int zone_num)
 {
   save_objects(zone_num);
 }
 
 /* Menu functions */
 /* For container flags. */
-void oedit_disp_container_flags_menu(struct descriptor_data *d)
+static void oedit_disp_container_flags_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
   get_char_colors(d->character);
@@ -309,7 +304,7 @@ void oedit_disp_container_flags_menu(struct descriptor_data *d)
 }
 
 /* For extra descriptions. */
-void oedit_disp_extradesc_menu(struct descriptor_data *d)
+static void oedit_disp_extradesc_menu(struct descriptor_data *d)
 {
   struct extra_descr_data *extra_desc = OLC_DESC(d);
 
@@ -330,7 +325,7 @@ void oedit_disp_extradesc_menu(struct descriptor_data *d)
 }
 
 /* Ask for *which* apply to edit. */
-void oedit_disp_prompt_apply_menu(struct descriptor_data *d)
+static void oedit_disp_prompt_apply_menu(struct descriptor_data *d)
 {
   char apply_buf[MAX_STRING_LENGTH];
   int counter;
@@ -352,7 +347,7 @@ void oedit_disp_prompt_apply_menu(struct descriptor_data *d)
 }
 
 /* Ask for liquid type. */
-void oedit_liquid_type(struct descriptor_data *d)
+static void oedit_liquid_type(struct descriptor_data *d)
 {
   int counter, columns = 0;
 
@@ -368,7 +363,7 @@ void oedit_liquid_type(struct descriptor_data *d)
 }
 
 /* The actual apply to set. */
-void oedit_disp_apply_menu(struct descriptor_data *d)
+static void oedit_disp_apply_menu(struct descriptor_data *d)
 {
   int counter, columns = 0;
 
@@ -384,7 +379,7 @@ void oedit_disp_apply_menu(struct descriptor_data *d)
 }
 
 /* Weapon type. */
-void oedit_disp_weapon_menu(struct descriptor_data *d)
+static void oedit_disp_weapon_menu(struct descriptor_data *d)
 {
   int counter, columns = 0;
 
@@ -400,7 +395,7 @@ void oedit_disp_weapon_menu(struct descriptor_data *d)
 }
 
 /* Spell type. */
-void oedit_disp_spells_menu(struct descriptor_data *d)
+static void oedit_disp_spells_menu(struct descriptor_data *d)
 {
   int counter, columns = 0;
 
@@ -415,7 +410,7 @@ void oedit_disp_spells_menu(struct descriptor_data *d)
 }
 
 /* Object value #1 */
-void oedit_disp_val1_menu(struct descriptor_data *d)
+static void oedit_disp_val1_menu(struct descriptor_data *d)
 {
   OLC_MODE(d) = OEDIT_VALUE_1;
   switch (GET_OBJ_TYPE(OLC_OBJ(d))) {
@@ -459,7 +454,7 @@ void oedit_disp_val1_menu(struct descriptor_data *d)
 }
 
 /* Object value #2 */
-void oedit_disp_val2_menu(struct descriptor_data *d)
+static void oedit_disp_val2_menu(struct descriptor_data *d)
 {
   OLC_MODE(d) = OEDIT_VALUE_2;
   switch (GET_OBJ_TYPE(OLC_OBJ(d))) {
@@ -492,7 +487,7 @@ void oedit_disp_val2_menu(struct descriptor_data *d)
 }
 
 /* Object value #3 */
-void oedit_disp_val3_menu(struct descriptor_data *d)
+static void oedit_disp_val3_menu(struct descriptor_data *d)
 {
   OLC_MODE(d) = OEDIT_VALUE_3;
   switch (GET_OBJ_TYPE(OLC_OBJ(d))) {
@@ -523,7 +518,7 @@ void oedit_disp_val3_menu(struct descriptor_data *d)
 }
 
 /* Object value #4 */
-void oedit_disp_val4_menu(struct descriptor_data *d)
+static void oedit_disp_val4_menu(struct descriptor_data *d)
 {
   OLC_MODE(d) = OEDIT_VALUE_4;
   switch (GET_OBJ_TYPE(OLC_OBJ(d))) {
@@ -547,7 +542,7 @@ void oedit_disp_val4_menu(struct descriptor_data *d)
 }
 
 /* Object type. */
-void oedit_disp_type_menu(struct descriptor_data *d)
+static void oedit_disp_type_menu(struct descriptor_data *d)
 {
   int counter, columns = 0;
 
@@ -562,7 +557,7 @@ void oedit_disp_type_menu(struct descriptor_data *d)
 }
 
 /* Object extra flags. */
-void oedit_disp_extra_menu(struct descriptor_data *d)
+static void oedit_disp_extra_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
   int counter, columns = 0;
@@ -581,7 +576,7 @@ void oedit_disp_extra_menu(struct descriptor_data *d)
 }
 
 /* Object perm flags. */
-void oedit_disp_perm_menu(struct descriptor_data *d)
+static void oedit_disp_perm_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
   int counter, columns = 0;
@@ -598,7 +593,7 @@ void oedit_disp_perm_menu(struct descriptor_data *d)
 }
 
 /* Object wear flags. */
-void oedit_disp_wear_menu(struct descriptor_data *d)
+static void oedit_disp_wear_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
   int counter, columns = 0;
@@ -616,7 +611,7 @@ void oedit_disp_wear_menu(struct descriptor_data *d)
 }
 
 /* Display main menu. */
-void oedit_disp_menu(struct descriptor_data *d)
+static void oedit_disp_menu(struct descriptor_data *d)
 {
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];

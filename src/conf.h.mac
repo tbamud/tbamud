@@ -1,5 +1,8 @@
 /* src/conf.h.in.  Generated automatically from configure.in by autoheader.  */
 
+#ifndef _CONF_H_
+#define _CONF_H_
+
 #define CIRCLE_MACINTOSH 1
 
 #define HAVE_SYS_ERRNO_H 1
@@ -253,3 +256,4 @@
 /* Define if your crypt isn't safe with only 10 characters. */
 #undef HAVE_UNSAFE_CRYPT
 
+#endif /* _CONF_H_ */

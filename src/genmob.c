@@ -18,7 +18,7 @@
 #include "dg_olc.h"
 
 /* local functions */
-void extract_mobile_all(mob_vnum vnum);
+static void extract_mobile_all(mob_vnum vnum);
 
 int add_mobile(struct char_data *mob, mob_vnum vnum)
 {
@@ -98,7 +98,7 @@ int copy_mobile(struct char_data *to, struct char_data *from)
   return TRUE;
 }
 
-void extract_mobile_all(mob_vnum vnum)
+static void extract_mobile_all(mob_vnum vnum)
 {
   struct char_data *next, *ch;
 

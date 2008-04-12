@@ -17,14 +17,12 @@
 #include "genzon.h"
 #include "dg_olc.h"
 #include "handler.h"
+#include "boards.h" /* for board_info */
 
-/* extern functions */
-extern struct board_info_type board_info[];
 
 /* local functions */
-void free_object_strings_proto(struct obj_data *obj);
-int update_all_objects(struct obj_data *obj);
-void copy_object_strings(struct obj_data *to, struct obj_data *from);
+static int update_all_objects(struct obj_data *obj);
+static void copy_object_strings(struct obj_data *to, struct obj_data *from);
 
 obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
 {
@@ -49,7 +47,7 @@ obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
  * and every object currently in the game to see which ones are pointing to 
  * this prototype. If object is pointing to this prototype, then we need to 
  * replace it with the new one. */
-int update_all_objects(struct obj_data *refobj)
+static int update_all_objects(struct obj_data *refobj)
 {
   struct obj_data *obj, swap;
   int count = 0;
@@ -341,7 +339,7 @@ void free_object_strings_proto(struct obj_data *obj)
   }
 }
 
-void copy_object_strings(struct obj_data *to, struct obj_data *from)
+static void copy_object_strings(struct obj_data *to, struct obj_data *from)
 {
   to->name = from->name ? strdup(from->name) : NULL;
   to->description = from->description ? strdup(from->description) : NULL;

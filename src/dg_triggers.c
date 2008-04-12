@@ -23,12 +23,8 @@
 #include "db.h"
 #include "oasis.h"
 #include "constants.h"
-
-extern const char *cmd_door[];
-extern struct time_info_data time_info;
-
-/* external functions */
-const char *skill_name(int num);
+#include "spells.h"  /* for skill_name() */
+#include "act.h"    /* for cmd_door[] */
 
 /* General functions used by several triggers. */
 

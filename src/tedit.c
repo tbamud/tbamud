@@ -15,20 +15,8 @@
 #include "genolc.h"
 #include "oasis.h"
 #include "improved-edit.h"
+#include "modify.h"
 
-extern const char *credits;
-extern const char *news;
-extern const char *motd;
-extern const char *imotd;
-extern const char *GREETINGS;
-extern const char *help;
-extern const char *ihelp;
-extern const char *info;
-extern const char *background;
-extern const char *handbook;
-extern const char *policies;
-extern const char *wizlist;
-extern const char *immlist;
 
 void tedit_string_cleanup(struct descriptor_data *d, int terminator)
 {
@@ -75,7 +63,7 @@ ACMD(do_tedit)
   struct {
     char *cmd;
     char level;
-    const char **buffer;
+    char **buffer;
     int  size;
     char *filename;
   } fields[] = {

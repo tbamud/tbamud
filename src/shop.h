@@ -1,14 +1,24 @@
-/**************************************************************************
-*  File: shop.h                                            Part of tbaMUD *
-*  Usage: Shop file definitions, structures, constants.                   *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+/**
+* @file shop.h
+* Shop file definitions, structures, constants.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*/
+#ifndef _SHOP_H_
+#define _SHOP_H_
 
-int find_shop(int);
+/* Public function prototypes */
+SPECIAL(shop_keeper);
+void boot_the_shops(FILE *shop_f, char *filename, int rec_count);
+void assign_the_shopkeepers(void);
+void show_shops(struct char_data *ch, char *arg);
+int ok_damage_shopkeeper(struct char_data *ch, struct char_data *victim);
+void destroy_shops(void);
 
 struct shop_buy_data {
    int type;
@@ -64,13 +74,15 @@ struct shop_data {
 #define LIST_ROOM		2
 
 /* Whom will we not trade with (bitvector for SHOP_TRADE_WITH()) */
-#define TRADE_NOGOOD		(1 << 0)
-#define TRADE_NOEVIL		(1 << 1)
-#define TRADE_NONEUTRAL		(1 << 2)
-#define TRADE_NOMAGIC_USER	(1 << 3)
-#define TRADE_NOCLERIC		(1 << 4)
-#define TRADE_NOTHIEF		(1 << 5)
-#define TRADE_NOWARRIOR		(1 << 6)
+#define TRADE_NOGOOD       (1 << 0)
+#define TRADE_NOEVIL       (1 << 1)
+#define TRADE_NONEUTRAL    (1 << 2)
+#define TRADE_NOMAGIC_USER (1 << 3)
+#define TRADE_NOCLERIC     (1 << 4)
+#define TRADE_NOTHIEF      (1 << 5)
+#define TRADE_NOWARRIOR    (1 << 6)
+/** Total number of trade types */
+#define NUM_TRADERS     7
 
 struct stack_data {
    int data[100];
@@ -115,9 +127,12 @@ struct stack_data {
 #define NOTRADE_THIEF(i)	(IS_SET(SHOP_TRADE_WITH((i)), TRADE_NOTHIEF))
 #define NOTRADE_WARRIOR(i)	(IS_SET(SHOP_TRADE_WITH((i)), TRADE_NOWARRIOR))
 
-#define WILL_START_FIGHT	(1 << 0)
-#define WILL_BANK_MONEY		(1 << 1)
-#define HAS_UNLIMITED_CASH      (1 << 2)
+/* Shop flags */
+#define WILL_START_FIGHT    (1 << 0)
+#define WILL_BANK_MONEY     (1 << 1)
+#define HAS_UNLIMITED_CASH  (1 << 2)
+/** Total number of shop flags */
+#define NUM_SHOP_FLAGS    3
 
 #define SHOP_KILL_CHARS(i)	(IS_SET(SHOP_BITVECTOR(i), WILL_START_FIGHT))
 #define SHOP_USES_BANK(i)	(IS_SET(SHOP_BITVECTOR(i), WILL_BANK_MONEY))
@@ -135,3 +150,12 @@ struct stack_data {
 #define MSG_NO_USED_WANDSTAFF	"I don't buy used up wands or staves!"
 #define MSG_CANT_KILL_KEEPER	"Get out of here before I call the guards!"
 
+/* Global variables */
+#ifndef __SHOP_C__
+
+extern const char *trade_letters[];
+extern const char *shop_bits[];
+
+#endif /* __SHOP_C__ */
+
+#endif /* _SHOP_H_ */

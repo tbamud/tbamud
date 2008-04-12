@@ -18,27 +18,20 @@
 #include "genzon.h"
 #include "oasis.h"
 #include "constants.h"
-
-/* external functions */
-SPECIAL(shop_keeper);
-
-/* external variables */
-extern const char *trade_letters[];
-extern const char *shop_bits[];
+#include "shop.h"
 
 /* local functions */
-void sedit_setup_new(struct descriptor_data *d);
-void sedit_setup_existing(struct descriptor_data *d, int rshop_num);
-void sedit_save_internally(struct descriptor_data *d);
-void sedit_save_to_disk(int zone_num);
-void sedit_products_menu(struct descriptor_data *d);
-void sedit_compact_rooms_menu(struct descriptor_data *d);
-void sedit_rooms_menu(struct descriptor_data *d);
-void sedit_namelist_menu(struct descriptor_data *d);
-void sedit_shop_flags_menu(struct descriptor_data *d);
-void sedit_no_trade_menu(struct descriptor_data *d);
-void sedit_types_menu(struct descriptor_data *d);
-void sedit_disp_menu(struct descriptor_data *d);
+static void sedit_setup_new(struct descriptor_data *d);
+static void sedit_save_to_disk(int zone_num);
+static void sedit_products_menu(struct descriptor_data *d);
+static void sedit_compact_rooms_menu(struct descriptor_data *d);
+static void sedit_rooms_menu(struct descriptor_data *d);
+static void sedit_namelist_menu(struct descriptor_data *d);
+static void sedit_shop_flags_menu(struct descriptor_data *d);
+static void sedit_no_trade_menu(struct descriptor_data *d);
+static void sedit_types_menu(struct descriptor_data *d);
+static void sedit_disp_menu(struct descriptor_data *d);
+
 
 void sedit_save_internally(struct descriptor_data *d)
 {
@@ -46,7 +39,7 @@ void sedit_save_internally(struct descriptor_data *d)
   add_shop(OLC_SHOP(d));
 }
 
-void sedit_save_to_disk(int num)
+static void sedit_save_to_disk(int num)
 {
   save_shops(num);
 }
@@ -174,7 +167,7 @@ ACMD(do_oasis_sedit)
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-void sedit_setup_new(struct descriptor_data *d)
+static void sedit_setup_new(struct descriptor_data *d)
 {
   struct shop_data *shop;
 
@@ -219,7 +212,7 @@ void sedit_setup_existing(struct descriptor_data *d, int rshop_num)
 }
 
 /* Menu functions */
-void sedit_products_menu(struct descriptor_data *d)
+static void sedit_products_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
   int i;
@@ -243,7 +236,7 @@ void sedit_products_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_PRODUCTS_MENU;
 }
 
-void sedit_compact_rooms_menu(struct descriptor_data *d)
+static void sedit_compact_rooms_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
   int i;
@@ -269,7 +262,7 @@ void sedit_compact_rooms_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_ROOMS_MENU;
 }
 
-void sedit_rooms_menu(struct descriptor_data *d)
+static void sedit_rooms_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
   int i;
@@ -300,7 +293,7 @@ void sedit_rooms_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_ROOMS_MENU;
 }
 
-void sedit_namelist_menu(struct descriptor_data *d)
+static void sedit_namelist_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
   int i;
@@ -324,7 +317,7 @@ void sedit_namelist_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_NAMELIST_MENU;
 }
 
-void sedit_shop_flags_menu(struct descriptor_data *d)
+static void sedit_shop_flags_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
   int i, count = 0;
@@ -341,7 +334,7 @@ void sedit_shop_flags_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_SHOP_FLAGS;
 }
 
-void sedit_no_trade_menu(struct descriptor_data *d)
+static void sedit_no_trade_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
   int i, count = 0;
@@ -358,7 +351,7 @@ void sedit_no_trade_menu(struct descriptor_data *d)
   OLC_MODE(d) = SEDIT_NOTRADE;
 }
 
-void sedit_types_menu(struct descriptor_data *d)
+static void sedit_types_menu(struct descriptor_data *d)
 {
   struct shop_data *shop;
   int i, count = 0;
@@ -376,7 +369,7 @@ void sedit_types_menu(struct descriptor_data *d)
 }
 
 /* Display main menu. */
-void sedit_disp_menu(struct descriptor_data *d)
+static void sedit_disp_menu(struct descriptor_data *d)
 {
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];

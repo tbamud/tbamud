@@ -13,10 +13,10 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
 #include "db.h"
-#include "utils.h"
 #include "spells.h"
 #include "handler.h"
 #include "mail.h"
@@ -26,204 +26,28 @@
 #include "improved-edit.h"
 #include "dg_scripts.h"
 #include "constants.h"
+#include "act.h" /* ACMDs located within the act*.c files */
+#include "ban.h"
+#include "class.h"
+#include "graph.h"
+#include "hedit.h"
+#include "house.h"
+#include "config.h"
+#include "modify.h" /* for do_skillset... */
+#include "quest.h"
+#include "asciimap.h"
 
-/* external variables */
-extern room_rnum r_mortal_start_room;
-extern room_rnum r_immort_start_room;
-extern room_rnum r_frozen_start_room;
-extern const char *class_menu;
-extern char *motd;
-extern char *imotd;
-extern char *background;
-extern struct player_index_element *player_table;
-extern int top_of_p_table;
-extern int circle_restrict;
-extern int no_specials;
-extern int selfdelete_fastwipe;
+/* local (file scope) functions */
+static int perform_dupe_check(struct descriptor_data *d);
+static struct alias_data *find_alias(struct alias_data *alias_list, char *str);
+static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a);
+static int reserved_word(char *argument);
+static int _parse_name(char *arg, char *name);
+/* sort_commands utility */
+static int sort_commands_helper(const void *a, const void *b);
 
-/* external functions */
-void echo_on(struct descriptor_data *d);
-void echo_off(struct descriptor_data *d);
-void do_start(struct char_data *ch);
-int parse_class(char arg);
-int special(struct char_data *ch, int cmd, char *arg);
-int isbanned(char *hostname);
-int valid_name(char *newname);
-void remove_player(int pfilepos);
-
-/* local functions */
-int perform_dupe_check(struct descriptor_data *d);
-struct alias_data *find_alias(struct alias_data *alias_list, char *str);
-void free_alias(struct alias_data *a);
-void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a);
-int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen);
-int reserved_word(char *argument);
-int _parse_name(char *arg, char *name);
-int enter_player_game (struct descriptor_data *d);
-
-/* prototypes for all do_x functions. */
-ACMD(do_action);
-ACMD(do_advance);
-ACMD(do_aedit);
-ACMD(do_alias);
-ACMD(do_assist);
-ACMD(do_astat);
-ACMD(do_at);
-ACMD(do_attach);
-ACMD(do_backstab);
-ACMD(do_ban);
-ACMD(do_bash);
-ACMD(do_cast);
-ACMD(do_changelog);
-ACMD(do_checkloadstatus);
-ACMD(do_commands);
-ACMD(do_consider);
-ACMD(do_copyover);
-ACMD(do_credits);
-ACMD(do_date);
-ACMD(do_dc);
-ACMD(do_detach);
-ACMD(do_diagnose);
-ACMD(do_dig);
-ACMD(do_display);
-ACMD(do_drink);
-ACMD(do_drop);
-ACMD(do_eat);
-ACMD(do_echo);
-ACMD(do_enter);
-ACMD(do_equipment);
-ACMD(do_examine);
-ACMD(do_exit);
-ACMD(do_exits);
-ACMD(do_export_zone);
-ACMD(do_file);
-ACMD(do_flee);
-ACMD(do_follow);
-ACMD(do_force);
-ACMD(do_gecho);
-ACMD(do_gen_comm);
-ACMD(do_gen_door);
-ACMD(do_gen_ps);
-ACMD(do_gen_tog);
-ACMD(do_gen_write);
-ACMD(do_get);
-ACMD(do_give);
-ACMD(do_gold);
-ACMD(do_goto);
-ACMD(do_grab);
-ACMD(do_group);
-ACMD(do_gsay);
-ACMD(do_hcontrol);
-ACMD(do_help);
-ACMD(do_hindex);
-ACMD(do_history);
-ACMD(do_helpcheck);
-ACMD(do_hide);
-ACMD(do_hit);
-ACMD(do_house);
-ACMD(do_inventory);
-ACMD(do_invis);
-ACMD(do_kick);
-ACMD(do_kill);
-ACMD(do_last);
-ACMD(do_leave);
-ACMD(do_levels);
-ACMD(do_links);
-ACMD(do_load);
-ACMD(do_look);
-ACMD(do_masound);
-ACMD(do_mat);
-ACMD(do_mdamage);
-ACMD(do_mdoor);
-ACMD(do_mecho);
-ACMD(do_mechoaround);
-ACMD(do_mfollow);
-ACMD(do_mforce);
-ACMD(do_mgoto);
-ACMD(do_mhunt);
-ACMD(do_mjunk);
-ACMD(do_mkill);
-ACMD(do_mload);
-/* ACMD(do_move); -- interpreter.h */
-ACMD(do_mpurge);
-ACMD(do_msend);
-ACMD(do_mteleport);
-ACMD(do_mremember);
-ACMD(do_mforget);
-ACMD(do_mtransform);
-ACMD(do_mzoneecho);
-ACMD(do_mrecho);
-ACMD(do_not_here);
-ACMD(do_oasis_copy);
-ACMD(do_order);
-ACMD(do_page);
-ACMD(do_peace);
-ACMD(do_plist);
-ACMD(do_pour);
-ACMD(do_practice);
-ACMD(do_purge);
-ACMD(do_put);
-ACMD(do_qcomm);
-ACMD(do_quit);
-ACMD(do_reboot);
-ACMD(do_remove);
-ACMD(do_reply);
-ACMD(do_report);
-ACMD(do_rescue);
-ACMD(do_rest);
-ACMD(do_restore);
-ACMD(do_return);
-ACMD(do_save);
-ACMD(do_saveall);
-ACMD(do_say);
-ACMD(do_score);
-ACMD(do_send);
-ACMD(do_set);
-ACMD(do_show);
-ACMD(do_show_save_list);
-ACMD(do_shutdown);
-ACMD(do_sit);
-ACMD(do_skillset);
-ACMD(do_sleep);
-ACMD(do_sneak);
-ACMD(do_snoop);
-ACMD(do_spec_comm);
-ACMD(do_split);
-ACMD(do_stand);
-ACMD(do_stat);
-ACMD(do_steal);
-ACMD(do_switch);
-ACMD(do_teleport);
-ACMD(do_tell);
-ACMD(do_time);
-ACMD(do_title);
-ACMD(do_tlist);
-ACMD(do_toggle);
-ACMD(do_track);
-ACMD(do_trans);
-ACMD(do_tstat);
-ACMD(do_unban);
-ACMD(do_ungroup);
-ACMD(do_use);
-ACMD(do_users);
-ACMD(do_vdelete);
-ACMD(do_visible);
-ACMD(do_vnum);
-ACMD(do_vstat);
-ACMD(do_wake);
-ACMD(do_wear);
-ACMD(do_weather);
-ACMD(do_where);
-ACMD(do_who);
-ACMD(do_wield);
-ACMD(do_wizlock);
-ACMD(do_wiznet);
-ACMD(do_wizupdate);
-ACMD(do_wizutil);
-ACMD(do_write);
-ACMD(do_zcheck);
-ACMD(do_zreset);
-ACMD(do_zpurge);
+/* globals defined here, used here and elsewhere */
+int *cmd_sort_info = NULL;
 
 struct command_info *complete_cmd_info;
 
@@ -257,14 +81,14 @@ cpp_extern const struct command_info cmd_info[] = {
   { "astat"    , "ast"     , POS_DEAD    , do_astat    , 0, 0 },
   { "attach"   , "attach"  , POS_DEAD    , do_attach   , LVL_BUILDER, 0 },
   { "auction"  , "auc"     , POS_SLEEPING, do_gen_comm , 0, SCMD_AUCTION },
-  { "autoexits" , "autoex"  , POS_DEAD    , do_gen_tog  , 0, SCMD_AUTOEXIT },
+  { "autoexits" , "autoex"  , POS_DEAD    , do_gen_tog , 0, SCMD_AUTOEXIT },
 
   { "backstab" , "ba"      , POS_STANDING, do_backstab , 1, 0 },
   { "ban"      , "ban"     , POS_DEAD    , do_ban      , LVL_GRGOD, 0 },
   { "balance"  , "bal"     , POS_STANDING, do_not_here , 1, 0 },
   { "bash"     , "bas"     , POS_FIGHTING, do_bash     , 1, 0 },
   { "brief"    , "br"      , POS_DEAD    , do_gen_tog  , 0, SCMD_BRIEF },
-  { "buildwalk", "buildwalk", POS_STANDING, do_gen_tog,   LVL_BUILDER, SCMD_BUILDWALK },
+  { "buildwalk", "buildwalk", POS_STANDING, do_gen_tog , LVL_BUILDER, SCMD_BUILDWALK },
   { "buy"      , "bu"      , POS_STANDING, do_not_here , 0, 0 },
   { "bug"      , "bug"     , POS_DEAD    , do_gen_write, 0, SCMD_BUG },
 
@@ -360,8 +184,9 @@ cpp_extern const struct command_info cmd_info[] = {
 
   { "motd"     , "motd"    , POS_DEAD    , do_gen_ps   , 0, SCMD_MOTD },
   { "mail"     , "mail"    , POS_STANDING, do_not_here , 1, 0 },
+  { "map"      , "map"     , POS_STANDING, do_map      , 1, 0 },
   { "medit"    , "med"     , POS_DEAD    , do_oasis_medit, LVL_BUILDER, 0 },
-  { "mlist"    , "mlist"   , POS_DEAD    , do_oasis_list , LVL_BUILDER, SCMD_OASIS_MLIST },
+  { "mlist"    , "mlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_MLIST },
   { "mcopy"    , "mcopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_MEDIT },
   { "mute"     , "mute"    , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_MUTE },
 
@@ -388,7 +213,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "put"      , "p"       , POS_RESTING , do_put      , 0, 0 },
   { "peace"    , "pe"      , POS_DEAD    , do_peace    , LVL_BUILDER, 0 },
   { "pick"     , "pi"      , POS_STANDING, do_gen_door , 1, SCMD_PICK },
-  { "practice" , "pr"     , POS_RESTING , do_practice , 1, 0 },
+  { "practice" , "pr"      , POS_RESTING , do_practice , 1, 0 },
   { "page"     , "pag"     , POS_DEAD    , do_page     , 1, 0 },
   { "pardon"   , "pardon"  , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_PARDON },
   { "plist"    , "plist"   , POS_DEAD    , do_plist    , LVL_GOD, 0 },
@@ -397,9 +222,11 @@ cpp_extern const struct command_info cmd_info[] = {
   { "prompt"   , "pro"     , POS_DEAD    , do_display  , 0, 0 },
   { "purge"    , "purge"   , POS_DEAD    , do_purge    , LVL_BUILDER, 0 },
 
+  { "qedit"    , "qedit"   , POS_DEAD    , do_oasis_qedit, LVL_BUILDER, 0 },
+  { "qlist"    , "qlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_QLIST },
   { "quaff"    , "qua"     , POS_RESTING , do_use      , 0, SCMD_QUAFF },
   { "qecho"    , "qec"     , POS_DEAD    , do_qcomm    , LVL_GOD, SCMD_QECHO },
-  { "quest"    , "que"     , POS_DEAD    , do_gen_tog  , 0, SCMD_QUEST },
+  { "quest"    , "que"     , POS_DEAD    , do_quest    , 0, 0 },
   { "qui"      , "qui"     , POS_DEAD    , do_quit     , 0, 0 },
   { "quit"     , "quit"    , POS_DEAD    , do_quit     , 0, SCMD_QUIT },
   { "qsay"     , "qsay"    , POS_RESTING , do_qcomm    , 0, SCMD_QSAY },
@@ -505,7 +332,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "zcheck"   , "zcheck"  , POS_DEAD    , do_zcheck   , LVL_GOD, 0 },
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
 
-  /* DG trigger commands */
+  /* DG trigger commands. minimum_level should be set to -1. */
   { "masound"  , "masound" , POS_DEAD    , do_masound  , -1, 0 },
   { "mkill"    , "mkill"   , POS_STANDING, do_mkill    , -1, 0 },
   { "mjunk"    , "mjunk"   , POS_SITTING , do_mjunk    , -1, 0 },
@@ -554,6 +381,30 @@ const char *reserved[] =
   "something",
   "\n"
 };
+
+static int sort_commands_helper(const void *a, const void *b)
+{
+  return strcmp(complete_cmd_info[*(const int *)a].sort_as,
+                complete_cmd_info[*(const int *)b].sort_as);
+}
+
+void sort_commands(void)
+{
+  int a, num_of_cmds = 0;
+
+  while (complete_cmd_info[num_of_cmds].command[0] != '\n')
+    num_of_cmds++;
+  num_of_cmds++;  /* \n */
+
+  CREATE(cmd_sort_info, int, num_of_cmds);
+
+  for (a = 0; a < num_of_cmds; a++)
+    cmd_sort_info[a] = a;
+
+  /* Don't sort the RESERVED or \n entries. */
+  qsort(cmd_sort_info + 1, num_of_cmds - 2, sizeof(int), sort_commands_helper);
+}
+
 
 /* This is the actual command interpreter called from game_loop() in comm.c
  * It makes sure you are the proper level and position to execute the command,
@@ -610,12 +461,17 @@ void command_interpreter(struct char_data *ch, char *argument)
     int found = 0;
     send_to_char(ch, "Huh!?!\r\n");
 
-    for (cmd = 0; *cmd_info[cmd].command != '\n'; cmd++) {
+    for (cmd = 0; *cmd_info[cmd].command != '\n'; cmd++) 
+    {
       if (*arg != *cmd_info[cmd].command || cmd_info[cmd].minimum_level > GET_LEVEL(ch))
         continue;
 
-      if (levenshtein_distance(arg, (char *) cmd_info[cmd].command) <= 2) {
-        if (!found) {   
+      /* Only apply levenshtein counts if the command is not a trigger command. */
+      if ( (levenshtein_distance(arg, (char *) cmd_info[cmd].command) <= 2) &&
+           (cmd_info[cmd].minimum_level >= 0) ) 
+      {
+        if (!found) 
+        {   
           send_to_char(ch, "\r\nDid you mean:\r\n");
           found = 1;
         }
@@ -658,7 +514,7 @@ void command_interpreter(struct char_data *ch, char *argument)
 }
 
 /* Routines to handle aliasing. */
-struct alias_data *find_alias(struct alias_data *alias_list, char *str)
+static struct alias_data *find_alias(struct alias_data *alias_list, char *str)
 {
   while (alias_list != NULL) {
     if (*str == *alias_list->alias)	/* hey, every little bit counts :-) */
@@ -741,7 +597,7 @@ ACMD(do_alias)
  * commands. */
 #define NUM_TOKENS       9
 
-void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a)
+static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a)
 {
   struct txt_q temp_queue;
   char *tokens[NUM_TOKENS], *temp, *write_point;
@@ -924,7 +780,7 @@ int fill_word(char *argument)
   return (search_block(argument, fill, TRUE) >= 0);
 }
 
-int reserved_word(char *argument)
+static int reserved_word(char *argument)
 {
   return (search_block(argument, reserved, TRUE) >= 0);
 }
@@ -1082,7 +938,7 @@ int special(struct char_data *ch, int cmd, char *arg)
 
 /* Stuff for controlling the non-playing sockets (get name, pwd etc).
  * This function needs to die. */
-int _parse_name(char *arg, char *name)
+static int _parse_name(char *arg, char *name)
 {
   int i;
 
@@ -1102,7 +958,7 @@ int _parse_name(char *arg, char *name)
 #define UNSWITCH	3
 
 /* This function seems a bit over-extended. */
-int perform_dupe_check(struct descriptor_data *d)
+static int perform_dupe_check(struct descriptor_data *d)
 {
   struct descriptor_data *k, *next_k;
   struct char_data *target = NULL, *ch, *next_ch;
@@ -1308,7 +1164,8 @@ void nanny(struct descriptor_data *d, char *arg)
     { CON_CEDIT, cedit_parse },
     { CON_TRIGEDIT, trigedit_parse },
     { CON_AEDIT, aedit_parse },
-    { CON_HEDIT,    hedit_parse },
+    { CON_HEDIT, hedit_parse },
+    { CON_QEDIT, qedit_parse },
     { -1, NULL }
   };
 

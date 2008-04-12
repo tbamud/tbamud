@@ -1,3 +1,11 @@
+/**
+* @file telnet.h
+* Function prototypes, defines and macros to handle socket connections.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.               
+*/
+
 /*
  * Copyright (c) 1983, 1993
  *	The Regents of the University of California.  All rights reserved.

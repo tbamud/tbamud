@@ -18,23 +18,19 @@
 #include "interpreter.h"
 #include "spells.h"
 #include "dg_scripts.h"
+#include "act.h"
+#include "class.h"
+#include "fight.h"
+#include "quest.h"
 
-/* local vars */
-int extractions_pending = 0;
+/* local file scope variables */
+static int extractions_pending = 0;
 
-/* external vars */
-extern struct char_data *combat_list;
+/* local file scope functions */
+static int apply_ac(struct char_data *ch, int eq_pos);
+static void update_object(struct obj_data *obj, int use);
+static void affect_modify(struct char_data *ch, byte loc, sbyte mod, long bitv, bool add);
 
-/* local functions */
-int apply_ac(struct char_data *ch, int eq_pos);
-void update_object(struct obj_data *obj, int use);
-void update_char_objects(struct char_data *ch);
-void affect_modify(struct char_data *ch, byte loc, sbyte mod, long bitv, bool add);
-
-/* external functions */
-int invalid_class(struct char_data *ch, struct obj_data *obj);
-void clearMemory(struct char_data *ch);
-ACMD(do_return);
 
 char *fname(const char *namelist)
 {
@@ -207,7 +203,7 @@ void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *msg)
   } /* switch */
 }
 
-void affect_modify(struct char_data * ch, byte loc, sbyte mod, long bitv, bool add)
+static void affect_modify(struct char_data * ch, byte loc, sbyte mod, long bitv, bool add)
 {
   if (add) {
     SET_BIT_AR(AFF_FLAGS(ch), bitv);
@@ -412,6 +408,9 @@ void char_to_room(struct char_data *ch, room_rnum room)
     world[room].people = ch;
     IN_ROOM(ch) = room;
 
+    autoquest_trigger_check(ch, 0, 0, AQ_ROOM_FIND);
+    autoquest_trigger_check(ch, 0, 0, AQ_MOB_FIND);
+    
     if (GET_EQ(ch, WEAR_LIGHT))
       if (GET_OBJ_TYPE(GET_EQ(ch, WEAR_LIGHT)) == ITEM_LIGHT)
 	if (GET_OBJ_VAL(GET_EQ(ch, WEAR_LIGHT), 2))	/* Light ON */
@@ -435,6 +434,8 @@ void obj_to_char(struct obj_data *object, struct char_data *ch)
     IN_ROOM(object) = NOWHERE;
     IS_CARRYING_W(ch) += GET_OBJ_WEIGHT(object);
     IS_CARRYING_N(ch)++;
+    
+    autoquest_trigger_check(ch, NULL, object, AQ_OBJ_FIND);
 
     /* set flag for crash-save system, but not on mobs! */
     if (!IS_NPC(ch))
@@ -465,7 +466,7 @@ void obj_from_char(struct obj_data *object)
 }
 
 /* Return the effect of a piece of armor in position eq_pos */
-int apply_ac(struct char_data *ch, int eq_pos)
+static int apply_ac(struct char_data *ch, int eq_pos)
 {
   int factor;
 
@@ -820,7 +821,7 @@ void extract_obj(struct obj_data *obj)
   free_obj(obj);
 }
 
-void update_object(struct obj_data *obj, int use)
+static void update_object(struct obj_data *obj, int use)
 {
   /* dont update objects with a timer trigger */
   if (!SCRIPT_CHECK(obj, OTRIG_TIMER) && (GET_OBJ_TIMER(obj) > 0))

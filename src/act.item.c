@@ -20,40 +20,37 @@
 #include "constants.h"
 #include "dg_scripts.h"
 #include "oasis.h"
+#include "act.h"
+#include "quest.h"
 
-/* local functions */
-int can_take_obj(struct char_data *ch, struct obj_data *obj);
-void get_check_money(struct char_data *ch, struct obj_data *obj);
-int perform_get_from_room(struct char_data *ch, struct obj_data *obj);
-void get_from_room(struct char_data *ch, char *arg, int amount);
-void perform_give_gold(struct char_data *ch, struct char_data *vict, int amount);
-void perform_give(struct char_data *ch, struct char_data *vict, struct obj_data *obj);
-int perform_drop(struct char_data *ch, struct obj_data *obj, byte mode, const char *sname, room_rnum RDR);
-void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_rnum RDR);
-struct char_data *give_find_vict(struct char_data *ch, char *arg);
-void weight_change_object(struct obj_data *obj, int weight);
-void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont);
-void name_from_drinkcon(struct obj_data *obj);
-void get_from_container(struct char_data *ch, struct obj_data *cont, char *arg, int mode, int amount);
-void name_to_drinkcon(struct obj_data *obj, int type);
-void wear_message(struct char_data *ch, struct obj_data *obj, int where);
-void perform_wear(struct char_data *ch, struct obj_data *obj, int where);
-int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg);
-void perform_get_from_container(struct char_data *ch, struct obj_data *obj, struct obj_data *cont, int mode);
-void perform_remove(struct char_data *ch, int pos);
-ACMD(do_remove);
-ACMD(do_put);
-ACMD(do_get);
-ACMD(do_drop);
-ACMD(do_give);
-ACMD(do_drink);
-ACMD(do_eat);
-ACMD(do_pour);
-ACMD(do_wear);
-ACMD(do_wield);
-ACMD(do_grab);
 
-void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont)
+/* local function prototypes */
+/* do_get utility functions */
+static int can_take_obj(struct char_data *ch, struct obj_data *obj);
+static void get_check_money(struct char_data *ch, struct obj_data *obj);
+static void get_from_container(struct char_data *ch, struct obj_data *cont, char *arg, int mode, int amount);
+static void get_from_room(struct char_data *ch, char *arg, int amount);
+static void perform_get_from_container(struct char_data *ch, struct obj_data *obj, struct obj_data *cont, int mode);
+static int perform_get_from_room(struct char_data *ch, struct obj_data *obj);
+/* do_give utility functions */
+static struct char_data *give_find_vict(struct char_data *ch, char *arg);
+static void perform_give(struct char_data *ch, struct char_data *vict, struct obj_data *obj);
+static void perform_give_gold(struct char_data *ch, struct char_data *vict, int amount);
+/* do_drop utility functions */
+static int perform_drop(struct char_data *ch, struct obj_data *obj, byte mode, const char *sname, room_rnum RDR);
+static void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_rnum RDR);
+/* do_put utility functions */
+static void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont);
+/* do_remove utility functions */
+static void perform_remove(struct char_data *ch, int pos);
+/* do_wear utility functions */
+static void perform_wear(struct char_data *ch, struct obj_data *obj, int where);
+static void wear_message(struct char_data *ch, struct obj_data *obj, int where);
+
+
+
+
+static void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont)
 {
 
   if (!drop_otrigger(obj, ch))
@@ -162,7 +159,7 @@ ACMD(do_put)
   }
 }
 
-int can_take_obj(struct char_data *ch, struct obj_data *obj)
+static int can_take_obj(struct char_data *ch, struct obj_data *obj)
 {
   if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)) {
     act("$p: you can't carry that many items.", FALSE, ch, obj, 0, TO_CHAR);
@@ -177,7 +174,7 @@ int can_take_obj(struct char_data *ch, struct obj_data *obj)
   return (1);
 }
 
-void get_check_money(struct char_data *ch, struct obj_data *obj)
+static void get_check_money(struct char_data *ch, struct obj_data *obj)
 {
   int value = GET_OBJ_VAL(obj, 0);
 
@@ -194,7 +191,7 @@ void get_check_money(struct char_data *ch, struct obj_data *obj)
     send_to_char(ch, "There were %d coins.\r\n", value);
 }
 
-void perform_get_from_container(struct char_data *ch, struct obj_data *obj,
+static void perform_get_from_container(struct char_data *ch, struct obj_data *obj,
 				     struct obj_data *cont, int mode)
 {
   if (mode == FIND_OBJ_INV || can_take_obj(ch, obj)) {
@@ -260,7 +257,7 @@ void get_from_container(struct char_data *ch, struct obj_data *cont,
   }
 }
 
-int perform_get_from_room(struct char_data *ch, struct obj_data *obj)
+static int perform_get_from_room(struct char_data *ch, struct obj_data *obj)
 {
   if (can_take_obj(ch, obj) && get_otrigger(obj, ch)) {
     obj_from_room(obj);
@@ -273,7 +270,7 @@ int perform_get_from_room(struct char_data *ch, struct obj_data *obj)
   return (0);
 }
 
-void get_from_room(struct char_data *ch, char *arg, int howmany)
+static void get_from_room(struct char_data *ch, char *arg, int howmany)
 {
   struct obj_data *obj, *next_obj;
   int dotmode, found = 0;
@@ -384,7 +381,7 @@ ACMD(do_get)
   }
 }
 
-void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_rnum RDR)
+static void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_rnum RDR)
 {
   struct obj_data *obj;
 
@@ -430,7 +427,7 @@ void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_rnum RD
 
 #define VANISH(mode) ((mode == SCMD_DONATE || mode == SCMD_JUNK) ? \
 		      "  It vanishes in a puff of smoke!" : "")
-int perform_drop(struct char_data *ch, struct obj_data *obj,
+static int perform_drop(struct char_data *ch, struct obj_data *obj,
 		     byte mode, const char *sname, room_rnum RDR)
 {
   char buf[MAX_STRING_LENGTH];
@@ -594,7 +591,7 @@ ACMD(do_drop)
   }
 }
 
-void perform_give(struct char_data *ch, struct char_data *vict,
+static void perform_give(struct char_data *ch, struct char_data *vict,
 		       struct obj_data *obj)
 {
   if (!give_otrigger(obj, ch, vict))
@@ -619,10 +616,12 @@ void perform_give(struct char_data *ch, struct char_data *vict,
   act("You give $p to $N.", FALSE, ch, obj, vict, TO_CHAR);
   act("$n gives you $p.", FALSE, ch, obj, vict, TO_VICT);
   act("$n gives $p to $N.", TRUE, ch, obj, vict, TO_NOTVICT);
+  
+  autoquest_trigger_check( ch, vict, obj, AQ_OBJ_RETURN);
 }
 
 /* utility function for give */
-struct char_data *give_find_vict(struct char_data *ch, char *arg)
+static struct char_data *give_find_vict(struct char_data *ch, char *arg)
 {
   struct char_data *vict;
 
@@ -639,7 +638,7 @@ struct char_data *give_find_vict(struct char_data *ch, char *arg)
   return (NULL);
 }
 
-void perform_give_gold(struct char_data *ch, struct char_data *vict,
+static void perform_give_gold(struct char_data *ch, struct char_data *vict,
 		            int amount)
 {
   char buf[MAX_STRING_LENGTH];
@@ -871,7 +870,7 @@ ACMD(do_drink)
     send_to_char(ch, "Your stomach can't contain anymore!\r\n");
     return;
   }
-  if ((GET_OBJ_VAL(temp, 1) == 0) && (!GET_OBJ_VAL(temp, 0) == 1)) {
+  if ((GET_OBJ_VAL(temp, 1) == 0) || (!GET_OBJ_VAL(temp, 0) == 1)) {
     send_to_char(ch, "It is empty.\r\n");
     return;
   }
@@ -1156,7 +1155,7 @@ ACMD(do_pour)
   weight_change_object(to_obj, amount); /* Add weight */
 }
 
-void wear_message(struct char_data *ch, struct obj_data *obj, int where)
+static void wear_message(struct char_data *ch, struct obj_data *obj, int where)
 {
   const char *wear_messages[][2] = {
     {"$n lights $p and holds it.",
@@ -1218,7 +1217,7 @@ void wear_message(struct char_data *ch, struct obj_data *obj, int where)
   act(wear_messages[where][1], FALSE, ch, obj, 0, TO_CHAR);
 }
 
-void perform_wear(struct char_data *ch, struct obj_data *obj, int where)
+static void perform_wear(struct char_data *ch, struct obj_data *obj, int where)
 {
   /*
    * ITEM_WEAR_TAKE is used for objects that do not require special bits
@@ -1439,7 +1438,7 @@ ACMD(do_grab)
   }
 }
 
-void perform_remove(struct char_data *ch, int pos)
+static void perform_remove(struct char_data *ch, int pos)
 {
   struct obj_data *obj;
 

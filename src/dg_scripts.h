@@ -1,13 +1,21 @@
-/**************************************************************************
-*  File: dg_scripts.h                                      Part of tbaMUD *
-*                                                                         *
-*  Usage: header file for script structures, constants, and function      *
-*         prototypes for dg_scripts.c                                     *
-*                                                                         *
-*  $Author: Mark A. Heilpern/egreen/Welcor $                              *
-*  $Date: 2004/10/11 12:07:00$                                            *
-*  $Revision: 1.0.14 $                                                    *
-**************************************************************************/
+/**
+* @file dg_scripts.h
+* Header file for script structures, constants, and function prototypes for 
+* dg_scripts.c
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+* 
+* This source code, which was not part of the CircleMUD legacy code,
+* was created by the following people:                                      
+* $Author: Mark A. Heilpern/egreen/Welcor $                              
+* $Date: 2004/10/11 12:07:00$                                            
+* $Revision: 1.0.14 $                                                    
+*/
+#ifndef _DG_SCRIPTS_H_
+#define _DG_SCRIPTS_H_
+
+#include "utils.h" /* To make sure ACMD is defined */
 
 #define DG_SCRIPT_VERSION "DG Scripts 1.0.14"
 
@@ -138,36 +146,36 @@ struct trig_var_data {
   struct trig_var_data *next;
 };
 
-/* structure for triggers */
+/** structure for triggers */
 struct trig_data {
-    IDXTYPE nr; 	                /* trigger's rnum                  */
-    byte attach_type;			/* mob/obj/wld intentions          */
-    byte data_type;		        /* type of game_data for trig      */
-    char *name;			        /* name of trigger                 */
-    long trigger_type;			/* type of trigger (for bitvector) */
-    struct cmdlist_element *cmdlist;	/* top of command list             */
-    struct cmdlist_element *curr_state;	/* ptr to current line of trigger  */
-    int narg;				/* numerical argument              */
-    char *arglist;			/* argument list                   */
-    int depth;				/* depth into nest ifs/whiles/etc  */
-    int loops;				/* loop iteration counter          */
-    struct event *wait_event;   	/* event to pause the trigger      */
-    ubyte purged;			/* trigger is set to be purged     */
-    struct trig_var_data *var_list;	/* list of local vars for trigger  */
+    IDXTYPE nr;                         /**< trigger's rnum                  */
+    byte attach_type;                   /**< mob/obj/wld intentions          */
+    byte data_type;                     /**< type of game_data for trig      */
+    char *name;                         /**< name of trigger                 */
+    long trigger_type;                  /**< type of trigger (for bitvector) */
+    struct cmdlist_element *cmdlist;    /**< top of command list             */
+    struct cmdlist_element *curr_state;	/**< ptr to current line of trigger  */
+    int narg;                           /**< numerical argument              */
+    char *arglist;                      /**< argument list                   */
+    int depth;                          /**< depth into nest ifs/whiles/etc  */
+    int loops;                          /**< loop iteration counter          */
+    struct event *wait_event;           /**< event to pause the trigger  */
+    ubyte purged;                       /**< trigger is set to be purged     */
+    struct trig_var_data *var_list;	    /**< list of local vars for trigger  */
 
     struct trig_data *next;
-    struct trig_data *next_in_world;    /* next in the global trigger list */
+    struct trig_data *next_in_world;    /**< next in the global trigger list */
 };
 
-/* a complete script (composed of several triggers) */
+/** a complete script (composed of several triggers) */
 struct script_data {
-  long types;				/* bitvector of trigger types */
-  struct trig_data *trig_list;	        /* list of triggers           */
-  struct trig_var_data *global_vars;	/* list of global variables   */
-  ubyte purged;				/* script is set to be purged */
-  long context;				/* current context for statics */
+  long types;                        /**< bitvector of trigger types */
+  struct trig_data *trig_list;       /**< list of triggers           */
+  struct trig_var_data *global_vars; /**< list of global variables   */
+  ubyte purged;                      /**< script is set to be purged */
+  long context;                      /**< current context for statics */
 
-  struct script_data *next;		/* used for purged_scripts    */
+  struct script_data *next;          /**< used for purged_scripts    */
 };
 
 /* The event data for the wait command */
@@ -177,6 +185,13 @@ struct wait_event_data {
   int type;
 };
 
+/* used for actor memory triggers */
+struct script_memory {
+  long id;        /* id of who to remember */
+  char *cmd;        /* command, or NULL for generic */
+  struct script_memory *next;
+};
+
 /* typedefs that the dg functions rely on */
 typedef struct index_data index_data;
 typedef struct room_data room_data;
@@ -184,12 +199,6 @@ typedef struct obj_data obj_data;
 typedef struct trig_data trig_data;
 typedef struct char_data char_data;
 
-/* used for actor memory triggers */
-struct script_memory {
-  long id;				/* id of who to remember */
-  char *cmd;				/* command, or NULL for generic */
-  struct script_memory *next;
-};
 
 /* function prototypes from dg_triggers.c */
 char *one_phrase(char *arg, char *first_arg);
@@ -254,6 +263,10 @@ void time_otrigger(obj_data *obj);
 void time_wtrigger(room_data *room);
 
 /* function prototypes from dg_scripts.c */
+ACMD(do_attach) ;
+ACMD(do_detach);
+ACMD(do_vdelete);
+ACMD(do_tstat);
 char *str_str(char *cs, char *ct);
 int find_eq_pos_script(char *arg);
 int can_wear_on_pos(struct obj_data *obj, int pos);
@@ -283,6 +296,10 @@ void script_vlog(const char *format, va_list args);
 void script_log(const char *format, ...) __attribute__ ((format (printf, 1, 2)));
 char *matching_quote(char *p);
 struct room_data *dg_room_of_obj(struct obj_data *obj);
+bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *namelist[]);
+void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count);
+void save_char_vars_ascii(FILE *file, struct char_data *ch);
+int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_arg);
 
 /* To maintain strict-aliasing we'll have to do this trick with a union */
 /* Thanks to Chris Gilbert for reminding me that there are other options. */
@@ -343,8 +360,41 @@ void send_char_pos(struct char_data *ch, int dam);
 int valid_dg_target(char_data *ch, int bitvector);
 void script_damage(char_data *vict, int dam);
 
+/* from dg_mobcmd.c */
+ACMD(do_masound);
+ACMD(do_mat);
+ACMD(do_mdamage);
+ACMD(do_mdoor);
+ACMD(do_mecho);
+ACMD(do_mechoaround);
+ACMD(do_mfollow);
+ACMD(do_mforce);
+ACMD(do_mforget);
+ACMD(do_mgoto);
+ACMD(do_mhunt);
+ACMD(do_mjunk);
+ACMD(do_mkill);
+ACMD(do_mload);
+ACMD(do_mpurge);
+ACMD(do_mrecho);
+ACMD(do_mremember);
+ACMD(do_msend);
+ACMD(do_mteleport);
+ACMD(do_mtransform);
+ACMD(do_mzoneecho);
+
+/* from dg_olc.c... thinking these should be moved to oasis.h */
+void trigedit_save(struct descriptor_data *d);
+void trigedit_string_cleanup(struct descriptor_data *d, int terminator);
+int format_script(struct descriptor_data *d);
+void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num);
+
 /* from dg_objcmd.c */
 room_rnum obj_room(obj_data *obj);
+void obj_command_interpreter(obj_data *obj, char *argument);
+
+/* from dg_wldcmd.c */
+void wld_command_interpreter(room_data *room, char *argument);
 
 /* defines for valid_dg_target */
 #define DG_ALLOW_GODS (1<<0)
@@ -388,3 +438,4 @@ room_rnum obj_room(obj_data *obj);
 		         sprintf(buf, "%c%ld", UID_CHAR, GET_ID(go)); \
                          add_var(&GET_TRIG_VARS(trig), name, buf, context); } while (0)
 
+#endif /* _DG_SCRIPTS_H_ */

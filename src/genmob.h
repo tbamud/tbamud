@@ -1,10 +1,16 @@
-/**************************************************************************
-*  File: genmob.h                                          Part of tbaMUD *
-*                                                                         *
-*  Usage: Generic OLC Library - Mobiles.                                  *
-*                                                                         *
-*  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
-**************************************************************************/
+/**
+* @file genmob.h
+* Generic OLC Library - Mobiles.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+* 
+* This source code, which was not part of the CircleMUD legacy code,
+* is attributed to:
+* Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.                                                    
+*/
+#ifndef _GENMOB_H_
+#define _GENMOB_H_
 
 int delete_mobile(mob_rnum);
 int copy_mobile(struct char_data *to, struct char_data *from);
@@ -32,3 +38,5 @@ int write_mobile_mobprog(mob_vnum mvnum, struct char_data *mob, FILE *fd);
 #define GET_LDESC(mob)	((mob)->player.long_descr)
 #define GET_DDESC(mob)	((mob)->player.description)
 #define GET_ATTACK(mob)	((mob)->mob_specials.attack_type)
+
+#endif /* _GENMOB_H_ */

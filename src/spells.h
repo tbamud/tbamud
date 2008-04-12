@@ -1,12 +1,16 @@
-/**************************************************************************
-*  File: spells.h                                          Part of tbaMUD *
-*  Usage: Header file: constants and fn prototypes for spell system.      *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+/**
+* @file spells.h
+* Constants and function prototypes for the spell system.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*/
+#ifndef _SPELLS_H_
+#define _SPELLS_H_
 
 #define DEFAULT_STAFF_LVL	12
 #define DEFAULT_WAND_LVL	12
@@ -85,6 +89,9 @@
 #define SPELL_GROUP_RECALL	     49 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_INFRAVISION	     50 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_WATERWALK		     51 /* Reserved Skill[] DO NOT CHANGE */
+/** Total Number of defined spells */
+#define NUM_SPELLS    51
+
 /* Insert new spells here, up to MAX_SPELLS */
 #define MAX_SPELLS		    130
 
@@ -116,21 +123,23 @@
 /* NEW NPC/OBJECT SPELLS can be inserted here up to 299 */
 
 /* WEAPON ATTACK TYPES */
-#define TYPE_HIT                     300
-#define TYPE_STING                   301
-#define TYPE_WHIP                    302
-#define TYPE_SLASH                   303
-#define TYPE_BITE                    304
-#define TYPE_BLUDGEON                305
-#define TYPE_CRUSH                   306
-#define TYPE_POUND                   307
-#define TYPE_CLAW                    308
-#define TYPE_MAUL                    309
-#define TYPE_THRASH                  310
-#define TYPE_PIERCE                  311
-#define TYPE_BLAST		     312
-#define TYPE_PUNCH		     313
-#define TYPE_STAB		     314
+#define TYPE_HIT        300
+#define TYPE_STING      301
+#define TYPE_WHIP       302
+#define TYPE_SLASH      303
+#define TYPE_BITE       304
+#define TYPE_BLUDGEON   305
+#define TYPE_CRUSH      306
+#define TYPE_POUND      307
+#define TYPE_CLAW       308
+#define TYPE_MAUL       309
+#define TYPE_THRASH     310
+#define TYPE_PIERCE     311
+#define TYPE_BLAST		  312
+#define TYPE_PUNCH		  313
+#define TYPE_STAB		    314
+/** The total number of attack types */
+#define NUM_ATTACK_TYPES  15
 
 /* new attack types can be added here - up to TYPE_SUFFERING */
 #define TYPE_SUFFERING		     399
@@ -140,6 +149,8 @@
 #define SAVING_PETRI  2
 #define SAVING_BREATH 3
 #define SAVING_SPELL  4
+/* Equals the total number of SAVING_* defines */
+#define NUM_OF_SAVING_THROWS  5
 
 #define TAR_IGNORE      (1 << 0)
 #define TAR_CHAR_ROOM   (1 << 1)
@@ -151,7 +162,7 @@
 #define TAR_OBJ_INV     (1 << 7)
 #define TAR_OBJ_ROOM    (1 << 8)
 #define TAR_OBJ_WORLD   (1 << 9)
-#define TAR_OBJ_EQUIP	(1 << 10)
+#define TAR_OBJ_EQUIP	  (1 << 10)
 
 struct spell_info_type {
    byte min_position;	/* Position for caster	 */
@@ -183,12 +194,6 @@ struct spell_info_type {
 #define SPELL_TYPE_WAND    2
 #define SPELL_TYPE_STAFF   3
 #define SPELL_TYPE_SCROLL  4
-
-/* Attacktypes with grammar */
-struct attack_hit_type {
-   const char	*singular;
-   const char	*plural;
-};
 
 #define ASPELL(spellname) \
 void	spellname(int level, struct char_data *ch, \
@@ -250,3 +255,23 @@ int	cast_spell(struct char_data *ch, struct char_data *tch,
 void spell_level(int spell, int chclass, int level);
 void init_spell_levels(void);
 const char *skill_name(int num);
+
+/* From magic.c */
+int mag_savingthrow(struct char_data *ch, int type, int modifier);
+void affect_update(void);
+
+/* from spell_parser.c */
+ACMD(do_cast);
+void unused_spell(int spl);
+void mag_assign_spells(void);
+
+/* Global variables exported */
+#ifndef __SPELL_PARSER_C__
+
+extern struct spell_info_type spell_info[];
+extern char cast_arg2[];
+extern const char *unused_spellname;
+
+#endif /* __SPELL_PARSER_C__ */
+
+#endif /* _SPELLS_H_ */

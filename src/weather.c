@@ -1,28 +1,32 @@
-/**************************************************************************
-*  File: weather.c                                         Part of tbaMUD *
-*  Usage: Functions handling time and the weather.                        *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-************************************************************************ */
+/**
+* @file weather.c                                          
+* Functions that handle the in game progress of time and weather changes.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*/
 
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
-#include "handler.h"
-#include "interpreter.h"
 #include "db.h"
 
-extern struct time_info_data time_info;
+static void another_hour(int mode);
+static void weather_change(void);
 
-void weather_and_time(int mode);
-void another_hour(int mode);
-void weather_change(void);
-
+/** Call this function every mud hour to increment the gametime (by one hour)
+ * and the weather patterns.
+ * @param mode Really, this parameter has the effect of a boolean. In the
+ * current incarnation of the function and utility functions, as long as mode
+ * is non-zero, the gametime will increment one hour and the weather will be
+ * changed.
+ */
 void weather_and_time(int mode)
 {
   another_hour(mode);
@@ -30,7 +34,12 @@ void weather_and_time(int mode)
     weather_change();
 }
 
-void another_hour(int mode)
+/** Increment the game time by one hour (no matter what) and display any time 
+ * dependent messages via send_to_outdoors() (if parameter is non-zero).
+ * @param mode Really, this parameter has the effect of a boolean. If non-zero,
+ * display day/night messages to all eligible players.
+ */
+static void another_hour(int mode)
 {
   time_info.hours++;
 
@@ -72,9 +81,15 @@ void another_hour(int mode)
   }
 }
 
-void weather_change(void)
+/** Controls the in game weather system. If the weather changes, an information
+ * update is sent via send_to_outdoors().
+ * @todo There are some hard coded values that could be extracted to make
+ * customizing the weather patterns easier.
+ */  
+static void weather_change(void)
 {
   int diff, change;
+  
   if ((time_info.month >= 9) && (time_info.month <= 16))
     diff = (weather_info.pressure > 985 ? -2 : 2);
   else

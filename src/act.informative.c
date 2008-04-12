@@ -20,83 +20,41 @@
 #include "screen.h"
 #include "constants.h"
 #include "dg_scripts.h"
+#include "mail.h"         /**< For the has_mail function */ 
+#include "act.h"
+#include "class.h"
+#include "fight.h"
+#include "modify.h"
+#include "asciimap.h"
 
-/* extern variables */
-extern int top_of_helpt;
-extern struct help_index_element *help_table;
-extern char *help;
-extern char *ihelp;
-extern struct time_info_data time_info;
-extern char *credits;
-extern char *news;
-extern char *info;
-extern char *motd;
-extern char *imotd;
-extern char *wizlist;
-extern char *immlist;
-extern char *policies;
-extern char *handbook;
-extern char *class_abbrevs[];
+/* prototypes of local functions */
+/* do_diagnose utility functions */
+static void diag_char_to_char(struct char_data *i, struct char_data *ch);
+/* do_look and do_examine utility functions */
+static void do_auto_exits(struct char_data *ch);
+static void list_char_to_char(struct char_data *list, struct char_data *ch);
+static void list_one_char(struct char_data *i, struct char_data *ch);
+static void look_at_char(struct char_data *i, struct char_data *ch);
+static void look_at_target(struct char_data *ch, char *arg);
+static void look_in_direction(struct char_data *ch, int dir);
+static void look_in_obj(struct char_data *ch, char *arg);
+/* do_look, do_inventory utility functions */
+static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show);
+/* do_look, do_equipment, do_examine, do_inventory */
+static void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode);
+static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch);
+/* do_where utility functions */
+static void perform_immort_where(struct char_data *ch, char *arg);
+static void perform_mortal_where(struct char_data *ch, char *arg);
+static void print_object_location(int num, struct obj_data *obj, struct char_data *ch, int recur);
 
-/* extern functions */
-ACMD(do_action);
-bitvector_t find_class_bitvector(const char *arg);
-int level_exp(int chclass, int level);
-char *title_male(int chclass, int level);
-char *title_female(int chclass, int level);
-struct time_info_data *real_time_passed(time_t t2, time_t t1);
-int compute_armor_class(struct char_data *ch);
-int has_mail(long id);
-
-/* local functions */
-int sort_commands_helper(const void *a, const void *b);
-void print_object_location(int num, struct obj_data *obj, struct char_data *ch, int recur);
-void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode);
-void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show);
-void show_obj_modifiers(struct obj_data *obj, struct char_data *ch);
-ACMD(do_look);
-ACMD(do_examine);
-ACMD(do_gold);
-ACMD(do_score);
-ACMD(do_inventory);
-ACMD(do_equipment);
-ACMD(do_time);
-ACMD(do_weather);
-void space_to_minus(char *str);
-ACMD(do_help);
-ACMD(do_who);
-ACMD(do_users);
-ACMD(do_gen_ps);
-void perform_mortal_where(struct char_data *ch, char *arg);
-void perform_immort_where(struct char_data *ch, char *arg);
-ACMD(do_where);
-ACMD(do_levels);
-ACMD(do_consider);
-ACMD(do_diagnose);
-ACMD(do_color);
-ACMD(do_toggle);
-void sort_commands(void);
-ACMD(do_commands);
-void diag_char_to_char(struct char_data *i, struct char_data *ch);
-void look_at_char(struct char_data *i, struct char_data *ch);
-void list_one_char(struct char_data *i, struct char_data *ch);
-void list_char_to_char(struct char_data *list, struct char_data *ch);
-void do_auto_exits(struct char_data *ch);
-ACMD(do_exits);
-void look_in_direction(struct char_data *ch, int dir);
-void look_in_obj(struct char_data *ch, char *arg);
-char *find_exdesc(char *word, struct extra_descr_data *list);
-void look_at_target(struct char_data *ch, char *arg);
-
-/* local globals */
-int *cmd_sort_info;
-
+/* Subcommands */
 /* For show_obj_to_char 'mode'.	/-- arbitrary */
-#define SHOW_OBJ_LONG		0
-#define SHOW_OBJ_SHORT		1
-#define SHOW_OBJ_ACTION		2
+#define SHOW_OBJ_LONG     0
+#define SHOW_OBJ_SHORT    1
+#define SHOW_OBJ_ACTION   2
 
-void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
+static void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 {
   int found = 0;   
   struct char_data *temp;
@@ -194,7 +152,7 @@ void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
   send_to_char(ch, "\r\n");
 }
 
-void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
+static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
 {
   if (OBJ_FLAGGED(obj, ITEM_INVISIBLE))
     send_to_char(ch, " (invisible)");
@@ -212,7 +170,7 @@ void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
     send_to_char(ch, " ..It emits a faint humming sound!");
 }
 
-void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show)
+static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show)
 {
   struct obj_data *i, *j;
   bool found;
@@ -244,7 +202,7 @@ void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int
     send_to_char(ch, "  Nothing.\r\n");
 }
 
-void diag_char_to_char(struct char_data *i, struct char_data *ch)
+static void diag_char_to_char(struct char_data *i, struct char_data *ch)
 {
   struct {
     byte percent;
@@ -274,7 +232,7 @@ void diag_char_to_char(struct char_data *i, struct char_data *ch)
   send_to_char(ch, "%c%s %s\r\n", UPPER(*pers), pers + 1, diagnosis[ar_index].text);
 }
 
-void look_at_char(struct char_data *i, struct char_data *ch)
+static void look_at_char(struct char_data *i, struct char_data *ch)
 {
   int j, found;
   struct obj_data *tmp_obj;
@@ -318,7 +276,7 @@ void look_at_char(struct char_data *i, struct char_data *ch)
   }
 }
 
-void list_one_char(struct char_data *i, struct char_data *ch)
+static void list_one_char(struct char_data *i, struct char_data *ch)
 {
   struct obj_data *furniture;
   const char *positions[] = {
@@ -417,7 +375,7 @@ void list_one_char(struct char_data *i, struct char_data *ch)
     act("...$e glows with a bright light!", FALSE, i, 0, ch, TO_VICT);
 }
 
-void list_char_to_char(struct char_data *list, struct char_data *ch)
+static void list_char_to_char(struct char_data *list, struct char_data *ch)
 {
   struct char_data *i;
 
@@ -437,7 +395,7 @@ void list_char_to_char(struct char_data *list, struct char_data *ch)
     }
 }
 
-void do_auto_exits(struct char_data *ch)
+static void do_auto_exits(struct char_data *ch)
 {
   int door, slen = 0;
 
@@ -529,7 +487,16 @@ void look_at_room(struct char_data *ch, int ignore_brief)
 
   if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
       ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH))
+  {
+      if(!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
+      {
+        str_and_map(world[IN_ROOM(ch)].description, ch);
+      }
+      else
+      {
     send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
+      }
+  }
 
   /* autoexits */
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOEXIT))
@@ -540,7 +507,7 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   list_char_to_char(world[IN_ROOM(ch)].people, ch);
 }
 
-void look_in_direction(struct char_data *ch, int dir)
+static void look_in_direction(struct char_data *ch, int dir)
 {
   if (EXIT(ch, dir)) {
     if (EXIT(ch, dir)->general_description)
@@ -556,7 +523,7 @@ void look_in_direction(struct char_data *ch, int dir)
     send_to_char(ch, "Nothing special there...\r\n");
 }
 
-void look_in_obj(struct char_data *ch, char *arg)
+static void look_in_obj(struct char_data *ch, char *arg)
 {
   struct obj_data *obj = NULL;
   struct char_data *dummy = NULL;
@@ -629,7 +596,7 @@ char *find_exdesc(char *word, struct extra_descr_data *list)
  * matches the target.  First, see if there is another char in the room with
  * the name.  Then check local objs for exdescs. Thanks to Angus Mezick for 
  * the suggested fix to this problem. */
-void look_at_target(struct char_data *ch, char *arg)
+static void look_at_target(struct char_data *ch, char *arg)
 {
   int bits, found = FALSE, j, fnum, i = 0;
   struct char_data *found_char = NULL;
@@ -827,6 +794,16 @@ ACMD(do_score)
     send_to_char(ch, "You need %d exp to reach your next level.\r\n",
 	level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1) - GET_EXP(ch));
 
+  send_to_char(ch, "You have earned %d quest points.\r\n", GET_QUESTPOINTS(ch));
+  send_to_char(ch, "You have completed %d quest%s, ",
+       GET_NUM_QUESTS(ch),
+       GET_NUM_QUESTS(ch) == 1 ? "" : "s");
+  if (GET_QUEST(ch) == NOTHING)
+    send_to_char(ch, "and you are not on a quest at the moment.\r\n");
+  else
+    send_to_char(ch, "and your current quest is %d.\r\n",
+                     GET_QUEST(ch) == NOTHING ? -1 : GET_QUEST(ch));
+ 
   playing_time = *real_time_passed((time(0) - ch->player.time.logon) +
 				  ch->player.time.played, 0);
   send_to_char(ch, "You have been playing for %d day%s and %d hour%s.\r\n",
@@ -1040,7 +1017,7 @@ int search_help(char *argument, int level)
       while (level < help_table[mid].min_level && mid < (bot + top) / 2) 
         mid++; 
 
-//to allow morts access to helpfiles on TBA, delete next line.      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
+//      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
       if (strn_cmp(argument, help_table[mid].keywords, minlen))
 	      break; 
 
@@ -1057,7 +1034,8 @@ int search_help(char *argument, int level)
 ACMD(do_help)
 {
   int mid = 0;
-
+  int i, found = 0;
+  
     if (!ch->desc)
     return;
 
@@ -1079,7 +1057,6 @@ ACMD(do_help)
   space_to_minus(argument);
 
   if ((mid = search_help(argument, GET_LEVEL(ch))) == NOWHERE) {
-    int i, found = 0;
     send_to_char(ch, "There is no help on that word.\r\n");
     mudlog(NRM, MAX(LVL_IMPL, GET_INVIS_LEV(ch)), TRUE,
       "%s tried to get help on %s", GET_NAME(ch), argument);
@@ -1543,7 +1520,7 @@ ACMD(do_gen_ps)
   }
 }
 
-void perform_mortal_where(struct char_data *ch, char *arg)
+static void perform_mortal_where(struct char_data *ch, char *arg)
 {
   struct char_data *i;
   struct descriptor_data *d;
@@ -1576,7 +1553,7 @@ void perform_mortal_where(struct char_data *ch, char *arg)
   }
 }
 
-void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
+static void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
 			        int recur)
 {
   if (num > 0)
@@ -1605,7 +1582,7 @@ void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
     send_to_char(ch, "in an unknown location\r\n");
 }
 
-void perform_immort_where(struct char_data *ch, char *arg)
+static void perform_immort_where(struct char_data *ch, char *arg)
 {
   struct char_data *i;
   struct obj_data *k;
@@ -1664,17 +1641,50 @@ ACMD(do_where)
 
 ACMD(do_levels)
 {
-  char buf[MAX_STRING_LENGTH];
+  char buf[MAX_STRING_LENGTH], arg[MAX_STRING_LENGTH]; 
   size_t i, len = 0, nlen;
+  int ret, min_lev=1, max_lev=LVL_IMMORT, val;
 
   if (IS_NPC(ch)) {
     send_to_char(ch, "You ain't nothin' but a hound-dog.\r\n");
     return;
   }
+  one_argument(argument, arg); 
 
-  for (i = 1; i < LVL_IMMORT; i++) {
-    nlen = snprintf(buf + len, sizeof(buf) - len, "[%2d] %8d-%-8d : ", i,
-		level_exp(GET_CLASS(ch), i), level_exp(GET_CLASS(ch), i + 1) - 1);
+  if (arg && *arg) { 
+    if (isdigit(*arg)) { 
+      ret = sscanf(arg, "%d-%d", &min_lev, &max_lev); 
+      if (ret == 0) { 
+        /* No valid args found */ 
+        min_lev = 1; 
+        max_lev = LVL_IMMORT; 
+      } 
+      else if (ret == 1) { 
+        /* One arg = range is (num) either side of current level */ 
+        val = min_lev; 
+        max_lev = MIN(GET_LEVEL(ch) + val, LVL_IMMORT); 
+        min_lev = MAX(GET_LEVEL(ch) - val, 1); 
+      } 
+      else if (ret == 2) { 
+        /* Two args = min-max range limit - just do sanity checks */ 
+        min_lev = MAX(min_lev, 1); 
+        max_lev = MIN(max_lev + 1, LVL_IMMORT); 
+      } 
+    } 
+    else 
+    { 
+      send_to_char(ch, "Usage: %slevels [<min>-<max> | <range>]%s\r\n\r\n", QYEL, QNRM); 
+      send_to_char(ch, "Displays exp required for levels.\r\n"); 
+      send_to_char(ch, "%slevels       %s- shows all levels (1-%d)\r\n", QCYN, QNRM, (LVL_IMMORT-1)); 
+      send_to_char(ch, "%slevels 5     %s- shows 5 levels either side of your current level\r\n", QCYN, QNRM); 
+      send_to_char(ch, "%slevels 10-40 %s- shows level 10 to level 40\r\n",QCYN, QNRM); 
+      return; 
+    } 
+  }
+   
+  for (i = min_lev; i < max_lev; i++) {
+    nlen = snprintf(buf + len, sizeof(buf) - len, "[%2d] %8d-%-8d : ", (int)i,
+	level_exp(GET_CLASS(ch), i), level_exp(GET_CLASS(ch), i + 1) - 1);
     if (len + nlen >= sizeof(buf) || nlen < 0)
       break;
     len += nlen;
@@ -1860,6 +1870,10 @@ ACMD(do_toggle)
     {"autoassist", PRF_AUTOASSIST, 0,
     "Autoassist disabled.\r\n",
     "Autoassist enabled.\r\n"},
+    {"screenwidth", 0, 0, "\n", "\n"},
+    {"automap", PRF_AUTOMAP, 0,
+    "You will no longer see the mini-map.\r\n",
+    "You will now see a mini-map at the side of room descriptions.\r\n"},
     {"\n", 0, -1, "\n", "\n"} /* must be last */
   };
 
@@ -1931,9 +1945,12 @@ ACMD(do_toggle)
 
     "        AutoSac: %-3s    "
     "     AutoAssist: %-3s    "
-    "            AFK: %-3s\r\n"
+    "        AutoMap: %-3s\r\n"
 
     "     Pagelength: %-3d    "
+    "    Screenwidth: %-3d    "
+    "            AFK: %-3s\r\n"
+      
     "          Color: %s     \r\n ",
 
     ONOFF(PRF_FLAGGED(ch, PRF_DISPHP)),
@@ -1962,9 +1979,12 @@ ACMD(do_toggle)
 
     ONOFF(PRF_FLAGGED(ch, PRF_AUTOSAC)),
     ONOFF(PRF_FLAGGED(ch, PRF_AUTOASSIST)),
-    ONOFF(PRF_FLAGGED(ch, PRF_AFK)),
+    ONOFF(PRF_FLAGGED(ch, PRF_AUTOMAP)),
 
     GET_PAGE_LENGTH(ch),
+    GET_SCREEN_WIDTH(ch),
+    ONOFF(PRF_FLAGGED(ch, PRF_AFK)),
+    
     types[COLOR_LEV(ch)]);
     return;
   }
@@ -2080,6 +2100,33 @@ ACMD(do_toggle)
     } else
       send_to_char(ch, "Please specify a number of lines (5 - 255).");
       break;
+  case SCMD_SCREENWIDTH:
+    if (!*arg2)
+      send_to_char(ch, "You current screen width is set to %d characters.", GET_SCREEN_WIDTH(ch));
+    else if (is_number(arg2)) {
+      GET_SCREEN_WIDTH(ch) = MIN(MAX(atoi(arg2), 40), 200);
+      send_to_char(ch, "Okay, your screen width is now set to %d characters.", GET_SCREEN_WIDTH(ch));
+    } else
+      send_to_char(ch, "Please specify a number of characters (40 - 200).");
+      break;
+  case SCMD_AUTOMAP:
+    if (can_see_map(ch)) {
+      if (!*arg2) {
+        TOGGLE_BIT_AR(PRF_FLAGS(ch), tog_messages[toggle].toggle);
+        result = (PRF_FLAGGED(ch, tog_messages[toggle].toggle));
+      } else if (!strcmp(arg2, "on")) {
+        SET_BIT_AR(PRF_FLAGS(ch), tog_messages[toggle].toggle);
+        result = 1;
+      } else if (!strcmp(arg2, "off")) {
+        REMOVE_BIT_AR(PRF_FLAGS(ch), tog_messages[toggle].toggle);
+      } else {
+        send_to_char(ch, "Value for %s must either be 'on' or 'off'.\r\n", tog_messages[toggle].command);
+        return;
+      }
+    } else {
+      send_to_char(ch, "Sorry, automap is currently disabled.\r\n");
+      return;
+    }
   default:
     if (!*arg2) {
       TOGGLE_BIT_AR(PRF_FLAGS(ch), tog_messages[toggle].toggle);
@@ -2100,35 +2147,18 @@ ACMD(do_toggle)
     send_to_char(ch, "%s", tog_messages[toggle].disable_msg);
 }
 
-int sort_commands_helper(const void *a, const void *b)
-{
-  return strcmp(complete_cmd_info[*(const int *)a].sort_as,
-                complete_cmd_info[*(const int *)b].sort_as);
-}
-
-void sort_commands(void)
-{
-  int a, num_of_cmds = 0;
-
-  while (complete_cmd_info[num_of_cmds].command[0] != '\n')
-    num_of_cmds++;
-  num_of_cmds++;	/* \n */
-
-  CREATE(cmd_sort_info, int, num_of_cmds);
-
-  for (a = 0; a < num_of_cmds; a++)
-    cmd_sort_info[a] = a;
-
-  /* Don't sort the RESERVED or \n entries. */
-  qsort(cmd_sort_info + 1, num_of_cmds - 2, sizeof(int), sort_commands_helper);
-}
-
 ACMD(do_commands)
 {
   int no, i, cmd_num;
   int wizhelp = 0, socials = 0;
   struct char_data *vict;
   char arg[MAX_INPUT_LENGTH];
+  char buf[MAX_STRING_LENGTH];
+  const char *commands[1000];
+  int overflow = sizeof(commands) / sizeof(commands[0]);
+
+  if (!ch->desc)
+    return;
 
   one_argument(argument, arg);
 
@@ -2145,13 +2175,15 @@ ACMD(do_commands)
   else if (subcmd == SCMD_WIZHELP)
     wizhelp = 1;
 
-  send_to_char(ch, "The following %s%s are available to %s:\r\n",
-	  wizhelp ? "privileged " : "",
-	  socials ? "socials" : "commands",
-	  vict == ch ? "you" : GET_NAME(vict));
+  sprintf(buf, "The following %s%s are available to %s:\r\n",
+          wizhelp ? "privileged " : "",
+          socials ? "socials" : "commands",
+          vict == ch ? "you" : GET_NAME(vict));
 
   /* cmd_num starts at 1, not 0, to remove 'RESERVED' */
-  for (no = 1, cmd_num = 1; complete_cmd_info[cmd_sort_info[cmd_num]].command[0] != '\n'; cmd_num++) {
+  for (no = 0, cmd_num = 1; 
+       complete_cmd_info[cmd_sort_info[cmd_num]].command[0] != '\n'; 
+       ++cmd_num) {
 
     i = cmd_sort_info[cmd_num];
 
@@ -2167,11 +2199,27 @@ ACMD(do_commands)
     if (wizhelp && complete_cmd_info[i].command_pointer == do_action) 
       continue;
 
-    send_to_char(ch, "%-11s%s", complete_cmd_info[i].command, no++ % 7 == 0 ? "\r\n" : "");
+    if (--overflow < 0)
+      continue;
+
+    /* matching command: copy to commands list */
+    commands[no++] = complete_cmd_info[i].command;
   }
 
-  if (no % 7 != 1)
-    send_to_char(ch, "\r\n");
+  /* display commands list in a nice columnized format */
+  column_list(buf + strlen(buf), sizeof(buf) - strlen(buf),
+              /* subtract 1 or 2 lines (the pager adds 1 or 2) */
+              /* also "skip" a line since we printed a header above */
+              GET_PAGE_LENGTH(ch) - (PRF_FLAGGED(ch, PRF_COMPACT) ? 1 : 2), 1,
+              /* 7 columns; no == how many elements, 0 offset */
+              7, commands, no, 0, "$11l");
+
+  if (overflow < 0) {
+    log("SYSERR: Too many commands for do_commands; increase size of *commands array.");
+    strncat(buf, "\r\n** OVERFLOW **\r\n", sizeof(buf) - strlen(buf));
+  }
+
+  page_string(ch->desc, buf, TRUE);
 }
 
 void free_history(struct char_data *ch, int type)

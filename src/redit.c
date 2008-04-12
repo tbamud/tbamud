@@ -20,16 +20,16 @@
 #include "improved-edit.h"
 #include "dg_olc.h"
 #include "constants.h"
+#include "modify.h"
 
 /* local functions */
-void redit_setup_new(struct descriptor_data *d);
-void redit_setup_existing(struct descriptor_data *d, int real_num);
-void redit_disp_extradesc_menu(struct descriptor_data *d);
-void redit_disp_exit_menu(struct descriptor_data *d);
-void redit_disp_exit_flag_menu(struct descriptor_data *d);
-void redit_disp_flag_menu(struct descriptor_data *d);
-void redit_disp_sector_menu(struct descriptor_data *d);
-void redit_disp_menu(struct descriptor_data *d);
+static void redit_setup_new(struct descriptor_data *d);
+static void redit_disp_extradesc_menu(struct descriptor_data *d);
+static void redit_disp_exit_menu(struct descriptor_data *d);
+static void redit_disp_exit_flag_menu(struct descriptor_data *d);
+static void redit_disp_flag_menu(struct descriptor_data *d);
+static void redit_disp_sector_menu(struct descriptor_data *d);
+static void redit_disp_menu(struct descriptor_data *d);
 
 /* Utils and exported functions. */
 ACMD(do_oasis_redit)
@@ -148,7 +148,7 @@ ACMD(do_oasis_redit)
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-void redit_setup_new(struct descriptor_data *d)
+static void redit_setup_new(struct descriptor_data *d)
 {
   CREATE(OLC_ROOM(d), struct room_data, 1);
 
@@ -298,7 +298,7 @@ void free_room(struct room_data *room)
 
 /* Menu functions */
 /* For extra descriptions. */
-void redit_disp_extradesc_menu(struct descriptor_data *d)
+static void redit_disp_extradesc_menu(struct descriptor_data *d)
 {
   struct extra_descr_data *extra_desc = OLC_DESC(d);
 
@@ -319,7 +319,7 @@ void redit_disp_extradesc_menu(struct descriptor_data *d)
 }
 
 /* For exits. */
-void redit_disp_exit_menu(struct descriptor_data *d)
+static void redit_disp_exit_menu(struct descriptor_data *d)
 {
   char door_buf[24];
   /* if exit doesn't exist, alloc/create it */
@@ -358,7 +358,7 @@ void redit_disp_exit_menu(struct descriptor_data *d)
 }
 
 /* For exit flags. */
-void redit_disp_exit_flag_menu(struct descriptor_data *d)
+static void redit_disp_exit_flag_menu(struct descriptor_data *d)
 {
   get_char_colors(d->character);
   write_to_output(d, "%s0%s) No door\r\n"
@@ -368,7 +368,7 @@ void redit_disp_exit_flag_menu(struct descriptor_data *d)
 }
 
 /* For room flags. */
-void redit_disp_flag_menu(struct descriptor_data *d)
+static void redit_disp_flag_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
   int counter, columns = 0;
@@ -386,7 +386,7 @@ void redit_disp_flag_menu(struct descriptor_data *d)
 }
 
 /* For sector type. */
-void redit_disp_sector_menu(struct descriptor_data *d)
+static void redit_disp_sector_menu(struct descriptor_data *d)
 {
   int counter, columns = 0;
 
@@ -400,7 +400,7 @@ void redit_disp_sector_menu(struct descriptor_data *d)
 }
 
 /* The main menu. */
-void redit_disp_menu(struct descriptor_data *d)
+static void redit_disp_menu(struct descriptor_data *d)
 {
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];

@@ -17,15 +17,12 @@
 #include "handler.h"
 #include "db.h"
 #include "spells.h"
+#include "act.h"
 
-/* local functions */
-int find_action(int cmd);
-ACMD(do_action);
-void free_social_messages(void);
-void free_action(struct social_messg *mess);
-void free_command_list(void);
-void create_command_list(void);
-ACMD(do_gmote);
+/* local defined functions for local use */
+/* do_action and do_gmote utility function */
+static int find_action(int cmd);
+
 
 ACMD(do_action)
 {
@@ -110,7 +107,6 @@ void create_command_list(void)
 {
   int i, j, k;
   struct social_messg temp;
-  extern struct command_info cmd_info[];
 
   /* free up old command list */
   if (complete_cmd_info)
@@ -206,7 +202,7 @@ void free_action(struct social_messg *mess)  {
   memset(mess, 0, sizeof(struct social_messg));
 }
 
-int find_action(int cmd)
+static int find_action(int cmd)
 {
   int bot, top, mid;
 

@@ -13,9 +13,9 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
-#include "utils.h"
 #include "db.h"
 #include "boards.h"
 #include "oasis.h"
@@ -23,26 +23,17 @@
 #include "genzon.h"
 #include "handler.h"
 #include "improved-edit.h"
-
-/* external variables */
-extern int top_of_helpt;
-extern struct help_index_element *help_table;
-
-/* external functions */
-int search_help(char *argument, int level);
-void index_boot(int mode);
+#include "act.h"
+#include "hedit.h"
+#include "modify.h"
 
 /* local functions */
-ACMD(do_oasis_hedit);
-void hedit_disp_menu(struct descriptor_data *);
-void hedit_parse(struct descriptor_data *, char *);
-void hedit_setup_new(struct descriptor_data *);
-void hedit_setup_existing(struct descriptor_data *, int);
-void hedit_save_to_disk(struct descriptor_data *);
-void hedit_save_internally(struct descriptor_data *);
-void hedit_string_cleanup(struct descriptor_data *, int);
-ACMD(do_helpcheck);
-ACMD(do_hindex);
+static void hedit_disp_menu(struct descriptor_data *);
+static void hedit_setup_new(struct descriptor_data *);
+static void hedit_setup_existing(struct descriptor_data *, int);
+static void hedit_save_to_disk(struct descriptor_data *);
+static void hedit_save_internally(struct descriptor_data *);
+
 
 ACMD(do_oasis_hedit)
 {
@@ -107,7 +98,7 @@ ACMD(do_oasis_hedit)
   mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing help files.", GET_NAME(d->character));
 }
 
-void hedit_setup_new(struct descriptor_data *d)
+static void hedit_setup_new(struct descriptor_data *d)
 {
   CREATE(OLC_HELP(d), struct help_index_element, 1);
 
@@ -120,7 +111,7 @@ void hedit_setup_new(struct descriptor_data *d)
   hedit_disp_menu(d);
 }
 
-void hedit_setup_existing(struct descriptor_data *d, int rnum)
+static void hedit_setup_existing(struct descriptor_data *d, int rnum)
 {
   CREATE(OLC_HELP(d), struct help_index_element, 1);
 
@@ -133,7 +124,7 @@ void hedit_setup_existing(struct descriptor_data *d, int rnum)
   hedit_disp_menu(d);
 }
 
-void hedit_save_internally(struct descriptor_data *d)
+static void hedit_save_internally(struct descriptor_data *d)
 {
   struct help_index_element *new_help_table = NULL;
 
@@ -153,7 +144,7 @@ void hedit_save_internally(struct descriptor_data *d)
   hedit_save_to_disk(d);
 }
 
-void hedit_save_to_disk(struct descriptor_data *d)
+static void hedit_save_to_disk(struct descriptor_data *d)
 {
   FILE *fp;
   char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE];
@@ -186,7 +177,7 @@ void hedit_save_to_disk(struct descriptor_data *d)
 }
 
 /* The main menu. */
-void hedit_disp_menu(struct descriptor_data *d)
+static void hedit_disp_menu(struct descriptor_data *d)
 {
   get_char_colors(d->character);
 
@@ -367,7 +358,6 @@ void hedit_string_cleanup(struct descriptor_data *d, int terminator)
 
 ACMD(do_helpcheck)
 {
-  ACMD(do_action);
 
   char buf[MAX_STRING_LENGTH];
   int i, count = 0;

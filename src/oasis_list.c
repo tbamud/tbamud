@@ -21,14 +21,15 @@
 #include "screen.h"
 #include "constants.h"
 #include "dg_scripts.h"
+#include "quest.h"
 
 /* local functions */
-void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax);
-void list_rooms(struct char_data *ch  , zone_rnum rnum, room_vnum vmin, room_vnum vmax);
-void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin , mob_vnum vmax );
-void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin , obj_vnum vmax );
-void list_shops(struct char_data *ch  , zone_rnum rnum, shop_vnum vmin, shop_vnum vmax);
-void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax);
+static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax);
+static void list_rooms(struct char_data *ch  , zone_rnum rnum, room_vnum vmin, room_vnum vmax);
+static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin , mob_vnum vmax );
+static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin , obj_vnum vmax );
+static void list_shops(struct char_data *ch  , zone_rnum rnum, shop_vnum vmin, shop_vnum vmax);
+static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax);
 
 /* Ingame Commands */
 ACMD(do_oasis_list)
@@ -67,6 +68,7 @@ ACMD(do_oasis_list)
     case SCMD_OASIS_RLIST: list_rooms(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_TLIST: list_triggers(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_SLIST: list_shops(ch, rzone, vmin, vmax); break;
+    case SCMD_OASIS_QLIST: list_quests(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_ZLIST:
       if (!*smin)
         list_zones(ch, NOWHERE, 0, zone_table[top_of_zone_table].number);
@@ -133,7 +135,7 @@ ACMD(do_oasis_links)
 
 /* Helper Functions */
 /* List all rooms in a zone. */
-void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum vmax)
+static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum vmax)
 {
   room_rnum i;
   room_vnum bottom, top;
@@ -187,7 +189,7 @@ void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum 
 }
 
 /* List all mobiles in a zone. */
-void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mob_vnum vmax)
+static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mob_vnum vmax)
 {
   mob_rnum i;
   mob_vnum bottom, top;
@@ -226,7 +228,7 @@ void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mob_vnum 
 }
 
 /* List all objects in a zone. */
-void list_objects(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum vmax)
+static void list_objects(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum vmax)
 {
   obj_rnum i;
   obj_vnum bottom, top;
@@ -266,7 +268,7 @@ void list_objects(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnu
 }
 
 /* List all shops in a zone. */
-void list_shops(struct char_data *ch, zone_rnum rnum, shop_vnum vmin, shop_vnum vmax)
+static void list_shops(struct char_data *ch, zone_rnum rnum, shop_vnum vmin, shop_vnum vmax)
 {
   shop_rnum i;
   shop_vnum bottom, top;
@@ -310,7 +312,7 @@ void list_shops(struct char_data *ch, zone_rnum rnum, shop_vnum vmin, shop_vnum 
 }
 
 /* List all zones in the world (sort of like 'show zones'). */
-void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax)
+static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax)
 {
   int counter = 0;
   zone_rnum i;
@@ -349,7 +351,7 @@ void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum 
 void print_zone(struct char_data *ch, zone_vnum vnum)
 {
   zone_rnum rnum;
-  int size_rooms, size_objects, size_mobiles, i;
+  int size_rooms, size_objects, size_mobiles, size_quests, i;
   room_vnum top, bottom;
   int largest_table;
 
@@ -370,6 +372,7 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
   size_rooms   = 0;
   size_objects = 0;
   size_mobiles = 0;
+  size_quests  = 0;
   top          = zone_table[rnum].top;
   bottom       = zone_table[rnum].bot;
 
@@ -386,7 +389,8 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
       if (mob_index[i].vnum >= bottom && mob_index[i].vnum <= top)
         size_mobiles++;
   }
-
+  size_quests = count_quests(bottom, top);
+  
   /* Display all of the zone information at once. */
   send_to_char(ch,
     "%sVirtual Number = %s%d\r\n"
@@ -400,7 +404,8 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     "%sSize\r\n"
     "%s   Rooms       = %s%d\r\n"
     "%s   Objects     = %s%d\r\n"
-    "%s   Mobiles     = %s%d%s\r\n",
+    "%s   Mobiles     = %s%d\r\n"
+    "%s   Quests      = %s%d%s\r\n",
     QGRN, QCYN, zone_table[rnum].number,
     QGRN, QCYN, zone_table[rnum].name,
     QGRN, QCYN, zone_table[rnum].builders,
@@ -413,11 +418,12 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     QGRN,
     QGRN, QCYN, size_rooms,
     QGRN, QCYN, size_objects,
-    QGRN, QCYN, size_mobiles, QNRM);
+    QGRN, QCYN, size_mobiles,
+    QGRN, QCYN, size_quests, QNRM);
 }
 
 /* List code by Ronald Evers. */
-void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax)
+static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax)
 {
   int i, bottom, top, counter = 0;
   char trgtypes[256];

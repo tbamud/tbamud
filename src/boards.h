@@ -1,12 +1,17 @@
-/**************************************************************************
-*  File: boards.h                                          Part of tbaMUD *
-*  Usage: header file for bulletin boards                                 *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+/**
+* @file boards.h
+* Header file for the bulletin board system (boards.c).
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+*/
+#ifndef _BOARDS_H_
+#define _BOARDS_H_
 
 #define NUM_OF_BOARDS		7	/* change if needed! */
 #define MAX_BOARD_MESSAGES 	60      /* arbitrary -- change if needed */
@@ -45,6 +50,7 @@ struct board_info_type {
 #define MSG_SLOTNUM(i, j) (msg_index[i][j].slot_num)
 #define MSG_LEVEL(i, j) (msg_index[i][j].level)
 
+SPECIAL(gen_board);
 int board_display_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
 int board_show_board(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
 int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
@@ -52,3 +58,12 @@ int board_write_message(int board_type, struct char_data *ch, char *arg, struct 
 void board_save_board(int board_type);
 void board_load_board(int board_type);
 void board_clear_all(void);
+
+/* Global variables */
+#ifndef __BOARDS_C__
+
+extern struct board_info_type board_info[NUM_OF_BOARDS];
+
+#endif /* __BOARDS_C__ */
+
+#endif /* _BOARDS_H_ */

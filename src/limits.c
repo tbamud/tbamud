@@ -18,17 +18,13 @@
 #include "handler.h"
 #include "interpreter.h"
 #include "dg_scripts.h"
+#include "class.h"
+#include "fight.h"
 
-/* local functions */
-int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6);
-void run_autowiz(void);
-void Crash_rentsave(struct char_data *ch, int cost);
-int level_exp(int chclass, int level);
-char *title_male(int chclass, int level);
-char *title_female(int chclass, int level);
-void update_char_objects(struct char_data *ch);	/* handler.c */
-void reboot_wizlists(void);
-void check_idling(struct char_data *ch);
+/* local file scope function prototypes */
+static int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6);
+static void check_idling(struct char_data *ch);
+
 
 /* When age < 15 return the value p0
    When age is 15..29 calculate the line between p1 & p2
@@ -36,7 +32,7 @@ void check_idling(struct char_data *ch);
    When age is 45..59 calculate the line between p3 & p4
    When age is 60..79 calculate the line between p4 & p5
    When age >= 80 return the value p6 */
-int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6)
+static int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6)
 {
 
   if (grafage < 15)
@@ -179,20 +175,19 @@ int move_gain(struct char_data *ch)
 
 void set_title(struct char_data *ch, char *title)
 {
-  if (title == NULL) {
-    if (GET_SEX(ch) == SEX_FEMALE)
-      title = title_female(GET_CLASS(ch), GET_LEVEL(ch));
-    else
-      title = title_male(GET_CLASS(ch), GET_LEVEL(ch));
-  }
-
-  if (strlen(title) > MAX_TITLE_LENGTH)
-    title[MAX_TITLE_LENGTH] = '\0';
-
   if (GET_TITLE(ch) != NULL)
     free(GET_TITLE(ch));
 
-  GET_TITLE(ch) = strdup(title);
+  if (title == NULL) {
+    GET_TITLE(ch) = strdup(GET_SEX(ch) == SEX_FEMALE ?
+      title_female(GET_CLASS(ch), GET_LEVEL(ch)) : 
+      title_male(GET_CLASS(ch), GET_LEVEL(ch)));
+  } else {
+    if (strlen(title) > MAX_TITLE_LENGTH)
+      title[MAX_TITLE_LENGTH] = '\0';
+
+    GET_TITLE(ch) = strdup(title);
+  }
 }
 
 void run_autowiz(void)
@@ -263,7 +258,7 @@ void gain_exp(struct char_data *ch, int gain)
   }
   if (GET_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
     run_autowiz();
-}
+  }
 
 void gain_exp_regardless(struct char_data *ch, int gain)
 {
@@ -331,7 +326,7 @@ void gain_condition(struct char_data *ch, int condition, int value)
 
 }
 
-void check_idling(struct char_data *ch)
+static void check_idling(struct char_data *ch)
 {
   if (++(ch->char_specials.timer) > CONFIG_IDLE_VOID) {
     if (GET_WAS_IN(ch) == NOWHERE && IN_ROOM(ch) != NOWHERE) {

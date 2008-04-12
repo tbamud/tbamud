@@ -1,26 +1,41 @@
-/**************************************************************************
-*  File: constants.c                                       Part of tbaMUD *
-*  Usage: Numeric and string contants used by the MUD.                    *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+/**
+* @file constants.c
+* Numeric and string contants used by the MUD.
+* 
+* Part of the core tbaMUD source code distribution, which is a derivative
+* of, and continuation of, CircleMUD.
+*                                                                        
+* All rights reserved.  See license for complete information.                                                                
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+* 
+* @todo Come up with a standard for descriptive arrays. Either all end with
+* newlines or all of them don not.
+*/
 
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "interpreter.h"	/* alias_data */
 
+/** Current tbaMUD version.
+ * @todo defined with _TBAMUD so we don't have multiple constants to change.
+ * @todo cpp_extern isn't needed here (or anywhere) as the extern reserved word 
+ * works correctly with C compilers (at least in my Experience)
+ * Jeremy Osborne 1/28/2008 */
 cpp_extern const char *tbamud_version = "tbaMUD, version 3.55";
+/** Current Oasis Online Creation version. */
 cpp_extern const char *oasisolc_version = "OasisOLC 2.0.6";
+/** Current ASCII player files version. */
 cpp_extern const char *ascii_pfiles_version = "ASCII Player Files 3.0.1";
 
 /* strings corresponding to ordinals/bitvectors in structs.h */
 /* (Note: strings for class definitions in class.c instead of here) */
 
-/* cardinal directions */
+/** Description of cardinal directions. 
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *dirs[] =
 {
   "north",
@@ -29,10 +44,12 @@ const char *dirs[] =
   "west",
   "up",
   "down",
-  "\n"
+  "\n" 
 };
 
-/* ROOM_x */
+/** Room flag descriptions.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *room_bits[] = {
   "DARK",
   "DEATH",
@@ -49,11 +66,14 @@ const char *room_bits[] = {
   "HCRSH",
   "ATRIUM",
   "OLC",
-  "*",				/* BFS MARK */
-  "\n"
+  "*",				/* The BFS Mark. */
+  "WORLDMAP",
+  "\n" 
 };
 
-/* EX_x */
+/** Exit bits for doors.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *exit_bits[] = {
   "DOOR",
   "CLOSED",
@@ -62,7 +82,9 @@ const char *exit_bits[] = {
   "\n"
 };
 
-/* SECT_ */
+/** Description of the room sector type.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *sector_types[] = {
   "Inside",
   "City",
@@ -77,7 +99,9 @@ const char *sector_types[] = {
   "\n"
 };
 
-/* SEX_x. Not used in sprinttype() so no \n. */
+/** PC and NPC sex.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *genders[] =
 {
   "neutral",
@@ -86,7 +110,9 @@ const char *genders[] =
   "\n"
 };
 
-/* POS_x */
+/** Character positions.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *position_types[] = {
   "Dead",
   "Mortally wounded",
@@ -100,7 +126,9 @@ const char *position_types[] = {
   "\n"
 };
 
-/* PLR_x */
+/** Player flags.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *player_bits[] = {
   "KILLER",
   "THIEF",
@@ -118,7 +146,7 @@ const char *player_bits[] = {
   "NO_DEL",
   "INVST",
   "CRYO",
-  "DEAD",    /* You should never see this. */
+  "DEAD",    /* You should never see this flag on a character in game. */
   "UNUSED1",
   "UNUSED2",
   "UNUSED3",
@@ -127,7 +155,9 @@ const char *player_bits[] = {
   "\n"
 };
 
-/* MOB_x */
+/** Mob action flags.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *action_bits[] = {
   "SPEC",
   "SENTINEL",
@@ -151,7 +181,9 @@ const char *action_bits[] = {
   "\n"
 };
 
-/* PRF_x */
+/** PC Preference flags.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *preference_bits[] = {
   "BRIEF",
   "COMPACT",
@@ -184,10 +216,13 @@ const char *preference_bits[] = {
   "AUTOSPLIT",
   "AUTOSAC",
   "AUTOASSIST",
+  "AUTOMAP",
   "\n"
 };
 
-/* AFF_x */
+/** Affected bits.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *affected_bits[] =
 {
   "\0", /* DO NOT REMOVE!! */
@@ -216,7 +251,9 @@ const char *affected_bits[] =
   "\n"
 };
 
-/* CON_x */
+/** Connection type descriptions.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *connected_types[] = {
   "Playing",
   "Disconnecting",
@@ -249,7 +286,9 @@ const char *connected_types[] = {
   "\n"
 };
 
-/* WEAR_x - for eq list. Not used in sprinttype() so no \n. */
+/** Describes the position in the equipment listing.
+ * @pre Must be in the same order as the defines. 
+ * Not used in sprinttype() so no \n. */
 const char *wear_where[] = {
   "<used as light>      ",
   "<worn on finger>     ",
@@ -271,7 +310,9 @@ const char *wear_where[] = {
   "<held>               "
 };
 
-/* WEAR_x - for stat */
+/* Describes where an item can be worn.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *equipment_types[] = {
   "Used as light",
   "Worn on right finger",
@@ -294,7 +335,9 @@ const char *equipment_types[] = {
   "\n"
 };
 
-/* ITEM_x (ordinal object types) */
+/** Describes the type of object.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *item_types[] = {
   "UNDEFINED",
   "LIGHT",
@@ -323,7 +366,9 @@ const char *item_types[] = {
   "\n"
 };
 
-/* ITEM_WEAR_ (wear bitvector) */
+/** Describes the wear flags set on an item.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *wear_bits[] = {
   "TAKE",
   "FINGER",
@@ -343,7 +388,9 @@ const char *wear_bits[] = {
   "\n"
 };
 
-/* ITEM_x (extra bits) */
+/** Describes the extra flags applied to an item.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *extra_bits[] = {
   "GLOW",
   "HUM",
@@ -362,10 +409,13 @@ const char *extra_bits[] = {
   "ANTI_THIEF",
   "ANTI_WARRIOR",
   "NO_SELL",
+  "QUEST_ITEM",
   "\n"
 };
 
-/* APPLY_x */
+/** Describes the apply types.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *apply_types[] = {
   "NONE",
   "STR",
@@ -395,7 +445,9 @@ const char *apply_types[] = {
   "\n"
 };
 
-/* CONT_x */
+/** Describes the closure mechanism for a container.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *container_bits[] = {
   "CLOSEABLE",
   "PICKPROOF",
@@ -404,7 +456,9 @@ const char *container_bits[] = {
   "\n",
 };
 
-/* LIQ_x */
+/** Describes the liquid description.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *drinks[] =
 {
   "water",
@@ -426,7 +480,9 @@ const char *drinks[] =
   "\n"
 };
 
-/* Other constants for liquids, one-word alias for each drink. */
+/** Describes a one word alias for each type of liquid.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *drinknames[] =
 {
   "water",
@@ -448,7 +504,9 @@ const char *drinknames[] =
   "\n"
 };
 
-/* effect of drinks on hunger, thirst, and drunkenness -- see values.doc */
+/** Define the effect of liquids on hunger, thirst, and drunkenness, in that
+ * order. See values.doc for more information. 
+ * @pre Must be in the same order as the defines. */
 int drink_aff[][3] = {
   {0, 1, 10},
   {3, 2, 5},
@@ -468,7 +526,9 @@ int drink_aff[][3] = {
   {0, 0, 13}
 };
 
-/* color of the various drinks */
+/** Describes the color of the various drinks.
+ * @pre Must be in the same order as the defines. 
+ * Must end array with a single newline. */
 const char *color_liquid[] =
 {
   "clear",
@@ -490,7 +550,8 @@ const char *color_liquid[] =
   "\n"
 };
 
-/* level of fullness for drink containers. Not used in sprinttype() so no \n. */
+/** Used to describe the level of fullness of a drink container. Not used in 
+ * sprinttype() so no \n. */
 const char *fullness[] =
 {
   "less than half ",
@@ -499,7 +560,9 @@ const char *fullness[] =
   ""
 };
 
-/* str, int, wis, dex, con applies, [ch] strength apply (all) */
+/** Strength attribute affects.
+ * The fields are hit mod, damage mod, weight carried mod, and weight wielded
+ * mod. */
 cpp_extern const struct str_app_type str_app[] = {
   {-5, -4, 0, 0},	/* str = 0 */
   {-5, -4, 3, 1},	/* str = 1 */
@@ -534,7 +597,8 @@ cpp_extern const struct str_app_type str_app[] = {
   {3, 6, 480, 30}	/* str = 18/100 */
 };
 
-/* [dex] skill apply (thieves only) */
+/** Dexterity skill modifiers for thieves.
+ * The fields are for pick pockets, pick locks, find traps, sneak and hide. */
 cpp_extern const struct dex_skill_type dex_app_skill[] = {
   {-99, -99, -90, -99, -60},	/* dex = 0 */
   {-90, -90, -60, -90, -50},	/* dex = 1 */
@@ -564,7 +628,8 @@ cpp_extern const struct dex_skill_type dex_app_skill[] = {
   {25, 30, 15, 25, 25}		/* dex = 25 */
 };
 
-/* [dex] apply (all) */
+/** Dexterity attribute affects.
+ * The fields are reaction, missile attacks, and defensive (armor class). */
 cpp_extern const struct dex_app_type dex_app[] = {
   {-7, -7, 6},		/* dex = 0 */
   {-6, -6, 5},		/* dex = 1 */
@@ -594,7 +659,8 @@ cpp_extern const struct dex_app_type dex_app[] = {
   {5, 5, -6}		/* dex = 25 */
 };
 
-/* [con] apply (all) */
+/** Constitution attribute affects.
+ * The fields referenced are hit points and system shock survival. */
 cpp_extern const struct con_app_type con_app[] = {
   {-4, 20},		/* con = 0 */
   {-3, 25},		/* con = 1 */
@@ -624,7 +690,8 @@ cpp_extern const struct con_app_type con_app[] = {
   {6, 99}		/* con = 25 */
 };
 
-/* [int] apply (all) */
+/** Intelligence attribute affects.
+ * The field shows how much practicing affects a skill/spell. */
 cpp_extern const struct int_app_type int_app[] = {
   {3},		/* int = 0 */
   {5},		/* int = 1 */
@@ -654,7 +721,8 @@ cpp_extern const struct int_app_type int_app[] = {
   {60}		/* int = 25 */
 };
 
-/* [wis] apply (all) */
+/** Wisdom attribute affects.
+ * The field represents how many extra practice points are gained per level. */
 cpp_extern const struct wis_app_type wis_app[] = {
   {0},	/* wis = 0 */
   {0},  /* wis = 1 */
@@ -684,16 +752,18 @@ cpp_extern const struct wis_app_type wis_app[] = {
   {7}  /* wis = 25 */
 };
 
+/** Define a set of opposite directions from the cardinal directions. */
 int rev_dir[] =
 {
-  2,
-  3,
-  0,
-  1,
-  5,
-  4
+  SOUTH,
+  WEST,
+  NORTH,
+  EAST,
+  DOWN,
+  UP
 };
 
+/** How much movement is lost moving through a particular sector type. */
 int movement_loss[] =
 {
   1,	/* Inside     */
@@ -705,10 +775,10 @@ int movement_loss[] =
   4,	/* Swimming   */
   1,	/* Unswimable */
   1,	/* Flying     */
-  5     /* Underwater */
+  5   /* Underwater */
 };
 
-/* Not used in sprinttype(). */
+/** The names of the days of the mud week. Not used in sprinttype(). */
 const char *weekdays[] = {
   "the Day of the Moon",
   "the Day of the Bull",
@@ -719,7 +789,7 @@ const char *weekdays[] = {
   "the Day of the Sun"
 };
 
-/* Not used in sprinttype(). */
+/** The names of the mud months. Not used in sprinttype(). */
 const char *month_name[] = {
   "Month of Winter",		/* 0 */
   "Month of the Winter Wolf",
@@ -740,7 +810,7 @@ const char *month_name[] = {
   "Month of the Great Evil"
 };
 
-/* mob trigger types */
+/** Names for mob trigger types. */
 const char *trig_types[] = {
   "Global",
   "Random",
@@ -765,7 +835,7 @@ const char *trig_types[] = {
   "\n"
 };
 
-/* obj trigger types */
+/** Names for object trigger types. */
 const char *otrig_types[] = {
   "Global",
   "Random",
@@ -790,7 +860,7 @@ const char *otrig_types[] = {
   "\n"
 };
 
-/* wld trigger types */
+/** Names for world (room) trigger types. */
 const char *wtrig_types[] = {
   "Global",
   "Random",
@@ -815,6 +885,9 @@ const char *wtrig_types[] = {
   "\n"
 };
 
+/** The names of the different channels that history is stored for. 
+ * @todo Only referenced by do_history at the moment. Should be moved local
+ * to that function. */
 const char *history_types[] = {
   "all",   
   "say",   
@@ -831,9 +904,14 @@ const char *history_types[] = {
 
 /* Various arrays we count so we can check the world files.  These
  * must be at the bottom of the file so they're pre-declared. */
-size_t	room_bits_count = sizeof(room_bits) / sizeof(room_bits[0]) - 1,
+  /** Number of defined room bit descriptions. */
+  size_t	room_bits_count = sizeof(room_bits) / sizeof(room_bits[0]) - 1,
+  /** Number of defined action bit descriptions. */
 	action_bits_count = sizeof(action_bits) / sizeof(action_bits[0]) - 1,
+	/** Number of defined affected bit descriptions. */
 	affected_bits_count = sizeof(affected_bits) / sizeof(affected_bits[0]) - 1,
+	/** Number of defined extra bit descriptions. */
 	extra_bits_count = sizeof(extra_bits) / sizeof(extra_bits[0]) - 1,
+	/** Number of defined wear bit descriptions. */
 	wear_bits_count = sizeof(wear_bits) / sizeof(wear_bits[0]) - 1;
 

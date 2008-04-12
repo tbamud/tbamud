@@ -8,34 +8,31 @@
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
+#include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
-#include "utils.h"
 #include "db.h"
 #include "constants.h"
 #include "genolc.h"
 #include "oasis.h"
 #include "improved-edit.h"
+#include "modify.h"
 
-/* Local Macros */
-#define NO 0
-#define YES 1
 
 #define CHECK_VAR(var)  ((var == YES) ? "Yes" : "No")
 #define TOGGLE_VAR(var)	if (var == YES) { var = NO; } else { var = YES; }
 
-/* local functions */
-void cedit_disp_menu(struct descriptor_data *d);
-void cedit_save_internally(struct descriptor_data *d);
-void cedit_disp_game_play_options(struct descriptor_data *d);
-void cedit_disp_crash_save_options(struct descriptor_data *d);
-void cedit_disp_room_numbers(struct descriptor_data *d);
-void cedit_disp_operation_options(struct descriptor_data *d);
-void cedit_disp_autowiz_options(struct descriptor_data *d);
-int  save_config( IDXTYPE nowhere );
-void reassign_rooms(void);
-void cedit_setup(struct descriptor_data *d);
-void cedit_save_to_disk( void );
+/* local scope functions, not used externally */
+static void cedit_disp_menu(struct descriptor_data *d);
+static void cedit_save_internally(struct descriptor_data *d);
+static void cedit_disp_game_play_options(struct descriptor_data *d);
+static void cedit_disp_crash_save_options(struct descriptor_data *d);
+static void cedit_disp_room_numbers(struct descriptor_data *d);
+static void cedit_disp_operation_options(struct descriptor_data *d);
+static void cedit_disp_autowiz_options(struct descriptor_data *d);
+static void reassign_rooms(void);
+static void cedit_setup(struct descriptor_data *d);
+
 
 ACMD(do_oasis_cedit)
 {
@@ -79,7 +76,7 @@ ACMD(do_oasis_cedit)
   cedit_save_to_disk();
 }
 
-void cedit_setup(struct descriptor_data *d)
+static void cedit_setup(struct descriptor_data *d)
 {
   /* Create the config_data struct. */
   CREATE(OLC_CONFIG(d), struct config_data, 1);
@@ -103,7 +100,10 @@ void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->play.track_through_doors = CONFIG_TRACK_T_DOORS;
   OLC_CONFIG(d)->play.no_mort_to_immort   = CONFIG_NO_MORT_TO_IMMORT;
   OLC_CONFIG(d)->play.disp_closed_doors   = CONFIG_DISP_CLOSED_DOORS;
-
+  OLC_CONFIG(d)->play.map_option          = CONFIG_MAP;
+  OLC_CONFIG(d)->play.map_size            = CONFIG_MAP_SIZE;
+  OLC_CONFIG(d)->play.minimap_size        = CONFIG_MINIMAP_SIZE;
+  
   /* Crash Saves */
   OLC_CONFIG(d)->csd.free_rent            = CONFIG_FREE_RENT;
   OLC_CONFIG(d)->csd.max_obj_save         = CONFIG_MAX_OBJ_SAVE;
@@ -174,7 +174,7 @@ void cedit_setup(struct descriptor_data *d)
   cedit_disp_menu(d);
 }
 
-void cedit_save_internally(struct descriptor_data *d)
+static void cedit_save_internally(struct descriptor_data *d)
 {
   /* see if we need to reassign spec procs on rooms */
   int reassign = (CONFIG_DTS_ARE_DUMPS != OLC_CONFIG(d)->play.dts_are_dumps);
@@ -196,6 +196,9 @@ void cedit_save_internally(struct descriptor_data *d)
   CONFIG_TRACK_T_DOORS = OLC_CONFIG(d)->play.track_through_doors;
   CONFIG_NO_MORT_TO_IMMORT   = OLC_CONFIG(d)->play.no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS   = OLC_CONFIG(d)->play.disp_closed_doors;
+  CONFIG_MAP                 = OLC_CONFIG(d)->play.map_option;
+  CONFIG_MAP_SIZE            = OLC_CONFIG(d)->play.map_size;
+  CONFIG_MINIMAP_SIZE        = OLC_CONFIG(d)->play.minimap_size;
 
   /* Crash Saves */
   CONFIG_FREE_RENT            = OLC_CONFIG(d)->csd.free_rent;
@@ -354,7 +357,14 @@ int save_config( IDXTYPE nowhere )
               "no_mort_to_immort = %d\n\n", CONFIG_NO_MORT_TO_IMMORT);
   fprintf(fl, "* Should closed doors be shown on autoexit / exit?\n"
               "disp_closed_doors = %d\n\n", CONFIG_DISP_CLOSED_DOORS);
+  fprintf(fl, "* Who can use the map functions? 0=off, 1=on, 2=imm_only\n"
+              "map_option = %d\n\n", CONFIG_MAP);
+  fprintf(fl, "* Default size of map shown by 'map' command\n"
+              "default_map_size = %d\n\n", CONFIG_MAP_SIZE);
+  fprintf(fl, "* Default minimap size shown to the right of room descriptions\n"
+              "default_minimap_size = %d\n\n", CONFIG_MINIMAP_SIZE);
 
+  
   strcpy(buf, CONFIG_OK);
   strip_cr(buf);
 
@@ -524,8 +534,9 @@ int save_config( IDXTYPE nowhere )
 }
 
 /* Menu functions - The main menu. */
-void cedit_disp_menu(struct descriptor_data *d)
+static void cedit_disp_menu(struct descriptor_data *d)
 {
+
   get_char_colors(d->character);
   clear_screen(d);
 
@@ -551,11 +562,15 @@ void cedit_disp_menu(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_MAIN_MENU;
 }
 
-void cedit_disp_game_play_options(struct descriptor_data *d)
+static void cedit_disp_game_play_options(struct descriptor_data *d)
 {
+  int m_opt;
+  m_opt = OLC_CONFIG(d)->play.map_option;
   get_char_colors(d->character);
   clear_screen(d);
 
+
+  
   write_to_output(d, "\r\n\r\n"
         "%sA%s) Player Killing Allowed  : %s%s\r\n"
         "%sB%s) Player Thieving Allowed : %s%s\r\n"
@@ -574,9 +589,12 @@ void cedit_disp_game_play_options(struct descriptor_data *d)
         "%sO%s) Track Through Doors         : %s%s\r\n"
         "%sP%s) Display Closed Doors        : %s%s\r\n"
         "%sR%s) Mortals Level To Immortal   : %s%s\r\n"
-	"%s1%s) OK Message Text         : %s%s"
+	      "%s1%s) OK Message Text         : %s%s"
         "%s2%s) NOPERSON Message Text   : %s%s"
         "%s3%s) NOEFFECT Message Text   : %s%s"
+        "%s4%s) Map/Automap Option      : %s%s\r\n"
+        "%s5%s) Default map size        : %s%d\r\n"
+        "%s6%s) Default minimap size    : %s%d\r\n"
         "%sQ%s) Exit To The Main Menu\r\n"
         "Enter your choice : ",
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.pk_allowed),
@@ -596,11 +614,14 @@ void cedit_disp_game_play_options(struct descriptor_data *d)
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.load_into_inventory),
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.track_through_doors),
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.disp_closed_doors),
-	grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.no_mort_to_immort),
+        grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.no_mort_to_immort),
 
         grn, nrm, cyn, OLC_CONFIG(d)->play.OK,
         grn, nrm, cyn, OLC_CONFIG(d)->play.NOPERSON,
         grn, nrm, cyn, OLC_CONFIG(d)->play.NOEFFECT,
+        grn, nrm, cyn, m_opt == 0 ? "Off" : (m_opt == 1 ? "On" : (m_opt == 2 ? "Imm-Only" : "Invalid!")),
+        grn, nrm, cyn, OLC_CONFIG(d)->play.map_size,
+        grn, nrm, cyn, OLC_CONFIG(d)->play.minimap_size,
 
         grn, nrm
         );
@@ -608,7 +629,7 @@ void cedit_disp_game_play_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_GAME_OPTIONS_MENU;
 }
 
-void cedit_disp_crash_save_options(struct descriptor_data *d)
+static void cedit_disp_crash_save_options(struct descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -636,7 +657,7 @@ void cedit_disp_crash_save_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_CRASHSAVE_OPTIONS_MENU;
 }
 
-void cedit_disp_room_numbers(struct descriptor_data *d)
+static void cedit_disp_room_numbers(struct descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -662,7 +683,7 @@ void cedit_disp_room_numbers(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_ROOM_NUMBERS_MENU;
 }
 
-void cedit_disp_operation_options(struct descriptor_data *d)
+static void cedit_disp_operation_options(struct descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -704,7 +725,7 @@ void cedit_disp_operation_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_OPERATION_OPTIONS_MENU;
 }
 
-void cedit_disp_autowiz_options(struct descriptor_data *d)
+static void cedit_disp_autowiz_options(struct descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -908,6 +929,24 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         case '3':
           write_to_output(d, "Enter the NOEFFECT message : ");
           OLC_MODE(d) = CEDIT_NOEFFECT;
+          return;
+
+        case '4':
+          write_to_output(d, "1) Disable maps\r\n");
+          write_to_output(d, "2) Enable Maps\r\n");
+          write_to_output(d, "3) Maps for Immortals only\r\n");
+          write_to_output(d, "Enter choice: ");
+          OLC_MODE(d) = CEDIT_MAP_OPTION;
+          return;
+
+        case '5':
+          write_to_output(d, "Enter default map size (1-12) : ");
+          OLC_MODE(d) = CEDIT_MAP_SIZE;
+          return;
+
+        case '6':
+          write_to_output(d, "Enter default mini-map size (1-12) : ");
+          OLC_MODE(d) = CEDIT_MINIMAP_SIZE;
           return;
 
         case 'q':
@@ -1281,8 +1320,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       if (OLC_CONFIG(d)->play.OK)
         free(OLC_CONFIG(d)->play.OK);
 
-      OLC_CONFIG(d)->play.OK = str_udup(arg);
-      strcat(OLC_CONFIG(d)->play.OK, "\r\n");
+      OLC_CONFIG(d)->play.OK = str_udupnl(arg);
 
       cedit_disp_game_play_options(d);
       break;
@@ -1294,8 +1332,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       if (OLC_CONFIG(d)->play.NOPERSON)
         free(OLC_CONFIG(d)->play.NOPERSON);
 
-      OLC_CONFIG(d)->play.NOPERSON = str_udup(arg);
-      strcat(OLC_CONFIG(d)->play.NOPERSON, "\r\n");
+      OLC_CONFIG(d)->play.NOPERSON = str_udupnl(arg);
 
       cedit_disp_game_play_options(d);
       break;
@@ -1307,8 +1344,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       if (OLC_CONFIG(d)->play.NOEFFECT)
         free(OLC_CONFIG(d)->play.NOEFFECT);
 
-      OLC_CONFIG(d)->play.NOEFFECT = str_udup(arg);
-      strcat(OLC_CONFIG(d)->play.NOEFFECT, "\r\n");
+      OLC_CONFIG(d)->play.NOEFFECT = str_udupnl(arg);
 
       cedit_disp_game_play_options(d);
       break;
@@ -1522,6 +1558,40 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
+    case CEDIT_MAP_OPTION:
+      if (!*arg) {
+        write_to_output(d,
+          "That is an invalid choice!\r\n"
+          "Select 1, 2 or 3 (0 to cancel) :");
+      } else {
+        if ((atoi(arg) >= 1) && (atoi(arg) <= 3))
+          OLC_CONFIG(d)->play.map_option = (atoi(arg) - 1);
+        cedit_disp_game_play_options(d);
+      }
+      break;
+
+    case CEDIT_MAP_SIZE:
+      if (!*arg) {
+   /* User just pressed return - restore to default */
+        OLC_CONFIG(d)->play.map_size = 6;
+        cedit_disp_game_play_options(d);
+      } else {
+        OLC_CONFIG(d)->play.map_size = MIN(MAX((atoi(arg)), 1), 12);
+        cedit_disp_game_play_options(d);
+      }
+      break;
+
+    case CEDIT_MINIMAP_SIZE:
+      if (!*arg) {
+   /* User just pressed return - restore to default */
+        OLC_CONFIG(d)->play.minimap_size = 2;
+        cedit_disp_game_play_options(d);
+      } else {
+        OLC_CONFIG(d)->play.minimap_size = MIN(MAX((atoi(arg)), 1), 12);
+        cedit_disp_game_play_options(d);
+      }
+      break;
+      
     default:  /* We should never get here, but just in case... */
       cleanup_olc(d, CLEANUP_CONFIG);
       mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: cedit_parse(): Reached default case!");
@@ -1530,7 +1600,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
   }
 }  /* End of parse_cedit() */
 
-void reassign_rooms(void)
+static void reassign_rooms(void)
 {
   void assign_rooms(void);
   int i;

@@ -18,20 +18,17 @@
 #include "oasis.h"
 #include "dg_olc.h"
 #include "dg_event.h"
+#include "genzon.h"      /* for real_zone_by_thing */
+#include "constants.h"   /* for the *trig_types */
+#include "modify.h"      /* for smash_tilde */
 
-/* external functions */
-extern const char *trig_types[], *otrig_types[], *wtrig_types[];
-zone_rnum real_zone_by_thing(room_vnum vznum);
 
 /* local functions */
-void trigedit_disp_menu(struct descriptor_data *d);
-void trigedit_disp_types(struct descriptor_data *d);
-void trigedit_save(struct descriptor_data *d);
-void trigedit_create_index(int znum, char *type);
-void trigedit_string_cleanup(struct descriptor_data *d, int terminator);
-int format_script(struct descriptor_data *d);
-void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num);
-void trigedit_setup_new(struct descriptor_data *d);
+static void trigedit_disp_menu(struct descriptor_data *d);
+static void trigedit_disp_types(struct descriptor_data *d);
+static void trigedit_create_index(int znum, char *type);
+static void trigedit_setup_new(struct descriptor_data *d);
+
 
 /* Trigedit */
 ACMD(do_oasis_trigedit)
@@ -130,7 +127,7 @@ void script_save_to_disk(FILE *fp, void *item, int type)
   }
 }
 
-void trigedit_setup_new(struct descriptor_data *d)
+static void trigedit_setup_new(struct descriptor_data *d)
 {
   struct trig_data *trig;
 
@@ -180,7 +177,7 @@ void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
   OLC_VAL(d) = 0;  /* Has changed flag. (It hasn't so far, we just made it.) */
 }
 
-void trigedit_disp_menu(struct descriptor_data *d)
+static void trigedit_disp_menu(struct descriptor_data *d)
 {
   struct trig_data *trig = OLC_TRIG(d);
   char *attach_type;
@@ -225,7 +222,7 @@ void trigedit_disp_menu(struct descriptor_data *d)
   OLC_MODE(d) = TRIGEDIT_MAIN_MENU;
 }
 
-void trigedit_disp_types(struct descriptor_data *d)
+static void trigedit_disp_types(struct descriptor_data *d)
 {
   int i, columns = 0;
   const char **types;
@@ -637,7 +634,7 @@ void trigedit_save(struct descriptor_data *d)
   trigedit_create_index(zone, "trg");
 }
 
-void trigedit_create_index(int znum, char *type)
+static void trigedit_create_index(int znum, char *type)
 {
   FILE *newfile, *oldfile;
   char new_name[128], old_name[128], *prefix;

@@ -17,34 +17,32 @@
 #include "handler.h"
 #include "db.h"
 #include "spells.h"
+#include "act.h"
+#include "spec_procs.h" /**< castle.c is part of the spec_procs module */
+#include "fight.h"
 
 /* IMPORTANT! The below defined number is the zone number of the Kings Castle.
  * Change it to apply to your chosen zone number. The default zone number 
  * is 80. */
 
 #define Z_KINGS_C 150
-/* external variables */
-extern struct time_info_data time_info;
-extern int mini_mud;
 
-/* local functions */
-mob_vnum castle_virtual(mob_vnum offset);
-room_rnum castle_real_room(room_vnum roomoffset);
-struct char_data *find_npc_by_name(struct char_data *chAtChar, const char *pszName, int iLen);
-int block_way(struct char_data *ch, int cmd, char *arg, room_vnum iIn_room, int iProhibited_direction);
-void assign_kings_castle(void);
-int member_of_staff(struct char_data *chChar);
-int member_of_royal_guard(struct char_data *chChar);
-struct char_data *find_guard(struct char_data *chAtChar);
-struct char_data *get_victim(struct char_data *chAtChar);
-int banzaii(struct char_data *ch);
-int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim);
-int is_trash(struct obj_data *i);
-void fry_victim(struct char_data *ch);
-int castle_cleaner(struct char_data *ch, int cmd, int gripe);
-int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname);
-void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc));
-
+/* local, file scope restricted functions */
+static mob_vnum castle_virtual(mob_vnum offset);
+static room_rnum castle_real_room(room_vnum roomoffset);
+static struct char_data *find_npc_by_name(struct char_data *chAtChar, const char *pszName, int iLen);
+static int block_way(struct char_data *ch, int cmd, char *arg, room_vnum iIn_room, int iProhibited_direction);
+static int member_of_staff(struct char_data *chChar);
+static int member_of_royal_guard(struct char_data *chChar);
+static struct char_data *find_guard(struct char_data *chAtChar);
+static struct char_data *get_victim(struct char_data *chAtChar);
+static int banzaii(struct char_data *ch);
+static int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim);
+static int is_trash(struct obj_data *i);
+static void fry_victim(struct char_data *ch);
+static int castle_cleaner(struct char_data *ch, int cmd, int gripe);
+static int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname);
+static void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc));
 /* Special procedures for Kings Castle by Pjotr. Coded by Sapowox. */
 SPECIAL(CastleGuard);
 SPECIAL(James);
@@ -56,13 +54,13 @@ SPECIAL(king_welmar);
 SPECIAL(training_master);
 SPECIAL(peter);
 SPECIAL(jerry);
-SPECIAL(guild);
-ACMD(do_gen_door);
-ACMD(do_follow);
+
+
+
 
 /* Assign castle special procedures. NOTE: The mobile number isn't fully 
  * specified. It's only an offset from the zone's base. */
-void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc))
+static void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc))
 {
   mob_vnum vmv = castle_virtual(mobnum);
   mob_rnum rmr = NOBODY;
@@ -80,7 +78,7 @@ void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc))
     mob_index[rmr].func = specproc;
 }
 
-mob_vnum castle_virtual(mob_vnum offset)
+static mob_vnum castle_virtual(mob_vnum offset)
 {
   zone_rnum zon;
 
@@ -90,7 +88,7 @@ mob_vnum castle_virtual(mob_vnum offset)
   return zone_table[zon].bot + offset;
 }
 
-room_rnum castle_real_room(room_vnum roomoffset)
+static room_rnum castle_real_room(room_vnum roomoffset)
 {
   zone_rnum zon;
 
@@ -131,7 +129,7 @@ void assign_kings_castle(void)
 
 /* Routine: member_of_staff. Used to see if a character is a member of the 
  * castle staff. Used mainly by BANZAI:ng NPC:s. */
-int member_of_staff(struct char_data *chChar)
+static int member_of_staff(struct char_data *chChar)
 {
   int ch_num;
 
@@ -157,7 +155,7 @@ int member_of_staff(struct char_data *chChar)
 
 /* Function: member_of_royal_guard. Returns TRUE if the character is a guard on
  * duty, otherwise FALSE. Used by Peter the captain of the royal guard. */
-int member_of_royal_guard(struct char_data *chChar)
+static int member_of_royal_guard(struct char_data *chChar)
 {
   int ch_num;
 
@@ -180,7 +178,7 @@ int member_of_royal_guard(struct char_data *chChar)
 
 /* Function: find_npc_by_name. Returns a pointer to an npc by the given name.
  * Used by Tim and Tom. */
-struct char_data *find_npc_by_name(struct char_data *chAtChar,
+static struct char_data *find_npc_by_name(struct char_data *chAtChar,
 		const char *pszName, int iLen)
 {
   struct char_data *ch;
@@ -194,7 +192,7 @@ struct char_data *find_npc_by_name(struct char_data *chAtChar,
 
 /* Function: find_guard. Returns the pointer to a guard on duty. Used by Peter 
  * the Captain of the Royal Guard */
-struct char_data *find_guard(struct char_data *chAtChar)
+static struct char_data *find_guard(struct char_data *chAtChar)
 {
   struct char_data *ch;
 
@@ -208,7 +206,7 @@ struct char_data *find_guard(struct char_data *chAtChar)
 /* Function: get_victim. Returns a pointer to a randomly chosen character in 
  * the same room, fighting someone in the castle staff. Used by BANZAII-ing 
  * characters and King Welmar... */
-struct char_data *get_victim(struct char_data *chAtChar)
+static struct char_data *get_victim(struct char_data *chAtChar)
 {
   struct char_data *ch;
   int iNum_bad_guys = 0, iVictim;
@@ -244,7 +242,7 @@ struct char_data *get_victim(struct char_data *chAtChar)
 
 /* Banzaii. Makes a character banzaii on attackers of the castle staff. Used 
  * by Guards, Tim, Tom, Dick, David, Peter, Master, and the King. */
-int banzaii(struct char_data *ch)
+static int banzaii(struct char_data *ch)
 {
   struct char_data *chOpponent;
 
@@ -258,7 +256,7 @@ int banzaii(struct char_data *ch)
 }
 
 /* Do_npc_rescue. Makes ch_hero rescue ch_victim. Used by Tim and Tom. */
-int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim)
+static int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim)
 {
   struct char_data *ch_bad_guy;
 
@@ -287,7 +285,7 @@ int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim)
 
 /* Procedure to block a person trying to enter a room. Used by Tim/Tom at Kings 
  * bedroom and Dick/David at treasury. */
-int block_way(struct char_data *ch, int cmd, char *arg, room_vnum iIn_room,
+static int block_way(struct char_data *ch, int cmd, char *arg, room_vnum iIn_room,
 	          int iProhibited_direction)
 {
   if (cmd != ++iProhibited_direction)
@@ -308,7 +306,7 @@ int block_way(struct char_data *ch, int cmd, char *arg, room_vnum iIn_room,
 
 /* Routine to check if an object is trash. Used by James the Butler and the 
  * Cleaning Lady. */
-int is_trash(struct obj_data *i)
+static int is_trash(struct obj_data *i)
 {
   if (!OBJWEAR_FLAGGED(i, ITEM_WEAR_TAKE))
     return (FALSE);
@@ -321,7 +319,7 @@ int is_trash(struct obj_data *i)
 
 /* Fry_victim. Finds a suitabe victim, and cast some _NASTY_ spell on him. Used 
  * by King Welmar. */
-void fry_victim(struct char_data *ch)
+static void fry_victim(struct char_data *ch)
 {
   struct char_data *tch;
 
@@ -578,7 +576,7 @@ SPECIAL(tim)
 }
 
 /* Common routine for the Castle Twins. */
-int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname)
+static int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname)
 {
   struct char_data *king, *twin;
 
@@ -616,7 +614,7 @@ SPECIAL(James)
 }
 
 /* Common code for James and the Cleaning Woman. */
-int castle_cleaner(struct char_data *ch, int cmd, int gripe)
+static int castle_cleaner(struct char_data *ch, int cmd, int gripe)
 {
   struct obj_data *i;
 

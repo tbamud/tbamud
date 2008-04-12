@@ -20,31 +20,23 @@
 #include "house.h"
 #include "constants.h"
 #include "dg_scripts.h"
+#include "act.h"
+#include "fight.h"
+#include "oasis.h" /* for buildwalk */
 
-/* external functions */
-int special(struct char_data *ch, int cmd, char *arg);
-void death_cry(struct char_data *ch);
-int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg);
-int buildwalk(struct char_data *ch, int dir);
 
-/* local functions */
-int has_boat(struct char_data *ch);
-int find_door(struct char_data *ch, const char *type, char *dir, const char *cmdname);
-int has_key(struct char_data *ch, obj_vnum key);
-void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int scmd);
-int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd);
-ACMD(do_gen_door);
-ACMD(do_enter);
-ACMD(do_leave);
-ACMD(do_stand);
-ACMD(do_sit);
-ACMD(do_rest);
-ACMD(do_sleep);
-ACMD(do_wake);
-ACMD(do_follow);
+/* local only functions */
+/* do_simple_move utility functions */
+static int has_boat(struct char_data *ch);
+/* do_gen_door utility functions */
+static int find_door(struct char_data *ch, const char *type, char *dir, const char *cmdname);
+static int has_key(struct char_data *ch, obj_vnum key);
+static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int scmd);
+static int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd);
+
 
 /* simple function to determine if char can walk on water */
-int has_boat(struct char_data *ch)
+static int has_boat(struct char_data *ch)
 {
   struct obj_data *obj;
   int i;
@@ -118,63 +110,136 @@ int has_scuba(struct char_data *ch)
   return (0);
 }
 
-/* do_simple_move assumes that there is no master, no followers and that the
- * direction exists. It returns 1 for success, 0 if failure. */
+/** Move a PC/NPC character from their current location to a new location. This
+ * is the standard movement locomotion function that all normal walking
+ * movement by characters should be sent through. This function also defines
+ * the move cost of normal locomotion as:
+ * ( (move cost for source room) + (move cost for destination) ) / 2
+ * 
+ * @pre Function assumes that ch has no master controlling character, that
+ * ch has no followers (in other words followers won't be moved by this
+ * function) and that the direction traveled in is one of the valid, enumerated
+ * direction.
+ * @param ch The character structure to attempt to move.
+ * @param dir The defined direction (NORTH, SOUTH, etc...) to attempt to
+ * move into.
+ * @param need_specials_check If TRUE will cause 
+ * @retval int 1 for a successful move (ch is now in a new location) 
+ * or 0 for a failed move (ch is still in the original location). */
 int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 {
-  char throwaway[MAX_INPUT_LENGTH] = ""; /* Functions assume writable. */
+  /* Begin Local variable definitions */
+  /*---------------------------------------------------------------------*/
+  /* Used in our special proc check. By default, we pass a NULL argument
+   * when checking for specials */
+  char spec_proc_args[MAX_INPUT_LENGTH] = "";
+  /* The room the character is currently in and will move from... */
   room_rnum was_in = IN_ROOM(ch);
-  int need_movement;
+  /* ... and the room the character will move into. */
+  room_rnum going_to = EXIT(ch, dir)->to_room; 
+  /* How many movement points are required to travel from was_in to going_to.
+   * We redefine this later when we need it. */ 
+  int need_movement = 0;
+  /* Contains the "leave" message to display to the was_in room. */
+  char leave_message[SMALL_BUFSIZE];
+  /*---------------------------------------------------------------------*/
+  /* End Local variable definitions */
+ 
+  
+  /* Begin checks that can prevent a character from leaving the was_in room. */
+  /* Future checks should be implemented within this section and return 0.   */
+  /*---------------------------------------------------------------------*/
+  /* Check for special routines that might activate because of the move and
+   * also might prevent the movement. Special requires commands, so we pass
+   * in the "command" equivalent of the direction (ie. North is '1' in the 
+   * command list, but NORTH is defined as '0'). 
+   * Note -- only check if following; this avoids 'double spec-proc' bug */
+  if (need_specials_check && special(ch, dir + 1, spec_proc_args))
+    return 0;
 
-  /* Check for special routines (North is 1 in command list, but 0 here) Note
-   * -- only check if following; this avoids 'double spec-proc' bug */
-  if (need_specials_check && special(ch, dir + 1, throwaway))
-    return (0);
-
-  /* blocked by a leave trigger ? */
+  /* Leave Trigger Checks: Does a leave trigger block exit from the room? */
   if (!leave_mtrigger(ch, dir) || IN_ROOM(ch) != was_in) /* prevent teleport crashes */
     return 0;
   if (!leave_wtrigger(&world[IN_ROOM(ch)], ch, dir) || IN_ROOM(ch) != was_in) /* prevent teleport crashes */
     return 0;
   if (!leave_otrigger(&world[IN_ROOM(ch)], ch, dir) || IN_ROOM(ch) != was_in) /* prevent teleport crashes */
     return 0;
-  /* charmed? */
-  if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && IN_ROOM(ch) == IN_ROOM(ch->master)) {
+  
+  /* Charm effect: Does it override the movement? */
+  if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && was_in == IN_ROOM(ch->master)) 
+  {
     send_to_char(ch, "The thought of leaving your master makes you weep.\r\n");
     act("$n bursts into tears.", FALSE, ch, 0, 0, TO_ROOM);
     return (0);
   }
 
-  /* if this room or the one we're going to needs a boat, check for one */
-  if ((SECT(IN_ROOM(ch)) == SECT_WATER_NOSWIM) ||
-      (SECT(EXIT(ch, dir)->to_room) == SECT_WATER_NOSWIM)) {
-    if (!has_boat(ch)) {
+  /* Water, No Swimming Rooms: Does the deep water prevent movement? */
+  if ((SECT(was_in) == SECT_WATER_NOSWIM) ||
+      (SECT(going_to) == SECT_WATER_NOSWIM)) 
+  {
+    if (!has_boat(ch)) 
+    {
       send_to_char(ch, "You need a boat to go there.\r\n");
       return (0);
     }
   }
 
-  /* If this room or the one we're going to needs flight, check for it. */
-  if ((SECT(IN_ROOM(ch)) == SECT_FLYING) || (SECT(EXIT(ch, dir)->to_room) == SECT_FLYING)) {
-    if (!has_flight(ch)) {
+  /* Flying Required: Does lack of flying prevent movement? */
+  if ((SECT(was_in) == SECT_FLYING) || (SECT(going_to) == SECT_FLYING)) 
+  {
+    if (!has_flight(ch)) 
+    {
       send_to_char(ch, "You need to be flying to go there!\r\n");
       return (0);
     }
   }
 
-  /* If this room or the one we're going to needs scuba, check for it. */
-  if ((SECT(IN_ROOM(ch)) == SECT_UNDERWATER) || (SECT(EXIT(ch, dir)->to_room) == SECT_UNDERWATER)) {
+  /* Underwater Room: Does lack of underwater breathing prevent movement? */
+  if ((SECT(was_in) == SECT_UNDERWATER) || (SECT(going_to) == SECT_UNDERWATER)) 
+  {
     if (!has_scuba(ch)) {
       send_to_char(ch, "You need to be able to breathe water to go there!\r\n");
       return (0);
     }
   }
 
-  /* move points needed is avg. move loss for src and destination sect type */
-  need_movement = (movement_loss[SECT(IN_ROOM(ch))] +
-		   movement_loss[SECT(EXIT(ch, dir)->to_room)]) / 2;
+  /* Houses: Can the player walk into the house? */
+  if (ROOM_FLAGGED(was_in, ROOM_ATRIUM)) 
+  {
+    if (!House_can_enter(ch, GET_ROOM_VNUM(going_to))) 
+    {
+      send_to_char(ch, "That's private property -- no trespassing!\r\n");
+      return (0);
+    }
+  }
 
-  if (GET_MOVE(ch) < need_movement && !IS_NPC(ch)) {
+  /* Room Size Capacity: Is the room full of people already? */
+  if (ROOM_FLAGGED(going_to, ROOM_TUNNEL) &&
+      num_pc_in_room(&(world[going_to])) >= CONFIG_TUNNEL_SIZE) 
+  {
+    if (CONFIG_TUNNEL_SIZE > 1)
+      send_to_char(ch, "There isn't enough room for you to go there!\r\n");
+    else
+      send_to_char(ch, "There isn't enough room there for more than one person!\r\n");
+    return (0);
+  }
+
+  /* Room Level Requirements: Is ch privileged enough to enter the room? */
+  if (ROOM_FLAGGED(going_to, ROOM_GODROOM) && GET_LEVEL(ch) < LVL_GOD) 
+  {
+    send_to_char(ch, "You aren't godly enough to use that room!\r\n");
+    return (0);
+  }
+  
+  /* All checks passed, nothing will prevent movement now other than lack of
+   * move points. */
+  /* move points needed is avg. move loss for src and destination sect type */
+  need_movement = (movement_loss[SECT(was_in)] +
+		   movement_loss[SECT(going_to)]) / 2;
+
+  /* Move Point Requirement Check */
+  if (GET_MOVE(ch) < need_movement && !IS_NPC(ch)) 
+  {
     if (need_specials_check && ch->master)
       send_to_char(ch, "You are too exhausted to follow.\r\n");
     else
@@ -182,69 +247,78 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 
     return (0);
   }
-  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_ATRIUM)) {
-    if (!House_can_enter(ch, GET_ROOM_VNUM(EXIT(ch, dir)->to_room))) {
-      send_to_char(ch, "That's private property -- no trespassing!\r\n");
-      return (0);
-    }
-  }
-  if (ROOM_FLAGGED(EXIT(ch, dir)->to_room, ROOM_TUNNEL) &&
-      num_pc_in_room(&(world[EXIT(ch, dir)->to_room])) >= CONFIG_TUNNEL_SIZE) {
-    if (CONFIG_TUNNEL_SIZE > 1)
-      send_to_char(ch, "There isn't enough room for you to go there!\r\n");
-    else
-      send_to_char(ch, "There isn't enough room there for more than one person!\r\n");
-    return (0);
-  }
-  /* Mortals and low level gods cannot enter greater god rooms. */
-  if (ROOM_FLAGGED(EXIT(ch, dir)->to_room, ROOM_GODROOM) &&
-	GET_LEVEL(ch) < LVL_GOD) {
-    send_to_char(ch, "You aren't godly enough to use that room!\r\n");
-    return (0);
-  }
 
-  /* Now we know we're allowed to go into the room. */
+  /*---------------------------------------------------------------------*/
+  /* End checks that can prevent a character from leaving the was_in room. */
+
+  
+  /* Begin: the leave operation. */
+  /*---------------------------------------------------------------------*/
+  /* If applicable, subtract movement cost. */
   if (GET_LEVEL(ch) < LVL_IMMORT && !IS_NPC(ch))
     GET_MOVE(ch) -= need_movement;
 
-  if (!AFF_FLAGGED(ch, AFF_SNEAK)) {
-    char buf2[MAX_STRING_LENGTH];
-
-    snprintf(buf2, sizeof(buf2), "$n leaves %s.", dirs[dir]);
-    act(buf2, TRUE, ch, 0, 0, TO_ROOM);
+  /* Generate the leave message and display to others in the was_in room. */
+  if (!AFF_FLAGGED(ch, AFF_SNEAK)) 
+  {
+    snprintf(leave_message, sizeof(leave_message), "$n leaves %s.", dirs[dir]);
+    act(leave_message, TRUE, ch, 0, 0, TO_ROOM);
   }
-  was_in = IN_ROOM(ch);
+  
   char_from_room(ch);
-  char_to_room(ch, world[was_in].dir_option[dir]->to_room);
+  char_to_room(ch, going_to);
+  /*---------------------------------------------------------------------*/
+  /* End: the leave operation. The character is now in the new room. */
 
-  /* move them first, then move them back if they aren't allowed to go. Also,
-   * see if an entry trigger disallows the move */
-  if (!entry_mtrigger(ch) || !enter_wtrigger(&world[IN_ROOM(ch)], ch, dir)) {
+  
+  /* Begin: Post-move operations. */
+  /*---------------------------------------------------------------------*/
+  /* Post Move Trigger Checks: Check the new room for triggers.
+   * Assumptions: The character has already truly left the was_in room. If
+   * the entry trigger "prevents" movement into the room, it is thr triggers
+   * job to provide a message to the original was_in room. */
+  if (!entry_mtrigger(ch) || !enter_wtrigger(&world[going_to], ch, dir)) {
     char_from_room(ch);
     char_to_room(ch, was_in);
     return 0;
   }
 
+  /* Display arrival information to anyone in the destination room... */
   if (!AFF_FLAGGED(ch, AFF_SNEAK))
     act("$n has arrived.", TRUE, ch, 0, 0, TO_ROOM);
 
+  /* ... and the room description to the character. */
   if (ch->desc != NULL)
     look_at_room(ch, 0);
 
-  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH) && GET_LEVEL(ch) < LVL_IMMORT) {
-    mudlog(BRF, LVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(IN_ROOM(ch)), world[IN_ROOM(ch)].name);
+  /* ... and Kill the player if the room is a death trap. */
+  if (ROOM_FLAGGED(going_to, ROOM_DEATH) && GET_LEVEL(ch) < LVL_IMMORT) 
+  {
+    mudlog(BRF, LVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(going_to), world[going_to].name);
     death_cry(ch);
     extract_char(ch);
     return (0);
   }
 
+  /* At this point, the character is safe and in the room. */
+  /* Fire memory and greet triggers, check and see if the greet trigger
+   * prevents movement, and if so, move the player back to the previous room. */
   entry_memory_mtrigger(ch);
-  if (!greet_mtrigger(ch, dir)) {
+  if (!greet_mtrigger(ch, dir)) 
+  {
     char_from_room(ch);
     char_to_room(ch, was_in);
     look_at_room(ch, 0);
-  } else greet_memory_mtrigger(ch);
-
+    /* Failed move, return a failure */
+    return (0);
+  } 
+  else 
+    greet_memory_mtrigger(ch);
+  /*---------------------------------------------------------------------*/
+  /* End: Post-move operations. */
+  
+  /* Only here is the move successful *and* complete. Return success for
+   * calling functions to handle post move operations. */
   return (1);
 }
 
@@ -285,13 +359,11 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
 
 ACMD(do_move)
 {
-  /* This is basically a mapping of cmd numbers to perform_move indices. It 
-   * cannot be done in perform_move because perform_move is called by other 
-   * functions which do not require the remapping. */
-  perform_move(ch, subcmd - 1, 0);
+  /* These subcmd defines are mapped precisely to the direction defines. */ 
+  perform_move(ch, subcmd, 0);
 }
 
-int find_door(struct char_data *ch, const char *type, char *dir, const char *cmdname)
+static int find_door(struct char_data *ch, const char *type, char *dir, const char *cmdname)
 {
   int door;
 
@@ -350,6 +422,7 @@ int has_key(struct char_data *ch, obj_vnum key)
 #define NEED_UNLOCKED	(1 << 2)
 #define NEED_LOCKED	(1 << 3)
 
+/* cmd_door is required external from act.movement.c */
 const char *cmd_door[] =
 {
   "open",
@@ -359,7 +432,7 @@ const char *cmd_door[] =
   "pick"
 };
 
-const int flags_door[] =
+static const int flags_door[] =
 {
   NEED_CLOSED | NEED_UNLOCKED,
   NEED_OPEN,
@@ -385,7 +458,7 @@ const int flags_door[] =
 		(TOGGLE_BIT(GET_OBJ_VAL(obj, 1), CONT_LOCKED)) :\
 		(TOGGLE_BIT(EXITN(room, door)->exit_info, EX_LOCKED)))
 
-void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int scmd)
+static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int scmd)
 {
   char buf[MAX_STRING_LENGTH];
   size_t len;
@@ -456,7 +529,7 @@ void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int scmd)
 		scmd == SCMD_CLOSE ? "d" : "ed");
 }
 
-int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd)
+static int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd)
 {
   int percent, skill_lvl;
 

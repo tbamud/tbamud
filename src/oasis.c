@@ -22,12 +22,14 @@
 #include "oasis.h"
 #include "screen.h"
 #include "dg_olc.h"
+#include "act.h"
+#include "handler.h" /* for is_name */
+#include "quest.h"
 
-/* External Functions */
-int is_name(const char *str, const char *namelist);
 
 /* Internal Data Structures */
-struct olc_scmd_info_t {
+/** @deprecated olc_scmd_info appears to be deprecated. Commented out for now.
+static struct olc_scmd_info_t {
   const char *text;
   int con_type;
 } olc_scmd_info[] = {
@@ -40,13 +42,16 @@ struct olc_scmd_info_t {
   { "trigger",  CON_TRIGEDIT },
   { "action",   CON_AEDIT },
   { "help",     CON_HEDIT },
+  { "quest",     CON_QEDIT },
   { "\n",	-1	  }
 };
+*/
 
+/* Global variables defined here, used elsewhere */
 const char *nrm, *grn, *cyn, *yel;
 
-/* Internal Functions */
-void free_config(struct config_data *data);
+/* Internal Function prototypes  */
+static void free_config(struct config_data *data);
 
 /* Only player characters should be using OLC anyway. */
 void clear_screen(struct descriptor_data *d)
@@ -125,6 +130,20 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
   if (OLC_SHOP(d))
       free_shop(OLC_SHOP(d));
 
+  /* Check for a quest. */
+  if (OLC_QUEST(d)) {
+    switch (cleanup_type) {
+      case CLEANUP_ALL:
+        free_quest(OLC_QUEST(d));
+        break;
+      case CLEANUP_STRUCTS:
+        free(OLC_QUEST(d));
+        break;
+      default:
+        break;
+    }
+  }
+ 
   /*. Check for aedit stuff -- M. Scott */
   if (OLC_ACTION(d))  {
     switch(cleanup_type)  {
@@ -214,7 +233,7 @@ void split_argument(char *argument, char *tag)
   *wrt = '\0';
 }
 
-void free_config(struct config_data *data)
+static void free_config(struct config_data *data)
 {
   /* Free strings. */
   free_strings(data, OASIS_CFG);
