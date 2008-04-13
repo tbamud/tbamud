@@ -12,6 +12,7 @@ To learn more about the above, type:         @RHELP <COMMAND>@n
   Help with zedit ?      @RHELP ZEDIT@n    | @RHELP ZEDIT-MENU@n
   Help with sedit ?      @RHELP SEDIT@n    | @RHELP SEDIT-MENU@n
   Help with trigedit ?   @RHELP TRIGEDIT@n | @RHELP TRIGEDIT-MENU@n
+  Help with qedit ?      @RHELP QEDIT@n    | @RHELP QEDIT-MENU@n
 
   Have other unanswered questions ?      @RHELP BUILDING@n
 
