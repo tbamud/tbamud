@@ -46,7 +46,7 @@ Near Death Trigger - 29267~
 ~
 * Near Death Trap stuns actor
 wait 3 sec
-eval stunned %actor.hitp% 
+set stunned %actor.hitp% 
 %damage% %actor% %stunned%
 ~
 $~

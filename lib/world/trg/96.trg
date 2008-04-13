@@ -1,6 +1,6 @@
 #9600
 Windblow - 1, 4-8, 10-22~
-2 ab 23
+2 b 23
 ~
 %echo% A light breeze picks up, causing the leaves to rustle quietly.
 wait 200

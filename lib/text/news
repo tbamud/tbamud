@@ -4,9 +4,14 @@
 
 NEW COMMANDS AND NEW MUD BEHAVIOR:
 ---------------------------------
-** Check out the latest news and information on the tbaMUD codebase with 
-   tbaMUDs new content management system (drupal) at http://tbamud.com.
-   Forums, blogs, etc. (thanks Mordecai)
+**  Check out the latest news and information on the tbaMUD codebase at
+    @Chttp://tbamud.com@n.
+
+**  New automap shows a small ascii map to the right of room descriptions.
+    Toggle automap on to enable. There is also a new map command that can
+    show a larger map area.
+
+**  New Quest Editor means more quests for players.
 
 **  Doors are now visible in the exits menu. i.e. Exits: n (e) w s.
 

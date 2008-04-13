@@ -77,10 +77,12 @@ A clay jug was left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 0 0
-4 50 0 0
+4 500 0 0
 E
 clay jug~
-   A plain jug made of clay that fits nicely into the palm of your hand.
+   A plain jug made of clay that fits nicely into the palm of your hand.  An
+extremely well mad clay jug that fits nicely into the palm of your hand.  The
+perfect size and weight to throw.
 ~
 #309
 waybread bread~
@@ -200,12 +202,12 @@ A small sword lies here.~
 0 1 6 11
 3 60 0 0
 E
-sword small~
-   The small sword seems to have an inscription of some sort inscription...  
-~
-E
 inscription~
    It says: 'May this sword be a good companion.  '
+~
+E
+sword small~
+   The small sword seems to have an inscription of some sort inscription...  
 ~
 #322
 sword long~
@@ -612,12 +614,12 @@ A large, sociable bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 social bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #397
 board frozen bulletin~
@@ -628,12 +630,12 @@ A large bulletin board is here, carved from a block of ice.~
 0 0 0 0
 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 freeze bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #398
 board holy bulletin~
@@ -644,12 +646,12 @@ A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 0 0 0 0
 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 holy bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #399
 board bulletin~
@@ -660,11 +662,11 @@ A large bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 $~

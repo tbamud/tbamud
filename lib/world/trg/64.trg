@@ -7,7 +7,7 @@ wait 5 sec
 %send% %actor% %self.name% cackles at your stupidity for entering %self.hisher% domain.
 wait 2 sec
 %send% %actor% %self.name% makes a slight gesture with %self.hisher% right hand.
-eval stunned %actor.hitp% 
+set stunned %actor.hitp% 
 %damage% %actor% %stunned%
 ~
 $~

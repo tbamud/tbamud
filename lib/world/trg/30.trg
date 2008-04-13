@@ -163,7 +163,7 @@ Death Trap~
 2 g 100
 ~
 * Near Death Trap stuns actor
-eval stunned %actor.hitp% 
+set stunned %actor.hitp% 
 %damage% %actor% %stunned%
 %send% %actor% You are on the brink of life and death.
 %send% %actor% The Gods must favor you this day.

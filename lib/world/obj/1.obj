@@ -9,7 +9,7 @@ A shimmering portal leading to Midgaard has been placed here.~
 T 100
 #101
 beer bottle imported beer~
-a imported bottle~
+an imported bottle of beer~
 A bottle of imported beer has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
@@ -558,7 +558,7 @@ A pool of blood from a recent kill has collected here.~
 0 0 0 0
 #147
 splugen bottle beer~
-an exotic bottle~
+an exotic bottle of beer~
 Some exotic beer from far away.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
@@ -736,9 +736,9 @@ A list of directions to important areas within Sanctus lies here.~
 1 1 0 0
 E
 list directions sanctus~
-   @n
-recall Room - (type recall)
-Newbie Zones - (type newbie)
+
+recall Room - teleport Sanctus
+Newbie Zones - teleport Newbie
 Food - 1d, 3s, 1e, 1n
 1d, 3s, 1w, 1n
 Water - 1d, 3n, 2e, 1s
@@ -913,6 +913,7 @@ A yellow rubber chicken has been chewed half to death.~
 0 0 0 0
 1 1 0 0
 T 154
+T 88
 E
 yellow rubber chicken~
    This dog toy barely even resembles its namesake.  The long yellow body is
@@ -1726,6 +1727,21 @@ iron bound wooden chest~
 stained and polished to a shine.  Bands of iron to wrap around the chest.  But,
 the lock hangs open.
 ~
+#189
+staff gnarled~
+a gnarled staff~
+A gnarled wooden staff beacons you.~
+~
+5 0 0 0 0 ano 0 0 0 0 0 0 0
+0 0 0 0
+1 10 0 0
+T 48
+E
+gnarled wooden staff~
+   The staff appears to have been twisted into a strange spiral up along its
+surface.  The top has three claws meant to hold something.  It is conspicuosly
+empty.    
+~
 #190
 potion deep green remove curse~
 a potion of remove curse~
@@ -1738,4 +1754,84 @@ E
 green deep potion~
    A potion that will remove any curses you may have been afflicted with.    
    ~
+#191
+orb topping~
+an orb meant to top a staff~
+An orb meant to top a staff must have fallen out here.~
+~
+12 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0
+E
+orb staff topping~
+   The orb is about the size of a small fist.  It appears to have been meant to
+be placed on the end of a staff.    
+~
+#192
+broken staff~
+a broken staff~
+A broken and useless staff has been discarded here.~
+~
+12 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0
+E
+broken staff~
+   It appears to have once been a very nice staff that someone ruined by putting
+it together wrong.  Someone must have not been able to "join" it properly.
+~
+#193
+blood trickle stream thin liquid red blood~
+a thin stream or red liquid~
+A small trickle or red liquid flows from the shop to the north to a drain to the south.~
+~
+23 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 13 0
+0 0 0 0
+T 79
+E
+blood trickle stream thin liquid red blood~
+   The liquid has a heavy metallic scent to it and is mixed with dirt and a few
+other questionable liquids.
+~
+#194
+closet~
+a closet~
+A closet is built into the south wall of the room.~
+~
+15 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+T 81
+E
+closet~
+   The closet door is made of faded wood and it has rusty hinges.
+~
+#195
+rotten mistletoe~
+some rotten mistletoe~
+This mistletoe reeks of mold and decay.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+1 0 0 1
+1 1 0 0
+#196
+mistletoe plant~
+some mistletoe~
+A soft woody plant with green leaves and white berries is hanging over your head.~
+~
+19 0 0 0 0 ao 0 0 0 0 0 0 0
+1 0 0 0
+1 1 0 0
+E
+plant mistletoe~
+The tradition of kissing under the mistletoe originated from the Druids
+who considered the mistletoe sacred.  They believed that it held magical virtue
+and was a remedy for evil.  The priests would cut pieces of the oak tree on
+which the mistletoe grew and offer them along with two white bulls as a
+sacrifice to pagan gods.  Twigs with berries were hung above doors to indicate
+that past grievance and hatreds were forgiven and it was used in amulets,
+bracelets and rings to ward off evil and protect against witchcraft and
+poisoning.  Mistletoe symbolizes peace and love.
+~
 $~

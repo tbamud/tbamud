@@ -144,6 +144,7 @@ looks competent in her work and enjoys it immensely.
 8 8 2
 E
 T 116
+T 43
 #110
 corwin postmasters~
 Corwin, the postmaster~
@@ -180,15 +181,17 @@ young woman~
 the young woman~
 A young woman strolls by, smiling at you.
 ~
-   She is wearing a very drab white dress with some sort of flowery print on
-it.  She keeps smiling at you, and she's not a bad looker, but I wouldn't get
-your hopes up.    
+   She is wearing a very drab white dress with some sort of flowery print on it.
+She keeps smiling at you, and she's not a bad looker, but I wouldn't get your
+hopes up.  She looks at you with a sideways glance and puckers her lips as if
+she wants to be kissed.
 ~
 2120 0 0 0 0 0 0 0 1000 E
 4 19 7 0d0+40 1d2+0
 40 1600
 8 8 2
 E
+T 64
 #113
 old lady~
 an old lady~
@@ -415,6 +418,7 @@ down.  Various pouches hang from a red belt.
 100 10000
 6 6 1
 E
+T 76
 #129
 thief man~
 the thief~
@@ -497,6 +501,7 @@ today.  He holds himself with a dignity that astonishes even you.
 300 90000
 8 8 1
 E
+T 132
 #135
 blue magi master~
 the blue Master Magi~
@@ -549,8 +554,8 @@ A Master Magi in a yellow robe strolls by.
 throughout the city and is reverred almost as much as the gods.    
 ~
 72 0 0 0 16 0 0 0 0 E
-33 9 -9 6d6+330 5d5+5
-330 108900
+20 14 -2 4d4+200 3d3+3
+200 40000
 8 8 1
 E
 #139
@@ -668,6 +673,7 @@ realize he must be a magi.
 140 19600
 8 8 1
 E
+T 65
 #147
 logan~
 Logan~
@@ -689,15 +695,15 @@ purple magi~
 the purple magi~
 A magi in a purple robe is making a fashion statement.
 ~
-   The robe just seems....  Loud.  That color purple can't be natural.  You
-dare not laugh or even smirk since you know they take offense to such things.
-  
+   The robe just seems....  Loud.  That color purple can't be natural.  You dare
+not laugh or even smirk since you know they take offense to such things.
 ~
 72 0 0 0 16 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 1
 E
+T 70
 #149
 sargeant~
 the sargeant~
@@ -1039,7 +1045,7 @@ E
 #173
 magi guildguard~
 the magi guildguard~
-The magi stands infront of a set of stairs with his arms crossed.
+A magi stands in front of a set of stairs with his arms crossed.
 ~
    He doesn't seem to be happy just standing there, he seems to be protecting
 or standing watch over something, but you can't tell what.    
@@ -1076,6 +1082,7 @@ competent and will warn of any attack upon the city.
 250 62500
 8 8 1
 E
+T 73
 #176
 gunney~
 Gunney~
@@ -1119,6 +1126,7 @@ shit.
 140 19600
 8 8 1
 E
+T 71
 #179
 recruit~
 the recruit~
@@ -1132,6 +1140,7 @@ This guy needs a beer, a woman, and some time off.
 150 22500
 8 8 1
 E
+T 69
 #180
 javier~
 Javier, the High Councillor~

@@ -66,7 +66,7 @@ if %actor.is_pc%
 end
 ~
 #1202
-Justice sword~
+Object Wear or Wield Example~
 1 j 100
 ~
 * test trigger
@@ -139,26 +139,76 @@ if %cmd.mudcommand% == enter && portal /= %arg%
 end
 ~
 #1205
-(1207) Heiach's Faeries~
-0 e 0
-entered~
-if %actor.name% == Heiach
-  wait 1 sec
-  say welcome back Heiach!
-  wait 1 sec
-  giggle
-elseif %actor.name% == Elorien
-  wait 1 sec
-  say Oh my, it's Elorien! Welcome mistress!
-  bow elorien
-else
-  wait 1 sec
-  say Hey! Who are you?!
-  wait 5
-  %send% %actor% You are enveloped in a veil of @rr@ya@bi@gn@mb@co@rw@n-colored light!
-  %echoaround% %actor% %actor.name% is enveloped in a veil of @rr@ya@bi@gn@mb@co@rw@n-colored light and disappears.
-  %teleport% %actor% 3001
-end
+Object Affects Example~
+1 n 100
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %self.affects(BLIND)% 
+  %echo% This object is affected with blind.
+end 
+if %self.affects(INVIS)% 
+  %echo% This object is affected with invisibility.
+end 
+if %self.affects(DET-ALIGN)% 
+  %echo% This object is affected with detect alignment.
+end 
+if %self.affects(DET-INVIS)% 
+  %echo% This object is affected with detect invisibility.
+end 
+if %self.affects(DET-MAGIC)% 
+  %echo% This object is affected with detect magic.
+end 
+if %self.affects(SENSE-LIFE)% 
+  %echo% This object is affected with sense life.
+end 
+if %self.affects(WATWALK)% 
+  %echo% This object is affected with water walk.
+end 
+if %self.affects(SANCT)% 
+  %echo% This object is affected with sanctuary.
+end 
+if %self.affects(GROUP)% 
+  %echo% This object is affected with group.
+end 
+if %self.affects(CURSE)% 
+  %echo% This object is affected with curse.
+end 
+if %self.affects(INFRA)% 
+  %echo% This object is affected with infravision.
+end 
+if %self.affects(POISON)% 
+  %echo% This object is affected with poison.
+end 
+if %self.affects(PROT-EVIL)% 
+  %echo% This object is affected with protection from evil.
+end 
+if %self.affects(PROT-GOOD)% 
+  %echo% This object is affected with protection from good.
+end 
+if %self.affects(SLEEP)% 
+  %echo% This object is affected with sleep.
+end 
+if %self.affects(NO_TRACK)% 
+  %echo% This object is affected with no track.
+end 
+if %self.affects(FLYING)% 
+  %echo% This object is affected with flying.
+end 
+if %self.affects(SCUBA)% 
+  %echo% This object is affected with scuba.
+end 
+if %self.affects(SNEAK)% 
+  %echo% This object is affected with sneak.
+end 
+if %self.affects(HIDE)% 
+  %echo% This object is affected with hide.
+end 
+if %self.affects(UNUSED)% 
+  %echo% This object is affected with unused.
+end 
+if %self.affects(INFRA)% 
+  %echo% This object is affected with charm.
+end 
 ~
 #1206
 (1207) Capturing~
@@ -288,15 +338,95 @@ if %cmd.mudcommand% == sit && chair /= %arg%
 end
 ~
 #1210
-Remove From Room~
-2 g 100
+Actor Pref Checking~
+2 q 100
 ~
-if %actor.level% == 31
-  %echo% GET OUT!
-  %teleport% %actor% 0
-else
-  %echo% Welcome %actor.name%, please enjoy.
-  %force% %actor% look
+if %actor.pref(BRIEF)% 
+  %send% %actor% You have BRIEF on.
+end
+if %actor.pref(COMPACT)%
+  %send% %actor% You have COMPACT on.
+end
+if %actor.pref(NO_SHOUT)% 
+  %send% %actor% You have NO_SHOUT on.
+end
+if %actor.pref(NO_TELL)%
+  %send% %actor% You have NO_TELL on.
+end
+if %actor.pref(D_HP)% 
+  %send% %actor% You have D_HP on.
+end
+if %actor.pref(D_MANA)%
+  %send% %actor% You have D_MANA on.
+end
+if %actor.pref(D_MOVE)% 
+  %send% %actor% You have D_MOVE on.
+end
+if %actor.pref(AUTOEX)%
+  %send% %actor% You have AUTOEX on.
+end
+if %actor.pref(NO_HASS)% 
+  %send% %actor% You have NO_HASS on.
+end
+if %actor.pref(QUEST)%
+  %send% %actor% You have QUEST on.
+end
+if %actor.pref(SUMN)% 
+  %send% %actor% You have SUMN on.
+end
+if %actor.pref(NO_REP)%
+  %send% %actor% You have NO_REP on.
+end
+if %actor.pref(LIGHT)% 
+  %send% %actor% You have LIGHT on.
+end
+if %actor.pref(C1)%
+  %send% %actor% You have C1 on.
+end
+if %actor.pref(NO_WIZ)% 
+  %send% %actor% You have NO_WIZ on.
+end
+if %actor.pref(L1)%
+  %send% %actor% You have L1 on.
+end
+if %actor.pref(L2)% 
+  %send% %actor% You have L2 on.
+end
+if %actor.pref(NO_AUC)%
+  %send% %actor% You have NO_AUC on.
+end
+if %actor.pref(NO_GOS)% 
+  %send% %actor% You have NO_GOS on.
+end
+if %actor.pref(RMFLG)%
+  %send% %actor% You have RMFLG on.
+end
+if %actor.pref(D_AUTO)%
+  %send% %actor% You have D_AUTO on.
+end
+if %actor.pref(CLS)% 
+  %send% %actor% You have CLS on.
+end
+if %actor.pref(BLDWLK)%
+  %send% %actor% You have BLDWLK on.
+end
+if %actor.pref(AFK)% 
+  %send% %actor% You have AFK on.
+end
+if %actor.pref(AUTOLOOT)%
+  %send% %actor% You have AUTOLOOT on.
+end
+if %actor.pref(AUTOGOLD)%
+  %send% %actor% You have AUTOGOLD on.
+end
+if %actor.pref(AUTOSPLIT)% 
+  %send% %actor% You have AUTOSPLIT on.
+end
+if %actor.pref(AUTOSAC)%
+  %send% %actor% You have AUTOSAC on.
+end
+if %actor.pref(AUTOASSIST)% 
+  %send% %actor% You have AUTOASSIST on.
 end
 ~
 #1211
@@ -316,7 +446,10 @@ Animal Chase Board Game - O1212~
 go~
 * By Mordecai
 * Animal chase board game. Triggers: 1212-1214. O1212, M1212 in R1200.
-if !(%arg%==up||%arg%==down||%arg%==left||%arg%==right||!%created%||!%arg%||%arg%==stay)
+* By Mordecai
+* Animal chase board game. Triggers: 1212-1214. O1212, M1212 in R1200.
+if !(%arg%==up||%arg%==down||%arg%==left||%arg%==right||!%created%||!%arg%||%arg
+%==stay)
   return 0
   if %cmd%!=gos
     %send% %actor% Type: go < up | down | left | right >
@@ -844,17 +977,10 @@ wait 1
 return 0
 ~
 #1217
-Argument Testing Trigger~
-2 c 100
-target~
-%echo% %actor.name% is targetting %arg% IS_PC: %arg.is_pc%
-if %arg.is_pc% == 1
-  %echo% It is a player.
-elseif %arg.is_pc% == 0
-  %echo% It is a mob.
-else
-  %echo It is an object.
-end
+FREE~
+0 f 50
+~
+* No Script
 ~
 #1218
 Multiple Command Example Trig~

@@ -1501,9 +1501,6 @@ ACMD(do_gen_ps)
     break;
   case SCMD_VERSION:
     send_to_char(ch, "%s\r\n", tbamud_version);
-    send_to_char(ch, "%s\r\n", oasisolc_version);
-    send_to_char(ch, "%s\r\n", DG_SCRIPT_VERSION);
-    send_to_char(ch, "%s\r\n", ascii_pfiles_version);
     break;
   case SCMD_WHOAMI:
     send_to_char(ch, "%s\r\n", GET_NAME(ch));

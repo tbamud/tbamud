@@ -518,7 +518,7 @@ Near Death Trap Fall - 12684~
 ~
 * Near Death Trap stuns actor
 wait 5 sec
-eval stunned %actor.hitp% 
+set stunned %actor.hitp% 
 %damage% %actor% %stunned%
 wait 5 sec
 %send% %actor% The Gods allow your puny existence to continue.

@@ -1357,21 +1357,26 @@ door~
 1 0 350
 S
 #367
-The Realm Of The Dead~
-   You are standing on an immense, grey stone floor that stretches as far
-as you can see in all directions.  Rough winds plunging from the dark,
-starless sky tear savagely at your fragile body.
+Hazel's Living Quarters~
+   The room is cluttered with various water container and filtration canisters
+overflowing the desks and shelves.  A small cot is crowded into one corner.  
+Though there is very little room to move around the room is surprisingly clean
+and well kept.  A single door leads down to the shop below.
 ~
 3 520 0 0 0 0
+D5
+~
+door~
+2 0 225
+E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
+~
 E
 floor~
    The stone floor is the same shade of grey as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
-~
-E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
 ~
 S
 $~

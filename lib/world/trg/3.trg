@@ -454,7 +454,7 @@ if napalm /= %cmd%
   %send% %actor% You throw the napalm at %arg.name%, it strikes %arg.himher% and shatters, exploding into a ball of fire consuming %arg.himher% completely.
   %echoaround% %actor% %actor.name% throws the napalm at %arg.name%. It shatters and explodes into a ball of fire consuming %arg.himher%. 
   %asound% A large explosion is heard close by.
-  eval stunned %arg.hitp% 
+  set stunned %arg.hitp% 
   %damage% %arg% %stunned%
   wait 5 sec
   %echoaround% %arg% %arg.name% collapses to the ground as the flames die down. %arg.heshe% seems to still be alive, but barely. 

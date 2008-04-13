@@ -166,44 +166,44 @@ end
 (2718) Slip in Room after delay~
 2 g 100
 ~
-wait 5 s
 if %actor.is_pc%
-eval room %actor.room%
-if %room.vnum% == 2718
-%send% %actor% Oops! You slip and hurt yourself... perhaps lingering here is not a good idea.
-%damage% %actor% 10
-if %actor.is_pc%
-wait 5 s
-eval room %actor.room%
-if %room.vnum% == 2718
-%send% %actor% Oops! You slip and hurt yourself... perhaps lingering here is not a good idea.
-%damage% %actor% 10
-wait 5 s
-if %actor.is_pc%
-eval room %actor.room%
-if %room.vnum% == 2718
-%send% %actor% Oops! You slip and hurt yourself... perhaps lingering here is not a good idea.
-%damage% %actor% 10
-wait 5 s
-if %actor.is_pc%
-eval room %actor.room%
-if (%room.vnum% == 2718)
-%send% %actor% Oops! You slip and hurt yourself... perhaps lingering here is not a good idea.
-%damage% %actor% 10
-wait 5 s
-eval room %actor.room%
-if (%room.vnum% == 2718)
-%send% %actor% You slip even harder, landing flat on your back and skidding down the tunnel. That really HURT!
-%damage% %actor% 70
-%force% %actor% n
-end
-end
-end
-end
-end
-end
-end
-end
+  wait 5 sec
+  eval room %actor.room%
+  if %room.vnum% == 2718
+    %send% %actor% Oops! You slip and hurt yourself... perhaps lingering here is not a good idea.
+    %damage% %actor% 10
+    if %actor.is_pc%
+      wait 5 s
+      eval room %actor.room%
+      if %room.vnum% == 2718
+        %send% %actor% Oops! You slip and hurt yourself... perhaps lingering here is not a good idea.
+        %damage% %actor% 10
+        wait 5 s
+        if %actor.is_pc%
+          eval room %actor.room%
+          if %room.vnum% == 2718
+            %send% %actor% Oops! You slip and hurt yourself... perhaps lingering here is not a good idea.
+            %damage% %actor% 10
+            wait 5 s
+            if %actor.is_pc%
+              eval room %actor.room%
+              if (%room.vnum% == 2718)
+                %send% %actor% Oops! You slip and hurt yourself... perhaps lingering here is not a good idea.
+                %damage% %actor% 10
+                wait 5 s
+                eval room %actor.room%
+                if (%room.vnum% == 2718)
+                  %send% %actor% You slip even harder, landing flat on your back and skidding down the tunnel. That really HURT!
+                  %damage% %actor% 70
+                  %force% %actor% n
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
 end
 ~
 #2712

@@ -94,10 +94,11 @@ end
 Trial Vnum Assigner - 1332~
 1 c 2
 tbalim~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Trial vnum assigner. For STAFF only! Make sure player has nohassle off.
 * Make sure name matches a player, purge mobs or use 0.name if you have 
-* troubles. Socrates should have given them an assigner.
-* Usage: tbalim <player> <vnum | purge>
+* troubles. They are given an assigner in the mortal start room.
+* Usage: tbalim player vnum | purge
 if !%actor.is_pc% || %actor.level% < 32
   %send% %actor% Only human staff can use this limiter.
 else  
@@ -114,7 +115,7 @@ else
       %send% %actor% %arg.car%'s trial vnum set to %arg.cdr%.
     end
   else
-    %send% %actor% Make sure they have nohassle off. Don't use it on mobs. Use 0.<name>!
+    %send% %actor% Make sure they have nohassle off. Don't use it on mobs. Use 0.name!
     return 0
   end
 end
@@ -1809,8 +1810,10 @@ end
 Trial Vnum Assigner - 1332~
 1 c 2
 *~
-* Player must have nohassle off! To junk assigner use tbalim purge <player>.
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Player must have nohassle off! To junk assigner use tbalim purge player.
 if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 31
+  * We set completed trial vnums to -#. So if negative abort.
   if %actor.TBA_trial_vnum% < 0
     return 0
   end
@@ -1826,10 +1829,12 @@ if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 31
     %send% %actor% GOTO %actor.TBA_trial_vnum% to purge your room.
   elseif %cmd.mudcommand% == nohassle || (%cmd.mudcommand% == toggle && nohassle /= %arg.car%)
     %send% %actor% You cannot enable nohassle until you finish your trial vnum.
-  elseif %cmd.mudcommand% == sedit || %cmd.mudcommand% == trigedit || %cmd.mudcommand% == buildwalk || %cmd.mudcommand% == dig || %cmd.mudcommand% == rclone || %cmd.mudcommand% == attach || %cmd.mudcommand% == detach || %cmd.mudcommand% == vdelete 
-    %send% %actor% Sedit, Trigedit, Buildwalk, Dig, Rclone, Attach, Detach, and Vdelete are not required for your trial vnum.
+  elseif %cmd.mudcommand% == buildwalk || (%cmd.mudcommand% == toggle && buildwalk /= %arg.car%)
+    %send% %actor% You cannot enable buildwalk until you finish your trial vnum.
+  elseif %cmd.mudcommand% == sedit || %cmd.mudcommand% == trigedit || %cmd.mudcommand% == dig || %cmd.mudcommand% == rclone || %cmd.mudcommand% == attach || %cmd.mudcommand% == detach || %cmd.mudcommand% == vdelete 
+    %send% %actor% Sedit, Trigedit, Dig, Rclone, Attach, Detach, and Vdelete are not required for your trial vnum.
   elseif %cmd.mudcommand% == zpurge
-    %send% %actor% Zpurge is not required for your trial vnum.
+    %send% %actor% Zpurge is not required for your trial vnum. Use 'purge' or 'purge item.'
   else
     return 0
   end
@@ -1841,7 +1846,8 @@ end
 !DROP Assigner - 1332~
 1 his 100
 ~
-if %actor.level% == 31
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.level% < 32
   %send% %actor% You can't get rid of %self.shortdesc%.
   return 0
 end
@@ -2685,7 +2691,7 @@ Detach 1388 %self.id%
 %echo% detached
 ~
 #1389
-Obj Command Assemble~
+FREE~
 1 c 7
 join~
 eval currentroom %self.room% 

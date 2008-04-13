@@ -80,7 +80,7 @@ Near Death Trap on the Rocks - 3975~
 ~
 * Near Death Trap stuns actor
 wait 6 sec
-eval stunned %actor.hitp% 
+set stunned %actor.hitp% 
 %damage% %actor% %stunned%
 wait 2 sec
 %send% %actor% You lay among the jagged rocks.

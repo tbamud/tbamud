@@ -352,7 +352,7 @@ with this zone, and the help of others, you can do this.
 @RHELP DICTIONARY@n
 @RHELP WORK@n
 @RHELP PLANNING@n
-@RHELP MAPPING@n
+@RHELP CARTOGRAPHY@n
 @RHELP LOCATION@n
 @RHELP THEME@n
 @RHELP PLOT@n
@@ -559,14 +559,6 @@ while the mark of the mature man is that he wants to live humbly for one.
 --Wilhelm Stekel
 ~
 0 8 0 0 0 0
-D0
-~
-~
-0 0 33
-D2
-~
-~
-0 0 33
 E
 .test~
 can you see this with look around?
@@ -698,7 +690,7 @@ The Prison Cell Corridor~
 Along the Northern wall are steel doors spaced a few feet apart while the
 southern wall is of cinder block construction. 
 ~
-0 0 0 0 0 0
+0 8 0 0 0 0
 D1
 ~
 ~
@@ -710,7 +702,7 @@ D3
 D4
 ~
 trapdoor~
-1 0 130
+1 68 130
 S
 #90
 Epictetus' Prison Cell~

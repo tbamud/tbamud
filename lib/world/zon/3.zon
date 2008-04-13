@@ -2,10 +2,10 @@
 Rumble~
 Sanctus III~
 300 399 30 2
+R 0 367 308 -1 	(a clay jug)
+O 0 308 99 367 	(a clay jug)
 O 0 335 1 334 	(the large fountain)
 M 0 30 3 343 	(the spy for the underground)
-M 0 99 1 367 	(Death)
-E 1 99 1 16 	(the Scythe of Death)
 D 0 366 3 1 	(The Lab)
 O 0 316 1 366 	(a cauldron)
 M 0 300 1 366 	(Camille the chemist)
@@ -48,8 +48,8 @@ G 1 14037 99 -1 	(a potion of healing)
 G 1 29105 99 -1 	(a green herb)
 G 1 29105 99 -1 	(a green herb)
 D 0 351 0 1 	(The Healer's Shop)
-D 0 348 2 1 	(The Magis Quarter)
-D 0 348 1 1 	(The Magis Quarter)
+D 0 348 2 1 	(The Magi Quarters)
+D 0 348 1 1 	(The Magi Quarters)
 M 0 192 3 348 	(the german shephard)
 D 0 349 3 1 	(The Magi Mansion)
 M 0 115 1 356 	(the fisherman)

@@ -2,6 +2,174 @@ TbaMUD is currently being developed by The Builder Academy. If you need any
 help, find any bugs, or have ideas for improvement please stop by TBA at 
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
+tbaMUD 3.56
+[Apr 07 2008] - Rumble
+  Fixed typos in lib/misc/messages and socials.new
+[Apr 04 2008] - jeremyosborne
+  Minor Bugfix: All game configuration settings now reference the world config
+structure, not the individual config variables found in config.c.
+[Mar 22 2008] - Rumble
+  Added lib/world/qst/ directory, index, index.mini, and 0.qst.
+[Mar 08 2008] - jeremyosborne
+  Bugfix: the include directory (for .h files) is now referenced correctly in 
+the depend statement.
+  Deletion: listrent.c removed as a separate utility.
+[Mar 07 2008] - jeremyosborne
+  Enhancement: utils/ Makefile will now use a depends file, and looks for 
+dependencies in the ../ directory (shrinks the necessary information to make 
+each utility).
+[Mar 06 2008] - Rumble
+  Made TBA specific changes. do_cheat, removed help level checking, and 
+advance to level 32 (these will be removed for releases).
+[Mar 05 2008] - jeremyosborne
+  Minor Update: Changed header of Makefile.in to read 'tbaMUD' and also added 
+in attribution for the changes. (Thanks seqwith.)
+[Mar 05 2008] - jeremyosborne
+  Changed Makefile.in to use glob expressions when building the objects. This 
+translates into no longer a need to update Makefile.in whenever a new .c file 
+is added to the mud code. Other Makefile.* have not yet been changed (and 
+need review, anyway).
+  All CXREF cruft left in Makefile.in has been removed. tbaMUD is now using 
+Doxygen. Technically, CXREF provides a bit more auto-documentation than Doxygen
+does, however the tbaMUD (and legacy circle code) has never been marked-up with 
+the special CXREF codes required to effectively use the program. Since Doxygen 
+is easier to use, and provides almost as much functionality as CXREF, CXREF 
+support has been dropped.
+  Bug Fix: asciiflag_conv* functions now can handle a negative numeric value.
+  Bug fix/enhancement: Charmed mobs (specifically charmed mobs with a ->master)
+will no longer attempt to wander off.
+  Based on the compiler warning about mag_materials being an unused function, 
+and the clone spell being unused.
+  Bug fix: Clone can now be cast. It is an 'ignore' target spell.
+  Fix and Modification: Clone, being an effectively unused spell that is only 
+used by mortal Magic Users at level 30, is now implemented as very simple 
+example of how to use mag_materials(). The item required by mag_materials is 
+vnum 161, which in stock tbaMUD is some sacrificial entrails.
+  Bug Fix for "Did you mean:" including DG commands.
+  Bug Fix: do_simple_move slightly rewritten to handle Leave triggers that 
+purge a door.
+  Documentation: do_simple_move documented.
+[Mar 01 2008] - Laoris
+  Trial run of columnizer function on commands list to see how people like it.
+[Feb 26 2008] - jeremyosborne
+  asciimap, an in game automap, along with a couple of minor bug fixes to do 
+with the automap, patched in (Thanks Jamdog).
+[Feb 22 2008] - jeremyosborne
+  Minor update: Relocate local variable declaration to the top of ACMD(do_help)
+  Checked in the following placeholders for do_gen_tog:
+#define SCMD_AUTOLOOT   24
+#define SCMD_AUTOGOLD   25
+#define SCMD_AUTOSPLIT  26
+#define SCMD_AUTOSAC    27
+#define SCMD_AUTOASSIST 28
+  The Autoquest patch, along with a couple of minor bug fixes, has been 
+integrated into tbaMUD. (Thanks Jamdog, Kenneth Ray and Morgaelin.)
+[Feb 22 2008] - jeremyosborne
+  Casted NOWHERE, NOTHING, NOBODY and NOFLAG as IDXTYPE for the signed short 
+int index types.
+[Feb 18 2008] - jeremyosborne
+  Added a new atoidx() conversion function for dealing with string to IDXTYPE 
+conversions (in utils.c, prototype exported through utils.h).
+  Added IDXTYPE_MIN and IDXTYPE_MAX defines (in structs.h).
+  Replaced atoi references with atoidx in do_oasis_zedit (in zedit.c).
+  Since general olc editing are automatically saved to disk, 'shutdown reboot' 
+has been changed to not-autosave by default. (Small change made to do_shutdown
+in act.wizard.c).
+  struct attack_hit_type moved to fight.h
+  attack_hit_text exported through fight.h
+[Feb 17 2008] - jeremyosborne
+  do_file heads or tails files correctly and has also been enhanced to return
+file info (act.wizard.c).
+  Defines made for common log files created by autorun, and those used by 
+do_file (db.h).
+  utility functions added: file_head(), file_tail(), file_sizeof(), and 
+file_numlines() (defined utils.c and exported through utils.h).
+[Feb 16 2008] - Rumble
+  Fixed export command. (thanks Kyle)
+[Feb 15 2008] - jeremyosborne
+  Files are now tagged as executable. Should be able to be checked out from 
+subversion and executed without running chmod.
+[Feb 14 2008] - Rumble
+  Fixed strcat() writing out of bounds in cedit.c since strdup() only malloc()
+strlen(str)+1 bytes. (thanks Buggo) and moved attack_hit_text back.
+  Fixed direction mapping to give readable directions instead of sub commands.
+[Feb 13 2008] - jeremyosborne
+  Event queue function definitions, global variables and defines doxygenated.
+[Feb 12 2008] - Rumble
+  Updated levels command to use an arg/range and added color parsing to 
+greetings. (thanks Jamdog)
+[Feb 11 2008] - jeremyosborne
+  Doxygen comments completed for weather.c
+[Feb 10 2008] - Rumble
+  Corrected several 64-bit warnings. (thanks Buggo)
+  Added get_flag_by_name allowing for new trigedit variable checks like 
+%actor.pref(FLAG)% checks. (thanks Jamdog)
+[Feb 09 2008] - jeremyosborne
+  COMPLETE: tbaMUD code re-org of global and local scope function and variable
+declarations. There may be a few things that I did not catch (some non extern 
+keyword declarations of function prototypes within other functions, for 
+example).
+  BUG FIX: Unused functions encrypt_hex() and decrypt_hex() removed from mail.c
+[Feb 05 2008] - jeremyosborne
+  Continued clean-up of 'extern' references to functions and variables.
+  BUG UNCOVERED: set_title() in class.c incorrectly handles the const nature of
+the char * returned from title_female and title_male.
+  More work on mud clean-up.
+  New file: spec_procs.h created to house the legacy special procedures 
+(spec_procs.c and castle.c) and special feature assignment in general.
+  Minor Bugfix: Fixed parse error in mobact.c
+  Minor Bugfix: act.h is now included in all of the act functions. Forgot to do
+that the first time :(
+  Additions: ban.h has been added as the external entry point into the ban.c 
+globals and functions. Files needing ban.h have been updated.
+[Feb 04 2008] - jeremyosborne
+  All act*.c functions, defines and globals have been prototyped/declared in 
+act.h. The file act.h does not contain every ACMD, only those ACMDs and 
+utility functions available within the act*.c files.
+  Changed the 'struct queue' to 'struct dg_queue' to avoid namespace conflicts.
+[Feb 04 2008] - Rumble
+  Fixed the last few flags missed for the 128 bit conversion.
+  Fixed run_autowiz which ran twice on advancement.
+[Feb 04 2008] - Laoris
+  Adding a column formatter for lists.  Accepts printf-like arguments.
+Only used by medit right now.
+[Feb 03 2008] - jeremyosborne
+  act.h created and added. This header will be the external entry point for the
+functions, function subcommands and variables within the act*.c files. It is 
+not designed to be the entry point for all ACMD functions.
+[Feb 02 2008] - jeremyosborne
+  Marking all file scope functions as 'static'
+  Reorganization of the global variables and functions.
+[Jan 31 2008] - jeremyosborne
+  Protected the conf.h.* system config files from multiple calls.
+  Removed extraneous references to TRUE / FALSE and YES / NO defines.
+  BUGFIX: NUM_POSITIONS set to 8 (was incorrectly set to 15 before)
+  Migrated NUM_* settings from oasis.h to more appropriate locations near where
+they are defined. (For Example: NUM_POSITIONS moved to structs.h next to the 
+POSITION_* defines.)
+  Added Appendix A - Coder Support. Right now, it simply speaks to the fact that
+we have included doxygen config files, are working to document the source code, 
+and provides a rudimentary "do this" guide to create the doxygen cross 
+references.
+[Jan 30 2008] - jeremyosborne
+  All .h files now have doxygen recognized headers, and the format is slightly 
+altered to ease editing of headers.
+  Protected all .h files from multiple calls. (Standard format is #ifndef _HEADE
+R_H_ #define _HEADER_H_ .... #endif)
+[Jan 29 2008] - jeremyosborne
+  constants.h, structs.h and utils.h now protected from multiple includes. This
+is sometimes overkill, but good practice overall.
+  Updated documentation for constants.c and constants.h.
+  The standard Doxygen configuration doxyfiles (config files) for tbaMUD. One
+is to be used with the Graphviz DOT (dox_withGraphs), one is designed to be 
+used if Graphviz is not available.
+  Minor document correction in struct dex_app_tpe.
+[Jan 28 2008] - jeremyosborne
+  *bugfix* do_drink command: When a container is empty, the correct, "It is 
+empty." message is now displayed.
+  Merging changes to trunk for: utils.h, utils.c and structs.h doxygen comments
+  Adding file dox_withGraphs.doxyfile
+
 tbaMUD 3.55
 [Jan 17 2008] - Rumble
   Updated files for 3.55 release.
@@ -110,6 +278,7 @@ Increased the size of a mail message from 4k to 8k.
 [Aug 17 2007] - Rumble
   128 bit fixes: pfile conversion, world sector conversion, and player flags. (thanks Jamdog)
   Added stop_fighting calls in do_flee to fix stock bug. (thanks Juras)
+
 tbaMUD 3.53
 [Jul 01 2007] - Rumble
   Added run_autowiz to do_cheat. (thanks Fizban)
@@ -151,6 +320,7 @@ tbaMUD 3.53
   Fixed nogos/nowiz from flagging everyone in who.
   Fixed numerous SYSERR's where mobs were using player only specials.
   Added 128 bits patch by Niese Petersen with numerous updates and fixes.
+
 tbaMUD 3.52
 [Apr 14 2007] - Rumble
   IP's only visible to LVL_GOD and above now for the paranoid people out there.
@@ -469,9 +639,11 @@ CircleMUD 3.5
 - Added buildwalk and dig.
  
 Release history:
+Version 3.56 release: January, 2008
+Version 3.55 release: January, 2008
 Version 3.54 release: December, 2007
 Version 3.53 release: July, 2007
 Version 3.52 release: April, 2007
 Version 3.51 release: February, 2007
 Version 3.5 release: December, 2006
-See releases.txt
+See releases.txt for a full release history.

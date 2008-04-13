@@ -179,6 +179,20 @@ else
   return 0
 end
 ~
+#208
+Yoda Using Extract to Warp Speech~
+0 d 1
+*~
+* By Rumble of The Builder Academy    tbamud.com 9091
+wait 2 sec
+extract word1 1 %speech%
+extract word2 2 %speech%
+extract word3 3 %speech%
+extract word4 4 %speech%
+extract word5 5 %speech%
+extract word6 6 %speech%
+say %word6% %word5% %word4% %word3% %word2% %word1%?
+~
 #212
 Phoenix Rising - 219~
 1 c 4

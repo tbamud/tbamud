@@ -73,6 +73,7 @@ Zone 1 is linked to the following zones:
   2 Sanctus II                     at   199 (south) --->   206
 ~
 S
+T 56
 #101
 The Temple of the Gods~
    This seems to be the highest point in the kingdom of Sanctus.  It is from
@@ -144,6 +145,7 @@ head chair, which is garnished in silver, is only used by the High Councilman.
   
 ~
 S
+T 51
 #104
 Inner Void~
    This room is exempt from all normal laws of reality.  It appears to have
@@ -802,6 +804,7 @@ D3
 ~
 0 0 133
 S
+T 57
 #135
 Healers Chambers~
    A stark white room that is glaringly white.  A simple bed, desk, and chair
@@ -952,6 +955,10 @@ but the occasional drink never hurt anyone.  Unless they were stupid enough to
 go walking through the Thieves Quarter after a few too many.    
 ~
 1 8 0 0 0 0
+D0
+~
+~
+0 0 142
 D2
 ~
 ~
@@ -961,6 +968,7 @@ D4
 ~
 0 0 108
 S
+T 58
 #143
 Letzgo Inn~
    The only inn in Sanctus.  The Letzgo Inn appeals to those who need to take a
@@ -1415,6 +1423,7 @@ D3
 ~
 0 0 163
 S
+T 59
 #165
 The Thieves' Warehouse~
    You work your way through boxes and crates of supplies.  Small corridors
@@ -1570,7 +1579,8 @@ The Northern Road~
    This road passes between houses occupied by the local citizens.  The wide
 Northern Road is packed solid from years of traffic from people, wagons, and
 horses.  A small amount of dust is kicked up by every footstep.  Directly to the
-south one can see the Temple.  
+south one can see the Temple.  A small stone bridge arches over a small stream
+to the north.  There is something unusual about the bridge.
 ~
 1 0 0 0 0 0
 D0
@@ -1582,6 +1592,7 @@ D2
 ~
 0 0 189
 S
+T 52
 #175
 An Extravagant Home~
    One of the more successful thieves of the quarter must live here.  Rugs

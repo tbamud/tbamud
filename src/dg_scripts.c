@@ -974,7 +974,7 @@ ACMD(do_attach)
       return;
     }
     if (!can_edit_zone(ch, world[IN_ROOM(ch)].zone)) {
-      send_to_char(ch, "You can only attach triggers in your own zone\r\n");
+      send_to_char(ch, "You can only attach triggers in your own zone.\r\n");
       return;
     }
     /* have a valid mob, now get trigger */
@@ -1012,7 +1012,7 @@ ACMD(do_attach)
     }
 
     if (!can_edit_zone(ch, world[IN_ROOM(ch)].zone)) {
-      send_to_char(ch, "You can only attach triggers in your own zone\r\n");
+      send_to_char(ch, "You can only attach triggers in your own zone.\r\n");
       return;
     }
     /* have a valid obj, now get trigger */
@@ -1047,7 +1047,7 @@ ACMD(do_attach)
     }
 
     if (!can_edit_zone(ch, world[rnum].zone)) {
-      send_to_char(ch, "You can only attach triggers in your own zone\r\n");
+      send_to_char(ch, "You can only attach triggers in your own zone.\r\n");
       return;
     }
     /* have a valid room, now get trigger */
@@ -2650,9 +2650,6 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
 
       else if (!strn_cmp(cmd, "detach ", 7))
         process_detach(go, sc, trig, type, cmd);
-
-      else if (!strn_cmp(cmd, "version", 7))
-        mudlog(NRM, LVL_GOD, TRUE, "%s", DG_SCRIPT_VERSION);
 
       else {
         switch (type) {

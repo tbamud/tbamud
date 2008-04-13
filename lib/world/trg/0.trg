@@ -473,32 +473,30 @@ say Transform complete to mob %number%.
 IF Example~
 0 g 100
 ~
-* By Relsqui
+* By Rumble & Relsqui of The Builder Academy    tbamud.com 9091
 * First we set %anumber% to some number between 1 and 100.
 eval anumber %random.100%
 * Then the beginning of the if-block.
-if (%anumber% == 5)
+if %anumber% == 5
   * The following commands are only executed if the above condition is true.
-  * (That is, if %anumber% is equal to 5.)
+  * That is, if %anumber% is equal to 5.
   clap
   say It's your lucky day!
   say You picked my favorite number!
   * If those commands were executed, the program skips to the next end.
   * Otherwise, it looks for an elseif.
-elseif (%anumber% > 90)
-  * To read the following commands, the program must have determined the 
-  * following: The first condition (%anumber% == 5) is false.
-  * The second condition (%anumber% > 90) is true.
+elseif %anumber% > 90
+  * To read the following commands, the program must have determined the
+  * following: The first condition %anumber% == 5 is false.
+  * The second condition %anumber% > 90 is true.
   emote shrinks down to the size of a mouse.
   say Squeak squeak squeak!
   * If the first elseif condition was also false, the program looks for the 
   * next one.
-elseif (%anumber% < 10)
-  * Here's a tricky one.
-  * If %anumber% equals 5, the program will already have run the commands 
-  * immediately after the if-statement at the top. Therefore, the following 
-  * commands only run when: %anumber% is not five (failing the first check.)
-  * %anumber% is not greater than 90 (failing the second check.)
+elseif %anumber% < 10
+  * Here's a tricky one. If %anumber% equals 5, the program will already have
+  * run the commands immediately after the if-statement at the top. Therefore,
+  * the following commands only run when: %anumber% is not five (failing the;* first check) %anumber% is not greater than 90 (failing the second check)
   * %anumber% is less than 10 (passing the third check.)
   emote grows an elephant's nose.
   emote blows a mighty blast with %self.hisher% trunk.
@@ -515,9 +513,8 @@ end
 * Ends are good. They tell the program when the if-block is over. After any of 
 * the above sets of commands runs, the program skips to the next end. 
 *
-* Notes:
 * We could have omitted the else. If we had, and none of the conditions had 
-* been met, no commands in the if-block would run. However, there can never be 
+* been met, no commands in the if-block would run. However, there can never be
 * more than one else. There is only one default. There must always be the same
 * number of if's and end's. We could have had any number of ifelses, from zero 
 * on up. To summarize, here is the basic format of an if-block:
@@ -966,40 +963,19 @@ set msg %msg% %w6%
 say %msg%
 ~
 #34
-Switch Example~
-0 g 100
-~
-* By Falstar of The Builder Academy    tbamud.com 9091
-* Pick a random number 1-7, 7 is actually for the default case.
-switch %random.7%
-  case 1
-    set book 'Creative cooking with human flesh'
-  break
-  case 2
-    set book 'Re-animating the Dead for Dummies'
-  break
-  case 3
-    set book 'How to teach your henchman to rob graves in 7 days'
-  break
-  case 4
-    set book 'An A-Z guide of Mage-induced maladies and mutations'
-  break
-  case 5
-    set book '101 Easy ways to rescue a damsel in distress'
-  break
-  case 6
-    set book 'Witch Hazel's Bumper Book of rare herbs and potions'
-  break
-  default
-    set book 'Arcane Artifacts made easy'
-  done
-  *
-  wait 1 s
-  %echo% Dr. Von Erhartz seems engrossed in reading a large leatherbound book through a battered pair
-  %echo% of reading glasses. The title reads: %book%.
-  %echo% The doctor looks up at you, seeming to notice you for the first time.
-  wait 1 s
-  say ah %actor.name%, I was wondering when you'd drop by.
+IS_PC Example~
+2 c 100
+target~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Player = 1, mob = 0, object = -1.
+%echo% %actor.name% is targetting %arg% IS_PC: %arg.is_pc%
+if %arg.is_pc% == 1
+  %echo% It is a player.
+elseif %arg.is_pc% == 0
+  %echo% It is a mob.
+else
+  %echo It is an object.
+end
 ~
 #35
 Mob Room Specific Speeches~
@@ -1257,7 +1233,7 @@ Random Equipment Scatter and Teleport~
 wait 1 sec
 %send% %actor% You feel you must not have been worthy when a powerful force hurls you back through the gates.
 wait 2 sec
-eval stunned %actor.hitp% -1 
+set stunned %actor.hitp% -1 
 %damage% %actor% %stunned%
 eval num %random.99% + 20300
 %teleport% %actor% %num%
@@ -1396,32 +1372,73 @@ done
 Mob Wait Until Example~
 0 ab 100
 ~
-* By Aeon This script wakes the mob at dawn, and puts him to sleep at night.
-wait until 06:00
-wake
-say It's morning already!
-wait 1 s
-yawn
-wait 1 s
-stand
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Shopkeeper only works 6-9 then goes upstairs to sleep. The door is locked
+* without a key so the player has to follow the mob and be quick about it.
+* Closing time
 wait until 21:00
 emote looks sleepy.
+wait 3 s
 yawn
 wait 10 s
-rest
+say I'm closing up, have a nice day.
 wait 10 s
+emote works her way up the stairs and unlocks the door.
+* Remove the locked and pickproof flags.
+%door% 225 up flags ab
+wait 2 s
+open door
+wait 2 s
+up
+wait 5 s
+* Close the door and lock/pickproof it.
+emote closes and locks the door behind %self.hisher%.
+%door% 367 down flags abcd
+wait 10 s
+emote gets ready for bed.
+wait 20 s
 sleep
+wait until 06:00
+wake
+wait 1 s
+stand
+say It's morning already!
+wait 3 s
+yawn
+wait 10 s
+emote goes about her business getting ready for the day.
+wait 20 s
+emote unlocks the door.
+%door% 367 down flags ab
+wait 3 s
+open door
+wait 1 s
+d
+wait 3 s
+%door% 225 up flags abcd
 ~
 #44
 Mob Death Purges Equipment~
 0 f 100
 ~
-remove all
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Purge all inventory first.
+say You damn whipper snappers. You may have beat me this time, but my equipment goes only to those who deserve it.
+emote donates everything.
 eval i %self.inventory%
-while (%i%)
+while %i%
   set next %i.next_in_list%
   %purge% %i%
-  set i %next% 
+  eval i %next%
+done
+* While we have an equipment slot, purge that too.
+eval i 0
+while %i% < 18
+  eval item %self.eq(%i%)%
+  if %item%
+    %purge% %item%
+  end
+  eval i %i%+1
 done
 ~
 #45
@@ -1458,43 +1475,40 @@ end
 Parrot Array Example~
 0 d 100
 *~
-* By Meyekul
-*** Squak for the nice people, Polly
-wait 1s
+* By Meyekul of The Builder Academy    tbamud.com 9091
+* Squak for the nice people, Polly
+wait 1 s
 emote squawks loudly.
-wait 1s
-*** 75% chance of learning phrase
+wait 1 s
+* 75% chance of learning phrase.
 eval polly %random.4%
-if (%polly% > 1)
-  say %speech%
-  %echo% %speech%
-  %echo% %phrase(1)%
-  %echo% %phrase(2)%
-  %echo% %phrase(3)%
-  *** Ignore if already known
+if %polly% > 1
+  * Ignore if already known
   switch %speech%
-    case test
-    case test 2
-    case %phrase(3)%
-    case %phrase(4)%
-    case %phrase(5)%
-    case %phrase(6)%
-    case %phrase(7)%
-    case %phrase(8)%
-    case %phrase(9)%
-    case %phrase(10)%
+    case %phrase(1)%
+      case %phrase(2)%
+      case %phrase(3)%
+      case %phrase(4)%
+      case %phrase(5)%
+      case %phrase(6)%
+      case %phrase(7)%
+      case %phrase(8)%
+      case %phrase(9)%
+      case %phrase(10)%
       emote looks at you curiously.
     break
     default
+      eval say %%phrase(%random.%%number%%)%)%%
+      emote squawks, %say%
     break
   done
-  *** Learn new phrases
+  * Learn new phrases
   eval number (%number% + 1)
   eval phrase(%number%) %speech%
   global number
   global phrase(%number%)
-  *** Reset array after 10 phrases
-  if (%number% == 10)
+  * Reset array after 10 phrases
+  if %number% == 10
     eval number 0
     global number
     eval maxphrases 1
@@ -1506,38 +1520,43 @@ end
 Mob Greet Steal~
 0 g 100
 ~
-* By Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Steal the first item in the players inventory.
 eval item %actor.inventory%
-eval item_to_purge %%actor.inventory(%item.vnum%)%%
-if %item_to_purge%
+if %item%
   %echo% purging %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
-  %purge% %item_to_purge% 
+  %load% obj %item.vnum%
+  %purge% %item% 
 else
-%echo% I cant find %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
+  %echo% I cant find %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
   %echo% I cant find an item in %actor.name%'s inventory.
 end
 ~
 #48
 Object Command Assemble~
-1 c 100
+1 c 7
 join~
-* By Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Assemble an orb onto a staff to make a new item. Trig attached to obj 189
 eval currentroom %self.room% 
-if %currentroom.vnum% == 1233 && %actor.inventory(1315)% && %actor.inventory(1316)%
-  %echo% room check correct: %currentroom.vnum%
-  %purge% %actor.inventory(1316)%
-  %echo% orb purged
+* Make sure they are in room 133 with the 2 objects.
+if %currentroom.vnum% == 133 && %actor.inventory(189)% && %actor.inventory(191)%
+  * Purge 191, but leave 189 since we are going to %transform% it.
+  %purge% %actor.inventory(191)%
+  * lets make it a 50/50 chance of working.
   switch %random.2%
     case 1
       %transform% 12
-      %echo% staff loaded
+      %send% %actor% As you join the orb to the staff it clicks into place.
+      %echoaround% %actor% %actor.name% places an orb onto %actor.hisher% staff.
     break
     default
-      %transform% 1317
-      %echo% broken staff loaded
+      %transform% 192
+      %send% %actor% As you try to join the orb to the staff it turns in your hands and snaps in half.
+      %echoaround% %actor% %actor.name% tries to place an orb onto %actor.hisher% staff until the staff twists in %actor.hisher% hands and snaps in half.
     break
   done
-  detach 1389 %self.id%
+  detach 48 %self.id%
 else
   %send% %actor% You can not do that here.
 end
@@ -1567,43 +1586,46 @@ eval eval_variable %actor.level% + 1
 Room Global Random Example~
 2 ab 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Fires whether a player is in the room or not.
-switch %random.4%
-  case 1
-    %echo% A shrill cry from a distant bird pierces the air.
-  break
-  case 2
-    %echo% The town bell rings in the distance.
-  break
-  case 3
-    %echo% A flock of doves circles overhead.
-  break
-  default
-    %echo% Voices can be heard arguing in the distance.
-  break
-done
+wait until 05:00
+%echo% The butcher's assistant steps out of the shop to the North and turns the sign over from "closed" to "open."
+%load% obj 69
+if %findobj.291(70)%
+  %purge% signclosed
+end
+wait until 21:00
+%echo% The butcher's assistant steps out of the shop to the North and turns the sign over from "open" to "closed."
+%load% obj 70
+if %findobj.291(69)%
+  %purge% signopened
+end
 ~
 #51
-Room Random Example~
-2 b 100
+Room Random heal Example~
+2 b 20
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Fires only when a player is in the room.
-* Actor is not defined with random, so lets define it.
-set actor %random.char%
+* Actor is not defined with trigger type random, you must define it.
+eval actor %random.char%
 %damage% %actor% -10
-%echo% A healing breeze flows through the room.
+%send% %actor% A healing breeze flows through the room.
+%echoaround% %actor% %actor.name% looks refreshed.
 ~
 #52
 Room Command Example~
 2 c 100
-l~
-* does not work for level 32 and above.
-* Make sure the command is look, check for any abbrev of test
-if %cmd.mudcommand% == look && test /= %arg%
-  %echo% The trigger works!
-  %force% %actor% applaud
+*~
+if %cmd.mudcommand% == look && bridge /= %arg%
+  %send% %actor% As you look at the bridge a small form staggers out from underneath it.
+  %echoaround% %actor% As %actor.name% peers under the bridge a small form emerges.
+  %load% mob 207
+  wait 1 sec
+  %echo% A filthy dog crawls out from underneath the bridge. It is covered in MUD.
 else
-  * If it doesn't match let the command continue.
+  * If it doesn't match let the command continue. Without a return 0 a player
+  * will not be able to "look" at anything else.
   return 0
 end
 ~
@@ -1611,7 +1633,7 @@ end
 Room Speech Example~
 2 d 1
 *~
-* By Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
 *
 * .car returns the first word in a string.
 * .cdr returns the remaining string.
@@ -1636,7 +1658,7 @@ done
 ~
 #54
 Room Global Zone Reset Example~
-2 af 100
+2 f 100
 ~
 %door% 23667 east purge 0
 %echo% As if by magic all the tapestries rise to their previous positions.
@@ -1645,21 +1667,30 @@ Room Global Zone Reset Example~
 Room Enter Example~
 2 g 100
 ~
-if %actor.sex% == female
-  wait 1 sec
-  %echo% Ladies are always welcome!
-else
-  %send% %actor% No men allowed.
-  return 0
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.is_pc%
+  if %actor.sex% == male
+    return 0
+    %send% %actor% An invisible barrier blocks you. A voice rings out "No men allowed."
+    %echoaround% %actor% %actor.name% walks into an invisible barrier and a voice booms "No men allowed."
+  elseif %actor.sex% == female
+    %echo% Ladies are always welcome!
+  else * must be neutral.
+    return 0
+    %send% %actor% An invisible barrier blocks you. A voice rings out "No... things allowed."
+    %echoaround% %actor% %actor.name% walks into an invisible barrier and a voice booms "No... things allowed."
+  end
 end
 ~
 #56
 Room Drop Example~
 2 h 100
 ~
-%echo% %actor.name% tries to drop object type: %object.type%
-if %object.type% == TRA
-  %echo% No Littering!
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Prevent players from littering.
+if %object.type% == TRASH
+  %send% %actor% Magical forces prevent you from dropping %object.shortdesc%.
+  %send% %actor% No Littering! Drop your trash somewhere else.
   return 0
 end
 ~
@@ -1667,27 +1698,40 @@ end
 Room Cast Example~
 2 p 100
 ~
-%echo% %actor.name% tried to cast spellnumber: %spell%: %spellname% on %vict.name% %obj.name%.
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Prevent spell casting in this room.
+* %echo% %actor.name% tried to cast spellnumber: %spell%: %spellname% on %vict.name% %obj.name%.
+%send% %actor% Your magic fizzles out and dies.
+%echoaround% %actor% %actor.name%'s magic fizzles out and dies.
 return 0
 ~
 #58
 Room Leave Example~
 2 q 100
 ~
-%echo% %actor.name% tries to leave to the %direction%.
-return 0
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %direction% == north
+  %send% %actor% You try to go %direction% but Hannibal steps in front of you blocking the way.
+  return 0
+elseif %direction% == south && %actor.is_pc%
+  %echo% Hannibal says, 'Thanks for stopping by.'
+end
 ~
 #59
 Room Door Example~
 2 r 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* The first time this door is opened dump a bucket of water on the actor.
 if %cmd% == open
   %echoaround% %actor% As %actor.name% tries to %cmd% the door to the %direction% a bucket of water dumps on %actor.hisher% head.
   %send% %actor% Splash!!
   %send% %actor% A bucket of water drops on top of your head as you open the door.
-  %damage% %actor% 10
+  %damage% %actor% 1
   %echo% The door slams shut again.
-  detach 1459 %self.id%
+  * Detach this trigger so it only happens once per reboot/copyover.
+  detach 59 %self.id%
+  * Don't allow the door to be opened.
   return 0
 end
 ~
@@ -1695,8 +1739,9 @@ end
 Mob Global Random Example~
 0 ab 100
 ~
-* Fires whether a player is in the room or not.
-switch %random.4%
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Global Random trigs fire whether a player is in the room or not.
+switch %random.6%
   case 1
     emote whistles an annoying tune.
   break
@@ -1706,32 +1751,89 @@ switch %random.4%
   case 3
     emote ponders your existence.
   break
+  case 4
+    emote considers your potential.
+  break
+  case 5
+    emote hums an unrecognizable tune.
+  break
   default
-    emote starts to sing a piercing melody about a lost love
+    emote starts to sing a piercing melody about a lost love.
   break
 done
 ~
 #61
 Mob Random Example~
-0 b 100
+0 b 2
 ~
-* This is required because a random trig does not have an actor.
+* By Rumble of The Builder Academy    tbamud.com 9091
+* With random triggers ACTOR is NOT defined. So set it.
 set actor %random.char%
 wait 1 sec
 say Hey!  You don't belong here!
 emote mumbles, 'Now what was that spell...'
 wait 1 sec
-switch %random.3%
+* Senile old guard casts random spells on intruders.
+switch %random.17%
   case 1
-    dg_cast 'harm' %actor%
+    dg_cast 'cure light' %actor%
   break
   case 2
-    dg_cast 'magic missle' %actor%
+    dg_cast 'magic missile' %actor%
+  break
+  case 3
+    dg_cast 'detect invisibility'
+  break
+  case 4
+    dg_cast 'detect magic'
+  break
+  case 5
+    dg_cast 'bless' %actor%
+  break
+  case 6
+    dg_cast 'heal' %actor%
+  break
+  case 7
+    dg_cast 'infravision'
+  break
+  case 8
+    dg_cast 'invisibility' %actor%
+  break
+  case 9
+    dg_cast 'armor' %actor%
+  break
+  case 10
+    dg_cast 'strength' %actor%
+  break
+  case 11
+    dg_cast 'sleep' %actor%
+  break
+  case 12
+    dg_cast 'blindness' %actor%
+  break
+  case 13
+    dg_cast 'detect poison' %actor%
+  break
+  case 14
+    dg_cast 'curse' %actor%
+  break
+  case 15
+    dg_cast 'poison' %actor%
+  break
+  case 16
+    if %actor.align% > 0
+      dg_cast 'dispel good' %actor%
+    else
+      dg_cast 'dispel evil' %actor%
+    end
   break
   default
+    * Senile magi "almost" kills himself.
     say That wasn't right...
     %echo% A failed spell backfires on the mage!
-    %damage% %self% 10
+    %damage% %self% %self.hitp%
+    * Remove the trig so he will stop trying to cast while incapacitated.
+    detach all %self.id%
   break
 done
 ~
@@ -1739,11 +1841,12 @@ done
 Mob Command Example~
 0 c 100
 l~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * does not work for level 32 and above.
 * Make sure the command is look, check for any abbrev of window
-* and make sure there is an arg.
-if %cmd.mudcommand% == look && %arg% /= window
-  %echo% %actor.name% tried to %cmd% at the %arg%.
+if %cmd.mudcommand% == look && %arg% /= orb
+  %send% %actor% As you look at the orb a feeling of peace and serenity comes over you.
+  %echoround% %actor% %actor.name% stares at the orb.
   return 0
 else
   * If it doesn't match let the command continue.
@@ -1754,81 +1857,91 @@ end
 Mob Speech and Expressions Example~
 0 d 1
 *~
-* Check if the actor is male OR female.
-if %actor.sex% == male || %actor.sex% == female
-  say you are a male or female.
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Arg list * means it will fire whenever someone talks.
+* Check if it is a player character (not a mob).
+if %actor.is_pc%
+  wait 1 sec
+  * Check the actors sex.
+  if %actor.sex% == male
+    say Good day sir, what would you like? 
+  elseif %actor.sex% == female
+    wait 1 sec
+    say Good day maam, what can I get you?
+  else
+    say What do you want?
+  end
+  * Check if the player level is less than 10 (9 and lower).
+  if %actor.level% < 10
+    say you are a player below level 10.
+  else
+    say you are not below level 10.
+  end
+  * Check class not equal to warrior.
+  if %actor.class% != warrior
+    say you are not a warrior.
+  else
+    say you are a warrior.
+  end
+  * Check alignment between 350 and -350 (neutral).
+  if %actor.align% <= 350 && %actor.align% >= -350
+    say you are neutral.
+  else
+    say you are not neutral.
+  end
+  * Check strength greater than or equal to 16 and less than or equal to 18. (16-18)
+  * If this was done without the equalities (=) it would check str 17 only.
+  if %actor.str% >= 16 && %actor.str% <= 18
+    say your strength is 16-18.
+  else
+    say your strength is not 16-18.
+  end
+  * Check the speech to see if it is a substring of the word concatenated.
+  * concaten caten cat and any abbreviations.
+  if concatenated /= %speech%
+    say your speech was a substring of concatenated.
+  else
+    say your speech was not a substring of concatenated.
+  end
+  * Create a random number 1-10 and assign it to rnumber.
+  set rnumber %random.10%
+  say your random number is: %rnumber%
+  * increment it by 1.
+  set rnumber %rnumber% + 1
+  say your incremented random number is: %rnumber%
 else
-  say you are not a male or female.
+  say you are not a player.
 end
-*
-* Check if it is a player AND make sure player level
-* is less than 10 (9 and lower).
-if %actor.is_pc% && %actor.level% < 10
-  say you are a player below level 10.
-else
-  say you are either not a player or not below level 10.
-end
-*
-* Check class not equal to.
-if %actor.class% != warrior
-  say you are not a warrior.
-else
-  say you are a warrior.
-end
-*
-* Check alignment between 350 and -350 (neutral).
-if %actor.align% <= 350 && %actor.align% >= -350
-  say you are neutral.
-else
-  say you are not neutral.
-end
-*
-* Check strength greater than or equal to 16, less than or equal to 18. (16-18)
-* If this was done without the equalities (=) it would check str 17 only.
-if %actor.str% >= 16 && %actor.str% <= 18
-  say your strength is 16-18.
-else
-  say your strength is not 16-18.
-end
-*
-* Check the speech to see if it is a substraing of the word concatenated.
-* concaten caten cat and any abbreviations.
-if concatenated /= %speech%
-  say your speech was a substring of concatenated.
-else
-  say your speech was not a substring of concatenated.
-end
-*
-* Create a random number 1-10 and assign it to rnumber.
-eval rnumber %random.10%
-say your random number is: %rnumber%
-* increment it by 1.
-eval rnumber %rnumber% + 1
-say your incremented random number is: %rnumber%
 ~
 #64
 Mob Action Example~
 0 e 0
 kisses you.~
+* By Rumble of The Builder Academy    tbamud.com 9091
 wait 1 sec
 slap %actor.name%
+wait 1 sec
 say I'm not that kind of girl.
 pout
 eval inroom %self.room%
-%zoneecho% %inroom.vnum% %self.name% shouts, '%actor.name% kisses like a fish.
+%zoneecho% %inroom.vnum% %self.name% shouts, '%actor.name% kisses like a fish.'
 ~
 #65
 Mob Death Example~
 0 f 100
 ~
-%echo% %self.name% curses %actor.name% before drawing %self.hisher% final breath.
+* By Rumble of The Builder Academy    tbamud.com 9091
+%send% %actor% %self.name% curses at you before drawing %self.hisher% final breath.
+%echoround% %actor% %self.name% curses %actor.name% before drawing %self.hisher% final breath.
 * If you don't want a corpse just send it to the void.
+%echo% %self.name%'s body fades out of existence.
 %teleport% %self% 0
 ~
 #66
 Mob Greet Example~
 0 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * To make a trigger fire only on players use:
 if %actor.is_pc%
   say Hello, and welcome, %actor.name%
@@ -1855,13 +1968,26 @@ end
 Mob Greet-All Example~
 0 h 100
 ~
-say Hello, and welcome, %actor.name%
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.is_pc%
+  wait 1 sec
+  say Hello, and welcome, %actor.name%
+  if %direction% == north
+    say how are things to the north?
+  else
+    say how are things to the %direction%?
+  end
+  wait 1 sec
+  %send% %actor% %self.name% bows deeply.
+  %echoaround% %actor% %self.name% takes off %self.hisher% hat and bows deeply.
+end
 ~
 #68
 Mob Entry Example~
 0 i 100
 ~
-* first find the room the mob is in and put the value in %inroom%
+* By Rumble of The Builder Academy    tbamud.com 9091
+* First find the room the mob is in and put the value in %inroom%
 eval inroom %self.room%
 * then check on the rooms vnum
 if %inroom.vnum% == 33
@@ -1869,9 +1995,10 @@ if %inroom.vnum% == 33
 end
 eval person %inroom.people%
 wait 1 sec
-*While there are still people in the room.
+* While there are still people in the room.
 while %person%
   %echo% I am targetting %person.name%.
+  * Target the next person in the room.
   eval person %person.next_in_room%
 done
 ~
@@ -1879,10 +2006,18 @@ done
 Mob Receive Example~
 0 j 100
 ~
-if %object.vnum% == 1300
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Recruit really wants some beer.
+if %object.vnum% == 101 || %object.vnum% == 147
+  say thanks, I really needed this.
+  drink beer
   %purge% %object%
-  say thanks!
-  nop %actor.gold(1)%
+  * Give some basic directions to newbies.
+  if %actor.level% < 5
+    say I owe you one, take this in exchange.
+    %load% obj 159
+    give directions %actor.name%
+  end
 else
   say I don't want that!
   return 0
@@ -1892,44 +2027,49 @@ end
 Mob Fight Example~
 0 k 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Set the context to this specific mob so more than one can use this trig.
 context %self.id%
-if (%already_fighting%)
-  wait 10
-  unset already_fighting
+* Only cast the spell every 30 seconds.
+if %already_cast%
+  wait 30 s
+  unset already_cast
 else
   dg_cast 'magic missile' %actor.name%
-  set already_fighting 1
-  global already_fighting
+  set already_cast 1
+  * By globalling the variable it can be accessed by other triggers or when
+  * this trigger fires a second time.
+  global already_cast
 end
 ~
 #71
 Mob Hitprcnt Example~
 0 l 50
 ~
-context %self.id%
-if (%have_shouted%)
-  return 0
-  halt
-else
-  %echo% %self.name% shouts 'HELP! I'm under ATTACK! HELP!'
-  set have_shouted 1
-  global have_shouted
-end
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Fires at 50% hitpoints.
+%zoneecho% %self.room.vnum% %self.name% shouts 'HELP! I'm under ATTACK! HELP!'
+* Remove the trigger so it won't fire again if the mob heals.
+detach 71 %self.id%
 ~
 #72
 Mob Bribe Example~
 0 m 1
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Charge 100 gold to get out.
 if %amount% >= 100
   if %amount% > 100
     eval change %amount% - 100
     give %change% coin %actor.name%
   end
+  emote opens a concealed door.
+  wait 1 sec
   say thank you, step inside.
   wait 2 sec
   %echoaround% %actor% %self.name% pushes %actor.name% through a concealed door.
   %send% %actor% %self.name% helps you through a concealed door.
-  %teleport% %actor% 1300
+  %teleport% %actor% 130
 else
   say only %amount% coins, I don't think so.
   give %amount% coin %actor.name%
@@ -1939,30 +2079,32 @@ end
 Mob Load Example~
 0 n 100
 ~
-   switch %random.5%
+* By Rumble of The Builder Academy    tbamud.com 9091
+* When the mob is created give it a random weapon.
+switch %random.5%
   case 1
     %load% obj 3010
     wield dagger
-    break
+  break
   case 2
     %load% obj 3011
     wield sword
-    break
+  break
   case 3
     %load% obj 3012
     wield club
-    break
+  break
   case 4
     %load% obj 3013
     wield mace
-    break
+  break
   case 5
     %load% obj 3014
     wield sword
-    break
+  break
   default
     * this should be here, even if it's never reached
-    break
+  break
 done
 ~
 #74
@@ -1989,11 +2131,15 @@ mforget %actor.name%
 Mob Cast Example~
 0 p 100
 ~
-if (%spellname%==magic missile)
-  %echo% %self.name% is protected by a shield spell negating %actor.name%s Magic Missile.
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %spellname% == magic missile
+  %echo% %self.name% is protected by a shield spell negating %actor.name%s %spellname%.
+  * Return 0 prevents the spell from working.
   return 0
 else
-  %echo% %self.name%s shield spell doesn't protect %self.himher% from %actor.name%s magic.
+  %echo% %self.name%s shield spell doesn't protect %self.himher% from %actor.name%'s %spellname%.
+  * Return 1 allows the trigger to continue and the spell to work. It is not needed 
+  * since this is the normal return state of a trigger.
   return 1
 end
 ~
@@ -2012,6 +2158,7 @@ end
 Mob Door Example~
 0 r 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 say %actor.name% do not try to %cmd% the door to the %direction% again. Or else!
 return 0
 ~
@@ -2019,45 +2166,40 @@ return 0
 Obj Global Random Example~
 1 ab 100
 ~
-* Fires whether a player is in the room or not.
-switch %random.4%
-  case 1
-    %echo% %self.name% seems to glow a strange green.
-  break
-  case 2
-    %echo% A strange feeling comes over you.
-  break
-  case 3
-    %echo% A pulsating beat can be felt in the air.
-  break
-  default
-    %echo% A strange liquid flows gently out of %self.name%
-  break
-done
+* By Rumble of The Builder Academy    tbamud.com 9091
+wait until 06:00
+* Shop is open, fill the container.
+%echo% A small trickle of red liquid begins to flow from the shop to the North.
+oset 0 4
+oset 1 4
+wait until 22:00
+* Shop is closed, empty it.
+%echo% The shop to the north starts to close up for the night.
+oset 0 0
+oset 1 0
 ~
 #80
 Obj Random Example~
 1 b 100
 ~
-%echo% The trigger fires now!
+* By Rumble of The Builder Academy    tbamud.com 9091
 eval actor %self.worn_by%
-if !%actor%
-  halt
+if %actor%
+  %send% %actor% War's Blood thirsts for battle.
 end
-%send% %actor% Ichiban's blade thirsts for blood.
 ~
 #81
 Obj Command Example~
 1 c 7
-open~
+o~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Numeric Arg: 7 means obj can be worn, carried, or in room.
-* does not work for level 32 and above.
 * Make sure the command is open, check for any abbrev of closet
-* and make sure there is an arg.
 if %cmd.mudcommand% == open && closet /= %arg%
   %send% %actor% As you open the closet something runs out.
   %echoaround% %actor% %actor.name% opens a closet and something comes out.
-  %load% mob 1
+  %load% mob 207
+  detach 81 %self.id%
 else
   * If it doesn't match let the command continue.
   return 0
@@ -2067,6 +2209,7 @@ end
 Obj Timer Example~
 1 f 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * This object will disappear once its timer value reaches 0.
 %echo% The ice cream melts away.
 %purge% %self%
@@ -2075,11 +2218,13 @@ Obj Timer Example~
 Obj Get Example~
 1 g 100
 ~
-if (%actor.level% < 31)
-  %transform% 1398
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.align% > 350
+  %send% %actor% As you reach for %self.shortdesc% it fades out of existence.
+  %echoaround% %actor% As %actor.name% reaches for %self.shortdesc% it fades out of existence.
   return 0
 else
-  %echo% You hear, 'Please put me down, %actor.name%'
+  %send% %actor% As you pick up %self.shortdesc% it seems to vibrate with a life of its own.
 end
 ~
 #84
@@ -2098,42 +2243,49 @@ end
 Obj Give Example~
 1 i 100
 ~
-%echo% Firing
-if %actor.level% < 31
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.level% < 20
   %send% %actor% You can't give %victim.himher% that.
   %send% %victim% %actor.name% tries to give you %self.shortdesc%, but fails.
   return 0
 else
-  %echo% %actor.name% is allowed to give %victim.name% %self.shortdesc%.
+  %send% %actor% You feel diminished.
 end
 ~
 #86
 Obj Wear Example~
 1 j 100
 ~
-if (%actor.str% < 17)
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.str% < 17
+  %send% %actor% %self.shortdesc% is too heavy for you to use.
+  %echoaround% %actor% %actor.name% tries to use %self.shortdesc% but can't seem to hold it up.
   return 0
 end
-%send% %actor% send to actor.
-%echoaround% %actor% %actor.name% echoaround actor
-%damage% %actor% 100
 ~
 #87
 Obj Remove Example~
-1 l 90
+1 l 100
 ~
-return 0
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.int% < 12
+  %send% %actor% You can't figure out how to remove %self.shortdesc%.
+  %echoaround% %actor% %actor.name% tries to remove %self.shortdesc% but can't.
+  return 0
+end
 ~
 #88
 Obj Load Example~
-1 n 100
+1 n 50
 ~
-%echo% %self.name% appears out of nowhere.
+* By Rumble of The Builder Academy    tbamud.com 9091
+%echo% %self.shortdesc% lets out a faint squeak as if gasping for breath.
 ~
 #89
 Shackles O89~
 1 q 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 %send% %actor% You try walk to the %direction% but simply reach the end of your chain and fall flat on your face.
 %echoaround% %actor% %actor.name% walks to the end of %actor.hisher% chain and falls over gracefully.
 nop %actor.pos(sitting)%
@@ -2149,12 +2301,13 @@ Obj Cast Example~
 Special Characters Example~
 1 b 100
 ~
-* Special Characters Example by Rumble - how to automatically substitute possessive pronouns.
-eval thing %self.name.car%
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Special Characters Example - how to automatically substitute possessive pronouns.
 %echo% VNUM:                    %self.vnum%
+eval thing %self.name.car%
 %echo% FIRST KEYWORD:           %thing%
 %echo% NAME'S, SOMEONE'S, YOUR: |%thing%
-%echo% NAME, SOMEONE, YOU:      ~%thing%
+%echo% NAME, SOMEONE, YOU:      %thing%
 %echo% IT, YOU, HE/SHE:         &%thing%
 %echo% IT, YOU, HIM/HER:        *%thing%
 %echo% ITS, YOUR' HIS/HER:      ^%thing%
@@ -2163,9 +2316,7 @@ eval thing %self.name.car%
 Room Command Combination Lock~
 2 c 100
 push~
-*
-* combinationlock, based on script by Rumble
-* small modifications made by Welcor
+* By Rumble of The Builder Academy    tbamud.com 9091
 *
 * To allow multiple scripts based on this script we set a context:
   context %self.id%
@@ -2231,6 +2382,7 @@ push~
 if/elseif/else Example~
 2 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.is_pc%
   wait 1 sec
   if %actor.sex% == male
@@ -2238,7 +2390,7 @@ if %actor.is_pc%
   elseif %actor.sex% == female
     %echo% elseif female
   else
-    %echo% else nuetral
+    %echo% else neutral
   end
 else
   %echo% mob
@@ -2248,7 +2400,8 @@ end
 Kind Soul 13 - Give Newbie Equipment~
 0 g 100
 ~
-* By Rumble. If a player is < level 3 and naked it fully equips them. If < 3 and missing
+* By Rumble of The Builder Academy    tbamud.com 9091
+* If a player is < level 3 and naked it fully equips them. If < 3 and missing
 * some equipment it will equip one spot.
 if %actor.is_pc% && %actor.level% < 3
   wait 2 sec
@@ -2368,7 +2521,8 @@ end
 Puff - Random Advice~
 0 ab 12
 ~
-eval max %random.200%
+* By Rumble of The Builder Academy    tbamud.com 9091
+eval max %random.197%
 set  text[1]   My god!  It's full of stars!
 set  text[2]   How'd all those fish get up here?
 set  text[3]   Some people are like Slinkies. Not really good for anything, but still bring a smile to your face when you push them down a flight of stairs.
@@ -2519,7 +2673,7 @@ set  text[147] You should not confuse your career with your life.
 set  text[148] No matter what happens, somebody will find a way to take it too seriously.
 set  text[149] When trouble arises and things look bad, there is always one individual who perceives a solution and is willing to take command. Very often, that individual is crazy.
 set  text[150] There is a very fine line between "hobby" and "mental illness."
-set  text[151] Take out the fortune before you eat the cookie.
+set  text[151] Accept that some days you're the pigeon, and some days you're the statue.
 set  text[152] Never under any circumstances take a sleeping pill and a laxative on the same night.
 set  text[153] You should never say anything to a woman that even remotely suggests you think she's pregnant unless you can see an actual baby emerging from her at that moment.
 set  text[154] A person who is nice to you, but rude to the waiter, is not a nice person.
@@ -2566,21 +2720,19 @@ set  text[194] Therapy is expensive, poppin' bubble wrap is cheap! You choose.
 set  text[195] Did the aliens forget to remove your anal probe?
 set  text[196] It is as bad as you think and they are out to get you.
 set  text[197] Isn't it scary that doctors call what they do "practice"?
-set  text[198] Accept that some days you're the pigeon, and some days you're the statue.
-set  text[199] I'm not crazy, I've just been in a very bad mood for years.
-set  speech %%text[%max%]%%
-eval speech %speech%
+eval speech %%text[%max%]%%
 say %speech%
 ~
 #96
 Obj Command 81 - Paintball Shoot Blue~
 1 c 2
 shoot~
-* By Rumble w/help from Jamie Nelson on http://groups.yahoo.com/group/dg_scripts/
-eval inroom %actor.room%
-if (%arg.room% != %actor.room%) || (%arg.id% == %actor.id%)  %send% %actor% Shoot: Invalid Target!
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %arg.room% != %actor.room% || %arg.id% == %actor.id%
+  %send% %actor% Shoot: Invalid Target!
   halt
 end
+eval inroom %actor.room%
 if %arg.inventory(80)%
   %echoaround% %actor.name% %actor.name% blasts %arg.name% with %actor.hisher% paintball gun.
   %send% %actor% You blast %arg.name%.
@@ -2597,12 +2749,12 @@ end
 Obj Command 80 - Paintball Shoot Red~
 1 c 2
 shoot~
-* By Rumble w/help from Jamie Nelson on http://groups.yahoo.com/group/dg_scripts/
-eval inroom %actor.room%
-if (%arg.room% != %actor.room%) || (%arg.id% == %actor.id%)
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %arg.room% != %actor.room% || %arg.id% == %actor.id%
   %send% %actor% Shoot: Invalid Target!
   halt
 end
+eval inroom %actor.room%
 if %arg.inventory(81)%
   %echoaround% %actor.name% %actor.name% blasts %arg.name% with %actor.hisher% paintball gun.
   %send% %actor% You blast %arg.name%.
@@ -2619,7 +2771,7 @@ end
 Mob Act - 98 Teleporter Give~
 0 e 0
 has entered the game.~
-* By Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.is_pc%  
   if !%actor.eq(*)%
     %load% obj 50 %actor% light
@@ -2642,14 +2794,14 @@ if %actor.is_pc%
     %load% obj 67 %actor% hold
   end
   wait 2 sec
-  if !(%actor.inventory(82)%)
+  if !%actor.inventory(82)%
     wait 1 s
     say You are not prepared to travel these realms to their fullest.
     wait 1 s
     say Maybe I can help you.
     %load% obj 82
     give teleporter %actor.name%
-    *could actor carry the weight?
+    * If the players inventory is full drop it for them.
     if !%actor.inventory(82)%
       drop teleporter
     end

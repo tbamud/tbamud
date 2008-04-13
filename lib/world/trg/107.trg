@@ -20,7 +20,7 @@ Near Death Trap Sink Hole - 10773~
 ~
 * Near Death Trap stuns actor
 wait 3 sec
-eval stunned %actor.hitp% 
+set stunned %actor.hitp% 
 %damage% %actor% %stunned%
 wait 5 sec
 %send% %actor% The Gods pity you enough to allow you to survive.

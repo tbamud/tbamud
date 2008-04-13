@@ -4,7 +4,7 @@ Near Death Trap Lions - 12017~
 ~
 * Near Death Trap stuns actor
 wait 1 sec
-eval stunned %actor.hitp% 
+set stunned %actor.hitp% 
 %damage% %actor% %stunned%
 wait 5 sec
 %send% %actor% The lions grow bored once you stop struggling and leave you to die.

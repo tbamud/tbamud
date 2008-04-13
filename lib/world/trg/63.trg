@@ -11,7 +11,7 @@ wait 2 sec
 %echoaround% %actor% Mahatma plunges a black dagger into %actor.name%'s back and takes all of %actor.hisher% equipment.
 * Damage the actor to 0 hitpoints so they lay there stunned, unable to move.
 * They will recover.
-eval stunned %actor.hitp%
+set stunned %actor.hitp%
 %damage% %actor% %stunned%
 * steal all their inventory.
 set i %actor.inventory%

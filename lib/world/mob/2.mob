@@ -12,6 +12,7 @@ He stands a good six feet tall, all skin and bones.
 130 16900
 8 8 1
 E
+T 78
 #201
 apprentice healer~
 the apprentice healer~
@@ -183,10 +184,71 @@ This parrot seems to have lost his pirate. He squawks incessantly.
 scratching of its small feet is punctuated by a thudding.  Upon closer
 inspection the parrot has a wooden leg and an eye patch!
 ~
-10 0 0 0 0 0 0 0 0 E
+8 0 0 0 0 0 0 0 0 E
+5 19 7 1d1+50 1d2+0
+50 2500
+8 8 1
+E
+T 204
+#213
+quest guru old man~
+the quest guru~
+An old man known across the realms as the 'quest guru' has seen and done it all.
+~
+   This aged man still has a spring to his step.  He is fully equipped with
+assorted items he has collected over his years of exploring and adventuring.
+~
+253960 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 1
 E
-T 204
+T 44
+#214
+old magi guard~
+the magi guard~
+An old magi has been guarding the orb for decades, his sanity seems questionable.
+~
+After over 50 years of guard duty this magi seems to have lost touch with
+reality.  He stares blankly around the room and doesn't seem to even notice you.
+He wears a plain grey robe and is a member of the magi guards.  A once elite
+group of magi dedicated to protecting the Orb of Sanctum.
+~
+10 0 0 0 0 0 0 0 0 E
+5 19 7 1d1+50 1d2+0
+50 2500
+8 8 1
+E
+T 61
+#215
+magi guard young~
+the magi guard~
+A young member of the magi guard watches over the Orb of Sanctum.
+~
+   This elite member of the magi guard has dedicated her life to protecting the
+orb and maintaining the precarious balance within the protected walls of
+Sanctus.  The magi guards numbers have dwindled over the years to only a select
+few who have the necessary skills to protect this most valuable of treasures.
+~
+10 0 0 0 0 0 0 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+E
+T 62
+#216
+Yoda~
+Yoda~
+Jedi Master Yoda.
+~
+   A tiny green alien, dressed in grey and white robes.  He carries around a
+small cane, and speaks oddly.
+~
+8 0 0 0 0 0 0 0 1000 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 1
+BareHandAttack: 10
+E
+T 208
 $

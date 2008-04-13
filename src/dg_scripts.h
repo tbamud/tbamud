@@ -17,8 +17,6 @@
 
 #include "utils.h" /* To make sure ACMD is defined */
 
-#define DG_SCRIPT_VERSION "DG Scripts 1.0.14"
-
 #define    MOB_TRIGGER   0
 #define    OBJ_TRIGGER   1
 #define    WLD_TRIGGER   2

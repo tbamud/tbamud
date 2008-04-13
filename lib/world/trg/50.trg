@@ -4,7 +4,7 @@ Near Death Trap Rickety Rope Bridge - 5062~
 ~
 * Near Death Trap stuns actor
 wait 4 sec
-eval stunned %actor.hitp% 
+set stunned %actor.hitp% 
 %damage% %actor% %stunned%
 wait 2 sec
 %send% %actor% You somehow survive the fall and lay among the rocks.

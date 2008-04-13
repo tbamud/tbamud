@@ -331,9 +331,6 @@ int main(int argc, char **argv)
    * in the log if stderr is redirected to a file. */
   log("Loading configuration.");
   log("%s", tbamud_version);
-  log("%s", oasisolc_version);
-  log("%s", DG_SCRIPT_VERSION);
-  log("%s", ascii_pfiles_version);
 
   if (chdir(dir) < 0) {
     perror("SYSERR: Fatal error changing to data directory");

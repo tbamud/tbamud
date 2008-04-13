@@ -518,13 +518,18 @@ Hazel's Water Hole~
    An elderly woman sits behind a short rack of various water containers.  A
 large water pump behind her drips slowly into a bucket set below to catch the
 water.  The DRIP, DRIP, DRIP would drive a normal person crazy, but not Hazel.
-She loves her water.    
+She loves her water.  A set of stairs behind the counter leads to what appears
+to be Hazel's living quarters.
 ~
 2 8 0 0 0 0
 D0
 ~
 ~
 0 0 212
+D4
+~
+door~
+1 0 367
 S
 #226
 The Eastern Temple Circle~
@@ -1382,6 +1387,7 @@ D2
 ~
 0 0 285
 S
+T 55
 #273
 A Study~
    Bookshelves line the western wall, reaching well above your head.  A small
@@ -1518,6 +1524,11 @@ D2
 ~
 ~
 0 0 293
+D4
+A narrow flight of steps leads up to a plain wooden door.
+~
+Door~
+1 0 280
 S
 #281
 The General Store~
@@ -1722,6 +1733,7 @@ D3
 ~
 0 0 290
 S
+T 50
 #292
 The Southern Temple Circle Intersection~
    The southern entrance to the Temple of Sanctus lies just to the north.  It is

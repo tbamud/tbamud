@@ -1284,7 +1284,7 @@ test while~
 ~
 %at% 1900 %load% obj 1901
 %send% %actor% You are not worthy!!
-eval stunned %actor.hitp% - 1 
+set stunned %actor.hitp% - 1 
 %damage% %actor% %stunned%
 eval num %random.99% + 1900
 %teleport% %actor.name% %num%
@@ -1509,5 +1509,11 @@ immortalcheat~
 rdelete zn118_thinwrite %actor.id%
 set zn118_thindone 1
 remote zn118_thindone %actor.id%
+~
+#1996
+test~
+2 c 100
+test~
+* No Script
 ~
 $~

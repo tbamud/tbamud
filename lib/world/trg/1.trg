@@ -2,6 +2,7 @@
 Obj Command 100 - portal to Midgaard~
 1 c 7
 en~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %cmd.mudcommand% == enter && %arg% /= portal
   %send% %actor% You enter the portal.
   %echoaround% %actor% %actor.name% bravely enters the portal.
@@ -484,6 +485,7 @@ end
 Room Command 365 - Jump~
 2 c 100
 jump~
+* By Rumble of The Builder Academy    tbamud.com 9091
 wait 1 sec
 %send% %actor% You jump from the window ledge to certain death.
 %echoaround% %actor% %actor.name% decides to test fate and takes a dive out the window.
@@ -492,16 +494,19 @@ wait 1 sec
 %echoaround% %actor% %actor.name% falls from above screaming %actor.hisher% lungs out. %actor.heshe% hits the ground with a loud thump.
 %force% %actor% look
 %send% %actor% You strike the ground hard but somehow manage to survive the impact.
-%damage% %actor% 1
+* Damage the player all of their hitpoints. They will recover.
+set stunned %actor.hitp%
+%damage% %actor% %stunned%
 ~
 #132
 dg_cast by level~
-0 k 100
+0 k 10
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 switch %actor.level%
   case 1
-  case 2
-  case 3
+    case 2
+    case 3
     dg_cast 'magic missile' %actor%
   break
   case 5
@@ -514,8 +519,6 @@ switch %actor.level%
     dg_cast 'shocking grasp' %actor%
   break
   case 8
-    dg_cast 'sleep' %actor%
-  break
   case 9
     dg_cast 'lightning bolt' %actor%
   break
@@ -543,14 +546,15 @@ switch %actor.level%
     else
       dg_cast 'dispel evil' %actor%
     end
- break
+  break
   case 17
     dg_cast 'call lightning' %actor%
   break
   case 18
-  case 19
+    case 19
     dg_cast 'harm' %actor%
   break
+  * Level 20 and above gets fireball!
   default
     dg_cast 'fireball' %actor%
   break
@@ -560,6 +564,8 @@ done
 Warrior Guildguard - 127~
 0 q 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Replaces the guildguard special procedure.
 * Check the direction the player must go to enter the guild.
 if %direction% == up
   * Stop them if they are not the appropriate class.
@@ -950,29 +956,29 @@ emote %speech%
 Angel Receives Treats - 207~
 0 j 100
 ~
-* By Rumble of The Builder Academy    tbamud.com 9091
-* A simple receive trig if you give the dog food she will eat it. If you give
-* her dog treats she will follow you. Everything else she drops.
-if %object.type% == FOOD
-  wait 1 sec
-  emote swallows %object.shortdesc% without even chewing.
-  %purge% %object%
-  wait 1 sec
-  emote looks up at %actor.name%, hoping for some more.
-  if %object.vnum% == 164
-    wait 1 sec
+* By Rumble of The Builder Academy    tbamud.com 9091 
+* A simple receive trig if you give the dog food she will eat it. If you give 
+* her dog treats she will follow you. Everything else she drops. 
+if %object.type% == FOOD 
+  wait 1 sec 
+  emote swallows %object.shortdesc% without even chewing. 
+  wait 1 sec 
+  emote looks up at %actor.name%, hoping for some more. 
+  if %object.vnum% == 164 
+    wait 1 sec 
     mfollow %actor%  
-  end
-else
-  wait 1 s
-  set obj_name %object.name%
-  drop %obj_name%
-end
+  end 
+  %purge% %object% 
+else 
+  wait 1 s 
+  drop %object.name.car% 
+end 
 ~
 #153
 Angel Follows Masters Commands - 207~
 0 d 1
 *~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %self.master% == %actor%
   wait 1 sec
   switch %speech.car%
@@ -1064,6 +1070,7 @@ end
 Angel plays with chicken - 207~
 0 b 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %self.has_item(172)%
   growl chicken
   squeeze chicken
@@ -1499,14 +1506,15 @@ done
 Prison Commissar M31~
 0 b 3
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Prison Commissar - M31 - T173
-eval max %random.4%
-set txt1 you Americans were nothing like the French, we could count on them to be reasonable.
-set txt2 you Americans think you are so smart. We have figured out your fourth signal. Four beats or waves or taps or whatever you come up with means "wait."
-set txt3 War has blighted this planet in all but 268 of the past 4000 years.
-set txt4 We may not have freedom, but after 4000 years we have order, and we will settle for that.
-set  speech %%txt0%%%
-eval speech %speech%
+eval max %random.5%
+set text[1] you Americans were nothing like the French, we could count on them to be reasonable.
+set text[2] you Americans think you are so smart. We have figured out your fourth signal. Four beats or waves or taps or whatever you come up with means "wait."
+set text[3] War has blighted this planet in all but 268 of the past 4000 years.
+set text[4] We may not have freedom, but after 4000 years we have order, and we will settle for that.
+set text[5] I do not get paid enough for such a despicable job. I don't suppose you would give me a little something in exchange for my help?
+eval  speech %%text[%max%]%%
 say %speech%
 ~
 #174
@@ -1774,7 +1782,8 @@ Epictetus M29~
 * Epictetus - M29 - T181 By Rumble
 eval max %random.26%
 set txt[1] the judge will do some things to you which are thought to be terrifying, but how can he stop you from taking the punishment he threatened?
-set txt[2] what are the benefits of a stoic life? It is an ancient and honorable package of advice on how to stay out of the clutches of those who are trying to get you on the hook, trying to give you a feeling of obligation, trying to get moral leverage.set txt[3] There can be no such thing as being the "victim" of another. You can only be a "victim" of yourself.
+set txt[2] what are the benefits of a stoic life? It is an ancient and honorable package of advice on how to stay out of the clutches of those who are trying to get you on the hook, trying to give you a feeling of obligation, trying to get moral leverage.
+set txt[3] There can be no such thing as being the "victim" of another. You can only be a "victim" of yourself.
 set txt[4] Show me a man who though sick is happy, who though in danger is happy, who though in prison is happy, and I'll show you a Stoic.
 set txt[5] remember you are an actor in a drama of such sort as the Author chooses - if short, then in a short one. If long, then in a long one. If it be his pleasure that you should enact a poor man, or a cripple, or a ruler, see that you act it well. 
 set txt[6] Things that are not within our own power, not without our Will, can by no means be either good or evil.
@@ -1785,7 +1794,8 @@ set txt[10] Fear was not something that came out of the shadows of the night and
 set txt[11] For it is within you, that both your destruction and deliverance lie.
 set txt[12] Tranquility, fearlessness, and freedom. You can have these only if you are honest and take responsibility for your own actions. You've got to get it straight! You are in charge of you.
 set txt[13] nobody can harm you without your permission. There can be no such thing as a victim, you can only be a victim of yourself.
-set txt[14] Where, then, does the great evil and the great good lie in man? In the attitude of his will, and if that element stands firm and neither his self respect, nor his faithfulness, nor his intelligence be destroyed, then the man is also preserved.set txt[15] When a man who has set his will neither on dying nor upon living at any cost, comes into the presence of the tyrant, what is there to prevent him from being without fear? Nothing.
+set txt[14] Where, then, does the great evil and the great good lie in man? In the attitude of his will, and if that element stands firm and neither his self respect, nor his faithfulness, nor his intelligence be destroyed, then the man is also preserved.
+set txt[15] When a man who has set his will neither on dying nor upon living at any cost, comes into the presence of the tyrant, what is there to prevent him from being without fear? Nothing.
 set txt[16] it is better that man not deserve anything he does not control. Otherwise, he will go after what is not his, and this is the start of crime, wars, you name it.
 set txt[17] every man bears the exclusive responsibility for his own good and evil. This makes it impossible for one person to do the wrong and make another, the innocent, suffer.
 set txt[18] No one comes to his fall because of another's deed. No one is evil without loss or damage. No man can do wrong with impunity.
@@ -1794,7 +1804,8 @@ set txt[20] A man's master is he who is able to confer or remove what that man s
 set txt[21] You must acquire a constancy of character that will make it impossible for another to do you wrong.
 set txt[22] Who is the invincible man? He who cannot be dismayed by any happening beyond his control.
 set txt[23] To have your heart set on something you do not control is to invite slavery, for he who does control it, knowing of your hunger for it, can make you perform like a monkey on a string.
-set txt[24] Men are disturbed not by things, but by the view that they take of them. Do not be concerned with things which are beyond your power. Demand not that events should happen as you wish, but wish them to happen as they do happen and you will get set txt[25] Lameness is an impediment to the body but not to the will.
+set txt[24] Men are disturbed not by things, but by the view that they take of them. Do not be concerned with things which are beyond your power. Demand not that events should happen as you wish, but wish them to happen as they do happen and you will get on well.
+set txt[25] Lameness is an impediment to the body but not to the will.
 set txt[26] We have devised a series of operating signals. The third means "repeat," just make three taps, waves, or whatever you can do.
 set  speech %%txt[%max%]%%
 eval speech %speech%
@@ -1986,7 +1997,7 @@ set txt[23] Dostoyevsky was a wise man, "You see, gentlemen, reason is an excell
 set txt[24] I once read from Nichmachean Ethics: "There are some instances in which such actions elicit forgiveness rather than praise, for example, when a man acts improperly under a strain greater than human nature can bear, and which no one could endure. Yet there are, perhaps, also acts which no man can possibly be compelled to do, but rather than do them he should accept the most terrible sufferings and death."
 set txt[25] Wittgenstein is know for, "If it comes easy, it ain't worth a damn."
 set txt[26] Fr. Marius recalls someone remarking, "the important thing is not what they've made of you, but what you made of what they've made of you."
-set txt[27] It was only when I lay there on the rotting prison straw that I sensed within myself the first stirrings of good. Gradually it was disclosed to me that the line separating good and evil passes not between states nor between classes nor between political parties, but right through every human heart, through all human hearts. And that is why I turn back to the years of my improsonment and say, "Bless you, prison, for having been a part of my life."
+set txt[27] It was only when I lay there on the rotting prison straw that I sensed within myself the first stirrings of good. Gradually it was disclosed to me that the line separating good and evil passes not between states nor between classes nor between political parties, but right through every human heart, through all human hearts. And that is why I turn back to the years of my imprisonment and say, "Bless you, prison, for having been a part of my life."
 set txt[28] my rules are: BACK US: Don't Bow in public, stay off the Air, admit no Crimes, never Kiss them goodbye, Unity over Self. Never negotiate for yourself but only for us all. Not less than significant pain should cause you to submit.
 set txt[29] The lecture-room of the philosopher is a hospital, students ought not to walk out of it in pleasure, but in pain. 
 set txt[30] I knew I could contain material - so long as they didn't know I knew it.

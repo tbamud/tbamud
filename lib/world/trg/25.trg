@@ -7,7 +7,7 @@ wait 10 sec
 %send% %actor% You begin to lose consciousness from lack of oxygen.
 wait 2 sec
 %send% %actor% You try to breathe in the putrid water and gag.
-eval stunned %actor.hitp% + 2
+set stunned %actor.hitp% + 2
 %damage% %actor% %stunned%
 wait 2 sec
 %send% %actor% The current lessens and you float to the surface.

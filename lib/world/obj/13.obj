@@ -193,7 +193,7 @@ certificate graduation~
 earned this award and is signed on the bottom by Rumble himself.  
 ~
 #1315
-staff gnarled~
+FREE~
 a gnarled staff~
 A gnarled wooden staff beacons you.~
 ~
@@ -208,7 +208,7 @@ surface.  The top has three claws meant to hold something.  It is conspicuosly
 empty.    
 ~
 #1316
-orb staff topping~
+FREE~
 an orb meant to top a staff~
 An orb meant to top a staff must have fallen out here.~
 ~
@@ -221,7 +221,7 @@ orb staff topping~
 be placed on the end of a staff.    
 ~
 #1317
-broken staff~
+FREE~
 a broken staff~
 A broken and useless staff has been discarded here.~
 ~
@@ -820,23 +820,4 @@ This mistletoe reeks of mold and decay.~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 1
 1 1 0 0
-#1399
-mistletoe plant~
-some mistletoe~
-A soft woody plant with green leaves and white berries is hanging over your head.~
-~
-19 0 0 0 0 ao 0 0 0 0 0 0 0
-1 0 0 0
-1 1 0 0
-E
-plant mistletoe~
-   The tradition of kissing under the mistletoe originated from the Druids
-who considered the mistletoe sacred.  They believed that it held magical virtue
-and was a remedy for evil.  The priests would cut pieces of the oak tree on
-which the mistletoe grew and offer them along with two white bulls as a
-sacrifice to pagan gods.  Twigs with berries were hung above doors to indicate
-that past grievance and hatreds were forgiven and it was used in amulets,
-bracelets and rings to ward off evil and protect against witchcraft and
-poisoning.  Mistletoe symbolizes peace and love.    
-~
 $~
