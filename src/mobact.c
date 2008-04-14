@@ -85,7 +85,7 @@ void mobile_activity(void)
            (world[EXIT(ch, door)->to_room].zone == world[IN_ROOM(ch)].zone))) 
     {
       /* If the mob is charmed, do not move the mob. */
-      if (ch->master != NULL)
+      if (ch->master == NULL)
         perform_move(ch, door, 1);
     }
 
