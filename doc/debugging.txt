@@ -148,6 +148,54 @@ requires a fair amount of knowledge about assembly language programming.
 
 6 Using GDB
 
+When debugging NEVER EVER run the autorun script. It will mask your debugging
+output - the log output will be redirected, etc. 
+
+Either 
+a) run your executable directly: "bin/circle". Crash the mud. Then run gdb on 
+the core file: "gdb ../bin/circle core.#" if there is one. If there isn't, then
+
+b) run your executable through gdb: "gdb bin/circle", "run" (**) (if you get a 
+SIGPIPE stop here, "cont" once). Crash the mud. 
+
+Do a backtrace - "bt" - and repeat the following until you can't go higher: 
+"list" followed by "up". 
+
+Thus, a typical debugging session looks like this: 
+
+gdb bin/circle 
+<gdb output> 
+gdb> run 
+<mud log - it's usually helpful to include the last couple of lines.> 
+Program received SIGSEV in some_function(someparamaters)  somefile.c:1223 
+gdb> bt 
+#0 0x234235 some_function(someparamaters)  somefile.c:1223 
+#1 0x343353 foo(bar) foo.c:123 
+#2 0x12495b baz(0x0000000) baz.c:3 
+gdb> list 
+1219 
+1220    foobar = something_interesting(); 
+1221 
+1222    foobar = NULL; 
+1223    free(foobar); 
+1224  } 
+1225 
+1226 
+1227  next_function_in_somefile_c(void) 
+gdb> up 
+frame #1  0x343353 foo(bar) foo.c:123 
+gdb> list 
+<similar output to the above, but different file> 
+gdb> up 
+frame #2 0x12495b baz(0x0000000) baz.c:3 
+gdb> list 
+<similar output to the above, but different file> 
+gdb> up 
+You are already at the top frame. 
+
+If this doesn't solve your problem post it on the forums at http://tbamud.com
+and ask for help. Include all the gdb output and your tbaMUD version.
+
 GDB has some online help, though it is not the best.  It does at least give
 a summary of commands and what they're supposed to do.  What follows is
 Sammy's short intro to gdb with some bughunting notes following it:

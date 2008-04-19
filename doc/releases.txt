@@ -11,6 +11,8 @@ to rec.games.mud.diku which originally anounced CircleMUD as a publically
 available MUD source code. 
 
 Release history:
+Version 3.56 release: April, 2008
+Version 3.55 release: January, 2008
 Version 3.54 release: December, 2007
 Version 3.53 release: July, 2007
 Version 3.52 release: April, 2007

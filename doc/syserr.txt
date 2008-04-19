@@ -1,19 +1,23 @@
+If you have any additions, corrections, ideas, or bug reports please stop by the
+Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
+
    There are many common errors that can be created by changing things in the
 code or having  builders try inappropriate things. Here are a few, this list
 will be continually developed. If you have any additions or corrections please 
 stop by the Builder Academy at telnet://tbamud.com:9091 or email: 
 rumble@tbamud.com -- Rumble
 
-1. Errant Rooms (show error command)
-2. SYSERR: Object # (oedit-s-desc) doesn't have drink type as last alias.
-3. SYSERR: Mob # both Aggressive and Aggressive_to_Alignment.
-4. SYSERR: Object # (oedit-s-desc) has out of range level #.
-5. SYSERR: Object # (oedit-s-desc) has negative weight (-2147483644).
-   SYSERR: Object # (oedit-s-desc) has out of range level #2147483647.
-6. SYSERR: Object # (oedit-s-desc) uses 'UNDEFINED' spell #.
-7. SYSERR: Object # (oedit-s-desc) contains (5) more than maximum (3).
-8. Char is already equipped: (medit-s-desc), (oedit-s-desc)
-9. SYSERR: Attempt to assign spec to non-existant mob #
+1.  Errant Rooms (show error command)
+2.  SYSERR: Object # (oedit-s-desc) doesn't have drink type as last alias.
+3.  SYSERR: Mob # both Aggressive and Aggressive_to_Alignment.
+4.  SYSERR: Object # (oedit-s-desc) has out of range level #.
+5.  SYSERR: Object # (oedit-s-desc) has negative weight (-2147483644).
+    SYSERR: Object # (oedit-s-desc) has out of range level #2147483647.
+6.  SYSERR: Object # (oedit-s-desc) uses 'UNDEFINED' spell #.
+7.  SYSERR: Object # (oedit-s-desc) contains (5) more than maximum (3).
+8.  Char is already equipped: (medit-s-desc), (oedit-s-desc)
+9.  SYSERR: Attempt to assign spec to non-existant mob #
+10. No associated object exists when attempting to create a board [vnum #]. 
 
 1: Errant Rooms
 ------------
