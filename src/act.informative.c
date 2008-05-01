@@ -1639,8 +1639,8 @@ ACMD(do_where)
 ACMD(do_levels)
 {
   char buf[MAX_STRING_LENGTH], arg[MAX_STRING_LENGTH]; 
-  size_t i, len = 0, nlen;
-  int ret, min_lev=1, max_lev=LVL_IMMORT, val;
+  size_t len = 0, nlen;
+  int i, ret, min_lev=1, max_lev=LVL_IMMORT, val;
 
   if (IS_NPC(ch)) {
     send_to_char(ch, "You ain't nothin' but a hound-dog.\r\n");
@@ -1682,7 +1682,7 @@ ACMD(do_levels)
   for (i = min_lev; i < max_lev; i++) {
     nlen = snprintf(buf + len, sizeof(buf) - len, "[%2d] %8d-%-8d : ", (int)i,
 	level_exp(GET_CLASS(ch), i), level_exp(GET_CLASS(ch), i + 1) - 1);
-    if (len + nlen >= sizeof(buf) || nlen < 0)
+    if (len + nlen >= sizeof(buf))
       break;
     len += nlen;
 
@@ -1698,7 +1698,7 @@ ACMD(do_levels)
       nlen = snprintf(buf + len, sizeof(buf) - len, "Oh dear.  You seem to be sexless.\r\n");
       break;
     }
-    if (len + nlen >= sizeof(buf) || nlen < 0)
+    if (len + nlen >= sizeof(buf))
       break;
     len += nlen;
   }

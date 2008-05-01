@@ -150,23 +150,12 @@ void create_command_list(void)
       complete_cmd_info[k++].subcmd		= 0;
     }
   }
-  complete_cmd_info[k].command		= strdup("\n");
-  complete_cmd_info[k].sort_as		= strdup("zzzzzzz");
-  complete_cmd_info[k].minimum_position = 0;
-  complete_cmd_info[k].command_pointer	= 0;
-  complete_cmd_info[k].minimum_level	= 0;
-  complete_cmd_info[k].subcmd		= 0;
+	complete_cmd_info[k] = cmd_info[i];
   log("Command info rebuilt, %d total commands.", k);
 }
 
 void free_command_list(void)
 {
-  int i;
-
-  for (i = 0;*complete_cmd_info[i].command !='\n';i++);
-
-  free((char *)complete_cmd_info[i].command); /* special case, the terminator */
-  free((char *)complete_cmd_info[i].sort_as);
   free(complete_cmd_info);
   complete_cmd_info = NULL;
 }

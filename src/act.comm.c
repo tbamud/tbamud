@@ -22,11 +22,6 @@
 #include "act.h"
 #include "modify.h"
 
-/* prototypes of local functions */
-/* do_tell utility functions */
-static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg);
-static int is_tell_ok(struct char_data *ch, struct char_data *vict);
-
 ACMD(do_say)
 {
   skip_spaces(&argument);
@@ -52,7 +47,8 @@ ACMD(do_say)
       add_history(ch, msg, HIST_SAY);
     }
   }
-  /* trigger check */
+
+  /* Trigger check. */
   speech_mtrigger(ch, argument);
   speech_wtrigger(ch, argument);
 }
@@ -156,11 +152,12 @@ ACMD(do_tell)
         return;
       }
     }
-    /* only a-z and +/- allowed */
-    for (p = buf2, q = word; *p ; p++) {
+
+    /* Only a-z and +/- allowed. */
+    for (p = buf2, q = word; *p ; p++)
       if ((LOWER(*p) <= 'z' && LOWER(*p) >= 'a') || (*p == '+') || (*p == '-'))
         *q++ = *p;
-    }
+
     *q = '\0';
 
     if (!*word) {
@@ -171,7 +168,6 @@ ACMD(do_tell)
     system(buf);
     last_webster_teller = GET_IDNUM(ch);
     send_to_char(ch, "You look up '%s' in Merriam-Webster.\r\n", word);
-
   } else if (GET_LEVEL(ch) < LVL_IMMORT && !(vict = get_player_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
     send_to_char(ch, "%s", CONFIG_NOPERSON);
   else if (GET_LEVEL(ch) >= LVL_IMMORT && !(vict = get_char_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
@@ -200,10 +196,10 @@ ACMD(do_reply)
      * work if someone logs out and back in again. A descriptor list based 
      * search would be faster although we could not find link dead people.  
      * Not that they can hear tells anyway. :) -gg 2/24/98 */
-    while (tch != NULL && (IS_NPC(tch) || GET_IDNUM(tch) != GET_LAST_TELL(ch)))
+    while (tch && (IS_NPC(tch) || GET_IDNUM(tch) != GET_LAST_TELL(ch)))
       tch = tch->next;
 
-    if (tch == NULL)
+    if (!tch)
       send_to_char(ch, "They are no longer playing.\r\n");
     else if (is_tell_ok(ch, tch))
       perform_tell(ch, tch, argument);
@@ -258,7 +254,6 @@ ACMD(do_spec_comm)
   }
 }
 
-/* buf1, buf2 = MAX_OBJECT_NAME_LENGTH (if it existed) */
 ACMD(do_write)
 {
   struct obj_data *paper, *pen = NULL;
@@ -273,11 +268,13 @@ ACMD(do_write)
   if (!ch->desc)
     return;
 
-  if (!*papername) {		/* nothing was delivered */
+  if (!*papername) {
+    /* Nothing was delivered. */
     send_to_char(ch, "Write?  With what?  ON what?  What are you trying to do?!?\r\n");
     return;
   }
-  if (*penname) {		/* there were two arguments */
+  if (*penname) {
+    /* Nothing was delivered. */
     if (!(paper = get_obj_in_list_vis(ch, papername, NULL, ch->carrying))) {
       send_to_char(ch, "You have no %s.\r\n", papername);
       return;
@@ -286,18 +283,19 @@ ACMD(do_write)
       send_to_char(ch, "You have no %s.\r\n", penname);
       return;
     }
-  } else {		/* there was one arg.. let's see what we can find */
+  } else { /* There was one arg.. let's see what we can find. */
     if (!(paper = get_obj_in_list_vis(ch, papername, NULL, ch->carrying))) {
       send_to_char(ch, "There is no %s in your inventory.\r\n", papername);
       return;
     }
-    if (GET_OBJ_TYPE(paper) == ITEM_PEN) {	/* oops, a pen.. */
+    if (GET_OBJ_TYPE(paper) == ITEM_PEN) { /* Oops, a pen. */
       pen = paper;
       paper = NULL;
     } else if (GET_OBJ_TYPE(paper) != ITEM_NOTE) {
       send_to_char(ch, "That thing has nothing to do with writing.\r\n");
       return;
     }
+
     /* One object was found.. now for the other one. */
     if (!GET_EQ(ch, WEAR_HOLD)) {
       send_to_char(ch, "You can't write with %s %s alone.\r\n", AN(papername), papername);
@@ -313,7 +311,7 @@ ACMD(do_write)
       pen = GET_EQ(ch, WEAR_HOLD);
   }
 
-  /* ok.. now let's see what kind of stuff we've found */
+  /* Now let's see what kind of stuff we've found. */
   if (GET_OBJ_TYPE(pen) != ITEM_PEN)
     act("$p is no good for writing with.", FALSE, ch, pen, 0, TO_CHAR);
   else if (GET_OBJ_TYPE(paper) != ITEM_NOTE)
@@ -328,7 +326,7 @@ ACMD(do_write)
       send_to_char(ch, "%s", paper->action_description);
     }
 
-    /* we can write - hooray! */
+    /* We can write. */
     act("$n begins to jot down a note.", TRUE, ch, 0, 0, TO_ROOM);
     send_editor_help(ch->desc);
     string_write(ch->desc, &paper->action_description, MAX_NOTE_LENGTH, 0, backstr);
@@ -360,7 +358,7 @@ ACMD(do_page)
 	send_to_char(ch, "You will never be godly enough to do that!\r\n");
       return;
     }
-    if ((vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)) != NULL) {
+    if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD))) {
       act(buf, FALSE, ch, 0, vict, TO_VICT);
       if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
 	send_to_char(ch, "%s", CONFIG_OK);
@@ -371,17 +369,7 @@ ACMD(do_page)
   }
 }
 
-int first_word_is_name(struct char_data *ch, char * argument) {
-    char buf[MAX_INPUT_LENGTH];
-    char name_p[MAX_INPUT_LENGTH];
-    if (argument == NULL || IS_NPC(ch))
-        return 0;
-    strlcpy(buf, argument, sizeof(buf));
-    one_argument(buf, name_p);
-    return !str_cmp(GET_NAME(ch), name_p);
-}
-
-/* generalized communication func, originally by Fred C. Merkel (Torg) */
+/* Generalized communication function by Fred C. Merkel (Torg). */
 ACMD(do_gen_comm)
 {
   struct descriptor_data *i;
@@ -389,7 +377,7 @@ ACMD(do_gen_comm)
   char buf1[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH], *msg;
   bool emoting = FALSE;
 
-  /* Array of flags which must _not_ be set in order for comm to be heard */
+  /* Array of flags which must _not_ be set in order for comm to be heard. */
   int channels[] = {
     0,
     PRF_NOSHOUT,
@@ -416,37 +404,33 @@ ACMD(do_gen_comm)
     {"You cannot holler!!\r\n",
       "holler",
       "",
-    KYEL},
+      KYEL},
 
     {"You cannot shout!!\r\n",
       "shout",
       "Turn off your noshout flag first!\r\n",
-    KYEL},
+      KYEL},
 
     {"You cannot gossip!!\r\n",
       "gossip",
       "You aren't even on the channel!\r\n",
-    KYEL},
+      KYEL},
 
     {"You cannot auction!!\r\n",
       "auction",
       "You aren't even on the channel!\r\n",
-    KMAG},
+      KMAG},
 
     {"You cannot congratulate!\r\n",
       "congrat",
       "You aren't even on the channel!\r\n",
-    KGRN},
+      KGRN},
 
     {"You cannot gossip your emotions!\r\n",
       "gossip",
       "You aren't even on the channel!\r\n",
-    KYEL}
+      KYEL}
   };
-
-  /* to keep pets, etc from being ordered to shout */
-  if (!ch->desc)
-    return;
 
   if (PLR_FLAGGED(ch, PLR_NOSHOUT)) {
     send_to_char(ch, "%s", com_msgs[subcmd][0]);
@@ -457,33 +441,30 @@ ACMD(do_gen_comm)
     return;
   }
 
-  if (subcmd == SCMD_GOSSIP && *argument == '*') {
-    subcmd = SCMD_GEMOTE;
-  }
 
   if (subcmd == SCMD_GEMOTE) {
-    if (*argument == '*')
-      do_gmote(ch, argument + 1, 0, 1);
+    if (!*argument)
+      send_to_char(ch, "Gemote? Yes? Gemote what?\r\n");
     else
       do_gmote(ch, argument, 0, 1);
-
     return;
   }
 
-  /* level_can_shout defined in config.c */
+  /* Level_can_shout defined in config.c. */
   if (GET_LEVEL(ch) < CONFIG_LEVEL_CAN_SHOUT) {
     send_to_char(ch, "You must be at least level %d before you can %s.\r\n", CONFIG_LEVEL_CAN_SHOUT, com_msgs[subcmd][1]);
     return;
   }
-  /* make sure the char is on the channel */
+  /* Make sure the char is on the channel. */
   if (PRF_FLAGGED(ch, channels[subcmd])) {
     send_to_char(ch, "%s", com_msgs[subcmd][2]);
     return;
   }
+
   /* skip leading spaces */
   skip_spaces(&argument);
 
-  /* make sure that there is something there to say! */
+  /* Make sure that there is something there to say! */
   if (!*argument) {
     send_to_char(ch, "Yes, %s, fine, %s we must, but WHAT???\r\n", com_msgs[subcmd][1], com_msgs[subcmd][1]);
     return;
@@ -495,27 +476,23 @@ ACMD(do_gen_comm)
     } else
       GET_MOVE(ch) -= CONFIG_HOLLER_MOVE_COST;
   }
-  /* set up the color on code */
+  /* Set up the color on code. */
   strlcpy(color_on, com_msgs[subcmd][3], sizeof(color_on));
 
-  /* first, set up strings to be given to the communicator */
+  /* First, set up strings to be given to the communicator. */
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
     send_to_char(ch, "%s", CONFIG_OK);
   else {
-    if (!first_word_is_name(ch, argument)) {
-      snprintf(buf1, sizeof(buf1), "%sYou %s, '%s%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], argument, COLOR_LEV(ch) >= C_CMP
-      ? color_on : "", CCNRM(ch, C_CMP));
-    } else {
-      emoting = TRUE;
-      snprintf(buf1, sizeof(buf1), "%s%s: %s%s", COLOR_LEV(ch) >= C_CMP ? color_on : "", com_msgs[subcmd][1], CAP(argument), CCNRM(ch, C_CMP));
-    }
+    snprintf(buf1, sizeof(buf1), "%sYou %s, '%s%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "",
+        com_msgs[subcmd][1], argument, COLOR_LEV(ch) >= C_CMP ? color_on : "", CCNRM(ch, C_CMP));
+    
     msg = act(buf1, FALSE, ch, 0, 0, TO_CHAR);
     add_history(ch, msg, hist_type[subcmd]);
   }
   if (!emoting)
     snprintf(buf1, sizeof(buf1), "$n %ss, '%s'", com_msgs[subcmd][1], argument);
 
-  /* now send all the strings out */
+  /* Now send all the strings out. */
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING || i == ch->desc || !i->character )
       continue;
@@ -525,9 +502,8 @@ ACMD(do_gen_comm)
     if (ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD))
       continue;
 
-    if (subcmd == SCMD_SHOUT &&
-       ((world[IN_ROOM(ch)].zone != world[IN_ROOM(i->character)].zone) ||
-       !AWAKE(i->character)))
+    if (subcmd == SCMD_SHOUT && ((world[IN_ROOM(ch)].zone != world[IN_ROOM(i->character)].zone) ||
+         !AWAKE(i->character)))
       continue;
 
     snprintf(buf2, sizeof(buf2), "%s%s%s", (COLOR_LEV(i->character) >= C_NRM) ? color_on : "", buf1, KNRM); 
@@ -563,10 +539,9 @@ ACMD(do_qcomm)
     else {
       strlcpy(buf, argument, sizeof(buf));
       mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "(GC) %s qechoed: %s", GET_NAME(ch), argument);
-      }
+    }
     for (i = descriptor_list; i; i = i->next)
       if (STATE(i) == CON_PLAYING && i != ch->desc && PRF_FLAGGED(i->character, PRF_QUEST))
-       act(buf, 0, ch, 0, i->character, TO_VICT | TO_SLEEP);
+        act(buf, 0, ch, 0, i->character, TO_VICT | TO_SLEEP);
   }
 }
-
