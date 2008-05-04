@@ -462,7 +462,7 @@ void copyover_recover()
 }
 
 /* Init sockets, run game, and cleanup sockets */
-static void init_game(ush_int port)
+static void init_game(ush_int local_port)
 {
   /* We don't want to restart if we crash before we get up. */
   touch(KILLSCRIPT_FILE);
@@ -475,7 +475,7 @@ static void init_game(ush_int port)
   /* If copyover mother_desc is already set up */
   if (!fCopyOver) {
      log ("Opening mother connection.");
-     mother_desc = init_socket (port);
+     mother_desc = init_socket (local_port);
   }
 
   event_init();
@@ -523,7 +523,7 @@ static void init_game(ush_int port)
 
 /* init_socket sets up the mother descriptor - creates the socket, sets
  * its options up, binds it, and listens. */
-static socket_t init_socket(ush_int port)
+static socket_t init_socket(ush_int local_port)
 {
   socket_t s;
   struct sockaddr_in sa;
@@ -598,7 +598,7 @@ static socket_t init_socket(ush_int port)
   memset((char *)&sa, 0, sizeof(sa));
 
   sa.sin_family = AF_INET;
-  sa.sin_port = htons(port);
+  sa.sin_port = htons(local_port);
   sa.sin_addr = *(get_bind_addr());
 
   if (bind(s, (struct sockaddr *) &sa, sizeof(sa)) < 0) {
@@ -694,7 +694,7 @@ static int get_max_players(void)
  * new connections, polling existing connections for input, dequeueing
  * output and sending it out to players, and calling "heartbeat" functions
  * such as mobile_activity(). */
-void game_loop(socket_t mother_desc)
+void game_loop(socket_t local_mother_desc)
 {
   fd_set input_set, output_set, exc_set, null_set;
   struct timeval last_time, opt_time, process_time, temp_time;
@@ -719,8 +719,8 @@ void game_loop(socket_t mother_desc)
     if (descriptor_list == NULL) {
       log("No connections.  Going to sleep.");
       FD_ZERO(&input_set);
-      FD_SET(mother_desc, &input_set);
-      if (select(mother_desc + 1, &input_set, (fd_set *) 0, (fd_set *) 0, NULL) < 0) {
+      FD_SET(local_mother_desc, &input_set);
+      if (select(local_mother_desc + 1, &input_set, (fd_set *) 0, (fd_set *) 0, NULL) < 0) {
 	if (errno == EINTR)
 	  log("Waking up to process signal.");
 	else
@@ -733,9 +733,9 @@ void game_loop(socket_t mother_desc)
     FD_ZERO(&input_set);
     FD_ZERO(&output_set);
     FD_ZERO(&exc_set);
-    FD_SET(mother_desc, &input_set);
+    FD_SET(local_mother_desc, &input_set);
 
-    maxdesc = mother_desc;
+    maxdesc = local_mother_desc;
     for (d = descriptor_list; d; d = d->next) {
 #ifndef CIRCLE_WINDOWS
       if (d->descriptor > maxdesc)
@@ -786,8 +786,8 @@ void game_loop(socket_t mother_desc)
       return;
     }
     /* If there are new connections waiting, accept them. */
-    if (FD_ISSET(mother_desc, &input_set))
-      new_descriptor(mother_desc);
+    if (FD_ISSET(local_mother_desc, &input_set))
+      new_descriptor(local_mother_desc);
 
     /* Kick out the freaky folks in the exception set and marked for close */
     for (d = descriptor_list; d; d = next_d) {
@@ -1070,7 +1070,7 @@ void echo_on(struct descriptor_data *d)
 
 /* Color replacement arrays. Renx -- 011100 */
 #define A "\x1B["
-const char *ANSI[] = { "@", A"0m",A"0m",A"0;30m",A"0;34m",A"0;32m",A"0;36m",A"0;31m",
+char *ANSI[] = { "@", A"0m",A"0m",A"0;30m",A"0;34m",A"0;32m",A"0;36m",A"0;31m",
      A"0;35m",A"0;33m",A"0;37m",A"1;30m",A"1;34m",A"1;32m",A"1;36m",A"1;31m",
      A"1;35m",A"1;33m",A"1;37m",A"40m",A"44m",A"42m",A"46m",A"41m",A"45m",
      A"43m",A"47m",A"5m",A"4m",A"1m",A"7m"
@@ -1090,7 +1090,7 @@ static size_t proc_colors(char *txt, size_t maxlen, int parse)
   CREATE(d, char, maxlen);
   p = d;
 
-  for( ; *s && (d-p < maxlen); ) {
+  for( ; *s && ((size_t)(d-p) < maxlen); ) {
     /* no color code - just copy */
     if (*s != '@') {
       *d++ = *s++;
@@ -1119,7 +1119,7 @@ static size_t proc_colors(char *txt, size_t maxlen, int parse)
       if ((*s) == CCODE[i]) {           /* if so :*/
 
         /* c now points to the first char in color code*/
-        for(c = (char *)ANSI[i] ; *c && (d-p < maxlen); )
+        for(c = ANSI[i] ; *c && ((size_t)(d-p) < maxlen); )
           *d++ = *c++;
 
         break;
@@ -2696,7 +2696,7 @@ static void circle_sleep(struct timeval *timeout)
 static void handle_webster_file(void) {
   FILE *fl;
   struct char_data *ch = find_char(last_webster_teller);
-  char info[MAX_STRING_LENGTH], line[READ_SIZE];
+  char retval[MAX_STRING_LENGTH], line[READ_SIZE];
   size_t len = 0, nlen = 0;
 
   last_webster_teller = -1L;
@@ -2706,7 +2706,7 @@ static void handle_webster_file(void) {
 
   fl = fopen("websterinfo", "r");
   if (!fl) {
-    send_to_char(ch, "It seems Merriam-Webster is offline..\r\n");
+    send_to_char(ch, "It seems the dictionary is offline..\r\n");
     return;
   }
 
@@ -2714,19 +2714,19 @@ static void handle_webster_file(void) {
 
   get_line(fl, line);
   while (!feof(fl)) {
-    nlen = snprintf(info + len, sizeof(info) - len, "%s\r\n", line);
-    if (len + nlen >= sizeof(info) || nlen < 0)
+    nlen = snprintf(retval + len, sizeof(retval) - len, "%s\r\n", line);
+    if (len + nlen >= sizeof(retval))
       break;
     len += nlen;
     get_line(fl, line);
   }
 
-  if (len >= sizeof(info)) {
+  if (len >= sizeof(retval)) {
     const char *overflow = "\r\n**OVERFLOW**\r\n";
-    strcpy(info + sizeof(info) - strlen(overflow) - 1, overflow); /* strcpy: OK */
+    strcpy(retval + sizeof(retval) - strlen(overflow) - 1, overflow); /* strcpy: OK */
   }
   fclose(fl);
 
   send_to_char(ch, "You get this feedback from Merriam-Webster:\r\n");
-  page_string(ch->desc, info, 1);
+  page_string(ch->desc, retval, 1);
 }

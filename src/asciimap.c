@@ -232,7 +232,7 @@ static void MapArea(room_rnum room, struct char_data *ch, int x, int y, int min,
       continue;
     }
 
-    if ( (pexit = world[room].dir_option[door]) > 0  &&
+    if ( (pexit = world[room].dir_option[door]) != NULL  &&
          (pexit->to_room > 0 ) && (pexit->to_room != NOWHERE) &&
          (!IS_SET(pexit->exit_info, EX_CLOSED))) { /* A real exit */
 

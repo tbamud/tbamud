@@ -2458,7 +2458,7 @@ ACMD(do_show)
 	    continue;
 	}
 	nlen = print_zone_to_buf(buf + len, sizeof(buf) - len, zrn, 0);
-        if (len + nlen >= sizeof(buf) || nlen < 0)
+        if (len + nlen >= sizeof(buf))
           break;
         len += nlen;
       }
@@ -2553,13 +2553,13 @@ ACMD(do_show)
       	  continue;
         if (W_EXIT(i,j)->to_room == 0) {
 	    nlen = snprintf(buf + len, sizeof(buf) - len, "%2d: (void   ) [%5d] %-*s%s (%s)\r\n", ++k, GET_ROOM_VNUM(i), count_color_chars(world[i].name)+40, world[i].name, QNRM, dirs[j]);
-            if (len + nlen >= sizeof(buf) || nlen < 0)
+            if (len + nlen >= sizeof(buf))
               break;
             len += nlen;
         }
         if (W_EXIT(i,j)->to_room == NOWHERE && !W_EXIT(i,j)->general_description) {
 	    nlen = snprintf(buf + len, sizeof(buf) - len, "%2d: (Nowhere) [%5d] %-*s%s (%s)\r\n", ++k, GET_ROOM_VNUM(i), count_color_chars(world[i].name)+ 40, world[i].name, QNRM, dirs[j]);
-            if (len + nlen >= sizeof(buf) || nlen < 0)
+            if (len + nlen >= sizeof(buf))
               break;
             len += nlen;
         }
@@ -2573,7 +2573,7 @@ ACMD(do_show)
     for (i = 0, j = 0; i <= top_of_world; i++)
       if (ROOM_FLAGGED(i, ROOM_DEATH)) {
         nlen = snprintf(buf + len, sizeof(buf) - len, "%2d: [%5d] %s%s\r\n", ++j, GET_ROOM_VNUM(i), world[i].name, QNRM);
-        if (len + nlen >= sizeof(buf) || nlen < 0)
+        if (len + nlen >= sizeof(buf))
           break;
         len += nlen;
       }
@@ -2586,7 +2586,7 @@ ACMD(do_show)
     for (i = 0, j = 0; i <= top_of_world; i++)
       if (ROOM_FLAGGED(i, ROOM_GODROOM)) {
         nlen = snprintf(buf + len, sizeof(buf) - len, "%2d: [%5d] %s%s\r\n", ++j, GET_ROOM_VNUM(i), world[i].name, QNRM);
-        if (len + nlen >= sizeof(buf) || nlen < 0)
+        if (len + nlen >= sizeof(buf))
           break;
         len += nlen;
       }
@@ -4050,7 +4050,7 @@ ACMD(do_zpurge)
       purge_room(real_room(vroom));
     }
     send_to_char(ch, "Purged zone #%d: %s.\r\n", zone_table[zone].number, zone_table[zone].name);
-    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s purged zone %d (%s)", GET_NAME(ch), zone, zone_table[zone].name);
+    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s purged zone %d (%s)", GET_NAME(ch), zone_table[zone].number, zone_table[zone].name);
   }
   else {
     for (room = 0; room <= top_of_world; room++) {

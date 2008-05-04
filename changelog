@@ -3,6 +3,16 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[May 04 2008] - Rumble
+  Fixed numerous warnings for gcc -g -O2 -W -Wshadow -Wcast-qual flags.
+  Fixed zpurge mudlog to use zone vnum not rnum. (thanks Jamdog)
+  Fix to parse_mobile conversion to 128 bits. (thanks Jamdog)
+  Changed autorun.sh from 9091 to 4000. (thanks John Smith)
+[Apr 27 2008] - Rumble
+  Removed some defunct gemote code. (thanks Fizban)
+[Apr 26 2008] - Rumble
+  Added README.BSD. (thanks Blix)
+  Cleaned up act.comm.c, mobs can now use comm channels. (thanks Rhade)
 [Apr 07 2008] - Rumble
   Fixed typos in lib/misc/messages and socials.new
 [Apr 04 2008] - jeremyosborne
@@ -169,7 +179,6 @@ used if Graphviz is not available.
 empty." message is now displayed.
   Merging changes to trunk for: utils.h, utils.c and structs.h doxygen comments
   Adding file dox_withGraphs.doxyfile
-
 tbaMUD 3.55
 [Jan 17 2008] - Rumble
   Updated files for 3.55 release.
@@ -201,7 +210,6 @@ tbaMUD 3.55
 [Dec 15 2007] - Rumble
   Showvnums shows [T#] for a single attached trig or [TRIGS] for multiple attached trigs (except for rooms since there is plenty of room to list all attached trigs).
   Fixed bug where showvnums would not show if attached. (thanks Sryth)
-
 tbaMUD 3.54
 [Nov 12 2007] - Rumble
   Updated users command to fix GET_INVIS_LEV bug.
@@ -278,7 +286,6 @@ Increased the size of a mail message from 4k to 8k.
 [Aug 17 2007] - Rumble
   128 bit fixes: pfile conversion, world sector conversion, and player flags. (thanks Jamdog)
   Added stop_fighting calls in do_flee to fix stock bug. (thanks Juras)
-
 tbaMUD 3.53
 [Jul 01 2007] - Rumble
   Added run_autowiz to do_cheat. (thanks Fizban)
@@ -320,7 +327,6 @@ tbaMUD 3.53
   Fixed nogos/nowiz from flagging everyone in who.
   Fixed numerous SYSERR's where mobs were using player only specials.
   Added 128 bits patch by Niese Petersen with numerous updates and fixes.
-
 tbaMUD 3.52
 [Apr 14 2007] - Rumble
   IP's only visible to LVL_GOD and above now for the paranoid people out there.

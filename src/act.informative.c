@@ -1639,7 +1639,7 @@ ACMD(do_where)
 ACMD(do_levels)
 {
   char buf[MAX_STRING_LENGTH], arg[MAX_STRING_LENGTH]; 
-  size_t len = 0, nlen;
+  size_t len = 0, nlen; 
   int i, ret, min_lev=1, max_lev=LVL_IMMORT, val;
 
   if (IS_NPC(ch)) {
