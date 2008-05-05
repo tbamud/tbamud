@@ -1918,7 +1918,8 @@ void clean_llog_entries(void) {
 }
 
 /* debugging stuff, if you wanna see the whole file */
-ACMD(do_list_llog_entries) {
+void list_llog_entries(struct char_data *ch)
+{
   FILE *fp;
   struct last_entry llast;
 
@@ -1963,7 +1964,7 @@ ACMD(do_last)
     half_chop(argument, arg, argument);
     while (*arg) {
       if ((*arg == '*') && (GET_LEVEL(ch) == LVL_IMPL)) {
-        do_list_llog_entries(ch, NULL, 0, 0);
+        list_llog_entries(ch);
         return;
       }
       if (isdigit(*arg)) {

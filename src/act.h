@@ -316,8 +316,6 @@ ACMD(do_gecho);
 ACMD(do_goto);
 ACMD(do_invis);
 ACMD(do_links);
-/** @todo function intentionally unused? */
-ACMD(do_list_llog_entries);
 ACMD(do_load);
 ACMD(do_peace);
 ACMD(do_plist);
