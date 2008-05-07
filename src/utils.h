@@ -54,7 +54,7 @@ int num_pc_in_room(struct room_data *room);
 void core_dump_real(const char *who, int line);
 int count_color_chars(char *string);
 int room_is_dark(room_rnum room);
-int levenshtein_distance(char *s1, char *s2);
+int levenshtein_distance(const char *s1, const char *s2);
 struct time_info_data *real_time_passed(time_t t2, time_t t1);
 struct time_info_data *mud_time_passed(time_t t2, time_t t1);
 void prune_crlf(char *txt);

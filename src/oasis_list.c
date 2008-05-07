@@ -94,7 +94,7 @@ ACMD(do_oasis_links)
   skip_spaces(&argument);
   one_argument(argument, arg);
 
-  if (!arg || !*arg) {
+  if (!*arg) {
     send_to_char(ch,
       "Syntax: links <zone_vnum> ('.' for zone you are standing in)\r\n");
       return;

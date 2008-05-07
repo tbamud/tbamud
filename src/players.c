@@ -200,17 +200,17 @@ int load_char(const char *name, struct char_data *ch)
 {
   int id, i;
   FILE *fl;
-  char fname[40];
+  char filename[40];
   char buf[128], buf2[128], line[MAX_INPUT_LENGTH + 1], tag[6];
   char f1[128], f2[128], f3[128], f4[128];
 
   if ((id = get_ptable_by_name(name)) < 0)
     return (-1);
   else {
-    if (!get_filename(fname, sizeof(fname), PLR_FILE, player_table[id].name))
+    if (!get_filename(filename, sizeof(filename), PLR_FILE, player_table[id].name))
       return (-1);
-    if (!(fl = fopen(fname, "r"))) {
-      mudlog(NRM, LVL_GOD, TRUE, "SYSERR: Couldn't open player file %s", fname);
+    if (!(fl = fopen(filename, "r"))) {
+      mudlog(NRM, LVL_GOD, TRUE, "SYSERR: Couldn't open player file %s", filename);
       return (-1);
     }
 
@@ -449,7 +449,7 @@ int load_char(const char *name, struct char_data *ch)
 void save_char(struct char_data * ch)
 {
   FILE *fl;
-  char fname[40], buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127]; 
+  char filename[40], buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127]; 
   int i, id, save_index = FALSE;
   struct affected_type *aff, tmp_aff[MAX_AFFECT];
   struct obj_data *char_eq[NUM_WEARS];
@@ -475,10 +475,10 @@ void save_char(struct char_data * ch)
     }
   }
 
-  if (!get_filename(fname, sizeof(fname), PLR_FILE, GET_NAME(ch)))
+  if (!get_filename(filename, sizeof(filename), PLR_FILE, GET_NAME(ch)))
     return;
-  if (!(fl = fopen(fname, "w"))) {
-    mudlog(NRM, LVL_GOD, TRUE, "SYSERR: Couldn't open player file %s for write", fname);
+  if (!(fl = fopen(filename, "w"))) {
+    mudlog(NRM, LVL_GOD, TRUE, "SYSERR: Couldn't open player file %s for write", filename);
     return;
   }
 
@@ -716,7 +716,7 @@ void tag_argument(char *argument, char *tag)
  * deleted by an immortal, or deleted by the auto-wipe system (if enabled). */
 void remove_player(int pfilepos)
 {
-  char fname[40];
+  char filename[MAX_STRING_LENGTH];
   int i;
 
   if (!*player_table[pfilepos].name)
@@ -727,8 +727,8 @@ void remove_player(int pfilepos)
 
   /* Unlink all player-owned files */
   for (i = 0; i < MAX_FILES; i++) {
-    if (get_filename(fname, sizeof(fname), i, player_table[pfilepos].name))
-      unlink(fname);
+    if (get_filename(filename, sizeof(filename), i, player_table[pfilepos].name))
+      unlink(filename);
   }
 
   log("PCLEAN: %s Lev: %d Last: %s",
@@ -875,33 +875,33 @@ static void write_aliases_ascii(FILE *file, struct char_data *ch)
 static void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
 {
   int i;
-    struct alias_data *temp;
-      char abuf[MAX_INPUT_LENGTH], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
+  struct alias_data *temp;
+  char abuf[MAX_INPUT_LENGTH], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
 
-        if (count == 0) {
-	    GET_ALIASES(ch) = NULL;
-	        return; /* No aliases in the list. */
-		  }
+  if (count == 0) {
+    GET_ALIASES(ch) = NULL;
+    return; /* No aliases in the list. */
+  }
 
-		    for (i = 0; i < count; i++) {
-		        /* Read the aliased command. */
-			    get_line(file, abuf);
+  for (i = 0; i < count; i++) {
+    /* Read the aliased command. */
+    get_line(file, abuf);
 
-			        /* Read the replacement. */
-				    get_line(file, tbuf);
-				        strcpy(rbuf, " ");
-					    strcat(rbuf, tbuf); /* strcat: OK */
+    /* Read the replacement. */
+    get_line(file, tbuf);
+    strcpy(rbuf, " ");
+    strcat(rbuf, tbuf); /* strcat: OK */
 
-					        /* read the type */
-						    get_line(file, tbuf);
+    /* read the type */
+    get_line(file, tbuf);
 
-						        if (abuf && *abuf && tbuf && *tbuf && rbuf && *rbuf) {
-							      CREATE(temp, struct alias_data, 1);
-							            temp->alias = strdup(abuf);
-								          temp->replacement = strdup(rbuf);
-									        temp->type = atoi(tbuf);
-										      temp->next = GET_ALIASES(ch);
-										            GET_ALIASES(ch) = temp;
-											        }
-												  }
-												  }
+    if (*abuf && *tbuf && *rbuf) {
+      CREATE(temp, struct alias_data, 1);
+      temp->alias = strdup(abuf);
+      temp->replacement = strdup(rbuf);
+      temp->type = atoi(tbuf);
+      temp->next = GET_ALIASES(ch);
+      GET_ALIASES(ch) = temp;
+    }
+  }
+}

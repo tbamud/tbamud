@@ -247,7 +247,7 @@ ACMD(do_skillset)
 {
   struct char_data *vict;
   char name[MAX_INPUT_LENGTH];
-  char buf[MAX_INPUT_LENGTH], help[MAX_STRING_LENGTH];
+  char buf[MAX_INPUT_LENGTH], helpbuf[MAX_STRING_LENGTH];
   int skill, value, i, qend;
 
   argument = one_argument(argument, name);
@@ -291,9 +291,9 @@ ACMD(do_skillset)
     send_to_char(ch, "Skill must be enclosed in: ''\r\n");
     return;
   }
-  strcpy(help, (argument + 1));	/* strcpy: OK (MAX_INPUT_LENGTH <= MAX_STRING_LENGTH) */
-  help[qend - 1] = '\0';
-  if ((skill = find_skill_num(help)) <= 0) {
+  strcpy(helpbuf, (argument + 1));	/* strcpy: OK (MAX_INPUT_LENGTH <= MAX_STRING_LENGTH) */
+  helpbuf[qend - 1] = '\0';
+  if ((skill = find_skill_num(helpbuf)) <= 0) {
     send_to_char(ch, "Unrecognized skill.\r\n");
     return;
   }

@@ -999,7 +999,7 @@ void space_to_minus(char *str)
     *str = '-';
 }
 
-int search_help(char *argument, int level) 
+int search_help(const char *argument, int level) 
 { 
   int chk, bot, top, mid, minlen; 
 

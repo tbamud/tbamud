@@ -367,7 +367,7 @@ ACMD(do_helpcheck)
 
   for (i = 1; *(complete_cmd_info[i].command) != '\n'; i++) {
     if (complete_cmd_info[i].command_pointer != do_action && complete_cmd_info[i].minimum_level >= 0) {
-      if (search_help((char *)(complete_cmd_info[i].command), LVL_IMPL) == NOWHERE) {
+      if (search_help(complete_cmd_info[i].command, LVL_IMPL) == NOWHERE) {
         nlen = snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", complete_cmd_info[i].command,
                         (++count % 3 ? "" : "\r\n"));
         if (len + nlen >= sizeof(buf))

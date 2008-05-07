@@ -29,7 +29,7 @@
 /* Thanks to James Long for his assistance in plugging the memory leak that 
  * used to be here. - Welcor */
 /* Adds a variable with given name and value to trigger. */
-void add_var(struct trig_var_data **var_list, char *name, char *value, long id)
+void add_var(struct trig_var_data **var_list, const char *name, const char *value, long id)
 {
   struct trig_var_data *vd;
 
@@ -174,11 +174,11 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
     snprintf(str, slen, "%s", cdr);
     return TRUE;
   } else if (!str_cmp(field, "charat")) {              /* CharAt    */
-    size_t len = strlen(vd->value), index = atoi(subfield);
-    if (index > len || index < 1)
+    size_t len = strlen(vd->value), cindex = atoi(subfield);
+    if (cindex > len || cindex < 1)
       strcpy(str, "");
     else
-    	snprintf(str, slen, "%c", vd->value[index - 1]);
+    	snprintf(str, slen, "%c", vd->value[cindex - 1]);
     return TRUE;
   } else if (!str_cmp(field, "mudcommand")) {
     /* find the mud command returned from this text */

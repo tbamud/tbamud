@@ -281,24 +281,24 @@ int sprintascii(char *out, bitvector_t bits)
 char *fix_filename(char *str) 
 { 
   static char good_file_name[MAX_STRING_LENGTH]; 
-  char *index = good_file_name; 
+  char *cindex = good_file_name; 
  
   while(*str) { 
     switch(*str) { 
-      case ' ': *index = '_'; index++; break; 
-      case '(': *index = '{'; index++; break; 
-      case ')': *index = '}'; index++; break; 
+      case ' ': *cindex = '_'; cindex++; break; 
+      case '(': *cindex = '{'; cindex++; break; 
+      case ')': *cindex = '}'; cindex++; break; 
  
       /* skip the following */ 
       case '\'':             break; 
       case '"':              break; 
  
       /* Legal character */ 
-      default: *index = *str;  index++;break; 
+      default: *cindex = *str;  cindex++;break; 
     } 
     str++; 
   } 
-  *index = '\0'; 
+  *cindex = '\0'; 
  
   return good_file_name; 
 }

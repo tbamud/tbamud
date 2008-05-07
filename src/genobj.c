@@ -177,7 +177,7 @@ obj_rnum index_object(struct obj_data *obj, obj_vnum ovnum, obj_rnum ornum)
 
 int save_objects(zone_rnum zone_num)
 {
-  char fname[128], buf[MAX_STRING_LENGTH];
+  char filename[128], buf[MAX_STRING_LENGTH];
   char ebuf1[MAX_STRING_LENGTH], ebuf2[MAX_STRING_LENGTH], ebuf3[MAX_STRING_LENGTH], ebuf4[MAX_STRING_LENGTH];
   char wbuf1[MAX_STRING_LENGTH], wbuf2[MAX_STRING_LENGTH], wbuf3[MAX_STRING_LENGTH], wbuf4[MAX_STRING_LENGTH];
   char pbuf1[MAX_STRING_LENGTH], pbuf2[MAX_STRING_LENGTH], pbuf3[MAX_STRING_LENGTH], pbuf4[MAX_STRING_LENGTH];
@@ -195,9 +195,9 @@ int save_objects(zone_rnum zone_num)
     return FALSE;
   }
 
-  snprintf(fname, sizeof(fname), "%s/%d.new", OBJ_PREFIX, zone_table[zone_num].number);
-  if (!(fp = fopen(fname, "w+"))) {
-    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: Cannot open objects file %s!", fname);
+  snprintf(filename, sizeof(filename), "%s/%d.new", OBJ_PREFIX, zone_table[zone_num].number);
+  if (!(fp = fopen(filename, "w+"))) {
+    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: Cannot open objects file %s!", filename);
     return FALSE;
   }
   /* Start running through all objects in this zone. */
@@ -281,7 +281,7 @@ int save_objects(zone_rnum zone_num)
   fclose(fp);
   snprintf(buf, sizeof(buf), "%s/%d.obj", OBJ_PREFIX, zone_table[zone_num].number);
   remove(buf);
-  rename(fname, buf);
+  rename(filename, buf);
 
   if (in_save_list(zone_table[zone_num].number, SL_OBJ))
     remove_from_save_list(zone_table[zone_num].number, SL_OBJ);

@@ -20,7 +20,7 @@
 #include <ctype.h>
 
 #define NUM_ZBUCKETS 256
-#define GET_ZBUCKET(addr) (((int)(addr) >> 3) & 0xFF)
+#define GET_ZBUCKET(addr) (((long)(addr) >> 3) & 0xFF)
 
 //#define NO_MEMORY_PADDING
 
@@ -131,7 +131,7 @@ unsigned char *zmalloc(int len, char *file, int line)
 #endif
 
   if (zmalloclogging > 2)
-    fprintf(zfd,"zmalloc: 0x%4.4x  %d bytes %s:%d\n",(int)ret,len,file,line);
+    fprintf(zfd,"zmalloc: 0x%p  %d bytes %s:%d\n", ret, len, file, line);
 
   m = (meminfo *) calloc(1, sizeof(meminfo));
   if (!m) {
@@ -167,9 +167,9 @@ unsigned char *zrealloc(unsigned char *what, int len, char *file, int line)
 	ret = (unsigned char *) realloc(what, len);
 #endif
 	if (!ret) {
-	  fprintf(zfd,"zrealloc: FAILED for 0x%4.4x %d bytes mallocd at %s:%d,\n"
+	  fprintf(zfd,"zrealloc: FAILED for 0x%p %d bytes mallocd at %s:%d,\n"
 		      "          %d bytes reallocd at %s:%d.\n",
-		    (int)m->addr, m->size, m->file, m->line, len, file, line);
+		    m->addr, m->size, m->file, m->line, len, file, line);
 	  if (zmalloclogging > 1) zdump(m);
 	  return NULL;
 	}
@@ -180,8 +180,8 @@ unsigned char *zrealloc(unsigned char *what, int len, char *file, int line)
 	memcpy(ret + len, endPad, sizeof(endPad));
 #endif
 	if (zmalloclogging > 2)
-	  fprintf(zfd,"zrealloc: 0x%4.4x %d bytes mallocd at %s:%d, %d bytes reallocd at %s:%d.\n",
-		    (int)m->addr, m->size, m->file, m->line, len, file, line);
+	  fprintf(zfd,"zrealloc: 0x%p %d bytes mallocd at %s:%d, %d bytes reallocd at %s:%d.\n",
+		    m->addr, m->size, m->file, m->line, len, file, line);
 
 	m->addr = ret;
 	m->size = len;
@@ -207,8 +207,8 @@ unsigned char *zrealloc(unsigned char *what, int len, char *file, int line)
   }
 
   /* NULL or invalid pointer given */
-  fprintf(zfd,"zrealloc: invalid pointer 0x%4.4x, %d bytes to realloc at %s:%d.\n",
-	    (int)what, len, file, line);
+  fprintf(zfd,"zrealloc: invalid pointer 0x%p, %d bytes to realloc at %s:%d.\n",
+	    what, len, file, line);
 
   return (zmalloc(len, file, line));
 }
@@ -229,8 +229,8 @@ void zfree(unsigned char *what, char *file, int line)
     if (m->addr == what) {
       /* got it.  Print it if verbose: */
       if (zmalloclogging > 2) {
-	fprintf(zfd,"zfree: Freed 0x%4.4x %d bytes mallocd at %s:%d, freed at %s:%d\n",
-		    (int)m->addr, m->size, m->file, m->line, file, line);
+	fprintf(zfd,"zfree: Freed 0x%p %d bytes mallocd at %s:%d, freed at %s:%d\n",
+		    m->addr, m->size, m->file, m->line, file, line);
       }
       /* check the padding: */
       pad_check(m);
@@ -240,9 +240,9 @@ void zfree(unsigned char *what, char *file, int line)
 
       /* check to see if it was freed > once */
       if (m->frees > 1) {
-        fprintf(zfd,"zfree: ERR: multiple frees! 0x%4.4x %d bytes\n"
+        fprintf(zfd,"zfree: ERR: multiple frees! 0x%p %d bytes\n"
 		    "       mallocd at %s:%d, freed at %s:%d.\n",
-                    (int)m->addr, m->size, m->file, m->line, file, line);
+                    m->addr, m->size, m->file, m->line, file, line);
 	if (zmalloclogging > 1) zdump(m);
       }
       gotit++;
@@ -250,12 +250,12 @@ void zfree(unsigned char *what, char *file, int line)
   } /* for.. */
 
   if (!gotit) {
-    fprintf(zfd,"zfree: ERR: attempt to free unallocated memory 0x%4.4x at %s:%d.\n",
-		(int)what, file, line);
+    fprintf(zfd,"zfree: ERR: attempt to free unallocated memory 0x%p at %s:%d.\n",
+		what, file, line);
   }
   if (gotit > 1) {
     /* this shouldn't happen, eh? */
-    fprintf(zfd,"zfree: ERR: Multiply-allocd memory 0x%4.4x.\n", (int)what);
+    fprintf(zfd,"zfree: ERR: Multiply-allocd memory 0x%p.\n", what);
   }
 }
 
@@ -291,8 +291,8 @@ void zmalloc_check()
     for (m = memlist[i]; m; m = next_m) {
       next_m = m->next;
       if (m->addr != 0 && m->frees <= 0) {
-        fprintf(zfd,"zmalloc: UNfreed memory 0x%4.4x %d bytes mallocd at %s:%d\n",
-		(int)m->addr, m->size, m->file, m->line);
+        fprintf(zfd,"zmalloc: UNfreed memory 0x%p %d bytes mallocd at %s:%d\n",
+		m->addr, m->size, m->file, m->line);
         if (zmalloclogging > 1) zdump(m);
 
         /* check padding on un-freed memory too: */

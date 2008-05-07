@@ -3,6 +3,14 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[May 05 2008] - Rumble
+  Changed command do_list_llog_entries to normal function, it was not being used as a command.
+  Changed command do_list_llog_entries to normal function
+  Changed command do_list_llog_entries to normal function
+  Changed command do_list_llog_entries to normal function
+  Changed command do_list_llog_entries to normal function
+  Removed several useless if checks. (thanks Elanthis)
+  Fixed zmalloc to work on 64 bit machines.
 [May 04 2008] - Rumble
   Fixed numerous warnings for gcc -g -O2 -W -Wshadow -Wcast-qual flags.
   Fixed zpurge mudlog to use zone vnum not rnum. (thanks Jamdog)

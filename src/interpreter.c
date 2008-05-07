@@ -467,7 +467,7 @@ void command_interpreter(struct char_data *ch, char *argument)
         continue;
 
       /* Only apply levenshtein counts if the command is not a trigger command. */
-      if ( (levenshtein_distance(arg, (char *) cmd_info[cmd].command) <= 2) &&
+      if ( (levenshtein_distance(arg, cmd_info[cmd].command) <= 2) &&
            (cmd_info[cmd].minimum_level >= 0) ) 
       {
         if (!found) 

@@ -483,10 +483,8 @@ WCMD(do_wload)
       two_arguments(target, arg1, arg2); /* recycling ... */
       tch = get_char_in_room(room, arg1);
       if (tch) {
-        if (arg2 && *arg2 &&
-            (pos = find_eq_pos_script(arg2)) >= 0 &&
-            !GET_EQ(tch, pos) &&
-            can_wear_on_pos(object, pos)) {
+        if (arg2 != NULL && *arg2 && (pos = find_eq_pos_script(arg2)) >= 0 &&
+            !GET_EQ(tch, pos) && can_wear_on_pos(object, pos)) {
           equip_char(tch, object, pos);
           load_otrigger(object);
           return;

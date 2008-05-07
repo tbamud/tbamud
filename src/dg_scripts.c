@@ -1189,7 +1189,7 @@ ACMD(do_detach)
         }
       }
 
-      if (!arg3 || !*arg3)
+      if (arg3 == NULL || !*arg3)
         send_to_char(ch, "You must specify a trigger to remove.\r\n");
       else
         trigger = arg3;
@@ -1214,7 +1214,7 @@ ACMD(do_detach)
         }
       }
 
-      if (!arg3 || !*arg3)
+      if (!arg3 == NULL || *arg3)
         send_to_char(ch, "You must specify a trigger to remove.\r\n");
       else
         trigger = arg3;
@@ -1952,7 +1952,7 @@ static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
     return;
   }
 
-  if (!arg || !*arg) {
+  if (arg == NULL || !*arg) {
     script_log("Trigger: %s, VNum %d. makeuid invalid id arg: '%s'",
             GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), cmd);
     return;
@@ -1964,7 +1964,7 @@ static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
     eval_expr(arg, result, go, sc, trig, type);
     snprintf(uid, sizeof(uid), "%c%s", UID_CHAR, result);
   } else { /* a lot more work without it */
-    if (!name || !*name) {
+    if (name == NULL || !*name) {
       script_log("Trigger: %s, VNum %d. makeuid needs name: '%s'",
             GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), cmd);
       return;
@@ -2233,16 +2233,16 @@ ACMD(do_vdelete)
  * verified. */
 int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_arg)
 {
-	char var_name[MAX_INPUT_LENGTH], *var_value;
+  char var_name[MAX_INPUT_LENGTH], *var_value;
 
-	var_value = any_one_arg(val_arg, var_name);
+  var_value = any_one_arg(val_arg, var_name);
 
-	if (!var_name || !*var_name || !var_value || !*var_value) {
-		send_to_char(ch, "Usage: set <char> <varname> <value>\r\n");
-		return 0;
+  if (var_name == NULL || !*var_name || var_value == NULL || !*var_value) {
+    send_to_char(ch, "Usage: set <char> <varname> <value>\r\n");
+    return 0;
   }
   if (!SCRIPT(vict))
-     CREATE(SCRIPT(vict), struct script_data, 1);
+    CREATE(SCRIPT(vict), struct script_data, 1);
 
   add_var(&(SCRIPT(vict)->global_vars), var_name, var_value, 0);
   return 1;

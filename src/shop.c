@@ -1547,20 +1547,20 @@ void destroy_shops(void)
 
 static int find_shop(int vnum)
 {
-  int bot, mid, top;
+  int bot, mid, ltop;
 
   bot = 0;
-  top= top_shop - 1;
+  ltop= top_shop - 1;
 
-  while (bot <= top) {
-    mid = (top + bot) / 2;
+  while (bot <= ltop) {
+    mid = (ltop + bot) / 2;
 
     if (shop_index[mid].vnum == vnum)
       return mid;
     else if (shop_index[mid].vnum < vnum)
       bot = mid + 1;
     else
-      top = mid - 1;
+      ltop = mid - 1;
   }
   return -1;
 }

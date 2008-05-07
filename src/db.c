@@ -719,12 +719,12 @@ void boot_db(void)
 
 #if 1
 {
-  int i;
+  int j;
 
-  for (i = 0 ; i < top_of_objt; i++) {
-  	if (obj_proto[i].script == (struct script_data *)&shop_keeper) {
-  		log("Item %d (%s) had shopkeeper trouble.", obj_index[i].vnum, obj_proto[i].short_description);
-      obj_proto[i].script = NULL;
+  for (j = 0 ; j < top_of_objt; j++) {
+    if (obj_proto[j].script == (struct script_data *)&shop_keeper) {
+      log("Item %d (%s) had shopkeeper trouble.", obj_index[j].vnum, obj_proto[j].short_description);
+      obj_proto[j].script = NULL;
     }
   }
 }
@@ -2083,14 +2083,14 @@ static void get_one_line(FILE *fl, char *buf)
   buf[strlen(buf) - 1] = '\0'; /* take off the trailing \n */
 }
 
-void free_help(struct help_index_element *help) 
+void free_help(struct help_index_element *hentry) 
 {
-  if (help->keywords)
-    free(help->keywords);
-  if (help->entry && !help->duplicate)
-    free(help->entry);
+  if (hentry->keywords)
+    free(hentry->keywords);
+  if (hentry->entry && !hentry->duplicate)
+    free(hentry->entry);
 
-  free(help);
+  free(hentry);
 }
 
 void free_help_table(void)
@@ -3216,7 +3216,7 @@ static int check_object(struct obj_data *obj)
 	  GET_OBJ_VNUM(obj), obj->short_description, obj->name);
         }
   	next_name = any_one_arg(next_name, onealias);
-      } while (onealias && *onealias);
+      } while (*onealias);
     }
   break;
   case ITEM_FURNITURE:
@@ -3430,14 +3430,14 @@ void load_config( void )
         else if (!str_cmp(tag, "dflt_dir")) {
           if (CONFIG_DFLT_DIR)
             free(CONFIG_DFLT_DIR);
-          if (line && *line)
+          if (line != NULL && *line)
             CONFIG_DFLT_DIR = strdup(line);
           else
             CONFIG_DFLT_DIR = strdup(DFLT_DIR);
         } else if (!str_cmp(tag, "dflt_ip")) {
           if (CONFIG_DFLT_IP)
             free(CONFIG_DFLT_IP);
-          if (line && *line)
+          if (line != NULL && *line)
             CONFIG_DFLT_IP = strdup(line);
           else
             CONFIG_DFLT_IP = NULL;
@@ -3482,7 +3482,7 @@ void load_config( void )
         else if (!str_cmp(tag, "logname")) {
           if (CONFIG_LOGNAME)
             free(CONFIG_LOGNAME);
-          if (line && *line)
+          if (line != NULL && *line)
             CONFIG_LOGNAME = strdup(line);
           else
             CONFIG_LOGNAME = NULL;

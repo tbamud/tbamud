@@ -282,18 +282,18 @@ int Crash_delete_file(char *name)
 
 int Crash_delete_crashfile(struct char_data *ch)
 {
-  char fname[MAX_INPUT_LENGTH];
+  char filename[MAX_INPUT_LENGTH];
   int numread;
   FILE *fl;
   int rentcode;
   char line[READ_SIZE];
 
-  if (!get_filename(fname, sizeof(fname), CRASH_FILE, GET_NAME(ch)))
+  if (!get_filename(filename, sizeof(filename), CRASH_FILE, GET_NAME(ch)))
     return FALSE;
 
-  if (!(fl = fopen(fname, "r"))) {
+  if (!(fl = fopen(filename, "r"))) {
     if (errno != ENOENT)  /* if it fails, NOT because of no file */
-      log("SYSERR: checking for crash file %s (3): %s", fname, strerror(errno));
+      log("SYSERR: checking for crash file %s (3): %s", filename, strerror(errno));
     return FALSE;
   }
   numread = get_line(fl,line);
@@ -311,19 +311,19 @@ int Crash_delete_crashfile(struct char_data *ch)
 
 int Crash_clean_file(char *name)
 {
-  char fname[MAX_INPUT_LENGTH], filetype[20];
+  char filename[MAX_INPUT_LENGTH], filetype[20];
   int numread;
   FILE *fl;
   int rentcode, timed, netcost, gold, account, nitems;
   char line[READ_SIZE];
 
-  if (!get_filename(fname, sizeof(fname), CRASH_FILE, name))
+  if (!get_filename(filename, sizeof(filename), CRASH_FILE, name))
     return FALSE;
 
   /* Open so that permission problems will be flagged now, at boot time. */
-  if (!(fl = fopen(fname, "r"))) {
+  if (!(fl = fopen(filename, "r"))) {
     if (errno != ENOENT)  /* if it fails, NOT because of no file */
-      log("SYSERR: OPENING OBJECT FILE %s (4): %s", fname, strerror(errno));
+      log("SYSERR: OPENING OBJECT FILE %s (4): %s", filename, strerror(errno));
     return FALSE;
   }
 
@@ -379,18 +379,18 @@ void update_obj_file(void)
 void Crash_listrent(struct char_data *ch, char *name)
 {
   FILE *fl;
-  char fname[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH], line[READ_SIZE];
+  char filename[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH], line[READ_SIZE];
   obj_save_data *loaded, *current;
   int rentcode,timed,netcost,gold,account,nitems, numread, len;
 
-  if (!get_filename(fname, sizeof(fname), CRASH_FILE, name))
+  if (!get_filename(filename, sizeof(filename), CRASH_FILE, name))
     return;
 
-  if (!(fl = fopen(fname, "r"))) {
+  if (!(fl = fopen(filename, "r"))) {
     send_to_char(ch, "%s has no rent file.\r\n", name);
     return;
   }
-  len = snprintf(buf, sizeof(buf),"%s\r\n", fname);
+  len = snprintf(buf, sizeof(buf),"%s\r\n", filename);
 
   numread = get_line(fl, line);
 
@@ -822,51 +822,51 @@ static void Crash_report_rent(struct char_data *ch, struct char_data *recep, str
   }
 }
 
-static int Crash_offer_rent(struct char_data *ch, struct char_data *receptionist,
+static int Crash_offer_rent(struct char_data *ch, struct char_data *recep,
                      int display, int factor)
 {
   char buf[MAX_INPUT_LENGTH];
   int i;
   long totalcost = 0, numitems = 0, norent;
 
-  norent = Crash_report_unrentables(ch, receptionist, ch->carrying);
+  norent = Crash_report_unrentables(ch, recep, ch->carrying);
   for (i = 0; i < NUM_WEARS; i++)
-    norent += Crash_report_unrentables(ch, receptionist, GET_EQ(ch, i));
+    norent += Crash_report_unrentables(ch, recep, GET_EQ(ch, i));
 
   if (norent)
     return FALSE;
 
   totalcost = CONFIG_MIN_RENT_COST * factor;
 
-  Crash_report_rent(ch, receptionist, ch->carrying, &totalcost, &numitems, display, factor);
+  Crash_report_rent(ch, recep, ch->carrying, &totalcost, &numitems, display, factor);
 
   for (i = 0; i < NUM_WEARS; i++)
-    Crash_report_rent(ch, receptionist, GET_EQ(ch, i), &totalcost, &numitems, display, factor);
+    Crash_report_rent(ch, recep, GET_EQ(ch, i), &totalcost, &numitems, display, factor);
 
   if (!numitems) {
     act("$n tells you, 'But you are not carrying anything!  Just quit!'",
-        FALSE, receptionist, 0, ch, TO_VICT);
+        FALSE, recep, 0, ch, TO_VICT);
     return FALSE;
   }
   if (numitems > CONFIG_MAX_OBJ_SAVE) {
     sprintf(buf, "$n tells you, 'Sorry, but I cannot store more than %d items.'",
         CONFIG_MAX_OBJ_SAVE);
-    act(buf, FALSE, receptionist, 0, ch, TO_VICT);
+    act(buf, FALSE, recep, 0, ch, TO_VICT);
     return FALSE;
   }
   if (display) {
     sprintf(buf, "$n tells you, 'Plus, my %d coin fee..'",
         CONFIG_MIN_RENT_COST * factor);
-    act(buf, FALSE, receptionist, 0, ch, TO_VICT);
+    act(buf, FALSE, recep, 0, ch, TO_VICT);
     sprintf(buf, "$n tells you, 'For a total of %ld coins%s.'",
             totalcost, (factor == RENT_FACTOR ? " per day" : ""));
-    act(buf, FALSE, receptionist, 0, ch, TO_VICT);
+    act(buf, FALSE, recep, 0, ch, TO_VICT);
     if (totalcost > GET_GOLD(ch) + GET_BANK_GOLD(ch)) {
       act("$n tells you, '...which I see you can't afford.'",
-          FALSE, receptionist, 0, ch, TO_VICT);
+          FALSE, recep, 0, ch, TO_VICT);
       return FALSE;
     } else if (factor == RENT_FACTOR)
-      Crash_rent_deadline(ch, receptionist, totalcost);
+      Crash_rent_deadline(ch, recep, totalcost);
   }
   return (totalcost);
 }
@@ -979,7 +979,7 @@ void Crash_save_all(void)
  * handled by house code, listrent code, autoeq code, etc. */
 obj_save_data *objsave_parse_objects(FILE *fl)
 {
-  obj_save_data *head, *current;
+  obj_save_data *head, *current, *tempsave;
   char f1[128], f2[128], f3[128], f4[128], line[READ_SIZE];
   int t[4],i, nr;
   struct obj_data *temp;
@@ -997,16 +997,15 @@ obj_save_data *objsave_parse_objects(FILE *fl)
     if(get_line(fl, line) == FALSE || (*line == '$' && line[1] == '~')) {
       if (temp == NULL && current->obj == NULL)	{
         /* Remove current from list. */
-        obj_save_data *t = head;
-        if (t == current) {
+        tempsave = head;
+        if (tempsave == current) {
           free(current);
           head = NULL;
       } else {
-	  while (t) {
-            if (t->next == current)
-              t->next = NULL;
-            t = t->next;
-          }
+	  while (tempsave) {
+            if (tempsave->next == current)
+              tempsave->next = NULL;
+            tempsave = tempsave->next;          }
           free(current);
         }
       }
@@ -1162,23 +1161,23 @@ obj_save_data *objsave_parse_objects(FILE *fl)
 
 static int Crash_load_objs(struct char_data *ch) {
   FILE *fl;
-  char fname[MAX_STRING_LENGTH];
+  char filename[MAX_STRING_LENGTH];
   char line[READ_SIZE];
   int i, num_of_days, orig_rent_code, cost, num_objs=0;
   struct obj_data *cont_row[MAX_BAG_ROWS];
   int rentcode,timed,netcost,gold,account,nitems;
 	obj_save_data *loaded, *current;
 
-  if (!get_filename(fname, sizeof(fname), CRASH_FILE, GET_NAME(ch)))
+  if (!get_filename(filename, sizeof(filename), CRASH_FILE, GET_NAME(ch)))
     return 1;
 
   for (i = 0; i < MAX_BAG_ROWS; i++)
     cont_row[i] = NULL;
 
-  if (!(fl = fopen(fname, "r"))) {
+  if (!(fl = fopen(filename, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
       char buf[MAX_STRING_LENGTH];
-      sprintf(buf, "SYSERR: READING OBJECT FILE %s (5)", fname);
+      sprintf(buf, "SYSERR: READING OBJECT FILE %s (5)", filename);
       perror(buf);
       send_to_char(ch, "\r\n********************* NOTICE *********************\r\n"
                        "There was a problem loading your objects from disk.\r\n"

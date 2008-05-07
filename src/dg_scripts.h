@@ -320,7 +320,7 @@ void dg_obj_trigger(char *line, struct obj_data *obj);
 void assign_triggers(void *i, int type);
 
 /* From dg_variables.c */
-void add_var(struct trig_var_data **var_list, char *name, char *value, long id);
+void add_var(struct trig_var_data **var_list, const char *name, const char *value, long id);
 int item_in_list(char *item, obj_data *list);
 char *skill_percent(struct char_data *ch, char *skill);
 int char_has_item(char *item, struct char_data *ch);

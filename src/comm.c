@@ -2403,7 +2403,7 @@ const char *ACTNULL = "<NULL>";
   if ((pointer) == NULL) i = ACTNULL; else i = (expression);
 /* higher-level communication: the act() function */
 void perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
-		const void *vict_obj, const struct char_data *to)
+    void *vict_obj, struct char_data *to)
 {
   const char *i = NULL;
   char lbuf[MAX_STRING_LENGTH], *buf, *j;
@@ -2531,9 +2531,9 @@ void perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
 }
 
 char *act(const char *str, int hide_invisible, struct char_data *ch,
-	 struct obj_data *obj, const void *vict_obj, int type)
+	 struct obj_data *obj, void *vict_obj, int type)
 {
-  const struct char_data *to;
+  struct char_data *to;
   int to_sleeping;
 
   if (!str || !*str)
@@ -2565,7 +2565,7 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
   }
 
   if (type == TO_VICT) {
-    if ((to = (const struct char_data *) vict_obj) != NULL && SENDOK(to)) { 
+    if ((to = vict_obj) != NULL && SENDOK(to)) { 
       perform_act(str, ch, obj, vict_obj, to); 
       return last_act_message; 
     }

@@ -56,7 +56,7 @@ char *find_exdesc(char *word, struct extra_descr_data *list);
 /** @todo Move to a mud centric string utility library */
 void space_to_minus(char *str);
 /** @todo Move to a help module? */
-int search_help(char *argument, int level);
+int search_help(const char *argument, int level);
 /* functions with subcommands */
 /* do_commands */
 ACMD(do_commands);

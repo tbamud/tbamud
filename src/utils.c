@@ -847,10 +847,10 @@ int room_is_dark(room_rnum room)
  * @param s1 The input string.
  * @param s2 The string to be compared to.
  * @retval int The Levenshtein distance between s1 and s2. */ 
-int levenshtein_distance(char *s1, char *s2)
+int levenshtein_distance(const char *s1, const char *s2)
 {   
-  int s1_len = strlen(s1), s2_len = strlen(s2);
   int **d, i, j; 
+  int s1_len = strlen(s1), s2_len = strlen(s2);
 
   CREATE(d, int *, s1_len + 1);
 
@@ -934,8 +934,7 @@ void char_from_furniture(struct char_data *ch)
 
 /* Helper function for column_list. */
 void process_column_list_format(char **out_buffer, const char *format,
-                                int buf_left, int index,
-                                const char *item)
+    int buf_left, int index_data, const char *item)
 {
   /* Initialize the index format with a % */
   char index_format[80] = {'%'};
@@ -968,7 +967,7 @@ void process_column_list_format(char **out_buffer, const char *format,
        * we already constructed above.
        */
       else if (*format == 'i')
-        *out_buffer += sprintf(*out_buffer, index_format, index);
+        *out_buffer += sprintf(*out_buffer, index_format, index_data);
 
       /*
        * Or output the current list item.  Use part of the

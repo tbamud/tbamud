@@ -590,7 +590,7 @@ ACMD(do_gen_door)
   if ((obj) || (door >= 0)) {
     keynum = DOOR_KEY(ch, obj, door);
     if (!(DOOR_IS_OPENABLE(ch, obj, door)))
-      act("You can't $F that!", FALSE, ch, 0, cmd_door[subcmd], TO_CHAR);
+      send_to_char(ch, "You can't %s that!\r\n", cmd_door[subcmd]);
     else if (!DOOR_IS_OPEN(ch, obj, door) &&
 	     IS_SET(flags_door[subcmd], NEED_OPEN))
       send_to_char(ch, "But it's already closed!\r\n");
