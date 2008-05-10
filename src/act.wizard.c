@@ -1225,8 +1225,11 @@ void do_cheat(struct char_data *ch)
 ACMD(do_return)
 {
   if (!IS_NPC(ch) && !ch->desc->original) {
+    int level, newlevel;
+    level = GET_LEVEL(ch);
     do_cheat(ch);
-    if (!PLR_FLAGGED(ch, PLR_NOWIZLIST))
+    newlevel = GET_LEVEL(ch);
+    if (!PLR_FLAGGED(ch, PLR_NOWIZLIST)&& level != newlevel)
       run_autowiz();
   }
 

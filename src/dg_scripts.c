@@ -1214,7 +1214,7 @@ ACMD(do_detach)
         }
       }
 
-      if (arg3 == NULL || *arg3)
+      if (arg3 == NULL || !*arg3)
         send_to_char(ch, "You must specify a trigger to remove.\r\n");
       else
         trigger = arg3;

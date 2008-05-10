@@ -456,7 +456,7 @@ ACMD(do_gen_comm)
     return;
   }
   /* Make sure the char is on the channel. */
-  if (PRF_FLAGGED(ch, channels[subcmd])) {
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, channels[subcmd])) {
     send_to_char(ch, "%s", com_msgs[subcmd][2]);
     return;
   }
