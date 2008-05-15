@@ -3,6 +3,10 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[May 15 2008] - Rumble
+  Updated autorun to fix a random syslog numbering bug. (thanks Zizazat)
+[May 10 2008] - Rumble
+  Fixed another typo, added a check for !NPC do_gen_comm, and changed do_return to only run autowiz if level changes. (thanks Fizban)
 [May 08 2008] - Rumble
   Cleaned up numerous warnings found by adding -Wextra -Wcast-qual -Wshadow -Wno-unused flags.
 [May 05 2008] - Rumble

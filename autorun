@@ -108,18 +108,18 @@ proc_syslog () {
 
   # Find the # to set the new log file to.
   if [ -s log/syslog.$BACKLOGS ]; then
-    declare -i newlog=$BACKLOGS+1
+    newlog=$(expr $BACKLOGS + 1)
   else
-    declare -i newlog=1
-    while [ -s log/syslog.$newlog ]; do newlog=$newlog+1; done
+    newlog=1 
+    while [ -s log/syslog.$newlog ]; do newlog=$(expr $newlog + 1); done 
   fi
 
   # Rotate the logs.
-  declare -i y=2
+  y=2
   while [ $y -lt $newlog ]; do
-    declare -i x=$y-1
+    x=$(expr $y - 1)
     mv -f log/syslog.$y log/syslog.$x
-    y=$y+1
+    y=$(expr $y + 1)
   done
   mv -f syslog log/syslog.$newlog
 }

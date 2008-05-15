@@ -100,7 +100,7 @@ ACMD(do_oasis_qedit)
     number = atoi(buf1);
 
   /****************************************************************************/
-  /** Check that the guild isn't already being edited.                       **/
+  /** Check that the quest isn't already being edited.                       **/
   /****************************************************************************/
   for (d = descriptor_list; d; d = d->next) {
     if (STATE(d) == CON_QEDIT) {

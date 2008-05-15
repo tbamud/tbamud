@@ -1525,9 +1525,7 @@ void advance_level(struct char_data *ch)
  * performance hit because it's not used very often. */
 int backstab_mult(int level)
 {
-  if (level <= 0)
-    return 1;	  /* level 0 */
-  else if (level <= 7)
+  if (level <= 7)
     return 2;	  /* level 1 - 7 */
   else if (level <= 13)
     return 3;	  /* level 8 - 13 */
