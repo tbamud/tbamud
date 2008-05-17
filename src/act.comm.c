@@ -358,7 +358,7 @@ ACMD(do_page)
 	send_to_char(ch, "You will never be godly enough to do that!\r\n");
       return;
     }
-    if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD))) {
+    if ((vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD))) {
       act(buf, FALSE, ch, 0, vict, TO_VICT);
       if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
 	send_to_char(ch, "%s", CONFIG_OK);
