@@ -3,9 +3,11 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
-[May 17 2008]
+[May 17 2008] - Rumble
+  Fixed a possible crash bug in qedit. (thanks Jamdog)
   Bug fix: Page command was paging when the character was not found and sending a NOPERSON message when he was found.
 [May 15 2008] - Rumble
+  Fixed a bug where deleting the last quest in qedit caused a crash. (thanks Jamdog)
   Updated autorun to fix a random syslog numbering bug. (thanks Zizazat)
 [May 10 2008] - Rumble
   Fixed another typo, added a check for !NPC do_gen_comm, and changed do_return to only run autowiz if level changes. (thanks Fizban)

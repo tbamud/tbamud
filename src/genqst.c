@@ -107,10 +107,11 @@ int add_quest(struct aq_data *nqst)
     copy_quest(&aquest_table[rnum], nqst, FALSE);
   }
   /* Make sure we assign spec procs to the questmaster */
-  if (mob_index[QST_MASTER(rnum)].func &&
+  if (QST_MASTER(rnum) != NOBODY && mob_index[QST_MASTER(rnum)].func &&
       mob_index[QST_MASTER(rnum)].func != questmaster)
     QST_FUNC(rnum) = mob_index[QST_MASTER(rnum)].func;
-  mob_index[QST_MASTER(rnum)].func = questmaster;
+  if(QST_MASTER(rnum) != NOBODY) 
+    mob_index[QST_MASTER(rnum)].func = questmaster;
 
   /* And make sure we save the updated quest information to disk */
   if (rznum != NOWHERE)
@@ -145,7 +146,10 @@ int delete_quest(qst_rnum rnum)
     aquest_table[i] = aquest_table[i + 1];
   }
   total_quests--;
-  RECREATE(aquest_table, struct aq_data, total_quests);
+  if (total_quests > 0)
+    RECREATE(aquest_table, struct aq_data, total_quests);
+  else
+    free(aquest_table);
 
   if (rznum != NOWHERE)
      add_to_save_list(zone_table[rznum].number, SL_QST);
