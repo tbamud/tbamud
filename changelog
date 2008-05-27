@@ -3,6 +3,13 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[May 27 2008] - Rumble
+  Fixed list_obj_to_char from only checking invisibility on first object of the same vnum. (thanks Laoris)
+  Added object stacking when looking at a character's inventory. (thanks Jamdog)
+[May 22 2008] - Rumble
+  Added zone name to where command. (thanks Jamdog)
+[May 21 2008] - Rumble
+  Rewrite of void script_vlog to prevent possible crash bug on some OS's. (thanks Jamdog)
 [May 17 2008] - Rumble
   Fixed a possible crash bug in qedit. (thanks Jamdog)
   Bug fix: Page command was paging when the character was not found and sending a NOPERSON message when he was found.

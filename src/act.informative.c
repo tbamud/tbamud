@@ -170,37 +170,53 @@ static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
     send_to_char(ch, " ..It emits a faint humming sound!");
 }
 
-static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show)
-{
-  struct obj_data *i, *j;
-  bool found;
-  int num;
+static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show) 
+{ 
+  struct obj_data *i, *j, *display; 
+  bool found; 
+  int num; 
 
-  found = FALSE;
+  found = FALSE; 
 
-  for (i = list; i; i = i->next_content) {
-    num = 0;
-    for (j = list; j != i; j = j->next_content)
-      if (!strcmp(j->short_description, i->short_description) && (!strcmp(j->name, i->name)))
-      break;
-    if (j != i)
-      continue;
-    for (j = i; j; j = j->next_content)
-      if (!strcmp(j->short_description, i->short_description) && (!strcmp(j->name, i->name)))
-        num++;
-    if (CAN_SEE_OBJ(ch, i) && (*i->description != '.' || (IS_NPC(ch) || PRF_FLAGGED(ch, PRF_HOLYLIGHT)))) {
+  /* Loop through the list of objects */ 
+  for (i = list; i; i = i->next_content) { 
+    num = 0; 
+
+    /* Check the list to see if we've already counted this object */ 
+    for (j = list; j != i; j = j->next_content) 
+      if ((j->short_description == i->short_description && j->name == i->name) || 
+          (!strcmp(j->short_description, i->short_description) && !strcmp(j->name, i->name))) 
+        break; /* found a matching object */ 
+    if (j != i) 
+      continue; /* we counted object i earlier in the list */ 
+
+    /* Count matching objects, including this one */ 
+    for (display = j = i; j; j = j->next_content) 
+      /* This if-clause should be exactly the same as the one in the loop above */ 
+      if ((j->short_description == i->short_description && j->name == i->name) || 
+          (!strcmp(j->short_description, i->short_description) && !strcmp(j->name, i->name))) 
+        if (CAN_SEE_OBJ(ch, j)) { 
+          ++num; 
+          /* If the original item can't be seen, switch it for this one */ 
+          if (display == i && !CAN_SEE_OBJ(ch, display)) 
+            display = j; 
+        } 
+
+    /* When looking in room, hide objects starting with '.', except for holylight */ 
+    if (num > 0 && (mode != SHOW_OBJ_LONG || *display->description != '.' || 
+        (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_HOLYLIGHT)))) { 
       if (mode == SHOW_OBJ_LONG) 
-        send_to_char(ch, "%s", CCGRN(ch, C_NRM));  
-      if (num != 1)
-        send_to_char(ch, "(%2i) ", num);
-      show_obj_to_char(i, ch, mode);
-      send_to_char(ch, "%s", CCNRM(ch, C_NRM));
-      found = TRUE;
-    }
-  }
-  if (!found && show)
-    send_to_char(ch, "  Nothing.\r\n");
-}
+        send_to_char(ch, "%s", CCGRN(ch, C_NRM)); 
+      if (num != 1) 
+        send_to_char(ch, "(%2i) ", num); 
+      show_obj_to_char(display, ch, mode); 
+      send_to_char(ch, "%s", CCNRM(ch, C_NRM)); 
+      found = TRUE; 
+    } 
+  } 
+  if (!found && show) 
+    send_to_char(ch, "  Nothing.\r\n"); 
+} 
 
 static void diag_char_to_char(struct char_data *i, struct char_data *ch)
 {
@@ -261,18 +277,9 @@ static void look_at_char(struct char_data *i, struct char_data *ch)
 	show_obj_to_char(GET_EQ(i, j), ch, SHOW_OBJ_SHORT);
       }
   }
-  if (ch != i && (IS_THIEF(ch) || GET_LEVEL(ch) >= LVL_IMMORT)) {
-    found = FALSE;
-    act("\r\nYou attempt to peek at $s inventory:", FALSE, i, 0, ch, TO_VICT);
-    for (tmp_obj = i->carrying; tmp_obj; tmp_obj = tmp_obj->next_content) {
-      if (CAN_SEE_OBJ(ch, tmp_obj) && (rand_number(0, 20) < GET_LEVEL(ch))) {
-	show_obj_to_char(tmp_obj, ch, SHOW_OBJ_SHORT);
-	found = TRUE;
-      }
-    }
-
-    if (!found)
-      send_to_char(ch, "You can't see anything.\r\n");
+  if (ch != i && (IS_THIEF(ch) || GET_LEVEL(ch) >= LVL_IMMORT)) { 
+    act("\r\nYou attempt to peek at $s inventory:", FALSE, i, 0, ch, TO_VICT); 
+    list_obj_to_char(i->carrying, ch, SHOW_OBJ_SHORT, TRUE); 
   }
 }
 
@@ -1521,9 +1528,11 @@ static void perform_mortal_where(struct char_data *ch, char *arg)
 {
   struct char_data *i;
   struct descriptor_data *d;
+  int j;
 
   if (!*arg) {
-    send_to_char(ch, "Players in your Zone\r\n--------------------\r\n");
+    j = world[(IN_ROOM(ch))].zone; 
+    send_to_char(ch, "Players in %s@n.\r\n--------------------\r\n", zone_table[j].name); 
     for (d = descriptor_list; d; d = d->next) {
       if (STATE(d) != CON_PLAYING || d->character == ch)
 	continue;
@@ -1587,17 +1596,21 @@ static void perform_immort_where(struct char_data *ch, char *arg)
   int num = 0, found = 0;
 
   if (!*arg) {
-    send_to_char(ch, "Players\r\n-------\r\n");
+    send_to_char(ch, "Players  Room    Location                       Zone\r\n"); 
+    send_to_char(ch, "-------- ------- ------------------------------ -------------------\r\n"); 
     for (d = descriptor_list; d; d = d->next)
       if (IS_PLAYING(d)) {
         i = (d->original ? d->original : d->character);
         if (i && CAN_SEE(ch, i) && (IN_ROOM(i) != NOWHERE)) {
           if (d->original)
-            send_to_char(ch, "%-20s%s - [%5d] %s%s (in %s%s)\r\n",
+            send_to_char(ch, "%-8s%s - [%5d] %s%s (in %s%s)\r\n",
               GET_NAME(i), QNRM, GET_ROOM_VNUM(IN_ROOM(d->character)),
               world[IN_ROOM(d->character)].name, QNRM, GET_NAME(d->character), QNRM);
           else
-            send_to_char(ch, "%-20s%s - [%5d] %s%s\r\n", GET_NAME(i), QNRM, GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM);
+            send_to_char(ch, "%-8s%s %s[%s%5d%s]%s %-*s%s %s%s\r\n", GET_NAME(i), QNRM,
+              QCYN, QYEL, GET_ROOM_VNUM(IN_ROOM(i)), QCYN, QNRM, 
+              30+count_color_chars(world[IN_ROOM(i)].name), world[IN_ROOM(i)].name, QNRM, 
+              zone_table[(world[IN_ROOM(i)].zone)].name, QNRM); 
         }
       }
   } else {

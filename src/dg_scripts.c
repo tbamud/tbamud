@@ -1290,26 +1290,24 @@ void script_vlog(const char *format, va_list args)
   char output[MAX_STRING_LENGTH];
   struct descriptor_data *i;
 
-  snprintf(output, sizeof(output), "SCRIPT ERR: %s", format);
+  /* parse the args, making the error message */ 
+  vsnprintf(output, sizeof(output) - 2, format, args); 
 
-  basic_mud_vlog(output, args);
+  /* Save to the syslog file */ 
+  basic_mud_log("SCRIPT ERROR: %s", output); 
 
-  /* the rest is mostly a rip from basic_mud_log() */
-  strcpy(output, "[ ");            /* strcpy: OK */
-  vsnprintf(output + 2, sizeof(output) - 6, format, args);
-  strcat(output, " ]\r\n");        /* strcat: OK */
+  /* And send to imms */ 
+  for (i = descriptor_list; i; i = i->next) { 
+    if (STATE(i) != CON_PLAYING || IS_NPC(i->character)) /* switch */ 
+      continue; 
+    if (GET_LEVEL(i->character) < LVL_BUILDER) 
+      continue; 
+    if (PLR_FLAGGED(i->character, PLR_WRITING)) 
+      continue; 
+    if (NRM > (PRF_FLAGGED(i->character, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(i->character, PRF_LOG2) ? 2 : 0)) 
+      continue; 
 
-  for (i = descriptor_list; i; i = i->next) {
-    if (STATE(i) != CON_PLAYING || IS_NPC(i->character)) /* switch */
-      continue;
-    if (GET_LEVEL(i->character) < LVL_BUILDER)
-      continue;
-    if (PLR_FLAGGED(i->character, PLR_WRITING))
-      continue;
-    if (NRM > (PRF_FLAGGED(i->character, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(i->character, PRF_LOG2) ? 2 : 0))
-      continue;
-
-    send_to_char(i->character, "%s%s%s", CCGRN(i->character, C_NRM), output, CCNRM(i->character, C_NRM));
+    send_to_char(i->character, "%s[ %s ]%s\r\n", CCGRN(i->character, C_NRM), output, CCNRM(i->character, C_NRM)); 
   }
 }
 
