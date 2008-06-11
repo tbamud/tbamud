@@ -3044,3 +3044,16 @@ bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *
 
   return FALSE; 
 }
+
+int trig_is_attached(struct script_data *sc, int trig_num) 
+{ 
+  trig_data *t; 
+
+  if (!sc || !TRIGGERS(sc)) return 0; 
+
+  for (t = TRIGGERS(sc); t; t = t->next) 
+    if (GET_TRIG_VNUM(t) == trig_num) 
+      return 1; 
+
+  return 0; 
+}

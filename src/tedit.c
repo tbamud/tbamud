@@ -17,6 +17,8 @@
 #include "improved-edit.h"
 #include "modify.h"
 
+extern time_t motdmod; 
+extern time_t newsmod; 
 
 void tedit_string_cleanup(struct descriptor_data *d, int terminator)
 {
@@ -38,6 +40,10 @@ void tedit_string_cleanup(struct descriptor_data *d, int terminator)
       fclose(fl);
       mudlog(CMP, LVL_GOD, TRUE, "OLC: %s saves '%s'.", GET_NAME(d->character), storage);
       write_to_output(d, "Saved.\r\n");
+      if (!strcmp(storage, NEWS_FILE)) 
+        newsmod = time(0); 
+      if (!strcmp(storage, MOTD_FILE)) 
+        motdmod = time(0); 
     }
     break;
   case STRINGADD_ABORT:

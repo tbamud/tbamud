@@ -47,6 +47,7 @@ static void obj_checkload(struct char_data *ch, obj_vnum ovnum);
 static void trg_checkload(struct char_data *ch, trig_vnum tvnum);
 static void mod_llog_entry(struct last_entry *llast,int type);
 
+const char *get_spec_func_name(SPECIAL(*func));
 
 int purge_room(room_rnum room)
 {
@@ -496,7 +497,7 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
 	  CCNRM(ch, C_NRM), IN_ROOM(ch), (long) rm->number + ROOM_ID_BASE, buf2);
 
   sprintbitarray(rm->room_flags, room_bits, RF_ARRAY_MAX, buf2);
-  send_to_char(ch, "SpecProc: %s, Flags: %s\r\n", rm->func == NULL ? "None" : "Exists", buf2);
+  send_to_char(ch, "SpecProc: %s, Flags: %s\r\n", rm->func == NULL ? "None" : get_spec_func_name(rm->func), buf2); 
 
   send_to_char(ch, "Description:\r\n%s", rm->description ? rm->description : "  None.\r\n");
 
@@ -583,8 +584,8 @@ static void do_stat_object(struct char_data *ch, struct obj_data *j)
   vnum = GET_OBJ_VNUM(j);
   sprinttype(GET_OBJ_TYPE(j), item_types, buf, sizeof(buf));
   send_to_char(ch, "VNum: [%s%5d%s], RNum: [%5d], Idnum: [%5ld], Type: %s, SpecProc: %s\r\n",
-	CCGRN(ch, C_NRM), vnum, CCNRM(ch, C_NRM), GET_OBJ_RNUM(j), GET_ID(j), buf,
-	GET_OBJ_SPEC(j) ? "Exists" : "None");
+    CCGRN(ch, C_NRM), vnum, CCNRM(ch, C_NRM), GET_OBJ_RNUM(j), GET_ID(j), buf,
+    GET_OBJ_SPEC(j) ? (get_spec_func_name(GET_OBJ_SPEC(j))) : "None");
 
   send_to_char(ch, "L-Desc: '%s%s%s'\r\n", CCYEL(ch, C_NRM),
 	  j->description ? j->description : "<None>",
@@ -834,7 +835,7 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
 
   if (IS_MOB(k))
     send_to_char(ch, "Mob Spec-Proc: %s, NPC Bare Hand Dam: %dd%d\r\n",
-	    (mob_index[GET_MOB_RNUM(k)].func ? "Exists" : "None"),
+        (mob_index[GET_MOB_RNUM(k)].func ? get_spec_func_name(mob_index[GET_MOB_RNUM(k)].func) : "None"),
 	    k->mob_specials.damnodice, k->mob_specials.damsizedice);
 
   for (i = 0, j = k->carrying; j; j = j->next_content, i++);
@@ -1517,11 +1518,30 @@ ACMD(do_restore)
 {
   char buf[MAX_INPUT_LENGTH];
   struct char_data *vict;
+  struct descriptor_data *j;
   int i;
 
   one_argument(argument, buf);
   if (!*buf)
     send_to_char(ch, "Whom do you wish to restore?\r\n");
+   else if (is_abbrev(buf, "all")) 
+   { 
+    mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s restored all",GET_NAME(ch)); 
+ 
+     for (j = descriptor_list; j; j = j->next) 
+    { 
+      if (!IS_PLAYING(j) || !(vict = j->character) || GET_LEVEL(vict) >= LVL_IMMORT) 
+     continue; 
+ 
+      GET_HIT(vict)  = GET_MAX_HIT(vict); 
+      GET_MANA(vict) = GET_MAX_MANA(vict); 
+      GET_MOVE(vict) = GET_MAX_MOVE(vict); 
+ 
+      update_pos(vict); 
+      send_to_char(ch, "%s has been fully healed.\r\n", GET_NAME(vict)); 
+      act("You have been fully healed by $N!", FALSE, vict, 0, ch, TO_CHAR); 
+    } 
+  }
   else if (!(vict = get_char_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
     send_to_char(ch, "%s", CONFIG_NOPERSON);
   else if (!IS_NPC(vict) && ch != vict && GET_LEVEL(vict) >= GET_LEVEL(ch))

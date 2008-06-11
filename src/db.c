@@ -36,6 +36,7 @@
 #include "modify.h"
 #include "shop.h"
 #include "quest.h"
+#include <sys/stat.h>
 
 /*  declarations of most of the 'global' variables */
 struct config_data config_info; /* Game configuration list.	 */
@@ -106,6 +107,9 @@ struct help_index_element *help_table = NULL;
 
 struct social_messg *soc_mess_list = NULL;      /* list of socials */
 int top_of_socialt = -1;                        /* number of socials */
+
+ time_t newsmod; /* Time news file was last modified. */ 
+ time_t motdmod; /* Time motd file was last modified. */
 
 struct time_info_data time_info;  /* the infomation about the time    */
 struct weather_data weather_info;	/* the infomation about the weather */
@@ -2878,6 +2882,7 @@ static int file_to_string(const char *name, char *buf)
   FILE *fl;
   char tmp[READ_SIZE + 3];
   int len;
+  struct stat statbuf;
 
   *buf = '\0';
 
@@ -2885,6 +2890,18 @@ static int file_to_string(const char *name, char *buf)
     log("SYSERR: reading %s: %s", name, strerror(errno));
     return (-1);
   }
+
+   /* Grab the date/time the file was last edited */ 
+   if (!strcmp(name, NEWS_FILE)) 
+   { 
+     fstat(fileno(fl), &statbuf); 
+     newsmod = statbuf.st_mtime; 
+   } 
+   if (!strcmp(name, MOTD_FILE)) 
+   { 
+     fstat(fileno(fl), &statbuf); 
+     motdmod = statbuf.st_mtime; 
+   }
 
   for (;;) {
     if (!fgets(tmp, READ_SIZE, fl))	/* EOF check */

@@ -85,6 +85,9 @@
 #define INVALID_SOCKET (-1)
 #endif
 
+extern time_t motdmod; 
+extern time_t newsmod;
+
 /* locally defined globals, used externally */
 struct descriptor_data *descriptor_list = NULL;   /* master desc list */
 int buf_largecount = 0;   /* # of large buffers which exist */
@@ -1211,6 +1214,20 @@ static char *make_prompt(struct descriptor_data *d)
       if (count >= 0)
         len += count;
     }
+
+     if (GET_LAST_NEWS(d->character) < newsmod) 
+     { 
+       count = snprintf(prompt + len, sizeof(prompt) - len, "(news) "); 
+       if (count >= 0) 
+         len += count; 
+     } 
+ 
+     if (GET_LAST_MOTD(d->character) < motdmod) 
+     { 
+       count = snprintf(prompt + len, sizeof(prompt) - len, "(motd) "); 
+       if (count >= 0) 
+         len += count; 
+     }
 
     if (len < sizeof(prompt))
       strncat(prompt, "> ", sizeof(prompt) - len - 1);	/* strncat: OK */

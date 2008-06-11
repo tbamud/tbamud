@@ -3,6 +3,13 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[Jun 11 2008] - Rumble
+  Added notification via prompt for new MOTD and news entries. (thanks Jamdog)
+  Added all option to the restore command. (thanks Jamdog)
+  Added new trigger variable hasattached. (thanks Fizban)
+[Jun 10 2008] - Rumble
+  Added spec proc type under stat. (thanks Jamdog)
+  Only allow immortals to talk while invis and be displayed as "someone." (thanks Frenze)
 [May 27 2008] - Rumble
   Fixed list_obj_to_char from only checking invisibility on first object of the same vnum. (thanks Laoris)
   Added object stacking when looking at a character's inventory. (thanks Jamdog)

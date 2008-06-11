@@ -669,6 +669,14 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             else
               snprintf(str, slen, "%d", char_has_item(subfield, c));
           }
+          else if (!str_cmp(field, "hasattached")) { 
+            if (!(subfield && *subfield) || !IS_NPC(c)) 
+              *str = '\0'; 
+            else { 
+              i = atoi(subfield); 
+              snprintf(str, slen, "%d", trig_is_attached(SCRIPT(c), i)); 
+            } 
+          } 
           else if (!str_cmp(field, "hisher"))
             snprintf(str, slen, "%s", HSHR(c));
 
@@ -1118,6 +1126,14 @@ o->contains) ? "1" : "0"));
             else
             	strcpy(str, "0");
           }
+          else if (!str_cmp(field, "hasattached")) { 
+            if (!(subfield && *subfield)) 
+              *str = '\0'; 
+            else { 
+              i = atoi(subfield); 
+              snprintf(str, slen, "%d", trig_is_attached(SCRIPT(o), i)); 
+            } 
+          }
           break;
         case 'i':
           if (!str_cmp(field, "id"))
@@ -1308,6 +1324,14 @@ o->contains) ? "1" : "0"));
           snprintf(str, slen, "%s", sky_look[weather_info.sky]);
         else
           *str = '\0';
+      }
+      else if (!str_cmp(field, "hasattached")) { 
+        if (!(subfield && *subfield)) 
+          *str = '\0'; 
+        else { 
+          i = atoi(subfield); 
+          snprintf(str, slen, "%d", trig_is_attached(SCRIPT(r), i)); 
+        } 
       }
       else if (!str_cmp(field, "zonenumber")) 
         snprintf(str, slen, "%d",  zone_table[r->zone].number); 

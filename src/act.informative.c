@@ -251,7 +251,6 @@ static void diag_char_to_char(struct char_data *i, struct char_data *ch)
 static void look_at_char(struct char_data *i, struct char_data *ch)
 {
   int j, found;
-  struct obj_data *tmp_obj;
 
   if (!ch->desc)
     return;
@@ -1480,6 +1479,7 @@ ACMD(do_gen_ps)
     page_string(ch->desc, credits, 0);
     break;
   case SCMD_NEWS:
+    GET_LAST_NEWS(ch) = time(0); 
     page_string(ch->desc, news, 0);
     break;
   case SCMD_INFO:
@@ -1498,6 +1498,7 @@ ACMD(do_gen_ps)
     page_string(ch->desc, policies, 0);
     break;
   case SCMD_MOTD:
+    GET_LAST_MOTD(ch) = time(0); 
     page_string(ch->desc, motd, 0);
     break;
   case SCMD_IMOTD:

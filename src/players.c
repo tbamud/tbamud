@@ -264,7 +264,9 @@ int load_char(const char *name, struct char_data *ch)
     GET_QUEST_COUNTER(ch) = PFDEF_QUESTCOUNT;
     GET_QUEST(ch) = PFDEF_CURRQUEST;
     GET_NUM_QUESTS(ch) = PFDEF_COMPQUESTS;
-    
+    GET_LAST_MOTD(ch) = PFDEF_LASTMOTD; 
+    GET_LAST_NEWS(ch) = PFDEF_LASTNEWS;
+   
     for (i = 0; i < AF_ARRAY_MAX; i++)
       AFF_FLAGS(ch)[i] = PFDEF_AFFFLAGS;
     for (i = 0; i < PM_ARRAY_MAX; i++)
@@ -353,6 +355,8 @@ int load_char(const char *name, struct char_data *ch)
 	     if (!strcmp(tag, "Last"))	ch->player.time.logon	= atol(line);
   else if (!strcmp(tag, "Lern"))	GET_PRACTICES(ch)	= atoi(line);
 	else if (!strcmp(tag, "Levl"))	GET_LEVEL(ch)		= atoi(line);
+        else if (!strcmp(tag, "Lmot"))   GET_LAST_MOTD(ch)   = atoi(line); 
+        else if (!strcmp(tag, "Lnew"))   GET_LAST_NEWS(ch)   = atoi(line);
 	break;
 
       case 'M':
@@ -539,6 +543,11 @@ void save_char(struct char_data * ch)
   fprintf(fl, "Brth: %ld\n", (long)ch->player.time.birth);
   fprintf(fl, "Plyd: %d\n",  ch->player.time.played);
   fprintf(fl, "Last: %ld\n", (long)ch->player.time.logon);
+
+  if (GET_LAST_MOTD(ch) != PFDEF_LASTMOTD) 
+    fprintf(fl, "Lmot: %d\n", (int)GET_LAST_MOTD(ch)); 
+  if (GET_LAST_NEWS(ch) != PFDEF_LASTNEWS) 
+    fprintf(fl, "Lnew: %d\n", (int)GET_LAST_NEWS(ch));
 
   if (GET_HOST(ch))				fprintf(fl, "Host: %s\n", GET_HOST(ch));
   if (GET_HEIGHT(ch)	   != PFDEF_HEIGHT)	fprintf(fl, "Hite: %d\n", GET_HEIGHT(ch));

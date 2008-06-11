@@ -502,6 +502,8 @@ void char_from_furniture(struct char_data *ch);
 #define GET_PREF(ch)      ((ch)->pref)
 /** Get host name or ip of ch. */
 #define GET_HOST(ch)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->host))
+#define GET_LAST_MOTD(ch)       CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.lastmotd)) 
+#define GET_LAST_NEWS(ch)       CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.lastnews)) 
 /** Get channel history i for ch. */ 
 #define GET_HISTORY(ch, i)      CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.comm_hist[i]))
 /** Return the page length (height) for ch. */
@@ -722,7 +724,7 @@ void char_from_furniture(struct char_data *ch);
     CAN_SEE_OBJ((ch),(obj)))
 
 /** If vict can see ch, return ch name, else return "someone". */
-#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : "someone")
+#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : (GET_LEVEL(ch) > LVL_IMMORT ? "an immortal" : "someone")) 
 
 /** If vict can see obj, return obj short description, else return
  * "something". */

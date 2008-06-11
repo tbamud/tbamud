@@ -298,6 +298,7 @@ bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *
 void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count);
 void save_char_vars_ascii(FILE *file, struct char_data *ch);
 int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_arg);
+int trig_is_attached(struct script_data *sc, int trig_num);
 
 /* To maintain strict-aliasing we'll have to do this trick with a union */
 /* Thanks to Chris Gilbert for reminding me that there are other options. */
