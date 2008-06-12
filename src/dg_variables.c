@@ -301,6 +301,8 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
     return;
   }
 
+  else if (vd && text_processed(field, subfield, vd, str, slen)) return;
+
   else {
     if (vd) {
       name = vd->value;
@@ -523,9 +525,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
     }
 
     if (c) {
-      if (text_processed(field, subfield, vd, str, slen)) return;
-
-      else if (!str_cmp(field, "global")) { /* get global of something else */
+      if (!str_cmp(field, "global")) { /* get global of something else */ 
         if (IS_NPC(c) && c->script) {
           find_replacement(go, c->script, NULL, MOB_TRIGGER,
             subfield, NULL, NULL, str, slen);
@@ -1051,7 +1051,6 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
     } /* if (c) ...*/
 
     else if (o) {
-      if (text_processed(field, subfield, vd, str, slen)) return;
 
       *str = '\x1';
       switch (LOWER(*field)) {
@@ -1248,7 +1247,6 @@ o->contains) ? "1" : "0"));
     } /* if (o) ... */
 
     else if (r) {
-      if (text_processed(field, subfield, vd, str, slen)) return;
 
       /* special handling of the void, as it stores all 'full global' variables */
       if (r->number == 0) {

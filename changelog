@@ -3,6 +3,10 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[Jun 12 2008] - Rumble
+  Fixed toggle quest to toggle correctly.
+  Fixed bug in dg find_replacement to call text_processed at the beginning, regardless of whether something matching the variable is found or not. (thanks Laoris)
+  Fixed log error that was using rnum instead of vnum. (thanks Jamdog)
 [Jun 11 2008] - Rumble
   Added notification via prompt for new MOTD and news entries. (thanks Jamdog)
   Added all option to the restore command. (thanks Jamdog)

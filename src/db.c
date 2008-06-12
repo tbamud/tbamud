@@ -1155,7 +1155,7 @@ void parse_room(FILE *fl, int virtual_nr)
   snprintf(buf2, sizeof(buf2), "room #%d", virtual_nr);
 
   if (virtual_nr < zone_table[zone].bot) {
-    log("SYSERR: Room #%d is below zone %d.", virtual_nr, zone);
+    log("SYSERR: Room #%d is below zone %d (bot=%d, top=%d).", virtual_nr, zone_table[zone].number, zone_table[zone].bot, zone_table[zone].top); 
     exit(1);
   }
   while (virtual_nr > zone_table[zone].top)
