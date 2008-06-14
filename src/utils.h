@@ -671,7 +671,8 @@ void char_from_furniture(struct char_data *ch);
 
 /** Defines if there is enough light for sub to see in. */
 #define LIGHT_OK(sub)	(!AFF_FLAGGED(sub, AFF_BLIND) && \
-   (IS_LIGHT(IN_ROOM(sub)) || AFF_FLAGGED((sub), AFF_INFRAVISION)))
+   (IS_LIGHT(IN_ROOM(sub)) || AFF_FLAGGED((sub), AFF_INFRAVISION) || \
+   GET_LEVEL(sub) >= LVL_IMMORT))
 
 /** Defines if sub character can see the invisible obj character. */
 #define INVIS_OK(sub, obj) \
