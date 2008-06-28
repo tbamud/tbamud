@@ -31,6 +31,68 @@ static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin , o
 static void list_shops(struct char_data *ch  , zone_rnum rnum, shop_vnum vmin, shop_vnum vmax);
 static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax);
 
+void perform_mob_flag_list(struct char_data * ch, char *arg)
+{
+  int num, mob_flag, found = 0;
+  struct char_data *mob;
+
+  mob_flag = atoi(arg);
+
+  if (mob_flag < 0 || mob_flag > NUM_MOB_FLAGS) {
+    send_to_char(ch, "Invalid flag number!\r\n");
+    return;
+  }
+
+  send_to_char(ch, "Listing mobiles with %s%s%s flag set.\r\n", QYEL, action_bits[mob_flag], QNRM);
+
+  for(num=0;num<=top_of_mobt;num++) {
+    if(IS_SET_AR((mob_proto[num].char_specials.saved.act), mob_flag)) {
+
+      if ((mob = read_mobile(num, REAL)) != NULL) {
+        char_to_room(mob, 0);
+        send_to_char(ch,"%s%3d. %s[%s%5d%s]%s Level %s%-3d%s %s%s\r\n", CCNRM(ch, C_NRM),++found,
+                      CCCYN(ch, C_NRM), CCYEL(ch, C_NRM), GET_MOB_VNUM(mob), CCCYN(ch, C_NRM), CCNRM(ch, C_NRM),
+                      CCYEL(ch, C_NRM), GET_LEVEL(mob), CCNRM(ch, C_NRM), GET_NAME(mob), CCNRM(ch, C_NRM));
+        extract_char(mob); /* Finished with the mob - remove it from the MUD */
+      }
+    }
+  }
+  if (!found)
+    send_to_char(ch,"None Found!\r\n");
+  return;
+}
+
+void perform_mob_level_list(struct char_data * ch, char *arg)
+{
+  int num, mob_level, found = 0;
+  struct char_data *mob;
+
+  mob_level = atoi(arg);
+
+  if (mob_level < 0 || mob_level >= LVL_IMMORT) {
+    send_to_char(ch, "Invalid mob level!\r\n");
+    return;
+  }
+
+  send_to_char(ch, "Listing mobiles of level %s%d%s\r\n", QYEL, mob_level, QNRM);
+  for(num=0;num<=top_of_mobt;num++) {
+    if((mob_proto[num].player.level) == mob_level) {
+
+      if ((mob = read_mobile(num, REAL)) != NULL) {
+        char_to_room(mob, 0);
+        send_to_char(ch,"%s%3d. %s[%s%5d%s]%s %s%s\r\n", CCNRM(ch, C_NRM),++found,
+                      CCCYN(ch, C_NRM), CCYEL(ch, C_NRM), GET_MOB_VNUM(mob), CCCYN(ch, C_NRM), CCNRM(ch, C_NRM),
+                      GET_NAME(mob), CCNRM(ch, C_NRM));
+        extract_char(mob); /* Finished with the mob - remove it from the MUD */
+      }
+    }
+  }
+  if (!found)
+    send_to_char(ch,"None Found!\r\n");
+
+  return;
+}
+
 /* Ingame Commands */
 ACMD(do_oasis_list)
 {
@@ -39,6 +101,7 @@ ACMD(do_oasis_list)
   room_rnum vmax = NOWHERE;
   char smin[MAX_INPUT_LENGTH];
   char smax[MAX_INPUT_LENGTH];
+  char arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
 
   two_arguments(argument, smin, smax);
 
@@ -63,7 +126,34 @@ ACMD(do_oasis_list)
   }
 
   switch (subcmd) {
-    case SCMD_OASIS_MLIST: list_mobiles(ch, rzone, vmin, vmax); break;
+    case SCMD_OASIS_MLIST:
+      
+      two_arguments(argument, arg, arg2);
+      
+   if (is_abbrev(arg, "level") || is_abbrev(arg, "flags")) {
+    
+    int  i;
+    
+    if (!*arg2) {
+    send_to_char(ch, "Which mobile flag or level do you want to list?\r\n");
+    for (i=0; i<NUM_MOB_FLAGS; i++)
+    {
+      send_to_char(ch, "%s%2d%s-%s%-14s%s", CCNRM(ch, C_NRM), i, CCNRM(ch, C_NRM), CCYEL(ch, C_NRM), action_bits[i], CCNRM(ch, C_NRM));
+      if (!((i+1)%4))  send_to_char(ch, "\r\n");
+    }
+    send_to_char(ch, "\r\n");
+    send_to_char(ch, "Usage: %smoblist <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
+    send_to_char(ch, "       %smoblist level <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
+    send_to_char(ch, "Displays mobs with the selected flag, or at the selected level\r\n\r\n");
+
+    return;
+    } 
+    if (is_abbrev(arg, "level"))
+      perform_mob_level_list(ch, arg2); 
+    else 
+      perform_mob_flag_list(ch, arg2); 
+  } else   
+    list_mobiles(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_OLIST: list_objects(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_RLIST: list_rooms(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_TLIST: list_triggers(ch, rzone, vmin, vmax); break;

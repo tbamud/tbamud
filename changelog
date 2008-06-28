@@ -3,6 +3,8 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[Jun 28 2008] - Fizban
+  Merged Jamdog's moblist code into the pre-existing mlist command. (thanks Jamdog)
 [Jun 14 2008] - Rumble
   Made immortals immune to blinding.
   Fixed bug in qedit where quest completion would try to load an object with vnum NOTHING. (thanks Jamdog)
