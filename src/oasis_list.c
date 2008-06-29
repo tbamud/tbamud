@@ -142,8 +142,8 @@ ACMD(do_oasis_list)
       if (!((i+1)%4))  send_to_char(ch, "\r\n");
     }
     send_to_char(ch, "\r\n");
-    send_to_char(ch, "Usage: %smoblist <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
-    send_to_char(ch, "       %smoblist level <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
+    send_to_char(ch, "Usage: %smlist flags <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
+    send_to_char(ch, "       %smlist level <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
     send_to_char(ch, "Displays mobs with the selected flag, or at the selected level\r\n\r\n");
 
     return;
