@@ -1963,6 +1963,14 @@ static int process_input(struct descriptor_data *t)
 	t->history_pos = 0;
     }
 
+   /* The '--' command flushes the queue. */ 
+   if ( (*tmp == '-') && (*(tmp+1) == '-') && !(*(tmp+2)) ) 
+   { 
+     write_to_output(t, "All queued commands cancelled.\r\n"); 
+     flush_queues(t);  /* Flush the command queue */ 
+     return (1);  /* No need to process the -- command any further, so quit back out */ 
+   }
+
     if (!failed_subst)
       write_to_q(tmp, &t->input, 0);
 

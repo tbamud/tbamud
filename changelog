@@ -3,6 +3,10 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[Jul 03 2008] - Rumble
+  Fixed lib/messages to properly display skill, spell, and damage messages. (thanks Tink)
+[Jun 28 2008] - Rumble
+  Added player ability to cancel queued commands. i.e. player spammed kick while fighting but needs to flee so they type '--' to cancel so they can flee. (thanks Jamdog)
 [Jun 28 2008] - Fizban
   Merged Jamdog's moblist code into the pre-existing mlist command. (thanks Jamdog)
 [Jun 14 2008] - Rumble

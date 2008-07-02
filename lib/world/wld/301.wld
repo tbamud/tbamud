@@ -33,7 +33,7 @@ class range.  Remove the extra '0' if you don't need/want it.
 Here are some recommended specials for the mobs:
   #04 should be given a sleep spell to cast
   #47 should be given an undead process.
-
+@n
 Zone 301 is linked to the following zones:
 302 Campus                         at 30123 (south) ---> 30236
 302 Campus                         at 30124 (north) ---> 30250
@@ -50,7 +50,6 @@ Zone 301 is linked to the following zones:
 302 Campus                         at 30136 (east ) ---> 30266
 302 Campus                         at 30140 (south) ---> 30260
 302 Campus                         at 30142 (north) ---> 30201
-
 302 Campus                         at 30142 (east ) ---> 30203
 302 Campus                         at 30199 (up   ) ---> 30200
 ~
@@ -321,7 +320,6 @@ World Dictionary)
 E
 cobblestone stone cobble~
    It's a dirt road.  There are NO cobblestones here, although to the north...
-
 ~
 S
 #30109
@@ -388,7 +386,6 @@ World Dictionary)
 E
 cobblestone stone cobble~
    It's a dirt road.  There are NO cobblestones here, although to the south...
-
 ~
 S
 #30111
@@ -484,12 +481,11 @@ E
 sign warning~
    The sign says:
 Welcome to the Student Ghetto!
-
+@n
 Fine $103.50 for carrying open alcohol in the streets.
 Fine $ 53.75 for excessively loud noises.
-
+@n
 ENTER AT YOUR OWN RISK!
-
 ~
 E
 dirt~
@@ -1207,12 +1203,11 @@ A long hallway lies to the west.
 E
 sign~
    The sign says:
-
+@n
     Gym           -> North
     Arena         -> East
     Locker Rooms  -> West
     Exit          -> South
-
 ~
 E
 plaque plaques~
@@ -1261,7 +1256,6 @@ E
 sweatshirt sweatshirts pants t-shirt t-shirts books~
    There is absolutely no point in looking at anything because the prices are
 almost like paying two or three arms and legs to buy something to cover them...
-
 ~
 S
 #30142
@@ -1548,7 +1542,6 @@ S
 #30153
 Hallway~
    The hallway leads off west into the locker room, and east into the lobby.  
-
 ~
 301 9 0 0 0 0
 D1
@@ -1727,7 +1720,6 @@ S
 #30162
 Jock Hardy Arena~
    The arena is about as big as the gym, but it is covered in ICE!  Wheeeee!  
-
 ~
 301 8 0 0 0 0
 D1
@@ -1748,7 +1740,6 @@ S
 #30163
 Jock Hardy Arena~
    The arena is about as big as the gym, but it is covered in ICE!  Wheeeee!  
-
 ~
 301 8 0 0 0 0
 D2
@@ -1769,7 +1760,6 @@ S
 #30164
 Jock Hardy Arena~
    The arena is about as big as the gym, but it is covered in ICE!  Wheeeee!  
-
 ~
 301 8 0 0 0 0
 D0
@@ -1861,10 +1851,8 @@ plank~
 E
 list~
    The list reads:
-
         <name scratched out>    President
         <name scratched out>    Vice-President
-
 Seems as though everyone is claiming ignorance today.
 ~
 E
@@ -1968,7 +1956,6 @@ De-Tox Unit~
 smells pretty bad, it wouldn't be a bad idea to remember where this is so that
 you can rest here later.  You find it rather difficult to manoeuvre in here
 because of the large number of drunks on the floor.  The only exit is north.  
-
 ~
 301 12 0 0 0 0
 D0
@@ -2055,7 +2042,6 @@ The hallway you probably entered from is handily located to the west.
 E
 goalie~
    How did you know it was a goalie stick?  Have you been reading the keywords?
-
 ~
 E
 crest~

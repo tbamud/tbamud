@@ -69,7 +69,7 @@ void perform_mob_level_list(struct char_data * ch, char *arg)
 
   mob_level = atoi(arg);
 
-  if (mob_level < 0 || mob_level >= LVL_IMMORT) {
+  if (mob_level < 0 || mob_level > 99) {
     send_to_char(ch, "Invalid mob level!\r\n");
     return;
   }

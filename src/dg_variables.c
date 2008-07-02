@@ -854,7 +854,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             }
             snprintf(str, slen, "%d", GET_PRACTICES(c));
           }
-          else if (!str_cmp(field, "pref")) { 
+          else if (!str_cmp(field, "pref") && IS_NPC(c)) { 
             if (subfield && *subfield) { 
               int pref = get_flag_by_name(preference_bits, subfield); 
               if (pref != NOFLAG && PRF_FLAGGED(c, pref)) 
