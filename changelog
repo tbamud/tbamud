@@ -3,6 +3,11 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[Jul 08 2008] - Rumble
+  Removed duplicate questpoints listing in stat char. (thanks Mirad)
+  Fix to qedit for deleting all quests. (thanks Jamdog)
+[Jul 06 2008] - Rumble
+  Changed sedit no trade with from undefined to nobits. (thanks Mirad)
 [Jul 03 2008] - Rumble
   Fixed lib/messages to properly display skill, spell, and damage messages. (thanks Tink)
 [Jun 28 2008] - Rumble

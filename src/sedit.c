@@ -179,6 +179,7 @@ static void sedit_setup_new(struct descriptor_data *d)
   S_CLOSE1(shop) = 28;
   S_BUYPROFIT(shop) = 1.0;
   S_SELLPROFIT(shop) = 1.0;
+  S_NOTRADE(shop) = 0;
   /* Add a spice of default strings. */
   S_NOITEM1(shop) = strdup("%s Sorry, I don't stock that item.");
   S_NOITEM2(shop) = strdup("%s You don't seem to have that.");

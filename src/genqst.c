@@ -128,13 +128,14 @@ int add_quest(struct aq_data *nqst)
 int delete_quest(qst_rnum rnum)
 {
   qst_rnum i;
-  zone_rnum rznum = real_zone_by_thing(QST_NUM(rnum));
+  zone_rnum rznum;
   mob_rnum qm = QST_MASTER(rnum);
   SPECIAL (*tempfunc);
   int  quests_remaining = 0;
 
   if (rnum >= total_quests)
     return FALSE;
+  rznum = real_zone_by_thing(QST_NUM(rnum)); 
   log("GenOLC: delete_quest: Deleting quest #%d (%s).",
        QST_NUM(rnum), QST_NAME(rnum));
   /* make a note of the quest master's secondary spec proc */
@@ -148,9 +149,10 @@ int delete_quest(qst_rnum rnum)
   total_quests--;
   if (total_quests > 0)
     RECREATE(aquest_table, struct aq_data, total_quests);
-  else
+  else {
     free(aquest_table);
-
+    aquest_table = NULL; 
+   }
   if (rznum != NOWHERE)
      add_to_save_list(zone_table[rznum].number, SL_QST);
   else

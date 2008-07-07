@@ -792,7 +792,7 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
 	  GET_GOLD(k), GET_BANK_GOLD(k), GET_GOLD(k) + GET_BANK_GOLD(k));
 
   if (!IS_NPC(k))
-    send_to_char(ch, "Questpoints: [%d]    Screen %s[%s%d%sx%s%d%s]%s\r\n", GET_QUESTPOINTS(k),
+    send_to_char(ch, "Screen %s[%s%d%sx%s%d%s]%s\r\n",
                       CCCYN(ch, C_NRM), CCYEL(ch, C_NRM), GET_SCREEN_WIDTH(k), CCNRM(ch, C_NRM),
                       CCYEL(ch, C_NRM), GET_PAGE_LENGTH(k), CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
   
