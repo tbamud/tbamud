@@ -440,9 +440,8 @@ void list_quests(struct char_data *ch, zone_rnum zone, qst_vnum vmin, qst_vnum v
   for (rnum = 0; rnum < total_quests ; rnum++)
     if (QST_NUM(rnum) >= bottom && QST_NUM(rnum) <= top)
       send_to_char(ch, "@g%4d@n) [@g%-5d@n] @c%-44.44s@n @y[%5d]@n\r\n",
-                   ++counter,
-                   QST_NUM(rnum), QST_NAME(rnum),
-                   mob_index[QST_MASTER(rnum)].vnum);
+          ++counter, QST_NUM(rnum), QST_NAME(rnum),
+          QST_MASTER(rnum) == NOBODY ? 0 : mob_index[QST_MASTER(rnum)].vnum);
   if (!counter)
     send_to_char(ch, "None found.\r\n");
 }

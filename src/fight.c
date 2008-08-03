@@ -662,7 +662,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   long local_gold = 0;
   char local_buf[256];
   struct char_data *tmp_char;
-  struct obj_data *corpse_obj, *coin_obj, *next_obj;
+  struct obj_data *corpse_obj;
 
   if (GET_POS(victim) <= POS_DEAD) {
     /* This is "normal"-ish now with delayed extraction. -gg 3/15/2001 */
@@ -828,12 +828,8 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     if (IS_AFFECTED(ch, AFF_GROUP) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
       generic_find("corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
       if (corpse_obj) {
-        for (coin_obj = corpse_obj->contains; coin_obj; coin_obj = next_obj) {
-          next_obj = coin_obj->next_content;
-          if (CAN_SEE_OBJ(ch, coin_obj) && isname("coin", coin_obj->name))
-            extract_obj(coin_obj);
-        }
-        do_split(ch,local_buf,0,0);
+        do_get(ch, "all.coin corpse", 0, 0); 
+        do_split(ch, local_buf, 0, 0);
       }
       /* need to remove the gold from the corpse */
     } else if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOGOLD)) {

@@ -3,6 +3,14 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
 tbaMUD 3.56
+[Aug 03 2008] - Rumble
+  You can now see your own communications while sleeping for gos, auc, gra, etc. (thanks Drefs)
+  changed str_and_map to use target_room instead of IN_ROOM(ch). (thanks Vatiken)
+[Aug 02 2008] - Welcor
+  Fixed a one-line bug in act.movement.c - caused crashes when moving into FLIGHT rooms.
+[Jul 26 2008] - Rumble
+  Fixed autosplit to properly award gold to the person delivering the killing blow and then split it with the group. (thanks Maclir)
+  Added checks to qedit for questmaster not being set. (thanks Jamdog)
 [Jul 08 2008] - Rumble
   Removed duplicate questpoints listing in stat char. (thanks Mirad)
   Fix to qedit for deleting all quests. (thanks Jamdog)

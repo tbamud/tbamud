@@ -461,7 +461,8 @@ void look_at_room(struct char_data *ch, int ignore_brief)
 {
   trig_data *t;
   struct room_data *rm = &world[IN_ROOM(ch)];
-  
+  room_vnum target_room;
+ 
   if (!ch->desc)
     return;
 
@@ -496,7 +497,7 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   {
       if(!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
       {
-        str_and_map(world[IN_ROOM(ch)].description, ch);
+        str_and_map(world[target_room].description, ch, target_room);
       }
       else
       {

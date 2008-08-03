@@ -486,7 +486,7 @@ static void perform_map( struct char_data *ch, char *argument, bool worldmap )
 }
 
 /* Display a string with the map beside it */
-void str_and_map(char *str, struct char_data *ch ) {
+void str_and_map(char *str, struct char_data *ch, room_vnum target_room ) {
   int size, centre, x, y, min, max, char_size;
   int ew_size=0, ns_size=0;
   bool worldmap;
@@ -497,7 +497,7 @@ void str_and_map(char *str, struct char_data *ch ) {
     return;
   }
 
-  worldmap = ROOM_FLAGGED(IN_ROOM(ch), ROOM_WORLDMAP) ? TRUE : FALSE ;
+  worldmap = ROOM_FLAGGED(target_room, ROOM_WORLDMAP) ? TRUE : FALSE ;
 
   if(!PRF_FLAGGED(ch, PRF_AUTOMAP)) {
     send_to_char(ch, strfrmt(str, GET_SCREEN_WIDTH(ch), 1, FALSE, FALSE, FALSE));
@@ -514,7 +514,7 @@ void str_and_map(char *str, struct char_data *ch ) {
       map[x][y]= (!(y%2) && !worldmap) ? DOOR_NONE : SECT_EMPTY;
 
   /* starts the mapping with the center room */
-  MapArea(IN_ROOM(ch), ch, centre, centre, min, max, ns_size/2, ew_size/2, worldmap );
+MapArea(target_room, ch, centre, centre, min, max, ns_size/2, ew_size/2, worldmap ); 
   map[centre][centre] = SECT_HERE;
 
   /* char_size = rooms + doors + padding */
