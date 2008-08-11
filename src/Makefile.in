@@ -2,7 +2,7 @@
 # Clean-up provided by seqwith.
 
 # C compiler to use
-CC = gcc
+CC = $(CC)
 
 # Any special flags you want to pass to the compiler
 MYFLAGS = @MYFLAGS@
