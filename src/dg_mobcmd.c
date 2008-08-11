@@ -86,7 +86,7 @@ ACMD(do_masound)
     IN_ROOM(ch) = was_in_room;
 }
 
-/* lets the mobile kill any player or mobile without murder*/
+/* lets the mobile kill any player or mobile */
 ACMD(do_mkill)
 {
     char arg[MAX_INPUT_LENGTH];

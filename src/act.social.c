@@ -16,6 +16,7 @@
 #include "interpreter.h"
 #include "handler.h"
 #include "db.h"
+#include "screen.h"
 #include "spells.h"
 #include "act.h"
 

@@ -54,7 +54,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   int i;
   zone_rnum rznum;
   char buf[MAX_STRING_LENGTH];
-
+  
 #if CIRCLE_UNSIGNED_INDEX
   if (vzone_num == NOWHERE) {
 #else
@@ -144,6 +144,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   fclose(fp);
 
   /* Update index files. */
+  create_world_index(vzone_num, "qst");
   create_world_index(vzone_num, "zon");
   create_world_index(vzone_num, "wld");
   create_world_index(vzone_num, "mob");

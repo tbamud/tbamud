@@ -54,8 +54,7 @@ ACMD(do_assist)
       act("You can't see who is fighting $M!", FALSE, ch, 0, helpee, TO_CHAR);
          /* prevent accidental pkill */
     else if (!CONFIG_PK_ALLOWED && !IS_NPC(opponent))
-      act("Use 'murder' if you really want to attack $N.", FALSE,
-	  ch, 0, opponent, TO_CHAR);
+      send_to_char(ch, "You cannot kill other players.\r\n");
     else {
       send_to_char(ch, "You join the fight!\r\n");
       act("$N assists you!", 0, helpee, 0, ch, TO_CHAR);
@@ -82,19 +81,9 @@ ACMD(do_hit)
   } else if (AFF_FLAGGED(ch, AFF_CHARM) && (ch->master == vict))
     act("$N is just such a good friend, you simply can't hit $M.", FALSE, ch, 0, vict, TO_CHAR);
   else {
-    if (!CONFIG_PK_ALLOWED) {
-      if (!IS_NPC(vict) && !IS_NPC(ch)) {
-	if (subcmd != SCMD_MURDER) {
-	  send_to_char(ch, "Use 'murder' to hit another player.\r\n");
-	  return;
-        } else {
-	  check_killer(ch, vict);
-	}
-      }
-      if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && !IS_NPC(ch->master) && vict && !IS_NPC(vict)) 
-	return;			/* you can't order a charmed pet to attack a
-				 * player */
-    }
+    if (!CONFIG_PK_ALLOWED && !IS_NPC(vict) && !IS_NPC(ch)) 
+	check_killer(ch, vict);
+
     if ((GET_POS(ch) == POS_STANDING) && (vict != FIGHTING(ch))) {
       hit(ch, vict, TYPE_UNDEFINED);
       WAIT_STATE(ch, PULSE_VIOLENCE + 2);
@@ -108,7 +97,7 @@ ACMD(do_kill)
   char arg[MAX_INPUT_LENGTH];
   struct char_data *vict;
 
-  if (GET_LEVEL(ch) <= LVL_IMPL || IS_NPC(ch)) {
+  if (GET_LEVEL(ch) < LVL_IMMORT || IS_NPC(ch) || !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
     do_hit(ch, argument, cmd, subcmd);
     return;
   }

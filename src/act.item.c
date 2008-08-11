@@ -121,7 +121,7 @@ ACMD(do_put)
       send_to_char(ch, "You don't see %s %s here.\r\n", AN(thecont), thecont);
     else if (GET_OBJ_TYPE(cont) != ITEM_CONTAINER)
       act("$p is not a container.", FALSE, ch, cont, 0, TO_CHAR);
-    else if (OBJVAL_FLAGGED(cont, CONT_CLOSED))
+    else if (OBJVAL_FLAGGED(cont, CONT_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
       send_to_char(ch, "You'd better open it first!\r\n");
     else {
       if (obj_dotmode == FIND_INDIV) {	/* put <obj> <container> */
@@ -215,7 +215,7 @@ void get_from_container(struct char_data *ch, struct obj_data *cont,
 
   obj_dotmode = find_all_dots(arg);
 
-  if (OBJVAL_FLAGGED(cont, CONT_CLOSED))
+  if (OBJVAL_FLAGGED(cont, CONT_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
     act("$p is closed.", FALSE, ch, cont, 0, TO_CHAR);
   else if (obj_dotmode == FIND_INDIV) {
     if (!(obj = get_obj_in_list_vis(ch, arg, NULL, cont->contains))) {
@@ -1537,7 +1537,7 @@ ACMD(do_sac)
         send_to_char(ch, "You sacrifice %s to the Gods.\r\nThe Gods ignore your sacrifice.\r\n", GET_OBJ_SHORT(j));
       break;
       case 2:
-        send_to_char(ch, "You sacrifice %s to the Gods.\r\nZizazat gives you %d experience points.\r\n", GET_OBJ_SHORT(j), (2*GET_OBJ_COST(j)));
+        send_to_char(ch, "You sacrifice %s to the Gods.\r\nThe gods give you %d experience points.\r\n", GET_OBJ_SHORT(j), (2*GET_OBJ_COST(j)));
         GET_EXP(ch) += (2*GET_OBJ_COST(j));
       break;
       case 3:

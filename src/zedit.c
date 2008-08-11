@@ -39,7 +39,8 @@ ACMD(do_oasis_zedit)
 {
   int number = NOWHERE, save = 0, real_num;
   struct descriptor_data *d;
-  char *buf3;
+  char *stop;
+  char sbot[MAX_STRING_LENGTH];
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
@@ -48,7 +49,7 @@ ACMD(do_oasis_zedit)
     return;
 
   /* Parse any arguments. */
-  buf3 = two_arguments(argument, buf1, buf2);
+  stop = one_argument(two_arguments(argument, buf1, buf2), sbot);
 
   /* If no argument was given, use the zone the builder is standing in. */
   if (!*buf1)
@@ -73,15 +74,15 @@ ACMD(do_oasis_zedit)
         return;
       }
     } else if (GET_LEVEL(ch) >= LVL_IMPL) {
-      if (str_cmp("new", buf1) || !buf3 || !*buf3)
+      if (str_cmp("new", buf1) || !stop || !*stop)
         send_to_char(ch, "Format: zedit new <zone number> <bottom-room> "
            "<upper-room>\r\n");
       else {
-        char sbot[MAX_INPUT_LENGTH], stop[MAX_INPUT_LENGTH];
+        if (atoi(stop) < 0 || atoi(sbot) < 0) {
+          send_to_char(ch, "Zones cannot contain negative vnums.\r\n");
+          return;
+        } 
         room_vnum bottom, top;
-
-        skip_spaces(&buf3);
-        two_arguments(buf3, sbot, stop);
 
         number = atoidx(buf2);
         if (number < 0)
@@ -102,7 +103,7 @@ ACMD(do_oasis_zedit)
     }
   }
 
-  /* If a numeric argumentwas given, retrieve it. */
+  /* If a numeric argument was given, retrieve it. */
   if (number == NOWHERE)
     number = atoidx(buf1);
 

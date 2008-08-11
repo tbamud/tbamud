@@ -331,7 +331,7 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
     return (0);
   else if ((!EXIT(ch, dir) && !buildwalk(ch, dir)) || EXIT(ch, dir)->to_room == NOWHERE)
     send_to_char(ch, "Alas, you cannot go that way...\r\n");
-  else if (EXIT_FLAGGED(EXIT(ch, dir), EX_CLOSED)) {
+  else if (EXIT_FLAGGED(EXIT(ch, dir), EX_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE))) {
     if (EXIT(ch, dir)->keyword)
       send_to_char(ch, "The %s seems to be closed.\r\n", fname(EXIT(ch, dir)->keyword));
     else
@@ -601,7 +601,8 @@ ACMD(do_gen_door)
 	     IS_SET(flags_door[subcmd], NEED_LOCKED))
       send_to_char(ch, "Oh.. it wasn't locked, after all..\r\n");
     else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) &&
-	     IS_SET(flags_door[subcmd], NEED_UNLOCKED))
+	     IS_SET(flags_door[subcmd], NEED_UNLOCKED) && 
+             (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
       send_to_char(ch, "It seems to be locked.\r\n");
     else if (!has_key(ch, keynum) && (GET_LEVEL(ch) < LVL_GOD) &&
 	     ((subcmd == SCMD_LOCK) || (subcmd == SCMD_UNLOCK)))

@@ -576,7 +576,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
   send_to_char(ch, CCNRM(ch, C_CMP));
 
   /* damage message to damagee */
-  if (GET_LEVEL(ch) >= LVL_IMMORT)
+  if (GET_LEVEL(victim) >= LVL_IMMORT)
     send_to_char(victim, "@R(%d)", dam);
   buf = replace_string(dam_weapons[msgnum].to_victim,
 	  attack_hit_text[w_type].singular, attack_hit_text[w_type].plural);
@@ -687,7 +687,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     return (0);
 
   /* You can't damage an immortal! */
-  if (!IS_NPC(victim) && (GET_LEVEL(victim) >= LVL_IMMORT))
+  if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT) && PRF_FLAGGED(victim, PRF_NOHASSLE)))
     dam = 0;
 
   if (victim != ch) {

@@ -171,7 +171,6 @@ extern const char *cmd_door[];
 /* do_hit */
 ACMD(do_hit);
 #define SCMD_HIT    0
-#define SCMD_MURDER 1
 /* Functions without subcommands */
 ACMD(do_assist);
 ACMD(do_bash);

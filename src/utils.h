@@ -593,7 +593,7 @@ void char_from_furniture(struct char_data *ch);
                         STATE(d) == CON_ZEDIT || STATE(d) == CON_SEDIT ||       \
                         STATE(d) == CON_CEDIT || STATE(d) == CON_PLAYING ||     \
                         STATE(d) == CON_TRIGEDIT || STATE(d) == CON_AEDIT ||    \
-		        STATE(d) == CON_HEDIT)
+                        STATE(d) == CON_HEDIT || STATE(d) == CON_QEDIT) 
 
 /** Defines if it is ok to send a message to ch. */
 #define SENDOK(ch)	(((ch)->desc || SCRIPT_CHECK((ch), MTRIG_ACT)) && \

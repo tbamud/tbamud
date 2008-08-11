@@ -462,6 +462,8 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   trig_data *t;
   struct room_data *rm = &world[IN_ROOM(ch)];
   room_vnum target_room;
+
+  target_room = IN_ROOM(ch);
  
   if (!ch->desc)
     return;
@@ -547,7 +549,7 @@ static void look_in_obj(struct char_data *ch, char *arg)
     send_to_char(ch, "There's nothing inside that!\r\n");
   else {
     if (GET_OBJ_TYPE(obj) == ITEM_CONTAINER) {
-      if (OBJVAL_FLAGGED(obj, CONT_CLOSED))
+      if (OBJVAL_FLAGGED(obj, CONT_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
 	send_to_char(ch, "It is closed.\r\n");
       else {
 	send_to_char(ch, "%s", fname(obj->name));
@@ -1107,9 +1109,7 @@ ACMD(do_who)
     int max_level;
     int count; /* must always start as 0 */
   } rank[] = {
-    { "Immortals\r\n---------\r\n", LVL_IMMORT, LVL_IMPL, 0},
-    { "Mortals\r\n-------\r\n", 1, LVL_IMMORT - 1, 0 },
-    { "\n", 0, 0, 0 }
+
   };
 
   skip_spaces(&argument);
@@ -1290,7 +1290,8 @@ ACMD(do_who)
           send_to_char(ch, " (Configuration Edit)");
         if (d->connected == CON_HEDIT)
           send_to_char(ch, " (Help edit)");
-
+        if (d->connected == CON_QEDIT)
+          send_to_char(ch, " (Quest Edit)"); 
         if (PRF_FLAGGED(tch, PRF_BUILDWALK))
           send_to_char(ch, " (Buildwalking)");
         if (PRF_FLAGGED(tch, PRF_AFK))
@@ -1796,7 +1797,7 @@ ACMD(do_toggle)
   int toggle, tp, wimp_lev, result = 0, len = 0;
   const char *types[] = { "off", "brief", "normal", "on", "\n" };
 
-  const struct {
+    const struct {
     char *command;
     bitvector_t toggle; /* this needs changing once hashmaps are implemented */
     char min_level;
@@ -1883,7 +1884,7 @@ ACMD(do_toggle)
     "Autoassist disabled.\r\n",
     "Autoassist enabled.\r\n"},
     {"screenwidth", 0, 0, "\n", "\n"},
-    {"automap", PRF_AUTOMAP, 0,
+    {"automap", PRF_AUTOMAP, 1,
     "You will no longer see the mini-map.\r\n",
     "You will now see a mini-map at the side of room descriptions.\r\n"},
     {"\n", 0, -1, "\n", "\n"} /* must be last */
@@ -2135,10 +2136,9 @@ ACMD(do_toggle)
         send_to_char(ch, "Value for %s must either be 'on' or 'off'.\r\n", tog_messages[toggle].command);
         return;
       }
-    } else {
+    } else
       send_to_char(ch, "Sorry, automap is currently disabled.\r\n");
-      return;
-    }
+      break;
   default:
     if (!*arg2) {
       TOGGLE_BIT_AR(PRF_FLAGS(ch), tog_messages[toggle].toggle);
@@ -2149,7 +2149,7 @@ ACMD(do_toggle)
     } else if (!strcmp(arg2, "off")) {
       REMOVE_BIT_AR(PRF_FLAGS(ch), tog_messages[toggle].toggle);
     } else {
-      send_to_char(ch, "Value for %s must either be 'on' or 'off'.\r\n", tog_messages[toggle].command);
+        send_to_char(ch, "Value for %s must either be 'on' or 'off'.\r\n", tog_messages[toggle].command);
       return;
     }
   }
