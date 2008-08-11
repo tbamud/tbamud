@@ -166,60 +166,6 @@ To make hidden exits or secret doors use trigedit.
 
 See also: %DOOR%
 #31
-REPORT-EXAMPLE
-
-The following is Justo's monthly builder's report update. These are not required,
-but encouraged. Justo's zone is the most in-depth and well planned zone I have
-ever seen. I have never seen anyone put so much work into a zone. Kudos to Justo.
-I am saving this because I would like everyone to use Justo's work as an 
-outstanding example of how a builder should develop and plan a full zone.
- 
- * * * * Midgaard Mail System * * * *
-Date: Sun Oct 13 10:33:59 2002
-  To: rumble
-From: justo
- What I've been doing in Zone 151 :
- 1) Connected existing street system with Zone 82.
- 2) Have been zediting doors to remain closed.
- 3) Improved keywords on several mobs.
- 4) Added the appropriate extra descs to 15 objects. ( Still wish it would not
-    say " A bottle of tequila of whisky." That is annoying.
- 5) Fixed up some of the shops...shop 15102 is still a problem...but its
-    finally functioning which is an improvement.
- 6) Erased old quest triggers that are not in phase with my current concept
-    for how the Zone should operate. Built some new ones that do conform
-    to the new concept ( I'll explain that shortly. ).
- 7) Built a realistic blunderbuss with your appreciated help.
- 8) Edited some of the Intro stuff in rooms 15100-15102.  
-  * My original plan was to create something which people could actually
-    use to mud in the classical sense. But, I've rethought that a little.
-    Since everyone comments that Tejas 1820 is unique...and maybe a bit
-    alien, I've decided to make it into a more educationally-oriented
-    environment by setting up "sector guide" mobs which interact with 
-    players and provide descriptive/directional info. The player asks
-    for help and those mobs provide it as best they can.
-    I'll also be adding one hack n' slash area for players to do
-    their usual thing...a Cantina. I'd initially intended to put
-    in some authentic desert wilderness around my San Juan Bautista 
-    fort where players could go out and interact with the Apache
-    there and try to survive, but I'd rather allocate that Zone 82
-    space to completing my town. I think that adding wilderness 
-    ( actual frontier wildlands ) is going to require a third Zone
-    when I get that far along. 
-    As for the educational "sector guide" mobs...my big dilemma is
-    trying to figure out just what the players might want to know about 
-    Tejas 1820. I can Speech trigger those mobs...but what would a
-    player bother to ask them ? All of them are ICly-justified 
-    bilinguals or multilinguals in varying degrees of proficiency. 
-    But, I need more feedback on what players would like to know about
-    the Zone environment.  
-    Maybe the way to go is to set up little instructional Quests for 
-    the players. I might attempt that again.
-    Before we had a Ranger player that went around with a char and  
-    tested the Zones. What have we got in that regard now ?
-  Justo's Monthly Zone report
-
-#31
 DATE AM PM 
 
 Usage: date
@@ -251,13 +197,28 @@ any of the above mudmail your coder after your zone is complete.
 through trigedit. 
 
 To create a postmaster make a mob, set one of the keywords as "postmaster," set
-the NPC flag SPEC, and load it to the room via zedit. 
+the NPC flag SPEC, and load it to the room via zedit. Then have your coder add
+to spec_assign.c:110:  ASSIGNMOB(#, postmaster); NOTE: # = the mob/obj vnum.
+
+To create a guildmaster make a mob, set one of the keywords as "guildmaster," 
+set the NPC flag SPEC, and load it to the room via zedit. Then have your coder 
+add to spec_assign.c:69:  ASSIGNMOB(#, guild); A player can practice at any
+guildmaster, it is the guildguards that usually limit who can access what
+guildmaster. @RTSTAT 133@n
 
 To create a bank make an object, set it to type OTHER, add keyword "bank" and
-load it to the room via zedit. 
+load it to the room via zedit. Then have your coder add to spec_assign.c:
+138:  ASSIGNOBJ(#, bank);
+
+To create a board make an object, set it to type OTHER, add keyword "board" and
+load it to the room via zedit. Then have your coder reference boards.c for the
+remaining instructions.
+
+To create a petshop see: @RHELP PETSHOP@n.
 
 In all cases special procedures need to be added in by a coder. Once your zone
-is complete mudmail your coder. 
+is complete mudmail your coder for the additions you want including type and
+mob or object vnum. 
 
 See also: POSTMASTER, PETSHOPS, BANKS, GUILDMASTER, BOARDS
 #31
@@ -603,7 +564,7 @@ GOOD: The massive statue of Marhuk glowers down upon everything with an
  
 BAD:  You proceed cautiously through the tunnel, weapon drawn.
 GOOD: The dark tunnel appears empty, but it is impossible to know what 
-      might lurk just beyond the veil of darkness."
+      might lurk just beyond the veil of darkness.
  
 BAD:  The dragon is large and looks very angry at you.
 GOOD: A massive dragon roars in anger, steam billowing from its nostrils.
@@ -640,6 +601,9 @@ files. @RHELP EXAMPLES@n for the best examples.
 
 5. When are you officially dead?
    When you reach -11 hit points. Duh, everyone knows that.
+
+6. I just tried the track command suddenly all my rooms went from NOBITS to *. How can I fix this?
+   That is normal, it will reset itself.
 
 #31
 SWORDS
@@ -999,7 +963,7 @@ downloads section.
  
 See also: RESOURCES 
 #31
-SOURCES RESOURCES CODEBASE FTP DOWNLOADS DOCUMENTATION OLC-SOURCE CODEOLC OLCCODE OLC-CODE CODE-OLC WTFAQ FORUMS GROUPS 
+SOURCES RESOURCES CODEBASE FTP DOWNLOADS DOCUMENTATION WTFAQ FORUMS GROUPS 
 
 Source:      http://cwg.lazuras.org/modules.php?name=Downloads&d_op=viewdownload&cid=16
 CWG:         http://cwg.lazuras.org/
@@ -1359,7 +1323,7 @@ road.
     thought based on everything they see. For example, if I walk into a room 
     and see blank walls and a description that simply screams 'This object is 
     important, more important than anything else at all!', people won't think 
-    on what they're seeing and will loose a great deal of the point of 
+    on what they're seeing and will lose a great deal of the point of 
     descriptions in the first place. In addition, do not do the opposite and 
     make something else seem of importance that is not while trying to hide the
     true answer. Such misdirection will lead to player dissatisfaction... the 
@@ -1709,25 +1673,25 @@ I meant for you to type exactly what is in red not to check the help file ;-)
 
 i.e. @RGOTO 3@n not @RHELP GOTO 3@n
 #31
-ACRONYMS TERMINOLOGY
+ACRONYMS TERMINOLOGY VOCABULARY
 
 Here are some common terms used in building, and TBA zone:
 
-OLC:        On-Line-Creation, the ability to create rooms, mobs, objects,
-        	shops, and triggers on-line. 
-Desc:       Short for description.
-Flag:       A bit-vector that tells the mud that a particular monster,
-          	object, or room has a certain quality.  (i.e. Dark, Magic,
-	      Aggressive)  This will be explained more later.
-Mob:        Mobile.  A monster.
-Obj:        Object.
-VNUM:       An obj, mob, room, shop, or triggers unique identification number.
-	      Stands for Virtual Number.
-Zone:       Used synonymously with area.
-Trigger:    Used synonymously with script.
-TBA:        The Builder Academy.
-PC:         Player Character. Not a mob.
-NPC:        Non Player Character. Mobs.
+OLC:     On-Line-Creation, the ability to create rooms, mobs, objects, shops, 
+         and triggers on-line. 
+Desc:    Short for description.
+Flag:    A bit-vector that tells the mud that a particular monster, object, or 
+         room has a certain quality.  (i.e. Dark, Magic, Aggressive)  This will
+		 be explained more later.
+Mob:     Mobile.  A monster.
+Obj:     Object.
+VNUM:    An obj, mob, room, shop, or triggers unique identification number.
+	     Stands for Virtual Number.
+Zone:    Used synonymously with area.
+Trigger: Used synonymously with script.
+TBA:     The Builder Academy.
+PC:      Player Character. Not a mob.
+NPC:     Non Player Character. Mobs.
 
 #31
 SUGGESTIONS
@@ -1816,11 +1780,51 @@ See also: DATE, TIME
 FOUNTAINS DRINK-UNITS OEDIT-FOUNTAINS 
 
    After selecting object type FOUNTAIN you must then select C) Values to set
-the capacity of the fountain. The first number is max capacity. The second is
-the current contents. To make a fountain contain that never runs out set the
-2nd number to -1.
+the capacity of the fountain. The first number is max drink units (-1 for 
+unlimited). The second is the intitial drink units (this must be 1 or greater).
+The 3rd number is liquid type from the following:
 
-See also: VALUES
+   value 0: Max drink units. -1 for unlimited.
+   value 1: Initial drink units. Must be 1 or greater.
+   value 2: see below
+   value 3: 0 for not poisoned. Otherwise, the number of hours until the poison 
+            burns off?
+
+   value 2: The type of liquid in the drink-container, one of:
+   
+      ---------------------------------------------------------------
+      |  Type          nr.  |         Effect of Liquid On:          |
+      |@u                     | drunkenness   Fullness       Thirst   @n|
+      |  WATER          0   |      0      |     1      |     10     |
+      |  BEER           1   |      3      |     2      |      5     |
+      |  WINE           2   |      5      |     2      |      5     |
+      |  ALE            3   |      2      |     2      |      5     |
+      |  DARK ALE       4   |      1      |     2      |      5     |
+      |  WHISKY         5   |      6      |     1      |      4     |
+      |  LEMONADE       6   |      0      |     1      |      8     |
+      |  FIREBREATHER   7   |     10      |     0      |      0     |
+      |  LOCAL SPC.     8   |      3      |     3      |      3     |
+      |  SLIME          9   |      0      |     4      |     -8     |
+      |  MILK          10   |      0      |     3      |      6     |
+      |  TEA           11   |      0      |     1      |      6     |
+      |  COFFEE        12   |      0      |     1      |      6     |
+      |  BLOOD         13   |      0      |     2      |     -1     |
+      |  SALT WATER    14   |      0      |     1      |     -2     |
+      |  CLEAR WATER   15   |      0      |     0      |     13     |
+      ---------------------------------------------------------------
+   The above values for drunkenness/fullness/thirst are in the units of one
+hour of effect per four units of liquid drunk.  For example, imagine that
+Dragon drinks an entire bottle (say 7 units) of saltwater.  According to the
+table above, saltwater has a drunkenness value of 0, fullness value of 1 and
+thirst value of -2.  Therefore:
+His drunkenness is not changed ((7/4)*0)
+His Fullness increases by ((7/4)*1) hours
+His Thirst increases by ((7/4)*-2) hours, thus making him more thirsty.
+A player's drunkenness, fullness, and thirst can range from 0 to 24.
+24 is the maximum; 0 means the person is completely sober, hungry,
+or thirsty respectively.
+
+See Also: VALUES
 #31
 ALIGNMENT GOOD NEUTRAL EVIL %ACTOR.ALIGN% %ALIGN% %ALIGNMENT% 
 
@@ -1927,6 +1931,9 @@ HEDIT HELP-EDITOR
 Usage: hedit <keyword>
 
 This command allows online editing of help files. Hedit OLC permission is 888.
+When editing a help file entry the first line must list all keywords. Do not
+use /fi in hedit. Also, when editing an existing entry make sure to modify the
+first keyword or it will not be saved.
 
 See also: HINDEX, HELPCHECK
 #31
@@ -2136,7 +2143,7 @@ Usage: changelog <text>
 submitter name. To view the changelog use the file command with argument
 changelog.
 
-See Also: FILE
+See Also: FILE, CHANGES
 #31
 INVIS i30 i31 i32 SPOOFS
 
@@ -2214,10 +2221,10 @@ See also: VNUM, PURGE, %LOAD%, ZEDIT-NEW, ZRESET
 #31
 MUTE SQUELCH
 
-Usage: mute [target]
+Usage: mute <player>
 
-   MUTE is used to shut a player up.  When muted, a player will not be able to
-use most communication channels until he/she is unmuted.
+   MUTE is used to prevent a player from using global communication channels.
+It is a toggle that can be turned on and off by the same command. 
 
 See also: FLAGS
 #31
@@ -2225,9 +2232,10 @@ NOHASSLE HASSLE DARK NO_HASSLE DISABLE NOHASSEL HASSEL NO-HASSLE
 
 Usage: nohassle
 
-   Toggles a flag to prevent aggressive monsters from attacking, and also prevents
-immortals from firing triggers. If you wish to test triggers you must turn 
-nohassle off.
+   Toggles a flag to give immortals special protection and privileges. Such as:
+Prevents aggressive mobs from attacking and triggers from targetting the player.
+Allows you to walk through closed doors, and interact (look, put, take) with 
+closed and locked containers.
 
 See also: TOGGLE, HOLYLIGHT, ROOMFLAGS, REDIT-ROOM
 #31
@@ -2341,10 +2349,11 @@ See also: STAT
 #31
 RESTORE REVIVE
 
-Usage: restore <player | mobile>
+Usage: restore <player | mobile | all>
 
-RESTORE restores a player or mobile to full hit, mana, and movement points.
-If used on immortals, it also sets all skill levels to 100%.
+   RESTORE restores a player or mobile to full hit, mana, and movement points.
+Restore all will restore all players in the game. If used on immortals, it 
+also sets all skill levels to 100%.
 
 #31
 RETURN CHEATING CHEATS
@@ -2397,11 +2406,17 @@ Gives you the current game time. tbaMUD uses zulu time 0-24 hours. There are
 75 seconds per minute, 35 days per month, and 17 months per year. 1 MUD year 
 takes about 12 days.
 
-/* mud-life time */
-@n#define SECS_PER_MUD_HOUR       75 
-@n#define SECS_PER_MUD_DAY        (24*SECS_PER_MUD_HOUR)  // 1800 sec
-@n#define SECS_PER_MUD_MONTH      (35*SECS_PER_MUD_DAY)   // 63000 sec
-@n#define SECS_PER_MUD_YEAR       (17*SECS_PER_MUD_MONTH) // 1071000 sec (about 12.39 days)
+/** Number of real life seconds per mud hour.
+#define SECS_PER_MUD_HOUR       75
+/** Real life seconds in one mud day.
+ * Current calculation = 30 real life minutes. */
+#define SECS_PER_MUD_DAY        (24*SECS_PER_MUD_HOUR)
+/** Real life seconds per mud month.
+ * Current calculation = 17.5 real life hours */
+#define SECS_PER_MUD_MONTH      (35*SECS_PER_MUD_DAY)
+/** Real life seconds per mud month.
+ * Current calculation ~= 12.4 real life days */
+#define SECS_PER_MUD_YEAR       (17*SECS_PER_MUD_MONTH)
  
 /* real-life time (remember Real Life?) */
 @n#define SECS_PER_REAL_MIN       60
@@ -2552,7 +2567,7 @@ any other zone reset or reboot.
 
 See Also: SHUTDOWN, AUTOSAVE
 #31
-SHUTDOWNS COPYOVER
+SHUTDOWNS
 
 Usage: shutdown [reboot | die | pause] [time]
 
@@ -2752,13 +2767,11 @@ See also: NOWIZ
 #31
 ZRESETS RESETS ZONE-RESETS ZONERESETS POPS REPOPS SPAWN RE-POPS ZONEREBOOTS REFRESH  ZONE-LOADS ZEDIT_RESET ZONE_RESET LOAD-ZONE LOADZONE LOAD_ZONE
 
-Usage: zreset < zone # | * >
+Usage: zreset
 
-Used to force a zone to reset.  * forces all zones to reset (staff only).
-
-Resets entire zone, loading objects and mobs to rooms - it is a good idea to
-purge a room before resetting it - old mobs and objects will remain in the 
-room until killed or purged. 
+  This command is used to execute all zedit commands in a zone. Such as loading
+mobs, objects, and closing doors. This is normally done once a zone reaches its
+lifespan (set in zedit) but can be done manually with this command.
 
 See also: ZPURGE, SHOW ZONES
 #31
@@ -2786,11 +2799,12 @@ SKILLSET SETSKILL
 
 Usage: skillset <name> '<skill>' <value>
 
-Sets the specified skill to the specified value.
-If you wish to have all your skills set to 100 just ask a higher up to 
-restore you.
+   This command sets the specified skill or spell to a percentage learned value
+1-100%. Skills and spells are based on class and level.
 
-See also: SET
+skillset rumble 'magic missile' 100
+
+See also: SET, SKILLS, SPELLS
 #31
 FILES FILE-GODCMDS FILE-LEVELS 
 
@@ -2925,9 +2939,14 @@ AUTOWIZ
 to update the wizlist and immlist unless they have NO_WIZ set.
 
 #31
-PATCHING HOW-TO-PATCH
+PATCHING HOW-TO-PATCH PATCHES
 
+A list of patches for tbaMUD:
+http://cwg.lazuras.org/modules.php?name=Forums&file=viewtopic&t=2098
+
+How to hand patch:
 http://www.circlemud.org/cdp/wtfaq/handpatch.html
+http://cwg.lazuras.org/modules.php?name=Forums&file=viewtopic&t=757
 
 Zizazat's tutorial on how to create a patch:
 http://cwg.lazuras.org/cwg-files/docs/The%20Newbie%20Patching%20Primer.doc
@@ -2960,7 +2979,7 @@ See also: FREE-SERVERS, DOCUMENTATION, DOWNLOADS, CWG
 #31
 DICTIONARY DICTIONARIES THESAURUS M-W.COM DEFINITION MERRIAM-WEBSTER M-W-DEFINITION WEBSTER MW TELL-M-W BREATHER SPELLING WORDS
 
-Usage: tell m-w <word
+Usage: tell m-w <word>
 
    We have a direct link to Merriam Webster. To use the dictionary just
 tell m-w <word>
@@ -2985,6 +3004,8 @@ stands for 'global regular expression print' searches for strings in text files
 GDB GENERAL-DEBUGGER DEBUGGING
 
 GDB stands for general debugger and is used to troubleshoot programming problems.
+http://cwg.lazuras.org/modules.php?name=Forums&file=viewtopic&t=2067#13761
+http://cwg.lazuras.org/modules.php?name=Forums&file=viewtopic&t=1085
 
    From the root directory: 
 > gdb bin/circle
@@ -3338,7 +3359,7 @@ mjunk <object | all>
 is sent by this command. Only mobs may use this command.
 
 #31
-%FOLLOWER% TRIG-FOLLOW MFOLLOW %MASTER% MASTER %SELF.FOLLOWER% %SELF.MASTER% %FOLLOW% %MASTER.FOLLOWER%
+%FOLLOWER% TRIG-FOLLOW MFOLLOW %MASTER% MASTER %SELF.FOLLOWER% %SELF.MASTER% %FOLLOW% %MASTER.FOLLOWER% %MASTER.FIGHTING%
 
 Usage: mfollow <victim>
 
@@ -3510,7 +3531,7 @@ name, differing only by context. Players may have variables; this mostly
 removes the need for variable context. Previously, a player's ID could be used 
 as variable context to allow a trigger to service multiple players at once.
 
-Example: @RTSTAT 23612@n
+Example: @RTSTAT 23612, 13495@n
 
 See also: REMOTE
 #31
@@ -3577,18 +3598,20 @@ See also: SET, EVAL
 #31
 EXTRACT
 
-Usage: extract to-variable word-number from-text
+Usage: extract <variable> <word #> <string>
 
-* could be used to do strange things to what people say:
-extract testvar1 1 %speech%
-extract testvar2 2 %speech%
-extract testvar3 3 %speech%
-extract testvar4 4 %speech%
-say do you mean %testvar4% %testvar3% %testvar2% %testvar1% ?
+   Extract can be used to save individual words in a string separately. For
+example a player saying: "Do you want chicken"
 
-   Place a specific word from the 'from-text' into a new or existing variable 
-'to-variable'. Do not enclose the name of the to-variable in %'s.
+extract word1 1 %speech%
+extract word2 2 %speech%
+extract word3 3 %speech%
+extract word4 4 %speech%
+say %word4% %word3% %word2% %word1%?
 
+Would say (Yoda-esque) "chicken want you do?"
+
+Example: @RTSTAT 208@n
 #31
 IFS ELSEIF END TRIGEDIT-END TRIGEDIT-IF TRIG-END TRIG-IF ENDIF TRIG-ELSE ELSE-IF IF-ELSE NESTING
 
@@ -3746,22 +3769,20 @@ Example: @RTSTAT 25, 13F@n
 
 See also: TRIG-TYPE, HALT, WAIT
 #31
-TRIG-SWITCH TRIGEDIT-SWITCH CASE DEFAULT BREAK %SWITCH% 
+TRIG-SWITCH TRIGEDIT-SWITCH CASE TRIG-CASE DEFAULT BREAK %SWITCH% 
 
-Usage: switch expression
+Usage: 
     
-switch %random.4%
+switch %random.3%
   case 1
-    emote sings a merry song about someone named Fulbert and Beatrice.
+    %echo% This case has a 33% (1 in 3) chance of firing.
   break
   case 2
-    emote booms out loudly, 'Heigh Ho! Heigh Ho! It is home from work we go!'
-  break
-  case 3
-    emote tries to sing falsetto, but his voice doesn't agree.
+    %echo% This case has a 33% (1 in 3) chance of firing.
   break
   default
-    sing
+    %echo% default case covers any unmatched cases. In this case 3
+	%echo% so it also has a 33% (1 in 3) chance of firing.
   break
 done
 
@@ -3770,20 +3791,33 @@ statements that follow. If none of the following case statements are a match,
 and a default statement exists, the default statement is considered a match. 
 If a match is found, the commands that follow it, up until a break or done 
 command, are executed. 
-Break is used to terminate commands in a switch. 
+
+Break is used to terminate commands in a switch or to stop a loop @RHELP WHILE@n. 
 Case is used to begin a new conditional group in a switch block.
 Default is similar to case but matches any condition not met. 
 Done is used to terminate a while or switch block.
 
-Example: @RTSTAT 18, 6, 34@n
+Example: @RTSTAT 18, 6, 132@n
+#31
+HASATTACHED %HASATTACHED% %ACTOR.HASATTACHED% %ROOM.HASATTACHED% %OBJ.HASATTACHED
+
+Usage: %actor.hasattached(500)% 
+       %obj.hasattached(1204)% 
+       %room.hasattached(8371)%
+	   
+   Checks to see if the specified trigger vnum is attached to the mob, object or
+room. Returns nothing if no number is specified or used on a PC (player 
+character, i.e. non-mobile). Returns 0 if not attached and 1 if attached.
+
+See Also: VARIABLES, CHAR-VAR		 
 #31
 WHILE DONE %NEXT% NEXT LOOPS TRIG-LOOPS TRIG-WHILE TRIG-DONE FOR-LOOP COUNT
 
 Usage: while expression
 
-   The while command starts a loop, running until the expression becomes zero 
-or negative. This can make permanent loops - be careful. The switch block must 
-be terminated by a done. While loops are disabled after looping 100 times.
+   The while command starts a loop, running until the expression becomes zero, 
+negative, or a break is used. The while loop must be terminated by a done. 
+While loops are disabled after looping 100 times.
 
 Room example: @RTSTAT 24, 2201@n
 Obj example:  @RTSTAT 23@n
@@ -3803,6 +3837,8 @@ mkill %actor%
 time. When a trigger is being executed it will attempt to execute all commands 
 right away. To get small breaks in, and perhaps give the players time to adjust, 
 use the wait command.
+
+Example: @RTSTAT 103@n
 
 See also: RANDOM-TIMING, WAIT-UNTIL
 #31
@@ -3966,16 +4002,20 @@ contents - The id of the first obj in the room.
    south   subfield, (vnum) - vnum of room in direction.
    east    subfield, (key)  - vnum of key to use. %self.north(key)%
    west    subfield, (bits) - CLOSED LOCKED, etc.
-   up      subfield, (room) - room variable for room in direction
+   up      subfield, (room) - room variable for room in direction.
    down    no subfield: same as (bits). 
+hasattached() - Checks if the trig is attached. @RHELP HASATTACHED@n.
 id       - The unique id of the room.
 name     - The name of the room.
 people   - The id of the first mob or player in the room, or an empty return.
 random.dir - Chooses a random valid direction.
+roomflag() - Checks if roomflag exists. @RHELP ROOMFLAGS@n @RTSTAT 1220@n
 sector   - The sector type of the room.
 vnum()   - The room's vnum. Equality can now be checked with if %self.vnum(#)% 
            not if %self.vnum% == #
 weather  - current weather: sunny, cloudy, rainy, or lightning @RTSTAT 41098@n.
+zonename   - The name of the zone.
+zonenumber - The zone number.
 
 Example: @RTSTAT 29@n
 
@@ -3985,12 +4025,14 @@ TRIGEDIT-VARIABLES-OBJECTS OBJ-VAR %SHORTDESC% TRIGEDIT-OBJ-VAR VAL0 VAL1 VAL2 V
 
 Objects When using field - The variable returns:
  
+affects()    - Checks if flag exists. @RHELP OEDIT-AFFECT@n @RTSTAT 1205@n
 carried_by   - The id of the character carrying the object, or an empty return.
 contents     - Gives the first object in a container.  @RTSTAT 32@n
 cost()       - The cost (not rent cost) of the object. Subfield sets.
 cost_per_day - The rent cost of the object
 count        - The number of the same object.
 has_in       - True if the container holds the item.
+hasattached() - Checks if the trig is attached. @RHELP HASATTACHED@n.
 id           - The unique id of the object.
 is_inroom    - Returns true if object is in room.
 name         - The list of key words of the object.
@@ -4048,28 +4090,29 @@ See @RHELP CHAR-VAR@n
 CHAR-VARS TRIGEDIT-VARIABLES-CHARACTERS %TITLE% %ACTOR.TITLE% CHAR-VARIABLES TRIGEDIT-CHAR-VAR %ACTOR.ID% ACTOR.ID ACTOR.VNUM %ACTOR.VNUM% %ACTOR.NAME% %ACTOR% %VICTIM% SELF %SELF% MOBVARS MOB-VARS TRIGEDIT-LEVEL %SELF.ID% SELF.ID NEXT_IN_ROOM ACTOR-VAR 
 
 The following fields can be used with %actor%. i.e. %actor.<field>%
-Excluding the subfield () returns the value. Adding a subfield modifies it.
+Excluding the subfield () returns the value. Adding a subfield adjusts it.
 
 @uField@n            - @uvariable returns:@n
 
-cha/con/dex/int - Checks the stat. Subfield sets. 
-str/stradd/wis    @RHELP TRIG-STAT@n
+cha/con/dex/int - Checks the stat. @RHELP TRIG-STAT@n. Subfield adjusts. 
+str/stradd/wis()  () is a subfield and allows a change to the variable.
 alias           - The list of aliases of the mob or the player name. 
-align           - The numeric alignment of the actor. @RHELP ALIGN@n
+align()         - The actor's alignment @RHELP ALIGN@n. Subfield adjusts.
 affect()        - Checks the actor for the affect. @RHELP TRIG-AFFECT@n 
 canbeseen       - Checks if the the mob can see the actor. @RHELP CANBESEEN@n
 class           - The actor's class, as a string.
 drunk()         - The actor's drunkenness. Subfield sets, -1 is off.
-exp()           - Checks the actor's XP. Subfield modifies. @RHELP NOP@n
+exp()           - Checks the actor's XP. Subfield adjusts. @RHELP NOP@n
 eq()            - Returns ID of the first object equipped. @RHELP TRIG-EQ@n
 fighting        - The unique id of the mob fighting the actor.
 follower(name)  - The follower of the actor (as an id) with name supplied.
-gold()          - Checks the actor's gold. Subfield modifies. @RHELP NOP@n
+gold()          - Checks the actor's gold. Subfield adjusts. @RHELP NOP@n
 has_item()      - Checks if the actor has an object. @RHELP HAS_ITEM@n
+hasattached()   - Checks if the trig is attached. @RHELP HASATTACHED@n.
 heshe           - Returns the correct pronoun (he/she/it).
 himher          - Returns the correct pronoun (him/her/it).
 hisher          - Returns the correct pronoun (his/her/its).
-hitp()          - The current hit points of the actor. Subfield modifies.      
+hitp()          - The current hit points of the actor. Subfield adjusts.      
 hunger()        - The actor's hunger. Subfield sets, -1 is off.
 id              - The unique id of the actor.
 inventory()     - Returns the id of the first item in inv. @RHELP TRIG-INV@n
@@ -4077,26 +4120,26 @@ is_killer()     - Checks if actor is a KILLER. To modify @RHELP NOP@n
 is_pc           - Checks if the actor is a player. @RHELP IS_PC@n
 is_thief()      - Checks if actor is a THIEF. @RHELP NOP@n
 level           - The actor's current level.
-mana()          - The current mana points of the actor. Subfield sets.
+mana()          - The current mana points of the actor. Subfield adjusts.
 master          - The master of the actor (as an id), or an empty return.
-maxhitp()       - The maximum hit points of the actor. Subfield sets.
-maxmana()       - The maximum mana points of the actor. Subfield sets.
-maxmove()       - The maximum movement points of the actor. Subfield sets.
-move()          - The movement points of the actor. Subfield sets.
+maxhitp()       - The maximum hit points of the actor. Subfield adjusts.
+maxmana()       - The maximum mana points of the actor. Subfield adjusts.
+maxmove()       - The maximum movement points of the actor. Subfield adjusts.
+move()          - The movement points of the actor. Subfield adjusts.
 name            - The actor's name (the short description for mobs).
 next_in_room    - The next mob/player in the room as a variable (id) nice to 
                   use for loops, or an empty return @RTSTAT 23@n
 pos()           - %actor.pos% returns position. Subfield modifies. Sleeping,
                   resting, sitting, fighting, standing. @RTSTAT 1399, 20997@n     
-prac()          - The actor's number of practices. Subfield modifies.
+prac()          - The actor's number of practices. Subfield adjusts.
 pref()          - Checks if actor has PRF flag enabled. @RTSTAT 1210@n
 questpoints()   - Checks the actor's questpoints. Subfield modifies. @RHELP NOP@n
 room            - The room the actor is in as a room variable. 
-saving_para     - Set the actors saving throw for paralization.
-saving_rod      - Set the actors saving throw for staffs/wands.
-saving_petri    - Set the actors saving throw for petrification.
-saving_breath   - Set the actors saving throw for breath weapons.
-saving_spell    - Set the actors saving throw for spells.
+saving_para()   - The actors saving throw for paralization. Subfield adjusts.
+saving_rod()    - The actors saving throw for staffs/wands. Subfield adjusts.
+saving_petri()  - The actors saving throw for petrification. Subfield adjusts.
+saving_breath() - The actors saving throw for breath weapons. Subfield adjusts.
+saving_spell()  - The actors saving throw for spells. Subfield adjusts.
 sex             - The actor's sex, as a string: MALE, FEMALE, or NEUTRAL.
 skill()         - The percentage of learnedness in the skill subfield.
 skillset("" #)  - Set the actors practiced level any skill or spell (1-100).
@@ -4751,7 +4794,8 @@ See also: MHUNT
 #31
 TRIGEDIT-MOB-LOAD TRIGEDIT-LOAD TRIG-LOAD 
  
-Activated when this mobile is created.
+   Activated when this mobile is created, either by manual load, zreset or
+or regular zone lifespan reset.
  
 Numeric Arg : percent chance this trigger will be activated.
 Argument    : not used.
@@ -4844,9 +4888,9 @@ See also: %TIME%
 #31
 TRIGEDIT-OBJ-GLOBAL TRIG-OBJ-GLOBAL 
 
-Not a trigger type by itself; used in conjunction with Random @RHELP 
-TRIGEDIT-OBJ-RANDOM@n. While Random triggers only trigger if players 
-are in the same room, Global Random triggers will trigger regardless. 
+   Not a trigger type by itself; used in conjunction with a random trigger. 
+This will allow random triggers to fire even if a player is not in 
+the same room.
  
 Numeric Arg : not used.
 Argument    : not used.
@@ -4855,6 +4899,8 @@ Variables:
 %self% - the object.
 
 Example: @RTSTAT 79@n
+
+See Also: TRIGEDIT-OBJ-RANDOM, TRIGEDIT-OBJ-LOAD
 #31
 TRIGEDIT-OBJ-RANDOM TRIGEDIT-OBJECT-RANDOM TRIG-OBJ-RANDOM 
  
@@ -5411,8 +5457,15 @@ DETACH UNATTACH
 
 Builders working on their trial vnum do not need to learn this command, yet.   
 
-Usage: detach [mob | obj] {target name} {trigger name/vnum | 'all'}
-       detach room {target vnum | '.'} {trigger name/vnum | 'all'}
+Fizban: Usage: detach [mob | obj] {target name} {trigger name/vnum | 'all'}
+> 
+Fizban: detach room {target vnum | '.'} {trigger name/vnum | 'all'}
+> 
+Fizban: syntax is actually detach room {trig vnum} {room vnum}   etc
+
+
+Usage: detach [mob | obj | target name/vnum] {trig vnum | 'all'}
+       detach room {trig vnum | '.'} {room vnum | 'all'}
 
    Detach removes a trigger to one instance of a mob/obj/room, for testing or 
 other purposes. The command only removes the trigger temporarily, until the
@@ -5560,8 +5613,8 @@ M) AFF Flags : @cNOBITS@n
 14) PROT-GOOD      Mob is protected from good characters.
 15) SLEEP          Reserved for internal use.  Do not set.
 16) NO_TRACK       Mob cannot be tracked.
-17) UNUSED         Unused (room for future expansion).
-18) UNUSED         Unused (room for future expansion).
+17) FLY            Mob is flying.
+18) SCUBA          Mob can breathe underwater.
 19) SNEAK          Mob can move quietly without room being informed.
 20) HIDE           Mob is hidden; can only be seen with sense life.
 21) UNUSED         Unused (room for future expansion).
@@ -5726,7 +5779,10 @@ end
 
 Checks if actor is a player. Useful when you want a trigger to fire on players
 and not mobs. All Greet triggers should normally fire only on players.
- 
+
+Example: @RTSTAT 103, 34@n
+
+See Also: CHAR-VARS 
 #31
 TRIG.HLP END
 #31
@@ -5890,17 +5946,21 @@ Rlist gives you a list of the rooms within the parameters.
    
 See also: REDIT, OLC, DIG
 #31
-MLIST MEDIT-LIST 
+MLIST MEDIT-LIST MLIST-FLAG MLIST-LEVEL
 
-Usage: mlist <range of vnums or zone number>
-
+Usage: mlist - list mobs in current zone.
+       mlist <range of vnums or zone number> - list mobs in current zone or range of vnums.
+	   mlist level <level> - list all mobs of the specified level in the game.
+       mlist flag <number> - list all mobs with the specified mob flag. @RHELP MOBFLAG@n.
+	   
    Mlist gives you a list of the mobiles numbered within the parameters, with 
 included level of the mob.
 
-   mlist             - lists all mobs of the zone you are in
-   mlist 12          - lists all mobiles defined in zone 12
-   mlist 3001 3022   - lists all existing mobiles from vnum 3001 to 3022
-
+   mlist             - lists all mobs of the zone you are in.
+   mlist 12          - lists all mobiles defined in zone 12.
+   mlist 3001 3022   - lists all existing mobiles from vnum 3001 to 3022.
+   mlist level 34    - lists all mobs of level 34 in the game.
+   mlist flag 8      - lists all mobs with NPC flag WIMPY set. @RHELP MOBFLAG@n
 See also: MEDIT, OLC
 #31
 SLIST SEDIT-LIST 
@@ -6053,8 +6113,8 @@ prefer to add the quest in the zone where quest completion takes place.
 
 Quests use vnums in exactly the same way as mobiles, object and rooms.  Each 
 zone will normally have 100 vnums available (#00 to #99, where # is the zone 
-number).  Usually, when creating the first quest in a zone, #00 is used, then 
-#01, etc…
+number).  Usually, when creating the first quest in a zone, #00 is used, 
+then #01, etc…
 
 When you qedit <vnum> to create a new quest (or edit an existing one), you will 
 see the menu in @RHELP QEDIT-MENU@n
@@ -6079,7 +6139,7 @@ QEDIT-MENU QUESTEDITOR-MENU
  A) Quantity       : [     @c1@n]                         @RHELP QEDIT-QUANTITY@n
     Quest Point Rewards                               @RHELP QEDIT-COMPLETED@n
  B) Completed      : [     @c0@n]  C) Abandoned   : [     @c0@n] 
-    Other Rewards                                        @RHELP QEDIT-REWARDS@n
+    Other Rewards                                     @RHELP QEDIT-REWARDS@n
  G) Gold Coins     : [     @c0@n]  T) Exp Points  : [     @c0@n]  O) Object : [    @c-1@n]
     Level Limits to Accept Quest                      @RHELP QEDIT-LEVELS@n
  D) Lower Level    : [     @c0@n]  E) Upper Level : [    @c34@n] 
@@ -7112,40 +7172,41 @@ MEDIT-NPC-FLAGS MEDIT-FLAGS SPEC STAYZONE AGGRESSIVE AGGR_GOOD AGGR_NEU AGGR_EVI
 NPC stands for non-player-character (mob)
  
 L) NPC Flags : @cISNPC@n
-1) SPEC        This flag must be set on mobiles which have special procedures
+0) SPEC        This flag must be set on mobiles which have special procedures
                written in C.  In addition to setting this bit, the specproc
                must be assigned in spec_assign.c, and the specproc itself must
                be written. Instead of using this use scripts. DO NOT SET.
-2) SENTINEL    Mob will not leave the room.
-3) SCAVENGER   The mob should pick up valuables it finds on the ground.  More
+1) SENTINEL    Mob will not leave the room.
+2) SCAVENGER   The mob should pick up valuables it finds on the ground.  More
                expensive items will be taken first.
-4) ISNPC       Default is on, do not change. @RHELP ISNPC@n.
-5) AWARE       Set for mobs which cannot be backstabbed.
-6) AGGR        Mob will hit all players in the room it can see. See also the
+3) ISNPC       Default is on, do not change. @RHELP ISNPC@n.
+4) AWARE       Set for mobs which cannot be backstabbed.
+5) AGGR        Mob will hit all players in the room it can see. See also the
                WIMPY bit.
-7) STAY_ZONE   Mob will not leave its zone. All mobs should have this flag or
+6) STAY_ZONE   Mob will not leave its zone. All mobs should have this flag or
                the SENTINEL flag. This keeps AGGRESSIVE mobs from wandering
                into a newbie zone.
-8) WIMPY       Mob will flee when being attacked if it has less than 20% of
+7) WIMPY       Mob will flee when being attacked if it has less than 20% of
                its hit points.  If the WIMPY bit is set in conjunction with
                any of the forms of the AGGRESSIVE bit, the mob will only
                attack mobs that are unconscious (sleeping or incapacitated).
-9) AGGR_EVIL   Mob will attack players that are evil-aligned.
-10) AGGR_GOOD  Mob will attack players that are good-aligned.
-11) AGGR_NEU   Mob will attack players that are neutrally aligned.
-12) MEMORY     Mob will remember players that initiate attacks on it, and will
+8) AGGR_EVIL   Mob will attack players that are evil-aligned.
+9) AGGR_GOOD   Mob will attack players that are good-aligned.
+10) AGGR_NEU   Mob will attack players that are neutrally aligned.
+11) MEMORY     Mob will remember players that initiate attacks on it, and will
                attack that player if it ever runs into him again.
-13) HELPER     The mob will attack any player it sees in the room that is
+12) HELPER     The mob will attack any player it sees in the room that is
                fighting with a mobile in the room. Useful for groups of
                mobiles that travel together; i.e. three snakes in a pit, to
                force players to fight all three simultaneously instead of
                picking off one at a time.
-14) NOCHARM    Mob cannot be charmed.
-15) NOSUMMON   Mob cannot be summoned.
-16) NOSLEEP    Sleep spell cannot be cast on mob.
-17) NOBASH     Large mobs such as trees that cannot be bashed.
-18) NOBLIND    Mob cannot be blinded.
- 
+13) NOCHARM    Mob cannot be charmed.
+14) NOSUMMON   Mob cannot be summoned.
+15) NOSLEEP    Sleep spell cannot be cast on mob.
+16) NOBASH     Large mobs such as trees that cannot be bashed.
+17) NOBLIND    Mob cannot be blinded.
+18) NOTDEADYET Mob being extracted. DO NOT USE.
+
 See also: MEDIT-AFF-FLAGS
 #31
 OEDIT-MENU OBJ-MENU OBJECT-MENU
@@ -7271,7 +7332,7 @@ of value0 through value4 (option C). The Type Flag must be one of the following:
 6    FURNITURE      Item may be sat on.
 7    FREE           Do not set.
 8    TREASURE       Item is treasure other than gold coins (i.e. gems)
-9    ARMOR          Item is armor.
+9    ARMOR          Item is armor. Set AC in values, @RHELP OEDIT-VALUES@n.
 10   POTION         Item is a magical potion.
 11   WORN           Item is worn, but not armor.
 12   OTHER          Miscellaneous object with no special properties.
@@ -7524,43 +7585,8 @@ BOAT - No values currently used.
 
 DRINKCON
 FOUNTAIN
-   value 0: Capacity of container. -1 for unlimited.
-   value 1: Current quantity in container.
-   value 2: see below
-   value 3: If the drink is poisoned, how long will the poison burn? 0 if not poisoned.
-
-   value 2: The type of liquid in the drink-container, one of:
-      Type          nr.         Effect of Liquid On:
-		        drunkenness   Fullness      Thirst
-      WATER          0      0           1           10
-      BEER           1      3           2           5
-      WINE           2      5           2           5
-      ALE            3      2           2           5
-      DARK ALE       4      1           2           5
-      WHISKY         5      6           1           4
-      LEMONADE       6      0           1           8
-      FIREBREATHER   7      10          0           0
-      LOCAL SPC.     8      3           3           3
-      SLIME          9      0           4           -8
-      MILK           10     0           3           6
-      TEA            11     0           1           6
-      COFFEE         12     0           1           6
-      BLOOD          13     0           2           -1
-      SALT WATER     14     0           1           -2
-      CLEAR WATER    15     0           0           13
-
-   The above values for drunkenness/fullness/thirst are in the units of one
-hour of effect per four units of liquid drunk.  For example, imagine that
-Dragon drinks an entire bottle (say 7 units) of saltwater.  According to the
-table above, saltwater has a drunkenness value of 0, fullness value of 1 and
-thirst value of -2.  Therefore:
-His drunkenness is not changed ((7/4)*0)
-His Fullness increases by ((7/4)*1) hours
-His Thirst increases by ((7/4)*-2) hours, thus making him more thirsty.
-A player's drunkenness, fullness, and thirst can range from 0 to 24.
-24 is the maximum; 0 means the person is completely sober, hungry,
-or thirsty respectively.
-
+   @RHELP FOUNTAIN@n
+   
 #31
 OEDIT-APPLIES-MENU OEDIT-APPLYS AFF-FLAGS HEIGHT SAVESPELL SAVING_PARA SAVING_ROD SAVING_PETRI SAVING_BREATH SAVING_SPELL APPLIES-MENU SAVING-THROWS SAVING_ROLLS ROLLS MAXHITS
 
@@ -7816,7 +7842,8 @@ The following room flags can be selected:
                  zone where any mob can wander. For example, lower level mobs 
                  can be set so that only they can wander on the first level of 
                  a dungeon by making the stairwells NO_MOB. A NO_MOB room will 
-                 also prevent pets and charmed mobs from following players.
+                 not prevent pets and charmed mobs from following players. A
+				 mob can flee into a NO_MOB room.
 4)  INDOORS    - Weather messages will not be sent to room, always lighted. 
                  Call lightning will not work.
 5)  PEACEFUL   - No violence will work here. Use sparingly.
@@ -7832,6 +7859,7 @@ The following room flags can be selected:
 14) ATRIUM     - DO NOT USE. The door to a house.   /    hcontrol
 15) OLC        - DO NOT USE. Is room modifiable.
 16) *          - DO NOT USE. Breadth-first search mark used by track and hunt.
+17) WORLDMAP   - DO NOT USE. World Map style maps.
 
 Never set UNUSED or DO NOT USE bits, if you find them anywhere. If you 
 do not know what a flag does, DO NOT SET IT!
@@ -8179,7 +8207,7 @@ AUTOMAPPING MAPS
 
 Usage: map <#1-12>
 
-   This command prints a text generated map of your current surrondings. 
+   This command prints a text generated map of your current surroundings. 
 Including a number allows you to expand or shrink the map to show a wider 
 or smaller area. 
 
@@ -8382,7 +8410,7 @@ rumble@@tbamud.com
  306 Newbie TREE                        -- Kaan                        1- 9
  307 CASTLE                             -- Kaan                       21-27
  308 BARON Cailveh                      -- Kaan                       25-34
- 309 Keep of Baron WESTLAWN             -- Kaan                       38-99
+ 309 Keep of Baron WESTLAWN             -- Kaan                       26-30
  310 GRAYE Area                         -- Aten                       12-30
  311 Dragon's TEETH                     -- Kaan                       20-30
  312 LEPER Island                       -- Kaan                       25-30
@@ -8714,9 +8742,10 @@ few normal telnet program that have slipped in because people like them.
 ZMud (PC) - @Chttp://www.zuggsoft.com/zmud/down.asp#zMUD@n
 ZMud Free (PC) - http://forums.zuggsoft.com/index.php?page=4&action=file&file_id=18
 CMUD (PC) - http://www.zuggsoft.com/cmud/
-Atlantis (Mac) - http://riverdark.net/atlantis/
 Portal (PC) - http://gameaxle.com/
 GMud (PC) - http://www.uberworld.org/gmud.exe (fits on a floppy).
+TinTin++ - http://tintin.sourceforge.net/
+Atlantis (Mac) - http://riverdark.net/atlantis/
 Pueblo - http://pueblo.sf.net/
 Fireclient (PC) - http://www.firebolt.com/download.php
 Tinyfugue (Many platforms) - http://tf.tcp.com/~hawkeye/tf/ 
@@ -9570,12 +9599,12 @@ If you're hungry or thirsty, these commands are for you!
   > drink from cup
   > sip fountain
   
-If you taste or sip, you don't get large portions and won't be
-hurt badly by poison. You :Sdon't get satisfied either, though.
+If you taste or sip, you don't consume large portions and won't be hurt badly 
+by poison. But, you also will not quench your thirst or satisfy your hunger.
 
-Thirst and Hunger are modified by objects in units of hours. So an object
-with 24 drink units will quench thirst for 24 hours. Same for food. 
-Immortals never become hungry, thirsty or full.
+Thirst and Hunger are modified by objects in units of hours. So an object with 
+24 drink units will quench thirst for 24 hours. Same for food. Immortals never 
+become hungry, thirsty or full.
 #0
 EMOTES : EMOTIONS
 
@@ -10776,7 +10805,7 @@ quest history  - Shows all previously completed non-repeatable quests.
 
 See also: AUTOQUESTS
 #0
-AUTOQUESTS QUESTS QUESTMASTERS QUEST-MOBS QUESTMOBS QEDIT
+AUTOQUESTS QUESTS QUESTMASTERS QUEST-MOBS QUESTMOBS
 
    An autoquest is a quest that can be automatically started and completed 
 without the intervention of an immortal.  Simply visit a questmaster and join 
@@ -11055,10 +11084,10 @@ AUTOLOOT
 
 Usage: toggle autoloot
 
-   Enables you to automatically "take all corpse" from any mob you kill. You 
-will loot everything, this includes cursed objects, until you can no longer
-carry anymore weight. If this happens and you also have autosac enabled the
-items you can't pick up will be sacrificed with the mob.
+   Enables you to automatically "take all corpse" from any mob you kill.  You 
+will loot everything (including cursed objects) until you can no longer carry 
+anymore weight.  If this happens and and you also have autosac enabled, the 
+items you cannot pick up will be left on the ground.
 
 See Also: TOGGLE, TAKE, SPLIT
 #0
@@ -11327,10 +11356,47 @@ in your inventory to unlock a door.
 See also: OPEN
 
 #0
-Changes
+CHANGES
 
-Too many to list. See @RNEWS@n
+Major Changes:
+OasisOLC 2.0.6
+trigedit (DG Scripts) 1.0.14
+ASCII Player Files 3.0.1
+128bit Support
+cedit (configuration editor)
+tedit (text file editor)
+aedit (socials editor) (more than 100 new socials)
+hedit (help editor)
+qedit (quest editor)
+questpoints
+buildwalk
+dig
+tell m-w (an in game dictionary lookup)
+gemote
+history
+file
+zpurge
+zcheck
+checkload
+Copyover
+ANSI Color
+Auto Toggles (loot, sac, gold, assist, split)
+Hidden mob/obj
+mob/obj stacking
+hindex
+helpcheck
+OLC copy and delete options
+exporting of zones
+automap and ascii map generator
+doors visible in exit menu (enable/disable in CEDIT)
+furniture
+new mail notification and mail saved to pfile
+improved toggle (AFK, pagelength, showvnums, screenwidth, automap, etc.)
+180 zones
+unlimited containers
+(hundreds of bugfixes too)
 
+See Also: NEWS, CHANGELOG
 #0
 LAG
 
@@ -11909,6 +11975,60 @@ make backups and will give you a copy of your work whenever you request it.
 
 See also: TMC, TBA-ADVERTISING
 #0
+REPORT-EXAMPLE BUILDER-REPORT
+
+The following is Justo's monthly builder's report update. These are not required,
+but encouraged. Justo's zone is the most in-depth and well planned zone I have
+ever seen. I have never seen anyone put so much work into a zone. Kudos to Justo.
+I am saving this because I would like everyone to use Justo's work as an 
+outstanding example of how a builder should develop and plan a full zone.
+ 
+ * * * * Midgaard Mail System * * * *
+Date: Sun Oct 13 10:33:59 2002
+  To: rumble
+From: justo
+ What I've been doing in Zone 151 :
+ 1) Connected existing street system with Zone 82.
+ 2) Have been zediting doors to remain closed.
+ 3) Improved keywords on several mobs.
+ 4) Added the appropriate extra descs to 15 objects. ( Still wish it would not
+    say " A bottle of tequila of whisky." That is annoying.
+ 5) Fixed up some of the shops...shop 15102 is still a problem...but its
+    finally functioning which is an improvement.
+ 6) Erased old quest triggers that are not in phase with my current concept
+    for how the Zone should operate. Built some new ones that do conform
+    to the new concept ( I'll explain that shortly. ).
+ 7) Built a realistic blunderbuss with your appreciated help.
+ 8) Edited some of the Intro stuff in rooms 15100-15102.  
+  * My original plan was to create something which people could actually
+    use to mud in the classical sense. But, I've rethought that a little.
+    Since everyone comments that Tejas 1820 is unique...and maybe a bit
+    alien, I've decided to make it into a more educationally-oriented
+    environment by setting up "sector guide" mobs which interact with 
+    players and provide descriptive/directional info. The player asks
+    for help and those mobs provide it as best they can.
+    I'll also be adding one hack n' slash area for players to do
+    their usual thing...a Cantina. I'd initially intended to put
+    in some authentic desert wilderness around my San Juan Bautista 
+    fort where players could go out and interact with the Apache
+    there and try to survive, but I'd rather allocate that Zone 82
+    space to completing my town. I think that adding wilderness 
+    ( actual frontier wildlands ) is going to require a third Zone
+    when I get that far along. 
+    As for the educational "sector guide" mobs...my big dilemma is
+    trying to figure out just what the players might want to know about 
+    Tejas 1820. I can Speech trigger those mobs...but what would a
+    player bother to ask them ? All of them are ICly-justified 
+    bilinguals or multilinguals in varying degrees of proficiency. 
+    But, I need more feedback on what players would like to know about
+    the Zone environment.  
+    Maybe the way to go is to set up little instructional Quests for 
+    the players. I might attempt that again.
+    Before we had a Ranger player that went around with a char and  
+    tested the Zones. What have we got in that regard now ?
+  Justo's Monthly Zone report
+
+#31
 TRIAL-VNUM-ASSIGNER ASSIGNER TRIAL-VNUM-LIMITER TBALIM JUNK-ASSIGNER LIMITER VNUM-ASSIGNER TASKS
 
    This object was created to help new builders follow the directions under 
@@ -12270,7 +12390,7 @@ The Builder Academy
 Code Base: [tbaMUD] the latest version 
 Site: tbamud.com 9091 [84.49.244.105] 
 Admin Email: rumble@@tbamud.com 
-Theme: Teaching Builders and tbaMUD codebase development 
+Theme: Teaching Builders and tbaMUD Codebase Development
 http://www.tbamud.com/ 
 telnet://tbamud.com:9091 
 
@@ -12285,61 +12405,62 @@ TBA will continue development and is always open to feedback and
 recommendations from the MUDding community. TBA is foremost a MUDding resource 
 with the goal of improving the MUDding community. 
 
-The tbaMUD vision: 
-   TbaMUD's vision is to provide the MUDding community a stable and functional 
-codebase that includes an in-depth World and help files that makes it ready to 
-be molded into a custom MUD by its coders and builders. We also provide 
-multiple resources to allow for feedback, contribution, and the sharing of 
-ideas within the MUDding community to ensure constant development and 
-improvements. 
-   TbaMUD is highly developed from the programming side, but highly UNdeveloped 
-on the game-playing side. So, if you're looking for a huge MUD with billions of 
-spells, skills, classes, and races, tbaMUD will disappoint you. TbaMUD still 
-has only the 4 original Diku classes, the original spells, and the original 
-skills. On the other hand, if you're looking for a highly stable, developed, 
-organized, and well documented "blank slate" MUD on which you can put your OWN 
-ideas for spells, skills, and classes, then tbaMUD is what what you are looking 
-for. 
+   We are happy to announce the sixth release of the codebase
+formerly known as CircleMUD. If you are interested in a mature
+and stable codebase with dedicated staff and support please check
+us out.
 
-The source: 
-http://www.tbamud.com/filebrowser/patches 
-The forums: 
-http://www.tbamud.com/forum 
+Download here: http://tbamud.com/filebrowser/patches/releases
+Full changelog here: http://tbamud.com/files/changelog.txt
 
-Rumble 
-The Builder Academy 
-tbamud.com 9091 
+The tbaMUD vision:
+TbaMUD's vision is to provide the MUDding community a stable and
+functional codebase that includes an in-depth World and help files
+that makes it ready to be molded into a custom MUD by its coders and
+builders. We also provide multiple resources to allow for feedback,
+contribution, and the sharing of ideas within the MUDding community
+to ensure constant development and improvements.
+TbaMUD is highly developed from the programming side, but highly
+UNdeveloped on the game-playing side. So, if you're looking for a
+huge MUD with billions of spells, skills, classes, and races, tbaMUD
+will disappoint you. TbaMUD still has only the 4 original Diku
+classes, the original spells, and the original skills. On the other
+hand, if you're looking for a highly stable, developed, organized,
+and well documented "blank slate" MUD on which you can put your OWN
+ideas for spells, skills, and classes, then tbaMUD is what what you
+are looking for.
 
-The most challenging aspect of running a mud is finding good builders. You 
-will hear this from the admin of every MUD that has ever been. In the past it 
-has always been up to each individual MUD to find and attempt to train their 
-own builders. This works, but I think the MUDding community can come up with 
-something better. That is why I created The Builder Academy. 
+TBA's Vision:
+The most challenging aspect of running a mud is finding good
+builders. You will hear this from the admin of every MUD that has
+ever been. In the past it has always been up to each individual MUD
+to find and attempt to train their own builders. This works, but I
+think the MUDding community can come up with something better. That
+is why I created The Builder Academy.
+TBA has been open to anyone interested in learning or teaching how
+to build using Oasis OLC with dg scripts since 2000. TBA is now being
+used to develop the tbaMUD codebase (formerly known as CircleMUD).
+TBA has trained thousands of builders and has an extensive
+tutorial and help file system. No pressure, no deadline, just come
+learn, teach, or help develop tbaMUD. Give back to the community we
+have all taken so much from. TBA is a MUDding resource. Please take
+advantage of it so we can improve all of the MUDding community.
+TBA is a low stress, no deadline, training environment. Where
+anyone with motivation can work at their own pace to learn as much or
+as little as they wish. Numerous people are available to answer
+questions and give advice. 1000's of builders served and counting.
+TBA can even be used by other MUDs as a builder's port. Just send
+us your newbie builders. We will teach them and then you can have
+them back with the zones they build.
 
-TBA has been open to anyone interested in learning or teaching how to build 
-using Oasis OLC with dg scripts since 2000. TBA is now being used to develop 
-the tbaMUD codebase (formerly known as CircleMUD). 
-
-TBA has trained thousands of builders and has an extensive tutorial and help 
-file system. No pressure, no deadline, just come learn, teach, or help develop 
-tbaMUD. Give back to the community we have all taken so much from. TBA is a 
-MUDding resource. Please take advantage of it so we can improve all of the 
-MUDding community. 
-
-  TBA is a low stress, no deadline, training environment. Where anyone with 
-motivation can work at their own pace to learn as much or as little as they
-wish. Numerous people are available to answer questions and give advice.
-1000's of builders served and counting.
-
-TBA can even be used by other MUDs as a builder's port. Just send us your 
-newbie builders. We will teach them and then you can have them back with the 
-zones they built. 
-
-We are always open to anyone willing to learn, teach, or help develop tbaMUD.
+We are always open to anyone willing to learn, teach, or help
+develop tbaMUD.
 __________________
-Rumble 
-The Builder Academy 
+Rumble
+The Builder Academy
 tbamud.com 9091
+http://tbamud.com
+rumble@tbamud.com
 #0
 FAMOUS QUOTES FUNNY HUMOR JOKES LAUGH
 
@@ -12365,6 +12486,7 @@ Surtur: .....i pray you never become a therapist or psychiatrist
 Fyre: i'll keep that in mind for the future
 
 Fizban gossips, 'And remember being told what a pretty little girl I was'
+Fizban: You kno what? I just decided I want to be a waitress at Fultons :P
 
 Masok: Anyone else think that maybe we should randomly carpet bomb overly populated areas of poor or useless people?
 Masok: You cant. I have metal underwear.

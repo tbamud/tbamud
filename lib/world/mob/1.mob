@@ -923,10 +923,10 @@ E
 #164
 drunk~
 the drunk~
-A pathetic drunk is here, passed out.
+A pathetic drunk is staggering around intoxicated almost to unconsciousness.
 ~
-   He probably won't last very long.  Some hoodlums or a thieve will come along
-and relieve him of his money and maybe his life.    
+   He probably won't last very long.  Some hoodlums or a thief will come along
+and relieve him of his money and maybe his life.
 ~
 10 0 0 0 0 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
@@ -1042,6 +1042,7 @@ to get back to his farm as soon as possible.
 170 28900
 8 8 2
 E
+T 302
 #173
 magi guildguard~
 the magi guildguard~

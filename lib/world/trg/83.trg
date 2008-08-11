@@ -563,38 +563,38 @@ Chinchirorin Dice (8397)~
    eval die2 %random.6%
    eval die3 %random.6%
    eval roll %die1%%die2%%die3%
-   osend %actor% The dice land on  @o@g%die1%@n, @o@c%die2%@n, @o@r%die3%@n.
+   %send% %actor% The dice land on  @o@g%die1%@n, @o@c%die2%@n, @o@r%die3%@n.
    oechoaround %actor% %actor.name% rolls a @o@g%die1%@n, @o@c%die2%@n, @o@r%die3%@n.
 *** Check For 3 of a Kind ***
     if (%roll% == 111)
      oechoaround %actor% It's a @o@g1-1-1@n!  %actor.name% pays triple the bet!
-     osend %actor% It's a @o@g1-1-1@n!  You pay triple the bet!
+     %send% %actor% It's a @o@g1-1-1@n!  You pay triple the bet!
      halt
     elseif ((%die1% == %die2%) && (%die2% == %die3%))
      oechoaround %actor% @o@g%die1%@c%die2%@r%die3%@n Three of a kind! %actor.name% wins triple the bet!
-     osend %actor% @o@g%die1%@c%die2%@r%die3%@n Three of a kind! You win triple the bet!
+     %send% %actor% @o@g%die1%@c%die2%@r%die3%@n Three of a kind! You win triple the bet!
      halt
 *** Check for Storms ***
     elseif (%roll% == 123 || %roll% == 132 || %roll% == 213 || %roll% == 321 || %roll% == 312)
      oechoaround %actor% It's a storm!  @o@g1-2-3@n!  %actor.name% pays double the bet!
-     osend %actor% It's a storm!  @o@g1-2-3@n!  You pay double the bet!
+     %send% %actor% It's a storm!  @o@g1-2-3@n!  You pay double the bet!
      halt
     elseif (%roll% == 456 || %roll% == 465 || %roll% == 546 || %roll% == 654 || %roll% == 645)
      oechoaround %actor% It's a storm!  @o@g4-5-6@n!  %actor.name% wins double the bet!
-     osend %actor% It's a storm!  @o@g4-5-6@n!  You win double the bet!
+     %send% %actor% It's a storm!  @o@g4-5-6@n!  You win double the bet!
      halt
 *** Otherwise, Compute the Score ***
     elseif (%die1%==%die2%)
      oechoaround %actor% %actor.name% scores a @o@g%die3%@n.
-     osend %actor% You score a @o@g%die3%@n.
+     %send% %actor% You score a @o@g%die3%@n.
      halt
     elseif (%die1%==%die3%)
      oechoaround %actor% %actor.name% scores a @o@g%die2%@n.
-     osend %actor% You score a @o@g%die2%@n.
+     %send% %actor% You score a @o@g%die2%@n.
      halt
     elseif (%die2%==%die3%)
      oechoaround %actor% %actor.name% scores a @o@g%die1%@n.
-     osend %actor% You score a @o@g%die1%@n.
+     %send% %actor% You score a @o@g%die1%@n.
      halt
     else
      oecho @o@gNo score!@n

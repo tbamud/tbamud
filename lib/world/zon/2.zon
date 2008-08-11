@@ -2,6 +2,10 @@
 Rumble~
 Sanctus II~
 200 299 10 2
+M 0 125 3 254 	(the young girl)
+M 0 164 1 254 	(the drunk)
+G 1 101 99 -1 	(an imported bottle of beer)
+G 1 197 99 -1 	(a "kick me" sign)
 M 0 196 1 251 	(the newbie guide)
 O 0 251 1 251 	(a marble fountain)
 M 0 169 3 200 	(a citizen)
@@ -126,9 +130,6 @@ M 0 112 1 294 	(the young woman)
 M 0 118 3 236 	(the woman)
 M 0 118 3 295 	(the woman)
 M 0 125 3 274 	(the young girl)
-M 0 125 3 254 	(the young girl)
-M 0 164 1 254 	(the drunk)
-G 1 101 99 -1 	(an imported bottle of beer)
 M 0 135 1 252 	(the blue Master Magi)
 E 1 107 99 12 	(a blue robe)
 M 0 141 3 252 	(the corporal)

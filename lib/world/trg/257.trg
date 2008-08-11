@@ -73,7 +73,6 @@ Blood Bank - 25704~
 2 c 100
 g~
 * By Rumble
-* does not work for level 32 and above.
 * Make sure the command is give, check for any abbrev of blood
 if %cmd.mudcommand% == give && blood /= %arg%
   * let the player stun themselves, they will recover.

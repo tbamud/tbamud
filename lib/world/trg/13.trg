@@ -2177,7 +2177,7 @@ Rumble's Poofs~
 has entered the game.~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * To generate random poofs at login just set your loadroom to wherever this
-* mob is. Does not work for level 32 and above.
+* mob is. 
 eval maxpoofin %random.24%
 set  poofins[1] appears with a strange wooshing sound and climbs out of a pneumatic air 
 tube like they use at the bank.
@@ -2329,7 +2329,6 @@ Command test~
 2 c 100
 l~
 * Numeric Arg: 7 means obj can be worn, carried, or in room.
-* does not work for level 32 and above.
 * Make sure the command is look, check for any abbrev of closet
 * and make sure there is an arg.
 if %cmd.mudcommand% == look && closet /= %arg%
@@ -2742,7 +2741,6 @@ free~
 1 c 2
 shake~
 * Numeric Arg: 2 means in character's carried inventory
-* does not work for level 32 and above.
 * There are 20 possible answers that the Magic Eight Ball can give. 
 * Of these, nine are full positive, two are full negative, one is 
 * mostly positive, three are mostly negative, and five are abstentions. 
@@ -2824,7 +2822,6 @@ Obj Command quarter flip example~
 1 c 2
 flip~
 * Numeric Arg: 2 means in character's carried inventory
-* does not work for level 32 and above.
 if coin /= %arg% || quarter /= %arg%
   %echoaround% %actor%  %actor.name% flips a coin high up into the air.
   %send% %actor% You flip the coin up into the air.

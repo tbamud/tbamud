@@ -2115,7 +2115,7 @@ ACMD(do_toggle)
       break;
   case SCMD_SCREENWIDTH:
     if (!*arg2)
-      send_to_char(ch, "You current screen width is set to %d characters.", GET_SCREEN_WIDTH(ch));
+      send_to_char(ch, "Your current screen width is set to %d characters.", GET_SCREEN_WIDTH(ch));
     else if (is_number(arg2)) {
       GET_SCREEN_WIDTH(ch) = MIN(MAX(atoi(arg2), 40), 200);
       send_to_char(ch, "Okay, your screen width is now set to %d characters.", GET_SCREEN_WIDTH(ch));

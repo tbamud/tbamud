@@ -39,6 +39,57 @@ D5
 ~
 0 0 1999
 E
+spoilers~
+   Ahhh, cheater!!  Don't you want to enjoy the zone?!  *sniff*, ok, if you
+really have to look there are a few little neat zone inclusions listed here to
+spoil your zone exploring pleasure.  Just type look and then the number to look
+at each one (look 1 for example).  
+
+1: The Leviathan
+
+2: Spider Cocoons
+
+3: The Dark Candleholder
+
+4: The Metal Contraption
+
+~
+E
+1~
+   This is just a little trigger that sets off in room 1911 when you enter.  A
+series of messages goes off and then the leviathan mob emerges.  If you move
+more than one room away in the middle of fighting the creature it will disappear
+again, reloading fully restored.  This is just the framework so far for a little
+quest I'm creating around it.  Ooh, additionally the room that the leviathan
+loads in will only let you leave 90% of the time due to slippery mud.  
+~
+E
+2~
+   The spider's cocoons are used to trap people..  Both players and mobs alike.
+If you fight the whisper spider in room 1993 it will start sending messages
+about wrapping web around you.  Ultimately if you do not flee or kill the spider
+quickly you will find yourself wrapped in a cocoon, unable to move or see
+anything.  In this state all you can do is send tells, and wriggle which makes
+the cocoon visibly move to everyone else (as immortal you can also use the goto
+command).  To open one of these cocoons another player must have a fire torch
+(object 1905) and type burn.  This will set it on fire and release the trapped
+mob or player.  If a trapped player is not freed within about 5 minutes he/she
+will die.  
+~
+E
+3~
+   In room 1982, a dark candleholder can be found.  On zone reset a candle loads
+inside, and if this is taken, a passage opens up to the north.  Once on the
+other side (room 1983), the passage closes and a voice can be heard telling you
+to "leave what you have taken", in reference of course to the candle.  If the
+candle is not dropped and you continue on to any other room, it will be purged
+and the voice will kindly remind you of your doom, as you are now essentially
+trapped.  However, dropping the candle like a good mudder will cause a drow
+spirit to reveal herself, explaining that she will open the way if you call on
+the name of Eilistraee.  Naturally, saying the word Eilistraee causes the spirit
+to vanish and the passage out to reopen..  Albeit for a limited time.  
+~
+E
 4~
    In room 1990 there is a large metal contraption, that essentially produces
 potions when the right ingredients are put into it.  PRESS empties the machine
@@ -62,57 +113,6 @@ Once the ingredients for one potion are inside, they must be mixed,
 an empty vial placed into the contraption and the mixture poured out.
 If any combination of ingredients other than those listed are combined, 
 a black potion will be produced which lowers all three attributes.  
-
-~
-E
-3~
-   In room 1982, a dark candleholder can be found.  On zone reset a candle loads
-inside, and if this is taken, a passage opens up to the north.  Once on the
-other side (room 1983), the passage closes and a voice can be heard telling you
-to "leave what you have taken", in reference of course to the candle.  If the
-candle is not dropped and you continue on to any other room, it will be purged
-and the voice will kindly remind you of your doom, as you are now essentially
-trapped.  However, dropping the candle like a good mudder will cause a drow
-spirit to reveal herself, explaining that she will open the way if you call on
-the name of Eilistraee.  Naturally, saying the word Eilistraee causes the spirit
-to vanish and the passage out to reopen..  Albeit for a limited time.  
-~
-E
-2~
-   The spider's cocoons are used to trap people..  Both players and mobs alike.
-If you fight the whisper spider in room 1993 it will start sending messages
-about wrapping web around you.  Ultimately if you do not flee or kill the spider
-quickly you will find yourself wrapped in a cocoon, unable to move or see
-anything.  In this state all you can do is send tells, and wriggle which makes
-the cocoon visibly move to everyone else (as immortal you can also use the goto
-command).  To open one of these cocoons another player must have a fire torch
-(object 1905) and type burn.  This will set it on fire and release the trapped
-mob or player.  If a trapped player is not freed within about 5 minutes he/she
-will die.  
-~
-E
-1~
-   This is just a little trigger that sets off in room 1911 when you enter.  A
-series of messages goes off and then the leviathan mob emerges.  If you move
-more than one room away in the middle of fighting the creature it will disappear
-again, reloading fully restored.  This is just the framework so far for a little
-quest I'm creating around it.  Ooh, additionally the room that the leviathan
-loads in will only let you leave 90% of the time due to slippery mud.  
-~
-E
-spoilers~
-   Ahhh, cheater!!  Don't you want to enjoy the zone?!  *sniff*, ok, if you
-really have to look there are a few little neat zone inclusions listed here to
-spoil your zone exploring pleasure.  Just type look and then the number to look
-at each one (look 1 for example).  
-
-1: The Leviathan
-
-2: Spider Cocoons
-
-3: The Dark Candleholder
-
-4: The Metal Contraption
 
 ~
 S
@@ -149,15 +149,15 @@ this direction.
 ~
 0 0 1903
 E
+fungus~
+   These tiny sprouting mushrooms are typical swamp flora, thriving on the damp
+rotting wood of the abandoned sign.  
+~
+E
 old broken crossroads sign~
    This old splintered sign has long lost any visible markings, black rivulets
 of ink staining the rotting wood that stands uselessly here, just a remnant of
 past inhabitants.  
-~
-E
-fungus~
-   These tiny sprouting mushrooms are typical swamp flora, thriving on the damp
-rotting wood of the abandoned sign.  
 ~
 S
 #1902
@@ -270,15 +270,15 @@ wafting on the western air.
 ~
 0 0 1906
 E
-scarlet stains~
-   These large dark patches in the mud glisten slightly crimson in any light,
-the faded blood stains of many fallen warriors.  
-~
-E
 glimpses metal armour weapons~
    Small pieces of weaponry and armour protrude from the ground like shrapnel,
 so deeply rusted and swallowed in mud that they are practically irretrievable
 and are obviously of no further use for warring.  
+~
+E
+scarlet stains~
+   These large dark patches in the mud glisten slightly crimson in any light,
+the faded blood stains of many fallen warriors.  
 ~
 S
 T 1971
@@ -309,17 +309,17 @@ ripple in the restless breeze.
 ~
 0 0 1912
 E
+scattered pools slime~
+   These slippery pools are coated with floating algae and slime of various
+organic kinds.  The water is presumably toxic as it is so saturated with rust
+and rot that it glints scarlet in the light.  
+~
+E
 old rusted weapons armour rotted~
    These battered pieces of metal and algae-encrusted leather are all that is
 left of an obviously mighty battle.  There are no corpses to be found, all that
 died presumably devoured by creatures here or rotted long before these metals
 began to rust.  
-~
-E
-scattered pools slime~
-   These slippery pools are coated with floating algae and slime of various
-organic kinds.  The water is presumably toxic as it is so saturated with rust
-and rot that it glints scarlet in the light.  
 ~
 S
 T 1971
@@ -383,16 +383,16 @@ overturned tree's skeletal branches grasping at the air.
 ~
 0 0 1909
 E
-small jagged peaks sharp rocks~
-   These rocks look almost like the remnants of a huge embedded boulder or
-statue that has been broken away by some massive force.  Firmly entrenched in
-the mud, the rough-edged base spikes out like several rows of teeth.  
-~
-E
 thin layers slime old unidentifiable stains~
    The slick green coating of algae is obvious over all of these rocks, decaying
 plant slime as well as darker and more ominous stains paint the jagged surfaces
 various shades of red and black.  
+~
+E
+small jagged peaks sharp rocks~
+   These rocks look almost like the remnants of a huge embedded boulder or
+statue that has been broken away by some massive force.  Firmly entrenched in
+the mud, the rough-edged base spikes out like several rows of teeth.  
 ~
 S
 T 1971
@@ -460,15 +460,15 @@ impossible.
 ~
 0 0 1910
 E
+ominous shadows~
+   Dark rippling shadows stir unnaturally beneath the water, the movements of
+some hidden creature no doubt.  
+~
+E
 insects~
    These simple swamp insects flit so fast it is hard to see them properly, tiny
 and plated with defensive exoskeletons they pause only to feed on the smaller
 zooplankton in the water.  
-~
-E
-ominous shadows~
-   Dark rippling shadows stir unnaturally beneath the water, the movements of
-some hidden creature no doubt.  
 ~
 S
 T 1908
@@ -494,15 +494,15 @@ the air with an eye-watering metallic scent.
 ~
 0 0 1906
 E
-glimpses shiny metal~
-   Old broken pieces of weapons and shields float in shards amongst the bubbling
-water, stirring as though in some cauldron of death.  
-~
-E
 splintered bone~
    Pieces of decaying bone are all that remain of any organic corpses, bleached
 almost white from the alkaline water here and stripped by predators of all flesh
 that hadn't rotted away naturally.  
+~
+E
+glimpses shiny metal~
+   Old broken pieces of weapons and shields float in shards amongst the bubbling
+water, stirring as though in some cauldron of death.  
 ~
 S
 T 1971
@@ -769,16 +769,16 @@ roots sticking high into the air further south.
 ~
 0 0 1917
 E
-moss grasses~
-   The plant life here is abundant but miserable looking, as though there is
-constant competition to survive, nutrients being scavenged by almost every form
-of life imaginable.  
-~
-E
 weak trunks branches leaves willows bark~
    These frail looking trees look as though they are barely surviving off of the
 watery soil and fog shrouded sunlight, bending weakly in the slightest breeze.
 
+~
+E
+moss grasses~
+   The plant life here is abundant but miserable looking, as though there is
+constant competition to survive, nutrients being scavenged by almost every form
+of life imaginable.  
 ~
 S
 T 1971
@@ -823,17 +823,17 @@ other, forming a bridge that extends to the east.
 ~
 0 0 1922
 E
+fungus~
+   This is the same miserable organism that grows abundantly on every surface on
+sight, flat and sickly green, they are just another indication that the entire
+place is rotting.  
+~
+E
 shelled creatures~
    Little snails, and the encrustations of crabs and mollusks decorate the
 surfaces with their coloured remains.  It is impossible to tell which of these
 are alive and which are long dead, most seem perfectly content to stay
 completely motionless.  
-~
-E
-fungus~
-   This is the same miserable organism that grows abundantly on every surface on
-sight, flat and sickly green, they are just another indication that the entire
-place is rotting.  
 ~
 S
 T 1971
@@ -1068,10 +1068,9 @@ with what looks like a wooden padlock.
 bamboogates~
 1 1906 1931
 E
-swords crude jewelled throne~
-   These rather beautiful swords have been carelessly bent and fastened together
-to form a slightly unusual but attractive throne, coloured gems sparkling in the
-hilts and firelight reflecting off the still shiny metal.  
+great fire~
+   This raging fire seems to be kept continually going, the sickly smell of
+flesh and burning leather wafting in the smokey air around it.  
 ~
 E
 pieces broken armour decoration walls~
@@ -1079,9 +1078,10 @@ pieces broken armour decoration walls~
 doubt serving the secondary purpose of displaying the vanquishing of foes.  
 ~
 E
-great fire~
-   This raging fire seems to be kept continually going, the sickly smell of
-flesh and burning leather wafting in the smokey air around it.  
+swords crude jewelled throne~
+   These rather beautiful swords have been carelessly bent and fastened together
+to form a slightly unusual but attractive throne, coloured gems sparkling in the
+hilts and firelight reflecting off the still shiny metal.  
 ~
 S
 #1934
@@ -1149,16 +1149,16 @@ be heard, as though some hidden cave lies beneath.
 ~
 0 0 1937
 E
-cooking utensils simple clay pots~
-   These recently used tools have been dumped on the ground with pieces of flesh
-still clinging to them, the smell of rotting is almost unbearable and flies buzz
-almost frantically around the filthy surfaces.  
-~
-E
 rudimentary shelter stiff reeds~
    This primitive enclosure is of only basic use in shielding rainfall and heavy
 winds.  Open on one side, it seems for the most part abandoned, as though the
 creatures who made it only gather here for certain occasions.  
+~
+E
+cooking utensils simple clay pots~
+   These recently used tools have been dumped on the ground with pieces of flesh
+still clinging to them, the smell of rotting is almost unbearable and flies buzz
+almost frantically around the filthy surfaces.  
 ~
 S
 T 1971

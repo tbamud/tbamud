@@ -2,14 +2,16 @@ TbaMUD is currently being developed by The Builder Academy. If you need any
 help, find any bugs, or have ideas for improvement please stop by TBA at 
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
  
-tbaMUD 3.56
+tbaMUD 3.57
+[Aug 11 2008] - Rumble
+  Updated World and files for 3.57 release. 
 [Aug 10 2008] - Fizban
   Added sanity checks to zedit new. (Can no longer make zones that include negative vnums, also get the proper message when you have 3 of the 4 arguments.)
   You can now put objects in and remove objects from closed containers as an imm with nohassle.
   You can now walk through closed doors as an imm with nohassle on.
   You can now open locked containers and doors without unlocking them as an immortal with nohassle.
   You can now examine the contents of closed containers as an imm with nohassle.
-  Made zedit new add the .qst file to the index file.
+  Made zedit new added the .qst file to the index file.
   Fixed various qedit related bugs. (thanks Mirad and Jamdog)
   Removed deprecated "murder" code.
   When pkill is on players can now order charmed mobs to attack other players.
@@ -81,6 +83,7 @@ tbaMUD 3.56
 [Apr 26 2008] - Rumble
   Added README.BSD. (thanks Blix)
   Cleaned up act.comm.c, mobs can now use comm channels. (thanks Rhade)
+tbamud 3.56
 [Apr 07 2008] - Rumble
   Fixed typos in lib/misc/messages and socials.new
 [Apr 04 2008] - jeremyosborne

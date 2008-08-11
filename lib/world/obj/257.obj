@@ -929,12 +929,12 @@ A large, sociable bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-drop box message~
-   Use 'look box' to write a message.  
-~
-E
 box~
    If you can read this, the drop box is not working.  
+~
+E
+drop box message~
+   Use 'look box' to write a message.  
 ~
 #25797
 board frozen bulletin~
@@ -945,12 +945,12 @@ A large bulletin board is here, carved from a block of ice.~
 0 0 0 0
 0 0 0 0
 E
-freeze bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+freeze bulletin~
+   Use 'look board' to read the board.  
 ~
 #25798
 board holy bulletin~
@@ -961,12 +961,12 @@ A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 0 0 0 0
 0 0 0 0
 E
-holy bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+holy bulletin~
+   Use 'look board' to read the board.  
 ~
 #25799
 board bulletin~
@@ -977,11 +977,11 @@ A large bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+bulletin~
+   Use 'look board' to read the board.  
 ~
 $~

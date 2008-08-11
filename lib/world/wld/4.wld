@@ -1,14 +1,11 @@
 #400
-The Jade Forest~
-   This appears to be the entrance of a thick forest.  Numerous trees tower high
-into the air, making everything else look quite small.  In the distance birds
-can be heard chirping.  
+Jade Forest (Description Room)~
+   The Jade Forest is a simple zone, laid out for levels 10-15 approximately.  
+The majority of it is forest, with a small village, some trails, and a river.  
+There are a couple of shops, but these need stocking with items really.  
+Descriptions are very basic and could do with fleshing out.
 ~
 4 0 0 0 0 3
-D3
-~
-~
-0 0 401
 E
 credits info~
    Builder   : 
@@ -40,7 +37,7 @@ D0
 D1
 ~
 ~
-0 0 400
+0 0 499
 D3
 ~
 ~
@@ -1658,10 +1655,6 @@ well as an extremely large city.  The village looks tiny compared to the city
 that looms on the horizon.  The trail continues to the north.  
 ~
 4 0 0 0 0 3
-D0
-~
-~
-0 0 499
 D2
 ~
 ~
@@ -1719,16 +1712,15 @@ D2
 0 0 489
 S
 #499
-Sanctus Trail~
-   This part of the trail appears to have ended in a dead end!  There isn't much
-here to look at, just a few scattered trees.  The road can be seen heading off
-towards the west, it seems as if that part of the passage may actually lead
-somewhere.
+The Jade Forest~
+   This appears to be the entrance of a thick forest.  Numerous trees tower high
+into the air, making everything else look quite small.  In the distance birds
+can be heard chirping.
 ~
 4 0 0 0 0 3
-D2
+D3
 ~
 ~
-0 0 495
+0 0 401
 S
 $~

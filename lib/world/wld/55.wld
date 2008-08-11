@@ -1055,9 +1055,7 @@ D1
 E
 message~
    The message appears to read:
-
-                       I hate being a Tanner
-
+                      I hate being a Tanner
 ~
 S
 #5565
@@ -1078,9 +1076,9 @@ D3
 E
 plaque~
    Engraved on the plaque are the following words:
-
+ 
                      The Holy Shrine of Allah
-
+ 
 ~
 S
 #5566
@@ -1277,14 +1275,14 @@ D0
 door~
 1 -1 5577
 E
-mirror~
-   You see a the fighting image of some armor clad humanoid wielding a weapon.
-
-~
-E
 window~
    Looking out this window you can see the grounds of the palace that seperate
 the walls of the palace from the building itself.  
+~
+E
+mirror~
+   You see a the fighting image of some armor clad humanoid wielding a weapon.
+ 
 ~
 S
 #5577
@@ -1364,13 +1362,13 @@ D3
 E
 plaque door~
    The plaque on the door reads:
-
+ 
                    THE ART EXHIBIT
                          of
                      NEW THALOS
-
+ 
                           - the management is not responsible for lost items.
-
+ 
 ~
 S
 #5580

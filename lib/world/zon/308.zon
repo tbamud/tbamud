@@ -2,6 +2,11 @@
 Kaan~
 Baron Cailveh~
 30800 30899 30 2
+M 0 30811 2 30814 	(a door guard)
+E 1 30812 100 6 	(a silver face shield)
+M 0 30811 2 30814 	(a door guard)
+E 1 30811 100 16 	(a two-handed maul)
+D 0 30814 1 1 	(The Tower Entry Gate)
 M 0 30828 1 30846 	(Calintra)
 G 1 29105 99 -1 	(a green herb)
 M 0 30837 1 30849 	(the tailor)
@@ -62,10 +67,6 @@ M 0 30812 1 30873 	(a chamber maid)
 M 0 30808 1 30856 	(an arrogant land owner)
 M 0 30807 1 30856 	(a humble petitioner)
 D 0 30856 3 1 	(Entryway Into the Main Hall)
-M 0 30811 2 30814 	(a door guard)
-M 0 30811 2 30814 	(a door guard)
-E 1 30811 100 16 	(a two-handed maul)
-D 0 30814 1 1 	(The Tower Entry Gate)
 M 0 30810 1 30877 	(a lab assistant)
 D 0 30877 2 2 	(Laboratory)
 M 0 30809 1 30857 	(a pious farmer)

@@ -153,13 +153,8 @@ end
 free~
 0 j 100
 ~
-if %actor.varexists(solved_example_quest_zone_0)%
-  say you already solved this quest, keep it.
-  return 0
-end
-*
 wait 1 sec
-if (%object.vnum% == 47)
+if (%object.vnum% == 47) && !%actor.varexists(solved_example_quest_zone_0)%
   dance
   wait 1 sec
   say Thank you, %actor.name%. Here is a few experience points and some gold.
@@ -173,6 +168,9 @@ if (%object.vnum% == 47)
   set solved_example_quest_zone_0 1
   remote solved_example_quest_zone_0 %actor.id%
   %purge% %object%
+elseif %object.vnum% == 47
+  say you already solved this quest, keep it.
+  return 0
 else
   say I don't want that!
   junk %object.name%
@@ -192,7 +190,6 @@ wait 2 sec
 Obj Command Restorative Comfy Bed Sleep - 1401~
 1 c 4
 sl~
-* does not work for level 32 and above.
 if %cmd.mudcommand% == sleep && bed /= %arg%
   %force% %actor% sleep
   set laying_in_comfy_bed_14 1
@@ -219,7 +216,6 @@ end
 Obj Command Restorative Comfy Bed Wake - 1401~
 1 c 4
 wa~
-* does not work for level 32 and above.
 if %cmd.mudcommand% == wake && %actor.varexists(laying_in_comfy_bed_14)%
   %force% %actor% wake
   rdelete laying_in_comfy_bed_14 %actor.id%
@@ -310,7 +306,6 @@ Room Random Example~
 Room Command Example~
 2 c 100
 l~
-* does not work for level 32 and above.
 if %cmd.mudcommand% == look && test /= %arg%
   %echo% The trigger works!
   %force% %actor% applaud
@@ -420,7 +415,6 @@ done
 Mob Command Example~
 0 c 100
 test~
-* does not work for level 32 and above.
 say The trigger fires now!
 say triggered by %actor.name%
 ~
@@ -630,7 +624,6 @@ Obj Command Example~
 1 c 7
 open~
 * Numeric Arg: 7 means obj can be worn, carried, or in room.
-* does not work for level 32 and above.
 if ("%arg%" == "closet")
 %load% mob 1307
 else

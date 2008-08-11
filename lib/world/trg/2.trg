@@ -22,6 +22,7 @@ say %speech%
 Fountain Teleport - 251~
 1 c 7
 en~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %cmd.mudcommand% == enter && %arg% /= fountain
   %send% %actor% You step into the fountain getting yourself wet. Something grabs you and pulls you under.
   %echoaround% %actor% %actor.name% steps into the middle of the fountain getting %actor.himher%self wet.
@@ -37,31 +38,26 @@ end
 Object Spells~
 1 c 1
 c~
-* if command is cast and arg is fireshield (and all abbrevs of each)
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Allow a magic user to cast fireshield, but only twice.
 if %cmd.mudcommand% == cast && fireshield /= %arg%
-  switch %random.1%
-    case 1
-      if %actor.class% == Magic User
-        %echoaround% %actor% %self.shortdesc% that %actor.name% is wearing glows brightly for a moment.
-        %send% %actor% Your %self.shortdesc% glows brightly for a moment. 
-        dg_cast 'armor' %actor%
-      end
-    break
-    default
-      %send% %actor% reached default case.
-    break
-    eval ward_major %ward_major%+1
-    if %ward_major% == 2
-      detach all %self.id%
-    end
-    global ward_major
-  done
+  if %actor.class% == Magic User
+    %echoaround% %actor% %self.shortdesc% that %actor.name% is wearing glows brightly for a moment.
+    %send% %actor% Your %self.shortdesc% glows brightly for a moment. 
+    dg_cast 'armor' %actor%
+  end
+  eval ward_major %ward_major%+1
+  if %ward_major% == 2
+    detach all %self.id%
+  end
+  global ward_major
 end
 ~
 #203
 Phoenix Rising - 211~
 0 f 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * You can't use waits in a mob death trig.
 * Phoenix turns into ashes when it dies and is reborn 3 times.
 * O219 is !TAKE and must always be in the room to count the deaths.
@@ -92,9 +88,10 @@ done
 return 0
 ~
 #204
-Pirate Parott Pepeats - M212~
+Pirate Parrott Repeats - M212~
 0 d 100
 *~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Parrot randomly repeats something said in the room.
 * Pick the next number in the array and global it to be read next firing.
 eval n %n%+1
@@ -113,14 +110,15 @@ say %say%
 Crystal Ball to Locate a Mob.~
 1 c 7
 locate~
+* By Rumble of The Builder Academy    tbamud.com 9091
 set find %arg% 
 if !%find.is_pc%
   eval rname %find.room% 
-  %send% %actor% As you gaze into the ring, it starts to glow. You see an image of %find.name% in %rname.name%. 
+  %send% %actor% As you gaze into the ball, it starts to glow. You see an image of %find.name% in %rname.name%. 
 else 
   %send% %actor% All that you see is a blurry haze. 
 end 
-%echoaround% %actor% %actor.name% peers into %actor.hisher% gently glowing ring. 
+%echoaround% %actor% %actor.name% peers into %actor.hisher% gently glowing crystal ball. 
 ~
 #206
 Smelly Bum - M168~
@@ -165,7 +163,6 @@ Mob Blocks opening of chest~
 0 c 100
 o~
 * By Rumble of The Builder Academy    tbamud.com 9091 
-* does not work for level 32 and above.
 * Make sure the command is open, check for any abbrev of chest
 if %cmd.mudcommand% == open && chest /= %arg%
   * findmob checks if the mob is in the room.
@@ -197,8 +194,8 @@ say %word6% %word5% %word4% %word3% %word2% %word1%?
 Phoenix Rising - 219~
 1 c 4
 phoenix2~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Numeric Arg: 4 means obj has to be in the room.
-* Does not work for level 32 and above.
 * Add 1 to the total deaths
 eval phoenix_deaths %phoenix_deaths% + 1
 wait 3 sec

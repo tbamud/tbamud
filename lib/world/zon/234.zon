@@ -1,7 +1,10 @@
 #234
-Radiax~
+None.~
 Newbie School~
-23400 23499 30 2
+23400 23499 10 2
+O 0 23401 5 23429 	(some blackberries)
+R 0 23429 23403 -1 	(a fountain)
+O 0 23403 1 23429 	(a fountain)
 R 0 23470 23430 -1 	(a map of the newbie school)
 O 0 23430 5 23470 	(a map of the newbie school)
 M 0 23400 1 23423 	(Samantha, the clerk)
@@ -14,8 +17,6 @@ G 1 23402 99 -1 	(a small pouch)
 G 1 23401 99 -1 	(some blackberries)
 G 1 23400 99 -1 	(a goatskin)
 M 0 23495 3 23444 	(a brownie)
-R 0 23429 23403 -1 	(a fountain)
-O 0 23403 1 23429 	(a fountain)
 M 0 23410 1 23471 	(the armourer)
 G 1 23422 1 -1 	(some leggings)
 G 1 23423 1 -1 	(some leather leggings)

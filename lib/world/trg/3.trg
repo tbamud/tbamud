@@ -2,6 +2,7 @@
 Camille Greet for Quest - 300~
 0 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.is_pc%
   wait 1 sec
   if %actor.varexists(3_napalm_complete)%
@@ -51,21 +52,31 @@ Mob Memory - test trigger~
 say I remember you, %actor.name%!
 ~
 #302
-Mob Greet - test trigger~
+Mob Greet direction~
 0 g 100
 ~
-if %direction%
-  say Hello, %actor.name%, how are things to the %direction%?
-else
-* if the character popped in (word of recall, etc) this will be hit
-  say Where did YOU come from, %actor.name%?
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.is_pc%
+  wait 1 sec
+  if %direction% == none
+    * if the character popped in (word of recall) this will be hit
+    say Where did YOU come from, %actor.name%?
+  else
+    say Hello, %actor.name%, how are things to the %direction%?
+  end
 end
 ~
 #303
-Obj Get - test trigger~
+Obj Get Example - Good Cleric Only~
 1 g 100
 ~
-%echo% You hear, 'Please put me down, %actor.name%'
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Only allow Cleric's with a good align to get this item.
+if %actor.class% != cleric || %actor.align% < 350
+  return 0
+  %send% %actor% You are not worthy to wield me.
+  %echoaround% %actor% %actor.name% tries to pick up %self.shortdesc% and fails.
+end
 ~
 #304
 Room Enter - test trigger~

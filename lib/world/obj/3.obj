@@ -202,12 +202,12 @@ A small sword lies here.~
 0 1 6 11
 3 60 0 0
 E
-inscription~
-   It says: 'May this sword be a good companion.  '
-~
-E
 sword small~
    The small sword seems to have an inscription of some sort inscription...  
+~
+E
+inscription~
+   It says: 'May this sword be a good companion.  '
 ~
 #322
 sword long~
@@ -500,6 +500,7 @@ A metal staff has carelessly been left here.~
 4 g 0 0 0 ao 0 0 0 0 0 0 0
 10 2 2 15
 7 850 0 0
+T 303
 E
 staff metal~
    The staff is made of metals unknown to you.  
@@ -614,12 +615,12 @@ A large, sociable bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-social bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+social bulletin~
+   Use 'look board' to read the board.  
 ~
 #397
 board frozen bulletin~
@@ -630,12 +631,12 @@ A large bulletin board is here, carved from a block of ice.~
 0 0 0 0
 0 0 0 0
 E
-freeze bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+freeze bulletin~
+   Use 'look board' to read the board.  
 ~
 #398
 board holy bulletin~
@@ -646,12 +647,12 @@ A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 0 0 0 0
 0 0 0 0
 E
-holy bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+holy bulletin~
+   Use 'look board' to read the board.  
 ~
 #399
 board bulletin~
@@ -662,11 +663,11 @@ A large bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-bulletin~
-   Use 'look board' to read the board.  
-~
-E
 board~
    If you can read this, the board is not working.  
+~
+E
+bulletin~
+   Use 'look board' to read the board.  
 ~
 $~

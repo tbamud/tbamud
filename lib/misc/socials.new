@@ -742,9 +742,9 @@ Out of boredom, $n tries to annoy you.
 They must be bored. They've left you all alone!
 You're SO boring you even bore yourself!
 $n bores even $mself!
-Feeling very bored, you annoy $S $t.
-Feeling very bored, $n annoys $N's $t.
-Feeling very bored, $n annoys your $t.
+Feeling very bored, you annoy $S $i.
+Feeling very bored, $n annoys $N's $i.
+Feeling very bored, $n annoys your $i.
 Feeling bored, you try to annoy everyone with $p.
 $n tries to annoy everyone with $p.
 
@@ -1018,7 +1018,7 @@ $n is charmed by your $t.
 You is charmed by $p.
 $n is charmed $p.
 
-~cheer cheer 0 5 0 0
+~cheers cheers 0 5 0 0
 Hooray!
 $n gives a resounding cheer.
 You cheer $M.
@@ -1154,8 +1154,8 @@ $n fixes two strips of tape to $s eyelids and pours $mself some coffee.
 #
 
 ~cold cold 0 8 8 0
-You shiver and hug your body, trying to get warm.
-$n's teeth starts chattering from the extremely cold weather.
+You shiver and hug your body, trying to get warm
+$n's teeth starts chattering from the extremely cold weather
 #
 #
 #
@@ -1222,9 +1222,9 @@ $n tries to confuse you.
 You're confused? So am I! Who's that supposed to be aimed at?
 Well done, you've gone and confused yourself!
 $n has confused $mself now.
-You look at $N's $t in confusion.
-$n looks at $N's $t in confusion.
-$n looks at your $t in confusion.
+You look at $N's $i in confusion.
+$n looks at $N's $i in confusion.
+$n looks at your $i in confusion.
 #
 #
 
@@ -1927,9 +1927,9 @@ $n looks at you and goes 'eep'.
 Find someone else to eep at.
 You look down go 'eep'.
 $n looks down and goes 'eep'.
-You look at $S $t and go 'eep'.
-$n looks at $N's $t and goes 'eep'.
-$n looks at your $t and goes 'eep'.
+You look at $S $i and go 'eep'.
+$n looks at $N's $i and goes 'eep'.
+$n looks at your $i and goes 'eep'.
 You look at $p and go 'eep'.
 $n looks at $p and goes 'eep'.
 
@@ -2617,9 +2617,9 @@ $n gazes deeply into your eyes, completely lost.
 Where do you want to gaze?
 You get cross-eyed, trying to gaze at yourself.
 $n gets very cross-eyed.
-You gaze at $S $t for a long time.
-$n gazes at $N's $t for a long time.
-$n gazes at your $t for a long time.
+You gaze at $S $i for a long time.
+$n gazes at $N's $i for a long time.
+$n gazes at your $i for a long time.
 #
 #
 
@@ -2863,9 +2863,9 @@ $n grumbles unhappily your $t.
 You grumble unhappily $p.
 $n grumbles unhappily $p.
 
-~grunt grunt 0 5 0 0
+~grunts grunt 0 5 0 0
 You grunt loudly.
-$n grunts at you like a hog!
+$n grunts at you vigorouusly!
 You grunt vigorously at $M!
 $n grunts vigorously at $N!
 $n grunts vigorously at you!
@@ -3577,9 +3577,9 @@ $n leans against you, pressing $s body close.
 You try to lean on someone but end up on your butt.
 That's not even possible!
 #
-You lean against $S $t, pressing your body close.
-$n leans against $N's $t, pressing $s body close.
-$n leans against your $t, pressing $s body close.
+You lean against $S $i, pressing your body close.
+$n leans against $N's $i, pressing $s body close.
+$n leans against your $i, pressing $s body close.
 #
 #
 
@@ -4762,9 +4762,9 @@ $n pulls your leg.
 They're not here!
 You pull your own leg.
 $n pulls $s own leg.
-You pull $S $t.
-$n pulls $N's $t.
-$n pulls your $t.
+You pull $S $i.
+$n pulls $N's $i.
+$n pulls your $i.
 You pull at $p.
 $n pulls at $p.
 
@@ -5353,7 +5353,7 @@ $n kabobs $mself right in the arm... YUCK!!!
 #
 #
 
-~shiver shiver 0 5 0 0
+~shivers shiver 0 5 0 0
 Brrrrrrrrr.
 $n shivers uncomfortably.
 You shiver at the sight of $M.
@@ -6817,9 +6817,9 @@ $n's facial tick twitches at the thought of you.
 Bad corpse! They're not there.
 Your limp body twitches slightly.
 $n's limp body twitches slightly.
-You twitch at the thought of $S $t.
-$n twitches at the thought of $N's $t.
-$n twitches at the thought of your $t.
+You twitch at the thought of $S $i.
+$n twitches at the thought of $N's $i.
+$n twitches at the thought of your $i.
 You twitch at the thought of $p.
 $n twitches at the thought of $p.
 

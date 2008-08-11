@@ -1587,12 +1587,26 @@ xxtestxx
 %purge% %self%
 ~
 #2792
-test mob command~
+test~
 2 c 100
-xxtestxx~
-wait 1
-%purge%
-%load% obj 2779
+xxhealxx~
+if %actor.admin%
+  return 0
+  halt
+else
+  if %cmd% == xxhealxx
+    set room_var %actor.room%
+    set target_char %room_var.people%
+    while %target_char%
+      set tmp_target %target_char.next_in_room%
+      %send% %target_char% You feel healed.
+      %damage% %target_char% -100
+      set target_char %tmp_target%
+    done
+  else
+    return 0
+  end
+end
 ~
 #2793
 (2779) staff reincarnates sorceress~

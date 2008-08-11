@@ -11,19 +11,17 @@ Mob Tutorial Example Quest Offer - M14~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * A very basic 3 trigger receive quest. Trigs 1-3.
 * Make sure the actor is a player first.
-if %actor.is_pc%
+if %actor.is_pc% && %direction% == south
   * only greet players coming from the south.
-  if %direction% == south
-    * wait 1 second, always give the player time before you start sending text.
-    wait 1 sec
-    say Can you help me, %actor.name%?
-    wait 1 sec
-    say An ogre has something of mine.
-    wait 1 sec
-    say If you slay him I'll give you all the coins I can spare.
-    wait 1 sec
-    say Please, bring me the wings he has stolen.
-  end
+  * wait 1 second, always give the player time before you start sending text.
+  wait 1 sec
+  say Can you help me, %actor.name%?
+  wait 1 sec
+  say An ogre has something of mine.
+  wait 1 sec
+  say If you slay him I'll give you all the coins I can spare.
+  wait 1 sec
+  say Please, bring me the wings he has stolen.
 end
 ~
 #2
@@ -36,7 +34,7 @@ say you got the best of me %actor.name%. But I'll be back.
 * Load the wings to be returned to the questmaster.
 %load% obj 1
 * Reload the mob for the next questor.
-%load% mob 16
+%load% mob %self.vnum%
 ~
 #3
 Mob Tutorial Example Completion - 14~
@@ -53,7 +51,7 @@ if %object.vnum% == 1
   * Reward the actor with an entire gold coin!
   nop %actor.gold(1)%
   wait 5 sec
-%purge% %object%
+  %purge% %object%
 else
   * This isn't the right object - don't accept it.
   say I don't want that - bring me back my wings.
@@ -110,7 +108,7 @@ Obj Command Magic Eight Ball - O47~
 shake~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Numeric Arg: 2 means in character's carried inventory.
-* Command trigs do not work for level 32 and above.
+* Command trigs do not work for level 33 and above.
 * There are 20 possible answers that the Magic Eight Ball can give. 
 * Of these, nine are full positive, two are full negative, one is 
 * mostly positive, three are mostly negative, and five are abstentions. 
@@ -231,16 +229,13 @@ Tutorial Quest 1317 - Starter~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Quest Trigs 9-12. If the player comes from the south and has not done the quest.
-if %direction% == south
-  if %actor.varexists(solved_tutorial_quest_zone_0)%
-    wait 1 sec
-    say you have already completed this quest.
-    halt
-  else
-    wait 1 sec
-    say Hello, %actor.name%. Could you find me the magic eight ball?
-    say Please say yes, %actor.name%.
-  end
+if %direction% == south && %actor.varexists(solved_tutorial_quest_zone_0)%
+  wait 1 sec
+  say you have already completed this quest.
+else
+  wait 1 sec
+  say Hello, %actor.name%. Could you find me the magic eight ball?
+  say Please say yes, %actor.name%.
 end
 ~
 #10
@@ -263,7 +258,7 @@ Tutorial Quest 1317 - Completion~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091 
 * Quest Trigs 9-12. If the player returns the right object reward them. 
-if !%actor.varexists(solved_tutorial_quest_zone_0)%  && %object.vnum% == 1394 
+if !%actor.varexists(solved_tutorial_quest_zone_0)%  && %object.vnum% == 47 
   set solved_tutorial_quest_zone_0 1 
   remote solved_tutorial_quest_zone_0 %actor.id% 
   %purge% %object% 
@@ -296,9 +291,8 @@ wait 1 sec
 ~
 #13
 Restorative Comfy Bed 1401 - Sleep~
-1 c 100
+1 c 4
 sl~
-* does not work for level 32 and above.
 if %mud.mudcommand% == sleep && %arg% == bed
   %force% %actor% sleep
   set laying_in_comfy_bed_14 1
@@ -326,7 +320,7 @@ done
 Restorative Comfy Bed 1401 - Wake~
 1 c 100
 wa~
-* does not work for level 32 and above.
+* does not work for level 33 and above.
 if %cmd.mudcommand% == wake
   %force% %actor% wake
   rdelete laying_in_comfy_bed_14 %actor.id%
@@ -452,7 +446,6 @@ Rumble's Spy~
 0 d 100
 *~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* put a wait in here so it doesn't fire before the player enters the room
 * Arguments: * means all speech will trigger this.
 * This will echo all speech to Rumble.
 %at% rumble %echo% %actor.name% says, '%speech%'
@@ -475,7 +468,7 @@ IF Example~
 ~
 * By Rumble & Relsqui of The Builder Academy    tbamud.com 9091
 * First we set %anumber% to some number between 1 and 100.
-eval anumber %random.100%
+set anumber %random.100%
 * Then the beginning of the if-block.
 if %anumber% == 5
   * The following commands are only executed if the above condition is true.
@@ -819,15 +812,14 @@ Mob Quote Using Arrays~
 0 d 100
 quote~
 * By Jamie Nelson from the forum http://groups.yahoo.com/group/dg_scripts/
-eval w1max %random.20%
-eval w2max %random.20%
-eval w3max %random.20%
-eval w4max %random.20%
+eval w1max %random.21%
+eval w2max %random.21%
+eval w3max %random.21%
+eval w4max %random.21% 
 eval w5max %random.11%
-eval w6max %random.20%
-set  w1[0] phenomenal
+eval w6max %random.21%l
 set  w1[1] rapid
-set w1[2] chilling
+set  w1[2] chilling
 set  w1[3] insipid
 set  w1[4] nauseating
 set  w1[5] astronomical
@@ -846,7 +838,7 @@ set  w1[17] unprecedented
 set  w1[18] unparalleled
 set  w1[19] insidious
 set  w1[20] broad
-set  w2[0] growth
+set  w1[21] phenomena
 set  w2[1] decline
 set  w2[2] prospects
 set  w2[3] acceleration
@@ -867,7 +859,7 @@ set  w2[17] litigation
 set  w2[18] declivity
 set  w2[19] hastening
 set  w2[20] paradigm shifting
-set  w3[0] the Internet
+set  w2[21] growth
 set  w3[1] urban tax dollars
 set  w3[2] new technologies
 set  w3[3] gender identification disorders
@@ -888,7 +880,7 @@ set  w3[17] technological change
 set  w3[18] the ozone layer
 set  w3[19] human resources
 set  w3[20] current epistemologies
-set  w4[0] forever dissipate
+set  w3[21] the Internet
 set  w4[1] escalate
 set  w4[2] aggrandize
 set  w4[3] overhaul
@@ -909,7 +901,7 @@ set  w4[17] evaporate
 set  w4[18] indenture
 set  w4[19] intensify
 set  w4[20] undermine
-set  w5[0] today's
+set  w4[21] forever dissipate
 set  w5[1] tomorrow's
 set  w5[2] the entrenchment of our
 set  w5[3] worldwide
@@ -921,7 +913,7 @@ set  w5[8] our
 set  w5[9] the demise of our
 set  w5[10] our grandchildren's
 set  w5[11] all hope for
-set  w6[0] business models
+set  w5[12] today's
 set  w6[1] re-ruralization
 set  w6[2] human condition
 set  w6[3] family values
@@ -942,24 +934,14 @@ set  w6[17] fiduciary responsibility
 set  w6[18] genetic diversity
 set  w6[19] intestinal fortitude
 set  w6[20] computer literacy
-set w1 %%w1[%w1max%]%%
-eval w1 %w1%
-set msg The %w1%
-set w2 %%w2[%w2max%]%%
-eval w2 %w2%
-set msg %msg% %w2% of
-set w3 %%w3[%w3max%]%%
-eval w3 %w3%
-set msg %msg% %w3%
-set w4 %%w4[%w4max%]%%
-eval w4 %w4%
-set msg %msg% will %w4%
-set w5 %%w5[%w5max%]%%
-eval w5 %w5%
-set msg %msg% %w5%
-set w6 %%w6[%w6max%]%%
-eval w6 %w6%
-set msg %msg% %w6%
+set  w6[21] business models
+eval w1 %%w1[%w1max%]%%
+eval w2 %%w2[%w2max%]%%
+eval w3 %%w3[%w3max%]%%
+eval w4 %%w4[%w4max%]%%
+eval w5 %%w5[%w5max%]%%
+eval w6 %%w6[%w6max%]%%
+set msg The %w1% %w2% of %w3% will %w4% %w5% %w6%
 say %msg%
 ~
 #34
@@ -983,8 +965,7 @@ Mob Room Specific Speeches~
 ~
 * By Rumble
 * So we don't get problems if more than one is loaded.
-context %self.id%
-eval room %self.room%
+set room %self.room%
 switch %room.vnum%
   case 1300
     say this is where I began my journey.
@@ -1168,7 +1149,6 @@ Obj Command quarter flip example~
 flip~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Numeric Arg: 2 means in character's carried inventory
-* does not work for level 32 and above.
 if coin /= %arg% || quarter /= %arg%
   %echoaround% %actor%  %actor.name% flips a coin high up into the air.
   %send% %actor% You flip the coin up into the air.
@@ -1216,7 +1196,7 @@ Mob Following Assist Master~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Make following mob assist.
 if %self.master%
-  eval master %self.master%
+  set master %self.master%
   if %master.fighting%
     say I will save you Master %master.name%
     wait 1 sec
@@ -1233,39 +1213,39 @@ Random Equipment Scatter and Teleport~
 wait 1 sec
 %send% %actor% You feel you must not have been worthy when a powerful force hurls you back through the gates.
 wait 2 sec
-set stunned %actor.hitp% -1 
+eval stunned %actor.hitp% -1 
 %damage% %actor% %stunned%
 eval num %random.99% + 20300
 %teleport% %actor% %num%
 while %actor.inventory%
-  eval item %actor.inventory%
+  set item %actor.inventory%
   if %item.type% == CONTAINER
     while %item.contents%
-      eval stolen %item.contents.vnum%
+      set stolen %item.contents.vnum%
       %echo% purging %item.contents.shortdesc% in container.
       %purge% %item.contents% 
       eval num %random.99% + 2300
       %at% %num% %load% obj %stolen%
     done
   end
-  eval item_to_purge %actor.inventory%
-  eval stolen %item.vnum%
+  set item_to_purge %actor.inventory%
+  set stolen %item.vnum%
   %purge% %item_to_purge% 
   eval num %random.99% + 2300
   %at% %num% %load% obj %stolen%
 done
-eval i 0
+set i 0
 while %i% < 18
-  eval item %%actor.eq(%i%)%%
+  set item %actor.eq(%i%)%
   if %item%
-    eval stolen %item.vnum%
-    eval item_to_purge %%actor.eq(%i%)%%
+    set stolen %item.vnum%
+    set item_to_purge %%actor.eq(%i%)%%
     %send% %actor% You drop %item.shortdesc%
     %purge% %item_to_purge% 
     eval num %random.99% + 20300
     %at% %num% %load% obj %stolen%
   end
-  eval i %i%+1 
+  eval i %i% + 1 
 done
 %force% %actor% look
 ~
@@ -1308,22 +1288,21 @@ switch %cmd%
       %send% %actor% You must supply a code.
       halt
     else
-      eval isnum ((%arg%*2)/2)
-      if %isnum%<=999
+      if %arg% <= 999
         %send% %actor% You must supply a code that is a number. (more then 1)
         %send% %actor% And for security reasons, greater then 4 digits.
         halt
       else
-        oset 3 %isnum%
-        %send% %actor% You set the code on %self.shortdesc% to %isnum%.
-        set fingerprint %isnum%
+        nop %self.val3(%arg%)%
+        %send% %actor% You set the code on %self.shortdesc% to %arg%.
+        set fingerprint %arg%
         remote fingerprint %actor.id%
       end
     end
   break
   case recognise
     %send% %actor% A laser scans your fingerprint.
-    if %arg%!=%self.val3%
+    if %arg% != %self.val3%
       %send% %actor% Access Denied.
       halt
     else
@@ -1333,8 +1312,8 @@ switch %cmd%
     end
   break
   case fingerprint
-    if %arg%!=open
-      if %arg!=close
+    if %arg% != open
+      if %arg != close
         %send% %actor% You must type either: 
         %send% %actor% fingerprint open
         %send% %actor% or
@@ -1351,17 +1330,17 @@ switch %cmd%
       %send% %actor% Access Denied.
       halt
     else
-    %send% %actor% Access Granted.
-    if %oc%==2
-      oset 1 15
-      %send% %actor% Closed and locked.
-    elseif %oc%==1
-      oset 1 0
-      %send% %actor% Unlocked and open.
-    else
-      %send% Broken.
+      %send% %actor% Access Granted.
+      if %oc% == 2
+        nop %self.val1(15)%
+        %send% %actor% Closed and locked.
+      elseif %oc% == 1
+        nop %self.val1(0)%
+        %send% %actor% Unlocked and open.
+      else
+        %send% Broken.
+      end
     end
-  end
   break
   default
     return 0
@@ -1425,20 +1404,17 @@ Mob Death Purges Equipment~
 * Purge all inventory first.
 say You damn whipper snappers. You may have beat me this time, but my equipment goes only to those who deserve it.
 emote donates everything.
-eval i %self.inventory%
-while %i%
-  set next %i.next_in_list%
-  %purge% %i%
-  eval i %next%
+while %self.inventory%%
+  %purge% %self.inventory%
 done
 * While we have an equipment slot, purge that too.
-eval i 0
+set i 0
 while %i% < 18
-  eval item %self.eq(%i%)%
+  set item %self.eq(%i%)%
   if %item%
     %purge% %item%
   end
-  eval i %i%+1
+  eval i %i% + 1
 done
 ~
 #45
@@ -1449,7 +1425,7 @@ Rumble's Shotgun~
 * If the object is being wielded.
 if %self.worn_by%
   * This is a random trigger so actor has to be defined.
-  eval actor %self.worn_by%
+  set actor %self.worn_by%
   * If the person wielding the object is fighting.
   if %actor.fighting%
     * Count the shots.
@@ -1463,9 +1439,9 @@ if %self.worn_by%
       halt
     end  
     * We also have to define the victim.
-    eval victim %actor.fighting%
+    set victim %actor.fighting%
     * Send the messages and do the damage.
-    %echoaround% %actor.name% %actor.name% points %self.shortdesc% at %victim.name% and pulls the trigger.
+    %echoaround% %actor% %actor.name% points %self.shortdesc% at %victim.name% and pulls the trigger.
     %send% %actor% You point %self.shortdesc% at %victim.name% and pull the trigger.
     %damage% %victim% 10
   end
@@ -1498,21 +1474,18 @@ if %polly% > 1
       emote looks at you curiously.
     break
     default
-      eval say %%phrase(%random.%%number%%)%)%%
+      eval say %phrase(%%random.%number%%%)%
       emote squawks, %say%
     break
   done
   * Learn new phrases
   eval number (%number% + 1)
-  eval phrase(%number%) %speech%
+  set phrase(%number%) %speech%
   global number
   global phrase(%number%)
   * Reset array after 10 phrases
   if %number% == 10
-    eval number 0
-    global number
-    eval maxphrases 1
-    global maxphrases
+    unset number
   end
 end
 ~
@@ -1522,14 +1495,18 @@ Mob Greet Steal~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Steal the first item in the players inventory.
-eval item %actor.inventory%
+set item %actor.inventory%
 if %item%
-  %echo% purging %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
-  %load% obj %item.vnum%
-  %purge% %item% 
+  if %item.vnum% != 1
+    %echo% purging %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
+    %load% obj %item.vnum%
+    %purge% %item%
+  else
+    %echo% can't purge %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory because it may be a unique item.
+  end 
 else
-  %echo% I cant find %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
-  %echo% I cant find an item in %actor.name%'s inventory.
+  %echo% I can't find %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
+  %echo% I can't find an item in %actor.name%'s inventory.
 end
 ~
 #48
@@ -1538,25 +1515,29 @@ Object Command Assemble~
 join~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Assemble an orb onto a staff to make a new item. Trig attached to obj 189
-eval currentroom %self.room% 
+set currentroom %self.room% 
 * Make sure they are in room 133 with the 2 objects.
-if %currentroom.vnum% == 133 && %actor.inventory(189)% && %actor.inventory(191)%
-  * Purge 191, but leave 189 since we are going to %transform% it.
-  %purge% %actor.inventory(191)%
-  * lets make it a 50/50 chance of working.
-  switch %random.2%
-    case 1
-      %transform% 12
-      %send% %actor% As you join the orb to the staff it clicks into place.
-      %echoaround% %actor% %actor.name% places an orb onto %actor.hisher% staff.
-    break
-    default
-      %transform% 192
-      %send% %actor% As you try to join the orb to the staff it turns in your hands and snaps in half.
-      %echoaround% %actor% %actor.name% tries to place an orb onto %actor.hisher% staff until the staff twists in %actor.hisher% hands and snaps in half.
-    break
-  done
-  detach 48 %self.id%
+if %currentroom.vnum(133)%
+  if %actor.inventory(189)% && %actor.inventory(191)%
+    * Purge 191, but leave 189 since we are going to %transform% it.
+    %purge% %actor.inventory(191)%
+    * lets make it a 50/50 chance of working.
+    switch %random.2%
+      case 1
+        %transform% 12
+        %send% %actor% As you join the orb to the staff it clicks into place.
+        %echoaround% %actor% %actor.name% places an orb onto %actor.hisher% staff.
+      break
+      default
+        %transform% 192
+        %send% %actor% As you try to join the orb to the staff it turns in your hands and snaps in half.
+        %echoaround% %actor% %actor.name% tries to place an orb onto %actor.hisher% staff until the staff twists in %actor.hisher% hands and snaps in half.
+      break
+    done
+    detach 48 %self.id%
+  else
+    %send% %actor% You do not have the required items to do this.
+  end
 else
   %send% %actor% You can not do that here.
 end
@@ -1608,7 +1589,7 @@ Room Random heal Example~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Fires only when a player is in the room.
 * Actor is not defined with trigger type random, you must define it.
-eval actor %random.char%
+set actor %random.char%
 %damage% %actor% -10
 %send% %actor% A healing breeze flows through the room.
 %echoaround% %actor% %actor.name% looks refreshed.
@@ -1616,7 +1597,7 @@ eval actor %random.char%
 #52
 Room Command Example~
 2 c 100
-*~
+l~
 if %cmd.mudcommand% == look && bridge /= %arg%
   %send% %actor% As you look at the bridge a small form staggers out from underneath it.
   %echoaround% %actor% As %actor.name% peers under the bridge a small form emerges.
@@ -1644,16 +1625,16 @@ Room Speech Example~
 * To go through a long string of text looking at each word you can
 * use a while loop. You could also check for matching text.
 *
-* evaluate the first word
-eval word %speech.car%
-* evaluate the rest of the speech string
-eval rest %speech.cdr%
+* set the first word
+set word %speech.car%
+* set the rest of the speech string
+se rest %speech.cdr%
 * while there is a first word keep going
 while %word%
   %echo% the first word is: %word%
   %echo% the remaining text is: %rest%
-  eval word %rest.car%
-  eval rest %rest.cdr%
+  set word %rest.car%
+  set rest %rest.cdr%
 done
 ~
 #54
@@ -1767,91 +1748,88 @@ Mob Random Example~
 0 b 2
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* With random triggers ACTOR is NOT defined. So set it.
-set actor %random.char%
-wait 1 sec
-say Hey!  You don't belong here!
-emote mumbles, 'Now what was that spell...'
-wait 1 sec
-* Senile old guard casts random spells on intruders.
-switch %random.17%
-  case 1
-    dg_cast 'cure light' %actor%
-  break
-  case 2
-    dg_cast 'magic missile' %actor%
-  break
-  case 3
-    dg_cast 'detect invisibility'
-  break
-  case 4
-    dg_cast 'detect magic'
-  break
-  case 5
-    dg_cast 'bless' %actor%
-  break
-  case 6
-    dg_cast 'heal' %actor%
-  break
-  case 7
-    dg_cast 'infravision'
-  break
-  case 8
-    dg_cast 'invisibility' %actor%
-  break
-  case 9
-    dg_cast 'armor' %actor%
-  break
-  case 10
-    dg_cast 'strength' %actor%
-  break
-  case 11
-    dg_cast 'sleep' %actor%
-  break
-  case 12
-    dg_cast 'blindness' %actor%
-  break
-  case 13
-    dg_cast 'detect poison' %actor%
-  break
-  case 14
-    dg_cast 'curse' %actor%
-  break
-  case 15
-    dg_cast 'poison' %actor%
-  break
-  case 16
-    if %actor.align% > 0
-      dg_cast 'dispel good' %actor%
-    else
-      dg_cast 'dispel evil' %actor%
-    end
-  break
-  default
-    * Senile magi "almost" kills himself.
-    say That wasn't right...
-    %echo% A failed spell backfires on the mage!
-    %damage% %self% %self.hitp%
-    * Remove the trig so he will stop trying to cast while incapacitated.
-    detach all %self.id%
-  break
-done
+* don't let him cast while incapacitated.
+if %self.hitp% > 0
+  * With random triggers ACTOR is NOT defined. So set it.
+  set actor %random.char%
+  wait 1 sec
+  say Hey!  You don't belong here!
+  emote mumbles, 'Now what was that spell...'
+  wait 1 sec
+  * Senile old guard casts random spells on intruders.
+  switch %random.17%
+    case 1
+      dg_cast 'cure light' %actor%
+    break
+    case 2
+      dg_cast 'magic missile' %actor%
+    break
+    case 3
+      dg_cast 'detect invisibility'
+    break
+    case 4
+      dg_cast 'detect magic'
+    break
+    case 5
+      dg_cast 'bless' %actor%
+    break
+    case 6
+      dg_cast 'heal' %actor%
+    break
+    case 7
+      dg_cast 'infravision'
+    break
+    case 8
+      dg_cast 'invisibility' %actor%
+    break
+    case 9
+      dg_cast 'armor' %actor%
+    break
+    case 10
+      dg_cast 'strength' %actor%
+    break
+    case 11
+      dg_cast 'sleep' %actor%
+    break
+    case 12
+      dg_cast 'blindness' %actor%
+    break
+    case 13
+      dg_cast 'detect poison' %actor%
+    break
+    case 14
+      dg_cast 'curse' %actor%
+    break
+    case 15
+      dg_cast 'poison' %actor%
+    break
+    case 16
+      if %actor.align% > 0
+        dg_cast 'dispel good' %actor%
+      else
+        dg_cast 'dispel evil' %actor%
+      end
+    break
+    default
+      * Senile magi "almost" kills himself.
+      say That wasn't right...
+      %echo% A failed spell backfires on the mage!
+      %damage% %self% %self.hitp%
+    break
+  done
+end
 ~
 #62
 Mob Command Example~
 0 c 100
 l~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* does not work for level 32 and above.
 * Make sure the command is look, check for any abbrev of window
 if %cmd.mudcommand% == look && %arg% /= orb
   %send% %actor% As you look at the orb a feeling of peace and serenity comes over you.
   %echoround% %actor% %actor.name% stares at the orb.
-  return 0
-else
-  * If it doesn't match let the command continue.
-  return 0
 end
+return 0
 ~
 #63
 Mob Speech and Expressions Example~
@@ -1907,7 +1885,7 @@ if %actor.is_pc%
   set rnumber %random.10%
   say your random number is: %rnumber%
   * increment it by 1.
-  set rnumber %rnumber% + 1
+  eval rnumber %rnumber% + 1
   say your incremented random number is: %rnumber%
 else
   say you are not a player.
@@ -1923,7 +1901,7 @@ slap %actor.name%
 wait 1 sec
 say I'm not that kind of girl.
 pout
-eval inroom %self.room%
+set inroom %self.room%
 %zoneecho% %inroom.vnum% %self.name% shouts, '%actor.name% kisses like a fish.'
 ~
 #65
@@ -1988,18 +1966,18 @@ Mob Entry Example~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * First find the room the mob is in and put the value in %inroom%
-eval inroom %self.room%
+set inroom %self.room%
 * then check on the rooms vnum
 if %inroom.vnum% == 33
   say I, %self.name%, declare this room Rumble's.
 end
-eval person %inroom.people%
+set person %inroom.people%
 wait 1 sec
 * While there are still people in the room.
 while %person%
   %echo% I am targetting %person.name%.
   * Target the next person in the room.
-  eval person %person.next_in_room%
+  set person %person.next_in_room%
 done
 ~
 #69
@@ -2028,14 +2006,12 @@ Mob Fight Example~
 0 k 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* Set the context to this specific mob so more than one can use this trig.
-context %self.id%
 * Only cast the spell every 30 seconds.
 if %already_cast%
   wait 30 s
   unset already_cast
 else
-  dg_cast 'magic missile' %actor.name%
+  dg_cast 'magic missile' %actor%
   set already_cast 1
   * By globalling the variable it can be accessed by other triggers or when
   * this trigger fires a second time.
@@ -2180,10 +2156,10 @@ oset 1 0
 ~
 #80
 Obj Random Example~
-1 b 100
+1 b 1
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-eval actor %self.worn_by%
+set actor %self.worn_by%
 if %actor%
   %send% %actor% War's Blood thirsts for battle.
 end
@@ -2256,11 +2232,13 @@ end
 Obj Wear Example~
 1 j 100
 ~
-* By Rumble of The Builder Academy    tbamud.com 9091
-if %actor.str% < 17
-  %send% %actor% %self.shortdesc% is too heavy for you to use.
-  %echoaround% %actor% %actor.name% tries to use %self.shortdesc% but can't seem to hold it up.
-  return 0
+if %actor.is_pc%
+  * By Rumble of The Builder Academy    tbamud.com 9091
+  if %actor.str% < 17
+    %send% %actor% %self.shortdesc% is too heavy for you to use.
+    %echoaround% %actor% %actor.name% tries to use %self.shortdesc% but can't seem to hold it up.
+    return 0
+  end
 end
 ~
 #87
@@ -2304,7 +2282,7 @@ Special Characters Example~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Special Characters Example - how to automatically substitute possessive pronouns.
 %echo% VNUM:                    %self.vnum%
-eval thing %self.name.car%
+set thing %self.name.car%
 %echo% FIRST KEYWORD:           %thing%
 %echo% NAME'S, SOMEONE'S, YOUR: |%thing%
 %echo% NAME, SOMEONE, YOU:      %thing%
@@ -2522,7 +2500,7 @@ Puff - Random Advice~
 0 ab 12
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-eval max %random.197%
+set man %random.197%
 set  text[1]   My god!  It's full of stars!
 set  text[2]   How'd all those fish get up here?
 set  text[3]   Some people are like Slinkies. Not really good for anything, but still bring a smile to your face when you push them down a flight of stairs.
@@ -2732,7 +2710,7 @@ if %arg.room% != %actor.room% || %arg.id% == %actor.id%
   %send% %actor% Shoot: Invalid Target!
   halt
 end
-eval inroom %actor.room%
+set inroom %actor.room%
 if %arg.inventory(80)%
   %echoaround% %actor.name% %actor.name% blasts %arg.name% with %actor.hisher% paintball gun.
   %send% %actor% You blast %arg.name%.
@@ -2754,7 +2732,7 @@ if %arg.room% != %actor.room% || %arg.id% == %actor.id%
   %send% %actor% Shoot: Invalid Target!
   halt
 end
-eval inroom %actor.room%
+set inroom %actor.room%
 if %arg.inventory(81)%
   %echoaround% %actor.name% %actor.name% blasts %arg.name% with %actor.hisher% paintball gun.
   %send% %actor% You blast %arg.name%.

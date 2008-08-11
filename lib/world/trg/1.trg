@@ -17,6 +17,7 @@ end
 Room Command - portal to Midgaard~
 2 c 100
 en~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %cmd.mudcommand% == enter && portal /= %arg%
   %send% %actor% You enter the portal.
   %echoaround% %actor% %actor.name% bravely enters the portal.
@@ -45,12 +46,13 @@ end
 Mob Greet Newbie Guide - 196~
 0 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.is_pc%
   if %actor.level% <= 3
     wait 1 sec
     bow
     wait 1 sec
-    say may I suggest you visit the newbie zones under HELP AREAS.
+    say may I suggest you visit the newbie zones under HELP AREAS by typing TELEPORT NEWBIE.
   end
   if %actor.level% >= 30
     wait 1 sec
@@ -59,7 +61,7 @@ if %actor.is_pc%
 end
 ~
 #104
-Mob Speech Speaker of the Land - 156~
+FREE~
 0 d 100
 entered~
 wait 1 sec
@@ -69,6 +71,8 @@ gos All Welcome %actor.name% to our Realm!
 Mob Greet Hannibal - 140~
 0 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Shopkeeper greets players based on male/female/neutral.
 if %actor.is_pc%
   wait 1 sec
   if %actor.sex% == male
@@ -462,6 +466,7 @@ eval inroom %self.room%
 Mob Greet Beggar - 165~
 0 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.is_pc%
   wait 1 sec
   say Money for the poor?
@@ -471,6 +476,7 @@ end
 Mob Bribe Beggar - 165~
 0 m 1
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 wait 1 sec
 if %actor.sex% == MALE
   say Thank you, kind sir.
@@ -865,25 +871,33 @@ Quest Mob Loads Head - 15~
 Dove - 193~
 0 b 5
 ~
-eval max %random.2%
-set  txt[1] pecks at your feet.
-set  txt[2] coo's lightly.
-set  speech %%txt[%max%]%%
-eval speech %speech%
-emote %speech%
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Allows you to create multiple random actions.
+* Numeric Arg of 5 fires about every 4 minutes. HELP RANDOM-TIMING
+* %random.#% must match the highest txt# below.
+eval number %random.5%
+set txt1 pecks at your feet.
+set txt2 coo's lightly.
+set txt3 bobs its head as if to the beat of a drum.
+set txt4 takes flight and lands a few feet away.
+set txt5 deposits a liquidy black and white substance on your foot.
+* set txt# .... add more here.
+eval string %%txt%number%%%
+emote %string%
 ~
 #146
 Apprentice healer - 201~
 0 b 20
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * This is required because a random trig does not have an actor.
 set actor %random.char%
 * only continue if an actor is defined.
 if %actor%
-  * if they have lost more than half their hitpoints heal em
+  * If they have lost more than half their hitpoints heal them.
   if %actor.hitp% < %actor.maxhitp% / 2 
     wait 1 sec
-    say You are injured, let me help.
+    tell %actor.name% You are injured, let me help.
     wait 2 sec
     %echoaround% %actor% %self.name% lays %self.hisher% hands on %actor.name%'s wounds and bows %actor.hisher% head in concentration.
     %send% %actor% %self.name% lays %self.hisher% hands on your wounds and bows %actor.hisher% head in concentration.
@@ -895,6 +909,7 @@ end
 Black Magi Spell - 144~
 0 k 10
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.level% > 10
   say you are a fool %actor.name%.
   dg_cast 'color spray' %actor%
@@ -904,53 +919,53 @@ end
 Mouse Emote - 194~
 0 b 5
 ~
-eval max %random.4%
-set  txt[1] scurries away quickly.
-set  txt[2] stands up on its hind legs and sniffs the air.
-set  txt[3] chews on some trash.
-set  txt[4] squeaks and shakes some water and rain out of its fur.
-set  speech %%txt[%max%]%%
-eval speech %speech%
-emote %speech%
+* By Rumble of The Builder Academy    tbamud.com 9091
+eval number %random.4%
+set txt1 scurries away quickly.
+set txt2 stands up on its hind legs and sniffs the air.
+set txt3 chews on some trash.
+set txt4 squeaks and shakes some water and rain out of its fur.
+eval string %%txt%number%%%
+emote %string%
 ~
 #149
 Cat Emote - 139~
 0 b 10
 ~
-eval max %random.4%
-set  txt[1] hisses at you.
-set  txt[2] purrs happily as it brushes up against your leg.
-set  txt[3] plays with something it has already killed.
-set  txt[4] swishes its tail back and forth as it eyes some prey.
-set  speech %%txt[%max%]%%
-eval speech %speech%
-emote %speech%
+* By Rumble of The Builder Academy    tbamud.com 9091
+eval number %random.4%
+set txt1 hisses at you.
+set txt2 purrs happily as it brushes up against your leg.
+set txt3 plays with something it has already killed.
+set txt4 swishes its tail back and forth as it eyes some prey.
+eval string %%txt%number%%%
+emote %string%
 ~
 #150
 Dog Emote - 192~
 0 b 10
 ~
-eval max %random.4%
-set  txt[1] sniffs at you friendlily.
-set  txt[2] whimpers for some attention.
-set  txt[3] growls menacingly at your feet.
-set  txt[4] watches your every movement suspiciously.
-set  speech %%txt[%max%]%%
-eval speech %speech%
-emote %speech%
+* By Rumble of The Builder Academy    tbamud.com 9091
+eval number %random.4%
+set txt1 sniffs at you friendlily.
+set txt2 whimpers for some attention.
+set txt3 growls menacingly at your feet.
+set txt4 watches your every movement suspiciously.
+eval string %%txt%number%%%
+emote %string%
 ~
 #151
 Townsman Emote - 170~
 0 b 10
 ~
-eval max %random.4%
-set  txt[1] mumbles something about the weather.
-set  txt[2] looks up at the sky warily.
-set  txt[3] seems to have forgotten where he was headed.
-set  txt[4] acknowledges you with a nod as he passes.
-set  speech %%txt[%max%]%%
-eval speech %speech%
-emote %speech%
+* By Rumble of The Builder Academy    tbamud.com 9091
+eval number %random.4%
+set txt1 mumbles something about the weather.
+set txt2 looks up at the sky warily.
+set txt3 seems to have forgotten where he was headed.
+set txt4 acknowledges you with a nod as he passes.
+eval string %%txt%number%%%
+emote %string%
 ~
 #152
 Angel Receives Treats - 207~
@@ -1080,6 +1095,7 @@ end
 10 sided die roll - 173~
 1 c 7
 roll~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if dice /= %arg% || die /= %arg%
   %send% %actor% You throw the ten sided die on the ground.
   %echoaround% %actor% %actor.name% throws %actor.hisher% ten sided die on the ground.
@@ -1093,6 +1109,7 @@ end
 Bell Toll - 101~
 2 c 100
 pull~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if rope /= %arg%
   %echoaround% %actor% %actor.name% struggles as %actor.heshe% pulls on the rope.
   %send% %actor% You pull the rope putting all your weight into it. It slowly gives.
@@ -1105,19 +1122,20 @@ end
 Cancer Stick Smoking - 176~
 1 c 2
 light~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * put your objects alias here, /= will match abbreviations of it.
 if cigarette /= %arg% || cancer /= %arg% || stick /= %arg%
-  %send% %actor% You light up a %self.name%.
-  %echoaround% %actor% %actor.name% lights up a %self.name%.
+  %send% %actor% You light up %self.shortdesc%.
+  %echoaround% %actor% %actor.name% lights up a %self.shortdesc%.
   * use as many puffs and as much time between puffs as you want.
   while %puffs% < 4
     wait 10 sec
-    %send% %actor% You take a puff off of your %self.name%.
-    %echoaround% %actor% %actor.name% takes a puff of smoke off of %actor.hisher% %self.name%.
+    %send% %actor% You take a puff off of %self.shortdesc%.
+    %echoaround% %actor% %actor.name% takes a puff of smoke off of %actor.hisher% %self.shortdesc%.
     eval puffs %puffs% + 1
   done
-  %send% %actor% You take a final puff and put the %self.name% out.
-  %echoaround% %actor% %actor.name% takes a final puff and puts %actor.hisher% %self.name% out.
+  %send% %actor% You take a final puff and put the %self.shortdesc% out.
+  %echoaround% %actor% %actor.name% takes a final puff and puts %actor.hisher% %self.shortdesc% out.
   %purge% %self%
 else
   %send% %actor% What would you like to %cmd%?
@@ -1127,6 +1145,7 @@ end
 Puppy plays - 191~
 0 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.vnum% == 207
   wait 1 sec 
   emote growls playfully at %actor.name%, crouching down into a mock attack position.
@@ -1158,7 +1177,7 @@ say %speech%
 Picking Mushrooms~
 2 c 100
 pi~
-* does not work for level 32 and above.
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Make sure the command matches MUD command pick, check for any abbrev of mushrooms.
 if %cmd.mudcommand% == pick && mushrooms /= %arg%
   %load% obj 1300 %actor% inv
@@ -1174,6 +1193,7 @@ end
 Room Heals - 101~
 2 b 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * This is required because a random trig does not have an actor.
 set actor %random.char%
 * only continue if an actor is defined.
@@ -1189,6 +1209,7 @@ end
 Beggin Strips - 164~
 1 s 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 %send% %actor% You gag in disgust at the foul taste of the dog treats.
 %echoaround% %actor% %actor.name% gags in disgust at the foul taste of the dog treats.
 return 0
@@ -1288,7 +1309,6 @@ Mob Questshop Example~
 *~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * A questshop that uses questpoints!
-* Command triggers do not work for level 32 and above.
 if %cmd.mudcommand% == list
   *
   %send% %actor%  ##   Available   Item                                Cost in Questpoints
@@ -1329,6 +1349,7 @@ end
 Questpoint Setter - 44~
 1 c 1
 questpoints~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Questpoint setter. For STAFF only! Make sure player has nohassle off.
 * Make sure name matches a player, purge mobs or use 0.name if you have 
 * troubles. 
@@ -1351,15 +1372,17 @@ end
 Quest Token check if player is on quest - 15~
 1 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if !%actor.varexists(on_quest_zone_1)%
   %send% %actor% You are not on a quest, don't steal other peoples quest items!
+  return 0
 end
 ~
 #170
 Load Tapcode Paper - 97~
 2 c 100
 wa~
-* does not work for level 32 and above.
+* By Rumble of The Builder Academy    tbamud.com 9091
 if !%actor.has_item(83)% && %cmd.mudcommand% == wake
 nop %actor.pos(sitting)%
   %send% %actor% As you slowly regain consciousness you hear a shuffling of feet outside the door. 
@@ -1375,7 +1398,7 @@ end
 Tapcode Say Stuff - 97-93~
 2 b 10
 ~
-* T171 By Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %self.vnum(97)%
   * tapcode SAY FREEDOM
   %echo% tap tap tap tap   tap tap tap
@@ -1478,7 +1501,7 @@ end
 Prison Teleport 97-91~
 2 d 1
 *~
-* T172 By Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
 * evaluate the first word.
 eval word %speech.car%
 * evaluate the rest of the speech string.
@@ -1521,7 +1544,7 @@ say %speech%
 Underground Spy M30 T174~
 0 b 100
 ~
-* Underground Spy M30 T174 by Rumble
+* By Rumble of The Builder Academy    tbamud.com 9091
 if !%self.follower%
   eval max %random.4%
   set txt[1] Don't let the 'MAN' hold you back, join the rebellion. Follow me if you want to lead a better life.
@@ -1663,12 +1686,41 @@ eval speech %speech%
 ~
 #176
 Teleporter Recall - O82~
-1 c 100
+1 c 7
 recall~
+* By Rumble of The Builder Academy    tbamud.com 9091
 %send% %actor% You recall to safety.
 %echoaround% %actor% %actor.name% recalls.
 %teleport% %actor% 3001
 %force% %actor% look
+~
+#177
+Kick Me Sign - O197~
+1 b 10
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Only players can activate this trig.
+if %self.worn_by%
+  set actor %self.worn_by%
+  set room_var %actor.room%
+  wait 3 s
+  set kickers %room_var.people%
+  * Now loop through everyone in the room.
+  while %kickers%
+    * Set the next target before kicking.
+    set next_kicker %kickers.next_in_room%
+    if %kickers% != %actor%
+      %send% %kickers% You can't resist the urge after seeing the sign on %actor.name%'s back. You kick %actor.himher%
+      %send% %actor% %kickers.name% plants %kickers.hisher% firmly in your backside for no apparent reason.
+      %echoaround% %actor% %kickers.name% kicks %actor.name% squarely in the behind after seeing the "Kick Me" sign %actor.heshe% is wearing.
+      * Damage them... 2 hitpoints. To heal use -#.
+      %damage% %actor% 2
+    end  * Set the next target.
+    set kickers %next_kicker%
+    wait % s
+    * Loop back.
+  done
+end
 ~
 #178
 Homer's Advice M33~
@@ -1838,7 +1890,7 @@ say %speech%
 ~
 #183
 Socrates - 17~
-0 b 3
+0 b 1
 ~
 * Socrates - M17 - T183 By Rumble
 eval max %random.14%
@@ -2024,6 +2076,7 @@ say %speech%
 TBA Magic Eight Ball Check - 26~
 0 q 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Check to see if the person is not carrying the magic eight ball
 if !%actor.has_item(47)%
   * They are not carrying it. So stop them and give them one.
@@ -2040,6 +2093,7 @@ end
 Mob Quest Example Load 8ball - 22~
 2 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Check if the 8ball is already in the room. If not load it.
 * I know this only checks the first item in the room, I don't really care. KISS
 if %self.contents.vnum% != 47
@@ -2054,19 +2108,15 @@ wait 2 sec
 Mob Quest Tutorial Example Quest completion - 25~
 0 j 100
 ~
-if %actor.varexists(solved_example_quest_zone_0)%
-  say you already solved this quest, keep it.
-  return 0
-end
-*
+* By Rumble of The Builder Academy    tbamud.com 9091
 wait 1 sec
-if (%object.vnum% == 47)
+if %object.vnum% == 47 && !%actor.varexists(solved_example_quest_zone_0)%
   dance
   wait 1 sec
   say Thank you, %actor.name%. Here is a few experience points and some gold.
   nop %actor.exp(50)%
   nop %actor.gold(50)%
-  say finally, now I can get some answers.
+  say Finally, now I can get some answers.
   wait 1 sec
   emote shakes the magic eight ball vigorously.
   wait 1 sec
@@ -2074,6 +2124,9 @@ if (%object.vnum% == 47)
   set solved_example_quest_zone_0 1
   remote solved_example_quest_zone_0 %actor.id%
   %purge% %object%
+elseif %object.vnum% == 47
+  say you already solved this quest, keep it.
+  return 0
 else
   say I don't want that!
   junk %object.name%
@@ -2083,6 +2136,7 @@ end
 Mob Quest Tutorial Example Quest accepted - 25~
 0 d 1
 yes~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.varexists(solved_example_quest_zone_0)%
   halt
 else
@@ -2097,6 +2151,7 @@ end
 Mob Quest Tutorial Example Quest starter - 25~
 0 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %direction% == south
   if %actor.varexists(solved_example_quest_zone_0)%
     wait 1 sec
@@ -2113,6 +2168,7 @@ end
 TBA Object Get Coins Reload - 45~
 1 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 %load% obj %self.vnum%
 %echo% The pile of coins magically reappear.
 ~
@@ -2120,6 +2176,7 @@ TBA Object Get Coins Reload - 45~
 TBA Greeting - 17~
 0 e 1
 arrives entered appears~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.is_pc%
   wait 1 sec
   if %actor.varexists(TBA_greeting)%
@@ -2144,6 +2201,7 @@ end
 Rumble's Stayalive bracelet - 88~
 1 b 10
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 eval actor %self.worn_by%
 if %actor%
   %send% %actor% @n
@@ -2153,6 +2211,8 @@ end
 TBA Capital Letters Test - 17~
 0 c 0
 ca~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* A basic command trigger. If a player types capitals the mob replies.
 if capitals /= %cmd%
   tell %actor.name% Good job, that is correct. Be on the lookout for more of those.
 end

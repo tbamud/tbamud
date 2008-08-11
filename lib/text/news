@@ -7,6 +7,9 @@ NEW COMMANDS AND NEW MUD BEHAVIOR:
 **  Check out the latest news and information on the tbaMUD codebase at
     @Chttp://tbamud.com@n.
 
+**  Your prompt will now show (news) and (motd) whenever these files
+    have been updated.
+
 **  Added a new command to cancel all pending (queued) commands. For example
     a fighting player that has spammed 10 kick or spell commands can type
     '--' to cancel them all so they can instead flee.

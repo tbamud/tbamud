@@ -38,7 +38,7 @@ road, trying to dry up the areas of the road that are muddiest.
 4106 0 0 0 0 0 0 0 300 E
 25 12 -5 5d5+250 4d4+4
 250 62500
-8 8 1
+8 8 0
 E
 #30903
 muddy little boy~
@@ -345,9 +345,9 @@ donld smithy~
 Donld~
 Donld the smithy pounds away at his anvil.
 ~
-   He is tall and lean, well muscled but not huge like many stereotypical
-smiths of the area.  He looks up at you without stopping pounding, winks with a
-sligh smile, and goes back to concentrating on his anvil.    
+   He is tall and lean, well muscled but not huge like many stereotypical smiths
+of the area.  He looks up at you without stopping his pounding, winks with a sly
+smile, and goes back to concentrating on his anvil.  
 ~
 124938 0 0 0 0 0 0 0 800 E
 29 11 -7 5d5+290 4d4+4

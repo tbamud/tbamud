@@ -23,13 +23,17 @@ A small pouch has been dropped here.~
 15 1 -1 0
 1 30 0 0
 #23403
-fountain~
+milk fountain milk~
 a fountain~
 A drinking fountain looks out of place, here in the Arena.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
-999 999 15 0
-1004 0 0 0
+-1 1 10 0
+0 0 0 0
+E
+fountain milk~
+   The fountain seems to be filled with milk!  Of course, newbies drink milk.
+~
 #23404
 leaves leaf~
 a leaf~
@@ -38,6 +42,11 @@ A fallen leaf rests here.~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
 1 5 0 0
+E
+leaves leaf~
+   The leaf has a strange magical affect to it.  Your feet seem lighter as if
+you may be able to walk on water.
+~
 #23405
 newbie sword short shortsword~
 a newbie shortsword~
