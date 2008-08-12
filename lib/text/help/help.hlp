@@ -2407,16 +2407,16 @@ Gives you the current game time. tbaMUD uses zulu time 0-24 hours. There are
 takes about 12 days.
 
 /** Number of real life seconds per mud hour.
-#define SECS_PER_MUD_HOUR       75
+@#define SECS_PER_MUD_HOUR       75
 /** Real life seconds in one mud day.
  * Current calculation = 30 real life minutes. */
-#define SECS_PER_MUD_DAY        (24*SECS_PER_MUD_HOUR)
+@#define SECS_PER_MUD_DAY        (24*SECS_PER_MUD_HOUR)
 /** Real life seconds per mud month.
  * Current calculation = 17.5 real life hours */
-#define SECS_PER_MUD_MONTH      (35*SECS_PER_MUD_DAY)
+@#define SECS_PER_MUD_MONTH      (35*SECS_PER_MUD_DAY)
 /** Real life seconds per mud month.
  * Current calculation ~= 12.4 real life days */
-#define SECS_PER_MUD_YEAR       (17*SECS_PER_MUD_MONTH)
+@#define SECS_PER_MUD_YEAR       (17*SECS_PER_MUD_MONTH)
  
 /* real-life time (remember Real Life?) */
 @n#define SECS_PER_REAL_MIN       60

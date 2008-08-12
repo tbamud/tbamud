@@ -1109,7 +1109,9 @@ ACMD(do_who)
     int max_level;
     int count; /* must always start as 0 */
   } rank[] = {
-
+    { "Immortals\r\n---------\r\n", LVL_IMMORT, LVL_IMPL, 0},
+    { "Mortals\r\n-------\r\n", 1, LVL_IMMORT - 1, 0 },
+    { "\n", 0, 0, 0 }
   };
 
   skip_spaces(&argument);
