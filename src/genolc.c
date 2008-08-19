@@ -192,7 +192,7 @@ int add_to_save_list(zone_vnum zone, int type)
 
   rznum = real_zone(zone);
   if (rznum == NOWHERE || rznum > top_of_zone_table) {
-    if (zone != AEDIT_PERMISSION || zone != HEDIT_PERMISSION) {
+    if (zone != AEDIT_PERMISSION && zone != HEDIT_PERMISSION) {
       log("SYSERR: add_to_save_list: Invalid zone number passed. (%d => %d, 0-%d)", zone, rznum, top_of_zone_table);
       return FALSE;
     }

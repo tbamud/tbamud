@@ -1,7 +1,40 @@
 TbaMUD is currently being developed by The Builder Academy. If you need any
 help, find any bugs, or have ideas for improvement please stop by TBA at 
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
- 
+Major Additions:
+OasisOLC 2.0.6
+trigedit (DG Scripts) 1.0.14
+hedit (help editor)
+cedit (config editor)
+tedit (text file editor)
+aedit (socials editor)
+qedit (quest editor)
+ANSI Color
+ASCII Player Files 3.0.1
+128bit Support
+Copyover
+automap (ASCII map generator)
+buildwalk (walk a new zone to link rooms)
+tell m-w (an in game dictionary lookup)
+gemote (emotes over gossip)
+history (of all communications, tells, gossip, etc.)
+file (allows imms to view syslog, errors, etc.)
+pagelength (custom pagelength setting)
+showvnums (roomflags that includes mobs, objs, triggers)
+zpurge (purge an entire zone)
+zcheck (head builder tool to check balancing)
+mob autoroll (standard values set on mob level entry)
+checkload (list where a mob/obj is loaded)
+Auto Toggles (loot, goold, split, sac, assist, map)
+Hidden mob/obj
+mob/obj stacking
+hindex
+helpcheck
+OLC copy and delete options.
+export (QQ's a zone into a tarball)t
+Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
+(lots of major bugfixes too)
+@
 tbaMUD 3.57
 [Aug 11 2008] - Rumble
   Updated World and files for 3.57 release. 

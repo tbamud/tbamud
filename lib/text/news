@@ -7,6 +7,8 @@ NEW COMMANDS AND NEW MUD BEHAVIOR:
 **  Check out the latest news and information on the tbaMUD codebase at
     @Chttp://tbamud.com@n.
 
+**  New sacrifice command allows you to donate a corpse to the Gods.
+
 **  Your prompt will now show (news) and (motd) whenever these files
     have been updated.
 
