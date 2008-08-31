@@ -35,9 +35,11 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
-tbaMUD 3.57
+[Aug 31 2008] - Fizban
+  Removed various mid-function defines of variables.
 [Aug 27 2008] - Rumble
   Fixed Mob using '((c)->player_specials->saved.pref)' at dg_variables.c:860
+tbaMUD-3.57
 [Aug 11 2008] - Rumble
   Updated World and files for 3.57 release. 
 [Aug 10 2008] - Fizban

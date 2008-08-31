@@ -875,6 +875,7 @@ static int gen_receptionist(struct char_data *ch, struct char_data *recep, int c
     char *arg, int mode)
 {
   int cost;
+  char buf[128];
   const char *action_table[] = { "smile", "dance", "sigh", "blush", "burp",
 	  "cough", "fart", "twiddle", "yawn" };
 
@@ -906,7 +907,6 @@ static int gen_receptionist(struct char_data *ch, struct char_data *recep, int c
   }
 
   if (CMD_IS("rent")) {
-    char buf[128];
 
     if (!(cost = Crash_offer_rent(ch, recep, FALSE, mode)))
       return (TRUE);
@@ -1163,6 +1163,8 @@ static int Crash_load_objs(struct char_data *ch) {
   FILE *fl;
   char filename[MAX_STRING_LENGTH];
   char line[READ_SIZE];
+  char buf[MAX_STRING_LENGTH];
+  char str[64];
   int i, num_of_days, orig_rent_code, cost, num_objs=0;
   struct obj_data *cont_row[MAX_BAG_ROWS];
   int rentcode,timed,netcost,gold,account,nitems;
@@ -1176,7 +1178,6 @@ static int Crash_load_objs(struct char_data *ch) {
 
   if (!(fl = fopen(filename, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      char buf[MAX_STRING_LENGTH];
       sprintf(buf, "SYSERR: READING OBJECT FILE %s (5)", filename);
       perror(buf);
       send_to_char(ch, "\r\n********************* NOTICE *********************\r\n"
@@ -1191,7 +1192,6 @@ static int Crash_load_objs(struct char_data *ch) {
            &netcost,&gold,&account,&nitems);
 
   if (rentcode == RENT_RENTED || rentcode == RENT_TIMEDOUT) {
-    char str[64];
     sprintf(str, "%d", SECS_PER_REAL_DAY);
     num_of_days = (int)((float) (time(0) - timed) / (float)atoi(str));
     cost = (int) (netcost * num_of_days);
