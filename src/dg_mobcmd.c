@@ -285,7 +285,11 @@ ACMD(do_mzoneecho)
 {
     int zone;
     char room_number[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH], *msg;
-
+        
+    if (!MOB_OR_IMPL(ch)) {
+        send_to_char(ch, "Huh?!?\r\n");
+        return;
+    }
     msg = any_one_arg(argument, room_number);
     skip_spaces(&msg);
 

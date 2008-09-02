@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Sep 01 2008] - Fizban
+  Added a check to mzoneecho to stop mortals from using it.
 [Aug 31 2008] - Fizban
   Removed various mid-function defines of variables.
 [Aug 27 2008] - Rumble
