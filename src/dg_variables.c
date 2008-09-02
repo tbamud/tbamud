@@ -860,6 +860,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             snprintf(str, slen, "%d", GET_QUESTPOINTS(c));
           }
           break;
+        case 'r':
           if (!str_cmp(field, "room")) {  /* in NOWHERE, return the void */
 /* see note in dg_scripts.h */
 #ifdef ACTOR_ROOM_IS_UID
@@ -869,6 +870,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             snprintf(str, slen, "%d", (IN_ROOM(c)!= NOWHERE) ? world[IN_ROOM(c)].number : 0);
 #endif
           }
+          break;
         case 's':
           if (!str_cmp(field, "saving_breath")) {
             if (subfield && *subfield) {
