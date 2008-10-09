@@ -328,7 +328,7 @@ void gain_condition(struct char_data *ch, int condition, int value)
 
 static void check_idling(struct char_data *ch)
 {
-  if (++(ch->char_specials.timer) > CONFIG_IDLE_VOID) {
+  if (ch->char_specials.timer > CONFIG_IDLE_VOID) {
     if (GET_WAS_IN(ch) == NOWHERE && IN_ROOM(ch) != NOWHERE) {
       GET_WAS_IN(ch) = IN_ROOM(ch);
       if (FIGHTING(ch)) {
@@ -397,10 +397,9 @@ void point_update(void)
     }
     if (!IS_NPC(i)) {
       update_char_objects(i);
+      i->char_specials.timer++; 
       if (GET_LEVEL(i) < CONFIG_IDLE_MAX_LEVEL)
 	check_idling(i);
-      else 
-        (i->char_specials.timer)++;
     }
   }
 

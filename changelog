@@ -35,10 +35,17 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Oct 09 2008] - Rumble
+  Fixed a small bug in hedit. If CIRCLE_UNSIGNED_INDEX is 0, then new entries wo
+n't save correctly. (thanks Rhade)
+  Code cleanup of check_idling. (thanks Rhade)
 [Sep 01 2008] - Fizban
   Added a check to mzoneecho to stop mortals from using it.
 [Aug 31 2008] - Fizban
   Removed various mid-function defines of variables.
+[Oct 09 2008] - Rumble
+  Fixed a small bug in hedit. If CIRCLE_UNSIGNED_INDEX is 0, then new entries won't save correctly. (thanks Rhade)
+  Code cleanup of check_idling. (thanks Rhade)
 [Aug 27 2008] - Rumble
   Fixed Mob using '((c)->player_specials->saved.pref)' at dg_variables.c:860
 tbaMUD-3.57

@@ -4,9 +4,6 @@
 * Author: Steve Wolfe, Scott Meisenholder, Rhade                          *
 *                                                                         *
 *  All rights reserved.  See license.doc for complete information.        *
-*                                                                         *
-*  Copyright (C) 2007 by Rhade                                            *
-*  InfoTechMUD is based on CircleMUD, Copyright (C) 1993, 1994.           *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
@@ -128,7 +125,7 @@ static void hedit_save_internally(struct descriptor_data *d)
 {
   struct help_index_element *new_help_table = NULL;
 
-  if (OLC_ZNUM(d) > top_of_helpt) {
+  if (OLC_ZNUM(d) == NOWHERE) {
     int i;
     CREATE(new_help_table, struct help_index_element, top_of_helpt + 2);
 

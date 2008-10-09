@@ -7,8 +7,6 @@
 *                                                                        
 * Author: Steve Wolfe, Scott Meisenholder, Rhade
 * All rights reserved.  See license.doc for complete information.
-* Copyright (C) 2007 by Rhade                              
-* InfoTechMUD is based on CircleMUD, Copyright (C) 1993, 1994.
 * CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.                             
 *
 */
