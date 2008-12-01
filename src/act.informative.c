@@ -1666,7 +1666,7 @@ ACMD(do_levels)
   }
   one_argument(argument, arg); 
 
-  if (*arg) { 
+  if (arg != NULL && *arg) { 
     if (isdigit(*arg)) { 
       ret = sscanf(arg, "%d-%d", &min_lev, &max_lev); 
       if (ret == 0) { 
