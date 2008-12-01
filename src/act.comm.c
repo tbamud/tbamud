@@ -135,6 +135,7 @@ ACMD(do_tell)
 {
   struct char_data *vict = NULL;
   char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
+  int i;
 
   half_chop(argument, buf, buf2);
 
@@ -165,7 +166,7 @@ ACMD(do_tell)
       return;
     }
     snprintf(buf, sizeof(buf), "../bin/webster %s %d &", word, (int) getpid());
-    system(buf);
+    i = system(buf);
     last_webster_teller = GET_IDNUM(ch);
     send_to_char(ch, "You look up '%s' in Merriam-Webster.\r\n", word);
   } else if (GET_LEVEL(ch) < LVL_IMMORT && !(vict = get_player_vis(ch, buf, NULL, FIND_CHAR_WORLD)))

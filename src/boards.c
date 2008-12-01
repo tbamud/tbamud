@@ -411,7 +411,7 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
 void board_save_board(int board_type)
 {
   FILE *fl;
-  int i;
+  int i, j;
   char *tmp1, *tmp2 = NULL;
 
   if (!num_of_msgs[board_type]) {
@@ -422,7 +422,7 @@ void board_save_board(int board_type)
     perror("SYSERR: Error writing board");
     return;
   }
-  fwrite(&(num_of_msgs[board_type]), sizeof(int), 1, fl);
+  j = fwrite(&(num_of_msgs[board_type]), sizeof(int), 1, fl);
 
   for (i = 0; i < num_of_msgs[board_type]; i++) {
     if ((tmp1 = MSG_HEADING(board_type, i)) != NULL)
@@ -437,11 +437,11 @@ void board_save_board(int board_type)
     else
       msg_index[board_type][i].message_len = strlen(tmp2) + 1;
 
-    fwrite(&(msg_index[board_type][i]), sizeof(struct board_msginfo), 1, fl);
+    j = fwrite(&(msg_index[board_type][i]), sizeof(struct board_msginfo), 1, fl);
     if (tmp1)
-      fwrite(tmp1, sizeof(char), msg_index[board_type][i].heading_len, fl);
+      j = fwrite(tmp1, sizeof(char), msg_index[board_type][i].heading_len, fl);
     if (tmp2)
-      fwrite(tmp2, sizeof(char), msg_index[board_type][i].message_len, fl);
+      j = fwrite(tmp2, sizeof(char), msg_index[board_type][i].message_len, fl);
   }
 
   fclose(fl);
@@ -450,7 +450,7 @@ void board_save_board(int board_type)
 void board_load_board(int board_type)
 {
   FILE *fl;
-  int i, len1, len2;
+  int i, j, len1, len2;
   char *tmp1, *tmp2;
 
   if (!(fl = fopen(FILENAME(board_type), "rb"))) {
@@ -458,21 +458,21 @@ void board_load_board(int board_type)
       perror("SYSERR: Error reading board");
     return;
   }
-  fread(&(num_of_msgs[board_type]), sizeof(int), 1, fl);
+  j = fread(&(num_of_msgs[board_type]), sizeof(int), 1, fl);
   if (num_of_msgs[board_type] < 1 || num_of_msgs[board_type] > MAX_BOARD_MESSAGES) {
     log("SYSERR: Board file %d corrupt.  Resetting.", board_type);
     board_reset_board(board_type);
     return;
   }
   for (i = 0; i < num_of_msgs[board_type]; i++) {
-    fread(&(msg_index[board_type][i]), sizeof(struct board_msginfo), 1, fl);
+    j = fread(&(msg_index[board_type][i]), sizeof(struct board_msginfo), 1, fl);
     if ((len1 = msg_index[board_type][i].heading_len) <= 0) {
       log("SYSERR: Board file %d corrupt!  Resetting.", board_type);
       board_reset_board(board_type);
       return;
     }
     CREATE(tmp1, char, len1);
-    fread(tmp1, sizeof(char), len1, fl);
+    j = fread(tmp1, sizeof(char), len1, fl);
     MSG_HEADING(board_type, i) = tmp1;
 
     if ((MSG_SLOTNUM(board_type, i) = find_slot()) == -1) {
@@ -482,7 +482,7 @@ void board_load_board(int board_type)
     }
     if ((len2 = msg_index[board_type][i].message_len) > 0) {
       CREATE(tmp2, char, len2);
-      fread(tmp2, sizeof(char), len2, fl);
+      j = fread(tmp2, sizeof(char), len2, fl);
       msg_storage[MSG_SLOTNUM(board_type, i)] = tmp2;
     } else
       msg_storage[MSG_SLOTNUM(board_type, i)] = NULL;

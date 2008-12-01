@@ -479,7 +479,7 @@ static void perform_map( struct char_data *ch, char *argument, bool worldmap )
   /* Paste on the right border */
   strcpy(buf2, strpaste(buf2, buf1, "  "));
   /* Print it all out */
-  send_to_char(ch, buf2);
+  send_to_char(ch, "%s", buf2);
 
   send_to_char(ch, "@D `.-.__--.,-.__.-.-'@n\r\n");
   return;
@@ -493,14 +493,14 @@ void str_and_map(char *str, struct char_data *ch, room_vnum target_room ) {
 
   /* Check MUDs map config options - if disabled, just show room decsription */
   if (!can_see_map(ch)) {
-    send_to_char(ch, strfrmt(str, GET_SCREEN_WIDTH(ch), 1, FALSE, FALSE, FALSE));
+    send_to_char(ch, "%s", strfrmt(str, GET_SCREEN_WIDTH(ch), 1, FALSE, FALSE, FALSE));
     return;
   }
 
   worldmap = ROOM_FLAGGED(target_room, ROOM_WORLDMAP) ? TRUE : FALSE ;
 
   if(!PRF_FLAGGED(ch, PRF_AUTOMAP)) {
-    send_to_char(ch, strfrmt(str, GET_SCREEN_WIDTH(ch), 1, FALSE, FALSE, FALSE));
+    send_to_char(ch, "%s", strfrmt(str, GET_SCREEN_WIDTH(ch), 1, FALSE, FALSE, FALSE));
     return;
   }
 
@@ -524,9 +524,9 @@ MapArea(target_room, ch, centre, centre, min, max, ns_size/2, ew_size/2, worldma
     char_size = 3*(size+1) + (size) + 4;
 
   if(worldmap)
-    send_to_char(ch, strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), WorldMap(centre, size, MAP_CIRCLE, MAP_COMPACT), "   "));
+    send_to_char(ch, "%s", strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), WorldMap(centre, size, MAP_CIRCLE, MAP_COMPACT), "   "));
   else
-    send_to_char(ch, strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), CompactStringMap(centre, size), "   "));
+    send_to_char(ch, "%s", strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), CompactStringMap(centre, size), "   "));
 
 }
 

@@ -151,8 +151,9 @@ static int hsort(const void *a, const void *b);
 char *fread_action(FILE *fl, int nr)
 {
   char buf[MAX_STRING_LENGTH];
+  char *buf1;
 
-  fgets(buf, MAX_STRING_LENGTH, fl);
+  buf1 = fgets(buf, MAX_STRING_LENGTH, fl);
   if (feof(fl)) {
     log("SYSERR: fread_action: unexpected EOF near action #%d", nr);
     /* SYSERR_DESC: fread_action() will fail if it discovers an end of file 
@@ -170,8 +171,8 @@ char *fread_action(FILE *fl, int nr)
 void boot_social_messages(void)
 {
   FILE *fl;
-  int nr = 0, hide, min_char_pos, min_pos, min_lvl, curr_soc = -1;
-  char next_soc[MAX_STRING_LENGTH], sorted[MAX_INPUT_LENGTH];
+  int nr = 0, hide, min_char_pos, min_pos, min_lvl, curr_soc = -1, i;
+  char next_soc[MAX_STRING_LENGTH], sorted[MAX_INPUT_LENGTH], *buf;
 
   if (CONFIG_NEW_SOCIALS == TRUE) {
     /* open social file */
@@ -185,7 +186,7 @@ void boot_social_messages(void)
     /* count socials */
     *next_soc = '\0';
     while (!feof(fl)) {
-      fgets(next_soc, MAX_STRING_LENGTH, fl);
+    buf =  fgets(next_soc, MAX_STRING_LENGTH, fl);
       if (*next_soc == '~') top_of_socialt++;
     }
   } else { /* old style */
@@ -200,7 +201,7 @@ void boot_social_messages(void)
     }
     /* count socials */
     while (!feof(fl)) {
-      fgets(next_soc, MAX_STRING_LENGTH, fl);
+    buf =  fgets(next_soc, MAX_STRING_LENGTH, fl);
       if (*next_soc == '\n' || *next_soc == '\r') top_of_socialt++; /* all socials are followed by a blank line */
     }
   }
@@ -212,7 +213,7 @@ void boot_social_messages(void)
 
   /* now read 'em */
   for (;;) {
-    fscanf(fl, " %s ", next_soc);
+    i = fscanf(fl, " %s ", next_soc);
     if (*next_soc == '$') break;
 
     if (CONFIG_NEW_SOCIALS == TRUE) {
@@ -753,11 +754,12 @@ static void reset_time(void)
 {
   time_t beginning_of_time = 0;
   FILE *bgtime;
+  int i;
 
   if ((bgtime = fopen(TIME_FILE, "r")) == NULL)
     log("No time file '%s' starting from the beginning.", TIME_FILE);
   else {
-    fscanf(bgtime, "%ld\n", (long *)&beginning_of_time);
+    i = fscanf(bgtime, "%ld\n", (long *)&beginning_of_time);
     fclose(bgtime);
   }
 
@@ -870,7 +872,7 @@ void index_boot(int mode)
 {
   const char *index_filename, *prefix = NULL;	/* NULL or egcs 1.1 complains */
   FILE *db_index, *db_file;
-  int rec_count = 0, size[2];
+  int rec_count = 0, size[2], i;
   char buf2[PATH_MAX], buf1[MAX_STRING_LENGTH];
 
   switch (mode) {
@@ -915,13 +917,13 @@ void index_boot(int mode)
   }
 
   /* first, count the number of records in the file so we can malloc */
-  fscanf(db_index, "%s\n", buf1);
+  i = fscanf(db_index, "%s\n", buf1);
   while (*buf1 != '$') {
     snprintf(buf2, sizeof(buf2), "%s%s", prefix, buf1);
     if (!(db_file = fopen(buf2, "r"))) {
       log("SYSERR: File '%s' listed in '%s/%s': %s", buf2, prefix,
 	  index_filename, strerror(errno));
-      fscanf(db_index, "%s\n", buf1);
+      i = fscanf(db_index, "%s\n", buf1);
       continue;
     } else {
       if (mode == DB_BOOT_ZON)
@@ -933,7 +935,7 @@ void index_boot(int mode)
     }
 
     fclose(db_file);
-    fscanf(db_index, "%s\n", buf1);
+    i = fscanf(db_index, "%s\n", buf1);
   }
 
   /* Exit if 0 records, unless this is shops */
@@ -987,7 +989,7 @@ void index_boot(int mode)
   }
 
   rewind(db_index);
-  fscanf(db_index, "%s\n", buf1);
+  i = fscanf(db_index, "%s\n", buf1);
   while (*buf1 != '$') {
     snprintf(buf2, sizeof(buf2), "%s%s", prefix, buf1);
     if (!(db_file = fopen(buf2, "r"))) {
@@ -1014,7 +1016,7 @@ void index_boot(int mode)
     }
 
     fclose(db_file);
-    fscanf(db_index, "%s\n", buf1);
+    i = fscanf(db_index, "%s\n", buf1);
   }
   fclose(db_index);
 

@@ -310,7 +310,7 @@ ACMD(do_export_zone)
   zone_vnum zvnum; 
   char sysbuf[MAX_INPUT_LENGTH]; 
   char zone_name[MAX_INPUT_LENGTH], *f; 
-  int success; 
+  int success, i; 
 
   /* system command locations are relative to 
    * where the binary IS, not where it was run 
@@ -335,7 +335,7 @@ ACMD(do_export_zone)
    *     again. Do it silently though ( no logs ). */ 
   if (!export_info_file(zrnum)) { 
     sprintf(sysbuf, "mkdir %s", path); 
-    system(sysbuf); 
+    i = system(sysbuf); 
   } 
 						      
   if (!(success = export_info_file(zrnum))) 
@@ -366,15 +366,15 @@ ACMD(do_export_zone)
 
   /* Remove the old copy. */ 
   sprintf(sysbuf, "rm %s%s.tar.gz", path, f); 
-  system(sysbuf); 
+  i = system(sysbuf); 
 
   /* Tar the new copy. */ 
   sprintf(sysbuf, "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg", path, f, path, path, path, path, path, path); 
-  system(sysbuf); 
+  i = system(sysbuf); 
 
   /* Gzip it. */ 
   sprintf(sysbuf, "gzip %s%s.tar", path, f); 
-  system(sysbuf); 
+  i = system(sysbuf); 
 
   send_to_char(ch, "Files tar'ed to \"%s%s.tar.gz\"\r\n", path, f); 
 }

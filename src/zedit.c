@@ -250,7 +250,7 @@ static void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum 
   struct descriptor_data *dsc;
 
   if ((result = create_new_zone(vzone_num, bottom, top, &error)) == NOWHERE) {
-    write_to_output(ch->desc, error);
+    write_to_output(ch->desc, "%s", error);
     return;
   }
 

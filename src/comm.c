@@ -388,7 +388,7 @@ void copyover_recover()
   struct descriptor_data *d;
   FILE *fp;
   char host[1024];
-  int desc, player_i;
+  int desc, i, player_i;
   bool fOld;
   char name[MAX_INPUT_LENGTH];
   long pref;
@@ -407,11 +407,11 @@ void copyover_recover()
   unlink (COPYOVER_FILE);
 
   /* read boot_time - first line in file */
-  fscanf(fp, "%ld\n", (long *)&boot_time);
+  i = fscanf(fp, "%ld\n", (long *)&boot_time);
 
   for (;;) {
     fOld = TRUE;
-    fscanf (fp, "%d %ld %s %s\n", &desc, &pref, name, host);
+    i = fscanf (fp, "%d %ld %s %s\n", &desc, &pref, name, host);
     if (desc == -1)
       break;
 

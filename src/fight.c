@@ -125,7 +125,7 @@ void load_messages(void)
   FILE *fl;
   int i, type;
   struct message_type *messages;
-  char chk[128];
+  char chk[128], *buf;
 
   if (!(fl = fopen(MESS_FILE, "r"))) {
     log("SYSERR: Error reading combat message file %s: %s", MESS_FILE, strerror(errno));
@@ -139,12 +139,12 @@ void load_messages(void)
   }
 
   while (!feof(fl)) {
-    fgets(chk, 128, fl);
+    buf = fgets(chk, 128, fl);
     while (!feof(fl) && (*chk == '\n' || *chk == '*'))
-      fgets(chk, 128, fl);
+      buf = fgets(chk, 128, fl);
 
     while (*chk == 'M') {
-      fgets(chk, 128, fl);
+      buf = fgets(chk, 128, fl);
       sscanf(chk, " %d\n", &type);
       for (i = 0; (i < MAX_MESSAGES) && (fight_messages[i].a_type != type) &&
          (fight_messages[i].a_type); i++);
@@ -170,9 +170,9 @@ void load_messages(void)
       messages->god_msg.attacker_msg = fread_action(fl, i);
       messages->god_msg.victim_msg = fread_action(fl, i);
       messages->god_msg.room_msg = fread_action(fl, i);
-      fgets(chk, 128, fl);
+      buf  = fgets(chk, 128, fl);
       while (!feof(fl) && (*chk == '\n' || *chk == '*'))
-        fgets(chk, 128, fl);
+        buf  = fgets(chk, 128, fl);
     }
   }
   fclose(fl);

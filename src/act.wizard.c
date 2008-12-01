@@ -475,7 +475,7 @@ static void list_zone_commands_room(struct char_data *ch, room_vnum rvnum)
     }
     subcmd++;
   }
-  send_to_char(ch, nrm);
+  send_to_char(ch, "%s", nrm);
   if (!count)
     send_to_char(ch, "None!\r\n");
 }
@@ -1784,7 +1784,7 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
   FILE *fp;
   struct last_entry mlast;
   struct last_entry *llast;
-  int size,recs,tmp;
+  int size, recs, tmp, i;
 
   if(!(fp=fopen(LAST_FILE,"r"))) {
     log("Error opening last_file for reading, will create.");
@@ -1799,7 +1799,7 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
    * do (like searching for the last shutdown/etc..) */
   for(tmp=recs-1; tmp > 0; tmp--) {
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
-    fread(&mlast,sizeof(struct last_entry),1,fp);
+    i = fread(&mlast,sizeof(struct last_entry),1,fp);
         /*another one to keep that stepback */
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
 
@@ -1821,7 +1821,7 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
 static void mod_llog_entry(struct last_entry *llast,int type) {
   FILE *fp;
   struct last_entry mlast;
-  int size,recs,tmp;
+  int size, recs, tmp, i, j;
 
   if(!(fp=fopen(LAST_FILE,"r+"))) {
     log("Error opening last_file for reading and writing.");
@@ -1837,7 +1837,7 @@ static void mod_llog_entry(struct last_entry *llast,int type) {
    * do (like searching for the last shutdown/etc..) */
   for(tmp=recs; tmp > 0; tmp--) {
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
-    fread(&mlast,sizeof(struct last_entry),1,fp);
+    i = fread(&mlast,sizeof(struct last_entry),1,fp);
     /* Another one to keep that stepback. */
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
 
@@ -1852,7 +1852,7 @@ static void mod_llog_entry(struct last_entry *llast,int type) {
       }
       mlast.close_time=time(0);
       /*write it, and we're done!*/
-      fwrite(&mlast,sizeof(struct last_entry),1,fp);
+      j = fwrite(&mlast,sizeof(struct last_entry),1,fp);
       fclose(fp);
       return;
     }
@@ -1867,6 +1867,7 @@ static void mod_llog_entry(struct last_entry *llast,int type) {
 void add_llog_entry(struct char_data *ch, int type) {
   FILE *fp;
   struct last_entry *llast;
+  int i;
 
   /* so if a char enteres a name, but bad password, otherwise loses link before
    * he gets a pref assinged, we won't record it */
@@ -1893,7 +1894,7 @@ void add_llog_entry(struct char_data *ch, int type) {
       free(llast);
       return;
     }
-    fwrite(llast,sizeof(struct last_entry),1,fp);
+    i = fwrite(llast,sizeof(struct last_entry),1,fp);
     fclose(fp);
   } else {
     /* We've found a login - update it */
@@ -1905,7 +1906,7 @@ void add_llog_entry(struct char_data *ch, int type) {
 void clean_llog_entries(void) {
   FILE *ofp, *nfp;
   struct last_entry mlast;
-  int recs;
+  int recs, i, j;
 
   if(!(ofp=fopen(LAST_FILE,"r")))
     return; /* no file, no gripe */
@@ -1930,8 +1931,8 @@ void clean_llog_entries(void) {
 
   /* copy the rest */
   while (!feof(ofp)) {
-    fread(&mlast,sizeof(struct last_entry),1,ofp);
-    fwrite(&mlast,sizeof(struct last_entry),1,nfp);
+    i = fread(&mlast,sizeof(struct last_entry),1,ofp);
+    j = fwrite(&mlast,sizeof(struct last_entry),1,nfp);
   }
   fclose(ofp);
   fclose(nfp);
@@ -1945,18 +1946,19 @@ void list_llog_entries(struct char_data *ch)
 {
   FILE *fp;
   struct last_entry llast;
+  int i;
 
   if(!(fp=fopen(LAST_FILE,"r"))) {
     log("bad things.");
     send_to_char(ch, "Error! - no last log");
   }
   send_to_char(ch, "Last log\r\n");
-  fread(&llast, sizeof(struct last_entry), 1, fp);
+  i = fread(&llast, sizeof(struct last_entry), 1, fp);
 
   while(!feof(fp)) {
     send_to_char(ch, "%10s\t%d\t%s\t%s", llast.username, llast.punique,
         last_array[llast.close_type], ctime(&llast.time));
-    fread(&llast, sizeof(struct last_entry), 1, fp);
+    i = fread(&llast, sizeof(struct last_entry), 1, fp);
   }
 }
 
@@ -1976,7 +1978,7 @@ ACMD(do_last)
   char arg[MAX_INPUT_LENGTH], name[MAX_INPUT_LENGTH];
   struct char_data *vict = NULL;
   struct char_data *temp;
-  int recs, num = 0;
+  int recs, i, num = 0;
   FILE *fp;
   time_t delta;
   struct last_entry mlast;
@@ -2038,7 +2040,7 @@ ACMD(do_last)
   send_to_char(ch, "Last log\r\n");
   while(num > 0 && recs > 0) {
     fseek(fp,-1* (sizeof(struct last_entry)),SEEK_CUR);
-    fread(&mlast,sizeof(struct last_entry),1,fp);
+    i = fread(&mlast,sizeof(struct last_entry),1,fp);
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
     if(!*name ||(*name && !str_cmp(name, mlast.username))) {
       send_to_char(ch,"%10.10s %20.20s %16.16s - ",
@@ -3496,7 +3498,7 @@ ACMD (do_zcheck)
                     CCCYN(ch, C_NRM), GET_MOB_VNUM(mob),
                     CCYEL(ch, C_NRM), GET_NAME(mob),
                     CCNRM(ch, C_NRM));
-            send_to_char(ch, buf);
+            send_to_char(ch, "%s", buf);
           }
           /* reset buffers and found flag */
           strcpy(buf, "");
@@ -3629,7 +3631,7 @@ ACMD (do_zcheck)
      /* Additional object checks. */
      if (found) {
         send_to_char(ch, "[%5d] %-30s: \r\n", GET_OBJ_VNUM(obj), obj->short_description);
-        send_to_char(ch, buf);
+        send_to_char(ch, "%s", buf);
       }
       strcpy(buf, "");
       len = 0;
@@ -3696,7 +3698,7 @@ ACMD (do_zcheck)
       if (found) {
         send_to_char(ch, "[%5d] %-30s: \r\n",
                        world[i].number, world[i].name ? world[i].name : "An unnamed room");
-        send_to_char(ch, buf);
+        send_to_char(ch, "%s", buf);
         strcpy(buf, "");
         len = 0;
         found = 0;
@@ -3973,6 +3975,7 @@ ACMD(do_copyover)
   FILE *fp;
   struct descriptor_data *d, *d_next;
   char buf [100], buf2[100];
+  int i;
 
   fp = fopen (COPYOVER_FILE, "w");
     if (!fp) {
@@ -4012,7 +4015,7 @@ ACMD(do_copyover)
   sprintf (buf2, "-C%d", mother_desc);
 
   /* Ugh, seems it is expected we are 1 step above lib - this may be dangerous! */
-  chdir ("..");
+  i = chdir ("..");
 
   /* Close reserve and other always-open files and release other resources */
    execl (EXE_FILE, "circle", buf2, buf, (char *) NULL);

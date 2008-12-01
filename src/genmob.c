@@ -373,7 +373,7 @@ void check_mobile_string(mob_vnum i, char **string, const char *desc)
   if (*string == NULL || **string == '\0') {
     char smbuf[128];
     sprintf(smbuf, "GenOLC: Mob #%d has an invalid %s.", i, desc);
-    mudlog(BRF, LVL_GOD, TRUE, smbuf);
+    mudlog(BRF, LVL_GOD, TRUE, "%s", smbuf);
     if (*string)
       free(*string);
     *string = strdup("An undefined string.");

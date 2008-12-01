@@ -1212,7 +1212,7 @@ ACMD(do_who)
     if (short_list)
       send_to_char(ch, "Players\r\n-------\r\n");
     else
-      send_to_char(ch, rank[i].disp);
+      send_to_char(ch, "%s", rank[i].disp);
 
     for (d = descriptor_list; d; d = d->next) {
       if (d->original)
@@ -1666,7 +1666,7 @@ ACMD(do_levels)
   }
   one_argument(argument, arg); 
 
-  if (arg && *arg) { 
+  if (*arg) { 
     if (isdigit(*arg)) { 
       ret = sscanf(arg, "%d-%d", &min_lev, &max_lev); 
       if (ret == 0) { 

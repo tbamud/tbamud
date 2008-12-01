@@ -213,13 +213,14 @@ static int find_house(room_vnum vnum)
 static void House_save_control(void)
 {
   FILE *fl;
+  int i;
 
   if (!(fl = fopen(HCONTROL_FILE, "wb"))) {
     perror("SYSERR: Unable to open house control file.");
     return;
   }
   /* write all the house control recs in one fell swoop.  Pretty nifty, eh? */
-  fwrite(house_control, sizeof(struct house_control_rec), num_of_houses, fl);
+  i = fwrite(house_control, sizeof(struct house_control_rec), num_of_houses, fl);
 
   fclose(fl);
 }
@@ -231,6 +232,7 @@ void House_boot(void)
   struct house_control_rec temp_house;
   room_rnum real_house, real_atrium;
   FILE *fl;
+  int i;
 
   memset((char *)house_control,0,sizeof(struct house_control_rec)*MAX_HOUSES);
 
@@ -242,7 +244,7 @@ void House_boot(void)
     return;
   }
   while (!feof(fl) && num_of_houses < MAX_HOUSES) {
-    fread(&temp_house, sizeof(struct house_control_rec), 1, fl);
+    i = fread(&temp_house, sizeof(struct house_control_rec), 1, fl);
 
     if (feof(fl))
       break;
@@ -661,7 +663,7 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	FILE *in, *out;
 	char infile[MAX_INPUT_LENGTH], *outfile;
 	struct obj_data *tmp;
-	int i, j=0;
+	int i, j=0, k;
 
   House_get_filename(vnum, infile, sizeof(infile));
 
@@ -685,7 +687,7 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 
   while (!feof(in)) {
     struct obj_file_elem object;
-    fread(&object, sizeof(struct obj_file_elem), 1, in);
+    k = fread(&object, sizeof(struct obj_file_elem), 1, in);
     if (ferror(in)) {
       perror("SYSERR: Reading house file in House_load");
       send_to_char(ch, "...read error in house rent file.\r\n");

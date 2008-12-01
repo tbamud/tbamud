@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Dec 01 2008] - Fizban
+  Now compiles warning free on GCC 4.3.2
 [Oct 09 2008] - Rumble
   Fixed a small bug in hedit. If CIRCLE_UNSIGNED_INDEX is 0, then new entries wo
 n't save correctly. (thanks Rhade)

@@ -297,6 +297,6 @@ void send_cannot_edit(struct char_data *ch, zone_vnum zone)
     send_to_char(ch, "You do not have permission to edit zone %d.\r\n", zone);
     sprintf(buf, "OLC: %s tried to edit zone %d.", GET_NAME(ch), zone);
   }
-  mudlog(BRF, LVL_IMPL, TRUE, buf);
+  mudlog(BRF, LVL_IMPL, TRUE, "%s", buf);
 }
 

@@ -510,7 +510,7 @@ void quest_join(struct char_data *ch, struct char_data *qm, char argument[MAX_IN
              "%s Listen carefully to the instructions.", GET_NAME(ch));
     do_tell(qm, buf, cmd_tell, 0);
     set_quest(ch, rnum);
-    send_to_char(ch, QST_INFO(rnum));
+    send_to_char(ch, "%s", QST_INFO(rnum));
     if (QST_TIME(rnum) != -1)
       snprintf(buf, sizeof(buf),
         "%s You have a time limit of %d turn%s to complete the quest.",
