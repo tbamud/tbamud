@@ -103,7 +103,8 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->play.map_option          = CONFIG_MAP;
   OLC_CONFIG(d)->play.map_size            = CONFIG_MAP_SIZE;
   OLC_CONFIG(d)->play.minimap_size        = CONFIG_MINIMAP_SIZE;
-  
+  OLC_CONFIG(d)->play.script_players      = CONFIG_SCRIPT_PLAYERS;
+
   /* Crash Saves */
   OLC_CONFIG(d)->csd.free_rent            = CONFIG_FREE_RENT;
   OLC_CONFIG(d)->csd.max_obj_save         = CONFIG_MAX_OBJ_SAVE;
@@ -199,6 +200,7 @@ static void cedit_save_internally(struct descriptor_data *d)
   CONFIG_MAP                 = OLC_CONFIG(d)->play.map_option;
   CONFIG_MAP_SIZE            = OLC_CONFIG(d)->play.map_size;
   CONFIG_MINIMAP_SIZE        = OLC_CONFIG(d)->play.minimap_size;
+  CONFIG_SCRIPT_PLAYERS      = OLC_CONFIG(d)->play.script_players;
 
   /* Crash Saves */
   CONFIG_FREE_RENT            = OLC_CONFIG(d)->csd.free_rent;
@@ -363,6 +365,8 @@ int save_config( IDXTYPE nowhere )
               "default_map_size = %d\n\n", CONFIG_MAP_SIZE);
   fprintf(fl, "* Default minimap size shown to the right of room descriptions\n"
               "default_minimap_size = %d\n\n", CONFIG_MINIMAP_SIZE);
+  fprintf(fl, "* Do you want scripts to be attachable to players?\n" 
+              "script_players = %d\n\n", CONFIG_SCRIPT_PLAYERS);
 
   
   strcpy(buf, CONFIG_OK);
@@ -595,6 +599,7 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         "%s4%s) Map/Automap Option      : %s%s\r\n"
         "%s5%s) Default map size        : %s%d\r\n"
         "%s6%s) Default minimap size    : %s%d\r\n"
+        "%s7%s) Scripts on PC's         : %s%s\r\n"
         "%sQ%s) Exit To The Main Menu\r\n"
         "Enter your choice : ",
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.pk_allowed),
@@ -622,6 +627,7 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         grn, nrm, cyn, m_opt == 0 ? "Off" : (m_opt == 1 ? "On" : (m_opt == 2 ? "Imm-Only" : "Invalid!")),
         grn, nrm, cyn, OLC_CONFIG(d)->play.map_size,
         grn, nrm, cyn, OLC_CONFIG(d)->play.minimap_size,
+        grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.script_players),
 
         grn, nrm
         );
@@ -947,6 +953,9 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         case '6':
           write_to_output(d, "Enter default mini-map size (1-12) : ");
           OLC_MODE(d) = CEDIT_MINIMAP_SIZE;
+          return;
+        case '7': 
+          TOGGLE_VAR(OLC_CONFIG(d)->play.script_players); 
           return;
 
         case 'q':

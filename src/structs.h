@@ -1234,6 +1234,7 @@ struct game_data
   int map_option;         /**< MAP_ON, MAP_OFF or MAP_IMM_ONLY      */
   int map_size;           /**< Default size for map command         */
   int minimap_size;       /**< Default size for mini-map (automap)  */
+  int script_players;     /**< Is attaching scripts to players allowed? */ 
   
   char *OK; /**< When player receives 'Okay.' text.    */
   char *NOPERSON; /**< 'No one by that name here.'   */

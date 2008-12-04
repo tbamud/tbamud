@@ -16,6 +16,7 @@
 #ifndef __CONFIG_C__
 /* Global variable declarations, all settable by cedit */
 extern int pk_allowed;
+extern int script_players;
 extern int pt_allowed;
 extern int level_can_shout;
 extern int holler_move_cost;

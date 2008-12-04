@@ -62,6 +62,13 @@ struct command_info {
    int	subcmd;
 };
 
+struct mob_script_command_t { 
+  const char *command_name; 
+  void (*command_pointer) 
+         (struct char_data *ch, char *argument, int cmd, int subcmd); 
+  int subcmd; 
+}; 
+
 struct alias_data {
   char *alias;
   char *replacement;

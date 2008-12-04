@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Dec 04 2008] - Fizban
+  DG Scripts are now attachable to players (cedit toggle defaults this behavior to off).
 [Dec 01 2008] - Fizban
   Now compiles warning free on GCC 4.3.2
 [Oct 09 2008] - Rumble

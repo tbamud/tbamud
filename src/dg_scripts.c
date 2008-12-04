@@ -969,7 +969,7 @@ ACMD(do_attach)
         return;
       }
     }
-    if (!IS_NPC(victim))  {
+    if (!IS_NPC(victim) && !CONFIG_SCRIPT_PLAYERS)  {
       send_to_char(ch, "Players can't have scripts.\r\n");
       return;
     }
@@ -988,8 +988,12 @@ ACMD(do_attach)
       CREATE(SCRIPT(victim), struct script_data, 1);
     add_trigger(SCRIPT(victim), trig, loc);
 
+    if (IS_NPC(victim))
     send_to_char(ch, "Trigger %d (%s) attached to %s [%d].\r\n",
                  tn, GET_TRIG_NAME(trig), GET_SHORT(victim), GET_MOB_VNUM(victim));
+    else 
+    send_to_char(ch, "Trigger %d (%s) attached to player named %s.\r\n", 
+                 tn, GET_TRIG_NAME(trig), GET_NAME(victim));
   }
 
   else if (is_abbrev(arg, "object") || is_abbrev(arg, "otr")) {
@@ -1234,18 +1238,21 @@ ACMD(do_detach)
     }
 
     if (victim) {
-      if (!IS_NPC(victim))
+      if (!IS_NPC(victim) && !CONFIG_SCRIPT_PLAYERS)
+      {
         send_to_char(ch, "Players don't have triggers.\r\n");
+        return;
+      }
 
-      else if (!SCRIPT(victim))
-        send_to_char(ch, "That mob doesn't have any triggers.\r\n");
-      else if (!can_edit_zone(ch, real_zone_by_thing(GET_MOB_VNUM(victim)))) {
+      if (!SCRIPT(victim)) 
+        send_to_char(ch, "That %s doesn't have any triggers.\r\n", IS_NPC(victim) ? "mob" : "player");  
+      else if (!can_edit_zone(ch, real_zone_by_thing(GET_MOB_VNUM(victim))) && IS_NPC(victim)) {
         send_to_char(ch, "You can only detach triggers in your own zone\r\n");
         return;
       }
       else if (trigger && !str_cmp(trigger, "all")) {
         extract_script(victim, MOB_TRIGGER);
-        send_to_char(ch, "All triggers removed from %s.\r\n", GET_SHORT(victim));
+        send_to_char(ch, "All triggers removed from %s.\r\n", IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(ch));
       }
 
       else if (trigger && remove_trigger(SCRIPT(victim), trigger)) {
@@ -1806,11 +1813,6 @@ static void process_attach(void *go, struct script_data *sc, trig_data *trig,
   }
 
   if (c) {
-    if (!IS_NPC(c)) {
-      script_log("Trigger: %s, VNum %d. attach invalid target: '%s'",
-              GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), GET_NAME(c));
-      return;
-    }
     if (!SCRIPT(c))
       CREATE(SCRIPT(c), struct script_data, 1);
     add_trigger(SCRIPT(c), newtrig, -1);
@@ -2652,6 +2654,7 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
       else {
         switch (type) {
           case MOB_TRIGGER:
+            if (!script_command_interpreter((char_data *) go, cmd))
             command_interpreter((char_data *) go, cmd);
             break;
           case OBJ_TRIGGER:

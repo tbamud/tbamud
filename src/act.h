@@ -274,6 +274,7 @@ ACMD(do_gmote);
 /** @todo should probably be moved to a more general file handler module */
 void clean_llog_entries(void);
 /** @todo This should be moved to a more general utility file */
+int script_command_interpreter(struct char_data *ch, char *arg);
 room_rnum find_target_room(struct char_data *ch, char *rawroomstr);
 void perform_immort_vis(struct char_data *ch);
 void snoop_check(struct char_data *ch);

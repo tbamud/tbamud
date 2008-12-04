@@ -304,7 +304,7 @@ int command_mtrigger(char_data *actor, char *cmd, char *argument)
     ch_next = ch->next_in_room;
 
     if (SCRIPT_CHECK(ch, MTRIG_COMMAND) && !AFF_FLAGGED(ch, AFF_CHARM) &&
-        (actor!=ch)) {
+       ((actor!=ch) || CONFIG_SCRIPT_PLAYERS)) {
       for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) {
         if (!TRIGGER_CHECK(t, MTRIG_COMMAND))
           continue;
@@ -344,7 +344,7 @@ void speech_mtrigger(char_data *actor, char *str)
     ch_next = ch->next_in_room;
 
     if (SCRIPT_CHECK(ch, MTRIG_SPEECH) && AWAKE(ch) &&
-        !AFF_FLAGGED(ch, AFF_CHARM) && (actor!=ch))
+        !AFF_FLAGGED(ch, AFF_CHARM) && ((actor!=ch) || CONFIG_SCRIPT_PLAYERS))
       for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) {
         if (!TRIGGER_CHECK(t, MTRIG_SPEECH))
           continue;

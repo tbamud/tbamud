@@ -866,6 +866,9 @@ void char_from_furniture(struct char_data *ch);
 #define CONFIG_MAP_SIZE        config_info.play.map_size
 #define CONFIG_MINIMAP_SIZE    config_info.play.minimap_size
 
+/* DG Script Options */ 
+#define CONFIG_SCRIPT_PLAYERS  config_info.play.script_players 
+
 /* Crash Saves */
 /** Get free rent setting. */
 #define CONFIG_FREE_RENT        config_info.csd.free_rent

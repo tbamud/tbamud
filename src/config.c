@@ -38,6 +38,9 @@
 
 /* YES / NO; TRUE / FALSE are all defined in utils.h */
 
+/* Can Scripts be attached to players? */ 
+int script_players = NO;
+
 /* pk_allowed sets the tone of the entire game.  If pk_allowed is set to NO, 
  * then players will not be allowed to kill, summon, charm, or sleep other 
  * players, as well as a variety of other "asshole player" protections. However,
@@ -79,8 +82,7 @@ int dts_are_dumps = YES;
 /* Whether you want items that immortals load to appear on the ground or not.
  * It is most likely best to set this to 'YES' so that something else doesn't
  * grab the item before the immortal does, but that also means people will be
- * able to carry around things like boards.  That's not necessarily a bad thing,
- * but this will be left at a default of 'NO' for historic reasons. */
+ * able to carry around things like boards. */
 int load_into_inventory = YES;
 
 /* "okay" etc. */

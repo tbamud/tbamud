@@ -203,7 +203,9 @@ int load_char(const char *name, struct char_data *ch)
   char filename[40];
   char buf[128], buf2[128], line[MAX_INPUT_LENGTH + 1], tag[6];
   char f1[128], f2[128], f3[128], f4[128];
-
+  trig_data *t = NULL;
+  trig_rnum t_rnum = NOTHING;
+  
   if ((id = get_ptable_by_name(name)) < 0)
     return (-1);
   else {
@@ -416,6 +418,14 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Thr4"))	GET_SAVE(ch, 3)		= atoi(line);
 	else if (!strcmp(tag, "Thr5"))	GET_SAVE(ch, 4)		= atoi(line);
 	else if (!strcmp(tag, "Titl"))	GET_TITLE(ch)		= strdup(line);
+        else if (!strcmp(tag, "Trig") && CONFIG_SCRIPT_PLAYERS) { 
+          if ((t_rnum = real_trigger(atoi(line))) != NOTHING) { 
+            t = read_trigger(t_rnum); 
+          if (!SCRIPT(ch)) 
+            CREATE(SCRIPT(ch), struct script_data, 1); 
+          add_trigger(SCRIPT(ch), t, -1); 
+          }        
+         }
 	break;
 
       case 'V':
@@ -457,6 +467,7 @@ void save_char(struct char_data * ch)
   int i, id, save_index = FALSE;
   struct affected_type *aff, tmp_aff[MAX_AFFECT];
   struct obj_data *char_eq[NUM_WEARS];
+  trig_data *t;
 
   if (IS_NPC(ch) || GET_PFILEPOS(ch) < 0)
     return;
@@ -623,6 +634,10 @@ void save_char(struct char_data * ch)
   }
   if (GET_QUEST(ch)        != PFDEF_CURRQUEST)  fprintf(fl, "Qcur: %d\n", GET_QUEST(ch));
 
+ if (SCRIPT(ch)) { 
+   for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) 
+   fprintf(fl, "Trig: %d\n",GET_TRIG_VNUM(t)); 
+}
   
   /* Save skills */
   if (GET_LEVEL(ch) < LVL_IMMORT) {

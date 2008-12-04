@@ -3340,6 +3340,7 @@ static void load_default_config( void )
   CONFIG_MAP                    = map_option;
   CONFIG_MAP_SIZE               = default_map_size;
   CONFIG_MINIMAP_SIZE           = default_minimap_size;
+  CONFIG_SCRIPT_PLAYERS         = script_players;
 
   /* Rent / crashsave options. */
   CONFIG_FREE_RENT              = free_rent;
@@ -3583,6 +3584,8 @@ void load_config( void )
       case 's':
         if (!str_cmp(tag, "siteok_everyone"))
           CONFIG_SITEOK_ALL = num;
+        else if (!str_cmp(tag, "script_players")) 
+          CONFIG_SCRIPT_PLAYERS = num;
         else if (!str_cmp(tag, "start_messg")) {
           strncpy(buf, "Reading start message in load_config()", sizeof(buf));
           if (CONFIG_START_MESSG)

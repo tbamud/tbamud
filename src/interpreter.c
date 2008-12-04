@@ -333,30 +333,62 @@ cpp_extern const struct command_info cmd_info[] = {
   { "zcheck"   , "zcheck"  , POS_DEAD    , do_zcheck   , LVL_GOD, 0 },
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
 
-  /* DG trigger commands. minimum_level should be set to -1. */
-  { "masound"  , "masound" , POS_DEAD    , do_masound  , -1, 0 },
-  { "mkill"    , "mkill"   , POS_STANDING, do_mkill    , -1, 0 },
-  { "mjunk"    , "mjunk"   , POS_SITTING , do_mjunk    , -1, 0 },
-  { "mdamage"  , "mdamage" , POS_DEAD    , do_mdamage  , -1, 0 },
-  { "mdoor"    , "mdoor"   , POS_DEAD    , do_mdoor    , -1, 0 },
-  { "mecho"    , "mecho"   , POS_DEAD    , do_mecho    , -1, 0 },
-  { "mrecho"   , "mrecho"  , POS_DEAD    , do_mrecho   , -1, 0 },
-  { "mechoaround", "mechoaround", POS_DEAD, do_mechoaround, -1, 0 },
-  { "msend"    , "msend"   , POS_DEAD    , do_msend    , -1, 0 },
-  { "mload"    , "mload"   , POS_DEAD    , do_mload    , -1, 0 },
-  { "mpurge"   , "mpurge"  , POS_DEAD    , do_mpurge   , -1, 0 },
-  { "mgoto"    , "mgoto"   , POS_DEAD    , do_mgoto    , -1, 0 },
-  { "mat"      , "mat"     , POS_DEAD    , do_mat      , -1, 0 },
-  { "mteleport", "mteleport", POS_DEAD   , do_mteleport, -1, 0 },
-  { "mforce"   , "mforce"  , POS_DEAD    , do_mforce   , -1, 0 },
-  { "mhunt"    , "mhunt"   , POS_DEAD    , do_mhunt    , -1, 0 },
-  { "mremember", "mremember", POS_DEAD   , do_mremember, -1, 0 },
-  { "mforget"  , "mforget" , POS_DEAD    , do_mforget  , -1, 0 },
-  { "mtransform", "mtransform", POS_DEAD , do_mtransform,-1, 0 },
-  { "mzoneecho", "mzoneecho", POS_DEAD   , do_mzoneecho, -1, 0 },
-  { "mfollow"  , "mfollow" , POS_DEAD    , do_mfollow  , -1, 0 },
+  { "\n", "zzzzzzz", 0, 0, 0, 0 } };    /* this must be last */ 
+ 
+ 
+  /* Thanks to Melzaren for this change to allow DG Scripts to be attachable 
+   *to player's while still disallowing them to manually use the DG-Commands. */ 
+  const struct mob_script_command_t mob_script_commands[] = { 
 
-  { "\n", "zzzzzzz", 0, 0, 0, 0 } };	/* this must be last */
+  /* DG trigger commands. minimum_level should be set to -1. */
+  { "masound"  , do_masound  , 0 }, 
+  { "mkill"    , do_mkill    , 0 }, 
+  { "mjunk"    , do_mjunk    , 0 }, 
+  { "mdamage"  , do_mdamage  , 0 }, 
+  { "mdoor"    , do_mdoor    , 0 }, 
+  { "mecho"    , do_mecho    , 0 }, 
+  { "mrecho"   , do_mrecho   , 0 }, 
+  { "mechoaround", do_mechoaround , 0 }, 
+  { "msend"    , do_msend    , 0 }, 
+  { "mload"    , do_mload    , 0 }, 
+  { "mpurge"   , do_mpurge   , 0 }, 
+  { "mgoto"    , do_mgoto    , 0 }, 
+  { "mat"      , do_mat      , 0 }, 
+  { "mteleport", do_mteleport, 0 }, 
+  { "mforce"   , do_mforce   , 0 }, 
+  { "mhunt"    , do_mhunt    , 0 }, 
+  { "mremember", do_mremember, 0 }, 
+  { "mforget"  , do_mforget  , 0 }, 
+  { "mtransform", do_mtransform , 0 }, 
+  { "mzoneecho", do_mzoneecho, 0 }, 
+  { "mfollow"  , do_mfollow  , 0 }, 
+  { "\n" , do_not_here , 0 } };
+
+int script_command_interpreter(struct char_data *ch, char *arg) { 
+  /* DG trigger commands */ 
+ 
+  int i; 
+  char first_arg[MAX_INPUT_LENGTH]; 
+  char *line; 
+ 
+  skip_spaces(&arg); 
+  if (!*arg) 
+  return 0; 
+ 
+  line = any_one_arg(arg, first_arg); 
+ 
+  for (i = 0; *mob_script_commands[i].command_name != '\n'; i++) 
+  if (!str_cmp(first_arg, mob_script_commands[i].command_name)) 
+  break; // NB - only allow full matches. 
+ 
+  if (*mob_script_commands[i].command_name == '\n') 
+  return 0; // no matching commands. 
+ 
+  /* Poiner to the command? */ 
+  ((*mob_script_commands[i].command_pointer) (ch, line, 0, 
+  mob_script_commands[i].subcmd)); 
+  return 1; // We took care of execution. Let caller know. 
+}
 
 const char *fill[] =
 {
@@ -442,6 +474,12 @@ void command_interpreter(struct char_data *ch, char *argument)
     if (!cont) cont = command_otrigger(ch, arg, line);   /* any object triggers ? */
     if (cont) return;                                    /* yes, command trigger took over */
   }
+
+  /* Allow IMPLs to switch into mobs to test the commands. */ 
+   if (IS_NPC(ch) && ch->desc && GET_LEVEL(ch->desc->original) >= LVL_IMPL) { 
+     if (script_command_interpreter(ch, argument)) 
+       return; 
+   } 
 
   for (length = strlen(arg), cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++)
     if(complete_cmd_info[cmd].command_pointer != do_action &&
