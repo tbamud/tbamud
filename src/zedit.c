@@ -604,9 +604,13 @@ static void zedit_disp_arg3(struct descriptor_data *d)
   switch (OLC_CMD(d).command) {
   case 'E':
     while (*equipment_types[i] != '\n') {
-      write_to_output(d, "%2d) %26.26s %2d) %26.26s\r\n", i,
-	   equipment_types[i], i + 1, (*equipment_types[i + 1] != '\n') ?
-	      equipment_types[i + 1] : "");
+      write_to_output(d, "%2d) %26.26s", i, equipment_types[i]); 
+ 
+      if (*equipment_types[i + 1] != '\n') 
+        write_to_output(d, " %2d) %26.26s", i + 1, 
+          equipment_types[i + 1]); 
+ 
+      write_to_output(d, "\r\n"); 
       if (*equipment_types[i + 1] != '\n')
 	i += 2;
       else
@@ -962,7 +966,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
          more reliable. */
       while (*equipment_types[i] != '\n')
 	i++;
-      if (pos < 0 || pos > i)
+      if (pos < 0 || pos >= i)
 	write_to_output(d, "Try again : ");
       else {
 	OLC_CMD(d).arg3 = pos;

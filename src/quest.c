@@ -306,13 +306,11 @@ void generic_complete_quest(struct char_data *ch)
             QST_EXP(rnum));
     }
     if (QST_OBJ(rnum) && QST_OBJ(rnum) != NOTHING) {
-      if (real_object(QST_OBJ(rnum)) != NOTHING) {
-        if ((new_obj = create_obj()) != NULL) {
-          if ((new_obj = read_object((QST_OBJ(rnum)),VIRTUAL)) != NULL) {
+      if (real_object(QST_OBJ(rnum))) {
+        if ((new_obj = read_object((QST_OBJ(rnum)),VIRTUAL)) != NULL) {
             obj_to_char(new_obj, ch);
             send_to_char(ch, "You have been presented with %s%s for your service.\r\n",
                 GET_OBJ_SHORT(new_obj), CCNRM(ch, C_NRM));
-          }
         }
       }
     }

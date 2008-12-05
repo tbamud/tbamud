@@ -34,11 +34,15 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
-@
+
 [Dec 04 2008] - Fizban
   DG Scripts are now attachable to players (cedit toggle defaults this behavior to off).
 [Dec 01 2008] - Fizban
   Now compiles warning free on GCC 4.3.2
+[Nov 23 2008] - Rumble
+  Fixed a memory leak in quest.c create_obj. (thanks Jamdog)
+[Oct 21 2008] - Rumble
+  Fixed display of wear locations and a typo. (thanks Kyle)
 [Oct 09 2008] - Rumble
   Fixed a small bug in hedit. If CIRCLE_UNSIGNED_INDEX is 0, then new entries wo
 n't save correctly. (thanks Rhade)
