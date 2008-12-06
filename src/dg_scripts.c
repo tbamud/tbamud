@@ -1252,7 +1252,7 @@ ACMD(do_detach)
       }
       else if (trigger && !str_cmp(trigger, "all")) {
         extract_script(victim, MOB_TRIGGER);
-        send_to_char(ch, "All triggers removed from %s.\r\n", IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(ch));
+        send_to_char(ch, "All triggers removed from %s.\r\n", IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
       }
 
       else if (trigger && remove_trigger(SCRIPT(victim), trigger)) {
