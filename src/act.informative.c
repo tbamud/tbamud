@@ -1625,7 +1625,7 @@ static void perform_immort_where(struct char_data *ch, char *arg)
         found = 1;
         send_to_char(ch, "M%3d. %-25s%s - [%5d] %-25s%s", ++num, GET_NAME(i), QNRM,
                GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM);
-        if (SCRIPT(i)) { 
+        if (SCRIPT(i) && TRIGGERS(SCRIPT(i))) { 
           if (!TRIGGERS(SCRIPT(i))->next) 
             send_to_char(ch, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(i)))); 
           else 
