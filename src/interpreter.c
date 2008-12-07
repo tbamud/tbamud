@@ -119,7 +119,7 @@ cpp_extern const struct command_info cmd_info[] = {
 
   { "eat"      , "ea"      , POS_RESTING , do_eat      , 0, SCMD_EAT },
   { "echo"     , "ec"      , POS_SLEEPING, do_echo     , LVL_IMMORT, SCMD_ECHO },
-  { "emote"    , "em"      , POS_RESTING , do_echo     , 1, SCMD_EMOTE },
+  { "emote"    , "em"      , POS_RESTING , do_echo     , 0, SCMD_EMOTE },
   { ":"        , ":"       , POS_RESTING, do_echo      , 1, SCMD_EMOTE },
   { "enter"    , "ent"     , POS_STANDING, do_enter    , 0, 0 },
   { "equipment", "eq"      , POS_SLEEPING, do_equipment, 0, 0 },
