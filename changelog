@@ -35,6 +35,10 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 
+[Dec 23 2008] - Rumble
+  Fix for drink containers improperly showing empty due to unlimited container addition. (thanks Parnassus)
+  Fix for qedit crash when trying to list non-existent next quest. (thanks Tails)
+  Fix for ITEM_NOTE in oedit_disp_val1_menu function in oedit.c. (thanks Parnassus)
 [Dec 04 2008] - Fizban
   DG Scripts are now attachable to players (cedit toggle defaults this behavior to off).
 [Dec 01 2008] - Fizban

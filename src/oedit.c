@@ -444,12 +444,15 @@ static void oedit_disp_val1_menu(struct descriptor_data *d)
   case ITEM_MONEY:
     write_to_output(d, "Number of gold coins : ");
     break;
-  case ITEM_NOTE:
   case ITEM_FURNITURE:
     write_to_output(d, "Number of people it can hold : ");
     break;
-  default:
+  case ITEM_NOTE:
     oedit_disp_menu(d);
+    break;
+  default:
+    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: Reached default case in oedit_disp_val1_menu()!");
+    break;
   }
 }
 
