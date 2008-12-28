@@ -35,6 +35,9 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 
+[Dec 28 2008] - Rumble
+  Fixed bad usage of num_of_saving_throws and moved define to structs.h. (thanks Vatiken)
+  Added trigedit variables questdone and quest. (thanks Jamdog)
 [Dec 23 2008] - Rumble
   Fix for drink containers improperly showing empty due to unlimited container addition. (thanks Parnassus)
   Fix for qedit crash when trying to list non-existent next quest. (thanks Tails)

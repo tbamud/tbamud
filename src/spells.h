@@ -149,8 +149,6 @@
 #define SAVING_PETRI  2
 #define SAVING_BREATH 3
 #define SAVING_SPELL  4
-/* Equals the total number of SAVING_* defines */
-#define NUM_OF_SAVING_THROWS  5
 
 #define TAR_IGNORE      (1 << 0)
 #define TAR_CHAR_ROOM   (1 << 1)

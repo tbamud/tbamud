@@ -1495,7 +1495,7 @@ static void parse_simple_mob(FILE *mob_f, int i, int nr)
 
   /* These are now save applies; base save numbers for MOBs are now from the 
    * warrior save table. */
-  for (j = 0; j < 5; j++)
+  for (j = 0; j < NUM_OF_SAVING_THROWS; j++)
     GET_SAVE(mob_proto + i, j) = 0;
 }
 

@@ -22,7 +22,7 @@
 #include "spells.h"
 #include "oasis.h"
 #include "class.h"
-
+#include "quest.h"
 
 /* Utility functions */
 
@@ -859,6 +859,33 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             }
             snprintf(str, slen, "%d", GET_QUESTPOINTS(c));
           }
+           else if (!str_cmp(field, "quest")) 
+           { 
+             if (IS_NPC(c)) 
+               strcpy(str, "0"); 
+             else { 
+               if ((GET_QUEST(c) != NOTHING) && (real_quest(GET_QUEST(c)) == NOTHING)) 
+                 snprintf(str, slen, "%d", GET_QUEST(c)); 
+               else 
+                 strcpy(str, "0"); 
+             } 
+           } 
+           else if (!str_cmp(field, "questdone")) 
+           { 
+             if (IS_NPC(c)) 
+               strcpy(str, "0"); 
+             else { 
+               if (subfield && *subfield) { 
+                 int q_num = atoi(subfield); 
+                 if (is_complete(c, q_num)) 
+                   strcpy(str, "1"); 
+                 else 
+                   strcpy(str, "0"); 
+               } 
+               else 
+                 strcpy(str, "0"); 
+             } 
+           } 
           break;
         case 'r':
           if (!str_cmp(field, "room")) {  /* in NOWHERE, return the void */

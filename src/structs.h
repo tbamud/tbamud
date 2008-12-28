@@ -427,6 +427,9 @@
 /** Total number of applies */
 #define NUM_APPLIES   25
 
+/* Equals the total number of SAVING_* defines in spells.h */
+#define NUM_OF_SAVING_THROWS  5
+
 /* Container flags - value[1] */
 #define CONT_CLOSEABLE      (1 << 0)	/**< Container can be closed	*/
 #define CONT_PICKPROOF      (1 << 1)	/**< Container is pickproof	*/

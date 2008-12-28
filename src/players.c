@@ -20,7 +20,6 @@
 #include "interpreter.h"
 #include "genolc.h" /* for strip_cr */
 #include "config.h" /* for pclean_criteria[] */
-#include "spells.h" /* for NUM_OF_SAVING_THROWS */
 #include "dg_scripts.h" /* To enable saving of player variables to disk */
 #include "quest.h"
 
