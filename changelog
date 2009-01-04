@@ -34,8 +34,8 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
-
 [Dec 28 2008] - Rumble
+  Added a "Syntax: export zone vnum" for the export command instead of defaulting to 0. (thanks Vatiken)
   Fixed bad usage of num_of_saving_throws and moved define to structs.h. (thanks Vatiken)
   Added trigedit variables questdone and quest. (thanks Jamdog)
 [Dec 23 2008] - Rumble

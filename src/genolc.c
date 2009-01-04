@@ -322,6 +322,11 @@ ACMD(do_export_zone)
     return; 
 
   skip_spaces(&argument); 
+  if (!*argument){ 
+    send_to_char(ch, "Syntax: export <zone vnum>"); 
+    return; 
+  } 
+
   zvnum = atoi(argument); 
   zrnum = real_zone(zvnum); 
 
