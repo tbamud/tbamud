@@ -956,7 +956,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
           return;
         case '7': 
           TOGGLE_VAR(OLC_CONFIG(d)->play.script_players); 
-          return;
+          break;
 
         case 'q':
         case 'Q':
