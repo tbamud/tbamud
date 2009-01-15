@@ -36,6 +36,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 [Jan 15 2009] - Fizban
   Immortals can now never have their hands full when you attempt to hand them an item.
+  Fixed message when setting gold abnormally high.
 [Jan 09 2009] - Fizban
   Fixed a bug in do_rescue allowing players to get twice as many attacks per round. (thanks Zordrac)
   Fixed Bug Where Questmaster rnums didn't previously update. (thanks Tails)
