@@ -34,6 +34,9 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[Jan 09 2009] - Fizban
+  Fixed a bug in do_rescue allowing players to get twice as many attacks per round. (thanks Zordrac)
+  Fixed Bug Where Questmaster rnums didn't previously update. (thanks Tails)
 [Dec 28 2008] - Rumble
   Added a "Syntax: export zone vnum" for the export command instead of defaulting to 0. (thanks Vatiken)
   Fixed bad usage of num_of_saving_throws and moved define to structs.h. (thanks Vatiken)
@@ -51,8 +54,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 [Oct 21 2008] - Rumble
   Fixed display of wear locations and a typo. (thanks Kyle)
 [Oct 09 2008] - Rumble
-  Fixed a small bug in hedit. If CIRCLE_UNSIGNED_INDEX is 0, then new entries wo
-n't save correctly. (thanks Rhade)
+  Fixed a small bug in hedit. If CIRCLE_UNSIGNED_INDEX is 0, then new entries won't save correctly. (thanks Rhade)
   Code cleanup of check_idling. (thanks Rhade)
 [Sep 01 2008] - Fizban
   Added a check to mzoneecho to stop mortals from using it.

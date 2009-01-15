@@ -16,14 +16,13 @@
 #include "genmob.h"
 #include "genzon.h"
 #include "dg_olc.h"
-#include "quest.h"
 
 /* local functions */
 static void extract_mobile_all(mob_vnum vnum);
 
 int add_mobile(struct char_data *mob, mob_vnum vnum)
 {
-  int rnum, i, found = FALSE, shop, cmd_no, qnum;
+  int rnum, i, found = FALSE, shop, cmd_no;
   zone_rnum zone;
   struct char_data *live_mob;
 
@@ -85,10 +84,6 @@ int add_mobile(struct char_data *mob, mob_vnum vnum)
   if (shop_index)
     for (shop = 0; shop <= top_shop; shop++)
       SHOP_KEEPER(shop) += (SHOP_KEEPER(shop) != NOTHING && SHOP_KEEPER(shop) >= found);
-
-  /* Update quest masters */
-    for (qnum = 0; qnum < total_quests; qnum++)
-        QST_MASTER(qnum) += (real_mobile(QST_MASTER(qnum)) >= found);
 
   add_to_save_list(zone_table[real_zone_by_thing(vnum)].number, SL_MOB);
   return found;
