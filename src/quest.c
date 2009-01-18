@@ -81,7 +81,7 @@ int is_complete(struct char_data *ch, qst_vnum vnum)
   return FALSE;
 }
 
-qst_vnum find_quest_by_qmnum(struct char_data *ch, mob_rnum qm, int num)
+qst_vnum find_quest_by_qmnum(struct char_data *ch, mob_vnum qm, int num)
 {
   qst_rnum rnum;
   int found=0;
@@ -166,7 +166,7 @@ void parse_quest(FILE *quest_f, int nr)
     exit(1);
   }
   aquest_table[i].type       = t[0];
-  aquest_table[i].qm         = real_mobile(t[1]);
+  aquest_table[i].qm         = (real_mobile(t[1]) == NOBODY) ? NOBODY : t[1];
   aquest_table[i].flags      = asciiflag_conv(f1);
   aquest_table[i].target     = (t[2] == -1) ? NOTHING : t[2];
   aquest_table[i].prev_quest = (t[3] == -1) ? NOTHING : t[3];
@@ -211,6 +211,7 @@ void parse_quest(FILE *quest_f, int nr)
 void assign_the_quests(void)
 {
   qst_rnum rnum;
+  mob_rnum mrnum;
 
   cmd_tell = find_command("tell");
 
@@ -219,10 +220,14 @@ void assign_the_quests(void)
       log("SYSERR: Quest #%d has no questmaster specified.", QST_NUM(rnum));
       continue;
     }
+    if ((mrnum = real_mobile(QST_MASTER(rnum))) == NOBODY) {
+      log("SYSERR: Quest #%d has an invalid questmaster.", QST_NUM(rnum));
+      continue;
+    }
     if (mob_index[QST_MASTER(rnum)].func &&
- mob_index[QST_MASTER(rnum)].func != questmaster)
-      QST_FUNC(rnum) = mob_index[QST_MASTER(rnum)].func;
-    mob_index[QST_MASTER(rnum)].func = questmaster;
+ mob_index[(mrnum)].func != questmaster)
+      QST_FUNC(rnum) = mob_index[(mrnum)].func;
+    mob_index[(mrnum)].func = questmaster;
   }
 }
 
@@ -439,7 +444,7 @@ void list_quests(struct char_data *ch, zone_rnum zone, qst_vnum vmin, qst_vnum v
     if (QST_NUM(rnum) >= bottom && QST_NUM(rnum) <= top)
       send_to_char(ch, "@g%4d@n) [@g%-5d@n] @c%-44.44s@n @y[%5d]@n\r\n",
           ++counter, QST_NUM(rnum), QST_NAME(rnum),
-          QST_MASTER(rnum) == NOBODY ? 0 : mob_index[QST_MASTER(rnum)].vnum);
+          QST_MASTER(rnum) == NOBODY ? 0 : QST_MASTER(rnum));
   if (!counter)
     send_to_char(ch, "None found.\r\n");
 }
@@ -455,7 +460,7 @@ void quest_hist(struct char_data *ch)
   for (i = 0; i < GET_NUM_QUESTS(ch); i++) {
     if ((rnum = real_quest(ch->player_specials->saved.completed_quests[i])) != NOTHING)
       send_to_char(ch, "@g%4d@n) @c%-52.52s@n @y%s@n\r\n",
- ++counter, QST_DESC(rnum), GET_NAME(&mob_proto[QST_MASTER(rnum)]));
+ ++counter, QST_DESC(rnum), (real_mobile(QST_MASTER(rnum)) == NOBODY) ? "Unknown" : GET_NAME(&mob_proto[(real_mobile(QST_MASTER(rnum)))]));
     else
       send_to_char(ch,
         "@g%4d@n) @cUnknown Quest (it no longer exists)@n\r\n", ++counter);
@@ -598,7 +603,7 @@ void quest_progress(struct char_data *ch)
   }
 }
 
-void quest_show(struct char_data *ch, mob_rnum qm)
+void quest_show(struct char_data *ch, mob_vnum qm)
 {
   qst_rnum rnum;
   int counter = 0;
@@ -619,6 +624,7 @@ void quest_show(struct char_data *ch, mob_rnum qm)
 void quest_stat(struct char_data *ch, char argument[MAX_STRING_LENGTH])
 {
   qst_rnum rnum;
+  mob_rnum qmrnum;
   char buf[MAX_STRING_LENGTH];
   char targetname[MAX_STRING_LENGTH];
 
@@ -657,6 +663,7 @@ void quest_stat(struct char_data *ch, char argument[MAX_STRING_LENGTH])
  snprintf(targetname, sizeof(targetname), "Unknown");
  break;
     }
+    qmrnum = real_mobile(QST_MASTER(rnum));
     send_to_char(ch,
         "VNum  : [@y%5d@n], RNum: [@y%5d@n] -- Questmaster: [@y%5d@n] @y%s@n\r\n"
         "Name  : @y%s@n\r\n"
@@ -769,7 +776,7 @@ SPECIAL(questmaster)
 
   /* check that qm mob has quests assigned */
   for (rnum = 0; (rnum < total_quests &&
-                  QST_MASTER(rnum) != GET_MOB_RNUM(qm)) ; rnum ++);
+      QST_MASTER(rnum) != GET_MOB_VNUM(qm)) ; rnum ++);
   if (rnum >= total_quests)
     return FALSE; /* No quests for this mob */
   else if (QST_FUNC(rnum) && (QST_FUNC(rnum) (ch, me, cmd, argument)))
@@ -784,7 +791,7 @@ SPECIAL(questmaster)
       switch (tp) {
       case SCMD_QUEST_LIST:
         if (!*arg2)
-          quest_show(ch, GET_MOB_RNUM(qm));
+          quest_show(ch, GET_MOB_VNUM(qm));
         else
    quest_list(ch, qm, arg2);
         break;

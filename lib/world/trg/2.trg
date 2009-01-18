@@ -190,6 +190,30 @@ extract word5 5 %speech%
 extract word6 6 %speech%
 say %word6% %word5% %word4% %word3% %word2% %word1%?
 ~
+#209
+Open a Chest once per zone reset~
+1 c 100
+open~
+* By Mordecai
+if chest /= %arg% 
+  * Verify that the player typed 'open chest' 
+  * Has the player already opened this chest? 
+  context %actor.id% 
+  if %already_opened_chest% 
+    %send% %actor% The chest has already been opened, and emptied. 
+  else 
+    * The first time!  OK, open the chest. 
+    %send% %actor% You get a jar of naphthalene from an iron bound chest.
+    %load% obj 306 %actor% inv
+    set already_opened_chest 1 
+    global already_opened_chest
+    return 0 
+  end 
+else 
+  * Not 'open chest' - pass control back to the command parser 
+  return 0 
+end
+~
 #212
 Phoenix Rising - 219~
 1 c 4

@@ -986,12 +986,15 @@ D3
 S
 #2259
 Stairs~
-   A crumbling stairwell leads up down into darkness.  The steps are cracked
-and fall apart when you put any sizeable force upon them.  They seem
-treacherous, but passable.  An empty hallway to the west looks far more
-inviting.    
+   A crumbling stairwell leads down into darkness.  The steps are cracked and
+fall apart when you put any sizeable force upon them.  They seem treacherous,
+but passable.  An empty hallway to the west looks far more inviting.  
 ~
 22 8 0 0 0 0
+D1
+~
+~
+0 0 -1
 D3
 ~
 ~

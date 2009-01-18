@@ -1,6 +1,6 @@
 #27100
 Silk Trader - 27137~
-0 bg 100
+0 b 10
 ~
 wait 1 sec
 switch %random.23%
@@ -95,7 +95,7 @@ done
 ~
 #27101
 Athos - 27153~
-0 bg 50
+0 b 10
 ~
 wait 1 sec
 switch %random.7%
@@ -130,7 +130,7 @@ done
 ~
 #27102
 Hangman - 27102~
-0 bg 100
+0 b 10
 ~
 wait 1 sec
 switch %random.5%
@@ -162,7 +162,7 @@ done
 ~
 #27103
 Butcher - 27142~
-0 bg 5
+0 b 10
 ~
 wait 1 sec
 switch %random.17%
@@ -232,7 +232,7 @@ done
 ~
 #27104
 Stu - 27166~
-0 bg 100
+0 b 10
 ~
 wait 1 sec
 switch %random.14%
@@ -287,7 +287,7 @@ done
 ~
 #27105
 Earl of Sundhaven - 27100~
-0 bg 100
+0 b 10
 ~
 wait 1 sec
 switch %random.9%
@@ -332,16 +332,16 @@ Blinder - 27161~
 ~
 %echo% %self.name% whispers, 'So, %actor.name%! You wouldst share my affliction!'
 wait 1 sec
-%send% %actor.name% %self.name%'s frayed cloak blows as he aims a bony finger at you.
-%echoaround% %actor.name% %self.name%'s frayed cloak blows as he points at %actor.name%.
+%send% %actor% %self.name%'s frayed cloak blows as he aims a bony finger at you.
+%echoaround% %actor% %self.name%'s frayed cloak blows as he points at %actor.name%.
 wait 1 sec
-%send% %actor.name% A flash of pale fire explodes in your face!
-%echoaround% %actor.name% A flash of pale fire explodes in %actor.name%'s face!
+%send% %actor% A flash of pale fire explodes in your face!
+%echoaround% %actor% A flash of pale fire explodes in %actor.name%'s face!
 dg_cast 'blindness' %actor%
 ~
 #27107
 Idiot - 27115~
-0 bg 100
+0 b 10
 ~
 wait 1 sec
 switch %random.13%

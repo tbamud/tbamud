@@ -1287,7 +1287,7 @@ test while~
 set stunned %actor.hitp% - 1 
 %damage% %actor% %stunned%
 eval num %random.99% + 1900
-%teleport% %actor.name% %num%
+%teleport% %actor% %num%
 while %actor.inventory%
   eval item %actor.inventory%
   eval item_to_purge %%actor.inventory(%item.vnum%)%%

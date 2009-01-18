@@ -82,6 +82,7 @@ void free_quest(struct aq_data *quest)
 int add_quest(struct aq_data *nqst)
 {
   qst_rnum rnum;
+  mob_rnum qmrnum;
   zone_rnum rznum = real_zone_by_thing(nqst->vnum);
 
   /* The quest already exists, just update it.  */
@@ -105,12 +106,13 @@ int add_quest(struct aq_data *nqst)
     }
     copy_quest(&aquest_table[rnum], nqst, FALSE);
   }
+  qmrnum = real_mobile(QST_MASTER(rnum));
   /* Make sure we assign spec procs to the questmaster */
-  if (QST_MASTER(rnum) != NOBODY && mob_index[QST_MASTER(rnum)].func &&
-      mob_index[QST_MASTER(rnum)].func != questmaster)
-    QST_FUNC(rnum) = mob_index[QST_MASTER(rnum)].func;
-  if(QST_MASTER(rnum) != NOBODY) 
-    mob_index[QST_MASTER(rnum)].func = questmaster;
+  if (qmrnum != NOBODY && mob_index[qmrnum].func &&
+     mob_index[qmrnum].func != questmaster)
+     QST_FUNC(rnum) = mob_index[qmrnum].func;
+  if(qmrnum != NOBODY) 
+    mob_index[qmrnum].func = questmaster;
 
   /* And make sure we save the updated quest information to disk */
   if (rznum != NOWHERE)
@@ -128,7 +130,7 @@ int delete_quest(qst_rnum rnum)
 {
   qst_rnum i;
   zone_rnum rznum;
-  mob_rnum qm = QST_MASTER(rnum);
+  mob_vnum qm = QST_MASTER(rnum);
   SPECIAL (*tempfunc);
   int  quests_remaining = 0;
 
@@ -235,7 +237,7 @@ int save_quests(zone_rnum zone_num)
         quest_done, STRING_TERMINATOR,
         quest_quit, STRING_TERMINATOR,
         QST_TYPE(rnum),
-        QST_MASTER(rnum) == NOBODY ? -1 : mob_index[QST_MASTER(rnum)].vnum,
+        QST_MASTER(rnum) == NOBODY ? -1 : QST_MASTER(rnum),
         quest_flags,
         QST_TARGET(rnum) == NOTHING ? -1 : QST_TARGET(rnum),
         QST_PREV(rnum)   == NOTHING ? -1 : QST_PREV(rnum),

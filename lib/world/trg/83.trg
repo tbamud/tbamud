@@ -70,7 +70,7 @@ surrender~
 ~
 #8306
 Navigator (8306) Sings~
-0 bg 100
+0 b 10
 ~
 eval song %random.4%
 switch %song%
@@ -141,7 +141,7 @@ done
 ~
 #8307
 Cabin Boy (8307) Mops~
-0 bh 75
+0 b 10
 ~
 wait 2s
 emote sings, 'Mop, mop, mop, all day long...'
@@ -286,7 +286,7 @@ Polly (8313) Learn & Repeat~
 ~
 #8314
 Polly (8313) Random Speech~
-0 bgq 80
+0 b 10
 ~
         wait 1s
         emote squawks loudly.
@@ -434,7 +434,7 @@ jump~
 ~
 #8393
 99 Bottles of Beer (Drunken Pirate: 8309)~
-0 bg 100
+0 b 10
 ~
 set beers 99
 emote clears his throat.

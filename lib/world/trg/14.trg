@@ -181,7 +181,7 @@ free~
 2 g 100
 ~
 wait 2 sec
-%echoaround% %actor.name% A magic eight ball drops from the sky striking %actor.name% on the head.
+%echoaround% %actor% A magic eight ball drops from the sky striking %actor.name% on the head.
 %send% %actor% A magic eight ball drops from the sky striking you on the head.
 %load% obj 47
 %damage% %actor% %random.5%
@@ -590,8 +590,8 @@ Mob Leave Example~
 ~
 if (%actor.level% > 10)
   say You may not leave here, %actor.name%.
-  %send% %actor.name% %self.name% prevents you from leaving the room.
-  %echoaround% %actor.name% As %actor.name% tries to leave the room, %self.name% stops %actor.himher%.
+  %send% %actor% %self.name% prevents you from leaving the room.
+  %echoaround% %actor% As %actor.name% tries to leave the room, %self.name% stops %actor.himher%.
   return 0
 end
 ~

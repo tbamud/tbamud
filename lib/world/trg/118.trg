@@ -48,7 +48,7 @@ end
 1 g 100
 ~
 if %actor.room.vnum% == 11802
-%echoaround% %actor.name% %actor.name% takes something from the dollhouse and seems to fade mysteriously away, leaving no trace.
+%echoaround% %actor% %actor.name% takes something from the dollhouse and seems to fade mysteriously away, leaving no trace.
 %teleport% %actor% 11801
 wait 2 s
 %send% %actor% You feel a little strange as everything starts to blur, shifting and changing shape until you are completely disorientated.

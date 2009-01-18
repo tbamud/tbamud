@@ -22,7 +22,7 @@ g~
 * should be looking for 117xx, where xx is 00-99.
 if %cmd.mudcommand% == get && ring /= %arg%
   %send% %actor% You dig in the dirt and pick up the ring.
-  %echoaround% %actor.name% %actor.name% gets a ring from the dirt.
+  %echoaround% %actor% %actor.name% gets a ring from the dirt.
   %load% obj 11700 %actor% inv
 else
 return 0
@@ -38,7 +38,7 @@ steal~
 * should be looking for 117xx, where xx is 00-99.
 if %cmd.mudcommand% == steal && cello /= %arg%
   %send% %actor% You steal the cello from the cello player who exclaims 'Hey!'
-  %echoaround% %actor.name% %actor.name% immaturely nabs the cello from the cello player's hands during the middle of a performance.
+  %echoaround% %actor% %actor.name% immaturely nabs the cello from the cello player's hands during the middle of a performance.
   %load% obj 11708 %actor% inv
 end
 ~
@@ -175,7 +175,7 @@ touch~
 * should be looking for 117xx, where xx is 00-99.
 if %arg% == display
   %send% %actor% You browse around the forbidden display and lift up the large sword. A clicking noise is made from the stand it is on, and suddenly, a huge crashing sound comes from the far west!
-  %echoaround% %actor.name% %actor.name% lifts the sword on the display and a gigantic crashing sound comes from the west!
+  %echoaround% %actor% %actor.name% lifts the sword on the display and a gigantic crashing sound comes from the west!
   %at% 11704 %door% 11704 down flags a
   %at% 11758 %load% obj 11737
   %send% %actor% Salesman Derresor Maosund punches you in the face with anger for touching the display!!
@@ -273,7 +273,7 @@ touch~
 * should be looking for 117xx, where xx is 00-99.
 if %arg% == nest
   %send% %actor% You reach out for the squirrel's nest and touch it, but it falls toward the patch of sand and abruptly falls right through!
-  %echoaround% %actor.name% %actor.name% tries to reach out and touch the nest, like the 2-year-old %actor.heshe% is. %actor.heshe% drops the nest clumsily but the nest abruptly falls through the strange patch of sand!
+  %echoaround% %actor% %actor.name% tries to reach out and touch the nest, like the 2-year-old %actor.heshe% is. %actor.heshe% drops the nest clumsily but the nest abruptly falls through the strange patch of sand!
   %door% 11755 down flags a
 else
   %send% %actor% Touch what?
@@ -304,7 +304,7 @@ sit~
 * should be looking for 117xx, where xx is 00-99.
 if %cmd.mudcommand% == sit && %arg% /= stump
   %echo% You sit down on the large stump and take a rest.
-  %echoaround% %actor.name% %actor.name% sits down on a stump and takes a quick rest.
+  %echoaround% %actor% %actor.name% sits down on a stump and takes a quick rest.
   return 0
 end
 ~
@@ -318,7 +318,7 @@ pick~
 * should be looking for 117xx, where xx is 00-99.
 if %arg% == flowers
   %send% %actor% You kneel beside the path, pick the flowers, and arrange them in a nice bouquet.
-  %echoaround% %actor.name% %actor.name% picks the exotic flowers beside the path and makes a bouquet from them.
+  %echoaround% %actor% %actor.name% picks the exotic flowers beside the path and makes a bouquet from them.
   %load% obj 11735 %actor% inv
 else
   %send% %actor% Pick what??
@@ -335,7 +335,7 @@ search~
 * should be looking for 117xx, where xx is 00-99.
 if %arg% == fireplace
   %send% %actor% You search around the fireplace, and bump into the loose tile. Suddenly, the fire goes out, and the wall behind it opens up!
-  %echoaround% %actor.name% %actor.name% searches the fireplace, and before you know it, the wall to the north opens like a door!
+  %echoaround% %actor% %actor.name% searches the fireplace, and before you know it, the wall to the north opens like a door!
   %door% 11725 north flags a
 else
   %send% %actor% Search what?

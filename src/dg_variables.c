@@ -864,7 +864,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
              if (IS_NPC(c)) 
                strcpy(str, "0"); 
              else { 
-               if ((GET_QUEST(c) != NOTHING) && (real_quest(GET_QUEST(c)) == NOTHING)) 
+               if ((GET_QUEST(c) != NOTHING) && (real_quest(GET_QUEST(c)) != NOTHING))
                  snprintf(str, slen, "%d", GET_QUEST(c)); 
                else 
                  strcpy(str, "0"); 

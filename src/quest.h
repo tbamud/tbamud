@@ -44,7 +44,7 @@ struct aq_data {
   char     *quit;               /* Message displayed when quit quest    */
   long     flags;               /* Flags (repeatable, etc               */
   int      type;                /* Quest type                           */
-  mob_rnum qm;                  /* questmaster offering quest           */
+  mob_vnum qm;                  /* questmaster offering quest           */
   int      target;              /* Target value                         */
   obj_vnum prereq;              /* Object required to undertake quest   */
   int      value[7];            /* Quest values                         */

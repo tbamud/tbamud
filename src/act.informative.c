@@ -2222,19 +2222,7 @@ ACMD(do_commands)
   }
 
   /* display commands list in a nice columnized format */
-  column_list(buf + strlen(buf), sizeof(buf) - strlen(buf),
-              /* subtract 1 or 2 lines (the pager adds 1 or 2) */
-              /* also "skip" a line since we printed a header above */
-              GET_PAGE_LENGTH(ch) - (PRF_FLAGGED(ch, PRF_COMPACT) ? 1 : 2), 1,
-              /* 7 columns; no == how many elements, 0 offset */
-              7, commands, no, 0, "$11l");
-
-  if (overflow < 0) {
-    log("SYSERR: Too many commands for do_commands; increase size of *commands array.");
-    strncat(buf, "\r\n** OVERFLOW **\r\n", sizeof(buf) - strlen(buf));
-  }
-
-  page_string(ch->desc, buf, TRUE);
+  column_list(ch, 7, commands, no, FALSE);
 }
 
 void free_history(struct char_data *ch, int type)

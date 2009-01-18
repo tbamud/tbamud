@@ -397,8 +397,8 @@ The variable questmaster is waiting to set you.
 or not you have done his quest. This way you can only do this quest once. 
 ~
 253962 0 0 0 0 0 0 0 0 E
-0 20 10 1d1+0 1d1+0
-0 0
+1 20 9 0d0+10 1d2+0
+10 100
 8 8 1
 E
 T 192

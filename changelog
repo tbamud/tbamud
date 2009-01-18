@@ -34,12 +34,22 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+
+tbaMUD 3.58
+[Jan 18 2009] - Rumble
+  Updated World and files for 3.58 release.
+  Bug fix for column_list to properly display commands, socials, wizhelp, etc. (thanks Jamdog)
 [Jan 15 2009] - Fizban
   Immortals can now never have their hands full when you attempt to hand them an item.
+[Jan 13 2009] - Rumble
+  Questmaster variable changed from an rnum to a vnum. (thanks Jamdog)
+  Fixed a bug in dg_variables.c find_replacment with the new quest variable. (thanks Jamdog)
   Fixed message when setting gold abnormally high.
 [Jan 09 2009] - Fizban
-  Fixed a bug in do_rescue allowing players to get twice as many attacks per round. (thanks Zordrac)
+  Fixed a DIKU bug in do_rescue allowing players to get twice as many attacks per round. (thanks Zordrac)
   Fixed Bug Where Questmaster rnums didn't previously update. (thanks Tails)
+[Jan 05 2009] - Rumble
+  Fix to allow non-helper aggro mobs be agressive. (thanks Kvasir)
 [Dec 28 2008] - Rumble
   Added a "Syntax: export zone vnum" for the export command instead of defaulting to 0. (thanks Vatiken)
   Fixed bad usage of num_of_saving_throws and moved define to structs.h. (thanks Vatiken)

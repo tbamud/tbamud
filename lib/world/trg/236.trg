@@ -39,7 +39,7 @@ end
 ~
 #23603
 Remove Secret Door - 23667~
-2 af 100
+2 f 100
 ~
 if %self.east%
   %door% 23667 east purge 0

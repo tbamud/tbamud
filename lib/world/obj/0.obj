@@ -1,12 +1,3 @@
-#0
-bug~
-a bug~
-This object is BAD!  If you see it, there must be a bug in the game.  Please
-report it immediately using the BUG command.~
-~
-13 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0
-0 0 0 0
 #1
 wings~
 a pair of wings~
@@ -40,10 +31,6 @@ The email listing of the gods is pinned against the wall.~
 0 0 0 0
 1 1 0 30
 E
-emails listing~
-   HELP CONTACT
-~
-E
 wizlist~
                                  Implementors
                                  ~~~~~~~~~~~ 
@@ -59,6 +46,10 @@ wizlist~
         Kyr   Macros   Meyekul   Mick   Minisham   Mythran   Neela   Poiu
     Santa   Shamra   Shimmer   Silvanos   Smaug   Snowlock   Talgard   Taylor
        Theophilus   Tocamat   Torpidai   Treestump   Tuskony   Zizazat   
+~
+E
+emails listing~
+   HELP CONTACT
 ~
 #5
 foraged berries~

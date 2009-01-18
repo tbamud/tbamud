@@ -329,8 +329,8 @@ static void qedit_disp_menu(struct descriptor_data *d)
     quest_flags,
     quest_types[quest->type],
     quest->type == AQ_OBJ_RETURN ? buf2 : "",
-    quest->qm == NOBODY ? -1 :     mob_index[quest->qm].vnum,
-    quest->qm == NOBODY ? "none" : mob_proto[quest->qm].player.short_descr,
+    quest->qm == NOBODY ? -1 :     quest->qm,
+    real_mobile(quest->qm) == NOBODY ? "Invalid Mob" : mob_proto[(real_mobile(quest->qm))].player.short_descr,
     quest->target == NOBODY ? -1 : quest->target, targetname,
     quest->value[6],
     quest->value[0], quest->value[1],
@@ -605,7 +605,7 @@ void qedit_parse(struct descriptor_data *d, char *arg)
       break;
     case QEDIT_QUESTMASTER:
       if (number != -1)
-        if ((number = real_mobile(number)) == NOBODY) {
+        if (real_mobile(number) == NOBODY) {
           write_to_output(d, "That mobile does not exist, try again : ");
           return;
         }

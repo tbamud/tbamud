@@ -810,10 +810,37 @@ TRIG-ERRORS TRIGEDIT-ERRORS TRIGEDIT-MISTAKES
 
 These are numerous and I will add them as people ask questions about them.
 
-Make sure nohassle is OFF.
+Make sure nohassle is OFF. Command triggers (and some other functionality) 
+will not work for level 32 and above.
 For mob triggers make sure the mob can see the actor, set INFRA in DARK rooms.
-
 AFF_CHARM prevents triggers from firing.
+
+As a general rule always use an ID (%actor%) not a name (%actor.name%) unless 
+you actually need to display the actors name.
+
+GOOD: %send% %actor% Hi there, %actor.name%!
+GOOD: %teleport% %actor% 0
+GOOD: %force% %actor% kneel %self.name%
+GOOD: mkill %actor%
+
+BAD: %send% %actor.name% Hi there, %actor.name%!
+BAD: %teleport% %actor.name% 0
+BAD: %force% %actor.name% kneel
+BAD: mkill %actor.name%
+
+Another common mistake is the mis-use of set and eval. 
+
+GOOD: set fruit apple
+GOOD: set num %random.5%
+GOOD: eval num 4 * %random.3%
+GOOD: eval text %%txt[%num%]%%
+GOOD: set num 5
+GOOD: set command %cmd% %arg%
+
+BAD: eval num 5
+BAD: eval num %random.4%
+BAD: eval fruit apple
+BAD: eval command %cmd% %arg%
 
 See Also: ZEDIT-MISTAKES, SEDIT-MISTAKES
 #31
@@ -941,7 +968,7 @@ as in "women's hemlines."
 
 We rest our case. Now do whatever you want...after all, it is your area.
 #31
-OBJ-NOTES OBJECT-NOTES BOOKS PENS NOTES QUILLS NEWSPAPERS POSTITS POST-ITS OBJ-TYPE-NOTE PAPERS
+OBJ-NOTES OBJECT-NOTES BOOKS PENS NOTES QUILLS NEWSPAPERS POSTITS POST-ITS OBJ-TYPE-NOTE PAPERS TYPE-NOTE
 
    With Object Type NOTE you can then use the A-desc to write what you want 
 people to see when they read it.  Players will then be able to write on the
@@ -953,6 +980,8 @@ like 1 2 3 etc.  Since the buffers can only hold so much text. You would need
 to include instructions, something like this: to read another page type read #.
 The player would type read 1, and would actually read page 1, then type read 2
 and so on.
+
+See Also: NOTE, MAP
 #31
 CWG BUDDHA SUNTZU RASPUTIN CIRCLEMUD-WITH-GOODIES
 
@@ -965,26 +994,23 @@ See also: RESOURCES
 #31
 SOURCES RESOURCES CODEBASE FTP DOWNLOADS DOCUMENTATION WTFAQ FORUMS GROUPS 
 
-Source:      http://cwg.lazuras.org/modules.php?name=Downloads&d_op=viewdownload&cid=16
+Source:      http://tbamud.com/
 CWG:         http://cwg.lazuras.org/
 Trigedit:    http://tbamud.com/Oasis_DG_pages/contents/downloads.htm
 GDB:         http://www.cs.clemson.edu/~ihcho/courses/cs360/common/gdb.html
 
 Documentation:
-http://tbamud.com/Oasis_DG_pages/index.html
+http://tbamud.com/
 http://www.circlemud.org/cdp/wtfaq/
+http://developer.circlemud.org/contrib/
 
    You should join the following forums and mailing lists. Learn how to search
 them for any problems you have:
 
+http://tbamud.com/
 http://cwg.lazuras.org/
 http://groups.yahoo.com/group/circle-newbies/
 http://post.queensu.ca/cgi-bin/listserv/wa?SUBED1=circle&A=1
-http://groups.yahoo.com/group/dg_scripts/
-http://clubs.yahoo.com/clubs/areaswap
-http://clubs.yahoo.com/clubs/buildersclub
-http://clubs.yahoo.com/clubs/warlocksrealm
-http://clubs.yahoo.com/clubs/codersclub
 http://mudconnector.com/
 
 Other stuff:
@@ -1742,7 +1768,7 @@ Be original, finish what you start, have fun, and don't forget to breathe!
 #31
 CALENDAR CALENDER MONTHS WEEKS DAYS HOURS 
 
-The tbaMUD calendar consists of 75 seconds per minute, 35 days a month and
+The tbaMUD calendar consists of 75 seconds per hour, 35 days a month and
 17 months a year.
 
 Days of the week:
@@ -2403,7 +2429,7 @@ TIME TICKS
 Usage: time
 
 Gives you the current game time. tbaMUD uses zulu time 0-24 hours. There are
-75 seconds per minute, 35 days per month, and 17 months per year. 1 MUD year 
+75 seconds per hour, 35 days per month, and 17 months per year. 1 MUD year 
 takes about 12 days.
 
 /** Number of real life seconds per mud hour.
@@ -2640,7 +2666,9 @@ Usage: uptime
 
 Displays when the game was booted and calculates how long ago that was.
 
-Record uptime: 39 days in 2006 (Rumble was on deployment)
+Record uptime:
+
+Up since Thu Nov  6 16:09:55 2008: 47 days, 9:28
 
 #31
 USERS STATUS
@@ -4133,6 +4161,8 @@ pos()           - %actor.pos% returns position. Subfield modifies. Sleeping,
                   resting, sitting, fighting, standing. @RTSTAT 1399, 20997@n     
 prac()          - The actor's number of practices. Subfield adjusts.
 pref()          - Checks if actor has PRF flag enabled. @RTSTAT 1210@n
+quest           - Returns the current quest (or 0 if there's no current quest).
+questdone(#)    - Returns TRUE (1) if the quest vnum (#) has been completed. 
 questpoints()   - Checks the actor's questpoints. Subfield modifies. @RHELP NOP@n
 room            - The room the actor is in as a room variable. 
 saving_para()   - The actors saving throw for paralization. Subfield adjusts.
@@ -4384,7 +4414,7 @@ TRIGEDIT-ROOM-GLOBAL TRIG-ROOM-GLOBAL
 
 Not a trigger type by itself; used in conjunction with Random @RHELP 
 TRIGEDIT-ROOM-RANDOM@n and @RHELP TRIGEDIT-ROOM-TIME@n. While Random 
-and Time only trigger if players are in the same room, Global Random 
+and Time only trigger if players are in the same zone, Global Random 
 and Global Time will trigger regardless. 
  
 Numeric Arg : not used.
@@ -4739,7 +4769,8 @@ Activated any time an object is given to the mobile.
 Numeric Arg : percent chance this trigger will be activated.
 Argument    : not used.
 
-With a return 0 the object is not transferred to the mobile.
+With a return 0 the object is not transferred to the mobile. This will not work
+if a wait is before the return 0.
 
 Variables:
 %actor%  - the character handing the object to the mobile.
@@ -5122,7 +5153,7 @@ TRIGEDIT-MOB-GLOBAL TRIG-MOB-GLOBAL
 
 Not a trigger type by itself; used in conjunction with Random @RHELP 
 TRIGEDIT-MOB-RANDOM@n. While Random triggers only trigger if players 
-are in the same room, Global Random triggers will trigger regardless. 
+are in the same zone, Global Random triggers will trigger regardless. 
  
 Numeric Arg : not used.
 Argument    : not used.
@@ -5544,7 +5575,7 @@ Smokables: @RTSTAT 159@n
 Furniture: @RTSTAT 1399@n
 Weapons: @RTSTAT 1361, 9000, 11840, 13005@n
 
-See Also: @RTRIG-QUESTS@n
+See Also: TRIG-QUESTS
 #31
 DG_AFFECTS DGAFFECT SCRIPT-AFFLICTED AFFLICTED DG-AFFECTS DG-AFFECTS %DG_AFFECT% DG-EFFECT DG_EFFECT DURATIONS TRIG-AFFECTS
 
@@ -5667,7 +5698,7 @@ was on line 5 you can type /e5 <line with teh spelled correctly> or /d5. Learn
 all these options.
 
 Warning: Some clients will give you problems since they use special characters 
-like the / character (Avplay, Mush, and SimpleMU).
+like the / character (MUDMaster 2k, Avplay, Mush, and SimpleMU).
 
 #31
 TRIGEDIT TRIGS TRIGEDITOR TRIGGEREDIT TRIGGER-EDIT TRIGGERS DG-SCRIPTS TRIG-HELP SCRIPTS MOBPROGS MPROGS PROGS SCRIPTING TRIGMENU
@@ -5918,7 +5949,7 @@ XLIST %LIST%
    By Xlist I meant to for you to replace the X with the type of list you want 
 to see. i.e. olist, mlist, rlist, zlist, slist, or qlist.
 
-See also: OLIST, MLIST, RLIST, ZLIST, SLIST
+See also: OLIST, MLIST, RLIST, TLIST, ZLIST, SLIST, QLIST
 #31
 TLIST TRIGLIST TRIG-LIST TRIGEDIT-LIST TRIGGERLIST TRIGGER-LIST
 
@@ -6035,7 +6066,7 @@ number.
 
 See also: SEDIT-MENU, SLIST, OLC
 #31
-ZEDIT ZEDIT-CREATE ZCREATE
+ZEDIT
 
 Usage: zedit [room vnum]
        zedit new <new zone number> <bottom of zone> <top of zone> (Implementors only!)
@@ -6048,7 +6079,7 @@ If no room number is specified, the current room is used as target.
 
 @RGOTO 11@n to enter The Builder Academy hallway on how to use zedit.
 
-See also: ZEDIT-MENU, OLC, SHOW-ZONES 
+See also: ZEDIT-MENU, ZEDIT-NEW, OLC, SHOW-ZONES 
 #31
 BUILDWALKING BUILD-WALKING DIGWALK WALKDIG
 
@@ -6510,8 +6541,10 @@ SEDIT-OPEN1 SEDIT-OPEN2 SEDIT-CLOSE1 SEDIT-CLOSE2 SEDIT-OPENS
 3) Open 2      :    @c0          @n4) Close 2     :    @c0@n
    The times (in MUD-hours) between which the shop is open. Two sets of
 Open/Close pairs are allowed so that the shop can be open twice a day (for
-example, once in the morning and once at night). There are 28 hours in a 
-MUD day.
+example, once in the morning and once at night). There are 24 hours in a 
+MUD day so setting closed to >24 will ensure the shop is always open. If you
+want the shopkeeper to only be open during normal working hours you can set 
+open1 to 9 and close1 to 5.
 
 #31
 SEDIT-RATES SEDIT-SELL-RATES SEDIT-BUY-RATES SEDIT-PRICE PRICES PRICING SEDIT-SELLRATE SELLRATE SEDIT-MENU-SELLRATE SELL-RATE
@@ -6731,6 +6764,23 @@ ZEDIT-BUILDERS
 
    The name of the builder creating the zone. 
 
+#31
+ZEDIT-CREATE ZEDIT-CREATION ZONE-CREATE ZONE-CREATION ZCREATE
+
+Usage: zedit new <new zone number> <bottom of zone> <top of zone>
+
+	Only Implementors can create new zones. Zones can be any size but must
+consist of consecutive vnums.
+
+Examples:
+   zedit new 1 100 199 - Creates zone 1 vnums 100 to 199.
+   zedit new 123 12300 12499 - Creates zone 123 vnums 12300 to 12499
+   
+Max zone number is 655. Max vnum is 65534.
+
+65535 is reserved for corpses.
+   
+See Also: ZEDIT, ZEDIT-NEW
 #31
 ZEDIT-NEW-COMMAND ZEDIT-DOOR MOB-LOAD MOB-INVENTORY ZEDIT-NEWCOMMAND ZEDIT-LOADING ZLOADING ZEDIT-DOORS ZEDIT-REMOVE
 
@@ -7736,8 +7786,8 @@ use /fi by typing it into the last line and hitting enter.
 3) Goto next description: <NOT SET>
    This option will allow you to make as many extra descriptions as you want.
 
-   To delete an extra description all you have to do is leave the keywords
-or the Description blank and exit.
+   To delete an extra description all you have to do is clear the description 
+with the "/c" then "/s" and quit.
 
 #31
 REDIT-EXITS DOORFLAGS REDIT-KEYS PICKPROOF REDIT-EXIT-MENU EXIT-BASICS DOOR-FLAGS EXIT-MENU PURGE-EXITS
@@ -11530,11 +11580,12 @@ actually very stable. I have never heard of one being hacked except via weak or
 compromised passwords. 
 
 #0
-DIKU ROM DBX DBZ SMAUG
+DIKU ROM DBX DBZ SMAUG MUD-HISTORY
 
    These are other types of MUD codebases. We only focus on tbaMUD (the codebase
 formerly known as CircleMUD).
 
+For a full history of MUDs, check out: http://en.wikipedia.org/wiki/Muds
 #0
 HISTORY
 
@@ -11544,7 +11595,7 @@ Usage: history < all | say | gossip | wiznet | tell | shout | grats | holler | a
 with a time stamp for when it was sent. History all will list the history of
 all channels.
 
-See also: CHANNELS
+See also: CHANNELS, MUD-HISTORY
 #0
 COLORCODES COLOURCODES COLOR-CODES COLOUR-CODES COLORS COLOURS PCOLORS COLORCODING
 
@@ -12487,6 +12538,7 @@ Fyre: i'll keep that in mind for the future
 
 Fizban gossips, 'And remember being told what a pretty little girl I was'
 Fizban: You kno what? I just decided I want to be a waitress at Fultons :P
+Fizban gossips, 'Though I've had dreams with Detta in them ;) But those were uhh...different....'
 
 Masok: Anyone else think that maybe we should randomly carpet bomb overly populated areas of poor or useless people?
 Masok: You cant. I have metal underwear.

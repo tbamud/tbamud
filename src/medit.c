@@ -340,10 +340,7 @@ static void medit_disp_mob_flags(struct descriptor_data *d)
   get_char_colors(d->character);
   clear_screen(d);
 
-  column_list(buf, sizeof(buf), 0, 0,
-              2, action_bits, NUM_MOB_FLAGS, 0,
-              "%s$2i%s) $20l", grn, nrm);
-  write_to_output(d, "%s", buf);
+  column_list(d->character, 2, action_bits, NUM_MOB_FLAGS, TRUE);
 
   sprintbitarray(MOB_FLAGS(OLC_MOB(d)), action_bits, AF_ARRAY_MAX, buf);
   write_to_output(d, "\r\nCurrent flags : %s%s%s\r\nEnter mob flags (0 to quit) : ",
@@ -357,11 +354,9 @@ static void medit_disp_aff_flags(struct descriptor_data *d)
 
   get_char_colors(d->character);
   clear_screen(d);
-
-  column_list(buf, sizeof(buf), 0, 0,
-              2, affected_bits, NUM_AFF_FLAGS, 1,
-              "%s$2i%s) $20l", grn, nrm);
-  write_to_output(d, "%s", buf);
+  
+  /* +1 since AFF_FLAGS don't start at 0. */
+  column_list(d->character, 2, affected_bits + 1, NUM_AFF_FLAGS, TRUE);
 
   sprintbitarray(AFF_FLAGS(OLC_MOB(d)), affected_bits, AF_ARRAY_MAX, buf);
   write_to_output(d, "\r\nCurrent flags   : %s%s%s\r\nEnter aff flags (0 to quit) : ",

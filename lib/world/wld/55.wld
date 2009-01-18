@@ -471,9 +471,8 @@ D0
 E
 sign~
    The sign reads:
-
+@
 Closed for renovations
-
 ~
 S
 #5528
@@ -505,13 +504,12 @@ D3
 E
 note~
    The note reads:
-
+@
 LIST  : gives you a list of items for sale.
 VALUE : tells you how much an item is worth to Abdul
 SELL  : sells an item to Abdul for a generous sum
 BUY   : Abdul's FAVORITE command lets you have an item for his low,
                 low price.
-
 ~
 S
 #5530
@@ -619,11 +617,10 @@ D0
 E
 note~
    The note simply reads:
-
+@
 READ THE NOTE IN THE ARMOURY
-
+@
                           Igor.
-
 ~
 S
 #5537
@@ -875,9 +872,9 @@ D1
 E
 banner~
    =====================================================================
-                     
+   @                  
              H A P P Y   B I R T H D A Y   T O   U S
- 
+@ 
    =====================================================================
 ~
 S
@@ -1076,9 +1073,7 @@ D3
 E
 plaque~
    Engraved on the plaque are the following words:
- 
                      The Holy Shrine of Allah
- 
 ~
 S
 #5566
@@ -1282,7 +1277,6 @@ the walls of the palace from the building itself.
 E
 mirror~
    You see a the fighting image of some armor clad humanoid wielding a weapon.
- 
 ~
 S
 #5577
@@ -1362,13 +1356,10 @@ D3
 E
 plaque door~
    The plaque on the door reads:
- 
                    THE ART EXHIBIT
                          of
                      NEW THALOS
- 
                           - the management is not responsible for lost items.
- 
 ~
 S
 #5580

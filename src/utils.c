@@ -16,6 +16,7 @@
 #include "utils.h"
 #include "db.h"
 #include "comm.h"
+#include "modify.h"
 #include "screen.h"
 #include "spells.h"
 #include "handler.h"
@@ -932,194 +933,65 @@ void char_from_furniture(struct char_data *ch)
 }
 
 
-/* Helper function for column_list. */
-void process_column_list_format(char **out_buffer, const char *format,
-    int buf_left, int index_data, const char *item)
-{
-  /* Initialize the index format with a % */
-  char index_format[80] = {'%'};
-  int i;
+/* column_list 
+   The list is output in a fixed format, and only the number of columns can be adjusted 
+   This function will output the list to the player 
+   Vars: 
+     ch          - the player 
+     num_cols    - the desired number of columns 
+     list        - a pointer to a list of strings 
+     list_length - So we can work with lists that don't end with /n 
+     show_nums   - when set to TRUE, it will show a number before the list entry. 
+*/ 
+void column_list(struct char_data *ch, int num_cols, const char **list, int list_length, bool show_nums) 
+{ 
+   int num_per_col, col_width,r,c,i, offset=0, len=0, temp_len, max_len=0; 
+   char buf[MAX_STRING_LENGTH]; 
 
-  /* Copy the format to the output buffer character by character. */
-  while (*format && buf_left >= 2) {
+   /* Ensure that the number of columns is in the range 1-10 */ 
+   num_cols = MIN(MAX(num_cols,1), 10); 
 
-    /* A '$' signifies a 'control-code'. */
-    if (*format == '$') {
-      ++format;
+   /* Work out the longest list item */ 
+   for (i=0; i<list_length; i++) 
+     if (max_len < strlen(list[i])) 
+       max_len = strlen(list[i]); 
 
-      /*
-       * Begin by assuming the caller has supplied a number here
-       * (something that looks like $3i).  Then collect this number
-       * into the index_format after the %.
-       */
-      i = 1;
-      while (isdigit(*format) && i < 78)
-        index_format[i++] = *(format++);
-      index_format[i++] = 'd';
-      index_format[i] = '\0';
+   /* Calculate the width of each column */ 
+   col_width = (GET_SCREEN_WIDTH(ch)) / num_cols; 
+   if (show_nums) col_width-=4; 
 
-      /* There may not be enough space left for the index. */
-      if (buf_left < 12)
-        break;
+   if (col_width < max_len) 
+     log("Warning: columns too narrow for correct output to %s in simple_column_list (utils.c)", GET_NAME(ch)); 
 
-      /*
-       * Okay, output the current index using the index format
-       * we already constructed above.
-       */
-      else if (*format == 'i')
-        *out_buffer += sprintf(*out_buffer, index_format, index_data);
+   /* Calculate how many list items there should be per column */ 
+   num_per_col = (list_length / num_cols) + ((list_length % num_cols) ? 1 : 0); 
 
-      /*
-       * Or output the current list item.  Use part of the
-       * index format collected above to decide how wide the
-       * list item should be displayed.
-       */
-      else if (*format == 'l') {
-        /* skip the %.  atoi ignores the d too */
-        i = atoi(index_format + 1);
-        /* if no width, set to -1 (any width) */
-        if (!i) --i;
+   /* Fill 'buf' with the columnised list */ 
+   for (r=0; r<num_per_col; r++) 
+   { 
+     for (c=0; c<num_cols; c++) 
+     { 
+       offset = (c*num_per_col)+r; 
+       if (offset < list_length) 
+       { 
+         if (show_nums) 
+           temp_len = snprintf(buf+len, sizeof(buf) - len, "%2d) %-*s", offset+1, col_width, list[(offset)]); 
+         else 
+           temp_len = snprintf(buf+len, sizeof(buf) - len, "%-*s", col_width, list[(offset)]); 
+         len += temp_len; 
+       } 
+     } 
+     temp_len = snprintf(buf+len, sizeof(buf) - len, "\r\n"); 
+     len += temp_len; 
+   } 
 
-        /* copy the list item to the output buffer */
-        while (*item && buf_left >= 2 && i != 0) {
-          *((*out_buffer)++) = *(item++);
-          --buf_left;
-          --i;
-        }
+   if (len >= sizeof(buf)) 
+     snprintf((buf + MAX_STRING_LENGTH) - 22, 22, "\r\n*** OVERFLOW ***\r\n"); 
 
-        /* if width was specified above, pad the list item */
-        while (i-- > 0 && buf_left >= 2) {
-          *((*out_buffer)++) = ' ';
-          --buf_left;
-        }
-      }
+   /* Send the list to the player */ 
+   page_string(ch->desc, buf, TRUE); 
+} 
 
-      /* Or just output a $ */
-      else if (*format == '$') {
-        *((*out_buffer)++) = '$';
-        --buf_left;
-      }
-
-      /* Whoa, at the end of the format already? */
-      else if (!*format)
-        break;
-
-      ++format;
-    }
-
-    /* Not a '$' control code.  Simply copy the character. */
-    else {
-      *((*out_buffer)++) = *(format++);
-      --buf_left;
-    }
-  }
-
-  /* Make sure it's nul-terminated. */
-  **out_buffer = '\0';
-}
-
-/**
- * Takes a list of strings and a display format, and formats them
- * in a list by column (sequential items in the list are aligned
- * vertically, then horizontally).  This function supports varargs
- * for the format string that describes how each item should look.
- * @param[out] out_buffer The buffer to write to.
- * @param[in] buf_left The size of the buffer.
- * @param[in] page_length How many lines per page?  0 means no paging.
- * @param[in] skip_lines How many lines to skip on the first page?
- * @param[in] columns How many columns should be displayed?
- * @param[in] list The array of strings to format.
- * @param[in] list_length How many elements are in the list?  We won't rely on
- * lists ending with a newline element.
- * @param[in] list_offset Is the list offset and by how much? For instance, 
- * affect flags are offset by one when displayed in medit.
- * @param[in] format The format string for displaying each
- * item in the list.  Use "$#i" and "$#l" in the format string to determine 
- * how wide the index position and list item should be.  For instance, 
- * "$2i $20l" would be equivalent to a printf "%2d %-20.20s".
- * @param[in] ... Additional args for formatting the list display.
- */
-void column_list(char *out_buffer, int buf_left, int page_length,
-                 int skip_lines, int columns, const char **list,
-                 int list_length, int list_offset,
-                 const char *format, ...)
-{
-  int i, j = 0, k, rows, visited = 0;
-  char line[80];
-  va_list args;
-
-  --buf_left;
-
-  /* We only need to parse the given format string for %'s once. */
-  va_start(args, format);
-  vsnprintf(line, sizeof(line), format, args);
-  va_end(args);
-
-  /* A page_length <= 0 means don't page output. */
-  if (page_length <= 0)
-    page_length = list_length;
-
-  /*
-   * The list index jumps around, since we want to display
-   * the list items by columns.  For instance, in the first
-   * row, the second column's item will be approximately
-   * page_length positions in the list away from the item
-   * in the first column of the same row.
-   * So we use this macro.
-   */
-  #define LIST_INDEX (page_length * columns * k + rows * j + i - \
-                      (k == 0 ? 0 : skip_lines * columns))
-
-  /* Traverse by page... */
-  for (k = 0; k <= list_length / (page_length * columns); ++k) {
-    rows = MIN(page_length, (list_length - visited) / columns + 1);
-    if (k == 0)
-      rows -= skip_lines;
-    /* And then by row... */
-    for (i = 0; i < rows; ++i) {
-      /* And then by column... */
-      for (j = 0; j < columns; ++j) {
-        /* If the index is too high, break out. */
-        if (LIST_INDEX >= list_length)
-          break;
-      
-        /*
-         * If space still remains in the buffer, process the next
-         * list item and print it to the buffer.  Otherwise,
-         * complain about an overflow.
-         */
-        if (buf_left > sizeof(line)) {
-          /*
-           * Now the real magic.  Replace $i and $l with the index
-           * and list item.  Don't let each displayed list item be wider 
-           * than (an arbitrary) 80 characters.  Also, allow a list 
-           * offset in case we want to skip the first list item or 
-           * something (like for affection flags).
-           */
-          process_column_list_format(&out_buffer, line, sizeof(line),
-                                     LIST_INDEX + 1,
-                                     list[LIST_INDEX + list_offset]);
-          ++visited;
-        }
-        else {
-          strcpy(out_buffer + (buf_left < 17 ? buf_left - 17 : 0), 
-                 "\r\n**OVERFLOW**\r\n");
-          return;
-        }
-      }
-      /*
-       * We're at the end of a row.  Print a newline, advance the
-       * buffer, and decrement the amount of space left in the buffer.
-       */
-      strcpy(out_buffer, "\r\n");
-      out_buffer += 2;
-      buf_left -= 2;
-    }
-  }
-
-  #undef LIST_INDEX
-
-}
 
 /** 
  * Search through a string array of flags for a particular flag.

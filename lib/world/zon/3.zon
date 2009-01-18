@@ -2,6 +2,12 @@
 Rumble~
 Sanctus III~
 300 399 30 2
+M 0 301 1 305 	(the naked magi)
+E 1 326 99 12 	(a white towel)
+M 0 130 3 305 	(the maid)
+E 1 155 99 17 	(a feather duster)
+R 0 305 326 -1 	(a white towel)
+O 0 326 99 305 	(a white towel)
 R 0 367 308 -1 	(a clay jug)
 O 0 308 99 367 	(a clay jug)
 O 0 335 1 334 	(the large fountain)
@@ -80,8 +86,6 @@ E 1 26306 99 5 	(a flowered dress)
 M 0 179 3 317 	(the recruit)
 M 0 194 3 314 	(the mouse)
 M 0 193 3 312 	(the dove)
-M 0 130 3 305 	(the maid)
-E 1 155 99 17 	(a feather duster)
 M 0 105 3 315 	(the balding man)
 E 1 31612 99 6 	(a pair of reading glasses)
 M 0 100 3 309 	(the young man)

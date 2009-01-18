@@ -159,9 +159,10 @@ switch %actor.level%
 done
 ~
 #3008
-Death Trap~
+Near Death Trap~
 2 g 100
 ~
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Near Death Trap stuns actor
 set stunned %actor.hitp% 
 %damage% %actor% %stunned%
@@ -199,15 +200,16 @@ end
 Stock Fido - 3062, 3066~
 0 b 100
 ~
-eval inroom %self.room%
-eval item %inroom.contents%
+set inroom %self.room%
+set item %inroom.contents%
 while %item%
   * Target the next item in room. In case it is devoured.
   set next_item %item.next_in_list%
   * Check for a corpse. Corpse on TBA is vnum 65535. Stock is -1.
-  if %item.vnum% == 65535
+  if %item.vnum(65535)%
     emote savagely devours a corpse.
     %purge% %item%
+    halt
   end
   set item %next_item%
   * Loop back

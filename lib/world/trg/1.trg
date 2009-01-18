@@ -2100,7 +2100,7 @@ if %self.contents.vnum% != 47
   %load% obj 47
 end
 wait 2 sec
-%echoaround% %actor.name% A magic eight ball drops from the sky striking %actor.name% on the head.
+%echoaround% %actor% A magic eight ball drops from the sky striking %actor.name% on the head.
 %send% %actor% A magic eight ball drops from the sky striking you on the head.
 %damage% %actor% %random.5%
 ~
@@ -2109,7 +2109,6 @@ Mob Quest Tutorial Example Quest completion - 25~
 0 j 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-wait 1 sec
 if %object.vnum% == 47 && !%actor.varexists(solved_example_quest_zone_0)%
   dance
   wait 1 sec

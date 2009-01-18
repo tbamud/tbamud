@@ -90,10 +90,10 @@ Fountain portal - 23855~
 en~
 if %cmd.mudcommand% == enter && fountain /= %arg%
   %send% %actor% You dive into a large fountain.
-  %echoaround% %actor.name% %actor.name% dives into a large fountain.
+  %echoaround% %actor% %actor.name% dives into a large fountain.
   %teleport% %actor% 23856
   %force% %actor% look
-  %echoaround% %actor.name% %actor.name% emerges from a large fountain.
+  %echoaround% %actor% %actor.name% emerges from a large fountain.
 else
   %send% %actor% enter what?!
 end
@@ -164,10 +164,10 @@ Green portal entrance - 23863~
 en~
 if %cmd.mudcommand% == enter && green /= %arg%
   %send% %actor% You enter a large green portal.
-  %echoaround% %actor.name% %actor.name% steps into a large green portal.
+  %echoaround% %actor% %actor.name% steps into a large green portal.
   %teleport% %actor% 23864
   %force% %actor% look
-  %echoaround% %actor.name% steps into a large green portal.
+  %echoaround% %actor% steps into a large green portal.
 else
   %send% %actor% enter what?!
 end
@@ -178,10 +178,10 @@ Blue portal entrance - 23861~
 en~
 if %cmd.mudcommand% == enter && blue /= %arg%
   %send% %actor% You enter a large blue portal.
-  %echoaround% %actor.name% %actor.name% steps into a large blue portal.
+  %echoaround% %actor% %actor.name% steps into a large blue portal.
   %teleport% %actor% 23862
   %force% %actor% look
-  %echoaround% %actor.name% steps through a large blue portal.
+  %echoaround% %actor% steps through a large blue portal.
 else
   %send% %actor% enter what?!
 end
@@ -192,10 +192,10 @@ Red portal entrance - 23862~
 en~
 if %cmd.mudcommand% == enter && red /= %arg%
   %send% %actor% You enter a large blue portal.
-  %echoaround% %actor.name% %actor.name% steps into a large blue portal.
+  %echoaround% %actor% %actor.name% steps into a large blue portal.
   %teleport% %actor% 23862
   %force% %actor% look
-  %echoaround% %actor.name% steps through a large blue portal.
+  %echoaround% %actor% steps through a large blue portal.
 else
   %send% %actor% enter what?!
 end

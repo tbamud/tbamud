@@ -337,28 +337,28 @@ rdelete Zn27_shacklepass %actor.id%
 2 c 100
 kneel~
 if %arg%==creature
-%send% %actor.name% You kneel before the skeletal creature.
+%send% %actor% You kneel before the skeletal creature.
 wait 1 s
-%send% %actor.name% You suddenly feel very strange as the creature gestures and an eerie mist surrounds you.
+%send% %actor% You suddenly feel very strange as the creature gestures and an eerie mist surrounds you.
 wait 3 s
-      %teleport% %actor.name% 2712
+      %teleport% %actor% 2712
 %force% %actor% look
 elseif %arg%==skeletal
-%send% %actor.name% You kneel before the skeletal creature.
+%send% %actor% You kneel before the skeletal creature.
 wait 1 s
-%send% %actor.name% You suddenly feel very strange as the creature gestures and an eerie mist surrounds you.
+%send% %actor% You suddenly feel very strange as the creature gestures and an eerie mist surrounds you.
 wait 3 s
-      %teleport% %actor.name% 2712
+      %teleport% %actor% 2712
 %force% %actor% look
 elseif %arg%==circle
-%send% %actor.name% You kneel inside the circle.
+%send% %actor% You kneel inside the circle.
 wait 1 s
-%send% %actor.name% You suddenly feel very strange as an eerie mist surrounds you.
+%send% %actor% You suddenly feel very strange as an eerie mist surrounds you.
 wait 3 s
- %teleport% %actor.name% 2712
+ %teleport% %actor% 2712
 %force% %actor% look
 else
-%send% %actor.name% Kneel to who?
+%send% %actor% Kneel to who?
 end
 ~
 #2719
@@ -530,19 +530,19 @@ if %self.carried_by%
 eval actor %self.carried_by%
   if %actor.fighting%
     eval victim %actor.fighting%
-    %echoaround% %actor.name% @R%actor.name%'s doll suddenly opens its eyes and causes %victim.name% to shudder in pain.@n
-    %send% %actor.name% @RYour doll suddenly opens its eyes and causes %victim.name% to shudder in pain.@n
+    %echoaround% %actor% @R%actor.name%'s doll suddenly opens its eyes and causes %victim.name% to shudder in pain.@n
+    %send% %actor% @RYour doll suddenly opens its eyes and causes %victim.name% to shudder in pain.@n
     %damage% %victim% 100
 if (%actor.varexists(zn27_twice)%)
 rdelete Zn27_twice %actor.id%
 wait 3 s
-%send% %actor.name% @RYour doll turns its head to look at you.@n
+%send% %actor% @RYour doll turns its head to look at you.@n
 wait 1 s
-%send% %actor.name% @RYour doll says 'Thrice I have repaid my debt.'@n
+%send% %actor% @RYour doll says 'Thrice I have repaid my debt.'@n
 wait 1 s
-%send% %actor.name% @RYour doll says 'And still I await my freedom.'@n
+%send% %actor% @RYour doll says 'And still I await my freedom.'@n
 wait 1 s
-%send% %actor.name% @RThe doll suddenly transforms into a little girl and runs away.'@n
+%send% %actor% @RThe doll suddenly transforms into a little girl and runs away.'@n
 rdelete Zn27_offereddoll %actor.id%
 %purge% %self%
 elseif (%actor.varexists(zn27_once)%)
@@ -805,7 +805,7 @@ test door~
 enter~
 if ("%arg%" == "space")
 %send% %actor% A previously concealed space suddenly becomes apparant.
-%echoaround% %actor.name% %actor.name% has discovered a hidden space!
+%echoaround% %actor% %actor.name% has discovered a hidden space!
 %door% 2740 down flags a
 %door% 2740 down room 2741
 %door% 2740 down description Nothing can be seen within this dark space.
@@ -921,7 +921,7 @@ attach %arg%
 test act~
 1 c 7
 look~
-%force% %actor.name% %at% 2755 look
+%force% %actor% %at% 2755 look
 ~
 #2752
 test speech~

@@ -106,7 +106,8 @@ S
 An Elegant Hall~
    Drawings of ancient battles in which the Magi slaughter their foes line both
 sides of the hallway.  Depicted on these drawings are a myriad of creatures
-ranging from ogres, orcs, goblins, and demons to humans, elves, and dwarves.
+ranging from ogres, orcs, goblins, and demons to humans, elves, and dwarves.  
+One of the paintings looks oddly familiar.
 ~
 3 8 0 0 0 0
 D0
@@ -122,6 +123,7 @@ D2
 ~
 0 0 319
 S
+T 304
 #305
 The Baths~
    The air is musky and hard to breathe due to the hot steam wafting from the
@@ -160,10 +162,11 @@ D2
 ~
 0 0 321
 S
+T 306
 #307
 A Long Hallway~
    The barren walls and floor would seem odd anywhere but here as the Clerics of
-Sanctus consider decorations, desires, or any form od unnecessary wants to be
+Sanctus consider decorations, desires, or any form of unnecessary wants to be
 blasphemous.  They dedicate their lives to helping others, never themselves, and
 would all sacrifice their lives for that principle.
 ~
@@ -1367,7 +1370,7 @@ and well kept.  A single door leads down to the shop below.
 D5
 ~
 door~
-2 0 225
+1 0 225
 E
 sky winds~
    Cold winds plunge ceaselessly at you from the dark, cloudless sky.

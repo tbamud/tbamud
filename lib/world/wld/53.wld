@@ -27,7 +27,6 @@ Sand as far as the eye can see.
 E
 pyramid~
    The massive pyramid rises out of the sand, a monument to long-dead pharoahs.
-
 ~
 S
 #5301
@@ -51,7 +50,6 @@ The steep slope of the pyramid rises up before you.
 E
 pyramid~
    You wonder how anyone could have built such a massive thing out in this heat.
-
 ~
 S
 #5302
@@ -84,7 +82,6 @@ Far below you are the burning sands of the desert.
 E
 pyramid~
    You wonder how anyone could have built such a massive thing out in this heat.
-
 ~
 S
 #5303
@@ -117,7 +114,6 @@ This side of the pyramid has a dangerous drop before the sandy floor.
 E
 pyramid~
    You wonder how anyone could have built such a massive thing out in this heat.
-
 ~
 S
 #5304
@@ -150,7 +146,6 @@ This side of the pyramid has a dangerous drop before the sandy floor.
 E
 pyramid~
    You wonder how anyone could have built such a massive thing out in this heat.
-
 ~
 S
 #5305
@@ -184,7 +179,6 @@ This side of the pyramid has a dangerous drop before the sandy floor.
 E
 pyramid~
    You wonder how anyone could have built such a massive thing out in this heat.
-
 ~
 S
 #5306
@@ -226,9 +220,7 @@ stones~
 E
 plaque~
    The plaque reads:
- 
                         The Great Pyramid
- 
                 Created by the Andersen work crew.
 ~
 E
@@ -242,12 +234,9 @@ S
 On The Dangerous Stones~
    Here the elements have carved away at the sides of the pyramid quite a 
 bit.  You aren't so sure of your footing anymore...
-
 Suddenly the wind picks up, and you lose your balance!
 You tumble down the side of the pyramid, and fall to your death!
-
 SPLAT.
-
 Ouch.
 ~
 53 12 0 0 0 0
@@ -456,13 +445,11 @@ The crawlway gets a little larger to the north.
 S
 #5317
 A Slippery Hole~
-   The sides of this hole are slippery-smooth.  You lower yourself in, and 
+   The sides of this hole are slippery-smooth.  You lower yourself in, and
 proceed to move downward... when suddenly you lose your purchase!
-
+@
 You fall for what seems like an eternity, and smash into the stones below...
-
-
-
+@
 Under The Hole
    You are in a small chamber underneath the slippery hole, far below
 the pyramid now.   The floor is strewn with bones.  To the south is a
@@ -482,7 +469,7 @@ The hole looks far too slippery to climb back up.
 E
 bones~
    The bones have whitened and cracked in the dry air, apparently the remains of
-adventurers, thieves, and creatures that did not survive the fall.  
+adventurers, thieves, and creatures that did not survive the fall.
 ~
 S
 #5318

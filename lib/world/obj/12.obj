@@ -194,8 +194,8 @@ weapon level 34~
 a level 34 weapon~
 A level 34 weapon is used to test level restrictions~
 ~
-12 0 0 0 0 ano 0 0 0 0 0 0 0
-0 0 0 0
+5 0 0 0 0 ano 0 0 0 0 0 0 0
+11 2 2 0
 1 1 0 34
 #1266
 Black Staff of Immortality~
@@ -296,13 +296,13 @@ A piece of fireworks is planted in a champagne bottle.~
 0 0 0 0
 T 1297
 E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
+~
+E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
-~
-E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~

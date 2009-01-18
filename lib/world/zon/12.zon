@@ -2,10 +2,10 @@
 CircleMUD~
 God Simplex~
 1200 1299 10 0
-R 0 1204 3098 -1 	(a holy bulletin board)
-O 0 3098 99 1204 	(a holy bulletin board)
 M 0 1212 1 1200 	(the scoreboard mob)
 O 0 1212 1 1200 	(a game console)
+R 0 1204 3098 -1 	(a holy bulletin board)
+O 0 3098 99 1204 	(a holy bulletin board)
 R 0 1293 1227 -1 	(a staff bulletin board)
 O 0 1227 99 1293 	(a staff bulletin board)
 R 0 1291 1226 -1 	(a builder's bulletin board)

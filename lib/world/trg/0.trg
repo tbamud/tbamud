@@ -284,7 +284,7 @@ Tutorial Quest 1441 - Load 8ball~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Quest Trigs 9-12. Drop the 8ball on their head when they enter.
 wait 1 sec
-%echoaround% %actor.name% A magic eight ball drops from the sky striking %actor.name% on the head.
+%echoaround% %actor% A magic eight ball drops from the sky striking %actor.name% on the head.
 %send% %actor% A magic eight ball drops from the sky striking you on the head.
 %load% obj 1394
 %damage% %actor% %random.5%
@@ -1598,6 +1598,7 @@ set actor %random.char%
 Room Command Example~
 2 c 100
 l~
+* By Rumble of The Builder Academy    tbamud.com 9091
 if %cmd.mudcommand% == look && bridge /= %arg%
   %send% %actor% As you look at the bridge a small form staggers out from underneath it.
   %echoaround% %actor% As %actor.name% peers under the bridge a small form emerges.
@@ -2500,7 +2501,7 @@ Puff - Random Advice~
 0 ab 12
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-set man %random.197%
+set max %random.197%
 set  text[1]   My god!  It's full of stars!
 set  text[2]   How'd all those fish get up here?
 set  text[3]   Some people are like Slinkies. Not really good for anything, but still bring a smile to your face when you push them down a flight of stairs.
@@ -2712,7 +2713,7 @@ if %arg.room% != %actor.room% || %arg.id% == %actor.id%
 end
 set inroom %actor.room%
 if %arg.inventory(80)%
-  %echoaround% %actor.name% %actor.name% blasts %arg.name% with %actor.hisher% paintball gun.
+  %echoaround% %actor% %actor.name% blasts %arg.name% with %actor.hisher% paintball gun.
   %send% %actor% You blast %arg.name%.
   %send% %arg% You lose!
   %purge% %arg.inventory(80)%
@@ -2734,7 +2735,7 @@ if %arg.room% != %actor.room% || %arg.id% == %actor.id%
 end
 set inroom %actor.room%
 if %arg.inventory(81)%
-  %echoaround% %actor.name% %actor.name% blasts %arg.name% with %actor.hisher% paintball gun.
+  %echoaround% %actor% %actor.name% blasts %arg.name% with %actor.hisher% paintball gun.
   %send% %actor% You blast %arg.name%.
   %send% %arg% You lose!
   %purge% %arg.inventory(81)%

@@ -15,4 +15,18 @@ concoct many different potions and is most famous for her liquid fire.
 E
 T 300
 T 335
+#301
+naked magi~
+the naked magi~
+A magi sits against a wall wearing nothing but a towel.
+~
+   Sweat gleams on her supple skin.  Her black hair is wet and frames a round
+face with slanted blue eyes.  She is striking in her beauty and grace.
+~
+10 0 0 0 2112 0 0 0 0 E
+0 20 10 1d1+0 1d1+0
+0 0
+8 8 2
+E
+T 305
 $

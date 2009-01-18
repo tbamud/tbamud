@@ -79,38 +79,53 @@ if %actor.class% != cleric || %actor.align% < 350
 end
 ~
 #304
-Room Enter - test trigger~
-2 g 100
-~
-wait 50
-wsend %actor% you enter a room
+Room Command - Look at Painting~
+2 c 100
+l~
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %cmd.mudcommand% == look && painting /= %arg%
+  %send% %actor% As you stare at the painting the figures seem to start moving and acting out the scenes they portray.
+  %echoaround% %actor% %actor.name% stares at one of the paintings. A strange look coming over %actor.hisher% face.
+else
+  * If it doesn't match let the command continue. Without a return 0 a player
+  * will not be able to "look" at anything else.
+  return 0
+end
 ~
 #305
-car/cdr test~
-0 d 100
-*~
-*by having * as the arg, it will not always display
-* 'test' as %speech.car%
-say speech: %speech%
-say car: %speech.car%
-say cdr: %speech.cdr%
+Mob Greet Clothing Check~
+0 g 100
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.is_pc%
+  wait 1 sec
+  if %actor.eq(*)%
+    eval worn_about %actor.eq(about)%
+    if %worn_about.vnum% == 326
+      look %actor.name%
+      smile
+    else
+      say You always bathe in your clothes?
+      eyebrow
+    end
+  else
+    say at least get a towel, I don't want to see that.
+  end
+end
 ~
 #306
-Mob Command - subfield test~
-0 c 100
-test~
-* test to make sure %actor.skill(skillname)% works
-say your hide ability is %actor.skill(hide)% percent.
-*
-* make sure %actor.eq(name)% works too
-eval headgear %actor.eq(head)%
-if %headgear%
-  say You have some sort of helmet on
-else
-  say Where's your headgear?
-  halt
+Room Entry - sneak check~
+2 g 25
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.is_pc%
+  if %actor.skill(sneak)% > 50
+    %send% %actor% You walk into the room, not waking any of the clerics.
+  else
+    %send% %actor% Your entry into the room wakes a few of the clerics.
+    %load% mob 340
+  end
 end
-say Fix your %headgear.name%
 ~
 #307
 Obj Remove - %transform% test~

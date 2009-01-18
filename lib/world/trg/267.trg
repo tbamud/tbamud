@@ -33,7 +33,7 @@ emote utters the words, 'pabrow'.
 ~
 #26706
 Butcher - 26713~
-0 bg 5
+0 b 10
 ~
 emote begins sharpening %self.hisher% knife.
 ~
