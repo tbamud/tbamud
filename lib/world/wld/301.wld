@@ -33,7 +33,7 @@ class range.  Remove the extra '0' if you don't need/want it.
 Here are some recommended specials for the mobs:
   #04 should be given a sleep spell to cast
   #47 should be given an undead process.
-
+*
 Zone 301 is linked to the following zones:
 302 Campus                         at 30123 (south) ---> 30236
 302 Campus                         at 30124 (north) ---> 30250
@@ -50,7 +50,6 @@ Zone 301 is linked to the following zones:
 302 Campus                         at 30136 (east ) ---> 30266
 302 Campus                         at 30140 (south) ---> 30260
 302 Campus                         at 30142 (north) ---> 30201
-
 302 Campus                         at 30142 (east ) ---> 30203
 302 Campus                         at 30199 (up   ) ---> 30200
 ~

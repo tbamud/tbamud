@@ -4,6 +4,7 @@
 * Author: Steve Wolfe, Scott Meisenholder, Rhade                          *
 *                                                                         *
 *  All rights reserved.  See license.doc for complete information.        *
+*                                                                         *
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
@@ -384,8 +385,8 @@ ACMD(do_helpcheck)
 
 ACMD(do_hindex)
 {
-  int len, count = 0, i;
-  char buf[MAX_STRING_LENGTH];
+  int len, len2, count = 0, count2=0, i;
+  char buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
 
   skip_spaces(&argument);
 
@@ -394,19 +395,32 @@ ACMD(do_hindex)
     return;
   }
 
-  len = sprintf(buf, "Help index entries based on '%s':\r\n", argument);
-  for (i = 0; i < top_of_helpt; i++)
+  len = sprintf(buf, "Help index entries beginning with '%s':\r\n", argument);
+  len2 = sprintf(buf2, "Help index entries containing '%s':\r\n", argument);
+  for (i = 0; i < top_of_helpt; i++) {
     if (is_abbrev(argument, help_table[i].keywords)
         && (GET_LEVEL(ch) >= help_table[i].min_level))
       len +=
           snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", help_table[i].keywords,
                    (++count % 3 ? "" : "\r\n"));
-
+    else if (strstr(help_table[i].keywords, argument)
+        && (GET_LEVEL(ch) >= help_table[i].min_level))
+      len2 +=
+          snprintf(buf2 + len2, sizeof(buf2) - len2, "%-20.20s%s", help_table[i].keywords,
+                   (++count2 % 3 ? "" : "\r\n"));
+  }
   if (count % 3)
     len += snprintf(buf + len, sizeof(buf) - len, "\r\n");
+  if (count2 % 3)
+    len2 += snprintf(buf2 + len2, sizeof(buf2) - len2, "\r\n");
 
   if (!count)
     len += snprintf(buf + len, sizeof(buf) - len, "  None.\r\n");
+  if (!count2)
+    len2 += snprintf(buf2 + len2, sizeof(buf2) - len2, "  None.\r\n");
+
+  // Join the two strings
+  len += snprintf(buf + len, sizeof(buf) - len, "%s", buf2);
 
   page_string(ch->desc, buf, TRUE);
 }

@@ -34,7 +34,13 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
-
+tbaMUD 3.59
+[Jan 21 2009] - Jamdog 
+  Added trigedit variable %move% to teleport objects.
+  Fixed memory leak in generic_complete_quest.
+  A bug fix to player attachable scripts.
+  A better fix to the DIKU double attack by ordering a mob to save its master.
+  Fix to remove weight restrictions for immortals.
 tbaMUD 3.58
 [Jan 18 2009] - Rumble
   Updated World and files for 3.58 release.

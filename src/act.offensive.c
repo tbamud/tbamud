@@ -347,9 +347,12 @@ ACMD(do_rescue)
   for (tmp_ch = world[IN_ROOM(ch)].people; tmp_ch &&
        (FIGHTING(tmp_ch) != vict); tmp_ch = tmp_ch->next_in_room);
 
-  if ((FIGHTING(ch) == FIGHTING(vict)) && (FIGHTING(tmp_ch) == ch)) {
+  if ((FIGHTING(vict) != NULL) && (FIGHTING(ch) == FIGHTING(vict)) && (tmp_ch == NULL)) {
+     tmp_ch = FIGHTING(vict);
+     if (FIGHTING(tmp_ch) == ch) {
      send_to_char(ch, "You have already rescued %s from %s.\r\n", GET_NAME(vict), GET_NAME(FIGHTING(ch)));
      return;
+  }
   }
 
   if (!tmp_ch) {

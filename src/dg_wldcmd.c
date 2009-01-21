@@ -51,7 +51,7 @@ WCMD(do_wpurge);
 WCMD(do_wload);
 WCMD(do_wdamage);
 WCMD(do_wat);
-
+WCMD(do_wmove);
 
 
 /* attaches room vnum to msg and sends it to script_log */
@@ -563,6 +563,50 @@ WCMD(do_wat)
   wld_command_interpreter(&world[loc], command);
 }
 
+WCMD(do_wmove)
+{
+    obj_data *obj, *next_obj;
+    room_rnum target, nr;
+    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+
+    two_arguments(argument, arg1, arg2);
+
+    if (!*arg1 || !*arg2) {
+        wld_log(room, "wmove called with too few args");
+        return;
+    }
+
+    nr = atoi(arg2);
+    target = real_room(nr);
+
+    if (target == NOWHERE) {
+        wld_log(room, "wmove target is an invalid room");
+    }
+    else if (nr == room->number) {
+        wld_log(room, "wmove target room is itself");
+    }
+    else if (!str_cmp(arg1, "all")) {
+
+        for (obj = room->contents; obj; obj = next_obj)
+        {
+            next_obj = obj->next_content;
+            obj_from_room(obj);
+            obj_to_room(obj, target);
+        }
+    }
+
+    else
+    {
+        if ((obj = get_obj_by_room(room, arg1))) {
+            obj_from_room(obj);
+            obj_to_room(obj, target);
+        }
+
+        else
+            wld_log(room, "wmove: no target found");
+    }
+}
+
 const struct wld_command_info wld_cmd_info[] = {
     { "RESERVED", 0, 0 },/* this must be first -- for specprocs */
 
@@ -579,6 +623,7 @@ const struct wld_command_info wld_cmd_info[] = {
     { "wzoneecho "  , do_wzoneecho , 0 },
     { "wdamage "    , do_wdamage,    0 },
     { "wat "        , do_wat,        0 },
+    { "wmove "      , do_wmove     , 0 },
     { "\n", 0, 0 }        /* this must be last */
 };
 

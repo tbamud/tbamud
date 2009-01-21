@@ -311,7 +311,7 @@ void generic_complete_quest(struct char_data *ch)
             QST_EXP(rnum));
     }
     if (QST_OBJ(rnum) && QST_OBJ(rnum) != NOTHING) {
-      if (real_object(QST_OBJ(rnum))) {
+      if (real_object(QST_OBJ(rnum)) != NOTHING) {
         if ((new_obj = read_object((QST_OBJ(rnum)),VIRTUAL)) != NULL) {
             obj_to_char(new_obj, ch);
             send_to_char(ch, "You have been presented with %s%s for your service.\r\n",
@@ -676,8 +676,8 @@ void quest_stat(struct char_data *ch, char argument[MAX_STRING_LENGTH])
  "Value : @y%d@n, Penalty: @y%d@n, Min Level: @y%2d@n, Max Level: @y%2d@n\r\n"
  "Flags : @c%s@n\r\n",
      QST_NUM(rnum), rnum,
- QST_MASTER(rnum) == NOBODY ? -1 : mob_index[QST_MASTER(rnum)].vnum,
- QST_MASTER(rnum) == NOBODY ? "" : GET_NAME(&mob_proto[QST_MASTER(rnum)]),
+ QST_MASTER(rnum) == NOBODY ? -1 : QST_MASTER(rnum),
+ (qmrnum == NOBODY) ? "(Invalid vnum)" : GET_NAME(&mob_proto[(qmrnum)]),
         QST_NAME(rnum), QST_DESC(rnum),
         QST_INFO(rnum), QST_DONE(rnum),
  (QST_QUIT(rnum) &&

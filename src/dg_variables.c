@@ -228,6 +228,8 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
   /* there is no such thing as wtransform, thus the wecho below  */
   char *transform[]      = {"mtransform ",  "otransform ",  "wecho "      };
   char *recho[]          = {"mrecho ",      "orecho ",      "wrecho "     };
+  /* there is no such thing as mmove, thus the mecho below  */
+  char *omove[]          = {"mecho ",      "omove ",      "wmove "     };
 
   *str = '\0';
 
@@ -294,6 +296,8 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         snprintf(str, slen, "%s", transform[type]);
       else if (!str_cmp(var, "recho"))
         snprintf(str, slen, "%s", recho[type]);
+      else if (!str_cmp(var, "move"))
+        snprintf(str, slen, "%s", omove[type]);
       else
         *str = '\0';
     }
@@ -838,7 +842,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             }
             snprintf(str, slen, "%d", GET_PRACTICES(c));
           }
-          else if (!str_cmp(field, "pref") && IS_NPC(c)) { 
+          else if (!str_cmp(field, "pref")) {
             if (subfield && *subfield) { 
               int pref = get_flag_by_name(preference_bits, subfield); 
               if (!IS_NPC(c) && pref != NOFLAG && PRF_FLAGGED(c, pref)) 
@@ -861,21 +865,14 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           }
            else if (!str_cmp(field, "quest")) 
            { 
-             if (IS_NPC(c)) 
-               strcpy(str, "0"); 
-             else { 
-               if ((GET_QUEST(c) != NOTHING) && (real_quest(GET_QUEST(c)) != NOTHING))
+               if (!IS_NPC(c) && (GET_QUEST(c) != NOTHING) && (real_quest(GET_QUEST(c)) != NOTHING))
                  snprintf(str, slen, "%d", GET_QUEST(c)); 
                else 
                  strcpy(str, "0"); 
              } 
-           } 
            else if (!str_cmp(field, "questdone")) 
            { 
-             if (IS_NPC(c)) 
-               strcpy(str, "0"); 
-             else { 
-               if (subfield && *subfield) { 
+               if (!IS_NPC(c) && subfield && *subfield) { 
                  int q_num = atoi(subfield); 
                  if (is_complete(c, q_num)) 
                    strcpy(str, "1"); 
@@ -885,7 +882,6 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
                else 
                  strcpy(str, "0"); 
              } 
-           } 
           break;
         case 'r':
           if (!str_cmp(field, "room")) {  /* in NOWHERE, return the void */

@@ -398,7 +398,7 @@ void point_update(void)
     }
     if (!IS_NPC(i)) {
       update_char_objects(i);
-      i->char_specials.timer++; 
+      (i->char_specials.timer)++;
       if (GET_LEVEL(i) < CONFIG_IDLE_MAX_LEVEL)
 	check_idling(i);
     }

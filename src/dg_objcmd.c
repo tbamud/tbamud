@@ -44,7 +44,7 @@ static OCMD(do_oasound);
 static OCMD(do_odoor);
 static OCMD(do_osetval);
 static OCMD(do_oat);
-
+static OCMD(do_omove);
 
 struct obj_command_info {
    char *command;
@@ -739,6 +739,39 @@ static OCMD(do_oat)
     extract_obj(object);
 }
 
+static OCMD(do_omove)
+{
+    room_rnum target;
+    char arg1[MAX_INPUT_LENGTH];
+
+    one_argument(argument, arg1);
+
+    if (!*arg1)
+    {
+        obj_log(obj, "omove called with too few args");
+        return;
+    }
+
+    target = find_obj_target_room(obj, arg1);
+
+    if (target == NOWHERE)
+        obj_log(obj, "omove target is an invalid room");
+
+    // Remove the object from it's current location
+    if (obj->carried_by != NULL) {
+      obj_from_char(obj);
+    } else if (IN_ROOM(obj) != NOWHERE) {
+      obj_from_room(obj);
+    } else if (obj->in_obj != NULL) {
+      obj_from_obj(obj);
+    } else {
+      obj_log(obj, "omove: target object is not in a room, held or in a container!");
+      return;
+    }
+
+    obj_to_room(obj, target);
+}
+
 const struct obj_command_info obj_cmd_info[] = {
     { "RESERVED", 0, 0 },/* this must be first -- for specprocs */
 
@@ -758,7 +791,7 @@ const struct obj_command_info obj_cmd_info[] = {
     { "otimer "     , do_otimer   , 0 },
     { "otransform " , do_otransform, 0 },
     { "ozoneecho "  , do_ozoneecho , 0 }, /* fix by Rumble */
-
+    { "omove "      , do_omove     , 0 },
     { "\n", 0, 0 }        /* this must be last */
 };
 

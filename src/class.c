@@ -1889,7 +1889,7 @@ const char *title_male(int chclass, int level)
       /* no one ever thought up these titles 21-30 */
       case LVL_IMMORT: return "the Immortal Cardinal";
       case LVL_GOD: return "the Inquisitor";
-      case LVL_GRGOD: return "the God of good and evil";
+      case LVL_GRGOD: return "the God of Good and Evil";
       default: return "the Cleric";
     }
     break;

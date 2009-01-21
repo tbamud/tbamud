@@ -1813,6 +1813,11 @@ static void process_attach(void *go, struct script_data *sc, trig_data *trig,
   }
 
   if (c) {
+    if (!IS_NPC(c) && !CONFIG_SCRIPT_PLAYERS) {
+      script_log("Trigger: %s, VNum %d. attach invalid target: '%s'",
+              GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), GET_NAME(c));
+      return;
+    }
     if (!SCRIPT(c))
       CREATE(SCRIPT(c), struct script_data, 1);
     add_trigger(SCRIPT(c), newtrig, -1);
