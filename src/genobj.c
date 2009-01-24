@@ -237,7 +237,7 @@ int save_objects(zone_rnum zone_num)
 
       fprintf(fp, "%d %s %s %s %s %s %s %s %s %s %s %s %s\n"
           "%d %d %d %d\n"
-          "%d %d %d %d\n",
+          "%d %d %d %d %d\n",
 
 	  GET_OBJ_TYPE(obj),
           ebuf1, ebuf2, ebuf3, ebuf4,
@@ -246,7 +246,7 @@ int save_objects(zone_rnum zone_num)
           GET_OBJ_VAL(obj, 0), GET_OBJ_VAL(obj, 1),
           GET_OBJ_VAL(obj, 2), GET_OBJ_VAL(obj, 3),
           GET_OBJ_WEIGHT(obj), GET_OBJ_COST(obj),
-          GET_OBJ_RENT(obj), GET_OBJ_LEVEL(obj)
+          GET_OBJ_RENT(obj), GET_OBJ_LEVEL(obj), GET_OBJ_TIMER(obj)
       );
 
       /* Do we have script(s) attached? */

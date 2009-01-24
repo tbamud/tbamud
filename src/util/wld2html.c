@@ -496,10 +496,10 @@ int real_room(int virtual, int reference)
  */
 int get_line(FILE * fl, char *buf)
 {
-  char temp[256];
+  char temp[256], *buf2;
 
   do {
-    fgets(temp, 256, fl);
+    buf2 = fgets(temp, 256, fl);
     if (*temp)
       temp[strlen(temp) - 1] = '\0';
   } while (!feof(fl) && (*temp == '*' || !*temp));

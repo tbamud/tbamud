@@ -1863,11 +1863,14 @@ char *parse_object(FILE *obj_f, int nr)
     log("SYSERR: Expecting third numeric line of %s, but file ended!", buf2);
     exit(1);
   }
-  if ((retval = sscanf(line, "%d %d %d %d", t, t + 1, t + 2, t + 3)) != 4) {
-    if (retval == 3)
+  if ((retval = sscanf(line, "%d %d %d %d %d", t, t + 1, t + 2, t + 3, t + 4)) != 5) {
+    if (retval == 3) {
       t[3] = 0;
+      t[4] = 0; 
+    } else if (retval == 4) 
+      t[4] = 0;
     else {
-      log("SYSERR: Format error in third numeric line (expecting 4 args, got %d), %s", retval, buf2);
+      log("SYSERR: Format error in third numeric line (expecting 5 args, got %d), %s", retval, buf2); 
       exit(1);
     }
   }
@@ -1876,6 +1879,7 @@ char *parse_object(FILE *obj_f, int nr)
   GET_OBJ_COST(obj_proto + i) = t[1];
   GET_OBJ_RENT(obj_proto + i) = t[2];
   GET_OBJ_LEVEL(obj_proto + i) = t[3];
+  GET_OBJ_TIMER(obj_proto + i) = t[4];
 
   obj_proto[i].sitting_here = NULL;
 

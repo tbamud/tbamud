@@ -481,7 +481,7 @@ void quest_join(struct char_data *ch, struct char_data *qm, char argument[MAX_IN
   else if (GET_QUEST(ch) != NOTHING)
     snprintf(buf, sizeof(buf),
              "%s But you are already part of a quest!", GET_NAME(ch));
-  else if((vnum = find_quest_by_qmnum(ch, qm->nr, atoi(argument))) == NOTHING)
+  else if((vnum = find_quest_by_qmnum(ch, GET_MOB_VNUM(qm), atoi(argument))) == NOTHING)
     snprintf(buf, sizeof(buf),
              "%s I don't know of such a quest!", GET_NAME(ch));
   else if ((rnum = real_quest(vnum)) == NOTHING)
@@ -532,7 +532,7 @@ void quest_list(struct char_data *ch, struct char_data *qm, char argument[MAX_IN
   qst_vnum vnum;
   qst_rnum rnum;
 
-  if ((vnum = find_quest_by_qmnum(ch, qm->nr, atoi(argument))) == NOTHING)
+  if ((vnum = find_quest_by_qmnum(ch, GET_MOB_VNUM(qm), atoi(argument))) == NOTHING)
     send_to_char(ch, "That is not a valid quest!\r\n");
   else if ((rnum = real_quest(vnum)) == NOTHING)
     send_to_char(ch, "That is not a valid quest!\r\n");

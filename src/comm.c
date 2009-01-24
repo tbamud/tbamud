@@ -1968,7 +1968,7 @@ static int process_input(struct descriptor_data *t)
    { 
      write_to_output(t, "All queued commands cancelled.\r\n"); 
      flush_queues(t);  /* Flush the command queue */ 
-     return (1);  /* No need to process the -- command any further, so quit back out */ 
+     failed_subst = 1;  /* Allow the read point to be moved, but don't add to queue */  
    }
 
     if (!failed_subst)

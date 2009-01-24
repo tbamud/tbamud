@@ -35,6 +35,12 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Jan 24 2009] - Rumble
+  Fixed command queue cancelling "--" from cancelling the next command. (thanks Frenze/Ogdin)
+  Fixed object timer values from not saving. (thanks Stoneheart)
+  Fixed latest GCC warnings in the /utils. (thanks Jamdog)
+  Fixed violent area spells so they would not harm group members. (thanks Nhilar)
+  Changed usage of qm->nr to GET_MOB_VNUM(qm). (thanks Tails)
 [Jan 21 2009] - Jamdog 
   Added trigedit variable %move% to teleport objects.
   Fixed memory leak in generic_complete_quest.

@@ -58,12 +58,12 @@ char *fread_string(FILE * fl, const char *error)
 
 void do_list(FILE * shop_f, FILE * newshop_f, int max)
 {
-  int count, temp;
-  char buf[MAX_STRING_LENGTH];
+  int count, temp, i;
+  char buf[MAX_STRING_LENGTH], *buf2;
 
   for (count = 0; count < max; count++) {
-    fscanf(shop_f, "%d", &temp);
-    fgets(buf, MAX_STRING_LENGTH - 1, shop_f);
+    i = fscanf(shop_f, "%d", &temp);
+    buf2 = fgets(buf, MAX_STRING_LENGTH - 1, shop_f);
     if (temp > 0)
       fprintf(newshop_f, "%d%s", temp, buf);
   }
@@ -76,8 +76,9 @@ void do_float(FILE * shop_f, FILE * newshop_f)
 {
   float f;
   char str[20];
+  int i;
 
-  fscanf(shop_f, "%f \n", &f);
+  i = fscanf(shop_f, "%f \n", &f);
   sprintf(str, "%f", f);
   while ((str[strlen(str) - 1] == '0') && (str[strlen(str) - 2] != '.'))
     str[strlen(str) - 1] = 0;
@@ -87,9 +88,9 @@ void do_float(FILE * shop_f, FILE * newshop_f)
 
 void do_int(FILE * shop_f, FILE * newshop_f)
 {
-  int i;
+  int i, j;
 
-  fscanf(shop_f, "%d \n", &i);
+  j = fscanf(shop_f, "%d \n", &i);
   fprintf(newshop_f, "%d \n", i);
 }
 
@@ -155,7 +156,7 @@ int main(int argc, char *argv[])
 {
   FILE *sfp, *nsfp;
   char fn[256], part[256];
-  int result, index;
+  int result, index, i;
 
   if (argc < 2) {
     printf("Usage: shopconv <file1> [file2] [file3] ...\n");
@@ -164,7 +165,7 @@ int main(int argc, char *argv[])
   for (index = 1; index < argc; index++) {
     sprintf(fn, "%s", argv[index]);
     sprintf(part, "mv %s %s.tmp", fn, fn);
-    system(part);
+    i = system(part);
     sprintf(part, "%s.tmp", fn);
     sfp = fopen(part, "r");
     if (sfp == NULL) {
@@ -181,10 +182,10 @@ int main(int argc, char *argv[])
       fclose(sfp);
       if (result) {
 	sprintf(part, "mv %s.tmp %s", fn, fn);
-	system(part);
+	i = system(part);
       } else {
 	sprintf(part, "mv %s.tmp %s.bak", fn, fn);
-	system(part);
+	i = system(part);
 	printf("Done!\n");
       }
     }

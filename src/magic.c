@@ -641,7 +641,8 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
     /* The skips: 1: the caster
      *            2: immortals
      *            3: if no pk on this mud, skips over all players
-     *            4: pets (charmed NPCs) */
+     *            4: pets (charmed NPCs)
+     *            5: other players in the same group (if the spell is 'violent') */
     if (tch == ch)
       continue;
     if (!IS_NPC(tch) && GET_LEVEL(tch) >= LVL_IMMORT)
@@ -649,6 +650,9 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
     if (!CONFIG_PK_ALLOWED && !IS_NPC(ch) && !IS_NPC(tch))
       continue;
     if (!IS_NPC(ch) && IS_NPC(tch) && AFF_FLAGGED(tch, AFF_CHARM))
+      continue;
+    if (!IS_NPC(tch) && spell_info[spellnum].violent && AFF_FLAGGED(tch, AFF_GROUP) && AFF_FLAGGED(ch, AFF_GROUP) &&
+      ( ((ch->master == NULL) ? ch : ch->master) == ((tch->master == NULL) ? tch : tch->master) )  )
       continue;
 
     /* Doesn't matter if they die here so we don't check. -gg 6/24/98 */
