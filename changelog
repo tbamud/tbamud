@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Jan 25 2009] - Rumble
+  Fixed pardon. (thanks Echos-Ironcastle)
 [Jan 24 2009] - Rumble
   Fixed command queue cancelling "--" from cancelling the next command. (thanks Frenze/Ogdin)
   Fixed object timer values from not saving. (thanks Stoneheart)

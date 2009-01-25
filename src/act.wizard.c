@@ -2267,7 +2267,7 @@ ACMD(do_wizutil)
 	      GET_DEX(vict), GET_CON(vict), GET_CHA(vict));
       break;
     case SCMD_PARDON:
-      if (!PLR_FLAGGED(vict, PLR_THIEF) || !PLR_FLAGGED(vict, PLR_KILLER)) {
+      if (!PLR_FLAGGED(vict, PLR_THIEF) && !PLR_FLAGGED(vict, PLR_KILLER)) {
 	send_to_char(ch, "Your victim is not flagged.\r\n");
 	return;
       }
