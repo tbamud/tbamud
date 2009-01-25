@@ -35,6 +35,9 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Jan 25 2009] - Rumble
+  Added new documentation /doc unixshelladminguide. (thanks Jamdog).
+  Added new zone creation limits to prevent misuse of zedit making the MUD unbootable.
 [Jan 25 2009] - Jamdog
   Added cases for missing object types in oedit_disp_val1_menu (other, worn, treasure, trash, key, pen, boat)
 [Jan 25 2009] - Rumble

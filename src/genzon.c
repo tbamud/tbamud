@@ -51,17 +51,26 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
 {
   FILE *fp;
   struct zone_data *zone;
-  int i;
+  int i, max_zone;
   zone_rnum rznum;
   char buf[MAX_STRING_LENGTH];
   
 #if CIRCLE_UNSIGNED_INDEX
+  max_zone = 655;
   if (vzone_num == NOWHERE) {
 #else
+  max_zone = 327;
   if (vzone_num < 0) {
 #endif
     *error = "You can't make negative zones.\r\n";
     return NOWHERE;
+   } else if (vzone_num > max_zone) { 
+#if CIRCLE_UNSIGNED_INDEX 
+    *error = "New zone cannot be higher than 655.\r\n"; 
+#else 
+    *error = "New zone cannot be higher than 327.\r\n"; 
+#endif 
+    return NOWHERE; 
   } else if (bottom > top) {
     *error = "Bottom room cannot be greater than top room.\r\n";
     return NOWHERE;
