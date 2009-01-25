@@ -60,7 +60,7 @@ ACMD(do_oasis_oedit)
   /* No building as a mob or while being forced. */
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
     return;
-    
+
   /* Parse any arguments. */
   buf3 = two_arguments(argument, buf1, buf2);
 
@@ -447,7 +447,14 @@ static void oedit_disp_val1_menu(struct descriptor_data *d)
   case ITEM_FURNITURE:
     write_to_output(d, "Number of people it can hold : ");
     break;
-  case ITEM_NOTE:
+  case ITEM_NOTE:  // These object types have no 'values' so go back to menu
+  case ITEM_OTHER:
+  case ITEM_WORN:
+  case ITEM_TREASURE:
+  case ITEM_TRASH:
+  case ITEM_KEY:
+  case ITEM_PEN:
+  case ITEM_BOAT:
     oedit_disp_menu(d);
     break;
   default:
