@@ -35,6 +35,10 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Jan 29 2009] - Rumble
+  Corrected zcheck MAX_OBJ_GOLD_ALLOWED to compare against Val 0, not Val 1. (thanks Tails)
+  Created new MAX_OBJ_GOLD_ALLOWED define for zcheck. (thanks Tails)
+  Fixed typo in players.c. (thanks Tristen)
 [Jan 25 2009] - Rumble
   Added new documentation /doc unixshelladminguide. (thanks Jamdog).
   Added new zone creation limits to prevent misuse of zedit making the MUD unbootable.

@@ -3297,7 +3297,7 @@ ACMD(do_links)
 /*mob limits*/
 #define MAX_DAMROLL_ALLOWED      MAX(GET_LEVEL(mob)/5, 1)
 #define MAX_HITROLL_ALLOWED      MAX(GET_LEVEL(mob)/3, 1)
-#define MAX_GOLD_ALLOWED         GET_LEVEL(mob)*3000
+#define MAX_MOB_GOLD_ALLOWED     GET_LEVEL(mob)*3000
 #define MAX_EXP_ALLOWED          GET_LEVEL(mob)*GET_LEVEL(mob) * 120
 #define MAX_LEVEL_ALLOWED        LVL_IMPL
 #define GET_OBJ_AVG_DAM(obj)     (((GET_OBJ_VAL(obj, 2) + 1) / 2.0) * GET_OBJ_VAL(obj, 1))
@@ -3309,6 +3309,7 @@ ACMD(do_links)
 /*item limits*/
 #define MAX_DAM_ALLOWED            50    /* for weapons  - avg. dam*/
 #define MAX_AFFECTS_ALLOWED        3
+#define MAX_OBJ_GOLD_ALLOWED       1000000
 
 /* Armor class limits*/
 #define TOTAL_WEAR_CHECKS  (NUM_ITEM_WEARS-2)  /*minus Wield and Take*/
@@ -3469,11 +3470,11 @@ ACMD (do_zcheck)
 	 len += snprintf(buf + len, sizeof(buf) - len,
           "- Both aggresive and agressive to align.\r\n");
 
-        if ((GET_GOLD(mob) > MAX_GOLD_ALLOWED) && (found=1))
+        if ((GET_GOLD(mob) > MAX_MOB_GOLD_ALLOWED) && (found=1))
           len += snprintf(buf + len, sizeof(buf) - len,
                           "- Set to %d Gold (limit : %d).\r\n",
                                   GET_GOLD(mob),
-                                  MAX_GOLD_ALLOWED);
+                                  MAX_MOB_GOLD_ALLOWED);
 
         if (GET_EXP(mob)>MAX_EXP_ALLOWED && (found=1))
           len += snprintf(buf + len, sizeof(buf) - len,
@@ -3518,10 +3519,10 @@ ACMD (do_zcheck)
       obj = &obj_proto[i];
       switch (GET_OBJ_TYPE(obj)) {
         case ITEM_MONEY:
-          if ((value = GET_OBJ_VAL(obj, 1))>MAX_GOLD_ALLOWED && (found=1))
+          if ((value = GET_OBJ_VAL(obj, 0))>MAX_OBJ_GOLD_ALLOWED && (found=1))
             len += snprintf(buf + len, sizeof(buf) - len,
                             "- Is worth %d (money limit %d coins).\r\n",
-                                 value, MAX_GOLD_ALLOWED);
+                                 value, MAX_OBJ_GOLD_ALLOWED);
           break;
         case ITEM_WEAPON:
           if (GET_OBJ_VAL(obj, 3) >= NUM_ATTACK_TYPES && (found=1))
