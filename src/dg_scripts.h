@@ -1,16 +1,16 @@
 /**
 * @file dg_scripts.h
-* Header file for script structures, constants, and function prototypes for 
+* Header file for script structures, constants, and function prototypes for
 * dg_scripts.c
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-* 
+*
 * This source code, which was not part of the CircleMUD legacy code,
-* was created by the following people:                                      
-* $Author: Mark A. Heilpern/egreen/Welcor $                              
-* $Date: 2004/10/11 12:07:00$                                            
-* $Revision: 1.0.14 $                                                    
+* was created by the following people:
+* $Author: Mark A. Heilpern/egreen/Welcor $
+* $Date: 2004/10/11 12:07:00$
+* $Revision: 1.0.14 $
 */
 #ifndef _DG_SCRIPTS_H_
 #define _DG_SCRIPTS_H_
@@ -26,15 +26,15 @@
 /* spells cast by objects and rooms use this level */
 #define DG_SPELL_LEVEL  25
 
-/* Define this if you don't want wear/remove triggers to fire when a player 
+/* Define this if you don't want wear/remove triggers to fire when a player
  * is saved. */
 #define NO_EXTRANEOUS_TRIGGERS
 
 /* %actor.room% behaviour :
- * Until pl 7 %actor.room% returned a room vnum. Working with this number in 
- * scripts was unnecessarily hard, especially in those situations one needed 
+ * Until pl 7 %actor.room% returned a room vnum. Working with this number in
+ * scripts was unnecessarily hard, especially in those situations one needed
  * the id of the room, the items in it, etc. As a result of this, the output
- * has been changed (as of pl 8) to a room variable.i This means old scripts 
+ * has been changed (as of pl 8) to a room variable.i This means old scripts
  * will need a minor adjustment;
  *
  * Before:
@@ -105,8 +105,9 @@
 #define WTRIG_CAST             (1 << 15)     /* spell cast in room */
 #define WTRIG_LEAVE            (1 << 16)     /* character leaves the room */
 #define WTRIG_DOOR             (1 << 17)     /* door manipulated in room  */
-
+#define WTRIG_LOGIN            (1 << 18)     /* character logs into MUD    */
 #define WTRIG_TIME             (1 << 19)     /* trigger based on game hour */
+
 /* obj command trigger types */
 #define OCMD_EQUIP             (1 << 0)	     /* obj must be in char's equip */
 #define OCMD_INVEN             (1 << 1)	     /* obj must be in char's inven */
@@ -120,7 +121,7 @@
 #define TRIG_NEW                0	     /* trigger starts from top  */
 #define TRIG_RESTART            1	     /* trigger restarting       */
 
-/* These are slightly off of PULSE_MOBILE so everything isnt happening at the 
+/* These are slightly off of PULSE_MOBILE so everything isnt happening at the
  * same time. */
 #define PULSE_DG_SCRIPT         (13 RL_SEC)
 
@@ -259,6 +260,8 @@ int consume_otrigger(obj_data *obj, char_data *actor, int cmd);
 void time_mtrigger(char_data *ch);
 void time_otrigger(obj_data *obj);
 void time_wtrigger(room_data *room);
+
+int login_wtrigger(struct room_data *room, char_data *actor);
 
 /* function prototypes from dg_scripts.c */
 ACMD(do_attach) ;

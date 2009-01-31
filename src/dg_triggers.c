@@ -88,8 +88,8 @@ int is_substring(char *sub, char *string)
     return 0;
 }
 
-/* Return 1 if str contains a word or phrase from wordlist. Phrases are in 
- * double quotes ("). if wrdlist is NULL, then return 1, if str is NULL, 
+/* Return 1 if str contains a word or phrase from wordlist. Phrases are in
+ * double quotes ("). if wrdlist is NULL, then return 1, if str is NULL,
  * return 0. */
 int word_check(char *str, char *wordlist)
 {
@@ -674,7 +674,7 @@ int get_otrigger(obj_data *obj, char_data *actor)
     if (TRIGGER_CHECK(t, OTRIG_GET) && (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
       ADD_UID_VAR(buf, t, actor, "actor", 0);
       ret_val = script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
-      /* Don't allow a get to take place, if the actor is killed (the mud 
+      /* Don't allow a get to take place, if the actor is killed (the mud
        * would choke on obj_to_char) or the object is purged. */
       if (DEAD(actor) || !obj)
         return 0;
@@ -837,7 +837,7 @@ int give_otrigger(obj_data *obj, char_data *actor, char_data *victim)
       ADD_UID_VAR(buf, t, actor, "actor", 0);
       ADD_UID_VAR(buf, t, victim, "victim", 0);
       ret_val = script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
-      /* Don't allow a give to take place, if the object is purged or the 
+      /* Don't allow a give to take place, if the object is purged or the
        * object is not carried by the giver. */
       if (!obj || obj->carried_by != actor)
         return 0;
@@ -1236,4 +1236,23 @@ void time_wtrigger(struct room_data *room)
       break;
     }
   }
+}
+
+int login_wtrigger(struct room_data *room, char_data *actor)
+{
+  trig_data *t;
+  char buf[MAX_INPUT_LENGTH];
+
+  if (!SCRIPT_CHECK(room, WTRIG_LOGIN))
+    return 1;
+
+  for (t = TRIGGERS(SCRIPT(room)); t; t = t->next) {
+    if (TRIGGER_CHECK(t, WTRIG_LOGIN) &&
+        (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
+      ADD_UID_VAR(buf, t, actor, "actor", 0);
+      return script_driver(&room, t, WLD_TRIGGER, TRIG_NEW);
+    }
+  }
+
+  return 1;
 }

@@ -51,12 +51,12 @@ int *cmd_sort_info = NULL;
 
 struct command_info *complete_cmd_info;
 
-/* This is the Master Command List. You can put new commands in, take commands 
- * out, change the order they appear in, etc.  You can adjust the "priority" 
+/* This is the Master Command List. You can put new commands in, take commands
+ * out, change the order they appear in, etc.  You can adjust the "priority"
  * of commands simply by changing the order they appear in the command list.
- * (For example, if you want "as" to mean "assist" instead of "ask", just put 
- * "assist" above "ask" in the Master Command List. In general, utility 
- * commands such as "at" should have high priority; infrequently used and 
+ * (For example, if you want "as" to mean "assist" instead of "ask", just put
+ * "assist" above "ask" in the Master Command List. In general, utility
+ * commands such as "at" should have high priority; infrequently used and
  * dangerously destructive commands should have low priority. */
 
 cpp_extern const struct command_info cmd_info[] = {
@@ -333,61 +333,61 @@ cpp_extern const struct command_info cmd_info[] = {
   { "zcheck"   , "zcheck"  , POS_DEAD    , do_zcheck   , LVL_GOD, 0 },
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
 
-  { "\n", "zzzzzzz", 0, 0, 0, 0 } };    /* this must be last */ 
- 
- 
-  /* Thanks to Melzaren for this change to allow DG Scripts to be attachable 
-   *to player's while still disallowing them to manually use the DG-Commands. */ 
-  const struct mob_script_command_t mob_script_commands[] = { 
+  { "\n", "zzzzzzz", 0, 0, 0, 0 } };    /* this must be last */
+
+
+  /* Thanks to Melzaren for this change to allow DG Scripts to be attachable
+   *to player's while still disallowing them to manually use the DG-Commands. */
+  const struct mob_script_command_t mob_script_commands[] = {
 
   /* DG trigger commands. minimum_level should be set to -1. */
-  { "masound"  , do_masound  , 0 }, 
-  { "mkill"    , do_mkill    , 0 }, 
-  { "mjunk"    , do_mjunk    , 0 }, 
-  { "mdamage"  , do_mdamage  , 0 }, 
-  { "mdoor"    , do_mdoor    , 0 }, 
-  { "mecho"    , do_mecho    , 0 }, 
-  { "mrecho"   , do_mrecho   , 0 }, 
-  { "mechoaround", do_mechoaround , 0 }, 
-  { "msend"    , do_msend    , 0 }, 
-  { "mload"    , do_mload    , 0 }, 
-  { "mpurge"   , do_mpurge   , 0 }, 
-  { "mgoto"    , do_mgoto    , 0 }, 
-  { "mat"      , do_mat      , 0 }, 
-  { "mteleport", do_mteleport, 0 }, 
-  { "mforce"   , do_mforce   , 0 }, 
-  { "mhunt"    , do_mhunt    , 0 }, 
-  { "mremember", do_mremember, 0 }, 
-  { "mforget"  , do_mforget  , 0 }, 
-  { "mtransform", do_mtransform , 0 }, 
-  { "mzoneecho", do_mzoneecho, 0 }, 
-  { "mfollow"  , do_mfollow  , 0 }, 
+  { "masound"  , do_masound  , 0 },
+  { "mkill"    , do_mkill    , 0 },
+  { "mjunk"    , do_mjunk    , 0 },
+  { "mdamage"  , do_mdamage  , 0 },
+  { "mdoor"    , do_mdoor    , 0 },
+  { "mecho"    , do_mecho    , 0 },
+  { "mrecho"   , do_mrecho   , 0 },
+  { "mechoaround", do_mechoaround , 0 },
+  { "msend"    , do_msend    , 0 },
+  { "mload"    , do_mload    , 0 },
+  { "mpurge"   , do_mpurge   , 0 },
+  { "mgoto"    , do_mgoto    , 0 },
+  { "mat"      , do_mat      , 0 },
+  { "mteleport", do_mteleport, 0 },
+  { "mforce"   , do_mforce   , 0 },
+  { "mhunt"    , do_mhunt    , 0 },
+  { "mremember", do_mremember, 0 },
+  { "mforget"  , do_mforget  , 0 },
+  { "mtransform", do_mtransform , 0 },
+  { "mzoneecho", do_mzoneecho, 0 },
+  { "mfollow"  , do_mfollow  , 0 },
   { "\n" , do_not_here , 0 } };
 
-int script_command_interpreter(struct char_data *ch, char *arg) { 
-  /* DG trigger commands */ 
- 
-  int i; 
-  char first_arg[MAX_INPUT_LENGTH]; 
-  char *line; 
- 
-  skip_spaces(&arg); 
-  if (!*arg) 
-  return 0; 
- 
-  line = any_one_arg(arg, first_arg); 
- 
-  for (i = 0; *mob_script_commands[i].command_name != '\n'; i++) 
-  if (!str_cmp(first_arg, mob_script_commands[i].command_name)) 
-  break; // NB - only allow full matches. 
- 
-  if (*mob_script_commands[i].command_name == '\n') 
-  return 0; // no matching commands. 
- 
-  /* Poiner to the command? */ 
-  ((*mob_script_commands[i].command_pointer) (ch, line, 0, 
-  mob_script_commands[i].subcmd)); 
-  return 1; // We took care of execution. Let caller know. 
+int script_command_interpreter(struct char_data *ch, char *arg) {
+  /* DG trigger commands */
+
+  int i;
+  char first_arg[MAX_INPUT_LENGTH];
+  char *line;
+
+  skip_spaces(&arg);
+  if (!*arg)
+  return 0;
+
+  line = any_one_arg(arg, first_arg);
+
+  for (i = 0; *mob_script_commands[i].command_name != '\n'; i++)
+  if (!str_cmp(first_arg, mob_script_commands[i].command_name))
+  break; // NB - only allow full matches.
+
+  if (*mob_script_commands[i].command_name == '\n')
+  return 0; // no matching commands.
+
+  /* Poiner to the command? */
+  ((*mob_script_commands[i].command_pointer) (ch, line, 0,
+  mob_script_commands[i].subcmd));
+  return 1; // We took care of execution. Let caller know.
 }
 
 const char *fill[] =
@@ -456,7 +456,7 @@ void command_interpreter(struct char_data *ch, char *argument)
     return;
 
   /* special case to handle one-character, non-alphanumeric commands; requested
-   * by many people so "'hi" or ";godnet test" is possible. Patch sent by Eric 
+   * by many people so "'hi" or ";godnet test" is possible. Patch sent by Eric
    * Green and Stefan Wasilewski. */
   if (!isalpha(*argument)) {
     arg[0] = argument[0];
@@ -475,11 +475,11 @@ void command_interpreter(struct char_data *ch, char *argument)
     if (cont) return;                                    /* yes, command trigger took over */
   }
 
-  /* Allow IMPLs to switch into mobs to test the commands. */ 
-   if (IS_NPC(ch) && ch->desc && GET_LEVEL(ch->desc->original) >= LVL_IMPL) { 
-     if (script_command_interpreter(ch, argument)) 
-       return; 
-   } 
+  /* Allow IMPLs to switch into mobs to test the commands. */
+   if (IS_NPC(ch) && ch->desc && GET_LEVEL(ch->desc->original) >= LVL_IMPL) {
+     if (script_command_interpreter(ch, argument))
+       return;
+   }
 
   for (length = strlen(arg), cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++)
     if(complete_cmd_info[cmd].command_pointer != do_action &&
@@ -500,17 +500,17 @@ void command_interpreter(struct char_data *ch, char *argument)
     int found = 0;
     send_to_char(ch, "Huh!?!\r\n");
 
-    for (cmd = 0; *cmd_info[cmd].command != '\n'; cmd++) 
+    for (cmd = 0; *cmd_info[cmd].command != '\n'; cmd++)
     {
       if (*arg != *cmd_info[cmd].command || cmd_info[cmd].minimum_level > GET_LEVEL(ch))
         continue;
 
       /* Only apply levenshtein counts if the command is not a trigger command. */
       if ( (levenshtein_distance(arg, cmd_info[cmd].command) <= 2) &&
-           (cmd_info[cmd].minimum_level >= 0) ) 
+           (cmd_info[cmd].minimum_level >= 0) )
       {
-        if (!found) 
-        {   
+        if (!found)
+        {
           send_to_char(ch, "\r\nDid you mean:\r\n");
           found = 1;
         }
@@ -631,8 +631,8 @@ ACMD(do_alias)
 }
 
 /* Valid numeric replacements are only $1 .. $9 (makes parsing a little easier,
- * and it's not that much of a limitation anyway.)  Also valid is "$*", which 
- * stands for the entire original line after the alias. ";" is used to delimit 
+ * and it's not that much of a limitation anyway.)  Also valid is "$*", which
+ * stands for the entire original line after the alias. ";" is used to delimit
  * commands. */
 #define NUM_TOKENS       9
 
@@ -730,8 +730,8 @@ int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen)
 /* Various other parsing utilities. */
 
 /* Searches an array of strings for a target string.  "exact" can be 0 or non-0,
- * depending on whether or not the match must be exact for it to be returned.  
- * Returns -1 if not found; 0..n otherwise.  Array must be terminated with a 
+ * depending on whether or not the match must be exact for it to be returned.
+ * Returns -1 if not found; 0..n otherwise.  Array must be terminated with a
  * '\n' so it knows to stop searching. */
 int search_block(char *arg, const char **list, int exact)
 {
@@ -784,13 +784,13 @@ void skip_spaces(char **string)
   for (; **string && isspace(**string); (*string)++);
 }
 
-/* Given a string, change all instances of double dollar signs ($$) to single 
- * dollar signs ($).  When strings come in, all $'s are changed to $$'s to 
- * avoid having users be able to crash the system if the inputted string is 
- * eventually sent to act().  If you are using user input to produce screen 
- * output AND YOU ARE SURE IT WILL NOT BE SENT THROUGH THE act() FUNCTION 
- * (i.e., do_gecho, do_title, but NOT do_say), you can call 
- * delete_doubledollar() to make the output look correct. 
+/* Given a string, change all instances of double dollar signs ($$) to single
+ * dollar signs ($).  When strings come in, all $'s are changed to $$'s to
+ * avoid having users be able to crash the system if the inputted string is
+ * eventually sent to act().  If you are using user input to produce screen
+ * output AND YOU ARE SURE IT WILL NOT BE SENT THROUGH THE act() FUNCTION
+ * (i.e., do_gecho, do_title, but NOT do_say), you can call
+ * delete_doubledollar() to make the output look correct.
  * Modifies the string in-place. */
 char *delete_doubledollar(char *string)
 {
@@ -851,7 +851,7 @@ char *one_argument(char *argument, char *first_arg)
   return (argument);
 }
 
-/* one_word is like any_one_arg, except that words in quotes ("") are 
+/* one_word is like any_one_arg, except that words in quotes ("") are
  * considered one word. No longer ignores fill words.  -dak */
 char *one_word(char *argument, char *first_arg)
 {
@@ -1049,11 +1049,11 @@ static int perform_dupe_check(struct descriptor_data *d)
     }
   }
 
- /* Now, go through the character list, deleting all characters that are not 
-  * already marked for deletion from the above step (i.e., in the CON_HANGUP 
+ /* Now, go through the character list, deleting all characters that are not
+  * already marked for deletion from the above step (i.e., in the CON_HANGUP
   * state), and have not already been selected as a target for switching into.
-  * In addition, if we haven't already found a target, choose one if one is 
-  * available (while still deleting the other duplicates, though theoretically 
+  * In addition, if we haven't already found a target, choose one if one is
+  * available (while still deleting the other duplicates, though theoretically
   * none should be able to exist). */
   for (ch = character_list; ch; ch = next_ch) {
     next_ch = ch->next;
@@ -1088,9 +1088,9 @@ static int perform_dupe_check(struct descriptor_data *d)
 
   /* no target for switching into was found - allow login to continue */
   if (!target) {
-    GET_PREF(d->character) = rand_number(1, 128000); 
-    if (GET_HOST(d->character)) 
-      free(GET_HOST(d->character)); 
+    GET_PREF(d->character) = rand_number(1, 128000);
+    if (GET_HOST(d->character))
+      free(GET_HOST(d->character));
     GET_HOST(d->character) = strdup(d->host);
     return 0;
   }
@@ -1169,8 +1169,8 @@ int enter_player_game (struct descriptor_data *d)
       /* find_char helper */
       add_to_lookup_table(GET_ID(d->character), (void *)d->character);
 
-      /* After moving saving of variables to the player file, this should only 
-       * be called in case nothing was found in the pfile. If something was 
+      /* After moving saving of variables to the player file, this should only
+       * be called in case nothing was found in the pfile. If something was
        * found, SCRIPT(ch) will be set. */
       if (!SCRIPT(d->character))
         read_saved_vars(d->character);
@@ -1180,6 +1180,9 @@ int enter_player_game (struct descriptor_data *d)
       char_to_room(d->character, load_room);
       load_result = Crash_load(d->character);
       save_char(d->character);
+
+      /* Check for a login trigger in the players' start room */
+      login_wtrigger(&world[IN_ROOM(d->character)], d->character);
 
     return load_result;
 }
@@ -1242,7 +1245,7 @@ void nanny(struct descriptor_data *d, char *arg)
 	GET_PFILEPOS(d->character) = player_i;
 
 	if (PLR_FLAGGED(d->character, PLR_DELETED)) {
-          /* Make sure old files are removed so the new player doesn't get the 
+          /* Make sure old files are removed so the new player doesn't get the
 	   * deleted player's equipment. */
 	   if ((player_i = get_ptable_by_name(tmp_name)) >= 0)
 	   remove_player(player_i);
@@ -1324,12 +1327,12 @@ void nanny(struct descriptor_data *d, char *arg)
     break;
 
   case CON_PASSWORD:		/* get pwd for known player      */
-    /* To really prevent duping correctly, the player's record should be reloaded 
-     * from disk at this point (after the password has been typed).  However I'm 
-     * afraid that trying to load a character over an already loaded character is 
-     * going to cause some problem down the road that I can't see at the moment.  
-     * So to compensate, I'm going to (1) add a 15 or 20-second time limit for 
-     * entering a password, and (2) re-add the code to cut off duplicates when a 
+    /* To really prevent duping correctly, the player's record should be reloaded
+     * from disk at this point (after the password has been typed).  However I'm
+     * afraid that trying to load a character over an already loaded character is
+     * going to cause some problem down the road that I can't see at the moment.
+     * So to compensate, I'm going to (1) add a 15 or 20-second time limit for
+     * entering a password, and (2) re-add the code to cut off duplicates when a
      * player quits.  JE 6 Feb 96 */
 
     echo_on(d);    /* turn echo back on */
@@ -1534,7 +1537,7 @@ void nanny(struct descriptor_data *d, char *arg)
     case '2':
       if (d->character->player.description) {
 	write_to_output(d, "Current description:\r\n%s", d->character->player.description);
-	/* Don't free this now... so that the old description gets loaded as the 
+	/* Don't free this now... so that the old description gets loaded as the
 	 * current buffer in the editor.  Do setup the ABORT buffer here, however. */
 	d->backstr = strdup(d->character->player.description);
       }
@@ -1605,7 +1608,7 @@ void nanny(struct descriptor_data *d, char *arg)
 	SET_BIT_AR(PLR_FLAGS(d->character), PLR_DELETED);
       save_char(d->character);
       Crash_delete_file(GET_NAME(d->character));
-      /* If the selfdelete_fastwipe flag is set (in config.c), remove all the 
+      /* If the selfdelete_fastwipe flag is set (in config.c), remove all the
        * player's immediately. */
       if (selfdelete_fastwipe)
         if ((player_i = get_ptable_by_name(GET_NAME(d->character))) >= 0) {

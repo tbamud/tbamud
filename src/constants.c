@@ -1,14 +1,14 @@
 /**
 * @file constants.c
 * Numeric and string contants used by the MUD.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
-* 
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
+*
 * @todo Come up with a standard for descriptive arrays. Either all end with
 * newlines or all of them don not.
 */
@@ -21,7 +21,7 @@
 
 /** Current tbaMUD version.
  * @todo defined with _TBAMUD so we don't have multiple constants to change.
- * @todo cpp_extern isn't needed here (or anywhere) as the extern reserved word 
+ * @todo cpp_extern isn't needed here (or anywhere) as the extern reserved word
  * works correctly with C compilers (at least in my Experience)
  * Jeremy Osborne 1/28/2008 */
 cpp_extern const char *tbamud_version = "tbaMUD 3.58";
@@ -29,8 +29,8 @@ cpp_extern const char *tbamud_version = "tbaMUD 3.58";
 /* strings corresponding to ordinals/bitvectors in structs.h */
 /* (Note: strings for class definitions in class.c instead of here) */
 
-/** Description of cardinal directions. 
- * @pre Must be in the same order as the defines. 
+/** Description of cardinal directions.
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *dirs[] =
 {
@@ -40,11 +40,11 @@ const char *dirs[] =
   "west",
   "up",
   "down",
-  "\n" 
+  "\n"
 };
 
 /** Room flag descriptions.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *room_bits[] = {
   "DARK",
@@ -64,11 +64,11 @@ const char *room_bits[] = {
   "OLC",
   "*",				/* The BFS Mark. */
   "WORLDMAP",
-  "\n" 
+  "\n"
 };
 
 /** Exit bits for doors.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *exit_bits[] = {
   "DOOR",
@@ -79,7 +79,7 @@ const char *exit_bits[] = {
 };
 
 /** Description of the room sector type.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *sector_types[] = {
   "Inside",
@@ -96,7 +96,7 @@ const char *sector_types[] = {
 };
 
 /** PC and NPC sex.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *genders[] =
 {
@@ -107,7 +107,7 @@ const char *genders[] =
 };
 
 /** Character positions.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *position_types[] = {
   "Dead",
@@ -123,7 +123,7 @@ const char *position_types[] = {
 };
 
 /** Player flags.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *player_bits[] = {
   "KILLER",
@@ -152,7 +152,7 @@ const char *player_bits[] = {
 };
 
 /** Mob action flags.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *action_bits[] = {
   "SPEC",
@@ -178,7 +178,7 @@ const char *action_bits[] = {
 };
 
 /** PC Preference flags.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *preference_bits[] = {
   "BRIEF",
@@ -217,7 +217,7 @@ const char *preference_bits[] = {
 };
 
 /** Affected bits.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *affected_bits[] =
 {
@@ -248,7 +248,7 @@ const char *affected_bits[] =
 };
 
 /** Connection type descriptions.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *connected_types[] = {
   "Playing",
@@ -284,7 +284,7 @@ const char *connected_types[] = {
 };
 
 /** Describes the position in the equipment listing.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Not used in sprinttype() so no \n. */
 const char *wear_where[] = {
   "<used as light>      ",
@@ -308,7 +308,7 @@ const char *wear_where[] = {
 };
 
 /* Describes where an item can be worn.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *equipment_types[] = {
   "Used as light",
@@ -333,7 +333,7 @@ const char *equipment_types[] = {
 };
 
 /** Describes the type of object.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *item_types[] = {
   "UNDEFINED",
@@ -364,7 +364,7 @@ const char *item_types[] = {
 };
 
 /** Describes the wear flags set on an item.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *wear_bits[] = {
   "TAKE",
@@ -386,7 +386,7 @@ const char *wear_bits[] = {
 };
 
 /** Describes the extra flags applied to an item.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *extra_bits[] = {
   "GLOW",
@@ -411,7 +411,7 @@ const char *extra_bits[] = {
 };
 
 /** Describes the apply types.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *apply_types[] = {
   "NONE",
@@ -443,7 +443,7 @@ const char *apply_types[] = {
 };
 
 /** Describes the closure mechanism for a container.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *container_bits[] = {
   "CLOSEABLE",
@@ -454,7 +454,7 @@ const char *container_bits[] = {
 };
 
 /** Describes the liquid description.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *drinks[] =
 {
@@ -478,7 +478,7 @@ const char *drinks[] =
 };
 
 /** Describes a one word alias for each type of liquid.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *drinknames[] =
 {
@@ -502,7 +502,7 @@ const char *drinknames[] =
 };
 
 /** Define the effect of liquids on hunger, thirst, and drunkenness, in that
- * order. See values.doc for more information. 
+ * order. See values.doc for more information.
  * @pre Must be in the same order as the defines. */
 int drink_aff[][3] = {
   {0, 1, 10},
@@ -524,7 +524,7 @@ int drink_aff[][3] = {
 };
 
 /** Describes the color of the various drinks.
- * @pre Must be in the same order as the defines. 
+ * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
 const char *color_liquid[] =
 {
@@ -547,7 +547,7 @@ const char *color_liquid[] =
   "\n"
 };
 
-/** Used to describe the level of fullness of a drink container. Not used in 
+/** Used to describe the level of fullness of a drink container. Not used in
  * sprinttype() so no \n. */
 const char *fullness[] =
 {
@@ -877,17 +877,17 @@ const char *wtrig_types[] = {
   "Cast",
   "Leave",
   "Door",
-  "UNUSED",
+  "Login",
   "Time",
   "\n"
 };
 
-/** The names of the different channels that history is stored for. 
+/** The names of the different channels that history is stored for.
  * @todo Only referenced by do_history at the moment. Should be moved local
  * to that function. */
 const char *history_types[] = {
-  "all",   
-  "say",   
+  "all",
+  "say",
   "gossip",
   "wiznet",
   "tell",
@@ -895,7 +895,7 @@ const char *history_types[] = {
   "grats",
   "holler",
   "auction",
-  "\n"   
+  "\n"
 };
 /* --- End of constants arrays. --- */
 
