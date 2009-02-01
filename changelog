@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Feb 01 2009] - Jamdog
+  Changed documentation /doc unixshelladminguide to PDF format.
 [Jan 31 2009] - Jamdog
   Added room login trig types, to catch players logging in to a particular room
 [Jan 29 2009] - Rumble
