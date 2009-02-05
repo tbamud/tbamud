@@ -41,7 +41,6 @@
 static int perform_dupe_check(struct descriptor_data *d);
 static struct alias_data *find_alias(struct alias_data *alias_list, char *str);
 static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a);
-static int reserved_word(char *argument);
 static int _parse_name(char *arg, char *name);
 /* sort_commands utility */
 static int sort_commands_helper(const void *a, const void *b);
@@ -819,7 +818,7 @@ int fill_word(char *argument)
   return (search_block(argument, fill, TRUE) >= 0);
 }
 
-static int reserved_word(char *argument)
+int reserved_word(char *argument)
 {
   return (search_block(argument, reserved, TRUE) >= 0);
 }

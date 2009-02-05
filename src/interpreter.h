@@ -1,13 +1,13 @@
 /**
 * @file interpreter.h
 * Public procs, macro defs, subcommand defines for the command intepreter.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 */
 #ifndef _INTERPRETER_H_
 #define _INTERPRETER_H_
@@ -28,6 +28,7 @@ char	*one_word(char *argument, char *first_arg);
 char	*any_one_arg(char *argument, char *first_arg);
 char	*two_arguments(char *argument, char *first_arg, char *second_arg);
 int	fill_word(char *argument);
+int reserved_word(char *argument);
 void	half_chop(char *string, char *arg1, char *arg2);
 void	nanny(struct descriptor_data *d, char *arg);
 int	is_abbrev(const char *arg1, const char *arg2);
@@ -62,12 +63,12 @@ struct command_info {
    int	subcmd;
 };
 
-struct mob_script_command_t { 
-  const char *command_name; 
-  void (*command_pointer) 
-         (struct char_data *ch, char *argument, int cmd, int subcmd); 
-  int subcmd; 
-}; 
+struct mob_script_command_t {
+  const char *command_name;
+  void (*command_pointer)
+         (struct char_data *ch, char *argument, int cmd, int subcmd);
+  int subcmd;
+};
 
 struct alias_data {
   char *alias;
@@ -87,16 +88,16 @@ struct alias_data {
  * of the subcommands are independent from function to function.*/
 /* directions */
 
-/* do_move 
- * 
- * Make sure the SCMD_XX directions are mapped 
- * to the cardinal directions. 
+/* do_move
+ *
+ * Make sure the SCMD_XX directions are mapped
+ * to the cardinal directions.
  */
-#define SCMD_NORTH   NORTH 
-#define SCMD_EAST    EAST 
-#define SCMD_SOUTH   SOUTH 
-#define SCMD_WEST    WEST 
-#define SCMD_UP      UP 
+#define SCMD_NORTH   NORTH
+#define SCMD_EAST    EAST
+#define SCMD_SOUTH   SOUTH
+#define SCMD_WEST    WEST
+#define SCMD_UP      UP
 #define SCMD_DOWN    DOWN
 
 /** @deprecated all old do_poof stuff is deprecated and unused. */
@@ -121,7 +122,7 @@ struct alias_data {
 extern int *cmd_sort_info;
 extern struct command_info *complete_cmd_info;
 extern const struct command_info cmd_info[];
-                                   
+
 #endif /* __INTERPRETER_C__ */
 
 #endif /* _INTERPRETER_H_ */

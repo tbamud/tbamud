@@ -1,18 +1,18 @@
 /**
 * @file act.h
 * Header file for the core act* c files.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
 * CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
-* 
+*
 * @todo Utility functions that could easily be moved elsewhere have been
 * marked. Suggest a review of all utility functions (aka. non ACMDs) and
 * determine if the utility functions should be placed into a lower level
-* (non-ACMD focused) shared module.               
+* (non-ACMD focused) shared module.
 *
 */
 #ifndef _ACT_H_
@@ -21,7 +21,7 @@
 #include "utils.h" /* for the ACMD macro */
 
 /*****************************************************************************
- * Begin Functions and defines for act.comm.c 
+ * Begin Functions and defines for act.comm.c
  ****************************************************************************/
 /* functions with subcommands */
 /* do_gen_comm */
@@ -48,7 +48,7 @@ ACMD(do_reply);
 ACMD(do_tell);
 ACMD(do_write);
 /*****************************************************************************
- * Begin Functions and defines for act.informative.c 
+ * Begin Functions and defines for act.informative.c
  ****************************************************************************/
 /* Utility Functions */
 /** @todo Move to a utility library */
@@ -101,7 +101,7 @@ ACMD(do_where);
 ACMD(do_who);
 
 /*****************************************************************************
- * Begin Functions and defines for act.item.c 
+ * Begin Functions and defines for act.item.c
  ****************************************************************************/
 /* Utility Functions */
 /** @todo Compare with needs of find_eq_pos_script. */
@@ -138,7 +138,7 @@ ACMD(do_wield);
 
 
 /*****************************************************************************
- * Begin Functions and defines for act.movement.c 
+ * Begin Functions and defines for act.movement.c
  ****************************************************************************/
 /* Functions with subcommands */
 /* do_gen_door */
@@ -165,7 +165,7 @@ extern const char *cmd_door[];
 
 
 /*****************************************************************************
- * Begin Functions and defines for act.offensive.c 
+ * Begin Functions and defines for act.offensive.c
  ****************************************************************************/
 /* Functions with subcommands */
 /* do_hit */
@@ -183,7 +183,7 @@ ACMD(do_rescue);
 
 
 /*****************************************************************************
- * Begin Functions and defines for act.other.c 
+ * Begin Functions and defines for act.other.c
  ****************************************************************************/
 /* Functions with subcommands */
 /* do_gen_tog */
@@ -251,7 +251,7 @@ ACMD(do_visible);
 
 
 /*****************************************************************************
- * Begin Functions and defines for act.social.c 
+ * Begin Functions and defines for act.social.c
  ****************************************************************************/
 /* Utility Functions */
 void free_social_messages(void);
@@ -268,7 +268,7 @@ ACMD(do_gmote);
 
 
 /*****************************************************************************
- * Begin Functions and defines for act.wizard.c 
+ * Begin Functions and defines for act.wizard.c
  ****************************************************************************/
 /* Utility Functions */
 /** @todo should probably be moved to a more general file handler module */
@@ -278,6 +278,7 @@ int script_command_interpreter(struct char_data *ch, char *arg);
 room_rnum find_target_room(struct char_data *ch, char *rawroomstr);
 void perform_immort_vis(struct char_data *ch);
 void snoop_check(struct char_data *ch);
+bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_name);
 /* Functions with subcommands */
 /* do_date */
 ACMD(do_date);
