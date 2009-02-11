@@ -118,8 +118,11 @@ int count_quests(qst_vnum low, qst_vnum high)
 {
   int i, j;
 
-  for (i = j = 0; QST_NUM(i) <= high; i++)
-    if (QST_NUM(i) >= low)
+  if (!aquest_table)
+    return 0;
+
+  for (i = j = 0; i < total_quests; i++)
+    if (QST_NUM(i) >= low && QST_NUM(i) <= high)
       j++;
 
   return j;
