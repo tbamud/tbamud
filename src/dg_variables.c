@@ -1110,10 +1110,9 @@ o->contains));
                 snprintf(str, slen, "1");
               else
                 snprintf(str, slen, "0");
-            } else 
-              snprintf(str, slen, "0");
-          } else {
-            sprintbitarray(GET_OBJ_EXTRA(o), extra_bits, EF_ARRAY_MAX, str);
+            } else {
+              sprintbitarray(GET_OBJ_EXTRA(o), extra_bits, EF_ARRAY_MAX, str);
+            }
           }
           break;
 	case 'h':

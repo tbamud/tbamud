@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Feb 17 2009] - Jamdog
+  Fixed a bug with %obj.extra% so that it now returns the list of extra flags
 [Feb 11 2009] - Jamdog
   Fixed a crash bug in count_quests (quest.c) affecting zlist (thanks Fsantin)
 [Feb 05 2009] - Jamdog
