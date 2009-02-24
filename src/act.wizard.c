@@ -1367,7 +1367,7 @@ ACMD(do_vstat)
     break;
   case 'z':
     sprintf(buf2, "zone %d", atoi(buf2));
-    do_show(ch, buf2, 0, 0);
+    do_stat(ch, buf2, 0, 0);
     break;
   case 't':
     sprintf(buf2, "%d", atoi(buf2));
@@ -2353,7 +2353,7 @@ static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int l
   size_t tmp;
 
   if (listall) {
-    int i, j, k, l, m, n;
+    int i, j, k, l, m, n, o;
 
     tmp = snprintf(bufptr, left,
 	"%3d %-30.30s%s By: %-10.10s%s Age: %3d; Reset: %3d (%1d); Range: %5d-%5d\r\n",
@@ -2361,7 +2361,7 @@ static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int l
 	zone_table[zone].age, zone_table[zone].lifespan,
 	zone_table[zone].reset_mode,
 	zone_table[zone].bot, zone_table[zone].top);
-        i = j = k = l = m = n = 0;
+        i = j = k = l = m = n = o = 0;
 
         for (i = 0; i < top_of_world; i++)
           if (world[i].number >= zone_table[zone].bot && world[i].number <= zone_table[zone].top)
@@ -2383,6 +2383,8 @@ static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int l
           if (trig_index[i]->vnum >= zone_table[zone].bot && trig_index[i]->vnum <= zone_table[zone].top)
             n++;
 
+        o = count_quests(zone_table[zone].bot, zone_table[zone].top);
+
 	tmp += snprintf(bufptr + tmp, left - tmp,
                         "       Zone stats:\r\n"
                         "       ---------------\r\n"
@@ -2390,8 +2392,9 @@ static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int l
                         "         Objects:  %2d\r\n"
                         "         Mobiles:  %2d\r\n"
                         "         Shops:    %2d\r\n"
-                        "         Triggers: %2d\r\n",
-                          j, k, l, m, n);
+                        "         Triggers: %2d\r\n"
+                        "         Quests:   %2d\r\n",
+                          j, k, l, m, n, o);
 
     return tmp;
   }

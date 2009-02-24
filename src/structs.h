@@ -1,36 +1,36 @@
 /**
 * @file structs.h
 * Core structures used within the core mud code.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 */
-#ifndef _STRUCTS_H_ 
+#ifndef _STRUCTS_H_
 #define _STRUCTS_H_
 
-/** Intended use of this macro is to allow external packages to work with a 
+/** Intended use of this macro is to allow external packages to work with a
  * variety of versions without modifications.  For instance, an IS_CORPSE()
- * macro was introduced in pl13.  Any future code add-ons could take into 
- * account the version and supply their own definition for the macro if used 
- * on an older version. You are supposed to compare this with the macro 
+ * macro was introduced in pl13.  Any future code add-ons could take into
+ * account the version and supply their own definition for the macro if used
+ * on an older version. You are supposed to compare this with the macro
  * TBAMUD_VERSION() in utils.h.
  * It is read as Major/Minor/Patchlevel - MMmmPP */
 #define _TBAMUD    0x030580
 
 /** If you want equipment to be automatically equipped to the same place
- * it was when players rented, set the define below to 1 because 
+ * it was when players rented, set the define below to 1 because
  * TRUE/FALSE aren't defined yet. */
 #define USE_AUTOEQ	1
 
 /* preamble */
-/** As of bpl20, it should be safe to use unsigned data types for the various 
- * virtual and real number data types.  There really isn't a reason to use 
- * signed anymore so use the unsigned types and get 65,535 objects instead of 
- * 32,768. NOTE: This will likely be unconditionally unsigned later. 
+/** As of bpl20, it should be safe to use unsigned data types for the various
+ * virtual and real number data types.  There really isn't a reason to use
+ * signed anymore so use the unsigned types and get 65,535 objects instead of
+ * 32,768. NOTE: This will likely be unconditionally unsigned later.
  * 0 = use signed indexes; 1 = use unsigned indexes */
 #define CIRCLE_UNSIGNED_INDEX	1
 
@@ -49,7 +49,7 @@
 # define NOWHERE	((IDXTYPE)-1)    /**< nil reference for rooms */
 # define NOTHING	((IDXTYPE)-1)    /**< nil reference for objects */
 # define NOBODY		((IDXTYPE)-1)	   /**< nil reference for mobiles  */
-# define NOFLAG   ((IDXTYPE)-1)    /**< nil reference for flags   */ 
+# define NOFLAG   ((IDXTYPE)-1)    /**< nil reference for flags   */
 #endif
 
 /** Function macro for the mob, obj and room special functions */
@@ -64,10 +64,10 @@
 #define WEST           3    /**< The direction west */
 #define UP             4    /**< The direction up */
 #define DOWN           5    /**< The direction down */
-/** Total number of directions available to move in. BEFORE CHANGING THIS, make 
- * sure you change every other direction and movement based item that this will 
+/** Total number of directions available to move in. BEFORE CHANGING THIS, make
+ * sure you change every other direction and movement based item that this will
  * impact. */
-#define NUM_OF_DIRS    6  
+#define NUM_OF_DIRS    6
 
 /* Room flags: used in room_data.room_flags */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
@@ -135,7 +135,7 @@
 #define CLASS_THIEF       2    /**< PC Class Thief */
 #define CLASS_WARRIOR     3    /**< PC Class Warrior */
 /** Total number of available PC Classes */
-#define NUM_CLASSES	  4  
+#define NUM_CLASSES	  4
 
 /* NPC classes (currently unused - feel free to implement!) */
 #define CLASS_OTHER       0    /**< NPC Class Other (or undefined) */
@@ -241,7 +241,7 @@
 #define PRF_AUTOASSIST   30   /**< Auto-assist toggle */
 #define PRF_AUTOMAP      31   /**< Show map at the side of room descs */
 /** Total number of available PRF flags */
-#define NUM_PRF_FLAGS    32   
+#define NUM_PRF_FLAGS    32
 
 /* Affect bits: used in char_data.char_specials.saved.affected_by */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
@@ -326,7 +326,7 @@
 #define WEAR_WIELD     16  /**< Equipment Location Weapon */
 #define WEAR_HOLD      17  /**< Equipment Location held in offhand */
 /** Total number of available equipment lcoations */
-#define NUM_WEARS      18	
+#define NUM_WEARS      18
 
 /* object-related defines */
 /* Item types: used by obj_data.obj_flags.type_flag */
@@ -469,7 +469,7 @@
 #define SUN_SET		3  /**< Dusk */
 
 /* Sky conditions for weather_data */
-#define SKY_CLOUDLESS  0  /**< Weather = No clouds */ 
+#define SKY_CLOUDLESS  0  /**< Weather = No clouds */
 #define SKY_CLOUDY     1  /**< Weather = Cloudy */
 #define SKY_RAINING    2  /**< Weather = Rain */
 #define SKY_LIGHTNING  3  /**< Weather = Lightning storm */
@@ -487,7 +487,7 @@
 #define PM_ARRAY_MAX    4  /**< # Bytes in Bit vector - Act and Player flags */
 #define PR_ARRAY_MAX    4  /**< # Bytes in Bit vector - Player Pref Flags */
 #define AF_ARRAY_MAX    4  /**< # Bytes in Bit vector - Affect flags */
-#define TW_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Wear Locations */ 
+#define TW_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Wear Locations */
 #define EF_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Extra Flags */
 
 /* other #defined constants */
@@ -507,7 +507,7 @@
 #define LVL_BUILDER	LVL_IMMORT
 
 /** Arbitrary number that won't be in a string */
-#define MAGIC_NUMBER	(0x06)	
+#define MAGIC_NUMBER	(0x06)
 
 /** OPT_USEC determines how many commands will be processed by the MUD per
  * second and how frequently it does socket I/O.  A low setting will cause
@@ -515,7 +515,7 @@
  * more cycling to check.  A high setting (e.g. 1 Hz) may upset your players
  * as actions (such as large speedwalking chains) take longer to be executed.
  * You shouldn't need to adjust this.
- * This will equate to 10 passes per second. 
+ * This will equate to 10 passes per second.
  * @see PASSES_PER_SEC
  * @see RL_SEC
  */
@@ -525,7 +525,7 @@
  * @see RL_SEC
  */
 #define PASSES_PER_SEC	(1000000 / OPT_USEC)
-/** Used with other macros to define at how many heartbeats a control loop 
+/** Used with other macros to define at how many heartbeats a control loop
  * gets executed. Helps to translate pulse counts to real seconds for
  * human comprehension.
  * @see PASSES_PER_SEC
@@ -546,11 +546,11 @@
 #define PULSE_IDLEPWD   (15 RL_SEC)
 /** Currently unused. */
 #define PULSE_SANITY    (30 RL_SEC)
-/** How often to log # connected sockets and # active players. 
+/** How often to log # connected sockets and # active players.
  * Currently set for 5 minutes.
  */
 #define PULSE_USAGE     (5 * 60 RL_SEC)
-/** Controls when to save the current ingame MUD time to disk. 
+/** Controls when to save the current ingame MUD time to disk.
  * This should be set >= SECS_PER_MUD_HOUR */
 #define PULSE_TIMESAVE	(30 * 60 RL_SEC)
 
@@ -572,7 +572,7 @@
 #define HOST_LENGTH           40     /**< Max hostname resolution length */
 #define PLR_DESC_LENGTH       4096   /**< Max length for PC description */
 #define MAX_SKILLS            200    /**< Max number of skills/spells */
-#define MAX_AFFECT            32     /**< Max number of player affections */ 
+#define MAX_AFFECT            32     /**< Max number of player affections */
 #define MAX_OBJ_AFFECT        6      /**< Max object affects */
 #define MAX_NOTE_LENGTH       4000   /**< Max length of text on a note obj */
 #define MAX_LAST_ENTRIES      6000   /**< Max log entries?? */
@@ -580,7 +580,7 @@
 #define MAX_HELP_ENTRY        MAX_STRING_LENGTH /**< Max size of help entry */
 #define MAX_COMPLETED_QUESTS  1024   /**< Maximum number of completed quests allowed */
 
-/** Define the largest set of commands for a trigger. 
+/** Define the largest set of commands for a trigger.
  * 16k should be plenty and then some. */
 #define MAX_CMD_LENGTH 16384
 
@@ -601,7 +601,7 @@ typedef signed char byte; /**< Technically 1 signed byte; vals should only = TRU
 typedef IDXTYPE room_vnum;  /**< vnum specifically for room */
 typedef IDXTYPE obj_vnum;   /**< vnum specifically for object */
 typedef IDXTYPE mob_vnum;   /**< vnum specifically for mob (NPC) */
-typedef IDXTYPE zone_vnum;  /**< vnum specifically for zone */ 
+typedef IDXTYPE zone_vnum;  /**< vnum specifically for zone */
 typedef IDXTYPE shop_vnum;  /**< vnum specifically for shop */
 typedef IDXTYPE trig_vnum;  /**< vnum specifically for triggers */
 typedef IDXTYPE qst_vnum;   /**< vnum specifically for quests */
@@ -615,15 +615,15 @@ typedef IDXTYPE shop_rnum;  /**< references an instance of a shop */
 typedef IDXTYPE trig_rnum;  /**< references an instance of a trigger */
 typedef IDXTYPE qst_rnum;   /**< references an instance of a quest */
 
-/** Bitvector type for 32 bit unsigned long bitvectors. 'unsigned long long' 
- * will give you at least 64 bits if you have GCC. You'll have to search 
- * throughout the code for "bitvector_t" and change them yourself if you'd 
+/** Bitvector type for 32 bit unsigned long bitvectors. 'unsigned long long'
+ * will give you at least 64 bits if you have GCC. You'll have to search
+ * throughout the code for "bitvector_t" and change them yourself if you'd
  * like this extra flexibility. */
 typedef unsigned long int bitvector_t;
 
 /** Extra description: used in objects, mobiles, and rooms. For example,
  * a 'look hair' might pull up an extra description (if available) for
- * the mob, object or room. 
+ * the mob, object or room.
  * Multiple extra descriptions on the same object are implemented as a
  * linked list. */
 struct extra_descr_data
@@ -635,9 +635,9 @@ struct extra_descr_data
 
 /* object-related structures */
 /**< Number of elements in the object value array. Raising this will provide
- * more configurability per object type, and shouldn't break anything. 
+ * more configurability per object type, and shouldn't break anything.
  * DO NOT LOWER from the default value of 4. */
-#define NUM_OBJ_VAL_POSITIONS 4 
+#define NUM_OBJ_VAL_POSITIONS 4
 
 /** object flags used in obj_data. These represent the instance values for
  * a real object, values that can change during gameplay. */
@@ -693,7 +693,7 @@ struct obj_data
   struct char_data *sitting_here; /**< For furniture, who is sitting in it */
 };
 
-/** Instance info for an object that gets saved to disk. 
+/** Instance info for an object that gets saved to disk.
  * DO NOT CHANGE if you are using binary object files
  * and already have a player base and don't want to do a player wipe. */
 struct obj_file_elem
@@ -708,20 +708,20 @@ struct obj_file_elem
   int weight;                       /**< Object weight */
   int timer;                        /**< Current object timer setting */
   int bitvector[AF_ARRAY_MAX];      /**< Object affects */
-  struct obj_affected_type affected[MAX_OBJ_AFFECT]; /**< Affects to mobs */ 
+  struct obj_affected_type affected[MAX_OBJ_AFFECT]; /**< Affects to mobs */
 };
 
 /** Header block for rent files.
  * DO NOT CHANGE the structure if you are using binary object files
- * and already have a player base and don't want to do a player wipe. 
+ * and already have a player base and don't want to do a player wipe.
  * If you are using binary player files, feel free to turn the spare
  * variables into something more meaningful, as long as you keep the
- * int datatype. 
- * NOTE: This is *not* used with the ascii playerfiles. 
+ * int datatype.
+ * NOTE: This is *not* used with the ascii playerfiles.
  * NOTE 2: This structure appears to be unused in this codebase? */
 struct rent_info
 {
-  int time;              
+  int time;
   int rentcode;          /**< How this character rented */
   int net_cost_per_diem; /**< ? Appears to be unused ? */
   int gold;              /**< ? Appears to be unused ? */
@@ -781,7 +781,7 @@ struct memory_rec_struct
 /** memory_rec_struct typedef */
 typedef struct memory_rec_struct memory_rec;
 
-/** This structure is purely intended to be an easy way to transfer and return 
+/** This structure is purely intended to be an easy way to transfer and return
  * information about time (real or mudwise). */
 struct time_info_data
 {
@@ -800,7 +800,7 @@ struct time_data
 };
 
 /** The pclean_criteria_data is set up in config.c and used in db.c to determine
- * the conditions which will cause a player character to be deleted from disk 
+ * the conditions which will cause a player character to be deleted from disk
  * if the automagic pwipe system is enabled (see config.c). */
 struct pclean_criteria_data
 {
@@ -825,8 +825,8 @@ struct char_player_data
   ubyte height;                  /**< PC / NPC height */
 };
 
-/** Character abilities. Different instances of this structure are used for 
- * both inherent and current ability scores (like when poison affects the 
+/** Character abilities. Different instances of this structure are used for
+ * both inherent and current ability scores (like when poison affects the
  * player strength). */
 struct char_ability_data
 {
@@ -852,9 +852,9 @@ struct char_point_data
   /** Current armor class. Internal use goes from -100 (totally armored) to
    * 100 (totally naked). Externally expressed as -10 (totally armored) to
    * 10 (totally naked). Currently follows the old and decrepit Advanced
-   * Dungeons and Dragons method of dealing with character defense, or 
-   * Armor class. */ 
-  sh_int armor;    
+   * Dungeons and Dragons method of dealing with character defense, or
+   * Armor class. */
+  sh_int armor;
   int gold;        /**< Current gold carried on character */
   int bank_gold;   /**< Gold the char has in a bank account	*/
   int exp;         /**< The experience points, or value, of the character. */
@@ -960,7 +960,7 @@ struct affected_type
 struct follow_type
 {
   struct char_data *follower; /**< Character directly following. */
-  struct follow_type *next;   /**< Next character following. */ 
+  struct follow_type *next;   /**< Next character following. */
 };
 
 /** Master structure for PCs and NPCs. */
@@ -1009,7 +1009,7 @@ struct txt_block
   struct txt_block *next; /**< ? */
 };
 
-/** ? */ 
+/** ? */
 struct txt_q
 {
   struct txt_block *head; /**< ? */
@@ -1213,7 +1213,7 @@ struct guild_info_type
 
 /* Config structs */
 
-/** The game configuration structure used for configurating the game play 
+/** The game configuration structure used for configurating the game play
  * variables. */
 struct game_data
 {
@@ -1237,8 +1237,8 @@ struct game_data
   int map_option;         /**< MAP_ON, MAP_OFF or MAP_IMM_ONLY      */
   int map_size;           /**< Default size for map command         */
   int minimap_size;       /**< Default size for mini-map (automap)  */
-  int script_players;     /**< Is attaching scripts to players allowed? */ 
-  
+  int script_players;     /**< Is attaching scripts to players allowed? */
+
   char *OK; /**< When player receives 'Okay.' text.    */
   char *NOPERSON; /**< 'No one by that name here.'   */
   char *NOEFFECT; /**< 'Nothing seems to happen.'            */
@@ -1256,7 +1256,7 @@ struct crash_save_data
   int rent_file_timeout; /**< Lifetime of normal rent files in days */
 };
 
-/** Important room numbers. This structure stores vnums, not real array 
+/** Important room numbers. This structure stores vnums, not real array
  * numbers. */
 struct room_numbers
 {
@@ -1285,6 +1285,7 @@ struct game_operation
   char *MENU; /**< The MAIN MENU.        */
   char *WELC_MESSG; /**< The welcome message.      */
   char *START_MESSG; /**< The start msg for new characters.  */
+  int medit_advanced; /**< Does the medit OLC show the advanced stats menu ? */
 };
 
 /** The Autowizard options. */
@@ -1294,9 +1295,9 @@ struct autowiz_data
   int min_wizlist_lev; /**< Minimun level to show on wizlist.  */
 };
 
-/** 
+/**
  Main Game Configuration Structure.
- Global variables that can be changed within the game are held within this 
+ Global variables that can be changed within the game are held within this
  structure. During gameplay, elements within this structure can be altered,
  thus affecting the gameplay immediately, and avoiding the need to recompile
  the code.

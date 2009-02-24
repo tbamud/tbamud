@@ -1,10 +1,10 @@
 /**
 * @file oasis.h
 * Oasis online creation general defines.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
+*
 * This source code, which was not part of the CircleMUD legacy code,
 * is attributed to:
 * By Levork. Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.
@@ -58,7 +58,7 @@
 #define MAX_OBJ_TIMER       1071000
 
 
-/* this defines how much memory is alloacted for 'bit strings' when saving in 
+/* this defines how much memory is alloacted for 'bit strings' when saving in
  * OLC. Remember to change it if you go for longer bitvectors. */
 #define BIT_STRING_LENGTH 33
 
@@ -230,14 +230,15 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define ZEDIT_SARG2			21
 
 /* Submodes of MEDIT connectedness. */
-#define MEDIT_MAIN_MENU              	0
-#define MEDIT_KEYWORD			1
-#define MEDIT_S_DESC			2
-#define MEDIT_L_DESC			3
-#define MEDIT_D_DESC			4
-#define MEDIT_NPC_FLAGS			5
-#define MEDIT_AFF_FLAGS			6
-#define MEDIT_CONFIRM_SAVESTRING	7
+#define MEDIT_MAIN_MENU            	0
+#define MEDIT_KEYWORD               1
+#define MEDIT_S_DESC                2
+#define MEDIT_L_DESC                3
+#define MEDIT_D_DESC                4
+#define MEDIT_NPC_FLAGS             5
+#define MEDIT_AFF_FLAGS             6
+#define MEDIT_CONFIRM_SAVESTRING    7
+#define MEDIT_STATS_MENU            8
 
 /* Numerical responses. */
 #define MEDIT_NUMERICAL_RESPONSE	10
@@ -259,6 +260,17 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define MEDIT_ALIGNMENT			26
 #define MEDIT_DELETE                    27
 #define MEDIT_COPY                      28
+#define MEDIT_STR                       29
+#define MEDIT_INT                       30
+#define MEDIT_WIS                       31
+#define MEDIT_DEX                       32
+#define MEDIT_CON                       33
+#define MEDIT_CHA                       34
+#define MEDIT_PARA                      35
+#define MEDIT_ROD                       36
+#define MEDIT_PETRI                     37
+#define MEDIT_BREATH                    38
+#define MEDIT_SPELL                     39
 
 /* Submodes of SEDIT connectedness. */
 #define SEDIT_MAIN_MENU              	0
@@ -356,7 +368,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define HEDIT_CONFIRM_EDIT              1
 #define HEDIT_CONFIRM_ADD               2
 #define HEDIT_MAIN_MENU                 3
-#define HEDIT_ENTRY                     4   
+#define HEDIT_ENTRY                     4
 #define HEDIT_KEYWORDS                  5
 #define HEDIT_MIN_LEVEL                 6
 
@@ -373,6 +385,7 @@ void medit_save_internally(struct descriptor_data *d);
 void medit_parse(struct descriptor_data *d, char *arg);
 void medit_string_cleanup(struct descriptor_data *d, int terminator);
 ACMD(do_oasis_medit);
+void medit_autoroll_stats(struct descriptor_data *d);
 
 /* public functions from oedit.c */
 void oedit_setup_existing(struct descriptor_data *d, int rnum);

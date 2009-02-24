@@ -28,23 +28,23 @@
  * to change one of the constants (assuming you keep your object files around)
  * is change the constant in this file and type 'make'.  Make will recompile
  * this file and relink; you don't have to wait for the whole thing to recompile
- * as you do if you change a header file. I realize that it would be slightly 
- * more efficient to have lots of #defines strewn about, so that, for example, 
- * the autowiz code isn't compiled at all if you don't want to use autowiz.  
- * However, the actual code for the various options is quite small, as is the 
- * computational time in checking the option you've selected at run-time, so 
- * I've decided the convenience of having all your options in this one file 
+ * as you do if you change a header file. I realize that it would be slightly
+ * more efficient to have lots of #defines strewn about, so that, for example,
+ * the autowiz code isn't compiled at all if you don't want to use autowiz.
+ * However, the actual code for the various options is quite small, as is the
+ * computational time in checking the option you've selected at run-time, so
+ * I've decided the convenience of having all your options in this one file
  * outweighs the efficency of doing it the other way. */
 
 /* YES / NO; TRUE / FALSE are all defined in utils.h */
 
-/* Can Scripts be attached to players? */ 
+/* Can Scripts be attached to players? */
 int script_players = NO;
 
-/* pk_allowed sets the tone of the entire game.  If pk_allowed is set to NO, 
- * then players will not be allowed to kill, summon, charm, or sleep other 
+/* pk_allowed sets the tone of the entire game.  If pk_allowed is set to NO,
+ * then players will not be allowed to kill, summon, charm, or sleep other
  * players, as well as a variety of other "asshole player" protections. However,
- * if you decide you want to have an all-out knock-down drag-out PK Mud, just 
+ * if you decide you want to have an all-out knock-down drag-out PK Mud, just
  * set pk_allowed to YES - and anything goes. */
 int pk_allowed = NO;
 
@@ -57,7 +57,7 @@ int level_can_shout = 1;
 /* Number of movement points it costs to holler. */
 int holler_move_cost = 20;
 
-/* How many people can get into a tunnel?  The default is two, but there is 
+/* How many people can get into a tunnel?  The default is two, but there is
  * also an alternate message in the case of one person being allowed. */
 int tunnel_size = 2;
 
@@ -91,18 +91,18 @@ const char *NOPERSON = "No one by that name here.\r\n";
 const char *NOEFFECT = "Nothing seems to happen.\r\n";
 
 /* You can define or not define TRACK_THOUGH_DOORS, depending on whether or not
- * you want track to find paths which lead through closed or hidden doors. A 
- * setting of 'NO' means to not go through the doors while 'YES' will pass 
+ * you want track to find paths which lead through closed or hidden doors. A
+ * setting of 'NO' means to not go through the doors while 'YES' will pass
  * through doors to find the target. */
 int track_through_doors = YES;
 
-/* If you do not want mortals to level up to immortal once they have enough 
- * experience, then set this to YES. Subtracting this from LVL_IMMORT gives 
+/* If you do not want mortals to level up to immortal once they have enough
+ * experience, then set this to YES. Subtracting this from LVL_IMMORT gives
  * the top level that people can advance to in gain_exp() in limits.c */
 int no_mort_to_immort = YES;
 
 /* RENT/CRASHSAVE OPTIONS */
-/* Should the MUD allow you to 'rent' for free?  (i.e. if you just quit, your 
+/* Should the MUD allow you to 'rent' for free?  (i.e. if you just quit, your
  * objects are saved at no cost). */
 int free_rent = YES;
 
@@ -112,8 +112,8 @@ int max_obj_save = 30;
 /* Receptionist's surcharge on top of item costs. */
 int min_rent_cost = 100;
 
-/* Should the game automatically save people?  (i.e., save player data every 4 
- * kills (on average), and Crash-save as defined below. If auto_save is YES, 
+/* Should the game automatically save people?  (i.e., save player data every 4
+ * kills (on average), and Crash-save as defined below. If auto_save is YES,
  * then the 'save' command will be disabled to prevent item duplication via
  * game crashes. */
 int auto_save = YES;
@@ -132,15 +132,15 @@ int rent_file_timeout = 30;
 /* Do you want to automatically wipe players who've been gone too long? */
 int auto_pwipe = NO;
 
-/* Autowipe deletion criteria. This struct holds information used to determine 
- * which players to wipe when the mud boots.  The levels must be in ascending 
- * order, with a descending level marking the end of the array.  A level -1 
- * entry in the beginning is the case for players with the PLR_DELETED flag. 
+/* Autowipe deletion criteria. This struct holds information used to determine
+ * which players to wipe when the mud boots.  The levels must be in ascending
+ * order, with a descending level marking the end of the array.  A level -1
+ * entry in the beginning is the case for players with the PLR_DELETED flag.
  * The values below match the stock purgeplay.c criteria.
 
    Detailed explanation by array element:
    * Element 0, level -1, days 0: Players with PLR_DELETED flag are always wiped
-   * Element 1, level 0, days 0: Players at level 0 have created a character, 
+   * Element 1, level 0, days 0: Players at level 0 have created a character,
      but have never actually entered the game, so always wipe them.
    * Element 2, level 1, days 4: Players at level 1 are wiped if they haven't
      logged on in the past 4 days.
@@ -149,7 +149,7 @@ int auto_pwipe = NO;
    * Element 4, level 10, days 30: Players level 5-10 get 30 days.
    * Element 5, level LVL_IMMORT - 1, days 60: All other mortals get 60 days.
    * Element 6, level LVL_IMPL, days 90: Immortals get 90 days.
-   * Element 7: Because -2 is less than LVL_IMPL, this is assumed to be the end 
+   * Element 7: Because -2 is less than LVL_IMPL, this is assumed to be the end
      of the criteria.  The days entry is not used in this case. */
 struct pclean_criteria_data pclean_criteria[] = {
 /*	LEVEL		DAYS	*/
@@ -175,7 +175,7 @@ room_vnum immort_start_room = 1204;
 /* Virtual number of room that frozen players should enter at. */
 room_vnum frozen_start_room = 1202;
 
-/* Virtual numbers of donation rooms.  note: you must change code in do_drop of 
+/* Virtual numbers of donation rooms.  note: you must change code in do_drop of
  * act.item.c if you change the number of non-NOWHERE donation rooms. */
 room_vnum donation_room_1 = 3063;
 room_vnum donation_room_2 = 5510;
@@ -187,23 +187,23 @@ room_vnum donation_room_3 = 235;
  * exit with a warning when encountering stock world files. */
 int bitwarning = FALSE;
 
-/* If you want to look at normal world files but DO NOT want to save to 128bit 
- * format, turn this to false. However, do not save through olc, or your 
+/* If you want to look at normal world files but DO NOT want to save to 128bit
+ * format, turn this to false. However, do not save through olc, or your
  * world files will be 128bit anyway. */
 int bitsavetodisk = TRUE;
 
-/* This is the default port on which the game should run if no port is given on 
- * the command-line.  NOTE WELL: If you're using the 'autorun' script, the port 
- * number there will override this setting. Change the PORT= line in autorun 
+/* This is the default port on which the game should run if no port is given on
+ * the command-line.  NOTE WELL: If you're using the 'autorun' script, the port
+ * number there will override this setting. Change the PORT= line in autorun
  * instead of (or in addition to) changing this. */
 ush_int DFLT_PORT = 4000;
 
-/* IP address to which the MUD should bind.  This is only useful if you're 
- * running Circle on a host that host more than one IP interface, and you only 
- * want to bind to *one* of them instead of all of them. Setting this to NULL 
- * (the default) causes Circle to bind to all interfaces on the host.  
- * Otherwise, specify a numeric IP address in dotted quad format, and Circle 
- * will only bind to that IP address.  (Of course, that IP address must be one 
+/* IP address to which the MUD should bind.  This is only useful if you're
+ * running Circle on a host that host more than one IP interface, and you only
+ * want to bind to *one* of them instead of all of them. Setting this to NULL
+ * (the default) causes Circle to bind to all interfaces on the host.
+ * Otherwise, specify a numeric IP address in dotted quad format, and Circle
+ * will only bind to that IP address.  (Of course, that IP address must be one
  * of your host's interfaces, or it won't work.) */
 const char *DFLT_IP = NULL; /* bind to all interfaces */
 /* const char *DFLT_IP = "192.168.1.1";  -- bind only to one interface */
@@ -211,9 +211,9 @@ const char *DFLT_IP = NULL; /* bind to all interfaces */
 /* Default directory to use as data directory. */
 const char *DFLT_DIR = "lib";
 
-/* What file to log messages to (ex: "log/syslog").  Setting this to NULL means 
- * you want to log to stderr, which was the default in earlier versions of 
- * Circle.  If you specify a file, you don't get messages to the screen. (Hint: 
+/* What file to log messages to (ex: "log/syslog").  Setting this to NULL means
+ * you want to log to stderr, which was the default in earlier versions of
+ * Circle.  If you specify a file, you don't get messages to the screen. (Hint:
  * Try 'tail -f' if you have a UNIX machine.) */
 const char *LOGNAME = NULL;
 /* const char *LOGNAME = "log/syslog";  -- useful for Windows users */
@@ -237,23 +237,23 @@ int max_bad_pws = 3;
  * rather than what is currently done? */
 int siteok_everyone = TRUE;
 
-/* Some nameservers are very slow and cause the game to lag terribly every time 
+/* Some nameservers are very slow and cause the game to lag terribly every time
  * someone logs in.  The lag is caused by the gethostbyaddr() function which is
- * responsible for resolving numeric IP addresses to alphabetic names. 
+ * responsible for resolving numeric IP addresses to alphabetic names.
  * Sometimes, nameservers can be so slow that the incredible lag caused by
  * gethostbyaddr() isn't worth the luxury of having names instead of numbers
- * for players' sitenames. If your nameserver is fast, set the variable below 
- * to NO.  If your nameserver is slow, of it you would simply prefer to have 
+ * for players' sitenames. If your nameserver is fast, set the variable below
+ * to NO.  If your nameserver is slow, of it you would simply prefer to have
  * numbers instead of names for some other reason, set the variable to YES.
- * You can experiment with the setting of nameserver_is_slow on-line using the 
+ * You can experiment with the setting of nameserver_is_slow on-line using the
  * SLOWNS command from within the MUD. */
 int nameserver_is_slow = NO;
 
 /* Will changes save automaticaly in OLC? */
 int auto_save_olc = YES;
 
-/* if you wish to enable Aedit, set this to YES. This will make the mud look 
- * for a file called socials.new, which is in a different format than the 
+/* if you wish to enable Aedit, set this to YES. This will make the mud look
+ * for a file called socials.new, which is in a different format than the
  * stock socials file. */
 int use_new_socials = YES;
 
@@ -280,8 +280,8 @@ const char *START_MESSG =
 "meeting people from around the world!\r\n";
 
 /* AUTOWIZ OPTIONS */
-/* Should the game automatically create a new wizlist/immlist every time someone 
- * immorts, or is promoted to a higher (or lower) god level? NOTE: this only 
+/* Should the game automatically create a new wizlist/immlist every time someone
+ * immorts, or is promoted to a higher (or lower) god level? NOTE: this only
  * works under UNIX systems. */
 int use_autowiz = YES;
 
@@ -299,3 +299,6 @@ int display_closed_doors = YES;
 int map_option = MAP_IMM_ONLY;
 int default_map_size = 6;
 int default_minimap_size = 2;
+
+/* Medit Stats menu - show 'advanced' options? */
+int medit_advanced_stats = YES;

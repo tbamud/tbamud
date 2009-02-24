@@ -313,6 +313,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "wear"     , "wea"     , POS_RESTING , do_wear     , 0, 0 },
   { "weather"  , "weather" , POS_RESTING , do_weather  , 0, 0 },
   { "who"      , "wh"      , POS_DEAD    , do_who      , 0, 0 },
+  { "whois"    , "whoi"    , POS_DEAD    , do_whois    , 0, 0 },
   { "whoami"   , "whoami"  , POS_DEAD    , do_gen_ps   , 0, SCMD_WHOAMI },
   { "where"    , "where"   , POS_RESTING , do_where    , 1, 0 },
   { "whisper"  , "whisper" , POS_RESTING , do_spec_comm, 0, SCMD_WHISPER },

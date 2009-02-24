@@ -1,26 +1,26 @@
 /**
-* @file utils.h                                            
-* Utility macros and prototypes of utility functions.    
-*                                                                         
+* @file utils.h
+* Utility macros and prototypes of utility functions.
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
 * CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
-* 
-* @todo Merge structs, random and other very generic functions and macros into 
+*
+* @todo Merge structs, random and other very generic functions and macros into
 * the utils module.
-* @todo Take more mud specific functions and function prototypes (follower 
+* @todo Take more mud specific functions and function prototypes (follower
 * functions, move functions, char_from_furniture) out of utils and declare /
-* define elsewhere.                
+* define elsewhere.
 */
 #ifndef _UTILS_H_ /* Begin header file protection */
 #define _UTILS_H_
 
 /** Definition of the action command, for the do_ series of in game functions.
  * This macro is placed here (for now) because it's too general of a macro
- * to be first defined in interpreter.h. The reason for using a macro is 
+ * to be first defined in interpreter.h. The reason for using a macro is
  * to allow for easier addition of parameters to the otherwise generic and
  * static function structure. */
 #define ACMD(name)  \
@@ -29,7 +29,7 @@
 /* external declarations and prototypes */
 
 /** direct all log() references to basic_mud_log() function. */
-#define log			basic_mud_log   
+#define log			basic_mud_log
 
 /** Standard line size, used for many string limits. */
 #define READ_SIZE	256
@@ -148,7 +148,7 @@ void char_from_furniture(struct char_data *ch);
 
 /* get_filename() types of files to open */
 #define CRASH_FILE       0 /**< Open up a player crash save file */
-#define ETEXT_FILE       1 /**< ???? */ 
+#define ETEXT_FILE       1 /**< ???? */
 #define SCRIPT_VARS_FILE 2 /**< Reference to a global variable file. */
 #define PLR_FILE         3 /**< The standard player file */
 
@@ -160,16 +160,16 @@ void char_from_furniture(struct char_data *ch);
 #define BFS_NO_PATH		(-3)     /**< No path through here. */
 
 /** Number of real life seconds per mud hour.
- * @todo The definitions based on SECS_PER_MUD_HOUR should be configurable. 
+ * @todo The definitions based on SECS_PER_MUD_HOUR should be configurable.
  * See act.informative.c and utils.c for other places to change. */
 #define SECS_PER_MUD_HOUR	75
-/** Real life seconds in one mud day. 
+/** Real life seconds in one mud day.
  * Current calculation = 30 real life minutes. */
 #define SECS_PER_MUD_DAY	(24*SECS_PER_MUD_HOUR)
-/** Real life seconds per mud month. 
+/** Real life seconds per mud month.
  * Current calculation = 17.5 real life hours */
 #define SECS_PER_MUD_MONTH	(35*SECS_PER_MUD_DAY)
-/** Real life seconds per mud month. 
+/** Real life seconds per mud month.
  * Current calculation ~= 12.4 real life days */
 #define SECS_PER_MUD_YEAR	(17*SECS_PER_MUD_MONTH)
 
@@ -198,15 +198,15 @@ void char_from_furniture(struct char_data *ch);
 
 /** If ch is equal to either a newline or a carriage return, return 1,
  * else 0.
- * @todo Recommend using the ? operator for clarity. */ 
+ * @todo Recommend using the ? operator for clarity. */
 #define ISNEWL(ch) ((ch) == '\n' || (ch) == '\r')
 
 /** If string begins a vowel (upper or lower case), return "an"; else return
  * "a". */
 #define AN(string) (strchr("aeiouAEIOU", *string) ? "an" : "a")
 
-/** A calloc based memory allocation macro. 
- * @param result Pointer to created memory. 
+/** A calloc based memory allocation macro.
+ * @param result Pointer to created memory.
  * @param type The type of memory (int, struct char_data, etc.).
  * @param number How many of type to make. */
 #define CREATE(result, type, number)  do {\
@@ -217,19 +217,19 @@ void char_from_furniture(struct char_data *ch);
 
 /** A realloc based memory reallocation macro. Reminder: realloc can reduce
  * the size of an array as well as increase it.
- * @param result Pointer to created memory. 
+ * @param result Pointer to created memory.
  * @param type The type of memory (int, struct char_data, etc.).
- * @param number How many of type to make. */ 
+ * @param number How many of type to make. */
 #define RECREATE(result, type, number) do {\
   if (!((result) = (type *) realloc ((result), sizeof(type) * (number))))\
 		{ perror("SYSERR: realloc failure"); abort(); } } while(0)
 
-/** Remove an item from a linked list and reset the links. 
+/** Remove an item from a linked list and reset the links.
  * If item is at the list head, change the head, else traverse the
  * list looking for the item before the one to be removed.
- * @pre Requires that a variable 'temp' be declared as the same type as the 
- * list to be manipulated. 
- * @post List pointers are correctly reset and item is no longer in the list. 
+ * @pre Requires that a variable 'temp' be declared as the same type as the
+ * list to be manipulated.
+ * @post List pointers are correctly reset and item is no longer in the list.
  * item can now be changed, removed, etc independently from the list it was in.
  * @param item Pointer to item to remove from the list.
  * @param head Pointer to the head of the linked list.
@@ -276,7 +276,7 @@ void char_from_furniture(struct char_data *ch);
  * for it, 'wimpy' would be an extremely bad thing for a mob to do, as an
  * example.  If you really couldn't care less, change this to a '#if 0'. */
 #if 1
-/** Warn if accessing player_specials on a mob. 
+/** Warn if accessing player_specials on a mob.
  * @todo Subtle bug in the var reporting, but works well for now. */
 #define CHECK_PLAYER_SPECIAL(ch, var) \
 	(*(((ch)->player_specials == &dummy_mob) ? (log("SYSERR: Mob using '"#var"' at %s:%d.", __FILE__, __LINE__), &(var)) : &(var)))
@@ -300,11 +300,11 @@ void char_from_furniture(struct char_data *ch);
 #define SPELL_ROUTINES(spl)	(spell_info[spl].routines)
 
 /* IS_MOB() acts as a VALID_MOB_RNUM()-like function.*/
-/** 1 if the character has the NPC bit set, 0 if the character does not. 
+/** 1 if the character has the NPC bit set, 0 if the character does not.
  * Used to prevents NPCs and mobs from doing things they shouldn't, even
  * when mobs are possessed or charmed by a player. */
 #define IS_NPC(ch)	(IS_SET_AR(MOB_FLAGS(ch), MOB_ISNPC))
-/** 1 if the character is a real NPC, 0 if the character is not. */  
+/** 1 if the character is a real NPC, 0 if the character is not. */
 #define IS_MOB(ch)	(IS_NPC(ch) && GET_MOB_RNUM(ch) <= top_of_mobt && \
 				GET_MOB_RNUM(ch) != NOBODY)
 
@@ -461,7 +461,7 @@ void char_from_furniture(struct char_data *ch);
 /** Alignment value for ch. */
 #define GET_ALIGNMENT(ch) ((ch)->char_specials.saved.alignment)
 
-/** Return condition i (DRUNK, HUNGER, THIRST) of ch. */ 
+/** Return condition i (DRUNK, HUNGER, THIRST) of ch. */
 #define GET_COND(ch, i)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.conditions[(i)]))
 /** The room to load player ch into. */
 #define GET_LOADROOM(ch)	CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.load_room))
@@ -482,8 +482,8 @@ void char_from_furniture(struct char_data *ch);
 #define POOFIN(ch)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->poofin))
 /** The poofout string for the ch. */
 #define POOFOUT(ch)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->poofout))
-/** The OLC zoon permission for ch. 
- * @deprecated Currently unused? */ 
+/** The OLC zoon permission for ch.
+ * @deprecated Currently unused? */
 #define GET_OLC_ZONE(ch)	CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.olc_zone))
 /** Currently unused?
  * @deprecated Currently unused? */
@@ -499,9 +499,9 @@ void char_from_furniture(struct char_data *ch);
 #define GET_PREF(ch)      ((ch)->pref)
 /** Get host name or ip of ch. */
 #define GET_HOST(ch)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->host))
-#define GET_LAST_MOTD(ch)       CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.lastmotd)) 
-#define GET_LAST_NEWS(ch)       CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.lastnews)) 
-/** Get channel history i for ch. */ 
+#define GET_LAST_MOTD(ch)       CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.lastmotd))
+#define GET_LAST_NEWS(ch)       CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.lastnews))
+/** Get channel history i for ch. */
 #define GET_HISTORY(ch, i)      CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.comm_hist[i]))
 /** Return the page length (height) for ch. */
 #define GET_PAGE_LENGTH(ch)     CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.page_length))
@@ -518,7 +518,7 @@ void char_from_furniture(struct char_data *ch);
 #define GET_QUEST_TIME(ch)      CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.quest_time))
 /** The number of quests completed by ch. */
 #define GET_NUM_QUESTS(ch)      CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.num_completed_quests))
-/** The type of quest ch is currently participating in. */  
+/** The type of quest ch is currently participating in. */
 #define GET_QUEST_TYPE(ch)      (real_quest(GET_QUEST((ch))) != NOTHING ? aquest_table[real_quest(GET_QUEST((ch)))].type : AQ_UNDEFINED )
 
 /** The current skill level of ch for skill i. */
@@ -557,7 +557,7 @@ void char_from_furniture(struct char_data *ch);
 #define CAN_CARRY_N(ch) (5 + (GET_DEX(ch) >> 1) + (GET_LEVEL(ch) >> 1))
 /** Return whether or not ch is awake. */
 #define AWAKE(ch) (GET_POS(ch) > POS_SLEEPING)
-/** Defines if ch can see in general in the dark. */ 
+/** Defines if ch can see in general in the dark. */
 #define CAN_SEE_IN_DARK(ch) \
    (AFF_FLAGGED(ch, AFF_INFRAVISION) || (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_HOLYLIGHT)))
 
@@ -590,7 +590,7 @@ void char_from_furniture(struct char_data *ch);
                         STATE(d) == CON_ZEDIT || STATE(d) == CON_SEDIT ||       \
                         STATE(d) == CON_CEDIT || STATE(d) == CON_PLAYING ||     \
                         STATE(d) == CON_TRIGEDIT || STATE(d) == CON_AEDIT ||    \
-                        STATE(d) == CON_HEDIT || STATE(d) == CON_QEDIT) 
+                        STATE(d) == CON_HEDIT || STATE(d) == CON_QEDIT)
 
 /** Defines if it is ok to send a message to ch. */
 #define SENDOK(ch)	(((ch)->desc || SCRIPT_CHECK((ch), MTRIG_ACT)) && \
@@ -598,8 +598,8 @@ void char_from_furniture(struct char_data *ch);
 			!PLR_FLAGGED((ch), PLR_WRITING))
 
 /* object utils */
-/** Check for NOWHERE or the top array index? If using unsigned types, the top 
- * array index will catch everything. If using signed types, NOTHING will 
+/** Check for NOWHERE or the top array index? If using unsigned types, the top
+ * array index will catch everything. If using signed types, NOTHING will
  * catch the majority of bad accesses. */
 #define VALID_OBJ_RNUM(obj)	(GET_OBJ_RNUM(obj) <= top_of_objt && \
 				 GET_OBJ_RNUM(obj) != NOTHING)
@@ -647,7 +647,7 @@ void char_from_furniture(struct char_data *ch);
 #define GET_OBJ_SHORT(obj)      ((obj)->short_description)
 
 /* Compound utilities and other macros. */
-/** Used to compute version. To see if the code running is newer than 3.0pl13, 
+/** Used to compute version. To see if the code running is newer than 3.0pl13,
  * you would use: if _CIRCLEMUD > CIRCLEMUD_VERSION(3,0,13) */
 #define CIRCLEMUD_VERSION(major, minor, patchlevel) \
        (((major) << 16) + ((minor) << 8) + (patchlevel))
@@ -676,11 +676,11 @@ void char_from_furniture(struct char_data *ch);
  ((!AFF_FLAGGED((obj),AFF_INVISIBLE) || AFF_FLAGGED(sub,AFF_DETECT_INVIS)) && \
  (!AFF_FLAGGED((obj), AFF_HIDE) || AFF_FLAGGED(sub, AFF_SENSE_LIFE)))
 
-/** Defines if sub character can see obj character, assuming mortal only 
+/** Defines if sub character can see obj character, assuming mortal only
  * settings. */
 #define MORT_CAN_SEE(sub, obj) (LIGHT_OK(sub) && INVIS_OK(sub, obj))
 
-/** Defines if sub character can see obj character, assuming immortal 
+/** Defines if sub character can see obj character, assuming immortal
  * and mortal settings. */
 #define IMM_CAN_SEE(sub, obj) \
    (MORT_CAN_SEE(sub, obj) || (!IS_NPC(sub) && PRF_FLAGGED(sub, PRF_HOLYLIGHT)))
@@ -722,7 +722,7 @@ void char_from_furniture(struct char_data *ch);
     CAN_SEE_OBJ((ch),(obj)))
 
 /** If vict can see ch, return ch name, else return "someone". */
-#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : (GET_LEVEL(ch) > LVL_IMMORT ? "an immortal" : "someone")) 
+#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : (GET_LEVEL(ch) > LVL_IMMORT ? "an immortal" : "someone"))
 
 /** If vict can see obj, return obj short description, else return
  * "something". */
@@ -800,8 +800,8 @@ void char_from_furniture(struct char_data *ch);
 #define SEEK_END	2
 #endif
 
-/* NOCRYPT can be defined by an implementor manually in sysdep.h. CIRCLE_CRYPT 
- * is a variable that the 'configure' script automatically sets when it 
+/* NOCRYPT can be defined by an implementor manually in sysdep.h. CIRCLE_CRYPT
+ * is a variable that the 'configure' script automatically sets when it
  * determines whether or not the system is capable of encrypting. */
 #if defined(NOCRYPT) || !defined(CIRCLE_CRYPT)
 /** When crypt is not defined. (NOTE: Player passwords will be plain text.) */
@@ -863,8 +863,8 @@ void char_from_furniture(struct char_data *ch);
 #define CONFIG_MAP_SIZE        config_info.play.map_size
 #define CONFIG_MINIMAP_SIZE    config_info.play.minimap_size
 
-/* DG Script Options */ 
-#define CONFIG_SCRIPT_PLAYERS  config_info.play.script_players 
+/* DG Script Options */
+#define CONFIG_SCRIPT_PLAYERS  config_info.play.script_players
 
 /* Crash Saves */
 /** Get free rent setting. */
@@ -925,6 +925,8 @@ void char_from_furniture(struct char_data *ch);
 #define CONFIG_WELC_MESSG       config_info.operation.WELC_MESSG
 /** Get the standard new character message. */
 #define CONFIG_START_MESSG      config_info.operation.START_MESSG
+/** Should medit show the advnaced stats menu? */
+#define CONFIG_MEDIT_ADVANCED   config_info.operation.medit_advanced
 
 /* Autowiz */
 /** Use autowiz or not? */

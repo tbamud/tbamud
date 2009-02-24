@@ -35,6 +35,16 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Feb 24 2009] - Jamdog
+  Bug-Fix: Fixed levels command, so it only shows immortal level if it's in the specified range
+  Bug-Fix: write_mobile_espec now saves CON and CHA values for mobiles in world files
+  Bug-Fix: stat zone <num> now shows the same as vstat zone <num> (instead of show zone (num)
+  Bug-Fix: zone 'stat' info (print_zone, oasis_list.c) now shows the number of shops and triggers
+  Bug-Fix: zone 'show' info (print_zone_to_buf, act.wizard.c) now shows number of quests.
+  Added saving throws to write_mobile_espec (genmob.c) and interpret_espec (db.c)
+  Added 'whois' command for all players
+  medit: All numerical stats moved to new sub-menu, with 'autoroll' option
+  medit: Advanced or Standard stats sub-menu with cedit toggle (in Game Operations)
 [Feb 17 2009] - Jamdog
   Fixed a bug with %obj.extra% so that it now returns the list of extra flags
 [Feb 11 2009] - Jamdog

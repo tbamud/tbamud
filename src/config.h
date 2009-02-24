@@ -1,13 +1,13 @@
 /**
 * @file comm.h
 * Configuration of various aspects of tbaMUD operation.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 *
 */
 #ifndef _CONFIG_H_
@@ -71,8 +71,10 @@ extern int display_closed_doors;
 extern int map_option;
 extern int default_map_size;
 extern int default_minimap_size;
-/* 
- * Variables not controlled by cedit  
+
+extern int medit_advanced_stats;
+/*
+ * Variables not controlled by cedit
  */
 /* Game operation settings. */
 extern int bitwarning;

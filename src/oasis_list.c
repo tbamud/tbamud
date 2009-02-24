@@ -127,13 +127,13 @@ ACMD(do_oasis_list)
 
   switch (subcmd) {
     case SCMD_OASIS_MLIST:
-      
+
       two_arguments(argument, arg, arg2);
-      
+
    if (is_abbrev(arg, "level") || is_abbrev(arg, "flags")) {
-    
+
     int  i;
-    
+
     if (!*arg2) {
     send_to_char(ch, "Which mobile flag or level do you want to list?\r\n");
     for (i=0; i<NUM_MOB_FLAGS; i++)
@@ -147,12 +147,12 @@ ACMD(do_oasis_list)
     send_to_char(ch, "Displays mobs with the selected flag, or at the selected level\r\n\r\n");
 
     return;
-    } 
+    }
     if (is_abbrev(arg, "level"))
-      perform_mob_level_list(ch, arg2); 
-    else 
-      perform_mob_flag_list(ch, arg2); 
-  } else   
+      perform_mob_level_list(ch, arg2);
+    else
+      perform_mob_flag_list(ch, arg2);
+  } else
     list_mobiles(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_OLIST: list_objects(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_RLIST: list_rooms(ch, rzone, vmin, vmax); break;
@@ -244,9 +244,9 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
   "Index VNum    Room Name                                Exits\r\n"
   "----- ------- ---------------------------------------- -----\r\n");
 
-  if (!top_of_world) 
+  if (!top_of_world)
     return;
-  
+
   for (i = 0; i <= top_of_world; i++) {
 
     /** Check to see if this room is one of the ones needed to be listed.    **/
@@ -297,9 +297,9 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mo
   "Index VNum    Mobile Name                                   Level\r\n"
   "----- ------- --------------------------------------------- -----\r\n");
 
-  if (!top_of_mobt) 
+  if (!top_of_mobt)
     return;
-  
+
   for (i = 0; i <= top_of_mobt; i++) {
     if (mob_index[i].vnum >= bottom && mob_index[i].vnum <= top) {
       counter++;
@@ -336,9 +336,9 @@ static void list_objects(struct char_data *ch, zone_rnum rnum, room_vnum vmin, r
   "Index VNum    Object Name                                  Object Type\r\n"
   "----- ------- -------------------------------------------- ----------------\r\n");
 
-  if (!top_of_objt) 
+  if (!top_of_objt)
     return;
-  
+
   for (i = 0; i <= top_of_objt; i++) {
     if (obj_index[i].vnum >= bottom && obj_index[i].vnum <= top) {
       counter++;
@@ -421,9 +421,9 @@ static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zon
   "VNum  Zone Name                      Builder(s)\r\n"
   "----- ------------------------------ --------------------------------------\r\n");
 
-  if (!top_of_zone_table) 
+  if (!top_of_zone_table)
     return;
-  
+
   for (i = 0; i <= top_of_zone_table; i++) {
     if (zone_table[i].number >= bottom && zone_table[i].number <= top) {
       send_to_char(ch, "[%s%3d%s] %s%-*s %s%-1s%s\r\n",
@@ -441,7 +441,7 @@ static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zon
 void print_zone(struct char_data *ch, zone_vnum vnum)
 {
   zone_rnum rnum;
-  int size_rooms, size_objects, size_mobiles, size_quests, i;
+  int size_rooms, size_objects, size_mobiles, size_quests, size_shops, size_trigs, i;
   room_vnum top, bottom;
   int largest_table;
 
@@ -462,6 +462,8 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
   size_rooms   = 0;
   size_objects = 0;
   size_mobiles = 0;
+  size_shops   = 0;
+  size_trigs   = 0;
   size_quests  = 0;
   top          = zone_table[rnum].top;
   bottom       = zone_table[rnum].bot;
@@ -479,8 +481,16 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
       if (mob_index[i].vnum >= bottom && mob_index[i].vnum <= top)
         size_mobiles++;
   }
+  for (i = 0; i<= top_shop; i++)
+    if (SHOP_NUM(i) >= bottom && SHOP_NUM(i) <= top)
+      size_shops++;
+
+  for (i = 0; i < top_of_trigt; i++)
+    if (trig_index[i]->vnum >= bottom && trig_index[i]->vnum <= top)
+      size_trigs++;
+
   size_quests = count_quests(bottom, top);
-  
+
   /* Display all of the zone information at once. */
   send_to_char(ch,
     "%sVirtual Number = %s%d\r\n"
@@ -495,6 +505,8 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     "%s   Rooms       = %s%d\r\n"
     "%s   Objects     = %s%d\r\n"
     "%s   Mobiles     = %s%d\r\n"
+    "%s   Shops       = %s%d\r\n"
+    "%s   Triggers    = %s%d\r\n"
     "%s   Quests      = %s%d%s\r\n",
     QGRN, QCYN, zone_table[rnum].number,
     QGRN, QCYN, zone_table[rnum].name,
@@ -509,6 +521,8 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     QGRN, QCYN, size_rooms,
     QGRN, QCYN, size_objects,
     QGRN, QCYN, size_mobiles,
+    QGRN, QCYN, size_shops,
+    QGRN, QCYN, size_trigs,
     QGRN, QCYN, size_quests, QNRM);
 }
 
@@ -556,10 +570,10 @@ static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, 
     }
   }
 
- if (counter == 0) { 
-   if (rnum == NOWHERE) 
-     send_to_char(ch, "No triggers found from %d to %d\r\n", vmin, vmax); 
-   else 
-     send_to_char(ch, "No triggers found for zone #%d\r\n", zone_table[rnum].number); 
-  } 
+ if (counter == 0) {
+   if (rnum == NOWHERE)
+     send_to_char(ch, "No triggers found from %d to %d\r\n", vmin, vmax);
+   else
+     send_to_char(ch, "No triggers found for zone #%d\r\n", zone_table[rnum].number);
+  }
 }

@@ -16,6 +16,7 @@
 #include "genmob.h"
 #include "genzon.h"
 #include "dg_olc.h"
+#include "spells.h"
 
 /* local functions */
 static void extract_mobile_all(mob_vnum vnum);
@@ -203,7 +204,7 @@ int free_mobile_strings(struct char_data *mob)
   return TRUE;
 }
 
-/* Free a mobile structure that has been edited. Take care of existing mobiles 
+/* Free a mobile structure that has been edited. Take care of existing mobiles
  * and their mob_proto! */
 int free_mobile(struct char_data *mob)
 {
@@ -302,6 +303,20 @@ int write_mobile_espec(mob_vnum mvnum, struct char_data *mob, FILE *fd)
     fprintf(fd, "Int: %d\n", GET_INT(mob));
   if (GET_WIS(mob) != 11)
     fprintf(fd, "Wis: %d\n", GET_WIS(mob));
+  if (GET_CON(mob) != 11)
+    fprintf(fd, "Con: %d\n", GET_CON(mob));
+  if (GET_CHA(mob) != 11)
+    fprintf(fd, "Cha: %d\n", GET_CHA(mob));
+  if (GET_SAVE(mob, SAVING_PARA) != 0)
+    fprintf(fd, "SavingPara: %d\n", GET_SAVE(mob, SAVING_PARA));
+  if (GET_SAVE(mob, SAVING_ROD) != 0)
+    fprintf(fd, "SavingRod: %d\n", GET_SAVE(mob, SAVING_ROD));
+  if (GET_SAVE(mob, SAVING_PETRI) != 0)
+    fprintf(fd, "SavingPetri: %d\n", GET_SAVE(mob, SAVING_PETRI));
+  if (GET_SAVE(mob, SAVING_BREATH) != 0)
+    fprintf(fd, "SavingBreath: %d\n", GET_SAVE(mob, SAVING_BREATH));
+  if (GET_SAVE(mob, SAVING_SPELL) != 0)
+    fprintf(fd, "SavingSpell: %d\n", GET_SAVE(mob, SAVING_SPELL));
   fputs("E\n", fd);
   return TRUE;
 }

@@ -131,6 +131,7 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->operation.use_new_socials    = CONFIG_NEW_SOCIALS;
   OLC_CONFIG(d)->operation.auto_save_olc      = CONFIG_OLC_SAVE;
   OLC_CONFIG(d)->operation.nameserver_is_slow = CONFIG_NS_IS_SLOW;
+  OLC_CONFIG(d)->operation.medit_advanced     = CONFIG_MEDIT_ADVANCED;
 
   /* Autowiz */
   OLC_CONFIG(d)->autowiz.use_autowiz          = CONFIG_USE_AUTOWIZ;
@@ -228,6 +229,7 @@ static void cedit_save_internally(struct descriptor_data *d)
   CONFIG_NEW_SOCIALS        = OLC_CONFIG(d)->operation.use_new_socials;
   CONFIG_NS_IS_SLOW = OLC_CONFIG(d)->operation.nameserver_is_slow;
   CONFIG_OLC_SAVE           = OLC_CONFIG(d)->operation.auto_save_olc;
+  CONFIG_MEDIT_ADVANCED     = OLC_CONFIG(d)->operation.medit_advanced;
 
   /* Autowiz */
   CONFIG_USE_AUTOWIZ          = OLC_CONFIG(d)->autowiz.use_autowiz;
@@ -365,10 +367,10 @@ int save_config( IDXTYPE nowhere )
               "default_map_size = %d\n\n", CONFIG_MAP_SIZE);
   fprintf(fl, "* Default minimap size shown to the right of room descriptions\n"
               "default_minimap_size = %d\n\n", CONFIG_MINIMAP_SIZE);
-  fprintf(fl, "* Do you want scripts to be attachable to players?\n" 
+  fprintf(fl, "* Do you want scripts to be attachable to players?\n"
               "script_players = %d\n\n", CONFIG_SCRIPT_PLAYERS);
 
-  
+
   strcpy(buf, CONFIG_OK);
   strip_cr(buf);
 
@@ -517,6 +519,10 @@ int save_config( IDXTYPE nowhere )
                 "START_MESSG = \n%s~\n\n", buf);
   }
 
+  fprintf(fl, "* Should the medit OLC show the advanced stats menu (1) or not (0).\n"
+              "medit_advanced_stats = %d\n\n",
+              CONFIG_MEDIT_ADVANCED);
+
   fprintf(fl, "\n\n\n* [ Autowiz Options ]\n");
 
   fprintf(fl, "* Should the game automatically create a new wizlist/immlist every time\n"
@@ -574,7 +580,7 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
   clear_screen(d);
 
 
-  
+
   write_to_output(d, "\r\n\r\n"
         "%sA%s) Player Killing Allowed  : %s%s\r\n"
         "%sB%s) Player Thieving Allowed : %s%s\r\n"
@@ -709,6 +715,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
   	"%sL%s) Main Menu           : \r\n%s%s\r\n"
   	"%sM%s) Welcome Message     : \r\n%s%s\r\n"
   	"%sN%s) Start Message       : \r\n%s%s\r\n"
+  	"%sO%s) Medit Stats Menu    : %s%s\r\n"
     "%sQ%s) Exit To The Main Menu\r\n"
     "Enter your choice : ",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.DFLT_PORT,
@@ -725,6 +732,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
     grn, nrm, cyn, OLC_CONFIG(d)->operation.MENU ? OLC_CONFIG(d)->operation.MENU : "<None>",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.WELC_MESSG ? OLC_CONFIG(d)->operation.WELC_MESSG : "<None>",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.START_MESSG ? OLC_CONFIG(d)->operation.START_MESSG : "<None>",
+    grn, nrm, cyn, OLC_CONFIG(d)->operation.medit_advanced ? "Advanced" : "Standard",
     grn, nrm
     );
 
@@ -954,8 +962,8 @@ void cedit_parse(struct descriptor_data *d, char *arg)
           write_to_output(d, "Enter default mini-map size (1-12) : ");
           OLC_MODE(d) = CEDIT_MINIMAP_SIZE;
           return;
-        case '7': 
-          TOGGLE_VAR(OLC_CONFIG(d)->play.script_players); 
+        case '7':
+          TOGGLE_VAR(OLC_CONFIG(d)->play.script_players);
           break;
 
         case 'q':
@@ -1182,6 +1190,11 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
            string_write(d, &OLC_CONFIG(d)->operation.START_MESSG, MAX_INPUT_LENGTH, 0, oldtext);
            return;
+
+         case 'o':
+         case 'O':
+           TOGGLE_VAR(OLC_CONFIG(d)->operation.medit_advanced);
+           break;
 
          case 'q':
          case 'Q':
@@ -1600,7 +1613,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_game_play_options(d);
       }
       break;
-      
+
     default:  /* We should never get here, but just in case... */
       cleanup_olc(d, CLEANUP_CONFIG);
       mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: cedit_parse(): Reached default case!");
