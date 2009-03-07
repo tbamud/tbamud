@@ -15,7 +15,7 @@
 #include "genshp.h"
 #include "genzon.h"
 
-/* NOTE (gg): Didn't modify sedit much. Don't consider it as 'recent' as the 
+/* NOTE (gg): Didn't modify sedit much. Don't consider it as 'recent' as the
  * other editors with regard to updates or style. */
 
 /* local (file scope) functions */
@@ -248,7 +248,7 @@ void free_shop(struct shop_data *shop)
   free(shop);
 }
 
-/* Returns the real number of the shop with given virtual number. We take so 
+/* Returns the real number of the shop with given virtual number. We take so
  * good care to keep it sorted - let's use it. - Welcor */
 shop_rnum real_shop(shop_vnum vnum)
 {
@@ -258,7 +258,7 @@ shop_rnum real_shop(shop_vnum vnum)
   top = top_shop;
 
   /* perform binary search on shop_table */
-  while (bot < top) {
+  while (bot <= top) {
     mid = (bot + top) / 2;
     if (SHOP_NUM(mid) == vnum)
       return (mid);
@@ -432,7 +432,7 @@ int save_shops(zone_rnum zone_num)
   snprintf(oldname, sizeof(oldname), "%s/%d.shp", SHP_PREFIX, zone_table[zone_num].number);
   remove(oldname);
   rename(fname, oldname);
-  
+
   if (num_shops > 0)
     create_world_index(zone_table[zone_num].number, "shp");
 

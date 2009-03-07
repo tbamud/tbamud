@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Mar 07 2009] - Jamdog
+  Fixed a bug in find_shop (shop.c) and real_shop (genshp.c) (Thanks Slicer)
 [Feb 25 2009] - Jamdog
   Fixed new medit stats menu so that it uses the the Advanced/Standard cedit toggle
 [Feb 24 2009] - Jamdog

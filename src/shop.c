@@ -331,7 +331,7 @@ static int transaction_amt(char *arg)
 
   char *buywhat;
 
-  /* If we have two arguments, it means 'buy 5 3', or buy 5 of #3. We don't do 
+  /* If we have two arguments, it means 'buy 5 3', or buy 5 of #3. We don't do
    * that if we only have one argument, like 'buy 5', buy #5. By Andrey Fidrya */
   buywhat = one_argument(arg, buf);
   if (*buywhat && *buf && is_number(buf)) {
@@ -626,7 +626,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
     snprintf(tempbuf, sizeof(tempbuf), "%s That has cost you %d quest points.", GET_NAME(ch), goldamt);
   else
     snprintf(tempbuf, sizeof(tempbuf), shop_index[shop_nr].message_buy, GET_NAME(ch), goldamt);
-  
+
   do_tell(keeper, tempbuf, cmd_tell, 0);
 
   send_to_char(ch, "You now have %s.\r\n", tempstr);
@@ -673,11 +673,11 @@ static struct obj_data *get_selling_obj(struct char_data *ch, char *name, struct
   return (NULL);
 }
 
-/* This function is a slight hack!  To make sure that duplicate items are only 
+/* This function is a slight hack!  To make sure that duplicate items are only
  * listed once on the "list", this function groups "identical" objects together
- * on the shopkeeper's inventory list.  The hack involves knowing how the list 
+ * on the shopkeeper's inventory list.  The hack involves knowing how the list
  * is put together, and manipulating the order of the objects on the list. (But
- * since most of DIKU is not encapsulated, and information hiding is almost 
+ * since most of DIKU is not encapsulated, and information hiding is almost
  * never used, it isn't that big a deal). -JF */
 static struct obj_data *slide_obj(struct obj_data *obj, struct char_data *keeper, int shop_nr)
 {
@@ -861,8 +861,8 @@ static char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr,
   }
   CAP(itemname);
 
-  snprintf(result, sizeof(result), " %2d)  %9s   %-*s %6d%s\r\n", 
-      aindex, quantity, count_color_chars(itemname)+48, itemname, 
+  snprintf(result, sizeof(result), " %2d)  %9s   %-*s %6d%s\r\n",
+      aindex, quantity, count_color_chars(itemname)+48, itemname,
       buy_price(obj, shop_nr, keeper, ch), OBJ_FLAGGED(obj, ITEM_QUEST) ? " qp" : "");
 
   return (result);
@@ -1316,7 +1316,7 @@ static void list_all_shops(struct char_data *ch)
     else
       sprintf(buf1, "%6d", mob_index[SHOP_KEEPER(shop_nr)].vnum);	/* sprintf: OK (for 'buf1 >= 11', 32-bit int) */
 
-    len += snprintf(buf + len, sizeof(buf) - len,  
+    len += snprintf(buf + len, sizeof(buf) - len,
         "%3d   %6d   %6d    %s   %3.2f   %3.2f    %s\r\n",
         shop_nr + 1, SHOP_NUM(shop_nr), SHOP_ROOM(shop_nr, 0), buf1,
         SHOP_SELLPROFIT(shop_nr), SHOP_BUYPROFIT(shop_nr),
@@ -1549,7 +1549,7 @@ static int find_shop(int vnum)
   int bot, mid, ltop;
 
   bot = 0;
-  ltop= top_shop - 1;
+  ltop= top_shop;
 
   while (bot <= ltop) {
     mid = (ltop + bot) / 2;
