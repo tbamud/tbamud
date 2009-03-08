@@ -35,6 +35,9 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Mar 08 2009] - Jamdog
+  Fixed a possible crash bug in delete_object (genobj.c) (Thanks Slicer)
+  CAP function now recognises both preceeding color codes and ANSI codes (Thanks Slicer)
 [Mar 07 2009] - Jamdog
   Fixed a bug in find_shop (shop.c) and real_shop (genshp.c) (Thanks Slicer)
 [Feb 25 2009] - Jamdog

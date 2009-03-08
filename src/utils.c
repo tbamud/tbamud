@@ -1,13 +1,13 @@
 /**
-* @file utils.c                                          
+* @file utils.c
 * Various utility functions used within the core mud code.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 */
 
 #include "conf.h"
@@ -37,19 +37,19 @@ int rand_number(int from, int to)
     log("SYSERR: rand_number() should be called with lowest, then highest. (%d, %d), not (%d, %d).", from, to, to, from);
   }
 
-  /* This should always be of the form: ((float)(to - from + 1) * rand() / 
+  /* This should always be of the form: ((float)(to - from + 1) * rand() /
    * (float)(RAND_MAX + from) + from); If you are using rand() due to historical
-   * non-randomness of the lower bits in older implementations.  We always use 
-   * circle_random() though, which shouldn't have that problem. Mean and 
+   * non-randomness of the lower bits in older implementations.  We always use
+   * circle_random() though, which shouldn't have that problem. Mean and
    * standard deviation of both are identical (within the realm of statistical
    * identity) if the rand() implementation is non-broken. */
   return ((circle_random() % (to - from + 1)) + from);
 }
 
-/** Simulates a single dice roll from one to many of a certain sized die. 
+/** Simulates a single dice roll from one to many of a certain sized die.
  * @param num The number of dice to roll.
  * @param size The number of sides each die has, and hence the number range
- * of the die. 
+ * of the die.
  * @retval int The sum of all the dice rolled. A random number. */
 int dice(int num, int size)
 {
@@ -64,7 +64,7 @@ int dice(int num, int size)
   return (sum);
 }
 
-/** Return the smaller number. Original note: Be wary of sign issues with this. 
+/** Return the smaller number. Original note: Be wary of sign issues with this.
  * @param a The first number.
  * @param b The second number.
  * @retval int The smaller of the two, a or b. */
@@ -73,7 +73,7 @@ int MIN(int a, int b)
   return (a < b ? a : b);
 }
 
-/** Return the larger number. Original note: Be wary of sign issues with this. 
+/** Return the larger number. Original note: Be wary of sign issues with this.
  * @param a The first number.
  * @param b The second number.
  * @retval int The larger of the two, a or b. */
@@ -82,26 +82,34 @@ int MAX(int a, int b)
   return (a > b ? a : b);
 }
 
-/** Used to capitalize a string. Will not change any mud specific color codes. 
+/** Used to capitalize a string. Will not change any mud specific color codes.
  * @param txt The string to capitalize.
  * @retval char* Pointer to the capitalized string. */
 char *CAP(char *txt)
 {
   char *p = txt;
 
-  while (*p == '@' && *(p+1))
-    p += 2;
+  /* Skip all preceeding color codes and ANSI codes */
+  while ((*p == '@' && *(p+1)) || (*p == '\x1B' && *(p+1) == '[')) {
+    if (*p == '@') p += 2;  /* Skip @ sign and color letter/number */
+    else {
+      p += 2;                          /* Skip the CSI section of the ANSI code */
+      while (*p && !isalpha(*p)) p++;  /* Skip until a 'letter' is found */
+      if (*p) p++;                     /* Skip the letter */
+    }
+  }
+
   if (*p)
     *p = UPPER(*p);
   return (txt);
 }
 
 #if !defined(HAVE_STRLCPY)
-/** A 'strlcpy' function in the same fashion as 'strdup' below. This copies up 
- * to totalsize - 1 bytes from the source string, placing them and a trailing 
- * NUL into the destination string. Returns the total length of the string it 
- * tried to copy, not including the trailing NUL.  So a '>= totalsize' test 
- * says it was truncated. (Note that you may have _expected_ truncation 
+/** A 'strlcpy' function in the same fashion as 'strdup' below. This copies up
+ * to totalsize - 1 bytes from the source string, placing them and a trailing
+ * NUL into the destination string. Returns the total length of the string it
+ * tried to copy, not including the trailing NUL.  So a '>= totalsize' test
+ * says it was truncated. (Note that you may have _expected_ truncation
  * because you only wanted a few characters from the source string.) Portable
  * function, in case your system does not have strlcpy. */
 size_t strlcpy(char *dest, const char *source, size_t totalsize)
@@ -136,8 +144,8 @@ void prune_crlf(char *txt)
 }
 
 #ifndef str_cmp
-/** a portable, case-insensitive version of strcmp(). Returns: 0 if equal, > 0 
- * if arg1 > arg2, or < 0 if arg1 < arg2. Scan until strings are found 
+/** a portable, case-insensitive version of strcmp(). Returns: 0 if equal, > 0
+ * if arg1 > arg2, or < 0 if arg1 < arg2. Scan until strings are found
  * different or we reach the end of both. */
 int str_cmp(const char *arg1, const char *arg2)
 {
@@ -157,8 +165,8 @@ int str_cmp(const char *arg1, const char *arg2)
 #endif
 
 #ifndef strn_cmp
-/** a portable, case-insensitive version of strncmp(). Returns: 0 if equal, > 0 
- * if arg1 > arg2, or < 0 if arg1 < arg2. Scan until strings are found 
+/** a portable, case-insensitive version of strncmp(). Returns: 0 if equal, > 0
+ * if arg1 > arg2, or < 0 if arg1 < arg2. Scan until strings are found
  * different, the end of both, or n is reached. */
 int strn_cmp(const char *arg1, const char *arg2, int n)
 {
@@ -177,12 +185,12 @@ int strn_cmp(const char *arg1, const char *arg2, int n)
 }
 #endif
 
-/** New variable argument log() function; logs messages to disk.  
- * Works the same as the old for previously written code but is very nice 
- * if new code wishes to implment printf style log messages without the need 
+/** New variable argument log() function; logs messages to disk.
+ * Works the same as the old for previously written code but is very nice
+ * if new code wishes to implment printf style log messages without the need
  * to make prior sprintf calls.
  * @param format The message to log. Standard printf formatting and variable
- * arguments are allowed. 
+ * arguments are allowed.
  * @param args The comma delimited, variable substitutions to make in str. */
 void basic_mud_vlog(const char *format, va_list args)
 {
@@ -210,7 +218,7 @@ void basic_mud_vlog(const char *format, va_list args)
  * any calls to plain old log() have been redirected, via macro, to this
  * function.
  * @param format The message to log. Standard printf formatting and variable
- * arguments are allowed. 
+ * arguments are allowed.
  * @param ... The comma delimited, variable substitutions to make in str. */
 void basic_mud_log(const char *format, ...)
 {
@@ -222,7 +230,7 @@ void basic_mud_log(const char *format, ...)
 }
 
 /** Essentially the touch command. Create an empty file or update the modified
- * time of a file. 
+ * time of a file.
  * @param path The filepath to "touch." This filepath is relative to the /lib
  * directory relative to the root of the mud distribution.
  * @retval int 0 on a success, -1 on a failure; standard system call exit
@@ -240,15 +248,15 @@ int touch(const char *path)
   }
 }
 
-/** Log mud messages to a file & to online imm's syslogs. 
+/** Log mud messages to a file & to online imm's syslogs.
  * @param type The minimum syslog level that needs be set to see this message.
  * OFF, BRF, NRM and CMP are the values from lowest to highest. Using mudlog
  * with type = OFF should be avoided as every imm will see the message even
  * if they have syslog turned off.
- * @param level Minimum character level needed to see this message. 
+ * @param level Minimum character level needed to see this message.
  * @param file TRUE log this to the syslog file, FALSE do not log this to disk.
  * @param str The message to log. Standard printf formatting and variable
- * arguments are allowed. 
+ * arguments are allowed.
  * @param ... The comma delimited, variable substitutions to make in str. */
 void mudlog(int type, int level, int file, const char *str, ...)
 {
@@ -290,19 +298,19 @@ void mudlog(int type, int level, int file, const char *str, ...)
 
 
 
-/** Take a bitvector and return a human readable 
- * description of which bits are set in it. 
+/** Take a bitvector and return a human readable
+ * description of which bits are set in it.
  * @pre The final element in the names array must contain a one character
  * string consisting of a single newline character "\n". Caller of function is
  * responsible for creating the memory buffer for the result string.
- * @param[in] bitvector The bitvector to test for set bits. 
+ * @param[in] bitvector The bitvector to test for set bits.
  * @param[in] names An array of human readable strings describing each possible
- * bit. The final element in this array must be a string made of a single 
- * newline character (eg "\n").  
- * If you don't have a 'const' array for the names param, cast it as such.  
+ * bit. The final element in this array must be a string made of a single
+ * newline character (eg "\n").
+ * If you don't have a 'const' array for the names param, cast it as such.
  * @param[out] result Holds the names of the set bits in bitvector. The bit
- * names will be delimited by a single space. 
- * Caller of sprintbit is responsible for creating the buffer for result. 
+ * names will be delimited by a single space.
+ * Caller of sprintbit is responsible for creating the buffer for result.
  * Will be set to "NOBITS" if no bits are set in bitvector (ie bitvector = 0).
  * @param[in] reslen The length of the available memory in the result buffer.
  * Ideally, results will be large enough to hold the description of every bit
@@ -340,14 +348,14 @@ size_t sprintbit(bitvector_t bitvector, const char *names[], char *result, size_
  * responsible for creating the memory buffer for the result string.
  * @param[in] type The type number to be translated.
  * @param[in] names An array of human readable strings describing each possible
- * bit. The final element in this array must be a string made of a single 
+ * bit. The final element in this array must be a string made of a single
  * newline character (eg "\n").
- * @param[out] result Holds the translated name of the type. 
- * Caller of sprintbit is responsible for creating the buffer for result. 
+ * @param[out] result Holds the translated name of the type.
+ * Caller of sprintbit is responsible for creating the buffer for result.
  * Will be set to "UNDEFINED" if the type is greater than the number of names
  * available.
  * @param[in] reslen The length of the available memory in the result buffer.
- * @retval size_t The length of the string copied into result. */ 
+ * @retval size_t The length of the string copied into result. */
 size_t sprinttype(int type, const char *names[], char *result, size_t reslen)
 {
   int nr = 0;
@@ -360,8 +368,8 @@ size_t sprinttype(int type, const char *names[], char *result, size_t reslen)
   return strlcpy(result, *names[nr] != '\n' ? names[nr] : "UNDEFINED", reslen);
 }
 
-/** Take a bitarray and return a human readable description of which bits are 
- * set in it. 
+/** Take a bitarray and return a human readable description of which bits are
+ * set in it.
  * @pre The final element in the names array must contain a one character
  * string consisting of a single newline character "\n". Caller of function is
  * responsible for creating the memory buffer for the result string large enough
@@ -369,14 +377,14 @@ size_t sprinttype(int type, const char *names[], char *result, size_t reslen)
  * possible array overflow for result.
  * @param[in] bitvector The bitarray in which to test for set bits.
  * @param[in] names An array of human readable strings describing each possible
- * bit. The final element in this array must be a string made of a single 
- * newline character (eg "\n").  
- * If you don't have a 'const' array for the names param, cast it as such.  
+ * bit. The final element in this array must be a string made of a single
+ * newline character (eg "\n").
+ * If you don't have a 'const' array for the names param, cast it as such.
  * @param[in] maxar The number of 'bytes' in the bitarray. This number will
  * usually be pre-defined for the particular bitarray you are using.
  * @param[out] result Holds the names of the set bits in bitarray. The bit
- * names are delimited by a single space. Ideally, results will be large enough 
- * to hold the description of every bit that could possibly be set in bitvector. 
+ * names are delimited by a single space. Ideally, results will be large enough
+ * to hold the description of every bit that could possibly be set in bitvector.
  * Will be set to "NOBITS" if no bits are set in bitarray (ie all bits in the
  * bitarray are equal to 0).
  */
@@ -388,19 +396,19 @@ void sprintbitarray(int bitvector[], const char *names[], int maxar, char *resul
 
   for(teller = 0; teller < maxar && !found; teller++)
   {
-    for (nr = 0; nr < 32 && !found; nr++) 
+    for (nr = 0; nr < 32 && !found; nr++)
     {
-      if (IS_SET_AR(bitvector, (teller*32)+nr)) 
+      if (IS_SET_AR(bitvector, (teller*32)+nr))
       {
-        if (*names[(teller*32)+nr] != '\n') 
+        if (*names[(teller*32)+nr] != '\n')
         {
-          if (*names[(teller*32)+nr] != '\0') 
+          if (*names[(teller*32)+nr] != '\0')
           {
             strcat(result, names[(teller*32)+nr]);
             strcat(result, " ");
           }
-        } 
-        else 
+        }
+        else
         {
           strcat(result, "UNDEFINED ");
         }
@@ -416,10 +424,10 @@ void sprintbitarray(int bitvector[], const char *names[], int maxar, char *resul
 
 /** Calculate the REAL time passed between two time invervals.
  * @todo Recommend making this function foresightedly useful by calculating
- * real months and years, too. 
+ * real months and years, too.
  * @param t2 The later time.
  * @param t1 The earlier time.
- * @retval time_info_data The real hours and days passed between t2 and t1. Only 
+ * @retval time_info_data The real hours and days passed between t2 and t1. Only
  * the hours and days are returned, months and years are ignored and returned
  * as -1 values. */
 struct time_info_data *real_time_passed(time_t t2, time_t t1)
@@ -444,7 +452,7 @@ struct time_info_data *real_time_passed(time_t t2, time_t t1)
 /** Calculate the MUD time passed between two time invervals.
  * @param t2 The later time.
  * @param t1 The earlier time.
- * @retval time_info_data A pointer to the mud hours, days, months and years 
+ * @retval time_info_data A pointer to the mud hours, days, months and years
  * that have passed between the two time intervals. DO NOT FREE the structure
  * pointed to by the return value. */
 struct time_info_data *mud_time_passed(time_t t2, time_t t1)
@@ -487,7 +495,7 @@ time_t mud_time_to_secs(struct time_info_data *now)
  * @todo The minimum starting age of 17 is hardcoded in this function. Recommend
  * changing the minimum age to a property (variable) external to this function.
  * @param ch A valid player character.
- * @retval time_info_data A pointer to the mud age in years of the player 
+ * @retval time_info_data A pointer to the mud age in years of the player
  * character. DO NOT FREE the structure pointed to by the return value. */
 struct time_info_data *age(struct char_data *ch)
 {
@@ -502,7 +510,7 @@ struct time_info_data *age(struct char_data *ch)
 
 /** Check if making ch follow victim will create an illegal follow loop. In
  * essence, this prevents someone from following a character in a group that
- * is already being lead by the character. 
+ * is already being lead by the character.
  * @param ch The character trying to follow.
  * @param victim The character being followed.
  * @retval bool TRUE if ch is already leading someone in victims group, FALSE
@@ -519,11 +527,11 @@ bool circle_follow(struct char_data *ch, struct char_data *victim)
   return (FALSE);
 }
 
-/** Call on a character (NPC or PC) to stop them from following someone and 
+/** Call on a character (NPC or PC) to stop them from following someone and
  * to break any charm affect.
  * @todo Make the messages returned from the broken charm affect more
- * understandable. 
- * @pre ch MUST be following someone, else core dump. 
+ * understandable.
+ * @pre ch MUST be following someone, else core dump.
  * @post The charm affect (AFF_CHARM) will be removed from the character and
  * the character will stop following the "master" they were following.
  * @param ch The character (NPC or PC) to stop from following.
@@ -570,7 +578,7 @@ void stop_follower(struct char_data *ch)
 /** Finds the number of follows that are following, and charmed by, the
  * character (PC or NPC).
  * @param ch The character to check for charmed followers.
- * @retval int The number of followers that are also charmed by the character. 
+ * @retval int The number of followers that are also charmed by the character.
  */
 int num_followers_charmed(struct char_data *ch)
 {
@@ -586,7 +594,7 @@ int num_followers_charmed(struct char_data *ch)
 
 /** Called when a character that follows/is followed dies. If the character
  * is the leader of a group, it stops everyone in the group from following
- * them. Despite the title, this function does not actually perform the kill on 
+ * them. Despite the title, this function does not actually perform the kill on
  * the character passed in as the argument.
  * @param ch The character (NPC or PC) to stop from following.
  * */
@@ -606,7 +614,7 @@ void die_follower(struct char_data *ch)
 /** Adds a new follower to a group.
  * @todo Maybe make circle_follow an inherent part of this function?
  * @pre Make sure to call circle_follow first. ch may also not already
- * be following anyone, otherwise core dump. 
+ * be following anyone, otherwise core dump.
  * @param ch The character to follow.
  * @param leader The character to be followed. */
 void add_follower(struct char_data *ch, struct char_data *leader)
@@ -632,13 +640,13 @@ void add_follower(struct char_data *ch, struct char_data *leader)
   act("$n starts to follow $N.", TRUE, ch, 0, leader, TO_NOTVICT);
 }
 
-/** Reads the next non-blank line off of the input stream. Empty lines are 
+/** Reads the next non-blank line off of the input stream. Empty lines are
  * skipped. Lines which begin with '*' are considered to be comments and are
  * skipped.
- * @pre Caller must allocate memory for buf. 
+ * @pre Caller must allocate memory for buf.
  * @post If a there is a line to be read, the newline character is removed from
- * the file line ending and the string is returned. Else a null string is 
- * returned in buf. 
+ * the file line ending and the string is returned. Else a null string is
+ * returned in buf.
  * @param[in] fl The file to be read from.
  * @param[out] buf The next non-blank line read from the file. Buffer given must
  * be at least READ_SIZE (256) characters large.
@@ -666,7 +674,7 @@ int get_line(FILE *fl, char *buf)
 
 /** Create the full path, relative to the library path, of the player type
  * file to open.
- * @todo Make the return type bool. 
+ * @todo Make the return type bool.
  * @pre Caller is responsible for allocating memory buffer for the created
  * file name.
  * @post The potential file path to open is created. This function does not
@@ -741,7 +749,7 @@ int get_filename(char *filename, size_t fbufsize, int mode, const char *orig_nam
 }
 
 /** Calculate the number of player characters (PCs) in the room. Any NPC (mob)
- * is not returned in the count. 
+ * is not returned in the count.
  * @param room The room to check for PCs. */
 int num_pc_in_room(struct room_data *room)
 {
@@ -757,12 +765,12 @@ int num_pc_in_room(struct room_data *room)
 
 
 /** This function (derived from basic fork() abort() idea by Erwin S Andreasen)
- * causes your MUD to dump core (assuming you can) but continue running. The 
+ * causes your MUD to dump core (assuming you can) but continue running. The
  * core dump will allow post-mortem debugging that is less severe than assert();
- * Don't call this directly as core_dump_unix() but as simply 'core_dump()' so 
+ * Don't call this directly as core_dump_unix() but as simply 'core_dump()' so
  * that it will be excluded from systems not supporting them. You still want to
- * call abort() or exit(1) for non-recoverable errors, of course. Wonder if 
- * flushing streams includes sockets? 
+ * call abort() or exit(1) for non-recoverable errors, of course. Wonder if
+ * flushing streams includes sockets?
  * @param who The file in which this call was made.
  * @param line The line at which this call was made. */
 void core_dump_real(const char *who, int line)
@@ -778,7 +786,7 @@ void core_dump_real(const char *who, int line)
   /* Everything, just in case, for the systems that support it. */
   fflush(NULL);
 
-  /* Kill the child so the debugger or script doesn't think the MUD crashed. 
+  /* Kill the child so the debugger or script doesn't think the MUD crashed.
    * The 'autorun' script would otherwise run it again. */
   if (fork() == 0)
     abort();
@@ -811,9 +819,9 @@ int count_color_chars(char *string)
   return num;
 }
 
-/** Tests to see if a room is dark. Rules (unless overridden by ROOM_DARK): 
- * Inside and City rooms are always lit. Outside rooms are dark at sunset and 
- * night. 
+/** Tests to see if a room is dark. Rules (unless overridden by ROOM_DARK):
+ * Inside and City rooms are always lit. Outside rooms are dark at sunset and
+ * night.
  * @todo Make the return value a bool.
  * @param room The real room to test for.
  * @retval int FALSE if the room is lit, TRUE if the room is dark. */
@@ -847,21 +855,21 @@ int room_is_dark(room_rnum room)
  * recommend doing an internet or wikipedia search.
  * @param s1 The input string.
  * @param s2 The string to be compared to.
- * @retval int The Levenshtein distance between s1 and s2. */ 
+ * @retval int The Levenshtein distance between s1 and s2. */
 int levenshtein_distance(const char *s1, const char *s2)
-{   
-  int **d, i, j; 
+{
+  int **d, i, j;
   int s1_len = strlen(s1), s2_len = strlen(s2);
 
   CREATE(d, int *, s1_len + 1);
 
-  for (i = 0; i <= s1_len; i++) {   
+  for (i = 0; i <= s1_len; i++) {
     CREATE(d[i], int, s2_len + 1);
     d[i][0] = i;
   }
 
   for (j = 0; j <= s2_len; j++)
-    d[0][j] = j; 
+    d[0][j] = j;
   for (i = 1; i <= s1_len; i++)
     for (j = 1; j <= s2_len; j++)
       d[i][j] = MIN(d[i - 1][j] + 1, MIN(d[i][j - 1] + 1,
@@ -874,8 +882,8 @@ int levenshtein_distance(const char *s1, const char *s2)
   free(d);
 
   return i;
-} 
-													   
+}
+
 /** Removes a character from a piece of furniture. Unlike some of the other
  * _from_ functions, this does not place the character into NOWHERE.
  * @post ch is unattached from the furniture object.
@@ -896,16 +904,16 @@ void char_from_furniture(struct char_data *ch)
     NEXT_SITTING(ch) = NULL;
     return;
   }
-  
+
   if (!(tempch = OBJ_SAT_IN_BY(furniture))){
     log("SYSERR: Char from furniture, but no furniture!");
     SITTING(ch) = NULL;
     NEXT_SITTING(ch) = NULL;
     return;
   }
-    
+
   if (tempch == ch){
-    if (!NEXT_SITTING(ch))  
+    if (!NEXT_SITTING(ch))
       OBJ_SAT_IN_BY(furniture) = NULL;
     else
       OBJ_SAT_IN_BY(furniture) = NEXT_SITTING(ch);
@@ -919,13 +927,13 @@ void char_from_furniture(struct char_data *ch)
     if (NEXT_SITTING(tempch) != ch){
       NEXT_SITTING(tempch) = NEXT_SITTING(ch);
       found++;
-    }   
+    }
   }
   if (found)
     log("SYSERR: Char flagged as sitting, but not in furniture.");
   else
     GET_OBJ_VAL(furniture, 1) -= 1;
-   
+
   SITTING(ch) = NULL;
   NEXT_SITTING(ch) = NULL;
 
@@ -933,81 +941,81 @@ void char_from_furniture(struct char_data *ch)
 }
 
 
-/* column_list 
-   The list is output in a fixed format, and only the number of columns can be adjusted 
-   This function will output the list to the player 
-   Vars: 
-     ch          - the player 
-     num_cols    - the desired number of columns 
-     list        - a pointer to a list of strings 
-     list_length - So we can work with lists that don't end with /n 
-     show_nums   - when set to TRUE, it will show a number before the list entry. 
-*/ 
-void column_list(struct char_data *ch, int num_cols, const char **list, int list_length, bool show_nums) 
-{ 
-   int num_per_col, col_width,r,c,i, offset=0, len=0, temp_len, max_len=0; 
-   char buf[MAX_STRING_LENGTH]; 
+/* column_list
+   The list is output in a fixed format, and only the number of columns can be adjusted
+   This function will output the list to the player
+   Vars:
+     ch          - the player
+     num_cols    - the desired number of columns
+     list        - a pointer to a list of strings
+     list_length - So we can work with lists that don't end with /n
+     show_nums   - when set to TRUE, it will show a number before the list entry.
+*/
+void column_list(struct char_data *ch, int num_cols, const char **list, int list_length, bool show_nums)
+{
+   int num_per_col, col_width,r,c,i, offset=0, len=0, temp_len, max_len=0;
+   char buf[MAX_STRING_LENGTH];
 
-   /* Ensure that the number of columns is in the range 1-10 */ 
-   num_cols = MIN(MAX(num_cols,1), 10); 
+   /* Ensure that the number of columns is in the range 1-10 */
+   num_cols = MIN(MAX(num_cols,1), 10);
 
-   /* Work out the longest list item */ 
-   for (i=0; i<list_length; i++) 
-     if (max_len < strlen(list[i])) 
-       max_len = strlen(list[i]); 
+   /* Work out the longest list item */
+   for (i=0; i<list_length; i++)
+     if (max_len < strlen(list[i]))
+       max_len = strlen(list[i]);
 
-   /* Calculate the width of each column */ 
-   col_width = (GET_SCREEN_WIDTH(ch)) / num_cols; 
-   if (show_nums) col_width-=4; 
+   /* Calculate the width of each column */
+   col_width = (GET_SCREEN_WIDTH(ch)) / num_cols;
+   if (show_nums) col_width-=4;
 
-   if (col_width < max_len) 
-     log("Warning: columns too narrow for correct output to %s in simple_column_list (utils.c)", GET_NAME(ch)); 
+   if (col_width < max_len)
+     log("Warning: columns too narrow for correct output to %s in simple_column_list (utils.c)", GET_NAME(ch));
 
-   /* Calculate how many list items there should be per column */ 
-   num_per_col = (list_length / num_cols) + ((list_length % num_cols) ? 1 : 0); 
+   /* Calculate how many list items there should be per column */
+   num_per_col = (list_length / num_cols) + ((list_length % num_cols) ? 1 : 0);
 
-   /* Fill 'buf' with the columnised list */ 
-   for (r=0; r<num_per_col; r++) 
-   { 
-     for (c=0; c<num_cols; c++) 
-     { 
-       offset = (c*num_per_col)+r; 
-       if (offset < list_length) 
-       { 
-         if (show_nums) 
-           temp_len = snprintf(buf+len, sizeof(buf) - len, "%2d) %-*s", offset+1, col_width, list[(offset)]); 
-         else 
-           temp_len = snprintf(buf+len, sizeof(buf) - len, "%-*s", col_width, list[(offset)]); 
-         len += temp_len; 
-       } 
-     } 
-     temp_len = snprintf(buf+len, sizeof(buf) - len, "\r\n"); 
-     len += temp_len; 
-   } 
+   /* Fill 'buf' with the columnised list */
+   for (r=0; r<num_per_col; r++)
+   {
+     for (c=0; c<num_cols; c++)
+     {
+       offset = (c*num_per_col)+r;
+       if (offset < list_length)
+       {
+         if (show_nums)
+           temp_len = snprintf(buf+len, sizeof(buf) - len, "%2d) %-*s", offset+1, col_width, list[(offset)]);
+         else
+           temp_len = snprintf(buf+len, sizeof(buf) - len, "%-*s", col_width, list[(offset)]);
+         len += temp_len;
+       }
+     }
+     temp_len = snprintf(buf+len, sizeof(buf) - len, "\r\n");
+     len += temp_len;
+   }
 
-   if (len >= sizeof(buf)) 
-     snprintf((buf + MAX_STRING_LENGTH) - 22, 22, "\r\n*** OVERFLOW ***\r\n"); 
+   if (len >= sizeof(buf))
+     snprintf((buf + MAX_STRING_LENGTH) - 22, 22, "\r\n*** OVERFLOW ***\r\n");
 
-   /* Send the list to the player */ 
-   page_string(ch->desc, buf, TRUE); 
-} 
+   /* Send the list to the player */
+   page_string(ch->desc, buf, TRUE);
+}
 
 
-/** 
+/**
  * Search through a string array of flags for a particular flag.
- * @param flag_list An array of flag name strings. The final element must 
+ * @param flag_list An array of flag name strings. The final element must
  * be a string made up of a single newline.
  * @param flag_name The name to search in flag_list.
  * @retval int Returns the element number in flag_list of flag_name or
  * NOFLAG (-1) if no match.
- */ 
-int get_flag_by_name(const char *flag_list[], char *flag_name) 
-{ 
-  int i=0; 
-  for (;flag_list[i] && *flag_list[i] && strcmp(flag_list[i], "\n") != 0; i++) 
-    if (!strcmp(flag_list[i], flag_name)) 
-      return (i); 
-  return (NOFLAG); 
+ */
+int get_flag_by_name(const char *flag_list[], char *flag_name)
+{
+  int i=0;
+  for (;flag_list[i] && *flag_list[i] && strcmp(flag_list[i], "\n") != 0; i++)
+    if (!strcmp(flag_list[i], flag_name))
+      return (i);
+  return (NOFLAG);
 }
 
 /**
@@ -1016,7 +1024,7 @@ int get_flag_by_name(const char *flag_list[], char *flag_name)
  * @pre Expects an already open file and the user to supply enough memory
  * in the output buffer to hold the lines read from the file. Assumes the
  * file is a text file. Expects buf to be nulled out if the entire buf is
- * to be used, otherwise, appends file information beyond the first null 
+ * to be used, otherwise, appends file information beyond the first null
  * character. lines_to_read is assumed to be a positive number.
  * @post Rewinds the file pointer to the beginning of the file. If buf is
  * too small to handle the requested output, **OVERFLOW** is appended to the
@@ -1047,14 +1055,14 @@ int file_head( FILE *file, char *buf, size_t bufsize, int lines_to_read )
   {
     return lines_to_read;
   }
-  
+
   /* Initialize local variables not already initialized. */
   buflen  = strlen(buf);
-  
+
   /* Read from the front of the file. */
   rewind(file);
-  
-  while ( (lines_read < lines_to_read) && 
+
+  while ( (lines_read < lines_to_read) &&
       (readstatus > 0) && (buflen < bufsize) )
   {
     /* Don't use get_line to set lines_read because get_line will return
@@ -1068,7 +1076,7 @@ int file_head( FILE *file, char *buf, size_t bufsize, int lines_to_read )
       lines_read++;
     }
   }
-  
+
   /* Check to see if we had a potential buffer overflow. */
   if (buflen >= bufsize)
   {
@@ -1076,17 +1084,17 @@ int file_head( FILE *file, char *buf, size_t bufsize, int lines_to_read )
     if ( (strlen(overflow) + 1) >= bufsize )
     {
       core_dump();
-      snprintf( buf, bufsize, "%s", overflow);      
+      snprintf( buf, bufsize, "%s", overflow);
     }
     else
     {
-      /* Append the overflow statement to the buffer. */ 
+      /* Append the overflow statement to the buffer. */
       snprintf( buf + buflen - strlen(overflow) - 1, strlen(overflow) + 1, "%s", overflow);
     }
   }
-  
+
   rewind(file);
-  
+
   /* Return the number of lines. */
   return lines_read;
 }
@@ -1097,7 +1105,7 @@ int file_head( FILE *file, char *buf, size_t bufsize, int lines_to_read )
  * @pre Expects an already open file and the user to supply enough memory
  * in the output buffer to hold the lines read from the file. Assumes the
  * file is a text file. Expects buf to be nulled out if the entire buf is
- * to be used, otherwise, appends file information beyond the first null 
+ * to be used, otherwise, appends file information beyond the first null
  * character in buf. lines_to_read is assumed to be a positive number.
  * @post Rewinds the file pointer to the beginning of the file. If buf is
  * too small to handle the requested output, **OVERFLOW** is appended to the
@@ -1124,33 +1132,33 @@ int file_tail( FILE *file, char *buf, size_t bufsize, int lines_to_read )
   int readstatus = 1;   /* Are we at the end of the file? */
   int n = 0;            /* Return value from snprintf. */
   const char *overflow = "\r\n**OVERFLOW**\r\n"; /* Appended if overflow. */
-  
+
   /* Quick check for bad arguments. */
   if (lines_to_read <= 0)
   {
     return lines_to_read;
   }
-  
+
   /* Initialize local variables not already initialized. */
   buflen  = strlen(buf);
   total_lines = file_numlines(file); /* Side effect: file is rewound. */
-  
+
   /* Fast forward to the location we should start reading from */
   while (((lines_to_read + lines_read) < total_lines))
   {
     do {
       c = fgetc(file);
     } while(c != '\n');
-    
+
     lines_read++;
   }
 
   /* We reuse the lines_read counter. */
   lines_read = 0;
-  
+
   /** From here on, we perform just like file_head */
-  while ( (lines_read < lines_to_read) && 
-      (readstatus > 0) && (buflen < bufsize) )  
+  while ( (lines_read < lines_to_read) &&
+      (readstatus > 0) && (buflen < bufsize) )
   {
     /* Don't use get_line to set lines_read because get_line will return
      * the number of comments skipped during reading. */
@@ -1163,7 +1171,7 @@ int file_tail( FILE *file, char *buf, size_t bufsize, int lines_to_read )
       lines_read++;
     }
   }
-  
+
   /* Check to see if we had a potential buffer overflow. */
   if (buflen >= bufsize)
   {
@@ -1171,20 +1179,20 @@ int file_tail( FILE *file, char *buf, size_t bufsize, int lines_to_read )
     if ( (strlen(overflow) + 1) >= bufsize )
     {
       core_dump();
-      snprintf( buf, bufsize, "%s", overflow);      
+      snprintf( buf, bufsize, "%s", overflow);
     }
     else
     {
-      /* Append the overflow statement to the buffer. */ 
+      /* Append the overflow statement to the buffer. */
       snprintf( buf + buflen - strlen(overflow) - 1, strlen(overflow) + 1, "%s", overflow);
     }
   }
-  
+
   rewind(file);
-  
+
   /* Return the number of lines read. */
   return lines_read;
-  
+
 }
 
 /** Returns the byte size of a file. We assume size_t to be a large enough type
@@ -1193,13 +1201,13 @@ int file_tail( FILE *file, char *buf, size_t bufsize, int lines_to_read )
  * @pre file parameter must already be opened.
  * @post file will be rewound.
  * @param file The file to determine the size of.
- * @retval size_t The byte size of the file (we assume no errors will be 
+ * @retval size_t The byte size of the file (we assume no errors will be
  * encountered in this function).
  */
 size_t file_sizeof( FILE *file )
 {
   size_t numbytes = 0;
-  
+
   rewind(file);
 
   /* It would be so much easier to do a byte count if an fseek SEEK_END and
@@ -1210,11 +1218,11 @@ size_t file_sizeof( FILE *file )
   while (!feof(file))
   {
     fgetc(file);
-    numbytes++; 
+    numbytes++;
   }
-  
+
   rewind(file);
-  
+
   return numbytes;
 }
 
@@ -1224,14 +1232,14 @@ size_t file_sizeof( FILE *file )
  * @pre file parameter must already be opened.
  * @post file will be rewound.
  * @param file The file to determine the size of.
- * @retval size_t The byte size of the file (we assume no errors will be 
+ * @retval size_t The byte size of the file (we assume no errors will be
  * encountered in this function).
  */
 int file_numlines( FILE *file )
 {
   int numlines = 0;
   char c;
-  
+
   rewind(file);
 
   while (!feof(file))
@@ -1242,9 +1250,9 @@ int file_numlines( FILE *file )
       numlines++;
     }
   }
-  
+
   rewind(file);
-  
+
   return numlines;
 }
 
@@ -1254,17 +1262,17 @@ int file_numlines( FILE *file )
  * @pre Assumes that NOWHERE, NOTHING, NOBODY, NOFLAG, etc are all equal.
  * @param str_to_conv A string of characters to attempt to convert to an
  * IDXTYPE number.
- * @retval IDXTYPE A valid index number, or NOWHERE if not valid. 
+ * @retval IDXTYPE A valid index number, or NOWHERE if not valid.
  */
 IDXTYPE atoidx( const char *str_to_conv )
 {
   long int result;
-  
+
   /* Check for errors */
   errno = 0;
-  
+
   result = strtol(str_to_conv, NULL, 10);
-  
+
   if ( errno || (result > IDXTYPE_MAX) || (result < 0) )
     return NOWHERE; /* All of the NO* settings should be the same */
   else

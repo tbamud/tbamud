@@ -43,9 +43,9 @@ obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
   return found;
 }
 
-/* Fix all existing objects to have these values. We need to run through each 
- * and every object currently in the game to see which ones are pointing to 
- * this prototype. If object is pointing to this prototype, then we need to 
+/* Fix all existing objects to have these values. We need to run through each
+ * and every object currently in the game to see which ones are pointing to
+ * this prototype. If object is pointing to this prototype, then we need to
  * replace it with the new one. */
 static int update_all_objects(struct obj_data *refobj)
 {
@@ -78,8 +78,8 @@ static int update_all_objects(struct obj_data *refobj)
   return count;
 }
 
-/* Adjust the internal values of other objects as if something was inserted at 
- * the given array index. Might also be useful to make 'holes' in the array 
+/* Adjust the internal values of other objects as if something was inserted at
+ * the given array index. Might also be useful to make 'holes' in the array
  * for some reason. */
 obj_rnum adjust_objects(obj_rnum refpt)
 {
@@ -128,8 +128,8 @@ obj_rnum adjust_objects(obj_rnum refpt)
   return refpt;
 }
 
-/* Function handle the insertion of an object within the prototype framework. 
- * Note that this does not adjust internal values of other objects, use 
+/* Function handle the insertion of an object within the prototype framework.
+ * Note that this does not adjust internal values of other objects, use
  * add_object() for that. */
 obj_rnum insert_object(struct obj_data *obj, obj_vnum ovnum)
 {
@@ -374,12 +374,12 @@ int delete_object(obj_rnum rnum)
 {
   obj_rnum i;
   zone_rnum zrnum;
-  struct obj_data *obj, *tmp;
+  struct obj_data *obj, *tmp, *next_obj;
   int shop, j, zone, cmd_no;
 
   if (rnum == NOTHING || rnum > top_of_objt)
     return NOTHING;
-  
+
   obj = &obj_proto[rnum];
 
   zrnum = real_zone_by_thing(GET_OBJ_VNUM(obj));
@@ -387,7 +387,8 @@ int delete_object(obj_rnum rnum)
   /* This is something you might want to read about in the logs. */
   log("GenOLC: delete_object: Deleting object #%d (%s).", GET_OBJ_VNUM(obj), obj->short_description);
 
-  for (tmp = object_list; tmp; tmp = tmp->next) {
+  for (tmp = object_list; tmp; tmp = next_obj) {
+	next_obj = tmp->next;
     if (tmp->item_number != obj->item_number)
       continue;
 
