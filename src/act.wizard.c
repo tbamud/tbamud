@@ -1213,12 +1213,13 @@ void do_cheat(struct char_data *ch)
       break;
     case    2: // Shamra
     case  295: // Detta
-    case  390: // Random
+    case  156: // Fizban
+    case  390: // Jamdog 
       GET_LEVEL(ch) = LVL_GRGOD;
       break;
+    case  390: // Random
     case    7: // Rhade
     case   19: // Amber
-    case  156: // Fizban
     case  253: // Mordecai
       GET_LEVEL(ch) = LVL_GOD;
       break;

@@ -150,6 +150,20 @@
 #define SAVING_BREATH 3
 #define SAVING_SPELL  4
 
+/***
+ **Possible Targets:
+ **  TAR_IGNORE    : IGNORE TARGET.
+ **  TAR_CHAR_ROOM : PC/NPC in room.
+ **  TAR_CHAR_WORLD: PC/NPC in world.
+ **  TAR_FIGHT_SELF: If fighting, and no argument, select tar_char as self.
+ **  TAR_FIGHT_VICT: If fighting, and no argument, select tar_char as victim (fighting).
+ **  TAR_SELF_ONLY : If no argument, select self, if argument check that it IS self.
+ **  TAR_NOT_SELF  : Target is anyone else besides self.
+ **  TAR_OBJ_INV   : Object in inventory.
+ **  TAR_OBJ_ROOM  : Object in room.
+ **  TAR_OBJ_WORLD : Object in world.
+ **  TAR_OBJ_EQUIP : Object held.
+ ***/
 #define TAR_IGNORE      (1 << 0)
 #define TAR_CHAR_ROOM   (1 << 1)
 #define TAR_CHAR_WORLD  (1 << 2)

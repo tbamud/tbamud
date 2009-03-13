@@ -295,7 +295,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   /*---------------------------------------------------------------------*/
   /* Post Move Trigger Checks: Check the new room for triggers.
    * Assumptions: The character has already truly left the was_in room. If
-   * the entry trigger "prevents" movement into the room, it is thr triggers
+   * the entry trigger "prevents" movement into the room, it is the triggers
    * job to provide a message to the original was_in room. */
   if (!entry_mtrigger(ch) || !enter_wtrigger(&world[going_to], ch, dir)) {
     char_from_room(ch);
