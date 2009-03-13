@@ -28,15 +28,21 @@
 #define LOAD_MOVE	2
 #define LOAD_STRENGTH	3
 
+#define PT_PNAME(i) (player_table[(i)].name)
+#define PT_IDNUM(i) (player_table[(i)].id)
+#define PT_LEVEL(i) (player_table[(i)].level)
+#define PT_FLAGS(i) (player_table[(i)].flags)
+#define PT_LLAST(i) (player_table[(i)].last)
+
 /* 'global' vars defined here and used externally */
 /** @deprecated Since this file really is basically a functional extension
  * of the database handling in db.c, until the day that the mud is broken
  * down to be less monolithic, I don't see why the following should be defined
  * anywhere but there.
 struct player_index_element *player_table = NULL;
-int top_of_p_table = 0;   
-int top_of_p_file = 0;    
-long top_idnum = 0;       
+int top_of_p_table = 0;
+int top_of_p_file = 0;
+long top_idnum = 0;
 */
 
 /* local functions */
@@ -47,7 +53,7 @@ static void load_HMVS(struct char_data *ch, const char *line, int mode);
 static void write_aliases_ascii(FILE *file, struct char_data *ch);
 static void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
 
-/* New version to build player index for ASCII Player Files. Generate index 
+/* New version to build player index for ASCII Player Files. Generate index
  * table for the player file. */
 void build_player_index(void)
 {
@@ -89,8 +95,8 @@ void build_player_index(void)
   top_of_p_file = top_of_p_table = i - 1;
 }
 
-/* Create a new entry in the in-memory index table for the player file. If the 
- * name already exists, by overwriting a deleted character, then we re-use the 
+/* Create a new entry in the in-memory index table for the player file. If the
+ * name already exists, by overwriting a deleted character, then we re-use the
  * old position. */
 int create_entry(char *name)
 {
@@ -116,6 +122,41 @@ int create_entry(char *name)
   player_table[pos].flags = 0;
 
   return (pos);
+}
+
+
+/* Remove an entry from the in-memory player index table.               *
+ * Requires the 'pos' value returned by the get_ptable_by_name function */
+void remove_player_from_index(int pos)
+{
+  int i;
+
+  if (pos < 0 || pos > top_of_p_table)
+    return;
+
+  /* We only need to free the name string */
+  free(PT_PNAME(pos));
+
+  /* Move every other item in the list down the index */
+  for (i = pos+1; i <= top_of_p_table; i++) {
+    PT_PNAME(i-1) = PT_PNAME(i);
+    PT_IDNUM(i-1) = PT_IDNUM(i);
+    PT_LEVEL(i-1) = PT_LEVEL(i);
+    PT_FLAGS(i-1) = PT_FLAGS(i);
+    PT_LLAST(i-1) = PT_LLAST(i);
+  }
+  PT_PNAME(top_of_p_table) = NULL;
+
+  /* Reduce the index table counter */
+  top_of_p_table--;
+
+  /* And reduce the size of the table */
+  if (top_of_p_table >= 0)
+    RECREATE(player_table, struct player_index_element, (top_of_p_table+1));
+  else {
+    free(player_table);
+    player_table = NULL;
+  }
 }
 
 /* This function necessary to save a seperate ASCII player index */
@@ -204,7 +245,7 @@ int load_char(const char *name, struct char_data *ch)
   char f1[128], f2[128], f3[128], f4[128];
   trig_data *t = NULL;
   trig_rnum t_rnum = NOTHING;
-  
+
   if ((id = get_ptable_by_name(name)) < 0)
     return (-1);
   else {
@@ -265,9 +306,9 @@ int load_char(const char *name, struct char_data *ch)
     GET_QUEST_COUNTER(ch) = PFDEF_QUESTCOUNT;
     GET_QUEST(ch) = PFDEF_CURRQUEST;
     GET_NUM_QUESTS(ch) = PFDEF_COMPQUESTS;
-    GET_LAST_MOTD(ch) = PFDEF_LASTMOTD; 
+    GET_LAST_MOTD(ch) = PFDEF_LASTMOTD;
     GET_LAST_NEWS(ch) = PFDEF_LASTNEWS;
-   
+
     for (i = 0; i < AF_ARRAY_MAX; i++)
       AFF_FLAGS(ch)[i] = PFDEF_AFFFLAGS;
     for (i = 0; i < PM_ARRAY_MAX; i++)
@@ -295,8 +336,8 @@ int load_char(const char *name, struct char_data *ch)
           AFF_FLAGS(ch)[1] = asciiflag_conv(f2);
           AFF_FLAGS(ch)[2] = asciiflag_conv(f3);
           AFF_FLAGS(ch)[3] = asciiflag_conv(f4);
-        } else 
-          AFF_FLAGS(ch)[0] = asciiflag_conv(line);	
+        } else
+          AFF_FLAGS(ch)[0] = asciiflag_conv(line);
 	}
 	if (!strcmp(tag, "Affs")) 	load_affects(fl, ch);
         else if (!strcmp(tag, "Alin"))	GET_ALIGNMENT(ch)	= atoi(line);
@@ -337,10 +378,10 @@ int load_char(const char *name, struct char_data *ch)
       case 'H':
 	     if (!strcmp(tag, "Hit "))	load_HMVS(ch, line, LOAD_HIT);
 	else if (!strcmp(tag, "Hite"))	GET_HEIGHT(ch)		= atoi(line);
-        else if (!strcmp(tag, "Host")) { 
-          if (GET_HOST(ch)) 
-            free(GET_HOST(ch)); 
-          GET_HOST(ch) = strdup(line); 
+        else if (!strcmp(tag, "Host")) {
+          if (GET_HOST(ch))
+            free(GET_HOST(ch));
+          GET_HOST(ch) = strdup(line);
         }
         else if (!strcmp(tag, "Hrol"))	GET_HITROLL(ch)		= atoi(line);
 	else if (!strcmp(tag, "Hung"))	GET_COND(ch, HUNGER)	= atoi(line);
@@ -356,7 +397,7 @@ int load_char(const char *name, struct char_data *ch)
 	     if (!strcmp(tag, "Last"))	ch->player.time.logon	= atol(line);
   else if (!strcmp(tag, "Lern"))	GET_PRACTICES(ch)	= atoi(line);
 	else if (!strcmp(tag, "Levl"))	GET_LEVEL(ch)		= atoi(line);
-        else if (!strcmp(tag, "Lmot"))   GET_LAST_MOTD(ch)   = atoi(line); 
+        else if (!strcmp(tag, "Lmot"))   GET_LAST_MOTD(ch)   = atoi(line);
         else if (!strcmp(tag, "Lnew"))   GET_LAST_NEWS(ch)   = atoi(line);
 	break;
 
@@ -417,13 +458,13 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Thr4"))	GET_SAVE(ch, 3)		= atoi(line);
 	else if (!strcmp(tag, "Thr5"))	GET_SAVE(ch, 4)		= atoi(line);
 	else if (!strcmp(tag, "Titl"))	GET_TITLE(ch)		= strdup(line);
-        else if (!strcmp(tag, "Trig") && CONFIG_SCRIPT_PLAYERS) { 
-          if ((t_rnum = real_trigger(atoi(line))) != NOTHING) { 
-            t = read_trigger(t_rnum); 
-          if (!SCRIPT(ch)) 
-            CREATE(SCRIPT(ch), struct script_data, 1); 
-          add_trigger(SCRIPT(ch), t, -1); 
-          }        
+        else if (!strcmp(tag, "Trig") && CONFIG_SCRIPT_PLAYERS) {
+          if ((t_rnum = real_trigger(atoi(line))) != NOTHING) {
+            t = read_trigger(t_rnum);
+          if (!SCRIPT(ch))
+            CREATE(SCRIPT(ch), struct script_data, 1);
+          add_trigger(SCRIPT(ch), t, -1);
+          }
          }
 	break;
 
@@ -462,7 +503,7 @@ int load_char(const char *name, struct char_data *ch)
 void save_char(struct char_data * ch)
 {
   FILE *fl;
-  char filename[40], buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127]; 
+  char filename[40], buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127];
   int i, id, save_index = FALSE;
   struct affected_type *aff, tmp_aff[MAX_AFFECT];
   struct obj_data *char_eq[NUM_WEARS];
@@ -554,9 +595,9 @@ void save_char(struct char_data * ch)
   fprintf(fl, "Plyd: %d\n",  ch->player.time.played);
   fprintf(fl, "Last: %ld\n", (long)ch->player.time.logon);
 
-  if (GET_LAST_MOTD(ch) != PFDEF_LASTMOTD) 
-    fprintf(fl, "Lmot: %d\n", (int)GET_LAST_MOTD(ch)); 
-  if (GET_LAST_NEWS(ch) != PFDEF_LASTNEWS) 
+  if (GET_LAST_MOTD(ch) != PFDEF_LASTMOTD)
+    fprintf(fl, "Lmot: %d\n", (int)GET_LAST_MOTD(ch));
+  if (GET_LAST_NEWS(ch) != PFDEF_LASTNEWS)
     fprintf(fl, "Lnew: %d\n", (int)GET_LAST_NEWS(ch));
 
   if (GET_HOST(ch))				fprintf(fl, "Host: %s\n", GET_HOST(ch));
@@ -565,24 +606,24 @@ void save_char(struct char_data * ch)
   if (GET_ALIGNMENT(ch)  != PFDEF_ALIGNMENT)	fprintf(fl, "Alin: %d\n", GET_ALIGNMENT(ch));
 
 
-  sprintascii(bits,  PLR_FLAGS(ch)[0]); 
-  sprintascii(bits2, PLR_FLAGS(ch)[1]); 
-  sprintascii(bits3, PLR_FLAGS(ch)[2]); 
-  sprintascii(bits4, PLR_FLAGS(ch)[3]); 
-  fprintf(fl, "Act : %s %s %s %s\n", bits, bits2, bits3, bits4); 
- 
-  sprintascii(bits,  AFF_FLAGS(ch)[0]); 
-  sprintascii(bits2, AFF_FLAGS(ch)[1]); 
-  sprintascii(bits3, AFF_FLAGS(ch)[2]); 
-  sprintascii(bits4, AFF_FLAGS(ch)[3]); 
-  fprintf(fl, "Aff : %s %s %s %s\n", bits, bits2, bits3, bits4); 
- 
-  sprintascii(bits,  PRF_FLAGS(ch)[0]); 
-  sprintascii(bits2, PRF_FLAGS(ch)[1]); 
-  sprintascii(bits3, PRF_FLAGS(ch)[2]); 
-  sprintascii(bits4, PRF_FLAGS(ch)[3]); 
-  fprintf(fl, "Pref: %s %s %s %s\n", bits, bits2, bits3, bits4); 
- 
+  sprintascii(bits,  PLR_FLAGS(ch)[0]);
+  sprintascii(bits2, PLR_FLAGS(ch)[1]);
+  sprintascii(bits3, PLR_FLAGS(ch)[2]);
+  sprintascii(bits4, PLR_FLAGS(ch)[3]);
+  fprintf(fl, "Act : %s %s %s %s\n", bits, bits2, bits3, bits4);
+
+  sprintascii(bits,  AFF_FLAGS(ch)[0]);
+  sprintascii(bits2, AFF_FLAGS(ch)[1]);
+  sprintascii(bits3, AFF_FLAGS(ch)[2]);
+  sprintascii(bits4, AFF_FLAGS(ch)[3]);
+  fprintf(fl, "Aff : %s %s %s %s\n", bits, bits2, bits3, bits4);
+
+  sprintascii(bits,  PRF_FLAGS(ch)[0]);
+  sprintascii(bits2, PRF_FLAGS(ch)[1]);
+  sprintascii(bits3, PRF_FLAGS(ch)[2]);
+  sprintascii(bits4, PRF_FLAGS(ch)[3]);
+  fprintf(fl, "Pref: %s %s %s %s\n", bits, bits2, bits3, bits4);
+
  if (GET_SAVE(ch, 0)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr1: %d\n", GET_SAVE(ch, 0));
   if (GET_SAVE(ch, 1)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr2: %d\n", GET_SAVE(ch, 1));
   if (GET_SAVE(ch, 2)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr3: %d\n", GET_SAVE(ch, 2));
@@ -633,11 +674,11 @@ void save_char(struct char_data * ch)
   }
   if (GET_QUEST(ch)        != PFDEF_CURRQUEST)  fprintf(fl, "Qcur: %d\n", GET_QUEST(ch));
 
- if (SCRIPT(ch)) { 
-   for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) 
-   fprintf(fl, "Trig: %d\n",GET_TRIG_VNUM(t)); 
+ if (SCRIPT(ch)) {
+   for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next)
+   fprintf(fl, "Trig: %d\n",GET_TRIG_VNUM(t));
 }
-  
+
   /* Save skills */
   if (GET_LEVEL(ch) < LVL_IMMORT) {
     fprintf(fl, "Skil:\n");
@@ -745,8 +786,8 @@ void remove_player(int pfilepos)
   if (!*player_table[pfilepos].name)
     return;
 
-  /* Update top_of_p_table. */
-  top_of_p_table -= 1;
+  /* Update index table. */
+  remove_player_from_index(pfilepos);
 
   /* Unlink all player-owned files */
   for (i = 0; i < MAX_FILES; i++) {
@@ -766,11 +807,11 @@ void clean_pfiles(void)
   int i, ci;
 
   for (i = 0; i <= top_of_p_table; i++) {
-    /* We only want to go further if the player isn't protected from deletion 
+    /* We only want to go further if the player isn't protected from deletion
      * and hasn't already been deleted. */
     if (!IS_SET(player_table[i].flags, PINDEX_NODELETE) &&
         *player_table[i].name) {
-      /* If the player is already flagged for deletion, then go ahead and get 
+      /* If the player is already flagged for deletion, then go ahead and get
        * rid of him. */
       if (IS_SET(player_table[i].flags, PINDEX_DELETED)) {
 	remove_player(i);
@@ -784,12 +825,12 @@ void clean_pfiles(void)
 	    break;
 	  }
 	}
-        /* If we got this far and the players hasn't been kicked out, then he 
+        /* If we got this far and the players hasn't been kicked out, then he
 	 * can stay a little while longer. */
       }
     }
   }
-  /* After everything is done, we should rebuild player_index and remove the 
+  /* After everything is done, we should rebuild player_index and remove the
    * entries of the players that were just deleted. */
 }
 

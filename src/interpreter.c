@@ -1236,66 +1236,67 @@ void nanny(struct descriptor_data *d, char *arg)
       char buf[MAX_INPUT_LENGTH], tmp_name[MAX_INPUT_LENGTH];
 
       if ((_parse_name(arg, tmp_name)) || strlen(tmp_name) < 2 ||
-	  strlen(tmp_name) > MAX_NAME_LENGTH || !valid_name(tmp_name) ||
-	  fill_word(strcpy(buf, tmp_name)) || reserved_word(buf)) {	/* strcpy: OK (mutual MAX_INPUT_LENGTH) */
-	write_to_output(d, "Invalid name, please try another.\r\nName: ");
-	return;
+       strlen(tmp_name) > MAX_NAME_LENGTH || !valid_name(tmp_name) ||
+       fill_word(strcpy(buf, tmp_name)) || reserved_word(buf)) {	/* strcpy: OK (mutual MAX_INPUT_LENGTH) */
+          write_to_output(d, "Invalid name, please try another.\r\nName: ");
+          return;
       }
       if ((player_i = load_char(tmp_name, d->character)) > -1) {
-	GET_PFILEPOS(d->character) = player_i;
+        GET_PFILEPOS(d->character) = player_i;
 
-	if (PLR_FLAGGED(d->character, PLR_DELETED)) {
+        if (PLR_FLAGGED(d->character, PLR_DELETED)) {
           /* Make sure old files are removed so the new player doesn't get the
-	   * deleted player's equipment. */
-	   if ((player_i = get_ptable_by_name(tmp_name)) >= 0)
-	   remove_player(player_i);
+           * deleted player's equipment. */
+          if ((player_i = get_ptable_by_name(tmp_name)) >= 0)
+            remove_player(player_i);
 
           /* We get a false positive from the original deleted character. */
-	  free_char(d->character);
-	  /* Check for multiple creations. */
-	  if (!valid_name(tmp_name)) {
-	    write_to_output(d, "Invalid name, please try another.\r\nName: ");
-	    return;
-	  }
-	  CREATE(d->character, struct char_data, 1);
-	  clear_char(d->character);
-	  CREATE(d->character->player_specials, struct player_special_data, 1);
+          free_char(d->character);
+
+          /* Check for multiple creations. */
+          if (!valid_name(tmp_name)) {
+            write_to_output(d, "Invalid name, please try another.\r\nName: ");
+            return;
+          }
+          CREATE(d->character, struct char_data, 1);
+          clear_char(d->character);
+          CREATE(d->character->player_specials, struct player_special_data, 1);
 
           if (GET_HOST(d->character))
-	    free(GET_HOST(d->character));
-	  GET_HOST(d->character) = strdup(d->host);
+            free(GET_HOST(d->character));
+          GET_HOST(d->character) = strdup(d->host);
 
-	  d->character->desc = d;
-	  CREATE(d->character->player.name, char, strlen(tmp_name) + 1);
-	  strcpy(d->character->player.name, CAP(tmp_name));	/* strcpy: OK (size checked above) */
-	  GET_PFILEPOS(d->character) = player_i;
-	  write_to_output(d, "Did I get that right, %s (Y/N)? ", tmp_name);
-	  STATE(d) = CON_NAME_CNFRM;
-	} else {
-	  /* undo it just in case they are set */
-	  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
-	  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
-	  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
-	  REMOVE_BIT_AR(AFF_FLAGS(d->character), AFF_GROUP);
+          d->character->desc = d;
+          CREATE(d->character->player.name, char, strlen(tmp_name) + 1);
+          strcpy(d->character->player.name, CAP(tmp_name));	/* strcpy: OK (size checked above) */
+          GET_PFILEPOS(d->character) = player_i;
+          write_to_output(d, "Did I get that right, %s (Y/N)? ", tmp_name);
+          STATE(d) = CON_NAME_CNFRM;
+        } else {
+          /* undo it just in case they are set */
+          REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
+          REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+          REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
+          REMOVE_BIT_AR(AFF_FLAGS(d->character), AFF_GROUP);
           d->character->player.time.logon = time(0);
-	  write_to_output(d, "Password: ");
-	  echo_off(d);
-	  d->idle_tics = 0;
-	  STATE(d) = CON_PASSWORD;
-	}
+          write_to_output(d, "Password: ");
+          echo_off(d);
+          d->idle_tics = 0;
+          STATE(d) = CON_PASSWORD;
+        }
       } else {
-	/* player unknown -- make new character */
+        /* player unknown -- make new character */
 
-	/* Check for multiple creations of a character. */
-	if (!valid_name(tmp_name)) {
-	  write_to_output(d, "Invalid name, please try another.\r\nName: ");
-	  return;
-	}
-	CREATE(d->character->player.name, char, strlen(tmp_name) + 1);
-	strcpy(d->character->player.name, CAP(tmp_name));	/* strcpy: OK (size checked above) */
+        /* Check for multiple creations of a character. */
+        if (!valid_name(tmp_name)) {
+          write_to_output(d, "Invalid name, please try another.\r\nName: ");
+          return;
+        }
+        CREATE(d->character->player.name, char, strlen(tmp_name) + 1);
+        strcpy(d->character->player.name, CAP(tmp_name));	/* strcpy: OK (size checked above) */
 
-	write_to_output(d, "Did I get that right, %s (Y/N)? ", tmp_name);
-	STATE(d) = CON_NAME_CNFRM;
+        write_to_output(d, "Did I get that right, %s (Y/N)? ", tmp_name);
+        STATE(d) = CON_NAME_CNFRM;
       }
     }
     break;
