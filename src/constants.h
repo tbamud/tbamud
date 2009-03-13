@@ -1,13 +1,13 @@
 /**
 * @file constants.h
 * Declares the global constants defined in constants.c.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 */
 #ifndef _CONSTANTS_H_
 #define _CONSTANTS_H_
@@ -15,6 +15,7 @@
 extern const char *tbamud_version;
 extern const char *dirs[];
 extern const char *room_bits[];
+extern const char *zone_bits[];
 extern const char *exit_bits[];
 extern const char *sector_types[];
 extern const char *genders[];

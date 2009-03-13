@@ -236,6 +236,11 @@ ACMD(do_goto)
   if ((location = find_target_room(ch, argument)) == NOWHERE)
     return;
 
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(location), ZONE_NOIMMORT) && (GET_LEVEL(ch) >= LVL_IMMORT) && (GET_LEVEL(ch) < LVL_GRGOD)) {
+    send_to_char(ch, "Sorry, that zone is off-limits for immortals!");
+    return;
+  }
+
   snprintf(buf, sizeof(buf), "$n %s", POOFOUT(ch) ? POOFOUT(ch) : "disappears in a puff of smoke.");
   act(buf, TRUE, ch, 0, 0, TO_ROOM);
 
@@ -4532,4 +4537,207 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
                                                                                  CCYEL(vict, C_NRM), new_name, CCNRM(vict, C_NRM));
 
   return TRUE;
+}
+
+ACMD(do_zlock)
+{
+  zone_vnum znvnum;
+  zone_rnum zn;
+  char      arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+  int       counter = 0;
+  bool      fail = FALSE;
+
+  two_arguments(argument, arg, arg2);
+
+  if (!*arg) {
+    send_to_char(ch, "Usage: %szlock <zone number>%s\r\n", QYEL, QNRM);
+    send_to_char(ch, "%s       zlock list%s\r\n\r\n", QYEL, QNRM);
+    send_to_char(ch, "Locks a zone so that building or editing is not possible.\r\n");
+    send_to_char(ch, "The 'list' shows all currently locked zones.\r\n");
+    send_to_char(ch, "'zlock all' will lock every zone with the GRID flag set.\r\n");
+    send_to_char(ch, "'zlock all all' will lock every zone in the MUD.\r\n");
+    return;
+  }
+  if (is_abbrev(arg, "all")) {
+    if (GET_LEVEL(ch) < LVL_GRGOD) {
+      send_to_char(ch, "You do not have sufficient access to lock all zones.\r\n");
+      return;
+    }
+    if (!*arg2) {
+      for (zn = 0; zn <= top_of_zone_table; zn++) {
+        if (!ZONE_FLAGGED(zn, ZONE_NOBUILD) && ZONE_FLAGGED(zn, ZONE_GRID)) {
+          counter++;
+          SET_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
+          if (save_zone(zn)) {
+            log("(GC) %s has locked zone %d", GET_NAME(ch), zone_table[zn].number);
+          } else {
+            fail = TRUE;
+          }
+        }
+      }
+    } else if (is_abbrev(arg2, "all")) {
+      for (zn = 0; zn <= top_of_zone_table; zn++) {
+        if (!ZONE_FLAGGED(zn, ZONE_NOBUILD)) {
+          counter++;
+          SET_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
+          if (save_zone(zn)) {
+            log("(GC) %s has locked zone %d", GET_NAME(ch), zone_table[zn].number);
+          } else {
+            fail = TRUE;
+          }
+        }
+      }
+    }
+    if (counter == 0) {
+      send_to_char(ch, "There are no unlocked zones to lock!\r\n");
+      return;
+    }
+    if (fail) {
+      send_to_char(ch, "Unable to save zone changes.  Check syslog!\r\n");
+      return;
+    }
+    send_to_char(ch, "%d zones have now been locked.\r\n", counter);
+    mudlog(BRF, LVL_GOD, TRUE, "(GC) %s has locked ALL zones!", GET_NAME(ch));
+    return;
+  }
+  if (is_abbrev(arg, "list")) {
+    /* Show all locked zones */
+    for (zn = 0; zn <= top_of_zone_table; zn++) {
+      if (ZONE_FLAGGED(zn, ZONE_NOBUILD)) {
+        if (!counter) send_to_char(ch, "Locked Zones\r\n");
+
+        send_to_char(ch, "[%s%3d%s] %s%-*s %s%-1s%s\r\n",
+          QGRN, zone_table[zn].number, QNRM, QCYN, count_color_chars(zone_table[zn].name)+30, zone_table[zn].name,
+          QYEL, zone_table[zn].builders ? zone_table[zn].builders : "None.", QNRM);
+        counter++;
+      }
+    }
+    if (counter == 0) {
+      send_to_char(ch, "There are currently no locked zones!\r\n");
+    }
+    return;
+  }
+  else if ((znvnum = atoi(arg)) == 0) {
+    send_to_char(ch, "Usage: %szlock <zone number>%s\r\n", QYEL, QNRM);
+    return;
+  }
+
+  if ((zn = real_zone(znvnum)) == NOWHERE) {
+    send_to_char(ch, "That zone does not exist!\r\n");
+    return;
+  }
+
+  /* Check the builder list */
+  if (GET_LEVEL(ch) < LVL_GRGOD && !is_name(GET_NAME(ch), zone_table[zn].builders) && GET_OLC_ZONE(ch) != znvnum) {
+    send_to_char(ch, "You do not have sufficient access to lock that zone!\r\n");
+    return;
+  }
+
+  /* If we get here, player has typed 'zlock <num>' */
+  if (ZONE_FLAGGED(zn, ZONE_NOBUILD)) {
+    send_to_char(ch, "Zone %d is already locked!\r\n", znvnum);
+    return;
+  }
+  SET_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
+  if (save_zone(zn)) {
+    mudlog(NRM, LVL_GRGOD, TRUE, "(GC) %s has locked zone %d", GET_NAME(ch), znvnum);
+  }
+  else
+  {
+    send_to_char(ch, "Unable to save zone changes.  Check syslog!\r\n");
+  }
+}
+
+ACMD(do_zunlock)
+{
+  zone_vnum znvnum;
+  zone_rnum zn;
+  char      arg[MAX_INPUT_LENGTH];
+  int       counter = 0;
+  bool      fail = FALSE;
+
+  one_argument(argument, arg);
+
+  if (!*arg) {
+    send_to_char(ch, "Usage: %szunlock <zone number>%s\r\n", QYEL, QNRM);
+    send_to_char(ch, "%s       zunlock list%s\r\n\r\n", QYEL, QNRM);
+    send_to_char(ch, "Unlocks a 'locked' zone to allow building or editing.\r\n");
+    send_to_char(ch, "The 'list' shows all currently unlocked zones.\r\n");
+    send_to_char(ch, "'zunlock all' will unlock every zone in the MUD.\r\n");
+    return;
+  }
+  if (is_abbrev(arg, "all")) {
+    if (GET_LEVEL(ch) < LVL_GRGOD) {
+      send_to_char(ch, "You do not have sufficient access to lock zones.\r\n");
+      return;
+    }
+    for (zn = 0; zn <= top_of_zone_table; zn++) {
+      if (ZONE_FLAGGED(zn, ZONE_NOBUILD)) {
+        counter++;
+        REMOVE_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
+        if (save_zone(zn)) {
+          log("(GC) %s has unlocked zone %d", GET_NAME(ch), zone_table[zn].number);
+        } else {
+          fail = TRUE;
+        }
+      }
+    }
+    if (counter == 0) {
+      send_to_char(ch, "There are no locked zones to unlock!\r\n");
+      return;
+    }
+    if (fail) {
+      send_to_char(ch, "Unable to save zone changes.  Check syslog!\r\n");
+      return;
+    }
+    send_to_char(ch, "%d zones have now been unlocked.\r\n", counter);
+    mudlog(BRF, LVL_GOD, TRUE, "(GC) %s has unlocked ALL zones!", GET_NAME(ch));
+    return;
+  }
+  if (is_abbrev(arg, "list")) {
+    /* Show all unlocked zones */
+    for (zn = 0; zn <= top_of_zone_table; zn++) {
+      if (!ZONE_FLAGGED(zn, ZONE_NOBUILD)) {
+        if (!counter) send_to_char(ch, "Unlocked Zones\r\n");
+
+        send_to_char(ch, "[%s%3d%s] %s%-*s %s%-1s%s\r\n",
+          QGRN, zone_table[zn].number, QNRM, QCYN, count_color_chars(zone_table[zn].name)+30, zone_table[zn].name,
+          QYEL, zone_table[zn].builders ? zone_table[zn].builders : "None.", QNRM);
+        counter++;
+      }
+    }
+    if (counter == 0) {
+      send_to_char(ch, "There are currently no unlocked zones!\r\n");
+    }
+    return;
+  }
+  else if ((znvnum = atoi(arg)) == 0) {
+    send_to_char(ch, "Usage: %szunlock <zone number>%s\r\n", QYEL, QNRM);
+    return;
+  }
+
+  if ((zn = real_zone(znvnum)) == NOWHERE) {
+    send_to_char(ch, "That zone does not exist!\r\n");
+    return;
+  }
+
+  /* Check the builder list */
+  if (GET_LEVEL(ch) < LVL_GRGOD && !is_name(GET_NAME(ch), zone_table[zn].builders) && GET_OLC_ZONE(ch) != znvnum) {
+    send_to_char(ch, "You do not have sufficient access to unlock that zone!\r\n");
+    return;
+  }
+
+  /* If we get here, player has typed 'zunlock <num>' */
+  if (!ZONE_FLAGGED(zn, ZONE_NOBUILD)) {
+    send_to_char(ch, "Zone %d is already unlocked!\r\n", znvnum);
+    return;
+  }
+  REMOVE_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
+  if (save_zone(zn)) {
+    mudlog(NRM, LVL_GRGOD, TRUE, "(GC) %s has unlocked zone %d", GET_NAME(ch), znvnum);
+  }
+  else
+  {
+    send_to_char(ch, "Unable to save zone changes.  Check syslog!\r\n");
+  }
 }

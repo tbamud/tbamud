@@ -37,6 +37,11 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 tbaMUD 3.59
 [Mar 13 2009] - Jamdog
   Bug-Fix: Character deletion (remove_player, players.c), where the wrong player was potentially being deleted.
+  Added Zone Flags, including zedit sub-menu
+  Added Zone level restrictions, including zedit sub-menu
+  Added zlock and zunlock commands
+  Added areas command
+  Set GRID flag on zones 0, 12 and 30
 [Mar 08 2009] - Jamdog
   Fixed a possible crash bug in delete_object (genobj.c) (Thanks Slicer)
   CAP function now recognises both preceeding color codes and ANSI codes (Thanks Slicer)

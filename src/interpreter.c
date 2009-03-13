@@ -75,6 +75,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "aedit"    , "aed"     , POS_DEAD    , do_oasis_aedit, LVL_GOD, 0 },
   { "alias"    , "ali"     , POS_DEAD    , do_alias    , 0, 0 },
   { "afk"      , "afk"     , POS_DEAD    , do_gen_tog  , 0, SCMD_AFK },
+  { "areas"    , "are"     , POS_DEAD    , do_areas    , 0, 0 },
   { "assist"   , "as"      , POS_FIGHTING, do_assist   , 1, 0 },
   { "ask"      , "ask"     , POS_RESTING , do_spec_comm, 0, SCMD_ASK },
   { "astat"    , "ast"     , POS_DEAD    , do_astat    , 0, 0 },
@@ -330,6 +331,8 @@ cpp_extern const struct command_info cmd_info[] = {
   { "zreset"   , "zreset"  , POS_DEAD    , do_zreset   , LVL_BUILDER, 0 },
   { "zedit"    , "zedit"   , POS_DEAD    , do_oasis_zedit, LVL_BUILDER, 0 },
   { "zlist"    , "zlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_ZLIST },
+  { "zlock"    , "zlock"   , POS_DEAD    , do_zlock    , LVL_BUILDER, 0 },
+  { "zunlock"  , "zunlock" , POS_DEAD    , do_zunlock  , LVL_BUILDER, 0 },
   { "zcheck"   , "zcheck"  , POS_DEAD    , do_zcheck   , LVL_GOD, 0 },
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
 

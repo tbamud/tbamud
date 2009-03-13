@@ -1,7 +1,7 @@
 #30
 DikuMUD~
 Northern Midgaard~
-3000 3099 15 2
+3000 3099 15 2 d 0 0 0 -1 -1
 R 0 3000 3099 -1 	(a bulletin board)
 O 0 3099 99 3000 	(a bulletin board)
 M 0 3045 1 3022 	(the waiter)

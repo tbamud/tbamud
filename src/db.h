@@ -1,13 +1,13 @@
 /**
 * @file db.h
 * Header file for database handling.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 *
 */
 #ifndef _DB_H_
@@ -159,9 +159,9 @@ struct reset_com {
    char *sarg1;		/* string argument                      */
    char *sarg2;		/* string argument                      */
 
-   /* Commands: 
-    *  'M': Read a mobile 
-    *  'O': Read an object 
+   /* Commands:
+    *  'M': Read a mobile
+    *  'O': Read an object
     *  'G': Give obj to mob
     *  'P': Put obj in obj
     *  'G': Obj to char
@@ -180,6 +180,10 @@ struct zone_data {
    int	age;                /* current age of this zone (minutes) */
    room_vnum bot;           /* starting room number for this zone */
    room_vnum top;           /* upper limit for rooms in this zone */
+
+   int zone_flags[ZN_ARRAY_MAX];  /* Zone Flags bitvector */
+   int min_level;                 /* Minimum level a player must be to enter this zone */
+   int max_level;                 /* Maximum level a player must be to enter this zone */
 
    int	reset_mode;         /* conditions for reset (see below)   */
    zone_vnum number;	    /* virtual number of this zone	  */
@@ -336,11 +340,11 @@ extern int top_of_helpt;
 extern struct help_index_element *help_table;
 
 /* Mud configurable variables */
-extern int no_mail;                
-extern int mini_mud;               
-extern int no_rent_check;          
-extern time_t boot_time;           
-extern int circle_restrict;        
+extern int no_mail;
+extern int mini_mud;
+extern int no_rent_check;
+extern time_t boot_time;
+extern int circle_restrict;
 extern room_rnum r_mortal_start_room;
 extern room_rnum r_immort_start_room;
 extern room_rnum r_frozen_start_room;
@@ -348,9 +352,9 @@ extern room_rnum r_frozen_start_room;
 extern struct config_data config_info;
 
 extern struct time_info_data time_info;
-extern struct weather_data weather_info; 
+extern struct weather_data weather_info;
 extern struct player_special_data dummy_mob;
-extern struct reset_q_type reset_q;     
+extern struct reset_q_type reset_q;
 
 extern struct room_data *world;
 extern room_rnum top_of_world;

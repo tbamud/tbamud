@@ -82,6 +82,7 @@ ACMD(do_look);
 #define SCMD_LOOK 0
 #define SCMD_READ 1
 /* functions without subcommands */
+ACMD(do_areas);
 ACMD(do_consider);
 ACMD(do_diagnose);
 ACMD(do_equipment);
@@ -339,7 +340,9 @@ ACMD(do_wizlock);
 ACMD(do_wiznet);
 ACMD(do_wizupdate);
 ACMD(do_zcheck);
+ACMD(do_zlock);
 ACMD(do_zpurge);
 ACMD(do_zreset);
+ACMD(do_zunlock);
 
 #endif /* _ACT_H_ */

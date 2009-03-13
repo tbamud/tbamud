@@ -91,6 +91,16 @@
 /** The total number of Room Flags */
 #define NUM_ROOM_FLAGS    17
 
+/* Zone info: Used in zone_data.zone_flags */
+#define ZONE_CLOSED       0  /**< Zone is closed - players cannot enter */
+#define ZONE_NOIMMORT     1  /**< Immortals (below LVL_GRGOD) cannot enter this zone */
+#define ZONE_QUEST        2  /**< This zone is a quest zone (not implemented) */
+#define ZONE_GRID         3  /**< Zone is 'on the grid', connected, show on 'areas' */
+#define ZONE_NOBUILD      4  /**< Building is not allowed in the zone */
+#define ZONE_NOASTRAL     5  /**< No teleportation magic will work to or from this zone */
+/** The total number of Zone Flags */
+#define NUM_ZONE_FLAGS    6
+
 /* Exit info: used in room_data.dir_option.exit_info */
 #define EX_ISDOOR     (1 << 0)   /**< Exit is a door		*/
 #define EX_CLOSED     (1 << 1)   /**< The door is closed	*/
@@ -489,6 +499,7 @@
 #define AF_ARRAY_MAX    4  /**< # Bytes in Bit vector - Affect flags */
 #define TW_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Wear Locations */
 #define EF_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Extra Flags */
+#define ZN_ARRAY_MAX    4  /**< # Bytes in Bit vector - Zone Flags */
 
 /* other #defined constants */
 /* **DO**NOT** blindly change the number of levels in your MUD merely by

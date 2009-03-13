@@ -67,6 +67,19 @@ const char *room_bits[] = {
   "\n"
 };
 
+/** Room flag descriptions. (ZONE_x)
+ * @pre Must be in the same order as the defines in structs.h.
+ * Must end array with a single newline. */
+const char *zone_bits[] = {
+  "CLOSED",
+  "NO_IMMORT",
+  "QUEST",
+  "GRID",
+  "NOBUILD",
+  "!ASTRAL",
+  "\n"
+};
+
 /** Exit bits for doors.
  * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */

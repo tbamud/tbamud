@@ -1980,10 +1980,12 @@ char *parse_object(FILE *obj_f, int nr)
 static void load_zones(FILE *fl, char *zonename)
 {
   static zone_rnum zone = 0;
-  int cmd_no, num_of_cmds = 0, line_num = 0, tmp, error;
+  int i, cmd_no, num_of_cmds = 0, line_num = 0, tmp, error;
   char *ptr, buf[READ_SIZE], zname[READ_SIZE], buf2[MAX_STRING_LENGTH];
   int zone_fix = FALSE;
   char t1[80], t2[80];
+  char zbuf1[MAX_STRING_LENGTH], zbuf2[MAX_STRING_LENGTH];
+  char zbuf3[MAX_STRING_LENGTH], zbuf4[MAX_STRING_LENGTH];
 
   strlcpy(zname, zonename, sizeof(zname));
 
@@ -2024,22 +2026,42 @@ static void load_zones(FILE *fl, char *zonename)
     *ptr = '\0';
   Z.name = strdup(buf);
 
+  /* Clear all the zone flags */
+  for (i=0; i<ZN_ARRAY_MAX; i++)
+    Z.zone_flags[i] = 0;
+
   line_num += get_line(fl, buf);
-  if (sscanf(buf, " %hd %hd %d %d ", &Z.bot, &Z.top, &Z.lifespan, &Z.reset_mode) != 4) {
-    /* This may be due to the fact that the zone has no builder.  So, we just
-     * attempt to fix this by copying the previous 2 last reads into this
-     * variable and the last one. */
-    log("SYSERR: Format error in numeric constant line of %s, attempting to fix.", zname);
-    if (sscanf(Z.name, " %hd %hd %d %d ", &Z.bot, &Z.top, &Z.lifespan, &Z.reset_mode) != 4) {
-      log("SYSERR: Could not fix previous error, aborting game.");
-      exit(1);
-    } else {
-      free(Z.name);
-      Z.name = strdup(Z.builders);
-      free(Z.builders);
-      Z.builders = strdup("None.");
-      zone_fix = TRUE;
+  /* Look for 10 items first (new tbaMUD), if not found, try 4 (old tbaMUD) */
+  if  (sscanf(buf, " %hd %hd %d %d %s %s %s %s %d %d", &Z.bot, &Z.top, &Z.lifespan,
+      &Z.reset_mode, zbuf1, zbuf2, zbuf3, zbuf4, &Z.min_level, &Z.max_level) != 10)
+  {
+    if (sscanf(buf, " %hd %hd %d %d ", &Z.bot, &Z.top, &Z.lifespan, &Z.reset_mode) != 4) {
+      /* This may be due to the fact that the zone has no builder.  So, we just
+       * attempt to fix this by copying the previous 2 last reads into this
+       * variable and the last one. */
+      log("SYSERR: Format error in numeric constant line of %s, attempting to fix.", zname);
+      if (sscanf(Z.name, " %hd %hd %d %d ", &Z.bot, &Z.top, &Z.lifespan, &Z.reset_mode) != 4) {
+        log("SYSERR: Could not fix previous error, aborting game.");
+        exit(1);
+      } else {
+        free(Z.name);
+        Z.name = strdup(Z.builders);
+        free(Z.builders);
+        Z.builders = strdup("None.");
+        zone_fix = TRUE;
+      }
     }
+    /* We only found 4 values, so set 'defaults' for the ones not found */
+    Z.min_level = -1;
+    Z.max_level = -1;
+  }
+  else
+  {
+    /* We found 12 values, so deal with the strings */
+    Z.zone_flags[0] = asciiflag_conv(zbuf1);
+    Z.zone_flags[1] = asciiflag_conv(zbuf2);
+    Z.zone_flags[2] = asciiflag_conv(zbuf3);
+    Z.zone_flags[3] = asciiflag_conv(zbuf4);
   }
   if (Z.bot > Z.top) {
     log("SYSERR: Zone %d bottom (%d) > top (%d).", Z.number, Z.bot, Z.top);

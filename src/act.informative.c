@@ -2400,3 +2400,110 @@ ACMD(do_whois)
   if (got_from_file)
     free_char (victim);
 }
+
+bool get_zone_levels(zone_rnum znum, char *buf)
+{
+  /* Create a string for the level restrictions for this zone. */
+  if ((zone_table[znum].min_level == -1) && (zone_table[znum].max_level == -1)) {
+    sprintf(buf, "<Not Set!>");
+    return FALSE;
+  }
+
+  if (zone_table[znum].min_level == -1) {
+    sprintf(buf, "Up to level %d", zone_table[znum].max_level);
+    return TRUE;
+  }
+
+  if (zone_table[znum].max_level == -1) {
+    sprintf(buf, "Above level %d", zone_table[znum].min_level);
+    return TRUE;
+  }
+
+  sprintf(buf, "Levels %d to %d", zone_table[znum].min_level, zone_table[znum].max_level);
+  return TRUE;
+}
+
+ACMD(do_areas)
+{
+  int i, hilev=-1, lolev=-1, zcount=0, lev_set;
+  char arg[MAX_INPUT_LENGTH], *second, lev_str[MAX_INPUT_LENGTH];
+  bool show_zone = FALSE, overlap = FALSE, overlap_shown = FALSE;
+
+  one_argument(argument, arg);
+
+  if (*arg) {
+    /* There was an arg typed - check for level range */
+    second = strchr(arg, '-');
+    if (second) {
+      /* Check for 1st value */
+      if (second == arg)
+        lolev = 0;
+      else
+        lolev = atoi(arg);
+
+      /* Check for 2nd value */
+      if (*(second+1) == '\0' || !isdigit(*(second+1)) )
+        hilev = 100;
+      else
+        hilev = atoi(second+1);
+
+    } else {
+      /* No range - single number */
+      lolev = atoi(arg);
+      hilev = -1;  /* No high level - indicates single level */
+    }
+  }
+  if (hilev != -1 && lolev > hilev) {
+    /* Swap hi and lo lev if needed */
+    i     = lolev;
+    lolev = hilev;
+    hilev = i;
+  }
+  if (hilev != -1)
+    send_to_char(ch, "Checking range: %s%d to %d%s\r\n", QYEL, lolev, hilev, QNRM);
+  else if (lolev != -1)
+    send_to_char(ch, "Checking level: %s%d%s\r\n", QYEL, lolev, QNRM);
+  else
+    send_to_char(ch, "Checking all areas.\r\n");
+
+  for (i = 0; i <= top_of_zone_table; i++) {    /* Go through the whole zone table */
+    show_zone = FALSE;
+    overlap = FALSE;
+
+    if (ZONE_FLAGGED(i, ZONE_GRID)) {           /* Is this zone 'on the grid' ?    */
+      if (lolev == -1) {
+        /* No range supplied, show all zones */
+        show_zone = TRUE;
+      } else if ((hilev == -1) && (lolev >= ZONE_MINLVL(i)) && (lolev <= ZONE_MAXLVL(i))) {
+        /* Single number supplied, it's in this zone's range */
+        show_zone = TRUE;
+      } else if ((hilev != -1) && (lolev >= ZONE_MINLVL(i)) && (hilev <= ZONE_MAXLVL(i))) {
+        /* Range supplied, it's completely within this zone's range (no overlap) */
+        show_zone = TRUE;
+      } else if ((hilev != -1) && ((lolev >= ZONE_MINLVL(i) && lolev <= ZONE_MAXLVL(i)) || (hilev <= ZONE_MAXLVL(i) && hilev >= ZONE_MINLVL(i)))) {
+        /* Range supplied, it overlaps this zone's range */
+        show_zone = TRUE;
+        overlap = TRUE;
+      } else if (ZONE_MAXLVL(i) < 0 && (lolev >= ZONE_MINLVL(i))) {
+        /* Max level not set for this zone, but specified min in range */
+        show_zone = TRUE;
+      } else if (ZONE_MAXLVL(i) < 0 && (hilev >= ZONE_MINLVL(i))) {
+        /* Max level not set for this zone, so just display it as red */
+        show_zone = TRUE;
+        overlap = TRUE;
+      }
+    }
+
+    if (show_zone) {
+      if (overlap) overlap_shown = TRUE;
+      lev_set = get_zone_levels(i, lev_str);
+      send_to_char(ch, "@n(%3d) %s%-*s@n %s%s@n\r\n", ++zcount, overlap ? QRED : QCYN,
+                 count_color_chars(zone_table[i].name)+30, zone_table[i].name,
+                 lev_set ? "@c" : "@n", lev_set ? lev_str : "All Levels");
+    }
+  }
+  send_to_char(ch, "%s%d%s area%s found.\r\n", QYEL, zcount, QNRM, zcount == 1 ? "" : "s");
+
+  if (overlap_shown)
+    send_to_char(ch, "Areas shown in @rred@n may have some creatures outside the specified range.\r\n");
+}

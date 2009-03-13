@@ -295,6 +295,15 @@ void char_from_furniture(struct char_data *ch);
 /** Room flags.
  * @param loc The real room number. */
 #define ROOM_FLAGS(loc)	(world[(loc)].room_flags)
+/** Zone flags.
+ * @param rnum The real zone number. */
+#define ZONE_FLAGS(rnum)       (zone_table[(rnum)].zone_flags)
+/** Zone minimum level restriction.
+ * @param rnum The real zone number. */
+#define ZONE_MINLVL(rnum)      (zone_table[(rnum)].min_level)
+/** Zone maximum level restriction.
+ * @param rnum The real zone number. */
+#define ZONE_MAXLVL(rnum)      (zone_table[(rnum)].max_level)
 
 /** References the routine element for a spell. Currently unused. */
 #define SPELL_ROUTINES(spl)	(spell_info[spl].routines)
@@ -319,6 +328,8 @@ void char_from_furniture(struct char_data *ch);
 #define PRF_FLAGGED(ch, flag) (IS_SET_AR(PRF_FLAGS(ch), (flag)))
 /** 1 if flag is set in the room of loc, 0 if not. */
 #define ROOM_FLAGGED(loc, flag) (IS_SET_AR(ROOM_FLAGS(loc), (flag)))
+/** 1 if flag is set in the zone of rnum, 0 if not. */
+#define ZONE_FLAGGED(rnum, flag)   (IS_SET_AR(zone_table[(rnum)].zone_flags, (flag)))
 /** 1 if flag is set in the exit, 0 if not. */
 #define EXIT_FLAGGED(exit, flag) (IS_SET((exit)->exit_info, (flag)))
 /** 1 if flag is set in the affects bitarray of obj, 0 if not. */
@@ -350,6 +361,9 @@ void char_from_furniture(struct char_data *ch);
  * SECT_INSIDE. */
 #define SECT(room)	(VALID_ROOM_RNUM(room) ? \
 				world[(room)].sector_type : SECT_INSIDE)
+
+/** Return the zone number for this room */
+#define GET_ROOM_ZONE(room)	(VALID_ROOM_RNUM(room) ? world[(room)].zone : NOWHERE)
 
 /** TRUE if the room has no light, FALSE if not. */
 #define IS_DARK(room)	room_is_dark((room))

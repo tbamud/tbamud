@@ -226,8 +226,13 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define ZEDIT_ZONE_RESET		13
 #define ZEDIT_CONFIRM_SAVESTRING	14
 #define ZEDIT_ZONE_BUILDERS		15
-#define ZEDIT_SARG1			20
-#define ZEDIT_SARG2			21
+#define ZEDIT_SARG1             20
+#define ZEDIT_SARG2             21
+#define ZEDIT_ZONE_FLAGS        22
+#define ZEDIT_LEVELS            23
+#define ZEDIT_LEV_MIN           24
+#define ZEDIT_LEV_MAX           25
+#define ZEDIT_ZONE_CLAIM        26
 
 /* Submodes of MEDIT connectedness. */
 #define MEDIT_MAIN_MENU            	0

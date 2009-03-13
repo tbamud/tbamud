@@ -61,8 +61,8 @@ void clear_screen(struct descriptor_data *d)
 }
 
 /* Exported utilities */
-/* Set the color string pointers for that which this char will see at color 
- * level NRM.  Changing the entries here will change the colour scheme 
+/* Set the color string pointers for that which this char will see at color
+ * level NRM.  Changing the entries here will change the colour scheme
  * throughout the OLC. */
 void get_char_colors(struct char_data *ch)
 {
@@ -72,7 +72,7 @@ void get_char_colors(struct char_data *ch)
   yel = CCYEL(ch, C_NRM);
 }
 
-/* This procedure frees up the strings and/or the structures attatched to a 
+/* This procedure frees up the strings and/or the structures attatched to a
  * descriptor, sets all flags back to how they should be. */
 void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
 {
@@ -80,7 +80,7 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
   if (d->olc == NULL)
     return;
 
-  /* Check for a room. free_room doesn't perform sanity checks, we must be 
+  /* Check for a room. free_room doesn't perform sanity checks, we must be
    * careful here. */
   if (OLC_ROOM(d)) {
     switch (cleanup_type) {
@@ -101,31 +101,31 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
     }
   }
 
-  /* Check for an existing object in the OLC.  The strings aren't part of the 
+  /* Check for an existing object in the OLC.  The strings aren't part of the
    * prototype any longer.  They get added with strdup(). */
   if (OLC_OBJ(d)) {
     free_object_strings(OLC_OBJ(d));
     free(OLC_OBJ(d));
   }
 
-  /* Check for a mob.  free_mobile() makes sure strings are not in the 
+  /* Check for a mob.  free_mobile() makes sure strings are not in the
    * prototype. */
   if (OLC_MOB(d))
     free_mobile(OLC_MOB(d));
 
   /* Check for a zone.  cleanup_type is irrelevant here, free() everything. */
   if (OLC_ZONE(d)) {
-    if (OLC_ZONE(d)->builders) 
-      free(OLC_ZONE(d)->builders); 
-    if (OLC_ZONE(d)->name) 
+    if (OLC_ZONE(d)->builders)
+      free(OLC_ZONE(d)->builders);
+    if (OLC_ZONE(d)->name)
       free(OLC_ZONE(d)->name);
     if (OLC_ZONE(d)->cmd)
       free(OLC_ZONE(d)->cmd);
     free(OLC_ZONE(d));
   }
 
-  /* Check for a shop.  free_shop doesn't perform sanity checks, we must be 
-   * careful here. OLC_SHOP(d) is a _copy_ - no pointers to the original. Just 
+  /* Check for a shop.  free_shop doesn't perform sanity checks, we must be
+   * careful here. OLC_SHOP(d) is a _copy_ - no pointers to the original. Just
    * go ahead and free it all. */
   if (OLC_SHOP(d))
       free_shop(OLC_SHOP(d));
@@ -143,7 +143,7 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
         break;
     }
   }
- 
+
   /*. Check for aedit stuff -- M. Scott */
   if (OLC_ACTION(d))  {
     switch(cleanup_type)  {
@@ -179,14 +179,14 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
      free(OLC_STORAGE(d));
      OLC_STORAGE(d) = NULL;
    }
-   /* Free this one regardless. If we've left olc, we've either made a fresh 
-    * copy of it in the trig index, or we lost connection. Either way, we need 
+   /* Free this one regardless. If we've left olc, we've either made a fresh
+    * copy of it in the trig index, or we lost connection. Either way, we need
     * to get rid of this. */
    if (OLC_TRIG(d)) {
      free_trigger(OLC_TRIG(d));
      OLC_TRIG(d) = NULL;
    }
-   /* OLC_SCRIPT is always set as trig_proto of OLC_OBJ/MOB/ROOM. Therefore it 
+   /* OLC_SCRIPT is always set as trig_proto of OLC_OBJ/MOB/ROOM. Therefore it
     * should not be free'd here. */
 
   /* Restore descriptor playing status. */
@@ -242,8 +242,8 @@ static void free_config(struct config_data *data)
   free(data);
 }
 
-/* Checks to see if a builder can modify the specified zone. Ch is the imm 
- * requesting access to modify this zone. Rnum is the real number of the zone 
+/* Checks to see if a builder can modify the specified zone. Ch is the imm
+ * requesting access to modify this zone. Rnum is the real number of the zone
  * attempted to be modified. Returns TRUE if the builder has access, otherwisei
  * FALSE. */
 int can_edit_zone(struct char_data *ch, zone_rnum rnum)
@@ -252,13 +252,17 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
   if (!ch->desc || IS_NPC(ch) || rnum == NOWHERE)
     return FALSE;
 
-  if (GET_OLC_ZONE(ch) == ALL_PERMISSION) 
-    return TRUE; 
+  /* If zone is flagged NOBUILD, then No-one can edit it (use zunlock to open it) */
+  if (rnum != HEDIT_PERMISSION && rnum != AEDIT_PERMISSION && ZONE_FLAGGED(rnum, ZONE_NOBUILD) )
+    return FALSE;
 
-  if (GET_OLC_ZONE(ch) == HEDIT_PERMISSION && rnum == HEDIT_PERMISSION) 
-    return TRUE; 
+  if (GET_OLC_ZONE(ch) == ALL_PERMISSION)
+    return TRUE;
 
-  if (GET_OLC_ZONE(ch) == AEDIT_PERMISSION && rnum == AEDIT_PERMISSION) 
+  if (GET_OLC_ZONE(ch) == HEDIT_PERMISSION && rnum == HEDIT_PERMISSION)
+    return TRUE;
+
+  if (GET_OLC_ZONE(ch) == AEDIT_PERMISSION && rnum == AEDIT_PERMISSION)
     return TRUE;
 
   /* always access if ch is high enough level */
@@ -289,7 +293,7 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
 void send_cannot_edit(struct char_data *ch, zone_vnum zone)
 {
   char buf[MAX_STRING_LENGTH];
-	   
+
   if (GET_OLC_ZONE(ch) != NOWHERE) {
     send_to_char(ch, "You do not have permission to edit zone %d.  Try zone %d.\r\n", zone, GET_OLC_ZONE(ch));
     sprintf(buf, "OLC: %s tried to edit zone %d (allowed zone %d).", GET_NAME(ch), zone, GET_OLC_ZONE(ch));

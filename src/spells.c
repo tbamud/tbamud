@@ -59,6 +59,11 @@ ASPELL(spell_recall)
   if (victim == NULL || IS_NPC(victim))
     return;
 
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(IN_ROOM(victim)), ZONE_NOASTRAL)) {
+    send_to_char(ch, "A bright flash prevents your spell from working!");
+    return;
+  }
+
   act("$n disappears.", TRUE, victim, 0, 0, TO_ROOM);
   char_from_room(victim);
   char_to_room(victim, r_mortal_start_room);
@@ -76,9 +81,16 @@ ASPELL(spell_teleport)
   if (victim == NULL || IS_NPC(victim))
     return;
 
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(IN_ROOM(victim)), ZONE_NOASTRAL)) {
+    send_to_char(ch, "A bright flash prevents your spell from working!");
+    return;
+  }
+
   do {
     to_room = rand_number(0, top_of_world);
-  } while (ROOM_FLAGGED(to_room, ROOM_PRIVATE) || ROOM_FLAGGED(to_room, ROOM_DEATH) || ROOM_FLAGGED(to_room, ROOM_GODROOM));
+  } while (ROOM_FLAGGED(to_room, ROOM_PRIVATE) || ROOM_FLAGGED(to_room, ROOM_DEATH) ||
+           ROOM_FLAGGED(to_room, ROOM_GODROOM) || ZONE_FLAGGED(GET_ROOM_ZONE(to_room), ZONE_CLOSED) ||
+           ZONE_FLAGGED(GET_ROOM_ZONE(to_room), ZONE_NOASTRAL));
 
   act("$n slowly fades out of existence and is gone.",
       FALSE, victim, 0, 0, TO_ROOM);
@@ -99,6 +111,12 @@ ASPELL(spell_summon)
 
   if (GET_LEVEL(victim) > MIN(LVL_IMMORT - 1, level + 3)) {
     send_to_char(ch, "%s", SUMMON_FAIL);
+    return;
+  }
+
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(IN_ROOM(victim)), ZONE_NOASTRAL) ||
+      ZONE_FLAGGED(GET_ROOM_ZONE(IN_ROOM(ch)), ZONE_NOASTRAL)) {
+    send_to_char(ch, "A bright flash prevents your spell from working!");
     return;
   }
 
@@ -169,8 +187,8 @@ int isname_obj(char *search, char *list)
     return 0;
   }
 
-  /* Found the name in the list, now see if it's a valid hit. The following 
-   * avoids substrings (like ring in shimmering) is it at beginning of 
+  /* Found the name in the list, now see if it's a valid hit. The following
+   * avoids substrings (like ring in shimmering) is it at beginning of
    * namelist? */
   for (i = 0; searchname[i]; i++)
     if (searchname[i] != namelist[i])
@@ -202,7 +220,7 @@ ASPELL(spell_locate_object)
   }
 
   /*  added a global var to catch 2nd arg. */
-  sprintf(name, "%s", cast_arg2); 
+  sprintf(name, "%s", cast_arg2);
 
   j = GET_LEVEL(ch) / 2;  /* # items to show = twice char's level */
 
@@ -210,7 +228,7 @@ ASPELL(spell_locate_object)
     if (!isname_obj(name, i->name))
       continue;
 
-  send_to_char(ch, "%c%s", UPPER(*i->short_description), i->short_description + 1); 
+  send_to_char(ch, "%c%s", UPPER(*i->short_description), i->short_description + 1);
 
     if (i->carried_by)
       send_to_char(ch, " is being carried by %s.\r\n", PERS(i->carried_by, ch));
@@ -364,7 +382,7 @@ ASPELL(spell_identify)
   }
 }
 
-/* Cannot use this spell on an equipped object or it will mess up the wielding 
+/* Cannot use this spell on an equipped object or it will mess up the wielding
  * character's hit/dam totals. */
 ASPELL(spell_enchant_weapon)
 {

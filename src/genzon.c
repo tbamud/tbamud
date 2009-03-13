@@ -28,7 +28,7 @@ zone_rnum real_zone_by_thing(room_vnum vznum)
 
   if (genolc_zone_bottom(bot) > vznum || zone_table[top].top < vznum)
     return (NOWHERE);
-  
+
   /* perform binary search on zone-table */
   while (bot <= top) {
     mid = (bot + top) / 2;
@@ -54,7 +54,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   int i, max_zone;
   zone_rnum rznum;
   char buf[MAX_STRING_LENGTH];
-  
+
 #if CIRCLE_UNSIGNED_INDEX
   max_zone = 655;
   if (vzone_num == NOWHERE) {
@@ -64,13 +64,13 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
 #endif
     *error = "You can't make negative zones.\r\n";
     return NOWHERE;
-   } else if (vzone_num > max_zone) { 
-#if CIRCLE_UNSIGNED_INDEX 
-    *error = "New zone cannot be higher than 655.\r\n"; 
-#else 
-    *error = "New zone cannot be higher than 327.\r\n"; 
-#endif 
-    return NOWHERE; 
+   } else if (vzone_num > max_zone) {
+#if CIRCLE_UNSIGNED_INDEX
+    *error = "New zone cannot be higher than 655.\r\n";
+#else
+    *error = "New zone cannot be higher than 327.\r\n";
+#endif
+    return NOWHERE;
   } else if (bottom > top) {
     *error = "Bottom room cannot be greater than top room.\r\n";
     return NOWHERE;
@@ -141,7 +141,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   }
   fprintf(fp, "$~\n");
   fclose(fp);
-  
+
   /* Create the trigger file. */
   snprintf(buf, sizeof(buf), "%s/%d.trg", TRG_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
@@ -161,8 +161,8 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   create_world_index(vzone_num, "shp");
   create_world_index(vzone_num, "trg");
 
-  /* Make a new zone in memory. This was the source of all the zedit new 
-   * crashes. It was happily overwriting the stack.  This new loop by Andrew 
+  /* Make a new zone in memory. This was the source of all the zedit new
+   * crashes. It was happily overwriting the stack.  This new loop by Andrew
    * Helm fixes that problem and is more understandable at the same time.
    *
    * The variable is 'top_of_zone_table_table + 2' because we need record 0
@@ -194,6 +194,11 @@ rznum = i;
   zone->lifespan = 30;
   zone->age = 0;
   zone->reset_mode = 2;
+  zone->min_level = -1;
+  zone->max_level = -1;
+
+  for (i=0; i<ZN_ARRAY_MAX; i++)  zone->zone_flags[i] = 0;
+
   /* No zone commands, just terminate it with an 'S' */
   CREATE(zone->cmd, struct reset_com, 1);
   zone->cmd[0].command = 'S';
@@ -286,7 +291,7 @@ void remove_room_zone_commands(zone_rnum zone, room_rnum room_num)
 {
   int subcmd = 0, cmd_room = -2;
 
-  /* Delete all entries in zone_table that relate to this room so we can add 
+  /* Delete all entries in zone_table that relate to this room so we can add
    * all the ones we have in their place. */
   while (zone_table[zone].cmd[subcmd].command != 'S') {
     switch (zone_table[zone].cmd[subcmd].command) {
@@ -310,15 +315,17 @@ void remove_room_zone_commands(zone_rnum zone, room_rnum room_num)
   }
 }
 
-/* Save all the zone_table for this zone to disk.  This function now writes 
- * simple comments in the form of (<name>) to each record.  A header for each 
+/* Save all the zone_table for this zone to disk.  This function now writes
+ * simple comments in the form of (<name>) to each record.  A header for each
  * field is also there. */
 int save_zone(zone_rnum zone_num)
 {
-  int subcmd, arg1 = -1, arg2 = -1, arg3 = -1;
+  int subcmd, arg1 = -1, arg2 = -1, arg3 = -1, flag_tot=0, i;
   char fname[128], oldname[128];
   const char *comment = NULL;
   FILE *zfile;
+  char zbuf1[MAX_STRING_LENGTH], zbuf2[MAX_STRING_LENGTH];
+  char zbuf3[MAX_STRING_LENGTH], zbuf4[MAX_STRING_LENGTH];
 
 #if CIRCLE_UNSIGNED_INDEX
   if (zone_num == NOWHERE || zone_num > top_of_zone_table) {
@@ -335,21 +342,52 @@ int save_zone(zone_rnum zone_num)
     return FALSE;
   }
 
-  /* Print zone header to file. */
-  fprintf(zfile, "#%d\n"
-                 "%s~\n"
-                 "%s~\n"
-                 "%d %d %d %d\n",
-	  zone_table[zone_num].number,
-	  (zone_table[zone_num].builders && *zone_table[zone_num].builders)
-		? zone_table[zone_num].builders : "None.",
-	  (zone_table[zone_num].name && *zone_table[zone_num].name)
-		? zone_table[zone_num].name : "undefined",
+  for (i=0; i<ZN_ARRAY_MAX; i++)
+    flag_tot += zone_table[zone_num].zone_flags[(i)];
+
+  /* If zone flags or levels aren't set, there is no reason to save them! */
+  if (flag_tot == 0 && zone_table[zone_num].min_level == -1 && zone_table[zone_num].max_level == -1)
+  {
+    /* Print zone header to file. */
+    fprintf(zfile, "#%d\n"
+                   "%s~\n"
+                   "%s~\n"
+                   "%d %d %d %d\n",
+           zone_table[zone_num].number,
+          (zone_table[zone_num].builders && *zone_table[zone_num].builders)
+                ? zone_table[zone_num].builders : "None.",
+          (zone_table[zone_num].name && *zone_table[zone_num].name)
+                ? zone_table[zone_num].name : "undefined",
           genolc_zone_bottom(zone_num),
-	  zone_table[zone_num].top,
-	  zone_table[zone_num].lifespan,
-	  zone_table[zone_num].reset_mode
-	  );
+          zone_table[zone_num].top,
+          zone_table[zone_num].lifespan,
+          zone_table[zone_num].reset_mode
+          );
+  } else {
+    sprintascii(zbuf1, zone_table[zone_num].zone_flags[0]);
+    sprintascii(zbuf2, zone_table[zone_num].zone_flags[1]);
+    sprintascii(zbuf3, zone_table[zone_num].zone_flags[2]);
+    sprintascii(zbuf4, zone_table[zone_num].zone_flags[3]);
+
+    /* Print zone header to file. */
+    fprintf(zfile, "#%d\n"
+                   "%s~\n"
+                   "%s~\n"
+                   "%d %d %d %d %s %s %s %s %d %d\n",       /* New tbaMUD data line */
+           zone_table[zone_num].number,
+          (zone_table[zone_num].builders && *zone_table[zone_num].builders)
+                ? zone_table[zone_num].builders : "None.",
+          (zone_table[zone_num].name && *zone_table[zone_num].name)
+                ? zone_table[zone_num].name : "undefined",
+          genolc_zone_bottom(zone_num),
+          zone_table[zone_num].top,
+          zone_table[zone_num].lifespan,
+          zone_table[zone_num].reset_mode,
+          zbuf1, zbuf2, zbuf3, zbuf4,
+          zone_table[zone_num].min_level,
+          zone_table[zone_num].max_level
+          );
+  }
 
 	/* Handy Quick Reference Chart for Zone Values.
 	 *
@@ -458,7 +496,7 @@ int count_commands(struct reset_com *list)
   return count;
 }
 
-/* Adds a new reset command into a list.  Takes a pointer to the list so that 
+/* Adds a new reset command into a list.  Takes a pointer to the list so that
  * it may play with the memory locations. */
 void add_cmd_to_list(struct reset_com **list, struct reset_com *newcmd, int pos)
 {
@@ -482,7 +520,7 @@ void add_cmd_to_list(struct reset_com **list, struct reset_com *newcmd, int pos)
   *list = newlist;
 }
 
-/* Remove a reset command from a list. Takes a pointer to the list so that it 
+/* Remove a reset command from a list. Takes a pointer to the list so that it
  * may play with the memory locations. */
 static void remove_cmd_from_list(struct reset_com **list, int pos)
 {
@@ -492,7 +530,7 @@ static void remove_cmd_from_list(struct reset_com **list, int pos)
   /* Count number of commands (not including terminator). */
   count = count_commands(*list);
 
-  /* Value is 'count' because we didn't include the terminator above but since 
+  /* Value is 'count' because we didn't include the terminator above but since
    * we're deleting one thing anyway we want one less. */
   CREATE(newlist, struct reset_com, count);
 
@@ -522,8 +560,8 @@ int new_command(struct zone_data *zone, int pos)
     return 0;
 
   /* Ok, let's add a new (blank) command. */
-  new_com.command = 'N'; 
-  add_cmd_to_list(&zone->cmd, &new_com, pos); 
+  new_com.command = 'N';
+  add_cmd_to_list(&zone->cmd, &new_com, pos);
   return 1;
 }
 

@@ -85,7 +85,7 @@ int has_flight(struct char_data *ch)
   return (0);
 }
 
-/* Simple function to determine if char can scuba. */ 
+/* Simple function to determine if char can scuba. */
 int has_scuba(struct char_data *ch)
 {
   struct obj_data *obj;
@@ -115,7 +115,7 @@ int has_scuba(struct char_data *ch)
  * movement by characters should be sent through. This function also defines
  * the move cost of normal locomotion as:
  * ( (move cost for source room) + (move cost for destination) ) / 2
- * 
+ *
  * @pre Function assumes that ch has no master controlling character, that
  * ch has no followers (in other words followers won't be moved by this
  * function) and that the direction traveled in is one of the valid, enumerated
@@ -123,8 +123,8 @@ int has_scuba(struct char_data *ch)
  * @param ch The character structure to attempt to move.
  * @param dir The defined direction (NORTH, SOUTH, etc...) to attempt to
  * move into.
- * @param need_specials_check If TRUE will cause 
- * @retval int 1 for a successful move (ch is now in a new location) 
+ * @param need_specials_check If TRUE will cause
+ * @retval int 1 for a successful move (ch is now in a new location)
  * or 0 for a failed move (ch is still in the original location). */
 int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 {
@@ -136,23 +136,23 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   /* The room the character is currently in and will move from... */
   room_rnum was_in = IN_ROOM(ch);
   /* ... and the room the character will move into. */
-  room_rnum going_to = EXIT(ch, dir)->to_room; 
+  room_rnum going_to = EXIT(ch, dir)->to_room;
   /* How many movement points are required to travel from was_in to going_to.
-   * We redefine this later when we need it. */ 
+   * We redefine this later when we need it. */
   int need_movement = 0;
   /* Contains the "leave" message to display to the was_in room. */
   char leave_message[SMALL_BUFSIZE];
   /*---------------------------------------------------------------------*/
   /* End Local variable definitions */
- 
-  
+
+
   /* Begin checks that can prevent a character from leaving the was_in room. */
   /* Future checks should be implemented within this section and return 0.   */
   /*---------------------------------------------------------------------*/
   /* Check for special routines that might activate because of the move and
    * also might prevent the movement. Special requires commands, so we pass
-   * in the "command" equivalent of the direction (ie. North is '1' in the 
-   * command list, but NORTH is defined as '0'). 
+   * in the "command" equivalent of the direction (ie. North is '1' in the
+   * command list, but NORTH is defined as '0').
    * Note -- only check if following; this avoids 'double spec-proc' bug */
   if (need_specials_check && special(ch, dir + 1, spec_proc_args))
     return 0;
@@ -164,9 +164,9 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     return 0;
   if (!leave_otrigger(&world[IN_ROOM(ch)], ch, dir) || IN_ROOM(ch) != was_in) /* prevent teleport crashes */
     return 0;
-  
+
   /* Charm effect: Does it override the movement? */
-  if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && was_in == IN_ROOM(ch->master)) 
+  if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && was_in == IN_ROOM(ch->master))
   {
     send_to_char(ch, "The thought of leaving your master makes you weep.\r\n");
     act("$n bursts into tears.", FALSE, ch, 0, 0, TO_ROOM);
@@ -175,9 +175,9 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 
   /* Water, No Swimming Rooms: Does the deep water prevent movement? */
   if ((SECT(was_in) == SECT_WATER_NOSWIM) ||
-      (SECT(going_to) == SECT_WATER_NOSWIM)) 
+      (SECT(going_to) == SECT_WATER_NOSWIM))
   {
-    if (!has_boat(ch)) 
+    if (!has_boat(ch))
     {
       send_to_char(ch, "You need a boat to go there.\r\n");
       return (0);
@@ -185,9 +185,9 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Flying Required: Does lack of flying prevent movement? */
-  if ((SECT(was_in) == SECT_FLYING) || (SECT(going_to) == SECT_FLYING)) 
+  if ((SECT(was_in) == SECT_FLYING) || (SECT(going_to) == SECT_FLYING))
   {
-    if (!has_flight(ch)) 
+    if (!has_flight(ch))
     {
       send_to_char(ch, "You need to be flying to go there!\r\n");
       return (0);
@@ -195,7 +195,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Underwater Room: Does lack of underwater breathing prevent movement? */
-  if ((SECT(was_in) == SECT_UNDERWATER) || (SECT(going_to) == SECT_UNDERWATER)) 
+  if ((SECT(was_in) == SECT_UNDERWATER) || (SECT(going_to) == SECT_UNDERWATER))
   {
     if (!has_scuba(ch)) {
       send_to_char(ch, "You need to be able to breathe water to go there!\r\n");
@@ -204,18 +204,38 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Houses: Can the player walk into the house? */
-  if (ROOM_FLAGGED(was_in, ROOM_ATRIUM)) 
+  if (ROOM_FLAGGED(was_in, ROOM_ATRIUM))
   {
-    if (!House_can_enter(ch, GET_ROOM_VNUM(going_to))) 
+    if (!House_can_enter(ch, GET_ROOM_VNUM(going_to)))
     {
       send_to_char(ch, "That's private property -- no trespassing!\r\n");
       return (0);
     }
   }
 
+  /* Check zone level restrictions */
+  if ((ZONE_MINLVL(GET_ROOM_ZONE(going_to)) != -1) && ZONE_MINLVL(GET_ROOM_ZONE(going_to)) > GET_LEVEL(ch)) {
+    send_to_char(ch, "You are not ready to enter that area.\r\n");
+    return (0);
+  }
+  if ((ZONE_MAXLVL(GET_ROOM_ZONE(going_to)) != -1) && ZONE_MAXLVL(GET_ROOM_ZONE(going_to)) < GET_LEVEL(ch)) {
+    send_to_char(ch, "You are too powerful for that area.\r\n");
+    return (0);
+  }
+
+  /* Check zone flag restrictions */
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_CLOSED)) {
+    send_to_char(ch, "A mysterious barrier forces you back! That area is off-limits.\r\n");
+    return (0);
+  }
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_NOIMMORT) && (GET_LEVEL(ch) >= LVL_IMMORT) && (GET_LEVEL(ch) < LVL_GRGOD)) {
+    send_to_char(ch, "A mysterious barrier forces you back! That area is off-limits.\r\n");
+    return (0);
+  }
+
   /* Room Size Capacity: Is the room full of people already? */
   if (ROOM_FLAGGED(going_to, ROOM_TUNNEL) &&
-      num_pc_in_room(&(world[going_to])) >= CONFIG_TUNNEL_SIZE) 
+      num_pc_in_room(&(world[going_to])) >= CONFIG_TUNNEL_SIZE)
   {
     if (CONFIG_TUNNEL_SIZE > 1)
       send_to_char(ch, "There isn't enough room for you to go there!\r\n");
@@ -225,12 +245,12 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Room Level Requirements: Is ch privileged enough to enter the room? */
-  if (ROOM_FLAGGED(going_to, ROOM_GODROOM) && GET_LEVEL(ch) < LVL_GOD) 
+  if (ROOM_FLAGGED(going_to, ROOM_GODROOM) && GET_LEVEL(ch) < LVL_GOD)
   {
     send_to_char(ch, "You aren't godly enough to use that room!\r\n");
     return (0);
   }
-  
+
   /* All checks passed, nothing will prevent movement now other than lack of
    * move points. */
   /* move points needed is avg. move loss for src and destination sect type */
@@ -238,7 +258,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 		   movement_loss[SECT(going_to)]) / 2;
 
   /* Move Point Requirement Check */
-  if (GET_MOVE(ch) < need_movement && !IS_NPC(ch)) 
+  if (GET_MOVE(ch) < need_movement && !IS_NPC(ch))
   {
     if (need_specials_check && ch->master)
       send_to_char(ch, "You are too exhausted to follow.\r\n");
@@ -251,7 +271,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   /*---------------------------------------------------------------------*/
   /* End checks that can prevent a character from leaving the was_in room. */
 
-  
+
   /* Begin: the leave operation. */
   /*---------------------------------------------------------------------*/
   /* If applicable, subtract movement cost. */
@@ -259,18 +279,18 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     GET_MOVE(ch) -= need_movement;
 
   /* Generate the leave message and display to others in the was_in room. */
-  if (!AFF_FLAGGED(ch, AFF_SNEAK)) 
+  if (!AFF_FLAGGED(ch, AFF_SNEAK))
   {
     snprintf(leave_message, sizeof(leave_message), "$n leaves %s.", dirs[dir]);
     act(leave_message, TRUE, ch, 0, 0, TO_ROOM);
   }
-  
+
   char_from_room(ch);
   char_to_room(ch, going_to);
   /*---------------------------------------------------------------------*/
   /* End: the leave operation. The character is now in the new room. */
 
-  
+
   /* Begin: Post-move operations. */
   /*---------------------------------------------------------------------*/
   /* Post Move Trigger Checks: Check the new room for triggers.
@@ -292,7 +312,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     look_at_room(ch, 0);
 
   /* ... and Kill the player if the room is a death trap. */
-  if (ROOM_FLAGGED(going_to, ROOM_DEATH) && GET_LEVEL(ch) < LVL_IMMORT) 
+  if (ROOM_FLAGGED(going_to, ROOM_DEATH) && GET_LEVEL(ch) < LVL_IMMORT)
   {
     mudlog(BRF, LVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(going_to), world[going_to].name);
     death_cry(ch);
@@ -304,19 +324,19 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   /* Fire memory and greet triggers, check and see if the greet trigger
    * prevents movement, and if so, move the player back to the previous room. */
   entry_memory_mtrigger(ch);
-  if (!greet_mtrigger(ch, dir)) 
+  if (!greet_mtrigger(ch, dir))
   {
     char_from_room(ch);
     char_to_room(ch, was_in);
     look_at_room(ch, 0);
     /* Failed move, return a failure */
     return (0);
-  } 
-  else 
+  }
+  else
     greet_memory_mtrigger(ch);
   /*---------------------------------------------------------------------*/
   /* End: Post-move operations. */
-  
+
   /* Only here is the move successful *and* complete. Return success for
    * calling functions to handle post move operations. */
   return (1);
@@ -359,7 +379,7 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
 
 ACMD(do_move)
 {
-  /* These subcmd defines are mapped precisely to the direction defines. */ 
+  /* These subcmd defines are mapped precisely to the direction defines. */
   perform_move(ch, subcmd, 0);
 }
 
@@ -601,7 +621,7 @@ ACMD(do_gen_door)
 	     IS_SET(flags_door[subcmd], NEED_LOCKED))
       send_to_char(ch, "Oh.. it wasn't locked, after all..\r\n");
     else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) &&
-	     IS_SET(flags_door[subcmd], NEED_UNLOCKED) && 
+	     IS_SET(flags_door[subcmd], NEED_UNLOCKED) &&
              (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
       send_to_char(ch, "It seems to be locked.\r\n");
     else if (!has_key(ch, keynum) && (GET_LEVEL(ch) < LVL_GOD) &&
@@ -709,21 +729,21 @@ ACMD(do_sit)
   int found;
 
   one_argument(argument, arg);
- 
+
   if (!*arg)
     found = 0;
   if (!(furniture = get_obj_in_list_vis(ch, arg, NULL, world[ch->in_room].contents)))
     found = 0;
   else
     found = 1;
-  
+
   switch (GET_POS(ch)) {
   case POS_STANDING:
     if (found == 0) {
       send_to_char(ch, "You sit down.\r\n");
       act("$n sits down.", FALSE, ch, 0, 0, TO_ROOM);
       GET_POS(ch) = POS_SITTING;
-    } else {   
+    } else {
       if (GET_OBJ_TYPE(furniture) != ITEM_FURNITURE) {
         send_to_char(ch, "You can't sit on that!\r\n");
         return;
@@ -735,7 +755,7 @@ ACMD(do_sit)
       } else if (GET_OBJ_VAL(furniture, 1) == GET_OBJ_VAL(furniture, 0)) {
         act("There is no where left to sit upon $p.", TRUE, ch, furniture, 0, TO_CHAR);
         return;
-      } else { 
+      } else {
         if (OBJ_SAT_IN_BY(furniture) == NULL)
           OBJ_SAT_IN_BY(furniture) = ch;
         for (tempch = OBJ_SAT_IN_BY(furniture); tempch != ch ; tempch = NEXT_SITTING(tempch)) {
