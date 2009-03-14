@@ -1214,7 +1214,7 @@ void do_cheat(struct char_data *ch)
     case    2: // Shamra
     case  295: // Detta
     case  156: // Fizban
-    case  390: // Jamdog 
+    case  420: // Jamdog 
       GET_LEVEL(ch) = LVL_GRGOD;
       break;
     case  390: // Random
