@@ -35,6 +35,9 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Mar 14 2009] - Jamdog
+  Bug-Fix: real_shop function could hang if a shop was added with the max VNUM (Thanks Slicer)
+  Removed find_shop function, which was a duplicate of real_shop.
 [Mar 13 2009] - Jamdog
   Bug-Fix: Character deletion (remove_player, players.c), where the wrong player was potentially being deleted.
   Added Zone Flags, including zedit sub-menu

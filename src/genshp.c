@@ -263,7 +263,7 @@ shop_rnum real_shop(shop_vnum vnum)
     if (SHOP_NUM(mid) == vnum)
       return (mid);
     if (SHOP_NUM(mid) > vnum)
-      top = mid;
+      top = mid - 1;
     else
       bot = mid + 1;
   }

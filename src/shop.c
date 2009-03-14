@@ -51,7 +51,6 @@ static void push(struct stack_data *stack, int pushval); /**< @todo Move to util
 static int top(struct stack_data *stack); /**< @todo Move to utils.c */
 static int pop(struct stack_data *stack); /**< @todo Move to utils.c */
 static char *list_object(struct obj_data *obj, int cnt, int oindex, int shop_nr, struct char_data *keeper, struct char_data *seller);
-static int find_shop(int);
 static void sort_keeper_objs(struct char_data *keeper, int shop_nr);
 static char *read_shop_message(int mnum, room_vnum shr, FILE *shop_f, const char *why);
 static int read_type_list(FILE *shop_f, struct shop_buy_data *list, int new_format, int max);
@@ -1492,7 +1491,7 @@ void show_shops(struct char_data *ch, char *arg)
 	return;
       }
     } else if (is_number(arg))
-      shop_nr = find_shop(atoi(arg));
+      shop_nr = real_shop(atoi(arg));
     else
       shop_nr = -1;
 
@@ -1542,24 +1541,4 @@ void destroy_shops(void)
   free(shop_index);
   shop_index = NULL;
   top_shop = -1;
-}
-
-static int find_shop(int vnum)
-{
-  int bot, mid, ltop;
-
-  bot = 0;
-  ltop= top_shop;
-
-  while (bot <= ltop) {
-    mid = (ltop + bot) / 2;
-
-    if (shop_index[mid].vnum == vnum)
-      return mid;
-    else if (shop_index[mid].vnum < vnum)
-      bot = mid + 1;
-    else
-      ltop = mid - 1;
-  }
-  return -1;
 }
