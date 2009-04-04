@@ -11,7 +11,7 @@ The Immortal Innkeeper is organizing her books here.
 8 8 2
 E
 #1201
-postmasters~
+postmaster~
 the Immortal Postmaster~
 The Immortal Postmaster is hard at work here.
 ~
@@ -215,19 +215,8 @@ the test mob~
    Test mobs can be whatever you want them to be.  
 ~
 8 0 0 0 0 0 0 0 0 E
-22 13 -3 4d4+220 3d3+3
-220 48400
+3 19 8 0d0+30 1d2+0
+30 900
 8 8 0
-Str: 14
-Dex: 14
-Int: 14
-Wis: 14
-Con: 14
-Cha: 14
-SavingPara: 5
-SavingRod: 5
-SavingPetri: 5
-SavingBreath: 5
-SavingSpell: 5
 E
 $

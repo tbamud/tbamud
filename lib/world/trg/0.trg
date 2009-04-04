@@ -1829,8 +1829,9 @@ l~
 if %cmd.mudcommand% == look && %arg% /= orb
   %send% %actor% As you look at the orb a feeling of peace and serenity comes over you.
   %echoround% %actor% %actor.name% stares at the orb.
+else
+  return 0
 end
-return 0
 ~
 #63
 Mob Speech and Expressions Example~
@@ -2749,7 +2750,7 @@ end
 #98
 Mob Act - 98 Teleporter Give~
 0 e 0
-has entered the game.~
+steps out of space and time.~
 * By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.is_pc%  
   if !%actor.eq(*)%
@@ -2821,7 +2822,7 @@ set ant 4600
 set zodiac 5701
 set grave 7401
 set zamba 7500
-set gidean 7801
+set gideon 7801
 set glumgold 8301
 set duke 8660
 set oasis 9000

@@ -1,7 +1,6 @@
 #3800
 Gareth's Zone Description Room~
 Zone 38 will be used to expand the sewer system started in zone 37.
-
 Builder: Gareth
 Zone: 38
 Name: Sewer Catacombs
@@ -10,9 +9,7 @@ Plot: Players navigate the catacombs to find items, riches, and other suprises..
 Size: No more than 50. Probably 40 or 30.
 Align: Evil with neutral.
 Level: 15-35
-
 See room 3700 for more detail.
-
 Zone 38 is linked to the following zones:
 37 Capital Sewer System           at  3801 (up   ) --->  3717
 ~

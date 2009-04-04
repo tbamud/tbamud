@@ -26,7 +26,6 @@ Zone 302 is linked to the following zones:
 301 Campus                         at 30284 (up   ) ---> 30120
 301 Campus                         at 30284 (down ) ---> 30106
 301 Campus                         at 30285 (north) ---> 30138
-
 301 Campus                         at 30285 (west ) ---> 30132
 301 Campus                         at 30285 (up   ) ---> 30139
 301 Campus                         at 30285 (down ) ---> 30169
@@ -42,7 +41,6 @@ Zone 302 is linked to the following zones:
 301 Campus                         at 30295 (east ) ---> 30126
 303 Campus                         at 30295 (up   ) ---> 30312
 303 Campus                         at 30296 (south) ---> 30302
-
 303 Campus                         at 30299 (north) ---> 30300
 303 Campus                         at 30299 (east ) ---> 30301
 Links: 64e to catacombs
@@ -779,7 +777,6 @@ S
 #30235
 The Chute~
    WHEEEEEEEEEEEE!  What a fun ride!!!!  Fortunately the only exit is down.  
-
 ~
 302 8 0 0 0 0
 D5
@@ -817,7 +814,6 @@ door~
 E
 overturned police policemobile mobile~
    It is blocking the road quite nicely.  Maybe it is meant to impede passage.
-
 ~
 S
 #30237
@@ -903,7 +899,6 @@ house run-down~
 E
 overturned police policemobile mobile~
    It is blocking the road quite nicely.  Maybe it is meant to impede passage.
-
 ~
 S
 #30241
@@ -992,7 +987,6 @@ S
 #30244
 Gael House~
    This house reminds you of home, your parent's home.  It's mind-boggling.  
-
 ~
 302 8 0 0 0 0
 D3
@@ -1798,7 +1792,6 @@ door~
 E
 sigils~
    The sigils seem to form some strange shapes:
-
                        SSSSS
                       SSS  SS
                       SSS
@@ -1811,7 +1804,6 @@ sigils~
                       SSS
                   SS  SSS
                    SSSSS
-
 I wonder what it could be?
 ~
 S
@@ -1936,14 +1928,12 @@ door~
 E
 sigils~
    The sigils seem to form some strange shapes:
-
         MMM     MMM    OOO      OOO    !!
         MMMM   MMMM   OO OO    OO OO   !!
         MM MM MM MM  OO   OO  OO   OO  !!
         MM  MMM  MM  OO   OO  OO   OO  !!
         MM   M   MM   OO OO    OO OO
         MM       MM    OOO      OOO    !!
-
 ~
 S
 #30285
@@ -2180,7 +2170,6 @@ Dunning Auditorium~
 reminds you of movie theatres of old (like when they sat more than 10).  Its
 main purpose seems to exist and collect dust.  Maybe someone is doing some kind
 of study here.  There is a sign on the east wall near the front of the room.  
-
 ~
 302 9 0 0 0 0
 D1

@@ -5,15 +5,13 @@ robed figure attack~
 say How dare you intrude on our worship!  DIE!
 ~
 #7505
-boar snorting~
-0 b 100
-q~
+Boar Snorting~
+0 b 2
+~
 * %echo% sends to the room
 %echo% %self.name% sniffs at the muddy ground grunting.
 * %asound% sends to the neighbouring rooms.
-%asound% You hear a grunting sound from below.
-* wait waits a little while before letting the script be run again.
-wait 15 s
+%asound% You hear a grunting sound from close by.
 ~
 #7522
 barkeeper greeting~

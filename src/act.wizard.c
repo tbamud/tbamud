@@ -834,10 +834,10 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
     send_to_char(ch, "PRF: %s%s%s\r\n", CCGRN(ch, C_NRM), buf, CCNRM(ch, C_NRM));
 
     send_to_char(ch, "Quest Points: [%9d] Quests Completed: [%5d]\r\n",
-       GET_QUESTPOINTS(ch), GET_NUM_QUESTS(ch));
+       GET_QUESTPOINTS(k), GET_NUM_QUESTS(k));
     if (GET_QUEST(ch) != NOTHING)
       send_to_char(ch, "Current Quest: [%5d] Time Left: [%5d]\r\n",
-      GET_QUEST(ch), GET_QUEST_TIME(ch));
+      GET_QUEST(k), GET_QUEST_TIME(k));
   }
 
   if (IS_MOB(k))
@@ -1569,7 +1569,7 @@ ACMD(do_restore)
 	vict->real_abils.intel = 25;
 	vict->real_abils.wis = 25;
 	vict->real_abils.dex = 25;
-	vict->real_abils.str = 25;
+	vict->real_abils.str = 18;
 	vict->real_abils.con = 25;
 	vict->real_abils.cha = 25;
       }

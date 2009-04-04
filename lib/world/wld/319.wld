@@ -36,8 +36,6 @@ new continents and islands to the MUD. The mobs have little eq as most
 of them are fish or other sea-faring animals. This zone can add a
 great deal of openings for builders to add to the overall theme of the
 MUD.
-
-
 Zone 319 is linked to the following zones:
 320 Yllythad Sea II                at 31900 (west ) ---> 32055
 320 Yllythad Sea II                at 31901 (west ) ---> 32046
@@ -47,7 +45,6 @@ Zone 319 is linked to the following zones:
 320 Yllythad Sea II                at 31906 (west ) ---> 32047
 320 Yllythad Sea II                at 31911 (west ) ---> 32048
 320 Yllythad Sea II                at 31916 (west ) ---> 32049
-
 320 Yllythad Sea II                at 31921 (west ) ---> 32050
 322 McGintey Bay                   at 31926 (north) ---> 32203
 322 McGintey Bay                   at 31931 (north) ---> 32204
@@ -60,7 +57,6 @@ Zone 319 is linked to the following zones:
 320 Yllythad Sea II                at 31997 (west ) ---> 32070
 320 Yllythad Sea II                at 31998 (west ) ---> 32065
 320 Yllythad Sea II                at 31999 (west ) ---> 32060
-
 Links: 01n to the beach
 ~
 S
@@ -568,7 +564,6 @@ S
 Among Fifteen Foot Waves~
    Waves crush down in giant walls in every direction, the winds howls
 unceasingly as the rain is driven harder and harder against the sea's surface.
-
 ~
 319 0 0 0 0 0
 D0
@@ -1181,7 +1176,6 @@ S
 Among Fifteen Foot Waves~
    Waves crush down in giant walls in every direction, the winds howls
 unceasingly as the rain is driven harder and harder against the sea's surface.
-
 ~
 319 0 0 0 0 0
 D0
@@ -1764,7 +1758,6 @@ S
 Among Fifteen Foot Waves~
    Waves crush down in giant walls in every direction, the winds howls
 unceasingly as the rain is driven harder and harder against the sea's surface.
-
 ~
 319 0 0 0 0 0
 D0

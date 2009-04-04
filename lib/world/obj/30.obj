@@ -46,6 +46,24 @@ A key made of a dull metal is lying on the ground here.~
 18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0
+#3006
+teleporter~
+the teleporter~
+A strange device labeled "teleporter" was left here.~
+~
+12 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 10 0 0
+T 3014
+T 3015
+E
+teleporter~
+   This teleporter is used to transfer players between zones.  Accessible zones
+are listed under HELP AREAS by being CAPITALIZED.  For example to teleport to:
+  74 Newbie GRAVEyard                   -- Jojen                       3- 5
+type: teleport grave
+   The teleporter may also be used to recall back to Midgaard at any time.
+~
 #3009
 waybread bread~
 a waybread~
@@ -131,16 +149,16 @@ sword small~
 a small sword~
 A small sword lies here.~
 ~
-5 n 0 0 0 an 0 0 0 0 0 0 0
+5 e 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
 3 60 10 0
 E
-sword small~
-   The small sword seems to have an inscription of some sort.
-~
-E
 inscription~
    It says: 'May this sword be a good companion.  '
+~
+E
+sword small~
+   The small sword seems to have an inscription of some sort.
 ~
 #3022
 sword long~
@@ -259,7 +277,7 @@ a candle~
 A candle lies here, unlit.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
-0 0 4 0
+0 0 -1 0
 1 5 1 0
 E
 candle~
@@ -510,6 +528,44 @@ A pair of leather pants is lying on the ground.~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
 8 150 10 0
+#3082
+leather gorget neck guard~
+a leather gorget~
+A leather neck guard has been left here~
+~
+9 0 0 0 0 ac 0 0 0 0 0 0 0
+3 0 0 0
+1 0 0 0
+E
+leather gorget neck guard~
+   This leather neck guard is meant to protect the throat and face in battle.
+~
+#3083
+leather ring~
+a leather ring~
+A leather wring with strange symbols lies here.~
+~
+11 0 0 0 0 ab 0 0 0 0 0 0 0
+1 0 0 0
+1 10 1 0
+E
+leather ring~
+   The ring used to have some strange writing and symbols around the band but it
+has become so worn with time and use that it is unreadable.
+~
+#3084
+leather boots~
+a pair of leather boots~
+A pair of leather boots is lying here.~
+~
+11 0 0 0 0 ag 0 0 0 0 0 0 0
+4 0 0 0
+2 11 0 0
+E
+leather boots~
+   The boots are worn with age but well oiled and polished to still remain
+useable.
+~
 #3085
 sleeves bronze~
 a pair of bronze sleeves~
@@ -526,6 +582,50 @@ A pair of leather sleeves is lying on the ground.~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
 4 75 10 0
+#3087
+brown leather cape~
+a brown leather cape~
+A brown leather cape was abandoned on the floor~
+~
+9 0 0 0 0 ak 0 0 0 0 0 0 0
+5 0 0 0
+4 100 0 0
+E
+brown leather cape~
+   It is a rough brown leather cape that is frayed at the end.
+~
+A
+1 1
+#3088
+leather old belt~
+an old leather belt~
+A belt made of leather was left here.~
+~
+9 e 0 0 0 al 0 0 0 0 0 0 0
+2 0 0 0
+1 30 0 0
+E
+belt leather old~
+   It looks very, very old.  
+~
+A
+18 2
+A
+1 1
+#3089
+leather wristguard~
+a leather wristguard~
+A leather wristguard lies in the dirt.~
+~
+9 0 0 0 0 am 0 0 0 0 0 0 0
+1 0 0 0
+3 30 0 0
+E
+leather wristguard~
+   The wristguard has been heavily oiled and is extremely flexible and
+supportive.  It is laced with some leather string to loosen and tighten to
+almost any size.    
+~
 #3096
 boards social bulletin gen_boards~
 a social bulletin board~
@@ -535,12 +635,12 @@ A large, sociable bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 social bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #3097
 boards frozen bulletin gen_boards~
@@ -551,12 +651,12 @@ A large bulletin board is here, carved from a block of ice.~
 0 0 0 0
 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 freeze bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #3098
 boards holy bulletin gen_boards~
@@ -567,12 +667,12 @@ A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 0 0 0 0
 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 holy bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #3099
 boards bulletin gen_boards~
@@ -583,11 +683,11 @@ A large bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 $~

@@ -634,7 +634,7 @@ end
 ~
 #137
 Thief Guildmaster Steals - M122~
-0 b 100
+0 b 5
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Idea taken from cheesymud.com
@@ -1974,8 +1974,7 @@ set txt[21] I count him braver who overcomes his desires than him who conquers h
 set txt[22] The unfortunate need people who will be kind to them; the prosperous need people to be kind to. 
 set txt[23] Youth is easily deceived, because it is quick to hope. 
 set txt[24] Teaching is the highest form of understanding. 
-set txt[25] Excellence is an art won by training and habituation. We do not act rightly because we have virtue or excellence, but we rather have those because we have acted rightly. We are what we repeatedly do. Excellence, then, is not an act but a habitset txt[26] The exemplary moral virtue of a military man is courage. Because it is a moral virtue, involving feeling as well as reason, one achieves it by avoiding the pitfalls of excess or defect. 
-set txt[27] Courage is a man's ability to handle fear. 
+set txt[25] Excellence is an art won by training and habituation. We do not act rightly because we have virtue or excellence, but we rather have those because we have acted rightly. We are what we repeatedly do. Excellence, then, is not an act but a habitset txt[27] Courage is a man's ability to handle fear. 
 set  speech %%txt[%max%]%%
 eval speech %speech%
 say %speech%
@@ -1986,14 +1985,15 @@ Confucius - 23~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Confucius - M23 - T186 By Rumble
-eval max %random.27%
+set max 45.27%
 set txt[1] Before you embark on a journey of revenge, dig two graves. 
 set txt[2] Everything has its beauty but not everyone sees it. 
 set txt[3] Forget injuries, never forget kindnesses. 
 set txt[4] It does not matter how slowly you go so long as you do not stop. 
 set txt[5] Respect yourself and others will respect you. 
 set txt[6] Study the past if you would define the future. 
-set txt[7] The superior man, when resting in safety, does not forget that danger may come. When in a state of security he does not forget the possibility of ruin. When all is orderly, he does not forget that disorder may come. Thus his person is not endanset txt[8] What the superior man seeks is in himself; what the small man seeks is in others. 
+set txt[7] The superior man, when resting in safety, does not forget that danger may come. When in a state of security he does not forget the possibility of ruin. When all is orderly, he does not forget that disorder may come.
+set txt[8] What the superior man seeks is in himself; what the small man seeks is in others. 
 set txt[9] Wheresoever you go, go with all your heart. 
 set txt[10] By nature, men are nearly alike; by practice, they get to be wide apart. 
 set txt[11] A man who has committed a mistake and doesn't correct it, is committing another mistake. 
@@ -2001,7 +2001,7 @@ set txt[12] If you know, to recognize that you know, If you don't know, to reali
 set txt[13] Never hesitate to ask a lesser person. 
 set txt[14] People with virtue must speak out; People who speak are not all virtuous. 
 set txt[15] What you do not wish upon yourself, extend not to others. 
-set txt[16] We take great pains to persuade other that we are happy than in endeavouring to think so ourselves. 
+set txt[16] We take great pains to persuade other that we are happy than in endeavoring to think so ourselves. 
 set txt[17] Better a diamond with a flaw than a pebble without. 
 set txt[18] The people may be made to follow a path of action, but they may not be made to understand it. 
 set txt[19] The superior man is modest in his speech, but exceeds in his actions. 
@@ -2013,8 +2013,7 @@ set txt[24] What you do not want done to yourself, do not do to others.
 set txt[25] When you know a thing, to hold that you know it; and when you do not know a thing, to allow that you do not know it - this is knowledge. 
 set txt[26] In any prisoner situation when you are communicating with a fellow prisoner be sure to agree about a danger signal first. Second make a cover story in case you are caught, and third, you need to decide on a backup communication system.
 set txt[27] The superior man understands what is right; the inferior man understands what is accepted by a majority. 
-set  speech %%txt[%max%]%%
-eval speech %speech%
+eval  speech %%txt[0%]%%
 say %speech%
 ~
 #187

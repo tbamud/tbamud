@@ -45,7 +45,6 @@ Zone 258 is linked to the following zones:
 260 Grasslands                     at 25850 (west ) ---> 26080
 299 Abandoned Cathedral            at 25872 (north) ---> 29955
 265 Beach & Lighthouse             at 25874 (down ) ---> 26500
-
  
 TODO: several missing rooms/links from dibrova zone 35
 ~
@@ -817,9 +816,7 @@ You can go south around the Inn.
 E
 sign~
    The sign reads:
-
    The Woodsman
-
 ~
 S
 #25871

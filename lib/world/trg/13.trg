@@ -1831,8 +1831,8 @@ if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 31
     %send% %actor% You cannot enable nohassle until you finish your trial vnum.
   elseif %cmd.mudcommand% == buildwalk || (%cmd.mudcommand% == toggle && buildwalk /= %arg.car%)
     %send% %actor% You cannot enable buildwalk until you finish your trial vnum.
-  elseif %cmd.mudcommand% == sedit || %cmd.mudcommand% == trigedit || %cmd.mudcommand% == dig || %cmd.mudcommand% == rclone || %cmd.mudcommand% == attach || %cmd.mudcommand% == detach || %cmd.mudcommand% == vdelete 
-    %send% %actor% Sedit, Trigedit, Dig, Rclone, Attach, Detach, and Vdelete are not required for your trial vnum.
+  elseif %cmd.mudcommand% == sedit || %cmd.mudcommand% == qedit || %cmd.mudcommand% == trigedit || %cmd.mudcommand% == dig || %cmd.mudcommand% == rclone || %cmd.mudcommand% == attach || %cmd.mudcommand% == detach || %cmd.mudcommand% == vdelete 
+    %send% %actor% Sedit, Trigedit, Qedit, Dig, Rclone, Attach, Detach, and Vdelete are not required for your trial vnum.
   elseif %cmd.mudcommand% == zpurge
     %send% %actor% Zpurge is not required for your trial vnum. Use 'purge' or 'purge item.'
   elseif %cmd.mudcommand% == sacrifice

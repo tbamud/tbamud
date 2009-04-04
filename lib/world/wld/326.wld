@@ -19,11 +19,9 @@ D3
 E
 info credits~
 Army Perimeter by Kaan
-
 Zone 326 is linked to the following zones:
 324 Army Encampment                at 32610 (east ) ---> 32400
 324 Army Encampment                at 32640 (west ) ---> 32414
-
 Links: 79e
 ~
 S
@@ -1144,7 +1142,6 @@ S
 Faint Path Through the Forest~
    The path turns south and east from here, south leading deeper into the
 forest.  You have the strangest feeling, almost as if you were being watched...
-
 ~
 326 0 0 0 0 0
 D2
@@ -1249,7 +1246,6 @@ Lookout Post~
    The boards of this small platform have been painted in forest hues to conceal
 it that much the better.  Branches and leaves have been draped over the tops of
 the post to give it a natural look.  From below, no one would suspect a thing.
-
 ~
 326 0 0 0 0 0
 D5

@@ -36,7 +36,6 @@ ZEDIT~
 3 - Load the scrawny little girl [7402], Max : 1
 4 -  then Equip with a bunch of white hyacinths [7404], Held, Max : 25
 7406
-
 0 - Load a squat groundskeeper [7403], Max : 1
 1 -  then Equip with a pair of sturdy leather boots [7405], Worn on feet, Max : 75
 7408
@@ -678,7 +677,6 @@ D0
 D1
    Formed of massive slabs of steel, this door is locked with a great iron
 lock.  The head of a monstrous stone gargoyle is placed just atop the lock.  
-
 ~
 door of heavy steel~
 2 7417 7427

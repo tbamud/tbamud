@@ -1,6 +1,5 @@
 #2700
 Detta's [Memlin Caverns] Description Room~
-
 @BTheme:@n This zone is the under-mountain homeland of a group of neutral
 peace-loving creatures called memlins.  Their humble network of caverns has
 been infiltrated by a sorceress who has recently risen to power and is seeking
@@ -9,28 +8,23 @@ race.  The basic objective then is to destroy the sorceress, though she has her
 ways of staying alive!  For players interested in a deeper knowledge of the
 zone, there is @Ynow a little tour guide available@n in the temple who will
 explain all sorts of things about the storyline behind it
-
 @GPlayers:@n This zone is geared towards players
 between levels 17-25, and is slightly evil aligned with most of the mobs being
 either neutral or evil.  It is primarily a quest zone with killing the
 sorceress not being just your usual hack n slash job ;-) Lots of xp to be
 gained however if you feel like slaughtering the helpless community instead of
 helping them!
-
 @RLocation:@n The zone itself is almost entirely underground,
 and made up of a network of caverns.  Its sole exit however, opens out into a
 forest and this is the area it would be most seamlessly attached to.              
-
 @MSecrets:@n There are quite a few here now. I'd recommend exploring
 the zone without taking a peek at these little spoilers..  But if you
 must, just type LOOK SPOILERS to reveal all.    
-
 @CNote:@n If you have any suggestions, spot any typos, bugs, or weirdnesses,
 please mudmail me - Detta. :-) All input appreciated!
 You can also email me at detta@@builderacademy.net
 East takes you through the other zones I have built here.
 Down takes you to the starting room of this zone.
-
 ~
 27 520 0 0 0 0
 D1
@@ -50,19 +44,12 @@ spoilers~
    Ahhh, cheater!!  Don't you want to enjoy the zone?!  *sniff*, ok, if you
 really have to look there are a few little secrets listed here to spoil your
 zone exploring pleasure.  Just type look # to look at each one.    
-
 1: Temple Entrance Puzzle
-
 2: Lost Child Puzzle
-
 3: Goethite Shackle
-
 4: Girl who Transforms to Doll
-
 5: Colour-changing Shard of Glass
-
 6: Defeating the Sorceress
-
 7: Getting the Orb
 ~
 E
@@ -241,7 +228,6 @@ in a creature's jaws.
 D0
    A puff of dust hangs about this small entrance into a dimly lit cave and
 every now and again the clang of a metal object being dropped can be heard.  
-
 ~
 undefined~
 0 0 2707

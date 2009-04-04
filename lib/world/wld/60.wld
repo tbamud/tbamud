@@ -1225,7 +1225,6 @@ tree trees~
 E
 path paths shaded~
    The shaded path is probably used by the small animals living in the forest.
-
 ~
 S
 #6061
@@ -1252,7 +1251,6 @@ illumination.  A large branch looms above you, over the path.
 E
 path paths shaded shadowed~
    The shadowy path is probably used by the small animals living in the forest.
-
 ~
 S
 #6062
@@ -1285,7 +1283,6 @@ tree trees~
 E
 path paths shaded shadowy~
    The shaded path is probably used by the small animals living in the forest.
-
 ~
 S
 #6063
@@ -1365,7 +1362,6 @@ tree trees~
 E
 path paths shaded~
    The shadowed path is probably used by the small animals living in the forest.
-
 ~
 S
 #6066
@@ -1397,7 +1393,6 @@ tree trees~
 E
 path paths shaded~
    The shaded path is probably used by the small animals living in the forest.
-
 ~
 S
 #6067
@@ -1566,7 +1561,6 @@ tree trees~
 E
 path paths shadowy shadowed~
    The shadowy path is probably used by the small animals living in the forest.
-
 ~
 S
 #6072
@@ -1598,7 +1592,6 @@ tree trees~
 E
 path paths shaded~
    The shaded path is probably used by the small animals living in the forest.
-
 ~
 S
 #6073
@@ -2010,7 +2003,6 @@ road dust dusty~
 E
 tree trees forest~
    The trees are quite tall considering most of them appear to be quite young.
-
 ~
 E
 trail~

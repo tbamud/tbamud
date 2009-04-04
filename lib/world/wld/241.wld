@@ -183,7 +183,6 @@ The transporter room can be found to the east.
 0 -1 24106
 D2
    This corridor continues to the south, leading eventually to main engineering.
-
 ~
 ~
 0 -1 24102
@@ -196,7 +195,6 @@ the Brig.
 E
 control panel computer screen sign~
    The panel says:
-
     ***************************************************
     *                                                 *
     *            NCC-1701-D - "ENTERPRISE"            *
@@ -279,7 +277,6 @@ it.
 0 -1 24109
 D2
    This corridor continues to the south, eventually reaching main engineering.
-
 ~
 ~
 0 -1 24105
@@ -366,14 +363,11 @@ D3
 E
 screen~
    Holodeck Instructions:
-
 Holodecks work via vocal commands. They are as follows:
-
 Programs (will give you a list of programs)
 <name of program> (Will load up a pragram)
 Difficulty <difficulty> (Will set the difficulty to EASY, MEDIUM or HARD)
 Exit (Will make a door appear)
-
 (Note for some programs, there will be a limit of three credits which will
 restock every half hour or so)
 ~
@@ -398,7 +392,6 @@ corridor.
 E
 instructional panel~
    To operate the turbolift, say the name of the location you wish to get to:
-
 'deck 1' (engineering, transporter, the brig and the school)
 'deck 2' (Ten forward, sick bay and the security center)
 'deck 3' (the science labs, the gym and the main shuttle bay)
@@ -424,7 +417,6 @@ D0
 E
 instructional panel~
    To operate the turbolift, say the name of the location you wish to get to:
-
 'deck 1' (engineering, transporter, the brig and the school)
 'deck 2' (Ten forward, sick bay and the security center)
 'deck 3' (the science labs, the gym and the main shuttle bay)
@@ -670,7 +662,6 @@ is location to the east where most of the ships weaponry is currently stored.
 241 8 0 0 0 0
 D0
    A wonderful place to relax and drink can be seen to the north, Ten Forward.
-
 ~
 ~
 0 -1 24121
@@ -762,7 +753,6 @@ tranquil warmth pulses throughout the area, along with the sweet smell of herbs
 and scented candles.  Several different paintings have been hung from the walls,
 and a small couch and a recliner are positioned around a coffee table.  A neatly
 made bed is partially hidden behind a curtain at the northern part of the room.
-
 ~
 241 8 0 0 0 0
 D1
@@ -1012,7 +1002,6 @@ D2
 E
 instructional panel~
    To operate the turbolift, say the name of the location you wish to get to:
-
 'deck 1' (engineering, transporter, the brig and the school)
 'deck 2' (Ten forward, sick bay and the security center)
 'deck 3' (the science labs, the gym and the main shuttle bay)
@@ -1038,7 +1027,6 @@ non-crew personnel or non-ambassadors to step past this threshhold.
 E
 instructional panel~
    To operate the turbolift, say the name of the location you wish to get to:
-
 'deck 1' (engineering, transporter, the brig and the school)
 'deck 2' (Ten forward, sick bay and the security center)
 'deck 3' (the science labs, the gym and the main shuttle bay)
@@ -1164,7 +1152,6 @@ Outer Space~
    The USS Enterprise is a short distance away, slowly moving at a
 quarter-impulse.  Many thousand, thousand stars dominate the view in every
 direction apart from to the north, where a large red star is going super-nova.
-
 ~
 241 0 0 0 0 0
 D4
@@ -1208,7 +1195,6 @@ the bright beams.
 D2
    The computers that give this machine life, live to the south.  Becareful with
 everything around this area, a transporter can be a very dangerous thing indeed!
-
 ~
 ~
 0 -1 24106

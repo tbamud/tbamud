@@ -73,7 +73,6 @@ The field continues South.
 E
 sign~
    The sign reads:
-
         x------------------------------------------------x
         |                                                |
         |   <------   BigKing's Castle - West            |
@@ -1726,7 +1725,6 @@ A high cliff is South.
 E
 sign~
    The sign reads:
-
      x---------------------------------------------------------x
      | <!>        A MESSAGE FROM COOLAND SKI HILL         <!>  |
      |                                                         |
@@ -1846,9 +1844,7 @@ Ski Hill Entrance~
    You're at the ski hill entrance. The snow is well packed down, and pine
 trees line the north and south sides of the road. A large plastic banner
 spans the entire width of the road exclaiming,
-
 	             "WELCOME TO THE COOLAND SKI HILL!"
-
 A small booth stands here, where people must buy their lift tickets to get
 in. A small wooden sign has been nailed to the booth. A steel gate lies 
 west.
@@ -1867,7 +1863,6 @@ gate steel~
 E
 sign~
    The sign reads:
-
      x---------------------------------------------------------------x
      |               WELCOME TO COOLAND SKI HILL!                    |
      |                   "Home of the Yeti"                          |

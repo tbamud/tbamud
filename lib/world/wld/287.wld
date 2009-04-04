@@ -234,7 +234,6 @@ The road continues east to a city.
 E
 sign~
    It has boards with fingers pointing north, south, and west.
-
                           EAST - Ofingia
                           SOUTH - Sorvecgden-Lacgorr 
                           NORTH - Midgaard
@@ -587,7 +586,6 @@ S
 Southeastern Market Square~
    The fragrance of fresh bread fills the air here.  Ofintine bread is
 considered the best in the world by those who know what REAL bread tastes like.
-
 ~
 287 0 0 0 0 0
 D0
@@ -738,7 +736,6 @@ The public section of the library is to the north.
 E
 blue chewed paper~
    It is a letter, or rather, half of a letter.
-
 has never done. I say more happily that your ring is finished. It
 is a work of great art, and no king wears its equal. Indeed, the stone
 quarried from the [dwarven?] mines of Holdraxe is said to have magical
@@ -760,7 +757,6 @@ E
 papyrus scroll fragment~
    Some ancient scribe has written a list of legendary weapons, of which  
 only this tiny scrap remains.
-
 The great warrior Highlander, it is said, bore a mighty claymore, the
 equal of which is unknown to me.  I have heard it glowed brightly when
 drawn, but I see no way this would be useful. The great smith Durgandon
@@ -774,13 +770,11 @@ named for its thinness, and its renowned edge.  It is supple steel,
 but quite sturdy, and I have seen Zeb plunge it deep into an oak without
 injuring the blade. Dorig is truly a great craftsman.  
 There are dark rumors of a scimitar borne by the Goblin King that, if
-
 Shoot! There is no more.
 ~
 E
 small vellum~
    Like the rest it is a fragment:
-
 The age of Iron came next; it is our present age. In these days men
 dwindled both in stature and nobility still further from the Bronze
 Age, so say the philosophers. They began forging their tools and 
@@ -791,7 +785,6 @@ So says the philosopher:
               To the world that stumbles lost and lone,
               A king descends from heaven's throne. 
               Death by death is overthrown.
-
 Here the page has been torn off.
 ~
 E
@@ -952,7 +945,6 @@ sharper smell of sourdough rye.  No bakers anywhere in Midgaard, Thalos, or Rome
 can equal Marya Luzarna, who comes from a long line of bakers.  Her
 great-great-great-grandfather Ogann baked the great Rye Loaf of Ofingia, which
 could be carried in a pocket, and yet fed an army of Ofintines for thirty days.
-
 ~
 287 8 0 0 0 0
 D3
@@ -1226,7 +1218,6 @@ The Spiral Tunnel~
    The stream of water seems to be your last friend.  Its water is muddy but it
 still tastes good after walking so far.  The gloom of these caverns is beginning
 to darken your mind, and you long for the common room of the Grunting Boar Inn.
-
 ~
 287 9 0 0 0 0
 D4
@@ -1354,7 +1345,6 @@ S
 #28752
 A Small Armory~
    The Goblins keep a few weapons here, perhaps those they do not like to use.
-
 ~
 287 9 0 0 0 0
 D1
@@ -1511,7 +1501,6 @@ A Pale-Glowing Hall in Goblin-Town~
    The bizarre magical glow these walls have is unnerving.  These tunnels are
 certainly the kind of dank, filthy holes goblins like best.  Bones and rotten
 meat litter the floor, and strange crawling beasts live on the gathered garbage.
-
 ~
 287 8 0 0 0 0
 D0
@@ -1680,7 +1669,6 @@ The Mess~
 not have to take off your armor, but his pot always needs another chunk of meat,
 however it tastes.  Around him are stacked jars of strange substances to add to
 his pot, probably not tasty spices.  Dry, boiled bones are piled in the corner.
-
 ~
 287 8 0 0 0 0
 D2
@@ -2051,7 +2039,6 @@ because diving into the lake put out your light.  It is not very large; roughly
 a round inverted bowl, fifty feet across, and about 15 feet high.  To the north
 a small stream flows out through a tunnel.  Of all the numerous influences that
 feed this lake, none are large enough, or low enough, for you to leave through.
-
 ~
 287 204 0 0 0 0
 D0
@@ -2295,7 +2282,6 @@ E
 throne bones bone~
    It is made, seemingly, of the bones of the many enemies that the Great Goblin
 killed.  All over it evil signs are carved; it glows with a pale, sickly light.
-
 ~
 S
 $~

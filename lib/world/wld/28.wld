@@ -181,7 +181,6 @@ porkchops in the corpse. To pick them up, type <get all corpse>.
  
 When you are sure you have all you need from the corpse you may choose
 to <sacrifice corpse> for a reward if you are lucky. 
-
 Then go <north>
 ~
 28 44 0 0 0 0
@@ -232,7 +231,6 @@ abilities.
 The signs have large Titles: WARRIOR, MAGE, THIEF and CLERIC.
  
 To read a sign type <look xxx> where xxx is one of the above.
-
 When you are done here, go north.
 ~
 28 60 0 0 0 0
@@ -248,11 +246,8 @@ E
 warrior~
    The only skill you can learn on this low level is a kick, 
 which will do a little damage to your enemy - if you hit.
-
 To get better at this, type <practice kick>
-
 If you just want to see what you can learn, type <practice>.
-
 Later, you can use the skill in combat by typing <kick>.
 ~
 E
@@ -272,11 +267,8 @@ thief~
    The only skill you can learn on this low level is backstab.
 A backstab is, as the name suggests, a way of getting behind
 your enemy, and stab him/her/it in the back.
-
 To get better at this, type <practice backstab>
-
 If you just want to see what you can learn, type <practice>
-
 Later, you can use the skill by typing <backstab> instead 
 of <kill> to initiate combat. Note, though that you need
 to use a pointed weapon to be able to backstab.

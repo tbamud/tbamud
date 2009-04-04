@@ -51,7 +51,6 @@ Zone 272 is linked to the following zones:
 271 Sundhaven                      at 27252 (up   ) ---> 27101
 271 Sundhaven                      at 27253 (north) ---> 27162
 271 Sundhaven                      at 27254 (down ) ---> 27101
-
 271 Sundhaven                      at 27255 (north) ---> 27118
 271 Sundhaven                      at 27256 (south) ---> 27101
 271 Sundhaven                      at 27257 (west ) ---> 27152
@@ -687,7 +686,6 @@ A dark passageway~
    Your foot slides as your boot sinks into some unpleasant substance on the
 muddy floor..  Mold?  Only inspection in better light will tell.  Eastwards the
 passage slants into a dark pool, and disappears to the west into blackness.  
-
 ~
 272 9 0 0 0 0
 D1

@@ -209,12 +209,10 @@ The Door To The Castle~
    Here there is a door to the castle to the east.  The castle is 
 elegantly designed, and looks much like a roll of toilet paper
 standing  on its end.  There is a sign which says:
-
               ******************************************
               *  WELCOME TO THE CASTLE OF STRANGELOVE  *
               *      Here, celibacy is uninvited       *
               ******************************************
-
 ~
 65 8 0 0 0 0
 D1
@@ -535,7 +533,6 @@ is a stack of dirty sheets piled in the corner.  There is a ladder
 that leads down, out of the castle, and you can leave the room
 to the south.  There is also a small wooden door to the west.
 There is a sign that says:
-
       -------------------------
       |  I'm busy right now,  |
       |  and don't know when  |
@@ -548,7 +545,6 @@ There is a sign that says:
       |  be found somewhere,  |
       |  deep in the mines..  |
       -------------------------
-
 ~
 65 8 0 0 0 0
 D2
@@ -718,10 +714,8 @@ S
 At The Maze Inscription~
    You are inside the maze, but not far enough in that you could
 get lost.  There is an enscription on the wall which says:
-
           1    3    2    4
           N    W    N    S
-
 This isn't too tough, so don't take it so rough.
 ~
 65 9 0 0 0 0
@@ -815,10 +809,8 @@ that there is no way that a dumb worker could have figured that
 out.  It seems pretty desolate here.  To the south is a bleak
 room.  To the north, you see the maze.  There is a sign above
 the south exit:
-
 THOSE WHO ENTER, PLAN ON A TIMELY DEATH.
 (ESPECIALLY IF YOU'RE LOYAL TO THE QUEEN)
-
 ~
 65 9 0 0 0 0
 D0

@@ -277,7 +277,7 @@ can't be interacted with~
 0 c 100
 *~
 if %self.alias% /= %arg% || %arg% /= %self.alias%
-  %send% %actor.name% %self.name% is frozen by some unnatural magic.
+  %send% %actor% %self.name% is frozen by some unnatural magic.
 else
   return 0
 end
@@ -286,7 +286,7 @@ end
 Rooms don't allow casting~
 2 p 100
 ~
-%send% %actor.name% The powerful magic of this place absorbs your spell.
+%send% %actor% The powerful magic of this place absorbs your spell.
 ~
 #1117
 Mobs get out of fight~
@@ -1082,5 +1082,416 @@ test~
 nop %actor.class(cleric)%
 set %actor.class(cleric)%
 %actor.class(cleric)%
+~
+#1138
+test imm force~
+2 c 100
+test~
+%force% testdet say test
+%force% testdet redit
+~
+#1139
+test echo card~
+2 c 100
+test~
+set UL1 _
+set UM1 _
+set UR1 _
+set UL4 |
+set UL2 |
+set UM4 |
+set UM2 |
+set UR4 |
+set UR2 |
+set ULn ...
+set UMn ...
+set URn ...
+set UL3 _
+set UM3 _
+set UR3 _
+set ML1 _
+set MM1 _
+set MR1 _
+set ML4 |
+set ML2 |
+set MM4 |
+set MM2 |
+set MR4 |
+set MR2 |
+set MLn ...
+set MMn ...
+set MRn ...
+set ML3 _
+set MM3 _
+set MR3 _
+set LL1 _
+set LM1 _
+set LR1 _
+set LL4 |
+set LL2 |
+set LM4 |
+set LM2 |
+set LR4 |
+set LR2 |
+set LLn ...
+set LMn ...
+set LRn ...
+set LL3 _
+set LM3 _
+set LR3 _
+global UL1
+global UL2
+global UL3
+global UL4
+global UM1
+global UM2
+global UM3
+global UM4
+global UR1
+global UR2
+global UR3
+global UR4
+global ML1
+global ML2
+global ML3
+global ML4
+global MM1
+global MM2
+global MM3
+global MM4
+global MR1
+global MR2
+global MR3
+global MR4
+global LL1
+global LL2
+global LL3
+global LL4
+global LM1
+global LM2
+global LM3
+global LM4
+global LR1
+global LR2
+global LR3
+global LR4
+set ulc w
+set umc w
+set urc w
+set mlc w
+set mmc w
+set mrc w
+set llc w
+set lmc w
+set lrc w
+global ulc
+global umc
+global urc
+global mlc
+global mmc
+global mrc
+global llc
+global lmc
+global lrc
+%echo% @n _______________
+%echo% @n| @%ulc%_@Y%UL1%@%ulc%_  @%umc%_@Y%UM1%@%umc%_  @%urc%_@Y%UR1%@%urc%_@n |
+%echo% @n|@%ulc%|   |@%umc%|   |@%urc%|   |@n|
+%echo% @n|@Y%UL4%   %UL2%%UM4%   %UM2%%UR4%   %UR2%@n|
+%echo% @n|@%ulc%|@u%ULn%@n@%ulc%|@%umc%|@u%UMn%@n@%umc%|@%urc%|@u%URn%@n@%urc%|@n|
+%echo% @n|@%ulc%|_@Y%UL3%@%ulc%_|@%umc%|_@Y%UM3%@%umc%_|@%urc%|_@Y%UR3%@%urc%_|@n|
+%echo% @n|@%mlc% _@Y%ML1%@%mlc%_  @%mmc%_@Y%MM1%@%mmc%_  @%mrc%_@Y%MR1%@%mrc%_@n |
+%echo% @n|@%mlc%|   |@%mmc%|   |@%mrc%|   |@n|
+%echo% @n|@Y%ML4%   %ML2%%MM4%   %MM2%%MR4%   %MR2%@n|
+%echo% @n|@%mlc%|@u%MLn%@n@%mlc%|@%mmc%|@u%MMn%@n@%mmc%|@%mrc%|@u%MRn%@n@%mrc%|@n|
+%echo% @n|@%mlc%|_@Y%ML3%@%mlc%_|@%mmc%|_@Y%MM3%@%mmc%_|@%mrc%|_@Y%MR3%@%mrc%_|@n|
+%echo% @n|@%llc% _@Y%LL1%@%llc%_  @%lmc%_@Y%LM1%@%lmc%_  @%lrc%_@Y%LR1%@%lrc%_ @n|
+%echo% @n|@%llc%|   |@%lmc%|   |@%lrc%|   |@n|
+%echo% @n|@Y%LL4%   %LL2%%LM4%   %LM2%%LR4%   %LR2%@n|
+%echo% @n|@%llc%|@u%LLn%@n@%llc%|@%lmc%|@u%LMn%@n@%lmc%|@%lrc%|@u%LRn%@n@%lrc%|@n|
+%echo% @n|@%llc%|_@Y%LL3%@%llc%_|@%lmc%|_@Y%LM3%@%lmc%_|@%lrc%|_@Y%LR3%@%lrc%_|@n|
+%echo% @n|_______________|
+~
+#1140
+dealer say new game~
+0 d 0
+new game~
+wait 1s
+if %actor.varexists(ffplaying)%
+  %send% %actor% @GYou are already playing a game.@n
+  %send% %actor% @GIf you forfeit, you will lose the cards you've won.@n
+  %send% %actor% @GYour opponent will keep the cards they've won.@n
+  %send% %actor% @GSay forfeit to accept this and end the game.@n
+  %send% %actor% @GSay continue to carry on with your current game.@n
+elseif %playing%
+  %echo% Sorry, I'm already playing a game.
+else
+  %send% %actor% Starting new game!
+  set UL1 _
+  set UM1 _
+  set UR1 _
+  set UL4 |
+  set UL2 |
+  set UM4 |
+  set UM2 |
+  set UR4 |
+  set UR2 |
+  set ULn ...
+  set UMn ...
+  set URn ...
+  set UL3 _
+  set UM3 _
+  set UR3 _
+  set ML1 _
+  set MM1 _
+  set MR1 _
+  set ML4 |
+  set ML2 |
+  set MM4 |
+  set MM2 |
+  set MR4 |
+  set MR2 |
+  set MLn ...
+  set MMn ...
+  set MRn ...
+  set ML3 _
+  set MM3 _
+  set MR3 _
+  set LL1 _
+  set LM1 _
+  set LR1 _
+  set LL4 |
+  set LL2 |
+  set LM4 |
+  set LM2 |
+  set LR4 |
+  set LR2 |
+  set LLn ...
+  set LMn ...
+  set LRn ...
+  set LL3 _
+  set LM3 _
+  set LR3 _
+  global lrn
+  global lmn
+  global lln
+  global mrn
+  global mmn
+  global mln
+  global umn
+  global urn
+  global uln
+  global UL1
+  global UL2
+  global UL3
+  global UL4
+  global UM1
+  global UM2
+  global UM3
+  global UM4
+  global UR1
+  global UR2
+  global UR3
+  global UR4
+  global ML1
+  global ML2
+  global ML3
+  global ML4
+  global MM1
+  global MM2
+  global MM3
+  global MM4
+  global MR1
+  global MR2
+  global MR3
+  global MR4
+  global LL1
+  global LL2
+  global LL3
+  global LL4
+  global LM1
+  global LM2
+  global LM3
+  global LM4
+  global LR1
+  global LR2
+  global LR3
+  global LR4
+  set ulc w
+  set umc w
+  set urc w
+  set mlc w
+  set mmc w
+  set mrc w
+  set llc w
+  set lmc w
+  set lrc w
+  global ulc
+  global umc
+  global urc
+  global mlc
+  global mmc
+  global mrc
+  global llc
+  global lmc
+  global lrc
+  set ffplaying 1
+  remote ffplaying %actor.id%
+  set playing 1
+  global playing
+  wait 1s
+  %echo% Heads you start, tails I start.
+  wait 1s
+  %echo% flips a coin...
+  wait 2s
+  switch 2
+    case 1
+      %echo% The coin comes up heads.
+      wait 1s
+      %echo% Ok, you go first, choose your card and position.
+    break
+    case 2
+      %echo% The coin comes up tails.
+      wait 1s
+      %echo% Ok, I'll go first.
+      %force% %actor% xxxchoose
+    break
+    default
+      %echo% The coin comes up heads.
+      wait 1s
+      %echo% Ok, you go first, choose your card and position.
+    break
+  done
+end
+~
+#1141
+mob xxxchoose~
+2 c 100
+xxxchoose~
+switch %random.5%
+  case 1
+    set cardchoice 001
+  break
+  case 2
+    set cardchoice 002
+  break
+  case 3
+    set cardchoice 003
+  break
+  case 4
+    set cardchoice 004
+  break
+  case 5
+    set cardchoice 005
+  break
+  default
+    set cardchoice 005
+  break
+done
+global cardchoice
+switch %random.9%
+  case 1
+    set cardpos UL
+  break
+  case 2
+    set cardpos UM
+  break
+  case 3
+    set cardpos UR
+  break
+  case 4
+    set cardpos ML
+  break
+  case 5
+    set cardpos MM
+  break
+  case 6
+    set cardpos MR
+  break
+  case 7
+    set cardpos LL
+  break
+  case 8
+    set cardpos LM
+  break
+  case 9
+    set cardpos LR
+  break
+done
+global cardpos
+%force% %actor% xxxcardchoice %cardchoice%
+~
+#1142
+actor xxxcardchoice~
+2 c 100
+xxxcardchoice~
+%echo% I'm going to put card %cardchoice% in the %cardpos% position.
+switch %arg%
+  case 001
+    set %cardpos%1 2
+    set %cardpos%2 1
+    set %cardpos%3 2
+    set %cardpos%4 1
+  break
+  case 002
+    set %cardpos%1 1
+    set %cardpos%2 2
+    set %cardpos%3 1
+    set %cardpos%4 2
+  break
+  case 003
+    set %cardpos%1 2
+    set %cardpos%2 2
+    set %cardpos%3 2
+    set %cardpos%4 1
+  break
+  case 004
+    set %cardpos%1 2
+    set %cardpos%2 1
+    set %cardpos%3 2
+    set %cardpos%4 2
+  break
+  case 005
+    set %cardpos%1 2
+    set %cardpos%2 2
+    set %cardpos%3 2
+    set %cardpos%4 2
+  break
+done
+global %cardpos%1
+global %cardpos%2
+global %cardpos%3
+global %cardpos%4
+~
+#1143
+show board~
+2 c 100
+show~
+%echo% @n _______________
+%echo% @n| @%ulc%_@Y%UL1%@%ulc%_  @%umc%_@Y%UM1%@%umc%_  @%urc%_@Y%UR1%@%urc%_@n |
+%echo% @n|@%ulc%|   |@%umc%|   |@%urc%|   |@n|
+%echo% @n|@Y%UL4%   %UL2%%UM4%   %UM2%%UR4%   %UR2%@n|
+%echo% @n|@%ulc%|@u%ULn%@n@%ulc%|@%umc%|@u%UMn%@n@%umc%|@%urc%|@u%URn%@n@%urc%|@n|
+%echo% @n|@%ulc%|_@Y%UL3%@%ulc%_|@%umc%|_@Y%UM3%@%umc%_|@%urc%|_@Y%UR3%@%urc%_|@n|
+%echo% @n|@%mlc% _@Y%ML1%@%mlc%_  @%mmc%_@Y%MM1%@%mmc%_  @%mrc%_@Y%MR1%@%mrc%_@n |
+%echo% @n|@%mlc%|   |@%mmc%|   |@%mrc%|   |@n|
+%echo% @n|@Y%ML4%   %ML2%%MM4%   %MM2%%MR4%   %MR2%@n|
+%echo% @n|@%mlc%|@u%MLn%@n@%mlc%|@%mmc%|@u%MMn%@n@%mmc%|@%mrc%|@u%MRn%@n@%mrc%|@n|
+%echo% @n|@%mlc%|_@Y%ML3%@%mlc%_|@%mmc%|_@Y%MM3%@%mmc%_|@%mrc%|_@Y%MR3%@%mrc%_|@n|
+%echo% @n|@%llc% _@Y%LL1%@%llc%_  @%lmc%_@Y%LM1%@%lmc%_  @%lrc%_@Y%LR1%@%lrc%_ @n|
+%echo% @n|@%llc%|   |@%lmc%|   |@%lrc%|   |@n|
+%echo% @n|@Y%LL4%   %LL2%%LM4%   %LM2%%LR4%   %LR2%@n|
+%echo% @n|@%llc%|@u%LLn%@n@%llc%|@%lmc%|@u%LMn%@n@%lmc%|@%lrc%|@u%LRn%@n@%lrc%|@n|
+%echo% @n|@%llc%|_@Y%LL3%@%llc%_|@%lmc%|_@Y%LM3%@%lmc%_|@%lrc%|_@Y%LR3%@%lrc%_|@n|
+%echo% @n|_______________|
+~
+#1144
+new trigger~
+2 c 100
+test~
+%echo% var is %var%
+%echo% var2 is %var2%
+%echo% coloured var is @Y%var%@n
+set col Y
+%echo% var coloured var is @%col%%var%@n
 ~
 $~

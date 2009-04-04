@@ -51,7 +51,6 @@ Strange ship (not open, on docks #34).
 cityguard in the town you are attaching Trade Road to.
 The descriptions for rooms #00 and #17 can be switched at will.  The
 default is set up to link onto a main city through an east exit to the
-
 west end of Trade Road.  Switching these two descriptions (don't
 forget to switch the Edesc's and change east for west and vice versa
 in the two descriptions!!!) 'reverses' the area, allowing a west exit
@@ -228,7 +227,6 @@ Clay Street~
 -- one going back down Clay Street to the east, over the wall, and a shop to
 the south.  The wall doesn't look too safe, however; what with all those guards
 on top.  The shop to the south looks like a considerably nicer place to go.  
-
 ~
 294 0 0 0 0 0
 D1
@@ -433,7 +431,6 @@ Clay Street~
 here.  To the south, Clay Road continues towards the southern city wall, not
 far away.  A nicely built building with an exquisite architecture is to the
 east, while the distinctive smell of tannin comes from a shop from the west.  
-
 ~
 294 0 0 0 0 0
 D0
@@ -819,7 +816,6 @@ litter~
 E
 shop shops building buildings~
    They're getting noticeably worse now.  You have a sudden attack of deja vu.
-
 ~
 S
 #29427
@@ -1013,7 +1009,6 @@ D3
 E
 mortarwork wall~
    Looks fresh.  It also looks hastily built...  To keep something out, or in?
-
 ~
 E
 ship~
@@ -1113,7 +1108,6 @@ Trade Road runs right outside.
 E
 lantern lanterns~
    Your standard lantern, available for a pittance at your local General Store.
-
 ~
 E
 bench chair chairs~
@@ -1449,7 +1443,6 @@ bottle empty ale~
 E
 news copy XXXX~
    It's old.  You'd be better off typing 'News' and reading the newest version.
-
 ~
 S
 #29450

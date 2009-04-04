@@ -256,7 +256,6 @@ S
 Entrance to Smurfberry Patch ~
    You see ordered rows of bushes growing what appear to be Smurfberries.  The
 patch continues to the north, south and west.  To the east lies Smurfy Road.  
-
 ~
 274 0 0 0 0 0
 D0
@@ -289,7 +288,6 @@ Smurfy Road~
    You are walking down a well-kept road in the middle of Smurfville.  To the
 north, you see a cute little smurfy well.  To the west is what appears to be a
 Smurfberry Patch.  To the east, you see yet another row of well-kept houses.  
-
 ~
 274 0 0 0 0 0
 D0
@@ -486,7 +484,6 @@ You peer into the dark well and think you may just be able to squeeze down.
 E
 well~
    You peer into the dark well and think you may just be able to squeeze down.
-
 ~
 S
 #27423

@@ -372,12 +372,12 @@ D3
 ~
 0 0 26113
 E
-closet~
-   Nice clothes, but not your size at all.  
-~
-E
 desk~
    The desk is basically uninteresting, as are the papers on top of it...  
+~
+E
+closet~
+   Nice clothes, but not your size at all.  
 ~
 S
 #26112
@@ -536,6 +536,7 @@ doing here?!  -
 ~
 261 0 0 0 0 0
 S
+T 26100
 #26122
 Bedroom~
    You land with a -THUMP!  - in the center of a huge feather bed which sits in
@@ -659,7 +660,7 @@ cell cells~
 ~
 S
 #26128
-undefined~
+A Dark Room~
    It is pitch black...  
 ~
 261 9 0 0 0 0
@@ -878,11 +879,11 @@ D3
 door~
 1 0 26135
 E
-mortar mortars pestle pestles jar jars~
+beaker beakers flask flasks burner burners tong tongs~
    Looks like normal, fragile lab equipment to you.  
 ~
 E
-beaker beakers flask flasks burner burners tong tongs~
+mortar mortars pestle pestles jar jars~
    Looks like normal, fragile lab equipment to you.  
 ~
 S
@@ -907,7 +908,6 @@ A Twisty Path~
    The path heads due west toward a large home.  You have heard of an old
 married couple who used to be Head Enchanter and Enchantress to the Lord at
 Lord's Keep, maybe this is it...  The path also heads north through the forest.
-
 ~
 261 0 0 0 0 0
 D0

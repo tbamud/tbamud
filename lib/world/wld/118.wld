@@ -1,30 +1,24 @@
 #11800
 Detta's [Dollhouse] Description Room~
-
 @BTheme:@n This zone is a little abstract, more a sort of 
 Alice-in-Wonderland experience that revolves around a strange dollhouse in 
 an antique shop. The idea is to get out once you're in, which basically entails 
 completing the quest... a series of mini-quests.
 Note that to get any sense of this zone, you pretty much need to start in
 the room down from here, and nohassle needs to be off. ;)
-
 @GPlayers:@n Mainly for players around level 10-ish, this zone is primarily
 neutral with a couple evil places and a couple good ones. Its been designed as 
 mostly a puzzle-solving, quest area, but opportunity for xp to be gained as 
 well, as each completed quest gives 10,000 xp.
-
 @RLocation:@n The only concrete location in the zone is the beginning
 room which is a London street leading into an antiques shop.
-
 @MSecrets:@n There are now absolutely loads up :), just type LOOK SPOILERS
 to see them, but you'll have more fun here if you don't ;).
-
 @CNote:@n If you have any suggestions, spot any typos, bugs, or
 weirdnesses, please mudmail me - Detta. :-) All input appreciated!
 You can also email me at detta@@builderacademy.net
 East takes you through the other zones I have built here.
 Down takes you to the starting room of this zone.
-
 ~
 118 520 0 0 0 0
 D1
@@ -66,11 +60,9 @@ E
 telling you to "crawl in here".  The command crawl will cause you to crawl under
 the bed and enter room 11871 where the hiding girl is.  Giving her the journal
 will make her ask you for three things...  Three corpses in particular.  
-
 The corpse of a fish (the red trout - mobvnum: 11830, objvnum: 11856)
 The corpse of a bird (the taildove - mobvnum: 11831, objvnum: 11857)
 The corpse of a toad (the vile toad - mobvnum: 11832, objvnum: 11858)
-
 Once you have brought her all three of those things she will apologize and ask
 for one further thing... a secret that Ridley guards.
 If you go to Ridley and ask her a question with the word secret in it she will
@@ -109,7 +101,6 @@ way out and agrees to do whatever you say.  The key here is that she does just
 that, whatever you speak she does...  So if you say north, she moves north etc.
 All you have to do is lead her with speech to the vortex and through it.  Once
 on the other side she will happily write in the journal when you give it to her.
-
 ~
 E
 05~
@@ -170,41 +161,23 @@ spoilers~
 really have to look there are a few little neat zone inclusions listed here to
 spoil your zone exploring pleasure.  Just type look and then the number to look
 at each one (look 1 for example).  
-
 01: The Antique Shop
-
 02: The Journal Quest
-
 03: The Playing Child
-
 04: The Colouring Child
-
 05: Ridley
-
 06: The Tunnel-man
-
 07: The Running Girl
-
 08: The Blind Girl
-
 09: The Weeping Girl
-
 10: The Fidgety Girl
-
 11: Ruth
-
 12: The Emaciated Girl
-
 13: The Silent Girl
-
 14: The Angry Girl
-
 15: The Scarred Child
-
 16: The Ghostly Girl
-
 17: The Fiery Bloodstone Amulet
-
 ~
 E
 6~
@@ -344,7 +317,6 @@ music echoes off the distant walls and ceiling.
 118 8 0 0 0 0
 D0
    The hallway continues on to the north, the hard flooring covered with a rug.
-
 ~
 ~
 0 0 11810
@@ -2410,12 +2382,10 @@ S
 #11894
 How Perceptive Are You?~
 Count the F's in the following text, try to read through it only once:
-
 FINISHED FILES ARE THE RE-
 SULT OF YEARS OF SCIENTIF-
 IC STUDY COMBINED WITH THE
 EXPERIENCE OF YEARS...
-
 Once you have counted them all, type look next
 ~
 118 24 0 0 0 0
@@ -2429,11 +2399,8 @@ EXPERIENCE O@RF@y YEARS...@n
 E
 next~
 How many F's did you get?
-
 The answer is that there are 6 :)
-
 Most people only count three as the brain does not process the F in the word of
-
 PS. if you are really stuck, type LOOK TWO, to see exactly where the F's are
 ~
 S

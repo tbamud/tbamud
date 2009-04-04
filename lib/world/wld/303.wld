@@ -13,7 +13,6 @@ The hallway lies to the south.
 E
 credits info~
    See zone description room for Campus.
-
 Zone 303 is linked to the following zones:
 302 Campus                         at 30300 (south) ---> 30299
 302 Campus                         at 30301 (west ) ---> 30299
@@ -169,7 +168,6 @@ S
 #30307
 Really Narrow Stairwell, Part II~
    The Stairwell's Revenge.  Now there is an exit to the west and one down.  
-
 ~
 303 13 0 0 0 0
 D3
@@ -333,15 +331,9 @@ The stairwell leads down to the lobby.
 E
 sign~
    The sign states:
-
-
-
                 The Campus Party is Here!!
-
                 Vote for the Campus Party,
-
                 Supporting our Beliefs!!!
-
 ~
 S
 #30313
@@ -393,7 +385,6 @@ african tribal music to the latest from Neil Young.
 E
 computer accessories~
    This is so large and incomprehensible that you simply do not understand it.
-
 ~
 S
 #30315
@@ -617,7 +608,6 @@ S
 Hallway~
    The hallway curves around slightly so that you can't quite see what is to
 the est and east.  The sound of snoring denotes a lecture hall to the south.  
-
 ~
 303 8 0 0 0 0
 D1

@@ -292,7 +292,7 @@ See also: WORK, CARTOGRAPHY, LOCATION, THEME, PLOT, SIZE, ALIGN, BIAS
 CARTOGRAPHY
 
    The reasons behind mapping are simple. It solidifies what you are planning 
-to build into MUD terms. also, though final products rarely are an exact copy 
+to build into MUD terms. Also, though final products rarely are an exact copy 
 of the map, they provide a concrete reference for you to look at when the 
 builder's block question rears its ugly head "Hmm, what do I build next?" 
 Lastly, not all players have nifty clients especially made for MUDding with 
@@ -1389,7 +1389,7 @@ road.
    killing them, give them a pelt, teeth, claws or something to be sold. See 
    rule #14 for more info.
 
-4) There should have between three and eight lines of text in a room desc. 
+4) There should be between three and eight lines of text in a room desc. 
    Proper grammar should be used at all times in said text. Going over 8 lines 
    can be a bad idea because of the limit of player scrolling and how daunting
    that amount of information becomes in a single dose. If a description 
@@ -1555,9 +1555,9 @@ fix parts.  This is perfectly normal and should not in any way be interpreted
 as an insult.  The comments you receive may include a lot of nit-picky details
 but once you are an experienced builder and have gained our trust and respect
 we will not be going over your work as closely.  Try and learn as much as you 
-can from this test and review process and keep it in mind as you work on future
-projects it is the most direct and concrete way for us to teach you how to 
-build.  Everyone wants builders, but they want standards as well.  We would 
+can from this test and review process. Keep it in mind as you work on future
+projects. It is the most direct and concrete way for us to teach you how to 
+build.  Everyone wants builders, but they want quality work more.  We would 
 rather have one good zone than ten mediocre ones.
 
 #31
@@ -2512,6 +2512,7 @@ maxhit         LVL_BUILDER      BOTH    NUMBER      Max HP
 maxmana        LVL_BUILDER      BOTH    NUMBER      Max mana
 maxmove        LVL_BUILDER      BOTH    NUMBER      Max movement
 move           LVL_BUILDER      BOTH    NUMBER      Current movement
+name           LVL_IMPL         PC      MISC        To change player names
 nodelete       LVL_GOD          PC      BINARY      Undeletable flag
 nohassle       LVL_GOD          PC      BINARY      NOHASSLE flag
 nosummon       LVL_BUILDER      PC      BINARY      NOSUMMON flag
@@ -2668,7 +2669,8 @@ Displays when the game was booted and calculates how long ago that was.
 
 Record uptime:
 
-Up since Thu Nov  6 16:09:55 2008: 47 days, 9:28
+tbaMUD 3.51 from crackwhip.com:
+Up since Fri Jun 27 07:04:55 2008: 209 days, 2:45
 
 #31
 USERS STATUS
@@ -3100,15 +3102,15 @@ TRIGEDIT-TYPES TYPES TRIGGER-LIST TRIGGER-TYPES TRIG-TYPES OBJ-TRIG-TYPES TRIGED
 |  TRIGEDIT-ROOM-LEAVE   |   TRIGEDIT-OBJ-REMOVE   |  TRIGEDIT-MOB-ENTRY     |
 |  TRIGEDIT-ROOM-DOOR    |   TRIGEDIT-OBJ-LOAD     |  TRIGEDIT-MOB-RECEIVE   |
 |  TRIGEDIT-ROOM-TIME    |   TRIGEDIT-OBJ-CAST     |  TRIGEDIT-MOB-FIGHT     |
-=========================|   TRIGEDIT-OBJ-LEAVE    |  TRIGEDIT-MOB-HITPRCNT  |
-                         |   TRIGEDIT-OBJ-CONSUME  |  TRIGEDIT-MOB-BRIBE     |
-Further help can be       =========================|  TRIGEDIT-MOB-LOAD      |
+|  TRIGEDIT-ROOM-LOGIN   |   TRIGEDIT-OBJ-LEAVE    |  TRIGEDIT-MOB-HITPRCNT  |
+|========================|   TRIGEDIT-OBJ-CONSUME  |  TRIGEDIT-MOB-BRIBE     |
+Further help can be      |=========================|  TRIGEDIT-MOB-LOAD      |
 accessed by typing:                                |  TRIGEDIT-MOB-MEMORY    |
 @RHELP <TYPE>@n.                                       |  TRIGEDIT-MOB-CAST      |
 i.e. @RHELP TRIGEDIT-MOB-ACT@n                         |  TRIGEDIT-MOB-LEAVE     |
                                                    |  TRIGEDIT-MOB-DOOR      |
-						   |  TRIGEDIT-MOB-TIME      |
-See also: TRIG-COMMANDS, VARIABLES, EXPRESSIONS     =========================
+						                           |  TRIGEDIT-MOB-TIME      |
+See also: TRIG-COMMANDS, VARIABLES, EXPRESSIONS    |=========================|
 #31
 TRIGEDIT-OBJECT-COMMANDS ROOM-COMMANDS OBJECT-COMMANDS TRIG-MOB-COMMAND TRIGEDIT-MUDCOMMANDS
 
@@ -3132,11 +3134,11 @@ TRIGEDIT-COMMANDS TRIG-COMMANDS TRIGGER-COMMANDS TRIGEDIT-COMMANDLISTS %COMMANDS
 |      halt        |     dg_affect     |     dg_affect     |     dg_affect    |
        wait        |      dg_cast      |      dg_cast      |      dg_cast     |
 |     makeuid      |       %at%        |       %at%        |       %at%       |
-|     rdelete      |    %transform%    |    %transform%    |==================|
-|      remote      |       mhunt       |      otimer       |
+|     rdelete      |    %transform%    |    %transform%    |       move       | 
+|      remote      |       mhunt       |      otimer       |==================|
 |      return      |     mremember     |     osetval       |
-|      switch      |      mforget      |===================|
-|       case       |       %goto%      |
+|      switch      |      mforget      |       move        |
+|       case       |       %goto%      |===================|
 |      break       |       mkill       |
 |      done        |       %junk%      | Further help can be accessed by
 |      while       |      %follow%     | typing: @RHELP <COMMAND>@n.
@@ -3307,7 +3309,27 @@ PORTAL EXAMPLES:
    ROOM: @RTSTAT 101@n
    MOB:  @RTSTAT 102@n
 
-See also: MGOTO, TELEPORT
+See also: MGOTO, TELEPORT, %MOVE%
+#31
+%MOVE% MOVE-OBJECT MOVE-ALL
+
+In an object trigger, moves the object to which the trig is attached to the 
+specified room.  The object can be on the floor, inside another object or in a 
+player or mobs inventory (not eq):
+Usage: %move% <room>
+
+In a room trigger, moves the specified object, or all objects to the specified 
+room.  The object must be on the floor of the room to which the trig is 
+attached:
+Usage: %move% %obj.name% <room>
+       %move% all <room>
+
+The <room> target room should be a VNUM.
+
+Note: This does not create a copy of the object, but moves the actual object to the floor of the target
+room.
+
+See also: %TELEPORT%
 #31
 DG_CAST TRIG-CAST TRIGEDIT-CAST TRIGEDIT-SPELLS DG-CASTS %CAST% %SPELLS% %dg_cast% 
 
@@ -4273,10 +4295,10 @@ MOB-TRIGGERS MOBILE-TRIGGERS TRIGEDIT-MOB-TYPES
 17) Leave       @RHELP TRIGEDIT-MOB-LEAVE@n          
 18) Door        @RHELP TRIGEDIT-MOB-DOOR@n          
 #31
-TRIGEDIT-OBJ-GET TRIG-OBJ-GET
+TRIGEDIT-OBJ-GET TRIG-OBJ-GET TRIGEDIT-OBJ-TAKE TRIG-OBJ-TAKE
 
-Activated any time a character attempts to pick up this object.
-Does not work with waits.
+Activated any time a character attempts to pick up this object or takes it from
+a container. Does not work with waits.
  
 Numeric Arg : percentage chance this trigger will activate.
 Argument    : not used.
@@ -4305,10 +4327,10 @@ Variables:
 
 Example: @RTSTAT 84, 1366@n
 #31
-TRIGEDIT-OBJ-GIVE TRIGEDIT-OBJ-RECEIVE TRIG-OBJ-GIVE TRIG-OBJ-RECEIVE %PUT%
+TRIGEDIT-OBJ-GIVE TRIGEDIT-OBJ-RECEIVE TRIG-OBJ-GIVE TRIG-OBJ-RECEIVE %PUT% TRIGEDIT-OBJ-PUT TRIG-OBJ-PUT
  
-Activated when a player attempts to give this object away or put it
-inside a container.
+Activated when a player attempts to give this object away or put it inside a 
+container.
  
 If used with a return 0 the character will fail to give the object.
 
@@ -4362,7 +4384,7 @@ Variables:
 
 Example: @RTSTAT 88@n
 #31
-TRIGEDIT-OBJ-CAST %SPELLNAME%
+TRIGEDIT-OBJ-CAST %SPELLNAME% TRIG-OBJ-CAST
 
 Activated when the obj is targeted by a spell.
  
@@ -4522,8 +4544,8 @@ This trigger will not fire for people %teleport%'d into the room.
 Numeric Arg : percentage chance this trigger will activate.
 Argument    : not used.
 
-If used return 0 the character will fail to enter the room. But you can not use
-a wait.
+If used with a return 0 the character will fail to enter the room. But you can 
+not use a wait.
 
 Variables:
 %actor%     - the character entering the room.
@@ -4616,6 +4638,18 @@ Variables:
 %self%      - the room.
 
 See also: TRIGEDIT-ROOM-GLOBAL, %TIME%
+#31
+TRIGEDIT-ROOM-LOGIN TRIGEDIT-LOGIN TRIG-ROOM-LOGIN
+
+Activated if a player enters the game in the room the trigger is attached to.
+ 
+Numeric Arg : percent chance this trigger will be activated. 
+Argument    : not used.
+
+Variables:
+%self%      - the room.
+
+See also: TRIG-TYPE
 #31
 TRIGEDIT-MOB-RANDOM TRIGEDIT-RANDOM TRIG-MOB-RANDOM TRIG-RANDOM
  
@@ -5172,6 +5206,7 @@ Trigger Editor [1300]                       @RHELP TRIGEDIT-EDITOR@n
 6) Commands:                                @RHELP TRIGEDIT-COMMANDLIST@n
 @csay My trigger commandlist is not complete!@n
 
+W) Copy Trigger                             @RHELP TRIGEDIT-COPY@n
 Q) Quit
 Enter Choice :
 
@@ -5253,6 +5288,13 @@ This is often called the 'trigger', and is actually a small program, executed
 step by step. In it, you can use different types of commands: trigger - specific 
 commands, flow control commands - if this is a mobile trigger, you can use 
 standard mud commands like say or give.
+#31
+TRIGEDIT-COPY
+
+Allows you to copy an existing trigger into a new trigger. First create a new
+trigger, then choose copy and type in the vnum of the trigger you want to copy.
+
+See Also: TRIGEDIT-MENU
 #31
 DG-SCRIPTS DG_SCRIPTS DGSCRIPTS 
 
@@ -5853,17 +5895,6 @@ See also: REDIT, OEDIT, MEDIT, SEDIT, ZEDIT, ZRESET,
           RLIST, OLIST, MLIST, SLIST, SHOW-ZONE  
 Advanced: TRIGEDIT, TSTAT, TLIST, DIG, XCOPY, BUILDWALK
 #31
-BUILDERS IMMORTALS
-
-   A builder is a term usually used to describe a person who designs MUD zones
-for other characters to explore. Any player with motivation, ideas, and good 
-writing style can be a builder as well as a player. As a Builder, your job is 
-to create the virtual world in which players can roam around, solve puzzles, 
-find treasures, and gain experience. A Builder creates the rooms, objects, 
-mobs, shops, and triggers with which players will interact. 
-
-See also: OLC, REDIT, MEDIT, OEDIT, ZEDIT, SEDIT, TRIGEDIT, AEDIT
-#31
 DEPENDENT ZEDIT-DEPENDENT DEPENDANT ZEDIT-DEPENDANT
 
    One of the most common mistakes by new builders is their misunderstanding
@@ -6069,8 +6100,7 @@ See also: SEDIT-MENU, SLIST, OLC
 ZEDIT
 
 Usage: zedit [room vnum]
-       zedit new <new zone number> <bottom of zone> <top of zone> (Implementors only!)
-       
+
 Zedit lets you edit (online) the zone files for your particular zone.
 Within zedit you can alter the loading of monsters and objects and the
 closing/locking of doors etc.
@@ -6079,6 +6109,7 @@ If no room number is specified, the current room is used as target.
 
 @RGOTO 11@n to enter The Builder Academy hallway on how to use zedit.
 
+Implementors wanting to create zones, see: @R HELP ZONE-CREATE@n
 See also: ZEDIT-MENU, ZEDIT-NEW, OLC, SHOW-ZONES 
 #31
 BUILDWALKING BUILD-WALKING DIGWALK WALKDIG
@@ -6770,15 +6801,20 @@ ZEDIT-CREATE ZEDIT-CREATION ZONE-CREATE ZONE-CREATION ZCREATE
 Usage: zedit new <new zone number> <bottom of zone> <top of zone>
 
 	Only Implementors can create new zones. Zones can be any size but must
-consist of consecutive vnums.
+consist of consecutive vnums. tbaMUD supports 0-655 zones. That means vnums 
+0 -> 65500. So to create zone 350 you would type: zedit new 350 35000 35099 
+for a 100 vnum zone. Which I find the easiest to manage. But, in reality you 
+can create a zone of any size you want. It is my experience that most builders
+rarely finish a 50 room zone so giving them over 100 is a waste of resources. 
+I force most builders to start small to prove themselves before giving them 
+more. When they do build a full zone of 50+ rooms, mobs, objects, etc. 
+I then give them another 100. 
 
 Examples:
    zedit new 1 100 199 - Creates zone 1 vnums 100 to 199.
    zedit new 123 12300 12499 - Creates zone 123 vnums 12300 to 12499
-   
-Max zone number is 655. Max vnum is 65534.
 
-65535 is reserved for corpses.
+Max zone number is 655. Max vnum is 65534. 65535 is reserved for corpses.
    
 See Also: ZEDIT, ZEDIT-NEW
 #31
@@ -7064,9 +7100,8 @@ Be careful how you word what they are wearing. For example of what not to say:
 "A huge werewolf is wielding a mace of Oblivion." Reason being, if he does not
 load the mace, this would not make any sense. Do not describe objects that a
 mob is wearing in their look or extra desc. All such objects should actually
-
 be made and equipped to the mob.
-   Give your mobs names, or at least an occupation. Seeing the generic "a 
+   Name your mobs, or at least give them an occupation. Seeing the generic "a 
 citizen is standing here." gets boring pretty quick and makes the game become 
 a drone, room-to-room hack and slash. As a player, which would you like to 
 say that you killed: 'a citizen' or 'The Great Speaker of the Land'? Both 
@@ -7370,7 +7405,7 @@ PROPER USAGE: @RVSTAT OBJ 350@n
 OEDIT-TYPES OBJECT-TYPES OBJ-TYPES OBJ-WEAPONS TRASH FURNITURE COUCH CHAIRS SEAT
 
 5) Type        : @cUNDEFINED@n
-   This specifies what type an object is defined as; also controls the meanings
+   This specifies what type an object is defined as and controls the meanings
 of value0 through value4 (option C). The Type Flag must be one of the following:
  
 0    UNDEFINED      Do not set.
@@ -7407,13 +7442,14 @@ beneficial lying around. This may sound obvious, but it has been done.
    Also consider creating objects that are harmful to the owner. Objects that
 lower certain stats, saving throws, or confer weaknesses make the game more
 interesting. Remember that a lot of small items make an area more interesting 
-than a few incredibly powerful items, for the most part. Do not feel lim armor. A giant untakeable
-monolith, and other strange and odd items can add a lot of atmosphere to an 
-area. They can also be used to distract players. Most of the useless items are 
-often best as trash, but can be worn, and do not feel that items should not get 
-strange wear flags. After all, who is to say that boat you just created can not 
-actually be a ring of water walking? All that would be needed for that is to 
-have a boat with a finger wear position set.
+than a few incredibly powerful items, for the most part. Do not limit yourself
+to only armor and weapons. A giant untakeable monolith, and other strange and 
+odd items can add a lot of atmosphere to an area. They can also be used to 
+distract players. Most of the useless items are often best as trash, but can 
+be worn, and do not be afraid of using strange wear flags. After all, who is 
+to say that boat you just created can not actually be a ring of water walking? 
+All that would be needed for that is to have a boat with a finger wear position 
+set.
    You can and should add depth and interest to your area by creating objects
 that do not have any game value. These can be rocks, candlesticks, toys,
 clothing, or anything else you can think of. This makes the truly useful
@@ -8037,8 +8073,8 @@ add small interesting details to your area and are often remembered by players.
 Please take the time to write extra descriptions. On most MUDs, you can look
 at 100 objects and "You see nothing special..." all 100 times. In an effort to 
 make all MUDs different and better, take the time to write an extra description
-for your object. Think of an objects extra description as the same thing as a
-mobs description when you look at it, which it actually is. For the extra
+for your object. Think of an object's extra description as the same thing as a
+mob's description when you look at it, which it actually is. For the extra
 descriptions keywords, use the same keywords as you did earlier. 
 A very easy way to detect lazy builders with bad grammar is when objects
 have no description at all. This causes frustration on the player side, because
@@ -8317,6 +8353,7 @@ rumble@@tbamud.com
    6 SEA of Souls                       -- Unknown                    10-25
    7 CAMELOT                            -- Rumble                     20-30
    9 River Island Of Minos              -- Mahatma                     4-25
+  11 Frozen Castle                      -- Detta                      25-30
   15 Straight Path                      -- Steppin                    13-30  
   16 CAMELOT II                         -- Rumble                     20-30
   17 CAMELOT III                        -- Rumble                     20-30
@@ -8333,8 +8370,13 @@ rumble@@tbamud.com
   33 Three Of Swords                    -- C.A.W.                      5-30
   35 Miden'Nir                          -- Copper II                   4-10
   36 Chessboard of Midgaard             -- Exxon                       6-30
+  37 CAPITAL Sewer System               -- Welcor                      3- 7
+  38 CAPITAL Sewer System II            -- Welcor                      7-14
+  39 HAVEN								-- Nivan                       3-14
   40 Mines of Moria                     -- Redferne                    3-13
   41 Mines of Moria II                  -- Redferne                    3-13
+  42 Dragon CHASM                       -- Guldane                    22-30
+  43 ARCTIC Zone                        -- Walrus                     14-18
   44 ORC Camp                           -- Welcor                      3- 7
   45 Woodland MONASTERY                 -- Gnoff                      12-15
   46 ANT Hill                           -- Garrison                    3- 7
@@ -8358,6 +8400,7 @@ rumble@@tbamud.com
   73 Tunnels in the Sewer               -- Redferne                    1-19
   74 Newbie GRAVEyard                   -- Jojen                       3- 5
   75 ZAMBA                              -- Shimmer                    14-18
+  78 GIDEON                             -- Arina                       7-14
   79 Redferne's Residence               -- DikuMUD                    12-26
   83 GLUMGOLD's Sea                     -- Meyekul                    10-30
   86 DUKE Kalithorn's Keep              -- Destiny                     3-14
@@ -8484,11 +8527,11 @@ Zone names CAPITALIZED are accessed by teleporter. i.e. "teleport sanctus"
 Uncapitalized zones are linked through a capitalized zone.
 Teleporter Trigger: 99
 
-The above world includes: (as of Dec 2006):
-   9375 mobiles           3456 prototypes
-   9204 objects           4235 prototypes
-  11505 rooms              185 zones
-   1075 triggers
+The above world includes: (as of 2009):
+   9967 mobiles           3613 prototypes
+  10686 objects           4512 prototypes
+  12029 rooms              183 zones
+   1396 triggers           315 shops
 
 If you wish to see what standards we have used to balance these zones just stop
 by TBA or see the help files on OBJ-LIMITS, MOB-LIMITS.
@@ -8793,20 +8836,21 @@ ZMud (PC) - @Chttp://www.zuggsoft.com/zmud/down.asp#zMUD@n
 ZMud Free (PC) - http://forums.zuggsoft.com/index.php?page=4&action=file&file_id=18
 CMUD (PC) - http://www.zuggsoft.com/cmud/
 Portal (PC) - http://gameaxle.com/
-GMud (PC) - http://www.uberworld.org/gmud.exe (fits on a floppy).
+GMud (PC) - http://sourceforge.net/projects/gmud/ (fits on a floppy).
 TinTin++ - http://tintin.sourceforge.net/
+Mushclient - http://www.gammon.com.au/mushclient/mushclient.htm
 Atlantis (Mac) - http://riverdark.net/atlantis/
 Pueblo - http://pueblo.sf.net/
 Fireclient (PC) - http://www.firebolt.com/download.php
-Tinyfugue (Many platforms) - http://tf.tcp.com/~hawkeye/tf/ 
+Tinyfugue (Many platforms) - http://tinyfugue.sourceforge.net/ 
 MCL (Linux) - http://www.andreasen.org/mcl/ 
 MudMaster (DOS) - http://www.mud-master.com/index.html 
 CRT (PC) - http://www.vandyke.com 
 BetterTelnet (Mac) - http://www.cstone.net/~rbraun/mac/telnet/ 
 PuTTY (PC) - http://www.chiark.greenend.org.uk/~sgtatham/putty/ 
-Cantrip (Mac OS 10) - http://www.solidsun.com/cm/
+Cantrip (Mac OS 10) - http://code.google.com/p/cantrip/
 Savitar (Mac OS 10) - http://www.heynow.com/Savitar/
-RoAClient - http://www.rhoneware.com/RoAClient/
+RoAClient - http://rware.ncmp.net/roaclient/
 
 Warning: Some clients will give you problems since they use special characters 
 like the / character (Avplay, Mush, and SimpleMU) if you are getting weird 
@@ -11468,10 +11512,10 @@ DELETE SUICIDE
 select the option to delete your character. 
 
 #0
-TRIGEDIT-OBJ-ACT DODGE SEARCH PEEK SCAN WHOIS OOC OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS CLANS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING IDENTIFY CLONES CLONING ZCLONE BERSERK CLANS MUSIC RACES IMC
+TRIGEDIT-OBJ-ACT TRANSLATE DODGE SEARCH PEEK SCAN WHOIS OOC OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS CLANS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING IDENTIFY CLONES CLONING ZCLONE BERSERK CLANS MUSIC RACES IMC
 
    Not implemented.
-
+   Translation engine: http://babelfish.yahoo.com/
 #0
 ORDINAL-DIRECTIONS NORTHWEST NORTHEAST SOUTHWEST SOUTHEAST NW SW SE NE STATLIST GEDIT TRUST ZDELETE MOUNTS RIDE TAME PARALYZE PARALYSE HASTE BLOCKING IGNORE COOK CAMPFIRES HORSES ZONE-DELETE IMC LINKLOAD INTERMUD
 
@@ -12080,6 +12124,17 @@ From: justo
   Justo's Monthly Zone report
 
 #31
+BUILDERS IMMORTALS
+
+   A builder is a term usually used to describe a person who designs MUD zones
+for other characters to explore. Any player with motivation, ideas, and good 
+writing style can be a builder as well as a player. As a Builder, your job is 
+to create the virtual world in which players can roam around, solve puzzles, 
+find treasures, and gain experience. A Builder creates the rooms, objects, 
+mobs, shops, and triggers with which players will interact. 
+
+See also: OLC, REDIT, MEDIT, OEDIT, ZEDIT, SEDIT, TRIGEDIT, AEDIT
+#31
 TRIAL-VNUM-ASSIGNER ASSIGNER TRIAL-VNUM-LIMITER TBALIM JUNK-ASSIGNER LIMITER VNUM-ASSIGNER TASKS
 
    This object was created to help new builders follow the directions under 
@@ -12254,8 +12309,8 @@ to goto <your Vnum> and test them out. Your Vnum (look at your title to see
 what Vnum you were assigned) includes your trial room/mob/object. For example, 
 if your title says: Rumble has trial Vnum 13900, this means I will make one 
 room, one mob, and one object by editing that Vnum (i.e. redit 13900). Both the 
-mob and object must load in the room through zedit. Do not make a shop or 
-trigger with your Vnum, those are more advanced and should only be attempted 
+mob and object must load in the room through zedit. Do not make a shop, quest, 
+or trigger with your Vnum, those are more advanced and should only be attempted
 when the first four forms of OLC are well understood. Your Trial Vnum must have 
 your name in the room title.
    This one Vnum is your chance to show off your building abilities. Every 
@@ -12274,6 +12329,7 @@ assigned a Vnum or zone please be patient and mudmail Rumble. Once you are
 assigned either of these do not remove them from your title. Your title should 
 always have your trial vnum or your zone somewhere in it.
 
+The best examples: 13593, 13700
 #0
 BOOBS NOASSHOLE TITS IMMORAL
 
@@ -12753,4 +12809,14 @@ MOB: 1308
      ~ -     ~-    `   ~  "~   ~  =~^ `~ ` `,_ , ` ~-^
      `     ~^  ~^  -~^ ^~ -~^ -~ `^ ~~ -~
 #31 
+VOTE VOTING
+
+Please feel free to provide feedback of your TBA experience:
+
+http://www.mudconnect.com/mud-bin/vote_rank.cgi?mud=The+Builder+Academy
+http://mudgamers.com/2009/01/01/the-builder-academy/
+http://www.topmudsites.com/vote-tbamud.html
+http://www.themudslide.com/do_poll.html
+http://www.mudlists.com/cgi-bin/exchange/vote.pl?member=519
+#1
 $

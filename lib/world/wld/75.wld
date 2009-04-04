@@ -1365,7 +1365,6 @@ A Long Corridor~
    This part of the corridor is unfunished.  Large golden candleholders are
 mounted to the walls, white candles burn brightly, to show off a tremendous
 painting of a elegant lady.  The corridor is wide and leads north and south.  
-
 ~
 75 0 0 0 0 0
 D0
@@ -1509,7 +1508,6 @@ E
 table~
    Bowls filled with fruit, cooked meats, and many other delicious foods are
 neatly placed here being arranged on silver platters and in exquisite bowls.  
-
 ~
 S
 #7562
@@ -1628,7 +1626,6 @@ door south~
 E
 trunk~
    The wooden trunk is plain except for having a large lock holding it shut.  
-
 ~
 E
 candle table~
@@ -1860,7 +1857,6 @@ A Sandy Beach~
    The white sand rises and falls in small dunes scattered all about.  Small
 patches of wild grass grows scantly around.  Several trees grow to the north
 and east of the sand.  To the west the ocean spreads far into the distance.  
-
 ~
 75 32768 0 0 0 0
 D0
@@ -1893,7 +1889,6 @@ A Sandy Beach~
    The white sand is flat and smooth with a few bird trails leading to the
 north.  White waves roll in onto the sand washing away some of the bird prints.
 To the east a sandy clearing.  The sand extents off to the north and south.  
-
 ~
 75 32768 0 0 0 0
 D0
@@ -2015,7 +2010,6 @@ Market Row~
    The small road is well traveled with a few shops to each side.  Noise echos
 out from the shops from all the activity around them.  To the north stands a
 large building made of wood and large stones.  The road leads east and west.  
-
 ~
 75 32772 0 0 0 0
 D0

@@ -79,7 +79,6 @@ From this side, the door is clearly visible,
 but the way the edge of the door merges with
 the frame suggests that from the other side
 the door is well hidden.
-
 ~
 door hidden~
 2 17500 17502
@@ -105,9 +104,7 @@ appears suspiciously door-like.
 175 8 0 0 0 0
 D0
 The brilliant tapestry is a rich and colorful depiction of a violent clash of four armies, each led by it's own Wizardly commander. It is so realistic, it could almost be moving.
-
 It is also suspiciously door-shaped.
-
 ~
 tapestry~
 1 0 17505
@@ -130,7 +127,6 @@ the wall.
 175 265 0 0 0 0
 D2
 From behind, the tapestry is merly thick cloth.
-
 ~
 tapestry~
 1 0 17504
@@ -267,7 +263,6 @@ The mirror completely restricts your sight to what may possibly lie beyond.
 0 0 17503
 D3
 A carved obsidian doorframe surrounds a rectangle of pure darkness.
-
 ~
 darkness~
 1 0 17522
@@ -318,7 +313,6 @@ E
 read sign~
    My Tower of Evil lies above.  All tresspassers will be killed on sight.  
 Turn back now, or face my wrath.  
-
 - Carcophan
 ~
 S
@@ -336,11 +330,9 @@ D3
 0 0 17518
 D4
 There is a small porthole covering the ascent of the stairwell. On it is written the following words:
-
 "I am the end of every life,
 and the beggining of every end.
 What am I?"
-
 ~
 porthole~
 0 0 17519
@@ -352,7 +344,6 @@ E
 ceiling porthole stairwell~
    There is a small porthole covering the ascent of the stairwell. 
 There is an inscription written on the porthole:
-
 "I am the end of every life,
 and the beggining of every end.
 What am I?"
@@ -398,17 +389,14 @@ D3
 0 0 17519
 D5
 The inscription on the porthole reads:
-
 "This way is now barred to you,
 You, my friend, cannot come through."
-
 ~
 porthole~
 0 0 17517
 E
 look porthole~
    The inscription on the porthole reads:
-
 "This way is now barred to you,
 You, my friend, cannot come through."
 ~
@@ -444,19 +432,16 @@ your path upwards.
 175 0 0 0 0 0
 D4
 The grate is huge, thick and immovable. There is writing here:
-
 "If this riddle you wish to solve,
 Five keys you need to find,
 Look for them all in your forge's anvil,
 And you will find they be of like kind."
-
 ~
 grate~
 0 0 17521
 E
 grate door plaque poetry~
    The grate is huge, thick and immovable.  There is writing here:
-
 "If this riddle you wish to solve,
 Five keys you need to find,
 Look for them all in your forge's anvil,
@@ -465,7 +450,6 @@ And you will find they be of like kind."
 E
 anvil~
    Upon close inspection you find the following is engraved into the metal:
-
 "abcdefghijklmnopqrstuvwkyz."
 ~
 S
@@ -479,7 +463,6 @@ wall.  Above you is another grate, with a plaque fixed in the center.
 175 0 0 0 0 0
 D5
 The grate can only open inwards, and if it did so it would crush you. Probably better not to mess with it.
-
 ~
 grate~
 0 0 17520
@@ -503,7 +486,6 @@ the others.
 175 9 0 0 0 0
 D1
 To the east the darkness grows more solid. An echo can be heard far off in this direction.
-
 ~
 darkness~
 1 17513 17513

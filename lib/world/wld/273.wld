@@ -678,7 +678,6 @@ spacestation.
 D1
 The access pannel for this hatch has a red flashing light on it.
 The LCD reads:
-
 'No Pressure'
 ~
 hatch~
@@ -722,7 +721,6 @@ D3
 The hatch to Agrodome #3 is closed. The control pannel onthe door 
 has a red flashing light on it. 
 The LCD reads:
-
 ** NO PRESSURE **
 ~
 hatch~

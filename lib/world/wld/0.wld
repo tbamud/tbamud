@@ -25,7 +25,6 @@ A strange portal in the floor is the only exit.
 S
 #2
 Welcome to the Builder Academy~
-
    A builder is a term usually used to describe a person who designs MUD zones
 for other characters to explore. Any player with motivation, ideas, and good 
 writing style can be a builder as well as a player. As a Builder, your job is 
@@ -35,17 +34,14 @@ mobs, shops, and triggers with which players will interact.
    If this is something you are interested in doing then you have come to the
 right place. Be warned, building is not easy and will require hard work, 
 patience, and the ability to take constructive criticism.
-
    Your first task is to apply for builder status at: 
-
 http://www.geocities.com/buildersacademy/
-
    When you finish and submit the application tell anyone level 32 or higher
 and they will advance you to begin your training.
-
 ~
 0 24 0 0 0 0
 S
+T 3017
 #3
 The Builder Academy~
    Congratulations on your new-found immortality. Now all you need to know is
@@ -93,7 +89,6 @@ The Builder Academy Implementation~
 regulations. But, some are required in order to make this place run smoothly.
 Please realize we handle a lot of newbie builders with a very minimal staff so 
 be patient, learn to use the helpfiles and have fun.
-
    Read the following help files on TBA's training process:
 @RHELP TRIALROOM
 HELP BUILDER-REPORT
@@ -348,7 +343,6 @@ great zone takes many things; such as time, patience, good grammar/spelling,
 knowing how to balance your zone, a lot of work, and most importantly 
 planning. Now this all may sound like a lot to do, but I can assure you that 
 with this zone, and the help of others, you can do this. 
-
 @RHELP DICTIONARY@n
 @RHELP WORK@n
 @RHELP PLANNING@n
@@ -451,11 +445,8 @@ D2
 S
 #18
 A Quick Mob Quest Tutorial~
-
 See: @RHELP TRIGEDIT-MOB-TUTORIAL@n
-
 @RSTAT QUESTMASTER@n. Notice the attached triggers. @RTSTAT 1@n.
-
 ~
 0 24 0 0 0 0
 D0
@@ -486,7 +477,6 @@ Advanced Trigedit Example~
    Begin by @RSTAT GATEGUARD@n and then tstat each trigger listed to see what 
 they do.  This example is explained under @RHELP TRIGEDIT-ADVANCED-TUTORIAL@n.
 Including triggers 4, 5, 7, 8.
-
 To pay the gateguard take the pile of coins, then: @RGIVE 10 COINS GUARD@n.
 ~
 0 24 0 0 0 0
@@ -543,7 +533,6 @@ and give feedback.  The easiest way to get to them all is through:
 @RHELP TRIGEDIT-MENU@n and @RHELP TRIGEDIT-TYPE@n.
    There are 1000's of triggers on TBA you can use as examples. @RHELP EXAMPLES@n
 for a few. @RHELP TRIG-EXAMPLES@n for some advanced ones.
-
 @RGOTO 14@n to access the next hallway.
 ~
 0 8 0 0 0 0
@@ -554,9 +543,7 @@ D2
 S
 #33
 Rumble's Room~
-
 The only thing necessary for evil to triumph is for good men to do nothing.
-
 -Edmund Burke
 ~
 0 8 0 0 0 0
@@ -577,7 +564,6 @@ Catcher Rye~
    The mark of the immature man is that he wants to die nobly for a cause, 
 while the mark of the mature man is that he wants to live humbly for one.  
 --Wilhelm Stekel
-
    ...you'll find that you're not the first person who was ever confused and 
 frighteneed and even sickened by human behavior. You're by no means alone on 
 that score, you'll be excited and stimulated to know. Many, many men have been 
@@ -625,7 +611,6 @@ worth war is much worse.  The person who has nothing for which he is willing to
 fight, nothing which is more important than his own personal safety, is a
 miserable creature and has no chance of being free unless made and kept so by
 the exertions of better men than himself.
-
 John Stuart Mill
 ~
 E

@@ -1,16 +1,13 @@
 #13000
 Mist Maze Imm Room~
-
   This zone is just a brief randomly created maze, where the mobs randomly
   load when players enter and mobs will randomly load what the players get.
   More often than not, the players will only get coins
-
 **  Important note **
   Any immortals entering any portion of this zone, except this room, while
   they have NOHASSLE activated will result in a flood of error messages.
   If an immortal has need to enter this zone, ensure you are prepared for
   the erroneous errors, or make sure they have NOHASSLE disabled.
-
 ** Instructions for adding this zone **
   Load object 13099 to any room where a swirling mist is appropriate using
   zedit.  Once the object is in place, the zone is ready to go.  The final
@@ -1656,7 +1653,6 @@ In the Mist~
    The mists swirl, sometimes obscuring your vision completely, at other times
 clearing enough that you think you see the path.  Reality fades as the cold damp
 mist permeates your very being.
-
    But there is something else now.  Something that wasn't there before.  Ahead
 is a tree unlike any seen before.  Upon this tree grows fruit of every size,
 color shape.  It is quite possibly the most amazing thing seen, as apples,
@@ -1712,9 +1708,7 @@ There is no alternative but to plunge ahead.
 S
 #13099
 Mist Maze Corpse Disposal~
-
   Corpse disposal
-
   This room is not reachable by mortals no matter what they try.  It is here
   simply as a method of corpse disposal.
 ~

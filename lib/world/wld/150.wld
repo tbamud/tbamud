@@ -827,7 +827,6 @@ You see the corridor.
 E
 sign~
    TREASURE ROOM
-
    Authorized personnel only - all others keep out.
 ANY trespassing will be SEVERELY punished!!
 ~
@@ -1580,9 +1579,7 @@ E
 sign~
    The sign is covered with soot and the wood is quite charred, but you can
 still make out the following letters:
-
         T   TO  SB  DGE   NER L    RE
-
 ~
 S
 #15067
@@ -1751,7 +1748,6 @@ E
 stones glow stone ring circle~
    Each stone is at least fifteen feet tall, maybe more, and the dark material
 glows with a greenish aura providing more than enough light for you to see by.
-
 ~
 S
 $~

@@ -26,7 +26,6 @@ D3
 E
 credits info~
 Army Encampment by Kaan
-
 Zone 324 is linked to the following zones:
 326 Army Perimeter                 at 32400 (west ) ---> 32610
 326 Army Perimeter                 at 32414 (east ) ---> 32640
@@ -178,12 +177,10 @@ D4
 E
 sign~
    The sign has a note posted on it.  It reads:
-
      List   - Tells you what I have to sell.
      Buy    - Tells me what you want to buy.
      Value  - Tells you what I will pay for an item.
      Sell   - Tells me you will sell that item, to me.
-
 ~
 E
 swords weapons armor halberds whips~
@@ -1021,12 +1018,10 @@ You see the south gate through the door.
 E
 sign~
    The sign has a note posted on it.  It reads:
-
      List   - Tells you what I have to sell.
      Buy    - Tells me what you want to buy.
      Value  - Tells you what I will pay for an item.
      Sell   - Tells me you will sell that item, to me.
-
 ~
 E
 fog mist~
@@ -1242,7 +1237,6 @@ E
 spires towers~
    There are two tall spires on either side of the gate and are constantly
 manned by the city guards.  They are made of stone and stand about 40 feet tall.
-
 ~
 S
 #32452

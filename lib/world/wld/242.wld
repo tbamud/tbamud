@@ -187,7 +187,6 @@ stone statue man~
    The statue is of a man, looking up to the sky. He's dressed in a
 suit, and he's wearing a top hat. At the base of the statue is
 a plaque, which looks like this:
-
      x-----------------------------------------------x
      | . SOUTHERN MIDGAARD RECONSTRUCTION MONUMENT . |
      |                                               |
@@ -373,7 +372,6 @@ D3
 E
 sign signs~
    The signs are all the same, and they look like this:
-
         x---------------------------------------------x
         |                                             |
         |         MIDGAARD THEATRE PRESENTS:          |
@@ -1599,7 +1597,6 @@ D1
 E
 advertisements bulletin board posters~
    The posters look like this:
-
          *********************************************
          *              CURLING RESULTS              *
          *                                           *
@@ -1663,7 +1660,6 @@ D3
 E
 advertisements bulletin board posters~
    The posters look like this:
-
          *********************************************
          *          THE HARDCORE BONSPIEL            *
          *                                           *

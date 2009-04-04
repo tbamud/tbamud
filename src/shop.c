@@ -21,6 +21,7 @@
 #include "interpreter.h"
 #include "utils.h"
 #include "shop.h"
+#include "genshp.h"
 #include "constants.h"
 #include "act.h"
 #include "modify.h"

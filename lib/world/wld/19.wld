@@ -5,25 +5,20 @@ Forgotten Realms (Dungeons & Dragons). It is basically a hot, fetid
 swampland inhabited with spiders, bullywugs, and lizardfolk, with a
 submerged palace called Lost Ajhuutal in the Northern part.
 Have made liberal use of exit/extra descrips here, so examine at will. :)
-
    @GPlayers:@n Geared towards mid/high level players of around 15-20, 
 there are smaller mobs to kill here if you feel like braving the aggressive 
 stronger ones ;-). It is also a fairly evil area, with some limitations on what
 you can use and access as a good player here. Some equipment/money to be 
 gained, big bad guy to be slaughtered, and lots of xp.
-
    @RLocation:@n Well the area itself is completely swampish, though at the
 southern part it could easily be joined to a river or lake, and a more foresty
 area would blend seamlessly into the eastern area.
-
    @MSecrets:@n Yes there are some :-), type LOOK SPOILERS to reveal all.
-
    @CNote:@n If you have any suggestions, spot any typos, bugs, or 
 weirdnesses, please mudmail me - Detta. :-) All input appreciated!
 You can also email me at detta@@builderacademy.net
 East takes you through the other zones I have built here.
 Down takes you to the starting room of this zone.
-
 ~
 19 520 0 0 0 0
 D1
@@ -44,15 +39,10 @@ spoilers~
 really have to look there are a few little neat zone inclusions listed here to
 spoil your zone exploring pleasure.  Just type look and then the number to look
 at each one (look 1 for example).  
-
 1: The Leviathan
-
 2: Spider Cocoons
-
 3: The Dark Candleholder
-
 4: The Metal Contraption
-
 ~
 E
 1~
@@ -99,21 +89,16 @@ into the machine before pouring, you'll get a potion, otherwise the mixture just
 pours onto the floor.  There are three books scattered throughout
 the zone with the recipes of each potion in, but for now I'll just put them
 here.
-
 Red potion (enhances physical strength) - 
 fang (1900), egg (1908), blood (1951).  
-
 Blue potion (enhances magical strength) - 
 gland (1934), tongue (1950), blood (1951). 
-
 Green potion (enhances dexterity & moves) - 
 weed (1901), hide (1923), blood (1951).  
-
 Once the ingredients for one potion are inside, they must be mixed, 
 an empty vial placed into the contraption and the mixture poured out.
 If any combination of ingredients other than those listed are combined, 
 a black potion will be produced which lowers all three attributes.  
-
 ~
 S
 #1901
@@ -332,7 +317,6 @@ lazily down, accumulating in a watery pool at the base.
 19 0 0 0 0 0
 D2
    The way south looks too steep and too slippery to even begin trying to climb.
-
 ~
 ~
 0 0 -1
@@ -346,7 +330,6 @@ E
 thin rivulets water watery pool base~
    Tiny veins of sparkling water line the surface of this slanted ground, muddy
 churning water bubbling continously in the pool that saturates the lower ground.
-
 ~
 S
 T 1971
@@ -772,7 +755,6 @@ E
 weak trunks branches leaves willows bark~
    These frail looking trees look as though they are barely surviving off of the
 watery soil and fog shrouded sunlight, bending weakly in the slightest breeze.
-
 ~
 E
 moss grasses~

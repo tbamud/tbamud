@@ -61,13 +61,11 @@ finest armor and weapons in all of Jareth.
 257 0 0 0 0 0
 D0
 Looking north you see Bourbon Street stretch off into the distance.
-
 ~
 ~
 0 -1 25754
 D1
 You see Maris' Weaponry.
-
 ~
 ~
 0 -1 25763
@@ -78,7 +76,6 @@ You see the City Proper.
 0 -1 25705
 D3
 You see Maris' Armoury.
-
 ~
 ~
 0 -1 25700
@@ -270,12 +267,9 @@ You see the entrance hall.
 E
 sign~
    Rooms are expensive but good!  You may:
-
    Offer - get an offer on a room - Time is in real life days.
    Rent  - Rent a room (saves your stuff, and quits the game),
            minimum charge is one day.
-
-
                           MY WAY OR THE HIGHWAY
                              PAY YOUR RENT!
                 WE WON'T THINK TWICE BEFORE KICKING YOU OUT.
@@ -501,7 +495,6 @@ dregs found in the southern reaches of the city.  To your west is the wall of a
 large complex of flats.  To your east you see the western wall of of the
 bootery, where you may windowif so desired.  North is more of River St, which
 crosses the river further up, and south, River St crosses Floris St in a square.
-
 ~
 257 0 0 0 0 0
 D0
@@ -671,7 +664,6 @@ target someone for assassination, you must write it on a piece of paper and drop
 the paper in the box.  Be sure to include the name of the target, the price on
 their life, and a brief explanation why you wish them killed.  East is the
 entrance to the Assassin's Guild, and west is the main room for Contracts, Ltd.
-
 ~
 257 8 0 0 0 0
 D1
@@ -790,22 +782,15 @@ You see the reception area.
 E
 0~
    The sign reads:
-
   Use 'List' to see the available pets.
   Use 'Buy <pet>' to buy yourself a pet.
-
   Instructions for having pets:
-
   You can use 'order <pet> <instructions>' to order your pets around.
   If you abuse your pet, it will no longer regard you as its master.
   If you have several pets you may use 'order followers <instructions>'
-
   You can name the pet you buy with: 'buy <pet> <name>'
-
  Regards,
-
  The Shopkeeper
-
 ~
 S
 #25732
@@ -1060,7 +1045,6 @@ Dark Alley~
 from a game of dice as you enter their territory, and they seem just a bit
 perturbed.  You can leave to the north or south, though neither choice seems all
 that inviting since both directions lead to more of what you're standing in now.
-
 ~
 257 1 0 0 0 0
 D0
@@ -1173,7 +1157,6 @@ The Assassin's Guild~
 bliss.  The clarity of mind you feel, the strength of purpose emanating from the
 very walls seem to ooze into every part of your being.  A soft, slightly padded
 mat lies on the floor, offering you the chance to rest or meditate, as you will.
-
 ~
 257 668 0 0 0 0
 D2
@@ -1397,7 +1380,6 @@ the crossing of Floris Ave.  East of you is the entrance to Captain Vulcevic's
 Boat House, where Vulcevic buys, sells, and repairs new and used boats.  West is
 the long tall building which houses flats for any who wish to lease, although
 the entrance is southwest.  Directly west only leads to a tall, windowless wall.
-
 ~
 257 0 0 0 0 0
 D0

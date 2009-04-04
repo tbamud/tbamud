@@ -992,7 +992,6 @@ D1
 ~
 0 -1 25654
 D2
-
 ~
 door front~
 0 -1 25638
@@ -1318,7 +1317,6 @@ dirt stone~
 E
 claw claws track tracks mark marks~
    They stop very abruptly here, right where the piles of earth begin, it seems.
-
 ~
 E
 floor~
@@ -1383,7 +1381,6 @@ S
 Along the Parapet~
    You stand atop the parapet which runs east to west here.  This narrow walkway
 connects all the guard towers and provides a means for defense in times of war.
-
 ~
 256 0 0 0 0 0
 D1

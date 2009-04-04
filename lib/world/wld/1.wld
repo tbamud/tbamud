@@ -56,7 +56,6 @@ Zone 1 is linked to the following zones:
   2 Sanctus II                     at   115 (down ) --->   248
   2 Sanctus II                     at   118 (down ) --->   254
   2 Sanctus II                     at   119 (down ) --->   259
-
   2 Sanctus II                     at   121 (down ) --->   289
   2 Sanctus II                     at   122 (down ) --->   295
   3 Sanctus III                    at   128 (down ) --->   340
@@ -251,7 +250,6 @@ map~
 more of a scaled model.  The walls and buildings of the city are raised higher
 than the rest of the map to give it a third dimension.  Small soldiers are
 scattered around the top of the table to help the War Master place his men.  
-
 ~
 S
 #109
@@ -372,7 +370,7 @@ D5
 S
 #116
 Travelling Room~
-   This used to be a traveling room.  Entire sections of the floor are now
+   This used to be a travelling room.  Entire sections of the floor are now
 embedded in the ceiling and it is even possible to see to the outside through a
 hole in one wall.  This is what happens when a portal becomes unstable.  It is
 certainly a grim reminder to flee the second it seems a portal may be falling
@@ -453,7 +451,7 @@ Travelling Room~
    A few of the higher mages of Sanctus have been able to control the gateways
 that have opened between realms.  One of these controlled portals is kept in
 this room.  It is a one way ticket to the realm of Midgaard.  The portals are
-still eratic and uncontrollable so anyone who uses them does so at their own
+still erratic and uncontrollable so anyone who uses them does so at their own
 risk.  The flickering of the portal casts eerie shadows along the white walls.
 This must be the only room in the temple that has an uneasy feeling about it.
 ~
@@ -1051,7 +1049,6 @@ The Rustic~
    The only restaurant in Sanctus.  The Rustic serves up decent meals to anyone
 that can afford them.  The prices are fair and the service is excellent.  The
 place is rather deserted and only a few customers are chatting idly in the back.
-
 ~
 1 8 0 0 0 0
 D2

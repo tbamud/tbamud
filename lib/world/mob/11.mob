@@ -94,4 +94,16 @@ bejewelled.
 250 62500
 8 8 2
 E
+#1199
+tester card player dealer~
+a tester dealer~
+A tester dealer stands here.
+~
+It looks unfinished.
+~
+10 0 0 0 0 0 0 0 0 E
+0 20 10 1d1+0 1d1+0
+0 0
+8 8 1
+E
 $

@@ -142,6 +142,35 @@ it would help to make a better impression.
 330 108900
 8 8 1
 E
+#3011
+travelling saleswoman woman~
+the travelling saleswoman~
+This saleswoman is laden with gadgets and gizmos that are outrageously priced.
+~
+   A combination of good business sense, charming personality, and good looks
+has made her a success at pushing useless products on uneducated buyers.  Only
+on a rare occasion does she sell anything useful.  
+~
+253962 0 0 0 0 0 0 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+E
+#3012
+kind soul~
+a kind soul~
+A very kind and caring soul is here looking out for those who need it.
+~
+   She immediately reminds you of your mother.  Constantly worrying about
+everyone and everything.  She is always around to help out those who have hit
+hard times and need a little boost.  
+~
+253962 0 0 0 0 0 0 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+E
+T 3016
 #3020
 master mage guildmasters~
 the mages' guildmaster~

@@ -30,7 +30,6 @@ Zone 320 is linked to the following zones:
 319 Yllythad Sea                   at 32055 (east ) ---> 31900
 319 Yllythad Sea                   at 32060 (east ) ---> 31999
 319 Yllythad Sea                   at 32065 (east ) ---> 31998
-
 319 Yllythad Sea                   at 32070 (east ) ---> 31997
 321 Yllythad Sea III               at 32071 (south) ---> 32101
 321 Yllythad Sea III               at 32072 (south) ---> 32102
@@ -514,7 +513,6 @@ S
 Among Fifteen Foot Waves~
    Waves crush down in giant walls in every direction, the winds howls
 unceasingly as the rain is driven harder and harder against the sea's surface.
-
 ~
 320 0 0 0 0 0
 D0
@@ -1095,7 +1093,6 @@ S
 Among Fifteen Foot Waves~
    Waves crush down in giant walls in every direction, the winds howls
 unceasingly as the rain is driven harder and harder against the sea's surface.
-
 ~
 320 0 0 0 0 0
 D0
@@ -1718,7 +1715,6 @@ S
 Among Fifteen Foot Waves~
    Waves crush down in giant walls in every direction, the winds howls
 unceasingly as the rain is driven harder and harder against the sea's surface.
-
 ~
 320 0 0 0 0 0
 D0

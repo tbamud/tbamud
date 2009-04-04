@@ -30,7 +30,6 @@ Zone 322 is linked to the following zones:
 318 Dock Area                      at 32265 (north) ---> 31849
 318 Dock Area                      at 32267 (north) ---> 31848
 318 Dock Area                      at 32269 (north) ---> 31847
-
 318 Dock Area                      at 32271 (north) ---> 31846
 318 Dock Area                      at 32273 (north) ---> 31842
 318 Dock Area                      at 32275 (north) ---> 31843
@@ -1118,7 +1117,6 @@ Dock Area~
    The calm, still waters of the Bay are only broken when a ship comes or goes
 from the docks to the east.  Most of the ships docked along this area appear to
 be cargo haulers, the type to carry large amounts of goods over long distances.
-
 ~
 322 4 0 0 0 0
 D0

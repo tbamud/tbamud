@@ -1,14 +1,14 @@
 #0
 Rumble~
 The Builder Academy Zone~
-0 99 10 2 d 0 0 0 -1 -1
-M 0 1 1 1 	(Puff)
+0 99 10 2
 D 0 89 4 2 	(The Prison Cell Corridor)
 M 0 31 1 89 	(the Commissar)
 G 1 68 99 -1 	(the Commissar's key)
 M 0 18 1 2 	(Friedrich Nietzsche)
 R 0 88 1228 -1 	(a advertising bulletin board)
 O 0 1228 99 88 	(a advertising bulletin board)
+M 0 1 1 1 	(Puff)
 R 0 90 86 -1 	(a pair of shackles)
 R 0 90 84 -1 	(the shower drain)
 O 0 84 1 90 	(the shower drain)

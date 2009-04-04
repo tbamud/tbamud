@@ -2,6 +2,12 @@
 Rumble~
 Sanctus~
 100 199 10 2
+M 0 98 1 100 	(the travelling saleswoman)
+G 1 82 99 -1 	(the teleporter)
+M 0 156 1 100 	(the speaker of the land)
+E 1 151 99 12 	(a fancy red vest)
+E 1 150 99 5 	(a white silken shirt)
+E 1 148 99 7 	(some blue velvet pants)
 R 0 124 355 -1 	(a metal staff)
 O 0 355 99 124 	(a metal staff)
 M 0 216 1 189 	(Yoda)
@@ -28,10 +34,6 @@ M 0 211 1 129 	(the phoenix)
 M 0 206 1 162 	(a chunky philosopher)
 G 1 47 99 -1 	(the magic eight ball)
 D 0 162 2 1 	(Thieves Avenue)
-M 0 156 1 100 	(the speaker of the land)
-E 1 151 99 12 	(a fancy red vest)
-E 1 150 99 5 	(a white silken shirt)
-E 1 148 99 7 	(some blue velvet pants)
 O 0 175 1 101 	(a long rope)
 M 0 157 1 101 	(the old sage)
 M 0 153 1 190 	(the pickpocket)

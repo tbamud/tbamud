@@ -35,6 +35,11 @@ export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 tbaMUD 3.59
+[Apr 05 2009] - Rumble
+  Updated World and files for 3.59 release.
+[Apr 02 2009] - Rumble
+  real_abils.str changed from 25 to 18. Since 18 is max str.
+  Changed ch to k in do_stat for quests. (thanks Frenze)
 [Mar 14 2009] - Jamdog
   Bug-Fix: real_shop function could hang if a shop was added with the max VNUM (Thanks Slicer)
   Removed find_shop function, which was a duplicate of real_shop.
