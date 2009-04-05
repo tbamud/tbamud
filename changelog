@@ -34,6 +34,8 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[Apr 05 2009] - Jamdog
+  Bug-Fix: Now frees memory used by qedit and hedit when closing a socket (Thanks Xiuhtecuhtli)
 tbaMUD 3.59
 [Apr 05 2009] - Rumble
   Updated World and files for 3.59 release.
