@@ -4528,7 +4528,7 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
   sprintf(buf, "mv %s %s", old_pfile, new_pfile);
   j = system(buf);
 
-  /* Save the changed player index - the pfile is saved by perform_set, even though it is theorhetically un-necessary in this case */
+  /* Save the changed player index - the pfile is saved by perform_set */
   save_player_index();
 
   mudlog(BRF, LVL_IMMORT, TRUE, "(GC) %s changed the name of %s to %s", GET_NAME(ch), old_name, new_name);

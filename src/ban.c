@@ -257,6 +257,10 @@ int valid_name(char *newname)
   if (!vowels)
     return (0);
 
+  /* check spaces */
+  if (strchr(newname, ' '))
+    return (0);
+
   /* return valid if list doesn't exist */
   if (invalid_list == NULL || num_invalid < 1)
     return (1);
