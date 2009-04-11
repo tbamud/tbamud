@@ -37,6 +37,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 [Apr 11 2009] - Jamdog
   Bug-Fix: NPC check added to do_gen_ps function (thanks drefs)
   Bug-Fix: Fixed crash bug in remove_player where index entry is removed too early (thanks drefs)
+  Bug-Fix: Commands and Socials list correctly when switched into a mob (thanks Rumble)
 [Apr 06 2009] - Jamdog
   Bug-Fix: Changing a player name no longer allows two words (thanks Slicer)
 [Apr 05 2009] - Jamdog

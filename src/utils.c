@@ -965,7 +965,9 @@ void column_list(struct char_data *ch, int num_cols, const char **list, int list
        max_len = strlen(list[i]);
 
    /* Calculate the width of each column */
-   col_width = (GET_SCREEN_WIDTH(ch)) / num_cols;
+   if (IS_NPC(ch))   col_width = 80 / num_cols;
+   else              col_width = (GET_SCREEN_WIDTH(ch)) / num_cols;
+
    if (show_nums) col_width-=4;
 
    if (col_width < max_len)
