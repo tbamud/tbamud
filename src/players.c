@@ -786,9 +786,6 @@ void remove_player(int pfilepos)
   if (!*player_table[pfilepos].name)
     return;
 
-  /* Update index table. */
-  remove_player_from_index(pfilepos);
-
   /* Unlink all player-owned files */
   for (i = 0; i < MAX_FILES; i++) {
     if (get_filename(filename, sizeof(filename), i, player_table[pfilepos].name))
@@ -799,6 +796,10 @@ void remove_player(int pfilepos)
 	player_table[pfilepos].name, player_table[pfilepos].level,
 	asctime(localtime(&player_table[pfilepos].last)));
   player_table[pfilepos].name[0] = '\0';
+
+  /* Update index table. */
+  remove_player_from_index(pfilepos);
+
   save_player_index();
 }
 
