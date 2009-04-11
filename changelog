@@ -34,6 +34,8 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[Apr 11 2009] - Jamdog
+  Bug-Fix: NPC check added to do_gen_ps function (thanks drefs)
 [Apr 06 2009] - Jamdog
   Bug-Fix: Changing a player name no longer allows two words (thanks Slicer)
 [Apr 05 2009] - Jamdog

@@ -1479,6 +1479,11 @@ ACMD(do_users)
 /* Generic page_string function for displaying text */
 ACMD(do_gen_ps)
 {
+  if (IS_NPC(ch)) {
+    send_to_char(ch, "Not for mobiles!\r\n");
+    return;
+  }
+
   switch (subcmd) {
   case SCMD_CREDITS:
     page_string(ch->desc, credits, 0);
