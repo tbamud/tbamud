@@ -34,6 +34,8 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[Apr 12 2009] - Jamdog
+  Bug-Fix: Stat player displayed current quest information incorrectly - fixed 'if'
 [Apr 11 2009] - Jamdog
   Bug-Fix: NPC check added to do_gen_ps function (thanks drefs)
   Bug-Fix: Fixed crash bug in remove_player where index entry is removed too early (thanks drefs)
