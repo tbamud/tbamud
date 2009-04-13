@@ -609,7 +609,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
       snprintf(buf, sizeof(buf), "%s Something screwy only gave you %d.", GET_NAME(ch), bought);
     do_tell(keeper, buf, cmd_tell, 0);
   }
-  if (!IS_GOD(ch) && !OBJ_FLAGGED(obj, ITEM_QUEST)) {
+  if (!IS_GOD(ch) && obj && !OBJ_FLAGGED(obj, ITEM_QUEST)) {
     GET_GOLD(keeper) += goldamt;
     if (SHOP_USES_BANK(shop_nr))
       if (GET_GOLD(keeper) > MAX_OUTSIDE_BANK) {
@@ -622,7 +622,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
   snprintf(tempbuf, sizeof(tempbuf), "$n buys %s.", tempstr);
   act(tempbuf, FALSE, ch, obj, 0, TO_ROOM);
 
-  if (OBJ_FLAGGED(obj, ITEM_QUEST))
+  if (obj && OBJ_FLAGGED(obj, ITEM_QUEST))
     snprintf(tempbuf, sizeof(tempbuf), "%s That has cost you %d quest points.", GET_NAME(ch), goldamt);
   else
     snprintf(tempbuf, sizeof(tempbuf), shop_index[shop_nr].message_buy, GET_NAME(ch), goldamt);

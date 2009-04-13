@@ -34,6 +34,8 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[Apr 13 2009] - Jamdog
+  Bug-Fix: Shopping for multiple items caused an occasional crash due to NULL variable - now fixed (I hope)
 [Apr 12 2009] - Jamdog
   Bug-Fix: Stat player displayed current quest information incorrectly - fixed 'if'
 [Apr 11 2009] - Jamdog
