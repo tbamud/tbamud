@@ -34,6 +34,8 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)t
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[May 13 2009] - Jamdog
+  Bug-Fix: quest join check for previous quest completion, and validation checks for prev and next quests in qedit. (thanks drefs)
 [Apr 13 2009] - Jamdog
   Bug-Fix: Shopping for multiple items caused an occasional crash due to NULL variable - now fixed (I hope)
 [Apr 12 2009] - Jamdog

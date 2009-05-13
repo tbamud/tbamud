@@ -499,7 +499,7 @@ void quest_join(struct char_data *ch, struct char_data *qm, char argument[MAX_IN
   else if (is_complete(ch, vnum))
     snprintf(buf, sizeof(buf),
              "%s You have already completed that quest!", GET_NAME(ch));
-  else if ((QST_PREV(rnum) != NOTHING) && !is_complete(ch, vnum))
+  else if ((QST_PREV(rnum) != NOTHING) && !is_complete(ch, QST_PREV(rnum)))
     snprintf(buf, sizeof(buf),
              "%s That quest is not available to you yet!", GET_NAME(ch));
   else if ((QST_PREREQ(rnum) != NOTHING) &&

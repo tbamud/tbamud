@@ -20,7 +20,7 @@
 #include "improved-edit.h"
 #include "screen.h"
 #include "genolc.h"
-#include "genzon.h" 
+#include "genzon.h"
 #include "interpreter.h"
 #include "modify.h"
 #include "quest.h"
@@ -693,9 +693,21 @@ void qedit_parse(struct descriptor_data *d, char *arg)
       OLC_QUEST(d)->target = number;
       break;
     case QEDIT_NEXTQUEST:
+      if ((number = atoi(arg)) != -1) {
+        if (real_quest(number) == NOTHING) {
+          write_to_output(d, "That is not a valid quest, try again (-1 for none) : ");
+          return;
+        }
+      }
       OLC_QUEST(d)->next_quest = (number == -1 ? NOTHING : atoi(arg));
       break;
     case QEDIT_PREVQUEST:
+      if ((number = atoi(arg)) != -1) {
+        if (real_quest(number) == NOTHING) {
+          write_to_output(d, "That is not a valid quest, try again (-1 for none) : ");
+          return;
+        }
+      }
       OLC_QUEST(d)->prev_quest = (number == -1 ? NOTHING : atoi(arg));
       break;
     case QEDIT_GOLD:
