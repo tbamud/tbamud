@@ -43,6 +43,7 @@ ACMD(do_oasis_zedit)
   char sbot[MAX_STRING_LENGTH];
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
+  room_vnum bottom, top;
 
   /* No building as a mob or while being forced. */
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
@@ -82,8 +83,6 @@ ACMD(do_oasis_zedit)
           send_to_char(ch, "Zones cannot contain negative vnums.\r\n");
           return;
         }
-        room_vnum bottom, top;
-
         number = atoidx(buf2);
         if (number < 0)
           number = NOWHERE;
