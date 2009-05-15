@@ -31,7 +31,7 @@
 
 /* locally defined global variables, used externally */
 /* head of l-list of fighting chars */
-struct char_data *combat_list = NULL; 
+struct char_data *combat_list = NULL;
 /* Weapon attack texts */
 struct attack_hit_type attack_hit_text[] =
 {
@@ -298,10 +298,10 @@ static void make_corpse(struct char_data *ch)
 
   /* transfer gold */
   if (GET_GOLD(ch) > 0) {
-    /* following 'if' clause added to fix gold duplication loophole. The above 
-     * line apparently refers to the old "partially log in, kill the game 
-     * character, then finish login sequence" duping bug. The duplication has 
-     * been fixed (knock on wood) but the test below shall live on, for a 
+    /* following 'if' clause added to fix gold duplication loophole. The above
+     * line apparently refers to the old "partially log in, kill the game
+     * character, then finish login sequence" duping bug. The duplication has
+     * been fixed (knock on wood) but the test below shall live on, for a
      * while. -gg 3/3/2002 */
     if (IS_NPC(ch) || ch->desc) {
       money = create_money(GET_GOLD(ch));
@@ -354,7 +354,7 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
 
   if (killer)
     autoquest_trigger_check(killer, ch, NULL, AQ_MOB_KILL);
-  
+
   update_pos(ch);
 
   make_corpse(ch);
@@ -584,7 +584,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
   send_to_char(victim, CCNRM(victim, C_CMP));
 }
 
-/*  message for doing damage with a spell or skill. Also used for weapon 
+/*  message for doing damage with a spell or skill. Also used for weapon
  *  damage on miss and death blows. */
 int skill_message(int dam, struct char_data *ch, struct char_data *vict,
 		      int attacktype)
@@ -732,8 +732,8 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 
   update_pos(victim);
 
-  /* skill_message sends a message from the messages file in lib/misc. 
-   * dam_message just sends a generic "You hit $n extremely hard.". 
+  /* skill_message sends a message from the messages file in lib/misc.
+   * dam_message just sends a generic "You hit $n extremely hard.".
    * skill_message is preferable to dam_message because it is more
    * descriptive.
    *
@@ -828,7 +828,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     if (IS_AFFECTED(ch, AFF_GROUP) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
       generic_find("corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
       if (corpse_obj) {
-        do_get(ch, "all.coin corpse", 0, 0); 
+        do_get(ch, "all.coin corpse", 0, 0);
         do_split(ch, local_buf, 0, 0);
       }
       /* need to remove the gold from the corpse */
@@ -846,8 +846,8 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   return (dam);
 }
 
-/* Calculate the THAC0 of the attacker. 'victim' currently isn't used but you 
- * could use it for special cases like weapons that hit evil creatures easier 
+/* Calculate the THAC0 of the attacker. 'victim' currently isn't used but you
+ * could use it for special cases like weapons that hit evil creatures easier
  * or a weapon that always misses attacking an animal. */
 static int compute_thaco(struct char_data *ch, struct char_data *victim)
 {
@@ -869,6 +869,9 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
 {
   struct obj_data *wielded = GET_EQ(ch, WEAR_WIELD);
   int w_type, victim_ac, calc_thaco, dam, diceroll;
+
+  /* Check that the attacker and victim exist */
+  if (!ch || !victim) return;
 
   /* check if the character has a fight trigger */
   fight_mtrigger(ch);
@@ -915,7 +918,7 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
     /* the attacker missed the victim */
     damage(ch, victim, 0, type == SKILL_BACKSTAB ? SKILL_BACKSTAB : w_type);
   else {
-    /* okay, we know the guy has been hit.  now calculate damage. 
+    /* okay, we know the guy has been hit.  now calculate damage.
      * Start with the damage bonuses: the damroll and strength apply */
     dam = str_app[STRENGTH_APPLY_INDEX(ch)].todam;
     dam += GET_DAMROLL(ch);
@@ -990,7 +993,7 @@ void perform_violence(void)
 
     for (k = ch->followers; k; k=k->next) {
       /* should followers auto-assist master? */
-      if (!IS_NPC(k->follower) && !FIGHTING(k->follower) && PRF_FLAGGED(k->follower, 
+      if (!IS_NPC(k->follower) && !FIGHTING(k->follower) && PRF_FLAGGED(k->follower,
 	  PRF_AUTOASSIST) && (IN_ROOM(k->follower) == IN_ROOM(ch)))
         do_assist(k->follower, GET_NAME(ch), 0, 0);
     }

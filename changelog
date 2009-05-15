@@ -36,6 +36,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 [May 15 2009] - Jamdog
   Fixed variable definition halfway through do_oasis_zedit to allow compilation in MSVC. (thanks Lyceq)
+  Crash-Bug-Fix: Added check for attacker and victim in the hit function (thanks Lyceq)
 [May 13 2009] - Jamdog
   Bug-Fix: quest join check for previous quest completion, and validation checks for prev and next quests in qedit. (thanks drefs)
 [Apr 13 2009] - Jamdog
