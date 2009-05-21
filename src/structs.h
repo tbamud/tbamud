@@ -313,6 +313,11 @@
 #define CON_TRIGEDIT     26 /**< OLC mode - trigger edit              */
 #define CON_HEDIT        27 /**< OLC mode - help edit */
 #define CON_QEDIT        28 /**< OLC mode - quest edit */
+#define CON_PREFEDIT     29 /**< OLC mode - preference edit */
+
+/* OLC States range - used by IS_IN_OLC and IS_PLAYING */
+#define FIRST_OLC_STATE CON_OEDIT     /**< The first CON_ state that is an OLC */
+#define LAST_OLC_STATE  CON_PREFEDIT  /**< The last CON_ state that is an OLC  */
 
 /* Character equipment positions: used as index for char_data.equipment[] */
 /* NOTE: Don't confuse these constants with the ITEM_ bitvectors

@@ -598,13 +598,11 @@ void char_from_furniture(struct char_data *ch);
 /** Connected state of d. */
 #define STATE(d)	((d)->connected)
 
+/** Defines whether d is using an OLC or not. */
+#define IS_IN_OLC(d)   ((STATE(d) >= FIRST_OLC_STATE) && (STATE(d) <= LAST_OLC_STATE))
+
 /** Defines whether d is playing or not. */
-#define IS_PLAYING(d)   (STATE(d) == CON_TEDIT || STATE(d) == CON_REDIT ||      \
-                        STATE(d) == CON_MEDIT || STATE(d) == CON_OEDIT ||       \
-                        STATE(d) == CON_ZEDIT || STATE(d) == CON_SEDIT ||       \
-                        STATE(d) == CON_CEDIT || STATE(d) == CON_PLAYING ||     \
-                        STATE(d) == CON_TRIGEDIT || STATE(d) == CON_AEDIT ||    \
-                        STATE(d) == CON_HEDIT || STATE(d) == CON_QEDIT)
+#define IS_PLAYING(d)   (IS_IN_OLC(d) || STATE(d) == CON_PLAYING)
 
 /** Defines if it is ok to send a message to ch. */
 #define SENDOK(ch)	(((ch)->desc || SCRIPT_CHECK((ch), MTRIG_ACT)) && \

@@ -25,15 +25,21 @@ zpurge (purge an entire zone)
 zcheck (head builder tool to check balancing)
 mob autoroll (standard values set on mob level entry)
 checkload (list where a mob/obj is loaded)
-Auto Toggles (loot, goold, split, sac, assist, map)
+Auto Toggles (loot, gold, split, sac, assist, map, door, key)
 Hidden mob/obj
 mob/obj stacking
 hindex
 helpcheck
 OLC copy and delete options.
-export (QQ's a zone into a tarball)t
+export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[May 21 2009] - Jamdog
+  Added autoassist, autoloot, autogold, autosplit, autosacrifice and automap commands.
+  Added autodoor toggle and command (autofind next door when opening/closing/unlocking/picking)
+  Added autokey toggle and command (autounlock door when opening, if holding the key)
+  Added prefedit OLC for players to set their toggles and preferences
+  Re-arranged IS_PLAYING define to make it more efficient
 [May 15 2009] - Jamdog
   Fixed variable definition halfway through do_oasis_zedit to allow compilation in MSVC. (thanks Lyceq)
   Crash-Bug-Fix: Added check for attacker and victim in the hit function (thanks Lyceq)

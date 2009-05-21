@@ -186,6 +186,16 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
      free_trigger(OLC_TRIG(d));
      OLC_TRIG(d) = NULL;
    }
+
+   /* Free this one regardless. If we've left olc, we've either copied the    *
+    * preferences to the player, or we lost connection. Either way, we need   *
+    * to get rid of this. */
+   if(OLC_PREFS(d)) {
+     /*. There is nothing else really to free, except this... .*/
+     free(OLC_PREFS(d));
+     OLC_PREFS(d) = NULL;
+   }
+
    /* OLC_SCRIPT is always set as trig_proto of OLC_OBJ/MOB/ROOM. Therefore it
     * should not be free'd here. */
 

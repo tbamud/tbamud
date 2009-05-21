@@ -36,6 +36,7 @@
 #include "modify.h" /* for do_skillset... */
 #include "quest.h"
 #include "asciimap.h"
+#include "prefedit.h"
 
 /* local (file scope) functions */
 static int perform_dupe_check(struct descriptor_data *d);
@@ -228,6 +229,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "policy"   , "pol"     , POS_DEAD    , do_gen_ps   , 0, SCMD_POLICIES },
   { "pour"     , "pour"    , POS_STANDING, do_pour     , 0, SCMD_POUR },
   { "prompt"   , "pro"     , POS_DEAD    , do_display  , 0, 0 },
+  { "prefedit" , "pre"     , POS_DEAD    , do_oasis_prefedit , 0, 0 },
   { "purge"    , "purge"   , POS_DEAD    , do_purge    , LVL_BUILDER, 0 },
 
   { "qedit"    , "qedit"   , POS_DEAD    , do_oasis_qedit, LVL_BUILDER, 0 },
@@ -1219,6 +1221,7 @@ void nanny(struct descriptor_data *d, char *arg)
     { CON_AEDIT, aedit_parse },
     { CON_HEDIT, hedit_parse },
     { CON_QEDIT, qedit_parse },
+    { CON_PREFEDIT, prefedit_parse },
     { -1, NULL }
   };
 
