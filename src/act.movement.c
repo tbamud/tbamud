@@ -412,12 +412,48 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
       return (-1);
     }
     for (door = 0; door < NUM_OF_DIRS; door++)
+    {
       if (EXIT(ch, door))
-	if (EXIT(ch, door)->keyword)
-	  if (is_name(type, EXIT(ch, door)->keyword))
-	    return (door);
+      {
+        if (EXIT(ch, door)->keyword)
+        {
+          if (isname(type, EXIT(ch, door)->keyword))
+          {
+            if ((!IS_NPC(ch)) && (!PRF_FLAGGED(ch, PRF_AUTODOOR)))
+              return door;
+            else if (is_abbrev(cmdname, "open"))
+            {
+              if (IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED))
+                return door;
+              else if (IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED))
+                return door;
+            }
+            else if ((is_abbrev(cmdname, "close")) && (!(IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED))) )
+              return door;
+            else if ((is_abbrev(cmdname, "lock")) && (!(IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED))) )
+              return door;
+            else if ((is_abbrev(cmdname, "unlock")) && (IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED)) )
+              return door;
+            else if ((is_abbrev(cmdname, "pick")) && (IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED)) )
+              return door;
+          }
+        }
+      }
+    }
 
-    send_to_char(ch, "There doesn't seem to be %s %s here.\r\n", AN(type), type);
+    if ((!IS_NPC(ch)) && (!PRF_FLAGGED(ch, PRF_AUTODOOR)))
+      send_to_char(ch, "There doesn't seem to be %s %s here.\r\n", AN(type), type);
+    else if (is_abbrev(cmdname, "open"))
+      send_to_char(ch, "There doesn't seem to be %s %s that can be opened.\r\n", AN(type), type);
+    else if (is_abbrev(cmdname, "close"))
+      send_to_char(ch, "There doesn't seem to be %s %s that can be closed.\r\n", AN(type), type);
+    else if (is_abbrev(cmdname, "lock"))
+      send_to_char(ch, "There doesn't seem to be %s %s that can be locked.\r\n", AN(type), type);
+    else if (is_abbrev(cmdname, "unlock"))
+      send_to_char(ch, "There doesn't seem to be %s %s that can be unlocked.\r\n", AN(type), type);
+    else
+      send_to_char(ch, "There doesn't seem to be %s %s that can be picked.\r\n", AN(type), type);
+
     return (-1);
   }
 }
@@ -620,6 +656,16 @@ ACMD(do_gen_door)
     else if (!(DOOR_IS_LOCKED(ch, obj, door)) &&
 	     IS_SET(flags_door[subcmd], NEED_LOCKED))
       send_to_char(ch, "Oh.. it wasn't locked, after all..\r\n");
+    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) && (PRF_FLAGGED(ch, PRF_AUTOKEY)) && (has_key(ch, keynum)) )
+    {
+      send_to_char(ch, "It is locked, but you have the key.\r\n");
+      send_to_char(ch, "*Click*\r\n");
+      do_doorcmd(ch, obj, door, subcmd);
+    }
+    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) && (PRF_FLAGGED(ch, PRF_AUTOKEY)) && (!has_key(ch, keynum)) )
+    {
+      send_to_char(ch, "It is locked, and you do not have the key!\r\n");
+    }
     else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) &&
 	     IS_SET(flags_door[subcmd], NEED_UNLOCKED) &&
              (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))

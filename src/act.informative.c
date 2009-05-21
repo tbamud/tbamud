@@ -1895,6 +1895,12 @@ ACMD(do_toggle)
     {"automap", PRF_AUTOMAP, 1,
     "You will no longer see the mini-map.\r\n",
     "You will now see a mini-map at the side of room descriptions.\r\n"},
+    {"autokey", PRF_AUTOKEY, 0,
+    "You will now have to unlock doors manually before opening.\r\n",
+    "You will now automatically unlock doors when opening them (if you have the key).\r\n"},
+    {"autodoor", PRF_AUTODOOR, 0,
+    "You will now need to specify a door direction when opening, closing and unlocking.\r\n",
+    "You will now find the next available door when opening, closing or unlocking.\r\n"},
     {"\n", 0, -1, "\n", "\n"} /* must be last */
   };
 
@@ -1972,6 +1978,8 @@ ACMD(do_toggle)
     "    Screenwidth: %-3d    "
     "            AFK: %-3s\r\n"
 
+    "        Autokey: %-3s    "
+    "       Autodoor: %-3s    "
     "          Color: %s     \r\n ",
 
     ONOFF(PRF_FLAGGED(ch, PRF_DISPHP)),
@@ -2006,6 +2014,8 @@ ACMD(do_toggle)
     GET_SCREEN_WIDTH(ch),
     ONOFF(PRF_FLAGGED(ch, PRF_AFK)),
 
+    ONOFF(PRF_FLAGGED(ch, PRF_AUTOKEY)),
+    ONOFF(PRF_FLAGGED(ch, PRF_AUTODOOR)),
     types[COLOR_LEV(ch)]);
     return;
   }

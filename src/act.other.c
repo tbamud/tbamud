@@ -60,7 +60,7 @@ ACMD(do_quit)
     send_to_char(ch, "Goodbye, friend.. Come back soon!\r\n");
 
     /* We used to check here for duping attempts, but we may as well do it right
-     * in extract_char(), since there is no check if a player rents out and it 
+     * in extract_char(), since there is no check if a player rents out and it
      * can leave them in an equally screwy situation. */
 
     if (CONFIG_FREE_RENT)
@@ -92,7 +92,7 @@ ACMD(do_save)
   GET_LOADROOM(ch) = GET_ROOM_VNUM(IN_ROOM(ch));
 }
 
-/* Generic function for commands which are normally overridden by special 
+/* Generic function for commands which are normally overridden by special
  * procedures - i.e., shop commands, mail commands, etc. */
 ACMD(do_not_here)
 {
@@ -599,7 +599,7 @@ ACMD(do_use)
       return;
     default:
       log("SYSERR: Unknown subcmd %d passed to do_use.", subcmd);
-      /* SYSERR_DESC: This is the same as the unhandled case in do_gen_ps(), 
+      /* SYSERR_DESC: This is the same as the unhandled case in do_gen_ps(),
        * but in the function which handles 'quaff', 'recite', and 'use'. */
       return;
     }
@@ -725,7 +725,7 @@ ACMD(do_gen_write)
 
   if (stat(filename, &fbuf) < 0) {
     perror("SYSERR: Can't stat() file");
-    /* SYSERR_DESC: This is from do_gen_write() and indicates that it cannot 
+    /* SYSERR_DESC: This is from do_gen_write() and indicates that it cannot
      * call the stat() system call on the file required.  The error string at
      * the end of the line should explain what the problem is. */
     return;
@@ -737,7 +737,7 @@ ACMD(do_gen_write)
   if (!(fl = fopen(filename, "a"))) {
     perror("SYSERR: do_gen_write");
     /* SYSERR_DESC: This is from do_gen_write(), and will be output if the file
-     * in question cannot be opened for appending to.  The error string at the 
+     * in question cannot be opened for appending to.  The error string at the
      * end of the line should explain what the problem is. */
 
     send_to_char(ch, "Could not open the file.  Sorry.\r\n");
@@ -795,7 +795,23 @@ ACMD(do_gen_tog)
     {"Buildwalk Off.\r\n",
     "Buildwalk On.\r\n"},
     {"AFK flag is now off.\r\n",
-    "AFK flag is now on.\r\n"}
+    "AFK flag is now on.\r\n"},
+    {"Autoloot disabled.\r\n",
+    "Autoloot enabled.\r\n"},
+    {"Autogold disabled.\r\n",
+    "Autogold enabled.\r\n"},
+    {"Autosplit disabled.\r\n",
+    "Autosplit enabled.\r\n"},
+    {"Autosacrifice disabled.\r\n",
+    "Autosacrifice enabled.\r\n"},
+    {"Autoassist disabled.\r\n",
+    "Autoassist enabled.\r\n"},
+    {"Automap disabled.\r\n",
+    "Automap enabled.\r\n"},
+    {"Autokey disabled.\r\n",
+    "Autokey enabled.\r\n"},
+    {"Autodoor disabled.\r\n",
+    "Autodoor enabled.\r\n"}
   };
 
   if (IS_NPC(ch))
@@ -872,6 +888,30 @@ ACMD(do_gen_tog)
       if (has_mail(GET_IDNUM(ch)))
         send_to_char(ch, "You have mail waiting.\r\n");
     }
+    break;
+  case SCMD_AUTOLOOT:
+    result = PRF_TOG_CHK(ch, PRF_AUTOLOOT);
+    break;
+  case SCMD_AUTOGOLD:
+    result = PRF_TOG_CHK(ch, PRF_AUTOGOLD);
+    break;
+  case SCMD_AUTOSPLIT:
+    result = PRF_TOG_CHK(ch, PRF_AUTOSPLIT);
+    break;
+  case SCMD_AUTOSAC:
+    result = PRF_TOG_CHK(ch, PRF_AUTOSAC);
+    break;
+  case SCMD_AUTOASSIST:
+    result = PRF_TOG_CHK(ch, PRF_AUTOASSIST);
+    break;
+  case SCMD_AUTOMAP:
+    result = PRF_TOG_CHK(ch, PRF_AUTOMAP);
+    break;
+  case SCMD_AUTOKEY:
+    result = PRF_TOG_CHK(ch, PRF_AUTOKEY);
+    break;
+  case SCMD_AUTODOOR:
+    result = PRF_TOG_CHK(ch, PRF_AUTODOOR);
     break;
   default:
     log("SYSERR: Unknown subcmd %d in do_gen_toggle.", subcmd);

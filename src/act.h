@@ -190,37 +190,39 @@ ACMD(do_rescue);
 /* Functions with subcommands */
 /* do_gen_tog */
 ACMD(do_gen_tog);
-#define SCMD_NOSUMMON   0
-#define SCMD_NOHASSLE   1
-#define SCMD_BRIEF      2
-#define SCMD_COMPACT    3
-#define SCMD_NOTELL     4
-#define SCMD_NOAUCTION  5
-#define SCMD_NOSHOUT    6
-#define SCMD_NOGOSSIP   7
-#define SCMD_NOGRATZ    8
-#define SCMD_NOWIZ      9
-#define SCMD_QUEST      10
-#define SCMD_SHOWVNUMS  11
-#define SCMD_NOREPEAT   12
-#define SCMD_HOLYLIGHT  13
-#define SCMD_SLOWNS     14
-#define SCMD_AUTOEXIT   15
-#define SCMD_TRACK      16
-#define SCMD_CLS        17
-#define SCMD_BUILDWALK  18
-#define SCMD_AFK        19
-#define SCMD_COLOR      20
-#define SCMD_SYSLOG     21
-#define SCMD_WIMPY      22
-#define SCMD_PAGELENGTH 23
-#define SCMD_AUTOLOOT   24 /**< Placeholder, currently unused */
-#define SCMD_AUTOGOLD   25 /**< Placeholder, currently unused */
-#define SCMD_AUTOSPLIT  26 /**< Placeholder, currently unused */
-#define SCMD_AUTOSAC    27 /**< Placeholder, currently unused */
-#define SCMD_AUTOASSIST 28 /**< Placeholder, currently unused */
-#define SCMD_SCREENWIDTH 29
-#define SCMD_AUTOMAP    30
+#define SCMD_NOSUMMON    0
+#define SCMD_NOHASSLE    1
+#define SCMD_BRIEF       2
+#define SCMD_COMPACT     3
+#define SCMD_NOTELL      4
+#define SCMD_NOAUCTION   5
+#define SCMD_NOSHOUT     6
+#define SCMD_NOGOSSIP    7
+#define SCMD_NOGRATZ     8
+#define SCMD_NOWIZ       9
+#define SCMD_QUEST       10
+#define SCMD_SHOWVNUMS   11
+#define SCMD_NOREPEAT    12
+#define SCMD_HOLYLIGHT   13
+#define SCMD_SLOWNS      14
+#define SCMD_AUTOEXIT    15
+#define SCMD_TRACK       16
+#define SCMD_CLS         17
+#define SCMD_BUILDWALK   18
+#define SCMD_AFK         19
+#define SCMD_AUTOLOOT    20
+#define SCMD_AUTOGOLD    21
+#define SCMD_AUTOSPLIT   22
+#define SCMD_AUTOSAC     23
+#define SCMD_AUTOASSIST  24
+#define SCMD_AUTOMAP     25
+#define SCMD_AUTOKEY     26
+#define SCMD_AUTODOOR    27
+#define SCMD_COLOR       28
+#define SCMD_SYSLOG      29
+#define SCMD_WIMPY       30
+#define SCMD_PAGELENGTH  31
+#define SCMD_SCREENWIDTH 32
 
 /* do_gen_write */
 ACMD(do_gen_write);
