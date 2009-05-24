@@ -763,7 +763,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
     }
     break;
   case SEDIT_COPY:
-    if ((i = real_room(atoi(arg))) != NOWHERE) {
+    if ((i = real_shop(atoi(arg))) != NOWHERE) {
       sedit_setup_existing(d, i);
     } else
       write_to_output(d, "That shop does not exist.\r\n");

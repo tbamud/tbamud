@@ -34,6 +34,8 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[May 24 2009] - Jamdog
+  Bug-Fix: sedit, copy shop option was causing a crash (Thanks slicer)
 [May 21 2009] - Jamdog
   Added autoassist, autoloot, autogold, autosplit, autosacrifice and automap commands.
   Added autodoor toggle and command (autofind next door when opening/closing/unlocking/picking)
