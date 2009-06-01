@@ -1887,7 +1887,6 @@ ACMD(do_toggle)
     {"autoassist", PRF_AUTOASSIST, 0,
     "Autoassist disabled.\r\n",
     "Autoassist enabled.\r\n"},
-    {"screenwidth", 0, 0, "\n", "\n"},
     {"automap", PRF_AUTOMAP, 1,
     "You will no longer see the mini-map.\r\n",
     "You will now see a mini-map at the side of room descriptions.\r\n"},

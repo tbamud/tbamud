@@ -34,6 +34,8 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[Jun 01 2009] - Jamdog
+  Bug-Fix: toggle command not fully fixed in last update (sorry) - It's fixed this time!
 [May 28 2009] - Jamdog
   Bug-Fix: toggle command broke adding autodoor/autokey - toggle color command is usable again!
 [May 24 2009] - Jamdog
