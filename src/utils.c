@@ -893,7 +893,6 @@ void char_from_furniture(struct char_data *ch)
 {
   struct obj_data *furniture;
   struct char_data *tempch;
-  int i, found = 0;
 
   if (!SITTING(ch))
     return;
@@ -909,33 +908,32 @@ void char_from_furniture(struct char_data *ch)
     log("SYSERR: Char from furniture, but no furniture!");
     SITTING(ch) = NULL;
     NEXT_SITTING(ch) = NULL;
+    GET_OBJ_VAL(furniture, 1) = 0;
     return;
   }
 
   if (tempch == ch){
-    if (!NEXT_SITTING(ch))
+    if (!NEXT_SITTING(ch)) {
       OBJ_SAT_IN_BY(furniture) = NULL;
-    else
+    } else {
       OBJ_SAT_IN_BY(furniture) = NEXT_SITTING(ch);
-    GET_OBJ_VAL(furniture, 1) -= 1;
-    SITTING(ch) = NULL;
-    NEXT_SITTING(ch) = NULL;
-    return;
-  }
-
-  for (i = 0; i < GET_OBJ_VAL(furniture, 1) && found == 0; i++){
-    if (NEXT_SITTING(tempch) != ch){
-      NEXT_SITTING(tempch) = NEXT_SITTING(ch);
-      found++;
+    }
+  } else {
+    for (tempch = OBJ_SAT_IN_BY(furniture); tempch; tempch = NEXT_SITTING(tempch)) {
+      if (NEXT_SITTING(tempch) == ch) {
+        NEXT_SITTING(tempch) = NEXT_SITTING(ch);
+      }
     }
   }
-  if (found)
-    log("SYSERR: Char flagged as sitting, but not in furniture.");
-  else
-    GET_OBJ_VAL(furniture, 1) -= 1;
-
+  GET_OBJ_VAL(furniture, 1) -= 1;
   SITTING(ch) = NULL;
   NEXT_SITTING(ch) = NULL;
+
+
+  if (GET_OBJ_VAL(furniture, 1) < 1){
+    OBJ_SAT_IN_BY(furniture) = NULL;
+    GET_OBJ_VAL(furniture, 1) = 0;
+  }
 
  return;
 }

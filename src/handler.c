@@ -235,7 +235,7 @@ void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bitv[], bo
   aff_apply_modify(ch, loc, mod, "affect_modify_ar");
 }
 
-/* This updates a character by subtracting everything he is affected by 
+/* This updates a character by subtracting everything he is affected by
  * restoring original abilities, and then affecting all again. */
 void affect_total(struct char_data *ch)
 {
@@ -287,7 +287,7 @@ void affect_total(struct char_data *ch)
   }
 }
 
-/* Insert an affect_type in a char_data structure. Automatically sets 
+/* Insert an affect_type in a char_data structure. Automatically sets
  * apropriate bits and apply's */
 void affect_to_char(struct char_data *ch, struct affected_type *af)
 {
@@ -303,8 +303,8 @@ void affect_to_char(struct char_data *ch, struct affected_type *af)
   affect_total(ch);
 }
 
-/* Remove an affected_type structure from a char (called when duration reaches 
- * zero). Pointer *af must never be NIL!  Frees mem and calls 
+/* Remove an affected_type structure from a char (called when duration reaches
+ * zero). Pointer *af must never be NIL!  Frees mem and calls
  * affect_location_apply */
 void affect_remove(struct char_data *ch, struct affected_type *af)
 {
@@ -333,7 +333,7 @@ void affect_from_char(struct char_data *ch, int type)
   }
 }
 
-/* Return TRUE if a char is affected by a spell (SPELL_XXX), FALSE indicates 
+/* Return TRUE if a char is affected by a spell (SPELL_XXX), FALSE indicates
  * not affected. */
 bool affected_by_spell(struct char_data *ch, int type)
 {
@@ -410,7 +410,7 @@ void char_to_room(struct char_data *ch, room_rnum room)
 
     autoquest_trigger_check(ch, 0, 0, AQ_ROOM_FIND);
     autoquest_trigger_check(ch, 0, 0, AQ_MOB_FIND);
-    
+
     if (GET_EQ(ch, WEAR_LIGHT))
       if (GET_OBJ_TYPE(GET_EQ(ch, WEAR_LIGHT)) == ITEM_LIGHT)
 	if (GET_OBJ_VAL(GET_EQ(ch, WEAR_LIGHT), 2))	/* Light ON */
@@ -434,7 +434,7 @@ void obj_to_char(struct obj_data *object, struct char_data *ch)
     IN_ROOM(object) = NOWHERE;
     IS_CARRYING_W(ch) += GET_OBJ_WEIGHT(object);
     IS_CARRYING_N(ch)++;
-    
+
     autoquest_trigger_check(ch, NULL, object, AQ_OBJ_FIND);
 
     /* set flag for crash-save system, but not on mobs! */
@@ -696,11 +696,21 @@ void obj_to_room(struct obj_data *object, room_rnum room)
 void obj_from_room(struct obj_data *object)
 {
   struct obj_data *temp;
+  struct char_data *t, *tempch;
 
   if (!object || IN_ROOM(object) == NOWHERE) {
     log("SYSERR: NULL object (%p) or obj not in a room (%d) passed to obj_from_room",
 	object, IN_ROOM(object));
     return;
+  }
+
+   /* if people are sitting in it, toss their butt to the ground */
+  if (OBJ_SAT_IN_BY(object) != NULL) {
+    for (tempch = OBJ_SAT_IN_BY(object); tempch; tempch = t) {
+       t = NEXT_SITTING(tempch);
+       SITTING(tempch) = NULL;
+       NEXT_SITTING(tempch) = NULL;
+    }
   }
 
   REMOVE_FROM_LIST(object, world[IN_ROOM(object)].contents, next_content);
@@ -728,7 +738,7 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
   tmp_obj = obj->in_obj;
 
   /* Add weight to container, unless unlimited. */
-  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {	  
+  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {
     for (tmp_obj = obj->in_obj; tmp_obj->in_obj; tmp_obj = tmp_obj->in_obj)
       GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
 
@@ -872,8 +882,8 @@ void extract_char_final(struct char_data *ch)
     exit(1);
   }
 
-  /* We're booting the character of someone who has switched so first we need 
-   * to stuff them back into their own body.  This will set ch->desc we're 
+  /* We're booting the character of someone who has switched so first we need
+   * to stuff them back into their own body.  This will set ch->desc we're
    * checking below this loop to the proper value. */
   if (!IS_NPC(ch) && !ch->desc) {
     for (d = descriptor_list; d; d = d->next)
@@ -884,17 +894,17 @@ void extract_char_final(struct char_data *ch)
   }
 
   if (ch->desc) {
-    /* This time we're extracting the body someone has switched into (not the 
-     * body of someone switching as above) so we need to put the switcher back 
+    /* This time we're extracting the body someone has switched into (not the
+     * body of someone switching as above) so we need to put the switcher back
      * to their own body. If this body is not possessed, the owner won't have a
      * body after the removal so dump them to the main menu. */
     if (ch->desc->original)
       do_return(ch, NULL, 0, 0);
     else {
-      /* Now we boot anybody trying to log in with the same character, to help 
-       * guard against duping.  CON_DISCONNECT is used to close a descriptor 
-       * without extracting the d->character associated with it, for being 
-       * link-dead, so we want CON_CLOSE to clean everything up. If we're 
+      /* Now we boot anybody trying to log in with the same character, to help
+       * guard against duping.  CON_DISCONNECT is used to close a descriptor
+       * without extracting the d->character associated with it, for being
+       * link-dead, so we want CON_CLOSE to clean everything up. If we're
        * here, we know it's a player so no IS_NPC check required. */
       for (d = descriptor_list; d; d = d->next) {
         if (d == ch->desc)
@@ -958,16 +968,16 @@ void extract_char_final(struct char_data *ch)
     free_char(ch);
 }
 
-/* Why do we do this? Because trying to iterate over the character list with 
+/* Why do we do this? Because trying to iterate over the character list with
  * 'ch = ch->next' does bad things if the current character happens to die. The
- * trivial workaround of 'vict = next_vict' doesn't work if the _next_ person 
+ * trivial workaround of 'vict = next_vict' doesn't work if the _next_ person
  * in the list gets killed, for example, by an area spell. Why do we leave them
- * on the character_list? Because code doing 'vict = vict->next' would get 
+ * on the character_list? Because code doing 'vict = vict->next' would get
  * really confused otherwise. */
 void extract_char(struct char_data *ch)
 {
   char_from_furniture(ch);
-  
+
   if (IS_NPC(ch))
     SET_BIT_AR(MOB_FLAGS(ch), MOB_NOTDEADYET);
   else
@@ -976,8 +986,8 @@ void extract_char(struct char_data *ch)
   extractions_pending++;
 }
 
-/* I'm not particularly pleased with the MOB/PLR hoops that have to be jumped 
- * through but it hardly calls for a completely new variable. Ideally it would 
+/* I'm not particularly pleased with the MOB/PLR hoops that have to be jumped
+ * through but it hardly calls for a completely new variable. Ideally it would
  * be its own list, but that would change the '->next' pointer, potentially
  * confusing some code. -gg This doesn't handle recursive extractions. */
 void extract_pending_chars(void)
