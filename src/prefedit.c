@@ -25,7 +25,7 @@
 static void prefedit_setup(struct descriptor_data *d, struct char_data *vict);
 static void prefedit_save_to_char(struct descriptor_data *d);
 static void prefedit_disp_main_menu(struct descriptor_data *d);
-static void prefedit_disp_toggle_menu(struct descriptor_data *d);
+static void prefedit_disp_toggles_menu(struct descriptor_data *d);
 static void prefedit_disp_prompt_menu(struct descriptor_data *d);
 static void prefedit_disp_color_menu(struct descriptor_data *d);
 static void prefedit_disp_syslog_menu(struct descriptor_data *d);
@@ -488,7 +488,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
 
   case PREFEDIT_SCREENWIDTH:
     number = atoi(arg);
-    OLC_PREFS(d)->page_length = MAX(40, MIN(number, 120));
+    OLC_PREFS(d)->screen_width = MAX(40, MIN(number, 120));
     break;
 
   case PREFEDIT_WIMPY:
