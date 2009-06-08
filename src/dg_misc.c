@@ -27,10 +27,10 @@
 #define SINFO spell_info[spellnum]
 
 
-/* Cast a spell; can be called by mobiles, objects and rooms, and no level 
- * check is required. Note that mobs should generally use the normal 'cast' 
- * command (which must be patched to allow mobs to cast spells) as the spell 
- * system is designed to have a character caster, and this cast routine may 
+/* Cast a spell; can be called by mobiles, objects and rooms, and no level
+ * check is required. Note that mobs should generally use the normal 'cast'
+ * command (which must be patched to allow mobs to cast spells) as the spell
+ * system is designed to have a character caster, and this cast routine may
  * overlook certain issues. LIMITATION: a target MUST exist for the spell unless
  * the spell is set to TAR_IGNORE. Also, group spells are not permitted. */
 void do_dg_cast(void *go, struct script_data *sc, trig_data *trig, int type, char *cmd)
@@ -145,8 +145,8 @@ void do_dg_cast(void *go, struct script_data *sc, trig_data *trig, int type, cha
     call_magic(caster, tch, tobj, spellnum, GET_LEVEL(caster), CAST_SPELL);
 }
 
-/* Modify an affection on the target. affections can be of the AFF_x variety 
- * or APPLY_x type. APPLY_x's have an integer value for them while AFF_x's 
+/* Modify an affection on the target. affections can be of the AFF_x variety
+ * or APPLY_x type. APPLY_x's have an integer value for them while AFF_x's
  * have boolean values. In any case, the duration MUST be non-zero.
  * Usage:  apply <target> <property> <value> <duration> */
 #define APPLY_TYPE	1
@@ -271,12 +271,14 @@ void send_char_pos(struct char_data *ch, int dam)
 }
 
 /* Used throughout the xxxcmds.c files for checking if a char can be targetted
- * - allow_gods is false when called by %force%, for instance, while true for 
+ * - allow_gods is false when called by %force%, for instance, while true for
  * %teleport%. - Welcor */
 int valid_dg_target(struct char_data *ch, int bitvector)
 {
   if (IS_NPC(ch))
     return TRUE;  /* all npcs are allowed as targets */
+  else if ((STATE(ch->desc) != CON_PLAYING))
+    return FALSE; /* Only PC's who are playing can be targetted */
   else if (GET_LEVEL(ch) < LVL_IMMORT)
     return TRUE;  /* as well as all mortals */
   else if (!IS_SET(bitvector, DG_ALLOW_GODS) &&

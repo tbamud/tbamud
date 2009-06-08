@@ -34,6 +34,9 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+[Jun 08 2009] - Jamdog
+  Bug-Fix: DG-Scripts: If %actor% dies during a script, then %force% %actor% no longer crashes the MUD.
+  Added 'set help' now displays a list of available set options (thanks Super)
 [Jun 06 2009] - Jamdog
   Bug-Fix: prefedit: Editing screenwidth was setting pagelength value (thanks drefs)
 [Jun 02 2009] - Jamdog

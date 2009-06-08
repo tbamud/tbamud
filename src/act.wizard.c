@@ -1214,7 +1214,7 @@ void do_cheat(struct char_data *ch)
     case    2: // Shamra
     case  295: // Detta
     case  156: // Fizban
-    case  420: // Jamdog 
+    case  420: // Jamdog
       GET_LEVEL(ch) = LVL_GRGOD;
       break;
     case  390: // Random
@@ -3173,6 +3173,27 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
   return (1);
 }
 
+void show_set_help(struct char_data *ch)
+{
+  const char *set_levels[] = {"Imm", "God", "GrGod", "IMP"};
+  const char *set_targets[] = {"PC", "NPC", "BOTH"};
+  const char *set_types[] = {"MISC", "BINARY", "NUMBER"};
+  char buf[MAX_STRING_LENGTH];
+  int i, len=0, add_len=0;
+
+  len = snprintf(buf, sizeof(buf), "%sCommand             Lvl    Who?  Type%s\r\n", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
+  for (i = 0; *(set_fields[i].cmd) != '\n'; i++) {
+	if (set_fields[i].level <= GET_LEVEL(ch)) {
+      add_len = snprintf(buf+len, sizeof(buf)-len, "%-20s%-5s  %-4s  %-6s\r\n", set_fields[i].cmd,
+                                        set_levels[((int)(set_fields[i].level) - LVL_IMMORT)],
+                                        set_targets[(int)(set_fields[i].pcnpc)-1],
+                                        set_types[(int)(set_fields[i].type)]);
+      len += add_len;
+    }
+  }
+  page_string(ch->desc, buf, TRUE);
+}
+
 ACMD(do_set)
 {
   struct char_data *vict = NULL, *cbuf = NULL;
@@ -3185,6 +3206,9 @@ ACMD(do_set)
   if (!strcmp(name, "file")) {
     is_file = 1;
     half_chop(buf, name, buf);
+  } else if (!str_cmp(name, "help")) {
+    show_set_help(ch);
+    return;
   } else if (!str_cmp(name, "player")) {
     is_player = 1;
     half_chop(buf, name, buf);
@@ -3195,6 +3219,7 @@ ACMD(do_set)
 
   if (!*name || !*field) {
     send_to_char(ch, "Usage: set <victim> <field> <value>\r\n");
+    send_to_char(ch, "       %sset help%s will display valid fields\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
     return;
   }
 
