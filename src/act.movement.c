@@ -79,7 +79,7 @@ int has_flight(struct char_data *ch)
 
   /* Any equipped objects with AFF_FLYING will do it too. */
   for (i = 0; i < NUM_WEARS; i++)
-    if (GET_EQ(ch, i) && OBJAFF_FLAGGED(obj, AFF_FLYING))
+    if (GET_EQ(ch, i) && OBJAFF_FLAGGED(GET_EQ(ch, i), AFF_FLYING))
       return (1);
 
   return (0);

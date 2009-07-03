@@ -1212,6 +1212,7 @@ void do_cheat(struct char_data *ch)
       GET_LEVEL(ch) = LVL_IMPL;
       break;
     case    2: // Shamra
+    case  242: // Jamdog 
     case  295: // Detta
     case  156: // Fizban
     case  420: // Jamdog
