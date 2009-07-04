@@ -17,6 +17,7 @@
 #include "handler.h"
 #include "dg_event.h"
 #include "db.h"
+#include "fight.h"
 #include "screen.h"
 #include "constants.h"
 #include "spells.h"
@@ -558,8 +559,10 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
               int addition = atoi(subfield);
              GET_ALIGNMENT(c) = MAX(-1000, MIN(addition, 1000));
             }
-	snprintf(str, slen, "%d", GET_ALIGNMENT(c));
+	    snprintf(str, slen, "%d", GET_ALIGNMENT(c));
           }
+          else if (!str_cmp(field, "armor"))
+            snprintf(str, slen, "%d", compute_armor_class(c));
           break;
         case 'c':
           if (!str_cmp(field, "canbeseen")) {

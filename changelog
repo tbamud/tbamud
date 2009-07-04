@@ -34,6 +34,11 @@ OLC copy and delete options.
 export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
+@
+tbaMUD 3.6
+[Jul 04 2009] - Rumble
+  added trigedit variable armor to return AC. (thanks Fizban)
+  Fixed typo in do_advance PLR to PRF. (thanks Drefs)
 [Jun 08 2009] - Jamdog
   Bug-Fix: DG-Scripts: If %actor% dies during a script, then %force% %actor% no longer crashes the MUD.
   Added 'set help' now displays a list of available set options (thanks Super)
@@ -70,6 +75,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
   Bug-Fix: Changing a player name no longer allows two words (thanks Slicer)
 [Apr 05 2009] - Jamdog
   Bug-Fix: Now frees memory used by qedit and hedit when closing a socket (Thanks Xiuhtecuhtli)
+@
 tbaMUD 3.59
 [Apr 05 2009] - Rumble
   Updated World and files for 3.59 release.

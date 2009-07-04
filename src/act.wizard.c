@@ -1505,8 +1505,8 @@ ACMD(do_advance)
     REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG1);
     REMOVE_BIT_AR(PLR_FLAGS(victim), PRF_LOG2);
     REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_NOHASSLE);
-    REMOVE_BIT_AR(PLR_FLAGS(victim), PRF_HOLYLIGHT);
-    REMOVE_BIT_AR(PLR_FLAGS(victim), PRF_SHOWVNUMS);
+    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
+    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
     if (!PLR_FLAGGED(victim, PLR_NOWIZLIST))
       run_autowiz();
   } else if (oldlevel < LVL_IMMORT && newlevel >= LVL_IMMORT) {
