@@ -873,7 +873,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
 
     case '3': OLC_ZONE(d)->min_level = -1;
               OLC_ZONE(d)->max_level = -1;
-              OLC_ZONE(d)->age = 1;
+              OLC_ZONE(d)->number = 1;
               zedit_disp_levels(d);
               break;
 
@@ -890,7 +890,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
   case ZEDIT_LEV_MIN:
     pos = atoi(arg);
     OLC_ZONE(d)->min_level = MIN(MAX(pos,-1), 100);
-    OLC_ZONE(d)->age = 1;
+    OLC_ZONE(d)->number = 1;
     zedit_disp_levels(d);
     break;
 
@@ -898,7 +898,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
   case ZEDIT_LEV_MAX:
     pos = atoi(arg);
     OLC_ZONE(d)->max_level = MIN(MAX(pos,-1), 100);
-    OLC_ZONE(d)->age = 1;
+    OLC_ZONE(d)->number = 1;
     zedit_disp_levels(d);
     break;
 

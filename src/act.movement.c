@@ -218,7 +218,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     send_to_char(ch, "You are not ready to enter that area.\r\n");
     return (0);
   }
-  if ((ZONE_MAXLVL(GET_ROOM_ZONE(going_to)) != -1) && ZONE_MAXLVL(GET_ROOM_ZONE(going_to)) < GET_LEVEL(ch)) {
+if ((GET_LEVEL(ch) < LVL_IMMORT) && (ZONE_MAXLVL(GET_ROOM_ZONE(going_to)) != -1) && ZONE_MAXLVL(GET_ROOM_ZONE(going_to)) < GET_LEVEL(ch)) {
     send_to_char(ch, "You are too powerful for that area.\r\n");
     return (0);
   }
