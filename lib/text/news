@@ -7,7 +7,10 @@ NEW COMMANDS AND NEW MUD BEHAVIOR:
 **  Check out the latest news and information on the tbaMUD codebase at
     @Chttp://tbamud.com@n.
 
-**  New sacrifice command allows you to donate a corpse to the Gods.
+**  An "areas" command to list open areas. 
+
+**  New preference editor for players: prefedit. Use it to enable two new
+    toggles autodoor and autokey.
 
 **  Your prompt will now show (news) and (motd) whenever these files
     have been updated.
@@ -42,7 +45,7 @@ NEW COMMANDS AND NEW MUD BEHAVIOR:
 **  NEW AFK toggle that displays in your prompt, under who, and when people
     look at the room.
 
-**  You now have almost 180 stock zones to play.
+**  You now have over 180 stock zones to play.
 
 **  You can now interact with rooms, mobs, and objects through triggers.
 
@@ -50,8 +53,8 @@ NEW COMMANDS AND NEW MUD BEHAVIOR:
     inventory won't be as long. i.e. (3) A waybread.
 
 **  Over 100 new socials, and the gemote command to use socials over the gossip
-    channel. Socials can now target bodyparts too, behave. Check them out and 
-    feel free to suggest new ones.
+    channel. Socials can now target bodyparts too! Please behave. Check them 
+    out and feel free to suggest new ones. 
 
 **  You can now use color! @RHELP COLORCODES@n.
 
@@ -63,7 +66,7 @@ NEW COMMANDS AND NEW MUD BEHAVIOR:
 **  The player description length has been increased so please write a decent 
     description for yourself.
 
-**  You can now set your pagelength!
+**  You can now set your pagelength and pagewidth!
 
 **  You can now "look around" to see anything of interest in the room. But,
     some things may still be hidden and require further investigation.

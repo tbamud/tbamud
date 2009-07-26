@@ -2360,7 +2360,7 @@ ACMD(do_whois)
 
   /* We either have our victim from file or he's playing or function has returned. */
   sprinttype(GET_SEX(victim), genders, buf, sizeof(buf));
-  send_to_char(ch, "Name: %s  %s\r\nSex: %s\r\n", GET_NAME(victim),
+  send_to_char(ch, "Name: %s %s\r\nSex: %s\r\n", GET_NAME(victim),
                    (victim->player.title ? victim->player.title : ""), buf);
 
   sprinttype (victim->player.chclass, pc_class_types, buf, sizeof(buf));

@@ -2893,20 +2893,20 @@ $n looks at your $t and seems to think it could use a little trimming off the to
 You look at $p and think it could use a little trimming off the top.
 $n looks at $p and seems to think it could use a little trimming off the top.
 
-~halo halo 0 8 8 0
+~halo halo 0 8 8 31
 You whip out the ol' halo. That should prove your innocence.
-$n loads object 15400 and dons it.
+$n loads a halo and dons it.
 $N could use a good disguise.
-$n loads object 15400 and gives it to $N.
+$n loads a halo and gives it to $N.
 $n gives you a halo. Apparently you don't look angelic enough.
 Too late, that person already made a getaway.
-You load object 15400 and place it on your head.
-$n loads object 15400 and dons it.
-#
-#
-#
-#
-#
+You load a halo and place it on your head.
+$n loads a halo and dons it.
+You place a halo on $S $t.
+$n places a halo on $N's $t.
+$n places a halo on your $t.
+You place a halo on $p.
+$n places a halo on $p.
 
 ~handraise handraise 0 8 8 0
 You raise your hand - me me me!
@@ -4366,7 +4366,7 @@ $n peers intently at $p.
 ~perspire perspire 0 5 0 0
 Cool down?
 $n perspires!
-You look at $s and begin to perspire.
+You look at $S and begin to perspire.
 $n looks at $N and begins to perspire.
 $n looks at you and begins to perspire.
 You begin to perspire.
@@ -6865,6 +6865,21 @@ You don't see them here.
 #
 #
 #
+#
+#
+
+~vice vice 0 8 8 0
+You perform careful maintenance on your vice and attach the four foot crank extension.
+$n expertly strips down the vice and carefully oils the steel parts. Satisfied, $n reassembles the vice and attaches the four-foot extension to the crank.
+You place $S head in the jaws of the vice and tighten them enough to prevent movement. Slowly, you crank the vice tighter and tighter, enjoying the rising amplitude of the screams until the splintering climax when the skull shatters. $N is quiet now.
+$n stuns $N with a quick punch and forces $S head into the vice. $N screams and thrashes helplessly but the steel jaws hold $M tight. Grinning sadistically, $n slowly turns the crank until the skull cracks with a sickening pop. $N has been silenced.
+$n forces your head into the vice and tightens the steel jaws preventing all movement. Smiling sadistically, $e cranks the handle as your screaming headache becomes everything. Then there is nothing but peace. 
+Your vice remains empty. 
+You place your own head into a vice and turn the crank until your conscienceness fades.
+$n puts $s own head into a vice and turns the crank until there is a loud pop.
+You place $S $t in the jaws of the vice and tighten them enough to prevent movement. Slowly, you crank the vice tighter and tighter, enjoying the rising amplitude of the screams until the splintering climax when the $t shatters. $N is quiet now.
+$n stuns $N with a quick punch and forces $S $t into the vice. $N screams and thrashes helplessly but the steel jaws hold $M tight. Grinning sadistically, $n slowly turns the crank until the $t cracks with a sickening pop. $N has been silenced.
+$n forces your $t into the vice and tightens the steel jaws preventing all movement. Smiling sadistically, $e cranks the handle as your screaming $tache becomes everything. Then there is nothing but peace.
 #
 #
 

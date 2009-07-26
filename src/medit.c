@@ -874,8 +874,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
 
   case MEDIT_SEX:
     GET_SEX(OLC_MOB(d)) = LIMIT(i, 0, NUM_GENDERS - 1);
-    medit_disp_stats_menu(d);
-    return;
+    break;
 
   case MEDIT_HITROLL:
     GET_HITROLL(OLC_MOB(d)) = LIMIT(i, 0, 50);

@@ -36,6 +36,10 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.6
+[Jul 26 2009] - Rumble
+  Added a char_from_furniture call in char_from_room.
+  Removed medit_disp_stats_menu from MEDIT_SEX case.
+  Updated a few socials and found a few typos.
 [Jul 25 2009] - Rumble
   Fixed zedit_level to recognize changes and save properly.
   Removed duplicate struct from db.h

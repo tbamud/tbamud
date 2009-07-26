@@ -387,6 +387,8 @@ void char_from_room(struct char_data *ch)
   if (FIGHTING(ch) != NULL)
     stop_fighting(ch);
 
+  char_from_furniture(ch);
+
   if (GET_EQ(ch, WEAR_LIGHT) != NULL)
     if (GET_OBJ_TYPE(GET_EQ(ch, WEAR_LIGHT)) == ITEM_LIGHT)
       if (GET_OBJ_VAL(GET_EQ(ch, WEAR_LIGHT), 2))	/* Light is ON */
