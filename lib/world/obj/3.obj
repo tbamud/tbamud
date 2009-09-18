@@ -5,7 +5,7 @@ A beer barrel has been left here.~
 ~
 17 0 0 0 0 0 0 0 0 0 0 0 0
 50 50 1 0
-0 0 0 0
+0 0 0 0 0
 #301
 beer bottle beer~
 a bottle~
@@ -13,7 +13,7 @@ A beer bottle has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 1 0
-10 20 0 0
+10 20 0 0 0
 #302
 ale bottle dark ale~
 a bottle~
@@ -21,7 +21,7 @@ A dark bottle of ale has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 3 0
-10 10 0 0
+10 10 0 0 0
 #303
 firebreather bottle firebreather~
 a firebreather~
@@ -29,7 +29,7 @@ A firebreather has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 7 0
-10 50 0 0
+10 50 0 0 0
 #304
 local bottle local~
 a bottle~
@@ -37,7 +37,7 @@ A dark bottle has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 8 0
-10 20 0 0
+10 20 0 0 0
 #305
 key dull metal~
 a key of dull metal~
@@ -45,7 +45,7 @@ A key made of a dull metal is lying on the ground here.~
 ~
 18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 3005 0 0 0
-1 1 0 0
+1 1 0 0 0
 #306
 jar naphthalene~
 a jar of naphthalene~
@@ -53,7 +53,7 @@ A jar labeled NAPTHTHALENE was left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 jar naphthalene~
    There is a thick cloudy jell inside this jar.
@@ -65,7 +65,7 @@ A jar labeled PALMITITE was left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 jar palmitite~
    There is a thick cloudy jell inside this jar.
@@ -77,12 +77,11 @@ A clay jug was left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 0 0
-4 500 0 0
+4 500 0 0 0
 E
 clay jug~
-   A plain jug made of clay that fits nicely into the palm of your hand.  An
-extremely well mad clay jug that fits nicely into the palm of your hand.  The
-perfect size and weight to throw.
+   An extremely well mad clay jug that fits nicely into the palm of your hand.
+The perfect size and weight to throw.
 ~
 #309
 waybread bread~
@@ -91,7 +90,7 @@ Some waybread has been put here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 waybread bread~
    The waybread is the traditional feed of elves when travelling, they call it
@@ -104,7 +103,7 @@ A loaf of bread has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 10 0 0
+1 10 0 0 0
 #311
 danish pastry~
 a danish pastry~
@@ -112,7 +111,7 @@ A nice looking delicious danish pastry has been placed here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 5 0 0
+1 5 0 0 0
 #312
 taco mexican~
 a Mexican taco~
@@ -120,7 +119,7 @@ A tasty looking Mexican taco has been dropped here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
-1 15 0 0
+1 15 0 0 0
 #313
 burrito hot~
 a spicy hot burrito~
@@ -128,7 +127,7 @@ A spicy looking burrito has been set here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 10 0 0
+1 10 0 0 0
 #314
 nachos nacho~
 some nachos with cheese~
@@ -136,7 +135,7 @@ Some nachos have been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 nachos nacho~
    They have cheese on them.  Looks like one of Uncle Juan's specials.  
@@ -148,7 +147,7 @@ A rather dubious looking piece of meat is on the ground here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 14 0 0 0
-5 30 0 0
+5 30 0 0 0
 E
 meat chunk~
    It isn't so much that the meat looks poisoned or anything, but that you just
@@ -163,7 +162,7 @@ A cauldron filled with a thick boiling jelly.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 scarred cauldron~
    The cauldron is a deep charred black with chips and cracks all over the upper
@@ -177,7 +176,7 @@ A clay bomb of napalm lays here dangerously.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-3 1000 0 0
+3 1000 0 0 0
 T 337
 E
 napalm balm~
@@ -192,7 +191,7 @@ A dagger with a long thin blade is here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
-1 10 0 0
+1 10 0 0 0
 #321
 sword small~
 a small sword~
@@ -200,14 +199,14 @@ A small sword lies here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
-3 60 0 0
-E
-inscription~
-   It says: 'May this sword be a good companion.  '
-~
+3 60 0 0 0
 E
 sword small~
    The small sword seems to have an inscription of some sort inscription...  
+~
+E
+inscription~
+   It says: 'May this sword be a good companion.  '
 ~
 #322
 sword long~
@@ -216,7 +215,7 @@ A long sword has been left here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 3
-8 600 0 0
+8 600 0 0 0
 #323
 club wooden~
 a wooden club~
@@ -224,7 +223,7 @@ A simple looking wooden club is here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 3 7
-3 12 0 0
+3 12 0 0 0
 #324
 warhammer hammer~
 a warhammer~
@@ -232,7 +231,7 @@ A medium sized warhammer is here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 5 7
-6 50 0 0
+6 50 0 0 0
 #325
 flail large~
 a flail~
@@ -240,7 +239,7 @@ A large flail is here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 7
-6 625 0 0
+6 625 0 0 0
 #326
 towel white~
 a white towel~
@@ -248,7 +247,7 @@ A white bleached towel is folded nicely here.~
 ~
 12 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 white towel~
    The towel looks thick and plush.  It appears to be woven from cotton and
@@ -261,7 +260,7 @@ A large torch.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 24 0
-1 10 0 0
+1 10 0 0 0
 #331
 lantern brass~
 a lantern~
@@ -269,7 +268,7 @@ A brass lantern is here.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 96 0
-1 50 0 0
+1 50 0 0 0
 #332
 bag~
 a bag~
@@ -277,7 +276,7 @@ A small bag is here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 0 0 0
-2 20 0 0
+2 20 0 0 0
 #333
 box~
 a box~
@@ -285,7 +284,7 @@ A small box is here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 10 0 0 0
-5 50 0 0
+5 50 0 0 0
 #334
 atm teller banks machine~
 an automatic teller machine~
@@ -293,7 +292,7 @@ An automatic teller machine has been installed in the wall here.~
 ~
 12 cdeg 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 atm teller bank machine~
    There is a small note on the machine which says: To use, type 'BALANCE',
@@ -307,7 +306,7 @@ An elegant fountain of marble gurgles peacefully.~
 ~
 23 e 0 0 0 0 0 0 0 0 0 0 0
 0 -1 0 0
-0 0 0 0
+0 0 0 0 0
 E
 marble blue streaked~
    It is a well crafted fountain, carved from a single piece of very beautiful
@@ -322,7 +321,7 @@ A handy dandy cashcard is sitting on the ground here.~
 ~
 12 cdeg 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 0
+1 1000 0 0 0
 E
 cashcard card atm~
    There is some writing on the back of the card which reads: To use, type
@@ -336,7 +335,7 @@ A candle lies here, unlit.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 4 0
-1 5 0 0
+1 5 0 0 0
 E
 candle~
    A home-made candle, how quaint!  
@@ -348,7 +347,7 @@ A penny nail lies in the dust.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 1 11
-1 5 0 0
+1 5 0 0 0
 E
 nail~
    Its a common iron nail, used for carpentry work.  
@@ -360,7 +359,7 @@ A cast-iron pot sits on the ground.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-10 100 0 0
+10 100 0 0 0
 E
 pot~
    It is a nice pot.  You could use it, if you ever settled down.  
@@ -372,7 +371,7 @@ A breast plate is lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
-50 800 0 0
+50 800 0 0 0
 #341
 shirt chain mail~
 a chain mail shirt~
@@ -380,7 +379,7 @@ A chain mail shirt is lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-50 250 0 0
+50 250 0 0 0
 #342
 shield wooden~
 a shield~
@@ -388,7 +387,7 @@ A small wooden shield is lying on the ground.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 2 0 0 0
-3 100 0 0
+3 100 0 0 0
 #343
 jacket soft leather~
 a leather jacket~
@@ -396,7 +395,7 @@ A soft leather jacket is lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
-10 200 0 0
+10 200 0 0 0
 #344
 jacket studded leather~
 a studded leather jacket~
@@ -404,7 +403,7 @@ A studded leather jacket is lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
-20 500 0 0
+20 500 0 0 0
 #345
 jacket scale mail~
 a scale mail jacket~
@@ -412,7 +411,7 @@ A scale mail jacket is lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-40 1000 0 0
+40 1000 0 0 0
 #346
 plate bronze breast~
 a bronze breast plate~
@@ -420,7 +419,7 @@ A bronze breast plate is lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-50 700 0 0
+50 700 0 0 0
 #350
 scroll identify~
 a scroll of identify~
@@ -429,7 +428,7 @@ $n recites the ancient words "Identium oliciferous!"
 ~
 2 g 0 0 0 ao 0 0 0 0 0 0 0
 12 -1 -1 -1
-1 1000 0 0
+1 1000 0 0 0
 E
 scroll identify~
    The scroll has a magic formula drawn upon it:
@@ -449,7 +448,7 @@ A small yellow potion has carelessly been left here.~
 ~
 10 g 0 0 0 ao 0 0 0 0 0 0 0
 12 19 -1 -1
-1 900 0 0
+1 900 0 0 0
 E
 potion yellow~
    The potion has a small label 'Detect The Invisible'.  
@@ -461,7 +460,7 @@ A scroll has carelessly been left here.~
 ~
 2 g 0 0 0 ao 0 0 0 0 0 0 0
 12 42 -1 -1
-4 200 0 0
+4 200 0 0 0
 E
 scroll recall~
    The scroll has written a formulae of 'Word of Recall' upon it.  
@@ -473,7 +472,7 @@ A grey wand has carelessly been left here.~
 ~
 3 g 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 29
-2 400 0 0
+2 400 0 0 0
 E
 wand grey~
    The wand is an old dark grey stick.  You notice a small symbol etched at
@@ -491,7 +490,7 @@ A gnarled staff has carelessly been left here.~
 ~
 4 g 0 0 0 ao 0 0 0 0 0 0 0
 12 1 1 38
-17 700 0 0
+17 700 0 0 0
 E
 staff gnarled~
    The staff is made of old oak, and is around five feet long. It fits
@@ -512,7 +511,7 @@ A metal staff has carelessly been left here.~
 ~
 4 g 0 0 0 ao 0 0 0 0 0 0 0
 10 2 2 15
-7 850 0 0
+7 850 0 0 0
 T 303
 E
 staff metal~
@@ -525,7 +524,7 @@ A raft has been left here.~
 ~
 22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-50 400 0 0
+50 400 0 0 0
 E
 raft~
    The raft looks very primitive.  
@@ -537,7 +536,7 @@ A canoe has been left here.~
 ~
 22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-32 1000 0 0
+32 1000 0 0 0
 E
 canoe~
    The canoe is fairly light.  
@@ -549,7 +548,7 @@ A pair of bronze gauntlets is lying on the ground.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 6 0 0 0
-8 150 0 0
+8 150 0 0 0
 #371
 gloves leather~
 a pair of leather gloves~
@@ -557,7 +556,7 @@ A pair of leather gloves is lying on the ground.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
-3 75 0 0
+3 75 0 0 0
 #373
 large well~
 a large well~
@@ -565,7 +564,7 @@ A large well is overflowing with crystal clear water.~
 ~
 23 g 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
-0 0 0 0
+0 0 0 0 0
 E
 large well~
    The well is made from large rocks stacked and shaped into a perfect circle.
@@ -578,7 +577,7 @@ A bronze helmet is lying on the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
-8 350 0 0
+8 350 0 0 0
 #376
 cap leather~
 a leather cap~
@@ -586,7 +585,7 @@ A leather cap is lying on the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
-3 150 0 0
+3 150 0 0 0
 #380
 leggings bronze~
 a pair of bronze leggings~
@@ -594,7 +593,7 @@ A pair of bronze leggings is lying on the ground.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
-8 350 0 0
+8 350 0 0 0
 #381
 pants leather~
 a pair of leather pants~
@@ -602,7 +601,7 @@ A pair of leather pants is lying on the ground.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
-8 150 0 0
+8 150 0 0 0
 #385
 sleeves bronze~
 a pair of bronze sleeves~
@@ -610,7 +609,7 @@ A pair of bronze sleeves is lying on the ground.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 6 0 0 0
-8 175 0 0
+8 175 0 0 0
 #386
 sleeves leather~
 a pair of leather sleeves~
@@ -618,7 +617,7 @@ A pair of leather sleeves is lying on the ground.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
-4 75 0 0
+4 75 0 0 0
 #396
 board social bulletin~
 a social bulletin board~
@@ -626,14 +625,14 @@ A large, sociable bulletin board is mounted on a wall here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
-E
-social bulletin~
-   Use 'look board' to read the board.  
-~
+0 0 0 0 0
 E
 board~
    If you can read this, the board is not working.  
+~
+E
+social bulletin~
+   Use 'look board' to read the board.  
 ~
 #397
 board frozen bulletin~
@@ -642,14 +641,14 @@ A large bulletin board is here, carved from a block of ice.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
-E
-freeze bulletin~
-   Use 'look board' to read the board.  
-~
+0 0 0 0 0
 E
 board~
    If you can read this, the board is not working.  
+~
+E
+freeze bulletin~
+   Use 'look board' to read the board.  
 ~
 #398
 board holy bulletin~
@@ -658,14 +657,14 @@ A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
-E
-holy bulletin~
-   Use 'look board' to read the board.  
-~
+0 0 0 0 0
 E
 board~
    If you can read this, the board is not working.  
+~
+E
+holy bulletin~
+   Use 'look board' to read the board.  
 ~
 #399
 board bulletin~
@@ -674,13 +673,13 @@ A large bulletin board is mounted on a wall here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
-E
-bulletin~
-   Use 'look board' to read the board.  
-~
+0 0 0 0 0
 E
 board~
    If you can read this, the board is not working.  
+~
+E
+bulletin~
+   Use 'look board' to read the board.  
 ~
 $~

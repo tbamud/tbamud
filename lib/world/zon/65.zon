@@ -1,7 +1,7 @@
 #65
 Depeche~
 Dwarven Kingdom~
-6500 6599 20 2
+6500 6599 20 2 d 0 0 0 -1 -1
 M 0 6500 11 6505 	(the dwarf guard)
 E 1 6504 100 16 	(a dwarven hammer)
 E 1 6505 100 5 	(the dwarven plate mail)

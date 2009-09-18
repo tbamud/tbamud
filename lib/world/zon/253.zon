@@ -1,7 +1,8 @@
 #253
 Kaan~
 Windmill~
-25300 25399 20 2
+25300 25399 20 2 d 0 0 0 -1 -1
+D 0 25300 3 1 	(Main Room - Windmill)
 M 0 25310 10 25312 	(an MoS soldier)
 M 0 25302 10 25312 	(an MoS soldier)
 E 1 25300 20 5 	(a suit of steel MoS armor)
@@ -39,7 +40,6 @@ E 1 25300 20 5 	(a suit of steel MoS armor)
 E 1 25301 20 16 	(a steel sword)
 E 1 25302 20 11 	(an MoS shield)
 D 0 25302 1 1 	(Guard Room)
-D 0 25300 3 1 	(Main Room - Windmill)
 M 0 25302 10 25317 	(an MoS soldier)
 E 1 25300 20 5 	(a suit of steel MoS armor)
 E 1 25301 20 16 	(a steel sword)

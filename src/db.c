@@ -1522,7 +1522,7 @@ static void interpret_espec(const char *keyword, const char *value, int i, int n
     num_arg = atoi(value);
 
   CASE("BareHandAttack") {
-    RANGE(0, 99);
+    RANGE(0, NUM_ATTACK_TYPES - 1);
     mob_proto[i].mob_specials.attack_type = num_arg;
   }
 
@@ -2094,7 +2094,7 @@ static void load_zones(FILE *fl, char *zonename)
       break;
     }
     error = 0;
-    if (strchr("MOEPDTV", ZCMD.command) == NULL) {	/* a 3-arg command */
+    if (strchr("MOGEPDTV", ZCMD.command) == NULL) {	/* a 3-arg command */
       if (sscanf(ptr, " %d %d %d ", &tmp, &ZCMD.arg1, &ZCMD.arg2) != 3)
 	error = 1;
     } else if (ZCMD.command=='V') { /* a string-arg command */

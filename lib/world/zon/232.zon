@@ -1,12 +1,12 @@
 #232
-Radiax~
+Ferret~
 Terringham~
-23200 23299 30 2
+23200 23299 30 2 d 0 0 0 -1 -1
+O 0 23201 1 23200 	(a fountain)
 R 0 23262 3034 -1 	(an automatic teller machine)
 O 0 3034 99 23262 	(an automatic teller machine)
 M 0 23205 1 23282 	(Sabertooth Tiger)
 M 0 23206 1 23282 	(Anaconda)
-O 0 23201 1 23200 	(a fountain)
 M 0 3023 2 23278 	(the fighters' guildmaster)
 M 0 3020 2 23279 	(the mages' guildmaster)
 M 0 3022 2 23277 	(the thieves' guildmaster)
@@ -30,7 +30,7 @@ G 1 23209 1 -1 	(a rucksack)
 G 1 23210 1 -1 	(a flashlight)
 G 1 23211 1 -1 	(a lantern)
 M 0 23201 1 23274 	(the Baker)
-G 1 23202 1 -1 	(a rspberry tart)
+G 1 23202 1 -1 	(a raspberry tart)
 G 1 23203 1 -1 	(a chocolate eclair)
 G 1 23204 1 -1 	(an apple pie)
 G 1 23205 1 -1 	(a slice of bread)

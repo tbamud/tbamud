@@ -1,9 +1,9 @@
 #40
 Redferne~
 Mines of Moria~
-4000 4099 20 2
+4000 4099 20 2 d 0 0 0 -1 -1
 M 0 4000 1 4030 	(the snake)
-G 1 4001 1 -1 	(a goblin's corpse)
+G 1 4001 1 -1 	(a goblin's carcass)
 P 1 4002 1 4001 	(some coins)
 M 0 4001 2 4025 	(the green snake)
 M 0 4001 2 4015 	(the green snake)

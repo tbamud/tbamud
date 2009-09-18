@@ -1,7 +1,7 @@
 #274
 Unknown~
 Smurfville~
-27400 27499 15 2
+27400 27499 15 2 d 0 0 0 -1 -1
 D 0 27407 0 1 	(Papa Smurf's House)
 D 1 27416 2 1 	(Smurfette's House)
 D 0 27428 0 1 	(Entrance to Gargamel's Castle)
@@ -47,8 +47,8 @@ E 1 27411 40 17 	(a small mirror)
 M 0 27413 1 27409 	(Athletic Smurf)
 E 1 27407 100 13 	(a weight belt)
 M 0 27414 1 27406 	(Handy Smurf)
-M 0 27415 4 27420 	(smurf)
-M 0 27415 4 27422 	(smurf)
+M 0 27415 4 27420 	(a smurf)
+M 0 27415 4 27422 	(a smurf)
 M 0 27416 1 27424 	(Miner Smurf)
 E 1 27408 60 16 	(a pick axe)
 S

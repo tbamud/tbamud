@@ -170,6 +170,9 @@ static int can_take_obj(struct char_data *ch, struct obj_data *obj)
   } else if (!(CAN_WEAR(obj, ITEM_WEAR_TAKE))) {
     act("$p: you can't take that!", FALSE, ch, obj, 0, TO_CHAR);
     return (0);
+  } else if (OBJ_SAT_IN_BY(obj)){
+    act("It appears someone is sitting on $p..", FALSE, ch, obj, 0, TO_CHAR);
+    return (0);
   }
   return (1);
 }

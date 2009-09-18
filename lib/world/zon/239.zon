@@ -1,9 +1,7 @@
 #239
 Crysanthia~
 South Pass~
-23900 23999 20 2
-M 0 23904 1 23908 	(a black scorpion)
-M 0 23901 3 23903 	(a diamond-back rattle snake)
+23900 23999 20 2 d 0 0 0 -1 -1
 M 0 23918 1 23900 	(a nice shop keeper)
 G 1 23902 100 -1 	(a sentinel hammer)
 G 1 23900 100 -1 	(a canteen)
@@ -14,6 +12,8 @@ G 1 23910 100 -1 	(an obsidian club)
 G 1 23911 100 -1 	(a pair of drow boots)
 G 1 23912 100 -1 	(a black cape)
 G 1 23913 100 -1 	(a spider staff)
+M 0 23904 1 23908 	(a black scorpion)
+M 0 23901 3 23903 	(a diamond-back rattle snake)
 D 0 23971 2 1 	(South End of Slave Corridor)
 D 0 23971 1 1 	(South End of Slave Corridor)
 D 0 23971 3 1 	(South End of Slave Corridor)

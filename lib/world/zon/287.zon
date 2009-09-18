@@ -1,7 +1,8 @@
 #287
 Pippin~
 Ofingia and the Goblin Town~
-28700 28799 30 2
+28700 28799 30 2 d 0 0 0 -1 -1
+D 0 28700 0 1 	(A Narrow Crawlway)
 M 0 28709 1 28724 	(Serathana the Guardian of Lore)
 G 1 350 100 -1 	(a scroll of identify)
 G 1 352 100 -1 	(a scroll of recall)
@@ -12,7 +13,6 @@ G 1 28760 100 -1 	(a scroll of lore)
 E 1 28748 100 12 	(a white robe)
 E 1 28708 100 17 	(a blued steel key)
 E 1 28732 99 16 	(a long spear)
-D 0 28700 0 1 	(A Narrow Crawlway)
 M 0 28713 1 28716 	(Sir Mischa)
 E 1 28738 100 5 	(a mail-shirt)
 E 1 28739 100 6 	(a helm)

@@ -1,16 +1,16 @@
 #57
 Gatia~
 Zodiac~
-5700 5799 30 2
+5700 5799 30 2 d 0 0 0 -1 -1
+O 0 5700 1 5700 	(the starstone)
+M 0 5700 1 5700 	(Sheila, Gatia's Assistant)
 M 0 5713 1 5713 	(Bungle the shopkeeper)
 G 1 5730 99 -1 	(a rune blade)
 G 1 5700 100 -1 	(the starstone)
 G 1 5708 100 -1 	(the rune saber)
 G 1 5798 100 -1 	(the scorpion platemail)
-O 0 5700 1 5700 	(the starstone)
-M 0 5700 1 5700 	(Sheila, Gatia's Assistant)
 M 0 5734 1 5734 	(Crannasia the drow assassin)
-O 0 5734 1 5734 	(the corpse of the tree nymph)
+O 0 5734 1 5734 	(the carcass of the tree nymph)
 M 0 5730 1 5730 	(Scorpio)
 M 0 5714 1 5730 	(Virgo)
 O 0 5728 1 5728 	(Libra)

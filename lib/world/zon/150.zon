@@ -1,7 +1,7 @@
 #150
 CircleMUD~
 King Welmar's Castle~
-15000 15099 30 2
+15000 15099 30 2 d 0 0 0 -1 -1
 M 0 15001 1 15017 	(King Welmar)
 E 1 15002 1 17 	(a golden sceptre)
 E 1 15003 1 6 	(a golden crown)
@@ -126,7 +126,7 @@ M 0 15031 2 15067 	(the skeleton)
 M 0 15032 1 15074 	(the pit fiend)
 E 1 15008 3 16 	(Verminator)
 O 0 15013 1 15054 	(a royal banner)
-O 0 15018 1 15070 	(a corpse)
+O 0 15018 1 15070 	(a carcass)
 O 0 15021 1 15073 	(the glow from the west)
 O 0 15022 1 15065 	(the wailing sound from the east)
 D 0 15056 2 2 	(The Guard Room)

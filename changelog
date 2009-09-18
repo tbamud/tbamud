@@ -36,6 +36,16 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.6
+[Aug 29 2009] - Rumble
+  Removed unused prototype log_death_trap in utils.h (thanks Xiuhtecuhtli)
+[Aug 28 2009] - Rumble
+  Prevented players from taking objects currently being sat in. (thanks Frenze)
+[Aug 26 2009] - Rumble
+  Removed dupe include in genobj.c (thanks Xiuhtecuhtli)
+[Aug 25 2009] - Rumble
+  Fixed the range of barehandattack. (thanks Stoneheart)
+[Aug 06 2009] - Rumble
+  Fixed possible bug in the load_zone routine for giving items to mobs. (thanks Maoliosa)
 [Jul 26 2009] - Rumble
   Added a char_from_furniture call in char_from_room.
   Removed medit_disp_stats_menu from MEDIT_SEX case.

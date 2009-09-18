@@ -1,7 +1,7 @@
 #267
 Questor~
 Vice Island~
-26700 26799 30 1
+26700 26799 30 1 d 0 0 0 -1 -1
 R 0 26759 26732 -1 	(a dull iron key)
 O 0 26732 5 26759 	(a dull iron key)
 D 0 26759 0 1 	(Creepy Hallway)
@@ -94,9 +94,9 @@ O 0 26733 1 26767 	(a tiny key)
 D 0 26738 2 2 	(Trail of Terror)
 D 0 26748 0 2 	(Trophy Room)
 D 0 26752 0 2 	(Cell)
-D 0 26753 0 1 	(Strangely shaped hallway)
-D 0 26753 1 2 	(Strangely shaped hallway)
-D 0 26753 2 2 	(Strangely shaped hallway)
+D 0 26753 0 1 	(Strangely shaped hallway.)
+D 0 26753 1 2 	(Strangely shaped hallway.)
+D 0 26753 2 2 	(Strangely shaped hallway.)
 D 0 26754 2 1 	(Open Hearth)
 D 0 26755 3 2 	(Supply Room)
 D 0 26756 0 1 	(Deserted Bedroom)

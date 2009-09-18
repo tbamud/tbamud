@@ -1,7 +1,8 @@
 #271
 Mercy~
 Sundhaven~
-27100 27199 30 2
+27100 27199 30 2 d 0 0 0 -1 -1
+O 0 27110 1 27100 	(a black marble fountain)
 R 0 27139 27147 -1 	(a set of marbles)
 O 0 27147 99 27139 	(a set of marbles)
 M 0 27138 2 27139 	(a mischievious boy)
@@ -19,7 +20,6 @@ G 1 27175 99 -1 	(a leg of mutton)
 G 1 27176 99 -1 	(a wild boar heart)
 G 1 27177 99 -1 	(a bowl of little dragon wings)
 G 1 27178 99 -1 	(a grilled troll sandwich)
-O 0 27110 1 27100 	(a black marble fountain)
 D 0 27109 0 1 	(The gate at the cliffs)
 D 0 27158 2 1 	(Standing at the brink)
 D 0 27145 3 1 	(The west gate of Sundhaven)

@@ -1,7 +1,7 @@
 #33
 C.A.W.~
 Three of Swords~
-3300 3399 30 2
+3300 3399 30 2 d 0 0 0 -1 -1
 M 0 3300 2 3346 	(the farmer)
 M 0 3300 2 3353 	(the farmer)
 M 0 3301 1 3345 	(the storekeeper)
@@ -82,7 +82,7 @@ M 0 3318 2 3357 	(the farmer)
 M 0 3318 2 3357 	(the farmer)
 M 0 3319 1 3357 	(the hunter)
 E 1 3317 1000 16 	(a hunting bow)
-O 0 3314 1 3304 	(a dismembered and burnt corpse)
+O 0 3314 1 3304 	(a dismembered and burnt cadaver)
 O 0 3315 2 3323 	(a scimitar)
 O 0 3315 2 3323 	(a scimitar)
 O 0 3316 3 3330 	(a crate)

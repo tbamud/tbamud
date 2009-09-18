@@ -1,7 +1,7 @@
 #325
 Kaan~
 Revelry~
-32500 32599 30 2
+32500 32599 30 2 d 0 0 0 -1 -1
 R 0 32544 32509 -1 	(a wooden keg)
 O 1 32509 99 32544 	(a wooden keg)
 M 0 32512 1 32544 	(a gypsy food vendor)
@@ -103,8 +103,8 @@ M 0 32508 1 32548 	(Madame Zayla)
 G 1 32520 100 -1 	(a glowing fortune)
 E 1 32521 100 12 	(a set of moth-eaten robes)
 O 0 32501 1 32548 	(a small round table)
-R 0 32548 32502 -1 	(Madame Zayla's crytsal ball)
-O 0 32502 100 32548 	(Madame Zayla's crytsal ball)
+R 0 32548 32502 -1 	(Madame Zayla's crystal ball)
+O 0 32502 100 32548 	(Madame Zayla's crystal ball)
 M 0 32564 1 32577 	(a young lad)
 M 0 32563 1 32577 	(a little girl)
 M 0 32562 1 32577 	(a wide-eyed child)

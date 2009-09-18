@@ -1,7 +1,7 @@
 #315
 Kaan~
 McGintey Business District~
-31500 31599 10 2
+31500 31599 10 2 d 0 0 0 -1 -1
 R 0 31519 3034 -1 	(an automatic teller machine)
 O 0 3034 99 31519 	(an automatic teller machine)
 M 0 31560 1 31519 	(the city banker)
@@ -24,7 +24,7 @@ O 0 31667 4 31576 	(a beautiful mermaid fountain)
 M 0 31558 1 31574 	(the teleport operator)
 M 0 31540 1 31553 	(Sazaindin)
 G 1 31621 500 -1 	(a potion of cure blindness)
-G 1 31620 500 -1 	(bright green potion)
+G 1 31620 500 -1 	(a bright green potion)
 G 1 31619 500 -1 	(a glowing potion of invisibility)
 M 0 31535 1 31548 	(the elven vendor)
 G 1 31618 500 -1 	(a grail)

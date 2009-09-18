@@ -1,7 +1,7 @@
 #247
 Rasta~
 Graveyard~
-24700 24799 24 2
+24700 24799 24 2 d 0 0 0 -1 -1
 M 0 24714 1 24761 	(the Death Master)
 E 1 24719 1 17 	(a skull headed wand)
 E 1 24720 1 16 	(a vorpal dagger)
@@ -46,7 +46,7 @@ P 1 5027 2 24703 	(a glittering diamond)
 P 1 24704 1 24703 	(a ball of string)
 P 1 24705 1 24703 	(a pocket knife)
 O 0 24703 30 24723 	(a tombstone)
-P 1 24726 10 24703 	(gold coins)
+P 1 24726 10 24703 	(some gold coins)
 O 0 24703 30 24724 	(a tombstone)
 P 1 3050 500 24703 	(a scroll of identify)
 P 1 3050 500 24703 	(a scroll of identify)
@@ -76,10 +76,10 @@ O 0 24703 30 24772 	(a tombstone)
 O 0 24703 30 24714 	(a tombstone)
 O 0 24717 3 24749 	(a huge pile of treasure)
 O 0 24731 2 24708 	(a crowbar)
-O 0 24707 1 24717 	(a pile of decaying corpses)
+O 0 24707 1 24717 	(a pile of decaying carcasses)
 P 1 24717 2 24707 	(a huge pile of treasure)
 O 0 24711 1 24744 	(an ancient sarcophagus)
-P 1 24714 10 24711 	(Corpse of Elven Prince)
+P 1 24714 10 24711 	(the carcass of an elven prince)
 P 1 24712 10 24714 	(a crystal sword)
 P 1 24713 10 24714 	(a crystal breast plate)
 M 0 24700 40 24720 	(a zombie)

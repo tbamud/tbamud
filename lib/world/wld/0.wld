@@ -35,13 +35,13 @@ mobs, shops, and triggers with which players will interact.
 right place. Be warned, building is not easy and will require hard work, 
 patience, and the ability to take constructive criticism.
    Your first task is to apply for builder status at: 
-http://www.geocities.com/buildersacademy/
+http://tbamud.com/BuilderApplication
    When you finish and submit the application tell anyone level 32 or higher
 and they will advance you to begin your training.
 ~
 0 24 0 0 0 0
 S
-T 3017
+T 199
 #3
 The Builder Academy~
    Congratulations on your new-found immortality. Now all you need to know is
@@ -543,18 +543,9 @@ D2
 S
 #33
 Rumble's Room~
-The only thing necessary for evil to triumph is for good men to do nothing.
--Edmund Burke
+Our lives begin to end the day we become silent about things that matter.
 ~
 0 8 0 0 0 0
-D0
-~
-~
-0 0 33
-D2
-~
-~
-0 0 33
 E
 undefined~
 test
@@ -761,6 +752,7 @@ steel door that is closed and locked.
 0 8 0 0 0 0
 S
 T 172
+T 171
 #95
 Confucius' Prison Cell~
    The musty stall is somehow cleaner than the others. A hole in the North wall

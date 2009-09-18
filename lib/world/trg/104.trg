@@ -65,7 +65,7 @@ say Please feel free to look around %actor.name%.
 Journal Take Trigger~
 1 c 2
 write~
-if %actor.id% == 4891
+if %actor.id% == 13
   %send% %actor% %actor.name% welcome back home.
   %force% %actor% write journal
 else

@@ -276,9 +276,19 @@ dg_cast 'lightning' %actor%
 ~
 #322
 Mob Fight - generic kick~
-0 k 10
+0 k 30
 ~
-kick %actor%
+* By Fizban of The Builder Academy    tbamud.com 9091
+* Mimics the kick skill.
+eval percent ((10 - (%actor.armor% / 10)) * 2) + %random.101%
+if %percent% > %actor.skill(kick)%
+  nop %actor.pos(sitting)%
+  eval dam %self.level% / 2
+  %damage% %actor% %dam%
+  %send% %self% Your boots need polishing again -- blood all over them...
+  %send% %actor% %self.name% wipes %self.hisher% boots in your face!
+  %echoaround% %actor% %self.name% wipes %self.hisher% boots in the face of %actor.name%!
+end
 ~
 #323
 Mob Fight - generic bash~

@@ -1,7 +1,8 @@
 #305
 Aten~
 Chessboard~
-30500 30599 20 2
+30500 30599 20 2 d 0 0 0 -1 -1
+D 0 30500 0 2 	(The Stone Door)
 M 0 30507 2 30531 	(the Black Bishop)
 G 1 30517 99 -1 	(a teacup)
 G 1 30508 100 -1 	(a bishop's staff)
@@ -19,7 +20,6 @@ M 0 30510 1 30539 	(the White Queen)
 G 1 30502 99 -1 	(a queens white key)
 G 1 30509 100 -1 	(a silvery skin)
 D 0 30539 3 2 	(The White Square)
-D 0 30500 0 2 	(The Stone Door)
 M 0 30500 3 30501 	(the Tunnel Troll)
 E 1 30504 20 13 	(a dirty loincloth)
 M 0 30502 8 30522 	(the White Pawn)

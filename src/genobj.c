@@ -10,7 +10,6 @@
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
-#include "boards.h"
 #include "shop.h"
 #include "genolc.h"
 #include "genobj.h"

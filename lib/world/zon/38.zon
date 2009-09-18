@@ -1,7 +1,7 @@
 #38
 Welcor~
 Capital Sewer System II~
-3800 3899 15 2
+3800 3899 15 2 d 0 0 0 -1 -1
 D 0 3801 5 2 	(In the Northern Drainhole)
 M 0 3800 1 3801 	(the black rat)
 G 1 3804 10 -1 	(a red smelly key)

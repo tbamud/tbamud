@@ -5,7 +5,7 @@ A pair of wings is sitting here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
-1 1 0 0
+1 1 0 0 0
 #2
 fire ball fireball~
 a fireball~
@@ -13,7 +13,7 @@ A fireball lies here burning.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #3
 ruby red slippers~
 a pair of ruby slippers~
@@ -21,7 +21,7 @@ A pair of ruby slippers lies here.~
 ~
 13 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #4
 emails listing~
 an email listing of the gods~
@@ -29,7 +29,7 @@ The email listing of the gods is pinned against the wall.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 30
+1 1 0 30 0
 E
 emails listing~
    HELP CONTACT
@@ -58,7 +58,7 @@ A few discolored berries that someone foraged.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 berries foraged~
    These blue, red, and even green berries look edible.  Though you do wonder
@@ -72,7 +72,7 @@ Someone has foraged some greens to eat, but just left them here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-1 20 0 0
+1 20 0 0 0
 E
 foraged greens~
    An assortment of leaves and grasses that look rather bland.  But if you had
@@ -86,7 +86,7 @@ A pile of roots that someone collected for dinner.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-2 30 0 0
+2 30 0 0 0
 E
 roots foraged~
    Tubular roots of varying sizes and colors.  They look very edible.  Some of
@@ -100,7 +100,7 @@ A pile of bark is stacked neatly infront of you.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-3 15 0 0
+3 15 0 0 0
 E
 foraged bark~
    Now this is gross!  It must be desperate times when you have to turn to
@@ -114,7 +114,7 @@ Half a dozen nuts are lined up perfectly on the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 nuts foraged~
    A variety of nuts that are very hard to come by.  Various animals hoard
@@ -128,7 +128,7 @@ Some waybread has been put here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 waybread bread~
    The waybread is the traditional feed of elves when travelling, they call it
@@ -141,7 +141,7 @@ Fresh water is bubbling up from a spring.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 100 100 0 0
-0 0 0 0
+0 0 0 0 0
 #12
 staff sanctum~
 the Staff of Sanctum~
@@ -149,7 +149,7 @@ The Staff of Sanctum stands here waiting to be taken up by those who are worthy.
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 50 10 5 7
-20 1000 0 30
+20 1000 0 30 0
 T 85
 #13
 Ferret's black book~
@@ -158,7 +158,7 @@ A little black book is sitting here calling your name.~
 ~
 12 bgi 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 book~
    Upon these pages are players that have upset Ferret and will not receive help!
@@ -178,7 +178,7 @@ A steaming pile of stool has recently been deposited here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #15
 quest_token_zone_1 token~
 a quest token~
@@ -186,7 +186,7 @@ A quest token needs to be returned to the questmaster.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 141
 T 169
 E
@@ -201,7 +201,7 @@ A small quest timer is ticking away.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 140
 T 141
 T 142
@@ -217,7 +217,7 @@ The head of a quest mob needs to be taken back to the questmaster.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 141
 E
 head quest mob~
@@ -231,7 +231,7 @@ A shimmering portal hovers here forming a gateway to another place and time.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #21
 sword quest War's Blood~
 War's Blood~
@@ -239,7 +239,7 @@ The sword of kings awaits a hero to wield it.~
 ~
 5 abdgimnoq 0 0 0 ano 0 0 0 0 0 0 0
 8 10 9 3
-1 1000 0 20
+1 1000 0 20 0
 T 80
 E
 sword quest war's blood~
@@ -264,7 +264,7 @@ A piece of deepest midnight calls to you here.~
 ~
 5 bdgmnpq 0 0 0 ano 0 0 0 0 0 0 0
 10 10 9 11
-1 1000 0 20
+1 1000 0 20 0
 T 84
 E
 shadow stealer dagger quest~
@@ -289,7 +289,7 @@ A burning staff of magical power floats in the air under its own power.~
 ~
 5 abdfginopq 0 0 0 ano 0 0 0 0 0 0 0
 6 10 9 7
-1 1000 0 20
+1 1000 0 20 0
 E
 staff spellfire quest~
    Wrought of the pure weave, bound by mortal spells, wielded by only the
@@ -313,7 +313,7 @@ A gift from the gods is here seeking a worthy mortal.~
 ~
 5 abdgimopq 0 0 0 ano 0 0 0 0 0 0 0
 6 10 9 7
-1 1 0 20
+1 1 0 20 0
 E
 mace quest divine blessing~
    This heavy iron mace hums with suppressed power.  Its surface is engraved
@@ -335,7 +335,7 @@ A mighty force for good seeks a champion of the light.~
 ~
 5 abdgiklq 0 0 0 ano 0 0 0 0 0 0 0
 8 10 9 14
-1 1000 0 20
+1 1000 0 20 0
 E
 silver bow quest light~
    Resplendent as the sun, this bow of pure silver seems to exude purity and
@@ -360,7 +360,7 @@ The greatest symbol of balance seeks the hearts of evil and good alike.~
 ~
 5 abdgjkq 0 0 0 ano 0 0 0 0 0 0 0
 8 10 9 11
-1 1000 0 20
+1 1000 0 20 0
 E
 spear quest balance~
    The Lance of heroes.  The spear of mortal man.  The shaft of this legendary
@@ -386,7 +386,7 @@ The axe meant to end all that is good in the realms floats here seeking a head t
 ~
 5 bdgjlq 0 0 0 ano 0 0 0 0 0 0 0
 10 10 9 3
-1 1000 0 20
+1 1000 0 20 0
 T 83
 E
 axe doomslaying quest~
@@ -414,7 +414,7 @@ A small cap of the faerie folk seeks the grasp of a true quickling.~
 ~
 11 dfgq 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 20
+1 1000 0 20 0
 E
 cap quickling quest~
    This small green cap is made of a fine velvet lined with silk.  It's material
@@ -440,7 +440,7 @@ The symbol of trollish heroes awaits the next leader of the tribes.~
 ~
 9 bdgiq 0 0 0 ai 0 0 0 0 0 0 0
 10 0 0 0
-1 1000 0 20
+1 1000 0 20 0
 E
 armbands land midnight sun quest~
    These huge bands of red metal are scratched and marked from years of battle
@@ -464,7 +464,7 @@ The light of humanity guides you onward here.~
 ~
 1 abdgq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-2 1000 0 20
+2 1000 0 20 0
 E
 star man quest~
    This beautiful gem was mined from the center of the mountain from which the
@@ -488,18 +488,18 @@ The protection of dragon-kind seeks the next hero of the wryms.~
 ~
 9 abdgq 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
-5 1000 0 20
+5 1000 0 20 0
 T 86
 E
 shield quest wyrmguard~
-   Torn from Balm's breast, this scale has been shaped into a shield of
+Torn from Balm's breast, this scale has been shaped into a shield of
 unrivaled strength and beauty.  Its diamond shape expands and shapes itself to
 protect any dragon who bears it, from the youngest of hatchlings, to the most
 ancient of wyrms.  The shield shimmers and wavers with all the colors of the
 rainbow.  In its shimmering depths can be seen all the colors of every dragon
 that has ever come to pass.  Magical runes circle the shield's rim.  "Come wind,
 come fire.  Come Thunder come rain.  My bearer need never fear.  Come giants to
-dual.  My roar of triumph will be the last you ever hear.  "
+dual.  My roar of triumph will be the last you ever hear."
 ~
 A
 17 -10
@@ -514,7 +514,7 @@ The pride of the dwarven race lies here unused.~
 ~
 9 bdgiq 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
-10 1000 0 20
+10 1000 0 20 0
 E
 heartguard armor quest~
    This armor has been forged from the purest iron that can be found in mortal
@@ -539,7 +539,7 @@ The Guide to all Gnomish knowledge hums here quietly.~
 ~
 11 abdgq 0 0 0 aco 0 0 0 0 0 0 0
 0 0 0 0
-3 1000 0 20
+3 1000 0 20 0
 E
 scholar's guide jeweler's loop quest~
    You are looking at what could quite possibly be one of the most beautiful
@@ -564,7 +564,7 @@ The companions to the wanderlust sit here waiting for travel.~
 ~
 9 bdgq 0 0 0 ag 0 0 0 0 0 0 0
 10 0 0 0
-5 1000 0 20
+5 1000 0 20 0
 E
 boots strider quest~
    These fine boots have been made from the hides of monsters and beasts the
@@ -587,7 +587,7 @@ The bane of all wyrmkin seeks the heart of a dragon.~
 ~
 5 abdgiq 0 0 0 ano 0 0 0 0 0 0 0
 10 10 9 3
-10 1000 0 20
+10 1000 0 20 0
 E
 battleaxe dragonbane quest~
    There is no greater weapon in mortal hands.  This is an instrument of death.
@@ -613,7 +613,7 @@ A heavy cloak of brown and green is hear for the next elven king.~
 ~
 9 dgq 0 0 0 ack 0 0 0 0 0 0 0
 10 0 0 0
-4 1000 0 20
+4 1000 0 20 0
 E
 cloak elven court quest~
    A heavy, richly embroidered cloak of green and brown.  It's color changes as
@@ -637,7 +637,7 @@ Some fine gloves sit hear itching to grab something.~
 ~
 11 dgq 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
-3 1000 0 20
+3 1000 0 20 0
 E
 gloves kindred quest~
    A set of lithe leather riding gloves.  The leather is so thin as to almost
@@ -658,7 +658,7 @@ One of the lost treasures of Sanctum is here.~
 ~
 4 a 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 26
-1 1000 0 0
+1 1000 0 0 0
 T 90
 E
 gem sanctum~
@@ -671,7 +671,7 @@ A staff used by the healers of Sanctum is here.~
 ~
 4 b 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 43
-1 1000 0 0
+1 1000 0 0 0
 E
 curative staff~
    This beautiful staff is used by the healers of sanctum.  
@@ -683,7 +683,7 @@ A runestone of the church of Sanctum has been left here.~
 ~
 4 b 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 36
-1 1000 0 0
+1 1000 0 0 0
 E
 runestone Sanctum church~
    This is one of the runestones used by the priests of Sanctum in their duties.
@@ -697,7 +697,7 @@ Nothing.
 ~
 4 b 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 39
-1 1000 0 0
+1 1000 0 0 0
 E
 bell sanctum's freedom~
    This is the bell that represents the freedom of the city of Sanctum.  
@@ -709,7 +709,7 @@ The hammer used to ring Sanctum's mighty bell is here.~
 ~
 4 ab 0 0 0 ao 0 0 0 0 0 0 0
 30 1 1 3
-1 1000 0 0
+1 1000 0 0 0
 E
 hammer Sanctum~
    This is the hammer used to ring the bell of freedom in the church of Sanctum.
@@ -722,7 +722,7 @@ The spirit of Wyvern Rulers seeks a new Guardian of the flames.~
 ~
 9 adfgq 0 0 0 af 0 0 0 0 0 0 0
 10 0 0 0
-5 1000 0 30
+5 1000 0 30 0
 E
 guards eternal flame quest~
    Guardians of history, heroes of legend, Ancients of elder years.  These are
@@ -749,22 +749,8 @@ An immortal device to set questpoints.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 31
+1 1 0 31 0
 T 168
-#45
-pile coins gold~
-a pile of gold coins~
-A pile of gold coins is half-buried in the mud and muck.~
-~
-20 0 0 0 0 a 0 0 0 0 0 0 0
-1000000 0 0 0
-0 0 0 0
-T 193
-E
-pile coins gold~
-   The glittering gold catches your eye. Though covered in dirt and grime money
-is money. 
-~
 #46
 key gateguard~
 the gateguard key~
@@ -772,7 +758,7 @@ The gateguards key was left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #47
 magic eight ball eightball~
 the magic eight ball~
@@ -780,7 +766,7 @@ A mysterious looking magic eight ball holds the answer.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 6
 E
 magic eight ball~
@@ -793,7 +779,7 @@ A comfy bed is begging you to take a nap.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 comfy bed~
    This bed is beckoning you to lay down and get some much needed sleep.
@@ -806,7 +792,7 @@ A typical U.S. quarter that appears to be perfect for flipping.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 37
 E
 coin quarter~
@@ -820,7 +806,7 @@ A generic light is lying here.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-1 1 0 0
+1 1 0 0 0
 E
 generic light~
    Since this light is completely generic there are no distinctive features
@@ -833,7 +819,7 @@ A generic ring is lying here.~
 ~
 9 0 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic ring right~
    Since this ring is completely generic there are no distinctive features worth
@@ -846,7 +832,7 @@ A generic ring is lying here.~
 ~
 9 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic ring left~
    Since this ring is completely generic there are no distinctive features worth
@@ -859,7 +845,7 @@ A generic necklace is lying here.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic neck1 necklace~
    Since this necklace is completely generic there are no distinctive features
@@ -872,7 +858,7 @@ A generic necklace is lying here.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic neck2 necklace~
    Since this necklace is completely generic there are no distinctive features
@@ -885,7 +871,7 @@ A set of generic body armor is lying here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic body armor~
    Since this body armor is completely generic there are no distinctive features
@@ -898,7 +884,7 @@ A generic helm is lying here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic helm~
    Since this helm is completely generic there are no distinctive features worth
@@ -911,7 +897,7 @@ A pair of generic leggings are lying here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic leggings~
    Since this pair of leggings is completely generic there are no distinctive
@@ -924,7 +910,7 @@ A pair of generic boots are lying here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic boots~
    Since the pair of boots are completely generic there are no distinctive
@@ -937,7 +923,7 @@ A pair of generic gloves are lying here.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic gloves~
    Since the pair of gloves are completely generic there are no distinctive
@@ -950,7 +936,7 @@ A pair of generic sleeves are lying here.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic sleeves~
    Since the pair of sleeves are completely generic there are no distinctive
@@ -963,7 +949,7 @@ A generic shield is lying here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic shield~
    Since the shield is completely generic there are no distinctive features
@@ -976,7 +962,7 @@ A generic cape is lying here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic cape~
    Since the cape is completely generic there are no distinctive features worth
@@ -989,7 +975,7 @@ A generic belt is lying here.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic belt~
    Since the belt is completely generic there are no distinctive features worth
@@ -1002,7 +988,7 @@ A generic wristguard is lying here.~
 ~
 9 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic wristguard~
    Since the wristguard is completely generic there are no distinctive features
@@ -1015,7 +1001,7 @@ A generic wristguard is lying here.~
 ~
 9 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic wristguard~
    Since the wristguard is completely generic there are no distinctive features
@@ -1028,7 +1014,7 @@ A generic weapon is lying here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 2 0
-1 2 0 0
+1 2 0 0 0
 E
 generic weapon~
    Since this weapon is completely generic there are no distinctive features
@@ -1041,7 +1027,7 @@ A generic staff is lying here.~
 ~
 9 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 generic staff~
    Since this staff is completely generic there are no distinctive features
@@ -1054,7 +1040,7 @@ A large key painted red and hanging on a metal ring was left here.~
 ~
 18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 commissars key~
    This old fashioned skeleton key has been painted a bright red and is all
@@ -1067,7 +1053,7 @@ A simple wooden sign hanging from a shop to the North states, "OPEN."~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 wooden sign~
    The wooden sign says OPEN in big bright letters.
@@ -1079,7 +1065,7 @@ A simple wooden sign hanging from a shop to the North states, "CLOSED."~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 wooden sign~
    The wooden sign says CLOSED in big bright letters.
@@ -1091,7 +1077,7 @@ A strange and colorful tube was left here. It is made from cardboard intricately
 ~
 11 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 T 87
 E
 chinese finger trap fingertrap cardboard tube~
@@ -1110,7 +1096,7 @@ A red paintball gun was abandoned here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 50 0 0
+1 50 0 0 0
 T 97
 #81
 paintball gun blue~
@@ -1119,7 +1105,7 @@ A blue paintball gun was abandoned here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 50 0 0
+1 50 0 0 0
 T 96
 #82
 teleporter~
@@ -1128,7 +1114,7 @@ A strange device labeled "teleporter" was left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 T 99
 T 176
 E
@@ -1146,7 +1132,7 @@ A small slip of paper has something written on it.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 slip paper tapcode code~
 TAPS| 1 | 2 | 3 | 4 | 5 | To the left is a tap code we use to communicate 
@@ -1168,7 +1154,7 @@ the shower drain~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 5 5 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 shower drain~
    The metal drain is covered with years of hair and grime. Several screws
@@ -1181,7 +1167,7 @@ A small piece of metal wire has been sharpened into a pick.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 0 0 0
+1 0 0 0 0
 E
 pick iron~
    This small piece of wire has been filed or sanded into a sharp point and
@@ -1194,7 +1180,7 @@ A pair of shackles have been left here open.~
 ~
 12 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-15 0 0 0
+15 0 0 0 0
 E
 shackles pair~
    These iron shackles are heavy with a chain of about 20 links connecting the
@@ -1209,7 +1195,7 @@ A throne of sharp bayonets looks like the last place you would want to sit.~
 ~
 6 0 0 0 0 0 0 0 0 0 0 0 0
 1 0 0 0
-50 100 0 0
+50 100 0 0 0
 E
 throne chair bayonets~
    The chair is made completely out of bayonets with the sharpest points in the
@@ -1223,7 +1209,7 @@ A bright orange plastic bracelet was left here.~
 ~
 12 0 0 0 0 m 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 195
 E
 idleout timer stayalive bracelet~
@@ -1238,7 +1224,7 @@ A pair of shackles are securely fastened around both of your ankles.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 T 89
 T 180
 E
@@ -1253,7 +1239,7 @@ An ice cream has been dropped here.~
 ~
 19 0 0 0 0 0 0 0 0 0 0 0 0
 1 0 0 0
-1 4 0 0
+1 4 0 0 0
 T 82
 E
 ice cream 99 flake~
@@ -1268,7 +1254,7 @@ A full English Breakfast is being served here in all its fatty glory.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-4 8 0 0
+4 8 0 0 0
 E
 full english breakfast fatty food~
    'Heaven on a plate' or the quickest route to a heart attack. Eggs, bacon,
@@ -1284,7 +1270,7 @@ A nice mug of tea has been left here.~
 ~
 17 i 0 0 0 a 0 0 0 0 0 0 0
 2 2 11 0
-7 1 0 0
+7 1 0 0 0
 E
 mug cup tea nice~
    A nice mug of fair trade tea, all you need now is a nice piece of cake. 
@@ -1299,7 +1285,7 @@ The warriors board has been posted here to allow fellow fighters to communicate.
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #94
 clerics board~
 the clerics board~
@@ -1307,7 +1293,7 @@ A bulletin board for clerics to keep in touch with each other.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #95
 thieves board~
 the thieves board~
@@ -1315,7 +1301,7 @@ A board for thieves to relate their current plots and schemes is hidden here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #96
 mages board~
 the mages board~
@@ -1323,7 +1309,7 @@ A board for mages to post to others in their class is glowing brightly here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #97
 coffee cup mug coffee~
 a cup~
@@ -1331,7 +1317,7 @@ A coffee cup has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 12 0
-2 5 0 0
+2 5 0 0 0
 E
 cup coffee mug~
    A coffee cup, it is marked with the letters 'TBA'. Coffee originated from
@@ -1348,7 +1334,7 @@ a sign~
 ~
 12 dq 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-1 0 0 0
+1 0 0 0 0
 E
 board sign notice writing~
    Please keep discussions within the room as much as possible, so that people
@@ -1361,7 +1347,7 @@ The Scythe of Death rests heavily on the ground.~
 ~
 5 jkmno 0 0 0 an 0 0 0 0 0 0 0
 0 5 10 5
-40 1000 0 20
+40 1000 0 20 0
 E
 scythe death~
    It is a very heavy scythe.  The grey handle is made from hard wood and the

@@ -2749,23 +2749,46 @@ Usage: wizhelp <name>
 Gives a list of the special commands available to you or the name you provide.
 
 The following wizard commands are implemented with level in the brackets:
-[31];         [31]detach    [31]holylight [32]ocopy  [34]reload    [32]skillset [32]unaffect  
-[33]advance   [31]dig       [31]imotd     [31]oedit  [33]reroll    [31]slist    [33]unban     
-[32]aedit     [31]echo      [31]invis     [31]olc    [31]restore   [32]snoop    [31]uptime    
-[31]at        [34]export    [32]last      [31]olist  [31]rlist     [31]stat     [32]users     
-[31]attach    [32]file      [32]links     [32]pardon [31]roomflags [32]switch   [32]vdelete   
-[33]ban       [32]force     [31]load      [31]peace  [31]saveall   [32]tcopy    [31]vnum      
-[31]buildwalk [33]freeze    [32]mcopy     [34]plist  [32]scopy     [33]tedit    [31]vstat     
-[34]cedit     [32]gecho     [31]medit     [31]purge  [31]sedit     [32]teleport [31]wiznet    
-[34]changelog [31]goto      [31]mlist     [34]qecho  [32]send      [33]thaw     [31]wizhelp   
-[32]checkload [31]handbook  [33]mute      [31]qedit  [32]set       [31]tlist    [34]wizlock   
-[33]copyover  [33]hcontrol  [31]nohassle  [31]qlist  [31]show      [32]transfer [33]wizupdate 
-[31]date      [32]hedit     [33]notitle   [31]rcopy  [34]shutdow   [31]trigedit [32]zcheck    
-[32]dc        [34]helpcheck [31]nowiz     [31]redit  [34]shutdown  [31]tstat    [31]zedit     
-
-[31]zlist     [32]zpurge    [31]zreset
-
+[31];         [31]dig       [31]invis    [31]olist   [31]roomflags [32]tcopy    [31]vstat
+[33]advance   [31]echo      [32]last     [32]pardon  [31]saveall   [33]tedit    [31]wiznet
+[32]aedit     [34]export    [32]links    [31]peace   [32]scopy     [32]teleport [31]wizhelp
+[31]at        [32]file      [31]load     [34]plist   [31]sedit     [33]thaw     [34]wizlock
+[31]attach    [32]force     [32]mcopy    [31]purge   [32]send      [31]tlist    [33]wizupdate
+[33]ban       [33]freeze    [31]medit    [34]qecho   [32]set       [32]transfer [32]zcheck   
+[31]buildwalk [32]gecho     [31]mlist    [31]qedit   [31]show      [31]trigedit [31]zedit
+[34]cedit     [31]goto      [33]mute     [31]qlist   [34]shutdow   [31]tstat    [31]zlist
+[34]changelog [31]handbook  [31]nohassle [32]rcopy   [34]shutdown  [32]unaffect [32]zlock
+[32]checkload [33]hcontrol  [33]notitle  [31]redit   [32]skillset  [33]unban    [31]zpurge
+[33]copyover  [32]hedit     [31]nowiz    [34]reload  [31]slist     [31]uptime   [31]zreset
+[31]date      [34]helpcheck [32]ocopy    [33]reroll  [32]snoop     [32]users    [32]zunlock
+[32]dc        [31]holylight [31]oedit    [31]restore [31]stat      [32]vdelete
+[31]detach    [31]imotd     [31]olc      [31]rlist   [32]switch    [31]vnum
+                        
+							
 @RHELP <any of the above commands>@n
+#31
+ZLOCK
+
+Usage: zlock <zone number>
+       zlock list
+
+Locks a zone so that building or editing is not possible.
+The 'list' shows all currently locked zones.
+'zlock all' will lock every zone with the GRID flag set.
+'zlock all all' will lock every zone in the MUD.
+
+See also: ZUNLOCK
+#31
+ZUNLOCK
+
+Usage: zunlock <zone number>
+       zunlock list
+
+Unlocks a 'locked' zone to allow building or editing.
+The 'list' shows all currently unlocked zones.
+'zunlock all' will unlock every zone in the MUD.
+
+See also: ZLOCK
 #31
 WIZLOCK
 
@@ -3004,6 +3027,7 @@ http://publications.gbdirect.co.uk/c_book/
 http://mindview.net/CDs/ThinkingInC/beta3
 http://www.cprogramming.com/tutorial/
 http://www.free-ed.net/catalog/crsemain.asp?nC=3&nD=2&nO=3
+http://www.iu.hio.no/~mark/CTutorial/CTutorial.html
 
 See also: FREE-SERVERS, DOCUMENTATION, DOWNLOADS, CWG
 #31
@@ -3109,7 +3133,7 @@ accessed by typing:                                |  TRIGEDIT-MOB-MEMORY    |
 @RHELP <TYPE>@n.                                       |  TRIGEDIT-MOB-CAST      |
 i.e. @RHELP TRIGEDIT-MOB-ACT@n                         |  TRIGEDIT-MOB-LEAVE     |
                                                    |  TRIGEDIT-MOB-DOOR      |
-						                           |  TRIGEDIT-MOB-TIME      |
+                                                   |  TRIGEDIT-MOB-TIME      |
 See also: TRIG-COMMANDS, VARIABLES, EXPRESSIONS    |=========================|
 #31
 TRIGEDIT-OBJECT-COMMANDS ROOM-COMMANDS OBJECT-COMMANDS TRIG-MOB-COMMAND TRIGEDIT-MUDCOMMANDS
@@ -3284,6 +3308,9 @@ be purged:
 if %actor.inventory(700)%
   %purge% %actor.inventory(700)%
 end
+
+Alwasy purge at the end of a trigger. If you purge a mob/obj at the beginning
+you can no longer access that mob/obj variables.
 
 Example: @RTSTAT 1375, 6300@n
 
@@ -4076,7 +4103,7 @@ TRIGEDIT-VARIABLES-OBJECTS OBJ-VAR %SHORTDESC% TRIGEDIT-OBJ-VAR VAL0 VAL1 VAL2 V
 Objects When using field - The variable returns:
  
 affects()    - Checks if flag exists. @RHELP OEDIT-AFFECT@n @RTSTAT 1205@n
-carried_by   - The id of the character carrying the object, or an empty return.
+carried_by   - The id of the character carrying the object, or an empty return. @RTSTAT 55005@n
 contents     - Gives the first object in a container.  @RTSTAT 32@n
 cost()       - The cost (not rent cost) of the object. Subfield sets.
 cost_per_day - The rent cost of the object
@@ -4084,7 +4111,7 @@ count        - The number of the same object.
 has_in       - True if the container holds the item.
 hasattached() - Checks if the trig is attached. @RHELP HASATTACHED@n.
 id           - The unique id of the object.
-is_inroom    - Returns true if object is in room.
+is_inroom    - Returns true if object is in room. @RTSTAT 55005@n
 name         - The list of key words of the object.
 next_in_list - The id of the next object in the characters inventory, or an
                empty return
@@ -4149,6 +4176,7 @@ str/stradd/wis()  () is a subfield and allows a change to the variable.
 alias           - The list of aliases of the mob or the player name. 
 align()         - The actor's alignment @RHELP ALIGN@n. Subfield adjusts.
 affect()        - Checks the actor for the affect. @RHELP TRIG-AFFECT@n 
+armor           - Checks the actor's armor class.
 canbeseen       - Checks if the the mob can see the actor. @RHELP CANBESEEN@n
 class           - The actor's class, as a string.
 drunk()         - The actor's drunkenness. Subfield sets, -1 is off.
@@ -4607,7 +4635,7 @@ Variables:
 
 Example: @RTSTAT 58, 1233@n 
 #31
-TRIGEDIT-ROOM-DOOR TRIGEDIT-DOOR
+TRIGEDIT-ROOM-DOOR TRIGEDIT-DOOR TRIG-ROOM-DOOR
  
 Activated when a player uses the door specific commands: 
 'close, open, pick, lock, unlock' on a door. 
@@ -4642,12 +4670,15 @@ See also: TRIGEDIT-ROOM-GLOBAL, %TIME%
 TRIGEDIT-ROOM-LOGIN TRIGEDIT-LOGIN TRIG-ROOM-LOGIN
 
 Activated if a player enters the game in the room the trigger is attached to.
- 
+Note: New players enter the game at level 0, not level 1.
+
 Numeric Arg : percent chance this trigger will be activated. 
 Argument    : not used.
 
 Variables:
 %self%      - the room.
+
+Example: @RTSTAT 199@n
 
 See also: TRIG-TYPE
 #31
@@ -4980,7 +5011,7 @@ Argument    : not used.
 Variables:
 %self% - the object.
 
-Example: @RTSTAT 80@n
+Example: @RTSTAT 80, 55005@n
 
 See also: RANDOM-TIMING
 #31
@@ -5227,7 +5258,7 @@ TRIGEDIT-NAMES TRIG-NAMES TRIGGER-NAMES
    Always use names that explain your trigger and include the VNUM for the 
 mob/obj/room that the trigger is going to be attached to.  It is important to 
 give your trigger a name you and others can understand.  This way others can 
-search "vnum trigger <keyword>."  This will also make it easier when using 
+search "vnum trig <keyword>."  This will also make it easier when using 
 tlist and tstat, allowing others to quickly comprehend what the trigger does.
 Here are some good examples:
 
@@ -6735,6 +6766,9 @@ L) Lifespan       : @y30 minutes                   @RHELP ZEDIT-LIFESPAN@n
 B) Bottom of zone : @y1300                         @RHELP ZEDIT-BOTTOM@n 
 T) Top of zone    : @y1399                         @RHELP ZEDIT-TOP@n
 R) Reset Mode     : @yNormal reset.                @RHELP ZEDIT-RESET@n
+F) Zone Flags     : @cNOBITS                       @RHELP ZEDIT-FLAGS@n
+M) Level Range    : @y<Not Set!>                   @RHELP ZEDIT-LEVEL@n
+
 [Command list]                                   @RHELP ZEDIT-COMMANDS@n
 0 - <END OF LIST>
 N) New command.                                  @RHELP ZEDIT-NEW@n
@@ -6744,6 +6778,38 @@ Q) Quit
 Enter your choice : 
 
 See also: ZEDIT-EQUIP, MAXLOAD, DEPENDENT, ZRESET, ZEDIT-ADVANCED
+#31
+ZEDIT-FLAGS ZONEFLAGS ZONE-FLAGS
+
+These flags are set in zedit, and are global for the whole zone.
+
+CLOSED    - Players cannot enter the zone. 
+NO_IMMORT - Immortals (below LVL_GRGOD) cannot enter the zone. 
+QUEST     - Currently unimplemented.
+GRID      - Only zones 'on-the-grid' are shown on the areas command
+NOBUILD   - Locks the zone so that it cannot be edited. Can be unlocked only by
+            a GRGOD, IMPL, or someone in the zone's builders list. 
+NOASTRAL  - Prevents teleportation magic from working to or from this zone. 
+
+See Also: ZLOCK, ZUNLOCK, ZEDIT-MENU
+#31
+ZEDIT-LEVELS ZONE-LEVELS
+
+A player is unable to enter the zone if their level is outside of the specified
+range. Summoning someone outside the range is not blocked, however. The level 
+restrictions are shown on the areas command. 
+
+See Also: ZEDIT-MENU, AREAS
+#31
+ZUNLOCK ZLOCK
+
+Zone locking and unlocking prevents any OLC from being used in the zone. Only 
+an IMPL or GRGOD can lock/unlock all zones. A builder can lock and unlock their
+own zone if their name is in the zone's builders list. 
+
+zlock - Locks one or all zones. Type zlock for usage. 
+zunlock - Locks one or all zones. Type zunlock for usage. 
+
 #31
 ZEDIT-ADVANCED ADVANCED
 
@@ -6973,21 +7039,46 @@ MEDIT-MENU MOB-MENU
 @yAn unfinished mob stands here.@n                     @RHELP MEDIT-L-DESC@n
 5) D-Desc:-
 @yIt looks unfinished.@n                               @RHELP MEDIT-D-DESC@n
-6) Level:       [   @c0@n],  7) Alignment:    [@c   0@n]   @RHELP MEDIT-LEVEL@n
-8) Hitroll:     [   @c0@n],  9) Damroll:      [  @c 0@n]   @RHELP MEDIT-HITROLL@n
-A) NumDamDice:  [   @c1@n],  B) SizeDamDice:  [   @c1@n]   @RHELP MEDIT-HP@n
-C) Num HP Dice: [  @c 1@n],  D) Size HP Dice: [   @c1@n],  E) HP Bonus: [    @c0@n]
-F) Armor Class: [@c 100@n],  G) Exp:     [        @c0@n],  H) Gold:  [       @c0@n]
-I) Position  : @yStanding@n                            @RHELP MEDIT-AC@n
-J) Default   : @yStanding@n                            @RHELP MEDIT-POSITION@n
-K) Attack    : @yhit@n                                 @RHELP MEDIT-ATTACK@n
-L) NPC Flags : @cISNPC@n                               @RHELP MEDIT-NPC@n
-M) AFF Flags : @cNOBITS@n                              @RHELP MEDIT-AFF@n
+6) Position  : @yStanding@n                            @RHELP MEDIT-AC@n
+7) Default   : @yStanding@n                            @RHELP MEDIT-POSITION@n
+8) Attack    : @yhit@n                                 @RHELP MEDIT-ATTACK@n
+9) Stats Menu...                                   @RHELP MEDIT-STATS@n
+A) NPC Flags : @cISNPC@n                               @RHELP MEDIT-NPC@n
+B) AFF Flags : @cNOBITS@n                              @RHELP MEDIT-AFF@n
 S) Script    : @cNot Set.@n                            @RHELP SCRIPT-MENU@n
-X) Delete Mob                                          @RHELP MEDIT-DELETE@n   
+W) Copy mob
+X) Delete Mob                                      @RHELP MEDIT-DELETE@n   
 Q) Quit
 Enter choice :
 
+#31
+MEDIT-STATS
+
+-- Mob Number:  @c[@y1@c]@n
+(@c1@n) Level:       @c[@y  34@c]@n                                @RHELP MEDIT-LEVEL@n
+(@c2@n) @cAuto Set Stats (based on level)@n
+
+Hit Points  (xdy+z):        Bare Hand Damage (xdy+z):  @RHELP MEDIT-HP@n
+(@c3@n) HP NumDice:  @c[@y    6@c]@n    (@c6@n) BHD NumDice:  @c[@y    5@c]@n  @RHELP MEDIT-BHD@n
+(@c4@n) HP SizeDice: @c[@y    6@c]@n    (@c7@n) BHD SizeDice: @c[@y    5@c]@n
+(@c5@n) HP Addition: @c[@y  340@c]@n    (@c8@n) DamRoll:      @c[@y    5@c]@n  @RHELP MEDIT-DAMROLL@n
+(range @y346@n to @y376@c)          (range @y10@n to @y30@n)
+
+(@cA@n) Armor Class: @c[@y-100@c]@n        (@cD@n) Hitroll:   @c[@y   11@c]@n  @RHELP MEDIT-ARMOR@n
+(@cB@n) Exp Points:  @c[@y    115600@c]@n  (@cE@n) Alignment: @c[@y 1000@c]@n  @RHELP MEDIT-EXP@n
+(@cC@n) Gold:        @c[@y       340@c]@n                          @RHELP MEDIT-GOLD@n
+
+(@cF@n) Str: @c[@y11/  0@c]@n   Saving Throws
+(@cG@n) Int: @c[@y 11@c]@n      (@cL) Paralysis     @c[@y  0@c]@n
+(@cH@n) Wis: @c[@y 11@c]@n      (@cM) Rods/Staves   @c[@y  0@c]@n
+(@cI@n) Dex: @c[@y 11@c]@n      (@cN) Petrification @c[@y  0@c]@n
+(@cJ@n) Con: @c[@y 11@c]@n      (@cO) Breath        @c[@y  0@c]@n
+(@cK@n) Cha: @c[@y 11@c]@n      (@cP) Spells        @c[@y  0@c]@n
+
+(@cQ@n) Quit to main menu
+Enter choice : 
+
+See Also: MEDIT-MENU
 #31
 MEDIT-NUMBER
 
@@ -7120,15 +7211,17 @@ obese yellow goblin" are far more impressive.
  
 See also: TEXT-EDITOR
 #31
-MEDIT-LEVEL MOB-STANDARDS MOB-LIMITS MEDIT-ALIGNMENT AUTOROLL AUTOGENERATE GENERATE MEDIT-STANDARDS MOB-BALANCE
+MEDIT-LEVEL MOB-STANDARDS MOB-LIMITS AUTOROLL AUTOGENERATE GENERATE MEDIT-STANDARDS MOB-BALANCE
 
-6) Level:       ,  7) Alignment:    
+(1) Level:       [  #]
+(2) Auto Set Stats (based on level)
+
    The level of the monster, from 1 to 34. Instead of having to manually
-enter all the data below, you can simply enter the level and the other 
-fields will be calculated for you. This is a guideline for builders, not a
-set standard. Feel free to modify any of these values. Keep it reasonable.
-The level of the mob is used in the consider command, and when gaining 
-experience. 
+enter all the data below, you can simply enter the level and then select option
+2 to autoroll all other fields so they will be calculated for you. This is a 
+guideline for builders, not a set standard. Feel free to modify any of these 
+values. Keep it reasonable. The level of the mob is used in the consider 
+command, and when gaining experience. 
 
 Here is our autoroll standard, entering mob level will calculate the following:
       GET_LEVEL(OLC_MOB(d))   = LIMIT(i, 1, 34);
@@ -7144,6 +7237,60 @@ Here is our autoroll standard, entering mob level will calculate the following:
       GET_GOLD(OLC_MOB(d))    = (mob_lev*10);
 
 See also: STANDARDS
+#31
+MEDIT-HITROLL MEDIT-DAMROLL MEDIT-NUMDAMDICE MEDIT-SIZEDAMDICE MEDIT-BHD
+
+(8) DamRoll:      [    5]
+   Damroll determines how much damage a mob does per hit when fighting.
+   
+(D) Hitroll:   [   11]
+   Hitroll determines how often a mob lands a direct hit when fighting.
+ 
+Bare Hand Damage (xdy+z): 
+(6) BHD NumDice:  [    5]
+(7) BHD SizeDice: [    5]
+   For BHD (bare hand damage), xdy specifies the dice rolls and z is the 
+strength bonus added both to BHD and weapon-inflicted damage. For example,
+a monster with a BHD of 1d4+10 will do between 11 and 14 hit points each 
+round without a weapon. If the monster picks up and wields a tiny stick 
+which gives 1d2 damage, then the monster will do 1d2 + 10 points of damage 
+per round with the stick.
+
+See also: AUTOROLL
+#31
+MEDIT-NUM-HP-DICE MEDIT-SIZE-HP-DICE MEDIT-HP-BONUS HPBONUS NUM-HP-DICE NUMHPDICE HP-DICE
+
+Hit Points  (xdy+z):
+(3) HP NumDice:  [    #]
+(4) HP SizeDice: [    #]
+(5) HP Addition: [    #]
+(range # to #)      
+
+   Hit Points are calculated by rolling dice. The first value determines
+the number of die, the second the size of the die. This may be confusing 
+for some so to make this easier I would suggest to always set the HP 
+Bonus: to how many hit points you want the mob to have instead of having 
+to figure out the rolls of the dice etc. Or better yet, just enter the mob
+level and let the autoroll settings calculate it for you.
+
+See also: AUTOROLL
+#31
+MEDIT-ARMOR-CLASS MEDIT-AC
+
+(A) Armor Class: [#]
+
+   Armor class is the ability of the monster to avoid damage. Range is from 
+-100 to 100, with lower values indicating better armor. Roughly, the scale is:
+ 
+AC   100    Naked person
+AC     0    Very heavily armored person (full plate mail)
+AC  -100    Armored Battle Tank (hopefully impossible for players)
+ 
+See Also: MEDIT-MENU
+#31
+MEDIT-EXPERIENCE MEDIT-XP MEDIT-ALIGNMENT
+
+(B) Exp Points:  [    115600]  (E) Alignment: [ 1000]
 
 Alignment
 A number from -1000 to 1000 representing the mobs initial alignment.
@@ -7156,53 +7303,19 @@ The alignment of a mobile is determined entirely by you, depending on
 the type of area you are creating. The alignment can be from -1000 
 (extremely evil) to +1000 (divinely good).
 
-#31
-MEDIT-HITROLL MEDIT-DAMROLL MEDIT-NUMDAMDICE MEDIT-SIZEDAMDICE 
-
-8) Hitroll:     ,  9) Damroll:      
-   Values that determine how often the mobs hit and how much damage they
-do per hit.
- 
-A) NumDamDice:  ,  B) SizeDamDice:  
-   For BHD (bare hand damage), xdy specifies the dice rolls and z is the 
-strength bonus added both to BHD and weapon-inflicted damage. For example,
-a monster with a BHD of 1d4+10 will do between 11 and 14 hit points each 
-round without a weapon. If the monster picks up and wields a tiny stick 
-which gives 1d2 damage, then the monster will do 1d2 + 10 points of damage 
-per round with the stick.
-
-See also: AUTOROLL
-#31
-MEDIT-NUM-HP-DICE MEDIT-SIZE-HP-DICE MEDIT-HP-BONUS HPBONUS NUM-HP-DICE NUMHPDICE HP-DICE
-
-C) Num HP Dice: ,  D) Size HP Dice: ,  E) HP Bonus: [@c0@n]
-
-   Hit Points are calculated by rolling dice. The first value determines
-the number of die, the second the size of the die. This may be confusing 
-for some so to make this easier I would suggest to always set the HP 
-Bonus: to how many hit points you want the mob to have instead of having 
-to figure out the rolls of the dice etc. Or better yet, just enter the mob
-level and let the autoroll settings calculate it for you.
-
-See also: AUTOROLL
-#31
-MEDIT-ARMOR-CLASS MEDIT-AC MEDIT-EXPERIENCE MEDIT-GOLD
-
-F) Armor Class: ,  G) Exp:     ,  H) Gold:  [@c0@n]
-
-   Armor class is the ability of the monster to avoid damage. Range is from 
--100 to 100, with lower values indicating better armor. Roughly, the scale is:
- 
-AC   100    Naked person
-AC     0    Very heavily armored person (full plate mail)
-AC  -100    Armored Battle Tank (hopefully impossible for players)
- 
    Experience is simply the number of experience points the mobile is born 
 with. This is not the exact number of experience points the player will get
 for killing the mob. A fraction of this experience is given for damaging and 
 killing a mob. This is limited by a max experience gain value and will also be
 split between members if grouped. Use the autoroll option if you are unsure of
 what to put here. 
+
+See Also: MEDIT-MENU
+#31
+MEDIT-GOLD
+
+(C) Gold:        [       #]
+
    Gold is the number of coins the mobile is born with. Do not give gold to 
 animals or anything unlikely to need money. For example a pigeon should not 
 be carrying 100 gold. Well, maybe it is a carrier pigeon, ;-) be reasonable.
@@ -8285,9 +8398,41 @@ Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
        AutoLoot: ON            AutoGold: ON           AutoSplit: ON 
         AutoSac: ON          AutoAssist: ON             AutoMap: ON
      Pagelength: 32         Screenwidth: 80                 AFK: OFF
-	 Color: on     
+        Autokey: OFF           Autodoor: OFF              Color: on     
 
 See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
+#0
+AUTOKEY
+
+Usage: autokey
+
+When enabled this toggle will automatically use a door key (if it's in your 
+inventory) when you try to open a locked door. You do not need to use the 
+separate unlock command. It can be turned on and off using the autokey 
+command, the toggle autokey command, or prefedit.
+
+See Also: AUTODOOR, TOGGLE, PREFEDIT
+#0
+AUTODOOR
+
+Usage: autodoor
+
+When enabled this toggle will automatically find the next available door when 
+using the open, close, lock, unlock or pick commands. For example, in a room 
+with several closed doors, one door will be opened each time the player types 
+open door until all the doors are open. The player can still specify a 
+direction to open a particular door.
+
+See Also: AUTOKEY, TOGGLE, PREFEDIT
+#0
+PREFEDIT PREFERENCE-EDITOR
+
+Usage: prefedit
+
+An addition to OasisOLC for players! The menu-driven interface allows players 
+to change all of their preferences and toggles.
+
+See Also: TOGGLE
 #0
 AUTOMAPPING MAPS
 
@@ -8326,9 +8471,26 @@ Any part of a zones name that is CAPITALIZED can be accessed by the teleporter.
 i.e. "teleport sanctus"
 Uncapitalized zones are linked through a capitalized zone.
 
-See also: AREAS
+See also: ZONES
 #0
-AREAS ZONES
+AREAS 
+
+Usage: areas [level-range] 
+
+Lists all zones with the GRID flag set and shows the level restrictions for 
+each zone. Players can also restrict the level range. 
+
+areas       lists all areas. 
+areas 24    list all areas where level 24 is in it's level range. 
+areas -10   list areas in the level range 0 to 10 
+areas 15-   lists all areas with a level range higher than 15 
+areas 5-12  lists areas in the level range 5 to 12
+
+Any areas that 'overlap' the specified range are shown in red.
+
+See Also: ZONES
+#0
+ZONES
 
 These zones are maintained in the latest tbaMUD format with DG Scripts on 
 The Builder Academy (TBA) telnet://tbamud.com:9091/ 
@@ -8364,6 +8526,7 @@ rumble@@tbamud.com
   25 High Tower of Magic                -- Skylar                      1-30
   26 High Tower Of Magic II             -- Skylar                      1-30
   27 MEMLIN Caves                       -- Detta                      17-25
+  28 MUDSCHOOL                          -- Welcor                      1- 3
   30 Northern MIDGAARD                  -- DikuMUD                     1-33
   31 Southern MIDGAARD                  -- DikuMUD                     1-33
   32 MIDGAARD                           -- DikuMUD                     1-33
@@ -8538,7 +8701,7 @@ by TBA or see the help files on OBJ-LIMITS, MOB-LIMITS.
 
 Thanks to everyone who has donated their time and effort.
 
-See also: STOCK, TELEPORTER
+See also: AREAS, STOCK, TELEPORTER
 #0
 IDLE VOID LIMBO
 
@@ -11512,7 +11675,15 @@ DELETE SUICIDE
 select the option to delete your character. 
 
 #0
-TRIGEDIT-OBJ-ACT TRANSLATE DODGE SEARCH PEEK SCAN WHOIS OOC OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS CLANS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING IDENTIFY CLONES CLONING ZCLONE BERSERK CLANS MUSIC RACES IMC
+WHOIS
+
+Usage: whois <player name>
+
+Lists basic information about the player specified.
+
+See Also: WHO
+#0
+TRIGEDIT-OBJ-ACT TRANSLATE DODGE SEARCH PEEK SCAN OOC OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS CLANS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING IDENTIFY CLONES CLONING ZCLONE BERSERK CLANS MUSIC RACES IMC
 
    Not implemented.
    Translation engine: http://babelfish.yahoo.com/
@@ -12070,6 +12241,17 @@ make backups and will give you a copy of your work whenever you request it.
 
 See also: TMC, TBA-ADVERTISING
 #0
+BUILDERS IMMORTALS
+
+   A builder is a term usually used to describe a person who designs MUD zones
+for other characters to explore. Any player with motivation, ideas, and good 
+writing style can be a builder as well as a player. As a Builder, your job is 
+to create the virtual world in which players can roam around, solve puzzles, 
+find treasures, and gain experience. A Builder creates the rooms, objects, 
+mobs, shops, and triggers with which players will interact. 
+
+See also: OLC, REDIT, MEDIT, OEDIT, ZEDIT, SEDIT, TRIGEDIT, AEDIT
+#31
 REPORT-EXAMPLE BUILDER-REPORT
 
 The following is Justo's monthly builder's report update. These are not required,
@@ -12123,17 +12305,6 @@ From: justo
     tested the Zones. What have we got in that regard now ?
   Justo's Monthly Zone report
 
-#31
-BUILDERS IMMORTALS
-
-   A builder is a term usually used to describe a person who designs MUD zones
-for other characters to explore. Any player with motivation, ideas, and good 
-writing style can be a builder as well as a player. As a Builder, your job is 
-to create the virtual world in which players can roam around, solve puzzles, 
-find treasures, and gain experience. A Builder creates the rooms, objects, 
-mobs, shops, and triggers with which players will interact. 
-
-See also: OLC, REDIT, MEDIT, OEDIT, ZEDIT, SEDIT, TRIGEDIT, AEDIT
 #31
 TRIAL-VNUM-ASSIGNER ASSIGNER TRIAL-VNUM-LIMITER TBALIM JUNK-ASSIGNER LIMITER VNUM-ASSIGNER TASKS
 
@@ -12569,7 +12740,7 @@ tbamud.com 9091
 http://tbamud.com
 rumble@tbamud.com
 #0
-FAMOUS QUOTES FUNNY HUMOR JOKES LAUGH
+FAMOUS QUOTES FUNNY HUMOR JOKES LAUGH BASH.ORG
 
 Detta: this might hurt a little going in ;)
 Detta: yeah have been up to my waist in manure before heh, fun stuff :P
@@ -12581,6 +12752,7 @@ Detta: you know... I normally just think about cute fluffy animals and paradise 
 *Shamra mistakenly gave everyone the wrong URL, then:
 Shamra: 33 Yes it was a PORN site...P-O-R-N...are you happy now! ??
 Shamra: all this chemistry talk is going to give me a serious orgasm :P
+Shamra: except you have all these odd people touching your junk...
 
 Manivo: ...it hurts to have a conscience. =(
 Manivo: (And the knowledge that Rumble reads the backlog) :P

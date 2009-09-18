@@ -1,7 +1,13 @@
 #257
 Kaan~
 Jareth Main City~
-25700 25799 10 2
+25700 25799 10 2 d 0 0 0 -1 -1
+M 0 25704 1 25700 	(maris' wife Ilena)
+G 1 25740 100 -1 	(a blue jacket)
+G 1 25742 100 -1 	(a shield)
+G 1 25743 100 -1 	(a pair of black leather pants)
+G 1 25744 100 -1 	(a leather helm)
+G 1 25741 100 -1 	(a pair of leather gloves)
 M 0 25719 1 25711 	(the banker)
 G 1 25705 1 -1 	(a key of dull metal)
 R 0 25711 25758 -1 	(a deposit slip)
@@ -15,12 +21,6 @@ G 1 25789 10 -1 	(a brilliant sapphire)
 M 0 25709 1 25709 	(the wellmaster)
 G 1 25765 100 -1 	(a cup)
 G 1 25779 100 -1 	(a canteen)
-M 0 25704 1 25700 	(maris' wife Ilena)
-G 1 25740 100 -1 	(a blue jacket)
-G 1 25742 100 -1 	(a shield)
-G 1 25743 100 -1 	(a pair of black leather pants)
-G 1 25744 100 -1 	(a leather helm)
-G 1 25741 100 -1 	(a pair of leather gloves)
 M 0 25721 1 25778 	(the priests' guildmaster)
 R 0 25778 3096 -1 	(a social bulletin board)
 O 0 3096 99 25778 	(a social bulletin board)

@@ -1,7 +1,7 @@
 #263
 Kaan~
 Farmlands~
-26300 26399 30 2
+26300 26399 30 2 d 0 0 0 -1 -1
 M 0 26314 1 26339 	(Suzarre the Pig Woman)
 E 1 26318 1 6 	(a straw hat)
 E 1 26319 500 8 	(some steel-toed boots)
@@ -27,7 +27,7 @@ M 0 26310 1 26323 	(Erik)
 E 1 26316 1 17 	(a skipping stone)
 G 1 26317 1 -1 	(a bamboo fishing pole)
 M 0 26303 1 26309 	(the tramp)
-G 1 26301 1 -1 	( a patchwork bag)
+G 1 26301 1 -1 	(a patchwork bag)
 E 1 26304 1 6 	(a floppy cloth hat)
 E 1 26305 1 12 	(a patchwork cloak)
 M 0 26307 1 26315 	(a tractor)

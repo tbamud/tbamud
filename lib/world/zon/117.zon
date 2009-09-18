@@ -1,7 +1,8 @@
 #117
 Dysprosic~
 Los Torres~
-11700 11799 20 2
+11700 11799 20 2 d 0 0 0 -1 -1
+O 0 11799 1 11700 	(the Spoiler's List for Los Torres.)
 M 0 11718 1 11715 	(the Empress's bodyguard Verno)
 M 0 11719 1 11720 	(Empress Leraillia)
 M 0 11702 10 11703 	(citizen)
@@ -37,7 +38,6 @@ R 0 11722 11738 -1 	(a Marble Fountain)
 O 1 11738 1 11722 	(a Marble Fountain)
 R 0 11758 11737 -1 	(a broken chandelier)
 M 0 11712 1 11758 	(the Government Official Miranda)
-O 0 11799 1 11700 	(the Spoiler's List for Los Torres.)
 M 0 11704 1 11704 	(Zulthan the Waiter)
 G 1 11707 100 -1 	(a Turkey Sandwich)
 G 1 11709 100 -1 	(a Turkey Soup)

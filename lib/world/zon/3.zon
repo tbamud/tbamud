@@ -1,7 +1,8 @@
 #3
 Rumble~
 Sanctus III~
-300 399 30 2
+300 399 30 2 d 0 0 0 -1 -1
+M 0 118 3 300 	(the woman)
 M 0 301 1 305 	(the naked magi)
 E 1 326 99 12 	(a white towel)
 M 0 130 3 305 	(the maid)
@@ -38,7 +39,6 @@ M 0 191 3 333 	(the puppy)
 E 1 134 99 3 	(a dog collar)
 M 0 144 3 346 	(the black magi)
 M 0 128 3 341 	(the Red Magi)
-M 0 118 3 300 	(the woman)
 M 0 114 1 322 	(the man)
 M 0 203 1 363 	(the stablemaster)
 M 0 201 2 326 	(the apprentice healer)

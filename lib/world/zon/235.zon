@@ -1,11 +1,11 @@
 #235
 Unknown~
 Dwarven Mines~
-23500 23599 30 2
-R 0 23599 23501 -1 	(a map of the dwarven mines)
-O 0 23501 5 23599 	(a map of the dwarven mines)
+23500 23599 30 2 d 0 0 0 -1 -1
 M 0 23500 4 23500 	(the dwarven knight)
 E 1 23500 99 16 	(a pickaxe)
+R 0 23599 23501 -1 	(a map of the dwarven mines)
+O 0 23501 5 23599 	(a map of the dwarven mines)
 M 0 23508 2 23508 	(a mutant dwarf)
 G 1 23520 99 -1 	(a leather bag)
 E 1 23599 99 16 	(a long sword)

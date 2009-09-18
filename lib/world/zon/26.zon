@@ -1,14 +1,15 @@
 #26
 Skylar~
 High Tower of Magic II~
-2600 2699 20 2
+2600 2699 20 2 d 0 0 0 -1 -1
+D 0 2600 0 1 	(A Hallway)
 M 0 2539 5 2628 	(the wooden golem)
 M 0 2539 5 2628 	(the wooden golem)
 M 0 2540 1 2602 	(the Master Spellbinder)
 E 1 2524 1 17 	(a silvery key)
 G 1 2523 1 -1 	(a silvery key)
 E 1 2565 2 13 	(a holstered belt)
-P 1 2566 2 2565         (a blackened wand) 
+P 1 2566 2 2565 	(a blackened wand)
 M 0 2541 1 2609 	(the Golem Maker)
 E 1 2567 2 17 	(a runed chisel)
 M 0 2542 1 2609 	(the granite golem)
@@ -92,7 +93,6 @@ O 0 2541 1 2682 	(a chameleon poncho)
 O 0 2542 1 2682 	(a pair of old boots)
 O 0 2544 1 2682 	(a leather backpack)
 P 1 2543 1 2544 	(a seashell ring)
-D 0 2600 0 1 	(A Hallway)
 D 0 2601 2 1 	(A Store Room)
 D 0 2601 3 1 	(A Store Room)
 D 0 2602 1 1 	(The Master Spellbinder's Chamber)

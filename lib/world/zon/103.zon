@@ -1,7 +1,8 @@
 #103
 Taylor~
 DBZ World~
-10300 10399 5 2
+10300 10399 5 2 d 0 0 0 -1 -1
+O 0 10300 1 10300 	(the Zone Description Sign)
 M 0 10361 1 10361 	(the Elder Namek)
 M 0 10346 7 10346 	(a Namek Townsmen)
 M 0 10379 5 10379 	(a rabbit)
@@ -25,7 +26,6 @@ M 0 10307 5 10307 	(a large wolf)
 M 0 10304 1 10304 	(the guardian of earth)
 M 0 10306 1 10304 	(the guardians helper)
 O 0 10304 1 10304 	(a yellow cloud)
-O 0 10300 1 10300 	(the Zone Description Sign)
 O 0 10303 1 10303 	(a teleporter)
 O 0 10308 2 10303 	(a sign)
 O 0 10302 1 10302 	(a teleporter)

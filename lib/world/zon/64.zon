@@ -1,9 +1,9 @@
 #64
 C.A.W.~
 Rand's Tower~
-6400 6499 20 1
-M 0 6406 1 6445 	(a small God)
+6400 6499 20 1 d 0 0 0 -1 -1
 M 0 6400 3 6400 	(the mountain goat)
+M 0 6406 1 6445 	(a small God)
 M 0 6400 3 6402 	(the mountain goat)
 M 0 6400 3 6404 	(the mountain goat)
 M 0 6401 2 6407 	(the Demon of Decay)

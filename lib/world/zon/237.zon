@@ -1,7 +1,7 @@
 #237
 Welcor~
 Dwarven Trade Route~
-23700 23799 30 2
+23700 23799 30 2 d 0 0 0 -1 -1
 M 0 23705 1 23700 	(the dwarven trader)
 G 1 23702 100 -1 	(a dwarven dagger)
 E 1 23719 100 8 	(some soft leather boots)

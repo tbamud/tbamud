@@ -1,7 +1,7 @@
 #261
 Kaan~
 Inna & Igor's Castle~
-26100 26199 20 1
+26100 26199 20 1 d 0 0 0 -1 -1
 M 0 26100 1 26100 	(the butler)
 E 1 26118 4 12 	(a black overcoat)
 E 1 26117 4 7 	(some black slacks)
@@ -35,7 +35,7 @@ G 1 26112 50 -1 	(a Flaming Bottle)
 G 1 26113 50 -1 	(a mug (Marty's Own Malt))
 G 1 26114 50 -1 	(a coffee cup)
 G 1 26115 50 -1 	(a cup)
-D 0 26128 0 1 	(undefined)
+D 0 26128 0 1 	(A Dark Room)
 O 0 26106 1 26128 	(an amulet)
 D 0 26123 0 1 	(Spotless White Hallway)
 D 0 26123 2 1 	(Spotless White Hallway)

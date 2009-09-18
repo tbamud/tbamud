@@ -1,14 +1,14 @@
 #302
 Matrix of C.A.W.~
 Campus II~
-30200 30299 30 2
+30200 30299 30 2 d 0 0 0 -1 -1
+O 0 30112 99 30200 	(a tam)
 M 0 30139 1 30245 	(Bob the storekeeper)
 G 1 30136 99 -1 	(a pale apple)
 G 1 30140 99 -1 	(a can of PopCoke)
 G 1 30141 99 -1 	(a candy bar)
 G 1 30152 99 -1 	(a carton of chocolate milk)
 G 1 30151 99 -1 	(a carton of white milk)
-O 0 30112 99 30200 	(a tam)
 D 0 30201 1 2 	(Reception Desk)
 D 0 30202 3 2 	(Main Office)
 D 0 30206 3 1 	(Landing)

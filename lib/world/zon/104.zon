@@ -1,7 +1,9 @@
 #104
 Taylor~
 Land of Orchan~
-10400 10499 5 2
+10400 10499 5 2 d 0 0 0 -1 -1
+O 0 10427 1 10400 	(a Zone Description Sign)
+M 0 10414 1 10400 	(hells hound)
 M 0 10429 1 10464 	(the Weatherman)
 M 0 10409 1 10409 	(Jak)
 G 1 10408 100 -1 	(a pair of metal gloves)
@@ -58,8 +60,6 @@ M 0 10415 15 10455 	(a border collie)
 M 0 10415 15 10437 	(a border collie)
 M 0 10415 15 10447 	(a border collie)
 M 0 10415 15 10444 	(a border collie)
-O 0 10427 1 10400 	(a Zone Description Sign)
-M 0 10414 1 10400 	(hells hound)
 O 0 10414 1 10415 	(a house sign)
 O 0 10411 1 10417 	(a road sign)
 O 0 10403 1 10411 	(a tacky wooden sign)

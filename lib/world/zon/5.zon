@@ -1,7 +1,11 @@
 #5
 Unknown~
 Newbie Farm~
-500 599 30 2
+500 599 30 2 d 0 0 0 -1 -1
+M 0 500 1 500 	(a bunny)
+O 0 500 1 500 	(a dandelion)
+R 0 500 504 -1 	(a little spring)
+O 0 504 99 500 	(a little spring)
 M 0 511 2 511 	(a chick)
 R 0 511 521 -1 	(a potato)
 O 0 521 99 511 	(a potato)
@@ -63,10 +67,6 @@ R 0 581 510 -1 	(a water trough)
 O 0 510 99 581 	(a water trough)
 R 0 571 509 -1 	(a puddle of water)
 O 0 509 99 571 	(a puddle of water)
-M 0 500 1 500 	(a bunny)
-O 0 500 1 500 	(a dandelion)
-R 0 500 504 -1 	(a little spring)
-O 0 504 99 500 	(a little spring)
 R 0 509 504 -1 	(a little spring)
 O 0 504 99 509 	(a little spring)
 M 0 503 1 512 	(the old farmer)

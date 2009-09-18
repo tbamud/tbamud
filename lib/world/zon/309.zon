@@ -1,7 +1,15 @@
 #309
 Kaan~
 Keep of Baron Westlawn~
-30900 30999 30 2
+30900 30999 30 2 d 0 0 0 -1 -1
+M 0 30900 2 30900 	(a guardsman)
+E 1 30900 100 5 	(a red steel breastplate)
+E 1 30901 100 8 	(a red steel face plate)
+E 1 30902 100 16 	(a guardsman's sword)
+M 0 30900 2 30900 	(a guardsman)
+E 1 30900 100 5 	(a red steel breastplate)
+E 1 30901 100 8 	(a red steel face plate)
+E 1 30902 100 16 	(a guardsman's sword)
 O 0 30931 1 30953 	(an iron anvil)
 M 0 30926 1 30953 	(the Baron Westlawn)
 E 1 30933 100 1 	(a red steel ring)
@@ -12,14 +20,6 @@ E 1 30932 100 10 	(a set of leather forearm guards)
 E 1 30929 100 16 	(a forgeman's hammer)
 E 1 30930 100 6 	(a brass eye guard)
 D 0 30953 3 1 	(Arms Cache and Smithy)
-M 0 30900 2 30900 	(a guardsman)
-E 1 30900 100 5 	(a red steel breastplate)
-E 1 30901 100 8 	(a red steel face plate)
-E 1 30902 100 16 	(a guardsman's sword)
-M 0 30900 2 30900 	(a guardsman)
-E 1 30900 100 5 	(a red steel breastplate)
-E 1 30901 100 8 	(a red steel face plate)
-E 1 30902 100 16 	(a guardsman's sword)
 D 0 30939 3 1 	(Wide Hallway)
 M 0 30942 1 30957 	(Bud)
 M 0 30941 1 30936 	(a visiting merchant)

@@ -2161,8 +2161,8 @@ Obj Random Example~
 1 b 1
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-set actor %self.worn_by%
-if %actor%
+if %self.worn_by%
+  set actor %self.worn_by%
   %send% %actor% War's Blood thirsts for battle.
 end
 ~

@@ -1,7 +1,8 @@
 #255
 Kaan~
 Shipwreck~
-25500 25599 20 2
+25500 25599 20 2 d 0 0 0 -1 -1
+M 0 25505 1 25500 	(an old sailor)
 M 0 25501 25 25521 	(a pirate ghost)
 D 0 25521 1 1 	(In a Corridor - Lower Deck)
 D 0 25521 3 1 	(In a Corridor - Lower Deck)
@@ -36,7 +37,6 @@ M 0 25501 25 25512 	(a pirate ghost)
 E 1 25504 3 16 	(a ghostly dagger)
 M 0 25501 25 25511 	(a pirate ghost)
 E 1 25504 3 16 	(a ghostly dagger)
-M 0 25505 1 25500 	(an old sailor)
 M 0 25502 1 25525 	(the Captain ghost)
 E 1 25505 1 16 	(the Captain's rapier)
 E 1 25503 1 8 	(an eyepatch)

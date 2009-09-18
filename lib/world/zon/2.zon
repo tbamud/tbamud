@@ -1,7 +1,11 @@
 #2
 Rumble~
 Sanctus II~
-200 299 10 2
+200 299 10 2 d 0 0 0 -1 -1
+M 0 162 3 237 	(a statesman)
+E 1 140 99 12 	(a cloth jacket)
+O 0 116 1 237 	(the bench)
+M 0 169 3 200 	(a citizen)
 M 0 13 1 235 	(a kind soul)
 M 0 125 3 254 	(the young girl)
 M 0 164 1 254 	(the drunk)
@@ -9,7 +13,6 @@ G 1 101 99 -1 	(an imported bottle of beer)
 G 1 197 99 -1 	(a "kick me" sign)
 M 0 196 1 251 	(the newbie guide)
 O 0 251 1 251 	(a marble fountain)
-M 0 169 3 200 	(a citizen)
 M 0 33 1 266 	(Homer Simpson)
 E 1 71 99 1 	(a chinese finger trap)
 E 1 71 99 2 	(a chinese finger trap)
@@ -158,9 +161,6 @@ M 0 166 3 279 	(the lance corporal)
 E 1 141 99 9 	(a pair of leather gloves)
 M 0 166 3 204 	(the lance corporal)
 E 1 141 99 9 	(a pair of leather gloves)
-M 0 162 3 237 	(a statesman)
-E 1 140 99 12 	(a cloth jacket)
-O 0 116 1 237 	(the bench)
 M 0 162 3 299 	(a statesman)
 E 1 140 99 12 	(a cloth jacket)
 M 0 169 3 250 	(a citizen)

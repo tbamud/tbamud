@@ -1,3 +1,9 @@
+#12000
+Rome Zone Description Room~
+You are in an unfinished room.
+~
+120 0 0 0 0 0
+S
 #12001
 The Judging Booth~
    You stand in the midst of a small room with windows on the east and south
@@ -12,14 +18,14 @@ There is a rickety ladder leading down.
 trapdoor~
 1 12033 12002
 E
-pencils pencil~
-   An ordinary #2 lead pencil.  Judging by the teeth marks on the shaft, the
-user should see a dentist very soon!  
-~
-E
 scorecards~
    The cards all have been filled in with the judges evaluations of today's
 combatants.  It seems that Sparticus is having a good day.  
+~
+E
+pencils pencil~
+   An ordinary #2 lead pencil.  Judging by the teeth marks on the shaft, the
+user should see a dentist very soon!  
 ~
 S
 #12002
@@ -214,8 +220,13 @@ direction.
 ~
 0 -1 12010
 E
-coach trainer~
-   The coach tell you "Stop bothering my athletes and get lost!  "
+gladiator~
+   He is a big muscular man with lots of armor.  He sizes you up and decides
+that you aren't worth his time or trouble.  
+~
+E
+driver~
+   The driver is too busy changing a wheel on his chariot to notice you.  
 ~
 E
 chariot~
@@ -225,13 +236,8 @@ the chariot as belonging to Drucilis 'Lightning-whip' Octavious, a favorite
 driver of the masses.  
 ~
 E
-driver~
-   The driver is too busy changing a wheel on his chariot to notice you.  
-~
-E
-gladiator~
-   He is a big muscular man with lots of armor.  He sizes you up and decides
-that you aren't worth his time or trouble.  
+coach trainer~
+   The coach tell you "Stop bothering my athletes and get lost!  "
 ~
 S
 #12010
@@ -478,17 +484,17 @@ around and go that way??!!  Please?
 ~
 0 -1 12013
 E
-roll paper~
-   Hey!!  This is first-class stuff!!  - White Cloud brand with lotion.  The
-roll is about half-used.  
-~
-E
 hole toilet~
    You walk over to the hole and see that there is a large turd floating in a
 pool black water about 2 feet below the surface of the ground.  As you lean
 closer to get a better look, your nose catches a concentrated dose of the
 fragrant aroma wafting upwards.  Your stomach decides that it has had enough of
 this shoddy treatment and you puke until it is empty.  
+~
+E
+roll paper~
+   Hey!!  This is first-class stuff!!  - White Cloud brand with lotion.  The
+roll is about half-used.  
 ~
 S
 #12021
@@ -658,10 +664,14 @@ Off through the trees, you see a small, plain hut.
 ~
 0 -1 12021
 E
-trees tree shrubs shrub plants plant~
-   All of the plants, trees and shrubs are perfectly trimmed, without so much as
-a dead leaf anywhere to be seen.  You welcome the shade that they give from the
-harsh sun above.  
+Venus~
+   Venus, the Roman goddess of beauty and knowledge is displayed in a all of her
+splendor.  
+~
+E
+Jupiter~
+   A statue made of pure gold depicts Jupiter sitting on his throne.  The throne
+looks like it is made of silver.  
 ~
 E
 Neptune~
@@ -670,14 +680,10 @@ It is sitting in the center of a small pond which has hundreds of beautiful fish
 swimming in it.  
 ~
 E
-Jupiter~
-   A statue made of pure gold depicts Jupiter sitting on his throne.  The throne
-looks like it is made of silver.  
-~
-E
-Venus~
-   Venus, the Roman goddess of beauty and knowledge is displayed in a all of her
-splendor.  
+trees tree shrubs shrub plants plant~
+   All of the plants, trees and shrubs are perfectly trimmed, without so much as
+a dead leaf anywhere to be seen.  You welcome the shade that they give from the
+harsh sun above.  
 ~
 S
 #12028
@@ -696,9 +702,9 @@ You see a well manicured path that winds through the estate.
 ~
 0 -1 12027
 E
-furniture~
-   You hope to eventually be able to own a piece of furniture just like these
-someday.  These are only dreams, of course.  
+floor tile~
+   Very expensive!  A lot of master craftsmen labored long and hard to produce
+such a work of art.  
 ~
 E
 windows~
@@ -706,9 +712,9 @@ windows~
 the gods.  
 ~
 E
-floor tile~
-   Very expensive!  A lot of master craftsmen labored long and hard to produce
-such a work of art.  
+furniture~
+   You hope to eventually be able to own a piece of furniture just like these
+someday.  These are only dreams, of course.  
 ~
 S
 #12029
@@ -729,12 +735,12 @@ Nero Drive continues in that direction.
 ~
 0 -1 12030
 E
-road~
-   The road is wide and very muddy.  
-~
-E
 gate~
    The gate is made of solid iron and is well maintained.  
+~
+E
+road~
+   The road is wide and very muddy.  
 ~
 S
 #12030
@@ -814,15 +820,15 @@ aqueduct and buildings of the Roman government.
 ~
 0 -1 12033
 E
-aqueduct~
-   To the southeast, off in the distance, stands a large stone structure that is
-used to channel water into the city.  
-~
-E
 vendor vendors~
    There are several sidewalk vendors here, selling fresh fruits and vegetables,
 home baked goods, fine jewelry and other items.  Most of the items for sale are
 of very high quality.  
+~
+E
+aqueduct~
+   To the southeast, off in the distance, stands a large stone structure that is
+used to channel water into the city.  
 ~
 S
 #12033
@@ -934,13 +940,10 @@ The south door leads directly to the senate chambers.
 door wooden~
 2 12035 12037
 E
-flowers plants flower plant~
-   The plants contribute to a very relaxing atmosphere.  
-~
-E
-bookcase books~
-   The books are very old and contain the wisdom of wise men from throughout the
-entire Roman empire.  They appear to be collecting dust.  
+desk~
+   The desk is made of solid walnut and gold inlay.  It is exquisitely carved
+with superior craftsmanship, the likes of which has rarely been seen.  It was
+probably brought to Rome from Gaul.  
 ~
 E
 documents decrees paperwork document decree papers paper~
@@ -948,10 +951,13 @@ documents decrees paperwork document decree papers paper~
 sealed with wax.  
 ~
 E
-desk~
-   The desk is made of solid walnut and gold inlay.  It is exquisitely carved
-with superior craftsmanship, the likes of which has rarely been seen.  It was
-probably brought to Rome from Gaul.  
+bookcase books~
+   The books are very old and contain the wisdom of wise men from throughout the
+entire Roman empire.  They appear to be collecting dust.  
+~
+E
+flowers plants flower plant~
+   The plants contribute to a very relaxing atmosphere.  
 ~
 S
 #12037
@@ -1034,6 +1040,17 @@ You can see a busy street in that direction.
 ~
 0 -1 12033
 E
+telescope~
+   If it were operational, it would offer a spectacular view of the Mountain of
+the Gods.  Unfortunately, it appears to have been vandalized.  
+~
+E
+aqueduct~
+   The aqueduct is a massive stone structure that channels water into Rome from
+the Mountain of the Gods.  During the rainy season, it is filled to the top.  
+However, due to recent drought, the water level appears to be very low.  
+~
+E
 sign~
    ********************************************
    *                                          *
@@ -1044,17 +1061,6 @@ sign~
    *           Magic Platform Company         *
    *                                          *
    ********************************************
-~
-E
-aqueduct~
-   The aqueduct is a massive stone structure that channels water into Rome from
-the Mountain of the Gods.  During the rainy season, it is filled to the top.  
-However, due to recent drought, the water level appears to be very low.  
-~
-E
-telescope~
-   If it were operational, it would offer a spectacular view of the Mountain of
-the Gods.  Unfortunately, it appears to have been vandalized.  
 ~
 S
 #12041
@@ -1198,12 +1204,12 @@ The steps terminate onto Clay Avenue.
 ~
 0 -1 12046
 E
-statue statues~
-   There is really nothing noteworthy about them.  
-~
-E
 stairs stairway steps~
    The stairs are immaculately polished and made of white marble.  
+~
+E
+statue statues~
+   There is really nothing noteworthy about them.  
 ~
 S
 #12046
@@ -1235,14 +1241,14 @@ There are some white marble steps leading up.
 ~
 0 -1 12045
 E
-mountain~
-   Off to the southwest, you can see a huge mountain that is partially obscured
-by the haze.  It is rumored that the gods reside there and protect the city.  
-~
-E
 stone structure aqueduct~
    You see a massive stone structure, built several centuries ago, that is used
 to channel water into the city.  
+~
+E
+mountain~
+   Off to the southwest, you can see a huge mountain that is partially obscured
+by the haze.  It is rumored that the gods reside there and protect the city.  
 ~
 S
 #12047
@@ -1323,14 +1329,14 @@ There is a door, reinforced with steel, in that direction.
 door~
 2 12038 12042
 E
-cinders ashes pile~
-   The ashes are a very fine grayish white powder that seems to be the only
-worldly remains of Froboz's "test specimens".  
-~
-E
 workbench workbenches tubes beakers crucibles dishes~
    These are all tools of great power.  You cannot even begin to understand what
 any of this stuff does.  
+~
+E
+cinders ashes pile~
+   The ashes are a very fine grayish white powder that seems to be the only
+worldly remains of Froboz's "test specimens".  
 ~
 S
 #12050
@@ -1360,14 +1366,14 @@ The waiting room lies in that direction.
 ~
 0 -1 12043
 E
-seal~
-   The seal of the Emperor is mounted above the judge's stand.  
-~
-E
 bench stand box jury~
    You see large wooden structures that are designed to separate the judge, jury
 and witnesses from the rest of the courtroom.  They are made of polished oak and
 are strictly functional.  
+~
+E
+seal~
+   The seal of the Emperor is mounted above the judge's stand.  
 ~
 S
 #12051
@@ -1390,14 +1396,14 @@ The clay street leads into the city.
 ~
 0 -1 12046
 E
-gate~
-   The gate is fabricated from iron and has been designed to keep intruders out
-of the city.  
-~
-E
 spires towers~
    There are two tall spires on either side of the gate and are constantly
 manned by the city guards.  They are made of stone and stand about 40 feet tall.
+~
+E
+gate~
+   The gate is fabricated from iron and has been designed to keep intruders out
+of the city.  
 ~
 S
 #12052
@@ -1471,14 +1477,14 @@ The courtroom lies in that direction.
 door~
 1 12039 12050
 E
+tombs books~
+   The books are very large and filled with Roman legal precedent.  
+~
+E
 papers documents~
    There are hundreds of pages of petitions, lawsuits and court orders sitting
 on the desk.  One particularly interesting case involves a nobleman, a slave and
 a roll of toilet paper.  
-~
-E
-tombs books~
-   The books are very large and filled with Roman legal precedent.  
 ~
 S
 #12056
@@ -1500,13 +1506,13 @@ You see a small trail, leading down.
 ~
 0 -1 12059
 E
-trail path~
-   The path is a little muddy, possibly due to a recent thundershower.  
-~
-E
 tree trees vegetation~
    All of the vegetation is lush, green and in full bloom.  You wish that you
 could take the time to stop and enjoy it properly.  
+~
+E
+trail path~
+   The path is a little muddy, possibly due to a recent thundershower.  
 ~
 S
 #12057
@@ -1566,19 +1572,19 @@ You see a path leading up the mountain.
 ~
 0 -1 12059
 E
-trees fruit~
-   The fruit trees, nourished by the fertile ground at the edge of the stream
-and sustained by the brilliant sunshine, line the banks of the stream and are
-laden with fruit.  
+stream brook~
+   A stream of the clearest, cleanest water that you have ever seen winds its
+way through the valley.  
 ~
 E
 fish~
    A variety of species swims peacefully in the cool, clear water.  
 ~
 E
-stream brook~
-   A stream of the clearest, cleanest water that you have ever seen winds its
-way through the valley.  
+trees fruit~
+   The fruit trees, nourished by the fertile ground at the edge of the stream
+and sustained by the brilliant sunshine, line the banks of the stream and are
+laden with fruit.  
 ~
 S
 #12059

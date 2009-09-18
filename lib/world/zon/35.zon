@@ -1,7 +1,7 @@
 #35
 Copper II~
 Miden'Nir~
-3500 3599 20 2
+3500 3599 20 2 d 0 0 0 -1 -1
 M 0 3500 3 3521 	(the wyvern)
 M 0 3500 3 3521 	(the wyvern)
 M 0 3500 3 3521 	(the wyvern)
@@ -41,7 +41,7 @@ E 1 3503 8 5 	(a studded leather jacket)
 M 0 3507 4 3584 	(the dark horseman)
 E 1 3503 8 5 	(a studded leather jacket)
 O 0 3505 2 3521 	(a mutilated corpse)
-O 0 3506 1 3521 	(a mutilated corpse)
+O 0 3506 1 3521 	(a mutilated carcass)
 P 1 3507 1 3506 	(an ornate dagger)
 O 0 3505 2 3521 	(a mutilated corpse)
 S

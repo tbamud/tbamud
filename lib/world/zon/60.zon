@@ -1,7 +1,8 @@
 #60
 Quifael~
 Haon-Dor, Light Forest~
-6000 6099 20 2
+6000 6099 20 2 d 0 0 0 -1 -1
+O 0 6012 1 6000 	(a large sign)
 M 0 6014 4 6026 	(the large black crow)
 M 0 6014 4 6026 	(the large black crow)
 M 0 6014 4 6026 	(the large black crow)
@@ -9,7 +10,6 @@ M 0 6015 1 6026 	(the grotesque vulture)
 O 0 6017 1 6026 	(the carcass of a boar)
 P 1 6018 99 6017 	(a large slab of meat)
 P 1 6019 99 6017 	(a pair of boar tusks)
-O 0 6012 1 6000 	(a large sign)
 M 0 6016 1 6025 	(the young buck)
 G 1 6024 4 -1 	(a piece of venison)
 R 0 6025 6015 -1 	(the lake)

@@ -1,7 +1,7 @@
 #72
 Redferne~
 Sewer Maze~
-7200 7299 25 2
+7200 7299 25 2 d 0 0 0 -1 -1
 O 1 7204 6 7200 	(a neon blue potion)
 O 1 7210 1 7200 	(a huge treasure)
 D 0 7200 1 2 	(The Treasury)

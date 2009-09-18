@@ -1,13 +1,14 @@
 #56
 Duke~
 New Thalos Wilderness~
-5600 5699 30 2
+5600 5699 30 2 d 0 0 0 -1 -1
+M 0 5470 1 5600 	(the cryohydra)
+D 0 5600 2 2 	(The Cell)
 M 0 5442 21 5631 	(the wandering prophet)
 M 0 5442 21 5631 	(the wandering prophet)
 M 0 5443 14 5617 	(the alley cat)
 M 0 5444 24 5692 	(the vulture)
 M 0 5469 1 5699 	(the ixitxachitl)
-M 0 5470 1 5600 	(the cryohydra)
 M 0 5471 1 5604 	(the minotaur lizard)
 M 0 5473 1 5603 	(the spotted lion)
 M 0 5476 1 5602 	(the couatl)
@@ -16,7 +17,6 @@ D 0 5623 1 1 	(River Ishtar)
 D 0 5601 0 2 	(The Cell)
 D 0 5602 0 2 	(The Cell)
 D 0 5603 0 2 	(The Cell)
-D 0 5600 2 2 	(The Cell)
 D 0 5604 0 2 	(The Cell)
 D 0 5653 1 1 	(In The Mountains)
 D 0 5698 3 1 	(Under The dock)

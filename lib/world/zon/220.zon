@@ -1,10 +1,10 @@
 #220
 Exa~
 The Enchanted Kitchen~
-22000 22099 30 2
+22000 22099 30 2 d 0 0 0 -1 -1
 M 0 22000 10 22017 	(a dust bunny)
-R 0 22015 22005 -1 	(@nA drippy @cfaucet@n)
-O 1 22005 1 22015 	(@nA drippy @cfaucet@n)
+R 0 22015 22005 -1 	(@ca @ndrippy @cfaucet@n)
+O 1 22005 1 22015 	(@ca @ndrippy @cfaucet@n)
 O 0 22003 20 22012 	(a @Dburnt @Ycookie@n)
 M 0 22004 3 22008 	(a blob of @Doven @yscum@n)
 M 0 22007 1 22018 	(a turkey sandwich)
@@ -16,7 +16,7 @@ M 0 22006 1 22021 	(a @Rspaghetti @Ddemon@n)
 M 0 22005 1 22016 	(a @Wkitchen @Cpixie@n)
 E 1 22004 100 16 	(a @Dplastic @Wspork@n)
 M 0 22000 10 22016 	(a dust bunny)
-M 0 22003 1 22020 	(@nThe @Cice@Dmons@Cter@n)
+M 0 22003 1 22020 	(@cthe @Cice@Dmons@Cter@n)
 E 1 22002 100 16 	(an @Cice@Dpick@n)
 M 0 22000 10 22004 	(a dust bunny)
 M 0 22000 10 22003 	(a dust bunny)

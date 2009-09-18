@@ -1,8 +1,8 @@
 #39
 Nivan~
 Haven~
-3900 3999 30 2
-O 0 3907 1 3958 	(bank)
+3900 3999 30 2 d 0 0 0 -1 -1
+O 0 3907 1 3958 	(the bank)
 M 0 3921 1 3958 	(the bodyguard)
 E 1 3948 100 16 	(a steel longsword)
 E 1 3984 100 5 	(the sparkling chainmail)

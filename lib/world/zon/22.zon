@@ -1,7 +1,7 @@
 #22
 Rumble~
 Tower of the Undead~
-2200 2299 10 2
+2200 2299 10 2 d 0 0 0 -1 -1
 M 0 2230 1 2299 	(the Lord of the Undead)
 E 1 2222 99 14 	(a leather wristguard)
 E 1 2213 99 9 	(the brass knuckles)
@@ -35,7 +35,7 @@ E 1 2209 99 8 	(the zombie boots)
 M 0 2200 3 2201 	(a zombie guard)
 E 1 2210 99 6 	(a zombie helm)
 E 1 2208 99 16 	(a zombie sword)
-O 0 2215 1 2204 	(a half-eaten corpse)
+O 0 2215 1 2204 	(a half-eaten cadaver)
 M 0 2201 10 2204 	(a zombie knight)
 E 1 2201 99 12 	(the black chainmail)
 M 0 2202 10 2204 	(a zombie servant)

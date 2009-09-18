@@ -1,15 +1,15 @@
 #130
 random~
 Mist Maze~
-13000 13099 240 0
-R 0 13097 13011 -1 	(a ray of light)
-O 1 13011 50 13097 	(a ray of light)
-R 0 13097 13012 -1 	(a tendril of the wispy mist)
-O 1 13012 99 13097 	(a tendril of the wispy mist)
+13000 13099 240 0 d 0 0 0 -1 -1
 R 0 13000 13000 -1 	(an old tombstone)
 O 1 13000 50 13000 	(an old tombstone)
 R 0 13000 13099 -1 	(a swirling mist)
 O 1 13099 50 13000 	(a swirling mist)
+R 0 13097 13011 -1 	(a ray of light)
+O 1 13011 50 13097 	(a ray of light)
+R 0 13097 13012 -1 	(a tendril of the wispy mist)
+O 1 13012 99 13097 	(a tendril of the wispy mist)
 R 0 13095 13009 -1 	(a swirling mist)
 O 1 13009 50 13095 	(a swirling mist)
 R 0 13080 13000 -1 	(an old tombstone)

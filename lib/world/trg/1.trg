@@ -983,6 +983,9 @@ if %object.type% == FOOD
     wait 1 sec 
     mfollow %actor%  
   end 
+  if %object.vnum% == 172
+    halt
+  end
   %purge% %object% 
 else 
   wait 1 s 
@@ -1007,7 +1010,7 @@ if %self.master% == %actor%
     break
     case down
       sit
-      emote lays down.  
+      emote lies down.  
       wait 3 sec
       stand
     break
@@ -1074,7 +1077,7 @@ if %actor.has_item(164)%
   * Or if they have her rubber chicken.
 elseif %actor.has_item(172)%
   wait 1 sec
-  emote sniff %actor.name%
+  emote sniffs %actor.name%.
   wait 1 sec
   growl %actor.name%
   %send% %actor% %self.name% tries to get at something you are carrying.
@@ -1985,7 +1988,7 @@ Confucius - 23~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Confucius - M23 - T186 By Rumble
-set max 45.27%
+set max %random.27%
 set txt[1] Before you embark on a journey of revenge, dig two graves. 
 set txt[2] Everything has its beauty but not everyone sees it. 
 set txt[3] Forget injuries, never forget kindnesses. 
@@ -2013,7 +2016,7 @@ set txt[24] What you do not want done to yourself, do not do to others.
 set txt[25] When you know a thing, to hold that you know it; and when you do not know a thing, to allow that you do not know it - this is knowledge. 
 set txt[26] In any prisoner situation when you are communicating with a fellow prisoner be sure to agree about a danger signal first. Second make a cover story in case you are caught, and third, you need to decide on a backup communication system.
 set txt[27] The superior man understands what is right; the inferior man understands what is accepted by a majority. 
-eval  speech %%txt[0%]%%
+eval  speech %%txt[%max%]%%
 say %speech%
 ~
 #187
@@ -2241,21 +2244,20 @@ say The best advice for new builders is under @RHELP SUGGESTIONS@n.
 ~
 #199
 TBA Welcome - 18~
-0 e 1
-entered reconnected~
+2 s 100
+~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * TBA mortal greet to fill out the application.
-if %actor.is_pc% && %actor.level% == 1
-  context %actor.id%
-  wait 1 sec
+if %actor.level% <= 1
+  wait 3 sec
   if %actor.varexists(TBA_mortal_greeting)%
-    say Welcome back %actor.name%. Tell someone level 32 or above when you complete the application.
+    %echo% Friedrich Nietzsche says, 'Welcome back %actor.name%. Tell someone level 32 or above when you complete the application.'
   else
-    say Welcome to The Builder Academy %actor.name%. 
+    %echo% Friedrich Nietzsche says, 'Welcome to The Builder Academy %actor.name%.' 
     wait 2 sec
-    say If you are interested in learning how to build, or want to teach others, then you have come to the right place.
+    %echo% Friedrich Nietzsche says, 'If you are interested in learning how to build, or want to teach others, then you have come to the right place.'
     wait 2 sec
-say Please fill out the application at: http://www.geocities.com/buildersacademy
+    %echo% Friedrich Nietzsche says, 'Please fill out the application at: http://tbamud.com/BuilderApplication'
     nop %actor.thirst(-1)%
     nop %actor.hunger(-1)%
     set TBA_mortal_greeting 1

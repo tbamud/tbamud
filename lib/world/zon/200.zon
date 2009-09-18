@@ -1,7 +1,7 @@
 #200
 Rumble~
 Western Highway~
-20000 20099 10 2
+20000 20099 10 2 d 0 0 0 -1 -1
 R 0 20017 20000 -1 	(the river)
 O 0 20000 1 20017 	(the river)
 O 0 20001 1 20017 	(the bridge)
