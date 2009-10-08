@@ -295,7 +295,7 @@ static room_vnum redit_find_new_vnum(zone_rnum zone)
   room_rnum rnum = real_room(vnum);
 
   if (rnum == NOWHERE)
-    return NOWHERE;
+    return vnum;
 
   for(;;) {
     if (vnum > zone_table[zone].top)

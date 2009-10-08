@@ -1145,9 +1145,10 @@ ACMD(do_pour)
       GET_OBJ_VAL(from_obj, 3) = 0;
     }
   }
-  else
+  else {
     GET_OBJ_VAL(to_obj, 1) = GET_OBJ_VAL(to_obj, 0);
-
+    amount = GET_OBJ_VAL(to_obj, 0);
+  }
   /* Poisoned? */
   GET_OBJ_VAL(to_obj, 3) = (GET_OBJ_VAL(to_obj, 3) || GET_OBJ_VAL(from_obj, 3))
 ;

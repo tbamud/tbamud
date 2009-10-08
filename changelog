@@ -35,6 +35,17 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+tbaMUD 3.61
+[Oct 08 2009] - Rumble
+  Fixed do_purge to allow targetting of multiple objects of the same name. i.e. 2.knife. (thanks Drefs)
+[Oct 07 2009] - Rumble
+  Added CAN_SEE_IN_DARK and AFF_BLIND checks in do_automap. (thanks Frenze)
+[Oct 06 2009] - Rumble
+  Fixed do_cast to allow targetting of multiple objects of the same name. i.e. 2.knife. (thanks Drefs)
+[Oct 04 2009] - Rumble
+  Fixed a bug on filling unlimited containers where it doesn't update weight. (thanks Drefs)
+[Oct 02 2009] - Rumble
+  Fixed buildwalk so it does not require the first room to exist. (thanks Zizazat)
 tbaMUD 3.6
 [Aug 29 2009] - Rumble
   Removed unused prototype log_death_trap in utils.h (thanks Xiuhtecuhtli)

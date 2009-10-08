@@ -535,6 +535,13 @@ ACMD(do_map) {
     send_to_char(ch, "Sorry, the map is disabled!\r\n");
     return;
   }
+  if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch)) {
+    send_to_char(ch, "It is too dark to see the map.\r\n");
+    return;
+  } else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
+    send_to_char(ch, "You can't see the map while blind!\r\n");
+    return;
+  }
   perform_map(ch, argument, ROOM_FLAGGED(IN_ROOM(ch), ROOM_WORLDMAP) ? 1 : 0 );
 }
 

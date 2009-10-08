@@ -1394,15 +1394,18 @@ ACMD(do_vstat)
 ACMD(do_purge)
 {
   char buf[MAX_INPUT_LENGTH];
+  char *t;
   struct char_data *vict;
   struct obj_data *obj;
+  int number;
 
   one_argument(argument, buf);
 
   /* argument supplied. destroy single object or char */
   if (*buf) {
-    if ((vict = get_char_vis(ch, buf, NULL, FIND_CHAR_ROOM)) != NULL) {
-      if (!IS_NPC(vict) && (GET_LEVEL(ch) <= GET_LEVEL(vict))) {
+    t = buf;
+    number = get_number(&t);
+    if ((vict = get_char_vis(ch, buf, &number, FIND_CHAR_ROOM)) != NULL) {      if (!IS_NPC(vict) && (GET_LEVEL(ch) <= GET_LEVEL(vict))) {
         send_to_char(ch, "You can't purge %s!\r\n", HMHR(vict));
 	return;
       }
@@ -1417,7 +1420,7 @@ ACMD(do_purge)
 	}
       }
       extract_char(vict);
-    } else if ((obj = get_obj_in_list_vis(ch, buf, NULL, world[IN_ROOM(ch)].contents)) != NULL) {
+    } else if ((obj = get_obj_in_list_vis(ch, buf, &number, world[IN_ROOM(ch)].contents)) != NULL) {
       act("$n destroys $p.", FALSE, ch, obj, 0, TO_ROOM);
       extract_obj(obj);
     } else {

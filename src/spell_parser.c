@@ -489,7 +489,7 @@ ACMD(do_cast)
   struct char_data *tch = NULL;
   struct obj_data *tobj = NULL;
   char *s, *t;
-  int mana, spellnum, i, target = 0;
+  int number, mana, spellnum, i, target = 0;
 
   if (IS_NPC(ch))
     return;
@@ -539,16 +539,17 @@ ACMD(do_cast)
   if (IS_SET(SINFO.targets, TAR_IGNORE)) {
     target = TRUE;
   } else if (t != NULL && *t) {
+    number = get_number(&t);
     if (!target && (IS_SET(SINFO.targets, TAR_CHAR_ROOM))) {
-      if ((tch = get_char_vis(ch, t, NULL, FIND_CHAR_ROOM)) != NULL)
+      if ((tch = get_char_vis(ch, t, &number, FIND_CHAR_ROOM)) != NULL)
 	target = TRUE;
     }
     if (!target && IS_SET(SINFO.targets, TAR_CHAR_WORLD))
-      if ((tch = get_char_vis(ch, t, NULL, FIND_CHAR_WORLD)) != NULL)
+      if ((tch = get_char_vis(ch, t, &number, FIND_CHAR_WORLD)) != NULL)
 	target = TRUE;
 
     if (!target && IS_SET(SINFO.targets, TAR_OBJ_INV))
-      if ((tobj = get_obj_in_list_vis(ch, t, NULL, ch->carrying)) != NULL)
+      if ((tobj = get_obj_in_list_vis(ch, t, &number, ch->carrying)) != NULL)
 	target = TRUE;
 
     if (!target && IS_SET(SINFO.targets, TAR_OBJ_EQUIP)) {
@@ -559,11 +560,11 @@ ACMD(do_cast)
 	}
     }
     if (!target && IS_SET(SINFO.targets, TAR_OBJ_ROOM))
-      if ((tobj = get_obj_in_list_vis(ch, t, NULL, world[IN_ROOM(ch)].contents)) != NULL)
+      if ((tobj = get_obj_in_list_vis(ch, t, &number, world[IN_ROOM(ch)].contents)) != NULL)
 	target = TRUE;
 
     if (!target && IS_SET(SINFO.targets, TAR_OBJ_WORLD))
-      if ((tobj = get_obj_vis(ch, t, NULL)) != NULL)
+      if ((tobj = get_obj_vis(ch, t, &number)) != NULL)
 	target = TRUE;
 
   } else {			/* if target string is empty */
