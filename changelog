@@ -36,6 +36,12 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Oct 17 2009] - Rumble
+  Added Ultima Zone 555 and 556. Originally by Casret, rebuilt by Parna.
+  Made MEDIT column menu's consistent with other OLC menu's.
+  added TEDIT access to bugs, typos, and ideas file.
+[Oct 09 2009] - Rumble
+  Added connected_type "Preference Edit" (thanks Maoliosa)
 [Oct 08 2009] - Rumble
   Fixed do_purge to allow targetting of multiple objects of the same name. i.e. 2.knife. (thanks Drefs)
 [Oct 07 2009] - Rumble

@@ -7,9 +7,20 @@ A young man is here smoking a cigarette.
 few men who did not sign up for military service.    
 ~
 2248 0 0 0 0 0 0 0 900 E
-34 9 -10 6d6+340 5d5+5
+34 9 -10 1d1+340 5d5+5
 340 115600
 8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 8
 E
 #101
 Ian~

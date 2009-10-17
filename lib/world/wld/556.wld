@@ -1,0 +1,1446 @@
+#55600
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+556 9 0 0 0 0
+D1
+There is a shimmering light.
+~
+~
+0 0 55601
+D2
+~
+~
+0 0 55596
+S
+#55601
+The Dungeon Moongate~
+   You feel safe within the blue glow of the moongate.  The dungeon creatures
+seem to be afraid of it.
+~
+556 12 0 0 0 0
+D3
+~
+~
+0 0 55600
+D4
+There seems to be a beach.
+~
+moongate~
+2 55512 55602
+S
+#55602
+Minoc~
+   The moongate has led to the oceanside city of Minoc.  To the north, there is
+the sea and to the south there is the town of Minoc.
+~
+556 4 0 0 0 2
+D0
+~
+~
+0 0 55615
+D2
+~
+~
+0 0 55604
+S
+#55603
+The Armorer~
+   The Armorer buys and sells armor.  His smithy is impressive with all of his
+greatest works hanging on the walls.
+~
+556 8 0 0 0 0
+D1
+~
+door e east~
+1 0 55604
+S
+#55604
+Minoc's Fountain~
+   This is the entrance of Minoc.  To the east you see the weaponsmith, and to
+the west is the Armorer.  To the south there seems to be a large road.
+~
+556 0 0 0 0 1
+D0
+~
+~
+0 0 55602
+D1
+~
+door e east~
+1 0 55605
+D2
+~
+~
+0 0 55608
+D3
+~
+door w west~
+1 0 55603
+S
+#55605
+The Weaponsmith~
+   The best Weaponsmith in the realm is here.  His shop is full of hanging
+weapons.
+~
+556 8 0 0 0 0
+D3
+~
+door w west~
+1 0 55604
+S
+#55606
+The Boatseller~
+   This is the shop where you can purchase vehicles to cross the sea.  There
+isn't much choice though.
+~
+556 8 0 0 0 0
+D1
+~
+door e east~
+1 0 55607
+S
+#55607
+Sacrifice Street~
+   This Street goes from east to west.  To the west is a shop and to the south
+is a home.
+~
+556 0 0 0 0 1
+D1
+~
+~
+0 0 55608
+D2
+~
+door s south~
+1 0 55611
+D3
+~
+door w west~
+1 0 55606
+S
+#55608
+Sacrifice Street~
+   This Street runs from east to west.  To the west there is a shop, and to
+there east there is a forge.
+~
+556 0 0 0 0 1
+D0
+~
+~
+0 0 55604
+D1
+~
+~
+0 0 55609
+D3
+~
+~
+0 0 55607
+S
+#55609
+Sacrifice Street~
+   This Street runs from west to east.  There is a home to the south and forge
+to the east.
+~
+556 0 0 0 0 1
+D1
+~
+door e east~
+1 0 55610
+D2
+~
+door s south~
+1 0 55612
+D3
+~
+~
+0 0 55608
+S
+#55610
+Forge~
+   The heat of the place cause blisters to form.  The rhythmic beat of hammer
+against the forge causes you to believe that someone is working here.
+~
+556 8 0 0 0 0
+D3
+~
+door w west~
+1 0 55609
+S
+#55611
+Residence~
+   This residence is very small.  It befits the teaching of sacrifice without
+any item that is extra.
+~
+556 8 0 0 0 0
+D0
+~
+door n north~
+1 0 55607
+S
+#55612
+Residence~
+   This residence is very small.  It befits the teaching of sacrifice without
+any item that is extra.
+~
+556 8 0 0 0 0
+D0
+~
+door n north~
+1 0 55609
+S
+#55613
+The Beach~
+   This beach ends here.  You can enter the ocean through the calm lagoon to the
+west.
+~
+556 0 0 0 0 2
+D1
+~
+~
+0 0 55614
+D3
+~
+~
+0 0 55684
+S
+#55614
+The Beach~
+   The beach extends from west to east but the waves are too heavy here to enter
+the ocean.
+~
+556 0 0 0 0 2
+D1
+~
+~
+0 0 55615
+D3
+~
+~
+0 0 55613
+S
+#55615
+The Beach~
+   The beach here is perfect, glistening white sands, perfect sun.  Too bad
+there is a monster infestation....
+~
+556 0 0 0 0 2
+D1
+~
+~
+0 0 55616
+D2
+~
+~
+0 0 55602
+D3
+~
+~
+0 0 55614
+S
+#55616
+The Beach~
+   The Beach seems so idyllic.  It's too bad that these monsters keep showing
+up.
+~
+556 0 0 0 0 2
+D1
+~
+~
+0 0 55617
+D3
+~
+~
+0 0 55615
+S
+#55617
+The Beach~
+   The Beach ends here.  It's impossible to enter the ocean from here.  You'll
+have to turn back.
+~
+556 0 0 0 0 2
+D3
+~
+~
+0 0 55616
+S
+#55618
+The Whirlpool~
+   This is a nasty whirlpool.  Huge waves threaten to crush everything in sight.
+~
+556 0 0 0 0 7
+D0
+~
+~
+0 0 55619
+D1
+~
+~
+0 0 55620
+D2
+A swampy lagoon.
+~
+~
+0 0 55684
+D3
+~
+~
+0 0 55621
+S
+T 55618
+#55619
+The Whirlpool~
+   This is a nasty whirlpool.  Huge waves threaten to crush everything in sight.
+~
+556 0 0 0 0 7
+D0
+~
+~
+0 0 55622
+D1
+~
+~
+0 0 55620
+D2
+~
+~
+0 0 55625
+D3
+~
+~
+0 0 55618
+S
+#55620
+The Whirlpool~
+   This is a nasty whirlpool.  Huge waves threaten to crush everything in sight.
+~
+556 0 0 0 0 7
+D0
+~
+~
+0 0 55623
+D1
+~
+~
+0 0 55618
+D2
+~
+~
+0 0 55626
+D3
+~
+~
+0 0 55619
+S
+#55621
+The Whirlpool~
+   This is a nasty whirlpool.  Huge waves threaten to crush everything in sight.
+~
+556 0 0 0 0 7
+D0
+~
+~
+0 0 55624
+D1
+~
+~
+0 0 55622
+D2
+~
+~
+0 0 55618
+D3
+~
+~
+0 0 55623
+S
+#55622
+The Whirlpool~
+   This is a nasty whirlpool.  Huge waves threaten to crush everything in sight.
+~
+556 0 0 0 0 7
+D0
+~
+~
+0 0 55625
+D1
+~
+~
+0 0 55623
+D2
+~
+~
+0 0 55619
+D3
+~
+~
+0 0 55621
+S
+#55623
+The Whirlpool~
+   This is a nasty whirlpool.  Huge waves threaten to crush everything in sight.
+~
+556 0 0 0 0 7
+D0
+~
+~
+0 0 55626
+D1
+~
+~
+0 0 55621
+D2
+~
+~
+0 0 55620
+D3
+~
+~
+0 0 55622
+S
+#55624
+The Whirlpool~
+   This is a nasty whirlpool.  Huge waves threaten to crush everything in sight.
+~
+556 0 0 0 0 7
+D0
+There is a shimmering light to the north.
+~
+~
+0 0 55627
+D1
+~
+~
+0 0 55626
+D2
+~
+~
+0 0 55625
+D3
+~
+~
+0 0 55621
+S
+T 55624
+#55625
+The Whirlpool~
+   This is a nasty whirlpool.  Huge waves threaten to crush everything in sight.
+~
+556 0 0 0 0 7
+D0
+~
+~
+0 0 55619
+D1
+~
+~
+0 0 55626
+D2
+~
+~
+0 0 55622
+D3
+~
+~
+0 0 55624
+S
+#55626
+The Whirlpool~
+   This is a nasty whirlpool.  Huge waves threaten to crush everything in sight.
+~
+556 0 0 0 0 7
+D0
+~
+~
+0 0 55620
+D1
+~
+~
+0 0 55624
+D2
+~
+~
+0 0 55623
+D3
+~
+~
+0 0 55625
+S
+#55627
+The Minoc Moongate~
+   The sea waves lap up against the Moongate.  The blue reflection disappears
+into the ripples.
+~
+556 4 0 0 0 7
+D2
+~
+~
+0 0 55624
+D4
+Through the moongate you see a large campfire.
+~
+moongate~
+2 55513 55628
+S
+#55628
+A Campfire~
+   This campfire sits in the middle of the camp.  Many of the paladins stand by
+it looking it the desert beyond.  Some just wander by.  To the south is a small
+tent, to the north are more tents.
+~
+556 4 0 0 0 4
+D0
+~
+~
+0 0 55638
+D1
+~
+~
+0 0 55629
+D2
+~
+tent s south~
+1 0 55632
+S
+#55629
+Between the Tents~
+   There is a grand tent to the south.  The tent flap entrance can be seen to
+the east.
+~
+556 0 0 0 0 4
+D1
+~
+~
+0 0 55630
+D3
+~
+~
+0 0 55628
+S
+#55630
+In Front of the Grand Tent~
+   To the south, there is a huge tent.  To the east lies a smaller, more
+ordinary, tent.
+~
+556 0 0 0 0 4
+D1
+~
+tent e east~
+1 0 55631
+D2
+~
+tent s south~
+1 0 55634
+D3
+~
+~
+0 0 55629
+S
+#55631
+A Small Tent~
+   The paladin's tent is very Spartan, as he has to live without much in order
+to develop his Honor.
+~
+556 8 0 0 0 0
+D3
+~
+tent w west~
+1 0 55630
+S
+#55632
+A Small Tent~
+   The paladin's tent is very Spartan, as he has to live without much in order
+to develop his Honor.
+~
+556 8 0 0 0 0
+D0
+~
+tent n north~
+1 0 55628
+S
+#55633
+The Treasure Tent~
+   There is a HUGE stack of treasure here.  It is truly immense.  It would make
+you easily a millionaire.  If you could even take a tenth of it, you could buy
+your levels.  But the treasure is surrounded by a shield.  A shield that only
+the truly Honorable could get through.  And if you were truly honorable you
+wouldn't take the treasure.
+~
+556 8 0 0 0 0
+D1
+~
+~
+0 0 55634
+S
+#55634
+The Grand Tent~
+   This tent is absolutely huge.  To the east is the map room.  To the south
+there is Dupre.  To the east is the treasure room.
+~
+556 8 0 0 0 0
+D0
+~
+tent n north~
+1 0 55630
+D1
+~
+~
+0 0 55635
+D2
+~
+~
+0 0 55636
+D3
+~
+~
+0 0 55633
+S
+#55635
+The Map Tent~
+   This room has many maps and scrolls all over the table.  There is one in
+particular that interest you.
+~
+556 8 0 0 0 0
+D3
+~
+~
+0 0 55634
+E
+scroll~
+The scroll reads as follows:
+Dear Lord British,
+     This is Dupre reporting about the paladin expedition.  We
+are in the process of clearing the desert of those annoying
+sandtraps.  Unfortunately one of my men had wandered into the
+dragon cave and was slayed by that evil creature.  We need
+another knight, and also he had a moonstone.  Thank you, my
+liege.
+                         Your Servant,
+                         Dupre
+~
+E
+map~
+   The map has a rough drawing of the camp and to the north a small segment of
+the desert, and a drawing of a winged lizard near the very north.
+~
+S
+#55636
+Dupre's Tent~
+   This is the commander's tent.  It is full of commander type things.  It's
+simple, as befits a paladin.
+~
+556 8 0 0 0 0
+D0
+~
+~
+0 0 55634
+S
+#55637
+A Small Tent~
+   The paladin's tent is very Spartan, as he has to live without much in order
+to develop his Honor.
+~
+556 8 0 0 0 0
+D1
+~
+tent e east~
+1 0 55638
+S
+#55638
+Desert Entrance~
+   You feel the hot desert wind blow sand into your face as you look at those
+dunes.
+~
+556 4 0 0 0 4
+D0
+~
+~
+0 0 55641
+D1
+~
+tent e east~
+1 0 55639
+D2
+~
+~
+0 0 55628
+D3
+~
+tent w west~
+1 0 55637
+S
+#55639
+A Small Tent~
+   The paladin's tent is very Spartan, as he has to live without much in order
+to develop his Honor.
+~
+556 8 0 0 0 0
+D3
+~
+tent w west~
+1 0 55638
+S
+#55640
+The Desert~
+   The desert in the northeast part of Britannia is a perfect example of its
+kind.  Dry, ugly, and lots of sand.
+~
+556 0 0 0 0 4
+D0
+There is a shimmering light.
+~
+~
+0 0 55644
+D1
+~
+~
+0 0 55641
+S
+#55641
+The Desert~
+   The Desert is an ugly place.  Sand whips into your eyes, making you unsure of
+where you are and what you see.
+~
+556 0 0 0 0 4
+D1
+~
+~
+0 0 55642
+D2
+~
+~
+0 0 55638
+D3
+~
+~
+0 0 55640
+S
+#55642
+The Desert~
+   You trudge on.  This desert seems endless.  You'd even welcome a mirage, to
+break up the monotony.
+~
+556 0 0 0 0 4
+D0
+~
+~
+0 0 55646
+D1
+~
+~
+0 0 55643
+D3
+~
+~
+0 0 55641
+S
+#55643
+The Desert Moongate~
+   Your thirst seems to slacken as you see the comforting glow of the moongate.
+You'll soon be out of this desert.
+~
+556 4 0 0 0 4
+D3
+~
+~
+0 0 55642
+D4
+Through the moongate you seem to see a shrine.
+~
+moongate~
+2 55514 55649
+S
+#55644
+The Desert Moongate~
+   Your thirst seems to slacken as you see the comforting glow of the moongate.
+You'll soon be out of this desert.
+~
+556 0 0 0 0 4
+D2
+~
+~
+0 0 55640
+D4
+There is just blue.
+~
+moongate~
+2 55514 55644
+S
+#55645
+The Desert~
+   There is a large cave to the north.  Smoke pours out of it at regular
+intervals.
+~
+556 0 0 0 0 4
+D0
+The smoke obscures all vision.
+~
+~
+0 0 55648
+D1
+~
+~
+0 0 55646
+S
+#55646
+The Desert~
+   The sands blows into your ears and eyes and scours your skin.  You may not
+have much skin left by the time you get out of here.
+~
+556 0 0 0 0 4
+D1
+There is a shimmering light.
+~
+~
+0 0 55647
+D2
+~
+~
+0 0 55642
+D3
+~
+~
+0 0 55645
+S
+#55647
+The Desert Moongate~
+   Your thirst seems to slacken as you see the comforting glow of the moongate.
+You'll soon be out of this desert.
+~
+556 0 0 0 0 4
+D3
+~
+~
+0 0 55646
+D4
+There is just blue.
+~
+moongate~
+2 55514 55685
+S
+#55648
+The Dragon Cave~
+   The cave is smoky.  There is a glint of gold.  The smell of sulfur fills the
+air, choking you.
+~
+556 12 0 0 0 0
+D2
+~
+~
+0 0 55645
+S
+#55649
+The Shrine of Spirituality~
+   In this room a huge ankh sits on a pedestal.  The Shrine is the source of all
+magical power.  The Timelord himself lives here.  There is a moongate here also.
+And last of all there is a huge engraving taking up the west wall.
+~
+556 12 0 0 0 0
+D0
+You peer into the blackness, and hear shrieks and sounds totally
+inhuman.
+~
+~
+0 0 55654
+D2
+Peace infuses your body.  The graveyard is a solemn and sobering
+place.
+~
+~
+0 0 55657
+D4
+Through the moongate you see a castle.
+~
+moongate~
+2 55515 55662
+E
+engraving~
+Pilgrim,
+     You have reached the final step on your way to enlightenment.
+In this last step you will be shown ultimate evil to your north,
+and ultimate good to your south.  This is the land of the undead.
+
+   The dead of both those whose goodness links them to the land,
+and those whose evilness was rejected are here.  To have true
+spirituality one must know both.  Once you have been strengthened
+and forge through the evil, there is one final test before you
+prove yourself equal to the Avatar himself.  You must endure
+the test of time.
+~
+E
+ankh~
+   Through your entire journey you have not understood the real symbol of the
+ankh.  Its true beauty only reveals itself to you now.  This knowledge
+transcends all that came before.
+~
+S
+#55650
+The Place of Ultimate Evil~
+   The ground itself seems malevolent.  It seems to suck at you as it tries to
+engulf you.
+~
+556 9 0 0 0 0
+D1
+~
+~
+0 0 55651
+D2
+~
+~
+0 0 55653
+S
+#55651
+The Place of Ultimate Evil~
+   The air sickens you.  You choke on whatever flows through the air as you gasp
+for oxygen.
+~
+556 9 0 0 0 0
+D1
+~
+~
+0 0 55652
+D2
+~
+~
+0 0 55654
+D3
+~
+~
+0 0 55650
+S
+#55652
+The Place of Ultimate Evil~
+   It is dark, there is no evidence of light except what you have with you.  
+And this is swallowed by the darkness within 2 feet.
+~
+556 9 0 0 0 0
+D2
+~
+~
+0 0 55655
+D3
+~
+~
+0 0 55651
+S
+#55653
+The Place of Ultimate Evil~
+   Sounds are very weird in this place.  Some sounds, like shrieks and
+blood-curdling shouts, are amplified, and you hear them frequently.  Others,
+like your own voice, will not travel to beyond a inch from your face.
+~
+556 9 0 0 0 0
+D0
+~
+~
+0 0 55650
+D1
+~
+~
+0 0 55654
+S
+#55654
+The Place of Ultimate Evil~
+   When you enter this place all of your senses are immediately blasted.  You
+breathe in that total evilness and feel dirty.  You want to leave right now.
+~
+556 9 0 0 0 0
+D0
+~
+~
+0 0 55651
+D1
+~
+~
+0 0 55655
+D2
+~
+~
+0 0 55649
+D3
+~
+~
+0 0 55653
+S
+#55655
+The Place of Ultimate Evil~
+   You feel invisible things all over your body, sucking and poking at you,
+hurting you.
+~
+556 9 0 0 0 0
+D0
+~
+~
+0 0 55652
+D3
+~
+~
+0 0 55654
+S
+#55656
+The Graveyard~
+   The graveyard background noises seem to soothe you.  They are light and
+peaceful.  Your own voices carries so well and softly that you seem to be
+telepathically communicating.
+~
+556 0 0 0 0 2
+D1
+~
+~
+0 0 55657
+D2
+~
+~
+0 0 55659
+S
+#55657
+The Graveyard~
+   When you walk into here you are immediately soothed.  Nothing could be wrong
+with the world.  All your senses are pleased.
+~
+556 0 0 0 0 2
+D0
+There is a shimmering light.
+~
+~
+0 0 55649
+D1
+~
+~
+0 0 55658
+D2
+~
+~
+0 0 55660
+D3
+~
+~
+0 0 55656
+S
+#55658
+The Graveyard~
+   You feel a light breath of air under your clothing.  It gently massages you.
+~
+556 0 0 0 0 2
+D2
+~
+~
+0 0 55661
+D3
+~
+~
+0 0 55657
+S
+#55659
+The Graveyard~
+   The ground itself here seems to welcome your footsteps.  It is springy and
+causes you little fatigue.
+~
+556 0 0 0 0 2
+D0
+~
+~
+0 0 55656
+D1
+~
+~
+0 0 55660
+S
+#55660
+The Graveyard~
+   The scent of the air refreshes you.  It is sweet and lovely.  Flowers on the
+graves release their perfumes into the air.
+~
+556 0 0 0 0 2
+D0
+~
+~
+0 0 55657
+D1
+~
+~
+0 0 55661
+D3
+~
+~
+0 0 55659
+S
+#55661
+The Graveyard~
+   The light here is bright and lovely.  It shines on the gravestones as if
+laying a benediction on the dead.
+~
+556 0 0 0 0 2
+D0
+~
+~
+0 0 55658
+D3
+~
+~
+0 0 55660
+S
+#55662
+Lord British's Castle Entrance~
+   This building is awe-inspiring.  Lord British's personal Jester is here to
+entertain you.
+~
+556 8 0 0 0 0
+D0
+You see a fountain.
+~
+~
+0 0 55663
+S
+#55663
+Castle Fountain~
+   A lovely fountain sits here.  Light sparkles the water droplets, making them
+look like diamonds.  To the north you see a guard.
+~
+556 8 0 0 0 0
+D0
+~
+~
+0 0 55665
+D2
+~
+~
+0 0 55662
+S
+#55664
+A Staircase~
+   There is a magical staircase going up.  Beware, for those who go up shall not
+return down.  The other exits except for the west are closed for construction.
+~
+556 8 0 0 0 0
+D1
+~
+~
+0 0 55665
+D4
+You see the altars of enlightenment.
+~
+~
+0 0 55669
+S
+#55665
+Hallway~
+   This is the entrance for Lord British.  Through the great doors to the north
+you can enter.  Another hallways passes across this one.
+~
+556 8 0 0 0 0
+D0
+~
+door n north~
+1 0 55667
+D1
+~
+~
+0 0 55666
+D2
+~
+~
+0 0 55663
+D3
+~
+~
+0 0 55664
+S
+#55666
+Hallway~
+   This is a hallway that would regularly extend from west to east, but it is
+closed for reconstruction.  There is though a room to your north that can be
+entered.
+~
+556 8 0 0 0 0
+D0
+~
+door n north~
+1 0 55668
+D3
+~
+~
+0 0 55665
+S
+#55667
+The Throne Room~
+   In the Throne Room there are the two most important figures in the world; the
+avatar and Lord British himself.
+~
+556 8 0 0 0 0
+D2
+~
+door s south~
+1 0 55665
+S
+#55668
+Batlin's Room~
+   Batlin, molester of animals and general jerk, lives here.  The room looks
+peaceful but, like its occupant, probably hides evil.
+~
+556 8 0 0 0 0
+D2
+~
+door s south~
+1 0 55666
+S
+#55669
+The Altar of Honesty~
+   You may gain true enlightenment here.  There is a large plaque on the wall.
+The path continues only if you use the mantra, to gain enlightenment.
+~
+556 8 0 0 0 0
+D0
+The Path Of Enlightenment leads on.
+~
+Path~
+2 55504 55670
+E
+plaque~
+   Honesty is the scrupulous respect for truth-the willingness never to deceive
+oneself or another.
+~
+S
+#55670
+The Altar of Compassion~
+   You may gain true enlightenment here.  There is a large plaque on the wall.
+The path continues only if you use the mantra, to gain enlightenment.
+~
+556 8 0 0 0 0
+D0
+The Path Of Enlightenment leads on.
+~
+Path~
+2 55500 55671
+E
+plaque~
+   Compassion is nonjudgmental empathy for one's fellow creatures.  It is pure
+love.
+~
+S
+#55671
+The Altar of Valor~
+   You may gain true enlightenment here.  There is a large plaque on the wall.
+The path continues only if you use the mantra, to gain enlightenment.
+~
+556 8 0 0 0 0
+D0
+The Path Of Enlightenment leads on.
+~
+Path~
+2 55506 55672
+E
+plaque~
+   Valor is the courage to take actions in support of one's convictions.
+~
+S
+#55672
+The Altar of Justice~
+   You may gain true enlightenment here.  There is a large plaque on the wall.
+The path continues only if you use the mantra, to gain enlightenment.
+~
+556 8 0 0 0 0
+D0
+The Path Of Enlightenment leads on.
+~
+Path~
+2 55502 55673
+E
+plaque~
+   Justice is devotion to truth, tempered by love.
+~
+S
+#55673
+The Altar of Sacrifice~
+   You may gain true enlightenment here.  There is a large plaque on the wall.
+The path continues only if you use the mantra, to gain enlightenment.
+~
+556 8 0 0 0 0
+D0
+The Path Of Enlightenment leads on.
+~
+Path~
+2 55505 55674
+E
+plaque~
+   Sacrifice is the courage to give of oneself in the name of love.
+~
+S
+#55674
+The Altar of Honor~
+   You may gain true enlightenment here.  There is a large plaque on the wall.
+The path continues only if you use the mantra, to gain enlightenment.
+~
+556 8 0 0 0 0
+D0
+The Path Of Enlightenment leads on.
+~
+Path~
+2 55507 55675
+E
+plaque~
+   Honor is the courage to stand for truth, against any odds.
+~
+S
+#55675
+The Altar of Spirituality~
+   You may gain true enlightenment here.  There is a large plaque on the wall.
+The path continues only if you use the mantra, to gain enlightenment.
+~
+556 8 0 0 0 0
+D0
+The Path Of Enlightenment leads on.
+~
+Path~
+2 55503 55676
+E
+plaque~
+   Spirituality is the concern with one's inner being and how one deals with
+truth, love, and courage.
+~
+S
+#55676
+The Altar of Humility~
+   You may gain true enlightenment here.  There is a large plaque on the wall.
+The path continues only if you use the mantra, to gain enlightenment.
+~
+556 8 0 0 0 0
+D0
+The Path Of Enlightenment ends there.
+~
+Path~
+2 55501 55677
+E
+plaque~
+   Humility is perceiving one's place in the world, not according to one's own
+accomplishments, but according to the intrinsic value of all individuals.
+~
+S
+#55677
+The Enlightenment~
+   A voice booms out, "You are now eight parts enlightened.  To truly become an
+Avatar though you must experience what he has experienced.  Go through the time
+warp and fight his enemies.  Beware!  Only High Mortals should attempt this
+challenge."  
+~
+556 8 0 0 0 0
+D4
+The Time Warp leads you to another place.
+~
+warp~
+2 55516 55679
+S
+#55678
+In the Warp~
+   This is a forest.  You were sent very far back in time.  Before there was a
+Britannia.  Almost before there was a Lord British.  This is the time of
+Mondain.  The first enemy that the Avatar met.
+~
+556 0 0 0 0 3
+S
+#55679
+In the Warp~
+   You are in a featureless room.  You see the apprentice and lover of Mondain
+here.  Minax.  She does not seem happy to see you.
+~
+556 8 0 0 0 0
+D4
+The Time Warp zips to the future.
+~
+warp~
+2 55516 55680
+S
+#55680
+In the Warp~
+   You see the last of the Triad of Evil.  With its destruction came the
+breaking of the world.
+~
+556 8 0 0 0 0
+D4
+The Time Warp continues on.
+~
+warp~
+2 55516 55681
+S
+#55681
+The Enlightenment~
+   A voice booms out, "You have now truly became Enlightened.  You have fought
+and defeated the Avatar's enemies of the past.  Now the time warp leads to the
+future.  Only the truly courageous can survive the enemies there."  
+~
+556 8 0 0 0 0
+D4
+The Time Warp changes space, and fluxes its surroundings.
+~
+warp~
+2 55516 55682
+S
+#55682
+In the Warp~
+   You seem to be in a castle.  But there are torture devices here, and an angry
+King.
+~
+556 8 0 0 0 0
+D4
+The Time Warp sputters and crackles.
+~
+warp~
+2 55516 55683
+S
+#55683
+In the Warp~
+   You seem to be in a blue room.  It seems to be only 2 dimensional as it
+sparkles.  There is also a big red face here.
+~
+556 8 0 0 0 0
+D4
+All looks peaceful beyond the moongate.
+~
+moongate~
+2 55516 55685
+S
+#55684
+The Lagoon~
+   The whirlpool-like ocean is to the north, and the beach is back to the east.
+The beach looks much safer.
+~
+556 4 0 0 0 7
+D0
+The Ocean Roars.
+~
+~
+0 0 55618
+D1
+The beach sparkles.
+~
+~
+0 0 55613
+S
+#55685
+Entrance to Ultima~
+   The blue moongate casts an strange blue light upon a huge gate to the south.
+The gate is open and beyond it you see a simple village.  Around the gate there
+are two pedestals.  On the first pedestal, there is a magic scroll.  On the
+second there is a plaque.
+~
+556 8 0 0 0 0
+D2
+There is a huge gate.
+~
+gate s south~
+0 0 55501
+E
+magic scroll~
+   An image flies out of the scroll and creates a huge image of a face
+approximately ten feet off the ground.  It says, " Welcome to Ultima, where
+adventure and excitement may be found for all people, and all levels.  Each of
+the separate planes increase in level.  Have a nice day!"  
+~
+E
+plaque~
+   The plaque reads, "The Ultima Area was originally made for Merc 2.0." 
+~
+S
+$~

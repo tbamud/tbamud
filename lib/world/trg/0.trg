@@ -2004,7 +2004,7 @@ else
 end
 ~
 #70
-Mob Fight Example~
+Mob fight example - dg_cast missile~
 0 k 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
@@ -2013,7 +2013,7 @@ if %already_cast%
   wait 30 s
   unset already_cast
 else
-  dg_cast 'magic missile' %actor%
+  dg_cast 'magic missile' %actor.name%
   set already_cast 1
   * By globalling the variable it can be accessed by other triggers or when
   * this trigger fires a second time.
@@ -2822,7 +2822,7 @@ set ant 4600
 set zodiac 5701
 set grave 7401
 set zamba 7500
-set gideon 7801
+set gidean 7801
 set glumgold 8301
 set duke 8660
 set oasis 9000
@@ -2926,6 +2926,8 @@ set pale 32300
 set army 32400
 set revelry 32500
 set perimeter 32600
+set asylum 34501
+set ultima 55685
 if !%arg%
   *they didnt type a location
   set fail 1

@@ -1,0 +1,1887 @@
+#55500
+Ultima Description Room~
+   A port of the Merc.  Ultima area by Casret.  
+It is mostly ported from a mostly finished port to Smaug.
+The area starts down in room 55685 and uses zone 555 and 556.
+ 
+   The area ranges through all levels.  
+
+   The two mazes (Desert and Whirlpool) may have to be adjusted.  
+The maze progs of 130 (Welcor's Mist Maze) are much better but
+seemed a bit too strong for the area.
+~
+555 8 0 0 0 0
+D5
+~
+~
+0 0 55685
+S
+#55501
+New Magincia Road~
+   This is the main road of New Magincia.  To the south the dirt path continues
+to the south and a huge gate to the north.
+~
+555 0 0 0 0 1
+D0
+There is a huge gate.
+~
+gate n north~
+1 0 55685
+D2
+A path leads to the south.
+~
+~
+0 0 55502
+S
+#55502
+New Magincia Road~
+   The path continues to the south and the north.  You see the tracks of sheep
+here.
+~
+555 0 0 0 0 1
+D0
+The path continues to the north.
+~
+~
+0 0 55501
+D2
+There is a shimmering light to the south.
+~
+~
+0 0 55503
+S
+#55503
+The New Magincia Moongate~
+   You see another moongate here, exactly between the crossing of two paths.  
+You can see dim shapes through it.
+~
+555 4 0 0 0 1
+D0
+The path continues to the north.
+~
+~
+0 0 55502
+D1
+A small path leads east.
+~
+~
+0 0 55513
+D2
+The path continues south.
+~
+~
+0 0 55504
+D3
+A small path leads west.
+~
+~
+0 0 55508
+D4
+Through the translucent moongate you think you see... books?
+~
+moongate~
+2 55508 55516
+S
+#55504
+New Magincia Road~
+   The path continues to the south and north.  On the east there seems to be
+administrative building.
+~
+555 0 0 0 0 1
+D0
+There is a shimmering light.
+~
+~
+0 0 55503
+D1
+~
+door e east~
+1 0 55514
+D2
+~
+~
+0 0 55505
+S
+#55505
+New Magincia Road~
+   The dirt road path ends here in a grove.  You can continue back to the north,
+and there is an old abandoned house to the west.
+~
+555 0 0 0 0 1
+D0
+~
+~
+0 0 55504
+D3
+~
+door w west~
+1 0 55510
+S
+#55506
+Stables~
+   These are the stables for the shepherd.  There are many fine horses here.  
+You can return to the barn to the south.
+~
+555 8 0 0 0 0
+D2
+The front part of the barn is to the south.
+~
+~
+0 0 55507
+S
+#55507
+Barn~
+   This is your basic barn, with hay and stables to the north.  Something on the
+floor seems to be attracting insects.
+~
+555 8 0 0 0 0
+D0
+You hear neighing, intermixed with a strange talking.
+~
+~
+0 0 55506
+D2
+~
+door s south~
+1 0 55508
+S
+#55508
+Humility Lane~
+   This is an even smaller dirt path that crosses New Maginica Road.  To your
+north there is a barn, and to the south you see a condemned building, though you
+cannot enter this way.  West is blocked off a herd of sheep.
+~
+555 0 0 0 0 1
+D0
+~
+door n north~
+1 0 55507
+D1
+There is a shimmering light to the east.
+~
+~
+1 0 55503
+S
+#55509
+Condemned House~
+   This place is wrecked, the rafters have fallen, and light shines through a
+large hole in the roof.  You wonder what kinds of animals have taken home here.
+~
+555 8 0 0 0 0
+D2
+~
+~
+0 0 55510
+S
+#55510
+Condemned House~
+   As you walk into the house, you realize that this house must not have been
+reconstructed yet from the ruin of Old Magincia.  Faint intimations of foolish
+pride still can be seen through the wreckage.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55509
+D1
+~
+door e east~
+1 0 55505
+S
+#55511
+Attic~
+   The attic is dark, and you smell some vestiges of bat guano.  Is that the
+sound of wings flapping?
+~
+555 8 0 0 0 0
+D5
+The rest of the house is down.
+~
+trapdoor d down~
+1 0 55512
+S
+#55512
+House~
+   This is a small humble house.  You do not see much here, though there are
+some faint squeakings.
+~
+555 8 0 0 0 0
+D2
+~
+door s south~
+1 0 55513
+D4
+You see the faint outline of a trapdoor.
+~
+trapdoor u up~
+1 0 55511
+S
+#55513
+Humility Lane~
+   This is a very small path.  It ends here with a fence to the east.  To the
+west is the Moongate, and to the north there is a small house.
+~
+555 0 0 0 0 2
+D0
+~
+door n north~
+1 0 55512
+D3
+~
+door w west~
+1 0 55503
+S
+#55514
+Entrance to the Office~
+   Though this room is small, it acts as a meeting place for Katrina and any
+other person that she has to meet.  You can exit to the west or enter an office
+to the south.
+~
+555 8 0 0 0 0
+D2
+~
+~
+0 0 55515
+D3
+~
+door w west~
+1 0 55504
+S
+#55515
+Katrina's Office~
+   This is office is very sparse...  And humble.  There are no decorations, in
+fact the room is bare except for a simple desk and its chair.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55514
+S
+#55516
+Library~
+   This is an amazing HUGE library.  Its musty smell, and the collapsed
+bookshelf to your north, tell you that it also must be ancient.  In any case,
+you can't get out of the Library (remember the collapsed shelves?  ) so just
+pick a book and start reading.  The stacks continue to the east and west.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55517
+D3
+~
+~
+0 0 55536
+E
+book books shelves~
+   These shelves deal with the fascinating letter A.  Among the more interesting
+books are, "Andersen's tips on Area Building."  "The Art of Spamming" and "Axes
+and You."  
+~
+S
+#55517
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55518
+D3
+~
+~
+0 0 55516
+E
+book books shelves~
+   These books are about the letters B and C.  Some titles are: 'Boom Boxes: How
+large will they become?'  And 'Cutlery: The fine points of Killing' and of course
+the classic, 'Casret's Titles.'  
+~
+S
+#55518
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55519
+D3
+~
+~
+0 0 55517
+E
+book books shelves~
+   This shelf has books dealing with the 'D's'.  'Dracula, Blood Sucker or
+Beavis fan?'  Seems to be the most interesting book here.
+~
+S
+#55519
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D2
+~
+~
+0 0 55520
+D3
+~
+~
+0 0 55518
+E
+book books shelves~
+   The 'E' section is here.  One book, "Howard Stern" doesn't seem to belong
+here.
+~
+S
+#55520
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55519
+D3
+You see a big desk and a man.
+~
+~
+0 0 55521
+E
+book books shelves~
+   You find 'Fax Fun' and 'Farts: How to Blame it on the Dog.'  In this section of
+the library.
+~
+S
+#55521
+Library Office~
+   A big desk dominates this room.  All books must go through this office before
+getting taken out.  Through this office, and through this man.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55520
+D3
+~
+~
+0 0 55522
+S
+#55522
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+You see a huge desk and a man.
+~
+~
+0 0 55521
+D3
+~
+~
+0 0 55523
+E
+book books shelves~
+   The books here start with 'G'.  'Grating Cheese with Julia Childs' and
+'Garamond: What kind of font is this anyway?'  Lie here.
+~
+S
+#55523
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55522
+D2
+~
+~
+0 0 55524
+E
+book books shelves~
+   The books here comprise 'H' and 'I'.  'Hiya: The Women who Use it, and the
+Men who Use the Women' and 'Icaza Loves Ya' are here in gaudy and annoying
+covers.
+~
+S
+#55524
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55523
+D1
+~
+~
+0 0 55525
+E
+book books shelves~
+   These books start with the letter 'J'.  'Jokey Smurf's Greatest Explosions'
+and 'The Judge takes on New York' seem to be the most popular books.
+~
+S
+#55525
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55526
+D3
+~
+~
+0 0 55524
+E
+book books shelves~
+   Hmmm this is the 'K' section, and 'Kicking Vs.  Bashing' is here.
+~
+S
+#55526
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55527
+D3
+~
+~
+0 0 55525
+E
+book books shelves~
+   A book titled, 'Lick me, Lick you' is here along with 'Libraries for Lovers'.
+~
+S
+#55527
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D2
+~
+~
+0 0 55529
+D3
+~
+~
+0 0 55526
+E
+book books shelves~
+   'Mahatma Teachs French' and 'MC Escher: The Rap Star and Paradoxical Artist'.
+~
+S
+#55528
+The Library Moongate~
+   A blue moongate is here, lighting up the storage room.  An empty shelf is
+against the north wall, probably awaiting books.
+~
+555 12 0 0 0 0
+D0
+~
+shelf~
+1 0 55532
+D4
+Through the moongate, there is a party.
+~
+moongate~
+2 55509 55537
+E
+shelf~
+   The shelf looks a bit odd.  It's exactly the size of a door.
+~
+S
+T 55528
+T 55529
+#55529
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55527
+D3
+~
+~
+0 0 55530
+E
+book books shelves~
+   Hmmm...  This is the 'N' section...  But 'Nothing' seems to be here.
+~
+S
+#55530
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55529
+D3
+~
+~
+0 0 55531
+E
+book books shelves~
+   This is the 'OP' section.  You hear moaning behind those stacks and, yup,
+there there on the floor there is another P.
+~
+S
+#55531
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55530
+D3
+~
+~
+0 0 55532
+E
+book books shelves~
+   'Quai Mackdaddy Monk' and 'Rhinoplasty, or The Inebriation of Wild Animals'
+are here.
+~
+S
+#55532
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55531
+D3
+~
+~
+0 0 55533
+E
+book books~
+   'Secret Door: The Shelf' is on the shelf.
+~
+E
+shelf shelves~
+   The shelf to the south looks a bit strange.
+~
+S
+T 55532
+T 55533
+T 55534
+T 55535
+#55533
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55534
+D1
+~
+~
+0 0 55532
+E
+book books shelves~
+   'Textile Farming' and 'Tempting Miss Daisy' is here.
+~
+S
+#55534
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D0
+There is an odd chittering to the north.
+~
+~
+0 0 55535
+D2
+~
+~
+0 0 55533
+E
+book books shelves~
+   'Ultima: The Building of an Area' and 'Vulva Void' are here.
+~
+S
+#55535
+Web~
+   There is a Huge Web sitting here, stretching from shelf to shelf.  And stupid
+you wandered into it.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55536
+D2
+~
+~
+0 0 55534
+S
+#55536
+Library~
+   The Library continues here, with exits to the east and west.  There should be
+some interesting books here somewhere.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55516
+D2
+There is a strange chittering noise to the south.
+~
+~
+0 0 55535
+E
+book books shelves~
+   "Yaz: Grooming Tips" is here.
+~
+S
+#55537
+The Center of the Tavern~
+   The moongate has opened inside of a huge party.  There are bards and other
+townsmen.  This must be Britain.  There are people everywhere carrying their
+drinks and singing is all around.  The party continues to the north, east, south
+and west.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55539
+D1
+~
+~
+0 0 55542
+D2
+~
+~
+0 0 55544
+D3
+~
+~
+0 0 55541
+S
+#55538
+The Northwest Corner of the Tavern~
+   This is where the tavern entrance would be if it wasn't packed with humans
+trying to get in or get out.  There is no chance of you leaving the tavern
+tonight.  You can move to the part to the east and the south.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55539
+D2
+~
+~
+0 0 55541
+S
+#55539
+The North Wall of the Tavern~
+   Party-goers mingle here in front of the bar.  They seem to be having a great
+time and wish for you to join them.  You can continue on to the south, east or
+north.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55540
+D2
+~
+~
+0 0 55537
+D3
+~
+~
+0 0 55538
+S
+#55540
+The Northeast corner of the Tavern~
+   Along this east wall of the tavern are all the tables for the meals.  
+Outside the windows you see cobblestone streets.
+~
+555 8 0 0 0 0
+D2
+~
+~
+0 0 55542
+D3
+~
+~
+0 0 55539
+S
+#55541
+The West Wall of the Tavern~
+   The band has set up here, against the west wall.  Many people dance to the
+music.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55538
+D1
+~
+~
+0 0 55537
+D2
+~
+~
+0 0 55543
+S
+#55542
+The East Wall of the Tavern~
+   The tables are set up here.  You see many couples and group just sitting and
+talking.  They have drinks on their tables and smiles on their faces.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55540
+D2
+~
+~
+0 0 55545
+D3
+~
+~
+0 0 55537
+S
+#55543
+The Southwest Corner of the Tavern~
+   There are many people here, but even through their scent, there seems to be a
+slight stench.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55541
+D1
+~
+~
+0 0 55544
+D5
+~
+cellar~
+1 0 55546
+S
+#55544
+The South Wall of the Tavern~
+   The South Wall windows overlook the sea.  There seems to be a island far to
+the south, and boats just floating in the ports.  The party-goers just wander
+around here.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55537
+D1
+~
+~
+0 0 55545
+D3
+~
+~
+0 0 55543
+S
+#55545
+The Southeast Corner of the Tavern~
+   There are tables here that continue to the north.  The party-goers just
+mingle and hit on each other.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55542
+D3
+~
+~
+0 0 55544
+S
+#55546
+Cellar~
+   The stairway seems to lie down into the cellar.  It stinks of wine, beer and
+snakes here.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55547
+D2
+~
+~
+0 0 55549
+D4
+~
+stairs~
+1 0 55543
+S
+#55547
+Cellar~
+   There are huge wine casks against this wall.  Most seem intact though one is
+eaten through, and the inside seems to have a gooey green substance.
+~
+555 8 0 0 0 0
+D1
+There is the sound of singing in that corner.
+~
+~
+0 0 55548
+D2
+There is a shimmering light to the south.
+~
+~
+0 0 55550
+D3
+~
+~
+0 0 55546
+S
+#55548
+Cellar~
+   There is a chair in the corner and plenty of empty bottles.  There is also
+the evidence of the green substance here as well.
+~
+555 8 0 0 0 0
+D2
+~
+~
+0 0 55551
+D3
+~
+~
+0 0 55547
+S
+#55549
+Cellar~
+   There is a slime trail here.  There seems to be much broken glass down here,
+some if it covered with slime.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55546
+D1
+There is a shimmering to the east.
+~
+~
+0 0 55550
+D2
+~
+~
+0 0 55552
+S
+#55550
+The Britain Moongate~
+   The place around the moongate, as always, seems clean and neat.  The blue
+light of the moongate has become a comforting sight to you.
+~
+555 12 0 0 0 0
+D0
+~
+~
+0 0 55547
+D1
+~
+~
+0 0 55551
+D2
+~
+~
+0 0 55553
+D3
+~
+~
+0 0 55549
+D4
+Through the moongate there is a large courtroom.
+~
+moongate~
+2 55510 55556
+S
+#55551
+Cellar~
+   The walls are leaking here.  You hear the bang of feet and the shifting of
+chairs from above.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55548
+D2
+~
+~
+0 0 55554
+D3
+There is a shimmering to the west.
+~
+~
+0 0 55550
+S
+#55552
+Cellar~
+   The damp walls of this corner bother you...  Not because it's damp.  Because
+it's not water!
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55549
+D1
+~
+~
+0 0 55553
+S
+#55553
+Cellar~
+   The smells of this cellar are overpowering.  There doesn't seem to be much
+ventilation.
+~
+555 8 0 0 0 0
+D0
+There is a shimmering light.
+~
+~
+0 0 55550
+D1
+~
+~
+0 0 55554
+D3
+~
+~
+0 0 55552
+S
+#55554
+Cellar~
+   This corner of the cellar is the ugliest.  From the smell in the corner it is
+obvious where the Drunks clear their guts.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55551
+D3
+~
+~
+0 0 55553
+S
+#55555
+The Yew Entrance~
+   To the south you see a large courthouse and a small part of Yew.  Most of Yew
+is secretly hidden in the branches of the forest.  To the north you see one of
+the most dangerous parts of this same forest.
+~
+555 4 0 0 0 3
+D0
+~
+~
+0 0 55570
+D2
+~
+~
+0 0 55556
+S
+#55556
+In Front of the Courthouse~
+   The immense Courthouse faces this street.  All of Britania's crime comes here
+to be tried.  There is little crime anymore though, after the great
+enlightenment.  There is also a pub to the west.
+~
+555 0 0 0 0 1
+D0
+~
+~
+0 0 55555
+D1
+~
+~
+0 0 55557
+D2
+You can see dim shapes behind the moongate.
+~
+moongate~
+1 0 55685
+D3
+~
+~
+0 0 55562
+S
+#55557
+Justice Row~
+   The cobblestone road leads into a clearing of the woods to the east and to a
+pub to the west.  To your south you see a great Courthouse, but its entrance is
+on the east.
+~
+555 0 0 0 0 1
+D1
+~
+~
+0 0 55558
+D3
+~
+~
+0 0 55556
+S
+#55558
+Under the Stone Arch~
+   You stand under a large stone arch.  To your east there is a bonfire.  
+Around the bonfire are these same stone arches; they form a circle around the
+clearing.
+~
+555 0 0 0 0 3
+D1
+There are chanting druids and a large bonfire to the east.
+~
+~
+0 0 55559
+D3
+~
+~
+0 0 55557
+S
+#55559
+Bonfire~
+   The heat from the bonfire warms you even at the fringe of the ceremony.  
+Here, Druids form a circle and chant the sacred mantra.
+~
+555 0 0 0 0 3
+D3
+~
+~
+0 0 55558
+S
+#55560
+Pub~
+   You are in a happy little pub.  There are many little tables and citizens are
+talking here.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55561
+S
+#55561
+Justice Row~
+   There are some citizens strolling along the road.  There is a Pub to the
+west.
+~
+555 8 0 0 0 0
+D1
+~
+~
+0 0 55562
+D3
+~
+~
+0 0 55560
+S
+#55562
+Justice Row~
+   Perhaps the only real street in a city where all the citizens are nestled in
+trees, it leads east to west.
+~
+555 0 0 0 0 1
+D1
+~
+~
+0 0 55556
+D3
+~
+~
+0 0 55561
+S
+#55563
+The Audience Room~
+   This is where people would sit to see the cases and wait for the Judge.  To
+the North you see the actual Bench.  All around are the pew-like seats.
+~
+555 8 0 0 0 0
+D0
+~
+door n north~
+1 0 55556
+D2
+~
+~
+0 0 55564
+S
+#55564
+The Bench~
+   The Bench is one of the most imposing things you've seen.  You have to crane
+your neck to even glimpse at the Judge.  There are no lawyers, there is only
+Justice.  To the east and west are the prisons.
+~
+555 8 0 0 0 0
+D0
+~
+~
+0 0 55563
+D1
+~
+door e east~
+1 0 55565
+D3
+~
+door w west~
+1 0 55566
+S
+#55565
+Prison~
+   To the north you see a cell.  Locks are unnecessary, because the prisoners
+are kept in their cells by magic.
+~
+555 8 0 0 0 0
+D0
+The prisoner looks at you and growls.
+~
+~
+0 0 55568
+D3
+~
+door w west~
+1 0 55564
+S
+#55566
+Prison~
+   To the north you see a cell.  Locks are unnecessary, because the prisoners
+are kept in their cells by magic.
+~
+555 8 0 0 0 0
+D0
+The prisoner is a small man.
+~
+~
+0 0 55567
+D1
+~
+door e east~
+1 0 55564
+S
+#55567
+Prison Cell~
+   This is a cell where they keep dangerous prisoners.  You hope the magic
+barriers don't give out.
+~
+555 8 0 0 0 0
+D2
+~
+~
+0 0 55566
+S
+#55568
+Prison Cell~
+   This is a cell where they keep dangerous prisoners.  You hope the magic
+barriers don't give out.
+~
+555 8 0 0 0 0
+D2
+~
+~
+0 0 55565
+S
+#55569
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55579
+D1
+You see trees.
+~
+~
+0 0 55573
+D2
+You see trees.
+~
+~
+0 0 55578
+D3
+You see trees.
+~
+~
+0 0 55570
+S
+T 55569
+#55570
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55577
+D1
+You see trees.
+~
+~
+0 0 55571
+D2
+You see the entrance to Yew.
+~
+~
+0 0 55555
+D3
+You see trees.
+~
+~
+0 0 55569
+S
+#55571
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55572
+D1
+You see trees.
+~
+~
+0 0 55581
+D2
+You see trees.
+~
+~
+0 0 55570
+D3
+You see trees.
+~
+~
+0 0 55576
+S
+T 55571
+#55572
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55575
+D1
+You see trees.
+~
+~
+0 0 55573
+D2
+You see trees.
+~
+~
+0 0 55582
+D3
+You see trees.
+~
+~
+0 0 55571
+S
+#55573
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55574
+D1
+You see trees.
+~
+~
+0 0 55569
+D2
+You see trees.
+~
+~
+0 0 55583
+D3
+You see trees.
+~
+~
+0 0 55572
+S
+#55574
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55583
+D1
+You see trees.
+~
+~
+0 0 55578
+D2
+You see trees.
+~
+~
+0 0 55573
+D3
+You see trees.
+~
+~
+0 0 55575
+S
+#55575
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55582
+D1
+You see trees.
+~
+~
+0 0 55574
+D2
+You see trees.
+~
+~
+0 0 55572
+D3
+You see trees.
+~
+~
+0 0 55576
+S
+#55576
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55581
+D1
+You see trees.
+~
+~
+0 0 55575
+D2
+You see trees.
+~
+~
+0 0 55571
+D3
+You see trees.
+~
+~
+0 0 55577
+S
+#55577
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55580
+D1
+You see trees.
+~
+~
+0 0 55576
+D2
+You see trees.
+~
+~
+0 0 55570
+D3
+You see trees.
+~
+~
+0 0 55578
+S
+T 55569
+#55578
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55579
+D1
+You see trees.
+~
+~
+0 0 55577
+D2
+You see trees.
+~
+~
+0 0 55569
+D3
+You see trees.
+~
+~
+0 0 55574
+S
+#55579
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55569
+D1
+You see trees.
+~
+~
+0 0 55580
+D2
+You see trees.
+~
+~
+0 0 55578
+D3
+You see trees.
+~
+~
+0 0 55583
+S
+#55580
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see a shimmering light.
+~
+~
+0 0 55584
+D1
+You see trees.
+~
+~
+0 0 55581
+D2
+You see trees.
+~
+~
+0 0 55577
+D3
+You see trees.
+~
+~
+0 0 55579
+S
+#55581
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55571
+D1
+You see trees.
+~
+~
+0 0 55582
+D2
+You see trees.
+~
+~
+0 0 55576
+D3
+You see trees.
+~
+~
+0 0 55580
+S
+#55582
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55572
+D1
+You see trees.
+~
+~
+0 0 55583
+D2
+You see trees.
+~
+~
+0 0 55575
+D3
+You see trees.
+~
+~
+0 0 55581
+S
+#55583
+Yew Forest~
+   This is the Yew Forest.  The trees look all the same.  Consequently you are
+lost.
+~
+555 1 0 0 0 3
+D0
+You see trees.
+~
+~
+0 0 55573
+D1
+You see trees.
+~
+~
+0 0 55579
+D2
+You see trees.
+~
+~
+0 0 55574
+D3
+You see trees.
+~
+~
+0 0 55582
+S
+#55584
+The Yew Moongate~
+   There is your way out, through the blue moongate.  You can see dimly through
+it.
+~
+555 4 0 0 0 3
+D2
+You see trees.
+~
+~
+0 0 55580
+D4
+Through the moongate you see a cave opening.
+~
+moongate~
+2 55511 55585
+S
+#55585
+Dungeon Entrance~
+   There is a huge maw of an entrance to one of the terrible Dungeons.  After
+the Age of Enlightenment only 8 sources of evil still survive in the world.  
+These are the eight Dungeons.  Now they are being cleaned out.
+~
+555 12 0 0 0 0
+D0
+A cold draft pours out of the dungeon.
+~
+~
+0 0 55587
+S
+#55586
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D0
+~
+~
+0 0 55590
+S
+#55587
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D0
+~
+~
+0 0 55591
+D2
+~
+~
+0 0 55585
+S
+#55588
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D0
+~
+~
+0 0 55592
+D1
+~
+~
+0 0 55589
+S
+#55589
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D3
+~
+~
+0 0 55588
+S
+#55590
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D0
+~
+~
+0 0 55594
+D1
+~
+~
+0 0 55591
+D2
+~
+~
+0 0 55586
+S
+#55591
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D0
+~
+~
+0 0 55595
+D1
+~
+~
+0 0 55592
+D2
+~
+~
+0 0 55587
+D3
+~
+~
+0 0 55590
+S
+#55592
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D1
+~
+~
+0 0 55593
+D2
+~
+~
+0 0 55588
+D3
+~
+~
+0 0 55591
+S
+#55593
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D0
+~
+~
+0 0 55597
+D3
+~
+~
+0 0 55592
+S
+#55594
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D0
+~
+~
+0 0 55598
+D2
+~
+~
+0 0 55590
+S
+#55595
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D0
+~
+~
+0 0 55599
+D1
+~
+~
+0 0 55596
+D2
+~
+~
+0 0 55591
+S
+#55596
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D0
+~
+~
+0 0 55600
+D3
+~
+~
+0 0 55595
+S
+#55597
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D2
+~
+~
+0 0 55593
+S
+#55598
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D2
+~
+~
+0 0 55594
+S
+#55599
+The Dungeon~
+   These dungeon rooms seem all the same.  There are signs of recent battling
+everywhere.
+~
+555 9 0 0 0 0
+D2
+~
+~
+0 0 55595
+S
+$~

@@ -1,0 +1,1576 @@
+#55500
+insects swarm bugs~
+the insects~
+You hear buzzing, and see a swarm of insects flying at you.
+~
+   These insects are more of an annoyance than a threat.  It is made up of
+hundreds of annoying insects.
+~
+104 0 0 0 131072 0 0 0 -10 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+BareHandAttack: 1
+E
+#55501
+bat~
+the bat~
+A black furry bat flies into your face.
+~
+   You hear a high pitch screech.  It is a black furry bat.  This annoying
+creature usually travels in flocks, so WATCH OUT.
+~
+42 0 0 0 131072 0 0 0 -10 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+BareHandAttack: 8
+E
+#55502
+shepherd man~
+the shepherd~
+A humble shepherd is here, looking after his sheep.
+~
+   The shepherd is a patient old man who has spent all his days looking after
+his sheep and all his nights studying the virtue of Humility.  Through the
+wrinkles on his face you can see his proud dignity and begin to sense that he
+was once a warrior.
+~
+72 0 0 0 0 0 0 0 500 E
+2 20 8 0d0+20 1d2+0
+20 400
+8 8 1
+E
+#55503
+girl child~
+the girl~
+A smiling young girl is here.
+~
+   The girl looks shyly at you.  Even at this young age, she has learned enough
+of her culture to be humble.  She jumps rope and look up at you expectantly.
+~
+200 0 0 0 0 0 0 0 1000 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 2
+E
+#55504
+sheep~
+the sheep~
+A sheep peacefully eats grass.
+~
+   Even the sheep in New Magincia seem to exude humbleness.  The sheep has pure
+white fleece.
+~
+138 0 0 0 0 0 0 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+BareHandAttack: 4
+E
+#55505
+Katrina woman shepherd~
+Katrina the Shepherd~
+Katrina the Shepherd is here, looking over the village.
+~
+   Katrina was one of the Warriors of Destiny.  She epitomizes the virtue of
+humility.  After her great Enlightenment, she traveled back to her home and
+helped rebuild Magincia.  She still is a great warrior and an able guardian of
+New Magincia.
+~
+76 0 0 0 32 0 0 0 1000 E
+5 19 7 1d1+50 1d2+0
+50 2500
+8 8 2
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#55506
+rat~
+the giant rat~
+A rat is gnawing on a book.
+~
+   This giant rat is smelly and fleas jump up from its fur.  The rats have been
+a great problem in the Library because they eat and shred the books.  This rat
+seems to be rabid, so beware its teeth.
+~
+104 0 0 0 0 0 0 0 -50 E
+5 19 7 1d1+50 1d2+0
+50 2500
+8 8 0
+BareHandAttack: 4
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#55507
+spider~
+the giant spider~
+A giant spider sits on its web.
+~
+   This scavenger has seemed to have collected many things, including books,
+scrolls, and other scraps.  Its glistening teeth drip with poison.
+~
+46 0 0 0 0 0 0 0 -50 E
+6 18 6 1d1+60 1d2+1
+60 3600
+8 8 0
+BareHandAttack: 4
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#55508
+mage~
+the mage~
+A mage stands here, reading a book.
+~
+   The mage, in his ever-increasing search for Honesty and Truth, has come to
+the library to peruse the ancient tomes of knowledge.  He glances at you, and
+returns to his study.
+~
+72 0 0 0 32 0 0 0 500 E
+6 18 6 1d1+60 1d2+1
+60 3600
+8 8 1
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#55509
+Nystul librarian mage~
+Nystul the Librarian~
+Nystul the Librarian sits at his desk, writing some scrolls.
+~
+   Nystul is the mentor, teacher, mage of the Lyceum.  He is a shining example
+of Truth.  His head is bowed over a book, but power radiates from him.
+~
+10 0 0 0 256 0 0 0 1000 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Cha: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55510
+mariah mage~
+Mariah the Mage~
+Mariah walks around the stacks, busily looking for a book.
+~
+   Mariah is another Warrior of Destiny.  She joined the Avatar to add some
+magical punch during his Enlightenment.  She seems serene in her total devotion
+to the virtue of Honesty.
+~
+72 0 0 0 256 0 0 0 1000 E
+8 18 5 1d1+80 1d2+1
+80 6400
+8 8 2
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#55511
+slime puddle mass~
+the slime~
+An ugly green mass sits on the ground in a puddle.
+~
+   The slime is an amorphous goo.  It seems pretty wimpy, but it has a lot of
+friends.  As you look at it you wonder how these things reproduce.
+~
+232 0 0 0 0 0 0 0 -100 E
+7 18 5 1d1+70 1d2+1
+70 4900
+8 8 0
+BareHandAttack: 9
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#55512
+snake~
+the snake~
+The snake strikes.
+~
+   The green snake's tongue darts in and out tasting the air.  It senses spilled
+beer and the distinctive taste of human.
+~
+232 0 0 0 0 0 0 0 -100 E
+9 17 4 1d1+90 1d2+1
+90 8100
+8 8 1
+BareHandAttack: 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#55513
+horse Smithy~
+Mr. Smithy~
+Mr. Smithy, the talking horse, is chewing hay.
+~
+   This useless horse is a novelty, he can talk.  Though his talk is often
+meaningless and he gives out irrelevant clues, his sleek body and his much
+practiced jaw muscles can be very dangerous.
+~
+10 0 0 0 0 0 0 0 500 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 1
+BareHandAttack: 6
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+T 55513
+T 55514
+#55514
+bard musician~
+the bard~
+A bard sits here, strumming his mandolin.
+~
+   The bard seems happy and content to play his mandolin.  He is a seeker of
+Compassion, but in his spare time he sings and dances.
+~
+10 0 0 0 0 0 0 0 500 E
+9 17 4 1d1+90 1d2+1
+90 8100
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#55515
+beggar~
+the beggar~
+A beggar is here with his hand out.
+~
+   He is more accustomed to receiving Compassion than giving it.  But help him
+out guv, give him a few coins.
+~
+72 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+80 6400
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+T 55515
+#55516
+Iolo bard musician~
+Iolo the Bard~
+Iolo sits here with a bottle in his hand and a smile on his face.
+~
+   Iolo is one of the first Warriors of Destiny.  He seems to be a little bit
+tipsy from the party and you wonder why he has wandered down to the cellar.  
+Anyway, in the spirit of the virtue Compassion that he embodies, he holds out a
+bottle for you.
+~
+10 0 0 0 256 0 0 0 1000 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55517
+jester Chuckles~
+Chuckles the Jester~
+Chuckles the Jester is juggling and entertaining.
+~
+   Chuckles the Jester is here mumbling, 'Spam Spam.'  This annoying character is
+Lord British's major entertainment.  He is laughing and telling corny jokes.  
+He seems to hold his dinner in his hands, and when he dances, the bells on his
+hat jingle merrily.
+~
+10 0 0 0 256 0 0 0 1000 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55518
+townsman man~
+the townsman~
+A townsman is here downing drinks.
+~
+   This townsman is here partying and having many drinks.  Though he is also an
+ardent believer in Compassion, and a responsible citizen, he knows the value of
+a good party.
+~
+72 0 0 0 0 0 0 0 0 E
+9 17 4 1d1+90 1d2+1
+90 8100
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#55519
+Gwenno bard~
+Gwenno the Bard~
+Gwenno the Bard, Iolo's happy wife, wanders around with bow in hand.
+~
+   You see a pretty woman with finally sculptured musculature.  She seems to
+guard the party with her Infinity Bow, the best bow in the Ultima world.  Her
+kindly eyes seem to emit pure Compassion, and as she wanders, she helps the
+drunks up and leads them out the door.
+~
+72 0 0 0 256 0 0 0 1000 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 2
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55520
+orc ape~
+the orc~
+A mutated ape carries a spear.
+~
+   This orc is a disgusting animal.  As you look, this ape-like monster
+scratches its armpits.  It travels in herds and is a coward.
+~
+232 0 0 0 0 0 0 0 -100 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 1
+BareHandAttack: 3
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#55521
+troll~
+the troll~
+A stony troll swings his club.
+~
+   This huge monster is immense and powerful.  Over a chest and a head taller
+then you, his meaty arms swing a club at you.
+~
+104 0 0 0 0 0 0 0 -100 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 1
+BareHandAttack: 9
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55522
+wisp ball~
+the wisp~
+A blue ball of light soars over to you and winks.
+~
+   The Wisp is constantly blinking.  It wishes information exchange.  It looks
+peaceful, but will defend itself.
+~
+76 0 0 0 256 0 0 0 500 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 0
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55523
+druid~
+the forest druid~
+A chanting druid walks the woods.
+~
+   Dressed in a hooded robe that obscures his face, the druid is softly chanting
+words and traveling through the woods.  He is one that is secure in his sense of
+Justice, and enlightened in the ways of judging others.  Through his communion
+with nature, he has gained power.
+~
+72 0 0 0 0 0 0 0 100 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55524
+druid~
+the city druid~
+A druid walks around a flame.
+~
+   This druid seems to be entranced by the fire.  She chants softly as she waves
+her hand and stares into the flame.  She is one with the flame.  When she looks
+at you, her hard eyes only judge, seeking Justice.
+~
+10 0 0 0 0 0 0 0 100 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55525
+judge~
+the Judge~
+The Judge sits here.
+~
+   You cannot help but shiver as you see the Judge sit here silently.  His eyes
+pierce into your soul, and he knows.  He knows your faults.  He knows your
+virtues.  He knows if you've been bad or good....  So be good.  This ultimate
+purveyor of Justice sends criminals to jail everyday, sometimes with his bare
+hands.
+~
+10 0 0 0 256 0 0 0 500 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55526
+Jaana druid~
+Jaana the Druid~
+Jaana the Druid is in deep meditation.
+~
+   You meet another Warrior of Destiny.  She helped to lead the magical force to
+the Avatar.  The Avatar's mentor in Justice, she has gone to the woods to drive
+life into a corner.
+~
+72 0 0 0 320 0 0 0 1000 E
+16 15 0 3d3+160 2d2+2
+160 25600
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#55527
+prisoner~
+the dirty prisoner~
+The Prisoner grips the bars with his dirty hands.
+~
+   The Prisoner seems to be a slimy character.  He was a thief, and Justice was
+done to him.  You glimpse light shining off something in his hands.
+~
+10 0 0 0 1572864 0 0 0 -100 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#55528
+prisoner~
+the prisoner~
+The Prisoner is big and grins evilly at you.
+~
+   This Prisoner was convicted of one of the most heinous crimes, MURDER.  It
+took many guards and druids to restrain this beast.
+~
+42 0 0 0 0 0 0 0 -100 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55529
+citizen yewsman~
+the citizen of Yew~
+A citizen of Yew walks around.
+~
+   Being the second largest city in Britannia, second only to Britain itself,
+this city employs and houses many people.  This citizen of the city of Justice
+strolls the street, sure of his Virtue.
+~
+200 0 0 0 0 0 0 0 0 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55530
+bartender~
+the bartender~
+A bartender stands here in the the middle of a throng of people.
+~
+   A smiling face asks you what you would like to drink.  Well versed in
+Compassion, he has heard and sympathized with many people who have gone to him
+for advice.  His advice to you is to kick back and enjoy a drink.
+~
+74 0 0 0 0 0 0 0 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#55531
+owner bartender~
+the pub owner~
+The owner of the pub walks around, talking to her customers.
+~
+   The pub owner waves and smiles to you.  She asks what you want to drink and
+eat.
+~
+10 0 0 0 0 0 0 0 0 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 2
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55532
+ettin~
+the ettin~
+The ettin scratches its heads and attacks.
+~
+   With its two heads, it should make sense that this monster would have double
+the intelligence.  But, in fact, it has only half.
+~
+104 0 0 0 0 0 0 0 -100 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 0
+BareHandAttack: 9
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55533
+gremlin creature~
+the gremlin~
+This little creature sneaks around and steals your food.
+~
+   It seems to be just a head with little hands and feet sticking out of it.  
+It does not seem like these things could hurt you, but your money pouch seems
+much lighter.
+~
+204 0 0 0 1572864 0 0 0 -100 E
+15 15 1 3d3+150 2d2+2
+150 22500
+8 8 0
+BareHandAttack: 8
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#55534
+headless~
+the headless~
+The headless creature seems to be heading right for you!
+~
+   No one really understands how these things can sense but, as it unerringly
+reaches for you, you know it does.  In any case these creatures are strong and
+endurable.
+~
+104 0 0 0 0 0 0 0 -100 E
+19 14 -1 3d3+190 3d3+3
+190 36100
+8 8 0
+BareHandAttack: 9
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Cha: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#55535
+fighter~
+the fighter~
+A muscular fighter searches here.
+~
+   This fighter is cleaning out the dungeons.  In the peaceful time following
+the Avatar's success, there are few ways to show Valor.  One of the more
+dangerous is to descend into the pits of hell and clean them out.
+~
+72 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+180 32400
+8 8 2
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Cha: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#55536
+Geoffrey~
+Geoffrey the Fighter~
+Geoffrey the Fighter leads this campaign.
+~
+   The muscle power of the Warriors of Destiny, Geoffrey is immense.  His broad
+shoulders make you look like a mouse.  He epitomizes Valor.
+~
+72 0 0 0 256 0 0 0 1000 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Cha: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55537
+lord serpent Simon~
+Lord Simon~
+Lord Simon of the Serpent Hold stares at your form.
+~
+   His movements are liquid and art.  As he makes a few practice swings, you
+HOPE that you are never on the receiving end of his immense sword.  This is The
+Lord of Serpent Hold, courage itself solidified into a human form.
+~
+72 0 0 0 256 0 0 0 1000 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55538
+mimic chest~
+the mimic~
+A treasure chest is here, overflowing with gold.
+~
+   The treasure chest reforms, and spits out a glob of poison.  Beware,
+adventurer, of the Mimic.
+~
+104 0 0 0 0 0 0 0 -500 E
+21 13 -2 4d4+210 3d3+3
+210 44100
+8 8 0
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Cha: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55539
+gazer eyeball~
+the gazer~
+A floating eyeball glares at you.
+~
+   This creature is comprised of one main eyeball and several auxiliary eyeballs
+coming out of the main.  The eyeballs draw you in, making you forget who you
+are....
+~
+104 0 0 0 0 0 0 0 -100 E
+21 13 -2 4d4+210 3d3+3
+210 44100
+8 8 0
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Cha: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55540
+tinker~
+a tinker~
+A tinker is fiddling with one device or another.
+~
+   The tinker has huge rippling muscles and a scarred skin.  You realize that
+his great Sacrifice to his craft has led to his incredible strength and
+weaponskill.  This is not one you wish to fight.
+~
+72 0 0 0 0 0 0 0 0 E
+22 13 -3 4d4+220 3d3+3
+220 48400
+8 8 1
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Cha: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55541
+Julia~
+Julia the Tinker~
+Julia the Tinker is here, forging a sword.
+~
+   Julia the Tinker provided some of the muscle power to the Avatar during his
+Great Quest for enlightenment.  She was a Warrior of Destiny and you see that
+not much has changed since those days.  She represents Sacrifice in everything
+she does.  She is the Keeper of Oral History, as well as a prominent
+weaponsmith.
+~
+10 0 0 0 256 0 0 0 1000 E
+24 12 -4 4d4+240 4d4+4
+240 57600
+8 8 2
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55542
+lady~
+the Lady of Empath Abbey~
+The Lady of Empath Abbey stands here.
+~
+   When you see her your heart almost stops as you feel the intense waves of
+pure Love come from her body.  Her love for you almost knocks you down.  You
+cannot hurt this one.
+~
+72 0 0 0 256 0 0 0 1000 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+#55543
+sandtrap tentacle~
+the sandtrap~
+A tentacle reaches out of the sand and latches onto your leg.
+~
+   The Sandtrap burrows around under the sand and comes onto travellers, hidden.
+No one is really sure what the Sandtrap looks like but it is a dangerous foe.
+~
+236 0 0 0 1572864 0 0 0 -100 E
+18 14 0 3d3+180 3d3+3
+180 32400
+8 8 0
+BareHandAttack: 2
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Cha: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#55544
+dragon~
+the dragon~
+A dragon lies on his heap of treasure with fire billowing out of his maw.
+~
+   The dragon looks like every other dragon you've seen; wings, tail, fire.  
+Only this one doesn't have a dorky color attached to it.  And doesn't talk about
+annoying C terms.
+~
+42 0 0 0 0 0 0 0 -1000 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 0
+BareHandAttack: 8
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Cha: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55545
+paladin~
+the paladin~
+A paladin practices his sword strokes here.
+~
+   This paladin works hard to keep his Honor and the Honor of his people.  
+Honor does not lead his life, Honor is his life.  His shiny armor and equally
+shiny sword serves to remind you that he is among Britannia's most powerful
+battalion.
+~
+72 0 0 0 0 0 0 0 500 E
+20 14 -2 4d4+200 3d3+3
+200 40000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Cha: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55546
+Dupre paladin~
+Dupre the Paladin~
+Sitting here, Dupre the Paladin consults his maps.
+~
+   Dupre the Paladin was constant companion of the Avatar and a Warrior of
+Destiny.  He is a symbol of Honor.  He is right now trying to figure out a plan
+of attack to get the dragon.
+~
+10 0 0 0 256 0 0 0 1000 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55547
+reaper~
+the reaper~
+The reaper strikes out with its tentacles.
+~
+   The reaper is immobilized and attached to the ground.  Even with this
+disadvantage its tentacles and magical powers more then make up for any
+disadvantage.
+~
+42 0 0 0 0 0 0 0 -100 E
+18 14 0 3d3+180 3d3+3
+180 32400
+8 8 0
+BareHandAttack: 2
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Cha: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#55548
+gargoyle king Draxthanum~
+Draxthanum the Gargoyle~
+The King of Gargoyles is here.
+~
+   Draxthanum, the Winged Gargoyle, is here to observe the odd habits of humans
+and their combat tactics.  He is red with wings, very strong and his aura is
+overpowering.
+~
+72 0 0 0 256 0 0 0 1000 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+BareHandAttack: 8
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55549
+ghost spirit~
+the spirit~
+The spirit of a peaceful man floats around here.
+~
+   This ghost seems peaceful, even though he is chained to the earth through
+some responsibility.
+~
+72 0 0 0 0 0 0 0 100 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55550
+ghost spirit~
+the ghost~
+This ghost was an evil man in a past life.
+~
+   Even on its transparent face, you can see a grimace of evil as it swoops over
+to you.
+~
+104 0 0 0 0 0 0 0 -100 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55551
+skeleton~
+the skeleton~
+The skeleton walks around in tattered clothing.
+~
+   The skeleton has rotting bits of flesh attached to its bones.  It carries a
+rusty shield and sword.  In fact the only thing completely clean on it are its
+white teeth, perhaps from its nightly meals of flesh and bone.
+~
+104 0 0 0 0 0 0 0 -100 E
+23 13 -3 4d4+230 3d3+3
+230 52900
+8 8 0
+Str: 15
+Dex: 15
+Int: 15
+Wis: 15
+Con: 15
+Cha: 15
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55552
+daemon demon~
+the daemon~
+The daemon unfurls his wings and swoops towards you.
+~
+   The most dangerous undead, and among the most dangerous of all monsters, this
+beast can use all magics, is strong and hardy.  Right now he seems to be busy...
+Killing you.
+~
+104 0 0 0 0 0 0 0 -500 E
+23 13 -3 4d4+230 3d3+3
+230 52900
+8 8 1
+BareHandAttack: 8
+Str: 15
+Dex: 15
+Int: 15
+Wis: 15
+Con: 15
+Cha: 15
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55553
+mourner~
+the mourner~
+A mourner bows her head over the grave.
+~
+   A mourner is in tears.  She is crying over the grave of a loved one.  She is
+expressing poignant Spirituality.  This gives her strength to persevere.
+~
+72 0 0 0 0 0 0 0 0 E
+23 13 -3 4d4+230 3d3+3
+230 52900
+8 8 2
+Str: 15
+Dex: 15
+Int: 15
+Wis: 15
+Con: 15
+Cha: 15
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55554
+Shamino ranger~
+Shamino the Ranger~
+Shamino the Ranger sits here, meditating.
+~
+   The last Warrior of Destiny, Shamino sits here in a yoga position.  The
+Enlightened smile on his face confirms that he indeed is one with the spirit of
+Spirituality.
+~
+10 0 0 0 256 0 0 0 1000 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#55555
+timelord~
+the Timelord~
+The Timelord is here in an aura of power.
+~
+   The Hourglass that he holds in his hand actually controls the fickle powers
+of time.  This being is so awe-inspiring that you feel an urge to prostrate
+yourself to him.  But as all godly powers must be, he is truly and totally
+neutral.
+~
+10 0 0 0 256 0 0 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+#55556
+guardian~
+the Guardian~
+The Guardian, as far as you can tell, is just a big red face.
+~
+   First you hear a booming voice.  'You will join the Fellowship.'  He is the
+latest, and some people say greatest, of the Avatar's enemies.  And now you have
+the joy of meeting him.
+~
+42 0 0 0 256 0 0 0 -1000 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+T 55556
+#55557
+Blackthorn~
+Blackthorn~
+Blackthorn wonders how he lost the throne.
+~
+   Blackthorn was more misguided rather then evil.  Though he was still a foe of
+Avatar that eventually was destroyed, during this era he still is corrupt and
+VERY, VERY dangerous.
+~
+42 0 0 0 256 0 0 0 -1000 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+#55558
+Exodus~
+Exodus~
+Exodus is here, reveling in his island fortress.
+~
+   Exodus, the horrible progeny of Minax and Mondain, is here.  More powerful
+then his parents, he is also more dangerous.  He was the last of the Triad that
+the Avatar destroyed.
+~
+42 0 0 0 256 0 0 0 -1000 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+#55559
+Minax~
+Minax~
+Minax is here, conjuring up the evil spirits.
+~
+   More powerful then her master and lover, Minax is as beautiful as she is
+dangerous.  Bold enough to take on the forces of evil without the gem, she
+eventually proved to be their mistress.  Without the Avatar the world would
+still be under her complete power.
+~
+42 0 0 0 256 0 0 0 -1000 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+#55560
+Mondain~
+Mondain~
+Mondain grips his evil gem and conjures magic to destroy you.
+~
+   Mondain, the first of the Triad of Evil, was the first foe that the man,
+later to be known as the Avatar, was to face.  Mondain has killed his father to
+gain the power of the dark gem that he wielded.
+~
+42 0 0 0 256 0 0 0 -1000 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+#55561
+Sentri guard~
+Sentri~
+Sentri stoically stands here, protecting his Lord and castle.
+~
+   Sentri is a powerful man whose only job is to protect the life of Lord
+British.  In seeing this done he is completely armored and wields a heavy blade.
+~
+10 0 0 0 0 0 0 0 750 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+T 55561
+#55562
+Batlin~
+Batlin~
+Batlin says, 'Join the Fellowship.'
+~
+   Batlin is an evil man that goes around and corrupts the young.  You see also
+that he has a full set of mantras, probably stolen from their rightful owners.
+He is protected though by the power of his god.
+~
+76 0 0 0 256 0 0 0 -750 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+T 55562
+#55563
+avatar~
+the Avatar~
+The Avatar is here, chatting to Lord British.
+~
+   The Avatar is the symbol of courage and truth and love, and all that descends
+from it.  He has mastered Compassion, Humility, Justice, Spirituality, Honesty,
+Sacrifice, Valor, and Honor.  He truly is an inspiration to those who know him.
+~
+10 0 0 0 256 0 0 0 1000 E
+32 10 -9 6d6+320 5d5+5
+320 102400
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 8
+E
+#55564
+Lord British~
+Lord British~
+Lord British is healing the Avatar's wounds.
+~
+   Lord British sits on his throne.  When you see him, you know the meaning of
+true leadership.  His charisma is almost tangible.  On him you see the three
+crown jewels.  These hold power both figuratively and literally.
+~
+10 0 0 0 256 0 0 0 1000 E
+32 10 -9 6d6+320 5d5+5
+320 102400
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 8
+E
+#55565
+shark~
+the shark~
+The shark smells blood.
+~
+   This fish can sense blood in the water and comes to kill you.
+~
+104 0 0 0 128 0 0 0 -100 E
+21 13 -2 4d4+210 3d3+3
+210 44100
+8 8 1
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Cha: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55566
+seahorse sea horse~
+the seahorse~
+The peaceful seahorse swims here.
+~
+   The seahorse is an amazingly beautiful creature.  Its swimming and diving
+pleases you.
+~
+72 0 0 0 128 0 0 0 100 E
+21 13 -2 4d4+210 3d3+3
+210 44100
+8 0 1
+BareHandAttack: 4
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Cha: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55567
+squid~
+the squid~
+The squid's tentacles reach for you.
+~
+   The squid easily is double a boat in size.  Its tentacles are huge and you
+fear as it grabs for you.
+~
+104 0 0 0 0 0 0 0 -100 E
+21 13 -2 4d4+210 3d3+3
+210 44100
+8 8 0
+BareHandAttack: 2
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Cha: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#55568
+armorer~
+the armorer~
+The Armorer stands here.
+~
+   The Armorer sells...  Armor.
+~
+10 0 0 0 64 0 0 0 0 E
+32 10 -9 6d6+320 5d5+5
+320 102400
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 8
+E
+#55569
+weaponseller~
+the weaponseller~
+The Weaponseller stands here.
+~
+   The Weaponseller sells...  Weapons.
+~
+10 0 0 0 64 0 0 0 0 E
+32 10 -9 6d6+320 5d5+5
+320 102400
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 8
+E
+#55570
+boatseller~
+the boatseller~
+The Boatseller stands here.
+~
+   The Boatseller sells...  Boats.
+~
+10 0 0 0 64 0 0 0 0 E
+32 10 -9 6d6+320 5d5+5
+320 102400
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 8
+E
+$

@@ -295,6 +295,7 @@ const char *connected_types[] = {
   "Trigger edit",
   "Help edit",
   "Quest edit",
+  "Preference edit",
   "\n"
 };
 

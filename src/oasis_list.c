@@ -241,8 +241,8 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
   }
 
   send_to_char (ch,
-  "Index VNum    Room Name                                Exits\r\n"
-  "----- ------- ---------------------------------------- -----\r\n");
+  "Index VNum    Room Name                                    Exits\r\n"
+  "----- ------- -------------------------------------------- -----\r\n");
 
   if (!top_of_world)
     return;
@@ -294,8 +294,8 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mo
   }
 
   send_to_char(ch,
-  "Index VNum    Mobile Name                                   Level\r\n"
-  "----- ------- --------------------------------------------- -----\r\n");
+  "Index VNum    Mobile Name                                  Level\r\n"
+  "----- ------- -------------------------------------------- -----\r\n");
 
   if (!top_of_mobt)
     return;
@@ -545,7 +545,7 @@ static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, 
   /* Store the header for the room listing. */
   send_to_char (ch,
   "Index VNum    Trigger Name                                  Type\r\n"
-  "----- ------- -------------------------------------------------------\r\n");
+  "----- ------- --------------------------------------------- ---------\r\n");
 
   /* Loop through the world and find each room. */
   for (i = 0; i < top_of_trigt; i++) {

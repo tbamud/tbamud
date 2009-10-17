@@ -334,6 +334,9 @@ extern char *immlist;
 extern char *background;
 extern char *handbook;
 extern char *policies;
+extern char *bugs;
+extern char *typos;
+extern char *ideas;
 
 /* The ingame helpfile */
 extern int top_of_helpt;

@@ -5,7 +5,7 @@ A shimmering portal leading to Midgaard has been placed here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 T 100
 #101
 beer bottle imported beer~
@@ -14,7 +14,7 @@ A bottle of imported beer has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 1 0
-13 20 0 0
+13 20 0 0 0
 #102
 stout bottle malt liquor ale~
 a stout bottle~
@@ -22,7 +22,7 @@ A dark bottle of stout malt liquor has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 3 0
-13 140 0 0
+13 140 0 0 0
 #103
 glass firebreather~
 a glass~
@@ -30,7 +30,7 @@ A glass of firebreather was left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 7 0
-13 200 0 0
+13 200 0 0 0
 #104
 bottle brew special local~
 a bottle~
@@ -38,7 +38,7 @@ A dark bottle of some special brew was left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 8 0
-10 5 0 0
+10 5 0 0 0
 #105
 green robe~
 a green robe ~
@@ -46,7 +46,7 @@ A green robe of the magi lies here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
-1 500 0 0
+1 500 0 0 0
 E
 green robe magi~
    This beautiful flowing robe is the prized possesion of the magi.  It is
@@ -59,7 +59,7 @@ A beautiful red magi robe~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 3 0 0 0
-3 500 0 0
+3 500 0 0 0
 E
 red robe~
    The robe of the order of the red magi.  Very well made.    
@@ -71,7 +71,7 @@ A blue robe sits here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
-5 500 0 0
+5 500 0 0 0
 E
 blue robe~
    The robe of the order of the blue magi.  Very well made.    
@@ -83,7 +83,7 @@ A round fishing hat has been left here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-1 40 0 0
+1 40 0 0 0
 E
 hat fishing round~
    Round, rumpled, and covered in lures, this hat must have been someone's
@@ -96,7 +96,7 @@ Some waybread has been put here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 waybread bread~
    The waybread is the traditional feed of elves when traveling, they call it
@@ -109,7 +109,7 @@ Some dried rations has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 18 0 0 0
-1 7 0 0
+1 7 0 0 0
 E
 rations dried~
    These rations are bland and serve no other purpose than to keep you alive.
@@ -122,7 +122,7 @@ A nice looking delicious red apple has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-1 2 0 0
+1 2 0 0 0
 E
 apple~
    The apple looks fresh, except for one small worm hole in, nothing wrong with
@@ -135,7 +135,7 @@ A tasty looking crescent has been dropped here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 crescent~
    The crescent looks warm and flaky, just how you like it...    
@@ -147,7 +147,7 @@ A shot of bourbon is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 5 0
-5 230 0 0
+5 230 0 0 0
 E
 bourbon shot~
    This is the kind of liquor that makes successful peopl into sloppy drunks.
@@ -160,7 +160,7 @@ A pretzel has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 pretzel~
    Heavily salted, you better buy a drink if you're gonna eat this thing.    
@@ -172,7 +172,7 @@ A huge safe sits behind the counter, filled with gold coins.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 safe~
    The door is propped open, the glint of gold coins sparkles from the lantern
@@ -186,7 +186,7 @@ A bench of black polished granite looks mighty uncomfortable.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 bench granite black~
    The bench is carved out of a single block of black granite and has been
@@ -199,7 +199,7 @@ A rack of armor rests here against one wall.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 rack armor~
    Chain mail shirts, leggings, helms, sleeves, everything an adventurer could
@@ -212,7 +212,7 @@ A rack of weapons leans against the wall.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 rack weapons~
    Swords, clubs, implements of masss destruction for the taking, at the right
@@ -225,7 +225,7 @@ A yellow robe of the Magi was left here, how strange.~
 ~
 9 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-3 500 0 0
+3 500 0 0 0
 E
 yellow robe~
    An expertly woven silken cloth of very high quality, most magi would die
@@ -238,7 +238,7 @@ A dagger with a long thin blade is here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
-2 30 0 0
+2 30 0 0 0
 E
 dagger~
    A simple dagger used by thieves and hoodlums to relieve the unwary of thier
@@ -251,7 +251,7 @@ A small sword lies here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
-3 75 0 0
+3 75 0 0 0
 E
 sword~
    The basic sword of the Sanctus army.  Nothing spectacular about it.    
@@ -263,7 +263,7 @@ An exquisite grey robe is rumpled in a corner.~
 ~
 9 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-3 500 0 0
+3 500 0 0 0
 E
 grey robe~
    The robe is the type used by Magi of the grey order.  Wonder why someone
@@ -276,7 +276,7 @@ A simple looking wooden club is here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 3 7
-3 50 0 0
+3 50 0 0 0
 E
 club~
    Your basic club, nothing very remarkeable about it.    
@@ -288,7 +288,7 @@ A mace is here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 5
-6 60 0 0
+6 60 0 0 0
 E
 mace~
    This mace is made of a heavy polished metal with small spikes on the end.  
@@ -301,7 +301,7 @@ A large flail is here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 7
-6 100 0 0
+6 100 0 0 0
 E
 flail~
    A strange weapon, you wonder if you even know how to use it.    
@@ -313,7 +313,7 @@ A magnificent purple robe was deserted here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
-5 500 0 0
+5 500 0 0 0
 E
 purple robe~
    Another impressive robe of the Magi.  This robe looks to be in very good
@@ -326,7 +326,7 @@ Some brass knuckles are here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 7
-6 200 0 0
+6 200 0 0 0
 E
 knuckles brass~
    These, heavy, wicked looking knuckles could do some serious damage if worn
@@ -339,7 +339,7 @@ An un-smoked cigarette has been left here.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 cigarette~
    A perfectly good cigarette, home-made by the looks of it, but wrapped very
@@ -352,7 +352,7 @@ A black robe of the Magi hangs on a small coatrack.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
-1 500 0 0
+1 500 0 0 0
 E
 black magi robe~
    This robe is very hard to focus on.  When you stare at it your eyes seem to
@@ -365,7 +365,7 @@ A large torch.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 24 0
-1 20 0 0
+1 20 0 0 0
 E
 torch~
    Your basic torch, nothing very remarkeable about it.    
@@ -377,7 +377,7 @@ A brass lantern is here.~
 ~
 1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 96 0
-1 50 0 0
+1 50 0 0 0
 E
 brass lantern~
    Your basic lantern, nothing very remarkeable about it.  Just a fuel tank,
@@ -390,7 +390,7 @@ A small bag is here.~
 ~
 15 h 0 0 0 ao 0 0 0 0 0 0 0
 50 0 0 0
-2 100 0 0
+2 100 0 0 0
 E
 bag~
    A simple bag to help you carry all of your belongings.    
@@ -402,7 +402,7 @@ A backpack is here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 40 5 -1 0
-5 250 0 0
+5 250 0 0 0
 E
 backpack~
    A hefty backpack that can carry more than a bag.    
@@ -414,7 +414,7 @@ A dog collar was left here, what happened to the poor dog?~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 dog collar~
    It looks mangled and chewed, the dog probably pulled it off.    
@@ -426,7 +426,7 @@ A pile of catnip is here waiting for a cat to enjoy it.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 catnip~
    This stuff drives cats bonkers.    
@@ -438,7 +438,7 @@ A broom is lying on the floor.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 broom~
    Looks like the streetsweep must be taking a break, he left his broom lying
@@ -451,7 +451,7 @@ A filthy glass of whiskey was left here, waiting to be emptied.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 5 0
-5 75 0 0
+5 75 0 0 0
 E
 whisky dirty glass~
    You think that's whisky in there.  The glass is so filthy you can't be sure.
@@ -464,7 +464,7 @@ A glass of white wine is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 2 0
-10 15 0 0
+10 15 0 0 0
 E
 wine white glass~
    A very fancy and tall glass holding some white wine.  The drink of the
@@ -477,7 +477,7 @@ A champagn glass sits on the ground.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 4 4 8 0
-10 25 0 0
+10 25 0 0 0
 E
 local speciality champage~
    A tall glass with a long skinny stem.  The type of glass that rich folk use
@@ -490,7 +490,7 @@ A jacket is lying on the floor~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
-5 100 0 0
+5 100 0 0 0
 E
 cloth jacket~
    A rugged looking cloth jacket.    
@@ -502,7 +502,7 @@ A pair of leather gloves lie here.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
-5 170 0 0
+5 170 0 0 0
 E
 leather gloves~
    Rugged looking brown leather gloves.    
@@ -514,7 +514,7 @@ A small wooden shield is lying on the ground.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 2 0 0 0
-3 500 0 0
+3 500 0 0 0
 E
 wooden shield~
    It's small, it's wooden.    
@@ -526,7 +526,7 @@ A pair of black leather pants lie on the ground.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 5 0 0 0
-10 300 0 0
+10 300 0 0 0
 E
 black leather pants~
    These pants are in very good condition.  They would provide minimal
@@ -539,7 +539,7 @@ A leather helm is lying on the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
-5 100 0 0
+5 100 0 0 0
 #145
 jacket scale~
 a scale mail jacket~
@@ -547,7 +547,7 @@ A scale mail jacket is lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-10 500 0 0
+10 500 0 0 0
 #146
 blood pool~
 a pool of blood~
@@ -555,7 +555,7 @@ A pool of blood from a recent kill has collected here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 10 10 13 0
-0 0 0 0
+0 0 0 0 0
 #147
 splugen bottle beer~
 an exotic bottle of beer~
@@ -563,7 +563,7 @@ Some exotic beer from far away.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 1 0
-15 50 0 0
+15 50 0 0 0
 E
 splugen beer bottle~
    This beer looks and tastes like formaldehyde.    
@@ -575,7 +575,7 @@ A pair of blue pants made from a fine fabric.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
-3 100 0 0
+3 100 0 0 0
 E
 blue pants~
    These gaudy velvet pants are meant for a royal court, not adventuring.  
@@ -590,7 +590,7 @@ A dustpan has been left here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 2 0 0
+2 2 0 0 0
 E
 dustpan pan~
    The streetsweeper uses this to clean up the city.    
@@ -606,7 +606,7 @@ A fine white shirt is crumpled into a ball.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
-7 100 0 0
+7 100 0 0 0
 E
 white shirt~
    This fine silken shirt could fetch a nice price if it wasn't in such poor
@@ -620,7 +620,7 @@ A red vest was left here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 3 0 0 0
-3 100 0 0
+3 100 0 0 0
 E
 red vest~
    The vest is far more extravagant than anything you have ever worn before.  
@@ -634,7 +634,7 @@ An old worn cane lies here in the dust.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-5 100 0 0
+5 100 0 0 0
 E
 cane~
    It looks to be carved from some type of hard wood.  Maybe oak or maple.  
@@ -650,7 +650,7 @@ A brown mass of hair almost looks like a small animal, it must be someon's toupp
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-3 90 0 0
+3 90 0 0 0
 E
 touppe brown~
    It looks more like a rat than anything else.  Some balding people wear these
@@ -666,7 +666,7 @@ A sewing machine is covered in clothes.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sewing machine~
    It is made of both metal and wood, a large footpedal can be pumped to make
@@ -681,7 +681,7 @@ A feather duster lies in the dirt.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-4 50 0 0
+4 50 0 0 0
 E
 duster feather~
    Made from the feathers of a very large bird this duster is extremely clean
@@ -697,7 +697,7 @@ Someone's purse has been left here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 -1 0
-9 100 0 0
+9 100 0 0 0
 E
 purse~
    The initials NJW are inscribed in gold lettering.  Very fancy.  Whoever had
@@ -711,7 +711,7 @@ This is Gunney's hat, better not be caught wearing it.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
-3 200 0 0
+3 200 0 0 0
 A
 5 1
 #158
@@ -721,7 +721,7 @@ A set of coveralls lies here.~
 ~
 11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-5 201 0 0
+5 201 0 0 0
 A
 5 2
 A
@@ -733,7 +733,7 @@ A list of directions to important areas within Sanctus lies here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 list directions sanctus~
 
@@ -757,7 +757,7 @@ A kitchen timer has been abandoned here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 kitchen timer~
    The face of the timer has the number one to ten on it with two hands.  
@@ -769,7 +769,7 @@ The entrails of a sacrificial animal.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 sacrificial entrails~
    The animal is impossible to identify.  Just a collection of intestines, a
@@ -782,7 +782,7 @@ A row boat has been left here.~
 ~
 22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-20 1000 0 0
+20 1000 0 0 0
 E
 row boat~
    A sturdy row boat with three seats and paddles bolted in the middle.    
@@ -794,7 +794,7 @@ A floatation device has been left here.~
 ~
 22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-3 400 0 0
+3 400 0 0 0
 E
 floatation device~
    You would have to be crazy to attemp to cross large bodies of water with the
@@ -807,7 +807,7 @@ A poor dog lost their treats here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 T 164
 E
 beggin strips treats bacon ~
@@ -821,7 +821,7 @@ A cup has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 0 0
-8 75 0 0
+8 75 0 0 0
 E
 water cup~
    Just a plain old cup of water.  Nothing special about it.    
@@ -833,7 +833,7 @@ A pair of cloth pants is rumpled up into a ball.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
-5 75 0 0
+5 75 0 0 0
 E
 cloth pants~
    The pants are filthy, but wearable.    
@@ -845,7 +845,7 @@ A cloth cap rests on the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 cloth cap~
    The kind of cap a street urchin might wear.    
@@ -857,7 +857,7 @@ A cloth shirt lays on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
-5 90 0 0
+5 90 0 0 0
 E
 cloth shirt~
    The shirt looks pretty rugged.  The plain dirty white cloth would provide
@@ -870,7 +870,7 @@ A pair of cloth shoes are here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-1 60 0 0
+1 60 0 0 0
 E
 cloth shoes~
    These shoes are more like moccassins than anything else.  A strip of leather
@@ -884,7 +884,7 @@ A pair of cloth gloves have been left here.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 1 0 0 0
-5 65 0 0
+5 65 0 0 0
 E
 cloth gloves~
    They are a ditry white color, with the fingers cut off, these gloves look
@@ -897,7 +897,7 @@ A short staff of oak gilded in silver looks well made.~
 ~
 3 0 0 0 0 ao 0 0 0 0 0 0 0
 7 3 3 39
-1 400 0 0
+1 400 0 0 0
 E
 short staff gilded oak~
    The staff is too short for use by the average human.  It is well made from an
@@ -911,7 +911,7 @@ A yellow rubber chicken has been chewed half to death.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 154
 T 88
 E
@@ -928,7 +928,7 @@ A ten sided die is waiting to be rolled~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 20 0 0
+1 20 0 0 0
 T 157
 E
 ten sided dice die~
@@ -942,7 +942,7 @@ A hairball was left here from what must have been a very large cat.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 hairball~
    The hairball is about the size of a childs fist and has a fetid odor of dead
@@ -955,7 +955,7 @@ A long rope hangs down through the middle of the room.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 rope bell toll~
    The rope is suspended in the middle of the room and rises into the darkness
@@ -969,7 +969,7 @@ A cancer stick was left here by someone gone cold turkey.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 T 159
 E
 cancer stick~
@@ -983,7 +983,7 @@ A canteen has been set on the ground here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 -1 0 15 0
-20 100 0 0
+20 100 0 0 0
 E
 canteen water~
    This canteen is pretty old and has acquired a strange smell.    
@@ -995,7 +995,7 @@ An hunk of meat lies here covered in dirt.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 chunk meat~
    The meat is some form of venison.  Hard to tell since it is rather filthy.
@@ -1008,7 +1008,7 @@ A bar of platinum must have been dropped here.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 300 0 0
+10 300 0 0 0
 E
 bar platinum~
    The platinum bar is formed perfectly into a rectangular block.  Its surface
@@ -1021,7 +1021,7 @@ A bar of mithril must have been dropped here.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 300 0 0
+10 300 0 0 0
 E
 bar mithril~
    The mithril bar is formed perfectly into a rectangular block.  Its surface
@@ -1034,7 +1034,7 @@ A bar of gold must have been dropped here.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 200 0 0
+10 200 0 0 0
 E
 bar gold~
    The gold bar is formed perfectly into a rectangular block.  Its surface is
@@ -1047,7 +1047,7 @@ A bar of silver must have been dropped here.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 100 0 0
+10 100 0 0 0
 E
 bar silver~
    The silver bar is formed perfectly into a rectangular block.  Its surface is
@@ -1062,10 +1062,10 @@ visible.
 ~
 16 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
-september~
-      .    .:IIIIHIHHIHHHII::I:.         
+june~
+    .      .:IIIIHIHHIHHHII::I:.         
        :IIIIHIHHHHHHMMHHIHHIIHHIII:.     
     ,.:HIHHHHHHHHHHHHHHHHHHHHHIHIHHII:.   
   .:IIHHHHHHHHMMMMMHHHHMMMHHMHHHIIIHIIII:
@@ -1122,9 +1122,21 @@ IHHHHMHMMMMMMMHHHHHI:IT:TI:..:HI:.. ..:. .  :IHII
  ::.:............. .. . ...AHIHIIIIIHHHI::""'      'VII:.. ..    .
  ::.:.:.......... .. .  ...HHHIIIIIIHHHI::. .       'VII::. . .       ,
  ':::.:.:..... .. . . . ..:MHHIHIIIII:I::. .         'VII:::. ..      .
+  :::::.:..:.... . . . ...AHHHHIHIIII:::. .           'VII:::. . .   :.
+  :::::::.:..... .. . ....MHHHHHIHIII::.:.. .          'VII::.  .   ::
+  :::::::::.:.... .. ....:MHHHHIHII:I::::...  .         'VI::. .   ::I)
+  '::::::::::.:... .. ...:MHHHHIHIIII::::..  .           'VI:.    ...:V
+   .:::::::::::.:.... . .AMMHHIHIII:I::::...  .  .        I::.   ...:-"
+   :.::I::::::::.:. .  ..MMMHHIHIIII:I:::... .  .        .::.  ,..-"
+   :..:II:I:::::.:.. . ..MMMHHIHIIIIIII:I::.... .  .    ..::""'
+  .::.:III:I::::::.:.. ..MMMMIVHIHIIIII:I::::.... .   .....:,
+.:.::..:III:I:::::.:... .MMHMAIVHHIHIIIII:I::::.. .  ..::..:,
+. .:::.::III:I::::.:... .VMMHMAIVHHHIHIIII:I::::..  ..:...:::
+. :::I.:::III:I:::.::.. .:MMHHMAIVHHIHIIIII:I::::....:::.::::
+ .::IIH.:::III:I::::.:.. .MMHMHMAIVHHHIHIIIIII:I
 ~
 E
-august~
+april~
    .            nHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHn.
              .MS?MMMMMMMMMMMMMMMMMM?MM-MMMMMMMMMSHMMMMMMM
              MMMMMH?MMMMMMMX*MM?MMX%MM/MMMMMM"HMMMMMMMMMMMM
@@ -1177,7 +1189,7 @@ august~
                 %%                  %                %%%%%%
 ~
 E
-july~
+March~
    .                      ,.--..               
                      ,::.'..  . . "VI:I:".':-.,.
                     ,I::. ..   .   'VHMHII:.::;:.:,..
@@ -1241,183 +1253,6 @@ july~
          ':::.:.. ...::I:::I:I:::.:.. :. . ..::.. . . . .'PTIHI:IIHHI:.
           ::I::.:...:::II:I::.:....:.:. . ...::. .  . .  .AI:IHI'':'  '.
           ':::.:... ..I::I::.:....:. .: .. ...::. .  .   III:II:.  '
-~
-E
-june~
-   .               :AMMMMMMMMMMMMA:     
-              :AMMMMMMMMMHHHHHMMMMMMMMA:
-             :AMHMMMMHHMHIHHIMMMHMMMMHHA:
-            :AM'MMMMMMHHIHHHIMMMMMIMMHHHH:
-            AM:IMMMMMHHIHIHHHIMMHHHHHHHHHH
-           AMIIHMMMMMHIHHHIHHIHHHHHHHHHHHH:
-           MMIHHMMMMMHHIHHHIHHHHHHHHHHHHHHH
-          AMMMMMHHHHHHI;;;;;;;IHHHI;;IHHHHH
-          MMMMHIIII;":AMMMMA        ,[[, HH
-          MMMMHII;  AW"''''         ::   HH
-         IHHIHIII;:'' ,GFMF[       [MM[: IH
-         AHHIHII;::': ";[P,[  ;;   ::::  IH
-        IHHHIHII;;::         :[;:        ;H
-        AHHHHHII;;;:: :     : [  :       ;H
-        IHHIIHI:[;;;:: ;   ; ; ,  ,      IH
-        IHHIIHH:[;;;: ;   ;: ':"::" ';   IH
-        IHHIIHI:[;;: ::: ;    ,,,,    '  HH
-       :IHHHIHHMMA;:::    [;;""""""[;   AMI
-       ;IHHHHIIHMM;: : :   ;;[,,,,[;    HHI
-       IIHHMMHHIHHM;::       '"""'     AMHI
-       IIHHMMHMHHIIIM;::              AMMHI
-       IHHHMMHMHMHHHIHI;::          :AMMMHI
-       IHHHMMMMHMMHHHII;;;;::   :,;; MMMHHI
-       IHHHMMHHHHMMHHHI;:";;;;;;"    MMMIH'
-       ;IHHMMHMMMMHF"HHII            MMMHH
-        IHHMMHV;;::    HHII;:      : MMHHI
-        IHHMV;;:::      HHII;:   : : MMHI;
-        IHMV;;:: :       "HII;:   :: MMI;
-       :IHV;::  :          'HI:   :: MM;
-       IV;:: :   :          "II;:    ; 
-      IH;;:::  :              ;;;I:   ;   
-     ;M;;:::: :                ';;;HI:  '
-     MH;;::::           :        ';;HI:  ;
-    IM;;;::: :         :[;         ';I"I: ;
-    M;;;::: :   :      [;;,:          '  : '
-    ;;::::    :       ::''                : ':
-   ;;:::   :         :                     ': :
-  :;;::  :          ::                       ':'
-  ;;::  :  :        :                          '':
- ;;:: :            :                           :;,:
- ;;::  :          ::                           ;[[[,:
-:;;::    :        :                            ;;[[[;':
-;;:: : :         [::       : :                  ;[[[[;;[,
-;::   :         [;;;:     : :,                   [[[[['[[;
-;:: :          :M;;:       : :,[                  [[[[ [['
-;:     :        "[::        : ::[                  ;[' ;[
-;:   :           "[:         : ::[                 :'  :'
-:: :: :           ",           :::;[              :'  :;
-:   ::             ':          : :::;[          ::'  :;
- ::  ;               :          : ::::;[:,,::;;I'   ;;
-  ;;:;: : :           :          :::::::: '""' I[[;"'
-   ;;;::     :         :          '::::'       ;    
-      ;;;::    :   :     :                     ;
-        ';;;;:::  :   :    ':                  ;       
-              ';;::::  :       :                
-                  M;::::  :      ':
-                  MMMI;::::        :          ;
-                  MMMMMA;:::        :
-                 AHHMMMMHA;::::      :       ;
-                :MHHMMMMMMMA;: '     :
-                AHHHMMM;"TTTTL:       :       ;
-               AHHHHHHMMLLLLLH ':      :
-              :MHHH:::;HHMMMMMA:        :     ;
-             :AHHH:::HH;;;;;MMM;:        :
-            :MHH;:      ;;;;;MMM:: :      :   ;
-           :MH;:  :      ';;;;MMM::     ': ':
-          ,H;:             ';;;MMM:::    :':' ;
-        ,;: :    :   :       ;;;Y;H::     :
-       ,;: : : :              ';;;:;  : : ;  ;
-      [;::          :           ;;:;  ; ; ;
-~
-E
-may~
-   .                      8888  8888888
-                   888888888888888888888888
-                8888:::8888888888888888888888888
-              8888::::::8888888888888888888888888888
-             88::::::::888:::8888888888888888888888888
-           88888888::::8:::::::::::88888888888888888888
-         888 8::888888::::::::::::::::::88888888888   888
-            88::::88888888::::m::::::::::88888888888    8
-          888888888888888888:M:::::::::::8888888888888
-         88888888888888888888::::::::::::M88888888888888
-         8888888888888888888888:::::::::M8888888888888888
-          8888888888888888888888:::::::M888888888888888888
-         8888888888888888::88888::::::M88888888888888888888
-       88888888888888888:::88888:::::M888888888888888   8888
-      88888888888888888:::88888::::M::;o*M*o;888888888    88
-     88888888888888888:::8888:::::M:::::::::::88888888    8
-    88888888888888888::::88::::::M:;:::::::::::888888888
-   8888888888888888888:::8::::::M::aAa::::::::M8888888888       8
-   88   8888888888::88::::8::::M:::::::::::::888888888888888 8888
-  88  88888888888:::8:::::::::M::::::::::;::88:88888888888888888
-  8  8888888888888:::::::::::M::"@@@@@@@"::::8w8888888888888888
-   88888888888:888::::::::::M:::::"@a@":::::M8i888888888888888
-  8888888888::::88:::::::::M88:::::::::::::M88z88888888888888888
- 8888888888:::::8:::::::::M88888:::::::::MM888!888888888888888888
- 888888888:::::8:::::::::M8888888MAmmmAMVMM888*88888888   88888888
- 888888 M:::::::::::::::M888888888:::::::MM88888888888888   8888888
- 8888   M::::::::::::::M88888888888::::::MM888888888888888    88888
-  888   M:::::::::::::M8888888888888M:::::mM888888888888888    8888
-   888  M::::::::::::M8888:888888888888::::m::Mm88888 888888   8888
-    88  M::::::::::::8888:88888888888888888::::::Mm8   88888   888
-    88  M::::::::::8888M::88888::888888888888:::::::Mm88888    88
-    8   MM::::::::8888M:::8888:::::888888888888::::::::Mm8     4
-        8M:::::::8888M:::::888:::::::88:::8888888::::::::Mm    2
-       88MM:::::8888M:::::::88::::::::8:::::888888:::M:::::M
-      8888M:::::888MM::::::::8:::::::::::M::::8888::::M::::M
-     88888M:::::88:M::::::::::8:::::::::::M:::8888::::::M::M
-    88 888MM:::888:M:::::::::::::::::::::::M:8888:::::::::M:
-    8 88888M:::88::M:::::::::::::::::::::::MM:88::::::::::::M
-      88888M:::88::M::::::::::*88*::::::::::M:88::::::::::::::M
-     888888M:::88::M:::::::::88@@88:::::::::M::88::::::::::::::M
-     888888MM::88::MM::::::::88@@88:::::::::M:::8::::::::::::::*8
-     88888  M:::8::MM:::::::::*88*::::::::::M:::::::::::::::::88@@
-     8888   MM::::::MM:::::::::::::::::::::MM:::::::::::::::::88@@
-      888    M:::::::MM:::::::::::::::::::MM::M::::::::::::::::*8
-      888    MM:::::::MMM::::::::::::::::MM:::MM:::::::::::::::M
-       88     M::::::::MMMM:::::::::::MMMM:::::MM::::::::::::MM
-        88    MM:::::::::MMMMMMMMMMMMMMM::::::::MMM::::::::MMM
-         88    MM::::::::::::MMMMMMM::::::::::::::MMMMMMMMMM
-          88   8MM::::::::::::::::::::::::::::::::::MMMMMM
-~
-E
-January~
-   .                   8888  8888888
-                   888888888888888888888888
-                8888:::8888888888888888888888888
-              8888::::::8888888888888888888888888888
-             88::::::::888:::8888888888888888888888888
-           88888888::::8:::::::::::88888888888888888888
-         888 8::888888::::::::::::::::::88888888888   888
-            88::::88888888::::m::::::::::88888888888    8
-          888888888888888888:M:::::::::::8888888888888
-         88888888888888888888::::::::::::M88888888888888
-         8888888888888888888888:::::::::M8888888888888888
-          8888888888888888888888:::::::M888888888888888888
-         8888888888888888::88888::::::M88888888888888888888
-       88888888888888888:::88888:::::M888888888888888   8888
-      88888888888888888:::88888::::M::;o*M*o;888888888    88
-     88888888888888888:::8888:::::M:::::::::::88888888    8
-    88888888888888888::::88::::::M:;:::::::::::888888888
-   8888888888888888888:::8::::::M::aAa::::::::M8888888888       8
-   88   8888888888::88::::8::::M:::::::::::::888888888888888 8888
-  88  88888888888:::8:::::::::M::::::::::;::88:88888888888888888
-  8  8888888888888:::::::::::M::"@@@::::8w8888888888888888
-   88888888888:888::::::::::M:::::":::::M8i888888888888888
-  8888888888::::88:::::::::M88:::::::::::::M88z88888888888888888
- 8888888888:::::8:::::::::M88888:::::::::MM888!888888888888888888
- 888888888:::::8:::::::::M8888888MAmmmAMVMM888*88888888   88888888
- 888888 M:::::::::::::::M888888888:::::::MM88888888888888   8888888
- 8888   M::::::::::::::M88888888888::::::MM888888888888888    88888
-  888   M:::::::::::::M8888888888888M:::::mM888888888888888    8888
-   888  M::::::::::::M8888:888888888888::::m::Mm88888 888888   8888
-    88  M::::::::::::8888:88888888888888888::::::Mm8   88888   888
-    88  M::::::::::8888M::88888::888888888888:::::::Mm88888    88
-    8   MM::::::::8888M:::8888:::::888888888888::::::::Mm8     4
-        8M:::::::8888M:::::888:::::::88:::8888888::::::::Mm    2
-       88MM:::::8888M:::::::88::::::::8:::::888888:::M:::::M
-      8888M:::::888MM::::::::8:::::::::::M::::8888::::M::::M
-     88888M:::::88:M::::::::::8:::::::::::M:::8888::::::M::M
-    88 888MM:::888:M:::::::::::::::::::::::M:8888:::::::::M:
-    8 88888M:::88::M:::::::::::::::::::::::MM:88::::::::::::M
-      88888M:::88::M::::::::::*88*::::::::::M:88::::::::::::::M
-     888888M:::88::M:::::::::88@8:::::::::M::88::::::::::::::M
-     888888MM::88::MM::::::::88@8:::::::::M:::8::::::::::::::*8
-     88888  M:::8::MM:::::::::*88*::::::::::M:::::::::::::::::88@
-     8888   MM::::::MM:::::::::::::::::::::MM:::::::::::::::::88@
-      888    M:::::::MM:::::::::::::::::::MM::M::::::::::::::::*8
-      888    MM:::::::MMM::::::::::::::::MM:::MM:::::::::::::::M
-       88     M::::::::MMMM:::::::::::MMMM:::::MM::::::::::::MM
-        88    MM:::::::::MMMMMMMMMMMMMMM::::::::MMM::::::::MMM
-         88    MM::::::::::::MMMMMMM::::::::::::::MMMMMMMMMM
-          88   8MM::::::::::::::::::::::::::::::::::MMMMMM
 ~
 E
 february~
@@ -1493,7 +1328,184 @@ february~
       [;::          :           ;;:;  ; ; ;
 ~
 E
-March~
+January~
+   .                   8888  8888888
+                   888888888888888888888888
+                8888:::8888888888888888888888888
+              8888::::::8888888888888888888888888888
+             88::::::::888:::8888888888888888888888888
+           88888888::::8:::::::::::88888888888888888888
+         888 8::888888::::::::::::::::::88888888888   888
+            88::::88888888::::m::::::::::88888888888    8
+          888888888888888888:M:::::::::::8888888888888
+         88888888888888888888::::::::::::M88888888888888
+         8888888888888888888888:::::::::M8888888888888888
+          8888888888888888888888:::::::M888888888888888888
+         8888888888888888::88888::::::M88888888888888888888
+       88888888888888888:::88888:::::M888888888888888   8888
+      88888888888888888:::88888::::M::;o*M*o;888888888    88
+     88888888888888888:::8888:::::M:::::::::::88888888    8
+    88888888888888888::::88::::::M:;:::::::::::888888888
+   8888888888888888888:::8::::::M::aAa::::::::M8888888888       8
+   88   8888888888::88::::8::::M:::::::::::::888888888888888 8888
+  88  88888888888:::8:::::::::M::::::::::;::88:88888888888888888
+  8  8888888888888:::::::::::M::"@@@::::8w8888888888888888
+   88888888888:888::::::::::M:::::":::::M8i888888888888888
+  8888888888::::88:::::::::M88:::::::::::::M88z88888888888888888
+ 8888888888:::::8:::::::::M88888:::::::::MM888!888888888888888888
+ 888888888:::::8:::::::::M8888888MAmmmAMVMM888*88888888   88888888
+ 888888 M:::::::::::::::M888888888:::::::MM88888888888888   8888888
+ 8888   M::::::::::::::M88888888888::::::MM888888888888888    88888
+  888   M:::::::::::::M8888888888888M:::::mM888888888888888    8888
+   888  M::::::::::::M8888:888888888888::::m::Mm88888 888888   8888
+    88  M::::::::::::8888:88888888888888888::::::Mm8   88888   888
+    88  M::::::::::8888M::88888::888888888888:::::::Mm88888    88
+    8   MM::::::::8888M:::8888:::::888888888888::::::::Mm8     4
+        8M:::::::8888M:::::888:::::::88:::8888888::::::::Mm    2
+       88MM:::::8888M:::::::88::::::::8:::::888888:::M:::::M
+      8888M:::::888MM::::::::8:::::::::::M::::8888::::M::::M
+     88888M:::::88:M::::::::::8:::::::::::M:::8888::::::M::M
+    88 888MM:::888:M:::::::::::::::::::::::M:8888:::::::::M:
+    8 88888M:::88::M:::::::::::::::::::::::MM:88::::::::::::M
+      88888M:::88::M::::::::::*88*::::::::::M:88::::::::::::::M
+     888888M:::88::M:::::::::88@8:::::::::M::88::::::::::::::M
+     888888MM::88::MM::::::::88@8:::::::::M:::8::::::::::::::*8
+     88888  M:::8::MM:::::::::*88*::::::::::M:::::::::::::::::88@
+     8888   MM::::::MM:::::::::::::::::::::MM:::::::::::::::::88@
+      888    M:::::::MM:::::::::::::::::::MM::M::::::::::::::::*8
+      888    MM:::::::MMM::::::::::::::::MM:::MM:::::::::::::::M
+       88     M::::::::MMMM:::::::::::MMMM:::::MM::::::::::::MM
+        88    MM:::::::::MMMMMMMMMMMMMMM::::::::MMM::::::::MMM
+         88    MM::::::::::::MMMMMMM::::::::::::::MMMMMMMMMM
+          88   8MM::::::::::::::::::::::::::::::::::MMMMMM
+~
+E
+may~
+   .                      8888  8888888
+                   888888888888888888888888
+                8888:::8888888888888888888888888
+              8888::::::8888888888888888888888888888
+             88::::::::888:::8888888888888888888888888
+           88888888::::8:::::::::::88888888888888888888
+         888 8::888888::::::::::::::::::88888888888   888
+            88::::88888888::::m::::::::::88888888888    8
+          888888888888888888:M:::::::::::8888888888888
+         88888888888888888888::::::::::::M88888888888888
+         8888888888888888888888:::::::::M8888888888888888
+          8888888888888888888888:::::::M888888888888888888
+         8888888888888888::88888::::::M88888888888888888888
+       88888888888888888:::88888:::::M888888888888888   8888
+      88888888888888888:::88888::::M::;o*M*o;888888888    88
+     88888888888888888:::8888:::::M:::::::::::88888888    8
+    88888888888888888::::88::::::M:;:::::::::::888888888
+   8888888888888888888:::8::::::M::aAa::::::::M8888888888       8
+   88   8888888888::88::::8::::M:::::::::::::888888888888888 8888
+  88  88888888888:::8:::::::::M::::::::::;::88:88888888888888888
+  8  8888888888888:::::::::::M::"@@@@@@@"::::8w8888888888888888
+   88888888888:888::::::::::M:::::"@a@":::::M8i888888888888888
+  8888888888::::88:::::::::M88:::::::::::::M88z88888888888888888
+ 8888888888:::::8:::::::::M88888:::::::::MM888!888888888888888888
+ 888888888:::::8:::::::::M8888888MAmmmAMVMM888*88888888   88888888
+ 888888 M:::::::::::::::M888888888:::::::MM88888888888888   8888888
+ 8888   M::::::::::::::M88888888888::::::MM888888888888888    88888
+  888   M:::::::::::::M8888888888888M:::::mM888888888888888    8888
+   888  M::::::::::::M8888:888888888888::::m::Mm88888 888888   8888
+    88  M::::::::::::8888:88888888888888888::::::Mm8   88888   888
+    88  M::::::::::8888M::88888::888888888888:::::::Mm88888    88
+    8   MM::::::::8888M:::8888:::::888888888888::::::::Mm8     4
+        8M:::::::8888M:::::888:::::::88:::8888888::::::::Mm    2
+       88MM:::::8888M:::::::88::::::::8:::::888888:::M:::::M
+      8888M:::::888MM::::::::8:::::::::::M::::8888::::M::::M
+     88888M:::::88:M::::::::::8:::::::::::M:::8888::::::M::M
+    88 888MM:::888:M:::::::::::::::::::::::M:8888:::::::::M:
+    8 88888M:::88::M:::::::::::::::::::::::MM:88::::::::::::M
+      88888M:::88::M::::::::::*88*::::::::::M:88::::::::::::::M
+     888888M:::88::M:::::::::88@@88:::::::::M::88::::::::::::::M
+     888888MM::88::MM::::::::88@@88:::::::::M:::8::::::::::::::*8
+     88888  M:::8::MM:::::::::*88*::::::::::M:::::::::::::::::88@@
+     8888   MM::::::MM:::::::::::::::::::::MM:::::::::::::::::88@@
+      888    M:::::::MM:::::::::::::::::::MM::M::::::::::::::::*8
+      888    MM:::::::MMM::::::::::::::::MM:::MM:::::::::::::::M
+       88     M::::::::MMMM:::::::::::MMMM:::::MM::::::::::::MM
+        88    MM:::::::::MMMMMMMMMMMMMMM::::::::MMM::::::::MMM
+         88    MM::::::::::::MMMMMMM::::::::::::::MMMMMMMMMM
+          88   8MM::::::::::::::::::::::::::::::::::MMMMMM
+~
+E
+june~
+   .               :AMMMMMMMMMMMMA:     
+              :AMMMMMMMMMHHHHHMMMMMMMMA:
+             :AMHMMMMHHMHIHHIMMMHMMMMHHA:
+            :AM'MMMMMMHHIHHHIMMMMMIMMHHHH:
+            AM:IMMMMMHHIHIHHHIMMHHHHHHHHHH
+           AMIIHMMMMMHIHHHIHHIHHHHHHHHHHHH:
+           MMIHHMMMMMHHIHHHIHHHHHHHHHHHHHHH
+          AMMMMMHHHHHHI;;;;;;;IHHHI;;IHHHHH
+          MMMMHIIII;":AMMMMA        ,[[, HH
+          MMMMHII;  AW"''''         ::   HH
+         IHHIHIII;:'' ,GFMF[       [MM[: IH
+         AHHIHII;::': ";[P,[  ;;   ::::  IH
+        IHHHIHII;;::         :[;:        ;H
+        AHHHHHII;;;:: :     : [  :       ;H
+        IHHIIHI:[;;;:: ;   ; ; ,  ,      IH
+        IHHIIHH:[;;;: ;   ;: ':"::" ';   IH
+        IHHIIHI:[;;: ::: ;    ,,,,    '  HH
+       :IHHHIHHMMA;:::    [;;""""""[;   AMI
+       ;IHHHHIIHMM;: : :   ;;[,,,,[;    HHI
+       IIHHMMHHIHHM;::       '"""'     AMHI
+       IIHHMMHMHHIIIM;::              AMMHI
+       IHHHMMHMHMHHHIHI;::          :AMMMHI
+       IHHHMMMMHMMHHHII;;;;::   :,;; MMMHHI
+       IHHHMMHHHHMMHHHI;:";;;;;;"    MMMIH'
+       ;IHHMMHMMMMHF"HHII            MMMHH
+        IHHMMHV;;::    HHII;:      : MMHHI
+        IHHMV;;:::      HHII;:   : : MMHI;
+        IHMV;;:: :       "HII;:   :: MMI;
+       :IHV;::  :          'HI:   :: MM;
+       IV;:: :   :          "II;:    ; 
+      IH;;:::  :              ;;;I:   ;   
+     ;M;;:::: :                ';;;HI:  '
+     MH;;::::           :        ';;HI:  ;
+    IM;;;::: :         :[;         ';I"I: ;
+    M;;;::: :   :      [;;,:          '  : '
+    ;;::::    :       ::''                : ':
+   ;;:::   :         :                     ': :
+  :;;::  :          ::                       ':'
+  ;;::  :  :        :                          '':
+ ;;:: :            :                           :;,:
+ ;;::  :          ::                           ;[[[,:
+:;;::    :        :                            ;;[[[;':
+;;:: : :         [::       : :                  ;[[[[;;[,
+;::   :         [;;;:     : :,                   [[[[['[[;
+;:: :          :M;;:       : :,[                  [[[[ [['
+;:     :        "[::        : ::[                  ;[' ;[
+;:   :           "[:         : ::[                 :'  :'
+:: :: :           ",           :::;[              :'  :;
+:   ::             ':          : :::;[          ::'  :;
+ ::  ;               :          : ::::;[:,,::;;I'   ;;
+  ;;:;: : :           :          :::::::: '""' I[[;"'
+   ;;;::     :         :          '::::'       ;    
+      ;;;::    :   :     :                     ;
+        ';;;;:::  :   :    ':                  ;       
+              ';;::::  :       :                
+                  M;::::  :      ':
+                  MMMI;::::        :          ;
+                  MMMMMA;:::        :
+                 AHHMMMMHA;::::      :       ;
+                :MHHMMMMMMMA;: '     :
+                AHHHMMM;"TTTTL:       :       ;
+               AHHHHHHMMLLLLLH ':      :
+              :MHHH:::;HHMMMMMA:        :     ;
+             :AHHH:::HH;;;;;MMM;:        :
+            :MHH;:      ;;;;;MMM:: :      :   ;
+           :MH;:  :      ';;;;MMM::     ': ':
+          ,H;:             ';;;MMM:::    :':' ;
+        ,;: :    :   :       ;;;Y;H::     :
+       ,;: : : :              ';;;:;  : : ;  ;
+      [;::          :           ;;:;  ; ; ;
+~
+E
+july~
    .                      ,.--..               
                      ,::.'..  . . "VI:I:".':-.,.
                     ,I::. ..   .   'VHMHII:.::;:.:,..
@@ -1559,7 +1571,7 @@ March~
           ':::.:... ..I::I::.:....:. .: .. ...::. .  .   III:II:.  '
 ~
 E
-april~
+august~
    .            nHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHn.
              .MS?MMMMMMMMMMMMMMMMMM?MM-MMMMMMMMMSHMMMMMMM
              MMMMMH?MMMMMMMX*MM?MMX%MM/MMMMMM"HMMMMMMMMMMMM
@@ -1612,8 +1624,8 @@ april~
                 %%                  %                %%%%%%
 ~
 E
-june~
-    .      .:IIIIHIHHIHHHII::I:.         
+september~
+      .    .:IIIIHIHHIHHHII::I:.         
        :IIIIHIHHHHHHMMHHIHHIIHHIII:.     
     ,.:HIHHHHHHHHHHHHHHHHHHHHHIHIHHII:.   
   .:IIHHHHHHHHMMMMMHHHHMMMHHMHHHIIIHIIII:
@@ -1670,18 +1682,6 @@ IHHHHMHMMMMMMMHHHHHI:IT:TI:..:HI:.. ..:. .  :IHII
  ::.:............. .. . ...AHIHIIIIIHHHI::""'      'VII:.. ..    .
  ::.:.:.......... .. .  ...HHHIIIIIIHHHI::. .       'VII::. . .       ,
  ':::.:.:..... .. . . . ..:MHHIHIIIII:I::. .         'VII:::. ..      .
-  :::::.:..:.... . . . ...AHHHHIHIIII:::. .           'VII:::. . .   :.
-  :::::::.:..... .. . ....MHHHHHIHIII::.:.. .          'VII::.  .   ::
-  :::::::::.:.... .. ....:MHHHHIHII:I::::...  .         'VI::. .   ::I)
-  '::::::::::.:... .. ...:MHHHHIHIIII::::..  .           'VI:.    ...:V
-   .:::::::::::.:.... . .AMMHHIHIII:I::::...  .  .        I::.   ...:-"
-   :.::I::::::::.:. .  ..MMMHHIHIIII:I:::... .  .        .::.  ,..-"
-   :..:II:I:::::.:.. . ..MMMHHIHIIIIIII:I::.... .  .    ..::""'
-  .::.:III:I::::::.:.. ..MMMMIVHIHIIIII:I::::.... .   .....:,
-.:.::..:III:I:::::.:... .MMHMAIVHHIHIIIII:I::::.. .  ..::..:,
-. .:::.::III:I::::.:... .VMMHMAIVHHHIHIIII:I::::..  ..:...:::
-. :::I.:::III:I:::.::.. .:MMHHMAIVHHIHIIIII:I::::....:::.::::
- .::IIH.:::III:I::::.:.. .MMHMHMAIVHHHIHIIIIII:I
 ~
 #186
 scroll poem irish~
@@ -1690,7 +1690,7 @@ A scroll is rolled up here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 scroll poem irish~
    May there always be work for your hands to do;
@@ -1707,7 +1707,7 @@ A clump of mushrooms is growing here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 mushrooms~
    The mushrooms appear not to be poisonous and are relatively clean. They look
@@ -1720,7 +1720,7 @@ A large wooden chest with bands of iron circling it is closed with its lock hang
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 50 5 -1 0
-50 0 0 0
+50 0 0 0 0
 T 209
 E
 iron bound wooden chest~
@@ -1735,7 +1735,7 @@ A gnarled wooden staff beacons you.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 T 48
 E
 gnarled wooden staff~
@@ -1750,7 +1750,7 @@ A deep green potion has been left here.~
 ~
 10 a 0 0 0 a 0 0 0 0 0 0 0
 1 35 -1 -1
-2 1000 0 0
+2 1000 0 0 0
 E
 green deep potion~
    A potion that will remove any curses you may have been afflicted with.    
@@ -1762,7 +1762,7 @@ An orb meant to top a staff must have fallen out here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 orb staff topping~
    The orb is about the size of a small fist.  It appears to have been meant to
@@ -1775,7 +1775,7 @@ A broken and useless staff has been discarded here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 broken staff~
    It appears to have once been a very nice staff that someone ruined by putting
@@ -1788,7 +1788,7 @@ A small trickle of red liquid flows from the shop to the north to a drain to the
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 13 0
-0 0 0 0
+0 0 0 0 0
 T 79
 E
 blood trickle stream thin liquid red blood~
@@ -1802,7 +1802,7 @@ A closet is built into the south wall of the room.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 T 81
 E
 closet~
@@ -1815,7 +1815,7 @@ This mistletoe reeks of mold and decay.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 1
-1 1 0 0
+1 1 0 0 0
 #196
 mistletoe plant~
 some mistletoe~
@@ -1823,7 +1823,7 @@ A soft woody plant with green leaves and white berries is hanging over your head
 ~
 19 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 plant mistletoe~
 The tradition of kissing under the mistletoe originated from the Druids
@@ -1842,7 +1842,7 @@ A sign with "kick me" written in bold black letters is laying on the ground.~
 ~
 12 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 177
 E
 kickme sign~

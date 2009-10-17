@@ -38,6 +38,8 @@ patience, and the ability to take constructive criticism.
 http://tbamud.com/BuilderApplication
    When you finish and submit the application tell anyone level 32 or higher
 and they will advance you to begin your training.
+
+   If would like to check out the tbaMUD World as a player connect to tbamud.com 4000.
 ~
 0 24 0 0 0 0
 S
@@ -477,7 +479,7 @@ Advanced Trigedit Example~
    Begin by @RSTAT GATEGUARD@n and then tstat each trigger listed to see what 
 they do.  This example is explained under @RHELP TRIGEDIT-ADVANCED-TUTORIAL@n.
 Including triggers 4, 5, 7, 8.
-To pay the gateguard take the pile of coins, then: @RGIVE 10 COINS GUARD@n.
+To pay the gateguard: @RGIVE 10 COINS GUARD@n.
 ~
 0 24 0 0 0 0
 D0

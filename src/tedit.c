@@ -87,6 +87,9 @@ ACMD(do_tedit)
 	{ "policies",	LVL_IMPL,	&policies,	8192,	POLICIES_FILE},
         { "wizlist",    LVL_IMPL,       &wizlist,       2400,   WIZLIST_FILE},
         { "immlist",    LVL_GRGOD,      &immlist,       2400,   IMMLIST_FILE},
+        { "bugs",       LVL_GRGOD,      &bugs,          8192,   BUG_FILE},
+        { "typos",      LVL_GRGOD,      &typos,         8192,   TYPO_FILE},
+        { "ideas",      LVL_GRGOD,      &ideas,         8192,   IDEA_FILE},
 	{ "\n",		0,		NULL,		0,	NULL }
   };
 

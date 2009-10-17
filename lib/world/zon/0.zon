@@ -2,6 +2,9 @@
 Rumble~
 The Builder Academy Zone~
 0 99 10 2
+D 0 20 0 2 	(Advanced Trigedit Example)
+M 0 24 1 20 	(the example gateguard)
+G 1 46 99 -1 	(the gateguard key)
 D 0 89 4 2 	(The Prison Cell Corridor)
 M 0 31 1 89 	(the Commissar)
 G 1 68 99 -1 	(the Commissar's key)
@@ -44,11 +47,6 @@ M 0 26 1 22 	(the protector of the magic eight ball)
 R 0 22 47 -1 	(the magic eight ball)
 O 0 47 99 22 	(the magic eight ball)
 M 0 25 1 21 	(the variable questmaster)
-D 0 20 0 2 	(Advanced Trigedit Example)
-M 0 24 1 20 	(the example gateguard)
-G 1 46 99 -1 	(the gateguard key)
-R 0 20 45 -1 	(a pile of gold coins)
-O 0 45 99 20 	(a pile of gold coins)
 M 0 16 1 19 	(a quest ogre)
 M 0 14 1 18 	(the tutorial questmaster)
 S

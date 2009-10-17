@@ -90,17 +90,20 @@ room_rnum r_frozen_start_room;	/* rnum of frozen start room	 */
 
 char *credits = NULL;		/* game credits			 */
 char *news = NULL;		/* mud news			 */
-char *motd = NULL;		/* message of the day - mortals */
-char *imotd = NULL;		/* message of the day - immorts */
-char *GREETINGS = NULL;		/* opening credits screen      */
+char *motd = NULL;		/* message of the day - mortals  */
+char *imotd = NULL;		/* message of the day - immorts  */
+char *GREETINGS = NULL;		/* opening credits screen        */
 char *help = NULL;		/* help screen			 */
-char *ihelp = NULL;           /* help screen (immortals)     */
+char *ihelp = NULL;             /* help screen (immortals)       */
 char *info = NULL;		/* info page			 */
 char *wizlist = NULL;		/* list of higher gods		 */
 char *immlist = NULL;		/* list of peon gods		 */
 char *background = NULL;	/* background story		 */
 char *handbook = NULL;		/* handbook for new immortals	 */
 char *policies = NULL;		/* policies page		 */
+char *bugs = NULL;              /* bugs file                     */
+char *typos = NULL;             /* typos file                    */
+char *ideas = NULL;             /* ideas file                    */
 
 int top_of_helpt = 0;
 struct help_index_element *help_table = NULL;
@@ -307,7 +310,7 @@ void free_text_files(void)
 {
   char **textfiles[] = {
 	&wizlist, &immlist, &news, &credits, &motd, &imotd, &help, &ihelp, &info,
-	&policies, &handbook, &background, &GREETINGS, NULL
+	&policies, &handbook, &background, &GREETINGS, &bugs, &typos, &ideas, NULL
   };
   int rf;
 
@@ -354,6 +357,12 @@ ACMD(do_reboot)
       send_to_char(ch, "Cannot read handbook\r\n");
     if (file_to_string_alloc(BACKGROUND_FILE, &background) < 0)
       send_to_char(ch, "Cannot read background\r\n");
+    if (file_to_string_alloc(BUG_FILE, &background) < 0)
+      send_to_char(ch, "Cannot read bugs file\r\n");
+    if (file_to_string_alloc(TYPO_FILE, &background) < 0)
+      send_to_char(ch, "Cannot read typos file\r\n");
+    if (file_to_string_alloc(IDEA_FILE, &background) < 0)
+      send_to_char(ch, "Cannot read ideas file\r\n");
     if (help_table) {
       free_help_table();
     index_boot(DB_BOOT_HLP);
@@ -394,6 +403,15 @@ ACMD(do_reboot)
   } else if (!str_cmp(arg, "background")) {
     if (file_to_string_alloc(BACKGROUND_FILE, &background) < 0)
       send_to_char(ch, "Cannot read background\r\n");
+  } else if (!str_cmp(arg, "bugs")) {
+    if (file_to_string_alloc(BUG_FILE, &bugs) < 0)
+      send_to_char(ch, "Cannot read bugs\r\n");
+  } else if (!str_cmp(arg, "typos")) {
+    if (file_to_string_alloc(TYPO_FILE, &typos) < 0)
+      send_to_char(ch, "Cannot read typos\r\n");
+  } else if (!str_cmp(arg, "ideas")) {
+    if (file_to_string_alloc(IDEA_FILE, &ideas) < 0)
+      send_to_char(ch, "Cannot read ideas\r\n");
   } else if (!str_cmp(arg, "greetings")) {
     if (file_to_string_alloc(GREETINGS_FILE, &GREETINGS) == 0)
       prune_crlf(GREETINGS);
@@ -648,6 +666,9 @@ void boot_db(void)
   file_to_string_alloc(POLICIES_FILE, &policies);
   file_to_string_alloc(HANDBOOK_FILE, &handbook);
   file_to_string_alloc(BACKGROUND_FILE, &background);
+  file_to_string_alloc(BUG_FILE, &bugs);
+  file_to_string_alloc(TYPO_FILE, &typos);
+  file_to_string_alloc(IDEA_FILE, &ideas);
   if (file_to_string_alloc(GREETINGS_FILE, &GREETINGS) == 0)
     prune_crlf(GREETINGS);
 
