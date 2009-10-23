@@ -299,28 +299,18 @@ void medit_save_internally(struct descriptor_data *d)
    Display positions. (sitting, standing, etc) */
 static void medit_disp_positions(struct descriptor_data *d)
 {
-  int i;
-
   get_char_colors(d->character);
   clear_screen(d);
-
-  for (i = 0; *position_types[i] != '\n'; i++) {
-    write_to_output(d, "%s%2d%s) %s\r\n", grn, i, nrm, position_types[i]);
-  }
+  column_list(d->character, 0, position_types, NUM_POSITIONS, TRUE);
   write_to_output(d, "Enter position number : ");
 }
 
 /* Display the gender of the mobile. */
 static void medit_disp_sex(struct descriptor_data *d)
 {
-  int i;
-
   get_char_colors(d->character);
   clear_screen(d);
-
-  for (i = 0; i < NUM_GENDERS; i++) {
-    write_to_output(d, "%s%2d%s) %s\r\n", grn, i, nrm, genders[i]);
-  }
+  column_list(d->character, 0, genders, NUM_GENDERS, TRUE);
   write_to_output(d, "Enter gender number : ");
 }
 
@@ -341,15 +331,11 @@ static void medit_disp_attack_types(struct descriptor_data *d)
 /* Display mob-flags menu. */
 static void medit_disp_mob_flags(struct descriptor_data *d)
 {
-  int i, columns = 0;
   char flags[MAX_STRING_LENGTH];
 
   get_char_colors(d->character);
   clear_screen(d);
-  for (i = 0; i < NUM_MOB_FLAGS; i++) {
-    write_to_output(d, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, action_bits[i],
-                !(++columns % 2) ? "\r\n" : "");
-  }
+  column_list(d->character, 0, action_bits, NUM_MOB_FLAGS, TRUE);
   sprintbitarray(MOB_FLAGS(OLC_MOB(d)), action_bits, AF_ARRAY_MAX, flags);
   write_to_output(d, "\r\nCurrent flags : %s%s%s\r\nEnter mob flags (0 to quit) : ", cyn, flags, nrm);
 }
@@ -357,15 +343,12 @@ static void medit_disp_mob_flags(struct descriptor_data *d)
 /* Display affection flags menu. */
 static void medit_disp_aff_flags(struct descriptor_data *d)
 {
-  int i, columns = 0;
   char flags[MAX_STRING_LENGTH];
 
   get_char_colors(d->character);
   clear_screen(d);
-  for (i = 0; i < NUM_AFF_FLAGS; i++) {
-    write_to_output(d, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, affected_bits[i+1],
-                        !(++columns % 2) ? "\r\n" : "");
-  }
+  /* +1 since AFF_FLAGS don't start at 0. */
+  column_list(d->character, 0, affected_bits + 1, NUM_AFF_FLAGS, TRUE);
   sprintbitarray(AFF_FLAGS(OLC_MOB(d)), affected_bits, AF_ARRAY_MAX, flags);
   write_to_output(d, "\r\nCurrent flags   : %s%s%s\r\nEnter aff flags (0 to quit) : ",
                           cyn, flags, nrm);

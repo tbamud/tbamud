@@ -36,6 +36,16 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Oct 23 2009] - Rumble
+  Fixed bug in renumbering zone table after deleting mobiles. (thanks Drefs)
+  Fixed bug in renumbering zone table after deleting objects. (thanks Drefs)
+  Upgraded column_list to use player screenwidth to determine how many columns to create (use column arg of 0). (thanks Maclir)
+[Oct 20 2009] - Rumble
+  Corrected several PRF_FLAGGED checks that mobs were using.
+  Removed l-desc from stat player and title from stat mob. (thanks Xiu)
+[Oct 19 2009] - Rumble
+  Added a note to spec_assign.c assign_mobiles that guildguard, snake, thief, magic user, puff, fido, janitor, and cityguards are now implemented via triggers.
+  Fixed a bug where empty drink containers and fountains would show half empty. (thanks Parna)
 [Oct 17 2009] - Rumble
   Added Ultima Zone 555 and 556. Originally by Casret, rebuilt by Parna.
   Made MEDIT column menu's consistent with other OLC menu's.

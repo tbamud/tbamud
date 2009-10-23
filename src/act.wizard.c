@@ -739,12 +739,14 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
 	  buf, (!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB")),
 	  GET_NAME(k), IS_NPC(k) ? GET_ID(k) : GET_IDNUM(k), GET_ROOM_VNUM(IN_ROOM(k)), IS_NPC(k) ? NOWHERE : GET_LOADROOM(k));
 
-  if (IS_MOB(k))
+  if (IS_MOB(k)) {
     send_to_char(ch, "Keyword: %s, VNum: [%5d], RNum: [%5d]\r\n", k->player.name, GET_MOB_VNUM(k), GET_MOB_RNUM(k));
+    send_to_char(ch, "L-Des: %s", k->player.long_descr ? k->player.long_descr : "<None>\r\n");
+  }
 
-  send_to_char(ch, "Title: %s\r\n", k->player.title ? k->player.title : "<None>");
+  if (!IS_MOB(k))
+    send_to_char(ch, "Title: %s\r\n", k->player.title ? k->player.title : "<None>");
 
-  send_to_char(ch, "L-Des: %s", k->player.long_descr ? k->player.long_descr : "<None>\r\n");
   send_to_char(ch, "D-Des: %s", k->player.description ? k->player.description : "<None>\r\n");
 
   sprinttype(k->player.chclass, pc_class_types, buf, sizeof(buf));
@@ -4441,7 +4443,7 @@ ACMD(do_plist)
 
   len = 0;
   len += snprintf(buf + len, sizeof(buf) - len, "@W[ Id] (Lv) Name         Last@n\r\n"
-                  "%s-----------------------------------------------%s\r\n", CCCYN(ch, C_NRM),
+                  "%s-------------------------------------%s\r\n", CCCYN(ch, C_NRM),
                   CCNRM(ch, C_NRM));
 
   for (i = 0; i <= top_of_p_table; i++) {
@@ -4466,7 +4468,7 @@ ACMD(do_plist)
                     UPPER(*player_table[i].name), player_table[i].name + 1, time_str);
     count++;
   }
-  snprintf(buf + len, sizeof(buf) - len, "%s-----------------------------------------------%s\r\n"
+  snprintf(buf + len, sizeof(buf) - len, "%s-------------------------------------%s\r\n"
            "%d players listed.\r\n", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM), count);
   page_string(ch->desc, buf, TRUE);
 }

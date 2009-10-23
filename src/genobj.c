@@ -451,7 +451,7 @@ int delete_object(obj_rnum rnum)
           delete_zone_command(&zone_table[zone], cmd_no);
         } else
           ZCMD(zone, cmd_no).arg3 -= (ZCMD(zone, cmd_no).arg3 > rnum);
-	break;
+        /* No break here - drop into next case. */
       case 'O':
       case 'G':
       case 'E':

@@ -59,7 +59,8 @@ static void ASSIGNROOM(room_vnum room, SPECIAL(fname))
 }
 
 /* Assignments */
-/* assign special procedures to mobiles */
+/* assign special procedures to mobiles. Guildguards, snake, thief, magic user,
+ * puff, fido, janitor, and cityguards are now implemented via triggers. */
 void assign_mobiles(void)
 {
   assign_kings_castle();

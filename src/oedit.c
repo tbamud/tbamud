@@ -349,15 +349,9 @@ static void oedit_disp_prompt_apply_menu(struct descriptor_data *d)
 /* Ask for liquid type. */
 static void oedit_liquid_type(struct descriptor_data *d)
 {
-  int counter, columns = 0;
-
   get_char_colors(d->character);
   clear_screen(d);
-
-  for (counter = 0; counter < NUM_LIQ_TYPES; counter++) {
-    write_to_output(d, " %s%2d%s) %s%-20.20s %s", grn, counter, nrm, yel,
-	    drinks[counter], !(++columns % 2) ? "\r\n" : "");
-  }
+  column_list(d->character, 0, drinks, NUM_LIQ_TYPES, TRUE);
   write_to_output(d, "\r\n%sEnter drink type : ", nrm);
   OLC_MODE(d) = OEDIT_VALUE_3;
 }
@@ -365,15 +359,9 @@ static void oedit_liquid_type(struct descriptor_data *d)
 /* The actual apply to set. */
 static void oedit_disp_apply_menu(struct descriptor_data *d)
 {
-  int counter, columns = 0;
-
   get_char_colors(d->character);
   clear_screen(d);
-
-  for (counter = 0; counter < NUM_APPLIES; counter++) {
-    write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter, nrm,
-		apply_types[counter], !(++columns % 2) ? "\r\n" : "");
-  }
+  column_list(d->character, 0, apply_types, NUM_APPLIES, TRUE);
   write_to_output(d, "\r\nEnter apply type (0 is no apply) : ");
   OLC_MODE(d) = OEDIT_APPLY;
 }
@@ -1036,6 +1024,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     case ITEM_FOUNTAIN:
       min_val = 0;
       max_val = NUM_LIQ_TYPES - 1;
+      number--;
       break;
     case ITEM_KEY:
       min_val = 0;
@@ -1096,7 +1085,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       OLC_OBJ(d)->affected[OLC_VAL(d)].location = 0;
       OLC_OBJ(d)->affected[OLC_VAL(d)].modifier = 0;
       oedit_disp_prompt_apply_menu(d);
-    } else if (number < 0 || number >= NUM_APPLIES)
+    } else if (number < 0 || number > NUM_APPLIES)
       oedit_disp_apply_menu(d);
     else {
       int counter;
@@ -1111,7 +1100,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
         }
       }
 
-      OLC_OBJ(d)->affected[OLC_VAL(d)].location = number;
+      OLC_OBJ(d)->affected[OLC_VAL(d)].location = number - 1;
       write_to_output(d, "Modifier : ");
       OLC_MODE(d) = OEDIT_APPLYMOD;
     }

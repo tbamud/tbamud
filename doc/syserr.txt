@@ -18,10 +18,11 @@ rumble@tbamud.com -- Rumble
 8.  Char is already equipped: (medit-s-desc), (oedit-s-desc)
 9.  SYSERR: Attempt to assign spec to non-existant mob #
 10. No associated object exists when attempting to create a board [vnum #]. 
+11. 11: SYSERR: Mob using >'((ch)-)player_specials....
 
 1: Errant Rooms
-------------
-12: (Nowhere) [ 8868] House of Elders Chamber in Silverwood City (south)
+
+(Nowhere) [ 8868] House of Elders Chamber in Silverwood City (south)
 
    The most common are exits to Nowhere. This happens when a builder 
 modifies a room exit but does not include an exit room vnum. These errant 
@@ -87,4 +88,22 @@ that is not used.
 
    You need to delete this board from lib/etc/boards/ and modify boards.c and 
 boards.h. Again "grep #" *.[ch] to search for this vnum in all of your .c and 
-.h files to remove the reference. 
+.h files to remove the reference.
+
+11: SYSERR: Mob using >'((ch)-)player_specials....
+
+Players and mobs (NPC's) share many of the same data fields, but not all. 
+So when a mob tries to access player data it gives a SYSERR like this:
+SYSERR: Mob using >'((ch)-)player_specials...
+
+The fix is actually a very easy one. All you have to do is make sure it only 
+checks player data if it is a player. The way this is done in the code is with
+a non-player-character check. Now non-player-character (NPC) means it is a mob.
+So you need a double negative to make sure it is not a non-player-character. I 
+know this is confusing, but just copy the example below.
+
+- if (PRF_FLAGGED(ch, PRF_NOREPEAT)) // This line should be removed, hence the "-"
++ if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT)) // This line should be added without the "+"
+
+The changed line now will not just check for a flag, instead it will check if 
+it is a player (not an NPC) and it is flagged then continue. 

@@ -373,14 +373,10 @@ static int start_change_command(struct descriptor_data *d, int pos)
 /*------------------------------------------------------------------*/
 void zedit_disp_flag_menu(struct descriptor_data *d)
 {
-  int counter, columns = 0;
   char bits[MAX_STRING_LENGTH];
 
   clear_screen(d);
-  for (counter = 0; counter < NUM_ZONE_FLAGS; counter++) {
-    write_to_output(d, "@g%2d@n) %-20.20s %s", counter + 1,
-               zone_bits[counter], !(++columns % 2) ? "\r\n" : "");
-  }
+  column_list(d->character, 0, zone_bits, NUM_ZONE_FLAGS, TRUE);
 
   sprintbitarray(OLC_ZONE(d)->zone_flags, zone_bits, ZN_ARRAY_MAX, bits);
   write_to_output(d, "\r\nZone flags: @c%s@n\r\n"
@@ -656,25 +652,12 @@ static void zedit_disp_arg2(struct descriptor_data *d)
    up the input catch clause. */
 static void zedit_disp_arg3(struct descriptor_data *d)
 {
-  int i = 0;
 
   write_to_output(d, "\r\n");
 
   switch (OLC_CMD(d).command) {
   case 'E':
-    while (*equipment_types[i] != '\n') {
-      write_to_output(d, "%2d) %26.26s", i, equipment_types[i]);
-
-      if (*equipment_types[i + 1] != '\n')
-        write_to_output(d, " %2d) %26.26s", i + 1,
-          equipment_types[i + 1]);
-
-      write_to_output(d, "\r\n");
-      if (*equipment_types[i + 1] != '\n')
-	i += 2;
-      else
-	break;
-    }
+    column_list(d->character, 0, equipment_types, NUM_WEARS, TRUE);
     write_to_output(d, "Location to equip : ");
     break;
   case 'P':
@@ -730,7 +713,7 @@ void zedit_disp_levels(struct descriptor_data *d)
 /* The event handler */
 void zedit_parse(struct descriptor_data *d, char *arg)
 {
-  int pos, i = 0, number;
+  int pos, number;
 
   switch (OLC_MODE(d)) {
   case ZEDIT_CONFIRM_SAVESTRING:
@@ -1104,12 +1087,9 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     }
     switch (OLC_CMD(d).command) {
     case 'E':
-      pos = atoi(arg);
-      /* Count number of wear positions.  We could use NUM_WEARS, this is
-         more reliable. */
-      while (*equipment_types[i] != '\n')
-	i++;
-      if (pos < 0 || pos >= i)
+      pos = atoi(arg) - 1;
+      /* Count number of wear positions. */
+      if (pos < 0 || pos >= NUM_WEARS)
 	write_to_output(d, "Try again : ");
       else {
 	OLC_CMD(d).arg3 = pos;

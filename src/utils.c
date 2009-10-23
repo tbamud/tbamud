@@ -954,6 +954,16 @@ void column_list(struct char_data *ch, int num_cols, const char **list, int list
    int num_per_col, col_width,r,c,i, offset=0, len=0, temp_len, max_len=0;
    char buf[MAX_STRING_LENGTH];
 
+   /* Work out the longest list item */
+   for (i=0; i<list_length; i++)
+     if (max_len < strlen(list[i]))
+       max_len = strlen(list[i]);
+
+   /* auto columns case */
+   if (num_cols == 0) {
+	   num_cols = (IS_NPC(ch) ? 80 : GET_SCREEN_WIDTH(ch)) / (max_len + (show_nums ? 5 : 1));
+   }
+
    /* Ensure that the number of columns is in the range 1-10 */
    num_cols = MIN(MAX(num_cols,1), 10);
 

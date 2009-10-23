@@ -569,7 +569,7 @@ static void look_in_obj(struct char_data *ch, char *arg)
 	list_obj_to_char(obj->contains, ch, SHOW_OBJ_SHORT, TRUE);
       }
     } else {		/* item must be a fountain or drink container */
-      if ((GET_OBJ_VAL(obj, 1) == 0) && (!GET_OBJ_VAL(obj, 0) == -1))
+      if ((GET_OBJ_VAL(obj, 1) == 0) && (GET_OBJ_VAL(obj, 0) != -1))
 	send_to_char(ch, "It is empty.\r\n");
       else {
         if (GET_OBJ_VAL(obj, 0) < 0)
@@ -2237,7 +2237,7 @@ ACMD(do_commands)
   }
 
   /* display commands list in a nice columnized format */
-  column_list(ch, 7, commands, no, FALSE);
+  column_list(ch, 0, commands, no, FALSE);
 }
 
 void free_history(struct char_data *ch, int type)

@@ -146,8 +146,12 @@ int delete_mobile(mob_rnum refpt)
   /* Update zone table. */
   for (zone = 0; zone <= top_of_zone_table; zone++)
     for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++)
-      if (ZCMD(zone, cmd_no).command == 'M' && ZCMD(zone, cmd_no).arg1 == refpt)
+      if (ZCMD(zone, cmd_no).command == 'M'){
+       if (ZCMD(zone, cmd_no).arg1 == refpt) {
         delete_zone_command(&zone_table[zone], cmd_no);
+        } else
+          ZCMD(zone, cmd_no).arg1 -= (ZCMD(zone, cmd_no).arg1 > refpt);
+        }
 
   /* Update shop keepers. */
   if (shop_index)

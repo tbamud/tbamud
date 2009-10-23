@@ -122,7 +122,8 @@ int prac_params[4][NUM_CLASSES] = {
  * to visit spec_assign.c if you create any new mobiles that should be a guild
  * master or guard so they can act appropriately. If you "recycle" the 
  * existing mobs that are used in other guilds for your new guild, then you 
- * don't have to change that file, only here. */
+ * don't have to change that file, only here. Guildguards are now implemented
+ * via triggers. This code remains as an example. */
 struct guild_info_type guild_info[] = {
 
 /* Midgaard */

@@ -371,14 +371,11 @@ static void redit_disp_exit_flag_menu(struct descriptor_data *d)
 static void redit_disp_flag_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
-  int counter, columns = 0;
 
   get_char_colors(d->character);
   clear_screen(d);
-  for (counter = 0; counter < NUM_ROOM_FLAGS; counter++) {
-    write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm,
-		room_bits[counter], !(++columns % 2) ? "\r\n" : "");
-  }
+  column_list(d->character, 0, room_bits, NUM_ROOM_FLAGS, TRUE);
+
   sprintbitarray(OLC_ROOM(d)->room_flags, room_bits, RF_ARRAY_MAX, bits);
   write_to_output(d, "\r\nRoom flags: %s%s%s\r\n"
 	  "Enter room flags, 0 to quit : ", cyn, bits, nrm);
@@ -388,13 +385,8 @@ static void redit_disp_flag_menu(struct descriptor_data *d)
 /* For sector type. */
 static void redit_disp_sector_menu(struct descriptor_data *d)
 {
-  int counter, columns = 0;
-
   clear_screen(d);
-  for (counter = 0; counter < NUM_ROOM_SECTORS; counter++) {
-    write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter, nrm,
-		sector_types[counter], !(++columns % 2) ? "\r\n" : "");
-  }
+  column_list(d->character, 0, sector_types, NUM_ROOM_SECTORS, TRUE);
   write_to_output(d, "\r\nEnter sector type : ");
   OLC_MODE(d) = REDIT_SECTOR;
 }
@@ -625,7 +617,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
     return;
 
   case REDIT_SECTOR:
-    number = atoi(arg);
+    number = atoi(arg) - 1;
     if (number < 0 || number >= NUM_ROOM_SECTORS) {
       write_to_output(d, "Invalid choice!");
       redit_disp_sector_menu(d);

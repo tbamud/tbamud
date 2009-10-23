@@ -347,16 +347,11 @@ static void qedit_disp_menu(struct descriptor_data *d)
     real_quest(quest->prev_quest) == NOTHING ? "" : QST_DESC(real_quest(quest->prev_quest)));
   OLC_MODE(d) = QEDIT_MAIN_MENU;
 }
-/* For sector type.  */
+/* For quest type.  */
 void qedit_disp_type_menu(struct descriptor_data *d)
 {
-  int counter, columns = 0;
-
   clear_screen(d);
-  for (counter = 0; counter < NUM_AQ_TYPES; counter++) {
-    write_to_output(d, "@g%2d@n) %-20.20s %s", counter,
-                quest_types[counter], !(++columns % 2) ? "\r\n" : "");
-  }
+  column_list(d->character, 0, quest_types, NUM_AQ_TYPES, TRUE);
   write_to_output(d, "\r\nEnter Quest type : ");
   OLC_MODE(d) = QEDIT_TYPES;
 }
@@ -364,14 +359,10 @@ void qedit_disp_type_menu(struct descriptor_data *d)
 void qedit_disp_flag_menu(struct descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
-  int counter, columns = 0;
 
   get_char_colors(d->character);
   clear_screen(d);
-  for (counter = 0; counter < NUM_AQ_FLAGS; counter++) {
-    write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm,
-                aq_flags[counter], !(++columns % 2) ? "\r\n" : "");
-  }
+  column_list(d->character, 0, aq_flags, NUM_AQ_FLAGS, TRUE);
   sprintbit(OLC_QUEST(d)->flags, aq_flags, bits, sizeof(bits));
   write_to_output(d, "\r\nQuest flags: @c%s@n\r\n"
           "Enter quest flags, 0 to quit : ", bits);
@@ -612,6 +603,7 @@ void qedit_parse(struct descriptor_data *d, char *arg)
       OLC_QUEST(d)->qm = number;
       break;
     case QEDIT_TYPES:
+      number--;
       if (number < 0 || number >= NUM_AQ_TYPES) {
         write_to_output(d, "Invalid choice!\r\n");
         qedit_disp_type_menu(d);
