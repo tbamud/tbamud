@@ -96,6 +96,7 @@ struct oasis_olc_data {
   struct social_messg *action;   /* Aedit uses this one      */
   struct trig_data *trig;
   struct prefs_data *prefs;      /* used for 'prefedit'      */
+  struct ibt_data *ibt;          /* used for 'ibtedit'       */
   int script_mode;
   int trigger_position;
   int item_type;
@@ -127,6 +128,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define OLC_ACTION(d)  (OLC(d)->action)   /**< Action structure     */
 #define OLC_HELP(d)    (OLC(d)->help)     /**< Hedit structure      */
 #define OLC_PREFS(d)   (OLC(d)->prefs)    /**< Preferences structure */
+#define OLC_IBT(d)     (OLC(d)->ibt)      /**< IBT (idea/bug/typo) structure */
 /* Other macros. */
 #define OLC_EXIT(d)		(OLC_ROOM(d)->dir_option[OLC_VAL(d)])
 

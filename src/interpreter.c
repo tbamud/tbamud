@@ -37,6 +37,7 @@
 #include "quest.h"
 #include "asciimap.h"
 #include "prefedit.h"
+#include "ibt.h"
 
 /* local (file scope) functions */
 static int perform_dupe_check(struct descriptor_data *d);
@@ -99,7 +100,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "brief"    , "br"      , POS_DEAD    , do_gen_tog  , 0, SCMD_BRIEF },
   { "buildwalk", "buildwalk", POS_STANDING, do_gen_tog , LVL_BUILDER, SCMD_BUILDWALK },
   { "buy"      , "bu"      , POS_STANDING, do_not_here , 0, 0 },
-  { "bug"      , "bug"     , POS_DEAD    , do_gen_write, 0, SCMD_BUG },
+  { "bug"      , "bug"     , POS_DEAD    , do_ibt      , 0, SCMD_BUG },
 
   { "cast"     , "c"       , POS_SITTING , do_cast     , 1, 0 },
   { "cedit"    , "cedit"   , POS_DEAD    , do_oasis_cedit, LVL_IMPL, 0 },
@@ -171,7 +172,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "house"    , "house"   , POS_RESTING , do_house    , 0, 0 },
 
   { "inventory", "i"       , POS_DEAD    , do_inventory, 0, 0 },
-  { "idea"     , "id"      , POS_DEAD    , do_gen_write, 0, SCMD_IDEA },
+  { "idea"     , "id"      , POS_DEAD    , do_ibt      , 0, SCMD_IDEA },
   { "imotd"    , "imo"     , POS_DEAD    , do_gen_ps   , LVL_IMMORT, SCMD_IMOTD },
   { "immlist"  , "imm"     , POS_DEAD    , do_gen_ps   , 0, SCMD_IMMLIST },
   { "info"     , "info"    , POS_SLEEPING, do_gen_ps   , 0, SCMD_INFO },
@@ -300,7 +301,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "track"    , "track"   , POS_STANDING, do_track    , 0, 0 },
   { "transfer" , "transfer", POS_SLEEPING, do_trans    , LVL_GOD, 0 },
   { "trigedit" , "trigedit", POS_DEAD    , do_oasis_trigedit, LVL_BUILDER, 0 },
-  { "typo"     , "typo"    , POS_DEAD    , do_gen_write, 0, SCMD_TYPO },
+  { "typo"     , "typo"    , POS_DEAD    , do_ibt      , 0, SCMD_TYPO },
   { "tlist"    , "tlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_TLIST },
   { "tcopy"    , "tcopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_TRIGEDIT },
   { "tstat"    , "tstat"   , POS_DEAD    , do_tstat    , LVL_BUILDER, 0 },
@@ -1222,6 +1223,7 @@ void nanny(struct descriptor_data *d, char *arg)
     { CON_HEDIT, hedit_parse },
     { CON_QEDIT, qedit_parse },
     { CON_PREFEDIT, prefedit_parse },
+    { CON_IBTEDIT, ibtedit_parse },
     { -1, NULL }
   };
 

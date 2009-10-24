@@ -36,6 +36,8 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Oct 24 2009] - Jamdog
+  Added new IBT system for Ideas, Bugs and Typos (thanks Frenze)
 [Oct 23 2009] - Rumble
   Fixed bug in renumbering zone table after deleting mobiles. (thanks Drefs)
   Fixed bug in renumbering zone table after deleting objects. (thanks Drefs)

@@ -100,9 +100,9 @@
 #define HANDBOOK_FILE	LIB_TEXT"handbook"  /* handbook for new immorts	*/
 #define HELP_FILE       "help.hlp"
 
-#define IDEA_FILE	LIB_MISC"ideas"	   /* for the 'idea'-command	*/
-#define TYPO_FILE	LIB_MISC"typos"	   /*         'typo'		*/
-#define BUG_FILE	LIB_MISC"bugs"	   /*         'bug'		*/
+#define IDEAS_FILE	LIB_MISC"ideas"	   /* for the 'idea'-command	*/
+#define TYPOS_FILE	LIB_MISC"typos"	   /*         'typo'		*/
+#define BUGS_FILE	LIB_MISC"bugs"	   /*         'bug'		*/
 #define MESS_FILE	LIB_MISC"messages" /* damage messages		*/
 #define SOCMESS_FILE	LIB_MISC"socials"  /* messages for social acts	*/
 #define SOCMESS_FILE_NEW LIB_MISC"socials.new"  /* messages for social acts with aedit patch*/
@@ -243,6 +243,11 @@ char *fread_action(FILE *fl, int nr);
 int   create_entry(char *name);
 void  zone_update(void);
 char  *fread_string(FILE *fl, const char *error);
+int   fread_number(FILE *fp);
+char  *fread_line(FILE *fp);
+int   fread_flags(FILE *fp, int *fg, int fg_size);
+char  *fread_word(FILE *fp);
+void  fread_to_eol(FILE *fp);
 long  get_id_by_name(const char *name);
 char  *get_name_by_id(long id);
 void  save_mud_time(struct time_info_data *when);

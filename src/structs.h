@@ -193,6 +193,9 @@
 #define PLR_INVSTART     14   /**< Player should enter game wizinvis */
 #define PLR_CRYO         15   /**< Player is cryo-saved (purge prog) */
 #define PLR_NOTDEADYET   16   /**< (R) Player being extracted */
+#define PLR_BUG          17   /**< Player is writing a bug    */
+#define PLR_IDEA         18   /**< Player is writing an idea  */
+#define PLR_TYPO         19   /**< Player is writing a typo   */
 
 /* Mobile flags: used by char_data.char_specials.act */
 #define MOB_SPEC            0   /**< Mob has a callable spec-proc	*/
@@ -314,6 +317,7 @@
 #define CON_HEDIT        27 /**< OLC mode - help edit */
 #define CON_QEDIT        28 /**< OLC mode - quest edit */
 #define CON_PREFEDIT     29 /**< OLC mode - preference edit */
+#define CON_IBTEDIT      30 /**< OLC mode - idea/bug/typo edit */
 
 /* OLC States range - used by IS_IN_OLC and IS_PLAYING */
 #define FIRST_OLC_STATE CON_OEDIT     /**< The first CON_ state that is an OLC */

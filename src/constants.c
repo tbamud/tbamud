@@ -156,6 +156,9 @@ const char *player_bits[] = {
   "INVST",
   "CRYO",
   "DEAD",    /* You should never see this flag on a character in game. */
+  "IBT_BUG",
+  "IBT_IDEA",
+  "IBT_TYPO",
   "UNUSED1",
   "UNUSED2",
   "UNUSED3",
@@ -296,6 +299,7 @@ const char *connected_types[] = {
   "Help edit",
   "Quest edit",
   "Preference edit",
+  "IBT edit",
   "\n"
 };
 
@@ -911,6 +915,14 @@ const char *history_types[] = {
   "grats",
   "holler",
   "auction",
+  "\n"
+};
+
+/** Flag names for Ideas, Bugs and Typos (defined in ibt.h) */
+const char *ibt_bits[] = {
+  "Resolved",
+  "Important",
+  "InProgress",
   "\n"
 };
 /* --- End of constants arrays. --- */

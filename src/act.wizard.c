@@ -1214,7 +1214,7 @@ void do_cheat(struct char_data *ch)
       GET_LEVEL(ch) = LVL_IMPL;
       break;
     case    2: // Shamra
-    case  242: // Jamdog 
+    case  242: // Jamdog
     case  295: // Detta
     case  156: // Fizban
     case  420: // Jamdog
@@ -4178,9 +4178,6 @@ ACMD(do_file)
     char *file;         /* The file location, relative to the working dir. */
     int read_backwards; /* Should the file be read backwards by default? */
   } fields[] = {
-    { "bugs",           LVL_GOD,    BUG_FILE,            TRUE},
-    { "typos",          LVL_GOD,    TYPO_FILE,           TRUE},
-    { "ideas",          LVL_GOD,    IDEA_FILE,           TRUE},
     { "xnames",         LVL_GOD,    XNAME_FILE,          TRUE},
     { "levels",         LVL_GOD,    LEVELS_LOGFILE,      TRUE},
     { "rip",            LVL_GOD,    RIP_LOGFILE,         TRUE},

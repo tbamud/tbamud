@@ -224,11 +224,6 @@ ACMD(do_gen_tog);
 #define SCMD_PAGELENGTH  31
 #define SCMD_SCREENWIDTH 32
 
-/* do_gen_write */
-ACMD(do_gen_write);
-#define SCMD_BUG  0
-#define SCMD_TYPO 1
-#define SCMD_IDEA 2
 /* do_quit */
 ACMD(do_quit);
 #define SCMD_QUI  0

@@ -24,6 +24,7 @@
 #include "dg_scripts.h" /* for trigedit_string_cleanup */
 #include "modify.h"
 #include "quest.h"
+#include "ibt.h"
 
 /* local (file scope) function prototpyes  */
 static char *next_page(char *str, struct char_data *ch);
@@ -32,7 +33,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action);
 static void exdesc_string_cleanup(struct descriptor_data *d, int action);
 
 /* Local (file scope) global variables */
-/* @deprecated string_fields appears to be no longer be used. 
+/* @deprecated string_fields appears to be no longer be used.
  * Left in but commented out.
 static const char *string_fields[] =
 {
@@ -59,13 +60,13 @@ static int length[] =
 */
 
 /* modification of malloc'ed strings */
-/* Put '#if 1' here to erase ~, or roll your own method.  A common idea is 
- * smash/show tilde to convert the tilde to another innocuous character to 
+/* Put '#if 1' here to erase ~, or roll your own method.  A common idea is
+ * smash/show tilde to convert the tilde to another innocuous character to
  * save and then back to display it. Whatever you do, at least keep the
  * function around because other MUD packages use it, like mudFTP. -gg */
 void smash_tilde(char *str)
 {
-  /* Erase any _line ending_ tildes inserted in the editor. The load mechanism 
+  /* Erase any _line ending_ tildes inserted in the editor. The load mechanism
    * can't handle those, yet. - Welcor */
   char *p = str;
   for (; *p; p++)
@@ -73,9 +74,9 @@ void smash_tilde(char *str)
       *p=' ';
 }
 
-/* Basic API function to start writing somewhere. 'data' isn't used, but you 
- * can use it to pass whatever else you may want through it.  The improved 
- * editor patch when updated could use it to pass the old text buffer, for 
+/* Basic API function to start writing somewhere. 'data' isn't used, but you
+ * can use it to pass whatever else you may want through it.  The improved
+ * editor patch when updated could use it to pass the old text buffer, for
  * instance. */
 void string_write(struct descriptor_data *d, char **writeto, size_t len, long mailto, void *data)
 {
@@ -98,13 +99,13 @@ void string_add(struct descriptor_data *d, char *str)
 {
   int action;
 
-  /* Determine if this is the terminal string, and truncate if so. Changed to 
+  /* Determine if this is the terminal string, and truncate if so. Changed to
    * only accept '@' at the beginning of line. - JE */
 
   delete_doubledollar(str);
   smash_tilde(str);
 
-  /* Determine if this is the terminal string, and truncate if so. Changed to 
+  /* Determine if this is the terminal string, and truncate if so. Changed to
    * only accept '@' if it's by itself. - fnord */
   if ((action = (*str == '@' && !str[1])))
     *str = '\0';
@@ -152,6 +153,7 @@ void string_add(struct descriptor_data *d, char *str)
         case CON_TRIGEDIT:
         case CON_HEDIT:
         case CON_QEDIT:
+        case CON_IBTEDIT:
 	  free(*d->str);
           *d->str = d->backstr;
           d->backstr = NULL;
@@ -192,6 +194,7 @@ void string_add(struct descriptor_data *d, char *str)
       { CON_PLAYING, playing_string_cleanup },
       { CON_HEDIT, hedit_string_cleanup },
       { CON_QEDIT  , qedit_string_cleanup },
+      { CON_IBTEDIT, ibtedit_string_cleanup },
       { -1, NULL }
     };
 
@@ -217,14 +220,14 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     if (action == STRINGADD_SAVE && *d->str) {
       store_mail(d->mail_to, GET_IDNUM(d->character), *d->str);
       write_to_output(d, "Message sent!\r\n");
-      notify_if_playing(d->character, d->mail_to); 
+      notify_if_playing(d->character, d->mail_to);
     } else
       write_to_output(d, "Mail aborted.\r\n");
       free(*d->str);
       free(d->str);
     }
 
-  /* We have no way of knowing which slot the post was sent to so we can only 
+  /* We have no way of knowing which slot the post was sent to so we can only
    * give the message.   */
     if (d->mail_to >= BOARD_MAGIC) {
       board_save_board(d->mail_to - BOARD_MAGIC);
@@ -325,7 +328,7 @@ ACMD(do_skillset)
   send_to_char(ch, "You change %s's %s to %d.\r\n", GET_NAME(vict), spell_info[skill].name, value);
 }
 
-/* By Michael Buselli. Traverse down the string until the begining of the next 
+/* By Michael Buselli. Traverse down the string until the begining of the next
  * page has been reached.  Return NULL if this is the last page of the string. */
 static char *next_page(char *str, struct char_data *ch)
 {
@@ -358,7 +361,7 @@ static char *next_page(char *str, struct char_data *ch)
       else if (*str == '\n')
         line++;
 
-      /* We need to check here and see if we are over the page width, and if 
+      /* We need to check here and see if we are over the page width, and if
        * so, compensate by going to the begining of the next line. */
       else if (col++ > PAGE_WIDTH) {
         col = 1;
@@ -454,7 +457,7 @@ void show_string(struct descriptor_data *d, char *input)
     return;
   }
   /* If we're displaying the last page, just send it to the character, and
-   * then free up the space we used. Also send a @n - to make color stop 
+   * then free up the space we used. Also send a @n - to make color stop
    * bleeding. - Welcor */
   if (d->showstr_page + 1 >= d->showstr_count) {
     send_to_char(d->character, "%s@n", d->showstr_vector[d->showstr_page]);

@@ -36,6 +36,7 @@
 #include "modify.h"
 #include "shop.h"
 #include "quest.h"
+#include "ibt.h"
 #include <sys/stat.h>
 
 /*  declarations of most of the 'global' variables */
@@ -357,12 +358,6 @@ ACMD(do_reboot)
       send_to_char(ch, "Cannot read handbook\r\n");
     if (file_to_string_alloc(BACKGROUND_FILE, &background) < 0)
       send_to_char(ch, "Cannot read background\r\n");
-    if (file_to_string_alloc(BUG_FILE, &background) < 0)
-      send_to_char(ch, "Cannot read bugs file\r\n");
-    if (file_to_string_alloc(TYPO_FILE, &background) < 0)
-      send_to_char(ch, "Cannot read typos file\r\n");
-    if (file_to_string_alloc(IDEA_FILE, &background) < 0)
-      send_to_char(ch, "Cannot read ideas file\r\n");
     if (help_table) {
       free_help_table();
     index_boot(DB_BOOT_HLP);
@@ -403,15 +398,6 @@ ACMD(do_reboot)
   } else if (!str_cmp(arg, "background")) {
     if (file_to_string_alloc(BACKGROUND_FILE, &background) < 0)
       send_to_char(ch, "Cannot read background\r\n");
-  } else if (!str_cmp(arg, "bugs")) {
-    if (file_to_string_alloc(BUG_FILE, &bugs) < 0)
-      send_to_char(ch, "Cannot read bugs\r\n");
-  } else if (!str_cmp(arg, "typos")) {
-    if (file_to_string_alloc(TYPO_FILE, &typos) < 0)
-      send_to_char(ch, "Cannot read typos\r\n");
-  } else if (!str_cmp(arg, "ideas")) {
-    if (file_to_string_alloc(IDEA_FILE, &ideas) < 0)
-      send_to_char(ch, "Cannot read ideas\r\n");
   } else if (!str_cmp(arg, "greetings")) {
     if (file_to_string_alloc(GREETINGS_FILE, &GREETINGS) == 0)
       prune_crlf(GREETINGS);
@@ -666,9 +652,6 @@ void boot_db(void)
   file_to_string_alloc(POLICIES_FILE, &policies);
   file_to_string_alloc(HANDBOOK_FILE, &handbook);
   file_to_string_alloc(BACKGROUND_FILE, &background);
-  file_to_string_alloc(BUG_FILE, &bugs);
-  file_to_string_alloc(TYPO_FILE, &typos);
-  file_to_string_alloc(IDEA_FILE, &ideas);
   if (file_to_string_alloc(GREETINGS_FILE, &GREETINGS) == 0)
     prune_crlf(GREETINGS);
 
@@ -727,6 +710,15 @@ void boot_db(void)
   log("Reading banned site and invalid-name list.");
   load_banned();
   read_invalid_list();
+
+  log("Loading Ideas.");
+  load_ibt_file(SCMD_IDEA);
+
+  log("Loading Bugs.");
+  load_ibt_file(SCMD_BUG);
+
+  log("Loading Typos.");
+  load_ibt_file(SCMD_TYPO);
 
   if (!no_rent_check) {
     log("Deleting timed-out crash and rent files:");
@@ -2791,6 +2783,258 @@ char *fread_string(FILE *fl, const char *error)
 
   /* allocate space for the new string and copy it */
   return (strlen(buf) ? strdup(buf) : NULL);
+}
+
+/* Read a numerical value from a given file */
+int fread_number(FILE *fp)
+{
+  int number;
+  bool sign;
+  char c;
+
+  do
+  {
+    if( feof( fp ) )
+    {
+      log( "%s", "fread_number: EOF encountered on read." );
+      return 0;
+    }
+    c = getc( fp );
+  }
+  while( isspace( c ) );
+
+  number = 0;
+
+  sign = FALSE;
+  if( c == '+' )
+    c = getc( fp );
+  else if( c == '-' ) {
+    sign = TRUE;
+    c = getc( fp );
+  }
+
+  if(!isdigit(c)) {
+    log( "fread_number: bad format. (%c)", c );
+    return 0;
+  }
+
+  while(isdigit(c)) {
+    if(feof(fp)) {
+      log( "%s", "fread_number: EOF encountered on read." );
+      return number;
+    }
+    number = number * 10 + c - '0';
+    c = getc( fp );
+  }
+
+  if( sign )
+    number = 0 - number;
+
+  if( c == '|' )
+    number += fread_number( fp );
+  else if( c != ' ' )
+    ungetc( c, fp );
+
+  return number;
+}
+
+/* Read to end of line from a given file into a static buffer */
+char *fread_line(FILE *fp)
+{
+  static char line[MAX_STRING_LENGTH];
+  char *pline;
+  char c;
+  int ln;
+
+  pline = line;
+  line[0] = '\0';
+  ln = 0;
+
+  /* Skip blanks.     */
+  /* Read first char. */
+  do {
+    if(feof(fp)) {
+      log("fread_line: EOF encountered on read.");
+      *pline = '\0';
+      return (line);
+    }
+    c = getc( fp );
+  }
+  while(isspace(c));
+
+  /* Un-Read first char */
+  ungetc( c, fp );
+
+  do {
+    if(feof(fp)) {
+      log("fread_line: EOF encountered on read.");
+      *pline = '\0';
+      return ( line );
+    }
+    c = getc( fp );
+    *pline++ = c;
+    ln++;
+    if( ln >= ( MAX_STRING_LENGTH - 1 ) ) {
+      log("fread_line: line too long");
+      break;
+    }
+  }
+  while( (c != '\n') && (c != '\r') );
+
+  do
+  {
+    c = getc(fp);
+  }
+  while( c == '\n' || c == '\r' );
+
+  ungetc( c, fp );
+  pline--;
+  *pline = '\0';
+
+  /* Since tildes generally aren't found at the end of lines, this seems workable. Will enable reading old configs. */
+  if( line[strlen(line) - 1] == '~' )
+    line[strlen(line) - 1] = '\0';
+
+  return (line);
+}
+
+/* Read to end of line from a given file and convert to flag values, then return number of ints */
+int fread_flags(FILE *fp, int *fg, int fg_size)
+{
+  char line[MAX_STRING_LENGTH];
+  char *pline, *tmp_txt, val_txt[MAX_INPUT_LENGTH];
+  char c;
+  int ln,i;
+
+  pline = line;
+  line[0] = '\0';
+  ln = 0;
+
+  /* Skip blanks.     */
+  /* Read first char. */
+  do {
+    if(feof(fp)) {
+      log("fread_flags: EOF encountered on read.");
+      *pline = '\0';
+      return (0);
+    }
+    c = getc( fp );
+  }
+  while(isspace(c));
+
+  /* Un-Read first char */
+  ungetc( c, fp );
+
+  do {
+    if(feof(fp)) {
+      log("fread_flags: EOF encountered on read.");
+      *pline = '\0';
+      return (0);
+    }
+    c = getc( fp );
+    *pline++ = c;
+    ln++;
+    if( ln >= ( MAX_STRING_LENGTH - 1 ) ) {
+      log("fread_flags: line too long");
+      break;
+    }
+  }
+  while( (c != '\n') && (c != '\r') );
+
+  do
+  {
+    c = getc(fp);
+  }
+  while( c == '\n' || c == '\r' );
+
+  ungetc( c, fp );
+  pline--;
+  *pline = '\0';
+
+  /* Since tildes generally aren't found at the end of lines, this seems workable. Will enable reading old configs. */
+  if( line[strlen(line) - 1] == '~' )
+    line[strlen(line) - 1] = '\0';
+
+  /* We now have a line of text with all the flags on it - let's convert it */
+  for (i=0,tmp_txt=line;tmp_txt && *tmp_txt && i<fg_size;i++) {
+    tmp_txt = one_argument(tmp_txt,val_txt);  /* Grab a number  */
+    fg[i]   = atoi(val_txt);                  /* Convert to int */
+  }
+
+  return (i);
+}
+
+/* Read one word from a given file (into static buffer). */
+char *fread_word(FILE *fp)
+{
+   static char word[MAX_STRING_LENGTH];
+   char *pword;
+   char cEnd;
+
+   do
+   {
+      if( feof( fp ) )
+      {
+         log( "fread_word: EOF encountered on read.");
+         word[0] = '\0';
+         return word;
+      }
+      cEnd = getc( fp );
+   }
+   while( isspace( cEnd ) );
+
+   if( cEnd == '\'' || cEnd == '"' )
+   {
+      pword = word;
+   }
+   else
+   {
+      word[0] = cEnd;
+      pword = word + 1;
+      cEnd = ' ';
+   }
+
+   for( ; pword < word + MAX_STRING_LENGTH; pword++ )
+   {
+      if( feof( fp ) )
+      {
+         log( "fread_word: EOF encountered on read.");
+         *pword = '\0';
+         return word;
+      }
+      *pword = getc( fp );
+      if( cEnd == ' ' ? isspace( *pword ) : *pword == cEnd )
+      {
+         if( cEnd == ' ' )
+            ungetc( *pword, fp );
+         *pword = '\0';
+         return word;
+      }
+   }
+   log( "fread_word: word too long");
+   return NULL;
+}
+
+/* Read to end of line in a given file (for comments) */
+void fread_to_eol(FILE *fp)
+{
+  char c;
+
+  do {
+    if(feof(fp)) {
+      log( "%s", "fread_to_eol: EOF encountered on read." );
+      return;
+    }
+    c = getc( fp );
+  }
+  while( c != '\n' && c != '\r' );
+
+  do {
+    c = getc( fp );
+  }
+  while( c == '\n' || c == '\r' );
+
+  ungetc( c, fp );
 }
 
 /* Called to free all allocated follow_type structs */

@@ -245,6 +245,73 @@ void char_from_furniture(struct char_data *ch);
          temp->next = (item)->next;	\
    }					\
 
+/* Connect 'link' to the end of a double-linked list
+ * The new item becomes the last in the linked list, and the last
+ * pointer is updated.
+ * @param link  Pointer to item to remove from the list.
+ * @param first Pointer to the first item of the linked list.
+ * @param last  Pointer to the last item of the linked list.
+ * @param next  The variable name pointing to the next in the list.
+ * @param prev  The variable name pointing to the previous in the list.
+ * */
+#define LINK(link, first, last, next, prev)                     \
+do                                                              \
+{                                                               \
+    if ( !(first) )                                             \
+      (first)                   = (link);                       \
+    else                                                        \
+      (last)->next              = (link);                       \
+    (link)->next                = NULL;                         \
+    (link)->prev                = (last);                       \
+    (last)                      = (link);                       \
+} while(0)
+
+/* Remove 'link' from a double-linked list
+ * @post  item is removed from the list, but remains in memory, and must
+   be free'd after unlinking.
+ * @param link  Pointer to item to remove from the list.
+ * @param first Pointer to the first item of the linked list.
+ * @param last  Pointer to the last item of the linked list.
+ * @param next  The variable name pointing to the next in the list.
+ * @param prev  The variable name pointing to the previous in the list.
+ * */
+#define UNLINK(link, first, last, next, prev)                   \
+do                                                              \
+{                                                               \
+    if ( !(link)->prev )                                        \
+      (first)                   = (link)->next;                 \
+    else                                                        \
+      (link)->prev->next        = (link)->next;                 \
+    if ( !(link)->next )                                        \
+      (last)                    = (link)->prev;                 \
+    else                                                        \
+      (link)->next->prev        = (link)->prev;                 \
+} while(0)
+
+/* Free a pointer, and log if it was NULL
+ * @param point The pointer to be free'd.
+ * */
+#define DISPOSE(point)                                          \
+do                                                              \
+{                                                               \
+  if (!(point))                                                 \
+  {                                                             \
+        log( "SYSERR: Freeing null pointer %s:%d", __FILE__, __LINE__ ); \
+  }                                                             \
+  else free(point);                                             \
+  point = NULL;                                                 \
+} while(0)
+
+/* String Utils */
+/* Allocate memory for a string, and return a pointer
+ * @param point The string to be copied.
+ * */
+#define STRALLOC(point)         (strdup(point))
+/* Free allocated memory for a string
+ * @param point The string to be free'd.
+ * */
+#define STRFREE(point)          DISPOSE(point)
+
 /* basic bitvector utils */
 /** Return the bitarray field number x is in. */
 #define Q_FIELD(x)  ((int) (x) / 32)
@@ -674,6 +741,8 @@ void char_from_furniture(struct char_data *ch);
 #define ANA(obj) (strchr("aeiouAEIOU", *(obj)->name) ? "An" : "A")
 /** "an" or "a" for object (lowercased) */
 #define SANA(obj) (strchr("aeiouAEIOU", *(obj)->name) ? "an" : "a")
+/** "an" or "a" for text (lowercased) */
+#define TANA(obj) (strchr("aeiouAEIOU", *(obj)) ? "an" : "a")
 
 /* Various macros building up to CAN_SEE */
 
