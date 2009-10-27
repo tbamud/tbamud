@@ -36,6 +36,9 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Oct 27 2009] - Rumble
+  Added zone 555/556 qst files.
+  PLR_BUG/IDEA/TYPO flag cleanup.
 [Oct 24 2009] - Jamdog
   Added new IBT system for Ideas, Bugs and Typos (thanks Frenze)
 [Oct 23 2009] - Rumble

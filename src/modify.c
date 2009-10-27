@@ -207,6 +207,9 @@ void string_add(struct descriptor_data *d, char *str)
     d->mail_to = 0;
     d->max_str = 0;
     if (d->character && !IS_NPC(d->character)) {
+      REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_BUG);
+      REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_IDEA);
+      REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_TYPO);
       REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
       REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
     }
@@ -234,6 +237,36 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       if (action == STRINGADD_ABORT)
         write_to_output(d, "Post not aborted, use REMOVE <post #>.\r\n");
     }
+  if (PLR_FLAGGED(d->character, PLR_IDEA)) {
+    if (action == STRINGADD_SAVE && *d->str){
+      write_to_output(d, "Idea saved!\r\n");
+      save_ibt_file(SCMD_IDEA);
+    } else {
+      write_to_output(d, "Idea aborted!\r\n");
+      free(*d->str);
+      free(d->str);
+    }
+  }
+  if (PLR_FLAGGED(d->character, PLR_BUG)) {
+    if (action == STRINGADD_SAVE && *d->str){
+      write_to_output(d, "Bug saved!\r\n");
+      save_ibt_file(SCMD_BUG);
+    } else {
+      write_to_output(d, "Bug aborted!\r\n");
+      free(*d->str);
+      free(d->str);
+    }
+  }
+  if (PLR_FLAGGED(d->character, PLR_TYPO)) {
+    if (action == STRINGADD_SAVE && *d->str){
+      write_to_output(d, "Typo saved!\r\n");
+      save_ibt_file(SCMD_TYPO);
+    } else {
+      write_to_output(d, "Typo aborted!\r\n");
+      free(*d->str);
+      free(d->str);
+    }
+  }
 }
 
 static void exdesc_string_cleanup(struct descriptor_data *d, int action)
