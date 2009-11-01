@@ -36,6 +36,8 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Nov 01 2009] - Fizban
+  Changed MOB_OR_IMPL macro to allow player-attachable scripts to work properly and edited the output of 'show zones'.
 [Oct 27 2009] - Rumble
   Added zone 555/556 qst files.
   PLR_BUG/IDEA/TYPO flag cleanup.

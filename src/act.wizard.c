@@ -2419,7 +2419,7 @@ static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int l
 
 ACMD(do_show)
 {
-  int i, j, k, l, con;		/* i, j, k to specifics? */
+  int i, j, k, l, con, builder =0;		/* i, j, k to specifics? */
   size_t len, nlen;
   zone_rnum zrn;
   zone_vnum zvn;
@@ -2489,11 +2489,16 @@ ACMD(do_show)
       }
     } else {
       char *buf2;
+      if (*value)
+        builder = 1;
       for (len = zrn = 0; zrn <= top_of_zone_table; zrn++) {
         if (*value) {
           buf2 = strtok(strdup(zone_table[zrn].builders), " ");
           while (buf2) {
-            if (!str_cmp(buf2, value))
+            if (!str_cmp(buf2, value)) {
+              if (builder == 1)
+                builder++;
+            }
               break;
             buf2 = strtok(NULL, " ");
           }
@@ -2506,6 +2511,10 @@ ACMD(do_show)
         len += nlen;
       }
     }
+    if (builder == 1)
+      send_to_char(ch, "%s has not built any zones here.\r\n", CAP(value));
+    else if (builder == 2)
+      send_to_char(ch, "The following zones have been built by: %s\r\n", CAP(value));
     page_string(ch->desc, buf, TRUE);
     break;
 

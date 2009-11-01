@@ -44,7 +44,7 @@ static void mob_log(char_data *mob, const char *format, ...)
 
 /* Macro to determine if a mob is permitted to use these commands. */
 #define MOB_OR_IMPL(ch) \
-  (IS_NPC(ch) && (!(ch)->desc || GET_LEVEL((ch)->desc->original)>=LVL_IMPL))
+ ((IS_NPC(ch) && (!(ch)->desc || GET_LEVEL((ch)->desc->original) >= LVL_IMPL)) || (SCRIPT(ch) && TRIGGERS(SCRIPT(ch))))
 #define MOB_OR_PLAYER(ch) (GET_LEVEL(ch) > 0)
 
 /* mob commands */
