@@ -2498,8 +2498,8 @@ ACMD(do_show)
             if (!str_cmp(buf2, value)) {
               if (builder == 1)
                 builder++;
-            }
               break;
+          }
             buf2 = strtok(NULL, " ");
           }
           if (!buf2)
