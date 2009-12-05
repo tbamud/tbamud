@@ -36,6 +36,18 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Dec 05 2009] - Rumble
+  Changed zedit clear level restrictions to dump you back at main zedit menu instead of in the level menu.
+  Changed zone level restriction to level recommendation so players would not be blocked from zones.
+  Changed Zcheck to level 31.
+[Nov 19 2009] - Rumble
+  Fixed list obj max/min from room to obj. (thanks Elervan)
+[Nov 13 2009] - Rumble
+  Removed con_app 2nd apply type shock that was for "resurrection?" This was not used in 3.1.
+[Nov 12 2009] - Rumble
+  Fixed overflow in prefedit.c. (thanks Xiu)
+[Nov 01 2009] - Rumble
+  Renamed autorun log entries from autoscript killed to terminated so it wouldn't go into the log/rip file.
 [Nov 01 2009] - Fizban
   Changed MOB_OR_IMPL macro to allow player-attachable scripts to work properly and edited the output of 'show zones'.
 [Oct 27 2009] - Rumble
@@ -43,6 +55,7 @@ tbaMUD 3.61
   PLR_BUG/IDEA/TYPO flag cleanup.
 [Oct 24 2009] - Jamdog
   Added new IBT system for Ideas, Bugs and Typos (thanks Frenze)
+  **WARNING** This will create new files so backup your old ones first.
 [Oct 23 2009] - Rumble
   Fixed bug in renumbering zone table after deleting mobiles. (thanks Drefs)
   Fixed bug in renumbering zone table after deleting objects. (thanks Drefs)

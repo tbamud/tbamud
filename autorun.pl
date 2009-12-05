@@ -89,7 +89,7 @@ while (1) {
   if (-r '.killscript') {
     unlink '.killscript';
     open (SYSLOG, '>> log/syslog.1');
-    print SYSLOG "autoscript killed ", `date`;
+    print SYSLOG "autoscript terminated ", `date`;
     exit;
   }
   

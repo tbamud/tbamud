@@ -857,7 +857,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     case '3': OLC_ZONE(d)->min_level = -1;
               OLC_ZONE(d)->max_level = -1;
               OLC_ZONE(d)->number = 1;
-              zedit_disp_levels(d);
+              zedit_disp_menu(d);
               break;
 
     case '0':

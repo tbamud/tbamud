@@ -318,7 +318,7 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mo
 }
 
 /* List all objects in a zone. */
-static void list_objects(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum vmax)
+static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin, obj_vnum vmax)
 {
   obj_rnum i;
   obj_vnum bottom, top;

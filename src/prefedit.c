@@ -264,7 +264,7 @@ static void prefedit_disp_toggles_menu(struct descriptor_data *d)
 
 static void prefedit_disp_prompt_menu(struct descriptor_data *d)
 {
-  char prompt_string[6];
+  char prompt_string[7];
 
   if (PREFEDIT_FLAGGED(PRF_DISPAUTO))
     sprintf(prompt_string, "<Auto>");

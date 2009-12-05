@@ -69,7 +69,7 @@ Do forever
 
   if (stream("killscr","c","query exists")<>"") then do
     Say "Exiting autorun"
-    "echo autoscript killed "DATE() ">> syslog"
+    "echo autoscript terminated "DATE() ">> syslog"
     "del killscr"
     exit
   end

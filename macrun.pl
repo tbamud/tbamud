@@ -117,7 +117,7 @@ while (1)
       {
         unlink(".killscript");
         open (SYSLOG, ">>:log:syslog.1");
-        print (SYSLOG "autoscript killed ", localtime());  #seconds since epoch
+        print (SYSLOG "autoscript terminated ", localtime());  #seconds since epoch
         exit;
       }
 

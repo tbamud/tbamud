@@ -1191,7 +1191,6 @@ struct int_app_type
 struct con_app_type
 {
   sh_int hitp; /**< Added to a character's new MAXHP at each new level. */
-  sh_int shock; /**< Historically affects resurrection chances. */
 };
 
 /** Stores, and used to deliver, the current weather information

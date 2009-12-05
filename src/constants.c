@@ -677,34 +677,34 @@ cpp_extern const struct dex_app_type dex_app[] = {
 };
 
 /** Constitution attribute affects.
- * The fields referenced are hit points and system shock survival. */
+ * The field referenced is for hitpoint bonus. */
 cpp_extern const struct con_app_type con_app[] = {
-  {-4, 20},		/* con = 0 */
-  {-3, 25},		/* con = 1 */
-  {-2, 30},
-  {-2, 35},
-  {-1, 40},
-  {-1, 45},		/* con = 5 */
-  {-1, 50},
-  {0, 55},
-  {0, 60},
-  {0, 65},
-  {0, 70},		/* con = 10 */
-  {0, 75},
-  {0, 80},
-  {0, 85},
-  {0, 88},
-  {1, 90},		/* con = 15 */
-  {2, 95},
-  {2, 97},
-  {3, 99},		/* con = 18 */
-  {3, 99},
-  {4, 99},		/* con = 20 */
-  {5, 99},
-  {5, 99},
-  {5, 99},
-  {6, 99},
-  {6, 99}		/* con = 25 */
+  {-4},		/* con = 0 */
+  {-3},		/* con = 1 */
+  {-2},
+  {-2},
+  {-1},
+  {-1},		/* con = 5 */
+  {-1},
+  {0},
+  {0},
+  {0},
+  {0},		/* con = 10 */
+  {0},
+  {0},
+  {0},
+  {0},
+  {1},		/* con = 15 */
+  {2},
+  {2},
+  {3},		/* con = 18 */
+  {3},
+  {4},		/* con = 20 */
+  {5},
+  {5},
+  {5},
+  {6},
+  {6}		/* con = 25 */
 };
 
 /** Intelligence attribute affects.

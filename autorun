@@ -148,7 +148,7 @@ while ( : ) do
 
   if [ -r .killscript ]; then
     DATE=`date`;
-    echo "autoscript killed $DATE"  >> syslog
+    echo "autoscript terminated $DATE"  >> syslog
     rm .killscript
     proc_syslog
     exit
