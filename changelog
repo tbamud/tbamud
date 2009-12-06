@@ -36,6 +36,9 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Dec 06 2009] - Rumble
+  Fixed medit sex and position numbering. The numbering was wrong with the new column_list.
+  Fixed medit autoroll so it would recognize a change and save.
 [Dec 05 2009] - Rumble
   Changed zedit clear level restrictions to dump you back at main zedit menu instead of in the level menu.
   Changed zone level restriction to level recommendation so players would not be blocked from zones.

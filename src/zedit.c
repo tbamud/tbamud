@@ -699,9 +699,9 @@ void zedit_disp_levels(struct descriptor_data *d)
   clear_screen(d);
   write_to_output(d,
 	"\r\n"
-	"@y1@n) Set minimum level\r\n"
-	"@y2@n) Set maximum level\r\n"
-	"@y3@n) Clear level restrictions\r\n\r\n"
+	"@y1@n) Set minimum level recommendation\r\n"
+	"@y2@n) Set maximum level recommendation\r\n"
+	"@y3@n) Clear level recommendations\r\n\r\n"
 	"@y0@n) Quit to main menu\r\n"
         "@gCurrent Setting: %s%s\r\n"
 	"\r\n"
