@@ -243,8 +243,6 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       save_ibt_file(SCMD_IDEA);
     } else {
       write_to_output(d, "Idea aborted!\r\n");
-      free(*d->str);
-      free(d->str);
     }
   }
   if (PLR_FLAGGED(d->character, PLR_BUG)) {
@@ -253,8 +251,6 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       save_ibt_file(SCMD_BUG);
     } else {
       write_to_output(d, "Bug aborted!\r\n");
-      free(*d->str);
-      free(d->str);
     }
   }
   if (PLR_FLAGGED(d->character, PLR_TYPO)) {
@@ -263,8 +259,6 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       save_ibt_file(SCMD_TYPO);
     } else {
       write_to_output(d, "Typo aborted!\r\n");
-      free(*d->str);
-      free(d->str);
     }
   }
 }

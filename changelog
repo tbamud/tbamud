@@ -36,6 +36,9 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Dec 07 2009] - Rumble
+  Renumbered UNUSED triggers to UNUSED# to make it easier to unset them when changing trig types. (thanks Parna)
+  Fixed double free in IBT that caused crash on /a or saving without any description.
 [Dec 06 2009] - Rumble
   Fixed medit sex and position numbering. The numbering was wrong with the new column_list.
   Fixed medit autoroll so it would recognize a change and save.
