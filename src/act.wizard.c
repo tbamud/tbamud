@@ -2741,7 +2741,7 @@ ACMD(do_show)
    { "nosummon",	LVL_BUILDER,	PC,	BINARY },  /* 35 */
    { "nowizlist", 	LVL_GRGOD, 	PC, 	BINARY },
    { "olc",		LVL_GRGOD,	PC,	MISC },
-   { "password",	LVL_IMPL, 	PC,	MISC },
+   { "password",	LVL_GRGOD,	PC,	MISC },
    { "poofin",		LVL_IMMORT,	PC,	MISC },
    { "poofout",         LVL_IMMORT,	PC,	MISC },   /* 40 */
    { "practices", 	LVL_GOD, 	PC, 	NUMBER },

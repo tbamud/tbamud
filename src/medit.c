@@ -299,28 +299,19 @@ void medit_save_internally(struct descriptor_data *d)
    Display positions. (sitting, standing, etc) */
 static void medit_disp_positions(struct descriptor_data *d)
 {
-  int i;
-
   get_char_colors(d->character);
   clear_screen(d);
-
-  for (i = 0; *position_types[i] != '\n'; i++) {
-    write_to_output(d, "%s%2d%s) %s\r\n", grn, i, nrm, position_types[i]);
-  }
+  column_list(d->character, 0, position_types, NUM_POSITIONS, TRUE);
   write_to_output(d, "Enter position number : ");
 }
 
 /* Display the gender of the mobile. */
 static void medit_disp_sex(struct descriptor_data *d)
 {
-  int i;
-
   get_char_colors(d->character);
   clear_screen(d);
-
-  for (i = 0; i < NUM_GENDERS; i++) {
-    write_to_output(d, "%s%2d%s) %s\r\n", grn, i, nrm, genders[i]);
-  }
+  column_list(d->character, 0, genders, NUM_GENDERS, TRUE);
+  write_to_output(d, "Enter gender number : ");
 }
 
 /* Display attack types menu. */
@@ -868,7 +859,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
 /* Numerical responses. */
 
   case MEDIT_SEX:
-    GET_SEX(OLC_MOB(d)) = LIMIT(i, 0, NUM_GENDERS - 1);
+    GET_SEX(OLC_MOB(d)) = LIMIT(i - 1, 0, NUM_GENDERS - 1);
     break;
 
   case MEDIT_HITROLL:
@@ -998,11 +989,11 @@ void medit_parse(struct descriptor_data *d, char *arg)
     return;
 
   case MEDIT_POS:
-    GET_POS(OLC_MOB(d)) = LIMIT(i, 0, NUM_POSITIONS - 1);
+    GET_POS(OLC_MOB(d)) = LIMIT(i - 1, 0, NUM_POSITIONS - 1);
     break;
 
   case MEDIT_DEFAULT_POS:
-    GET_DEFAULT_POS(OLC_MOB(d)) = LIMIT(i, 0, NUM_POSITIONS - 1);
+    GET_DEFAULT_POS(OLC_MOB(d)) = LIMIT(i - 1, 0, NUM_POSITIONS - 1);
     break;
 
   case MEDIT_ATTACK:

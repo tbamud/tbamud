@@ -47,7 +47,7 @@ const char *ibt_types[]={
   "Bug",
   "Idea",
   "Typo",
-  "/n"
+  "\n"
 };
 
 /* Internal (static) functions */
@@ -55,6 +55,7 @@ static IBT_DATA *new_ibt(void);
 static void free_ibt_list(IBT_DATA *first_ibt, IBT_DATA *last_ibt);
 static IBT_DATA *read_ibt(char *filename, FILE *fp);
 static IBT_DATA *get_first_ibt(int mode);
+static IBT_DATA *get_last_ibt(int mode);
 /* Internal (static) OLC functions */
 static void ibtedit_setup(struct descriptor_data *d);
 static void ibtedit_save(struct descriptor_data *d);
@@ -332,6 +333,22 @@ static IBT_DATA *get_first_ibt(int mode)
   return (first_ibt);
 }
 
+static IBT_DATA *get_last_ibt(int mode)
+{
+  IBT_DATA *last_ibt = NULL;
+
+  switch(mode) {
+    case SCMD_BUG : last_ibt = last_bug;
+                    break;
+    case SCMD_IDEA: last_ibt = last_idea;
+                    break;
+    case SCMD_TYPO: last_ibt = last_typo;
+                    break;
+    default       : log("SYSERR: Invalid mode (%d) in get_last_ibt", mode);
+                    break;
+  }
+  return (last_ibt);
+}
 IBT_DATA *get_ibt_by_num(int mode, int target_num)
 {
   int no=0;
@@ -407,7 +424,7 @@ ACMD(do_ibt)
   argument  = two_arguments(argument, arg, arg2);
 
   first_ibt = get_first_ibt(subcmd);
-  last_ibt  = get_first_ibt(subcmd);
+  last_ibt  = get_last_ibt(subcmd);
 
   if ((!*arg)){
     if (GET_LEVEL(ch) >= LVL_GRGOD){
