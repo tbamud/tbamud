@@ -449,6 +449,7 @@ Rumble's Spy~
 * Arguments: * means all speech will trigger this.
 * This will echo all speech to Rumble.
 %at% rumble %echo% %actor.name% says, '%speech%'
+%echo% firing
 ~
 #21
 Transform Example~

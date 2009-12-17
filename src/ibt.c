@@ -433,7 +433,7 @@ ACMD(do_ibt)
                        "       %s%s show <num>%s\r\n"
                        "       %s%s remove <num>%s\r\n"
                        "       %s%s edit <num>%s\r\n"
-                       "       %s%s resolve <num>%s\n\r",
+                       "       %s%s resolve <num>%s\r\n",
                                QYEL, CMD_NAME, QNRM,
                                QYEL, CMD_NAME, QNRM,
                                QYEL, CMD_NAME, QNRM,
@@ -450,24 +450,24 @@ ACMD(do_ibt)
                                QYEL, CMD_NAME, QNRM);
       return;
     } else {
-      send_to_char(ch, "Usage: %s%s submit <header>%s\n\r", QYEL, CMD_NAME, QNRM);
+      send_to_char(ch, "Usage: %s%s submit <header>%s\r\n", QYEL, CMD_NAME, QNRM);
       return;
     }
   }
   else if(is_abbrev(arg,"show"))
   {
     if (GET_LEVEL(ch) < LVL_IMMORT) {
-      send_to_char(ch, "%s what?\n\r", ibt_types[subcmd]);
+      send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
     if (!is_number(arg2)) {
-      send_to_char(ch, "Show which %s?\n\r", CMD_NAME);
+      send_to_char(ch, "Show which %s?\r\n", CMD_NAME);
       return;
     }
     ano = atoi(arg2);
 
     if ((ibtData = get_ibt_by_num(subcmd, ano)) == NULL) {
-      send_to_char(ch, "That %s doesn't exist.\n\r", CMD_NAME);
+      send_to_char(ch, "That %s doesn't exist.\r\n", CMD_NAME);
       return;
     } else {
       send_to_char(ch, "%s%s Details%s\r\n%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->body);
@@ -485,14 +485,14 @@ ACMD(do_ibt)
   else if(is_abbrev(arg,"list"))
   {
     if (GET_LEVEL(ch) < LVL_IMMORT) {
-      send_to_char(ch, "%s what?\n\r", ibt_types[subcmd]);
+      send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
 
     if (first_ibt)
     {
-      send_to_char(ch,"%s No %s|%sName        %s|%sRoom  %s|%sLevel%s|%s Description\n\r", QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN);
-      send_to_char(ch,"%s ---|------------|------|-----|--------------------------------------------------%s\n\r", QGRN, QNRM);
+      send_to_char(ch,"%s No %s|%sName        %s|%sRoom  %s|%sLevel%s|%s Description\r\n", QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN);
+      send_to_char(ch,"%s ---|------------|------|-----|--------------------------------------------------%s\r\n", QGRN, QNRM);
       i=num_res=num_unres=0;
       for (ibtData=first_ibt;ibtData;ibtData = ibtData->next) {
         i++;
@@ -522,23 +522,23 @@ ACMD(do_ibt)
         }
       }
 
-      send_to_char(ch,"\n\r%s%d %ss in file. %s%d%s resolved, %s%d%s unresolved%s\n\r",QCYN, i, CMD_NAME, QBGRN, num_res, QCYN, QBRED, num_unres, QCYN, QNRM);
-      send_to_char(ch,"%s%ss in %sRED%s are unresolved %ss.\n\r", QCYN, ibt_types[subcmd], QRED, QCYN, CMD_NAME);
-      send_to_char(ch,"%s%ss in %sGREEN%s are resolved %ss.\n\r", QCYN, ibt_types[subcmd], QGRN, QCYN, CMD_NAME);
+      send_to_char(ch,"\n\r%s%d %ss in file. %s%d%s resolved, %s%d%s unresolved%s\r\n",QCYN, i, CMD_NAME, QBGRN, num_res, QCYN, QBRED, num_unres, QCYN, QNRM);
+      send_to_char(ch,"%s%ss in %sRED%s are unresolved %ss.\r\n", QCYN, ibt_types[subcmd], QRED, QCYN, CMD_NAME);
+      send_to_char(ch,"%s%ss in %sGREEN%s are resolved %ss.\r\n", QCYN, ibt_types[subcmd], QGRN, QCYN, CMD_NAME);
 
       if (GET_LEVEL(ch) >= LVL_GRGOD) {
-        send_to_char(ch,"%sYou may use %s remove, resolve or edit to change the list..%s\n\r", QCYN, CMD_NAME, QNRM);
+        send_to_char(ch,"%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
       }
-      send_to_char(ch,"%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\n\r", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
+      send_to_char(ch,"%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\r\n", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
     } else {
-      send_to_char(ch,"No %ss have been reported!\n\r", CMD_NAME);
+      send_to_char(ch,"No %ss have been reported!\r\n", CMD_NAME);
     }
     return;
   }
   else if (is_abbrev(arg,"submit"))
   {
     if (!*arg_text) {
-      send_to_char(ch, "You need to add a heading!\n\r");
+      send_to_char(ch, "You need to add a heading!\r\n");
       return;
     }
     switch (subcmd) {
@@ -581,72 +581,72 @@ ACMD(do_ibt)
   else if (is_abbrev(arg,"resolve"))
   {
     if (GET_LEVEL(ch) < LVL_GRGOD){
-      send_to_char(ch, "%s what?\n\r", ibt_types[subcmd]);
+      send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
 
     if (!is_number(arg2)) {
-      send_to_char(ch, "Resolve which %s?\n\r", CMD_NAME);
+      send_to_char(ch, "Resolve which %s?\r\n", CMD_NAME);
       return;
     }
     ano = atoi(arg2);
 
     if ((ibtData = get_ibt_by_num(subcmd, ano)) == NULL) {
-      send_to_char(ch, "%s not found\n\r", ibt_types[subcmd]);
+      send_to_char(ch, "%s not found\r\n", ibt_types[subcmd]);
       return;
     } else {
       if (IBT_FLAGGED(ibtData, IBT_RESOLVED)){
-        send_to_char(ch, "That %s has already been resolved!\n\r", CMD_NAME);
+        send_to_char(ch, "That %s has already been resolved!\r\n", CMD_NAME);
       } else {
-        send_to_char(ch,"%s %d resolved!\n\r", ibt_types[subcmd], ano);
+        send_to_char(ch,"%s %d resolved!\r\n", ibt_types[subcmd], ano);
         SET_BIT_AR(IBT_FLAGS(ibtData), IBT_RESOLVED);
       }
     }
     return;
   } else if (is_abbrev(arg,"remove")) {
     if (GET_LEVEL(ch) < LVL_GRGOD){
-      send_to_char(ch, "%s what?\n\r", ibt_types[subcmd]);
+      send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
 
     if (!is_number(arg2)) {
-      send_to_char(ch, "Remove which %s?\n\r", CMD_NAME);
+      send_to_char(ch, "Remove which %s?\r\n", CMD_NAME);
       return;
     }
     ano = atoi(arg2);
 
     if ((ibtData = get_ibt_by_num(subcmd, ano)) == NULL) {
-      send_to_char(ch, "%s not found\n\r", ibt_types[subcmd]);
+      send_to_char(ch, "%s not found\r\n", ibt_types[subcmd]);
       return;
     } else {
       if (free_ibt(subcmd, ibtData)) {
-        send_to_char(ch,"%s%s Number %d removed.%s\n\r", QCYN, ibt_types[subcmd], ano, QNRM);
+        send_to_char(ch,"%s%s Number %d removed.%s\r\n", QCYN, ibt_types[subcmd], ano, QNRM);
       } else {
-        send_to_char(ch,"%sUnable to remove %s %d!%s\n\r", QRED, CMD_NAME, ano, QNRM);
+        send_to_char(ch,"%sUnable to remove %s %d!%s\r\n", QRED, CMD_NAME, ano, QNRM);
       }
     }
     return;
   } else if (is_abbrev(arg,"save")) {
     if (GET_LEVEL(ch) < LVL_GRGOD){
-      send_to_char(ch, "%s what?\n\r", ibt_types[subcmd]);
+      send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
     save_ibt_file(subcmd);
-    send_to_char(ch,"%s list saved.\n\r", ibt_types[subcmd]);
+    send_to_char(ch,"%s list saved.\r\n", ibt_types[subcmd]);
   } else if (is_abbrev(arg,"edit")) {
     if (GET_LEVEL(ch) < LVL_GRGOD){
-      send_to_char(ch, "%s what?\n\r", ibt_types[subcmd]);
+      send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
     /* Pass control to the OLC without the 'edit' arg */
     do_oasis_ibtedit(ch, arg_text, cmd, subcmd);
   } else {
     if (GET_LEVEL(ch) < LVL_GRGOD){
-      send_to_char(ch, "%s what?\n\r", ibt_types[subcmd]);
-      send_to_char(ch, "Usage: %s submit <text>\n\r", ibt_types[subcmd]);
+      send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
+      send_to_char(ch, "Usage: %s submit <text>\r\n", ibt_types[subcmd]);
       return;
     } else {
-      send_to_char(ch, "Usage:  %s (submit/list/show/remove/resolve)\n\r", CMD_NAME);
+      send_to_char(ch, "Usage:  %s (submit/list/show/remove/resolve)\r\n", CMD_NAME);
       return;
     }
   }

@@ -1081,7 +1081,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     return;
 
   case OEDIT_APPLY:
-    if ((number = atoi(arg)) == 0) {
+    if (((number = atoi(arg)) == 0) || ((number = atoi(arg)) == 1)) {
       OLC_OBJ(d)->affected[OLC_VAL(d)].location = 0;
       OLC_OBJ(d)->affected[OLC_VAL(d)].modifier = 0;
       oedit_disp_prompt_apply_menu(d);

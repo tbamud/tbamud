@@ -36,6 +36,9 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Dec 17 2009] - Rumble
+  standardized /n/r to /r/n in ibt.c
+  Removed ability to set a modifier to obj apply NONE.
 [Dec 16 2009] - Rumble
   Added some missing code for last_ibt in ibt.c.
   Fixed typos in ibt.c (thanks Elervan)
