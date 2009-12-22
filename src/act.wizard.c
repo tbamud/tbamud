@@ -4068,6 +4068,7 @@ ACMD(do_copyover)
    } else {
       fprintf (fp, "%d %ld %s %s\n", d->descriptor, GET_PREF(och), GET_NAME(och), d->host);
       /* save och */
+      GET_LOADROOM(och) = GET_ROOM_VNUM(IN_ROOM(och));
       Crash_rentsave(och,0);
       save_char(och);
       write_to_descriptor (d->descriptor, buf);

@@ -24,7 +24,7 @@ showvnums (roomflags that includes mobs, objs, triggers)
 zpurge (purge an entire zone)
 zcheck (head builder tool to check balancing)
 mob autoroll (standard values set on mob level entry)
-checkload (list where a mob/obj is loaded)
+checkload (list where a mob/obj/trg is loaded)
 Auto Toggles (loot, gold, split, sac, assist, map, door, key)
 Hidden mob/obj
 mob/obj stacking
@@ -36,11 +36,14 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Dec 22 2009] - Rumble
+  Made copyover save loadroom so players stay in the same room during copyover.
+  Added scan command.
 [Dec 21 2009] - Rumble
   Added identify command to shops.
-  moved identify to an active spell. Cleric 11, Mage 20.
+  Moved identify to an active spell. Cleric 11, Mage 20.
 [Dec 17 2009] - Rumble
-  standardized /n/r to /r/n in ibt.c
+  Standardized /n/r to /r/n in ibt.c
   Removed ability to set a modifier to obj apply NONE.
 [Dec 16 2009] - Rumble
   Added some missing code for last_ibt in ibt.c.
@@ -981,6 +984,10 @@ CircleMUD 3.5
 - Added buildwalk and dig.
  
 Release history:
+Version 3.60 release: September, 2009
+Version 3.59 release: April, 2009
+Version 3.58 release: January, 2009
+Version 3.57 release: August, 2008
 Version 3.56 release: January, 2008
 Version 3.55 release: January, 2008
 Version 3.54 release: December, 2007

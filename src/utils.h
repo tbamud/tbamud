@@ -820,6 +820,9 @@ do                                                              \
 /** Does room pointer have direction option num? */
 #define R_EXIT(room, num)     ((room)->dir_option[(num)])
 
+#define _2ND_EXIT(ch, door) (world[EXIT(ch, door)->to_room].dir_option[door])
+#define _3RD_EXIT(ch, door) (world[_2ND_EXIT(ch, door)->to_room].dir_option[door])
+
 /** Can ch walk through direction door. */
 #define CAN_GO(ch, door) (EXIT(ch,door) && \
 			 (EXIT(ch,door)->to_room != NOWHERE) && \

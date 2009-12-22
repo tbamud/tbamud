@@ -2525,3 +2525,96 @@ ACMD(do_areas)
   if (overlap_shown)
     send_to_char(ch, "Areas shown in @rred@n may have some creatures outside the specified range.\r\n");
 }
+
+void list_scanned_chars(struct char_data * list, struct char_data * ch, int
+distance, int door)
+{
+  char buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
+
+  const char *how_far[] = {
+    "close by",
+    "a ways off",
+    "far off to the"
+  };
+
+  struct char_data *i;
+  int count = 0;
+  *buf = '\0';
+
+/* this loop is a quick, easy way to help make a grammatical sentence
+   (i.e., "You see x, x, y, and z." with commas, "and", etc.) */
+
+  for (i = list; i; i = i->next_in_room)
+
+/* put any other conditions for scanning someone in this if statement -
+   i.e., if (CAN_SEE(ch, i) && condition2 && condition3) or whatever */
+
+    if (CAN_SEE(ch, i))
+     count++;
+
+  if (!count)
+    return;
+
+  for (i = list; i; i = i->next_in_room) {
+
+/* make sure to add changes to the if statement above to this one also, using
+   or's to join them.. i.e., 
+   if (!CAN_SEE(ch, i) || !condition2 || !condition3) */
+
+    if (!CAN_SEE(ch, i))
+      continue; 
+    if (!*buf)
+      sprintf(buf, "You see %s", GET_NAME(i));
+    else 
+      sprintf(buf, "%s%s", buf, GET_NAME(i));
+    if (--count > 1)
+      strcat(buf, ", ");
+    else if (count == 1)
+      strcat(buf, " and ");
+    else {
+      sprintf(buf2, " %s %s.\r\n", how_far[distance], dirs[door]);
+      strcat(buf, buf2);      
+    }
+    
+  }
+  send_to_char(ch, buf);
+}
+
+ACMD(do_scan)
+{
+  int door;
+  char buf[MAX_STRING_LENGTH];
+
+  *buf = '\0';
+  
+  if (IS_AFFECTED(ch, AFF_BLIND)) {
+    send_to_char(ch, "You can't see a damned thing, you're blind!\r\n");
+    return;
+  }
+  /* may want to add more restrictions here, too */
+  send_to_char(ch, "You quickly scan the area.\r\n");
+  for (door = 0; door < NUM_OF_DIRS - 2; door++) /* don't scan up/down */
+    if (EXIT(ch, door) && EXIT(ch, door)->to_room != NOWHERE &&
+	!IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED)
+        && !IS_DARK(EXIT(ch, door)->to_room)) {
+      if (world[EXIT(ch, door)->to_room].people) {
+	list_scanned_chars(world[EXIT(ch, door)->to_room].people, ch, 0, door);
+      } else if (_2ND_EXIT(ch, door) && _2ND_EXIT(ch, door)->to_room != 
+		 NOWHERE && !IS_SET(_2ND_EXIT(ch, door)->exit_info, EX_CLOSED)
+                 && !IS_DARK(_2ND_EXIT(ch, door)->to_room)) {
+   /* check the second room away */
+	if (world[_2ND_EXIT(ch, door)->to_room].people) {
+	  list_scanned_chars(world[_2ND_EXIT(ch, door)->to_room].people, ch, 1, door);
+	} else if (_3RD_EXIT(ch, door) && _3RD_EXIT(ch, door)->to_room !=
+		   NOWHERE && !IS_SET(_3RD_EXIT(ch, door)->exit_info, EX_CLOSED)
+                   && !IS_DARK(_3RD_EXIT(ch, door)->to_room)) {
+	  /* check the third room */
+	  if (world[_3RD_EXIT(ch, door)->to_room].people) {
+	    list_scanned_chars(world[_3RD_EXIT(ch, door)->to_room].people, ch, 2,
+door);
+	  }
+
+	}
+      }
+    }                
+}
