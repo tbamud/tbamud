@@ -87,8 +87,9 @@
 #define SPELL_GROUP_ARMOR	     47 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_GROUP_HEAL	     48 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_GROUP_RECALL	     49 /* Reserved Skill[] DO NOT CHANGE */
-#define SPELL_INFRAVISION	     50 /* Reserved Skill[] DO NOT CHANGE */
-#define SPELL_WATERWALK		     51 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_INFRAVISION            50 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_WATERWALK              51 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_IDENTIFY	             52 /* Reserved Skill[] DO NOT CHANGE */
 /** Total Number of defined spells */
 #define NUM_SPELLS    51
 
@@ -113,7 +114,6 @@
  * intended use is for spells and skills associated with objects (such as 
  * SPELL_IDENTIFY used with scrolls of identify) or non-players (such as NPC
  * only spells). */
-#define SPELL_IDENTIFY               201
 
 /* To make an affect induced by dg_affect look correct on 'stat' we need to 
  * define it with a 'spellname'. */

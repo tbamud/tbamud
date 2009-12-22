@@ -36,6 +36,9 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Dec 21 2009] - Rumble
+  Added identify command to shops.
+  moved identify to an active spell. Cleric 11, Mage 20.
 [Dec 17 2009] - Rumble
   standardized /n/r to /r/n in ibt.c
   Removed ability to set a modifier to obj apply NONE.

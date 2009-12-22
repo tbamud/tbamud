@@ -25,6 +25,7 @@
 #include "constants.h"
 #include "act.h"
 #include "modify.h"
+#include "spells.h"  /* for skill_name() */
 
 /* Global variables definitions used externally */
 /* Constant list for printing out who we sell to */
@@ -57,6 +58,7 @@ static char *read_shop_message(int mnum, room_vnum shr, FILE *shop_f, const char
 static int read_type_list(FILE *shop_f, struct shop_buy_data *list, int new_format, int max);
 static int read_list(FILE *shop_f, struct shop_buy_data *list, int new_format, int max, int type);
 static void shopping_list(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr);
+static bool shopping_identify(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr);
 static void shopping_value(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr);
 static void shopping_sell(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr);
 static struct obj_data *get_selling_obj(struct char_data *ch, char *name, struct char_data *keeper, int shop_nr, int msg);
@@ -984,6 +986,8 @@ SPECIAL(shop_keeper)
   } else if (CMD_IS("list")) {
     shopping_list(argument, ch, keeper, shop_nr);
     return (TRUE);
+  } else if (CMD_IS("identify")) {
+    return (shopping_identify(argument, ch, keeper, shop_nr));
   }
   return (FALSE);
 }
@@ -1542,4 +1546,115 @@ void destroy_shops(void)
   free(shop_index);
   shop_index = NULL;
   top_shop = -1;
+}
+
+bool shopping_identify(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr)
+{
+  char buf[MAX_STRING_LENGTH];
+  struct obj_data *obj;
+  int i, found;
+
+  if (!is_ok(keeper, ch, shop_nr))
+    return FALSE;
+
+  if (SHOP_SORT(shop_nr) < IS_CARRYING_N(keeper))
+    sort_keeper_objs(keeper, shop_nr);
+
+  if (!*arg) {
+    snprintf(buf, sizeof(buf), "%s What do you want to identify??", GET_NAME(ch));
+    do_tell(keeper, buf, cmd_tell, 0);
+    return TRUE;
+  }
+  if (!(obj = get_purchase_obj(ch, arg, keeper, shop_nr, TRUE)))
+    return FALSE;
+
+  send_to_char(ch, "Name: %s\r\n", (obj->short_description) ? obj->short_description : "<None>");
+  sprinttype(GET_OBJ_TYPE(obj), item_types, buf, sizeof(buf));
+  send_to_char(ch, "Type: %s\r\n", buf);
+  send_to_char(ch, "Weight: %d, Cost to Buy: @Y%d@n\r\n", GET_OBJ_WEIGHT(obj), sell_price(obj, shop_nr, keeper, ch));
+
+      sprintbitarray(GET_OBJ_WEAR(obj), wear_bits, TW_ARRAY_MAX, buf);
+      send_to_char(ch, "Can be worn on: %s\r\n", buf);
+
+      switch (GET_OBJ_TYPE(obj)) {
+        case ITEM_LIGHT:
+          if (GET_OBJ_VAL(obj, 2) == -1)
+            send_to_char(ch, "Hours Remaining: (Infinite)\r\n");
+          else if (GET_OBJ_VAL(obj, 2) == 0)
+            send_to_char(ch, "Hours Remaining: None!\r\n");
+          else
+            send_to_char(ch, "Hours Remaining: %d\r\n", GET_OBJ_VAL(obj, 2));
+          break;
+        case ITEM_SCROLL:
+        case ITEM_POTION:
+          send_to_char(ch, "Spells: %s, %s, %s\r\n",
+                  skill_name(GET_OBJ_VAL(obj, 1)),
+                  skill_name(GET_OBJ_VAL(obj, 2)),
+                  skill_name(GET_OBJ_VAL(obj, 3)));
+          break;
+        case ITEM_WAND:
+        case ITEM_STAFF:
+          send_to_char(ch, "Spell: %s\r\n", skill_name(GET_OBJ_VAL(obj, 3)));
+          send_to_char(ch, "Charges: %d/%d\r\n", GET_OBJ_VAL(obj, 2), GET_OBJ_VAL(obj, 1));
+          break;
+        case ITEM_WEAPON:
+            send_to_char(ch, "Damage Dice is '%dD%d' for an average per-round damage of %.1f.\r\n",
+                        GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2),
+                        ((GET_OBJ_VAL(obj, 2) + 1) / 2.0) * GET_OBJ_VAL(obj, 1));
+            break;
+        case ITEM_ARMOR:
+          if(GET_OBJ_VAL(obj,1) == 0)
+          {
+            send_to_char(ch, "AC-apply: [%d]\r\n", GET_OBJ_VAL(obj, 0));
+          }
+          else
+          {
+            send_to_char(ch, "AC-apply: [%d] - This item has magical affects.\r\n", GET_OBJ_VAL(obj, 0));
+          }
+          break;
+        case ITEM_CONTAINER:
+          send_to_char(ch, "Capacity: %d/%d\r\n", GET_OBJ_WEIGHT(obj), GET_OBJ_VAL(obj, 0));
+          break;
+        case ITEM_DRINKCON:
+        case ITEM_FOUNTAIN:
+          send_to_char(ch, "Drinks: %d/%d\r\n", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 0));
+          break;
+        case ITEM_NOTE:
+          send_to_char(ch, "\r\n");
+          break;
+        case ITEM_KEY:
+          send_to_char(ch, "\r\n");
+          break;
+        case ITEM_FOOD:
+          send_to_char(ch, "\r\n");
+          break;
+        case ITEM_MONEY:
+          send_to_char(ch, "\r\n");
+          break;
+        case ITEM_WORN:
+          if(GET_OBJ_VAL(obj,1) > 0)
+            send_to_char(ch, "This item has magical affects.\r\n");
+          else
+            send_to_char(ch, "\r\n");
+          break;
+        default:
+          send_to_char(ch, "\r\n");
+          break;
+      }
+
+      found = 0;
+      send_to_char(ch, "Affections:");
+      for (i = 0; i < MAX_OBJ_AFFECT; i++)
+        if (obj->affected[i].modifier) {
+          sprinttype(obj->affected[i].location, apply_types, buf, sizeof(buf));
+          send_to_char(ch, "%s %+d to %s", found++ ? "," : "", obj->affected[i].modifier, buf);
+        }
+      if (!found)
+        send_to_char(ch, " None");
+
+      send_to_char(ch, "\r\nExtra Flags: ");
+      sprintbitarray(GET_OBJ_EXTRA(obj), extra_bits, EF_ARRAY_MAX, buf);
+      send_to_char(ch, "%s\r\n", buf);
+
+  return TRUE;
 }

@@ -1586,6 +1586,7 @@ void init_spell_levels(void)
   spell_level(SPELL_POISON, CLASS_MAGIC_USER, 14);
   spell_level(SPELL_FIREBALL, CLASS_MAGIC_USER, 15);
   spell_level(SPELL_CHARM, CLASS_MAGIC_USER, 16);
+  spell_level(SPELL_IDENTIFY, CLASS_MAGIC_USER, 20);
   spell_level(SPELL_ENCHANT_WEAPON, CLASS_MAGIC_USER, 26);
   spell_level(SPELL_CLONE, CLASS_MAGIC_USER, 30);
 
@@ -1607,6 +1608,7 @@ void init_spell_levels(void)
   spell_level(SPELL_CURE_CRITIC, CLASS_CLERIC, 9);
   spell_level(SPELL_SUMMON, CLASS_CLERIC, 10);
   spell_level(SPELL_REMOVE_POISON, CLASS_CLERIC, 10);
+  spell_level(SPELL_IDENTIFY, CLASS_CLERIC, 11);
   spell_level(SPELL_WORD_OF_RECALL, CLASS_CLERIC, 12);
   spell_level(SPELL_EARTHQUAKE, CLASS_CLERIC, 12);
   spell_level(SPELL_DISPEL_EVIL, CLASS_CLERIC, 14);
