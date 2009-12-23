@@ -36,6 +36,10 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Dec 23 2009] - Rumble
+  Added zone flags and min/max level to show zone # and stat zone #.
+  Changed show zone # reset mode from a # to the actual string description.
+  Changed Message Type on stat object from a number to the actual message type. i.e. pierce.
 [Dec 22 2009] - Rumble
   Made copyover save loadroom so players stay in the same room during copyover.
   Added scan command.

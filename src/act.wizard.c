@@ -50,6 +50,7 @@ static void trg_checkload(struct char_data *ch, trig_vnum tvnum);
 static void mod_llog_entry(struct last_entry *llast,int type);
 
 const char *get_spec_func_name(SPECIAL(*func));
+bool zedit_get_levels(struct descriptor_data *d, char *buf);
 
 int purge_room(room_rnum room)
 {
@@ -650,8 +651,8 @@ static void do_stat_object(struct char_data *ch, struct obj_data *j)
 	    GET_OBJ_VAL(j, 2), GET_OBJ_VAL(j, 1));
     break;
   case ITEM_WEAPON:
-    send_to_char(ch, "Todam: %dd%d, Avg Damage: %.1f. Message type: %d\r\n",
-	    GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 2), ((GET_OBJ_VAL(j, 2) + 1) / 2.0) * GET_OBJ_VAL(j, 1),  GET_OBJ_VAL(j, 3));
+    send_to_char(ch, "Todam: %dd%d, Avg Damage: %.1f. Message type: %s\r\n",
+	    GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 2), ((GET_OBJ_VAL(j, 2) + 1) / 2.0) * GET_OBJ_VAL(j, 1),  attack_hit_text[GET_OBJ_VAL(j, 3)].singular);
     break;
   case ITEM_ARMOR:
     send_to_char(ch, "AC-apply: [%d]\r\n", GET_OBJ_VAL(j, 0));
@@ -2366,12 +2367,15 @@ static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int l
 
   if (listall) {
     int i, j, k, l, m, n, o;
+    char buf[MAX_STRING_LENGTH];
+
+    sprintbitarray(zone_table[zone].zone_flags, zone_bits, ZN_ARRAY_MAX, buf);
 
     tmp = snprintf(bufptr, left,
-	"%3d %-30.30s%s By: %-10.10s%s Age: %3d; Reset: %3d (%1d); Range: %5d-%5d\r\n",
+	"%3d %-30.30s%s By: %-10.10s%s Age: %3d; Reset: %3d (%s); Range: %5d-%5d\r\n",
 	zone_table[zone].number, zone_table[zone].name, KNRM, zone_table[zone].builders, KNRM,
 	zone_table[zone].age, zone_table[zone].lifespan,
-	zone_table[zone].reset_mode,
+        zone_table[zone].reset_mode ? ((zone_table[zone].reset_mode == 1) ? "Reset when no players are in zone" : "Normal reset") : "Never reset",
 	zone_table[zone].bot, zone_table[zone].top);
         i = j = k = l = m = n = o = 0;
 
@@ -2400,13 +2404,17 @@ static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int l
 	tmp += snprintf(bufptr + tmp, left - tmp,
                         "       Zone stats:\r\n"
                         "       ---------------\r\n"
+                        "         Flags:    %s\r\n"
+                        "         Min Lev:  %2d\r\n"
+                        "         Max Lev:  %2d\r\n"
                         "         Rooms:    %2d\r\n"
                         "         Objects:  %2d\r\n"
                         "         Mobiles:  %2d\r\n"
                         "         Shops:    %2d\r\n"
                         "         Triggers: %2d\r\n"
                         "         Quests:   %2d\r\n",
-                          j, k, l, m, n, o);
+			buf, zone_table[zone].min_level, zone_table[zone].max_level,
+                        j, k, l, m, n, o);
 
     return tmp;
   }

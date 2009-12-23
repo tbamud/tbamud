@@ -441,9 +441,9 @@ static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zon
 void print_zone(struct char_data *ch, zone_vnum vnum)
 {
   zone_rnum rnum;
-  int size_rooms, size_objects, size_mobiles, size_quests, size_shops, size_trigs, i;
+  int size_rooms, size_objects, size_mobiles, size_quests, size_shops, size_trigs, i, largest_table;
   room_vnum top, bottom;
-  int largest_table;
+  char buf[MAX_STRING_LENGTH];
 
   if ((rnum = real_zone(vnum)) == NOWHERE) {
     send_to_char(ch, "Zone #%d does not exist in the database.\r\n", vnum);
@@ -490,6 +490,7 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
       size_trigs++;
 
   size_quests = count_quests(bottom, top);
+  sprintbitarray(zone_table[rnum].zone_flags, zone_bits, ZN_ARRAY_MAX, buf);
 
   /* Display all of the zone information at once. */
   send_to_char(ch,
@@ -501,6 +502,9 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     "%sBottom of Zone = %s%d\r\n"
     "%sTop of Zone    = %s%d\r\n"
     "%sReset Mode     = %s%s\r\n"
+    "%sZone Flags     = %s%s\r\n"
+    "%sMin Level      = %s%d\r\n"
+    "%sMax Level      = %s%d\r\n"
     "%sSize\r\n"
     "%s   Rooms       = %s%d\r\n"
     "%s   Objects     = %s%d\r\n"
@@ -517,6 +521,9 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     QGRN, QCYN, zone_table[rnum].top,
     QGRN, QCYN, zone_table[rnum].reset_mode ? ((zone_table[rnum].reset_mode == 1) ?
     "Reset when no players are in zone." : "Normal reset.") : "Never reset",
+    QGRN, QCYN, buf, 
+    QGRN, QCYN, zone_table[rnum].min_level, 
+    QGRN, QCYN, zone_table[rnum].max_level,
     QGRN,
     QGRN, QCYN, size_rooms,
     QGRN, QCYN, size_objects,
