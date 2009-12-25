@@ -682,8 +682,9 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     return (0);
   }
 
-  /* shopkeeper protection */
-  if (!ok_damage_shopkeeper(ch, victim))
+  /* shopkeeper and MOB_NOKILL protection */
+  if (!ok_damage_shopkeeper(ch, victim) || MOB_FLAGGED(victim, MOB_NOKILL))
+    send_to_char(ch, "This mob is protected.\r\n");
     return (0);
 
   /* You can't damage an immortal! */

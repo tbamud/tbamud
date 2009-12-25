@@ -36,6 +36,8 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Dec 25 2009] - Rumble
+  Changed mob flag NOBASH to NOKILL.
 [Dec 23 2009] - Rumble
   Added zone flags and min/max level to show zone # and stat zone #.
   Changed show zone # reset mode from a # to the actual string description.

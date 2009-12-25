@@ -187,7 +187,7 @@ const char *action_bits[] = {
   "NO_CHARM",
   "NO_SUMMN",
   "NO_SLEEP",
-  "NO_BASH",
+  "NO_KILL",
   "NO_BLIND",
   "DEAD",    /* You should never see this. */
   "\n"

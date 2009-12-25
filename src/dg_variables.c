@@ -857,8 +857,8 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           }
           break;
         case 'q':
-          if (!str_cmp(field, "questpoints") || 
-              !str_cmp(field, "qp") || !str_cmp(field, "qpnts")) 
+          if (!IS_NPC(c) && (!str_cmp(field, "questpoints") || 
+              !str_cmp(field, "qp") || !str_cmp(field, "qpnts"))) 
           {
             if (subfield && *subfield) {
               int addition = atoi(subfield);

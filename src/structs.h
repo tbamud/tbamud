@@ -163,15 +163,15 @@
 #define NUM_GENDERS   3
 
 /* Positions */
-#define POS_DEAD       0	/**< Position = dead			*/
-#define POS_MORTALLYW  1	/**< Position = mortally wounded	*/
-#define POS_INCAP      2	/**< Position = incapacitated	*/
-#define POS_STUNNED    3	/**< Position = stunned		*/
-#define POS_SLEEPING   4	/**< Position = sleeping		*/
-#define POS_RESTING    5	/**< Position = resting		*/
-#define POS_SITTING    6	/**< Position = sitting		*/
-#define POS_FIGHTING   7	/**< Position = fighting		*/
-#define POS_STANDING   8	/**< Position = standing		*/
+#define POS_DEAD       0	/**< Position = dead */
+#define POS_MORTALLYW  1	/**< Position = mortally wounded */
+#define POS_INCAP      2	/**< Position = incapacitated */
+#define POS_STUNNED    3	/**< Position = stunned	*/
+#define POS_SLEEPING   4	/**< Position = sleeping */
+#define POS_RESTING    5	/**< Position = resting	*/
+#define POS_SITTING    6	/**< Position = sitting	*/
+#define POS_FIGHTING   7	/**< Position = fighting */
+#define POS_STANDING   8	/**< Position = standing */
 /** Total number of positions. */
 #define NUM_POSITIONS   9
 
@@ -181,44 +181,44 @@
 #define PLR_FROZEN        2   /**< Player is frozen */
 #define PLR_DONTSET       3   /**< Don't EVER set (ISNPC bit, set by mud) */
 #define PLR_WRITING       4   /**< Player writing (board/mail/olc) */
-#define PLR_MAILING       5   /**< Player is writing mail	*/
-#define PLR_CRASH         6   /**< Player needs to be crash-saved	*/
+#define PLR_MAILING       5   /**< Player is writing mail */
+#define PLR_CRASH         6   /**< Player needs to be crash-saved */
 #define PLR_SITEOK        7   /**< Player has been site-cleared */
 #define PLR_NOSHOUT       8   /**< Player not allowed to shout/goss */
 #define PLR_NOTITLE       9   /**< Player not allowed to set title */
 #define PLR_DELETED      10   /**< Player deleted - space reusable */
 #define PLR_LOADROOM     11   /**< Player uses nonstandard loadroom */
-#define PLR_NOWIZLIST    12   /**< Player shouldn't be on wizlist	*/
+#define PLR_NOWIZLIST    12   /**< Player shouldn't be on wizlist */
 #define PLR_NODELETE     13   /**< Player shouldn't be deleted */
 #define PLR_INVSTART     14   /**< Player should enter game wizinvis */
 #define PLR_CRYO         15   /**< Player is cryo-saved (purge prog) */
 #define PLR_NOTDEADYET   16   /**< (R) Player being extracted */
-#define PLR_BUG          17   /**< Player is writing a bug    */
-#define PLR_IDEA         18   /**< Player is writing an idea  */
-#define PLR_TYPO         19   /**< Player is writing a typo   */
+#define PLR_BUG          17   /**< Player is writing a bug */
+#define PLR_IDEA         18   /**< Player is writing an idea */
+#define PLR_TYPO         19   /**< Player is writing a typo */
 
 /* Mobile flags: used by char_data.char_specials.act */
-#define MOB_SPEC            0   /**< Mob has a callable spec-proc	*/
+#define MOB_SPEC            0   /**< Mob has a callable spec-proc */
 #define MOB_SENTINEL        1   /**< Mob should not move */
 #define MOB_SCAVENGER       2   /**< Mob picks up stuff on the ground */
 #define MOB_ISNPC           3   /**< (R) Automatically set on all Mobs */
-#define MOB_AWARE	          4   /**< Mob can't be backstabbed */
+#define MOB_AWARE	    4   /**< Mob can't be backstabbed */
 #define MOB_AGGRESSIVE      5   /**< Mob auto-attacks everybody nearby */
 #define MOB_STAY_ZONE       6   /**< Mob shouldn't wander out of zone */
 #define MOB_WIMPY           7   /**< Mob flees if severely injured */
 #define MOB_AGGR_EVIL       8   /**< Auto-attack any evil PC's */
 #define MOB_AGGR_GOOD       9   /**< Auto-attack any good PC's */
-#define MOB_AGGR_NEUTRAL   10   /**< Auto-attack any neutral PC's	*/
+#define MOB_AGGR_NEUTRAL   10   /**< Auto-attack any neutral PC's */
 #define MOB_MEMORY         11   /**< remember attackers if attacked */
 #define MOB_HELPER         12   /**< attack PCs fighting other NPCs */
-#define MOB_NOCHARM        13   /**< Mob can't be charmed	*/
+#define MOB_NOCHARM        13   /**< Mob can't be charmed */
 #define MOB_NOSUMMON       14   /**< Mob can't be summoned */
 #define MOB_NOSLEEP        15   /**< Mob can't be slept */
-#define MOB_NOBASH         16   /**< Mob can't be bashed (e.g. trees) */
-#define MOB_NOBLIND        17   /**< Mob can't be blinded	*/
+#define MOB_NOKILL         16   /**< Mob can't be bashed (e.g. trees) */
+#define MOB_NOBLIND        17   /**< Mob can't be blinded */
 #define MOB_NOTDEADYET     18   /**< (R) Mob being extracted */
 /** Total number of Mob Flags; it should be 1 less than MOB_NOT_DEADYET */
-#define NUM_MOB_FLAGS   18
+#define NUM_MOB_FLAGS      18 
 
 /* Preference flags: used by char_data.player_specials.pref */
 #define PRF_BRIEF         0   /**< Room descs won't normally be shown */
@@ -229,10 +229,10 @@
 #define PRF_DISPMANA      5   /**< Display mana points in prompt */
 #define PRF_DISPMOVE      6   /**< Display move points in prompt */
 #define PRF_AUTOEXIT      7   /**< Display exits in a room */
-#define PRF_NOHASSLE      8   /**< Aggr mobs won't attack	*/
+#define PRF_NOHASSLE      8   /**< Aggr mobs won't attack */
 #define PRF_QUEST         9   /**< On quest */
 #define PRF_SUMMONABLE   10   /**< Can be summoned */
-#define PRF_NOREPEAT     11   /**< No repetition of comm commands	*/
+#define PRF_NOREPEAT     11   /**< No repetition of comm commands */
 #define PRF_HOLYLIGHT    12   /**< Can see in dark */
 #define PRF_COLOR_1      13   /**< Color (low bit) */
 #define PRF_COLOR_2      14   /**< Color (high bit) */
