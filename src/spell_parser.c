@@ -212,7 +212,7 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
     act("White light from no particular source suddenly fills the room, then vanishes.", FALSE, caster, 0, 0, TO_ROOM);
     return (0);
   }
-  if (MOB_FLAGGED(cvict, MOB_NOKILL)) {
+  if (cvict && MOB_FLAGGED(cvict, MOB_NOKILL)) {
     send_to_char(caster, "This mob is protected.\r\n");
     return (0);
   }
