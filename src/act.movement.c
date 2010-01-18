@@ -104,7 +104,7 @@ int has_scuba(struct char_data *ch)
 
   /* Any equipped objects with AFF_SCUBA will do it too. */
   for (i = 0; i < NUM_WEARS; i++)
-    if (GET_EQ(ch, i) && OBJAFF_FLAGGED(obj, AFF_SCUBA))
+    if (GET_EQ(ch, i) && OBJAFF_FLAGGED(GET_EQ(ch, i), AFF_SCUBA))
       return (1);
 
   return (0);
