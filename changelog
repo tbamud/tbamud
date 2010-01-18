@@ -36,6 +36,8 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Jan 18 2010] - Fizban
+  Edited scuba check so immortals with nohassle on don't need one.
 [Jan 18 2010] - Rumble
   Fixed bad AFF_SCUBA check for underwater rooms.
 [Dec 28 2009] - Rumble
