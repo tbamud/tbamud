@@ -516,7 +516,7 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
    * and waiting for it to fade, for example. */
   if (IS_NPC(victim) && !affected_by_spell(victim, spellnum))
     for (i = 0; i < MAX_SPELL_AFFECTS; i++)
-      if (AFF_FLAGGED(victim, af[i].bitvector)) {
+      if (AFF_FLAGGED(victim, af[i].bitvector) && (af[i].bitvector > 0)) {
 	send_to_char(ch, "%s", CONFIG_NOEFFECT);
 	return;
       }
