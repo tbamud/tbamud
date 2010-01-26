@@ -529,7 +529,7 @@ D0
 D4
 ~
 door~
-1 0 367
+2 0 367
 S
 #226
 The Eastern Temple Circle~
@@ -620,6 +620,7 @@ D0
 ~
 0 0 217
 S
+T 207
 #231
 The Latrine~
    The smell is disgusting, a recruit needs to clean this place up soon.  A
@@ -1733,7 +1734,8 @@ D3
 ~
 0 0 290
 S
-T 50
+T 210
+T 211
 #292
 The Southern Temple Circle Intersection~
    The southern entrance to the Temple of Sanctus lies just to the north.  It is

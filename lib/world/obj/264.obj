@@ -1,13 +1,16 @@
 #26400
 pool eternal~
 the Pool of Eternal Life~
-The Pool of Eternal Life sits centered in the boulevard, a wondrous beacon of life and the pirsuit of the everlasting.~
-Deep in it's mirrored depths, you think you may be able to see something past
-yourself, something dark, sinister.    
+The Pool of Eternal Life sits centered in the boulevard, a wondrous beacon of life and the pursuit of the everlasting.~
 ~
 23 a 0 0 0 0 0 0 0 0 0 0 0
 1000 1000 15 0
-1005 0 0 0
+0 0 0 0 0
+E
+pool eternal life~
+   Deep in it's mirrored depths, you think you may be able to see something past
+yourself, something dark, sinister.  
+~
 #26401
 robe father~
 the Robe of the Father~
@@ -15,7 +18,7 @@ A glowing robe is rumpled on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
-7 1 0 30
+7 1 0 30 0
 A
 3 2
 A
@@ -29,7 +32,7 @@ A strange glowing ball has been left here.~
 ~
 1 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-10 1 0 0
+10 1 0 0 0
 A
 18 1
 A
@@ -41,7 +44,7 @@ A beautiful gown has been left here.~
 ~
 9 b 0 0 0 ak 0 0 0 0 0 0 0
 8 0 0 0
-10 1 0 40
+10 1 0 40 0
 A
 13 25
 A
@@ -53,7 +56,7 @@ A strange trinket of some sort has been left here.~
 ~
 12 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-10 1 0 35
+10 1 0 35 0
 A
 17 -3
 A
@@ -65,7 +68,7 @@ A glowing mask is on the ground here.~
 ~
 9 ahjo 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-15 1 0 30
+15 1 0 30 0
 A
 5 2
 #26406
@@ -75,7 +78,7 @@ A shimmering crown has been dropped here.~
 ~
 11 a 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-10 1 0 40
+10 1 0 40 0
 A
 17 -6
 A
@@ -89,7 +92,7 @@ A molded fist made of an unknown material has been left here.~
 ~
 5 ajmop 0 0 0 an 0 0 0 0 0 0 0
 3 5 7 7
-8 1 0 45
+8 1 0 45 0
 A
 18 2
 A
@@ -103,7 +106,7 @@ A glowing song has been left here.~
 ~
 12 adejop 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-3 1 0 25
+3 1 0 25 0
 A
 3 2
 A
@@ -117,7 +120,7 @@ A wide amulet in the shape of a teardrop has been dropped here.~
 ~
 11 b 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-6 1 0 20
+6 1 0 20 0
 A
 20 -2
 A
@@ -129,7 +132,7 @@ Some leather wraps have been dropped here.~
 ~
 9 hi 0 0 0 ai 0 0 0 0 0 0 0
 6 0 0 0
-8 1 0 20
+8 1 0 20 0
 A
 6 3
 A
@@ -141,7 +144,7 @@ A ring with a teardrop insignia has been left here.~
 ~
 11 ajmn 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-5 1 0 40
+5 1 0 40 0
 A
 18 2
 A
@@ -153,7 +156,7 @@ Some long strips of leather have been left here.~
 ~
 11 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
-2 550 0 20
+2 550 0 20 0
 A
 17 -5
 A
@@ -165,15 +168,15 @@ A fine jacket has been left here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
-8 800 0 20
+8 800 0 20 0
+E
+buttons~
+   The heavy buttons are engraved with small anchors.  
+~
 E
 stately jacket~
    The dark jacket is really quite nice.  The material is smooth and clean.  
 Heavy metal buttons are sewn in a straight line from top to bottom.  
-~
-E
-buttons~
-   The heavy buttons are engraved with small anchors.  
 ~
 A
 23 2
@@ -184,7 +187,7 @@ Some soft, comfortable boots have been abandoned here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
-4 1 0 25
+4 1 0 25 0
 E
 boots travelling~
    These boots are typical of travellers.  Lightweight and comfortable yet

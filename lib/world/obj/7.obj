@@ -5,7 +5,7 @@ A lot of useless trinkets, nothing of value.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-8 100 0 0
+8 100 0 0 0
 E
 useless trinkets~
    Bits of discarded metal have been strung together by a piece of twine, too
@@ -18,23 +18,22 @@ A large tempered broadsword was left here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 6 2 12 3
-8 400 40 0
+8 400 40 0 0
 E
 tempered silver broadsword~
-   The fine blade of silver looks magnificently crafted and forged.  The hilt
-is protected by a silver wire mesh that wraps around the wielders entire hand.
-  
+   The fine blade of silver looks magnificently crafted and forged.  The hilt is
+protected by a silver wire mesh that wraps around the wielder's entire hand.
 ~
 A
 18 1
 #702
 silver chain armor~
 some silver chain armor~
-Some chain armore of silver is lying here.~
+Some chain armor made of silver is lying here.~
 ~
 9 g 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-8 400 40 0
+8 400 40 0 0
 E
 silver chain armor~
    Links of silver chain have been woven into this fine vest meant to be worn
@@ -50,12 +49,12 @@ Someone left a silver wristguard here.~
 ~
 9 g 0 0 0 am 0 0 0 0 0 0 0
 1 0 0 0
-8 340 34 0
+8 340 34 0 0
 E
 silver wristguard~
-   A thick band of silver looking to fit around a wrist.  It is superbly
-crafted, with engravings of a snake winding around the bracelet, eating it's
-own tail in an endless cycle.    
+   A thick band of silver looking to fit around a wrist.  It is superbly crafted
+with engravings winding around the bracelet, of a snake eating its own tail in
+an endless cycle.
 ~
 A
 19 1
@@ -66,11 +65,11 @@ A crystal clear stream gently flows by you.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
-0 0 0 0
+0 0 0 0 0
 E
 stream crystal clear~
-   You can peer to the bottom of the clear stream, it flows gently over a bed
-of rock and sand.  It looks untainted and refreshing.    
+   You can peer to the bottom of the clear stream as it flows gently over a bed
+of rock and sand.  It looks untainted and refreshing.
 ~
 #705
 silver link chain belt~
@@ -79,7 +78,7 @@ A belt of silver chain links was left here.~
 ~
 9 h 0 0 0 al 0 0 0 0 0 0 0
 2 0 0 0
-5 100 10 0
+5 100 10 0 0
 E
 silver link chain belt~
    The links of silver have been placed over a leather belt that could easily
@@ -94,11 +93,11 @@ A silver shield with the crest of Camelot engraved on the front.~
 ~
 9 g 0 0 0 aj 0 0 0 0 0 0 0
 3 0 0 0
-12 500 50 0
+12 500 50 0 0
 E
 silver shield~
-   The crest of Camelt adorns both sides of this sturdy shield.  The weight is
-encumbering, but bareable.    
+   The crest of Camelot adorns both sides of this sturdy shield.  The weight is
+cumbersome, but bearable.
 ~
 A
 5 1
@@ -109,7 +108,7 @@ A fine coat trimmed with silver.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
-3 200 0 0
+3 200 0 0 0
 E
 silver trimmed coat~
    A fine hooded woolen coat with wide sleeves that are trimmed with silver.  
@@ -123,7 +122,7 @@ A pair of silver bracers.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 4 0 0 0
-5 150 15 0
+5 150 15 0 0
 E
 pair silver bracers~
    A shiny pair of silver bracers that can be worn upon the arms.  They are
@@ -136,7 +135,7 @@ A set of silver gauntlets engraved with the crest of Camelot.~
 ~
 9 g 0 0 0 ah 0 0 0 0 0 0 0
 4 0 0 0
-5 200 25 0
+5 200 25 0 0
 E
 set silver gauntlets~
    The crest of Camelot is engraved on the palm of these fine gauntlets of
@@ -151,11 +150,11 @@ A set of silver boots with the crest of Camelot.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
-5 150 15 0
+5 150 15 0 0
 E
 silver set boots~
-   A set of sturdy silver boots engraved with the crest of Camelot.  The are
-slightly worn but still in excellent condition.    
+   A set of sturdy silver boots engraved with the crest of Camelot.  They are
+slightly worn but still in excellent condition.
 ~
 #711
 set silver greaves~
@@ -164,7 +163,7 @@ A set of silver greaves with the crest of Camelot on them.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
-4 120 12 0
+4 120 12 0 0
 E
 set silver greaves~
    A set of silver greaves with the crest of Camelot engraved on them appear to
@@ -177,11 +176,11 @@ A fine silver helm with the crest of Camelot on the forehead.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
-5 150 15 0
+5 150 15 0 0
 E
 fine silver helm~
-   The helms polished surface gleams around the crest of Camelot embossed upon
-the front.  Made of pure silver the helm is in excellent condition.    
+   The helm's polished surface gleams around the crest of Camelot embossed upon
+the front.  Made of pure silver, the helm is in excellent condition.
 ~
 #713
 silver chain~
@@ -190,11 +189,12 @@ A silver chain made from small links with the crest of Camelot hanging from it.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-5 150 15 0
+5 150 15 0 0
 E
 silver chain~
    A silver chain with a medallion hanging from it that resembles the crest of
-Camelot.  The chain is made up of fine links about the size of a copper.    
+Camelot.  The chain is made up of fine links, each one about the size of a
+copper coin.
 ~
 #714
 silver ring~
@@ -203,12 +203,12 @@ A silver ring with the crest of Camelot upon it.~
 ~
 12 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-3 90 9 0
+3 90 9 0 0
 E
 silver ring~
-   The crest of camelot is engraved on the surface of the ring with the sword
-of excalibur circling behind it.  The ring is made of solid silver and is in
-good condition.    
+   The surface of the ring is engraved with the crest of Camelot with the sword
+of Excalibur wrapping around it.  The ring is made of solid silver and is in
+good condition.
 ~
 #715
 silver sceptre~
@@ -217,28 +217,66 @@ A silver sceptre with the crest of Camelot upon it.~
 ~
 1 gk 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-4 500 50 0
+4 500 50 0 0
 E
 silver sceptre~
-   The crest of camelot is embossed in gold upon the face of this silver
+   The crest of Camelot is embossed in gold upon the face of this silver
 sceptre.  It looks extremely valuable and glows slightly, emitting enough light
-to see by.    
+to see by.
 ~
 A
 17 -6
 #716
 stone fountain~
 the stone fountain~
-A fountain of stone depicting three bare-breasted women pouring water out of jugs.~
+A stone fountain depicts three bare-breasted women pouring water out of jugs.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
-0 0 0 0
+0 0 0 0 0
 E
 stone fountain~
    The white stone is remarkably smooth and finely detailed.  From a distance
 the three woman almost look real, extremely pale, but real.  The water is clear
 and rushes out from the jugs the women hold and down three tiers of large bowls
 filled with water.    
+~
+#717
+gold panning bowl~
+a gold panning bowl~
+A wooden bowl with a screen mesh on its bottom was left here.~
+~
+12 0 0 0 0 ao 0 0 0 0 0 0 0
+0 0 0 0
+3 10 0 0 0
+E
+gold panning bowl~
+   The bowl is worn from use.  It looks like it is meant to pan for gold.  You
+simply scoop up some dirt and swirl in with water to try to find gold nuggets.
+~
+#718
+gold nugget~
+a small gold nugget~
+A small nugget of gold is glittering here.~
+~
+8 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0 0
+E
+gold nugget~
+   The small nugget is probably not worth very much, but it is gold.
+~
+#719
+water flowing river water~
+a gently flowing river~
+A river with a few small white caps flows between tall banks eroded over generations.~
+~
+23 0 0 0 0 0 0 0 0 0 0 0 0
+-1 1 15 0
+0 0 0 0 0
+E
+river flowing water~
+   You can peer to the bottom of the clear river as it flows gently over a bed
+of rock and sand.  You notice strange glints of gold in the river bed.
 ~
 $~

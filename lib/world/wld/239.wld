@@ -30,29 +30,11 @@ D2
 ~
 0 0 23901
 E
-links~
-   This zone links north to room 9030.  Build all rooms south of that
-connection point.  Best link to zone 90 would be south to room 23904 and north
-from 23904 to room 9030.    
-~
-E
-desert~
-   This area is on the north side of the Southern Mountains, it has a few
-loops, level 17 mobs, hidden clues and hints to NewHaven whereabouts, a false
-cave with a Dwarven Sentinel.    
-~
-E
-pass~
-   This area is level 20 area is between desert and first secret entrance to
-the NewHaven caverns (say Friends of NewHaven to enter) There are bigfoot mobs
-here.    
-~
-E
-newhaven~
-   This is an expansion area for a mini quest to enter from north path say
-"Friend of NewHaven" To enter leave NewHaven cavern towards North Path say
-"Farewell King" to enter the South Path go to chasm with broken bridge and
-"follow path"
+tree~
+   This is a level 17 area of birds in branches of the tree.  To get into the
+tree you must be before the tree and "climb tree" there is an one way exit to
+the base of the tree, and some clues to Newhaven imbeded in the outpost room.
+  
 ~
 E
 path~
@@ -63,11 +45,29 @@ with birds in the tree and other animals level 17 on the decent into the desert
 of the waypoint trail.    
 ~
 E
-tree~
-   This is a level 17 area of birds in branches of the tree.  To get into the
-tree you must be before the tree and "climb tree" there is an one way exit to
-the base of the tree, and some clues to Newhaven imbeded in the outpost room.
-  
+newhaven~
+   This is an expansion area for a mini quest to enter from north path say
+"Friend of NewHaven" To enter leave NewHaven cavern towards North Path say
+"Farewell King" to enter the South Path go to chasm with broken bridge and
+"follow path"
+~
+E
+pass~
+   This area is level 20 area is between desert and first secret entrance to
+the NewHaven caverns (say Friends of NewHaven to enter) There are bigfoot mobs
+here.    
+~
+E
+desert~
+   This area is on the north side of the Southern Mountains, it has a few
+loops, level 17 mobs, hidden clues and hints to NewHaven whereabouts, a false
+cave with a Dwarven Sentinel.    
+~
+E
+links~
+   This zone links north to room 9030.  Build all rooms south of that
+connection point.  Best link to zone 90 would be south to room 23904 and north
+from 23904 to room 9030.    
 ~
 S
 #23901
@@ -95,14 +95,14 @@ Sand Dunes of the Great Southern Desert
 ~
 0 0 23910
 E
-sands dunes~
-   The sand is an endless sea of white waves of sparkling silicon fragments
-being tossed around by the merciless wind.    
-~
-E
 kragla birds~
    The Kragla birds are huge black winged desert vultures.  They have bald
 heads, sharp beaks, black eyes and long curved talons.    
+~
+E
+sands dunes~
+   The sand is an endless sea of white waves of sparkling silicon fragments
+being tossed around by the merciless wind.    
 ~
 S
 #23902
@@ -177,6 +177,10 @@ Southern Desert is to the north.  You can see the peaks of the Southern
 Mountains high up in the wispy clouds to the south.    
 ~
 239 64 0 0 0 0
+D0
+~
+~
+0 0 9030
 D1
 Deep Ravine of rock
 ~
@@ -218,14 +222,14 @@ Jutted Path
 ~
 0 0 23904
 E
-rocks desert~
-   It's way too hot to view the scenery you should find you way out of here
-before you die of thirst or starvation.    
-~
-E
 denizen~
    There are small spiders, beetles, centipedes, sand slugs and a few ants
 crawling about the rocks.    
+~
+E
+rocks desert~
+   It's way too hot to view the scenery you should find you way out of here
+before you die of thirst or starvation.    
 ~
 S
 #23906
@@ -263,6 +267,13 @@ Slated Sloping Hills
 ~
 0 0 23903
 E
+desert hills peaks~
+   The hills are like giant black monsters swimming to some unknown beach in
+the sand.  A vast desolance overwhelms even the more experienced adventurers.
+The beauty of the desert is unimaginable and astounding.  The whereabouts of
+the way out of this hell befudles even the most traveled veterans at times.  
+~
+E
 southern mountains~
    The great range of the Southern Mountains is to the south.  It is one of the
 smaller ranges of mountains in the area but has some of the highest peaks in
@@ -272,13 +283,6 @@ pushed up out of the bowels of the ground and left here asunder.  Many legends
 of NewHaven dwarves, drow demons, caves with riches and great battles with
 dragons, orcs, elephants, and horses abound the land but they have been called
 'old wives tales' and dubious to the truth of such tales.    
-~
-E
-desert hills peaks~
-   The hills are like giant black monsters swimming to some unknown beach in
-the sand.  A vast desolance overwhelms even the more experienced adventurers.
-The beauty of the desert is unimaginable and astounding.  The whereabouts of
-the way out of this hell befudles even the most traveled veterans at times.  
 ~
 S
 #23907
@@ -789,17 +793,9 @@ D5
 ~
 0 0 23926
 E
-slits~
-   The slits offer a clear view of the area around the tree.  A small path goes
-north from the tree to a clay path which cuts off to the west.  A path on the
-side of the mountain can be seen.  Also, a zig zag trail leading down and off
-to the west . A medium sized desert is below and what appears to been a small
-oasis.    
-~
-E
-fireplace burnt~
-   The fireplace is barely suitable for burning a few branches in for heat or
-cooking.    
+floor~
+   The floor is cluttered with bones of small animals, burnt hides, broken
+spears and other trash.    
 ~
 E
 bunks~
@@ -808,9 +804,17 @@ to rest in while off duty.  There is nothing interesting about them but most
 adventurers are glad that they don't have to sleep in them.    
 ~
 E
-floor~
-   The floor is cluttered with bones of small animals, burnt hides, broken
-spears and other trash.    
+fireplace burnt~
+   The fireplace is barely suitable for burning a few branches in for heat or
+cooking.    
+~
+E
+slits~
+   The slits offer a clear view of the area around the tree.  A small path goes
+north from the tree to a clay path which cuts off to the west.  A path on the
+side of the mountain can be seen.  Also, a zig zag trail leading down and off
+to the west . A medium sized desert is below and what appears to been a small
+oasis.    
 ~
 S
 #23928
@@ -1546,15 +1550,15 @@ D3
 ~
 0 0 23960
 E
-gate obsidian~
-   An obsidian gate 8 metrons high, 4 metrons wide carved with drow runes.  
-There is a red rune in the center of the door which might be a keyhole.    
-~
-E
 powder glow walls~
    The blood red glow comes from a fine powder, probably deposits from the
 sulfuric fumes drifting up from the chasm below.  The red is a deep blood red
 or scarlet and dimly lights the path along the chasm.    
+~
+E
+gate obsidian~
+   An obsidian gate 8 metrons high, 4 metrons wide carved with drow runes.  
+There is a red rune in the center of the door which might be a keyhole.    
 ~
 S
 #23962

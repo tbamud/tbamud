@@ -92,7 +92,7 @@ S
 #18604
 A Narrow Passage~
    The thin passage is plain and undecorated, but still clean.  It
-ends abruptly to the south at a small oak door, behind which you here
+ends abruptly to the south at a small oak door, behind which you hear
 movement...
 ~
 186 9 0 0 0 0
@@ -653,13 +653,13 @@ The room extends as far as (and farther than) you can see...
 ~
 0 -1 18638
 E
+writing words~
+   The writing appears to say 'beware the Minotaur...  '
+~
+E
 wall~
    There is a crude picture of a man with the head of a bull with some writing
 next to it.  
-~
-E
-writing words~
-   The writing appears to say 'beware the Minotaur...  '
 ~
 S
 #18640
@@ -679,14 +679,14 @@ The hall extends to the south where it seems to lighten somewhat.
 ~
 0 -1 18644
 E
-plaque nameplate name~
-   It says:
-Maynard, Death Jester of the Harlequins
-~
-E
 statue~
    Upon closer inspection you see that the statue has a small plaque affixed to
 it.  The face looks remarkably familiar also.  
+~
+E
+plaque nameplate name~
+   It says:
+Maynard, Death Jester of the Harlequins
 ~
 S
 #18641

@@ -362,7 +362,7 @@ The Bank~
    You stand in a large building decorated with black marble and red
 satin.  Huge pillars support an arched ceiling far above your head.
 You wonder at the skill the dwarves have for detail as you examine
-the trim.  Fine silver seperates the polished blocks that make up the
+the trim.  Fine silver separates the polished blocks that make up the
 floor.
 ~
 55 24 0 0 0 0
@@ -477,8 +477,8 @@ Closed for renovations
 S
 #5528
 The General Store~
-   The new found wealth of this beautiful city is apearant in the exotic
-items for sale here.  You wonder what would happen if you typed... LIST...
+   The new found wealth of this beautiful city is apparent in the exotic
+items for sale here.  You wonder what would happen if you typed...LIST...
 ~
 55 8 0 0 0 0
 D1
@@ -1270,13 +1270,13 @@ D0
 door~
 1 -1 5577
 E
-window~
-   Looking out this window you can see the grounds of the palace that seperate
-the walls of the palace from the building itself.  
-~
-E
 mirror~
    You see a the fighting image of some armor clad humanoid wielding a weapon.
+~
+E
+window~
+   Looking out this window you can see the grounds of the palace that separate
+the walls of the palace from the building itself.  
 ~
 S
 #5577

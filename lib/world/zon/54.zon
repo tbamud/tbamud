@@ -1,7 +1,10 @@
 #54
 Duke~
 New Thalos~
-5400 5499 20 2 d 0 0 0 -1 -1
+5400 5499 20 2 d 0 0 0 1 30
+M 0 5418 1 5432 	(Cassandra)
+G 1 5464 100 -1 	(a salted herring)
+G 1 5465 100 -1 	(a mussel)
 M 0 5404 1 5401 	(the receptionist)
 M 0 5405 1 5402 	(the old withered man)
 G 1 5467 100 -1 	(a glass)
@@ -11,9 +14,6 @@ M 0 5406 1 5402 	(Brother John)
 M 0 5407 1 5403 	(the panhandler)
 M 0 5408 1 5404 	(the panhandler)
 M 0 5409 20 5410 	(the beggar)
-M 0 5418 1 5432 	(Cassandra)
-G 1 5464 20 -1 	(a salted herring)
-G 1 5465 20 -1 	(a muscle)
 M 0 5419 1 5425 	(the foreman)
 E 1 5485 1 16 	(a fountain pen)
 M 0 5420 2 5425 	(the construction worker)

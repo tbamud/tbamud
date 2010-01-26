@@ -266,12 +266,12 @@ run through you.  Maybe you shouldn't have come here.
 BareHandAttack: 1
 E
 #664
-dragon~
+dragon earth~
 an earth dragon~
 Earth dragon is here.
 ~
    The creature is quite large.  It towers over you, drooling.  You suddenly
-feel like someones lunch.    
+feel like someone's lunch.  
 ~
 10 0 0 0 0 0 0 0 -350 E
 15 15 1 3d3+150 2d2+2
@@ -294,12 +294,12 @@ Purple dragon is here.
 BareHandAttack: 11
 E
 #671
-ice dragon~
+dragon ice~
 an ice dragon~
 Ice dragon is here.
 ~
-   The creture is white and gives off a cold mist of steam.  You can see she
-ice hanging off her scales.    
+   The creature is white and gives off a cold mist of steam.  You can see the
+ice hanging off her scales.  
 ~
 10 0 0 0 8 0 0 0 -600 E
 14 16 1 2d2+140 2d2+2
@@ -354,7 +354,7 @@ a fox~
 A fox is here.
 ~
    The creature is slightly larger than normal, but looks nice enough.  You
-notice a large scar down the side of it's stomach.    
+notice a large scar down the side of its stomach.
 ~
 10 0 0 0 0 0 0 0 -200 E
 11 17 3 2d2+110 1d2+1

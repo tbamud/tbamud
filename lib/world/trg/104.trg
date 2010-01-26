@@ -201,7 +201,7 @@ wait 1 sec
 wait 3 sec
 %echo% %self.name% begins to jot down something on his notepad.
 wait 3 sec
-%echo% %self.name% scratches his head then looks a %actor.name%.
+%echo% %self.name% scratches his head then looks at %actor.name%.
 wait 10 sec
 if %today% == rainy
   %echo% %self.name% places a raincoat on, then pulls out an umbrella.

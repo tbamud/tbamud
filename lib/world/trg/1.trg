@@ -61,11 +61,21 @@ if %actor.is_pc%
 end
 ~
 #104
-FREE~
-0 d 100
-entered~
-wait 1 sec
-gos All Welcome %actor.name% to our Realm!
+dg_cast fireball~
+0 k 100
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Only cast the spell every 30 seconds.
+if %already_cast%
+  wait 30 s
+  unset already_cast
+else
+  dg_cast 'fireball' %actor.name%
+  set already_cast 1
+  * By globalling the variable it can be accessed by other triggers or when
+  * this trigger fires a second time.
+  global already_cast
+end
 ~
 #105
 Mob Greet Hannibal - 140~
@@ -92,12 +102,12 @@ Mob Greet Carpenter - 197~
 if %actor.is_pc%
   wait 1 sec
   if %actor.sex% == male
-    say Can't you see the place is under repairs!
+    say Can't you see the place is under repairs?
     wait 1 sec
-    say don't worry, the inn will be open again soon.
+    say Don't worry, the inn will be open again soon.
   elseif %actor.sex% == female
     wait 1 sec
-    say come to work have you?
+    say Come to work, have you?
     wait 1 sec
     wink %actor.name%
   else
@@ -452,6 +462,7 @@ has entered the game.~
 * Num Arg 0 means the argument has to match exactly. So trig will only fire off:
 * "has entered game." and not "has" or "entered" etc. (that would be num arg 1).
 * Figure out what vnum the mob is in so we can use zoneecho.
+*NOTE: We now have a room-login trig. HELP TRIGEDIT-ROOM-LOGIN
 eval inroom %self.room%
 %zoneecho% %inroom.vnum% %self.name% shouts, 'Welcome, %actor.name%!'
 ~
@@ -1551,7 +1562,7 @@ Underground Spy M30 T174~
 if !%self.follower%
   eval max %random.4%
   set txt[1] Don't let the 'MAN' hold you back, join the rebellion. Follow me if you want to lead a better life.
-  set txt[2] Be careful who you talk to, they may be part of the consipiracy. Follow me if you want to know the truth.
+  set txt[2] Be careful who you talk to, they may be part of the conspiracy. Follow me if you want to know the truth.
   set txt[3] Follow me if you want to join the resistance.
   set txt[4] Only through sacrifice can we know the truth. Follow me to be enlightened.
   set  speech %%txt[%max%]%%
@@ -1790,7 +1801,7 @@ set  text[7]  I had amnesia once -- maybe twice.
 set  text[8]  This isn't an office. It's hell with fluorescent lighting.
 set  text[9]  I pretend to work. They pretend to pay me.
 set  text[10] A cubicle is just a padded cell without a door.
-set  text[11] Can I trade this job for what's behind door #1.
+set  text[11] Can I trade this job for what's behind door #1?
 set  text[12] How about never? Is never good for you?
 set  text[13] I have plenty of talent and vision. I just don't care.
 set  text[14] I'll try to be nicer if you'll try to be smarter.
@@ -2199,8 +2210,8 @@ if %actor.is_pc%
 end
 ~
 #195
-Rumble's Stayalive bracelet - 88~
-1 b 10
+Stayalive idleout bracelet - 88~
+1 b 4
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 eval actor %self.worn_by%

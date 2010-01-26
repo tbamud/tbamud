@@ -5,7 +5,7 @@ A small whip, obviously made for those new to the game, is here.~
 ~
 5 dg 0 0 0 an 0 0 0 0 0 0 0
 7 2 2 2
-2 10 1 0
+2 10 1 0 0
 E
 whip newbie~
    It's a small whip, not made to last, but it'll hold a couple of days.  
@@ -17,7 +17,7 @@ A cloak, obviously made for those new to the game, is here.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 newbie cloak~
    This drap garment can be worn around the neck to protect an adventurer from
@@ -32,7 +32,7 @@ A brand new canteen is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 0 0
-15 25 2 0
+15 25 2 0 0
 E
 water canteen newbie~
    The canteen can hold only a few mouthfuls of water.  It would be handy to
@@ -46,7 +46,7 @@ A side of pork has been cut into a pork chop here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-2 15 0 0
+2 15 0 0 0
 E
 porkchop chop~
    This slab of meat looks quite appetizing.  Just brush off some of the dirt
@@ -59,7 +59,7 @@ A small purse has been dropped here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 10 5 -1 0
-10 10 1 0
+10 10 1 0 0
 E
 purse~
    A small purse for carrying a few items.  It cannot hold much, but it looks
@@ -72,7 +72,7 @@ Some coins has been thrown here. - Should never be seen.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 25 10 5 0
-10 1 0 0
+10 1 0 0 0
 E
 coins pile~
    A small pile of coins, what luck you have to stumble upon such a thing.    

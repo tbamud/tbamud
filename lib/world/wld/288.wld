@@ -14,38 +14,59 @@ allowing this to be shared.
 Ghost Shaidan, IMP of Questionable Sanity, agis.ag.net (204.164.158.2) 4000
  
 #SPECIALS
-M  9301 spec_thief
-M  9313/14 spec_breath_fire
-M  9315/16/17/18/19/20/21/22/23/24/25/26/27/28/29 spec_cast_cleric
-M  9330/31 spec_cast_mage
-M  9332 spec_breath_acid
+M  28801 spec_thief
+M  28813/14 spec_breath_fire
+M  28815/16/17/18/19/20/21/22/23/24/25/26/27/28/29 spec_cast_cleric
+M  28830/31 spec_cast_mage
+M  28832 spec_breath_acid
   
 I do not think that the cleric spec they are talking about is a friendly 
 healing others one, so you will need to work that one out yourself (maybe 
 the mage one will do in a pinch)
-Links: 01w, 30s
+Links: 01w, 30d
+
+To see the changes made for TBA, look CHANGELOG.
 ~
 288 0 0 0 0 0
+E
+changelog~
+   @n
+Changelog:
+   Entry has been changed to a trig.  To change it back, remove the two items in
+ 28801 and add a door down to 28802.  Remember to replace the credit info.
+   Removed entrance from 28803 to 28802.  
+   Added nomob to 28825.  Some muds have people who often go in there to kill
+all mobs with an areaspell but in a small mud where nobody goes in, all the 
+mobs on that floor will end up there, sooner or later.
+   All season doors were locked both sides on the original but Ghost Shaidan
+seems to have only locked one side and I left it that way.
+   Added near-deathtrap prog (almost dead) to 28830.  Original was a deathtrap,
+port was a non-deathtrap.
+   Added trigger functions to cover the spec_cast functions mentioned in room 
+28800.  These were partly written by me, mostly by Fizban.  If the damages I
+used seem a bit light, just adjust them.  Saves have not been written in.
+   Added nomob to various rooms, to keep mobs in their sections.  
+   Fixed various typos, grammatical errors, changed some room descs to fit the
+changes.
+ 
+Parna-TBAmud-November 2009
+~
 S
 #28801
 Inside a Tavern~
    You are inside a dimly-lit room.  The atmosphere makes you feel
-uncomfortable.  In front of you stands a mysterious gypsy.  She whispers 'Your
-fate and destiny lie beyond this world.  ' You are still wondering what she
-means when you suddenly notice the crystal ball ...  It glows fiercely and
-displays the Universe!    
+uncomfortable.  In front of you stands a mysterious gypsy.  She whispers, 'Your
+fate and destiny lie beyond this world.'  You are still wondering what she means
+when you suddenly notice the crystal ball ...  It glows fiercely and displays
+the Universe!  
 ~
 288 8 0 0 0 0
-D5
-~
-~
-0 -1 28802
 S
 #28802
 Inside the Crystal Ball~
    You have touched the crystal ball and find that you have gone inside it: a
-world of stars and wonders!  As you look back you figure out there is no choice
-but to go forward.    
+world of stars and wonders!  As you look around, you figure out there is no
+choice but to go forward.  
 ~
 288 0 0 0 0 0
 D0
@@ -55,10 +76,10 @@ D0
 S
 #28803
 Inside the Galaxy~
-   You are now inside the galaxy, around you you see stars and nebulae smiling
-at your presence, and comets and meteors wandering around you.  You realize
-that this world may not be the true galaxy after all, but just another fantasy
-zone.  Exits lie virtually in all directions.    
+   You are now inside the galaxy.  Stars and nebulae smile at your presence, and
+comets and meteors wander around you.  You realize that this world may not be
+the true galaxy after all but just another fantasy zone.  Exits lie in most
+directions.
 ~
 288 0 0 0 0 0
 D0
@@ -69,10 +90,6 @@ D1
 ~
 ~
 0 -1 28808
-D2
-~
-~
-0 -1 28802
 D3
 ~
 ~
@@ -80,7 +97,7 @@ D3
 S
 #28804
 On an InterGalactic Walkway~
-   You are on a well-paved path which seems that it was made deliberately for
+   You are on a well-paved path which seems to have been made deliberately for
 visitors like you.  The walkway continues north and a small exit lies west.  
 ~
 288 0 0 0 0 0
@@ -309,10 +326,11 @@ may find yourself lucky to witness this rare event and still live.
 ~
 288 4 0 0 0 0
 S
+T 28820
 #28821
 The Star Cluster~
    You are inside the home of the stars.  All you can see around you are stars
-and nothing else.  You eyes become pretty hurt as you look at them.    
+and nothing else.  Your eyes become pretty hurt as you look at them.    
 ~
 288 8 0 0 0 0
 D0
@@ -325,8 +343,9 @@ D1
 0 -1 28803
 S
 #28822
-Another Edge of the Galaxy~
-   This is another uninhabited place.  Exits lie north, east and south.    
+An Edge of the Galaxy~
+   There's not much to see here at the edge of the galaxy.  Exits lie north,
+east and south.
 ~
 288 0 0 0 0 0
 D0
@@ -345,7 +364,7 @@ S
 #28823
 Corner of the Galaxy~
    You wonder why the galaxy is limited.  All you have done in Astronomy
-courses now prove worthless.  Well who told you to take one at the start?    
+courses now prove worthless.  Well, who told you to take one at the start?    
 ~
 288 0 0 0 0 0
 D0
@@ -385,7 +404,7 @@ Black Hole~
    Well you have chosen the wrong path, sorry.  Nothing can escape from this
 monster, not even light.  PANIC!  You can't escape!    
 ~
-288 0 0 0 0 0
+288 4 0 0 0 0
 S
 #28826
 The Homes of the Pleiades~
@@ -562,7 +581,7 @@ On the Mystic Chains~
 Up above you see the chains continue upwards.  But a forcefield prevents you
 from going further upwards.    
 ~
-288 0 0 0 0 0
+288 4 0 0 0 0
 D0
 ~
 ~
@@ -757,7 +776,7 @@ End of the Mystic Chains~
 small landing on which you can climb.  However, there seems to be another
 forcefield blocking your way.    
 ~
-288 0 0 0 0 0
+288 4 0 0 0 0
 D4
 You see the forcefield of Summer.
 ~
@@ -898,13 +917,14 @@ Approaching the Head of Draco~
 forcefield to the south, some distance away, beyond reach.  If only the head
 were here ...    
 ~
-288 1 0 0 0 0
+288 0 0 0 0 0
 D1
 ~
 ~
 0 -1 28862
 D2
-You see the forcefield of Winter.~
+You see the forcefield of Winter.
+~
 forcefield~
 2 28827 28864
 S
@@ -945,7 +965,8 @@ D3
 S
 #28866
 Along the Path of the Dipper~
-   You see stars around you but nothing of special interest.    
+   You can see bright stars shining all around you but nothing of special
+interest.
 ~
 288 0 0 0 0 0
 D1
@@ -978,7 +999,8 @@ D2
 S
 #28868
 Along the path of the Dipper~
-   You see stars around you but nothing of special interest.    
+   You can see bright stars shining all around you but nothing of special
+interest.
 ~
 288 0 0 0 0 0
 D0
@@ -992,7 +1014,8 @@ D3
 S
 #28869
 Along the path of the Dipper~
-   You see stars around you but nothing of special interest.    
+   You can see bright stars shining all around you but nothing of special
+interest.
 ~
 288 0 0 0 0 0
 D1

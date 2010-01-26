@@ -221,9 +221,9 @@ return 0
 test for string combos~
 2 c 100
 test~
-eval X 1
-eval Y 2
-eval Z 3
+set X 1
+set Y 2
+set Z 3
 eval string %X% %Y% %Z%
 eval string2 %X%%Y%%Z%
 %echo% string is %string%
@@ -234,7 +234,7 @@ test for remoting~
 0 c 100
 test~
 %echo% %self.name%
-eval test 1
+set test 1
 remote test %self.id%
 %echo% self test is %self.test%
 ~
@@ -372,7 +372,7 @@ if !(%difference% > 100 || %difference% < -100)
           set remotes %remotes% %northexit%
           remote remotes %actor.id%
           if %northexit% == %dest%
-            eval originset 999
+            set originset 999
             remote originset %actor.id%
           end
           eval roomstocheck %actor.roomstocheck% %northexit%
@@ -405,7 +405,7 @@ if !(%difference% > 100 || %difference% < -100)
           set remotes %remotes% %eastexit%
           remote remotes %actor.id%
           if %eastexit% == %dest%
-            eval originset 999
+            set originset 999
             remote originset %actor.id%
           end
           eval roomstocheck %actor.roomstocheck% %eastexit%
@@ -438,7 +438,7 @@ if !(%difference% > 100 || %difference% < -100)
           set remotes %remotes% %southexit%
           remote remotes %actor.id%
           if %southexit% == %dest%
-            eval originset 999
+            set originset 999
             remote originset %actor.id%
           end
           eval roomstocheck %actor.roomstocheck% %southexit%
@@ -471,7 +471,7 @@ if !(%difference% > 100 || %difference% < -100)
           set remotes %remotes% %westexit%
           remote remotes %actor.id%
           if %westexit% == %dest%
-            eval originset 999
+            set originset 999
             remote originset %actor.id%
           end
           eval roomstocheck %actor.roomstocheck% %westexit%
@@ -504,7 +504,7 @@ if !(%difference% > 100 || %difference% < -100)
           set remotes %remotes% %upexit%
           remote remotes %actor.id%
           if %upexit% == %dest%
-            eval originset 999
+            set originset 999
             remote originset %actor.id%
           end
           eval roomstocheck %actor.roomstocheck% %upexit%
@@ -537,7 +537,7 @@ if !(%difference% > 100 || %difference% < -100)
           set remotes %remotes% %downexit%
           remote remotes %actor.id%
           if %downexit% == %dest%
-            eval originset 999
+            set originset 999
             remote originset %actor.id%
           end
           eval roomstocheck %actor.roomstocheck% %downexit%
@@ -853,7 +853,7 @@ case default
 if %damage%
 eval damage %self.damage%+10
 else 
-eval damage 10
+set damage 10
 end
 global damage
 break
@@ -896,16 +896,16 @@ MAP~
 map~
 * BEGINNING SETUP
 *
-eval display 11
+set display 11
 while %display% < 56
   eval x%display% .
   eval display %display% + 1
 done
 eval here %actor.room.vnum%
-eval north -10
-eval east 1
-eval west -1
-eval south 10
+set north -10
+set east 1
+set west -1
+set south 10
 *
 * STARTS READING NORTH
 *
@@ -913,7 +913,7 @@ if %here.north%
   eval 23 %here.north(vnum)%
   eval temp %23.sector%
   eval x23 %temp.charat(1)%
-  eval directionlist north east south west
+  set directionlist north east south west
   while %directionlist%
     eval firstdir %directionlist.car%
     eval newroom 23 + %%%firstdir%%%
@@ -933,7 +933,7 @@ if %here.east%
   eval 34 %here.east(vnum)%
   eval temp %34.sector%
   eval x34 %temp.charat(1)%
-  eval directionlist north east south west
+  set directionlist north east south west
   while %directionlist%
     eval firstdir %directionlist.car%
     eval newroom 34 + %%%firstdir%%%
@@ -953,7 +953,7 @@ if %here.south%
   eval 43 %here.south(vnum)%
   eval temp %43.sector%
   eval x43 %temp.charat(1)%
-  eval directionlist north east south west
+  set directionlist north east south west
   while %directionlist%
     eval firstdir %directionlist.car%
     eval newroom 43 + %%%firstdir%%%
@@ -973,7 +973,7 @@ if %here.west%
   eval 32 %here.west(vnum)%
   eval temp %32.sector%
   eval x32 %temp.charat(1)%
-  eval directionlist north east south west
+  set directionlist north east south west
   while %directionlist%
     eval firstdir %directionlist.car%
     eval newroom 32 + %%%firstdir%%%

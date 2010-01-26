@@ -1,7 +1,7 @@
 #55
 Duke~
 New Thalos II~
-5500 5599 30 2 d 0 0 0 -1 -1
+5500 5599 30 2
 M 0 5412 1 5521 	(the banker)
 R 0 5521 3034 -1 	(an automatic teller machine)
 O 0 3034 99 5521 	(an automatic teller machine)

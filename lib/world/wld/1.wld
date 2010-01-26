@@ -974,7 +974,8 @@ break or maybe just get away from home for a few days to receive one of the many
 "treatments" available by the fine staff.  The sole proprietor goes by the name
 of Orlok and has been known to be rough, even deadly, to any customers that
 treat his "employees" unfairly.  The inn appears to be well kept.  Further to
-the north one can see a winding staircase and a plethra of adjoining rooms.  
+the north one can see a winding staircase and a plethra of adjoining rooms.  It
+seems the owners have temporarily closed due to renovations.
 ~
 1 8 0 0 0 0
 D2
@@ -1088,7 +1089,6 @@ D4
 ~
 0 0 109
 S
-T 1200
 #151
 Entrance to the Thieves Guild~
    A thief stands in the back infront of a stairwell.  Obviously making sure no
@@ -1620,7 +1620,7 @@ S
 A Small Home~
    You walk right in as if it was your own house.  Don't worry about
 trespassing, I'm sure no one will mind.  The house is very compact.  The
-kitchen and bedrooms are not seperated by any walls.  This must be a house for
+kitchen and bedrooms are not separated by any walls.  This must be a house for
 the poor.    
 ~
 1 8 0 0 0 0

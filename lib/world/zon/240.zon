@@ -1,7 +1,7 @@
 #240
 Rumble~
 Dun Maura~
-24000 24099 10 2 d 0 0 0 -1 -1
+24000 24099 10 2 d 0 0 0 7 10
 M 0 24001 8 24000 	(the sentry)
 E 1 24018 99 9 	(a set of brass knuckles)
 E 1 24003 99 16 	(a double headed axe)

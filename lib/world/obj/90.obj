@@ -5,7 +5,7 @@ A finely crafted bow lies on the ground.~
 ~
 5 k 0 0 0 an 0 0 0 0 0 0 0
 0 4 5 12
-5 25 2 0
+5 25 2 0 0
 T 9000
 #9001
 bow string~
@@ -14,7 +14,7 @@ A piece of string was left here.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #9002
 bow unfinished~
 an unfinished bow~
@@ -22,7 +22,7 @@ A bow that wasn't quite finished was left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 10
-5 25 2 0
+5 25 2 0 0
 #9003
 ranger sword~
 the sword of the ranger~
@@ -30,7 +30,7 @@ A expertly crafted sword is stuck into the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 6 3 8 3
-9 675 67 0
+9 675 67 0 0
 #9004
 arrow~
 an arrow~
@@ -38,7 +38,7 @@ An arrow is stuck into the ground.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 0 0 0
+1 1 0 0 0
 #9005
 quiver~
 a quiver~
@@ -46,5 +46,5 @@ A quiver was left here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 -1 0
-1 1 0 0
+1 1 0 0 0
 $~

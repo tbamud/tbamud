@@ -485,13 +485,13 @@ end
 test for Tink~
 2 b 100
 ~
-eval tar 2700
+set tar 2700
 while %tar%
   if %tar% < 2720
     %at% %tar% %echo% This is a test message.
     eval tar %tar%+1
   else
-    eval tar 0
+    set tar 0
   end
 done
 ~
@@ -957,7 +957,7 @@ hold orb
 test nop~
 1 c 7
 test~
-eval amount 100
+set amount 100
 nop %actor.gold(10)%
 nop %actor.gold(%amount%)%
 ~

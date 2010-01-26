@@ -1,7 +1,7 @@
 #16
-Rumble~
+Lok Parna~
 Camelot II~
-1600 1699 10 2 d 0 0 0 -1 -1
+1600 1699 10 2
 M 0 1633 8 1600 	(a large wolf)
 M 0 1619 1 1627 	(Iron Jack)
 G 1 715 99 -1 	(a silver sceptre)
@@ -39,7 +39,7 @@ M 0 1633 8 1680 	(a large wolf)
 M 0 1633 8 1678 	(a large wolf)
 M 0 1633 8 1676 	(a large wolf)
 M 0 1627 1 1673 	(Master Bleise)
-E 1 1608 99 17 	(merlins scroll)
+E 1 1608 99 17 	(Merlin's scroll)
 M 0 1617 10 1672 	(a servant)
 M 0 1618 1 1670 	(a demon)
 M 0 1604 1 1669 	(Sir Gareth)
@@ -48,7 +48,7 @@ E 1 1605 99 12 	(a cloak of many colors)
 M 0 1606 1 1668 	(Sir Gawaine)
 E 1 1618 99 6 	(a horned helm)
 M 0 1608 1 1667 	(King Pellinore)
-G 1 1613 99 -1 	(pellinores pack)
+G 1 1613 99 -1 	(Pellinore's pack)
 M 0 1602 1 1665 	(Sir Benlad)
 E 1 1604 99 5 	(some green armor)
 E 1 1603 99 17 	(a crest)
@@ -87,8 +87,8 @@ M 0 1615 10 1629 	(a nobleman)
 M 0 1620 1 1628 	(Persante of Inde)
 M 0 1617 10 1621 	(a servant)
 M 0 1607 1 1620 	(Merlin)
-E 1 1609 99 17 	(Merlins wand)
-G 1 1608 99 -1 	(merlins scroll)
+E 1 1609 99 17 	(Merlin's wand)
+G 1 1608 99 -1 	(Merlin's scroll)
 M 0 1626 1 1618 	(a cat)
 M 0 1625 1 1618 	(a toad)
 M 0 1624 1 1618 	(a crow)

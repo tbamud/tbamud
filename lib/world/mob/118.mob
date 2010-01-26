@@ -827,9 +827,14 @@ and big blue eyes surrounded with an abundance of freckles.  She hums quietly to
 herself, stumbling rather ungracefully about the room as she attempts to dance.
 ~
 10 0 0 0 0 0 0 0 0 E
-0 20 10 1d1+0 1d1+0
-0 0
+5 19 7 1d1+50 1d2+0
+50 2500
 8 8 2
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
 E
 T 11815
 #11850

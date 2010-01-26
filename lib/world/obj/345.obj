@@ -5,7 +5,7 @@ A skeleton key is lying here.~
 ~
 18 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 5
+1 1 0 5 0
 E
 skeleton key~
    The key is a old skeleton key. At the decorative end of the key there is an
@@ -18,7 +18,7 @@ A blood-stained scalpel is lying here~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 1 6 14
-2 10 0 5
+2 10 0 5 0
 #34502
 severed head~
 a severed head~
@@ -26,7 +26,7 @@ A severed head bloodies the floor here~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 1 0 0
+10 1 0 0 0
 E
 head~
    The head drips blood into a pool of crimson on the floor. The face is
@@ -38,9 +38,9 @@ skull cap~
 a skull cap~
 A skull cap sits here.~
 ~
-9 0 0 0 0 e 0 0 0 k 0 0 0
+9 0 0 0 0 ae 0 0 0 k 0 0 0
 10 0 0 0
-5 100 0 8
+5 100 0 8 0
 E
 skull cap~
    Made from the top of an actual human skull, this cap is rather plain. The
@@ -57,5 +57,5 @@ A light sits here.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 $~

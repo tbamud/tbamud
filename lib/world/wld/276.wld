@@ -14,6 +14,11 @@ You see Second Avenue.
 ~
 0 -1 27599
 E
+sign~
+   The sign reads Church of the Pythons.  Like you didn't already know that,
+duh!  
+~
+E
 credits info~
    The city of New Sparta. By Naved.
 Zone 276 is linked to the following zones:
@@ -23,11 +28,6 @@ Zone 276 is linked to the following zones:
 275 New Sparta                     at 27612 (south) ---> 27580
 275 New Sparta                     at 27614 (east ) ---> 27516
 275 New Sparta                     at 27616 (west ) ---> 27569
-~
-E
-sign~
-   The sign reads Church of the Pythons.  Like you didn't already know that,
-duh!  
 ~
 S
 #27601
@@ -360,7 +360,14 @@ sign~
 S
 #27617
 PETSHOP STOREROOM~
-   Mortals should never come here!  
+   Make two rooms and some pets.  The rooms MUST be sequential.  If the first
+room is 315 then the second must be 316.  The second room is known as the
+storeroom.  All that is required in the storeroom is to load one of each mob you
+wish to be a pet.  This room can not have any exits and will never be used by
+mortals.  Although a pet shopkeeper is not required it is recommended.  After
+all of this is done ask your coder to implement the petshop.  It will not work
+until the code is changed and the MUD is rebooted.  The cost of pets is 300
+times their level.
 ~
 276 1536 0 0 0 0
 S

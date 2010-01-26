@@ -50,7 +50,7 @@ S
 Between Sand Dunes~
    You work your way between sand dunes.  As you climb the top of one you can
 see nothing but desert stretching for miles in every direction.  You find it
-very hard if not impossible to remember which direction you are heading.    
+very hard, if not impossible, to remember which direction you are heading.    
 ~
 90 0 0 0 0 0
 D0
@@ -376,7 +376,7 @@ A Dried Up River Bed~
    You find yourself trapped inside this natural canyon.  The banks tower above
 your head, actually slanting towards you, making them impossible to climb.  
 The rocky river bed makes an unsure footing and you stumble along, trying not
-to twist an ankle.  The river bed leads in an east west direction,
+to twist an ankle.  The river bed leads in an east west direction.
 ~
 90 0 0 0 0 0
 D1
@@ -469,7 +469,7 @@ D2
 S
 #9025
 The Desert~
-   You can begin to discren what looks look tracks in the sand leading to the
+   You can begin to discern what looks look tracks in the sand leading to the
 north and west.  The remains of a trail being consumed by the desert sand.  To
 the south you can see somthing on the horizon.  Desert stretches as far as you
 can see in every other direction.    
@@ -552,11 +552,11 @@ D2
 S
 #9030
 Before the Mountains~
-   You stand in the shadows of the intimidating mountains, just thinking about
+   You stand in the shadows of the intimidating mountains.  Just thinking about
 an avalanche or landslide gives you chills.  The safety of open ground is just
 to the north.  Anyone or anything could easily hide along the base of the
 mountains.  A small trail leads to the east.  An almost invisible trail leads
-south from here, toward the mountains.    
+south from here, toward the mountains.  
 ~
 90 4 0 0 0 0
 D0
@@ -567,18 +567,26 @@ D1
 ~
 ~
 0 0 9031
+D2
+~
+~
+0 0 23904
 S
 #9031
 A Hidden Path~
    It is as if someone has taken the trouble to try and hide this small trail.
-It winds it's way still further to the north along the base of the mountains.
-Small trees and even a small stream give this place a feeling of peace.    
+It winds its way still further to the north along the base of the mountains.  
+Small trees and even a small stream give this place a feeling of peace.  
 ~
 90 0 0 0 0 0
 D0
 ~
 ~
 0 0 9032
+D1
+~
+~
+0 0 14000
 D3
 ~
 ~

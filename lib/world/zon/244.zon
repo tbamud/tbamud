@@ -1,7 +1,7 @@
 #244
 Crazyman~
 Cooland Prison~
-24400 24499 5 1 d 0 0 0 -1 -1
+24400 24499 5 1 d 0 0 0 28 30
 D 0 24400 2 2 	(Cell A1)
 M 0 24400 1 24457 	(Fred the prison guard)
 G 1 24499 2 -1 	(a rusty prison key)

@@ -5,7 +5,7 @@ A pair of rabbit skin gloves.~
 ~
 9 0 0 0 0 aho 0 0 0 0 0 0 0
 2 0 0 0
-6 250 0 10
+6 250 0 10 0
 E
 rabbit skin gloves glove~
    The gloves are very furry.  They are made from the skin and fur of a
@@ -19,7 +19,7 @@ A pair of rabbit skin boots.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-8 400 0 10
+8 400 0 10 0
 E
 rabbit skin boots boot~
    The boots are very well made, and look like they would protect you well.  
@@ -33,7 +33,7 @@ A small shrub is here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 small shrub plant~
    The plant is about knee high and in full bloom.  Many colorful flowers
@@ -46,7 +46,7 @@ A rawhide whip~
 ~
 5 b 0 0 0 ano 0 0 0 0 0 0 0
 2 2 3 2
-7 300 0 10
+7 300 0 10 0
 E
 rawhide whip~
    The weapon looks rather strong and would defend you well in battle.  The
@@ -60,7 +60,7 @@ There is a tree stump here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 Tree Stump~
    This is just an ordinary tree stump.  By the looks of it, it's been here for
@@ -73,7 +73,7 @@ A teddybear was abandoned here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-4 450 0 0
+4 450 0 0 0
 E
 teddybear~
    The bear is rather cute looking.  There seems to be a small glow within his
@@ -86,20 +86,20 @@ A suit of wooden armour~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-11 300 0 10
+11 300 0 10 0
 E
 Wooden armour~
    The armour is quite solid, giving you the best protection available.  A
 person would easily be able to move around wearing this.    
 ~
 #410
-helmet~
+warhelm helmet~
 wooden warhelm~
 A wooden warhelm~
 ~
 9 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-8 550 0 10
+8 550 0 10 0
 E
 wooden wood warhelm helmet~
    The helmet is quite solid and would protect you quite well in battle.  You
@@ -112,7 +112,7 @@ An onyx pebble is lying on the ground.~
 ~
 8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 300 0 10
+1 300 0 10 0
 E
 onyx pebble rock~
    The black pebble shines as you look at it.  You feel that it must contain
@@ -129,12 +129,70 @@ A large tree is here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 tree~
    The tree is quite large.  It towers over you, shading you from the sunlight.
   
 ~
+#416
+torch~
+a torch~
+A large torch.~
+~
+1 0 0 0 0 ao 0 0 0 0 0 0 0
+0 0 24 0
+1 20 0 0 0
+E
+torch~
+   Your basic torch, nothing very remarkeable about it.    
+~
+#417
+backpack~
+a backpack~
+A backpack is here.~
+~
+15 0 0 0 0 ao 0 0 0 0 0 0 0
+40 5 -1 0
+5 250 0 0 0
+E
+backpack~
+   A hefty backpack that can carry more than a bag.    
+~
+#418
+dagger~
+a dagger~
+A dagger with a long thin blade is here.~
+~
+5 n 0 0 0 an 0 0 0 0 0 0 0
+0 1 4 11
+2 30 0 0 0
+E
+dagger~
+   A simple dagger used by thieves and hoodlums to relieve the unwary of thier
+money.    
+~
+#419
+mace~
+a mace~
+A mace is here.~
+~
+5 0 0 0 0 an 0 0 0 0 0 0 0
+0 1 7 5
+6 60 0 0 0
+E
+mace~
+   This mace is made of a heavy polished metal with small spikes on the end.  
+Look deadly
+~
+#420
+dirk knife~
+a dirk~
+A long, single-edged knife lies here.~
+~
+5 n 0 0 0 an 0 0 0 0 0 0 0
+0 1 4 11
+1 15 0 0 0
 #427
 plant~
 colorful plant~
@@ -142,7 +200,7 @@ A colorful plant is growing here.~
 ~
 12 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 colorful plant~
    The plant is the most beautiful plant you have ever set your eyes on.  It
@@ -155,7 +213,7 @@ A bird egg is lying on the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 125 0 0
+1 125 0 0 0
 E
 bird egg~
    The egg is speckled with shades of blue.  It's in excellent condition.    
@@ -167,7 +225,7 @@ An apple~
 ~
 19 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-3 50 0 0
+3 50 0 0 0
 E
 apple~
    The red apples shines in the light, making it look more delicious.    
@@ -179,7 +237,7 @@ A magical rock~
 ~
 8 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 400 0 0
+2 400 0 0 0
 E
 magical rock~
    The rocks seems to hold some sort of magic.  You feel the power running
@@ -196,7 +254,7 @@ A beautiful painting is hanging on the wall.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 painting~
    Color flowers fills your eyes as they stretch off the canvas of the
@@ -209,7 +267,7 @@ A stream of water babbles as it rushes past.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 -1 -1 15 0
-0 0 0 0
+0 0 0 0 0
 E
 stream water~
    This clear water looks refreshing and safe to drink.
@@ -221,7 +279,7 @@ A pool of murky water stagnates slowly.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 -1 -1 0 0
-0 0 0 0
+0 0 0 0 0
 E
 pool murky water~
    This water looks as though it has been stewing for a long time, a slight
@@ -234,7 +292,7 @@ A stone well stands here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 -1 -1 0 0
-0 0 0 0
+0 0 0 0 0
 E
 stone well~
    This basic stone well appears reasonably well maintained, a simple wooden

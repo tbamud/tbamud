@@ -151,7 +151,7 @@ while %actor.inventory%
 done
 ~
 #1309
-Eat/look/read Cnady~
+Eat, look, read, candy~
 1 c 2
 *~
 if look /= %cmd.mudcommand% && heart /= %arg% && %arg% || read /= %cmd.mudcommand% && heart /= %arg% && %arg% || read /= %cmd.mudcommand% && candy /= %arg% && %arg% || look /= %cmd.mudcommand% && candy /= %arg% && %arg%
@@ -2300,32 +2300,32 @@ door test~
 Racing Bet~
 2 c 100
 bet~
-eval 1 Salya
-eval 2 Fluffy
-eval 3 Angela
-eval 4 Malicious
-eval 5 Arden
-eval 6 Calista
-eval 7 Balderdash
-eval 8 Hessa
-eval Salya 99
-eval Fluffy 50
-eval Angela 50
-eval Malicious 35
-eval Arden 33
-eval Calista 28
-eval Balderdash 25
-eval Hessa 20
+set 1 Salya
+set 2 Fluffy
+set 3 Angela
+set 4 Malicious
+set 5 Arden
+set 6 Calista
+set 7 Balderdash
+set 8 Hessa
+set Salya 99
+set Fluffy 50
+set Angela 50
+set Malicious 35
+set Arden 33
+set Calista 28
+set Balderdash 25
+set Hessa 20
 set racer 1
 set racing 1
 while %racing%
-eval name %racer%
-%echo% Racer %racer%: %%name%%
-eval racer %racer%+1
-if %racer% == 9
-set racing 0
-else
-end
+  eval name %racer%
+  %echo% Racer %racer%: %%name%%
+  eval racer %racer%+1
+  if %racer% == 9
+    set racing 0
+  else
+  end
 done
 ~
 #1379
@@ -2581,9 +2581,9 @@ Mob Speech Parrot~
         global phrase(%number%)
 *** Reset array after 10 phrases
           if (%number% == 10)
-            eval number 0
+            set number 0
             global number
-            eval maxphrases 1
+            set maxphrases 1
             global maxphrases
             end
       else
@@ -2889,7 +2889,7 @@ done
 Room Speech Actor.eq Example~
 2 d 100
 test~
-eval i 0
+set i 0
 while %i%<32
 eval item %%actor.eq(%i%)%%
 if %item%

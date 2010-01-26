@@ -62,11 +62,11 @@ E
 #9004
 scorpion~
 the scorpion~
-A huge scorpion raises it's tail and prepares to strike.
+A huge scorpion raises its tail and prepares to strike.
 ~
    These deadly desert dwellers are more poisonous than even the spiders found
 in these parts.  They are very quick and can attack even when unprovoked.  Many
-a traveller has been killed simply because they almost stepped on one.  
+a traveller has been killed simply by almost stepping on one.  
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -102,7 +102,7 @@ Ranger.
 260106 0 0 0 80 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
 70 4900
-8 8 0
+8 8 1
 E
 #9007
 guard ranger man~

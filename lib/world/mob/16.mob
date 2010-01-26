@@ -3,8 +3,7 @@ serf~
 a serf~
 A dirty serf shuffles along here.
 ~
-   The serf is in rags, smells, and you actually think you can see lice on him.
-  
+   The serf is in rags, he smells, and you actually think you can see lice on him.
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -17,8 +16,8 @@ squire~
 a squire~
 A squire is on an errand from his lord.
 ~
-   A squire stands here on a mission for his lord.  He is dressed in rags,
-smells bad, and looks like he is in a hurry.    
+   A squire stands here on a mission for his lord.  He is dressed in plain drab
+clothes and aspires to some day earning the right to be knighted.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -73,8 +72,8 @@ Garlon~
 Sir Garlon~
 Sir Garlon, the invisible knight, is waiting here.
 ~
-   Sir Garlon (the vile villian) is hiding here.  He was given his invisibility
-power by the witch of the fens for the furtherment of evil.    
+   Sir Garlon (the vile villain) is hiding here.  He was given his invisibility
+power by the witch of the fens for the furtherment of evil.
 ~
 72 0 0 0 84 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -106,8 +105,8 @@ Merlin~
 The mighty Merlin is here grumbling over a book.
 ~
    Merlin, the son of a sorceress and a demon, seer of Camelot, is garbed in an
-earthy colored robe and bears a twisted staff.  His flowing white beard offsets
-his rosy cheeks and sparkling blue eyes.    
+earth colored robe and bears a twisted staff.  His flowing white beard offsets
+his rosy cheeks and sparkling blue eyes.
 ~
 65546 0 0 0 80 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -121,8 +120,8 @@ King Pellinore~
 King Pellinore is here searching for the Questing Beast.
 ~
    King Pellinore tells you that his family has been searching for the Questing
-Beast for generations and asks if you have seen it.  Pelinore is just past
-middle age, though he is still a stout fighter.    
+Beast for generations and asks if you have seen it.  Pellinore is just past
+middle age, though he is still a stout fighter.
 ~
 72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -149,8 +148,8 @@ mordred boy~
 Mordred~
 An boy in golden armor gives you an elfin laugh and strikes with his spear!
 ~
-   Mordred, bastard son of Lancelot and Gwenivere, wears his enchanted golden
-armor and his unholy spear.    
+   Mordred, bastard son of Arthur and Morgause, wears his enchanted golden armor
+and his unholy spear.
 ~
 41032 0 0 0 1572944 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -163,9 +162,9 @@ knight barant~
 Barant Les Apres~
 A knight in a flowing white cape swings a spiked ball here.
 ~
-   Barant Les Apres, King of the Hundred Knights stands here.  Barant wears a
+   Barant Les Apres, King of the Hundred Knights, stands here.  Barant wears a
 white cape and carries a spiked ball and chain.  He hefts his weapon and grins
-at you.    
+at you.
 ~
 2120 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -263,11 +262,11 @@ demon~
 a demon~
 A towering, black scaled demon has come to eat your soul!
 ~
-   As it breathes the ground you stand on rumbles, and you are seared by its
-hot breath.  It is this demon which has been laughing at you in all your
-visions.  Merlin has bound this demon here to use its power in the fabrication
-of magic items, however his hold has slipped a few times, enabling the demon to
-give out a few artifacts to encourage the downfall of Camelot.    
+   As it breathes, the ground you stand on rumbles and you are seared by its hot
+breath.  It is this demon which has been laughing at you in all your visions.  
+Merlin has bound this demon here to use its power in the fabrication of magic
+items.  However his hold has slipped a few times, enabling the demon to give out
+a few artifacts to encourage the downfall of Camelot.
 ~
 72 0 0 0 8 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -278,7 +277,7 @@ E
 #1619
 Iron Jack~
 Iron Jack~
-Iron Jack, the armorer of Camelot is here.
+Iron Jack, the armorer of Camelot, is here.
 ~
    Iron Jack wears his smith apron, leather leggings, and has corded muscular
 arms.    
@@ -309,7 +308,7 @@ Dodinas Le Savage~
 Dodinas le Savage is here, holding a wicked looking sword!
 ~
    Dodinas is a whirlwind of weapons and martial skill, felling all who
-challenge him.  He is mounted atop his famed steed Rue.    
+challenge him.  He is mounted atop his famed steed, Rue.
 ~
 65608 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -320,7 +319,7 @@ E
 #1622
 lionel~
 Lionel~
-Lionel the knight, staggers past.
+Lionel, the knight, staggers past.
 ~
    Lionel is covered in blood, and is walking as if stunned.  It looks like he
 is going to fall.    
@@ -335,8 +334,8 @@ gaheris~
 Gaheris~
 Gaheris, Gawaine's brother, is here.
 ~
-   Gaheris has long red hair, and a gray stallion.  He is extremely angry and
-is looking for someone to take it out on.    
+   Gaheris has long red hair and a gray stallion.  He is extremely angry and is
+looking for someone to take it out on.
 ~
 72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -347,10 +346,10 @@ E
 #1624
 crow~
 a crow~
-A crow cocks it's head sideways, staring at you inquiringly.
+A crow cocks its head sideways, staring at you inquiringly.
 ~
-   One of merlins pets, this crow is suppose to have extraordinary
-intelligence.    
+   One of Merlin's pets, this crow is supposed to have extraordinary
+intelligence.
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -363,8 +362,8 @@ toad~
 a toad~
 A toad is hopping around on the floor.
 ~
-   This toad is used by merlin for various experiments.  It is unnaturally
-large.    
+   This toad is used by Merlin for various experiments.  It is unnaturally
+large.
 ~
 10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -374,10 +373,10 @@ E
 #1626
 cat~
 a cat~
-A cat rubs up against your leg, shedding half it's fur on you.
+A cat rubs up against your leg, shedding half its fur on you.
 ~
-   Another one of Merlins experimental pet this cat looks extremely dangerous.
-It is the largest cat you have ever seen.    
+   Another one of Merlins experimental pets, this cat looks extremely
+dangerous.  It is the largest cat you have ever seen.
 ~
 10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -390,8 +389,8 @@ master bleise~
 Master Bleise~
 Master Bleise is here paging through some books.
 ~
-   He is completely absorbed in his reading and does not even look up when you
-enter.    
+   Merlin's mentor is completely absorbed in his reading and does not even look
+up when you enter.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -467,10 +466,10 @@ E
 #1633
 wolf~
 a large wolf~
-A wolf is chewing on something, It looks like... someone's Arm!
+A wolf is chewing on something.  It looks like... someone's arm!
 ~
-   The wolf is huge, it's shoulder comes up to about your waist and it looks
-hungry.    
+   The wolf is huge.  Its shoulder comes up to about your waist and it looks
+hungry.
 ~
 65608 0 0 0 524304 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -479,9 +478,9 @@ hungry.
 BareHandAttack: 4
 E
 #1634
-creature beast~
+creature beast lion~
 a questing beast~
-A long necked, lion pawed, spotted, creature is here gnawing on a femur.
+A long necked, lion pawed, spotted creature is here gnawing on a femur.
 ~
    It looks hungry!    
 ~
@@ -497,8 +496,7 @@ a damsel in distress~
 A damsel in distress is here, screaming for help!
 ~
    The damsel in distress has been badly roughed up by the ruffians.  She is
-tied with here hands behind her back.  Her coartly gowns are soiled and
-tattered.    
+tied with her hands behind her back.  Her courtly gown is soiled and tattered.
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1

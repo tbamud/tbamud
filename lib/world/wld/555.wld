@@ -19,7 +19,7 @@ S
 #55501
 New Magincia Road~
    This is the main road of New Magincia.  To the south the dirt path continues
-to the south and a huge gate to the north.
+and a huge gate lies to the north.
 ~
 555 0 0 0 0 1
 D0
@@ -594,12 +594,12 @@ D3
 ~
 0 0 55533
 E
-book books~
-   'Secret Door: The Shelf' is on the shelf.
-~
-E
 shelf shelves~
    The shelf to the south looks a bit strange.
+~
+E
+book books~
+   'Secret Door: The Shelf' is on the shelf.
 ~
 S
 T 55532
@@ -1301,22 +1301,22 @@ D0
 You see trees.
 ~
 ~
-0 0 55572
+0 0 55570
 D1
 You see trees.
 ~
 ~
-0 0 55581
+0 0 55576
 D2
 You see trees.
 ~
 ~
-0 0 55570
+0 0 55572
 D3
 You see trees.
 ~
 ~
-0 0 55576
+0 0 55581
 S
 T 55571
 #55572

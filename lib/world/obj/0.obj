@@ -1204,13 +1204,12 @@ throne of bayonets, but you can't sit on it for long."
 ~
 #88
 idleout timer stayalive bracelet~
-Rumble's stayalive bracelet~
+a stayalive bracelet~
 A bright orange plastic bracelet was left here.~
 ~
 12 0 0 0 0 m 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0 0
-T 195
 E
 idleout timer stayalive bracelet~
    The bracelet is made of a garish orange plastic with the letters STAYALIVE

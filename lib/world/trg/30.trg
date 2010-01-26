@@ -64,9 +64,9 @@ Dump - 3030~
 eval value %object.cost% / 10
 %purge% %object%
 if %value% > 50
-  eval value 50
+  set value 50
 elseif %value% < 1
-  eval value 1
+  set value 1
 end
 if %actor.level% < 3
   nop %actor.exp(%value%)%
@@ -538,9 +538,37 @@ if %actor.is_pc% && %actor.level% < 5
 end
 ~
 #3017
-Newbie Guide~
+Mortal Greet~
 2 s 100
 ~
-%echo% welcome %actor.name%
+* By Rumble of The Builder Academy    tbamud.com 9091
+* TBA mortal greet and equip. New players start at level 0.
+if %actor.level% == 0
+  if !%actor.eq(*)%
+    %load% obj 3037 %actor% light
+    %load% obj 3083 %actor% rfinger
+    %load% obj 3083 %actor% lfinger
+    %load% obj 3082 %actor% neck1
+    %load% obj 3082 %actor% neck2
+    %load% obj 3040 %actor% body
+    %load% obj 3076 %actor% head
+    %load% obj 3080 %actor% legs
+    %load% obj 3084 %actor% feet
+    %load% obj 3071 %actor% hands
+    %load% obj 3086 %actor% arms
+    %load% obj 3042 %actor% shield
+    %load% obj 3087 %actor% about
+    %load% obj 3088 %actor% waist
+    %load% obj 3089 %actor% rwrist
+    %load% obj 3089 %actor% lwrist
+    %load% obj 3021 %actor% wield
+    %load% obj 3055 %actor% hold
+  end
+  if !%actor.has_item(3006)%
+    %load% obj 3006 %actor% inv
+  end
+end
+wait 3 sec
+%zoneecho% 3001 A booming voice announces, 'Welcome %actor.name% to the realm!'
 ~
 $~

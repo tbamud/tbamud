@@ -18,6 +18,16 @@ To your west you can see a dark alley with a fishery.
 ~
 0 0 -1
 E
+fishnets nets~
+   The fishnets are old and are turning into dust; large holes open to the
+sides.  They don't look sturdy enough to use.    
+~
+E
+lobster crates~
+   The lobster crates are old and rotting; they look as if they couldn't hold a
+sardine.    
+~
+E
 credits info~
    This is Oceania Proper, part one of a 5-part area called Oceania General. I 
 have completed 2 pars of this area, and am giving itto the general public. All 
@@ -30,16 +40,6 @@ Kenneth Cavness.
 Oceania Proper, part 1 of a 5 part area. By Questor of StrangeMUD.
 Links: 00w alley/fishery
 01n island/ship, 13e white beach, 18s pier on stilts
-~
-E
-lobster crates~
-   The lobster crates are old and rotting; they look as if they couldn't hold a
-sardine.    
-~
-E
-fishnets nets~
-   The fishnets are old and are turning into dust; large holes open to the
-sides.  They don't look sturdy enough to use.    
 ~
 S
 #27801
@@ -171,7 +171,6 @@ keeping it from off-course.  You realize this will be hard work.  Seagulls
 chirp above, and wales spurt water far off into the horizon.  The wind blows
 constant- ly here.  To your west, a frothy system of cross-currents makes the
 passage look too dangerous to cross; the current is impassable to your south.
-  
 ~
 278 0 0 0 0 0
 D0

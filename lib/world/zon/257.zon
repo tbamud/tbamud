@@ -1,7 +1,7 @@
 #257
 Kaan~
 Jareth Main City~
-25700 25799 10 2 d 0 0 0 -1 -1
+25700 25799 10 2 d 0 0 0 1 33
 M 0 25704 1 25700 	(maris' wife Ilena)
 G 1 25740 100 -1 	(a blue jacket)
 G 1 25742 100 -1 	(a shield)
@@ -34,7 +34,7 @@ R 0 25748 25717 -1 	(a glowing rack of armor)
 O 0 25717 1 25748 	(a glowing rack of armor)
 R 0 25748 3096 -1 	(a social bulletin board)
 O 0 3096 99 25748 	(a social bulletin board)
-D 0 25748 3 1 	(Thieve's Guild)
+D 0 25748 3 1 	(Thieves' Guild)
 M 0 25745 1 25774 	(the waiter)
 G 1 25702 100 -1 	(a bottle)
 G 1 25703 100 -1 	(Blasco's Revenge)

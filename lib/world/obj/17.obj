@@ -1,11 +1,11 @@
 #1700
 dagger~
-a squires dagger~
+a squire's dagger~
 An old worn dagger is lying here.~
 ~
 5 gn 0 0 0 an 0 0 0 0 0 0 0
 5 1 4 11
-3 160 16 0
+3 160 16 0 0
 E
 dagger squires~
    This small dagger has an ivory handle and polished silver blade.    
@@ -15,15 +15,15 @@ A
 #1701
 lance~
 a lance~
-A 10' pole is sunk into the ground here~
+A 10 foot long pole is sunk into the ground here.~
 ~
 5 gmn 0 0 0 an 0 0 0 0 0 0 0
 4 8 3 14
-15 75 7 0
+15 75 7 0 0
 E
 lance~
-   The knight's lance is well made of a sturdy steel.  It's weight is
-encumbering, but powerful once in motion.    
+   The knight's lance is well made of a sturdy steel.  Its weight is cumbersome,
+but its powerful once in motion.
 ~
 #1702
 excalibur sword~
@@ -32,31 +32,31 @@ A beautiful dragon hilted sword lies here!~
 ~
 5 agkmno 0 0 0 an 0 0 0 0 0 0 0
 6 5 6 3
-20 540 540 0
+20 540 540 0 0
 T 1700
 T 1701
 E
 sword excalibur~
-   You run your fingers over the blue green steel of excalibur, and you feel a
+   You run your fingers over the blue green steel of Excalibur and feel a
 tingling sensation.  Your vision blurs until all you see is a blinding white
 light.  A warm sensation fills your limbs, and a sense of relaxed comfort
 permeates you.  A deep fatherlike voice says "Now that Arthur is dead, it is up
 to you to right what he wrought.  Seek out and destroy Mordred and Morgan Le
-Fey.  They are destroying Camelot." The voice and the light gradually fades
-leaving you with only a lingering warm feeling.    
+Fey.  They are destroying Camelot."  The voice and the light gradually fades
+leaving you with only a lingering warm feeling.
 ~
 #1703
 scabbard~
-Excaliburs scabbard~
+Excalibur's scabbard~
 A beautiful golden scabbard lies here!~
 ~
 12 agk 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-4 540 50 0
+4 540 50 0 0
 E
 scabbard~
-   An elegant scabbard covered in runes and jewels was made for the fabled
-sword Excalibur.    
+   This elegant scabbard, covered in runes and jewels, was made for the fabled
+sword Excalibur.
 ~
 A
 17 -3
@@ -65,11 +65,11 @@ A
 #1704
 suit plate armor~
 the plate armor~
-A suit of full plate armor gleams on the ground~
+A suit of full plate armor gleams on the ground.~
 ~
 9 kmn 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
-20 700 150 0
+20 700 150 0 0
 E
 suit plate armor~
    This large suit looks encumbering, but very protective.  The tarnished steel
@@ -82,7 +82,7 @@ A set of silver spurs lies here.~
 ~
 9 k 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-2 100 10 0
+2 100 10 0 0
 E
 spurs~
    These fancy spurs were meant for riding stubborn steeds.  The sharp thorny
@@ -92,12 +92,12 @@ A
 19 1
 #1706
 staff~
-merlins staff~
+Merlin's staff~
 A staff of two intertwined vines lies here in a circle of power!~
 ~
 4 fgop 0 0 0 ao 0 0 0 0 0 0 0
 12 3 3 30
-3 15 1 0
+3 15 1 0 0
 E
 staff~
    The staff hums strangely and small sparks occasionally flicker off both
@@ -106,11 +106,11 @@ ends.  It appears to have been magically charged.
 #1707
 gauntlets~
 the gauntlets~
-A glowing pair of burnished chain mesh gauntlets lies here~
+A glowing pair of burnished chain mesh gauntlets lies here.~
 ~
 9 gk 0 0 0 ah 0 0 0 0 0 0 0
 6 0 0 0
-3 650 65 0
+3 650 65 0 0
 E
 gauntlets~
    They appear to be in excellent condition, though just beginning to rust.  
@@ -126,11 +126,11 @@ A silken favor is here. Maybe it belongs to your lady?~
 ~
 9 gh 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 silken favor~
    The transparent material is extremely fine and well made.  It smells faintly
-of perfume and is tainted slightly pink from dye.    
+of perfume and is stained slightly pink from dye.
 ~
 A
 6 1
@@ -143,7 +143,7 @@ An exquisite emerald necklace with intricate gold settings has been left here!~
 ~
 12 gk 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-3 400 120 0
+3 400 120 0 0
 E
 emerald necklace~
    The necklace is made from fine green jewels captured in workings of silver
@@ -160,11 +160,11 @@ A bastard sword was left here.~
 ~
 5 mn 0 0 0 an 0 0 0 0 0 0 0
 5 3 5 3
-9 450 45 0
+9 450 45 0 0
 E
 bastard sword~
-   This brutal sword was made cheaply.  It's weight makes it cumbersome.  The
-tarnished metal and coiled handle are in poor condition.    
+   This brutal sword was made cheaply.  Its weight makes it cumbersome.  The
+tarnished metal and coiled handle are in poor condition.
 ~
 #1712
 wand rod~
@@ -173,7 +173,7 @@ A marble rod with a white hot tip is smouldering here.~
 ~
 3 op 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 7
-2 40 4 0
+2 40 4 0 0
 E
 wand rod~
    This white rod of marble seems to be smouldering on one end by some hidden
@@ -186,7 +186,7 @@ A flask of nice, cold Pinot Noir wine is here, just waiting to be tasted.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 15 15 2 0
-15 100 0 0
+15 100 0 0 0
 E
 wine flask~
    A cheap wine flask made from clay.  The smell of fermented grapes is almost

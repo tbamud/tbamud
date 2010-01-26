@@ -1,7 +1,16 @@
 #39
 Nivan~
 Haven~
-3900 3999 30 2 d 0 0 0 -1 -1
+3900 3999 30 2 d 0 0 0 3 14
+M 0 3955 1 3957 	(Mithroq)
+G 1 3928 100 -1 	(a wickedly curving dagger)
+G 1 3925 100 -1 	(a barbed spear)
+G 1 3926 100 -1 	(an awl pike)
+G 1 3927 100 -1 	(a jeweled dagger)
+G 1 3929 100 -1 	(a length of chain)
+G 1 3930 100 -1 	(a large flail)
+G 1 3994 100 -1 	(a merchant's sword)
+G 1 3995 100 -1 	(a commoner's sword)
 O 0 3907 1 3958 	(the bank)
 M 0 3921 1 3958 	(the bodyguard)
 E 1 3948 100 16 	(a steel longsword)
@@ -65,15 +74,6 @@ G 1 3946 100 -1 	(a chainmail coif)
 G 1 3956 100 -1 	(the banded steel leg guards)
 G 1 3957 100 -1 	(a banded steel bracer)
 G 1 3984 100 -1 	(the sparkling chainmail)
-M 0 3955 1 3957 	(Mithroq)
-G 1 3928 10 -1 	(a wickedly curving dagger)
-G 1 3925 10 -1 	(a barbed spear)
-G 1 3926 10 -1 	(an awl pike)
-G 1 3927 10 -1 	(a jeweled dagger)
-G 1 3929 10 -1 	(a length of chain)
-G 1 3930 20 -1 	(a large flail)
-G 1 3994 10 -1 	(a merchant's sword)
-G 1 3995 10 -1 	(a commoner's sword)
 M 0 3924 2 3940 	(the citizen)
 E 1 3966 100 7 	(a black silk shirt)
 E 1 3963 100 16 	(a short, curving sword)

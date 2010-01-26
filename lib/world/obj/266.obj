@@ -2,11 +2,10 @@
 collar black spiked~
 a spiked collar~
 A spiked collar has been dropped here.~
-If this is a dog's collar, then it must've been one huge dog.    
 ~
 9 aj 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
-10 1 0 18
+10 1 0 18 0
 E
 collar black spiked~
    If this is a dog's collar, then it must've been one huge dog.  
@@ -21,12 +20,10 @@ A
 cape night~
 the Night Cape~
 A black pile of cloth is in the ground.~
-This beautiful cape looks to be made from an unknown material, at least unknown
-to this world.    
 ~
 9 bjl 0 0 0 ak 0 0 0 0 0 0 0
 6 0 0 0
-6 1 0 20
+6 1 0 20 0
 E
 cape night~
    This beautiful cape looks to be made from an unknown material, at least
@@ -42,12 +39,10 @@ A
 gloves soul stealing~
 the Gloves of Soul Stealing~
 The Gloves of Soul Stealing have been dropped here.~
-These black chain mesh gloves have stolen many souls and taken them straight to
-Hell.    
 ~
 9 ajl 0 0 0 ah 0 0 0 0 0 0 0
 8 0 0 0
-8 1 0 25
+8 1 0 25 0
 E
 gloves soul stealing~
    These black chain mesh gloves have stolen many souls and taken them straight
@@ -63,11 +58,10 @@ A
 helm shimmering~
 a shimmering helm~
 A shimmering helm is the ground.~
-This ethereal helm shimmers faintly with arcane energies.
 ~
 9 aj 0 0 0 ae 0 0 0 0 0 0 0
 9 0 0 0
-10 1 0 20
+10 1 0 20 0
 E
 helm shimmering~
    This ethereal helm shimmers faintly with arcane energies.  
@@ -80,11 +74,10 @@ A
 eyelets red glowing~
 some glowing red eyelets~
 Some glowing red eyelets are glowing on the floor.~
-They look as if they radiate evil's essence.
 ~
 9 a 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
-3 1 0 15
+3 1 0 15 0
 E
 eyelets red glowing~
    They look as if they radiate evil's essence.  
@@ -99,11 +92,10 @@ A
 breast plate spectral~
 a spectral breast plate~
 A strange looking breast plate is here.~
-It is engraved and carved in intricate ancient symbols.
 ~
 9 a 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
-15 1 0 20
+15 1 0 20 0
 E
 breast plate spectral~
    It is engraved and carved in intricate ancient symbols.  
@@ -113,12 +105,11 @@ A
 #26606
 back pack~
 a backpack~
-A strong looking brown leather backpack lays here on the floor.~
-Dusty and worn, it looks very usable.
+A strong looking brown leather backpack lies here on the floor.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 300 1 -1 0
-10 1 0 0
+10 1 0 0 0
 E
 backpack pack~
    Dusty and worn, it looks very usable.  
@@ -127,11 +118,10 @@ backpack pack~
 stake wooden~
 a wooden stake~
 Someone left a wooden stake here.~
-It looks to have been fashioned more as a weapon than as a tool for anchoring.
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 2 4 14
-5 1 0 0
+5 1 0 0 0
 E
 stake wooden~
    It looks to have been fashioned more as a weapon than as a tool for
@@ -145,11 +135,10 @@ A
 garlic string~
 a string of garlic~
 A string of garlic has been left here.~
-It is long enough to be worn around neck or waist, take your pick.
 ~
 11 gi 0 0 0 acl 0 0 0 0 0 0 0
 0 0 0 0
-7 1 0 0
+7 1 0 0 0
 E
 garlic string~
    It is long enough to be worn around neck or waist, take your pick.  

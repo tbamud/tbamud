@@ -188,23 +188,23 @@ end
 (1968)~
 2 c 100
 *~
-if %actor.level% >= 33
-return 0
+if %actor.level% >= 31
+  return 0
 elseif %cmd% == wriggle
-%at% 1993 %echo% The cocoon wriggles frantically.
-%send% %actor% You wriggle frantically within the cocoon.
+  %at% 1993 %echo% The cocoon wriggles frantically.
+  %send% %actor% You wriggle frantically within the cocoon.
 elseif %cmd.mudcommand% == look
-%send% %actor% All you can see is the sticky strands of cobweb covering your face.
+  %send% %actor% All you can see is the sticky strands of cobweb covering your face.
 elseif %cmd% == test
-return 0
+  return 0
 elseif %cmd% == gozz
-return 0
+  return 0
 elseif %cmd.mudcommand% == gossip
-return 0
+  return 0
 elseif %cmd% == who
-return 0
+  return 0
 else
-%send% %actor% Wriggling is just about all you can do when you're wrapped up in webbing.
+  %send% %actor% Wriggling is just about all you can do when you're wrapped up in webbing.
 end
 ~
 #1922
@@ -1135,23 +1135,23 @@ end
 wait 2 s
 eval where %actor.room%
 if %where.vnum% == 1918 || %where.vnum% == 1919 || %where.vnum% == 1920
-%send% %actor% The wood begins to creak in protest of its extra burden.
+  %send% %actor% The wood begins to creak in protest of its extra burden.
 end
 wait 2 s
 eval where %actor.room%
 if %where.vnum% == 1918 || %where.vnum% == 1919 || %where.vnum% == 1920
-%send% %actor% You begin to feel the trunk sloping gradually downward as the wood groans.
+  %send% %actor% You begin to feel the trunk sloping gradually downward as the wood groans.
 end
 wait 2 s
 eval where %actor.room%
 if %where.vnum% == 1918 || %where.vnum% == 1919 || %where.vnum% == 1920
-%send% %actor% The sound of gurgling mud fills your ears, the trunk starting to sink faster.
+  %send% %actor% The sound of gurgling mud fills your ears, the trunk starting to sink faster.
 end
 wait 2 s
 eval where %actor.room%
 if %where.vnum% == 1918 || %where.vnum% == 1919 || %where.vnum% == 1920
-%send% %actor% All of a sudden, you feel the trunk lunge forward, mud rushing in all around you as the mud swallows you and the tree whole.
-%damage% %actor% 99999
+  %send% %actor% All of a sudden, you feel the trunk lunge forward, mud rushing in all around you as the mud swallows you and the tree whole.
+  %damage% %actor% 99999
 end
 ~
 #1971
@@ -1296,7 +1296,7 @@ while %actor.inventory%
   eval num2 %random.99% + 1900
   %at% %num2% %load% obj %stolen%
 done
-eval i 0
+set i 0
 while %i% < 18
   eval item %%actor.eq(%i%)%%
   if %item%

@@ -20,13 +20,13 @@ of the jungle.
 0 -1 31201
 E
 credits~
-*Leper Island
-*Written by Kaan for Cities of Glory
+   *Leper Island
+   *Written by Kaan for Cities of Glory
 Level: 45 - 50
 87 rooms
 21 mobs
 7 objs
-Conenector Zones: Yllythad Sea
+Connector Zones: Yllythad Sea
 This is a fair-sized island out in a secluded part of the sea which is
 populated by lepers who have been banished or thrown out of their
 homeland. This was mainly built as a good place for high levels to get
@@ -244,12 +244,12 @@ D0
 ~
 0 -1 31212
 E
-clothing~
+basket~
    The clothing is folded very neatly within, kept in an exact spot on the floor
 away from the main walkthrough.  
 ~
 E
-basket~
+clothing~
    The clothing is folded very neatly within, kept in an exact spot on the floor
 away from the main walkthrough.  
 ~

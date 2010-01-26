@@ -1,7 +1,9 @@
 #0
 Rumble~
 The Builder Academy Zone~
-0 99 10 2
+0 99 30 2 d 0 0 0 -1 -1
+M 0 34 1 8 	(Chuck Norris)
+M 0 29 2 7 	(Epictetus)
 D 0 20 0 2 	(Advanced Trigedit Example)
 M 0 24 1 20 	(the example gateguard)
 G 1 46 99 -1 	(the gateguard key)
@@ -19,7 +21,6 @@ P 1 85 99 84 	(a small pick)
 M 0 29 2 90 	(Epictetus)
 R 0 90 89 -1 	(a pair of iron shackles)
 O 0 89 99 90 	(a pair of iron shackles)
-M 0 29 2 7 	(Epictetus)
 M 0 28 2 6 	(Carl Von Clausewitz)
 M 0 28 2 93 	(Carl Von Clausewitz)
 D 0 97 2 2 	(A Prison Cell)

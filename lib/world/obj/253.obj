@@ -5,7 +5,7 @@ A steel suit of MoS is laying here on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
-11 450 0 30
+11 450 0 30 0
 E
 armor suit steal~
    Polished to a high sheen, this suit of steel completely encases the upper
@@ -24,7 +24,7 @@ A steel sword with a blade-breaker guard sits on the ground.~
 ~
 5 a 0 0 0 an 0 0 0 0 0 0 0
 4 3 4 14
-5 1000 0 0
+5 1000 0 0 0
 E
 sword steel~
    This finely crafted weapon still shines when the light hits it right, it
@@ -37,7 +37,7 @@ An MoS shield has been left here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
-5 12 0 30
+5 12 0 30 0
 E
 shield steel~
    This shield bears the sigil of the Militant Order of the Sword two swords,
@@ -50,7 +50,7 @@ A clipboard has been left here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 1 0 0
+3 1 0 0 0
 E
 clipboard board~
    Brown wood surface, steel clip affixed to the wood - yep, it's a clipboard.
@@ -69,7 +69,7 @@ A steel wrist band have been left here.~
 ~
 9 a 0 0 0 am 0 0 0 0 0 0 0
 7 0 0 0
-5 46 0 0
+5 46 0 0 0
 E
 bands wrist steel~
    Quite simply, you wear it on your wrist and it is steel.  
@@ -83,11 +83,11 @@ A
 #25305
 banner~
 a gray piece of cloth~
-A gray piece of cloth lies thrown in a  corner.~
+A gray piece of cloth lies thrown in a corner.~
 ~
 12 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-5 100 0 0
+5 100 0 0 0
 E
 banner~
    This cloth tapestry depicts the Elven Lore of the Ancients, from the

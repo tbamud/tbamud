@@ -7,37 +7,33 @@ if %objectname% != feather
   return 0
   halt
 end
- 
 eval targetname %arg.cdr%
 if !(%targetname%)
   return 0
   halt
 end
- 
 switch %self.vnum%
   case 12502
     set new_vnum 12520
     set fire 1
-    break
+  break
   case 12520
     set new_vnum 12521
     set fire 1
-    break
+  break
   case 12521
     set new_vnum 12522
     set fire 1
-    break
+  break
   case 12522
     set new_vnum 12522
     set fire 0
-    break
+  break
 done
- 
 otransform %new_vnum%
- 
 if %fire%
-  dg_cast 'portal' %targetname%
-  %echo% A portal springs to life in front of you.
+  %targetname%'portal' %targetname%
+  %echo% A portal springs to life in front of you and immediately closes.
 else
   %send% %actor% The feather seems powerless.
 end

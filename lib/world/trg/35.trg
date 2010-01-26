@@ -8,9 +8,9 @@ Dump - 3578~
 eval value %object.cost% / 10
 %purge% %object%
 if %value% > 50
-  eval value 50
+  set value 50
 elseif %value% < 1
-  eval value 1
+  set value 1
 end
 if %actor.level% < 3
   nop %actor.exp(%value%)%

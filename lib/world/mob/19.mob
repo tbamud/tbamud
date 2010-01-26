@@ -558,9 +558,9 @@ A spider ball stands here.
 ~
 It looks unfinished.
 ~
-8 0 0 0 0 0 0 0 0 E
-0 20 10 1d1+0 1d1+0
-0 0
+10 0 0 0 0 0 0 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
 8 8 0
 E
 #1997
@@ -572,9 +572,9 @@ A sexy stripper poses flirtatiously.
 ample assets.  Long platinum blonde hair swishes around her hips, and a
 mischievous sparkle glimmers in her green eyes.
 ~
-8 0 0 0 0 0 0 0 0 E
-0 20 10 1d1+0 1d1+0
-0 0
+10 0 0 0 0 0 0 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
 8 8 2
 E
 T 1930
@@ -589,9 +589,9 @@ matted hair spring out haphazardly from this creature's sweaty body.  The only
 thing revealing that there is in fact a man inside, are the human eyes blinking
 from two cut-out sockets.
 ~
-8 0 0 0 0 0 0 0 0 E
-0 20 10 1d1+0 0d1+0
-0 0
+10 0 0 0 0 0 0 0 0 E
+1 20 0 0d0+10 1d2+0
+10 100
 8 8 1
 E
 T 1932
@@ -604,9 +604,9 @@ A deliverer stands here.
    This mob is in neutral form, ready to take on whatever shape you request for
 your singing telegram!
 ~
-8 0 0 0 0 0 0 0 0 E
-0 20 10 1d1+0 1d1+0
-0 0
+10 0 0 0 0 0 0 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
 8 8 0
 E
 T 1949

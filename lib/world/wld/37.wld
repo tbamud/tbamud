@@ -151,13 +151,13 @@ Behind it you see dirt walls.
 ~
 0 -1 3714
 E
+bite marks bitemarks~
+   The bitemarks are deep, and approximately 8" wide.  
+~
+E
 hole~
    The hole is about 3 feet high, and must've been dug out by big rats.  It's
 full of marks of teeth.  
-~
-E
-bite marks bitemarks~
-   The bitemarks are deep, and approximately 8" wide.  
 ~
 S
 #3708
@@ -725,7 +725,7 @@ however long you would hold your breath, that hole would most definitely kill
 you by sheer pressure from the water.  Also you notice several chests obviously
 hidden by someone who thought this a safe place.  You can't fight the water
 without risking to fall into the hole, so you can only get out through a little
-hole high up on the eastern wall.  Q y redit 3737 2
+hole high up on the eastern wall.
 ~
 37 32777 0 0 0 0
 D1

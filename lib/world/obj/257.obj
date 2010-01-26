@@ -5,7 +5,7 @@ Some fermented beer in a cracked bottle is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 50 50 1 0
-50 4 0 0
+50 4 0 0 0
 #25701
 bottle imported beer~
 a bottle~
@@ -13,7 +13,7 @@ A bottle of imported beer has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 1 0
-10 5 0 0
+10 5 0 0 0
 #25702
 ale stout bottle malt liquor ale~
 a bottle~
@@ -21,7 +21,7 @@ A dark bottle of stout malt liquor has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 3 0
-10 7 0 0
+10 7 0 0 0
 #25703
 firebreather blasco-s bottle revenge firebreather~
 Blasco's Revenge~
@@ -29,7 +29,7 @@ A bottle of Blasco's Revenge has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 7 0
-10 5 0 0
+10 5 0 0 0
 #25704
 local speciality sally's special local~
 a bottle of Sally's Special~
@@ -37,7 +37,7 @@ A dark bottle of Sally's Special has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 8 0
-10 5 0 0
+10 5 0 0 0
 #25705
 key dull metal~
 a key of dull metal~
@@ -45,7 +45,7 @@ A key made of a dull metal is lying on the ground here.~
 ~
 18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 3100 0 0 0
-1 1 0 0
+1 1 0 0 0
 #25706
 sunglasses mirrored glasses~
 some mirrored sunglasses~
@@ -53,7 +53,7 @@ A pair of orange-tinted, mirrored sunglasses sit here.~
 ~
 9 q 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 sunglasses glasses mirrored~
    Lenses in the shape of rectangles, these orange-tinted mirrored sunglasses
@@ -66,7 +66,7 @@ A tie dyed robe sits here.~
 ~
 9 q 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 tie dyed robe~
    Colored in every shade under the rainbow, this robe is sure to attract
@@ -79,7 +79,7 @@ A round fishing hat has been left here.~
 ~
 9 q 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 round fishing hat~
    Round, rumpled, and covered in lures, this hat must have been someone's
@@ -92,7 +92,7 @@ Some waybread has been put here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 waybread bread~
    The waybread is the traditional feed of elves when traveling, they call it
@@ -105,7 +105,7 @@ Some dried rations has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 18 0 0 0
-1 7 0 0
+1 7 0 0 0
 #25711
 apple~
 an apple~
@@ -113,7 +113,7 @@ A nice looking delicious red apple has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-1 2 0 0
+1 2 0 0 0
 #25712
 hoagie sandwich~
 a hoagie~
@@ -121,7 +121,7 @@ A tasty looking hoagie has been dropped here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
-1 5 0 0
+1 5 0 0 0
 #25713
 whisky shot bourbon whisky~
 a shot~
@@ -129,7 +129,7 @@ A shot of bourbon is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 5 0
-5 5 0 0
+5 5 0 0 0
 #25714
 nachos nacho~
 some nachos with cheese~
@@ -137,7 +137,7 @@ Some nachos have been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 nachos nacho~
    They have cheese on them.  Looks like one of The Goat's specials.  
@@ -149,7 +149,7 @@ A heaping chest of coins sits in the floor here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #25716
 bench~
 the bench~
@@ -157,7 +157,7 @@ A white painted bench is standing here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 bench~
    It is a quite heavy but very comfortable bench.  It is placed with its front
@@ -171,7 +171,7 @@ A golden, glowing rack of armor and weapons rests here against one wall.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 glowing rack armor~
    A golden broadsword, chain mail shirt, leggings, and helm rest on the rack.
@@ -184,7 +184,7 @@ A menu from the Kitty Kat Club sits at your table.~
 ~
 12 q 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 menu~
                               ****** THE KITTY KAT CLUB ******
@@ -205,7 +205,7 @@ A bag of gold coins sits here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 0 0
-10 1 0 0
+10 1 0 0 0
 #25720
 dagger~
 a dagger~
@@ -213,7 +213,7 @@ A dagger with a long thin blade is here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
-1 10 0 0
+1 10 0 0 0
 #25721
 sword small~
 a small sword~
@@ -221,7 +221,7 @@ A small sword lies here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
-3 18 0 0
+3 18 0 0 0
 #25722
 aqua potion~
 an aqua potion~
@@ -229,7 +229,7 @@ An aqua potion has been left here.~
 ~
 10 a 0 0 0 a 0 0 0 0 0 0 0
 1 16 -1 -1
-3 25 0 0
+3 25 0 0 0
 #25723
 club wooden~
 a wooden club~
@@ -237,7 +237,7 @@ A simple looking wooden club is here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 3 7
-3 8 0 0
+3 8 0 0 0
 #25724
 mace~
 a mace~
@@ -245,7 +245,7 @@ A mace is here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 5
-6 15 0 0
+6 15 0 0 0
 #25725
 flail large~
 a flail~
@@ -253,7 +253,7 @@ A large flail is here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 7
-6 25 0 0
+6 25 0 0 0
 #25726
 dark pin-striped suit~
 a dark pin-striped suit~
@@ -261,7 +261,7 @@ A dark, pin-striped suit sits here.~
 ~
 9 q 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-5 100 0 0
+5 100 0 0 0
 #25727
 brass knuckles~
 some brass knuckles~
@@ -269,7 +269,7 @@ Some brass knuckles are here.~
 ~
 5 nq 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 7
-5 1 0 0
+5 1 0 0 0
 #25728
 joint cigarette pot herb spleef~
 a joint~
@@ -277,7 +277,7 @@ An un-smoked joint has been left here.~
 ~
 12 abq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #25729
 nose plugs~
 a pair of nose plugs~
@@ -285,7 +285,7 @@ A pair of nose plugs attached to a head strap have been left here.~
 ~
 9 q 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #25730
 torch~
 a torch~
@@ -293,7 +293,7 @@ A large torch.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 24 0
-1 3 0 0
+1 3 0 0 0
 #25731
 lantern brass~
 a lantern~
@@ -301,7 +301,7 @@ A brass lantern is here.~
 ~
 1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 96 0
-1 7 0 0
+1 7 0 0 0
 #25732
 bag~
 a bag~
@@ -309,7 +309,7 @@ A small bag is here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 0 0 0
-2 5 0 0
+2 5 0 0 0
 #25733
 backpack~
 a backpack~
@@ -317,7 +317,7 @@ A backpack is here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 10 0 0 0
-5 10 0 0
+5 10 0 0 0
 #25734
 shoe horn~
 a shoe horn~
@@ -325,7 +325,7 @@ A shoe horn has been left here.~
 ~
 12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #25735
 fountain water~
 the large fountain~
@@ -333,7 +333,7 @@ A large fountain with a statue of a man holding a sword aloft dominates the town
 ~
 23 cdeg 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
-505 0 0 0
+505 0 0 0 0
 E
 large fountain statue~
    It is a well crafted fountain, carved from a single piece of granite
@@ -347,7 +347,7 @@ A sanitary footy sits on the ground.~
 ~
 9 q 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
-1 1 0 0
+1 1 0 0 0
 #25737
 whisky dirty glass rye whisky~
 a dirty glass~
@@ -355,7 +355,7 @@ A dirty glass of rye is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 5 0
-10 5 0 0
+10 5 0 0 0
 #25738
 wine white glass wine~
 a glass~
@@ -363,7 +363,7 @@ A glass of white wine is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 2 0
-10 15 0 0
+10 15 0 0 0
 #25739
 local speciality champagne local~
 a champagne glass~
@@ -371,7 +371,7 @@ A champagn glass sits on the ground.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 4 4 8 0
-10 25 0 0
+10 25 0 0 0
 #25740
 jacket blue~
 a blue jacket~
@@ -379,7 +379,7 @@ A blue jacket is lying on the floor.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-20 45 0 0
+20 45 0 0 0
 #25741
 leather gloves~
 a pair of leather gloves~
@@ -387,7 +387,7 @@ A pair of leather gloves lie here.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
-15 15 0 0
+15 15 0 0 0
 #25742
 shield wooden~
 a shield~
@@ -395,7 +395,7 @@ A small wooden shield is lying on the ground.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 2 0 0 0
-3 100 0 0
+3 100 0 0 0
 #25743
 pants pair black leather~
 a pair of black leather pants~
@@ -403,7 +403,7 @@ A pair of black leather pants lie on the ground.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 5 0 0 0
-10 30 0 0
+10 30 0 0 0
 #25744
 helm leather~
 a leather helm~
@@ -411,7 +411,7 @@ A leather helm is lying on the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
-20 240 0 0
+20 240 0 0 0
 #25745
 jacket scale~
 a scale mail jacket~
@@ -419,7 +419,7 @@ A scale mail jacket is lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-40 1000 0 0
+40 1000 0 0 0
 #25746
 plate bronze breast~
 a bronze breast plate~
@@ -427,7 +427,7 @@ A bronze breast plate is lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-50 700 0 0
+50 700 0 0 0
 #25747
 poster wanted~
 a wanted poster~
@@ -435,7 +435,7 @@ A wanted poster hangs on the wall here.~
 ~
 12 jklq 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 wanted poster~
    The poster has no picture, only a short description:
@@ -453,7 +453,7 @@ A wanted poster hangs on the wall here.~
 ~
 12 jklq 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 wanted poster~
    The poster has no picture, only a short description:
@@ -471,7 +471,7 @@ A dustpan has been left here.~
 ~
 12 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 2 0 0
+2 2 0 0 0
 A
 19 2
 A
@@ -482,8 +482,8 @@ a scroll of identify~
 A scroll has carelessly been left here.~
 ~
 2 g 0 0 0 ao 0 0 0 0 0 0 0
-12 -1 -1 -1
-1 200 0 0
+1 52 -1 -1
+1 5000 0 0 0
 E
 scroll identify~
    The scroll has a magic formula drawn upon it:
@@ -503,7 +503,7 @@ A small yellow potion has carelessly been left here.~
 ~
 10 g 0 0 0 ao 0 0 0 0 0 0 0
 12 19 -1 -1
-1 20 0 0
+1 20 0 0 0
 E
 potion yellow~
    The potion has a small label 'Detect The Invisible'.  
@@ -515,7 +515,7 @@ A scroll has carelessly been left here.~
 ~
 2 g 0 0 0 ao 0 0 0 0 0 0 0
 12 42 -1 -1
-4 1000 0 0
+4 1000 0 0 0
 E
 scroll recall~
    The scroll has written a formulae of 'Word of Recall' upon it.  
@@ -527,7 +527,7 @@ A grey wand has carelessly been left here.~
 ~
 3 g 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 29
-2 400 0 0
+2 400 0 0 0
 E
 wand grey~
    The wand is an old dark grey stick.  You notice a small symbol etched at
@@ -545,7 +545,7 @@ A gnarled staff has been carelessly abondoned.~
 ~
 4 g 0 0 0 ao 0 0 0 0 0 0 0
 12 1 1 38
-17 700 0 0
+17 700 0 0 0
 E
 staff gnarled~
    The staff is made of old oak, and is around five feet long. It fits
@@ -566,7 +566,7 @@ A metal staff has carelessly been left here.~
 ~
 4 g 0 0 0 ao 0 0 0 0 0 0 0
 10 3 3 15
-7 850 0 0
+7 850 0 0 0
 E
 staff metal~
    The staff is made of metals unknown to you.  
@@ -578,7 +578,7 @@ A heap of gold coins.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
-50 1 0 0
+50 1 0 0 0
 #25757
 remove curse scroll~
 a scroll of remove curse~
@@ -586,7 +586,7 @@ A scroll has been left here.~
 ~
 2 0 0 0 0 a 0 0 0 0 0 0 0
 1 35 -1 -1
-1 250 0 0
+1 250 0 0 0
 #25758
 pile slips deposit banks~
 a deposit slip~
@@ -594,7 +594,7 @@ A pile of deposit slips sit here on a table.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 50 0 0
+1 50 0 0 0
 #25759
 pile slips slip withdrawal~
 a withdrawal slip~
@@ -602,7 +602,7 @@ A pile of withdrawal slips sit here on a table.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #25760
 raft~
 a raft~
@@ -610,7 +610,7 @@ A raft has been left here.~
 ~
 22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-50 400 0 0
+50 400 0 0 0
 E
 raft~
    The raft looks very primitive.  
@@ -622,7 +622,7 @@ A canoe has been left here.~
 ~
 22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-32 200 0 0
+32 200 0 0 0
 E
 canoe~
    The canoe looks to be made from white ash.  A strong but light wood that can
@@ -635,7 +635,7 @@ A row boat has been left here.~
 ~
 22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-32 55 0 0
+32 55 0 0 0
 #25763
 rubber ducky floatation device~
 a rubber ducky~
@@ -643,7 +643,7 @@ A floatation device has been left here.~
 ~
 22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 200 0 0
+10 200 0 0 0
 E
 rubber ducky flotation device~
    You have got to be kidding!  No one would actually use this would they?  
@@ -657,7 +657,7 @@ A red lager has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 3 0
-8 5 0 0
+8 5 0 0 0
 #25765
 water cup water~
 a cup~
@@ -665,7 +665,7 @@ A cup has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 0 0
-8 5 0 0
+8 5 0 0 0
 #25766
 bright green checkered yellow pants~
 a bright checkered pants~
@@ -673,7 +673,7 @@ A pair of bright green and yellow checkered pants has been left here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
-5 20 0 0
+5 20 0 0 0
 E
 bright green yellow checkered pants~
    Reading the tag in the back, you see that it was Made in Jareth, by Franz's
@@ -686,7 +686,7 @@ A hot pink golfers cap with a ball in top rests in the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-1 15 0 0
+1 15 0 0 0
 #25768
 red satin shirt~
 a red satin shirt~
@@ -694,7 +694,7 @@ A red satin shirt lays on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
-5 20 0 0
+5 20 0 0 0
 #25769
 blue suede shoes~
 a pair of blue suede shoes~
@@ -702,7 +702,7 @@ A pair of blue suede shoes are here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-1 20 0 0
+1 20 0 0 0
 #25770
 gloves stealing~
 some black leather gloves~
@@ -710,7 +710,7 @@ A pair of black gloves have been left here.~
 ~
 9 amnpq 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
-5 700 0 0
+5 700 0 0 0
 E
 stealing gloves~
    Black, leather, with the fingers cut off, these gloves radiate power.  
@@ -724,7 +724,7 @@ A pair of low cut black boots are here.~
 ~
 9 amnpq 0 0 0 ag 0 0 0 0 0 0 0
 5 0 0 0
-5 600 0 0
+5 600 0 0 0
 A
 2 2
 #25772
@@ -734,7 +734,7 @@ A wagon sits here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 -1 0
-15 200 0 0
+15 200 0 0 0
 #25773
 hand cart~
 a hand cart~
@@ -742,7 +742,7 @@ A hand cart sits here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 300 0 -1 0
-5 100 0 0
+5 100 0 0 0
 #25774
 carriage~
 a carriage~
@@ -750,7 +750,7 @@ A carriage has been left here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 -1 0
-15 300 0 0
+15 300 0 0 0
 #25775
 tray donuts~
 a tray of stale donuts~
@@ -758,7 +758,7 @@ A tray of stale donuts sits here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 40 0 -1 0
-15 1 0 0
+15 1 0 0 0
 #25776
 syringe~
 a syringe~
@@ -766,7 +766,7 @@ A syringe has been left here.~
 ~
 3 bq 0 0 0 ao 0 0 0 0 0 0 0
 1 5 5 15
-5 1 0 0
+5 1 0 0 0
 #25777
 pool table~
 a pool table~
@@ -774,7 +774,7 @@ A beautiful regulation length pool table stands proudly in the center of the roo
 ~
 12 b 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #25778
 hot tub 3 ft pool water~
 Kaan's hot tub~
@@ -782,7 +782,7 @@ Kaan's hot tub is sunk into the northeast corner of the room.~
 ~
 12 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #25779
 water canteen water~
 a canteen~
@@ -790,7 +790,7 @@ A canteen has been set on the ground here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 45 45 15 0
-50 45 0 0
+50 45 0 0 0
 #25780
 jacque pinky finger~
 Jacque's pinky finger~
@@ -798,7 +798,7 @@ Jacque the Jackal's pinky finger lies on the ground here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 -1 0
-1 1000 0 0
+1 1000 0 0 0
 E
 jacque pinky finger~
    Is that a booger on the end?  Yuck!  
@@ -810,7 +810,7 @@ A sign hangs on the wall here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign~
    This establishment will pay any being who gives blood a flat sum of gold in
@@ -823,7 +823,7 @@ A sign hangs on the wall here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign~
    House Rules
@@ -837,7 +837,7 @@ An empty vial has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 vial~
    It's just an empty vial.  
@@ -849,7 +849,7 @@ You see a piece of blank paper lying on the floor ...you might wish to write a n
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #25785
 sign wall~
 a sign~
@@ -857,7 +857,7 @@ There is a sign hanging on the south wall.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign~
    -Training Hall-
@@ -871,7 +871,7 @@ There is a sign hanging on the wall here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign~
    -Library
@@ -887,7 +887,7 @@ A large ruby lies on the ground, collecting dust.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 300 1 0
+2 300 1 0 0
 #25788
 diamond gem~
 a glittering diamond~
@@ -895,7 +895,7 @@ A glittering diamond lies at your feet.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-8 634 1 0
+8 634 1 0 0
 #25789
 sapphire gem~
 a brilliant sapphire~
@@ -903,7 +903,7 @@ A brilliant sapphire lies here, twinkling happily.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 723 0 0
+2 723 0 0 0
 #25790
 potion green deep~
 a deep-green potion~
@@ -911,7 +911,7 @@ A deep-green potion has been left here.~
 ~
 10 a 0 0 0 a 0 0 0 0 0 0 0
 1 35 35 35
-2 20 0 0
+2 20 0 0 0
 #25791
 nuts berries~
 some nuts and berries~
@@ -919,7 +919,7 @@ An assortment of nuts and berries have been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-2 10 0 0
+2 10 0 0 0
 #25796
 board social bulletin~
 a social bulletin board~
@@ -927,14 +927,14 @@ A large, sociable bulletin board is mounted on a wall here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
-E
-box~
-   If you can read this, the drop box is not working.  
-~
+0 0 0 0 0
 E
 drop box message~
    Use 'look box' to write a message.  
+~
+E
+box~
+   If you can read this, the drop box is not working.  
 ~
 #25797
 board frozen bulletin~
@@ -943,14 +943,14 @@ A large bulletin board is here, carved from a block of ice.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
-E
-board~
-   If you can read this, the board is not working.  
-~
+0 0 0 0 0
 E
 freeze bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #25798
 board holy bulletin~
@@ -959,14 +959,14 @@ A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
-E
-board~
-   If you can read this, the board is not working.  
-~
+0 0 0 0 0
 E
 holy bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #25799
 board bulletin~
@@ -975,13 +975,13 @@ A large bulletin board is mounted on a wall here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
-E
-board~
-   If you can read this, the board is not working.  
-~
+0 0 0 0 0
 E
 bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 $~

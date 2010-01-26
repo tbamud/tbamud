@@ -1,7 +1,7 @@
 #40
 Redferne~
 Mines of Moria~
-4000 4099 20 2 d 0 0 0 -1 -1
+4000 4099 20 2 d 0 0 0 3 13
 M 0 4000 1 4030 	(the snake)
 G 1 4001 1 -1 	(a goblin's carcass)
 P 1 4002 1 4001 	(some coins)

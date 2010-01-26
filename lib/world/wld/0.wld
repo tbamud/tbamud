@@ -42,6 +42,10 @@ and they will advance you to begin your training.
    If would like to check out the tbaMUD World as a player connect to tbamud.com 4000.
 ~
 0 24 0 0 0 0
+D0
+~
+~
+0 0 3
 S
 T 199
 #3
@@ -64,12 +68,11 @@ S
 #4
 The Beginning~
    By simply following the different halls new builders will be taught the
-basics of building on a Circlemud. If new to immortality and building then I
+basics of building on a tbaMUD. If new to immortality and building then I
 highly recommend the hallway to the north for an overview of immortal commands.
 For those that have a grasp on all commands listed under @RWIZHELP@n continue to
 the east. TBA is constantly striving to improve upon the training process so
-please use the typo and idea commands liberally. For example: idea you need
-more cow bell in the zone. Typo in help telnet teh = the.
+please use the typo and idea commands liberally.
 ~
 0 24 0 0 0 0
 D0
@@ -93,7 +96,7 @@ Please realize we handle a lot of newbie builders with a very minimal staff so
 be patient, learn to use the helpfiles and have fun.
    Read the following help files on TBA's training process:
 @RHELP TRIALROOM
-HELP BUILDER-REPORT
+HELP REPORT-EXAMPLE
 HELP LEVEL
 HELP ADVERTISING@n
 ~
@@ -379,7 +382,6 @@ HELP PATHS@n
 in the past: Please mudmail me any good links to add.
 @RHELP DOCUMENTATION
 HELP OFFLINE
-HELP HCONTROL@n
 ~
 0 8 0 0 0 0
 D1

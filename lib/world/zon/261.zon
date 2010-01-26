@@ -1,7 +1,8 @@
 #261
 Kaan~
 Inna & Igor's Castle~
-26100 26199 20 1 d 0 0 0 -1 -1
+26100 26199 20 1 d 0 0 0 18 30
+O 0 26100 1 26114 	(a painting)
 M 0 26100 1 26100 	(the butler)
 E 1 26118 4 12 	(a black overcoat)
 E 1 26117 4 7 	(some black slacks)
@@ -56,8 +57,6 @@ O 0 26104 4 26122 	(a white maid's smock)
 M 0 26112 1 26121 	(Inna's cat)
 O 0 26101 1 26121 	(the glistening pool of water)
 D 0 26118 1 1 	(Stairwell)
-O 0 26100 1 26114 	(a portrait)
-M 0 26110 1 26114 	(the Floating Face)
 M 0 26106 3 26113 	(a maid)
 E 1 26102 4 5 	(a black maid's dress)
 E 1 26104 4 12 	(a white maid's smock)

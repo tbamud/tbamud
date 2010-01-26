@@ -1,14 +1,15 @@
 #30
 DikuMUD~
 Northern Midgaard~
-3000 3099 15 2 d 0 0 0 -1 -1
+3000 3099 15 2 d 0 0 0 1 33
 M 0 3011 1 3000 	(the travelling saleswoman)
 G 1 3006 99 -1 	(the teleporter)
 R 0 3000 3099 -1 	(a bulletin board)
 O 0 3099 99 3000 	(a bulletin board)
-M 0 3012 1 3063 	(a kind soul)
+M 0 3013 1 3001 	(the newbie tour guide)
 R 0 3001 3034 -1 	(an automatic teller machine)
 O 0 3034 99 3001 	(an automatic teller machine)
+M 0 3012 1 3063 	(a kind soul)
 M 0 3045 1 3022 	(the waiter)
 G 1 3002 100 -1 	(a bottle)
 G 1 3003 100 -1 	(a bottle)

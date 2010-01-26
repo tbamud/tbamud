@@ -1,11 +1,11 @@
 #1700
-knight reknown~
+knight renown~
 a knight~
-A knight of reknown slaps you with his gauntlet and challenges you!
+A knight of renown slaps you with his gauntlet and challenges you!
 ~
-   The knight of reknown is mounted on a warhorse, uses a lance, and you can
-see his morningstar on his horse.  His colors fly from a banner carried by his
-squire.    
+   The knight of renown is mounted on a warhorse, balancing a lance, and you can
+see his morningstar on his saddle.  His colors fly from a banner carried by his
+squire.
 ~
 65546 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -31,7 +31,7 @@ king arthur~
 King Arthur~
 King Arthur sits upon his throne awaiting the return of the grail.
 ~
-   King Arthur is a black bearded barrel chested man.  He is in full plate
+   King Arthur is a black bearded, barrel-chested man.  He is in full plate
 armor emblazoned with the sign of a gold dragon.  He carries Excalibur in a
 strange looking sheath.    
 ~
@@ -60,7 +60,7 @@ squire~
 a squire~
 A squire is here on an errand from his lord.
 ~
-   He is practicing diligently to becom a knight.    
+   He is practicing diligently to become a knight.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -87,9 +87,9 @@ lamorak knight~
 Sir Lamorak~
 Sir Lamorak hefts his bastard sword as he considers you.
 ~
-   Sir Lamorak, son of King Pellinore, lover of Queen Morgawse, vanquisher of
-the twelve of Morgan le Fey, and enemy of Sir Gawaine is fully armored and
-mounted.    
+   Sir Lamorak, son of King Pellinore, lover of Queen Morgause, vanquisher of
+the twelve of Morgan le Fey, and enemy of Sir Gawaine, is fully armored and
+mounted.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -102,7 +102,7 @@ lancelot~
 Sir Lancelot~
 Sir Lancelot, champion of the Round Table, smiles at you.
 ~
-   Sir Lancelot is wearing polished steel armor.  His visor is up, and his hand
+   Sir Lancelot is wearing polished steel armor.  His visor is up and his hand
 raises in salute to you.    
 ~
 65546 0 0 0 80 0 0 0 0 E
@@ -113,11 +113,12 @@ E
 #1708
 woman morgan~
 Morgan Le Fey~
-A beautiful woman with an inviting smile beckons to you!
+A beautifully dressed woman beckons you closer.
 ~
-   Morgan le Fey, evil enchantress, scourge of Camelot, snarls as you have seen
-through her disguise.  She is wearing silk robes which do little to hide her
-ugly and hateful, twisted body.    
+   Upon closer inspection you realize the woman is Morgan le Fey, the evil
+enchantress and the scourge of Camelot.  She snarls as you have seen through her
+disguise.  She is wearing silk robes which do little to hide her ugly, hateful,
+and twisted body.  
 ~
 2120 0 0 0 1572948 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -128,11 +129,11 @@ E
 #1709
 lady~
 a lady~
-A lady in waiting bats her eyes at you!
+A lady-in-waiting bats her eyes at you!
 ~
-   The lady in waiting snuggles up closer to you, pressing you for the details
+   The lady-in-waiting snuggles up closer to you, pressing you for the details
 of your last campaign.  She is clad in a long gown and garlands of flowers are
-in her hair.    
+in her hair.  
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -141,12 +142,11 @@ in her hair.
 BareHandAttack: 8
 E
 #1710
-queen gwenivere~
-Queen gwenivere~
+queen guinevere~
+Queen Guinevere~
 A raven haired queen winks at you from behind her fan.
 ~
-   Gwenivere tells you a sorry tale about her forbidden love with Lancelot.  
-
+   Guinevere tells you a sorry tale about her forbidden love with Lancelot.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -160,8 +160,8 @@ a nobleman~
 A nobleman stands here in all his finery.
 ~
    The nobleman wears the finest cotton and wool clothing available.  Riches
-adorn him in the form of chains, and a rather heavy looking purse.  He seems
-intent on going somewhere.    
+adorn him in the form of chains and a rather heavy looking purse.  He seems
+intent on going somewhere.
 ~
 76 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -202,8 +202,7 @@ troubadour~
 a troubadour~
 A troubadour is here, strumming a merry tune.
 ~
-   The troubadour is playing on a mandolin, and is dressed in festival colors.
-  
+   The troubadour, dressed in festival colors, is playing on a mandolin.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -298,7 +297,8 @@ horse warhorse~
 a horse~
 A medium warhorse is tethered here.
 ~
-   The medium warhorse is has heavy tack and leather barding.    
+   This medium warhorse has heavy tack and leather barding.  It looks well
+trained and waits patiently to be taken out of its stall.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -324,7 +324,7 @@ slave~
 a slave~
 A slave is here, cringing from everything.
 ~
-   The slave is dirty and unkempt, but she retains a vestage of her former
+   The slave is dirty and unkempt, but she retains a vestige of her former
 station and bearing.    
 ~
 72 0 0 0 0 0 0 0 0 E
@@ -335,12 +335,12 @@ E
 #1724
 scot clan chief~
 the scottish clan chief~
-The Scot clan chief is here, seizing his clansman's women and whiskey!
+The Scot clan chief is here, seizing his clansmen's women and whiskey!
 ~
    The Scot clan chief towers over you.  He looks like he could toss a tree end
 over end and have it land pointing away from him.  He looks like he could heave
-a sheaf with a fork more than 20' in the air.  He looks like he could down a
-barrel of ale and still have his whiskey.  He looks...    
+a sheaf with a fork more than 20 feet in the air.  He looks like he could down a
+barrel of ale and still have his whiskey.  He looks...
 ~
 65546 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -353,9 +353,9 @@ scottish clansmen~
 a scottish clansman~
 A Scot clansman is here, ready to seize your women and whiskey!
 ~
-   The Scot clansman is wearing a kilt, leather sandles, and has a long swath
-of cloth wrapped around his shoulders.  He carries a beautiful claymore which
-is about 4' long.    
+   The Scot clansman is wearing a kilt and leather sandals and has a long swath
+of cloth wrapped around his shoulders.  He carries a beautiful claymore which is
+about four feet long.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -406,9 +406,9 @@ A ram is guarding his flock.
 BareHandAttack: 9
 E
 #1729
-oxen~
-a oxen~
-An oxen is pulling a plow, tilling the fields.
+ox~
+an ox~
+An ox is pulling a plow, tilling the fields.
 ~
    A large beast with some impressive horns.  It looks like it could plow all
 day.    
@@ -424,8 +424,8 @@ archbishop bishop~
 the archbishop~
 The Archbishop of Cantebury is praying that you'll leave him alone.
 ~
-   You've heard about this guy before, he is close to king arthur, has known
-him most of his life.    
+   You've heard about this guy before.  He is close to King Arthur, having known
+him most of his life.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -464,8 +464,8 @@ cow~
 a cow~
 A cow looks at you stupidly.
 ~
-   This cow has a long thick brown hair covering it that is matted in mud and
-refuse.  Flies are everywhere.  You try to keep your distance.    
+   The thick brown hair covering this cow is matted in mud and refuse.  Flies
+are everywhere.  You try to keep your distance.
 ~
 65608 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -491,7 +491,7 @@ sheep dog~
 a sheep dog~
 A sheep dog barks at you playfully.
 ~
-   This dog seems smarter than most people you've known..    
+   This dog seems smarter than most people you've known.    
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1

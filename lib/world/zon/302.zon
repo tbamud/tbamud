@@ -1,8 +1,9 @@
 #302
 Matrix of C.A.W.~
 Campus II~
-30200 30299 30 2 d 0 0 0 -1 -1
-O 0 30112 99 30200 	(a tam)
+30200 30299 30 2
+R 0 30200 30112 -1 	(a tam)
+O 1 30112 99 30200 	(a tam)
 M 0 30139 1 30245 	(Bob the storekeeper)
 G 1 30136 99 -1 	(a pale apple)
 G 1 30140 99 -1 	(a can of PopCoke)

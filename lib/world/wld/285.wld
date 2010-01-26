@@ -1,10 +1,10 @@
 #28500
 Administration of Hell~
-   This is the entrance to the Administration offices of Hell.  The secretaries
+   This is the entrance to the Administration offices of Hell.  The secretary's
 desk sits quietly in the middle of the room.  To the south is a metal door
-labeled, 'Authorized Personnel Only' To the west is a large glass door.  There
-is a stairway down on the opposite side of the room.  There is a sign posted
-next to the stairs.    
+labeled, 'Authorized Personnel Only'.  To the west is a large glass door.  
+There is a stairway down on the opposite side of the room.  There is a sign
+posted next to the stairs.
 ~
 285 9 0 0 0 0
 D0
@@ -28,6 +28,16 @@ You see a stairway down.
 stairway~
 0 -1 28509
 E
+sign~
+****ATTENTION***
+The Abyss is CLOSED for construction.  
+
+We will open for your painful pleasures
+soon....
+
+-Strahd-
+~
+E
 credits info~
    Descent to Hell Zone.
 Originally written by Strahd
@@ -45,10 +55,10 @@ S
 #28501
 Halls of Judgement~
    You are standing in the Halls of Judgement.  There are many alcoves which
-contain different methods of torture.  Each more grotesque than the one before
-it.  On the wall a plaque reads, 'If you are here...  You are Guilty...  You
-have been judged...  Sound fair?  Too bad..  ' The hall continues to the east.
-The Courtroom is to the south.    
+contain different methods of torture, each more grotesque than the one before
+it.  On the wall a plaque reads, 'If you are here...You are Guilty...You
+have been judged...sound fair?  Too bad...'  The hall continues to the east.
+The Courtroom is to the south.  
 ~
 285 9 0 0 0 0
 D1
@@ -65,7 +75,7 @@ S
 #28502
 Halls of Judgement~
    You are standing in the Halls of Judgement.  There are many alcoves which
-contain different methods of torture.  Each more grotesque than the one before
+contain different methods of torture, each more grotesque than the one before
 it.  The hall continues to the east and west.  The hall of records is to the
 north.    
 ~
@@ -89,7 +99,7 @@ S
 #28503
 Halls of Judgement~
    You are standing in the Halls of Judgement.  There are many alcoves which
-contain different methods of torture.  Each more grotesque than the one before
+contain different methods of torture, each more grotesque than the one before
 it.  The hall continues to the east and west.  The Office of Complaints is to
 the south.    
 ~
@@ -113,7 +123,7 @@ S
 #28504
 Halls of Judgement~
    You are standing in the Halls of Judgement.  There are many alcoves which
-contain different methods of torture.  Each more grotesque than the one before
+contain different methods of torture, each more grotesque than the one before
 it.  The hall continues to the east and west.    
 ~
 285 9 0 0 0 0
@@ -131,7 +141,7 @@ S
 #28505
 Halls of Judgement~
    You are standing in the Halls of Judgement.  There are many alcoves which
-contain different methods of torture.  Each more grotesque than the one before
+contain different methods of torture, each more grotesque than the one before
 it.  The hall continues to the east and west.    
 ~
 285 9 0 0 0 0
@@ -216,9 +226,8 @@ S
 #28509
 Stairs to the Abyss~
    These dark stairs are made out of the bones of the damned.  They rattle
-softly as you tread apon them as if to cry out in protest.  The air is filled
+softly as you tread upon them as if to cry out in protest.  The air is filled
 with the wailing of lost souls and the blood curdling screams of the punished.
-  
 ~
 285 9 0 0 0 0
 D5
@@ -248,11 +257,11 @@ S
 #28511
 Court Room~
    This is the Courts of Hell.  Here you are convicted, sentenced and punished.
-An no...  You don't get a trial.  You don't deserve one.  The courtroom is
+And no...you don't get a trial.  You don't deserve one.  The courtroom is
 filled with spectators and jury members.  They seem to have no real reason to
 be here since there isn't going to be a trial.  They jeer and boo you as you
-stand in the middle of the courtroom.  To the north is the Halls of Judgement.
-Behind the judges bench is a wooden door.    
+stand in the middle of the courtroom.  To the north are the Halls of Judgement.
+Behind the judge's bench is a wooden door.
 ~
 285 9 0 0 0 0
 D0
@@ -267,13 +276,13 @@ You see a large wooden door.
 0 -1 28521
 S
 #28512
-Lawyers Office~
-   As you look around you, you realize you've entered a lawyers office.  Now
+Lawyer's Office~
+   As you look around you, you realize you've entered a lawyer's office.  Now
 you know you are in Hell....  Everything in this office seems to be made of
-snakeskin.  This is the only lawyers office in hell, so if you don't like them
-you're out of luck.  But then again...  If you are in hell...  You must've run
-out of luck a while ago.  To the east is the Office of Complaints.  To the
-south you see a courtyard.    
+snakeskin.  This is the only lawyer's office in hell, so if you don't like them
+you're out of luck.  But then again...if you are in hell...you must've run out
+of luck a while ago.  To the east is the Office of Complaints.  To the south
+you see a courtyard.  
 ~
 285 9 0 0 0 0
 D1
@@ -289,11 +298,11 @@ You see a courtyard.
 S
 #28513
 Office of Complaints~
-   This is a relatively small office.  There is a large hole in the wall where
-a clerk usually sits and takes complaints about hell.  As you peek behind the
+   This is a relatively small office.  There is a large hole in the wall where a
+clerk usually sits and takes complaints about hell.  As you peek behind the
 counter you see a large paper shredder and alot of shredded complaints.  A sign
-over the clerks desk reads, 'Hours: 12:00am - 12:01am' To the west is a lawyers
-office.  To the north you see the Halls of Judgement.    
+over the clerks desk reads, 'Hours: 12:00am - 12:01am'.  To the west is a
+lawyer's office.  To the north you see the Halls of Judgement.
 ~
 285 9 0 0 0 0
 D0
@@ -302,19 +311,19 @@ You see the Halls of Judgement.
 ~
 0 -1 28503
 D3
-You see a lawyers office
+You see a lawyer's office.
 ~
 ~
 0 -1 28512
 S
 #28514
 Pawn Shop~
-   You are standing in Hiramoto's Buy & Sell.  This poor bastard has been
-damned to hell to serve the public for eternity.  He will buy most anything you
-have, since business is slow.  Not many people visit Hell.  The store is filled
-with worthless junk.  Piles of aluminum balls, and bottle cap collections fill
-the corners of the room.  Thing of every description lie about the store.  To
-the east you see the Mall from Hell.    
+   You are standing in Hiramoto's Buy & Sell.  This poor bastard has been damned
+to hell to serve the public for eternity.  He will buy almost anything you have,
+since business is slow.  Not many people visit Hell.  The store is filled with
+worthless junk.  Piles of aluminum balls and bottle cap collections fill the
+corners of the room.  Things of every description lie about the store.  To the
+east you see the Mall from Hell.
 ~
 285 9 0 0 0 0
 D1
@@ -325,7 +334,7 @@ You see the Mall from Hell.
 S
 #28515
 Hallway of The Mall from Hell~
-   This is definetly the Mall from hell...  There are no stores!  Only in hell
+   This is definitely the Mall from Hell...there are no stores!  Only in Hell
 would they have a mall with no stores.  To the east you see the Mall from Hell.
 To the west you see Hiramoto's Buy & Sell.  The hall continues to the east and
 south.    
@@ -349,7 +358,7 @@ You see Hiramoto's Buy & Sell.
 S
 #28516
 Hallway of The Mall from Hell~
-   This is definetly the Mall from hell...  There are no stores!  Only in hell
+   This is definitely the Mall from Hell...there are no stores!  Only in Hell
 would they have a mall with no stores.  To the north you see a blackened
 hallway.  To the east you see the office of Big Mouth.  The hallway continues
 to the west.    
@@ -393,9 +402,8 @@ S
 #28518
 Stairs to the Abyss~
    These dark stairs are made out of the bones of the damned.  They rattle
-softly as you tread apon them as if to cry out in protest.  The air is filled
+softly as you tread upon them as if to cry out in protest.  The air is filled
 with the wailing of lost souls and the blood curdling screams of the punished.
-  
 ~
 285 9 0 0 0 0
 D5
@@ -442,10 +450,10 @@ You see a maintenance walkway.
 S
 #28521
 Judge's Chambers~
-   This is the private chambers of the High Judge of Hell.  He has a cushy job
-and his office reflects that.  A golden torches light the walls with dancing
-blue and yellow flames.  The judge's black crystal desk sparkles in the
-torchlight.    
+   These are the private chambers of the High Judge of Hell.  He has a cushy job
+and his office reflects that.  Golden torches light the walls with dancing blue
+and yellow flames.  The judge's black crystal desk sparkles in the torchlight.
+
 ~
 285 8 0 0 0 0
 D0
@@ -456,9 +464,9 @@ You see the Courtroom of Hell.
 S
 #28522
 Courtyard~
-   This courtyard is barren and neglected.  Small weeds grow up inbetween the
+   This courtyard is barren and neglected.  Small weeds grow between the
 concrete slabs.  An old defunct fountain sputters with a grey-brown ooze.  A
-lawyers office is to the north.  The courtyard continues to the east and south.
+lawyer's office is to the north.  The courtyard continues to the east and south.
 ~
 285 9 0 0 0 0
 D0
@@ -479,10 +487,10 @@ You see a more of the courtyard.
 S
 #28523
 Courtyard~
-   This courtyard is barren and neglected.  Small weeds grow up inbetween the
+   This courtyard is barren and neglected.  Small weeds grow between the
 concrete slabs.  An old defunct fountain sputters with a grey-brown ooze.  The
 courtyard continues to the west and south.  Stanley's Magical Steeds is to the
-east.    
+east.  
 ~
 285 9 0 0 0 0
 D1
@@ -502,13 +510,13 @@ You see a more of the courtyard.
 0 -1 28522
 S
 #28524
-Stanely's Magical Steeds~
-   This is the shop of Stanely.  He used to be an old mage selling cursed
-trinkets at the town of Solace.  He has recently set up shop in hell selling
-magical figurines.  Each figuring is in the shape of some sort of steed.  Some
-are recognizable and some are not.  Rumor has it that Stanely made a deal with
-a devil....  So I guess his lease is up in seven years.....  A courtyard is to
-the west.  To the south you see the Mall from Hell.    
+Stanley's Magical Steeds~
+   This is the shop of Stanly.  He used to be an old mage selling cursed
+trinkets at the town of Solace.  He has recently set up shop in Hell selling
+magical figurines.  Each figurine is in the shape of some sort of steed.  Some
+are recognizable and some are not.  Rumor has it that Stanley made a deal with a
+devil...so I guess his lease is up in seven years...  A courtyard is to the
+west.  To the south you see the Mall from Hell.
 ~
 285 9 0 0 0 0
 D2
@@ -524,7 +532,7 @@ You see an abandon courtyard.
 S
 #28525
 Hallway of The Mall from Hell~
-   This is definetly the Mall from hell...  There are no stores!  Only in hell
+   This is definitely the Mall from Hell...there are no stores!  Only in Hell
 would they have a mall with no stores.  The hallway continues to the north and
 south.    
 ~
@@ -544,7 +552,7 @@ S
 Inside Big Mouth's Stomach~
    You are standing inside Big Mouth's stomach.  It is roomy in here.  Small
 animals and other odds and ends lie about the stomach.  Is that a dragon you
-see?  Nah...  Couldn't be...    
+see?  Nah...couldn't be...    
 ~
 285 9 0 0 0 0
 D4
@@ -556,9 +564,8 @@ S
 #28527
 Stairs to the Abyss~
    These dark stairs are made out of the bones of the damned.  They rattle
-softly as you tread apon them as if to cry out in protest.  The air is filled
+softly as you tread upon them as if to cry out in protest.  The air is filled
 with the wailing of lost souls and the blood curdling screams of the punished.
-  
 ~
 285 9 0 0 0 0
 D5
@@ -569,12 +576,11 @@ You see the eternal darkness of the Abyss.
 S
 #28528
 Reactor Control Room~
-   This is the reactor control room of hell.  From here the workers control the
-main reactor and power supply for all of hell and the abyss.  Workers stroll
-back and forth, from station to station monitoring the reactor core.  A large
-glass window look out on to the reactor floor below.  There are some stairs
-down to the reactor floor to the south.  There is a maintenance room to the
-east.    
+   This is the reactor control room of Hell.  From here the workers control the
+main reactor and power supply for all of Hell and the abyss.  Workers stroll
+back and forth, from station to station, monitoring the reactor core.  A large
+glass window looks out onto the reactor floor below.  There are some stairs down
+to the reactor floor to the south.  There is a maintenance room to the east.
 ~
 285 9 0 0 0 0
 D1
@@ -590,11 +596,11 @@ You see stairs down to the reactor floor.
 S
 #28529
 Maintenance Room~
-   You are standing in the primary maintenance room of hell.  Tools of all
+   You are standing in the primary maintenance room of Hell.  Tools of all
 shapes and sizes are neatly hung on the walls, each with its own painted-on
 silhouette behind it.  To the west is the reactor control room.  To the east is
 the break room.  To the north is a maintenance walkway.  To the south is the
-secondary control room.    
+secondary control room.  
 ~
 285 9 0 0 0 0
 D0
@@ -621,13 +627,13 @@ S
 #28530
 Break Room~
    This is the break room for the maintenance workers.  Tables are filled with
-donuts and coffee.  As a cruel joke, the cheif engineer has posted his guard
+donuts and coffee.  As a cruel joke, the chief engineer has posted his guard
 dogs to guard the room so that no one can take a break.  To the west is the
-primary maintenance room.  To the south is the chief engineers office.    
+primary maintenance room.  To the south is the chief engineer's office.
 ~
 285 9 0 0 0 0
 D2
-You see the chief engineers office.
+You see the chief engineer's office.
 ~
 ~
 0 -1 28540
@@ -639,23 +645,23 @@ You see the primary maintenance room.
 S
 #28531
 Hell's Kitchen~
-   Welcome to Hell's kitchen, where everything is delicious....  You just can't
-have any....  This is where the many foods of the world of Farside are made.  
+   Welcome to Hell's kitchen, where everything is delicious...you just can't
+have any...  This is where the many foods of the world of Farside are made.  
 The chefs are usually very busy, but they always have extra time to torture a
-guest....  To the east is a courtyard.    
+guest...  To the east is a courtyard.    
 ~
 285 9 0 0 0 0
 D1
-You see an abandon courtyard.
+You see an abandoned courtyard.
 ~
 ~
 0 -1 28532
 S
 #28532
 Courtyard~
-   This courtyard is barren and neglected.  Small weeds grow up inbetween the
+   This courtyard is barren and neglected.  Small weeds grow between the
 concrete slabs.  An old defunct fountain sputters with a grey-brown ooze.  The
-courtyard continues to the north and east.  You see a kitchen to the west.    
+courtyard continues to the north and east.  You see a kitchen to the west.  
 ~
 285 9 0 0 0 0
 D0
@@ -664,7 +670,7 @@ You see more of the courtyard.
 ~
 0 -1 28522
 D1
-You see a more of the courtyard.
+You see more of the courtyard.
 ~
 ~
 0 -1 28533
@@ -676,9 +682,9 @@ You see a kitchen.
 S
 #28533
 Courtyard~
-   This courtyard is barren and neglected.  Small weeds grow up inbetween the
+   This courtyard is barren and neglected.  Small weeds grow between the
 concrete slabs.  An old defunct fountain sputters with a grey-brown ooze.  The
-courtyard continues to the north and west.    
+courtyard continues to the north and west.  
 ~
 285 9 0 0 0 0
 D0
@@ -694,7 +700,7 @@ You see a more of the courtyard.
 S
 #28534
 Hallway of The Mall from Hell~
-   This is definetly the Mall from hell...  There are no stores!  Only in hell
+   This is definitely the Mall from Hell...there are no stores!  Only in Hell
 would they have a mall with no stores.  The hallway continues to the east.  
 Stanely's magic steeds are to the north.    
 ~
@@ -712,7 +718,7 @@ You see a hall of the Mall from Hell.
 S
 #28535
 Hallway of The Mall from Hell~
-   This is definetly the Mall from hell...  There are no stores!  Only in hell
+   This is definitely the Mall from Hell...there are no stores!  Only in Hell
 would they have a mall with no stores.  The hallway continues to the north and
 west.    
 ~
@@ -722,19 +728,19 @@ You see a hall of the Mall from Hell.
 ~
 ~
 0 -1 28525
-D1
+D3
 You see a hall of the Mall from Hell.
 ~
 ~
-0 -1 28534
+0 0 28534
 S
 #28536
 Stairs to the Abyss~
    These dark stairs are made out of the bones of the damned.  They rattle
-softly as you tread apon them as if to cry out in protest.  The air is filled
+softly as you tread upon them as if to cry out in protest.  The air is filled
 with the wailing of lost souls and the blood curdling screams of the punished.
-You can't seem to find the Abyss...  You seem to recall a seeing a sign....  
-Now what did it say again?......    
+You can't seem to find the Abyss...you seem to recall seeing a sign...now  
+what did it say again?...    
 ~
 285 9 0 0 0 0
 S
@@ -757,7 +763,7 @@ S
 Reactor Room Floor~
    The room is taken up almost entirely by the enormous reactor core.  The core
 pulses rhythmically as it generates the heat and power for the entire region of
-hell.  Many workers in orange jumpsuits run frantically around with geiger
+Hell.  Many workers in orange jumpsuits run frantically around with geiger
 counters and plasma torches fixing breaches in the core.  You see a reactor
 core maintenance hatch to the west.  A stairway to the control room is to the
 north.    
@@ -790,11 +796,11 @@ You see the primary maintenance room.
 S
 #28540
 Office of the Chief Engineer~
-   This office belongs to the chief engineer of hell.  Blueprints and pencils
-are scattered about the room.  The air is heavy with the smell of amonia and
+   This office belongs to the chief engineer of Hell.  Blueprints and pencils
+are scattered about the room.  The air is heavy with the smell of ammonia and
 sweat.  A display of the reactor core is mounted into the wall.  One wall is
 completely filled with monitors, each showing various status reports for the
-reactor core.    
+reactor core.
 ~
 285 9 0 0 0 0
 D0

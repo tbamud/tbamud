@@ -1231,41 +1231,41 @@ Teleport room enter test~
 %teleport% %actor% 3
 ~
 #1283
-deal deck~
+Deal a single card from a deck~
 1 c 7
 deal~
 switch %random.4%
   case 1
-    eval col 
-    eval suit Diamond
+    set col 
+    set suit Diamond
   break
   case 2
-    eval col 
-    eval suit Heart
+    set col 
+    set suit Heart
   break
   case 3
-    eval col 
-    eval suit Club
+    set col 
+    set suit Club
   break
   case 4
-    eval col 
-    eval suit Spade
+    set col 
+    set suit Spade
   break
   default
-    eval suit JOKER!
+    set suit JOKER!
   break
 done
 %echo% suit generated = %suit%
 *
-eval r %random.13%
+set r %random.13%
 if %r% == 1
-  eval rank Ace
+  set rank Ace
 elseif %r% == 11
-  eval rank Jack
+  set rank Jack
 elseif %r% == 12
-  eval rank Queen
+  set rank Queen
 elseif %r% == 13
-  eval rank King
+  set rank King
 else
   eval rank %r%
 end
@@ -1409,36 +1409,36 @@ elseif %cmd% == deal
   %echo% while begins.
   switch %random.4%
     case 1
-      eval col 
-      eval suit Diamond's
+      set col 
+      set suit Diamond's
     break
     case 2
-      eval col 
-      eval suit Heart's
+      set col 
+      set suit Heart's
     break
     case 3
-      eval col 
-      eval suit Club's
+      set col 
+      set suit Club's
     break
     case 4
-      eval col 
-      eval suit Spade's
+      set col 
+      set suit Spade's
     break
     default
-      eval suit JOKER!
+      set suit JOKER!
     break
   done
   %echo% suit generated = %suit%
   *
-  eval r %random.13%
+  set r %random.13%
   if %r% == 1
-    eval rank Ace
+    set rank Ace
   elseif %r% == 11
-    eval rank Jack
+    set rank Jack
   elseif %r% == 12
-    eval rank Queen
+    set rank Queen
   elseif %r% == 13
-    eval rank King
+    set rank King
   else
     eval rank %r%
   end
@@ -1609,10 +1609,53 @@ if %actor.inventory(14911)%
 end
 ~
 #1295
-FREE~
-0 j 100
+free~
+0 d 100
 ~
-* No Script
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.level% > 31
+  switch %speech.car%
+    case christmas
+      %at% 1204 %load% obj 1299
+      %at% 1204 %load% obj 1318
+      %at% 1204 %load% obj 1319
+      %at% 1204 %load% obj 1236
+      %at% 1204 %load% obj 1237
+      %at% 1204 %load% obj 1238
+      %at% 1204 %load% obj 1239
+      %at% 1204 %load% obj 1240
+      %at% 1204 %load% obj 1241
+      %at% 1204 %load% obj 1397
+      %at% 1204 %load% mob 1308
+      %at% 2 %load% obj 1299
+      %at% 2 %load% obj 1318
+      %at% 2 %load% obj 1319
+      %at% 2 %load% obj 1236
+      %at% 2 %load% obj 1237
+      %at% 2 %load% obj 1238
+      %at% 2 %load% obj 1239
+      %at% 2 %load% obj 1240
+      %at% 2 %load% obj 1241
+      %at% 2 %load% obj 1397
+      %at% 1204 %load% mob 1308
+    break
+    case new years
+    break
+    case valentines
+    break
+    case Easter
+    break
+    case 4th
+    break
+    case Halloween
+    break
+    case thanksgiving
+    break
+    default
+      * nothing is going to happen
+    break
+  done
+end
 ~
 #1296
 Random eq example~

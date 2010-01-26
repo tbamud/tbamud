@@ -3,12 +3,12 @@ Guardian guard~
 the Guardian of Hell~
 A Guardian of Hell stands here keeping you the hell out.
 ~
-   The guardian is a stone devil.  A hideous creation from the dark
-laboratories of hell.  Its black eyes stare into you soul with a hunger that
-makes you shiver.  The guardian stands motionless before you, its rough grey
-skin looks impervious to normal weapons.    
+   The guardian is a stone devil, a hideous creation from the dark laboratories
+of Hell.  Its black eyes stare into your soul with a hunger that makes you
+shiver.  The guardian stands motionless before you.  Its rough grey skin looks
+impervious to normal weapons.
 ~
-6236 0 0 0 0 0 0 0 -900 E
+6236 0 0 0 2128 0 0 0 -900 E
 30 10 -8 6d6+300 5d5+5
 300 90000
 8 8 0
@@ -20,7 +20,7 @@ A pile of gold coins lies on the ground.
 ~
    A large sparkly pile of gold coins.    
 ~
-30 0 0 0 0 0 0 0 -800 E
+30 0 0 0 2128 0 0 0 -800 E
 20 14 -2 4d4+200 3d3+3
 200 40000
 8 8 0
@@ -33,7 +33,7 @@ The male demon Dee lies on the bed here waiting to please you.
    This is the most handsome male you have ever seen.  His naked body makes
 your mouth water.    
 ~
-4638 0 0 0 0 0 0 0 -1000 E
+4638 0 0 0 2048 0 0 0 -1000 E
 26 12 -5 5d5+260 4d4+4
 260 67600
 8 8 1
@@ -580,8 +580,8 @@ santa claus~
 Santa Claus~
 Santa Claus is here checking who has been naughty...
 ~
-   Its a jolly old man, with red cheeks and a rolly poley belly and a laugh as
-jolly as you can get.    
+   He's a jolly old man with red cheeks and a roly-poly belly and a laugh as
+jolly as you can get.
 ~
 260350 0 0 0 0 0 0 0 1000 E
 23 13 -3 4d4+230 3d3+3

@@ -19,7 +19,7 @@
  * on an older version. You are supposed to compare this with the macro
  * TBAMUD_VERSION() in utils.h.
  * It is read as Major/Minor/Patchlevel - MMmmPP */
-#define _TBAMUD    0x030600
+#define _TBAMUD    0x030610
 
 /** If you want equipment to be automatically equipped to the same place
  * it was when players rented, set the define below to 1 because
@@ -214,11 +214,12 @@
 #define MOB_NOCHARM        13   /**< Mob can't be charmed */
 #define MOB_NOSUMMON       14   /**< Mob can't be summoned */
 #define MOB_NOSLEEP        15   /**< Mob can't be slept */
-#define MOB_NOKILL         16   /**< Mob can't be bashed (e.g. trees) */
+#define MOB_NOBASH         16   /**< Mob can't be bashed (e.g. trees) */
 #define MOB_NOBLIND        17   /**< Mob can't be blinded */
-#define MOB_NOTDEADYET     18   /**< (R) Mob being extracted */
-/** Total number of Mob Flags; it should be 1 less than MOB_NOT_DEADYET */
-#define NUM_MOB_FLAGS      18 
+#define MOB_NOKILL         18   /**< Mob can't be attacked */
+#define MOB_NOTDEADYET     19   /**< (R) Mob being extracted */
+
+#define NUM_MOB_FLAGS      19 
 
 /* Preference flags: used by char_data.player_specials.pref */
 #define PRF_BRIEF         0   /**< Room descs won't normally be shown */

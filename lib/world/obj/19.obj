@@ -5,7 +5,7 @@ A spider's fang glistens here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 3 2 6 14
-3 300 3 0
+3 300 3 0 0
 E
 spider's fang~
    This long, wickedly curving pincer is that of a giant spider.  Jet-black and
@@ -22,7 +22,7 @@ A straggling weed grows miserably here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 straggling weed~
    This dark green weed has a strong smell of salt about it, similar to seaweed.
@@ -36,7 +36,7 @@ A murky pool of water stagnates slowly.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
-104 0 0 0
+104 0 0 0 0
 E
 murky pool water~
    This muddy pool of water looks safe to drink despite the unappealing
@@ -49,7 +49,7 @@ A rusted dagger protrudes from the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 2 3 14
-2 100 0 0
+2 100 0 0 0
 E
 rusted dagger~
    This ancient dagger is still somewhat sharp despite the blood-like patches of
@@ -63,7 +63,7 @@ A pair of cricket legs lie here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 1915
 E
 cricket legs~
@@ -78,7 +78,7 @@ A primitive fire torch has been set here.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 15 0
-1 1 0 0
+1 1 0 0 0
 E
 primitive fire torch~
    The handle of this torch is made of a very tough dark wood, coated with a
@@ -92,7 +92,7 @@ A sharply chiselled key has been left here.~
 ~
 18 cdq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 sharply chiselled key~
    This little key has been carved from some sort of stiff reed.  The end and
@@ -107,7 +107,7 @@ stained bone necklace bones~
 ~
 11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 100 1 0
+1 100 1 0 0
 E
 stained bone necklace bones~
    This appears to be a simple bit of muddy twine, carefully knotted around
@@ -121,7 +121,7 @@ A dark leathery egg lies here.~
 ~
 12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 dark leathery egg~
    This large round egg is so tough and leathery that it is probably not edible.
@@ -135,7 +135,7 @@ An ancient but beautiful breastplate lies forgotten here.~
 ~
 9 g 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-2 500 4 0
+2 500 4 0 0
 E
 Fallorain's Plate fallorains fallorain's plate ancient beautiful breastplate~
    Perfectly worked tan leather binds the metal pieces of this plate together.
@@ -150,7 +150,7 @@ An old rotting skeleton floats forlornly in the water.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 skeleton rotting old~
    This rotting corpse is so old that nothing is left but bones.  Many of the
@@ -165,7 +165,7 @@ A tiny tag on a silver chain sparkles here.~
 ~
 8 i 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 800 5 0
+1 800 5 0 0
 E
 tiny silver tag chain~
    A somewhat crudely forged silver chain supports this little metal tag.  On
@@ -179,7 +179,7 @@ A large forked weapon lies abandoned.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 4 14
-2 200 2 0
+2 200 2 0 0
 E
 great trident forked weapon large~
    This large trident is tipped at the ends with three terrifyingly sharp
@@ -193,7 +193,7 @@ A long shiny blade lies here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 3 3
-2 200 1 0
+2 200 1 0 0
 E
 warrior's longsword shiny blade sword~
    This long glistening piece of metal looks ancient though well kept.  A few
@@ -207,7 +207,7 @@ A spiked mace has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 5 7
-2 300 2 0
+2 300 2 0 0
 E
 spiked mace~
    This heavy pole of metal has a large sphere welded at one end, making it
@@ -221,7 +221,7 @@ An old wooden shield lies forgotten here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
-2 100 1 0
+2 100 1 0 0
 E
 old wooden shield~
    This shield looks very primitive, roughly hewn from some half rotting tree
@@ -235,7 +235,7 @@ A metal wall shield glistens brightly here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 9 0 0 0
-4 600 4 0
+4 600 4 0 0
 E
 metal wall shield~
    This large shield is big enough to provide defence for the entire torso and
@@ -249,7 +249,7 @@ Some smoked meat is here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 some smoked meat~
    This is a large slab of red meat, roughly hewn from the carcass of some
@@ -262,7 +262,7 @@ The massive statue of a frog god has been erected here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 massive statue frog god~
    This enormous statue is an amphibious creature, much like a frog but with
@@ -276,7 +276,7 @@ Several scattered coins glint temptingly on the ground.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 147 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 several scattered coins~
    These coins all appear to be of current value, though most are encrusted with
@@ -289,7 +289,7 @@ A large webbed cocoon lies here.~
 ~
 12 cdq 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 T 1919
 T 1920
 E
@@ -306,7 +306,7 @@ A robe lies crumpled here, flecked with red.~
 ~
 11 jl 0 0 0 ad 0 0 0 o 0 0 0
 0 0 0 0
-1 300 2 0
+1 300 2 0 0
 E
 crimson-stained crimson stained robe~
    This intricately woven robe is made of extraordinarily fine white silk.  
@@ -324,7 +324,7 @@ A small piece of meat has been left to spoil.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 small piece meat~
    This small piece of whitish meat is most likely the flesh of a large bird
@@ -338,7 +338,7 @@ smooth piece velvety leather cloak blanket hide~
 ~
 9 j 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
-1 400 2 0
+1 400 2 0 0
 E
 smooth piece velvety leather cloak blanket hide~
    This large piece of exceptionally beautiful leather is velvety to the touch
@@ -356,7 +356,7 @@ glistening woven long silk cord~
 ~
 11 0 0 0 0 al 0 0 0 h 0 0 0
 0 0 0 0
-1 200 2 0
+1 200 2 0 0
 E
 glistening woven long silk cord~
    This delicate cord has been woven from the water spider's fine silk,
@@ -372,7 +372,7 @@ dark shimmering retina~
 ~
 11 0 0 0 0 ae 0 0 0 l 0 0 0
 0 0 0 0
-1 200 0 0
+1 200 0 0 0
 E
 dark shimmering retina~
    This wetly glistening piece of organic tissue is the large retina from one of
@@ -386,7 +386,7 @@ A chunk of rich cheese gives off a powerful aroma.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 14 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 chunk rich cheese~
    This appears to be a very expensive, and judging by the smell, very aged
@@ -399,7 +399,7 @@ A cluster of juicy red grapes has been placed here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 juicy cluster red grapes~
    These lush red grapes are perfectly plump and juicy, practically glistening
@@ -413,7 +413,7 @@ A dark candleholder stands elegantly here.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 10 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 candleholder dark holder~
    This long slick candleholder has been forged by some unnatural means out of
@@ -427,7 +427,7 @@ A single black candle stands here.~
 ~
 12 cdegjq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 0
+2 1 0 0 0
 T 1940
 T 1941
 E
@@ -442,7 +442,7 @@ A filthy pile of ragged fabric lies here.~
 ~
 11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 ragged loincloth filthy pile fabric cloth~
    This dingy, stained piece of cloth is almost falling apart it looks so old
@@ -457,7 +457,7 @@ A large webbed cocoon lies here~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 T 1924
 E
 large webbed cocoon~
@@ -473,7 +473,7 @@ The webbing gland of a spider is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 30 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 webbing spider gland~
    This large, elastic gland was originally used by its spider host to contain
@@ -488,7 +488,7 @@ A large and deadly mace glints on the ground.~
 ~
 5 gjq 0 0 0 an 0 0 0 0 0 0 0
 5 7 4 6
-3 500 3 0
+3 500 3 0 0
 E
 venommace mace large deadly~
    This massive weapon has been made from a pale white metal that glows vaguely
@@ -506,7 +506,7 @@ A shield glints red, like a puddle of blood on the ground.~
 ~
 9 gj 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
-3 500 3 0
+3 500 3 0 0
 E
 blood-red shield blood red~
    This beautiful semi-transparant shield is made of sparkling red beryll,
@@ -521,7 +521,7 @@ A dark pair of leather pants lie here, webbed with silver.~
 ~
 9 j 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
-2 400 2 0
+2 400 2 0 0
 E
 silvery-webbed leather pants black silver webbed~
    These slightly stretchy leather pants are glossy black, the many strategic
@@ -536,7 +536,7 @@ A glittering piece of fine chainmail has been left here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-3 400 3 0
+3 400 3 0 0
 E
 delicate chain mail chainmail shirt~
    Tiny sparkling chain rings have been so finely linked together that this
@@ -551,7 +551,7 @@ A dark pair of leathery gloves lie here.~
 ~
 9 gj 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
-1 200 1 0
+1 200 1 0 0
 E
 black spider gloves dark pair leathery~
    This black piece of leathery material is shaped like a spider, legs splayed
@@ -572,7 +572,7 @@ A heap of shimmering dark fabric lies here.~
 ~
 11 g 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 600 4 0
+1 600 4 0 0
 E
 sheer gown heap shadowy shimmering dark fabric~
    Dark and unnatural, this strange shimmering fabric is icy cold to the touch
@@ -590,7 +590,7 @@ A burning black candle lies here.~
 ~
 1 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 long burning black candle drowcandle~
    Although it looks ordinary, there is a strange aura around this candle, and
@@ -603,7 +603,7 @@ A delicate silver necklace glitters here.~
 ~
 8 gq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 100 1 0
+1 100 1 0 0
 E
 Eilistraee Eilistraee's Pendant silver chain necklace~
    Fragile and shimmering like starlight, this curvacious teardrop pendant is a
@@ -619,7 +619,7 @@ A mahogany cabinet is fixed to the eastern wall.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 99 13 1944 0
-0 0 0 0
+0 0 0 0 0
 E
 cabinet mahogany~
    Smooth dark wood has been expertly carved to form this elaborately etched
@@ -635,7 +635,7 @@ A little dark key lies here.~
 ~
 18 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 key dark little carved wood~
    This smoothly polished key has been carved from rich mahogany wood and coated
@@ -649,7 +649,7 @@ a silvery-webbed @Rred vial@n~
 ~
 12 gq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 1 0
+1 1 1 0 0
 T 1950
 E
 silvery-webbed silver red vial~
@@ -664,7 +664,7 @@ a silvery-webbed @Bblue vial@n~
 ~
 12 gq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 1 0
+1 1 1 0 0
 T 1951
 E
 silvery-webbed silver blue vial~
@@ -679,7 +679,7 @@ a silvery-webbed @Ggreen vial@n~
 ~
 12 gq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 1952
 E
 silvery-webbed silver green vial~
@@ -694,7 +694,7 @@ A large and mysterious metal contraption hums noisily.~
 ~
 15 g 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
-0 0 0 0
+0 0 0 0 0
 T 1960
 T 1954
 T 1961
@@ -721,7 +721,7 @@ A silvery-webbed clear vial is lying here.~
 ~
 17 q 0 0 0 a 0 0 0 0 0 0 0
 20 0 13 0
-1 1 0 0
+1 1 0 0 0
 E
 silvery-webbed clear silver empty vial~
    This delicate crystal vial has obviously been made to hold some magical
@@ -735,7 +735,7 @@ A long, sticky bit of flesh is lying here.~
 ~
 12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 long sticky flesh albino frog's tongue~
    This long strip of flesh looks to be the sickly pink tongue of an albino
@@ -749,7 +749,7 @@ A sealed beaker of dark blood stands here.~
 ~
 12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 sealed beaker dark blood~
    Almost black in colour, this glass beaker holds the blood of a creature that
@@ -763,7 +763,7 @@ a silvery-webbed @Dblack vial@n~
 ~
 12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 1962
 E
 silvery-webbed silver black vial~
@@ -803,7 +803,7 @@ a man and machine-maker. Use them wisely.
 ~
 16 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1954
 old leather book sapphire~
 a leather book inset with a sapphire~
@@ -835,7 +835,7 @@ a man and machine-maker. Use them wisely.
 ~
 16 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1955
 old leather book emerald~
 a leather book inset with an emerald~
@@ -868,7 +868,7 @@ a man and machine-maker. Use them wisely.
 ~
 16 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1956
 swamp vine~
 a swamp vine~
@@ -876,7 +876,7 @@ A swamp vine splays across the ground like an open hand.~
 ~
 19 q 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 swamp vine~
    This limp plant has the dark green colour of spinach, its lethargic trailing
@@ -891,7 +891,7 @@ Something to remember is left here.~
 ~
 5 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 something to remember~
    Oh yeah, you won't forget this!  
@@ -903,7 +903,7 @@ A crumpled heap of glossy black fur lies here.~
 ~
 11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-2 200 0 0
+2 200 0 0 0
 E
 crumpled heap gloosy black animal fur~
    This long section of beautiful shimmering fur must have once adorned a very
@@ -920,7 +920,7 @@ A humanoid skull lies decaying here.~
 ~
 13 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 humanoid skull~
    This yellowing piece of old, hardy bone is still intact, the gruesome
@@ -935,7 +935,7 @@ A little pile of white chainmail armour lies here.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
-2 200 0 0
+2 200 0 0 0
 E
 white chainmail arm wrappings armour~
    Tiny circles of strange metal are perfectly linked to form a glistening piece
@@ -950,7 +950,7 @@ A beautiful silvery helmet lies here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
-2 200 0 0
+2 200 0 0 0
 E
 beautiful silvery helmet sleek helm~
    This elegantly forged helm is made from one solid piece of white metal that
@@ -965,7 +965,7 @@ Some scaley black leather boots lie here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 scaley black leather boots~
    These roughly stitched boots have been sewn using the black scaley hide of
@@ -981,7 +981,7 @@ A colourful firework is lying here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 1987
 E
 fireworks~
@@ -995,7 +995,7 @@ A tiny ring glints delicate shades of green and blue.~
 ~
 11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 200 0 0
+1 200 0 0 0
 E
 irridescent webbed ring~
    Incredibly delicate, this beautiful ring looks to have been woven by master
@@ -1011,7 +1011,7 @@ A tiny bikini top lies crumpled here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 tiny bikini top~
    This top basically consists of pieces of pink silk string fastened together.
@@ -1025,7 +1025,7 @@ A miniscule piece of fabric lies on the ground.~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 skimpy thong miniscule piece fabric~
    No, it isn't a piece of pink dental floss, although one could easily mistake
@@ -1039,7 +1039,7 @@ A bright red lipstick print is smeared here.~
 ~
 11 0 0 0 0 c 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+0 0 0 0 0
 T 1929
 E
 bright red lipstick print~
@@ -1053,7 +1053,7 @@ A pair of stilettos lie abandoned here.~
 ~
 11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 pair high stilettos~
    These strappy stilettos have a good six inch heel on them.  Not only does
@@ -1067,7 +1067,7 @@ A thick cloud of manly scent hovers here.~
 ~
 11 0 0 0 0 k 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+0 0 0 0 0
 E
 thick cloud manly scent~
    This rich, somewhat pungent odour is obviously that of a man's.  Think sweaty
@@ -1080,7 +1080,7 @@ A romantic red rose lies forgotten here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 red rose~
    This deep red rose would be quite a romantic flower if it weren't for the
@@ -1093,7 +1093,7 @@ A big slobbery kiss has been smeared on the ground.~
 ~
 11 0 0 0 0 c 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+0 0 0 0 0
 T 1929
 E
 big slobbery kiss~
@@ -1107,7 +1107,7 @@ A summer tree stands here, lush and green.~
 ~
 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #1973
 fall tree xxtree~
 a fall tree~
@@ -1115,7 +1115,7 @@ A fall tree stands here, coloured red and gold.~
 ~
 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #1974
 winter tree xxtree~
 a winter tree~
@@ -1123,7 +1123,7 @@ A winter tree is here, bare and hung with ice.~
 ~
 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #1975
 spring tree xxtree~
 a spring tree~
@@ -1131,5 +1131,5 @@ A spring tree is here, budding into bloom.~
 ~
 0 0 0 0 0 i 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 $~

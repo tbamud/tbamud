@@ -1,7 +1,7 @@
 #186
 Maynard~
 Newbie Zone~
-18600 18699 10 2 d 0 0 0 -1 -1
+18600 18699 10 2 d 0 0 0 1 7
 M 0 18602 3 18600 	(the newbie monster)
 E 1 18602 99 5 	(a bright green newbie vest)
 M 0 18601 1 18605 	(the pit beast)

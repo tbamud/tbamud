@@ -2409,44 +2409,42 @@ The deck of the ship is far below you.  You could @ojump@n down, but it is not r
 0 0 8376
 E
 flag jolly roger~
-@R
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMi'           ;JMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMM>                 MMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMM;                   5MMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMM              ..    'MMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMM    MMMM!   =MMMM;  'MMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMM!  cMMMMM :.MMMMM6  iMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMM   +5M5^MMM'+Yj!   +MMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMM!::'   :MMMM  ;ijjtMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMM=+Mt :.'. '.MM MMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMi=MMMMMM.+MMMtMKYMMM'>MMMMM!  MMMMMMMMMMMMMM
-MMMMMMMMMMMMMY   !MMMMM c:MMMMDM^= MMMMM   .MMMMMMMMMMMMMM
-MMMMMMMMMMMMMM.    5MMMM:   ' . >MMMM=      .MMMMMMMMMMMMM
-MMMMMMMMMMMMM>. .    .:cMMMMMMMMMM=    '>j>+MMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMt;   'tMMt>'    iMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMiiMMMMMMMMji='   .!tcYDMMMMMMJ'  XMMMMMMMMMMM
-MMMMMMMMMMMM;            ';cQMMM!'           ;MMMMMMMMMMMM
-MMMMMMMMMMMMM>     .:iMMMMMMMMMMMMMMMMt>'    +MMMMMMMMMMMM
-MMMMMMMMMMMMM    iMMMMMMMMMMMMMMMMMMMMMMMM   .MMMMMMMMMMMM
-MMMMMMMMMMMMMc>=MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+   @RMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMMMMMi'           ;JMMMMMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMMM>                 MMMMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMM;                   5MMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMM              ..    'MMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMM    MMMM!   =MMMM;  'MMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMM!  cMMMMM :.MMMMM6  iMMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMMM   +5M5^MMM'+Yj!   +MMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMMM!::'   :MMMM  ;ijjtMMMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMMMMM=+Mt :.'. '.MM MMMMMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMi=MMMMMM.+MMMtMKYMMM'>MMMMM!  MMMMMMMMMMMMMM
+   MMMMMMMMMMMMMY   !MMMMM c:MMMMDM^= MMMMM   .MMMMMMMMMMMMMM
+   MMMMMMMMMMMMMM.    5MMMM:   ' . >MMMM=      .MMMMMMMMMMMMM
+   MMMMMMMMMMMMM>. .    .:cMMMMMMMMMM=    '>j>+MMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMMMMt;   'tMMt>'    iMMMMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMiiMMMMMMMMji='   .!tcYDMMMMMMJ'  XMMMMMMMMMMM
+   MMMMMMMMMMMM;            ';cQMMM!'           ;MMMMMMMMMMMM
+   MMMMMMMMMMMMM>     .:iMMMMMMMMMMMMMMMMt>'    +MMMMMMMMMMMM
+   MMMMMMMMMMMMM    iMMMMMMMMMMMMMMMMMMMMMMMM   .MMMMMMMMMMMM
+   MMMMMMMMMMMMMc>=MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+   MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM@n
  
-@g
-Some believe the Jolly Roger gets its name from the French
-"Jolie Rouge" or "Red Flag."  The flag was first used by a
-French order of militant monks known as the "Poor Soldiers
-of Christ and the Temple of Solomon" -- commonly known as
-"The Knights Templar."
-@g
-Just as a terrorist to one is a freedom fighter to another,
-so it was with the Templars and their fleet. Wanted by the
-Pope and all the crowns of Europe, they came to be viewed,
-by the folks on the mainland, as pirates.
-@g
-For more history of the Jolly Roger,
-visit @ohttp://www.skullandcrossbones.org
-@n
+ 
+   @gSome believe the Jolly Roger gets its name from the French
+   "Jolie Rouge" or "Red Flag."  The flag was first used by a
+   French order of militant monks known as the "Poor Soldiers
+   of Christ and the Temple of Solomon" -- commonly known as
+   "The Knights Templar."
+ 
+   Just as a terrorist to one is a freedom fighter to another,
+   so it was with the Templars and their fleet. Wanted by the
+   Pope and all the crowns of Europe, they came to be viewed,
+   by the folks on the mainland, as pirates.
+ 
+   For more history of the Jolly Roger,
+   visit@n http://www.skullandcrossbones.org
 ~
 S
 T 8385

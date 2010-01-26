@@ -10,17 +10,6 @@ few men who did not sign up for military service.
 34 9 -10 6d6+340 5d5+5
 340 115600
 8 8 1
-Str: 18
-Dex: 18
-Int: 18
-Wis: 18
-Con: 18
-Cha: 18
-SavingPara: 8
-SavingRod: 8
-SavingPetri: 8
-SavingBreath: 8
-SavingSpell: 8
 E
 #101
 Ian~
@@ -453,7 +442,7 @@ A maid scurries about trying to finish up all her chores.
    She smiles kindly as you look her up and down.  She definitely enjoys her
 work.  With a sigh of regret she moves on to finish her chores.    
 ~
-72 0 0 0 0 0 0 0 700 E
+65608 0 0 0 0 0 0 0 700 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -542,6 +531,7 @@ grey robe have yet to select a master magi as none of them are powerful enough.
 330 108900
 8 8 1
 E
+T 104
 #137
 man black master magi~
 the Master Magi~
@@ -893,7 +883,7 @@ E
 #161
 streetsweeper sweeper man~
 the streetsweeper~
-A streetsweeper pushes a broom infront of him, picking up any trash he finds.
+A streetsweeper pushes a broom in front of him, picking up any trash he finds.
 ~
    He is out here, day and night, picking up the garbage people leave behind.
 Do him a favor and don't litter.  He looks miserable from his job.    
@@ -988,16 +978,16 @@ fighting styles.
 8 8 1
 E
 #168
-bum~
-the bum~
+starving smelly bum~
+the smelly bum~
 A starving bum is trying to get to the good garbage before the streetsweeper.
 ~
    This guy must have run into some bad luck to end up where he is right now.
 He is covered in a film of dirt and grime.  He smells even worse than you.    
 ~
-72 0 0 0 0 0 0 0 0 E
-8 18 5 1d1+80 1d2+1
-80 6400
+8 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
 8 8 1
 E
 T 206
@@ -1291,7 +1281,7 @@ fate of cutting meat for the rest of his life.
 E
 T 121
 #189
-commander~
+commander army~
 the commander~
 A commander of the army overseas the protection of the city.
 ~
@@ -1304,7 +1294,6 @@ years than you've been living.
 50 2500
 8 8 1
 E
-T 207
 #190
 cat pussy~
 the cat~
@@ -1336,12 +1325,13 @@ T 160
 #192
 german shephard dog~
 the german shephard~
-A german shephard perks up its ears and wags it's tail as you approach.
+A german shephard perks up its ears and wags its tail as you approach.
 ~
    These dogs are kept for many reasons.  Some are used to herd livestock,
 others for protection, and even a few simply as pets.  They are very smart and
-have evolved beyond normal animal intelligence due to Drakkar's expirements with
+have evolved beyond normal animal intelligence due to Drakkar's experiments with
 animals.  
+
 ~
 76 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
@@ -1380,7 +1370,7 @@ T 148
 #195
 kitten~
 the kitten~
-A cute little kitten is ready to pounce, it's tail twitching back and forth
+A cute little kitten is ready to pounce, its tail twitching back and forth
 ~
    The kitten seems intent on attacking your feet for some reason.    
 ~
@@ -1406,7 +1396,7 @@ of her.  She always is willing to give advice to those in need.
 E
 T 103
 #197
-carpeneter~
+carpenter~
 the carpenter~
 The carpenter frowns at your intrusion.
 ~

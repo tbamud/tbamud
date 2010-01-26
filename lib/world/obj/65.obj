@@ -5,7 +5,7 @@ There is a key for the treasury lying here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 1 0
+1 1 1 0 0
 #6501
 gold treasure coins~
 the Queen's treasure~
@@ -13,7 +13,7 @@ A large pile of treasure has been left here, it must be the Queen's.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 650 0 0 0
-20 650 0 0
+20 650 0 0 0
 #6502
 key mine~
 a mine key~
@@ -21,7 +21,7 @@ There is a key to the mines lying here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #6503
 key bright gold~
 a bright golden key~
@@ -29,7 +29,7 @@ There is a bright golden key lying here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #6504
 hammer dwarven~
 a dwarven hammer~
@@ -37,7 +37,7 @@ There is a dwarven hammer lying here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 7
-13 550 100 0
+13 550 100 0 0
 #6505
 plate dwarven mail~
 the dwarven plate mail~
@@ -45,7 +45,7 @@ There is dwarven plate mail lying here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-50 450 30 0
+50 450 30 0 0
 #6506
 stick black long~
 a long, black stick~
@@ -53,7 +53,7 @@ There is a long, black stick lying here.~
 ~
 4 q 0 0 0 ao 0 0 0 0 0 0 0
 4 2 2 28
-1 100 60 0
+1 100 60 0 0
 #6507
 stick black long~
 a long, black stick~
@@ -61,7 +61,7 @@ There is a long, black stick here.~
 ~
 1 q 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 100 6000 0
+1 100 6000 0 0
 #6508
 club dwarven~
 a dwarven club~
@@ -69,7 +69,7 @@ There is a dwarven club lying here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 3 3
-12 300 30 0
+12 300 30 0 0
 #6509
 axe two-handed dwarven~
 a two-handed dwarven axe~
@@ -77,7 +77,7 @@ A two-handed dwarven axe is here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 0 2 7 3
-14 500 30 0
+14 500 30 0 0
 A
 18 2
 A
@@ -89,7 +89,7 @@ A dwarven helmet is here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
-4 250 50 0
+4 250 50 0 0
 #6511
 ring gold dwarven~
 a golden dwarven ring~
@@ -97,7 +97,7 @@ A golden dwarven ring is lying here.~
 ~
 11 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 100 0
+1 1000 100 0 0
 A
 18 1
 A
@@ -109,7 +109,7 @@ A pair of thick dwarven gloves lay here.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 1 0 0 0
-2 400 20 0
+2 400 20 0 0
 A
 5 1
 A
@@ -121,7 +121,7 @@ There is a chunk of coal here.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-50 1 1 0
+50 1 1 0 0
 #6514
 pick mining~
 a mining pick~
@@ -129,7 +129,7 @@ There is a mining pick here.~
 ~
 5 i 0 0 0 an 0 0 0 0 0 0 0
 0 2 3 11
-9 300 10 0
+9 300 10 0 0
 E
 pick mining~
    It looks almost blessed!  
@@ -141,7 +141,7 @@ There is a deep green key lying here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-10 1 0 0
+10 1 0 0 0
 #6516
 key old~
 an old key~
@@ -149,5 +149,61 @@ Someone seems to have dropped an old key.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
+#6517
+sword long~
+a long sword~
+A long sword has been left here.~
+~
+5 n 0 0 0 an 0 0 0 0 0 0 0
+0 1 8 3
+8 600 10 0 0
+#6518
+barrel beer~
+a barrel~
+A beer barrel has been left here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+50 50 1 0
+50 300 100 0 0
+#6519
+bottle firebreather~
+a bottle~
+A bottle of firebreather has been left here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+8 8 7 0
+10 50 17 0 0
+#6520
+bread loaf~
+a bread~
+A loaf of bread has been left here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+12 0 0 0
+1 10 10 0 0
+#6521
+danish pastry~
+a danish pastry~
+A nice looking delicious danish pastry has been placed here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+5 0 0 0
+1 5 5 0 0
+#6522
+lantern brass~
+a lantern~
+A brass lantern is here.~
+~
+1 0 0 0 0 ao 0 0 0 0 0 0 0
+0 0 96 0
+1 50 10 0 0
+#6523
+barrel water~
+a barrel~
+A water barrel has been left here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+40 40 15 0
+45 60 20 0 0
 $~

@@ -58,12 +58,8 @@ D2
 ~
 0 0 34503
 E
-iron gate~
-   Made from heavy black iron, the left side of the gate is only hanging by the
-bottom hinge. A large mansion can be seen through the bars.
-~
-E
 plaque sign~
+   @Y
 @y 
 **************************
 *    NEW YORK ASYLUM     *
@@ -72,6 +68,11 @@ plaque sign~
 *                        * 
 *   CRIMINALLY INSANE    *
 ************************** @n                  
+~
+E
+iron gate~
+   Made from heavy black iron, the left side of the gate is only hanging by the
+bottom hinge. A large mansion can be seen through the bars.
 ~
 S
 #34503
@@ -180,12 +181,12 @@ D2
 gate south~
 1 0 34509
 E
-gate~
-   A black wrought iron gate, hanging slightly from its hinges.
-~
-E
 wall~
    It is very hard to see from here.
+~
+E
+gate~
+   A black wrought iron gate, hanging slightly from its hinges.
 ~
 S
 #34508
@@ -216,6 +217,7 @@ door west~
 2 34500 34506
 E
 sign~
+   @n
 *********************************
 *       Doctor Offices          *
 *          Upstairs             *
@@ -855,15 +857,15 @@ D3
 door west~
 1 0 34534
 E
-paper~
-   The paper, yellowed with age, has only one simple line on it: If one is
-seeking true enlightenment, one must first learn the correct words.
-~
-E
 bookcase~
    Old and dusty like the rest of the room the book case only house a few books
 now. Interestingly enough they are all by or about the same person... Edgar
 Allen Poe. What an curious thing that is.
+~
+E
+paper~
+   The paper, yellowed with age, has only one simple line on it: If one is
+seeking true enlightenment, one must first learn the correct words.
 ~
 S
 #34538
@@ -1129,15 +1131,15 @@ D3
 ~
 0 0 34537
 E
-paintings~
-   The paintings are of morbid landscapes or of hell it. They are both
-beautiful and disturbing. They are framed in thick mahogany.
-~
-E
 table~
    The table is about waist high and made from a rich mahogany. It has many
 dents and ding's in it from years of use. The most interesting thing about it
 is its lack of dust.
+~
+E
+paintings~
+   The paintings are of morbid landscapes or of hell it. They are both
+beautiful and disturbing. They are framed in thick mahogany.
 ~
 S
 $~

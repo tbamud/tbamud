@@ -88,7 +88,7 @@ done
 return 0
 ~
 #204
-Pirate Parrott Repeats - M212~
+Pirate Parrot Repeats - M212~
 0 d 100
 *~
 * By Rumble of The Builder Academy    tbamud.com 9091
@@ -157,19 +157,24 @@ end
 *
 eval from_room %self.room.vnum%
 global from_room
+%echo% FROM:%from_room% TO:%inroom%
 ~
 #207
 Mob Blocks opening of chest~
-0 c 100
+2 c 100
 o~
 * By Rumble of The Builder Academy    tbamud.com 9091 
 * Make sure the command is open, check for any abbrev of chest
 if %cmd.mudcommand% == open && chest /= %arg%
   * findmob checks if the mob is in the room.
   if %findmob.230(189)%
-    %echoaround% %actor% As %actor.name% tries to approach the chest %self.name% looks up.
+    %echoaround% %actor% As %actor.name% tries to approach the chest the commander looks up.
+    %send% %actor% As you approach the chest the commander looks up at you.
     wait 1 sec
-    say get away from there.
+    %echo% The commander says, 'Get away from there.'
+  else
+    * If the commander is not in the room allow the "open chest" command to continue to the next command trigger.
+    return 0
   end
 else
   * If it doesn't match let the command continue.
@@ -205,6 +210,7 @@ if chest /= %arg%
     * The first time!  OK, open the chest. 
     %send% %actor% You get a jar of naphthalene from an iron bound chest.
     %load% obj 306 %actor% inv
+    * Remember that the player has already opened this chest until next reboot/copyover. This limits this item to only be found once per boot per player.
     set already_opened_chest 1 
     global already_opened_chest
     return 0 
@@ -212,6 +218,28 @@ if chest /= %arg%
 else 
   * Not 'open chest' - pass control back to the command parser 
   return 0 
+end
+~
+#210
+Butcher Shop Opens~
+2 at 5
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+%echo% The butcher's assistant steps out of the shop to the North and turns the sign over from "closed" to "open."
+%load% obj 69
+if %findobj.291(70)%
+  %purge% signclosed
+end
+~
+#211
+Butcher Shop Closes~
+2 at 21
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+%echo% The butcher's assistant steps out of the shop to the North and turns the sign over from "open" to "closed."
+%load% obj 70
+if %findobj.291(69)%
+  %purge% signopened
 end
 ~
 #212
@@ -231,10 +259,168 @@ if %phoenix_deaths% <= 2
 else
   * Reward on the last kill!
   %load% obj 184
-  eval phoenix_deaths 0
+  set phoenix_deaths 0
   %echo% Something in the pile of ashes glimmers brightly.
 end  
 * Remember the count for the next time this trig fires
 global phoenix_deaths
+~
+#213
+player damage~
+0 b 100
+test~
+dg_cast 'armor' %self%
+%damage% %self% 10
+~
+#214
+test~
+0 c 100
+north~
+set actor_room %actor.room%
+set this_room %actor_room.vnum%
+%echo% this_room = %actor_room.vnum%
+set new_room %this_room.north(vnum)%
+%echo% new_room = %this_room.north(vnum)%
+wait 10 sec
+%teleport% %actor% %this_room.north(vnum)%
+%force% %actor% look
+~
+#218
+Holiday Decorations by Interior Design - M218~
+0 d 100
+decorate~
+* By Rumble of The Builder Academy    tbamud.com 9091
+* A trigger to make decorating for holidays easier. Just say "decorate <holiday>"
+if %actor.level% > 31
+  switch %speech.cdr%
+    case christmas
+      say decorating for Christmas, how fun
+      %teleport% %self% 1204
+      %load% obj 1299
+      %load% obj 1318
+      %load% obj 1319
+      %load% obj 1336
+      %load% obj 1337
+      %load% obj 1338
+      %load% obj 1339
+      %load% obj 1340
+      %load% obj 1341
+      %load% obj 1397
+      %load% mob 1308
+      drop all
+      %teleport% %self% 2
+      %load% obj 1299
+      %load% obj 1318
+      %load% obj 1319
+      %load% obj 1336
+      %load% obj 1337
+      %load% obj 1338
+      %load% obj 1339
+      %load% obj 1340
+      %load% obj 1341
+      %load% obj 1397
+      %load% mob 1308
+      drop all
+      %teleport% %self% %actor.name%
+      wait 1 sec
+      say I'm all done
+    break
+    case new years
+      say hmm, bringing in the new year.
+      %teleport% %self% 1204
+      %load% obj 1298
+      %load% obj 1963
+      drop all
+      %teleport% %self% 2
+      %load% obj 1298
+      %load% obj 1963
+      drop all
+      %teleport% %self% %actor.name%
+      wait 1 sec
+      say I'm all done
+    break
+    case valentines
+      say how sweet it is.
+      %teleport% %self% 1204
+      %load% obj 1304
+      %load% obj 1342
+      drop all
+      %teleport% %self% 2
+      %load% obj 1304
+      %load% obj 1342
+      drop all
+      %teleport% %self% %actor.name%
+      wait 1 sec
+      say I'm all done
+    break
+    case Easter
+      say I'll have to think about it
+    break
+    case fourth
+      say ah, US independence day.
+      %teleport% %self% 1204
+      %load% obj 1298
+      %load% obj 1963
+      drop all
+      %teleport% %self% 2
+      %load% obj 1298
+      %load% obj 1963
+      drop all
+      %teleport% %self% %actor.name%
+      wait 1 sec
+      say I'm all done
+    break
+    case Halloween
+      say Hallow's Eve it is.
+      %teleport% %self% 1204
+      %load% mob 1313
+      %load% obj 11712
+      %load% obj 11713
+      drop all
+      %teleport% %self% 2
+      %load% mob 1313
+      %load% obj 11712
+      %load% obj 11713
+      drop all
+      %teleport% %self% %actor.name%
+      wait 1 sec
+      say I'm all done
+    break
+    case thanksgiving
+      say Turkey Day, ode to triptophan.
+      %teleport% %self% 1204
+      %load% mob 1322
+      %load% obj 1331
+      drop all
+      %teleport% %self% 2
+      %load% mob 1322
+      %load% obj 1331
+      drop all
+      %teleport% %self% %actor.name%
+      wait 1 sec
+      say I'm all done
+    break
+    default
+      * nothing is going to happen
+    break
+  done
+else
+  say I only work for the Gods.
+end
+~
+#220
+Birthday Present Unwrap~
+1 c 3
+unwrap~
+eval present %random.27%
+eval present2 %present% * 1000
+eval present3 %present2% + %random.4%
+%send% %actor% You begin unwrapping the present.
+%echoaround% %actor% %actor.name% begins unwrapping %actor.hisher% present.
+wait 1 s
+%load% obj %present3% %actor% inv
+eval inv %actor.inventory%
+%echo% As the wrapping falls apart, it reveals... %inv.shortdesc%.
+%purge% %self%
 ~
 $~

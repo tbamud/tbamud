@@ -15,35 +15,6 @@ A non-descript corridor stretches far to the north.
 ~
 0 -1 24102
 E
-credits info~
-    x---------------------------------------------------------------------x
-    |               STARSHIP ENTERPRISE - FOR CIRCLEMUD 3.1               |
-    |                    Written in 2001 by Crazyman                      |
-    |                        www.nt.net/saarinen                          |
-    x---------------------------------------------------------------------x
-     I created this zone because I'm a fan of the show Star Trek: The Next
-     Generation. This zone features all of the main characters from the
-     show, and many of the items too. This zone features about 45 rooms, 
-     and is good for players of level 26-30. Everyone except for the 
-     ensigns, Picard, and Data are rougly a bit stronger than Jupiter. Data 
-     and Picard are much harder, and the ensigns are easier. I have a spot 
-     for a holodeck, but I haven't added anything in yet.
-               
-     Written entirely from scratch in WordPad. Feel free to edit, modify,
-     and do what you want with this zone!
-    x---------------------------------------------------------------------x
-Builder      : Crazyman (Heiach)
-Zone         : 241 Starship Enterprise
-Began        : 2001
-Player Level : 26-30
-Rooms        : 43(46)
-Mobs         : 14(19)
-Objects      : 19(33)
-Shops        : 1
-Triggers     : 0(35)
-Links        : 0(1) <24109 - 35923>
-~
-E
 maps~
    STARSHIP ENTERPRISE
              Turbolift               |                Ten Forward
@@ -80,6 +51,35 @@ maps~
                1022                  |
                                      |
               DECK 3                 |                DECK 4
+~
+E
+credits info~
+    x---------------------------------------------------------------------x
+    |               STARSHIP ENTERPRISE - FOR CIRCLEMUD 3.1               |
+    |                    Written in 2001 by Crazyman                      |
+    |                        www.nt.net/saarinen                          |
+    x---------------------------------------------------------------------x
+     I created this zone because I'm a fan of the show Star Trek: The Next
+     Generation. This zone features all of the main characters from the
+     show, and many of the items too. This zone features about 45 rooms, 
+     and is good for players of level 26-30. Everyone except for the 
+     ensigns, Picard, and Data are rougly a bit stronger than Jupiter. Data 
+     and Picard are much harder, and the ensigns are easier. I have a spot 
+     for a holodeck, but I haven't added anything in yet.
+               
+     Written entirely from scratch in WordPad. Feel free to edit, modify,
+     and do what you want with this zone!
+    x---------------------------------------------------------------------x
+Builder      : Crazyman (Heiach)
+Zone         : 241 Starship Enterprise
+Began        : 2001
+Player Level : 26-30
+Rooms        : 43(46)
+Mobs         : 14(19)
+Objects      : 19(33)
+Shops        : 1
+Triggers     : 0(35)
+Links        : 0(1) <24109 - 35923>
 ~
 S
 #24101
@@ -286,28 +286,6 @@ D3
 ~
 0 -1 24107
 E
-holodeck computer control panel sign~
-   It looks like this:
-   
-    ***************************************************
-    *                                                 *
-    *            NCC-1701-D - "ENTERPRISE"            *
-    *                    HOLODECK 2                   *
-    *                                                 *
-    *              STATUS : Inactive                  *
-    *     CURRENT PROGRAM : N/A                       *
-    *            SAFETIES : N/A                       *
-    *                                                 *
-    *    NOTE: Starfleet is not responsible for       *
-    *          any injuries incurred while on this    *
-    *          holodeck!                              *
-    *                                                 *
-    * WARNING: While the safeties are disabled, you   *
-    *          CAN be injured, or even killed.        *
-    *                                                 *
-    ***************************************************
-~
-E
 map screen~
    STARSHIP ENTERPRISE
                                      |                
@@ -344,6 +322,28 @@ map screen~
                                      |
                                      |
               DECK 3                 |                DECK 4 
+~
+E
+holodeck computer control panel sign~
+   It looks like this:
+   
+    ***************************************************
+    *                                                 *
+    *            NCC-1701-D - "ENTERPRISE"            *
+    *                    HOLODECK 2                   *
+    *                                                 *
+    *              STATUS : Inactive                  *
+    *     CURRENT PROGRAM : N/A                       *
+    *            SAFETIES : N/A                       *
+    *                                                 *
+    *    NOTE: Starfleet is not responsible for       *
+    *          any injuries incurred while on this    *
+    *          holodeck!                              *
+    *                                                 *
+    * WARNING: While the safeties are disabled, you   *
+    *          CAN be injured, or even killed.        *
+    *                                                 *
+    ***************************************************
 ~
 S
 #24109
@@ -470,25 +470,6 @@ D3
 ~
 0 -1 24112
 E
-control panel computer screen sign~
-   The panel says:
- 
-    ***************************************************
-    *                                                 *
-    *            NCC-1701-D - "ENTERPRISE"            *
-    *                                                 *
-    *              *****                              *
-    *      **********************                     *
-    *      ***********************  _________         *
-    *              *****        ***(___  ____(        *
-    *                            ***** \ \*           *
-    *                             **********          *
-    *                                                 *
-    *          You are currently on deck 2            *
-    *                                                 *
-    ***************************************************
-~
-E
 map screen~
    STARSHIP ENTERPRISE
                                      |                
@@ -526,12 +507,31 @@ map screen~
                                      |
               DECK 3                 |                DECK 4 
 ~
+E
+control panel computer screen sign~
+   The panel says:
+ 
+    ***************************************************
+    *                                                 *
+    *            NCC-1701-D - "ENTERPRISE"            *
+    *                                                 *
+    *              *****                              *
+    *      **********************                     *
+    *      ***********************  _________         *
+    *              *****        ***(___  ____(        *
+    *                            ***** \ \*           *
+    *                             **********          *
+    *                                                 *
+    *          You are currently on deck 2            *
+    *                                                 *
+    ***************************************************
+~
 S
 #24114
 Riker's Quarters~
    The room is very neat and tidy, with a couch and several chairs arranged
 around a coffee table by the eastern wall.  A small partition at the northern
-part of the room seperates his sleeping area with the rest of the room.  Riker
+part of the room separates his sleeping area with the rest of the room.  Riker
 has been dimmed his room, making his romantic red lamps and purple cusions seems
 more exotic and appealing.  
 ~
@@ -1248,10 +1248,4 @@ is empty.
 S
 T 24124
 T 24127
-#24146
-The Shooting Range~
-You are in an unfinished room.
-~
-241 8 0 0 0 0
-S
 $~

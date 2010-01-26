@@ -5,11 +5,15 @@ away.  You wonder how this tower still stands after all these years.  High
 above in the tower a light flashes.  Do you dare enter?  Words are chiseled 
 into a tablet beside the entrance.    
 ~
-22 0 0 0 0 0
+22 4 0 0 0 0
 D0
 ~
 ~
 0 0 2201
+D2
+~
+~
+0 0 1685
 E
 tablet credits info~
    This area created by the demented imagination of Rumble.
@@ -991,10 +995,6 @@ fall apart when you put any sizeable force upon them.  They seem treacherous,
 but passable.  An empty hallway to the west looks far more inviting.  
 ~
 22 8 0 0 0 0
-D1
-~
-~
-0 0 -1
 D3
 ~
 ~

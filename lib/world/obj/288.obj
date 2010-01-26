@@ -4,8 +4,8 @@ a comet's tail~
 A long, slender whip lies here.~
 ~
 5 ab 0 0 0 an 0 0 0 0 0 0 0
-0 2 6 4
-9 1000 0 0
+0 2 6 2
+9 1000 0 0 0
 #28802
 arm hercules~
 the Titanic Arm plates of Hercules~
@@ -13,7 +13,7 @@ Arm plates of the Zodiac lie here.~
 ~
 9 agk 0 0 0 ai 0 0 0 0 0 0 0
 6 0 0 0
-10 100 0 0
+10 100 0 0 0
 E
 arm~
    These mighty armors have been worn by this immortal, since the ancient time.
@@ -30,7 +30,7 @@ A belt of the Zodiac lies here.~
 ~
 9 agk 0 0 0 al 0 0 0 0 0 0 0
 9 0 0 0
-7 1000 0 0
+7 1000 0 0 0
 E
 belt~
    You can immediately see that it belongs to Orion, from the three stars
@@ -45,7 +45,7 @@ A massive skull of a dead Draco lies here.~
 ~
 4 bgh 0 0 0 ao 0 0 0 0 0 0 0
 15 5 5 44
-20 1000 0 0
+20 1000 0 0 0
 #28806
 fleece aries~
 the Titanic Fleece of Aries~
@@ -53,7 +53,7 @@ A fleece of the Zodiac lies here.~
 ~
 9 agk 0 0 0 ac 0 0 0 0 0 0 0
 9 0 0 0
-9 1000 0 0
+9 1000 0 0 0
 E
 fleece~
    From a look it resembles the Golden Fleece that exists in the Greek myths.  
@@ -65,7 +65,7 @@ A hoof of the Zodiac lies here.~
 ~
 9 agk 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-3 1000 0 0
+3 1000 0 0 0
 E
 hoof~
    It is with these hooves that Taurus can stand against Orion's attacks.  
@@ -79,9 +79,9 @@ mask gemini~
 the Titanic Mask of Gemini~
 A mask of the Zodiac lies here.~
 ~
-9 aghk 0 0 0 0 0 0 0 0 0 0 0
+9 aghk 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
-0 0 0 0
+7 1000 0 0 0
 E
 mask~
    You notice the mask has got two faces, one smiling and the other crying.  
@@ -96,22 +96,24 @@ shell cancer~
 the Titanic Shell of Cancer~
 A shell of the Zodiac lies here.~
 ~
-9 agk 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0
-0 0 0 0
+9 agk 0 0 0 ad 0 0 0 0 0 0 0
+10 0 0 0
+15 1000 0 0 0
 E
 shell~
    A shell which is dented in the middle, resulting from the Hercules' mighty
 pound when the Crab was still an enemy of Hercules in ancient times.  
 ~
+A
+17 -2
 #28810
 skin leo~
 the Titanic Skin of Leo~
 A skin of the Zodiac lies here.~
 ~
-9 agk 0 0 0 0 0 0 0 0 0 0 0
-11 0 0 0
-0 0 0 0
+9 agk 0 0 0 ak 0 0 0 0 0 0 0
+10 0 0 0
+15 1000 0 0 0
 E
 skin~
    A skin made of metal, which was worn by Hercules during his Ten Labours.  
@@ -123,9 +125,9 @@ bracelet virgo~
 the Titanic Bracelet of Virgo~
 A bracelet of the Zodiac lies here.~
 ~
-9 agk 0 0 0 0 0 0 0 0 0 0 0
+9 agk 0 0 0 am 0 0 0 0 0 0 0
 4 0 0 0
-0 0 0 0
+4 1000 0 0 0
 E
 bracelet~
    A bracelet of purity and youth, only worn by selected virgins.  
@@ -137,9 +139,9 @@ scale libra~
 the Titanic Scale of Libra~
 A shield of the Zodiac lies here.~
 ~
-9 agk 0 0 0 0 0 0 0 0 0 0 0
+9 agk 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
-0 0 0 0
+15 1000 0 0 0
 E
 scale~
    It is a shield of justice, used in the ancient battle against injustice.  
@@ -153,9 +155,9 @@ scale libra~
 the Titanic Scale of Libra~
 A shield of the Zodiac lies here.~
 ~
-9 bgh 0 0 0 0 0 0 0 0 0 0 0
+9 bgh 0 0 0 aj 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+15 1000 0 0 0
 E
 scale~
    It is a shield of injustice, it picks on the innocent.  
@@ -170,8 +172,8 @@ the Sting of Scorpio~
 Sting of the Zodiac lies here.~
 ~
 5 agk 0 0 0 an 0 0 0 0 0 0 0
-0 4 4 11
-1 1 0 0
+0 4 4 1
+7 1000 0 0 0
 E
 sting~
    This dreadful weapon put a lot of mortals to death before Scorpio was
@@ -186,9 +188,9 @@ arrow sagittarius~
 the Arrow of Sagittarius~
 The Arrow of Sagittarius lies here.~
 ~
-3 agk 0 0 0 0 0 0 0 0 0 0 0
-10 10 10 19
-0 0 0 0
+3 agk 0 0 0 ao 0 0 0 0 0 0 0
+10 10 10 30
+7 500 0 0 0
 E
 arrow~
    It's an arrow of lightning; it will never miss any target.  
@@ -199,8 +201,8 @@ the Titanic Bow of Sagittarius~
 The Titanic Bow of Sagittarius lies here.~
 ~
 5 agk 0 0 0 an 0 0 0 0 0 0 0
-0 2 9 6
-1 1 0 0
+0 2 9 12
+20 1000 0 0 0
 E
 bow~
    The gigantic bow used by the Archer; it is a very powerful weapon.  
@@ -214,9 +216,9 @@ horns capricorn~
 the Titanic Horns of Capricorn~
 A pair of horns of the Zodiac lies here.~
 ~
-9 agk 0 0 0 0 0 0 0 0 0 0 0
+9 agk 0 0 0 ah 0 0 0 0 0 0 0
 4 0 0 0
-0 0 0 0
+6 1000 0 0 0
 E
 horn~
    These strange horns are the work of gods, shaped to fit on hands.  They look
@@ -231,9 +233,9 @@ vessel aquarius~
 the Ancient Vessel of Aquarius~
 A vessel of the Zodiac lies here.~
 ~
-4 agk 0 0 0 0 0 0 0 0 0 0 0
+4 agk 0 0 0 ao 0 0 0 0 0 0 0
 10 5 5 43
-0 0 0 0
+12 1000 0 0 0
 E
 vessel~
    This vessel has been carried by the Water Bearer ever since she came to the
@@ -244,9 +246,9 @@ tail pisces~
 the Titanic Tail of Pisces~
 A fish tail of the Zodiac lies here.~
 ~
-9 agk 0 0 0 0 0 0 0 0 0 0 0
+9 agk 0 0 0 af 0 0 0 0 0 0 0
 10 0 0 0
-0 0 0 0
+10 1000 0 0 0
 E
 tail~
    This tail can actually be worn by mortals somehow as leggings ...  Another
@@ -255,15 +257,15 @@ work of the gods.
 A
 17 -2
 A
-2 2
+2 -2
 #28820
 ring dignity~
 the Ring of Dignity~
 A ring of specialty lies here.~
 ~
-9 abfgk 0 0 0 0 0 0 0 0 0 0 0
+9 abfgk 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+3 2000 0 0 0
 E
 ring~
    This ring belongs to Cassiopeia, queen of the Universe.  Mortals, do not
@@ -278,9 +280,9 @@ sceptre might~
 the Sceptre of Might~
 A sceptre of interest lies here.~
 ~
-1 abgk 0 0 0 0 0 0 0 0 0 0 0
-0 0 1 0
-0 0 0 0
+1 abgk 0 0 0 ao 0 0 0 0 0 0 0
+0 0 -1 0
+4 2000 0 0 0
 E
 sceptre~
    You'd better give it back, or the king of the Universe will punish you.  
@@ -294,9 +296,9 @@ ring universe~
 the ring of the universe~
 Here lies a fortune ... a small ring of power.~
 ~
-9 abfgi 0 0 0 0 0 0 0 0 0 0 0
+9 abfgi 0 0 0 ab 0 0 0 0 0 0 0
 4 0 0 0
-0 0 0 0
+3 4000 0 0 0
 E
 ring~
    It conceals the power of the universe.  
@@ -312,7 +314,7 @@ A dazzling white object lies on the ground.~
 ~
 5 abfgi 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 6
-1 1 0 0
+1 1 0 0 0
 A
 18 2
 A
@@ -324,7 +326,7 @@ A shoot grows here, covered with dew.~
 ~
 18 ab 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 0
+2 1 0 0 0
 #28825
 summer flower~
 a summer flower~
@@ -332,7 +334,7 @@ A flower grows here, waiting to be picked up.~
 ~
 18 ab 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 0
+2 1 0 0 0
 #28826
 autumn leaf~
 an autumn leaf~
@@ -340,7 +342,7 @@ A leaf lies here, as if just fallen from a tree.~
 ~
 18 ab 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 0
+2 1 0 0 0
 #28827
 winter branch~
 a winter branch~
@@ -348,7 +350,7 @@ A branch lies here, still covered with snow.~
 ~
 18 ab 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 0
+2 1 0 0 0
 #28828
 chains andromeda~
 chains of Andromeda~
@@ -356,9 +358,32 @@ Some chains lie on the floor.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-50 1 0 0
+50 1 0 0 0
 E
 chains~
    They certainly look important!  
 ~
+#28829
+plinth plaque~
+a plinth~
+A plith, with an engraved plaque, sits on a table.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
+E
+plinth plaque~
+   A wooden base holds a glowing crystal ball.  An engraved brass plaque
+ is attached to the plinth.  The plaque reads:
+   The galaxy within this crystal ball was created by Doctor of EnvyMUD.
+~
+#28830
+crystal ball crystalball~
+the crystal ball~
+A crystal ball sits on the plinth.~
+~
+12 a 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
+T 28830
 $~

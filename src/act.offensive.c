@@ -298,6 +298,10 @@ ACMD(do_bash)
     send_to_char(ch, "This mob is protected.\r\n");
     return;
   }
+
+  if (MOB_FLAGGED(vict, MOB_NOBASH))
+    percent = 101;
+
   percent = rand_number(1, 101);	/* 101% is a complete failure */
   prob = GET_SKILL(ch, SKILL_BASH);
 

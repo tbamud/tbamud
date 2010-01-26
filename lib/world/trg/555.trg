@@ -84,8 +84,8 @@ end
 ~
 #55533
 CloseBookshelves~
-2 df 100
-test~
+2 f 100
+~
 if %self.south%
   %door% 55532 south purge
   %echo% The shelf gently creaks as it swings back towards the wall.

@@ -1,7 +1,7 @@
 #28801
-poor adventurer~
-a poor adventurer~
-A poor adventurer, lost in this place.
+poor mudder~
+a poor mudder~
+A poor mudder wanders, lost in this place.
 ~
    You will become him if you are not careful.    
 ~
@@ -10,6 +10,7 @@ A poor adventurer, lost in this place.
 290 84100
 8 8 1
 E
+T 28802
 #28802
 star~
 a beautiful star~
@@ -25,7 +26,7 @@ E
 #28803
 nebula young~
 a young nebula~
-A young nebula, waiting to become a star.
+A young nebula is waiting to become a star.
 ~
    It hasn't got a definite shape, it is just a cloud of mist.    
 ~
@@ -57,7 +58,7 @@ very powerful.
 138 0 0 0 0 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
 290 84100
-4 8 1
+8 8 1
 E
 #28806
 white dwarf~
@@ -80,7 +81,7 @@ A huge nebula is here, resembling a horsehead.
    You can only make out its shape from the darkness.  He was cursed to stay in
 here and his face may never be seen by anyone again.    
 ~
-10 0 0 0 0 0 0 0 -1000 E
+10 0 0 0 1572864 0 0 0 -1000 E
 28 11 -6 5d5+280 4d4+4
 280 78400
 6 8 1
@@ -165,6 +166,7 @@ hitting the head is certainly not easy.
 300 90000
 8 8 0
 E
+T 28803
 #28814
 draco baby~
 a baby draco~
@@ -179,6 +181,7 @@ on now?
 290 84100
 8 8 0
 E
+T 28803
 #28815
 aries~
 Aries~
@@ -190,8 +193,9 @@ of Spring.  He looks as if he is expecting you.
 10 0 0 0 0 0 0 0 700 E
 33 9 -9 6d6+330 5d5+5
 330 108900
-6 8 1
+8 8 1
 E
+T 28800
 #28816
 taurus~
 Taurus~
@@ -206,6 +210,7 @@ survived.
 300 90000
 8 8 1
 E
+T 28800
 #28817
 gemini~
 Gemini~
@@ -219,6 +224,7 @@ seen.  You can't find any imperfections on him.
 320 102400
 8 8 1
 E
+T 28800
 #28818
 gemini~
 Gemini~
@@ -232,6 +238,7 @@ How can there be such a contrast?  You wonder ...
 320 102400
 8 8 1
 E
+T 28800
 #28819
 cancer~
 Cancer~
@@ -246,6 +253,7 @@ kill him.  So Hera made Cancer a constellation for his work.
 310 96100
 8 8 1
 E
+T 28800
 #28820
 leo~
 Leo~
@@ -260,6 +268,7 @@ had to use his bare hands to tear the lion into two from its mouth!
 300 90000
 8 8 1
 E
+T 28800
 #28821
 virgo~
 Virgo~
@@ -274,6 +283,7 @@ gorgeous and is waiting for your first move, whatever it is ...
 290 84100
 6 8 2
 E
+T 28800
 #28822
 libra~
 Libra~
@@ -287,6 +297,7 @@ Now all he can see from you is greed and bloodshed.
 340 115600
 8 8 1
 E
+T 28800
 #28823
 scorpio~
 Scorpio~
@@ -300,6 +311,7 @@ Sagittarius' arrow aimed at his heart forever.
 300 90000
 8 8 1
 E
+T 28800
 #28824
 sagittarius~
 Sagittarius~
@@ -313,6 +325,7 @@ Sagittarius the centaur is waiting to let go of his well aimed arrow ...
 320 102400
 8 8 1
 E
+T 28800
 #28825
 capricorn~
 Capricorn~
@@ -327,6 +340,7 @@ of his days in peace.
 330 108900
 8 8 1
 E
+T 28800
 #28826
 aquarius~
 Aquarius~
@@ -340,6 +354,7 @@ hand with holding the vessel.
 320 102400
 8 8 2
 E
+T 28800
 #28827
 pisces mermaid~
 Pisces the mermaid~
@@ -353,6 +368,7 @@ fish and she deserves your pity.
 280 78400
 6 8 2
 E
+T 28800
 #28828
 pisces fish~
 Pisces the fish~
@@ -366,6 +382,7 @@ So he becomes jealous of any living thing which is more handsome than him.
 320 102400
 8 8 1
 E
+T 28800
 #28829
 bear ursa major~
 Ursa Major the bear~
@@ -379,6 +396,7 @@ better turn back.  At least you have got a chance of survival.
 300 90000
 8 8 0
 E
+T 28800
 #28830
 cassiopeia queen~
 Cassiopeia the Queen~
@@ -419,4 +437,5 @@ all?
 300 90000
 8 8 1
 E
+T 28804
 $

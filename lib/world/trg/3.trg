@@ -38,7 +38,7 @@ if %actor.is_pc%
     say But I have perfected it this time, don't listen to what they say. 
     wait 1 sec
     say Bring me some Naphthalene, Palmitite and a proper container. I will give you a sampling of my liquid fire as payment.
-    eval 3_napalm_search 1
+    set 3_napalm_search 1
     remote 3_napalm_search %actor.id%
   end
 end
@@ -53,7 +53,7 @@ say I remember you, %actor.name%!
 ~
 #302
 Mob Greet direction~
-0 g 100
+0 g 20
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 if %actor.is_pc%
@@ -163,7 +163,7 @@ done
 * we know that puff, when initially loaded, is id 200000. We'll use remote
 * to give her a global, then %mob.globalname% to read it.
 makeuid mob 200000
-eval globalname 12345
+set globalname 12345
 remote globalname %mob.id%
 %echo% %mob.name%'s "globalname" value is %mob.globalname%
 ~
@@ -433,17 +433,17 @@ if %actor.is_pc%
   end
   if %actor.varexists(3_napalm_search)%
     if %object.vnum% == 306
-      eval 3_naphthalene 1
+      set 3_naphthalene 1
       remote 3_naphthalene %actor.id%
       say Thank you! Napthalene at last!
       %purge% %object%
     elseif %object.vnum% == 307
-      eval 3_palmatite 1
+      set 3_palmatite 1
       remote 3_palmatite %actor.id%
       say Outstanding, Palmatite! Just what I need!
       %purge% %object%
     elseif %object.vnum% == 308
-      eval 3_napalm_bomb 1
+      set 3_napalm_bomb 1
       remote 3_napalm_bomb %actor.id%
       say this will work well.
       %purge% %object%
@@ -459,7 +459,7 @@ if %actor.is_pc%
       rdelete 3_naphthalene %actor.id%
       rdelete 3_palmatite %actor.id%
       rdelete 3_napalm_jug %actor.id%
-      eval 3_napalm_done 1
+      set 3_napalm_done 1
       remote 3_napalm_done %actor.id%
     end
   end

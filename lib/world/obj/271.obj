@@ -5,7 +5,7 @@ A bit of sinister-looking coiled rope is lying here.~
 ~
 11 h 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-3 30 0 0
+3 30 0 0 0
 E
 noose~
    Its a thick rope coiled into a fatal knot.  Feeling like suicide today?  
@@ -19,7 +19,7 @@ A kaleidoscope is lying here.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-2 60 0 0
+2 60 0 0 0
 E
 kaleidoscope~
    It's a tiny thing, and brightly colored.  While showing you a fantasy swirl
@@ -34,7 +34,7 @@ A frayed golden tunic lies crumpled here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
-2 30 0 0
+2 30 0 0 0
 E
 tunic gold~
    It's thin and frayed at more than just the seams.  Since you have been
@@ -48,7 +48,7 @@ A pair of black leggings has been left here.~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-3 340 0 0
+3 340 0 0 0
 E
 leggings black~
    They are pitch black and merely a thin covering.  
@@ -62,7 +62,7 @@ A pair of old leather boots are here.~
 ~
 11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-2 270 0 0
+2 270 0 0 0
 E
 boots leather~
    They are close to wearing holes at the toes and the heels.  
@@ -76,7 +76,7 @@ A tiny black dagger has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
-1 20 0 0
+1 20 0 0 0
 E
 dagger black~
    This tiny dagger serves well for around town and the neighboring village.  
@@ -89,7 +89,7 @@ A thin gnarled staff has been dropped here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 7
-2 20 0 0
+2 20 0 0 0
 E
 staff gnarled~
    The staff is carved from holly wood, and serves well for around town and the
@@ -103,7 +103,7 @@ An iron mace is lying here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 5
-2 20 0 0
+2 20 0 0 0
 E
 mace iron~
    It is wrought from strong iron, but small and slightly rusty.  It serves well
@@ -117,7 +117,7 @@ A short sword is lying on the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 3
-2 20 0 0
+2 20 0 0 0
 E
 sword short~
    The blade is dull, but it serves well for around town and the neighboring
@@ -130,7 +130,7 @@ A candelabra glows dimly with a golden light.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-1 1 0 0
+1 1 0 0 0
 E
 candelabra candle~
    Thirty tiny black candles shine with a golden glow.  At the base is an
@@ -143,7 +143,7 @@ A black marble fountain flows with a clear water.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 100 100 0 0
-105 0 0 0
+105 0 0 0 0
 E
 fountain marble black~
    The circular fountain is carved from black marble from the mines below the
@@ -156,7 +156,7 @@ A bloody axe has been left here.~
 ~
 5 mn 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 0
-10 1000 0 0
+10 1000 0 0 0
 E
 axe severance~
    This massive weapon takes much of your strength to carry.  It would like to
@@ -173,7 +173,7 @@ A huge pile of gold is guarded by a magical force.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 gold vault pile~
    This is the treasury of Sundhaven.  It is, of course, guarded by a magical
@@ -186,7 +186,7 @@ A quesadilla is here, hot and steaming.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 21 0 0
+1 21 0 0 0
 E
 quesadilla~
    It looks deliciously hot and spicy, a Maynards specialty!  
@@ -198,7 +198,7 @@ A coffee brewer purcolates in the corner of the room.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 20 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 brewer coffee~
    The smells of brewing coffee coming from this rouse you from any numb-
@@ -211,7 +211,7 @@ A golden rose with leaves and stem of black is growing here.~
 ~
 11 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 rose golden~
    A dark stem crowned with golden petals, it smells of warm summer winds.  
@@ -223,7 +223,7 @@ A foamy iced cappuccino is sitting here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 12 0
-8 15 0 0
+8 15 0 0 0
 E
 iced cappuccino~
    A clear glass is filled with ice, espresso, steamed milk and milk foam.  It
@@ -236,7 +236,7 @@ A hot latte is sitting here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 12 0
-10 18 0 0
+10 18 0 0 0
 E
 irish cream latte~
    It's a tall glass of high-caffeine espresso, steamed milk, milk foam, and
@@ -249,7 +249,7 @@ A black cup of coffee rests here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 12 0
-8 7 0 0
+8 7 0 0 0
 E
 coffee cup~
    Who doesn't need one of these now and then?  How about very often?  
@@ -261,7 +261,7 @@ A cup of hot tea is resting here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 11 0
-8 11 0 0
+8 11 0 0 0
 E
 tea cup~
    It comes in a slightly ornamented porceline cup, and looks to be brewed
@@ -274,7 +274,7 @@ The mascot brew of the assassins guild is resting here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 7 7 4 0
-12 20 0 0
+12 20 0 0 0
 E
 rogue brew~
    It comes in a tall pewter flask engraved with a black naga.  
@@ -286,7 +286,7 @@ A black metal flask is sitting here.~
 ~
 17 b 0 0 0 a 0 0 0 0 0 0 0
 1 1 8 0
-1 25 0 0
+1 25 0 0 0
 E
 special black adder~
    A black metal flask engraved with a coiled snake and filled with dark ale
@@ -299,7 +299,7 @@ A shot of whisky emits an alluring scent from the ground.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 5 0
-1 20 0 0
+1 20 0 0 0
 E
 whisky shot~
    The scent stings your nose pleasantly.  
@@ -311,7 +311,7 @@ The specialty sandwich of the Nightbreak Cafe is sitting here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
-2 30 0 0
+2 30 0 0 0
 E
 victim sandwich~
    What does the assassins guild do with all those corpses left over from a
@@ -324,7 +324,7 @@ A large black mug rimming with flames sits here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 7 0
-15 66 0 0
+15 66 0 0 0
 E
 mug fire firebreather flames~
    You see a wide, black mug filled with liquid of a fiery color.  The side is
@@ -337,7 +337,7 @@ The air is condensing on a cold mug of beer.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 1 0
-8 10 0 0
+8 10 0 0 0
 E
 mug beer cold~
    It's a cold pewter mug, dented from being banged on tables repeatedly.  
@@ -347,9 +347,9 @@ wine keg wine~
 a keg of wine~
 A keg of wine rests on the floor.~
 ~
-17 0 0 0 0 0 0 0 0 0 0 0 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 200 200 2 0
-205 205 0 0
+205 205 0 0 0
 #27127
 wine flask leather drink red wine~
 a leather flask~
@@ -357,7 +357,7 @@ A flask of red wine has been dropped here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 4 4 2 0
-9 20 0 0
+9 20 0 0 0
 E
 wine flask~
    The flask is grey and filled, or once filled, perhaps, with red wine.  
@@ -369,7 +369,7 @@ A tasty-looking roast is lying here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-2 14 0 0
+2 14 0 0 0
 E
 roast rabbit~
    Its a savory garlic rabbit roast.  
@@ -381,7 +381,7 @@ A pot of delicious stew is steaming away.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 40 0 0 0
-8 55 0 0
+8 55 0 0 0
 E
 stew dragon pot~
    You see a small black cauldron of steaming meat stew.  The few scales
@@ -395,7 +395,7 @@ A bread baked from rye is sitting here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-2 11 0 0
+2 11 0 0 0
 E
 bread rye~
    Its a round bread dotted with black rye.  It smells good to eat.  
@@ -407,7 +407,7 @@ A cake baked from wild saffron is resting at your feet.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
-3 20 0 0
+3 20 0 0 0
 E
 cake saffron~
    You see a round tan-colored cake, still hot from the oven.  
@@ -419,7 +419,7 @@ A sticky black pastry is sitting here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 pastry blackberry~
    Its sticky with sugar and looks delicious.  Hobbit specialty.  
@@ -431,7 +431,7 @@ A spicy dish of Thai food is sitting here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-2 20 0 0
+2 20 0 0 0
 E
 dish pad tai~
    The plate is hot to the touch, and the mixture of noodles and vegetables look
@@ -444,7 +444,7 @@ A strapped leather sack has been left here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 70 1 -1 0
-5 25 0 0
+5 25 0 0 0
 E
 sack deer leather~
    The hardy deer leather sack has straps to allow slinging over the shoulder.
@@ -459,7 +459,7 @@ A torch is lying on the ground.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 25 0
-1 5 0 0
+1 5 0 0 0
 E
 torch light~
    Its a short, wooden torch.  It's um, flammable.  
@@ -471,7 +471,7 @@ A black inky feather is lying nearby.~
 ~
 21 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 13 0 0
+1 13 0 0 0
 E
 quill black feather~
    A slender dark feather rises from an ink pen.  
@@ -483,7 +483,7 @@ A piece of paper is fluttering in the wind.~
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 12 0 0
+1 12 0 0 0
 #27138
 lamp copper light~
 a copper lamp~
@@ -491,7 +491,7 @@ A lamp glints copper in the faint light.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 60 0
-2 20 0 0
+2 20 0 0 0
 E
 lamp copper~
    It's a small, dented lamp, forged from copper.  
@@ -503,7 +503,7 @@ A sword with a pale quartz hilt has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 3
-8 550 0 0
+8 550 0 0 0
 E
 sword quartz~
    You see a long, slender-tapered sword with a carved hilt of white quartz.  
@@ -517,7 +517,7 @@ A dagger with a blade curved like a crescent is lying here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
-3 535 0 0
+3 535 0 0 0
 E
 dagger crescent mithril~
    It's a silver-colored dagger, with a crescent-like blade.  
@@ -531,7 +531,7 @@ Still hot from the forge, a mace burns a black space on the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 5
-5 545 0 0
+5 545 0 0 0
 E
 mace fire~
    The barbed head of the mace is still hot from the forge, and crafted to look
@@ -546,7 +546,7 @@ A staff crowned with a cloudy crystal is lying here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 6
-4 540 0 0
+4 540 0 0 0
 E
 staff rock crystal~
    A slender staff, carved from ash and embedded with a cloudy crystal at the
@@ -561,7 +561,7 @@ A dark sandstone plate is lying here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
-6 400 0 0
+6 400 0 0 0
 E
 shield black sandstone~
    Molded from local black cliff sandstone and laquered with a special varnish
@@ -574,7 +574,7 @@ A tunic of dark gold is crumpled here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-4 158 0 0
+4 158 0 0 0
 E
 tunic golden~
    The guard's tunic is made of a sturdy, canvas-like material.  
@@ -586,7 +586,7 @@ A pair of sturdy black boots lie scattered on the ground.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-3 200 0 0
+3 200 0 0 0
 E
 boots black~
    They are made from heavy black leather, and make a small clump-clump sound
@@ -599,7 +599,7 @@ A silver, straight-edge sword has been left here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 3
-10 770 0 0
+10 770 0 0 0
 E
 sword broadsword silver~
    You see a silver sword with a straight, tapering blade, forged by the town
@@ -612,7 +612,7 @@ Red, purple and black marbles are set up in a circular game.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 14 0 0
+1 14 0 0 0
 T 27108
 E
 marbles set~
@@ -627,7 +627,7 @@ A black and rose glass chessboard is set up in mid-game.~
 ~
 8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-4 500 0 0
+4 500 0 0 0
 E
 chess board glass~
    The board and pieces are carved from black and light rose glass.  It's hard
@@ -640,7 +640,7 @@ A dark velvet ribbon is coiled here.~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 30 0 0
+1 30 0 0 0
 E
 ribbon velvet~
    It's a ribbon of soft dark velvet of finest quality..  Whoever's this is is
@@ -655,7 +655,7 @@ Something that used to be a dagger has been abandoned here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 1 11
-2 1 0 0
+2 1 0 0 0
 E
 dagger shattered~
    Some poor fool tried to fight something ten times his strength, and was lucky
@@ -669,7 +669,7 @@ You sense something unlucky about this room.~
 ~
 13 h 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 curse ill luck~
    You think you can see a curse?  You sense its evil presence all around you.
@@ -686,7 +686,7 @@ The gallows platform rises ominously before you.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 gallows platform~
    A sturdy wooden platform rises above the black sand road, with plenty of room
@@ -701,7 +701,7 @@ A cracked stone fountain holds a supply of mossy-green water.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 -1 -1 0 0
-0 0 0 0
+0 0 0 0 0
 E
 fountain cracked stone~
    The circular fountain was etched from stone eons ago, and is worn and cracked
@@ -715,7 +715,7 @@ An altar of dark amber stands here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 altar amber~
    The altar is waist-high, with a stand of black oak and a top of dark amber.
@@ -728,7 +728,7 @@ A large meat cleaver is stuck in the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 10
-5 115 0 0
+5 115 0 0 0
 E
 cleaver meat~
    It is wide and sharp, the blade's edge stained a dark red.  
@@ -740,7 +740,7 @@ An amber stone glints dully in the light.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-3 400 0 0
+3 400 0 0 0
 E
 amber gem~
    You see a hunk of amber stone in excellent condition, and possibly worth a
@@ -753,7 +753,7 @@ An amethyst of pure violet glints from the ground.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-3 832 0 0
+3 832 0 0 0
 E
 amethyst violet gem~
    It's a beautiful amethyst in excellent condition, and possibly worth some
@@ -766,7 +766,7 @@ A small diamond twinkles from the ground.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-3 500 0 0
+3 500 0 0 0
 E
 diamond gem~
    You see a tiny diamond in excellent condition, and likely worth some gold.  
@@ -778,7 +778,7 @@ A golden sunstone shines with a celestial glow.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-3 1000 0 0
+3 1000 0 0 0
 E
 sunstone gem~
    The golden sunstone is very pretty to look at, but is probably worth more
@@ -791,7 +791,7 @@ A gold and brown necklace lies on the ground.~
 ~
 8 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 700 0 0
+1 700 0 0 0
 E
 necklace tiger eyes~
    Small but delightful to the eye.  Golden and brown bands shimmer from the
@@ -804,7 +804,7 @@ A black agate ring lies half-buried on the ground.~
 ~
 8 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 200 0 0
+1 200 0 0 0
 E
 agate black ring~
    The agate is an opaque black and set in a ring of silver.  
@@ -818,7 +818,7 @@ A black, white-flecked shard is lying here.~
 ~
 8 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 0
+1 1000 0 0 0
 E
 shard obsidian~
    It's a pointed shard of obsidian flecked with white cloud-like patterns.  
@@ -832,7 +832,7 @@ A heap of chain mail is lying here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-10 900 0 0
+10 900 0 0 0
 E
 suit chain mail~
    The silvery chain mail looks sturdy and close-fitting.  
@@ -844,7 +844,7 @@ A bright helm has been left nearby.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
-8 780 0 0
+8 780 0 0 0
 E
 helm bright~
    The helm is small and brightly silver-colored.  Fitting snugly on the head,
@@ -858,7 +858,7 @@ A pair of silver bracers is here.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 4 0 0 0
-7 845 0 0
+7 845 0 0 0
 E
 bracers silver~
    They extend from elbow to wrist, and are forged from bright silver.  
@@ -870,7 +870,7 @@ A pair of boots with razor-sharp toes is sitting here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-6 950 0 0
+6 950 0 0 0
 E
 boots sharp~
    The knee-height black boots are fashioned with a razor-sharp point at each
@@ -885,7 +885,7 @@ A shield of the scales of an unknown creature is lying here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
-10 110 0 0
+10 110 0 0 0
 E
 shield scale~
    It's a large, thin shield fashioned of the scales of an old creature you
@@ -898,7 +898,7 @@ A waterskin has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 17 17 0 0
-22 150 0 0
+22 150 0 0 0
 E
 water skin waterskin~
    It seems to be stiched together from some kind of small animal hide, probably
@@ -911,7 +911,7 @@ A black lounger chair looks very relaxing.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 chair lounger black~
    The black naga-hide chair eases back by the use of a lever on the side, and
@@ -925,7 +925,7 @@ A magazine is lying open on the floor.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 30 0 0
+1 30 0 0 0
 E
 magazine rogue book bartending~
    You flip through it.  It appears to contain various recipes for poisons..  
@@ -941,7 +941,7 @@ A beautiful gilded sword lies at your feet.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 0 4 2 3
-7 850 0 0
+7 850 0 0 0
 E
 sword gilded fencing~
    The silvery sword is slender and light, suitable for fencing manuevers.  The
@@ -956,7 +956,7 @@ A scabbard of bright silver lies on the ground.~
 ~
 15 0 0 0 0 al 0 0 0 0 0 0 0
 13 0 -1 0
-6 120 0 0
+6 120 0 0 0
 E
 scabbard silver~
    It is crafted to fit a long, slender type of sword, perhaps a foil.  The
@@ -972,7 +972,7 @@ A short sword with a hilt of finished stone has been dropped here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 3
-10 200 0 0
+10 200 0 0 0
 E
 sword stone~
    It is rather crudely made, it must be acknowledged.  The use of stone in
@@ -986,7 +986,7 @@ A notice is posted on the wall.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 notice sign disclaimer~
    A neat type in black stencil gives the warning, "No Guaranteed Satisfaction.
@@ -999,7 +999,7 @@ A leg of mutton is lying here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
-4 120 0 0
+4 120 0 0 0
 E
 mutton leg~
    The meat is thick and juicy, still red with the blood of the beast.  
@@ -1011,7 +1011,7 @@ A heart is lying in a pool of blood.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-3 172 0 0
+3 172 0 0 0
 E
 heart boar~
    A human delicacy.  And well worth its reputation for inspiring courage...  
@@ -1024,7 +1024,7 @@ A bowl of tasty dragon wings is resting here.~
 ~
 19 f 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
-5 122 0 0
+5 122 0 0 0
 E
 wings dragon bowl~
    Cruelly harvested from the backs of young dragons, the leathery wings are
@@ -1037,7 +1037,7 @@ A hot sandwich with a putrid odor is here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 25 0 0 0
-2 110 0 0
+2 110 0 0 0
 E
 sandwich troll grilled~
    Fingers and ribs grilled to a saucy roast poke out from between two slices of
@@ -1050,7 +1050,7 @@ A key fashioned of black and gold metal is lying in the dust.~
 ~
 18 f 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 key black gold~
    On the handle the words are engraved, "City of the Cliffs, gates freed, No
@@ -1063,7 +1063,7 @@ A corn straw doll is lying in the dust.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 voodoo doll~
    The small corn husk doll is stitched with irregular, uneven lines, giving it
@@ -1077,7 +1077,7 @@ A lock of red hair is lying coiled on the ground.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 lock hair red~
    A long lock of straight red hair is coiled round your fingers.  
@@ -1089,7 +1089,7 @@ A beautiful black sword emblazoned with a triskelion lies here.~
 ~
 5 fo 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 3
-10 250 0 0
+10 250 0 0 0
 E
 sword black watch~
    The sword is beautifully crafted in order to serve the elite members of the
@@ -1103,7 +1103,7 @@ A short iron blade has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 1
-6 200 0 0
+6 200 0 0 0
 E
 blade iron~
    The hilt of the short iron blade is still warm from the hand of the elite
@@ -1116,7 +1116,7 @@ A black breast plate is lying face up.~
 ~
 9 o 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
-10 250 0 0
+10 250 0 0 0
 E
 plate black steel~
    The breast plate seems to be forged from some sort of black iron, and is
@@ -1129,7 +1129,7 @@ A handsome black and gold cloak is folded on the ground.~
 ~
 9 g 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
-5 660 0 0
+5 660 0 0 0
 E
 cloak black gold~
    The flowing knee length cloak is fashioned from wool and chased in gold
@@ -1144,7 +1144,7 @@ A tall glass of scotch is sitting nearby.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 1 5 0
-1 50 0 0
+1 50 0 0 0
 E
 glass scotch~
    _______
@@ -1163,7 +1163,7 @@ A patchwork of red and purple lies on the ground.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
-3 53 0 0
+3 53 0 0 0
 E
 skirt gypsy red~
    The patched skirt is a sturdy cross-stitching of bright red and violet.  
@@ -1175,7 +1175,7 @@ A dark red blouse is crumpled here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-3 40 0 0
+3 40 0 0 0
 E
 blouse red blood~
    The gypsy blouse is of a rugged muslin fabric, rough and somewhat dirty, but
@@ -1188,7 +1188,7 @@ An old violin has been tossed in the dust.~
 ~
 9 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
-4 220 0 0
+4 220 0 0 0
 E
 violin old~
    The instrument seems to have seen some rough times.  The gypsies range far
@@ -1202,7 +1202,7 @@ A mushroom with white spots is growing in the water.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 20 0 0
+1 20 0 0 0
 E
 mushroom white~
    The mushroom is short with a wide, pale-spotted umbrella.  It emits a toxic
@@ -1215,7 +1215,7 @@ A lovely red hibiscus flower is lying here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 120 0 0
+1 120 0 0 0
 E
 blossom flower hibiscus red~
    The large wine-red flower emits a delightful smell, and is rumored to be
@@ -1228,7 +1228,7 @@ A small slimy eye stares up at you from the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 600 0 0
+1 600 0 0 0
 E
 eye toad~
    All life has left the eye that stares blankly into space.  However, toad's
@@ -1241,7 +1241,7 @@ A mortar and pestle of black marble sits here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 10 0 -1 0
-1 300 0 0
+1 300 0 0 0
 E
 pestle mortar~
    A bowl-shaped mortar carved from black marble holds a small blunt pestle.  
@@ -1254,7 +1254,7 @@ A dusty pile of red canvas is here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-5 70 0 0
+5 70 0 0 0
 E
 tunic red dusty~
    The tunic is frayed and layered with the dust of the road from many leagues
@@ -1267,7 +1267,7 @@ A tray of goodies sits invitingly on the ground.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 200 0 -1 0
-30 120 0 0
+30 120 0 0 0
 E
 tray goodies~
    A thin, worn cloth of blue drapes over a polished wooden tray.  Though
@@ -1281,7 +1281,7 @@ An old wooden pipe sits in the dust.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 3 0 -1 0
-1 35 0 0
+1 35 0 0 0
 E
 pipe wooden~
    The pipe is cracked with age and filled with tobacco half-smoked into
@@ -1294,7 +1294,7 @@ A black candlestick glows with a dim light.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 30 0
-1 40 0 0
+1 40 0 0 0
 E
 candle candlestick black light~
    A slim dark taper rises from a circular brass holder.  
@@ -1306,7 +1306,7 @@ A plume of smoke drifts from an incense stick in the room.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 20 0
-1 30 0 0
+1 30 0 0 0
 E
 stick incense~
    A small glowing ember shows atop a stick of a grainy substance.  It smells of
@@ -1319,7 +1319,7 @@ Flies are buzzing round a honey jar on the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-3 220 0 0
+3 220 0 0 0
 E
 honey jar~
    The small, blue and brown ornamented jar is cracked slightly and dripping

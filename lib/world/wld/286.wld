@@ -62,10 +62,10 @@ You see a dark stairway.
 S
 #28603
 Dark Stairway~
-   You are standing at the bottom of long dark stairway.  The smell of
+   You are standing at the bottom of long dark stairway.  The smells of
 brimstone and sulfur choke you.  Screams of pain and terror fill the air.  
 Stone faces carved into the walls seem to laugh at you.  Maybe this is not such
-a good idea after all....    
+a good idea after all...  
 ~
 286 9 0 0 0 0
 D3
@@ -81,11 +81,11 @@ You see a dark stairway.
 S
 #28604
 Landing~
-   This landing has been scorched as if a large brushfire swept through it.  
-Bits of ash and burnt vegetation covers everything.  The walls and floor are
-flawlessly smooth and the ceiling is covered with carved faces and ancient
-symbols and runes.  A large black iron gates tower over you to the west.  You
-see a large gateway to the west.    
+   This landing has been scorched as if a large brushfire had swept through it.
+Bits of ash and burnt vegetation cover everything.  The walls and floor are
+flawlessly smooth, and the ceiling is covered with carved faces and ancient
+symbols and runes.  Large, black iron gates tower over you to the west.  You see
+a large gateway to the west.
 ~
 286 9 0 0 0 0
 D1
@@ -94,50 +94,50 @@ Its too dark to see.
 ~
 0 -1 28603
 D3
-You see the Gates of Hell
+You see the Gates of Hell.
 ~
 gates~
 1 -1 28605
 E
 gates~
-   These black iron gates are covered with grotesque faces and other creatures
-in various poses and acts of violence and lust.  The gates seem to make your
-blood run cold...  
+   These black iron gates are covered with grotesque faces and creatures in
+various poses and acts of violence and lust.  The gates seem to make your blood
+run cold...  
 ~
 S
 #28605
 Gateway to Hell~
-   You stand next to the very gateway of Hell.  You are surrounded by the
-sounds of torture and pain.  Screams pierce the air and rattle your nerves.  
-Displays of the treats of Hell are in all directions.  A large black iron gates
-tower over you to the east.    
+   You stand next to the very gateway of Hell.  You are surrounded by the sounds
+of torture and pain.  Screams pierce the air and rattle your nerves.  Displays
+of the treats of Hell are in all directions.  Large black iron gates tower over
+you to the east.  
 ~
 286 9 0 0 0 0
 D0
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28616
 D1
-The Gates of Hell
+The Gates of Hell.
 ~
 gates~
 1 -1 28604
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28626
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28606
 E
 gates~
-   These black iron gates are covered with grotesque faces and other creatures
-in various poses and acts of violence and lust.  The gates seem to make your
-blood run cold...  
+   These black iron gates are covered with grotesque faces and creatures in
+various poses and acts of violence and lust.  The gates seem to make your blood
+run cold...  
 ~
 S
 #28606
@@ -149,22 +149,22 @@ desperately grasp at your clothing as you pass.
 ~
 286 9 0 0 0 0
 D0
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28615
 D1
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28605
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28625
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28607
@@ -178,22 +178,22 @@ desperately grasp at your clothing as you pass.
 ~
 286 9 0 0 0 0
 D0
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28614
 D1
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28606
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28624
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28608
@@ -207,22 +207,22 @@ desperately grasp at your clothing as you pass.
 ~
 286 9 0 0 0 0
 D0
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28613
 D1
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28607
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28623
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28609
@@ -236,22 +236,22 @@ desperately grasp at your clothing as you pass.
 ~
 286 9 0 0 0 0
 D0
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28612
 D1
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28608
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28622
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28610
@@ -270,7 +270,7 @@ desperately grasp at your clothing as you pass.
 ~
 286 9 0 0 0 0
 D0
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28611
@@ -288,12 +288,12 @@ ceiling.  You can almost smell the stench of decaying flesh.
 ~
 286 9 0 0 0 0
 D1
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28612
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28610
@@ -301,45 +301,45 @@ S
 #28612
 Living Walls~
    The walls here actually consist of greying and sinewy flesh - faces, hands,
-broken bones, feet, and toes jutting from the surface.  You hear low moans of
-horror, pain, and sorrow issuing from the walls.    
+broken bones, feet and toes jutting from the surface.  You hear low moans of
+horror, pain and sorrow issuing from the walls.    
 ~
 286 9 0 0 0 0
 D1
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28613
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28609
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28611
 S
 #28613
 Trapped souls~
-   There are many souls trapped behind the walls of this room.  Almost as if
-trapped beneath the surface of a frozen lake.  Even the floor and ceiling show
-the screaming faces behind them.    
+   There are many souls trapped behind the walls of this room, almost as though
+they were trapped beneath the surface of a frozen lake.  Even the floor and
+ceiling show the screaming faces behind them.
 ~
 286 9 0 0 0 0
 D1
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28614
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28608
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28612
@@ -348,46 +348,46 @@ S
 Tortured Beings~
    This room is filled with instruments of torture.  Beings of all shapes and
 sizes are being brought to the thresholds of pain and beyond.  Some are being
-sliced into thousands of pieces.  Others stretched until it seems as if they
-are made of rubber.  All caught in an unending play of agony.    
+sliced into thousands of pieces.  Others are being stretched as though they were
+made of rubber.  All are caught in an unending play of agony.
 ~
 286 9 0 0 0 0
 D1
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28615
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28607
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28613
 S
 #28615
 Gluttony~
-   Before you is a room filled with all sorts of food.  The smell of pastries
-and Hamburger assault your senses.  All sorts of food lay everywhere you look.
+   Before you is a room filled with all sorts of food.  The smells of pastries
+and hamburger assault your senses.  All sorts of food lie everywhere you look.
 Cookies, twinkies, steak, prime rib, almost anything you can think of, call out
-to you.  You suddenly feel VERY hungry.    
+to you.  You suddenly feel VERY hungry.
 ~
 286 9 0 0 0 0
 D1
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28616
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28606
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28614
@@ -397,7 +397,7 @@ Greed~
    What luck!  A room full of treasure.  Gold, diamonds, riches beyond
 imagination!  Wait!  You suddenly feel as if it is all slowly disappearing.  
 Someone is taking your treasure.  They have no right!  It is yours!  You found
-it first.  Let them go get thier own treasures!  You see a door to the east.  
+it first.  Let them go get their own treasures!  You see a door to the east.  
 ~
 286 9 0 0 0 0
 D1
@@ -406,22 +406,22 @@ You see a bedroom door.
 door~
 1 -1 28617
 D2
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28605
 D3
-Its too smoky to see.
+It's too smoky to see.
 ~
 ~
 0 -1 28615
 S
 #28617
-Bedroom.~
+Bedroom~
    This is a small bedroom.  It is well furnished and a drastic change from the
 room you just stepped out of.  A bed stands against the far wall.  Upon the
-headboard of the bed are carved two cherub looking figures, with the words 'DEE
-& DEE' written below them.  The door to the bedroom is to the west.    
+headboard of the bed are carved two cherubic looking figures, with the words
+'DEE & DEE' written below them.  The door to the bedroom is to the west.  
 ~
 286 9 0 0 0 0
 D3
@@ -432,12 +432,12 @@ door~
 S
 #28618
 Ancient Shrine~
-   This is an ancient abandon shrine of some unknown god.  It has been
+   This is an ancient, abandoned shrine of some unknown god.  It has been
 vandalized and torn apart.  What used to be the shrine has been reduced to a
-large pile of stone and other debris.  Various runes and demonic faces have
-been spray painted on the walls and floor.  Nailed to the ceiling are an
-assortement of skeletons.  All seem to have been dead for a very long time.  
-All surfaces of the room are covered with dried blood and dust.    
+large pile of stones and other debris.  Various runes and demonic faces have
+been spray-painted on the walls and floor.  Nailed to the ceiling are an
+assortment of skeletons.  All seem to have been dead for a very long time.  All
+surfaces of the room are covered with dried blood and dust.
 ~
 286 9 0 0 0 0
 D1
@@ -447,10 +447,11 @@ It is too dark to see.
 0 -1 28602
 S
 #28619
-Room full of Body Parts.~
-   The room is filled with piles of arms, legs, heads, and other unidentifiable
-parts of many different creatures.  The stench is overwhelming.  The body parts
-seem to wiggle and scream as you get closer.  They are still alive!!    
+Room full of Body Parts~
+   The room is filled with piles of arms, legs, heads, and other,
+unidentifiable, parts of many different creatures.  The stench is overwhelming.
+The body parts seem to wiggle and scream as you get closer.  They are still
+alive!!
 ~
 286 9 0 0 0 0
 D1
@@ -465,7 +466,7 @@ It is too dark to see.
 0 -1 28629
 S
 #28620
-Fountain of Blood.~
+Fountain of Blood~
    This room is made of a rough black stone.  The walls seem to ooze black
 sludge.  In the middle of the room stands a stone fountain of a demon spitting
 blood.    
@@ -483,11 +484,11 @@ It is too dark to see.
 0 -1 28619
 S
 #28621
-Bloody Stairway.~
-   You are standing on a very slippy stairway.  The walls and stairs are
+Bloody Stairway~
+   You are standing on a very slippery stairway.  The walls and stairs are
 covered with blood and gore.  Pieces of goo and ooze drip from the ceiling
 overhead.  You almost slip a couple times on the stairway.  The stench here is
-overwhelming.    
+overwhelming.  
 ~
 286 9 0 0 0 0
 D4
@@ -504,7 +505,7 @@ S
 #28622
 Ancient Room~
    This is a very old and dusty room.  It looks empty except for a few shards
-or bone and flesh.    
+of bone and flesh.    
 ~
 286 9 0 0 0 0
 D0
@@ -520,7 +521,7 @@ It is too dark to see.
 S
 #28623
 Room of Lost Souls~
-   This looks like a waiting room or sorts.  Dust and cobwebs are everywhere.
+   This looks like a waiting room of sorts.  Dust and cobwebs are everywhere.
 Wooden benches line the walls.  A digital number sign is posted on the wall.  
 It currently reads, 'Now Serving Number 1'.  A ticket dispenser is bolted to
 the wall.    
@@ -548,7 +549,7 @@ dispenser~
 S
 #28624
 Room of Lost Souls~
-   This looks like a waiting room or sorts.  Dust and cobwebs are everywhere.
+   This looks like a waiting room of sorts.  Dust and cobwebs are everywhere.
 Wooden benches line the walls.  A digital number sign is posted on the wall.  
 It currently reads, 'Now Serving Number 1'.  A ticket dispenser is bolted to
 the wall.    
@@ -578,8 +579,8 @@ S
 Pit of Fire~
    You enter a plain stone room with a large fire pit in the center of it.  As
 you look closer at the pit you realize that hundreds of people are being burned
-inside it.  They Scream out to you.  The noise is deafening.  Several minor
-imps and workers push more people into the pit, whistling while
+inside it.  They scream out to you.  The noise is deafening.  Several minor imps
+and workers push more people into the pit, whistling while they work.
 ~
 286 8 0 0 0 0
 D0
@@ -601,7 +602,7 @@ S
 #28626
 Blackened Hallway~
    This dark hallway looks as if it was made by a lavaworm...  All the surfaces
-in it are melted and burnt.  The smell of brimstone and sulfur fill the air.  
+in it are melted and burnt.  The smell of brimstone and sulfur fills the air.  
 ~
 286 9 0 0 0 0
 D0
@@ -623,7 +624,7 @@ S
 #28627
 Blackened Hallway~
    This dark hallway looks as if it was made by a lavaworm...  All the surfaces
-in it are melted and burnt.  The smell of brimstone and sulfur fill the air.  
+in it are melted and burnt.  The smell of brimstone and sulfur fills the air.  
 ~
 286 9 0 0 0 0
 D1
@@ -658,8 +659,8 @@ S
 #28629
 Living Walls~
    The walls here actually consist of greying and sinewy flesh - faces, hands,
-broken bones, feet, and toes jutting from the surface.  You hear low moans of
-horror, pain, and sorrow issuing from the walls.    
+broken bones, feet and toes jutting from the surface.  You hear low moans of
+horror, pain and sorrow issuing from the walls.    
 ~
 286 9 0 0 0 0
 D0
@@ -682,8 +683,8 @@ S
 Skeleton Factory~
    This is probably where they make all the skeletons for nightmares and
 graveyards.  The room is simply littered with bones.  A poster on the wall
-reads, "Remember ....  The head bone is connected to the neck bone..  " The
-poster continues on...  But it seems to get very technical and boring..    
+reads, "Remember...the head bone is connected to the neck bone..."  The
+poster continues on...  But it seems to get very technical and boring.
 ~
 286 9 0 0 0 0
 D0
@@ -699,10 +700,10 @@ It is too dark to see.
 S
 #28631
 Bottom of Stairway~
-   You are standing at the bottom of a bloody stairway.  Or at least you
-thought it was a stairway.  It seems to be just a painting the the wall.  This
+   You are standing at the bottom of a bloody stairway.  Or at least you thought
+it was a stairway.  It seems to be just a painting on the wall.  This is a
 roughly carved room with evil runes carved in to the stone floor.  There is a
-hallway to the east.    
+hallway to the east.  
 ~
 286 9 0 0 0 0
 D1
@@ -738,7 +739,7 @@ are to the south.
 ~
 286 9 0 0 0 0
 D2
-You see bars
+You see bars.
 ~
 bars~
 1 -1 28643
@@ -813,7 +814,7 @@ are to the south.
 ~
 286 9 0 0 0 0
 D2
-You see bars
+You see bars.
 ~
 bars~
 1 -1 28647
@@ -874,7 +875,7 @@ are to the west.
 ~
 286 9 0 0 0 0
 D3
-You see bars
+You see bars.
 ~
 bars~
 1 -1 28639
@@ -882,8 +883,8 @@ S
 #28641
 Hidden Room~
    This is a long forgotten room.  Ancient torture equipment stands around
-collecting dust.  Most of this stuff was probably replace with modern hi tech
-torture devices and for sentimental reasons wasn't thrown away.    
+collecting dust.  Most of this stuff was probably replaced with modern high tech
+torture devices and for sentimental reasons wasn't thrown away.
 ~
 286 9 0 0 0 0
 D2
@@ -963,7 +964,7 @@ are to the north.
 ~
 286 9 0 0 0 0
 D0
-You see bars
+You see bars.
 ~
 bars~
 1 -1 28635
@@ -1039,7 +1040,7 @@ are to the north.
 ~
 286 9 0 0 0 0
 D0
-You see bars
+You see bars.
 ~
 bars~
 1 -1 28639
@@ -1110,11 +1111,10 @@ S
 #28653
 Hall of Fire~
    You are standing in a hallway made of fire.  The walls are ablaze with
-yellow and blue flames.  The smell of the hot air and sulfur burn your lungs as
+yellow and blue flames.  The smell of the hot air and sulfur burns your lungs as
 you inhale, and dry your mouth as you exhale.  The stone floor burns at your
 feet and hungrily drinks up every drop of sweat as they fall from your body.  
 The hall of fire continues to the east.  You see a stone archway to the west.
-  
 ~
 286 9 0 0 0 0
 D1
@@ -1131,7 +1131,7 @@ S
 #28654
 Hall of Fire~
    You are standing in a hallway made of fire.  The walls are ablaze with
-yellow and blue flames.  The smell of the hot air and sulfur burn your lungs as
+yellow and blue flames.  The smell of the hot air and sulfur burns your lungs as
 you inhale, and dry your mouth as you exhale.  The stone floor burns at your
 feet and hungrily drinks up every drop of sweat as they fall from your body.  
 The hall of fire continues to the south and west.    
@@ -1211,7 +1211,7 @@ S
 #28658
 Hall of Fire~
    You are standing in a hallway made of fire.  The walls are ablaze with
-yellow and blue flames.  The smell of the hot air and sulfur burn your lungs as
+yellow and blue flames.  The smell of the hot air and sulfur burns your lungs as
 you inhale, and dry your mouth as you exhale.  The stone floor burns at your
 feet and hungrily drinks up every drop of sweat as they fall from your body.  
 The hall of fire continues to the east and south.    
@@ -1230,12 +1230,12 @@ You see a hall of fire.
 S
 #28659
 Hall of Fire~
-   You are standing in a hallway made of fire.  The walls are ablaze with
-yellow and blue flames.  The smell of the hot air and sulfur burn your lungs as
-you inhale, and dry your mouth as you exhale.  The stone floor burns at your
-feet and hungrily drinks up every drop of sweat as they fall from your body.  
-The hall of fire continues to the west.  A room full of fire pits lies to the
-east.  A wall of fire crackles merrily to the south.    
+   You are standing in a hallway made of fire.  The walls are ablaze with yellow
+and blue flames.  The smell of the hot air and sulfur burns your lungs as you
+inhale, and dry your mouth as you exhale.  The stone floor burns at your feet
+and hungrily drinks up every drop of sweat as they fall from your body.  The
+hall of fire continues to the west.  A room full of fire pits lies to the east.
+A wall of fire crackles merrily to the south.  
 ~
 286 9 0 0 0 0
 D1
@@ -1257,9 +1257,9 @@ S
 #28660
 Fire Pits of Hades~
    This room is filled with many small fire pits.  Countless damned souls are
-being burnt and roasted within the the white flames that erupt from the many
-pits.  Wailing and screams of pain chill your bones in this hot room.  To the
-south you see a lake of fire.  A fire hall lies to the west.    
+being burnt and roasted within the white flames that erupt from the many pits.
+Wailing and screams of pain chill your bones in this hot room.  To the south you
+see a lake of fire.  A fire hall lies to the west.  
 ~
 286 9 0 0 0 0
 D2
@@ -1275,13 +1275,13 @@ You see a hall of fire.
 S
 #28661
 Fire Mural~
-   Apon all the walls of this room is an enormous mural.  Pictures of burning
-bodies and tortured souls seem to be the main theme of the art.  Bright reds
-and hot blues are enphasized throughout the mural.  As you stare at it the
+   Upon all the walls of this room is an enormous mural.  Pictures of burning
+bodies and tortured souls seem to be the main theme of the art.  Bright reds and
+hot blues are enphasized throughout the mural.  As you stare at it, the
 characters within it seem to move and struggle in pain.  The hot air around you
 smells of sulfur and methane.  To the south you see a stone hallway.  Hot air
 blows in at you from the doorway.  The air stirs up the methane and steals your
-breath.  You choke and gag...    
+breath.  You choke and gag...  
 ~
 286 9 0 0 0 0
 D2
@@ -1292,10 +1292,10 @@ You see a stone hallway.
 S
 #28662
 Foreman's Office~
-   You stand in a crudly constructed office.  Blueprints and change orders are
+   You stand in a crudely constructed office.  Blueprints and change orders are
 scattered everywhere.  A metal filing cabinet stands in the corner.  Before you
 stands a stone table covered with blueprints.  On the wall is a construction
-plaque that reads, "4th DEMONsion Contruction"
+plaque that reads, "4th DEMONsion Construction"
 ~
 286 9 0 0 0 0
 D0
@@ -1306,10 +1306,9 @@ You see the door to the office.
 S
 #28663
 Cold Stairway~
-   You stand apon a cold stone stairway.  Hot air blows down on you from higher
-up the stairwell.  From below you a freezing gusts bite at your skin and make
-you shiver.  Icicles drip slowly from the ceiling onto the frosted stone floor.
-  
+   You stand upon a cold stone stairway.  Hot air blows down on you from higher
+up the stairwell.  From below you, freezing gusts bite at your skin and make you
+shiver.  Icicles drip slowly from the ceiling onto the frosted stone floor.
 ~
 286 9 0 0 0 0
 D4
@@ -1326,7 +1325,7 @@ S
 #28664
 Hall of Fire~
    You are standing in a hallway made of fire.  The walls are ablaze with
-yellow and blue flames.  The smell of the hot air and sulfur burn your lungs as
+yellow and blue flames.  The smell of the hot air and sulfur burns your lungs as
 you inhale, and dry your mouth as you exhale.  The stone floor burns at your
 feet and hungrily drinks up every drop of sweat as they fall from your body.  
 The hall of fire continues to the north and east.    
@@ -1416,7 +1415,7 @@ S
 #28668
 Hall of Fire~
    You are standing in a hallway made of fire.  The walls are ablaze with
-yellow and blue flames.  The smell of the hot air and sulfur burn your lungs as
+yellow and blue flames.  The smell of the hot air and sulfur burns your lungs as
 you inhale, and dry your mouth as you exhale.  The stone floor burns at your
 feet and hungrily drinks up every drop of sweat as they fall from your body.  
 The hall of fire continues to the north.  There are loud noises of contruction
@@ -1436,15 +1435,15 @@ You see a construction area.
 S
 #28669
 Wall of Fire~
-   This large room is cut in into sections by small walls of fire.  The walls
-to move slowly changing the layout of the room.  As you examine the room
-further you notice various posts around the room to which people are chained
-to.  The firewalls seem to move in patterns that leave the poor people directly
-in the path of the oncoming fire.  The walls seem to creep ever so slowly
-towards them.  The people blister and scream as the fire gets closer.  Thier
-deaths seem like minutes of agony and pain, and even as they burst into flames
-they seem incapable of grasping the merciful attention of death...  To the
-north you see a hall of fire.  To the east you see a lake of fire.    
+   This large room is cut into sections by small walls of fire.  The walls seem
+to move slowly, changing the layout of the room.  As you examine the room
+further you notice various posts around the room to which people are chained.  
+The firewalls seem to move in patterns that leave the poor people directly in
+the path of the oncoming fire.  The walls seem to creep ever so slowly towards
+them.  The people blister and scream as the fire gets closer.  Their deaths seem
+like minutes of agony and pain, and even as they burst into flames they seem
+incapable of grasping the merciful attention of death...  To the north you see a
+hall of fire.  To the east you see a lake of fire.
 ~
 286 9 0 0 0 0
 D0
@@ -1461,8 +1460,8 @@ S
 #28670
 Lake of Fire~
    You stand one the shore of a large lake of fire.  The smoke and heat fill
-this enormous room.  You can barely make out shapes of something moving withing
-the dancing flames of blue and gold..    
+this enormous room.  You can barely make out shapes of something moving within
+the dancing flames of blue and gold...
 ~
 286 9 0 0 0 0
 D0
@@ -1541,12 +1540,12 @@ continues to the east and south.
 ~
 286 9 0 0 0 0
 D1
-You see more of the Meat locker
+You see more of the Meat locker.
 ~
 ~
 0 -1 28675
 D2
-You see more of the Meat locker
+You see more of the Meat locker.
 ~
 ~
 0 -1 28684
@@ -1566,7 +1565,7 @@ You see a freezer door.
 freezer~
 1 -1 28676
 D2
-You see more of the Meat locker
+You see more of the Meat locker.
 ~
 ~
 0 -1 28685
@@ -1617,7 +1616,7 @@ You see lots and lots of ice.
 0 -1 28676
 S
 #28678
-Ice Creamery~
+Ice-Creamery~
    You appear to be standing in a ice-creamery.  Many ice-cream workers run
 frantically around tending to the various machines.  The factory continues to
 the east and south.    
@@ -1635,7 +1634,7 @@ You see lots of ice-cream machines.
 0 -1 28688
 S
 #28679
-Ice Creamery~
+Ice-Creamery~
    You appear to be standing in a ice-creamery.  There seems to be a group of
 people here shouting into containers and then quickly covering them.  How
 odd...  The factory continues to the south and west.  There is a steel door to
@@ -1745,12 +1744,12 @@ east.  There is a freezer door to the west.
 ~
 286 9 0 0 0 0
 D0
-You see more of the Meat locker
+You see more of the Meat locker.
 ~
 ~
 0 -1 28674
 D1
-You see more of the Meat locker
+You see more of the Meat locker.
 ~
 ~
 0 -1 28685
@@ -1767,12 +1766,12 @@ continues to the north and west.
 ~
 286 9 0 0 0 0
 D0
-You see more of the Meat locker
+You see more of the Meat locker.
 ~
 ~
 0 -1 28675
 D3
-You see more of the Meat locker
+You see more of the Meat locker.
 ~
 ~
 0 -1 28684
@@ -1863,9 +1862,9 @@ S
 Marble Hall~
    You are walking down a white marble hallway.  Large portraits of demons and
 devils adorn the walls on either side of you.  As you look again you realize
-that they aren't demons and devils after all, but lawyers....  Well ok...  
-Depends on your point of view...  The hallway continues to the north.  There is
-an office to the south.    
+that they aren't demons and devils after all, but lawyers...well ok...depends  
+on your point of view...  The hallway continues to the north.  There is an
+office to the south.
 ~
 286 9 0 0 0 0
 D0
@@ -1881,10 +1880,10 @@ You see an office.
 S
 #28691
 Records Hall~
-   This Hallway is actually an enourmous records library.  Millions of records
-are kept here detailing the status of peoples lives.  These are confidential
+   This Hallway is actually an enormous records library.  Millions of records
+are kept here detailing the status of people's lives.  These are confidential
 files and only authorized personnel are allowed to view them.  The records room
-continues to the east.    
+continues to the east.
 ~
 286 9 0 0 0 0
 D1
@@ -1895,10 +1894,10 @@ You see rows and rows of records.
 S
 #28692
 Records Hall~
-   This Hallway is actually an enourmous records library.  Millions of records
-are kept here detailing the status of peoples lives.  These are confidential
+   This Hallway is actually an enormous records library.  Millions of records
+are kept here detailing the status of people's lives.  These are confidential
 files and only authorized personnel are allowed to view them.  The records room
-continues to the east and west.  There is another hallway to the south.    
+continues to the east and west.  There is another hallway to the south.
 ~
 286 9 0 0 0 0
 D1
@@ -1919,10 +1918,10 @@ You see rows and rows of records.
 S
 #28693
 Records Hall~
-   This Hallway is actually an enourmous records library.  Millions of records
-are kept here detailing the status of peoples lives.  These are confidential
+   This Hallway is actually an enormous records library.  Millions of records
+are kept here detailing the status of people's lives.  These are confidential
 files and only authorized personnel are allowed to view them.  The records room
-continues to the east and west.    
+continues to the east and west.
 ~
 286 9 0 0 0 0
 D1
@@ -1938,10 +1937,10 @@ You see rows and rows of records.
 S
 #28694
 Records Hall~
-   This Hallway is actually an enourmous records library.  Millions of records
-are kept here detailing the status of peoples lives.  These are confidential
+   This Hallway is actually an enormous records library.  Millions of records
+are kept here detailing the status of people's lives.  These are confidential
 files and only authorized personnel are allowed to view them.  The records room
-continues to the west.    
+continues to the west.
 ~
 286 9 0 0 0 0
 D3
@@ -1954,7 +1953,7 @@ S
 Small Altar~
    This is the private prayer room of the high priest.  A small altar stands
 against the west wall.  Evil symbols and pictures are plastered everywhere.  
-The new propaganda posters for hell are posted behind the altar.  You see a
+The new propaganda posters for Hell are posted behind the altar.  You see a
 blackened hall to the east.    
 ~
 286 9 0 0 0 0
@@ -1965,8 +1964,10 @@ You see a blackened hallway.
 0 -1 28696
 E
 poster~
-   Don't go to heaven....They're boring....
-***GO TO HELL!!!****
+Don't go to heaven....  They're boring....  
+
+***GO TO HELL!!!  ****
+
 You'll be damned if you don't  ;)
 ~
 S
@@ -1998,9 +1999,9 @@ S
 #28697
 Office of the High Priest~
    This is the office of the High Priest of Hell.  A black stone desk stands
-before you.  The office is lavishly furnished with gold, gems and many
-antiques.  A large portrait of a demons face is on the wall behind his desk.  
-You see a stone door to the west.    
+before you.  The office is lavishly furnished with gold, gems and many antiques.
+A large portrait of a demon's face is on the wall behind his desk.  You see a
+stone door to the west.  
 ~
 286 9 0 0 0 0
 D3

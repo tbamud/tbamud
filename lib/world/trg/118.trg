@@ -1509,10 +1509,10 @@ if %speech% == start
   eval ball %ball%
   emote places the ball under the %ball% cup.
   wait 1 s
-  eval 1 left
-  eval 2 middle
-  eval 3 right
-  eval tries 7
+  set 1 left
+  set 2 middle
+  set 3 right
+  set tries 7
   while %tries% > 1
     wait 2 s
     switch %random.7%

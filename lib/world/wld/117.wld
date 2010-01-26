@@ -1,12 +1,18 @@
 #11700
 Dysprosic's Zone Description Room~
-Zone name: Los Torres
-Location- City
-Levels- 10-15
-Alignment- mostly neutral (-200 thorugh 200)
-Theme- a community made of two towers (not based on LOTR :P) with one building containing shops, apartments for the members of the government and the supreme council and the other containing apartments for citizens.
-Plot- The government of Lost Torres is being unusually corrupt and ruthless to its citizens. You must meet with a councillor and free the people of Los Torres
-There will be about 60 rooms in the area, around 30 mobs and approximately 40 objects.
+   Zone name: Los Torres
+   Location: City
+   Levels: 10-15
+   Alignment: mostly neutral (:200 thorugh 200)
+   Theme: a community made of two towers (not based on LOTR :P) with one
+building containing shops, apartments for the members of the government and the
+supreme council and the other containing apartments for citizens.  
+   Plot: The government of Lost Torres is being unusually corrupt and ruthless
+to its citizens.  You must meet with a councillor and free the people of Los
+Torres.  
+   There will be about 60 rooms in the area, around 30 mobs and approximately 40
+objects.  
+
 Dysprosic
 ~
 117 596 0 0 0 0
@@ -192,7 +198,7 @@ trapdoor~
 E
 wine rack~
    The wine rack in the back of the room is huge.  It contains a lot of wines
-that are cooled by a large vent at the top.  It is sealed off with a glass door
+that are cooled by a large vent at the top.  It is sealed off with a glass door.
 ~
 E
 lace~

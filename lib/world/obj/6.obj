@@ -5,7 +5,7 @@ A shiny pebble is lying in the sand.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 75 0 0
+2 75 0 0 0
 E
 shiny pebble rock~
    The pebble is bright white.  It seems to sparkle in the light.  It's a rather
@@ -18,7 +18,7 @@ A seagull feather is lying on the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 seagull bird feather~
    The feather is quite large.  It's bright white with some streaks of grey
@@ -31,10 +31,10 @@ A beautiful pearl was dropped here.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 200 0 0
+1 200 0 0 0
 E
 pearl~
-   The beautifil pearl sparkles as you hold it up to the light.  It's in
+   The beautiful pearl sparkles as you hold it up to the light.  It's in
 excellent shape.    
 ~
 #606
@@ -44,7 +44,7 @@ A large log is lying in the sand.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-5 70 0 0
+5 70 0 0 0
 E
 log~
    The log looks like it came from the bottom of a tree.  It's quite big
@@ -58,7 +58,7 @@ There is a small twig on the ground.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 35 0 0
+2 35 0 0 0
 E
 twig~
    The twig is small and fragile looking.  It looks to be almost dead.    
@@ -70,7 +70,7 @@ A beautiful red rose has been left here.~
 ~
 8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 200 0 0
+1 200 0 0 0
 E
 rose~
    The rose has been cleared of all thorns, keeping you from harms way.  You
@@ -83,7 +83,7 @@ A straw hat is floating in the water.~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-4 125 0 0
+4 125 0 0 0
 E
 straw hat~
    The hat is in excellent condition.  It would serve well in keeping the
@@ -96,7 +96,7 @@ A dead fish is here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 dead fish~
    The eye sockets of the fish have rotted away, leaving nothing but blackness.
@@ -109,7 +109,7 @@ A large coconut has fallen from one of the palm trees, and lies on the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-3 75 0 0
+3 75 0 0 0
 E
 coconut~
    This is the largest coconut you have ever set your eyes upon.  It could
@@ -122,7 +122,7 @@ A marble shield lies here.~
 ~
 9 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-8 200 0 10
+8 200 0 10 0
 E
 marble shield~
    The shield was hand crafted from white marble.  It's quite heavy, but would
@@ -135,7 +135,7 @@ A yellow banana is ripening here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
-3 50 0 0
+3 50 0 0 0
 E
 banana~
    The fruit is ripe and ready to be eaten.  It looks delicious!    
@@ -147,7 +147,7 @@ A glass with a dark foamy liquid in it.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 3 0
-3 100 0 0
+3 100 0 0 0
 E
 ale~
    The brew is quite tasty!  It would go good with any meal.    
@@ -159,7 +159,7 @@ A red lobster looks good enough to eat.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-4 250 0 0
+4 250 0 0 0
 E
 lobster~
    The lobster is large and would easily fill your stomach.    
@@ -171,7 +171,7 @@ Some clams have been gathered here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-3 100 0 0
+3 100 0 0 0
 E
 clams~
    They look quite tasty!  You have heard that these are the best tasting clams
@@ -184,7 +184,7 @@ Some eels have been collected together.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-3 150 0 0
+3 150 0 0 0
 E
 eels eel~
    The plate doesn't look very appetizing, but it would fill you up.    
@@ -196,7 +196,7 @@ Some shrimp have been prepared for eating.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-3 300 0 0
+3 300 0 0 0
 E
 shrimp~
    The creatures look delicious!  They were taken freshly from the sea and
@@ -209,7 +209,7 @@ A glass full of a white liquid lies here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 10 0
-3 75 0 0
+3 75 0 0 0
 E
 milk~
    This is just an ordinary glass of milk.  It looks refreshing.    

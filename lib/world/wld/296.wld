@@ -172,7 +172,7 @@ sort of high-magic, what with all the weird surfaces showing
 other places in the building -- like a crystal ball almost.
    There is a room to the east, where most of the people seem
 to be going, and a nice, oak door to the west with some sort of
-wierd lock on it.  This room is tastefully done in a black and
+weird lock on it.  This room is tastefully done in a black and
 dark green decor which makes it feel somewhat drab.
 ~
 296 8 0 0 0 0
@@ -533,14 +533,14 @@ D2
 ~
 0 -1 29622
 E
-box~
-   Wow!  The twin power-mages Black and Decker themselves couldn't get into this
-box if they tried!  This isn't a safe...  It is a safer!  
-~
-E
 machine~
    Parchment in one end, scrolls out the other.  No moving parts that you can
 see!  Magic!  Ain't it wonderful???  
+~
+E
+box~
+   Wow!  The twin power-mages Black and Decker themselves couldn't get into this
+box if they tried!  This isn't a safe...  It is a safer!  
 ~
 S
 #29624
@@ -602,14 +602,14 @@ D3
 ~
 0 -1 29624
 E
-crates crates~
-   On the side of the crate, barely legible from scratchmarks and age, is the
-legend: 'stbusters Inc.  One Type III enclosed.  DANGER.  This end up.  
-~
-E
 grinder~
    Looks real disgusting.  Looks real painful.  You are glad you are not going
 anywhere near it, aren't you?  
+~
+E
+crates crates~
+   On the side of the crate, barely legible from scratchmarks and age, is the
+legend: 'stbusters Inc.  One Type III enclosed.  DANGER.  This end up.  
 ~
 S
 #29626
@@ -705,14 +705,14 @@ D1
 door~
 1 -1 29630
 E
-magazines~
-   These magazines seem to be filled with pictures of woman in various clothing
-crises.  Hmm.  
-~
-E
 door writing~
    The writing on the door is in large yellow print and reads: DANGER!!!  DO NOT
 ENTER!!!  
+~
+E
+magazines~
+   These magazines seem to be filled with pictures of woman in various clothing
+crises.  Hmm.  
 ~
 S
 #29630

@@ -1,9 +1,9 @@
 #700
 Camelot Zone Description Room~
-   Builder   : Rumble
+   Builder   : Lok
 Zone         : 7 Camelot
 Related Zones: 16 Camelot II, 17 Camelot III
-Began        : 1997, one of my first zones.
+Began        : 1994
 Player Level : 20-30
 Rooms        : 26
 Mobs         : 12
@@ -12,11 +12,7 @@ Shops        : 0
 Triggers     : 0
 Theme        : Medieval
 Plot         : The zone is based off the theme of Camelot: king arthur, the 
-               knights, the round table, merlin, etc. Originally started with 
-               zone 16 and 17, ran out of room so also used a few rooms in zone
-               7. zone 7 is now used for extra rooms where needed.
- 
-LOOK LINKS
+knights, the round table, merlin, etc. 
 ~
 7 512 0 0 0 0
 E
@@ -54,13 +50,58 @@ links credits info~
  17 Camelot III                    at   799 (south) --->  1724
 ~
 S
+#701
+Along the Stream~
+   The small stream grows to the West into a respectable river.  The stream has
+eroded the bank walls and the only way to continue is into the stream itself.  
+A field opens to the East and a small outpost is visible.
+~
+7 0 0 0 0 0
+D1
+~
+~
+0 0 799
+D3
+~
+~
+0 0 702
+S
+#702
+In the River~
+   The current in the river is strong but still manageable.  The river banks are
+well above your head on either side and look unpassable.  The river bends to the
+south into dangerous rapids.  A small shack lies to the west.
+~
+7 0 0 0 0 0
+D1
+~
+~
+0 0 701
+D3
+~
+~
+0 0 703
+S
+T 700
+#703
+An Old Shack ~
+   This run down wood shack has been looted of anything valuable long ago.  It
+is now covered large amounts of dust and cobwebs.  A few broken pieces of wood
+furniture and other debris litters the floor.
+~
+7 0 0 0 0 0
+D1
+~
+~
+0 0 702
+S
 #775
 The Forest Arden~
    The forest of Arden stretches in all directions, consisting of towering oaks
 and unknown wildlife.  A path leads north and south into the forest.  There is a
-guilded plaque affixed to a boulder.  
+gilded plaque affixed to a boulder.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 3
 D0
 ~
 ~
@@ -74,10 +115,10 @@ D3
 ~
 0 0 796
 E
-plaque guilded~
-   Let it be known that Arthur, King of the Britains seeks to form the company
-of the Round Table.  All knights of valor and virtue are summoned to this
-august company in Camelot.    
+plaque gilded~
+   Let it be known that Arthur, King of the Britons, seeks to form the company
+of the Round Table.  All knights of valor and virtue are summoned to this august
+company in Camelot.
 ~
 S
 #776
@@ -86,7 +127,7 @@ Entrance~
 portcullis gapes open invitingly.  Several guards inspect all passers-by.  A
 small ferry is available to cross back to the mainland.  
 ~
-7 0 0 0 0 0
+7 8 0 0 0 0
 D1
 ~
 ~
@@ -103,7 +144,7 @@ about their daily business.  The courtyard extends in all directions except to
 the east which leads to the gate of the castle.  A steady flow of peasants
 merchants and a few nobles pass by.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 2
 D0
 ~
 ~
@@ -126,10 +167,10 @@ Courtyard~
    The citizens are going about their daily lives.  The center of the courtyard
 is crowded with activity.  The people seem to be wary and distrustful of each
 other.  A knight strolls through the courtyard and the peasants and merchants
-stare at his back after he passes with a look of hate.  They do not seem to be
+stare at his back with a look of hate after he passes.  They do not seem to be
 very happy.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 2
 D0
 ~
 ~
@@ -152,10 +193,10 @@ Courtyard~
    The people rudely elbow their way through the crowd and seem to have no time
 for manners.  The impressive castle walls surrounding the courtyard loom high
 overhead providing a sense of security.  A couple of beggars look up imploringly
-hoping for some chairty, everyone ignores them.  To the west lies the main
+hoping for some charity but everyone ignores them.  To the west lies the main
 entrance to the castle.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 2
 D0
 ~
 ~
@@ -179,7 +220,7 @@ Main Hall~
 Tapestries of battles and portraits of rulers line each wall.  The castle proper
 is to the west or the courtyard is to the east.  
 ~
-7 0 0 0 0 0
+7 8 0 0 0 0
 D0
 ~
 ~
@@ -199,11 +240,11 @@ D3
 S
 #781
 Audience Chamber~
-   Dozens of chairs form a semicircle in this vast room around a throne to the
-south.  The room only has a few people in it.  None of them look like they are
-of any importance.  
+   Dozens of chairs form a semicircle around a throne to the south.  The vast
+room only has a few people in it.  None of them look like they are of any
+importance.  
 ~
-7 0 0 0 0 0
+7 8 0 0 0 0
 D1
 ~
 ~
@@ -219,12 +260,12 @@ D3
 S
 #782
 Audience Chamber~
-   A path through the room weaves between the numerous chairs.  To the south the
-floor slopes down to a intracate throne plated in gold.  A page scurries past as
-he runs one of his errands.  Further to the east and west you see exits, while
-the throne lies to the south.  
+   A path through the room weaves between the numerous chairs.  To the south,
+the floor slopes down to a intricate throne plated in gold.  A page scurries
+past as he runs one of his errands.  Further to the east and west you see exits
+while the throne lies to the south.  
 ~
-7 0 0 0 0 0
+7 8 0 0 0 0
 D1
 ~
 ~
@@ -240,13 +281,13 @@ D3
 S
 #783
 Audience Chamber~
-   This large chamber is supported by several columns, chairs are crowded
+   This large chamber is supported by several columns.  Chairs are crowded
 together in rows, all facing the throne to the south.  Several colorfully
-dressed nobles are discussing important matters amongst themselves, even a 
-few are involved in heated discussions.  Probably just the usual bickering 
-about who owns what land.    
+dressed nobles are discussing important matters amongst themselves, even a few
+are involved in heated discussions.  Probably just the usual bickering about who
+owns what land.
 ~
-7 0 0 0 0 0
+7 8 0 0 0 0
 D1
 ~
 ~
@@ -267,7 +308,7 @@ defense in case the castle's defenses can not hold the outer wall.  The outer
 wall is set aside for the poor quarter while the wealthier inhabitants crowd the
 inner circle.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D0
 ~
 ~
@@ -288,11 +329,11 @@ S
 #785
 Cobblestone Road~
    A small pass is cut through the inner wall allowing access to both halves of
-the castle The stone walls shine a bright white from heavy polishing and the
+the castle.  The stone walls shine a bright white from heavy polishing and the
 massive blocks fit together seamlessly.  To the west a fountain flows underneath
 a large statue of Uther Pendragon.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D0
 a door
 ~
@@ -313,7 +354,7 @@ Cobblestone Road~
 statue of Uther Pendragon and three women.  The sounds and smells to the south
 must be from the castle stables.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D0
 ~
 ~
@@ -337,7 +378,7 @@ Cobblestone Road~
 fly from the towers high above and all of the buildings gleam of white stone.  
 Several knights seem to be coming and going to the North.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D0
 ~
 ~
@@ -357,7 +398,7 @@ Cobblestone Road~
 breeze on every tower.  The buildings to the south seem to be filled with the
 sounds of women laughing and gossiping.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D1
 ~
 ~
@@ -373,12 +414,12 @@ D3
 S
 #789
 Cobblestone Road~
-   The white walls of the castle are almost blinding, the flags and penants snap
-in the wind, everything looks perfect, except for the fact that the general mood
-in the castle seem to be depressing.  A tall fence to the south blocks the view
-but not the sound of men on horseback.  
+   The white walls of the castle are almost blinding.  The flags and pennants
+snap in the wind.  Everything seems perfect except for the fact that the general
+mood in the castle seem to be depressing.  A tall fence to the south blocks the
+view, but not the sound, of men on horseback.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D0
 ~
 ~
@@ -393,13 +434,13 @@ D3
 0 0 790
 S
 #790
-Knight's Way~
+Knights Way~
    A steady stream of traffic flows from the south.  The sounds of training can
-be heard and their is some excitement in the crowd.  Several knights in full
+be heard and there is some excitement in the crowd.  Several knights in full
 combat gear are among the crowd.  It is easy to pick out those who won and those
 who lost recently.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D0
 ~
 ~
@@ -420,10 +461,10 @@ S
 #791
 Cobblestone Road~
    The towers of Camelot loom above to the North.  Their gigantic white stone
-blocks placed so precisely that seams are barely visible.  Pennants and
-different seals adorn the spires and walls.  
+blocks are placed so precisely that seams are barely visible.  Pennants and
+different seals adorn the spires and walls.
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D1
 ~
 ~
@@ -435,11 +476,11 @@ D3
 S
 #792
 Cobblestone Road~
-   The cobbleston road continues east and west through Camelot with smaller
-alleys travelling north and south.  A small friendly building to the south looks
-inviting.  A nice change from the majority of the people in Camelot.  
+   The cobblestone road continues east and west through Camelot with smaller
+alleys travelling north and south.  A small, friendly building to the south
+looks inviting.  A nice change from the majority of the people in Camelot.
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D1
 ~
 ~
@@ -459,7 +500,7 @@ Cobblestone Road~
 Everyone seems subdued and to have accepted some fate they did not want.  It is
 as if the spirit had been taken away from the city.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D1
 ~
 ~
@@ -479,7 +520,7 @@ Cobblestone Road~
 A drunken ruckus can be heard to the south.  It sounds like it may be the only
 place in Camelot having a good time.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D1
 ~
 ~
@@ -499,7 +540,7 @@ West Lane~
 rusted and look like they haven't been used for a very long time.  A dirt path
 follows the wall to the north and south.  
 ~
-7 0 0 0 0 0
+7 0 0 0 0 1
 D0
 ~
 ~
@@ -515,12 +556,12 @@ D2
 S
 #796
 Boat Launch~
-   A massive lake is partially visible through the dense fog.  A long narrow
+   A massive lake is partially visible through the dense fog.  A long, narrow
 boat is tied up to a small dock here.  A cloaked figure is sitting in the back,
 holding a long pole.  This boat looks to be a ferry between the shore and some
-unseen destination through the fog to the west.  
+unseen destination through the fog to the west.
 ~
-7 0 0 0 0 0
+7 0 0 0 0 2
 D1
 ~
 ~
@@ -532,12 +573,12 @@ D3
 S
 #797
 The Lake~
-   The boat slowly moves across the rough surface of the lake, a strong wind
-blows from the north but not enough to dispell the fog.  The owner of the boat
-slowly pushes the boat westward with his pole.  The fog is too think to discern
-a destination.  
+   The boat slowly moves across the rough surface of the lake.  A strong wind
+blows from the north but not enough to dispel the fog.  The owner of the boat
+slowly pushes the boat onward with his pole.  The fog is too thick to discern a
+destination.
 ~
-7 0 0 0 0 0
+7 0 0 0 0 2
 D1
 ~
 ~
@@ -565,12 +606,12 @@ D3
 S
 #799
 Open Field~
-   The Field continues north and south with no end in sight.  Due east 
-stands the massive castle resting in the middle of the lake on a small 
-sland.  The sky looks darker to the north and you catch a scent of death 
-and decay from a gust of wind in that direction.    
+   The field continues north and south with no end in sight.  Due east stands
+the massive castle resting in the middle of the lake on a small island.  The sky
+looks darker to the north and you catch a scent of death and decay from a gust
+of wind in that direction.
 ~
-7 0 0 0 0 0
+7 0 0 0 0 2
 D0
 ~
 ~
@@ -579,5 +620,9 @@ D2
 ~
 ~
 0 0 1724
+D3
+~
+~
+0 0 701
 S
 $~

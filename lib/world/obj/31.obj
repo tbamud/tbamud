@@ -5,7 +5,7 @@ A cup has been set here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 11 0
-13 5 1 0
+13 5 1 0 0
 E
 cup~
    It is a small simple cup.  
@@ -17,7 +17,7 @@ A cup has been set here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 8 8 12 0
-13 7 1 0
+13 7 1 0 0
 E
 cup~
    It is a small simple cup.  
@@ -29,7 +29,7 @@ A cup has been set here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 12 12 15 0
-17 2 1 0
+17 2 1 0 0
 E
 cup~
    It is a large simple cup.  
@@ -41,16 +41,16 @@ A bottle of Evian natural spring water is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 24 24 15 0
-29 10 6 0
-E
-bottle~
-   It is a large, clean bottle.  There is a large label pasted on the side.  
-~
+29 10 6 0 0
 E
 label~
    You've been ripped off!  It says here at the bottom of the label, in really
 really small letters, 'Bottled in the Midgaard branch of Evian Inc.  This water
 is from the natural, mostly clean River of Midgaard.  '
+~
+E
+bottle~
+   It is a large, clean bottle.  There is a large label pasted on the side.  
 ~
 #3104
 canteen water~
@@ -59,7 +59,7 @@ A canteen has been set on the ground here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 80 80 15 0
-85 45 15 0
+85 45 15 0 0
 E
 canteen~
    It is a fairly big canteen.  Looks like it can hold a lot of liquid.  
@@ -71,7 +71,7 @@ An iron key has been left here.~
 ~
 18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 10 0
+1 1 10 0 0
 E
 key iron~
    The iron key is not special.  In fact, it is quite boring.  
@@ -83,7 +83,7 @@ A rusty key has been left here.~
 ~
 18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 10 0
+1 1 10 0 0
 E
 key rusty~
    The key is a fairly large rusty key.  You notice a lot of dirt it.  
@@ -95,7 +95,7 @@ A wooden key has been left here.~
 ~
 18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 10 0
+1 1 10 0 0
 E
 key wooden~
    The wooden key is not special.  In fact it is just about the most boring key
@@ -108,7 +108,7 @@ A brass key has been left here.~
 ~
 18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 10 0
+1 1 10 0 0
 E
 key brass~
    The brass key is small and looks like it fits a very complicated lock.  
@@ -120,14 +120,14 @@ A desk is set against the western wall.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 34 15 3107 0
-0 0 0 0
-E
-drawer~
-   You notice a keyhole in the drawer.  
-~
+0 0 0 0 0
 E
 desk~
    The desk looks very sparse, there is a drawer in the left side.  
+~
+E
+drawer~
+   You notice a keyhole in the drawer.  
 ~
 #3110
 safe~
@@ -136,7 +136,7 @@ A safe is placed in a dark corner of the room.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 34 15 3108 0
-999 0 0 0
+0 0 0 0 0
 E
 safe~
    The safe is very heavy and has a keyhole.  
@@ -148,7 +148,7 @@ A white-painted wooden bench is standing here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 bench~
    It is a quite heavy but very comfortable bench.  It is placed with its front
@@ -162,7 +162,7 @@ The very big City Key is lying here.~
 ~
 18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-30 1000 50 0
+30 1000 50 0 0
 E
 key city~
    It is probably the biggest key you have seen in your life.  It is made from
@@ -176,7 +176,7 @@ A small white fountain is standing here, gurgling happily.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 999 999 15 0
-999 0 0 0
+999 0 0 0 0
 E
 fountain water~
    It is very nice.  Made from fine white marble.  
@@ -188,7 +188,7 @@ A small pile of gold coins lies here.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 37 0 0 0
-1 1 0 0
+1 1 0 0 0
 #3115
 gold coins~
 the gold~
@@ -196,7 +196,7 @@ A lot of gold is here.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
-1 1000 0 0
+1 1000 0 0 0
 #3116
 candlestick candle stick pewter~
 a candlestick~
@@ -204,7 +204,7 @@ A pewter candlestick is standing here.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 24 0
-5 150 10 0
+5 150 10 0 0
 E
 candlestick~
    It is a rather old-looking three-armed candlestick made from pewter.  Its
@@ -217,7 +217,7 @@ An old elm tree grows here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 elm tree~
    The fresh young leaves of the elm tree wave gently in the wind.  

@@ -5,7 +5,7 @@ A bloody red ring is here on the ground.~
 ~
 11 a 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-5 1 0 35
+5 1 0 20 0
 E
 blood ring ancients blood~
    It has a large ruby set into the center of it, a thick gold band to hold the
@@ -24,7 +24,7 @@ A black cape has been left here.~
 ~
 9 a 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
-10 1 0 40
+10 1 0 25 0
 E
 cape vampyre~
    It is made of the finest woven thread one can find, on any side of the world.
@@ -43,7 +43,7 @@ A glowing green ring has been dropped here.~
 ~
 11 b 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-3 1 0 25
+3 1 0 15 0
 E
 ring~
    It glows with an unholy green light, almost as if it were alive itself.  
@@ -59,7 +59,7 @@ A strange, red amulet has been left here.~
 ~
 11 a 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-7 1 0 15
+7 1 0 10 0
 E
 bloodstone amulet~
    The color is more of a deep red, like fresh blood.  
@@ -77,7 +77,7 @@ A beautifully jeweled belt is on the ground.~
 ~
 11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-10 1 0 5
+10 1 0 5 0
 E
 belt jeweled~
    It is very intricately detailed, very finely crafted.  
@@ -93,7 +93,7 @@ A bright, jeweled ring has been dropped here.~
 ~
 11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-4 1 0 10
+4 1 0 5 0
 E
 ring thumb topaz~
    The beauty is all in the jewel, these gypsies really know their craft.  
@@ -109,7 +109,7 @@ A ruby ring is here~
 ~
 11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-4 1 0 20
+4 1 0 12 0
 E
 ruby ring~
    You are caught up in it's beauty, you must have it!  Oh - you do have it...
@@ -124,7 +124,7 @@ A small strap of leather studded with gems has been left here.~
 ~
 11 0 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
-6 1 0 0
+6 1 0 0 0
 E
 armband band studded~
    This armband is meant to be worn around one's upper bicep.  It is studded
@@ -142,7 +142,7 @@ A shiny bracelet is here.~
 ~
 11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-5 1 0 5
+5 1 0 5 0
 E
 bracelet shining silver~
    It is very plain and very shiny.  Pretty.  

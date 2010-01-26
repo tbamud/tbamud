@@ -154,7 +154,7 @@ Pirate Guard (8308) Bribery~
 0 m 1
 ~
 if (%amount% >= 200)
-  eval bribed 1
+  set bribed 1
   global bribed
   emote takes the bribe and begins counting it.
   wait 2s
@@ -262,75 +262,75 @@ Polly (8313) Learn & Repeat~
 0 d 1
 *~
 *** Squak for the nice people, Polly
-      wait 1s
-      emote squawks loudly.
-      wait 1s
+wait 1s
+emote squawks loudly.
+wait 1s
 *** 75% chance of learning phrase
-      eval polly %random.4%
-      if (%polly% > 1)
-        say %speech%
-*** Learn new phrases
-        eval number (%number% + 1)
-        eval phrase(%number%) %speech.trim%
-        global number
-        global phrase(%number%)
-*** Reset array after 10 phrases
-          if (%number% == 10)
-            eval number 0
-            global number
-            eval maxphrases 1
-            global maxphrases
-            end
-      else
-       end
+eval polly %random.4%
+if (%polly% > 1)
+%echo% Polly the Parrot says, '%speech%'
+  *** Learn new phrases
+  eval number (%number% + 1)
+  eval phrase(%number%) %speech.trim%
+  global number
+  global phrase(%number%)
+  *** Reset array after 10 phrases
+  if (%number% == 10)
+    set number 0
+    global number
+    set maxphrases 1
+    global maxphrases
+  end
+else
+end
 ~
 #8314
 Polly (8313) Random Speech~
 0 b 10
 ~
-        wait 1s
-        emote squawks loudly.
-        wait 1s
-        if (%maxphrases% == 1)
-          eval polly %random.10%
-        else
-          eval polly %%random.%number%%%
-        end
-        switch %polly%
-          case 1
-            say %phrase(1)%
-            break
-          case 2
-            say %phrase(2)%
-            break
-          case 3
-            say %phrase(3)%
-            break
-          case 4
-            say %phrase(4)%
-            break
-          case 5
-            say %phrase(5)%
-            break
-          case 6
-            say %phrase(6)%
-            break
-          case 7
-            say %phrase(7)%
-            break
-          case 8
-            say %phrase(8)%
-            break
-          case 9
-            say %phrase(9)%
-            break
-          case 10
-            say %phrase(10)%
-            break
-          default
-            emote whistles.
-            break
-        done
+wait 1s
+emote squawks loudly.
+wait 1s
+if (%maxphrases% == 1)
+  eval polly %random.10%
+else
+  eval polly %%random.%number%%%
+end
+switch %polly%
+  case 1
+    %echo% Polly the Parrot says, '%phrase(1)%'
+  break
+  case 2
+    %echo% Polly the Parrot says, '%phrase(2)%'
+  break
+  case 3
+    %echo% Polly the Parrot says, '%phrase(3)%'
+  break
+  case 4
+    %echo% Polly the Parrot says, '%phrase(4)%'
+  break
+  case 5
+    %echo% Polly the Parrot says, '%phrase(5)%'
+  break
+  case 6
+    %echo% Polly the Parrot says, '%phrase(6)%'
+  break
+  case 7
+    %echo% Polly the Parrot says, '%phrase(7)%'
+  break
+  case 8
+    %echo% Polly the Parrot says, '%phrase(8)%'
+  break
+  case 9
+    %echo% Polly the Parrot says, '%phrase(9)%'
+  break
+  case 10
+    %echo% Polly the Parrot says, '%phrase(10)%'
+  break
+  default
+    emote whistles.
+  break
+done
 ~
 #8315
 Bucket O' Tar (8315) Cools after 10 Minutes~
@@ -380,8 +380,8 @@ Load/Purge Exits after Leave (8375)~
 if (%direction% == down)
   %door% 8373 up room 8375
   %door% 8373 up description You can still reach the ladder if you wish to board the ship again.
-  eval loop 0
-  eval person 1
+  set loop 0
+  set person 1
   while (%loop% < 60)&&(%people.8373%||%people.8375%)
    wait 1s
    eval loop (%loop% + 1)

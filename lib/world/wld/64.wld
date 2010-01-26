@@ -226,12 +226,12 @@ D2
 door~
 1 -1 6409
 E
-closet~
-   Nice clothes, but not your size at all.  
-~
-E
 desk~
    The desk is basically uninteresting, as are the papers on top of it...  
+~
+E
+closet~
+   Nice clothes, but not your size at all.  
 ~
 S
 #6412
@@ -258,7 +258,7 @@ book books~
 S
 #6413
 The Stairwell~
-   This stairwell continues up and down, and there is
+   This stairwell continues up and down here, and there is
 a door to the west.
 ~
 64 9 0 0 0 0
@@ -313,7 +313,8 @@ D5
 S
 #6416
 The Hidden Treasure Room~
-   Jackpot!  A small room filled with treasure chests!  Go get them!
+   You hit the jackpot!  A small room filled with treasure 
+chests!  Go get them!
 ~
 64 9 0 0 0 0
 D4
@@ -557,21 +558,21 @@ D1
 ~
 0 -1 6429
 E
-desk~
-   It is cluttered with all sorts of papers.  Some look half interesting,
-actually.  
-~
-E
 paper papers documents document~
    Well, one of the papers relate a story about how the mage of this tower,
 Rand, angered many kings, and relates how they set his armies on him.  You
 wonder if the lava outside was a failed attempt to destroy the armies...  
 ~
+E
+desk~
+   It is cluttered with all sorts of papers.  Some look half interesting,
+actually.  
+~
 S
 #6431
 The Stairwell~
-   The stairs go up and down here, and there is a room to the
-west...
+   The stairwell continues up and down here, and there is a 
+room to the west...
 ~
 64 9 0 0 0 0
 D3
@@ -592,7 +593,7 @@ A Sitting Room~
    This is a simply furnished room, with chairs all about.
 A fireplace is inset into an inner wall, the chimney
 undoubtedly directed by magic...
-   This would be a nice place to rest awhile...
+   This would be a nice place to rest a while...
 ~
 64 12 0 0 0 0
 D1
@@ -602,7 +603,7 @@ D1
 S
 #6433
 The Stairwell~
-    This is where the stairwell finally ends.  There is a hall
+   This is where the stairwell finally ends.  There is a hall   
 to your west.
 ~
 64 9 0 0 0 0
@@ -757,11 +758,11 @@ D2
 ~
 0 -1 6440
 E
-mortar mortars pestle pestles jar jars~
+beaker beakers flask flasks burner burners tong tongs~
    Looks like normal, fragile lab equipment to you.  
 ~
 E
-beaker beakers flask flasks burner burners tong tongs~
+mortar mortars pestle pestles jar jars~
    Looks like normal, fragile lab equipment to you.  
 ~
 S
@@ -812,13 +813,13 @@ D3
 ~
 0 -1 6443
 E
+pentagram~
+   It is centuries old.  You don't think standing close by would be a good idea.
+~
+E
 being~
    You can't see it clearly through the energy field of the pentagram, but you
 sense that whatever it is, it is very, very, very, very angry.  
-~
-E
-pentagram~
-   It is centuries old.  You don't think standing close by would be a good idea.
 ~
 S
 #6445

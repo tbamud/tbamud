@@ -209,9 +209,9 @@ old magi guard~
 the magi guard~
 An old magi has been guarding the orb for decades, his sanity seems questionable.
 ~
-After over 50 years of guard duty this magi seems to have lost touch with
+   After over 50 years of guard duty this magi seems to have lost touch with
 reality.  He stares blankly around the room and doesn't seem to even notice you.
-He wears a plain grey robe and is a member of the magi guards.  A once elite
+He wears a plain grey robe and is a member of the magi guards, a once elite
 group of magi dedicated to protecting the Orb of Sanctum.
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -251,4 +251,24 @@ small cane, and speaks oddly.
 BareHandAttack: 10
 E
 T 208
+#218
+woman fashionable interior design~
+a woman dressed in the latest fashions~
+A prissy woman dressed in the latest fashion struts past.
+~
+   She has a haughty expression on her face with her large nose stuck up in the
+air.  She looks around in discuss at her surroundings.  A large badge over her
+right breast is labeled "interior designer."  
+~
+8 0 0 0 0 0 0 0 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 2
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+T 218
 $

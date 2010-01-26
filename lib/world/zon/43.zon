@@ -1,7 +1,11 @@
 #43
 Walrus Polar~
 Arctic Zone~
-4300 4399 10 2 d 0 0 0 -1 -1
+4300 4399 10 2 d 0 0 0 14 18
+M 0 4310 1 4386 	(the weaponrist)
+G 1 4314 100 -1 	(an eskimo whaling spear)
+G 1 4315 100 -1 	(a strong bound whip)
+G 1 4317 100 -1 	(an eskimo hunting knife)
 D 0 4392 1 2 	(Throne of Glogtar)
 D 0 4392 3 1 	(Throne of Glogtar)
 M 0 4301 30 4392 	(a black penguin)
@@ -35,10 +39,6 @@ G 1 4311 100 -1 	(a strip of penguin flesh)
 G 1 4312 100 -1 	(a chunk of walrus meat)
 G 1 4313 100 -1 	(whale blubber)
 G 1 4316 100 -1 	(a slice of seal meat)
-M 0 4310 1 4386 	(the weaponrist)
-G 1 4314 1 -1 	(an eskimo whaling spear)
-G 1 4315 1 -1 	(a strong bound whip)
-G 1 4317 1 -1 	(an eskimo hunting knife)
 O 0 4308 1 4305 	(an icy covered sign)
 M 0 4305 3 4329 	(the orphaned penguin)
 M 0 4306 1 4329 	(the penguin caretaker)

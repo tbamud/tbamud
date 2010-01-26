@@ -5,7 +5,7 @@ A large iron pick has been dropped here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 5 14
-10 200 0 1
+10 200 0 1 0
 E
 large iron pick~
    This large pick looks incredibly strong and heavy.  Small gashes and
@@ -18,17 +18,17 @@ A glistening black axe is lying here.~
 ~
 5 agj 0 0 0 an 0 0 0 0 0 0 0
 2 2 6 3
-5 100 0 5
+5 100 0 5 0
+E
+evil runes~
+   The runes are unreadable but unmistakably Khan-li in origin, testifying to
+the evil magic bestowed upon this weapon.    
+~
 E
 blackened axe black glistening~
    This incredibly sharp axe looks to be made of some normal metal which has
 then been blackened with magic.  Only the handle appears naturally dark, carved
 out of glistening obsidian and inscribed with evil runes.    
-~
-E
-evil runes~
-   The runes are unreadable but unmistakably Khan-li in origin, testifying to
-the evil magic bestowed upon this weapon.    
 ~
 A
 1 2
@@ -43,7 +43,7 @@ A trickle of water snakes its way slowly along the grooves in the floor.~
 ~
 23 g 0 0 0 0 0 0 0 0 0 0 0
 100 100 0 0
-105 0 0 0
+105 0 0 0 0
 E
 trickle water~
    This trickle of water is slightly murky from particles of dust and rubble,
@@ -56,7 +56,7 @@ phosphorescent mushroom fungi fungus~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-3 5 0 1
+3 5 0 1 0
 E
 phosphorescent mushroom fungi fungus~
    Smooth and fragile to the touch, this tiny domed mushroom glows faintly all
@@ -69,7 +69,7 @@ dark red pool liquid~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 50 50 0 1
-55 0 0 0
+55 0 0 0 0
 E
 dark red pool liquid~
    This pool has the disturbing colour of blood but appears to be water
@@ -84,7 +84,7 @@ A miniature corked bottle lies here.~
 ~
 10 g 0 0 0 a 0 0 0 0 0 0 0
 10 48 43 35
-5 1000 0 0
+5 1000 0 0 0
 E
 miniature corked bottle fairy tears~
    This tiny glimmering bottle is of fairy make, fragile crystal reflecting the
@@ -98,7 +98,34 @@ A ragged book has been left here.~
 ~
 12 cq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-5 1 0 0
+5 1 0 0 0
+E
+1~
+   @G
+@gEntry 1@n
+   I have lost all interest in keeping this diary.  Since the sorceress has
+taken over, life has not been worth writing about.  I shall instead record
+anything I observe that may aid in her demise, though it will mean my death
+should this book be found.    
+~
+E
+2~
+   @G
+@gEntry 2@n
+   Someone came to help us today, he told me he knew how to destroy the
+sorceress once and for all.  I thought he would be the one to succeed but he
+was killed by the toothy one.  Now the abominable creature has holed itself
+into a cave from which there is no return... or so it is claimed.    
+~
+E
+3~
+   @G
+@gEntry 3@n
+   Somehow I fear this may be my last entry.  I have been recruited, along with
+several others for a secret task by the sorceress' evil bird.  What the task is
+I do not yet know, but I know that the sorceress has a particular way of
+keeping her secrets, and it does not involve the survival of witnesses.    
+~
 E
 ragged diary~
    This dark leather book is almost falling apart, although there appears to be
@@ -107,30 +134,6 @@ into the cover.
 
            (type look 1, 2, or 3 to view pages)
 ~
-E
-3~
-@gEntry 3@n
-   Somehow I fear this may be my last entry.  I have been recruited, along with
-several others for a secret task by the sorceress' evil bird.  What the task is
-I do not yet know, but I know that the sorceress has a particular way of
-keeping her secrets, and it does not involve the survival of witnesses.    
-~
-E
-2~
-@gEntry 2@n
-   Someone came to help us today, he told me he knew how to destroy the
-sorceress once and for all.  I thought he would be the one to succeed but he
-was killed by the toothy one.  Now the abominable creature has holed itself
-into a cave from which there is no return... or so it is claimed.    
-~
-E
-1~
-@gEntry 1@n
-   I have lost all interest in keeping this diary.  Since the sorceress has
-taken over, life has not been worth writing about.  I shall instead record
-anything I observe that may aid in her demise, though it will mean my death
-should this book be found.    
-~
 #2707
 carcass stone~
 the stone carcass of a sad-looking memlin~
@@ -138,7 +141,7 @@ The stone carcass of a memlin is lying here.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 50 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 stone carcass~
    This is the perfect form of a crumpled memlin corpse, one of the many diggers
@@ -153,7 +156,7 @@ A Goethite shackle lies here.~
 ~
 11 ag 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-7 400 0 1
+7 400 0 1 0
 T 2710
 E
 goethite shackle~
@@ -169,7 +172,7 @@ A bejewelled crystal key is lying here.~
 ~
 18 cdgq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 0
+2 1 0 0 0
 E
 bejewelled crystal key~
    This sparkling key catches the light perfectly, giving it a rainbow hue.  A
@@ -183,7 +186,7 @@ A @rc@na@rn@nd@ry@ns@rt@ni@rc@nk lies here~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 0 0
-1 1 0 0
+1 1 0 0 0
 #2711
 dark visored helmet~
 a dark visored helmet~
@@ -191,7 +194,7 @@ A dark visored helmet is lying here.~
 ~
 9 gj 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
-6 200 0 5
+6 200 0 5 0
 E
 dark visored helmet~
    This dark helmet glimmers various shades of blue and green when turned in
@@ -205,7 +208,7 @@ An irridescent breastplate is lying here.~
 ~
 9 gj 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
-6 200 0 5
+6 200 0 5 0
 E
 irridescent breastplate plate~
    This breastplate is a deep inky black that shimmers irridescent green and
@@ -219,7 +222,7 @@ A pair of ink-black boots stand here.~
 ~
 9 gj 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-6 200 0 5
+6 200 0 5 0
 E
 ink black boots ink-black~
    These thigh-high boots are plated and jointed at the knee, allowing for
@@ -233,7 +236,7 @@ A leathery pouch is lying here.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 10 0 0
-15 50 0 1
+15 50 0 1 0
 E
 leathery water pouch~
    Apparantly made for holding water, this tan-coloured leather has been
@@ -246,7 +249,7 @@ A large round bench sits in the center of the room.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 50 50 15 0
-55 0 0 0
+55 0 0 0 0
 E
 fountain bubbling~
    Sculpted from glass and filled with smooth round pebbles, the water
@@ -259,7 +262,7 @@ a @Mfragrant flower@n~
 ~
 12 q 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 fragrant flower~
    Various shades of magenta and purple, this flower has a large golden stamen
@@ -273,7 +276,7 @@ An unfinished object is lying here.~
 ~
 11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 2722
 #2719
 griffin's tears clear bottle~
@@ -282,7 +285,7 @@ A bottle of clear liquid lies here.~
 ~
 10 gkq 0 0 0 ao 0 0 0 0 0 0 0
 12 28 28 1
-2 100 0 0
+2 100 0 0 0
 E
 Griffin's Tears clear liquid small bottle~
    This small bottle is round with a cork tightly sealing it as if the liquid
@@ -295,16 +298,16 @@ A mouldy puddle stagnates in the corner.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 50 5 -1 0
-0 0 0 0
-E
-mouldy puddle~
-   This looks like it may have once been water, but has turned into a greenish
-glob of undrinkable slime from the influence of mould and various fungi.    
-~
+0 0 0 0 0
 E
 loose floorboards~
    These floorboards look a little loose, as though they have been pried open
 and set carefully back into place.    
+~
+E
+mouldy puddle~
+   This looks like it may have once been water, but has turned into a greenish
+glob of undrinkable slime from the influence of mould and various fungi.    
 ~
 #2721
 white bone key~
@@ -313,7 +316,7 @@ A white key lies here.~
 ~
 18 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 white bone key~
    This tiny white key has been carefully carved from a single curved bone, the
@@ -326,7 +329,7 @@ A bubbling hot spring flows here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
-104 0 0 0
+104 0 0 0 0
 E
 bubbling hot spring~
    This spring flows lazily through the cavern, its heat evidenced by the
@@ -339,7 +342,7 @@ A small doll lies crumpled on the ground.~
 ~
 8 ciq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-3 1 0 3
+3 1 0 3 0
 T 2729
 E
 small doll~
@@ -355,7 +358,7 @@ A @Rfirey spine@n lies here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 9 14
-3 300 0 0
+3 300 0 0 0
 E
 firey spine~
    This long sharp spine seems to glisten slightly as though recently hewn from
@@ -369,7 +372,7 @@ The massive stone skull of a dragon sits ominously on the altar.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 massive stone dragon skull~
    This enormous stone skull appears to have come from an actual dragon corpse.
@@ -384,7 +387,7 @@ A broken shard of glass lies here.~
 ~
 8 gq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 2732
 E
 broken shard glass~
@@ -399,7 +402,7 @@ glowing blue shard glass~
 ~
 8 gq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 2739
 E
 glowing blue shard glass~
@@ -418,7 +421,7 @@ glowing red shard glass~
 ~
 8 gq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 2740
 E
 glowing red shard glass~
@@ -437,7 +440,7 @@ glowing green shard glass~
 ~
 8 gq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 2741
 E
 glowing green shard glass~
@@ -456,7 +459,7 @@ glowing purple shard glass~
 ~
 8 gq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 2742
 E
 glowing purple shard glass~
@@ -475,7 +478,7 @@ A test quiver is lying here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 99 0 -1 0
-1 1 0 0
+1 1 0 0 0
 #2732
 test bow~
 a test bow~
@@ -483,7 +486,7 @@ A test bow is lying here~
 ~
 12 0 0 0 0 an 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #2733
 test arrow~
 a test arrow~
@@ -491,7 +494,7 @@ A test arrow is lying here.~
 ~
 7 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #2734
 little bundle white flowers~
 a little bundle of white flowers~
@@ -499,7 +502,7 @@ A little bundle of white flowers has been placed here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 30 0 0
+1 30 0 0 0
 E
 little bundle white flowers~
    These flowers have tiny star-shaped heads that seem an almost luminous
@@ -513,7 +516,7 @@ bright circle~
 ~
 12 g 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 bright circle~
    This glowing circle has clear magical properties, its surface shimmering as
@@ -527,7 +530,7 @@ A bottle of vodka stands here.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 10 10 7 0
-10 1 0 0
+10 1 0 0 0
 #2737
 empty~
 a buggy trigger~
@@ -535,7 +538,7 @@ A buggy trigger is wreaking havoc here.~
 ~
 0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #2738
 suspended orb glowing water~
 @Ca suspended orb of glowing water@n~
@@ -543,7 +546,7 @@ suspended orb glowing water~
 ~
 1 cdgq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-1 1 1 0
+1 1 1 0 0
 T 2794
 E
 suspended orb glowing water~
@@ -558,7 +561,7 @@ A broken pick lies discarded on the floor.~
 ~
 13 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 0
+2 1 0 0 0
 E
 broken pick~
    This pick seems newly built, though the iron head has already been shattered
@@ -571,7 +574,7 @@ A single black feather lies on the ground.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 single black feather~
    This large and beautiful feather is perfectly black, glistening slightly
@@ -585,7 +588,7 @@ A wrinkled apron lies here, covered with various stains.~
 ~
 15 0 0 0 0 al 0 0 0 0 0 0 0
 10 0 -1 0
-1 50 0 0
+1 50 0 0 0
 E
 apron stained wrinkled~
    This looks like your average kitchen apron, though rather ragged and
@@ -600,7 +603,7 @@ A swirling Tor hovers here, distorting everything around it.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 swirling tor Tor~
    This massive black sphere hovers effortlessly in mid-air, strange colours and
@@ -616,7 +619,7 @@ A cruel silvery blade glistens here.~
 ~
 5 j 0 0 0 an 0 0 0 o 0 0 0
 2 3 5 3
-2 500 2 0
+2 500 2 0 0
 E
 sacrificial blade cruel silvery~
    This long, curving blade is razor sharp and glistens silver in the light,
@@ -631,7 +634,7 @@ A proud metal sculpture stands unyieldingly in the center of the room.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 proud metal sculpture~
    This beautifully forged abstract metal sculpture is seamless and flowing as
@@ -646,7 +649,7 @@ A flickering flame hovers warily above the ground.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 flickering flame~
    This large flame is the pure scarlet colour of unpolluted fire, dancing and
@@ -661,7 +664,7 @@ A set of silver scales tips continuously from one side to the other.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 set silver balancing scales~
    Expertly forged and polished until shimmering, these beautiful scales are an
@@ -676,7 +679,7 @@ A long piece of white fabric lies crumpled here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 long simple garment piece white fabric~
    This simply sewn piece of flowing white cloth looks light to the touch and
@@ -692,7 +695,7 @@ A delicate piece of white material lies here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 delicate piece white gown material~
    This fragile shimmering dress is made of fine silk, so delicate the slightest
@@ -708,7 +711,7 @@ A tiny opal lies here, attached to a fragile gold chain.~
 ~
 8 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 200 0 0
+1 200 0 0 0
 E
 tiny opal pendant gold chain~
    A tiny fire opal lies embedded in a delicate circle of gold, its smooth white
@@ -725,7 +728,7 @@ A grey tunic is lying here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 simple grey tunic~
    This modest garment is a light slate grey in colour, made of delicate,
@@ -740,7 +743,7 @@ A rope-like cord is lying here.~
 ~
 11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 rope-like cord belt~
    This long woven cord has been woven from a very rough and durable brown
@@ -756,7 +759,7 @@ A faded brown shirt lies crumpled here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 faded brown shirt~
    This short sleeved garment is made of very light and airy material that looks
@@ -771,7 +774,7 @@ A dusty white vest lies forgotten here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 dusty white vest~
    This simple, loose-fitting vest is made of comfortable breathable material,
@@ -787,7 +790,7 @@ A pair of worn leather pants lies discarded here.~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 worn leather pants~
    These durable pants have been made from some type of thin hide, well-made
@@ -803,7 +806,7 @@ A pair of tan trousers lie here gathering dust.~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 pair tan trousers~
    These light coloured trousers are partially darkened by patches of dried mud
@@ -821,7 +824,7 @@ Some loose-fitting breeches have been dumped here.~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 loose-fitting breeches~
    These large breeches have been designed for maximum ease of movement,
@@ -837,7 +840,7 @@ Some tattered sandals lie here.~
 ~
 11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 some tattered sandals~
    These roughly stitched sandals seem to have been crudely thrown together from
@@ -853,7 +856,7 @@ Some plain leather shoes have been dropped here.~
 ~
 11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plain leather shoes~
    Dusty and ragged, these worn out shoes are reaching the end of their possible
@@ -869,7 +872,7 @@ A frayed belt is lying here.~
 ~
 11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 frayed belt~
    This belt looks almost about to snap, pieces of unravelling thread sticking
@@ -885,7 +888,7 @@ Some threadbare boots lie discarded here.~
 ~
 11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 threadbare boots~
    Made of rawhide and stitched tightly with black threads, there seems to be
@@ -902,7 +905,7 @@ Some dirty pieces of wound cloth lie here.~
 ~
 11 0 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 dirty pieces wound cloth~
    This long piece of filthy cloth has been wound into a sort of bandage, it
@@ -917,7 +920,7 @@ A dusty storage crate stands against the wall.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 crate dusty storage~
    This small wooden box looks like it once held tools although now there is not
@@ -931,7 +934,7 @@ A blue patchwork dress lies here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 blue patchwork dress~
    This simple but pretty dress has been sewn together from patches of leftover
@@ -948,7 +951,7 @@ A peach-coloured dress lies crumpled here.~
 ~
 11 0 0 0 0 ad 0 0 0 n 0 0 0
 0 0 0 0
-1 30 0 0
+1 30 0 0 0
 E
 peach coloured dress~
    This soft dress is a little faded, but still a pretty peach colour, most of
@@ -967,28 +970,33 @@ A silver-leafed book lies here.~
 ~
 12 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
-3 three~
-                       THIRD AGE - AGE OF REBIRTH
+silver-leafed book time~
+   This beautiful shimmering book is bound with leather and overlaid with fine
+silver leafing.  Carefully scrawled letters glow vaguely phosphorescent on the
+cover, spelling out Book of Time.  There appears to be three chapters (look 1,
+2, or 3).  
+~
+E
+1 one~
+                        FIRST AGE - AGE OF SORROW
 
-This is an accounting of things future, the third age.
+ This is an accounting of things past, the first age.
 
-With the canvass wiped clean and the hearts of the Cui weighed heavy with 
-grief and regret, they will invest their last energies in creating a new race. A
-form of life that embodies the whole scope of the balance, having the ability to
-sway itself to dark or light as it pleases.
+The first efforts of the Cui in shaping their world resulted in the separating
+of Denuo  into two major root forms - Khan'li, those of darkness, and Dynar,
+those of light, the intention being that the interactions between the two would 
+allow for motion of forces whilst keeping the balance relatively stable.
 
-The internal nature of these opposing forces means that the race will have to 
-keep peace within itself or suffer complete self-inflicted destruction. Thus, 
-along with the power to choose, this life will have the burning desire of its
-Cui makers to continue itself, to survive, to flourish and grow.
+However, the Cui were not prepared for the outright carnage that resulted. 
+Dynar and Khan'li both working to slaughter the other and spilling oceans of 
+blood, destroying many of their sub-races that Cui had sacrificed themselves to 
+create. 
 
-With only one of the Cui remaining, this race is left almost entirely to its own
-devices, only a few perceiving and heeding the whisperings of their sole 
-remaining parent and the occassional Ve offspring.
-
-Beyond this point no speaking creature can see.
+Dismayed, the Cui sought to make peace between the two, realising that all 
+they had worked for was about to destroy itself. Finally, they sought to make 
+a more drastic change...
 
 ~
 E
@@ -1020,32 +1028,27 @@ and uninhabited the third age will begin.
 
 ~
 E
-1 one~
-                        FIRST AGE - AGE OF SORROW
+3 three~
+                       THIRD AGE - AGE OF REBIRTH
 
- This is an accounting of things past, the first age.
+This is an accounting of things future, the third age.
 
-The first efforts of the Cui in shaping their world resulted in the separating
-of Denuo  into two major root forms - Khan'li, those of darkness, and Dynar,
-those of light, the intention being that the interactions between the two would 
-allow for motion of forces whilst keeping the balance relatively stable.
+With the canvass wiped clean and the hearts of the Cui weighed heavy with 
+grief and regret, they will invest their last energies in creating a new race. A
+form of life that embodies the whole scope of the balance, having the ability to
+sway itself to dark or light as it pleases.
 
-However, the Cui were not prepared for the outright carnage that resulted. 
-Dynar and Khan'li both working to slaughter the other and spilling oceans of 
-blood, destroying many of their sub-races that Cui had sacrificed themselves to 
-create. 
+The internal nature of these opposing forces means that the race will have to 
+keep peace within itself or suffer complete self-inflicted destruction. Thus, 
+along with the power to choose, this life will have the burning desire of its
+Cui makers to continue itself, to survive, to flourish and grow.
 
-Dismayed, the Cui sought to make peace between the two, realising that all 
-they had worked for was about to destroy itself. Finally, they sought to make 
-a more drastic change...
+With only one of the Cui remaining, this race is left almost entirely to its own
+devices, only a few perceiving and heeding the whisperings of their sole 
+remaining parent and the occassional Ve offspring.
 
-~
-E
-silver-leafed book time~
-   This beautiful shimmering book is bound with leather and overlaid with fine
-silver leafing.  Carefully scrawled letters glow vaguely phosphorescent on the
-cover, spelling out Book of Time.  There appears to be three chapters (look 1,
-2, or 3).  
+Beyond this point no speaking creature can see.
+
 ~
 #2766
 strip white meat~
@@ -1054,7 +1057,7 @@ A strip of white meat has been left here to rot.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 strip white meat~
    This long piece of white flesh is fresh and healthy-looking.  Apparantly some
@@ -1067,7 +1070,7 @@ A piece of salted, dried meat lies here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 piece salted dried meat~
    While this preserved piece of red meat does not look particularly delicious,
@@ -1080,7 +1083,7 @@ A meat pie has been left here to spoil.~
 ~
 19 q 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 pheasant mushroom meat pie~
    This freshly baked pie is light and crispy on the outside, the delicious
@@ -1093,7 +1096,7 @@ A boiled potato lies here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 boiled potato~
    This slightly mud-stained vegetable looks not long plucked from the ground,
@@ -1107,7 +1110,7 @@ A fresh carrot lies here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 fresh carrot~
    This fresh carrot has been recently pulled and rinsed off, a layer of
@@ -1121,7 +1124,7 @@ A small piece of meat lies rotting here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 small piece meat~
    This small piece of red meat is not the most appetizing in appearance, but is
@@ -1134,7 +1137,7 @@ A scarlet dress lies here, wreathed in flame.~
 ~
 11 dgq 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 500 0 0
+1 500 0 0 0
 T 2780
 E
 scarlet fire dress~
@@ -1153,7 +1156,7 @@ A delicate crystal ring lies here.~
 ~
 11 q 0 0 0 ab 0 0 0 h 0 0 0
 0 0 0 0
-1 300 0 0
+1 300 0 0 0
 E
 crystal delicate nymph ring~
    This delicate ring is made of pure flowing crystal, carved into the tiny form
@@ -1200,7 +1203,7 @@ That is all.
 ~
 16 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #2775
 glistening obsidian key~
 a glistening obsidian key~
@@ -1208,7 +1211,7 @@ A glistening obsidian key lies here.~
 ~
 18 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 glistening obsidian key~
    This dark magical key has been wrought from pure black obsidian, shimmering
@@ -1222,7 +1225,7 @@ An icy ring lies here, glowing faintly.~
 ~
 11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 600 2 0
+1 600 2 0 0
 T 2781
 T 2783
 E
@@ -1240,7 +1243,7 @@ $n caresses the flame of $s staff, unleashing its full fury upon you.
 ~
 4 cdgq 0 0 0 ao 0 0 0 0 0 0 0
 18 20 20 26
-2 1 2 0
+2 1 2 0 0
 E
 Goethite staff flame fire~
    This spiralling glossy staff has been carved and polished from pure Goethite
@@ -1256,7 +1259,7 @@ A test object lies here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 2784
 #2779
 Goethite staff flame fire~
@@ -1265,7 +1268,7 @@ A Goethite staff lies here, topped with flickering fire.~
 ~
 4 0 0 0 0 a 0 0 0 0 0 0 0
 18 5 5 26
-2 2 0 0
+2 2 0 0 0
 T 2789
 T 2793
 T 2796
@@ -1285,7 +1288,7 @@ An ash arrow is lying here.~
 ~
 0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #2781
 test silver arrow~
 a silver arrow~
@@ -1293,7 +1296,7 @@ A silver arrow is lying here.~
 ~
 0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #2782
 poison arrow~
 a poison arrow~
@@ -1301,7 +1304,7 @@ A arrow lies here, tipped with poison.~
 ~
 0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #2783
 birthday cake~
 a birthday cake~
@@ -1309,7 +1312,7 @@ A birthday cake stands here, flickering with candles.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 birthday cake~
    This birthday cake is Detta's, created on August 5th, to commemorate her last
@@ -1322,5 +1325,5 @@ A spider ball sits here.~
 ~
 0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 $~

@@ -1,5 +1,5 @@
 (lib/text/news)
-			   THE 2009 tbaMUD HERALD
+			   THE 2010 tbaMUD HERALD
    		 "We addict players for their own enjoyment."
 
 NEW COMMANDS AND NEW MUD BEHAVIOR:
@@ -7,7 +7,7 @@ NEW COMMANDS AND NEW MUD BEHAVIOR:
 **  Check out the latest news and information on the tbaMUD codebase at
     @Chttp://tbamud.com@n.
 
-**  An "areas" command to list open areas. 
+**  A new "areas" command will list open areas and their suggested levels. 
 
 **  New preference editor for players: prefedit. Use it to enable two new
     toggles autodoor and autokey.

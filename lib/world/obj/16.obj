@@ -5,12 +5,12 @@ A blue black crusader hilt sword is stuck in the ground.~
 ~
 5 gno 0 0 0 an 0 0 0 0 0 0 0
 6 3 6 3
-9 450 45 0
+9 450 0 0 0
 E
 sword lifecutter~
-   As you look at the sword, you hear inside your head the words "My name is
-Lifecutter, and my last master was Dodinas le Savage.  Take me and lets slay
-evil!  
+   As you look at the sword you hear inside your head the words, "My name is
+Lifecutter and my last master was Dodinas le Savage.  Take me and let's slay
+evil!"
 ~
 #1601
 axe~
@@ -19,7 +19,7 @@ A huge axe is lying here~
 ~
 5 gn 0 0 0 an 0 0 0 0 0 0 0
 1 4 7 10
-8 600 60 0
+8 600 60 0 0
 E
 axe~
    The axe handle has the name 'Gaheris' inscibed on it.  
@@ -29,11 +29,11 @@ A
 #1602
 axe~
 an axe~
-A two headed axe with the Hautdesert crest lies here~
+A two headed axe with the Hautdesert crest lies here.~
 ~
 5 mn 0 0 0 an 0 0 0 0 0 0 0
 1 5 5 10
-10 500 50 0
+10 500 50 0 0
 E
 axe~
    The strange crest of Hautdesert is engraved on both heads of this large axe.
@@ -46,7 +46,7 @@ The crest has a stag on a verdant field~
 ~
 11 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 250 25 0
+2 250 25 0 0
 E
 crest stag~
    The crest is about the size of your fist and is made of what looks like
@@ -59,7 +59,7 @@ A fine suit of green armor bearing the crest of Hautdesert glistens here!~
 ~
 9 gn 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-9 900 90 0
+9 900 90 0 0
 E
 green armor~
    The strange crest of Hautdesert is engraved on the breast of this fine
@@ -70,11 +70,11 @@ A
 #1605
 colored cloak~
 a cloak of many colors~
-A cloak of many colors and the crest of Orkney lies here~
+A cloak of many colors and the crest of Orkney lies here.~
 ~
 9 d 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-4 4 0 0
+4 4 0 0 0
 E
 colored cloak~
    The cloak is made from many patches of various shades and colors.  Making it
@@ -87,11 +87,11 @@ A rainbow of colors is reflected from the shield which lies here!~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 4 0 0 0
-5 25 2 0
+5 25 2 0 0
 E
 colored shield~
-   The shield has been shelacked with some strangely colorful paint that has
-hardened it to an above average durability.    
+   The shield has been shellacked with some strangely colorful paint that has
+hardened it to an above average durability.
 ~
 #1607
 armbands~
@@ -100,7 +100,7 @@ A set of armbands of black iron lie here.~
 ~
 9 fg 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
-3 450 50 0
+3 450 50 0 0
 E
 armbands~
    Made of pure silver these armbands have been turned invisible.    
@@ -109,12 +109,12 @@ A
 13 15
 #1608
 merlins scroll~
-merlins scroll~
+Merlin's scroll~
 A scroll was left here.~
 ~
 2 0 0 0 0 a 0 0 0 0 0 0 0
 12 44 -1 -1
-1 500 100 0
+1 500 100 0 0
 E
 merlins scroll~
    The thick parchment is yellow from age and crumbling at the corners.  An
@@ -122,12 +122,12 @@ arcane spell is written upon it.
 ~
 #1609
 merlins wand~
-Merlins wand~
+Merlin's wand~
 A wand, glowing with power, lies here.~
 ~
 3 g 0 0 0 a 0 0 0 0 0 0 0
 12 3 3 6
-3 15 1 0
+3 15 1 0 0
 E
 merlins wand~
    The wand is capped on both ends with clear crystal orbs.  Small sparks can
@@ -140,7 +140,7 @@ A humming, blinding white bracer lies here!~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 6 0 0 0
-3 525 60 0
+3 525 60 0 0
 E
 white bracers~
    These bracers are made from a strange white metal, or alloy.  They gleam and
@@ -153,24 +153,24 @@ A
 #1611
 black greaves~
 some black greaves~
-A pair of blackened steel greaves lies here. ~
+A pair of blackened steel greaves lies here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 5 0 0 0
-4 300 30 0
+4 300 30 0 0
 E
 black greaves~
-   These black metal plates fit over a persons legs to help protect from
-disabling attacks.    
+   These black metal plates fit over a person's legs to help protect from
+disabling attacks.
 ~
 #1612
 club ball mace~
 a spiked mace~
-A clublike weapon with a spiked balled head lies here~
+A clublike weapon with a spiked balled head lies here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 3 2 6 5
-9 650 65 0
+9 650 65 0 0
 E
 club ball mace spiked~
    The spiked ball is affixed to the top of a long pole and looks deadly as a
@@ -180,18 +180,18 @@ A
 19 2
 #1613
 pack backpack~
-pellinores pack~
+Pellinore's pack~
 A backpack made of fine leather sits here. You see lettering on its corner.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 150 1 -1 0
-15 150 15 0
+15 150 15 0 0
 E
 lettering backpack pack~
    You read the writing on the pack.  It says "To my dear friend Pellinore, may
 this pack make your journeys shorter and allow you to bring all the provisions
 you need.  Simply wear the pack, and the weight and number of items you carry
-will increase, and you will be able to travel long distances without tiring.  
+will decrease, and you will be able to travel long distances without tiring.  
 May you succeed in your quest!  - Merlin".    
 ~
 #1614
@@ -201,7 +201,7 @@ A spear is here, glowing with an unholy dark light.~
 ~
 5 j 0 0 0 an 0 0 0 0 0 0 0
 4 3 7 14
-5 200 20 0
+5 200 20 0 0
 E
 unholy spear~
    You look at the unholy light surrounding the spear.  Your vision darkens.  
@@ -215,7 +215,7 @@ A helm with the semblance of a wolf is here~
 ~
 9 g 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
-3 160 20 0
+3 160 20 0 0
 E
 wolf helm~
    The metal helm has been wrapped with the fur and head of a wolf.    
@@ -229,7 +229,7 @@ An old pen is leaking ink everywhere here.~
 ~
 21 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 3 0 0
+3 3 0 0 0
 E
 pen~
    This writing utensil could be used if only you had something to write on.  
@@ -241,7 +241,7 @@ A burnished steel helm with oxen horns lies here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
-5 375 37 0
+5 375 37 0 0
 E
 horned helm~
    This strange hide helm has a set of horns sticking out of the top, they look
@@ -255,15 +255,15 @@ If only you had a pen, you could write on this.
 ~
 16 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 #1620
 ball chain spiked~
 spiked ball and chain~
-A massive spiked iron ball attached to a iron handle by a 3' chain is here.~
+A massive spiked iron ball is attached to a iron handle by a 3 foot chain.~
 ~
 5 mn 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 6
-8 600 60 0
+8 600 60 0 0
 E
 ball chain spiked~
    This spiked ball is attached to a long metal handle and can be swung as a
@@ -280,7 +280,7 @@ A rod of black, runed metal swallows light here.~
 ~
 3 gj 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 7
-1 900 90 0
+1 900 90 0 0
 E
 rod command~
    The black, runed metal seems to absorb all heat and light it comes in

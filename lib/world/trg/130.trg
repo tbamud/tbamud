@@ -164,7 +164,7 @@ if %arg% == recall
 elseif %arg% == set
   if %actor.eq(17)%
     if !%actor.varexists(set_life_counter)%
-      eval set_life_counter 1
+      set set_life_counter 1
       remote set_life_counter %actor.id% 
     end
     if %actor.set_life_counter% < 14
@@ -193,8 +193,8 @@ elseif %arg% == return
     global set_counter
     if %set_counter% > 2
       %send% %actor% The recall staff glows briefly then flickers back to normal.
-      eval return_room_staff 3001
-      eval set_counter 0
+      set return_room_staff 3001
+      set set_counter 0
       global return_room_staff
       global set_counter
     end

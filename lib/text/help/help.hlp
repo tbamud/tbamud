@@ -26,7 +26,7 @@ MOBILE STANDARDS: See @RMEDIT STANDARDS@n
 limits on TBA to prevent crashes. But, it is just a waste of time to set large
 numbers or applies that unbalance the game. You will be made to fix them if you 
 want your zone used or approved.
-   Zcheck (level 32+) checks a zone for these and other standards.
+   Zcheck (level 31+) checks a zone for these and other standards.
 
 See also: DAMAGE, POSITIONS
 #31
@@ -1633,7 +1633,7 @@ ASCII Text Generator:
 http://www.network-science.de/ascii/
 http://www.degraeve.com/img2txt.php
 
-See also: AUTOMAP, TBAMAP, CARTOGRAPHY
+See also: COLOR, AUTOMAP, TBAMAP, CARTOGRAPHY
 #31
 ABBREVIATIONS ABBREVS
 
@@ -1978,7 +1978,7 @@ all of this is done ask your coder to implement the petshop. It will not work
 until the code is changed and the MUD is rebooted. The cost of pets is 300 
 times their level.
 
-See also: SPECIALS
+See also: SHOPS, SPECIALS
 #31
 EXPORT
 
@@ -2518,7 +2518,7 @@ nohassle       LVL_GOD          PC      BINARY      NOHASSLE flag
 nosummon       LVL_BUILDER      PC      BINARY      NOSUMMON flag
 nowizlist      LVL_GRGOD        PC      BINARY      Not Wizlistable flag
 olc            LVL_GRGOD        PC      MISC        Zone to OLC
-password       LVL_IMPL         PC      MISC        Player password
+password       LVL_GRGOD        PC      MISC        Player password
 poofin         LVL_IMMORT       PC      MISC        Poofin
 poofout        LVL_IMMORT       PC      MISC        Poofout
 practices      LVL_GOD          PC      NUMBER      # of practices
@@ -2615,7 +2615,7 @@ See Also: COPYOVER, AUTOSAVE
 #31
 SLOWNS SLOWNAMESERVER
 
-Usage: toggle slowns
+Usage: toggle slown
 
 The slowns command is deprecated after adding asynchronous host lookup.
 
@@ -2754,7 +2754,7 @@ The following wizard commands are implemented with level in the brackets:
 [32]aedit     [34]export    [32]links    [31]peace   [32]scopy     [32]teleport [31]wizhelp
 [31]at        [32]file      [31]load     [34]plist   [31]sedit     [33]thaw     [34]wizlock
 [31]attach    [32]force     [32]mcopy    [31]purge   [32]send      [31]tlist    [33]wizupdate
-[33]ban       [33]freeze    [31]medit    [34]qecho   [32]set       [32]transfer [32]zcheck   
+[33]ban       [33]freeze    [31]medit    [34]qecho   [32]set       [32]transfer [31]zcheck   
 [31]buildwalk [32]gecho     [31]mlist    [31]qedit   [31]show      [31]trigedit [31]zedit
 [34]cedit     [31]goto      [33]mute     [31]qlist   [34]shutdow   [31]tstat    [31]zlist
 [34]changelog [31]handbook  [31]nohassle [32]rcopy   [34]shutdown  [32]unaffect [32]zlock
@@ -2801,7 +2801,7 @@ displays the current WIZLOCK level.
 
 See also: BAN
 #31
-WIZNET ; WIZTALK WIZTELL WIZCHAT WIZLINE SEMICOLON
+WIZNET ; WIZTALK WIZTELL WIZCHAT WIZLINE SEMICOLON IMMCHAT
 
 The immortal communication channel which is the only channel visible in OLC.
 
@@ -3174,7 +3174,8 @@ See also: TRIG-TYPES, VARIABLES, EXPRESSIONS
 %damage% %victim% amount
 
    Cause amount points of damage to victim. The amount can be negative, to 
-create a healing effect.
+create a healing effect. This requires an actor to damage, so if it is a random
+trigger you must define actor.
 
 %damage% %actor% -20          - cause 20 points of healing 
 %damage% %actor% 20           - cause 20 points damage
@@ -3186,7 +3187,7 @@ eval stunned %actor.hitp%     - evaluate all hitpoints and then damage
 eval num_hitp %actor.hitp%/2  - calculate half of hitpoints and then damage
 %damage% %actor% %num_hitp% 
 
-Example: @RTSTAT 16, 51, 3008@n
+Example: @RTSTAT 16, 51, 3008, 1600, 1601@n
 
 See also: DAMAGE, GUNS, DEATH
 #31
@@ -3210,7 +3211,7 @@ key         - value is the vnum of the key to the door in this direction.
 name        - value is the name of the door in the specified direction.
 room        - value is the vnum of the room this direction leads to
  
-Example: @RTSTAT 17, 23603@n
+Example: @RTSTAT 17, 23603, 53429, 2759@n
 #31
 %ECHO% %ECHOAROUND% %SEND% TRIG-SEND %ZONEECHO% ZONEECHO ZONECHO %ZONECHO% ZECHOAROUND ECHOAROUND OECHO WECHO MECHO OECHOAROUND WECHOAROUND MECHOAROUD OSEND WSEND MSEND ZONECHO RECHO %ZECHO% ZSOUND MECHOAROUND MZONEECHO MRECHO
 
@@ -3245,11 +3246,11 @@ Usage: findobj.<room vnum>(<obj vnum/id/name>)
 Usage: findmob.<room vnum>(<mob vnum>)
         - counts the number of mobs in room with vnum.
 
-   For example if you want to check how many fido's are in room 1204 
-use %findmob.1204(3011)%. To find out how many objects of vnum 1234 
+   For example, if you want to check how many fidos are in room 1204 
+use %findmob.1204(3062)%. To find out how many objects of vnum 1234 
 are in room 453 use %findobj.453(1234)%.
 
-Example: @RTSTAT 207, 50@n
+Example: @RTSTAT 207, 26102, 50@n
 
 See Also: SPEC-VAR
 #31
@@ -3416,15 +3417,15 @@ Example: @RTSTAT 74, 75, 41@n
 #31
 MGOTO %GOTO% %MTELEPORT% MTELEPORT 
 
-%goto% <target>
+mgoto <target>
 
    This command moves the mob to the given target. The target may be an object,
 room, or  character, as long as it is not in a private room occupied with two 
 or more characters, or godroom. No message is given. 
 
-%goto% 1233
-%goto% Rumble
-%goto% fountain
+mgoto 1233
+mgoto Rumble
+mgoto fountain
 
 #31
 MJUNK %JUNK%
@@ -3530,7 +3531,7 @@ COMMENT *
 
    Comments are useful in triggers to document what is happening, for future 
 reference, and for others to see what the trigger does. If you want a * in your
-trigger text try /*.
+trigger text try \*.
 
 See also: REDIT-ROOM-FLAGS
 #31
@@ -3629,7 +3630,7 @@ is not evaluated until the variable is accessed.
 
 Example: @RTSTAT 49@n
 
-See also: TRIG-SET
+See also: TRIG-SET, EVAL-EXAMPLES
 #31
 TRIG-SET %SET% MSET
 
@@ -3653,7 +3654,19 @@ the expression is evaluated immediately.
 
 Example: @RTSTAT 49, 41005@n
 
-See also: EVAL, OSETVAL, UNSET
+See also: SET-EXAMPLES, EVAL, OSETVAL, UNSET
+#31
+SET-EXAMPLES EVAL-EXAMPLES
+
+GOOD:
+@Gset maxlength 0
+@n
+
+BAD:
+@Reval maxlength 0     * This doesn't need to be evaluated, just set it.
+@n
+
+See Also: TRIG-SET, EVAL
 #31
 UNSET
 
@@ -3874,7 +3887,7 @@ Case is used to begin a new conditional group in a switch block.
 Default is similar to case but matches any condition not met. 
 Done is used to terminate a while or switch block.
 
-Example: @RTSTAT 18, 6, 132@n
+Example: @RTSTAT 35, 18, 6, 153, 132@n
 #31
 HASATTACHED %HASATTACHED% %ACTOR.HASATTACHED% %ROOM.HASATTACHED% %OBJ.HASATTACHED
 
@@ -4096,7 +4109,7 @@ zonenumber - The zone number.
 
 Example: @RTSTAT 29@n
 
-See also: RANDOM-THOUGHTS
+See also: VARIABLES
 #31
 TRIGEDIT-VARIABLES-OBJECTS OBJ-VAR %SHORTDESC% TRIGEDIT-OBJ-VAR VAL0 VAL1 VAL2 VAL3 %ITEM% %OBJECT% OBJVARS OBJ-VARS %NEXT_IN_LIST% %OBJ% OBJ-COMMAND IS_INROOM WORN_BY NEXT_IN_LIST CARRIED_BY OBJECT-VARIABLES HAS_IN
 
@@ -4111,7 +4124,7 @@ count        - The number of the same object.
 has_in       - True if the container holds the item.
 hasattached() - Checks if the trig is attached. @RHELP HASATTACHED@n.
 id           - The unique id of the object.
-is_inroom    - Returns true if object is in room. @RTSTAT 55005@n
+is_inroom    - Returns true if object is in room.
 name         - The list of key words of the object.
 next_in_list - The id of the next object in the characters inventory, or an
                empty return
@@ -4458,7 +4471,7 @@ Variables:
 %self% - the object being consumed.
 %command% - either eat, drink, or consume.
 
-Example: @RTSTAT 1374@n
+Example: @RTSTAT 164, 1374@n
 #31
 TRIGEDIT-ROOM-GLOBAL TRIG-ROOM-GLOBAL
 
@@ -4743,13 +4756,13 @@ TRIGEDIT-MOB-ACTION TRIG-MOB-ACT ACTIONS TRIGEDIT-ACTIONS TRIG-ACTIONS MOB-ACT
 
    This trigger type should be set when a matching action is performed by a 
 mobile or player in the room.  Actions are any text output via the act() 
-function, and include most output from the MUD.  (Notable exclusions are 
-character speech and Immortal echoes.  )
+function, and include most output from the MUD.  Notable exclusions are 
+character speech and Immortal echoes.
  
-Numeric Arg : 0: argument is a substring that must be found in the text to cause a
-                 match. 
-              1: argument is a list of words, any of which found in the text will
-                 activate the trigger.
+Numeric Arg : 0 - argument is a substring that must be found in the text to cause a
+                match. 
+              1 - argument is a list of words, any of which found in the text will
+                activate the trigger.
 Argument    : a phrase or wordlist to be matched.
 
 Variables:
@@ -5213,6 +5226,16 @@ You should see how the trigger actually works in the game, and watch other
 people interact with it. Often you will see ways you can improve it. 
 
 @RGOTO 13@n and work your way north to test these out. Triggers 4, 5, 7, 8
+
+See Also: TRIG-EXAMPLES, TRIG-GAMES
+#31
+TRIGEDIT-GAMES TRIG-GAMES
+
+Examples of complex game triggers:
+@RTSTAT 47901@n - Connect Four
+@RTSTAT 47905@n - Hearts
+
+See Also: TRIG-EXAMPLES, TRIG-ADVANCED
 #31
 TRIGEDIT-MOB-GLOBAL TRIG-MOB-GLOBAL
 
@@ -5521,11 +5544,10 @@ TSTAT EXAMPLES TRIGSTAT TRIGGERSTAT
 Usage: tstat <trigger vnum>
 
 Tstat lets you learn more about a specific trigger. 
-Be warned that all the triggers on TBA may not work since anyone could
-have made them. Ask around for the best examples. Zone 0 are the basic
-examples. For more examples check out zones 0, 13, 19, 27, 29, 77, 236 and 
-237. There are numerous others. Look around, just beware some may not be
-"good" examples. 
+Be warned that all the triggers on TBA may not work since anyone could have 
+made them. Ask around for the best examples. Zone 0 are the basic examples. For 
+more examples check out zones 0, 1, 2, 3, 13, 14, 19, 27, 29, 30, 77, 236 and 
+237. There are numerous others.  
 
 To learn more about any of these just tlist <zone #> then tstat each
 trigger individually. You can always ask Rumble to find you an example.
@@ -5648,7 +5670,7 @@ Smokables: @RTSTAT 159@n
 Furniture: @RTSTAT 1399@n
 Weapons: @RTSTAT 1361, 9000, 11840, 13005@n
 
-See Also: TRIG-QUESTS
+See Also: TSTAT, TRIG-QUESTS, TRIG-GAMES
 #31
 DG_AFFECTS DGAFFECT SCRIPT-AFFLICTED AFFLICTED DG-AFFECTS DG-AFFECTS %DG_AFFECT% DG-EFFECT DG_EFFECT DURATIONS TRIG-AFFECTS
 
@@ -6066,7 +6088,7 @@ Slist gives you a list of the shops within a zone.
       slist 12          - lists all shops defined in zone 12
       slist 3001 3022   - lists all shops from vnum 3001 to 3022
 
-Once you have the list of shops you can "show shop <rnum>" to get more info on that 
+Once you have the list of shops you can "show shop <vnum>" to get more info on that 
 shop.
  
 See also: SHOW-SHOP, SEDIT, OLC
@@ -6141,7 +6163,7 @@ If no room number is specified, the current room is used as target.
 @RGOTO 11@n to enter The Builder Academy hallway on how to use zedit.
 
 Implementors wanting to create zones, see: @R HELP ZONE-CREATE@n
-See also: ZEDIT-MENU, ZEDIT-NEW, OLC, SHOW-ZONES 
+See also: ZEDIT-MENU, ZEDIT-NEW, CREATE-ZONE, OLC, SHOW-ZONES 
 #31
 BUILDWALKING BUILD-WALKING DIGWALK WALKDIG
 
@@ -6453,6 +6475,7 @@ R) Mortals Level To Immortal   : Yes
 4) Map/Automap Option      : Imm-Only
 5) Default map size        : 6
 6) Default minimap size    : 2
+7) Scripts on PC's         : Yes
 Q) Exit To The Main Menu
 
 See also: CEDIT-MENU
@@ -6529,7 +6552,7 @@ Q) Exit To The Main Menu
 See also: CEDIT-MENU
 
 #31
-SEDIT-MENU SHOPS STORES BARTERING TRADE TRADING SHOPPING SHOPKEEPERS BARTENDERS LIBRARIAN
+SEDIT-MENU STORES BARTERING TRADE TRADING SHOPPING SHOPKEEPERS BARTENDERS LIBRARIAN
 
 -- Shop Number : [@c1300@n]                                  @RHELP SEDIT-NUMBER@n
 0) Keeper      : [@c-1@n] @yNone@n                               @RHELP SEDIT-KEEPER@n
@@ -6862,7 +6885,7 @@ ZEDIT-BUILDERS
    The name of the builder creating the zone. 
 
 #31
-ZEDIT-CREATE ZEDIT-CREATION ZONE-CREATE ZONE-CREATION ZCREATE
+ZEDIT-CREATE ZEDIT-CREATION ZONE-CREATE ZONE-CREATION ZCREATE CREATE-ZONE
 
 Usage: zedit new <new zone number> <bottom of zone> <top of zone>
 
@@ -6966,6 +6989,7 @@ R) Reset Mode  : @yNormal reset.@n
       because it will keep the hard mobs from reappearing in the zone until 
       everyone leaves, but on a busy MUD it can prevent a zone from ever being
       reset since the zone may never stay empty for more than one minute. 
+	  NOTE: Immortals are ignored if they have nohassle on.
    2) Normal reset (DEFAULT)
       Reset the zone as soon as it reaches its Lifespan, regardless of who or 
       what is in it. This is the most commonly used Reset Mode.
@@ -7156,7 +7180,11 @@ use "the" or "a" unless the mobile has a proper name. Give your mobs
 interesting names and occupations. 
    Be inventive with mobs. Most mobs have a boring short description. For 
 example, "a dragon" or "a goblin". While "a fierce fire breathing dragon" 
-or "an obese yellow goblin" are far more impressive. 
+or "an obese yellow goblin" are far more impressive. Name your mobs, or at 
+least give them an occupation. Seeing the generic 'a citizen' gets boring. 
+As a player, which would you like to say that you killed: 'a citizen' or 
+'The Great Speaker of the Land'? Both could easily be the same mob, but 
+one sounds more impressive than the other. 
 
 #31
 MEDIT-L-DESCRIPTION LDESCRIPTION L-DESCRIPTION LONG-DESCRIPTION
@@ -7189,26 +7217,8 @@ your mob by writing a creative description.
    Try to tell the player what the mobile looks like, how it is acting, etc...
 Be careful how you word what they are wearing. For example of what not to say:
 "A huge werewolf is wielding a mace of Oblivion." Reason being, if he does not
-load the mace, this would not make any sense. Do not describe objects that a
-mob is wearing in their look or extra desc. All such objects should actually
-be made and equipped to the mob.
-   Name your mobs, or at least give them an occupation. Seeing the generic "a 
-citizen is standing here." gets boring pretty quick and makes the game become 
-a drone, room-to-room hack and slash. As a player, which would you like to 
-say that you killed: 'a citizen' or 'The Great Speaker of the Land'? Both 
-could easily be the same mob, but one sounds more impressive than the other. 
-There are some exceptions of course. Something like "butterflies circling a 
-bush" is fine if the butterflies are not loaded in the room. These are also 
-known as filler mobs. It is acceptable to place filler mobs, such as towns 
-people or animals. For Example, "A crowded market place bustles with activity 
-as people rush to get the best deals." Or, "The forest is covered in shadows 
-except through small breaks in the foliage where birds can be seen flying over 
-head." You should never describe "several orcs sit at a bar causing a ruckus" 
-in the room description of the bar, instead put them there as mobs.
-   Also be more inventive with mobs. Most mobs have a boring short description.
-For example, "a dragon" or "a goblin". "a fierce fire breathing dragon" or "an
-obese yellow goblin" are far more impressive. 
- 
+load the mace, this would not make any sense. 
+    
 See also: TEXT-EDITOR
 #31
 MEDIT-LEVEL MOB-STANDARDS MOB-LIMITS AUTOROLL AUTOGENERATE GENERATE MEDIT-STANDARDS MOB-BALANCE
@@ -7401,9 +7411,9 @@ L) NPC Flags : @cISNPC@n
 13) NOCHARM    Mob cannot be charmed.
 14) NOSUMMON   Mob cannot be summoned.
 15) NOSLEEP    Sleep spell cannot be cast on mob.
-16) NOBASH     Large mobs such as trees that cannot be bashed.
+16) NOKILL     Mob cannot be attacked.
 17) NOBLIND    Mob cannot be blinded.
-18) NOTDEADYET Mob being extracted. DO NOT USE.
+18) NOTDEADYET Mob being extracted. CAN NOT BE SET.
 
 See also: MEDIT-AFF-FLAGS
 #31
@@ -8305,6 +8315,7 @@ SPELLS
 43) remove poison        44) sense life           45) animate dead         
 46) dispel good          47) group armor          48) group heal           
 49) !UNUSED!             50) infravision          51) waterwalk            
+52) identify
 
 #31
 DRUNK WINE LIQUID-CONTAINERS BEER SPIRITS DRINK-TYPES LIQUOR WHISKEY WHISKY LIQUIDS LIQ-CONTAINERS
@@ -8513,12 +8524,12 @@ rumble@@tbamud.com
    4 JADE Forest                        -- Unknown                    10-25
    5 NEWBIE Farm                        -- Unknown                     1-10
    6 SEA of Souls                       -- Unknown                    10-25
-   7 CAMELOT                            -- Rumble                     20-30
+   7 CAMELOT                            -- Lok Parna                  20-30
    9 River Island Of Minos              -- Mahatma                     4-25
-  11 Frozen Castle                      -- Detta                      25-30
+  12 God Simplex                        -- CircleMUD                    all
   15 Straight Path                      -- Steppin                    13-30  
-  16 CAMELOT II                         -- Rumble                     20-30
-  17 CAMELOT III                        -- Rumble                     20-30
+  16 CAMELOT II                         -- Lok Parna                  20-30
+  17 CAMELOT III                        -- Lok Parna                  20-30
   18 NUCLEAR Wasteland                  -- Rumble                     35-40
   19 SPIDER Swamp                       -- Detta                      15-20
   20 ARENA                              -- Rumble                     10-20
@@ -8535,7 +8546,7 @@ rumble@@tbamud.com
   36 Chessboard of Midgaard             -- Exxon                       6-30
   37 CAPITAL Sewer System               -- Welcor                      3- 7
   38 CAPITAL Sewer System II            -- Welcor                      7-14
-  39 HAVEN								-- Nivan                       3-14
+  39 HAVEN                              -- Nivan                       3-14
   40 Mines of Moria                     -- Redferne                    3-13
   41 Mines of Moria II                  -- Redferne                    3-13
   42 Dragon CHASM                       -- Guldane                    22-30
@@ -8966,7 +8977,7 @@ Modify your prompt to show your hit points, mana, and/or movement points.
   > prompt off      Return to no prompt.
   > prompt all      Display hit, mana, and movement points.
 
-  > prompt auto     A seperate toggle that will only display your selected 
+  > prompt auto     A separate toggle that will only display your selected 
                     prompt if the values drop below 30% of max.
 See also: TOGGLE
 #0
@@ -8992,8 +9003,7 @@ See also: MUDMAIL, BOARDS
 #0
 TELNET CLIENTS ZMUD GMUD TINYFUGUE TINTIN PUEBLO MUDMASTER MUSH PARSING TERMINALS CMUD
 
-Below is a list of specialty telnet programs for connecting to MUDs. Plus a 
-few normal telnet program that have slipped in because people like them. 
+Below is a list of specialty telnet programs for connecting to MUDs. 
 
 ZMud (PC) - @Chttp://www.zuggsoft.com/zmud/down.asp#zMUD@n
 ZMud Free (PC) - http://forums.zuggsoft.com/index.php?page=4&action=file&file_id=18
@@ -9200,7 +9210,7 @@ See also: help on each individual spell:
 Examples:
 
   > help cure-ligh
-  > help ventri
+  > help fireb
   > help energy-drain
 
 #0
@@ -9423,31 +9433,6 @@ I would type "all 13" to list everything in zone 13. I use this to check what
 people have done with their zone.
 
 See also: ^, RUMBLE-ALIASES
-#0
-ANSI COLOR-LEVEL
-
-Usage: color [off | sparse | normal | complete]
-
-If you have a color-capable terminal and wish to see useful color-coding
-of information, use the COLOR command to set the level of coloring you see.
-
-  > color off
-  This command disables all color.
-
-  > color sparse
-  > color normal
-  > color complete
-
-These three commands turn color on to various levels.  Experiment to see
-which level suits your personal taste.
-
-'color' with no argument will display your current color level.
-
-Using color will slow down the speed at which you see messages VERY slightly.
-The effect is more noticeable on slower connections.  Even if you have
-color turned on, non-colorized messages will not be slowed down at all.
-
-See also: COLOR-SPRAY, COLORCODES
 #0
 LICENSES
 
@@ -9736,17 +9721,19 @@ See also: TOGGLE, COMPACT, LOOK
 #0
 BUGS TYPOS IDEAS
 
-Usage: bug <bug report>
-       idea <your new idea>
-       typo <that nasty typo>       
+Usage: bug submit <bug report>
+       idea submit <your new idea>
+       typo submit <that nasty typo>       
 
-For making useful suggestions and reporting problems to the Powers that Be.
+For making useful suggestions and reporting problems to the Powers that Be. You
+must first submit a title for your report after which you will be able to enter
+more detailed information if required.
 
 Examples:
 
-  > bug the entire game crashes when I type 'put bag in bag'
-  > idea make a restaurant in Radidan
-  > typo 'sence' should be spelled 'sense'
+  > bug submit crash bug
+  > the entire game crashes when I type 'put bag in bag'
+  > /s
 
 #0
 BUY
@@ -9797,7 +9784,7 @@ command.  Useful if you have a small display.
 
 See also: BRIEF
 #0
-CONSIDER DIAGNOSE
+CONSIDER
 
 Usage: consider [target]
 
@@ -9807,7 +9794,19 @@ hitpoints/special attacks/damage into account.
 
 Example:
 
-  > consider fido
+  > consider chuck norris
+
+See also: HIT, KILL
+#0
+DIAGNOSE
+
+Usage: diagnose [target]
+
+This command will allow you to check the health of a player or mob.
+
+Example:
+
+  > diagnose doctor
 
 See also: HIT, KILL
 #0
@@ -10164,7 +10163,7 @@ See also: help on each individual spell:
 Examples:
 
   > help cure ligh
-  > help ventri
+  > help fireba
   > help energy drain
 #0
 CHARM-PERSON
@@ -10619,21 +10618,6 @@ If you attempt to summon a monster, it will get a saving throw.
 
 See also: NOSUMMON
 #0
-VENTRILOQUATE
-
-Usage       : cast 'ventriloquate' <victim | object> <text>
-Accumulative: -
-Duration    : Instantaneous
-Level       : Mage level 1.
-Save        : Versus spell victim only sees attempted cast.
-
-For all people in the same room as the caster that fail a saving throw, the
-spell will make the object or victim appear to say the text written.
-
-Example:
-
-  > cast 'vent' Mirlen I got 399,823 coins, don't even consider killing me!
-#0
 RECALL WORD-OF-RECALL
 
 Usage       : cast 'word of recall' 
@@ -10820,12 +10804,13 @@ KILL HIT FIGHT ATTACK SLAY BATTLES SMITE STRIKE CHOP VIOLENCE
 Usage: kill [target]
        hit [target]
 
-If you are an immortal there is no point to killing anything. You can simply
-purge them. As an immortal you cannot be hit. Since you start with no equipment
-or weapon you will not be able to inflict much damage.  
- 
 A good way to start a fight.  Not a good idea to hit other players.
 
+If you are an immortal there is no point in killing anything. You can simply
+purge them. Since you start with no equipment or weapon you will not be able 
+to inflict much damage. Learn to use the SET command to change your stats. You
+can take damage and die.
+ 
 See also: FLEE, WIMPY
 #0
 LEAVE
@@ -11294,9 +11279,9 @@ Sets the title people see on the WHO list and when you're in the room with
 them.  You can't use parentheses (the ( and ) characters) because those
 are reserved for flags.
 
-Do not abuse this command; if you do, it will be taken from you.
+Do not create offensive titles or your title will be set for you.
 
-See also: FLAGS, WHO
+See also: FLAGS, WHO, NOTITLE
 #0
 TOGGLES CONFIGURE SETTINGS
 
@@ -11658,8 +11643,9 @@ See Also: NEWS, CHANGELOG
 LAG
 
    Thanks for the help, but sometimes lag just can not be prevented. We are 
-based on a stabile server so more than likely the lag is coming from the route 
-between you and it. 
+based on a stable server so more than likely the lag is coming from the route 
+between your computer and our server. Use http://www.pingtest.net/ to test
+your connection.
 
 #0
 PETS
@@ -11683,7 +11669,27 @@ Lists basic information about the player specified.
 
 See Also: WHO
 #0
-TRIGEDIT-OBJ-ACT TRANSLATE DODGE SEARCH PEEK SCAN OOC OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS CLANS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING IDENTIFY CLONES CLONING ZCLONE BERSERK CLANS MUSIC RACES IMC
+IDENTIFY
+
+Usage       : cast 'identify' <target>
+Accumulative: -
+Duration    : Instantaneous
+Level       : Cleric level 11, Mage level 20.
+
+Used to determine important information about a player, mob, or an object.
+
+See Also: SHOP-IDENTIFY
+
+#0
+SCAN
+
+Usage: scan
+
+This command looks into adjacent rooms to see what mobs or players are close by.
+
+See Also: LOOK
+#0
+TRIGEDIT-OBJ-ACT TRANSLATE DODGE SEARCH PEEK OOC OUT-OF-CHARACTER DUALWIELD DUAL-WIELD SINGING REMORTS RECLASS SWIMMING COMPARE IEDIT LANGUAGES PERCENT-LOADING PERCENTAGE-LOADING CLONES CLONING ZCLONE BERSERK CLANS MUSIC RACES IMC
 
    Not implemented.
    Translation engine: http://babelfish.yahoo.com/
@@ -11734,10 +11740,18 @@ PAGELENGTHS PAGE_LENGTHS
 
 Usage: toggle pagelength [#]
 
-   Sets how many lines you will receive before getting the page option "Return
-to continue."
+   Sets how many lines (5-255) you will receive before getting the page option:
+[ Return to continue, (q)uit, (r)efresh, (b)ack, or page number (1/#) ]
 
-See also: TOGGLE
+See also: TOGGLE, SCREENWIDTH
+#0
+SCREENWIDTHS SCREEN_WIDTHS
+
+Usage: toggle screenwidth [#]
+
+   Sets how many characters your client can see in one line (40-200).
+
+See also: TOGGLE, PAGELENGTH
 #0
 TNL
 
@@ -11801,6 +11815,8 @@ DIKU ROM DBX DBZ SMAUG MUD-HISTORY
 formerly known as CircleMUD).
 
 For a full history of MUDs, check out: http://en.wikipedia.org/wiki/Muds
+
+Smaug Building Institute: http://zeno.biyg.org/
 #0
 HISTORY
 
@@ -11812,13 +11828,12 @@ all channels.
 
 See also: CHANNELS, MUD-HISTORY
 #0
-COLORCODES COLOURCODES COLOR-CODES COLOUR-CODES COLORS COLOURS PCOLORS COLORCODING
+COLORCODES ANSI COLOURCODES COLOR-CODES COLOUR-CODES COLOR-LEVEL COLORS COLOURS PCOLORS COLORCODING
 
-Usage: toggle color [ off | brief | normal | on ]
+Usage: prefedit
 
    If you have a color-capable terminal and wish to see useful color-coding
-of information, use the TOGGLE COLOR command to set the level of coloring you 
-see.
+of information, use PREFEDIT to set the level of coloring you see.
    The letters for the colors are to be preceded by a single @@ sign, where the
 actual code will be @@<letter>. Double @@@@ = single @@. All use of colorcodes
 @RMUST@n be terminated with @@n to restore normal color to prevent color bleeding.
@@ -12252,7 +12267,7 @@ mobs, shops, and triggers with which players will interact.
 
 See also: OLC, REDIT, MEDIT, OEDIT, ZEDIT, SEDIT, TRIGEDIT, AEDIT
 #31
-REPORT-EXAMPLE BUILDER-REPORT
+REPORT-EXAMPLE
 
 The following is Justo's monthly builder's report update. These are not required,
 but encouraged. Justo's zone is the most in-depth and well planned zone I have
@@ -12359,9 +12374,9 @@ for a "free zone" I usually save zones <100 for people I know will complete
 them. Don't waste them on a typical newbie. Next redit #00 and enter the room
 name "Rumble's Zone Description Room" and cut and paste the zone proposal into 
 it. It may require a little cleaning up and if it is extremely long use the 
-extra desc. Next zedit #00 and put name under Builders and Name Me - Rumble for
-the zone name. Then set olc, title, and set nohassle on and purge the assigner 
-(or have them junk it).
+extra desc. Next zedit #00 and put their name under Builders and Name Me - 
+Rumble for the zone name. Then set olc, title, nohassle on and purge the 
+assigner (or have them junk it).
  
 I use the following ZMUD trigger. It fires off me typing aaz # <builder>:
 
@@ -12399,20 +12414,17 @@ STAFF DUTY DUTIES STAFF-DUTIES TBA-STAFF-DUTIES TBASTAFF
 
    This is how we handle new arrivals on TBA. Read the helpfiles on send/snoop.
 
-1.  Have them fill out the application at:
-      @Chttp://www.geocities.com/buildersacademy@n
-    They must send the app before being advanced or leaving room 2. 
+1.  Have them fill out the application at: @Chttp://tbamud.com/application@n
+    They must submit the application before being advanced. 
 2.  Advance them to level 31.  
 3.  Transfer or teleport them to 3, Socrates will greet them with instructions. 
-    You must transfer or teleport them so the greet trigger will fire and 
-    give them an assigner.
-4.  Tell them to read through the entire zone and feel free to ask anyone for 
-    help. 
+4.  Tell them to read through the entire zone and follow its instructions. 
+    Remind them that if they get confused they can ask for help over wiznet.
 5.  The entire zone should take well over an hour to read. A trigger will tell 
     them at the end of the redit hallway that they can begin working on their
     trial vnum.  Level 33's and above will assign trial vnums and zones. 
 6.  Be available for questions, but don't hand feed them everything. If you do
-    you will get burnt out or become suicidal. Help Xedit, shows the room 
+    you will get burnt out or become suicidal. Help <X>edit, shows the room 
     number for each hallway. I have compiled an extensive help system so the
     majority of the questions can be answered by directing them to a help file.
 7.  Once they complete their one room/mob/obj look it over. Check everything. 
@@ -12431,11 +12443,8 @@ Level 33's:
     Use any free trial vnum in the zone listed in imotd. Set their trial vnum 
     in their title "set rumble title has trial vnum #" "set rumble olc #." Put
     their name in their trial vnum room title. Use the assigner to limit them
-    to their single vnum. HELP ASSIGNER.
-    Thoroughly check their trial vnum, go into each form of OLC to see it
-    completely. Once complete have them write up a zone proposal and mudmail 
-    or email it to Rumble (help contact). In the rare occasion that I am absent
-    HELP STAFF-ZONES explains how I setup new zones.
+    to their single vnum. HELP ASSIGNER. In the rare occasion that I am absent 
+	HELP STAFF-ZONES explains how I setup new zones.
 
 Rumble
 #0
@@ -12683,7 +12692,7 @@ TBA will continue development and is always open to feedback and
 recommendations from the MUDding community. TBA is foremost a MUDding resource 
 with the goal of improving the MUDding community. 
 
-   We are happy to announce the sixth release of the codebase
+   We are happy to announce the release of the tbaMUD codebase
 formerly known as CircleMUD. If you are interested in a mature
 and stable codebase with dedicated staff and support please check
 us out.
@@ -12738,7 +12747,7 @@ Rumble
 The Builder Academy
 tbamud.com 9091
 http://tbamud.com
-rumble@tbamud.com
+rumble@@tbamud.com
 #0
 FAMOUS QUOTES FUNNY HUMOR JOKES LAUGH BASH.ORG
 
@@ -12838,6 +12847,8 @@ Elerrina gossips, 'used to sound like small pellets of ice bouncing off stuff. n
 
 Dygash gossips, 'hehe how strange is this, someone opened a mud and advertised staff positions then 9hrs later shut the mud down!'
 
+Frenze gossips, 'it's like dry humping sandpaper'
+
 More Good Stuff: http://www.bash.org/?top
 #0
 RUMBLE TBA THE-BUILDER-ACADEMY
@@ -12846,6 +12857,9 @@ RUMBLE TBA THE-BUILDER-ACADEMY
 
 Rumble is the Creator of The Builder Academy and is in charge of its 
 administration: tbamud.com 9091
+
+See Also: ADVERTISING
+
 #0
 WELCOR
 
@@ -12898,7 +12912,8 @@ See Also: CODING
 #0
 THANKSGIVING
 
-OBJ: 1331   MOB: 1322   TRG: 1363
+OBJ: 1331   
+MOB: 1322
 
 @Y.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.i@G
 			| | | | __ _ _ __  _ __  _   _
@@ -12938,8 +12953,8 @@ OBJ: 1331   MOB: 1322   TRG: 1363
 #31
 HALLOWEEN
 
+OBJ: 11712, 11713
 MOB: 1313
-TRG: 1395
 
 @G.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.i@R
             __,  ,____)           __,  ,____)
@@ -12950,9 +12965,17 @@ TRG: 1395
 @G .:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.@n
 
 #31
+VALENTINES
+
+OBJ: 1342, 1304
+
+#31
+NEW YEARS
+
+OBJ 1298, 1963
 CHRISTMAS
 
-OBJ: 1299, 1318, 1319, 1336-41, 1397
+OBJ: 1299, 1318, 1319, 1336-41
 MOB: 1308 
 @R      __,_,_,___)          _______
      (--| | |             (--/    ),_)       ,_)

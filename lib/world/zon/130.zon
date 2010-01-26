@@ -1,7 +1,7 @@
 #130
 random~
 Mist Maze~
-13000 13099 240 0 d 0 0 0 -1 -1
+13000 13099 240 0 d 0 0 0 20 30
 R 0 13000 13000 -1 	(an old tombstone)
 O 1 13000 50 13000 	(an old tombstone)
 R 0 13000 13099 -1 	(a swirling mist)

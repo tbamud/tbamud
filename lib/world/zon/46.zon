@@ -1,7 +1,7 @@
 #46
 Garrison~
 Ant Hill~
-4600 4699 10 2 d 0 0 0 -1 -1
+4600 4699 10 2 d 0 0 0 3 7
 M 0 4600 30 4600 	(a green worker ant)
 E 1 4601 50 16 	(a feeler from a giant ant)
 O 0 4609 30 4625 	(an ant larvae)

@@ -1,7 +1,20 @@
 #7
-Rumble~
+Lok Parna~
 Camelot~
-700 799 10 2 d 0 0 0 -1 -1
+700 799 30 2 d 0 0 0 20 30
+R 0 702 719 -1 	(a gently flowing river)
+O 1 719 99 702 	(a gently flowing river)
+R 0 703 717 -1 	(a gold panning bowl)
+O 1 717 99 703 	(a gold panning bowl)
+R 0 701 704 -1 	(a crystal clear stream)
+O 1 704 99 701 	(a crystal clear stream)
+M 0 702 1 799 	(the commander)
+E 1 702 5 5 	(some silver chain armor)
+M 0 701 2 799 	(a border guard)
+E 1 715 99 17 	(a silver sceptre)
+E 1 701 16 16 	(a tempered broadsword)
+R 0 799 704 -1 	(a crystal clear stream)
+O 1 704 99 799 	(a crystal clear stream)
 R 0 786 716 -1 	(the stone fountain)
 O 0 716 1 786 	(the stone fountain)
 M 0 706 8 786 	(a warden)
@@ -35,13 +48,6 @@ M 0 703 8 793 	(a trader)
 G 1 700 99 -1 	(some useless trinkets)
 M 0 703 8 780 	(a trader)
 G 1 700 99 -1 	(some useless trinkets)
-M 0 702 1 799 	(the commander)
-E 1 702 5 5 	(some silver chain armor)
-M 0 701 2 799 	(a border guard)
-E 1 715 99 17 	(a silver sceptre)
-E 1 701 16 16 	(a tempered broadsword)
-R 0 799 704 -1 	(a crystal clear stream)
-O 0 704 1 799 	(a crystal clear stream)
 M 0 700 8 777 	(a merchant)
 D 0 785 0 1 	(Cobblestone Road)
 S

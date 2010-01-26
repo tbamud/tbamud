@@ -274,11 +274,11 @@ The Whirlpool~
 D0
 ~
 ~
-0 0 55619
+0 0 55620
 D1
 ~
 ~
-0 0 55620
+0 0 55621
 D2
 A swampy lagoon.
 ~
@@ -287,7 +287,7 @@ A swampy lagoon.
 D3
 ~
 ~
-0 0 55621
+0 0 55619
 S
 T 55618
 #55619
@@ -609,7 +609,8 @@ D3
 0 0 55634
 E
 scroll~
-The scroll reads as follows:
+   The scroll reads as follows:
+
 Dear Lord British,
      This is Dupre reporting about the paladin expedition.  We
 are in the process of clearing the desert of those annoying
@@ -857,6 +858,7 @@ moongate~
 2 55515 55662
 E
 engraving~
+   @n
 Pilgrim,
      You have reached the final step on your way to enlightenment.
 In this last step you will be shown ultimate evil to your north,
@@ -1420,10 +1422,10 @@ The beach sparkles.
 S
 #55685
 Entrance to Ultima~
-   The blue moongate casts an strange blue light upon a huge gate to the south.
+   The blue moongate casts a strange blue light upon a huge gate to the south.
 The gate is open and beyond it you see a simple village.  Around the gate there
-are two pedestals.  On the first pedestal, there is a magic scroll.  On the
-second there is a plaque.
+are two pedestals.  On the first pedestal is a magic scroll.  On the second is a
+plaque.
 ~
 556 8 0 0 0 0
 D2
@@ -1434,7 +1436,7 @@ gate s south~
 E
 magic scroll~
    An image flies out of the scroll and creates a huge image of a face
-approximately ten feet off the ground.  It says, " Welcome to Ultima, where
+approximately ten feet off the ground.  It says, "Welcome to Ultima, where
 adventure and excitement may be found for all people, and all levels.  Each of
 the separate planes increase in level.  Have a nice day!"  
 ~

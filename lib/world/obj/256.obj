@@ -5,7 +5,7 @@ An orange lies on the ground here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 8 0 0
+1 8 0 0 0
 E
 orange~
    You wonder how it got here, seeing how oranges are non-migratory.  
@@ -17,7 +17,7 @@ There is a bale of wheat here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-50 1000 0 0
+50 1000 0 0 0
 E
 bale wheat~
    It doesn't look appetizing to you, but a horse might enjoy this...  
@@ -26,12 +26,15 @@ bale wheat~
 iron flail~
 an iron flail~
 An iron flail has been left here.~
-Made of wrought iron, with a mean looking, spiked ball at the end,
-this flail looks like the perfect companion for a guard.
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 4 5 5
-5 25 0 22
+5 25 0 22 0
+E
+flail~
+   Made of wrought iron, with a mean looking spiked ball at the end, this flail
+looks like the perfect companion for a guard.
+~
 #25603
 barrel perfume~
 a barrel of perfume~
@@ -39,7 +42,7 @@ You can smell a barrel on the other side of the room from here.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-20 1000 0 0
+20 1000 0 0 0
 E
 barrel perfume~
    Smells good...the label reads:
@@ -54,7 +57,7 @@ There is a statue of Aglandiir here, made of solid gold.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-30 500 0 0
+30 500 0 0 0
 E
 statue~
    He's a pretty striking chap, for a dragon.  
@@ -66,7 +69,7 @@ A runed halberd lies on the ground here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 0 5 5 3
-16 750 0 0
+16 750 0 0 0
 E
 halberd~
    The runes glow with a bright light, making you think that this might be a
@@ -81,7 +84,7 @@ A vial of a dun fluid is here.~
 ~
 10 a 0 0 0 a 0 0 0 0 0 0 0
 20 36 1 3
-1 1000 0 0
+1 1000 0 0 0
 E
 potion protection dun vial~
    Looks thick, and brownish-grey (dun).  Ick!  
@@ -93,7 +96,7 @@ A black headband sits here, ready for your use.~
 ~
 9 a 0 0 0 e 0 0 0 0 0 0 0
 0 0 0 0
-1 0 0 0
+0 0 0 0 0
 #25608
 apple~
 an apple~
@@ -101,7 +104,7 @@ A scrawny red apple sits here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 apple~
    It is not wormy...  Yet.  
@@ -113,7 +116,7 @@ A fresh loaf of bread lies here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 bread loaf~
    Mmmm...  Rye!  
@@ -125,7 +128,7 @@ A melon sits here, discarded evidently.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-3 100 0 0
+3 100 0 0 0
 E
 melon~
    Wow!  Look at the size of that melon!  
@@ -137,7 +140,7 @@ A sturdily made butcher's knife rests here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 14
-8 10 0 0
+8 10 0 0 0
 #25612
 sword long~
 a long sword~
@@ -145,7 +148,7 @@ A superb long sword sticks in the earth.~
 ~
 5 dmn 0 0 0 ano 0 0 0 0 0 0 0
 0 2 7 3
-15 750 0 0
+15 750 0 0 0
 E
 sword long~
    This sword is light, but the heft is perfectly balanced.  Such an incredible
@@ -163,7 +166,7 @@ A short sword lies here... a work of art!~
 ~
 5 adimn 0 0 0 ano 0 0 0 0 0 0 0
 3 4 6 3
-10 821 0 29
+10 821 0 29 0
 E
 sword short~
    It brings tears to your eyes.  This must have been Gabadiel the smith's
@@ -180,7 +183,7 @@ A wooden rolling pin is lying here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 7
-1 1 0 0
+1 1 0 0 0
 #25615
 armor plate suit~
 a suit of plate mail~
@@ -188,7 +191,7 @@ A suit of plate mail lies here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
-50 500 0 0
+50 500 0 0 0
 E
 armor suit plate mail~
    This armor was made especially for the Lord's Guard.  
@@ -200,7 +203,7 @@ A cooler rests here against one wall.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 200 5 0 0
-50 200 0 0
+50 200 0 0 0
 E
 cooler~
    It must be magically maintained, to keep all the food cold.  
@@ -212,7 +215,7 @@ The Lord's badge of office lays on the ground here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
-50 400 0 0
+50 400 0 0 0
 E
 badge office~
    This is the Lord's symbol of integrity and responsibility, the symbol of the
@@ -231,7 +234,7 @@ A metal helm lies here.~
 ~
 9 g 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
-6 50 0 0
+6 50 0 0 0
 #25619
 wine glass wine~
 a glass~
@@ -239,7 +242,7 @@ A glass of wine sits forgotten here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 2 0
-2 500 0 0
+2 500 0 0 0
 E
 glass~
    This is a nice glass filled with the Lord's finest.  
@@ -251,7 +254,7 @@ A cup of tea sits here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 1 1 11 0
-2 100 0 0
+2 100 0 0 0
 E
 tea cup~
    Looks good.  Looks warm.  Doesn't matter; it still looks good.  
@@ -263,7 +266,7 @@ A slice of pie is sitting here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 slice pie~
    Whew!  Looks like some good food!  
@@ -275,5 +278,5 @@ A key made of a strange grey metal has been left here.~
 ~
 18 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 0
+2 1 0 0 0
 $~

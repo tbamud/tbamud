@@ -537,7 +537,7 @@ halt
 end
       %echoaround% %actor% @W%actor.name%'s movement becomes a @Dblur@W as %actor.himher% impales %victim.name%, inflicting @bretribution@W onto the enemy!@n
       %send% %actor% @WYou put a step forward, movements becoming a @Dblur@W as you impale %victim.name% with your blade.@n
-      eval count 0
+      set count 0
       while (%count%<10)
         if (!(%victim.hitp%<-10) && %victim% && %actor.fighting%)
       eval victim %actor.fighting%
@@ -764,7 +764,7 @@ wait 2 secs
 wait 2 secs
 %send% %actor% An Old Fool tells you 'If you want just @MTRADE@n with me, and I'll exchange them for you.'
 eval i %actor.inventory%
-eval no_of_shards 0
+set no_of_shards 0
 while (%i%)
   set next %i.next_in_list%
   if %i.vnum%==20115
@@ -794,7 +794,7 @@ trade for shards -20106~
 0 c 100
 trade~
 eval i %actor.inventory%
-eval no_of_shards 0
+set no_of_shards 0
 while (%i%)
   set next %i.next_in_list%
   if %i.vnum%==20115
@@ -812,7 +812,7 @@ else
   wait 2 secs
   %send% %actor% An Old Fool gives you a @MP@Wr@Mi@ms@Wm S@Mhe@Wll@n.
   %echoaround% %actor% An Old Fool gives %actor.name% a @MP@Wr@Mi@ms@Wm S@Mhe@Wll@n.
-  eval n 10
+  set n 10
   while (%n%>0)
     %purge% %actor.inventory(20115)%
     eval n %n%-1
@@ -826,7 +826,7 @@ MAKE the Prism stuff~
 0 c 100
 create~
 eval i %actor.inventory%
-eval no_of_shells 0
+set no_of_shells 0
 while (%i%)
   set next %i.next_in_list%
   if %i.vnum%==20116
@@ -840,7 +840,7 @@ if (%arg%==anklet)
   if (%no_of_shells%>=5)
     %send% %actor% You hand the shells to the Fool, who gives you a @MP@Wr@Mi@ms@Wm @MA@Wn@Mk@ml@We@mt@n in return.
     %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a @MP@Wr@Mi@ms@Wm @MA@Wn@Mk@ml@We@mt@n.
-    eval n 5
+    set n 5
     while (%n%>0)
       %purge% %actor.inventory(20116)%
       eval n %n%-1
@@ -854,7 +854,7 @@ else
     if (%no_of_shells%>=5)
       %send% %actor% You hand the shells to the Fool, who gives you a @MP@Wr@Mi@ms@Wm @MC@Wo@Ml@ml@Wa@Mr@n in return.
       %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a @MP@Wr@Mi@ms@Wm @MC@Wo@Ml@ml@Wa@Mr@n.
-      eval n 5
+      set n 5
       while (%n%>0)
         %purge% %actor.inventory(20116)%
         eval n %n%-1
@@ -868,7 +868,7 @@ else
       if (%no_of_shells%>=15)
         %send% %actor% You hand the shells to the Fool, who gives you a @MP@Wr@Mi@ms@Wm @MD@Wr@Me@ms@Ws@n in return.
         %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a @MP@Wr@Mi@ms@Wm @MD@Wr@Me@ms@Ws@n.
-        eval n 15
+        set n 15
         while (%n%>0)
           %purge% %actor.inventory(20116)%
           eval n %n%-1
@@ -1084,7 +1084,7 @@ Aloha Welcome! - Tour Guide~
 if !(%actor.varexists(aloha_welcome)%)
   smile %actor.name%
   wait 2 secs
-  say Welcome to the Saphhire Islands %actor.name%!
+  say Welcome to the Sapphire Islands, %actor.name%!
   wait 2 secs
   say I have prepared some items for you.
   wait 2 secs

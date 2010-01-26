@@ -41,7 +41,7 @@ while %i%
     set i %next%
   end
 done
-eval i 0
+set i 0
 * steal all their equipped items.
 while %i% < 18
   eval item %actor.eq(%i%)%

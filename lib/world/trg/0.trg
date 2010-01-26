@@ -232,6 +232,9 @@ Tutorial Quest 1317 - Starter~
 if %direction% == south && %actor.varexists(solved_tutorial_quest_zone_0)%
   wait 1 sec
   say you have already completed this quest.
+  wait 2 sec
+  say but you can try it again if you so desire. Would you like to find the magic eight ball again?
+  rdelete solved_tutorial_quest_zone_0 %actor.id%
 else
   wait 1 sec
   say Hello, %actor.name%. Could you find me the magic eight ball?
@@ -437,7 +440,6 @@ AT Example~
 2 b 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* put a wait in here so it doesn't fire before the player enters the room
 %at% 33 %echo% at'd to a room
 %at% Rumble %echo% at'd to Rumble
 ~
@@ -448,8 +450,9 @@ Rumble's Spy~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Arguments: * means all speech will trigger this.
 * This will echo all speech to Rumble.
+%at% rumble say %actor.name% says, '%speech%'
+* doesn't work:
 %at% rumble %echo% %actor.name% says, '%speech%'
-%echo% firing
 ~
 #21
 Transform Example~
@@ -709,7 +712,7 @@ Object Variables Example~
 %echo% WEARFLAG:     %self.wearflag%
 %echo% WEIGHT:       %self.weight%
 %echo% WORN_BY:      %self.worn_by%
-%purge% self
+%purge% %self%
 ~
 #29
 Room Variables Example~

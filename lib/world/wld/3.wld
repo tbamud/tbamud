@@ -337,7 +337,7 @@ D3
 S
 #316
 Magi Alley~
-   The inner city wall is used to seperate the city into two seperate
+   The inner city wall is used to separate the city into two separate
 battlefields.  In case of an attack by superior numbers the citizens will fall
 back into the inner city as a last measure of defense.  Luckily, the army has
 been very successful in protecting the city and it has never come to that.    
@@ -1372,14 +1372,14 @@ D5
 door~
 1 0 225
 E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
-~
-E
 floor~
    The stone floor is the same shade of grey as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
+~
+E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
 ~
 S
 $~

@@ -171,6 +171,25 @@ hard times and need a little boost.
 8 8 2
 E
 T 3016
+#3013
+newbie tour guide~
+the newbie tour guide~
+A newbie tour guide is here to help. "@RTell guide help@y" for assistance.@n
+~
+   This young lady has the sole purpose of helping those who need assistance.  
+She will follow you around Midgaard and provide a walking tour of the local
+attractions.
+~
+10 0 0 0 2128 0 0 0 0 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 2
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
 #3020
 master mage guildmasters~
 the mages' guildmaster~
@@ -424,7 +443,7 @@ A beastly fido is mucking through the garbage looking for food here.
    The fido is a small dog that has a foul smell and pieces of rotted meat
 hanging around his teeth.  
 ~
-65738 0 0 0 65536 0 0 0 -200 E
+202 0 0 0 65536 0 0 0 -200 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1

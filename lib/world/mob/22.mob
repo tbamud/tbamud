@@ -41,7 +41,7 @@ A zombie servants rotten head almost falls off as he bows before you.
 BareHandAttack: 13
 E
 #2203
-maid~
+zombie maid~
 a zombie maid~
 A zombie maid picks up after all the zombies.
 ~
@@ -112,7 +112,7 @@ An undead corpse walks past you.
 BareHandAttack: 13
 E
 #2208
-head maid~
+zombie head maid~
 the head maid~
 A zombie head maid is supervising the cleaning of the tower.
 ~

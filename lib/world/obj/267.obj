@@ -5,7 +5,7 @@ A pretty pink taffeta dress lies crumpled on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-5 300 0 0
+5 300 0 0 0
 E
 dress pink taffeta~
    It's a beautifuly tailored pink dress.  You would look quite nice in it.  
@@ -17,7 +17,7 @@ A pretty blue silk dress is getting wrinkled and dirty lying on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
-5 300 0 0
+5 300 0 0 0
 E
 dress blue silk~
    It's a beautifully tailored silk dress.  You would look smashing in it.  
@@ -29,7 +29,7 @@ A pretty white cotton dress has been tossed to the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-5 300 0 0
+5 300 0 0 0
 E
 dress white cotton~
    It's a lovely cotton dress.  You would look quite the woman in it.  
@@ -41,7 +41,7 @@ An ugly beige burlap dress looks very like a sack of potatoes on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-5 300 0 0
+5 300 0 0 0
 E
 dress beige burlap~
    Eyugh.  Gross.  You don't actually want to wear _this_, do you?  
@@ -53,7 +53,7 @@ A beautiful, swirling, multi-colored dress is getting soiled on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 3 0 0 0
-5 700 0 0
+5 700 0 0 0
 E
 dress swirling beautiful multi-colored~
    The dress is made from many different colors, and just seems to flow more
@@ -71,7 +71,7 @@ A talisman with the face of a demon on it has been thrown to the ground.~
 ~
 4 aejlo 0 0 0 aco 0 0 0 0 0 0 0
 30 3 3 7
-10 500 0 0
+10 500 0 0 0
 E
 talisman demon-faced demon faced charming~
    It has a picture of a disgustingly ugly daemon on it.  It looks quite evil,
@@ -85,7 +85,7 @@ A robe of leisure is on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
-5 800 0 0
+5 800 0 0 0
 E
 robe leisure~
    Oh, my, you could just sink right into this robe.  It looks so very
@@ -102,7 +102,7 @@ A tar rattle just insists on your getting it.~
 ~
 8 h 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 1000 0 0
+2 1000 0 0 0
 E
 rattle tar~
    Awww...  Look at it!  You just wnat to pick it right up and rattle it.  
@@ -118,7 +118,7 @@ A scroll with the description of a man screaming at the top of his lungs has bee
 ~
 2 gn 0 0 0 ao 0 0 0 0 0 0 0
 20 30 30 30
-15 400 0 0
+15 400 0 0 0
 E
 scroll fear~
    It looks pretty frightening.  
@@ -130,7 +130,7 @@ A crown with very sharp spikes has been very carelessly left here to rust.~
 ~
 9 egjlnp 0 0 0 ae 0 0 0 0 0 0 0
 8 0 0 0
-20 750 0 0
+20 750 0 0 0
 E
 crown spikes~
    The hat itself is rather disconcerting.  Huge, very sharp, razorlike spikes
@@ -148,7 +148,7 @@ A black, bloodstained robe is crumpled on the floor.~
 ~
 9 ejlnp 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
-20 800 0 0
+20 800 0 0 0
 E
 robe fear black blood stained bloodstained~
    This strange robe seems to absorb the light around it.  It's stained with the
@@ -165,7 +165,7 @@ A ball and chain lies on the ground.~
 ~
 14 cfglno 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-30 100 0 0
+30 100 0 0 0
 E
 ball chain~
    It's a huge steel bowling ball--looks to way several hundred kilograms--with
@@ -182,7 +182,7 @@ Some manacles are on the ground.~
 ~
 14 cfglno 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
-15 100 0 0
+15 100 0 0 0
 A
 3 -3
 A
@@ -194,7 +194,7 @@ A cellkey has been hung on the wall.~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-3 20 0 0
+3 20 0 0 0
 #26714
 knife butcher~
 a huge butcher knife~
@@ -202,7 +202,7 @@ A huge butcher knife has been left on the ground.~
 ~
 5 abejl 0 0 0 an 0 0 0 0 0 0 0
 0 2 9 3
-26 1000 0 0
+26 1000 0 0 0
 E
 knife butcher~
    It looks quite effective as a knife.  It's very sharp and has just the right
@@ -219,7 +219,7 @@ A pair of pitch black armbands has been thrown to the ground.~
 ~
 9 bgjlnp 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
-10 400 0 0
+10 400 0 0 0
 E
 armbands pitch plack~
    These armbands are made from the same kind of stone the outer area of the
@@ -235,7 +235,7 @@ A pair of pitch black leggings lie on the ground.~
 ~
 9 agjln 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
-15 200 0 0
+15 200 0 0 0
 E
 leggings pitch black~
    The leggings are made from the same kind of stone the outer area of the 
@@ -252,7 +252,7 @@ A pair of pitch black boots lie on the ground.~
 ~
 9 bgjlnp 0 0 0 ag 0 0 0 0 0 0 0
 6 0 0 0
-15 300 0 0
+15 300 0 0 0
 E
 boots pitch black~
    The boots are made from the same kind of stone the outer area of the 
@@ -267,7 +267,7 @@ A pair of pitch black gloves are on the ground.~
 ~
 9 bgjlnp 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
-15 1000 0 0
+15 1000 0 0 0
 E
 gloves pitch black~
    The gloves are made from the same kind of stone the outer area of the 
@@ -282,7 +282,7 @@ The Blade of Terror has been thrown to the ground.~
 ~
 5 aejl 0 0 0 an 0 0 0 0 0 0 0
 0 4 6 3
-15 1000 0 0
+15 1000 0 0 0
 E
 blade pitch black terror~
    The blade is made from the same kind of stone the outer area of the 
@@ -299,7 +299,7 @@ A pitch black plate armor has been carelessly left behind.~
 ~
 9 bgjlnp 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
-20 1000 0 0
+20 1000 0 0 0
 E
 armor pitch black plate~
    The armor is made from the same kind of stone the outer area of the 
@@ -312,7 +312,7 @@ The Headdress of Terror has been dropped here.~
 ~
 9 bgjlnp 0 0 0 ae 0 0 0 0 0 0 0
 9 0 0 0
-30 1000 0 0
+30 1000 0 0 0
 E
 hea268ress terror~
    This hea268ress is made from the same metal as the Temple of Terror is made
@@ -329,7 +329,7 @@ A ring of pitch-black metal is half-sticking out of the floor.~
 ~
 8 bgjlnp 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-2 800 0 0
+2 800 0 0 0
 E
 ring pitch black~
    The ring is made from the same kind of stone the outer area of the 
@@ -344,7 +344,7 @@ A cloak of darkness is in a heap on the ground.~
 ~
 9 bgjlnp 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
-20 1000 0 0
+20 1000 0 0 0
 E
 cloak darkness~
    The material the cloak is made from just seems to suck the light right in.  
@@ -361,7 +361,7 @@ An armor made out of the irridescent scales of a dragon is on the floor.~
 ~
 9 bdefjlp 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
-25 900 0 0
+25 900 0 0 0
 A
 1 3
 A
@@ -373,7 +373,7 @@ A cat o' nine tails is on the ground here.~
 ~
 5 bdghijkn 0 0 0 an 0 0 0 0 0 0 0
 0 4 5 2
-20 920 0 20
+20 920 0 20 0
 A
 19 1
 #26726
@@ -383,7 +383,7 @@ A pair of wire-rimmed spectacles is about to get crushed if it is left on the gr
 ~
 8 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-5 1000 0 0
+5 1000 0 0 0
 #26727
 key strangely shaped~
 a strangely shaped key~
@@ -391,7 +391,7 @@ A strangely shaped key is lying on the ground.~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-3 100 0 0
+3 100 0 0 0
 #26728
 key black pitch~
 a pitch-black key~
@@ -399,7 +399,7 @@ A pitch-black key is lying on the ground.~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-3 100 0 0
+3 100 0 0 0
 #26729
 key glass~
 a transparent glass key~
@@ -407,7 +407,7 @@ A transparent glass key lies on the ground.~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
-3 100 0 0
+3 100 0 0 0
 #26730
 key stone~
 a stone key~
@@ -415,7 +415,7 @@ A stone key lies on the ground.~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-3 100 0 0
+3 100 0 0 0
 #26731
 key redwood~
 a redwood key~
@@ -423,7 +423,7 @@ A redwood key lies on the ground.~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
-3 100 0 0
+3 100 0 0 0
 #26732
 key iron dull~
 a dull iron key~
@@ -431,7 +431,7 @@ A dull iron key lies on the ground. *yawn*~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-3 100 0 0
+3 100 0 0 0
 #26733
 key tiny~
 a tiny key~
@@ -439,7 +439,7 @@ You almost miss a tiny key on the ground.~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-3 100 0 0
+3 100 0 0 0
 #26734
 key burning~
 a red-hot key~
@@ -447,7 +447,7 @@ A red-hot key glows brightly on the ground.~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-3 100 0 0
+3 100 0 0 0
 #26735
 potion red glowing~
 a glowing red potion~
@@ -455,7 +455,7 @@ A glowing red potion bubbles in a canister on the ground.~
 ~
 10 0 0 0 0 ao 0 0 0 0 0 0 0
 15 2 17 33
-3 1000 0 50
+3 1000 0 30 0
 E
 potion red glowing~
    It looks rather strange.  Somehow you get the feeling it might not be a good
@@ -468,7 +468,7 @@ A shining blue potion is in a canister on the ground.~
 ~
 10 0 0 0 0 ao 0 0 0 0 0 0 0
 20 18 18 18
-3 1000 0 0
+3 1000 0 0 0
 E
 potion blue shining~
    It looks informative.  
@@ -480,7 +480,7 @@ A green potion is in a canister on the ground.~
 ~
 10 0 0 0 0 ao 0 0 0 0 0 0 0
 15 29 29 29
-3 1000 0 0
+3 1000 0 0 0
 E
 potion green~
    It has a sign on it that reads, "drink me.  "
@@ -492,7 +492,7 @@ A purple potion of giant strength.~
 ~
 10 0 0 0 0 ao 0 0 0 0 0 0 0
 30 39 39 39
-3 1000 0 0
+3 1000 0 0 0
 E
 potion purple~
    A thin label says, "use this to wield heavy weapons.  "
@@ -504,7 +504,7 @@ A green cloak of wisdom is in a heap on the ground.~
 ~
 9 aghjl 0 0 0 ac 0 0 0 0 0 0 0
 3 0 0 0
-3 1000 0 30
+3 1000 0 30 0
 E
 cloak wisdom~
    It's of a silvery metal, and practically eminates magic.  
@@ -520,7 +520,7 @@ A hazel cloak of forgetfulness is in a big heap on the ground.~
 ~
 9 aghjl 0 0 0 ac 0 0 0 0 0 0 0
 3 0 0 0
-3 1000 0 0
+3 1000 0 0 0
 E
 cloak forgetfulness~
    It's of a strange hazel material, and doesn't look particularly helpful.  
