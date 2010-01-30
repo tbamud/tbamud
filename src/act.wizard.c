@@ -1590,7 +1590,7 @@ ACMD(do_restore)
 
 void perform_immort_vis(struct char_data *ch)
 {
-  if ((GET_INVIS_LEV(ch) == 0) && (!AFF_FLAGGED(ch, AFF_HIDE) || !AFF_FLAGGED(ch, AFF_INVISIBLE))) {
+  if ((GET_INVIS_LEV(ch) == 0) && (!AFF_FLAGGED(ch, AFF_HIDE) && !AFF_FLAGGED(ch, AFF_INVISIBLE))) {
     send_to_char(ch, "You are already fully visible.\r\n");
     return;
   }
