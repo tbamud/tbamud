@@ -135,13 +135,17 @@ ACMD(do_tell)
 {
   struct char_data *vict = NULL;
   char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
-  int i;
 
   half_chop(argument, buf, buf2);
 
   if (!*buf || !*buf2)
     send_to_char(ch, "Who do you wish to tell what??\r\n");
   else if (!strcmp(buf, "m-w")) {
+#ifdef CIRCLE_WINDOWS
+   /* getpid() is not portable */
+    send_to_char(ch, "Sorry, that is not available in the windows port.\r\n");
+#else /* all other configurations */
+    int i;
     char word[MAX_INPUT_LENGTH], *p, *q;
 
     if (last_webster_teller != -1L) {
@@ -169,6 +173,7 @@ ACMD(do_tell)
     i = system(buf);
     last_webster_teller = GET_IDNUM(ch);
     send_to_char(ch, "You look up '%s' in Merriam-Webster.\r\n", word);
+#endif /* platform specific part */
   } else if (GET_LEVEL(ch) < LVL_IMMORT && !(vict = get_player_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
     send_to_char(ch, "%s", CONFIG_NOPERSON);
   else if (GET_LEVEL(ch) >= LVL_IMMORT && !(vict = get_char_vis(ch, buf, NULL, FIND_CHAR_WORLD)))

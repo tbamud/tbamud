@@ -36,6 +36,11 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Feb 08 2010] - Rumble
+  Added another define for Windows MSVC users to hide useless warnings. (thanks Kyle)
+  Added CIRCLE_WINDOWS check for tell m-w usage of getpid(). (thanks Kyle)
+  Changed zcheck to ignore object type TRASH when checking for a cost of 0.
+  Changed teleport level to LVL_BUILDER.
 [Jan 27 2010] - Rumble
   Updated World (thanks Parna) and other text files for release.
 [Jan 18 2010] - Fizban

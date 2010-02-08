@@ -294,7 +294,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "tell"     , "t"       , POS_DEAD    , do_tell     , 0, 0 },
   { "take"     , "ta"      , POS_RESTING , do_get      , 0, 0 },
   { "taste"    , "tas"     , POS_RESTING , do_eat      , 0, SCMD_TASTE },
-  { "teleport" , "tele"    , POS_DEAD    , do_teleport , LVL_GOD, 0 },
+  { "teleport" , "tele"    , POS_DEAD    , do_teleport , LVL_BUILDER, 0 },
   { "tedit"    , "tedit"   , POS_DEAD    , do_tedit    , LVL_GOD, 0 },  /* XXX: Oasisify */
   { "thaw"     , "thaw"    , POS_DEAD    , do_wizutil  , LVL_GRGOD, SCMD_THAW },
   { "title"    , "title"   , POS_DEAD    , do_title    , 0, 0 },

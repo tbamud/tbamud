@@ -3624,7 +3624,7 @@ ACMD (do_zcheck)
                           "- is NO_TAKE, but has cost (%d) weight (%d) or rent (%d) set.\r\n",
                           GET_OBJ_COST(obj), GET_OBJ_WEIGHT(obj), GET_OBJ_RENT(obj));
       } else {
-        if (GET_OBJ_COST(obj) == 0 && (found=1))
+        if (GET_OBJ_COST(obj) == 0 && (found=1) && GET_OBJ_TYPE(obj) != ITEM_TRASH)
           len += snprintf(buf + len, sizeof(buf) - len,
                           "- has 0 cost (min. 1).\r\n");
 
