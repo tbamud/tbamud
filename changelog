@@ -36,6 +36,8 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Feb 13 2010] - Rumble
+  Removed delete object option in oedit menu.
 [Feb 08 2010] - Rumble
   Added another define for Windows MSVC users to hide useless warnings. (thanks Kyle)
   Added CIRCLE_WINDOWS check for tell m-w usage of getpid(). (thanks Kyle)

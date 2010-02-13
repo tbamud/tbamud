@@ -1067,7 +1067,7 @@ void medit_autoroll_stats(struct descriptor_data *d)
   mob_lev = GET_LEVEL(OLC_MOB(d));
   mob_lev = GET_LEVEL(OLC_MOB(d)) = LIMIT(mob_lev, 1, LVL_IMPL);
 
-  GET_MOVE(OLC_MOB(d))    = mob_lev*10;          /* hit point bonus         */
+  GET_MOVE(OLC_MOB(d))    = mob_lev*10;          /* hit point bonus (mobs don't use movement points */
   GET_HIT(OLC_MOB(d))     = mob_lev/5;           /* number of hitpoint dice */
   GET_MANA(OLC_MOB(d))    = mob_lev/5;           /* size of hitpoint dice   */
 

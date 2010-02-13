@@ -101,7 +101,7 @@ programmers, it takes a while to “get into” a program and feel comfortable enoug
 with the way it works to start modifying it. Hopefully, by reading this manual, 
 your breaking-in period for getting to know tbaMUD will be minimized. 
 
-tbaMUD consists of about 30,000 lines of moderately dense C code, so you shouldn’t 
+tbaMUD consists of about 50,000 lines of moderately dense C code, so you shouldn’t 
 expect familiarity to come overnight. The best way to learn is to DO. Get your 
 hands dirty! Don’t be afraid to tinker with things. Start small by modifying 
 existing functions. Then, work your way up to creating new functions by copying old 
@@ -667,8 +667,7 @@ the argument splitting functions to properly handle user input such as: "put the
 cabbage in the bag". 
 
 bool is_number (const char *str) Tests if an entire string is an ASCII-encoded, 
-unsigned decimal number by performing isdigit() on each character of the string. 
-Only unsigned (zero or positive) numbers are recognized. 
+decimal number by performing isdigit() on each character of the string. 
 
 char *delete_doubledollar (char *string) The MUD, in processing input, converts a 
 single dollar sign to a double dollar sign. If you want to echo out a user’s input 
