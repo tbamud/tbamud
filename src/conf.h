@@ -4,10 +4,6 @@
 #ifndef _CONF_H_
 #define _CONF_H_
 
-/* Windows complains about standard functions like strcmp() */
-#define _CRT_SECURE_NO_DEPRECATE
-#define _CRT_NONSTDC_NO_DEPRECATE 
-
 /* Define to empty if the keyword does not work.  */
 /* #undef const */
 

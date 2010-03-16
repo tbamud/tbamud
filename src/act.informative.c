@@ -2583,38 +2583,29 @@ distance, int door)
 ACMD(do_scan)
 {
   int door;
-  char buf[MAX_STRING_LENGTH];
 
-  *buf = '\0';
-  
+  int range;
+  int maxrange = 3;
+
+  room_rnum scanned_room = IN_ROOM(ch);
+
   if (IS_AFFECTED(ch, AFF_BLIND)) {
     send_to_char(ch, "You can't see a damned thing, you're blind!\r\n");
     return;
   }
-  /* may want to add more restrictions here, too */
-  send_to_char(ch, "You quickly scan the area.\r\n");
-  for (door = 0; door < NUM_OF_DIRS - 2; door++) /* don't scan up/down */
-    if (EXIT(ch, door) && EXIT(ch, door)->to_room != NOWHERE &&
-	!IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED)
-        && !IS_DARK(EXIT(ch, door)->to_room)) {
-      if (world[EXIT(ch, door)->to_room].people) {
-	list_scanned_chars(world[EXIT(ch, door)->to_room].people, ch, 0, door);
-      } else if (_2ND_EXIT(ch, door) && _2ND_EXIT(ch, door)->to_room != 
-		 NOWHERE && !IS_SET(_2ND_EXIT(ch, door)->exit_info, EX_CLOSED)
-                 && !IS_DARK(_2ND_EXIT(ch, door)->to_room)) {
-   /* check the second room away */
-	if (world[_2ND_EXIT(ch, door)->to_room].people) {
-	  list_scanned_chars(world[_2ND_EXIT(ch, door)->to_room].people, ch, 1, door);
-	} else if (_3RD_EXIT(ch, door) && _3RD_EXIT(ch, door)->to_room !=
-		   NOWHERE && !IS_SET(_3RD_EXIT(ch, door)->exit_info, EX_CLOSED)
-                   && !IS_DARK(_3RD_EXIT(ch, door)->to_room)) {
-	  /* check the third room */
-	  if (world[_3RD_EXIT(ch, door)->to_room].people) {
-	    list_scanned_chars(world[_3RD_EXIT(ch, door)->to_room].people, ch, 2,
-door);
-	  }
 
-	}
-      }
-    }                
-}
+  for (door = 0; door < NUM_OF_DIRS; door++) {
+    for (range = 1; range<= maxrange; range++) {
+      if (world[scanned_room].dir_option[door] &&
+       !IS_SET(world[scanned_room].dir_option[door]->exit_info, EX_CLOSED)) {
+        scanned_room = world[scanned_room].dir_option[door]->to_room;
+        if (world[scanned_room].people)
+          list_scanned_chars(world[scanned_room].people, ch, range - 1, door);
+      }                  // end of if
+      else
+        break;
+    }                    // end of range
+    scanned_room = IN_ROOM(ch);
+  }                      // end of directions
+} // end of do_scan
+

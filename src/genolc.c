@@ -374,7 +374,7 @@ ACMD(do_export_zone)
   i = system(sysbuf); 
 
   /* Tar the new copy. */ 
-  sprintf(sysbuf, "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg", path, f, path, path, path, path, path, path); 
+   sprintf(sysbuf, "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg %sqq.shp", path, f, path, path, path, path, path, path, path);
   i = system(sysbuf); 
 
   /* Gzip it. */ 
@@ -885,11 +885,11 @@ static int export_save_rooms(zone_rnum zrnum)
       fprintf(room_file, 	"#QQ%02d\n"
 			"%s%c\n"
 			"%s%c\n"
-			"QQ %d %d %d %d %d %d\n",
+			"QQ %d %d %d %d %d\n",
 		room->number%100,
 		room->name ? room->name : "Untitled", STRING_TERMINATOR,
 		buf, STRING_TERMINATOR,
-		zone_table[room->zone].number, room->room_flags[0], room->room_flags[1],
+		room->room_flags[0], room->room_flags[1],
                 room->room_flags[2], room->room_flags[3], room->sector_type
       );
 
