@@ -4402,7 +4402,7 @@ ACMD(do_changelog)
 ACMD(do_plist)
 {
   int i, len = 0, count = 0;
-  char mode, buf[MAX_STRING_LENGTH], name_search[MAX_NAME_LENGTH], time_str[MAX_STRING_LENGTH];
+  char mode, buf[MAX_STRING_LENGTH * 20], name_search[MAX_NAME_LENGTH], time_str[MAX_STRING_LENGTH];
   struct time_info_data time_away;
   int low = 0, high = LVL_IMPL, low_day = 0, high_day = 10000, low_hr = 0, high_hr = 24;
 
