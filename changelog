@@ -36,6 +36,8 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
+[Mar 17 2010] - Fizban
+  Made non-existant objects in pfiles be skipped instead of crashing the MUD (thanks drefs)
 [Feb 13 2010] - Rumble
   Removed delete object option in oedit menu.
 [Feb 08 2010] - Rumble
