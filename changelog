@@ -36,12 +36,20 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 tbaMUD 3.61
-[Mar 17 2010] - Fizban
+[Apr 22 2010] - Rumble
+  Fixed osetval not modifying AC on players. (thanks Rudeboyrave)
+[Apr 12 2010] - Rumble 
+  Fixed gain_exp quest reward that gave gold and not xp. (thanks Vatiken)
+Mar 17 2010] - Fizban
   Made non-existant objects in pfiles be skipped instead of crashing the MUD (thanks drefs)
+  Fixed plist overflow.
+[Mar 11 2010] - Rumble
+  Updated do_export_zone to include shop files (thanks Kyle)
+[Mar 07 2010] - Rumble
+  Updated do_scan. (thanks Zman)
 [Feb 13 2010] - Rumble
   Removed delete object option in oedit menu.
 [Feb 08 2010] - Rumble
-  Added another define for Windows MSVC users to hide useless warnings. (thanks Kyle)
   Added CIRCLE_WINDOWS check for tell m-w usage of getpid(). (thanks Kyle)
   Changed zcheck to ignore object type TRASH when checking for a cost of 0.
   Changed teleport level to LVL_BUILDER.

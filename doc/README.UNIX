@@ -1,3 +1,6 @@
+Although you will be compiling tbaMUD, this document is still relevant for
+recent versions of UNIX and LINUX.
+
                      Compiling CircleMUD under UNIX
                             by Jeremy Elson 
                  For help, write to help@circlemud.org
@@ -16,15 +19,10 @@ UNIX system -- even one that we have never seen before.  However, if you
 do have problems, please drop us a note at help@circlemud.org so that we
 can try to make Circle work with every UNIX variant that we can.
 
-1)  Download the latest version of CircleMUD.  You can always find the
-    latest version at the following anonymous FTP sites:
-
-        ftp.circlemud.org:/pub/CircleMUD/3.x
-        ftp2.circlemud.org:/pub/CircleMUD/3.x
-
-    You can also find information at the WWW site:
+1)  You can also find information at the WWW site:
 
         http://www.circlemud.org/
+        Old FTP mirror: http://www.circlemud.org/pub/CircleMUD/
 
     The latest version will be called something ending in .tar.gz, like
     "circle30bplXX.tar.gz". (where 'XX' is the patchlevel)

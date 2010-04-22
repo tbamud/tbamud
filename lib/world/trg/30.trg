@@ -542,8 +542,8 @@ Mortal Greet~
 2 s 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* TBA mortal greet and equip. New players start at level 0.
-if %actor.level% == 0
+wait 1 sec
+if %actor.level% < 3
   if !%actor.eq(*)%
     %load% obj 3037 %actor% light
     %load% obj 3083 %actor% rfinger

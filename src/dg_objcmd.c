@@ -683,7 +683,8 @@ static OCMD(do_odoor)
 static OCMD(do_osetval)
 {
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
-  int position, new_value;
+  int position, new_value, worn_on;
+  struct char_data *worn_by = NULL;
 
   two_arguments(argument, arg1, arg2);
   if (arg1 == NULL || !*arg1 || arg2 == NULL || !*arg2 || !is_number(arg1) || !is_number(arg2)) {
@@ -693,9 +694,21 @@ static OCMD(do_osetval)
 
   position = atoi(arg1);
   new_value = atoi(arg2);
-  if (position>=0 && position<NUM_OBJ_VAL_POSITIONS)
+
+  if (position>=0 && position<NUM_OBJ_VAL_POSITIONS) {
+    worn_by = obj->worn_by;
+    worn_on = obj->worn_on;
+
+    if (worn_by != NULL) {
+      unequip_char(worn_by, worn_on);
+    }
+
     GET_OBJ_VAL(obj, position) = new_value;
-  else
+
+    if (worn_by != NULL) {
+      equip_char(worn_by, obj, worn_on);
+    }
+  } else
     obj_log(obj, "osetval: position out of bounds!");
 }
 

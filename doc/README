@@ -5,7 +5,9 @@ All requests for help or bugs should be reported to: builderacademy.net 9091.
 
 Information about CircleMUD can be found at the CircleMUD Home Page and FTP:
 http://www.circlemud.org
-ftp://ftp.circlemud.org
+
+Although outdated, the CircleMUD archives contain many great ideas in the
+/contrib/ section.
 
 Both of these sites are outdated and no longer maintained. The latest 
 information and downloads can be found at:
@@ -89,8 +91,7 @@ If you have strange problems -- and you can't figure out the answer by reading
 the documentation -- fear not, there are many other resources available.
 
 http://cwg.lazuras.org/
-http://groups.yahoo.com/group/circle-newbies/
-http://post.queensu.ca/cgi-bin/listserv/wa?SUBED1=circle&A=1
+http://tbamud.com/
 
 No matter how you choose to get help, make sure to always include the
 following information:
@@ -106,6 +107,6 @@ following information:
      also be sure to include the output of 'configure' and the file
      'config.log'.
 
-You may also stop by the Builder Academy at anytime. builderacademy.net 9091
+You may also stop by the Builder Academy at anytime. tbamud.com 9091
 
 --Rumble
