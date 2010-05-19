@@ -299,11 +299,11 @@ ACMD(do_bash)
     return;
   }
 
-  if (MOB_FLAGGED(vict, MOB_NOBASH))
-    percent = 101;
-
   percent = rand_number(1, 101);	/* 101% is a complete failure */
   prob = GET_SKILL(ch, SKILL_BASH);
+
+  if (MOB_FLAGGED(vict, MOB_NOBASH))
+    percent = 101;
 
   if (percent > prob) {
     damage(ch, vict, 0, SKILL_BASH);

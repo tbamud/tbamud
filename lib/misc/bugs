@@ -1,24 +1,8 @@
-Text      test2~
-Body                  test2
-~
-Name      Rumble~
-Level     34
-Room      1204
-Flags     1 0 0 0
-End
 Text      test 5~
 Body            test5
 ~
 Name      Rumble~
 Level     34
 Room      1204
-Flags     0 0 0 0
-End
-Text       "tell guide help" when you enter the game does nothing~
-Body      Exactly what the header says.
-~
-Name      Surgo~
-Level     1
-Room      3001
 Flags     0 0 0 0
 End

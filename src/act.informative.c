@@ -2577,7 +2577,7 @@ distance, int door)
     }
     
   }
-  send_to_char(ch, buf);
+  send_to_char(ch, "%s", buf);
 }
 
 ACMD(do_scan)
