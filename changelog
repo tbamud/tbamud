@@ -35,7 +35,8 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
-tbaMUD 3.61
+[Jun 07 2010] - Fizban
+  Enabled nohassled immortals to give cursed items to other players.
 [May 19 2010] - Rumble
   Gave Arne Troffaes proper credit for fixing Cygwin syslog rotation.
 [May 16 2010] - Rumble
@@ -63,6 +64,7 @@ Mar 17 2010] - Fizban
   Edited scuba check so immortals with nohassle on don't need one.
 [Jan 18 2010] - Rumble
   Fixed bad AFF_SCUBA check for underwater rooms.
+tbaMUD 3.61
 [Dec 28 2009] - Rumble
   Fixed bug where an immortal could cast 'invis' and then be unable to break it with vis.
 [Dec 25 2009] - Rumble
@@ -1019,7 +1021,7 @@ CircleMUD 3.5
 - Added buildwalk and dig.
  
 Release history:
-Version 3.60 release: January, 2010
+Version 3.61 release: January, 2010
 Version 3.60 release: September, 2009
 Version 3.59 release: April, 2009
 Version 3.58 release: January, 2009

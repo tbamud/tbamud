@@ -602,7 +602,7 @@ static void perform_give(struct char_data *ch, struct char_data *vict,
   if (!receive_mtrigger(vict, ch, obj))
     return;
 
-  if (OBJ_FLAGGED(obj, ITEM_NODROP)) {
+  if (OBJ_FLAGGED(obj, ITEM_NODROP) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
     act("You can't let go of $p!!  Yeech!", FALSE, ch, obj, 0, TO_CHAR);
     return;
   }
