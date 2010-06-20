@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Jum 19 2010] - Fizban
+  Changed Helpcheck from level 34 to level 32.
 [Jun 07 2010] - Fizban
   Enabled nohassled immortals to give cursed items to other players.
 [May 19 2010] - Rumble

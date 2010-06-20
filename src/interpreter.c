@@ -160,7 +160,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "help"     , "h"       , POS_DEAD    , do_help     , 0, 0 },
   { "hedit"    , "hedit"   , POS_DEAD    , do_oasis_hedit, LVL_GOD , 0 },
   { "hindex"   , "hind"    , POS_DEAD    , do_hindex   , 0, 0 },
-  { "helpcheck", "helpch"  , POS_DEAD    , do_helpcheck, LVL_IMPL, 0 },
+  { "helpcheck", "helpch"  , POS_DEAD    , do_helpcheck, LVL_GOD, 0 },
   { "hide"     , "hi"      , POS_RESTING , do_hide     , 1, 0 },
   { "handbook" , "handb"   , POS_DEAD    , do_gen_ps   , LVL_IMMORT, SCMD_HANDBOOK },
   { "hcontrol" , "hcontrol", POS_DEAD    , do_hcontrol , LVL_GRGOD, 0 },
