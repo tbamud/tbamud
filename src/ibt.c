@@ -1019,3 +1019,17 @@ void ibtedit_string_cleanup(struct descriptor_data *d, int terminator)
      break;
   }
 }
+
+/*-------------------------------------------------------------------*/
+void free_ibt_lists()
+{
+  IBT_DATA *first_ibt, *last_ibt;
+  int mode;
+
+  for( mode=0; mode <=2; mode++){
+    first_ibt = get_first_ibt(mode);
+    last_ibt = get_last_ibt(mode);
+    free_ibt_list(first_ibt, last_ibt);
+  }
+}
+

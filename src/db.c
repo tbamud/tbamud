@@ -1036,7 +1036,6 @@ void index_boot(int mode)
   /* Sort the help index. */
   if (mode == DB_BOOT_HLP) {
     qsort(help_table, top_of_helpt, sizeof(struct help_index_element), hsort);
-    top_of_helpt--;
   }
 }
 

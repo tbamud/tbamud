@@ -80,6 +80,7 @@
 #include "spells.h" /* for affect_update */
 #include "modify.h"
 #include "quest.h"
+#include "ibt.h" /* for free_ibt_lists */
 
 #ifndef INVALID_SOCKET
 #define INVALID_SOCKET (-1)
@@ -365,6 +366,7 @@ int main(int argc, char **argv)
     free_invalid_list();    /* ban.c */
     free_save_list();       /* genolc.c */
     free_strings(&config_info, OASIS_CFG); /* oasis_delete.c */
+    free_ibt_lists();             /* ibt.c */
   }
 
   if (last_act_message) 

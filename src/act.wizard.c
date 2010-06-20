@@ -2341,7 +2341,7 @@ ACMD(do_wizutil)
 	while (vict->affected)
 	  affect_remove(vict, vict->affected);
     for(taeller=0; taeller < AF_ARRAY_MAX; taeller++)
-      AFF_FLAGS(ch)[taeller] = 0;
+      AFF_FLAGS(vict)[taeller] = 0;
     send_to_char(vict, "There is a brief flash of light!\r\nYou feel slightly different.\r\n");
 	send_to_char(ch, "All spells removed.\r\n");
       } else {

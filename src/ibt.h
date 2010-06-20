@@ -96,4 +96,4 @@ void save_ibt_file(int mode);
 void load_ibt_file(int mode);
 void ibtedit_parse(struct descriptor_data *d, char *arg);
 void ibtedit_string_cleanup(struct descriptor_data *d, int terminator);
-
+void free_ibt_lists();

@@ -170,6 +170,13 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   CREATE(room, struct room_data, 1);
 
   *room = world[real_num];
+  
+  /* Make new room people list be empty.                          */ 
+  /* Fixes bug where copying a room from within that room creates */ 
+  /* an infinite loop when you next act() in the new room (goto?) */ 
+  /* and you are your next_in_room          -- anderyu (10-05-22) */ 
+  room->people = NULL; 
+
   /* Allocate space for all strings. */
   room->name = str_udup(world[real_num].name);
   room->description = str_udup(world[real_num].description);

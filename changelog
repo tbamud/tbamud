@@ -35,10 +35,16 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Jun 20 2010] - Rumble
+  Fixed two memory leaks. (thanks Dio)
 [Jum 19 2010] - Fizban
   Changed Helpcheck from level 34 to level 32.
 [Jun 07 2010] - Fizban
   Enabled nohassled immortals to give cursed items to other players.
+[Jun 18 2010] - Rumble
+  Fixed unaffect clearing ch affects and not vict. (thanks Drefs)
+[May 24 2010] - Rumble
+  Fixed bug in redit copy duplicating people in room. (thanks Anderyu)
 [May 19 2010] - Rumble
   Gave Arne Troffaes proper credit for fixing Cygwin syslog rotation.
 [May 16 2010] - Rumble
