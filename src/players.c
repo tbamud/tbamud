@@ -912,61 +912,63 @@ static void load_HMVS(struct char_data *ch, const char *line, int mode)
   }
 }
 
-/* Aliases are now saved in pfiles only. */
 static void write_aliases_ascii(FILE *file, struct char_data *ch)
 {
   struct alias_data *temp;
-    int count = 0;
+  int count = 0;
 
-      if (GET_ALIASES(ch) == NULL)
-          return;
+  if (GET_ALIASES(ch) == NULL)
+    return;
 
-	    for (temp = GET_ALIASES(ch); temp; temp = temp->next)
-	        count++;
+  for (temp = GET_ALIASES(ch); temp; temp = temp->next)
+    count++;
 
-		  fprintf(file, "Alis: %d\n", count);
-		    /* the +1 thing below is due to alias replacements having a space prepended
-		     *    * in memory. The reason for this escapes me. Welcor 27/12/06 */
-		      for (temp = GET_ALIASES(ch); temp; temp = temp->next) {
-		          fprintf(file, "%s\n"        /* Alias */
-                    "%s\n"        /* Replacement */
-                      "%d\n",       /* Type */
-                      temp->alias,
-                      temp->replacement+1,
-                     temp->type);
-  }
+  fprintf(file, "Alis: %d\n", count);
+
+  for (temp = GET_ALIASES(ch); temp; temp = temp->next)
+    fprintf(file, " %s\n"   /* Alias: prepend a space in order to avoid issues with aliases beginning
+                             * with * (get_line treats lines beginning with * as comments and ignores them */
+                  "%s\n"    /* Replacement: always prepended with a space in memory anyway */
+                  "%d\n",   /* Type */
+                  temp->alias,
+                  temp->replacement,
+                  temp->type);
 }
 
 static void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
 {
   int i;
-  struct alias_data *temp;
-  char abuf[MAX_INPUT_LENGTH], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
 
   if (count == 0) {
     GET_ALIASES(ch) = NULL;
     return; /* No aliases in the list. */
   }
 
+  /* This code goes both ways for the old format (where alias and replacement start at the
+   * first character on the line) and the new (where they are prepended by a space in order
+   * to avoid the possibility of a * at the start of the line */
   for (i = 0; i < count; i++) {
+    char abuf[MAX_INPUT_LENGTH+1], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
+
     /* Read the aliased command. */
     get_line(file, abuf);
 
-    /* Read the replacement. */
-    get_line(file, tbuf);
-    strcpy(rbuf, " ");
-    strcat(rbuf, tbuf); /* strcat: OK */
+    /* Read the replacement. This needs to have a space prepended before placing in
+     * the in-memory struct. The space may be there already, but we can't be certain! */
+    rbuf[0] = ' ';
+    get_line(file, rbuf+1);
 
     /* read the type */
     get_line(file, tbuf);
 
-    if (*abuf && *tbuf && *rbuf) {
+    if (abuf[0] && rbuf[1] && *tbuf) {
+      struct alias_data *temp;
       CREATE(temp, struct alias_data, 1);
-      temp->alias = strdup(abuf);
-      temp->replacement = strdup(rbuf);
-      temp->type = atoi(tbuf);
-      temp->next = GET_ALIASES(ch);
-      GET_ALIASES(ch) = temp;
+      temp->alias       = strdup(abuf[0] == ' ' ? abuf+1 : abuf);
+      temp->replacement = strdup(rbuf[1] == ' ' ? rbuf+1 : rbuf);
+      temp->type        = atoi(tbuf);
+      temp->next        = GET_ALIASES(ch);
+      GET_ALIASES(ch)   = temp;
     }
   }
 }

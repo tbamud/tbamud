@@ -868,7 +868,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
 
   case OEDIT_TYPE:
     number = atoi(arg);
-    if ((number < 1) || (number >= NUM_ITEM_TYPES)) {
+    if ((number < 0) || (number >= NUM_ITEM_TYPES)) {
       write_to_output(d, "Invalid choice, try again : ");
       return;
     } else
