@@ -5,7 +5,7 @@ There is a bright icy crown here, melting.~
 ~
 9 p 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
-2 75 7 0
+2 75 7 0 0
 E
 crown royal ice~
    This crown is slowling melting into water so you had better pick it up fast.
@@ -20,7 +20,7 @@ An icy scepter is here.~
 ~
 3 gp 0 0 0 ao 0 0 0 0 0 0 0
 12 6 6 10
-6 500 150 0
+6 500 150 0 0
 E
 scepter icy~
    This scepter is very cold to the touch.  You now that it is made out of ice
@@ -37,7 +37,7 @@ The pelt of some unfortunate penguin lies crumpled here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
-2 10 1 0
+2 10 1 0 0
 E
 penguin pelt~
    This is all that's left of a poor penguin.    
@@ -49,7 +49,7 @@ A smooth, black claw of a penguin lays here.~
 ~
 12 0 0 0 0 an 0 0 0 0 0 0 0
 0 0 0 0
-3 30 3 0
+3 30 3 0 0
 #4305
 walrus tusk~
 the tusk of a walrus~
@@ -57,7 +57,7 @@ The tusk of some walrus is here.~
 ~
 5 o 0 0 0 an 0 0 0 0 0 0 0
 0 6 4 14
-4 100 10 0
+4 100 10 0 0
 #4306
 chest~
 a chest~
@@ -65,7 +65,7 @@ A chest is here.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 10 5 -1 0
-0 0 0 0
+0 0 0 0 0
 #4307
 ice boots~
 a pair of melting boots~
@@ -73,7 +73,7 @@ A pair of melting boots lies here. ~
 ~
 9 a 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-4 160 16 0
+4 160 16 0 0
 A
 14 -10
 A
@@ -88,7 +88,7 @@ West: The Realm of Glogtar
 ~
 16 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #4309
 engraved bone sign~
 an engraved, bone sign~
@@ -96,7 +96,7 @@ An bone sign with engraved symbols stands here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign bone~
    Welcome to Rankir!  
@@ -108,7 +108,7 @@ A beautifully carven ice fountain is here with almost frozen water.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 1000 1000 15 0
-1005 0 0 0
+1005 0 0 0 0
 E
 ice fountain~
    The fountain before yu is the most beautiful ice sculpture you have ever
@@ -122,7 +122,7 @@ A strip of penguin flesh lies here, rotting.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 7 0 0 1
-1 9 0 0
+1 9 0 0 0
 #4312
 walrus meat~
 a chunk of walrus meat~
@@ -130,7 +130,7 @@ A chunk of walrus meat lies here, spoiling.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 1
-2 11 1 0
+2 11 1 0 0
 #4313
 whale blubber~
 whale blubber~
@@ -138,7 +138,7 @@ A dirty piece of whale blubber.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-4 20 2 0
+4 20 2 0 0
 #4314
 eskimo whaling spear~
 an eskimo whaling spear~
@@ -146,7 +146,7 @@ An eskimo's spear is her with a very sharp barb.~
 ~
 5 ko 0 0 0 an 0 0 0 0 0 0 0
 4 2 16 14
-5 250 40 0
+5 250 40 0 0
 #4315
 iditarod whip~
 a strong bound whip~
@@ -154,7 +154,7 @@ A whip for the iditarod dog sled race is coiled up here.~
 ~
 5 k 0 0 0 an 0 0 0 0 0 0 0
 7 3 7 2
-2 20 2 0
+2 20 2 0 0
 #4316
 seal meat~
 a slice of seal meat~
@@ -162,7 +162,7 @@ A slice of seal meat is here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-2 13 0 0
+2 13 0 0 0
 #4317
 eskimo hunting knife~
 an eskimo hunting knife~
@@ -170,7 +170,7 @@ A knife made for hunting is lying here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 5 4 3 11
-6 450 45 0
+6 450 45 0 0
 E
 hunting knife~
    This knife is used to skin the spoils of an eskimo hunting trip,
@@ -182,7 +182,7 @@ A pair of snow shoes is here, snow melting all over them.~
 ~
 9 k 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-2 20 2 0
+2 20 2 0 0
 #4319
 hood soft leather~
 a hood of soft leather~
@@ -190,7 +190,7 @@ A soft leather hood is folded over on the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-2 20 2 0
+2 20 2 0 0
 #4320
 fur cape~
 a cape of fur~
@@ -198,7 +198,7 @@ A cape lined with fur is lying here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
-2 10 1 0
+2 10 1 0 0
 #4321
 huge pile money gold coin~
 a HUGE pile of money~
@@ -206,7 +206,7 @@ A HUGE glittering pile of money.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
-1 1 0 0
+1 1 0 0 0
 #4322
 glogtar key~
 Glogtar's key~
@@ -214,7 +214,7 @@ A key is lying here, covered with dirt.~
 ~
 18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 50 5 0
+1 50 5 0 0
 #4323
 king hunting tunic~
 a hunting tunic for the king~
@@ -222,7 +222,7 @@ A tunic for hunting lies here, unused for years.~
 ~
 9 g 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-4 293 30 0
+4 293 30 0 0
 A
 18 2
 $~

@@ -6,7 +6,7 @@ The FREC stands here looking for violence.
    This large, purpled, mohawked warrior looks quite aggressive.  It is
 probably not something anyone should mess with.    
 ~
-10 0 0 0 16 0 0 0 0 E
+8 0 0 0 16 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
 110 12100
 8 8 0
@@ -19,7 +19,7 @@ The Boss is standing here looking somewhat bored.
    This person is bearing up under University pressures quite well and looks as
 if it can cope with anything.    
 ~
-76 0 0 0 0 0 0 0 0 E
+12 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 0
@@ -32,7 +32,7 @@ The Gael is here to help you.
    This person is ready, and willing to help any being in trouble.  Just to top
 things off, the gael is extemely well dressed.    
 ~
-204 0 0 0 0 0 0 0 0 E
+140 0 0 0 0 0 0 0 0 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 0
@@ -45,7 +45,7 @@ An Example Mob stands here, exampling.
    The example mob looks indistinct, as if it hasn't been completely fleshed
 out yet.    
 ~
-138 0 0 0 20 0 0 0 100 E
+136 0 0 0 20 0 0 0 100 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -58,7 +58,7 @@ A professor is standing here, glaring at you.
    As you glance at the professor, it suddenly begins to scream about homework
 and its spatial relationship to you.    
 ~
-72 0 0 0 16 0 0 0 0 E
+8 0 0 0 16 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 0
@@ -71,7 +71,7 @@ Security is lurking in the area, watching for misbehavior.
    You don't want to misbehave when these guys are around.  In fact you don't
 want to even be around these guys.    
 ~
-104 0 0 0 16 0 0 0 -130 E
+40 0 0 0 16 0 0 0 -130 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 0
@@ -84,7 +84,7 @@ Security is lurking in the area, watching for misbehavior.
    You don't want to misbehave when these guys are around.  In fact you don't
 want to even be around these guys.    
 ~
-104 0 0 0 16 0 0 0 -130 E
+40 0 0 0 16 0 0 0 -130 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 1
@@ -97,7 +97,7 @@ Security is lurking in the area, watching for misbehavior.
    You don't want to misbehave when these guys are around.  In fact you don't
 want to even be around these guys.    
 ~
-104 0 0 0 16 0 0 0 -130 E
+40 0 0 0 16 0 0 0 -130 E
 9 17 4 1d1+90 1d2+1
 90 8100
 8 8 2
@@ -111,7 +111,7 @@ A Student Constable is protecting the campus from this point.
 everyday students of the university.  They are not much more than hired help.
   
 ~
-72 0 0 0 16 0 0 0 130 E
+8 0 0 0 16 0 0 0 130 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 0
@@ -125,7 +125,7 @@ A Student Constable is guarding the campus from this point.
 everyday students of the university.  They are not much more than hired help.
   
 ~
-72 0 0 0 16 0 0 0 130 E
+8 0 0 0 16 0 0 0 130 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 1
@@ -139,7 +139,7 @@ A Student Constable is guarding the campus from this very point right here.
 everyday students of the university.  They are not much more than hired help.
   
 ~
-72 0 0 0 16 0 0 0 130 E
+8 0 0 0 16 0 0 0 130 E
 8 18 5 1d1+80 1d2+1
 80 6400
 8 8 2
@@ -152,7 +152,7 @@ The student is hurrying off to its next class.
    This is just your average it university student, the only interests it has
 are classes, work, and other its.    
 ~
-76 0 0 0 0 0 0 0 0 E
+12 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0
@@ -166,7 +166,7 @@ The student is rushing off to his next class.
 are classes, work, and other students of the opposite sex (females, you think).
   
 ~
-76 0 0 0 0 0 0 0 0 E
+12 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 1
@@ -179,7 +179,7 @@ The student is scurrying off to her next class.
    This is just your average female university student, the only interests she
 has are classes, and work.    
 ~
-76 0 0 0 0 0 0 0 0 E
+12 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 2
@@ -191,7 +191,7 @@ This frosh is standing here with a confused expression on its face.
 ~
    You are looking at the everyday run of the mill confused frosh.    
 ~
-200 0 0 0 0 0 0 0 0 E
+136 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -203,7 +203,7 @@ This frosh is standing here with a confused expression on his face.
 ~
    You are looking at the everyday run of the mill confused frosh.    
 ~
-200 0 0 0 0 0 0 0 0 E
+136 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -215,7 +215,7 @@ This frosh is standing here with a confused expression on her face.
 ~
    You are looking at the everyday run of the mill confused frosh.    
 ~
-200 0 0 0 0 0 0 0 0 E
+136 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 2
@@ -255,7 +255,7 @@ This frosh is lining up here.
 ~
    You are looking at the everyday run of the mill lining-up frosh.    
 ~
-200 0 0 0 0 0 0 0 0 E
+136 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -267,7 +267,7 @@ This frosh is lining up here.
 ~
    You are looking at the everyday run of the mill lining-up frosh.    
 ~
-200 0 0 0 0 0 0 0 0 E
+136 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -279,7 +279,7 @@ This frosh is lining up here with a confused expression on her face.
 ~
    You are looking at the everyday run of the mill confused frosh.    
 ~
-200 0 0 0 0 0 0 0 0 E
+136 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -317,7 +317,7 @@ A rather large jock occupies the room.
    It (he?  ) is quite big.  It (she?  ) looks at you with undisguised
 hunger...    
 ~
-72 0 0 0 0 0 0 0 0 E
+8 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
 180 32400
 6 8 0
@@ -393,7 +393,7 @@ A student is snoozing here.
    This is just your average it university student, and hey, it's sleeping too!
   
 ~
-76 0 0 0 0 0 0 0 0 E
+12 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 4 4 0
@@ -405,7 +405,7 @@ A student is furiously taking notes here.
 ~
    This is just your average it university student.    
 ~
-76 0 0 0 0 0 0 0 0 E
+12 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 6 6 0
@@ -418,7 +418,7 @@ Chris is drooling here.
    The man before you is tall and stocky.  He is clothed in a stonewashed pair
 of jeans and a purple beret.    
 ~
-76 0 0 0 0 0 0 0 150 E
+12 0 0 0 0 0 0 0 150 E
 23 13 -3 4d4+230 3d3+3
 230 52900
 8 8 1
@@ -432,7 +432,7 @@ The Residence Master is presiding over his little world here.
 adventurer are not afraid!  (unless you are less than 15th level ...  That is.
   
 ~
-104 0 0 0 20 0 0 0 -276 E
+40 0 0 0 20 0 0 0 -276 E
 16 15 0 3d3+160 2d2+2
 160 25600
 8 8 1
@@ -484,7 +484,7 @@ Alex is here fleshing out the Example Mob.
    Alex is working hard at fleshing out the example mob which looks indistinct,
 because it hasn't been completely fleshed out yet.    
 ~
-26 0 0 0 20 0 0 0 100 E
+24 0 0 0 20 0 0 0 100 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -496,7 +496,7 @@ Steve is working furiously at finishing the wld file so it can be put online.
 ~
    Steve is working hard and it looks like he should be finishing soon.    
 ~
-26 0 0 0 20 0 0 0 100 E
+24 0 0 0 20 0 0 0 100 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -572,7 +572,7 @@ Chief FREC orders you around here.
    It stands tall and proud...  As if being purple with golden hair can make
 anyone proud...    
 ~
-76 0 0 0 16 0 0 0 -300 E
+12 0 0 0 16 0 0 0 -300 E
 15 15 1 3d3+150 2d2+2
 150 22500
 8 8 0
@@ -585,7 +585,7 @@ A copy of Golden World lies here.
    It looks like the student humour newspaper, but it contains nothing to do
 with actual news that you didn't know already.    
 ~
-72 0 0 0 1048576 0 0 0 0 E
+8 0 0 0 1048576 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0

@@ -206,7 +206,7 @@ end
 if %self.affects(UNUSED)% 
   %echo% This object is affected with unused.
 end 
-if %self.affects(INFRA)% 
+if %self.affects(CHARM)% 
   %echo% This object is affected with charm.
 end 
 ~
@@ -445,8 +445,7 @@ go~
 if %cmd% == go
   * By Mordecai
   * Animal chase board game. Triggers: 1212-1214. O1212, M1212 in R1200.
-  if !(%arg%==up||%arg%==down||%arg%==left||%arg%==right||!%created%||!%arg%||%arg
-    %==stay)
+  if !(%arg%==up||%arg%==down||%arg%==left||%arg%==right||!%created%||!%arg%||%arg%==stay)
     return 0
     if %cmd%!=gos
       %send% %actor% Type: go < up | down | left | right >
@@ -945,27 +944,27 @@ Hunger, Thirst, Drunk Test Trigger~
 wait 1
 %echo% Hello %actor.name%
 %echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
-nop %actor.hunger(50)
-nop %actor.thirst(50)
-nop %actor.drunk(50)
+nop %actor.hunger(50)%
+nop %actor.thirst(50)%
+nop %actor.drunk(50)%
 %echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
-nop %actor.hunger(-10)
-nop %actor.thirst(-10)
-nop %actor.drunk(-10)
+nop %actor.hunger(-10)%
+nop %actor.thirst(-10)%
+nop %actor.drunk(-10)%
 %echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
-nop %actor.hunger(20)
-nop %actor.thirst(21)
-nop %actor.drunk(22)
+nop %actor.hunger(20)%
+nop %actor.thirst(21)%
+nop %actor.drunk(22)%
 %echo% Hunger: %actor.hunger%   Thirst: %actor.thirst%   Drunk: %actor.drunk%
 *
 while %actor.hunger% >= 0
-  nop %actor.hunger(-1)
+  nop %actor.hunger(-1)%
 done
 while %actor.thirst% >= 0
-  nop %actor.thirst(-1)
+  nop %actor.thirst(-1)%
 done
 while %actor.drunk% >= 0
-  nop %actor.drunk(-1)
+  nop %actor.drunk(-1)%
 done
 ~
 #1216
@@ -1483,7 +1482,7 @@ if (%actor.id% == 4891)
   %send% %actor% You drift into a calm slumber.
   %force% %actor% sleep
 else
-  %force %actor% sleep
+  %force% %actor% sleep
 end
 ~
 #1287

@@ -391,12 +391,12 @@ drop %object.name.car%
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_crayondone)
+  if %actor.varexists(zn118_crayondone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_crayonquest)
+  elseif %actor.varexists(zn118_crayonquest)%
     wait 1 s
     say Ah! Now, let me see...
     wait 1 s
@@ -462,12 +462,12 @@ end
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_birddone)
+  if %actor.varexists(zn118_birddone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_birdquest)
+  elseif %actor.varexists(zn118_birdquest)%
     wait 1 s
     say Thank you %actor.name%. Now part of me feels free too.
     wait 2 s
@@ -797,12 +797,12 @@ eval room %room% + 11874
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_tunneldone)
+  if %actor.varexists(zn118_tunneldone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_tunnelquest)
+  elseif %actor.varexists(zn118_tunnelquest)%
     eval score %actor.zn118_tunnelquest% - 1
     if %score% < 15
       wait 1 s
@@ -1070,7 +1070,7 @@ if %arg% == north || %arg% ==  east || %arg% == south || %arg% == west || %arg% 
         case 2
           %send% %people% %actor.name% tries to shoot you but misses.
           %send% %actor% You try to shoot %people.name% but miss.
-          %echoaround% %actor% %actor.name% tries to shoot %people.name% but misses%
+          %echoaround% %actor% %actor.name% tries to shoot %people.name% but misses
           %purge% %actor.inventory(2733)%
           %load% obj 2733
         break
@@ -1200,7 +1200,7 @@ if %arg.mudcommand% == north || %arg.mudcommand% == east || %arg.mudcommand% == 
         case 2
           %send% %people% %actor.name% tries to shoot you but misses.
           %send% %actor% You try to shoot %people.name% with %weapon.shortdesc% but miss.
-          %echoaround% %actor% %actor.name% tries to shoot %people.name% but misses%
+          %echoaround% %actor% %actor.name% tries to shoot %people.name% but misses
           %purge% %actor.inventory(%arrow%)%
           %load% obj %arrow%
         break
@@ -1242,12 +1242,12 @@ test~
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_runningdone)
+  if %actor.varexists(zn118_runningdone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_runningquest)
+  elseif %actor.varexists(zn118_runningquest)%
     wait 1 s
     emote pauses to think for a moment.
     wait 1 s
@@ -1359,12 +1359,12 @@ global taken
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_blinddone)
+  if %actor.varexists(zn118_blinddone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_blindword)
+  elseif %actor.varexists(zn118_blindword)%
     wait 1 s
     say Since you have proved yourself willing to read...
     wait 1 s
@@ -1463,12 +1463,12 @@ end
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_blinddone)
+  if %actor.varexists(zn118_blinddone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_blindword)
+  elseif %actor.varexists(zn118_blindword)%
     wait 1 s
     say Since you have proved yourself willing to read...
     wait 1 s
@@ -1503,9 +1503,9 @@ if %actor.varexists(zn118_knifestart)%
 if %speech% == start
   eval max %random.3%
   set txt[1] right
-  set  txt[2] middle
-  set  txt[3] left
-  set  ball %%txt[%max%]%%
+  set txt[2] middle
+  set txt[3] left
+  set ball %%txt[%max%]%%
   eval ball %ball%
   emote places the ball under the %ball% cup.
   wait 1 s
@@ -1694,7 +1694,7 @@ new trigger~
 if %self.master% == %actor%
   %echo% test
   if %cmd%==minv
-    %send% %actor% your mules inv%
+    %send% %actor% your mules inv
   else
     return 0
   end
@@ -1834,12 +1834,12 @@ end
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_weepingdone)
+  if %actor.varexists(zn118_weepingdone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_weepingquest)
+  elseif %actor.varexists(zn118_weepingquest)%
     rdelete zn118_weepingquest %actor.id%
     set zn118_weepingdone 1
     remote zn118_weepingdone %actor.id%
@@ -1895,12 +1895,12 @@ end
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_knifedone)
+  if %actor.varexists(zn118_knifedone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_knifequest)
+  elseif %actor.varexists(zn118_knifequest)%
     rdelete zn118_knifequest %actor.id%
     set zn118_knifedone 1
     remote zn118_knifedone %actor.id%
@@ -2263,12 +2263,12 @@ end
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_thindone)
+  if %actor.varexists(zn118_thindone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_thinwrite)
+  elseif %actor.varexists(zn118_thinwrite)%
     wait 2 s
     emote dips a finger in her glass of wine, dragging it over the pages of the journal.
     wait 2 s
@@ -2322,12 +2322,12 @@ end
 0 j 100
 ~
 if %object.vnum% == 11807
-  if %actor.varexists(zn118_mutedone)
+  if %actor.varexists(zn118_mutedone)%
     wait 1 s
     say I have already written in that for you.
     give journal %actor.name%
     drop journal
-  elseif %actor.varexists(zn118_mutewrite)
+  elseif %actor.varexists(zn118_mutewrite)%
     rdelete zn118_mutewrite %actor.id%
     set zn118_mutedone 1
     remote zn118_mutedone %actor.id%
@@ -2641,183 +2641,6 @@ else
   give %object.name.car% %actor.name%
   drop %object.name.car%
 end
-~
-#11885
-testing~
-0 f 100
-~
-eval here %actor.room%
-eval person %here.people%
-while %person%
-  if %person.id% == %actor.id% || %person.id% == %actor.master.id% || %person.id% == %actor.follower.id%
-    %echo%  %person.name%
-    eval name %self.name%
-    eval word ^%name.car%
-    while %name%
-      eval rest %name.cdr%
-      eval next %rest.car%
-      eval word %word%_%next%
-      eval name %rest%
-    done
-    eval value %word%
-    eval var %%person.varexists(%value%)%%
-    if %var%
-      eval percent %%person.%value%%
-      eval percent %percent% + 1
-      set %value% %percent%
-      remote %value% %person.id%
-    else
-      set %value% 1
-      remote %value% %person.id%
-    end
-  end
-  eval person %person.next_in_room%
-done
-~
-#11886
-testtwo~
-0 f 100
-~
-eval value %self.vnum%
-eval here %actor.room%
-eval person %here.people%
-while %person%
-  if %person.id% == %actor.id% || %person.id% == %actor.master.id% || %person.id% == %actor.follower.id%
-    %echo%  %person.name%
-    eval name %self.name%
-    eval word %name.car%
-    while %name%
-      eval rest %name.cdr%
-      eval next %rest.car%
-      eval word %word%_%next%
-      eval name %rest%
-    done
-    eval mob %word%
-    eval var %%person.varexists(%value%)%%
-    if %var%
-      eval percent %%person.%value%
-      %echo% percent : %percent%
-      eval number %percent.cdr%
-      eval mobname %percent.car%
-      eval number %number% + 1
-      eval %value% %mobname% %number%
-      remote %value% %person.id%
-    else
-      set %value% %word% 1
-      remote %value% %person.id%
-    end
-    if %person.varexists(trophy)%
-eval end %person.trophy%
-      if !%end% /= %value%
-%echo% should be adding!!!!
-        eval trophy %person.trophy% %value%
-        remote trophy %person.id%
-      end
-    else
-      set trophy %value%
-      remote trophy %person.id%
-    end
-  end
-  eval person %person.next_in_room%
-done
-~
-#11887
-testing3~
-2 c 100
-trophy~
-%echo% %2710.name%
-~
-#11888
-testing4~
-0 f 100
-~
-eval here %actor.room%
-eval person %here.people%
-while %person%
-  if %person.id% == %actor.id% || %person.id% == %actor.master.id% || %person.id% == %actor.follower.id%
-    %echo%  %person.name%
-    eval name %self.name%
-    eval word ^%name.car%
-    while %name%
-      eval rest %name.cdr%
-      eval next %rest.car%
-      eval word %word%_%next%
-      eval name %rest%
-    done
-    if %person.varexists(trophy)%
-      if !%person.trophy% /= %word%
-        set tro %person.trophy%_%word%
-        set trophy %tro%
-        remote trophy %person.id%
-      end
-    else
-      set trophy %word%
-      remote trophy %person.id%
-    end
-    eval value %word%
-    eval var %%person.varexists(%value%)%%
-    if %var%
-      eval percent %%person.%value%%
-      eval percent %percent% + 1
-      set %value% %percent%
-      remote %value% %person.id%
-    else
-      set %value% 1
-      remote %value% %person.id%
-    end
-  end
-  eval person %person.next_in_room%
-done
-~
-#11889
-mobs killed recorded in trophy~
-0 f 100
-~
-eval value %self.vnum%
-eval here %actor.room%
-eval person %here.people%
-while %person%
-  if %person.id% == %actor.id% || %person.id% == %actor.master.id% || %person.id% == %actor.follower.id%
-    %echo%  %person.name%
-    eval name %self.name%
-    eval word %name.car%
-    while %name%
-      eval rest %name.cdr%
-      eval next %rest.car%
-      eval word %word%_%next%
-      eval name %rest%
-    done
-    eval mob %word%
-    eval var %%person.varexists(%value%)%%
-    if %var%
-      eval percent %%person.%value%
-%echo% percent : %percent%
-      eval number %percent.cdr%
-      eval mobname %percent.car%
-      eval number %number% + 1
-      eval %value% %mobname% %number%
-      remote %value% %person.id%
-    else
-      set %value% %word% 1
-      remote %value% %person.id%
-    end
-  end
-  eval person %person.next_in_room%
-done
-~
-#11890
-trophy reports~
-2 c 100
-trophy~
-set number 2700
-while %number% < 2799
-if %%actor.varexists(%number%)%%
-eval var %%actor.%number%%
-eval mobname %var.car%
-eval amount %var.cdr%
-%send% %actor% %mobname% : %amount% killed
-eval %number% %number% + 1
-done
 ~
 #11891
 (07) journal entries~

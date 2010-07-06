@@ -20,13 +20,13 @@ barkeeper greeting~
 say Welcome, come over here and get you something to drink.
 ~
 #7539
-witch doctor chart~
+witch doctor chant~
 0 b 100
 ~
 * %echo% sends to the room
 %echo% %self.name% sways his arms chanting.
 * %asound% sends to the neighbouring rooms.
-%asound% You  hear a bizarre chanting from nearby.
+%asound% You hear a bizarre chanting from nearby.
 * wait waits a little while before letting the script be run again.
 wait 20 s
 ~
@@ -34,7 +34,7 @@ wait 20 s
 chubby man greeting~
 0 g 100
 ~
-   Say Hello, wait here and I will see if Empress Kiona will see you.    
+say Hello, wait here and I will see if Empress Kiona will see you.    
 ~
 #7567
 voodoo doll says out~

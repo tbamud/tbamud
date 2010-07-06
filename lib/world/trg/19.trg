@@ -639,21 +639,23 @@ attach 8917 %self.id%
 eval where %self.room%
 eval where2 %where.vnum%
 if %where2% == 1982
-%echo% A large rumbling sound can be heard as the passage to the north opens.
-%door% 1982 north room 1983
-%door% 1982 north description A great black cavern looms beyond, the stone that covered it glowing and quivering with magic.
-%door% 1983 south room 1982
-%door% 1983 south description A faint magical glow comes from this direction, a rectangular slab removed from the cavernous wall.
+  wait 1 sec
+  %echo% A large rumbling sound can be heard as the passage to the north opens.
+  %door% 1982 north room 1983
+  %door% 1982 north description A great black cavern looms beyond, the stone that covered it glowing and quivering with magic.
+  %door% 1983 south room 1982
+  %door% 1983 south description A faint magical glow comes from this direction, a rectangular slab removed from the cavernous wall.
 end
 ~
 #1941
 (1929) leaving candle removes exit~
 1 h 100
 ~
-eval where %self.room%
-if %where% == }51286
-%echo% The ground rumbles as a heavy stone slab slides back into place in the northern wall.
-%door% 1982 north purge
+eval where %self.room.vnum%
+if %where% == 1982 
+  wait 1 sec
+  %echo% The ground rumbles as a heavy stone slab slides back into place in the northern wall.
+  %door% 1982 north purge
 end
 ~
 #1942

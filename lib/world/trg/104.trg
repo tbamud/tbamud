@@ -81,7 +81,7 @@ if %actor.id% == 4891
   %send% %actor% You drift into a calm slumber.
   %force% %actor% sleep
 else
-  %force %actor% sleep
+  %force% %actor% sleep
 end
 ~
 #10410
@@ -197,7 +197,7 @@ eval here %self.room%
 eval today %here.weather%
 say The weather eh? Give me a little.
 wait 1 sec
-%echo %self.name% looks up into the sky and pulls a notepad out of his pocket.
+%echo% %self.name% looks up into the sky and pulls a notepad out of his pocket.
 wait 3 sec
 %echo% %self.name% begins to jot down something on his notepad.
 wait 3 sec

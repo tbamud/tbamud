@@ -1484,10 +1484,10 @@ Obj Remove Straitjacket - 1300~
 return 0
 ~
 #1348
-Obj Trigger Example, ice cream melting~
+delete me~
 1 f 100
 ~
-say 
+* No Script
 ~
 #1349
 free~
@@ -2263,8 +2263,8 @@ return 0
 Random Mob Purge~
 2 b 100
 ~
-* This script checks if anyone is in the room. If so each mob has a 50% chance of
-* being purged 5% of the time.
+* This script checks if anyone is in the room. If so each mob has a 50 
+* percent chance of being purged 5 percent of the time.
 eval target %self.people%
 while %target%
   eval tmp_target %target.next_in_room%
@@ -2549,7 +2549,7 @@ Mob Speech Parrot~
       wait 1s
       emote squawks loudly.
       wait 1s
-*** 75% chance of learning phrase
+*** 75 percent chance of learning phrase
       eval polly %random.4%
       if (%polly% > 1)
         say %speech%

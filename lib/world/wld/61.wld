@@ -21,14 +21,14 @@ The narrow, dusty trail leads west through the forest.
 ~
 0 -1 6101
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
-~
-E
 trail~
    The dark and dusty trail seems fragile compared to the massive trunks, and in
 some places, giant grey roots have broken up through its surface.  
+~
+E
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6101
@@ -55,9 +55,9 @@ The narrow, dusty trail leads west through the forest.
 ~
 0 -1 6102
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
+trail~
+   The dark and dusty trail seems fragile compared to the massive trunks, and in
+some places, giant grey roots have broken up through its surface.  
 ~
 E
 path~
@@ -65,9 +65,9 @@ path~
 around it.  
 ~
 E
-trail~
-   The dark and dusty trail seems fragile compared to the massive trunks, and in
-some places, giant grey roots have broken up through its surface.  
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6102
@@ -88,9 +88,9 @@ The narrow, dusty trail leads west through the forest.
 ~
 0 -1 6103
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
+trail~
+   The dark and dusty trail seems fragile compared to the massive trunks, and in
+some places, giant grey roots have broken up through its surface.  
 ~
 E
 path~
@@ -98,9 +98,9 @@ path~
 around it.  
 ~
 E
-trail~
-   The dark and dusty trail seems fragile compared to the massive trunks, and in
-some places, giant grey roots have broken up through its surface.  
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6103
@@ -127,14 +127,14 @@ The narrow, dusty trail leads south through the forest.
 ~
 0 -1 6108
 E
-trees trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
-~
-E
 trail~
    The dark and dusty trail seems fragile compared to the massive trunks, and in
 some places, giant grey roots have broken up through its surface.  
+~
+E
+trees trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6104
@@ -155,13 +155,13 @@ The narrow path winds its way through the trees to the south.
 ~
 0 -1 6105
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6105
@@ -181,13 +181,13 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6106
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6106
@@ -212,13 +212,13 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6107
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path paths~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6107
@@ -238,13 +238,13 @@ The narrow path winds its way through the trees to the east.
 ~
 0 -1 6106
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6108
@@ -270,9 +270,9 @@ The narrow, dusty trail leads west through the forest.
 ~
 0 -1 6109
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
+trail~
+   The dark and dusty trail seems fragile compared to the massive trunks, and in
+some places, giant grey roots have broken up through its surface.  
 ~
 E
 path~
@@ -280,9 +280,9 @@ path~
 around it.  
 ~
 E
-trail~
-   The dark and dusty trail seems fragile compared to the massive trunks, and in
-some places, giant grey roots have broken up through its surface.  
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6109
@@ -303,14 +303,14 @@ The narrow, dusty trail leads west through the forest.
 ~
 0 -1 6110
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
-~
-E
 trail~
    The dark and dusty trail seems fragile compared to the massive trunks, and in
 some places, giant grey roots have broken up through its surface.  
+~
+E
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6110
@@ -336,9 +336,9 @@ The narrow path leads west between the giant trees.
 ~
 0 -1 6130
 E
-tree trees trunk trunks~
-   Some of the trunks to the west are covered in a thin, almost transparent
-substance.  It looks like small threads woven carefully together.  
+trail~
+   The dark and dusty trail seems fragile compared to the massive trunks, and in
+some places, giant grey roots have broken up through its surface.  
 ~
 E
 path~
@@ -346,9 +346,9 @@ path~
 around it.  
 ~
 E
-trail~
-   The dark and dusty trail seems fragile compared to the massive trunks, and in
-some places, giant grey roots have broken up through its surface.  
+tree trees trunk trunks~
+   Some of the trunks to the west are covered in a thin, almost transparent
+substance.  It looks like small threads woven carefully together.  
 ~
 S
 #6111
@@ -368,14 +368,14 @@ The narrow, dusty trail leads south through the forest.
 ~
 0 -1 6112
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
-~
-E
 trail~
    The dark and dusty trail seems fragile compared to the massive trunks, and in
 some places, giant grey roots have broken up through its surface.  
+~
+E
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6112
@@ -401,9 +401,9 @@ The narrow, dusty trail leads west through the forest.
 ~
 0 -1 6127
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
+trail~
+   The dark and dusty trail seems fragile compared to the massive trunks, and in
+some places, giant grey roots have broken up through its surface.  
 ~
 E
 path~
@@ -411,9 +411,9 @@ path~
 around it.  
 ~
 E
-trail~
-   The dark and dusty trail seems fragile compared to the massive trunks, and in
-some places, giant grey roots have broken up through its surface.  
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6113
@@ -433,13 +433,13 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6112
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6114
@@ -464,13 +464,13 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6122
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path paths~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6115
@@ -491,13 +491,13 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6114
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6116
@@ -517,13 +517,13 @@ The narrow path winds its way through the trees to the south.
 ~
 0 -1 6115
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6117
@@ -548,13 +548,13 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6116
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path paths~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6118
@@ -574,13 +574,13 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6117
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6119
@@ -600,13 +600,13 @@ The narrow path winds its way through the trees to the south.
 ~
 0 -1 6120
 E
+tree trees trunk trunks~
+   You feel as if they are watching you.  
+~
+E
 path~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   You feel as if they are watching you.  
 ~
 S
 #6120
@@ -633,9 +633,8 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6121
 E
-path~
-   The path seems all too frail.  One of the giant roots could probably crush it
-in a single blow.  
+river~
+   The river flows fast and strong.  It is black or looks so in the gloom.  
 ~
 E
 bank banks tree trees trunk trunks~
@@ -643,8 +642,9 @@ bank banks tree trees trunk trunks~
 above the dark river.  
 ~
 E
-river~
-   The river flows fast and strong.  It is black or looks so in the gloom.  
+path~
+   The path seems all too frail.  One of the giant roots could probably crush it
+in a single blow.  
 ~
 S
 #6121
@@ -661,9 +661,8 @@ The narrow path winds its way through the trees to the east.
 ~
 0 -1 6120
 E
-path~
-   The path seems all too frail.  One of the giant roots could probably crush it
-in a single blow.  
+river~
+   The river flows fast and strong.  It is black or looks so in the gloom.  
 ~
 E
 bank banks tree trees trunk trunks~
@@ -671,8 +670,9 @@ bank banks tree trees trunk trunks~
 above the dark river.  
 ~
 E
-river~
-   The river flows fast and strong.  It is black or looks so in the gloom.  
+path~
+   The path seems all too frail.  One of the giant roots could probably crush it
+in a single blow.  
 ~
 S
 #6122
@@ -692,13 +692,13 @@ The narrow path winds its way through the trees to the south.
 ~
 0 -1 6123
 E
+tree trees trunk trunks~
+   The ancient grey giants seem to observe you silently.  
+~
+E
 path~
    The path seems all too frail.  One of the giant roots could probably crush it
 in a single blow.  
-~
-E
-tree trees trunk trunks~
-   The ancient grey giants seem to observe you silently.  
 ~
 S
 #6123
@@ -724,9 +724,8 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6125
 E
-path paths~
-   The path seems all too frail.  One of the giant roots could probably crush it
-in a single blow.  
+river~
+   The river flows fast and strong.  It is black or looks so in the gloom.  
 ~
 E
 bank banks tree trees trunk trunks~
@@ -734,8 +733,9 @@ bank banks tree trees trunk trunks~
 above the dark river.  
 ~
 E
-river~
-   The river flows fast and strong.  It is black or looks so in the gloom.  
+path paths~
+   The path seems all too frail.  One of the giant roots could probably crush it
+in a single blow.  
 ~
 S
 #6124
@@ -752,9 +752,8 @@ The narrow path winds its way through the trees to the west.
 ~
 0 -1 6123
 E
-path~
-   The path seems all too frail.  One of the giant roots could probably crush it
-in a single blow.  
+river~
+   The river flows fast and strong.  It is black or looks so in the gloom.  
 ~
 E
 bank banks tree trees trunk trunks~
@@ -762,8 +761,9 @@ bank banks tree trees trunk trunks~
 above the dark river.  
 ~
 E
-river~
-   The river flows fast and strong.  It is black or looks so in the gloom.  
+path~
+   The path seems all too frail.  One of the giant roots could probably crush it
+in a single blow.  
 ~
 S
 #6125
@@ -784,9 +784,8 @@ The narrow path winds its way through the trees to the east.
 ~
 0 -1 6123
 E
-path~
-   The path seems all too frail.  One of the giant roots could probably crush it
-in a single blow.  
+river~
+   The river flows fast and strong.  It is black or looks so in the gloom.  
 ~
 E
 bank banks tree trees trunk trunks~
@@ -794,8 +793,9 @@ bank banks tree trees trunk trunks~
 above the dark river.  
 ~
 E
-river~
-   The river flows fast and strong.  It is black or looks so in the gloom.  
+path~
+   The path seems all too frail.  One of the giant roots could probably crush it
+in a single blow.  
 ~
 S
 #6126
@@ -821,9 +821,9 @@ The narrow, dusty trail leads west through the forest.
 ~
 0 -1 6128
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
+trail~
+   The dark and dusty trail seems fragile compared to the massive trunks, and in
+some places, giant grey roots have broken up through its surface.  
 ~
 E
 path~
@@ -831,9 +831,9 @@ path~
 around it.  
 ~
 E
-trail~
-   The dark and dusty trail seems fragile compared to the massive trunks, and in
-some places, giant grey roots have broken up through its surface.  
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6127
@@ -853,14 +853,14 @@ The narrow, dusty trail leads south through the forest.
 ~
 0 -1 6126
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
-~
-E
 trail~
    The dark and dusty trail seems fragile compared to the massive trunks, and in
 some places, giant grey roots have broken up through its surface.  
+~
+E
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6128
@@ -881,14 +881,14 @@ The narrow, dusty trail leads west through the forest.
 ~
 0 -1 6129
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
-~
-E
 trail~
    The dark and dusty trail seems fragile compared to the massive trunks, and in
 some places, giant grey roots have broken up through its surface.  
+~
+E
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6129
@@ -909,14 +909,14 @@ The narrow, dusty trail leads west through the forest.
 ~
 0 -1 6135
 E
-tree trees trunk trunks~
-   These ancient trees must have been here for many, many years.  It is
-impossible to catch even a glimpse of anything above the lowest branches.  
-~
-E
 trail~
    The dark and dusty trail seems fragile compared to the massive trunks, and in
 some places, giant grey roots have broken up through its surface.  
+~
+E
+tree trees trunk trunks~
+   These ancient trees must have been here for many, many years.  It is
+impossible to catch even a glimpse of anything above the lowest branches.  
 ~
 S
 #6130
@@ -944,10 +944,9 @@ D4
 ~
 0 -1 6132
 E
-tree trees trunk trunks~
-   The sticky substance is hanging like ropes between the ancient trees,
-crossing the path just out of reach.  It might be possible to climb one of the
-sticky trunks.  
+substance rope ropes thread threads~
+   The substance reminds you of giant threads covered with glue.  If it hadn't
+been for the size you could have sworn it was part of a spider web.  
 ~
 E
 trail~
@@ -955,9 +954,10 @@ trail~
 some places, giant grey roots have broken up through its surface.  
 ~
 E
-substance rope ropes thread threads~
-   The substance reminds you of giant threads covered with glue.  If it hadn't
-been for the size you could have sworn it was part of a spider web.  
+tree trees trunk trunks~
+   The sticky substance is hanging like ropes between the ancient trees,
+crossing the path just out of reach.  It might be possible to climb one of the
+sticky trunks.  
 ~
 S
 #6131
@@ -974,6 +974,10 @@ The huge, poisonous spider stings you!  You are poisoned!
 The huge, poisonous spider stings you!  You are poisoned!
 ~
 61 12 0 0 0 0
+D4
+~
+~
+0 0 6130
 S
 T 6100
 #6132
@@ -1024,13 +1028,13 @@ To the west is the entrance to the cave-like structure.
 ~
 0 -1 6134
 E
+web~
+   The immense spider web moves softly.  
+~
+E
 cave structure~
    It covers a ground area corresponding to an irregular circle with a diameter
 of about 20 feet and is nearly 10 feet tall.  It looks very old.  
-~
-E
-web~
-   The immense spider web moves softly.  
 ~
 S
 #6134
@@ -1047,13 +1051,13 @@ Compared to this place the east exit looks inviting.
 ~
 0 -1 6133
 E
+web wall walls~
+   The sticky walls are covered with open cocoons.  
+~
+E
 cocoon cocoons~
    The cocoons are burst open as if something inside really wanted to get out.
 They are at the size of a human head.  
-~
-E
-web wall walls~
-   The sticky walls are covered with open cocoons.  
 ~
 S
 #6135
@@ -1100,18 +1104,18 @@ The dusty trail leads west through the trees.
 ~
 0 -1 6137
 E
-trail~
-   The dark and dusty trail seems fragile compared to the massive trunks, and in
-some places, giant grey roots have broken up through its surface.  
+tree trees trunk trunks~
+   To the east the ancient grey giants have many marks as if something with huge
+claws has been tearing at them in rage.  
 ~
 E
 path~
    The trees standing on the sides of the path have scratch marks on them.  
 ~
 E
-tree trees trunk trunks~
-   To the east the ancient grey giants have many marks as if something with huge
-claws has been tearing at them in rage.  
+trail~
+   The dark and dusty trail seems fragile compared to the massive trunks, and in
+some places, giant grey roots have broken up through its surface.  
 ~
 S
 #6137
@@ -1199,13 +1203,13 @@ The path winds its way westward.
 ~
 0 -1 6136
 E
-cave opening~
-   The disgusting smell of a large reptile emanates from the cave opening.  
-~
-E
 tree trees~
    The ancient grey giants have many marks as if something with huge claws has
 been tearing at them in rage.  
+~
+E
+cave opening~
+   The disgusting smell of a large reptile emanates from the cave opening.  
 ~
 S
 #6143

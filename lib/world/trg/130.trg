@@ -338,7 +338,7 @@ if %dir.mudcommand% == north || %dir.mudcommand% == east || %dir.mudcommand% == 
   set finaldam 0
   set i 0
   while %i% != %dice%
-    eval tempDam %%random.%dam%%
+    eval tempDam %random.%dam%%
     eval finaldam %finaldam% + %tempDam%
     eval i %i% +1
   done

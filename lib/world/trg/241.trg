@@ -10,7 +10,7 @@ if %location% <1
   %at% 24142 %teleport% all 24141
   wait 3 sec
   %echo% Lots of warning lights go off!
-  %send% %actor% Something has gone wrong! You forgot to input the co-ordinates!
+  %send% %actor% Something has gone wrong! You forgot to input the coordinates!
 else
   %at% 24142 %teleport% all %location%
   wait 3 sec
@@ -22,17 +22,17 @@ end
 2 c 100
 input~
 if %arg% <1
-  %send% %actor% You need to input some co-ordinates.
+  %send% %actor% You need to input some coordinates.
   %send% %actor% 'INPUT 24100' for example.
 elseif %arg% < 24100
-  %send% %actor% Those co-ordinates are to low! (24100-24141)
+  %send% %actor% Those coordinates are to low! (24100-24141)
 elseif %arg% > 24141
-  %send% %actor% Those co-ordinates are to high! (24100-24141)
+  %send% %actor% Those coordinates are to high! (24100-24141)
 else
   %send% %actor% You type briefly on a nearby keyboard.
   %echoaround% %actor% %actor.name% types briefly on a nearby keyboard.
   wait 1 sec
-  %send% %actor% Co-ordinates set to '%arg%'.
+  %send% %actor% Coordinates set to '%arg%'.
   set location %arg%
   global location
 end
@@ -221,7 +221,7 @@ switch %breathe%
     set gasp2 is slowly turning a horrid shade of blue
   break
   case 4
-    set gasp Your eyes buldge grossly
+    set gasp Your eyes bulge grossly
     set gasp2 stares in horror
   break
   case 5
@@ -615,7 +615,7 @@ switch %fish%
     set fishy Livingston smiles, if you can call it that, he is a fish after all.
   break
   case 4
-    set fishy Livingston the fishfloats around in his bowl for a while.
+    set fishy Livingston the fish floats around in his bowl for a while.
   break
   case 5
     set fishy Livingston rises to the top of his bowl and starts to eat some of the fish food.
@@ -625,12 +625,12 @@ switch %fish%
 done
 if livingston /= %arg% && %arg%
   %send% %actor% You sprinkle a small amount of fish food into Livingston's bowl.
-  %echoaround% %actor% 5actor.name% sprinkles a small amount of fish food into Livingston's bowl.
+  %echoaround% %actor% %actor.name% sprinkles a small amount of fish food into Livingston's bowl.
   wait 3 sec
   %echo% %fishy%
 elseif fish /= %arg% && %arg%
   %send% %actor% You sprinkle a small amount of fish food into Livingston's bowl.
-  %echoaround% %actor% 5actor.name% sprinkles a small amount of fish food into Livingston's bowl.
+  %echoaround% %actor% %actor.name% sprinkles a small amount of fish food into Livingston's bowl.
   wait 3 sec
   %echo% %fishy%
 else
@@ -702,7 +702,7 @@ elseif %self.vnum% == 24103
 elseif %self.vnum% == 24104
   %echo% %self.name% seems to bear the stress of everyone onboard.
 elseif %self.vnum% == 24107
-  %echo% %self.name% makes up a rather alient cocktail and serves it.
+  %echo% %self.name% makes up a rather alien cocktail and serves it.
 elseif %self.vnum% == 24108
   %echo% %self.name% checks the warp core carefully.
 elseif %self.vnum% == 24109
@@ -833,7 +833,7 @@ elseif %charges% <4 && %speech% == difficulty medium
   eval charges %charges% + 1
   global charges
 elseif %charges% <4 && %speech% == difficulty hard
-  %echo% A Klingon warrior roars and howls as he comes into existance!
+  %echo% A Klingon warrior roars and howls as he comes into existence!
   %load% m 24116
   eval charges %charges% + 1
   global charges
@@ -918,7 +918,7 @@ end
 eval office %random.10%
 switch %office%
   case 1
-    %echo% The screetching of tires burning-rubber zooms off in the distance.
+    %echo% The screeching of tires burning-rubber zooms off in the distance.
   break
   case 2
     %echo% The clock ticks and tocks peacefully.

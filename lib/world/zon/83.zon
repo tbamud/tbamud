@@ -2,6 +2,9 @@
 Meyekul Benighted~
 Glumgold's Sea~
 8300 8399 30 1 d 0 0 0 10 30
+M 0 8397 1 8397 	(Tai Ho)
+E 1 8397 99 17 	(@yA set of @o@gChinchirorin@n @ydice@n)
+D 0 8397 0 1 	(On a Fishing Boat)
 D 0 8393 5 2 	(The Mid-Deck)
 M 0 8309 1 8393 	(a drunken pirate)
 M 0 8310 10 8384 	(a drunken pirate)
@@ -28,9 +31,6 @@ M 0 8301 25 8373 	(a small fish)
 M 0 8302 20 8373 	(a large fish)
 D 0 8398 2 1 	(The Bow of a Fishing Boat)
 M 0 8398 1 8398 	(Yam Koo)
-M 0 8397 1 8397 	(Tai Ho)
-E 1 8397 5 16 	(@yA set of @o@gChinchirorin@n @ydice@n)
-D 0 8397 0 1 	(On a Fishing Boat)
 D 0 8395 4 2 	(The Treasury)
 O 0 8308 1 8395 	(a huge mound of gold coins)
 D 0 8383 0 1 	(Near a Stairway)

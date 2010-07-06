@@ -735,6 +735,7 @@ Room Variables Example~
 %echo% SECTOR:     %self.sector%
 %echo% VNUM:       %self.vnum%
 %echo% WEATHER:    %self.weather%
+%echo% CONTENTS 1:   %self.contents(1)%
 ~
 #30
 Text Variables Example~
@@ -960,7 +961,7 @@ if %arg.is_pc% == 1
 elseif %arg.is_pc% == 0
   %echo% It is a mob.
 else
-  %echo It is an object.
+  %echo% It is an object.
 end
 ~
 #35
@@ -1317,7 +1318,7 @@ switch %cmd%
   break
   case fingerprint
     if %arg% != open
-      if %arg != close
+      if %arg% != close
         %send% %actor% You must type either: 
         %send% %actor% fingerprint open
         %send% %actor% or
@@ -1408,13 +1409,13 @@ Mob Death Purges Equipment~
 * Purge all inventory first.
 say You damn whipper snappers. You may have beat me this time, but my equipment goes only to those who deserve it.
 emote donates everything.
-while %self.inventory%%
+while %self.inventory%
   %purge% %self.inventory%
 done
 * While we have an equipment slot, purge that too.
 set i 0
 while %i% < 18
-  set item %self.eq(%i%)%
+  eval item %%self.eq(%i%)%%
   if %item%
     %purge% %item%
   end
@@ -1460,7 +1461,7 @@ Parrot Array Example~
 wait 1 s
 emote squawks loudly.
 wait 1 s
-* 75% chance of learning phrase.
+* 75 percent chance of learning phrase.
 eval polly %random.4%
 if %polly% > 1
   * Ignore if already known
@@ -2029,7 +2030,7 @@ Mob Hitprcnt Example~
 0 l 50
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* Fires at 50% hitpoints.
+* Fires at 50 percent hitpoints.
 %zoneecho% %self.room.vnum% %self.name% shouts 'HELP! I'm under ATTACK! HELP!'
 * Remove the trigger so it won't fire again if the mob heals.
 detach 71 %self.id%

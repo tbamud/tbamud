@@ -418,7 +418,7 @@ end
 (2741-56) Random spooky messages in temple~
 2 b 40
 ~
-eval person %self.people(people.-1)%
+eval person %self.people%
 if (%person% > 0)
 switch %random.15%
   case 0
@@ -499,7 +499,7 @@ done
 test randomroom~
 2 b 100
 ~
-eval person %self.people(-1)%
+eval person %self.people%
 if (%person% > 0)
 %echo% test works
 end
@@ -660,7 +660,7 @@ end
 %echo% You realise too late that only an empty chasm lies below. Plummeting faster and faster, you don't even have time to pray before you hit the ground!
 wait 2 s
 %purge%
-eval person %self.people(people.-1)%
+eval person %self.people%
 if (%person% > 0)
 %teleport% %actor% 2700
 %force% %actor% look
@@ -697,7 +697,7 @@ if %cmd%==shoot
 if %quiver%
   %force% %actor% take arrow quiver
   %send% %actor% You prepare to shoot.
-  if %actor.inventory(2733)
+  if %actor.inventory(2733)%
     %echo% About to nod
     set ready 1
     remote ready %actor.id%
@@ -939,7 +939,7 @@ move~
 (2763) toothy loads on reset~
 2 af 100
 ~
-eval person %self.people(people.-1)%
+eval person %self.people%
 if (%person% < 1)
 %purge%
 %load% mob 2713

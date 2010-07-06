@@ -545,7 +545,7 @@ elseif %cmd.mudcommand% == buy
     dg_affect %pet_name% charm on 999
     emote opens the stable door and returns leading your horse by its reins.
     tell %actor.name% here you go. Treat'em well.
-    nop %actor.gold(-%pet_cost%)
+    nop %actor.gold(-%pet_cost%)%
   end
 elseif %cmd.mudcommand% == sell
   tell %actor.name% Does it look like I buy things?

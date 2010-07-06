@@ -432,8 +432,8 @@ else
 end
 * Portal example with arguments: enter
 * if portal /= %arg%
-* %send %actor% You enter the portal.
-* %echoaround %actor.name% %actor.name% bravely steps into the portal.
+* %send% %actor% You enter the portal.
+* %echoaround% %actor.name% %actor.name% bravely steps into the portal.
 * %teleport% %actor% 3001
 * %force% %actor% look
 * %echoaround% %actor% %actor.name% steps through a portal.
@@ -464,7 +464,7 @@ Room Drop Example~
 2 h 100
 ~
 %echo% %actor.name% tries to drop object type: %object.type%
-if %object.type% == TRA
+if %object.type% == TRASH
   %echo% No Littering!
   return 0
 end

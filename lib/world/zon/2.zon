@@ -2,6 +2,8 @@
 Rumble~
 Sanctus II~
 200 299 10 2
+M 0 30 3 220 	(the spy for the underground)
+E 1 221 1 12 	(a grey cloak)
 M 0 218 1 218 	(a woman dressed in the latest fashions)
 M 0 169 3 200 	(a citizen)
 M 0 162 3 237 	(a statesman)
@@ -62,7 +64,6 @@ M 0 189 1 230 	(the commander)
 E 1 145 99 5 	(a scale mail jacket)
 M 0 209 1 210 	(Bob, the achondroplastic dwarf)
 E 1 171 99 17 	(a short gilded staff of oak)
-M 0 30 3 220 	(the spy for the underground)
 M 0 30 3 212 	(the spy for the underground)
 M 0 210 1 265 	(the quest shopkeeper)
 O 0 307 1 242 	(a jar of palmatite)

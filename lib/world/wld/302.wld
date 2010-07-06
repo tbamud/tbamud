@@ -44,6 +44,10 @@ Zone 302 is linked to the following zones:
 303 Campus                         at 30299 (north) ---> 30300
 303 Campus                         at 30299 (east ) ---> 30301
 Links: 64e to catacombs
+
+   (Mobs Stay_Zone flags have all been disabled to allow free access between
+301, 302 and 303.  Please ensure that any entrances into the area are flagged
+nomob to keep them in.  -  Parna for TBAMud.)
 ~
 E
 pole greasepole~
@@ -1762,7 +1766,7 @@ S
 #30280
 A Classroom~
    This room suddenly dispels the monotony of the halls you were just passing
-through.  A small door sits quietly in the corner.    
+through.  
 ~
 302 9 0 0 0 0
 D0
@@ -1770,11 +1774,6 @@ It is too dark to tell.
 ~
 ~
 0 -1 30278
-D1
-It is too difficult to see through a solid door.
-~
-door~
-1 -1 30284
 D2
 It is too dark to tell.
 ~
@@ -1887,8 +1886,8 @@ S
 #30284
 Mob Chute A~
    Oops, you are not supposed to be here.  This is a programmer's tool to
-disperse mobs all over campus.  Exits go in all directions.  There is a small
-door to the west.  This goes all over Campus.    
+disperse mobs all over campus.  Exits go in all directions.  This goes all over
+Campus.
 ~
 302 136 0 0 0 0
 D0
@@ -1906,11 +1905,6 @@ This is just an exit.
 ~
 ~
 0 -1 30104
-D3
-This is just a door.
-~
-door~
-1 -1 30280
 D4
 This is just an exit.
 ~

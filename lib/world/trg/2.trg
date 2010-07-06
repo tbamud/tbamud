@@ -408,6 +408,14 @@ else
   say I only work for the Gods.
 end
 ~
+#219
+Modify AC on wear~
+1 j 100
+~
+osetval 0 9
+wait 1 sec
+%send% %actor% As you wear %self.shortdesc% you feel more protected.
+~
 #220
 Birthday Present Unwrap~
 1 c 3

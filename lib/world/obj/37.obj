@@ -5,7 +5,7 @@ A pile of glittering objects has been gathered here.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 10 7 3 0
-2 200 0 0
+2 200 0 0 0
 E
 pile glitter~
    The king rat seem to like shining objects.  This pile is filed with small
@@ -19,7 +19,7 @@ A trout fillet has been left here. wonder who wasn't hungry..~
 ~
 19 c 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 10 5 0
+1 10 5 0 0
 #3702
 fish fillet~
 a fish fillet~
@@ -27,7 +27,7 @@ The fillet of some strange fish is here.~
 ~
 19 c 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-1 10 5 0
+1 10 5 0 0
 #3703
 pearl~
 a pearl~
@@ -35,15 +35,15 @@ A large shining pearl has been left here.~
 ~
 8 ac 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 500 50 0
+1 500 50 0 0
 #3704
 chest~
 an ironbound chest~
 A chest is here, protecting whatever is hidden in it.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
-400 13 3704 0
-0 0 0 0
+400 13 3710 0
+0 0 0 0 0
 E
 iron ironbound chest~
    The chest has been bound by iron, to prevent it from being forced open.  
@@ -56,7 +56,7 @@ A very nice chainmail has been thrown on the ground here.~
 ~
 9 gm 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
-8 850 150 0
+8 850 150 0 0
 E
 chain mail chainmail~
    The chains connected in this chainmail is of a fine quality, making a very
@@ -73,7 +73,7 @@ A long dagger, ready for action is here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 5 1 4 11
-1 210 23 0
+1 210 23 0 0
 A
 18 1
 A
@@ -85,7 +85,7 @@ A small fishing boat has been moored here.~
 ~
 22 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-32 160 16 0
+32 160 16 0 0
 E
 boat~
    The boat is made from a very light sort of wood, making it extremely easy to
@@ -98,7 +98,7 @@ Fungus is hanging from the ceiling.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-5 25 2 0
+5 25 2 0 0
 E
 fungus~
    Green fungus growing on spiderwebs - YUCK!  
@@ -110,7 +110,7 @@ An old desk is here, covered in guano.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 100 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 desk~
    An old desk, heavy with age - and guano - has been left here by the
@@ -124,7 +124,7 @@ An extremely dirty key is lying here.~
 ~
 18 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 50 5 0
+1 50 5 0 0
 E
 key~
    An old and very dirty key.  It looks as you'd imagine a padlock key looks,

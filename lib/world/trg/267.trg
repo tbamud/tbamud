@@ -74,7 +74,7 @@ High Priest of Terror - 26714~
 switch %random.2%
   case 1
     emote utters the words, 'ordalaba'.
-    dg_cast 'charm' %actor
+    dg_cast 'charm' %actor%
   break
   case 2
     emote waves $s hands in a swirling motion.

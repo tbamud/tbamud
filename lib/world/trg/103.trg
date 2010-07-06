@@ -218,7 +218,7 @@ wait 120 sec
 Master Roshis Kamehameha Wave - 10329 ~
 1 c 7
 kame~
-if %cmd==kamehameha && %arg%==wave && %actor.fighting%
+if %cmd%==kamehameha && %arg%==wave && %actor.fighting%
   %damage% %actor.fighting% 99999
   %echoaround% %actor% @G%actor.name% clasps %actor.hisher% hands at his side
 and begins to yell "KaMeHaMeHa!!!!"@n

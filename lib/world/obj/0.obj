@@ -1210,6 +1210,7 @@ A bright orange plastic bracelet was left here.~
 12 0 0 0 0 m 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0 0
+T 195
 E
 idleout timer stayalive bracelet~
    The bracelet is made of a garish orange plastic with the letters STAYALIVE
@@ -1238,7 +1239,7 @@ An ice cream has been dropped here.~
 ~
 19 0 0 0 0 0 0 0 0 0 0 0 0
 1 0 0 0
-1 4 0 0 0
+1 4 0 0 1
 T 82
 E
 ice cream 99 flake~

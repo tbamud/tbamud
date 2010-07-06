@@ -3,7 +3,7 @@ Obj Command 100 - portal to Midgaard~
 1 c 7
 en~
 * By Rumble of The Builder Academy    tbamud.com 9091
-if %cmd.mudcommand% == enter && %arg% /= portal
+if %cmd.mudcommand% == enter && portal /= %arg%
   %send% %actor% You enter the portal.
   %echoaround% %actor% %actor.name% bravely enters the portal.
   %teleport% %actor% 3001
@@ -1071,7 +1071,7 @@ if squeeze /= %cmd% && chicken /= %arg%
   %echoaround% %actor% %actor.name% squeezes the life out of %actor.hisher% rubber chicken making a racket with its squeaking.
   %asound% A loud and annoying squeaking sound can be heard close by.
 else
-  %send %actor% What would you like to squeeze?
+  %send% %actor% What would you like to squeeze?
   return 0
 end
 ~
@@ -1239,8 +1239,8 @@ if %actor%
     %send% %actor% You discover that %self.name% has %self.hisher% hands in your wallet.
     %echoaround% %actor% %self.name% tries to steal gold from %actor.name%.
     eval coins %actor.gold% * %random.10% / 100
-    nop %actor.gold(-%coins%)
-    nop %self.gold(%coins%)
+    nop %actor.gold(-%coins%)%
+    nop %self.gold(%coins%)%
   end
 end
 ~
@@ -1250,7 +1250,7 @@ Cast spells on Greet - M135~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Cast a random spell on players that enter. But, only if they are not already
-* affected and only 10% of the time.
+* affected and only 10 percent of the time.
 switch %random.12%
   case 1
     if %actor.affect(blind)%
@@ -1351,7 +1351,7 @@ elseif %cmd.mudcommand% == buy
   else
     %load% obj %quest_item% %actor% inv
     tell %actor.name% here you go.
-    nop %actor.questpoints(-%quest_item_cost%)
+    nop %actor.questpoints(-%quest_item_cost%)%
   end
 elseif %cmd.mudcommand% == sell
   tell %actor.name% I don't want anything you have.
@@ -1556,7 +1556,7 @@ say %speech%
 ~
 #174
 Underground Spy M30 T174~
-0 b 100
+0 b 20
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 if !%self.follower%
@@ -1731,7 +1731,7 @@ if %self.worn_by%
       %damage% %actor% 2
     end  * Set the next target.
     set kickers %next_kicker%
-    wait % s
+    wait 1 s
     * Loop back.
   done
 end
@@ -1811,7 +1811,7 @@ set  text[17] Try a little kindness. As little as possible.
 set  text[18] If at first you don't succeed try management.
 set  text[19] Ahhh. I see the screw-up fairy has visited us again.
 set  text[20] Not a morning person doesn't even begin to describe it.
-set  text[21] 80% of success is just showing up.
+set  text[21] 80 percent of success is just showing up.
 set  text[22] It's lonely at the top but you eat better.
 set  text[23] When I want your opinion, I'll beat it out of you.
 set  text[24] Make it idiot proof and someone will make a better idiot.
@@ -1963,7 +1963,7 @@ Aristotle - 22~
 0 b 10
 ~
 * Aristotle - M22 - T185 By Rumble
-eval max %random.27%
+eval max %random.26%
 set txt[1] education is an ornament in prosperity and a refuge in adversity.
 set txt[2] a good man with a flaw who had come to an unjustified bad end.
 set txt[3] All paid jobs absorb and degrade the mind.
@@ -1988,7 +1988,8 @@ set txt[21] I count him braver who overcomes his desires than him who conquers h
 set txt[22] The unfortunate need people who will be kind to them; the prosperous need people to be kind to. 
 set txt[23] Youth is easily deceived, because it is quick to hope. 
 set txt[24] Teaching is the highest form of understanding. 
-set txt[25] Excellence is an art won by training and habituation. We do not act rightly because we have virtue or excellence, but we rather have those because we have acted rightly. We are what we repeatedly do. Excellence, then, is not an act but a habitset txt[27] Courage is a man's ability to handle fear. 
+set txt[25] Excellence is an art won by training and habituation. We do not act rightly because we have virtue or excellence, but we rather have those because we have acted rightly. We are what we repeatedly do. Excellence, then, is not an act but a habit
+set txt[26] Courage is a man's ability to handle fear. 
 set  speech %%txt[%max%]%%
 eval speech %speech%
 say %speech%

@@ -2,7 +2,7 @@
 Entrance to the Asylum Grounds~
    The pitted black gate lies just to the north, the crumbling stone wall
 running off east and west from the gate.  It is a wonder the gate is still
-functional, so old and decrepid it seems.  South is what used to be the main
+functional, so old and decrepit it seems.  South is what used to be the main
 entryway to a large compound of some sort, one that seems almost scholastic in
 appearance, but more somber - more militaristic.  In any case, it is certainly
 no longer in use, and has not been for some time.  
@@ -39,7 +39,7 @@ At the Old Fountain~
 center of this small court.  The fountain boasts the figure of a man standing
 proudly in the center, a thick tome tucked under his one arm and the other hand
 holding onto his lapels.  There is still some sort of liquid at the bottom of
-the fountain, but it does not appear to be safe for consumation.  
+the fountain, but it does not appear to be safe for consumption.  
 ~
 314 0 0 0 0 0
 D0
@@ -63,7 +63,7 @@ S
 The Asylum Grounds~
    Large buildings surround every side, paths which once must have been well
 tended are now choked with weeds and run between these buildings and around
-them.  Two very squarish looking buildings lie to the east and the west, a
+them.  Two very square-ish looking buildings lie to the east and the west, a
 smaller and taller building lying to the south.  To the north is, of course, the
 exit from this place.  The door to the southern-most building lies directly
 south from here.  
@@ -178,7 +178,7 @@ S
 Inner Hall of the Academy~
    The floor of this building is made from some of concrete that was once white
 concrete.  It is now stained black from the years of disuse and neglect, the
-elements getting a solid hold on its degredation.  A door lies on the east wall,
+elements getting a solid hold on its degradation.  A door lies on the east wall,
 a small hole cut in upper center area where it appears there might once have
 been glass placed.  The hallway runs north from here, a thin trail of old blood
 running along the length of the floor.  
@@ -287,9 +287,9 @@ door~
 E
 scrawlings~
    You try and make out as much of the words as you can but most of them have
-faded into smudges.  Words such as /cwmother/c0 and /cwwhore/c0 are generally
-repeated as well as some short poetry.  One reads /cwHere I sit all broken
-hearted, tried to shit but only/c0, and then it too becomes too faded to tell
+faded into smudges.  Words such as mother and whore are generally
+repeated as well as some short poetry.  One reads Here I sit all broken
+hearted, tried to shit but only, and then it too becomes too faded to tell
 what follows.  Must have been quite important - possibly runes of some sort.  
 ~
 S
@@ -447,7 +447,7 @@ D3
 0 0 31424
 S
 #31422
-Adminsitrative Office~
+Administrative Office~
    This is what appears to have been an office of some sort back when the asylum
 was still up and functional.  Scraps of wood and metal lie broken on the floor
 of the room, most likely the remains of office furniture.  
@@ -480,7 +480,7 @@ S
 Base of a Crumbling Stairway~
    A set of stairs lead upward, half of the stone and mortar that once made them
 crumbled and fallen to the ground beneath.  It would take a great deal of skill
-and foolhearty bravery to get up those steps.  There is a door to the east.  
+and foolhardy bravery to get up those steps.  There is a door to the east.  
 ~
 314 9 0 0 0 0
 D0
@@ -564,8 +564,8 @@ D2
 S
 #31429
 Office~
-   This was once obviously some higher up's office as it appears that it was
-made just for the purpose of enteraining guests and other faculty.  The floor is
+   This was once obviously some higher-up's office as it appears that it was
+made just for the purpose of entertaining guests and other faculty.  The floor is
 still covered in some small areas by chunks of ratty carpet that was once plush
 and lavish, the walls covered with the same.  
 ~
@@ -776,7 +776,7 @@ D2
 S
 #31441
 The Old Stables~
-   The blood is just as prevelant here as it is everywhere else in this asylum,
+   The blood is just as prevalant here as it is everywhere else in this asylum,
 spatters of red decorating every inch of the place.  What sort of hideous crime
 was perpatrated at this place to cover the entire place in blood?  What sort of
 hideous creature could do such a thing to such a mass of warm blooded creatures?
@@ -1174,7 +1174,7 @@ D3
 S
 #31458
 Asylum Courtyard~
-   This is the far northeast end of the courtyard.  An old decrepid chapel lies
+   This is the far northeast end of the courtyard.  An old decrepit chapel lies
 to the east, the entrance south from here.  From this angle, a tall bell tower
 can be seen rising high above the chapel, the bell still hanging inside.  A
 large stone gazebo lies in the center of the courtyard, a flickering light
@@ -1280,7 +1280,7 @@ D3
 S
 #31463
 Asylum Courtyard~
-   This is the south end of the couryard, bound by a long building who's
+   This is the south end of the courtyard, bound by a long building who's
 entrance lies to the south, one of two entrances.  The gazebo lies to the
 northeast, in the center of the courtyard.  
 ~
@@ -1462,7 +1462,7 @@ actually the bell tower itself.  A bird's eye view of the asylum is given here,
 especially of the courtyard where it is now painfully obvious that there are
 many more people moving about this place.  On the north wall is a window which
 leads out just above the roof of the chapel.  It does not appear that the tower
-would be accessable again once exited from and onto the chapel roof.  
+would be accessible again once exited from and onto the chapel roof.  
 ~
 314 9 0 0 0 0
 D0
@@ -1537,7 +1537,7 @@ D2
 0 0 31477
 S
 #31477
-Dormatory~
+Dormitory~
    This is where the students - or mental loonies - were bunked at night.  
 There are no longer any sorts of furniture items left in the room, only hunks of
 broken plaster and mortar.  A doorway opens wide into a basement stairway.  
@@ -1576,7 +1576,7 @@ D2
 0 0 31480
 S
 #31479
-Dormatory~
+Dormitory~
    This is where the students - or mental loonies - were bunked at night.  
 There are no longer any sorts of furniture items left in the room, only hunks of
 broken plaster and mortar.  
@@ -1592,7 +1592,7 @@ D3
 0 0 31477
 S
 #31480
-Dormatory~
+Dormitory~
    This is where the students - or mental loonies - were bunked at night.  
 There are no longer any sorts of furniture items left in the room, only hunks of
 broken plaster and mortar.  
@@ -1641,7 +1641,7 @@ S
 Old Cobbled Trail~
    This was once a sedate cobbled walkway, the cobbles now missing or broken and
 soaked in blood.  The trail turns south and curves out of sight to the east
-again toward a tall, squarish stone building.  
+again toward a tall, square-ish stone building.  
 ~
 314 5 0 0 0 0
 D2
@@ -1875,7 +1875,7 @@ S
 #31496
 At the Top of the Water Tower~
    There is no roof over the top of this thing, the asylum must have relied
-heavily on rain water to help replentish their supplies of water whenever nature
+heavily on rain water to help replenish their supplies of water whenever nature
 was kind.  This small platform runs around near the utmost top of tower, a wire
 mesh affair that feels none-too-sturdy.  
 ~

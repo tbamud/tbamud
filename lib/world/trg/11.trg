@@ -206,7 +206,7 @@ if %arg% == bracelet
   if %self.timer% == 0
     eval give %actor.maxmove% - %actor.move%
     eval percent (%give% * 8) / 10
-    eval power %%actor.move(%percent%)%
+eval power %actor.move(%percent%)%
     set %power%
     %send% %actor%  @CYou glow with energy as a powerful wind erupts from %self.shortdesc% and envelops you. @n
     %echoaround% %actor%  @C%actor.name% glows with energy as a powerful wind erupts from %self.shortdesc% and envelops %actor.himher%. @n

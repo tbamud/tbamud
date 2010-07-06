@@ -20,7 +20,7 @@ Small Fish (8301) Schooling~
 ~
 if %actor.vnum% == 8301
   follow %actor%
-else
+  detach all %self.id%
 end
 ~
 #8302
@@ -33,7 +33,7 @@ if %actor.vnum% == 8301
   end
 ~
 #8303
-Self-Healing on 50% HP~
+Self-Healing on half HP~
 0 l 50
 ~
 eval repair %random.3%
@@ -265,7 +265,7 @@ Polly (8313) Learn & Repeat~
 wait 1s
 emote squawks loudly.
 wait 1s
-*** 75% chance of learning phrase
+*** 75 percent chance of learning phrase
 eval polly %random.4%
 if (%polly% > 1)
 %echo% Polly the Parrot says, '%speech%'

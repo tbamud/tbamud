@@ -2,6 +2,9 @@
 Unknown~
 Dragon Plains~
 23300 23399 30 2 d 0 0 0 15 17
+M 0 23335 1 23335 	(a hermit)
+E 1 23336 99 17 	(50' of rope)
+O 0 23335 1 23335 	(canteen)
 O 0 23300 1 23300 	(a dragontooth necklace)
 M 0 23366 1 23352 	(the lost adventurer)
 G 1 23302 5 -1 	(a map of the dragon plains)
@@ -22,9 +25,6 @@ E 1 23342 99 16 	(a mace)
 O 0 23341 1 23341 	(a torch)
 M 0 23340 1 23340 	(a red dragon)
 E 1 23340 99 16 	(a red dagger)
-M 0 23335 1 23335 	(a hermit)
-E 1 23336 99 16 	(50' of rope)
-O 0 23335 1 23335 	(canteen)
 M 0 23345 1 23345 	(a two-headed cat)
 E 1 23345 255 16 	(a dirk)
 O 0 23398 1 23398 	(a ruby gem)

@@ -21,6 +21,10 @@ Zone 303 is linked to the following zones:
 301 Campus                         at 30320 (west ) ---> 30130
 301 Campus                         at 30324 (east ) ---> 30130
 301 Campus                         at 30325 (north) ---> 30130
+
+   (Mobs Stay_Zone flags have all been disabled to allow free access between
+301, 302 and 303.  Please ensure that any entrances into the area are flagged
+nomob to keep them in.  -  Parna for TBAMud.)
 ~
 S
 #30301
@@ -40,16 +44,16 @@ Thank Bob, the hallway is still to the west of here.
 ~
 0 -1 30299
 E
+bars bar ceiling~
+   The bars hanging from the ceiling look quite sturdy and it looks like you
+could swing on them rather easily...  If you were coordinated that is.  
+~
+E
 sep~
    This is Someone Else's Problem.  The only way that you are able to spot it is
 by jumping around and looking like an idiot as you try and avert your eyes so
 that it can be seen.  Unfortunately, seeing it doesn't help.  It looks like some
 sort of Italian Bistro...  Rather strange actually.  
-~
-E
-bars bar ceiling~
-   The bars hanging from the ceiling look quite sturdy and it looks like you
-could swing on them rather easily...  If you were coordinated that is.  
 ~
 S
 #30302
@@ -78,13 +82,13 @@ it.
 ~
 0 -1 30303
 E
-erp! erp~
-   Get it...  Elephants Ride Porcupines!  ...  ERP!  
-~
-E
 martian~
    It's just a joke, you are supposed to smile at the obscure gag hidden in it.
 It's almost like saying the Elephants Ride Porcupines!  
+~
+E
+erp! erp~
+   Get it...  Elephants Ride Porcupines!  ...  ERP!  
 ~
 S
 #30303
@@ -227,15 +231,15 @@ The bedroom is to the south.
 ~
 0 -1 30310
 E
-couch rocking chair~
-   The flowery pattern makes you recoil in disgust, but other than that it seems
-to be a normal piece of furniture.  
-~
-E
 coffee table~
    As you look at the coffee table, you notice a copy of the really rude Madonna
 book...  No wait, that was just censored by the Builders.  We are allowing none
 of that smut here.  You are disgusted by the flowery pattern on the table.  
+~
+E
+couch rocking chair~
+   The flowery pattern makes you recoil in disgust, but other than that it seems
+to be a normal piece of furniture.  
 ~
 S
 #30310
@@ -256,8 +260,9 @@ The balcony is to the east.
 ~
 0 -1 30311
 E
-dresser~
-   Too bad none of the clothes in here fit you at all.  
+bed~
+   You feel sleepy as you look towards this, maybe ...  Nope, none of those
+thoughts here!  
 ~
 E
 night-table~
@@ -266,9 +271,8 @@ space underneath.  The thing that makes it different is that the drawer is empty
 and the top and empty space are just that.  Empty.  
 ~
 E
-bed~
-   You feel sleepy as you look towards this, maybe ...  Nope, none of those
-thoughts here!  
+dresser~
+   Too bad none of the clothes in here fit you at all.  
 ~
 S
 #30311
@@ -291,10 +295,9 @@ This leads back to a bedroom.
 ~
 0 -1 30310
 E
-frgos~
-   No, this isn't a spelling mistake!  It's just a neat little creature that you
-have never seen before and will probably never see again after this.  After all,
-this is an illusion, or something, isn't it?  
+cows horses pigs pig cow horse~
+   These are normal farm animals.  You aren't quite sure what farm they are on
+though.  
 ~
 E
 dogs cats cat dog~
@@ -302,9 +305,10 @@ dogs cats cat dog~
 they are where they are.  
 ~
 E
-cows horses pigs pig cow horse~
-   These are normal farm animals.  You aren't quite sure what farm they are on
-though.  
+frgos~
+   No, this isn't a spelling mistake!  It's just a neat little creature that you
+have never seen before and will probably never see again after this.  After all,
+this is an illusion, or something, isn't it?  
 ~
 S
 #30312
@@ -372,10 +376,8 @@ The hallway leads away from here to the south.
 ~
 0 -1 30313
 E
-pictures snow boats walls~
-   The pictures cover the walls completely and you find it difficult to see any
-of the wall whatsoever between the pictures of snowscapes that you don't
-recognize and boats that you would love to own.  
+computer accessories~
+   This is so large and incomprehensible that you simply do not understand it.
 ~
 E
 cds cd cassettes cassette~
@@ -383,8 +385,10 @@ cds cd cassettes cassette~
 african tribal music to the latest from Neil Young.  
 ~
 E
-computer accessories~
-   This is so large and incomprehensible that you simply do not understand it.
+pictures snow boats walls~
+   The pictures cover the walls completely and you find it difficult to see any
+of the wall whatsoever between the pictures of snowscapes that you don't
+recognize and boats that you would love to own.  
 ~
 S
 #30315
@@ -447,13 +451,9 @@ The hallway extends to the east.
 ~
 0 -1 30315
 E
-news newspapers~
-   It's only the business sections, and they are old.  Type NEWS for a more
-updated edition.  
-~
-E
-pizza box~
-   It's about 3 weeks old and seems to be growing mould....  Yech.  
+stock certificates~
+   They all seem to be immensely valuable but with your awful luck, you can't
+seem to pry any of them from the walls.  
 ~
 E
 furniture~
@@ -461,9 +461,13 @@ furniture~
 as the table of the future.  
 ~
 E
-stock certificates~
-   They all seem to be immensely valuable but with your awful luck, you can't
-seem to pry any of them from the walls.  
+pizza box~
+   It's about 3 weeks old and seems to be growing mould....  Yech.  
+~
+E
+news newspapers~
+   It's only the business sections, and they are old.  Type NEWS for a more
+updated edition.  
 ~
 S
 #30318
@@ -480,14 +484,14 @@ The hallway is directly to your north.
 ~
 0 -1 30315
 E
-paul~
-   Wait...  There's one of Paul...  See it?  The one with all the darts stuck in
-it.  
-~
-E
 posters john lennon beatles~
    The majority of the posters in this room deal with John Lennon but there are
 a few of Ringo and George also.  
+~
+E
+paul~
+   Wait...  There's one of Paul...  See it?  The one with all the darts stuck in
+it.  
 ~
 S
 #30319
@@ -510,8 +514,9 @@ way through.
 door~
 2 0 -1
 E
-chair chairs couch couches~
-   You don't see any such thing.  Read the description.  
+door~
+   The door seems to be permanently closed and there does not seem to be a way
+through.  
 ~
 E
 fridge stove tv~
@@ -519,9 +524,8 @@ fridge stove tv~
 this magnitude.  
 ~
 E
-door~
-   The door seems to be permanently closed and there does not seem to be a way
-through.  
+chair chairs couch couches~
+   You don't see any such thing.  Read the description.  
 ~
 S
 #30320
@@ -691,12 +695,12 @@ Well, it's the hallway you entered from... Or is it?
 ~
 0 -1 30320
 E
-letter number lettering numbering order~
-   You aren't too sure that there is an order to the lettering scheme.  
-~
-E
 round circle circular curves curve~
    Yes, it's round.  
+~
+E
+letter number lettering numbering order~
+   You aren't too sure that there is an order to the lettering scheme.  
 ~
 S
 #30327
@@ -712,12 +716,12 @@ Well, it's the hallway you entered from... Or is it?
 ~
 0 -1 30321
 E
-letter number lettering numbering order~
-   You aren't too sure that there is an order to the lettering scheme.  
-~
-E
 round circle circular curves curve~
    Yes, it's round.  
+~
+E
+letter number lettering numbering order~
+   You aren't too sure that there is an order to the lettering scheme.  
 ~
 S
 #30328
@@ -733,12 +737,12 @@ Well, it's the hallway you entered from... Or is it?
 ~
 0 -1 30323
 E
-letter number lettering numbering order~
-   You aren't too sure that there is an order to the lettering scheme.  
-~
-E
 round circle circular curves curve~
    Yes, it's round.  
+~
+E
+letter number lettering numbering order~
+   You aren't too sure that there is an order to the lettering scheme.  
 ~
 S
 #30329
@@ -754,12 +758,12 @@ Well, it's the hallway you entered from... Or is it?
 ~
 0 -1 30324
 E
-letter number lettering numbering order~
-   You aren't too sure that there is an order to the lettering scheme.  
-~
-E
 round circle circular curves curve~
    Yes, it's round.  
+~
+E
+letter number lettering numbering order~
+   You aren't too sure that there is an order to the lettering scheme.  
 ~
 S
 #30330
