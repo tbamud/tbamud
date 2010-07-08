@@ -300,7 +300,7 @@ awakend it, its eyes glow red as it puts out one arm to open the gate.
   %force% %self% unlock door west
   wait 30 sec
   %force% %self% lock door west
-  %send %actor% The doors slam shut beind you.
+  %send% %actor% The doors slam shut beind you.
 end
 ~
 #10364
