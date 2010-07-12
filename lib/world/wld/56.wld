@@ -72,7 +72,7 @@ S
 A Path Through The Mountains~
    The narrow path turns here heading south and west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D2
 ~
 ~
@@ -87,7 +87,7 @@ A Path Through The Mountains~
    Travel is hard and slow as you almost have to climb around large
 boulders strewn about the path.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -103,7 +103,7 @@ The Edge Of The Ravine~
 bridge sways to and fro in the wind giving you access to the other
 side.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D1
 ~
 ~
@@ -134,7 +134,7 @@ The Ledge Around The Valley~
 deep within the eastern mountains.  The ledge turns north following
 the shape of the valley and a steep trail continues to the east.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D1
 ~
 ~
@@ -146,7 +146,7 @@ A Path Through The Mountains~
 east of Midgaard.  The going is rough and you constantly twist your
 ankle on the small stones lying about.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D1
 ~
 ~
@@ -162,7 +162,7 @@ On The Eastern Edge Of The Mountains~
 peaks lie to the west and rolling hills and plains open up to your
 east.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D2
 ~
 ~
@@ -177,7 +177,7 @@ In The Foothills~
    The path curves down the face of the mountain allowing you to
 move up or down the face of this missive hunk of stone.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -192,7 +192,7 @@ In The Foothills~
    The path curves down the face of the mountain allowing you to
 move up or down as you please.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D2
 ~
 ~
@@ -208,7 +208,7 @@ A Rocky Trail~
 through the trees you can see water.  The path you are on continues north
 and east from here.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -275,7 +275,7 @@ you can see why the water downstream is so dark.  The rock walls reach
 up around you blocking all exits except that to the north up onto the
 banks, and to the south where the river flows.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 There is a small path leading away from the bank just to the north.
 ~
@@ -293,7 +293,7 @@ River Ishtar~
 the mountain.  Although still deep within the rocks you can see
 faint traces of green to the east.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -307,7 +307,7 @@ S
 River Ishtar~
    The river flows east and west through the hills.  
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -322,7 +322,7 @@ River Ishtar~
    The river begins its decent out of the mountains now and continues
 its flow to the east.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -337,7 +337,7 @@ River Ishtar~
    The river flows under the wall of the city to the east and stretches
 off towards high snow capped mountains far far to the west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 grating~
@@ -355,7 +355,7 @@ and north a wide open expanse of grass.  You can just barely make out
 a road that seems to be traveling along side the river but the
 banks are to steep for you to see very far.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -371,7 +371,7 @@ River Ishtar~
 gently south.  It is hard to believe this is the same river that came
 cascading down the mountainside.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -387,7 +387,7 @@ River Ishtar~
 you don't actually see any near the river.  Perhaps the steep slopes
 pervent them from using the river.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -405,7 +405,7 @@ other side of the bridge.  Unfortunately the wind seems to be kicking
 up making the bridge sway slightly.  The path leads off through the
 mountains to the east.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D1
 ~
 ~
@@ -421,7 +421,7 @@ A Path Through The Mountains~
 and west.  You hear the squawking of a large bird over head
 most likely a buzzard waiting for you to drop.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D1
 ~
 ~
@@ -440,7 +440,7 @@ A Path Through The Mountains~
    A large boulder suddenly decides it wants to occupy the same space
 you are currently standing in.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D1
 ~
 ~
@@ -517,7 +517,7 @@ The River Of Lost Souls~
    The river flows south through a valley in the mountains.  You can see
 a small village to the west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -532,7 +532,7 @@ The River Of Lost Souls~
    The river flows south in the southern end of this wide valley.  The
 walls of the valley close in to the south.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -547,7 +547,7 @@ The River Of Lost Souls~
    The river begins to speed up as it cascades down this mountain
 crevice.  High above you a small rope bridge sways in the wind.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -562,7 +562,7 @@ The River Of Lost Souls~
    The river rapidly flows down this crack in the side of the mountain
 to the south.  Hopefully you will hear any aproaching rapids.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -578,7 +578,7 @@ The River Of Lost Souls~
 its stranglehold on the waters.  The river continues to the north 
 through a crack and flows to the south.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -597,7 +597,7 @@ notice that the rocks have split and crumbled as if torn asunder
 by some massive force.  It looks impossible to traverse.  The River
 of Lost Souls also continues to the north.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -616,7 +616,7 @@ The River Of Lost Souls~
    The river continues north and south from here through a water
 eroded valley.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -631,7 +631,7 @@ The River Of Lost Souls~
    The river continues north and south from here through a water
 eroded valley.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -646,7 +646,7 @@ The River Of Lost Souls~
    The river continues north and south from here through a water
 eroded valley.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -662,7 +662,7 @@ The River Of Lost Souls~
 mountain and north through a valley.  On a ledge above you, and to
 the west, you can see movement.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -677,7 +677,7 @@ River Ishtar~
    The river widens here, no longer bounded by rock, and flows east
 towards a plain.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -692,7 +692,7 @@ River Ishtar~
    The river continues here east to east.  There is a landing area to
 the north where you can gain access to the shore.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -712,7 +712,7 @@ River Ishtar~
 The air is dryer on this side of the continental divide and it seems
 a bit warmer.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -728,7 +728,7 @@ River Ishtar~
 plains.  To the west you see the peaks of large snow capped
 mountains and to the east you see the outline of a large city.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -742,7 +742,7 @@ S
 River Ishtar~
    The river flows east and west from here.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -757,7 +757,7 @@ River Ishtar~
    The river slows as it widens and meanders through the lowlands.  A
 small dock give access to the north shore.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -777,7 +777,7 @@ In The Mountains~
 the Ishtar and Dark rivers.
    It is funny how all the rocks look alike.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -801,7 +801,7 @@ In The Mountains~
 the Ishtar and Dark rivers.
    It is funny how all the rocks look alike.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -825,7 +825,7 @@ In The Mountains~
 the Ishtar and Dark rivers.
    It is funny how all the rocks look alike.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -850,7 +850,7 @@ In The Mountains~
 the Ishtar and Dark rivers.
    It is funny how all the rocks look alike.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -874,7 +874,7 @@ In The Mountains~
 the Ishtar and Dark rivers.
    It is funny how all the rocks look alike.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -922,7 +922,7 @@ In The Mountains~
 the Ishtar and Dark rivers.
    It is funny how all the rocks look alike.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -946,7 +946,7 @@ In The Mountains~
 the Ishtar and Dark rivers.
    It is funny how all the rocks look alike.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -970,7 +970,7 @@ In The Mountains~
 the Ishtar and Dark rivers.
    It is funny how all the rocks look alike.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 5
 D0
 ~
 ~
@@ -1263,7 +1263,7 @@ The smell of saltwater has reached you from the east.  The Dragon
 Sea cannot be far away.  To the east you can see the faint outline
 of a city and to the north you see a large expanse of grass.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -1282,7 +1282,7 @@ to the horizon.  North of here is a small dock you think you should be
 able to reach with out too much trouble.  The river stretches off to the
 west back towards New Thalos.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D1
 ~
 ~
@@ -1298,7 +1298,7 @@ The Dragon Sea~
 in all directions as far as the eye can see.  Off in the distance
 you think you might see a small dock to the north.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -1322,7 +1322,7 @@ The Dragon Sea~
 rolling in and crashing against the beach.  To the north you see a 
 small dock jutting out into the surf.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -1342,7 +1342,7 @@ The Dragon Sea~
 in all directions as far as the eye can see.  Off in the distance
 you think you might see a small dock to the west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -1362,7 +1362,7 @@ The Dragon Sea~
 in all directions as far as the eye can see.  Off in the distance
 you think you might see a small dock to the west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -1501,7 +1501,7 @@ The Dragon Sea~
 all directions as far as the eye can see.  Off in the distance you think
 you might see a small dock to the west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -1521,7 +1521,7 @@ The Dragon Sea~
 distance you can see an island on the horizon.  To the west you see
 the mainland.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 7
 D0
 ~
 ~
@@ -1546,7 +1546,7 @@ pylons that support the structure.  The murky water clouds you vision
 as you gaze westward, but you think you can make out an iron grating
 in that direction.
 ~
-56 1 0 0 0 0
+56 1 0 0 0 7
 D3
 ~
 grate~
@@ -1562,7 +1562,7 @@ The Lair Of The Ixitxachitl~
 last of its meal.  Swirling around quickly as you intrude upon his
 meal the large sting ray attacks!
 ~
-56 1 0 0 0 0
+56 1 0 0 0 7
 D1
 ~
 grate~

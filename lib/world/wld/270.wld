@@ -76,7 +76,7 @@ S
 The Icy-Mountain~
    The mountain trail ends here just beneath the top. 
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D2
 ~
 ~
@@ -115,7 +115,7 @@ S
 The Icy Mountain~
    You are at a dead-end in the mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D2
 ~
 ~
@@ -125,7 +125,7 @@ S
 The Icy Mountain~
    You are at a dead-end in the mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D1
 ~
 ~
@@ -135,7 +135,7 @@ S
 The Icy Mountain~
    You are on a trail winding along the mountainside.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D1
 ~
 ~
@@ -153,7 +153,7 @@ S
 The Icy Mountain~
    You are on a trail, still leading along the mountainside.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D0
 ~
 ~
@@ -172,7 +172,7 @@ The Icy Mountain~
    You are on a trail in the mountain.  North of here is a 
 cavern, which might lead to a cave.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D0
 ~
 ~
@@ -201,7 +201,7 @@ S
 The Icy Mountain~
    You are on a trail running along the mountainside.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D0
 ~
 ~
@@ -220,7 +220,7 @@ The Icy Mountain~
    You are on a trail in the mountain.  The trail leads west and
 south.  To your east is a crack in the mountain wall.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D1
 ~
 ~
@@ -238,7 +238,7 @@ S
 The Icy Mountain~
    You are on a trail somewhere in this neverending mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D2
 ~
 ~
@@ -272,7 +272,7 @@ S
 The Icy Mountain~
    You are on a mountain trail leading up along the moutainside.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D0
 ~
 ~
@@ -291,7 +291,7 @@ The Icy Mountain~
    You are on a mountain trail leading up along the side of the 
 mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D0
 ~
 ~
@@ -309,7 +309,7 @@ S
 The Icy Mountain~
    You are on a trail in the mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D0
 ~
 ~
@@ -327,7 +327,7 @@ S
 The Icy Mountain~
    You are on a trail in the mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D2
 ~
 ~
@@ -341,7 +341,7 @@ S
 The Icy Mountain~
    You are on a trail in the mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D2
 ~
 ~
@@ -472,7 +472,7 @@ S
 The Icy Mountain~
    You are on a trail winding along the mountainside.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D0
 ~
 ~
@@ -584,7 +584,7 @@ The Icy Mountain~
    You are on a trail leading up the moutain.  There is some loose 
 crabble lying on the ground.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 5
 D0
 ~
 ~

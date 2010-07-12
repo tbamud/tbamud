@@ -6,7 +6,7 @@ the left pillar of the gateway.  It is made of nicely polished brass.  Because
 of this, it looks rather important (as all signs go).  The road continues east
 and west from your present location.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 5
 D1
 Campus Crescent continues to the east.
 ~
@@ -225,7 +225,7 @@ conscientious behaviour of the politically correct students (as they all seem
 to be).  The road continues east and west.  The bookstore is to the north.  An
 odd, round-shaped building lies to the south.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 5
 D0
 Well, as I said earlier, the bookstore is to the north!  Try looking at it.
 ~
@@ -265,7 +265,7 @@ Division Road~
    Asphalt pavement lies heinously beneath your feet.  The road continues north
 and south.  A nice cobblestone road leads off to the west.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 5
 D0
 Division Road continues north.
 ~
@@ -567,7 +567,7 @@ Division Road~
 south.  A non-descript road leads off to the west.  A building lies to the
 north.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 5
 D0
 The Jock Hardy Arena is to the north.
 ~
@@ -678,7 +678,7 @@ Division Road~
    Asphalt pavement lies heinously beneath your feet.  The road continues north
 and south.  A tree has been planted here.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 5
 D0
 Division Road continues north.
 ~
@@ -1120,7 +1120,7 @@ Shoppe.  North of you is the back hall with its bank machines, and south is the
 exit to Union Street.  This area is usually rather busy with students as this
 is the University Student Centre.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D0
 To the north you can see the back hall, complete with numerous bank
 machines, but of course you already knew that, didn't you?
@@ -1153,7 +1153,7 @@ The Back Hall~
 the north, and a games room to the east.  The Central Annex is located to the
 south whilst the street is located directly to your west.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D0
 You can distinctly see a post office here, it might have a message in it, but
 you are not quite sure.
@@ -1182,7 +1182,7 @@ Jock Hardy Lobby~
 achievements of the students and alumni.  Exits branch off in many directions.
 There is a sign here.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D0
 There is a stairway to the north.
 ~
@@ -1530,7 +1530,7 @@ S
 Stairway~
    As the title implies, there is a set of stairs here which lead up.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D2
 The main lobby is to the south.
 ~
@@ -1546,7 +1546,7 @@ S
 Hallway~
    The hallway leads off west into the locker room, and east into the lobby.  
 ~
-301 9 0 0 0 0
+301 9 0 0 0 5
 D1
 The main lobby is east.
 ~
@@ -1599,7 +1599,7 @@ The Gym~
 big, but it's pretty big.  The locker rooms are down the stairs.  The equipment
 room lies to the east.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D0
 The gym continues to the north.
 ~
@@ -1626,7 +1626,7 @@ The Gym~
    Think big.  Think very big.  Think bigger still.  Well, this gym isn't that
 big, but it's pretty big.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D2
 The gym continues to the south.
 ~
@@ -1643,7 +1643,7 @@ The Gym~
    Think big.  Think very big.  Think bigger still.  Well, this gym isn't that
 big, but it's pretty big.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D1
 The gym continues to the east.
 ~
@@ -1660,7 +1660,7 @@ The Gym~
    Think big.  Think very big.  Think bigger still.  Well, this gym isn't that
 big, but it's pretty big.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D0
 The gym continues to the north.
 ~
@@ -1677,7 +1677,7 @@ The Hall To The Arena~
    This hall leads to the arena (that is if you are coming from the lobby).  
 Otherwise, this hall leads to the lobby (from the arena, that is).    
 ~
-301 9 0 0 0 0
+301 9 0 0 0 5
 D1
 That is the direction to the arena.
 ~
@@ -1818,7 +1818,7 @@ of beer, and the perennial favourite, Moshing.  You find it very difficult to
 move around, so decide to limit yourself to the bar.  There is only one exit...
 The one you entered by (down if you can't remember).    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D5
 The only way out is down.
 ~
@@ -1928,7 +1928,7 @@ The Special Hidden Room~
    This room is completely empty except for the things you can see in it.  The
 only thing of real importance you can see is the plank in the ceiling.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 5
 D4
 Back to the Infobank we go.
 ~
@@ -2184,7 +2184,7 @@ Hallway~
    This hallway has three conventional exits and a door.  East, south and west
 are conventional whilst the north wall holds a door.    
 ~
-301 9 0 0 0 0
+301 9 0 0 0 5
 D0
 This seems to be an office.
 ~
@@ -2355,7 +2355,7 @@ The Greasepole~
    SPLASH!!!  Down the pole you slide...  You arrive at the bottom again...  
 As usual the exits are to the south and up.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 5
 D2
 The path leads off to the south.  It looks like a good place to go.
 ~
@@ -2375,7 +2375,7 @@ S
 The Greasepole~
    The only exits are up and down.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 5
 D4
 The pole looms ever high above you.
 ~
@@ -2395,7 +2395,7 @@ S
 The Greasepole~
    The only exits are up and down.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 5
 D4
 The pole looms ever high above you.
 ~
@@ -2415,7 +2415,7 @@ S
 The Greasepole~
    The only exits are up and down.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 5
 D4
 The pole looms ever high above you.
 ~
@@ -2435,7 +2435,7 @@ S
 The Greasepole~
    The only exits are up and down.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 5
 D4
 The pole looms ever high above you.
 ~
@@ -2455,7 +2455,7 @@ S
 The Greasepole~
    The only exits are up and down.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 5
 D4
 The pole looms ever high above you.
 ~
@@ -2475,7 +2475,7 @@ S
 The Greasepole~
    The only exits are up and down.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 5
 D4
 The pole looms ever high above you.
 ~
@@ -2495,7 +2495,7 @@ S
 The Greasepole~
    The only exits are up and down.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 5
 D4
 The pole doesn't loom quite so high above you any more.
 ~

@@ -568,7 +568,7 @@ foothills towards the west, where you can see plains quite a ways
 away.  To the east you spot a small worn trail leading up the side
 of the mountain.
 ~
-40 0 0 0 0 0
+40 0 0 0 0 5
 D1
 ~
 ~
@@ -584,7 +584,7 @@ A Trail Up The Mountain~
 trail.  The trail curves its way up the side of the mountain towards
 the top and westwards down the mountain into the foothills below.
 ~
-40 0 0 0 0 0
+40 0 0 0 0 5
 D3
 ~
 ~
@@ -602,7 +602,7 @@ stand on is close to thirty metres across and a small gouge in the north
 side of it looks to lead to a small cavern.  A small trail leads down
 towards a valley that was hidden away on the east side of the mountain.
 ~
-40 0 0 0 0 0
+40 0 0 0 0 5
 D0
 ~
 ~
@@ -1275,7 +1275,7 @@ is much smaller than you had expected, being maybe thirty feet long.  It
 is quite surprising how deceptive distances can be this high up in the
 mountains, isn't it?
 ~
-40 0 0 0 0 0
+40 0 0 0 0 5
 D3
 ~
 ~
@@ -1293,7 +1293,7 @@ trail that you just noticed on the eastern side of the valley,
 leading up the eastern mountain that is blocking most of the sky
 from you.
 ~
-40 0 0 0 0 0
+40 0 0 0 0 5
 D1
 ~
 ~
@@ -1310,7 +1310,7 @@ mountain to the east.  The trail leading up it to the east seems
 to vanish before your eyes, but you are quickly able to find it
 once again.  A trail leads up the mountain to the west as well.
 ~
-40 0 0 0 0 0
+40 0 0 0 0 5
 D1
 ~
 ~

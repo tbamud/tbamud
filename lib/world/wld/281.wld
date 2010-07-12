@@ -473,7 +473,7 @@ Bubbles raise to the surface and at the same moment you feel a touch
 on your feet.  This feels ominous, as though there were something
 housing the pool.
 ~
-281 132 0 0 0 0
+281 132 0 0 0 6
 D4
 You see some hammocks ...*burb*.
 ~
@@ -750,7 +750,7 @@ mountain.  Its water is clear and very refreshive, and you can see the
 sunshine make it sparkle splendid at the upper course of the brook where
 lies a picturesque waterfall.
 ~
-281 4 0 0 0 0
+281 4 0 0 0 6
 D0
 You see the mountainside.
 ~
@@ -785,7 +785,7 @@ Climbing on the mountainside~
 continues both north and west.  Dark fungus appears to grow profuse
 here.      
 ~
-281 4 0 0 0 0
+281 4 0 0 0 5
 D0
 You see some large stones.
 ~
@@ -813,7 +813,7 @@ Before a gigantic boulder~
 before you.  It is black all over and partly of some glasslike material.  
 Some remnants lie under it.  The plateau extends to the east.
 ~
-281 0 0 0 0 0
+281 0 0 0 0 5
 D1
 You see the plateau.
 ~
@@ -831,7 +831,7 @@ be quite sharp, it is wise to be careful, this is not the day to get
 impaled.  To the north is what appears a brink.  Also, the mountain-
 side above remains climbable.
 ~
-281 0 0 0 0 0
+281 0 0 0 0 5
 D0
 You can walk there.
 ~
@@ -849,7 +849,7 @@ The brink of a gorge~
 very smooth and rush straight down, where nothing but a jet-black empti-
 ness can be seen.  
 ~
-281 0 0 0 0 0
+281 0 0 0 0 5
 D2
 You see some edges.
 ~
@@ -864,7 +864,7 @@ flying round the summit and vanishing into the canyons.  You can still
 continue to the north but it seems difficult to ascend the hillside any 
 higher...
 ~
-281 0 0 0 0 0
+281 0 0 0 0 5
 D0
 You see more mountainside.
 ~
@@ -882,7 +882,7 @@ On the mountainside~
 It would take a long time to find a reasonable way to climb forward.  
 And if one existed it would still be very arduous at all events.
 ~
-281 0 0 0 0 0
+281 0 0 0 0 5
 D2
 You see more mountainside.
 ~

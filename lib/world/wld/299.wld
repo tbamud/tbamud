@@ -398,7 +398,7 @@ at a location where, coincidentally, there does not happen to be a floor
 at all.  However, the stairwell continues above you and below you, as it
 wanders merrily on its way.
 ~
-299 8 0 0 0 0
+299 8 0 0 0 9
 D4
 The wooden stairs continue as normal above you.
 ~
@@ -1301,7 +1301,7 @@ A Bottomless Pit~
 your voyages.  It seems that this pit falls a long, long way, and falling
 to the bottom just might take forever...
 ~
-299 9 0 0 0 0
+299 9 0 0 0 9
 D0
 Looking northwards, you notice that the crypt continues happily.
 ~
@@ -1319,7 +1319,7 @@ Down The Bottomless Pit~
 like this is going to end anytime soon.  The sides of the pit are quite
 smooth making it obviously impossible to slow your fall.
 ~
-299 9 0 0 0 0
+299 9 0 0 0 9
 D4
 The pit keeps going upwards as far as you can see.
 ~
@@ -1339,7 +1339,7 @@ wonder just how far from the top you are, and then think to yourself,
 'It doesn't really matter where the top is, I just want to know where
 the bottom is.'  The pit seems to go on in darkness for a good long way.
 ~
-299 9 0 0 0 0
+299 9 0 0 0 9
 D4
 The pit keeps going upwards as far as you can see.
 ~
@@ -1360,7 +1360,7 @@ point, it is probably that the stone has been melted to that consistency.
 The pits continues upwards into the darkness and down a short distance
 into the lava.
 ~
-299 8 0 0 0 0
+299 8 0 0 0 9
 D4
 The pit keeps going upwards as far as you can see.
 ~

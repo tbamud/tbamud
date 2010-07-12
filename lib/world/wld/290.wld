@@ -78,7 +78,7 @@ A Tunnel~
 gives you visibility here.  There are two exits.  One is to the east and one
 above you.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D0
 A LUCKY blocks your view of whatever is north.
 ~
@@ -100,7 +100,7 @@ A Tunnel~
    This tunnel is filled with water.  There are exits to the east and west.  
 The tunnel stretches off in both directions.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D1
 The tunnel stretches off to the east.
 ~
@@ -118,7 +118,7 @@ A Tunnel~
 you.  Fortunately, there are two exits, one to the west and one through a hole
 in the floor.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D3
 The tunnel stretches off to the west.
 ~
@@ -139,7 +139,7 @@ Tunnel End~
    The tunnel ends here.  There is a hole in the ceiling and a large door to
 the west.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D3
 There is a door here.
 ~
@@ -166,7 +166,7 @@ east you can see a door and to the west you can see a waterfilled hallway
 stretching off.  The whirlpool is threatening to pull you down, but you are
 certain that you would drown in it.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D0
 There is a strange store that seems suspiciously out of place just to
 the north.
@@ -213,7 +213,7 @@ A Hallway~
    The hallway naturally twists so that is seems to head east and down, but the
 hallway doesn't seem to be curved or bent in any way.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D1
 There is a large room to the east.
 ~
@@ -234,7 +234,7 @@ S
 A Hallway~
    The hallway here is bent in a big way.  It goes up and east.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D1
 There is a large chamber to the east.
 ~
@@ -265,7 +265,7 @@ The Throne Room Annex~
 leads off to the west.  The room is lavishly decorated but there is not much to
 see.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D1
 The Throne Room looms to the east.
 ~
@@ -288,7 +288,7 @@ hole in the ceiling.  The throne almost dominates the room.  No one is sitting
 in it.  The wall is decorated to look like pillars surround the room.  The
 annex is to the west whilst you are not sure what is above.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D3
 The Throne Room Annex is to the west.
 ~
@@ -316,7 +316,7 @@ ugly.  At least in your opinion it is...  You are certain that the lizardmen
 like it though.  There are two exits.  Down and through the large door to the
 east.    
 ~
-290 9 0 0 0 0
+290 9 0 0 0 6
 D1
 A large door blocks your way.
 ~

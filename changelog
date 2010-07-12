@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Jul 12 2010] - Rumble
+  Fixed bad sector types. (thanks Insomnia)
 [Jul 06 2010] - Rumble
   Numerous typo fixes and World files added to SVN. (thanks Insomnia)
   Fixed medit alignment menu to return you to stats menu after entry. (thanks Tink)

@@ -886,7 +886,7 @@ through the forest from the northwest.  The water is not that clear, but
 you can see fish swimming around below you.  The bank is clear to the
 south, providing a safe place to get back to the field.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 7
 D2
 Some animals have gathered on the bank to watch you, curious about what you
 are doing.
@@ -997,7 +997,7 @@ all about you.  You could easily climb back down to the ground, or continue up
 the tree.  One large branch juts outward to the west, possibly providing a
 third choice of exit.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 5
 D3
 This limb looks large and strong enough for you to walk most of the way along
 its length to the west.
@@ -1113,7 +1113,7 @@ branch.  It would seem some large forest cat lives nearby, so you had better be
 careful!  You can continue a bit farther up the tree, or descend to limbs that
 don't sway so much.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 5
 D4
 Above you the tree narrows farther, but it still looks like you could climb up
 there.  A feline shape is pacing about above you, trying to get to a large
@@ -1165,7 +1165,7 @@ see Midgaard, and to the south the river runs through a deep chasm.  North and
 west of here you can see another small village, and on the western horizon you
 see a large mountain.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 5
 D5
 Below you many of the animals you frightened earlier have returned to their
 various nests and homes.  You can see a small hint of the path far below you

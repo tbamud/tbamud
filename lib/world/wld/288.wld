@@ -581,7 +581,7 @@ On the Mystic Chains~
 Up above you see the chains continue upwards.  But a forcefield prevents you
 from going further upwards.    
 ~
-288 4 0 0 0 0
+288 4 0 0 0 5
 D0
 ~
 ~
@@ -738,7 +738,7 @@ On a Mountain Peak~
    You are on the highest peak of the Universe.  You look around and notice
 clouds below you.  One of the clouds resembles a goat-like form.    
 ~
-288 0 0 0 0 0
+288 0 0 0 0 5
 D1
 ~
 ~
@@ -753,7 +753,7 @@ Inside a Waterfall~
    The noise is deafening.  You are about to take a drink when you realize that
 the water is being poured out of a vessel of mind-boggling proportions!    
 ~
-288 0 0 0 0 0
+288 0 0 0 0 5
 D3
 ~
 ~
@@ -764,7 +764,7 @@ Inside a Gigantic Clam~
    You feel uneasy here as if some evil magic is being cast on you.  You
 suspect something fishy is going on in here.    
 ~
-288 0 0 0 0 0
+288 0 0 0 0 5
 D3
 ~
 ~
@@ -776,7 +776,7 @@ End of the Mystic Chains~
 small landing on which you can climb.  However, there seems to be another
 forcefield blocking your way.    
 ~
-288 4 0 0 0 0
+288 4 0 0 0 5
 D4
 You see the forcefield of Summer.
 ~

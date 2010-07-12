@@ -1082,7 +1082,7 @@ is low, allowing passage without a boat.  The walls and floor are covered
 with algae and slime producing treacherous footing conditions.  There are
 exits to the north, south and east.
 ~
-120 12 0 0 0 0
+120 12 0 0 0 6
 D0
 You can see a wide street to the north.
 ~
@@ -1269,7 +1269,7 @@ the clouds.  The sun is shining brilliantly here and the clouds below
 look like balls of cotton.  The path that you have been walking on is
 damp and the scent of lilac is in the air.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 5
 D5
 You see a damp path leading back down the mountain.
 ~
@@ -1284,7 +1284,7 @@ is low, allowing passage without a boat.  The walls and floor are covered
 with algae and slime, producing treacherous footing conditions.  There are
 exits in all four cardinal directions.
 ~
-120 8 0 0 0 0
+120 8 0 0 0 6
 D0
 The aqueduct continues.
 ~
@@ -1423,7 +1423,7 @@ A Mountain Path~
 raining and there are small puddles everywhere.  You are just below the
 clouds and the view of the surrounding countryside is breathtaking.  
 ~
-120 0 0 0 0 0
+120 0 0 0 0 5
 D4
 The trail leads up and enters the clouds.
 ~
@@ -1447,7 +1447,7 @@ is low, allowing passage without a boat.  The walls and floor are covered
 with algae and slime, producing treacherous footing conditions.  There are
 exits in all four cardinal directions.
 ~
-120 8 0 0 0 0
+120 8 0 0 0 6
 D0
 The aqueduct continues.
 ~
@@ -1505,7 +1505,7 @@ Every thing is lush and green here and it appears to have been raining
 recently.  'This would be an ideal place for a picnic.' , you think to
 yourself.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 5
 D4
 You see a small trail leading further up the mountain.
 ~
@@ -1535,7 +1535,7 @@ with algae and slime, producing treacherous footing conditions.  A valley
 lies to the south and the other cardinal directions lead further into the
 aqueduct.
 ~
-120 8 0 0 0 0
+120 8 0 0 0 6
 D0
 The aqueduct continues.
 ~
@@ -1604,7 +1604,7 @@ A Mountain Path~
 Everything is green and it seems like eternal spring - this is Mother Nature
 at her finest.  It is possible to descend into a tranquil valley from here.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 5
 D4
 The path leads further up the mountain.
 ~

@@ -260,7 +260,7 @@ On the River~
 north, you think you may see some sort of clearing, but no trail is visible form
 here.  South lies nothing but deep forest.  
 ~
-258 0 0 0 0 0
+258 0 0 0 0 7
 D2
 A light section of forest.
 ~
@@ -296,7 +296,7 @@ continues east and west, with a bit more light to the east.  To the north, you
 think you may be able to see a trail, though from the looks of it, the trail is
 not used much at all.  
 ~
-258 0 0 0 0 0
+258 0 0 0 0 7
 D0
 More forest.
 ~
@@ -497,7 +497,7 @@ road.  Most of the tracks seem to head east, so you must assume that there is
 something of interest in that direction, however it is hard to see over the hill
 which you are slowly climbing.  
 ~
-258 0 0 0 0 0
+258 0 0 0 0 5
 D1
 ~
 ~
@@ -884,7 +884,7 @@ On a Rock Landing~
 leading down to the sea shore.  The footing looks to be treacherous at best, so
 be careful!  
 ~
-258 0 0 0 0 0
+258 0 0 0 0 5
 D0
 ~
 ~
@@ -930,7 +930,7 @@ Along the Cliff~
 whatever lies in that direction.  To the west, the trail heads it way along, not
 really seeming to head anywhere.  
 ~
-258 0 0 0 0 0
+258 0 0 0 0 5
 D1
 You see the main floor of the Inn to the east.
 ~

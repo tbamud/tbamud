@@ -915,7 +915,7 @@ looks like a dropoff into absolute nothingness.  Rocks skitter as you slide
 around the road.  It really looks quite dangerous--the hill would be a much
 safer way to look at the view.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 5
 D0
 You can see the bottom of Vice Hill to your north. It looks comparatively safe.
 ~
@@ -939,7 +939,7 @@ looks like a dropoff into absolute nothingness.  Rocks skitter as you slide
 around the road.  It really looks quite dangerous--you'd be much better going
 back--now.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 5
 D0
 You can still go back--it's a better idea to anyways.
 ~
@@ -962,7 +962,7 @@ like a dropoff into absolute nothingness.  Rocks skitter as you slide around
 the road.  It really looks quite dangerous--you'd be much better going
 back--now.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 5
 D0
 You can still go back--it's a better idea to anyways.
 ~
@@ -985,7 +985,7 @@ it much better.  Each step brings you closer to the edge--it looks very danger-
 ous, and the cliff's edge is quite close now.  The ground is beginning to shake
 under your weight.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 5
 D0
 You can still go back--it's a better idea to anyways.
 ~
@@ -1008,7 +1008,7 @@ Cliff's Edge~
 only got a few seconds to see it, as you're squashed down below.  Too bad
 shrieks don't make you fly.    
 ~
-267 516 0 0 0 0
+267 516 0 0 0 5
 S
 T 26710
 #26745

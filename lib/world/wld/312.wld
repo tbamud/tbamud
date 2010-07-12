@@ -556,7 +556,7 @@ Pond~
    The water ripples slightly underneath, the bottom of the pond visible as if
 viewed through a thick pane of moving glass.  
 ~
-312 0 0 0 0 0
+312 0 0 0 0 7
 D0
 ~
 ~
@@ -576,7 +576,7 @@ Pond~
 meandering path the whole way.  The pond itself must be fed from a spring of
 some sort which replenishes the supply in a constant flow.  
 ~
-312 0 0 0 0 0
+312 0 0 0 0 7
 D1
 ~
 ~
@@ -596,7 +596,7 @@ Pond~
 presence.  This place seems so serene, so calm and peaceful it is almost
 impossible to believe any sort of scourge could exist on this isle.  
 ~
-312 0 0 0 0 0
+312 0 0 0 0 7
 D0
 ~
 ~
@@ -612,7 +612,7 @@ Pond~
 even the smallest amounts of light.  The water is so crystal clear that the
 bottom of the pond can be seen simply by looking down.  
 ~
-312 0 0 0 0 0
+312 0 0 0 0 7
 D2
 ~
 ~
@@ -717,7 +717,7 @@ flat top which affords a beautiful view of the sea.  Not only is the view
 beautiful, but it is the exact part of the sea where the suplly ships come in
 and drop off the foodstuffs which the inhabitants of this place thrive upon.  
 ~
-312 0 0 0 0 0
+312 0 0 0 0 5
 D1
 ~
 ~
@@ -911,7 +911,7 @@ A Tepid Pond~
 of noxious chemicals.  A faint glaze lies across the surface of the pond, the
 slime of dirt and grime from the diseased people which use this water.  
 ~
-312 0 0 0 0 0
+312 0 0 0 0 7
 D1
 ~
 ~
@@ -1141,7 +1141,7 @@ can no longer be walked along to the north, as the volcano rises high into the
 sky here.  No trail leads up the volcano from this point, however one is visible
 around the base a bit to the east.  
 ~
-312 0 0 0 0 0
+312 0 0 0 0 5
 D2
 ~
 ~
@@ -1153,7 +1153,7 @@ Cliff's Edge~
 low huts and an animal pen in sight.  South of here is a trail skirting the edge
 of the cliff which descends down to the beach below.  
 ~
-312 0 0 0 0 0
+312 0 0 0 0 5
 D0
 ~
 ~
@@ -1173,7 +1173,7 @@ Cliff's Edge~
 access to the beach below.  A trail follows along the edge of the cliff to the
 north, a small encampment visible in that direction.  
 ~
-312 4 0 0 0 0
+312 4 0 0 0 5
 D0
 ~
 ~
@@ -1257,7 +1257,7 @@ a few inches deep at its deepest point.  Just up the hill a bit is the pond from
 this water emanates.  Through a tangle of bracken and jungle foliage, the
 trickle flows downhill toward the waiting sea.  
 ~
-312 256 0 0 0 0
+312 256 0 0 0 6
 D1
 ~
 ~
@@ -1273,7 +1273,7 @@ Narrow Gully~
 albeit a bit muffled, just below.  Off to the west and uphill a bit the water
 runs in this direction in a light but continuous flow.  
 ~
-312 256 0 0 0 0
+312 256 0 0 0 6
 D3
 ~
 ~
@@ -1291,7 +1291,7 @@ sea, running down in a light but steady flow.  Jungle foliage encroaches on both
 sides, making the way quite cramped, sometimes only allowing passage to one who
 would turn sideways to pass.  
 ~
-312 256 0 0 0 0
+312 256 0 0 0 6
 D4
 ~
 ~

@@ -1682,7 +1682,7 @@ you wish to exit the city via water.  To do so they must open the iron
 grating in front  of you from above.  The horrid smell of the dump wafts
 down from the shore.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 7
 D1
 ~
 ~
@@ -1699,7 +1699,7 @@ see couples strolling along the road.  To the west you see the southern
 bridge and to the east you see the iron grating protecting the city from
 unwanted guests.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 7
 D1
 ~
 grating~
@@ -1716,7 +1716,7 @@ city construction crews have just recently finished the small ladder
 giving common-folk easy access to the river.  To the west and east you
 see the river flowing by the city.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 7
 D1
 ~
 ~
@@ -1737,7 +1737,7 @@ the docks near the ramp north of here make navigation a bit more trying.
 As the river flows eastward you can see the southern bridge in that
 direction.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 7
 D0
 ~
 ~
@@ -1757,7 +1757,7 @@ River Ishtar~
 through the city.  Strong guards above await word to open the portal
 should any citizen require exit or entry.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 7
 D1
 ~
 ~

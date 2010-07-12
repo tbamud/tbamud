@@ -228,7 +228,7 @@ over the now rocky road. Stray critters scamper about, praying
 to their critter gods that you will quickly leave the area. 
    The road here curves to the south.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 5
 D2
 You see more of the mountainous road.
 ~
@@ -267,7 +267,7 @@ of rocks and dust particles in the path seems to rise with
 the number of steps you take.  A trail leads off to the east, 
 and the path continues south.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 5
 D0
 You see a dangerous road, almost unfit for travel.
 ~
@@ -292,7 +292,7 @@ the rest of the desert far below you. Off in the distance you see
 a huge landmark, that looks strikingly similar to an enormous 
 crater. 
 ~
-269 0 0 0 0 0
+269 0 0 0 0 5
 D1
 You gaze upon the Southern desert.
 ~
@@ -308,7 +308,7 @@ S
 The Desert Mountains~
    You grow weary as you trod through these dry mountains.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 5
 D0
 ~
 ~
