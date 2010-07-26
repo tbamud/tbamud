@@ -109,7 +109,7 @@ bugbear hide~
 a bugbear hide~
 A bugbear hide lies stinking in a heap.~
 ~
-9 0 0 0 0 al 0 0 0 0 0 0 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
 9 10 0 1 0
 #32311
@@ -239,7 +239,7 @@ gray wings of flight~
 the gray wings of flight~
 A pair of leathery, gray wings have been left here.~
 ~
-9 0 0 0 0 ao 0 0 0 0 0 0 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
 14 10 0 20 0
 A
@@ -303,7 +303,7 @@ metal scale hide~
 a metal scale hide~
 A huge metal scale hide has been left here.~
 ~
-9 0 0 0 0 ak 0 0 0 0 0 0 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
 14 10 0 20 0
 A
@@ -339,7 +339,7 @@ A
 A
 18 3
 #32332
-hook hand~
+hideous hook hand~
 a hideous hook hand~
 A hideous-looking hook hand has been left on the floor.~
 ~

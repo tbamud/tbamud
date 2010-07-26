@@ -5,7 +5,7 @@ A key of dark black metal is here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28701
 key black~
 a black key~
@@ -13,7 +13,7 @@ A black key of very hard metal lies here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28702
 key runed~
 a runed key~
@@ -21,7 +21,7 @@ A key graven with evil runes lies in the dust.~
 ~
 18 bcdh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28703
 key pale green~
 a pale green key~
@@ -29,7 +29,7 @@ A key of pale-green oxidized copper lies here.~
 ~
 18 cdh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28704
 key iron~
 an iron key~
@@ -37,7 +37,7 @@ A key of dull iron lies in the dirt.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28705
 key small black~
 a small black key~
@@ -45,7 +45,7 @@ A small, black skeleton key lies in the dirt.~
 ~
 18 bcdh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28706
 key bronze~
 a bronze key~
@@ -53,7 +53,7 @@ A bronze key with intricate wards lies here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28707
 key huge iron~
 a huge iron key~
@@ -61,7 +61,7 @@ A huge key, made of black iron, lies here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-5 1 0 0
+5 1 0 0 0
 #28708
 key blued steel~
 a blued steel key~
@@ -69,7 +69,7 @@ A small key of blued steel lies here.~
 ~
 18 ac 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28709
 key red~
 a red key~
@@ -77,7 +77,7 @@ A red-colored steel key lies unnoticed in the dust.~
 ~
 18 c 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28710
 key golden~
 a golden key~
@@ -85,7 +85,7 @@ A golden key brazed to a fine gold ring lies here.~
 ~
 18 ac 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28711
 key silver~
 a silver key~
@@ -93,7 +93,7 @@ An ornate silver key lies on the ground, unwanted.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28712
 key copper~
 a copper key~
@@ -101,7 +101,7 @@ An iron key has been copper plated to keep off rust.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28713
 cheese~
 some cheese~
@@ -109,7 +109,7 @@ A large wedge of cheddar cheese gathers a lovely mold here.~
 ~
 19 0 0 0 0 ao 0 0 0 0 0 0 0
 8 0 0 0
-2 50 0 0
+2 50 0 0 0
 #28714
 key bright iron~
 a bright iron key~
@@ -117,7 +117,7 @@ This bright iron key can open a lock, somewhere.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28715
 juice brew strange bottle juice~
 a bottle~
@@ -125,7 +125,7 @@ A large lumpy bottle of some strange brew is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 9 1
-8 1 0 0
+8 1 0 0 0
 #28716
 chest bronze~
 an ugly bronze chest~
@@ -133,7 +133,7 @@ A bronze chest, made ugly with grotesque bas-reliefs, stands here.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 200 15 8105 0
-0 0 0 0
+0 0 0 0 0
 #28717
 potion oily black~
 an oily black potion~
@@ -141,7 +141,7 @@ A bottle of oily black liquid lies on its side.~
 ~
 10 g 0 0 0 a 0 0 0 0 0 0 0
 25 27 27 46
-2 50 0 0
+2 50 0 0 0
 #28718
 crown~
 King Korbor's crown~
@@ -149,7 +149,7 @@ The crown of the Lonoyan king rolls by and falls flat with a clang.~
 ~
 9 aeik 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-2 250 0 0
+2 250 0 0 0
 E
 crown~
    As you turn the crown over in your hands, you feel twice the warrior you used
@@ -169,7 +169,7 @@ A bottle of Inver House blended whiskey lies here.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 20 14 5 0
-19 5 0 0
+19 5 0 0 0
 E
 bottle~
    It is sealed with a metal cap.  You KNOW this stuff is bad,bad,bad.  It is
@@ -182,7 +182,7 @@ A steaming bowl of Polish hunters' stew has been left here.~
 ~
 19 0 0 0 0 ao 0 0 0 0 0 0 0
 10 0 0 0
-3 12 0 0
+3 12 0 0 0
 E
 bowl stew bigos~
    It is the famous Polish hunters' stew that was immortalized in Adam
@@ -197,7 +197,7 @@ A lovely yellow apple with gold flecks and red cheeks lies here.~
 ~
 19 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
-1 3 0 0
+1 3 0 0 0
 #28722
 walnuts nuts~
 some walnuts~
@@ -205,7 +205,7 @@ The squirrels have left a few nuts here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-2 10 0 0
+2 10 0 0 0
 #28723
 shirt~
 a plain shirt~
@@ -213,7 +213,7 @@ A Lonoyan man's shirt lies in a crumpled heap.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
-1 10 0 0
+1 10 0 0 0
 #28724
 shortgown gown~
 a shortgown~
@@ -221,7 +221,7 @@ A Lonoyan woman's shortgown hangs forgotten on a nearby peg.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
-1 10 0 0
+1 10 0 0 0
 #28725
 pants breeches~
 a pair of breeches~
@@ -229,15 +229,15 @@ Some Lonoyan left in such a hurry, he forgot his breeches.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 1 0 0 0
-1 20 0 0
+1 20 0 0 0
 #28726
 skirt~
 a skirt~
 A skirt lies here.~
 ~
-9 0 0 0 0 ad 0 0 0 0 0 0 0
+9 0 0 0 0 adf 0 0 0 0 0 0 0
 1 0 0 0
-1 20 0 0
+1 20 0 0 0
 #28727
 boots~
 high boots~
@@ -245,7 +245,7 @@ A pair of clodhoppers lies here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-4 200 0 0
+4 200 0 0 0
 #28728
 kerchief~
 a kerchief~
@@ -253,7 +253,7 @@ A kerchief lies here.~
 ~
 9 0 0 0 0 ace 0 0 0 0 0 0 0
 0 0 0 0
-1 3 0 0
+1 3 0 0 0
 #28729
 bandanna neckerchief~
 a bandanna~
@@ -261,7 +261,7 @@ A large red neckerchief is draped over a stone.~
 ~
 9 0 0 0 0 ace 0 0 0 0 0 0 0
 2 0 0 0
-3 200 0 0
+3 200 0 0 0
 #28730
 claymore sword~
 a claymore~
@@ -269,7 +269,7 @@ A claymore lies here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 12 3
-10 1000 0 0
+10 1000 0 0 0
 #28731
 claymore sword~
 the claymore of MacLeod~
@@ -277,7 +277,7 @@ A beautiful claymore with an engraved hilt lies here.~
 ~
 5 agikmno 0 0 0 an 0 0 0 0 0 0 0
 0 2 12 3
-10 1000 0 0
+10 1000 0 0 0
 E
 hilt claymore sword engravings~
    The hilt is engraved with one word, a name ;it is the name "MacLeod".  
@@ -295,7 +295,7 @@ A fifteen-foot spear is hung on the wall here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 11
-3 300 0 0
+3 300 0 0 0
 #28733
 hand axe~
 a hand axe~
@@ -303,7 +303,7 @@ A hand axe lies here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 3
-3 10 0 0
+3 10 0 0 0
 #28734
 axe~
 a battle axe~
@@ -311,7 +311,7 @@ A battle axe lies here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 9 3
-8 90 0 0
+8 90 0 0 0
 #28735
 dirk knife~
 a dirk~
@@ -319,7 +319,7 @@ A long, single-edged knife lies here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 4 11
-1 15 0 0
+1 15 0 0 0
 #28736
 quarterstaff staff~
 a quarterstaff~
@@ -327,7 +327,7 @@ A quarterstaff lies here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 5
-9 340 0 0
+9 340 0 0 0
 #28737
 broadsword sword~
 a broadsword~
@@ -335,7 +335,7 @@ A broadsword lies here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 3
-4 800 0 0
+4 800 0 0 0
 #28738
 chain mail shirt~
 a mail-shirt~
@@ -343,7 +343,7 @@ A shirt of chain mail lies in a heap.~
 ~
 9 m 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-15 300 0 0
+15 300 0 0 0
 #28739
 helm~
 a helm~
@@ -351,7 +351,7 @@ An open-faced helm lies on its side.~
 ~
 9 m 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
-6 465 0 0
+6 465 0 0 0
 #28740
 green cloth cloak~
 a green Elven cloak~
@@ -359,7 +359,7 @@ A pile of forest green cloth lies in a crumpled heap.~
 ~
 9 gikl 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-2 1000 0 0
+2 1000 0 0 0
 A
 14 50
 A
@@ -373,7 +373,7 @@ A pile of red cloth lies on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-2 10 0 0
+2 10 0 0 0
 #28742
 cloak cloth blue~
 a blue cloak~
@@ -381,7 +381,7 @@ A pile of blue cloth lies on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-2 15 0 0
+2 15 0 0 0
 #28743
 cloak cloth green~
 a green cloak~
@@ -389,7 +389,7 @@ A pile of green cloth lies on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-2 9 0 0
+2 9 0 0 0
 #28744
 backpack~
 a backpack~
@@ -397,7 +397,7 @@ A backpack lies here.~
 ~
 15 0 0 0 0 ak 0 0 0 0 0 0 0
 100 1 -1 0
-8 400 0 0
+8 400 0 0 0
 #28745
 water flask pint water~
 a pint flask~
@@ -405,7 +405,7 @@ A glass flask lies here.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 6 6 0 0
-11 100 0 0
+11 100 0 0 0
 #28746
 water skin water~
 a water skin~
@@ -413,7 +413,7 @@ A water skin lies here~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 24 24 0 0
-29 100 0 0
+29 100 0 0 0
 #28747
 robe~
 a robe of pockets~
@@ -421,7 +421,7 @@ A many-pocketed robe lies here.~
 ~
 15 ag 0 0 0 ak 0 0 0 0 0 0 0
 1000 0 -1 0
-2 1000 0 0
+2 1000 0 0 0
 A
 17 -5
 #28748
@@ -431,7 +431,7 @@ A white robe lies here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
-4 300 0 0
+4 300 0 0 0
 E
 white robe~
    This robe is worn by only the most prestigious.  An aura of peace and
@@ -446,7 +446,7 @@ A medium-sized wooden shield lies in the dust.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 6 0 0 0
-10 400 0 0
+10 400 0 0 0
 #28750
 bow short~
 a short bow~
@@ -454,7 +454,7 @@ A short bow lies here unstrung, its string wrapt round its stave.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
-5 150 0 0
+5 150 0 0 0
 #28751
 breastplate plate leather~
 a rigid leather breastplate~
@@ -462,7 +462,7 @@ A breastplate made of leather hardened in hot oil lies here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-9 400 0 0
+9 400 0 0 0
 #28752
 jacket studded leather~
 a studded leather jacket~
@@ -470,7 +470,7 @@ A leather jacket studded with metal plates lies in a heap.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-12 800 0 0
+12 800 0 0 0
 #28753
 flask healing draught~
 the healing draught~
@@ -478,7 +478,7 @@ A small flask full of an aromatic, and alcoholic, fluid.~
 ~
 10 g 0 0 0 ao 0 0 0 0 0 0 0
 5 16 16 16
-10 550 0 0
+10 550 0 0 0
 E
 flask~
    It is engraved with these arcane runes:
@@ -492,7 +492,7 @@ A small flask of clear, glimmering liquid.~
 ~
 10 g 0 0 0 ao 0 0 0 0 0 0 0
 10 14 18 20
-1 150 0 0
+1 150 0 0 0
 #28755
 flask life elixir~
 the elixir of life~
@@ -500,7 +500,7 @@ A small flask of fragrant golden liquid.~
 ~
 10 g 0 0 0 ao 0 0 0 0 0 0 0
 10 28 39 48
-1 200 0 0
+1 200 0 0 0
 #28756
 flask evil's bane potion~
 the potion of evil's bane~
@@ -508,7 +508,7 @@ A large vial of bubbling red fluid lies here, firmly capped.~
 ~
 10 g 0 0 0 ao 0 0 0 0 0 0 0
 10 22 35 43
-1 200 0 0
+1 200 0 0 0
 #28757
 scroll~
 a scroll of enchantment~
@@ -516,7 +516,7 @@ A scroll labelled "To Augment Thy Craftsmanship" lies here.~
 ~
 2 g 0 0 0 ao 0 0 0 0 0 0 0
 30 24 3 -1
-1 1000 0 0
+1 1000 0 0 0
 #28758
 scroll~
 a scroll of stormbringing~
@@ -524,7 +524,7 @@ A scroll labelled "To Bring the Spring Rains" lies here.~
 ~
 2 g 0 0 0 ao 0 0 0 0 0 0 0
 30 11 -1 -1
-1 500 0 0
+1 500 0 0 0
 #28759
 scroll~
 a scroll of battle-might~
@@ -532,7 +532,7 @@ A scroll labelled "To Increase Thy Fighting Spirit" lies here.~
 ~
 2 g 0 0 0 ao 0 0 0 0 0 0 0
 30 1 3 39
-1 150 0 0
+1 150 0 0 0
 #28760
 scroll~
 a scroll of lore~
@@ -540,7 +540,7 @@ A scroll labelled "The Legend of Nambor" lies here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 scroll~
                        The Legend of Nambor.            
@@ -572,7 +572,7 @@ A fine gold ring set with an opal lies on the ground.~
 ~
 9 egik 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 600 0 0
+1 600 0 0 0
 A
 12 20
 A
@@ -584,7 +584,7 @@ A huge pile of gold is here.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28763
 knife goblin~
 a goblin knife~
@@ -592,7 +592,7 @@ A jagged black knife with a goblin-head carved on its hilt lies here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 5 14
-1 50 0 0
+1 50 0 0 0
 E
 hilt~
    It is a hideous, leering goblin head carved in bone.  
@@ -604,7 +604,7 @@ A blackened scimitar engraved with evil runes lies here.~
 ~
 5 ghjn 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 3
-4 200 0 0
+4 200 0 0 0
 A
 18 1
 A
@@ -616,7 +616,7 @@ A large human bone set with cruel jagged spikes lies here.~
 ~
 5 ghj 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 6
-6 400 0 0
+6 400 0 0 0
 A
 19 2
 #28766
@@ -626,7 +626,7 @@ A shortbow of ogre horn backed with sinew lies here.~
 ~
 5 ghj 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
-6 600 0 0
+6 600 0 0 0
 A
 19 1
 #28767
@@ -636,7 +636,7 @@ A short spear with a broad blade lies here.~
 ~
 5 ghjn 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 14
-3 100 0 0
+3 100 0 0 0
 A
 18 1
 A
@@ -648,7 +648,7 @@ A jagged, black, rune-carved poleaxe is stuck into the ground.~
 ~
 5 ghjn 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 3
-10 120 0 0
+10 120 0 0 0
 A
 18 1
 A
@@ -660,7 +660,7 @@ A hauberk of mithril rings lies here.~
 ~
 9 gikl 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
-6 150 0 0
+6 150 0 0 0
 A
 13 20
 A
@@ -672,7 +672,7 @@ An elvish bow of aurodiea wood lies here.~
 ~
 5 gikl 0 0 0 an 0 0 0 0 0 0 0
 0 1 8 11
-4 220 0 0
+4 220 0 0 0
 A
 18 2
 A
@@ -684,7 +684,7 @@ A finely crafted broadsword must have been plundered from Lonoya.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 2 5 3
-7 1000 0 0
+7 1000 0 0 0
 E
 broadsword sword~
    The mark "D.  F.  " with a stamped-in hammer is on its hilt, and the blade
@@ -700,7 +700,7 @@ Some sturdy but ugly platemail has been painted over red. Doesn't help.~
 ~
 9 ghjlm 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
-50 1000 0 0
+50 1000 0 0 0
 A
 17 -10
 #28773
@@ -710,7 +710,7 @@ A huge black club with metal bands lies here.~
 ~
 5 hjl 0 0 0 an 0 0 0 0 0 0 0
 0 3 8 6
-20 1000 0 0
+20 1000 0 0 0
 #28774
 collar iron toadstool~
 Toadstool's iron collar~
@@ -718,7 +718,7 @@ An iron collar lies in the dirt. It has some writing on it.~
 ~
 9 hjl 0 0 0 ac 0 0 0 0 0 0 0
 8 0 0 0
-8 1000 0 0
+8 1000 0 0 0
 E
 collar writing~
    It is in orcish:
@@ -732,7 +732,7 @@ A severed goblin head lies here.  Looks tasty.~
 ~
 12 cmnop 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-10 200 0 0
+10 200 0 0 0
 #28776
 goblin hide~
 a goblin hide~
@@ -740,7 +740,7 @@ The hide of a goblin lies on the ground, smelling very bad.~
 ~
 12 c 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-8 600 0 0
+8 600 0 0 0
 #28777
 apron~
 a pink apron~
@@ -748,7 +748,7 @@ A frilly pink apron, stained with blood, is on the ground.~
 ~
 12 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 #28778
 scimitar horrible orcish~
 an orcish scimitar~
@@ -756,7 +756,7 @@ A horrible jagged scimitar of orcish make is stuck into the ground.~
 ~
 5 bdeghjlnop 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 11
-5 1000 0 0
+5 1000 0 0 0
 A
 1 -4
 A
@@ -770,7 +770,7 @@ A gigantic mountain of plunder is piled in every corner.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28780
 chest crude~
 a crude chest~
@@ -778,7 +778,7 @@ A crude wooden chest sits here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 200 13 8103 0
-50 1 0 0
+50 1 0 0 0
 #28781
 chest ebony~
 an ebony chest~
@@ -786,7 +786,7 @@ An ebony chest sits here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 400 13 8111 0
-50 1 0 0
+50 1 0 0 0
 #28782
 chest pine~
 a pinewood chest~
@@ -794,7 +794,7 @@ A light chest of pine sits here.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 100 15 8112 0
-0 0 0 0
+0 0 0 0 0
 #28783
 pick~
 a small pick~
@@ -802,7 +802,7 @@ A mining pick lies here, discarded.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 9
-8 100 0 0
+8 100 0 0 0
 #28784
 pick orcish~
 an orcish pick~
@@ -810,7 +810,7 @@ A mining pick lies here, discarded.~
 ~
 5 hjn 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 12
-8 1000 0 0
+8 1000 0 0 0
 A
 19 4
 #28785
@@ -820,7 +820,7 @@ A tub of dirty water for quenching tools sits here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 999 999 14 1
-1004 0 0 0
+1004 0 0 0 0
 E
 water tub~
    It doesn't look too good.  I wouldn't drink it if I were you!  
@@ -832,7 +832,7 @@ You stand by the ancient Well of Jakur, delved thousands of years ago.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 9999 9999 15 0
-10004 0 0 0
+10004 0 0 0 0
 #28787
 wine fountain wine~
 the wine fountain~
@@ -840,7 +840,7 @@ A magical fountain of marble spouts the blood-red wine.~
 ~
 23 g 0 0 0 0 0 0 0 0 0 0 0
 999 999 2 0
-1004 0 0 0
+1004 0 0 0 0
 E
 wine fountain~
    The fountain is filled with cheap, but not sour, wine.  
@@ -852,7 +852,7 @@ A portrait of King Korbor in robes of state hangs on the wall.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 20 15 28714 0
-0 0 0 0
+0 0 0 0 0
 E
 portrait~
    It is an oil-on-wood portrait of the good King.  No, you can't steal it, my
@@ -866,5 +866,5 @@ Some waybread has been placed here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 10 0 0
+1 10 0 0 0
 $~

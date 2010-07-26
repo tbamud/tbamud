@@ -2,6 +2,10 @@
 Casret Parna~
 Ultima II~
 55600 55699 30 2 0 0 0 0 1 30
+D 0 55649 4 2 	(The Shrine of Spirituality)
+M 0 55555 1 55649 	(the Timelord)
+E 1 55516 50 17 	(the Hourglass)
+E 1 55548 99 12 	(an aura of power)
 D 0 55683 4 2 	(In the Warp)
 M 0 55556 1 55683 	(the Guardian)
 E 1 55549 100 6 	(a big red face)
@@ -72,10 +76,6 @@ M 0 55547 3 55652 	(the reaper)
 M 0 55552 1 55651 	(the daemon)
 G 1 55515 50 -1 	(Moonstone)
 M 0 55547 3 55650 	(the reaper)
-D 0 55649 4 2 	(The Shrine of Spirituality)
-M 0 55555 1 55649 	(the Timelord)
-E 1 55516 50 17 	(the Hourglass)
-E 1 55548 100 5 	(an aura of power)
 M 0 55544 1 55648 	(the dragon)
 G 1 55514 50 -1 	(Moonstone)
 D 0 55647 4 2 	(The Desert Moongate)

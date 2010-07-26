@@ -2,12 +2,12 @@
 Kaan~
 Castle~
 30700 30799 30 2 d 0 0 0 21 27
-M 0 30716 1 30740 	(an ale salesman)
-D 0 30740 3 1 	(Guest Room)
 M 0 30718 1 30728 	(Felice)
-E 1 30722 100 5 	(a black cassock)
+E 1 30722 99 13 	(a black cassock)
 G 1 30721 1 -1 	(the Book of Life)
 D 0 30728 3 1 	(Guest Room)
+M 0 30716 1 30740 	(an ale salesman)
+D 0 30740 3 1 	(Guest Room)
 M 0 30717 1 30743 	(Alanis)
 E 1 30719 100 6 	(a jeweled headband)
 E 1 30720 100 1 	(a webbed full-finger ring)

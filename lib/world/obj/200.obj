@@ -5,7 +5,7 @@ The edge of the waters spilt from the overflowed river stops at your feet.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
-505 0 0 0
+505 0 0 0 0
 E
 river water overflowed edge spilt~
    From the messy and untamed way the debris are jumbled along the bank of the
@@ -18,7 +18,7 @@ Sharp splinters from the collasped bridge lay here in the wet grounds.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 bridge~
    Once again cultural monuments fall to the destructive powers of mother
@@ -33,7 +33,7 @@ Logs of fallen pine wood obstructs the way around.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 fallen pine~
    Huge logs of fallen pine make passage difficult, the bases look to have been
@@ -46,7 +46,7 @@ A gleaming crucifix made of brass lies here.~
 ~
 1 i 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-3 60 6 0
+3 60 6 0 0
 E
 solid brass crucifix~
    This brass crucifix fits snugly in the palm of your hand.    
@@ -58,7 +58,7 @@ A white robe made from a very thick woolen material lies here soaked in the mud.
 ~
 9 gop 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-6 250 25 0
+6 250 25 0 0
 E
 robe~
    This fine, white robe is made of course cloth.  It looks as if the maker
@@ -71,7 +71,7 @@ Stuck to the ground on a short rotten pole. A small sign is here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign~
    The sign is rotten and falling apart.  You can no longer read what was once
@@ -84,7 +84,7 @@ A make shift axe lays here, looking like it's been through a tougher life than y
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 4 5 6
-8 400 40 0
+8 400 40 0 0
 E
 woodmsan's axe~
    The axe is crude, but well-made.  Looks like it could hack a limb off just
@@ -97,7 +97,7 @@ A hacked off rabbit's foot lays here, hopping no more.~
 ~
 11 dkp 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 5 1 0
+1 5 1 0 0
 E
 rabbit foot fur~
    The rabbits foot has been known to bring good luck to those who hold it.  
@@ -114,7 +114,7 @@ Bits of tattered cloths lay here smelling badly of pesperation.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 smelly rags tattered cloths~
    These rags emanate a foul stench that would surely never wash out.    
@@ -128,7 +128,7 @@ A strip of torn cloth lays here, maybe you could use it for a belt?~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 1 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 belt cloth strip~
    This old and worn bit of cloth looks like it was meant to be used as a belt.
@@ -141,7 +141,7 @@ A well worn down pair of hide sandals has been discarded here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
-1 110 12 0
+1 110 12 0 0
 E
 broken sandals~
    The leather hide straps have been broken, re-stitched, and broken again.  
@@ -156,7 +156,7 @@ An already torn apart pair of pants lies here unwanted.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
-3 3 0 0
+3 3 0 0 0
 E
 pants tattered~
    These old pants are faded and have patches covering most of the holes in it.
@@ -169,7 +169,7 @@ A pair of bloody rabbit ears are here sticking out of the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 rabbit ears fur~
    A scalp of a rabbit lies here.  Looks like someone must have been practicing
@@ -183,7 +183,7 @@ A small piece of brown fur has been dropped here, barely enough to cover anythin
 ~
 9 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 brown fur piece~
    This small patch of fur has been fashioned into some sort of wristguard.  
@@ -200,7 +200,7 @@ The remains of a skinned fawn is here rotting away.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 fawn fur~
    The hide of a fawn has been skinned into some make shift arm guards.    
@@ -212,7 +212,7 @@ A luxurious thick black fur coat lays here covered in dirt.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
-5 25 2 0
+5 25 2 0 0
 E
 thick black fur coat~
    A thick black fur coat from the hide of a bear.  It is extremely heavy and
@@ -225,7 +225,7 @@ An old rusty steel trap lays on the ground looking dangerous.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-6 450 45 0
+6 450 45 0 0
 E
 rusty steel trap~
    This metal foot trap is almost rusted completely shut.  The springs on each
@@ -238,7 +238,7 @@ A canvas harversack lays here.~
 ~
 15 0 0 0 0 ak 0 0 0 0 0 0 0
 25 0 -1 0
-3 30 3 0
+3 30 3 0 0
 E
 canvas harversack~
    This sack though small would be excellent to store a few belongings in.    
@@ -250,7 +250,7 @@ A large wooden splinter leans against the long grass.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 5 3 1 11
-3 15 1 0
+3 15 1 0 0
 E
 sharpened wooden dagger~
    At first glance it is just a piece of wood, until you examine it more
@@ -263,7 +263,7 @@ Pieces of leather stiched together lays here, probably a makeshift glove.~
 ~
 11 g 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
-3 150 15 0
+3 150 15 0 0
 E
 bounded gloves~
    These gloves are well made and extremely sturdy.    
@@ -277,7 +277,7 @@ An attractive game prized pelt lays here, unwanted.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-2 10 1 0
+2 10 1 0 0
 E
 red fox pelt fur~
    This bright red fur could only have come from a red fox.  It is smooth and
@@ -290,7 +290,7 @@ A piece of meat rubs in the dirt here, not sure what sort and it doesn't look to
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 dehydrated meat~
    This meat has been dehydrated out in the sun and then smoked to increase
@@ -303,7 +303,7 @@ A can of ultra shine is here.~
 ~
 3 g 0 0 0 ao 0 0 0 0 0 0 0
 12 1 1 3
-1 150 15 0
+1 150 15 0 0
 E
 polishing kit~
    This polishing kit could add sparkle to almost anything if you simply used
@@ -316,7 +316,7 @@ A hide stretched over a frame of wood appears to be a shield.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 3 0 0 0
-4 20 2 0
+4 20 2 0 0
 E
 stretched hide shield~
    The hide has been pulled taught by a sappling that has been bent into a
@@ -330,7 +330,7 @@ A piece of twine has been braided into a nice little ring.~
 ~
 12 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 25 3 0
+1 25 3 0 0
 E
 twine ring~
    The twine looks like hemp, but hard to tell.  It has been braided into a

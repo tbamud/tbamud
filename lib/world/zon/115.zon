@@ -2,6 +2,8 @@
 Polar~
 Monestary Omega~
 11500 11599 10 2 d 0 0 0 3 7
+M 0 11522 1 11566 	(an armoured centaur)
+E 1 11501 3 5 	(copper pressed chainmail)
 M 0 11501 10 11500 	(a large grey rat)
 M 0 11501 10 11500 	(a large grey rat)
 M 0 11518 1 11599 	(the Doom Priest guildmaster)
@@ -51,8 +53,6 @@ M 0 11521 1 11567 	(a white and tan centaur)
 E 1 11503 20 16 	(a copper broad sword)
 M 0 11575 5 11567 	(a small troll)
 E 1 11517 20 8 	(a pair of kicking boots)
-M 0 11522 1 11566 	(an armoured centaur)
-E 1 11501 20 12 	(copper pressed chainmail)
 M 0 11520 3 11565 	(a fat goblin)
 E 1 11515 20 16 	(a goblin short spear)
 M 0 11527 1 11564 	(an enormously huge troll)

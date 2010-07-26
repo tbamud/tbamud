@@ -5,7 +5,7 @@ A long strip of hide is lying here.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 1 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 hide fur strap~
    A long piece of hide covered in brown fur looks like it could be worn.    
@@ -17,7 +17,7 @@ A large white piece of cloth is lying here.~
 ~
 9 ag 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 white toga cloth~
    The white cloth looks large enough to wrap completely around a giant.    
@@ -29,7 +29,7 @@ A wellcrafted pair of leather sandals set here. ~
 ~
 9 g 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
-1 10 1 0
+1 10 1 0 0
 E
 leather sandal~
    Made from the finest of leather these sandals look very comfortable.    
@@ -41,7 +41,7 @@ A golden chain is lying here.~
 ~
 12 g 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 650 65 0
+1 650 65 0 0
 E
 chain medallion~
    This large medallion has been created from pure gold.  On the front several
@@ -57,7 +57,7 @@ A diamond ring is lying here.~
 ~
 11 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 100 0
+1 1000 100 0 0
 E
 diamond ring ~
    This thick gold band contains an huge diamond.  The diamond has been cut
@@ -72,7 +72,7 @@ A golden armband is lying here.~
 ~
 12 g 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
-2 800 80 0
+2 800 80 0 0
 E
 armband~
    The golden armband is unusually cold.  
@@ -86,7 +86,7 @@ A long stick is lying here twitching.~
 ~
 3 ag 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 6
-1 250 25 0
+1 250 25 0 0
 E
 stick wand ~
    The small stick is slightly twisted and looks freshly cut.    
@@ -98,7 +98,7 @@ A yellow banana is lying here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-1 7 2 0
+1 7 2 0 0
 E
 banana fruit ~
    The banana is bright yellow, it appears to have been just picked.    
@@ -110,7 +110,7 @@ A ripe mango is lying here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 mango fruit~
    The mango looks plump and juicy.    
@@ -122,7 +122,7 @@ A coconut of milk is lying here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-8 10 2 0
+8 10 2 0 0
 E
 coconut milk fruit~
    The top of the coconut has been cut off making it look like a cup of milk.
@@ -135,7 +135,7 @@ A pineapple is lying here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-1 12 2 0
+1 12 2 0 0
 E
 pineapple fruit~
    The pineapple has been cut and cleaned so that it is now easy to eat.    
@@ -147,7 +147,7 @@ A large sword from a Zamba warrior is lying here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 5 4 5 3
-14 700 70 0
+14 700 70 0 0
 E
 sword blade ~
    This Zamba sword has a long think blade.  The end of the hilt has been
@@ -160,7 +160,7 @@ A plate of fish is lying here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-1 20 2 0
+1 20 2 0 0
 E
 plate fish~
    The wooden plate is full of fish and bread.    
@@ -172,7 +172,7 @@ A short table rests in the center of the room.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 100 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 short table ~
    The short table is covered with food and dishes.  Some of the food is fresh
@@ -186,7 +186,7 @@ A toy doll is lying here abandoned on the floor.~
 ~
 12 agh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 10 1 0
+3 10 1 0 0
 E
 doll toy~
    The toy doll is made of a brown cloth with a green dress.  Extra stitches
@@ -199,7 +199,7 @@ A tall shelf sets against the east wall.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 300 1 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 shelf  ~
    The shelf is made of many branches tied together that have been shaped and
@@ -213,7 +213,7 @@ A small statue made of clay is lying here.~
 ~
 8 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 25 3 0
+2 25 3 0 0
 E
 clay statue~
    The small statue is of a person with the head of a cat.  It is slightly
@@ -228,7 +228,7 @@ A large cog shell is lying here.~
 ~
 11 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 10 1 0
+1 10 1 0 0
 E
 cog shell~
    The large cog shell is rough on the outside and bright white.  On the inside
@@ -242,7 +242,7 @@ A red candle is lying here.~
 ~
 1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 4 0
-1 1 0 0
+1 1 0 0 0
 E
 red candle~
    Dark red wax forms this fat slightly used candle.  At the base of the candle
@@ -255,7 +255,7 @@ A glass of Island Madness has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 11 0
-8 50 1 0
+8 50 1 0 0
 #7521
 wind drink glass spirit wine~
 a glass of spirits full~
@@ -263,7 +263,7 @@ A glass of spirits has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 2 0
-7 100 0 0
+7 100 0 0 0
 #7522
 firebreather coconut cup firebreather~
 a coconut cup~
@@ -271,7 +271,7 @@ A cup made from a coconut has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 7 0
-10 125 0 0
+10 125 0 0 0
 E
 cup coconut~
    Inside the coconut cup is a drink called island madness.  
@@ -283,7 +283,7 @@ A green tail is lying here twitching.~
 ~
 5 j 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 10
-2 10 1 0
+2 10 1 0 0
 E
 tail green whip ~
    The green tail from an iquana is quite long and looks like it would make an
@@ -296,7 +296,7 @@ A feather anklet is lying here.~
 ~
 11 g 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-1 75 7 0
+1 75 7 0 0
 E
 feather anklet~
    Several colorful feathers have been joined together with a thick band of
@@ -311,7 +311,7 @@ A shark tooth necklace is lying here.~
 ~
 11 gi 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 110 11 0
+1 110 11 0 0
 E
 shark necklace tooth~
    This necklace is fashioned from the teeth of a large shark tied together
@@ -326,7 +326,7 @@ An empty basket is lying here.~
 ~
 15 0 0 0 0 aeo 0 0 0 0 0 0 0
 20 0 -1 0
-1 5 0 0
+1 5 0 0 0
 E
 basket~
    This basket has been woven together by hand and can be carried in several
@@ -339,7 +339,7 @@ A small bow and arrow is lying here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 12
-2 10 1 0
+2 10 1 0 0
 E
 bow arrow~
    This small bow and arrow was crafted for young boys to train with.  It is
@@ -352,7 +352,7 @@ A metal box rests on the floor.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 800 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 metal box~
    This metal box is made of fine silver but very tarnished with years of age.
@@ -366,7 +366,13 @@ A heavy book is lying here.~
 ~
 12 g 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-5 550 55 0
+5 550 55 0 0
+E
+book journal~
+   The large book is quite heavy and made of leather.  On the front the
+embossed letters are too faded to read.  But a bookmark page at the end of the
+book looks readable.    
+~
 E
 bookmarked page writing ~
    Today many of the merchants left to find a better location for their wares.
@@ -379,12 +385,6 @@ common people have always had to make do.  I think Zamba is better off without
 all the tourist and having to follow the laws of all the surrounding town.  We
 are much better off being apart from outsiders.    
 ~
-E
-book journal~
-   The large book is quite heavy and made of leather.  On the front the
-embossed letters are too faded to read.  But a bookmark page at the end of the
-book looks readable.    
-~
 #7530
 black robe~
 a black robe~
@@ -392,7 +392,7 @@ A black robe is lying here.~
 ~
 9 ab 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-2 2 0 0
+2 2 0 0 0
 E
 robe black~
    This black cloak is quite light for how thick it is.  Its wide hood drapes
@@ -406,7 +406,7 @@ A yellow petal from the Zamba hook plant is lying here.~
 ~
 9 g 0 0 0 aj 0 0 0 0 0 0 0
 1 0 0 0
-5 25 2 0
+5 25 2 0 0
 E
 shield petal~
    The shield is one of the petals of the Zamba Hook plant.  It is bright
@@ -422,7 +422,7 @@ A pearl hair comb is lying here.~
 ~
 9 agkl 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-1 300 30 0
+1 300 30 0 0
 E
 pearl hair comb~
    This wellcrafted hair comb is a combination of gold and pearls formed into a
@@ -435,9 +435,9 @@ ring ~
 a golden ring~
 A golden ring is lying here.~
 ~
-11 gik 0 0 0 a 0 0 0 0 0 0 0
+11 gik 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 450 60 0
+1 450 60 0 0
 E
 ring ~
    This golden ring is engraved with the seal of Empiress Kiona.  
@@ -451,7 +451,7 @@ A ruby bracer is lying here.~
 ~
 12 kl 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-2 210 21 0
+2 210 21 0 0
 E
 ruby bracer~
    This wide bracer is made of quality gold and has a oval rudy set in the
@@ -466,7 +466,7 @@ An emerald bracer is lying here.~
 ~
 12 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-1 125 13 0
+1 125 13 0 0
 E
 emerald bracer~
    This wide bracer is made of quality gold and has a large emerald set in the
@@ -481,7 +481,7 @@ A skull helmet is lying here.~
 ~
 9 gjl 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
-3 321 35 0
+3 321 35 0 0
 E
 skull helm helmet~
    The skull appears to be from a large reptile.  It has been cleaned and
@@ -498,7 +498,7 @@ A vial of black powder is lying here.~
 ~
 10 g 0 0 0 a 0 0 0 0 0 0 0
 12 16 -1 -1
-5 750 75 0
+5 750 75 0 0
 E
 vial powder black~
    The clear container is full of a potion created from black powder that oozes
@@ -511,7 +511,7 @@ A small torch is mounted to the wall.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 6 0
-2 10 1 0
+2 10 1 0 0
 #7539
 breastplate bone ~
 a bone breastplate~
@@ -519,7 +519,7 @@ A bone breastplate made of human bones is lying here.~
 ~
 9 egjl 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-12 125 12 0
+12 125 12 0 0
 E
 bone breastplate armor~
    This breastplate has been created with a mixture of human bones and animal
@@ -534,7 +534,7 @@ The skeleton remains of a human lie here.~
 ~
 13 h 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-50 500 50 0
+50 500 50 0 0
 E
 skeleton human bone~
    The skeleton is setting in an upright position as if it just sat down to
@@ -548,7 +548,7 @@ A oak cabinet sets against the east wall.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 500 1 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 cabinet oak~
    The oak cabinet has several doors and fills the space of the east wall.  
@@ -562,7 +562,7 @@ A monocle is lying here.~
 ~
 11 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 527 52 0
+1 527 52 0 0
 E
 monocle~
    The small monocle is made of a fine, clear glass with gold trim.  Its
@@ -578,7 +578,7 @@ A fountain sets in the center of the room.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
-505 0 0 0
+505 0 0 0 0
 E
 fountain ice sculpture~
    The fountain is made of white marble.  Inside the center of the fountain an
@@ -593,7 +593,7 @@ A wheel of cheese is lying here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-4 100 10 0
+4 100 10 0 0
 E
 wheel cheese~
    The heavy wheel of cheese is covered with a thick cloth.  The cheese is dark
@@ -606,7 +606,7 @@ A barrel of wine sets here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 25 25 2 0
-30 87 9 0
+30 87 9 0 0
 E
 barrel wine~
    The barrel is large with the word wine wrote on top and a royal crest
@@ -619,7 +619,7 @@ A tiny decanter is lying here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 13 1
-10 200 0 0
+10 200 0 0 0
 E
 decanter~
    This tiny decanter contains a red liquid.    
@@ -631,7 +631,7 @@ A set of silver boots is lying here.~
 ~
 9 ag 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-3 90 9 0
+3 90 9 0 0
 E
 silver boot~
    The silver boots have been polished to a fine shine.  Engraved on the
@@ -644,9 +644,9 @@ key collar~
 a collar~
 A large pet collar is lying here.~
 ~
-18 c 0 0 0 ao 0 0 0 0 0 0 0
+18 c 0 0 0 aco 0 0 0 0 0 0 0
 0 0 0 0
-1 50 5 0
+1 50 5 0 0
 E
 collar ~
    A key dangles from the panthers collar.  
@@ -658,7 +658,7 @@ A pewter wristband is lying here.~
 ~
 11 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-3 243 25 0
+3 243 25 0 0
 E
 wristband pewter ~
    This wide piece of pewter has been shaped to wear around your wrist and
@@ -675,7 +675,7 @@ A necklace adorned with seashells is lying here.~
 ~
 11 g 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 10 1 0
+1 10 1 0 0
 E
 seashell necklace ~
    A beautiful seashell as been attached to a braided piece of leather.    
@@ -687,7 +687,7 @@ A wooden torch is lying here.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 6 0
-2 10 1 0
+2 10 1 0 0
 E
 torch~
    The torch is a thick piece of wood with a moist cloth wrapped around the top
@@ -700,7 +700,7 @@ A leather bag is lying here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 50 1 -1 0
-3 30 3 0
+3 30 3 0 0
 E
 leather bag~
    The leather bag is quite large.    
@@ -712,7 +712,7 @@ An old scroll is lying here.~
 ~
 2 ag 0 0 0 a 0 0 0 0 0 0 0
 12 42 -1 -1
-1 750 1 0
+1 750 1 0 0
 E
 old scroll~
    You see a rolled up piece of paper faded and yellow from age.  The top of

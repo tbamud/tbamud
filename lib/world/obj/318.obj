@@ -5,7 +5,7 @@ A white and black striped sailor's shirt has been left here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-5 100 0 20
+5 100 0 20 0
 E
 shirt sailors white black~
    The stains which riddle this shirt are enough to make any land-lubber not
@@ -18,7 +18,7 @@ Some prickly chin stubble is lying in a heap on the floor.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
-3 100 0 20
+3 100 0 20 0
 E
 stubble~
    Yuck.  
@@ -32,7 +32,7 @@ A fistful of money is laying here on the ground.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 0 0
-50 1 0 1
+50 1 0 1 0
 E
 fistful money~
    What the hell are you looking at it for?  Take it!    
@@ -42,9 +42,9 @@ sash black~
 a black sash~
 A pile of crumpled black silk is on the ground.~
 ~
-9 j 0 0 0 ak 0 0 0 0 0 0 0
+9 j 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
-1 1 0 20
+1 1 0 20 0
 E
 sash black~
    This sash, the mark of a member of the Dead Boys, radiates evil intent.  
@@ -58,7 +58,7 @@ A set of spiked knuckles have been left here.~
 ~
 5 j 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 9
-1 1 0 20
+1 1 0 20 0
 E
 knuckles spiked~
    The deadly looking spikes glisten as the light catches them.  
@@ -70,7 +70,7 @@ A red sash has been left on the floor.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
-3 200 0 20
+3 200 0 20 0
 E
 sash red~
    This sash, the opposing color to the Dead Boy's black sash, marks the wearer
@@ -85,7 +85,7 @@ A wicked looking scythe lies on the ground.~
 ~
 5 no 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 3
-1 1 0 20
+1 1 0 20 0
 E
 wicked scythe~
    This weapon, although unwieldy, is the token weapon of the Bloody Scythe
@@ -98,7 +98,7 @@ A rusted knife has been left here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 1 2 7 14
-1 1 0 10
+1 1 0 10 0
 E
 rusted knife~
    It is chipped in many places, worn down to almost a flat edge where it should
@@ -111,7 +111,7 @@ A black knife has been left here.~
 ~
 5 adjn 0 0 0 an 0 0 0 0 0 0 0
 3 5 8 11
-1 1 0 28
+1 1 0 28 0
 E
 blade marcko's dagger~
    Made by an old veteran assassin from the Far Reaches just for Marcko, this
@@ -130,7 +130,7 @@ A black opal ring has been dropped here.~
 ~
 11 jl 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 28
+1 1 0 28 0
 E
 ring opal black~
    The thing seems to radiate evil and bad intent.  
@@ -148,7 +148,7 @@ A pair of boots have been left here.~
 ~
 9 bj 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
-3 300 0 19
+3 300 0 19 0
 E
 boots razor tipped~
    Looks like these boots were meant for someone who likes to surprise their
@@ -167,7 +167,7 @@ A hammer has been left here on the ground.~
 ~
 5 o 0 0 0 an 0 0 0 0 0 0 0
 2 4 5 7
-1 1 0 22
+1 1 0 22 0
 E
 hammer~
    Long wooden handle, strong metal head.  A hammer.  
@@ -179,7 +179,7 @@ A carpenter's tool belt has been dropped here.~
 ~
 15 0 0 0 0 al 0 0 0 0 0 0 0
 100 0 -1 0
-1 1 0 22
+1 1 0 22 0
 E
 belt tool caprenter's~
    It has many pouches and loops where one can safely place items for storage.
@@ -194,7 +194,7 @@ A fat cigar is on the floor, just begging to be smoked.~
 ~
 12 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 cigar stogie fat~
    The business end of the thing looks a bit wet and chewed, but other than that
@@ -211,7 +211,7 @@ The foreman's beer gut is lumped in the corner.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 0
-1 50 0 25
+1 50 0 25 0
 E
 beer gut foreman~
    You are actually considering wearing this nasty thing?  
@@ -227,7 +227,7 @@ A thin coat of sweat is glooped on the floor.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 1 0 0 0
-1 1 0 20
+1 1 0 20 0
 E
 sweat coat thin~
    You give it a cursory sniff.  Yep, it's sweat, all right.  
@@ -243,7 +243,7 @@ A clipboard is lying face down on the floor.~
 ~
 12 a 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 25
+1 10 0 25 0
 E
 board clip clipboard~
    It currently holds no papers of any kind, mus tnot be much harbor traffic at
@@ -260,7 +260,7 @@ A necklace of some sort is lying on the ground.~
 ~
 11 b 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 200 0 21
+1 200 0 21 0
 E
 locket anchor~
    You turn it over and read the inscription
@@ -281,7 +281,7 @@ A shiny dirk has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 3 11
-1 1 0 1
+1 1 0 1 0
 E
 dirk shiny~
    Boy, it sure is a shiny little bugger.  
@@ -293,7 +293,7 @@ A green pair of britches are crumpled on the floor here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 11
+1 100 0 11 0
 E
 britches pair green~
    They look like they definately could be in the 'flood' classification.  Wear
@@ -311,7 +311,7 @@ A sailor's hat is lying here.~
 ~
 9 b 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
-1 500 0 20
+1 500 0 20 0
 E
 hat cap'n~
    This thing emminates a strong aura of bad whiskey, bad women, and bad
@@ -326,9 +326,9 @@ sleeves dolphin skin~
 some dolphin skin sleeves~
 A wad of some sort of animal's skin is on the ground.~
 ~
-9 0 0 0 0 ah 0 0 0 0 0 0 0
+9 0 0 0 0 ai 0 0 0 0 0 0 0
 6 0 0 0
-1 200 0 23
+1 200 0 23 0
 E
 sleeves dolphin skin~
    They look as if they would stretch right over your arms for a snug fit.  
@@ -342,7 +342,7 @@ A thin piece of black leather is here.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 1 0 0 0
-1 100 0 25
+1 100 0 25 0
 E
 arm tie~
    It is about 9 inches long, frayed at both ends.  
@@ -356,7 +356,7 @@ A small whip has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 4 2
-1 1 0 2
+1 1 0 2 0
 E
 whip backhand~
    Just the perfect fit in the palm of your hand.  

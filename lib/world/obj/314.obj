@@ -5,7 +5,7 @@ An old cracked fountain sits stagnant in the center of the court.~
 ~
 23 g 0 0 0 0 0 0 0 0 0 0 0
 80 50 9 1
-55 0 0 1
+55 0 0 1 0
 E
 statue~
    The man appears very proud, very noble and very learned.  His stained head is
@@ -19,7 +19,7 @@ Some broken pieces of glass lie scattered about on the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 10 0 1
+2 10 0 1 0
 #31402
 tattered cloth piece~
 a rotted piece of cloth~
@@ -27,7 +27,7 @@ A rotted piece of cloth has gotten caught on a tall weed and flutters in the bre
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 1
+2 1 0 1 0
 #31403
 blood still pool floor gazebo~
 the dark blood~
@@ -35,7 +35,7 @@ The floor of this gazebo is covered in a thick layer of blood.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 2000 2000 13 1
-2005 0 0 1
+2005 0 0 1 0
 #31404
 altar dark stained~
 a dark, blood-stained altar~
@@ -43,7 +43,7 @@ A dark, blood-stained altar is set in the center of the floor, awaiting its next
 ~
 12 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 1
+0 0 0 1 0
 E
 altar~
    It appears that the altar is nothing more than a loose piece of stone from
@@ -58,7 +58,7 @@ An old bookshelf clings precariously to the wall, nearly falling from the crumbl
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 1000 0 -1 0
-0 0 0 1
+0 0 0 1 0
 #31406
 book blood stained~
 a blood-stained book~
@@ -66,7 +66,7 @@ A blood-stained book rests comfortably here.~
 ~
 2 bg 0 0 0 ao 0 0 0 0 0 0 0
 25 33 4 17
-11 10 0 1
+11 10 0 1 0
 #31407
 body dead child~
 a child's dead body~
@@ -74,7 +74,7 @@ A small child's body lies against the north wall, its chest a gaping empty hole.
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 1
+0 0 0 1 0
 #31408
 barrel burning~
 a burning barrel~
@@ -82,7 +82,7 @@ A barrel holds assorted trash within, all ablaze in fire.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 1
+0 0 0 1 0
 #31409
 fresh cadaver~
 a fresh corpse~
@@ -90,7 +90,7 @@ A fresh cadaver lies steaming in the cortyard.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 1
+0 0 0 1 0
 E
 corpse~
    It looks as if it might have been alive just minutes ago.  The blood which
@@ -105,7 +105,7 @@ A mostly decayed carcass is hanging from the wall, its chest a large gaping hole
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 1
+0 0 0 1 0
 #31411
 blade shining curved~
 a shining curved blade~
@@ -113,7 +113,7 @@ An evil-looking dagger with a curved blade has been left here.~
 ~
 5 a 0 0 0 an 0 0 0 0 0 0 0
 2 6 6 11
-9 300 0 22
+9 300 0 22 0
 A
 6 2
 A
@@ -123,9 +123,9 @@ robe soiled~
 a soiled and bloodstained robe~
 A soiled and bloodstained robe has been dicarded.~
 ~
-9 0 0 0 0 0 0 0 0 0 0 0 0
+9 0 0 0 0 ak 0 0 0 0 0 0 0
 6 0 0 0
-0 0 0 1
+0 0 0 1 0
 #31413
 ring enchantment~
 the Ring of Enchantment~
@@ -133,7 +133,7 @@ A dark colored ring has been dropped here.~
 ~
 9 0 0 0 0 ab 0 0 0 0 0 0 0
 3 0 0 0
-4 100 0 26
+4 100 0 26 0
 A
 6 1
 A
@@ -145,7 +145,7 @@ A grubby jerkin has been tossed aside.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-4 10 0 1
+4 10 0 1 0
 #31415
 blood innocent~
 the blood of an innocent~
@@ -153,7 +153,7 @@ A smear of blood is on the ground.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 24
+1 1 0 24 0
 A
 1 1
 A
@@ -165,7 +165,7 @@ Some shreds of leather armor has been left here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
-9 1 0 1
+9 1 0 1 0
 #31417
 coating vomit~
 a coating of vomit~
@@ -173,7 +173,7 @@ A small pile of what looks to be vomit is lying on the ground.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 1
+2 1 0 1 0
 A
 6 -3
 #31418
@@ -183,7 +183,7 @@ A very dirty piece of clothing has been discarded here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
-4 1 0 1
+4 1 0 1 0
 #31419
 raggedy blanket~
 a raggedy blanket~
@@ -191,7 +191,7 @@ A raggedy blanket is strecthed out on the floor.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-5 1 0 15
+5 1 0 15 0
 A
 19 3
 #31420
@@ -199,9 +199,9 @@ welts bruises smattering~
 a smattering of welts and bruises~
 Someone's pain and misery has been left here for the taking.~
 ~
-11 0 0 0 0 a 0 0 0 0 0 0 0
+11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 1
+1 1 0 1 0
 A
 13 -30
 #31421
@@ -211,7 +211,7 @@ A horrid scar has been left here.~
 ~
 11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 21
+2 1 0 21 0
 A
 13 10
 A
@@ -223,7 +223,7 @@ A black leather whip has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 5 4 2
-6 100 0 23
+6 100 0 23 0
 A
 19 1
 A
@@ -235,7 +235,7 @@ A crumpled note has been thrown down on the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 10 0 30
+2 10 0 30 0
 E
 word~
    This note, originally given to Gunter by X'Raantra reads but one word.  That
@@ -252,7 +252,7 @@ An inlaid black sword lies here forgotten.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 5 3 3
-9 10 0 19
+9 10 0 19 0
 A
 2 2
 #31425
@@ -262,7 +262,7 @@ A blackened helm has been left here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
-10 10 0 17
+10 10 0 17 0
 A
 4 1
 #31426
@@ -272,7 +272,7 @@ A black cape has been left here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
-6 10 0 18
+6 10 0 18 0
 A
 19 3
 #31427
@@ -282,7 +282,7 @@ A vial of blood has been left here.~
 ~
 10 a 0 0 0 ao 0 0 0 0 0 0 0
 10 7 39 22
-1 10 0 1
+1 10 0 1 0
 #31428
 dark red blood ring~
 a dark red blood ring~
@@ -290,7 +290,7 @@ A dark red blood ring has been left here.~
 ~
 9 0 0 0 0 ab 0 0 0 0 0 0 0
 3 0 0 0
-5 100 0 23
+5 100 0 23 0
 A
 18 2
 #31429
@@ -300,5 +300,5 @@ A traveler's pack has been left here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-12 16 0 30
+12 16 0 30 0
 $~

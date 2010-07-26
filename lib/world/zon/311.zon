@@ -2,6 +2,9 @@
 Kaan~
 The Dragon's Teeth~
 31100 31199 30 2 d 0 0 0 20 30
+M 0 31107 1 31183 	(a green dragon)
+E 1 31100 99 5 	(a green dragon's hide)
+G 1 31103 100 -1 	(a fang dripping with black ooze)
 M 0 31103 1 31171 	(a black dragon)
 G 1 31110 100 -1 	(the Eye of the Dragon)
 M 0 31104 1 31179 	(a blue dragon)
@@ -11,9 +14,6 @@ P 1 31105 100 31104 	(a pile of blue sapphires)
 P 1 31106 100 31104 	(a gleaming blue blade)
 P 1 31107 100 31104 	(a set of gleaming blue scale mail armor)
 P 1 31108 100 31104 	(a deep blue potion)
-M 0 31107 1 31183 	(a green dragon)
-E 1 31100 100 12 	(a green dragon's hide)
-G 1 31103 100 -1 	(a fang dripping with black ooze)
 M 0 31106 1 31187 	(a white dragon)
 E 1 31102 100 16 	(the Ice Claw)
 M 0 31105 1 31175 	(a red dragon)

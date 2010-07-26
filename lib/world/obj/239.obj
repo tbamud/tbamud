@@ -5,7 +5,7 @@ A once full canteen is dry now.~
 ~
 13 dhq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-15 10 0 0
+15 10 0 0 0
 E
 canteen~
    The canteen is dry and cursed. It's not nice to kill poor defenseless
@@ -18,7 +18,7 @@ A huge wooden club with two spikes on the end.~
 ~
 5 cd 0 0 0 an 0 0 0 0 0 0 0
 3 3 10 5
-5 300 3 17
+5 300 3 17 0
 E
 club~
    The wooden club has sharp spikes protruding from the end of it.  Could
@@ -31,7 +31,7 @@ A Dwarven Sentinel's Hammer~
 ~
 5 acdkoq 0 0 0 an 0 0 0 0 0 0 0
 0 0 0 0
-5 900 0 17
+5 900 0 17 0
 E
 hammer sentinel~
    A fine weapon crafted by the ancient dwarven weaponsmiths of NewHaven.  It
@@ -51,7 +51,7 @@ A shield of stone manufactered by the finest dwarven stone cutters of NewHaven~
 ~
 9 acdkp 0 0 0 aj 0 0 0 0 0 0 0
 3 0 0 0
-2 900 0 16
+2 900 0 16 0
 E
 stone shield~
    Finely Dwarven crafted stone shield with unknow magical powers.  Was crafted
@@ -69,7 +69,7 @@ A bark helm crafted by Ewts.~
 ~
 9 fgk 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
-3 900 200 0
+3 900 200 0 0
 E
 bark helm~
    Helm of Bark from the root of an ancient ponderosa pine.  Crafted by ewts of
@@ -86,7 +86,7 @@ A Drow's stone club.~
 ~
 5 i 0 0 0 an 0 0 0 0 0 0 0
 3 5 5 7
-3 500 5 0
+3 500 5 0 0
 E
 club stone drow obsidian~
    A very nice club chipped from obsidian by drow slaves in the drow mines.  
@@ -103,7 +103,7 @@ A pair of Drow boots~
 ~
 9 ajop 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-3 500 25 15
+3 500 25 15 0
 E
 drow boots~
    Boots of the finest drow construction, with spider webbing padding and
@@ -122,7 +122,7 @@ A Drow's black cape~
 ~
 9 op 0 0 0 ack 0 0 0 0 0 0 0
 1 0 0 0
-2 500 10 15
+2 500 10 15 0
 E
 cape black drow~
    A drow cleric's cape of spider web.  It has been skillfully woven with a
@@ -141,7 +141,7 @@ A staff of spider silk woven with magical powers.~
 ~
 5 fop 0 0 0 an 0 0 0 0 0 0 0
 4 2 10 5
-3 500 10 15
+3 500 10 15 0
 E
 spider staff drow~
    A grey staff of spider silk woven into a staff by drow mages.  It has some
@@ -158,9 +158,9 @@ robe drow amber~
 an amber robe~
 An amber black robe woven from spider silk.~
 ~
-9 gop 0 0 0 ad 0 0 0 0 0 0 0
+9 gop 0 0 0 ak 0 0 0 0 0 0 0
 3 0 0 0
-3 500 10 15
+3 500 10 15 0
 E
 amber drow robe~
    Woven from spider silk by the Drow mages it is said to have some magical
@@ -178,7 +178,7 @@ A drow helmet with a spider emblem.~
 ~
 9 jlmno 0 0 0 ae 0 0 0 0 0 0 0
 1 0 0 0
-1 200 5 0
+1 200 5 0 0
 E
 drow helmet~
    A helmet of drow construction has a spider emblem on the brow.  Seems to
@@ -195,7 +195,7 @@ A drow spider web collar.~
 ~
 9 mno 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-2 200 8 15
+2 200 8 15 0
 E
 spider collar drow~
    A fine woven drow collar.  Constructed of spider web and woven with magical
@@ -214,7 +214,7 @@ A dark drow breastplate.~
 ~
 9 mno 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
-5 400 5 15
+5 400 5 15 0
 E
 dark drow breastplate plate~
    A drow guard's breastplate made from a black metal.  Finely contructed by
@@ -231,7 +231,7 @@ A drow guard's belt woven with leather.~
 ~
 9 mno 0 0 0 al 0 0 0 0 0 0 0
 1 0 0 0
-1 200 3 15
+1 200 3 15 0
 E
 guard belt drow~
    A leather drow guard's belt is woven with spider web and leather.  Hand made
@@ -244,7 +244,7 @@ A drow guard's bracelet.~
 ~
 9 mno 0 0 0 am 0 0 0 0 0 0 0
 1 0 0 0
-2 300 3 15
+2 300 3 15 0
 E
 drow bracelet~
    A drow bracelet is made of some shiny metal.  It offers good wrist
@@ -261,7 +261,7 @@ A pair of black silk pants.~
 ~
 9 mno 0 0 0 af 0 0 0 0 0 0 0
 1 0 0 0
-3 300 5 15
+3 300 5 15 0
 E
 black silk pants~
    A pair of black silk pants interwoven with spider web.  Crafted by drow
@@ -278,7 +278,7 @@ A black pair of guard boots.~
 ~
 9 mno 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
-2 300 5 15
+2 300 5 15 0
 E
 black drow boots~
    A pair of finely crafted drow guard boots.  Sturdy and durable they are
@@ -295,7 +295,7 @@ A drow guard's armband.~
 ~
 9 go 0 0 0 ai 0 0 0 0 0 0 0
 1 0 0 0
-1 300 0 15
+1 300 0 15 0
 E
 arm band armband drow guard~
    A finely crafted armband of drow construction.  Seems to be woven with
@@ -306,9 +306,9 @@ leg leggings leather black drow~
 a pair of drow leggings~
 A pair of finely crafted drow leggings lays here.~
 ~
-9 gjo 0 0 0 a 0 0 0 0 0 0 0
+9 gjo 0 0 0 af 0 0 0 0 0 0 0
 1 0 0 0
-2 300 2 15
+2 300 2 15 0
 E
 leggings leg drow guard black~
    A finely crafted pair of drow leggings offers good protection for the legs.
@@ -322,7 +322,7 @@ A rusty sword lies here.~
 ~
 5 mn 0 0 0 an 0 0 0 0 0 0 0
 5 2 10 3
-3 300 3 15
+3 300 3 15 0
 E
 rusty sword~
    The sword was probably a good weapon at one time but now it has rusted and
@@ -338,7 +338,7 @@ A rusty knife lays here.~
 ~
 5 a 0 0 0 an 0 0 0 0 0 0 0
 5 2 5 11
-2 300 2 15
+2 300 2 15 0
 E
 rusty knife~
    A long thin knife good for piercing armor.  Sturdy and well balanced it is
@@ -352,7 +352,7 @@ A crude shield with a blue dragon on it lays here.~
 ~
 9 a 0 0 0 aj 0 0 0 0 0 0 0
 2 0 0 0
-3 300 2 15
+3 300 2 15 0
 E
 crude shield~
    A crude shield of ancient times is round, hard to hold and easily broken.  
@@ -370,9 +370,9 @@ leather halter~
 a leather halter~
 A shabby leather halter lays in a pile here.~
 ~
-9 mn 0 0 0 a 0 0 0 0 0 0 0
+9 mn 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
-2 300 1 12
+2 300 1 12 0
 E
 shabby leather halter~
    A leather halter is poorly contructed and offers little protection to the
@@ -386,7 +386,7 @@ A leather vest is lying here.~
 ~
 9 j 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
-2 300 3 15
+2 300 3 15 0
 E
 leather vest~
    A poorly crafted leather vest of elf skin.  Offers little protection to the
@@ -403,7 +403,7 @@ An obsidian key shines here.~
 ~
 18 bh 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 300 0 0
+1 300 0 0 0
 E
 key obsidian~
    The key is a finely crafted obisidian stone key that shines a black gleaming
@@ -416,7 +416,7 @@ A crude sign is scrawled here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign crude~
    GoBlinz OnnLee
@@ -431,7 +431,7 @@ A green sign is posted next to the tree here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign green~
    Climb Tree at Own Risk

@@ -2,6 +2,8 @@
 Unknown~
 Dragon Plains~
 23300 23399 30 2 d 0 0 0 15 17
+M 0 23380 1 23380 	(the dragon queen)
+E 1 23380 99 5 	(a suit of dragonscale armour)
 M 0 23335 1 23335 	(a hermit)
 E 1 23336 99 17 	(50' of rope)
 O 0 23335 1 23335 	(canteen)
@@ -10,8 +12,6 @@ M 0 23366 1 23352 	(the lost adventurer)
 G 1 23302 5 -1 	(a map of the dragon plains)
 M 0 23391 2 23391 	(a green dragon)
 E 1 23391 99 6 	(a dragonscale warhelm)
-M 0 23380 1 23380 	(the dragon queen)
-E 1 23380 99 12 	(a suit of dragonscale armour)
 M 0 23376 2 23376 	(a dragon)
 E 1 23376 99 8 	(a pair of dragonscale boots)
 M 0 23362 2 23366 	(a dragon child)

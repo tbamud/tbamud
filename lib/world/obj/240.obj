@@ -5,7 +5,7 @@ A nice robe is laying abandoned on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
-3 3 0 0
+3 3 0 0 0
 E
 robe~
    A long, loose flowing, outer garment, significant of church rank or position.
@@ -18,7 +18,7 @@ Someone left a bright white mantle here.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 2 0 0 0
-3 3 0 0
+3 3 0 0 0
 E
 mantle~
    A very short cloak, often covering just the shoulders.  
@@ -30,7 +30,7 @@ A large battle axe is stuck into the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 7 3 6
-16 800 120 0
+16 800 120 0 0
 E
 axe~
    A single-bladed axe designed primarily for combat.  
@@ -42,7 +42,7 @@ A massive double headed axe is half buried in the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 4 6 3
-18 850 135 0
+18 850 135 0 0
 E
 axe~
    A war axe with two opposing blades.  
@@ -54,7 +54,7 @@ An expertly crafted lochaber is hidden in the dirt.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 8 3 3
-12 600 0 0
+12 600 0 0 0
 E
 axe~
    As much a polearm as an axe, it is a single edged axe head attached to a 6
@@ -67,7 +67,7 @@ A large axe was left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 4 5 6
-8 300 0 0
+8 300 0 0 0
 E
 axe~
    A single wide-edged axe.  
@@ -79,7 +79,7 @@ A bardiche was negligently left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 4 7 4 10
-7 525 52 0
+7 525 52 0 0
 E
 bardiche~
    A type of pole-axe, typically a long, convex blade attached to the pole at
@@ -92,7 +92,7 @@ A halberd is rusting in the damp air.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 4 3 10 6
-8 600 60 0
+8 600 60 0 0
 E
 halberd~
    A large, angled axe blade atop a pole, set with a back spike.  
@@ -104,7 +104,7 @@ A small hatchet has been abandoned by its owner.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 5 3 3
-3 150 15 0
+3 150 15 0 0
 E
 hatchet~
    A small, one handed axe, designed for labor more than combat.  
@@ -116,7 +116,7 @@ A expertly crafted polearm is lying here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 4 5 5 10
-13 465 47 0
+13 465 47 0 0
 E
 polearm~
    This horrifying weapons main feeature is that a large hook is the main body
@@ -130,7 +130,7 @@ A leather loincloth is laying on the ground.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 3 0 0 0
-2 20 2 0
+2 20 2 0 0
 E
 loincloth~
    This is the only clothing most minotaurs wear.  It looks very uncomfortable
@@ -143,7 +143,7 @@ A large side of meat is lying here attracting flies.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 15 3 0
+1 15 3 0 0
 E
 meat~
    This large hunk of meat must have come from a big animal.  You guess it's
@@ -156,7 +156,7 @@ A side of meat was left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-2 10 2 0
+2 10 2 0 0
 E
 meat~
    This large hunk of meat must have come from a big animal.  You guess it's
@@ -169,7 +169,7 @@ A large fish stinks here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-2 50 5 0
+2 50 5 0 0
 E
 fish~
    A large fish, looks like salmon, was left here.  It still looks edible, at
@@ -182,7 +182,7 @@ A loincloth made of soft fur has your name on it.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 2 0 0 0
-3 15 1 0
+3 15 1 0 0
 E
 loincloth~
    This attractive little getup is very soft.  You wouldn't mind wearing this at
@@ -195,7 +195,7 @@ A set of minotaur horns was left here.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 350 35 0
+10 350 35 0 0
 E
 minotaur horns~
    Whoever, or whatever killed the minotaur to get these horns must be on tough
@@ -208,7 +208,7 @@ A gold nosering is covered in dust.~
 ~
 12 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-2 260 26 0
+2 260 26 0 0
 E
 nosering~
    This prized item among the minotaurs looks almost big enough to fit around
@@ -224,7 +224,7 @@ A large oak quarterstaff is perfectly straight and smooth without imperfection.~
 ~
 5 go 0 0 0 an 0 0 0 0 0 0 0
 4 3 7 7
-5 125 12 0
+5 125 12 0 0
 E
 oak quarterstaff~
    A long staff a few inches thick.  It is made of oak and is in perfect
@@ -239,7 +239,7 @@ A set of brass knuckles is lying in the dirt.~
 ~
 9 ag 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
-4 280 28 0
+4 280 28 0 0
 E
 brass knuckles~
    This deadly looking weapon is very good during fist fights.  That or it can
@@ -253,7 +253,7 @@ A large hooded lantern is unlit.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 36 0
-3 60 6 0
+3 60 6 0 0
 E
 lantern hooded~
    This is a rugged lantern used on long treks when searching caves or
@@ -267,20 +267,20 @@ A small belt pouch was left here, maybe there is some money in it.~
 ~
 15 0 0 0 0 al 0 0 0 0 0 0 0
 50 1 -1 0
-2 2 1 0
+2 2 1 0 0
 E
 belt pouch~
    This small pouch is used by merchants to carry their gold, is this one empty?
 
 ~
 #24021
-cape~
+fancy cape~
 a fancy cape~
 A fancy cape was left here.~
 ~
-9 0 0 0 0 ak 0 0 0 0 0 0 0
+9 0 0 0 0 ack 0 0 0 0 0 0 0
 2 0 0 0
-4 204 20 0
+4 204 20 0 0
 E
 cape~
    An fancy unhooded cloak that serves no real purpose except look silly.  You
@@ -295,7 +295,7 @@ A pair of hoof looking sandals are lying here.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-6 30 3 0
+6 30 3 0 0
 E
 sandals~
    These sandals won't even fit on your feet.  Some rich minotaurs of Dun Maura
@@ -309,7 +309,7 @@ A wicked looking whip is coiled up neatly in a circle.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 7 4 5 2
-8 500 0 0
+8 500 0 0 0
 E
 scourge~
    A whip with sharp metal attached to the end.  
@@ -325,7 +325,7 @@ A large bronze sceptre sparkles brightly.~
 ~
 1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
-15 1000 0 0
+15 1000 0 0 0
 E
 spectre~
    This spectre gives off a strange light from an unkown source.  It does not
@@ -338,7 +338,7 @@ A fancy fur purse is hidden in the shadows.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 50 1 -1 0
-9 100 0 0
+9 100 0 0 0
 E
 purse~
    This nice looking purse is very pretty.  You wonder what poor woman dropped
@@ -351,7 +351,7 @@ A gold band, signifying an arena win has been lost here.~
 ~
 9 jk 0 0 0 ab 0 0 0 0 0 0 0
 5 0 0 0
-3 1000 0 0
+3 1000 0 0 0
 E
 gold ring~
    This ring signifies a victory in the arena of Dun Maura, city of minotaurs.
@@ -369,5 +369,5 @@ A pool of clear water is contained within a large fountain made of stone.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
-0 0 0 0
+0 0 0 0 0
 $~

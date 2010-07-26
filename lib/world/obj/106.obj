@@ -5,7 +5,7 @@ A panhandler must of lost his shirt here~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 shirt off back panhandler~
    The thing is filthy and smells like the gutters along the street.  
@@ -17,7 +17,7 @@ An altar stands tall at the back of the room~
 ~
 8 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #10602
 quarterstaff flame hardened~
 a flame hardened quarterstaff~
@@ -25,7 +25,7 @@ A nicely burnt quarterstaff is lying here.~
 ~
 5 j 0 0 0 an 0 0 0 0 0 0 0
 4 3 6 6
-5 25 2 0
+5 25 2 0 0
 #10603
 spear cast iron rebel~
 a cast iron rebel spear~
@@ -33,7 +33,7 @@ A long thin shaft with a sharpened tip lies here.~
 ~
 5 jmn 0 0 0 an 0 0 0 0 0 0 0
 4 3 5 3
-7 350 35 0
+7 350 35 0 0
 #10604
 marble fountain~
 a fountain~
@@ -41,7 +41,7 @@ A large marble fountain is here in the middle of the square.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
-505 0 0 0
+505 0 0 0 0
 #10605
 elcadorian cross~
 a wooden orthodox Elcardorian cross~
@@ -49,7 +49,7 @@ A blood coated cross is here, someone must have slain the owner.~
 ~
 12 b 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-5 25 2 0
+5 25 2 0 0
 A
 19 1
 #10606
@@ -59,7 +59,7 @@ A badly finished pole arm with a hefty blade on the end.~
 ~
 5 jmn 0 0 0 an 0 0 0 0 0 0 0
 4 4 5 3
-8 400 40 0
+8 400 40 0 0
 #10607
 suncas bodyplate~
 a forged Suncas bodyplate~
@@ -67,7 +67,7 @@ A roughly shaped forged bodyplate lays here with the symbol of Suncas on it.~
 ~
 9 j 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-20 1000 100 0
+20 1000 100 0 0
 #10608
 suncas kilt cloth~
 a Suncas cloth kilt~
@@ -75,7 +75,7 @@ A protective kilt lays here with the symbol of Suncas on it.~
 ~
 9 j 0 0 0 al 0 0 0 0 0 0 0
 2 0 0 0
-7 7 0 0
+7 7 0 0 0
 #10609
 suncas banded wristguard~
 a Suncas banded wristguard~
@@ -83,7 +83,7 @@ A ring made of forged iron lays here with the symbol of Suncas embossed in it.~
 ~
 9 j 0 0 0 am 0 0 0 0 0 0 0
 1 0 0 0
-6 300 30 0
+6 300 30 0 0
 #10610
 suncas tin plated leather helmet~
 a Suncas tin scaled leather helmet~
@@ -91,7 +91,7 @@ An tin scaled leather helmet is here, seemingly collasped into itself.~
 ~
 9 j 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
-10 100 10 0
+10 100 10 0 0
 #10611
 sandal suncas rebel~
 a pair of Suncas untanned leather sandals~
@@ -99,7 +99,7 @@ A pair of sandals made from untanned leather lies here.~
 ~
 9 j 0 0 0 ag 0 0 0 0 0 0 0
 1 0 0 0
-3 30 3 0
+3 30 3 0 0
 #10612
 elcadorian military sword~
 a two-handed Elcardorian military sword~
@@ -107,7 +107,7 @@ A crudely fashioned two-handed military sword is lying here.~
 ~
 5 k 0 0 0 an 0 0 0 0 0 0 0
 6 3 8 3
-20 1000 100 0
+20 1000 100 0 0
 #10613
 longsword elcardorian military~
 an Elcardorian military longsword~
@@ -115,7 +115,7 @@ A well-made longsword is lying here with the Elcardorian badge on it.~
 ~
 5 k 0 0 0 an 0 0 0 0 0 0 0
 6 3 6 3
-14 700 70 0
+14 700 70 0 0
 #10614
 rapier military elcardorian~
 an Elcardorian military rapier~
@@ -123,7 +123,7 @@ A finely polished silver edged rapier is lying here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 5 2 5 14
-5 250 25 0
+5 250 25 0 0
 #10615
 platinum Elcardorian sceptre~
 a platinum Elcardorian sceptre~
@@ -131,7 +131,7 @@ A sceptre belonging to the late mayor of Elcardo lays here now, unwanted.~
 ~
 1 gklp 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-2 600 60 0
+2 600 60 0 0
 A
 12 15
 #10616
@@ -141,7 +141,7 @@ An awkwardly shaped plate lays here collecting dust.~
 ~
 9 gk 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-15 750 75 0
+15 750 75 0 0
 A
 13 15
 #10617
@@ -151,7 +151,7 @@ Some plates of bent metal lay here, looking like they belong to the military.~
 ~
 9 kl 0 0 0 af 0 0 0 0 0 0 0
 7 0 0 0
-16 800 80 0
+16 800 80 0 0
 #10618
 arm plate elcardorian military~
 some Elcardorian military arm plates~
@@ -159,7 +159,7 @@ Some plates of raw metal have been tossed here.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
-10 500 50 0
+10 500 50 0 0
 #10619
 cloak elcardorian~
 a blue elcardorian cloak~
@@ -167,7 +167,7 @@ A cloth of soft blue material lies on the ground.~
 ~
 9 kp 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
-1 10 1 0
+1 10 1 0 0
 #10620
 shield elcardorian~
 a leather underlined Elcardorian shield~
@@ -175,7 +175,7 @@ A piece of metal plate with Elcardorian decorations lies here on the ground.~
 ~
 9 kmno 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
-23 150 11 0
+23 150 11 0 0
 #10621
 helmet elcardorian~
 a full faced Elcardorian helmet~
@@ -183,7 +183,7 @@ A large alloy helmet lays here on the ground.~
 ~
 9 ko 0 0 0 ae 0 0 0 0 0 0 0
 8 0 0 0
-15 750 75 0
+15 750 75 0 0
 #10622
 axe executioner~
 a tempered bladed executioner's axe~
@@ -191,7 +191,7 @@ A huge axe is lying here stuck one sided into the ground.~
 ~
 5 bgjmno 0 0 0 an 0 0 0 0 0 0 0
 1 4 7 3
-30 267 26 0
+30 267 26 0 0
 A
 18 -1
 A
@@ -201,9 +201,9 @@ noose~
 a rope noose~
 Circular pieces of rope lie here on the ground.~
 ~
-11 h 0 0 0 a 0 0 0 0 0 0 0
+11 h 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-2 2 0 0
+2 2 0 0 0
 A
 13 -50
 A
@@ -217,7 +217,7 @@ A torture rack stands here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 torture rack~
    An old and blood stained sticky torture rack buckles up and ready to split
@@ -228,9 +228,9 @@ cast iron shackles~
 a pair of cast iron shackles~
 A pair of cast iron shackles lay here on the floor.~
 ~
-9 egh 0 0 0 am 0 0 0 0 0 0 0
+9 egh 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
-15 750 75 0
+15 750 75 0 0
 A
 17 -10
 #10626
@@ -240,7 +240,7 @@ A solid gold ring lies here.~
 ~
 12 gk 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 950 100 0
+1 950 100 0 0
 E
 ring gold~
    The ring is engraved symbol of Elcardo.  
@@ -254,7 +254,7 @@ A coil of barb wire lays here on the ground with a handle on the end.~
 ~
 5 hj 0 0 0 an 0 0 0 0 0 0 0
 7 5 4 2
-1 20 2 0
+1 20 2 0 0
 #10628
 cinnamon danish~
 a cinnamon danish~
@@ -262,7 +262,7 @@ A soil covered cinnamon danish is here on the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-1 120 12 0
+1 120 12 0 0
 #10629
 savoury muffins~
 a savoury muffin~
@@ -270,7 +270,7 @@ A crumbled muffin has been dropped here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
-1 170 17 0
+1 170 17 0 0
 #10630
 cheese bun~
 a cheese bun~
@@ -278,7 +278,7 @@ A bun coated with tasty cheese has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-1 170 17 0
+1 170 17 0 0
 #10631
 ebony vial jar~
 an ebony vial~
@@ -286,7 +286,7 @@ A dark glass jar lies here.~
 ~
 10 0 0 0 0 a 0 0 0 0 0 0 0
 12 29 -1 -1
-2 300 30 0
+2 300 30 0 0
 #10632
 blue waters~
 a jar of blue waters~
@@ -294,7 +294,7 @@ An empty looking jar lays here.~
 ~
 10 0 0 0 0 a 0 0 0 0 0 0 0
 12 -1 -1 -1
-4 180 20 0
+4 180 20 0 0
 #10633
 bright yellow gel jar~
 a jar containing bright yellow gel~
@@ -302,7 +302,7 @@ A jar glowing in bright yellow sits here.~
 ~
 10 0 0 0 0 a 0 0 0 0 0 0 0
 12 -1 -1 -1
-5 160 16 0
+5 160 16 0 0
 #10634
 cherry tube~
 a cherry coloured tube~
@@ -310,7 +310,7 @@ A long cherry coloured test tube lays here.~
 ~
 10 0 0 0 0 a 0 0 0 0 0 0 0
 12 21 -1 -1
-4 170 17 0
+4 170 17 0 0
 #10635
 ring suncas authority~
 an authority ring of the Suncas clan~
@@ -318,7 +318,7 @@ A symbol of authority and power sits in a ring lying here in the middle of the r
 ~
 12 jlm 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 495 55 0
+1 495 55 0 0
 #10636
 backpack lamb skin~
 a lamb skin backpack~
@@ -326,7 +326,7 @@ A backpack either made or covered of lamb skin lays here.~
 ~
 15 0 0 0 0 ak 0 0 0 0 0 0 0
 100 0 -1 0
-15 75 7 0
+15 75 7 0 0
 #10637
 torch~
 a kerosene soaked torch~
@@ -334,7 +334,7 @@ A kerosene soaked torch reeks.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 10 0
-3 15 1 0
+3 15 1 0 0
 #10638
 waterskin buffalo water~
 a buffalo waterskin~
@@ -342,7 +342,7 @@ A small buffalo waterskin is leaking onto the ground.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 20 20 0 0
-25 50 5 0
+25 50 5 0 0
 #10639
 null gravity potion~
 a null gravity potion~
@@ -350,7 +350,7 @@ A small jar is here floating in the middle of the room.~
 ~
 10 0 0 0 0 a 0 0 0 0 0 0 0
 12 -1 -1 -1
-1 500 50 0
+1 500 50 0 0
 #10640
 banks~
 the bank~
@@ -358,7 +358,7 @@ A vault for collection and deposits is here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #10641
 Dagger~
 an assasins dagger~
@@ -366,5 +366,5 @@ A long slender dagger is lying here~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 5 4 4 14
-1 100 10 0
+1 100 10 0 0
 $~

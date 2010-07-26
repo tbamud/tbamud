@@ -2,17 +2,17 @@
 Garrison~
 Ant Hill~
 4600 4699 10 2 d 0 0 0 3 7
-M 0 4600 30 4600 	(a green worker ant)
-E 1 4601 50 16 	(a feeler from a giant ant)
-O 0 4609 30 4625 	(an ant larvae)
-O 0 4609 30 4629 	(an ant larvae)
 M 0 4601 15 4631 	(a red soldier ant)
 E 1 4612 30 16 	(a red ant's stinger)
 E 1 4611 30 5 	(a leather underlined red plated exoskeleton)
 M 1 4601 15 4631 	(a red soldier ant)
 E 1 4612 30 16 	(a red ant's stinger)
-E 1 4605 30 6 	(a red ant's eye)
+E 1 4605 30 17 	(a red ant's eye)
 G 1 4606 5 -1 	(a poisoned metasoma)
+M 0 4600 30 4600 	(a green worker ant)
+E 1 4601 50 16 	(a feeler from a giant ant)
+O 0 4609 30 4625 	(an ant larvae)
+O 0 4609 30 4629 	(an ant larvae)
 M 0 4601 15 4619 	(a red soldier ant)
 E 1 4612 30 16 	(a red ant's stinger)
 E 1 4605 30 0 	(a red ant's eye)

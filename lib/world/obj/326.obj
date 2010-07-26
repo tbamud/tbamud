@@ -5,7 +5,7 @@ A smudge of face paint has been left here.~
 ~
 13 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 paint face~
    The color of green that this paint is would lend to camoflaging you were you
@@ -20,7 +20,7 @@ A pair of black issue boots have been left here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
-7 10 0 16
+7 10 0 16 0
 A
 5 1
 #32602
@@ -30,7 +30,7 @@ A pair of black issue pants have been left here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
-6 10 0 19
+6 10 0 19 0
 A
 13 10
 #32603
@@ -38,9 +38,9 @@ tunic issue grey~
 a grey issue tunic~
 A grey issue tunic has been left here.~
 ~
-9 0 0 0 0 ak 0 0 0 0 0 0 0
+9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
-6 10 0 16
+6 10 0 16 0
 A
 18 1
 #32604
@@ -50,7 +50,7 @@ A blue issue cloak has been left here.~
 ~
 11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-8 10 0 15
+8 10 0 15 0
 A
 17 -2
 #32605
@@ -60,7 +60,7 @@ A blue issue cloak with red edging has been left here.~
 ~
 11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-9 10 0 18
+9 10 0 18 0
 A
 19 2
 A
@@ -72,7 +72,7 @@ Someone dropped a long pike here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 6 3
-7 7 0 17
+7 7 0 17 0
 A
 18 1
 #32607
@@ -82,7 +82,7 @@ A black baton has been dropped here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-6 10 0 29
+6 10 0 29 0
 A
 1 2
 A
@@ -94,7 +94,7 @@ A long ponytail braid has been shorn and left here.~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-2 1 0 28
+2 1 0 28 0
 A
 4 2
 A
@@ -106,7 +106,7 @@ An Eastern Army issue canteen has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 25 25 0 0
-30 10 0 1
+30 10 0 1 0
 #32610
 whip horse~
 a horse whip~
@@ -114,7 +114,7 @@ A horse whip has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 3 3 5 2
-4 10 0 16
+4 10 0 16 0
 A
 19 2
 #32611
@@ -124,7 +124,7 @@ A large rock was placed here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 rock~
    If you tried really hard I bet you could crall under it.  
@@ -136,7 +136,7 @@ A long horseman's sword has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 3
-8 100 0 20
+8 100 0 20 0
 A
 2 1
 A
@@ -148,7 +148,7 @@ Some Eastern Army issue splint mail armor has been left here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
-11 10 0 10
+11 10 0 10 0
 #32614
 sword issue army~
 an Eastern Army issue sword~
@@ -156,7 +156,7 @@ An Eastern Army issue sword has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 4 3 3
-7 10 0 12
+7 10 0 12 0
 A
 19 1
 #32615
@@ -166,7 +166,7 @@ A visored helm has been left here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
-5 10 0 10
+5 10 0 10 0
 #32616
 crossbow~
 a sturdy crossbow~
@@ -174,7 +174,7 @@ A sturdy crossbow has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 4 6 1
-14 10 0 28
+14 10 0 28 0
 A
 4 3
 #32617
@@ -184,7 +184,7 @@ A green longbow has been left here.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 3 3 8 1
-10 10 0 26
+10 10 0 26 0
 #32618
 bow short~
 a shortbow~
@@ -192,7 +192,7 @@ A shortbow has been dropped here.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 3 7 1
-7 10 0 21
+7 10 0 21 0
 #32619
 jacket camo~
 a camo jacket~
@@ -200,7 +200,7 @@ A camo jacket blands in with its surroundings here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 5 0 0 0
-7 7 0 23
+7 7 0 23 0
 #32620
 pants camo~
 some camo pants~
@@ -208,7 +208,7 @@ Some camo pants have been left here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
-6 10 0 24
+6 10 0 24 0
 A
 5 1
 #32621
@@ -218,7 +218,7 @@ A small, handheld collapsing telescope has been left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-4 10 0 15
+4 10 0 15 0
 #32622
 hood camo~
 a camo hood~
@@ -226,7 +226,7 @@ A camo hood has been left here.~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-3 10 0 22
+3 10 0 22 0
 A
 13 20
 #32623
@@ -236,7 +236,7 @@ A pair of marksman's gloves have been left here.~
 ~
 9 b 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
-4 10 0 23
+4 10 0 23 0
 A
 3 1
 #32624
@@ -246,7 +246,7 @@ A bowie knife has been left here.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 3 5 11
-4 10 0 14
+4 10 0 14 0
 A
 18 2
 #32625
@@ -256,7 +256,7 @@ A quiver has been left here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 350 0 -1 0
-5 10 0 1
+5 10 0 1 0
 #32626
 axe woodman's~
 a woodsman's axe~
@@ -264,7 +264,7 @@ A woodsman's axe has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 4 3 5
-13 10 0 12
+13 10 0 12 0
 #32627
 pants leather~
 a pair of strong leather pants~
@@ -272,7 +272,7 @@ A pair of strong leather pants have been left here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
-4 450 0 1
+4 450 0 1 0
 #32628
 headband band thick cloth~
 a thick cloth headband~
@@ -280,7 +280,7 @@ A thick cloth headband has been left here.~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-2 10 0 10
+2 10 0 10 0
 A
 5 1
 #32629
@@ -290,7 +290,7 @@ A shiny whistle has been left here by someone.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 10 0 26
+3 10 0 26 0
 A
 11 1
 A
@@ -302,7 +302,7 @@ A set of officer's chainmail leggings have been left here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 7 0 0 0
-11 10 0 23
+11 10 0 23 0
 A
 19 2
 A
@@ -314,7 +314,7 @@ A thick leather belt has been dropped here.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
-4 120 0 15
+4 120 0 15 0
 A
 3 2
 #32632
@@ -324,7 +324,7 @@ A glowing teardrop thumbring has been left here.~
 ~
 11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-2 400 0 24
+2 400 0 24 0
 A
 4 2
 A

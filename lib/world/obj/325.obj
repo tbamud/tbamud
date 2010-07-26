@@ -5,7 +5,7 @@ Madame Zayla's Wagon rests here in the middle of the woods.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #32501
 small round table~
 a small round table~
@@ -13,7 +13,7 @@ A small round wooden table sits in the center of the wagon.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #32502
 crystal ball madame zayla's~
 Madame Zayla's crystal ball~
@@ -21,7 +21,7 @@ Madame Zayla's crystal ball glows upon the table.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 0
+1 1000 0 0 0
 A
 3 1
 #32503
@@ -31,7 +31,7 @@ The brook trickles by, clear and clean.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 2000 2000 15 0
-2005 0 0 0
+2005 0 0 0 0
 #32504
 small platform stage~
 a small platform stage~
@@ -39,7 +39,7 @@ A small platform stage has been erected for the actors.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #32505
 line children~
 a line of children~
@@ -47,7 +47,7 @@ A line of children run past you from the face painter's booth.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #32506
 hot pie covered~
 a small hot pie~
@@ -55,7 +55,7 @@ A small hot pie has been dropped on the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 9 0 0 0
-2 5 0 0
+2 5 0 0 0
 #32507
 picnic table~
 a long wood picnic table~
@@ -63,7 +63,7 @@ Long wooden picnic tables are scattered about.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 table~
    The tables are about eight feet in length, made from some wood that has aged
@@ -76,7 +76,7 @@ A black iron grill steams with heat.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #32509
 water keg wooden water~
 a wooden keg~
@@ -84,7 +84,7 @@ A wooden keg stands on stilts next to the grill.~
 ~
 17 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #32510
 puppet castle~
 a wooden puppet castle~
@@ -92,7 +92,7 @@ A wooden puppet castle painted to look like stone is here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #32511
 set colored balls~
 a set of colored balls~
@@ -100,7 +100,7 @@ Don't slip! A set of colored balls have been left on the ground.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-4 10 0 1
+4 10 0 1 0
 #32512
 lute simple wooden~
 a simple wooden lute~
@@ -108,7 +108,7 @@ A simple wooden lute has been left here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 25 0 11
+3 25 0 11 0
 A
 3 2
 #32513
@@ -118,7 +118,7 @@ A nice, homemade lyre has been dicarded here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-5 100 0 1
+5 100 0 1 0
 #32514
 love tonic~
 a jar of love tonic~
@@ -126,7 +126,7 @@ A jar of love tonic is glowing on the ground.~
 ~
 10 a 0 0 0 ao 0 0 0 0 0 0 0
 1 7 18 22
-1 165 0 1
+1 165 0 1 0
 #32515
 tonic super smarts jar~
 a jar of super brain-power~
@@ -134,7 +134,7 @@ A jar of super brain-power tonic has been left here.~
 ~
 10 b 0 0 0 ao 0 0 0 0 0 0 0
 1 3 20 21
-2 231 0 1
+2 231 0 1 0
 #32516
 youth tonic~
 a youth tonic~
@@ -142,7 +142,7 @@ An odd looking jar of tonic has been dropped here.~
 ~
 10 a 0 0 0 ao 0 0 0 0 0 0 0
 1 43 -1 -1
-2 189 0 1
+2 189 0 1 0
 #32517
 great tome adventures~
 the Great Tome of Adventures~
@@ -150,7 +150,7 @@ A large tome rests face down on the ground.~
 ~
 2 0 0 0 0 ao 0 0 0 0 0 0 0
 10 -1 -1 -1
-19 200 0 1
+19 200 0 1 0
 #32518
 tether monkey throat small~
 a small throat tether~
@@ -158,7 +158,7 @@ A small throat tether has been thrown to the ground.~
 ~
 11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-3 20 0 11
+3 20 0 11 0
 A
 2 2
 #32519
@@ -168,7 +168,7 @@ A set of tiny symbols lie left on the ground.~
 ~
 12 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-2 10 0 10
+2 10 0 10 0
 A
 13 15
 #32520
@@ -178,7 +178,7 @@ A glowing fortune lies on the ground.~
 ~
 2 0 0 0 0 ao 0 0 0 0 0 0 0
 25 3 -1 -1
-5 100 0 1
+5 100 0 1 0
 #32521
 moth eaten robes~
 a set of moth-eaten robes~
@@ -186,7 +186,7 @@ A set of moth-eaten robes lies left for trash here.~
 ~
 9 b 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
-6 27 0 21
+6 27 0 21 0
 A
 4 2
 A
@@ -198,7 +198,7 @@ A deck of tarot cards have been left here.~
 ~
 12 a 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 500 0 23
+2 500 0 23 0
 A
 19 1
 A
@@ -210,7 +210,7 @@ Some gypsy dancer's silks have been removed and left here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 1 0 0 0
-1 80 0 13
+1 80 0 13 0
 #32524
 tambourine~
 a tambourine~
@@ -218,7 +218,7 @@ A tambourine lies twinklling in the light.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-4 100 0 0
+4 100 0 0 0
 #32525
 slab mutton jerky~
 a slab of mutton jerky~
@@ -226,7 +226,7 @@ A slab of mutton jerky has been dropped here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 7 0 0 0
-1 6 0 0
+1 6 0 0 0
 #32526
 purse snatching~
 the purse of snatching~
@@ -234,7 +234,7 @@ An odd-looking black purse has been dropped here.~
 ~
 15 0 0 0 0 al 0 0 0 0 0 0 0
 650 1 -1 0
-1 200 0 10
+1 200 0 10 0
 A
 2 2
 #32527
@@ -244,7 +244,7 @@ Some alfalfa sprouts lie tossed to the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-1 3 0 0
+1 3 0 0 0
 #32528
 fresh fruit~
 some fresh fruits~
@@ -252,7 +252,7 @@ Some fresh fruits have been dropped to the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-2 7 0 0
+2 7 0 0 0
 #32529
 travel worn cape~
 a travel-worn cape~
@@ -260,7 +260,7 @@ A travel-worn cape lies crunkled on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 3 0 0 0
-4 200 0 22
+4 200 0 22 0
 A
 18 2
 A
@@ -272,7 +272,7 @@ A claw attached to a leather strap has been left here.~
 ~
 9 0 0 0 0 ao 0 0 0 0 0 0 0
 2 0 0 0
-4 10 0 11
+4 10 0 11 0
 A
 4 1
 #32531
@@ -282,7 +282,7 @@ A pair of traveling shoes lie on the ground, dusty from the road.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
-4 45 0 13
+4 45 0 13 0
 A
 5 2
 #32532
@@ -292,7 +292,7 @@ An odd-shaped piece lies on the ground, attached to a chain.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 2 0 0 0
-4 400 0 15
+4 400 0 15 0
 A
 6 2
 #32533
@@ -302,7 +302,7 @@ A bamboo reed lies on the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 40 0 13
+2 40 0 13 0
 A
 6 2
 #32534
@@ -312,7 +312,7 @@ A silk scarf lies rumpled on the ground.~
 ~
 11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-15 2 0 11
+15 2 0 11 0
 A
 21 -2
 #32535
@@ -322,7 +322,7 @@ A finely carved lute made from glossy wood lies here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-6 400 0 17
+6 400 0 17 0
 A
 18 2
 #32536
@@ -330,9 +330,9 @@ fake cat's tail~
 a fake cat's tail~
 A costume cat's tail has been dropped to the ground.~
 ~
-11 0 0 0 0 ao 0 0 0 0 0 0 0
+11 0 0 0 0 alo 0 0 0 0 0 0 0
 0 0 0 0
-3 7 0 10
+3 7 0 10 0
 A
 17 -2
 A
@@ -344,7 +344,7 @@ Some cat's whiskers have been left here.~
 ~
 11 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 8 0 13
+1 8 0 13 0
 A
 2 2
 #32538
@@ -354,7 +354,7 @@ A pair of soft gypsy boots lie unused on the ground.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-5 18 0 14
+5 18 0 14 0
 A
 14 25
 #32539
@@ -364,7 +364,7 @@ A mushroom suit lies in a heap.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
-11 40 0 1
+11 40 0 1 0
 #32540
 clean laundry pile~
 a pile of clean laundry~
@@ -372,7 +372,7 @@ A pile of clean laundry lies on the riverbank.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-6 1 0 0
+6 1 0 0 0
 #32541
 wooden mallet~
 a wooden mallet~
@@ -380,7 +380,7 @@ A wooden mallet has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 2 7 7
-5 5 0 11
+5 5 0 11 0
 A
 3 1
 #32542
@@ -390,7 +390,7 @@ A pair of baggy pants has been tossed to the ground.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 2 0 0 0
-6 14 0 10
+6 14 0 10 0
 A
 2 1
 #32543
@@ -400,7 +400,7 @@ Someone dropped a shoeing hammer here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 3 7
-3 3 0 1
+3 3 0 1 0
 #32544
 mime face paint~
 some mime face paint~
@@ -408,7 +408,7 @@ Some mime face paint has been smudged onto the floor.~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 7 0 12
+1 7 0 12 0
 A
 6 2
 #32545
@@ -418,7 +418,7 @@ A painter's many-colored pallet full of colorful paint is here.~
 ~
 15 b 0 0 0 ao 0 0 0 0 0 0 0
 250 0 -1 0
-3 25 0 20
+3 25 0 20 0
 A
 6 1
 A
@@ -430,7 +430,7 @@ A pair of finely-crafted shoes have been neatly placed here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-4 35 0 26
+4 35 0 26 0
 A
 19 2
 A
@@ -442,7 +442,7 @@ A dainty kercheif lies on the ground.~
 ~
 12 o 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 30 0 11
+2 30 0 11 0
 A
 6 1
 #32548
@@ -452,7 +452,7 @@ A shining ring lies on the ground.~
 ~
 9 0 0 0 0 ab 0 0 0 0 0 0 0
 2 0 0 0
-3 300 0 12
+3 300 0 12 0
 A
 3 1
 #32549
@@ -462,7 +462,7 @@ A sharp-looking hawk dagger has been left here.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 4 5 11
-5 150 0 22
+5 150 0 22 0
 A
 19 2
 A
@@ -474,7 +474,7 @@ A pair of well-worn elven boots lie on the ground.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 5 0 0 0
-8 135 0 19
+8 135 0 19 0
 A
 14 25
 #32551
@@ -484,15 +484,15 @@ A simple home-spun dress has been left behind by someone.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 3 0 0 0
-6 5 0 1
+6 5 0 1 0
 #32552
-jokers cap bells~
+silly-looking jokers cap bells~
 a silly-looking joker's cap~
 A silly-looking joker's cap with bells at the ends lies here.~
 ~
-9 0 0 0 0 0 0 0 0 0 0 0 0
+9 0 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
-0 0 0 15
+0 0 0 15 0
 A
 6 2
 #32553
@@ -502,7 +502,7 @@ A set of stilts has been dropped here.~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-3 10 0 1
+3 10 0 1 0
 A
 11 3
 #32554
@@ -512,7 +512,7 @@ A gypsy ring has been left here.~
 ~
 11 k 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 45 0 28
+2 45 0 28 0
 A
 19 2
 A
@@ -526,7 +526,7 @@ A gypsy thumb ring lies in the dirt.~
 ~
 9 0 0 0 0 ab 0 0 0 0 0 0 0
 2 0 0 0
-2 170 0 29
+2 170 0 29 0
 A
 18 1
 A
@@ -538,7 +538,7 @@ A curved broadsword has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 4 2 3
-11 75 0 7
+11 75 0 7 0
 #32557
 silver tunic~
 a silver tunic~
@@ -546,7 +546,7 @@ A silver tunic lies on the ground.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
-4 10 0 1
+4 10 0 1 0
 #32558
 red tunic~
 a red tunic~
@@ -554,7 +554,7 @@ A red tunic has been left here.~
 ~
 9 0 0 0 0 ak 0 0 0 0 0 0 0
 4 0 0 0
-4 10 0 1
+4 10 0 1 0
 #32559
 lamp renkaza~
 the Lamp of Renkaza~
@@ -562,7 +562,7 @@ A tiny brass oil lamp has been left here.~
 ~
 13 a 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-12 203 0 1
+12 203 0 1 0
 #32560
 horn manticonn~
 the Horn of Manticonn~
@@ -570,7 +570,7 @@ An ood-looking horn has been dropped here.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-14 164 0 1
+14 164 0 1 0
 #32561
 arvida banner~
 Arvida's Banner~
@@ -578,7 +578,7 @@ A lenght of old cloth has been left here.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-12 189 0 1
+12 189 0 1 0
 #32562
 length silk~
 a length of silk~
@@ -586,7 +586,7 @@ A length of silk has been dropped here.~
 ~
 9 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-3 101 0 1
+3 101 0 1 0
 #32563
 silk wrap~
 a silk wrap~
@@ -594,7 +594,7 @@ A beautiful silk wrap has been left here.~
 ~
 9 0 0 0 0 ao 0 0 0 0 0 0 0
 1 0 0 0
-2 87 0 1
+2 87 0 1 0
 #32564
 silk belt~
 a silk belt~
@@ -602,7 +602,7 @@ A silk belt lies on the ground.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 1 0 0 0
-3 69 0 1
+3 69 0 1 0
 #32565
 hand crafted ring~
 a hand crafted ring~
@@ -610,7 +610,7 @@ A hand crafted ring has been left here.~
 ~
 11 0 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
-2 156 0 1
+2 156 0 1 0
 A
 17 -3
 #32566
@@ -620,7 +620,7 @@ A small rope necklace lies on the ground.~
 ~
 11 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-2 67 0 1
+2 67 0 1 0
 A
 17 -2
 #32567
@@ -630,7 +630,7 @@ A pewter thumb ring lies left behind.~
 ~
 9 0 0 0 0 ab 0 0 0 0 0 0 0
 2 0 0 0
-2 132 0 1
+2 132 0 1 0
 #32568
 finger puppet small man~
 a small finger puppet of a man~
@@ -638,7 +638,7 @@ A small finger puppet of a man has been left here.~
 ~
 13 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-5 10 0 1
+5 10 0 1 0
 #32569
 finger puppet small woman~
 a small woman finger-puppet~
@@ -646,7 +646,7 @@ A small woman finger-puppet has been dropped on the ground here.~
 ~
 13 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-5 10 0 1
+5 10 0 1 0
 #32570
 ale mug ale~
 a mug~
@@ -654,5 +654,5 @@ An ale mug has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 6 6 4 0
-11 7 0 0
+11 7 0 0 0
 $~

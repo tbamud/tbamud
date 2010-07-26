@@ -5,7 +5,7 @@ There is a chair that has been left in the center of the floor.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 1
+0 0 0 1 0
 E
 chair~
    It is a very uncomfortable looking piece of furniture which is designed to
@@ -18,7 +18,7 @@ A heavy iron hammer has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 3 5 3 7
-13 10 0 20
+13 10 0 20 0
 A
 1 2
 A
@@ -30,7 +30,7 @@ A steaming branding iron has been dropped here.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 3 3 5 1
-7 10 0 16
+7 10 0 16 0
 A
 4 2
 #32403
@@ -41,7 +41,7 @@ Nothing.
 ~
 2 b 0 0 0 ao 0 0 0 0 0 0 0
 1 36 -1 -1
-3 10 0 1
+3 10 0 1 0
 #32404
 arrows~
 a bundle of arrows~
@@ -49,7 +49,7 @@ A bundle of arrows are stacked neatly here.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 2 3 1
-3 10 0 1
+3 10 0 1 0
 #32405
 pot boiling pitch~
 a pot full of pitch~
@@ -57,7 +57,7 @@ A pot full of pitch for boiling is waiting for a war.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 21
+0 0 0 21 0
 #32406
 ram battering~
 a battering ram~
@@ -65,7 +65,7 @@ A stack of battering rams await times of war and siege.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #32407
 rations military~
 a bundle of military rations~
@@ -73,7 +73,7 @@ A bundle of military rations have been dropped here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-4 10 0 1
+4 10 0 1 0
 #32408
 sabre proud~
 a proud sabre~
@@ -81,7 +81,7 @@ A very ornate, proud sabre has been left here.~
 ~
 5 ag 0 0 0 an 0 0 0 0 0 0 0
 3 5 4 3
-7 10 0 24
+7 10 0 24 0
 A
 3 2
 #32409
@@ -91,7 +91,7 @@ A cavalry knife has been dropped here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 7 11
-4 10 0 21
+4 10 0 21 0
 A
 19 2
 A
@@ -103,7 +103,7 @@ A coil of rope has been dropped here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-4 10 0 1
+4 10 0 1 0
 #32411
 picks lock~
 a set of lock picks~
@@ -111,7 +111,7 @@ A set of lock picks have been left here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-6 10 0 21
+6 10 0 21 0
 A
 2 2
 #32412
@@ -121,7 +121,7 @@ A spyglass has been left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-5 10 0 19
+5 10 0 19 0
 A
 5 2
 #32413
@@ -131,7 +131,7 @@ A first aid kit has been left here.~
 ~
 3 b 0 0 0 ao 0 0 0 0 0 0 0
 20 3 3 15
-5 10 0 1
+5 10 0 1 0
 #32414
 kit medic~
 a medic's kit~
@@ -139,7 +139,7 @@ A medic's kit has been left here.~
 ~
 4 0 0 0 0 ao 0 0 0 0 0 0 0
 20 5 5 16
-6 10 0 1
+6 10 0 1 0
 #32415
 crutch~
 a crutch~
@@ -147,7 +147,7 @@ A crutch has been left here.~
 ~
 11 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-4 10 0 10
+4 10 0 10 0
 A
 14 -20
 A
@@ -157,9 +157,9 @@ badge honor~
 a Badge of Honor~
 A shiny badge has been left here.~
 ~
-11 0 0 0 0 alm 0 0 0 0 0 0 0
+11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-3 10 0 10
+3 10 0 10 0
 A
 5 2
 #32417
@@ -169,7 +169,7 @@ A stretcher lies rolled up on the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-10 10 0 1
+10 10 0 1 0
 A
 10 20
 #32418
@@ -179,7 +179,7 @@ A military issue duffel has been left here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 300 1 -1 0
-4 10 0 10
+4 10 0 10 0
 #32419
 medals slew~
 a slew of medals~
@@ -187,7 +187,7 @@ A slew of medals have been left here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-5 10 0 24
+5 10 0 24 0
 A
 5 2
 A
@@ -199,7 +199,7 @@ A steel visor has been left here.~
 ~
 9 a 0 0 0 ae 0 0 0 0 0 0 0
 7 0 0 0
-4 10 0 20
+4 10 0 20 0
 A
 19 2
 A
@@ -211,7 +211,7 @@ A bellows pump has been left here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-13 10 0 15
+13 10 0 15 0
 A
 19 2
 #32423
@@ -221,7 +221,7 @@ A heavy bronze ring has been left here.~
 ~
 9 a 0 0 0 ab 0 0 0 0 0 0 0
 2 0 0 0
-8 10 0 20
+8 10 0 20 0
 A
 18 1
 A
@@ -233,7 +233,7 @@ A pitchfork has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 5 14
-6 10 0 14
+6 10 0 14 0
 #32425
 apron leather stained~
 a stained leather apron~
@@ -241,7 +241,7 @@ A stained leather apron has been left here.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 0
-5 10 0 1
+5 10 0 1 0
 #32426
 water pail water~
 a metal pail~
@@ -249,7 +249,7 @@ A metal pail lies here on its side.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-4 10 0 0
+4 10 0 0 0
 #32427
 milk jug milk~
 a jug of cold milk~
@@ -257,7 +257,7 @@ A jug of cold milk has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 10 10 10 0
-15 10 0 0
+15 10 0 0 0
 #32428
 meat slab frozen~
 a slab of frozen meat~
@@ -265,7 +265,7 @@ A slab of frozen meat hangs here on a hook.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 10 0 0
+10 10 0 0 0
 #32429
 fruit dried~
 some dried fruits~
@@ -273,7 +273,7 @@ Some dried fruits are laying the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-3 10 0 0
+3 10 0 0 0
 #32430
 rations soldier's~
 some soldier's rations~
@@ -281,5 +281,5 @@ Some soldier's rations are stacked here in a pile.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-4 10 0 0
+4 10 0 0 0
 $~

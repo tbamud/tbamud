@@ -2,11 +2,8 @@
 Silverangel~
 Black Forest~
 29100 29199 30 2 d 0 0 0 10 30
-M 0 29100 1 29137 	(the Headless Horseman)
-G 1 29150 99 -1 	(the Fever Pitch)
-E 1 29104 99 16 	(the Horseman's scimitar)
 M 0 29130 3 29155 	(the doomguard)
-E 1 29109 99 12 	(the Breastplate of a DoomGuard)
+E 1 29109 99 5 	(the Breastplate of a DoomGuard)
 M 0 29110 15 29155 	(the DoomGuard)
 G 1 29110 99 -1 	(the Power of the Silver Angel)
 M 0 29140 3 29155 	(the DoomGuard)
@@ -14,6 +11,9 @@ M 0 29140 3 29155 	(the DoomGuard)
 E 1 29137 999 9 	(the Guantlet of a DoomGuard)
 M 0 29140 3 29155 	(the DoomGuard)
 E 1 29138 999 6 	(the helm of a doomguard)
+M 0 29100 1 29137 	(the Headless Horseman)
+G 1 29150 99 -1 	(the Fever Pitch)
+E 1 29104 99 16 	(the Horseman's scimitar)
 M 0 29150 1 29172 	(Scarlet Fever)
 G 1 29103 99 -1 	(a silver feather)
 E 1 29100 99 4 	(a triangled wheel medallion)
