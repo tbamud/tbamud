@@ -35,6 +35,10 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Sep 19 2010] - Rumble
+  Updated World and files for 3.62 release.
+[Sep 11 2010] - Rumble
+  Fixed non-unix file formats and permissions. (thanks Mirad)
 [Jul 26 2010] - Rumble
   Corrected several bad wear flags on objects. (thanks Insomnia)
 [Jul 12 2010] - Rumble
@@ -1039,6 +1043,7 @@ CircleMUD 3.5
 - Added buildwalk and dig.
  
 Release history:
+Version 3.62 release: September, 2010
 Version 3.61 release: January, 2010
 Version 3.60 release: September, 2009
 Version 3.59 release: April, 2009

@@ -6,10 +6,11 @@ The Pool of Eternal Life sits centered in the boulevard, a wondrous beacon of li
 23 a 0 0 0 0 0 0 0 0 0 0 0
 1000 1000 15 0
 0 0 0 0 0
+T 26400
 E
 pool eternal life~
-   Deep in it's mirrored depths, you think you may be able to see something past
-yourself, something dark, sinister.  
+   Deep in its mirrored depths, you think you may be able to see something past
+yourself, something dark, sinister.
 ~
 #26401
 robe father~
@@ -170,13 +171,13 @@ A fine jacket has been left here.~
 10 0 0 0
 8 800 0 20 0
 E
+buttons~
+   The heavy buttons are engraved with small anchors.  
+~
+E
 stately jacket~
    The dark jacket is really quite nice.  The material is smooth and clean.  
 Heavy metal buttons are sewn in a straight line from top to bottom.  
-~
-E
-buttons~
-   The heavy buttons are engraved with small anchors.  
 ~
 A
 23 2

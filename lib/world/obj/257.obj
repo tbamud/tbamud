@@ -905,12 +905,12 @@ A brilliant sapphire lies here, twinkling happily.~
 0 0 0 0
 2 723 0 0 0
 #25790
-potion green deep~
-a deep-green potion~
-A deep-green potion has been left here.~
+scroll deep green~
+a deep green scroll~
+A deep-green scroll has been left here.~
 ~
-10 a 0 0 0 a 0 0 0 0 0 0 0
-1 35 35 35
+2 a 0 0 0 a 0 0 0 0 0 0 0
+30 35 -1 -1
 2 20 0 0 0
 #25791
 nuts berries~
@@ -929,12 +929,12 @@ A large, sociable bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0 0
 E
-box~
-   If you can read this, the drop box is not working.  
-~
-E
 drop box message~
    Use 'look box' to write a message.  
+~
+E
+box~
+   If you can read this, the drop box is not working.  
 ~
 #25797
 board frozen bulletin~
@@ -945,12 +945,12 @@ A large bulletin board is here, carved from a block of ice.~
 0 0 0 0
 0 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 freeze bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #25798
 board holy bulletin~
@@ -961,12 +961,12 @@ A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 0 0 0 0
 0 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 holy bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 #25799
 board bulletin~
@@ -977,11 +977,11 @@ A large bulletin board is mounted on a wall here.~
 0 0 0 0
 0 0 0 0 0
 E
-board~
-   If you can read this, the board is not working.  
-~
-E
 bulletin~
    Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
 ~
 $~

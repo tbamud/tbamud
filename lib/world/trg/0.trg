@@ -2806,7 +2806,7 @@ teleport~
 %echoaround% %actor% %actor.name% attempts to manipulate space and time.
 wait 1 sec
 set sanctus 100
-set jade 400
+set jade 401
 set newbie 500
 set sea 600
 set camelot 775

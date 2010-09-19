@@ -395,6 +395,6 @@ void check_mobile_string(mob_vnum i, char **string, const char *desc)
     mudlog(BRF, LVL_GOD, TRUE, "%s", smbuf);
     if (*string)
       free(*string);
-    *string = strdup("An undefined string.");
+    *string = strdup("An undefined string.\n");
   }
 }

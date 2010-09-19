@@ -1458,18 +1458,18 @@ ZONE-DELETION DELETION
 
    To prevent accidentally deleting someone's zone and causing conflicting OLC
 access I have made the following guide.  If someone does not login to the mud
-for over three months, and does not mudmail me (Rumble) to let me know of an
+for over a year, and does not mudmail me (Rumble) to let me know of an
 expected absence their zone may be deleted.  I use show areas to list all zones
 and then go through one by one using "last <playername>".  If they have not
-logged in for over three months I then "stat file <playername>" and check that
+logged in for over a year I then "stat file <playername>" and check that
 they have the proper OLC set, and that they do not have the NO_DEL flag (I set
 no_delete on players that tell me they are going to be absent for a while). If 
-they have not been on for three months and do not have NO_DEL set I then "show 
+they have not been on for over a year and do not have NO_DEL set I then "show 
 zone #" to double-check the zone and builder assigned.  I then use r/m/o/s/tlist
-to check if they made anything of value that could be donated.
-   Once I am positive it is safe to delete their zone I set their OLC to -1. 
-"stat file <playername>" to be sure it worked and then delete the zone from the
-server.
+to check if they made anything of value that could be saved and donated.
+   Once I am positive it is safe to delete their zone I set their OLC to off.
+"set file <playername> olc off" then "stat file <playername>" to be sure it 
+worked and then delete the zone from the server withe the RemoveWorld script.
 
 #31
 BITVECTORS NOBITS BITS
@@ -2751,7 +2751,7 @@ Gives a list of the special commands available to you or the name you provide.
 The following wizard commands are implemented with level in the brackets:
 [31];         [31]dig       [31]invis    [31]olist   [31]roomflags [32]tcopy    [31]vstat
 [33]advance   [31]echo      [32]last     [32]pardon  [31]saveall   [33]tedit    [31]wiznet
-[32]aedit     [34]export    [32]links    [31]peace   [32]scopy     [32]teleport [31]wizhelp
+[32]aedit     [34]export    [32]links    [31]peace   [32]scopy     [31]teleport [31]wizhelp
 [31]at        [32]file      [31]load     [34]plist   [31]sedit     [33]thaw     [34]wizlock
 [31]attach    [32]force     [32]mcopy    [31]purge   [32]send      [31]tlist    [33]wizupdate
 [33]ban       [33]freeze    [31]medit    [34]qecho   [32]set       [32]transfer [31]zcheck   
@@ -2888,7 +2888,7 @@ Sets whether or not players can track through doors.
 
 See also: TOGGLE, TRACK
 #31
-WORLD-FORMATS ROOM-FORMATS WLD WORLD-FILES
+WORLD-FORMATS ROOM-FORMATS WLD WLD-FORMAT WORLD-FILES
 
 @n#<virtual number>
 <room name>~
@@ -2907,7 +2907,9 @@ E
 <description text>
 ~
 
-See also: Redit
+http://www.circlemud.org/cdp/building/building-3.html#ss3.1
+
+See also: MOB-FORMAT, OBJ-FORMAT, SHP-FORMAT, ZON-FORMAT, TRG-FORMAT, Redit
 #31
 MOBILE-FORMATS MOB-FORMATS MOB-FILES
 
@@ -3310,7 +3312,7 @@ if %actor.inventory(700)%
   %purge% %actor.inventory(700)%
 end
 
-Alwasy purge at the end of a trigger. If you purge a mob/obj at the beginning
+Always purge at the end of a trigger. If you purge a mob/obj at the beginning
 you can no longer access that mob/obj variables.
 
 Example: @RTSTAT 1375, 6300@n
@@ -4188,7 +4190,7 @@ cha/con/dex/int - Checks the stat. @RHELP TRIG-STAT@n. Subfield adjusts.
 str/stradd/wis()  () is a subfield and allows a change to the variable.
 alias           - The list of aliases of the mob or the player name. 
 align()         - The actor's alignment @RHELP ALIGN@n. Subfield adjusts.
-affect()        - Checks the actor for the affect. @RHELP TRIG-AFFECT@n 
+affect()        - Checks the actor for the affect. @RHELP AFFECT@n 
 armor           - Checks the actor's armor class.
 canbeseen       - Checks if the the mob can see the actor. @RHELP CANBESEEN@n
 class           - The actor's class, as a string.
@@ -4683,7 +4685,8 @@ See also: TRIGEDIT-ROOM-GLOBAL, %TIME%
 TRIGEDIT-ROOM-LOGIN TRIGEDIT-LOGIN TRIG-ROOM-LOGIN
 
 Activated if a player enters the game in the room the trigger is attached to.
-Note: New players enter the game at level 0, not level 1.
+Note: New players enter the game at level 0, not level 1. Use a wait 1 sec to
+allow the player to actually enter the game before the trig fires.
 
 Numeric Arg : percent chance this trigger will be activated. 
 Argument    : not used.
@@ -4691,7 +4694,7 @@ Argument    : not used.
 Variables:
 %self%      - the room.
 
-Example: @RTSTAT 199@n
+Example: @RTSTAT 3017, 199@n
 
 See also: TRIG-TYPE
 #31
@@ -4904,7 +4907,7 @@ See also: MHUNT
 TRIGEDIT-MOB-LOAD TRIGEDIT-LOAD TRIG-LOAD 
  
    Activated when this mobile is created, either by manual load, zreset or
-or regular zone lifespan reset.
+regular zone lifespan reset.
  
 Numeric Arg : percent chance this trigger will be activated.
 Argument    : not used.
@@ -7438,7 +7441,6 @@ E) Extra descriptions menu                @RHELP OEDIT-EXTRA@n
 M) Min Level   : @c0@n                        @RHELP OEDIT-MIN-LEVEL@n
 P) Perm Affects: @cNOBITS@n                   @RHELP OEDIT-PERM-AFFECTS@n
 S) Script    : @cNot Set.@n                   @RHELP SCRIPT-MENU@n
-X) Delete Object                          @RHELP OEDIT-DELETE@n   
 Q) Quit                                
 Enter choice :                        
 
@@ -7897,7 +7899,7 @@ Enter choice :
 REDIT-DELETE ROOMDELETE ROOM-DELETE ERASE DELETE-ROOM ODELETE OEDIT-DELETE MDELETE MEDIT-DELETE DELETE-OBJECT
 
    Deletes the current room, mobile, or object. Be careful and make sure you
-are deleting the right vnum.
+are deleting the right vnum. Do not delete objects in rent files.
 
 See also: OLC, AUTOSAVE, PURGE, VDELETE
 #31
@@ -8052,7 +8054,7 @@ The following room flags can be selected:
                  can be set so that only they can wander on the first level of 
                  a dungeon by making the stairwells NO_MOB. A NO_MOB room will 
                  not prevent pets and charmed mobs from following players. A
-				 mob can flee into a NO_MOB room.
+                 mob can flee into a NO_MOB room.
 4)  INDOORS    - Weather messages will not be sent to room, always lighted. 
                  Call lightning will not work.
 5)  PEACEFUL   - No violence will work here. Use sparingly.
@@ -8696,16 +8698,18 @@ rumble@@tbamud.com
  325 REVELRY                            -- Kaan                        6-30
  326 Army PERIMETER                     -- Kaan                        8-30
  345 ASYLUM for the Insane              -- Duluth                      6-10
-
+ 555 ULTIMA                             -- Unknown Parna               1-30
+ 556 Ultima II                          -- Unknown Parna               1-30
+ 
 Zone names CAPITALIZED are accessed by teleporter. i.e. "teleport sanctus"
 Uncapitalized zones are linked through a capitalized zone.
 Teleporter Trigger: 99
 
-The above world includes: (as of 2009):
-   9967 mobiles           3613 prototypes
-  10686 objects           4512 prototypes
-  12029 rooms              183 zones
-   1396 triggers           315 shops
+The above world includes: (as of 2010):
+   7181 mobiles           3674 prototypes
+   7847 objects           4593 prototypes
+  12179 rooms              184 zones
+   1445 triggers           318 shops
 
 If you wish to see what standards we have used to balance these zones just stop
 by TBA or see the help files on OBJ-LIMITS, MOB-LIMITS.
@@ -9808,7 +9812,7 @@ Example:
 
   > diagnose doctor
 
-See also: HIT, KILL
+See also: CONSIDER, HIT, KILL
 #0
 DONATE
 
@@ -12669,6 +12673,14 @@ develop our newly released tbaMUD codebase (the codebase formerly
 known as CircleMUD).
 
 See also: REVIEWS
+#0
+SUBVERSION SVN
+
+To checkout the latest version:
+svn checkout http://tbamud.com/svn/circlemud/circlemud tbamud
+
+Full details: http://www.tbamud.com/content/tbamuds-public-svn-repository
+
 #0
 TBA-ADVERTISING
 
