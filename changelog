@@ -35,6 +35,9 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Sep 28 2010] - Rumble
+  Fixed a couple NPC accessing player data errors.
+  Fixed oedit extra desc's from always showing "Set" even if they weren't. (thanks Mirad)
 [Sep 19 2010] - Rumble
   Updated World and files for 3.62 release.
 [Sep 11 2010] - Rumble

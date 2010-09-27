@@ -197,7 +197,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   /* Underwater Room: Does lack of underwater breathing prevent movement? */
   if ((SECT(was_in) == SECT_UNDERWATER) || (SECT(going_to) == SECT_UNDERWATER))
   {
-    if (!has_scuba(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
+    if (!has_scuba(ch) && !IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
       send_to_char(ch, "You need to be able to breathe water to go there!\r\n");
       return (0);
     }

@@ -670,7 +670,7 @@ static void oedit_disp_menu(struct descriptor_data *d)
 	  GET_OBJ_VAL(obj, 1),
 	  GET_OBJ_VAL(obj, 2),
 	  GET_OBJ_VAL(obj, 3),
-	  grn, nrm, grn, nrm, cyn, GET_OBJ_EXTRA(obj) ? "Set." : "Not Set.", grn,
+	  grn, nrm, grn, nrm, cyn, obj->ex_description ? "Set." : "Not Set.", grn,
           grn, nrm, cyn, GET_OBJ_LEVEL(obj),
           grn, nrm, cyn, buf2,
           grn, nrm, cyn, OLC_SCRIPT(d) ? "Set." : "Not Set.",
