@@ -173,8 +173,8 @@ static IBT_DATA *read_ibt( char *filename, FILE *fp )
             break;
 
           case 'N':
-            if (!str_cmp(word, "Name"))   STRFREE(ibtData->name);
-            if (!str_cmp(word, "Notes"))  STRFREE(ibtData->notes);
+            if (!str_cmp(word, "Name") && ibtData->name)   STRFREE(ibtData->name);
+            if (!str_cmp(word, "Notes") && ibtData->notes)  STRFREE(ibtData->notes);
             TXT_KEY("Name",     ibtData->name,    fread_line( fp ));
             KEY("Notes",        ibtData->notes,   fread_string( fp, buf ));
             break;

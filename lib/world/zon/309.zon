@@ -2,14 +2,14 @@
 Kaan~
 Keep of Baron Westlawn~
 30900 30999 30 2 d 0 0 0 26 30
-M 0 30919 2 30968 	(a watchman)
-E 1 30921 99 6 	(a glass eyepiece)
-E 1 30900 100 5 	(a red steel breastplate)
-E 1 30901 99 6 	(a red steel face plate)
 M 0 30919 2 30961 	(a watchman)
 E 1 30921 99 6 	(a glass eyepiece)
 E 1 30900 100 5 	(a red steel breastplate)
-E 1 30901 99 6 	(a red steel face plate)
+E 1 30901 99 3 	(a red steel face plate)
+M 0 30919 2 30968 	(a watchman)
+E 1 30921 99 6 	(a glass eyepiece)
+E 1 30900 100 5 	(a red steel breastplate)
+E 1 30901 99 3 	(a red steel face plate)
 M 0 30922 1 30933 	(Jerrod)
 E 1 30925 100 16 	(a titanium blade)
 E 1 30926 100 12 	(a red mantle)

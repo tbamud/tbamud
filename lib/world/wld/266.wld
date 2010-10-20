@@ -46,6 +46,10 @@ Zone 266 is linked to the following zones:
 259 Haunted Mansion                at 26657 (east ) ---> 25904
 264 Banshide                       at 26664 (south) ---> 26428
 264 Banshide                       at 26665 (north) ---> 26419
+
+   * In room 26659, the reset has moved object 26604 to neck, since there is no
+face slot here.  If you have a face slot, this should be moved back to face.
+
 ~
 S
 #26601
@@ -2227,14 +2231,14 @@ D5
 pentagram~
 1 0 26695
 E
+slab~
+   It is encrypted with strange runes.  
+~
+E
 runes~
    The runes depict what appears to be the very same stone slab that they are
 inscribed upon.  The runes show a manlike being standing before the runes, the
 runes glowing fiercely, and then the man gone.  
-~
-E
-slab~
-   It is encrypted with strange runes.  
 ~
 S
 #26695

@@ -1,0 +1,17 @@
+Text       couldnt find 2nd floor's moongate in ultima~
+Body      couldn't find 2nd floor's moongate in ultima
+~
+Name      Neptune~
+Level     30
+Room      55524
+Flags     0 0 0 0
+End
+Text       still about the 2nd moongate in ultima~
+Body      I found that there's a trigger in some room that handles the command
+"open shelf" --  there should be a hint somewhere in the descriptions.
+~
+Name      Neptune~
+Level     30
+Room      55571
+Flags     0 0 0 0
+End

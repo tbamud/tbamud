@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Oct 20 2010] - Rumble
+  Fixed freeing of null pointers in ibt.c (thanks Stoneheart)
 [Sep 28 2010] - Rumble
   Fixed a couple NPC accessing player data errors.
   Fixed oedit extra desc's from always showing "Set" even if they weren't. (thanks Mirad)

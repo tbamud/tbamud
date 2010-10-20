@@ -431,4 +431,14 @@ eval inv %actor.inventory%
 %echo% As the wrapping falls apart, it reveals... %inv.shortdesc%.
 %purge% %self%
 ~
+#221
+Open Sesame~
+2 c 100
+s~
+if %cmd.mudcommand% == say && avaa ovi /= %arg%
+  %echo% open door.
+else
+  %echo% don't open door.
+end
+~
 $~

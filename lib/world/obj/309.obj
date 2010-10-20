@@ -5,7 +5,7 @@ A red steel breastplate lies discarded on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-11 100 0 20
+11 100 0 20 0
 A
 13 25
 A
@@ -17,9 +17,9 @@ plate face red steel~
 a red steel face plate~
 A red steel face plate lies on the ground.~
 ~
-9 0 0 0 0 ae 0 0 0 0 0 0 0
+9 0 0 0 0 ace 0 0 0 0 0 0 0
 5 0 0 0
-5 100 0 20
+5 100 0 20 0
 A
 1 3
 A
@@ -31,7 +31,7 @@ A guardsman's sword has been dropped here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 4 5 3
-8 100 0 20
+8 100 0 20 0
 A
 19 4
 A
@@ -45,7 +45,7 @@ A barrel of beer lies on the ground.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 75 75 1 0
-80 20 0 1
+80 20 0 1 0
 #30904
 wheel barrow~
 a wheel barrow~
@@ -53,7 +53,7 @@ A wheel barrow lies at the side of the road.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 400 0 -1 0
-18 10 0 1
+18 10 0 1 0
 #30905
 shovel~
 a shovel~
@@ -61,7 +61,7 @@ A shovel has been left on the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-4 250 0 1
+4 250 0 1 0
 #30906
 beads string~
 a string of beads~
@@ -69,7 +69,7 @@ A string of beads have been dropped here.~
 ~
 12 0 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-4 100 0 20
+4 100 0 20 0
 A
 3 1
 A
@@ -81,7 +81,7 @@ A pint of container has been left on the ground.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 4 4 3 0
-9 8 0 1
+9 8 0 1 0
 #30908
 water jar water~
 a jar of water~
@@ -89,7 +89,7 @@ A clear jar has been left here.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 4 4 0 0
-9 3 0 1
+9 3 0 1 0
 #30909
 steak platter~
 a steak platter~
@@ -97,7 +97,7 @@ A steak platter lies on the ground.~
 ~
 19 0 0 0 0 ao 0 0 0 0 0 0 0
 6 0 0 0
-3 11 0 1
+3 11 0 1 0
 #30910
 paper wadded piece~
 a wadded up piece of paper~
@@ -105,7 +105,7 @@ A wadded up piece of paper lies on the ground.~
 ~
 12 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 25
+1 10 0 25 0
 E
 paper~
    To you my love, my dear Landestine -
@@ -140,7 +140,7 @@ A jet-black cloak lies in a ball on the ground.~
 ~
 9 a 0 0 0 ak 0 0 0 0 0 0 0
 9 0 0 0
-7 1000 0 26
+7 1000 0 26 0
 A
 12 40
 A
@@ -154,7 +154,7 @@ An etched staff has been left on the ground.~
 ~
 4 a 0 0 0 ao 0 0 0 0 0 0 0
 30 3 3 3
-6 100 0 0
+6 100 0 0 0
 A
 19 3
 A
@@ -168,7 +168,7 @@ A glowing thumb rune lies on the ground.~
 ~
 11 a 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-3 103 0 25
+3 103 0 25 0
 A
 19 2
 A
@@ -182,7 +182,7 @@ A leather harness lies coiled on the ground.~
 ~
 9 0 0 0 0 aco 0 0 0 0 0 0 0
 6 0 0 0
-6 50 0 23
+6 50 0 23 0
 A
 13 30
 #30915
@@ -192,7 +192,7 @@ A fishing pole lies tossed aside.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 10 0 1
+3 10 0 1 0
 #30916
 shiney lure~
 a shiny lure~
@@ -200,7 +200,7 @@ A small shiny lure lies glinting on the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 1
+1 10 0 1 0
 #30917
 basket wicker~
 a wicker basket~
@@ -208,7 +208,7 @@ A wicker basket has been left here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 300 5 -1 0
-5 10 0 1
+5 10 0 1 0
 #30918
 belt might~
 the Belt of Supreme Might~
@@ -216,7 +216,7 @@ A glowing belt lies thrown to the ground.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 7 0 0 0
-6 100 0 21
+6 100 0 21 0
 A
 1 3
 A
@@ -230,7 +230,7 @@ A small, glowing purple shield lies on the ground.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
-6 1000 0 22
+6 1000 0 22 0
 A
 13 35
 A
@@ -244,7 +244,7 @@ A keg of beer of beer lies on its side.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 100 100 1 0
-105 56 0 1
+105 56 0 1 0
 #30921
 eyepiece glass~
 a glass eyepiece~
@@ -252,7 +252,7 @@ An odd-shaped glass eyepiece has been dropped.~
 ~
 11 a 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-3 100 0 20
+3 100 0 20 0
 A
 13 30
 #30922
@@ -262,7 +262,7 @@ An elite charm hangs from a red steel chain, dropped upon the floor.~
 ~
 11 a 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-4 10 0 21
+4 10 0 21 0
 A
 17 -3
 A
@@ -276,7 +276,7 @@ A red steel short sword has been left here.~
 ~
 5 b 0 0 0 an 0 0 0 0 0 0 0
 0 4 7 14
-8 400 0 23
+8 400 0 23 0
 A
 18 4
 A
@@ -290,7 +290,7 @@ A pair of bladed boots have been left on the floor.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 8 0 0 0
-9 300 0 25
+9 300 0 25 0
 A
 19 4
 A
@@ -304,7 +304,7 @@ A beautiful titanium blade has been somehow left behind.~
 ~
 5 a 0 0 0 an 0 0 0 0 0 0 0
 0 6 6 3
-10 500 0 25
+10 500 0 25 0
 A
 18 5
 A
@@ -318,7 +318,7 @@ A red mantle lies on the ground, waiting to be worn.~
 ~
 11 a 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-7 154 0 25
+7 154 0 25 0
 A
 18 3
 A
@@ -332,7 +332,7 @@ A red clasp has been dropped to the ground.~
 ~
 11 a 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-3 300 0 25
+3 300 0 25 0
 A
 17 -4
 A
@@ -346,7 +346,7 @@ A clipboard has been left here.~
 ~
 16 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-4 10 0 1
+4 10 0 1 0
 #30929
 hammer forgeman's~
 a forgeman's hammer~
@@ -354,7 +354,7 @@ A huge forgeman's hammer lies on the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 6 8 7
-14 100 0 21
+14 100 0 21 0
 A
 19 4
 A
@@ -368,7 +368,7 @@ A brass eye guard has been dropped on the ground.~
 ~
 9 a 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
-4 100 0 23
+4 100 0 23 0
 A
 13 35
 A
@@ -380,7 +380,7 @@ An iron anvil sits squarely in the center of the floor.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #30932
 guards forearm arm~
 a set of leather forearm guards~
@@ -388,7 +388,7 @@ A set of leather forearm guards lie on the ground.~
 ~
 9 mn 0 0 0 ai 0 0 0 0 0 0 0
 7 0 0 0
-6 100 0 25
+6 100 0 25 0
 A
 19 3
 A
@@ -402,7 +402,7 @@ A red steel ring had been dropped on the ground.~
 ~
 11 ak 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-2 300 0 25
+2 300 0 25 0
 A
 19 5
 A
@@ -416,7 +416,7 @@ A plain red steel ring lies on the ground.~
 ~
 11 k 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-3 400 0 25
+3 400 0 25 0
 A
 17 -3
 A
@@ -430,7 +430,7 @@ A pair of red chainmail leggings lie on the ground.~
 ~
 9 ak 0 0 0 af 0 0 0 0 0 0 0
 9 0 0 0
-9 1000 0 25
+9 1000 0 25 0
 A
 19 5
 A
@@ -444,7 +444,7 @@ A large wooden spoon has been left on the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 1 0 1
+3 1 0 1 0
 #30937
 straw piece~
 a piece of straw~
@@ -452,7 +452,7 @@ A piece of straw lies thrown to the ground.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 1
+1 1 0 1 0
 #30938
 boots thick leather~
 a pair of thick leather boots~
@@ -460,7 +460,7 @@ A pair of thick leather boots lie on the ground.~
 ~
 9 a 0 0 0 ag 0 0 0 0 0 0 0
 6 0 0 0
-8 100 0 27
+8 100 0 27 0
 A
 5 2
 A
@@ -474,7 +474,7 @@ A tall, wide-brimmed hat lies thrown to the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
-5 300 0 28
+5 300 0 28 0
 A
 19 4
 A
