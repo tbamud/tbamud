@@ -79,6 +79,7 @@ struct ibt_data
   char       *notes;                /**< Resolution Notes added by Administrators  */
   int        level;                 /**< Level of the person who reported this IBT */
   room_vnum  room;                  /**< Room in which this IBT was reported       */
+  long       id_num;                /**< The ID number of the player who logged it */
   int        flags[IBT_ARRAY_MAX];  /**< IBT flags                                 */
 };
 

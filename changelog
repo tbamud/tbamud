@@ -35,6 +35,9 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Oct 30 2010] - Jamdog
+  Added ability for players to list/show their own ideas, bugs and typos (thanks Frenze)
+  Added more details to header for idea/bug/typo show command (thanks Parna)
 [Oct 20 2010] - Rumble
   Fixed freeing of null pointers in ibt.c (thanks Stoneheart)
 [Sep 28 2010] - Rumble

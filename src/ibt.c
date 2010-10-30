@@ -76,6 +76,7 @@ static IBT_DATA *new_ibt(void)
    ibtData->body       = NULL;
    ibtData->notes      = NULL;
    ibtData->level      = 0;
+   ibtData->id_num     = NOBODY;
    ibtData->room       = NOWHERE;
 
    for (i=0; i<IBT_ARRAY_MAX; i++)
@@ -115,7 +116,7 @@ static void free_ibt_list(IBT_DATA *first_ibt, IBT_DATA *last_ibt)
 static IBT_DATA *read_ibt( char *filename, FILE *fp )
 {
    IBT_DATA *ibtData;
-   char *word;
+   char *word, *id_num=NULL;
    char buf[MAX_STRING_LENGTH];
    bool fMatch, flgCheck;
    char letter;
@@ -152,6 +153,9 @@ static IBT_DATA *read_ibt( char *filename, FILE *fp )
           case 'E':
             if (!str_cmp(word, "End"))
             {
+              if ( id_num )
+                ibtData->id_num = atol(id_num);
+
               if ( !ibtData->name )
                 ibtData->name = STRALLOC("");
               if ( !ibtData->text )
@@ -166,6 +170,10 @@ static IBT_DATA *read_ibt( char *filename, FILE *fp )
 
           case 'F':
             KEY("Flags",    flgCheck,         fread_flags(fp, ibtData->flags, IBT_ARRAY_MAX));
+            break;
+
+          case 'I':
+            TXT_KEY("IdNum", id_num, fread_line(fp));
             break;
 
           case 'L':
@@ -305,6 +313,8 @@ void save_ibt_file(int mode)
          fprintf(fp,"Name      %s~\n",ibtData->name);
        if (ibtData->notes && *(ibtData->notes))
          fprintf(fp,"Notes     %s~\n",ibtData->notes);
+       if (ibtData->id_num != NOBODY)
+         fprintf(fp,"IdNum     %ld\n",ibtData->id_num);
        fprintf(fp,"Level     %d\n",ibtData->level);
        fprintf(fp,"Room      %d\n",ibtData->room);
        fprintf(fp,"Flags     %d %d %d %d\n",ibtData->flags[0],ibtData->flags[1],
@@ -450,16 +460,18 @@ ACMD(do_ibt)
                                QYEL, CMD_NAME, QNRM);
       return;
     } else {
-      send_to_char(ch, "Usage: %s%s submit <header>%s\r\n", QYEL, CMD_NAME, QNRM);
+      send_to_char(ch, "Usage: %s%s submit <header>%s\r\n"
+                       "       %s%s list%s\r\n"
+                       "       %s%s show <num>%s\r\n",
+                               QYEL, CMD_NAME, QNRM,
+                               QYEL, CMD_NAME, QNRM,
+                               QYEL, CMD_NAME, QNRM);
+      send_to_char(ch, "Note: Only %ss logged by you will be listed or shown.\r\n", CMD_NAME);
       return;
     }
   }
   else if(is_abbrev(arg,"show"))
   {
-    if (GET_LEVEL(ch) < LVL_IMMORT) {
-      send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
-      return;
-    }
     if (!is_number(arg2)) {
       send_to_char(ch, "Show which %s?\r\n", CMD_NAME);
       return;
@@ -470,32 +482,48 @@ ACMD(do_ibt)
       send_to_char(ch, "That %s doesn't exist.\r\n", CMD_NAME);
       return;
     } else {
-      send_to_char(ch, "%s%s Details%s\r\n%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->body);
-      if (ibtData->notes && *(ibtData->notes))
-        send_to_char(ch, "%s%s Notes%s\r\n%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->notes);
-      send_to_char(ch, "%s%s Status: %s%s%s%s\r\n",QCYN, ibt_types[subcmd],
-                                     IBT_FLAGGED(ibtData, IBT_RESOLVED) ? QBGRN : QBRED,
-                                     IBT_FLAGGED(ibtData, IBT_RESOLVED) ? "Resolved" : "Unresolved",
-                                     IBT_FLAGGED(ibtData, IBT_INPROGRESS) ? " (In Progress)" : "",
-                                     QNRM);
+      if ((GET_LEVEL(ch) < LVL_IMMORT) && (GET_IDNUM(ch) != ibtData->id_num)) {
+        send_to_char(ch, "Sorry but you may only view %ss you have posted yourself.\n\r", ibt_types[subcmd]);
+      } else {
+
+        send_to_char(ch, "%s%s by %s%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->name);
+        if (GET_LEVEL(ch) >= LVL_IMMORT) {
+          send_to_char(ch, "%sLevel: %s%d\r\n",QCYN, QYEL, ibtData->level);
+          send_to_char(ch, "%sRoom : %s%d\r\n",QCYN, QYEL, ibtData->room);
+        }
+        send_to_char(ch, "%sTitle: %s%s\r\n",QCYN, QYEL, ibtData->text);
+        send_to_char(ch, "%s%s Details%s\r\n%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->body);
+        if (ibtData->notes && *(ibtData->notes))
+          send_to_char(ch, "%s%s Notes%s\r\n%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->notes);
+        send_to_char(ch, "%s%s Status: %s%s%s%s\r\n",QCYN, ibt_types[subcmd],
+                                       IBT_FLAGGED(ibtData, IBT_RESOLVED) ? QBGRN : QBRED,
+                                       IBT_FLAGGED(ibtData, IBT_RESOLVED) ? "Resolved" : "Unresolved",
+                                       IBT_FLAGGED(ibtData, IBT_INPROGRESS) ? " (In Progress)" : "",
+                                       QNRM);
+      }
     }
 
     return;
   }
   else if(is_abbrev(arg,"list"))
   {
-    if (GET_LEVEL(ch) < LVL_IMMORT) {
-      send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
-      return;
-    }
 
     if (first_ibt)
     {
-      send_to_char(ch,"%s No %s|%sName        %s|%sRoom  %s|%sLevel%s|%s Description\r\n", QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN);
-      send_to_char(ch,"%s ---|------------|------|-----|--------------------------------------------------%s\r\n", QGRN, QNRM);
+      if (GET_LEVEL(ch) < LVL_IMMORT) {
+        send_to_char(ch,"%s No %s|%s Description\r\n", QCYN, QGRN, QCYN);
+        send_to_char(ch,"%s ---|--------------------------------------------------%s\r\n", QGRN, QNRM);
+      } else {
+        send_to_char(ch,"%s No %s|%sName        %s|%sRoom  %s|%sLevel%s|%s Description\r\n", QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN);
+        send_to_char(ch,"%s ---|------------|------|-----|--------------------------------------------------%s\r\n", QGRN, QNRM);
+      }
       i=num_res=num_unres=0;
       for (ibtData=first_ibt;ibtData;ibtData = ibtData->next) {
         i++;
+
+        /* For mortals, skip IBT's that they didn't log */
+        if ((GET_LEVEL(ch) < LVL_IMMORT) && (ibtData->id_num != GET_IDNUM(ch)))
+          continue;
 
         /* Set up the 'important' flag */
         if (IBT_FLAGGED(ibtData, IBT_IMPORTANT))
@@ -504,28 +532,41 @@ ACMD(do_ibt)
           sprintf(imp, "%c", ' ');
 
         if (!IBT_FLAGGED(ibtData, IBT_RESOLVED)) {
-          send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
-                                imp, QRED, i, QGRN,
-                                QRED, ibtData->name, QGRN,
-                                QRED, ibtData->room, QGRN,
-                                QRED, ibtData->level, QGRN,
-                                QRED, ibtData->text, QNRM);
+          if (GET_LEVEL(ch) < LVL_IMMORT) {
+            send_to_char(ch, "%s%s%3d%s|%s%s%s\r\n",
+                                  imp, QRED, i, QGRN,
+                                  QRED, ibtData->text, QNRM);
+          } else {
+            send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+                                  imp, QRED, i, QGRN,
+                                  QRED, ibtData->name, QGRN,
+                                  QRED, ibtData->room, QGRN,
+                                  QRED, ibtData->level, QGRN,
+                                  QRED, ibtData->text, QNRM);
+          }
           num_unres++;
         } else {
-          send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
-                                imp, QGRN, i, QGRN,
-                                QGRN, ibtData->name, QGRN,
-                                QGRN, ibtData->room, QGRN,
-                                QGRN, ibtData->level, QGRN,
-                                QGRN, ibtData->text, QNRM);
+          if (GET_LEVEL(ch) < LVL_IMMORT) {
+            send_to_char(ch, "%s%s%3d|%s%s\r\n",
+                                  imp, QGRN, i, ibtData->text, QNRM);
+          } else {
+            send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+                                  imp, QGRN, i, QGRN,
+                                  QGRN, ibtData->name, QGRN,
+                                  QGRN, ibtData->room, QGRN,
+                                  QGRN, ibtData->level, QGRN,
+                                  QGRN, ibtData->text, QNRM);
+          }
           num_res++;
         }
       }
-
-      send_to_char(ch,"\n\r%s%d %ss in file. %s%d%s resolved, %s%d%s unresolved%s\r\n",QCYN, i, CMD_NAME, QBGRN, num_res, QCYN, QBRED, num_unres, QCYN, QNRM);
-      send_to_char(ch,"%s%ss in %sRED%s are unresolved %ss.\r\n", QCYN, ibt_types[subcmd], QRED, QCYN, CMD_NAME);
-      send_to_char(ch,"%s%ss in %sGREEN%s are resolved %ss.\r\n", QCYN, ibt_types[subcmd], QGRN, QCYN, CMD_NAME);
-
+      if ((num_res + num_unres) > 0) {
+        send_to_char(ch,"\n\r%s%d %ss in file. %s%d%s resolved, %s%d%s unresolved%s\r\n",QCYN, i, CMD_NAME, QBGRN, num_res, QCYN, QBRED, num_unres, QCYN, QNRM);
+        send_to_char(ch,"%s%ss in %sRED%s are unresolved %ss.\r\n", QCYN, ibt_types[subcmd], QRED, QCYN, CMD_NAME);
+        send_to_char(ch,"%s%ss in %sGREEN%s are resolved %ss.\r\n", QCYN, ibt_types[subcmd], QGRN, QCYN, CMD_NAME);
+      } else {
+        send_to_char(ch,"No %ss have been found that were reported by you!\r\n", CMD_NAME);
+      }
       if (GET_LEVEL(ch) >= LVL_GRGOD) {
         send_to_char(ch,"%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
       }
@@ -563,10 +604,11 @@ ACMD(do_ibt)
     string_write(ch->desc, &(ibtData->body),MAX_IBT_LENGTH, 0, NULL);
 
 
-    ibtData->room  = GET_ROOM_VNUM(IN_ROOM(ch));
-    ibtData->level = GET_LEVEL(ch);
-    ibtData->text  = STRALLOC(arg_text);
-    ibtData->name  = STRALLOC(GET_NAME(ch));
+    ibtData->room   = GET_ROOM_VNUM(IN_ROOM(ch));
+    ibtData->level  = GET_LEVEL(ch);
+    ibtData->text   = STRALLOC(arg_text);
+    ibtData->name   = STRALLOC(GET_NAME(ch));
+    ibtData->id_num = GET_IDNUM(ch);
     switch(subcmd) {
        case SCMD_BUG : LINK( ibtData, first_bug, last_bug, next, prev );
                        break;
