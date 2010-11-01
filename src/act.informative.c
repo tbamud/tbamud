@@ -800,7 +800,7 @@ ACMD(do_score)
   send_to_char(ch, "You have %d exp, %d gold coins, and %d questpoints.\r\n",
 	  GET_EXP(ch), GET_GOLD(ch), GET_QUESTPOINTS(ch));
 
-  if (GET_LEVEL(ch) < LVL_IMMORT)
+  if (GET_LEVEL(ch) < 30)
     send_to_char(ch, "You need %d exp to reach your next level.\r\n",
 	level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1) - GET_EXP(ch));
 
@@ -2596,7 +2596,7 @@ ACMD(do_scan)
 
   for (door = 0; door < NUM_OF_DIRS; door++) {
     for (range = 1; range<= maxrange; range++) {
-      if (world[scanned_room].dir_option[door] &&
+      if (world[scanned_room].dir_option[door] && world[scanned_room].dir_option[door]->to_room != NOWHERE &&
        !IS_SET(world[scanned_room].dir_option[door]->exit_info, EX_CLOSED)) {
         scanned_room = world[scanned_room].dir_option[door]->to_room;
         if (world[scanned_room].people)

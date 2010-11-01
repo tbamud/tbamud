@@ -120,7 +120,6 @@ int	perform_move(struct char_data *ch, int dir, int following);
 int	mana_gain(struct char_data *ch);
 int	hit_gain(struct char_data *ch);
 int	move_gain(struct char_data *ch);
-void	advance_level(struct char_data *ch);
 void	set_title(struct char_data *ch, char *title);
 void	gain_exp(struct char_data *ch, int gain);
 void	gain_exp_regardless(struct char_data *ch, int gain);
@@ -128,6 +127,9 @@ void	gain_condition(struct char_data *ch, int condition, int value);
 void	point_update(void);
 void	update_pos(struct char_data *victim);
 void run_autowiz(void);
+
+/* in class.c */
+void    advance_level(struct char_data *ch);
 
 void char_from_furniture(struct char_data *ch);
 /** What ch is currently sitting on. */
