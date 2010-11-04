@@ -35,6 +35,11 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Nov 04 2010] - Jamdog
+  Bug-Fix: Converted affect flags in struct affected_type from 32-bit to 128-bit
+  Bug Fix: Players with too much gold now don't lose eq when renting
+  Removed conf.h fron the SVN, as this is created by the configure script
+  Minor IBT system change for accurately finding who logged an IBT
 [Nov 01 2010] - Rumble
   Fixed do_scan crash due to exits to NOWHERE. (thanks Rhade)
   Changed do_score experience tnl to list only mortals since LVL_IMMORT showed negative EXP.

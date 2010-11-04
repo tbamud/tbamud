@@ -227,16 +227,15 @@ void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
   }
 
   /* add the affect */
+  new_affect(&af);
   af.type = SPELL_DG_AFFECT;
   af.duration = duration -1;
   af.modifier = value;
 
   if (type == APPLY_TYPE) {
     af.location = i;
-    af.bitvector = 0;
   } else {
-    af.location = 0;
-    af.bitvector = i;
+    SET_BIT_AR(af.bitvector, i);
   }
 
   affect_to_char(ch, &af);

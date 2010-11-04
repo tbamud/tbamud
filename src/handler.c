@@ -29,8 +29,7 @@ static int extractions_pending = 0;
 /* local file scope functions */
 static int apply_ac(struct char_data *ch, int eq_pos);
 static void update_object(struct obj_data *obj, int use);
-static void affect_modify(struct char_data *ch, byte loc, sbyte mod, long bitv, bool add);
-
+static void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bitv[], bool add);
 
 char *fname(const char *namelist)
 {
@@ -203,19 +202,7 @@ void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *msg)
   } /* switch */
 }
 
-static void affect_modify(struct char_data * ch, byte loc, sbyte mod, long bitv, bool add)
-{
-  if (add) {
-    SET_BIT_AR(AFF_FLAGS(ch), bitv);
-  } else {
-    REMOVE_BIT_AR(AFF_FLAGS(ch), bitv);
-    mod = -mod;
-  }
-
-  aff_apply_modify(ch, loc, mod, "affect_modify");
-}
-
-void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bitv[], bool add)
+static void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bitv[], bool add)
 {
   int i , j;
 
@@ -251,7 +238,7 @@ void affect_total(struct char_data *ch)
   }
 
   for (af = ch->affected; af; af = af->next)
-    affect_modify(ch, af->location, af->modifier, af->bitvector, FALSE);
+    affect_modify_ar(ch, af->location, af->modifier, af->bitvector, FALSE);
 
   ch->aff_abils = ch->real_abils;
 
@@ -264,7 +251,7 @@ void affect_total(struct char_data *ch)
   }
 
   for (af = ch->affected; af; af = af->next)
-    affect_modify(ch, af->location, af->modifier, af->bitvector, TRUE);
+    affect_modify_ar(ch, af->location, af->modifier, af->bitvector, TRUE);
 
   /* Make certain values are between 0..25, not < 0 and not > 25! */
   i = (IS_NPC(ch) || GET_LEVEL(ch) >= LVL_GRGOD) ? 25 : 18;
@@ -299,7 +286,7 @@ void affect_to_char(struct char_data *ch, struct affected_type *af)
   affected_alloc->next = ch->affected;
   ch->affected = affected_alloc;
 
-  affect_modify(ch, af->location, af->modifier, af->bitvector, TRUE);
+  affect_modify_ar(ch, af->location, af->modifier, af->bitvector, TRUE);
   affect_total(ch);
 }
 
@@ -315,7 +302,7 @@ void affect_remove(struct char_data *ch, struct affected_type *af)
     return;
   }
 
-  affect_modify(ch, af->location, af->modifier, af->bitvector, FALSE);
+  affect_modify_ar(ch, af->location, af->modifier, af->bitvector, FALSE);
   REMOVE_FROM_LIST(af, ch->affected, next);
   free(af);
   affect_total(ch);

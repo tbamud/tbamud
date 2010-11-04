@@ -86,7 +86,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
              GET_OBJ_VAL(obj, 2),
              GET_OBJ_VAL(obj, 3)
              );
-  if (GET_OBJ_EXTRA(obj) != GET_OBJ_EXTRA(temp)) 
+  if (GET_OBJ_EXTRA(obj) != GET_OBJ_EXTRA(temp))
     fprintf(fp, "Flag: %d %d %d %d\n", GET_OBJ_EXTRA(obj)[0], GET_OBJ_EXTRA(obj)[1], GET_OBJ_EXTRA(obj)[2], GET_OBJ_EXTRA(obj)[3]);
 
 #define TEST_OBJS(obj1, obj2, field) ((!obj1->field || !obj2->field || \
@@ -115,7 +115,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
     fprintf(fp, "Cost: %d\n", GET_OBJ_COST(obj));
   if (TEST_OBJN(cost_per_day))
     fprintf(fp, "Rent: %d\n", GET_OBJ_RENT(obj));
-  if (TEST_OBJN(bitvector)) 
+  if (TEST_OBJN(bitvector))
     fprintf(fp, "Perm: %d %d %d %d\n", GET_OBJ_PERM(obj)[0], GET_OBJ_PERM(obj)[1], GET_OBJ_PERM(obj)[2], GET_OBJ_PERM(obj)[3]);
   if (TEST_OBJN(wear_flags))
     fprintf(fp, "Wear: %d %d %d %d\n", GET_OBJ_WEAR(obj)[0], GET_OBJ_WEAR(obj)[1], GET_OBJ_WEAR(obj)[2], GET_OBJ_WEAR(obj)[3]);
@@ -241,7 +241,7 @@ static void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
 
     if (location > 0) {      /* Wearable. */
       if (!GET_EQ(ch,j)) {
-        /* Check the characters's alignment to prevent them from being zapped 
+        /* Check the characters's alignment to prevent them from being zapped
 	 * through the auto-equipping. */
         if (invalid_align(ch, obj) || invalid_class(ch, obj))
           location = LOC_INVENTORY;
@@ -482,7 +482,7 @@ static void Crash_restore_weight(struct obj_data *obj)
   }
 }
 
-/* Get !RENT items from equipment to inventory and extract !RENT out of worn 
+/* Get !RENT items from equipment to inventory and extract !RENT out of worn
  * containers. */
 static void Crash_extract_norent_eq(struct char_data *ch)
 {
@@ -975,7 +975,7 @@ void Crash_save_all(void)
 }
 
 /* Parses the object records stored in fl, and returns the first object in a
- * linked list, which also handles location if worn. This list can then be 
+ * linked list, which also handles location if worn. This list can then be
  * handled by house code, listrent code, autoeq code, etc. */
 obj_save_data *objsave_parse_objects(FILE *fl)
 {
@@ -1169,7 +1169,8 @@ static int Crash_load_objs(struct char_data *ch) {
   char line[READ_SIZE];
   char buf[MAX_STRING_LENGTH];
   char str[64];
-  int i, num_of_days, orig_rent_code, cost, num_objs=0;
+  int i, num_of_days, orig_rent_code, num_objs=0;
+  unsigned long cost;
   struct obj_data *cont_row[MAX_BAG_ROWS];
   int rentcode,timed,netcost,gold,account,nitems;
 	obj_save_data *loaded, *current;
@@ -1198,8 +1199,8 @@ static int Crash_load_objs(struct char_data *ch) {
   if (rentcode == RENT_RENTED || rentcode == RENT_TIMEDOUT) {
     sprintf(str, "%d", SECS_PER_REAL_DAY);
     num_of_days = (int)((float) (time(0) - timed) / (float)atoi(str));
-    cost = (int) (netcost * num_of_days);
-    if (cost > GET_GOLD(ch) + GET_BANK_GOLD(ch)) {
+    cost = (unsigned int) (netcost * num_of_days);
+    if (cost > (unsigned int)GET_GOLD(ch) + (unsigned int)GET_BANK_GOLD(ch)) {
       fclose(fl);
       mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
              "%s entering game, rented equipment lost (no $).", GET_NAME(ch));
@@ -1271,15 +1272,15 @@ static int handle_obj(struct obj_data *temp, struct char_data *ch, int locate, s
   auto_equip(ch, temp, locate);
 
   /* What to do with a new loaded item:
-   * If there's a list with <locate> less than 1 below this: (equipped items 
-   * are assumed to have <locate>==0 here) then its container has disappeared 
-   * from the file   *gasp* -> put all the list back to ch's inventory if 
-   * there's a list of contents with <locate> 1 below this: check if it's a 
-   * container - if so: get it from ch, fill it, and give it back to ch (this 
-   * way the container has its correct weight before modifying ch) - if not: 
-   * the container is missing -> put all the list to ch's inventory. For items 
-   * with negative <locate>: If there's already a list of contents with the 
-   * same <locate> put obj to it if not, start a new list. Since <locate> for 
+   * If there's a list with <locate> less than 1 below this: (equipped items
+   * are assumed to have <locate>==0 here) then its container has disappeared
+   * from the file   *gasp* -> put all the list back to ch's inventory if
+   * there's a list of contents with <locate> 1 below this: check if it's a
+   * container - if so: get it from ch, fill it, and give it back to ch (this
+   * way the container has its correct weight before modifying ch) - if not:
+   * the container is missing -> put all the list to ch's inventory. For items
+   * with negative <locate>: If there's already a list of contents with the
+   * same <locate> put obj to it if not, start a new list. Since <locate> for
    * contents is < 0 the list indices are switched to non-negative. */
   if (locate > 0) { /* item equipped */
 

@@ -219,7 +219,7 @@
 #define MOB_NOKILL         18   /**< Mob can't be attacked */
 #define MOB_NOTDEADYET     19   /**< (R) Mob being extracted */
 
-#define NUM_MOB_FLAGS      19 
+#define NUM_MOB_FLAGS      19
 
 /* Preference flags: used by char_data.player_specials.pref */
 #define PRF_BRIEF         0   /**< Room descs won't normally be shown */
@@ -576,7 +576,6 @@
 /** Controls when to save the current ingame MUD time to disk.
  * This should be set >= SECS_PER_MUD_HOUR */
 #define PULSE_TIMESAVE	(30 * 60 RL_SEC)
-
 /* Variables for the output buffering system */
 #define MAX_SOCK_BUF       (24 * 1024) /**< Size of kernel's sock buf   */
 #define MAX_PROMPT_LENGTH  96          /**< Max length of prompt        */
@@ -973,7 +972,7 @@ struct affected_type
   sh_int duration; /**< For how long its effects will last      */
   sbyte modifier;  /**< Added/subtracted to/from apropriate ability     */
   byte location;   /**< Tells which ability to change(APPLY_XXX). */
-  long /*bitvector_t*/bitvector; /**< Tells which bits to set (AFF_XXX). */
+  int bitvector[AF_ARRAY_MAX]; /**< Tells which bits to set (AFF_XXX). */
 
   struct affected_type *next; /**< The next affect in the list of affects. */
 };

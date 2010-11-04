@@ -117,11 +117,10 @@ ACMD(do_sneak)
   if (percent > GET_SKILL(ch, SKILL_SNEAK) + dex_app_skill[GET_DEX(ch)].sneak)
     return;
 
+  new_affect(&af);
   af.type = SKILL_SNEAK;
   af.duration = GET_LEVEL(ch);
-  af.modifier = 0;
-  af.location = APPLY_NONE;
-  af.bitvector = AFF_SNEAK;
+  SET_BIT_AR(af.bitvector, AFF_SNEAK);
   affect_to_char(ch, &af);
 }
 

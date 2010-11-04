@@ -504,7 +504,7 @@ void save_char(struct char_data * ch)
 {
   FILE *fl;
   char filename[40], buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127];
-  int i, id, save_index = FALSE;
+  int i, j, id, save_index = FALSE;
   struct affected_type *aff, tmp_aff[MAX_AFFECT];
   struct obj_data *char_eq[NUM_WEARS];
   trig_data *t;
@@ -552,14 +552,12 @@ void save_char(struct char_data * ch)
   for (aff = ch->affected, i = 0; i < MAX_AFFECT; i++) {
     if (aff) {
       tmp_aff[i] = *aff;
+      for (j=0; j<AF_ARRAY_MAX; j++)
+        tmp_aff[i].bitvector[j] = aff->bitvector[j];
       tmp_aff[i].next = 0;
       aff = aff->next;
     } else {
-      tmp_aff[i].type = 0;	/* Zero signifies not used */
-      tmp_aff[i].duration = 0;
-      tmp_aff[i].modifier = 0;
-      tmp_aff[i].location = 0;
-      tmp_aff[i].bitvector = 0;
+      new_affect(&(tmp_aff[i]));
       tmp_aff[i].next = 0;
     }
   }
@@ -695,10 +693,10 @@ void save_char(struct char_data * ch)
     for (i = 0; i < MAX_AFFECT; i++) {
       aff = &tmp_aff[i];
       if (aff->type)
-	fprintf(fl, "%d %d %d %d %d\n", aff->type, aff->duration,
-	  aff->modifier, aff->location, (int)aff->bitvector);
+        fprintf(fl, "%d %d %d %d %d %d %d %d\n", aff->type, aff->duration,
+          aff->modifier, aff->location, aff->bitvector[0], aff->bitvector[1], aff->bitvector[2], aff->bitvector[3]);
     }
-    fprintf(fl, "0 0 0 0 0\n");
+    fprintf(fl, "0 0 0 0 0 0 0 0\n");
   }
 
   write_aliases_ascii(fl, ch);
@@ -835,22 +833,35 @@ void clean_pfiles(void)
    * entries of the players that were just deleted. */
 }
 
+/* load_affects function now handles both 32-bit and
+   128-bit affect bitvectors for backward compatibility */
 static void load_affects(FILE *fl, struct char_data *ch)
 {
-  int num = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0, i;
+  int num = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0, num6 = 0, num7 = 0, num8 = 0, i, n_vars;
   char line[MAX_INPUT_LENGTH + 1];
   struct affected_type af;
 
   i = 0;
   do {
+    new_affect(&af);
     get_line(fl, line);
-    sscanf(line, "%d %d %d %d %d", &num, &num2, &num3, &num4, &num5);
+    n_vars = sscanf(line, "%d %d %d %d %d %d %d %d", &num, &num2, &num3, &num4, &num5, &num6, &num7, &num8);
     if (num > 0) {
       af.type = num;
       af.duration = num2;
       af.modifier = num3;
       af.location = num4;
-      af.bitvector = num5;
+      if (n_vars == 8) {              /* New 128-bit version */
+          af.bitvector[0] =  num5;
+          af.bitvector[1] =  num6;
+          af.bitvector[2] =  num7;
+          af.bitvector[3] =  num8;
+      } else if (n_vars == 5) {       /* Old 32-bit conversion version */
+        if (num5 > 0 && num5 <= NUM_AFF_FLAGS)  /* Ignore invalid values */
+          SET_BIT_AR(af.bitvector, num5);
+      } else {
+        log("SYSERR: Invalid affects in pfile (%s), expecting 5 or 8 values", GET_NAME(ch));
+      }
       affect_to_char(ch, &af);
       i++;
     }

@@ -56,6 +56,7 @@ static void free_ibt_list(IBT_DATA *first_ibt, IBT_DATA *last_ibt);
 static IBT_DATA *read_ibt(char *filename, FILE *fp);
 static IBT_DATA *get_first_ibt(int mode);
 static IBT_DATA *get_last_ibt(int mode);
+static bool is_ibt_logger(IBT_DATA *ibtData, struct char_data *ch);
 /* Internal (static) OLC functions */
 static void ibtedit_setup(struct descriptor_data *d);
 static void ibtedit_save(struct descriptor_data *d);
@@ -419,6 +420,22 @@ bool free_ibt(int mode, IBT_DATA *ibtData)
   return TRUE;
 }
 
+/* Return TRUE if 'ch' is the person who logged the IBT */
+static bool is_ibt_logger(IBT_DATA *ibtData, struct char_data *ch)
+{
+  if ( ch && !IS_NPC(ch) && ibtData ) {
+
+    /* Check the ID number first (in case of name change)   */
+    if ((ibtData->id_num != NOBODY) && (ibtData->id_num == GET_IDNUM(ch)))
+      return TRUE;
+
+    /* Check the name next (in case of deletion/recreation) */
+    if (strcmp(ibtData->name, GET_NAME(ch)) == 0)
+      return TRUE;
+  }
+  return FALSE;
+}
+
 ACMD(do_ibt)
 {
   char arg[MAX_STRING_LENGTH], arg2[MAX_STRING_LENGTH];
@@ -482,7 +499,7 @@ ACMD(do_ibt)
       send_to_char(ch, "That %s doesn't exist.\r\n", CMD_NAME);
       return;
     } else {
-      if ((GET_LEVEL(ch) < LVL_IMMORT) && (GET_IDNUM(ch) != ibtData->id_num)) {
+      if ((GET_LEVEL(ch) < LVL_IMMORT) && (!is_ibt_logger(ibtData, ch))) {
         send_to_char(ch, "Sorry but you may only view %ss you have posted yourself.\n\r", ibt_types[subcmd]);
       } else {
 
@@ -522,7 +539,7 @@ ACMD(do_ibt)
         i++;
 
         /* For mortals, skip IBT's that they didn't log */
-        if ((GET_LEVEL(ch) < LVL_IMMORT) && (ibtData->id_num != GET_IDNUM(ch)))
+        if ((GET_LEVEL(ch) < LVL_IMMORT) && !is_ibt_logger(ibtData,ch))
           continue;
 
         /* Set up the 'important' flag */

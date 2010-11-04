@@ -84,7 +84,7 @@ static void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_d
      1) put <object> <container>
      2) put all.<object> <container>
      3) put all <container>
-   The <container> must be in inventory or on ground. All objects to be put 
+   The <container> must be in inventory or on ground. All objects to be put
    into container must be in inventory. */
 ACMD(do_put)
 {
@@ -473,7 +473,7 @@ static int perform_drop(struct char_data *ch, struct obj_data *obj,
     return (value);
   default:
     log("SYSERR: Incorrect argument %d passed to perform_drop.", mode);
-    /* SYSERR_DESC: This error comes from perform_drop() and is output when 
+    /* SYSERR_DESC: This error comes from perform_drop() and is output when
      * perform_drop() is called with an illegal 'mode' argument. */
     break;
   }
@@ -619,7 +619,7 @@ static void perform_give(struct char_data *ch, struct char_data *vict,
   act("You give $p to $N.", FALSE, ch, obj, vict, TO_CHAR);
   act("$n gives you $p.", FALSE, ch, obj, vict, TO_VICT);
   act("$n gives $p to $N.", TRUE, ch, obj, vict, TO_NOTVICT);
-  
+
   autoquest_trigger_check( ch, vict, obj, AQ_OBJ_RETURN);
 }
 
@@ -748,8 +748,8 @@ void weight_change_object(struct obj_data *obj, int weight)
     obj_to_obj(obj, tmp_obj);
   } else {
     log("SYSERR: Unknown attempt to subtract weight from an object.");
-    /* SYSERR_DESC: weight_change_object() outputs this error when weight is 
-     * attempted to be removed from an object that is not carried or in 
+    /* SYSERR_DESC: weight_change_object() outputs this error when weight is
+     * attempted to be removed from an object that is not carried or in
      * another object. */
   }
 }
@@ -766,8 +766,8 @@ void name_from_drinkcon(struct obj_data *obj)
   liqname = drinknames[GET_OBJ_VAL(obj, 2)];
   if (!isname(liqname, obj->name)) {
     log("SYSERR: Can't remove liquid '%s' from '%s' (%d) item.", liqname, obj->name, obj->item_number);
-    /* SYSERR_DESC: From name_from_drinkcon(), this error comes about if the 
-     * object noted (by keywords and item vnum) does not contain the liquid 
+    /* SYSERR_DESC: From name_from_drinkcon(), this error comes about if the
+     * object noted (by keywords and item vnum) does not contain the liquid
      * string being searched for. */
     return;
   }
@@ -907,7 +907,7 @@ ACMD(do_drink)
     weight = MIN(amount, GET_OBJ_WEIGHT(temp));
     weight_change_object(temp, -weight); /* Subtract amount */
   }
-  
+
   gain_condition(ch, DRUNK,  drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK]  * amount / 4);
   gain_condition(ch, HUNGER,   drink_aff[GET_OBJ_VAL(temp, 2)][HUNGER]   * amount / 4);
   gain_condition(ch, THIRST, drink_aff[GET_OBJ_VAL(temp, 2)][THIRST] * amount / 4);
@@ -925,11 +925,10 @@ ACMD(do_drink)
     send_to_char(ch, "Oops, it tasted rather strange!\r\n");
     act("$n chokes and utters some strange sounds.", TRUE, ch, 0, 0, TO_ROOM);
 
+    new_affect(&af);
     af.type = SPELL_POISON;
     af.duration = amount * 3;
-    af.modifier = 0;
-    af.location = APPLY_NONE;
-    af.bitvector = AFF_POISON;
+    SET_BIT_AR(af.bitvector, AFF_POISON);
     affect_join(ch, &af, FALSE, FALSE, FALSE, FALSE);
   }
   /* Empty the container (unless unlimited), and no longer poison. */
@@ -1001,11 +1000,10 @@ ACMD(do_eat)
     send_to_char(ch, "Oops, that tasted rather strange!\r\n");
     act("$n coughs and utters some strange sounds.", FALSE, ch, 0, 0, TO_ROOM);
 
+    new_affect(&af);
     af.type = SPELL_POISON;
     af.duration = amount * 2;
-    af.modifier = 0;
-    af.location = APPLY_NONE;
-    af.bitvector = AFF_POISON;
+    SET_BIT_AR(af.bitvector, AFF_POISON);
     affect_join(ch, &af, FALSE, FALSE, FALSE, FALSE);
   }
   if (subcmd == SCMD_EAT)
@@ -1450,7 +1448,7 @@ static void perform_remove(struct char_data *ch, int pos)
     log("SYSERR: perform_remove: bad pos %d passed.", pos);
     /*  This error occurs when perform_remove() is passed a bad 'pos'
      *  (location) to remove an object from. */
-  else if (OBJ_FLAGGED(obj, ITEM_NODROP) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) 
+  else if (OBJ_FLAGGED(obj, ITEM_NODROP) && !PRF_FLAGGED(ch, PRF_NOHASSLE))
     act("You can't remove $p, it must be CURSED!", FALSE, ch, obj, 0, TO_CHAR);
   else if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)&& !PRF_FLAGGED(ch, PRF_NOHASSLE))
     act("$p: you can't carry that many items!", FALSE, ch, obj, 0, TO_CHAR);

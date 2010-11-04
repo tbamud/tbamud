@@ -277,15 +277,14 @@ ASPELL(spell_charm)
 
     add_follower(victim, ch);
 
+    new_affect(&af);
     af.type = SPELL_CHARM;
     af.duration = 24 * 2;
     if (GET_CHA(ch))
       af.duration *= GET_CHA(ch);
     if (GET_INT(victim))
       af.duration /= GET_INT(victim);
-    af.modifier = 0;
-    af.location = 0;
-    af.bitvector = AFF_CHARM;
+    SET_BIT_AR(af.bitvector, AFF_CHARM);
     affect_to_char(victim, &af);
 
     act("Isn't $n just such a nice fellow?", FALSE, ch, 0, victim, TO_VICT);

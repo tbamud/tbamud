@@ -1459,3 +1459,15 @@ char *strpaste(char *str1, char *str2, char *joiner)
   *rp = '\0';
   return ret;
 }
+
+/* Create a blank affect struct */
+void new_affect(struct affected_type *af)
+{
+  int i;
+  af->type      = 0;
+  af->duration  = 0;
+  af->modifier  = 0;
+  af->location  = APPLY_NONE;
+  for (i=0; i<AF_ARRAY_MAX; i++) af->bitvector[i]=0;
+}
+

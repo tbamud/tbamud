@@ -28,9 +28,9 @@ static int mag_materials(struct char_data *ch, IDXTYPE item0, IDXTYPE item1, IDX
 static void perform_mag_groups(int level, struct char_data *ch, struct char_data *tch, int spellnum, int savetype);
 
 
-/* Negative apply_saving_throw[] values make saving throws better! So do 
- * negative modifiers.  Though people may be used to the reverse of that. 
- * It's due to the code modifying the target saving throw instead of the 
+/* Negative apply_saving_throw[] values make saving throws better! So do
+ * negative modifiers.  Though people may be used to the reverse of that.
+ * It's due to the code modifying the target saving throw instead of the
  * random number of the character as in some other systems. */
 int mag_savingthrow(struct char_data *ch, int type, int modifier)
 {
@@ -91,7 +91,7 @@ void affect_update(void)
  * FALSE to send no in game messages from this function.
  * @retval int TRUE if ch has all materials to cast the spell, FALSE if not.
  */
-static int mag_materials(struct char_data *ch, IDXTYPE item0, 
+static int mag_materials(struct char_data *ch, IDXTYPE item0,
     IDXTYPE item1, IDXTYPE item2, int extract, int verbose)
 {
   /* Begin Local variable definitions. */
@@ -106,33 +106,33 @@ static int mag_materials(struct char_data *ch, IDXTYPE item0,
   /* Begin success checks. Checks must pass to signal a success. */
   /*------------------------------------------------------------------------*/
   /* Check for the objects in the players inventory. */
-  for (tobj = ch->carrying; tobj; tobj = tobj->next_content) 
+  for (tobj = ch->carrying; tobj; tobj = tobj->next_content)
   {
-    if ((item0 != NOTHING) && (GET_OBJ_VNUM(tobj) == item0)) 
+    if ((item0 != NOTHING) && (GET_OBJ_VNUM(tobj) == item0))
     {
       obj0 = tobj;
       item0 = NOTHING;
-    } 
-    else if ((item1 != NOTHING) && (GET_OBJ_VNUM(tobj) == item1)) 
+    }
+    else if ((item1 != NOTHING) && (GET_OBJ_VNUM(tobj) == item1))
     {
       obj1 = tobj;
       item1 = NOTHING;
-    } 
-    else if ((item2 != NOTHING) && (GET_OBJ_VNUM(tobj) == item2)) 
+    }
+    else if ((item2 != NOTHING) && (GET_OBJ_VNUM(tobj) == item2))
     {
       obj2 = tobj;
       item2 = NOTHING;
     }
   }
-  
-  /* If we needed items, but didn't find all of them, then the spell is a 
+
+  /* If we needed items, but didn't find all of them, then the spell is a
    * failure. */
-  if ((item0 != NOTHING) || (item1 != NOTHING) || (item2 != NOTHING)) 
+  if ((item0 != NOTHING) || (item1 != NOTHING) || (item2 != NOTHING))
   {
     /* Generic spell failure messages. */
-    if (verbose) 
+    if (verbose)
     {
-      switch (rand_number(0, 2)) 
+      switch (rand_number(0, 2))
       {
       case 0:
         send_to_char(ch, "A wart sprouts on your nose.\r\n");
@@ -150,14 +150,14 @@ static int mag_materials(struct char_data *ch, IDXTYPE item0,
   }
   /*------------------------------------------------------------------------*/
   /* End success checks. */
-  
+
   /* From here on, ch has all required materials in their inventory and the
    * material check will return a success. */
-  
+
   /* Begin Material Processing. */
   /*------------------------------------------------------------------------*/
   /* Extract (destroy) the materials, if so called for. */
-  if (extract) 
+  if (extract)
   {
     if (obj0 != NULL)
       extract_obj(obj0);
@@ -166,22 +166,22 @@ static int mag_materials(struct char_data *ch, IDXTYPE item0,
     if (obj2 != NULL)
       extract_obj(obj2);
     /* Generic success messages that signals extracted objects. */
-    if (verbose) 
+    if (verbose)
     {
       send_to_char(ch, "A puff of smoke rises from your pack.\r\n");
       act("A puff of smoke rises from $n's pack.", TRUE, ch, NULL, NULL, TO_ROOM);
     }
   }
-  
+
   /* Don't extract the objects, but signal materials successfully found. */
   if(!extract && verbose)
   {
     send_to_char(ch, "Your pack rumbles.\r\n");
-    act("Something rumbles in $n's pack.", TRUE, ch, NULL, NULL, TO_ROOM);    
+    act("Something rumbles in $n's pack.", TRUE, ch, NULL, NULL, TO_ROOM);
   }
   /*------------------------------------------------------------------------*/
   /* End Material Processing. */
-  
+
   /* Signal to calling function that the materials were successfully found
    * and processed. */
   return (TRUE);
@@ -189,7 +189,7 @@ static int mag_materials(struct char_data *ch, IDXTYPE item0,
 
 
 /* Every spell that does damage comes through here.  This calculates the amount
- * of damage, adds in any modifiers, determines what the saves are, tests for 
+ * of damage, adds in any modifiers, determines what the saves are, tests for
  * save and calls damage(). -1 = dead, otherwise the amount of damage done. */
 int mag_damage(int level, struct char_data *ch, struct char_data *victim,
 		     int spellnum, int savetype)
@@ -294,7 +294,7 @@ int mag_damage(int level, struct char_data *ch, struct char_data *victim,
 }
 
 
-/* Every spell that does an affect comes through here.  This determines the 
+/* Every spell that does an affect comes through here.  This determines the
  * effect, whether it is added or replacement, whether it is legal or not, etc.
  * affect_join(vict, aff, add_dur, avg_dur, add_mod, avg_mod) */
 #define MAX_SPELL_AFFECTS 5	/* change if more needed */
@@ -305,17 +305,15 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
   struct affected_type af[MAX_SPELL_AFFECTS];
   bool accum_affect = FALSE, accum_duration = FALSE;
   const char *to_vict = NULL, *to_room = NULL;
-  int i;
+  int i, j;
 
 
   if (victim == NULL || ch == NULL)
     return;
 
   for (i = 0; i < MAX_SPELL_AFFECTS; i++) {
+    new_affect(&(af[i]));
     af[i].type = spellnum;
-    af[i].bitvector = 0;
-    af[i].modifier = 0;
-    af[i].location = APPLY_NONE;
   }
 
   switch (spellnum) {
@@ -361,12 +359,12 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     af[0].location = APPLY_HITROLL;
     af[0].modifier = -4;
     af[0].duration = 2;
-    af[0].bitvector = AFF_BLIND;
+    SET_BIT_AR(af[0].bitvector, AFF_BLIND);
 
     af[1].location = APPLY_AC;
     af[1].modifier = 40;
     af[1].duration = 2;
-    af[1].bitvector = AFF_BLIND;
+    SET_BIT_AR(af[1].bitvector, AFF_BLIND);
 
     to_room = "$n seems to be blinded!";
     to_vict = "You have been blinded!";
@@ -381,12 +379,12 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     af[0].location = APPLY_HITROLL;
     af[0].duration = 1 + (GET_LEVEL(ch) / 2);
     af[0].modifier = -1;
-    af[0].bitvector = AFF_CURSE;
+    SET_BIT_AR(af[0].bitvector, AFF_CURSE);
 
     af[1].location = APPLY_DAMROLL;
     af[1].duration = 1 + (GET_LEVEL(ch) / 2);
     af[1].modifier = -1;
-    af[1].bitvector = AFF_CURSE;
+    SET_BIT_AR(af[1].bitvector, AFF_CURSE);
 
     accum_duration = TRUE;
     accum_affect = TRUE;
@@ -396,28 +394,28 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
 
   case SPELL_DETECT_ALIGN:
     af[0].duration = 12 + level;
-    af[0].bitvector = AFF_DETECT_ALIGN;
+    SET_BIT_AR(af[0].bitvector, AFF_DETECT_ALIGN);
     accum_duration = TRUE;
     to_vict = "Your eyes tingle.";
     break;
 
   case SPELL_DETECT_INVIS:
     af[0].duration = 12 + level;
-    af[0].bitvector = AFF_DETECT_INVIS;
+    SET_BIT_AR(af[0].bitvector, AFF_DETECT_INVIS);
     accum_duration = TRUE;
     to_vict = "Your eyes tingle.";
     break;
 
   case SPELL_DETECT_MAGIC:
     af[0].duration = 12 + level;
-    af[0].bitvector = AFF_DETECT_MAGIC;
+    SET_BIT_AR(af[0].bitvector, AFF_DETECT_MAGIC);
     accum_duration = TRUE;
     to_vict = "Your eyes tingle.";
     break;
 
   case SPELL_INFRAVISION:
     af[0].duration = 12 + level;
-    af[0].bitvector = AFF_INFRAVISION;
+    SET_BIT_AR(af[0].bitvector, AFF_INFRAVISION);
     accum_duration = TRUE;
     to_vict = "Your eyes glow red.";
     to_room = "$n's eyes glow red.";
@@ -430,7 +428,7 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     af[0].duration = 12 + (GET_LEVEL(ch) / 4);
     af[0].modifier = -40;
     af[0].location = APPLY_AC;
-    af[0].bitvector = AFF_INVISIBLE;
+    SET_BIT_AR(af[0].bitvector, AFF_INVISIBLE);
     accum_duration = TRUE;
     to_vict = "You vanish.";
     to_room = "$n slowly fades out of existence.";
@@ -445,21 +443,21 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     af[0].location = APPLY_STR;
     af[0].duration = GET_LEVEL(ch);
     af[0].modifier = -2;
-    af[0].bitvector = AFF_POISON;
+    SET_BIT_AR(af[0].bitvector, AFF_POISON);
     to_vict = "You feel very sick.";
     to_room = "$n gets violently ill!";
     break;
 
   case SPELL_PROT_FROM_EVIL:
     af[0].duration = 24;
-    af[0].bitvector = AFF_PROTECT_EVIL;
+    SET_BIT_AR(af[0].bitvector, AFF_PROTECT_EVIL);
     accum_duration = TRUE;
     to_vict = "You feel invulnerable!";
     break;
 
   case SPELL_SANCTUARY:
     af[0].duration = 4;
-    af[0].bitvector = AFF_SANCTUARY;
+    SET_BIT_AR(af[0].bitvector, AFF_SANCTUARY);
 
     accum_duration = TRUE;
     to_vict = "A white aura momentarily surrounds you.";
@@ -475,7 +473,7 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
       return;
 
     af[0].duration = 4 + (GET_LEVEL(ch) / 4);
-    af[0].bitvector = AFF_SLEEP;
+    SET_BIT_AR(af[0].bitvector, AFF_SLEEP);
 
     if (GET_POS(victim) > POS_SLEEPING) {
       send_to_char(victim, "You feel very sleepy...  Zzzz......\r\n");
@@ -499,29 +497,33 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
   case SPELL_SENSE_LIFE:
     to_vict = "Your feel your awareness improve.";
     af[0].duration = GET_LEVEL(ch);
-    af[0].bitvector = AFF_SENSE_LIFE;
+    SET_BIT_AR(af[0].bitvector, AFF_SENSE_LIFE);
     accum_duration = TRUE;
     break;
 
   case SPELL_WATERWALK:
     af[0].duration = 24;
-    af[0].bitvector = AFF_WATERWALK;
+    SET_BIT_AR(af[0].bitvector, AFF_WATERWALK);
     accum_duration = TRUE;
     to_vict = "You feel webbing between your toes.";
     break;
   }
 
-  /* If this is a mob that has this affect set in its mob file, do not perform 
-   * the affect.  This prevents people from un-sancting mobs by sancting them 
+  /* If this is a mob that has this affect set in its mob file, do not perform
+   * the affect.  This prevents people from un-sancting mobs by sancting them
    * and waiting for it to fade, for example. */
-  if (IS_NPC(victim) && !affected_by_spell(victim, spellnum))
-    for (i = 0; i < MAX_SPELL_AFFECTS; i++)
-      if (AFF_FLAGGED(victim, af[i].bitvector) && (af[i].bitvector > 0)) {
-	send_to_char(ch, "%s", CONFIG_NOEFFECT);
-	return;
+  if (IS_NPC(victim) && !affected_by_spell(victim, spellnum)) {
+    for (i = 0; i < MAX_SPELL_AFFECTS; i++) {
+      for (j=0; j<NUM_AFF_FLAGS; j++) {
+        if (IS_SET_AR(af[i].bitvector, j) && AFF_FLAGGED(victim, j)) {
+          send_to_char(ch, "%s", CONFIG_NOEFFECT);
+          return;
+        }
       }
+    }
+  }
 
-  /* If the victim is already affected by this spell, and the spell does not 
+  /* If the victim is already affected by this spell, and the spell does not
    * have an accumulative effect, then fail the spell. */
   if (affected_by_spell(victim,spellnum) && !(accum_duration||accum_affect)) {
     send_to_char(ch, "%s", CONFIG_NOEFFECT);
@@ -529,7 +531,9 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
   }
 
   for (i = 0; i < MAX_SPELL_AFFECTS; i++)
-    if (af[i].bitvector || (af[i].location != APPLY_NONE))
+    if (af[i].bitvector[0] || af[i].bitvector[1] ||
+        af[i].bitvector[2] || af[i].bitvector[3] ||
+        (af[i].location != APPLY_NONE))
       affect_join(victim, af+i, accum_duration, FALSE, accum_affect, FALSE);
 
   if (to_vict != NULL)
@@ -538,7 +542,7 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     act(to_room, TRUE, victim, 0, ch, TO_ROOM);
 }
 
-/* This function is used to provide services to mag_groups.  This function is 
+/* This function is used to provide services to mag_groups.  This function is
  * the one you should change to add new group spells. */
 static void perform_mag_groups(int level, struct char_data *ch,
 			struct char_data *tch, int spellnum, int savetype)
@@ -557,8 +561,8 @@ static void perform_mag_groups(int level, struct char_data *ch,
 }
 
 /* Every spell that affects the group should run through here perform_mag_groups
- * contains the switch statement to send us to the right magic. Group spells 
- * affect everyone grouped with the caster who is in the room, caster last. To 
+ * contains the switch statement to send us to the right magic. Group spells
+ * affect everyone grouped with the caster who is in the room, caster last. To
  * add new group spells, you shouldn't have to change anything in mag_groups.
  * Just add a new case to perform_mag_groups. */
 void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
@@ -592,7 +596,7 @@ void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
   perform_mag_groups(level, ch, ch, spellnum, savetype);
 }
 
-/* Mass spells affect every creature in the room except the caster. No spells 
+/* Mass spells affect every creature in the room except the caster. No spells
  * of this class currently implemented. */
 void mag_masses(int level, struct char_data *ch, int spellnum, int savetype)
 {
@@ -610,7 +614,7 @@ void mag_masses(int level, struct char_data *ch, int spellnum, int savetype)
 
 /* Every spell that affects an area (room) runs through here.  These are
  * generally offensive spells.  This calls mag_damage to do the actual damage.
- * All spells listed here must also have a case in mag_damage() in order for 
+ * All spells listed here must also have a case in mag_damage() in order for
  * them to work. Area spells have limited targets within the room. */
 void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
 {
@@ -620,7 +624,7 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
   if (ch == NULL)
     return;
 
-  /* to add spells just add the message here plus an entry in mag_damage for 
+  /* to add spells just add the message here plus an entry in mag_damage for
    * the damaging part of the spell.   */
   switch (spellnum) {
   case SPELL_EARTHQUAKE:
@@ -715,10 +719,10 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
     msg = 10;
     fmsg = rand_number(2, 6);	/* Random fail message. */
     mob_num = MOB_CLONE;
-    /* 
+    /*
      * We have designated the clone spell as the example for how to use the
      * mag_materials function.
-     * In stock tbaMUD it checks to see if the character has item with 
+     * In stock tbaMUD it checks to see if the character has item with
      * vnum 161 which is a set of sacrificial entrails. If we have the entrails
      * the spell will succeed,  and if not, the spell will fail 102% of the time
      * (prevents random success... see below).
@@ -830,7 +834,7 @@ void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,
 
   switch (spellnum) {
   case SPELL_HEAL:
-    /* Heal also restores health, so don't give the "no effect" message if the 
+    /* Heal also restores health, so don't give the "no effect" message if the
      * target isn't afflicted by the 'blindness' spell. */
     msg_not_affected = FALSE;
     /* fall-through */
