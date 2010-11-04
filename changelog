@@ -43,6 +43,8 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
   Removed conf.h fron the SVN, as this is created by the configure script
   Minor IBT system change for accurately finding who logged an IBT
   Minor IBT change to list 'in-progress' IBT's in yellow
+  Bug Fix: Webster added to the util makefile for make all (wasn't compiling)
+  Update to webster code to hopefully fix 'tell m-w' bug
 [Nov 01 2010] - Rumble
   Fixed do_scan crash due to exits to NOWHERE. (thanks Rhade)
   Changed do_score experience tnl to list only mortals since LVL_IMMORT showed negative EXP.
