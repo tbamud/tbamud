@@ -548,7 +548,34 @@ ACMD(do_ibt)
         else
           sprintf(imp, "%c", ' ');
 
-        if (!IBT_FLAGGED(ibtData, IBT_RESOLVED)) {
+        if (IBT_FLAGGED(ibtData, IBT_RESOLVED)) {
+          if (GET_LEVEL(ch) < LVL_IMMORT) {
+            send_to_char(ch, "%s%s%3d|%s%s\r\n",
+                                  imp, QGRN, i, ibtData->text, QNRM);
+          } else {
+            send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+                                  imp, QGRN, i, QGRN,
+                                  QGRN, ibtData->name, QGRN,
+                                  QGRN, ibtData->room, QGRN,
+                                  QGRN, ibtData->level, QGRN,
+                                  QGRN, ibtData->text, QNRM);
+          }
+          num_res++;
+        } else if (IBT_FLAGGED(ibtData, IBT_INPROGRESS)) {
+          if (GET_LEVEL(ch) < LVL_IMMORT) {
+            send_to_char(ch, "%s%s%3d%s|%s%s%s\r\n",
+                                  imp, QYEL, i, QGRN,
+                                  QYEL, ibtData->text, QNRM);
+          } else {
+            send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+                                  imp, QYEL, i, QGRN,
+                                  QYEL, ibtData->name, QGRN,
+                                  QYEL, ibtData->room, QGRN,
+                                  QYEL, ibtData->level, QGRN,
+                                  QYEL, ibtData->text, QNRM);
+          }
+          num_unres++;
+        } else {
           if (GET_LEVEL(ch) < LVL_IMMORT) {
             send_to_char(ch, "%s%s%3d%s|%s%s%s\r\n",
                                   imp, QRED, i, QGRN,
@@ -562,24 +589,12 @@ ACMD(do_ibt)
                                   QRED, ibtData->text, QNRM);
           }
           num_unres++;
-        } else {
-          if (GET_LEVEL(ch) < LVL_IMMORT) {
-            send_to_char(ch, "%s%s%3d|%s%s\r\n",
-                                  imp, QGRN, i, ibtData->text, QNRM);
-          } else {
-            send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
-                                  imp, QGRN, i, QGRN,
-                                  QGRN, ibtData->name, QGRN,
-                                  QGRN, ibtData->room, QGRN,
-                                  QGRN, ibtData->level, QGRN,
-                                  QGRN, ibtData->text, QNRM);
-          }
-          num_res++;
         }
       }
       if ((num_res + num_unres) > 0) {
         send_to_char(ch,"\n\r%s%d %ss in file. %s%d%s resolved, %s%d%s unresolved%s\r\n",QCYN, i, CMD_NAME, QBGRN, num_res, QCYN, QBRED, num_unres, QCYN, QNRM);
         send_to_char(ch,"%s%ss in %sRED%s are unresolved %ss.\r\n", QCYN, ibt_types[subcmd], QRED, QCYN, CMD_NAME);
+        send_to_char(ch,"%s%ss in %sYELLOW%s are in-progress %ss.\r\n", QCYN, ibt_types[subcmd], QYEL, QCYN, CMD_NAME);
         send_to_char(ch,"%s%ss in %sGREEN%s are resolved %ss.\r\n", QCYN, ibt_types[subcmd], QGRN, QCYN, CMD_NAME);
       } else {
         send_to_char(ch,"No %ss have been found that were reported by you!\r\n", CMD_NAME);

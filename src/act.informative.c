@@ -2558,14 +2558,14 @@ distance, int door)
   for (i = list; i; i = i->next_in_room) {
 
 /* make sure to add changes to the if statement above to this one also, using
-   or's to join them.. i.e., 
+   or's to join them.. i.e.,
    if (!CAN_SEE(ch, i) || !condition2 || !condition3) */
 
     if (!CAN_SEE(ch, i))
-      continue; 
+      continue;
     if (!*buf)
       sprintf(buf, "You see %s", GET_NAME(i));
-    else 
+    else
       sprintf(buf, "%s%s", buf, GET_NAME(i));
     if (--count > 1)
       strcat(buf, ", ");
@@ -2573,9 +2573,9 @@ distance, int door)
       strcat(buf, " and ");
     else {
       sprintf(buf2, " %s %s.\r\n", how_far[distance], dirs[door]);
-      strcat(buf, buf2);      
+      strcat(buf, buf2);
     }
-    
+
   }
   send_to_char(ch, "%s", buf);
 }
@@ -2599,8 +2599,15 @@ ACMD(do_scan)
       if (world[scanned_room].dir_option[door] && world[scanned_room].dir_option[door]->to_room != NOWHERE &&
        !IS_SET(world[scanned_room].dir_option[door]->exit_info, EX_CLOSED)) {
         scanned_room = world[scanned_room].dir_option[door]->to_room;
-        if (world[scanned_room].people)
-          list_scanned_chars(world[scanned_room].people, ch, range - 1, door);
+        if (IS_DARK(scanned_room) && !CAN_SEE_IN_DARK(ch)) {
+          if (world[scanned_room].people)
+            send_to_char(ch, "%s: It's too dark to see, but you can hear shuffling.\r\n", dirs[door]);
+          else
+            send_to_char(ch, "%s: It is too dark to see anything.\r\n", dirs[door]);
+		} else {
+          if (world[scanned_room].people)
+            list_scanned_chars(world[scanned_room].people, ch, range - 1, door);
+		}
       }                  // end of if
       else
         break;
