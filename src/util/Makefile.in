@@ -29,7 +29,8 @@ all: $(BINDIR)/asciipasswd \
 	$(BINDIR)/shopconv \
 	$(BINDIR)/sign \
 	$(BINDIR)/split \
-	$(BINDIR)/wld2html 
+	$(BINDIR)/wld2html \
+	$(BINDIR)/webster 
 
 asciipasswd: $(BINDIR)/asciipasswd
 
