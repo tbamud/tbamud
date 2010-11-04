@@ -45,6 +45,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
   Minor IBT change to list 'in-progress' IBT's in yellow
   Bug Fix: Webster added to the util makefile for make all (wasn't compiling)
   Update to webster code to hopefully fix 'tell m-w' bug
+  IBT's no longer read preceding spaces (body and notes), which inserts spaces every copyover
 [Nov 01 2010] - Rumble
   Fixed do_scan crash due to exits to NOWHERE. (thanks Rhade)
   Changed do_score experience tnl to list only mortals since LVL_IMMORT showed negative EXP.

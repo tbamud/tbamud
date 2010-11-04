@@ -2784,6 +2784,61 @@ char *fread_string(FILE *fl, const char *error)
   return (strlen(buf) ? strdup(buf) : NULL);
 }
 
+/* fread_clean_string is the same as fread_string, but skips preceding spaces */
+char *fread_clean_string(FILE *fl, const char *error)
+{
+  char buf[MAX_STRING_LENGTH], tmp[513];
+  char *point, c;
+  int done = 0, length = 0, templength;
+
+  *buf = '\0';
+
+  do
+  {
+    if( feof( fl ) )
+    {
+      log( "%s", "fread_clean_string: EOF encountered on read." );
+      return 0;
+    }
+    c = getc( fl );
+  }
+  while( isspace( c ) );
+  ungetc( c, fl );
+
+  do {
+    if (!fgets(tmp, 512, fl)) {
+      log("SYSERR: fread_clean_string: format error at or near %s", error);
+      exit(1);
+    }
+    /* If there is a '~', end the string; else put an "\r\n" over the '\n'. */
+    /* now only removes trailing ~'s -- Welcor */
+    point = strchr(tmp, '\0');
+    for (point-- ; (*point=='\r' || *point=='\n'); point--);
+    if (*point=='~') {
+      *point='\0';
+      done = 1;
+    } else {
+      *(++point) = '\r';
+      *(++point) = '\n';
+      *(++point) = '\0';
+    }
+
+    templength = point - tmp;
+
+    if (length + templength >= MAX_STRING_LENGTH) {
+      log("SYSERR: fread_clean_string: string too large (db.c)");
+      log("%s", error);
+      exit(1);
+    } else {
+      strcat(buf + length, tmp);	/* strcat: OK (size checked above) */
+      length += templength;
+    }
+  } while (!done);
+
+  /* allocate space for the new string and copy it */
+  return (strlen(buf) ? strdup(buf) : NULL);
+}
+
 /* Read a numerical value from a given file */
 int fread_number(FILE *fp)
 {

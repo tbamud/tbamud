@@ -148,7 +148,7 @@ static IBT_DATA *read_ibt( char *filename, FILE *fp )
         {
           case 'B':
             if (!str_cmp(word, "Body"))  STRFREE(ibtData->body);
-            KEY("Body",     ibtData->body,   fread_string( fp, buf ));
+            KEY("Body",     ibtData->body,   fread_clean_string( fp, buf ));
             break;
 
           case 'E':
@@ -185,7 +185,7 @@ static IBT_DATA *read_ibt( char *filename, FILE *fp )
             if (!str_cmp(word, "Name") && ibtData->name)   STRFREE(ibtData->name);
             if (!str_cmp(word, "Notes") && ibtData->notes)  STRFREE(ibtData->notes);
             TXT_KEY("Name",     ibtData->name,    fread_line( fp ));
-            KEY("Notes",        ibtData->notes,   fread_string( fp, buf ));
+            KEY("Notes",        ibtData->notes,   fread_clean_string( fp, buf ));
             break;
 
           case 'R':

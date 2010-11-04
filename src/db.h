@@ -243,6 +243,7 @@ char *fread_action(FILE *fl, int nr);
 int   create_entry(char *name);
 void  zone_update(void);
 char  *fread_string(FILE *fl, const char *error);
+char  *fread_clean_string(FILE *fl, const char *error);
 int   fread_number(FILE *fp);
 char  *fread_line(FILE *fp);
 int   fread_flags(FILE *fp, int *fg, int fg_size);
