@@ -35,6 +35,11 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Nov 06 2010] - Jamdog
+  Added ability to change player/mob level or class in scripts 
+  The medit mob flags menu now only shows valid flags (thanks Kyle)
+  Skillset now warns imms when the player shouldn't have a skill (thanks Rumble)
+  Fly spell added!
 [Nov 04 2010] - Jamdog
   Bug-Fix: Converted affect flags in struct affected_type from 32-bit to 128-bit
   Bug Fix: Players with too much gold now don't lose eq when renting
