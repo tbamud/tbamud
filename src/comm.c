@@ -462,6 +462,12 @@ void copyover_recover()
       enter_player_game(d);
       d->connected = CON_PLAYING;
       look_at_room(d->character, 0);
+
+      /* Add to the list of 'recent' players (since last reboot) with copyover flag */
+      if (AddRecentPlayer(GET_NAME(d->character), d->host, FALSE, TRUE) == FALSE)
+      {
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "Failure to AddRecentPlayer (returned FALSE).");
+      }
     }
   }
   fclose (fp);

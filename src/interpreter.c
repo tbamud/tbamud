@@ -250,6 +250,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "reload"   , "reload"  , POS_DEAD    , do_reboot   , LVL_IMPL, 0 },
   { "recite"   , "reci"    , POS_RESTING , do_use      , 0, SCMD_RECITE },
   { "receive"  , "rece"    , POS_STANDING, do_not_here , 1, 0 },
+  { "recent"   , "recent"  , POS_DEAD    , do_recent   , LVL_IMMORT, 0 },
   { "remove"   , "rem"     , POS_RESTING , do_remove   , 0, 0 },
   { "rent"     , "rent"    , POS_STANDING, do_not_here , 1, 0 },
   { "report"   , "repo"    , POS_RESTING , do_report   , 0, 0 },
@@ -1409,6 +1410,12 @@ void nanny(struct descriptor_data *d, char *arg)
       else
         mudlog(BRF, LVL_IMMORT, TRUE, "%s has connected.", GET_NAME(d->character));
 
+      /* Add to the list of 'recent' players (since last reboot) */
+      if (AddRecentPlayer(GET_NAME(d->character), d->host, FALSE, FALSE) == FALSE)
+      {
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "Failure to AddRecentPlayer (returned FALSE).");
+      }
+
       if (load_result) {
         write_to_output(d, "\r\n\r\n\007\007\007"
 		"%s%d LOGIN FAILURE%s SINCE LAST SUCCESSFUL LOGIN.%s\r\n",
@@ -1506,6 +1513,12 @@ void nanny(struct descriptor_data *d, char *arg)
     GET_HOST(d->character)= strdup(d->host);
 
     mudlog(NRM, LVL_GOD, TRUE, "%s [%s] new player.", GET_NAME(d->character), d->host);
+
+    /* Add to the list of 'recent' players (since last reboot) */
+    if (AddRecentPlayer(GET_NAME(d->character), d->host, TRUE, FALSE) == FALSE)
+    {
+      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "Failure to AddRecentPlayer (returned FALSE).");
+    }
     break;
 
   case CON_RMOTD:		/* read CR after printing motd   */

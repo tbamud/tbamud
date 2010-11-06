@@ -1240,6 +1240,18 @@ struct happyhour {
   int ticks_left;
 };
 
+/** structure for list of recent players (see 'recent' command) */
+struct recent_player
+{
+   int    vnum;                   /* The ID number for this instance */
+   char   name[MAX_NAME_LENGTH];  /* The char name of the player     */
+   bool   new_player;             /* Is this a new player?           */
+   bool   copyover_player;        /* Is this a player that was on during the last copyover? */
+   time_t time;                   /* login time                      */
+   char   host[HOST_LENGTH+1];    /* Host IP address                 */
+   struct recent_player *next;    /* Pointer to the next instance    */
+};
+
 /* Config structs */
 
 /** The game configuration structure used for configurating the game play

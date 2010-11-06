@@ -48,9 +48,15 @@ static void mob_checkload(struct char_data *ch, mob_vnum mvnum);
 static void obj_checkload(struct char_data *ch, obj_vnum ovnum);
 static void trg_checkload(struct char_data *ch, trig_vnum tvnum);
 static void mod_llog_entry(struct last_entry *llast,int type);
+static int  get_max_recent(void);
+static void clear_recent(struct recent_player *this);
+static struct recent_player *create_recent(void);
 
 const char *get_spec_func_name(SPECIAL(*func));
 bool zedit_get_levels(struct descriptor_data *d, char *buf);
+
+/* Local Globals */
+static struct recent_player *recent_list = NULL;  /** Global list of recent players */
 
 int purge_room(room_rnum room)
 {
@@ -4790,4 +4796,141 @@ ACMD(do_zunlock)
   {
     send_to_char(ch, "Unable to save zone changes.  Check syslog!\r\n");
   }
+}
+
+/* get highest vnum in recent player list  */
+static int get_max_recent(void)
+{
+  struct recent_player *this;
+  int iRet=0;
+
+  this = recent_list;
+
+  while (this)
+  {
+   if (this->vnum > iRet) iRet = this->vnum;
+   this = this->next;
+  }
+
+  return iRet;
+}
+
+/* clear an item in recent player list */
+static void clear_recent(struct recent_player *this)
+{
+  this->vnum = 0;
+  this->time = 0;
+  strcpy(this->name, "");
+  strcpy(this->host, "");
+  this->next = NULL;
+}
+
+/* create new blank player in recent players list */
+static struct recent_player *create_recent(void)
+{
+  struct recent_player *newrecent;
+
+  CREATE(newrecent, struct recent_player, 1);
+  clear_recent(newrecent);
+  newrecent->next = recent_list;
+  recent_list = newrecent;
+
+  newrecent->vnum = get_max_recent();
+  newrecent->vnum++;
+  return newrecent;
+}
+
+/* Add player to recent player list */
+bool AddRecentPlayer(char *chname, char *chhost, bool newplr, bool cpyplr)
+{
+  struct recent_player *this;
+  time_t ct;
+  int max_vnum;
+
+  ct = time(0);  /* Grab the current time */
+
+  this = create_recent();
+
+  if (!this) return FALSE;
+
+  this->time = ct;
+  this->new_player = newplr;
+  this->copyover_player = cpyplr;
+  strcpy(this->host, chhost);
+  strcpy(this->name, chname);
+  max_vnum = get_max_recent();
+  this->vnum = max_vnum;   /* Possibly should be +1 ? */
+
+  return TRUE;
+}
+
+ACMD(do_recent)
+{
+  time_t ct;
+  char *tmstr, arg[MAX_INPUT_LENGTH];
+  int hits = 0, limit = 0, count = 0;
+  struct recent_player *this;
+  bool loc;
+
+  one_argument(argument, arg);
+  if (!*arg) {
+    limit = 0;
+  } else {
+    limit = atoi(arg);
+  }
+
+  if (GET_LEVEL(ch) >= LVL_GRGOD) {  /* If High-Level Imm, then show Host IP */
+    send_to_char(ch, " ID | DATE/TIME           | HOST IP                               | Player Name\r\n");
+  } else {
+    send_to_char(ch, " ID | DATE/TIME           | Player Name\r\n");
+  }
+
+  this = recent_list;
+  while(this)
+  {
+    loc = FALSE;
+    hits++;
+    ct = this->time;
+    tmstr = asctime(localtime(&ct));
+    *(tmstr + strlen(tmstr) - 1) = '\0';   /* Cut off last char */
+    if (this->host && *(this->host)) {
+      if (!strcmp(this->host, "localhost")) loc = TRUE;
+    }
+
+    if ((limit == 0) || (count < limit))
+    {
+      if (GET_LEVEL(ch) >= LVL_GRGOD)   /* If High-Level Imm, then show Host IP */
+      {
+        if (this->new_player == TRUE) {
+          send_to_char(ch, "%3d | %-19.19s | %s%-37s%s | %s %s(New Player)%s\r\n", this->vnum, tmstr, loc ? QRED : "", this->host, QNRM, this->name, QYEL, QNRM);
+        } else if (this->copyover_player == TRUE) {
+          send_to_char(ch, "%3d | %-19.19s | %s%-37s%s | %s %s(Copyover)%s\r\n", this->vnum, tmstr, loc ? QRED : "", this->host, QNRM, this->name, QCYN, QNRM);
+        } else {
+          send_to_char(ch, "%3d | %-19.19s | %s%-37s%s | %s\r\n", this->vnum, tmstr, loc ? QRED : "", this->host, QNRM, this->name);
+        }
+      }
+      else
+      {
+        if (this->new_player == TRUE) {
+          send_to_char(ch, "%3d | %-19.19s | %s %s(New Player)%s\r\n", this->vnum, tmstr, this->name, QYEL, QNRM);
+        } else if (this->copyover_player == TRUE) {
+          send_to_char(ch, "%3d | %-19.19s | %s %s(Copyover)%s\r\n", this->vnum, tmstr, this->name, QCYN, QNRM);
+        } else {
+          send_to_char(ch, "%3d | %-19.19s | %s\r\n", this->vnum, tmstr, this->name);
+        }
+      }
+      count++;
+
+      this = this->next;
+    }
+    else
+    {
+      this = NULL;
+    }
+  }
+
+  ct = time(0);  /* Grab the current time */
+  tmstr = asctime(localtime(&ct));
+  *(tmstr + strlen(tmstr) - 1) = '\0';
+  send_to_char(ch, "Current Server Time: %-19.19s\r\nShowing %d players since last copyover/reboot\r\n", tmstr, hits);
 }
