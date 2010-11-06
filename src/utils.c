@@ -21,6 +21,7 @@
 #include "spells.h"
 #include "handler.h"
 #include "interpreter.h"
+#include "class.h"
 
 
 /** Aportable random number function.
@@ -1471,3 +1472,12 @@ void new_affect(struct affected_type *af)
   for (i=0; i<AF_ARRAY_MAX; i++) af->bitvector[i]=0;
 }
 
+/* Handy function to get class ID number by name (abbreviations allowed) */
+int get_class_by_name(char *classname)
+{
+    int i;
+    for (i=0; i<NUM_CLASSES; i++)
+      if (is_abbrev(classname, pc_class_types[i])) return(i);
+
+    return (-1);
+}

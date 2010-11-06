@@ -413,6 +413,13 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     to_vict = "Your eyes tingle.";
     break;
 
+  case SPELL_FLY:
+    af[0].duration = 24;
+    SET_BIT_AR(af[0].bitvector, AFF_FLYING);
+    accum_duration = TRUE;
+    to_vict = "You float above the ground.";
+    break;
+
   case SPELL_INFRAVISION:
     af[0].duration = 12 + level;
     SET_BIT_AR(af[0].bitvector, AFF_INFRAVISION);

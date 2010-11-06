@@ -1,13 +1,13 @@
 /**
 * @file spells.h
 * Constants and function prototypes for the spell system.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 */
 #ifndef _SPELLS_H_
 #define _SPELLS_H_
@@ -82,16 +82,17 @@
 #define SPELL_WORD_OF_RECALL         42 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_REMOVE_POISON          43 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_SENSE_LIFE             44 /* Reserved Skill[] DO NOT CHANGE */
-#define SPELL_ANIMATE_DEAD	     45 /* Reserved Skill[] DO NOT CHANGE */
-#define SPELL_DISPEL_GOOD	     46 /* Reserved Skill[] DO NOT CHANGE */
-#define SPELL_GROUP_ARMOR	     47 /* Reserved Skill[] DO NOT CHANGE */
-#define SPELL_GROUP_HEAL	     48 /* Reserved Skill[] DO NOT CHANGE */
-#define SPELL_GROUP_RECALL	     49 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_ANIMATE_DEAD           45 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_DISPEL_GOOD            46 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_GROUP_ARMOR            47 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_GROUP_HEAL             48 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_GROUP_RECALL           49 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_INFRAVISION            50 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_WATERWALK              51 /* Reserved Skill[] DO NOT CHANGE */
-#define SPELL_IDENTIFY	             52 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_IDENTIFY               52 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_FLY                    53 /* Reserved Skill[] DO NOT CHANGE */
 /** Total Number of defined spells */
-#define NUM_SPELLS    52
+#define NUM_SPELLS    53
 
 /* Insert new spells here, up to MAX_SPELLS */
 #define MAX_SPELLS		    130
@@ -109,13 +110,13 @@
 #define SKILL_TRACK		    140 /* Reserved Skill[] DO NOT CHANGE */
 /* New skills may be added here up to MAX_SKILLS (200) */
 
-/* NON-PLAYER AND OBJECT SPELLS AND SKILLS: The practice levels for the spells 
- * and skills below are _not_ recorded in the players file; therefore, the 
- * intended use is for spells and skills associated with objects (such as 
+/* NON-PLAYER AND OBJECT SPELLS AND SKILLS: The practice levels for the spells
+ * and skills below are _not_ recorded in the players file; therefore, the
+ * intended use is for spells and skills associated with objects (such as
  * SPELL_IDENTIFY used with scrolls of identify) or non-players (such as NPC
  * only spells). */
 
-/* To make an affect induced by dg_affect look correct on 'stat' we need to 
+/* To make an affect induced by dg_affect look correct on 'stat' we need to
  * define it with a 'spellname'. */
 #define SPELL_DG_AFFECT              298
 

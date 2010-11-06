@@ -21,6 +21,7 @@
 #include "boards.h"
 #include "improved-edit.h"
 #include "oasis.h"
+#include "class.h"
 #include "dg_scripts.h" /* for trigedit_string_cleanup */
 #include "modify.h"
 #include "quest.h"
@@ -278,7 +279,7 @@ ACMD(do_skillset)
   struct char_data *vict;
   char name[MAX_INPUT_LENGTH];
   char buf[MAX_INPUT_LENGTH], helpbuf[MAX_STRING_LENGTH];
-  int skill, value, i, qend;
+  int skill, value, i, qend, pc, pl;
 
   argument = one_argument(argument, name);
 
@@ -302,6 +303,8 @@ ACMD(do_skillset)
     return;
   }
   skip_spaces(&argument);
+  pc = GET_CLASS(vict);
+  pl = GET_LEVEL(vict);
 
   /* If there is no chars in argument */
   if (!*argument) {
@@ -346,6 +349,13 @@ ACMD(do_skillset)
   if (IS_NPC(vict)) {
     send_to_char(ch, "You can't set NPC skills.\r\n");
     return;
+  }
+  if ((spell_info[skill].min_level[(pc)] >= LVL_IMMORT) && (pl < LVL_IMMORT)) {
+    send_to_char(ch, "%s cannot be learned by mortals.\r\n", spell_info[skill].name);
+    return;
+  } else if (spell_info[skill].min_level[(pc)] > pl) {
+    send_to_char(ch, "%s is a level %d %s.\r\n", GET_NAME(vict), pl, pc_class_types[pc]);
+    send_to_char(ch, "The minimum level for %s is %d for %ss.\r\n", spell_info[skill].name, spell_info[skill].min_level[(pc)], pc_class_types[pc]);
   }
 
   /* find_skill_num() guarantees a valid spell_info[] index, or -1, and we

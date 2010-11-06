@@ -27,7 +27,7 @@
 
 /* Utility functions */
 
-/* Thanks to James Long for his assistance in plugging the memory leak that 
+/* Thanks to James Long for his assistance in plugging the memory leak that
  * used to be here. - Welcor */
 /* Adds a variable with given name and value to trigger. */
 void add_var(struct trig_var_data **var_list, const char *name, const char *value, long id)
@@ -75,8 +75,8 @@ char *skill_percent(struct char_data *ch, char *skill)
   return retval;
 }
 
-/* Search through all the persons items, including containers. 0 if it doesnt 
- * exist, and greater then 0 if it does! Jamie Nelson.  Now also searches by 
+/* Search through all the persons items, including containers. 0 if it doesnt
+ * exist, and greater then 0 if it does! Jamie Nelson.  Now also searches by
  * vnum and returns the number of matching objects. - Welcor */
 int item_in_list(char *item, obj_data *list)
 {
@@ -115,8 +115,8 @@ int item_in_list(char *item, obj_data *list)
   return count;
 }
 
-/* BOOLEAN return, just check if a player or mob has an item of any sort, 
- * searched for by name or id. Searching equipment as well as inventory, and 
+/* BOOLEAN return, just check if a player or mob has an item of any sort,
+ * searched for by name or id. Searching equipment as well as inventory, and
  * containers. Jamie Nelson */
 int char_has_item(char *item, struct char_data *ch)
 {
@@ -401,11 +401,11 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
  *  - count number of objects in room X with this name/id/vnum
  * %findmob.<room vnum X>(<mob vnum Y>)%
  *  - count number of mobs in room X with vnum Y
- * For example you want to check how many PC's are in room with vnum 1204. PC's 
+ * For example you want to check how many PC's are in room with vnum 1204. PC's
  * have the vnum -1 so: %echo% players in room 1204: %findmob.1204(-1)%
- * Or say you had a bank, and you want a script to check the number of bags of 
- * gold (vnum: 1234). In the vault (vnum: 453). Use: %findobj.453(1234)% and it 
- * will return the number of bags of gold. 
+ * Or say you had a bank, and you want a script to check the number of bags of
+ * gold (vnum: 1234). In the vault (vnum: 453). Use: %findobj.453(1234)% and it
+ * will return the number of bags of gold.
  * Addition inspired by Jamie Nelson */
       else if (!str_cmp(var, "findmob")) {
         if (!field || !*field || !subfield || !*subfield) {
@@ -530,7 +530,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
     }
 
     if (c) {
-      if (!str_cmp(field, "global")) { /* get global of something else */ 
+      if (!str_cmp(field, "global")) { /* get global of something else */
         if (IS_NPC(c) && c->script) {
           find_replacement(go, c->script, NULL, MOB_TRIGGER,
             subfield, NULL, NULL, str, slen);
@@ -581,8 +581,18 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             }
             snprintf(str, slen, "%d", GET_CHA(c));
           }
-          else if (!str_cmp(field, "class"))
-            sprinttype(GET_CLASS(c), pc_class_types, str, slen);
+          else if (!str_cmp(field, "class")) {
+            if (subfield && *subfield) {
+              int cl = get_class_by_name(subfield);
+              if (cl != -1) {
+                GET_CLASS(c) = cl;
+                snprintf(str, slen, "1");
+              } else {
+                snprintf(str, slen, "0");
+              }
+            } else
+              sprinttype(GET_CLASS(c), pc_class_types, str, slen);
+          }
           else if (!str_cmp(field, "con")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
@@ -672,14 +682,14 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             else
               snprintf(str, slen, "%d", char_has_item(subfield, c));
           }
-          else if (!str_cmp(field, "hasattached")) { 
-            if (!(subfield && *subfield) || !IS_NPC(c)) 
-              *str = '\0'; 
-            else { 
-              i = atoi(subfield); 
-              snprintf(str, slen, "%d", trig_is_attached(SCRIPT(c), i)); 
-            } 
-          } 
+          else if (!str_cmp(field, "hasattached")) {
+            if (!(subfield && *subfield) || !IS_NPC(c))
+              *str = '\0';
+            else {
+              i = atoi(subfield);
+              snprintf(str, slen, "%d", trig_is_attached(SCRIPT(c), i));
+            }
+          }
           else if (!str_cmp(field, "heshe"))
             snprintf(str, slen, "%s", HSSH(c));
           else if (!str_cmp(field, "himher"))
@@ -766,8 +776,13 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           }
           break;
         case 'l':
-          if (!str_cmp(field, "level"))
-            snprintf(str, slen, "%d", GET_LEVEL(c));
+          if (!str_cmp(field, "level")) {
+            if (subfield && *subfield) {
+              int lev = atoi(subfield);
+              GET_LEVEL(c) = MIN(MAX(lev, 0), LVL_IMMORT-1);
+            } else
+              snprintf(str, slen, "%d", GET_LEVEL(c));
+		  }
           break;
         case 'm':
           if (!str_cmp(field, "mana")) {
@@ -846,19 +861,19 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             snprintf(str, slen, "%d", GET_PRACTICES(c));
           }
           else if (!str_cmp(field, "pref")) {
-            if (subfield && *subfield) { 
-              int pref = get_flag_by_name(preference_bits, subfield); 
-              if (!IS_NPC(c) && pref != NOFLAG && PRF_FLAGGED(c, pref)) 
-                strcpy(str, "1"); 
-              else 
-                strcpy(str, "0"); 
-            } else 
-              strcpy(str, "0"); 
+            if (subfield && *subfield) {
+              int pref = get_flag_by_name(preference_bits, subfield);
+              if (!IS_NPC(c) && pref != NOFLAG && PRF_FLAGGED(c, pref))
+                strcpy(str, "1");
+              else
+                strcpy(str, "0");
+            } else
+              strcpy(str, "0");
           }
           break;
         case 'q':
-          if (!IS_NPC(c) && (!str_cmp(field, "questpoints") || 
-              !str_cmp(field, "qp") || !str_cmp(field, "qpnts"))) 
+          if (!IS_NPC(c) && (!str_cmp(field, "questpoints") ||
+              !str_cmp(field, "qp") || !str_cmp(field, "qpnts")))
           {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
@@ -866,25 +881,25 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             }
             snprintf(str, slen, "%d", GET_QUESTPOINTS(c));
           }
-           else if (!str_cmp(field, "quest")) 
-           { 
+           else if (!str_cmp(field, "quest"))
+           {
                if (!IS_NPC(c) && (GET_QUEST(c) != NOTHING) && (real_quest(GET_QUEST(c)) != NOTHING))
-                 snprintf(str, slen, "%d", GET_QUEST(c)); 
-               else 
-                 strcpy(str, "0"); 
-             } 
-           else if (!str_cmp(field, "questdone")) 
-           { 
-               if (!IS_NPC(c) && subfield && *subfield) { 
-                 int q_num = atoi(subfield); 
-                 if (is_complete(c, q_num)) 
-                   strcpy(str, "1"); 
-                 else 
-                   strcpy(str, "0"); 
-               } 
-               else 
-                 strcpy(str, "0"); 
-             } 
+                 snprintf(str, slen, "%d", GET_QUEST(c));
+               else
+                 strcpy(str, "0");
+             }
+           else if (!str_cmp(field, "questdone"))
+           {
+               if (!IS_NPC(c) && subfield && *subfield) {
+                 int q_num = atoi(subfield);
+                 if (is_complete(c, q_num))
+                   strcpy(str, "1");
+                 else
+                   strcpy(str, "0");
+               }
+               else
+                 strcpy(str, "0");
+             }
           break;
         case 'r':
           if (!str_cmp(field, "room")) {  /* in NOWHERE, return the void */
@@ -1058,15 +1073,15 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
       *str = '\x1';
       switch (LOWER(*field)) {
         case 'a':
-          if (!str_cmp(field, "affects")) { 
-            if (subfield && *subfield) { 
+          if (!str_cmp(field, "affects")) {
+            if (subfield && *subfield) {
               if (check_flags_by_name_ar(GET_OBJ_AFFECT(o), NUM_AFF_FLAGS, subfield, affected_bits) == TRUE)
-                snprintf(str, slen, "1"); 
-              else 
-                snprintf(str, slen, "0"); 
+                snprintf(str, slen, "1");
+              else
+                snprintf(str, slen, "0");
             } else
-              snprintf(str, slen, "0"); 
-          } 
+              snprintf(str, slen, "0");
+          }
 	case 'c':
           if (!str_cmp(field, "cost")) {
             if (subfield && *subfield) {
@@ -1127,13 +1142,13 @@ o->contains) ? "1" : "0"));
             else
             	strcpy(str, "0");
           }
-          else if (!str_cmp(field, "hasattached")) { 
-            if (!(subfield && *subfield)) 
-              *str = '\0'; 
-            else { 
-              i = atoi(subfield); 
-              snprintf(str, slen, "%d", trig_is_attached(SCRIPT(o), i)); 
-            } 
+          else if (!str_cmp(field, "hasattached")) {
+            if (!(subfield && *subfield))
+              *str = '\0';
+            else {
+              i = atoi(subfield);
+              snprintf(str, slen, "%d", trig_is_attached(SCRIPT(o), i));
+            }
           }
           break;
         case 'i':
@@ -1146,9 +1161,9 @@ o->contains) ? "1" : "0"));
             else
               *str = '\0';
           }
-          else if (!str_cmp(field, "is_pc")) { 
-            strcpy(str, "-1"); 
-          } 
+          else if (!str_cmp(field, "is_pc")) {
+            strcpy(str, "-1");
+          }
 	  break;
         case 'n':
           if (!str_cmp(field, "name"))
@@ -1200,12 +1215,12 @@ o->contains) ? "1" : "0"));
             snprintf(str, slen, "%d", GET_OBJ_VAL(o, 3));
           break;
         case 'w':
-          if (!str_cmp(field, "wearflag")) { 
+          if (!str_cmp(field, "wearflag")) {
 	    if (subfield && *subfield) {
-	      if (can_wear_on_pos(o, find_eq_pos_script(subfield))) 
-	        snprintf(str, slen, "1"); 
-	      else 
-	         snprintf(str, slen, "0"); 
+	      if (can_wear_on_pos(o, find_eq_pos_script(subfield)))
+	        snprintf(str, slen, "1");
+	      else
+	         snprintf(str, slen, "0");
 	    } else
               snprintf(str, slen, "0");
 	  }
@@ -1325,27 +1340,27 @@ o->contains) ? "1" : "0"));
         else
           *str = '\0';
       }
-      else if (!str_cmp(field, "hasattached")) { 
-        if (!(subfield && *subfield)) 
-          *str = '\0'; 
-        else { 
-          i = atoi(subfield); 
-          snprintf(str, slen, "%d", trig_is_attached(SCRIPT(r), i)); 
-        } 
+      else if (!str_cmp(field, "hasattached")) {
+        if (!(subfield && *subfield))
+          *str = '\0';
+        else {
+          i = atoi(subfield);
+          snprintf(str, slen, "%d", trig_is_attached(SCRIPT(r), i));
+        }
       }
-      else if (!str_cmp(field, "zonenumber")) 
-        snprintf(str, slen, "%d",  zone_table[r->zone].number); 
-      else if (!str_cmp(field, "zonename")) 
+      else if (!str_cmp(field, "zonenumber"))
+        snprintf(str, slen, "%d",  zone_table[r->zone].number);
+      else if (!str_cmp(field, "zonename"))
         snprintf(str, slen, "%s",  zone_table[r->zone].name);
-      else if (!str_cmp(field, "roomflag")) { 
-        if (subfield && *subfield) { 
-          room_rnum thisroom = real_room(r->number); 
-          if (check_flags_by_name_ar(ROOM_FLAGS(thisroom), NUM_ROOM_FLAGS, subfield, room_bits) == TRUE) 
-            snprintf(str, slen, "1"); 
-          else 
-            snprintf(str, slen, "0"); 
+      else if (!str_cmp(field, "roomflag")) {
+        if (subfield && *subfield) {
+          room_rnum thisroom = real_room(r->number);
+          if (check_flags_by_name_ar(ROOM_FLAGS(thisroom), NUM_ROOM_FLAGS, subfield, room_bits) == TRUE)
+            snprintf(str, slen, "1");
+          else
+            snprintf(str, slen, "0");
         } else
-          snprintf(str, slen, "0"); 
+          snprintf(str, slen, "0");
       }
       else if (!str_cmp(field, "north")) {
         if (R_EXIT(r, NORTH)) {
@@ -1489,10 +1504,10 @@ o->contains) ? "1" : "0"));
   }
 }
 
-/* Now automatically checks if the variable has more then one field in it. And 
- * if the field returns a name or a script UID or the like it can recurse. If 
- * you supply a value like, %actor.int.str% it wont blow up on you either. Now 
- * also lets subfields have variables parsed inside of them so that: %echo% 
+/* Now automatically checks if the variable has more then one field in it. And
+ * if the field returns a name or a script UID or the like it can recurse. If
+ * you supply a value like, %actor.int.str% it wont blow up on you either. Now
+ * also lets subfields have variables parsed inside of them so that: %echo%
  * %actor.gold(%actor.gold%)% will double the actors gold every time its called.
  * - Jamie Nelson */
 

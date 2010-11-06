@@ -183,7 +183,7 @@ int find_skill_num(char *name)
 
 /* This function is the very heart of the entire magic system.  All invocations
  * of all types of magic -- objects, spoken and unspoken PC and NPC spells, the
- * works -- all come through this function eventually. This is also the entry 
+ * works -- all come through this function eventually. This is also the entry
  * point for non-spoken or unrestricted spells. Spellnum 0 is legal but silently
  * ignored here, to make callers simpler. */
 int call_magic(struct char_data *caster, struct char_data *cvict,
@@ -429,8 +429,8 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj,
 }
 
 /* cast_spell is used generically to cast any spoken spell, assuming we already
- * have the target char/obj and spell number.  It checks all restrictions, 
- * prints the words, etc. Entry point for NPC casts.  Recommended entry point 
+ * have the target char/obj and spell number.  It checks all restrictions,
+ * prints the words, etc. Entry point for NPC casts.  Recommended entry point
  * for spells cast by NPCs via specprocs. */
 int cast_spell(struct char_data *ch, struct char_data *tch,
 	           struct obj_data *tobj, int spellnum)
@@ -512,12 +512,12 @@ ACMD(do_cast)
   }
   t = strtok(NULL, "\0");
 
-  skip_spaces(&s); 
+  skip_spaces(&s);
 
   /* spellnum = search_block(s, spells, 0); */
   spellnum = find_skill_num(s);
 
-  if ((spellnum < 1) || (spellnum > MAX_SPELLS) || !*s) { 
+  if ((spellnum < 1) || (spellnum > MAX_SPELLS) || !*s) {
     send_to_char(ch, "Cast what?!?\r\n");
     return;
   }
@@ -710,8 +710,8 @@ void unused_spell(int spl)
  *  charm, curse), or is otherwise nasty.
  * routines:  A list of magic routines which are associated with this spell
  *  if the spell uses spell templates.  Also joined with bitwise OR ('|').
- * See the documentation for a more detailed description of these fields. You 
- * only need a spello() call to define a new spell; to decide who gets to use 
+ * See the documentation for a more detailed description of these fields. You
+ * only need a spello() call to define a new spell; to decide who gets to use
  * a spell or skill, look in class.c.  -JE */
 void mag_assign_spells(void)
 {
@@ -834,6 +834,10 @@ void mag_assign_spells(void)
 	TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
 	NULL);
 
+  spello(SPELL_FLY, "fly", 40, 20, 2, POS_FIGHTING,
+	TAR_CHAR_ROOM, FALSE, MAG_AFFECTS,
+	"You drift slowly to the ground.");
+
   spello(SPELL_GROUP_HEAL, "group heal", 80, 60, 5, POS_STANDING,
 	TAR_IGNORE, FALSE, MAG_GROUPS,
 	NULL);
@@ -936,7 +940,7 @@ void mag_assign_spells(void)
 	NULL);
 
   /* Declaration of skills - this actually doesn't do anything except set it up
-   * so that immortals can use these skills by default.  The min level to use 
+   * so that immortals can use these skills by default.  The min level to use
    * the skill for other classes is set up in class.c. */
   skillo(SKILL_BACKSTAB, "backstab");
   skillo(SKILL_BASH, "bash");

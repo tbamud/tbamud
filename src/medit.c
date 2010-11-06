@@ -34,6 +34,8 @@ static void medit_save_to_disk(zone_vnum zone_num);
 static void medit_disp_positions(struct descriptor_data *d);
 static void medit_disp_sex(struct descriptor_data *d);
 static void medit_disp_attack_types(struct descriptor_data *d);
+static bool medit_illegal_mob_flag(int fl);
+static int  medit_get_mob_flag_by_number(int num);
 static void medit_disp_mob_flags(struct descriptor_data *d);
 static void medit_disp_aff_flags(struct descriptor_data *d);
 static void medit_disp_menu(struct descriptor_data *d);
@@ -328,14 +330,57 @@ static void medit_disp_attack_types(struct descriptor_data *d)
   write_to_output(d, "Enter attack type : ");
 }
 
+/* Find mob flags that shouldn't be set by builders */
+static bool medit_illegal_mob_flag(int fl)
+{
+  int i;
+
+  /* add any other flags you dont want them setting */
+  const int illegal_flags[] = {
+    MOB_ISNPC,
+    MOB_NOTDEADYET,
+  };
+
+  const int num_illegal_flags = sizeof(illegal_flags)/sizeof(int);
+
+
+  for (i=0; i < num_illegal_flags;i++)
+    if (fl == illegal_flags[i])
+      return (TRUE);
+
+  return (FALSE);
+
+}
+
+/* Due to illegal mob flags not showing in the mob flags list,
+   we need this to convert the list number back to flag value */
+static int medit_get_mob_flag_by_number(int num)
+{
+  int i, count = 0;
+  for (i = 0; i < NUM_MOB_FLAGS; i++) {
+    if (medit_illegal_mob_flag(i)) continue;
+    if ((++count) == num) return i;
+  }
+  /* Return 'illegal flag' value */
+  return -1;
+}
+
 /* Display mob-flags menu. */
 static void medit_disp_mob_flags(struct descriptor_data *d)
 {
+  int i, count = 0, columns = 0;
   char flags[MAX_STRING_LENGTH];
 
   get_char_colors(d->character);
   clear_screen(d);
-  column_list(d->character, 0, action_bits, NUM_MOB_FLAGS, TRUE);
+
+  /* Mob flags has special handling to remove illegal flags from the list */
+  for (i = 0; i < NUM_MOB_FLAGS; i++) {
+    if (medit_illegal_mob_flag(i)) continue;
+    write_to_output(d, "%s%2d%s) %-20.20s  %s", grn, ++count, nrm, action_bits[i],
+                !(++columns % 2) ? "\r\n" : "");
+  }
+
   sprintbitarray(MOB_FLAGS(OLC_MOB(d)), action_bits, AF_ARRAY_MAX, flags);
   write_to_output(d, "\r\nCurrent flags : %s%s%s\r\nEnter mob flags (0 to quit) : ", cyn, flags, nrm);
 }
@@ -478,7 +523,7 @@ static void medit_disp_stats_menu(struct descriptor_data *d)
 
 void medit_parse(struct descriptor_data *d, char *arg)
 {
-  int i = -1;
+  int i = -1, j;
   char *oldtext = NULL;
 
   if (OLC_MODE(d) > MEDIT_NUMERICAL_RESPONSE) {
@@ -837,8 +882,13 @@ void medit_parse(struct descriptor_data *d, char *arg)
   case MEDIT_NPC_FLAGS:
     if ((i = atoi(arg)) <= 0)
       break;
-    else if (i <= NUM_MOB_FLAGS)
+    else if ( (j = medit_get_mob_flag_by_number(i)) == -1) {
+       write_to_output(d, "Invalid choice!\r\n");
+       write_to_output(d, "Enter mob flags (0 to quit) :");
+       return;
+    } else if (j <= NUM_MOB_FLAGS) {
       TOGGLE_BIT_AR(MOB_FLAGS(OLC_MOB(d)), (i - 1));
+    }
     medit_disp_mob_flags(d);
     return;
 
@@ -1008,7 +1058,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
 
   case MEDIT_ALIGNMENT:
     GET_ALIGNMENT(OLC_MOB(d)) = LIMIT(i, -1000, 1000);
-    medit_disp_stats_menu(d); 
+    medit_disp_stats_menu(d);
     return;
 
   case MEDIT_COPY:
