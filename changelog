@@ -43,6 +43,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
   Skillset now warns imms when the player shouldn't have a skill (thanks Rumble)
   Fly spell added!
   Added recent command
+  Bug Fix: Now imms show on who list when editing IBT notes.
 [Nov 04 2010] - Jamdog
   Bug-Fix: Converted affect flags in struct affected_type from 32-bit to 128-bit
   Bug Fix: Players with too much gold now don't lose eq when renting
