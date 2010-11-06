@@ -1331,6 +1331,10 @@ ACMD(do_who)
     send_to_char(ch, "One lonely character displayed.\r\n");
   else
     send_to_char(ch, "%d characters displayed.\r\n", num_can_see);
+
+  if (IS_HAPPYHOUR > 0){
+    send_to_char(ch, "It's a Happy Hour! Type @Rhappyhour@W to see the current bonuses.\r\n");
+  }
 }
 
 #define USERS_FORMAT \

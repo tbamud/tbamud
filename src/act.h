@@ -237,6 +237,7 @@ ACMD(do_use);
 /* Functions without subcommands */
 ACMD(do_display);
 ACMD(do_group);
+ACMD(do_happyhour);
 ACMD(do_hide);
 ACMD(do_not_here);
 ACMD(do_practice);

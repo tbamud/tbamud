@@ -1232,6 +1232,14 @@ struct guild_info_type
   int direction;
 };
 
+/** Happy Hour Data */
+struct happyhour {
+  int qp_rate;
+  int exp_rate;
+  int gold_rate;
+  int ticks_left;
+};
+
 /* Config structs */
 
 /** The game configuration structure used for configurating the game play

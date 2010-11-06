@@ -86,7 +86,7 @@
 #define INVALID_SOCKET (-1)
 #endif
 
-extern time_t motdmod; 
+extern time_t motdmod;
 extern time_t newsmod;
 
 /* locally defined globals, used externally */
@@ -102,6 +102,7 @@ FILE *logfile = NULL;     /* Where to send the log messages. */
 unsigned long pulse = 0;  /* number of pulses since game start */
 ush_int port;
 socket_t mother_desc;
+int next_tick = SECS_PER_MUD_HOUR;  /* Tick countdown */
 /* used with do_tell and handle_webster_file utility */
 long last_webster_teller = -1L;
 
@@ -114,7 +115,7 @@ static byte reread_wizlist;   /* signal: SIGUSR1 */
 /* normally signal SIGUSR2, currently orphaned in favor of Webster dictionary
  * lookup
 static byte emergency_unban;
-*/   
+*/
 static int dg_act_check;         /* toggle for act_trigger */
 static bool fCopyOver;          /* Are we booting in copyover mode? */
 static char *last_act_message = NULL;
@@ -178,7 +179,7 @@ static void handle_webster_file();
 /*  main game loop and related stuff */
 
 #if defined(CIRCLE_WINDOWS) || defined(CIRCLE_MACINTOSH)
-/* Windows and Mac do not have gettimeofday, so we'll simulate it. Borland C++ 
+/* Windows and Mac do not have gettimeofday, so we'll simulate it. Borland C++
  * warns: "Undefined structure 'timezone'" */
 void gettimeofday(struct timeval *t, struct timezone *dummy)
 {
@@ -200,8 +201,8 @@ int main(int argc, char **argv)
   int pos = 1;
   const char *dir;
 
-#ifdef MEMORY_DEBUG 
-  zmalloc_init(); 
+#ifdef MEMORY_DEBUG
+  zmalloc_init();
 #endif
 
 #if CIRCLE_GNU_LIBC_MEMORY_TRACK
@@ -216,8 +217,8 @@ int main(int argc, char **argv)
   GUSIDefaultSetup();
 #endif
 
-  /* Load the game configuration. We must load BEFORE we use any of the 
-   * constants stored in constants.c.  Otherwise, there will be no variables 
+  /* Load the game configuration. We must load BEFORE we use any of the
+   * constants stored in constants.c.  Otherwise, there will be no variables
    * set to set the rest of the vars to, which will mean trouble --> Mythran */
   CONFIG_CONFFILE = NULL;
   while ((pos < argc) && (*(argv[pos]) == '-')) {
@@ -295,7 +296,7 @@ int main(int argc, char **argv)
       puts("Suppressing assignment of special routines.");
       break;
     case 'h':
-      /* From: Anil Mahajan. Do NOT use -C, this is the copyover mode and 
+      /* From: Anil Mahajan. Do NOT use -C, this is the copyover mode and
        * without the proper copyover.dat file, the game will go nuts! */
       printf("Usage: %s [-c] [-m] [-q] [-r] [-s] [-d pathname] [port #]\n"
               "  -c             Enable syntax check mode.\n"
@@ -369,7 +370,7 @@ int main(int argc, char **argv)
     free_ibt_lists();             /* ibt.c */
   }
 
-  if (last_act_message) 
+  if (last_act_message)
     free(last_act_message);
 
   /* probably should free the entire config here.. */
@@ -546,8 +547,8 @@ static socket_t init_socket(ush_int local_port)
       exit(1);
     }
 
-    /* 4 = stdin, stdout, stderr, mother_desc.  Windows might keep sockets and 
-     * files separate, in which case this isn't necessary, but we will err on 
+    /* 4 = stdin, stdout, stderr, mother_desc.  Windows might keep sockets and
+     * files separate, in which case this isn't necessary, but we will err on
      * the side of caution. */
     if ((wsaData.iMaxSockets - 4) < max_players) {
       max_players = wsaData.iMaxSockets - 4;
@@ -586,7 +587,7 @@ static socket_t init_socket(ush_int local_port)
 
   set_sendbuf(s);
 
-/* The GUSI sockets library is derived from BSD, so it defines SO_LINGER, even 
+/* The GUSI sockets library is derived from BSD, so it defines SO_LINGER, even
  * though setsockopt() is unimplimented. (from Dean Takemori) */
 #if defined(SO_LINGER) && !defined(CIRCLE_MACINTOSH)
   {
@@ -816,9 +817,9 @@ void game_loop(socket_t local_mother_desc)
     for (d = descriptor_list; d; d = next_d) {
       next_d = d->next;
 
-      /* Not combined to retain --(d->wait) behavior. -gg 2/20/98 If no wait 
+      /* Not combined to retain --(d->wait) behavior. -gg 2/20/98 If no wait
        * state, no subtraction.  If there is a wait state then 1 is subtracted.
-       * Therefore we don't go less than 0 ever and don't require an 'if' 
+       * Therefore we don't go less than 0 ever and don't require an 'if'
        * bracket. -gg 2/27/99 */
       if (d->character) {
         GET_WAIT_STATE(d->character) -= (GET_WAIT_STATE(d->character) > 0);
@@ -942,6 +943,10 @@ void heartbeat(int heart_pulse)
   if (!(heart_pulse % PULSE_DG_SCRIPT))
     script_trigger_check();
 
+  if (!(heart_pulse % PASSES_PER_SEC)) {    /* EVERY second */
+    next_tick--;
+  }
+
   if (!(heart_pulse % PULSE_ZONE))
     zone_update();
 
@@ -955,6 +960,7 @@ void heartbeat(int heart_pulse)
     perform_violence();
 
   if (!(heart_pulse % (SECS_PER_MUD_HOUR * PASSES_PER_SEC))) {  /* Tick ! */
+    next_tick = SECS_PER_MUD_HOUR;  /* Reset tick coundown */
     weather_and_time(1);
     check_time_triggers();
     affect_update();
@@ -980,10 +986,10 @@ void heartbeat(int heart_pulse)
   extract_pending_chars();
 }
 
-/* new code to calculate time differences, which works on systems for which 
- * tv_usec is unsigned (and thus comparisons for something being < 0 fail).  
- * Based on code submitted by ss@sirocco.cup.hp.com. Code to return the time 
- * difference between a and b (a-b). Always returns a nonnegative value 
+/* new code to calculate time differences, which works on systems for which
+ * tv_usec is unsigned (and thus comparisons for something being < 0 fail).
+ * Based on code submitted by ss@sirocco.cup.hp.com. Code to return the time
+ * difference between a and b (a-b). Always returns a nonnegative value
  * (floors at 0). */
 static void timediff(struct timeval *rslt, struct timeval *a, struct timeval *b)
 {
@@ -1217,18 +1223,18 @@ static char *make_prompt(struct descriptor_data *d)
         len += count;
     }
 
-     if (GET_LAST_NEWS(d->character) < newsmod) 
-     { 
-       count = snprintf(prompt + len, sizeof(prompt) - len, "(news) "); 
-       if (count >= 0) 
-         len += count; 
-     } 
- 
-     if (GET_LAST_MOTD(d->character) < motdmod) 
-     { 
-       count = snprintf(prompt + len, sizeof(prompt) - len, "(motd) "); 
-       if (count >= 0) 
-         len += count; 
+     if (GET_LAST_NEWS(d->character) < newsmod)
+     {
+       count = snprintf(prompt + len, sizeof(prompt) - len, "(news) ");
+       if (count >= 0)
+         len += count;
+     }
+
+     if (GET_LAST_MOTD(d->character) < motdmod)
+     {
+       count = snprintf(prompt + len, sizeof(prompt) - len, "(motd) ");
+       if (count >= 0)
+         len += count;
      }
 
     if (len < sizeof(prompt))
@@ -1557,17 +1563,17 @@ static int new_descriptor(socket_t s)
   newd->next = descriptor_list;
   descriptor_list = newd;
 
-  /* This is where the greetings are actually sent to the new player */ 
-  /* Adjusted by Jamdog to show color codes on the greetings page    */ 
-  *greet_copy = '\0'; 
-  sprintf(greet_copy, "%s", GREETINGS); 
-  proc_colors(greet_copy, MAX_STRING_LENGTH, TRUE); 
-  write_to_output(newd, "%s", greet_copy); 
+  /* This is where the greetings are actually sent to the new player */
+  /* Adjusted by Jamdog to show color codes on the greetings page    */
+  *greet_copy = '\0';
+  sprintf(greet_copy, "%s", GREETINGS);
+  proc_colors(greet_copy, MAX_STRING_LENGTH, TRUE);
+  write_to_output(newd, "%s", greet_copy);
 
   return (0);
 }
 
-/* Send all of the output that we've accumulated for a player out to the 
+/* Send all of the output that we've accumulated for a player out to the
  * player's descriptor. 32 byte GARBAGE_SPACE in MAX_SOCK_BUF used for:
  *	 2 bytes: prepended \r\n
  *	14 bytes: overflow message
@@ -1714,7 +1720,7 @@ static ssize_t perform_socket_write(socket_t desc, const char *txt, size_t lengt
     return (-1);
   }
 
-  /* result < 0, so an error was encountered - is it transient? Unfortunately, 
+  /* result < 0, so an error was encountered - is it transient? Unfortunately,
    * different systems use different constants to indicate this. */
 
 #ifdef EAGAIN		/* POSIX */
@@ -1738,7 +1744,7 @@ static ssize_t perform_socket_write(socket_t desc, const char *txt, size_t lengt
 #endif /* CIRCLE_WINDOWS */
 
 /* write_to_descriptor takes a descriptor, and text to write to the descriptor.
- * It keeps calling the system-level write() until all the text has been 
+ * It keeps calling the system-level write() until all the text has been
  * delivered to the OS, or until an error is encountered. Returns:
  * >=0  If all is well and good.
  *  -1  If an error was encountered, so that the player should be cut off. */
@@ -1834,11 +1840,11 @@ static ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space
  * function is called.  We must maintain that before returning.
  *
  * Ever wonder why 'tmp' had '+8' on it?  The crusty old code could write
- * MAX_INPUT_LENGTH+1 bytes to 'tmp' if there was a '$' as the final character 
- * in the input buffer.  This would also cause 'space_left' to drop to -1, 
- * which wasn't very happy in an unsigned variable.  Argh. So to fix the 
- * above, 'tmp' lost the '+8' since it doesn't need it and the code has been 
- * changed to reserve space by accepting one less character. (Do you really 
+ * MAX_INPUT_LENGTH+1 bytes to 'tmp' if there was a '$' as the final character
+ * in the input buffer.  This would also cause 'space_left' to drop to -1,
+ * which wasn't very happy in an unsigned variable.  Argh. So to fix the
+ * above, 'tmp' lost the '+8' since it doesn't need it and the code has been
+ * changed to reserve space by accepting one less character. (Do you really
  * need 256 characters on a line?) -gg 1/21/2000 */
 static int process_input(struct descriptor_data *t)
 {
@@ -1868,7 +1874,7 @@ static int process_input(struct descriptor_data *t)
 
     /* at this point, we know we got some data from the read */
     *(read_point + bytes_read) = '\0';	/* terminate the string */
-    
+
     /* search for a newline in the data we just read */
     for (ptr = read_point; *ptr && !nl_pos; ptr++)
       if (ISNEWL(*ptr))
@@ -1965,12 +1971,12 @@ static int process_input(struct descriptor_data *t)
 	t->history_pos = 0;
     }
 
-   /* The '--' command flushes the queue. */ 
-   if ( (*tmp == '-') && (*(tmp+1) == '-') && !(*(tmp+2)) ) 
-   { 
-     write_to_output(t, "All queued commands cancelled.\r\n"); 
-     flush_queues(t);  /* Flush the command queue */ 
-     failed_subst = 1;  /* Allow the read point to be moved, but don't add to queue */  
+   /* The '--' command flushes the queue. */
+   if ( (*tmp == '-') && (*(tmp+1) == '-') && !(*(tmp+2)) )
+   {
+     write_to_output(t, "All queued commands cancelled.\r\n");
+     flush_queues(t);  /* Flush the command queue */
+     failed_subst = 1;  /* Allow the read point to be moved, but don't add to queue */
    }
 
     if (!failed_subst)
@@ -1996,8 +2002,8 @@ static int process_input(struct descriptor_data *t)
   return (1);
 }
 
-/* Perform substitution for the '^..^' csh-esque syntax orig is the orig string, 
- * i.e. the one being modified.  subst contains the substition string, i.e. 
+/* Perform substitution for the '^..^' csh-esque syntax orig is the orig string,
+ * i.e. the one being modified.  subst contains the substition string, i.e.
  * "^telm^tell" */
 static int perform_subst(struct descriptor_data *t, char *orig, char *subst)
 {
@@ -2005,7 +2011,7 @@ static int perform_subst(struct descriptor_data *t, char *orig, char *subst)
 
   char *first, *second, *strpos;
 
-  /* First is the position of the beginning of the first string (the one to be 
+  /* First is the position of the beginning of the first string (the one to be
    * replaced. */
   first = subst + 1;
 
@@ -2328,6 +2334,28 @@ static void signal_setup(void)
 
 #endif	/* CIRCLE_UNIX || CIRCLE_MACINTOSH */
 /* Public routines for system-to-player-communication. */
+void game_info(const char *format, ...)
+{
+  struct descriptor_data *i;
+  va_list args;
+  char messg[MAX_STRING_LENGTH];
+  if (format == NULL)
+    return;
+  sprintf(messg, "@cInfo: @y");
+  for (i = descriptor_list; i; i = i->next) {
+    if (STATE(i) != CON_PLAYING)
+      continue;
+    if (!(i->character))
+      continue;
+
+    write_to_output(i, "%s", messg);
+    va_start(args, format);
+    vwrite_to_output(i, format, args);
+    va_end(args);
+    write_to_output(i, "@n\r\n");
+  }
+}
+
 size_t send_to_char(struct char_data *ch, const char *messg, ...)
 {
   if (ch->desc && messg && *messg) {
@@ -2554,9 +2582,9 @@ void perform_act(const char *orig, struct char_data *ch, struct obj_data *obj,
   if ((IS_NPC(to) && dg_act_check) && (to != ch))
     act_mtrigger(to, lbuf, ch, dg_victim, obj, dg_target, dg_arg);
 
-  if (last_act_message) 
-    free(last_act_message); 
-  last_act_message = strdup(lbuf); 
+  if (last_act_message)
+    free(last_act_message);
+  last_act_message = strdup(lbuf);
 }
 
 char *act(const char *str, int hide_invisible, struct char_data *ch,
@@ -2569,11 +2597,11 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
     return NULL;
 
   /* Warning: the following TO_SLEEP code is a hack. I wanted to be able to tell
-   * act to deliver a message regardless of sleep without adding an additional 
-   * argument.  TO_SLEEP is 128 (a single bit high up).  It's ONLY legal to 
-   * combine TO_SLEEP with one other TO_x command.  It's not legal to combine 
-   * TO_x's with each other otherwise. TO_SLEEP only works because its value 
-   * "happens to be" a single bit; do not change it to something else.  In 
+   * act to deliver a message regardless of sleep without adding an additional
+   * argument.  TO_SLEEP is 128 (a single bit high up).  It's ONLY legal to
+   * combine TO_SLEEP with one other TO_x command.  It's not legal to combine
+   * TO_x's with each other otherwise. TO_SLEEP only works because its value
+   * "happens to be" a single bit; do not change it to something else.  In
    * short, it is a hack. */
 
   /* check if TO_SLEEP is there, and remove it if it is. */
@@ -2582,21 +2610,21 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
 
   /* this is a hack as well - DG_NO_TRIG is 256 -- Welcor */
   /* If the bit is set, unset dg_act_check, thus the ! below */
-  if (!(dg_act_check = !IS_SET(type, DG_NO_TRIG))) 
+  if (!(dg_act_check = !IS_SET(type, DG_NO_TRIG)))
     REMOVE_BIT(type, DG_NO_TRIG);
 
   if (type == TO_CHAR) {
-    if (ch && SENDOK(ch)) { 
-      perform_act(str, ch, obj, vict_obj, ch); 
-      return last_act_message; 
+    if (ch && SENDOK(ch)) {
+      perform_act(str, ch, obj, vict_obj, ch);
+      return last_act_message;
     }
     return NULL;
   }
 
   if (type == TO_VICT) {
-    if ((to = vict_obj) != NULL && SENDOK(to)) { 
-      perform_act(str, ch, obj, vict_obj, to); 
-      return last_act_message; 
+    if ((to = vict_obj) != NULL && SENDOK(to)) {
+      perform_act(str, ch, obj, vict_obj, to);
+      return last_act_message;
     }
     return NULL;
   }
@@ -2604,7 +2632,7 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
   if (type == TO_GMOTE && !IS_NPC(ch)) {
     struct descriptor_data *i;
     char buf[MAX_STRING_LENGTH];
-    
+
     for (i = descriptor_list; i; i = i->next) {
       if (!i->connected && i->character &&
           !PRF_FLAGGED(i->character, PRF_NOGOSS) &&
@@ -2612,7 +2640,7 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
           !ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF)) {
 
         sprintf(buf, "%s%s%s", CCYEL(i->character, C_NRM), str, CCNRM(i->character, C_NRM));
-        perform_act(buf, ch, obj, vict_obj, i->character); 
+        perform_act(buf, ch, obj, vict_obj, i->character);
       }
     }
     return last_act_message;
@@ -2635,7 +2663,7 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
       continue;
     if (type != TO_ROOM && to == vict_obj)
       continue;
-    perform_act(str, ch, obj, vict_obj, to); 
+    perform_act(str, ch, obj, vict_obj, to);
   }
   return last_act_message;
 }

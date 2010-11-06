@@ -294,24 +294,51 @@ void generic_complete_quest(struct char_data *ch)
   qst_rnum rnum;
   qst_vnum vnum = GET_QUEST(ch);
   struct obj_data *new_obj;
+  int happy_qp, happy_gold, happy_exp;
 
   if (--GET_QUEST_COUNTER(ch) <= 0) {
     rnum = real_quest(vnum);
-    GET_QUESTPOINTS(ch) += QST_POINTS(rnum);
-    send_to_char(ch,
+    if (IS_HAPPYHOUR && IS_HAPPYQP) {
+      happy_qp = (int)(QST_POINTS(rnum) * (((float)(100+HAPPY_QP))/(float)100));
+      happy_qp = MAX(happy_qp, 0);
+      GET_QUESTPOINTS(ch) += happy_qp;
+      send_to_char(ch,
+          "%s\r\nYou have been awarded %d quest points for your service.\r\n",
+          QST_DONE(rnum), happy_qp);
+	} else {
+      GET_QUESTPOINTS(ch) += QST_POINTS(rnum);
+      send_to_char(ch,
           "%s\r\nYou have been awarded %d quest points for your service.\r\n",
           QST_DONE(rnum), QST_POINTS(rnum));
+    }
     if (QST_GOLD(rnum)) {
-      GET_GOLD(ch) += QST_GOLD(rnum);
-      send_to_char(ch,
-            "You have been awarded %d gold coins for your service.\r\n",
-            QST_GOLD(rnum));
+      if ((IS_HAPPYHOUR) && (IS_HAPPYGOLD)) {
+        happy_gold = (int)(QST_GOLD(rnum) * (((float)(100+HAPPY_GOLD))/(float)100));
+        happy_gold = MAX(happy_gold, 0);
+        GET_GOLD(ch) += happy_gold;
+        send_to_char(ch,
+              "You have been awarded %d gold coins for your service.\r\n",
+              happy_gold);
+	  } else {
+        GET_GOLD(ch) += QST_GOLD(rnum);
+        send_to_char(ch,
+              "You have been awarded %d gold coins for your service.\r\n",
+              QST_GOLD(rnum));
+      }
     }
     if (QST_EXP(rnum)) {
       gain_exp(ch, QST_EXP(rnum));
-      send_to_char(ch,
-            "You have been awarded %d experience points for your service.\r\n",
-            QST_EXP(rnum));
+      if ((IS_HAPPYHOUR) && (IS_HAPPYEXP)) {
+        happy_exp = (int)(QST_EXP(rnum) * (((float)(100+HAPPY_EXP))/(float)100));
+        happy_exp = MAX(happy_exp, 0);
+        send_to_char(ch,
+              "You have been awarded %d experience for your service.\r\n",
+              happy_exp);
+      } else {
+        send_to_char(ch,
+              "You have been awarded %d experience points for your service.\r\n",
+              QST_EXP(rnum));
+      }
     }
     if (QST_OBJ(rnum) && QST_OBJ(rnum) != NOTHING) {
       if (real_object(QST_OBJ(rnum)) != NOTHING) {

@@ -401,6 +401,9 @@ extern struct message_list fight_messages[MAX_MESSAGES];
 extern struct aq_data *aquest_table;
 extern qst_rnum total_quests;
 
+/* Happyhour global */
+extern struct happyhour happy_data;
+
 /* begin previously located in players.c, returned to db.c */
 extern struct player_index_element *player_table;
 extern int top_of_p_table;

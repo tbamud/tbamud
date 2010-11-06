@@ -158,10 +158,11 @@ cpp_extern const struct command_info cmd_info[] = {
   { "gtell"    , "gt"      , POS_SLEEPING, do_gsay     , 0, 0 },
 
   { "help"     , "h"       , POS_DEAD    , do_help     , 0, 0 },
+  { "happyhour", "ha"      , POS_DEAD    , do_happyhour, 0, 0 },
   { "hedit"    , "hedit"   , POS_DEAD    , do_oasis_hedit, LVL_GOD , 0 },
-  { "hindex"   , "hind"    , POS_DEAD    , do_hindex   , 0, 0 },
   { "helpcheck", "helpch"  , POS_DEAD    , do_helpcheck, LVL_GOD, 0 },
   { "hide"     , "hi"      , POS_RESTING , do_hide     , 1, 0 },
+  { "hindex"   , "hind"    , POS_DEAD    , do_hindex   , 0, 0 },
   { "handbook" , "handb"   , POS_DEAD    , do_gen_ps   , LVL_IMMORT, SCMD_HANDBOOK },
   { "hcontrol" , "hcontrol", POS_DEAD    , do_hcontrol , LVL_GRGOD, 0 },
   { "history"  , "history" , POS_DEAD    , do_history, 0, 0},
@@ -1509,6 +1510,11 @@ void nanny(struct descriptor_data *d, char *arg)
 
   case CON_RMOTD:		/* read CR after printing motd   */
     write_to_output(d, "%s", CONFIG_MENU);
+    if (IS_HAPPYHOUR > 0){
+      write_to_output(d, "\r\n");
+      write_to_output(d, "@yThere is currently a Happyhour!@n\r\n");
+      write_to_output(d, "\r\n");
+    }
     add_llog_entry(d->character, LAST_CONNECT);
     STATE(d) = CON_MENU;
     break;

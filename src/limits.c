@@ -50,9 +50,9 @@ static int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int
 }
 
 /* The hit_limit, mana_limit, and move_limit functions are gone.  They added an
- * unnecessary level of complexity to the internal structure, weren't 
+ * unnecessary level of complexity to the internal structure, weren't
  * particularly useful, and led to some annoying bugs.  From the players' point
- * of view, the only difference the removal of these functions will make is 
+ * of view, the only difference the removal of these functions will make is
  * that a character's age will now only affect the HMV gain per tick, and _not_
  * the HMV maximums. */
 /* manapoint gain pr. game hour */
@@ -180,7 +180,7 @@ void set_title(struct char_data *ch, char *title)
 
   if (title == NULL) {
     GET_TITLE(ch) = strdup(GET_SEX(ch) == SEX_FEMALE ?
-      title_female(GET_CLASS(ch), GET_LEVEL(ch)) : 
+      title_female(GET_CLASS(ch), GET_LEVEL(ch)) :
       title_male(GET_CLASS(ch), GET_LEVEL(ch)));
   } else {
     if (strlen(title) > MAX_TITLE_LENGTH)
@@ -230,6 +230,9 @@ void gain_exp(struct char_data *ch, int gain)
     return;
   }
   if (gain > 0) {
+    if ((IS_HAPPYHOUR) && (IS_HAPPYEXP))
+      gain += (int)((float)gain * ((float)HAPPY_EXP / (float)(100)));
+
     gain = MIN(CONFIG_MAX_EXP_GAIN, gain);	/* put a cap on the max gain per kill */
     GET_EXP(ch) += gain;
     while (GET_LEVEL(ch) < LVL_IMMORT - CONFIG_NO_MORT_TO_IMMORT &&
@@ -265,6 +268,9 @@ void gain_exp_regardless(struct char_data *ch, int gain)
 {
   int is_altered = FALSE;
   int num_levels = 0;
+
+  if ((IS_HAPPYHOUR) && (IS_HAPPYEXP))
+    gain += (int)((float)gain * ((float)HAPPY_EXP / (float)(100)));
 
   GET_EXP(ch) += gain;
   if (GET_EXP(ch) < 0)
@@ -447,5 +453,16 @@ void point_update(void)
       if (!GET_OBJ_TIMER(j))
         timer_otrigger(j);
     }
+  }
+
+  /* Take 1 from the happy-hour tick counter, and end happy-hour if zero */
+       if (HAPPY_TIME > 1)  HAPPY_TIME--;
+  else if (HAPPY_TIME == 1)   /* Last tick - set everything back to zero */
+  {
+    HAPPY_QP = 0;
+    HAPPY_EXP = 0;
+    HAPPY_GOLD = 0;
+    HAPPY_TIME = 0;
+   game_info("Happy hour has ended!");
   }
 }

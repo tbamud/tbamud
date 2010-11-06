@@ -851,6 +851,19 @@ do                                                              \
 /** Defines if ch is outdoors or not. */
 #define OUTSIDE(ch) (!ROOM_FLAGGED(IN_ROOM(ch), ROOM_INDOORS))
 
+/* Happy-hour defines */
+#define IS_HAPPYQP   (happy_data.qp_rate > 0)
+#define IS_HAPPYEXP  (happy_data.exp_rate > 0)
+#define IS_HAPPYGOLD (happy_data.gold_rate > 0)
+
+#define HAPPY_EXP    happy_data.exp_rate
+#define HAPPY_GOLD   happy_data.gold_rate
+#define HAPPY_QP     happy_data.qp_rate
+
+#define HAPPY_TIME   happy_data.ticks_left
+
+#define IS_HAPPYHOUR ((IS_HAPPYEXP || IS_HAPPYGOLD || IS_HAPPYQP) && (HAPPY_TIME > 0))
+
 /* OS compatibility */
 #ifndef NULL
 /** Just in case NULL is not defined. */

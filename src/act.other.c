@@ -859,3 +859,116 @@ ACMD(do_gen_tog)
 
   return;
 }
+
+void show_happyhour(struct char_data *ch)
+{
+  char happyexp[80], happygold[80], happyqp[80];
+  int secs_left;
+
+  if ((IS_HAPPYHOUR) || (GET_LEVEL(ch) >= LVL_GRGOD))
+  {
+      if (HAPPY_TIME)
+        secs_left = ((HAPPY_TIME - 1) * SECS_PER_MUD_HOUR) + next_tick;
+      else
+        secs_left = 0;
+
+      sprintf(happyqp,   "%s+%d%%%s to Questpoints per quest\r\n", CCYEL(ch, C_NRM), HAPPY_QP,   CCNRM(ch, C_NRM));
+      sprintf(happygold, "%s+%d%%%s to Gold gained per kill\r\n",  CCYEL(ch, C_NRM), HAPPY_GOLD, CCNRM(ch, C_NRM));
+      sprintf(happyexp,  "%s+%d%%%s to Experience per kill\r\n",   CCYEL(ch, C_NRM), HAPPY_EXP,  CCNRM(ch, C_NRM));
+
+      send_to_char(ch, "tbaMUD Happy Hour!\r\n"
+                       "------------------\r\n"
+                       "%s%s%sTime Remaining: %s%d%s hours %s%d%s mins %s%d%s secs\r\n",
+                       (IS_HAPPYEXP || (GET_LEVEL(ch) >= LVL_GOD)) ? happyexp : "",
+                       (IS_HAPPYGOLD || (GET_LEVEL(ch) >= LVL_GOD)) ? happygold : "",
+                       (IS_HAPPYQP || (GET_LEVEL(ch) >= LVL_GOD)) ? happyqp : "",
+                       CCYEL(ch, C_NRM), (secs_left / 3600), CCNRM(ch, C_NRM),
+                       CCYEL(ch, C_NRM), (secs_left % 3600) / 60, CCNRM(ch, C_NRM),
+                       CCYEL(ch, C_NRM), (secs_left % 60), CCNRM(ch, C_NRM) );
+  }
+  else
+  {
+      send_to_char(ch, "Sorry, there is currently no happy hour!\r\n");
+  }
+}
+
+ACMD(do_happyhour)
+{
+  char arg[MAX_INPUT_LENGTH], val[MAX_INPUT_LENGTH];
+  int num;
+
+  if (GET_LEVEL(ch) < LVL_GOD)
+  {
+    show_happyhour(ch);
+    return;
+  }
+
+  /* Only Imms get here, so check args */
+  two_arguments(argument, arg, val);
+
+  if (is_abbrev(arg, "experience"))
+  {
+    num = MIN(MAX((atoi(val)), 0), 1000);
+    HAPPY_EXP = num;
+    send_to_char(ch, "Happy Hour Exp rate set to +%d%%\r\n", HAPPY_EXP);
+  }
+  else if ((is_abbrev(arg, "gold")) || (is_abbrev(arg, "coins")))
+  {
+    num = MIN(MAX((atoi(val)), 0), 1000);
+    HAPPY_GOLD = num;
+    send_to_char(ch, "Happy Hour Gold rate set to +%d%%\r\n", HAPPY_GOLD);
+  }
+  else if ((is_abbrev(arg, "time")) || (is_abbrev(arg, "ticks")))
+  {
+    num = MIN(MAX((atoi(val)), 0), 1000);
+    if (HAPPY_TIME && !num)
+      game_info("Happyhour has been stopped!");
+    else if (!HAPPY_TIME && num)
+      game_info("A Happyhour has started!");
+
+    HAPPY_TIME = num;
+    send_to_char(ch, "Happy Hour Time set to %d ticks (%d hours %d mins and %d secs)\r\n",
+                                HAPPY_TIME,
+                                 (HAPPY_TIME*SECS_PER_MUD_HOUR)/3600,
+                                ((HAPPY_TIME*SECS_PER_MUD_HOUR)%3600) / 60,
+                                 (HAPPY_TIME*SECS_PER_MUD_HOUR)%60 );
+  }
+  else if ((is_abbrev(arg, "qp")) || (is_abbrev(arg, "questpoints")))
+  {
+    num = MIN(MAX((atoi(val)), 0), 1000);
+    HAPPY_QP = num;
+    send_to_char(ch, "Happy Hour Questpoints rate set to +%d%%\r\n", HAPPY_QP);
+  }
+  else if (is_abbrev(arg, "show"))
+  {
+    show_happyhour(ch);
+  }
+  else if (is_abbrev(arg, "default"))
+  {
+    HAPPY_EXP = 100;
+    HAPPY_GOLD = 50;
+    HAPPY_QP  = 50;
+    HAPPY_TIME = 48;
+    game_info("A Happyhour has started!");
+  }
+  else
+  {
+    send_to_char(ch, "Usage: %shappyhour              %s- show usage (this info)\r\n"
+                     "       %shappyhour show         %s- display current settings (what mortals see)\r\n"
+                     "       %shappyhour time <ticks> %s- set happyhour time and start timer\r\n"
+                     "       %shappyhour qp <num>     %s- set qp percentage gain\r\n"
+                     "       %shappyhour exp <num>    %s- set exp percentage gain\r\n"
+                     "       %shappyhour gold <num>   %s- set gold percentage gain\r\n"
+                     "       @yhappyhour default      @w- sets a default setting for happyhour\r\n\r\n"
+                     "Configure the happyhour settings and start a happyhour.\r\n"
+                     "Currently 1 hour IRL = %d ticks\r\n"
+                     "If no number is specified, 0 (off) is assumed.\r\nThe command @yhappyhour time@n will therefore stop the happyhour timer.\r\n",
+                     CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
+                     CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
+                     CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
+                     CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
+                     CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
+                     CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
+                     (3600 / SECS_PER_MUD_HOUR) );
+  }
+}
