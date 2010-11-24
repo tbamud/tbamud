@@ -81,7 +81,7 @@ ACMD(do_gsay)
     for (f = k->followers; f; f = f->next)
       if (AFF_FLAGGED(f->follower, AFF_GROUP) && (f->follower != ch))
         act(buf, FALSE, ch, 0, f->follower, TO_VICT | TO_SLEEP);
-    
+
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else
@@ -101,7 +101,7 @@ static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg
     send_to_char(ch, "%s", CONFIG_OK);
   else {
     snprintf(buf, sizeof(buf), "%sYou tell $N, '%s'%s", CCRED(ch, C_NRM), arg, CCNRM(ch, C_NRM));
-    msg = act(buf, FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);     
+    msg = act(buf, FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
     add_history(ch, msg, HIST_TELL);
   }
 
@@ -115,13 +115,13 @@ static int is_tell_ok(struct char_data *ch, struct char_data *vict)
     send_to_char(ch, "You try to tell yourself something.\r\n");
   else if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOTELL))
     send_to_char(ch, "You can't tell other people while you have notell on.\r\n");
-  else if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD))
+  else if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_SOUNDPROOF) && !(IS_ADMIN(ch, ADMLVL_GOD)))
     send_to_char(ch, "The walls seem to absorb your words.\r\n");
   else if (!IS_NPC(vict) && !vict->desc)        /* linkless */
     act("$E's linkless at the moment.", FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
   else if (PLR_FLAGGED(vict, PLR_WRITING))
     act("$E's writing a message right now; try again later.", FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
-  else if ((!IS_NPC(vict) && PRF_FLAGGED(vict, PRF_NOTELL)) || (ROOM_FLAGGED(IN_ROOM(vict), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD)))
+  else if ((!IS_NPC(vict) && PRF_FLAGGED(vict, PRF_NOTELL)) || (ROOM_FLAGGED(IN_ROOM(vict), ROOM_SOUNDPROOF) && !(IS_ADMIN(ch, ADMLVL_GOD))))
     act("$E can't hear you.", FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
   else
     return (TRUE);
@@ -134,6 +134,7 @@ static int is_tell_ok(struct char_data *ch, struct char_data *vict)
 ACMD(do_tell)
 {
   struct char_data *vict = NULL;
+  struct descriptor_data *d = NULL;
   char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
 
   half_chop(argument, buf, buf2);
@@ -174,11 +175,22 @@ ACMD(do_tell)
     last_webster_teller = GET_IDNUM(ch);
     send_to_char(ch, "You look up '%s' in Merriam-Webster.\r\n", word);
 #endif /* platform specific part */
-  } else if (GET_LEVEL(ch) < LVL_IMMORT && !(vict = get_player_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
-    send_to_char(ch, "%s", CONFIG_NOPERSON);
-  else if (GET_LEVEL(ch) >= LVL_IMMORT && !(vict = get_char_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
-    send_to_char(ch, "%s", CONFIG_NOPERSON);
-  else if (is_tell_ok(ch, vict))
+  }
+  else if (is_abbrev(buf, "all") && ADM_FLAGGED(ch, ADM_TELLALL)) {
+    for (d = descriptor_list; d; d = d->next) {
+      if (!(vict = d->character))
+        continue;
+      if (vict == ch || STATE(d) != CON_PLAYING)
+        continue;
+      perform_tell(ch, vict, buf2);
+    }
+  }
+  else if (IS_ADMIN(ch, ADMLVL_IMMORT) && !(vict = get_player_vis(ch, buf, NULL, FIND_CHAR_WORLD))) {
+    if (!(vict = get_char_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
+      send_to_char(ch, "%s", CONFIG_NOPERSON);
+    else if (is_tell_ok(ch, vict))
+      perform_tell(ch, vict, buf2);
+  } else if (is_tell_ok(ch, vict))
     perform_tell(ch, vict, buf2);
 }
 
@@ -199,8 +211,8 @@ ACMD(do_reply)
     /* Make sure the person you're replying to is still playing by searching
      * for them.  Note, now last tell is stored as player IDnum instead of
      * a pointer, which is much better because it's safer, plus will still
-     * work if someone logs out and back in again. A descriptor list based 
-     * search would be faster although we could not find link dead people.  
+     * work if someone logs out and back in again. A descriptor list based
+     * search would be faster although we could not find link dead people.
      * Not that they can hear tells anyway. :) -gg 2/24/98 */
     while (tch && (IS_NPC(tch) || GET_IDNUM(tch) != GET_LAST_TELL(ch)))
       tch = tch->next;
@@ -252,7 +264,7 @@ ACMD(do_spec_comm)
     snprintf(buf1, sizeof(buf1), "$n %s you, '%s'", action_plur, buf2);
     act(buf1, FALSE, ch, 0, vict, TO_VICT);
 
-    if ((!IS_NPC(ch)) && (PRF_FLAGGED(ch, PRF_NOREPEAT))) 
+    if ((!IS_NPC(ch)) && (PRF_FLAGGED(ch, PRF_NOREPEAT)))
       send_to_char(ch, "%s", CONFIG_OK);
     else
       send_to_char(ch, "You %s %s, '%s'\r\n", action_sing, GET_NAME(vict), buf2);
@@ -356,20 +368,20 @@ ACMD(do_page)
 
     snprintf(buf, sizeof(buf), "\007\007*$n* %s", buf2);
     if (!str_cmp(arg, "all")) {
-      if (GET_LEVEL(ch) > LVL_GOD) {
-	for (d = descriptor_list; d; d = d->next)
-	  if (STATE(d) == CON_PLAYING && d->character)
-	    act(buf, FALSE, ch, 0, d->character, TO_VICT);
+      if (ADM_FLAGGED(ch, ADM_TELLALL)) {
+        for (d = descriptor_list; d; d = d->next)
+          if (STATE(d) == CON_PLAYING && d->character)
+            act(buf, FALSE, ch, 0, d->character, TO_VICT);
       } else
-	send_to_char(ch, "You will never be godly enough to do that!\r\n");
+        send_to_char(ch, "You will never be godly enough to do that!\r\n");
       return;
     }
     if ((vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD))) {
       act(buf, FALSE, ch, 0, vict, TO_VICT);
       if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
-	send_to_char(ch, "%s", CONFIG_OK);
+        send_to_char(ch, "%s", CONFIG_OK);
       else
-	act(buf, FALSE, ch, 0, vict, TO_CHAR);
+        act(buf, FALSE, ch, 0, vict, TO_CHAR);
     } else
       send_to_char(ch, "There is no such person in the game!\r\n");
   }
@@ -442,7 +454,7 @@ ACMD(do_gen_comm)
     send_to_char(ch, "%s", com_msgs[subcmd][0]);
     return;
   }
-  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD)) {
+  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_SOUNDPROOF) && !(IS_ADMIN(ch, ADMLVL_GOD))) {
     send_to_char(ch, "The walls seem to absorb your words.\r\n");
     return;
   }
@@ -491,7 +503,7 @@ ACMD(do_gen_comm)
   else {
     snprintf(buf1, sizeof(buf1), "%sYou %s, '%s%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "",
         com_msgs[subcmd][1], argument, COLOR_LEV(ch) >= C_CMP ? color_on : "", CCNRM(ch, C_CMP));
-    
+
     msg = act(buf1, FALSE, ch, 0, 0, TO_CHAR | TO_SLEEP);
     add_history(ch, msg, hist_type[subcmd]);
   }
@@ -505,14 +517,14 @@ ACMD(do_gen_comm)
     if (!IS_NPC(ch) && (PRF_FLAGGED(i->character, channels[subcmd]) || PLR_FLAGGED(i->character, PLR_WRITING)))
       continue;
 
-    if (ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD))
+    if (ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF) && !(IS_ADMIN(ch, ADMLVL_GOD)))
       continue;
 
     if (subcmd == SCMD_SHOUT && ((world[IN_ROOM(ch)].zone != world[IN_ROOM(i->character)].zone) ||
          !AWAKE(i->character)))
       continue;
 
-    snprintf(buf2, sizeof(buf2), "%s%s%s", (COLOR_LEV(i->character) >= C_NRM) ? color_on : "", buf1, KNRM); 
+    snprintf(buf2, sizeof(buf2), "%s%s%s", (COLOR_LEV(i->character) >= C_NRM) ? color_on : "", buf1, KNRM);
     msg = act(buf2, FALSE, ch, 0, i->character, TO_VICT | TO_SLEEP);
     add_history(i->character, msg, hist_type[subcmd]);
   }
@@ -544,7 +556,7 @@ ACMD(do_qcomm)
       snprintf(buf, sizeof(buf), "$n quest-says, '%s'", argument);
     else {
       strlcpy(buf, argument, sizeof(buf));
-      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "(GC) %s qechoed: %s", GET_NAME(ch), argument);
+      mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "(GC) %s qechoed: %s", GET_NAME(ch), argument);
     }
     for (i = descriptor_list; i; i = i->next)
       if (STATE(i) == CON_PLAYING && i != ch->desc && PRF_FLAGGED(i->character, PRF_QUEST))

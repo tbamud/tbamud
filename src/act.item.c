@@ -121,7 +121,7 @@ ACMD(do_put)
       send_to_char(ch, "You don't see %s %s here.\r\n", AN(thecont), thecont);
     else if (GET_OBJ_TYPE(cont) != ITEM_CONTAINER)
       act("$p is not a container.", FALSE, ch, cont, 0, TO_CHAR);
-    else if (OBJVAL_FLAGGED(cont, CONT_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
+    else if (OBJVAL_FLAGGED(cont, CONT_CLOSED) && (!(IS_ADMIN(ch, ADMLVL_IMMORT)) || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
       send_to_char(ch, "You'd better open it first!\r\n");
     else {
       if (obj_dotmode == FIND_INDIV) {	/* put <obj> <container> */
@@ -218,7 +218,7 @@ void get_from_container(struct char_data *ch, struct obj_data *cont,
 
   obj_dotmode = find_all_dots(arg);
 
-  if (OBJVAL_FLAGGED(cont, CONT_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
+  if (OBJVAL_FLAGGED(cont, CONT_CLOSED) && (!(IS_ADMIN(ch, ADMLVL_IMMORT)) || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
     act("$p is closed.", FALSE, ch, cont, 0, TO_CHAR);
   else if (obj_dotmode == FIND_INDIV) {
     if (!(obj = get_obj_in_list_vis(ch, arg, NULL, cont->contains))) {
@@ -606,11 +606,11 @@ static void perform_give(struct char_data *ch, struct char_data *vict,
     act("You can't let go of $p!!  Yeech!", FALSE, ch, obj, 0, TO_CHAR);
     return;
   }
-  if (IS_CARRYING_N(vict) >= CAN_CARRY_N(vict) && GET_LEVEL(ch) < LVL_IMMORT && GET_LEVEL(vict) < LVL_IMMORT) {
+  if (IS_CARRYING_N(vict) >= CAN_CARRY_N(vict) && !(IS_ADMIN(ch, ADMLVL_IMMORT)) && !(IS_ADMIN(vict, ADMLVL_IMMORT))) {
     act("$N seems to have $S hands full.", FALSE, ch, 0, vict, TO_CHAR);
     return;
   }
-  if (GET_OBJ_WEIGHT(obj) + IS_CARRYING_W(vict) > CAN_CARRY_W(vict) && GET_LEVEL(ch) < LVL_IMMORT && GET_LEVEL(vict) < LVL_IMMORT) {
+  if (GET_OBJ_WEIGHT(obj) + IS_CARRYING_W(vict) > CAN_CARRY_W(vict) && !(IS_ADMIN(ch, ADMLVL_IMMORT)) && !(IS_ADMIN(vict, ADMLVL_IMMORT))) {
     act("$E can't carry that much weight.", FALSE, ch, 0, vict, TO_CHAR);
     return;
   }
@@ -650,7 +650,7 @@ static void perform_give_gold(struct char_data *ch, struct char_data *vict,
     send_to_char(ch, "Heh heh heh ... we are jolly funny today, eh?\r\n");
     return;
   }
-  if ((GET_GOLD(ch) < amount) && (IS_NPC(ch) || (GET_LEVEL(ch) < LVL_GOD))) {
+  if ((GET_GOLD(ch) < amount) && (IS_NPC(ch) || (!ADM_FLAGGED(ch, ADM_MONEY)))) {
     send_to_char(ch, "You don't have that many coins!\r\n");
     return;
   }
@@ -662,7 +662,7 @@ static void perform_give_gold(struct char_data *ch, struct char_data *vict,
   snprintf(buf, sizeof(buf), "$n gives %s to $N.", money_desc(amount));
   act(buf, TRUE, ch, 0, vict, TO_NOTVICT);
 
-  if (IS_NPC(ch) || (GET_LEVEL(ch) < LVL_GOD))
+  if (IS_NPC(ch) || (!ADM_FLAGGED(ch, ADM_MONEY)))
     GET_GOLD(ch) -= amount;
   GET_GOLD(vict) += amount;
 
@@ -968,7 +968,7 @@ ACMD(do_eat)
     do_drink(ch, argument, 0, SCMD_SIP);
     return;
   }
-  if ((GET_OBJ_TYPE(food) != ITEM_FOOD) && (GET_LEVEL(ch) < LVL_IMMORT)) {
+  if ((GET_OBJ_TYPE(food) != ITEM_FOOD) && (!ADM_FLAGGED(ch, ADM_EATANYTHING))) {
     send_to_char(ch, "You can't eat THAT!\r\n");
     return;
   }
@@ -995,7 +995,7 @@ ACMD(do_eat)
   if (GET_COND(ch, HUNGER) > 20)
     send_to_char(ch, "You are full.\r\n");
 
-  if (GET_OBJ_VAL(food, 3) && (GET_LEVEL(ch) < LVL_IMMORT)) {
+  if (GET_OBJ_VAL(food, 3) && (!ADM_FLAGGED(ch, ADM_NOPOISON))) {
     /* The crap was poisoned ! */
     send_to_char(ch, "Oops, that tasted rather strange!\r\n");
     act("$n coughs and utters some strange sounds.", FALSE, ch, 0, 0, TO_ROOM);

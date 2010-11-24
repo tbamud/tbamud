@@ -1,13 +1,13 @@
 /**
 * @file boards.h
 * Header file for the bulletin board system (boards.c).
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 *
 */
 #ifndef _BOARDS_H_
@@ -31,9 +31,9 @@ struct board_msginfo {
 
 struct board_info_type {
    obj_vnum vnum;	/* vnum of this board */
-   int	read_lvl;	/* min level to read messages on this board */
-   int	write_lvl;	/* min level to write messages on this board */
-   int	remove_lvl;	/* min level to remove messages from this board */
+   int	read_lvl;	/* min admin level to read messages on this board */
+   int	write_lvl;	/* min admin level to write messages on this board */
+   int	remove_lvl;	/* min admin level to remove messages from this board */
    char	filename[50];	/* file to save this board to */
    obj_rnum rnum;	/* rnum of this board */
 };

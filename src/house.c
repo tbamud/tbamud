@@ -86,7 +86,7 @@ static int House_load(room_vnum vnum)
   return (1);
 }
 
-/* Save all objects for a house (recursive; initial call must be followed by a 
+/* Save all objects for a house (recursive; initial call must be followed by a
  * call to House_restore_weight)  Assumes file is open already. */
 int House_save(struct obj_data *obj, FILE *fp)
 {
@@ -225,7 +225,7 @@ static void House_save_control(void)
   fclose(fl);
 }
 
-/* Call from boot_db - will load control recs, load objs, set atrium bits. 
+/* Call from boot_db - will load control recs, load objs, set atrium bits.
  * Should do sanity checks on vnums & remove invalid records. */
 void House_boot(void)
 {
@@ -464,7 +464,7 @@ static void hcontrol_destroy_house(struct char_data *ch, char *arg)
   send_to_char(ch, "House deleted.\r\n");
   House_save_control();
 
-  /* Now, reset the ROOM_ATRIUM flag on all existing houses' atriums, just in 
+  /* Now, reset the ROOM_ATRIUM flag on all existing houses' atriums, just in
    * case the house we just deleted shared an atrium with another house. -JE */
   for (i = 0; i < num_of_houses; i++)
     if ((real_atrium = real_room(house_control[i].atrium)) != NOWHERE)
@@ -480,7 +480,7 @@ static void hcontrol_pay_house(struct char_data *ch, char *arg)
   else if ((i = find_house(atoi(arg))) == NOWHERE)
     send_to_char(ch, "Unknown house.\r\n");
   else {
-    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "Payment for house %s collected by %s.", arg, GET_NAME(ch));
+    mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "Payment for house %s collected by %s.", arg, GET_NAME(ch));
 
     house_control[i].last_payment = time(0);
     House_save_control();
@@ -570,7 +570,7 @@ int House_can_enter(struct char_data *ch, room_vnum house)
 {
   int i, j;
 
-  if (GET_LEVEL(ch) >= LVL_GRGOD || (i = find_house(house)) == NOWHERE)
+  if (ADM_FLAGGED(ch, ADM_ALLHOUSES) || (i = find_house(house)) == NOWHERE)
     return (1);
 
   switch (house_control[i].mode) {
@@ -628,7 +628,7 @@ static void hcontrol_convert_houses(struct char_data *ch)
 {
   int i;
 
-	if (GET_LEVEL(ch) < LVL_IMPL)
+	if (!IS_ADMIN(ch, ADMLVL_IMPL))
 		{
 			send_to_char(ch, "Sorry, but you are not powerful enough to do that.\r\n");
 			return;

@@ -1,15 +1,15 @@
 /**
 * @file dg_scripts.c
 * Contains the main script driver interface.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-* 
+*
 * This source code, which was not part of the CircleMUD legacy code,
-* was created by the following people:                                      
-* $Author: Mark A. Heilpern/egreen/Welcor $                              
-* $Date: 2004/10/11 12:07:00$                                            
-* $Revision: 1.0.14 $                                                    
+* was created by the following people:
+* $Author: Mark A. Heilpern/egreen/Welcor $
+* $Date: 2004/10/11 12:07:00$
+* $Revision: 1.0.14 $
 */
 
 #include "conf.h"
@@ -76,8 +76,8 @@ static struct obj_data *find_obj_by_uid_in_lookup_table(long uid);
 static EVENTFUNC(trig_wait_event);
 
 
-/* Return pointer to first occurrence of string ct in cs, or NULL if not 
- * present.  Case insensitive. All of ct must be found in cs for it to be 
+/* Return pointer to first occurrence of string ct in cs, or NULL if not
+ * present.  Case insensitive. All of ct must be found in cs for it to be
  * a match.
  * @todo Move this function to string util library.
  * @param cs The string to search.
@@ -117,7 +117,7 @@ char *str_str(char *cs, char *ct)
  * @param vnum The virtual number of a room.
  * @retval int Returns -1 if the room does not exist, or the total number of
  * PCs and NPCs in the room. */
-int trgvar_in_room(room_vnum vnum) 
+int trgvar_in_room(room_vnum vnum)
 {
     room_rnum rnum = real_room(vnum);
     int i = 0;
@@ -139,8 +139,8 @@ int trgvar_in_room(room_vnum vnum)
  * @param name Either the unique id of an object or a string identifying the
  * object. Note the unique id must be prefixed with UID_CHAR.
  * @param list The list of objects to look through.
- * @retval obj_data * Pointer to the object if it is found in the list of 
- * objects, NULL if the object is not found in the list. 
+ * @retval obj_data * Pointer to the object if it is found in the list of
+ * objects, NULL if the object is not found in the list.
  */
 obj_data *get_obj_in_list(char *name, obj_data *list)
 {
@@ -153,7 +153,7 @@ obj_data *get_obj_in_list(char *name, obj_data *list)
       for (i = list; i; i = i->next_content)
         if (id == GET_ID(i))
           return i;
-      
+
     } else {
       for (i = list; i; i = i->next_content)
         if (isname(name, i->name))
@@ -207,8 +207,8 @@ obj_data *get_object_in_equip(char_data * ch, char *name)
 }
 
 /** Figures out if the argument is a valid location to 'wear' equipment.
- * Handles 'held', 'light' and 'wield' positions - Welcor. After idea from 
- * Byron Ellacott. 
+ * Handles 'held', 'light' and 'wield' positions - Welcor. After idea from
+ * Byron Ellacott.
  * @param arg Either the name of the position, or the number of a wear
  * location definition to check for.
  * @retval int If arg is not a valid wear location name or number, return
@@ -330,8 +330,8 @@ static room_data *find_room(long n)
 }
 
 /* Generic searches based only on name. */
-/** Search the entire world for an NPC or PC by name. 
- * @param name String describing the name or the unique id of the char. 
+/** Search the entire world for an NPC or PC by name.
+ * @param name String describing the name or the unique id of the char.
  * Note the unique id must be prefixed with UID_CHAR.
  * @retval char_data * Pointer to the char or NULL if char is not found. */
 char_data *get_char(char *name)
@@ -355,11 +355,11 @@ char_data *get_char(char *name)
 
 /** Find a character by name in the same room as a known object.
  * @todo Should this function not be constrained to the same room as an object
- * if 'name' is a unique id? 
+ * if 'name' is a unique id?
  * @param obj An object that will constrain the search to the location that
  * the object is in *if* the name argument is not a unique id.
  * @param name Character name keyword to search for, or unique ID. Unique
- * id must be prefixed with UID_CHAR. 
+ * id must be prefixed with UID_CHAR.
  * @retval char_data * Pointer to the the char if found, NULL if not. Will
  * only find god characters if DG_ALLOW_GODS is on. */
 char_data *get_char_near_obj(obj_data *obj, char *name)
@@ -384,12 +384,12 @@ char_data *get_char_near_obj(obj_data *obj, char *name)
 }
 
 /** Find a character by name in a specific room.
- * @todo Should this function not be constrained to the room 
- * if 'name' is a unique id? 
- * @param room A room that will constrain the search to that location 
+ * @todo Should this function not be constrained to the room
+ * if 'name' is a unique id?
+ * @param room A room that will constrain the search to that location
  * *if* the name argument is not a unique id.
  * @param name Character name keyword to search for, or unique ID. Unique
- * id must be prefixed with UID_CHAR. 
+ * id must be prefixed with UID_CHAR.
  * @retval char_data * Pointer to the the char if found, NULL if not. Will
  * only find god characters if DG_ALLOW_GODS is on. */
 char_data *get_char_in_room(room_data *room, char *name)
@@ -491,7 +491,7 @@ room_data *get_room(char *name)
     return &world[nr];
 }
 
-/* Returns a pointer to the first character in world by name name, or NULL if 
+/* Returns a pointer to the first character in world by name name, or NULL if
  * none found.  Starts searching with the person owing the object. */
 char_data *get_char_by_obj(obj_data *obj, char *name)
 {
@@ -522,7 +522,7 @@ char_data *get_char_by_obj(obj_data *obj, char *name)
   return NULL;
 }
 
-/* Returns a pointer to the first character in world by name name, or NULL if 
+/* Returns a pointer to the first character in world by name name, or NULL if
  * none found.  Starts searching in room room first. */
 char_data *get_char_by_room(room_data *room, char *name)
 {
@@ -548,7 +548,7 @@ char_data *get_char_by_room(room_data *room, char *name)
   return NULL;
 }
 
-/* Returns the object in the world with name name, or NULL if not found search 
+/* Returns the object in the world with name name, or NULL if not found search
  * based on obj. */
 obj_data *get_obj_by_obj(obj_data *obj, char *name)
 {
@@ -909,7 +909,7 @@ void do_sstat_character(char_data *ch, char_data *k)
   script_stat(ch, SCRIPT(k));
 }
 
-/* Adds the trigger t to script sc in in location loc.  loc = -1 means add to 
+/* Adds the trigger t to script sc in in location loc.  loc = -1 means add to
  * the end, loc = 0 means add before all other triggers. */
 void add_trigger(struct script_data *sc, trig_data *t, int loc)
 {
@@ -991,8 +991,8 @@ ACMD(do_attach)
     if (IS_NPC(victim))
     send_to_char(ch, "Trigger %d (%s) attached to %s [%d].\r\n",
                  tn, GET_TRIG_NAME(trig), GET_SHORT(victim), GET_MOB_VNUM(victim));
-    else 
-    send_to_char(ch, "Trigger %d (%s) attached to player named %s.\r\n", 
+    else
+    send_to_char(ch, "Trigger %d (%s) attached to player named %s.\r\n",
                  tn, GET_TRIG_NAME(trig), GET_NAME(victim));
   }
 
@@ -1076,10 +1076,10 @@ ACMD(do_attach)
 }
 
 /* Removes the trigger specified by name, and the script of o if it removes the
- * last trigger.  name can either be a number, or a 'silly' name for the 
+ * last trigger.  name can either be a number, or a 'silly' name for the
  * trigger, including things like 2.beggar-death. Returns 0 if did not find the
- * trigger, otherwise 1.  If it matters, you might need to check to see if all 
- * the triggers were removed after this function returns, in order to remove 
+ * trigger, otherwise 1.  If it matters, you might need to check to see if all
+ * the triggers were removed after this function returns, in order to remove
  * the script. */
 static int remove_trigger(struct script_data *sc, char *name)
 {
@@ -1108,7 +1108,7 @@ static int remove_trigger(struct script_data *sc, char *name)
           break;
     }
 
-    /* This isn't clean. A numeric value will match if it's position OR vnum 
+    /* This isn't clean. A numeric value will match if it's position OR vnum
      * is found. originally the number was position-only. */
     else if (++n >= num)
       break;
@@ -1244,8 +1244,8 @@ ACMD(do_detach)
         return;
       }
 
-      if (!SCRIPT(victim)) 
-        send_to_char(ch, "That %s doesn't have any triggers.\r\n", IS_NPC(victim) ? "mob" : "player");  
+      if (!SCRIPT(victim))
+        send_to_char(ch, "That %s doesn't have any triggers.\r\n", IS_NPC(victim) ? "mob" : "player");
       else if (!can_edit_zone(ch, real_zone_by_thing(GET_MOB_VNUM(victim))) && IS_NPC(victim)) {
         send_to_char(ch, "You can only detach triggers in your own zone\r\n");
         return;
@@ -1290,31 +1290,31 @@ ACMD(do_detach)
   }
 }
 
-/* Logs any errors caused by scripts to the system log. Will eventually allow 
+/* Logs any errors caused by scripts to the system log. Will eventually allow
  * on-line view of script errors. */
 void script_vlog(const char *format, va_list args)
 {
   char output[MAX_STRING_LENGTH];
   struct descriptor_data *i;
 
-  /* parse the args, making the error message */ 
-  vsnprintf(output, sizeof(output) - 2, format, args); 
+  /* parse the args, making the error message */
+  vsnprintf(output, sizeof(output) - 2, format, args);
 
-  /* Save to the syslog file */ 
-  basic_mud_log("SCRIPT ERROR: %s", output); 
+  /* Save to the syslog file */
+  basic_mud_log("SCRIPT ERROR: %s", output);
 
-  /* And send to imms */ 
-  for (i = descriptor_list; i; i = i->next) { 
-    if (STATE(i) != CON_PLAYING || IS_NPC(i->character)) /* switch */ 
-      continue; 
-    if (GET_LEVEL(i->character) < LVL_BUILDER) 
-      continue; 
-    if (PLR_FLAGGED(i->character, PLR_WRITING)) 
-      continue; 
-    if (NRM > (PRF_FLAGGED(i->character, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(i->character, PRF_LOG2) ? 2 : 0)) 
-      continue; 
+  /* And send to imms */
+  for (i = descriptor_list; i; i = i->next) {
+    if (STATE(i) != CON_PLAYING || IS_NPC(i->character)) /* switch */
+      continue;
+    if (!IS_ADMIN((i->character), ADMLVL_BUILDER))
+      continue;
+    if (PLR_FLAGGED(i->character, PLR_WRITING))
+      continue;
+    if (NRM > (PRF_FLAGGED(i->character, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(i->character, PRF_LOG2) ? 2 : 0))
+      continue;
 
-    send_to_char(i->character, "%s[ %s ]%s\r\n", CCGRN(i->character, C_NRM), output, CCNRM(i->character, C_NRM)); 
+    send_to_char(i->character, "%s[ %s ]%s\r\n", CCGRN(i->character, C_NRM), output, CCNRM(i->character, C_NRM));
   }
 }
 
@@ -1327,7 +1327,7 @@ void script_log(const char *format, ...)
   va_end(args);
 }
 
-/* Returns 1 if string is all digits, else 0. Bugfixed - would have returned 
+/* Returns 1 if string is all digits, else 0. Bugfixed - would have returned
  * true on num="------". */
 static int is_num(char *arg)
 {
@@ -1445,7 +1445,7 @@ static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
   }
 }
 
-/* p points to the first quote, returns the matching end quote, or the last 
+/* p points to the first quote, returns the matching end quote, or the last
  * non-null char in p.*/
 char *matching_quote(char *p)
 {
@@ -1460,7 +1460,7 @@ char *matching_quote(char *p)
   return p;
 }
 
-/* p points to the first paren.  returns a pointer to the matching closing 
+/* p points to the first paren.  returns a pointer to the matching closing
  * paren, or the last non-null char in p. */
 static char *matching_paren(char *p)
 {
@@ -1533,7 +1533,7 @@ static int eval_lhs_op_rhs(char *expr, char *result, void *go, struct script_dat
 
   p = strcpy(line, expr);
 
-  /* Initialize tokens, an array of pointers to locations in line where the 
+  /* Initialize tokens, an array of pointers to locations in line where the
    * ops could possibly occur. */
   for (j = 0; *p; j++) {
     tokens[j] = p;
@@ -1613,7 +1613,7 @@ static struct cmdlist_element *find_end(trig_data *trig, struct cmdlist_element 
   return c;
 }
 
-/* Searches for valid elseif, else, or end to continue execution at. Returns 
+/* Searches for valid elseif, else, or end to continue execution at. Returns
  * line of elseif, else, or end if found, or last line of trigger. */
 static struct cmdlist_element *find_else_end(trig_data *trig,
     struct cmdlist_element *cl, void *go, struct script_data *sc, int type)
@@ -2034,7 +2034,7 @@ static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
     add_var(&GET_TRIG_VARS(trig), varname, uid, sc ? sc->context : 0);
 }
 
-/* Processes a script return command. Returns the new value for the script to 
+/* Processes a script return command. Returns the new value for the script to
  * return. */
 static int process_return(trig_data *trig, char *cmd)
 {
@@ -2052,7 +2052,7 @@ static int process_return(trig_data *trig, char *cmd)
   return atoi(arg2);
 }
 
-/* Removes a variable from the global vars of sc, or the local vars of trig if 
+/* Removes a variable from the global vars of sc, or the local vars of trig if
  * not found in global list. */
 static void process_unset(struct script_data *sc, trig_data *trig, char *cmd)
 {
@@ -2123,7 +2123,7 @@ static void process_remote(struct script_data *sc, trig_data *trig, char *cmd)
     return;
   }
 
-  /* For all but PC's, context comes from the existing context. For PC's, 
+  /* For all but PC's, context comes from the existing context. For PC's,
    * context is 0 (global) */
   context = vd->context;
 
@@ -2145,7 +2145,7 @@ static void process_remote(struct script_data *sc, trig_data *trig, char *cmd)
   add_var(&(sc_remote->global_vars), vd->name, vd->value, context);
 }
 
-/* Command-line interface to rdelete. Named vdelete so people didn't think it 
+/* Command-line interface to rdelete. Named vdelete so people didn't think it
  * was to delete rooms. */
 ACMD(do_vdelete)
 {
@@ -2234,7 +2234,7 @@ ACMD(do_vdelete)
   send_to_char(ch, "Deleted.\r\n");
 }
 
-/* Called from do_set - return 0 for failure, 1 for success.  ch and vict are 
+/* Called from do_set - return 0 for failure, 1 for success.  ch and vict are
  * verified. */
 int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_arg)
 {
@@ -2398,7 +2398,7 @@ static void extract_value(struct script_data *sc, trig_data *trig, char *cmd)
 
 /* Thanks to Jamie Nelson for 4 dimensions for this addition.
  * Syntax :
- * dg_letter <new varname> <letter position> <string to get from>. 
+ * dg_letter <new varname> <letter position> <string to get from>.
  *   set string L337-String
  *   dg_letter var1 4 %string%
  *   dg_letter var2 11 %string%
@@ -2441,7 +2441,7 @@ static void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd)
 /* This is the core driver for scripts.
  * Arguments:
  * void *go_adress
- *   A pointer to a pointer to the entity running the script. The reason for 
+ *   A pointer to a pointer to the entity running the script. The reason for
  *   this approcah is that we want to be able to see from the calling function,
  *   if the entity has been free'd.
  *
@@ -2502,9 +2502,9 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
 
     extract_script(go, type);
 
-    /* extract_script() works on rooms, but on mobiles and objects, it will be 
-     * called again if the caller is load_mtrigger or load_otrigger if it is 
-     * one of these, we must make sure the script is not just reloaded on the 
+    /* extract_script() works on rooms, but on mobiles and objects, it will be
+     * called again if the caller is load_mtrigger or load_otrigger if it is
+     * one of these, we must make sure the script is not just reloaded on the
      * next mob. We make the calling code decide how to handle it, so it does
      * not get totally removed unless it's a load_xtrigger(). */
     return SCRIPT_ERROR_CODE;
@@ -2736,7 +2736,7 @@ ACMD(do_tstat)
     send_to_char(ch, "Usage: tstat <vnum>\r\n");
 }
 
-/* Scans for a case/default instance. Returns the line containg the correct 
+/* Scans for a case/default instance. Returns the line containg the correct
  * case instance, or the last line of the trigger if not found. */
 static struct cmdlist_element *
 find_case(struct trig_data *trig, struct cmdlist_element *cl,
@@ -2772,8 +2772,8 @@ find_case(struct trig_data *trig, struct cmdlist_element *cl,
   return c;
 }
 
-/* Scans for end of while/switch-blocks. Returns the line containg 'end', or 
- * the last line of the trigger if not found. Malformed scripts may cause NULL 
+/* Scans for end of while/switch-blocks. Returns the line containg 'end', or
+ * the last line of the trigger if not found. Malformed scripts may cause NULL
  * to be returned. */
 static struct cmdlist_element *find_done(struct cmdlist_element *cl)
 {
@@ -2806,13 +2806,13 @@ void read_saved_vars(struct char_data *ch)
   char varname[32];
   char context_str[16];
 
-  /* If getting to the menu from inside the game, the vars aren't removed. So 
+  /* If getting to the menu from inside the game, the vars aren't removed. So
    * let's not allocate them again. */
   if (SCRIPT(ch))
     return;
 
   /* Create the space for the script structure which holds the vars. We need to
-   * do this first, because later calls to 'remote' will need. A script already 
+   * do this first, because later calls to 'remote' will need. A script already
    * assigned. */
   CREATE(SCRIPT(ch), struct script_data, 1);
 
@@ -2850,7 +2850,7 @@ void save_char_vars(struct char_data *ch)
   char fn[127];
   struct trig_var_data *vars;
 
-  /* Immediate return if no script (and therefore no variables) structure has 
+  /* Immediate return if no script (and therefore no variables) structure has
    * been created. this will happen when the player is logging in */
   if (SCRIPT(ch) == NULL) return;
 
@@ -2866,12 +2866,12 @@ void save_char_vars(struct char_data *ch)
 
   file = fopen(fn,"wt");
   if (!file) {
-    mudlog( NRM, LVL_GOD, TRUE,
+    mudlog( NRM, ADMLVL_GOD, TRUE,
             "SYSERR: Could not open player variable file %s for writing.:%s",
             fn, strerror(errno));
     return;
   }
-  /* Note that currently, context will always be zero. This may change in the 
+  /* Note that currently, context will always be zero. This may change in the
    * future. */
   while (vars) {
     if (*vars->name != '-') /* don't save if it begins with - */
@@ -2891,7 +2891,7 @@ void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count)
   char context_str[READ_SIZE];
   int i;
 
-  /* If getting to the menu from inside the game, the vars aren't removed. So 
+  /* If getting to the menu from inside the game, the vars aren't removed. So
    * let's not allocate them again. */
   if (SCRIPT(ch))
     return;
@@ -2922,7 +2922,7 @@ void save_char_vars_ascii(FILE *file, struct char_data *ch)
 {
   struct trig_var_data *vars;
   int count = 0;
-  /* Immediate return if no script (and therefore no variables) structure has 
+  /* Immediate return if no script (and therefore no variables) structure has
    * been created. this will happen when the player is logging in */
   if (SCRIPT(ch) == NULL) return;
 
@@ -2932,7 +2932,7 @@ void save_char_vars_ascii(FILE *file, struct char_data *ch)
   /* make sure this char has global variables to save */
   if (ch->script->global_vars == NULL) return;
 
-  /* Note that currently, context will always be zero. This may change in the 
+  /* Note that currently, context will always be zero. This may change in the
    * future */
   for (vars = ch->script->global_vars;vars;vars = vars->next)
     if (*vars->name != '-')
@@ -3019,7 +3019,7 @@ void remove_from_lookup_table(long uid)
   int bucket = (int) (uid & (BUCKET_COUNT - 1));
   struct lookup_table_t *lt = &lookup_table[bucket], *flt = NULL;
 
-  /* This is not supposed to happen. UID 0 is not used. However, while I'm 
+  /* This is not supposed to happen. UID 0 is not used. However, while I'm
    * debugging the issue, let's just return right away. - Welcor */
   if (uid == 0)
     return;
@@ -3039,29 +3039,29 @@ void remove_from_lookup_table(long uid)
   log("remove_from_lookup. UID %ld not found.", uid);
 }
 
-bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *namelist[]) 
-{ 
-  int i, item=-1; 
+bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *namelist[])
+{
+  int i, item=-1;
 
-  for (i=0; i<numflags && item < 0; i++) 
-    if (!strcmp(search, namelist[i])) item = i; 
+  for (i=0; i<numflags && item < 0; i++)
+    if (!strcmp(search, namelist[i])) item = i;
 
-  if (item < 0) return FALSE; 
+  if (item < 0) return FALSE;
 
-  if (IS_SET_AR(array, item)) return TRUE; 
+  if (IS_SET_AR(array, item)) return TRUE;
 
-  return FALSE; 
+  return FALSE;
 }
 
-int trig_is_attached(struct script_data *sc, int trig_num) 
-{ 
-  trig_data *t; 
+int trig_is_attached(struct script_data *sc, int trig_num)
+{
+  trig_data *t;
 
-  if (!sc || !TRIGGERS(sc)) return 0; 
+  if (!sc || !TRIGGERS(sc)) return 0;
 
-  for (t = TRIGGERS(sc); t; t = t->next) 
-    if (GET_TRIG_VNUM(t) == trig_num) 
-      return 1; 
+  for (t = TRIGGERS(sc); t; t = t->next)
+    if (GET_TRIG_VNUM(t) == trig_num)
+      return 1;
 
-  return 0; 
+  return 0;
 }

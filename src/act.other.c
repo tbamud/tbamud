@@ -43,7 +43,7 @@ ACMD(do_quit)
   if (IS_NPC(ch) || !ch->desc)
     return;
 
-  if (subcmd != SCMD_QUIT && GET_LEVEL(ch) < LVL_IMMORT)
+  if (subcmd != SCMD_QUIT && !IS_ADMIN(ch, ADMLVL_IMMORT))
     send_to_char(ch, "You have to type quit--no less, to quit!\r\n");
   else if (GET_POS(ch) == POS_FIGHTING)
     send_to_char(ch, "No way!  You're fighting for your life!\r\n");
@@ -52,7 +52,7 @@ ACMD(do_quit)
     die(ch, NULL);
   } else {
     act("$n has left the game.", TRUE, ch, 0, 0, TO_ROOM);
-    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has quit the game.", GET_NAME(ch));
+    mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has quit the game.", GET_NAME(ch));
 
     if (GET_QUEST_TIME(ch) != -1)
       quest_timeout(ch);
@@ -185,7 +185,7 @@ ACMD(do_steal)
     percent -= 50;
 
   /* No stealing if not allowed. If it is no stealing from Imm's or Shopkeepers. */
-  if (GET_LEVEL(vict) >= LVL_IMMORT || pcsteal || GET_MOB_SPEC(vict) == shop_keeper)
+  if (IS_ADMIN(vict, ADMLVL_IMMORT) || pcsteal || GET_MOB_SPEC(vict) == shop_keeper)
     percent = 101;		/* Failure */
 
   if (str_cmp(obj_name, "coins") && str_cmp(obj_name, "gold")) {
@@ -286,7 +286,7 @@ ACMD(do_practice)
 
 ACMD(do_visible)
 {
-  if (GET_LEVEL(ch) >= LVL_IMMORT) {
+  if (IS_ADMIN(ch, ADMLVL_IMMORT)) {
     perform_immort_vis(ch);
     return;
   }
@@ -801,16 +801,16 @@ ACMD(do_gen_tog)
     result = PRF_TOG_CHK(ch, PRF_CLS);
     break;
   case SCMD_BUILDWALK:
-    if (GET_LEVEL(ch) < LVL_BUILDER) {
+    if (!ADM_FLAGGED(ch, ADM_BUILD)) {
       send_to_char(ch, "Builders only, sorry.\r\n");
       return;
     }
     result = PRF_TOG_CHK(ch, PRF_BUILDWALK);
     if (PRF_FLAGGED(ch, PRF_BUILDWALK))
-      mudlog(CMP, GET_LEVEL(ch), TRUE,
+      mudlog(CMP, GET_ADMLEVEL(ch), TRUE,
              "OLC: %s turned buildwalk on. Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
     else
-      mudlog(CMP, GET_LEVEL(ch), TRUE,
+      mudlog(CMP, GET_ADMLEVEL(ch), TRUE,
              "OLC: %s turned buildwalk off. Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
     break;
   case SCMD_AFK:
@@ -865,7 +865,7 @@ void show_happyhour(struct char_data *ch)
   char happyexp[80], happygold[80], happyqp[80];
   int secs_left;
 
-  if ((IS_HAPPYHOUR) || (GET_LEVEL(ch) >= LVL_GRGOD))
+  if ( (IS_HAPPYHOUR) || (IS_ADMIN(ch, ADMLVL_GRGOD)) )
   {
       if (HAPPY_TIME)
         secs_left = ((HAPPY_TIME - 1) * SECS_PER_MUD_HOUR) + next_tick;
@@ -879,9 +879,9 @@ void show_happyhour(struct char_data *ch)
       send_to_char(ch, "tbaMUD Happy Hour!\r\n"
                        "------------------\r\n"
                        "%s%s%sTime Remaining: %s%d%s hours %s%d%s mins %s%d%s secs\r\n",
-                       (IS_HAPPYEXP || (GET_LEVEL(ch) >= LVL_GOD)) ? happyexp : "",
-                       (IS_HAPPYGOLD || (GET_LEVEL(ch) >= LVL_GOD)) ? happygold : "",
-                       (IS_HAPPYQP || (GET_LEVEL(ch) >= LVL_GOD)) ? happyqp : "",
+                       (IS_HAPPYEXP || IS_ADMIN(ch, ADMLVL_GOD)) ? happyexp : "",
+                       (IS_HAPPYGOLD || IS_ADMIN(ch, ADMLVL_GOD)) ? happygold : "",
+                       (IS_HAPPYQP || IS_ADMIN(ch, ADMLVL_GOD)) ? happyqp : "",
                        CCYEL(ch, C_NRM), (secs_left / 3600), CCNRM(ch, C_NRM),
                        CCYEL(ch, C_NRM), (secs_left % 3600) / 60, CCNRM(ch, C_NRM),
                        CCYEL(ch, C_NRM), (secs_left % 60), CCNRM(ch, C_NRM) );
@@ -897,7 +897,7 @@ ACMD(do_happyhour)
   char arg[MAX_INPUT_LENGTH], val[MAX_INPUT_LENGTH];
   int num;
 
-  if (GET_LEVEL(ch) < LVL_GOD)
+  if (IS_ADMIN(ch, ADMLVL_GOD))
   {
     show_happyhour(ch);
     return;

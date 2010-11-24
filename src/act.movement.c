@@ -41,7 +41,7 @@ static int has_boat(struct char_data *ch)
   struct obj_data *obj;
   int i;
 
-  if (GET_LEVEL(ch) > LVL_IMMORT)
+  if (ADM_FLAGGED(ch, ADM_WALKANYWHERE))
     return (1);
 
   if (AFF_FLAGGED(ch, AFF_WATERWALK) || AFF_FLAGGED(ch, AFF_FLYING))
@@ -66,7 +66,7 @@ int has_flight(struct char_data *ch)
   struct obj_data *obj;
   int i;
 
-  if (GET_LEVEL(ch) > LVL_IMMORT)
+  if (ADM_FLAGGED(ch, ADM_WALKANYWHERE))
     return (1);
 
   if (AFF_FLAGGED(ch, AFF_FLYING))
@@ -91,7 +91,7 @@ int has_scuba(struct char_data *ch)
   struct obj_data *obj;
   int i;
 
-  if (GET_LEVEL(ch) > LVL_IMMORT)
+  if (ADM_FLAGGED(ch, ADM_WALKANYWHERE))
     return (1);
 
   if (AFF_FLAGGED(ch, AFF_SCUBA))
@@ -219,11 +219,11 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Check zone flag restrictions */
-  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_CLOSED)) {
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_CLOSED) && !ADM_FLAGGED(ch, ADM_WALKANYWHERE)) {
     send_to_char(ch, "A mysterious barrier forces you back! That area is off-limits.\r\n");
     return (0);
   }
-  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_NOIMMORT) && (GET_LEVEL(ch) >= LVL_IMMORT) && (GET_LEVEL(ch) < LVL_GRGOD)) {
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_NOIMMORT) && (IS_ADMIN(ch, ADMLVL_IMMORT)) && !(IS_ADMIN(ch, ADMLVL_GRGOD))) {
     send_to_char(ch, "A mysterious barrier forces you back! That area is off-limits.\r\n");
     return (0);
   }
@@ -240,7 +240,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Room Level Requirements: Is ch privileged enough to enter the room? */
-  if (ROOM_FLAGGED(going_to, ROOM_GODROOM) && GET_LEVEL(ch) < LVL_GOD)
+  if (ROOM_FLAGGED(going_to, ROOM_GODROOM) && !(IS_ADMIN(ch, ADMLVL_GOD)))
   {
     send_to_char(ch, "You aren't godly enough to use that room!\r\n");
     return (0);
@@ -253,7 +253,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 		   movement_loss[SECT(going_to)]) / 2;
 
   /* Move Point Requirement Check */
-  if (GET_MOVE(ch) < need_movement && !IS_NPC(ch))
+  if (GET_MOVE(ch) < need_movement && !IS_NPC(ch) && !ADM_FLAGGED(ch, ADM_WALKANYWHERE))
   {
     if (need_specials_check && ch->master)
       send_to_char(ch, "You are too exhausted to follow.\r\n");
@@ -270,7 +270,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   /* Begin: the leave operation. */
   /*---------------------------------------------------------------------*/
   /* If applicable, subtract movement cost. */
-  if (GET_LEVEL(ch) < LVL_IMMORT && !IS_NPC(ch))
+  if (!ADM_FLAGGED(ch, ADM_WALKANYWHERE))
     GET_MOVE(ch) -= need_movement;
 
   /* Generate the leave message and display to others in the was_in room. */
@@ -307,9 +307,9 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     look_at_room(ch, 0);
 
   /* ... and Kill the player if the room is a death trap. */
-  if (ROOM_FLAGGED(going_to, ROOM_DEATH) && GET_LEVEL(ch) < LVL_IMMORT)
+  if (ROOM_FLAGGED(going_to, ROOM_DEATH) && (ADM_FLAGGED(ch, ADM_WALKANYWHERE)))
   {
-    mudlog(BRF, LVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(going_to), world[going_to].name);
+    mudlog(BRF, ADMLVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(going_to), world[going_to].name);
     death_cry(ch);
     extract_char(ch);
     return (0);
@@ -346,7 +346,7 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
     return (0);
   else if ((!EXIT(ch, dir) && !buildwalk(ch, dir)) || EXIT(ch, dir)->to_room == NOWHERE)
     send_to_char(ch, "Alas, you cannot go that way...\r\n");
-  else if (EXIT_FLAGGED(EXIT(ch, dir), EX_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE)))) {
+  else if (EXIT_FLAGGED(EXIT(ch, dir), EX_CLOSED) && (!ADM_FLAGGED(ch, ADM_WALKANYWHERE)) ) {
     if (EXIT(ch, dir)->keyword)
       send_to_char(ch, "The %s seems to be closed.\r\n", fname(EXIT(ch, dir)->keyword));
     else
@@ -456,6 +456,9 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
 int has_key(struct char_data *ch, obj_vnum key)
 {
   struct obj_data *o;
+
+  if (!ch) return (0);
+  if (!IS_NPC(ch) && ADM_FLAGGED(ch, ADM_NOKEYS)) return (1);
 
   for (o = ch->carrying; o; o = o->next_content)
     if (GET_OBJ_VNUM(o) == key)
@@ -662,11 +665,9 @@ ACMD(do_gen_door)
       send_to_char(ch, "It is locked, and you do not have the key!\r\n");
     }
     else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) &&
-	     IS_SET(flags_door[subcmd], NEED_UNLOCKED) &&
-             (GET_LEVEL(ch) < LVL_IMMORT || (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE))))
+	     IS_SET(flags_door[subcmd], NEED_UNLOCKED) && (!ADM_FLAGGED(ch, ADM_NOKEYS) && !PRF_FLAGGED(ch, PRF_NOHASSLE)))
       send_to_char(ch, "It seems to be locked.\r\n");
-    else if (!has_key(ch, keynum) && (GET_LEVEL(ch) < LVL_GOD) &&
-	     ((subcmd == SCMD_LOCK) || (subcmd == SCMD_UNLOCK)))
+    else if (!has_key(ch, keynum) && ((subcmd == SCMD_LOCK) || (subcmd == SCMD_UNLOCK)))
       send_to_char(ch, "You don't seem to have the proper key.\r\n");
     else if (ok_pick(ch, keynum, DOOR_IS_PICKPROOF(ch, obj, door), subcmd))
       do_doorcmd(ch, obj, door, subcmd);

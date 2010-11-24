@@ -68,6 +68,7 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad);
 char *strpaste(char *str1, char *str2, char *joiner);
 void new_affect(struct affected_type *af);
 int get_class_by_name(char *classname);
+bool set_admin_level(struct char_data *ch, int admlvl);
 
 /* Public functions made available form weather.c */
 void weather_and_time(int mode);
@@ -362,6 +363,8 @@ do                                                              \
 #define PRF_FLAGS(ch) CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.pref))
 /** Affect flags on the NPC or PC. */
 #define AFF_FLAGS(ch)	((ch)->char_specials.saved.affected_by)
+/** Admin Priv flags on a player (not to be used on mobs). */
+#define ADM_FLAGS(ch) CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.admflags))
 /** Room flags.
  * @param loc The real room number. */
 #define ROOM_FLAGS(loc)	(world[(loc)].room_flags)
@@ -396,6 +399,9 @@ do                                                              \
 #define AFF_FLAGGED(ch, flag) (IS_SET_AR(AFF_FLAGS(ch), (flag)))
 /** 1 if flag is set in the preferences bitarray, 0 if not. */
 #define PRF_FLAGGED(ch, flag) (IS_SET_AR(PRF_FLAGS(ch), (flag)))
+/** 1 if flag is set in the admin privs bitarray, 0 if not. */
+#define ADM_FLAGGED(ch, flag) (!IS_NPC(ch) && (!PRF_FLAGGED((ch), PRF_MORTAL)) && \
+                                              (IS_SET_AR(ADM_FLAGS(ch), (flag))) )
 /** 1 if flag is set in the room of loc, 0 if not. */
 #define ROOM_FLAGGED(loc, flag) (IS_SET_AR(ROOM_FLAGS(loc), (flag)))
 /** 1 if flag is set in the zone of rnum, 0 if not. */
@@ -416,6 +422,10 @@ do                                                              \
 
 /** IS_AFFECTED for backwards compatibility */
 #define IS_AFFECTED(ch, skill) (AFF_FLAGGED((ch), (skill)))
+
+/** IS_ADMIN checks admin level and mortal flag */
+#define IS_ADMIN(ch, lvl) (!IS_NPC(ch) && (!PRF_FLAGGED((ch), PRF_MORTAL)) && \
+                                          (GET_ADMLEVEL(ch) >= (lvl)))
 
 /** Toggle flag in ch PLR_FLAGS' turns on if off, or off if on. */
 #define PLR_TOG_CHK(ch,flag) ((TOGGLE_BIT_AR(PLR_FLAGS(ch), (flag))) & Q_BIT(flag))
@@ -464,18 +474,26 @@ do                                                              \
 			 (ch)->player.short_descr : GET_PC_NAME(ch))
 /** Title of PC */
 #define GET_TITLE(ch)   ((ch)->player.title)
-/** Level of PC or NPC. */
+/** Mortal Level of PC or NPC. */
 #define GET_LEVEL(ch)   ((ch)->player.level)
+/** Admin Level of PC. */
+#define GET_ADMLEVEL(ch)  CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.adm_level))
 /** Password of PC. */
 #define GET_PASSWD(ch)	((ch)->player.passwd)
 /** The player file position of PC. */
 #define GET_PFILEPOS(ch)((ch)->pfilepos)
 
-/** Gets the level of a player even if the player is switched.
+/** Gets the mortal level of a player even if the player is switched.
  * @todo Make this the definition of GET_LEVEL. */
 #define GET_REAL_LEVEL(ch) \
    (ch->desc && ch->desc->original ? GET_LEVEL(ch->desc->original) : \
     GET_LEVEL(ch))
+
+/** Gets the admin level of a player even if the player is switched.
+ * @todo Make this the definition of GET_LEVEL. */
+#define GET_REAL_ADMLEVEL(ch) \
+   (ch->desc && ch->desc->original ? GET_ADMLEVEL(ch->desc->original) : \
+    (IS_NPC(ch) ? ADMLVL_MORTAL : GET_ADMLEVEL(ch)))
 
 /** Class of ch. */
 #define GET_CLASS(ch)   ((ch)->player.chclass)
@@ -753,7 +771,7 @@ do                                                              \
 /** Defines if there is enough light for sub to see in. */
 #define LIGHT_OK(sub)	(!AFF_FLAGGED(sub, AFF_BLIND) && \
    (IS_LIGHT(IN_ROOM(sub)) || AFF_FLAGGED((sub), AFF_INFRAVISION) || \
-   GET_LEVEL(sub) >= LVL_IMMORT))
+   IS_ADMIN(sub, ADMLVL_IMMORT)))
 
 /** Defines if sub character can see the invisible obj character. */
 #define INVIS_OK(sub, obj) \
@@ -774,7 +792,7 @@ do                                                              \
 
 /** Can sub character see obj character? */
 #define CAN_SEE(sub, obj) (SELF(sub, obj) || \
-   ((GET_REAL_LEVEL(sub) >= (IS_NPC(obj) ? 0 : GET_INVIS_LEV(obj))) && \
+   ((GET_REAL_ADMLEVEL(sub) >= (IS_NPC(obj) ? 0 : GET_INVIS_LEV(obj))) && \
    IMM_CAN_SEE(sub, obj)))
 /* End of CAN_SEE */
 
@@ -806,7 +824,7 @@ do                                                              \
     CAN_SEE_OBJ((ch),(obj)))
 
 /** If vict can see ch, return ch name, else return "someone". */
-#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : (GET_LEVEL(ch) > LVL_IMMORT ? "an immortal" : "someone"))
+#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : (GET_ADMLEVEL(ch) > ADMLVL_IMMORT ? "an immortal" : "someone"))
 
 /** If vict can see obj, return obj short description, else return
  * "something". */
@@ -934,6 +952,8 @@ do                                                              \
 #define CONFIG_MAX_NPC_CORPSE_TIME config_info.play.max_npc_corpse_time
 /** How long will pc corpses last before decomposing? */
 #define CONFIG_MAX_PC_CORPSE_TIME  config_info.play.max_pc_corpse_time
+/** What is the highest level a mortal can obtain? */
+#define CONFIG_MAX_LEVEL        config_info.play.max_mortal_level
 /** How long can a pc be idled before being pulled into the void? */
 #define CONFIG_IDLE_VOID        config_info.play.idle_void
 /** How long until the idle pc is force rented? */

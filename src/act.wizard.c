@@ -51,6 +51,8 @@ static void mod_llog_entry(struct last_entry *llast,int type);
 static int  get_max_recent(void);
 static void clear_recent(struct recent_player *this);
 static struct recent_player *create_recent(void);
+static void start_mortal(struct char_data *ch);
+static void stop_mortal(struct char_data *ch);
 
 const char *get_spec_func_name(SPECIAL(*func));
 bool zedit_get_levels(struct descriptor_data *d, char *buf);
@@ -102,8 +104,8 @@ ACMD(do_echo)
       snprintf(buf, sizeof(buf), "$n %s", argument);
     else {
       strlcpy(buf, argument, sizeof(buf));
-      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "(GC) %s echoed: %s", GET_NAME(ch), buf);
-      }
+      mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "(GC) %s echoed: %s", GET_NAME(ch), buf);
+    }
     act(buf, FALSE, ch, 0, 0, TO_ROOM);
 
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
@@ -129,7 +131,7 @@ ACMD(do_send)
     return;
   }
   send_to_char(vict, "%s\r\n", buf);
-  mudlog(CMP, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s sent %s: %s", GET_NAME(ch), GET_NAME(vict), buf);
+  mudlog(CMP, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s sent %s: %s", GET_NAME(ch), GET_NAME(vict), buf);
 
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
     send_to_char(ch, "Sent.\r\n");
@@ -187,11 +189,11 @@ room_rnum find_target_room(struct char_data *ch, char *rawroomstr)
     }
   }
 
-  /* A location has been found -- if you're >= GRGOD, no restrictions. */
-  if (GET_LEVEL(ch) >= LVL_GRGOD)
+  /* A location has been found -- if you're IMPL, no restrictions. */
+  if (IS_ADMIN(ch, ADMLVL_IMPL))
     return (location);
 
-  if (ROOM_FLAGGED(location, ROOM_GODROOM))
+  if (ROOM_FLAGGED(location, ROOM_GODROOM) && !IS_ADMIN(ch, ADMLVL_GRGOD))
     send_to_char(ch, "You are not godly enough to use that room!\r\n");
   else if (ROOM_FLAGGED(location, ROOM_PRIVATE) && world[location].people && world[location].people->next_in_room)
     send_to_char(ch, "There's a private conversation going on in that room.\r\n");
@@ -243,9 +245,21 @@ ACMD(do_goto)
   if ((location = find_target_room(ch, argument)) == NOWHERE)
     return;
 
-  if (ZONE_FLAGGED(GET_ROOM_ZONE(location), ZONE_NOIMMORT) && (GET_LEVEL(ch) >= LVL_IMMORT) && (GET_LEVEL(ch) < LVL_GRGOD)) {
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(location), ZONE_NOIMMORT) && (IS_ADMIN(ch, ADMLVL_IMMORT)) && (!IS_ADMIN(ch, ADMLVL_GRGOD))) {
     send_to_char(ch, "Sorry, that zone is off-limits for immortals!");
     return;
+  }
+
+  if (!IS_ADMIN(ch, ADMLVL_IMMORT) && !ADM_FLAGGED(ch, ADM_POOF)) {
+    send_to_char(ch, "You can't goto anywhere.\r\n");
+    return;
+  }
+
+  if (!IS_ADMIN(ch, ADMLVL_IMMORT)) { /* Must be mortal with ADM_POOF flag */
+    if ((world[location].zone) != real_zone(GET_OLC_ZONE(ch)) ) {
+      send_to_char(ch, "You can only goto locations within your zone!\r\n");
+      return;
+    }
   }
 
   snprintf(buf, sizeof(buf), "$n %s", POOFOUT(ch) ? POOFOUT(ch) : "disappears in a puff of smoke.");
@@ -290,7 +304,7 @@ ACMD(do_trans)
       enter_wtrigger(&world[IN_ROOM(victim)], victim, -1);
     }
   } else {			/* Trans All */
-    if (GET_LEVEL(ch) < LVL_GRGOD) {
+    if (!ADM_FLAGGED(ch, ADM_TRANSALL)) {
       send_to_char(ch, "I think not.\r\n");
       return;
     }
@@ -298,7 +312,7 @@ ACMD(do_trans)
     for (i = descriptor_list; i; i = i->next)
       if (STATE(i) == CON_PLAYING && i->character && i->character != ch) {
 	victim = i->character;
-	if (GET_LEVEL(victim) >= GET_LEVEL(ch))
+	if (GET_ADMLEVEL(victim) >= GET_ADMLEVEL(ch))
 	  continue;
 	act("$n disappears in a mushroom cloud.", FALSE, victim, 0, 0, TO_ROOM);
 	char_from_room(victim);
@@ -326,7 +340,7 @@ ACMD(do_teleport)
     send_to_char(ch, "%s", CONFIG_NOPERSON);
   else if (victim == ch)
     send_to_char(ch, "Use 'goto' to teleport yourself.\r\n");
-  else if (GET_LEVEL(victim) >= GET_LEVEL(ch))
+  else if (GET_ADMLEVEL(victim) >= GET_ADMLEVEL(ch))
     send_to_char(ch, "Maybe you shouldn't do that.\r\n");
   else if (!*buf2)
     send_to_char(ch, "Where do you wish to send this person?\r\n");
@@ -776,7 +790,7 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
 	    GET_PRACTICES(k), int_app[GET_INT(k)].learn,
 	    wis_app[GET_WIS(k)].bonus);
     /* Display OLC zone for immorts. */
-    if (GET_LEVEL(k) >= LVL_BUILDER) {
+    if (IS_ADMIN(k, ADMLVL_BUILDER)) {
       if (GET_OLC_ZONE(k)==AEDIT_PERMISSION)
         send_to_char(ch, ", OLC[%sAedit%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
       else if (GET_OLC_ZONE(k)==HEDIT_PERMISSION)
@@ -906,7 +920,7 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
     }
   }
 
-  if (!IS_NPC(k) && (GET_LEVEL(k) >= LVL_IMMORT)) {
+  if (ADM_FLAGGED(k, ADM_POOF)) {
     if (POOFIN(k))
       send_to_char(ch, "%sPOOFIN:  %s%s %s%s\r\n", QYEL, QCYN, GET_NAME(k), POOFIN(k), QNRM);
     else
@@ -1106,13 +1120,13 @@ void snoop_check(struct char_data *ch)
   if (!ch || !ch->desc)
     return;
   if (ch->desc->snooping &&
-     (GET_LEVEL(ch->desc->snooping->character) >= GET_LEVEL(ch))) {
+     (GET_ADMLEVEL(ch->desc->snooping->character) > GET_ADMLEVEL(ch))) {
     ch->desc->snooping->snoop_by = NULL;
     ch->desc->snooping = NULL;
   }
 
   if (ch->desc->snoop_by &&
-     (GET_LEVEL(ch) >= GET_LEVEL(ch->desc->snoop_by->character))) {
+     (GET_ADMLEVEL(ch) > GET_ADMLEVEL(ch->desc->snoop_by->character))) {
     ch->desc->snoop_by->snooping = NULL;
     ch->desc->snoop_by = NULL;
   }
@@ -1125,8 +1139,8 @@ static void stop_snooping(struct char_data *ch)
   else {
     send_to_char(ch, "You stop snooping.\r\n");
 
-    if (GET_LEVEL(ch) < LVL_IMPL)
-      mudlog(BRF, GET_LEVEL(ch), TRUE, "(GC) %s stops snooping", GET_NAME(ch));
+    if (!IS_ADMIN(ch, ADMLVL_IMPL))
+      mudlog(BRF, GET_ADMLEVEL(ch), TRUE, "(GC) %s stops snooping", GET_NAME(ch));
 
     ch->desc->snooping->snoop_by = NULL;
     ch->desc->snooping = NULL;
@@ -1161,14 +1175,14 @@ ACMD(do_snoop)
     else
       tch = victim;
 
-    if (GET_LEVEL(tch) >= GET_LEVEL(ch)) {
+    if (GET_ADMLEVEL(tch) > GET_ADMLEVEL(ch)) {
       send_to_char(ch, "You can't.\r\n");
       return;
     }
     send_to_char(ch, "%s", CONFIG_OK);
 
-    if (GET_LEVEL(ch) < LVL_IMPL)
-      mudlog(BRF, GET_LEVEL(ch), TRUE, "(GC) %s snoops %s", GET_NAME(ch), GET_NAME(victim));
+    if (!IS_ADMIN(ch, ADMLVL_IMPL))
+      mudlog(BRF, GET_ADMLEVEL(ch), TRUE, "(GC) %s snoops %s", GET_NAME(ch), GET_NAME(victim));
 
     if (ch->desc->snooping)
       ch->desc->snooping->snoop_by = NULL;
@@ -1195,16 +1209,15 @@ ACMD(do_switch)
     send_to_char(ch, "Hee hee... we are jolly funny today, eh?\r\n");
   else if (victim->desc)
     send_to_char(ch, "You can't do that, the body is already in use!\r\n");
-  else if ((GET_LEVEL(ch) < LVL_IMPL) && !IS_NPC(victim))
+  else if ((!ADM_FLAGGED(ch, ADM_SWITCHMORTAL)) && !IS_NPC(victim))
     send_to_char(ch, "You aren't holy enough to use a mortal's body.\r\n");
-  else if (GET_LEVEL(ch) < LVL_GRGOD && ROOM_FLAGGED(IN_ROOM(victim), ROOM_GODROOM))
+  else if (!IS_ADMIN(ch, ADMLVL_GRGOD) && ROOM_FLAGGED(IN_ROOM(victim), ROOM_GODROOM))
     send_to_char(ch, "You are not godly enough to use that room!\r\n");
-  else if (GET_LEVEL(ch) < LVL_GRGOD && ROOM_FLAGGED(IN_ROOM(victim), ROOM_HOUSE)
-		&& !House_can_enter(ch, GET_ROOM_VNUM(IN_ROOM(victim))))
+  else if (ROOM_FLAGGED(IN_ROOM(victim), ROOM_HOUSE) && !House_can_enter(ch, GET_ROOM_VNUM(IN_ROOM(victim))))
     send_to_char(ch, "That's private property -- no trespassing!\r\n");
   else {
     send_to_char(ch, "%s", CONFIG_OK);
-    mudlog(CMP, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s Switched into: %s", GET_NAME(ch), GET_NAME(victim));
+    mudlog(CMP, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s Switched into: %s", GET_NAME(ch), GET_NAME(victim));
     ch->desc->character = victim;
     ch->desc->original = ch;
 
@@ -1213,46 +1226,105 @@ ACMD(do_switch)
   }
 }
 
+static void start_mortal(struct char_data *ch) {
+  int pos;
+  if (!ch) return;
+
+  if (!PRF_FLAGGED(ch, PRF_MORTAL)) {
+    SET_BIT_AR(PRF_FLAGS(ch), PRF_MORTAL);
+    if ((pos = get_ptable_by_name(GET_NAME(ch))) >= 0) {
+      SET_BIT(player_table[(pos)].flags, PINDEX_MORTAL);
+    }
+    save_char(ch);
+    save_player_index();
+
+    /* Update wizlist - mortals aren't shown on wizlist */
+    if (IS_ADMIN(ch, ADMLVL_IMMORT) && CONFIG_USE_AUTOWIZ) {
+      run_autowiz();
+    }
+  }
+}
+
+static void stop_mortal(struct char_data *ch) {
+  int pos;
+  if (!ch) return;
+
+  if (PRF_FLAGGED(ch, PRF_MORTAL)) {
+    REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_MORTAL);
+    if ((pos = get_ptable_by_name(GET_NAME(ch))) >= 0) {
+      REMOVE_BIT(player_table[(pos)].flags, PINDEX_MORTAL);
+    }
+    save_char(ch);
+    save_player_index();
+
+    /* Update wizlist - mortals aren't shown on wizlist */
+    if ((GET_ADMLEVEL(ch) >= ADMLVL_IMMORT) && CONFIG_USE_AUTOWIZ) {
+      run_autowiz();
+    }
+  }
+}
+
+ACMD(do_mortal)
+{
+  if (IS_NPC(ch)) {
+    send_to_char(ch, "You're a mob - you are mortal!\r\n");
+    return;
+  }
+  if (PRF_FLAGGED(ch, PRF_MORTAL) && GET_ADMLEVEL(ch) > ADMLVL_MORTAL) {
+    send_to_char(ch, "You are already mortal, use %sreturn%s to relinquish mortality.\r\n", QYEL, QNRM);
+  } else if (PRF_FLAGGED(ch, PRF_MORTAL)) {
+    log("SYSERR: Player %s had MORTAL flags set, removing...", GET_NAME(ch));
+    stop_mortal(ch);
+    return;
+  } else if (!IS_ADMIN(ch, ADMLVL_IMMORT)) {
+	send_to_char(ch, "You do not have access to this command.\r\n");
+	return;
+  }
+  start_mortal(ch);
+  send_to_char(ch, "You feel diminished as your powers recede.\r\n");
+  send_to_char(ch, "You can type %sreturn%s to regain immortality at any time.\r\n", QYEL, QNRM);
+}
+
+/* do_cheat is called by do_return when the player isn't switched into a mob
+ * It is used to return an imm to immortality after the mortal command is used
+ * Use GET_ADMLEVEL(ch) = ADMLVL_level;   to set admin level, but not change admin flags
+ * Use set_admin_level(ch, ADMLVL_level); to set default admin flags for the new level
+ */
 void do_cheat(struct char_data *ch)
 {
   switch (GET_IDNUM(ch)) {
     case    1: // IMP
-      GET_LEVEL(ch) = LVL_IMPL;
+      if (GET_ADMLEVEL(ch) < ADMLVL_IMPL)
+        set_admin_level(ch, ADMLVL_IMPL); /* set_admin_level also sets default admin flags */
       break;
+/* --- Remove below from tbaMUD Release --- */
     case    3: // Welcor
     case  160: // Test
-      GET_LEVEL(ch) = LVL_IMPL;
-      break;
-    case    2: // Shamra
     case  242: // Jamdog
-    case  295: // Detta
-    case  156: // Fizban
-    case  420: // Jamdog
-      GET_LEVEL(ch) = LVL_GRGOD;
+      if (GET_ADMLEVEL(ch) < ADMLVL_IMPL)
+        set_admin_level(ch, ADMLVL_IMPL); /* Imps should get all flags, use set_admin_level */
       break;
-    case  390: // Random
-    case    7: // Rhade
-    case   19: // Amber
-    case  253: // Mordecai
-      GET_LEVEL(ch) = LVL_GOD;
-      break;
+/* --- Remove above from tbaMUD Release --- */
     default:
-      send_to_char(ch, "You do not have access to this command.\r\n");
-  return;
+      if (PRF_FLAGGED(ch, PRF_MORTAL)) {
+        stop_mortal(ch);
+        send_to_char(ch, "You are stripped of your mortality.\r\n");
+      } else if (!IS_ADMIN(ch, ADMLVL_IMMORT)) {
+        send_to_char(ch, "You do not have access to this command.\r\n");
+      } else {
+        send_to_char(ch, "You are not switched, or a mortal.\r\n");
+	  }
+      return;
   }
+  /* This section is only for people whose ID is above */
+  stop_mortal(ch);
   send_to_char(ch, "Your level has been restored, for now!\r\n");
-  save_char(ch);
 }
 
 ACMD(do_return)
 {
   if (!IS_NPC(ch) && !ch->desc->original) {
-    int level, newlevel;
-    level = GET_LEVEL(ch);
     do_cheat(ch);
-    newlevel = GET_LEVEL(ch);
-    if (!PLR_FLAGGED(ch, PLR_NOWIZLIST)&& level != newlevel)
-      run_autowiz();
   }
 
   if (ch->desc && ch->desc->original) {
@@ -1423,13 +1495,13 @@ ACMD(do_purge)
       }
       act("$n disintegrates $N.", FALSE, ch, 0, vict, TO_NOTVICT);
 
-      if (!IS_NPC(vict) && GET_LEVEL(ch) < LVL_GOD) {
-	mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s has purged %s.", GET_NAME(ch), GET_NAME(vict));
-	if (vict->desc) {
-	  STATE(vict->desc) = CON_CLOSE;
-	  vict->desc->character = NULL;
-	  vict->desc = NULL;
-	}
+      if (!IS_ADMIN(ch, ADMLVL_GOD)) {
+        mudlog(BRF, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s has purged %s.", GET_NAME(ch), GET_NAME(vict));
+        if (vict->desc) {
+          STATE(vict->desc) = CON_CLOSE;
+          vict->desc->character = NULL;
+          vict->desc = NULL;
+        }
       }
       extract_char(vict);
     } else if ((obj = get_obj_in_list_vis(ch, buf, &number, world[IN_ROOM(ch)].contents)) != NULL) {
@@ -1449,6 +1521,219 @@ ACMD(do_purge)
   }
 }
 
+int get_admin_level_by_string(char *lv)
+{
+  int i,l;
+  if (lv && *lv) {
+    /* Check numeric values */
+    if ((*lv)>='0' && (*lv)<='9') { /* Is a numeric value */
+      l = atoi(lv);
+      if ((l >= ADMLVL_MORTAL) && (l <= ADMLVL_IMPL))
+        return l;
+    }
+    /* Check for 'names' */
+    for (i=0; i<ADMLVL_IMPL; i++)
+      if (is_abbrev(lv, admin_level_names[i]))
+        return i;
+  }
+  /* Failed - return below zero */
+  return -1;
+}
+
+void set_default_admin_privs(struct char_data *ch, bool keep_old)
+{
+  int i;
+
+  if (IS_NPC(ch)) return;
+
+  if (!keep_old) {
+    for (i=0; i<AD_ARRAY_MAX; i++) {
+      ADM_FLAGS(ch)[i] = 0;
+    }
+  }
+
+  /* Inherited permissions - if a lower level admin has it, all admins above it have the priv */
+  /* NOTE: The switch cases below MUST be in reverse order, due to no breaks */
+  switch(GET_ADMLEVEL(ch)) {
+    case ADMLVL_IMPL:     /* Imps get all the ones below */
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_FORCEMASS);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_TRANSALL);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_ADMIN);
+    case ADMLVL_GRGOD:    SET_BIT_AR(ADM_FLAGS(ch), ADM_ADVBUILD);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_TELLALL);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_EATANYTHING);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_BUILD);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_MONEY);
+    case ADMLVL_GOD:      SET_BIT_AR(ADM_FLAGS(ch), ADM_WALKANYWHERE);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_NOKEYS);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_SEEINV);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_ADVIBT);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_ALLHOUSES);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_ALLSHOPS);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_SEESECRET);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_NOSTEAL);
+    case ADMLVL_IMMORT:   SET_BIT_AR(ADM_FLAGS(ch), ADM_KNOWWEATHER);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_SETQP);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_NOPOISON);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_FULLWHERE);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_POOF);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_NODAMAGE);
+    case ADMLVL_MORTAL:
+                          break;
+    default:
+                          log("SYSERR: Invalid admin level (%d) for %s in set_default_admin_flags", GET_ADMLEVEL(ch), GET_NAME(ch));
+  }
+
+  /* Non-Inherited Permissions - privs here are for the one admin level only */
+  /* NOTE; You can repeat privs to add them to more than one level           */
+  switch(GET_ADMLEVEL(ch)) {
+    case ADMLVL_IMPL:     SET_BIT_AR(ADM_FLAGS(ch), ADM_INSTANTKILL);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_SWITCHMORTAL);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_CEDIT);
+                          break;
+    case ADMLVL_GRGOD:
+                          break;
+    case ADMLVL_GOD:
+                          break;
+    case ADMLVL_IMMORT:   SET_BIT_AR(ADM_FLAGS(ch), ADM_BUILD);
+                          break;
+    case ADMLVL_MORTAL:
+                          break;
+  }
+}
+
+ACMD(do_admin)
+{
+  char arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+  struct char_data *vict;
+  bool file = FALSE, found=FALSE, changed=FALSE;
+  int player_i=0, i, tmp_adm[AD_ARRAY_MAX];
+
+  if (!ADM_FLAGGED(ch, ADM_ADMIN)) {
+    send_to_char(ch, "You do not have sufficient privs to edit other people's privs.\r\n");
+    return;
+  }
+
+  two_arguments(argument, arg, arg2);
+
+  if (!*arg) {
+    send_to_char(ch, "Usage: @yadmin <player> <priv>@n - toggle privs@n\r\n");
+    send_to_char(ch, "       @yadmin <player>@n        - show player's privs\r\n");
+    send_to_char(ch, "       @yadmin help@n            - show priv names and full usage\r\n");
+    return;
+  }
+  else if (is_abbrev(arg, "help")) {
+    send_to_char(ch, "ADMIN\r\n\r\n");
+    send_to_char(ch, "Usage: @yadmin <player> <priv>@n  - toggle privs@n\r\n");
+    send_to_char(ch, "       @yadmin <player> all@n     - turn on ALL privs\r\n");
+    send_to_char(ch, "       @yadmin <player> none@n    - turn off ALL privs\r\n");
+    send_to_char(ch, "       @yadmin <player> default@n - Set default privs for admin level\r\n");
+    send_to_char(ch, "       @yadmin <player>@n         - show player's privs\r\n");
+    send_to_char(ch, "       @yadmin help@n             - show priv names\r\n\r\n");
+    send_to_char(ch, "NOTE: Works for offline players too!\r\n");
+    send_to_char(ch, "Valid privs are:\r\n");
+    for (i=0; *admin_flag_names[i] != '\n'; i++) {
+      send_to_char(ch, "@c%12.12s@n - @y%s@n\r\n", admin_flag_names[i], admin_flags[i]);
+    }
+    send_to_char(ch, "Build, AdvBuild and Poof privs for mortals require the OLC zone to be set!\r\n");
+  }
+  else {
+    if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)))
+    {
+	  // Not logged in? - just log them in for this
+      CREATE(vict, struct char_data, 1);
+      clear_char(vict);
+      CREATE(vict->player_specials, struct player_special_data, 1);
+
+      if ((player_i = load_char(arg, vict)) >= 0) {
+        char_to_room(vict, 0);
+        file = TRUE;
+      } else {
+        send_to_char(ch, "There is no such player.\r\n");
+        free_char(vict);
+        return;
+      }
+    }
+    changed = FALSE;
+
+    if (IS_NPC(vict)) {
+      send_to_char(ch, "%s is a mob, and mobs can't have admin privs!", GET_NAME(vict));
+    } else if (GET_ADMLEVEL(vict) > GET_ADMLEVEL(ch)) {
+      send_to_char(ch, "%s is a higher admin level, you can't change their admin privs!", GET_NAME(vict));
+    } else if (!*arg2) {
+      // Display player's current admin settings
+      send_to_char(ch, "%sAdmin information for %s%s\r\n", QBWHT, GET_NAME(vict), QNRM);
+      for (i=0; i < NUM_ADMFLAGS; i++) {
+        send_to_char(ch, "%s[%s%s%s] %s%-12.12s%s - %-40.40s%s\r\n",
+                      QCYN, QBWHT, ((ADM_FLAGGED(vict, i)) ? "X" : " "),
+                      QCYN, QYEL, admin_flag_names[i],
+                      QNRM, admin_flags[i], QNRM);
+      }
+    } else if (is_abbrev(arg2, "all")) {
+      /* Enable ALL admin flags */
+      for (i=0; i < NUM_ADMFLAGS; i++) {
+        if (!ADM_FLAGGED(vict, i)) {
+          SET_BIT_AR(ADM_FLAGS(vict), i);
+          send_to_char(ch, "Priv \"%s\" turned on for %s\r\n", admin_flags[i], GET_NAME(vict));
+          changed = TRUE;
+        }
+      }
+    } else if (is_abbrev(arg2, "none")) {
+      /* Remove ALL admin flags */
+      for (i=0; i < NUM_ADMFLAGS; i++) {
+        if (ADM_FLAGGED(vict, i)) {
+          REMOVE_BIT_AR(ADM_FLAGS(vict), i);
+          send_to_char(ch, "Priv \"%s\" turned off for %s\r\n", admin_flags[i], GET_NAME(vict));
+          changed = TRUE;
+        }
+      }
+    } else if (is_abbrev(arg2, "default")) {
+	  /* Copy current flags */
+	  for (i=0; i<AD_ARRAY_MAX; i++) tmp_adm[i] = ADM_FLAGS(ch)[i];
+      set_default_admin_privs(ch, FALSE);
+	  /* Compare for changed flags */
+	  for (i=0; i<AD_ARRAY_MAX; i++) {
+	    if (tmp_adm[i] != ADM_FLAGS(ch)[i]) {
+	      changed = TRUE;
+        }
+      }
+    } else {
+      for (i=0; i < NUM_ADMFLAGS && !found; i++) {
+        if (is_abbrev(arg2, admin_flag_names[i])) {
+          found = TRUE;
+          changed = FALSE;
+          if (!ADM_FLAGGED(ch, i)) {
+            send_to_char(ch, "You don't have priv \"%s\" so can't set it for %s\r\n", admin_flags[i], GET_NAME(vict));
+          } else if (ADM_FLAGGED(vict, i)) {
+            REMOVE_BIT_AR(ADM_FLAGS(vict), i);
+            send_to_char(ch, "Priv \"%s\" turned off for %s\r\n", admin_flags[i], GET_NAME(vict));
+            changed = TRUE;
+          } else {
+            SET_BIT_AR(ADM_FLAGS(vict), i);
+            send_to_char(ch, "Priv \"%s\" turned on for %s\r\n", admin_flags[i], GET_NAME(vict));
+            changed = TRUE;
+          }
+        }
+      }
+      if (!found) {
+        send_to_char(ch, "Invalid priv name!\r\nType @yadmin help@n for a list.\r\n");
+      }
+    }
+
+    if (changed && !file)
+      send_to_char(vict, "%sYour administrative privileges have changed - check your score%s\r\n", QMAG, QNRM);
+
+    if (file) {
+      GET_PFILEPOS(vict) = player_i;
+      if (found) {
+        save_char(vict);
+        send_to_char(ch, "Saved in file.\r\n");
+	  }
+      free_char(vict);
+    }
+  }
+}
+
 ACMD(do_advance)
 {
   struct char_data *victim;
@@ -1463,11 +1748,12 @@ ACMD(do_advance)
       return;
     }
   } else {
-    send_to_char(ch, "Advance who?\r\n");
+    send_to_char(ch, "Usage: %sadvance <player> <admin level>%s\r\n", QYEL, QNRM);
+    send_to_char(ch, "%s<admin level>%s may be a level name (e.g. mortal) or number.\r\n", QYEL, QNRM);
     return;
   }
 
-  if (GET_LEVEL(ch) <= GET_LEVEL(victim)) {
+  if (GET_ADMLEVEL(ch) <= GET_ADMLEVEL(victim)) {
     send_to_char(ch, "Maybe that's not such a great idea.\r\n");
     return;
   }
@@ -1475,26 +1761,29 @@ ACMD(do_advance)
     send_to_char(ch, "NO!  Not on NPC's.\r\n");
     return;
   }
-  if (!*level || (newlevel = atoi(level)) <= 0) {
+  if (!*level) {
+    send_to_char(ch, "You must specify a level!\r\n");
+    return;
+  }
+  if ((newlevel = get_admin_level_by_string(level)) < 0) {
     send_to_char(ch, "That's not a level!\r\n");
     return;
   }
-  if (newlevel > LVL_IMPL) {
-    send_to_char(ch, "%d is the highest possible level.\r\n", LVL_IMPL);
+  if (newlevel > ADMLVL_IMPL) {
+    send_to_char(ch, "%s (level %d) is the highest possible admin level.\r\n", admin_level_names[ADMLVL_IMPL], ADMLVL_IMPL);
     return;
   }
-  if (newlevel > GET_LEVEL(ch)) {
+  if (newlevel > GET_ADMLEVEL(ch)) {
     send_to_char(ch, "Yeah, right.\r\n");
     return;
   }
-  if (newlevel == GET_LEVEL(victim)) {
+  if (newlevel == GET_ADMLEVEL(victim)) {
     send_to_char(ch, "They are already at that level.\r\n");
     return;
   }
-  oldlevel = GET_LEVEL(victim);
-  if (newlevel < GET_LEVEL(victim)) {
+  oldlevel = GET_ADMLEVEL(victim);
+  if (newlevel < GET_ADMLEVEL(victim)) {
     do_start(victim);
-    GET_LEVEL(victim) = newlevel;
     send_to_char(victim, "You are momentarily enveloped by darkness!\r\nYou feel somewhat diminished.\r\n");
   } else {
     act("$n makes some strange gestures. A strange feeling comes upon you,\r\n"
@@ -1504,18 +1793,19 @@ ACMD(do_advance)
       "your body dissolves to the elements of time and space itself.\r\n"
       "Suddenly a silent explosion of light snaps you back to reality.\r\n\r\n"
       "You feel slightly different.", FALSE, ch, 0, victim, TO_VICT);
-}
+  }
 
+  set_admin_level(victim, newlevel);
   send_to_char(ch, "%s", CONFIG_OK);
 
   if (newlevel < oldlevel)
-    log("(GC) %s demoted %s from level %d to %d.",
+    log("(GC) %s demoted %s from admin level %d to %d.",
 		GET_NAME(ch), GET_NAME(victim), oldlevel, newlevel);
   else
-    log("(GC) %s has advanced %s to level %d (from %d)",
+    log("(GC) %s has advanced %s to admin level %d (from %d)",
 		GET_NAME(ch), GET_NAME(victim), newlevel, oldlevel);
 
-  if (oldlevel >= LVL_IMMORT && newlevel < LVL_IMMORT) {
+  if (oldlevel >= ADMLVL_IMMORT && newlevel < ADMLVL_IMMORT) {
     /* If they are no longer an immortal, remove the immortal only flags. */
     REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG1);
     REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
@@ -1524,17 +1814,16 @@ ACMD(do_advance)
     REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
     if (!PLR_FLAGGED(victim, PLR_NOWIZLIST))
       run_autowiz();
-  } else if (oldlevel < LVL_IMMORT && newlevel >= LVL_IMMORT) {
+  } else if (oldlevel < ADMLVL_IMMORT && newlevel >= ADMLVL_IMMORT) {
     SET_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
     SET_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
     SET_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
     SET_BIT_AR(PRF_FLAGS(victim), PRF_AUTOEXIT);
-        for (i = 1; i <= MAX_SKILLS; i++)
-          SET_SKILL(victim, i, 100);
-   GET_OLC_ZONE(victim) = NOWHERE;
+    for (i = 1; i <= MAX_SKILLS; i++)
+      SET_SKILL(victim, i, 100);
+    GET_OLC_ZONE(victim) = NOWHERE;
   }
 
-  gain_exp_regardless(victim, level_exp(GET_CLASS(victim), newlevel) - GET_EXP(victim));
   save_char(victim);
 }
 
@@ -1548,14 +1837,14 @@ ACMD(do_restore)
   one_argument(argument, buf);
   if (!*buf)
     send_to_char(ch, "Whom do you wish to restore?\r\n");
-   else if (is_abbrev(buf, "all"))
-   {
-    mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s restored all",GET_NAME(ch));
+  else if (is_abbrev(buf, "all"))
+  {
+    mudlog(NRM, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s restored all",GET_NAME(ch));
 
-     for (j = descriptor_list; j; j = j->next)
+    for (j = descriptor_list; j; j = j->next)
     {
-      if (!IS_PLAYING(j) || !(vict = j->character) || GET_LEVEL(vict) >= LVL_IMMORT)
-     continue;
+      if (!IS_PLAYING(j) || !(vict = j->character) || IS_ADMIN(vict, ADMLVL_IMMORT))
+        continue;
 
       GET_HIT(vict)  = GET_MAX_HIT(vict);
       GET_MANA(vict) = GET_MAX_MANA(vict);
@@ -1568,26 +1857,26 @@ ACMD(do_restore)
   }
   else if (!(vict = get_char_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
     send_to_char(ch, "%s", CONFIG_NOPERSON);
-  else if (!IS_NPC(vict) && ch != vict && GET_LEVEL(vict) >= GET_LEVEL(ch))
+  else if (!IS_NPC(vict) && ch != vict && GET_ADMLEVEL(vict) >= GET_ADMLEVEL(ch))
     send_to_char(ch, "They don't need your help.\r\n");
   else {
     GET_HIT(vict) = GET_MAX_HIT(vict);
     GET_MANA(vict) = GET_MAX_MANA(vict);
     GET_MOVE(vict) = GET_MAX_MOVE(vict);
 
-    if (!IS_NPC(vict) && GET_LEVEL(ch) >= LVL_GRGOD) {
-      if (GET_LEVEL(vict) >= LVL_IMMORT)
+    if (!IS_NPC(vict) && IS_ADMIN(ch, ADMLVL_GRGOD)) {
+      if (IS_ADMIN(vict, ADMLVL_IMMORT)) {
         for (i = 1; i <= MAX_SKILLS; i++)
           SET_SKILL(vict, i, 100);
-
-      if (GET_LEVEL(vict) >= LVL_GRGOD) {
-	vict->real_abils.str_add = 100;
-	vict->real_abils.intel = 25;
-	vict->real_abils.wis = 25;
-	vict->real_abils.dex = 25;
-	vict->real_abils.str = 18;
-	vict->real_abils.con = 25;
-	vict->real_abils.cha = 25;
+      }
+      if (IS_ADMIN(vict, ADMLVL_GRGOD)) {
+        vict->real_abils.str_add = 100;
+        vict->real_abils.intel = 25;
+        vict->real_abils.wis = 25;
+        vict->real_abils.dex = 25;
+        vict->real_abils.str = 18;
+        vict->real_abils.con = 25;
+        vict->real_abils.cha = 25;
       }
     }
     update_pos(vict);
@@ -1616,10 +1905,10 @@ static void perform_immort_invis(struct char_data *ch, int level)
   for (tch = world[IN_ROOM(ch)].people; tch; tch = tch->next_in_room) {
     if (tch == ch)
       continue;
-    if (GET_LEVEL(tch) >= GET_INVIS_LEV(ch) && GET_LEVEL(tch) < level)
+    if (GET_ADMLEVEL(tch) >= GET_INVIS_LEV(ch) && GET_ADMLEVEL(tch) < level)
       act("You blink and suddenly realize that $n is gone.", FALSE, ch, 0,
 	  tch, TO_VICT);
-    if (GET_LEVEL(tch) < GET_INVIS_LEV(ch) && GET_LEVEL(tch) >= level)
+    if (GET_ADMLEVEL(tch) < GET_INVIS_LEV(ch) && GET_ADMLEVEL(tch) >= level)
       act("You suddenly realize that $n is standing beside you.", FALSE, ch, 0,
 	  tch, TO_VICT);
   }
@@ -1643,11 +1932,11 @@ ACMD(do_invis)
     if (GET_INVIS_LEV(ch) > 0)
       perform_immort_vis(ch);
     else
-      perform_immort_invis(ch, GET_LEVEL(ch));
+      perform_immort_invis(ch, GET_ADMLEVEL(ch));
   } else {
     level = atoi(arg);
-    if (level > GET_LEVEL(ch))
-      send_to_char(ch, "You can't go invisible above your own level.\r\n");
+    if (level > GET_ADMLEVEL(ch))
+      send_to_char(ch, "You can't go invisible above your own admin level.\r\n");
     else if (level < 1)
       perform_immort_vis(ch);
     else
@@ -1669,7 +1958,7 @@ ACMD(do_gecho)
       if (IS_PLAYING(pt) && pt->character && pt->character != ch)
 	send_to_char(pt->character, "%s\r\n", argument);
 
-    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "(GC) %s gechoed: %s", GET_NAME(ch), argument);
+    mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "(GC) %s gechoed: %s", GET_NAME(ch), argument);
 
     if (PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
@@ -1695,7 +1984,7 @@ ACMD(do_dc)
     send_to_char(ch, "No such connection.\r\n");
     return;
   }
-  if (d->character && GET_LEVEL(d->character) >= GET_LEVEL(ch)) {
+  if (d->character && GET_ADMLEVEL(d->character) >= GET_ADMLEVEL(ch)) {
     if (!CAN_SEE(ch, d->character))
       send_to_char(ch, "No such connection.\r\n");
     else
@@ -2012,7 +2301,7 @@ ACMD(do_last)
   if (*argument) { /* parse it */
     half_chop(argument, arg, argument);
     while (*arg) {
-      if ((*arg == '*') && (GET_LEVEL(ch) == LVL_IMPL)) {
+      if ((*arg == '*') && (IS_ADMIN(ch, ADMLVL_IMPL))) {
         list_llog_entries(ch);
         return;
       }
@@ -2036,13 +2325,13 @@ ACMD(do_last)
       return;
     }
 
-    if ((GET_LEVEL(vict) > GET_LEVEL(ch)) && (GET_LEVEL(ch) < LVL_IMPL)) {
+    if ((GET_ADMLEVEL(vict) > GET_ADMLEVEL(ch)) && (!IS_ADMIN(ch, ADMLVL_IMPL))) {
       send_to_char(ch, "You are not sufficiently godly for that!\r\n");
       return;
     }
 
-    send_to_char(ch, "[%5ld] [%2d %s] %-12s : %-18s : %-20s\r\n",
-    GET_IDNUM(vict), (int) GET_LEVEL(vict),
+    send_to_char(ch, "[%5ld] [%2d %11s %s] %-12s : %-18s : %-20s\r\n",
+    GET_IDNUM(vict), (int) GET_LEVEL(vict), admin_level_names[((int) GET_ADMLEVEL(vict))],
     class_abbrevs[(int) GET_CLASS(vict)], GET_NAME(vict),
     GET_HOST(vict) && *GET_HOST(vict) ? GET_HOST(vict) : "(NOHOST)",
     ctime(&vict->player.time.logon));
@@ -2098,40 +2387,40 @@ ACMD(do_force)
 
   if (!*arg || !*to_force)
     send_to_char(ch, "Whom do you wish to force do what?\r\n");
-  else if ((GET_LEVEL(ch) < LVL_GRGOD) || (str_cmp("all", arg) && str_cmp("room", arg))) {
+  else if ((!ADM_FLAGGED(ch, ADM_FORCEMASS)) || (str_cmp("all", arg) && str_cmp("room", arg))) {
     if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)))
       send_to_char(ch, "%s", CONFIG_NOPERSON);
-    else if (!IS_NPC(vict) && GET_LEVEL(ch) < LVL_GOD)
+    else if (!IS_NPC(vict) && !IS_ADMIN(ch, ADMLVL_GOD))
       send_to_char(ch, "You cannot force players.\r\n");
-    else if (!IS_NPC(vict) && GET_LEVEL(ch) <= GET_LEVEL(vict))
+    else if (!IS_NPC(vict) && GET_ADMLEVEL(ch) <= GET_ADMLEVEL(vict))
       send_to_char(ch, "No, no, no!\r\n");
     else {
       send_to_char(ch, "%s", CONFIG_OK);
       act(buf1, TRUE, ch, NULL, vict, TO_VICT);
-      mudlog(CMP, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s forced %s to %s", GET_NAME(ch), GET_NAME(vict), to_force);
+      mudlog(CMP, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s forced %s to %s", GET_NAME(ch), GET_NAME(vict), to_force);
       command_interpreter(vict, to_force);
     }
   } else if (!str_cmp("room", arg)) {
     send_to_char(ch, "%s", CONFIG_OK);
-    mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s forced room %d to %s",
+    mudlog(NRM, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s forced room %d to %s",
 		GET_NAME(ch), GET_ROOM_VNUM(IN_ROOM(ch)), to_force);
 
     for (vict = world[IN_ROOM(ch)].people; vict; vict = next_force) {
       next_force = vict->next_in_room;
-      if (!IS_NPC(vict) && GET_LEVEL(vict) >= GET_LEVEL(ch))
-	continue;
+      if (!IS_NPC(vict) && GET_ADMLEVEL(vict) >= GET_ADMLEVEL(ch))
+        continue;
       act(buf1, TRUE, ch, NULL, vict, TO_VICT);
       command_interpreter(vict, to_force);
     }
   } else { /* force all */
     send_to_char(ch, "%s", CONFIG_OK);
-    mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s forced all to %s", GET_NAME(ch), to_force);
+    mudlog(NRM, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s forced all to %s", GET_NAME(ch), to_force);
 
     for (i = descriptor_list; i; i = next_desc) {
       next_desc = i->next;
 
-      if (STATE(i) != CON_PLAYING || !(vict = i->character) || (!IS_NPC(vict) && GET_LEVEL(vict) >= GET_LEVEL(ch)))
-	continue;
+      if (STATE(i) != CON_PLAYING || !(vict = i->character) || (!IS_NPC(vict) && GET_ADMLEVEL(vict) >= GET_ADMLEVEL(ch)))
+        continue;
       act(buf1, TRUE, ch, NULL, vict, TO_VICT);
       command_interpreter(vict, to_force);
     }
@@ -2145,7 +2434,7 @@ ACMD(do_wiznet)
   struct descriptor_data *d;
   char emote = FALSE;
   char any = FALSE;
-  int level = LVL_IMMORT;
+  int level = ADMLVL_IMMORT;
 
   skip_spaces(&argument);
   delete_doubledollar(argument);
@@ -2161,8 +2450,8 @@ ACMD(do_wiznet)
     one_argument(argument + 1, buf1);
     if (is_number(buf1)) {
       half_chop(argument+1, buf1, argument);
-      level = MAX(atoi(buf1), LVL_IMMORT);
-      if (level > GET_LEVEL(ch)) {
+      level = MAX(atoi(buf1), ADMLVL_IMMORT);
+      if (level > GET_ADMLEVEL(ch)) {
 	send_to_char(ch, "You can't wizline above your own level.\r\n");
 	return;
       }
@@ -2173,7 +2462,7 @@ ACMD(do_wiznet)
   case '@':
     send_to_char(ch, "God channel status:\r\n");
     for (any = 0, d = descriptor_list; d; d = d->next) {
-      if (STATE(d) != CON_PLAYING || GET_LEVEL(d->character) < LVL_IMMORT)
+      if (STATE(d) != CON_PLAYING || !IS_ADMIN(d->character, ADMLVL_IMMORT))
         continue;
       if (!CAN_SEE(ch, d->character))
         continue;
@@ -2201,7 +2490,7 @@ ACMD(do_wiznet)
     send_to_char(ch, "Don't bother the gods like that!\r\n");
     return;
   }
-  if (level > LVL_IMMORT) {
+  if (level > ADMLVL_IMMORT) {
     snprintf(buf1, sizeof(buf1), "@c%s: <%d> %s%s@n\r\n", GET_NAME(ch), level, emote ? "<--- " : "", argument);
     snprintf(buf2, sizeof(buf1), "@cSomeone: <%d> %s%s@n\r\n", level, emote ? "<--- " : "", argument);
   } else {
@@ -2210,7 +2499,7 @@ ACMD(do_wiznet)
   }
 
   for (d = descriptor_list; d; d = d->next) {
-    if (IS_PLAYING(d) && (GET_LEVEL(d->character) >= level) &&
+    if (IS_PLAYING(d) && (GET_ADMLEVEL(d->character) >= level) &&
 	(!PRF_FLAGGED(d->character, PRF_NOWIZ))
 	&& (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
       if (CAN_SEE(d->character, ch)) {
@@ -2237,14 +2526,14 @@ ACMD(do_zreset)
   one_argument(argument, arg);
 
   if (*arg == '*') {
-    if (GET_LEVEL(ch) < LVL_GOD){
+    if (!IS_ADMIN(ch, ADMLVL_GOD)) {
       send_to_char(ch, "You do not have permission to reset the entire world.\r\n");
       return;
    } else {
       for (i = 0; i <= top_of_zone_table; i++)
       reset_zone(i);
     send_to_char(ch, "Reset world.\r\n");
-    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s reset entire world.", GET_NAME(ch));
+    mudlog(NRM, MAX(ADMLVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s reset entire world.", GET_NAME(ch));
     return; }
   } else if (*arg == '.' || !*arg)
     i = world[IN_ROOM(ch)].zone;
@@ -2254,10 +2543,10 @@ ACMD(do_zreset)
       if (zone_table[i].number == j)
 	break;
   }
-  if (i <= top_of_zone_table && (can_edit_zone(ch, i) || GET_LEVEL(ch) > LVL_IMMORT)) {
+  if (i <= top_of_zone_table && (can_edit_zone(ch, i) || IS_ADMIN(ch, ADMLVL_GOD))) {
     reset_zone(i);
     send_to_char(ch, "Reset zone #%d: %s.\r\n", zone_table[i].number, zone_table[i].name);
-    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s reset zone %d (%s)", GET_NAME(ch), zone_table[i].number, zone_table[i].name);
+    mudlog(NRM, MAX(ADMLVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s reset zone %d (%s)", GET_NAME(ch), zone_table[i].number, zone_table[i].name);
   } else
     send_to_char(ch, "You do not have permission to reset this zone. Try %d.\r\n", GET_OLC_ZONE(ch));
 }
@@ -2278,7 +2567,7 @@ ACMD(do_wizutil)
     send_to_char(ch, "There is no such player.\r\n");
   else if (IS_NPC(vict))
     send_to_char(ch, "You can't do that to a mob!\r\n");
-  else if (GET_LEVEL(vict) >= GET_LEVEL(ch) && vict != ch)
+  else if (GET_ADMLEVEL(vict) >= GET_ADMLEVEL(ch) && vict != ch)
     send_to_char(ch, "Hmmm...you'd better not.\r\n");
   else {
     switch (subcmd) {
@@ -2299,17 +2588,17 @@ ACMD(do_wizutil)
       REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_KILLER);
       send_to_char(ch, "Pardoned.\r\n");
       send_to_char(vict, "You have been pardoned by the Gods!\r\n");
-      mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s pardoned by %s", GET_NAME(vict), GET_NAME(ch));
+      mudlog(BRF, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s pardoned by %s", GET_NAME(vict), GET_NAME(ch));
       break;
     case SCMD_NOTITLE:
       result = PLR_TOG_CHK(vict, PLR_NOTITLE);
-      mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) Notitle %s for %s by %s.",
+      mudlog(NRM, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) Notitle %s for %s by %s.",
 		ONOFF(result), GET_NAME(vict), GET_NAME(ch));
       send_to_char(ch, "(GC) Notitle %s for %s by %s.\r\n", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
       break;
     case SCMD_MUTE:
       result = PLR_TOG_CHK(vict, PLR_NOSHOUT);
-      mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) Mute %s for %s by %s.",
+      mudlog(BRF, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) Mute %s for %s by %s.",
 		ONOFF(result), GET_NAME(vict), GET_NAME(ch));
       send_to_char(ch, "(GC) Mute %s for %s by %s.\r\n", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
       break;
@@ -2323,23 +2612,23 @@ ACMD(do_wizutil)
 	return;
       }
       SET_BIT_AR(PLR_FLAGS(vict), PLR_FROZEN);
-      GET_FREEZE_LEV(vict) = GET_LEVEL(ch);
+      GET_FREEZE_LEV(vict) = GET_ADMLEVEL(ch);
       send_to_char(vict, "A bitter wind suddenly rises and drains every erg of heat from your body!\r\nYou feel frozen!\r\n");
       send_to_char(ch, "Frozen.\r\n");
       act("A sudden cold wind conjured from nowhere freezes $n!", FALSE, vict, 0, 0, TO_ROOM);
-      mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s frozen by %s.", GET_NAME(vict), GET_NAME(ch));
+      mudlog(BRF, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s frozen by %s.", GET_NAME(vict), GET_NAME(ch));
       break;
     case SCMD_THAW:
       if (!PLR_FLAGGED(vict, PLR_FROZEN)) {
-	send_to_char(ch, "Sorry, your victim is not morbidly encased in ice at the moment.\r\n");
-	return;
+        send_to_char(ch, "Sorry, your victim is not morbidly encased in ice at the moment.\r\n");
+        return;
       }
-      if (GET_FREEZE_LEV(vict) > GET_LEVEL(ch)) {
-	send_to_char(ch, "Sorry, a level %d God froze %s... you can't unfreeze %s.\r\n",
+      if (GET_FREEZE_LEV(vict) > GET_ADMLEVEL(ch)) {
+        send_to_char(ch, "Sorry, a level %d God froze %s... you can't unfreeze %s.\r\n",
 		GET_FREEZE_LEV(vict), GET_NAME(vict), HMHR(vict));
-	return;
+        return;
       }
-      mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s un-frozen by %s.", GET_NAME(vict), GET_NAME(ch));
+      mudlog(BRF, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s un-frozen by %s.", GET_NAME(vict), GET_NAME(ch));
       REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_FROZEN);
       send_to_char(vict, "A fireball suddenly explodes in front of you, melting the ice!\r\nYou feel thawed.\r\n");
       send_to_char(ch, "Thawed.\r\n");
@@ -2347,15 +2636,15 @@ ACMD(do_wizutil)
       break;
     case SCMD_UNAFFECT:
       if (vict->affected || AFF_FLAGS(vict)) {
-	while (vict->affected)
-	  affect_remove(vict, vict->affected);
-    for(taeller=0; taeller < AF_ARRAY_MAX; taeller++)
-      AFF_FLAGS(vict)[taeller] = 0;
-    send_to_char(vict, "There is a brief flash of light!\r\nYou feel slightly different.\r\n");
-	send_to_char(ch, "All spells removed.\r\n");
+        while (vict->affected)
+          affect_remove(vict, vict->affected);
+        for(taeller=0; taeller < AF_ARRAY_MAX; taeller++)
+          AFF_FLAGS(vict)[taeller] = 0;
+        send_to_char(vict, "There is a brief flash of light!\r\nYou feel slightly different.\r\n");
+        send_to_char(ch, "All spells removed.\r\n");
       } else {
-	send_to_char(ch, "Your victim does not have any affections!\r\n");
-	return;
+        send_to_char(ch, "Your victim does not have any affections!\r\n");
+        return;
       }
       break;
     default:
@@ -2451,17 +2740,17 @@ ACMD(do_show)
     const char *cmd;
     const char level;
   } fields[] = {
-    { "nothing",	0  },				/* 0 */
-    { "zones",		LVL_IMMORT },			/* 1 */
-    { "player",		LVL_IMMORT },
-    { "rent",		LVL_IMMORT },
-    { "stats",		LVL_IMMORT },
-    { "errors",		LVL_IMMORT },			/* 5 */
-    { "death",		LVL_IMMORT },
-    { "godrooms",	LVL_IMMORT },
-    { "shops",		LVL_IMMORT },
-    { "houses",		LVL_IMMORT },
-    { "snoop",		LVL_IMMORT },			/* 10 */
+    { "nothing",	ADMLVL_MORTAL },			/* 0 */
+    { "zones",		ADMLVL_IMMORT },			/* 1 */
+    { "player",		ADMLVL_IMMORT },
+    { "rent",		ADMLVL_IMMORT },
+    { "stats",		ADMLVL_IMMORT },
+    { "errors",		ADMLVL_IMMORT },			/* 5 */
+    { "death",		ADMLVL_IMMORT },
+    { "godrooms",	ADMLVL_IMMORT },
+    { "shops",		ADMLVL_IMMORT },
+    { "houses",		ADMLVL_IMMORT },
+    { "snoop",		ADMLVL_IMMORT },			/* 10 */
     { "\n", 0 }
   };
 
@@ -2470,7 +2759,7 @@ ACMD(do_show)
   if (!*argument) {
     send_to_char(ch, "Show options:\r\n");
     for (j = 0, i = 1; fields[i].level; i++)
-      if (fields[i].level <= GET_LEVEL(ch))
+      if (fields[i].level <= GET_ADMLEVEL(ch))
 	send_to_char(ch, "%-15s%s", fields[i].cmd, (!(++j % 5) ? "\r\n" : ""));
     send_to_char(ch, "\r\n");
     return;
@@ -2482,7 +2771,7 @@ ACMD(do_show)
     if (!strncmp(field, fields[l].cmd, strlen(field)))
       break;
 
-  if (GET_LEVEL(ch) < fields[l].level) {
+  if (GET_ADMLEVEL(ch) < fields[l].level) {
     send_to_char(ch, "You are not godly enough for that!\r\n");
     return;
   }
@@ -2550,8 +2839,8 @@ ACMD(do_show)
       free_char(vict);
       return;
     }
-    send_to_char(ch, "Player: %-12s (%s) [%2d %s]\r\n", GET_NAME(vict),
-      genders[(int) GET_SEX(vict)], GET_LEVEL(vict), class_abbrevs[(int)
+    send_to_char(ch, "Player: %-12s (%s) [%2d %11s %s]\r\n", GET_NAME(vict),
+      genders[(int) GET_SEX(vict)], GET_LEVEL(vict), admin_level_names[(GET_ADMLEVEL(vict))], class_abbrevs[(int)
       GET_CLASS(vict)]);
     send_to_char(ch, "Au: %-8d  Bal: %-8d  Exp: %-8d  Align: %-5d  Lessons: %-3d\r\n",
     GET_GOLD(vict), GET_BANK_GOLD(vict), GET_EXP(vict),
@@ -2679,7 +2968,7 @@ ACMD(do_show)
     for (d = descriptor_list; d; d = d->next) {
       if (d->snooping == NULL || d->character == NULL)
 	continue;
-      if (STATE(d) != CON_PLAYING || GET_LEVEL(ch) < GET_LEVEL(d->character))
+      if (STATE(d) != CON_PLAYING || GET_ADMLEVEL(ch) < GET_ADMLEVEL(d->character))
 	continue;
       if (!CAN_SEE(ch, d->character) || IN_ROOM(d->character) == NOWHERE)
 	continue;
@@ -2720,64 +3009,65 @@ ACMD(do_show)
     const char pcnpc;
     const char type;
   } set_fields[] = {
-   { "ac",		LVL_BUILDER, 	BOTH, 	NUMBER },  /* 0  */
-   { "afk",             LVL_BUILDER,	PC,	BINARY },  /* 1  */
-   { "age",		LVL_GOD,	BOTH,	NUMBER },
-   { "align",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "bank",		LVL_BUILDER, 	PC, 	NUMBER },
-   { "brief",		LVL_GOD, 	PC, 	BINARY },  /* 5  */
-   { "cha",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "class",		LVL_BUILDER, 	BOTH, 	MISC },
-   { "color",		LVL_GOD, 	PC, 	BINARY },
-   { "con", 		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "damroll",		LVL_BUILDER, 	BOTH, 	NUMBER },  /* 10 */
-   { "deleted",		LVL_IMPL, 	PC, 	BINARY },
-   { "dex", 		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "drunk",		LVL_BUILDER, 	BOTH, 	MISC },
-   { "exp", 		LVL_GOD, 	BOTH, 	NUMBER },
-   { "frozen",		LVL_GRGOD, 	PC,	BINARY },  /* 15 */
-   { "gold",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "height",		LVL_BUILDER,	BOTH,	NUMBER },
-   { "hitpoints",       LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "hitroll",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "hunger",		LVL_BUILDER, 	BOTH, 	MISC },    /* 20 */
-   { "int", 		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "invis",		LVL_GOD, 	PC, 	NUMBER },
-   { "invstart",        LVL_BUILDER,	PC, 	BINARY },
-   { "killer",		LVL_GOD, 	PC, 	BINARY },
-   { "level",		LVL_GRGOD, 	BOTH, 	NUMBER },  /* 25 */
-   { "loadroom",	LVL_BUILDER, 	PC, 	MISC },
-   { "mana",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "maxhit",	        LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "maxmana",       	LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "maxmove",		LVL_BUILDER, 	BOTH, 	NUMBER },  /* 30 */
-   { "move",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "name",	LVL_IMMORT, 	PC, 	MISC },
-   { "nodelete",	LVL_GOD, 	PC, 	BINARY },
-   { "nohassle",	LVL_GOD, 	PC, 	BINARY },
-   { "nosummon",	LVL_BUILDER,	PC,	BINARY },  /* 35 */
-   { "nowizlist", 	LVL_GRGOD, 	PC, 	BINARY },
-   { "olc",		LVL_GRGOD,	PC,	MISC },
-   { "password",	LVL_GRGOD,	PC,	MISC },
-   { "poofin",		LVL_IMMORT,	PC,	MISC },
-   { "poofout",         LVL_IMMORT,	PC,	MISC },   /* 40 */
-   { "practices", 	LVL_GOD, 	PC, 	NUMBER },
-   { "quest",		LVL_GOD, 	PC, 	BINARY },
-   { "room",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "screenwidth", LVL_GOD,  PC,   NUMBER },
-   { "sex", 		LVL_GOD, 	BOTH, 	MISC },  /* 45 */
-   { "showvnums",  LVL_BUILDER,  PC, BINARY },
-   { "siteok",   LVL_GOD,  PC,   BINARY },
-   { "str",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "stradd",		LVL_BUILDER, 	BOTH, 	NUMBER },
-   { "thief",		LVL_GOD, 	PC, 	BINARY }, /* 50 */
-   { "thirst",		LVL_BUILDER, 	BOTH, 	MISC },
-   { "title",		LVL_GOD, 	PC, 	MISC   },
-   { "variable",        LVL_GRGOD,	PC,	MISC },
-   { "weight",		LVL_BUILDER,	BOTH,	NUMBER },
-   { "wis", 		LVL_BUILDER, 	BOTH, 	NUMBER }, /* 55 */
-   { "questpoints",     LVL_GOD,        PC,     NUMBER },
-   { "questhistory",    LVL_GOD,        PC,   NUMBER },
+   { "ac",          ADMLVL_BUILDER, BOTH, NUMBER },  /* 0  */
+   { "admlevel",    ADMLVL_GRGOD,   PC,   NUMBER },  /* 1  */
+   { "afk",         ADMLVL_BUILDER, PC,   BINARY },  /* 2  */
+   { "age",         ADMLVL_GOD,     BOTH, NUMBER },
+   { "align",       ADMLVL_BUILDER, BOTH, NUMBER },
+   { "bank",        ADMLVL_BUILDER, PC,   NUMBER },  /* 5  */
+   { "brief",       ADMLVL_GOD,     PC,   BINARY },
+   { "cha",         ADMLVL_BUILDER, BOTH, NUMBER },
+   { "class",       ADMLVL_BUILDER, BOTH, MISC },
+   { "color",       ADMLVL_GOD,     PC,   BINARY },
+   { "con",         ADMLVL_BUILDER, BOTH, NUMBER },  /* 10 */
+   { "damroll",     ADMLVL_BUILDER, BOTH, NUMBER },
+   { "deleted",     ADMLVL_IMPL,    PC,   BINARY },
+   { "dex",         ADMLVL_BUILDER, BOTH, NUMBER },
+   { "drunk",       ADMLVL_BUILDER, BOTH, MISC },
+   { "exp",         ADMLVL_GOD,     BOTH, NUMBER },  /* 15 */
+   { "frozen",      ADMLVL_GRGOD,   PC,   BINARY },
+   { "gold",        ADMLVL_BUILDER, BOTH, NUMBER },
+   { "height",      ADMLVL_BUILDER, BOTH, NUMBER },
+   { "hitpoints",   ADMLVL_BUILDER, BOTH, NUMBER },
+   { "hitroll",     ADMLVL_BUILDER, BOTH, NUMBER },  /* 20 */
+   { "hunger",      ADMLVL_BUILDER, BOTH, MISC },
+   { "int",         ADMLVL_BUILDER, BOTH, NUMBER },
+   { "invis",       ADMLVL_GOD,     PC,   NUMBER },
+   { "invstart",    ADMLVL_BUILDER, PC,   BINARY },
+   { "killer",      ADMLVL_GOD,     PC,   BINARY },  /* 25 */
+   { "level",       ADMLVL_GRGOD,   BOTH, NUMBER },
+   { "loadroom",    ADMLVL_BUILDER, PC,   MISC },
+   { "mana",        ADMLVL_BUILDER, BOTH, NUMBER },
+   { "maxhit",      ADMLVL_BUILDER, BOTH, NUMBER },
+   { "maxmana",     ADMLVL_BUILDER, BOTH, NUMBER },  /* 30 */
+   { "maxmove",     ADMLVL_BUILDER, BOTH, NUMBER },
+   { "move",        ADMLVL_BUILDER, BOTH, NUMBER },
+   { "name",        ADMLVL_IMMORT,  PC,   MISC },
+   { "nodelete",    ADMLVL_GOD,     PC,   BINARY },
+   { "nohassle",    ADMLVL_GOD,     PC,   BINARY },  /* 35 */
+   { "nosummon",    ADMLVL_BUILDER, PC,   BINARY },
+   { "nowizlist",   ADMLVL_GRGOD,   PC,   BINARY },
+   { "olc",         ADMLVL_GRGOD,   PC,   MISC },
+   { "password",    ADMLVL_GRGOD,   PC,   MISC },
+   { "poofin",      ADMLVL_IMMORT,  PC,   MISC },    /* 40 */
+   { "poofout",     ADMLVL_IMMORT,  PC,   MISC },
+   { "practices",   ADMLVL_GOD,     PC,   NUMBER },
+   { "quest",       ADMLVL_GOD,     PC,   BINARY },
+   { "questhistory",ADMLVL_GOD,     PC,   NUMBER },
+   { "questpoints", ADMLVL_GOD,     PC,   NUMBER },  /* 45 */
+   { "room",        ADMLVL_BUILDER, BOTH, NUMBER },
+   { "screenwidth", ADMLVL_GOD,     PC,   NUMBER },
+   { "sex",         ADMLVL_GOD,     BOTH, MISC },
+   { "showvnums",   ADMLVL_BUILDER, PC,   BINARY },
+   { "siteok",      ADMLVL_GOD,     PC,   BINARY },  /* 50 */
+   { "str",         ADMLVL_BUILDER, BOTH, NUMBER },
+   { "stradd",      ADMLVL_BUILDER, BOTH, NUMBER },
+   { "thief",       ADMLVL_GOD,     PC,   BINARY },
+   { "thirst",      ADMLVL_BUILDER, BOTH, MISC },
+   { "title",       ADMLVL_GOD,     PC,   MISC   },  /* 55 */
+   { "variable",    ADMLVL_GRGOD,   PC,   MISC },
+   { "weight",      ADMLVL_BUILDER, BOTH, NUMBER },
+   { "wis",         ADMLVL_BUILDER, BOTH, NUMBER },
    { "\n", 0, BOTH, MISC }
   };
 
@@ -2788,13 +3078,13 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
   room_vnum rvnum;
 
   /* Check to make sure all the levels are correct */
-  if (GET_LEVEL(ch) != LVL_IMPL) {
-    if (!IS_NPC(vict) && GET_LEVEL(ch) <= GET_LEVEL(vict) && vict != ch) {
+  if (!IS_ADMIN(ch, ADMLVL_IMPL)) {
+    if (!IS_NPC(vict) && GET_ADMLEVEL(ch) <= GET_ADMLEVEL(vict) && vict != ch) {
       send_to_char(ch, "Maybe that's not such a great idea...\r\n");
       return (0);
     }
   }
-  if (GET_LEVEL(ch) < set_fields[mode].level) {
+  if (GET_ADMLEVEL(ch) < set_fields[mode].level) {
     send_to_char(ch, "You are not godly enough for that!\r\n");
     return (0);
   }
@@ -2829,7 +3119,15 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
     case 1: /* afk */
       SET_OR_REMOVE(PRF_FLAGS(vict), PRF_AFK);
       break;
-    case 2: /* age */
+    case 2: /* admlevel */
+      if ((IS_NPC(vict) || value > GET_ADMLEVEL(ch)) || value > ADMLVL_IMPL) {
+        send_to_char(ch, "You can't do that.\r\n");
+        return (0);
+      }
+      RANGE(1, ADMLVL_IMPL);
+      vict->player_specials->saved.adm_level = value;
+      break;
+    case 3: /* age */
       if (value < 2 || value > 200) {	/* Arbitrary limits. */
         send_to_char(ch, "Ages 2 to 200 accepted.\r\n");
         return (0);
@@ -2839,59 +3137,59 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
        * some values below the starting age (17) anyway. -gg 5/27/98 */
       vict->player.time.birth = time(0) - ((value - 17) * SECS_PER_MUD_YEAR);
       break;
-    case 3: /* align */
+    case 4: /* align */
       GET_ALIGNMENT(vict) = RANGE(-1000, 1000);
       affect_total(vict);
       break;
-    case 4: /* bank */
+    case 5: /* bank */
       GET_BANK_GOLD(vict) = RANGE(0, 100000000);
       break;
-    case 5: /* brief */
+    case 6: /* brief */
       SET_OR_REMOVE(PRF_FLAGS(vict), PRF_BRIEF);
       break;
-    case 6:  /* cha */
-      if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
+    case 7:  /* cha */
+      if (IS_NPC(vict) || IS_ADMIN(vict, ADMLVL_GRGOD))
         RANGE(3, 25);
       else
         RANGE(3, 18);
       vict->real_abils.cha = value;
       affect_total(vict);
       break;
-    case 7: /* class */
+    case 8: /* class */
       if ((i = parse_class(*val_arg)) == CLASS_UNDEFINED) {
         send_to_char(ch, "That is not a class.\r\n");
         return (0);
       }
       GET_CLASS(vict) = i;
       break;
-    case 8:  /* color */
+    case 9:  /* color */
       SET_OR_REMOVE(PRF_FLAGS(vict), (PRF_COLOR_1));
       SET_OR_REMOVE(PRF_FLAGS(vict), (PRF_COLOR_2));
       break;
-    case 9: /* con */
-      if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
+    case 10: /* con */
+      if (IS_NPC(vict) || IS_ADMIN(vict, ADMLVL_GRGOD))
         RANGE(3, 25);
       else
         RANGE(3, 18);
       vict->real_abils.con = value;
       affect_total(vict);
       break;
-    case 10:  /* damroll */
+    case 11:  /* damroll */
       vict->points.damroll = RANGE(-20, 20);
       affect_total(vict);
       break;
-    case 11: /* delete */
+    case 12: /* delete */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_DELETED);
       break;
-    case 12: /* dex */
-      if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
+    case 13: /* dex */
+      if (IS_NPC(vict) || IS_ADMIN(vict, ADMLVL_GRGOD))
         RANGE(3, 25);
       else
         RANGE(3, 18);
       vict->real_abils.dex = value;
       affect_total(vict);
       break;
-    case 13: /* drunk */
+    case 14: /* drunk */
       if (!str_cmp(val_arg, "off")) {
         GET_COND(vict, DRUNK) = -1;
         send_to_char(ch, "%s's drunkenness is now off.\r\n", GET_NAME(vict));
@@ -2905,32 +3203,32 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
         return (0);
       }
       break;
-    case 14: /* exp */
+    case 15: /* exp */
       vict->points.exp = RANGE(0, 50000000);
       break;
-    case 15: /* frozen */
+    case 16: /* frozen */
       if (ch == vict && on) {
         send_to_char(ch, "Better not -- could be a long winter!\r\n");
         return (0);
       }
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_FROZEN);
       break;
-    case 16: /* gold */
+    case 17: /* gold */
       GET_GOLD(vict) = RANGE(0, 100000000);
       break;
-    case 17: /* height */
+    case 18: /* height */
       GET_HEIGHT(vict) = value;
       affect_total(vict);
       break;
-    case 18: /* hit */
+    case 19: /* hit */
       vict->points.hit = RANGE(-9, vict->points.max_hit);
       affect_total(vict);
       break;
-    case 19: /* hitroll */
+    case 20: /* hitroll */
       vict->points.hitroll = RANGE(-20, 20);
       affect_total(vict);
       break;
-    case 20: /* hunger */
+    case 21: /* hunger */
       if (!str_cmp(val_arg, "off")) {
         GET_COND(vict, HUNGER) = -1;
         send_to_char(ch, "%s's hunger is now off.\r\n", GET_NAME(vict));
@@ -2944,36 +3242,36 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
         return (0);
        }
        break;
-   case 21: /* int */
-      if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
+   case 22: /* int */
+      if (IS_NPC(vict) || IS_ADMIN(vict, ADMLVL_GRGOD))
         RANGE(3, 25);
       else
         RANGE(3, 18);
       vict->real_abils.intel = value;
       affect_total(vict);
       break;
-    case 22: /* invis */
-      if (GET_LEVEL(ch) < LVL_IMPL && ch != vict) {
+    case 23: /* invis */
+      if (!IS_ADMIN(vict, ADMLVL_IMPL) && ch != vict) {
         send_to_char(ch, "You aren't godly enough for that!\r\n");
         return (0);
       }
-      GET_INVIS_LEV(vict) = RANGE(0, GET_LEVEL(vict));
+      GET_INVIS_LEV(vict) = RANGE(0, GET_ADMLEVEL(vict));
       break;
-    case 23: /* invistart */
+    case 24: /* invistart */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_INVSTART);
       break;
-    case 24: /* killer */
+    case 25: /* killer */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_KILLER);
       break;
-    case 25: /* level */
-      if ((!IS_NPC(vict) && value > GET_LEVEL(ch)) || value > LVL_IMPL) {
+    case 26: /* level */
+      if ((!IS_NPC(vict) && value > GET_LEVEL(ch)) || value > CONFIG_MAX_LEVEL) {
         send_to_char(ch, "You can't do that.\r\n");
         return (0);
       }
-      RANGE(1, LVL_IMPL);
+      RANGE(1, CONFIG_MAX_LEVEL);
       vict->player.level = value;
       break;
-    case 26: /* loadroom */
+    case 27: /* loadroom */
       if (!str_cmp(val_arg, "off")) {
         REMOVE_BIT_AR(PLR_FLAGS(vict), PLR_LOADROOM);
       } else if (is_number(val_arg)) {
@@ -2991,28 +3289,28 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
         return (0);
       }
       break;
-    case 27: /* mana */
+    case 28: /* mana */
       vict->points.mana = RANGE(0, vict->points.max_mana);
       affect_total(vict);
       break;
-    case 28: /* maxhit */
+    case 29: /* maxhit */
       vict->points.max_hit = RANGE(1, 5000);
       affect_total(vict);
       break;
-    case 29: /* maxmana */
+    case 30: /* maxmana */
       vict->points.max_mana = RANGE(1, 5000);
       affect_total(vict);
       break;
-    case 30: /* maxmove */
+    case 31: /* maxmove */
       vict->points.max_move = RANGE(1, 5000);
       affect_total(vict);
       break;
-    case 31: /* move */
+    case 32: /* move */
       vict->points.move = RANGE(0, vict->points.max_move);
       affect_total(vict);
       break;
-    case 32: /* name */
-      if (ch != vict && GET_LEVEL(ch) < LVL_IMPL) {
+    case 33: /* name */
+      if (ch != vict && (!IS_ADMIN(ch, ADMLVL_IMPL))) {
         send_to_char(ch, "Only Imps can change the name of other players.\r\n");
         return (0);
       }
@@ -3021,24 +3319,24 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
         return (0);
       }
       break;
-    case 33: /* nodelete */
+    case 34: /* nodelete */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_NODELETE);
       break;
-    case 34: /* nohassle */
-      if (GET_LEVEL(ch) < LVL_GOD && ch != vict) {
+    case 35: /* nohassle */
+      if ((!IS_ADMIN(ch, ADMLVL_GOD)) && ch != vict) {
         send_to_char(ch, "You aren't godly enough for that!\r\n");
         return (0);
       }
       SET_OR_REMOVE(PRF_FLAGS(vict), PRF_NOHASSLE);
       break;
-    case 35: /* nosummon */
+    case 36: /* nosummon */
       SET_OR_REMOVE(PRF_FLAGS(vict), PRF_SUMMONABLE);
       send_to_char(ch, "Nosummon %s for %s.\r\n", ONOFF(!on), GET_NAME(vict));
       break;
-    case 36: /* nowiz */
+    case 37: /* nowiz */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_NOWIZLIST);
       break;
-    case 37: /* olc */
+    case 38: /* olc */
       if (is_abbrev(val_arg, "socials") || is_abbrev(val_arg, "actions") || is_abbrev(val_arg, "aedit"))
         GET_OLC_ZONE(vict) = AEDIT_PERMISSION;
       else if (is_abbrev(val_arg, "hedit") || is_abbrev(val_arg, "help"))
@@ -3053,8 +3351,8 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
       } else
         GET_OLC_ZONE(vict) = atoi(val_arg);
       break;
-    case 38: /* password */
-      if (GET_LEVEL(vict) >= LVL_GRGOD) {
+    case 39: /* password */
+      if (IS_ADMIN(vict, ADMLVL_GRGOD)) {
         send_to_char(ch, "You cannot change that.\r\n");
         return (0);
       }
@@ -3062,39 +3360,59 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
       *(GET_PASSWD(vict) + MAX_PWD_LENGTH) = '\0';
       send_to_char(ch, "Password changed to '%s'.\r\n", val_arg);
       break;
-    case 39: /* poofin */
-      if ((vict == ch) || (GET_LEVEL(ch) == LVL_IMPL)) {
+    case 40: /* poofin */
+      if ((vict == ch) || (IS_ADMIN(ch, ADMLVL_IMPL))) {
         skip_spaces(&val_arg);
 
         if (POOFIN(vict))
           free(POOFIN(vict));
 
-      if (!*val_arg)
+        if (!*val_arg)
           POOFIN(vict) = NULL;
         else
           POOFIN(vict) = strdup(val_arg);
         }
       break;
-    case 40: /* poofout */
-      if ((vict == ch) || (GET_LEVEL(ch) == LVL_IMPL)) {
+    case 41: /* poofout */
+      if ((vict == ch) || (IS_ADMIN(ch, ADMLVL_IMPL))) {
         skip_spaces(&val_arg);
 
         if (POOFOUT(vict))
           free(POOFOUT(vict));
 
-	if (!*val_arg)
+        if (!*val_arg)
           POOFOUT(vict) = NULL;
         else
           POOFOUT(vict) = strdup(val_arg);
         }
       break;
-    case 41: /* practices */
+    case 42: /* practices */
       GET_PRACTICES(vict) = RANGE(0, 100);
       break;
-    case 42: /* quest */
+    case 43: /* quest */
       SET_OR_REMOVE(PRF_FLAGS(vict), PRF_QUEST);
       break;
-    case 43: /* room */
+    case 44: /* questpoints */
+      GET_QUESTPOINTS(vict) = RANGE(0, 100000000);
+      break;
+    case 45: /* questhistory */
+      qvnum = atoi(val_arg);
+      if (real_quest(qvnum) == NOTHING) {
+        send_to_char(ch, "That quest doesn't exist.\r\n");
+        return FALSE;
+      } else {
+        if (is_complete(vict, qvnum)) {
+          remove_completed_quest(vict, qvnum);
+          send_to_char(ch, "Quest %d removed from history for player %s.\r\n",
+             qvnum, GET_NAME(vict));
+        } else {
+          add_completed_quest(vict, qvnum);
+          send_to_char(ch, "Quest %d added to history for player %s.\r\n",
+             qvnum, GET_NAME(vict));
+        }
+      }
+      break;
+    case 46: /* room */
       if ((rnum = real_room(value)) == NOWHERE) {
         send_to_char(ch, "No room exists with that number.\r\n");
         return (0);
@@ -3103,24 +3421,24 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
         char_from_room(vict);
       char_to_room(vict, rnum);
       break;
-    case 44: /* screenwidth */
+    case 47: /* screenwidth */
       GET_SCREEN_WIDTH(vict) = RANGE(40, 200);
       break;
-    case 45: /* sex */
+    case 48: /* sex */
       if ((i = search_block(val_arg, genders, FALSE)) < 0) {
         send_to_char(ch, "Must be 'male', 'female', or 'neutral'.\r\n");
         return (0);
       }
       GET_SEX(vict) = i;
       break;
-    case 46: /* showvnums */
+    case 49: /* showvnums */
       SET_OR_REMOVE(PRF_FLAGS(vict), PRF_SHOWVNUMS);
       break;
-    case 47: /* siteok */
+    case 50: /* siteok */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_SITEOK);
       break;
-    case 48: /* str */
-      if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
+    case 51: /* str */
+      if (IS_NPC(vict) || IS_ADMIN(vict, ADMLVL_GRGOD))
         RANGE(3, 25);
       else
         RANGE(3, 18);
@@ -3128,16 +3446,16 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
       vict->real_abils.str_add = 0;
       affect_total(vict);
       break;
-    case 49: /* stradd */
+    case 52: /* stradd */
       vict->real_abils.str_add = RANGE(0, 100);
       if (value > 0)
         vict->real_abils.str = 18;
       affect_total(vict);
       break;
-    case 50: /* thief */
+    case 53: /* thief */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_THIEF);
       break;
-    case 51: /* thirst */
+    case 54: /* thirst */
       if (!str_cmp(val_arg, "off")) {
         GET_COND(vict, THIRST) = -1;
         send_to_char(ch, "%s's thirst is now off.\r\n", GET_NAME(vict));
@@ -3151,45 +3469,25 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
         return (0);
       }
       break;
-    case 52: /* title */
+    case 55: /* title */
       set_title(vict, val_arg);
       send_to_char(ch, "%s's title is now: %s\r\n", GET_NAME(vict), GET_TITLE(vict));
       break;
-    case 53: /* variable */
+    case 56: /* variable */
       return perform_set_dg_var(ch, vict, val_arg);
       break;
-    case 54: /* weight */
+    case 57: /* weight */
       GET_WEIGHT(vict) = value;
       affect_total(vict);
       break;
-    case 55: /* wis */
-      if (IS_NPC(vict) || GET_LEVEL(vict) >= LVL_GRGOD)
+    case 58: /* wis */
+      if (IS_NPC(vict) || IS_ADMIN(vict, ADMLVL_GRGOD))
         RANGE(3, 25);
       else
         RANGE(3, 18);
       vict->real_abils.wis = value;
       affect_total(vict);
       break;
-    case 56: /* questpoints */
-      GET_QUESTPOINTS(vict) = RANGE(0, 100000000);
-      break;
-    case 57: /* questhistory */
-      qvnum = atoi(val_arg);
-      if (real_quest(qvnum) == NOTHING) {
-        send_to_char(ch, "That quest doesn't exist.\r\n");
-        return FALSE;
-      } else {
-        if (is_complete(vict, qvnum)) {
-          remove_completed_quest(vict, qvnum);
-          send_to_char(ch, "Quest %d removed from history for player %s.\r\n",
-     qvnum, GET_NAME(vict));
-        } else {
-          add_completed_quest(vict, qvnum);
-          send_to_char(ch, "Quest %d added to history for player %s.\r\n",
-     qvnum, GET_NAME(vict));
-        }
-        break;
-      }
     default:
       send_to_char(ch, "Can't set that!\r\n");
       return (0);
@@ -3215,9 +3513,9 @@ void show_set_help(struct char_data *ch)
 
   len = snprintf(buf, sizeof(buf), "%sCommand             Lvl    Who?  Type%s\r\n", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
   for (i = 0; *(set_fields[i].cmd) != '\n'; i++) {
-	if (set_fields[i].level <= GET_LEVEL(ch)) {
+	if (set_fields[i].level <= GET_ADMLEVEL(ch)) {
       add_len = snprintf(buf+len, sizeof(buf)-len, "%-20s%-5s  %-4s  %-6s\r\n", set_fields[i].cmd,
-                                        set_levels[((int)(set_fields[i].level) - LVL_IMMORT)],
+                                        set_levels[((int)(set_fields[i].level) - ADMLVL_IMMORT)],
                                         set_targets[(int)(set_fields[i].pcnpc)-1],
                                         set_types[(int)(set_fields[i].type)]);
       len += add_len;
@@ -3318,7 +3616,7 @@ ACMD(do_set)
 
 ACMD(do_saveall)
 {
- if (GET_LEVEL(ch) < LVL_BUILDER)
+ if (!IS_ADMIN(ch, ADMLVL_BUILDER))
     send_to_char (ch, "You are not holy enough to use this privelege.\n\r");
  else {
     save_all();
@@ -3378,7 +3676,7 @@ ACMD(do_links)
 #define MAX_HITROLL_ALLOWED      MAX(GET_LEVEL(mob)/3, 1)
 #define MAX_MOB_GOLD_ALLOWED     GET_LEVEL(mob)*3000
 #define MAX_EXP_ALLOWED          GET_LEVEL(mob)*GET_LEVEL(mob) * 120
-#define MAX_LEVEL_ALLOWED        LVL_IMPL
+#define MAX_LEVEL_ALLOWED        CONFIG_MAX_LEVEL
 #define GET_OBJ_AVG_DAM(obj)     (((GET_OBJ_VAL(obj, 2) + 1) / 2.0) * GET_OBJ_VAL(obj, 1))
 /* arbitrary limit for per round dam */
 #define MAX_MOB_DAM_ALLOWED      500
@@ -3653,10 +3951,10 @@ ACMD (do_zcheck)
                           GET_OBJ_COST(obj), MAX_OBJ_COST);
       }
 
-      if (GET_OBJ_LEVEL(obj) > LVL_IMMORT-1 && (found=1))
+      if (GET_OBJ_LEVEL(obj) > CONFIG_MAX_LEVEL && (found=1))
         len += snprintf(buf + len, sizeof(buf) - len,
                           "- has min level set to %d (max %d).\r\n",
-                          GET_OBJ_LEVEL(obj), LVL_IMMORT-1);
+                          GET_OBJ_LEVEL(obj), CONFIG_MAX_LEVEL);
 
       if (obj->action_description && *obj->action_description &&
           GET_OBJ_TYPE(obj) != ITEM_STAFF &&
@@ -4153,7 +4451,7 @@ ACMD(do_zpurge)
     send_to_char(ch, "That isn't a valid zone number!\r\n");
     return;
   }
-  if (GET_LEVEL(ch) < LVL_GOD && !can_edit_zone(ch, zone)) {
+  if (!IS_ADMIN(ch, ADMLVL_GOD) && !can_edit_zone(ch, zone)) {
     send_to_char(ch, "You can only purge your own zone!\r\n");
     return;
   }
@@ -4162,14 +4460,14 @@ ACMD(do_zpurge)
       purge_room(real_room(vroom));
     }
     send_to_char(ch, "Purged zone #%d: %s.\r\n", zone_table[zone].number, zone_table[zone].name);
-    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s purged zone %d (%s)", GET_NAME(ch), zone_table[zone].number, zone_table[zone].name);
+    mudlog(NRM, MAX(ADMLVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s purged zone %d (%s)", GET_NAME(ch), zone_table[zone].number, zone_table[zone].name);
   }
   else {
     for (room = 0; room <= top_of_world; room++) {
       purge_room(room);
     }
     send_to_char(ch, "Purged world.\r\n");
-    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s purged entire world.", GET_NAME(ch));
+    mudlog(NRM, MAX(ADMLVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s purged entire world.", GET_NAME(ch));
   }
 }
 
@@ -4205,23 +4503,23 @@ ACMD(do_file)
     char *file;         /* The file location, relative to the working dir. */
     int read_backwards; /* Should the file be read backwards by default? */
   } fields[] = {
-    { "xnames",         LVL_GOD,    XNAME_FILE,          TRUE},
-    { "levels",         LVL_GOD,    LEVELS_LOGFILE,      TRUE},
-    { "rip",            LVL_GOD,    RIP_LOGFILE,         TRUE},
-    { "players",        LVL_GOD,    NEWPLAYERS_LOGFILE,  TRUE},
-    { "rentgone",       LVL_GOD,    RENTGONE_LOGFILE,    TRUE},
-    { "errors",         LVL_GOD,    ERRORS_LOGFILE,      TRUE},
-    { "godcmds",        LVL_GOD,    GODCMDS_LOGFILE,     TRUE},
-    { "syslog",         LVL_GOD,    SYSLOG_LOGFILE,      TRUE},
-    { "crash",          LVL_GOD,    CRASH_LOGFILE,       TRUE},
-    { "help",           LVL_GOD,    HELP_LOGFILE,        TRUE},
-    { "changelog",      LVL_GOD,    CHANGE_LOG_FILE,     FALSE},
-    { "deletes",        LVL_GOD,    DELETES_LOGFILE,     TRUE},
-    { "restarts",       LVL_GOD,    RESTARTS_LOGFILE,    TRUE},
-    { "usage",          LVL_GOD,    USAGE_LOGFILE,       TRUE},
-    { "badpws",         LVL_GOD,    BADPWS_LOGFILE,      TRUE},
-    { "olc",            LVL_GOD,    OLC_LOGFILE,         TRUE},
-    { "trigger",        LVL_GOD,    TRIGGER_LOGFILE,     TRUE},
+    { "xnames",         ADMLVL_GOD,    XNAME_FILE,          TRUE},
+    { "levels",         ADMLVL_GOD,    LEVELS_LOGFILE,      TRUE},
+    { "rip",            ADMLVL_GOD,    RIP_LOGFILE,         TRUE},
+    { "players",        ADMLVL_GOD,    NEWPLAYERS_LOGFILE,  TRUE},
+    { "rentgone",       ADMLVL_GOD,    RENTGONE_LOGFILE,    TRUE},
+    { "errors",         ADMLVL_GOD,    ERRORS_LOGFILE,      TRUE},
+    { "godcmds",        ADMLVL_GOD,    GODCMDS_LOGFILE,     TRUE},
+    { "syslog",         ADMLVL_GOD,    SYSLOG_LOGFILE,      TRUE},
+    { "crash",          ADMLVL_GOD,    CRASH_LOGFILE,       TRUE},
+    { "help",           ADMLVL_GOD,    HELP_LOGFILE,        TRUE},
+    { "changelog",      ADMLVL_GOD,    CHANGE_LOG_FILE,     FALSE},
+    { "deletes",        ADMLVL_GOD,    DELETES_LOGFILE,     TRUE},
+    { "restarts",       ADMLVL_GOD,    RESTARTS_LOGFILE,    TRUE},
+    { "usage",          ADMLVL_GOD,    USAGE_LOGFILE,       TRUE},
+    { "badpws",         ADMLVL_GOD,    BADPWS_LOGFILE,      TRUE},
+    { "olc",            ADMLVL_GOD,    OLC_LOGFILE,         TRUE},
+    { "trigger",        ADMLVL_GOD,    TRIGGER_LOGFILE,     TRUE},
     { "\n", 0, "\n", FALSE } /* This must be the last entry */
   };
 
@@ -4237,7 +4535,7 @@ ACMD(do_file)
    if (!*argument) {
      send_to_char(ch, "USAGE: file <filename> <num lines>\r\n\r\nFile options:\r\n");
      for (j = 0, i = 0; fields[i].level; i++)
-       if (fields[i].level <= GET_LEVEL(ch))
+       if (fields[i].level <= GET_ADMLEVEL(ch))
          send_to_char(ch, "%-15s%s\r\n", fields[i].cmd, fields[i].file);
      return;
    }
@@ -4258,7 +4556,7 @@ ACMD(do_file)
      return;
    }
 
-   if (GET_LEVEL(ch) < fields[l].level) {
+   if (GET_ADMLEVEL(ch) < fields[l].level) {
      send_to_char(ch, "You have not achieved a high enough level to view '%s'.\r\n",
          fields[l].cmd);
      return;
@@ -4284,7 +4582,7 @@ ACMD(do_file)
    /* Must be able to access the file on disk. */
    if (!(req_file=fopen(fields[l].file,"r"))) {
      send_to_char(ch, "The file %s can not be opened.\r\n", fields[l].file);
-     mudlog(BRF, LVL_IMPL, TRUE,
+     mudlog(BRF, ADMLVL_IMPL, TRUE,
             "SYSERR: Error opening file %s using 'file' command.",
             fields[l].file);
      return;
@@ -4360,19 +4658,19 @@ ACMD(do_changelog)
 
   sprintf(buf, "%s.bak", CHANGE_LOG_FILE);
   if (rename(CHANGE_LOG_FILE, buf)) {
-    mudlog(BRF, LVL_IMPL, TRUE,
+    mudlog(BRF, ADMLVL_IMPL, TRUE,
            "SYSERR: Error making backup changelog file (%s)", buf);
     return;
   }
 
   if (!(fl = fopen(buf, "r"))) {
-    mudlog(BRF, LVL_IMPL, TRUE,
+    mudlog(BRF, ADMLVL_IMPL, TRUE,
            "SYSERR: Error opening backup changelog file (%s)", buf);
     return;
   }
 
   if (!(new = fopen(CHANGE_LOG_FILE, "w"))) {
-    mudlog(BRF, LVL_IMPL, TRUE,
+    mudlog(BRF, ADMLVL_IMPL, TRUE,
            "SYSERR: Error opening new changelog file (%s)", CHANGE_LOG_FILE);
     return;
   }
@@ -4413,7 +4711,8 @@ ACMD(do_plist)
   int i, len = 0, count = 0;
   char mode, buf[MAX_STRING_LENGTH * 20], name_search[MAX_NAME_LENGTH], time_str[MAX_STRING_LENGTH];
   struct time_info_data time_away;
-  int low = 0, high = LVL_IMPL, low_day = 0, high_day = 10000, low_hr = 0, high_hr = 24;
+  int low = 0, high = CONFIG_MAX_LEVEL, low_day = 0, high_day = 10000, low_hr = 0, high_hr = 24;
+  bool imm_only = FALSE, mort_only = FALSE;
 
   skip_spaces(&argument);
   strcpy(buf, argument);        /* strcpy: OK (sizeof: argument == buf) */
@@ -4439,11 +4738,11 @@ ACMD(do_plist)
         break;
       case 'i':
         strcpy(buf, buf1);
-        low = LVL_IMMORT;
+        imm_only = TRUE;
         break;
       case 'm':
         strcpy(buf, buf1);
-        high = LVL_IMMORT - 1;
+        mort_only = TRUE;
         break;
       case 'd':
         half_chop(buf1, arg, buf);
@@ -4466,12 +4765,19 @@ ACMD(do_plist)
   }
 
   len = 0;
-  len += snprintf(buf + len, sizeof(buf) - len, "@W[ Id] (Lv) Name         Last@n\r\n"
-                  "%s-------------------------------------%s\r\n", CCCYN(ch, C_NRM),
-                  CCNRM(ch, C_NRM));
+  len += snprintf(buf + len, sizeof(buf) - len,
+                  "%s[ Id] (Lv Admin-Level) Name         Last\r\n"
+                  "%s-------------------------------------------------%s\r\n",
+                  QBWHT, QCYN, QNRM);
 
   for (i = 0; i <= top_of_p_table; i++) {
     if (player_table[i].level < low || player_table[i].level > high)
+      continue;
+
+    if (imm_only && player_table[i].admlevel < ADMLVL_IMMORT)
+      continue;
+
+    if (mort_only && player_table[i].admlevel >= ADMLVL_IMMORT)
       continue;
 
     time_away = *real_time_passed(time(0), player_table[i].last);
@@ -4487,13 +4793,13 @@ ACMD(do_plist)
     strcpy(time_str, asctime(localtime(&player_table[i].last)));
     time_str[strlen(time_str) - 1] = '\0';
 
-    len += snprintf(buf + len, sizeof(buf) - len, "[%3ld] (%2d) %c%-15s %s\r\n",
-                    player_table[i].id, player_table[i].level,
+    len += snprintf(buf + len, sizeof(buf) - len, "[%3ld] (%2d %11s) %c%-15s %s\r\n",
+                    player_table[i].id, player_table[i].level, admin_level_names[(player_table[i].admlevel)],
                     UPPER(*player_table[i].name), player_table[i].name + 1, time_str);
     count++;
   }
-  snprintf(buf + len, sizeof(buf) - len, "%s-------------------------------------%s\r\n"
-           "%d players listed.\r\n", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM), count);
+  snprintf(buf + len, sizeof(buf) - len, "%s-------------------------------------------------%s\r\n"
+           "%d players listed.\r\n", QCYN, QNRM, count);
   page_string(ch->desc, buf, TRUE);
 }
 
@@ -4586,7 +4892,7 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
   /* Save the changed player index - the pfile is saved by perform_set */
   save_player_index();
 
-  mudlog(BRF, LVL_IMMORT, TRUE, "(GC) %s changed the name of %s to %s", GET_NAME(ch), old_name, new_name);
+  mudlog(BRF, ADMLVL_IMMORT, TRUE, "(GC) %s changed the name of %s to %s", GET_NAME(ch), old_name, new_name);
 
   if (vict->desc)  /* Descriptor is set if the victim is logged in */
     send_to_char(vict, "Your login name has changed from %s%s%s to %s%s%s.\r\n", CCYEL(vict, C_NRM), old_name, CCNRM(vict, C_NRM),
@@ -4615,7 +4921,7 @@ ACMD(do_zlock)
     return;
   }
   if (is_abbrev(arg, "all")) {
-    if (GET_LEVEL(ch) < LVL_GRGOD) {
+    if (!IS_ADMIN(ch, ADMLVL_GRGOD)) {
       send_to_char(ch, "You do not have sufficient access to lock all zones.\r\n");
       return;
     }
@@ -4653,7 +4959,7 @@ ACMD(do_zlock)
       return;
     }
     send_to_char(ch, "%d zones have now been locked.\r\n", counter);
-    mudlog(BRF, LVL_GOD, TRUE, "(GC) %s has locked ALL zones!", GET_NAME(ch));
+    mudlog(BRF, ADMLVL_GOD, TRUE, "(GC) %s has locked ALL zones!", GET_NAME(ch));
     return;
   }
   if (is_abbrev(arg, "list")) {
@@ -4684,7 +4990,7 @@ ACMD(do_zlock)
   }
 
   /* Check the builder list */
-  if (GET_LEVEL(ch) < LVL_GRGOD && !is_name(GET_NAME(ch), zone_table[zn].builders) && GET_OLC_ZONE(ch) != znvnum) {
+  if (!IS_ADMIN(ch, ADMLVL_GRGOD) && !is_name(GET_NAME(ch), zone_table[zn].builders) && GET_OLC_ZONE(ch) != znvnum) {
     send_to_char(ch, "You do not have sufficient access to lock that zone!\r\n");
     return;
   }
@@ -4696,7 +5002,7 @@ ACMD(do_zlock)
   }
   SET_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
   if (save_zone(zn)) {
-    mudlog(NRM, LVL_GRGOD, TRUE, "(GC) %s has locked zone %d", GET_NAME(ch), znvnum);
+    mudlog(NRM, ADMLVL_GRGOD, TRUE, "(GC) %s has locked zone %d", GET_NAME(ch), znvnum);
   }
   else
   {
@@ -4723,7 +5029,7 @@ ACMD(do_zunlock)
     return;
   }
   if (is_abbrev(arg, "all")) {
-    if (GET_LEVEL(ch) < LVL_GRGOD) {
+    if (!IS_ADMIN(ch, ADMLVL_GRGOD)) {
       send_to_char(ch, "You do not have sufficient access to lock zones.\r\n");
       return;
     }
@@ -4747,7 +5053,7 @@ ACMD(do_zunlock)
       return;
     }
     send_to_char(ch, "%d zones have now been unlocked.\r\n", counter);
-    mudlog(BRF, LVL_GOD, TRUE, "(GC) %s has unlocked ALL zones!", GET_NAME(ch));
+    mudlog(BRF, ADMLVL_GOD, TRUE, "(GC) %s has unlocked ALL zones!", GET_NAME(ch));
     return;
   }
   if (is_abbrev(arg, "list")) {
@@ -4778,7 +5084,7 @@ ACMD(do_zunlock)
   }
 
   /* Check the builder list */
-  if (GET_LEVEL(ch) < LVL_GRGOD && !is_name(GET_NAME(ch), zone_table[zn].builders) && GET_OLC_ZONE(ch) != znvnum) {
+  if (!IS_ADMIN(ch, ADMLVL_GRGOD) && !is_name(GET_NAME(ch), zone_table[zn].builders) && GET_OLC_ZONE(ch) != znvnum) {
     send_to_char(ch, "You do not have sufficient access to unlock that zone!\r\n");
     return;
   }
@@ -4790,7 +5096,7 @@ ACMD(do_zunlock)
   }
   REMOVE_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
   if (save_zone(zn)) {
-    mudlog(NRM, LVL_GRGOD, TRUE, "(GC) %s has unlocked zone %d", GET_NAME(ch), znvnum);
+    mudlog(NRM, ADMLVL_GRGOD, TRUE, "(GC) %s has unlocked zone %d", GET_NAME(ch), znvnum);
   }
   else
   {
@@ -4879,7 +5185,7 @@ ACMD(do_recent)
     limit = atoi(arg);
   }
 
-  if (GET_LEVEL(ch) >= LVL_GRGOD) {  /* If High-Level Imm, then show Host IP */
+  if (IS_ADMIN(ch, ADMLVL_GRGOD)) {  /* If High-Level Imm, then show Host IP */
     send_to_char(ch, " ID | DATE/TIME           | HOST IP                               | Player Name\r\n");
   } else {
     send_to_char(ch, " ID | DATE/TIME           | Player Name\r\n");
@@ -4899,7 +5205,7 @@ ACMD(do_recent)
 
     if ((limit == 0) || (count < limit))
     {
-      if (GET_LEVEL(ch) >= LVL_GRGOD)   /* If High-Level Imm, then show Host IP */
+      if (IS_ADMIN(ch, ADMLVL_GRGOD))   /* If High-Level Imm, then show Host IP */
       {
         if (this->new_player == TRUE) {
           send_to_char(ch, "%3d | %-19.19s | %s%-37s%s | %s %s(New Player)%s\r\n", this->vnum, tmstr, loc ? QRED : "", this->host, QNRM, this->name, QYEL, QNRM);

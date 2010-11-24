@@ -466,7 +466,7 @@ void copyover_recover()
       /* Add to the list of 'recent' players (since last reboot) with copyover flag */
       if (AddRecentPlayer(GET_NAME(d->character), d->host, FALSE, TRUE) == FALSE)
       {
-        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "Failure to AddRecentPlayer (returned FALSE).");
+        mudlog(BRF, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "Failure to AddRecentPlayer (returned FALSE).");
       }
     }
   }
@@ -916,13 +916,13 @@ void game_loop(socket_t local_mother_desc)
     /* Check for any signals we may have received. */
     if (reread_wizlist) {
       reread_wizlist = FALSE;
-      mudlog(CMP, LVL_IMMORT, TRUE, "Signal received - rereading wizlists.");
+      mudlog(CMP, ADMLVL_IMMORT, TRUE, "Signal received - rereading wizlists.");
       reboot_wizlists();
     }
 /* Orphaned right now as signal trapping is used for Webster lookup
     if (emergency_unban) {
       emergency_unban = FALSE;
-      mudlog(BRF, LVL_IMMORT, TRUE, "Received SIGUSR2 - completely unrestricting game (emergent)");
+      mudlog(BRF, ADMLVL_IMMORT, TRUE, "Received SIGUSR2 - completely unrestricting game (emergent)");
       ban_list = NULL;
       circle_restrict = 0;
       num_invalid = 0;
@@ -1557,7 +1557,7 @@ static int new_descriptor(socket_t s)
   /* determine if the site is banned */
   if (isbanned(newd->host) == BAN_ALL) {
     CLOSE_SOCKET(desc);
-    mudlog(CMP, LVL_GOD, TRUE, "Connection attempt denied from [%s]", newd->host);
+    mudlog(CMP, ADMLVL_GOD, TRUE, "Connection attempt denied from [%s]", newd->host);
     free(newd);
     return (0);
   }
@@ -2096,13 +2096,13 @@ void close_socket(struct descriptor_data *d)
       /* We are guaranteed to have a person. */
       act("$n has lost $s link.", TRUE, link_challenged, 0, 0, TO_ROOM);
       save_char(link_challenged);
-      mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(link_challenged)), TRUE, "Closing link to: %s.", GET_NAME(link_challenged));
+      mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(link_challenged)), TRUE, "Closing link to: %s.", GET_NAME(link_challenged));
     } else {
-      mudlog(CMP, LVL_IMMORT, TRUE, "Losing player: %s.", GET_NAME(d->character) ? GET_NAME(d->character) : "<null>");
+      mudlog(CMP, ADMLVL_IMMORT, TRUE, "Losing player: %s.", GET_NAME(d->character) ? GET_NAME(d->character) : "<null>");
       free_char(d->character);
     }
   } else
-    mudlog(CMP, LVL_IMMORT, TRUE, "Losing descriptor without char.");
+    mudlog(CMP, ADMLVL_IMMORT, TRUE, "Losing descriptor without char.");
 
   /* JE 2/22/95 -- part of my unending quest to make switch stable */
   if (d->original && d->original->desc)

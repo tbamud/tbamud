@@ -106,6 +106,7 @@
 #define EX_CLOSED     (1 << 1)   /**< The door is closed	*/
 #define EX_LOCKED     (1 << 2)   /**< The door is locked	*/
 #define EX_PICKPROOF  (1 << 3)   /**< Lock can't be picked	*/
+#define EX_HIDDEN     (1 << 4)   /**< Exit is hidden      	*/
 
 /* Sector types: used in room_data.sector_type */
 #define SECT_INSIDE          0		/**< Indoors, connected to SECT macro. */
@@ -256,8 +257,9 @@
 #define PRF_AUTOMAP      31   /**< Show map at the side of room descs */
 #define PRF_AUTOKEY      32   /**< Automatically unlock locked doors when opening */
 #define PRF_AUTODOOR     33   /**< Use the next available door */
+#define PRF_MORTAL       34   /**< Mortal flag turns off all imm powers */
 /** Total number of available PRF flags */
-#define NUM_PRF_FLAGS    34
+#define NUM_PRF_FLAGS    35
 
 /* Affect bits: used in char_data.char_specials.saved.affected_by */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
@@ -286,6 +288,38 @@
 #define AFF_CHARM          22   /**< Char is charmed */
 /** Total number of affect flags not including the don't use flag. */
 #define NUM_AFF_FLAGS   22
+
+/*
+ * ADM flags - define admin privs for chars.  Comments show default admin level.
+ */
+#define ADM_NONE           -1	/* Special case used in command list         MORTAL  */
+#define ADM_TELLALL         0	/* Can use 'tell all' to broadcast           GOD     */
+#define ADM_SEEINV          1	/* Sees other chars inventory                IMM     */
+#define ADM_SEESECRET       2	/* Sees secret objects, mobs and doors       IMM     */
+#define ADM_KNOWWEATHER     3	/* Knows details of weather                  GOD     */
+#define ADM_FULLWHERE       4	/* Full output of 'where' command            IMM     */
+#define ADM_MONEY           5	/* Char has a bottomless wallet              GOD     */
+#define ADM_EATANYTHING     6	/* Char can eat anything                     GOD     */
+#define ADM_NOPOISON        7	/* Char can't be poisoned                    IMM     */
+#define ADM_WALKANYWHERE    8	/* Char has unrestricted walking             IMM     */
+#define ADM_NOKEYS          9	/* Char needs no keys for locks              GOD     */
+#define ADM_INSTANTKILL     10	/* "kill" command is instant                 IMPL    */
+#define ADM_NOSTEAL         11	/* Char cannot be stolen from                IMM     */
+#define ADM_TRANSALL        12	/* Can use 'trans all'                       GRGOD   */
+#define ADM_SWITCHMORTAL    13	/* Can 'switch' to a PC's linkless body      IMPL    */
+#define ADM_FORCEMASS       14	/* Can force rooms or all                    GRGOD   */
+#define ADM_ALLHOUSES       15	/* Can enter any house                       GRGOD   */
+#define ADM_NODAMAGE        16	/* Cannot be damaged                         IMM     */
+#define ADM_ALLSHOPS        17	/* Can use all shops                         GOD     */
+#define ADM_CEDIT           18	/* Can use cedit                             IMPL    */
+#define ADM_BUILD           19	/* Can use basic building tools              BUILDER */
+#define ADM_ADVBUILD        20	/* Can use advanced building tools           BUILDER */
+#define ADM_POOF            21	/* Can use goto and set poof messages        IMM     */
+#define ADM_ADMIN           22  /* Can use the admin command to set privs    IMPL    */
+#define ADM_SETQP           23  /* Can 'set' a player's questpoints          GRGOD   */
+#define ADM_ADVIBT          24  /* Advanced IBT (ideas, bugs, typos) control GRGOD   */
+
+#define NUM_ADMFLAGS        25
 
 /* Modes of connectedness: used by descriptor_data.state 		*/
 #define CON_PLAYING       0 /**< Playing - Nominal state 		*/
@@ -512,6 +546,7 @@
 #define TW_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Wear Locations */
 #define EF_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Extra Flags */
 #define ZN_ARRAY_MAX    4  /**< # Bytes in Bit vector - Zone Flags */
+#define AD_ARRAY_MAX    4  /**< # Bytes in Bit vector - Admin Priv Flags */
 
 /* other #defined constants */
 /* **DO**NOT** blindly change the number of levels in your MUD merely by
@@ -519,15 +554,16 @@
  * Other changes throughout the code are required.  See coding.doc for details.
  *
  * LVL_IMPL should always be the HIGHEST possible immortal level, and
- * LVL_IMMORT should always be the LOWEST immortal level.  The number of
- * mortal levels will always be LVL_IMMORT - 1. */
-#define LVL_IMPL    34  /**< Level of Implementors */
-#define LVL_GRGOD   33  /**< Level of Greater Gods */
-#define LVL_GOD     32  /**< Level of Gods */
-#define LVL_IMMORT	31  /**< Level of Immortals */
+ * LVL_IMMORT should always be the LOWEST immortal level.  The only
+ * mortal level will always be zero, or LVL_IMMORT - 1. */
+#define ADMLVL_IMPL    4  /**< Level of Implementors */
+#define ADMLVL_GRGOD   3  /**< Level of Greater Gods */
+#define ADMLVL_GOD     2  /**< Level of Gods         */
+#define ADMLVL_IMMORT  1  /**< Level of Immortals    */
+#define ADMLVL_MORTAL  0  /**< Level of Mortals      */
 
 /** Minimum level to build and to run the saveall command */
-#define LVL_BUILDER	LVL_IMMORT
+#define ADMLVL_BUILDER	ADMLVL_IMMORT
 
 /** Arbitrary number that won't be in a string */
 #define MAGIC_NUMBER	(0x06)
@@ -841,7 +877,7 @@ struct char_player_data
   char *title;                   /**< PC / NPC title */
   byte sex;                      /**< PC / NPC sex */
   byte chclass;                  /**< PC / NPC class */
-  byte level;                    /**< PC / NPC level */
+  ubyte level;                   /**< PC / NPC level */
   struct time_data time;         /**< PC AGE in days */
   ubyte weight;                  /**< PC / NPC weight */
   ubyte height;                  /**< PC / NPC height */
@@ -916,7 +952,9 @@ struct char_special_data
 /** Data only needed by PCs, and needs to be saved to disk. */
 struct player_special_data_saved
 {
-  byte skills[MAX_SKILLS+1]; /**< Character skills. */
+  byte adm_level;             /**< PC Admin level  */
+  int admflags[AD_ARRAY_MAX]; /**< Admin Priv flags */
+  byte skills[MAX_SKILLS+1];  /**< Character skills. */
   int wimp_level;         /**< Below this # of hit points, flee! */
   byte freeze_level;      /**< Level of god who froze char, if any */
   sh_int invis_level;     /**< level of invisibility */
@@ -1267,6 +1305,7 @@ struct game_data
   int max_exp_loss; /**< Maximum experience losable per death.*/
   int max_npc_corpse_time; /**< Num tics before NPC corpses decompose*/
   int max_pc_corpse_time; /**< Num tics before PC corpse decomposes.*/
+  int max_mortal_level;   /**< Maximum level that a mortal can obtain.*/
   int idle_void; /**< Num tics before PC sent to void(idle)*/
   int idle_rent_time; /**< Num tics before PC is autorented.   */
   int idle_max_level; /**< Level of players immune to idle.     */

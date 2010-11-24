@@ -167,7 +167,7 @@ ACMD(do_oasis_list)
       break;
     default:
       send_to_char(ch, "You can't list that!\r\n");
-      mudlog(BRF, LVL_IMMORT, TRUE,
+      mudlog(BRF, ADMLVL_IMMORT, TRUE,
         "SYSERR: do_oasis_list: Unknown list option: %d", subcmd);
   }
 }
@@ -521,8 +521,8 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     QGRN, QCYN, zone_table[rnum].top,
     QGRN, QCYN, zone_table[rnum].reset_mode ? ((zone_table[rnum].reset_mode == 1) ?
     "Reset when no players are in zone." : "Normal reset.") : "Never reset",
-    QGRN, QCYN, buf, 
-    QGRN, QCYN, zone_table[rnum].min_level, 
+    QGRN, QCYN, buf,
+    QGRN, QCYN, zone_table[rnum].min_level,
     QGRN, QCYN, zone_table[rnum].max_level,
     QGRN,
     QGRN, QCYN, size_rooms,

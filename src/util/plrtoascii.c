@@ -23,6 +23,8 @@
 #define MAX_SKILLS		200 /* Used in char_file_u *DO*NOT*CHANGE* */
 #define MAX_AFFECT		32  /* Used in char_file_u *DO*NOT*CHANGE* */
 
+#define MAX_LEVEL  30 /* Same as CONFIG_MAX_LEVEL */
+
 /* Char's abilities.  Used in char_file_u *DO*NOT*CHANGE* */
 struct char_ability_data_plrtoascii {
    sbyte str;
@@ -54,7 +56,7 @@ struct char_point_data_plrtoascii {
 };
 
 
-/* 
+/*
  * char_special_data_saved: specials which both a PC and an NPC have in
  * common, but which must be saved to the playerfile for PC's.
  *
@@ -186,7 +188,7 @@ void convert(char *filename)
       exit(1);
     printf("writing: %s\n", outname);
 
-    fprintf(index_file, "%ld %s %d 0 %ld\n", 
+    fprintf(index_file, "%ld %s %d 0 %ld\n",
 	player.char_specials_saved.idnum, bits, player.level,
 	(long)player.last_logon);
 
@@ -205,11 +207,13 @@ void convert(char *filename)
     if (player.description && *player.description)
       fprintf(outfile, "Desc:\n%s~\n", player.description);
     if (player.sex != PFDEF_SEX)
-      fprintf(outfile, "Sex : %d\n", (int)player.sex); 
+      fprintf(outfile, "Sex : %d\n", (int)player.sex);
     if (player.chclass != PFDEF_CLASS)
-      fprintf(outfile, "Clas: %d\n", (int)player.chclass); 
+      fprintf(outfile, "Clas: %d\n", (int)player.chclass);
     if (player.level != PFDEF_LEVEL)
-      fprintf(outfile, "Levl: %d\n", (int)player.level); 
+      fprintf(outfile, "Levl: %d\n", (int)player.level);
+    if (player.level > MAX_LEVEL)
+      fprintf(outfile, "Admn: %d\n", (int)(player.level-MAX_LEVEL));
     fprintf(outfile, "Brth: %d\n", (int)player.birth);
     fprintf(outfile, "Plyd: %d\n", (int)player.played);
     fprintf(outfile, "Last: %d\n", (int)player.last_logon);
@@ -243,7 +247,7 @@ void convert(char *filename)
 
 /* player_special_data_saved */
     psds = &(player.player_specials_saved);
-    if (player.level < LVL_IMMORT) {
+    if (player.level < (ADMLVL_IMMORT+MAX_LEVEL)) {
       fprintf(outfile, "Skil:\n");
       for (i = 1; i <= MAX_SKILLS; i++) {
 	if (psds->skills[i])
@@ -263,13 +267,13 @@ void convert(char *filename)
       sprintascii(bits, psds->pref);
       fprintf(outfile, "Pref: %s\n", bits);
     }
-    if (psds->conditions[HUNGER] && player.level < LVL_IMMORT &&
+    if (psds->conditions[HUNGER] && player.level < (ADMLVL_IMMORT+MAX_LEVEL) &&
 	psds->conditions[HUNGER] != PFDEF_HUNGER)
       fprintf(outfile, "Hung: %d\n", (int)psds->conditions[0]);
-    if (psds->conditions[THIRST] && player.level < LVL_IMMORT &&
+    if (psds->conditions[THIRST] && player.level < (ADMLVL_IMMORT+MAX_LEVEL) &&
 	psds->conditions[THIRST] != PFDEF_THIRST)
       fprintf(outfile, "Thir: %d\n", (int)psds->conditions[1]);
-    if (psds->conditions[2] && player.level < LVL_IMMORT &&
+    if (psds->conditions[2] && player.level < (ADMLVL_IMMORT+MAX_LEVEL) &&
 	psds->conditions[DRUNK] != PFDEF_DRUNK)
       fprintf(outfile, "Drnk: %d\n", (int)psds->conditions[2]);
     if (psds->spells_to_learn != PFDEF_PRACTICES)

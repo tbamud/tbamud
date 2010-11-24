@@ -513,7 +513,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
       return;
     }
   } else { /*has the player got enough gold? */
-  if (buy_price(obj, shop_nr, keeper, ch) > GET_GOLD(ch) && !IS_GOD(ch)) {
+  if (buy_price(obj, shop_nr, keeper, ch) > GET_GOLD(ch) && !ADM_FLAGGED(ch, ADM_MONEY)) {
     char actbuf[MAX_INPUT_LENGTH];
 
     snprintf(actbuf, sizeof(actbuf), shop_index[shop_nr].missing_cash2, GET_NAME(ch));
@@ -565,7 +565,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
         break;
     }
   } else {
-  while (obj && (GET_GOLD(ch) >= buy_price(obj, shop_nr, keeper, ch) || IS_GOD(ch))
+  while (obj && (GET_GOLD(ch) >= buy_price(obj, shop_nr, keeper, ch) || ADM_FLAGGED(ch, ADM_MONEY))
 	 && IS_CARRYING_N(ch) < CAN_CARRY_N(ch) && bought < buynum
 	 && IS_CARRYING_W(ch) + GET_OBJ_WEIGHT(obj) <= CAN_CARRY_W(ch)) {
     int charged;
@@ -582,7 +582,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
 
     charged = buy_price(obj, shop_nr, keeper, ch);
     goldamt += charged;
-    if (!IS_GOD(ch))
+    if (!ADM_FLAGGED(ch, ADM_MONEY))
       GET_GOLD(ch) -= charged;
 
     last_obj = obj;

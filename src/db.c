@@ -2455,7 +2455,7 @@ void zone_update(void)
     if (zone_table[update_u->zone_to_reset].reset_mode == 2 ||
 	is_empty(update_u->zone_to_reset)) {
       reset_zone(update_u->zone_to_reset);
-      mudlog(CMP, LVL_IMPL, FALSE, "Auto zone reset: %s (Zone %d)",
+      mudlog(CMP, ADMLVL_IMPL, FALSE, "Auto zone reset: %s (Zone %d)",
           zone_table[update_u->zone_to_reset].name, zone_table[update_u->zone_to_reset].number);
       /* dequeue */
       if (update_u == reset_q.head)
@@ -2477,8 +2477,8 @@ void zone_update(void)
 
 static void log_zone_error(zone_rnum zone, int cmd_no, const char *message)
 {
-  mudlog(NRM, LVL_GOD, TRUE, "SYSERR: zone file: %s", message);
-  mudlog(NRM, LVL_GOD, TRUE, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d",
+  mudlog(NRM, ADMLVL_GOD, TRUE, "SYSERR: zone file: %s", message);
+  mudlog(NRM, ADMLVL_GOD, TRUE, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d",
 	ZCMD.command, zone_table[zone].number, ZCMD.line);
 }
 
@@ -2732,7 +2732,7 @@ int is_empty(zone_rnum zone_nr)
       continue;
     /* If an immortal has nohassle off, he counts as present. Added for testing
      * zone reset triggers -Welcor */
-    if ((!IS_NPC(i->character)) && (GET_LEVEL(i->character) >= LVL_IMMORT) && (PRF_FLAGGED(i->character, PRF_NOHASSLE)))
+    if ((!IS_NPC(i->character)) && (IS_ADMIN(i->character, ADMLVL_IMMORT)) && (PRF_FLAGGED(i->character, PRF_NOHASSLE)))
       continue;
 
     return (0);
@@ -3367,7 +3367,8 @@ void init_char(struct char_data *ch)
 
   /* If this is our first player make him IMPL. */
   if (top_of_p_table == 0) {
-    GET_LEVEL(ch) = LVL_IMPL;
+    GET_LEVEL(ch) = CONFIG_MAX_LEVEL;
+    set_admin_level(ch, ADMLVL_IMPL);  /* Set IMP level and IMP flags */
     GET_EXP(ch) = 7000000;
 
     /* The implementor never goes through do_start(). */
@@ -3412,7 +3413,7 @@ void init_char(struct char_data *ch)
     log("SYSERR: init_char: Character '%s' not found in player table.", GET_NAME(ch));
 
   for (i = 1; i <= MAX_SKILLS; i++) {
-    if (GET_LEVEL(ch) < LVL_IMPL)
+    if (!IS_ADMIN(ch, ADMLVL_IMPL))
       SET_SKILL(ch, i, 0);
     else
       SET_SKILL(ch, i, 100);
@@ -3433,7 +3434,7 @@ void init_char(struct char_data *ch)
   ch->real_abils.cha = 25;
 
   for (i = 0; i < 3; i++)
-    GET_COND(ch, i) = (GET_LEVEL(ch) == LVL_IMPL ? -1 : 24);
+    GET_COND(ch, i) = (IS_ADMIN(ch, ADMLVL_IMPL) ? -1 : 24);
 
   GET_LOADROOM(ch) = NOWHERE;
   GET_SCREEN_WIDTH(ch) = PAGE_WIDTH;
@@ -3658,7 +3659,7 @@ static int check_object_level(struct obj_data *obj, int val)
 {
   int error = FALSE;
 
-  if ((GET_OBJ_VAL(obj, val) < 0 || GET_OBJ_VAL(obj, val) > LVL_IMPL) && (error = TRUE))
+  if ((GET_OBJ_VAL(obj, val) < 0 || GET_OBJ_VAL(obj, val) > CONFIG_MAX_LEVEL) && (error = TRUE))
     log("SYSERR: Object #%d (%s) has out of range level #%d.",
 	GET_OBJ_VNUM(obj), obj->short_description, GET_OBJ_VAL(obj, val));
 
@@ -3690,23 +3691,24 @@ static void load_default_config( void )
   /* Game play options. */
   CONFIG_PK_ALLOWED 	        = pk_allowed;
   CONFIG_PT_ALLOWED             = pt_allowed;
-  CONFIG_LEVEL_CAN_SHOUT 	= level_can_shout;
-  CONFIG_HOLLER_MOVE_COST 	= holler_move_cost;
-  CONFIG_TUNNEL_SIZE 	        = tunnel_size;
-  CONFIG_MAX_EXP_GAIN	        = max_exp_gain;
-  CONFIG_MAX_EXP_LOSS 	        = max_exp_loss;
+  CONFIG_LEVEL_CAN_SHOUT        = level_can_shout;
+  CONFIG_HOLLER_MOVE_COST       = holler_move_cost;
+  CONFIG_TUNNEL_SIZE            = tunnel_size;
+  CONFIG_MAX_EXP_GAIN           = max_exp_gain;
+  CONFIG_MAX_EXP_LOSS           = max_exp_loss;
   CONFIG_MAX_NPC_CORPSE_TIME    = max_npc_corpse_time;
-  CONFIG_MAX_PC_CORPSE_TIME	= max_pc_corpse_time;
-  CONFIG_IDLE_VOID		= idle_void;
-  CONFIG_IDLE_RENT_TIME	        = idle_rent_time;
-  CONFIG_IDLE_MAX_LEVEL	        = idle_max_level;
-  CONFIG_DTS_ARE_DUMPS	        = dts_are_dumps;
+  CONFIG_MAX_PC_CORPSE_TIME     = max_pc_corpse_time;
+  CONFIG_MAX_LEVEL              = max_mortal_level;
+  CONFIG_IDLE_VOID              = idle_void;
+  CONFIG_IDLE_RENT_TIME         = idle_rent_time;
+  CONFIG_IDLE_MAX_LEVEL         = idle_max_level;
+  CONFIG_DTS_ARE_DUMPS          = dts_are_dumps;
   CONFIG_LOAD_INVENTORY         = load_into_inventory;
-  CONFIG_OK			= strdup(OK);
-  CONFIG_NOPERSON		= strdup(NOPERSON);
-  CONFIG_NOEFFECT		= strdup(NOEFFECT);
+  CONFIG_OK             = strdup(OK);
+  CONFIG_NOPERSON       = strdup(NOPERSON);
+  CONFIG_NOEFFECT       = strdup(NOEFFECT);
   CONFIG_TRACK_T_DOORS          = track_through_doors;
-  CONFIG_NO_MORT_TO_IMMORT	= no_mort_to_immort;
+  CONFIG_NO_MORT_TO_IMMORT      = no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS      = display_closed_doors;
   CONFIG_MAP                    = map_option;
   CONFIG_MAP_SIZE               = default_map_size;

@@ -81,7 +81,7 @@ ACMD(do_hit)
   } else if (AFF_FLAGGED(ch, AFF_CHARM) && (ch->master == vict))
     act("$N is just such a good friend, you simply can't hit $M.", FALSE, ch, 0, vict, TO_CHAR);
   else {
-    if (!CONFIG_PK_ALLOWED && !IS_NPC(vict) && !IS_NPC(ch)) 
+    if (!CONFIG_PK_ALLOWED && !IS_NPC(vict) && !IS_NPC(ch))
 	check_killer(ch, vict);
 
     if ((GET_POS(ch) == POS_STANDING) && (vict != FIGHTING(ch))) {
@@ -97,7 +97,7 @@ ACMD(do_kill)
   char arg[MAX_INPUT_LENGTH];
   struct char_data *vict;
 
-  if (GET_LEVEL(ch) < LVL_IMMORT || IS_NPC(ch) || !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
+  if (!ADM_FLAGGED(ch, ADM_INSTANTKILL)) {
     do_hit(ch, argument, cmd, subcmd);
     return;
   }
@@ -200,10 +200,10 @@ ACMD(do_order)
       act("$n gives $N an order.", FALSE, ch, 0, vict, TO_ROOM);
 
       if ((vict->master != ch) || !AFF_FLAGGED(vict, AFF_CHARM))
-	act("$n has an indifferent look.", FALSE, vict, 0, 0, TO_ROOM);
+        act("$n has an indifferent look.", FALSE, vict, 0, 0, TO_ROOM);
       else {
-	send_to_char(ch, "%s", CONFIG_OK);
-	command_interpreter(vict, message);
+        send_to_char(ch, "%s", CONFIG_OK);
+        command_interpreter(vict, message);
       }
     } else {			/* This is order "followers" */
       char buf[MAX_STRING_LENGTH];
@@ -212,16 +212,17 @@ ACMD(do_order)
       act(buf, FALSE, ch, 0, 0, TO_ROOM);
 
       for (k = ch->followers; k; k = k->next) {
-	if (IN_ROOM(ch) == IN_ROOM(k->follower))
-	  if (AFF_FLAGGED(k->follower, AFF_CHARM)) {
-	    found = TRUE;
-	    command_interpreter(k->follower, message);
-	  }
+        if (IN_ROOM(ch) == IN_ROOM(k->follower)) {
+          if (AFF_FLAGGED(k->follower, AFF_CHARM)) {
+            found = TRUE;
+            command_interpreter(k->follower, message);
+          }
+        }
       }
       if (found)
-	send_to_char(ch, "%s", CONFIG_OK);
+        send_to_char(ch, "%s", CONFIG_OK);
       else
-	send_to_char(ch, "Nobody here is a loyal subject of yours!\r\n");
+        send_to_char(ch, "Nobody here is a loyal subject of yours!\r\n");
     }
   }
 }
@@ -243,18 +244,18 @@ ACMD(do_flee)
       act("$n panics, and attempts to flee!", TRUE, ch, 0, 0, TO_ROOM);
       was_fighting = FIGHTING(ch);
       if (do_simple_move(ch, attempt, TRUE)) {
-	send_to_char(ch, "You flee head over heels.\r\n");
+        send_to_char(ch, "You flee head over heels.\r\n");
         if (was_fighting && !IS_NPC(ch)) {
-	  loss = GET_MAX_HIT(was_fighting) - GET_HIT(was_fighting);
-	  loss *= GET_LEVEL(was_fighting);
-	  gain_exp(ch, -loss);
+          loss = GET_MAX_HIT(was_fighting) - GET_HIT(was_fighting);
+          loss *= GET_LEVEL(was_fighting);
+          gain_exp(ch, -loss);
         }
-      if (FIGHTING(ch)) 
-        stop_fighting(ch); 
-      if (was_fighting && ch == FIGHTING(was_fighting))
-        stop_fighting(was_fighting); 
+        if (FIGHTING(ch))
+          stop_fighting(ch);
+        if (was_fighting && ch == FIGHTING(was_fighting))
+          stop_fighting(was_fighting);
       } else {
-	act("$n tries to flee, but can't!", TRUE, ch, 0, 0, TO_ROOM);
+        act("$n tries to flee, but can't!", TRUE, ch, 0, 0, TO_ROOM);
       }
       return;
     }
@@ -355,9 +356,9 @@ ACMD(do_rescue)
   if ((FIGHTING(vict) != NULL) && (FIGHTING(ch) == FIGHTING(vict)) && (tmp_ch == NULL)) {
      tmp_ch = FIGHTING(vict);
      if (FIGHTING(tmp_ch) == ch) {
-     send_to_char(ch, "You have already rescued %s from %s.\r\n", GET_NAME(vict), GET_NAME(FIGHTING(ch)));
-     return;
-  }
+       send_to_char(ch, "You have already rescued %s from %s.\r\n", GET_NAME(vict), GET_NAME(FIGHTING(ch)));
+       return;
+     }
   }
 
   if (!tmp_ch) {

@@ -142,7 +142,7 @@ void dg_read_trigger(FILE *fp, void *proto, int type)
   count = sscanf(line,"%7s %d",junk,&vnum);
 
   if (count != 2) {
-    mudlog(BRF, LVL_BUILDER, TRUE,
+    mudlog(BRF, ADMLVL_BUILDER, TRUE,
            "SYSERR: Error assigning trigger! - Line was\n  %s", line);
     return;
   }
@@ -151,17 +151,17 @@ void dg_read_trigger(FILE *fp, void *proto, int type)
   if (rnum == NOTHING) {
     switch(type) {
       case MOB_TRIGGER:
-        mudlog(BRF, LVL_BUILDER, TRUE,
+        mudlog(BRF, ADMLVL_BUILDER, TRUE,
                "SYSERR: dg_read_trigger: Trigger vnum #%d asked for but non-existant! (mob: %s - %d)",
                vnum, GET_NAME((char_data *)proto), GET_MOB_VNUM((char_data *)proto));
         break;
       case WLD_TRIGGER:
-        mudlog(BRF, LVL_BUILDER, TRUE,
+        mudlog(BRF, ADMLVL_BUILDER, TRUE,
                "SYSERR: dg_read_trigger: Trigger vnum #%d asked for but non-existant! (room:%d)",
                vnum, GET_ROOM_VNUM( ((room_data *)proto)->number ));
         break;
       default:
-        mudlog(BRF, LVL_BUILDER, TRUE,
+        mudlog(BRF, ADMLVL_BUILDER, TRUE,
                "SYSERR: dg_read_trigger: Trigger vnum #%d asked for but non-existant! (?)", vnum);
         break;
     }
@@ -203,13 +203,13 @@ void dg_read_trigger(FILE *fp, void *proto, int type)
           CREATE(room->script, struct script_data, 1);
         add_trigger(SCRIPT(room), read_trigger(rnum), -1);
       } else {
-        mudlog(BRF, LVL_BUILDER, TRUE,
+        mudlog(BRF, ADMLVL_BUILDER, TRUE,
                "SYSERR: non-existant trigger #%d assigned to room #%d",
                vnum, room->number);
       }
       break;
     default:
-      mudlog(BRF, LVL_BUILDER, TRUE,
+      mudlog(BRF, ADMLVL_BUILDER, TRUE,
              "SYSERR: Trigger vnum #%d assigned to non-mob/obj/room", vnum);
   }
 }
@@ -223,14 +223,14 @@ void dg_obj_trigger(char *line, struct obj_data *obj)
   count = sscanf(line,"%s %d",junk,&vnum);
 
   if (count != 2) {
-    mudlog(BRF, LVL_BUILDER, TRUE,
+    mudlog(BRF, ADMLVL_BUILDER, TRUE,
            "SYSERR: dg_obj_trigger() : Error assigning trigger! - Line was:\n  %s", line);
     return;
   }
 
   rnum = real_trigger(vnum);
   if (rnum==NOTHING) {
-    mudlog(BRF, LVL_BUILDER, TRUE,
+    mudlog(BRF, ADMLVL_BUILDER, TRUE,
            "SYSERR: Trigger vnum #%d asked for but non-existant! (Object: %s - %d)",
             vnum, obj->short_description, GET_OBJ_VNUM(obj));
     return;
@@ -265,7 +265,7 @@ void assign_triggers(void *i, int type)
       while (trg_proto) {
         rnum = real_trigger(trg_proto->vnum);
         if (rnum==NOTHING) {
-          mudlog(BRF, LVL_BUILDER, TRUE,
+          mudlog(BRF, ADMLVL_BUILDER, TRUE,
                  "SYSERR: trigger #%d non-existant, for mob #%d",
                  trg_proto->vnum, mob_index[mob->nr].vnum);
         } else {
@@ -298,7 +298,7 @@ void assign_triggers(void *i, int type)
       while (trg_proto) {
         rnum = real_trigger(trg_proto->vnum);
         if (rnum==NOTHING) {
-          mudlog(BRF, LVL_BUILDER, TRUE,
+          mudlog(BRF, ADMLVL_BUILDER, TRUE,
                  "SYSERR: trigger #%d non-existant, for room #%d",
                  trg_proto->vnum, room->number);
         } else {
@@ -310,7 +310,7 @@ void assign_triggers(void *i, int type)
       }
       break;
     default:
-      mudlog(BRF, LVL_BUILDER, TRUE,
+      mudlog(BRF, ADMLVL_BUILDER, TRUE,
              "SYSERR: unknown type for assign_triggers()");
       break;
   }

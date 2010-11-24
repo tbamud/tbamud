@@ -45,16 +45,17 @@
 /* Board appearance order. */
 #define	NEWEST_AT_TOP	FALSE
 
-/* Format: vnum, read lvl, write lvl, remove lvl, filename, 0 at end. Be sure 
+/* Format: vnum, read lvl, write lvl, remove lvl, filename, 0 at end. Be sure
  * to also change NUM_OF_BOARDS in board.h*/
 struct board_info_type board_info[NUM_OF_BOARDS] = {
-  {3099, 0, 0, LVL_GOD, LIB_ETC "board.mortal", 0},
-  {3098, LVL_IMMORT, LVL_IMMORT, LVL_GRGOD, LIB_ETC "board.immortal", 0},
-  {3097, LVL_IMMORT, LVL_GRGOD, LVL_IMPL, LIB_ETC "board.freeze", 0},
-  {3096, 0, 0, LVL_IMMORT, LIB_ETC "board.social", 0},
-  {1226, 0, 0, LVL_IMPL, LIB_ETC "board.builder", 0},
-  {1227, 0, 0, LVL_IMPL, LIB_ETC "board.staff", 0},
-  {1228, 0, 0, LVL_IMPL, LIB_ETC "board.advertising", 0},
+/* VNUM  Read Level     Write Level    Remove Level   Filename                     Zero */
+  {3099, ADMLVL_MORTAL, ADMLVL_MORTAL, ADMLVL_GOD,    LIB_ETC "board.mortal",      0},
+  {3098, ADMLVL_IMMORT, ADMLVL_IMMORT, ADMLVL_GRGOD,  LIB_ETC "board.immortal",    0},
+  {3097, ADMLVL_IMMORT, ADMLVL_GRGOD,  ADMLVL_IMPL,   LIB_ETC "board.freeze",      0},
+  {3096, ADMLVL_MORTAL, ADMLVL_MORTAL, ADMLVL_IMMORT, LIB_ETC "board.social",      0},
+  {1226, ADMLVL_MORTAL, ADMLVL_MORTAL, ADMLVL_IMPL,   LIB_ETC "board.builder",     0},
+  {1227, ADMLVL_MORTAL, ADMLVL_MORTAL, ADMLVL_IMPL,   LIB_ETC "board.staff",       0},
+  {1228, ADMLVL_MORTAL, ADMLVL_MORTAL, ADMLVL_IMPL,   LIB_ETC "board.advertising", 0},
 };
 
 /* local (file scope) global variables */
@@ -93,7 +94,7 @@ static int find_board(struct char_data *ch)
       if (BOARD_RNUM(i) == GET_OBJ_RNUM(obj))
 	return (i);
 
-  if (GET_LEVEL(ch) >= LVL_IMMORT)
+  if (IS_ADMIN(ch, ADMLVL_IMMORT))
     for (obj = ch->carrying; obj; obj = obj->next_content)
       for (i = 0; i < NUM_OF_BOARDS; i++)
         if (BOARD_RNUM(i) == GET_OBJ_RNUM(obj))
@@ -137,7 +138,7 @@ SPECIAL(gen_board)
 
   /* These were originally globals for some unknown reason. */
   int ACMD_READ, ACMD_LOOK, ACMD_EXAMINE, ACMD_WRITE, ACMD_REMOVE;
-  
+
   if (!loaded) {
     init_boards();
     loaded = 1;
@@ -176,7 +177,7 @@ int board_write_message(int board_type, struct char_data *ch, char *arg, struct 
   time_t ct;
   char buf[MAX_INPUT_LENGTH], buf2[MAX_NAME_LENGTH + 3], tmstr[MAX_STRING_LENGTH];
 
-  if (GET_LEVEL(ch) < WRITE_LVL(board_type)) {
+  if (!IS_ADMIN(ch, WRITE_LVL(board_type))) {
     send_to_char(ch, "You are not holy enough to write on this board.\r\n");
     return (1);
   }
@@ -232,7 +233,7 @@ int board_show_board(int board_type, struct char_data *ch, char *arg, struct obj
   if (!*tmp || !isname(tmp, board->name))
     return (0);
 
-  if (GET_LEVEL(ch) < READ_LVL(board_type)) {
+  if (!IS_ADMIN(ch, READ_LVL(board_type))) {
     send_to_char(ch, "You try but fail to understand the holy words.\r\n");
     return (1);
   }
@@ -295,7 +296,7 @@ int board_display_msg(int board_type, struct char_data *ch, char *arg, struct ob
   if (!(msg = atoi(number)))
     return (0);
 
-  if (GET_LEVEL(ch) < READ_LVL(board_type)) {
+  if (!IS_ADMIN(ch, READ_LVL(board_type))) {
     send_to_char(ch, "You try but fail to understand the holy words.\r\n");
     return (1);
   }
@@ -366,7 +367,7 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
     return (1);
   }
   snprintf(buf, sizeof(buf), "(%s)", GET_NAME(ch));
-  if (GET_LEVEL(ch) < REMOVE_LVL(board_type) &&
+  if (!IS_ADMIN(ch, REMOVE_LVL(board_type)) &&
       !(strstr(MSG_HEADING(board_type, ind), buf))) {
     send_to_char(ch, "You are not holy enough to remove other people's messages.\r\n");
     return (1);

@@ -1,13 +1,13 @@
 /**
 * @file shop.h
 * Shop file definitions, structures, constants.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 */
 #ifndef _SHOP_H_
 #define _SHOP_H_
@@ -59,7 +59,7 @@ struct shop_data {
 #define MAX_SHOP_OBJ	100	/* "Soft" maximum for list maximums	*/
 
 /* Pretty general macros that could be used elsewhere */
-#define IS_GOD(ch)		(!IS_NPC(ch) && (GET_LEVEL(ch) >= LVL_GOD))
+#define IS_GOD(ch)		    (IS_ADMIN(ch, ADMLVL_GOD))
 #define END_OF(buffer)		((buffer) + strlen((buffer)))
 
 /* Possible states for objects trying to be sold */

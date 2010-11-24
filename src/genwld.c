@@ -19,7 +19,7 @@
 #include "dg_olc.h"
 
 
-/* This function will copy the strings so be sure you free your own copies of 
+/* This function will copy the strings so be sure you free your own copies of
  * the description, title, and such. */
 room_rnum add_room(struct room_data *room)
 {
@@ -95,7 +95,7 @@ room_rnum add_room(struct room_data *room)
 	/* Known zone entries we don't care about. */
         break;
       default:
-        mudlog(BRF, LVL_GOD, TRUE, "SYSERR: GenOLC: add_room: Unknown zone entry found!");
+        mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: GenOLC: add_room: Unknown zone entry found!");
       }
 
   /* Update the loadroom table. Adds 1 or 0. */
@@ -149,7 +149,7 @@ int delete_room(room_rnum rnum)
     r_frozen_start_room = 0;	/* The Void */
   }
 
-  /* Dump the contents of this room into the Void.  We could also just extract 
+  /* Dump the contents of this room into the Void.  We could also just extract
    * the people, mobs, and objects here. */
   for (obj = world[rnum].contents; obj; obj = next_obj) {
     next_obj = obj->next_content;
@@ -167,7 +167,7 @@ int delete_room(room_rnum rnum)
     extract_script(room, WLD_TRIGGER);
   free_proto_script(room, WLD_TRIGGER);
 
-  /* Change any exit going to this room to go the void. Also fix all the exits 
+  /* Change any exit going to this room to go the void. Also fix all the exits
    * pointing to rooms above this. */
   i = top_of_world + 1;
   do {
@@ -221,7 +221,7 @@ int delete_room(room_rnum rnum)
         /* Known zone entries we don't care about. */
         break;
       default:
-        mudlog(BRF, LVL_GOD, TRUE, "SYSERR: GenOLC: delete_room: Unknown zone entry found!");
+        mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: GenOLC: delete_room: Unknown zone entry found!");
       }
 
   /* Remove this room from all shop lists. */
@@ -296,8 +296,8 @@ int save_rooms(zone_rnum rzone)
 	room->number,
 	room->name ? room->name : "Untitled", STRING_TERMINATOR,
 	buf, STRING_TERMINATOR,
-	zone_table[room->zone].number, room->room_flags[0], room->room_flags[1], room->room_flags[2], 
-	  room->room_flags[3], room->sector_type 
+	zone_table[room->zone].number, room->room_flags[0], room->room_flags[1], room->room_flags[2],
+	  room->room_flags[3], room->sector_type
       );
 
       /* Now you write out the exits for the room. */
@@ -379,8 +379,8 @@ int copy_room(struct room_data *to, struct room_data *from)
   return TRUE;
 }
 
-/* Copy strings over so bad things don't happen.  We do not free the existing 
- * strings here because copy_room() did a shallow copy previously and we'd be 
+/* Copy strings over so bad things don't happen.  We do not free the existing
+ * strings here because copy_room() did a shallow copy previously and we'd be
  * freeing the very strings we're copying.  If this function is used elsewhere,
  * be sure to free_room_strings() the 'dest' room first. */
 int copy_room_strings(struct room_data *dest, struct room_data *source)

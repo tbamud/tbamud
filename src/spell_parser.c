@@ -604,7 +604,7 @@ ACMD(do_cast)
     return;
   }
   mana = mag_manacost(ch, spellnum);
-  if ((mana > 0) && (GET_MANA(ch) < mana) && (GET_LEVEL(ch) < LVL_IMMORT)) {
+  if ((mana > 0) && (GET_MANA(ch) < mana) && (!IS_ADMIN(ch, ADMLVL_IMMORT))) {
     send_to_char(ch, "You haven't the energy to cast that spell!\r\n");
     return;
   }
@@ -642,9 +642,9 @@ void spell_level(int spell, int chclass, int level)
     bad = 1;
   }
 
-  if (level < 1 || level > LVL_IMPL) {
+  if (level < 1 || level > CONFIG_MAX_LEVEL) {
     log("SYSERR: assigning '%s' to illegal level %d/%d.", skill_name(spell),
-		level, LVL_IMPL);
+		level, CONFIG_MAX_LEVEL);
     bad = 1;
   }
 
@@ -660,7 +660,7 @@ static void spello(int spl, const char *name, int max_mana, int min_mana,
   int i;
 
   for (i = 0; i < NUM_CLASSES; i++)
-    spell_info[spl].min_level[i] = LVL_IMMORT;
+    spell_info[spl].min_level[i] = (CONFIG_MAX_LEVEL + 1);
   spell_info[spl].mana_max = max_mana;
   spell_info[spl].mana_min = min_mana;
   spell_info[spl].mana_change = mana_change;
@@ -677,7 +677,7 @@ void unused_spell(int spl)
   int i;
 
   for (i = 0; i < NUM_CLASSES; i++)
-    spell_info[spl].min_level[i] = LVL_IMPL + 1;
+    spell_info[spl].min_level[i] = (CONFIG_MAX_LEVEL + 1);
   spell_info[spl].mana_max = 0;
   spell_info[spl].mana_min = 0;
   spell_info[spl].mana_change = 0;

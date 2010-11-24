@@ -94,7 +94,7 @@ ACMD(do_oasis_redit)
 
   /* Give the descriptor an OLC structure. */
   if (d->olc) {
-    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis_redit: Player already had olc structure.");
+    mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: do_oasis_redit: Player already had olc structure.");
     free(d->olc);
   }
 
@@ -121,7 +121,7 @@ ACMD(do_oasis_redit)
 
   if (save) {
     send_to_char(ch, "Saving all rooms in zone %d.\r\n", zone_table[OLC_ZNUM(d)].number);
-    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves room info for zone %d.", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+    mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves room info for zone %d.", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
 
     /* Save the rooms. */
     save_rooms(OLC_ZNUM(d));
@@ -144,7 +144,7 @@ ACMD(do_oasis_redit)
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-  mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing zone %d allowed zone %d",
+  mudlog(CMP, ADMLVL_IMMORT, TRUE, "OLC: %s starts editing zone %d allowed zone %d",
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
@@ -170,12 +170,12 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   CREATE(room, struct room_data, 1);
 
   *room = world[real_num];
-  
-  /* Make new room people list be empty.                          */ 
-  /* Fixes bug where copying a room from within that room creates */ 
-  /* an infinite loop when you next act() in the new room (goto?) */ 
-  /* and you are your next_in_room          -- anderyu (10-05-22) */ 
-  room->people = NULL; 
+
+  /* Make new room people list be empty.                          */
+  /* Fixes bug where copying a room from within that room creates */
+  /* an infinite loop when you next act() in the new room (goto?) */
+  /* and you are your next_in_room          -- anderyu (10-05-22) */
+  room->people = NULL;
 
   /* Allocate space for all strings. */
   room->name = str_udup(world[real_num].name);
@@ -232,7 +232,7 @@ void redit_save_internally(struct descriptor_data *d)
   if (OLC_ROOM(d)->number == NOWHERE)
     new_room = TRUE;
 
-  OLC_ROOM(d)->number = OLC_NUM(d); 
+  OLC_ROOM(d)->number = OLC_NUM(d);
   /* FIXME: Why is this not set elsewhere? */
   OLC_ROOM(d)->zone = OLC_ZNUM(d);
 
@@ -476,7 +476,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
     case 'y':
     case 'Y':
       redit_save_internally(d);
-      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits room %d.", GET_NAME(d->character), OLC_NUM(d));
+      mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits room %d.", GET_NAME(d->character), OLC_NUM(d));
       if (CONFIG_OLC_SAVE) {
         redit_save_to_disk(real_zone_by_thing(OLC_NUM(d)));
         write_to_output(d, "Room saved to disk.\r\n");
@@ -487,8 +487,8 @@ void redit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'n':
     case 'N':
-      /* If not saving, we must free the script_proto list. We do so by 
-       * assigning it to the edited room and letting free_room in 
+      /* If not saving, we must free the script_proto list. We do so by
+       * assigning it to the edited room and letting free_room in
        * cleanup_olc handle it. */
       OLC_ROOM(d)->proto_script = OLC_SCRIPT(d);
       cleanup_olc(d, CLEANUP_ALL);
@@ -605,7 +605,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
 
   case REDIT_DESC:
     /* We will NEVER get here, we hope. */
-    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Reached REDIT_DESC case in parse_redit().");
+    mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Reached REDIT_DESC case in parse_redit().");
     write_to_output(d, "Oops, in REDIT_DESC.\r\n");
     break;
 
@@ -693,7 +693,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
 
   case REDIT_EXIT_DESCRIPTION:
     /* We should NEVER get here, hopefully. */
-    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Reached REDIT_EXIT_DESC case in parse_redit");
+    mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Reached REDIT_EXIT_DESC case in parse_redit");
     write_to_output(d, "Oops, in REDIT_EXIT_DESCRIPTION.\r\n");
     break;
 
@@ -740,7 +740,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
   case REDIT_EXTRADESC_MENU:
     switch ((number = atoi(arg))) {
     case 0:
-      /* If something got left out, delete the extra description when backing 
+      /* If something got left out, delete the extra description when backing
          out to the menu. */
       if (OLC_DESC(d)->keyword == NULL || OLC_DESC(d)->description == NULL) {
 	struct extra_descr_data *temp;
@@ -795,7 +795,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
     } else
       write_to_output(d, "That room does not exist.\r\n");
     break;
-  
+
   case REDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
       if (delete_room(real_room(OLC_ROOM(d)->number)))
@@ -816,7 +816,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
 
   default:
     /* We should never get here. */
-    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Reached default case in parse_redit");
+    mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Reached default case in parse_redit");
     break;
   }
   /* If we get this far, something has been changed. */

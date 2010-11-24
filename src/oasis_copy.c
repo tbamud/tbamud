@@ -67,7 +67,7 @@ ACMD(do_oasis_copy)
     return;
 
   /* No copying as a mob or while being forced. */
-  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING) 
+  if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
     return;
 
   /* We need two arguments. */
@@ -112,7 +112,7 @@ ACMD(do_oasis_copy)
 
   /* Give the descriptor an OLC structure. */
   if (d->olc) {
-    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis_copy: Player already had olc structure.");
+    mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: do_oasis_copy: Player already had olc structure.");
     free(d->olc);
   }
 
@@ -187,7 +187,7 @@ ACMD(do_dig)
     send_to_char(ch, "You do not have permission to edit this zone.\r\n");
     return;
   }
-  /* Lets not allow digging to limbo. After all, it'd just get us more errors 
+  /* Lets not allow digging to limbo. After all, it'd just get us more errors
    * on 'show errors.' */
   if (rvnum == 0) {
    send_to_char(ch, "The target exists, but you can't dig to limbo!\r\n");
@@ -230,10 +230,10 @@ ACMD(do_dig)
   /* Now we know the builder is allowed to make the link. */
   /* If the room doesn't exist, create it.*/
   if (rrnum == NOWHERE) {
-    /* Give the descriptor an olc struct. This way we can let 
+    /* Give the descriptor an olc struct. This way we can let
      * redit_save_internally handle the room adding. */
     if (d->olc) {
-      mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_dig: Player already had olc structure.");
+      mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: do_dig: Player already had olc structure.");
       free(d->olc);
     }
     CREATE(d->olc, struct oasis_olc_data, 1);
@@ -253,7 +253,7 @@ ACMD(do_dig)
     OLC_ROOM(d)->zone = OLC_ZNUM(d);
     OLC_ROOM(d)->number = NOWHERE;
 
-    /* Save the new room to memory. redit_save_internally handles adding the 
+    /* Save the new room to memory. redit_save_internally handles adding the
      * room in the right place, etc. */
     redit_save_internally(d);
     OLC_VAL(d) = 0;
@@ -315,7 +315,7 @@ int buildwalk(struct char_data *ch, int dir)
   room_rnum rnum;
 
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_BUILDWALK) &&
-      GET_LEVEL(ch) >= LVL_BUILDER) {
+      ADM_FLAGGED(ch, ADM_BUILD)) {
 
     get_char_colors(ch);
 
@@ -325,10 +325,10 @@ int buildwalk(struct char_data *ch, int dir)
       send_to_char(ch, "No free vnums are available in this zone!\r\n");
     } else {
       struct descriptor_data *d = ch->desc;
-      /* Give the descriptor an olc struct. This way we can let 
+      /* Give the descriptor an olc struct. This way we can let
        * redit_save_internally handle the room adding. */
       if (d->olc) {
-        mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: buildwalk(): Player already had olc structure.");
+        mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: buildwalk(): Player already had olc structure.");
         free(d->olc);
       }
       CREATE(d->olc, struct oasis_olc_data, 1);
@@ -343,7 +343,7 @@ int buildwalk(struct char_data *ch, int dir)
       OLC_ROOM(d)->zone = OLC_ZNUM(d);
       OLC_ROOM(d)->number = NOWHERE;
 
-      /* Save the new room to memory. redit_save_internally handles adding the 
+      /* Save the new room to memory. redit_save_internally handles adding the
        * room in the right place, etc. */
       redit_save_internally(d);
       OLC_VAL(d) = 0;

@@ -179,16 +179,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 32;
       case 29: return 30;
       case 30: return 28;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 25;
+      case 32: return 23;
+      case 33: return 21;
+      case 34: return 18;
+      case 35: return 15;
+      case 36: return 12;
+      case 37: return 10;
+      case 38: return 7;
+      case 39: return 5;
+      case 40: return 3;
       default:
 	log("SYSERR: Missing level for mage paralyzation saving throw.");
 	break;
@@ -226,16 +226,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 11;
       case 29: return 10;
       case 30: return  9;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return  8;
+      case 32: return  8;
+      case 33: return  7;
+      case 34: return  6;
+      case 35: return  5;
+      case 36: return  5;
+      case 37: return  4;
+      case 38: return  3;
+      case 39: return  2;
+      case 40: return  1;
       default:
 	log("SYSERR: Missing level for mage rod saving throw.");
 	break;
@@ -273,16 +273,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 17;
       case 29: return 15;
       case 30: return 13;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 12;
+      case 32: return 11;
+      case 33: return 10;
+      case 34: return 9;
+      case 35: return 7;
+      case 36: return 6;
+      case 37: return 5;
+      case 38: return 4;
+      case 39: return 3;
+      case 40: return 3;
       default:
 	log("SYSERR: Missing level for mage petrification saving throw.");
 	break;
@@ -320,16 +320,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 27;
       case 29: return 25;
       case 30: return 23;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 22;
+      case 32: return 20;
+      case 33: return 19;
+      case 34: return 18;
+      case 35: return 17;
+      case 36: return 16;
+      case 37: return 15;
+      case 38: return 14;
+      case 39: return 13;
+      case 40: return 12;
       default:
 	log("SYSERR: Missing level for mage breath saving throw.");
 	break;
@@ -367,16 +367,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 12;
       case 29: return 10;
       case 30: return  8;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return  7;
+      case 32: return  6;
+      case 33: return  6;
+      case 34: return  5;
+      case 35: return  4;
+      case 36: return  4;
+      case 37: return  3;
+      case 38: return  2;
+      case 39: return  1;
+      case 40: return  1;
       default:
 	log("SYSERR: Missing level for mage spell saving throw.");
 	break;
@@ -421,15 +421,15 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return  9;
       case 29: return  8;
       case 30: return  7;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
+      case 31: return  6;
+      case 32: return  6;
+      case 33: return  5;
+      case 34: return  4;
+      case 35: return  3;
+      case 36: return  3;
+      case 37: return  2;
+      case 38: return  2;
+      case 39: return  1;
       case 40: return  0;
       default:
 	log("SYSERR: Missing level for cleric paralyzation saving throw.");
@@ -468,16 +468,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 29;
       case 29: return 28;
       case 30: return 27;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 26;
+      case 32: return 25;
+      case 33: return 24;
+      case 34: return 23;
+      case 35: return 22;
+      case 36: return 21;
+      case 37: return 20;
+      case 38: return 19;
+      case 39: return 18;
+      case 40: return 17;
       default:
 	log("SYSERR: Missing level for cleric rod saving throw.");
 	break;
@@ -515,16 +515,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 24;
       case 29: return 23;
       case 30: return 22;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 21;
+      case 32: return 20;
+      case 33: return 19;
+      case 34: return 18;
+      case 35: return 17;
+      case 36: return 16;
+      case 37: return 15;
+      case 38: return 14;
+      case 39: return 13;
+      case 40: return 13;
       default:
 	log("SYSERR: Missing level for cleric petrification saving throw.");
 	break;
@@ -562,16 +562,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 39;
       case 29: return 38;
       case 30: return 37;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 35;
+      case 32: return 34;
+      case 33: return 33;
+      case 34: return 32;
+      case 35: return 31;
+      case 36: return 31;
+      case 37: return 30;
+      case 38: return 29;
+      case 39: return 29;
+      case 40: return 28;
       default:
 	log("SYSERR: Missing level for cleric breath saving throw.");
 	break;
@@ -609,16 +609,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 34;
       case 29: return 33;
       case 30: return 32;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 31;
+      case 32: return 30;
+      case 33: return 29;
+      case 34: return 28;
+      case 35: return 27;
+      case 36: return 26;
+      case 37: return 26;
+      case 38: return 25;
+      case 39: return 24;
+      case 40: return 23;
       default:
 	log("SYSERR: Missing level for cleric spell saving throw.");
 	break;
@@ -663,16 +663,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 38;
       case 29: return 37;
       case 30: return 36;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 35;
+      case 32: return 34;
+      case 33: return 33;
+      case 34: return 32;
+      case 35: return 31;
+      case 36: return 31;
+      case 37: return 30;
+      case 38: return 29;
+      case 39: return 29;
+      case 40: return 28;
       default:
 	log("SYSERR: Missing level for thief paralyzation saving throw.");
 	break;
@@ -710,16 +710,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 16;
       case 29: return 14;
       case 30: return 13;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 12;
+      case 32: return 11;
+      case 33: return 10;
+      case 34: return  9;
+      case 35: return  8;
+      case 36: return  7;
+      case 37: return  6;
+      case 38: return  5;
+      case 39: return  4;
+      case 40: return  4;
       default:
 	log("SYSERR: Missing level for thief rod saving throw.");
 	break;
@@ -757,16 +757,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 33;
       case 29: return 32;
       case 30: return 31;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 30;
+      case 32: return 29;
+      case 33: return 28;
+      case 34: return 27;
+      case 35: return 26;
+      case 36: return 25;
+      case 37: return 24;
+      case 38: return 23;
+      case 39: return 23;
+      case 40: return 22;
       default:
 	log("SYSERR: Missing level for thief petrification saving throw.");
 	break;
@@ -804,16 +804,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 53;
       case 29: return 52;
       case 30: return 51;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 50;
+      case 32: return 49;
+      case 33: return 48;
+      case 34: return 48;
+      case 35: return 47;
+      case 36: return 46;
+      case 37: return 45;
+      case 38: return 44;
+      case 39: return 43;
+      case 40: return 42;
       default:
 	log("SYSERR: Missing level for thief breath saving throw.");
 	break;
@@ -851,16 +851,16 @@ byte saving_throws(int class_num, int type, int level)
       case 28: return 21;
       case 29: return 19;
       case 30: return 17;
-      case 31: return  0;
-      case 32: return  0;
-      case 33: return  0;
-      case 34: return  0;
-      case 35: return  0;
-      case 36: return  0;
-      case 37: return  0;
-      case 38: return  0;
-      case 39: return  0;
-      case 40: return  0;
+      case 31: return 16;
+      case 32: return 15;
+      case 33: return 14;
+      case 34: return 13;
+      case 35: return 12;
+      case 36: return 11;
+      case 37: return 10;
+      case 38: return 9;
+      case 39: return 8;
+      case 40: return 7;
       default:
 	log("SYSERR: Missing level for thief spell saving throw.");
 	break;
@@ -915,8 +915,8 @@ byte saving_throws(int class_num, int type, int level)
       case 38: return  4;
       case 39: return  3;
       case 40: return  2;
-      case 41: return  1;	/* Some mobiles. */
-      case 42: return  0;
+      case 41: return  1;
+      case 42: return  1;
       case 43: return  0;
       case 44: return  0;
       case 45: return  0;
@@ -1211,6 +1211,12 @@ int thaco(int class_num, int level)
     case 32: return  10;
     case 33: return  10;
     case 34: return   9;
+    case 35: return   9;
+    case 36: return   9;
+    case 37: return   8;
+    case 38: return   8;
+    case 39: return   8;
+    case 40: return   8;
     default:
       log("SYSERR: Missing level for mage thac0.");
     }
@@ -1251,6 +1257,12 @@ int thaco(int class_num, int level)
     case 32: return   1;
     case 33: return   1;
     case 34: return   1;
+    case 35: return   1;
+    case 36: return   0;
+    case 37: return   0;
+    case 38: return   0;
+    case 39: return   0;
+    case 40: return   0;
     default:
       log("SYSERR: Missing level for cleric thac0.");
     }
@@ -1291,6 +1303,12 @@ int thaco(int class_num, int level)
     case 32: return   5;
     case 33: return   4;
     case 34: return   4;
+    case 35: return   4;
+    case 36: return   3;
+    case 37: return   3;
+    case 38: return   3;
+    case 39: return   2;
+    case 40: return   2;
     default:
       log("SYSERR: Missing level for thief thac0.");
     }
@@ -1331,6 +1349,12 @@ int thaco(int class_num, int level)
     case 32: return   1;
     case 33: return   1;
     case 34: return   1;
+    case 35: return   1;
+    case 36: return   0;
+    case 37: return   0;
+    case 38: return   0;
+    case 39: return   0;
+    case 40: return   0;
     default:
       log("SYSERR: Missing level for warrior thac0.");
     }
@@ -1510,7 +1534,9 @@ void advance_level(struct char_data *ch)
   else
     GET_PRACTICES(ch) += MIN(2, MAX(1, wis_app[GET_WIS(ch)].bonus));
 
-  if (GET_LEVEL(ch) >= LVL_IMMORT) {
+  /* Auto-advance to immortality? */
+  if (!CONFIG_NO_MORT_TO_IMMORT && GET_LEVEL(ch) >= CONFIG_MAX_LEVEL && !IS_ADMIN(ch, ADMLVL_IMMORT)) {
+    set_admin_level(ch, ADMLVL_IMMORT);  /* Increase admin level and set default admin flags */
     for (i = 0; i < 3; i++)
       GET_COND(ch, i) = (char) -1;
     SET_BIT_AR(PRF_FLAGS(ch), PRF_HOLYLIGHT);
@@ -1534,10 +1560,8 @@ int backstab_mult(int level)
     return 4;	  /* level 14 - 20 */
   else if (level <= 28)
     return 5;	  /* level 21 - 28 */
-  else if (level < LVL_IMMORT)
-    return 6;	  /* all remaining mortal levels */
   else
-    return 20;	  /* immortals */
+    return 6;	  /* all remaining mortal levels */
 }
 
 /* invalid_class is used by handler.c to determine if a piece of equipment is
@@ -1645,16 +1669,10 @@ void init_spell_levels(void)
 /* Function to return the exp required for each class/level */
 int level_exp(int chclass, int level)
 {
-  if (level > LVL_IMPL || level < 0) {
-    log("SYSERR: Requesting exp for invalid level %d!", level);
+  if (level > CONFIG_MAX_LEVEL || level < 0) {
+    log("SYSERR: Requesting exp for invalid mortal level %d!", level);
     return 0;
   }
-
-  /* Gods have exp close to EXP_MAX.  This statement should never have to
-   * changed, regardless of how many mortal or immortal levels exist. */
-   if (level > LVL_IMMORT) {
-     return EXP_MAX - ((LVL_IMPL - level) * 1000);
-   }
 
   /* Exp required for normal mortals is below */
   switch (chclass) {
@@ -1693,7 +1711,9 @@ int level_exp(int chclass, int level)
       case 29: return 6850000;
       case 30: return 7400000;
       /* add new levels here */
-      case LVL_IMMORT: return 8000000;
+      default:
+        log("SYSERR: Magic User XP tables not set up correctly in level_exp in class.c!");
+        return 123456;
     }
     break;
 
@@ -1731,7 +1751,9 @@ int level_exp(int chclass, int level)
       case 29: return 6000000;
       case 30: return 6400000;
       /* add new levels here */
-      case LVL_IMMORT: return 7000000;
+      default:
+        log("SYSERR: Cleric XP tables not set up correctly in level_exp in class.c!");
+        return 123456;
     }
     break;
 
@@ -1769,7 +1791,9 @@ int level_exp(int chclass, int level)
       case 29: return 6300000;
       case 30: return 6650000;
       /* add new levels here */
-      case LVL_IMMORT: return 7000000;
+      default:
+        log("SYSERR: Thief XP tables not set up correctly in level_exp in class.c!");
+        return 123456;
     }
     break;
 
@@ -1807,7 +1831,9 @@ int level_exp(int chclass, int level)
       case 29: return 6850000;
       case 30: return 7400000;
       /* add new levels here */
-      case LVL_IMMORT: return 8000000;
+      default:
+        log("SYSERR: Warrior XP tables not set up correctly in level_exp in class.c!");
+        return 123456;
     }
     break;
   }
@@ -1822,10 +1848,8 @@ int level_exp(int chclass, int level)
 /* Default titles of male characters. */
 const char *title_male(int chclass, int level)
 {
-  if (level <= 0 || level > LVL_IMPL)
+  if (level <= 0 || level > CONFIG_MAX_LEVEL)
     return "the Man";
-  if (level == LVL_IMPL)
-    return "the Implementor";
 
   switch (chclass) {
 
@@ -1861,9 +1885,6 @@ const char *title_male(int chclass, int level)
       case 28: return "the Shaman";
       case 29: return "the Keeper of Talismans";
       case 30: return "the Archmage";
-      case LVL_IMMORT: return "the Immortal Warlock";
-      case LVL_GOD: return "the Avatar of Magic";
-      case LVL_GRGOD: return "the God of Magic";
       default: return "the Mage";
     }
     break;
@@ -1891,9 +1912,6 @@ const char *title_male(int chclass, int level)
       case 19: return "the Arch Bishop";
       case 20: return "the Patriarch";
       /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Cardinal";
-      case LVL_GOD: return "the Inquisitor";
-      case LVL_GRGOD: return "the God of Good and Evil";
       default: return "the Cleric";
     }
     break;
@@ -1921,9 +1939,6 @@ const char *title_male(int chclass, int level)
       case 19: return "the Brigand";
       case 20: return "the Cut-Throat";
       /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Assassin";
-      case LVL_GOD: return "the Demi God of Thieves";
-      case LVL_GRGOD: return "the God of Thieves and Tradesmen";
       default: return "the Thief";
     }
     break;
@@ -1951,9 +1966,6 @@ const char *title_male(int chclass, int level)
       case 19: return "the Cavalier";
       case 20: return "the Knight";
       /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Warlord";
-      case LVL_GOD: return "the Extirpator";
-      case LVL_GRGOD: return "the God of War";
       default: return "the Warrior";
     }
     break;
@@ -1966,10 +1978,8 @@ const char *title_male(int chclass, int level)
 /* Default titles of female characters. */
 const char *title_female(int chclass, int level)
 {
-  if (level <= 0 || level > LVL_IMPL)
+  if (level <= 0 || level > CONFIG_MAX_LEVEL)
     return "the Woman";
-  if (level == LVL_IMPL)
-    return "the Implementress";
 
   switch (chclass) {
 
@@ -2005,9 +2015,6 @@ const char *title_female(int chclass, int level)
       case 28: return "Shaman";
       case 29: return "the Keeper of Talismans";
       case 30: return "Archwitch";
-      case LVL_IMMORT: return "the Immortal Enchantress";
-      case LVL_GOD: return "the Empress of Magic";
-      case LVL_GRGOD: return "the Goddess of Magic";
       default: return "the Witch";
     }
     break;
@@ -2035,9 +2042,6 @@ const char *title_female(int chclass, int level)
       case 19: return "the Arch Lady of the Church";
       case 20: return "the Matriarch";
       /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Priestess";
-      case LVL_GOD: return "the Inquisitress";
-      case LVL_GRGOD: return "the Goddess of Good and Evil";
       default: return "the Cleric";
     }
     break;
@@ -2065,9 +2069,6 @@ const char *title_female(int chclass, int level)
       case 19: return "the Brigand";
       case 20: return "the Cut-Throat";
       /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Assassin";
-      case LVL_GOD: return "the Demi Goddess of Thieves";
-      case LVL_GRGOD: return "the Goddess of Thieves and Tradesmen";
       default: return "the Thief";
     }
     break;
@@ -2095,9 +2096,6 @@ const char *title_female(int chclass, int level)
       case 19: return "the Cavalier";
       case 20: return "the Lady Knight";
       /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Lady of War";
-      case LVL_GOD: return "the Queen of Destruction";
-      case LVL_GRGOD: return "the Goddess of War";
       default: return "the Warrior";
     }
     break;

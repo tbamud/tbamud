@@ -269,7 +269,7 @@ int save_mobiles(zone_rnum rznum)
   vznum = zone_table[rznum].number;
   snprintf(mobfname, sizeof(mobfname), "%s%d.new", MOB_PREFIX, vznum);
   if ((mobfd = fopen(mobfname, "w")) == NULL) {
-    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: GenOLC: Cannot open mob file for writing.");
+    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: GenOLC: Cannot open mob file for writing.");
     return FALSE;
   }
 
@@ -392,7 +392,7 @@ void check_mobile_string(mob_vnum i, char **string, const char *desc)
   if (*string == NULL || **string == '\0') {
     char smbuf[128];
     sprintf(smbuf, "GenOLC: Mob #%d has an invalid %s.", i, desc);
-    mudlog(BRF, LVL_GOD, TRUE, "%s", smbuf);
+    mudlog(BRF, ADMLVL_GOD, TRUE, "%s", smbuf);
     if (*string)
       free(*string);
     *string = strdup("An undefined string.\n");

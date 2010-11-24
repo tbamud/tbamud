@@ -350,7 +350,7 @@ ACMD(do_skillset)
     send_to_char(ch, "You can't set NPC skills.\r\n");
     return;
   }
-  if ((spell_info[skill].min_level[(pc)] >= LVL_IMMORT) && (pl < LVL_IMMORT)) {
+  if ((spell_info[skill].min_level[(pc)] > CONFIG_MAX_LEVEL) && (!IS_ADMIN(vict, ADMLVL_IMMORT))) {
     send_to_char(ch, "%s cannot be learned by mortals.\r\n", spell_info[skill].name);
     return;
   } else if (spell_info[skill].min_level[(pc)] > pl) {
@@ -361,7 +361,7 @@ ACMD(do_skillset)
   /* find_skill_num() guarantees a valid spell_info[] index, or -1, and we
    * checked for the -1 above so we are safe here. */
   SET_SKILL(vict, skill, value);
-  mudlog(BRF, LVL_IMMORT, TRUE, "%s changed %s's %s to %d.", GET_NAME(ch), GET_NAME(vict), spell_info[skill].name, value);
+  mudlog(BRF, ADMLVL_IMMORT, TRUE, "%s changed %s's %s to %d.", GET_NAME(ch), GET_NAME(vict), spell_info[skill].name, value);
   send_to_char(ch, "You change %s's %s to %d.\r\n", GET_NAME(vict), spell_info[skill].name, value);
 }
 

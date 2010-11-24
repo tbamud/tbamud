@@ -22,7 +22,7 @@
 #include "handler.h"
 #include "interpreter.h"
 #include "class.h"
-
+#include "act.h"
 
 /** Aportable random number function.
  * @param from The lower bounds of the random number.
@@ -286,7 +286,7 @@ void mudlog(int type, int level, int file, const char *str, ...)
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING || IS_NPC(i->character)) /* switch */
       continue;
-    if (GET_LEVEL(i->character) < level)
+    if (GET_ADMLEVEL(i->character) < level)
       continue;
     if (PLR_FLAGGED(i->character, PLR_WRITING))
       continue;
@@ -1480,4 +1480,39 @@ int get_class_by_name(char *classname)
       if (is_abbrev(classname, pc_class_types[i])) return(i);
 
     return (-1);
+}
+
+bool set_admin_level(struct char_data *ch, int admlvl)
+{
+  int old_lvl, i;
+
+  /* Validate the data */
+  if (!ch || IS_NPC(ch)) return FALSE;
+  if ((admlvl < ADMLVL_MORTAL) || (admlvl > ADMLVL_IMPL)) return FALSE;
+
+  /* Grab the old level */
+  old_lvl = GET_ADMLEVEL(ch);
+
+  /* Set player data */
+  ch->player_specials->saved.adm_level = admlvl;
+
+  /* Set default privs for the new level */
+  set_default_admin_privs(ch, FALSE);
+
+  /* Set player index */
+  for (i = 0; i <= top_of_p_table; i++) {
+    if (player_table[i].id == GET_IDNUM(ch)) {
+      player_table[i].admlevel = admlvl;
+    }
+  }
+
+  /* Save all the data */
+  save_char(ch);
+  save_player_index();
+
+  if (!PLR_FLAGGED(ch, PLR_NOWIZLIST) && old_lvl != admlvl) {
+    run_autowiz();
+  }
+
+  return TRUE;
 }

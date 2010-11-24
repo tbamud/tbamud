@@ -454,7 +454,7 @@ ACMD(do_ibt)
   last_ibt  = get_last_ibt(subcmd);
 
   if ((!*arg)){
-    if (GET_LEVEL(ch) >= LVL_GRGOD){
+    if (ADM_FLAGGED(ch, ADM_ADVIBT)) {
       send_to_char(ch, "Usage: %s%s submit <header>%s\r\n"
                        "       %s%s list%s\r\n"
                        "       %s%s show <num>%s\r\n"
@@ -468,7 +468,7 @@ ACMD(do_ibt)
                                QYEL, CMD_NAME, QNRM,
                                QYEL, CMD_NAME, QNRM);
       return;
-    } else if (GET_LEVEL(ch) >= LVL_IMMORT) {
+    } else if (IS_ADMIN(ch, ADMLVL_IMMORT)) {
       send_to_char(ch, "Usage: %s%s submit <header>%s\r\n"
                        "       %s%s list%s\r\n"
                        "       %s%s show <num>%s\r\n",
@@ -499,12 +499,12 @@ ACMD(do_ibt)
       send_to_char(ch, "That %s doesn't exist.\r\n", CMD_NAME);
       return;
     } else {
-      if ((GET_LEVEL(ch) < LVL_IMMORT) && (!is_ibt_logger(ibtData, ch))) {
+      if ((!IS_ADMIN(ch, ADMLVL_IMMORT)) && (!is_ibt_logger(ibtData, ch))) {
         send_to_char(ch, "Sorry but you may only view %ss you have posted yourself.\n\r", ibt_types[subcmd]);
       } else {
 
         send_to_char(ch, "%s%s by %s%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->name);
-        if (GET_LEVEL(ch) >= LVL_IMMORT) {
+        if (IS_ADMIN(ch, ADMLVL_IMMORT)) {
           send_to_char(ch, "%sLevel: %s%d\r\n",QCYN, QYEL, ibtData->level);
           send_to_char(ch, "%sRoom : %s%d\r\n",QCYN, QYEL, ibtData->room);
         }
@@ -527,7 +527,7 @@ ACMD(do_ibt)
 
     if (first_ibt)
     {
-      if (GET_LEVEL(ch) < LVL_IMMORT) {
+      if (!IS_ADMIN(ch, ADMLVL_IMMORT)) {
         send_to_char(ch,"%s No %s|%s Description\r\n", QCYN, QGRN, QCYN);
         send_to_char(ch,"%s ---|--------------------------------------------------%s\r\n", QGRN, QNRM);
       } else {
@@ -539,7 +539,7 @@ ACMD(do_ibt)
         i++;
 
         /* For mortals, skip IBT's that they didn't log */
-        if ((GET_LEVEL(ch) < LVL_IMMORT) && !is_ibt_logger(ibtData,ch))
+        if ((!IS_ADMIN(ch, ADMLVL_IMMORT)) && !is_ibt_logger(ibtData,ch))
           continue;
 
         /* Set up the 'important' flag */
@@ -549,7 +549,7 @@ ACMD(do_ibt)
           sprintf(imp, "%c", ' ');
 
         if (IBT_FLAGGED(ibtData, IBT_RESOLVED)) {
-          if (GET_LEVEL(ch) < LVL_IMMORT) {
+          if (!IS_ADMIN(ch, ADMLVL_IMMORT)) {
             send_to_char(ch, "%s%s%3d|%s%s\r\n",
                                   imp, QGRN, i, ibtData->text, QNRM);
           } else {
@@ -562,7 +562,7 @@ ACMD(do_ibt)
           }
           num_res++;
         } else if (IBT_FLAGGED(ibtData, IBT_INPROGRESS)) {
-          if (GET_LEVEL(ch) < LVL_IMMORT) {
+          if (!IS_ADMIN(ch, ADMLVL_IMMORT)) {
             send_to_char(ch, "%s%s%3d%s|%s%s%s\r\n",
                                   imp, QYEL, i, QGRN,
                                   QYEL, ibtData->text, QNRM);
@@ -576,7 +576,7 @@ ACMD(do_ibt)
           }
           num_unres++;
         } else {
-          if (GET_LEVEL(ch) < LVL_IMMORT) {
+          if (!IS_ADMIN(ch, ADMLVL_IMMORT)) {
             send_to_char(ch, "%s%s%3d%s|%s%s%s\r\n",
                                   imp, QRED, i, QGRN,
                                   QRED, ibtData->text, QNRM);
@@ -599,7 +599,7 @@ ACMD(do_ibt)
       } else {
         send_to_char(ch,"No %ss have been found that were reported by you!\r\n", CMD_NAME);
       }
-      if (GET_LEVEL(ch) >= LVL_GRGOD) {
+      if (ADM_FLAGGED(ch, ADM_ADVIBT)) {
         send_to_char(ch,"%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
       }
       send_to_char(ch,"%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\r\n", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
@@ -649,12 +649,12 @@ ACMD(do_ibt)
        case SCMD_TYPO: LINK( ibtData, first_typo, last_typo, next, prev );
                        break;
     }
-    mudlog(NRM,LVL_IMMORT, FALSE, "%s has posted %s %s!", GET_NAME(ch), TANA(CMD_NAME), CMD_NAME);
+    mudlog(NRM,ADMLVL_IMMORT, FALSE, "%s has posted %s %s!", GET_NAME(ch), TANA(CMD_NAME), CMD_NAME);
     return;
   }
   else if (is_abbrev(arg,"resolve"))
   {
-    if (GET_LEVEL(ch) < LVL_GRGOD){
+    if (!ADM_FLAGGED(ch, ADM_ADVIBT)) {
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
@@ -678,7 +678,7 @@ ACMD(do_ibt)
     }
     return;
   } else if (is_abbrev(arg,"remove")) {
-    if (GET_LEVEL(ch) < LVL_GRGOD){
+    if (!ADM_FLAGGED(ch, ADM_ADVIBT)) {
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
@@ -701,21 +701,21 @@ ACMD(do_ibt)
     }
     return;
   } else if (is_abbrev(arg,"save")) {
-    if (GET_LEVEL(ch) < LVL_GRGOD){
+    if (!ADM_FLAGGED(ch, ADM_ADVIBT)) {
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
     save_ibt_file(subcmd);
     send_to_char(ch,"%s list saved.\r\n", ibt_types[subcmd]);
   } else if (is_abbrev(arg,"edit")) {
-    if (GET_LEVEL(ch) < LVL_GRGOD){
+    if (!ADM_FLAGGED(ch, ADM_ADVIBT)) {
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
     /* Pass control to the OLC without the 'edit' arg */
     do_oasis_ibtedit(ch, arg_text, cmd, subcmd);
   } else {
-    if (GET_LEVEL(ch) < LVL_GRGOD){
+    if (!ADM_FLAGGED(ch, ADM_ADVIBT)) {
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       send_to_char(ch, "Usage: %s submit <text>\r\n", ibt_types[subcmd]);
       return;
@@ -776,7 +776,7 @@ ACMD(do_oasis_ibtedit)
 
   /* Give descriptor an OLC structure. */
   if (d->olc) {
-    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis_ibtedit: Player already had olc structure.");
+    mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: do_oasis_ibtedit: Player already had olc structure.");
     free(d->olc);
   }
 
@@ -799,7 +799,7 @@ ACMD(do_oasis_ibtedit)
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-  mudlog(CMP, LVL_IMMORT, TRUE,"OLC: %s starts editing %s %d",
+  mudlog(CMP, ADMLVL_IMMORT, TRUE,"OLC: %s starts editing %s %d",
     GET_NAME(ch), IBT_TYPE, OLC_NUM(d));
 }
 
@@ -942,7 +942,7 @@ void ibtedit_parse(struct descriptor_data *d, char *arg)
       case 'Y':
         /* Save the IBT in memory and to disk. */
         ibtedit_save(d);
-        mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits %s %d", GET_NAME(d->character), IBT_TYPE, OLC_NUM(d));
+        mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits %s %d", GET_NAME(d->character), IBT_TYPE, OLC_NUM(d));
         cleanup_olc(d, CLEANUP_ALL);
         return;
       case 'n':
@@ -1057,21 +1057,21 @@ void ibtedit_parse(struct descriptor_data *d, char *arg)
     case IBTEDIT_BODY:
       /* We should never get here, modify.c throws user through ibtedit_string_cleanup. */
       cleanup_olc(d, CLEANUP_ALL);
-      mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: ibtedit_parse(): Reached BODY case!");
+      mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: OLC: ibtedit_parse(): Reached BODY case!");
       write_to_output(d, "Oops...\r\n");
       break;
 
     case IBTEDIT_NOTES:
       /* We should never get here, modify.c throws user through ibtedit_string_cleanup. */
       cleanup_olc(d, CLEANUP_ALL);
-      mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: ibtedit_parse(): Reached NOTES case!");
+      mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: OLC: ibtedit_parse(): Reached NOTES case!");
       write_to_output(d, "Oops...\r\n");
       break;
 
     default:
       /* We should never get here. */
       cleanup_olc(d, CLEANUP_ALL);
-      mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: ibtedit_parse(): Reached default case!");
+      mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: OLC: ibtedit_parse(): Reached default case!");
       write_to_output(d, "Oops...\r\n");
       break;
   }

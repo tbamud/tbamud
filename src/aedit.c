@@ -41,7 +41,7 @@ ACMD(do_oasis_aedit)
   /* No building as a mob or while being forced. */
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
     return;
-    
+
     if (CONFIG_NEW_SOCIALS == 0) {
     send_to_char(ch, "Socials cannot be edited at the moment.\r\n");
     return;
@@ -68,7 +68,7 @@ ACMD(do_oasis_aedit)
   d = ch->desc;
 
   if (!str_cmp("save", arg)) {
-    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves socials.", GET_NAME(ch));
+    mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves socials.", GET_NAME(ch));
     send_to_char(ch, "Writing social file.\r\n");
     aedit_save_to_disk(d);
     send_to_char(ch, "Done.\r\n");
@@ -77,7 +77,7 @@ ACMD(do_oasis_aedit)
 
   /* Give descriptor an OLC structure. */
   if (d->olc) {
-    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis: Player already had olc structure.");
+    mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: do_oasis: Player already had olc structure.");
     free(d->olc);
   }
   CREATE(d->olc, struct oasis_olc_data, 1);
@@ -104,7 +104,7 @@ ACMD(do_oasis_aedit)
   STATE(d) = CON_AEDIT;
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
-  mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing actions.", GET_NAME(ch));
+  mudlog(CMP, ADMLVL_IMMORT, TRUE, "OLC: %s starts editing actions.", GET_NAME(ch));
 }
 
 static void aedit_setup_new(struct descriptor_data *d) {
@@ -253,7 +253,7 @@ static void aedit_disp_menu(struct descriptor_data * d) {
            "%s-- Action editor\r\n"
            "%sn%s) Command         : %s%-15.15s%s %s1%s) Sort as Command  : %s%-15.15s%s\r\n"
            "%s2%s) Min Position[CH]: %s%-8.8s        %s3%s) Min Position [VT]: %s%-8.8s\r\n"
-           "%s4%s) Min Level   [CH]: %s%-3d             %s5%s) Show if Invisible: %s%s\r\n"
+           "%s4%s) Min AdmLevel[CH]: %s%-3d             %s5%s) Show if Invisible: %s%s\r\n"
            "%sa%s) Char    [NO ARG]: %s%s\r\n"
            "%sb%s) Others  [NO ARG]: %s%s\r\n"
            "%sc%s) Char [NOT FOUND]: %s%s\r\n"
@@ -321,7 +321,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
       switch (*arg) {
        case 'y': case 'Y':
          aedit_save_internally(d);
-         mudlog (CMP, LVL_IMPL, TRUE, "OLC: %s edits action %s",
+         mudlog (CMP, ADMLVL_IMPL, TRUE, "OLC: %s edits action %s",
                  GET_NAME(d->character), OLC_ACTION(d)->command);
 
          /* do not free the strings.. just the structure */
@@ -425,7 +425,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
          OLC_MODE(d) = AEDIT_MIN_VICT_POS;
          return;
        case '4':
-         write_to_output(d, "Enter new minimum level for social: ");
+         write_to_output(d, "Enter new minimum admin level for social: ");
          OLC_MODE(d) = AEDIT_MIN_CHAR_LEVEL;
          return;
        case '5':
@@ -586,7 +586,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
         return;
       }
       i = atoi(arg);
-      if ((i < 0) && (i > LVL_IMPL))  {
+      if ((i < ADMLVL_MORTAL) && (i > ADMLVL_IMPL))  {
         aedit_disp_menu(d);
         return;
       }

@@ -42,7 +42,7 @@ int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen);
 int enter_player_game (struct descriptor_data *d);
 /* ACMDs available through interpreter.c */
 ACMD(do_alias);
-
+ACMD(do_cmdinfo);
 
 /* for compatibility with 2.20: */
 #define argument_interpreter(a, b, c) two_arguments(a, b, c)
@@ -60,6 +60,8 @@ struct command_info {
    void	(*command_pointer)
 	   (struct char_data *ch, char *argument, int cmd, int subcmd);
    sh_int minimum_level;
+   sh_int minimum_admlevel;
+   int  admin_flag;
    int	subcmd;
 };
 

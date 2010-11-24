@@ -62,7 +62,7 @@ ACMD(do_oasis_trigedit)
   d = ch->desc;
   /* Give descriptor an OLC structure. */
   if (d->olc) {
-    mudlog(BRF, LVL_IMMORT, TRUE,
+    mudlog(BRF, ADMLVL_IMMORT, TRUE,
       "SYSERR: do_oasis_trigedit: Player already had olc structure.");
     free(d->olc);
   }
@@ -86,7 +86,7 @@ ACMD(do_oasis_trigedit)
   }
   OLC_NUM(d) = number;
 
-  /* If this is a new trigger, setup a new one, otherwise, setup the a copy of 
+  /* If this is a new trigger, setup a new one, otherwise, setup the a copy of
    * the existing trigger. */
   if ((real_num = real_trigger(number)) == NOTHING)
     trigedit_setup_new(d);
@@ -99,11 +99,11 @@ ACMD(do_oasis_trigedit)
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-  mudlog(CMP, LVL_IMMORT, TRUE,"OLC: %s starts editing zone %d [trigger](allowed zone %d)",
+  mudlog(CMP, ADMLVL_IMMORT, TRUE,"OLC: %s starts editing zone %d [trigger](allowed zone %d)",
          GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-/* Called when a mob or object is being saved to disk, so its script can be 
+/* Called when a mob or object is being saved to disk, so its script can be
  * saved. */
 void script_save_to_disk(FILE *fp, void *item, int type)
 {
@@ -170,7 +170,7 @@ void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
     strcat(OLC_STORAGE(d), "\r\n");
     c = c->next;
   }
-  /* Now trig->cmdlist is something to pass to the text editor it will be 
+  /* Now trig->cmdlist is something to pass to the text editor it will be
    * converted back to a real cmdlist_element list later. */
 
   OLC_TRIG(d) = trig;
@@ -321,7 +321,7 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
       switch(tolower(*arg)) {
         case 'y':
           trigedit_save(d);
-          mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
+          mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
                  "OLC: %s edits trigger %d", GET_NAME(d->character),
                  OLC_NUM(d));
           /* fall through */
@@ -565,9 +565,9 @@ void trigedit_save(struct descriptor_data *d)
   }
 
   /* now write the trigger out to disk, along with the rest of the triggers for
-   * this zone. We write this to disk NOW instead of letting the builder have 
-   * control because if we lose this after having assigned a new trigger to an 
-   * item, we will get SYSERR's upton reboot that could make things hard to 
+   * this zone. We write this to disk NOW instead of letting the builder have
+   * control because if we lose this after having assigned a new trigger to an
+   * item, we will get SYSERR's upton reboot that could make things hard to
    * debug. */
   zone = zone_table[OLC_ZNUM(d)].number;
   top = zone_table[OLC_ZNUM(d)].top;
@@ -579,7 +579,7 @@ void trigedit_save(struct descriptor_data *d)
 #endif
 
   if (!(trig_file = fopen(fname, "w"))) {
-    mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE,
+    mudlog(BRF, MAX(ADMLVL_GOD, GET_INVIS_LEV(d->character)), TRUE,
            "SYSERR: OLC: Can't open trig file \"%s\"", fname);
     return;
   }
@@ -589,7 +589,7 @@ void trigedit_save(struct descriptor_data *d)
       trig = trig_index[rnum]->proto;
 
       if (fprintf(trig_file, "#%d\n", i) < 0) {
-        mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE,
+        mudlog(BRF, MAX(ADMLVL_GOD, GET_INVIS_LEV(d->character)), TRUE,
                "SYSERR: OLC: Can't write trig file!");
         fclose(trig_file);
         return;
@@ -647,10 +647,10 @@ static void trigedit_create_index(int znum, char *type)
   snprintf(new_name, sizeof(new_name), "%s/newindex", prefix);
 
   if (!(oldfile = fopen(old_name, "r"))) {
-    mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: DG_OLC: Failed to open %s", old_name);
+    mudlog(BRF, ADMLVL_IMPL, TRUE, "SYSERR: DG_OLC: Failed to open %s", old_name);
     return;
   } else if (!(newfile = fopen(new_name, "w"))) {
-    mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: DG_OLC: Failed to open %s", new_name);
+    mudlog(BRF, ADMLVL_IMPL, TRUE, "SYSERR: DG_OLC: Failed to open %s", new_name);
     return;
   }
 
@@ -752,20 +752,20 @@ int dg_script_edit_parse(struct descriptor_data *d, char *arg)
       switch(tolower(*arg)) {
         case 'q':
           /* This was buggy. First we created a copy of a thing, but maintained
-	   * pointers to scripts, then if we altered the scripts, we freed the 
+	   * pointers to scripts, then if we altered the scripts, we freed the
 	   * pointers and added new ones to the OLC_THING. If we then choose NOT
-	   * to save the changes, the pointers in the original pointed to 
+	   * to save the changes, the pointers in the original pointed to
 	   * garbage. If we saved changes the pointers were updated correctly.
-	   * Solution: Here we just point the working copies to the new 
-	   * proto_scripts. We only update the original when choosing to save 
+	   * Solution: Here we just point the working copies to the new
+	   * proto_scripts. We only update the original when choosing to save
 	   * internally, then free the unused memory there. -Welcor
 	   * Thanks to Jeremy Stanley and Torgny Bjers for the bug report.
 	   * After updating to OasisOLC 2.0.3 I discovered some malfunctions
-	   * in this code, so I restructured it a bit. Now things work like 
-	   * this: OLC_SCRIPT(d) is assigned a copy of the edited things' 
+	   * in this code, so I restructured it a bit. Now things work like
+	   * this: OLC_SCRIPT(d) is assigned a copy of the edited things'
 	   * proto_script. OLC_OBJ(d), etc.. are initalized with proto_script =
 	   * NULL; On save, the saved copy is updated with OLC_SCRIPT(d) as new
-	   * proto_script (freeing the old one). On quit/nosave, OLC_SCRIPT is 
+	   * proto_script (freeing the old one). On quit/nosave, OLC_SCRIPT is
 	   * free()'d, and the prototype not touched. */
           return 0;
         case 'n':

@@ -35,6 +35,19 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Nov 24 2010] - Jamdog
+  Split mortal and admin levels (thanks fnord for original patch/idea)
+  Mortal level converted to ubyte for 255 max
+  Max mortal level now configurable in cedit
+  Level on help files now indicates admin level
+  Added 'set <player> admlevel <num>'
+  Added admin command for imms
+  Added mortal command, and modified return command to work for everyone
+  Added admin level to player index (for autowiz)
+  Added mortal flag to player index (for autowiz)
+  Autowiz converted to work with new admin levels
+  Socials are now admin-level dependant
+  Added imm ability to 'score <player>'
 [Nov 06 2010] - Jamdog
   Added HappyHour feature
   Added game_info function for sending global messages to all players

@@ -103,7 +103,7 @@ ACMD(do_oasis_medit)
 
   /* Give descriptor an OLC structure. */
   if (d->olc) {
-    mudlog(BRF, LVL_IMMORT, TRUE,
+    mudlog(BRF, ADMLVL_IMMORT, TRUE,
       "SYSERR: do_oasis_medit: Player already had olc structure.");
     free(d->olc);
   }
@@ -132,7 +132,7 @@ ACMD(do_oasis_medit)
   if (save) {
     send_to_char(ch, "Saving all mobiles in zone %d.\r\n",
       zone_table[OLC_ZNUM(d)].number);
-    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+    mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
       "OLC: %s saves mobile info for zone %d.",
       GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
 
@@ -162,7 +162,7 @@ ACMD(do_oasis_medit)
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-  mudlog(CMP, LVL_IMMORT, TRUE,"OLC: %s starts editing zone %d allowed zone %d",
+  mudlog(CMP, ADMLVL_IMMORT, TRUE,"OLC: %s starts editing zone %d allowed zone %d",
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
@@ -545,7 +545,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
     case 'Y':
       /* Save the mob in memory and to disk. */
       medit_save_internally(d);
-      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits mob %d", GET_NAME(d->character), OLC_NUM(d));
+      mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits mob %d", GET_NAME(d->character), OLC_NUM(d));
       if (CONFIG_OLC_SAVE) {
         medit_save_to_disk(zone_table[real_zone_by_thing(OLC_NUM(d))].number);
         write_to_output(d, "Mobile saved to disk.\r\n");
@@ -875,7 +875,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
      * We should never get here.
      */
     cleanup_olc(d, CLEANUP_ALL);
-    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: medit_parse(): Reached D_DESC case!");
+    mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: OLC: medit_parse(): Reached D_DESC case!");
     write_to_output(d, "Oops...\r\n");
     break;
 
@@ -1051,7 +1051,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
     break;
 
   case MEDIT_LEVEL:
-    GET_LEVEL(OLC_MOB(d)) = LIMIT(i, 1, LVL_IMPL);
+    GET_LEVEL(OLC_MOB(d)) = LIMIT(i, 1, CONFIG_MAX_LEVEL);
     OLC_VAL(d) = TRUE;
     medit_disp_stats_menu(d);
     return;
@@ -1088,7 +1088,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
   default:
     /* We should never get here. */
     cleanup_olc(d, CLEANUP_ALL);
-    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: medit_parse(): Reached default case!");
+    mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: OLC: medit_parse(): Reached default case!");
     write_to_output(d, "Oops...\r\n");
     break;
   }
@@ -1116,7 +1116,7 @@ void medit_autoroll_stats(struct descriptor_data *d)
   int mob_lev;
 
   mob_lev = GET_LEVEL(OLC_MOB(d));
-  mob_lev = GET_LEVEL(OLC_MOB(d)) = LIMIT(mob_lev, 1, LVL_IMPL);
+  mob_lev = GET_LEVEL(OLC_MOB(d)) = LIMIT(mob_lev, 1, CONFIG_MAX_LEVEL);
 
   GET_MOVE(OLC_MOB(d))    = mob_lev*10;          /* hit point bonus (mobs don't use movement points */
   GET_HIT(OLC_MOB(d))     = mob_lev/5;           /* number of hitpoint dice */

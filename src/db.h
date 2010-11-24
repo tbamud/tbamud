@@ -143,6 +143,7 @@
 #define PINDEX_NODELETE		(1 << 1)	/* protected player	*/
 #define PINDEX_SELFDELETE	(1 << 2)	/* player is selfdeleting*/
 #define PINDEX_NOWIZLIST	(1 << 3)	/* Player shouldn't be on wizlist*/
+#define PINDEX_MORTAL    	(1 << 4)	/* Player is currently mortal (shouldn't be on wizlist) */
 
 #define REAL 0
 #define VIRTUAL 1
@@ -213,6 +214,7 @@ struct player_index_element {
    char	*name;
    long id;
    int level;
+   int admlevel;
    int flags;
    time_t last;
 };

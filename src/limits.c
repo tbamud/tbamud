@@ -200,15 +200,15 @@ void run_autowiz(void)
 
 #if defined(CIRCLE_UNIX)
     res = snprintf(buf, sizeof(buf), "nice ../bin/autowiz %d %s %d %s %d &",
-	CONFIG_MIN_WIZLIST_LEV, WIZLIST_FILE, LVL_IMMORT, IMMLIST_FILE, (int) getpid());
+	CONFIG_MIN_WIZLIST_LEV, WIZLIST_FILE, ADMLVL_IMMORT, IMMLIST_FILE, (int) getpid());
 #elif defined(CIRCLE_WINDOWS)
     res = snprintf(buf, sizeof(buf), "autowiz %d %s %d %s",
-	CONFIG_MIN_WIZLIST_LEV, WIZLIST_FILE, LVL_IMMORT, IMMLIST_FILE);
+	CONFIG_MIN_WIZLIST_LEV, WIZLIST_FILE, ADMLVL_IMMORT, IMMLIST_FILE);
 #endif /* CIRCLE_WINDOWS */
 
     /* Abusing signed -> unsigned conversion to avoid '-1' check. */
     if (res < sizeof(buf)) {
-      mudlog(CMP, LVL_IMMORT, FALSE, "Initiating autowiz.");
+      mudlog(CMP, ADMLVL_IMMORT, FALSE, "Initiating autowiz.");
       i = system(buf);
       reboot_wizlists();
     } else
@@ -222,7 +222,7 @@ void gain_exp(struct char_data *ch, int gain)
   int is_altered = FALSE;
   int num_levels = 0;
 
-  if (!IS_NPC(ch) && ((GET_LEVEL(ch) < 1 || GET_LEVEL(ch) >= LVL_IMMORT)))
+  if (!IS_NPC(ch) && ((GET_LEVEL(ch) < 1 || GET_LEVEL(ch) >= CONFIG_MAX_LEVEL)))
     return;
 
   if (IS_NPC(ch)) {
@@ -235,7 +235,7 @@ void gain_exp(struct char_data *ch, int gain)
 
     gain = MIN(CONFIG_MAX_EXP_GAIN, gain);	/* put a cap on the max gain per kill */
     GET_EXP(ch) += gain;
-    while (GET_LEVEL(ch) < LVL_IMMORT - CONFIG_NO_MORT_TO_IMMORT &&
+    while (GET_LEVEL(ch) < CONFIG_MAX_LEVEL &&
 	GET_EXP(ch) >= level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1)) {
       GET_LEVEL(ch) += 1;
       num_levels++;
@@ -244,15 +244,20 @@ void gain_exp(struct char_data *ch, int gain)
     }
 
     if (is_altered) {
-      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s advanced %d level%s to level %d.",
+      mudlog(BRF, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s advanced %d level%s to level %d.",
 		GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", GET_LEVEL(ch));
       if (num_levels == 1)
         send_to_char(ch, "You rise a level!\r\n");
       else
-	send_to_char(ch, "You rise %d levels!\r\n", num_levels);
+        send_to_char(ch, "You rise %d levels!\r\n", num_levels);
       set_title(ch, NULL);
-      if (GET_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
-        run_autowiz();
+      if (GET_LEVEL(ch) >= CONFIG_MAX_LEVEL) {
+        if (!IS_ADMIN(ch, ADMLVL_IMMORT) && !CONFIG_NO_MORT_TO_IMMORT) {
+          set_admin_level(ch, ADMLVL_IMMORT);
+          send_to_char(ch, "You have reached the maximum level and become immortal!\r\n");
+          mudlog(NRM, ADMLVL_GOD, TRUE, "%s advanced to Immortal!", GET_NAME(ch));
+        }
+      }
     }
   } else if (gain < 0) {
     gain = MAX(-CONFIG_MAX_EXP_LOSS, gain);	/* Cap max exp lost per death */
@@ -260,9 +265,7 @@ void gain_exp(struct char_data *ch, int gain)
     if (GET_EXP(ch) < 0)
       GET_EXP(ch) = 0;
   }
-  if (GET_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
-    run_autowiz();
-  }
+}
 
 void gain_exp_regardless(struct char_data *ch, int gain)
 {
@@ -277,7 +280,7 @@ void gain_exp_regardless(struct char_data *ch, int gain)
     GET_EXP(ch) = 0;
 
   if (!IS_NPC(ch)) {
-    while (GET_LEVEL(ch) < LVL_IMPL &&
+    while (!IS_ADMIN(ch, ADMLVL_IMPL) &&
 	GET_EXP(ch) >= level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1)) {
       GET_LEVEL(ch) += 1;
       num_levels++;
@@ -286,17 +289,22 @@ void gain_exp_regardless(struct char_data *ch, int gain)
     }
 
     if (is_altered) {
-      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s advanced %d level%s to level %d.",
+      mudlog(BRF, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s advanced %d level%s to level %d.",
 		GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", GET_LEVEL(ch));
       if (num_levels == 1)
         send_to_char(ch, "You rise a level!\r\n");
       else
-	send_to_char(ch, "You rise %d levels!\r\n", num_levels);
+        send_to_char(ch, "You rise %d levels!\r\n", num_levels);
       set_title(ch, NULL);
+      if (GET_LEVEL(ch) >= CONFIG_MAX_LEVEL) {
+        if (!IS_ADMIN(ch, ADMLVL_IMMORT) && !CONFIG_NO_MORT_TO_IMMORT) {
+          set_admin_level(ch, ADMLVL_IMMORT);
+          send_to_char(ch, "You have reached the maximum level and become immortal!\r\n");
+          mudlog(NRM, ADMLVL_GOD, TRUE, "%s advanced to Immortal!", GET_NAME(ch));
+        }
+      }
     }
   }
-  if (GET_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
-    run_autowiz();
 }
 
 void gain_condition(struct char_data *ch, int condition, int value)
@@ -365,7 +373,7 @@ static void check_idling(struct char_data *ch)
 	Crash_rentsave(ch, 0);
       else
 	Crash_idlesave(ch);
-      mudlog(CMP, LVL_GOD, TRUE, "%s force-rented and extracted (idle).", GET_NAME(ch));
+      mudlog(CMP, ADMLVL_GOD, TRUE, "%s force-rented and extracted (idle).", GET_NAME(ch));
       add_llog_entry(ch, LAST_IDLEOUT);
       extract_char(ch);
     }
@@ -394,19 +402,19 @@ void point_update(void)
 	if (damage(i, i, 2, SPELL_POISON) == -1)
 	  continue;	/* Oops, they died. -gg 6/24/98 */
       if (GET_POS(i) <= POS_STUNNED)
-	update_pos(i);
+        update_pos(i);
     } else if (GET_POS(i) == POS_INCAP) {
       if (damage(i, i, 1, TYPE_SUFFERING) == -1)
-	continue;
+        continue;
     } else if (GET_POS(i) == POS_MORTALLYW) {
       if (damage(i, i, 2, TYPE_SUFFERING) == -1)
-	continue;
+        continue;
     }
     if (!IS_NPC(i)) {
       update_char_objects(i);
       (i->char_specials.timer)++;
-      if (GET_LEVEL(i) < CONFIG_IDLE_MAX_LEVEL)
-	check_idling(i);
+      if (GET_ADMLEVEL(i) < CONFIG_IDLE_MAX_LEVEL)
+        check_idling(i);
     }
   }
 
@@ -418,32 +426,32 @@ void point_update(void)
     if (IS_CORPSE(j)) {
       /* timer count down */
       if (GET_OBJ_TIMER(j) > 0)
-	GET_OBJ_TIMER(j)--;
+        GET_OBJ_TIMER(j)--;
 
       if (!GET_OBJ_TIMER(j)) {
 
-	if (j->carried_by)
-	  act("$p decays in your hands.", FALSE, j->carried_by, j, 0, TO_CHAR);
-	else if ((IN_ROOM(j) != NOWHERE) && (world[IN_ROOM(j)].people)) {
-	  act("A quivering horde of maggots consumes $p.",
-	      TRUE, world[IN_ROOM(j)].people, j, 0, TO_ROOM);
-	  act("A quivering horde of maggots consumes $p.",
-	      TRUE, world[IN_ROOM(j)].people, j, 0, TO_CHAR);
-	}
-	for (jj = j->contains; jj; jj = next_thing2) {
-	  next_thing2 = jj->next_content;	/* Next in inventory */
-	  obj_from_obj(jj);
+        if (j->carried_by)
+          act("$p decays in your hands.", FALSE, j->carried_by, j, 0, TO_CHAR);
+        else if ((IN_ROOM(j) != NOWHERE) && (world[IN_ROOM(j)].people)) {
+          act("A quivering horde of maggots consumes $p.",
+              TRUE, world[IN_ROOM(j)].people, j, 0, TO_ROOM);
+          act("A quivering horde of maggots consumes $p.",
+              TRUE, world[IN_ROOM(j)].people, j, 0, TO_CHAR);
+        }
+        for (jj = j->contains; jj; jj = next_thing2) {
+          next_thing2 = jj->next_content;	/* Next in inventory */
+          obj_from_obj(jj);
 
-	  if (j->in_obj)
-	    obj_to_obj(jj, j->in_obj);
-	  else if (j->carried_by)
-	    obj_to_room(jj, IN_ROOM(j->carried_by));
-	  else if (IN_ROOM(j) != NOWHERE)
-	    obj_to_room(jj, IN_ROOM(j));
-	  else
-	    core_dump();
-	}
-	extract_obj(j);
+          if (j->in_obj)
+            obj_to_obj(jj, j->in_obj);
+          else if (j->carried_by)
+            obj_to_room(jj, IN_ROOM(j->carried_by));
+          else if (IN_ROOM(j) != NOWHERE)
+            obj_to_room(jj, IN_ROOM(j));
+          else
+            core_dump();
+        }
+        extract_obj(j);
       }
     }
     /* If the timer is set, count it down and at 0, try the trigger
@@ -463,6 +471,6 @@ void point_update(void)
     HAPPY_EXP = 0;
     HAPPY_GOLD = 0;
     HAPPY_TIME = 0;
-   game_info("Happy hour has ended!");
+    game_info("Happy hour has ended!");
   }
 }

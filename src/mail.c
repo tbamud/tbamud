@@ -288,7 +288,7 @@ static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman
 	FALSE, mailman, 0, ch, TO_VICT);
     return;
   }
-  if (GET_GOLD(ch) < STAMP_PRICE && GET_LEVEL(ch) < LVL_IMMORT) {
+  if (GET_GOLD(ch) < STAMP_PRICE && !ADM_FLAGGED(ch, ADM_MONEY)) {
     snprintf(buf, sizeof(buf), "$n tells you, 'A stamp costs %d coin%s.'\r\n"
 	    "$n tells you, '...which I see you can't afford.'", STAMP_PRICE,
             STAMP_PRICE == 1 ? "" : "s");
@@ -301,13 +301,18 @@ static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman
     return;
   }
   act("$n starts to write some mail.", TRUE, ch, 0, 0, TO_ROOM);
-  snprintf(buf, sizeof(buf), "$n tells you, 'I'll take %d coins for the stamp.'\r\n"
+
+  if (ADM_FLAGGED(ch, ADM_MONEY))
+    snprintf(buf, sizeof(buf), "$n tells you, 'Your mail is free.'\r\n"
+       "$n tells you, 'Write your message. (/s saves /h for help).'");
+  else
+    snprintf(buf, sizeof(buf), "$n tells you, 'I'll take %d coins for the stamp.'\r\n"
        "$n tells you, 'Write your message. (/s saves /h for help).'",
 	  STAMP_PRICE);
 
   act(buf, FALSE, mailman, 0, ch, TO_VICT);
 
-  if (GET_LEVEL(ch) < LVL_IMMORT)
+  if (!ADM_FLAGGED(ch, ADM_MONEY))
     GET_GOLD(ch) -= STAMP_PRICE;
 
   SET_BIT_AR(PLR_FLAGS(ch), PLR_MAILING);	/* string_write() sets writing. */
@@ -339,8 +344,8 @@ static void postmaster_receive_mail(struct char_data *ch, struct char_data *mail
     return;
   }
   while (has_mail(GET_IDNUM(ch))) {
-    obj = create_obj(); 
-    obj->item_number = 1; 
+    obj = create_obj();
+    obj->item_number = 1;
     obj->name = strdup("mail paper letter");
     obj->short_description = strdup("a piece of mail");
     obj->description = strdup("Someone has left a piece of mail here.");
@@ -365,11 +370,11 @@ static void postmaster_receive_mail(struct char_data *ch, struct char_data *mail
   }
 }
 
-void notify_if_playing(struct char_data *from, int recipient_id) 
-{ 
-  struct descriptor_data *d; 
+void notify_if_playing(struct char_data *from, int recipient_id)
+{
+  struct descriptor_data *d;
 
-  for (d = descriptor_list; d; d = d->next) 
-    if ((IS_PLAYING(d)) && (GET_IDNUM(d->character) == recipient_id) && (has_mail(GET_IDNUM(d->character)))) 
-      send_to_char(d->character, "You have new mudmail from %s.\r\n", GET_NAME(from)); 
-} 
+  for (d = descriptor_list; d; d = d->next)
+    if ((IS_PLAYING(d)) && (GET_IDNUM(d->character) == recipient_id) && (has_mail(GET_IDNUM(d->character))))
+      send_to_char(d->character, "You have new mudmail from %s.\r\n", GET_NAME(from));
+}

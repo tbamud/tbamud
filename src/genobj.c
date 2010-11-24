@@ -196,7 +196,7 @@ int save_objects(zone_rnum zone_num)
 
   snprintf(filename, sizeof(filename), "%s/%d.new", OBJ_PREFIX, zone_table[zone_num].number);
   if (!(fp = fopen(filename, "w+"))) {
-    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: Cannot open objects file %s!", filename);
+    mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: OLC: Cannot open objects file %s!", filename);
     return FALSE;
   }
   /* Start running through all objects in this zone. */
@@ -256,7 +256,7 @@ int save_objects(zone_rnum zone_num)
 	for (ex_desc = obj->ex_description; ex_desc; ex_desc = ex_desc->next) {
 	  /* Sanity check to prevent nasty protection faults. */
 	  if (!ex_desc->keyword || !ex_desc->description || !*ex_desc->keyword || !*ex_desc->description) {
-	    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: oedit_save_to_disk: Corrupt ex_desc!");
+	    mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: OLC: oedit_save_to_disk: Corrupt ex_desc!");
 	    continue;
 	  }
 	  strncpy(buf, ex_desc->description, sizeof(buf) - 1);

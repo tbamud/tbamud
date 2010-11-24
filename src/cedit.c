@@ -46,7 +46,7 @@ ACMD(do_oasis_cedit)
   /* Parse any arguments. */
   one_argument(argument, buf1);
 
-  if (GET_LEVEL(ch) < LVL_IMPL) {
+  if (!ADM_FLAGGED(ch, ADM_CEDIT)) {
     send_to_char(ch, "You can't modify the game configuration.\r\n");
     return;
   }
@@ -61,7 +61,7 @@ ACMD(do_oasis_cedit)
     act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
     SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-    mudlog(BRF, LVL_IMMORT, TRUE,
+    mudlog(BRF, ADMLVL_IMMORT, TRUE,
       "OLC: %s starts editing the game configuration.", GET_NAME(ch));
     return;
   } else if (str_cmp("save", buf1) != 0) {
@@ -70,7 +70,7 @@ ACMD(do_oasis_cedit)
   }
 
   send_to_char(ch, "Saving the game configuration.\r\n");
-  mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+  mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
     "OLC: %s saves the game configuration.", GET_NAME(ch));
 
   cedit_save_to_disk();
@@ -92,6 +92,7 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->play.max_exp_loss        = CONFIG_MAX_EXP_LOSS;
   OLC_CONFIG(d)->play.max_npc_corpse_time = CONFIG_MAX_NPC_CORPSE_TIME;
   OLC_CONFIG(d)->play.max_pc_corpse_time  = CONFIG_MAX_PC_CORPSE_TIME;
+  OLC_CONFIG(d)->play.max_mortal_level    = CONFIG_MAX_LEVEL;
   OLC_CONFIG(d)->play.idle_void           = CONFIG_IDLE_VOID;
   OLC_CONFIG(d)->play.idle_rent_time      = CONFIG_IDLE_RENT_TIME;
   OLC_CONFIG(d)->play.idle_max_level      = CONFIG_IDLE_MAX_LEVEL;
@@ -190,6 +191,7 @@ static void cedit_save_internally(struct descriptor_data *d)
   CONFIG_MAX_EXP_LOSS        = OLC_CONFIG(d)->play.max_exp_loss;
   CONFIG_MAX_NPC_CORPSE_TIME = OLC_CONFIG(d)->play.max_npc_corpse_time;
   CONFIG_MAX_PC_CORPSE_TIME  = OLC_CONFIG(d)->play.max_pc_corpse_time;
+  CONFIG_MAX_LEVEL           = OLC_CONFIG(d)->play.max_mortal_level;
   CONFIG_IDLE_VOID           = OLC_CONFIG(d)->play.idle_void;
   CONFIG_IDLE_RENT_TIME      = OLC_CONFIG(d)->play.idle_rent_time;
   CONFIG_IDLE_MAX_LEVEL      = OLC_CONFIG(d)->play.idle_max_level;
@@ -345,11 +347,13 @@ int save_config( IDXTYPE nowhere )
               "max_npc_corpse_time = %d\n\n", CONFIG_MAX_NPC_CORPSE_TIME);
   fprintf(fl, "* Number of tics before PC corpses decompose.\n"
               "max_pc_corpse_time = %d\n\n", CONFIG_MAX_PC_CORPSE_TIME);
+  fprintf(fl, "* The maximum mortal level.\n"
+              "max_mortal_level = %d\n\n", CONFIG_MAX_LEVEL);
   fprintf(fl, "* Number of tics before a PC is sent to the void.\n"
               "idle_void = %d\n\n", CONFIG_IDLE_VOID);
   fprintf(fl, "* Number of tics before a PC is autorented.\n"
               "idle_rent_time = %d\n\n", CONFIG_IDLE_RENT_TIME);
-  fprintf(fl, "* Level and above of players whom are immune to idle penalties.\n"
+  fprintf(fl, "* Admin Level and above of players whom are immune to idle penalties.\n"
               "idle_max_level = %d\n\n", CONFIG_IDLE_MAX_LEVEL);
   fprintf(fl, "* Should the items in death traps be junked automatically?\n"
               "dts_are_dumps = %d\n\n", CONFIG_DTS_ARE_DUMPS);
@@ -530,7 +534,7 @@ int save_config( IDXTYPE nowhere )
               "use_autowiz = %d\n\n",
               CONFIG_USE_AUTOWIZ);
 
-  fprintf(fl, "* If yes, what is the lowest level which should be on the wizlist?\n"
+  fprintf(fl, "* If yes, what is the lowest admin level which should be on the wizlist?\n"
               "min_wizlist_lev = %d\n\n",
               CONFIG_MIN_WIZLIST_LEV);
 
@@ -591,14 +595,15 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         "%sG%s) Maximum Experience Loss : %s%d\r\n"
         "%sH%s) Max Time for NPC Corpse : %s%d\r\n"
         "%sI%s) Max Time for PC Corpse  : %s%d\r\n"
-        "%sJ%s) Tics before PC sent to void : %s%d\r\n"
-        "%sK%s) Tics before PC is autosaved : %s%d\r\n"
-        "%sL%s) Level Immune To IDLE        : %s%d\r\n"
-        "%sM%s) Death Traps Junk Items      : %s%s\r\n"
-        "%sN%s) Objects Load Into Inventory : %s%s\r\n"
-        "%sO%s) Track Through Doors         : %s%s\r\n"
-        "%sP%s) Display Closed Doors        : %s%s\r\n"
-        "%sR%s) Mortals Level To Immortal   : %s%s\r\n"
+        "%sJ%s) Max Mortal Level        : %s%d\r\n"
+        "%sK%s) Tics before PC sent to void : %s%d\r\n"
+        "%sL%s) Tics before PC is autosaved : %s%d\r\n"
+        "%sM%s) Imm Level Immune To IDLE    : %s%d\r\n"
+        "%sN%s) Death Traps Junk Items      : %s%s\r\n"
+        "%sO%s) Objects Load Into Inventory : %s%s\r\n"
+        "%sP%s) Track Through Doors         : %s%s\r\n"
+        "%sR%s) Display Closed Doors        : %s%s\r\n"
+        "%sS%s) Mortals Level To Immortal   : %s%s\r\n"
 	      "%s1%s) OK Message Text         : %s%s"
         "%s2%s) NOPERSON Message Text   : %s%s"
         "%s3%s) NOEFFECT Message Text   : %s%s"
@@ -617,6 +622,7 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         grn, nrm, cyn, OLC_CONFIG(d)->play.max_exp_loss,
         grn, nrm, cyn, OLC_CONFIG(d)->play.max_npc_corpse_time,
         grn, nrm, cyn, OLC_CONFIG(d)->play.max_pc_corpse_time,
+        grn, nrm, cyn, OLC_CONFIG(d)->play.max_mortal_level,
 
         grn, nrm, cyn, OLC_CONFIG(d)->play.idle_void,
         grn, nrm, cyn, OLC_CONFIG(d)->play.idle_rent_time,
@@ -695,6 +701,18 @@ static void cedit_disp_room_numbers(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_ROOM_NUMBERS_MENU;
 }
 
+static void cedit_disp_admin_levels(struct descriptor_data *d)
+{
+  int i;
+  get_char_colors(d->character);
+  clear_screen(d);
+
+  write_to_output(d, "\r\n\r\n");
+  for (i=ADMLVL_IMMORT; i<=ADMLVL_IMPL; i++) {
+    write_to_output(d, "%sd%s) %s%s%s\r\n", grn, nrm, cyn, admin_level_names[i], nrm);
+  }
+}
+
 static void cedit_disp_operation_options(struct descriptor_data *d)
 {
   get_char_colors(d->character);
@@ -768,7 +786,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         case 'y':
         case 'Y':
           cedit_save_internally(d);
-          mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
+          mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
                  "OLC: %s modifies the game configuration.", GET_NAME(d->character));
           cleanup_olc(d, CLEANUP_CONFIG);
 	  if (CONFIG_AUTO_SAVE) {
@@ -889,45 +907,52 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         case 'j':
         case 'J':
-          write_to_output(d, "Enter the number of tics before PC's are sent to the void (idle) : ");
-          OLC_MODE(d) = CEDIT_IDLE_VOID;
+          write_to_output(d, "Enter the highest possible mortal level (0-254) : ");
+          OLC_MODE(d) = CEDIT_MAX_LEVEL;
           return;
 
         case 'k':
         case 'K':
-          write_to_output(d, "Enter the number of tics before PC's are automatically rented and forced to quit : ");
-          OLC_MODE(d) = CEDIT_IDLE_RENT_TIME;
+          write_to_output(d, "Enter the number of tics before PC's are sent to the void (idle) : ");
+          OLC_MODE(d) = CEDIT_IDLE_VOID;
           return;
 
         case 'l':
         case 'L':
-          write_to_output(d, "Enter the level a player must be to become immune to IDLE : ");
-          OLC_MODE(d) = CEDIT_IDLE_MAX_LEVEL;
+          write_to_output(d, "Enter the number of tics before PC's are automatically rented and forced to quit : ");
+          OLC_MODE(d) = CEDIT_IDLE_RENT_TIME;
           return;
 
         case 'm':
         case 'M':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.dts_are_dumps);
-          break;
+          cedit_disp_admin_levels(d);
+          write_to_output(d, "Enter the admin level a player must be to become immune to IDLE : ");
+          OLC_MODE(d) = CEDIT_IDLE_MAX_LEVEL;
+          return;
 
         case 'n':
         case 'N':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.load_into_inventory);
+          TOGGLE_VAR(OLC_CONFIG(d)->play.dts_are_dumps);
           break;
 
         case 'o':
         case 'O':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.track_through_doors);
+          TOGGLE_VAR(OLC_CONFIG(d)->play.load_into_inventory);
           break;
 
         case 'p':
         case 'P':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.disp_closed_doors);
+          TOGGLE_VAR(OLC_CONFIG(d)->play.track_through_doors);
           break;
 
         case 'r':
         case 'R':
-	  TOGGLE_VAR(OLC_CONFIG(d)->play.no_mort_to_immort);
+          TOGGLE_VAR(OLC_CONFIG(d)->play.disp_closed_doors);
+          break;
+
+        case 's':
+        case 'S':
+          TOGGLE_VAR(OLC_CONFIG(d)->play.no_mort_to_immort);
           break;
 
         case '1':
@@ -1217,7 +1242,8 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         case 'b':
         case 'B':
-          write_to_output(d, "Enter the minimum level for players to appear on the wizlist : ");
+          cedit_disp_admin_levels(d);
+          write_to_output(d, "\r\nEnter the minimum admin level for players to appear on the wizlist : ");
           OLC_MODE(d) = CEDIT_MIN_WIZLIST_LEV;
           return;
 
@@ -1302,6 +1328,15 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         }
         break;
 
+    case CEDIT_MAX_LEVEL:
+      /* Note: Some things, such as spell_info, use (CONFIG_MAX_LEVEL + 1) */
+      /*       Do not use the max possible for the variable type           */
+      if (*arg)
+        OLC_CONFIG(d)->play.max_mortal_level = MIN(MAX(atoi(arg),0),254);
+
+      cedit_disp_game_play_options(d);
+      break;
+
     case CEDIT_IDLE_VOID:
       if (!*arg) {
         write_to_output(d,
@@ -1326,9 +1361,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
     case CEDIT_IDLE_MAX_LEVEL:
       if (!*arg) {
+        write_to_output(d, "Value not changed!\r\n");
+        cedit_disp_game_play_options(d);
+      } else if ((atoi(arg) < ADMLVL_MORTAL) || (atoi(arg) > ADMLVL_IMPL)) {
         write_to_output(d,
           "That is an invalid choice!\r\n"
-          "Enter the level a player must be to become immune to IDLE : ");
+          "Enter the admin level a player must be to become immune to IDLE : ");
       } else {
         OLC_CONFIG(d)->play.idle_max_level = atoi(arg);
         cedit_disp_game_play_options(d);
@@ -1570,10 +1608,13 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       break;
 
     case CEDIT_MIN_WIZLIST_LEV:
-      if (atoi(arg) > LVL_IMPL) {
+      if (!*arg) {
+        write_to_output(d, "Value not changed.\r\n");
+        cedit_disp_autowiz_options(d);
+      } else if ((atoi(arg) < ADMLVL_IMMORT) || (atoi(arg) > ADMLVL_IMPL)) {
         write_to_output(d,
           "The minimum wizlist level can't be greater than %d.\r\n"
-          "Enter the minimum level for players to appear on the wizlist : ", LVL_IMPL);
+          "Enter the minimum admin level for players to appear on the wizlist : ", ADMLVL_IMPL);
       } else {
         OLC_CONFIG(d)->autowiz.min_wizlist_lev = atoi(arg);
         cedit_disp_autowiz_options(d);
@@ -1616,7 +1657,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
     default:  /* We should never get here, but just in case... */
       cleanup_olc(d, CLEANUP_CONFIG);
-      mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: cedit_parse(): Reached default case!");
+      mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: OLC: cedit_parse(): Reached default case!");
       write_to_output(d, "Oops...\r\n");
       break;
   }

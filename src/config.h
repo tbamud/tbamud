@@ -25,6 +25,7 @@ extern int max_exp_gain;
 extern int max_exp_loss;
 extern int max_npc_corpse_time;
 extern int max_pc_corpse_time;
+extern int max_mortal_level;
 extern int idle_void;
 extern int idle_rent_time;
 extern int idle_max_level;

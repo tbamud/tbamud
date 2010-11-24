@@ -191,7 +191,7 @@ bool can_see_map(struct char_data *ch) {
   /* Is the map funcionality disabled? */
   if (CONFIG_MAP == MAP_OFF)
     return FALSE;
-  else if ((CONFIG_MAP == MAP_IMM_ONLY) && (GET_LEVEL(ch) < LVL_IMMORT))
+  else if ((CONFIG_MAP == MAP_IMM_ONLY) && (!IS_ADMIN(ch, ADMLVL_IMMORT)))
     return FALSE;
 
   return TRUE;
@@ -514,7 +514,7 @@ void str_and_map(char *str, struct char_data *ch, room_vnum target_room ) {
       map[x][y]= (!(y%2) && !worldmap) ? DOOR_NONE : SECT_EMPTY;
 
   /* starts the mapping with the center room */
-MapArea(target_room, ch, centre, centre, min, max, ns_size/2, ew_size/2, worldmap ); 
+MapArea(target_room, ch, centre, centre, min, max, ns_size/2, ew_size/2, worldmap );
   map[centre][centre] = SECT_HERE;
 
   /* char_size = rooms + doors + padding */
@@ -538,7 +538,7 @@ ACMD(do_map) {
   if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch)) {
     send_to_char(ch, "It is too dark to see the map.\r\n");
     return;
-  } else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
+  } else if (AFF_FLAGGED(ch, AFF_BLIND) && !IS_ADMIN(ch, ADMLVL_IMMORT)) {
     send_to_char(ch, "You can't see the map while blind!\r\n");
     return;
   }

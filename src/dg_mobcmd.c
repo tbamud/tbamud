@@ -44,7 +44,7 @@ static void mob_log(char_data *mob, const char *format, ...)
 
 /* Macro to determine if a mob is permitted to use these commands. */
 #define MOB_OR_IMPL(ch) \
- ((IS_NPC(ch) && (!(ch)->desc || GET_LEVEL((ch)->desc->original) >= LVL_IMPL)) || (SCRIPT(ch) && TRIGGERS(SCRIPT(ch))))
+ ((IS_NPC(ch) && (!(ch)->desc || GET_ADMLEVEL((ch)->desc->original) >= ADMLVL_IMPL)) || (SCRIPT(ch) && TRIGGERS(SCRIPT(ch))))
 #define MOB_OR_PLAYER(ch) (GET_LEVEL(ch) > 0)
 
 /* mob commands */
@@ -137,8 +137,8 @@ ACMD(do_mkill)
     return;
 }
 
-/* Lets the mobile destroy an object in its inventory it can also destroy a 
- * worn object and it can destroy items using all.xxxxx or just plain all of 
+/* Lets the mobile destroy an object in its inventory it can also destroy a
+ * worn object and it can destroy items using all.xxxxx or just plain all of
  * them. */
 ACMD(do_mjunk)
 {
@@ -287,7 +287,7 @@ ACMD(do_mzoneecho)
 {
     int zone;
     char room_number[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH], *msg;
-        
+
     if (!MOB_OR_IMPL(ch))
     {
         send_to_char(ch, "Huh?!?\r\n");
@@ -308,7 +308,7 @@ ACMD(do_mzoneecho)
     }
 }
 
-/* Lets the mobile load an item or mobile.  All items are loaded into 
+/* Lets the mobile load an item or mobile.  All items are loaded into
  * inventory, unless it is NO-TAKE. */
 ACMD(do_mload)
 {
@@ -329,7 +329,7 @@ ACMD(do_mload)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if( ch->desc && GET_LEVEL(ch->desc->original) < LVL_IMPL)
+    if (ch->desc && (!IS_ADMIN(ch->desc->original, ADMLVL_IMPL)))
         return;
 
     target = two_arguments(argument, arg1, arg2);
@@ -413,8 +413,8 @@ ACMD(do_mload)
         mob_log(ch, "mload: bad type");
 }
 
-/* Lets the mobile purge all objects and other npcs in the room, or purge a 
- * specified object or mob in the room.  It can purge itself, but this will 
+/* Lets the mobile purge all objects and other npcs in the room, or purge a
+ * specified object or mob in the room.  It can purge itself, but this will
  * be the last command it does. */
 ACMD(do_mpurge)
 {
@@ -430,7 +430,7 @@ ACMD(do_mpurge)
   if (AFF_FLAGGED(ch, AFF_CHARM))
     return;
 
-  if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
+  if( ch->desc && !IS_ADMIN(ch->desc->original, ADMLVL_IMPL))
     return;
 
   one_argument(argument, arg);
@@ -555,7 +555,7 @@ ACMD(do_mat)
     }
 }
 
-/* Lets the mobile transfer people. The all argument transfers everyone in the 
+/* Lets the mobile transfer people. The all argument transfers everyone in the
  * current room to the specified location. */
 ACMD(do_mteleport)
 {
@@ -653,7 +653,7 @@ ACMD(do_mdamage) {
   script_damage(vict, dam);
 }
 
-/* Lets the mobile force someone to do something.  must be mortal level and the 
+/* Lets the mobile force someone to do something.  must be mortal level and the
  * all argument only affects those in the room with the mobile. */
 ACMD(do_mforce)
 {
@@ -667,7 +667,7 @@ ACMD(do_mforce)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
+    if (ch->desc && (!IS_ADMIN(ch->desc->original, ADMLVL_IMPL)))
         return;
 
     argument = one_argument(argument, arg);
@@ -728,7 +728,7 @@ ACMD(do_mhunt)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
+    if (ch->desc && (!IS_ADMIN(ch->desc->original, ADMLVL_IMPL)))
         return;
 
     one_argument(argument, arg);
@@ -770,7 +770,7 @@ ACMD(do_mremember)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
+    if (ch->desc && (!IS_ADMIN(ch->desc->original, ADMLVL_IMPL)))
         return;
 
     argument = one_argument(argument, arg);
@@ -821,7 +821,7 @@ ACMD(do_mforget)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
+    if (ch->desc && (!IS_ADMIN(ch->desc->original, ADMLVL_IMPL)))
         return;
 
     one_argument(argument, arg);
@@ -1136,7 +1136,7 @@ ACMD(do_mfollow)
   leader->followers = k;
 }
 
-/* Prints the message to everyone in the range of numbers. Thanks to Jamie 
+/* Prints the message to everyone in the range of numbers. Thanks to Jamie
  * Nelson of 4D for this contribution */
 ACMD(do_mrecho)
 {
