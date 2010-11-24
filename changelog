@@ -48,6 +48,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
   Autowiz converted to work with new admin levels
   Socials are now admin-level dependant
   Added imm ability to 'score <player>'
+  Minor Bug Fix: Cured problem where Imps didn't regain default flags when using 'return'
 [Nov 06 2010] - Jamdog
   Added HappyHour feature
   Added game_info function for sending global messages to all players

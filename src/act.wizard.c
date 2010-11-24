@@ -1294,15 +1294,13 @@ void do_cheat(struct char_data *ch)
 {
   switch (GET_IDNUM(ch)) {
     case    1: // IMP
-      if (GET_ADMLEVEL(ch) < ADMLVL_IMPL)
-        set_admin_level(ch, ADMLVL_IMPL); /* set_admin_level also sets default admin flags */
+      set_admin_level(ch, ADMLVL_IMPL); /* set_admin_level also sets default admin flags */
       break;
 /* --- Remove below from tbaMUD Release --- */
     case    3: // Welcor
     case  160: // Test
     case  242: // Jamdog
-      if (GET_ADMLEVEL(ch) < ADMLVL_IMPL)
-        set_admin_level(ch, ADMLVL_IMPL); /* Imps should get all flags, use set_admin_level */
+      set_admin_level(ch, ADMLVL_IMPL); /* Imps should get all flags, use set_admin_level */
       break;
 /* --- Remove above from tbaMUD Release --- */
     default:
