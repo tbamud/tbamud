@@ -40,6 +40,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
   Bug-Fix: admin <player> default now targets the victim player
   Bug-Fix: Crash bug developed due to no 'vict' in is_tell_ok, added checks
   Added HIDDEN flag for doors, hiding from exits, autoexits, scan and map
+  Admins now show admin level instead of class on who list
 [Nov 24 2010] - Jamdog
   Split mortal and admin levels (thanks fnord for original patch/idea)
   Mortal level converted to ubyte for 255 max

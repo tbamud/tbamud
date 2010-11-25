@@ -1655,9 +1655,9 @@ ACMD(do_admin)
     changed = FALSE;
 
     if (IS_NPC(vict)) {
-      send_to_char(ch, "%s is a mob, and mobs can't have admin privs!", GET_NAME(vict));
+      send_to_char(ch, "%s is a mob, and mobs can't have admin privs!\r\n", GET_NAME(vict));
     } else if (GET_ADMLEVEL(vict) > GET_ADMLEVEL(ch)) {
-      send_to_char(ch, "%s is a higher admin level, you can't change their admin privs!", GET_NAME(vict));
+      send_to_char(ch, "%s is a higher admin level, you can't change their admin privs!\r\n", GET_NAME(vict));
     } else if (!*arg2) {
       // Display player's current admin settings
       send_to_char(ch, "%sAdmin information for %s%s\r\n", QBWHT, GET_NAME(vict), QNRM);

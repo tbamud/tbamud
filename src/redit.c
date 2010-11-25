@@ -797,7 +797,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
 
   case REDIT_EXIT_DOORFLAGS:
     number = atoi(arg);
-    if (number < 0 || number > 2) {
+    if (number < 0 || number > 4) {
       write_to_output(d, "That's not a valid choice!\r\n");
       redit_disp_exit_flag_menu(d);
     } else {

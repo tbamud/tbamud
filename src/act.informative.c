@@ -1146,7 +1146,7 @@ ACMD(do_who)
   struct descriptor_data *d;
   struct char_data *tch;
   int i, num_can_see = 0;
-  char name_search[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH];
+  char name_search[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH], admlev[15];
   char mode;
   int low = 0, high = CONFIG_MAX_LEVEL, localwho = 0, questwho = 0;
   int showclass = 0, short_list = 0, outlaws = 0;
@@ -1301,16 +1301,20 @@ ACMD(do_who)
       if (showleader && (!tch->followers || !AFF_FLAGGED(tch, AFF_GROUP)))
         continue;
 
+      sprintf(admlev, "%11s", admin_level_names[(GET_ADMLEVEL(tch))]);
       if (short_list) {
         send_to_char(ch, "%s[%2d %s] %-12.12s%s%s",
           (IS_ADMIN(tch, ADMLVL_IMMORT) ? CCYEL(ch, C_SPR) : ""),
-          GET_LEVEL(tch), CLASS_ABBR(tch), GET_NAME(tch),
+          GET_LEVEL(tch),
+          (IS_ADMIN(tch, ADMLVL_IMMORT) ? admlev : CLASS_ABBR(tch)),
+          GET_NAME(tch),
           CCNRM(ch, C_SPR), ((!(++num_can_see % 4)) ? "\r\n" : ""));
       } else {
         num_can_see++;
         send_to_char(ch, "%s[%2d %s] %s%s%s%s",
             (IS_ADMIN(tch, ADMLVL_IMMORT) ? CCYEL(ch, C_SPR) : ""),
-            GET_LEVEL(tch), CLASS_ABBR(tch),
+            GET_LEVEL(tch),
+            (IS_ADMIN(tch, ADMLVL_IMMORT) ? admlev : CLASS_ABBR(tch)),
             GET_NAME(tch), (*GET_TITLE(tch) ? " " : ""), GET_TITLE(tch),
             CCNRM(ch, C_SPR));
 

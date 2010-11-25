@@ -1725,6 +1725,11 @@ ACMD(do_cmdinfo)
 
   one_argument(argument, arg);
 
+  if (!*arg) {
+    send_to_char(ch, "Usage: %scmdinfo <command>%s", QYEL, QNRM);
+    return;
+  }
+
   for (length = strlen(arg), c = 0; *complete_cmd_info[c].command != '\n'; c++) {
     if(!strncmp(complete_cmd_info[c].command, arg, length))
       break;
