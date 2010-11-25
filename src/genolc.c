@@ -423,7 +423,7 @@ static int export_info_file(zone_rnum zrnum)
 
       room = &world[rnum];
 
-      for (j = 0; j < NUM_OF_DIRS; j++) {
+      for (j = 0; j < DIR_COUNT; j++) {
         if (!R_EXIT(room, j))
           continue;
 
@@ -894,7 +894,7 @@ static int export_save_rooms(zone_rnum zrnum)
       );
 
       /* Now you write out the exits for the room. */
-      for (j = 0; j < NUM_OF_DIRS; j++) {
+      for (j = 0; j < DIR_COUNT; j++) {
 	if (R_EXIT(room, j)) {
 	  int dflag;
 	  if (R_EXIT(room, j)->general_description) {

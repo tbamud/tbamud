@@ -47,7 +47,7 @@ int free_strings(void *data, int type)
     case OASIS_EXI:
       room = (struct room_data *) data;
 
-      for (i = 0; i < NUM_OF_DIRS; i++) {
+      for (i = 0; i < NUM_OF_DIRS; i++) {  /* NUM_OF_DIRS, not DIR_COUNT */
         if (room->dir_option[i]) {
           if (room->dir_option[i]->general_description) {
             free(room->dir_option[i]->general_description);

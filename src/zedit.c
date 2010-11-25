@@ -1055,7 +1055,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     case 'D':
       pos = atoi(arg);
       /* Count directions. */
-      if (pos < 0 || pos > NUM_OF_DIRS)
+      if (pos < 0 || pos > DIR_COUNT)
 	write_to_output(d, "Try again : ");
       else {
 	OLC_CMD(d).arg2 = pos;

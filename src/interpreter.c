@@ -83,6 +83,14 @@ cpp_extern const struct command_info cmd_info[] = {
   { "west"     , "w"       , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_WEST },
   { "up"       , "u"       , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_UP },
   { "down"     , "d"       , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_DOWN },
+  { "northwest", "northw"  , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_NW },
+  { "nw"       , "nw"      , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_NW },
+  { "northeast", "northe"  , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_NE },
+  { "ne"       , "ne"      , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_NE },
+  { "southeast", "southe"  , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_SE },
+  { "se"       , "se"      , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_SE },
+  { "southwest", "southw"  , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_SW },
+  { "sw"       , "sw"      , POS_STANDING, do_move      , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_SW },
 
   /* now, the main list */
   { "at"       , "at"      , POS_DEAD    , do_at        , 0, ADMLVL_IMMORT,  ADM_NONE,  0 },

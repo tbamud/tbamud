@@ -209,7 +209,7 @@ ACMD(do_oasis_links)
   send_to_char(ch, "Zone %d is linked to the following zones:\r\n", zvnum);
   for (nr = 0; nr <= top_of_world && (GET_ROOM_VNUM(nr) <= last); nr++) {
     if (GET_ROOM_VNUM(nr) >= first) {
-      for (j = 0; j < NUM_OF_DIRS; j++) {
+      for (j = 0; j < DIR_COUNT; j++) {
 	if (world[nr].dir_option[j]) {
 	  to_room = world[nr].dir_option[j]->to_room;
 	  if (to_room != NOWHERE && (zrnum != world[to_room].zone))
@@ -259,7 +259,7 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
                           world[i].proto_script ? "[TRIG] " : ""
                           );
 
-      for (j = 0; j < NUM_OF_DIRS; j++) {
+      for (j = 0; j < DIR_COUNT; j++) {
         if (W_EXIT(i, j) == NULL)
           continue;
         if (W_EXIT(i, j)->to_room == NOWHERE)

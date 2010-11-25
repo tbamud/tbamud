@@ -36,6 +36,7 @@ extern const char *NOPERSON;
 extern const char *NOEFFECT;
 extern int track_through_doors;
 extern int no_mort_to_immort;
+extern int diagonal_dirs_enabled;
 extern int free_rent;
 extern int max_obj_save;
 extern int min_rent_cost;

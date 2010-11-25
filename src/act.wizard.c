@@ -570,7 +570,7 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
     send_to_char(ch, "%s", CCNRM(ch, C_NRM));
   }
 
-  for (i = 0; i < NUM_OF_DIRS; i++) {
+  for (i = 0; i < DIR_COUNT; i++) {
     char buf1[128];
 
     if (!rm->dir_option[i])
@@ -1687,11 +1687,11 @@ ACMD(do_admin)
       }
     } else if (is_abbrev(arg2, "default")) {
 	  /* Copy current flags */
-	  for (i=0; i<AD_ARRAY_MAX; i++) tmp_adm[i] = ADM_FLAGS(ch)[i];
-      set_default_admin_privs(ch, FALSE);
+	  for (i=0; i<AD_ARRAY_MAX; i++) tmp_adm[i] = ADM_FLAGS(vict)[i];
+      set_default_admin_privs(vict, FALSE);
 	  /* Compare for changed flags */
 	  for (i=0; i<AD_ARRAY_MAX; i++) {
-	    if (tmp_adm[i] != ADM_FLAGS(ch)[i]) {
+	    if (tmp_adm[i] != ADM_FLAGS(vict)[i]) {
 	      changed = TRUE;
         }
       }
@@ -2904,7 +2904,7 @@ ACMD(do_show)
   case 5:
     len = strlcpy(buf, "Errant Rooms\r\n------------\r\n", sizeof(buf));
     for (i = 0, k = 0; i <= top_of_world; i++)
-      for (j = 0; j < NUM_OF_DIRS; j++) {
+      for (j = 0; j < DIR_COUNT; j++) {
       	if (!W_EXIT(i,j))
       	  continue;
         if (W_EXIT(i,j)->to_room == 0) {
@@ -3654,7 +3654,7 @@ ACMD(do_links)
   send_to_char(ch, "Zone %d is linked to the following zones:\r\n", zvnum);
   for (nr = 0; nr <= top_of_world && (GET_ROOM_VNUM(nr) <= last); nr++) {
     if (GET_ROOM_VNUM(nr) >= first) {
-      for (j = 0; j < NUM_OF_DIRS; j++) {
+      for (j = 0; j < DIR_COUNT; j++) {
         if (world[nr].dir_option[j]) {
           to_room = world[nr].dir_option[j]->to_room;
           if (to_room != NOWHERE && (zrnum != world[to_room].zone))
@@ -4023,7 +4023,7 @@ ACMD (do_zcheck)
   send_to_char(ch, "\r\nChecking Rooms for limits...\r\n");
   for (i=0; i<top_of_world;i++) {
     if (world[i].zone==zrnum) {
-      for (j = 0; j < NUM_OF_DIRS; j++) {
+      for (j = 0; j < DIR_COUNT; j++) {
         /*check for exit, but ignore off limits if you're in an offlimit zone*/
         if (!world[i].dir_option[j])
           continue;
@@ -4089,11 +4089,11 @@ ACMD (do_zcheck)
   for (i=0; i<top_of_world;i++) {
     if (world[i].zone==zrnum) {
       m++;
-      for (j = 0, k = 0; j < NUM_OF_DIRS; j++)
+      for (j = 0, k = 0; j < DIR_COUNT; j++)
         if (!world[i].dir_option[j])
           k++;
 
-      if (k == NUM_OF_DIRS)
+      if (k == DIR_COUNT)
         l++;
     }
   }

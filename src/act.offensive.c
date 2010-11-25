@@ -238,7 +238,7 @@ ACMD(do_flee)
   }
 
   for (i = 0; i < 6; i++) {
-    attempt = rand_number(0, NUM_OF_DIRS - 1);	/* Select a random direction */
+    attempt = rand_number(0, DIR_COUNT - 1);	/* Select a random direction */
     if (CAN_GO(ch, attempt) &&
 	!ROOM_FLAGGED(EXIT(ch, attempt)->to_room, ROOM_DEATH)) {
       act("$n panics, and attempts to flee!", TRUE, ch, 0, 0, TO_ROOM);

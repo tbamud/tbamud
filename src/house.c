@@ -261,7 +261,7 @@ void House_boot(void)
     if ((real_atrium = real_room(temp_house.atrium)) == NOWHERE)
       continue;			/* house doesn't have an atrium -- skip */
 
-    if (temp_house.exit_num < 0 || temp_house.exit_num >= NUM_OF_DIRS)
+    if (temp_house.exit_num < 0 || temp_house.exit_num >= DIR_COUNT)
       continue;			/* invalid exit num -- skip */
 
     if (TOROOM(real_house, temp_house.exit_num) != real_atrium)

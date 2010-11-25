@@ -342,8 +342,10 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
   room_rnum was_in;
   struct follow_type *k, *next;
 
-  if (ch == NULL || dir < 0 || dir >= NUM_OF_DIRS || FIGHTING(ch))
+  if (ch == NULL || dir < 0 || dir >= DIR_COUNT || FIGHTING(ch))
     return (0);
+  else if (!CONFIG_DIAGONAL_DIRS && IS_DIAGONAL(dir))
+    send_to_char(ch, "Alas, you cannot go that way...\r\n");
   else if ((!EXIT(ch, dir) && !buildwalk(ch, dir)) || EXIT(ch, dir)->to_room == NOWHERE)
     send_to_char(ch, "Alas, you cannot go that way...\r\n");
   else if (EXIT_FLAGGED(EXIT(ch, dir), EX_CLOSED) && (!ADM_FLAGGED(ch, ADM_WALKANYWHERE)) ) {
@@ -383,9 +385,11 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
   int door;
 
   if (*dir) {			/* a direction was specified */
-    if ((door = search_block(dir, dirs, FALSE)) == -1) {	/* Partial Match */
-      send_to_char(ch, "That's not a direction.\r\n");
-      return (-1);
+    if ((door = search_block(dir, dirs, FALSE)) == -1) {	    /* Partial Match */
+      if ((door = search_block(dir, autoexits, FALSE)) == -1) {	/* Check 'short' dirs too */
+        send_to_char(ch, "That's not a direction.\r\n");
+        return (-1);
+	  }
     }
     if (EXIT(ch, door)) {	/* Braces added according to indent. -gg */
       if (EXIT(ch, door)->keyword) {
@@ -406,7 +410,7 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
       send_to_char(ch, "What is it you want to %s?\r\n", cmdname);
       return (-1);
     }
-    for (door = 0; door < NUM_OF_DIRS; door++)
+    for (door = 0; door < DIR_COUNT; door++)
     {
       if (EXIT(ch, door))
       {
@@ -684,7 +688,7 @@ ACMD(do_enter)
 
   if (*buf) {			/* an argument was supplied, search for door
 				 * keyword */
-    for (door = 0; door < NUM_OF_DIRS; door++)
+    for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
 	if (EXIT(ch, door)->keyword)
 	  if (!str_cmp(EXIT(ch, door)->keyword, buf)) {
@@ -696,7 +700,7 @@ ACMD(do_enter)
     send_to_char(ch, "You are already indoors.\r\n");
   else {
     /* try to locate an entrance */
-    for (door = 0; door < NUM_OF_DIRS; door++)
+    for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
 	if (EXIT(ch, door)->to_room != NOWHERE)
 	  if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&
@@ -715,7 +719,7 @@ ACMD(do_leave)
   if (OUTSIDE(ch))
     send_to_char(ch, "You are outside.. where do you want to go?\r\n");
   else {
-    for (door = 0; door < NUM_OF_DIRS; door++)
+    for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
 	if (EXIT(ch, door)->to_room != NOWHERE)
 	  if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&

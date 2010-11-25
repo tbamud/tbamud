@@ -36,8 +36,8 @@
 #define MAX_MAP_SIZE (CANVAS_WIDTH - 1)/4
 #define MAX_MAP      CANVAS_WIDTH
 
-#define MAX_MAP_DIR 6
-#define MAX_MAP_FOLLOW 4
+#define MAX_MAP_DIR 10
+#define MAX_MAP_FOLLOW 10
 
 #define SECT_EMPTY 30 /* anything greater than num sect types */
 #define SECT_STRANGE (SECT_EMPTY + 1)
@@ -47,10 +47,16 @@
 #define DOOR_EW   -2
 #define DOOR_UP   -3
 #define DOOR_DOWN -4
-#define VDOOR_NS  -5
-#define VDOOR_EW  -6
-#define DOOR_NONE -7
-#define NUM_DOOR_TYPES 7
+#define DOOR_DIAGNE      -5
+#define DOOR_DIAGNW      -6
+#define VDOOR_NS         -7
+#define VDOOR_EW         -8
+#define VDOOR_DIAGNE     -9
+#define VDOOR_DIAGNW     -10
+#define DOOR_UP_AND_NE   -11
+#define DOOR_DOWN_AND_SE -12
+#define DOOR_NONE        -13
+#define NUM_DOOR_TYPES 13
 
 #define MAP_CIRCLE    0
 #define MAP_RECTANGLE 1
@@ -67,8 +73,14 @@ struct map_info_type
 static struct map_info_type door_info[] =
 {
   { DOOR_NONE, "   " },
+  { DOOR_DOWN_AND_SE, "@r-@n\\ " },
+  { DOOR_UP_AND_NE,   "@r+@n/ " },
+  { VDOOR_DIAGNW,     " @m+@n " },
+  { VDOOR_DIAGNE,     " @m+@n "},
   { VDOOR_EW,  " @m+@n " },
   { VDOOR_NS,  " @m+@n "},
+  { DOOR_DIAGNW,      " \\ " },
+  { DOOR_DIAGNE,      " / " },
   { DOOR_DOWN, "@r-@n  " },
   { DOOR_UP,   "@r+@n  " },
   { DOOR_EW,   " - " },
@@ -78,8 +90,14 @@ static struct map_info_type door_info[] =
 static struct map_info_type compact_door_info[] =
 {
   { DOOR_NONE, " " },
+  { DOOR_DOWN_AND_SE, "@R\\@n" },
+  { DOOR_UP_AND_NE,   "@R/@n" },
+  { VDOOR_DIAGNW,   "@m+@n" },
+  { VDOOR_DIAGNE,   "@m+@n"},
   { VDOOR_EW,  " @m+@n " },
   { VDOOR_NS,  " @m+@n "},
+  { DOOR_DIAGNW,"\\" },
+  { DOOR_DIAGNE,"/" },
   { DOOR_DOWN, "@r-@n" },
   { DOOR_UP,   "@r+@n" },
   { DOOR_EW,   "-" },
@@ -165,10 +183,16 @@ static struct map_info_type world_map_info[] =
 
 
 static int map[MAX_MAP][MAX_MAP];
+/*
 static int offsets[4][2] ={ {-2, 0},{ 0, 2},{ 2, 0},{ 0, -2} };
 static int offsets_worldmap[4][2] ={ {-1, 0},{ 0, 1},{ 1, 0},{ 0, -1} };
 static int door_offsets[6][2] ={ {-1, 0},{ 0, 1},{ 1, 0},{ 0, -1},{ -1, 1},{ 1, 1} };
 static int door_marks[6] = { DOOR_NS, DOOR_EW, DOOR_NS, DOOR_EW, DOOR_UP, DOOR_DOWN };
+*/
+static int offsets[10][2] ={ {-2, 0},{ 0, 2},{ 2, 0},{ 0, -2},{0, 0},{ 0, 0},{ -2, -2},{ -2, 2},{2, 2},{ 2, -2} };
+static int offsets_worldmap[10][2] ={ {-1, 0},{ 0, 1},{ 1, 0},{ 0, -1},{0, 0},{ 0, 0},{ -1, -1},{ -1, 1},{1, 1},{ 1, -1} };
+static int door_offsets[10][2] ={ {-1, 0},{ 0, 1},{ 1, 0},{ 0, -1},{ -1, 1},{ 1, 1},{ -1, -1},{ -1, 1},{ 1, 1},{ 1, -1} };
+static int door_marks[10] = { DOOR_NS, DOOR_EW, DOOR_NS, DOOR_EW, DOOR_UP, DOOR_DOWN, DOOR_DIAGNW, DOOR_DIAGNE, DOOR_DIAGNW, DOOR_DIAGNE};
 static int vdoor_marks[4] = { VDOOR_NS, VDOOR_EW, VDOOR_NS, VDOOR_EW };
 /******************************************************************************
  * End Local (File Scope) Defines and Global Variables
@@ -234,7 +258,9 @@ static void MapArea(room_rnum room, struct char_data *ch, int x, int y, int min,
 
     if ( (pexit = world[room].dir_option[door]) != NULL  &&
          (pexit->to_room > 0 ) && (pexit->to_room != NOWHERE) &&
-         (!IS_SET(pexit->exit_info, EX_CLOSED))) { /* A real exit */
+         (!IS_SET(pexit->exit_info, EX_CLOSED)) &&
+         (!IS_SET(pexit->exit_info, EX_HIDDEN) || ADM_FLAGGED(ch, ADM_SEESECRET)) )
+    { /* A real exit */
 
       /* But is the door here... */
       switch (door) {
@@ -250,6 +276,18 @@ static void MapArea(room_rnum room, struct char_data *ch, int x, int y, int min,
       case WEST:
         if(ypos > 0 || xpos!=x_exit_pos) continue;
         break;
+      case NORTHWEST:
+        if(xpos > 0 || ypos!=y_exit_pos || ypos > 0 || xpos!=x_exit_pos) continue;
+        break;
+      case NORTHEAST:
+        if(xpos > 0 || ypos!=y_exit_pos || ypos < ew_size || xpos!=x_exit_pos) continue;
+        break;
+      case SOUTHEAST:
+        if(xpos < ns_size || ypos!=y_exit_pos || ypos < ew_size || xpos!=x_exit_pos) continue;
+        break;
+      case SOUTHWEST:
+        if(xpos < ns_size || ypos!=y_exit_pos || ypos > 0 || xpos!=x_exit_pos) continue;
+        break;
       }
 
 
@@ -263,8 +301,21 @@ static void MapArea(room_rnum room, struct char_data *ch, int x, int y, int min,
         return;
         }
 
-      if(!worldmap)
-        map[x+door_offsets[door][0]][y+door_offsets[door][1]] = door_marks[door] ;
+      if(!worldmap) {
+        if ((map[x+door_offsets[door][0]][y+door_offsets[door][1]] == DOOR_NONE) ||
+            (map[x+door_offsets[door][0]][y+door_offsets[door][1]] == SECT_EMPTY)  ) {
+          map[x+door_offsets[door][0]][y+door_offsets[door][1]] = door_marks[door];
+        } else {
+          if ( ((door == NORTHEAST) && (map[x+door_offsets[door][0]][y+door_offsets[door][1]] == DOOR_UP)) ||
+               ((door == UP) && (map[x+door_offsets[door][0]][y+door_offsets[door][1]] == DOOR_DIAGNE))  ) {
+            map[x+door_offsets[door][0]][y+door_offsets[door][1]] = DOOR_UP_AND_NE;
+          }
+          else if ( ((door == SOUTHEAST) && (map[x+door_offsets[door][0]][y+door_offsets[door][1]] == DOOR_DOWN)) ||
+                    ((door == DOWN) && (map[x+door_offsets[door][0]][y+door_offsets[door][1]] == DOOR_DIAGNW))  ) {
+            map[x+door_offsets[door][0]][y+door_offsets[door][1]] = DOOR_DOWN_AND_SE;
+          }
+        }
+      }
 
       prospect_xpos = prospect_ypos = 0;
       switch (door) {
@@ -277,6 +328,14 @@ static void MapArea(room_rnum room, struct char_data *ch, int x, int y, int min,
         prospect_ypos = ew_size;
       case EAST:
         prospect_xpos = world[prospect_room].dir_option[rev_dir[door]] ? x_exit_pos : ns_size/2;
+        break;
+      case NORTHEAST:
+      case NORTHWEST:
+      case SOUTHEAST:
+      case SOUTHWEST:
+        prospect_xpos = world[prospect_room].dir_option[rev_dir[door]] ? x_exit_pos : ns_size/2;
+        prospect_ypos = world[prospect_room].dir_option[rev_dir[door]] ? y_exit_pos : ew_size/2;
+        break;
       }
 
       if(worldmap) {

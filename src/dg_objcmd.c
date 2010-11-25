@@ -144,10 +144,10 @@ static OCMD(do_oecho)
 
     else if ((room = obj_room(obj)) != NOWHERE)
     {
-      if (world[room].people) { 
-        sub_write(argument, world[room].people, TRUE, TO_ROOM); 
-        sub_write(argument, world[room].people, TRUE, TO_CHAR); 
-      } 
+      if (world[room].people) {
+        sub_write(argument, world[room].people, TRUE, TO_ROOM);
+        sub_write(argument, world[room].people, TRUE, TO_CHAR);
+      }
     }
 
     else
@@ -253,7 +253,7 @@ static OCMD(do_osend)
         obj_log(obj, "no target found for osend");
 }
 
-/* Prints the message to everyone in the range of numbers. Thanks to Jamie 
+/* Prints the message to everyone in the range of numbers. Thanks to Jamie
  * Nelson of 4D for this contribution. */
 static OCMD(do_orecho)
 {
@@ -285,7 +285,7 @@ static OCMD(do_otimer)
     GET_OBJ_TIMER(obj) = atoi(arg);
 }
 
-/* Transform into a different object. Note: this shouldn't be used with 
+/* Transform into a different object. Note: this shouldn't be used with
  * containers unless both objects are containers! */
 static OCMD(do_otransform)
 {
@@ -573,17 +573,17 @@ static OCMD(do_oasound)
   }
 
   if ((room = obj_room(obj)) == NOWHERE) {
-    obj_log(obj, "oecho called by object in NOWHERE");
+    obj_log(obj, "oasound called by object in NOWHERE");
     return;
   }
 
-  for (door = 0; door < NUM_OF_DIRS; door++) {
+  for (door = 0; door < DIR_COUNT; door++) {
     if (world[room].dir_option[door] != NULL &&
        (world[room].dir_option[door])->to_room != NOWHERE &&
        (world[room].dir_option[door])->to_room != room &&
-        world[(world[room].dir_option[door])->to_room].people) { 
-          sub_write(argument, world[(world[room].dir_option[door])->to_room].people, TRUE, TO_ROOM); 
-          sub_write(argument, world[(world[room].dir_option[door])->to_room].people, TRUE, TO_CHAR); 
+        world[(world[room].dir_option[door])->to_room].people) {
+          sub_write(argument, world[(world[room].dir_option[door])->to_room].people, TRUE, TO_ROOM);
+          sub_write(argument, world[(world[room].dir_option[door])->to_room].people, TRUE, TO_CHAR);
     }
   }
 }
@@ -735,7 +735,7 @@ static OCMD(do_oat)
   }
 
   if (isdigit(*arg)) loc = real_room(atoi(arg));
-  else if ((ch = get_char_by_obj(obj, arg))) loc = IN_ROOM(ch); 
+  else if ((ch = get_char_by_obj(obj, arg))) loc = IN_ROOM(ch);
 
   if (loc == NOWHERE) {
     obj_log(obj, "oat: location not found (%s)", arg);
@@ -748,7 +748,7 @@ static OCMD(do_oat)
   obj_to_room(object, loc);
   obj_command_interpreter(object, command);
 
-  if (object->in_room == loc) 
+  if (object->in_room == loc)
     extract_obj(object);
 }
 

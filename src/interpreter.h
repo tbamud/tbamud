@@ -101,6 +101,10 @@ struct alias_data {
 #define SCMD_WEST    WEST
 #define SCMD_UP      UP
 #define SCMD_DOWN    DOWN
+#define SCMD_NW      NORTHWEST
+#define SCMD_NE      NORTHEAST
+#define SCMD_SE      SOUTHEAST
+#define SCMD_SW      SOUTHWEST
 
 /** @deprecated all old do_poof stuff is deprecated and unused. */
 #define SCMD_POOFIN   0

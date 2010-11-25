@@ -850,6 +850,13 @@ do                                                              \
 			 (EXIT(ch,door)->to_room != NOWHERE) && \
 			 !IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED))
 
+/** True total number of directions available to move in. */
+#define DIR_COUNT    ((CONFIG_DIAGONAL_DIRS) ? 10 : 6)
+
+/* Returns TRUE if the direction is a diagonal one */
+#define IS_DIAGONAL(dir) (((dir) == NORTHWEST) || ((dir) == NORTHEAST) || \
+                          ((dir) == SOUTHEAST) || ((dir) == SOUTHWEST) )
+
 /** Return the class abbreviation for ch. */
 #define CLASS_ABBR(ch) (IS_NPC(ch) ? "--" : class_abbrevs[(int)GET_CLASS(ch)])
 
@@ -977,6 +984,8 @@ do                                                              \
 #define CONFIG_NOEFFECT         config_info.play.NOEFFECT
 /** Get the display closed doors setting. */
 #define CONFIG_DISP_CLOSED_DOORS config_info.play.disp_closed_doors
+/** Get the diagonal directions setting. */
+#define CONFIG_DIAGONAL_DIRS     config_info.play.diagonal_dirs
 
 /* Map/Automap options */
 #define CONFIG_MAP             config_info.play.map_option

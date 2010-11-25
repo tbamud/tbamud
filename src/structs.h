@@ -64,10 +64,14 @@
 #define WEST           3    /**< The direction west */
 #define UP             4    /**< The direction up */
 #define DOWN           5    /**< The direction down */
+#define NORTHWEST      6    /**< The direction north-west */
+#define NORTHEAST      7    /**< The direction north-east */
+#define SOUTHEAST      8    /**< The direction south-east */
+#define SOUTHWEST      9    /**< The direction south-west */
 /** Total number of directions available to move in. BEFORE CHANGING THIS, make
  * sure you change every other direction and movement based item that this will
  * impact. */
-#define NUM_OF_DIRS    6
+#define NUM_OF_DIRS    10
 
 /* Room flags: used in room_data.room_flags */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
@@ -102,11 +106,11 @@
 #define NUM_ZONE_FLAGS    6
 
 /* Exit info: used in room_data.dir_option.exit_info */
-#define EX_ISDOOR     (1 << 0)   /**< Exit is a door		*/
-#define EX_CLOSED     (1 << 1)   /**< The door is closed	*/
-#define EX_LOCKED     (1 << 2)   /**< The door is locked	*/
-#define EX_PICKPROOF  (1 << 3)   /**< Lock can't be picked	*/
-#define EX_HIDDEN     (1 << 4)   /**< Exit is hidden      	*/
+#define EX_ISDOOR     (1 << 0)   /**< Exit is a door		 */
+#define EX_CLOSED     (1 << 1)   /**< The door is closed	 */
+#define EX_LOCKED     (1 << 2)   /**< The door is locked	 */
+#define EX_PICKPROOF  (1 << 3)   /**< Lock can't be picked	 */
+#define EX_HIDDEN     (1 << 4)   /**< Exit is hidden, secret */
 
 /* Sector types: used in room_data.sector_type */
 #define SECT_INSIDE          0		/**< Indoors, connected to SECT macro. */
@@ -1314,6 +1318,7 @@ struct game_data
   int track_through_doors; /**< Track through doors while closed?    */
   int no_mort_to_immort; /**< Prevent mortals leveling to imms?    */
   int disp_closed_doors; /**< Display closed doors in autoexit?    */
+  int diagonal_dirs;      /**< Are there 6 or 10 directions?        */
   int map_option;         /**< MAP_ON, MAP_OFF or MAP_IMM_ONLY      */
   int map_size;           /**< Default size for map command         */
   int minimap_size;       /**< Default size for mini-map (automap)  */

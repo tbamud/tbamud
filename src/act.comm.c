@@ -111,7 +111,11 @@ static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg
 
 static int is_tell_ok(struct char_data *ch, struct char_data *vict)
 {
-  if (ch == vict)
+  if (!ch)
+    log("SYSERR: is_tell_ok called with no characters");
+  else if (!vict)
+    send_to_char(ch, "%s", CONFIG_NOPERSON);
+  else if (ch == vict)
     send_to_char(ch, "You try to tell yourself something.\r\n");
   else if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOTELL))
     send_to_char(ch, "You can't tell other people while you have notell on.\r\n");

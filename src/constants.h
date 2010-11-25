@@ -14,6 +14,7 @@
 
 extern const char *tbamud_version;
 extern const char *dirs[];
+extern const char *autoexits[];
 extern const char *admin_level_names[];
 extern const char *admin_flag_names[];
 extern const char *admin_flags[];

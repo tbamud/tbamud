@@ -216,7 +216,7 @@ int greet_mtrigger(char_data *actor, int dir)
       if (((IS_SET(GET_TRIG_TYPE(t), MTRIG_GREET) && CAN_SEE(ch, actor)) ||
            IS_SET(GET_TRIG_TYPE(t), MTRIG_GREET_ALL)) &&
           !GET_TRIG_DEPTH(t) && (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
-        if (dir>=0 && dir < NUM_OF_DIRS)
+        if (dir>=0 && dir < DIR_COUNT)
           add_var(&GET_TRIG_VARS(t), "direction", dirs[rev_dir[dir]], 0);
         else
           add_var(&GET_TRIG_VARS(t), "direction", "none", 0);
@@ -569,7 +569,7 @@ int leave_mtrigger(char_data *actor, int dir)
     for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) {
       if ((IS_SET(GET_TRIG_TYPE(t), MTRIG_LEAVE) && CAN_SEE(ch, actor)) &&
           !GET_TRIG_DEPTH(t) && (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
-        if (dir>=0 && dir < NUM_OF_DIRS)
+        if (dir>=0 && dir < DIR_COUNT)
           add_var(&GET_TRIG_VARS(t), "direction", dirs[dir], 0);
         else
           add_var(&GET_TRIG_VARS(t), "direction", "none", 0);
@@ -597,7 +597,7 @@ int door_mtrigger(char_data *actor, int subcmd, int dir)
       if (IS_SET(GET_TRIG_TYPE(t), MTRIG_DOOR) && CAN_SEE(ch, actor) &&
           !GET_TRIG_DEPTH(t) && (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
         add_var(&GET_TRIG_VARS(t), "cmd", cmd_door[subcmd], 0);
-        if (dir>=0 && dir < NUM_OF_DIRS)
+        if (dir>=0 && dir < DIR_COUNT)
           add_var(&GET_TRIG_VARS(t), "direction", dirs[dir], 0);
         else
           add_var(&GET_TRIG_VARS(t), "direction", "none", 0);
@@ -916,7 +916,7 @@ int leave_otrigger(room_data *room, char_data *actor, int dir)
     for (t = TRIGGERS(SCRIPT(obj)); t; t = t->next) {
       if (TRIGGER_CHECK(t, OTRIG_LEAVE) &&
           (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
-        if (dir>=0 && dir < NUM_OF_DIRS)
+        if (dir>=0 && dir < DIR_COUNT)
           add_var(&GET_TRIG_VARS(t), "direction", dirs[dir], 0);
         else
           add_var(&GET_TRIG_VARS(t), "direction", "none", 0);
@@ -1029,7 +1029,7 @@ int enter_wtrigger(struct room_data *room, char_data *actor, int dir)
   for (t = TRIGGERS(SCRIPT(room)); t; t = t->next) {
     if (TRIGGER_CHECK(t, WTRIG_ENTER) &&
         (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
-      if (dir>=0 && dir < NUM_OF_DIRS)
+      if (dir>=0 && dir < DIR_COUNT)
         add_var(&GET_TRIG_VARS(t), "direction", dirs[rev_dir[dir]], 0);
       else
         add_var(&GET_TRIG_VARS(t), "direction", "none", 0);
@@ -1181,7 +1181,7 @@ int leave_wtrigger(struct room_data *room, char_data *actor, int dir)
   for (t = TRIGGERS(SCRIPT(room)); t; t = t->next) {
     if (TRIGGER_CHECK(t, WTRIG_LEAVE) &&
         (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
-      if (dir>=0 && dir < NUM_OF_DIRS)
+      if (dir>=0 && dir < DIR_COUNT)
         add_var(&GET_TRIG_VARS(t), "direction", dirs[dir], 0);
       else
         add_var(&GET_TRIG_VARS(t), "direction", "none", 0);
@@ -1207,7 +1207,7 @@ int door_wtrigger(char_data *actor, int subcmd, int dir)
     if (TRIGGER_CHECK(t, WTRIG_DOOR) &&
         (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
       add_var(&GET_TRIG_VARS(t), "cmd", cmd_door[subcmd], 0);
-      if (dir>=0 && dir < NUM_OF_DIRS)
+      if (dir>=0 && dir < DIR_COUNT)
         add_var(&GET_TRIG_VARS(t), "direction", dirs[dir], 0);
       else
         add_var(&GET_TRIG_VARS(t), "direction", "none", 0);

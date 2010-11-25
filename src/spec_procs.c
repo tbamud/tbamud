@@ -433,8 +433,9 @@ SPECIAL(guild_guard)
     return (FALSE);
 
   /* find out what direction they are trying to go */
-  for (direction = 0; direction < NUM_OF_DIRS; direction++)
-    if (!strcmp(cmd_info[cmd].command, dirs[direction]))
+  for (direction = 0; direction < DIR_COUNT; direction++)
+    if (!strcmp(cmd_info[cmd].command, dirs[direction]) ||
+        !strcmp(cmd_info[cmd].command, autoexits[direction]))
       break;
 
   for (i = 0; guild_info[i].guild_room != NOWHERE; i++) {

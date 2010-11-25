@@ -101,6 +101,7 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->play.track_through_doors = CONFIG_TRACK_T_DOORS;
   OLC_CONFIG(d)->play.no_mort_to_immort   = CONFIG_NO_MORT_TO_IMMORT;
   OLC_CONFIG(d)->play.disp_closed_doors   = CONFIG_DISP_CLOSED_DOORS;
+  OLC_CONFIG(d)->play.diagonal_dirs       = CONFIG_DIAGONAL_DIRS;
   OLC_CONFIG(d)->play.map_option          = CONFIG_MAP;
   OLC_CONFIG(d)->play.map_size            = CONFIG_MAP_SIZE;
   OLC_CONFIG(d)->play.minimap_size        = CONFIG_MINIMAP_SIZE;
@@ -200,6 +201,7 @@ static void cedit_save_internally(struct descriptor_data *d)
   CONFIG_TRACK_T_DOORS = OLC_CONFIG(d)->play.track_through_doors;
   CONFIG_NO_MORT_TO_IMMORT   = OLC_CONFIG(d)->play.no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS   = OLC_CONFIG(d)->play.disp_closed_doors;
+  CONFIG_DIAGONAL_DIRS       = OLC_CONFIG(d)->play.diagonal_dirs;
   CONFIG_MAP                 = OLC_CONFIG(d)->play.map_option;
   CONFIG_MAP_SIZE            = OLC_CONFIG(d)->play.map_size;
   CONFIG_MINIMAP_SIZE        = OLC_CONFIG(d)->play.minimap_size;
@@ -365,6 +367,8 @@ int save_config( IDXTYPE nowhere )
               "no_mort_to_immort = %d\n\n", CONFIG_NO_MORT_TO_IMMORT);
   fprintf(fl, "* Should closed doors be shown on autoexit / exit?\n"
               "disp_closed_doors = %d\n\n", CONFIG_DISP_CLOSED_DOORS);
+  fprintf(fl, "* Are diagonal directions enabled?\n"
+              "diagonal_dirs_enabled = %d\n\n", CONFIG_DIAGONAL_DIRS);
   fprintf(fl, "* Who can use the map functions? 0=off, 1=on, 2=imm_only\n"
               "map_option = %d\n\n", CONFIG_MAP);
   fprintf(fl, "* Default size of map shown by 'map' command\n"
@@ -603,7 +607,8 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         "%sO%s) Objects Load Into Inventory : %s%s\r\n"
         "%sP%s) Track Through Doors         : %s%s\r\n"
         "%sR%s) Display Closed Doors        : %s%s\r\n"
-        "%sS%s) Mortals Level To Immortal   : %s%s\r\n"
+        "%sS%s) Diagonal Directions         : %s%s\r\n"
+        "%sT%s) Mortals Level To Immortal   : %s%s\r\n"
 	      "%s1%s) OK Message Text         : %s%s"
         "%s2%s) NOPERSON Message Text   : %s%s"
         "%s3%s) NOEFFECT Message Text   : %s%s"
@@ -631,6 +636,7 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.load_into_inventory),
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.track_through_doors),
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.disp_closed_doors),
+        grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.diagonal_dirs),
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.no_mort_to_immort),
 
         grn, nrm, cyn, OLC_CONFIG(d)->play.OK,
@@ -952,6 +958,11 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         case 's':
         case 'S':
+          TOGGLE_VAR(OLC_CONFIG(d)->play.diagonal_dirs);
+          break;
+
+        case 't':
+        case 'T':
           TOGGLE_VAR(OLC_CONFIG(d)->play.no_mort_to_immort);
           break;
 

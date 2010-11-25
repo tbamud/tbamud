@@ -40,6 +40,25 @@ const char *dirs[] =
   "west",
   "up",
   "down",
+  "northwest",  /* Diagonals only used if CONFIG_DIAGONAL_DIRS is set */
+  "northeast",
+  "southeast",
+  "southwest",
+  "\n"
+};
+
+const char *autoexits[] =
+{
+  "n",
+  "e",
+  "s",
+  "w",
+  "u",
+  "d",
+  "nw",
+  "ne",
+  "se",
+  "sw",
   "\n"
 };
 
@@ -854,7 +873,11 @@ int rev_dir[] =
   NORTH,
   EAST,
   DOWN,
-  UP
+  UP,
+  SOUTHEAST,
+  SOUTHWEST,
+  NORTHWEST,
+  NORTHEAST
 };
 
 /** How much movement is lost moving through a particular sector type. */

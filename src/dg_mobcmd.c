@@ -72,7 +72,7 @@ ACMD(do_masound)
     skip_spaces(&argument);
 
     was_in_room = IN_ROOM(ch);
-    for (door = 0; door < NUM_OF_DIRS; door++)
+    for (door = 0; door < DIR_COUNT; door++)
     {
         struct room_direction_data *newexit;
 

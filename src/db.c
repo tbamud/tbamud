@@ -508,7 +508,7 @@ void destroy_db(void)
     /* free script proto list */
     free_proto_script(&world[cnt], WLD_TRIGGER);
 
-    for (itr = 0; itr < NUM_OF_DIRS; itr++) {
+    for (itr = 0; itr < NUM_OF_DIRS; itr++) { /* NUM_OF_DIRS here, not DIR_COUNT */
       if (!world[cnt].dir_option[itr])
         continue;
 
@@ -1243,7 +1243,7 @@ void parse_room(FILE *fl, int virtual_nr)
   world[room_nr].people = NULL;
   world[room_nr].light = 0;	/* Zero light sources */
 
-  for (i = 0; i < NUM_OF_DIRS; i++)
+  for (i = 0; i < NUM_OF_DIRS; i++)  /* NUM_OF_DIRS used here, not DIR_COUNT */
     world[room_nr].dir_option[i] = NULL;
 
   world[room_nr].ex_description = NULL;
@@ -1303,6 +1303,11 @@ void setup_dir(FILE *fl, int room, int dir)
 
   snprintf(buf2, sizeof(buf2), "room #%d, direction D%d", GET_ROOM_VNUM(room)+1, dir);
 
+  if (!CONFIG_DIAGONAL_DIRS && IS_DIAGONAL(dir)) {
+    log("Warning: Diagonal direction disabled: %s", buf2);
+    return;
+  }
+
   CREATE(world[room].dir_option[dir], struct room_direction_data, 1);
   world[room].dir_option[dir]->general_description = fread_string(fl, buf2);
   world[room].dir_option[dir]->keyword = fread_string(fl, buf2);
@@ -1319,6 +1324,10 @@ void setup_dir(FILE *fl, int room, int dir)
     world[room].dir_option[dir]->exit_info = EX_ISDOOR;
   else if (t[0] == 2)
     world[room].dir_option[dir]->exit_info = EX_ISDOOR | EX_PICKPROOF;
+  else if (t[0] == 3)
+    world[room].dir_option[dir]->exit_info = EX_ISDOOR | EX_HIDDEN;
+  else if (t[0] == 4)
+    world[room].dir_option[dir]->exit_info = EX_ISDOOR | EX_PICKPROOF | EX_HIDDEN;
   else
     world[room].dir_option[dir]->exit_info = 0;
 
@@ -2616,7 +2625,7 @@ void reset_zone(zone_rnum zone)
 
 
     case 'D':			/* set state of door */
-      if (ZCMD.arg2 < 0 || ZCMD.arg2 >= NUM_OF_DIRS ||
+      if (ZCMD.arg2 < 0 || ZCMD.arg2 >= DIR_COUNT ||
 	  (world[ZCMD.arg1].dir_option[ZCMD.arg2] == NULL)) {
         char error[MAX_INPUT_LENGTH];
         snprintf(error, sizeof(error), "door does not exist in room %d - dir %d, command disabled",  world[ZCMD.arg1].number, ZCMD.arg2);
@@ -3710,6 +3719,7 @@ static void load_default_config( void )
   CONFIG_TRACK_T_DOORS          = track_through_doors;
   CONFIG_NO_MORT_TO_IMMORT      = no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS      = display_closed_doors;
+  CONFIG_DIAGONAL_DIRS          = diagonal_dirs_enabled;
   CONFIG_MAP                    = map_option;
   CONFIG_MAP_SIZE               = default_map_size;
   CONFIG_MINIMAP_SIZE           = default_minimap_size;
@@ -3804,6 +3814,8 @@ void load_config( void )
       case 'd':
         if (!str_cmp(tag, "display_closed_doors"))
           CONFIG_DISP_CLOSED_DOORS = num;
+        else if (!str_cmp(tag, "diagonal_dirs_enabled"))
+          CONFIG_DIAGONAL_DIRS = num;
         else if (!str_cmp(tag, "dts_are_dumps"))
           CONFIG_DTS_ARE_DUMPS = num;
         else if (!str_cmp(tag, "donation_room_1"))

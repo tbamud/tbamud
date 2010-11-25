@@ -506,7 +506,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           } else {
             doors = 0;
             room = &world[in_room];
-            for (i = 0; i < NUM_OF_DIRS ; i++)
+            for (i = 0; i < DIR_COUNT ; i++)
               if (R_EXIT(room, i))
                 doors++;
 
@@ -514,7 +514,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
               *str = '\0';
             } else {
               for ( ; ; ) {
-                doors = rand_number(0, NUM_OF_DIRS-1);
+                doors = rand_number(0, DIR_COUNT-1);
                 if (R_EXIT(room, doors))
                   break;
               }
