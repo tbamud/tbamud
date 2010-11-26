@@ -39,6 +39,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
   Bug-Fix: set level now allows GRGOD or higher to set to any mortal level
   Advance command changed to work for both mortal and admin levels
   Added increase_gold and increase_bank functions to prevent cash overflows
+  Added dupe check for new characters in char creation (thanks Mirad)
 [Nov 25 2010] - Jamdog
   Added diagonal directions with cedit toggle (default to 'off')
   Bug-Fix: admin <player> default now targets the victim player

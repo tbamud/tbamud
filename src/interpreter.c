@@ -41,6 +41,7 @@
 
 /* local (file scope) functions */
 static int perform_dupe_check(struct descriptor_data *d);
+static bool perform_new_char_dupe_check(struct descriptor_data *d);
 static struct alias_data *find_alias(struct alias_data *alias_list, char *str);
 static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a);
 static int _parse_name(char *arg, char *name);
@@ -1077,11 +1078,11 @@ static int perform_dupe_check(struct descriptor_data *d)
       STATE(k) = CON_CLOSE;
       pref_temp=GET_PREF(k->character);
       if (!target) {
-	target = k->original;
-	mode = UNSWITCH;
+        target = k->original;
+        mode = UNSWITCH;
       }
       if (k->character)
-	k->character->desc = NULL;
+        k->character->desc = NULL;
       k->character = NULL;
       k->original = NULL;
     } else if (k->character && GET_IDNUM(k->character) == id && k->original) {
@@ -1093,9 +1094,9 @@ static int perform_dupe_check(struct descriptor_data *d)
       pref_temp=GET_PREF(k->character);
 
       if (!target && STATE(k) == CON_PLAYING) {
-	write_to_output(k, "\r\nThis body has been usurped!\r\n");
-	target = k->character;
-	mode = USURP;
+        write_to_output(k, "\r\nThis body has been usurped!\r\n");
+        target = k->character;
+        mode = USURP;
       }
       k->character->desc = NULL;
       k->character = NULL;
@@ -1191,6 +1192,59 @@ static int perform_dupe_check(struct descriptor_data *d)
   }
 
   return (1);
+}
+
+/* New Char dupe-check called at the start of character creation */
+static bool perform_new_char_dupe_check(struct descriptor_data *d)
+{
+  struct descriptor_data *k, *next_k;
+  bool found = FALSE;
+
+  /* Now that this descriptor has successfully logged in, disconnect all
+   * other descriptors controlling a character with the same ID number. */
+
+  for (k = descriptor_list; k; k = next_k) {
+    next_k = k->next;
+
+    if (k == d)
+      continue;
+
+    /* Do the player names match? */
+    if (!strcmp(GET_NAME(k->character), GET_NAME(d->character))) {
+      /* Check the other character is still in creation? */
+      if ((STATE(k) > CON_PLAYING) && (STATE(k) < CON_QCLASS)) {
+        /* Boot the older one */
+        k->character->desc = NULL;
+        k->character = NULL;
+        k->original = NULL;
+        write_to_output(k, "\r\nMultiple login detected -- disconnecting.\r\n");
+        STATE(k) = CON_CLOSE;
+
+        mudlog(NRM, ADMLVL_GOD, TRUE, "Multiple logins detected in char creation for %s.", GET_NAME(d->character));
+
+        found = TRUE;
+	  } else {
+        /* Something went VERY wrong, boot both chars */
+        k->character->desc = NULL;
+        k->character = NULL;
+        k->original = NULL;
+        write_to_output(k, "\r\nMultiple login detected -- disconnecting.\r\n");
+        STATE(k) = CON_CLOSE;
+
+        d->character->desc = NULL;
+        d->character = NULL;
+        d->original = NULL;
+        write_to_output(d, "\r\nSorry, due to multiple connections, all your connections are being closed.\r\n");
+        write_to_output(d, "\r\nPlease reconnect.\r\n");
+        STATE(d) = CON_CLOSE;
+
+        mudlog(NRM, ADMLVL_GOD, TRUE, "SYSERR: Multiple logins with 1st in-game and the 2nd in char creation.");
+
+        found = TRUE;
+	  }
+	}
+  }
+  return (found);
 }
 
 /* load the player, put them in the right room - used by copyover_recover too */
@@ -1362,17 +1416,18 @@ void nanny(struct descriptor_data *d, char *arg)
   case CON_NAME_CNFRM:		/* wait for conf. of new name    */
     if (UPPER(*arg) == 'Y') {
       if (isbanned(d->host) >= BAN_NEW) {
-	mudlog(NRM, ADMLVL_GOD, TRUE, "Request for new char %s denied from [%s] (siteban)", GET_PC_NAME(d->character), d->host);
-	write_to_output(d, "Sorry, new characters are not allowed from your site!\r\n");
-	STATE(d) = CON_CLOSE;
-	return;
+        mudlog(NRM, ADMLVL_GOD, TRUE, "Request for new char %s denied from [%s] (siteban)", GET_PC_NAME(d->character), d->host);
+        write_to_output(d, "Sorry, new characters are not allowed from your site!\r\n");
+        STATE(d) = CON_CLOSE;
+        return;
       }
       if (circle_restrict) {
-	write_to_output(d, "Sorry, new players can't be created at the moment.\r\n");
-	mudlog(NRM, ADMLVL_GOD, TRUE, "Request for new char %s denied from [%s] (wizlock)", GET_PC_NAME(d->character), d->host);
-	STATE(d) = CON_CLOSE;
-	return;
+        write_to_output(d, "Sorry, new players can't be created at the moment.\r\n");
+        mudlog(NRM, ADMLVL_GOD, TRUE, "Request for new char %s denied from [%s] (wizlock)", GET_PC_NAME(d->character), d->host);
+        STATE(d) = CON_CLOSE;
+        return;
       }
+      perform_new_char_dupe_check(d);
       write_to_output(d, "New character.\r\nGive me a password for %s: ", GET_PC_NAME(d->character));
       echo_off(d);
       STATE(d) = CON_NEWPASSWD;
