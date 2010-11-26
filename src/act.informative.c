@@ -1251,9 +1251,11 @@ ACMD(do_who)
       for (i = 0; *rank[i].disp != '\n'; i++)
         if (GET_ADMLEVEL(tch) >= rank[i].min_level && GET_ADMLEVEL(tch) <= rank[i].max_level) {
           if (rank[i].min_level >= ADMLVL_IMMORT && !PRF_FLAGGED(tch, PRF_MORTAL))
-            rank[i].count++;
+            rank[i].count++; /* Add 'real' admins  */
+          else if (rank[i].max_level < ADMLVL_IMMORT)
+            rank[i].count++; /* Add 'real' mortals */
         } else if (rank[i].max_level < ADMLVL_IMMORT && PRF_FLAGGED(tch, PRF_MORTAL))
-          rank[i].count++;
+          rank[i].count++;   /* Add 'fake' mortals */
     }
   }
 

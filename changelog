@@ -40,6 +40,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
   Advance command changed to work for both mortal and admin levels
   Added increase_gold and increase_bank functions to prevent cash overflows
   Added dupe check for new characters in char creation (thanks Mirad)
+  Bug-Fix: Since admin update, real mortals didn't show on who list
 [Nov 25 2010] - Jamdog
   Added diagonal directions with cedit toggle (default to 'off')
   Bug-Fix: admin <player> default now targets the victim player
