@@ -670,7 +670,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           if (!str_cmp(field, "gold")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              GET_GOLD(c) += addition;
+              increase_gold(c, addition);
             }
             snprintf(str, slen, "%d", GET_GOLD(c));
           }

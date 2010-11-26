@@ -1689,6 +1689,7 @@ ACMD(do_admin)
 	  /* Copy current flags */
 	  for (i=0; i<AD_ARRAY_MAX; i++) tmp_adm[i] = ADM_FLAGS(vict)[i];
       set_default_admin_privs(vict, FALSE);
+      send_to_char(ch, "%s", CONFIG_OK);
 	  /* Compare for changed flags */
 	  for (i=0; i<AD_ARRAY_MAX; i++) {
 	    if (tmp_adm[i] != ADM_FLAGS(vict)[i]) {
@@ -1735,10 +1736,10 @@ ACMD(do_admin)
 ACMD(do_advance)
 {
   struct char_data *victim;
-  char name[MAX_INPUT_LENGTH], level[MAX_INPUT_LENGTH];
+  char name[MAX_INPUT_LENGTH], level[MAX_INPUT_LENGTH], *buf;
   int newlevel, oldlevel, i;
 
-  two_arguments(argument, name, level);
+  buf = two_arguments(argument, name, level);
 
   if (*name) {
     if (!(victim = get_char_vis(ch, name, NULL, FIND_CHAR_WORLD))) {
@@ -1746,8 +1747,9 @@ ACMD(do_advance)
       return;
     }
   } else {
-    send_to_char(ch, "Usage: %sadvance <player> <admin level>%s\r\n", QYEL, QNRM);
-    send_to_char(ch, "%s<admin level>%s may be a level name (e.g. mortal) or number.\r\n", QYEL, QNRM);
+    send_to_char(ch, "Usage: %sadvance <player> <mortal level>%s\r\n", QYEL, QNRM);
+    send_to_char(ch, "Usage: %sadvance <player> admin <admin level>%s\r\n", QYEL, QNRM);
+    send_to_char(ch, "%s<admin level>%s may be a level name (e.g. immortal) or number.\r\n", QYEL, QNRM);
     return;
   }
 
@@ -1763,65 +1765,116 @@ ACMD(do_advance)
     send_to_char(ch, "You must specify a level!\r\n");
     return;
   }
-  if ((newlevel = get_admin_level_by_string(level)) < 0) {
-    send_to_char(ch, "That's not a level!\r\n");
-    return;
-  }
-  if (newlevel > ADMLVL_IMPL) {
-    send_to_char(ch, "%s (level %d) is the highest possible admin level.\r\n", admin_level_names[ADMLVL_IMPL], ADMLVL_IMPL);
-    return;
-  }
-  if (newlevel > GET_ADMLEVEL(ch)) {
-    send_to_char(ch, "Yeah, right.\r\n");
-    return;
-  }
-  if (newlevel == GET_ADMLEVEL(victim)) {
-    send_to_char(ch, "They are already at that level.\r\n");
-    return;
-  }
-  oldlevel = GET_ADMLEVEL(victim);
-  if (newlevel < GET_ADMLEVEL(victim)) {
-    do_start(victim);
-    send_to_char(victim, "You are momentarily enveloped by darkness!\r\nYou feel somewhat diminished.\r\n");
-  } else {
-    act("$n makes some strange gestures. A strange feeling comes upon you,\r\n"
-      "Like a giant hand, light comes down from above, grabbing your body,\r\n"
-      "that begins to pulse with colored lights from inside.\r\n\r\n"
-      "Your head seems to be filled with demons from another plane as\r\n"
-      "your body dissolves to the elements of time and space itself.\r\n"
-      "Suddenly a silent explosion of light snaps you back to reality.\r\n\r\n"
-      "You feel slightly different.", FALSE, ch, 0, victim, TO_VICT);
-  }
+  /* Set MORTAL Level */
+  if (!is_abbrev(level, "admin")) {
+	if ((newlevel = atoi(level)) <= 0) {
+      send_to_char(ch, "That's not a valid mortal level!\r\n");
+      return;
+    }
+    if (newlevel > CONFIG_MAX_LEVEL) {
+      send_to_char(ch, "%d is the highest possible mortal level.\r\n", CONFIG_MAX_LEVEL);
+      return;
+    }
+    if (!IS_ADMIN(ch, ADMLVL_GRGOD) && newlevel > GET_LEVEL(ch)) {
+      send_to_char(ch, "You can't set above your own mortal level.\r\n");
+      return;
+    }
+    if (newlevel == GET_LEVEL(victim)) {
+      send_to_char(ch, "They are already at that mortal level.\r\n");
+      return;
+    }
+    oldlevel = GET_LEVEL(victim);
+    if (newlevel < GET_LEVEL(victim)) {
+      do_start(victim);
+      GET_LEVEL(victim) = newlevel;
+      send_to_char(victim, "You are momentarily enveloped by darkness!\r\nYou feel somewhat diminished.\r\n");
+    } else {
+      act("$n makes some strange gestures. A strange feeling comes upon you,\r\n"
+        "Like a giant hand, light comes down from above, grabbing your body,\r\n"
+        "that begins to pulse with colored lights from inside.\r\n\r\n"
+        "Your head seems to be filled with demons from another plane as\r\n"
+        "your body dissolves to the elements of time and space itself.\r\n"
+        "Suddenly a silent explosion of light snaps you back to reality.\r\n\r\n"
+        "You feel slightly different.", FALSE, ch, 0, victim, TO_VICT);
+    }
 
-  set_admin_level(victim, newlevel);
-  send_to_char(ch, "%s", CONFIG_OK);
+    send_to_char(ch, "%s", CONFIG_OK);
 
-  if (newlevel < oldlevel)
-    log("(GC) %s demoted %s from admin level %d to %d.",
-		GET_NAME(ch), GET_NAME(victim), oldlevel, newlevel);
-  else
-    log("(GC) %s has advanced %s to admin level %d (from %d)",
-		GET_NAME(ch), GET_NAME(victim), newlevel, oldlevel);
+    if (newlevel < oldlevel)
+      log("(GC) %s demoted %s from mortal level %d to %d.",
+          GET_NAME(ch), GET_NAME(victim), oldlevel, newlevel);
+    else
+      log("(GC) %s has advanced %s to mortal level %d (from %d)",
+          GET_NAME(ch), GET_NAME(victim), newlevel, oldlevel);
 
-  if (oldlevel >= ADMLVL_IMMORT && newlevel < ADMLVL_IMMORT) {
-    /* If they are no longer an immortal, remove the immortal only flags. */
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG1);
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_NOHASSLE);
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
-    if (!PLR_FLAGGED(victim, PLR_NOWIZLIST))
-      run_autowiz();
-  } else if (oldlevel < ADMLVL_IMMORT && newlevel >= ADMLVL_IMMORT) {
-    SET_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
-    SET_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
-    SET_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
-    SET_BIT_AR(PRF_FLAGS(victim), PRF_AUTOEXIT);
-    for (i = 1; i <= MAX_SKILLS; i++)
-      SET_SKILL(victim, i, 100);
-    GET_OLC_ZONE(victim) = NOWHERE;
+    gain_exp_regardless(victim, level_exp(GET_CLASS(victim), newlevel) - GET_EXP(victim));
+
+  } else { /* Set ADMIN Level */
+    one_argument(buf, level);
+
+    if (!*level) {
+      send_to_char(ch, "You must specify a level!\r\n");
+      return;
+    }
+    if ((newlevel = get_admin_level_by_string(level)) < 0) {
+      send_to_char(ch, "That's not a level!\r\n");
+      return;
+    }
+    if (newlevel > ADMLVL_IMPL) {
+      send_to_char(ch, "%s (level %d) is the highest possible admin level.\r\n", admin_level_names[ADMLVL_IMPL], ADMLVL_IMPL);
+      return;
+    }
+    if (newlevel > GET_ADMLEVEL(ch)) {
+      send_to_char(ch, "Yeah, right.\r\n");
+      return;
+    }
+    if (newlevel == GET_ADMLEVEL(victim)) {
+      send_to_char(ch, "They are already at that level.\r\n");
+      return;
+    }
+    oldlevel = GET_ADMLEVEL(victim);
+    if (newlevel < GET_ADMLEVEL(victim)) {
+      do_start(victim);
+      send_to_char(victim, "You are momentarily enveloped by darkness!\r\nYou feel somewhat diminished.\r\n");
+    } else {
+      act("$n makes some strange gestures. A strange feeling comes upon you,\r\n"
+        "Like a giant hand, light comes down from above, grabbing your body,\r\n"
+        "that begins to pulse with colored lights from inside.\r\n\r\n"
+        "Your head seems to be filled with demons from another plane as\r\n"
+        "your body dissolves to the elements of time and space itself.\r\n"
+        "Suddenly a silent explosion of light snaps you back to reality.\r\n\r\n"
+        "You feel slightly different.", FALSE, ch, 0, victim, TO_VICT);
+    }
+
+    set_admin_level(victim, newlevel);
+    send_to_char(ch, "%s", CONFIG_OK);
+
+    if (newlevel < oldlevel)
+      log("(GC) %s demoted %s from admin level %d to %d.",
+          GET_NAME(ch), GET_NAME(victim), oldlevel, newlevel);
+    else
+      log("(GC) %s has advanced %s to admin level %d (from %d)",
+          GET_NAME(ch), GET_NAME(victim), newlevel, oldlevel);
+
+    if (oldlevel >= ADMLVL_IMMORT && newlevel < ADMLVL_IMMORT) {
+      /* If they are no longer an immortal, remove the immortal only flags. */
+      REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG1);
+      REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
+      REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_NOHASSLE);
+      REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
+      REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
+      if (!PLR_FLAGGED(victim, PLR_NOWIZLIST))
+        run_autowiz();
+    } else if (oldlevel < ADMLVL_IMMORT && newlevel >= ADMLVL_IMMORT) {
+      SET_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
+      SET_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
+      SET_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
+      SET_BIT_AR(PRF_FLAGS(victim), PRF_AUTOEXIT);
+      for (i = 1; i <= MAX_SKILLS; i++)
+        SET_SKILL(victim, i, 100);
+      GET_OLC_ZONE(victim) = NOWHERE;
+    }
   }
-
   save_char(victim);
 }
 
@@ -3119,7 +3172,7 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
       break;
     case 2: /* admlevel */
       if ((IS_NPC(vict) || value > GET_ADMLEVEL(ch)) || value > ADMLVL_IMPL) {
-        send_to_char(ch, "You can't do that.\r\n");
+        send_to_char(ch, "You can't set above your own admin level.\r\n");
         return (0);
       }
       RANGE(1, ADMLVL_IMPL);
@@ -3262,8 +3315,12 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_KILLER);
       break;
     case 26: /* level */
-      if ((!IS_NPC(vict) && value > GET_LEVEL(ch)) || value > CONFIG_MAX_LEVEL) {
-        send_to_char(ch, "You can't do that.\r\n");
+      if (!IS_NPC(vict) && !IS_ADMIN(ch, ADMLVL_GRGOD)) {
+        if (value > GET_LEVEL(ch)) {
+          send_to_char(ch, "You can't set higher than your own level.\r\n");
+        } else if (value > CONFIG_MAX_LEVEL) {
+          send_to_char(ch, "Maximum level is %d.\r\n", CONFIG_MAX_LEVEL);
+        }
         return (0);
       }
       RANGE(1, CONFIG_MAX_LEVEL);

@@ -583,7 +583,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
     charged = buy_price(obj, shop_nr, keeper, ch);
     goldamt += charged;
     if (!ADM_FLAGGED(ch, ADM_MONEY))
-      GET_GOLD(ch) -= charged;
+      decrease_gold(ch, charged);
 
     last_obj = obj;
     obj = get_purchase_obj(ch, arg, keeper, shop_nr, FALSE);
@@ -612,7 +612,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
     do_tell(keeper, buf, cmd_tell, 0);
   }
   if (!IS_GOD(ch) && obj && !OBJ_FLAGGED(obj, ITEM_QUEST)) {
-    GET_GOLD(keeper) += goldamt;
+    increase_gold(keeper, goldamt);
     if (SHOP_USES_BANK(shop_nr))
       if (GET_GOLD(keeper) > MAX_OUTSIDE_BANK) {
         SHOP_BANK(shop_nr) += (GET_GOLD(keeper) - MAX_OUTSIDE_BANK);
@@ -773,7 +773,7 @@ static void shopping_sell(char *arg, struct char_data *ch, struct char_data *kee
 
     goldamt += charged;
     if (!IS_SET(SHOP_BITVECTOR(shop_nr), HAS_UNLIMITED_CASH))
-      GET_GOLD(keeper) -= charged;
+      decrease_gold(keeper, charged);
 
     sold++;
     obj_from_char(obj);
@@ -793,7 +793,7 @@ static void shopping_sell(char *arg, struct char_data *ch, struct char_data *kee
 
     do_tell(keeper, buf, cmd_tell, 0);
   }
-  GET_GOLD(ch) += goldamt;
+  increase_gold(ch, goldamt);
 
   strlcpy(tempstr, times_message(0, name, sold), sizeof(tempstr));
   snprintf(tempbuf, sizeof(tempbuf), "$n sells %s.", tempstr);
@@ -807,7 +807,7 @@ static void shopping_sell(char *arg, struct char_data *ch, struct char_data *kee
   if (GET_GOLD(keeper) < MIN_OUTSIDE_BANK) {
     goldamt = MIN(MAX_OUTSIDE_BANK - GET_GOLD(keeper), SHOP_BANK(shop_nr));
     SHOP_BANK(shop_nr) -= goldamt;
-    GET_GOLD(keeper) += goldamt;
+    increase_gold(keeper, goldamt);
   }
 }
 

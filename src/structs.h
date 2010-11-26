@@ -642,6 +642,9 @@
 #define MAX_HELP_ENTRY        MAX_STRING_LENGTH /**< Max size of help entry */
 #define MAX_COMPLETED_QUESTS  1024   /**< Maximum number of completed quests allowed */
 
+#define MAX_GOLD        2140000000   /**< Maximum possible on hand gold (2.14 Billion) */
+#define MAX_BANK        2140000000   /**< Maximum possible in bank gold (2.14 Billion) */
+
 /** Define the largest set of commands for a trigger.
  * 16k should be plenty and then some. */
 #define MAX_CMD_LENGTH 16384

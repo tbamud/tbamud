@@ -315,12 +315,12 @@ void generic_complete_quest(struct char_data *ch)
       if ((IS_HAPPYHOUR) && (IS_HAPPYGOLD)) {
         happy_gold = (int)(QST_GOLD(rnum) * (((float)(100+HAPPY_GOLD))/(float)100));
         happy_gold = MAX(happy_gold, 0);
-        GET_GOLD(ch) += happy_gold;
+        increase_gold(ch, happy_gold);
         send_to_char(ch,
               "You have been awarded %d gold coins for your service.\r\n",
               happy_gold);
 	  } else {
-        GET_GOLD(ch) += QST_GOLD(rnum);
+        increase_gold(ch, QST_GOLD(rnum));
         send_to_char(ch,
               "You have been awarded %d gold coins for your service.\r\n",
               QST_GOLD(rnum));

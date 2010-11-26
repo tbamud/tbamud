@@ -186,7 +186,7 @@ static void get_check_money(struct char_data *ch, struct obj_data *obj)
 
   extract_obj(obj);
 
-  GET_GOLD(ch) += value;
+  increase_gold(ch, value);
 
   if (value == 1)
     send_to_char(ch, "There was 1 coin.\r\n");
@@ -424,7 +424,7 @@ static void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_
 
       send_to_char(ch, "You drop some gold which disappears in a puff of smoke!\r\n");
     }
-    GET_GOLD(ch) -= amount;
+    decrease_gold(ch, amount);
   }
 }
 
@@ -590,7 +590,7 @@ ACMD(do_drop)
   if (amount && (subcmd == SCMD_JUNK)) {
     send_to_char(ch, "You have been rewarded by the gods!\r\n");
     act("$n has been rewarded by the gods!", TRUE, ch, 0, 0, TO_ROOM);
-    GET_GOLD(ch) += amount;
+    increase_gold(ch, amount);
   }
 }
 
@@ -663,8 +663,8 @@ static void perform_give_gold(struct char_data *ch, struct char_data *vict,
   act(buf, TRUE, ch, 0, vict, TO_NOTVICT);
 
   if (IS_NPC(ch) || (!ADM_FLAGGED(ch, ADM_MONEY)))
-    GET_GOLD(ch) -= amount;
-  GET_GOLD(vict) += amount;
+    decrease_gold(ch, amount);
+  increase_gold(vict, amount);
 
   bribe_mtrigger(vict, ch, amount);
 }
@@ -1533,7 +1533,7 @@ ACMD(do_sac)
   switch (rand_number(0, 5)) {
       case 0:
         send_to_char(ch, "You sacrifice %s to the Gods.\r\nYou receive one gold coin for your humility.\r\n", GET_OBJ_SHORT(j));
-        GET_GOLD(ch) += 1;
+        increase_gold(ch, 1);
       break;
       case 1:
         send_to_char(ch, "You sacrifice %s to the Gods.\r\nThe Gods ignore your sacrifice.\r\n", GET_OBJ_SHORT(j));
@@ -1548,15 +1548,15 @@ ACMD(do_sac)
       break;
       case 4:
         send_to_char(ch, "Your sacrifice to the Gods is rewarded with %d gold coins.\r\n", GET_OBJ_COST(j));
-        GET_GOLD(ch) += GET_OBJ_COST(j);
+        increase_gold(ch, GET_OBJ_COST(j));
       break;
       case 5:
         send_to_char(ch, "Your sacrifice to the Gods is rewarded with %d gold coins\r\n", (2*GET_OBJ_COST(j)));
-        GET_GOLD(ch) += (2*GET_OBJ_COST(j));
+        increase_gold(ch, (2*GET_OBJ_COST(j)));
       break;
     default:
         send_to_char(ch, "You sacrifice %s to the Gods.\r\nYou receive one gold coin for your humility.\r\n", GET_OBJ_SHORT(j));
-        GET_GOLD(ch) += 1;
+        increase_gold(ch, 1);
     break;
   }
   for (jj = j->contains; jj; jj = next_thing2) {

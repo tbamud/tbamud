@@ -185,7 +185,7 @@ ACMD(do_steal)
     percent -= 50;
 
   /* No stealing if not allowed. If it is no stealing from Imm's or Shopkeepers. */
-  if (IS_ADMIN(vict, ADMLVL_IMMORT) || pcsteal || GET_MOB_SPEC(vict) == shop_keeper)
+  if (ADM_FLAGGED(vict, ADM_NOSTEAL) || pcsteal || GET_MOB_SPEC(vict) == shop_keeper)
     percent = 101;		/* Failure */
 
   if (str_cmp(obj_name, "coins") && str_cmp(obj_name, "gold")) {
@@ -253,14 +253,14 @@ ACMD(do_steal)
       gold = (GET_GOLD(vict) * rand_number(1, 10)) / 100;
       gold = MIN(1782, gold);
       if (gold > 0) {
-	GET_GOLD(ch) += gold;
-	GET_GOLD(vict) -= gold;
+        increase_gold(ch, gold);
+        decrease_gold(vict, gold);
         if (gold > 1)
-	  send_to_char(ch, "Bingo!  You got %d gold coins.\r\n", gold);
-	else
-	  send_to_char(ch, "You manage to swipe a solitary gold coin.\r\n");
+          send_to_char(ch, "Bingo!  You got %d gold coins.\r\n", gold);
+        else
+          send_to_char(ch, "You manage to swipe a solitary gold coin.\r\n");
       } else {
-	send_to_char(ch, "You couldn't get any gold...\r\n");
+        send_to_char(ch, "You couldn't get any gold...\r\n");
       }
     }
   }
@@ -532,7 +532,7 @@ ACMD(do_split)
       return;
     }
 
-    GET_GOLD(ch) -= share * (num - 1);
+    decrease_gold(ch, share * (num - 1));
 
     /* Abusing signed/unsigned to make sizeof work. */
     len = snprintf(buf, sizeof(buf), "%s splits %d coins; you receive %d.\r\n",
@@ -544,7 +544,7 @@ ACMD(do_split)
     }
     if (AFF_FLAGGED(k, AFF_GROUP) && IN_ROOM(k) == IN_ROOM(ch) &&
 		!IS_NPC(k) && k != ch) {
-      GET_GOLD(k) += share;
+      increase_gold(k, share);
       send_to_char(k, "%s", buf);
     }
 
@@ -554,8 +554,8 @@ ACMD(do_split)
 	  (IN_ROOM(f->follower) == IN_ROOM(ch)) &&
 	  f->follower != ch) {
 
-	GET_GOLD(f->follower) += share;
-	send_to_char(f->follower, "%s", buf);
+        increase_gold(f->follower, share);
+        send_to_char(f->follower, "%s", buf);
       }
     }
     send_to_char(ch, "You split %d coins among %d members -- %d coins each.\r\n",
@@ -564,7 +564,7 @@ ACMD(do_split)
     if (rest) {
       send_to_char(ch, "%d coin%s %s not splitable, so you keep the money.\r\n",
 		rest, (rest == 1) ? "" : "s", (rest == 1) ? "was" : "were");
-      GET_GOLD(ch) += rest;
+      increase_gold(ch, rest);
     }
   } else {
     send_to_char(ch, "How many coins do you wish to split with your group?\r\n");

@@ -313,7 +313,7 @@ static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman
   act(buf, FALSE, mailman, 0, ch, TO_VICT);
 
   if (!ADM_FLAGGED(ch, ADM_MONEY))
-    GET_GOLD(ch) -= STAMP_PRICE;
+    decrease_gold(ch, STAMP_PRICE);
 
   SET_BIT_AR(PLR_FLAGS(ch), PLR_MAILING);	/* string_write() sets writing. */
 
