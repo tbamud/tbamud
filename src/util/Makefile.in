@@ -29,6 +29,7 @@ all: $(BINDIR)/asciipasswd \
 	$(BINDIR)/shopconv \
 	$(BINDIR)/sign \
 	$(BINDIR)/split \
+	$(BINDIR)/rebuildIndex \
 	$(BINDIR)/wld2html \
 	$(BINDIR)/webster 
 
@@ -47,6 +48,11 @@ split: $(BINDIR)/split
 wld2html: $(BINDIR)/wld2html
 
 webster: $(BINDIR)/webster
+
+rebuildIndex: $(BINDIR)/rebuildIndex
+
+$(BINDIR)/rebuildIndex: rebuildAsciiIndex.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/rebuildIndex rebuildAsciiIndex.c
 
 $(BINDIR)/asciipasswd: asciipasswd.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/asciipasswd asciipasswd.c @CRYPTLIB@
