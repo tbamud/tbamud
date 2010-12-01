@@ -715,7 +715,7 @@ static void cedit_disp_admin_levels(struct descriptor_data *d)
 
   write_to_output(d, "\r\n\r\n");
   for (i=ADMLVL_IMMORT; i<=ADMLVL_IMPL; i++) {
-    write_to_output(d, "%sd%s) %s%s%s\r\n", grn, nrm, cyn, admin_level_names[i], nrm);
+    write_to_output(d, "%s%d%s) %s%s%s\r\n", grn, i, nrm, cyn, admin_level_names[i], nrm);
   }
 }
 

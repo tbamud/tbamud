@@ -522,7 +522,7 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
   sprinttype(rm->sector_type, sector_types, buf2, sizeof(buf2));
   send_to_char(ch, "Zone: [%3d], VNum: [%s%5d%s], RNum: [%5d], IDNum: [%5ld], Type: %s\r\n",
 	  zone_table[rm->zone].number, CCGRN(ch, C_NRM), rm->number,
-	  CCNRM(ch, C_NRM), IN_ROOM(ch), (long) rm->number + ROOM_ID_BASE, buf2);
+	  CCNRM(ch, C_NRM), real_room(rm->number), (long) rm->number + ROOM_ID_BASE, buf2);
 
   sprintbitarray(rm->room_flags, room_bits, RF_ARRAY_MAX, buf2);
   send_to_char(ch, "SpecProc: %s, Flags: %s\r\n", rm->func == NULL ? "None" : get_spec_func_name(rm->func), buf2);
@@ -1785,7 +1785,7 @@ ACMD(do_advance)
     }
     oldlevel = GET_LEVEL(victim);
     if (newlevel < GET_LEVEL(victim)) {
-      do_start(victim);
+      do_start(victim);  /* Send 'em back to level 1, then advance */
       GET_LEVEL(victim) = newlevel;
       send_to_char(victim, "You are momentarily enveloped by darkness!\r\nYou feel somewhat diminished.\r\n");
     } else {

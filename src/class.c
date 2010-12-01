@@ -1440,6 +1440,7 @@ void roll_real_abils(struct char_data *ch)
 void do_start(struct char_data *ch)
 {
   GET_LEVEL(ch) = 1;
+  GET_ADMLEVEL(ch) = ADMLVL_MORTAL;
   GET_EXP(ch) = 1;
 
   set_title(ch, NULL);

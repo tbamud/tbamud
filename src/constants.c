@@ -569,6 +569,31 @@ const char *container_bits[] = {
   "\n",
 };
 
+/** Flag descriptions for HOUSE_ flags
+ * @pre Must be in the same order as the defines.
+ * Must end array with a single newline. */
+const char *house_bits[] = {
+"NO_GUEST",
+"FREE",
+"NO_IMM",
+"IMP_ONLY",
+"RENTFREE",
+"SAVE_!RENT",
+"NO_SAVE",
+"NO_SPEC",
+"\n"
+};
+
+/** House mode types for HOUSE_ mode values
+ * @pre Must be in the same order as the defines.
+ * Must end array with a single newline. */
+const char *house_types[] = {
+"PLAYER_OWNED",
+"IMM_OWNED",
+"CLAN_OWNED",
+"\n"
+};
+
 /** Describes the liquid description.
  * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */

@@ -365,8 +365,8 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
       next = k->next;
       if ((IN_ROOM(k->follower) == was_in) &&
 	  (GET_POS(k->follower) >= POS_STANDING)) {
-	act("You follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
-	perform_move(k->follower, dir, 1);
+        act("You follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
+        perform_move(k->follower, dir, 1);
       }
     }
     return (1);
@@ -393,14 +393,14 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
     }
     if (EXIT(ch, door)) {	/* Braces added according to indent. -gg */
       if (EXIT(ch, door)->keyword) {
-	if (is_name(type, EXIT(ch, door)->keyword))
-	  return (door);
-	else {
-	  send_to_char(ch, "I see no %s there.\r\n", type);
-	  return (-1);
+        if (is_name(type, EXIT(ch, door)->keyword))
+          return (door);
+        else {
+          send_to_char(ch, "I see no %s there.\r\n", type);
+          return (-1);
         }
       } else
-	return (door);
+        return (door);
     } else {
       send_to_char(ch, "I really don't see how you can %s anything there.\r\n", cmdname);
       return (-1);
@@ -475,10 +475,10 @@ int has_key(struct char_data *ch, obj_vnum key)
   return (0);
 }
 
-#define NEED_OPEN	(1 << 0)
-#define NEED_CLOSED	(1 << 1)
-#define NEED_UNLOCKED	(1 << 2)
-#define NEED_LOCKED	(1 << 3)
+#define NEED_OPEN     (1 << 0)
+#define NEED_CLOSED   (1 << 1)
+#define NEED_UNLOCKED (1 << 2)
+#define NEED_LOCKED   (1 << 3)
 
 /* cmd_door is required external from act.movement.c */
 const char *cmd_door[] =
@@ -533,7 +533,7 @@ static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int
   if (!obj && ((other_room = EXIT(ch, door)->to_room) != NOWHERE))
     if ((back = world[other_room].dir_option[rev_dir[door]]) != NULL)
       if (back->to_room != IN_ROOM(ch))
-	back = NULL;
+        back = NULL;
 
   switch (scmd) {
   case SCMD_OPEN:
@@ -690,24 +690,24 @@ ACMD(do_enter)
 				 * keyword */
     for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
-	if (EXIT(ch, door)->keyword)
-	  if (!str_cmp(EXIT(ch, door)->keyword, buf)) {
-	    perform_move(ch, door, 1);
-	    return;
-	  }
+        if (EXIT(ch, door)->keyword)
+          if (!str_cmp(EXIT(ch, door)->keyword, buf)) {
+            perform_move(ch, door, 1);
+            return;
+          }
     send_to_char(ch, "There is no %s here.\r\n", buf);
-  } else if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_INDOORS))
+  } else if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_INDOORS)) {
     send_to_char(ch, "You are already indoors.\r\n");
-  else {
+  } else {
     /* try to locate an entrance */
     for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
-	if (EXIT(ch, door)->to_room != NOWHERE)
-	  if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&
-	      ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_INDOORS)) {
-	    perform_move(ch, door, 1);
-	    return;
-	  }
+        if (EXIT(ch, door)->to_room != NOWHERE)
+          if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&
+              ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_INDOORS)) {
+            perform_move(ch, door, 1);
+            return;
+          }
     send_to_char(ch, "You can't seem to find anything to enter.\r\n");
   }
 }
@@ -721,12 +721,12 @@ ACMD(do_leave)
   else {
     for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
-	if (EXIT(ch, door)->to_room != NOWHERE)
-	  if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&
-	    !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_INDOORS)) {
-	    perform_move(ch, door, 1);
-	    return;
-	  }
+        if (EXIT(ch, door)->to_room != NOWHERE)
+          if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&
+            !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_INDOORS)) {
+            perform_move(ch, door, 1);
+            return;
+          }
     send_to_char(ch, "I see no obvious exits to the outside.\r\n");
   }
 }
@@ -960,17 +960,17 @@ ACMD(do_follow)
   } else {			/* Not Charmed follow person */
     if (leader == ch) {
       if (!ch->master) {
-	send_to_char(ch, "You are already following yourself.\r\n");
-	return;
+        send_to_char(ch, "You are already following yourself.\r\n");
+        return;
       }
       stop_follower(ch);
     } else {
       if (circle_follow(ch, leader)) {
-	send_to_char(ch, "Sorry, but following in loops is not allowed.\r\n");
-	return;
+        send_to_char(ch, "Sorry, but following in loops is not allowed.\r\n");
+        return;
       }
       if (ch->master)
-	stop_follower(ch);
+        stop_follower(ch);
       REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_GROUP);
       add_follower(ch, leader);
     }

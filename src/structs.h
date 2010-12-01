@@ -357,10 +357,11 @@
 #define CON_QEDIT        28 /**< OLC mode - quest edit */
 #define CON_PREFEDIT     29 /**< OLC mode - preference edit */
 #define CON_IBTEDIT      30 /**< OLC mode - idea/bug/typo edit */
+#define CON_HSEDIT       31 /**< OLC mode - house editor */
 
 /* OLC States range - used by IS_IN_OLC and IS_PLAYING */
 #define FIRST_OLC_STATE CON_OEDIT     /**< The first CON_ state that is an OLC */
-#define LAST_OLC_STATE  CON_IBTEDIT   /**< The last CON_ state that is an OLC  */
+#define LAST_OLC_STATE  CON_HSEDIT    /**< The last CON_ state that is an OLC  */
 
 /* Character equipment positions: used as index for char_data.equipment[] */
 /* NOTE: Don't confuse these constants with the ITEM_ bitvectors
@@ -551,6 +552,7 @@
 #define EF_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Extra Flags */
 #define ZN_ARRAY_MAX    4  /**< # Bytes in Bit vector - Zone Flags */
 #define AD_ARRAY_MAX    4  /**< # Bytes in Bit vector - Admin Priv Flags */
+#define HS_ARRAY_MAX    4  /**< # Bytes in Bit vector - House Flags */
 
 /* other #defined constants */
 /* **DO**NOT** blindly change the number of levels in your MUD merely by

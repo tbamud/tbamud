@@ -36,6 +36,8 @@ extern const char *wear_bits[];
 extern const char *extra_bits[];
 extern const char *apply_types[];
 extern const char *container_bits[];
+extern const char *house_bits[];
+extern const char *house_types[];
 extern const char *drinks[];
 extern const char *drinknames[];
 extern const char *color_liquid[];

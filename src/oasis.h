@@ -80,23 +80,24 @@ void send_cannot_edit(struct char_data *ch, zone_vnum zone);
 /* NO and YES are defined in utils.h. Removed from here. */
 
 struct oasis_olc_data {
-  int mode;                      /* how to parse input       */
-  zone_rnum zone_num;            /* current zone             */
-  room_vnum number;              /* vnum of subject          */
-  int value;                     /* mostly 'has changed' flag*/
-  char *storage;                 /* used for 'tedit'         */
-  struct char_data *mob;         /* used for 'medit'         */
-  struct room_data *room;        /* used for 'redit'         */
-  struct obj_data *obj;          /* used for 'oedit'         */
-  struct zone_data *zone;        /* used for 'zedit'         */
-  struct shop_data *shop;        /* used for 'sedit'         */
-  struct config_data *config;    /* used for 'cedit'         */
-  struct aq_data *quest;         /* used for 'qedit'         */
-  struct extra_descr_data *desc; /* used in '[r|o|m]edit'    */
-  struct social_messg *action;   /* Aedit uses this one      */
+  int mode;                         /* how to parse input       */
+  zone_rnum zone_num;               /* current zone             */
+  room_vnum number;                 /* vnum of subject          */
+  int value;                        /* mostly 'has changed' flag*/
+  char *storage;                    /* used for 'tedit'         */
+  struct char_data *mob;            /* used for 'medit'         */
+  struct room_data *room;           /* used for 'redit'         */
+  struct obj_data *obj;             /* used for 'oedit'         */
+  struct zone_data *zone;           /* used for 'zedit'         */
+  struct shop_data *shop;           /* used for 'sedit'         */
+  struct config_data *config;       /* used for 'cedit'         */
+  struct aq_data *quest;            /* used for 'qedit'         */
+  struct extra_descr_data *desc;    /* used in '[r|o|m]edit'    */
+  struct social_messg *action;      /* Aedit uses this one      */
   struct trig_data *trig;
-  struct prefs_data *prefs;      /* used for 'prefedit'      */
-  struct ibt_data *ibt;          /* used for 'ibtedit'       */
+  struct prefs_data *prefs;         /* used for 'prefedit'      */
+  struct ibt_data *ibt;             /* used for 'ibtedit'       */
+  struct house_control_data *house; /* used for 'hsedit'        */
   int script_mode;
   int trigger_position;
   int item_type;
@@ -129,6 +130,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define OLC_HELP(d)    (OLC(d)->help)     /**< Hedit structure      */
 #define OLC_PREFS(d)   (OLC(d)->prefs)    /**< Preferences structure */
 #define OLC_IBT(d)     (OLC(d)->ibt)      /**< IBT (idea/bug/typo) structure */
+#define OLC_HOUSE(d)   (OLC(d)->house)    /**< Player-Owned House/Shop structure */
 /* Other macros. */
 #define OLC_EXIT(d)		(OLC_ROOM(d)->dir_option[OLC_VAL(d)])
 
@@ -381,6 +383,32 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define HEDIT_KEYWORDS                  5
 #define HEDIT_MIN_LEVEL                 6
 
+/*. House editor - Submodes of HSEDIT connectedness. */
+#define HSEDIT_MAIN_MENU                 0
+#define HSEDIT_CONFIRM_SAVESTRING        1
+#define HSEDIT_OWNER_MENU                2
+#define HSEDIT_OWNER_NAME                3
+#define HSEDIT_OWNER_ID                  4
+#define HSEDIT_ROOM                      5
+#define HSEDIT_ATRIUM                    6
+#define HSEDIT_DIR_MENU                  7
+#define HSEDIT_GUEST_MENU                8
+#define HSEDIT_GUEST_ADD                 9
+#define HSEDIT_GUEST_DELETE              10
+#define HSEDIT_GUEST_CLEAR               11
+#define HSEDIT_FLAGS                     12
+#define HSEDIT_BUILD_DATE                13
+#define HSEDIT_PAYMENT                   14
+#define HSEDIT_TYPE                      15
+#define HSEDIT_DELETE                    16
+#define HSEDIT_VALUE_0                   17
+#define HSEDIT_VALUE_1                   18
+#define HSEDIT_VALUE_2                   19
+#define HSEDIT_VALUE_3                   20
+#define HSEDIT_NOVNUM                    21
+#define HSEDIT_BUILDER                   22
+#define HSEDIT_RECEP                     23
+
 int  save_config( IDXTYPE nowhere );
 
 /* Prototypes to keep. */
@@ -449,6 +477,12 @@ ACMD(do_tedit);
 
 /* public functions from qedit.c */
 ACMD(do_oasis_qedit);
+
+/* public functions from hsedit.c */
+void hsedit_parse(struct descriptor_data * d, char *arg);
+void hsedit_string_cleanup(struct descriptor_data *d, int terminator);
+ACMD(do_oasis_hsedit);
+
 
 /* public functions from oasis_copy.c */
 int buildwalk(struct char_data *ch, int dir);

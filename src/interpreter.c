@@ -195,6 +195,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "holler"   , "holler"  , POS_RESTING , do_gen_comm  , 1, ADMLVL_MORTAL,  ADM_NONE,  SCMD_HOLLER },
   { "holylight", "holy"    , POS_DEAD    , do_gen_tog   , 0, ADMLVL_IMMORT,  ADM_NONE,  SCMD_HOLYLIGHT },
   { "house"    , "house"   , POS_RESTING , do_house     , 0, ADMLVL_MORTAL,  ADM_NONE,  0 },
+  { "hsedit"   , "hsedit"  , POS_DEAD    , do_oasis_hsedit,0,ADMLVL_GOD,     ADM_ADVBUILD, 0 },
 
   { "inventory", "i"       , POS_DEAD    , do_inventory , 0, ADMLVL_MORTAL,  ADM_NONE,  0 },
   { "identify" , "id"      , POS_STANDING, do_not_here  , 1, ADMLVL_MORTAL,  ADM_NONE,  0 },
@@ -1320,6 +1321,7 @@ void nanny(struct descriptor_data *d, char *arg)
     { CON_QEDIT, qedit_parse },
     { CON_PREFEDIT, prefedit_parse },
     { CON_IBTEDIT, ibtedit_parse },
+    { CON_HSEDIT, hsedit_parse },
     { -1, NULL }
   };
 
