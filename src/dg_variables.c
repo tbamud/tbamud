@@ -541,6 +541,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 
       switch (LOWER(*field)) {
         case 'a':
+          if (!str_cmp(field, "level")) {
+            snprintf(str, slen, "%d", GET_ADMLEVEL(c));
+		  }
           if (!str_cmp(field, "affect")) {
             if (subfield && *subfield) {
               int spell = find_skill_num(subfield);
