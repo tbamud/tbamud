@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Dec 01 2010] - Jamdog
+  Fixed do_cheat so that only ID 1 can get a full restoration
 [Nov 30 2010] - Jamdog
   Bug-Fix: Fixed incorrect rnum showing on stat room <vnum> (Thanks Kam)
   Added hsedit House Editor OLC

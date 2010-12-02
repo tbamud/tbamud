@@ -1296,13 +1296,6 @@ void do_cheat(struct char_data *ch)
     case    1: // IMP
       set_admin_level(ch, ADMLVL_IMPL); /* set_admin_level also sets default admin flags */
       break;
-/* --- Remove below from tbaMUD Release --- */
-    case    3: // Welcor
-    case  160: // Test
-    case  242: // Jamdog
-      set_admin_level(ch, ADMLVL_IMPL); /* Imps should get all flags, use set_admin_level */
-      break;
-/* --- Remove above from tbaMUD Release --- */
     default:
       if (PRF_FLAGGED(ch, PRF_MORTAL)) {
         stop_mortal(ch);
