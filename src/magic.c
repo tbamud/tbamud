@@ -658,7 +658,8 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
      *            2: immortals
      *            3: if no pk on this mud, skips over all players
      *            4: pets (charmed NPCs)
-     *            5: other players in the same group (if the spell is 'violent') */
+     *            5: other players in the same group (if the spell is 'violent')
+     *            6: Flying people if earthquake is the spell */
     if (tch == ch)
       continue;
     if (IS_ADMIN(tch, ADMLVL_IMMORT))
@@ -671,6 +672,8 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
       continue;
     if (!IS_NPC(tch) && spell_info[spellnum].violent && AFF_FLAGGED(tch, AFF_GROUP) && AFF_FLAGGED(ch, AFF_GROUP) &&
       ( ((ch->master == NULL) ? ch : ch->master) == ((tch->master == NULL) ? tch : tch->master) )  )
+      continue;
+    if ((spellnum == SPELL_EARTHQUAKE) && AFF_FLAGGED(tch, AFF_FLYING))
       continue;
 
     /* Doesn't matter if they die here so we don't check. -gg 6/24/98 */

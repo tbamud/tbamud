@@ -1571,7 +1571,10 @@ bool shopping_identify(char *arg, struct char_data *ch, struct char_data *keeper
   send_to_char(ch, "Name: %s\r\n", (obj->short_description) ? obj->short_description : "<None>");
   sprinttype(GET_OBJ_TYPE(obj), item_types, buf, sizeof(buf));
   send_to_char(ch, "Type: %s\r\n", buf);
-  send_to_char(ch, "Weight: %d, Cost to Buy: @Y%d@n\r\n", GET_OBJ_WEIGHT(obj), sell_price(obj, shop_nr, keeper, ch));
+  send_to_char(ch, "Weight: %d, Cost to Sell: %s%d%s, Cost to Buy: %s%d%s\r\n",
+                 GET_OBJ_WEIGHT(obj),
+                 QYEL, sell_price(obj, shop_nr, keeper, ch), QNRM,
+                 QYEL, buy_price(obj, shop_nr, keeper, ch), QNRM);
 
       sprintbitarray(GET_OBJ_WEAR(obj), wear_bits, TW_ARRAY_MAX, buf);
       send_to_char(ch, "Can be worn on: %s\r\n", buf);

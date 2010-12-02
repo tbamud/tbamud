@@ -541,7 +541,17 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 
       switch (LOWER(*field)) {
         case 'a':
-          if (!str_cmp(field, "level")) {
+          if (!str_cmp(field, "admlevel")) {
+            if (subfield && *subfield) {
+              int al;
+              if ((al = get_admin_level_by_string(subfield)) >= ADMLVL_MORTAL) {
+                if (IS_ADMIN(c, al))
+                  strcpy(str, "1");
+                else
+                  strcpy(str, "0");
+              } else
+                strcpy(str, "0");
+            } else
             snprintf(str, slen, "%d", GET_ADMLEVEL(c));
 		  }
           if (!str_cmp(field, "affect")) {

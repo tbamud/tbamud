@@ -35,6 +35,10 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Dec 02 2010] - Jamdog
+  Bug-Fix: identify command in shops was listing incorrect buy price (thanks Kam)
+  Added %actor.admlevel% and %actor.admlevel(<level>)% to dg-scripts
+  Earthquake spell now misses flying people
 [Dec 01 2010] - Jamdog
   Fixed do_cheat so that only ID 1 can get a full restoration
   Added zone checks for load/purge commands below admin level 3 (GrGod)
