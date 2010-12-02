@@ -1367,6 +1367,11 @@ ACMD(do_load)
     struct char_data *mob=NULL;
     mob_rnum r_num;
 
+    if (!IS_ADMIN(ch, ADMLVL_GRGOD) && !can_edit_zone(ch, world[IN_ROOM(ch)].zone)) {
+      send_to_char(ch, "Sorry, you can't load mobs here.\r\n");
+      return;
+    }
+
     if ((r_num = real_mobile(atoi(buf2))) == NOBODY) {
       send_to_char(ch, "There is no monster with that number.\r\n");
       return;
@@ -1383,6 +1388,11 @@ ACMD(do_load)
   } else if (is_abbrev(buf, "obj")) {
     struct obj_data *obj;
     obj_rnum r_num;
+
+    if (!IS_ADMIN(ch, ADMLVL_GRGOD) && !can_edit_zone(ch, world[IN_ROOM(ch)].zone)) {
+      send_to_char(ch, "Sorry, you can't load objects here.\r\n");
+      return;
+    }
 
     if ((r_num = real_object(atoi(buf2))) == NOTHING) {
       send_to_char(ch, "There is no object with that number.\r\n");
@@ -1476,6 +1486,10 @@ ACMD(do_purge)
 
   one_argument(argument, buf);
 
+  if (!IS_ADMIN(ch, ADMLVL_GRGOD) && !can_edit_zone(ch, world[IN_ROOM(ch)].zone)) {
+    send_to_char(ch, "Sorry, you can't purge anything here.\r\n");
+    return;
+  }
   /* argument supplied. destroy single object or char */
   if (*buf) {
     t = buf;

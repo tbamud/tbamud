@@ -37,6 +37,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 @
 [Dec 01 2010] - Jamdog
   Fixed do_cheat so that only ID 1 can get a full restoration
+  Added zone checks for load/purge commands below admin level 3 (GrGod)
 [Nov 30 2010] - Jamdog
   Bug-Fix: Fixed incorrect rnum showing on stat room <vnum> (Thanks Kam)
   Added hsedit House Editor OLC
