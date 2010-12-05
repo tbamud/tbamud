@@ -441,14 +441,13 @@ static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zon
 
   for (i = 0; i <= top_of_zone_table; i++) {
     if (zone_table[i].number >= bottom && zone_table[i].number <= top) {
-      tmp_len = 0;
       if ((!use_name) || (is_name(name, zone_table[i].builders))) {
         tmp_len = snprintf(buf+len, sizeof(buf)-len, "[%s%3d%s] %s%-*s %s%-1s%s\r\n",
             QGRN, zone_table[i].number, QNRM, QCYN, count_color_chars(zone_table[i].name)+30, zone_table[i].name,
             QYEL, zone_table[i].builders ? zone_table[i].builders : "None.", QNRM);
+        len += tmp_len;
+        counter++;
       }
-      len += tmp_len;
-      counter++;
     }
   }
 

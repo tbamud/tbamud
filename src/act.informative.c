@@ -2530,8 +2530,8 @@ bool get_zone_levels(zone_rnum znum, char *buf)
 
 ACMD(do_areas)
 {
-  int i, hilev=-1, lolev=-1, zcount=0, lev_set;
-  char arg[MAX_INPUT_LENGTH], *second, lev_str[MAX_INPUT_LENGTH];
+  int i, hilev=-1, lolev=-1, zcount=0, lev_set, len=0, tmp_len=0;
+  char arg[MAX_INPUT_LENGTH], *second, lev_str[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH];
   bool show_zone = FALSE, overlap = FALSE, overlap_shown = FALSE;
 
   one_argument(argument, arg);
@@ -2565,11 +2565,11 @@ ACMD(do_areas)
     hilev = i;
   }
   if (hilev != -1)
-    send_to_char(ch, "Checking range: %s%d to %d%s\r\n", QYEL, lolev, hilev, QNRM);
+    len = snprintf(buf, sizeof(buf), "Checking range: %s%d to %d%s\r\n", QYEL, lolev, hilev, QNRM);
   else if (lolev != -1)
-    send_to_char(ch, "Checking level: %s%d%s\r\n", QYEL, lolev, QNRM);
+    len = snprintf(buf, sizeof(buf), "Checking level: %s%d%s\r\n", QYEL, lolev, QNRM);
   else
-    send_to_char(ch, "Checking all areas.\r\n");
+    len = snprintf(buf, sizeof(buf), "Checking all areas.\r\n");
 
   for (i = 0; i <= top_of_zone_table; i++) {    /* Go through the whole zone table */
     show_zone = FALSE;
@@ -2602,15 +2602,24 @@ ACMD(do_areas)
     if (show_zone) {
       if (overlap) overlap_shown = TRUE;
       lev_set = get_zone_levels(i, lev_str);
-      send_to_char(ch, "@n(%3d) %s%-*s@n %s%s@n\r\n", ++zcount, overlap ? QRED : QCYN,
+      tmp_len = snprintf(buf+len, sizeof(buf)-len, "@n(%3d) %s%-*s@n %s%s@n\r\n", ++zcount, overlap ? QRED : QCYN,
                  count_color_chars(zone_table[i].name)+30, zone_table[i].name,
                  lev_set ? "@c" : "@n", lev_set ? lev_str : "All Levels");
+      len += tmp_len;
     }
   }
-  send_to_char(ch, "%s%d%s area%s found.\r\n", QYEL, zcount, QNRM, zcount == 1 ? "" : "s");
+  tmp_len = snprintf(buf+len, sizeof(buf)-len, "%s%d%s area%s found.\r\n", QYEL, zcount, QNRM, zcount == 1 ? "" : "s");
+  len += tmp_len;
 
-  if (overlap_shown)
-    send_to_char(ch, "Areas shown in @rred@n may have some creatures outside the specified range.\r\n");
+  if (overlap_shown) {
+    tmp_len = snprintf(buf+len, sizeof(buf)-len, "Areas shown in @rred@n may have some creatures outside the specified range.\r\n");
+    len += tmp_len;
+  }
+
+  if (zcount == 0)
+    send_to_char(ch, "No areas found.\r\n");
+  else
+    page_string(ch->desc, buf, TRUE);
 }
 
 void list_scanned_chars(struct char_data * list, struct char_data * ch, int
