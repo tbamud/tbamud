@@ -482,6 +482,22 @@ void sort_commands(void)
   qsort(cmd_sort_info + 1, num_of_cmds - 2, sizeof(int), sort_commands_helper);
 }
 
+/* Returns TRUE if 'ch' has sufficient access to use the command 'cmd' */
+bool can_use_command(struct char_data *ch, int cmd)
+{
+  if (complete_cmd_info[cmd].admin_flag       == ADM_NONE    &&
+      complete_cmd_info[cmd].minimum_admlevel == ADMLVL_MORTAL &&
+      GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
+    return TRUE;
+
+  if (complete_cmd_info[cmd].admin_flag == ADM_NONE && GET_ADMLEVEL(ch) >= complete_cmd_info[cmd].minimum_admlevel)
+    return TRUE;
+
+  if (complete_cmd_info[cmd].admin_flag != ADM_NONE && ADM_FLAGGED(ch, complete_cmd_info[cmd].admin_flag))
+    return TRUE;
+
+  return FALSE;
+}
 
 /* This is the actual command interpreter called from game_loop() in comm.c
  * It makes sure you are the proper level and position to execute the command,
@@ -567,12 +583,15 @@ void command_interpreter(struct char_data *ch, char *argument)
       if ( (levenshtein_distance(arg, cmd_info[cmd].command) <= 2) &&
            (cmd_info[cmd].minimum_level >= 0) )
       {
-        if (!found)
-        {
-          send_to_char(ch, "\r\nDid you mean:\r\n");
-          found = 1;
+        /* Does this person have access to this command? */
+        if (can_use_command(ch, cmd)) {
+          if (!found)
+          {
+            send_to_char(ch, "\r\nDid you mean:\r\n");
+            found = 1;
+          }
+          send_to_char(ch, "  %s\r\n", cmd_info[cmd].command);
         }
-        send_to_char(ch, "  %s\r\n", cmd_info[cmd].command);
       }
     }
   }

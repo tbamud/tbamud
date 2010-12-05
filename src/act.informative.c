@@ -2670,6 +2670,7 @@ distance, int door)
 ACMD(do_scan)
 {
   int door;
+  bool found=FALSE;
 
   int range;
   int maxrange = 3;
@@ -2692,15 +2693,21 @@ ACMD(do_scan)
             send_to_char(ch, "%s: It's too dark to see, but you can hear shuffling.\r\n", dirs[door]);
           else
             send_to_char(ch, "%s: It is too dark to see anything.\r\n", dirs[door]);
-		} else {
-          if (world[scanned_room].people)
+          found=TRUE;
+        } else {
+          if (world[scanned_room].people) {
             list_scanned_chars(world[scanned_room].people, ch, range - 1, door);
-		}
+            found=TRUE;
+          }
+        }
       }                  // end of if
       else
         break;
     }                    // end of range
     scanned_room = IN_ROOM(ch);
   }                      // end of directions
+  if (!found) {
+    send_to_char(ch, "You don't see aanything nearby!\r\n");
+  }
 } // end of do_scan
 

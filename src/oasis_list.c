@@ -22,6 +22,7 @@
 #include "constants.h"
 #include "dg_scripts.h"
 #include "quest.h"
+#include "modify.h"
 
 /* local functions */
 static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax);
@@ -29,7 +30,7 @@ static void list_rooms(struct char_data *ch  , zone_rnum rnum, room_vnum vmin, r
 static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin , mob_vnum vmax );
 static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin , obj_vnum vmax );
 static void list_shops(struct char_data *ch  , zone_rnum rnum, shop_vnum vmin, shop_vnum vmax);
-static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax);
+static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax, char *name);
 
 void perform_mob_flag_list(struct char_data * ch, char *arg)
 {
@@ -102,6 +103,7 @@ ACMD(do_oasis_list)
   char smin[MAX_INPUT_LENGTH];
   char smax[MAX_INPUT_LENGTH];
   char arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+  bool use_name = FALSE;
 
   two_arguments(argument, smin, smax);
 
@@ -110,7 +112,10 @@ ACMD(do_oasis_list)
   } else if (!*smax) {
     rzone = real_zone(atoi(smin));
 
-    if (rzone == NOWHERE) {
+    if ((rzone == NOWHERE || rzone == 0) && subcmd == SCMD_OASIS_ZLIST && !isdigit(*smin)) {
+      /* Must be zlist, with builder name as arg */
+      use_name = TRUE;
+	} else if (rzone == NOWHERE) {
       send_to_char(ch, "Sorry, there's no zone with that number\r\n");
       return;
     }
@@ -130,40 +135,42 @@ ACMD(do_oasis_list)
 
       two_arguments(argument, arg, arg2);
 
-   if (is_abbrev(arg, "level") || is_abbrev(arg, "flags")) {
+      if (is_abbrev(arg, "level") || is_abbrev(arg, "flags")) {
+        int  i;
 
-    int  i;
+        if (!*arg2) {
+          send_to_char(ch, "Which mobile flag or level do you want to list?\r\n");
+          for (i=0; i<NUM_MOB_FLAGS; i++)
+          {
+            send_to_char(ch, "%s%2d%s-%s%-14s%s", CCNRM(ch, C_NRM), i, CCNRM(ch, C_NRM), CCYEL(ch, C_NRM), action_bits[i], CCNRM(ch, C_NRM));
+            if (!((i+1)%4))  send_to_char(ch, "\r\n");
+          }
+          send_to_char(ch, "\r\n");
+          send_to_char(ch, "Usage: %smlist flags <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
+          send_to_char(ch, "       %smlist level <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
+          send_to_char(ch, "Displays mobs with the selected flag, or at the selected level\r\n\r\n");
 
-    if (!*arg2) {
-    send_to_char(ch, "Which mobile flag or level do you want to list?\r\n");
-    for (i=0; i<NUM_MOB_FLAGS; i++)
-    {
-      send_to_char(ch, "%s%2d%s-%s%-14s%s", CCNRM(ch, C_NRM), i, CCNRM(ch, C_NRM), CCYEL(ch, C_NRM), action_bits[i], CCNRM(ch, C_NRM));
-      if (!((i+1)%4))  send_to_char(ch, "\r\n");
-    }
-    send_to_char(ch, "\r\n");
-    send_to_char(ch, "Usage: %smlist flags <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
-    send_to_char(ch, "       %smlist level <num>%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
-    send_to_char(ch, "Displays mobs with the selected flag, or at the selected level\r\n\r\n");
-
-    return;
-    }
-    if (is_abbrev(arg, "level"))
-      perform_mob_level_list(ch, arg2);
-    else
-      perform_mob_flag_list(ch, arg2);
-  } else
-    list_mobiles(ch, rzone, vmin, vmax); break;
+          return;
+        }
+        if (is_abbrev(arg, "level"))
+          perform_mob_level_list(ch, arg2);
+        else
+          perform_mob_flag_list(ch, arg2);
+      } else
+        list_mobiles(ch, rzone, vmin, vmax);
+      break;
     case SCMD_OASIS_OLIST: list_objects(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_RLIST: list_rooms(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_TLIST: list_triggers(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_SLIST: list_shops(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_QLIST: list_quests(ch, rzone, vmin, vmax); break;
     case SCMD_OASIS_ZLIST:
-      if (!*smin)
-        list_zones(ch, NOWHERE, 0, zone_table[top_of_zone_table].number);
-      else
-        list_zones(ch, rzone, vmin, vmax);
+      if (!*smin)        /* No args - list all zones */
+        list_zones(ch, NOWHERE, 0, zone_table[top_of_zone_table].number, NULL);
+      else if (use_name) /* Builder name as arg */
+        list_zones(ch, NOWHERE, 0, zone_table[top_of_zone_table].number, smin);
+      else               /* Numerical args */
+        list_zones(ch, rzone, vmin, vmax, NULL);
       break;
     default:
       send_to_char(ch, "You can't list that!\r\n");
@@ -402,22 +409,30 @@ static void list_shops(struct char_data *ch, zone_rnum rnum, shop_vnum vmin, sho
 }
 
 /* List all zones in the world (sort of like 'show zones'). */
-static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax)
+static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax, char *name)
 {
-  int counter = 0;
+  int counter = 0, len=0, tmp_len = 0;
   zone_rnum i;
   zone_vnum bottom, top;
+  char buf[MAX_STRING_LENGTH];
+  bool use_name=FALSE;
+
+  bottom = vmin;
+  top    = vmax;
 
   if (rnum != NOWHERE) {
     /* Only one parameter was supplied - just list that zone */
      print_zone(ch, zone_table[rnum].number);
     return;
-  } else {
-    bottom = vmin;
-    top    = vmax;
+  } else if (name && *name) {
+    use_name = TRUE;
+    if (!vmin)
+      bottom = zone_table[0].number;                 /* Lowest Zone  */
+    if (!vmax)
+      top    = zone_table[top_of_zone_table].number; /* Highest Zone */
   }
 
-  send_to_char(ch,
+  len = snprintf(buf, sizeof(buf),
   "VNum  Zone Name                      Builder(s)\r\n"
   "----- ------------------------------ --------------------------------------\r\n");
 
@@ -426,15 +441,21 @@ static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zon
 
   for (i = 0; i <= top_of_zone_table; i++) {
     if (zone_table[i].number >= bottom && zone_table[i].number <= top) {
-      send_to_char(ch, "[%s%3d%s] %s%-*s %s%-1s%s\r\n",
-        QGRN, zone_table[i].number, QNRM, QCYN, count_color_chars(zone_table[i].name)+30, zone_table[i].name,
-        QYEL, zone_table[i].builders ? zone_table[i].builders : "None.", QNRM);
+      tmp_len = 0;
+      if ((!use_name) || (is_name(name, zone_table[i].builders))) {
+        tmp_len = snprintf(buf+len, sizeof(buf)-len, "[%s%3d%s] %s%-*s %s%-1s%s\r\n",
+            QGRN, zone_table[i].number, QNRM, QCYN, count_color_chars(zone_table[i].name)+30, zone_table[i].name,
+            QYEL, zone_table[i].builders ? zone_table[i].builders : "None.", QNRM);
+      }
+      len += tmp_len;
       counter++;
     }
   }
 
   if (!counter)
     send_to_char(ch, "  None found within those parameters.\r\n");
+  else
+    page_string(ch->desc, buf, TRUE);
 }
 
 /* Prints all of the zone information for the selected zone. */

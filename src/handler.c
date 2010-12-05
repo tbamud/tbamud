@@ -49,7 +49,7 @@ int is_name(const char *str, const char *namelist)
 {
   const char *curname, *curstr;
 
-  if (!*str || !*namelist || !str || !namelist)
+  if (!str || !namelist || !*str || !*namelist)
     return (0);
 
   curname = namelist;

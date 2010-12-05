@@ -104,6 +104,8 @@ int House_save(struct obj_data *obj, FILE *fp)
   int result;
   room_vnum rv;
 
+  if (!obj) return(1);
+
   rv = world[(IN_ROOM(obj))].number;
   hse = find_house(rv);
 

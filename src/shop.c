@@ -26,6 +26,7 @@
 #include "act.h"
 #include "modify.h"
 #include "spells.h"  /* for skill_name() */
+#include "screen.h"
 
 /* Global variables definitions used externally */
 /* Constant list for printing out who we sell to */

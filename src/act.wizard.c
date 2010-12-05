@@ -1568,7 +1568,6 @@ void set_default_admin_privs(struct char_data *ch, bool keep_old)
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_TELLALL);
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_EATANYTHING);
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_BUILD);
-                          SET_BIT_AR(ADM_FLAGS(ch), ADM_MONEY);
     case ADMLVL_GOD:      SET_BIT_AR(ADM_FLAGS(ch), ADM_WALKANYWHERE);
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_NOKEYS);
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_SEEINV);
@@ -1577,6 +1576,7 @@ void set_default_admin_privs(struct char_data *ch, bool keep_old)
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_ALLSHOPS);
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_SEESECRET);
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_NOSTEAL);
+                          SET_BIT_AR(ADM_FLAGS(ch), ADM_MONEY);
     case ADMLVL_IMMORT:   SET_BIT_AR(ADM_FLAGS(ch), ADM_KNOWWEATHER);
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_SETQP);
                           SET_BIT_AR(ADM_FLAGS(ch), ADM_NOPOISON);

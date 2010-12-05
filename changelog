@@ -35,6 +35,12 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Dec 05 2010] - Jamdog
+  Bug-Fix: 'Did you mean' now only shows commands you have access to (thanks Welcor)
+  Bug-Fix: Fixed crash bug introduced by new house system when saving house contents
+  Scan command now tells you when nothing is nearby (thanks Mirad)
+  zlist command can now list by builder, like show zones
+  zlist now uses page_string (thanks Mirad)
 [Dec 02 2010] - Jamdog
   Bug-Fix: identify command in shops was listing incorrect buy price (thanks Kam)
   Added %actor.admlevel% and %actor.admlevel(<level>)% to dg-scripts

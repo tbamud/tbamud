@@ -24,6 +24,7 @@
 #include "oasis.h"
 #include "class.h"
 #include "quest.h"
+#include "act.h"
 
 /* Utility functions */
 
