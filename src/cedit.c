@@ -139,6 +139,18 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->autowiz.use_autowiz          = CONFIG_USE_AUTOWIZ;
   OLC_CONFIG(d)->autowiz.min_wizlist_lev      = CONFIG_MIN_WIZLIST_LEV;
 
+  /* Mudmail */
+  OLC_CONFIG(d)->mail.mail_allowed            = CONFIG_CAN_MAIL;
+  OLC_CONFIG(d)->mail.objects_allowed         = CONFIG_CAN_MAIL_OBJ;
+  OLC_CONFIG(d)->mail.gold_allowed            = CONFIG_CAN_MAIL_GOLD;
+  OLC_CONFIG(d)->mail.stamp_cost              = CONFIG_STAMP_COST;
+  OLC_CONFIG(d)->mail.min_level               = CONFIG_MIN_MAIL_LEVEL;
+  OLC_CONFIG(d)->mail.min_free_level          = CONFIG_FREE_MAIL_LEVEL;
+  OLC_CONFIG(d)->mail.allow_drafts            = CONFIG_DRAFTS_ALLOWED;
+  OLC_CONFIG(d)->mail.draft_timeout           = CONFIG_DRAFT_TIMEOUT;
+  OLC_CONFIG(d)->mail.safe_mailing            = CONFIG_SAFE_MAILING;
+  OLC_CONFIG(d)->mail.min_mail_anywhere       = CONFIG_MIN_MAIL_ANYWHERE;
+  OLC_CONFIG(d)->mail.min_send_to_all         = CONFIG_MIN_SEND_TO_ALL;
 
   /* Allocate space for the strings. */
   OLC_CONFIG(d)->play.OK       = str_udup(CONFIG_OK);
@@ -238,6 +250,20 @@ static void cedit_save_internally(struct descriptor_data *d)
   /* Autowiz */
   CONFIG_USE_AUTOWIZ          = OLC_CONFIG(d)->autowiz.use_autowiz;
   CONFIG_MIN_WIZLIST_LEV      = OLC_CONFIG(d)->autowiz.min_wizlist_lev;
+
+  /* Mudmail */
+  CONFIG_CAN_MAIL           = OLC_CONFIG(d)->mail.mail_allowed;
+  CONFIG_CAN_MAIL_OBJ       = OLC_CONFIG(d)->mail.objects_allowed;
+  CONFIG_CAN_MAIL_GOLD      = OLC_CONFIG(d)->mail.gold_allowed;
+  CONFIG_STAMP_COST         = OLC_CONFIG(d)->mail.stamp_cost;
+  CONFIG_OBJECT_COST        = OLC_CONFIG(d)->mail.object_cost;
+  CONFIG_MIN_MAIL_LEVEL     = OLC_CONFIG(d)->mail.min_level;
+  CONFIG_FREE_MAIL_LEVEL    = OLC_CONFIG(d)->mail.min_free_level;
+  CONFIG_DRAFTS_ALLOWED     = OLC_CONFIG(d)->mail.allow_drafts;
+  CONFIG_DRAFT_TIMEOUT      = OLC_CONFIG(d)->mail.draft_timeout;
+  CONFIG_SAFE_MAILING       = OLC_CONFIG(d)->mail.safe_mailing;
+  CONFIG_MIN_MAIL_ANYWHERE  = OLC_CONFIG(d)->mail.min_mail_anywhere;
+  CONFIG_MIN_SEND_TO_ALL    = OLC_CONFIG(d)->mail.min_send_to_all;
 
   /* Allocate space for the strings. */
   if (CONFIG_OK)
@@ -542,6 +568,56 @@ int save_config( IDXTYPE nowhere )
               "min_wizlist_lev = %d\n\n",
               CONFIG_MIN_WIZLIST_LEV);
 
+   /* MUDMAIL OPTIONS */
+  fprintf(fl, "\n\n\n* [ Mudmail Options ]\n");
+
+  fprintf(fl, "* Enable/Disable the whole mudmail system\n"
+              "can_mail = %d\n\n",
+              CONFIG_CAN_MAIL);
+
+  fprintf(fl, "* Can objects be sent via mudmail?\n"
+              "mail_objects_allowed = %d\n\n",
+              CONFIG_CAN_MAIL_OBJ);
+
+  fprintf(fl, "* Can gold coins be sent via mudmail?\n"
+              "mail_gold_allowed = %d\n\n",
+              CONFIG_CAN_MAIL_GOLD);
+
+  fprintf(fl, "* How much does it cost to send mudmails\n"
+              "mail_stamp_cost = %d\n\n",
+              CONFIG_STAMP_COST);
+
+  fprintf(fl, "* How much extra does it cost to add each object mudmails\n"
+              "mail_object_cost = %d\n\n",
+              CONFIG_OBJECT_COST);
+
+  fprintf(fl, "* The minimum player level that's allowed to send mudmails\n"
+              "mail_min_level = %d\n\n",
+              CONFIG_MIN_MAIL_LEVEL);
+
+  fprintf(fl, "* The minimum level that can send mudmails for free\n"
+              "mail_min_free_level = %d\n\n",
+              CONFIG_FREE_MAIL_LEVEL);
+
+  fprintf(fl, "* Are players allowed to create draft mails for sending later?\n"
+              "mail_drafts_allowed = %d\n\n",
+              CONFIG_DRAFTS_ALLOWED);
+
+  fprintf(fl, "* Number of days before a draft mail is autoremoved (0 for never) \n"
+              "mail_draft_timeout = %d\n\n",
+              CONFIG_DRAFT_TIMEOUT);
+
+  fprintf(fl, "* When on, the player cannot be attacked or stolen from while mailing. \n"
+              "mail_safe_mailing = %d\n\n",
+              CONFIG_SAFE_MAILING);
+
+  fprintf(fl, "* This is the minimum level that can send mail from any location (not just at postmaster). \n"
+              "mail_min_mail_anywhere = %d\n\n",
+              CONFIG_MIN_MAIL_ANYWHERE);
+
+  fprintf(fl, "* This is the minimum level that can send mail to all players. \n"
+              "mail_min_send_to_all = %d\n\n",
+              CONFIG_MIN_SEND_TO_ALL);
 
   fclose(fl);
 
@@ -566,9 +642,11 @@ static void cedit_disp_menu(struct descriptor_data *d)
   	  "%sR%s) Room Numbers\r\n"
           "%sO%s) Operation Options\r\n"
           "%sA%s) Autowiz Options\r\n"
+          "%sM%s) Mudmail Options\r\n"
           "%sQ%s) Quit\r\n"
           "Enter your choice : ",
 
+          grn, nrm,
           grn, nrm,
           grn, nrm,
           grn, nrm,
@@ -781,6 +859,50 @@ static void cedit_disp_autowiz_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_AUTOWIZ_OPTIONS_MENU;
 }
 
+void cedit_disp_mudmail_options(struct descriptor_data *d)
+{
+  char timeout[MAX_INPUT_LENGTH];
+  get_char_colors(d->character);
+  clear_screen(d);
+
+  if (OLC_CONFIG(d)->mail.draft_timeout > 0)
+    sprintf(timeout, "%d days", OLC_CONFIG(d)->mail.draft_timeout);
+  else
+    sprintf(timeout, "%s<Never!>", cyn);
+
+  write_to_output(d, "\r\n\r\n"
+    "%sA%s) Use mudmail system         : %s%s\r\n"
+    "%sB%s) Allow object attachments   : %s%s\r\n"
+    "%sC%s) Allow gold attachments     : %s%s\r\n"
+    "%sD%s) Stamp Cost (Normal Mails)  : %s%d coins\r\n"
+    "%sE%s) Cost per object attached   : %s%d coins\r\n"
+    "%sF%s) Allow draft mudmails       : %s%s\r\n"
+    "%sG%s) Draft mail timeout         : %s%s\r\n"
+    "%sH%s) Min. level that can mail   : %s%d\r\n"
+    "%sI%s) Min. level for free mail   : %s%d\r\n"
+    "%sJ%s) Safe while mailing?        : %s%s\r\n"
+    "%sK%s) Min level to mail anywhere : %s%d\r\n"
+    "%sL%s) Min level to send to all   : %s%d\r\n"
+    "%sQ%s) Exit To The Main Menu\r\n"
+    "Enter your choice : ",
+    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.mail_allowed),
+    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.objects_allowed),
+    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.gold_allowed),
+    grn, nrm, yel, OLC_CONFIG(d)->mail.stamp_cost,
+    grn, nrm, yel, OLC_CONFIG(d)->mail.object_cost,
+    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.allow_drafts),
+    grn, nrm, yel, timeout,
+    grn, nrm, yel, OLC_CONFIG(d)->mail.min_level,
+    grn, nrm, yel, OLC_CONFIG(d)->mail.min_free_level,
+    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.safe_mailing),
+    grn, nrm, yel, OLC_CONFIG(d)->mail.min_mail_anywhere,
+    grn, nrm, yel, OLC_CONFIG(d)->mail.min_send_to_all,
+    grn, nrm
+    );
+
+  OLC_MODE(d) = CEDIT_MUDMAIL_OPTIONS_MENU;
+}
+
 /* The event handler. */
 void cedit_parse(struct descriptor_data *d, char *arg)
 {
@@ -842,6 +964,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         case 'A':
           cedit_disp_autowiz_options(d);
           OLC_MODE(d) = CEDIT_AUTOWIZ_OPTIONS_MENU;
+          break;
+
+        case 'm':
+        case 'M':
+          cedit_disp_mudmail_options(d);
+          OLC_MODE(d) = CEDIT_MUDMAIL_OPTIONS_MENU;
           break;
 
         case 'q':
@@ -1270,6 +1398,87 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       cedit_disp_autowiz_options(d);
       return;
 
+    case CEDIT_MUDMAIL_OPTIONS_MENU:
+      switch (*arg) {
+        case 'a':
+        case 'A':
+          TOGGLE_VAR(OLC_CONFIG(d)->mail.mail_allowed);
+          break;
+
+        case 'b':
+        case 'B':
+          TOGGLE_VAR(OLC_CONFIG(d)->mail.objects_allowed);
+          break;
+
+        case 'c':
+        case 'C':
+          TOGGLE_VAR(OLC_CONFIG(d)->mail.gold_allowed);
+          break;
+
+        case 'd':
+        case 'D':
+          write_to_output(d, "Enter the cost per mail (without attachments) : ");
+          OLC_MODE(d) = CEDIT_STAMP_COST;
+          return;
+
+        case 'e':
+        case 'E':
+          write_to_output(d, "Enter the cost per object attachment : ");
+          OLC_MODE(d) = CEDIT_OBJECT_COST;
+          return;
+
+        case 'f':
+        case 'F':
+          TOGGLE_VAR(OLC_CONFIG(d)->mail.allow_drafts);
+          break;
+
+        case 'g':
+        case 'G':
+          write_to_output(d, "Enter the timeout (in days) before draft mails are auto-removed (0=off) : ");
+          OLC_MODE(d) = CEDIT_DRAFT_TIMEOUT;
+          return;
+
+        case 'h':
+        case 'H':
+          write_to_output(d, "Enter the minimum admin level that can send mudmails : ");
+          OLC_MODE(d) = CEDIT_MIN_MAIL_LEVEL;
+          return;
+
+        case 'i':
+        case 'I':
+          write_to_output(d, "Enter the minimum admin level for free mudmails : ");
+          OLC_MODE(d) = CEDIT_MIN_FREE_LEVEL;
+          return;
+
+        case 'j':
+        case 'J':
+          TOGGLE_VAR(OLC_CONFIG(d)->mail.safe_mailing);
+          break;
+
+        case 'k':
+        case 'K':
+          write_to_output(d, "Enter the minimum admin level that can send mail from anywhere : ");
+          OLC_MODE(d) = CEDIT_MAIL_ANYWHERE;
+          return;
+
+        case 'l':
+        case 'L':
+          write_to_output(d, "Enter the minimum admin level that can send to all players : ");
+          OLC_MODE(d) = CEDIT_MAIL_ALL_PLAYERS;
+          return;
+
+        case 'q':
+        case 'Q':
+          cedit_disp_menu(d);
+          return;
+
+        default:
+          write_to_output(d, "\r\nThat is an invalid choice!\r\n");
+      }
+
+      cedit_disp_mudmail_options(d);
+      return;
+
     case CEDIT_LEVEL_CAN_SHOUT:
       if (!*arg) {
         write_to_output(d,
@@ -1664,6 +1873,41 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         OLC_CONFIG(d)->play.minimap_size = MIN(MAX((atoi(arg)), 1), 12);
         cedit_disp_game_play_options(d);
       }
+      break;
+
+    case CEDIT_STAMP_COST:
+      OLC_CONFIG(d)->mail.stamp_cost = MIN(MAX(atoi(arg), 0), 1000);
+      cedit_disp_mudmail_options(d);
+      break;
+
+    case CEDIT_OBJECT_COST:
+      OLC_CONFIG(d)->mail.object_cost = MIN(MAX(atoi(arg), 0), 1000);
+      cedit_disp_mudmail_options(d);
+      break;
+
+    case CEDIT_DRAFT_TIMEOUT:
+      OLC_CONFIG(d)->mail.draft_timeout = MIN(MAX(atoi(arg), 0), 3653); /* up to 10 years */
+      cedit_disp_mudmail_options(d);
+      break;
+
+    case CEDIT_MIN_MAIL_LEVEL:
+      OLC_CONFIG(d)->mail.min_level = MIN(MAX(atoi(arg), 0), ADMLVL_IMPL);
+      cedit_disp_mudmail_options(d);
+      break;
+
+    case CEDIT_MIN_FREE_LEVEL:
+      OLC_CONFIG(d)->mail.min_free_level = MIN(MAX(atoi(arg), 0), ADMLVL_IMPL);
+      cedit_disp_mudmail_options(d);
+      break;
+
+    case CEDIT_MAIL_ANYWHERE:
+      OLC_CONFIG(d)->mail.min_mail_anywhere = MIN(MAX(atoi(arg), 0), ADMLVL_IMPL);
+      cedit_disp_mudmail_options(d);
+      break;
+
+    case CEDIT_MAIL_ALL_PLAYERS:
+      OLC_CONFIG(d)->mail.min_send_to_all = MIN(MAX(atoi(arg), 0), ADMLVL_IMPL);
+      cedit_disp_mudmail_options(d);
       break;
 
     default:  /* We should never get here, but just in case... */

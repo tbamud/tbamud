@@ -92,8 +92,9 @@
 #define ROOM_OLC           14   /**< (R) Modifyable/!compress */
 #define ROOM_BFS_MARK      15   /**< (R) breath-first srch mrk */
 #define ROOM_WORLDMAP      16   /**< World-map style maps here */
+#define ROOM_MAIL          17   /**< Mudmail can be sent from here */
 /** The total number of Room Flags */
-#define NUM_ROOM_FLAGS    17
+#define NUM_ROOM_FLAGS    18
 
 /* Zone info: Used in zone_data.zone_flags */
 #define ZONE_CLOSED       0  /**< Zone is closed - players cannot enter */
@@ -222,9 +223,10 @@
 #define MOB_NOBASH         16   /**< Mob can't be bashed (e.g. trees) */
 #define MOB_NOBLIND        17   /**< Mob can't be blinded */
 #define MOB_NOKILL         18   /**< Mob can't be attacked */
-#define MOB_NOTDEADYET     19   /**< (R) Mob being extracted */
+#define MOB_MAILMAN	       19   /**< Mob stands in room with MAIL flag */
+#define MOB_NOTDEADYET     20   /**< (R) Mob being extracted */
 
-#define NUM_MOB_FLAGS      19
+#define NUM_MOB_FLAGS      20
 
 /* Preference flags: used by char_data.player_specials.pref */
 #define PRF_BRIEF         0   /**< Room descs won't normally be shown */
@@ -358,10 +360,11 @@
 #define CON_PREFEDIT     29 /**< OLC mode - preference edit */
 #define CON_IBTEDIT      30 /**< OLC mode - idea/bug/typo edit */
 #define CON_HSEDIT       31 /**< OLC mode - house editor */
+#define CON_MAILEDIT     32 /**< OLC mode - Mudmail editor */
 
 /* OLC States range - used by IS_IN_OLC and IS_PLAYING */
 #define FIRST_OLC_STATE CON_OEDIT     /**< The first CON_ state that is an OLC */
-#define LAST_OLC_STATE  CON_HSEDIT    /**< The last CON_ state that is an OLC  */
+#define LAST_OLC_STATE  CON_MAILEDIT  /**< The last CON_ state that is an OLC  */
 
 /* Character equipment positions: used as index for char_data.equipment[] */
 /* NOTE: Don't confuse these constants with the ITEM_ bitvectors
@@ -758,6 +761,7 @@ struct obj_data
   struct obj_data *next_content;  /**< For 'contains' lists   */
   struct obj_data *next;          /**< For the object list */
   struct char_data *sitting_here; /**< For furniture, who is sitting in it */
+  struct mail_data *in_mail;      /**< Which mail object is attached to    */
 };
 
 /** Instance info for an object that gets saved to disk.
@@ -1010,6 +1014,8 @@ struct mob_special_data
   byte default_pos;   /**< Default position (standing, sleeping, etc.) */
   byte damnodice;     /**< The number of dice to roll for damage */
   byte damsizedice;   /**< The size of each die rolled for damage. */
+
+  struct mail_edit_data *ml_list;  /**< Mail info for sending from mobs by script */
 };
 
 /** An affect structure. */
@@ -1385,6 +1391,22 @@ struct autowiz_data
   int min_wizlist_lev; /**< Minimun level to show on wizlist.  */
 };
 
+/** The Mail System options. */
+struct mail_config {
+  int mail_allowed;           /* Is mudmail allowed? (to disable whole mudmail system) Yes         */
+  int objects_allowed;        /* object mailing allowed                                Yes         */
+  int gold_allowed;           /* gold mailing allowed?                                 Yes         */
+  int stamp_cost;             /* Stamp Cost                                            150 coins   */
+  int object_cost;            /* Cost per object for each attachment                   30 coins    */
+  int min_level;              /* Min level that can mail                               1           */
+  int min_free_level;         /* Min level for free mail                               Immortal    */
+  int allow_drafts;           /* Can players save draft mudmails?                      Yes         */
+  int draft_timeout;          /* No. of days a draft mail can stay in the outbox       28 days     */
+  int safe_mailing;           /* Can players be attacked or stolen from while mailing? Yes         */
+  int min_mail_anywhere;      /* Min level that can send mail from anywhere?           Immortal    */
+  int min_send_to_all;        /* Min level that can send mail to all players?          Implementor */
+};
+
 /**
  Main Game Configuration Structure.
  Global variables that can be changed within the game are held within this
@@ -1408,6 +1430,8 @@ struct config_data
   struct game_operation operation;
   /** Autowiz specific settings, like turning it on and minimum level */
   struct autowiz_data autowiz;
+  /** Mudmail configuration */
+  struct mail_config mail;
 };
 
 #ifdef MEMORY_DEBUG

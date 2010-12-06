@@ -22,14 +22,13 @@
 #include "genzon.h" /* for real_zone_by_thing */
 #include "act.h"
 #include "fight.h"
-
+#include "mail.h"
 
 /* Local file scope functions. */
-static void mob_log(char_data *mob, const char *format, ...);
 
 
 /* attaches mob's name and vnum to msg and sends it to script_log */
-static void mob_log(char_data *mob, const char *format, ...)
+void mob_log(char_data *mob, const char *format, ...)
 {
   va_list args;
   char output[MAX_STRING_LENGTH];
@@ -1154,4 +1153,102 @@ ACMD(do_mrecho)
       mob_log(ch, "mrecho called with too few args");
     else
       send_to_range(atoi(start), atoi(finish), "%s\r\n", msg);
+}
+
+/* Mailing functions */
+ACMD(do_mmail)
+{
+    char arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], *arg3;
+    char buf[MAX_STRING_LENGTH];
+    char_data *victim;
+    long recipient = MAIL_TO_NOBODY;
+    obj_vnum o_num;
+    struct obj_data *obj;
+
+    if (!MOB_OR_IMPL(ch)) {
+        send_to_char(ch, "Huh?!?\r\n");
+        return;
+    }
+
+    arg3 = two_arguments(argument, arg, arg2);
+
+    if (!*arg) {
+        mob_log(ch, "mmail called with no argument");
+        return;
+    } else if (!strcmp(arg, "recipient")) {
+      create_mob_mail(ch);
+      if (*arg2 == UID_CHAR) {
+        if (!(victim = get_char(arg2))) {
+          mob_log(ch, "mmail: recipient (%s) not found",arg2);
+          return;
+        }
+      } else if (!(victim = get_char_vis(ch, arg2, NULL, FIND_CHAR_WORLD))) {
+          /* Check special cases and mail groups */
+          if ((recipient = get_mail_group_by_name(arg2)) == MAIL_TO_NOBODY) {
+            mob_log(ch,"mmail: victim (%s) does not exist", arg2);
+            return;
+          }
+      } else if (victim == ch) {
+          mob_log(ch, "mmail: victim is self");
+          return;
+      } else if (IS_NPC(victim)) {
+          mob_log(ch, "mmail: victim is another mob");
+          return;
+      } else {
+        /* all name checks passed - get the recipient ID */
+        recipient = GET_ID(victim);
+	  }
+      if (!add_recipient(MOB_MAIL(ch), recipient)) {
+        mob_log(ch, "mmail failed to add recipient");
+        return;
+      }
+    } else if (!strcmp(arg, "object")) {
+      create_mob_mail(ch);
+      o_num = atoi(arg2);
+      if (!real_object(o_num)) {
+        mob_log(ch, "mmail: invalid object vnum");
+        return;
+	  }
+	  if ((obj = read_object(o_num, VIRTUAL)) == NULL) {
+        mob_log(ch, "mmail: invalid object to load");
+        return;
+	  }
+	  obj_to_mail(obj, MOB_MAIL(ch)->mail);
+    } else if (!strcmp(arg, "subject")) {
+      create_mob_mail(ch);
+      sprintf(buf, "%s%s", arg2, arg3);
+      if ((MOB_MAIL(ch)->mail)->subject)
+        free((MOB_MAIL(ch)->mail)->subject);
+      (MOB_MAIL(ch)->mail)->subject = strdup(buf);
+    } else if (!strcmp(arg, "body")) {
+      create_mob_mail(ch);
+      if ((MOB_MAIL(ch)->mail)->body)
+        free((MOB_MAIL(ch)->mail)->body);
+      (MOB_MAIL(ch)->mail)->body = strdup(buf);
+    } else if (!strcmp(arg, "gold")) {
+      create_mob_mail(ch);
+      (MOB_MAIL(ch)->mail)->coins = atol(arg2);
+    } else if (!strcmp(arg, "urgent")) {
+      create_mob_mail(ch);
+      TOGGLE_BIT_AR((MOB_MAIL(ch)->mail)->mail_flags, MAIL_URGENT);
+    } else if (!strcmp(arg, "cod")) {
+      create_mob_mail(ch);
+      TOGGLE_BIT_AR((MOB_MAIL(ch)->mail)->mail_flags, MAIL_COD);
+    } else if (!strcmp(arg, "send")) {
+      if (mail_from_mobile(ch)== FALSE)
+        mob_log(ch, "mmail: send failed.");
+    } else if (!strcmp(arg, "new")) {
+      create_mob_mail(ch);
+      clear_mail_data(MOB_MAIL(ch)->mail);
+    } else if ((!strcmp(arg, "view")) ||
+               (!strcmp(arg, "show")) ||
+               (!strcmp(arg, "echo")) ||
+               (!strcmp(arg, "list")) ) {
+      create_mob_mail(ch);
+      send_to_room(IN_ROOM(ch), "%s\r\n", get_mail_text(MOB_MAIL(ch)->mail) );
+      send_to_room(IN_ROOM(ch), "Recipients: %s\r\n", recipient_list(MOB_MAIL(ch)) );
+    } else {
+      mob_log(ch, "mmail: unknown %mail% command (%s).", arg);
+    }
+    return;
 }

@@ -1516,3 +1516,24 @@ bool set_admin_level(struct char_data *ch, int admlvl)
 
   return TRUE;
 }
+
+/* add_commas takes a numeric value, and adds commas to it, returning a string */
+char *add_commas(long num)
+{
+  int i, j = 0, len;
+  int negative = (num < 0);
+  char num_string[MAX_INPUT_LENGTH];
+  static char commastring[MAX_INPUT_LENGTH];
+
+  sprintf(num_string, "%ld", num);
+  len = strlen(num_string);
+
+  for (i = 0; num_string[i]; i++) {
+    if ((len - i) % 3 == 0 && i && i - negative)
+      commastring[j++] = ',';
+    commastring[j++] = num_string[i];
+  }
+  commastring[j] = '\0';
+
+  return commastring;
+}

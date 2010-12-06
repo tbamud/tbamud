@@ -232,6 +232,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
   char *recho[]          = {"mrecho ",      "orecho ",      "wrecho "     };
   /* there is no such thing as mmove, thus the mecho below  */
   char *omove[]          = {"mecho ",      "omove ",      "wmove "     };
+  char *mail[]           = {"mmail ",       "oecho ",       "wecho "      };
 
   *str = '\0';
 
@@ -300,6 +301,8 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         snprintf(str, slen, "%s", recho[type]);
       else if (!str_cmp(var, "move"))
         snprintf(str, slen, "%s", omove[type]);
+      else if (!str_cmp(var, "mail"))
+        snprintf(str, slen, "%s", mail[type]);
       else
         *str = '\0';
     }

@@ -196,6 +196,7 @@ void string_add(struct descriptor_data *d, char *str)
       { CON_HEDIT, hedit_string_cleanup },
       { CON_QEDIT  , qedit_string_cleanup },
       { CON_IBTEDIT, ibtedit_string_cleanup },
+      { CON_MAILEDIT , mailedit_string_cleanup },
       { -1, NULL }
     };
 
@@ -222,9 +223,12 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
 {
   if (PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
-      store_mail(d->mail_to, GET_IDNUM(d->character), *d->str);
-      write_to_output(d, "Message sent!\r\n");
-      notify_if_playing(d->character, d->mail_to);
+      if (mail_from_player(d->mail_to, GET_IDNUM(d->character), *d->str)) {
+       write_to_output(d, "Message sent!\r\n");
+       notify_if_playing(d->character, d->mail_to);
+      } else {
+        write_to_output(d, "Error: Mail could not be sent.  Please tell an Imm\r\n");
+      }
     } else
       write_to_output(d, "Mail aborted.\r\n");
       free(*d->str);

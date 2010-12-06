@@ -109,16 +109,6 @@ void assign_mobiles(void)
 
   ASSIGNMOB(3105, mayor);
 
-  ASSIGNMOB(110, postmaster);
-  ASSIGNMOB(1201, postmaster);
-  ASSIGNMOB(3010, postmaster);
-  ASSIGNMOB(10412, postmaster);
-  ASSIGNMOB(10719, postmaster);
-  ASSIGNMOB(25710, postmaster);
-  ASSIGNMOB(27164, postmaster);
-  ASSIGNMOB(30128, postmaster);
-  ASSIGNMOB(31510, postmaster);
-
   ASSIGNMOB(1200, receptionist);
   ASSIGNMOB(3005, receptionist);
   ASSIGNMOB(5404, receptionist);
@@ -181,7 +171,6 @@ struct spec_func_data spec_func_list[] = {
   {"Fido",               fido },
   {"Janitor",            janitor },
   {"Cityguard",          cityguard },
-  {"Postmaster",         postmaster },
   {"Receptionist",       receptionist },
   {"Cryogenicist",       cryogenicist},
   {"Bulletin Board",     gen_board },

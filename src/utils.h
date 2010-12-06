@@ -69,6 +69,7 @@ char *strpaste(char *str1, char *str2, char *joiner);
 void new_affect(struct affected_type *af);
 int get_class_by_name(char *classname);
 bool set_admin_level(struct char_data *ch, int admlvl);
+char *add_commas(long num);
 
 /* Public functions made available form weather.c */
 void weather_and_time(int mode);
@@ -647,6 +648,8 @@ do                                                              \
 #define GET_DEFAULT_POS(ch)	((ch)->mob_specials.default_pos)
 /** Return the memory of ch. */
 #define MEMORY(ch)		((ch)->mob_specials.memory)
+/** Return the structure used for creating mudmail from mobs */
+#define MOB_MAIL(ch)	((ch)->mob_specials.ml_list)
 
 /** Return the equivalent strength of ch if ch has level 18 strength. */
 #define STRENGTH_APPLY_INDEX(ch) \
@@ -749,6 +752,8 @@ do                                                              \
 #define CAN_WEAR(obj, part)	OBJWEAR_FLAGGED((obj), (part))
 /** Return short description of obj. */
 #define GET_OBJ_SHORT(obj)      ((obj)->short_description)
+/** Return the mudmail that the object is attached to */
+#define IN_MAIL(obj)	((obj)->in_mail)
 
 /* Compound utilities and other macros. */
 /** Used to compute version. To see if the code running is newer than 3.0pl13,
@@ -1066,5 +1071,32 @@ do                                                              \
 #define CONFIG_USE_AUTOWIZ      config_info.autowiz.use_autowiz
 /** What is the minimum level character to put on the wizlist? */
 #define CONFIG_MIN_WIZLIST_LEV  config_info.autowiz.min_wizlist_lev
+
+/* Mudmail Configuraton */
+/** Mail system enabled or not? */
+#define CONFIG_CAN_MAIL          config_info.mail.mail_allowed
+/** Able to attach objects to mails? */
+#define CONFIG_CAN_MAIL_OBJ      config_info.mail.objects_allowed
+/** Able to attach gold to mails? */
+#define CONFIG_CAN_MAIL_GOLD     config_info.mail.gold_allowed
+/** Cost of stamps per mail for mortals */
+#define CONFIG_STAMP_COST        config_info.mail.stamp_cost
+/** Extra Cost per object attachment for mortals */
+#define CONFIG_OBJECT_COST       config_info.mail.object_cost
+/** Minimum level that can send mails */
+#define CONFIG_MIN_MAIL_LEVEL    config_info.mail.min_level
+/** Lowest admin level that can always send free mails */
+#define CONFIG_FREE_MAIL_LEVEL   config_info.mail.min_free_level
+/** Can mails be saved as drafts for later sending? */
+#define CONFIG_DRAFTS_ALLOWED    config_info.mail.allow_drafts
+/** How long (in days) should draft mails be kept? */
+#define CONFIG_DRAFT_TIMEOUT     config_info.mail.draft_timeout
+/** While mailing, are players safe from attack or stealing? */
+#define CONFIG_SAFE_MAILING      config_info.mail.safe_mailing
+/** Minimum admin level at which a post office isn't required */
+#define CONFIG_MIN_MAIL_ANYWHERE config_info.mail.min_mail_anywhere
+/** Minimum admin level that can send to groups/all */
+#define CONFIG_MIN_SEND_TO_ALL   config_info.mail.min_send_to_all
+
 
 #endif /* _UTILS_H_ */

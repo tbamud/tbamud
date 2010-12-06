@@ -80,7 +80,7 @@ qst_rnum total_quests = 0;      /* top of autoquest table        */
 struct shop_data *shop_index;   /* index table for shops         */
 int top_shop = -1;              /* top of shop table             */
 
-int no_mail = 0;                /* mail disabled?		 */
+int can_mail = 1;               /* mail enabled?		 */
 int mini_mud = 0;               /* mini-mud mode?		 */
 int no_rent_check = 0;          /* skip rent check on boot?	 */
 time_t boot_time = 0;           /* time of mud boot		 */
@@ -704,10 +704,11 @@ void boot_db(void)
   sort_spells();
 
   log("Booting mail system.");
-  if (!scan_file()) {
+  if (!build_mail_index()) {
     log("    Mail boot failed -- Mail system disabled");
-    no_mail = 1;
+    can_mail = 0;
   }
+
   log("Reading banned site and invalid-name list.");
   load_banned();
   read_invalid_list();

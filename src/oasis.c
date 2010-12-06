@@ -48,7 +48,7 @@ static struct olc_scmd_info_t {
 */
 
 /* Global variables defined here, used elsewhere */
-const char *nrm, *grn, *cyn, *yel;
+const char *nrm, *grn, *cyn, *yel, *gry;
 
 /* Internal Function prototypes  */
 static void free_config(struct config_data *data);
@@ -70,6 +70,7 @@ void get_char_colors(struct char_data *ch)
   grn = CCGRN(ch, C_NRM);
   cyn = CCCYN(ch, C_NRM);
   yel = CCYEL(ch, C_NRM);
+  gry = CBBLK(ch, C_NRM);
 }
 
 /* This procedure frees up the strings and/or the structures attatched to a

@@ -4,10 +4,10 @@
 *  All Rights Reserved                                                    *
 ************************************************************************* */
 
-#include <stdio.h> 
-#include <dirent.h> 
-#include <sys/stat.h> 
-#include <sys/types.h> 
+#include <stdio.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <string.h>
 
 #define READ_SIZE 256
@@ -19,19 +19,19 @@ long atol(const char *str);
 void walkdir(FILE* index_file, char *dir);
 int get_line(FILE *fl, char *buf);
 
-int main(int argc, char** argv) 
-{ 
+int main(int argc, char** argv)
+{
  	FILE *index_file;
-  if ( argc == 1 )	{ 
-	  printf("Usage: %s indexfile\n",argv[0]); 
-	  return 0; 
- 	} 
+  if ( argc == 1 )	{
+	  printf("Usage: %s indexfile\n",argv[0]);
+	  return 0;
+ 	}
  	if (!(index_file = fopen(argv[1], "w"))) {
     perror("error opening index file");
     return 1;
   }
-	walkdir(index_file, "."); 
-  
+	walkdir(index_file, ".");
+
   fprintf(index_file, "~\n");
   fclose(index_file);
  	return 0;
@@ -54,12 +54,12 @@ char *parsename(char *filename) {
 char *findLine(FILE *plr_file, char *tag) {
 	static char line[5000];
 	rewind(plr_file);
-	
+
 	while (get_line(plr_file, line)) {
 		if(!strncmp(tag, line, strlen(tag))) {
 			return line+strlen(tag);
 		}
-	}	
+	}
 	return NULL;
 }
 
@@ -75,7 +75,7 @@ int parseadminlevel(FILE *plr_file, int level) {
 	char *fromFile = findLine(plr_file, "Admn:");
 	if (fromFile != NULL)
 		return atoi(fromFile);
-	
+
 	if (level >= 30)
 		return level-30;
 	else
@@ -88,36 +88,36 @@ long parselast(FILE *plr_file) {
 
 
 void walkdir(FILE *index_file, char *dir) {
- 	char filename_qfd[1000] ; 
-	struct dirent *dp; 
- 	DIR *dfd; 
- 
- 	if ((dfd = opendir(dir)) == NULL) 
- 	{ 
-	  fprintf(stderr, "Can't open %s\n", dir); 
-	  return; 
- 	} 
- 	while ((dp = readdir(dfd)) != NULL) 
- 	{ 
-	  struct stat stbuf ; 
-	  sprintf( filename_qfd , "%s/%s",dir,dp->d_name) ; 
-	  if( stat(filename_qfd,&stbuf ) == -1 ) { 
-   		fprintf(stdout, "Unable to stat file: %s\n",filename_qfd) ; 
-   		continue ; 
-  	} 
- 
-  	if ( ( stbuf.st_mode & S_IFMT ) == S_IFDIR ) { 
+ 	char filename_qfd[1000] ;
+	struct dirent *dp;
+ 	DIR *dfd;
+
+ 	if ((dfd = opendir(dir)) == NULL)
+ 	{
+	  fprintf(stderr, "Can't open %s\n", dir);
+	  return;
+ 	}
+ 	while ((dp = readdir(dfd)) != NULL)
+ 	{
+	  struct stat stbuf ;
+	  sprintf( filename_qfd , "%s/%s",dir,dp->d_name) ;
+	  if( stat(filename_qfd,&stbuf ) == -1 ) {
+   		fprintf(stdout, "Unable to stat file: %s\n",filename_qfd) ;
+   		continue ;
+  	}
+
+  	if ( ( stbuf.st_mode & S_IFMT ) == S_IFDIR ) {
 			if (!strcmp(".", dp->d_name) || !strcmp("..", dp->d_name))
-   			continue; 
-   		
+   			continue;
+
    		walkdir(index_file, filename_qfd);
-  	} else { 
+  	} else {
 			char *name = parsename(dp->d_name);
-			
+
 			if (name != NULL) {
   			FILE *plr_file = fopen(filename_qfd, "r");
  				long id = parseid(plr_file);
- 			
+
   			int level = parselevel(plr_file);
  				int adminlevel = parseadminlevel(plr_file, level);
  				if (level > 30)
@@ -125,11 +125,11 @@ void walkdir(FILE *index_file, char *dir) {
  				long last = parselast(plr_file);
 
  				fprintf(index_file, "%ld %s %d %d 0 %ld\n", id, name, level, adminlevel, last);
-        
+
         fclose(plr_file);
   		}
-  	} 
- 	} 
+  	}
+ 	}
 }
 
 int get_line(FILE *fl, char *buf)

@@ -221,7 +221,7 @@ cpp_extern const struct command_info cmd_info[] = {
 
   { "motd"     , "motd"    , POS_DEAD    , do_gen_ps    , 0, ADMLVL_MORTAL,  ADM_NONE,  SCMD_MOTD },
   { "mortal"   , "mort"    , POS_DEAD    , do_mortal    , 0, ADMLVL_MORTAL,  ADM_NONE,  0 },
-  { "mail"     , "mail"    , POS_STANDING, do_not_here  , 1, ADMLVL_MORTAL,  ADM_NONE,  0 },
+  { "mail"     , "mail"    , POS_STANDING, do_mail      , 1, ADMLVL_MORTAL,  ADM_NONE,  0 },
   { "map"      , "map"     , POS_STANDING, do_map       , 1, ADMLVL_MORTAL,  ADM_NONE,  0 },
   { "medit"    , "med"     , POS_DEAD    , do_oasis_medit,0, ADMLVL_BUILDER, ADM_NONE,  0 },
   { "mlist"    , "mlist"   , POS_DEAD    , do_oasis_list, 0, ADMLVL_BUILDER, ADM_BUILD, SCMD_OASIS_MLIST },
@@ -406,6 +406,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "mtransform", do_mtransform , 0 },
   { "mzoneecho", do_mzoneecho, 0 },
   { "mfollow"  , do_mfollow  , 0 },
+  { "mmail"    , do_mmail    , 0 },
   { "\n" , do_not_here , 0 } };
 
 int script_command_interpreter(struct char_data *ch, char *arg) {
@@ -1194,7 +1195,7 @@ static int perform_dupe_check(struct descriptor_data *d)
     write_to_output(d, "Reconnecting.\r\n");
     act("$n has reconnected.", TRUE, d->character, 0, 0, TO_ROOM);
     mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "%s [%s] has reconnected.", GET_NAME(d->character), d->host);
-    if (has_mail(GET_IDNUM(d->character)))
+    if (has_mail(d->character))
       write_to_output(d, "You have mail waiting.\r\n");
     break;
   case USURP:
@@ -1341,6 +1342,7 @@ void nanny(struct descriptor_data *d, char *arg)
     { CON_PREFEDIT, prefedit_parse },
     { CON_IBTEDIT, ibtedit_parse },
     { CON_HSEDIT, hsedit_parse },
+    { CON_MAILEDIT, mailedit_parse },
     { -1, NULL }
   };
 
@@ -1675,8 +1677,8 @@ void nanny(struct descriptor_data *d, char *arg)
         send_to_char(d->character, "%s", CONFIG_START_MESSG);
       }
       look_at_room(d->character, 0);
-      if (has_mail(GET_IDNUM(d->character)))
-        send_to_char(d->character, "You have mail waiting.\r\n");
+      if (has_mail(d->character))
+        notify_on_login(d->character);
       if (load_result == 2) {	/* rented items lost */
         send_to_char(d->character, "\r\n\007You could not afford your rent!\r\n"
 		"Your possesions have been donated to the Salvation Army!\r\n");

@@ -363,6 +363,7 @@ int valid_dg_target(char_data *ch, int bitvector);
 void script_damage(char_data *vict, int dam);
 
 /* from dg_mobcmd.c */
+void mob_log(char_data *mob, const char *format, ...);
 ACMD(do_masound);
 ACMD(do_mat);
 ACMD(do_mdamage);
@@ -377,6 +378,7 @@ ACMD(do_mhunt);
 ACMD(do_mjunk);
 ACMD(do_mkill);
 ACMD(do_mload);
+ACMD(do_mmail);
 ACMD(do_mpurge);
 ACMD(do_mrecho);
 ACMD(do_mremember);

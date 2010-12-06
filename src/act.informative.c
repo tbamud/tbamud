@@ -38,23 +38,14 @@ static void look_at_char(struct char_data *i, struct char_data *ch);
 static void look_at_target(struct char_data *ch, char *arg);
 static void look_in_direction(struct char_data *ch, int dir);
 static void look_in_obj(struct char_data *ch, char *arg);
-/* do_look, do_inventory utility functions */
-static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show);
 /* do_look, do_equipment, do_examine, do_inventory */
-static void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode);
 static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch);
 /* do_where utility functions */
 static void perform_immort_where(struct char_data *ch, char *arg);
 static void perform_mortal_where(struct char_data *ch, char *arg);
 static void print_object_location(int num, struct obj_data *obj, struct char_data *ch, int recur);
 
-/* Subcommands */
-/* For show_obj_to_char 'mode'.	/-- arbitrary */
-#define SHOW_OBJ_LONG     0
-#define SHOW_OBJ_SHORT    1
-#define SHOW_OBJ_ACTION   2
-
-static void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
+void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
 {
   int found = 0;
   struct char_data *temp;
@@ -170,7 +161,7 @@ static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
     send_to_char(ch, " ..It emits a faint humming sound!");
 }
 
-static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show)
+void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show)
 {
   struct obj_data *i, *j, *display;
   bool found;
@@ -829,8 +820,8 @@ ACMD(do_score)
   send_to_char(ch, "Your armor class is %d/10, and your alignment is %d.\r\n",
 	  compute_armor_class(vict), GET_ALIGNMENT(vict));
 
-  send_to_char(ch, "You have %d exp, %d gold coins, and %d questpoints.\r\n",
-	  GET_EXP(vict), GET_GOLD(vict), GET_QUESTPOINTS(vict));
+  send_to_char(ch, "You have %s exp, %s gold coins, and %d questpoints.\r\n",
+	  add_commas(GET_EXP(vict)), add_commas(GET_GOLD(vict)), GET_QUESTPOINTS(vict));
 
   if (GET_LEVEL(vict) < CONFIG_MAX_LEVEL)
     send_to_char(ch, "You need %d exp to reach your next level.\r\n",
@@ -2154,7 +2145,7 @@ ACMD(do_toggle)
         act("$n is now away from $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
       else {
         act("$n has returned to $s keyboard.", TRUE, ch, 0, 0, TO_ROOM);
-        if (has_mail(GET_IDNUM(ch)))
+        if (has_mail(ch))
           send_to_char(ch, "You have mail waiting.\r\n");
       }
       break;
@@ -2494,7 +2485,7 @@ ACMD(do_whois)
     }
   }
 
-  if (has_mail(GET_IDNUM(victim)))
+  if (has_mail(victim))
      send_to_char (ch, "They have mail waiting.\r\n");
   else
      send_to_char (ch, "They have no mail waiting.\r\n");

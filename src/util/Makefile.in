@@ -26,10 +26,11 @@ default: all
 all: $(BINDIR)/asciipasswd \
 	$(BINDIR)/autowiz \
 	$(BINDIR)/plrtoascii \
+	$(BINDIR)/rebuildIndex \
+	$(BINDIR)/rebuildMailIndex \
 	$(BINDIR)/shopconv \
 	$(BINDIR)/sign \
 	$(BINDIR)/split \
-	$(BINDIR)/rebuildIndex \
 	$(BINDIR)/wld2html \
 	$(BINDIR)/webster 
 
@@ -38,6 +39,10 @@ asciipasswd: $(BINDIR)/asciipasswd
 autowiz: $(BINDIR)/autowiz
 
 plrtoascii: $(BINDIR)/plrtoascii
+
+rebuildIndex: $(BINDIR)/rebuildIndex
+
+rebuildMailIndex: $(BINDIR)/rebuildMailIndex
 
 shopconv: $(BINDIR)/shopconv
 
@@ -49,11 +54,6 @@ wld2html: $(BINDIR)/wld2html
 
 webster: $(BINDIR)/webster
 
-rebuildIndex: $(BINDIR)/rebuildIndex
-
-$(BINDIR)/rebuildIndex: rebuildAsciiIndex.c
-	$(CC) $(CFLAGS) -o $(BINDIR)/rebuildIndex rebuildAsciiIndex.c
-
 $(BINDIR)/asciipasswd: asciipasswd.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/asciipasswd asciipasswd.c @CRYPTLIB@
 
@@ -62,6 +62,12 @@ $(BINDIR)/autowiz: autowiz.c
 
 $(BINDIR)/plrtoascii: plrtoascii.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/plrtoascii plrtoascii.c
+
+$(BINDIR)/rebuildIndex: rebuildAsciiIndex.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/rebuildIndex rebuildAsciiIndex.c
+
+$(BINDIR)/rebuildMailIndex: rebuildMailIndex.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/rebuildMailIndex rebuildMailIndex.c
 
 $(BINDIR)/shopconv: shopconv.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/shopconv shopconv.c

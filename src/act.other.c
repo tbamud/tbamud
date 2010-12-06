@@ -819,7 +819,7 @@ ACMD(do_gen_tog)
       act("$n has gone AFK.", TRUE, ch, 0, 0, TO_ROOM);
     else {
       act("$n has come back from AFK.", TRUE, ch, 0, 0, TO_ROOM);
-      if (has_mail(GET_IDNUM(ch)))
+      if (has_mail(ch))
         send_to_char(ch, "You have mail waiting.\r\n");
     }
     break;

@@ -1,13 +1,13 @@
 /**
 * @file handler.h
 * Prototypes of handling and utility functions.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 */
 #ifndef _HANDLER_H_
 #define _HANDLER_H_
@@ -41,6 +41,8 @@ void	obj_to_room(struct obj_data *object, room_rnum room);
 void	obj_from_room(struct obj_data *object);
 void	obj_to_obj(struct obj_data *obj, struct obj_data *obj_to);
 void	obj_from_obj(struct obj_data *obj);
+void    obj_to_mail(struct obj_data *object, struct mail_data *mail);
+void    obj_from_mail(struct obj_data *object);
 void	object_list_new_owner(struct obj_data *list, struct char_data *ch);
 
 void	extract_obj(struct obj_data *obj);

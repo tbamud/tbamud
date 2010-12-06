@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Dec 06 2010] - Jamdog
+  Added new mail system, with inbox OLC, index rebuilder and first mail (to ID 1)
 [Dec 05 2010] - Jamdog
   Bug-Fix: 'Did you mean' now only shows commands you have access to (thanks Welcor)
   Bug-Fix: Fixed crash bug introduced by new house system when saving house contents

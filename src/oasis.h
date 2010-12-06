@@ -98,6 +98,7 @@ struct oasis_olc_data {
   struct prefs_data *prefs;         /* used for 'prefedit'      */
   struct ibt_data *ibt;             /* used for 'ibtedit'       */
   struct house_control_data *house; /* used for 'hsedit'        */
+  struct mail_edit_data *mail;      /* used for Mudmail editor  */
   int script_mode;
   int trigger_position;
   int item_type;
@@ -106,7 +107,7 @@ struct oasis_olc_data {
 };
 
 /* Exported globals. */
-extern const char *nrm, *grn, *cyn, *yel;
+extern const char *nrm, *grn, *cyn, *yel, *gry;
 
 /* Descriptor access macros. */
 #define OLC(d)         ((d)->olc)
@@ -131,6 +132,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define OLC_PREFS(d)   (OLC(d)->prefs)    /**< Preferences structure */
 #define OLC_IBT(d)     (OLC(d)->ibt)      /**< IBT (idea/bug/typo) structure */
 #define OLC_HOUSE(d)   (OLC(d)->house)    /**< Player-Owned House/Shop structure */
+#define OLC_MAIL(d)    (OLC(d)->mail)     /**< Mudmail structure.   */
 /* Other macros. */
 #define OLC_EXIT(d)		(OLC_ROOM(d)->dir_option[OLC_VAL(d)])
 
@@ -333,6 +335,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define CEDIT_MENU			14
 #define CEDIT_WELC_MESSG		15
 #define CEDIT_START_MESSG		16
+#define CEDIT_MUDMAIL_OPTIONS_MENU	17
 
 /* Numerical responses. */
 #define CEDIT_NUMERICAL_RESPONSE  20
@@ -373,6 +376,13 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define CEDIT_MAP_OPTION          55
 #define CEDIT_MAP_SIZE            56
 #define CEDIT_MINIMAP_SIZE        57
+#define CEDIT_STAMP_COST          58
+#define CEDIT_OBJECT_COST         59
+#define CEDIT_DRAFT_TIMEOUT       60
+#define CEDIT_MIN_MAIL_LEVEL      61
+#define CEDIT_MIN_FREE_LEVEL      62
+#define CEDIT_MAIL_ANYWHERE       63
+#define CEDIT_MAIL_ALL_PLAYERS    64
 
 /* Hedit Submodes of connectedness. */
 #define HEDIT_CONFIRM_SAVESTRING        0
@@ -415,6 +425,12 @@ int  save_config( IDXTYPE nowhere );
 void clear_screen(struct descriptor_data *);
 int can_edit_zone(struct char_data *ch, zone_rnum rnum);
 ACMD(do_oasis);
+
+/* public functions from mailedit.c */
+ACMD(do_mail);
+ACMD(do_mailedit);
+void mailedit_string_cleanup(struct descriptor_data *d, int terminator);
+void mailedit_parse(struct descriptor_data *d, char *arg);
 
 /* public functions from medit.c */
 void medit_setup_existing(struct descriptor_data *d, int rnum);
