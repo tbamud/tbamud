@@ -40,7 +40,6 @@ static void perform_immort_invis(struct char_data *ch, int level);
 static void list_zone_commands_room(struct char_data *ch, room_vnum rvnum);
 static void do_stat_room(struct char_data *ch, struct room_data *rm);
 static void do_stat_object(struct char_data *ch, struct obj_data *j);
-static void do_stat_character(struct char_data *ch, struct char_data *k);
 static void stop_snooping(struct char_data *ch);
 static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int listall);
 static struct char_data *is_in_game(long idnum);
@@ -747,7 +746,7 @@ static void do_stat_object(struct char_data *ch, struct obj_data *j)
   do_sstat_object(ch, j);
 }
 
-static void do_stat_character(struct char_data *ch, struct char_data *k)
+void do_stat_character(struct char_data *ch, struct char_data *k)
 {
   char buf[MAX_STRING_LENGTH];
   int i, i2, column, found = FALSE;

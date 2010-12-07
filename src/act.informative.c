@@ -801,8 +801,11 @@ ACMD(do_score)
     }
   }
 
-  if (IS_NPC(vict))
+  if (IS_NPC(vict)) {
+    send_to_char(ch, "Stats for: %s\r\n", GET_NAME(vict));
+    do_stat_character(ch, vict);
     return;
+  }
   if (ch != vict)
     send_to_char(ch, "Score for: %s %s (level %d)\r\n",  GET_NAME(vict), GET_TITLE(vict), GET_LEVEL(vict));
 
@@ -1723,7 +1726,7 @@ ACMD(do_levels)
 {
   char buf[MAX_STRING_LENGTH], arg[MAX_STRING_LENGTH];
   size_t len = 0, nlen;
-  int i, ret, min_lev=1, max_lev=CONFIG_MAX_LEVEL, val;
+  int i, ret, min_lev=1, max_lev=CONFIG_MAX_LEVEL, val, tmp;
 
   if (IS_NPC(ch)) {
     send_to_char(ch, "You ain't nothin' but a hound-dog.\r\n");
@@ -1757,14 +1760,25 @@ ACMD(do_levels)
       send_to_char(ch, "Displays exp required for levels.\r\n");
       send_to_char(ch, "%slevels       %s- shows all levels (1-%d)\r\n", QCYN, QNRM, CONFIG_MAX_LEVEL);
       send_to_char(ch, "%slevels 5     %s- shows 5 levels either side of your current level\r\n", QCYN, QNRM);
-      send_to_char(ch, "%slevels 10-40 %s- shows level 10 to level 40\r\n",QCYN, QNRM);
+      send_to_char(ch, "%slevels 10-20 %s- shows level 10 to level 20\r\n",QCYN, QNRM);
       return;
     }
   }
+  /* If max and min are wrong way round, swap them */
+  if (max_lev > min_lev) {
+    tmp     = min_lev;
+    min_lev = max_lev;
+    max_lev = tmp;
+  }
 
-  for (i = min_lev; i < max_lev; i++) {
-    nlen = snprintf(buf + len, sizeof(buf) - len, "[%2d] %8d-%-8d : ", (int)i,
-        level_exp(GET_CLASS(ch), i), level_exp(GET_CLASS(ch), i + 1) - 1);
+  for (i = min_lev; i <= max_lev; i++) {
+    if (i < CONFIG_MAX_LEVEL) {
+      nlen = snprintf(buf + len, sizeof(buf) - len, "[%2d] %8d-%-8d : ", (int)i,
+          level_exp(GET_CLASS(ch), i), level_exp(GET_CLASS(ch), i + 1) - 1);
+    } else {
+      nlen = snprintf(buf + len, sizeof(buf) - len, "[%2d] %8d          : ", (int)i,
+          level_exp(GET_CLASS(ch), i));
+    }
     if (len + nlen >= sizeof(buf))
       break;
     len += nlen;

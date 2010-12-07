@@ -647,61 +647,62 @@ void House_boot(void)
       /* We didn't reach the end of the file, so start a new house */
       clear_house_control_data(&temp_house);
       temp_house.vnum = atoi(line+1);
+    } else {
+      tag_argument(line, tag);
+
+      switch (*tag) {
+        case 'A':
+               if (!strcmp(tag, "Atrm")) temp_house.atrium       = atoi(line);
+          else if (!strcmp(tag, "ADir")) temp_house.exit_num     = atoi(line);
+          else bad_tag = TRUE;
+          break;
+
+        case 'B':
+               if (!strcmp(tag, "Bldr")) temp_house.built_by     = atol(line);
+          else if (!strcmp(tag, "BldT")) temp_house.built_on     = atol(line);
+          else bad_tag = TRUE;
+          break;
+
+        case 'F':
+               if (!strcmp(tag, "Flgs")) parse_house_flags(&temp_house, line);
+          else bad_tag = TRUE;
+          break;
+
+        case 'G':
+               if (!strcmp(tag, "Gsts")) parse_house_guests(&temp_house, fl);
+          else bad_tag = TRUE;
+          break;
+
+        case 'M':
+               if (!strcmp(tag, "Mode")) temp_house.mode         = atoi(line);
+          else bad_tag = TRUE;
+          break;
+
+        case 'O':
+               if (!strcmp(tag, "Ownr")) temp_house.owner        = atol(line);
+          else bad_tag = TRUE;
+          break;
+
+        case 'P':
+               if (!strcmp(tag, "Paym")) temp_house.last_payment = atol(line);
+          else bad_tag = TRUE;
+          break;
+
+        case 'R':
+               if (!strcmp(tag, "Recp")) temp_house.receptionist = (mob_vnum)(atoi(line));
+          else bad_tag = TRUE;
+          break;
+
+        default:
+          bad_tag = TRUE;
+          break;
+      }
+
+      if (bad_tag) {
+        bad_tag = FALSE;
+        log("SYSERR: Unknown tag %s in house control file %s", tag, HCONTROL_FILE);
+      }
     }
-    tag_argument(line, tag);
-
-    switch (*tag) {
-      case 'A':
-             if (!strcmp(tag, "Atrm")) temp_house.atrium       = atoi(line);
-        else if (!strcmp(tag, "ADir")) temp_house.exit_num     = atoi(line);
-        else bad_tag = TRUE;
-        break;
-
-      case 'B':
-             if (!strcmp(tag, "Bldr")) temp_house.built_by     = atol(line);
-        else if (!strcmp(tag, "BldT")) temp_house.built_on     = atol(line);
-        else bad_tag = TRUE;
-        break;
-
-      case 'F':
-             if (!strcmp(tag, "Flgs")) parse_house_flags(&temp_house, line);
-        else bad_tag = TRUE;
-        break;
-
-      case 'G':
-             if (!strcmp(tag, "Gsts")) parse_house_guests(&temp_house, fl);
-        else bad_tag = TRUE;
-        break;
-
-      case 'M':
-             if (!strcmp(tag, "Mode")) temp_house.mode         = atoi(line);
-        else bad_tag = TRUE;
-        break;
-
-      case 'O':
-             if (!strcmp(tag, "Ownr")) temp_house.owner        = atol(line);
-        else bad_tag = TRUE;
-        break;
-
-      case 'P':
-             if (!strcmp(tag, "Paym")) temp_house.last_payment = atol(line);
-        else bad_tag = TRUE;
-        break;
-
-      case 'R':
-             if (!strcmp(tag, "Recp")) temp_house.receptionist = (mob_vnum)(atoi(line));
-        else bad_tag = TRUE;
-        break;
-
-      default:
-        bad_tag = TRUE;
-        break;
-    }
-
-    if (bad_tag) {
-      bad_tag = FALSE;
-      log("SYSERR: Unknown tag %s in house control file %s", tag, HCONTROL_FILE);
-	}
   }
 
   /* End of file incorrectly reached, warn, tidy up, and get out */

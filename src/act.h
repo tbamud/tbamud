@@ -292,6 +292,7 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
 bool AddRecentPlayer(char *chname, char *chhost, bool newplr, bool cpyplr);
 void set_default_admin_privs(struct char_data *ch, bool keep_old);
 int get_admin_level_by_string(char *lv);
+void do_stat_character(struct char_data *ch, struct char_data *k);
 /* Functions with subcommands */
 /* do_date */
 ACMD(do_date);

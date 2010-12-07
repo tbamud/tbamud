@@ -36,7 +36,11 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
 [Dec 06 2010] - Jamdog
+  Fixed erroneous SYSERR report and incorrect contant in new house system (thanks Vatiken)
+[Dec 06 2010] - Jamdog
   Added new mail system, with inbox OLC, index rebuilder and first mail (to ID 1)
+  Bug-Fix: levels command wasn't showing max level, or validating high/low levels
+  score <mob> now shows stats for the mobile (same as 'stat <mob>')
 [Dec 05 2010] - Jamdog
   Bug-Fix: 'Did you mean' now only shows commands you have access to (thanks Welcor)
   Bug-Fix: Fixed crash bug introduced by new house system when saving house contents

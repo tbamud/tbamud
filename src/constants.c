@@ -590,7 +590,7 @@ const char *house_bits[] = {
 const char *house_types[] = {
 "PLAYER_OWNED",
 "IMM_OWNED",
-"CLAN_OWNED",
+"PLAYER_SHOP",
 "\n"
 };
 
