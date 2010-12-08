@@ -688,6 +688,8 @@ ACMD(do_display)
 ACMD(do_gen_tog)
 {
   long result;
+  int i;
+  char arg[MAX_INPUT_LENGTH];
 
   const char *tog_messages[][2] = {
     {"You are now safe from summoning by other players.\r\n",
@@ -806,10 +808,17 @@ ACMD(do_gen_tog)
       return;
     }
     result = PRF_TOG_CHK(ch, PRF_BUILDWALK);
-    if (PRF_FLAGGED(ch, PRF_BUILDWALK))
+    if (PRF_FLAGGED(ch, PRF_BUILDWALK)) {
+      one_argument(argument, arg);
+      for (i=0; *arg && *(sector_types[i]) != '\n'; i++)
+        if (is_abbrev(arg, sector_types[i]))
+          break;
+      if (*(sector_types[i]) == '\n') i=0;
+      GET_BUILDWALK_SECTOR(ch) = i;
+      send_to_char(ch, "Default sector type is %s\r\n", sector_types[i]);
       mudlog(CMP, GET_ADMLEVEL(ch), TRUE,
              "OLC: %s turned buildwalk on. Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
-    else
+    } else
       mudlog(CMP, GET_ADMLEVEL(ch), TRUE,
              "OLC: %s turned buildwalk off. Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
     break;

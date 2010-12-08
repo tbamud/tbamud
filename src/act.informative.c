@@ -1872,7 +1872,7 @@ ACMD(do_diagnose)
 ACMD(do_toggle)
 {
   char buf2[4], arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
-  int toggle, tp, wimp_lev, result = 0, len = 0;
+  int toggle, tp, wimp_lev, result = 0, len = 0, i;
   const char *types[] = { "off", "brief", "normal", "on", "\n" };
 
     const struct {
@@ -2147,10 +2147,16 @@ ACMD(do_toggle)
         return;
       }
       result = PRF_TOG_CHK(ch, PRF_BUILDWALK);
-      if (PRF_FLAGGED(ch, PRF_BUILDWALK))
+      if (PRF_FLAGGED(ch, PRF_BUILDWALK)) {
+        for (i=0; *arg2 && *(sector_types[i]) != '\n'; i++)
+          if (is_abbrev(arg2, sector_types[i]))
+            break;
+        if (*(sector_types[i]) == '\n') i=0;
+        GET_BUILDWALK_SECTOR(ch) = i;
+        send_to_char(ch, "Default sector type is %s\r\n", sector_types[i]);
         mudlog(CMP, GET_LEVEL(ch), TRUE,
                "OLC: %s turned buildwalk on.  Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
-      else
+      } else
         mudlog(CMP, GET_ADMLEVEL(ch), TRUE,
                "OLC: %s turned buildwalk off.  Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
       break;

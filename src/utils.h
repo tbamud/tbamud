@@ -632,6 +632,8 @@ do                                                              \
 #define GET_SKILL(ch, i)	CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.skills[i]))
 /** Copy the current skill level i of ch to pct. */
 #define SET_SKILL(ch, i, pct)	do { CHECK_PLAYER_SPECIAL((ch), (ch)->player_specials->saved.skills[i]) = pct; } while(0)
+/** The player's default sector type when buildwalking */
+#define GET_BUILDWALK_SECTOR(ch)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->buildwalk_sector))
 
 /** Get obj worn in position i on ch. */
 #define GET_EQ(ch, i)		((ch)->equipment[i])

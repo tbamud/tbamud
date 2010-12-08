@@ -342,6 +342,7 @@ int buildwalk(struct char_data *ch, int dir)
       OLC_ROOM(d)->description = strdup(buf);
       OLC_ROOM(d)->zone = OLC_ZNUM(d);
       OLC_ROOM(d)->number = NOWHERE;
+      OLC_ROOM(d)->sector_type = GET_BUILDWALK_SECTOR(ch);
 
       /* Save the new room to memory. redit_save_internally handles adding the
        * room in the right place, etc. */

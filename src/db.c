@@ -3810,6 +3810,8 @@ void load_config( void )
       case 'c':
         if (!str_cmp(tag, "crash_file_timeout"))
           CONFIG_CRASH_TIMEOUT = num;
+        else if (!str_cmp(tag, "can_mail"))
+          CONFIG_CAN_MAIL = num;
         break;
 
       case 'd':
@@ -3928,6 +3930,26 @@ void load_config( void )
           CONFIG_MAP = num;
         else if (!str_cmp(tag, "medit_advanced_stats"))
           CONFIG_MEDIT_ADVANCED = num;
+        else if (!str_cmp(tag, "mail_object_cost"))
+          CONFIG_OBJECT_COST       = num;
+        else if (!str_cmp(tag, "mail_objects_allowed"))
+          CONFIG_CAN_MAIL_OBJ      = num;
+        else if (!str_cmp(tag, "mail_gold_allowed"))
+          CONFIG_CAN_MAIL_GOLD     = num;
+        else if (!str_cmp(tag, "mail_stamp_cost"))
+          CONFIG_STAMP_COST        = num;
+        else if (!str_cmp(tag, "mail_min_level"))
+          CONFIG_MIN_MAIL_LEVEL    = num;
+        else if (!str_cmp(tag, "mail_min_free_level"))
+          CONFIG_FREE_MAIL_LEVEL   = num;
+        else if (!str_cmp(tag, "mail_drafts_allowed"))
+          CONFIG_DRAFTS_ALLOWED    = num;
+        else if (!str_cmp(tag, "mail_draft_timeout"))
+          CONFIG_DRAFT_TIMEOUT     = num;
+        else if (!str_cmp(tag, "mail_min_mail_anywhere"))
+          CONFIG_MIN_MAIL_ANYWHERE = num;
+        else if (!str_cmp(tag, "mail_min_send_to_all"))
+          CONFIG_MIN_SEND_TO_ALL   = num;
         break;
 
       case 'n':

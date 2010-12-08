@@ -35,8 +35,11 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
-[Dec 06 2010] - Jamdog
+[Dec 07 2010] - Jamdog
   Fixed erroneous SYSERR report and incorrect contant in new house system (thanks Vatiken)
+  Buildwalk now allows builder to specify default sector type (thanks Mirad)
+  Added happyhour script variables (thanks Kam)
+  Added affects list and type list to olist command
 [Dec 06 2010] - Jamdog
   Added new mail system, with inbox OLC, index rebuilder and first mail (to ID 1)
   Bug-Fix: levels command wasn't showing max level, or validating high/low levels

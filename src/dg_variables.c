@@ -389,6 +389,16 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         snprintf(str, slen, "%d",((num = atoi(field)) > 0) ? trgvar_in_room(num) : 0);
         return;
       }
+      else if (!str_cmp(var, "happyhour")) {
+        if (!str_cmp(field, "qp") && IS_HAPPYHOUR)
+          snprintf(str, slen, "%d", HAPPY_QP);
+        else if (!str_cmp(field, "exp") && IS_HAPPYHOUR)
+          snprintf(str, slen, "%d", HAPPY_EXP);
+        else if (!str_cmp(field, "gold") && IS_HAPPYHOUR)
+          snprintf(str, slen, "%d", HAPPY_GOLD);
+        else snprintf(str, slen, "%d", HAPPY_TIME);
+		return;
+      }
       else if (!str_cmp(var, "time")) {
         if (!str_cmp(field, "hour"))
           snprintf(str, slen, "%d", time_info.hours);

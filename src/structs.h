@@ -1004,6 +1004,7 @@ struct player_special_data
   void *last_olc_targ; /**< ? Currently Unused ? */
   int last_olc_mode;   /**< ? Currently Unused ? */
   char *host;          /**< Resolved hostname, or ip, for player. */
+  int buildwalk_sector;/**< Default sector type for buildwalk */
 };
 
 /** Special data used by NPCs, not PCs */
