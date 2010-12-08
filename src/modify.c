@@ -373,7 +373,9 @@ ACMD(do_skillset)
  * page has been reached.  Return NULL if this is the last page of the string. */
 static char *next_page(char *str, struct char_data *ch)
 {
-  int col = 1, line = 1;
+  int col = 1, line = 1, count, pw;
+
+  pw = (GET_SCREEN_WIDTH(ch) >= 40 && GET_SCREEN_WIDTH(ch) <= 250) ? GET_SCREEN_WIDTH(ch) : PAGE_WIDTH;
 
   for (;; str++) {
     /* If end of string, return NULL. */
@@ -384,9 +386,10 @@ static char *next_page(char *str, struct char_data *ch)
     else if (line > (GET_PAGE_LENGTH(ch) - (PRF_FLAGGED(ch, PRF_COMPACT) ? 1 : 2)))
       return (str);
 
-    /* Check for the begining of an ANSI color code block. */
-    else if (*str == '\x1B')
-      str++;
+    /* Check for the beginning of an ANSI color code block. */
+    else if (*str == '\x1B')  /* Jump to the end of the ANSI code, or max 9 chars */
+      for (count=0; *str != 'm' && count < 9; count++)
+        str++;
 
     else if (*str == '@') {
       if (*(str + 1) != '@')
@@ -404,7 +407,7 @@ static char *next_page(char *str, struct char_data *ch)
 
       /* We need to check here and see if we are over the page width, and if
        * so, compensate by going to the begining of the next line. */
-      else if (col++ > PAGE_WIDTH) {
+      else if (col++ > pw) {
         col = 1;
         line++;
       }

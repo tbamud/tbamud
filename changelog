@@ -35,6 +35,9 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Dec 08 2010] - Jamdog
+  Added olist <name>
+  page_string now uses player's screen width and correctly parses ANSI color codes
 [Dec 07 2010] - Jamdog
   Fixed erroneous SYSERR report and incorrect contant in new house system (thanks Vatiken)
   Buildwalk now allows builder to specify default sector type (thanks Mirad)
