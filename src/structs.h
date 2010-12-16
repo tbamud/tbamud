@@ -103,8 +103,9 @@
 #define ZONE_GRID         3  /**< Zone is 'on the grid', connected, show on 'areas' */
 #define ZONE_NOBUILD      4  /**< Building is not allowed in the zone */
 #define ZONE_NOASTRAL     5  /**< No teleportation magic will work to or from this zone */
+#define ZONE_WORLDMAP     6  /**< Whole zone uses the WORLDMAP by default */
 /** The total number of Zone Flags */
-#define NUM_ZONE_FLAGS    6
+#define NUM_ZONE_FLAGS    7
 
 /* Exit info: used in room_data.dir_option.exit_info */
 #define EX_ISDOOR     (1 << 0)   /**< Exit is a door		 */

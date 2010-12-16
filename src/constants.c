@@ -159,6 +159,7 @@ const char *room_bits[] = {
   "OLC",
   "*",				/* The BFS Mark. */
   "WORLDMAP",
+  "MAIL",
   "\n"
 };
 
@@ -285,6 +286,7 @@ const char *action_bits[] = {
   "NO_BASH",
   "NO_BLIND",
   "NO_KILL",
+  "MAILMAN",
   "DEAD",    /* You should never see this. */
   "\n"
 };

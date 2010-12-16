@@ -589,6 +589,16 @@ MapArea(target_room, ch, centre, centre, min, max, ns_size/2, ew_size/2, worldma
 
 }
 
+bool show_worldmap(struct char_data *ch) {
+  room_rnum rm = IN_ROOM(ch);
+  zone_rnum zn = GET_ROOM_ZONE(rm);
+
+  if (ROOM_FLAGGED(rm, ROOM_WORLDMAP)) return TRUE;
+  if (ZONE_FLAGGED(zn, ZONE_WORLDMAP)) return TRUE;
+
+  return FALSE;
+}
+
 ACMD(do_map) {
   if (!can_see_map(ch)) {
     send_to_char(ch, "Sorry, the map is disabled!\r\n");
@@ -601,7 +611,7 @@ ACMD(do_map) {
     send_to_char(ch, "You can't see the map while blind!\r\n");
     return;
   }
-  perform_map(ch, argument, ROOM_FLAGGED(IN_ROOM(ch), ROOM_WORLDMAP) ? 1 : 0 );
+  perform_map(ch, argument, show_worldmap(ch));
 }
 
 

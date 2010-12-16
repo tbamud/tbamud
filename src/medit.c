@@ -1058,6 +1058,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
 
   case MEDIT_ALIGNMENT:
     GET_ALIGNMENT(OLC_MOB(d)) = LIMIT(i, -1000, 1000);
+    OLC_VAL(d) = TRUE;
     medit_disp_stats_menu(d);
     return;
 

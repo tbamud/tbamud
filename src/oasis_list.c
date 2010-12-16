@@ -384,8 +384,8 @@ ACMD(do_oasis_list)
         send_to_char(ch, "Usage: %smlist <zone>%s        - List mobiles in a zone\r\n", QYEL, QNRM);
         send_to_char(ch, "       %smlist <vnum> <vnum>%s - List a range of mobiles by vnum\r\n", QYEL, QNRM);
         send_to_char(ch, "       %smlist level <num>%s   - List all mobiles of a specified level\r\n", QYEL, QNRM);
-        send_to_char(ch, "       %smlist flags <num>%s   - List all mobiles with flag set\r\n", QYEL, QNRM, MAX_OBJ_LIST);
-        send_to_char(ch, "Just type %smlist flags%s to view available options.\r\n", QYEL, QNRM, QYEL, QNRM);
+        send_to_char(ch, "       %smlist flags <num>%s   - List all mobiles with flag set\r\n", QYEL, QNRM);
+        send_to_char(ch, "Just type %smlist flags%s to view available options.\r\n", QYEL, QNRM);
         return;
 	  }
       else if (is_abbrev(arg, "level") || is_abbrev(arg, "flags")) {

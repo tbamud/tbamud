@@ -35,6 +35,10 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Dec 10 2010] - Jamdog
+  Minor bug fixes, added MAIL flag names and fixed compile warnings
+  Bug Fix: Alignment in medit now saves when it's the only thing edited (thanks cosine_omerta)
+  Added ZONE_WORLDMAP flag to set a whole zone to worldmap style maps
 [Dec 08 2010] - Jamdog
   Added olist <name>
   page_string now uses player's screen width and correctly parses ANSI color codes
