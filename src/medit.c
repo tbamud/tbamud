@@ -887,7 +887,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
        write_to_output(d, "Enter mob flags (0 to quit) :");
        return;
     } else if (j <= NUM_MOB_FLAGS) {
-      TOGGLE_BIT_AR(MOB_FLAGS(OLC_MOB(d)), (i - 1));
+      TOGGLE_BIT_AR(MOB_FLAGS(OLC_MOB(d)), (j));
     }
     medit_disp_mob_flags(d);
     return;
