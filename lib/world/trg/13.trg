@@ -99,7 +99,7 @@ tbalim~
 * Make sure name matches a player, purge mobs or use 0.name if you have 
 * troubles. They are given an assigner in the mortal start room.
 * Usage: tbalim player vnum | purge
-if !%actor.is_pc% || %actor.level% < 32
+if !%actor.is_pc% || %actor.level% < 30
   %send% %actor% Only human staff can use this limiter.
 else  
   set victim %arg.car%
@@ -1814,7 +1814,7 @@ Trial Vnum Assigner - 1332~
 * Player must have nohassle off! To junk assigner use tbalim purge player.
 set actor %self.carried_by%
 *Shouldn't be necessary, added by Fizban due to script not knowing who actor was under certain circumstances
-if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 31
+if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 30
   * We set completed trial vnums to -#. So if negative abort.
   if %actor.TBA_trial_vnum% < 0
     return 0

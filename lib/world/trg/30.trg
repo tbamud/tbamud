@@ -565,11 +565,11 @@ if %actor.level% == 0
     %load% obj 3021 %actor% wield
     %load% obj 3055 %actor% hold
   end
-  if !%actor.has_item(3006)%
-    %load% obj 3006 %actor% inv
-  end
 end
 wait 3 sec
 %zoneecho% 3001 A booming voice announces, 'Welcome %actor.name% to the realm!'
+if !%actor.has_item(3006)%
+  %load% obj 3006 %actor% inv
+end
 ~
 $~

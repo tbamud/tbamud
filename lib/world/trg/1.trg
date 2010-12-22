@@ -2150,7 +2150,7 @@ Mob Quest Tutorial Example Quest accepted - 25~
 0 d 1
 yes~
 * By Rumble of The Builder Academy    tbamud.com 9091
-if %actor.varexists(solved_example_quest_zone_0)%
+if %actor.varexists(solved_example_quest_zone_0)% || !%actor.is_pc%
   halt
 else
   wait 1 sec
@@ -2260,7 +2260,7 @@ TBA Welcome - 18~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * TBA mortal greet to fill out the application.
-if %actor.level% <= 1
+if %actor.admin% < 1
   wait 3 sec
   if %actor.varexists(TBA_mortal_greeting)%
     %echo% Friedrich Nietzsche says, 'Welcome back %actor.name%. Tell someone level 32 or above when you complete the application.'

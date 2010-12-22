@@ -273,17 +273,11 @@ dg_cast 'armor' %self%
 %damage% %self% 10
 ~
 #214
-test~
-0 c 100
-north~
-set actor_room %actor.room%
-set this_room %actor_room.vnum%
-%echo% this_room = %actor_room.vnum%
-set new_room %this_room.north(vnum)%
-%echo% new_room = %this_room.north(vnum)%
-wait 10 sec
-%teleport% %actor% %this_room.north(vnum)%
-%force% %actor% look
+bug test~
+0 b 100
+~
+detach 214 %self.id%
+say test crash!
 ~
 #218
 Holiday Decorations by Interior Design - M218~

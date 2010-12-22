@@ -1,30 +1,24 @@
 #1100
 Detta's [Frozen Castle] Description Room~
-
    @BTheme:@n The cliche fantasy castle with a curse. Am hoping to build a big
 stone fortress that is all frozen in ice, complete with its occupants.
 There will probably be a couple big specially-triggered mobs to defeat and some
 wandering salespeople around the permiter selling the spoils from the castle.
 There will be a couple secrets within the zone, and a tragic tale to uncover
 if the player is so inclined ;).
-
    @GPlayers:@n Meant to be for players about level 15 to 20, with some of the
 perimeter mobs being lower level, and ones deeper and higher within the castle
 of higher level. Primarily an evil zone.
-
    @RLocation:@n The castle is set in the middle of a forest with a river running
 through it.
 Note that Indoor flags are deliberately set on outdoor rooms as the
 zone has its own trigger-run weather messages.
-
    @MSecrets:@n None yet, but there will be ;). Will keep posted.
-
    @CNote:@n If you have any suggestions, spot any typos, bugs, or 
 weirdnesses, please mudmail me - Detta. :-) All input appreciated!
 You can also email me at detta@@builderacademy.net
 East takes you through the other zones I have built here.
 Down takes you to the starting room of this zone.
-
 ~
 11 520 0 0 0 0
 D1

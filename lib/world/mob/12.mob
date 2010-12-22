@@ -17,7 +17,7 @@ The Immortal Postmaster is hard at work here.
 ~
    Scary...  A postal worker...  Working?  
 ~
-188427 0 0 0 65536 0 0 0 0 E
+712714 0 0 0 65536 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -158,7 +158,9 @@ scoreboard mob~
 the scoreboard mob~
 A mob is here keeping score for everyone that uses the game console.
 ~
-It looks unfinished.
+   She stands here, holding a chalkboard and a piece of chalk to mark the
+scores.  Waiting for a player must be pretty boring.  She looks hopefully at you
+and suggests that you check out the console.
 ~
 10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -212,7 +214,7 @@ the test mob~
 ~
    Test mobs can be whatever you want them to be.  
 ~
-8 0 0 0 0 0 0 0 0 E
+61454 0 0 0 983040 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
 30 900
 8 8 0

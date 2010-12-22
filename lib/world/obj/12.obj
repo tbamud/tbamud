@@ -90,7 +90,7 @@ You can't see it...it isn't here.~
 #1212
 game console~
 a game console~
-A game console sits in one corner of the room~
+A game console sits in one corner of the room.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
@@ -296,13 +296,13 @@ A piece of fireworks is planted in a champagne bottle.~
 0 0 0 0 0
 T 1297
 E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
+~
+E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
-~
-E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~
