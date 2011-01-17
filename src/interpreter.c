@@ -485,16 +485,16 @@ void sort_commands(void)
 
 /* Returns TRUE if 'ch' has sufficient access to use the command 'cmd' */
 bool can_use_command(struct char_data *ch, int cmd)
-{
-  if (complete_cmd_info[cmd].admin_flag       == ADM_NONE    &&
-      complete_cmd_info[cmd].minimum_admlevel == ADMLVL_MORTAL &&
-      GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
+{ 
+  if (cmd_info[cmd].admin_flag       == ADM_NONE    &&
+      cmd_info[cmd].minimum_admlevel == ADMLVL_MORTAL &&
+      GET_LEVEL(ch) >= cmd_info[cmd].minimum_level)
     return TRUE;
 
-  if (complete_cmd_info[cmd].admin_flag == ADM_NONE && GET_ADMLEVEL(ch) >= complete_cmd_info[cmd].minimum_admlevel)
+  if (cmd_info[cmd].admin_flag == ADM_NONE && GET_ADMLEVEL(ch) >= cmd_info[cmd].minimum_admlevel)
     return TRUE;
 
-  if (complete_cmd_info[cmd].admin_flag != ADM_NONE && ADM_FLAGGED(ch, complete_cmd_info[cmd].admin_flag))
+  if (cmd_info[cmd].admin_flag != ADM_NONE && ADM_FLAGGED(ch, cmd_info[cmd].admin_flag))
     return TRUE;
 
   return FALSE;
