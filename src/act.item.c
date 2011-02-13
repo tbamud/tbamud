@@ -926,7 +926,7 @@ ACMD(do_drink)
   if (GET_COND(ch, HUNGER) > 20)
     send_to_char(ch, "You are full.\r\n");
 
-  if (GET_OBJ_VAL(temp, 3)) { /* The crap was poisoned ! */
+ if (GET_OBJ_VAL(temp, 3) && (!ADM_FLAGGED(ch, ADM_NOPOISON))) { /* The crap was poisoned! */
     send_to_char(ch, "Oops, it tasted rather strange!\r\n");
     act("$n chokes and utters some strange sounds.", TRUE, ch, 0, 0, TO_ROOM);
 

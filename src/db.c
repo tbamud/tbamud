@@ -3913,6 +3913,8 @@ void load_config( void )
           CONFIG_MAX_OBJ_SAVE = num;
         else if (!str_cmp(tag, "max_pc_corpse_time"))
           CONFIG_MAX_PC_CORPSE_TIME = num;
+	else if (!str_cmp(tag, "max_mortal_level"))
+         CONFIG_MAX_LEVEL = num;
         else if (!str_cmp(tag, "max_playing"))
           CONFIG_MAX_PLAYING = num;
         else if (!str_cmp(tag, "menu")) {
