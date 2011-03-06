@@ -361,7 +361,6 @@ ACMD(do_helpcheck)
   int i, count = 0;
   size_t len = 0, nlen;
 
-  send_to_char(ch, "Commands without help entries:\r\n");
 
   for (i = 1; *(complete_cmd_info[i].command) != '\n'; i++) {
     if (complete_cmd_info[i].command_pointer != do_action && complete_cmd_info[i].minimum_level >= 0) {
@@ -377,10 +376,14 @@ ACMD(do_helpcheck)
   if (count % 3 && len < sizeof(buf))
     nlen = snprintf(buf + len, sizeof(buf) - len, "\r\n");
 
-  if (ch->desc)
-    page_string(ch->desc, buf, TRUE);
-
-  *buf = '\0';
+  if (ch->desc) {
+    if (len == 0)
+      send_to_char(ch, "All commands have help entries.\r\n");
+    else {
+      send_to_char(ch, "Commands without help entries:\r\n");
+      page_string(ch->desc, buf, TRUE);
+    }
+  }
 }
 
 ACMD(do_hindex)
