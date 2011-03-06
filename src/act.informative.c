@@ -784,6 +784,7 @@ ACMD(do_score)
   char arg[MAX_INPUT_LENGTH];
   struct char_data *vict;
   struct time_info_data playing_time;
+  char gold_str[50], exp_str[50];
 
   if (IS_NPC(ch))
     return;
@@ -823,8 +824,10 @@ ACMD(do_score)
   send_to_char(ch, "Your armor class is %d/10, and your alignment is %d.\r\n",
 	  compute_armor_class(vict), GET_ALIGNMENT(vict));
 
-  send_to_char(ch, "You have %s exp, %s gold coins, and %d questpoints.\r\n",
-	  add_commas(GET_EXP(vict)), add_commas(GET_GOLD(vict)), GET_QUESTPOINTS(vict));
+  strcpy(gold_str, add_commas(GET_GOLD(vict)));
+  strcpy(exp_str, add_commas(GET_EXP(vict)));
+  send_to_char(ch, "You have %s exp, %s gold coin%s, and %d questpoints.\r\n",
+	  exp_str, gold_str, (GET_GOLD(vict) == 1 ? "" : "s"), GET_QUESTPOINTS(vict));
 
   if (GET_LEVEL(vict) < CONFIG_MAX_LEVEL)
     send_to_char(ch, "You need %d exp to reach your next level.\r\n",
