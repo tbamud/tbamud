@@ -1765,7 +1765,7 @@ ACMD(do_levels)
     }
   }
   /* If max and min are wrong way round, swap them */
-  if (max_lev > min_lev) {
+  if (max_lev < min_lev) {
     tmp     = min_lev;
     min_lev = max_lev;
     max_lev = tmp;
