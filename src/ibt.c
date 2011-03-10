@@ -443,7 +443,7 @@ ACMD(do_ibt)
   int  i, num_res, num_unres;
   IBT_DATA *ibtData, *first_ibt, *last_ibt;
   int ano=0;
-
+  
   if (IS_NPC(ch))
     return;
 
@@ -674,6 +674,9 @@ ACMD(do_ibt)
       } else {
         send_to_char(ch,"%s %d resolved!\r\n", ibt_types[subcmd], ano);
         SET_BIT_AR(IBT_FLAGS(ibtData), IBT_RESOLVED);
+        if (CONFIG_IBT_AUTOSAVE) {
+        	save_ibt_file(subcmd);
+        }
       }
     }
     return;
@@ -695,6 +698,9 @@ ACMD(do_ibt)
     } else {
       if (free_ibt(subcmd, ibtData)) {
         send_to_char(ch,"%s%s Number %d removed.%s\r\n", QCYN, ibt_types[subcmd], ano, QNRM);
+        if (CONFIG_IBT_AUTOSAVE) {
+        	save_ibt_file(subcmd);
+        }
       } else {
         send_to_char(ch,"%sUnable to remove %s %d!%s\r\n", QRED, CMD_NAME, ano, QNRM);
       }

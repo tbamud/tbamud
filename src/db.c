@@ -3769,7 +3769,8 @@ static void load_default_config( void )
   CONFIG_WELC_MESSG             = strdup(WELC_MESSG);
   CONFIG_START_MESSG            = strdup(START_MESSG);
   CONFIG_MEDIT_ADVANCED         = medit_advanced_stats;
-
+	CONFIG_IBT_AUTOSAVE						= ibt_autosave;
+	
   /* Autowiz options. */
   CONFIG_USE_AUTOWIZ            = use_autowiz;
   CONFIG_MIN_WIZLIST_LEV        = min_wizlist_lev;
@@ -3881,6 +3882,8 @@ void load_config( void )
           CONFIG_NO_MORT_TO_IMMORT = num;
         else if (!str_cmp(tag, "immort_start_room"))
           CONFIG_IMMORTAL_START = num;
+        else if (!str_cmp(tag, "ibt_autosave"))
+          CONFIG_IBT_AUTOSAVE = num;
         break;
 
       case 'l':

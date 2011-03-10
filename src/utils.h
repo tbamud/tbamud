@@ -1067,6 +1067,8 @@ do                                                              \
 #define CONFIG_START_MESSG      config_info.operation.START_MESSG
 /** Should medit show the advnaced stats menu? */
 #define CONFIG_MEDIT_ADVANCED   config_info.operation.medit_advanced
+/** Does "bug resolve" autosave ? */
+#define CONFIG_IBT_AUTOSAVE   config_info.operation.ibt_autosave
 
 /* Autowiz */
 /** Use autowiz or not? */

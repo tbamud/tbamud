@@ -75,6 +75,7 @@ extern int default_map_size;
 extern int default_minimap_size;
 
 extern int medit_advanced_stats;
+extern int ibt_autosave;
 /*
  * Variables not controlled by cedit
  */

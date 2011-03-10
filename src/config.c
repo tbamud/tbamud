@@ -307,3 +307,6 @@ int default_minimap_size = 2;
 
 /* Medit Stats menu - show 'advanced' options? */
 int medit_advanced_stats = YES;
+/** Does "bug resolve" autosave ? */
+int ibt_autosave = YES;
+

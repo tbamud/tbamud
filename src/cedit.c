@@ -134,6 +134,7 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->operation.auto_save_olc      = CONFIG_OLC_SAVE;
   OLC_CONFIG(d)->operation.nameserver_is_slow = CONFIG_NS_IS_SLOW;
   OLC_CONFIG(d)->operation.medit_advanced     = CONFIG_MEDIT_ADVANCED;
+  OLC_CONFIG(d)->operation.ibt_autosave       = CONFIG_IBT_AUTOSAVE;
 
   /* Autowiz */
   OLC_CONFIG(d)->autowiz.use_autowiz          = CONFIG_USE_AUTOWIZ;
@@ -246,7 +247,7 @@ static void cedit_save_internally(struct descriptor_data *d)
   CONFIG_NS_IS_SLOW = OLC_CONFIG(d)->operation.nameserver_is_slow;
   CONFIG_OLC_SAVE           = OLC_CONFIG(d)->operation.auto_save_olc;
   CONFIG_MEDIT_ADVANCED     = OLC_CONFIG(d)->operation.medit_advanced;
-
+  CONFIG_IBT_AUTOSAVE       = OLC_CONFIG(d)->operation.ibt_autosave;
   /* Autowiz */
   CONFIG_USE_AUTOWIZ          = OLC_CONFIG(d)->autowiz.use_autowiz;
   CONFIG_MIN_WIZLIST_LEV      = OLC_CONFIG(d)->autowiz.min_wizlist_lev;
@@ -557,6 +558,10 @@ int save_config( IDXTYPE nowhere )
               "medit_advanced_stats = %d\n\n",
               CONFIG_MEDIT_ADVANCED);
 
+  fprintf(fl, "* Should the idea, bug and typo commands autosave (1) or not (0).\n"
+              "ibt_autosave = %d\n\n",
+              CONFIG_IBT_AUTOSAVE);
+
   fprintf(fl, "\n\n\n* [ Autowiz Options ]\n");
 
   fprintf(fl, "* Should the game automatically create a new wizlist/immlist every time\n"
@@ -818,6 +823,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
   	"%sM%s) Welcome Message     : \r\n%s%s\r\n"
   	"%sN%s) Start Message       : \r\n%s%s\r\n"
   	"%sO%s) Medit Stats Menu    : %s%s\r\n"
+  	"%sP%s) Autosave bugs when resolved from commandline : %s%s\r\n"
     "%sQ%s) Exit To The Main Menu\r\n"
     "Enter your choice : ",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.DFLT_PORT,
@@ -835,6 +841,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
     grn, nrm, cyn, OLC_CONFIG(d)->operation.WELC_MESSG ? OLC_CONFIG(d)->operation.WELC_MESSG : "<None>",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.START_MESSG ? OLC_CONFIG(d)->operation.START_MESSG : "<None>",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.medit_advanced ? "Advanced" : "Standard",
+    grn, nrm, cyn, OLC_CONFIG(d)->operation.ibt_autosave ? "Yes" : "No",
     grn, nrm
     );
 
@@ -1358,6 +1365,11 @@ void cedit_parse(struct descriptor_data *d, char *arg)
          case 'o':
          case 'O':
            TOGGLE_VAR(OLC_CONFIG(d)->operation.medit_advanced);
+           break;
+
+         case 'p':
+         case 'P':
+           TOGGLE_VAR(OLC_CONFIG(d)->operation.ibt_autosave);
            break;
 
          case 'q':

@@ -1384,6 +1384,7 @@ struct game_operation
   char *WELC_MESSG; /**< The welcome message.      */
   char *START_MESSG; /**< The start msg for new characters.  */
   int medit_advanced; /**< Does the medit OLC show the advanced stats menu ? */
+  int ibt_autosave; /**< Does "bug resolve" autosave ? */
 };
 
 /** The Autowizard options. */
