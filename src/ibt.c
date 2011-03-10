@@ -877,6 +877,25 @@ static void ibtedit_save(struct descriptor_data *d)
 
   save_ibt_file(OLC_VAL(d));
 }
+
+void free_olc_ibt(IBT_DATA *toFree) {
+    if (!toFree)
+    	return;
+    
+    if (toFree->text) {
+      STRFREE(toFree->text);
+    }
+    if (toFree->body) {
+      STRFREE(toFree->body);
+    }
+    if (toFree->name) {
+      STRFREE(toFree->name);
+    }
+    if (toFree->notes) {
+      STRFREE(toFree->notes);
+    }
+		free(toFree);
+}
 /*-------------------------------------------------------------------*/
 /* main ibtedit menu function...                                     */
 static void ibtedit_disp_main_menu(struct descriptor_data *d)
