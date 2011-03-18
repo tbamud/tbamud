@@ -1960,7 +1960,7 @@ static void perform_immort_invis(struct char_data *ch, int level)
   struct char_data *tch;
 
   for (tch = world[IN_ROOM(ch)].people; tch; tch = tch->next_in_room) {
-    if (tch == ch)
+    if (tch == ch || IS_NPC(tch))
       continue;
     if (GET_ADMLEVEL(tch) >= GET_INVIS_LEV(ch) && GET_ADMLEVEL(tch) < level)
       act("You blink and suddenly realize that $n is gone.", FALSE, ch, 0,

@@ -1074,7 +1074,7 @@ void ibtedit_parse(struct descriptor_data *d, char *arg)
     case IBTEDIT_FLAGS:
       if ((i = atoi(arg)) <= 0)
         break;
-      else if (i <= NUM_MOB_FLAGS)
+      else if (i <= NUM_IBT_FLAGS)
         TOGGLE_BIT_AR(IBT_FLAGS(OLC_IBT(d)), (i - 1));
       ibtedit_disp_flags(d);
       return;

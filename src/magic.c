@@ -912,7 +912,7 @@ void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj,
       }
       break;
     case SPELL_INVISIBLE:
-      if (!OBJ_FLAGGED(obj, ITEM_NOINVIS) || !OBJ_FLAGGED(obj, ITEM_INVISIBLE)) {
+      if (!OBJ_FLAGGED(obj, ITEM_NOINVIS) && !OBJ_FLAGGED(obj, ITEM_INVISIBLE)) {
         SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_INVISIBLE);
         to_char = "$p vanishes.";
       }
