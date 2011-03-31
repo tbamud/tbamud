@@ -390,7 +390,7 @@
 #define WEAR_WRIST_L   15  /**< Equipment Location Left Wrist */
 #define WEAR_WIELD     16  /**< Equipment Location Weapon */
 #define WEAR_HOLD      17  /**< Equipment Location held in offhand */
-/** Total number of available equipment lcoations */
+/** Total number of available equipment locations */
 #define NUM_WEARS      18
 
 /* object-related defines */
@@ -418,8 +418,7 @@
 #define ITEM_PEN       21		/**< Item is a pen		*/
 #define ITEM_BOAT      22		/**< Item is a boat		*/
 #define ITEM_FOUNTAIN  23		/**< Item is a fountain		*/
-/** Total number of item types.
- * @todo Should this be 23? */
+/* Total number of item types. */
 #define NUM_ITEM_TYPES    24
 
 /* Take/Wear flags: used by obj_data.obj_flags.wear_flags */

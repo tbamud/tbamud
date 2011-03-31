@@ -1,5 +1,4 @@
-# tbaMUD Mail Index
+# tbaMUD mail index
 # Format: <ID> <flags> <sender ID/vnum> <recipient ID> <time> <subject>
 # For 'No Subject', use (null)
-0 f -1 4 1283977700  Welcome to tbaMUD Mail
 ~

@@ -35,6 +35,17 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Mar 31 2011] - Rumble
+  Fixed several typos and formatting issues. (Thanks Kyle)
+  Added check to prevent immortals from getting poisoned.
+  Fixed crash bug on advance.
+  Added output to helpcheck command instead of an empty return.
+  Fixed do_levels max/min level confusion.
+  Fixed do_score which was showing gold as exp. (Thanks Rhade)
+  Added free_olc_ibt.
+  Added CONFIG_IBT_AUTOSAVE.
+  Fixed bug when casting invis on objects.
+  Added mudmail.pdf instructions to /doc.
 [Dec 16 2010] - Jamdog
   Bug-Fix: Fixed illegal mob flag bug where medit set wrong flag
 [Dec 10 2010] - Jamdog

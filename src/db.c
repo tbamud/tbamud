@@ -2080,7 +2080,7 @@ static void load_zones(FILE *fl, char *zonename)
   }
   else
   {
-    /* We found 12 values, so deal with the strings */
+    /* We found 10 values, so deal with the strings */
     Z.zone_flags[0] = asciiflag_conv(zbuf1);
     Z.zone_flags[1] = asciiflag_conv(zbuf2);
     Z.zone_flags[2] = asciiflag_conv(zbuf3);
