@@ -931,8 +931,6 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
       send_to_char(ch, "%sPOOFOUT: %s%s disappears in a puff of smoke.%s\r\n", QYEL, QCYN, GET_NAME(k), QNRM);
   }
 
-  /* check mobiles for a script */
-  if (IS_NPC(k)) {
     do_sstat_character(ch, k);
     if (SCRIPT_MEM(k)) {
       struct script_memory *mem = SCRIPT_MEM(k);
@@ -950,7 +948,8 @@ void do_stat_character(struct char_data *ch, struct char_data *k)
       mem = mem->next;
       }
     }
-  } else {
+
+  if (!(IS_NPC(k))) {
     /* this is a PC, display their global variables */
     if (k->script && k->script->global_vars) {
       struct trig_var_data *tv;
