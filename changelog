@@ -35,6 +35,11 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Sep 11 2011] - Fizban
+ Added MXP, MSP, MSSP, MSDP, ATCP, CHARSET, NAWS, TTYPE, 256-color protocols. (Thanks KaVir)
+[Aug 18 2011] - Fizban
+ Added hitroll and damroll fields to DG Scripts. Also made them editable via scripts.
+ Made do_stat_character show scripts attached to players.
 [Mar 31 2011] - Rumble
   Fixed several typos and formatting issues. (Thanks Kyle)
   Added check to prevent immortals from getting poisoned.
