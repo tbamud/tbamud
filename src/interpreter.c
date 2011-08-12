@@ -1315,6 +1315,8 @@ int enter_player_game (struct descriptor_data *d)
       /* Check for a login trigger in the players' start room */
       login_wtrigger(&world[IN_ROOM(d->character)], d->character);
 
+   MXPSendTag( d, "<VERSION>" );  /* <--- Add this line */
+
     return load_result;
 }
 

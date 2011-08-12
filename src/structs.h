@@ -12,6 +12,8 @@
 #ifndef _STRUCTS_H_
 #define _STRUCTS_H_
 
+#include "protocol.h"
+
 /** Intended use of this macro is to allow external packages to work with a
  * variety of versions without modifications.  For instance, an IS_CORPSE()
  * macro was introduced in pl13.  Any future code add-ons could take into
@@ -1129,6 +1131,7 @@ struct descriptor_data
   struct descriptor_data *snoop_by; /**< And who is snooping this char	*/
   struct descriptor_data *next;     /**< link to next descriptor		*/
   struct oasis_olc_data *olc;       /**< OLC info */
+  protocol_t *pProtocol;
 };
 
 /* other miscellaneous structures */

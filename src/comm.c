@@ -163,6 +163,7 @@ static sigfunc *my_signal(int signo, sigfunc *func);
 static RETSIGTYPE websterlink(int sig);
 static size_t proc_colors(char *txt, size_t maxlen, int parse);
 static void handle_webster_file();
+static void msdp_update(void);
 
 /* externally defined functions, used locally */
 #ifdef __CXREF__
@@ -965,6 +966,9 @@ void heartbeat(int heart_pulse)
   if (!(heart_pulse % PULSE_VIOLENCE))
     perform_violence();
 
+  if (!(heart_pulse % PASSES_PER_SEC))
+    msdp_update();
+
   if (!(heart_pulse % (SECS_PER_MUD_HOUR * PASSES_PER_SEC))) {  /* Tick ! */
     next_tick = SECS_PER_MUD_HOUR;  /* Reset tick coundown */
     weather_and_time(1);
@@ -1334,6 +1338,12 @@ size_t vwrite_to_output(struct descriptor_data *t, const char *format, va_list a
     return (0);
 
   wantsize = size = vsnprintf(txt, sizeof(txt), format, args);
+
+  strcpy(txt, ProtocolOutput( t, txt, (int*)&wantsize ));
+  size = wantsize;
+  if ( t->pProtocol->WriteOOB > 0 )
+    --t->pProtocol->WriteOOB;
+
   if (t->character)
     wantsize = size = proc_colors(txt, sizeof(txt), COLOR_ON(t->character));
   /* If exceeding the size of the buffer, truncate it for the overflow message */
@@ -1498,6 +1508,7 @@ static void init_descriptor (struct descriptor_data *newd, int desc)
   if (++last_desc == 1000)
     last_desc = 1;
   newd->desc_num = last_desc;
+  newd->pProtocol = ProtocolCreate();
 }
 
 static int new_descriptor(socket_t s)
@@ -1569,6 +1580,8 @@ static int new_descriptor(socket_t s)
   newd->next = descriptor_list;
   descriptor_list = newd;
 
+  ProtocolNegotiate(newd); /* <--- Add this line */
+
   /* This is where the greetings are actually sent to the new player */
   /* Adjusted by Jamdog to show color codes on the greetings page    */
   *greet_copy = '\0';
@@ -1602,14 +1615,16 @@ static int process_output(struct descriptor_data *t)
 
   /* add the extra CRLF if the person isn't in compact mode */
   if (STATE(t) == CON_PLAYING && t->character && !IS_NPC(t->character) && !PRF_FLAGGED(t->character, PRF_COMPACT))
+    if ( !t->pProtocol->WriteOOB )
     strcat(osb, "\r\n");	/* strcpy: OK (osb:MAX_SOCK_BUF-2 reserves space) */
 
   /* add a prompt */
+  if ( !t->pProtocol->WriteOOB )
   strcat(i, make_prompt(t));	/* strcpy: OK (i:MAX_SOCK_BUF reserves space) */
 
   /* now, send the output.  If this is an 'interruption', use the prepended
    * CRLF, otherwise send the straight output sans CRLF. */
-  if (t->has_prompt) {
+  if (t->has_prompt && !t->pProtocol->WriteOOB) {
     t->has_prompt = FALSE;
     result = write_to_descriptor(t->descriptor, i);
     if (result >= 2)
@@ -1859,6 +1874,9 @@ static int process_input(struct descriptor_data *t)
   size_t space_left;
   char *ptr, *read_point, *write_point, *nl_pos = NULL;
   char tmp[MAX_INPUT_LENGTH];
+  
+  static char read_buf[PROTOCOL_BUFFER];
+  read_buf[0] = '\0';
 
   /* first, find the point where we left off reading data */
   buf_length = strlen(t->inbuf);
@@ -1871,7 +1889,14 @@ static int process_input(struct descriptor_data *t)
       return (-1);
     }
 
-    bytes_read = perform_socket_read(t->descriptor, read_point, space_left);
+    bytes_read = perform_socket_read(t->descriptor, read_buf, 2048);
+
+    if ( bytes_read >= 0 )
+    {
+      read_buf[bytes_read] = '\0';
+      ProtocolInput( t, read_buf, bytes_read, t->inbuf );
+      bytes_read = strlen(t->inbuf);
+    }
 
     if (bytes_read < 0)	/* Error, disconnect them. */
       return (-1);
@@ -2121,6 +2146,8 @@ void close_socket(struct descriptor_data *d)
     free(d->showstr_head);
   if (d->showstr_count)
     free(d->showstr_vector);
+
+  ProtocolDestroy( d->pProtocol );
 
   /*. Kill any OLC stuff .*/
   switch (d->connected) {
@@ -2792,4 +2819,62 @@ static void handle_webster_file(void) {
 
   send_to_char(ch, "You get this feedback from Merriam-Webster:\r\n");
   page_string(ch->desc, retval, 1);
+}
+
+static void msdp_update( void )
+{
+  struct descriptor_data *d;
+  int PlayerCount = 0;
+
+  for (d = descriptor_list; d; d = d->next)
+  {
+    struct char_data *ch = d->character;
+    if ( ch && !IS_NPC(ch) && d->connected == CON_PLAYING )
+    {
+      struct char_data *pOpponent = FIGHTING(ch);
+      ++PlayerCount;
+
+      MSDPSetString( d, eMSDP_CHARACTER_NAME, GET_NAME(ch) );
+      MSDPSetNumber( d, eMSDP_ALIGNMENT, GET_ALIGNMENT(ch) );
+      MSDPSetNumber( d, eMSDP_EXPERIENCE, GET_EXP(ch) );
+
+      MSDPSetNumber( d, eMSDP_HEALTH, GET_HIT(ch) );
+      MSDPSetNumber( d, eMSDP_HEALTH_MAX, GET_MAX_HIT(ch) );
+      MSDPSetNumber( d, eMSDP_LEVEL, GET_LEVEL(ch) );
+
+      MSDPSetNumber( d, eMSDP_CLASS, GET_CLASS(ch) );
+
+      MSDPSetNumber( d, eMSDP_MANA, GET_MANA(ch) );
+      MSDPSetNumber( d, eMSDP_MANA_MAX, GET_MAX_MANA(ch) );
+      MSDPSetNumber( d, eMSDP_WIMPY, GET_WIMP_LEV(ch) );
+      MSDPSetNumber( d, eMSDP_MONEY, GET_GOLD(ch) );
+      MSDPSetNumber( d, eMSDP_MOVEMENT, GET_MOVE(ch) );
+      MSDPSetNumber( d, eMSDP_MOVEMENT_MAX, GET_MAX_MOVE(ch) );
+      MSDPSetNumber( d, eMSDP_AC, compute_armor_class(ch) );
+
+      /* This would be better moved elsewhere */
+      if ( pOpponent != NULL )
+      {
+          int hit_points = (GET_HIT(pOpponent) * 100) / GET_MAX_HIT(pOpponent);
+          MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, hit_points );
+          MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH_MAX, 100 );
+          MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, GET_LEVEL(pOpponent) );
+          MSDPSetString( d, eMSDP_OPPONENT_NAME, PERS(pOpponent, ch) );
+      }
+      else /* Clear the values */
+      {
+          MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, 0 );
+          MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, 0 ); 
+          MSDPSetString( d, eMSDP_OPPONENT_NAME, "" ); 
+      }
+
+      MSDPUpdate( d );
+    }
+
+    /* Ideally this should be called once at startup, and again whenever
+     * someone leaves or joins the mud.  But this works, and it keeps the
+     * snippet simple.  Optimise as you see fit.
+     */
+    MSSPSetPlayers( PlayerCount );
+  }
 }

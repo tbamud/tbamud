@@ -2325,7 +2325,7 @@ void list_llog_entries(struct char_data *ch)
   i = fread(&llast, sizeof(struct last_entry), 1, fp);
 
   while(!feof(fp)) {
-    send_to_char(ch, "%10s\t%d\t%s\t%s", llast.username, llast.punique,
+    send_to_char(ch, "%10s %d %s %s", llast.username, llast.punique,
         last_array[llast.close_type], ctime(&llast.time));
     i = fread(&llast, sizeof(struct last_entry), 1, fp);
   }
