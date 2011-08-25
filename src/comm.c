@@ -1101,7 +1101,8 @@ const char CCODE[] = "@nNdbgcrmywDBGCRMYW01234567luoe!";
 
 static size_t proc_colors(char *txt, size_t maxlen, int parse)
 {
-  char *d, *s, *c, *p;
+  char *d, *s, *p;
+  const char *c;
   int i;
 
   if (!txt || !strchr(txt, '@')) /* skip out if no color codes     */

@@ -67,11 +67,11 @@ void affect_update(void)
       else if (af->duration == -1)	/* No action */
 	;
       else {
-	if ((af->type > 0) && (af->type <= MAX_SPELLS))
-	  if (!af->next || (af->next->type != af->type) ||
+	if ((af->spell > 0) && (af->spell <= MAX_SPELLS))
+	  if (!af->next || (af->next->spell != af->spell) ||
 	      (af->next->duration > 0))
-	    if (spell_info[af->type].wear_off_msg)
-	      send_to_char(i, "%s\r\n", spell_info[af->type].wear_off_msg);
+	    if (spell_info[af->spell].wear_off_msg)
+	      send_to_char(i, "%s\r\n", spell_info[af->spell].wear_off_msg);
 	affect_remove(i, af);
       }
     }
@@ -318,7 +318,7 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
 
   for (i = 0; i < MAX_SPELL_AFFECTS; i++) {
     new_affect(&(af[i]));
-    af[i].type = spellnum;
+    af[i].spell = spellnum;
   }
 
   switch (spellnum) {

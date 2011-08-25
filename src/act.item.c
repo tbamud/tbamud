@@ -931,7 +931,7 @@ ACMD(do_drink)
     act("$n chokes and utters some strange sounds.", TRUE, ch, 0, 0, TO_ROOM);
 
     new_affect(&af);
-    af.type = SPELL_POISON;
+    af.spell = SPELL_POISON;
     af.duration = amount * 3;
     SET_BIT_AR(af.bitvector, AFF_POISON);
     affect_join(ch, &af, FALSE, FALSE, FALSE, FALSE);
@@ -1006,7 +1006,7 @@ ACMD(do_eat)
     act("$n coughs and utters some strange sounds.", FALSE, ch, 0, 0, TO_ROOM);
 
     new_affect(&af);
-    af.type = SPELL_POISON;
+    af.spell = SPELL_POISON;
     af.duration = amount * 2;
     SET_BIT_AR(af.bitvector, AFF_POISON);
     affect_join(ch, &af, FALSE, FALSE, FALSE, FALSE);

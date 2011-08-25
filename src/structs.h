@@ -1024,7 +1024,7 @@ struct mob_special_data
 /** An affect structure. */
 struct affected_type
 {
-  sh_int type;     /**< The type of spell that caused this      */
+  sh_int spell;     /**< The spell that caused this      */
   sh_int duration; /**< For how long its effects will last      */
   sbyte modifier;  /**< Added/subtracted to/from apropriate ability     */
   byte location;   /**< Tells which ability to change(APPLY_XXX). */

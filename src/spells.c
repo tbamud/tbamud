@@ -278,7 +278,7 @@ ASPELL(spell_charm)
     add_follower(victim, ch);
 
     new_affect(&af);
-    af.type = SPELL_CHARM;
+    af.spell = SPELL_CHARM;
     af.duration = 24 * 2;
     if (GET_CHA(ch))
       af.duration *= GET_CHA(ch);

@@ -416,7 +416,7 @@ static void group_gain(struct char_data *ch, struct char_data *victim)
     if (AFF_FLAGGED(f->follower, AFF_GROUP) && IN_ROOM(f->follower) == IN_ROOM(ch))
       tot_members++;
 
-  /* round up to the next highest tot_members */
+  /* round up to the nearest tot_members */
   tot_gain = (GET_EXP(victim) / 3) + tot_members - 1;
 
   /* prevent illegal xp creation when killing players */

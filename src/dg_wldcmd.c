@@ -373,7 +373,7 @@ WCMD(do_wpurge)
 {
   char arg[MAX_INPUT_LENGTH];
   char_data *ch, *next_ch;
-  obj_data *obj, *next_obj;
+  obj_data *obj = NULL, *next_obj;
 
   one_argument(argument, arg);
 
@@ -399,7 +399,7 @@ WCMD(do_wpurge)
     ch = get_char_in_room(room, arg);
 
   if (!ch) {
-    if (*arg == UID_CHAR)
+    if (obj && *arg == UID_CHAR)
       obj = get_obj(arg);
     else
       obj = get_obj_in_room(room, arg);

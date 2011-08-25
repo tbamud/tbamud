@@ -309,14 +309,14 @@ void affect_remove(struct char_data *ch, struct affected_type *af)
   affect_total(ch);
 }
 
-/* Call affect_remove with every spell of spelltype "skill" */
+/* Call affect_remove with every affect from the spell "type" */
 void affect_from_char(struct char_data *ch, int type)
 {
   struct affected_type *hjp, *next;
 
   for (hjp = ch->affected; hjp; hjp = next) {
     next = hjp->next;
-    if (hjp->type == type)
+    if (hjp->spell == type)
       affect_remove(ch, hjp);
   }
 }
@@ -328,7 +328,7 @@ bool affected_by_spell(struct char_data *ch, int type)
   struct affected_type *hjp;
 
   for (hjp = ch->affected; hjp; hjp = hjp->next)
-    if (hjp->type == type)
+    if (hjp->spell == type)
       return (TRUE);
 
   return (FALSE);
@@ -343,7 +343,7 @@ void affect_join(struct char_data *ch, struct affected_type *af,
   for (hjp = ch->affected; !found && hjp; hjp = next) {
     next = hjp->next;
 
-    if ((hjp->type == af->type) && (hjp->location == af->location)) {
+    if ((hjp->spell == af->spell) && (hjp->location == af->location)) {
       if (add_dur)
 	af->duration += hjp->duration;
       else if (avg_dur)

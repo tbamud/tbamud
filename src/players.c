@@ -724,12 +724,12 @@ void save_char(struct char_data * ch)
   }
 
   /* Save affects */
-  if (tmp_aff[0].type > 0) {
+  if (tmp_aff[0].spell > 0) {
     fprintf(fl, "Affs:\n");
     for (i = 0; i < MAX_AFFECT; i++) {
       aff = &tmp_aff[i];
-      if (aff->type)
-        fprintf(fl, "%d %d %d %d %d %d %d %d\n", aff->type, aff->duration,
+      if (aff->spell)
+        fprintf(fl, "%d %d %d %d %d %d %d %d\n", aff->spell, aff->duration,
           aff->modifier, aff->location, aff->bitvector[0], aff->bitvector[1], aff->bitvector[2], aff->bitvector[3]);
     }
     fprintf(fl, "0 0 0 0 0 0 0 0\n");
@@ -742,7 +742,7 @@ void save_char(struct char_data * ch)
 
   /* More char_to_store code to add spell and eq affections back in. */
   for (i = 0; i < MAX_AFFECT; i++) {
-    if (tmp_aff[i].type)
+    if (tmp_aff[i].spell)
       affect_to_char(ch, &tmp_aff[i]);
   }
 
@@ -898,7 +898,7 @@ static void load_affects(FILE *fl, struct char_data *ch)
     get_line(fl, line);
     n_vars = sscanf(line, "%d %d %d %d %d %d %d %d", &num, &num2, &num3, &num4, &num5, &num6, &num7, &num8);
     if (num > 0) {
-      af.type = num;
+      af.spell = num;
       af.duration = num2;
       af.modifier = num3;
       af.location = num4;

@@ -595,7 +595,7 @@ D3
 ~
 0 0 55533
 E
-shelf shelves bookshelf bookshelves~
+shelf shelves bookshelves bookcases~
    Secret Door: Open Shelf
 ~
 S
@@ -1298,22 +1298,22 @@ D0
 You see trees.
 ~
 ~
-0 0 55570
+0 0 55576
 D1
 You see trees.
 ~
 ~
-0 0 55576
+0 0 55572
 D2
 You see trees.
 ~
 ~
-0 0 55572
+0 0 55581
 D3
 You see trees.
 ~
 ~
-0 0 55581
+0 0 55570
 S
 T 55571
 #55572

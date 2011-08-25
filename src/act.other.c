@@ -118,7 +118,7 @@ ACMD(do_sneak)
     return;
 
   new_affect(&af);
-  af.type = SKILL_SNEAK;
+  af.spell = SKILL_SNEAK;
   af.duration = GET_LEVEL(ch);
   SET_BIT_AR(af.bitvector, AFF_SNEAK);
   affect_to_char(ch, &af);

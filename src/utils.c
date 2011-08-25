@@ -1474,7 +1474,7 @@ char *strpaste(char *str1, char *str2, char *joiner)
 void new_affect(struct affected_type *af)
 {
   int i;
-  af->type      = 0;
+  af->spell     = 0;
   af->duration  = 0;
   af->modifier  = 0;
   af->location  = APPLY_NONE;
