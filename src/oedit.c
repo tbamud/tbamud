@@ -660,6 +660,7 @@ static void oedit_disp_menu(struct descriptor_data *d)
           "%sP%s) Perm Affects: %s%s\r\n"
 	  "%sS%s) Script      : %s%s\r\n"
           "%sW%s) Copy object\r\n"
+          "%sX%s) Delete object\r\n"
 	  "%sQ%s) Quit\r\n"
 	  "Enter choice : ",
 
@@ -677,6 +678,7 @@ static void oedit_disp_menu(struct descriptor_data *d)
           grn, nrm, cyn, buf2,
           grn, nrm, cyn, OLC_SCRIPT(d) ? "Set." : "Not Set.",
 	  grn, nrm,
+          grn, nrm,
           grn, nrm
   );
   OLC_MODE(d) = OEDIT_MAIN_MENU;

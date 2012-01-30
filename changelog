@@ -35,6 +35,8 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Jan 30 2012] - Rumble
+  Fixed redit/zedit menu bug.
 [Aug 25 2011] - Rumble
   Comment fixes, clarification, and warning cleanup. (thanks Kyle)
 [Sep 11 2011] - Fizban

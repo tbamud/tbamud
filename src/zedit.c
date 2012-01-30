@@ -425,7 +425,7 @@ static void zedit_disp_menu(struct descriptor_data *d)
 
   /* Menu header */
   send_to_char(d->character,
-	  "Room number: %s%d%s		Room zone: %s%d\r\n"
+	  "Room number: %s%d%s              Room zone: %s%d\r\n"
 	  "%s1%s) Builders       : %s%s\r\n"
 	  "%sZ%s) Zone name      : %s%s\r\n"
 	  "%sL%s) Lifespan       : %s%d minutes\r\n"
