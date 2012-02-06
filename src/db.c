@@ -80,7 +80,7 @@ qst_rnum total_quests = 0;      /* top of autoquest table        */
 struct shop_data *shop_index;   /* index table for shops         */
 int top_shop = -1;              /* top of shop table             */
 
-int can_mail = 1;               /* mail enabled?		 */
+int no_mail = 0;                /* mail disabled?		 */
 int mini_mud = 0;               /* mini-mud mode?		 */
 int no_rent_check = 0;          /* skip rent check on boot?	 */
 time_t boot_time = 0;           /* time of mud boot		 */
@@ -704,11 +704,10 @@ void boot_db(void)
   sort_spells();
 
   log("Booting mail system.");
-  if (!build_mail_index()) {
+  if (!scan_file()) {
     log("    Mail boot failed -- Mail system disabled");
-    can_mail = 0;
+    no_mail = 1;
   }
-
   log("Reading banned site and invalid-name list.");
   load_banned();
   read_invalid_list();
@@ -1244,7 +1243,7 @@ void parse_room(FILE *fl, int virtual_nr)
   world[room_nr].people = NULL;
   world[room_nr].light = 0;	/* Zero light sources */
 
-  for (i = 0; i < NUM_OF_DIRS; i++)  /* NUM_OF_DIRS used here, not DIR_COUNT */
+  for (i = 0; i < NUM_OF_DIRS; i++) /* NUM_OF_DIRS here, not DIR_COUNT */
     world[room_nr].dir_option[i] = NULL;
 
   world[room_nr].ex_description = NULL;
@@ -2465,7 +2464,7 @@ void zone_update(void)
     if (zone_table[update_u->zone_to_reset].reset_mode == 2 ||
 	is_empty(update_u->zone_to_reset)) {
       reset_zone(update_u->zone_to_reset);
-      mudlog(CMP, ADMLVL_IMPL, FALSE, "Auto zone reset: %s (Zone %d)",
+      mudlog(CMP, LVL_IMPL, FALSE, "Auto zone reset: %s (Zone %d)",
           zone_table[update_u->zone_to_reset].name, zone_table[update_u->zone_to_reset].number);
       /* dequeue */
       if (update_u == reset_q.head)
@@ -2487,8 +2486,8 @@ void zone_update(void)
 
 static void log_zone_error(zone_rnum zone, int cmd_no, const char *message)
 {
-  mudlog(NRM, ADMLVL_GOD, TRUE, "SYSERR: zone file: %s", message);
-  mudlog(NRM, ADMLVL_GOD, TRUE, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d",
+  mudlog(NRM, LVL_GOD, TRUE, "SYSERR: zone file: %s", message);
+  mudlog(NRM, LVL_GOD, TRUE, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d",
 	ZCMD.command, zone_table[zone].number, ZCMD.line);
 }
 
@@ -2742,7 +2741,7 @@ int is_empty(zone_rnum zone_nr)
       continue;
     /* If an immortal has nohassle off, he counts as present. Added for testing
      * zone reset triggers -Welcor */
-    if ((!IS_NPC(i->character)) && (IS_ADMIN(i->character, ADMLVL_IMMORT)) && (PRF_FLAGGED(i->character, PRF_NOHASSLE)))
+    if ((!IS_NPC(i->character)) && (GET_LEVEL(i->character) >= LVL_IMMORT) && (PRF_FLAGGED(i->character, PRF_NOHASSLE)))
       continue;
 
     return (0);
@@ -3377,8 +3376,7 @@ void init_char(struct char_data *ch)
 
   /* If this is our first player make him IMPL. */
   if (top_of_p_table == 0) {
-    GET_LEVEL(ch) = CONFIG_MAX_LEVEL;
-    set_admin_level(ch, ADMLVL_IMPL);  /* Set IMP level and IMP flags */
+    GET_LEVEL(ch) = LVL_IMPL;
     GET_EXP(ch) = 7000000;
 
     /* The implementor never goes through do_start(). */
@@ -3423,7 +3421,7 @@ void init_char(struct char_data *ch)
     log("SYSERR: init_char: Character '%s' not found in player table.", GET_NAME(ch));
 
   for (i = 1; i <= MAX_SKILLS; i++) {
-    if (!IS_ADMIN(ch, ADMLVL_IMPL))
+    if (GET_LEVEL(ch) < LVL_IMPL)
       SET_SKILL(ch, i, 0);
     else
       SET_SKILL(ch, i, 100);
@@ -3444,7 +3442,7 @@ void init_char(struct char_data *ch)
   ch->real_abils.cha = 25;
 
   for (i = 0; i < 3; i++)
-    GET_COND(ch, i) = (IS_ADMIN(ch, ADMLVL_IMPL) ? -1 : 24);
+    GET_COND(ch, i) = (GET_LEVEL(ch) == LVL_IMPL ? -1 : 24);
 
   GET_LOADROOM(ch) = NOWHERE;
   GET_SCREEN_WIDTH(ch) = PAGE_WIDTH;
@@ -3669,7 +3667,7 @@ static int check_object_level(struct obj_data *obj, int val)
 {
   int error = FALSE;
 
-  if ((GET_OBJ_VAL(obj, val) < 0 || GET_OBJ_VAL(obj, val) > CONFIG_MAX_LEVEL) && (error = TRUE))
+  if ((GET_OBJ_VAL(obj, val) < 0 || GET_OBJ_VAL(obj, val) > LVL_IMPL) && (error = TRUE))
     log("SYSERR: Object #%d (%s) has out of range level #%d.",
 	GET_OBJ_VNUM(obj), obj->short_description, GET_OBJ_VAL(obj, val));
 
@@ -3701,26 +3699,25 @@ static void load_default_config( void )
   /* Game play options. */
   CONFIG_PK_ALLOWED 	        = pk_allowed;
   CONFIG_PT_ALLOWED             = pt_allowed;
-  CONFIG_LEVEL_CAN_SHOUT        = level_can_shout;
-  CONFIG_HOLLER_MOVE_COST       = holler_move_cost;
-  CONFIG_TUNNEL_SIZE            = tunnel_size;
-  CONFIG_MAX_EXP_GAIN           = max_exp_gain;
-  CONFIG_MAX_EXP_LOSS           = max_exp_loss;
+  CONFIG_LEVEL_CAN_SHOUT 	    = level_can_shout;
+  CONFIG_HOLLER_MOVE_COST 	    = holler_move_cost;
+  CONFIG_TUNNEL_SIZE 	        = tunnel_size;
+  CONFIG_MAX_EXP_GAIN	        = max_exp_gain;
+  CONFIG_MAX_EXP_LOSS 	        = max_exp_loss;
   CONFIG_MAX_NPC_CORPSE_TIME    = max_npc_corpse_time;
-  CONFIG_MAX_PC_CORPSE_TIME     = max_pc_corpse_time;
-  CONFIG_MAX_LEVEL              = max_mortal_level;
-  CONFIG_IDLE_VOID              = idle_void;
-  CONFIG_IDLE_RENT_TIME         = idle_rent_time;
-  CONFIG_IDLE_MAX_LEVEL         = idle_max_level;
-  CONFIG_DTS_ARE_DUMPS          = dts_are_dumps;
+  CONFIG_MAX_PC_CORPSE_TIME	    = max_pc_corpse_time;
+  CONFIG_IDLE_VOID		        = idle_void;
+  CONFIG_IDLE_RENT_TIME	        = idle_rent_time;
+  CONFIG_IDLE_MAX_LEVEL	        = idle_max_level;
+  CONFIG_DTS_ARE_DUMPS	        = dts_are_dumps;
   CONFIG_LOAD_INVENTORY         = load_into_inventory;
-  CONFIG_OK             = strdup(OK);
-  CONFIG_NOPERSON       = strdup(NOPERSON);
-  CONFIG_NOEFFECT       = strdup(NOEFFECT);
+  CONFIG_OK			            = strdup(OK);
+  CONFIG_NOPERSON	          	= strdup(NOPERSON);
+  CONFIG_NOEFFECT	         	= strdup(NOEFFECT);
   CONFIG_TRACK_T_DOORS          = track_through_doors;
-  CONFIG_NO_MORT_TO_IMMORT      = no_mort_to_immort;
+  CONFIG_NO_MORT_TO_IMMORT	    = no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS      = display_closed_doors;
-  CONFIG_DIAGONAL_DIRS          = diagonal_dirs_enabled;
+  CONFIG_DIAGONAL_DIRS          = diagonal_dirs;
   CONFIG_MAP                    = map_option;
   CONFIG_MAP_SIZE               = default_map_size;
   CONFIG_MINIMAP_SIZE           = default_minimap_size;
@@ -3730,7 +3727,7 @@ static void load_default_config( void )
   CONFIG_FREE_RENT              = free_rent;
   CONFIG_MAX_OBJ_SAVE           = max_obj_save;
   CONFIG_MIN_RENT_COST	        = min_rent_cost;
-  CONFIG_AUTO_SAVE		= auto_save;
+  CONFIG_AUTO_SAVE		        = auto_save;
   CONFIG_AUTOSAVE_TIME	        = autosave_time;
   CONFIG_CRASH_TIMEOUT          = crash_file_timeout;
   CONFIG_RENT_TIMEOUT	        = rent_file_timeout;
@@ -3769,8 +3766,7 @@ static void load_default_config( void )
   CONFIG_WELC_MESSG             = strdup(WELC_MESSG);
   CONFIG_START_MESSG            = strdup(START_MESSG);
   CONFIG_MEDIT_ADVANCED         = medit_advanced_stats;
-	CONFIG_IBT_AUTOSAVE						= ibt_autosave;
-	
+  CONFIG_IBT_AUTOSAVE           = ibt_autosave;
   /* Autowiz options. */
   CONFIG_USE_AUTOWIZ            = use_autowiz;
   CONFIG_MIN_WIZLIST_LEV        = min_wizlist_lev;
@@ -3811,14 +3807,12 @@ void load_config( void )
       case 'c':
         if (!str_cmp(tag, "crash_file_timeout"))
           CONFIG_CRASH_TIMEOUT = num;
-        else if (!str_cmp(tag, "can_mail"))
-          CONFIG_CAN_MAIL = num;
         break;
 
       case 'd':
         if (!str_cmp(tag, "display_closed_doors"))
           CONFIG_DISP_CLOSED_DOORS = num;
-        else if (!str_cmp(tag, "diagonal_dirs_enabled"))
+        else if (!str_cmp(tag, "diagonal_dirs"))
           CONFIG_DIAGONAL_DIRS = num;
         else if (!str_cmp(tag, "dts_are_dumps"))
           CONFIG_DTS_ARE_DUMPS = num;
@@ -3883,7 +3877,7 @@ void load_config( void )
         else if (!str_cmp(tag, "immort_start_room"))
           CONFIG_IMMORTAL_START = num;
         else if (!str_cmp(tag, "ibt_autosave"))
-          CONFIG_IBT_AUTOSAVE = num;
+		  CONFIG_IBT_AUTOSAVE = num;
         break;
 
       case 'l':
@@ -3916,8 +3910,6 @@ void load_config( void )
           CONFIG_MAX_OBJ_SAVE = num;
         else if (!str_cmp(tag, "max_pc_corpse_time"))
           CONFIG_MAX_PC_CORPSE_TIME = num;
-	else if (!str_cmp(tag, "max_mortal_level"))
-         CONFIG_MAX_LEVEL = num;
         else if (!str_cmp(tag, "max_playing"))
           CONFIG_MAX_PLAYING = num;
         else if (!str_cmp(tag, "menu")) {
@@ -3935,26 +3927,6 @@ void load_config( void )
           CONFIG_MAP = num;
         else if (!str_cmp(tag, "medit_advanced_stats"))
           CONFIG_MEDIT_ADVANCED = num;
-        else if (!str_cmp(tag, "mail_object_cost"))
-          CONFIG_OBJECT_COST       = num;
-        else if (!str_cmp(tag, "mail_objects_allowed"))
-          CONFIG_CAN_MAIL_OBJ      = num;
-        else if (!str_cmp(tag, "mail_gold_allowed"))
-          CONFIG_CAN_MAIL_GOLD     = num;
-        else if (!str_cmp(tag, "mail_stamp_cost"))
-          CONFIG_STAMP_COST        = num;
-        else if (!str_cmp(tag, "mail_min_level"))
-          CONFIG_MIN_MAIL_LEVEL    = num;
-        else if (!str_cmp(tag, "mail_min_free_level"))
-          CONFIG_FREE_MAIL_LEVEL   = num;
-        else if (!str_cmp(tag, "mail_drafts_allowed"))
-          CONFIG_DRAFTS_ALLOWED    = num;
-        else if (!str_cmp(tag, "mail_draft_timeout"))
-          CONFIG_DRAFT_TIMEOUT     = num;
-        else if (!str_cmp(tag, "mail_min_mail_anywhere"))
-          CONFIG_MIN_MAIL_ANYWHERE = num;
-        else if (!str_cmp(tag, "mail_min_send_to_all"))
-          CONFIG_MIN_SEND_TO_ALL   = num;
         break;
 
       case 'n':

@@ -69,15 +69,12 @@ int max_exp_loss = 500000;	/* max losable per death */
 int max_npc_corpse_time = 5;
 int max_pc_corpse_time = 10;
 
-/* The maximum mortal level that can be obtained */
-int max_mortal_level = 30;
-
 /* How many ticks before a player is sent to the void or idle-rented. */
 int idle_void = 8;
 int idle_rent_time = 48;
 
-/* This admin level and up is immune to idling, LVL_IMPL+1 will disable it. */
-int idle_max_level = ADMLVL_GOD;
+/* This level and up is immune to idling, LVL_IMPL+1 will disable it. */
+int idle_max_level = LVL_GOD;
 
 /* Should items in death traps automatically be junked? */
 int dts_are_dumps = YES;
@@ -105,8 +102,8 @@ int track_through_doors = YES;
 int no_mort_to_immort = YES;
 
 /* Are diagonal directions enabled?
- * If set to NO, then only the 6 directions n,e,s,w,u,d are allowed */
-int diagonal_dirs_enabled = NO;
+* If set to NO, then only the 6 directions n,e,s,w,u,d are allowed */
+int diagonal_dirs = NO;
 
 /* RENT/CRASHSAVE OPTIONS */
 /* Should the MUD allow you to 'rent' for free?  (i.e. if you just quit, your
@@ -154,8 +151,9 @@ int auto_pwipe = NO;
    * Element 3, level 4, days 7: Players level 2 through 4 are wiped if they
      haven't logged on in the past 7 days.
    * Element 4, level 10, days 30: Players level 5-10 get 30 days.
-   * Element 5, level CONFIG_MAX_LEVEL, days 60: All other mortals get 60 days.
-   * Element 6: Because -2 is less than CONFIG_MAX_LEVEL, this is assumed to be the end
+   * Element 5, level LVL_IMMORT - 1, days 60: All other mortals get 60 days.
+   * Element 6, level LVL_IMPL, days 90: Immortals get 90 days.
+   * Element 7: Because -2 is less than LVL_IMPL, this is assumed to be the end
      of the criteria.  The days entry is not used in this case. */
 struct pclean_criteria_data pclean_criteria[] = {
 /*	LEVEL		DAYS	*/
@@ -163,7 +161,8 @@ struct pclean_criteria_data pclean_criteria[] = {
   {	1		,4	},
   {	4		,7	},
   {	10		,30	},
-  {	30		,60	}, /* highest mortal - NOTE: Should be CONFIG_MAX_LEVEL */
+  {	LVL_IMMORT - 1	,60	}, /* highest mortal */
+  {	LVL_IMPL	,90	}, /* all immortals */
   {	-1		,0	}  /* no more level checks */
 };
 
@@ -292,7 +291,7 @@ int use_autowiz = YES;
 
 /* If yes, what is the lowest level which should be on the wizlist?  (All immort
  * levels below the level you specify will go on the immlist instead.) */
-int min_wizlist_lev = ADMLVL_GOD;
+int min_wizlist_lev = LVL_GOD;
 
 /* To mimic stock behavior set to NO. To allow mortals to see doors in exits
  * set to YES. */
@@ -307,6 +306,6 @@ int default_minimap_size = 2;
 
 /* Medit Stats menu - show 'advanced' options? */
 int medit_advanced_stats = YES;
-/** Does "bug resolve" autosave ? */
-int ibt_autosave = YES;
 
+/* Does "bug resolve" autosave ? */
+int ibt_autosave = YES;

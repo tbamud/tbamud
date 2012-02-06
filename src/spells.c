@@ -109,7 +109,7 @@ ASPELL(spell_summon)
   if (ch == NULL || victim == NULL)
     return;
 
-  if (GET_LEVEL(victim) > MIN(CONFIG_MAX_LEVEL, level + 3)) {
+  if (GET_LEVEL(victim) > MIN(LVL_IMMORT - 1, level + 3)) {
     send_to_char(ch, "%s", SUMMON_FAIL);
     return;
   }
@@ -137,7 +137,7 @@ ASPELL(spell_summon)
 	      (ch->player.sex == SEX_MALE) ? "He" : "She");
 
       send_to_char(ch, "You failed because %s has summon protection on.\r\n", GET_NAME(victim));
-      mudlog(BRF, ADMLVL_IMMORT, TRUE, "%s failed summoning %s to %s.", GET_NAME(ch), GET_NAME(victim), world[IN_ROOM(ch)].name);
+      mudlog(BRF, LVL_IMMORT, TRUE, "%s failed summoning %s to %s.", GET_NAME(ch), GET_NAME(victim), world[IN_ROOM(ch)].name);
       return;
     }
   }

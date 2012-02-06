@@ -28,12 +28,11 @@
 #define LOAD_MOVE	2
 #define LOAD_STRENGTH	3
 
-#define PT_PNAME(i)    (player_table[(i)].name)
-#define PT_IDNUM(i)    (player_table[(i)].id)
-#define PT_LEVEL(i)    (player_table[(i)].level)
-#define PT_ADMLEVEL(i) (player_table[(i)].admlevel)
-#define PT_FLAGS(i)    (player_table[(i)].flags)
-#define PT_LLAST(i)    (player_table[(i)].last)
+#define PT_PNAME(i) (player_table[(i)].name)
+#define PT_IDNUM(i) (player_table[(i)].id)
+#define PT_LEVEL(i) (player_table[(i)].level)
+#define PT_FLAGS(i) (player_table[(i)].flags)
+#define PT_LLAST(i) (player_table[(i)].last)
 
 /* 'global' vars defined here and used externally */
 /** @deprecated Since this file really is basically a functional extension
@@ -84,20 +83,11 @@ void build_player_index(void)
   CREATE(player_table, struct player_index_element, rec_count);
   for (i = 0; i < rec_count; i++) {
     get_line(plr_index, line);
-    /* Load both old-style (5 vars) or new style with admin level (6 vars) */
-    if (sscanf(line, "%ld %s %d %d %s %ld", &PT_IDNUM(i), arg2,
-          &PT_LEVEL(i), &PT_ADMLEVEL(i), bits, (long *)&PT_LLAST(i)) != 6) {
-      if (sscanf(line, "%ld %s %d %s %ld", &PT_IDNUM(i), arg2,
-        &PT_LEVEL(i), bits, (long *)&PT_LLAST(i)) != 5) {
-        log("SYSERR: Invalid line in player index (%s, line %d)", index_name, (i+1));
-	  }
-      /* Convert old level to new seperate admin and mortal levels */
-      PT_ADMLEVEL(i) = (PT_LEVEL(i) > CONFIG_MAX_LEVEL) ? MIN((PT_LEVEL(i) - CONFIG_MAX_LEVEL), ADMLVL_IMPL) : ADMLVL_MORTAL;
-      PT_LEVEL(i) = MIN(PT_LEVEL(i), CONFIG_MAX_LEVEL);
-    }
+    sscanf(line, "%ld %s %d %s %ld", &player_table[i].id, arg2,
+      &player_table[i].level, bits, (long *)&player_table[i].last);
     CREATE(player_table[i].name, char, strlen(arg2) + 1);
     strcpy(player_table[i].name, arg2);
-    PT_FLAGS(i) = asciiflag_conv(bits);
+    player_table[i].flags = asciiflag_conv(bits);
     top_idnum = MAX(top_idnum, player_table[i].id);
   }
 
@@ -129,7 +119,7 @@ int create_entry(char *name)
     /* Nothing */;
 
   /* clear the bitflag in case we have garbage data */
-  PT_FLAGS(pos) = 0;
+  player_table[pos].flags = 0;
 
   return (pos);
 }
@@ -152,7 +142,6 @@ void remove_player_from_index(int pos)
     PT_PNAME(i-1) = PT_PNAME(i);
     PT_IDNUM(i-1) = PT_IDNUM(i);
     PT_LEVEL(i-1) = PT_LEVEL(i);
-    PT_ADMLEVEL(i-1) = PT_ADMLEVEL(i);
     PT_FLAGS(i-1) = PT_FLAGS(i);
     PT_LLAST(i-1) = PT_LLAST(i);
   }
@@ -185,9 +174,10 @@ void save_player_index(void)
 
   for (i = 0; i <= top_of_p_table; i++)
     if (*player_table[i].name) {
-      sprintascii(bits,   PT_FLAGS(i));
-      fprintf(index_file, "%ld %s %d %d %s %ld\n", PT_IDNUM(i),	PT_PNAME(i),
-        PT_LEVEL(i), PT_ADMLEVEL(i), *bits ? bits : "0", (long)PT_LLAST(i));
+      sprintascii(bits, player_table[i].flags);
+      fprintf(index_file, "%ld %s %d %s %ld\n", player_table[i].id,
+	player_table[i].name, player_table[i].level, *bits ? bits : "0",
+        (long)player_table[i].last);
     }
   fprintf(index_file, "~\n");
 
@@ -202,8 +192,8 @@ void free_player_index(void)
     return;
 
   for (tp = 0; tp <= top_of_p_table; tp++)
-    if (PT_PNAME(tp))
-      free(PT_PNAME(tp));
+    if (player_table[tp].name)
+      free(player_table[tp].name);
 
   free(player_table);
   player_table = NULL;
@@ -259,10 +249,10 @@ int load_char(const char *name, struct char_data *ch)
   if ((id = get_ptable_by_name(name)) < 0)
     return (-1);
   else {
-    if (!get_filename(filename, sizeof(filename), PLR_FILE, PT_PNAME(id)))
+    if (!get_filename(filename, sizeof(filename), PLR_FILE, player_table[id].name))
       return (-1);
     if (!(fl = fopen(filename, "r"))) {
-      mudlog(NRM, ADMLVL_GOD, TRUE, "SYSERR: Couldn't open player file %s", filename);
+      mudlog(NRM, LVL_GOD, TRUE, "SYSERR: Couldn't open player file %s", filename);
       return (-1);
     }
 
@@ -273,7 +263,6 @@ int load_char(const char *name, struct char_data *ch)
     GET_SEX(ch) = PFDEF_SEX;
     GET_CLASS(ch) = PFDEF_CLASS;
     GET_LEVEL(ch) = PFDEF_LEVEL;
-    GET_ADMLEVEL(ch) = PFDEF_ADMLEVEL;
     GET_HEIGHT(ch) = PFDEF_HEIGHT;
     GET_WEIGHT(ch) = PFDEF_WEIGHT;
     GET_ALIGNMENT(ch) = PFDEF_ALIGNMENT;
@@ -332,17 +321,16 @@ int load_char(const char *name, struct char_data *ch)
 
       switch (*tag) {
       case 'A':
-         if (!strcmp(tag, "Ac  "))	GET_AC(ch)		= atoi(line);
-    else if (!strcmp(tag, "Act ")) {
-     if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
-        PLR_FLAGS(ch)[0] = asciiflag_conv(f1);
-        PLR_FLAGS(ch)[1] = asciiflag_conv(f2);
-        PLR_FLAGS(ch)[2] = asciiflag_conv(f3);
-        PLR_FLAGS(ch)[3] = asciiflag_conv(f4);
-      } else
-        PLR_FLAGS(ch)[0] = asciiflag_conv(line);
-    }
-    else if (!strcmp(tag, "Aff ")) {
+        if (!strcmp(tag, "Ac  "))	GET_AC(ch)		= atoi(line);
+	else if (!strcmp(tag, "Act ")) {
+         if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
+          PLR_FLAGS(ch)[0] = asciiflag_conv(f1);
+          PLR_FLAGS(ch)[1] = asciiflag_conv(f2);
+          PLR_FLAGS(ch)[2] = asciiflag_conv(f3);
+          PLR_FLAGS(ch)[3] = asciiflag_conv(f4);
+        } else
+          PLR_FLAGS(ch)[0] = asciiflag_conv(line);
+      } else if (!strcmp(tag, "Aff ")) {
         if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
           AFF_FLAGS(ch)[0] = asciiflag_conv(f1);
           AFF_FLAGS(ch)[1] = asciiflag_conv(f2);
@@ -351,19 +339,9 @@ int load_char(const char *name, struct char_data *ch)
         } else
           AFF_FLAGS(ch)[0] = asciiflag_conv(line);
 	}
-	else if (!strcmp(tag, "Affs")) 	load_affects(fl, ch);
-    else if (!strcmp(tag, "Alin"))	GET_ALIGNMENT(ch)	= atoi(line);
+	if (!strcmp(tag, "Affs")) 	load_affects(fl, ch);
+        else if (!strcmp(tag, "Alin"))	GET_ALIGNMENT(ch)	= atoi(line);
 	else if (!strcmp(tag, "Alis"))	read_aliases_ascii(fl, ch, atoi(line));
-    else if (!strcmp(tag, "Admn"))  GET_ADMLEVEL(ch)        = atoi(line);
-    else if (!strcmp(tag, "Admf")) {
-      if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
-        ADM_FLAGS(ch)[0] = asciiflag_conv(f1);
-        ADM_FLAGS(ch)[1] = asciiflag_conv(f2);
-        ADM_FLAGS(ch)[2] = asciiflag_conv(f3);
-        ADM_FLAGS(ch)[3] = asciiflag_conv(f4);
-      } else
-        ADM_FLAGS(ch)[0] = asciiflag_conv(f1);
-      }
 	break;
 
       case 'B':
@@ -508,15 +486,8 @@ int load_char(const char *name, struct char_data *ch)
 
   affect_total(ch);
 
-  /* Sort old-style admin levels (one-time only code for codebase upgrades to tbaMUD 4.0) */
-  if (GET_LEVEL(ch) > CONFIG_MAX_LEVEL) {
-    /* For no converson to new admin levels, skip next line */
-    GET_ADMLEVEL(ch) = MIN((GET_LEVEL(ch) - CONFIG_MAX_LEVEL), ADMLVL_IMPL);
-    GET_LEVEL(ch) = CONFIG_MAX_LEVEL;
-  }
-
   /* initialization for imms */
-  if (IS_ADMIN(ch, ADMLVL_IMMORT)) {
+  if (GET_LEVEL(ch) >= LVL_IMMORT) {
     for (i = 1; i <= MAX_SKILLS; i++)
       GET_SKILL(ch, i) = 100;
     GET_COND(ch, HUNGER) = -1;
@@ -562,7 +533,7 @@ void save_char(struct char_data * ch)
   if (!get_filename(filename, sizeof(filename), PLR_FILE, GET_NAME(ch)))
     return;
   if (!(fl = fopen(filename, "w"))) {
-    mudlog(NRM, ADMLVL_GOD, TRUE, "SYSERR: Couldn't open player file %s for write", filename);
+    mudlog(NRM, LVL_GOD, TRUE, "SYSERR: Couldn't open player file %s for write", filename);
     return;
   }
 
@@ -616,7 +587,6 @@ void save_char(struct char_data * ch)
   if (GET_SEX(ch)	     != PFDEF_SEX)	fprintf(fl, "Sex : %d\n", GET_SEX(ch));
   if (GET_CLASS(ch)	   != PFDEF_CLASS)	fprintf(fl, "Clas: %d\n", GET_CLASS(ch));
   if (GET_LEVEL(ch)	   != PFDEF_LEVEL)	fprintf(fl, "Levl: %d\n", GET_LEVEL(ch));
-  if (GET_ADMLEVEL(ch) != PFDEF_ADMLEVEL)	fprintf(fl, "Admn: %d\n", GET_ADMLEVEL(ch));
 
   fprintf(fl, "Id  : %ld\n", GET_IDNUM(ch));
   fprintf(fl, "Brth: %ld\n", (long)ch->player.time.birth);
@@ -652,13 +622,7 @@ void save_char(struct char_data * ch)
   sprintascii(bits4, PRF_FLAGS(ch)[3]);
   fprintf(fl, "Pref: %s %s %s %s\n", bits, bits2, bits3, bits4);
 
-  sprintascii(bits,  ADM_FLAGS(ch)[0]);
-  sprintascii(bits2, ADM_FLAGS(ch)[1]);
-  sprintascii(bits3, ADM_FLAGS(ch)[2]);
-  sprintascii(bits4, ADM_FLAGS(ch)[3]);
-  fprintf(fl, "Admf: %s %s %s %s\n", bits, bits2, bits3, bits4);
-
-  if (GET_SAVE(ch, 0)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr1: %d\n", GET_SAVE(ch, 0));
+ if (GET_SAVE(ch, 0)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr1: %d\n", GET_SAVE(ch, 0));
   if (GET_SAVE(ch, 1)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr2: %d\n", GET_SAVE(ch, 1));
   if (GET_SAVE(ch, 2)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr3: %d\n", GET_SAVE(ch, 2));
   if (GET_SAVE(ch, 3)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr4: %d\n", GET_SAVE(ch, 3));
@@ -672,9 +636,9 @@ void save_char(struct char_data * ch)
   if (GET_BAD_PWS(ch)	   != PFDEF_BADPWS)	fprintf(fl, "Badp: %d\n", GET_BAD_PWS(ch));
   if (GET_PRACTICES(ch)	   != PFDEF_PRACTICES)	fprintf(fl, "Lern: %d\n", GET_PRACTICES(ch));
 
-  if (GET_COND(ch, HUNGER)   != PFDEF_HUNGER && !IS_ADMIN(ch, ADMLVL_IMMORT)) fprintf(fl, "Hung: %d\n", GET_COND(ch, HUNGER));
-  if (GET_COND(ch, THIRST) != PFDEF_THIRST && !IS_ADMIN(ch, ADMLVL_IMMORT)) fprintf(fl, "Thir: %d\n", GET_COND(ch, THIRST));
-  if (GET_COND(ch, DRUNK)  != PFDEF_DRUNK  && !IS_ADMIN(ch, ADMLVL_IMMORT)) fprintf(fl, "Drnk: %d\n", GET_COND(ch, DRUNK));
+  if (GET_COND(ch, HUNGER)   != PFDEF_HUNGER && GET_LEVEL(ch) < LVL_IMMORT) fprintf(fl, "Hung: %d\n", GET_COND(ch, HUNGER));
+  if (GET_COND(ch, THIRST) != PFDEF_THIRST && GET_LEVEL(ch) < LVL_IMMORT) fprintf(fl, "Thir: %d\n", GET_COND(ch, THIRST));
+  if (GET_COND(ch, DRUNK)  != PFDEF_DRUNK  && GET_LEVEL(ch) < LVL_IMMORT) fprintf(fl, "Drnk: %d\n", GET_COND(ch, DRUNK));
 
   if (GET_HIT(ch)	   != PFDEF_HIT  || GET_MAX_HIT(ch)  != PFDEF_MAXHIT)  fprintf(fl, "Hit : %d/%d\n", GET_HIT(ch),  GET_MAX_HIT(ch));
   if (GET_MANA(ch)	   != PFDEF_MANA || GET_MAX_MANA(ch) != PFDEF_MAXMANA) fprintf(fl, "Mana: %d/%d\n", GET_MANA(ch), GET_MAX_MANA(ch));
@@ -714,7 +678,7 @@ void save_char(struct char_data * ch)
 }
 
   /* Save skills */
-  if (!IS_ADMIN(ch, ADMLVL_IMMORT)) {
+  if (GET_LEVEL(ch) < LVL_IMMORT) {
     fprintf(fl, "Skil:\n");
     for (i = 1; i <= MAX_SKILLS; i++) {
      if (GET_SKILL(ch, i))
@@ -729,7 +693,7 @@ void save_char(struct char_data * ch)
     for (i = 0; i < MAX_AFFECT; i++) {
       aff = &tmp_aff[i];
       if (aff->spell)
-        fprintf(fl, "%d %d %d %d %d %d %d %d\n", aff->spell, aff->duration,
+		fprintf(fl, "%d %d %d %d %d %d %d %d\n", aff->spell, aff->duration,
           aff->modifier, aff->location, aff->bitvector[0], aff->bitvector[1], aff->bitvector[2], aff->bitvector[3]);
     }
     fprintf(fl, "0 0 0 0 0 0 0 0\n");
@@ -767,10 +731,6 @@ void save_char(struct char_data * ch)
     save_index = TRUE;
     player_table[id].level = GET_LEVEL(ch);
   }
-  if (player_table[id].admlevel != GET_ADMLEVEL(ch)) {
-    save_index = TRUE;
-    player_table[id].admlevel = GET_ADMLEVEL(ch);
-  }
   if (player_table[id].last != ch->player.time.logon) {
     save_index = TRUE;
     player_table[id].last = ch->player.time.logon;
@@ -780,7 +740,6 @@ void save_char(struct char_data * ch)
     SET_BIT(player_table[id].flags, PINDEX_DELETED);
   else
     REMOVE_BIT(player_table[id].flags, PINDEX_DELETED);
-
   if (PLR_FLAGGED(ch, PLR_NODELETE) || PLR_FLAGGED(ch, PLR_CRYO))
     SET_BIT(player_table[id].flags, PINDEX_NODELETE);
   else
@@ -790,11 +749,6 @@ void save_char(struct char_data * ch)
     SET_BIT(player_table[id].flags, PINDEX_NOWIZLIST);
   else
     REMOVE_BIT(player_table[id].flags, PINDEX_NOWIZLIST);
-
-  if (PRF_FLAGGED(ch, PRF_MORTAL))
-    SET_BIT(player_table[id].flags, PINDEX_MORTAL);
-  else
-    REMOVE_BIT(player_table[id].flags, PINDEX_MORTAL);
 
   if (player_table[id].flags != i || save_index)
     save_player_index();
@@ -836,9 +790,8 @@ void remove_player(int pfilepos)
       unlink(filename);
   }
 
-  log("PCLEAN: %s Lev: %d  AdmLev: %d  Last: %s",
+  log("PCLEAN: %s Lev: %d Last: %s",
 	player_table[pfilepos].name, player_table[pfilepos].level,
-	player_table[pfilepos].admlevel,
 	asctime(localtime(&player_table[pfilepos].last)));
   player_table[pfilepos].name[0] = '\0';
 
@@ -853,10 +806,6 @@ void clean_pfiles(void)
   int i, ci;
 
   for (i = 0; i <= top_of_p_table; i++) {
-    /* Skip Imms */
-    if (PT_ADMLEVEL(i) > ADMLVL_IMMORT)
-      continue;
-
     /* We only want to go further if the player isn't protected from deletion
      * and hasn't already been deleted. */
     if (!IS_SET(player_table[i].flags, PINDEX_NODELETE) &&

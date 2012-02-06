@@ -111,14 +111,14 @@ int add_quest(struct aq_data *nqst)
   if (qmrnum != NOBODY && mob_index[qmrnum].func &&
      mob_index[qmrnum].func != questmaster)
      QST_FUNC(rnum) = mob_index[qmrnum].func;
-  if(qmrnum != NOBODY)
+  if(qmrnum != NOBODY) 
     mob_index[qmrnum].func = questmaster;
 
   /* And make sure we save the updated quest information to disk */
   if (rznum != NOWHERE)
     add_to_save_list(zone_table[rznum].number, SL_QST);
   else
-    mudlog(BRF, ADMLVL_BUILDER, TRUE,
+    mudlog(BRF, LVL_BUILDER, TRUE,
            "SYSERR: GenOLC: Cannot determine quest zone.");
 
   return rnum;
@@ -136,7 +136,7 @@ int delete_quest(qst_rnum rnum)
 
   if (rnum >= total_quests)
     return FALSE;
-  rznum = real_zone_by_thing(QST_NUM(rnum));
+  rznum = real_zone_by_thing(QST_NUM(rnum)); 
   log("GenOLC: delete_quest: Deleting quest #%d (%s).",
        QST_NUM(rnum), QST_NAME(rnum));
   /* make a note of the quest master's secondary spec proc */
@@ -152,12 +152,12 @@ int delete_quest(qst_rnum rnum)
     RECREATE(aquest_table, struct aq_data, total_quests);
   else {
     free(aquest_table);
-    aquest_table = NULL;
+    aquest_table = NULL; 
    }
   if (rznum != NOWHERE)
      add_to_save_list(zone_table[rznum].number, SL_QST);
   else
-    mudlog(BRF, ADMLVL_BUILDER, TRUE,
+    mudlog(BRF, LVL_BUILDER, TRUE,
            "SYSERR: GenOLC: Cannot determine quest zone.");
   /* does the questmaster mob have any quests left? */
   if (qm != NOBODY) {

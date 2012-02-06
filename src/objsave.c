@@ -22,7 +22,6 @@
 #include "config.h"
 #include "modify.h"
 #include "genolc.h" /* for strip_cr and sprintascii */
-#include "constants.h"
 
 /* these factors should be unique integers */
 #define RENT_FACTOR    1
@@ -249,7 +248,7 @@ static void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
         else
           equip_char(ch, obj, j);
       } else {  /* Oops, saved a player with double equipment? */
-        mudlog(BRF, ADMLVL_IMMORT, TRUE,
+        mudlog(BRF, LVL_IMMORT, TRUE,
                "SYSERR: autoeq: '%s' already equipped in position %d.", GET_NAME(ch), location);
         location = LOC_INVENTORY;
       }
@@ -928,7 +927,7 @@ static int gen_receptionist(struct char_data *ch, struct char_data *recep, int c
     if (mode == RENT_FACTOR) {
       act("$n stores your belongings and helps you into your private chamber.", FALSE, recep, 0, ch, TO_VICT);
       Crash_rentsave(ch, cost);
-      mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has rented (%d/day, %d tot.)",
+      mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has rented (%d/day, %d tot.)",
 		GET_NAME(ch), cost, GET_GOLD(ch) + GET_BANK_GOLD(ch));
     } else {			/* cryo */
       act("$n stores your belongings and helps you into your private chamber.\r\n"
@@ -936,7 +935,7 @@ static int gen_receptionist(struct char_data *ch, struct char_data *recep, int c
 	  "You begin to lose consciousness...",
 	  FALSE, recep, 0, ch, TO_VICT);
       Crash_cryosave(ch, cost);
-      mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has cryo-rented.", GET_NAME(ch));
+      mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has cryo-rented.", GET_NAME(ch));
       SET_BIT_AR(PLR_FLAGS(ch), PLR_CRYO);
     }
 
@@ -1190,7 +1189,7 @@ static int Crash_load_objs(struct char_data *ch) {
                        "There was a problem loading your objects from disk.\r\n"
                        "Contact a God for assistance.\r\n");
     }
-    mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s entering game with no equipment.", GET_NAME(ch));
+    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s entering game with no equipment.", GET_NAME(ch));
     return 1;
   }
   if (get_line(fl, line))
@@ -1203,7 +1202,7 @@ static int Crash_load_objs(struct char_data *ch) {
     cost = (unsigned int) (netcost * num_of_days);
     if (cost > (unsigned int)GET_GOLD(ch) + (unsigned int)GET_BANK_GOLD(ch)) {
       fclose(fl);
-      mudlog(BRF, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
+      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
              "%s entering game, rented equipment lost (no $).", GET_NAME(ch));
       Crash_crashsave(ch);
       return 2;
@@ -1215,25 +1214,25 @@ static int Crash_load_objs(struct char_data *ch) {
   }
   switch (orig_rent_code = rentcode) {
   case RENT_RENTED:
-    mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
+    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
            "%s un-renting and entering game.", GET_NAME(ch));
     break;
   case RENT_CRASH:
 
-    mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
+    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
            "%s retrieving crash-saved items and entering game.", GET_NAME(ch));
     break;
   case RENT_CRYO:
-    mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
+    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
            "%s un-cryo'ing and entering game.", GET_NAME(ch));
     break;
   case RENT_FORCED:
   case RENT_TIMEDOUT:
-    mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
+    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
            "%s retrieving force-saved items and entering game.", GET_NAME(ch));
     break;
   default:
-    mudlog(NRM, MAX(ADMLVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
+    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
            "WARNING: %s entering game with undefined rent code.", GET_NAME(ch));
     break;
   }
@@ -1251,8 +1250,8 @@ static int Crash_load_objs(struct char_data *ch) {
 	}
 
   /* Little hoarding check. -gg 3/1/98 */
- mudlog(NRM, MAX(ADMLVL_GOD, GET_INVIS_LEV(ch)), TRUE, "%s (level %d %s) has %d %s (max %d).",
-         GET_NAME(ch), GET_LEVEL(ch), admin_level_names[(GET_ADMLEVEL(ch))], num_objs, num_objs > 1 ? "objects" : "object", CONFIG_MAX_OBJ_SAVE);
+ mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "%s (level %d) has %d %s (max %d).",
+         GET_NAME(ch), GET_LEVEL(ch), num_objs, num_objs > 1 ? "objects" : "object", CONFIG_MAX_OBJ_SAVE);
 
   fclose(fl);
 

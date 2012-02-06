@@ -22,7 +22,7 @@
 #include "handler.h"
 #include "interpreter.h"
 #include "class.h"
-#include "act.h"
+
 
 /** Aportable random number function.
  * @param from The lower bounds of the random number.
@@ -286,7 +286,7 @@ void mudlog(int type, int level, int file, const char *str, ...)
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING || IS_NPC(i->character)) /* switch */
       continue;
-    if (GET_ADMLEVEL(i->character) < level)
+    if (GET_LEVEL(i->character) < level)
       continue;
     if (PLR_FLAGGED(i->character, PLR_WRITING))
       continue;
@@ -1299,7 +1299,6 @@ IDXTYPE atoidx( const char *str_to_conv )
    next line will start with the same color.
    Ends every line with @n to prevent color bleeds.
 */
-#define isspace_ignoretabs(c) ((c)!='\t' && isspace(c))
 char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
 {
   static char ret[MAX_STRING_LENGTH];
@@ -1317,17 +1316,17 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
   /* Split into lines, including convert \\ into \r\n */
   while(*sp) {
     /* eat leading space */
-    while(*sp && isspace_ignoretabs(*sp)) sp++;
+    while(*sp && isspace(*sp)) sp++;
     /* word begins */
     wp = sp;
     wlen = 0;
     while(*sp) { /* Find the end of the word */
-      if(isspace_ignoretabs(*sp)) break;
+      if(isspace(*sp)) break;
       if(*sp=='\\' && sp[1] && sp[1]=='\\') {
         if(sp!=wp)
           break; /* Finish dealing with the current word */
         sp += 2; /* Eat the marker and any trailing space */
-        while(*sp && isspace_ignoretabs(*sp)) sp++;
+        while(*sp && isspace(*sp)) sp++;
         wp = sp;
         /* Start a new line */
         if(hpad)
@@ -1346,14 +1345,6 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
         if (*sp=='@' && (sp[1]!=*sp)) /* Color code, not @@ */
           last_color = sp[1];
         sp += 2; /* Eat the whole code regardless */
-     } else if (*sp=='\t'&&sp[1]) {
-        char MXPcode = sp[1]=='[' ? ']' : sp[1]=='<' ? '>' : '\0';
-        sp += 2; /* Eat the code */
-        if (MXPcode)
-        {
-           while (*sp!='\0'&&*sp!=MXPcode)
-             ++sp; /* Eat the rest of the code */
-        }
       } else {
         wlen++;
         sp++;
@@ -1489,60 +1480,4 @@ int get_class_by_name(char *classname)
       if (is_abbrev(classname, pc_class_types[i])) return(i);
 
     return (-1);
-}
-
-bool set_admin_level(struct char_data *ch, int admlvl)
-{
-  int old_lvl, i;
-
-  /* Validate the data */
-  if (!ch || IS_NPC(ch)) return FALSE;
-  if ((admlvl < ADMLVL_MORTAL) || (admlvl > ADMLVL_IMPL)) return FALSE;
-
-  /* Grab the old level */
-  old_lvl = GET_ADMLEVEL(ch);
-
-  /* Set player data */
-  ch->player_specials->saved.adm_level = admlvl;
-
-  /* Set default privs for the new level */
-  set_default_admin_privs(ch, FALSE);
-
-  /* Set player index */
-  for (i = 0; i <= top_of_p_table; i++) {
-    if (player_table[i].id == GET_IDNUM(ch)) {
-      player_table[i].admlevel = admlvl;
-    }
-  }
-
-  /* Save all the data */
-  save_char(ch);
-  save_player_index();
-
-  if (!PLR_FLAGGED(ch, PLR_NOWIZLIST) && old_lvl != admlvl) {
-    run_autowiz();
-  }
-
-  return TRUE;
-}
-
-/* add_commas takes a numeric value, and adds commas to it, returning a string */
-char *add_commas(long num)
-{
-  int i, j = 0, len;
-  int negative = (num < 0);
-  char num_string[MAX_INPUT_LENGTH];
-  static char commastring[MAX_INPUT_LENGTH];
-
-  sprintf(num_string, "%ld", num);
-  len = strlen(num_string);
-
-  for (i = 0; num_string[i]; i++) {
-    if ((len - i) % 3 == 0 && i && i - negative)
-      commastring[j++] = ',';
-    commastring[j++] = num_string[i];
-  }
-  commastring[j] = '\0';
-
-  return commastring;
 }

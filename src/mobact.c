@@ -82,7 +82,7 @@ void mobile_activity(void)
        !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_NOMOB) &&
        !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_DEATH) &&
        (!MOB_FLAGGED(ch, MOB_STAY_ZONE) ||
-           (world[EXIT(ch, door)->to_room].zone == world[IN_ROOM(ch)].zone)))
+           (world[EXIT(ch, door)->to_room].zone == world[IN_ROOM(ch)].zone))) 
     {
       /* If the mob is charmed, do not move the mob. */
       if (ch->master == NULL)
@@ -136,7 +136,7 @@ void mobile_activity(void)
       }
     }
 
-    /* Charmed Mob Rebellion: In order to rebel, there need to be more charmed
+    /* Charmed Mob Rebellion: In order to rebel, there need to be more charmed 
      * monsters than the person can feasibly control at a time.  Then the
      * mobiles have a chance based on the charisma of their leader.
      * 1-4 = 0, 5-7 = 1, 8-10 = 2, 11-13 = 3, 14-16 = 4, 17-19 = 5, etc. */
@@ -149,13 +149,13 @@ void mobile_activity(void)
     }
 
     /* Helper Mobs */
-    if (MOB_FLAGGED(ch, MOB_HELPER) && (!AFF_FLAGGED(ch, AFF_BLIND) || !AFF_FLAGGED(ch, AFF_CHARM)))
+    if (MOB_FLAGGED(ch, MOB_HELPER) && (!AFF_FLAGGED(ch, AFF_BLIND) || !AFF_FLAGGED(ch, AFF_CHARM))) 
     {
       found = FALSE;
-      for (vict = world[IN_ROOM(ch)].people; vict && !found; vict = vict->next_in_room)
+      for (vict = world[IN_ROOM(ch)].people; vict && !found; vict = vict->next_in_room) 
       {
 	      if (ch == vict || !IS_NPC(vict) || !FIGHTING(vict))
-          continue;
+          continue; 
 	      if (IS_NPC(FIGHTING(vict)) || ch == FIGHTING(vict))
           continue;
 
@@ -232,8 +232,8 @@ void clearMemory(struct char_data *ch)
   MEMORY(ch) = NULL;
 }
 
-/* An aggressive mobile wants to attack something.  If they're under the
- * influence of mind altering PC, then see if their master can talk them out
+/* An aggressive mobile wants to attack something.  If they're under the 
+ * influence of mind altering PC, then see if their master can talk them out 
  * of it, eye them down, or otherwise intimidate the slave. */
 static bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack)
 {

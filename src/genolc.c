@@ -277,111 +277,111 @@ int sprintascii(char *out, bitvector_t bits)
   return j;
 }
 
-/* converts illegal filename chars into appropriate equivalents */
-char *fix_filename(char *str)
-{
-  static char good_file_name[MAX_STRING_LENGTH];
-  char *cindex = good_file_name;
-
-  while(*str) {
-    switch(*str) {
-      case ' ': *cindex = '_'; cindex++; break;
-      case '(': *cindex = '{'; cindex++; break;
-      case ')': *cindex = '}'; cindex++; break;
-
-      /* skip the following */
-      case '\'':             break;
-      case '"':              break;
-
-      /* Legal character */
-      default: *cindex = *str;  cindex++;break;
-    }
-    str++;
-  }
-  *cindex = '\0';
-
-  return good_file_name;
+/* converts illegal filename chars into appropriate equivalents */ 
+char *fix_filename(char *str) 
+{ 
+  static char good_file_name[MAX_STRING_LENGTH]; 
+  char *cindex = good_file_name; 
+ 
+  while(*str) { 
+    switch(*str) { 
+      case ' ': *cindex = '_'; cindex++; break; 
+      case '(': *cindex = '{'; cindex++; break; 
+      case ')': *cindex = '}'; cindex++; break; 
+ 
+      /* skip the following */ 
+      case '\'':             break; 
+      case '"':              break; 
+ 
+      /* Legal character */ 
+      default: *cindex = *str;  cindex++;break; 
+    } 
+    str++; 
+  } 
+  *cindex = '\0'; 
+ 
+  return good_file_name; 
 }
 
-/* Export command by Kyle */
-ACMD(do_export_zone)
-{
-  zone_rnum zrnum;
-  zone_vnum zvnum;
-  char sysbuf[MAX_INPUT_LENGTH];
-  char zone_name[MAX_INPUT_LENGTH], *f;
-  int success, i;
+/* Export command by Kyle */ 
+ACMD(do_export_zone) 
+{ 
+  zone_rnum zrnum; 
+  zone_vnum zvnum; 
+  char sysbuf[MAX_INPUT_LENGTH]; 
+  char zone_name[MAX_INPUT_LENGTH], *f; 
+  int success, i; 
 
-  /* system command locations are relative to
-   * where the binary IS, not where it was run
-   * from, thus we act like we are in the bin
-   * folder, because we are*/
-  char *path = "../lib/world/export/";
+  /* system command locations are relative to 
+   * where the binary IS, not where it was run 
+   * from, thus we act like we are in the bin 
+   * folder, because we are*/ 
+  char *path = "../lib/world/export/"; 
 
-  if (!IS_ADMIN(ch, ADMLVL_IMPL))
-    return;
+  if (IS_NPC(ch) || GET_LEVEL(ch) < LVL_IMPL) 
+    return; 
 
-  skip_spaces(&argument);
-  if (!*argument){
-    send_to_char(ch, "Syntax: export <zone vnum>");
-    return;
+  skip_spaces(&argument); 
+  if (!*argument){ 
+    send_to_char(ch, "Syntax: export <zone vnum>"); 
+    return; 
+  } 
+
+  zvnum = atoi(argument); 
+  zrnum = real_zone(zvnum); 
+
+  if (zrnum == NOWHERE) { 
+    send_to_char(ch, "Export which zone?\r\n"); 
+    return; 
+  } 
+
+  /* If we fail, it might just be because the 
+   *   directory didn't exist.  Can't hurt to try 
+   *     again. Do it silently though ( no logs ). */ 
+  if (!export_info_file(zrnum)) { 
+    sprintf(sysbuf, "mkdir %s", path); 
+    i = system(sysbuf); 
+  } 
+						      
+  if (!(success = export_info_file(zrnum))) 
+    send_to_char(ch, "Info file not saved!\r\n"); 
+  if (!(success = export_save_shops(zrnum))) 
+    send_to_char(ch, "Shops not saved!\r\n"); 
+  if (!(success = export_save_mobiles(zrnum))) 
+    send_to_char(ch, "Mobiles not saved!\r\n"); 
+  if (!(success = export_save_objects(zrnum))) 
+    send_to_char(ch, "Objects not saved!\r\n"); 
+  if (!(success = export_save_zone(zrnum))) 
+    send_to_char(ch, "Zone info not saved!\r\n"); 
+  if (!(success = export_save_rooms(zrnum))) 
+    send_to_char(ch, "Rooms not saved!\r\n"); 
+  if (!(success = export_save_triggers(zrnum))) 
+    send_to_char(ch, "Triggers not saved!\r\n"); 
+
+  /* If anything went wrong, don't try to tar the files. */ 
+  if (success) { 
+    send_to_char(ch, "Individual files saved to /lib/world/export.\r\n"); 
+    snprintf(zone_name, sizeof(zone_name), "%s", zone_table[zrnum].name); 
+  } else { 
+    send_to_char(ch, "Ran into problems writing to files.\r\n"); 
+    return; 
   }
+  /* Make sure the name of the zone doesn't make the filename illegal. */ 
+  f = fix_filename(zone_name); 
 
-  zvnum = atoi(argument);
-  zrnum = real_zone(zvnum);
+  /* Remove the old copy. */ 
+  sprintf(sysbuf, "rm %s%s.tar.gz", path, f); 
+  i = system(sysbuf); 
 
-  if (zrnum == NOWHERE) {
-    send_to_char(ch, "Export which zone?\r\n");
-    return;
-  }
-
-  /* If we fail, it might just be because the
-   *   directory didn't exist.  Can't hurt to try
-   *     again. Do it silently though ( no logs ). */
-  if (!export_info_file(zrnum)) {
-    sprintf(sysbuf, "mkdir %s", path);
-    i = system(sysbuf);
-  }
-
-  if (!(success = export_info_file(zrnum)))
-    send_to_char(ch, "Info file not saved!\r\n");
-  if (!(success = export_save_shops(zrnum)))
-    send_to_char(ch, "Shops not saved!\r\n");
-  if (!(success = export_save_mobiles(zrnum)))
-    send_to_char(ch, "Mobiles not saved!\r\n");
-  if (!(success = export_save_objects(zrnum)))
-    send_to_char(ch, "Objects not saved!\r\n");
-  if (!(success = export_save_zone(zrnum)))
-    send_to_char(ch, "Zone info not saved!\r\n");
-  if (!(success = export_save_rooms(zrnum)))
-    send_to_char(ch, "Rooms not saved!\r\n");
-  if (!(success = export_save_triggers(zrnum)))
-    send_to_char(ch, "Triggers not saved!\r\n");
-
-  /* If anything went wrong, don't try to tar the files. */
-  if (success) {
-    send_to_char(ch, "Individual files saved to /lib/world/export.\r\n");
-    snprintf(zone_name, sizeof(zone_name), "%s", zone_table[zrnum].name);
-  } else {
-    send_to_char(ch, "Ran into problems writing to files.\r\n");
-    return;
-  }
-  /* Make sure the name of the zone doesn't make the filename illegal. */
-  f = fix_filename(zone_name);
-
-  /* Remove the old copy. */
-  sprintf(sysbuf, "rm %s%s.tar.gz", path, f);
-  i = system(sysbuf);
-
-  /* Tar the new copy. */
+  /* Tar the new copy. */ 
    sprintf(sysbuf, "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg %sqq.shp", path, f, path, path, path, path, path, path, path);
-  i = system(sysbuf);
+  i = system(sysbuf); 
 
-  /* Gzip it. */
-  sprintf(sysbuf, "gzip %s%s.tar", path, f);
-  i = system(sysbuf);
+  /* Gzip it. */ 
+  sprintf(sysbuf, "gzip %s%s.tar", path, f); 
+  i = system(sysbuf); 
 
-  send_to_char(ch, "Files tar'ed to \"%s%s.tar.gz\"\r\n", path, f);
+  send_to_char(ch, "Files tar'ed to \"%s%s.tar.gz\"\r\n", path, f); 
 }
 
 static int export_info_file(zone_rnum zrnum)
@@ -390,10 +390,10 @@ static int export_info_file(zone_rnum zrnum)
   FILE *info_file;
 
   if (!(info_file = fopen("world/export/qq.info", "w"))) {
-    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: export_info_file : Cannot open file!");
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_info_file : Cannot open file!");
     return FALSE;
   } else if (fprintf(info_file, "tbaMUD Area file.\n") < 0) {
-    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: export_info_file: Cannot write to file!");
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_info_file: Cannot write to file!");
     fclose(info_file);
     return FALSE;
   }
@@ -463,10 +463,10 @@ static int export_save_shops(zone_rnum zrnum)
   struct shop_data *shop;
 
   if (!(shop_file = fopen("world/export/qq.shp", "w"))) {
-    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: export_save_shops : Cannot open shop file!");
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_shops : Cannot open shop file!");
     return FALSE;
   } else if (fprintf(shop_file, "CircleMUD v3.0 Shop File~\n") < 0) {
-    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: export_save_shops: Cannot write to shop file!");
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_shops: Cannot write to shop file!");
     fclose(shop_file);
     return FALSE;
   }
@@ -553,7 +553,7 @@ static int export_save_mobiles(zone_rnum rznum)
   mob_rnum rmob;
 
   if (!(mob_file = fopen("world/export/qq.mob", "w"))) {
-    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: export_save_mobiles : Cannot open file!");
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_mobiles : Cannot open file!");
     return FALSE;
   }
 
@@ -624,7 +624,7 @@ static int export_save_zone(zone_rnum zrnum)
   FILE *zone_file;
 
   if (!(zone_file = fopen("world/export/qq.zon", "w"))) {
-    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: export_save_zone : Cannot open file!");
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_zone : Cannot open file!");
     return FALSE;
   }
 
@@ -735,7 +735,7 @@ static int export_save_zone(zone_rnum zrnum)
       /* Invalid commands are replaced with '*' - Ignore them. */
       continue;
     default:
-      mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: export_save_zone(): Unknown cmd '%c' - NOT saving", ZCMD(zrnum, subcmd).command);
+      mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: export_save_zone(): Unknown cmd '%c' - NOT saving", ZCMD(zrnum, subcmd).command);
       continue;
     }
   }
@@ -759,7 +759,7 @@ static int export_save_objects(zone_rnum zrnum)
   struct extra_descr_data *ex_desc;
 
   if (!(obj_file = fopen("world/export/qq.obj", "w"))) {
-    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: export_save_objects : Cannot open file!");
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_objects : Cannot open file!");
     return FALSE;
   }
   /* Start running through all objects in this zone. */
@@ -829,7 +829,7 @@ static int export_save_objects(zone_rnum zrnum)
 	for (ex_desc = obj->ex_description; ex_desc; ex_desc = ex_desc->next) {
 	  /* Sanity check to prevent nasty protection faults. */
 	  if (!ex_desc->keyword || !ex_desc->description || !*ex_desc->keyword || !*ex_desc->description) {
-	    mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: OLC: export_save_objects: Corrupt ex_desc!");
+	    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: export_save_objects: Corrupt ex_desc!");
 	    continue;
 	  }
 	  strncpy(buf, ex_desc->description, sizeof(buf) - 1);
@@ -865,7 +865,7 @@ static int export_save_rooms(zone_rnum zrnum)
   char buf1[MAX_STRING_LENGTH];
 
   if (!(room_file = fopen("world/export/qq.wld", "w"))) {
-    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: export_save_rooms : Cannot open file!");
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_rooms : Cannot open file!");
     return FALSE;
   }
 
@@ -1003,7 +1003,7 @@ static int export_save_triggers(zone_rnum zrnum)
   char bitBuf[MAX_INPUT_LENGTH];
 
   if (!(trig_file = fopen("world/export/qq.trg", "w"))) {
-    mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: export_save_triggers : Cannot open file!");
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_triggers : Cannot open file!");
     return FALSE;
   }
 

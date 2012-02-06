@@ -34,7 +34,6 @@
 #define LIB_PLROBJS	":plrobjs:"
 #define LIB_PLRVARS	":plrvars:"
 #define LIB_PLRFILES	":plrfiles:"
-#define LIB_MLFILES     ":mudmail:"
 #define LIB_HOUSE	":house:"
 #define SLASH		":"
 #elif defined(CIRCLE_AMIGA) || defined(CIRCLE_UNIX) || defined(CIRCLE_WINDOWS) || defined(CIRCLE_ACORN) || defined(CIRCLE_VMS)
@@ -48,7 +47,6 @@
 #define LIB_PLRVARS	"plrvars/"
 #define LIB_HOUSE	"house/"
 #define LIB_PLRFILES    "plrfiles/"
-#define LIB_MLFILES     "mudmail/"
 #define SLASH		"/"
 #else
 #error "Unknown path components."
@@ -58,7 +56,6 @@
 #define SUF_TEXT	"text"
 #define SUF_MEM	        "mem"
 #define SUF_PLR		"plr"
-#define SUF_MAIL	"ml"
 
 #if defined(CIRCLE_AMIGA)
 #define EXE_FILE "/bin/circle" /* maybe use argv[0] but it's not reliable */
@@ -146,7 +143,6 @@
 #define PINDEX_NODELETE		(1 << 1)	/* protected player	*/
 #define PINDEX_SELFDELETE	(1 << 2)	/* player is selfdeleting*/
 #define PINDEX_NOWIZLIST	(1 << 3)	/* Player shouldn't be on wizlist*/
-#define PINDEX_MORTAL    	(1 << 4)	/* Player is currently mortal (shouldn't be on wizlist) */
 
 #define REAL 0
 #define VIRTUAL 1
@@ -217,7 +213,6 @@ struct player_index_element {
    char	*name;
    long id;
    int level;
-   int admlevel;
    int flags;
    time_t last;
 };
@@ -354,7 +349,7 @@ extern int top_of_helpt;
 extern struct help_index_element *help_table;
 
 /* Mud configurable variables */
-extern int can_mail;
+extern int no_mail;
 extern int mini_mud;
 extern int no_rent_check;
 extern time_t boot_time;

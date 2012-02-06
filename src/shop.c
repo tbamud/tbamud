@@ -514,7 +514,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
       return;
     }
   } else { /*has the player got enough gold? */
-  if (buy_price(obj, shop_nr, keeper, ch) > GET_GOLD(ch) && !ADM_FLAGGED(ch, ADM_MONEY)) {
+  if (buy_price(obj, shop_nr, keeper, ch) > GET_GOLD(ch) && !IS_GOD(ch)) {
     char actbuf[MAX_INPUT_LENGTH];
 
     snprintf(actbuf, sizeof(actbuf), shop_index[shop_nr].missing_cash2, GET_NAME(ch));
@@ -566,7 +566,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
         break;
     }
   } else {
-  while (obj && (GET_GOLD(ch) >= buy_price(obj, shop_nr, keeper, ch) || ADM_FLAGGED(ch, ADM_MONEY))
+  while (obj && (GET_GOLD(ch) >= buy_price(obj, shop_nr, keeper, ch) || IS_GOD(ch))
 	 && IS_CARRYING_N(ch) < CAN_CARRY_N(ch) && bought < buynum
 	 && IS_CARRYING_W(ch) + GET_OBJ_WEIGHT(obj) <= CAN_CARRY_W(ch)) {
     int charged;
@@ -583,7 +583,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
 
     charged = buy_price(obj, shop_nr, keeper, ch);
     goldamt += charged;
-    if (!ADM_FLAGGED(ch, ADM_MONEY))
+    if (!IS_GOD(ch))
       decrease_gold(ch, charged);
 
     last_obj = obj;
@@ -1573,12 +1573,12 @@ bool shopping_identify(char *arg, struct char_data *ch, struct char_data *keeper
   sprinttype(GET_OBJ_TYPE(obj), item_types, buf, sizeof(buf));
   send_to_char(ch, "Type: %s\r\n", buf);
   send_to_char(ch, "Weight: %d, Cost to Sell: %s%d%s, Cost to Buy: %s%d%s\r\n",
-                 GET_OBJ_WEIGHT(obj),
-                 QYEL, sell_price(obj, shop_nr, keeper, ch), QNRM,
-                 QYEL, buy_price(obj, shop_nr, keeper, ch), QNRM);
-
-      sprintbitarray(GET_OBJ_WEAR(obj), wear_bits, TW_ARRAY_MAX, buf);
-      send_to_char(ch, "Can be worn on: %s\r\n", buf);
+		GET_OBJ_WEIGHT(obj),
+		QYEL, sell_price(obj, shop_nr, keeper, ch), QNRM,
+		QYEL, buy_price(obj, shop_nr, keeper, ch), QNRM);
+		
+  sprintbitarray(GET_OBJ_WEAR(obj), wear_bits, TW_ARRAY_MAX, buf);
+  send_to_char(ch, "Can be worn on: %s\r\n", buf);
 
       switch (GET_OBJ_TYPE(obj)) {
         case ITEM_LIGHT:

@@ -215,7 +215,7 @@ bool can_see_map(struct char_data *ch) {
   /* Is the map funcionality disabled? */
   if (CONFIG_MAP == MAP_OFF)
     return FALSE;
-  else if ((CONFIG_MAP == MAP_IMM_ONLY) && (!IS_ADMIN(ch, ADMLVL_IMMORT)))
+  else if ((CONFIG_MAP == MAP_IMM_ONLY) && (GET_LEVEL(ch) < LVL_IMMORT))
     return FALSE;
 
   return TRUE;
@@ -259,7 +259,7 @@ static void MapArea(room_rnum room, struct char_data *ch, int x, int y, int min,
     if ( (pexit = world[room].dir_option[door]) != NULL  &&
          (pexit->to_room > 0 ) && (pexit->to_room != NOWHERE) &&
          (!IS_SET(pexit->exit_info, EX_CLOSED)) &&
-         (!IS_SET(pexit->exit_info, EX_HIDDEN) || ADM_FLAGGED(ch, ADM_SEESECRET)) )
+         (!IS_SET(pexit->exit_info, EX_HIDDEN) || PRF_FLAGGED(ch, PRF_HOLYLIGHT)) )
     { /* A real exit */
 
       /* But is the door here... */
@@ -607,11 +607,9 @@ ACMD(do_map) {
   if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch)) {
     send_to_char(ch, "It is too dark to see the map.\r\n");
     return;
-  } else if (AFF_FLAGGED(ch, AFF_BLIND) && !IS_ADMIN(ch, ADMLVL_IMMORT)) {
+  } else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
     send_to_char(ch, "You can't see the map while blind!\r\n");
     return;
   }
   perform_map(ch, argument, show_worldmap(ch));
 }
-
-

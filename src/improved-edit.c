@@ -446,7 +446,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
       strcat(buf, buf2);
       if ((s = strchr(s, '\n')) != NULL) {
         /* This means that we are at the END of the line, we want out of there,
-         * but we want s to point to the beginning of the line. AFTER the line
+         * but we want s to point to the beginning of the line. AFTER the line 
          * we want edited. */
 	s++;
 	/* Now put the last 'good' half of buffer into storage. */
@@ -468,12 +468,12 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
     break;
   default:
     write_to_output(d, "Invalid option.\r\n");
-    mudlog(BRF, ADMLVL_IMPL, TRUE, "SYSERR: invalid command passed to parse_edit_action");
+    mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: invalid command passed to parse_edit_action");
     return;
   }
 }
 
-/* Re-formats message type formatted char *. (for strings edited with d->str)
+/* Re-formats message type formatted char *. (for strings edited with d->str) 
  * (mostly olc and mail). */
 int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned int maxlen, int low, int high)
 {
@@ -540,7 +540,7 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
         cap_next = TRUE;
       }
 
-      /* This is so that if we stopped on a sentence, we move off the sentence
+      /* This is so that if we stopped on a sentence, we move off the sentence 
        * delimiter. */
       while (strchr(".!?", *flow)) {
         cap_next_next = TRUE;
@@ -549,8 +549,8 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
 
       /* Special case: if we're at the end of the last line, and the last
        * character is a delimiter, the flow++ above will have *flow pointing
-       * to the \r (or \n) character after the delimiter. Thus *flow will be
-       * non-null, and an extra (blank) line might be added erroneously. We
+       * to the \r (or \n) character after the delimiter. Thus *flow will be 
+       * non-null, and an extra (blank) line might be added erroneously. We 
        * fix it by skipping the newline characters in between. - Welcor */
       if (strchr("\n\r", *flow)) {
         *flow = '\0';  /* terminate 'start' string */

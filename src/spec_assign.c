@@ -18,9 +18,8 @@
 #include "ban.h" /* for SPECIAL(gen_board) */
 #include "boards.h"
 #include "mail.h"
-#include "house.h"
 
-SPECIAL(questmaster);
+SPECIAL(questmaster); 
 SPECIAL(shop_keeper);
 
 /* local (file scope only) functions */
@@ -109,6 +108,16 @@ void assign_mobiles(void)
 
   ASSIGNMOB(3105, mayor);
 
+  ASSIGNMOB(110, postmaster);
+  ASSIGNMOB(1201, postmaster);
+  ASSIGNMOB(3010, postmaster);
+  ASSIGNMOB(10412, postmaster);
+  ASSIGNMOB(10719, postmaster);
+  ASSIGNMOB(25710, postmaster);
+  ASSIGNMOB(27164, postmaster);
+  ASSIGNMOB(30128, postmaster);
+  ASSIGNMOB(31510, postmaster);
+
   ASSIGNMOB(1200, receptionist);
   ASSIGNMOB(3005, receptionist);
   ASSIGNMOB(5404, receptionist);
@@ -157,41 +166,40 @@ void assign_rooms(void)
 	world[i].func = dump;
 }
 
-struct spec_func_data {
-   char *name;
-   SPECIAL(*func);
-};
+struct spec_func_data { 
+   char *name; 
+   SPECIAL(*func); 
+}; 
 
-struct spec_func_data spec_func_list[] = {
-  {"Mayor",              mayor },
-  {"Snake",              snake },
-  {"Thief",              thief },
-  {"Magic User",         magic_user },
-  {"Puff",               puff },
-  {"Fido",               fido },
-  {"Janitor",            janitor },
-  {"Cityguard",          cityguard },
-  {"Receptionist",       receptionist },
-  {"Cryogenicist",       cryogenicist},
-  {"Bulletin Board",     gen_board },
-  {"Bank",               bank },
-  {"Pet Shop",           pet_shops },
-  {"Dump",               dump },
-  {"Guildmaster",        guild },
-  {"Guild Guard",        guild_guard },
-  {"Questmaster",        questmaster },
-  {"Shopkeeper",         shop_keeper },
-  {"House-Receptionist", house_receptionist },
-  {"House-Shopkeeper",   house_shopkeeper },
-  {"\n", NULL}
-};
+struct spec_func_data spec_func_list[] = { 
+  {"Mayor",          mayor }, 
+  {"Snake",          snake }, 
+  {"Thief",          thief }, 
+  {"Magic User",     magic_user }, 
+  {"Puff",           puff }, 
+  {"Fido",           fido }, 
+  {"Janitor",        janitor }, 
+  {"Cityguard",      cityguard }, 
+  {"Postmaster",     postmaster }, 
+  {"Receptionist",   receptionist }, 
+  {"Cryogenicist",   cryogenicist}, 
+  {"Bulletin Board", gen_board }, 
+  {"Bank",           bank }, 
+  {"Pet Shop",       pet_shops }, 
+  {"Dump",           dump }, 
+  {"Guildmaster",    guild }, 
+  {"Guild Guard",    guild_guard }, 
+  {"Questmaster",    questmaster }, 
+  {"Shopkeeper",     shop_keeper }, 
+  {"\n", NULL} 
+}; 
 
-const char *get_spec_func_name(SPECIAL(*func))
-{
-  int i;
-  for (i=0; *(spec_func_list[i].name) != '\n'; i++) {
-    if (func == spec_func_list[i].func) return (spec_func_list[i].name);
-  }
-  return NULL;
-}
+const char *get_spec_func_name(SPECIAL(*func)) 
+{ 
+  int i; 
+  for (i=0; *(spec_func_list[i].name) != '\n'; i++) { 
+    if (func == spec_func_list[i].func) return (spec_func_list[i].name); 
+  } 
+  return NULL; 
+} 
 

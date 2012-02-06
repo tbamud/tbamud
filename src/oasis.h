@@ -80,25 +80,23 @@ void send_cannot_edit(struct char_data *ch, zone_vnum zone);
 /* NO and YES are defined in utils.h. Removed from here. */
 
 struct oasis_olc_data {
-  int mode;                         /* how to parse input       */
-  zone_rnum zone_num;               /* current zone             */
-  room_vnum number;                 /* vnum of subject          */
-  int value;                        /* mostly 'has changed' flag*/
-  char *storage;                    /* used for 'tedit'         */
-  struct char_data *mob;            /* used for 'medit'         */
-  struct room_data *room;           /* used for 'redit'         */
-  struct obj_data *obj;             /* used for 'oedit'         */
-  struct zone_data *zone;           /* used for 'zedit'         */
-  struct shop_data *shop;           /* used for 'sedit'         */
-  struct config_data *config;       /* used for 'cedit'         */
-  struct aq_data *quest;            /* used for 'qedit'         */
-  struct extra_descr_data *desc;    /* used in '[r|o|m]edit'    */
-  struct social_messg *action;      /* Aedit uses this one      */
+  int mode;                      /* how to parse input       */
+  zone_rnum zone_num;            /* current zone             */
+  room_vnum number;              /* vnum of subject          */
+  int value;                     /* mostly 'has changed' flag*/
+  char *storage;                 /* used for 'tedit'         */
+  struct char_data *mob;         /* used for 'medit'         */
+  struct room_data *room;        /* used for 'redit'         */
+  struct obj_data *obj;          /* used for 'oedit'         */
+  struct zone_data *zone;        /* used for 'zedit'         */
+  struct shop_data *shop;        /* used for 'sedit'         */
+  struct config_data *config;    /* used for 'cedit'         */
+  struct aq_data *quest;         /* used for 'qedit'         */
+  struct extra_descr_data *desc; /* used in '[r|o|m]edit'    */
+  struct social_messg *action;   /* Aedit uses this one      */
   struct trig_data *trig;
-  struct prefs_data *prefs;         /* used for 'prefedit'      */
-  struct ibt_data *ibt;             /* used for 'ibtedit'       */
-  struct house_control_data *house; /* used for 'hsedit'        */
-  struct mail_edit_data *mail;      /* used for Mudmail editor  */
+  struct prefs_data *prefs;      /* used for 'prefedit'      */
+  struct ibt_data *ibt;          /* used for 'ibtedit'       */
   int script_mode;
   int trigger_position;
   int item_type;
@@ -107,7 +105,7 @@ struct oasis_olc_data {
 };
 
 /* Exported globals. */
-extern const char *nrm, *grn, *cyn, *yel, *gry;
+extern const char *nrm, *grn, *cyn, *yel;
 
 /* Descriptor access macros. */
 #define OLC(d)         ((d)->olc)
@@ -131,8 +129,6 @@ extern const char *nrm, *grn, *cyn, *yel, *gry;
 #define OLC_HELP(d)    (OLC(d)->help)     /**< Hedit structure      */
 #define OLC_PREFS(d)   (OLC(d)->prefs)    /**< Preferences structure */
 #define OLC_IBT(d)     (OLC(d)->ibt)      /**< IBT (idea/bug/typo) structure */
-#define OLC_HOUSE(d)   (OLC(d)->house)    /**< Player-Owned House/Shop structure */
-#define OLC_MAIL(d)    (OLC(d)->mail)     /**< Mudmail structure.   */
 /* Other macros. */
 #define OLC_EXIT(d)		(OLC_ROOM(d)->dir_option[OLC_VAL(d)])
 
@@ -335,54 +331,45 @@ extern const char *nrm, *grn, *cyn, *yel, *gry;
 #define CEDIT_MENU			14
 #define CEDIT_WELC_MESSG		15
 #define CEDIT_START_MESSG		16
-#define CEDIT_MUDMAIL_OPTIONS_MENU	17
 
 /* Numerical responses. */
-#define CEDIT_NUMERICAL_RESPONSE  20
-#define CEDIT_LEVEL_CAN_SHOUT     21
-#define CEDIT_HOLLER_MOVE_COST    22
-#define CEDIT_TUNNEL_SIZE         23
-#define CEDIT_MAX_EXP_GAIN        24
-#define CEDIT_MAX_EXP_LOSS        25
-#define CEDIT_MAX_NPC_CORPSE_TIME 26
-#define CEDIT_MAX_PC_CORPSE_TIME  27
-#define CEDIT_MAX_LEVEL           28
-#define CEDIT_IDLE_VOID           29
-#define CEDIT_IDLE_RENT_TIME      30
-#define CEDIT_IDLE_MAX_LEVEL      31
-#define CEDIT_DTS_ARE_DUMPS       32
-#define CEDIT_LOAD_INTO_INVENTORY 33
-#define CEDIT_TRACK_THROUGH_DOORS 34
-#define CEDIT_NO_MORT_TO_IMMORT   35
-#define CEDIT_MAX_OBJ_SAVE        36
-#define CEDIT_MIN_RENT_COST       37
-#define CEDIT_AUTOSAVE_TIME       38
-#define CEDIT_CRASH_FILE_TIMEOUT  39
-#define CEDIT_RENT_FILE_TIMEOUT   40
-#define CEDIT_MORTAL_START_ROOM   41
-#define CEDIT_IMMORT_START_ROOM   42
-#define CEDIT_FROZEN_START_ROOM   43
-#define CEDIT_DONATION_ROOM_1     44
-#define CEDIT_DONATION_ROOM_2     45
-#define CEDIT_DONATION_ROOM_3     46
-#define CEDIT_DFLT_PORT           47
-#define CEDIT_MAX_PLAYING         48
-#define CEDIT_MAX_FILESIZE        49
-#define CEDIT_MAX_BAD_PWS         50
-#define CEDIT_SITEOK_EVERYONE     51
-#define CEDIT_NAMESERVER_IS_SLOW  52
-#define CEDIT_USE_AUTOWIZ         53
-#define CEDIT_MIN_WIZLIST_LEV     54
-#define CEDIT_MAP_OPTION          55
-#define CEDIT_MAP_SIZE            56
-#define CEDIT_MINIMAP_SIZE        57
-#define CEDIT_STAMP_COST          58
-#define CEDIT_OBJECT_COST         59
-#define CEDIT_DRAFT_TIMEOUT       60
-#define CEDIT_MIN_MAIL_LEVEL      61
-#define CEDIT_MIN_FREE_LEVEL      62
-#define CEDIT_MAIL_ANYWHERE       63
-#define CEDIT_MAIL_ALL_PLAYERS    64
+#define CEDIT_NUMERICAL_RESPONSE	20
+#define CEDIT_LEVEL_CAN_SHOUT		21
+#define CEDIT_HOLLER_MOVE_COST		22
+#define CEDIT_TUNNEL_SIZE		23
+#define CEDIT_MAX_EXP_GAIN		24
+#define CEDIT_MAX_EXP_LOSS		25
+#define CEDIT_MAX_NPC_CORPSE_TIME	26
+#define CEDIT_MAX_PC_CORPSE_TIME	27
+#define CEDIT_IDLE_VOID			28
+#define CEDIT_IDLE_RENT_TIME		29
+#define CEDIT_IDLE_MAX_LEVEL		30
+#define CEDIT_DTS_ARE_DUMPS		31
+#define CEDIT_LOAD_INTO_INVENTORY	32
+#define CEDIT_TRACK_THROUGH_DOORS	33
+#define CEDIT_NO_MORT_TO_IMMORT		34
+#define CEDIT_MAX_OBJ_SAVE		35
+#define CEDIT_MIN_RENT_COST		36
+#define CEDIT_AUTOSAVE_TIME		37
+#define CEDIT_CRASH_FILE_TIMEOUT	38
+#define CEDIT_RENT_FILE_TIMEOUT		39
+#define CEDIT_MORTAL_START_ROOM		40
+#define CEDIT_IMMORT_START_ROOM		41
+#define CEDIT_FROZEN_START_ROOM		42
+#define CEDIT_DONATION_ROOM_1		43
+#define CEDIT_DONATION_ROOM_2		44
+#define CEDIT_DONATION_ROOM_3		45
+#define CEDIT_DFLT_PORT			46
+#define CEDIT_MAX_PLAYING		47
+#define CEDIT_MAX_FILESIZE		48
+#define CEDIT_MAX_BAD_PWS		49
+#define CEDIT_SITEOK_EVERYONE		50
+#define CEDIT_NAMESERVER_IS_SLOW	51
+#define CEDIT_USE_AUTOWIZ		52
+#define CEDIT_MIN_WIZLIST_LEV		53
+#define CEDIT_MAP_OPTION   54
+#define CEDIT_MAP_SIZE     55
+#define CEDIT_MINIMAP_SIZE   56
 
 /* Hedit Submodes of connectedness. */
 #define HEDIT_CONFIRM_SAVESTRING        0
@@ -393,44 +380,12 @@ extern const char *nrm, *grn, *cyn, *yel, *gry;
 #define HEDIT_KEYWORDS                  5
 #define HEDIT_MIN_LEVEL                 6
 
-/*. House editor - Submodes of HSEDIT connectedness. */
-#define HSEDIT_MAIN_MENU                 0
-#define HSEDIT_CONFIRM_SAVESTRING        1
-#define HSEDIT_OWNER_MENU                2
-#define HSEDIT_OWNER_NAME                3
-#define HSEDIT_OWNER_ID                  4
-#define HSEDIT_ROOM                      5
-#define HSEDIT_ATRIUM                    6
-#define HSEDIT_DIR_MENU                  7
-#define HSEDIT_GUEST_MENU                8
-#define HSEDIT_GUEST_ADD                 9
-#define HSEDIT_GUEST_DELETE              10
-#define HSEDIT_GUEST_CLEAR               11
-#define HSEDIT_FLAGS                     12
-#define HSEDIT_BUILD_DATE                13
-#define HSEDIT_PAYMENT                   14
-#define HSEDIT_TYPE                      15
-#define HSEDIT_DELETE                    16
-#define HSEDIT_VALUE_0                   17
-#define HSEDIT_VALUE_1                   18
-#define HSEDIT_VALUE_2                   19
-#define HSEDIT_VALUE_3                   20
-#define HSEDIT_NOVNUM                    21
-#define HSEDIT_BUILDER                   22
-#define HSEDIT_RECEP                     23
-
 int  save_config( IDXTYPE nowhere );
 
 /* Prototypes to keep. */
 void clear_screen(struct descriptor_data *);
 int can_edit_zone(struct char_data *ch, zone_rnum rnum);
 ACMD(do_oasis);
-
-/* public functions from mailedit.c */
-ACMD(do_mail);
-ACMD(do_mailedit);
-void mailedit_string_cleanup(struct descriptor_data *d, int terminator);
-void mailedit_parse(struct descriptor_data *d, char *arg);
 
 /* public functions from medit.c */
 void medit_setup_existing(struct descriptor_data *d, int rnum);
@@ -493,12 +448,6 @@ ACMD(do_tedit);
 
 /* public functions from qedit.c */
 ACMD(do_oasis_qedit);
-
-/* public functions from hsedit.c */
-void hsedit_parse(struct descriptor_data * d, char *arg);
-void hsedit_string_cleanup(struct descriptor_data *d, int terminator);
-ACMD(do_oasis_hsedit);
-
 
 /* public functions from oasis_copy.c */
 int buildwalk(struct char_data *ch, int dir);

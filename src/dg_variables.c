@@ -232,7 +232,6 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
   char *recho[]          = {"mrecho ",      "orecho ",      "wrecho "     };
   /* there is no such thing as mmove, thus the mecho below  */
   char *omove[]          = {"mecho ",      "omove ",      "wmove "     };
-  char *mail[]           = {"mmail ",       "oecho ",       "wecho "      };
 
   *str = '\0';
 
@@ -301,8 +300,6 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         snprintf(str, slen, "%s", recho[type]);
       else if (!str_cmp(var, "move"))
         snprintf(str, slen, "%s", omove[type]);
-      else if (!str_cmp(var, "mail"))
-        snprintf(str, slen, "%s", mail[type]);
       else
         *str = '\0';
     }
@@ -397,7 +394,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         else if (!str_cmp(field, "gold") && IS_HAPPYHOUR)
           snprintf(str, slen, "%d", HAPPY_GOLD);
         else snprintf(str, slen, "%d", HAPPY_TIME);
-		return;
+        return;
       }
       else if (!str_cmp(var, "time")) {
         if (!str_cmp(field, "hour"))
@@ -520,7 +517,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           } else {
             doors = 0;
             room = &world[in_room];
-            for (i = 0; i < DIR_COUNT ; i++)
+            for (i = 0; i < DIR_COUNT; i++)
               if (R_EXIT(room, i))
                 doors++;
 
@@ -555,19 +552,6 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 
       switch (LOWER(*field)) {
         case 'a':
-          if (!str_cmp(field, "admlevel")) {
-            if (subfield && *subfield) {
-              int al;
-              if ((al = get_admin_level_by_string(subfield)) >= ADMLVL_MORTAL) {
-                if (IS_ADMIN(c, al))
-                  strcpy(str, "1");
-                else
-                  strcpy(str, "0");
-              } else
-                strcpy(str, "0");
-            } else
-            snprintf(str, slen, "%d", GET_ADMLEVEL(c));
-		  }
           if (!str_cmp(field, "affect")) {
             if (subfield && *subfield) {
               int spell = find_skill_num(subfield);
@@ -601,7 +585,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "cha")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || IS_ADMIN(c, ADMLVL_GRGOD)) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               GET_CHA(c) += addition;
               if (GET_CHA(c) > max) GET_CHA(c) = max;
               if (GET_CHA(c) < 3) GET_CHA(c) = 3;
@@ -623,7 +607,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "con")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || IS_ADMIN(c, ADMLVL_GRGOD)) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               GET_CON(c) += addition;
               if (GET_CON(c) > max) GET_CON(c) = max;
               if (GET_CON(c) < 3) GET_CON(c) = 3;
@@ -636,17 +620,16 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (subfield && *subfield) {
               int addition = atoi(subfield);
               GET_DAMROLL(c) = MAX(1, GET_DAMROLL(c) + addition);
-            }
-            snprintf(str, slen, "%d", GET_DAMROLL(c));
-          }
-          else if (!str_cmp(field, "dex")) {
-            if (subfield && *subfield) {
-              int addition = atoi(subfield);
-              int max = (IS_NPC(c) || IS_ADMIN(c, ADMLVL_GRGOD)) ? 25 : 18;
-              GET_DEX(c) += addition;
-              if (GET_DEX(c) > max) GET_DEX(c) = max;
-              if (GET_DEX(c) < 3) GET_DEX(c) = 3;
-            }
+			}
+			snprintf(str, slen, "%d", GET_DAMROLL(c));
+			} else if (!str_cmp(field, "dex")) {
+			  if (subfield && *subfield) {
+			    int addition = atoi(subfield);
+                int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
+			    GET_DEX(c) += addition;
+                if (GET_DEX(c) > max) GET_DEX(c) = max;
+                if (GET_DEX(c) < 3) GET_DEX(c) = 3;
+              }
             snprintf(str, slen, "%d", GET_DEX(c));
           }
           else if (!str_cmp(field, "drunk")) {
@@ -739,12 +722,12 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             snprintf(str, slen, "%d", GET_HIT(c));
           }
           else if (!str_cmp(field, "hitroll")) {
-            if (subfield && *subfield) {
-              int addition = atoi(subfield);
-              GET_HITROLL(c) = MAX(1, GET_HITROLL(c) + addition);
-            }
-            snprintf(str, slen, "%d", GET_HITROLL(c));
-          }
+			if (subfield && *subfield) {
+			  int addition = atoi(subfield);
+			  GET_HITROLL(c) = MAX(1, GET_HITROLL(c) + addition);
+			}
+			snprintf(str, slen, "%d", GET_HITROLL(c));
+		  }
           else if (!str_cmp(field, "hunger")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
@@ -766,7 +749,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "int")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || IS_ADMIN(c, ADMLVL_GRGOD)) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               GET_INT(c) += addition;
               if (GET_INT(c) > max) GET_INT(c) = max;
               if (GET_INT(c) < 3) GET_INT(c) = 3;
@@ -820,7 +803,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           if (!str_cmp(field, "level")) {
             if (subfield && *subfield) {
               int lev = atoi(subfield);
-              GET_LEVEL(c) = MIN(MAX(lev, 1), CONFIG_MAX_LEVEL);
+              GET_LEVEL(c) = MIN(MAX(lev, 0), LVL_IMMORT-1);
             } else
               snprintf(str, slen, "%d", GET_LEVEL(c));
 		  }
@@ -1011,7 +994,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "str")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || IS_ADMIN(c, ADMLVL_GRGOD)) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               GET_STR(c) += addition;
               if (GET_STR(c) > max) GET_STR(c) = max;
               if (GET_STR(c) < 3) GET_STR(c) = 3;
@@ -1079,7 +1062,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "wis")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || IS_ADMIN(c, ADMLVL_GRGOD)) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               GET_WIS(c) += addition;
               if (GET_WIS(c) > max) GET_WIS(c) = max;
               if (GET_WIS(c) < 3) GET_WIS(c) = 3;

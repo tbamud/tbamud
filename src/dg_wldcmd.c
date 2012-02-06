@@ -74,8 +74,8 @@ void act_to_room(char *str, room_data *room)
     if (!room->people)
         return;
 
-    /* Since you can't use act(..., TO_ROOM) for an room, send it TO_ROOM and
-     * TO_CHAR for some char in the room. (just dont use $n or you might get
+    /* Since you can't use act(..., TO_ROOM) for an room, send it TO_ROOM and 
+     * TO_CHAR for some char in the room. (just dont use $n or you might get 
      * strange results). */
     act(str, FALSE, room->people, 0, 0, TO_ROOM);
     act(str, FALSE, room->people, 0, 0, TO_CHAR);
@@ -533,20 +533,20 @@ WCMD(do_wdamage) {
   script_damage(ch, dam);
 }
 
-WCMD(do_wat)
+WCMD(do_wat)     
 {
   room_rnum loc = NOWHERE;
   struct char_data *ch;
-  char arg[MAX_INPUT_LENGTH], *command;
+  char arg[MAX_INPUT_LENGTH], *command; 
 
-  command = any_one_arg(argument, arg);
+  command = any_one_arg(argument, arg); 
 
   if (!*arg) {
     wld_log(room, "wat called with no args");
     return;
   }
 
-  skip_spaces(&command);
+  skip_spaces(&command); 
 
   if (!*command) {
     wld_log(room, "wat called without a command");
@@ -555,7 +555,7 @@ WCMD(do_wat)
 
   if (isdigit(*arg)) loc = real_room(atoi(arg));
   else if ((ch = get_char_by_room(room, arg))) loc = IN_ROOM(ch);
-
+  
   if (loc == NOWHERE) {
     wld_log(room, "wat: location not found (%s)", arg);
     return;

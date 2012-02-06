@@ -12,8 +12,6 @@
 #ifndef _STRUCTS_H_
 #define _STRUCTS_H_
 
-#include "protocol.h"
-
 /** Intended use of this macro is to allow external packages to work with a
  * variety of versions without modifications.  For instance, an IS_CORPSE()
  * macro was introduced in pl13.  Any future code add-ons could take into
@@ -66,14 +64,15 @@
 #define WEST           3    /**< The direction west */
 #define UP             4    /**< The direction up */
 #define DOWN           5    /**< The direction down */
-#define NORTHWEST      6    /**< The direction north-west */
-#define NORTHEAST      7    /**< The direction north-east */
-#define SOUTHEAST      8    /**< The direction south-east */
-#define SOUTHWEST      9    /**< The direction south-west */
+#define NORTHWEST      6 /**< The direction north-west */
+#define NORTHEAST      7 /**< The direction north-east */
+#define SOUTHEAST      8 /**< The direction south-east */
+#define SOUTHWEST      9 /**< The direction south-west */
 /** Total number of directions available to move in. BEFORE CHANGING THIS, make
- * sure you change every other direction and movement based item that this will
- * impact. */
-#define NUM_OF_DIRS    10
+* sure you change every other direction and movement based item that this will
+* impact. */
+
+#define NUM_OF_DIRS 10
 
 /* Room flags: used in room_data.room_flags */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
@@ -94,9 +93,8 @@
 #define ROOM_OLC           14   /**< (R) Modifyable/!compress */
 #define ROOM_BFS_MARK      15   /**< (R) breath-first srch mrk */
 #define ROOM_WORLDMAP      16   /**< World-map style maps here */
-#define ROOM_MAIL          17   /**< Mudmail can be sent from here */
 /** The total number of Room Flags */
-#define NUM_ROOM_FLAGS    18
+#define NUM_ROOM_FLAGS    17
 
 /* Zone info: Used in zone_data.zone_flags */
 #define ZONE_CLOSED       0  /**< Zone is closed - players cannot enter */
@@ -105,16 +103,16 @@
 #define ZONE_GRID         3  /**< Zone is 'on the grid', connected, show on 'areas' */
 #define ZONE_NOBUILD      4  /**< Building is not allowed in the zone */
 #define ZONE_NOASTRAL     5  /**< No teleportation magic will work to or from this zone */
-#define ZONE_WORLDMAP     6  /**< Whole zone uses the WORLDMAP by default */
+#define ZONE_WORLDMAP     6 /**< Whole zone uses the WORLDMAP by default */
 /** The total number of Zone Flags */
 #define NUM_ZONE_FLAGS    7
 
 /* Exit info: used in room_data.dir_option.exit_info */
-#define EX_ISDOOR     (1 << 0)   /**< Exit is a door		 */
-#define EX_CLOSED     (1 << 1)   /**< The door is closed	 */
-#define EX_LOCKED     (1 << 2)   /**< The door is locked	 */
-#define EX_PICKPROOF  (1 << 3)   /**< Lock can't be picked	 */
-#define EX_HIDDEN     (1 << 4)   /**< Exit is hidden, secret */
+#define EX_ISDOOR    (1 << 0) /**< Exit is a door */
+#define EX_CLOSED    (1 << 1) /**< The door is closed */
+#define EX_LOCKED    (1 << 2) /**< The door is locked */
+#define EX_PICKPROOF (1 << 3) /**< Lock can't be picked */
+#define EX_HIDDEN    (1 << 4) /**< Exit is hidden, secret */
 
 /* Sector types: used in room_data.sector_type */
 #define SECT_INSIDE          0		/**< Indoors, connected to SECT macro. */
@@ -226,10 +224,9 @@
 #define MOB_NOBASH         16   /**< Mob can't be bashed (e.g. trees) */
 #define MOB_NOBLIND        17   /**< Mob can't be blinded */
 #define MOB_NOKILL         18   /**< Mob can't be attacked */
-#define MOB_MAILMAN	       19   /**< Mob stands in room with MAIL flag */
-#define MOB_NOTDEADYET     20   /**< (R) Mob being extracted */
+#define MOB_NOTDEADYET     19   /**< (R) Mob being extracted */
 
-#define NUM_MOB_FLAGS      20
+#define NUM_MOB_FLAGS      19
 
 /* Preference flags: used by char_data.player_specials.pref */
 #define PRF_BRIEF         0   /**< Room descs won't normally be shown */
@@ -266,9 +263,8 @@
 #define PRF_AUTOMAP      31   /**< Show map at the side of room descs */
 #define PRF_AUTOKEY      32   /**< Automatically unlock locked doors when opening */
 #define PRF_AUTODOOR     33   /**< Use the next available door */
-#define PRF_MORTAL       34   /**< Mortal flag turns off all imm powers */
 /** Total number of available PRF flags */
-#define NUM_PRF_FLAGS    35
+#define NUM_PRF_FLAGS    34
 
 /* Affect bits: used in char_data.char_specials.saved.affected_by */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
@@ -297,38 +293,6 @@
 #define AFF_CHARM          22   /**< Char is charmed */
 /** Total number of affect flags not including the don't use flag. */
 #define NUM_AFF_FLAGS   22
-
-/*
- * ADM flags - define admin privs for chars.  Comments show default admin level.
- */
-#define ADM_NONE           -1	/* Special case used in command list         MORTAL  */
-#define ADM_TELLALL         0	/* Can use 'tell all' to broadcast           GOD     */
-#define ADM_SEEINV          1	/* Sees other chars inventory                IMM     */
-#define ADM_SEESECRET       2	/* Sees secret objects, mobs and doors       IMM     */
-#define ADM_KNOWWEATHER     3	/* Knows details of weather                  GOD     */
-#define ADM_FULLWHERE       4	/* Full output of 'where' command            IMM     */
-#define ADM_MONEY           5	/* Char has a bottomless wallet              GOD     */
-#define ADM_EATANYTHING     6	/* Char can eat anything                     GOD     */
-#define ADM_NOPOISON        7	/* Char can't be poisoned                    IMM     */
-#define ADM_WALKANYWHERE    8	/* Char has unrestricted walking             IMM     */
-#define ADM_NOKEYS          9	/* Char needs no keys for locks              GOD     */
-#define ADM_INSTANTKILL     10	/* "kill" command is instant                 IMPL    */
-#define ADM_NOSTEAL         11	/* Char cannot be stolen from                IMM     */
-#define ADM_TRANSALL        12	/* Can use 'trans all'                       GRGOD   */
-#define ADM_SWITCHMORTAL    13	/* Can 'switch' to a PC's linkless body      IMPL    */
-#define ADM_FORCEMASS       14	/* Can force rooms or all                    GRGOD   */
-#define ADM_ALLHOUSES       15	/* Can enter any house                       GRGOD   */
-#define ADM_NODAMAGE        16	/* Cannot be damaged                         IMM     */
-#define ADM_ALLSHOPS        17	/* Can use all shops                         GOD     */
-#define ADM_CEDIT           18	/* Can use cedit                             IMPL    */
-#define ADM_BUILD           19	/* Can use basic building tools              BUILDER */
-#define ADM_ADVBUILD        20	/* Can use advanced building tools           BUILDER */
-#define ADM_POOF            21	/* Can use goto and set poof messages        IMM     */
-#define ADM_ADMIN           22  /* Can use the admin command to set privs    IMPL    */
-#define ADM_SETQP           23  /* Can 'set' a player's questpoints          GRGOD   */
-#define ADM_ADVIBT          24  /* Advanced IBT (ideas, bugs, typos) control GRGOD   */
-
-#define NUM_ADMFLAGS        25
 
 /* Modes of connectedness: used by descriptor_data.state 		*/
 #define CON_PLAYING       0 /**< Playing - Nominal state 		*/
@@ -362,12 +326,10 @@
 #define CON_QEDIT        28 /**< OLC mode - quest edit */
 #define CON_PREFEDIT     29 /**< OLC mode - preference edit */
 #define CON_IBTEDIT      30 /**< OLC mode - idea/bug/typo edit */
-#define CON_HSEDIT       31 /**< OLC mode - house editor */
-#define CON_MAILEDIT     32 /**< OLC mode - Mudmail editor */
 
 /* OLC States range - used by IS_IN_OLC and IS_PLAYING */
 #define FIRST_OLC_STATE CON_OEDIT     /**< The first CON_ state that is an OLC */
-#define LAST_OLC_STATE  CON_MAILEDIT  /**< The last CON_ state that is an OLC  */
+#define LAST_OLC_STATE  CON_IBTEDIT   /**< The last CON_ state that is an OLC  */
 
 /* Character equipment positions: used as index for char_data.equipment[] */
 /* NOTE: Don't confuse these constants with the ITEM_ bitvectors
@@ -392,7 +354,7 @@
 #define WEAR_WRIST_L   15  /**< Equipment Location Left Wrist */
 #define WEAR_WIELD     16  /**< Equipment Location Weapon */
 #define WEAR_HOLD      17  /**< Equipment Location held in offhand */
-/** Total number of available equipment locations */
+/** Total number of available equipment lcoations */
 #define NUM_WEARS      18
 
 /* object-related defines */
@@ -420,7 +382,7 @@
 #define ITEM_PEN       21		/**< Item is a pen		*/
 #define ITEM_BOAT      22		/**< Item is a boat		*/
 #define ITEM_FOUNTAIN  23		/**< Item is a fountain		*/
-/* Total number of item types. */
+/** Total number of item types.*/
 #define NUM_ITEM_TYPES    24
 
 /* Take/Wear flags: used by obj_data.obj_flags.wear_flags */
@@ -556,8 +518,6 @@
 #define TW_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Wear Locations */
 #define EF_ARRAY_MAX    4  /**< # Bytes in Bit vector - Obj Extra Flags */
 #define ZN_ARRAY_MAX    4  /**< # Bytes in Bit vector - Zone Flags */
-#define AD_ARRAY_MAX    4  /**< # Bytes in Bit vector - Admin Priv Flags */
-#define HS_ARRAY_MAX    4  /**< # Bytes in Bit vector - House Flags */
 
 /* other #defined constants */
 /* **DO**NOT** blindly change the number of levels in your MUD merely by
@@ -565,16 +525,15 @@
  * Other changes throughout the code are required.  See coding.doc for details.
  *
  * LVL_IMPL should always be the HIGHEST possible immortal level, and
- * LVL_IMMORT should always be the LOWEST immortal level.  The only
- * mortal level will always be zero, or LVL_IMMORT - 1. */
-#define ADMLVL_IMPL    4  /**< Level of Implementors */
-#define ADMLVL_GRGOD   3  /**< Level of Greater Gods */
-#define ADMLVL_GOD     2  /**< Level of Gods         */
-#define ADMLVL_IMMORT  1  /**< Level of Immortals    */
-#define ADMLVL_MORTAL  0  /**< Level of Mortals      */
+ * LVL_IMMORT should always be the LOWEST immortal level.  The number of
+ * mortal levels will always be LVL_IMMORT - 1. */
+#define LVL_IMPL    34  /**< Level of Implementors */
+#define LVL_GRGOD   33  /**< Level of Greater Gods */
+#define LVL_GOD     32  /**< Level of Gods */
+#define LVL_IMMORT	31  /**< Level of Immortals */
 
 /** Minimum level to build and to run the saveall command */
-#define ADMLVL_BUILDER	ADMLVL_IMMORT
+#define LVL_BUILDER	LVL_IMMORT
 
 /** Arbitrary number that won't be in a string */
 #define MAGIC_NUMBER	(0x06)
@@ -649,8 +608,8 @@
 #define MAX_HELP_ENTRY        MAX_STRING_LENGTH /**< Max size of help entry */
 #define MAX_COMPLETED_QUESTS  1024   /**< Maximum number of completed quests allowed */
 
-#define MAX_GOLD        2140000000   /**< Maximum possible on hand gold (2.14 Billion) */
-#define MAX_BANK        2140000000   /**< Maximum possible in bank gold (2.14 Billion) */
+#define MAX_GOLD 2140000000 /**< Maximum possible on hand gold (2.14 Billion) */
+#define MAX_BANK 2140000000 /**< Maximum possible in bank gold (2.14 Billion) */
 
 /** Define the largest set of commands for a trigger.
  * 16k should be plenty and then some. */
@@ -763,7 +722,6 @@ struct obj_data
   struct obj_data *next_content;  /**< For 'contains' lists   */
   struct obj_data *next;          /**< For the object list */
   struct char_data *sitting_here; /**< For furniture, who is sitting in it */
-  struct mail_data *in_mail;      /**< Which mail object is attached to    */
 };
 
 /** Instance info for an object that gets saved to disk.
@@ -892,7 +850,7 @@ struct char_player_data
   char *title;                   /**< PC / NPC title */
   byte sex;                      /**< PC / NPC sex */
   byte chclass;                  /**< PC / NPC class */
-  ubyte level;                   /**< PC / NPC level */
+  byte level;                    /**< PC / NPC level */
   struct time_data time;         /**< PC AGE in days */
   ubyte weight;                  /**< PC / NPC weight */
   ubyte height;                  /**< PC / NPC height */
@@ -967,9 +925,7 @@ struct char_special_data
 /** Data only needed by PCs, and needs to be saved to disk. */
 struct player_special_data_saved
 {
-  byte adm_level;             /**< PC Admin level  */
-  int admflags[AD_ARRAY_MAX]; /**< Admin Priv flags */
-  byte skills[MAX_SKILLS+1];  /**< Character skills. */
+  byte skills[MAX_SKILLS+1]; /**< Character skills. */
   int wimp_level;         /**< Below this # of hit points, flee! */
   byte freeze_level;      /**< Level of god who froze char, if any */
   sh_int invis_level;     /**< level of invisibility */
@@ -1002,11 +958,11 @@ struct player_special_data
   char *poofin;  /**< Description displayed to room on arrival of a god. */
   char *poofout; /**< Description displayed to room at a god's exit. */
   struct alias_data *aliases; /**< Command aliases			*/
-  long last_tell;      /**< idnum of PC who last told this PC, used to reply */
-  void *last_olc_targ; /**< ? Currently Unused ? */
-  int last_olc_mode;   /**< ? Currently Unused ? */
-  char *host;          /**< Resolved hostname, or ip, for player. */
-  int buildwalk_sector;/**< Default sector type for buildwalk */
+  long last_tell;        /**< idnum of PC who last told this PC, used to reply */
+  void *last_olc_targ;   /**< ? Currently Unused ? */
+  int last_olc_mode;     /**< ? Currently Unused ? */
+  char *host;            /**< Resolved hostname, or ip, for player. */
+  int buildwalk_sector;  /**< Default sector type for buildwalk */
 };
 
 /** Special data used by NPCs, not PCs */
@@ -1017,14 +973,12 @@ struct mob_special_data
   byte default_pos;   /**< Default position (standing, sleeping, etc.) */
   byte damnodice;     /**< The number of dice to roll for damage */
   byte damsizedice;   /**< The size of each die rolled for damage. */
-
-  struct mail_edit_data *ml_list;  /**< Mail info for sending from mobs by script */
 };
 
 /** An affect structure. */
 struct affected_type
 {
-  sh_int spell;     /**< The spell that caused this      */
+  sh_int spell; /**< The spell that caused this */
   sh_int duration; /**< For how long its effects will last      */
   sbyte modifier;  /**< Added/subtracted to/from apropriate ability     */
   byte location;   /**< Tells which ability to change(APPLY_XXX). */
@@ -1131,7 +1085,6 @@ struct descriptor_data
   struct descriptor_data *snoop_by; /**< And who is snooping this char	*/
   struct descriptor_data *next;     /**< link to next descriptor		*/
   struct oasis_olc_data *olc;       /**< OLC info */
-  protocol_t *pProtocol;
 };
 
 /* other miscellaneous structures */
@@ -1324,7 +1277,6 @@ struct game_data
   int max_exp_loss; /**< Maximum experience losable per death.*/
   int max_npc_corpse_time; /**< Num tics before NPC corpses decompose*/
   int max_pc_corpse_time; /**< Num tics before PC corpse decomposes.*/
-  int max_mortal_level;   /**< Maximum level that a mortal can obtain.*/
   int idle_void; /**< Num tics before PC sent to void(idle)*/
   int idle_rent_time; /**< Num tics before PC is autorented.   */
   int idle_max_level; /**< Level of players immune to idle.     */
@@ -1333,7 +1285,7 @@ struct game_data
   int track_through_doors; /**< Track through doors while closed?    */
   int no_mort_to_immort; /**< Prevent mortals leveling to imms?    */
   int disp_closed_doors; /**< Display closed doors in autoexit?    */
-  int diagonal_dirs;      /**< Are there 6 or 10 directions?        */
+  int diagonal_dirs; /**< Are there 6 or 10 directions? */
   int map_option;         /**< MAP_ON, MAP_OFF or MAP_IMM_ONLY      */
   int map_size;           /**< Default size for map command         */
   int minimap_size;       /**< Default size for mini-map (automap)  */
@@ -1396,22 +1348,6 @@ struct autowiz_data
   int min_wizlist_lev; /**< Minimun level to show on wizlist.  */
 };
 
-/** The Mail System options. */
-struct mail_config {
-  int mail_allowed;           /* Is mudmail allowed? (to disable whole mudmail system) Yes         */
-  int objects_allowed;        /* object mailing allowed                                Yes         */
-  int gold_allowed;           /* gold mailing allowed?                                 Yes         */
-  int stamp_cost;             /* Stamp Cost                                            150 coins   */
-  int object_cost;            /* Cost per object for each attachment                   30 coins    */
-  int min_level;              /* Min level that can mail                               1           */
-  int min_free_level;         /* Min level for free mail                               Immortal    */
-  int allow_drafts;           /* Can players save draft mudmails?                      Yes         */
-  int draft_timeout;          /* No. of days a draft mail can stay in the outbox       28 days     */
-  int safe_mailing;           /* Can players be attacked or stolen from while mailing? Yes         */
-  int min_mail_anywhere;      /* Min level that can send mail from anywhere?           Immortal    */
-  int min_send_to_all;        /* Min level that can send mail to all players?          Implementor */
-};
-
 /**
  Main Game Configuration Structure.
  Global variables that can be changed within the game are held within this
@@ -1435,8 +1371,6 @@ struct config_data
   struct game_operation operation;
   /** Autowiz specific settings, like turning it on and minimum level */
   struct autowiz_data autowiz;
-  /** Mudmail configuration */
-  struct mail_config mail;
 };
 
 #ifdef MEMORY_DEBUG

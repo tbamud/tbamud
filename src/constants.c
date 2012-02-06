@@ -40,7 +40,7 @@ const char *dirs[] =
   "west",
   "up",
   "down",
-  "northwest",  /* Diagonals only used if CONFIG_DIAGONAL_DIRS is set */
+  "northwest", /* Diagonals only used if CONFIG_DIAGONAL_DIRS is set */
   "northeast",
   "southeast",
   "southwest",
@@ -59,82 +59,6 @@ const char *autoexits[] =
   "ne",
   "se",
   "sw",
-  "\n"
-};
-
-/** Administrative level names
- * @pre Must be in the same order as the ADMLVL_ defines.
- * Must end array with a single newline. */
-const char *admin_level_names[ADMLVL_IMPL + 2] = {
-  "Mortal",           // ADMLVL_NONE
-  "Immortal",         // ADMLVL_IMMORTAL
-  "God",              // ADMLVL_GOD
-  "Great God",        // ADMLVL_GRGOD
-  "Implementor",      // ADMLVL_IMPL
-  "\n",
-};
-
-/** Administrative flag short names
- * @pre Must be in the same order as the ADMIN_ defines.
- * Must end array with a single newline. */
-const char *admin_flag_names[] = {
-  "TellAll",
-  "SeeInventory",
-  "SeeSecret",
-  "KnowWeather",
-  "FullWhere",
-  "Money",
-  "EatAnything",
-  "NoPoison",
-  "WalkAnywhere",
-  "NoKeys",
-  "InstantKill",
-  "NoSteal",
-  "TransAll",
-  "SwitchMortal",
-  "ForceMass",
-  "AllHouses",
-  "NoDamage",
-  "AllShops",
-  "CEDIT",
-  "Build",
-  "AdvBuild",
-  "Poof",
-  "Admin",
-  "SetQP",
-  "AdvancedIBT",
-  "\n"
-};
-
-/** Administrative flag descriptions
- * @pre Must be in the same order as the ADMIN_ defines.
- * Must end array with a single newline. */
-const char *admin_flags[] = {
-  "You may use 'page all'",
-  "You can see other players inventories",
-  "You may see secret doors",
-  "You may know weather data",
-  "You know fully where things are",
-  "You do not require money",
-  "You can eat anything",
-  "You cannot be poisoned",
-  "You can walk anywhere",
-  "You do not require keys",
-  "You have the touch of death",
-  "You cannot be stolen from",
-  "You may use 'trans all'",
-  "You can use 'switch'",
-  "You may use 'force all'",
-  "You may enter any house",
-  "You do not take damage",
-  "You may use any shop",
-  "You may use cedit",
-  "You may use basic OLC tools",
-  "You may use advanced OLC tools",
-  "You may use goto and set poofs",
-  "You may set admin privs",
-  "You can give and remove qp",
-  "You can use advanced IBT commands",
   "\n"
 };
 
@@ -159,7 +83,6 @@ const char *room_bits[] = {
   "OLC",
   "*",				/* The BFS Mark. */
   "WORLDMAP",
-  "MAIL",
   "\n"
 };
 
@@ -286,7 +209,6 @@ const char *action_bits[] = {
   "NO_BASH",
   "NO_BLIND",
   "NO_KILL",
-  "MAILMAN",
   "DEAD",    /* You should never see this. */
   "\n"
 };
@@ -569,31 +491,6 @@ const char *container_bits[] = {
   "CLOSED",
   "LOCKED",
   "\n",
-};
-
-/** Flag descriptions for HOUSE_ flags
- * @pre Must be in the same order as the defines.
- * Must end array with a single newline. */
-const char *house_bits[] = {
-"NO_GUEST",
-"FREE",
-"NO_IMM",
-"IMP_ONLY",
-"RENTFREE",
-"SAVE_!RENT",
-"NO_SAVE",
-"NO_SPEC",
-"\n"
-};
-
-/** House mode types for HOUSE_ mode values
- * @pre Must be in the same order as the defines.
- * Must end array with a single newline. */
-const char *house_types[] = {
-"PLAYER_OWNED",
-"IMM_OWNED",
-"PLAYER_SHOP",
-"\n"
 };
 
 /** Describes the liquid description.

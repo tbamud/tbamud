@@ -8,7 +8,7 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
-/* For more examples:
+/* For more examples: 
  * ftp://ftp.circlemud.org/pub/CircleMUD/contrib/snippets/specials */
 
 #include "conf.h"
@@ -299,7 +299,7 @@ static void npc_steal(struct char_data *ch, struct char_data *victim)
 
   if (IS_NPC(victim))
     return;
-  if (ADM_FLAGGED(victim, ADM_NOSTEAL))
+  if (GET_LEVEL(victim) >= LVL_IMMORT)
     return;
   if (!CAN_SEE(ch, victim))
     return;
@@ -312,7 +312,7 @@ static void npc_steal(struct char_data *ch, struct char_data *victim)
     gold = (GET_GOLD(victim) * rand_number(1, 10)) / 100;
     if (gold > 0) {
       increase_gold(ch, gold);
-      decrease_gold(victim, gold);
+	  decrease_gold(victim, gold);
     }
   }
 }
@@ -340,7 +340,7 @@ SPECIAL(thief)
     return (FALSE);
 
   for (cons = world[IN_ROOM(ch)].people; cons; cons = cons->next_in_room)
-    if (!ADM_FLAGGED(cons, ADM_NOSTEAL) && !rand_number(0, 4)) {
+    if (!IS_NPC(cons) && GET_LEVEL(cons) < LVL_IMMORT && !rand_number(0, 4)) {
       npc_steal(ch, cons);
       return (TRUE);
     }
@@ -419,44 +419,46 @@ SPECIAL(magic_user)
 }
 
 /* Special procedures for mobiles. */
-SPECIAL(guild_guard)
-{
-  int i, direction;
-  struct char_data *guard = (struct char_data *)me;
-  const char *buf = "The guard humiliates you, and blocks your way.\r\n";
-  const char *buf2 = "The guard humiliates $n, and blocks $s way.";
+SPECIAL(guild_guard) 
+{ 
+  int i, direction; 
+  struct char_data *guard = (struct char_data *)me; 
+  const char *buf = "The guard humiliates you, and blocks your way.\r\n"; 
+  const char *buf2 = "The guard humiliates $n, and blocks $s way."; 
 
-  if (!IS_MOVE(cmd) || AFF_FLAGGED(guard, AFF_BLIND))
-    return (FALSE);
+  if (!IS_MOVE(cmd) || AFF_FLAGGED(guard, AFF_BLIND)) 
+    return (FALSE); 
+     
+  if (GET_LEVEL(ch) >= LVL_IMMORT) 
+    return (FALSE); 
+   
+  /* find out what direction they are trying to go */ 
+  for (direction = 0; direction < NUM_OF_DIRS; direction++)
+    if (!strcmp(cmd_info[cmd].command, dirs[direction]))
+      for (direction = 0; direction < DIR_COUNT; direction++)
+		if (!strcmp(cmd_info[cmd].command, dirs[direction]) ||
+			!strcmp(cmd_info[cmd].command, autoexits[direction]))
+	      break; 
 
-  if (ADM_FLAGGED(ch, ADM_WALKANYWHERE))
-    return (FALSE);
+  for (i = 0; guild_info[i].guild_room != NOWHERE; i++) { 
+    /* Wrong guild. */ 
+    if (GET_ROOM_VNUM(IN_ROOM(ch)) != guild_info[i].guild_room) 
+      continue; 
 
-  /* find out what direction they are trying to go */
-  for (direction = 0; direction < DIR_COUNT; direction++)
-    if (!strcmp(cmd_info[cmd].command, dirs[direction]) ||
-        !strcmp(cmd_info[cmd].command, autoexits[direction]))
-      break;
+    /* Wrong direction. */ 
+    if (direction != guild_info[i].direction) 
+      continue; 
 
-  for (i = 0; guild_info[i].guild_room != NOWHERE; i++) {
-    /* Wrong guild. */
-    if (GET_ROOM_VNUM(IN_ROOM(ch)) != guild_info[i].guild_room)
-      continue;
-
-    /* Wrong direction. */
-    if (direction != guild_info[i].direction)
-      continue;
-
-    /* Allow the people of the guild through. */
-    if (!IS_NPC(ch) && GET_CLASS(ch) == guild_info[i].pc_class)
-      continue;
-
-    send_to_char(ch, "%s", buf);
-    act(buf2, FALSE, ch, 0, 0, TO_ROOM);
-    return (TRUE);
-  }
-  return (FALSE);
-}
+    /* Allow the people of the guild through. */ 
+    if (!IS_NPC(ch) && GET_CLASS(ch) == guild_info[i].pc_class) 
+      continue; 
+     
+    send_to_char(ch, "%s", buf); 
+    act(buf2, FALSE, ch, 0, 0, TO_ROOM); 
+    return (TRUE); 
+  } 
+  return (FALSE); 
+} 
 
 SPECIAL(puff)
 {
@@ -543,15 +545,13 @@ SPECIAL(cityguard)
       continue;
     if (!IS_NPC(tch) && PLR_FLAGGED(tch, PLR_KILLER)) {
       act("$n screams 'HEY!!!  You're one of those PLAYER KILLERS!!!!!!'", FALSE, ch, 0, 0, TO_ROOM);
-      if (!ADM_FLAGGED(tch, ADM_NODAMAGE))
-        hit(ch, tch, TYPE_UNDEFINED);
+      hit(ch, tch, TYPE_UNDEFINED);
       return (TRUE);
     }
 
     if (!IS_NPC(tch) && PLR_FLAGGED(tch, PLR_THIEF)) {
       act("$n screams 'HEY!!!  You're one of those PLAYER THIEVES!!!!!!'", FALSE, ch, 0, 0, TO_ROOM);
-      if (!ADM_FLAGGED(tch, ADM_NODAMAGE))
-        hit(ch, tch, TYPE_UNDEFINED);
+      hit(ch, tch, TYPE_UNDEFINED);
       return (TRUE);
     }
 
@@ -675,7 +675,7 @@ SPECIAL(bank)
       return (TRUE);
     }
     decrease_gold(ch, amount);
-    increase_bank(ch, amount);
+	increase_bank(ch, amount);
     send_to_char(ch, "You deposit %d coins.\r\n", amount);
     act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
     return (TRUE);
@@ -689,7 +689,7 @@ SPECIAL(bank)
       return (TRUE);
     }
     increase_gold(ch, amount);
-    decrease_bank(ch, amount);
+	decrease_bank(ch, amount);
     send_to_char(ch, "You withdraw %d coins.\r\n", amount);
     act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
     return (TRUE);

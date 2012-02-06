@@ -94,7 +94,7 @@ ACMD(do_oasis_redit)
 
   /* Give the descriptor an OLC structure. */
   if (d->olc) {
-    mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: do_oasis_redit: Player already had olc structure.");
+    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis_redit: Player already had olc structure.");
     free(d->olc);
   }
 
@@ -121,7 +121,7 @@ ACMD(do_oasis_redit)
 
   if (save) {
     send_to_char(ch, "Saving all rooms in zone %d.\r\n", zone_table[OLC_ZNUM(d)].number);
-    mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves room info for zone %d.", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves room info for zone %d.", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
 
     /* Save the rooms. */
     save_rooms(OLC_ZNUM(d));
@@ -144,7 +144,7 @@ ACMD(do_oasis_redit)
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-  mudlog(CMP, ADMLVL_IMMORT, TRUE, "OLC: %s starts editing zone %d allowed zone %d",
+  mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s starts editing zone %d allowed zone %d",
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
@@ -170,12 +170,12 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   CREATE(room, struct room_data, 1);
 
   *room = world[real_num];
-
-  /* Make new room people list be empty.                          */
-  /* Fixes bug where copying a room from within that room creates */
-  /* an infinite loop when you next act() in the new room (goto?) */
-  /* and you are your next_in_room          -- anderyu (10-05-22) */
-  room->people = NULL;
+  
+  /* Make new room people list be empty.                          */ 
+  /* Fixes bug where copying a room from within that room creates */ 
+  /* an infinite loop when you next act() in the new room (goto?) */ 
+  /* and you are your next_in_room          -- anderyu (10-05-22) */ 
+  room->people = NULL; 
 
   /* Allocate space for all strings. */
   room->name = str_udup(world[real_num].name);
@@ -232,7 +232,7 @@ void redit_save_internally(struct descriptor_data *d)
   if (OLC_ROOM(d)->number == NOWHERE)
     new_room = TRUE;
 
-  OLC_ROOM(d)->number = OLC_NUM(d);
+  OLC_ROOM(d)->number = OLC_NUM(d); 
   /* FIXME: Why is this not set elsewhere? */
   OLC_ROOM(d)->zone = OLC_ZNUM(d);
 
@@ -334,6 +334,7 @@ static void redit_disp_exit_menu(struct descriptor_data *d)
     CREATE(OLC_EXIT(d), struct room_direction_data, 1);
     OLC_EXIT(d)->to_room = NOWHERE;
   }
+  
   /* Weird door handling! */
   if (IS_SET(OLC_EXIT(d)->exit_info, EX_ISDOOR)) {
     if (IS_SET(OLC_EXIT(d)->exit_info, EX_PICKPROOF) && IS_SET(OLC_EXIT(d)->exit_info, EX_HIDDEN))
@@ -374,8 +375,8 @@ static void redit_disp_exit_flag_menu(struct descriptor_data *d)
   get_char_colors(d->character);
   write_to_output(d, "%s0%s) No door\r\n"
 	  "%s1%s) Closeable door\r\n"
-	  "%s2%s) Pickproof Door\r\n"
-	  "%s3%s) Hidden Door\r\n"
+      "%s2%s) Pickproof Door\r\n"
+      "%s3%s) Hidden Door\r\n"
       "%s4%s) Hidden, Pickproof Door\r\n"
       "Enter choice : ", grn, nrm, grn, nrm, grn, nrm, grn, nrm, grn, nrm);
 }
@@ -418,90 +419,90 @@ static void redit_disp_menu(struct descriptor_data *d)
   sprintbitarray(room->room_flags, room_bits, RF_ARRAY_MAX, buf1);
   sprinttype(room->sector_type, sector_types, buf2, sizeof(buf2));
   write_to_output(d,
-	  "-- Room number : [%s%d%s]         Room zone: [%s%d%s]\r\n"
-	  "%s1%s) Name        : %s%s\r\n"
-	  "%s2%s) Description :\r\n%s%s"
-	  "%s3%s) Room flags  : %s%s\r\n"
-	  "%s4%s) Sector type : %s%s\r\n",
-	  cyn, OLC_NUM(d), nrm,
-	  cyn, zone_table[OLC_ZNUM(d)].number, nrm,
-	  grn, nrm, yel, room->name,
-	  grn, nrm, yel, room->description,
-	  grn, nrm, cyn, buf1,
-	  grn, nrm, cyn, buf2);
+      "-- Room number : [%s%d%s] Room zone: [%s%d%s]\r\n"
+      "%s1%s) Name        : %s%s\r\n"
+      "%s2%s) Description :\r\n%s%s"
+      "%s3%s) Room flags  : %s%s\r\n"
+      "%s4%s) Sector type : %s%s\r\n",
+      cyn, OLC_NUM(d), nrm,
+      cyn, zone_table[OLC_ZNUM(d)].number, nrm,
+      grn, nrm, yel, room->name,
+      grn, nrm, yel, room->description,
+      grn, nrm, cyn, buf1,
+      grn, nrm, cyn, buf2);
 
   if (!CONFIG_DIAGONAL_DIRS)
   {
     write_to_output(d,
-	  "%s5%s) Exit north  : %s%d\r\n"
-	  "%s6%s) Exit east   : %s%d\r\n"
-	  "%s7%s) Exit south  : %s%d\r\n"
-	  "%s8%s) Exit west   : %s%d\r\n",
-	  grn, nrm, cyn,
-	  room->dir_option[NORTH] && room->dir_option[NORTH]->to_room != NOWHERE ?
-	  world[room->dir_option[NORTH]->to_room].number : -1,
-	  grn, nrm, cyn,
-	  room->dir_option[EAST] && room->dir_option[EAST]->to_room != NOWHERE ?
-	  world[room->dir_option[EAST]->to_room].number : -1,
-	  grn, nrm, cyn,
-	  room->dir_option[SOUTH] && room->dir_option[SOUTH]->to_room != NOWHERE ?
-	  world[room->dir_option[SOUTH]->to_room].number : -1,
-	  grn, nrm, cyn,
-	  room->dir_option[WEST] && room->dir_option[WEST]->to_room != NOWHERE ?
-	  world[room->dir_option[WEST]->to_room].number : -1);
+      "%s5%s) Exit north  : %s%d\r\n"
+      "%s6%s) Exit east   : %s%d\r\n"
+      "%s7%s) Exit south  : %s%d\r\n"
+      "%s8%s) Exit west   : %s%d\r\n",
+      grn, nrm, cyn,
+      room->dir_option[NORTH] && room->dir_option[NORTH]->to_room != NOWHERE ?
+      world[room->dir_option[NORTH]->to_room].number : -1,
+      grn, nrm, cyn,
+      room->dir_option[EAST] && room->dir_option[EAST]->to_room != NOWHERE ?
+      world[room->dir_option[EAST]->to_room].number : -1,
+      grn, nrm, cyn,
+      room->dir_option[SOUTH] && room->dir_option[SOUTH]->to_room != NOWHERE ?
+      world[room->dir_option[SOUTH]->to_room].number : -1,
+      grn, nrm, cyn,
+      room->dir_option[WEST] && room->dir_option[WEST]->to_room != NOWHERE ?
+      world[room->dir_option[WEST]->to_room].number : -1);
   } else {
     write_to_output(d,
-      "%s5%s) Exit north  : %s%d%s,  %sB%s) Exit northwest : %s%d\r\n"
-      "%s6%s) Exit east   : %s%d%s,  %sC%s) Exit northeast : %s%d\r\n"
-      "%s7%s) Exit south  : %s%d%s,  %sD%s) Exit southeast : %s%d\r\n"
-      "%s8%s) Exit west   : %s%d%s,  %sE%s) Exit southwest : %s%d\r\n",
-	  grn, nrm, cyn,
-	  room->dir_option[NORTH] && room->dir_option[NORTH]->to_room != NOWHERE ?
-	  world[room->dir_option[NORTH]->to_room].number : -1, nrm,
-	  grn, nrm, cyn,
-	  room->dir_option[NORTHWEST] && room->dir_option[NORTHWEST]->to_room != NOWHERE ?
-	  world[room->dir_option[NORTHWEST]->to_room].number : -1,
-	  grn, nrm, cyn,
-	  room->dir_option[EAST] && room->dir_option[EAST]->to_room != NOWHERE ?
-	  world[room->dir_option[EAST]->to_room].number : -1, nrm,
-	  grn, nrm, cyn,
-	  room->dir_option[NORTHEAST] && room->dir_option[NORTHEAST]->to_room != NOWHERE ?
-	  world[room->dir_option[NORTHEAST]->to_room].number : -1,
-	  grn, nrm, cyn,
-	  room->dir_option[SOUTH] && room->dir_option[SOUTH]->to_room != NOWHERE ?
-	  world[room->dir_option[SOUTH]->to_room].number : -1, nrm,
-	  grn, nrm, cyn,
-	  room->dir_option[SOUTHEAST] && room->dir_option[SOUTHEAST]->to_room != NOWHERE ?
-	  world[room->dir_option[SOUTHEAST]->to_room].number : -1,
-	  grn, nrm, cyn,
-	  room->dir_option[WEST] && room->dir_option[WEST]->to_room != NOWHERE ?
-	  world[room->dir_option[WEST]->to_room].number : -1, nrm,
-	  grn, nrm, cyn,
-	  room->dir_option[SOUTHWEST] && room->dir_option[SOUTHWEST]->to_room != NOWHERE ?
-	  world[room->dir_option[SOUTHWEST]->to_room].number : -1
-	  );
+      "%s5%s) Exit north  : %s%-6d%s,  %sB%s) Exit northwest : %s%d\r\n"
+      "%s6%s) Exit east   : %s%-6d%s,  %sC%s) Exit northeast : %s%d\r\n"
+      "%s7%s) Exit south  : %s%-6d%s,  %sD%s) Exit southeast : %s%d\r\n"
+      "%s8%s) Exit west   : %s%-6d%s,  %sE%s) Exit southwest : %s%d\r\n",
+      grn, nrm, cyn,
+      room->dir_option[NORTH] && room->dir_option[NORTH]->to_room != NOWHERE ?
+      world[room->dir_option[NORTH]->to_room].number : -1, nrm,
+      grn, nrm, cyn,
+      room->dir_option[NORTHWEST] && room->dir_option[NORTHWEST]->to_room != NOWHERE ?
+      world[room->dir_option[NORTHWEST]->to_room].number : -1,
+      grn, nrm, cyn,
+      room->dir_option[EAST] && room->dir_option[EAST]->to_room != NOWHERE ?
+      world[room->dir_option[EAST]->to_room].number : -1, nrm,
+      grn, nrm, cyn,
+      room->dir_option[NORTHEAST] && room->dir_option[NORTHEAST]->to_room != NOWHERE ?
+      world[room->dir_option[NORTHEAST]->to_room].number : -1,
+      grn, nrm, cyn,
+      room->dir_option[SOUTH] && room->dir_option[SOUTH]->to_room != NOWHERE ?
+      world[room->dir_option[SOUTH]->to_room].number : -1, nrm,
+      grn, nrm, cyn,
+      room->dir_option[SOUTHEAST] && room->dir_option[SOUTHEAST]->to_room != NOWHERE ?
+      world[room->dir_option[SOUTHEAST]->to_room].number : -1,
+      grn, nrm, cyn,
+      room->dir_option[WEST] && room->dir_option[WEST]->to_room != NOWHERE ?
+      world[room->dir_option[WEST]->to_room].number : -1, nrm,
+      grn, nrm, cyn,
+      room->dir_option[SOUTHWEST] && room->dir_option[SOUTHWEST]->to_room != NOWHERE ?
+      world[room->dir_option[SOUTHWEST]->to_room].number : -1
+      );
   }
   write_to_output(d,
-	  "%s9%s) Exit up     : %s%d\r\n"
-	  "%sA%s) Exit down   : %s%d\r\n"
-	  "%sF%s) Extra descriptions menu\r\n"
-	  "%sS%s) Script      : %s%s\r\n"
-          "%sW%s) Copy Room\r\n"
-	  "%sX%s) Delete Room\r\n"
-	  "%sQ%s) Quit\r\n"
-	  "Enter choice : ",
-	  grn, nrm, cyn,
-	  room->dir_option[UP] && room->dir_option[UP]->to_room != NOWHERE ?
-	  world[room->dir_option[UP]->to_room].number : -1,
-	  grn, nrm, cyn,
-	  room->dir_option[DOWN] && room->dir_option[DOWN]->to_room != NOWHERE ?
-	  world[room->dir_option[DOWN]->to_room].number : -1,
-	  grn, nrm,
+      "%s9%s) Exit up     : %s%d\r\n"
+      "%sA%s) Exit down   : %s%d\r\n"
+      "%sF%s) Extra descriptions menu\r\n"
+      "%sS%s) Script      : %s%s\r\n"
+       "%sW%s) Copy Room\r\n"
+      "%sX%s) Delete Room\r\n"
+      "%sQ%s) Quit\r\n"
+      "Enter choice : ",
+      grn, nrm, cyn,
+      room->dir_option[UP] && room->dir_option[UP]->to_room != NOWHERE ?
+      world[room->dir_option[UP]->to_room].number : -1,
+      grn, nrm, cyn,
+      room->dir_option[DOWN] && room->dir_option[DOWN]->to_room != NOWHERE ?
+      world[room->dir_option[DOWN]->to_room].number : -1,
+      grn, nrm,
           grn, nrm, cyn, OLC_SCRIPT(d) ? "Set." : "Not Set.",
           grn, nrm,
-	  grn, nrm,
-	  grn, nrm
-	  );
+      grn, nrm,
+      grn, nrm
+      );
 
   OLC_MODE(d) = REDIT_MAIN_MENU;
 }
@@ -518,7 +519,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
     case 'y':
     case 'Y':
       redit_save_internally(d);
-      mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits room %d.", GET_NAME(d->character), OLC_NUM(d));
+      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits room %d.", GET_NAME(d->character), OLC_NUM(d));
       if (CONFIG_OLC_SAVE) {
         redit_save_to_disk(real_zone_by_thing(OLC_NUM(d)));
         write_to_output(d, "Room saved to disk.\r\n");
@@ -529,8 +530,8 @@ void redit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'n':
     case 'N':
-      /* If not saving, we must free the script_proto list. We do so by
-       * assigning it to the edited room and letting free_room in
+      /* If not saving, we must free the script_proto list. We do so by 
+       * assigning it to the edited room and letting free_room in 
        * cleanup_olc handle it. */
       OLC_ROOM(d)->proto_script = OLC_SCRIPT(d);
       cleanup_olc(d, CLEANUP_ALL);
@@ -601,7 +602,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'b':
     case 'B':
-      if (CONFIG_DIAGONAL_DIRS) {
+      if (!CONFIG_DIAGONAL_DIRS) {
         write_to_output(d, "Invalid choice!");
         redit_disp_menu(d);
       } else {
@@ -611,7 +612,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'c':
     case 'C':
-      if (CONFIG_DIAGONAL_DIRS) {
+      if (!CONFIG_DIAGONAL_DIRS) {
         write_to_output(d, "Invalid choice!");
         redit_disp_menu(d);
       } else {
@@ -621,7 +622,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'd':
     case 'D':
-      if (CONFIG_DIAGONAL_DIRS) {
+      if (!CONFIG_DIAGONAL_DIRS) {
         write_to_output(d, "Invalid choice!");
         redit_disp_menu(d);
       } else {
@@ -631,7 +632,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'e':
     case 'E':
-      if (CONFIG_DIAGONAL_DIRS) {
+      if (!CONFIG_DIAGONAL_DIRS) {
         write_to_output(d, "Invalid choice!");
         redit_disp_menu(d);
       } else {
@@ -687,7 +688,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
 
   case REDIT_DESC:
     /* We will NEVER get here, we hope. */
-    mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Reached REDIT_DESC case in parse_redit().");
+    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Reached REDIT_DESC case in parse_redit().");
     write_to_output(d, "Oops, in REDIT_DESC.\r\n");
     break;
 
@@ -775,7 +776,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
 
   case REDIT_EXIT_DESCRIPTION:
     /* We should NEVER get here, hopefully. */
-    mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Reached REDIT_EXIT_DESC case in parse_redit");
+    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Reached REDIT_EXIT_DESC case in parse_redit");
     write_to_output(d, "Oops, in REDIT_EXIT_DESCRIPTION.\r\n");
     break;
 
@@ -803,10 +804,10 @@ void redit_parse(struct descriptor_data *d, char *arg)
     } else {
       /* Doors are a bit idiotic, don't you think? :) -- I agree. -gg */
       OLC_EXIT(d)->exit_info = (number == 0 ? 0 :
-                               (number == 1 ? EX_ISDOOR :
-                               (number == 2 ? EX_ISDOOR | EX_PICKPROOF :
-                               (number == 3 ? EX_ISDOOR | EX_HIDDEN :
-                               (number == 4 ? EX_ISDOOR | EX_PICKPROOF | EX_HIDDEN : 0)))));
+				(number == 1 ? EX_ISDOOR :
+                (number == 2 ? EX_ISDOOR | EX_PICKPROOF :
+                (number == 3 ? EX_ISDOOR | EX_HIDDEN :
+                (number == 4 ? EX_ISDOOR | EX_PICKPROOF | EX_HIDDEN : 0)))));
       /* Jump back to the menu system. */
       redit_disp_exit_menu(d);
     }
@@ -824,7 +825,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
   case REDIT_EXTRADESC_MENU:
     switch ((number = atoi(arg))) {
     case 0:
-      /* If something got left out, delete the extra description when backing
+      /* If something got left out, delete the extra description when backing 
          out to the menu. */
       if (OLC_DESC(d)->keyword == NULL || OLC_DESC(d)->description == NULL) {
 	struct extra_descr_data *temp;
@@ -879,7 +880,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
     } else
       write_to_output(d, "That room does not exist.\r\n");
     break;
-
+  
   case REDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
       if (delete_room(real_room(OLC_ROOM(d)->number)))
@@ -900,7 +901,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
 
   default:
     /* We should never get here. */
-    mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Reached default case in parse_redit");
+    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Reached default case in parse_redit");
     break;
   }
   /* If we get this far, something has been changed. */

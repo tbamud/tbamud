@@ -68,8 +68,6 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad);
 char *strpaste(char *str1, char *str2, char *joiner);
 void new_affect(struct affected_type *af);
 int get_class_by_name(char *classname);
-bool set_admin_level(struct char_data *ch, int admlvl);
-char *add_commas(long num);
 
 /* Public functions made available form weather.c */
 void weather_and_time(int mode);
@@ -131,10 +129,10 @@ void	gain_condition(struct char_data *ch, int condition, int value);
 void	point_update(void);
 void	update_pos(struct char_data *victim);
 void run_autowiz(void);
-int  increase_gold(struct char_data *ch, int amt);
-int  decrease_gold(struct char_data *ch, int amt);
-int  increase_bank(struct char_data *ch, int amt);
-int  decrease_bank(struct char_data *ch, int amt);
+int increase_gold(struct char_data *ch, int amt);
+int decrease_gold(struct char_data *ch, int amt);
+int increase_bank(struct char_data *ch, int amt);
+int decrease_bank(struct char_data *ch, int amt);
 
 /* in class.c */
 void    advance_level(struct char_data *ch);
@@ -368,8 +366,6 @@ do                                                              \
 #define PRF_FLAGS(ch) CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.pref))
 /** Affect flags on the NPC or PC. */
 #define AFF_FLAGS(ch)	((ch)->char_specials.saved.affected_by)
-/** Admin Priv flags on a player (not to be used on mobs). */
-#define ADM_FLAGS(ch) CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.admflags))
 /** Room flags.
  * @param loc The real room number. */
 #define ROOM_FLAGS(loc)	(world[(loc)].room_flags)
@@ -404,9 +400,6 @@ do                                                              \
 #define AFF_FLAGGED(ch, flag) (IS_SET_AR(AFF_FLAGS(ch), (flag)))
 /** 1 if flag is set in the preferences bitarray, 0 if not. */
 #define PRF_FLAGGED(ch, flag) (IS_SET_AR(PRF_FLAGS(ch), (flag)))
-/** 1 if flag is set in the admin privs bitarray, 0 if not. */
-#define ADM_FLAGGED(ch, flag) (!IS_NPC(ch) && (!PRF_FLAGGED((ch), PRF_MORTAL)) && \
-                                              (IS_SET_AR(ADM_FLAGS(ch), (flag))) )
 /** 1 if flag is set in the room of loc, 0 if not. */
 #define ROOM_FLAGGED(loc, flag) (IS_SET_AR(ROOM_FLAGS(loc), (flag)))
 /** 1 if flag is set in the zone of rnum, 0 if not. */
@@ -427,10 +420,6 @@ do                                                              \
 
 /** IS_AFFECTED for backwards compatibility */
 #define IS_AFFECTED(ch, skill) (AFF_FLAGGED((ch), (skill)))
-
-/** IS_ADMIN checks admin level and mortal flag */
-#define IS_ADMIN(ch, lvl) (!IS_NPC(ch) && (!PRF_FLAGGED((ch), PRF_MORTAL)) && \
-                                          (GET_ADMLEVEL(ch) >= (lvl)))
 
 /** Toggle flag in ch PLR_FLAGS' turns on if off, or off if on. */
 #define PLR_TOG_CHK(ch,flag) ((TOGGLE_BIT_AR(PLR_FLAGS(ch), (flag))) & Q_BIT(flag))
@@ -479,26 +468,18 @@ do                                                              \
 			 (ch)->player.short_descr : GET_PC_NAME(ch))
 /** Title of PC */
 #define GET_TITLE(ch)   ((ch)->player.title)
-/** Mortal Level of PC or NPC. */
+/** Level of PC or NPC. */
 #define GET_LEVEL(ch)   ((ch)->player.level)
-/** Admin Level of PC. */
-#define GET_ADMLEVEL(ch)  CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.adm_level))
 /** Password of PC. */
 #define GET_PASSWD(ch)	((ch)->player.passwd)
 /** The player file position of PC. */
 #define GET_PFILEPOS(ch)((ch)->pfilepos)
 
-/** Gets the mortal level of a player even if the player is switched.
+/** Gets the level of a player even if the player is switched.
  * @todo Make this the definition of GET_LEVEL. */
 #define GET_REAL_LEVEL(ch) \
    (ch->desc && ch->desc->original ? GET_LEVEL(ch->desc->original) : \
     GET_LEVEL(ch))
-
-/** Gets the admin level of a player even if the player is switched.
- * @todo Make this the definition of GET_LEVEL. */
-#define GET_REAL_ADMLEVEL(ch) \
-   (ch->desc && ch->desc->original ? GET_ADMLEVEL(ch->desc->original) : \
-    (IS_NPC(ch) ? ADMLVL_MORTAL : GET_ADMLEVEL(ch)))
 
 /** Class of ch. */
 #define GET_CLASS(ch)   ((ch)->player.chclass)
@@ -632,8 +613,9 @@ do                                                              \
 #define GET_SKILL(ch, i)	CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.skills[i]))
 /** Copy the current skill level i of ch to pct. */
 #define SET_SKILL(ch, i, pct)	do { CHECK_PLAYER_SPECIAL((ch), (ch)->player_specials->saved.skills[i]) = pct; } while(0)
+
 /** The player's default sector type when buildwalking */
-#define GET_BUILDWALK_SECTOR(ch)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->buildwalk_sector))
+#define GET_BUILDWALK_SECTOR(ch) CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->buildwalk_sector))
 
 /** Get obj worn in position i on ch. */
 #define GET_EQ(ch, i)		((ch)->equipment[i])
@@ -650,8 +632,6 @@ do                                                              \
 #define GET_DEFAULT_POS(ch)	((ch)->mob_specials.default_pos)
 /** Return the memory of ch. */
 #define MEMORY(ch)		((ch)->mob_specials.memory)
-/** Return the structure used for creating mudmail from mobs */
-#define MOB_MAIL(ch)	((ch)->mob_specials.ml_list)
 
 /** Return the equivalent strength of ch if ch has level 18 strength. */
 #define STRENGTH_APPLY_INDEX(ch) \
@@ -754,8 +734,6 @@ do                                                              \
 #define CAN_WEAR(obj, part)	OBJWEAR_FLAGGED((obj), (part))
 /** Return short description of obj. */
 #define GET_OBJ_SHORT(obj)      ((obj)->short_description)
-/** Return the mudmail that the object is attached to */
-#define IN_MAIL(obj)	((obj)->in_mail)
 
 /* Compound utilities and other macros. */
 /** Used to compute version. To see if the code running is newer than 3.0pl13,
@@ -782,7 +760,7 @@ do                                                              \
 /** Defines if there is enough light for sub to see in. */
 #define LIGHT_OK(sub)	(!AFF_FLAGGED(sub, AFF_BLIND) && \
    (IS_LIGHT(IN_ROOM(sub)) || AFF_FLAGGED((sub), AFF_INFRAVISION) || \
-   IS_ADMIN(sub, ADMLVL_IMMORT)))
+   GET_LEVEL(sub) >= LVL_IMMORT))
 
 /** Defines if sub character can see the invisible obj character. */
 #define INVIS_OK(sub, obj) \
@@ -803,7 +781,7 @@ do                                                              \
 
 /** Can sub character see obj character? */
 #define CAN_SEE(sub, obj) (SELF(sub, obj) || \
-   ((GET_REAL_ADMLEVEL(sub) >= (IS_NPC(obj) ? 0 : GET_INVIS_LEV(obj))) && \
+   ((GET_REAL_LEVEL(sub) >= (IS_NPC(obj) ? 0 : GET_INVIS_LEV(obj))) && \
    IMM_CAN_SEE(sub, obj)))
 /* End of CAN_SEE */
 
@@ -835,7 +813,7 @@ do                                                              \
     CAN_SEE_OBJ((ch),(obj)))
 
 /** If vict can see ch, return ch name, else return "someone". */
-#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : (GET_ADMLEVEL(ch) > ADMLVL_IMMORT ? "an immortal" : "someone"))
+#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : (GET_LEVEL(ch) > LVL_IMMORT ? "an immortal" : "someone"))
 
 /** If vict can see obj, return obj short description, else return
  * "something". */
@@ -862,11 +840,11 @@ do                                                              \
 			 !IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED))
 
 /** True total number of directions available to move in. */
-#define DIR_COUNT    ((CONFIG_DIAGONAL_DIRS) ? 10 : 6)
-
+#define DIR_COUNT ((CONFIG_DIAGONAL_DIRS) ? 10 : 6)
+ 
 /* Returns TRUE if the direction is a diagonal one */
 #define IS_DIAGONAL(dir) (((dir) == NORTHWEST) || ((dir) == NORTHEAST) || \
-                          ((dir) == SOUTHEAST) || ((dir) == SOUTHWEST) )
+		((dir) == SOUTHEAST) || ((dir) == SOUTHWEST) )
 
 /** Return the class abbreviation for ch. */
 #define CLASS_ABBR(ch) (IS_NPC(ch) ? "--" : class_abbrevs[(int)GET_CLASS(ch)])
@@ -970,8 +948,6 @@ do                                                              \
 #define CONFIG_MAX_NPC_CORPSE_TIME config_info.play.max_npc_corpse_time
 /** How long will pc corpses last before decomposing? */
 #define CONFIG_MAX_PC_CORPSE_TIME  config_info.play.max_pc_corpse_time
-/** What is the highest level a mortal can obtain? */
-#define CONFIG_MAX_LEVEL        config_info.play.max_mortal_level
 /** How long can a pc be idled before being pulled into the void? */
 #define CONFIG_IDLE_VOID        config_info.play.idle_void
 /** How long until the idle pc is force rented? */
@@ -996,7 +972,7 @@ do                                                              \
 /** Get the display closed doors setting. */
 #define CONFIG_DISP_CLOSED_DOORS config_info.play.disp_closed_doors
 /** Get the diagonal directions setting. */
-#define CONFIG_DIAGONAL_DIRS     config_info.play.diagonal_dirs
+#define CONFIG_DIAGONAL_DIRS    config_info.play.diagonal_dirs
 
 /* Map/Automap options */
 #define CONFIG_MAP             config_info.play.map_option
@@ -1068,39 +1044,12 @@ do                                                              \
 /** Should medit show the advnaced stats menu? */
 #define CONFIG_MEDIT_ADVANCED   config_info.operation.medit_advanced
 /** Does "bug resolve" autosave ? */
-#define CONFIG_IBT_AUTOSAVE   config_info.operation.ibt_autosave
+#define CONFIG_IBT_AUTOSAVE config_info.operation.ibt_autosave
 
 /* Autowiz */
 /** Use autowiz or not? */
 #define CONFIG_USE_AUTOWIZ      config_info.autowiz.use_autowiz
 /** What is the minimum level character to put on the wizlist? */
 #define CONFIG_MIN_WIZLIST_LEV  config_info.autowiz.min_wizlist_lev
-
-/* Mudmail Configuraton */
-/** Mail system enabled or not? */
-#define CONFIG_CAN_MAIL          config_info.mail.mail_allowed
-/** Able to attach objects to mails? */
-#define CONFIG_CAN_MAIL_OBJ      config_info.mail.objects_allowed
-/** Able to attach gold to mails? */
-#define CONFIG_CAN_MAIL_GOLD     config_info.mail.gold_allowed
-/** Cost of stamps per mail for mortals */
-#define CONFIG_STAMP_COST        config_info.mail.stamp_cost
-/** Extra Cost per object attachment for mortals */
-#define CONFIG_OBJECT_COST       config_info.mail.object_cost
-/** Minimum level that can send mails */
-#define CONFIG_MIN_MAIL_LEVEL    config_info.mail.min_level
-/** Lowest admin level that can always send free mails */
-#define CONFIG_FREE_MAIL_LEVEL   config_info.mail.min_free_level
-/** Can mails be saved as drafts for later sending? */
-#define CONFIG_DRAFTS_ALLOWED    config_info.mail.allow_drafts
-/** How long (in days) should draft mails be kept? */
-#define CONFIG_DRAFT_TIMEOUT     config_info.mail.draft_timeout
-/** While mailing, are players safe from attack or stealing? */
-#define CONFIG_SAFE_MAILING      config_info.mail.safe_mailing
-/** Minimum admin level at which a post office isn't required */
-#define CONFIG_MIN_MAIL_ANYWHERE config_info.mail.min_mail_anywhere
-/** Minimum admin level that can send to groups/all */
-#define CONFIG_MIN_SEND_TO_ALL   config_info.mail.min_send_to_all
-
 
 #endif /* _UTILS_H_ */

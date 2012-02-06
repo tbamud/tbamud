@@ -658,7 +658,7 @@ void quest_stat(struct char_data *ch, char argument[MAX_STRING_LENGTH])
   char buf[MAX_STRING_LENGTH];
   char targetname[MAX_STRING_LENGTH];
 
-  if (!ADM_FLAGGED(ch, ADM_BUILD))
+  if (GET_LEVEL(ch) < LVL_IMMORT)
     send_to_char(ch, "Huh!?!\r\n");
   else if (!*argument)
     send_to_char(ch, "%s\r\n", quest_imm_usage);
@@ -697,41 +697,43 @@ void quest_stat(struct char_data *ch, char argument[MAX_STRING_LENGTH])
     send_to_char(ch,
         "VNum  : [@y%5d@n], RNum: [@y%5d@n] -- Questmaster: [@y%5d@n] @y%s@n\r\n"
         "Name  : @y%s@n\r\n"
-        "Desc  : @y%s@n\r\n"
-        "Accept Message:\r\n@c%s@n"
-        "Completion Message:\r\n@c%s@n"
-        "Quit Message:\r\n@c%s@n"
-        "Type  : @y%s@n\r\n"
+ "Desc  : @y%s@n\r\n"
+ "Accept Message:\r\n@c%s@n"
+ "Completion Message:\r\n@c%s@n"
+ "Quit Message:\r\n@c%s@n"
+ "Type  : @y%s@n\r\n"
         "Target: @y%d@n @y%s@n, Quantity: @y%d@n\r\n"
-        "Value : @y%d@n, Penalty: @y%d@n, Min Level: @y%2d@n, Max Level: @y%2d@n\r\n"
-        "Flags : @c%s@n\r\n",
-          QST_NUM(rnum), rnum,
-          QST_MASTER(rnum) == NOBODY ? -1 : QST_MASTER(rnum),
-          (qmrnum == NOBODY) ? "(Invalid vnum)" : GET_NAME(&mob_proto[(qmrnum)]),
-          QST_NAME(rnum), QST_DESC(rnum),
-          QST_INFO(rnum), QST_DONE(rnum),
-          (QST_QUIT(rnum) && (str_cmp(QST_QUIT(rnum), "undefined") != 0) ? QST_QUIT(rnum) : "Nothing\r\n"),
-          quest_types[QST_TYPE(rnum)],
-          QST_TARGET(rnum) == NOBODY ? -1 : QST_TARGET(rnum),
-          targetname,
-          QST_QUANTITY(rnum),
-          QST_POINTS(rnum), QST_PENALTY(rnum), QST_MINLEVEL(rnum),
-          QST_MAXLEVEL(rnum), buf);
+ "Value : @y%d@n, Penalty: @y%d@n, Min Level: @y%2d@n, Max Level: @y%2d@n\r\n"
+ "Flags : @c%s@n\r\n",
+     QST_NUM(rnum), rnum,
+ QST_MASTER(rnum) == NOBODY ? -1 : QST_MASTER(rnum),
+ (qmrnum == NOBODY) ? "(Invalid vnum)" : GET_NAME(&mob_proto[(qmrnum)]),
+        QST_NAME(rnum), QST_DESC(rnum),
+        QST_INFO(rnum), QST_DONE(rnum),
+ (QST_QUIT(rnum) &&
+  (str_cmp(QST_QUIT(rnum), "undefined") != 0)
+          ? QST_QUIT(rnum) : "Nothing\r\n"),
+     quest_types[QST_TYPE(rnum)],
+ QST_TARGET(rnum) == NOBODY ? -1 : QST_TARGET(rnum),
+ targetname,
+ QST_QUANTITY(rnum),
+     QST_POINTS(rnum), QST_PENALTY(rnum), QST_MINLEVEL(rnum),
+ QST_MAXLEVEL(rnum), buf);
     if (QST_PREREQ(rnum) != NOTHING)
       send_to_char(ch, "Preq  : [@y%5d@n] @y%s@n\r\n",
         QST_PREREQ(rnum) == NOTHING ? -1 : QST_PREREQ(rnum),
         QST_PREREQ(rnum) == NOTHING ? "" :
-        real_object(QST_PREREQ(rnum)) == NOTHING ? "an unknown object" :
-        obj_proto[real_object(QST_PREREQ(rnum))].short_description);
+   real_object(QST_PREREQ(rnum)) == NOTHING ? "an unknown object" :
+       obj_proto[real_object(QST_PREREQ(rnum))].short_description);
     if (QST_TYPE(rnum) == AQ_OBJ_RETURN)
       send_to_char(ch, "Mob   : [@y%5d@n] @y%s@n\r\n",
         QST_RETURNMOB(rnum),
-        real_mobile(QST_RETURNMOB(rnum)) == NOBODY ? "an unknown mob" :
-        mob_proto[real_mobile(QST_RETURNMOB(rnum))].player.short_descr);
+ real_mobile(QST_RETURNMOB(rnum)) == NOBODY ? "an unknown mob" :
+           mob_proto[real_mobile(QST_RETURNMOB(rnum))].player.short_descr);
     if (QST_TIME(rnum) != -1)
       send_to_char(ch, "Limit : There is a time limit of %d turn%s to complete.\r\n",
-        QST_TIME(rnum),
-        QST_TIME(rnum) == 1 ? "" : "s");
+   QST_TIME(rnum),
+   QST_TIME(rnum) == 1 ? "" : "s");
     else
       send_to_char(ch, "Limit : There is no time limit on this quest.\r\n");
     send_to_char(ch, "Prior :");
@@ -760,11 +762,11 @@ ACMD(do_quest)
 
   two_arguments(argument, arg1, arg2);
   if (!*arg1)
-    send_to_char(ch, "%s\r\n", IS_ADMIN(ch, ADMLVL_IMMORT) ?
-                     quest_imm_usage : quest_mort_usage);
+    send_to_char(ch, "%s\r\n", GET_LEVEL(ch) < LVL_IMMORT ?
+                     quest_mort_usage : quest_imm_usage);
   else if (((tp = search_block(arg1, quest_cmd, FALSE)) == -1))
-    send_to_char(ch, "%s\r\n", IS_ADMIN(ch, ADMLVL_IMMORT) ?
-                     quest_imm_usage : quest_mort_usage);
+    send_to_char(ch, "%s\r\n", GET_LEVEL(ch) < LVL_IMMORT ?
+                     quest_mort_usage : quest_imm_usage);
   else {
     switch (tp) {
       case SCMD_QUEST_LIST:
@@ -779,18 +781,18 @@ ACMD(do_quest)
         quest_quit(ch);
         break;
       case SCMD_QUEST_PROGRESS:
-        quest_progress(ch);
-        break;
+ quest_progress(ch);
+ break;
       case SCMD_QUEST_STATUS:
-        if (!IS_ADMIN(ch, ADMLVL_IMMORT))
+        if (GET_LEVEL(ch) < LVL_IMMORT)
           send_to_char(ch, "%s\r\n", quest_mort_usage);
         else
           quest_stat(ch, arg2);
         break;
       default: /* Whe should never get here, but... */
-        send_to_char(ch, "%s\r\n", IS_ADMIN(ch, ADMLVL_IMMORT) ?
-                     quest_imm_usage : quest_mort_usage);
-        break;
+        send_to_char(ch, "%s\r\n", GET_LEVEL(ch) < LVL_IMMORT ?
+                     quest_mort_usage : quest_imm_usage);
+ break;
     } /* switch on subcmd number */
   }
 }
@@ -821,13 +823,13 @@ SPECIAL(questmaster)
         if (!*arg2)
           quest_show(ch, GET_MOB_VNUM(qm));
         else
-          quest_list(ch, qm, arg2);
+   quest_list(ch, qm, arg2);
         break;
       case SCMD_QUEST_JOIN:
         quest_join(ch, qm, arg2);
         break;
       default:
-        return FALSE; /* fall through to the do_quest command processor */
+ return FALSE; /* fall through to the do_quest command processor */
       } /* switch on subcmd number */
       return TRUE;
     }

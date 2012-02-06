@@ -19,7 +19,7 @@
 #include "improved-edit.h"
 
 /* Free's strings from any object, room, mobiles, or player. TRUE if successful,
- * otherwise, it returns FALSE. Type - The OLC type constant relating to the
+ * otherwise, it returns FALSE. Type - The OLC type constant relating to the 
  * data type of data. */
 int free_strings(void *data, int type)
 {
@@ -47,7 +47,7 @@ int free_strings(void *data, int type)
     case OASIS_EXI:
       room = (struct room_data *) data;
 
-      for (i = 0; i < NUM_OF_DIRS; i++) {  /* NUM_OF_DIRS, not DIR_COUNT */
+      for (i = 0; i < NUM_OF_DIRS; i++) { /* NUM_OF_DIRS, not DIR_COUNT */
         if (room->dir_option[i]) {
           if (room->dir_option[i]->general_description) {
             free(room->dir_option[i]->general_description);
@@ -101,7 +101,7 @@ int free_strings(void *data, int type)
       return (TRUE);
 
     default:
-      mudlog(BRF, ADMLVL_GOD, TRUE, "SYSERR: oasis_delete.c: free_strings: Invalid type handled (Type %d).", type);
+      mudlog(BRF, LVL_GOD, TRUE, "SYSERR: oasis_delete.c: free_strings: Invalid type handled (Type %d).", type);
       return (FALSE);
   }
 }

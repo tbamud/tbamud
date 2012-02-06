@@ -16,10 +16,10 @@
 #define IMM_LMARG "   "
 #define IMM_NSIZE  16
 #define LINE_LEN   64
-#define MIN_LEVEL  ADMLVL_IMMORT
+#define MIN_LEVEL LVL_IMMORT
 
 /* max level that should be in columns instead of centered */
-#define COL_LEVEL  ADMLVL_IMMORT
+#define COL_LEVEL LVL_IMMORT
 
 struct name_rec {
   char name[25];
@@ -39,10 +39,10 @@ struct level_rec {
 
 struct control_rec level_params[] =
 {
-  {ADMLVL_IMMORT, "Immortals"},
-  {ADMLVL_GOD   , "Gods"},
-  {ADMLVL_GRGOD , "Greater Gods"},
-  {ADMLVL_IMPL  , "Implementors"},
+  {LVL_IMMORT, "Immortals"},
+  {LVL_GOD, "Gods"},
+  {LVL_GRGOD, "Greater Gods"},
+  {LVL_IMPL, "Implementors"},
   {0, ""}
 };
 
@@ -70,7 +70,7 @@ void read_file(void)
   bitvector_t asciiflag_conv(char *flag);
 
   FILE *fl;
-  int recs, i, last = 0, level = 0, flags = 0, admlevel = 0;
+  int recs, i, last = 0, level = 0, flags = 0;
   char index_name[40], line[256], bits[64];
   char name[MAX_NAME_LENGTH];
   long id = 0;
@@ -89,14 +89,13 @@ void read_file(void)
 
   for (i = 0; i < recs; i++) {
     get_line(fl, line);
-    sscanf(line, "%ld %s %d %d %s %d", &id, name, &level, &admlevel, bits, &last);
+    sscanf(line, "%ld %s %d %s %d", &id, name, &level, bits, &last);
     CAP(name);
     flags = asciiflag_conv(bits);
     if (level >= MIN_LEVEL &&
 	!(IS_SET(flags, PINDEX_NOWIZLIST)) &&
-	!(IS_SET(flags, PINDEX_DELETED)) &&
-	!(IS_SET(flags, PINDEX_MORTAL)) )
-	add_name(admlevel, name);
+	!(IS_SET(flags, PINDEX_DELETED)))
+	add_name(level, name);
   }
   fclose(fl);
 }
@@ -233,7 +232,7 @@ int main(int argc, char **argv)
   sort_names();
 
   fl = fopen(argv[2], "w");
-  write_wizlist(fl, wizlevel, ADMLVL_IMPL);
+  write_wizlist(fl, wizlevel, LVL_IMPL);
   fclose(fl);
 
   fl = fopen(argv[4], "w");
@@ -254,9 +253,9 @@ char *CAP(char *txt)
   return (txt);
 }
 
-/* get_line reads the next non-blank line off of the input stream. The newline
- * character is removed from the input.  Lines which begin with '*' are
- * considered to be comments. Returns the number of lines advanced in the
+/* get_line reads the next non-blank line off of the input stream. The newline 
+ * character is removed from the input.  Lines which begin with '*' are 
+ * considered to be comments. Returns the number of lines advanced in the 
  * file. */
 int get_line(FILE * fl, char *buf)
 {

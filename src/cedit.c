@@ -46,7 +46,7 @@ ACMD(do_oasis_cedit)
   /* Parse any arguments. */
   one_argument(argument, buf1);
 
-  if (!ADM_FLAGGED(ch, ADM_CEDIT)) {
+  if (GET_LEVEL(ch) < LVL_IMPL) {
     send_to_char(ch, "You can't modify the game configuration.\r\n");
     return;
   }
@@ -61,7 +61,7 @@ ACMD(do_oasis_cedit)
     act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
     SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-    mudlog(BRF, ADMLVL_IMMORT, TRUE,
+    mudlog(BRF, LVL_IMMORT, TRUE,
       "OLC: %s starts editing the game configuration.", GET_NAME(ch));
     return;
   } else if (str_cmp("save", buf1) != 0) {
@@ -70,7 +70,7 @@ ACMD(do_oasis_cedit)
   }
 
   send_to_char(ch, "Saving the game configuration.\r\n");
-  mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+  mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
     "OLC: %s saves the game configuration.", GET_NAME(ch));
 
   cedit_save_to_disk();
@@ -92,7 +92,6 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->play.max_exp_loss        = CONFIG_MAX_EXP_LOSS;
   OLC_CONFIG(d)->play.max_npc_corpse_time = CONFIG_MAX_NPC_CORPSE_TIME;
   OLC_CONFIG(d)->play.max_pc_corpse_time  = CONFIG_MAX_PC_CORPSE_TIME;
-  OLC_CONFIG(d)->play.max_mortal_level    = CONFIG_MAX_LEVEL;
   OLC_CONFIG(d)->play.idle_void           = CONFIG_IDLE_VOID;
   OLC_CONFIG(d)->play.idle_rent_time      = CONFIG_IDLE_RENT_TIME;
   OLC_CONFIG(d)->play.idle_max_level      = CONFIG_IDLE_MAX_LEVEL;
@@ -135,23 +134,10 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->operation.nameserver_is_slow = CONFIG_NS_IS_SLOW;
   OLC_CONFIG(d)->operation.medit_advanced     = CONFIG_MEDIT_ADVANCED;
   OLC_CONFIG(d)->operation.ibt_autosave       = CONFIG_IBT_AUTOSAVE;
-
   /* Autowiz */
   OLC_CONFIG(d)->autowiz.use_autowiz          = CONFIG_USE_AUTOWIZ;
   OLC_CONFIG(d)->autowiz.min_wizlist_lev      = CONFIG_MIN_WIZLIST_LEV;
 
-  /* Mudmail */
-  OLC_CONFIG(d)->mail.mail_allowed            = CONFIG_CAN_MAIL;
-  OLC_CONFIG(d)->mail.objects_allowed         = CONFIG_CAN_MAIL_OBJ;
-  OLC_CONFIG(d)->mail.gold_allowed            = CONFIG_CAN_MAIL_GOLD;
-  OLC_CONFIG(d)->mail.stamp_cost              = CONFIG_STAMP_COST;
-  OLC_CONFIG(d)->mail.min_level               = CONFIG_MIN_MAIL_LEVEL;
-  OLC_CONFIG(d)->mail.min_free_level          = CONFIG_FREE_MAIL_LEVEL;
-  OLC_CONFIG(d)->mail.allow_drafts            = CONFIG_DRAFTS_ALLOWED;
-  OLC_CONFIG(d)->mail.draft_timeout           = CONFIG_DRAFT_TIMEOUT;
-  OLC_CONFIG(d)->mail.safe_mailing            = CONFIG_SAFE_MAILING;
-  OLC_CONFIG(d)->mail.min_mail_anywhere       = CONFIG_MIN_MAIL_ANYWHERE;
-  OLC_CONFIG(d)->mail.min_send_to_all         = CONFIG_MIN_SEND_TO_ALL;
 
   /* Allocate space for the strings. */
   OLC_CONFIG(d)->play.OK       = str_udup(CONFIG_OK);
@@ -205,13 +191,12 @@ static void cedit_save_internally(struct descriptor_data *d)
   CONFIG_MAX_EXP_LOSS        = OLC_CONFIG(d)->play.max_exp_loss;
   CONFIG_MAX_NPC_CORPSE_TIME = OLC_CONFIG(d)->play.max_npc_corpse_time;
   CONFIG_MAX_PC_CORPSE_TIME  = OLC_CONFIG(d)->play.max_pc_corpse_time;
-  CONFIG_MAX_LEVEL           = OLC_CONFIG(d)->play.max_mortal_level;
   CONFIG_IDLE_VOID           = OLC_CONFIG(d)->play.idle_void;
   CONFIG_IDLE_RENT_TIME      = OLC_CONFIG(d)->play.idle_rent_time;
   CONFIG_IDLE_MAX_LEVEL      = OLC_CONFIG(d)->play.idle_max_level;
   CONFIG_DTS_ARE_DUMPS       = OLC_CONFIG(d)->play.dts_are_dumps;
-  CONFIG_LOAD_INVENTORY = OLC_CONFIG(d)->play.load_into_inventory;
-  CONFIG_TRACK_T_DOORS = OLC_CONFIG(d)->play.track_through_doors;
+  CONFIG_LOAD_INVENTORY      = OLC_CONFIG(d)->play.load_into_inventory;
+  CONFIG_TRACK_T_DOORS       = OLC_CONFIG(d)->play.track_through_doors;
   CONFIG_NO_MORT_TO_IMMORT   = OLC_CONFIG(d)->play.no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS   = OLC_CONFIG(d)->play.disp_closed_doors;
   CONFIG_DIAGONAL_DIRS       = OLC_CONFIG(d)->play.diagonal_dirs;
@@ -251,20 +236,6 @@ static void cedit_save_internally(struct descriptor_data *d)
   /* Autowiz */
   CONFIG_USE_AUTOWIZ          = OLC_CONFIG(d)->autowiz.use_autowiz;
   CONFIG_MIN_WIZLIST_LEV      = OLC_CONFIG(d)->autowiz.min_wizlist_lev;
-
-  /* Mudmail */
-  CONFIG_CAN_MAIL           = OLC_CONFIG(d)->mail.mail_allowed;
-  CONFIG_CAN_MAIL_OBJ       = OLC_CONFIG(d)->mail.objects_allowed;
-  CONFIG_CAN_MAIL_GOLD      = OLC_CONFIG(d)->mail.gold_allowed;
-  CONFIG_STAMP_COST         = OLC_CONFIG(d)->mail.stamp_cost;
-  CONFIG_OBJECT_COST        = OLC_CONFIG(d)->mail.object_cost;
-  CONFIG_MIN_MAIL_LEVEL     = OLC_CONFIG(d)->mail.min_level;
-  CONFIG_FREE_MAIL_LEVEL    = OLC_CONFIG(d)->mail.min_free_level;
-  CONFIG_DRAFTS_ALLOWED     = OLC_CONFIG(d)->mail.allow_drafts;
-  CONFIG_DRAFT_TIMEOUT      = OLC_CONFIG(d)->mail.draft_timeout;
-  CONFIG_SAFE_MAILING       = OLC_CONFIG(d)->mail.safe_mailing;
-  CONFIG_MIN_MAIL_ANYWHERE  = OLC_CONFIG(d)->mail.min_mail_anywhere;
-  CONFIG_MIN_SEND_TO_ALL    = OLC_CONFIG(d)->mail.min_send_to_all;
 
   /* Allocate space for the strings. */
   if (CONFIG_OK)
@@ -376,13 +347,11 @@ int save_config( IDXTYPE nowhere )
               "max_npc_corpse_time = %d\n\n", CONFIG_MAX_NPC_CORPSE_TIME);
   fprintf(fl, "* Number of tics before PC corpses decompose.\n"
               "max_pc_corpse_time = %d\n\n", CONFIG_MAX_PC_CORPSE_TIME);
-  fprintf(fl, "* The maximum mortal level.\n"
-              "max_mortal_level = %d\n\n", CONFIG_MAX_LEVEL);
   fprintf(fl, "* Number of tics before a PC is sent to the void.\n"
               "idle_void = %d\n\n", CONFIG_IDLE_VOID);
   fprintf(fl, "* Number of tics before a PC is autorented.\n"
               "idle_rent_time = %d\n\n", CONFIG_IDLE_RENT_TIME);
-  fprintf(fl, "* Admin Level and above of players whom are immune to idle penalties.\n"
+  fprintf(fl, "* Level and above of players whom are immune to idle penalties.\n"
               "idle_max_level = %d\n\n", CONFIG_IDLE_MAX_LEVEL);
   fprintf(fl, "* Should the items in death traps be junked automatically?\n"
               "dts_are_dumps = %d\n\n", CONFIG_DTS_ARE_DUMPS);
@@ -395,7 +364,7 @@ int save_config( IDXTYPE nowhere )
   fprintf(fl, "* Should closed doors be shown on autoexit / exit?\n"
               "disp_closed_doors = %d\n\n", CONFIG_DISP_CLOSED_DOORS);
   fprintf(fl, "* Are diagonal directions enabled?\n"
-              "diagonal_dirs_enabled = %d\n\n", CONFIG_DIAGONAL_DIRS);
+              "diagonal_dirs = %d\n\n", CONFIG_DIAGONAL_DIRS);
   fprintf(fl, "* Who can use the map functions? 0=off, 1=on, 2=imm_only\n"
               "map_option = %d\n\n", CONFIG_MAP);
   fprintf(fl, "* Default size of map shown by 'map' command\n"
@@ -559,8 +528,8 @@ int save_config( IDXTYPE nowhere )
               CONFIG_MEDIT_ADVANCED);
 
   fprintf(fl, "* Should the idea, bug and typo commands autosave (1) or not (0).\n"
-              "ibt_autosave = %d\n\n",
-              CONFIG_IBT_AUTOSAVE);
+		      "ibt_autosave = %d\n\n",
+			  CONFIG_IBT_AUTOSAVE);
 
   fprintf(fl, "\n\n\n* [ Autowiz Options ]\n");
 
@@ -569,60 +538,10 @@ int save_config( IDXTYPE nowhere )
               "use_autowiz = %d\n\n",
               CONFIG_USE_AUTOWIZ);
 
-  fprintf(fl, "* If yes, what is the lowest admin level which should be on the wizlist?\n"
+  fprintf(fl, "* If yes, what is the lowest level which should be on the wizlist?\n"
               "min_wizlist_lev = %d\n\n",
               CONFIG_MIN_WIZLIST_LEV);
 
-   /* MUDMAIL OPTIONS */
-  fprintf(fl, "\n\n\n* [ Mudmail Options ]\n");
-
-  fprintf(fl, "* Enable/Disable the whole mudmail system\n"
-              "can_mail = %d\n\n",
-              CONFIG_CAN_MAIL);
-
-  fprintf(fl, "* Can objects be sent via mudmail?\n"
-              "mail_objects_allowed = %d\n\n",
-              CONFIG_CAN_MAIL_OBJ);
-
-  fprintf(fl, "* Can gold coins be sent via mudmail?\n"
-              "mail_gold_allowed = %d\n\n",
-              CONFIG_CAN_MAIL_GOLD);
-
-  fprintf(fl, "* How much does it cost to send mudmails\n"
-              "mail_stamp_cost = %d\n\n",
-              CONFIG_STAMP_COST);
-
-  fprintf(fl, "* How much extra does it cost to add each object mudmails\n"
-              "mail_object_cost = %d\n\n",
-              CONFIG_OBJECT_COST);
-
-  fprintf(fl, "* The minimum player level that's allowed to send mudmails\n"
-              "mail_min_level = %d\n\n",
-              CONFIG_MIN_MAIL_LEVEL);
-
-  fprintf(fl, "* The minimum level that can send mudmails for free\n"
-              "mail_min_free_level = %d\n\n",
-              CONFIG_FREE_MAIL_LEVEL);
-
-  fprintf(fl, "* Are players allowed to create draft mails for sending later?\n"
-              "mail_drafts_allowed = %d\n\n",
-              CONFIG_DRAFTS_ALLOWED);
-
-  fprintf(fl, "* Number of days before a draft mail is autoremoved (0 for never) \n"
-              "mail_draft_timeout = %d\n\n",
-              CONFIG_DRAFT_TIMEOUT);
-
-  fprintf(fl, "* When on, the player cannot be attacked or stolen from while mailing. \n"
-              "mail_safe_mailing = %d\n\n",
-              CONFIG_SAFE_MAILING);
-
-  fprintf(fl, "* This is the minimum level that can send mail from any location (not just at postmaster). \n"
-              "mail_min_mail_anywhere = %d\n\n",
-              CONFIG_MIN_MAIL_ANYWHERE);
-
-  fprintf(fl, "* This is the minimum level that can send mail to all players. \n"
-              "mail_min_send_to_all = %d\n\n",
-              CONFIG_MIN_SEND_TO_ALL);
 
   fclose(fl);
 
@@ -647,11 +566,9 @@ static void cedit_disp_menu(struct descriptor_data *d)
   	  "%sR%s) Room Numbers\r\n"
           "%sO%s) Operation Options\r\n"
           "%sA%s) Autowiz Options\r\n"
-          "%sM%s) Mudmail Options\r\n"
           "%sQ%s) Quit\r\n"
           "Enter your choice : ",
 
-          grn, nrm,
           grn, nrm,
           grn, nrm,
           grn, nrm,
@@ -682,16 +599,15 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         "%sG%s) Maximum Experience Loss : %s%d\r\n"
         "%sH%s) Max Time for NPC Corpse : %s%d\r\n"
         "%sI%s) Max Time for PC Corpse  : %s%d\r\n"
-        "%sJ%s) Max Mortal Level        : %s%d\r\n"
-        "%sK%s) Tics before PC sent to void : %s%d\r\n"
-        "%sL%s) Tics before PC is autosaved : %s%d\r\n"
-        "%sM%s) Imm Level Immune To IDLE    : %s%d\r\n"
-        "%sN%s) Death Traps Junk Items      : %s%s\r\n"
-        "%sO%s) Objects Load Into Inventory : %s%s\r\n"
-        "%sP%s) Track Through Doors         : %s%s\r\n"
-        "%sR%s) Display Closed Doors        : %s%s\r\n"
-        "%sS%s) Diagonal Directions         : %s%s\r\n"
-        "%sT%s) Mortals Level To Immortal   : %s%s\r\n"
+        "%sJ%s) Tics before PC sent to void : %s%d\r\n"
+        "%sK%s) Tics before PC is autosaved : %s%d\r\n"
+        "%sL%s) Level Immune To IDLE        : %s%d\r\n"
+        "%sM%s) Death Traps Junk Items      : %s%s\r\n"
+        "%sN%s) Objects Load Into Inventory : %s%s\r\n"
+        "%sO%s) Track Through Doors         : %s%s\r\n"
+        "%sP%s) Display Closed Doors        : %s%s\r\n"
+        "%sR%s) Diagonal Directions         : %s%s\r\n"
+        "%sS%s) Mortals Level To Immortal   : %s%s\r\n"
 	      "%s1%s) OK Message Text         : %s%s"
         "%s2%s) NOPERSON Message Text   : %s%s"
         "%s3%s) NOEFFECT Message Text   : %s%s"
@@ -710,7 +626,6 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         grn, nrm, cyn, OLC_CONFIG(d)->play.max_exp_loss,
         grn, nrm, cyn, OLC_CONFIG(d)->play.max_npc_corpse_time,
         grn, nrm, cyn, OLC_CONFIG(d)->play.max_pc_corpse_time,
-        grn, nrm, cyn, OLC_CONFIG(d)->play.max_mortal_level,
 
         grn, nrm, cyn, OLC_CONFIG(d)->play.idle_void,
         grn, nrm, cyn, OLC_CONFIG(d)->play.idle_rent_time,
@@ -790,18 +705,6 @@ static void cedit_disp_room_numbers(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_ROOM_NUMBERS_MENU;
 }
 
-static void cedit_disp_admin_levels(struct descriptor_data *d)
-{
-  int i;
-  get_char_colors(d->character);
-  clear_screen(d);
-
-  write_to_output(d, "\r\n\r\n");
-  for (i=ADMLVL_IMMORT; i<=ADMLVL_IMPL; i++) {
-    write_to_output(d, "%s%d%s) %s%s%s\r\n", grn, i, nrm, cyn, admin_level_names[i], nrm);
-  }
-}
-
 static void cedit_disp_operation_options(struct descriptor_data *d)
 {
   get_char_colors(d->character);
@@ -866,50 +769,6 @@ static void cedit_disp_autowiz_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_AUTOWIZ_OPTIONS_MENU;
 }
 
-void cedit_disp_mudmail_options(struct descriptor_data *d)
-{
-  char timeout[MAX_INPUT_LENGTH];
-  get_char_colors(d->character);
-  clear_screen(d);
-
-  if (OLC_CONFIG(d)->mail.draft_timeout > 0)
-    sprintf(timeout, "%d days", OLC_CONFIG(d)->mail.draft_timeout);
-  else
-    sprintf(timeout, "%s<Never!>", cyn);
-
-  write_to_output(d, "\r\n\r\n"
-    "%sA%s) Use mudmail system         : %s%s\r\n"
-    "%sB%s) Allow object attachments   : %s%s\r\n"
-    "%sC%s) Allow gold attachments     : %s%s\r\n"
-    "%sD%s) Stamp Cost (Normal Mails)  : %s%d coins\r\n"
-    "%sE%s) Cost per object attached   : %s%d coins\r\n"
-    "%sF%s) Allow draft mudmails       : %s%s\r\n"
-    "%sG%s) Draft mail timeout         : %s%s\r\n"
-    "%sH%s) Min. level that can mail   : %s%d\r\n"
-    "%sI%s) Min. level for free mail   : %s%d\r\n"
-    "%sJ%s) Safe while mailing?        : %s%s\r\n"
-    "%sK%s) Min level to mail anywhere : %s%d\r\n"
-    "%sL%s) Min level to send to all   : %s%d\r\n"
-    "%sQ%s) Exit To The Main Menu\r\n"
-    "Enter your choice : ",
-    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.mail_allowed),
-    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.objects_allowed),
-    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.gold_allowed),
-    grn, nrm, yel, OLC_CONFIG(d)->mail.stamp_cost,
-    grn, nrm, yel, OLC_CONFIG(d)->mail.object_cost,
-    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.allow_drafts),
-    grn, nrm, yel, timeout,
-    grn, nrm, yel, OLC_CONFIG(d)->mail.min_level,
-    grn, nrm, yel, OLC_CONFIG(d)->mail.min_free_level,
-    grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->mail.safe_mailing),
-    grn, nrm, yel, OLC_CONFIG(d)->mail.min_mail_anywhere,
-    grn, nrm, yel, OLC_CONFIG(d)->mail.min_send_to_all,
-    grn, nrm
-    );
-
-  OLC_MODE(d) = CEDIT_MUDMAIL_OPTIONS_MENU;
-}
-
 /* The event handler. */
 void cedit_parse(struct descriptor_data *d, char *arg)
 {
@@ -921,7 +780,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         case 'y':
         case 'Y':
           cedit_save_internally(d);
-          mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
+          mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
                  "OLC: %s modifies the game configuration.", GET_NAME(d->character));
           cleanup_olc(d, CLEANUP_CONFIG);
 	  if (CONFIG_AUTO_SAVE) {
@@ -971,12 +830,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         case 'A':
           cedit_disp_autowiz_options(d);
           OLC_MODE(d) = CEDIT_AUTOWIZ_OPTIONS_MENU;
-          break;
-
-        case 'm':
-        case 'M':
-          cedit_disp_mudmail_options(d);
-          OLC_MODE(d) = CEDIT_MUDMAIL_OPTIONS_MENU;
           break;
 
         case 'q':
@@ -1048,57 +901,50 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         case 'j':
         case 'J':
-          write_to_output(d, "Enter the highest possible mortal level (0-254) : ");
-          OLC_MODE(d) = CEDIT_MAX_LEVEL;
-          return;
-
-        case 'k':
-        case 'K':
           write_to_output(d, "Enter the number of tics before PC's are sent to the void (idle) : ");
           OLC_MODE(d) = CEDIT_IDLE_VOID;
           return;
 
-        case 'l':
-        case 'L':
+        case 'k':
+        case 'K':
           write_to_output(d, "Enter the number of tics before PC's are automatically rented and forced to quit : ");
           OLC_MODE(d) = CEDIT_IDLE_RENT_TIME;
           return;
 
-        case 'm':
-        case 'M':
-          cedit_disp_admin_levels(d);
-          write_to_output(d, "Enter the admin level a player must be to become immune to IDLE : ");
+        case 'l':
+        case 'L':
+          write_to_output(d, "Enter the level a player must be to become immune to IDLE : ");
           OLC_MODE(d) = CEDIT_IDLE_MAX_LEVEL;
           return;
 
+        case 'm':
+        case 'M':
+          TOGGLE_VAR(OLC_CONFIG(d)->play.dts_are_dumps);
+          break;
+
         case 'n':
         case 'N':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.dts_are_dumps);
+          TOGGLE_VAR(OLC_CONFIG(d)->play.load_into_inventory);
           break;
 
         case 'o':
         case 'O':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.load_into_inventory);
+          TOGGLE_VAR(OLC_CONFIG(d)->play.track_through_doors);
           break;
 
         case 'p':
         case 'P':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.track_through_doors);
+          TOGGLE_VAR(OLC_CONFIG(d)->play.disp_closed_doors);
           break;
 
         case 'r':
         case 'R':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.disp_closed_doors);
-          break;
-
-        case 's':
-        case 'S':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.diagonal_dirs);
-          break;
-
-        case 't':
-        case 'T':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.no_mort_to_immort);
+		  TOGGLE_VAR(OLC_CONFIG(d)->play.diagonal_dirs);
+		  break;
+ 
+		case 's':
+		case 'S':
+		  TOGGLE_VAR(OLC_CONFIG(d)->play.no_mort_to_immort);
           break;
 
         case '1':
@@ -1367,10 +1213,10 @@ void cedit_parse(struct descriptor_data *d, char *arg)
            TOGGLE_VAR(OLC_CONFIG(d)->operation.medit_advanced);
            break;
 
-         case 'p':
-         case 'P':
-           TOGGLE_VAR(OLC_CONFIG(d)->operation.ibt_autosave);
-           break;
+		 case 'p':
+		 case 'P':
+		   TOGGLE_VAR(OLC_CONFIG(d)->operation.ibt_autosave);
+		   break;
 
          case 'q':
          case 'Q':
@@ -1393,8 +1239,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         case 'b':
         case 'B':
-          cedit_disp_admin_levels(d);
-          write_to_output(d, "\r\nEnter the minimum admin level for players to appear on the wizlist : ");
+          write_to_output(d, "Enter the minimum level for players to appear on the wizlist : ");
           OLC_MODE(d) = CEDIT_MIN_WIZLIST_LEV;
           return;
 
@@ -1408,87 +1253,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
 
       cedit_disp_autowiz_options(d);
-      return;
-
-    case CEDIT_MUDMAIL_OPTIONS_MENU:
-      switch (*arg) {
-        case 'a':
-        case 'A':
-          TOGGLE_VAR(OLC_CONFIG(d)->mail.mail_allowed);
-          break;
-
-        case 'b':
-        case 'B':
-          TOGGLE_VAR(OLC_CONFIG(d)->mail.objects_allowed);
-          break;
-
-        case 'c':
-        case 'C':
-          TOGGLE_VAR(OLC_CONFIG(d)->mail.gold_allowed);
-          break;
-
-        case 'd':
-        case 'D':
-          write_to_output(d, "Enter the cost per mail (without attachments) : ");
-          OLC_MODE(d) = CEDIT_STAMP_COST;
-          return;
-
-        case 'e':
-        case 'E':
-          write_to_output(d, "Enter the cost per object attachment : ");
-          OLC_MODE(d) = CEDIT_OBJECT_COST;
-          return;
-
-        case 'f':
-        case 'F':
-          TOGGLE_VAR(OLC_CONFIG(d)->mail.allow_drafts);
-          break;
-
-        case 'g':
-        case 'G':
-          write_to_output(d, "Enter the timeout (in days) before draft mails are auto-removed (0=off) : ");
-          OLC_MODE(d) = CEDIT_DRAFT_TIMEOUT;
-          return;
-
-        case 'h':
-        case 'H':
-          write_to_output(d, "Enter the minimum admin level that can send mudmails : ");
-          OLC_MODE(d) = CEDIT_MIN_MAIL_LEVEL;
-          return;
-
-        case 'i':
-        case 'I':
-          write_to_output(d, "Enter the minimum admin level for free mudmails : ");
-          OLC_MODE(d) = CEDIT_MIN_FREE_LEVEL;
-          return;
-
-        case 'j':
-        case 'J':
-          TOGGLE_VAR(OLC_CONFIG(d)->mail.safe_mailing);
-          break;
-
-        case 'k':
-        case 'K':
-          write_to_output(d, "Enter the minimum admin level that can send mail from anywhere : ");
-          OLC_MODE(d) = CEDIT_MAIL_ANYWHERE;
-          return;
-
-        case 'l':
-        case 'L':
-          write_to_output(d, "Enter the minimum admin level that can send to all players : ");
-          OLC_MODE(d) = CEDIT_MAIL_ALL_PLAYERS;
-          return;
-
-        case 'q':
-        case 'Q':
-          cedit_disp_menu(d);
-          return;
-
-        default:
-          write_to_output(d, "\r\nThat is an invalid choice!\r\n");
-      }
-
-      cedit_disp_mudmail_options(d);
       return;
 
     case CEDIT_LEVEL_CAN_SHOUT:
@@ -1560,15 +1324,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         }
         break;
 
-    case CEDIT_MAX_LEVEL:
-      /* Note: Some things, such as spell_info, use (CONFIG_MAX_LEVEL + 1) */
-      /*       Do not use the max possible for the variable type           */
-      if (*arg)
-        OLC_CONFIG(d)->play.max_mortal_level = MIN(MAX(atoi(arg),0),254);
-
-      cedit_disp_game_play_options(d);
-      break;
-
     case CEDIT_IDLE_VOID:
       if (!*arg) {
         write_to_output(d,
@@ -1593,12 +1348,9 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
     case CEDIT_IDLE_MAX_LEVEL:
       if (!*arg) {
-        write_to_output(d, "Value not changed!\r\n");
-        cedit_disp_game_play_options(d);
-      } else if ((atoi(arg) < ADMLVL_MORTAL) || (atoi(arg) > ADMLVL_IMPL)) {
         write_to_output(d,
           "That is an invalid choice!\r\n"
-          "Enter the admin level a player must be to become immune to IDLE : ");
+          "Enter the level a player must be to become immune to IDLE : ");
       } else {
         OLC_CONFIG(d)->play.idle_max_level = atoi(arg);
         cedit_disp_game_play_options(d);
@@ -1840,13 +1592,10 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       break;
 
     case CEDIT_MIN_WIZLIST_LEV:
-      if (!*arg) {
-        write_to_output(d, "Value not changed.\r\n");
-        cedit_disp_autowiz_options(d);
-      } else if ((atoi(arg) < ADMLVL_IMMORT) || (atoi(arg) > ADMLVL_IMPL)) {
+      if (atoi(arg) > LVL_IMPL) {
         write_to_output(d,
           "The minimum wizlist level can't be greater than %d.\r\n"
-          "Enter the minimum admin level for players to appear on the wizlist : ", ADMLVL_IMPL);
+          "Enter the minimum level for players to appear on the wizlist : ", LVL_IMPL);
       } else {
         OLC_CONFIG(d)->autowiz.min_wizlist_lev = atoi(arg);
         cedit_disp_autowiz_options(d);
@@ -1887,44 +1636,9 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
 
-    case CEDIT_STAMP_COST:
-      OLC_CONFIG(d)->mail.stamp_cost = MIN(MAX(atoi(arg), 0), 1000);
-      cedit_disp_mudmail_options(d);
-      break;
-
-    case CEDIT_OBJECT_COST:
-      OLC_CONFIG(d)->mail.object_cost = MIN(MAX(atoi(arg), 0), 1000);
-      cedit_disp_mudmail_options(d);
-      break;
-
-    case CEDIT_DRAFT_TIMEOUT:
-      OLC_CONFIG(d)->mail.draft_timeout = MIN(MAX(atoi(arg), 0), 3653); /* up to 10 years */
-      cedit_disp_mudmail_options(d);
-      break;
-
-    case CEDIT_MIN_MAIL_LEVEL:
-      OLC_CONFIG(d)->mail.min_level = MIN(MAX(atoi(arg), 0), ADMLVL_IMPL);
-      cedit_disp_mudmail_options(d);
-      break;
-
-    case CEDIT_MIN_FREE_LEVEL:
-      OLC_CONFIG(d)->mail.min_free_level = MIN(MAX(atoi(arg), 0), ADMLVL_IMPL);
-      cedit_disp_mudmail_options(d);
-      break;
-
-    case CEDIT_MAIL_ANYWHERE:
-      OLC_CONFIG(d)->mail.min_mail_anywhere = MIN(MAX(atoi(arg), 0), ADMLVL_IMPL);
-      cedit_disp_mudmail_options(d);
-      break;
-
-    case CEDIT_MAIL_ALL_PLAYERS:
-      OLC_CONFIG(d)->mail.min_send_to_all = MIN(MAX(atoi(arg), 0), ADMLVL_IMPL);
-      cedit_disp_mudmail_options(d);
-      break;
-
     default:  /* We should never get here, but just in case... */
       cleanup_olc(d, CLEANUP_CONFIG);
-      mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: OLC: cedit_parse(): Reached default case!");
+      mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: cedit_parse(): Reached default case!");
       write_to_output(d, "Oops...\r\n");
       break;
   }

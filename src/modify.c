@@ -155,10 +155,10 @@ void string_add(struct descriptor_data *d, char *str)
         case CON_HEDIT:
         case CON_QEDIT:
         case CON_IBTEDIT:
-	  free(*d->str);
-          *d->str = d->backstr;
+	      free(*d->str);
+          *d->str    = d->backstr;
           d->backstr = NULL;
-          d->str = NULL;
+          d->str     = NULL;
           break;
         default:
           log("SYSERR: string_add: Aborting write from unknown origin.");
@@ -196,7 +196,6 @@ void string_add(struct descriptor_data *d, char *str)
       { CON_HEDIT, hedit_string_cleanup },
       { CON_QEDIT  , qedit_string_cleanup },
       { CON_IBTEDIT, ibtedit_string_cleanup },
-      { CON_MAILEDIT , mailedit_string_cleanup },
       { -1, NULL }
     };
 
@@ -223,12 +222,9 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
 {
   if (PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
-      if (mail_from_player(d->mail_to, GET_IDNUM(d->character), *d->str)) {
-       write_to_output(d, "Message sent!\r\n");
-       notify_if_playing(d->character, d->mail_to);
-      } else {
-        write_to_output(d, "Error: Mail could not be sent.  Please tell an Imm\r\n");
-      }
+      store_mail(d->mail_to, GET_IDNUM(d->character), *d->str);
+      write_to_output(d, "Message sent!\r\n");
+      notify_if_playing(d->character, d->mail_to);
     } else
       write_to_output(d, "Mail aborted.\r\n");
       free(*d->str);
@@ -354,7 +350,7 @@ ACMD(do_skillset)
     send_to_char(ch, "You can't set NPC skills.\r\n");
     return;
   }
-  if ((spell_info[skill].min_level[(pc)] > CONFIG_MAX_LEVEL) && (!IS_ADMIN(vict, ADMLVL_IMMORT))) {
+  if ((spell_info[skill].min_level[(pc)] >= LVL_IMMORT) && (pl < LVL_IMMORT)) {
     send_to_char(ch, "%s cannot be learned by mortals.\r\n", spell_info[skill].name);
     return;
   } else if (spell_info[skill].min_level[(pc)] > pl) {
@@ -365,7 +361,7 @@ ACMD(do_skillset)
   /* find_skill_num() guarantees a valid spell_info[] index, or -1, and we
    * checked for the -1 above so we are safe here. */
   SET_SKILL(vict, skill, value);
-  mudlog(BRF, ADMLVL_IMMORT, TRUE, "%s changed %s's %s to %d.", GET_NAME(ch), GET_NAME(vict), spell_info[skill].name, value);
+  mudlog(BRF, LVL_IMMORT, TRUE, "%s changed %s's %s to %d.", GET_NAME(ch), GET_NAME(vict), spell_info[skill].name, value);
   send_to_char(ch, "You change %s's %s to %d.\r\n", GET_NAME(vict), spell_info[skill].name, value);
 }
 

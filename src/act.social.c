@@ -40,11 +40,6 @@ ACMD(do_action)
 
   action = &soc_mess_list[act_nr];
 
-  if (!IS_ADMIN(ch, (action->min_level_char))) {
-    send_to_char(ch, "You are not powerful enough to do that.\r\n");
-    return;
-  }
-
   if (!argument || !*argument) {
     send_to_char(ch, "%s\r\n", action->char_no_arg);
     act(action->others_no_arg, action->hide, ch, 0, 0, TO_ROOM);
@@ -147,15 +142,13 @@ void create_command_list(void)
 	(str_cmp(cmd_info[i].sort_as, soc_mess_list[j].sort_as) < 1))
       complete_cmd_info[k++] = cmd_info[i++];
     else {
-      soc_mess_list[j].act_nr               = k;
-      complete_cmd_info[k].command          = soc_mess_list[j].command;
-      complete_cmd_info[k].sort_as          = soc_mess_list[j].sort_as;
-      complete_cmd_info[k].minimum_position = soc_mess_list[j].min_char_position;
-      complete_cmd_info[k].command_pointer  = do_action;
-      complete_cmd_info[k].minimum_level    = 0;
-      complete_cmd_info[k].minimum_admlevel = MIN(MAX(soc_mess_list[j++].min_level_char, ADMLVL_MORTAL), ADMLVL_IMPL);
-      complete_cmd_info[k].admin_flag       = ADM_NONE;
-      complete_cmd_info[k++].subcmd         = 0;
+      soc_mess_list[j].act_nr		= k;
+      complete_cmd_info[k].command		= soc_mess_list[j].command;
+      complete_cmd_info[k].sort_as		= soc_mess_list[j].sort_as;
+      complete_cmd_info[k].minimum_position	= soc_mess_list[j].min_char_position;
+      complete_cmd_info[k].command_pointer	= do_action;
+      complete_cmd_info[k].minimum_level    	= soc_mess_list[j++].min_level_char;
+      complete_cmd_info[k++].subcmd		= 0;
     }
   }
 	complete_cmd_info[k] = cmd_info[i];

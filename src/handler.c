@@ -22,7 +22,6 @@
 #include "class.h"
 #include "fight.h"
 #include "quest.h"
-#include "mail.h"
 
 /* local file scope variables */
 static int extractions_pending = 0;
@@ -255,7 +254,7 @@ void affect_total(struct char_data *ch)
     affect_modify_ar(ch, af->location, af->modifier, af->bitvector, TRUE);
 
   /* Make certain values are between 0..25, not < 0 and not > 25! */
-  i = (IS_NPC(ch) || IS_ADMIN(ch, ADMLVL_GRGOD)) ? 25 : 18;
+  i = (IS_NPC(ch) || GET_LEVEL(ch) >= LVL_GRGOD) ? 25 : 18;
 
   GET_DEX(ch) = MAX(0, MIN(GET_DEX(ch), i));
   GET_INT(ch) = MAX(0, MIN(GET_INT(ch), i));
@@ -764,37 +763,6 @@ void obj_from_obj(struct obj_data *obj)
   }
   obj->in_obj = NULL;
   obj->next_content = NULL;
-}
-
-/* Attach an object into a mudmail */
-void obj_to_mail(struct obj_data *object, struct mail_data *mail)
-{
-  if (!object || !mail)
-    log("SYSERR: Illegal value(s) passed to obj_to_mail. (Mail ID %ld, obj %p)",	mail ? mail->mail_id : 0, object);
-  else {
-    object->next_content = mail->attachment;
-    mail->attachment = object;
-    IN_MAIL(object) = mail;
-    IN_ROOM(object) = NOWHERE;
-    object->carried_by = NULL;
-  }
-}
-
-/* Take an object from a mudmail */
-void obj_from_mail(struct obj_data *object)
-{
-  struct obj_data *temp;
-
-  if (!object || IN_ROOM(object) != NOWHERE || object->carried_by) {
-    log("SYSERR: NULL object (%p) or obj not attached to a mail passed to obj_from_mail", object);
-    return;
-  }
-
-  REMOVE_FROM_LIST(object, (IN_MAIL(object))->attachment, next_content);
-
-  IN_MAIL(object) = NULL;
-  IN_ROOM(object) = NOWHERE;
-  object->next_content = NULL;
 }
 
 /* Set all carried_by to point to new owner */

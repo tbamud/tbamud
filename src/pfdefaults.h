@@ -1,7 +1,7 @@
 /**
 * @file pfdefaults.h
 * ASCII player file defaults.
-*
+* 
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
 *
@@ -10,13 +10,12 @@
 #ifndef _PFDEFAULTS_H_
 #define _PFDEFAULTS_H_
 
-/* WARNING:  Do not change the values below if you have existing ascii player
+/* WARNING:  Do not change the values below if you have existing ascii player 
  * files you don't want to screw up. */
 
 #define PFDEF_SEX		0
 #define PFDEF_CLASS		0
 #define PFDEF_LEVEL		0
-#define PFDEF_ADMLEVEL		ADMLVL_MORTAL
 #define PFDEF_HEIGHT		0
 #define PFDEF_WEIGHT		0
 #define PFDEF_ALIGNMENT		0
@@ -53,14 +52,14 @@
 #define PFDEF_HUNGER		0
 #define PFDEF_THIRST		0
 #define PFDEF_DRUNK		0
-#define PFDEF_OLC               NOWHERE
+#define PFDEF_OLC               NOWHERE 
 #define PFDEF_PAGELENGTH        22
 #define PFDEF_SCREENWIDTH       80
 #define PFDEF_QUESTPOINTS       0
 #define PFDEF_QUESTCOUNT        0
 #define PFDEF_COMPQUESTS        0
 #define PFDEF_CURRQUEST         NOTHING
-#define PFDEF_LASTMOTD          0
-#define PFDEF_LASTNEWS          0
+#define PFDEF_LASTMOTD          0 
+#define PFDEF_LASTNEWS          0 
 
 #endif /* _PFDEFAULTS_H_ */

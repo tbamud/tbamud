@@ -27,7 +27,6 @@
 #include "quest.h"
 #include "ibt.h"
 
-
 /* Internal Data Structures */
 /** @deprecated olc_scmd_info appears to be deprecated. Commented out for now.
 static struct olc_scmd_info_t {
@@ -49,7 +48,7 @@ static struct olc_scmd_info_t {
 */
 
 /* Global variables defined here, used elsewhere */
-const char *nrm, *grn, *cyn, *yel, *gry;
+const char *nrm, *grn, *cyn, *yel;
 
 /* Internal Function prototypes  */
 static void free_config(struct config_data *data);
@@ -71,7 +70,6 @@ void get_char_colors(struct char_data *ch)
   grn = CCGRN(ch, C_NRM);
   cyn = CCCYN(ch, C_NRM);
   yel = CCYEL(ch, C_NRM);
-  gry = CBBLK(ch, C_NRM);
 }
 
 /* This procedure frees up the strings and/or the structures attatched to a
@@ -175,11 +173,11 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
     }
   }
 
-	if (OLC_IBT(d)) {
-    free_olc_ibt(OLC_IBT(d));
-		OLC_IBT(d) = NULL;
-	}
-		
+   if (OLC_IBT(d)) {
+	 free_olc_ibt(OLC_IBT(d));
+	 OLC_IBT(d) = NULL;
+   }
+
   /* Free storage if allocated (tedit, aedit, and trigedit). This is the command
    * list - it's been copied to disk already, so just free it -Welcor. */
    if (OLC_STORAGE(d)) {
@@ -212,13 +210,13 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
     act("$n stops using OLC.", TRUE, d->character, NULL, NULL, TO_ROOM);
 
     if (cleanup_type == CLEANUP_CONFIG)
-      mudlog(BRF, ADMLVL_IMMORT, TRUE, "OLC: %s stops editing the game configuration", GET_NAME(d->character));
+      mudlog(BRF, LVL_IMMORT, TRUE, "OLC: %s stops editing the game configuration", GET_NAME(d->character));
     else if (STATE(d) == CON_TEDIT)
-      mudlog(BRF, ADMLVL_IMMORT, TRUE, "OLC: %s stops editing text files.", GET_NAME(d->character));
+      mudlog(BRF, LVL_IMMORT, TRUE, "OLC: %s stops editing text files.", GET_NAME(d->character));
     else if (STATE(d) == CON_HEDIT)
-      mudlog(CMP, ADMLVL_IMMORT, TRUE, "OLC: %s stops editing help files.", GET_NAME(d->character));
+      mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s stops editing help files.", GET_NAME(d->character));
     else
-      mudlog(CMP, ADMLVL_IMMORT, TRUE, "OLC: %s stops editing zone %d allowed zone %d", GET_NAME(d->character), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(d->character));
+      mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s stops editing zone %d allowed zone %d", GET_NAME(d->character), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(d->character));
 
     STATE(d) = CON_PLAYING;
   }
@@ -282,8 +280,8 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
   if (GET_OLC_ZONE(ch) == AEDIT_PERMISSION && rnum == AEDIT_PERMISSION)
     return TRUE;
 
-  /* always access if ch is high enough level (Imps don't need ADM_BUILD) */
-  if (IS_ADMIN(ch, ADMLVL_IMPL))
+  /* always access if ch is high enough level */
+  if (GET_LEVEL(ch) >= LVL_GRGOD)
     return (TRUE);
 
   /* always access if a player helped build the zone in the first place */
@@ -296,11 +294,9 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
     return FALSE;
   }
 
-  /* no access if you're not at least LVL_BUILDER, or don't have any builder privs */
-  if (GET_ADMLEVEL(ch) < ADMLVL_BUILDER) {
-    if (!ADM_FLAGGED(ch, ADM_BUILD) && !ADM_FLAGGED(ch, ADM_ADVBUILD))
-      return FALSE;
-  }
+  /* no access if you're not at least LVL_BUILDER */
+  if (GET_LEVEL(ch) < LVL_BUILDER)
+    return FALSE;
 
   /* always access if you're assigned to this zone */
   if (real_zone(GET_OLC_ZONE(ch)) == rnum)
@@ -320,6 +316,6 @@ void send_cannot_edit(struct char_data *ch, zone_vnum zone)
     send_to_char(ch, "You do not have permission to edit zone %d.\r\n", zone);
     sprintf(buf, "OLC: %s tried to edit zone %d.", GET_NAME(ch), zone);
   }
-  mudlog(BRF, ADMLVL_IMPL, TRUE, "%s", buf);
+  mudlog(BRF, LVL_IMPL, TRUE, "%s", buf);
 }
 

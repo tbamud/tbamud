@@ -24,14 +24,13 @@
 #include "quest.h"
 #include "modify.h"
 #include "spells.h"
-
+ 
 #define MAX_OBJ_LIST 100
-
+ 
 struct obj_list_item {
-  obj_vnum vobj;
-  int val;
+obj_vnum vobj;
+int val;
 };
-
 /* local functions */
 static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax);
 static void list_rooms(struct char_data *ch  , zone_rnum rnum, room_vnum vmin, room_vnum vmax);
@@ -42,7 +41,7 @@ static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zon
 
 void perform_mob_flag_list(struct char_data * ch, char *arg)
 {
-  int num, mob_flag, found = 0, len=0, tmp_len=0;
+  int num, mob_flag, found = 0, len;
   struct char_data *mob;
   char buf[MAX_STRING_LENGTH];
 
@@ -60,11 +59,12 @@ void perform_mob_flag_list(struct char_data * ch, char *arg)
 
       if ((mob = read_mobile(num, REAL)) != NULL) {
         char_to_room(mob, 0);
-        tmp_len = snprintf(buf+len, sizeof(buf)-len, "%s%3d. %s[%s%5d%s]%s Level %s%-3d%s %s%s\r\n",
-                      QNRM, ++found, QCYN, QYEL, GET_MOB_VNUM(mob), QCYN, QNRM,
-                      QYEL, GET_LEVEL(mob), QNRM, GET_NAME(mob), QNRM);
-        len += tmp_len;
+        len += snprintf(buf + len, sizeof(buf) - len, "%s%3d. %s[%s%5d%s]%s Level %s%-3d%s %s%s\r\n", CCNRM(ch, C_NRM),++found,
+                      CCCYN(ch, C_NRM), CCYEL(ch, C_NRM), GET_MOB_VNUM(mob), CCCYN(ch, C_NRM), CCNRM(ch, C_NRM),
+                      CCYEL(ch, C_NRM), GET_LEVEL(mob), CCNRM(ch, C_NRM), GET_NAME(mob), CCNRM(ch, C_NRM));
         extract_char(mob); /* Finished with the mob - remove it from the MUD */
+        if (len > sizeof(buf))
+		  break;
       }
     }
   }
@@ -72,11 +72,12 @@ void perform_mob_flag_list(struct char_data * ch, char *arg)
     send_to_char(ch,"None Found!\r\n");
   else
     page_string(ch->desc, buf, TRUE);
+  return;
 }
 
 void perform_mob_level_list(struct char_data * ch, char *arg)
 {
-  int num, mob_level, found = 0, len, tmp_len;
+  int num, mob_level, found = 0, len;
   struct char_data *mob;
   char buf[MAX_STRING_LENGTH];
 
@@ -93,11 +94,12 @@ void perform_mob_level_list(struct char_data * ch, char *arg)
 
       if ((mob = read_mobile(num, REAL)) != NULL) {
         char_to_room(mob, 0);
-        tmp_len = snprintf(buf+len, sizeof(buf)-len, "%s%3d. %s[%s%5d%s]%s %s%s\r\n",
-                      QNRM, ++found, QCYN, QYEL, GET_MOB_VNUM(mob),
-                      QCYN, QNRM, GET_NAME(mob), QNRM);
-        len += tmp_len;
+        len += snprintf(buf + len, sizeof(buf) - len, "%s%3d. %s[%s%5d%s]%s %s%s\r\n", CCNRM(ch, C_NRM),++found,
+                      CCCYN(ch, C_NRM), CCYEL(ch, C_NRM), GET_MOB_VNUM(mob), CCCYN(ch, C_NRM), CCNRM(ch, C_NRM),
+                      GET_NAME(mob), CCNRM(ch, C_NRM));
         extract_char(mob); /* Finished with the mob - remove it from the MUD */
+        if (len > sizeof(buf))
+		  break;
       }
     }
   }
@@ -105,6 +107,8 @@ void perform_mob_level_list(struct char_data * ch, char *arg)
     send_to_char(ch,"None Found!\r\n");
   else
     page_string(ch->desc, buf, TRUE);
+
+  return;
 }
 
 void add_to_obj_list(struct obj_list_item *lst, int num_items, obj_vnum nvo, int nval)
@@ -360,7 +364,7 @@ ACMD(do_oasis_list)
     if ((rzone == NOWHERE || rzone == 0) && subcmd == SCMD_OASIS_ZLIST && !isdigit(*smin)) {
       /* Must be zlist, with builder name as arg */
       use_name = TRUE;
-	} else if (rzone == NOWHERE) {
+    } else if (rzone == NOWHERE) {
       send_to_char(ch, "Sorry, there's no zone with that number\r\n");
       return;
     }
@@ -384,10 +388,10 @@ ACMD(do_oasis_list)
         send_to_char(ch, "Usage: %smlist <zone>%s        - List mobiles in a zone\r\n", QYEL, QNRM);
         send_to_char(ch, "       %smlist <vnum> <vnum>%s - List a range of mobiles by vnum\r\n", QYEL, QNRM);
         send_to_char(ch, "       %smlist level <num>%s   - List all mobiles of a specified level\r\n", QYEL, QNRM);
-        send_to_char(ch, "       %smlist flags <num>%s   - List all mobiles with flag set\r\n", QYEL, QNRM);
-        send_to_char(ch, "Just type %smlist flags%s to view available options.\r\n", QYEL, QNRM);
+	    send_to_char(ch, "       %smlist flags <num>%s - List all mobiles with flag set\r\n", QYEL, QNRM);
+		send_to_char(ch, "Just type %smlist flags%s to view available options.\r\n", QYEL, QNRM);
         return;
-	  }
+      }
       else if (is_abbrev(arg, "level") || is_abbrev(arg, "flags")) {
         int  i;
 
@@ -423,7 +427,7 @@ ACMD(do_oasis_list)
         send_to_char(ch, "       %solist affect <num>%s  - List top %d objects with affect\r\n", QYEL, QNRM, MAX_OBJ_LIST);
         send_to_char(ch, "Just type %solist affect%s or %solist type%s to view available options\r\n", QYEL, QNRM, QYEL, QNRM);
         return;
-	  }
+      }
       else if (is_abbrev(arg, "type") || is_abbrev(arg, "affect")) {
         if (is_abbrev(arg, "type")) {
           if (!*arg2) {
@@ -480,7 +484,7 @@ ACMD(do_oasis_list)
       break;
     default:
       send_to_char(ch, "You can't list that!\r\n");
-      mudlog(BRF, ADMLVL_IMMORT, TRUE,
+      mudlog(BRF, LVL_IMMORT, TRUE,
         "SYSERR: do_oasis_list: Unknown list option: %d", subcmd);
   }
 }
@@ -542,7 +546,8 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
 {
   room_rnum i;
   room_vnum bottom, top;
-  int j, counter = 0;
+  int j, counter = 0, len;
+  char buf[MAX_STRING_LENGTH];
 
   /* Expect a minimum / maximum number if the rnum for the zone is NOWHERE. */
   if (rnum != NOWHERE) {
@@ -553,9 +558,10 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
     top    = vmax;
   }
 
-  send_to_char (ch,
+  len = strlcpy(buf,
   "Index VNum    Room Name                                    Exits\r\n"
-  "----- ------- -------------------------------------------- -----\r\n");
+  "----- ------- -------------------------------------------- -----\r\n",
+  sizeof(buf));
 
   if (!top_of_world)
     return;
@@ -566,7 +572,7 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
     if ((world[i].number >= bottom) && (world[i].number <= top)) {
       counter++;
 
-        send_to_char(ch, "%4d) [%s%-5d%s] %s%-*s%s %s",
+        len += snprintf(buf + len, sizeof(buf) - len, "%4d) [%s%-5d%s] %s%-*s%s %s",
                           counter, QGRN, world[i].number, QNRM,
                           QCYN, count_color_chars(world[i].name)+44, world[i].name, QNRM,
                           world[i].proto_script ? "[TRIG] " : ""
@@ -579,16 +585,21 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
           continue;
 
         if (world[W_EXIT(i, j)->to_room].zone != world[i].zone)
-          send_to_char(ch, "(%s%d%s)", QYEL, world[W_EXIT(i, j)->to_room].number, QNRM);
+          len += snprintf(buf + len, sizeof(buf) - len, "(%s%d%s)", QYEL, world[W_EXIT(i, j)->to_room].number, QNRM);
 
       }
 
-      send_to_char(ch, "\r\n");
+      len += snprintf(buf + len, sizeof(buf) - len, "\r\n");
+      
+      if (len > sizeof(buf))
+		break;
     }
   }
 
   if (counter == 0)
     send_to_char(ch, "No rooms found for zone/range specified.\r\n");
+  else
+    page_string(ch->desc, buf, TRUE);
 }
 
 /* List all mobiles in a zone. */
@@ -596,7 +607,8 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mo
 {
   mob_rnum i;
   mob_vnum bottom, top;
-  int counter = 0;
+  int counter = 0, len;
+  char buf[MAX_STRING_LENGTH];
 
   if (rnum != NOWHERE) {
     bottom = zone_table[rnum].bot;
@@ -606,9 +618,10 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mo
     top    = vmax;
   }
 
-  send_to_char(ch,
+  len = strlcpy(buf,
   "Index VNum    Mobile Name                                  Level\r\n"
-  "----- ------- -------------------------------------------- -----\r\n");
+  "----- ------- -------------------------------------------- -----\r\n",
+  sizeof(buf));
 
   if (!top_of_mobt)
     return;
@@ -617,17 +630,21 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mo
     if (mob_index[i].vnum >= bottom && mob_index[i].vnum <= top) {
       counter++;
 
-      send_to_char(ch, "%s%4d%s) [%s%-5d%s] %s%-*s %s[%4d]%s%s\r\n",
+      len += snprintf(buf + len, sizeof(buf) - len, "%s%4d%s) [%s%-5d%s] %s%-*s %s[%4d]%s%s\r\n",
                    QGRN, counter, QNRM, QGRN, mob_index[i].vnum, QNRM,
                    QCYN, count_color_chars(mob_proto[i].player.short_descr)+44, mob_proto[i].player.short_descr,
                    QYEL, mob_proto[i].player.level, QNRM,
                    mob_proto[i].proto_script ? " [TRIG]" : ""
                    );
+      if (len > sizeof(buf))
+		break;
     }
   }
 
   if (counter == 0)
     send_to_char(ch, "None found.\r\n");
+  else
+    page_string(ch->desc, buf, TRUE);
 }
 
 /* List all objects in a zone. */
@@ -635,7 +652,9 @@ static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin, ob
 {
   obj_rnum i;
   obj_vnum bottom, top;
+  char buf[MAX_STRING_LENGTH];
   int counter = 0;
+  int len;
 
   if (rnum != NOWHERE) {
     bottom = zone_table[rnum].bot;
@@ -645,9 +664,10 @@ static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin, ob
     top    = vmax;
   }
 
-  send_to_char(ch,
-  "Index VNum    Object Name                                  Object Type\r\n"
-  "----- ------- -------------------------------------------- ----------------\r\n");
+  len = strlcpy(buf,
+	"Index VNum    Object Name                                  Object Type\r\n"
+	"----- ------- -------------------------------------------- ----------------\r\n",
+	sizeof(buf));
 
   if (!top_of_objt)
     return;
@@ -656,18 +676,22 @@ static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin, ob
     if (obj_index[i].vnum >= bottom && obj_index[i].vnum <= top) {
       counter++;
 
-      send_to_char(ch, "%s%4d%s) [%s%-5d%s] %s%-*s %s[%s]%s%s\r\n",
+      len += snprintf(buf + len, sizeof(buf) - len, "%s%4d%s) [%s%-5d%s] %s%-*s %s[%s]%s%s\r\n",
                    QGRN, counter, QNRM, QGRN, obj_index[i].vnum, QNRM,
                    QCYN, count_color_chars(obj_proto[i].short_description)+44, obj_proto[i].short_description, QYEL,
                    item_types[obj_proto[i].obj_flags.type_flag], QNRM,
                    obj_proto[i].proto_script ? " [TRIG]" : ""
                    );
-
+                   
+      if (len > sizeof(buf))
+		break;
     }
   }
 
   if (counter == 0)
     send_to_char(ch, "None found.\r\n");
+  else
+    page_string(ch->desc, buf, TRUE);
 }
 
 /* List all shops in a zone. */
@@ -847,8 +871,8 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
     QGRN, QCYN, zone_table[rnum].top,
     QGRN, QCYN, zone_table[rnum].reset_mode ? ((zone_table[rnum].reset_mode == 1) ?
     "Reset when no players are in zone." : "Normal reset.") : "Never reset",
-    QGRN, QCYN, buf,
-    QGRN, QCYN, zone_table[rnum].min_level,
+    QGRN, QCYN, buf, 
+    QGRN, QCYN, zone_table[rnum].min_level, 
     QGRN, QCYN, zone_table[rnum].max_level,
     QGRN,
     QGRN, QCYN, size_rooms,

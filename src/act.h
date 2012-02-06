@@ -51,21 +51,12 @@ ACMD(do_write);
  * Begin Functions and defines for act.informative.c
  ****************************************************************************/
 /* Utility Functions */
-/* do_look, do_inventory utility functions */
-void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode);
-void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show);
 /** @todo Move to a utility library */
 char *find_exdesc(char *word, struct extra_descr_data *list);
 /** @todo Move to a mud centric string utility library */
 void space_to_minus(char *str);
 /** @todo Move to a help module? */
 int search_help(const char *argument, int level);
-
-/* Used by show_obj_to_char */
-#define SHOW_OBJ_LONG     0
-#define SHOW_OBJ_SHORT    1
-#define SHOW_OBJ_ACTION   2
-
 /* functions with subcommands */
 /* do_commands */
 ACMD(do_commands);
@@ -290,9 +281,6 @@ void perform_immort_vis(struct char_data *ch);
 void snoop_check(struct char_data *ch);
 bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_name);
 bool AddRecentPlayer(char *chname, char *chhost, bool newplr, bool cpyplr);
-void set_default_admin_privs(struct char_data *ch, bool keep_old);
-int get_admin_level_by_string(char *lv);
-void do_stat_character(struct char_data *ch, struct char_data *k);
 /* Functions with subcommands */
 /* do_date */
 ACMD(do_date);
@@ -319,7 +307,6 @@ ACMD(do_wizutil);
 #define SCMD_THAW     5
 #define SCMD_UNAFFECT 6
 /* Functions without subcommands */
-ACMD(do_admin);
 ACMD(do_advance);
 ACMD(do_at);
 ACMD(do_checkloadstatus);
@@ -333,7 +320,6 @@ ACMD(do_goto);
 ACMD(do_invis);
 ACMD(do_links);
 ACMD(do_load);
-ACMD(do_mortal);
 ACMD(do_peace);
 ACMD(do_plist);
 ACMD(do_purge);

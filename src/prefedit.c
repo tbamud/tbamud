@@ -79,16 +79,16 @@ static void prefedit_save_to_char(struct descriptor_data *d)
   else
   {
 	if (!vict) {
-	  mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (no vict)");
+	  mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (no vict)");
 	  send_to_char(d->character, "Unable to save toggles (no vict)");
     } else if (!vict->desc) {
-	  mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (no vict descriptor)");
+	  mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (no vict descriptor)");
 	  send_to_char(d->character, "Unable to save toggles (no vict descriptor)");
 	} else if (!IS_PLAYING(vict->desc)) {
-	  mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (vict not playing)");
+	  mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (vict not playing)");
 	  send_to_char(d->character, "Unable to save toggles (vict not playing)");
 	} else {
-	  mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (unknown reason)");
+	  mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (unknown reason)");
 	  send_to_char(d->character, "Unable to save toggles (unknown reason)");
     }
   }
@@ -138,7 +138,7 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM) );
 
   /* Imm Prefs */
-  if (IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_IMMORT))
+  if (GET_LEVEL(PREFEDIT_GET_CHAR) >= LVL_IMMORT)
   {
     sprintf(syslog_string, "%s", multi_types[((PREFEDIT_FLAGGED(PRF_LOG1) ? 1 : 0)+ (PREFEDIT_FLAGGED(PRF_LOG2) ? 2 : 0))] );
 
@@ -334,7 +334,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
     case 'y':
     case 'Y':
       prefedit_save_to_char(d);
-      mudlog(CMP, ADMLVL_BUILDER, TRUE, "OLC: %s edits toggles for %s", GET_NAME(d->character), GET_NAME(OLC_PREFS(d)->ch));
+      mudlog(CMP, LVL_BUILDER, TRUE, "OLC: %s edits toggles for %s", GET_NAME(d->character), GET_NAME(OLC_PREFS(d)->ch));
       /*. No strings to save - cleanup all .*/
       cleanup_olc(d, CLEANUP_ALL);
       break;
@@ -402,7 +402,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
 
     /* Below this point are Imm-only toggles */
     case '1':
-      if (!IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_IMMORT))
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -415,7 +415,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '2':
-      if (!IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_IMMORT))
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -427,7 +427,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '3':
-      if (!IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_IMMORT))
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -439,7 +439,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '4':
-      if (!IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_IMMORT))
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -451,7 +451,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '5':
-      if (!IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_IMMORT))
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -463,7 +463,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '6':
-      if (!IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_IMMORT))
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -671,7 +671,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
 
   default:
     /* we should never get here */
-    mudlog(BRF,ADMLVL_BUILDER,TRUE,"SYSERR: Reached default case in parse_prefedit");
+    mudlog(BRF,LVL_BUILDER,TRUE,"SYSERR: Reached default case in parse_prefedit");
     break;
   }
   /*. If we get this far, something has be changed .*/
@@ -715,7 +715,7 @@ void prefedit_Restore_Defaults(struct descriptor_data *d)
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOEXIT);
 
   /* PRF_NOHASSLE   - On for Imms */
-  if (!PREFEDIT_FLAGGED(PRF_NOHASSLE) && IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_BUILDER))
+  if (!PREFEDIT_FLAGGED(PRF_NOHASSLE) && GET_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOHASSLE);
   else
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOHASSLE);
@@ -733,7 +733,7 @@ void prefedit_Restore_Defaults(struct descriptor_data *d)
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOREPEAT);
 
   /* PRF_HOLYLIGHT  - On for Imms */
-  if (!PREFEDIT_FLAGGED(PRF_HOLYLIGHT) && IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_BUILDER))
+  if (!PREFEDIT_FLAGGED(PRF_HOLYLIGHT) && GET_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_HOLYLIGHT);
   else
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_HOLYLIGHT);
@@ -769,7 +769,7 @@ void prefedit_Restore_Defaults(struct descriptor_data *d)
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOGRATZ);
 
   /* PRF_SHOWVNUMS  - On for Imms */
-  if (!PREFEDIT_FLAGGED(PRF_SHOWVNUMS) && IS_ADMIN(PREFEDIT_GET_CHAR, ADMLVL_BUILDER))
+  if (!PREFEDIT_FLAGGED(PRF_SHOWVNUMS) && GET_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_SHOWVNUMS);
   else
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_SHOWVNUMS);
@@ -807,15 +807,15 @@ void prefedit_Restore_Defaults(struct descriptor_data *d)
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOASSIST);
 
   /* PRF_AUTOMAP    - On */
-  if (!PREFEDIT_FLAGGED(PRF_AUTOMAP))
+  if (PREFEDIT_FLAGGED(PRF_AUTOMAP))
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOMAP);
 
   /* PRF_AUTOKEY    - On */
-  if (!PREFEDIT_FLAGGED(PRF_AUTOKEY))
+  if (PREFEDIT_FLAGGED(PRF_AUTOKEY))
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOKEY);
 
   /* PRF_AUTODOOR   - On */
-  if (!PREFEDIT_FLAGGED(PRF_AUTODOOR))
+  if (PREFEDIT_FLAGGED(PRF_AUTODOOR))
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTODOOR);
 
   /* Other (non-toggle) options */
@@ -844,7 +844,7 @@ ACMD(do_oasis_prefedit)
   if (!*buf1) {
     vict = ch;
   }
-  else if (IS_ADMIN(ch, ADMLVL_IMPL))
+  else if (GET_LEVEL(ch) >= LVL_IMPL)
   {
     if ((vict = get_player_vis(ch, buf1, NULL, FIND_CHAR_WORLD)) == NULL)
     {
@@ -888,7 +888,7 @@ ACMD(do_oasis_prefedit)
   /** Give the descriptor an OLC structure.                                  **/
   /****************************************************************************/
   if (d->olc) {
-    mudlog(BRF, ADMLVL_IMMORT, TRUE, "SYSERR: do_oasis_prefedit: Player already had olc structure.");
+    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_oasis_prefedit: Player already had olc structure.");
     free(d->olc);
   }
 

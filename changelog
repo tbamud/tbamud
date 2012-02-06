@@ -35,93 +35,13 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
-[Jan 30 2012] - Rumble
-  Fixed redit/zedit menu bug.
-[Aug 25 2011] - Rumble
-  Comment fixes, clarification, and warning cleanup. (thanks Kyle)
-[Sep 11 2011] - Fizban
-  Added MXP, MSP, MSSP, MSDP, ATCP, CHARSET, NAWS, TTYPE, 256-color protocols. (Thanks KaVir)
-[Aug 18 2011] - Fizban
-  Added hitroll and damroll fields to DG Scripts. Also made them editable via scripts.
-  Made do_stat_character show scripts attached to players.
-[Mar 31 2011] - Rumble
-  Fixed several typos and formatting issues. (Thanks Kyle)
-  Added check to prevent immortals from getting poisoned.
-  Fixed crash bug on advance.
-  Added output to helpcheck command instead of an empty return.
-  Fixed do_levels max/min level confusion.
-  Fixed do_score which was showing gold as exp. (Thanks Rhade)
-  Added free_olc_ibt.
-  Added CONFIG_IBT_AUTOSAVE.
-  Fixed bug when casting invis on objects.
-  Added mudmail.pdf instructions to /doc.
-[Dec 16 2010] - Jamdog
-  Bug-Fix: Fixed illegal mob flag bug where medit set wrong flag
-[Dec 10 2010] - Jamdog
-  Minor bug fixes, added MAIL flag names and fixed compile warnings
-  Bug Fix: Alignment in medit now saves when it's the only thing edited (thanks cosine_omerta)
-  Added ZONE_WORLDMAP flag to set a whole zone to worldmap style maps
-[Dec 08 2010] - Jamdog
-  Added olist <name>
-  page_string now uses player's screen width and correctly parses ANSI color codes
-[Dec 07 2010] - Jamdog
-  Fixed erroneous SYSERR report and incorrect contant in new house system (thanks Vatiken)
-  Buildwalk now allows builder to specify default sector type (thanks Mirad)
-  Added happyhour script variables (thanks Kam)
-  Added affects list and type list to olist command
-[Dec 06 2010] - Jamdog
-  Added new mail system, with inbox OLC, index rebuilder and first mail (to ID 1)
-  Bug-Fix: levels command wasn't showing max level, or validating high/low levels
-  score <mob> now shows stats for the mobile (same as 'stat <mob>')
-[Dec 05 2010] - Jamdog
-  Bug-Fix: 'Did you mean' now only shows commands you have access to (thanks Welcor)
-  Bug-Fix: Fixed crash bug introduced by new house system when saving house contents
-  Scan command now tells you when nothing is nearby (thanks Mirad)
-  zlist command can now list by builder, like show zones
-  zlist command now uses page_string (thanks Mirad)
-  areas command now uses page_string (thanks Mirad)
-[Dec 02 2010] - Jamdog
-  Bug-Fix: identify command in shops was listing incorrect buy price (thanks Kam)
-  Added %actor.admlevel% and %actor.admlevel(<level>)% to dg-scripts
-  Earthquake spell now misses flying people
-[Dec 01 2010] - Jamdog
-  Fixed do_cheat so that only ID 1 can get a full restoration
-  Added zone checks for load/purge commands below admin level 3 (GrGod)
-[Nov 30 2010] - Jamdog
-  Bug-Fix: Fixed incorrect rnum showing on stat room <vnum> (Thanks Kam)
-  Added hsedit House Editor OLC
-[Nov 28 2010] - Jamdog
-  Converted houses (lib/etc/hcontrol file) to ASCII file format
-  Added hcontrol file converter (hstoascii.c) to src/utils folder
-  Converted houses to work as linked lists, not wasteful fixed-size arrays
-  Added GOD houses and player-owned shops as house types
-  Added 'receptionist' and 'player-shopkeeper' type spec-procs for houses
-[Nov 26 2010] - Jamdog
-  Bug-Fix: set level now allows GRGOD or higher to set to any mortal level
-  Advance command changed to work for both mortal and admin levels
-  Added increase_gold and increase_bank functions to prevent cash overflows
-  Added dupe check for new characters in char creation (thanks Mirad)
-  Bug-Fix: Since admin update, real mortals didn't show on who list (thanks Rhade)
-[Nov 25 2010] - Jamdog
-  Added diagonal directions with cedit toggle (default to 'off')
-  Bug-Fix: admin <player> default now targets the victim player
-  Bug-Fix: Crash bug developed due to no 'vict' in is_tell_ok, added checks
-  Added HIDDEN flag for doors, hiding from exits, autoexits, scan and map
-  Admins now show admin level instead of class on who list
-[Nov 24 2010] - Jamdog
-  Split mortal and admin levels (thanks fnord for original patch/idea)
-  Mortal level converted to ubyte for 255 max
-  Max mortal level now configurable in cedit
-  Level on help files now indicates admin level
-  Added 'set <player> admlevel <num>'
-  Added admin command for imms
-  Added mortal command, and modified return command to work for everyone
-  Added admin level to player index (for autowiz)
-  Added mortal flag to player index (for autowiz)
-  Autowiz converted to work with new admin levels
-  Socials are now admin-level dependant
-  Added imm ability to 'score <player>'
-  Minor Bug Fix: Cured problem where Imps didn't regain default flags when using 'return'
+[Feb 04 2012] - Vatiken
+  Feature: Added 'Experience' and 'Thaco' to the do_show() command.
+  Bug Fix: Nipped a bug where shopkeepers weren't sending tells.
+  Visuals: Fixed a small glitch in redit where things weren't lining up right with extra dirs activated.
+  Made olist, mlist, and rlist, page_string() compatible.
+  Bug Fix: Editing extra directions is now doable from redit.
+  MAJOR: Reverted back to 3.62 Revision 241, followed up by backporting bug fixes and some of the positive changes implemented by Jamdog. Not coming along for the ride currently are the new mail system, housing system and the admin level system.
 [Nov 06 2010] - Jamdog
   Added HappyHour feature
   Added game_info function for sending global messages to all players

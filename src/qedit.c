@@ -121,7 +121,7 @@ ACMD(do_oasis_qedit)
   /** Give the descriptor an OLC structure.                                  **/
   /****************************************************************************/
   if (d->olc) {
-    mudlog(BRF, ADMLVL_IMMORT, TRUE,
+    mudlog(BRF, LVL_IMMORT, TRUE,
       "SYSERR: do_oasis_quest: Player already had olc structure.");
     free(d->olc);
   }
@@ -155,7 +155,7 @@ ACMD(do_oasis_qedit)
   if (save) {
     send_to_char(ch, "Saving all quests in zone %d.\r\n",
       zone_table[OLC_ZNUM(d)].number);
-    mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
       "OLC: %s saves quest info for zone %d.",
       GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
 
@@ -184,7 +184,7 @@ ACMD(do_oasis_qedit)
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-  mudlog(BRF, ADMLVL_IMMORT, TRUE,
+  mudlog(BRF, LVL_IMMORT, TRUE,
          "OLC: %s starts editing zone %d allowed zone %d",
          GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
@@ -205,7 +205,7 @@ static void qedit_setup_new(struct descriptor_data *d)
   quest->value[0]   = 0;              /* Points for completing  */
   quest->value[1]   = 0;              /* Points for abandoning  */
   quest->value[2]   = 0;              /* Minimum level          */
-  quest->value[3]   = CONFIG_MAX_LEVEL;/*Maximim level          */
+  quest->value[3]   = LVL_IMPL;       /* Maximim level          */
   quest->value[4]   = -1;             /* Time limit             */
   quest->value[5]   = NOBODY;         /* Mob to return object   */
   quest->value[6]   = 1;              /* Quantity of targets    */
@@ -385,7 +385,7 @@ void qedit_parse(struct descriptor_data *d, char *arg)
         case 'Y':
           send_to_char(d->character, "Saving Quest to memory.\r\n");
           qedit_save_internally(d);
-          mudlog(CMP, MAX(ADMLVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
+          mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
      "OLC: %s edits quest %d", GET_NAME(d->character), OLC_NUM(d));
           if (CONFIG_OLC_SAVE) {
             qedit_save_to_disk(real_zone_by_thing(OLC_NUM(d)));
@@ -645,26 +645,26 @@ void qedit_parse(struct descriptor_data *d, char *arg)
       OLC_QUEST(d)->prereq = number;
       break;
     case QEDIT_LEVELMIN:
-      if (number < 0 || number > CONFIG_MAX_LEVEL) {
-        write_to_output(d, "Level must be between 0 and %d!\r\n", CONFIG_MAX_LEVEL);
-        write_to_output(d, "Enter minimum level to accept the quest : " );
+      if (number < 0 || number > LVL_IMPL) {
+        write_to_output(d, "Level must be between 0 and %d!\r\n", LVL_IMPL);
+ write_to_output(d, "Enter minimum level to accept the quest : " );
         return;
       }  else if (number > OLC_QUEST(d)->value[3]) {
-        write_to_output(d, "Minimum level can't be above maximum level!\r\n");
-        write_to_output(d, "Enter minimum level to accept the quest : " );
+ write_to_output(d, "Minimum level can't be above maximum level!\r\n");
+ write_to_output(d, "Enter minimum level to accept the quest : " );
         return;
       } else {
         OLC_QUEST(d)->value[2] = number;
         break;
       }
     case QEDIT_LEVELMAX:
-      if (number < 0 || number > CONFIG_MAX_LEVEL) {
-        write_to_output(d, "Level must be between 0 and %d!\r\n", CONFIG_MAX_LEVEL);
-        write_to_output(d, "Enter maximum level to accept the quest : " );
+      if (number < 0 || number > LVL_IMPL) {
+        write_to_output(d, "Level must be between 0 and %d!\r\n", LVL_IMPL);
+ write_to_output(d, "Enter maximum level to accept the quest : " );
         return;
       } else if (number < OLC_QUEST(d)->value[2]) {
-        write_to_output(d, "Maximum level can't be below minimum level!\r\n");
-        write_to_output(d, "Enter maximum level to accept the quest : " );
+ write_to_output(d, "Maximum level can't be below minimum level!\r\n");
+ write_to_output(d, "Enter maximum level to accept the quest : " );
         return;
       } else {
         OLC_QUEST(d)->value[3] = number;
@@ -719,7 +719,7 @@ void qedit_parse(struct descriptor_data *d, char *arg)
     default:
       /*. We should never get here . */
       cleanup_olc(d, CLEANUP_ALL);
-      mudlog(BRF, ADMLVL_BUILDER, TRUE, "SYSERR: OLC: qedit_parse(): "
+      mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: qedit_parse(): "
         "Reached default case!");
       write_to_output(d, "Oops...\r\n");
       break;
