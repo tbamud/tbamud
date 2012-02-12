@@ -33,6 +33,7 @@ struct event {
   EVENTFUNC(*func); /**< The function called when this event comes up. */
   void *event_obj;  /**< event_obj is passed to func when func is called */
   struct q_element *q_el;  /**< Where this event is located in the queue */
+  bool isMudEvent;  /**< used by the memory routines */
 };
 /**************************************************************************
  * End event structures and defines.
@@ -67,6 +68,7 @@ void event_cancel(struct event *event);
 void event_process(void);
 long event_time(struct event *event);
 void event_free_all(void);
+void cleanup_event_obj(struct event *event);
 
 /* - queues - function protos need by other modules */
 struct dg_queue *queue_init(void);

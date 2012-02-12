@@ -35,6 +35,25 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Feb 12 2012] - Vatiken
+  bug: do_score, changed level 30 to LVL_IMMORT
+  idea: Mortals can't see immortals levels
+  bug: the NOHASSLE flag allows imms to carry unlimited weight
+  idea: dexterity now affects whether a character gets the first hit
+  idea: advance to immortal now sets hunger/thirst to -1
+  feature: color is now an option on do_show, which shows all 256 color options
+  feature: active lists has now been added to do_show, under 'stats'
+  feature: added KaVir's protocol snippet
+  bug: protocol snippet should now properly detect xterm color
+  bug: protocol settings should now be preserved after copyover
+  idea: ibt now time stamps when something is submitted
+  feature: added a new MUD event system (mud_event.c)
+  feature: added a display_usage() event, which is basically an event/list tester.
+  feature: added two new parsing commands to modify.c for converting tabs to @ and back
+  feature: added a new MUD list system (lists.c)
+  improve: qedit now uses '\t' instead of '@' to show color
+  improve: sedit now uses '\t' instead of '@' to show color
+  issues: may be bugs with strfrmt() while converting '@' to '\t'
 [Feb 04 2012] - Vatiken
   Feature: Added 'Experience' and 'Thaco' to the do_show() command.
   Bug Fix: Nipped a bug where shopkeepers weren't sending tells.

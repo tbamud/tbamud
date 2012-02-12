@@ -79,6 +79,7 @@ static IBT_DATA *new_ibt(void)
    ibtData->level      = 0;
    ibtData->id_num     = NOBODY;
    ibtData->room       = NOWHERE;
+   ibtData->dated      = 0;
 
    for (i=0; i<IBT_ARRAY_MAX; i++)
      ibtData->flags[i]   = 0;
@@ -117,7 +118,7 @@ static void free_ibt_list(IBT_DATA *first_ibt, IBT_DATA *last_ibt)
 static IBT_DATA *read_ibt( char *filename, FILE *fp )
 {
    IBT_DATA *ibtData;
-   char *word, *id_num=NULL;
+   char *word, *id_num=NULL, *dated=NULL;
    char buf[MAX_STRING_LENGTH];
    bool fMatch, flgCheck;
    char letter;
@@ -150,13 +151,20 @@ static IBT_DATA *read_ibt( char *filename, FILE *fp )
             if (!str_cmp(word, "Body"))  STRFREE(ibtData->body);
             KEY("Body",     ibtData->body,   fread_clean_string( fp, buf ));
             break;
-
+          case 'D':
+            TXT_KEY("Dated", dated, fread_line(fp));          
+            break;
           case 'E':
             if (!str_cmp(word, "End"))
             {
-              if ( id_num )
+              if ( id_num ) {
                 ibtData->id_num = atol(id_num);
-
+                STRFREE( id_num );
+              }  
+              if ( dated ) {
+                ibtData->dated = atol(dated);
+                STRFREE( dated );
+              }  
               if ( !ibtData->name )
                 ibtData->name = STRALLOC("");
               if ( !ibtData->text )
@@ -219,7 +227,11 @@ static IBT_DATA *read_ibt( char *filename, FILE *fp )
          STRFREE( ibtData->text);
    if ( ibtData->body)
          STRFREE( ibtData->body);
-
+   if ( id_num )
+		 STRFREE( id_num );
+   if ( dated )
+		 STRFREE( dated );
+		 
    DISPOSE( ibtData);
    return NULL;
 }
@@ -316,6 +328,8 @@ void save_ibt_file(int mode)
          fprintf(fp,"Notes     %s~\n",ibtData->notes);
        if (ibtData->id_num != NOBODY)
          fprintf(fp,"IdNum     %ld\n",ibtData->id_num);
+       if (ibtData->dated != 0)
+         fprintf(fp,"Dated     %ld\n",ibtData->dated);
        fprintf(fp,"Level     %d\n",ibtData->level);
        fprintf(fp,"Room      %d\n",ibtData->room);
        fprintf(fp,"Flags     %d %d %d %d\n",ibtData->flags[0],ibtData->flags[1],
@@ -504,6 +518,7 @@ ACMD(do_ibt)
       } else {
 
         send_to_char(ch, "%s%s by %s%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->name);
+        send_to_char(ch, "%sSubmitted: %s%s", QCYN, QYEL, ibtData->dated ? ctime(&ibtData->dated) : "Unknown\r\n");
         if (GET_LEVEL(ch) >= LVL_IMMORT) {
           send_to_char(ch, "%sLevel: %s%d\r\n",QCYN, QYEL, ibtData->level);
           send_to_char(ch, "%sRoom : %s%d\r\n",QCYN, QYEL, ibtData->room);
@@ -640,6 +655,8 @@ ACMD(do_ibt)
     ibtData->text   = STRALLOC(arg_text);
     ibtData->name   = STRALLOC(GET_NAME(ch));
     ibtData->id_num = GET_IDNUM(ch);
+    ibtData->dated  = time(0);
+    
     switch(subcmd) {
        case SCMD_BUG : LINK( ibtData, first_bug, last_bug, next, prev );
                        break;

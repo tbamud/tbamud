@@ -81,6 +81,7 @@
 #include "modify.h"
 #include "quest.h"
 #include "ibt.h" /* for free_ibt_lists */
+#include "mud_event.h"
 
 #ifndef INVALID_SOCKET
 #define INVALID_SOCKET (-1)
@@ -163,6 +164,8 @@ static sigfunc *my_signal(int signo, sigfunc *func);
 static RETSIGTYPE websterlink(int sig);
 static size_t proc_colors(char *txt, size_t maxlen, int parse);
 static void handle_webster_file();
+
+static void msdp_update(void); /* KaVir plugin*/
 
 /* externally defined functions, used locally */
 #ifdef __CXREF__
@@ -390,7 +393,7 @@ void copyover_recover()
 {
   struct descriptor_data *d;
   FILE *fp;
-  char host[1024];
+  char host[1024], guiopt[1024];
   int desc, i, player_i;
   bool fOld;
   char name[MAX_INPUT_LENGTH];
@@ -414,7 +417,7 @@ void copyover_recover()
 
   for (;;) {
     fOld = TRUE;
-    i = fscanf (fp, "%d %ld %s %s\n", &desc, &pref, name, host);
+    i = fscanf (fp, "%d %ld %s %s %s\n", &desc, &pref, name, host, guiopt);
     if (desc == -1)
       break;
 
@@ -434,6 +437,8 @@ void copyover_recover()
     descriptor_list = d;
 
     d->connected = CON_CLOSE;
+
+    CopyoverSet(d,guiopt);
 
     /* Now, find the pfile */
     CREATE(d->character, struct char_data, 1);
@@ -815,8 +820,12 @@ void game_loop(socket_t local_mother_desc)
     for (d = descriptor_list; d; d = next_d) {
       next_d = d->next;
       if (FD_ISSET(d->descriptor, &input_set))
+       {
+        if ( d->pProtocol != NULL )      /* KaVir's plugin */
+            d->pProtocol->WriteOOB = 0;  /* KaVir's plugin */
 	if (process_input(d) < 0)
 	  close_socket(d);
+       }
     }
 
     /* Process commands we just read from process_input */
@@ -950,6 +959,7 @@ void heartbeat(int heart_pulse)
     script_trigger_check();
 
   if (!(heart_pulse % PASSES_PER_SEC)) {    /* EVERY second */
+    msdp_update();
     next_tick--;
   }
 
@@ -1337,6 +1347,12 @@ size_t vwrite_to_output(struct descriptor_data *t, const char *format, va_list a
   wantsize = size = vsnprintf(txt, sizeof(txt), format, args);
   if (t->character)
     wantsize = size = proc_colors(txt, sizeof(txt), COLOR_ON(t->character));
+
+  strcpy(txt, ProtocolOutput( t, txt, (int*)&wantsize )); /* <--- Add this line */
+  size = wantsize;                    /* <--- Add this line */
+  if ( t->pProtocol->WriteOOB > 0 )   /* <--- Add this line */
+    --t->pProtocol->WriteOOB;         /* <--- Add this line */
+
   /* If exceeding the size of the buffer, truncate it for the overflow message */
   if (size < 0 || wantsize >= sizeof(txt)) {
     size = sizeof(txt) - 1;
@@ -1494,11 +1510,14 @@ static void init_descriptor (struct descriptor_data *newd, int desc)
   *newd->output = '\0';
   newd->bufptr = 0;
   newd->has_prompt = 1;  /* prompt is part of greetings */
-  STATE(newd) = CON_GET_NAME;
+  STATE(newd) = CON_GET_PROTOCOL;
   CREATE(newd->history, char *, HISTORY_SIZE);
   if (++last_desc == 1000)
     last_desc = 1;
   newd->desc_num = last_desc;
+  newd->pProtocol = ProtocolCreate(); /* KaVir's plugin*/
+  newd->events = create_list();
+  
 }
 
 static int new_descriptor(socket_t s)
@@ -1509,8 +1528,7 @@ static int new_descriptor(socket_t s)
   struct descriptor_data *newd;
   struct sockaddr_in peer;
   struct hostent *from;
-  char greet_copy[MAX_STRING_LENGTH];
-
+  
   /* accept the new connection */
   i = sizeof(peer);
   if ((desc = accept(s, (struct sockaddr *) &peer, &i)) == INVALID_SOCKET) {
@@ -1564,18 +1582,18 @@ static int new_descriptor(socket_t s)
   }
 
   /* initialize descriptor data */
-   init_descriptor(newd, desc);
+  init_descriptor(newd, desc);
 
   /* prepend to list */
   newd->next = descriptor_list;
   descriptor_list = newd;
 
-  /* This is where the greetings are actually sent to the new player */
-  /* Adjusted by Jamdog to show color codes on the greetings page    */
-  *greet_copy = '\0';
-  sprintf(greet_copy, "%s", GREETINGS);
-  proc_colors(greet_copy, MAX_STRING_LENGTH, TRUE);
-  write_to_output(newd, "%s", greet_copy);
+  /* Attach Event */ 
+  attach_mud_event(get_protocols, new_mud_event(EVENT_DESC, newd, NULL), 1.5 * PASSES_PER_SEC);
+  
+  /* KaVir's plugin*/
+  write_to_output(newd, "Attempting to Detect Client, Please Wait...\r\n");
+  ProtocolNegotiate(newd);
 
   return (0);
 }
@@ -1605,8 +1623,11 @@ static int process_output(struct descriptor_data *t)
   if (STATE(t) == CON_PLAYING && t->character && !IS_NPC(t->character) && !PRF_FLAGGED(t->character, PRF_COMPACT))
     strcat(osb, "\r\n");	/* strcpy: OK (osb:MAX_SOCK_BUF-2 reserves space) */
 
+  if (!t->pProtocol->WriteOOB)
+  {
   /* add a prompt */
   strcat(i, make_prompt(t));	/* strcpy: OK (i:MAX_SOCK_BUF reserves space) */
+  }
 
   /* now, send the output.  If this is an 'interruption', use the prepended
    * CRLF, otherwise send the straight output sans CRLF. */
@@ -1861,6 +1882,9 @@ static int process_input(struct descriptor_data *t)
   char *ptr, *read_point, *write_point, *nl_pos = NULL;
   char tmp[MAX_INPUT_LENGTH];
 
+  static char read_buf[MAX_PROTOCOL_BUFFER]; /* KaVir's plugin */
+  read_buf[0] = '\0';                        /* KaVir's plugin */
+  
   /* first, find the point where we left off reading data */
   buf_length = strlen(t->inbuf);
   read_point = t->inbuf + buf_length;
@@ -1872,7 +1896,14 @@ static int process_input(struct descriptor_data *t)
       return (-1);
     }
 
-    bytes_read = perform_socket_read(t->descriptor, read_point, space_left);
+    bytes_read = perform_socket_read(t->descriptor, read_buf, MAX_PROTOCOL_BUFFER);
+
+    if ( bytes_read >= 0 )
+    {
+      read_buf[bytes_read] = '\0';
+      ProtocolInput( t, read_buf, bytes_read, t->inbuf );
+      bytes_read = strlen(t->inbuf);
+    }
 
     if (bytes_read < 0)	/* Error, disconnect them. */
       return (-1);
@@ -2122,6 +2153,19 @@ void close_socket(struct descriptor_data *d)
     free(d->showstr_head);
   if (d->showstr_count)
     free(d->showstr_vector);
+  
+  /* KaVir's plugin*/
+  ProtocolDestroy( d->pProtocol );
+ 
+  /* Mud Events */
+  if (d->events->iSize > 0) {
+    struct event * pEvent;
+
+    while ((pEvent = simple_list(d->events)) != NULL)
+      event_cancel(pEvent);
+  }
+
+  free_list(d->events);
 
   /*. Kill any OLC stuff .*/
   switch (d->connected) {
@@ -2793,4 +2837,67 @@ static void handle_webster_file(void) {
 
   send_to_char(ch, "You get this feedback from Merriam-Webster:\r\n");
   page_string(ch->desc, retval, 1);
+}
+
+
+/* KaVir's plugin*/
+static void msdp_update( void )
+{
+  struct descriptor_data *d;
+  int PlayerCount = 0;
+  char buf[MAX_STRING_LENGTH];
+  extern const char *pc_class_types[];
+
+  for (d = descriptor_list; d; d = d->next)
+  {
+    struct char_data *ch = d->character;
+    if ( ch && !IS_NPC(ch) && d->connected == CON_PLAYING )
+    {
+      struct char_data *pOpponent = FIGHTING(ch);
+      ++PlayerCount;
+
+      MSDPSetString( d, eMSDP_CHARACTER_NAME, GET_NAME(ch) );
+      MSDPSetNumber( d, eMSDP_ALIGNMENT, GET_ALIGNMENT(ch) );
+      MSDPSetNumber( d, eMSDP_EXPERIENCE, GET_EXP(ch) );
+
+      MSDPSetNumber( d, eMSDP_HEALTH, GET_HIT(ch) );
+      MSDPSetNumber( d, eMSDP_HEALTH_MAX, GET_MAX_HIT(ch) );
+      MSDPSetNumber( d, eMSDP_LEVEL, GET_LEVEL(ch) );
+
+      sprinttype( ch->player.chclass, pc_class_types, buf, sizeof(buf) );
+      MSDPSetString( d, eMSDP_CLASS, buf );
+
+      MSDPSetNumber( d, eMSDP_MANA, GET_MANA(ch) );
+      MSDPSetNumber( d, eMSDP_MANA_MAX, GET_MAX_MANA(ch) );
+      MSDPSetNumber( d, eMSDP_WIMPY, GET_WIMP_LEV(ch) );
+      MSDPSetNumber( d, eMSDP_MONEY, GET_GOLD(ch) );
+      MSDPSetNumber( d, eMSDP_MOVEMENT, GET_MOVE(ch) );
+      MSDPSetNumber( d, eMSDP_MOVEMENT_MAX, GET_MAX_MOVE(ch) );
+      MSDPSetNumber( d, eMSDP_AC, compute_armor_class(ch) );
+
+      /* This would be better moved elsewhere */
+      if ( pOpponent != NULL )
+      {
+          int hit_points = (GET_HIT(pOpponent) * 100) / GET_MAX_HIT(pOpponent);
+          MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, hit_points );
+          MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH_MAX, 100 );
+          MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, GET_LEVEL(pOpponent) );
+          MSDPSetString( d, eMSDP_OPPONENT_NAME, PERS(pOpponent, ch) );
+      }
+      else /* Clear the values */
+      {
+          MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, 0 );
+          MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, 0 ); 
+          MSDPSetString( d, eMSDP_OPPONENT_NAME, "" ); 
+      }
+
+      MSDPUpdate( d );
+    }
+
+    /* Ideally this should be called once at startup, and again whenever
+     * someone leaves or joins the mud.  But this works, and it keeps the
+     * snippet simple.  Optimise as you see fit.
+     */
+    MSSPSetPlayers( PlayerCount );
+  }
 }

@@ -21,6 +21,7 @@
 #include "class.h"
 #include "fight.h"
 #include "screen.h"
+#include "mud_event.h"
 
 /* local file scope function prototypes */
 static int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6);
@@ -526,4 +527,32 @@ int decrease_bank(struct char_data *ch, int deduction)
   amt = (deduction * -1);
   increase_bank(ch, amt);
   return (GET_BANK_GOLD(ch));
+}
+
+EVENTFUNC(display_usage)
+{
+  struct descriptor_data * d;
+  struct char_data * tch;
+  struct list_data * player_list;
+  
+  player_list = create_list();
+	
+  for (d = descriptor_list; d; d = d->next)
+    if (d->character && STATE(d) == CON_PLAYING)
+      add_to_list(d->character, player_list);
+      
+  game_info("News:");    
+  game_info("Currently %d Players Online", player_list->iSize);      
+      
+  if (player_list->iSize) {
+    tch = (struct char_data *) random_from_list(player_list);
+    if (player_list->iSize == 1)
+      game_info("%s is apparently very lonely.", GET_NAME(tch));
+    else 
+      game_info("%s last seen at %s", GET_NAME(tch), world[IN_ROOM(tch)].name);		  
+  }
+  
+  free_list(player_list);
+  
+  return (10 * 60 * PASSES_PER_SEC);  
 }

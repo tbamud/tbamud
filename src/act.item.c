@@ -161,19 +161,24 @@ ACMD(do_put)
 
 static int can_take_obj(struct char_data *ch, struct obj_data *obj)
 {
-  if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)) {
-    act("$p: you can't carry that many items.", FALSE, ch, obj, 0, TO_CHAR);
-    return (0);
-  } else if ((IS_CARRYING_W(ch) + GET_OBJ_WEIGHT(obj)) > CAN_CARRY_W(ch)) {
-    act("$p: you can't carry that much weight.", FALSE, ch, obj, 0, TO_CHAR);
-    return (0);
-  } else if (!(CAN_WEAR(obj, ITEM_WEAR_TAKE))) {
-    act("$p: you can't take that!", FALSE, ch, obj, 0, TO_CHAR);
-    return (0);
-  } else if (OBJ_SAT_IN_BY(obj)){
+  if (!PRF_FLAGGED(ch, PRF_NOHASSLE)) {
+	  if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)) {
+		act("$p: you can't carry that many items.", FALSE, ch, obj, 0, TO_CHAR);
+		return (0);
+	  } else if ((IS_CARRYING_W(ch) + GET_OBJ_WEIGHT(obj)) > CAN_CARRY_W(ch)) {
+		act("$p: you can't carry that much weight.", FALSE, ch, obj, 0, TO_CHAR);
+		return (0);
+	  } else if (!(CAN_WEAR(obj, ITEM_WEAR_TAKE))) {
+		act("$p: you can't take that!", FALSE, ch, obj, 0, TO_CHAR);
+		return (0);
+	  } 
+  }
+  
+  if (OBJ_SAT_IN_BY(obj)){
     act("It appears someone is sitting on $p..", FALSE, ch, obj, 0, TO_CHAR);
     return (0);
   }
+  
   return (1);
 }
 

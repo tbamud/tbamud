@@ -24,7 +24,7 @@
 #include "dg_event.h"
 #include "constants.h"
 #include "comm.h"  /* For access to the game pulse */
-
+#include "mud_event.h"
 
 /***************************************************************************
  * Begin mud specific event queue functions
@@ -65,6 +65,7 @@ struct event *event_create(EVENTFUNC(*func), void *event_obj, long when)
   new_event->func = func;
   new_event->event_obj = event_obj;
   new_event->q_el = queue_enq(event_q, new_event, when + pulse);
+  new_event->isMudEvent = FALSE;
 
   return new_event;
 }
@@ -85,8 +86,21 @@ void event_cancel(struct event *event)
     queue_deq(event_q, event->q_el);
 
   if (event->event_obj)
-    free(event->event_obj);
+      cleanup_event_obj(event);
+
   free(event);
+}
+
+/* The memory freeing routine tied into the mud event system */
+void cleanup_event_obj(struct event *event)
+{
+  struct mud_event_data * mud_event;
+
+  if (event->isMudEvent) {  
+    mud_event = (struct mud_event_data *) event->event_obj;
+    free_mud_event(mud_event);
+  } else
+    free(event->event_obj);
 }
 
 /** Process any events whose time has come. Should be called from, and at, every
@@ -314,7 +328,8 @@ void queue_free(struct dg_queue *q)
       if ((event = (struct event *) qe->data) != NULL) 
       {
         if (event->event_obj)
-          free(event->event_obj);
+          cleanup_event_obj(event);
+
         free(event);
       }
       free(qe);

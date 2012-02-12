@@ -20,6 +20,7 @@
 #include "screen.h"
 #include "constants.h"
 #include "dg_scripts.h"
+#include "mud_event.h"
 #include "mail.h"         /**< For the has_mail function */
 #include "act.h"
 #include "class.h"
@@ -808,7 +809,7 @@ ACMD(do_score)
   send_to_char(ch, "You have %d exp, %d gold coins, and %d questpoints.\r\n",
 	  GET_EXP(ch), GET_GOLD(ch), GET_QUESTPOINTS(ch));
 
-  if (GET_LEVEL(ch) < 30)
+  if (GET_LEVEL(ch) < LVL_IMMORT)
     send_to_char(ch, "You need %d exp to reach your next level.\r\n",
 	level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1) - GET_EXP(ch));
 
@@ -1262,11 +1263,19 @@ ACMD(do_who)
           CCNRM(ch, C_SPR), ((!(++num_can_see % 4)) ? "\r\n" : ""));
       } else {
         num_can_see++;
-        send_to_char(ch, "%s[%2d %s] %s%s%s%s",
+        if (GET_LEVEL(tch) >= LVL_GOD) {
+          send_to_char(ch, "%s%s%s%s%s",
+            (GET_LEVEL(tch) >= LVL_IMMORT ? CCYEL(ch, C_SPR) : ""),
+            GET_NAME(tch), (*GET_TITLE(tch) ? " " : ""), GET_TITLE(tch),
+            CCNRM(ch, C_SPR));			
+		} else {
+          send_to_char(ch, "%s[%2d %s] %s%s%s%s",
             (GET_LEVEL(tch) >= LVL_IMMORT ? CCYEL(ch, C_SPR) : ""),
             GET_LEVEL(tch), CLASS_ABBR(tch),
             GET_NAME(tch), (*GET_TITLE(tch) ? " " : ""), GET_TITLE(tch),
             CCNRM(ch, C_SPR));
+        }
+        
 
         if (GET_INVIS_LEV(tch))
           send_to_char(ch, " (i%d)", GET_INVIS_LEV(tch));

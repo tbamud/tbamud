@@ -38,6 +38,7 @@
 #include "asciimap.h"
 #include "prefedit.h"
 #include "ibt.h"
+#include "mud_event.h"
 
 /* local (file scope) functions */
 static int perform_dupe_check(struct descriptor_data *d);
@@ -1138,6 +1139,7 @@ static int perform_dupe_check(struct descriptor_data *d)
   REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
   REMOVE_BIT_AR(AFF_FLAGS(d->character), AFF_GROUP);
   STATE(d) = CON_PLAYING;
+  MXPSendTag( d, "<VERSION>" );
 
   switch (mode) {
   case RECON:
@@ -1267,6 +1269,43 @@ int enter_player_game (struct descriptor_data *d)
     return load_result;
 }
 
+EVENTFUNC(get_protocols)
+{
+	struct descriptor_data *d;
+	struct mud_event_data *pMudEvent;
+	char buf[MAX_STRING_LENGTH];
+	int len;
+	
+	if (event_obj == NULL)
+	  return 0;
+	  
+	pMudEvent = (struct mud_event_data *) event_obj;
+	d = (struct descriptor_data *) pMudEvent->pStruct;  
+	
+	/* Clear extra white space from the "protocol scroll" */
+	write_to_output(d, "[H[J");
+
+	len = snprintf(buf, MAX_STRING_LENGTH,   "\tO[\toClient\tO] \tw%s\tn | ", d->pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString);
+	
+	if (d->pProtocol->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt)
+	  len += snprintf(buf + len, MAX_STRING_LENGTH - len, "\tO[\toColors\tO] \tw256\tn | ");
+	else if (d->pProtocol->pVariables[eMSDP_ANSI_COLORS]->ValueInt)
+      len += snprintf(buf + len, MAX_STRING_LENGTH - len, "\tO[\toColors\tO] \twAnsi\tn | ");
+	else
+      len += snprintf(buf + len, MAX_STRING_LENGTH - len, "[Colors] No Color | ");
+ 
+	len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toMXP\tO] \tw%s\tn | ", d->pProtocol->bMXP ? "Yes" : "No");
+	len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toMSDP\tO] \tw%s\tn | ", d->pProtocol->bMSDP ? "Yes" : "No");	  
+	len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toATCP\tO] \tw%s\tn\r\n\r\n", d->pProtocol->bATCP ? "Yes" : "No");
+		 
+	write_to_output(d, buf, 0);	 
+		  
+	write_to_output(d, GREETINGS, 0); 
+	STATE(d) = CON_GET_NAME;
+    free_mud_event(pMudEvent);
+	return 0;
+}
+
 /* deal with newcomers and other non-playing sockets */
 void nanny(struct descriptor_data *d, char *arg)
 {
@@ -1304,6 +1343,10 @@ void nanny(struct descriptor_data *d, char *arg)
 
   /* Not in OLC. */
   switch (STATE(d)) {
+  case CON_GET_PROTOCOL:
+		write_to_output(d, "Collecting Protocol Information... Please Wait.\r\n"); 
+		return;
+  break;		
   case CON_GET_NAME:		/* wait for input of name */
     if (d->character == NULL) {
       CREATE(d->character, struct char_data, 1);
@@ -1619,6 +1662,7 @@ void nanny(struct descriptor_data *d, char *arg)
       act("$n has entered the game.", TRUE, d->character, 0, 0, TO_ROOM);
 
       STATE(d) = CON_PLAYING;
+      MXPSendTag( d, "<VERSION>" );
       if (GET_LEVEL(d->character) == 0) {
 	do_start(d->character);
 	send_to_char(d->character, "%s", CONFIG_START_MESSG);

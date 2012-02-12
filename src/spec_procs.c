@@ -452,7 +452,7 @@ SPECIAL(guild_guard)
     /* Allow the people of the guild through. */ 
     if (!IS_NPC(ch) && GET_CLASS(ch) == guild_info[i].pc_class) 
       continue; 
-     
+
     send_to_char(ch, "%s", buf); 
     act(buf2, FALSE, ch, 0, 0, TO_ROOM); 
     return (TRUE); 

@@ -84,12 +84,14 @@ ACMD(do_hit)
     if (!CONFIG_PK_ALLOWED && !IS_NPC(vict) && !IS_NPC(ch)) 
 	check_killer(ch, vict);
 
-    if ((GET_POS(ch) == POS_STANDING) && (vict != FIGHTING(ch))) {
-      hit(ch, vict, TYPE_UNDEFINED);
-      WAIT_STATE(ch, PULSE_VIOLENCE + 2);
-    } else
-      send_to_char(ch, "You do the best you can!\r\n");
-  }
+    if ((GET_POS(ch) == POS_STANDING) && (vict != FIGHTING(ch))) { 
+      if (GET_DEX(ch) > GET_DEX(vict) || (GET_DEX(ch) == GET_DEX(vict) && rand_number(1, 2) == 1))  /* if faster */
+        hit(ch, vict, TYPE_UNDEFINED);  /* first */
+      else hit(vict, ch, TYPE_UNDEFINED);  /* or the victim is first */
+        WAIT_STATE(ch, PULSE_VIOLENCE + 2); 
+    } else 
+      send_to_char(ch, "You're fighting the best you can!\r\n"); 
+  } 
 }
 
 ACMD(do_kill)

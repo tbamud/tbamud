@@ -1546,6 +1546,9 @@ ACMD(do_advance)
         for (i = 1; i <= MAX_SKILLS; i++)
           SET_SKILL(victim, i, 100);
    GET_OLC_ZONE(victim) = NOWHERE;
+   GET_COND(victim, HUNGER) = -1;
+   GET_COND(victim, THIRST) = -1;
+   GET_COND(victim, DRUNK)  = -1;
   }
 
   gain_exp_regardless(victim, level_exp(GET_CLASS(victim), newlevel) - GET_EXP(victim));
@@ -2459,7 +2462,9 @@ ACMD(do_show)
   struct obj_data *obj;
   struct descriptor_data *d;
   char field[MAX_INPUT_LENGTH], value[MAX_INPUT_LENGTH],
-	arg[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH];
+	arg[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH], temp[MAX_STRING_LENGTH];
+  int r, g, b;
+  char colour[16];
 
   struct show_struct {
     const char *cmd;
@@ -2477,7 +2482,8 @@ ACMD(do_show)
     { "houses",		LVL_IMMORT },
     { "snoop",		LVL_IMMORT },			/* 10 */
     { "thaco",      LVL_IMMORT },
-    { "experience", LVL_IMMORT },
+    { "exp",        LVL_IMMORT },
+    { "colour",     LVL_IMMORT },
     { "\n", 0 }
   };
 
@@ -2617,7 +2623,8 @@ ACMD(do_show)
 	"  %5d rooms            %5d zones\r\n"
   "  %5d triggers         %5d shops\r\n"
   "  %5d large bufs       %5d autoquests\r\n"
-	"  %5d buf switches     %5d overflows\r\n",
+	"  %5d buf switches     %5d overflows\r\n"
+	"  %5d lists\r\n",
 	i, con,
 	top_of_p_table + 1,
 	j, top_of_mobt + 1,
@@ -2625,7 +2632,7 @@ ACMD(do_show)
 	top_of_world + 1, top_of_zone_table + 1,
 	top_of_trigt + 1, top_shop + 1,
 	buf_largecount, total_quests,
-	buf_switches, buf_overflows
+	buf_switches, buf_overflows, global_lists->iSize
 	);
     break;
 
@@ -2739,6 +2746,21 @@ ACMD(do_show)
 	  len += nlen;		
     }
 			
+    page_string(ch->desc, buf, TRUE);	
+    break;
+
+  case 13:
+    len = strlcpy(buf, "Colours\r\n--------------------------\r\n", sizeof(buf));
+		k = 0;	
+    for (r = 0; r < 6; r++)
+			for (g = 0; g < 6; g++)
+			  for (b = 0; b < 6; b++) {
+					  sprintf(colour, "F%d%d%d", r, g, b);
+					nlen = snprintf(buf + len, sizeof(buf) - len,  "%s%s%s", ColourRGB(ch->desc, colour), colour, ++k % 6 == 0 ? "\tn\r\n" : "    ");
+				if (len + nlen >= sizeof(buf))
+					break;
+				len += nlen;
+				}	
     page_string(ch->desc, buf, TRUE);	
     break;
 
@@ -4135,7 +4157,7 @@ ACMD(do_copyover)
      write_to_descriptor (d->descriptor, "\n\rSorry, we are rebooting. Come back in a few minutes.\n\r");
      close_socket (d); /* throw'em out */
    } else {
-      fprintf (fp, "%d %ld %s %s\n", d->descriptor, GET_PREF(och), GET_NAME(och), d->host);
+      fprintf (fp, "%d %ld %s %s %s\n", d->descriptor, GET_PREF(och), GET_NAME(och), d->host, CopyoverGet(d));
       /* save och */
       GET_LOADROOM(och) = GET_ROOM_VNUM(IN_ROOM(och));
       Crash_rentsave(och,0);

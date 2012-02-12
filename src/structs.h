@@ -12,6 +12,9 @@
 #ifndef _STRUCTS_H_
 #define _STRUCTS_H_
 
+#include "protocol.h" /* Kavir Plugin*/
+#include "lists.h"
+
 /** Intended use of this macro is to allow external packages to work with a
  * variety of versions without modifications.  For instance, an IS_CORPSE()
  * macro was introduced in pl13.  Any future code add-ons could take into
@@ -326,6 +329,7 @@
 #define CON_QEDIT        28 /**< OLC mode - quest edit */
 #define CON_PREFEDIT     29 /**< OLC mode - preference edit */
 #define CON_IBTEDIT      30 /**< OLC mode - idea/bug/typo edit */
+#define CON_GET_PROTOCOL 31 /**< Used at log-in while attempting to get protocols > */
 
 /* OLC States range - used by IS_IN_OLC and IS_PLAYING */
 #define FIRST_OLC_STATE CON_OEDIT     /**< The first CON_ state that is an OLC */
@@ -1031,6 +1035,8 @@ struct char_data
   struct char_data *master;      /**< List of character being followed */
 
   long pref; /**< unique session id */
+  
+  struct list_data * events;
 };
 
 /** descriptor-related structures */
@@ -1085,6 +1091,9 @@ struct descriptor_data
   struct descriptor_data *snoop_by; /**< And who is snooping this char	*/
   struct descriptor_data *next;     /**< link to next descriptor		*/
   struct oasis_olc_data *olc;       /**< OLC info */
+  protocol_t *pProtocol;    /**< Kavir plugin */
+  
+  struct list_data * events;
 };
 
 /* other miscellaneous structures */

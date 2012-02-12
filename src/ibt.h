@@ -81,6 +81,7 @@ struct ibt_data
   room_vnum  room;                  /**< Room in which this IBT was reported       */
   long       id_num;                /**< The ID number of the player who logged it */
   int        flags[IBT_ARRAY_MAX];  /**< IBT flags                                 */
+  long       dated;                 /**< When the IBT what reported                */
 };
 
 extern  IBT_DATA       *first_bug;

@@ -809,8 +809,9 @@ int count_color_chars(char *string)
 
 	len = strlen(string);
   for (i = 0; i < len; i++) {
-    while (string[i] == '@') {
-      if (string[i + 1] == '@')
+    while (string[i] == '\t' || string[i] == '@') {
+      if ((string[i] == '\t' && string[i + 1] == '\t') ||
+           (string[i] == '@' && string[i + 1] == '@'))
         num++;
       else
         num += 2;
@@ -1290,6 +1291,7 @@ IDXTYPE atoidx( const char *str_to_conv )
     return (IDXTYPE) result;
 }
 
+#define isspace_ignoretabs(c) ((c)!='\t' && isspace(c))
 
 /*
    strfrmt (String Format) function
@@ -1316,17 +1318,17 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
   /* Split into lines, including convert \\ into \r\n */
   while(*sp) {
     /* eat leading space */
-    while(*sp && isspace(*sp)) sp++;
+    while(*sp && isspace_ignoretabs(*sp)) sp++;
     /* word begins */
     wp = sp;
     wlen = 0;
     while(*sp) { /* Find the end of the word */
-      if(isspace(*sp)) break;
+      if(isspace_ignoretabs(*sp)) break;
       if(*sp=='\\' && sp[1] && sp[1]=='\\') {
         if(sp!=wp)
           break; /* Finish dealing with the current word */
         sp += 2; /* Eat the marker and any trailing space */
-        while(*sp && isspace(*sp)) sp++;
+        while(*sp && isspace_ignoretabs(*sp)) sp++;
         wp = sp;
         /* Start a new line */
         if(hpad)
@@ -1345,6 +1347,18 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
         if (*sp=='@' && (sp[1]!=*sp)) /* Color code, not @@ */
           last_color = sp[1];
         sp += 2; /* Eat the whole code regardless */
+      } else if (*sp=='\t'&&sp[1]) {
+        char MXPcode = sp[1]=='[' ? ']' : sp[1]=='<' ? '>' : '\0';
+	
+	if (!MXPcode)
+	   last_color = sp[1];
+ 
+        sp += 2; /* Eat the code */
+        if (MXPcode)
+        {
+           while (*sp!='\0'&&*sp!=MXPcode)
+             ++sp; /* Eat the rest of the code */
+        } 
       } else {
         wlen++;
         sp++;
@@ -1355,7 +1369,7 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
       if(hpad)
         for(; llen < w; llen++)
           *lp++ = ' ';
-      *lp++ = '@';  /* 'normal' color */
+      *lp++ = '\t';  /* 'normal' color */
       *lp++ = 'n';
       *lp++ = '\r'; /* New line */
       *lp++ = '\n';
@@ -1366,7 +1380,7 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
       lcount++;
       lp = line;
       if (last_color != 'n') {
-        *lp++ = '@';  /* restore previous color */
+        *lp++ = '\t';  /* restore previous color */
         *lp++ = last_color;
         new_line_started = TRUE;
       }

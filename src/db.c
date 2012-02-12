@@ -37,6 +37,7 @@
 #include "shop.h"
 #include "quest.h"
 #include "ibt.h"
+#include "mud_event.h"
 #include <sys/stat.h>
 
 /*  declarations of most of the 'global' variables */
@@ -628,6 +629,9 @@ void destroy_db(void)
   /* Events */
   event_free_all();
 
+  /* Lists */
+  free_list(world_events);
+
 }
 
 /* body of the booting system */
@@ -639,6 +643,12 @@ void boot_db(void)
 
   log("Resetting the game time:");
   reset_time();
+  
+  log("Initialize Global Lists");
+  global_lists = create_list();
+ 
+  log("Initializing Events");
+  init_events();
 
   log("Reading news, credits, help, ihelp, bground, info & motds.");
   file_to_string_alloc(NEWS_FILE, &news);

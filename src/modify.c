@@ -75,6 +75,24 @@ void smash_tilde(char *str)
       *p=' ';
 }
 
+/* Parse out the @ character and replace it with the '\t' to work with
+ * KaVir's protocol snippet */
+void parse_at(char *str)
+{
+  char *p = str;
+   for (; *p; p++)
+     if (*p == '@')
+       *p = '\t';
+}
+
+void parse_tab(char *str)
+{
+  char *p = str;
+   for (; *p; p++)
+     if (*p == '\t')
+       *p = '@';
+}
+
 /* Basic API function to start writing somewhere. 'data' isn't used, but you
  * can use it to pass whatever else you may want through it.  The improved
  * editor patch when updated could use it to pass the old text buffer, for
