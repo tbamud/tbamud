@@ -31,6 +31,5 @@ void free_mud_event(struct mud_event_data *pMudEvent);
 
 /* Events */
 EVENTFUNC(get_protocols);
-EVENTFUNC(display_usage);
 
 #endif /* _MUD_EVENT_H_ */

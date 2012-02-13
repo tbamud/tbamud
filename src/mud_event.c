@@ -16,9 +16,6 @@ void init_events(void)
 {
   /* Allocate Event List */
   world_events = create_list();
-	
-  /* Attach Our Events */
-  attach_mud_event(display_usage, new_mud_event(EVENT_WORLD, NULL, NULL), 10 * PASSES_PER_SEC);
 }
 
 void attach_mud_event(void (*func), struct mud_event_data *pMudEvent, long time)
