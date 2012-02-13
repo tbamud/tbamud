@@ -1263,7 +1263,7 @@ ACMD(do_who)
           CCNRM(ch, C_SPR), ((!(++num_can_see % 4)) ? "\r\n" : ""));
       } else {
         num_can_see++;
-        if (GET_LEVEL(tch) >= LVL_GOD) {
+        if (GET_LEVEL(tch) >= LVL_IMMORT) {
           send_to_char(ch, "%s%s%s%s%s",
             (GET_LEVEL(tch) >= LVL_IMMORT ? CCYEL(ch, C_SPR) : ""),
             GET_NAME(tch), (*GET_TITLE(tch) ? " " : ""), GET_TITLE(tch),
