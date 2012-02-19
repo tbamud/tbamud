@@ -17,7 +17,7 @@ The Immortal Postmaster is hard at work here.
 ~
    Scary...  A postal worker...  Working?  
 ~
-712714 0 0 0 65536 0 0 0 0 E
+188426 0 0 0 65536 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
 140 19600
 8 8 2
@@ -212,11 +212,11 @@ test mob~
 the test mob~
 .the test mob is our friend.
 ~
-   Test mobs can be whatever you want them to be.  
+   Test mobs can be whatever you want them to be.
 ~
-61454 0 0 0 983040 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+8 0 0 0 0 0 0 0 0 E
+0 20 10 1d1+0 1d1+0
+0 0
 8 8 0
 E
 $

@@ -1,9 +1,15 @@
 /**
 * @file mud_event.h
+* Mud_Event Header file.
 * 
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
+* 
+* This source code, which was not part of the CircleMUD legacy code,
+* is attributed to:
+* Copyright 2012 by Joseph Arnusch.                                                    
 */
+
 #ifndef _MUD_EVENT_H_
 #define _MUD_EVENT_H_
 
@@ -13,23 +19,36 @@
 #define EVENT_DESC  1
 #define EVENT_CHAR  2
 
+typedef enum {
+	eNULL,
+	ePROTOCOLS,
+} event_id;
+
+struct mud_event_list {
+  const char * event_name;
+	EVENTFUNC(*func);
+	int iEvent_Type;
+};
+
 struct mud_event_data {
-  struct  event * pEvent;
-  int     iEvent_Type;
-  void  * pStruct;
-  char  * sVariables;	
+  struct  event * pEvent;      /***< Pointer reference to the event */
+  event_id        iId;         /***< General ID reference */  
+  void          * pStruct;     /***< Pointer to NULL, Descriptor, Character .... */
+  char          * sVariables;	 /***< String variable */
 }; 
 
 /* Externals */
 extern struct list_data * world_events;
-
+extern struct mud_event_list mud_event_index[];
 /* Local Functions */
 void init_events(void);
-struct mud_event_data *new_mud_event(int iEvent_Type, void *pStruct, char *sVariables);
-void attach_mud_event(void (*func), struct mud_event_data *pMudEvent, long time);
+struct mud_event_data *new_mud_event(event_id iId, void *pStruct, char *sVariables);
+void attach_mud_event(struct mud_event_data *pMudEvent, long time);
 void free_mud_event(struct mud_event_data *pMudEvent);
+struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId);
 
 /* Events */
+EVENTFUNC(event_countdown);
 EVENTFUNC(get_protocols);
 
 #endif /* _MUD_EVENT_H_ */

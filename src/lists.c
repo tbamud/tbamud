@@ -1,12 +1,8 @@
 /**************************************************************************
 *  File: lists.c                                           Part of tbaMUD *
-*  Usage: Loading/saving/editing of Ideas, Bugs and Typos lists           *
+*  Usage: Handling of in-game lists                                       *
 *                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Written by Joseph Arnusch (Vatiken) for the tbaMUD codebase            *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
+*  By Vatiken. Copyright 2012 by Joseph Arnusch                           *
 **************************************************************************/
 
 #include "conf.h"
@@ -32,12 +28,11 @@ struct list_data * create_list(void)
   pNewList->iSize      = 0;
   
   /* Add to global lists, primarily for debugging purposes */
-  if (first_list == FALSE) {
-    mudlog(CMP, LVL_GOD, TRUE, "Adding to global list.");
+  if (first_list == FALSE)
     add_to_list(pNewList, global_lists);
-  } else 
-	first_list = FALSE;
-  
+  else 
+    first_list = FALSE;
+
   return (pNewList);	
 }
 
@@ -58,17 +53,18 @@ void free_list(struct list_data * pList)
 {
   void * pContent;
     
+  simple_list(NULL);  
+    
   if (pList->iSize)
-    while ((pContent = simple_list(pList))) 
+    while ((pContent = simple_list(pList)))
       remove_from_list(pContent, pList);
     
   if (pList->iSize > 0)
     mudlog(CMP, LVL_GOD, TRUE, "List being freed while not empty.");
       
-  /* Global List for debugging */  
-  mudlog(CMP, LVL_GOD, TRUE, "Removing from global list.");
+  /* Global List for debugging */
   remove_from_list(pList, global_lists);  
-      
+  
   free(pList);
 }
 
@@ -93,7 +89,7 @@ void add_to_list(void * pContent, struct list_data * pList)
     pLastItem = pList->pLastItem;
     pLastItem->pNextItem = pNewItem;
     pNewItem->pPrevItem = pLastItem;
-	}
+  }
 
   /* Make our new item our last item in the list */
   pList->pLastItem = pNewItem;
@@ -249,8 +245,15 @@ void * simple_list(struct list_data * pList)
   static struct list_data *pLastList = NULL;
   void * pContent;
 	
+	/* Reset List */
+	if (pList == NULL) {
+		loop = FALSE;
+		pLastList = NULL;
+		return NULL;
+	}
+	
   if (!loop || pLastList != pList) {
-    if (pLastList != pList)
+    if (loop && pLastList != pList)
       mudlog(CMP, LVL_GRGOD, TRUE, "SYSERR: simple_list() forced to reset itself.");
 		  
     pContent = merge_iterator(&Iterator, pList);

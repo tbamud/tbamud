@@ -371,6 +371,7 @@ int main(int argc, char **argv)
     free_save_list();       /* genolc.c */
     free_strings(&config_info, OASIS_CFG); /* oasis_delete.c */
     free_ibt_lists();             /* ibt.c */
+    free_list(world_events);
   }
 
   if (last_act_message)
@@ -378,7 +379,7 @@ int main(int argc, char **argv)
 
   /* probably should free the entire config here.. */
   free(CONFIG_CONFFILE);
-
+  
   log("Done.");
 
 #ifdef MEMORY_DEBUG
@@ -444,6 +445,10 @@ void copyover_recover()
     CREATE(d->character, struct char_data, 1);
     clear_char(d->character);
     CREATE(d->character->player_specials, struct player_special_data, 1);
+    
+    /* Allocate mobile event list */
+    d->character->events = create_list();
+    
     d->character->desc = d;
 
     if ((player_i = load_char(name, d->character)) >= 0) {
@@ -1589,7 +1594,7 @@ static int new_descriptor(socket_t s)
   descriptor_list = newd;
 
   /* Attach Event */ 
-  attach_mud_event(get_protocols, new_mud_event(EVENT_DESC, newd, NULL), 1.5 * PASSES_PER_SEC);
+  attach_mud_event(new_mud_event(ePROTOCOLS, newd, NULL), 1.5 * PASSES_PER_SEC);
   
   /* KaVir's plugin*/
   write_to_output(newd, "Attempting to Detect Client, Please Wait...\r\n");

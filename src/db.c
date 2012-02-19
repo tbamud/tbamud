@@ -629,9 +629,6 @@ void destroy_db(void)
   /* Events */
   event_free_all();
 
-  /* Lists */
-  free_list(world_events);
-
 }
 
 /* body of the booting system */
@@ -2324,6 +2321,10 @@ struct char_data *create_char(void)
 
   CREATE(ch, struct char_data, 1);
   clear_char(ch);
+  
+  /* Allocate mobile event list */
+  ch->events = create_list();  
+  
   ch->next = character_list;
   character_list = ch;
 
@@ -2350,10 +2351,14 @@ struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
 
   CREATE(mob, struct char_data, 1);
   clear_char(mob);
+ 
   *mob = mob_proto[i];
   mob->next = character_list;
   character_list = mob;
-
+  
+  /* Allocate mobile event list */
+  mob->events = create_list();   
+  
   if (!mob->points.max_hit) {
     mob->points.max_hit = dice(mob->points.hit, mob->points.mana) +
       mob->points.move;
@@ -3191,6 +3196,17 @@ void free_char(struct char_data *ch)
   if (SCRIPT(ch))
     extract_script(ch, MOB_TRIGGER);
 
+    /* Mud Events */
+  if (ch->events != NULL) {
+	  if (ch->events->iSize > 0) {
+		struct event * pEvent;
+
+		while ((pEvent = simple_list(ch->events)) != NULL)
+		  event_cancel(pEvent);
+	  }
+	  free_list(ch->events);
+  }
+  
   /* new version of free_followers take the followers pointer as arg */
   free_followers(ch->followers);
 
@@ -3359,7 +3375,8 @@ void clear_char(struct char_data *ch)
   GET_WAS_IN(ch) = NOWHERE;
   GET_POS(ch) = POS_STANDING;
   ch->mob_specials.default_pos = POS_STANDING;
-
+  ch->events = NULL;
+  
   GET_AC(ch) = 100;		/* Basic Armor */
   if (ch->points.max_mana < 100)
     ch->points.max_mana = 100;

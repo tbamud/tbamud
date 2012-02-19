@@ -1263,20 +1263,12 @@ ACMD(do_who)
           CCNRM(ch, C_SPR), ((!(++num_can_see % 4)) ? "\r\n" : ""));
       } else {
         num_can_see++;
-        if (GET_LEVEL(tch) >= LVL_IMMORT) {
-          send_to_char(ch, "%s%s%s%s%s",
-            (GET_LEVEL(tch) >= LVL_IMMORT ? CCYEL(ch, C_SPR) : ""),
-            GET_NAME(tch), (*GET_TITLE(tch) ? " " : ""), GET_TITLE(tch),
-            CCNRM(ch, C_SPR));			
-		} else {
-          send_to_char(ch, "%s[%2d %s] %s%s%s%s",
+        send_to_char(ch, "%s[%2d %s] %s%s%s%s",
             (GET_LEVEL(tch) >= LVL_IMMORT ? CCYEL(ch, C_SPR) : ""),
             GET_LEVEL(tch), CLASS_ABBR(tch),
             GET_NAME(tch), (*GET_TITLE(tch) ? " " : ""), GET_TITLE(tch),
             CCNRM(ch, C_SPR));
-        }
         
-
         if (GET_INVIS_LEV(tch))
           send_to_char(ch, " (i%d)", GET_INVIS_LEV(tch));
         else if (AFF_FLAGGED(tch, AFF_INVISIBLE))
@@ -2377,6 +2369,10 @@ ACMD(do_whois)
   {
      CREATE(victim, struct char_data, 1);
      clear_char(victim);
+     
+     /* Allocate mobile event list */
+     victim->events = create_list();
+     
      CREATE(victim->player_specials, struct player_special_data, 1);
 
      if (load_char(buf, victim) > -1)

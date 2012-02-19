@@ -344,7 +344,8 @@ void ProtocolDestroy( protocol_t *apProtocol )
 
    for ( i = eMSDP_NONE+1; i < eMSDP_MAX; ++i )
    {
-      free(apProtocol->pVariables[i]->pValueString);
+	  if (apProtocol->pVariables[i]->pValueString)
+        free(apProtocol->pVariables[i]->pValueString);
       free(apProtocol->pVariables[i]);
    }
 
@@ -1730,7 +1731,8 @@ static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *
                const char *pStartPos = strstr( pClientName, "-" );
 
                /* Store the TTYPE */
-               free(pProtocol->pLastTTYPE);
+               if (pProtocol->pLastTTYPE)
+                 free(pProtocol->pLastTTYPE);
                pProtocol->pLastTTYPE = AllocString(pClientName);
 
                /* Look for 256 colour support */
