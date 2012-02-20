@@ -342,7 +342,7 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
   room_rnum was_in;
   struct follow_type *k, *next;
 
-  if (ch == NULL || dir < 0 || dir >= DIR_COUNT || FIGHTING(ch))
+  if (ch == NULL || dir < 0 || dir >= NUM_OF_DIRS || FIGHTING(ch))
     return (0);
   else if (!CONFIG_DIAGONAL_DIRS && IS_DIAGONAL(dir))
     send_to_char(ch, "Alas, you cannot go that way...\r\n");

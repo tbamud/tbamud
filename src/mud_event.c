@@ -19,8 +19,8 @@
 struct list_data * world_events = NULL;
 
 struct mud_event_list mud_event_index[] = {
-	{ "Null"         , NULL         , -1          },  /* eNULL */
-	{ "Protocol"     , get_protocols, EVENT_DESC  }  /* ePROTOCOLS */
+  { "Null"         , NULL         , -1          },  /* eNULL */
+  { "Protocol"     , get_protocols, EVENT_DESC  }  /* ePROTOCOLS */
 };
 
 void init_events(void)
@@ -31,26 +31,26 @@ void init_events(void)
 
 EVENTFUNC(event_countdown)
 {
-	struct mud_event_data * pMudEvent;
-	struct char_data * ch = NULL;
+  struct mud_event_data * pMudEvent;
+  struct char_data * ch = NULL;
 	
-	pMudEvent = (struct mud_event_data * ) event_obj;
+  pMudEvent = (struct mud_event_data * ) event_obj;
 	
-	switch (mud_event_index[pMudEvent->iId].iEvent_Type) {
-		case EVENT_CHAR:
-		  ch = (struct char_data * ) pMudEvent->pStruct;
-		break;
-		default:
-		break;
-	}	
+  switch (mud_event_index[pMudEvent->iId].iEvent_Type) {
+    case EVENT_CHAR:
+      ch = (struct char_data * ) pMudEvent->pStruct;
+    break;
+    default:
+    break;
+  }	
 	
-	switch (pMudEvent->iId) {
-		default:
-		break;
-	}
+  switch (pMudEvent->iId) {
+    default:
+    break;
+  }
 	
-	free_mud_event(pMudEvent);
-	return 0;
+  free_mud_event(pMudEvent);
+  return 0;
 }
 
 void attach_mud_event(struct mud_event_data *pMudEvent, long time)
@@ -66,17 +66,14 @@ void attach_mud_event(struct mud_event_data *pMudEvent, long time)
   switch (mud_event_index[pMudEvent->iId].iEvent_Type) {
     case EVENT_WORLD:
       add_to_list(pEvent, world_events);
-      mudlog(CMP, LVL_GRGOD, TRUE, "INFO: Mud Event '%s' added to world", mud_event_index[pMudEvent->iId].event_name);
     break;
     case EVENT_DESC:
       d = (struct descriptor_data *) pMudEvent->pStruct;
       add_to_list(pEvent, d->events);
-      mudlog(CMP, LVL_GRGOD, TRUE, "INFO: Mud Event '%s' added to %s", mud_event_index[pMudEvent->iId].event_name, d->host ? d->host : "descriptor");
     break;
     case EVENT_CHAR:
       ch = (struct char_data *) pMudEvent->pStruct;
       add_to_list(pEvent, ch->events);
-      mudlog(CMP, LVL_GRGOD, TRUE, "INFO: Mud Event '%s' added to %s", mud_event_index[pMudEvent->iId].event_name, GET_NAME(ch));
     break;
   }
 }
@@ -101,8 +98,6 @@ void free_mud_event(struct mud_event_data *pMudEvent)
 {
   struct descriptor_data * d;
   struct char_data * ch;
-
-  mudlog(CMP, LVL_GRGOD, TRUE, "INFO: Freeing mud event '%s' : %d", mud_event_index[pMudEvent->iId].event_name, pMudEvent->iId);
 
   switch (mud_event_index[pMudEvent->iId].iEvent_Type) {
     case EVENT_WORLD:

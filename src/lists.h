@@ -34,7 +34,7 @@ struct iterator_data {
 /* Externals */
 extern struct list_data * global_lists;
 extern struct list_data * ticker_list;
-extern int total_lists;
+
 /* Locals */
 void add_to_list(void * pContent, struct list_data * pList);
 void * random_from_list(struct list_data * pList);

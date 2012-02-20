@@ -72,14 +72,20 @@ cpp_extern const struct command_info cmd_info[] = {
   { "west"     , "w"       , POS_STANDING, do_move     , 0, SCMD_WEST },
   { "up"       , "u"       , POS_STANDING, do_move     , 0, SCMD_UP },
   { "down"     , "d"       , POS_STANDING, do_move     , 0, SCMD_DOWN },
-  { "northwest", "northw" , POS_STANDING, do_move , 0, SCMD_NW },
-  { "nw" , "nw" , POS_STANDING, do_move , 0, SCMD_NW },
-  { "northeast", "northe" , POS_STANDING, do_move , 0, SCMD_NE },
-  { "ne" , "ne" , POS_STANDING, do_move , 0,  SCMD_NE },
-  { "southeast", "southe" , POS_STANDING, do_move , 0, SCMD_SE },
-  { "se" , "se" , POS_STANDING, do_move , 0, SCMD_SE },
-  { "southwest", "southw" , POS_STANDING, do_move , 0, SCMD_SW },
-  { "sw" , "sw" , POS_STANDING, do_move , 0, SCMD_SW },
+  { "north"    , "n"       , POS_STANDING, do_move     , 0, SCMD_NORTH },
+  { "east"     , "e"       , POS_STANDING, do_move     , 0, SCMD_EAST },
+  { "south"    , "s"       , POS_STANDING, do_move     , 0, SCMD_SOUTH },
+  { "west"     , "w"       , POS_STANDING, do_move     , 0, SCMD_WEST },
+  { "up"       , "u"       , POS_STANDING, do_move     , 0, SCMD_UP },
+  { "down"     , "d"       , POS_STANDING, do_move     , 0, SCMD_DOWN },
+  { "northwest", "northw"  , POS_STANDING, do_move     , 0, SCMD_NW },
+  { "nw"       , "nw"      , POS_STANDING, do_move     , 0, SCMD_NW },
+  { "northeast", "northe"  , POS_STANDING, do_move     , 0, SCMD_NE },
+  { "ne"       , "ne"      , POS_STANDING, do_move     , 0,  SCMD_NE },
+  { "southeast", "southe"  , POS_STANDING, do_move     , 0, SCMD_SE },
+  { "se"       , "se"      , POS_STANDING, do_move     , 0, SCMD_SE },
+  { "southwest", "southw"  , POS_STANDING, do_move     , 0, SCMD_SW },
+  { "sw"       , "sw"      , POS_STANDING, do_move     , 0, SCMD_SW },
   
   /* now, the main list */
   { "at"       , "at"      , POS_DEAD    , do_at       , LVL_IMMORT, 0 },
@@ -1222,51 +1228,51 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
 /* load the player, put them in the right room - used by copyover_recover too */
 int enter_player_game (struct descriptor_data *d)
 {
-    int load_result;
-    room_vnum load_room;
+  int load_result;
+  room_vnum load_room;
 
-      reset_char(d->character);
+  reset_char(d->character);
 
-      if (PLR_FLAGGED(d->character, PLR_INVSTART))
-	GET_INVIS_LEV(d->character) = GET_LEVEL(d->character);
+  if (PLR_FLAGGED(d->character, PLR_INVSTART))
+    GET_INVIS_LEV(d->character) = GET_LEVEL(d->character);
 
-      /* We have to place the character in a room before equipping them
-       * or equip_char() will gripe about the person in NOWHERE. */
-      if ((load_room = GET_LOADROOM(d->character)) != NOWHERE)
+  /* We have to place the character in a room before equipping them
+   * or equip_char() will gripe about the person in NOWHERE. */
+  if ((load_room = GET_LOADROOM(d->character)) != NOWHERE)
 	load_room = real_room(load_room);
 
-      /* If char was saved with NOWHERE, or real_room above failed... */
-      if (load_room == NOWHERE) {
+  /* If char was saved with NOWHERE, or real_room above failed... */
+  if (load_room == NOWHERE) {
 	if (GET_LEVEL(d->character) >= LVL_IMMORT)
 	  load_room = r_immort_start_room;
 	else
 	  load_room = r_mortal_start_room;
-      }
+  }
 
-      if (PLR_FLAGGED(d->character, PLR_FROZEN))
+  if (PLR_FLAGGED(d->character, PLR_FROZEN))
 	load_room = r_frozen_start_room;
 
-      /* copyover */
-      GET_ID(d->character) = GET_IDNUM(d->character);
-      /* find_char helper */
-      add_to_lookup_table(GET_ID(d->character), (void *)d->character);
+  /* copyover */
+  GET_ID(d->character) = GET_IDNUM(d->character);
+  /* find_char helper */
+  add_to_lookup_table(GET_ID(d->character), (void *)d->character);
 
-      /* After moving saving of variables to the player file, this should only
-       * be called in case nothing was found in the pfile. If something was
-       * found, SCRIPT(ch) will be set. */
-      if (!SCRIPT(d->character))
-        read_saved_vars(d->character);
+  /* After moving saving of variables to the player file, this should only
+   * be called in case nothing was found in the pfile. If something was
+   * found, SCRIPT(ch) will be set. */
+  if (!SCRIPT(d->character))
+    read_saved_vars(d->character);
 
-      d->character->next = character_list;
-      character_list = d->character;
-      char_to_room(d->character, load_room);
-      load_result = Crash_load(d->character);
-      save_char(d->character);
+  d->character->next = character_list;
+  character_list = d->character;
+  char_to_room(d->character, load_room);
+  load_result = Crash_load(d->character);
+  save_char(d->character);
 
-      /* Check for a login trigger in the players' start room */
-      login_wtrigger(&world[IN_ROOM(d->character)], d->character);
+  /* Check for a login trigger in the players' start room */
+  login_wtrigger(&world[IN_ROOM(d->character)], d->character);
 
-    return load_result;
+  return load_result;
 }
 
 EVENTFUNC(get_protocols)
