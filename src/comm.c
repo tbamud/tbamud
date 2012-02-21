@@ -370,8 +370,10 @@ int main(int argc, char **argv)
     free_invalid_list();    /* ban.c */
     free_save_list();       /* genolc.c */
     free_strings(&config_info, OASIS_CFG); /* oasis_delete.c */
-    free_ibt_lists();             /* ibt.c */
-    free_list(world_events);
+    free_ibt_lists();       /* ibt.c */
+    free_recent_players();  /* act.informative.c */
+    free_list(world_events); /* free up our global lists */
+    free_list(global_lists);
   }
 
   if (last_act_message)
@@ -415,6 +417,9 @@ void copyover_recover()
 
   /* read boot_time - first line in file */
   i = fscanf(fp, "%ld\n", (long *)&boot_time);
+  
+  if (i != 1) 
+    log("SYSERR: Error reading boot time.");
 
   for (;;) {
     fOld = TRUE;

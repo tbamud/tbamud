@@ -3165,7 +3165,7 @@ void free_char(struct char_data *ch)
       free(ch->player.description);
     for (i = 0; i < NUM_HIST; i++)
       if (GET_HISTORY(ch, i))
-        free(GET_HISTORY(ch, i));
+        free_history(ch, i);
 
     if (ch->player_specials)
       free(ch->player_specials);

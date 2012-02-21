@@ -10,14 +10,7 @@
  Header files.
  ******************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <arpa/telnet.h>
-#include <time.h>
-#include <malloc.h>
-#include <ctype.h>
-
 #include "protocol.h"
 
 /******************************************************************************
@@ -292,7 +285,7 @@ protocol_t *ProtocolCreate( void )
       }
    }
 
-   pProtocol = malloc(sizeof(protocol_t));
+   pProtocol = (protocol_t *) malloc(sizeof(protocol_t));
    pProtocol->WriteOOB = 0;
    pProtocol->bIACMode = false;
    pProtocol->bNegotiated = false;
@@ -310,11 +303,11 @@ protocol_t *ProtocolCreate( void )
    pProtocol->ScreenHeight = 0;
    pProtocol->pMXPVersion = AllocString("Unknown");
    pProtocol->pLastTTYPE = NULL;
-   pProtocol->pVariables = malloc(sizeof(MSDP_t*)*eMSDP_MAX);
+   pProtocol->pVariables = (MSDP_t **) malloc(sizeof(MSDP_t*)*eMSDP_MAX);
 
    for ( i = eMSDP_NONE+1; i < eMSDP_MAX; ++i )
    {
-      pProtocol->pVariables[i] = malloc(sizeof(MSDP_t));
+      pProtocol->pVariables[i] = (MSDP_t *) malloc(sizeof(MSDP_t));
       pProtocol->pVariables[i]->bReport = false;
       pProtocol->pVariables[i]->bDirty = false;
       pProtocol->pVariables[i]->ValueInt = 0;
@@ -350,7 +343,8 @@ void ProtocolDestroy( protocol_t *apProtocol )
    }
 
    free(apProtocol->pVariables);
-   free(apProtocol->pLastTTYPE);
+   if (apProtocol->pLastTTYPE) /* Isn't saved over copyover so may still be NULL */
+     free(apProtocol->pLastTTYPE);
    free(apProtocol->pMXPVersion);
    free(apProtocol);
 }
@@ -554,12 +548,6 @@ const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int 
             case 'n':
                pCopyFrom = s_Clean;
                break;
-            case 'b': /* dark brown */
-               pCopyFrom = ColourRGB(apDescriptor, "F110");
-               break;
-            case 'B': /* light brown */
-               pCopyFrom = ColourRGB(apDescriptor, "F410");
-               break;
             case 'd': /* dark grey / black */
                pCopyFrom = ColourRGB(apDescriptor, "F000");
                break;
@@ -590,10 +578,10 @@ const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int 
             case 'Y': /* light yellow */
                pCopyFrom = ColourRGB(apDescriptor, "F550");
                break;
-            case 'u': /* dark blue */
+            case 'b': /* dark blue */
                pCopyFrom = ColourRGB(apDescriptor, "F012");
                break;
-            case 'U': /* light blue */
+            case 'B': /* light blue */
                pCopyFrom = ColourRGB(apDescriptor, "F025");
                break;
             case 'm': /* dark magenta */
@@ -1244,7 +1232,7 @@ void MSDPSetTable( descriptor_t *apDescriptor, variable_t aMSDP, const char *apV
          const char MsdpTableStart[] = { (char)MSDP_TABLE_OPEN, '\0' };
          const char MsdpTableStop[]  = { (char)MSDP_TABLE_CLOSE, '\0' };
 
-         char *pTable = malloc(strlen(apValue) + 3); /* 3: START, STOP, NUL */
+         char *pTable = (char *) malloc(strlen(apValue) + 3); /* 3: START, STOP, NUL */
 
          strcpy(pTable, MsdpTableStart);
          strcat(pTable, apValue);
@@ -1280,7 +1268,7 @@ void MSDPSetArray( descriptor_t *apDescriptor, variable_t aMSDP, const char *apV
          const char MsdpArrayStart[] = { (char)MSDP_ARRAY_OPEN, '\0' };
          const char MsdpArrayStop[]  = { (char)MSDP_ARRAY_CLOSE, '\0' };
 
-         char *pArray = malloc(strlen(apValue) + 3); /* 3: START, STOP, NUL */
+         char *pArray = (char *) malloc(strlen(apValue) + 3); /* 3: START, STOP, NUL */
 
          strcpy(pArray, MsdpArrayStart);
          strcat(pArray, apValue);
@@ -2492,7 +2480,7 @@ static char *AllocString( const char *apString )
    if ( apString != NULL )
    {
       int Size = strlen(apString);
-      pResult = malloc(Size+1);
+      pResult = (char *) malloc(Size+1);
       if ( pResult != NULL )
          strcpy( pResult, apString );
    }

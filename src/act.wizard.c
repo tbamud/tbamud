@@ -2223,24 +2223,22 @@ ACMD(do_wiznet)
     return;
   }
   if (level > LVL_IMMORT) {
-    snprintf(buf1, sizeof(buf1), "@c%s: <%d> %s%s@n\r\n", GET_NAME(ch), level, emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "@cSomeone: <%d> %s%s@n\r\n", level, emote ? "<--- " : "", argument);
+    snprintf(buf1, sizeof(buf1), "@c%s: <%d> %s%s@n", GET_NAME(ch), level, emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "@cSomeone: <%d> %s%s@n", level, emote ? "<--- " : "", argument);
   } else {
-    snprintf(buf1, sizeof(buf1), "@c%s: %s%s@n\r\n", GET_NAME(ch), emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "@cSomeone: %s%s@n\r\n", emote ? "<--- " : "", argument);
+    snprintf(buf1, sizeof(buf1), "@c%s: %s%s@n", GET_NAME(ch), emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "@cSomeone: %s%s@n", emote ? "<--- " : "", argument);
   }
 
   for (d = descriptor_list; d; d = d->next) {
     if (IS_PLAYING(d) && (GET_LEVEL(d->character) >= level) &&
 	(!PRF_FLAGGED(d->character, PRF_NOWIZ))
 	&& (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
-      if (CAN_SEE(d->character, ch)) {
-        msg = strdup(buf1);
-      send_to_char(d->character, "%s", buf1);
-      } else {
-        msg = strdup(buf2);
-        send_to_char(d->character, "%s", buf2);
-      }
+      if (CAN_SEE(d->character, ch)) 
+        msg = act(buf1, FALSE, d->character, 0, 0, TO_CHAR | DG_NO_TRIG);
+      else 
+        msg = act(buf2, FALSE, d->character, 0, 0, TO_CHAR | DG_NO_TRIG);
+      
       add_history(d->character, msg, HIST_WIZNET);
     }
   }
@@ -2466,7 +2464,7 @@ ACMD(do_show)
   struct obj_data *obj;
   struct descriptor_data *d;
   char field[MAX_INPUT_LENGTH], value[MAX_INPUT_LENGTH],
-	arg[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH], temp[MAX_STRING_LENGTH];
+	arg[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH];
   int r, g, b;
   char colour[16];
 
@@ -4946,6 +4944,20 @@ bool AddRecentPlayer(char *chname, char *chhost, bool newplr, bool cpyplr)
   this->vnum = max_vnum;   /* Possibly should be +1 ? */
 
   return TRUE;
+}
+
+void free_recent_players(void) 
+{
+  struct recent_player *this;
+  struct recent_player *temp;
+  
+  this = recent_list;
+  
+  while((temp = this) != NULL)
+  {
+	this = this->next;
+	free(temp);  
+  }  	
 }
 
 ACMD(do_recent)

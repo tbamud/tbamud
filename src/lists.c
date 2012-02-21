@@ -63,7 +63,8 @@ void free_list(struct list_data * pList)
     mudlog(CMP, LVL_GOD, TRUE, "List being freed while not empty.");
       
   /* Global List for debugging */
-  remove_from_list(pList, global_lists);  
+  if (pList != global_lists)
+    remove_from_list(pList, global_lists);  
   
   free(pList);
 }

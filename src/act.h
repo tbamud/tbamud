@@ -57,6 +57,8 @@ char *find_exdesc(char *word, struct extra_descr_data *list);
 void space_to_minus(char *str);
 /** @todo Move to a help module? */
 int search_help(const char *argument, int level);
+void free_history(struct char_data *ch, int type);
+void free_recent_players(void);
 /* functions with subcommands */
 /* do_commands */
 ACMD(do_commands);
