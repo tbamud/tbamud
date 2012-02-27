@@ -52,7 +52,7 @@ struct item_data * create_item(void)
 void free_list(struct list_data * pList)
 {
   void * pContent;
-    
+  
   simple_list(NULL);  
     
   if (pList->iSize)

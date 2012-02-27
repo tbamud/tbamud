@@ -72,12 +72,6 @@ cpp_extern const struct command_info cmd_info[] = {
   { "west"     , "w"       , POS_STANDING, do_move     , 0, SCMD_WEST },
   { "up"       , "u"       , POS_STANDING, do_move     , 0, SCMD_UP },
   { "down"     , "d"       , POS_STANDING, do_move     , 0, SCMD_DOWN },
-  { "north"    , "n"       , POS_STANDING, do_move     , 0, SCMD_NORTH },
-  { "east"     , "e"       , POS_STANDING, do_move     , 0, SCMD_EAST },
-  { "south"    , "s"       , POS_STANDING, do_move     , 0, SCMD_SOUTH },
-  { "west"     , "w"       , POS_STANDING, do_move     , 0, SCMD_WEST },
-  { "up"       , "u"       , POS_STANDING, do_move     , 0, SCMD_UP },
-  { "down"     , "d"       , POS_STANDING, do_move     , 0, SCMD_DOWN },
   { "northwest", "northw"  , POS_STANDING, do_move     , 0, SCMD_NW },
   { "nw"       , "nw"      , POS_STANDING, do_move     , 0, SCMD_NW },
   { "northeast", "northe"  , POS_STANDING, do_move     , 0, SCMD_NE },
@@ -1408,7 +1402,7 @@ void nanny(struct descriptor_data *d, char *arg)
           CREATE(d->character->player.name, char, strlen(tmp_name) + 1);
           strcpy(d->character->player.name, CAP(tmp_name));	/* strcpy: OK (size checked above) */
           GET_PFILEPOS(d->character) = player_i;
-          write_to_output(d, "Did I get that right, %s (Y/N)? ", tmp_name);
+          write_to_output(d, "Did I get that right, %s (\t(Y\t)/\t(N\t))? ", tmp_name);
           STATE(d) = CON_NAME_CNFRM;
         } else {
           /* undo it just in case they are set */
@@ -1433,7 +1427,7 @@ void nanny(struct descriptor_data *d, char *arg)
         CREATE(d->character->player.name, char, strlen(tmp_name) + 1);
         strcpy(d->character->player.name, CAP(tmp_name));	/* strcpy: OK (size checked above) */
 
-        write_to_output(d, "Did I get that right, %s (Y/N)? ", tmp_name);
+        write_to_output(d, "Did I get that right, %s (\t(Y\t)/\t(N\t))? ", tmp_name);
         STATE(d) = CON_NAME_CNFRM;
       }
     }
@@ -1578,7 +1572,7 @@ void nanny(struct descriptor_data *d, char *arg)
     echo_on(d);
 
     if (STATE(d) == CON_CNFPASSWD) {
-      write_to_output(d, "\r\nWhat is your sex (M/F)? ");
+      write_to_output(d, "\r\nWhat is your sex (\t(M\t)/\t(F\t))? ");
       STATE(d) = CON_QSEX;
     } else {
       save_char(d->character);

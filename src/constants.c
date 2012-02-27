@@ -96,6 +96,7 @@ const char *zone_bits[] = {
   "GRID",
   "NOBUILD",
   "!ASTRAL",
+  "WORLDMAP",
   "\n"
 };
 

@@ -421,7 +421,7 @@ static void do_auto_exits(struct char_data *ch)
 	else if (EXIT_FLAGGED(EXIT(ch, door), EX_HIDDEN))
 	  send_to_char(ch, "%s%s%s ", CCWHT(ch, C_NRM), autoexits[door], CCCYN(ch, C_NRM));
     else
-      send_to_char(ch, "%s ", autoexits[door]);
+      send_to_char(ch, "\t(%s\t) ", autoexits[door]);
     slen++;
   }
 

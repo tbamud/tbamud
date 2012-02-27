@@ -85,6 +85,9 @@ int improved_editor_execute(struct descriptor_data *d, char *str)
     break;
   case 's':
     return STRINGADD_SAVE;
+  case 't':
+    parse_edit_action(PARSE_TOGGLE, actions, d);
+    break;
   default:
     write_to_output(d, "Invalid option.\r\n");
     break;
@@ -118,8 +121,18 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
 	    "/r 'a' 'b' -  replace 1st occurance of text <a> in buffer with text <b>\r\n"
 	    "/ra 'a' 'b'-  replace all occurances of text <a> within buffer with text <b>\r\n"
 	    "              usage: /r[a] 'pattern' 'replacement'\r\n"
+	    "/t         -  toggles '@' and tabs\r\n"
 	    "/s         -  saves text\r\n");
     break;
+  case PARSE_TOGGLE:
+    if (strchr(*d->str, '@')) {
+      parse_at(*d->str);
+      write_to_output(d, "Toggling (at) into (tab) Characters...\r\n");  
+    } else {
+      parse_tab(*d->str);
+      write_to_output(d, "Toggling (tab) into (at) Characters...\r\n"); 
+    }
+  break;
   case PARSE_FORMAT:
     if (STATE(d) == CON_TRIGEDIT) {
       write_to_output(d, "Script %sformatted.\r\n", format_script(d) ? "": "not ");

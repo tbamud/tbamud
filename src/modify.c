@@ -81,15 +81,19 @@ void parse_at(char *str)
 {
   char *p = str;
    for (; *p; p++)
-     if (*p == '@')
-       *p = '\t';
+     if (*p == '@') {
+       if (*(p+1) != '@')
+         *p = '\t';
+       else
+         p++;
+	 }
 }
 
 void parse_tab(char *str)
 {
   char *p = str;
    for (; *p; p++)
-     if (*p == '\t')
+     if (*p == '\t' && *(p+1) != '\t')
        *p = '@';
 }
 

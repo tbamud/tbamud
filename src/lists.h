@@ -33,7 +33,6 @@ struct iterator_data {
 
 /* Externals */
 extern struct list_data * global_lists;
-extern struct list_data * ticker_list;
 
 /* Locals */
 void add_to_list(void * pContent, struct list_data * pList);

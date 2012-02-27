@@ -264,12 +264,12 @@ int use_new_socials = YES;
 const char *MENU =
 "\r\n"
 "Welcome to tbaMUD!\r\n"
-"0) Exit from tbaMUD.\r\n"
-"1) Enter the game.\r\n"
-"2) Enter description.\r\n"
-"3) Read the background story.\r\n"
-"4) Change password.\r\n"
-"5) Delete this character.\r\n"
+"\t(0\t)) Exit from tbaMUD.\r\n"
+"\t(1\t)) Enter the game.\r\n"
+"\t(2\t)) Enter description.\r\n"
+"\t(3\t)) Read the background story.\r\n"
+"\t(4\t)) Change password.\r\n"
+"\t(5\t)) Delete this character.\r\n"
 "\r\n"
 "   Make your choice: ";
 

@@ -20,14 +20,14 @@
 #define EVENT_CHAR  2
 
 typedef enum {
-	eNULL,
-	ePROTOCOLS,
+    eNULL,
+    ePROTOCOLS,
 } event_id;
 
 struct mud_event_list {
   const char * event_name;
-	EVENTFUNC(*func);
-	int iEvent_Type;
+  EVENTFUNC(*func);
+  int iEvent_Type;
 };
 
 struct mud_event_data {
