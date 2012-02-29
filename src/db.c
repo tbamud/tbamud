@@ -643,7 +643,7 @@ void boot_db(void)
   
   log("Initialize Global Lists");
   global_lists = create_list();
- 
+
   log("Initializing Events");
   init_events();
 
@@ -2376,6 +2376,7 @@ struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
   mob_index[i].number++;
 
   GET_ID(mob) = max_mob_id++;
+  
   /* find_char helper */
   add_to_lookup_table(GET_ID(mob), (void *)mob);
 
@@ -3473,6 +3474,18 @@ void init_char(struct char_data *ch)
 
   GET_LOADROOM(ch) = NOWHERE;
   GET_SCREEN_WIDTH(ch) = PAGE_WIDTH;
+  
+  /* Set Beginning Toggles Here */
+  SET_BIT_AR(PRF_FLAGS(ch), PRF_AUTOEXIT);
+  if (ch->desc)
+    if (ch->desc->pProtocol->pVariables[eMSDP_ANSI_COLORS] || 
+      ch->desc->pProtocol->pVariables[eMSDP_XTERM_256_COLORS]) {
+      SET_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_1);
+      SET_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_2);
+    } 
+  SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP);  
+  SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
+  SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
 }
 
 /* returns the real number of the room with given virtual number */

@@ -458,7 +458,8 @@ void board_load_board(int board_type)
       perror("SYSERR: Error reading board");
     return;
   }
-  j = fread(&(num_of_msgs[board_type]), sizeof(int), 1, fl);
+  if (fread(&(num_of_msgs[board_type]), sizeof(int), 1, fl) != 1)
+    return;
   if (num_of_msgs[board_type] < 1 || num_of_msgs[board_type] > MAX_BOARD_MESSAGES) {
     log("SYSERR: Board file %d corrupt.  Resetting.", board_type);
     board_reset_board(board_type);
