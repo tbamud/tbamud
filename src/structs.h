@@ -596,7 +596,7 @@
 
 #define MAX_STRING_LENGTH     49152  /**< Max length of string, as defined */
 #define MAX_INPUT_LENGTH      512    /**< Max length per *line* of input */
-#define MAX_RAW_INPUT_LENGTH  1024   /**< Max size of *raw* input */
+#define MAX_RAW_INPUT_LENGTH  (12 * 1024) /**< Max size of *raw* input */
 #define MAX_MESSAGES          60     /**< Max Different attack message types */
 #define MAX_NAME_LENGTH       20     /**< Max PC/NPC name length */
 #define MAX_PWD_LENGTH        30     /**< Max PC password length */
