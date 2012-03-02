@@ -419,6 +419,8 @@ void ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *a
          {
             const char *pClientName = pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString;
 
+			InfoMessage(apDescriptor, "Receiving MXP Version From Client.\r\n");
+
             free(pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString);
             pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString = AllocString(pMXPTag);
 

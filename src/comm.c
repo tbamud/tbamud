@@ -1906,7 +1906,7 @@ static int process_input(struct descriptor_data *t)
       return (-1);
     }
 
-    bytes_read = perform_socket_read(t->descriptor, read_buf, MAX_PROTOCOL_BUFFER);
+    bytes_read = perform_socket_read(t->descriptor, read_buf, space_left);
 
     if ( bytes_read >= 0 )
     {

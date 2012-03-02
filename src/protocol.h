@@ -35,7 +35,7 @@ typedef struct descriptor_data descriptor_t;
 
 #define SNIPPET_VERSION                6 /* Helpful for debugging */
 
-#define MAX_PROTOCOL_BUFFER            2048
+#define MAX_PROTOCOL_BUFFER            MAX_RAW_INPUT_LENGTH
 #define MAX_VARIABLE_LENGTH            4096
 #define MAX_OUTPUT_BUFFER              LARGE_BUFSIZE
 #define MAX_MSSP_BUFFER                4096
