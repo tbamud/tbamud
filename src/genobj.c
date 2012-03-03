@@ -488,7 +488,7 @@ bool oset_alias(struct obj_data *obj, char * argument)
   if (strlen(argument) > max_len)
     return FALSE;
   
-  if (obj->name && obj->name != obj_proto[i].name)
+  if (i != NOWHERE && obj->name && obj->name != obj_proto[i].name)
     free(obj->name);  
 		   	   
   obj->name = strdup(argument);  
@@ -559,7 +559,7 @@ bool oset_short_description(struct obj_data *obj, char * argument)
   if (strlen(argument) > max_len)
     return FALSE;
   
-  if (obj->short_description && obj->short_description != obj_proto[i].short_description)
+  if (i != NOWHERE && obj->short_description && obj->short_description != obj_proto[i].short_description)
     free(obj->short_description);  
 		   	   
   obj->short_description = strdup(argument);  
@@ -577,7 +577,7 @@ bool oset_long_description(struct obj_data *obj, char * argument)
   if (strlen(argument) > max_len)
     return FALSE;  
   
-  if (obj->description && obj->description != obj_proto[i].description)
+  if (i != NOWHERE && obj->description && obj->description != obj_proto[i].description)
     free(obj->description);  
 		   	   
   obj->description = strdup(argument);  
