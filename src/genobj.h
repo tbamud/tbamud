@@ -23,5 +23,9 @@ obj_rnum index_object(struct obj_data *obj, obj_vnum ovnum, obj_rnum ornum);
 obj_rnum add_object(struct obj_data *, obj_vnum ovnum);
 int copy_object_main(struct obj_data *to, struct obj_data *from, int free_object);
 int delete_object(obj_rnum);
+bool oset_alias(struct obj_data *obj, char * argument);
+bool oset_apply(struct obj_data *obj, char * argument);
+bool oset_short_description(struct obj_data *obj, char * argument);
+bool oset_long_description(struct obj_data *obj, char * argument);
 
 #endif /* _GENOBJ_H_ */

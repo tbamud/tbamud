@@ -322,6 +322,7 @@ ACMD(do_goto);
 ACMD(do_invis);
 ACMD(do_links);
 ACMD(do_load);
+ACMD(do_oset);
 ACMD(do_peace);
 ACMD(do_plist);
 ACMD(do_purge);

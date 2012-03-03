@@ -25,6 +25,7 @@
 #include "class.h"
 #include "quest.h"
 #include "act.h"
+#include "genobj.h"
 
 /* Utility functions */
 
@@ -130,6 +131,43 @@ int char_has_item(char *item, struct char_data *ch)
     return 0;
   else
     return 1;
+}
+
+static int handle_oset(struct obj_data * obj, char * argument)
+{
+  int i = 0;
+  bool found = FALSE;
+  char value[MAX_INPUT_LENGTH];
+  
+  struct oset_handler {
+    const char * type;
+    bool (* name)(struct obj_data *, char *);
+  } handler[] = {
+    { "alias",     oset_alias },
+    { "apply",     oset_apply },
+    { "longdesc",  oset_long_description },
+    { "shortdesc", oset_short_description},
+    { "\n", NULL }
+  };
+  
+  if (!obj || !*argument)
+    return 0;
+  
+  argument = one_argument(argument, value);
+  
+  while (*handler[i].type != '\n') {
+    if (is_abbrev(value, handler[i].type)) {
+      found = TRUE;
+      break;
+    }
+    i++;
+  } 
+  
+  if (!found)
+    return 0;
+    
+  handler[i].name(obj, argument);  
+  return 1;
 }
 
 int text_processed(char *field, char *subfield, struct trig_var_data *vd,
@@ -1198,6 +1236,16 @@ o->contains) ? "1" : "0"));
               snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(o->next_content));
             else
               *str = '\0';
+          }
+          break;
+        case 'o':
+          if (!str_cmp(field, "oset")) {
+            if (subfield && *subfield) {
+              if (handle_oset(o, subfield))
+                strcpy(str, "1");
+              else
+                strcpy(str, "0");
+            }
           }
           break;
         case 'r':

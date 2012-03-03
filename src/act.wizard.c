@@ -27,6 +27,7 @@
 #include "genzon.h" /* for real_zone_by_thing */
 #include "class.h"
 #include "genolc.h"
+#include "genobj.h"
 #include "fight.h"
 #include "house.h"
 #include "modify.h"
@@ -5029,4 +5030,44 @@ ACMD(do_recent)
   tmstr = asctime(localtime(&ct));
   *(tmstr + strlen(tmstr) - 1) = '\0';
   send_to_char(ch, "Current Server Time: %-19.19s\r\nShowing %d players since last copyover/reboot\r\n", tmstr, hits);
+}
+
+
+ACMD(do_oset)
+{
+  char arg[MAX_INPUT_LENGTH];
+  char arg2[MAX_INPUT_LENGTH];
+  struct obj_data *obj;
+  bool success = TRUE;
+
+  argument = one_argument(argument, arg);
+
+  if (!*arg)
+    send_to_char(ch, "oset what?\r\n");
+  else if (!(obj = get_obj_in_list_vis(ch, arg, NULL, ch->carrying)) && 
+    !(obj = get_obj_in_list_vis(ch, arg, NULL, world[IN_ROOM(ch)].contents)))
+    send_to_char(ch, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+  else {
+     argument = one_argument(argument, arg2);
+     
+     if (!*arg2) 
+       send_to_char(ch, "What?\r\n");
+     else {
+       if (is_abbrev(arg2, "alias") && (success = oset_alias(obj, argument)))
+           send_to_char(ch, "Object alias set to %s.\r\n", argument);
+       else if (is_abbrev(arg2, "longdesc") && (success = oset_long_description(obj, argument)))
+           send_to_char(ch, "Object long description set to %s.\r\n", argument);
+       else if (is_abbrev(arg2, "shortdesc") && (success = oset_short_description(obj, argument)))
+           send_to_char(ch, "Object short description set to %s.\r\n", argument);
+       else if (is_abbrev(arg2, "apply") && (success = oset_apply(obj, argument)))
+           send_to_char(ch, "Object apply set to %s.\r\n", argument);           
+	   else {
+		 if (!success) 
+		   send_to_char(ch, "%s was unsuccessful.\r\n", arg2);
+		 else
+		   send_to_char(ch, "Unknown argument: %s.\r\n", arg2);
+		 return;
+	   }
+	 }
+  }
 }

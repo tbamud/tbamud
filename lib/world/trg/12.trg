@@ -1137,6 +1137,22 @@ else
   %send% %actor% The switch says, 'Fine... fine.'
 end
 ~
+#1279
+OSET test trigger~
+0 j 100
+~
+wait 2 sec
+say Yeah, I can sharpen this.
+wait 2 sec
+emote chips away at %object.shortdesc%.
+set short %object.shortdesc% sharpened by '%self.name%'
+nop %object.oset(apply damroll 1)%
+nop %object.oset(shortdesc %short%)%
+wait 2 sec
+give %object.name.car% %actor.name%
+wait 1 sec
+say There ya go!
+~
 #1280
 Mob Raid~
 2 b 100
