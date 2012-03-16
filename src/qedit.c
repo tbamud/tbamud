@@ -364,7 +364,7 @@ void qedit_disp_flag_menu(struct descriptor_data *d)
   clear_screen(d);
   column_list(d->character, 0, aq_flags, NUM_AQ_FLAGS, TRUE);
   sprintbit(OLC_QUEST(d)->flags, aq_flags, bits, sizeof(bits));
-  write_to_output(d, "\r\nQuest flags: @c%s@n\r\n"
+  write_to_output(d, "\r\nQuest flags: \tc%s\tn\r\n"
           "Enter quest flags, 0 to quit : ", bits);
   OLC_MODE(d) = QEDIT_FLAGS;
 }

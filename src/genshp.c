@@ -345,7 +345,7 @@ int save_shops(zone_rnum zone_num)
 {
   int i, j, rshop, num_shops = 0;
   FILE *shop_file;
-  char fname[128], oldname[128];
+  char fname[128], oldname[128], buf[MAX_STRING_LENGTH];
   struct shop_data *shop;
 
 #if CIRCLE_UNSIGNED_INDEX
@@ -391,7 +391,7 @@ int save_shops(zone_rnum zone_num)
       fprintf(shop_file, "-1\n");
 
       /* Save messages. Added some defaults as sanity checks. */
-      fprintf(shop_file,
+      sprintf(buf,
 	      "%s~\n"
 	      "%s~\n"
 	      "%s~\n"
@@ -415,6 +415,8 @@ int save_shops(zone_rnum zone_num)
 	      S_KEEPER(shop) == NOBODY ? -1 : mob_index[S_KEEPER(shop)].vnum,
 	      S_NOTRADE(shop)
 	      );
+        
+        fprintf(shop_file, convert_from_tabs(buf), 0);
 
       /* Save the rooms. */
       for (j = 0;S_ROOM(shop, j) != NOWHERE; j++)

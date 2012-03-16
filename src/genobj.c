@@ -178,7 +178,7 @@ obj_rnum index_object(struct obj_data *obj, obj_vnum ovnum, obj_rnum ornum)
 
 int save_objects(zone_rnum zone_num)
 {
-  char filename[128], buf[MAX_STRING_LENGTH];
+  char filename[128], buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
   char ebuf1[MAX_STRING_LENGTH], ebuf2[MAX_STRING_LENGTH], ebuf3[MAX_STRING_LENGTH], ebuf4[MAX_STRING_LENGTH];
   char wbuf1[MAX_STRING_LENGTH], wbuf2[MAX_STRING_LENGTH], wbuf3[MAX_STRING_LENGTH], wbuf4[MAX_STRING_LENGTH];
   char pbuf1[MAX_STRING_LENGTH], pbuf2[MAX_STRING_LENGTH], pbuf3[MAX_STRING_LENGTH], pbuf4[MAX_STRING_LENGTH];
@@ -210,7 +210,7 @@ int save_objects(zone_rnum zone_num)
       } else
 	*buf = '\0';
 
-      fprintf(fp,
+      sprintf(buf2,
 	      "#%d\n"
 	      "%s~\n"
 	      "%s~\n"
@@ -222,6 +222,8 @@ int save_objects(zone_rnum zone_num)
 	      (obj->short_description && *obj->short_description) ? obj->short_description : "undefined",
 	      (obj->description && *obj->description) ?	obj->description : "undefined",
 	      buf);
+        
+      fprintf(fp, convert_from_tabs(buf2), 0);
 
       sprintascii(ebuf1, GET_OBJ_EXTRA(obj)[0]);
       sprintascii(ebuf2, GET_OBJ_EXTRA(obj)[1]);

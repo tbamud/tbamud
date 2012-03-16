@@ -91,8 +91,8 @@ char *CAP(char *txt)
   char *p = txt;
 
   /* Skip all preceeding color codes and ANSI codes */
-  while ((*p == '@' && *(p+1)) || (*p == '\x1B' && *(p+1) == '[')) {
-    if (*p == '@') p += 2;  /* Skip @ sign and color letter/number */
+  while ((*p == '\t' && *(p+1)) || (*p == '\x1B' && *(p+1) == '[')) {
+    if (*p == '\t') p += 2;  /* Skip @ sign and color letter/number */
     else {
       p += 2;                          /* Skip the CSI section of the ANSI code */
       while (*p && !isalpha(*p)) p++;  /* Skip until a 'letter' is found */
@@ -809,9 +809,8 @@ int count_color_chars(char *string)
 
 	len = strlen(string);
   for (i = 0; i < len; i++) {
-    while (string[i] == '\t' || string[i] == '@') {
-      if ((string[i] == '\t' && string[i + 1] == '\t') ||
-           (string[i] == '@' && string[i + 1] == '@'))
+    while (string[i] == '\t') {
+      if (string[i + 1] == '\t')
         num++;
       else
         num += 2;
@@ -1299,7 +1298,7 @@ IDXTYPE atoidx( const char *str_to_conv )
    Re-formats a string to fit within a particular size box.
    Recognises @ color codes, and if a line ends in one color, the
    next line will start with the same color.
-   Ends every line with @n to prevent color bleeds.
+   Ends every line with \tn to prevent color bleeds.
 */
 char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
 {
@@ -1341,16 +1340,14 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
         llen = 0;
         lcount++;
         lp = line;
-      } else if (*sp=='`'||*sp=='$'||*sp=='#'||*sp=='@') {
+      } else if (*sp=='`'||*sp=='$'||*sp=='#') {
         if (sp[1] && (sp[1]==*sp))
           wlen++; /* One printable char here */
-        if (*sp=='@' && (sp[1]!=*sp)) /* Color code, not @@ */
-          last_color = sp[1];
         sp += 2; /* Eat the whole code regardless */
       } else if (*sp=='\t'&&sp[1]) {
         char MXPcode = sp[1]=='[' ? ']' : sp[1]=='<' ? '>' : '\0';
 	
-	if (!MXPcode)
+  if (!MXPcode)
 	   last_color = sp[1];
  
         sp += 2; /* Eat the code */
@@ -1494,4 +1491,17 @@ int get_class_by_name(char *classname)
       if (is_abbrev(classname, pc_class_types[i])) return(i);
 
     return (-1);
+}
+
+char * convert_from_tabs(char * string)
+{
+  static char buf[MAX_STRING_LENGTH * 8];
+  
+  strcpy(buf, string);
+  parse_tab(buf);
+  
+  if (strchr(buf, '\t'))
+    mudlog(CMP, LVL_GOD, TRUE, "STILL TABS?! [%s]", buf);
+  
+  return(buf);
 }

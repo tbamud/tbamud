@@ -2224,11 +2224,11 @@ ACMD(do_wiznet)
     return;
   }
   if (level > LVL_IMMORT) {
-    snprintf(buf1, sizeof(buf1), "@c%s: <%d> %s%s@n", GET_NAME(ch), level, emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "@cSomeone: <%d> %s%s@n", level, emote ? "<--- " : "", argument);
+    snprintf(buf1, sizeof(buf1), "\tc%s: <%d> %s%s\tn", GET_NAME(ch), level, emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "\tcSomeone: <%d> %s%s\tn", level, emote ? "<--- " : "", argument);
   } else {
-    snprintf(buf1, sizeof(buf1), "@c%s: %s%s@n", GET_NAME(ch), emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "@cSomeone: %s%s@n", emote ? "<--- " : "", argument);
+    snprintf(buf1, sizeof(buf1), "\tc%s: %s%s\tn", GET_NAME(ch), emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "\tcSomeone: %s%s\tn", emote ? "<--- " : "", argument);
   }
 
   for (d = descriptor_list; d; d = d->next) {
@@ -4378,8 +4378,8 @@ ACMD(do_file)
    req_file_lines = file_numlines(req_file);
 
    snprintf( buf, sizeof(buf),
-       "@gFile:@n %s@g; Min. Level to read:@n %d@g; File Location:@n %s@g\r\n"
-       "File size (bytes):@n %ld@g; Total num lines:@n %d\r\n",
+       "\tgFile:\tn %s\tg; Min. Level to read:\tn %d\tg; File Location:\tn %s\tg\r\n"
+       "File size (bytes):\tn %ld\tg; Total num lines:\tn %d\r\n",
        fields[l].cmd, fields[l].level, fields[l].file, (long) req_file_size,
        req_file_lines);
 
@@ -4387,13 +4387,13 @@ ACMD(do_file)
    if ( (fields[l].read_backwards == TRUE) && (req_lines < req_file_lines) )
    {
      snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
-               "@gReading from the tail of the file.@n\r\n\r\n" );
+               "\tgReading from the tail of the file.\tn\r\n\r\n" );
      lines_read = file_tail( req_file, buf, sizeof(buf), req_lines );
    }
    else
    {
      snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
-              "@gReading from the head of the file.@n\r\n\r\n" );
+              "\tgReading from the head of the file.\tn\r\n\r\n" );
      lines_read = file_head( req_file, buf, sizeof(buf), req_lines );
    }
 
@@ -4403,19 +4403,19 @@ ACMD(do_file)
    {
      /* We're reading the entire file */
      snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
-         "\r\n@gEntire file returned (@n%d @glines).@n\r\n",
+         "\r\n\tgEntire file returned (\tn%d \tglines).\tn\r\n",
          lines_read );
    }
    else if ( lines_read == max_lines_to_read )
    {
      snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
-         "\r\n@gMaximum number of @n%d @glines returned.@n\r\n",
+         "\r\n\tgMaximum number of \tn%d \tglines returned.\tn\r\n",
          lines_read );
    }
    else
    {
      snprintf( buf + strlen(buf), sizeof(buf) - strlen(buf),
-         "\r\n%d @glines returned.@n\r\n",
+         "\r\n%d \tglines returned.\tn\r\n",
          lines_read );
    }
 

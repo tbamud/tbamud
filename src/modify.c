@@ -93,8 +93,12 @@ void parse_tab(char *str)
 {
   char *p = str;
    for (; *p; p++)
-     if (*p == '\t' && *(p+1) != '\t')
-       *p = '@';
+     if (*p == '\t') {
+       if (*(p+1) != '\t')
+         *p = '@';
+       else
+         p++;
+	 }
 }
 
 /* Basic API function to start writing somewhere. 'data' isn't used, but you
@@ -123,14 +127,14 @@ void string_add(struct descriptor_data *d, char *str)
   int action;
 
   /* Determine if this is the terminal string, and truncate if so. Changed to
-   * only accept '@' at the beginning of line. - JE */
+   * only accept '\t' at the beginning of line. - JE */
 
   delete_doubledollar(str);
   smash_tilde(str);
 
   /* Determine if this is the terminal string, and truncate if so. Changed to
-   * only accept '@' if it's by itself. - fnord */
-  if ((action = (*str == '@' && !str[1])))
+   * only accept '\t' if it's by itself. - fnord */
+  if ((action = (*str == '\t' && !str[1])))
     *str = '\0';
   else
     if ((action = improved_editor_execute(d, str)) == STRINGADD_ACTION)
@@ -409,8 +413,8 @@ static char *next_page(char *str, struct char_data *ch)
       for (count=0; *str != 'm' && count < 9; count++)
         str++;
 
-    else if (*str == '@') {
-      if (*(str + 1) != '@')
+    else if (*str == '\t') {
+      if (*(str + 1) != '\t')
         str++;
     }
 
@@ -519,10 +523,10 @@ void show_string(struct descriptor_data *d, char *input)
     return;
   }
   /* If we're displaying the last page, just send it to the character, and
-   * then free up the space we used. Also send a @n - to make color stop
+   * then free up the space we used. Also send a \tn - to make color stop
    * bleeding. - Welcor */
   if (d->showstr_page + 1 >= d->showstr_count) {
-    send_to_char(d->character, "%s@n", d->showstr_vector[d->showstr_page]);
+    send_to_char(d->character, "%s\tn", d->showstr_vector[d->showstr_page]);
     free(d->showstr_vector);
     d->showstr_vector = NULL;
     d->showstr_count = 0;

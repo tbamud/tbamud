@@ -70,6 +70,7 @@ static int export_info_file(zone_rnum zrnum);
 int genolc_checkstring(struct descriptor_data *d, char *arg)
 {
   smash_tilde(arg);
+  parse_at(arg);
   return TRUE;
 }
 

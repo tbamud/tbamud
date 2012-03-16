@@ -257,6 +257,7 @@ int save_rooms(zone_rnum rzone)
   char filename[128];
   char buf[MAX_STRING_LENGTH];
   char buf1[MAX_STRING_LENGTH];
+  char buf2[MAX_STRING_LENGTH];
 
 #if CIRCLE_UNSIGNED_INDEX
   if (rzone == NOWHERE || rzone > top_of_zone_table) {
@@ -289,7 +290,7 @@ int save_rooms(zone_rnum rzone)
       strip_cr(buf);
 
       /* Save the numeric and string section of the file. */
-      fprintf(sf, 	"#%d\n"
+      sprintf(buf2, 	"#%d\n"
 			"%s%c\n"
 			"%s%c\n"
 			"%d %d %d %d %d %d\n",
@@ -299,6 +300,8 @@ int save_rooms(zone_rnum rzone)
 	zone_table[room->zone].number, room->room_flags[0], room->room_flags[1], room->room_flags[2], 
 	  room->room_flags[3], room->sector_type 
       );
+
+  fprintf(sf, convert_from_tabs(buf2), 0);
 
       /* Now you write out the exits for the room. */
       for (j = 0; j < DIR_COUNT; j++) {

@@ -170,6 +170,7 @@ char *fread_action(FILE *fl, int nr)
   if (*buf == '#')
     return (NULL);
 
+  parse_at(buf);
   buf[strlen(buf) - 1] = '\0';
   return (strdup(buf));
 }
@@ -2054,6 +2055,7 @@ static void load_zones(FILE *fl, char *zonename)
   if ((ptr = strchr(buf, '~')) != NULL)	/* take off the '~' if it's there */
     *ptr = '\0';
   Z.name = strdup(buf);
+  parse_at(Z.name);
 
   /* Clear all the zone flags */
   for (i=0; i<ZN_ARRAY_MAX; i++)
@@ -2244,6 +2246,7 @@ void load_help(FILE * fl, char *name)
 
     el.duplicate = 0;
     el.entry = strdup(entry);
+    parse_at(el.entry);
     scan = one_word(key, next_key);
 
     while (*next_key) {
@@ -2805,7 +2808,8 @@ char *fread_string(FILE *fl, const char *error)
       length += templength;
     }
   } while (!done);
-
+  
+  parse_at(buf);
   /* allocate space for the new string and copy it */
   return (strlen(buf) ? strdup(buf) : NULL);
 }
@@ -2860,7 +2864,8 @@ char *fread_clean_string(FILE *fl, const char *error)
       length += templength;
     }
   } while (!done);
-
+  
+  parse_at(buf);
   /* allocate space for the new string and copy it */
   return (strlen(buf) ? strdup(buf) : NULL);
 }
@@ -3280,7 +3285,9 @@ static int file_to_string_alloc(const char *name, char **buf)
 
   if (*buf)
     free(*buf);
-
+  
+  parse_at(temp);   
+    
   *buf = strdup(temp);
   return (0);
 }
@@ -3957,6 +3964,8 @@ void load_config( void )
             free(CONFIG_MENU);
           strncpy(buf, "Reading menu in load_config()", sizeof(buf));
           CONFIG_MENU = fread_string(fl, buf);
+          parse_at(CONFIG_MENU);
+          parse_at(CONFIG_MENU);
         } else if (!str_cmp(tag, "min_rent_cost"))
           CONFIG_MIN_RENT_COST = num;
         else if (!str_cmp(tag, "min_wizlist_lev"))
@@ -4019,6 +4028,7 @@ void load_config( void )
           if (CONFIG_START_MESSG)
             free(CONFIG_START_MESSG);
           CONFIG_START_MESSG = fread_string(fl, buf);
+          parse_at(CONFIG_START_MESSG);
         }
         break;
 

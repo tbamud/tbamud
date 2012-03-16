@@ -64,6 +64,8 @@
 #define MAP_NORMAL  0
 #define MAP_COMPACT 1
 
+static bool show_worldmap(struct char_data *ch);
+
 struct map_info_type
 {
   int  sector_type;
@@ -73,16 +75,16 @@ struct map_info_type
 static struct map_info_type door_info[] =
 {
   { DOOR_NONE, "   " },
-  { DOOR_DOWN_AND_SE, "@r-@n\\ " },
-  { DOOR_UP_AND_NE,   "@r+@n/ " },
-  { VDOOR_DIAGNW,     " @m+@n " },
-  { VDOOR_DIAGNE,     " @m+@n "},
-  { VDOOR_EW,  " @m+@n " },
-  { VDOOR_NS,  " @m+@n "},
+  { DOOR_DOWN_AND_SE, "\tr-\tn\\ " },
+  { DOOR_UP_AND_NE,   "\tr+\tn/ " },
+  { VDOOR_DIAGNW,     " \tm+\tn " },
+  { VDOOR_DIAGNE,     " \tm+\tn "},
+  { VDOOR_EW,  " \tm+\tn " },
+  { VDOOR_NS,  " \tm+\tn "},
   { DOOR_DIAGNW,      " \\ " },
   { DOOR_DIAGNE,      " / " },
-  { DOOR_DOWN, "@r-@n  " },
-  { DOOR_UP,   "@r+@n  " },
+  { DOOR_DOWN, "\tr-\tn  " },
+  { DOOR_UP,   "\tr+\tn  " },
   { DOOR_EW,   " - " },
   { DOOR_NS,   " | " }
 };
@@ -90,16 +92,16 @@ static struct map_info_type door_info[] =
 static struct map_info_type compact_door_info[] =
 {
   { DOOR_NONE, " " },
-  { DOOR_DOWN_AND_SE, "@R\\@n" },
-  { DOOR_UP_AND_NE,   "@R/@n" },
-  { VDOOR_DIAGNW,   "@m+@n" },
-  { VDOOR_DIAGNE,   "@m+@n"},
-  { VDOOR_EW,  " @m+@n " },
-  { VDOOR_NS,  " @m+@n "},
+  { DOOR_DOWN_AND_SE, "\tR\\\tn" },
+  { DOOR_UP_AND_NE,   "\tR/\tn" },
+  { VDOOR_DIAGNW,   "\tm+\tn" },
+  { VDOOR_DIAGNE,   "\tm+\tn"},
+  { VDOOR_EW,  " \tm+\tn " },
+  { VDOOR_NS,  " \tm+\tn "},
   { DOOR_DIAGNW,"\\" },
   { DOOR_DIAGNE,"/" },
-  { DOOR_DOWN, "@r-@n" },
-  { DOOR_UP,   "@r+@n" },
+  { DOOR_DOWN, "\tr-\tn" },
+  { DOOR_UP,   "\tr+\tn" },
   { DOOR_EW,   "-" },
   { DOOR_NS,   " | " }
 };
@@ -109,16 +111,16 @@ static struct map_info_type compact_door_info[] =
 /* New sectors also need to be added to the perform_map function below */
 static struct map_info_type map_info[] =
 {
-  { SECT_INSIDE,       "@c[@n.@c]@n" }, /* 0 */
-  { SECT_CITY,         "@c[@wC@c]@n" },
-  { SECT_FIELD,        "@c[@g,@c]@n" },
-  { SECT_FOREST,       "@c[@gY@c]@n" },
-  { SECT_HILLS,        "@c[@Mm@c]@n" },
-  { SECT_MOUNTAIN,     "@c[@rM@c]@n" }, /* 5 */
-  { SECT_WATER_SWIM,   "@c[@c~@c]@n" },
-  { SECT_WATER_NOSWIM, "@c[@b=@c]@n" },
-  { SECT_FLYING,       "@c[@C^@c]@n" },
-  { SECT_UNDERWATER,   "@c[@bU@c]@n" },
+  { SECT_INSIDE,       "\tc[\tn.\tc]\tn" }, /* 0 */
+  { SECT_CITY,         "\tc[\twC\tc]\tn" },
+  { SECT_FIELD,        "\tc[\tg,\tc]\tn" },
+  { SECT_FOREST,       "\tc[\tgY\tc]\tn" },
+  { SECT_HILLS,        "\tc[\tMm\tc]\tn" },
+  { SECT_MOUNTAIN,     "\tc[\trM\tc]\tn" }, /* 5 */
+  { SECT_WATER_SWIM,   "\tc[\tc~\tc]\tn" },
+  { SECT_WATER_NOSWIM, "\tc[\tb=\tc]\tn" },
+  { SECT_FLYING,       "\tc[\tC^\tc]\tn" },
+  { SECT_UNDERWATER,   "\tc[\tbU\tc]\tn" },
   { -1,                ""        }, /* 10 */
   { -1,                ""        },
   { -1,                ""        },
@@ -140,22 +142,22 @@ static struct map_info_type map_info[] =
   { -1,                ""        },
   { -1,                ""        },
   { SECT_EMPTY,        "   "     }, /* 30 */
-  { SECT_STRANGE,      "@c[@R?@c]@n" },
-  { SECT_HERE,         "@c[@B!@c]@n"     },
+  { SECT_STRANGE,      "\tc[\tR?\tc]\tn" },
+  { SECT_HERE,         "\tc[\tB!\tc]\tn"     },
 };
 
 static struct map_info_type world_map_info[] =
 {
-  { SECT_INSIDE,       "@n."  }, /* 0 */
-  { SECT_CITY,         "@wC"  },
-  { SECT_FIELD,        "@g,"  },
-  { SECT_FOREST,       "@gY"  },
-  { SECT_HILLS,        "@Mm"  },
-  { SECT_MOUNTAIN,     "@rM"  }, /* 5 */
-  { SECT_WATER_SWIM,   "@c~"  },
-  { SECT_WATER_NOSWIM, "@b="  },
-  { SECT_FLYING,       "@C^"  },
-  { SECT_UNDERWATER,   "@bU"  },
+  { SECT_INSIDE,       "\tn."  }, /* 0 */
+  { SECT_CITY,         "\twC"  },
+  { SECT_FIELD,        "\tg,"  },
+  { SECT_FOREST,       "\tgY"  },
+  { SECT_HILLS,        "\tMm"  },
+  { SECT_MOUNTAIN,     "\trM"  }, /* 5 */
+  { SECT_WATER_SWIM,   "\tc~"  },
+  { SECT_WATER_NOSWIM, "\tb="  },
+  { SECT_FLYING,       "\tC^"  },
+  { SECT_UNDERWATER,   "\tbU"  },
   { -1,                ""     }, /* 10 */
   { -1,                ""     },
   { -1,                ""     },
@@ -177,8 +179,8 @@ static struct map_info_type world_map_info[] =
   { -1,                ""     },
   { -1,                ""     },
   { SECT_EMPTY,        " "    }, /* 30 */
-  { SECT_STRANGE,      "@R?"  },
-  { SECT_HERE,         "@B!"  },
+  { SECT_STRANGE,      "\tR?"  },
+  { SECT_HERE,         "\tB!"  },
 };
 
 
@@ -415,7 +417,7 @@ static char *WorldMap(int centre, int size, int mapshape, int maptype )
  strcpy(mp++, " ");
       }
     }
-    strcpy(mp, "@n\r\n");
+    strcpy(mp, "\tn\r\n");
     mp+=4;
   }
   *mp='\0';
@@ -466,7 +468,7 @@ static void perform_map( struct char_data *ch, char *argument, bool worldmap )
     if (is_abbrev(arg2, "normal")) worldmap=FALSE;
     else if (is_abbrev(arg2, "world")) worldmap=TRUE;
     else {
-      send_to_char(ch, "Usage: @ymap <distance> [ normal | world ]@n");
+      send_to_char(ch, "Usage: \tymap <distance> [ normal | world ]\tn");
       return;
     }
   }
@@ -499,22 +501,22 @@ static void perform_map( struct char_data *ch, char *argument, bool worldmap )
   map[centre][centre] = SECT_HERE;
 
   /* Feel free to put your own MUD name or header in here */
-  send_to_char(ch, " @Y-@ytbaMUD Map System@Y-@n\r\n"
-                   "@D  .-.__--.,--.__.-.@n\r\n" );
+  send_to_char(ch, " \tY-\tytbaMUD Map System\tY-\tn\r\n"
+                   "\tD  .-.__--.,--.__.-.\tn\r\n" );
 
-  count += sprintf(buf + count, "@n@n@n%s Up\\\\", door_info[NUM_DOOR_TYPES + DOOR_UP].disp);
-  count += sprintf(buf + count, "@n@n@n%s Down\\\\", door_info[NUM_DOOR_TYPES + DOOR_DOWN].disp);
-  count += sprintf(buf + count, "@n%s You\\\\", map_info[SECT_HERE].disp);
-  count += sprintf(buf + count, "@n%s Inside\\\\", map_info[SECT_INSIDE].disp);
-  count += sprintf(buf + count, "@n%s City\\\\", map_info[SECT_CITY].disp);
-  count += sprintf(buf + count, "@n%s Field\\\\", map_info[SECT_FIELD].disp);
-  count += sprintf(buf + count, "@n%s Forest\\\\", map_info[SECT_FOREST].disp);
-  count += sprintf(buf + count, "@n%s Hills\\\\", map_info[SECT_HILLS].disp);
-  count += sprintf(buf + count, "@n%s Mountain\\\\", map_info[SECT_MOUNTAIN].disp);
-  count += sprintf(buf + count, "@n%s Swim\\\\", map_info[SECT_WATER_SWIM].disp);
-  count += sprintf(buf + count, "@n%s Boat\\\\", map_info[SECT_WATER_NOSWIM].disp);
-  count += sprintf(buf + count, "@n%s Flying\\\\", map_info[SECT_FLYING].disp);
-  count += sprintf(buf + count, "@n%s Underwater\\\\", map_info[SECT_UNDERWATER].disp);
+  count += sprintf(buf + count, "\tn\tn\tn%s Up\\\\", door_info[NUM_DOOR_TYPES + DOOR_UP].disp);
+  count += sprintf(buf + count, "\tn\tn\tn%s Down\\\\", door_info[NUM_DOOR_TYPES + DOOR_DOWN].disp);
+  count += sprintf(buf + count, "\tn%s You\\\\", map_info[SECT_HERE].disp);
+  count += sprintf(buf + count, "\tn%s Inside\\\\", map_info[SECT_INSIDE].disp);
+  count += sprintf(buf + count, "\tn%s City\\\\", map_info[SECT_CITY].disp);
+  count += sprintf(buf + count, "\tn%s Field\\\\", map_info[SECT_FIELD].disp);
+  count += sprintf(buf + count, "\tn%s Forest\\\\", map_info[SECT_FOREST].disp);
+  count += sprintf(buf + count, "\tn%s Hills\\\\", map_info[SECT_HILLS].disp);
+  count += sprintf(buf + count, "\tn%s Mountain\\\\", map_info[SECT_MOUNTAIN].disp);
+  count += sprintf(buf + count, "\tn%s Swim\\\\", map_info[SECT_WATER_SWIM].disp);
+  count += sprintf(buf + count, "\tn%s Boat\\\\", map_info[SECT_WATER_NOSWIM].disp);
+  count += sprintf(buf + count, "\tn%s Flying\\\\", map_info[SECT_FLYING].disp);
+  count += sprintf(buf + count, "\tn%s Underwater\\\\", map_info[SECT_UNDERWATER].disp);
 
   strcpy(buf, strfrmt(buf, LEGEND_WIDTH, CANVAS_HEIGHT + 2, FALSE, TRUE, TRUE));
 
@@ -522,7 +524,7 @@ static void perform_map( struct char_data *ch, char *argument, bool worldmap )
   strcpy(buf1, strfrmt("",0, CANVAS_HEIGHT + 2, FALSE, FALSE, TRUE));
 
   /* Paste the legend */
-  strcpy(buf2, strpaste(buf1, buf, "@D | @n"));
+  strcpy(buf2, strpaste(buf1, buf, "\tD | \tn"));
 
   /* Set up the map */
   memset(buf, ' ', CANVAS_WIDTH);
@@ -534,13 +536,13 @@ static void perform_map( struct char_data *ch, char *argument, bool worldmap )
   memset(buf + count, ' ', CANVAS_WIDTH);
   strcpy(buf + count + CANVAS_WIDTH, "\r\n");
   /* Paste it on */
-  strcpy(buf2, strpaste(buf2, buf, "@D | @n"));
+  strcpy(buf2, strpaste(buf2, buf, "\tD | \tn"));
   /* Paste on the right border */
   strcpy(buf2, strpaste(buf2, buf1, "  "));
   /* Print it all out */
   send_to_char(ch, "%s", buf2);
 
-  send_to_char(ch, "@D `.-.__--.,-.__.-.-'@n\r\n");
+  send_to_char(ch, "\tD `.-.__--.,-.__.-.-'\tn\r\n");
   return;
 }
 
@@ -556,7 +558,7 @@ void str_and_map(char *str, struct char_data *ch, room_vnum target_room ) {
     return;
   }
 
-  worldmap = ROOM_FLAGGED(target_room, ROOM_WORLDMAP) ? TRUE : FALSE ;
+  worldmap = show_worldmap(ch);
 
   if(!PRF_FLAGGED(ch, PRF_AUTOMAP)) {
     send_to_char(ch, "%s", strfrmt(str, GET_SCREEN_WIDTH(ch), 1, FALSE, FALSE, FALSE));
@@ -573,7 +575,7 @@ void str_and_map(char *str, struct char_data *ch, room_vnum target_room ) {
       map[x][y]= (!(y%2) && !worldmap) ? DOOR_NONE : SECT_EMPTY;
 
   /* starts the mapping with the center room */
-MapArea(target_room, ch, centre, centre, min, max, ns_size/2, ew_size/2, worldmap );
+MapArea(target_room, ch, centre, centre, min, max, ns_size/2, ew_size/2, worldmap ); 
   map[centre][centre] = SECT_HERE;
 
   /* char_size = rooms + doors + padding */
@@ -583,13 +585,13 @@ MapArea(target_room, ch, centre, centre, min, max, ns_size/2, ew_size/2, worldma
     char_size = 3*(size+1) + (size) + 4;
 
   if(worldmap)
-    send_to_char(ch, "%s", strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), WorldMap(centre, size, MAP_CIRCLE, MAP_COMPACT), "   "));
+    send_to_char(ch, "%s", strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), WorldMap(centre, size, MAP_CIRCLE, MAP_COMPACT), " \tn"));
   else
-    send_to_char(ch, "%s", strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), CompactStringMap(centre, size), "   "));
+    send_to_char(ch, "%s", strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), CompactStringMap(centre, size), " \tn"));
 
 }
 
-bool show_worldmap(struct char_data *ch) {
+static bool show_worldmap(struct char_data *ch) {
   room_rnum rm = IN_ROOM(ch);
   zone_rnum zn = GET_ROOM_ZONE(rm);
 

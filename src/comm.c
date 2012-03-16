@@ -162,7 +162,6 @@ static sigfunc *my_signal(int signo, sigfunc *func);
 #endif
 /* Webster Dictionary Lookup functions */
 static RETSIGTYPE websterlink(int sig);
-static size_t proc_colors(char *txt, size_t maxlen, int parse);
 static void handle_webster_file();
 
 static void msdp_update(void); /* KaVir plugin*/
@@ -1103,80 +1102,6 @@ void echo_on(struct descriptor_data *d)
   write_to_output(d, "%s", on_string);
 }
 
-#define COLOR_ON(ch) (!IS_NPC(ch) ? (PRF_FLAGGED((ch), PRF_COLOR_1) || PRF_FLAGGED((ch), PRF_COLOR_2) ? 1 : 0) : 0)
-
-/* Color replacement arrays. Renx -- 011100 */
-#define A "\x1B["
-char *ANSI[] = { "@", A"0m",A"0m",A"0;30m",A"0;34m",A"0;32m",A"0;36m",A"0;31m",
-     A"0;35m",A"0;33m",A"0;37m",A"1;30m",A"1;34m",A"1;32m",A"1;36m",A"1;31m",
-     A"1;35m",A"1;33m",A"1;37m",A"40m",A"44m",A"42m",A"46m",A"41m",A"45m",
-     A"43m",A"47m",A"5m",A"4m",A"1m",A"7m"
-     ,"!"};
-#undef A
-const char CCODE[] = "@nNdbgcrmywDBGCRMYW01234567luoe!";
-
-static size_t proc_colors(char *txt, size_t maxlen, int parse)
-{
-  char *d, *s, *p;
-  const char *c;
-  int i;
-
-  if (!txt || !strchr(txt, '@')) /* skip out if no color codes     */
-    return strlen(txt);
-
-  s = txt;
-  CREATE(d, char, maxlen);
-  p = d;
-
-  for( ; *s && ((size_t)(d-p) < maxlen); ) {
-    /* no color code - just copy */
-    if (*s != '@') {
-      *d++ = *s++;
-      continue;
-    }
-
-    /* if we get here we have a color code */
-    s++; /* s now points to the code */
-
-    if (!*s) { /* string was terminated with @ */
-      *d++ = '@';
-      /* s will now point to '\0' in the for() check */
-      continue;
-    }
-
-    if (!parse) { /* not parsing, just skip the code, unless it's @@ */
-      if (*s == '@') {
-        *d++ = '@';
-      }
-      s++; /* skip to next (non-colorcode) char */
-      continue;
-    }
-
-    /* parse the color code */
-    for (i = 0; CCODE[i] != '!'; i++) { /* do we find it ? */
-      if ((*s) == CCODE[i]) {           /* if so :*/
-
-        /* c now points to the first char in color code*/
-        for(c = ANSI[i] ; *c && ((size_t)(d-p) < maxlen); )
-          *d++ = *c++;
-
-        break;
-      }
-    }
-   /* If we couldn't find any correct color code let's just skip it - Welcor */
-    s++;
-
-  } /* for loop */
-
-  /* make sure txt is NULL - terminated */
-  d = '\0';
-  strncpy(txt, p, maxlen-1);
-
-  free(p);
-
-  return strlen(txt);
-}
-
 static char *make_prompt(struct descriptor_data *d)
 {
   static char prompt[MAX_PROMPT_LENGTH];
@@ -1355,8 +1280,6 @@ size_t vwrite_to_output(struct descriptor_data *t, const char *format, va_list a
     return (0);
 
   wantsize = size = vsnprintf(txt, sizeof(txt), format, args);
-  if (t->character)
-    wantsize = size = proc_colors(txt, sizeof(txt), COLOR_ON(t->character));
 
   strcpy(txt, ProtocolOutput( t, txt, (int*)&wantsize )); /* <--- Add this line */
   size = wantsize;                    /* <--- Add this line */
@@ -2402,7 +2325,7 @@ void game_info(const char *format, ...)
   char messg[MAX_STRING_LENGTH];
   if (format == NULL)
     return;
-  sprintf(messg, "@cInfo: @y");
+  sprintf(messg, "\tcInfo: \ty");
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING)
       continue;
@@ -2413,7 +2336,7 @@ void game_info(const char *format, ...)
     va_start(args, format);
     vwrite_to_output(i, format, args);
     va_end(args);
-    write_to_output(i, "@n\r\n");
+    write_to_output(i, "\tn\r\n");
   }
 }
 

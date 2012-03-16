@@ -1639,7 +1639,7 @@ void nanny(struct descriptor_data *d, char *arg)
     write_to_output(d, "%s", CONFIG_MENU);
     if (IS_HAPPYHOUR > 0){
       write_to_output(d, "\r\n");
-      write_to_output(d, "@yThere is currently a Happyhour!@n\r\n");
+      write_to_output(d, "\tyThere is currently a Happyhour!\tn\r\n");
       write_to_output(d, "\r\n");
     }
     add_llog_entry(d->character, LAST_CONNECT);

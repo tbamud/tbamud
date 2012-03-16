@@ -357,7 +357,7 @@ int save_zone(zone_rnum zone_num)
           (zone_table[zone_num].builders && *zone_table[zone_num].builders)
                 ? zone_table[zone_num].builders : "None.",
           (zone_table[zone_num].name && *zone_table[zone_num].name)
-                ? zone_table[zone_num].name : "undefined",
+                ? convert_from_tabs(zone_table[zone_num].name) : "undefined",
           genolc_zone_bottom(zone_num),
           zone_table[zone_num].top,
           zone_table[zone_num].lifespan,
@@ -378,7 +378,7 @@ int save_zone(zone_rnum zone_num)
           (zone_table[zone_num].builders && *zone_table[zone_num].builders)
                 ? zone_table[zone_num].builders : "None.",
           (zone_table[zone_num].name && *zone_table[zone_num].name)
-                ? zone_table[zone_num].name : "undefined",
+                ? convert_from_tabs(zone_table[zone_num].name) : "undefined",
           genolc_zone_bottom(zone_num),
           zone_table[zone_num].top,
           zone_table[zone_num].lifespan,

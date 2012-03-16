@@ -161,7 +161,7 @@ static void hedit_save_to_disk(struct descriptor_data *d)
     strip_cr(buf1);
 
     /* Forget making a buffer, lets just write the thing now. */
-    fprintf(fp, "%s#%d\n", buf1, help_table[i].min_level);
+    fprintf(fp, "%s#%d\n", convert_from_tabs(buf1), help_table[i].min_level);
   }
   /* Write final line and close. */
   fprintf(fp, "$~\n");

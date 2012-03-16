@@ -505,14 +505,14 @@ int save_config( IDXTYPE nowhere )
     strip_cr(buf);
 
     fprintf(fl, "* The entrance/exit menu.\n"
-                "MENU = \n%s~\n\n", buf);
+                "MENU = \n%s~\n\n", convert_from_tabs(buf));
   }
 
   if (CONFIG_WELC_MESSG) {
     strcpy(buf, CONFIG_WELC_MESSG);
     strip_cr(buf);
 
-    fprintf(fl, "* The welcome message.\nWELC_MESSG = \n%s~\n\n", buf);
+    fprintf(fl, "* The welcome message.\nWELC_MESSG = \n%s~\n\n", convert_from_tabs(buf));
   }
 
   if (CONFIG_START_MESSG) {
@@ -520,7 +520,7 @@ int save_config( IDXTYPE nowhere )
     strip_cr(buf);
 
     fprintf(fl, "* NEWBIE start message.\n"
-                "START_MESSG = \n%s~\n\n", buf);
+                "START_MESSG = \n%s~\n\n", convert_from_tabs(buf));
   }
 
   fprintf(fl, "* Should the medit OLC show the advanced stats menu (1) or not (0).\n"

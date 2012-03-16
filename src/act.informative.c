@@ -1558,7 +1558,7 @@ static void perform_mortal_where(struct char_data *ch, char *arg)
 
   if (!*arg) {
     j = world[(IN_ROOM(ch))].zone;
-    send_to_char(ch, "Players in %s@n.\r\n--------------------\r\n", zone_table[j].name);
+    send_to_char(ch, "Players in %s\tn.\r\n--------------------\r\n", zone_table[j].name);
     for (d = descriptor_list; d; d = d->next) {
       if (STATE(d) != CON_PLAYING || d->character == ch)
 	continue;
@@ -2538,9 +2538,9 @@ ACMD(do_areas)
     if (show_zone) {
       if (overlap) overlap_shown = TRUE;
       lev_set = get_zone_levels(i, lev_str);
-      tmp_len = snprintf(buf+len, sizeof(buf)-len, "@n(%3d) %s%-*s@n %s%s@n\r\n", ++zcount, overlap ? QRED : QCYN,
+      tmp_len = snprintf(buf+len, sizeof(buf)-len, "\tn(%3d) %s%-*s\tn %s%s\tn\r\n", ++zcount, overlap ? QRED : QCYN,
                  count_color_chars(zone_table[i].name)+30, zone_table[i].name,
-                 lev_set ? "@c" : "@n", lev_set ? lev_str : "All Levels");
+                 lev_set ? "\tc" : "\tn", lev_set ? lev_str : "All Levels");
       len += tmp_len;
     }
   }

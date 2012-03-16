@@ -465,7 +465,7 @@ static void medit_disp_stats_menu(struct descriptor_data *d)
   clear_screen(d);
 
   /* Color codes have to be used here, for count_color_codes to work */
-  sprintf(buf, "(range @y%d@n to @y%d@n)", GET_HIT(mob) + GET_MOVE(mob), (GET_HIT(mob) * GET_MANA(mob)) + GET_MOVE(mob));
+  sprintf(buf, "(range \ty%d\tn to \ty%d\tn)", GET_HIT(mob) + GET_MOVE(mob), (GET_HIT(mob) * GET_MANA(mob)) + GET_MOVE(mob));
 
   /* Top section - standard stats */
   write_to_output(d,

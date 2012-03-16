@@ -179,6 +179,7 @@ int save_quests(zone_rnum zone_num)
   char filename[128], oldname[128], quest_flags[MAX_STRING_LENGTH];
   char quest_desc[MAX_STRING_LENGTH], quest_info[MAX_STRING_LENGTH];
   char quest_done[MAX_STRING_LENGTH], quest_quit[MAX_STRING_LENGTH];
+  char buf[MAX_STRING_LENGTH];
   int i, num_quests = 0;
 
 #if CIRCLE_UNSIGNED_INDEX
@@ -219,7 +220,7 @@ int save_quests(zone_rnum zone_num)
       strip_cr(quest_quit);
       /* Save the quest details to the file.  */
       sprintascii(quest_flags, QST_FLAGS(rnum));
-      fprintf(sf,
+      sprintf(buf,
         "#%d\n"
         "%s%c\n"
         "%s%c\n"
@@ -248,6 +249,9 @@ int save_quests(zone_rnum zone_num)
  QST_RETURNMOB(rnum) == NOBODY ? -1 : QST_RETURNMOB(rnum),
  QST_QUANTITY(rnum), QST_GOLD(rnum), QST_EXP(rnum), QST_OBJ(rnum)
       );
+      
+      fprintf(sf, convert_from_tabs(buf), 0);
+      
       num_quests++;
     }
   }

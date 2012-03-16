@@ -32,7 +32,7 @@ ACMD(do_say)
     char buf[MAX_INPUT_LENGTH + 14], *msg;
     struct char_data *vict;
 
-    snprintf(buf, sizeof(buf), "$n@n says, '%s@n'", argument);
+    snprintf(buf, sizeof(buf), "$n\tn says, '%s\tn'", argument);
     msg = act(buf, FALSE, ch, 0, 0, TO_ROOM | DG_NO_TRIG);
 
     for (vict = world[IN_ROOM(ch)].people; vict; vict = vict->next_in_room)
@@ -42,7 +42,7 @@ ACMD(do_say)
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else {
-      sprintf(buf, "You say, '%s@n'", argument);
+      sprintf(buf, "You say, '%s\tn'", argument);
       msg = act(buf, FALSE, ch, 0, 0, TO_CHAR | DG_NO_TRIG);
       add_history(ch, msg, HIST_SAY);
     }
@@ -74,7 +74,7 @@ ACMD(do_gsay)
     else
       k = ch;
 
-    snprintf(buf, sizeof(buf), "$n tells the group, '%s@n'", argument);
+    snprintf(buf, sizeof(buf), "$n tells the group, '%s\tn'", argument);
 
     if (AFF_FLAGGED(k, AFF_GROUP) && (k != ch))
       act(buf, FALSE, ch, 0, k, TO_VICT | TO_SLEEP);
@@ -85,7 +85,7 @@ ACMD(do_gsay)
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else
-      send_to_char(ch, "You tell the group, '%s@n'\r\n", argument);
+      send_to_char(ch, "You tell the group, '%s\tn'\r\n", argument);
   }
 }
 

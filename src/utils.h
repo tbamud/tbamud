@@ -68,6 +68,7 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad);
 char *strpaste(char *str1, char *str2, char *joiner);
 void new_affect(struct affected_type *af);
 int get_class_by_name(char *classname);
+char * convert_from_tabs(char * string);
 
 /* Public functions made available form weather.c */
 void weather_and_time(int mode);

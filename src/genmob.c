@@ -361,13 +361,14 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 {
   char ldesc[MAX_STRING_LENGTH];
   char ddesc[MAX_STRING_LENGTH];
+  char buf[MAX_STRING_LENGTH];
 
   ldesc[MAX_STRING_LENGTH - 1] = '\0';
   ddesc[MAX_STRING_LENGTH - 1] = '\0';
   strip_cr(strncpy(ldesc, GET_LDESC(mob), MAX_STRING_LENGTH - 1));
   strip_cr(strncpy(ddesc, GET_DDESC(mob), MAX_STRING_LENGTH - 1));
 
-  fprintf(fd,	"#%d\n"
+  sprintf(buf,	"#%d\n"
 		"%s%c\n"
 		"%s%c\n"
 		"%s%c\n"
@@ -378,6 +379,9 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 	ldesc, STRING_TERMINATOR,
 	ddesc, STRING_TERMINATOR
   );
+
+  
+  fprintf(fd, convert_from_tabs(buf), 0);
 
   fprintf(fd, "%d %d %d %d %d %d %d %d %d E\n"
       "%d %d %d %dd%d+%d %dd%d+%d\n",

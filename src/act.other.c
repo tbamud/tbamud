@@ -31,6 +31,7 @@
 #include "mail.h"  /* for has_mail() */
 #include "shop.h"
 #include "quest.h"
+#include "modify.h"
 
 /* Local defined utility functions */
 /* do_group utility functions */
@@ -302,6 +303,7 @@ ACMD(do_title)
 {
   skip_spaces(&argument);
   delete_doubledollar(argument);
+  parse_at(argument);
 
   if (IS_NPC(ch))
     send_to_char(ch, "Your title is fine... go away.\r\n");
@@ -973,7 +975,7 @@ ACMD(do_happyhour)
                      "       @yhappyhour default      @w- sets a default setting for happyhour\r\n\r\n"
                      "Configure the happyhour settings and start a happyhour.\r\n"
                      "Currently 1 hour IRL = %d ticks\r\n"
-                     "If no number is specified, 0 (off) is assumed.\r\nThe command @yhappyhour time@n will therefore stop the happyhour timer.\r\n",
+                     "If no number is specified, 0 (off) is assumed.\r\nThe command \tyhappyhour time\tn will therefore stop the happyhour timer.\r\n",
                      CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
                      CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
                      CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
