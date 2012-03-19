@@ -1500,8 +1500,5 @@ char * convert_from_tabs(char * string)
   strcpy(buf, string);
   parse_tab(buf);
   
-  if (strchr(buf, '\t'))
-    mudlog(CMP, LVL_GOD, TRUE, "STILL TABS?! [%s]", buf);
-  
   return(buf);
 }

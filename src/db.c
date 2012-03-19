@@ -3965,7 +3965,6 @@ void load_config( void )
           strncpy(buf, "Reading menu in load_config()", sizeof(buf));
           CONFIG_MENU = fread_string(fl, buf);
           parse_at(CONFIG_MENU);
-          parse_at(CONFIG_MENU);
         } else if (!str_cmp(tag, "min_rent_cost"))
           CONFIG_MIN_RENT_COST = num;
         else if (!str_cmp(tag, "min_wizlist_lev"))

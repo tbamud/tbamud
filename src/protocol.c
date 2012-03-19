@@ -547,6 +547,31 @@ const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int 
             case '\t': /* Two tabs in a row will display an actual tab */
                pCopyFrom = Tab;
                break;
+            case '_':
+               pCopyFrom = "\x1B[4m"; /* Underline */
+               break;
+            case '+':
+               pCopyFrom = "\x1B[1m"; /* Bold */
+               break;
+            case '-':
+               pCopyFrom = "\x1B[5m"; /* Blinking??? */
+               break;
+            case '*':
+               pCopyFrom = "@"; /* The At Symbol... I don't really like this, but it seems like
+                                   a simple way to allow for the @ symbol while maintain portability
+                                   between pre-ProtocolOutput() muds and post ProtocolOutput() muds.*/
+               break;
+            /* 1,2,3 to be used a MUD's base colour palette. Just to maintain
+             * some sort of common colouring scheme amongst coders/builders */
+            case '1':
+               pCopyFrom = ColourRGB(apDescriptor, "F022");
+               break;
+            case '2':
+               pCopyFrom = ColourRGB(apDescriptor, "F055");
+               break;
+            case '3':
+               pCopyFrom = ColourRGB(apDescriptor, "F555");
+               break;
             case 'n':
                pCopyFrom = s_Clean;
                break;
