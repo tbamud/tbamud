@@ -250,7 +250,7 @@ void ProtocolNegotiate( descriptor_t *apDescriptor );
  * whatever is left for the mud to parse normally.  Call this after data has 
  * been read into the input buffer, before it is used for anything else.
  */
-void ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *apOut );
+ssize_t ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *apOut );
 
 /* Function: ProtocolOutput
  *

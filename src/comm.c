@@ -819,9 +819,9 @@ void game_loop(socket_t local_mother_desc)
     for (d = descriptor_list; d; d = next_d) {
       next_d = d->next;
       if (FD_ISSET(d->descriptor, &exc_set)) {
-	FD_CLR(d->descriptor, &input_set);
-	FD_CLR(d->descriptor, &output_set);
-	close_socket(d);
+        FD_CLR(d->descriptor, &input_set);
+	      FD_CLR(d->descriptor, &output_set);
+	      close_socket(d);
       }
     }
 
@@ -831,9 +831,9 @@ void game_loop(socket_t local_mother_desc)
       if (FD_ISSET(d->descriptor, &input_set))
        {
         if ( d->pProtocol != NULL )      /* KaVir's plugin */
-            d->pProtocol->WriteOOB = 0;  /* KaVir's plugin */
-	if (process_input(d) < 0)
-	  close_socket(d);
+          d->pProtocol->WriteOOB = 0;    /* KaVir's plugin */
+	      if (process_input(d) < 0)
+	        close_socket(d);
        }
     }
 
@@ -899,8 +899,8 @@ void game_loop(socket_t local_mother_desc)
     /* Print prompts for other descriptors who had no other output */
     for (d = descriptor_list; d; d = d->next) {
       if (!d->has_prompt) {
-	write_to_descriptor(d->descriptor, make_prompt(d));
-	d->has_prompt = TRUE;
+	      write_to_descriptor(d->descriptor, make_prompt(d));
+	      d->has_prompt = TRUE;
       }
     }
 
@@ -1556,11 +1556,8 @@ static int process_output(struct descriptor_data *t)
   if (STATE(t) == CON_PLAYING && t->character && !IS_NPC(t->character) && !PRF_FLAGGED(t->character, PRF_COMPACT))
     strcat(osb, "\r\n");	/* strcpy: OK (osb:MAX_SOCK_BUF-2 reserves space) */
 
-  if (!t->pProtocol->WriteOOB)
-  {
-  /* add a prompt */
-  strcat(i, make_prompt(t));	/* strcpy: OK (i:MAX_SOCK_BUF reserves space) */
-  }
+  if (!t->pProtocol->WriteOOB) /* add a prompt */
+    strcat(i, make_prompt(t));	/* strcpy: OK (i:MAX_SOCK_BUF reserves space) */
 
   /* now, send the output.  If this is an 'interruption', use the prepended
    * CRLF, otherwise send the straight output sans CRLF. */
@@ -1740,13 +1737,13 @@ static ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space
 {
   ssize_t ret;
 
-#if defined(CIRCLE_ACORN)
-  ret = recv(desc, read_point, space_left, MSG_DONTWAIT);
-#elif defined(CIRCLE_WINDOWS)
-  ret = recv(desc, read_point, space_left, 0);
-#else
-  ret = read(desc, read_point, space_left);
-#endif
+  #if defined(CIRCLE_ACORN)
+    ret = recv(desc, read_point, space_left, MSG_DONTWAIT);
+  #elif defined(CIRCLE_WINDOWS)
+    ret = recv(desc, read_point, space_left, 0);
+  #else
+    ret = read(desc, read_point, space_left);
+  #endif
 
   /* Read was successful. */
   if (ret > 0)
@@ -1814,9 +1811,7 @@ static int process_input(struct descriptor_data *t)
   size_t space_left;
   char *ptr, *read_point, *write_point, *nl_pos = NULL;
   char tmp[MAX_INPUT_LENGTH];
-
-  static char read_buf[MAX_PROTOCOL_BUFFER]; /* KaVir's plugin */
-  read_buf[0] = '\0';                        /* KaVir's plugin */
+  static char read_buf[MAX_PROTOCOL_BUFFER] = { '\0' }; /* KaVir's plugin */
   
   /* first, find the point where we left off reading data */
   buf_length = strlen(t->inbuf);
@@ -1829,14 +1824,15 @@ static int process_input(struct descriptor_data *t)
       return (-1);
     }
 
-    bytes_read = perform_socket_read(t->descriptor, read_buf, space_left);
-
-    if ( bytes_read >= 0 )
-    {
+    /* Read # of "bytes_read" from socket, and if we have something, mark the sizeof data
+     * in the read_buf array as NULL */
+    if ((bytes_read = perform_socket_read(t->descriptor, read_buf, space_left)) > 0)
       read_buf[bytes_read] = '\0';
-      ProtocolInput( t, read_buf, bytes_read, t->inbuf );
-      bytes_read = strlen(t->inbuf);
-    }
+
+    /* Since we have recieved atleast 1 byte of data from the socket, lets run it through
+     * ProtocolInput() and rip out anything that is Out Of Band */ 
+    if ( bytes_read > 0 )
+      bytes_read = ProtocolInput( t, read_buf, bytes_read, t->inbuf );
 
     if (bytes_read < 0)	/* Error, disconnect them. */
       return (-1);
@@ -1849,7 +1845,7 @@ static int process_input(struct descriptor_data *t)
     /* search for a newline in the data we just read */
     for (ptr = read_point; *ptr && !nl_pos; ptr++)
       if (ISNEWL(*ptr))
-	nl_pos = ptr;
+	      nl_pos = ptr;
 
     read_point += bytes_read;
     space_left -= bytes_read;

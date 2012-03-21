@@ -11,6 +11,7 @@
  ******************************************************************************/
 
 #include <arpa/telnet.h>
+#include <sys/types.h>
 #include "protocol.h"
 
 /******************************************************************************
@@ -349,13 +350,13 @@ void ProtocolDestroy( protocol_t *apProtocol )
    free(apProtocol);
 }
 
-void ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *apOut )
+ssize_t ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *apOut )
 {
    static char CmdBuf[MAX_PROTOCOL_BUFFER+1];
    static char IacBuf[MAX_PROTOCOL_BUFFER+1];
-   int CmdIndex = 0;
-   int IacIndex = 0;
-   int Index;
+   ssize_t CmdIndex = 0;
+   ssize_t IacIndex = 0;
+   ssize_t Index;
 
    protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
 
@@ -365,7 +366,7 @@ void ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *a
       if ( CmdIndex >= MAX_PROTOCOL_BUFFER || IacIndex >= MAX_PROTOCOL_BUFFER )
       {
          ReportBug("ProtocolInput: Too much incoming data to store in the buffer.\n");
-         return;
+         return (-1);
       }
 
       /* IAC IAC is treated as a single value of 255 */
@@ -419,7 +420,7 @@ void ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *a
          {
             const char *pClientName = pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString;
 
-			InfoMessage(apDescriptor, "Receiving MXP Version From Client.\r\n");
+            InfoMessage(apDescriptor, "Receiving MXP Version From Client.\r\n");
 
             free(pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString);
             pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString = AllocString(pMXPTag);
@@ -513,6 +514,7 @@ void ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *a
 
    /* Copy the input buffer back to the player. */
    strcat( apOut, CmdBuf );
+   return (CmdIndex);
 }
 
 const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int *apLength )
