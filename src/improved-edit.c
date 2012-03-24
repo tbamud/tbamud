@@ -537,9 +537,9 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
 
     if (*flow) {
       start = flow;
-      while (*flow && !strchr("\n\r\f\t\v .?!", *flow)) {
-        if (*flow == '@') {
-          if (*(flow + 1) == '@')
+      while (*flow && !strchr("\n\r\f\v .?!", *flow)) {
+        if (*flow == '\t') {
+          if (*(flow + 1) == '\t')
             color_chars++;
           else
             color_chars += 2;

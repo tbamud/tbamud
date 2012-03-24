@@ -32,7 +32,7 @@ ACMD(do_say)
     char buf[MAX_INPUT_LENGTH + 14], *msg;
     struct char_data *vict;
 
-    snprintf(buf, sizeof(buf), "$n\tn says, '%s\tn'", argument);
+    snprintf(buf, sizeof(buf), "$n\tn says, '%s'", argument);
     msg = act(buf, FALSE, ch, 0, 0, TO_ROOM | DG_NO_TRIG);
 
     for (vict = world[IN_ROOM(ch)].people; vict; vict = vict->next_in_room)
@@ -42,7 +42,7 @@ ACMD(do_say)
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else {
-      sprintf(buf, "You say, '%s\tn'", argument);
+      sprintf(buf, "You say, '%s'", argument);
       msg = act(buf, FALSE, ch, 0, 0, TO_CHAR | DG_NO_TRIG);
       add_history(ch, msg, HIST_SAY);
     }

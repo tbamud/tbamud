@@ -1341,7 +1341,7 @@ ACMD(do_who)
     send_to_char(ch, "%d characters displayed.\r\n", num_can_see);
 
   if (IS_HAPPYHOUR > 0){
-    send_to_char(ch, "It's a Happy Hour! Type @Rhappyhour@W to see the current bonuses.\r\n");
+    send_to_char(ch, "It's a Happy Hour! Type \tRhappyhour\tW to see the current bonuses.\r\n");
   }
 }
 
@@ -2559,7 +2559,7 @@ ACMD(do_areas)
   len += tmp_len;
 
   if (overlap_shown) {
-    tmp_len = snprintf(buf+len, sizeof(buf)-len, "Areas shown in @rred@n may have some creatures outside the specified range.\r\n");
+    tmp_len = snprintf(buf+len, sizeof(buf)-len, "Areas shown in \trred\tn may have some creatures outside the specified range.\r\n");
     len += tmp_len;
   }
 

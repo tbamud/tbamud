@@ -66,7 +66,6 @@ static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 static void export_script_save_to_disk(FILE *fp, void *item, int type);
 static int export_info_file(zone_rnum zrnum);
 
-
 int genolc_checkstring(struct descriptor_data *d, char *arg)
 {
   smash_tilde(arg);

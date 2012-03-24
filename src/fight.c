@@ -588,7 +588,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
 
   /* damage message to damagee */
   if (GET_LEVEL(victim) >= LVL_IMMORT)
-    send_to_char(victim, "@R(%d)", dam);
+    send_to_char(victim, "\tR(%d)", dam);
   buf = replace_string(dam_weapons[msgnum].to_victim,
 	  attack_hit_text[w_type].singular, attack_hit_text[w_type].plural);
   act(buf, FALSE, ch, NULL, victim, TO_VICT | TO_SLEEP);

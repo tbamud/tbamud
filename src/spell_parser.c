@@ -483,7 +483,6 @@ int cast_spell(struct char_data *ch, struct char_data *tch,
   return (call_magic(ch, tch, tobj, spellnum, GET_LEVEL(ch), CAST_SPELL));
 }
 
-
 /* do_cast is the entry point for PC-casted spells.  It parses the arguments,
  * determines the spell number and finds a target, throws the die to see if
  * the spell can be cast, checks for sufficient mana and subtracts it, and

@@ -92,7 +92,7 @@ char *CAP(char *txt)
 
   /* Skip all preceeding color codes and ANSI codes */
   while ((*p == '\t' && *(p+1)) || (*p == '\x1B' && *(p+1) == '[')) {
-    if (*p == '\t') p += 2;  /* Skip @ sign and color letter/number */
+    if (*p == '\t') p += 2;  /* Skip \t sign and color letter/number */
     else {
       p += 2;                          /* Skip the CSI section of the ANSI code */
       while (*p && !isalpha(*p)) p++;  /* Skip until a 'letter' is found */
@@ -1499,6 +1499,5 @@ char * convert_from_tabs(char * string)
   
   strcpy(buf, string);
   parse_tab(buf);
-  
   return(buf);
 }

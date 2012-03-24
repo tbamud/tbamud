@@ -126,8 +126,6 @@ struct happyhour happy_data = {0,0,0,0};
 /* declaration of local (file scope) variables */
 static int converting = FALSE;
 
-
-
 /* Local (file scope) utility functions */
 static int check_bitvector_names(bitvector_t bits, size_t namecount, const char *whatami, const char *whatbits);
 static int check_object_spell_number(struct obj_data *obj, int val);
@@ -222,7 +220,6 @@ void boot_social_messages(void)
   for (;;) {
     i = fscanf(fl, " %s ", next_soc);
     if (*next_soc == '$') break;
-
     if (CONFIG_NEW_SOCIALS == TRUE) {
       if (fscanf(fl, " %s %d %d %d %d \n",
   		sorted, &hide, &min_char_pos, &min_pos, &min_lvl) != 5) {
@@ -3212,7 +3209,7 @@ void free_char(struct char_data *ch)
 	  }
 	  free_list(ch->events);
   }
-  
+
   /* new version of free_followers take the followers pointer as arg */
   free_followers(ch->followers);
 

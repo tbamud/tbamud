@@ -1828,7 +1828,7 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
   FILE *fp;
   struct last_entry mlast;
   struct last_entry *llast;
-  int size, recs, tmp, i;
+  int size, recs, tmp;
 
   if(!(fp=fopen(LAST_FILE,"r"))) {
     log("Error opening last_file for reading, will create.");
@@ -1843,7 +1843,8 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
    * do (like searching for the last shutdown/etc..) */
   for(tmp=recs-1; tmp > 0; tmp--) {
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
-    i = fread(&mlast,sizeof(struct last_entry),1,fp);
+    if (fread(&mlast,sizeof(struct last_entry),1,fp) != 1)
+      return NULL;
         /*another one to keep that stepback */
     fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
 
@@ -2173,7 +2174,7 @@ ACMD(do_wiznet)
   delete_doubledollar(argument);
 
   if (!*argument) {
-    send_to_char(ch, "Usage: wiznet [ #<level> ] [<text> | *<emotetext> | @@ ]\r\n");
+    send_to_char(ch, "Usage: wiznet [ #<level> ] [<text> | *<emotetext> | @ ]\r\n");
     return;
   }
   switch (*argument) {
@@ -4256,7 +4257,7 @@ ACMD(do_zpurge)
 
 /** Used to read and gather a bit of information about external log files while
  * in game.
- * Makes use of the '@' color codes in the file status information.
+ * Makes use of the '\t' color codes in the file status information.
  * Some of the methods used are a bit wasteful (reading through the file
  * multiple times to gather diagnostic information), but it is
  * assumed that the files read with this function will never be very large.
@@ -4547,7 +4548,7 @@ ACMD(do_plist)
   }
 
   len = 0;
-  len += snprintf(buf + len, sizeof(buf) - len, "@W[ Id] (Lv) Name         Last@n\r\n"
+  len += snprintf(buf + len, sizeof(buf) - len, "\tW[ Id] (Lv) Name         Last\tn\r\n"
                   "%s-------------------------------------%s\r\n", CCCYN(ch, C_NRM),
                   CCNRM(ch, C_NRM));
 

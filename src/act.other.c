@@ -972,7 +972,7 @@ ACMD(do_happyhour)
                      "       %shappyhour qp <num>     %s- set qp percentage gain\r\n"
                      "       %shappyhour exp <num>    %s- set exp percentage gain\r\n"
                      "       %shappyhour gold <num>   %s- set gold percentage gain\r\n"
-                     "       @yhappyhour default      @w- sets a default setting for happyhour\r\n\r\n"
+                     "       \tyhappyhour default      \tw- sets a default setting for happyhour\r\n\r\n"
                      "Configure the happyhour settings and start a happyhour.\r\n"
                      "Currently 1 hour IRL = %d ticks\r\n"
                      "If no number is specified, 0 (off) is assumed.\r\nThe command \tyhappyhour time\tn will therefore stop the happyhour timer.\r\n",
