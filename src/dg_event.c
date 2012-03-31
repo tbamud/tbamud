@@ -127,6 +127,8 @@ void event_process(void)
       the_event->q_el = queue_enq(event_q, the_event, new_time + pulse);
     else
     {
+      if (the_event->isMudEvent && the_event->event_obj != NULL)
+        free_mud_event((struct mud_event_data *) the_event->event_obj);
       /* It is assumed that the_event will already have freed ->event_obj. */
       free(the_event);
     }

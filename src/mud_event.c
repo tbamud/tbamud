@@ -18,17 +18,38 @@
 /* Global List */
 struct list_data * world_events = NULL;
 
+/* The mud_event_index[] is merely a tool for organizing events, and giving
+ * them a "const char *" name to help in potential debugging */
 struct mud_event_list mud_event_index[] = {
-  { "Null"         , NULL         , -1          },  /* eNULL */
-  { "Protocol"     , get_protocols, EVENT_DESC  }  /* ePROTOCOLS */
+  { "Null"         , NULL           , -1          },  /* eNULL */
+  { "Protocol"     , get_protocols  , EVENT_DESC  },  /* ePROTOCOLS */
+  { "Whirlwind"    , event_whirlwind, EVENT_CHAR  }   /* eWHIRLWIND */
 };
 
+/* init_events() is the ideal function for starting global events. This
+ * might be the case if you were to move the contents of heartbeat() into
+ * the event system */
 void init_events(void)
 {
   /* Allocate Event List */
   world_events = create_list();
 }
 
+/* event_countdown() is used for events which are to be used as a countdown...
+ * go figure eh? This could be useful for skills which have an extended cooldown,
+ * like "lay on hands" once every 24 hours. Simply add an event to the
+ * mud_event_index[] such as:
+   * { "Lay on hands"    , event_countdown, EVENT_CHAR  }
+ * and then add the event after a successful skill call:
+   * attach_mud_event(new_mud_event(eLAYONHANDS, ch, NULL), 24 * SECS_PER_MUD_HOUR);
+ * and then add something like this is your skill function:
+   * if (char_has_mud_event(ch, eLAYONHANDS)) {
+   *   send_to_char(ch, "You must wait a full 24 hours before re-using this skill.\r\n");
+   *   return;
+   * }
+ * The bottom switch() is for any post-event actions, like telling the character they can
+ * now access their skill again.
+ */
 EVENTFUNC(event_countdown)
 {
   struct mud_event_data * pMudEvent;
@@ -48,11 +69,14 @@ EVENTFUNC(event_countdown)
     default:
     break;
   }
-	
-  free_mud_event(pMudEvent);
+
   return 0;
 }
-
+/* As of 3.63, there are only global, descriptor, and character events. This
+ * is due to the potential scope of the necessary debugging if events were
+ * included with rooms, objects, spells or any other structure type. Adding
+ * events to these other systems should be just as easy as adding the current
+ * library was, and should be available in a future release. - Vat */
 void attach_mud_event(struct mud_event_data *pMudEvent, long time)
 {
   struct event * pEvent;
@@ -125,6 +149,9 @@ struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId)
   struct event * pEvent;
   struct mud_event_data * pMudEvent;
   bool found = FALSE;
+
+  if (ch->events->iSize == 0)
+    return NULL;
 
   simple_list(NULL);
 	

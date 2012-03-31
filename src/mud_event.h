@@ -19,9 +19,12 @@
 #define EVENT_DESC  1
 #define EVENT_CHAR  2
 
+#define NEW_EVENT(event_id, struct, var, time) (attach_mud_event(new_mud_event(event_id, struct,  var), time))
+
 typedef enum {
     eNULL,
-    ePROTOCOLS,
+    ePROTOCOLS, /* The Protocol Detection Event */
+    eWHIRLWIND, /* The Whirlwind Attack */
 } event_id;
 
 struct mud_event_list {
@@ -50,5 +53,6 @@ struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId);
 /* Events */
 EVENTFUNC(event_countdown);
 EVENTFUNC(get_protocols);
+EVENTFUNC(event_whirlwind);
 
 #endif /* _MUD_EVENT_H_ */

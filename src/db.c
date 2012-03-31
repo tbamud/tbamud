@@ -3761,6 +3761,7 @@ static void load_default_config( void )
   CONFIG_TRACK_T_DOORS          = track_through_doors;
   CONFIG_NO_MORT_TO_IMMORT	    = no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS      = display_closed_doors;
+  CONFIG_PROTOCOL_NEGOTIATION   = protocol_negotiation;
   CONFIG_DIAGONAL_DIRS          = diagonal_dirs;
   CONFIG_MAP                    = map_option;
   CONFIG_MAP_SIZE               = default_map_size;
@@ -4005,6 +4006,8 @@ void load_config( void )
       case 'p':
         if (!str_cmp(tag, "pk_allowed"))
           CONFIG_PK_ALLOWED = num;
+        else if (!str_cmp(tag, "protocol_negotiation"))
+          CONFIG_PROTOCOL_NEGOTIATION = num;
         else if (!str_cmp(tag, "pt_allowed"))
           CONFIG_PT_ALLOWED = num;
         break;

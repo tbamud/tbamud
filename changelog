@@ -35,9 +35,23 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[Mar 31 2012] - Vatiken
+  improve: updated some of the documents.
+  feature: added the 'whirlwind' skill as a event/list template
+  feature: protocol system now can be deactivated thru cedit
+  improve: 256 to ANSI conversions changed to reflect the new colouring scheme
+  feature: added blink, underline, bold, reverse and '@' to the protocol system
+[Mar 25 2012] - Vatiken
+  feature: whois now lists protocol informations when used by an immortal
+  improve: proc_colors() has been removed, and tbaMUD has been made backwards compatible for
+    systems still using '@' symbols for colour.
+  feature: added underline, bold, reverse, and flashing text to the protocol system.
+  bug: Fixed a glitch within protocol.h that had defines differing from similar tbaMUD defines.
+  feature: added oset() to allow modification of individual objects through commands or dg_scripts.
+  improve: Adjusted protocolinput() and processinput() to be more efficient.
+  bug: Fixed major leak in the history system
 [Feb 12 2012] - Vatiken
   bug: do_score, changed level 30 to LVL_IMMORT
-  idea: Mortals can't see immortals levels
   bug: the NOHASSLE flag allows imms to carry unlimited weight
   idea: dexterity now affects whether a character gets the first hit
   idea: advance to immortal now sets hunger/thirst to -1

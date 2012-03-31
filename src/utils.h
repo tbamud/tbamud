@@ -1046,6 +1046,8 @@ do                                                              \
 #define CONFIG_MEDIT_ADVANCED   config_info.operation.medit_advanced
 /** Does "bug resolve" autosave ? */
 #define CONFIG_IBT_AUTOSAVE config_info.operation.ibt_autosave
+/** Use the protocol negotiation system? */
+#define CONFIG_PROTOCOL_NEGOTIATION config_info.operation.protocol_negotiation
 
 /* Autowiz */
 /** Use autowiz or not? */

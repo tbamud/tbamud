@@ -2441,7 +2441,7 @@ ACMD(do_whois)
   if (!got_from_file && victim->desc != NULL && GET_LEVEL(ch) >= LVL_GOD) {
     protocol_t * prot = victim->desc->pProtocol;
     send_to_char(ch, "Client:  %s\r\n", prot->pVariables[eMSDP_CLIENT_ID]->pValueString);
-    send_to_char(ch, "Color:   %s\r\n", prot->pVariables[eMSDP_XTERM_256_COLORS] ? "Xterm" : (prot->pVariables[eMSDP_ANSI_COLORS] ? "Ansi" : "None"));
+    send_to_char(ch, "Color:   %s\r\n", prot->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt ? "Xterm" : (prot->pVariables[eMSDP_ANSI_COLORS]->ValueInt ? "Ansi" : "None"));
     send_to_char(ch, "MXP:     %s\r\n", prot->bMXP ? "Yes" : "No");
     send_to_char(ch, "Charset: %s\r\n", prot->bCHARSET ? "Yes" : "No");
     send_to_char(ch, "MSP:     %s\r\n", prot->bMSP ? "Yes" : "No");

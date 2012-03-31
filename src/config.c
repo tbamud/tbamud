@@ -297,7 +297,6 @@ int min_wizlist_lev = LVL_GOD;
  * set to YES. */
 int display_closed_doors = YES;
 
-
 /* Automap and map options */
 /* Default is to have automap and map command only enabled for immortals */
 int map_option = MAP_IMM_ONLY;
@@ -309,3 +308,6 @@ int medit_advanced_stats = YES;
 
 /* Does "bug resolve" autosave ? */
 int ibt_autosave = YES;
+
+/* Use the protocol negotiation system */
+int protocol_negotiation = YES;

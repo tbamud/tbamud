@@ -1443,7 +1443,7 @@ static void init_descriptor (struct descriptor_data *newd, int desc)
   *newd->output = '\0';
   newd->bufptr = 0;
   newd->has_prompt = 1;  /* prompt is part of greetings */
-  STATE(newd) = CON_GET_PROTOCOL;
+  STATE(newd) = CONFIG_PROTOCOL_NEGOTIATION ? CON_GET_PROTOCOL : CON_GET_NAME;
   CREATE(newd->history, char *, HISTORY_SIZE);
   if (++last_desc == 1000)
     last_desc = 1;
@@ -1457,6 +1457,7 @@ static int new_descriptor(socket_t s)
 {
   socket_t desc;
   int sockets_connected = 0;
+  int greetsize;
   socklen_t i;
   struct descriptor_data *newd;
   struct sockaddr_in peer;
@@ -1521,13 +1522,16 @@ static int new_descriptor(socket_t s)
   newd->next = descriptor_list;
   descriptor_list = newd;
 
-  /* Attach Event */ 
-  attach_mud_event(new_mud_event(ePROTOCOLS, newd, NULL), 1.5 * PASSES_PER_SEC);
-  
-  /* KaVir's plugin*/
-  write_to_output(newd, "Attempting to Detect Client, Please Wait...\r\n");
-  ProtocolNegotiate(newd);
-
+  if (CONFIG_PROTOCOL_NEGOTIATION) {
+    /* Attach Event */ 
+    NEW_EVENT(ePROTOCOLS, newd, NULL, 1.5 * PASSES_PER_SEC);
+    /* KaVir's plugin*/
+    write_to_output(newd, "Attempting to Detect Client, Please Wait...\r\n");
+    ProtocolNegotiate(newd);
+  } else {
+    greetsize = strlen(GREETINGS);
+    write_to_output(newd, "%s", ProtocolOutput(newd, GREETINGS, &greetsize));
+  }
   return (0);
 }
 

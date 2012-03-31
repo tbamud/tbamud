@@ -1,9 +1,5 @@
 /******************************************************************************
  Protocol snippet by KaVir.  Released into the Public Domain in February 2011.
-
- This snippet was originally designed to be codebase independent, but has been 
- modified slightly so that it runs out-of-the-box on Merc derivatives.  To use 
- it for other codebases, just change the code in the "Diku/Merc" section below.
  ******************************************************************************/
 
 /******************************************************************************
@@ -550,13 +546,16 @@ const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int 
                pCopyFrom = Tab;
                break;
             case '_':
-               pCopyFrom = "\x1B[4m"; /* Underline */
+               pCopyFrom = "\x1B[4m"; /* Underline... if supported */
                break;
             case '+':
-               pCopyFrom = "\x1B[1m"; /* Bold */
+               pCopyFrom = "\x1B[1m"; /* Bold... if supported */
                break;
             case '-':
-               pCopyFrom = "\x1B[5m"; /* Blinking??? */
+               pCopyFrom = "\x1B[5m"; /* Blinking... if supported */
+               break;
+            case '=':
+               pCopyFrom = "\x1B[7m"; /* Reverse... if supported */
                break;
             case '*':
                pCopyFrom = "@"; /* The At Symbol... I don't really like this, but it seems like
@@ -2429,9 +2428,9 @@ static const char *GetAnsiColour( bool_t abBackground, int aRed, int aGreen, int
    else if ( aRed == aGreen && aRed == aBlue )
       return abBackground ? s_BackWhite : aRed >= 4 ? s_BoldWhite : s_DarkWhite;
    else if ( aRed > aGreen && aRed > aBlue )
-      return abBackground ? s_BackRed : aRed >= 3 ? s_BoldRed : s_DarkRed;
+      return abBackground ? s_BackRed : aRed > 3 ? s_BoldRed : s_DarkRed;
    else if ( aRed == aGreen && aRed > aBlue )
-      return abBackground ? s_BackYellow : aRed >= 3 ? s_BoldYellow : s_DarkYellow;
+      return abBackground ? s_BackYellow : aRed > 3 ? s_BoldYellow : s_DarkYellow;
    else if ( aRed == aBlue && aRed > aGreen )
       return abBackground ? s_BackMagenta : aRed >= 3 ? s_BoldMagenta : s_DarkMagenta;
    else if ( aGreen > aBlue )

@@ -343,6 +343,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "whois"    , "whoi"    , POS_DEAD    , do_whois    , 0, 0 },
   { "whoami"   , "whoami"  , POS_DEAD    , do_gen_ps   , 0, SCMD_WHOAMI },
   { "where"    , "where"   , POS_RESTING , do_where    , 1, 0 },
+  { "whirlwind", "whirl"   , POS_FIGHTING, do_whirlwind, 0, 0 },
   { "whisper"  , "whisper" , POS_RESTING , do_spec_comm, 0, SCMD_WHISPER },
   { "wield"    , "wie"     , POS_RESTING , do_wield    , 0, 0 },
   { "withdraw" , "withdraw", POS_STANDING, do_not_here , 1, 0 },
@@ -1303,7 +1304,6 @@ EVENTFUNC(get_protocols)
 		  
 	write_to_output(d, GREETINGS, 0); 
 	STATE(d) = CON_GET_NAME;
-    free_mud_event(pMudEvent);
 	return 0;
 }
 
