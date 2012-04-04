@@ -416,7 +416,7 @@ int save_shops(zone_rnum zone_num)
 	      S_NOTRADE(shop)
 	      );
         
-        fprintf(shop_file, convert_from_tabs(buf), 0);
+        fputs(convert_from_tabs(buf), shop_file);
 
       /* Save the rooms. */
       for (j = 0;S_ROOM(shop, j) != NOWHERE; j++)
