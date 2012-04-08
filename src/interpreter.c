@@ -811,7 +811,7 @@ int is_number(const char *str)
 /* Function to skip over the leading spaces of a string. */
 void skip_spaces(char **string)
 {
-  for (; **string && isspace(**string); (*string)++);
+  for (; **string && **string != '\t' && isspace(**string); (*string)++);
 }
 
 /* Given a string, change all instances of double dollar signs ($$) to single
