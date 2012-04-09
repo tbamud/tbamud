@@ -256,6 +256,7 @@ void  free_text_files(void);
 void  free_help_table(void);
 void  free_player_index(void);
 void  load_help(FILE *fl, char *name);
+void  new_mobile_data(struct char_data *ch);
 
 zone_rnum real_zone(zone_vnum vnum);
 room_rnum real_room(room_vnum vnum);

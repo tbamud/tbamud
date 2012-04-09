@@ -1009,8 +1009,7 @@ ACMD(do_stat)
       CREATE(victim, struct char_data, 1);
       clear_char(victim);
       CREATE(victim->player_specials, struct player_special_data, 1);
-      /* Allocate mobile event list */
-      victim->events = create_list();
+      new_mobile_data(victim);
       if (load_char(buf2, victim) >= 0) {
         char_to_room(victim, 0);
         if (GET_LEVEL(victim) > GET_LEVEL(ch))
@@ -2051,8 +2050,7 @@ ACMD(do_last)
     CREATE(vict, struct char_data, 1);
     clear_char(vict);
     CREATE(vict->player_specials, struct player_special_data, 1);
-    /* Allocate mobile event list */
-    vict->events = create_list();
+    new_mobile_data(vict);
     if (load_char(name, vict) <  0) {
       send_to_char(ch, "There is no such player.\r\n");
       free_char(vict);
@@ -2571,8 +2569,7 @@ ACMD(do_show)
     CREATE(vict, struct char_data, 1);
     clear_char(vict);
     CREATE(vict->player_specials, struct player_special_data, 1);
-    /* Allocate mobile event list */
-    vict->events = create_list();
+    new_mobile_data(vict);
     if (load_char(value, vict) < 0) {
       send_to_char(ch, "There is no such player.\r\n");
       free_char(vict);
@@ -3353,8 +3350,7 @@ ACMD(do_set)
     CREATE(cbuf, struct char_data, 1);
     clear_char(cbuf);
     CREATE(cbuf->player_specials, struct player_special_data, 1);
-    /* Allocate mobile event list */
-    cbuf->events = create_list();
+    new_mobile_data(cbuf);
     if ((player_i = load_char(name, cbuf)) > -1) {
       if (GET_LEVEL(cbuf) > GET_LEVEL(ch)) {
 	free_char(cbuf);
@@ -4621,8 +4617,7 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
     CREATE(temp_ch, struct char_data, 1);
     clear_char(temp_ch);
     CREATE(temp_ch->player_specials, struct player_special_data, 1);
-    /* Allocate mobile event list */
-    temp_ch->events = create_list();
+    new_mobile_data(temp_ch);
     if ((plr_i = load_char(new_name, temp_ch)) > -1) {
       free_char(temp_ch);
       send_to_char(ch, "Sorry, the new name already exists.\r\n");

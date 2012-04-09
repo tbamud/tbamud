@@ -450,8 +450,7 @@ void copyover_recover()
     clear_char(d->character);
     CREATE(d->character->player_specials, struct player_special_data, 1);
     
-    /* Allocate mobile event list */
-    d->character->events = create_list();
+    new_mobile_data(d->character);
     
     d->character->desc = d;
 

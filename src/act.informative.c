@@ -2370,8 +2370,7 @@ ACMD(do_whois)
      CREATE(victim, struct char_data, 1);
      clear_char(victim);
      
-     /* Allocate mobile event list */
-     victim->events = create_list();
+     new_mobile_data(victim);
      
      CREATE(victim->player_specials, struct player_special_data, 1);
 

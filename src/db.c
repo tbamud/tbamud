@@ -2322,8 +2322,7 @@ struct char_data *create_char(void)
   CREATE(ch, struct char_data, 1);
   clear_char(ch);
   
-  /* Allocate mobile event list */
-  ch->events = create_list();  
+  new_mobile_data(ch);
   
   ch->next = character_list;
   character_list = ch;
@@ -2334,6 +2333,12 @@ struct char_data *create_char(void)
 
   return (ch);
 }
+
+void new_mobile_data(struct char_data *ch)
+{
+	ch->events   = create_list();
+}
+
 
 /* create a new mobile from a prototype */
 struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
@@ -2356,8 +2361,7 @@ struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
   mob->next = character_list;
   character_list = mob;
   
-  /* Allocate mobile event list */
-  mob->events = create_list();   
+  new_mobile_data(mob);  
   
   if (!mob->points.max_hit) {
     mob->points.max_hit = dice(mob->points.hit, mob->points.mana) +
