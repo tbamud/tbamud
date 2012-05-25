@@ -255,6 +255,32 @@ static void prefedit_disp_toggles_menu(struct descriptor_data *d)
              CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM), ONOFF(PREFEDIT_FLAGGED(PRF_COMPACT)), CCCYN(d->character, C_NRM)
              );
 
+  /* The bottom section of the toggles menu */
+  send_to_char(d->character, "\r\n"
+                             "%sProtocol Settings:\r\n"
+                             "%sJ%s) Xterm 256    %s[%s%3s%s]      %sM%s) MXP      %s[%s%3s%s]\r\n"
+                             "%sK%s) ANSI         %s[%s%3s%s]      %sN%s) MSDP     %s[%s%3s%s]\r\n"
+                             "%sL%s) Charset      %s[%s%3s%s]      %sO%s) ATCP     %s[%s%3s%s]\r\n"
+                             "%sP%s) UTF-8        %s[%s%3s%s]      %sR%s) MSP      %s[%s%3s%s]\r\n"
+                             "\r\n",
+             CBWHT(d->character, C_NRM),
+/* Line 12 - 256 and mxp */
+             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
+             ONOFF(d->pProtocol->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt), CCCYN(d->character, C_NRM), CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM),
+             CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM), ONOFF(d->pProtocol->pVariables[eMSDP_MXP]->ValueInt), CCCYN(d->character, C_NRM),
+/* Line 13 - ansi and msdp */
+             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
+             ONOFF(d->pProtocol->pVariables[eMSDP_ANSI_COLORS]->ValueInt), CCCYN(d->character, C_NRM), CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM),
+             CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM), ONOFF(d->pProtocol->bMSDP), CCCYN(d->character, C_NRM),
+/* Line 14 - charset and atcp */
+             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
+             ONOFF(d->pProtocol->bCHARSET), CCCYN(d->character, C_NRM), CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM),
+             CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM), ONOFF(d->pProtocol->bATCP), CCCYN(d->character, C_NRM),
+/* Line 15 - utf-8 and msp */
+             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
+             ONOFF(d->pProtocol->pVariables[eMSDP_UTF_8]->ValueInt), CCCYN(d->character, C_NRM), CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM),
+             CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM), ONOFF(d->pProtocol->bMSP), CCCYN(d->character, C_NRM)
+             );
 /* Finishing Off */
   send_to_char(d->character, "%sQ%s) Quit toggle preferences...\r\n",
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM) );
@@ -598,6 +624,46 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       case 'I':
         TOGGLE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_COMPACT);
         break;
+        
+      case 'j':
+      case 'J':
+        TOGGLE_VAR(d->pProtocol->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt);
+        break;
+        
+      case 'k':
+      case 'K':
+        TOGGLE_VAR(d->pProtocol->pVariables[eMSDP_ANSI_COLORS]->ValueInt);
+        break;        
+
+      case 'l':
+      case 'L':
+        TOGGLE_VAR(d->pProtocol->bCHARSET);
+        break;        
+        
+      case 'm':
+      case 'M':
+        TOGGLE_VAR(d->pProtocol->pVariables[eMSDP_MXP]->ValueInt);
+        break;
+
+      case 'n':
+      case 'N':
+        TOGGLE_VAR(d->pProtocol->bMSDP);
+        break;
+        
+      case 'o':
+      case 'O':
+        TOGGLE_VAR(d->pProtocol->bATCP);
+        break;      
+
+      case 'p':
+      case 'P':
+        TOGGLE_VAR(d->pProtocol->pVariables[eMSDP_UTF_8]->ValueInt);
+        break;
+
+      case 'r':
+      case 'R':
+        TOGGLE_VAR(d->pProtocol->bMSP);
+        break;   
 
       default  : send_to_char(d->character, "Invalid Choice, try again (Q to Quit to main menu): ");
                  return;
