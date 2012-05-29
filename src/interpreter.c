@@ -1266,7 +1266,7 @@ int enter_player_game (struct descriptor_data *d)
   
   /* Save the character and their object file */
   save_char(d->character);
-  Crash_crashsave(ch);
+  Crash_crashsave(d->character);
 
   /* Check for a login trigger in the players' start room */
   login_wtrigger(&world[IN_ROOM(d->character)], d->character);
