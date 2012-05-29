@@ -35,6 +35,10 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
 @
+[May 28 2012] - Vatiken
+  bug: Fixed a MAJOR duping issue.
+[May 24 2012] - Vatiken
+  improve: prefedit now allows toggling of "this" session protocols
 [Mar 31 2012] - Vatiken
   improve: updated some of the documents.
   feature: added the 'whirlwind' skill as a event/list template

@@ -1263,7 +1263,10 @@ int enter_player_game (struct descriptor_data *d)
   character_list = d->character;
   char_to_room(d->character, load_room);
   load_result = Crash_load(d->character);
+  
+  /* Save the character and their object file */
   save_char(d->character);
+  Crash_crashsave(ch);
 
   /* Check for a login trigger in the players' start room */
   login_wtrigger(&world[IN_ROOM(d->character)], d->character);
