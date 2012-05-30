@@ -18,10 +18,6 @@
 #include "improved-edit.h"
 #include "modify.h"
 
-
-#define CHECK_VAR(var)  ((var == YES) ? "Yes" : "No")
-#define TOGGLE_VAR(var)	if (var == YES) { var = NO; } else { var = YES; }
-
 /* local scope functions, not used externally */
 static void cedit_disp_menu(struct descriptor_data *d);
 static void cedit_save_internally(struct descriptor_data *d);
