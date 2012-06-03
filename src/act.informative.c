@@ -2662,6 +2662,6 @@ ACMD(do_scan)
     scanned_room = IN_ROOM(ch);
   }                      // end of directions
   if (!found) {
-    send_to_char(ch, "You don't see aanything nearby!\r\n");
+    send_to_char(ch, "You don't see anything nearby!\r\n");
   }
 } // end of do_scan
