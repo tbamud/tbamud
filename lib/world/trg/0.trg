@@ -1440,7 +1440,7 @@ if %self.worn_by%
     * This double barrel shotgun, only has 2 rounds.
     if %shotgun_rounds% > 2
       * Detaching trig since gun is out of ammo.
-      detach 1361 %self.id%
+      detach 45 %self.id%
       halt
     end  
     * We also have to define the victim.

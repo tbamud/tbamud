@@ -58,11 +58,9 @@ end
 Dump - 3030~
 2 h 100
 ~
-%echo% %object.shortdesc% vanishes in a puff of smoke!
 %send% %actor% You are awarded for outstanding performance.
 %echoaround% %actor% %actor.name% has been awarded for being a good citizen.
 eval value %object.cost% / 10
-%purge% %object%
 if %value% > 50
   set value 50
 elseif %value% < 1
@@ -73,6 +71,7 @@ if %actor.level% < 3
 else
   nop %actor.gold(%value%)%
 end
+return 0
 ~
 #3005
 Stock Thief~
@@ -565,11 +564,11 @@ if %actor.level% == 0
     %load% obj 3021 %actor% wield
     %load% obj 3055 %actor% hold
   end
+  if !%actor.has_item(3006)%
+    %load% obj 3006 %actor% inv
+  end
 end
 wait 3 sec
 %zoneecho% 3001 A booming voice announces, 'Welcome %actor.name% to the realm!'
-if !%actor.has_item(3006)%
-  %load% obj 3006 %actor% inv
-end
 ~
 $~

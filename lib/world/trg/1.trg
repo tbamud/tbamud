@@ -725,6 +725,9 @@ Questmaster Quest Assignment - 3~
 *~
 * By Rumble of The Builder Academy    builderacademy.net 9091 
 * Part of a timed quest to kill a mob or find an object. Trigs 138-144. 
+if %actor% == %self%
+  halt
+end
 if %actor.varexists(on_quest_zone_1)% 
   *get the values from the player variable 
   extract day 1 %actor.on_quest_zone_1% 
@@ -784,8 +787,8 @@ while %word%
   end 
   * End of the loop we need to take the next word in the string and save the 
   * remainder for the next pass. 
-  eval word %rest.car% 
-  eval rest %rest.cdr% 
+  set word %rest.car% 
+  set rest %rest.cdr% 
 done
 ~
 #140
@@ -2260,12 +2263,13 @@ TBA Welcome - 18~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * TBA mortal greet to fill out the application.
-if %actor.admin% < 1
+wait 1 sec
+if %actor.level% <= 1
   wait 3 sec
   if %actor.varexists(TBA_mortal_greeting)%
-    %echo% Friedrich Nietzsche says, 'Welcome back %actor.name%. Tell someone level 32 or above when you complete the application.'
+    %echo% Friedrich Nietzsche says, 'Welcome back %actor.name%. Tell a God, Great God, or Implementor when you complete the application.'
   else
-    %echo% Friedrich Nietzsche says, 'Welcome to The Builder Academy %actor.name%.' 
+    %echo% Friedrich Nietzsche says, 'Welcome to The Builder Academy %actor.name%.'
     wait 2 sec
     %echo% Friedrich Nietzsche says, 'If you are interested in learning how to build, or want to teach others, then you have come to the right place.'
     wait 2 sec

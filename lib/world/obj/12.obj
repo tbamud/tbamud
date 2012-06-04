@@ -87,6 +87,14 @@ You can't see it...it isn't here.~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0 0
+#1211
+neon sign~
+a @Rn@Ge@Yo@Wn @Bs@Ci@Mg@Rn@n~
+@WA @Rn@Ge@Yo@Wn @Bs@Ci@Mg@Rn@W has been placed here, and is POINTING to the message board!@n~
+~
+16 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
 #1212
 game console~
 a game console~
@@ -296,13 +304,13 @@ A piece of fireworks is planted in a champagne bottle.~
 0 0 0 0 0
 T 1297
 E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
-~
-E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
+~
+E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~

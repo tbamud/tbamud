@@ -1137,22 +1137,6 @@ else
   %send% %actor% The switch says, 'Fine... fine.'
 end
 ~
-#1279
-OSET test trigger~
-0 j 100
-~
-wait 2 sec
-say Yeah, I can sharpen this.
-wait 2 sec
-emote chips away at %object.shortdesc%.
-set short %object.shortdesc% sharpened by '%self.name%'
-nop %object.oset(apply damroll 1)%
-nop %object.oset(shortdesc %short%)%
-wait 2 sec
-give %object.name.car% %actor.name%
-wait 1 sec
-say There ya go!
-~
 #1280
 Mob Raid~
 2 b 100
@@ -1624,52 +1608,14 @@ if %actor.inventory(14911)%
 end
 ~
 #1295
-free~
-0 d 100
+Login Christmas~
+2 s 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-if %actor.level% > 31
-  switch %speech.car%
-    case christmas
-      %at% 1204 %load% obj 1299
-      %at% 1204 %load% obj 1318
-      %at% 1204 %load% obj 1319
-      %at% 1204 %load% obj 1236
-      %at% 1204 %load% obj 1237
-      %at% 1204 %load% obj 1238
-      %at% 1204 %load% obj 1239
-      %at% 1204 %load% obj 1240
-      %at% 1204 %load% obj 1241
-      %at% 1204 %load% obj 1397
-      %at% 1204 %load% mob 1308
-      %at% 2 %load% obj 1299
-      %at% 2 %load% obj 1318
-      %at% 2 %load% obj 1319
-      %at% 2 %load% obj 1236
-      %at% 2 %load% obj 1237
-      %at% 2 %load% obj 1238
-      %at% 2 %load% obj 1239
-      %at% 2 %load% obj 1240
-      %at% 2 %load% obj 1241
-      %at% 2 %load% obj 1397
-      %at% 1204 %load% mob 1308
-    break
-    case new years
-    break
-    case valentines
-    break
-    case Easter
-    break
-    case 4th
-    break
-    case Halloween
-    break
-    case thanksgiving
-    break
-    default
-      * nothing is going to happen
-    break
-  done
+if !%actor.has_item(222)%
+  wait 1 s
+  %echo% Santa bellows, 'Merry Christmas'
+  %load% obj 222 %actor% inv
 end
 ~
 #1296

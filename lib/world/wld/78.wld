@@ -69,16 +69,16 @@ You see the gate leading to the Village of Gideon.
 <none>~
 0 0 7804
 E
-south~
-   You see the gate leading to the Village of Gideon.  
+gate~
+   A carefully painted sign is hanging on the gate.  
 ~
 E
 sign~
    The sign reads "Welcome to the Village of Gideon".  
 ~
 E
-gate~
-   A carefully painted sign is hanging on the gate.  
+south~
+   You see the gate leading to the Village of Gideon.  
 ~
 S
 #7804
@@ -152,11 +152,11 @@ D3
 S
 #7807
 Village of Gideon, Mahnra Road~
-   The houses are sparse here but childern abound, laughing merrily as the play
+   The houses are sparse here but children abound, laughing merrily as the play
 tag.  The flowers have all been somewhat tramped by their roughhousing.  Girls
 stand in groups giggling at the boys as they play in the street.  To the north
 you can see a small park, west will take you back to the gate, and to the south
-lies Shantrell Lane.    
+lies Shantrell Lane.  
 ~
 78 32768 0 0 0 0
 D0

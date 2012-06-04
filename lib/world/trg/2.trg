@@ -279,6 +279,21 @@ bug test~
 detach 214 %self.id%
 say test crash!
 ~
+#215
+Christmas Greet~
+0 h 100
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.is_pc%
+  wait 1 sec
+  if !%actor.has_item(222)%
+    say Merry Christmas!
+    %load% obj 222 %actor% inv
+    %echoaround% %actor% Santa gives %actor.name% a wrapped present.
+    %send% %actor% Santa gives you a wrapped present.
+  end
+end
+~
 #218
 Holiday Decorations by Interior Design - M218~
 0 d 100

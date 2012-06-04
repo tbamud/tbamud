@@ -582,8 +582,7 @@ S
 #55532
 Library~
    The Library continues here, with exits to the east and west.  There should be
-some interesting books here somewhere.  One of the bookcases here looks out of
-place.
+some interesting books here somewhere.
 ~
 555 8 0 0 0 0
 D1
@@ -595,8 +594,13 @@ D3
 ~
 0 0 55533
 E
+undefined~
+   'Secret Door: The Shelf' is on the shelf.
+~
+E
 shelf shelves bookshelves bookcases~
-   Secret Door: Open Shelf
+   The shelf to the south looks a bit strange.  It might be possible to open the
+shelf.
 ~
 S
 T 55532
@@ -1243,22 +1247,22 @@ D0
 You see trees.
 ~
 ~
-0 0 55578
+0 0 55579
 D1
 You see trees.
 ~
 ~
-0 0 55570
+0 0 55573
 D2
 You see trees.
 ~
 ~
-0 0 55579
+0 0 55578
 D3
 You see trees.
 ~
 ~
-0 0 55573
+0 0 55570
 S
 T 55569
 #55570

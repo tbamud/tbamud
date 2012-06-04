@@ -191,19 +191,24 @@ inspection the parrot has a wooden leg and an eye patch!
 E
 T 204
 #213
-quest guru old man~
-the quest guru~
-An old man known across the realms as the 'quest guru' has seen and done it all.
+santa claus man~
+Santa Claus~
+A merry old man with rosy-red cheeks and a full white beard is dressed all in red.
 ~
-   This aged man still has a spring to his step.  He is fully equipped with
-assorted items he has collected over his years of exploring and adventuring.
+   "Santa Claus" is the American version of St.  Nicholas, who originally
+descended from the Dutch Sinte Klaas.  Santa's gift-giving role in Christmas
+rites follows from his fame as the friend of children.  His story also tells
+that he used to give donations o spread to Europe and Chritmas presents were
+distributed on Dec.  6 during the pageant of St.  Nicholas.  In many countries,
+this day is still the day of gift-giving although in America it's celebrated on
+Dec.  24 and 25.    
 ~
-253960 0 0 0 0 0 0 0 0 E
-30 10 -8 6d6+300 5d5+5
-300 90000
+10 0 0 0 0 0 0 0 0 E
+34 9 -10 6d6+340 5d5+5
+340 115600
 8 8 1
 E
-T 44
+T 215
 #214
 old magi guard~
 the magi guard~

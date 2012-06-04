@@ -1590,7 +1590,7 @@ xxtestxx
 test~
 2 c 100
 xxhealxx~
-if %actor.admin%
+if %actor.level% > 30
   return 0
   halt
 else

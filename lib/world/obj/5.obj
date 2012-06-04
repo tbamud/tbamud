@@ -5,7 +5,7 @@ A dandelion is growing here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 dandelion flower~
    The flower is yellow and as bright as the sun.  The stem is a pale green
@@ -18,7 +18,7 @@ A red apple lays on the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 505
 E
 red apple~
@@ -31,7 +31,7 @@ A wedge of cheese is molding here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-2 60 0 0
+2 60 0 0 0
 E
 wedge cheese~
    The wedge looks quite tasty.  You can smell a delicious aroma coming from
@@ -44,7 +44,7 @@ A large boulder is here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 boulder rock~
    The boulder is huge!  It would take at least five men of your size to move
@@ -57,7 +57,7 @@ A little spring babbles here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
-0 0 0 0
+0 0 0 0 0
 E
 little spring water~
    Clear water trickles lazily along, murmuring as it traces rivulets in the
@@ -70,7 +70,7 @@ A small pile of cracked corn is here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 pile crack cracked corn~
    The corn is everywhere!  The animals must not have eaten their breakfast
@@ -83,7 +83,7 @@ A small sword of little value was abandoned here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 2 2 14
-1 10 0 0
+1 10 0 0 0
 E
 small sword~
    The sword is poorly crafted and worn with age.  
@@ -95,7 +95,7 @@ A sapphire gem was left here.~
 ~
 8 b 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 125 0 0
+2 125 0 0 0
 E
 sapphire gem~
    The blue gem sparkles in the light.  It's a pretty little thing.  You may
@@ -108,7 +108,7 @@ A hunters knife was left here.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 3 3 2 3
-4 250 0 0
+4 250 0 0 0
 E
 hunter hunters knife~
    The knife is large with a rigid blade.  The handle is made from ivory and is
@@ -121,7 +121,7 @@ A puddle of water stagnates here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
-0 0 0 0
+0 0 0 0 0
 E
 puddle water~
    This slightly muddy puddle of water looks drinkable if not the most
@@ -135,7 +135,7 @@ A water trough stands here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
-0 0 0 0
+0 0 0 0 0
 E
 water trough~
    This long metal trough is full of fresh, if slightly murky water.  It doesn't
@@ -149,7 +149,7 @@ A leafy apple tree grows here.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 tree leafy apple~
    This large leafy tree rustles slightly as it waves in the breeze, strong
@@ -162,7 +162,7 @@ A brown egg lies here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 brown egg~
    This smooth tan-coloured egg is nice and firm, the crisp brown shell shiny
@@ -175,7 +175,7 @@ A green cornstalk is swaying gently in the breezes.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 cornstalk swaying green~
    This tall leafy stalk looks very strong, its firm but bendable structure
@@ -188,7 +188,7 @@ A cob of corn lies here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 cob corn~
    This cone shaped cob is covered with plump pieces of juicy yellow corn, fresh
@@ -202,7 +202,7 @@ An empty paint can has been left here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 80 0 0
+3 80 0 0 0
 E
 empty paint can~
    The can did at one time contain red paint.  It must have been used on the
@@ -215,7 +215,7 @@ A pitchfork was left here.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 3 2 2 14
-5 300 0 0
+5 300 0 0 0
 E
 pitchfork~
    The fork looks fairly new.  The prongs on the end are very shiny and sharp.
@@ -228,7 +228,7 @@ A potato has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-3 75 0 0
+3 75 0 0 0
 E
 potato~
    This is just an ordinary looking potato.  You might want to wipe off the
@@ -241,7 +241,7 @@ A sewing needle was left here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 sewing needle~
    The needle is quite large!  It must be a quilting needle.  Be careful not
@@ -254,7 +254,7 @@ Some muddy footprints have been tracked in from outside.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 muddy footprints~
    The footprints are fresh and quite large.  Most likely made by the farmer.
@@ -267,11 +267,11 @@ A rake was left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 2 3 3
-5 200 0 0
+5 200 0 0 0
 E
 rake~
    The rake appears to be in good condition.  There is some dirt stuck to its
-tynes, but could be easily washed away.  
+tines, but could be easily washed away.  
 ~
 #537
 jerky~
@@ -280,7 +280,7 @@ A piece of jerky was left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
-2 100 0 0
+2 100 0 0 0
 E
 jerky~
    The piece is rather small and probably won't fill you up for very long.    
@@ -292,7 +292,7 @@ A lucky horseshoe was left here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 150 0 0
+3 150 0 0 0
 E
 horseshoe~
    It's a rusty old thing, but might be worth some money.    
@@ -304,7 +304,7 @@ A bale of hay is sitting here.~
 ~
 12 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 bale hay~
    The bale is rather large.  It must be used for the chickens beds.  
@@ -316,7 +316,7 @@ A stone fireplace is here, hosting a warm crackling fire.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 fireplace~
    The fireplace is rather old looking, but gets the job done.  There are a few
@@ -330,7 +330,7 @@ A bowl of stew was left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-3 125 0 0
+3 125 0 0 0
 E
 bowl stew~
    The stew smells delicious!  It consists of freshly cut carrots, onions,
@@ -343,7 +343,7 @@ An enormous marble well stands before you.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 0 0
-0 0 0 0
+0 0 0 0 0
 E
 well~
    The well sparkles in the sunlight, giving off a magical glow.  As you look

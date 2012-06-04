@@ -1,44 +1,14 @@
 TbaMUD is currently being developed by The Builder Academy. If you need any
 help, find any bugs, or have ideas for improvement please stop by TBA at 
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
-Major Additions:
-OasisOLC 2.0.6
-trigedit (DG Scripts) 1.0.14
-hedit (help editor)
-cedit (config editor)
-tedit (text file editor)
-aedit (socials editor)
-qedit (quest editor)
-ANSI Color
-ASCII Player Files 3.0.1
-128bit Support
-Copyover
-automap (ASCII map generator)
-buildwalk (walk a new zone to link rooms)
-tell m-w (an in game dictionary lookup)
-gemote (emotes over gossip)
-history (of all communications, tells, gossip, etc.)
-file (allows imms to view syslog, errors, etc.)
-pagelength (custom pagelength setting)
-showvnums (roomflags that includes mobs, objs, triggers)
-zpurge (purge an entire zone)
-zcheck (head builder tool to check balancing)
-mob autoroll (standard values set on mob level entry)
-checkload (list where a mob/obj/trg is loaded)
-Auto Toggles (loot, gold, split, sac, assist, map, door, key)
-Hidden mob/obj
-mob/obj stacking
-hindex
-helpcheck
-OLC copy and delete options.
-export (QQ's a zone into a tarball)
-Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
-(lots of major bugfixes too)
 @
 [May 28 2012] - Vatiken
   bug: Fixed a MAJOR duping issue.
 [May 24 2012] - Vatiken
   improve: prefedit now allows toggling of "this" session protocols
+tbaMUD 3.63
+[Apr 04 2012] - Rumble
+  Updated World and files for 3.63 release.
 [Mar 31 2012] - Vatiken
   improve: updated some of the documents.
   feature: added the 'whirlwind' skill as a event/list template
@@ -110,6 +80,7 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 [Sep 28 2010] - Rumble
   Fixed a couple NPC accessing player data errors.
   Fixed oedit extra desc's from always showing "Set" even if they weren't. (thanks Mirad)
+tbaMUD 3.62
 [Sep 19 2010] - Rumble
   Updated World and files for 3.62 release.
 [Sep 11 2010] - Rumble
@@ -1116,8 +1087,42 @@ CircleMUD 3.5
 - Added vnum and TRIG tags to everything, showvnums toggles it on/off.
 - Added keyword seperation when statting extra desc. [desk] [notes papers]
 - Added buildwalk and dig.
+Major Additions:
+OasisOLC 2.0.6
+trigedit (DG Scripts) 1.0.14
+hedit (help editor)
+cedit (config editor)
+tedit (text file editor)
+aedit (socials editor)
+qedit (quest editor)
+ANSI Color
+ASCII Player Files 3.0.1
+128bit Support
+Copyover
+automap (ASCII map generator)
+buildwalk (walk a new zone to link rooms)
+tell m-w (an in game dictionary lookup)
+gemote (emotes over gossip)
+history (of all communications, tells, gossip, etc.)
+file (allows imms to view syslog, errors, etc.)
+pagelength (custom pagelength setting)
+showvnums (roomflags that includes mobs, objs, triggers)
+zpurge (purge an entire zone)
+zcheck (head builder tool to check balancing)
+mob autoroll (standard values set on mob level entry)
+checkload (list where a mob/obj/trg is loaded)
+Auto Toggles (loot, gold, split, sac, assist, map, door, key)
+Hidden mob/obj
+mob/obj stacking
+hindex
+helpcheck
+OLC copy and delete options.
+export (QQ's a zone into a tarball)
+Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
+(lots of major bugfixes too)
  
 Release history:
+Version 3.63 release: April, 2012
 Version 3.62 release: September, 2010
 Version 3.61 release: January, 2010
 Version 3.60 release: September, 2009

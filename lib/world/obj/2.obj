@@ -282,6 +282,21 @@ grey cloak~
    The cloak must be imbued with some magical property.  The cloth seems
 excessively strong though still feels soft and light.
 ~
+#222
+wrapped christmas present~
+a @RC@gh@Rr@gi@Rs@gt@Rm@ga@Rs @gp@Rr@ge@Rs@ge@Rn@gt@n~
+A beautifully wrapped @RC@gh@Rr@gi@Rs@gt@Rm@ga@Rs @gp@Rr@ge@Rs@ge@Rn@gt@g has been set here.@n~
+~
+8 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0 0
+T 1973
+E
+wrapped christmas present~
+   This parcel offers no hint whatsoever as to what may be inside.  Covered in
+tinsel and festively patterned glitter paper, the only way to find out what it
+holds is to unwrap it!  
+~
 #251
 water marble fountain water~
 a marble fountain~
@@ -292,12 +307,12 @@ A large fountain with two statues standing protectively above it.~
 0 0 0 0 0
 T 201
 E
-rumble names ferret~
-   To bring peace where there was only war.  To bring justice where there was
-only inequity.  To bring freedom where there was only coercion.  To bring
-balance where there was only chaos.  To bring Sanctum to the world.    
-
-DO NOTE ENTER FOUNTAIN!
+fountain~
+   This is the most beautiful fountain you have ever set your eyes upon!  It
+has a marble bottom, which is clean enough to eat off from.  In the center of
+the fountain, you see some stone FIGURES.  They have their mouths open.  As you
+look closely you can see that there is water streaming out from the mouths.  
+What a neat idea!    
 ~
 E
 statues figures~
@@ -305,11 +320,11 @@ statues figures~
 below the names but you must look more closely to read it.    
 ~
 E
-fountain~
-   This is the most beautiful fountain you have ever set your eyes upon!  It
-has a marble bottom, which is clean enough to eat off from.  In the center of
-the fountain, you see some stone FIGURES.  They have their mouths open.  As you
-look closely you can see that there is water streaming out from the mouths.  
-What a neat idea!    
+rumble names ferret~
+   To bring peace where there was only war.  To bring justice where there was
+only inequity.  To bring freedom where there was only coercion.  To bring
+balance where there was only chaos.  To bring Sanctum to the world.    
+
+DO NOTE ENTER FOUNTAIN!
 ~
 $~
