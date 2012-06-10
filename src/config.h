@@ -69,6 +69,7 @@ extern int use_autowiz;
 extern int min_wizlist_lev;
 extern int display_closed_doors;
 extern int protocol_negotiation;
+extern int special_in_comm;
 /* Automap and map options */
 extern int map_option;
 extern int default_map_size;

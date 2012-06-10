@@ -3766,6 +3766,7 @@ static void load_default_config( void )
   CONFIG_NO_MORT_TO_IMMORT	    = no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS      = display_closed_doors;
   CONFIG_PROTOCOL_NEGOTIATION   = protocol_negotiation;
+  CONFIG_SPECIAL_IN_COMM        = special_in_comm;
   CONFIG_DIAGONAL_DIRS          = diagonal_dirs;
   CONFIG_MAP                    = map_option;
   CONFIG_MAP_SIZE               = default_map_size;
@@ -4026,6 +4027,8 @@ void load_config( void )
           CONFIG_SITEOK_ALL = num;
         else if (!str_cmp(tag, "script_players"))
           CONFIG_SCRIPT_PLAYERS = num;
+        else if (!str_cmp(tag, "special_in_comm"))
+          CONFIG_SPECIAL_IN_COMM = num;
         else if (!str_cmp(tag, "start_messg")) {
           strncpy(buf, "Reading start message in load_config()", sizeof(buf));
           if (CONFIG_START_MESSG)

@@ -131,6 +131,7 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->operation.medit_advanced     = CONFIG_MEDIT_ADVANCED;
   OLC_CONFIG(d)->operation.ibt_autosave       = CONFIG_IBT_AUTOSAVE;
   OLC_CONFIG(d)->operation.protocol_negotiation = CONFIG_PROTOCOL_NEGOTIATION;
+  OLC_CONFIG(d)->operation.special_in_comm    = CONFIG_SPECIAL_IN_COMM;
   
   /* Autowiz */
   OLC_CONFIG(d)->autowiz.use_autowiz          = CONFIG_USE_AUTOWIZ;
@@ -232,6 +233,7 @@ static void cedit_save_internally(struct descriptor_data *d)
   CONFIG_MEDIT_ADVANCED     = OLC_CONFIG(d)->operation.medit_advanced;
   CONFIG_IBT_AUTOSAVE       = OLC_CONFIG(d)->operation.ibt_autosave;
   CONFIG_PROTOCOL_NEGOTIATION = OLC_CONFIG(d)->operation.protocol_negotiation;
+  CONFIG_SPECIAL_IN_COMM      = OLC_CONFIG(d)->operation.special_in_comm;
   
   /* Autowiz */
   CONFIG_USE_AUTOWIZ          = OLC_CONFIG(d)->autowiz.use_autowiz;
@@ -542,9 +544,13 @@ int save_config( IDXTYPE nowhere )
               "min_wizlist_lev = %d\n\n",
               CONFIG_MIN_WIZLIST_LEV);
 
-  fprintf(fl, "* If yes, enable the protocol negotiation system?\n"
+  fprintf(fl, "* If yes, enable the protocol negotiation system.\n"
               "protocol_negotiation = %d\n\n",
               CONFIG_PROTOCOL_NEGOTIATION);
+
+  fprintf(fl, "* If yes, enable the special character in comm channels.\n"
+              "special_in_comm = %d\n\n",
+              CONFIG_SPECIAL_IN_COMM);
 
   fclose(fl);
 
@@ -731,6 +737,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
   	"%sO%s) Medit Stats Menu    : %s%s\r\n"
   	"%sP%s) Autosave bugs when resolved from commandline : %s%s\r\n"
   	"%sR%s) Enable Protocol Negotiation : %s%s\r\n"
+  	"%sS%s) Enable Special Char in Comm : %s%s\r\n"
     "%sQ%s) Exit To The Main Menu\r\n"
     "Enter your choice : ",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.DFLT_PORT,
@@ -750,6 +757,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
     grn, nrm, cyn, OLC_CONFIG(d)->operation.medit_advanced ? "Advanced" : "Standard",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.ibt_autosave ? "Yes" : "No",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.protocol_negotiation ? "Yes" : "No",
+    grn, nrm, cyn, OLC_CONFIG(d)->operation.special_in_comm ? "Yes" : "No",
     grn, nrm
     );
 
@@ -1226,6 +1234,11 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 		 case 'r':
 		 case 'R':
 		   TOGGLE_VAR(OLC_CONFIG(d)->operation.protocol_negotiation);
+		   break;
+		   
+		 case 's':
+		 case 'S':
+		   TOGGLE_VAR(OLC_CONFIG(d)->operation.special_in_comm);
 		   break;
 
          case 'q':

@@ -1048,6 +1048,8 @@ do                                                              \
 #define CONFIG_IBT_AUTOSAVE config_info.operation.ibt_autosave
 /** Use the protocol negotiation system? */
 #define CONFIG_PROTOCOL_NEGOTIATION config_info.operation.protocol_negotiation
+/** Use the special character in comm channels? */
+#define CONFIG_SPECIAL_IN_COMM config_info.operation.special_in_comm
 
 /* Autowiz */
 /** Use autowiz or not? */

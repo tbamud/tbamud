@@ -1349,6 +1349,7 @@ struct game_operation
   int medit_advanced; /**< Does the medit OLC show the advanced stats menu ? */
   int ibt_autosave; /**< Does "bug resolve" autosave ? */
   int protocol_negotiation; /**< Enable the protocol negotiation system ? */
+  int special_in_comm; /**< Enable use of a special character in communication channels ? */
 };
 
 /** The Autowizard options. */
