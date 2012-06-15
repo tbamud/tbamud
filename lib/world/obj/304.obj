@@ -5,7 +5,7 @@ A brown fur cape is piled on the floor here.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
-4 200 0 5
+4 200 0 5 0
 E
 brown fur cape~
    It is a rather coarse brown cape.  
@@ -19,7 +19,7 @@ An straight sword is stuck in the ground here.~
 ~
 5 b 0 0 0 an 0 0 0 0 0 0 0
 0 4 3 3
-9 100 0 0
+9 100 0 0 0
 E
 sword~
    The sword looks rather old.  
@@ -33,7 +33,7 @@ A well seasoned staff has been dropped here.~
 ~
 5 b 0 0 0 an 0 0 0 0 0 0 0
 0 5 3 7
-9 200 0 0
+9 200 0 0 0
 E
 seasoned staff~
    It looks like a seasoned staff.  Probably good for hitting people.  
@@ -45,9 +45,9 @@ wet mop~
 a wet mop~
 A soaking wet mop is here, making a puddle.~
 ~
-13 h 0 0 0 ao 0 0 0 0 0 0 0
+13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-5 100 0 0
+5 100 0 0 0
 E
 wet mop~
    Yuck, its a smelly wet mop..  Better run before you have to mop something.  
@@ -61,7 +61,7 @@ A marble key lies here, gathering dust.~
 ~
 18 f 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 marble key~
    Its a small marble key, would fit in a marble door methinks.  
@@ -73,7 +73,7 @@ An oak key rests here.~
 ~
 18 f 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 oak key~
    It's a small oak key, would fit in an oak door methinks.  
@@ -85,7 +85,7 @@ An iron key lies here, rusting.~
 ~
 18 f 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 50 0 0
+1 50 0 0 0
 E
 iron key~
    It's an iron key, would fit in an iron door methinks.  
@@ -97,7 +97,7 @@ A ring shaped like a bull lies here.~
 ~
 9 af 0 0 0 abo 0 0 0 0 0 0 0
 5 0 0 0
-1 200 0 15
+1 200 0 0 0
 E
 taurus ring~
    It is a ring with a golden bull insignia.  
@@ -113,7 +113,7 @@ A great fur cloak is here.~
 ~
 9 ab 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
-8 333 0 0
+8 333 0 0 0
 E
 fur cloak~
    This was once the skin of a great bull.  The hide has been tanned and oiled.
@@ -131,7 +131,7 @@ A mask with two wicked horns rests here.~
 ~
 9 abf 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
-3 400 0 15
+3 400 0 0 0
 E
 golden horn mask~
    This mask is made out of pure gold, and has two wicked horns.  
@@ -147,7 +147,7 @@ A strange book is collecting dust on the floor.~
 ~
 4 ab 0 0 0 ao 0 0 0 0 0 0 0
 10 10 10 4
-10 1 0 0
+10 1 0 0 0
 E
 wabat bible~
    The WABAT bible is printed thus:
@@ -168,7 +168,7 @@ A dagger with strange blue flames dancing along it's tip.~
 ~
 5 ab 0 0 0 an 0 0 0 0 0 0 0
 1 3 4 11
-10 1 0 0
+10 1 0 0 0
 E
 fire dagger~
    A thin stream of fire runs from the dagger's leather bound hilt to its razor
@@ -181,7 +181,7 @@ A full suit of chainmail is looking very old and used.~
 ~
 9 ab 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
-10 500 0 0
+10 500 0 0 0
 E
 suit old chainmail~
    Wow!  A suit of old chainmail!  Who told you these things don't exist
@@ -196,7 +196,7 @@ A beautiful cloak of pristine white silke hangs on a peg.~
 ~
 9 ab 0 0 0 ak 0 0 0 0 0 0 0
 6 0 0 0
-10 1 0 0
+10 1 0 0 0
 E
 holy cloak~
    It is a holy cloak, crafted by the gods.  
@@ -208,7 +208,7 @@ A pair of brown fur leggings lie on the ground here.~
 ~
 9 ab 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
-5 250 0 10
+5 250 0 10 0
 E
 leggings leg brown fur~
    They seem to have been stripped off of a Bull.  
@@ -224,7 +224,7 @@ A twisted piece of horn has been dropped here.~
 ~
 9 ab 0 0 0 am 0 0 0 0 0 0 0
 5 0 0 0
-2 1000 0 10
+2 1000 0 10 0
 E
 bracelet horn twisted~
    It is a highly polished piece of horn, might fit on your wrist.  

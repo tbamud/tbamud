@@ -7,7 +7,7 @@ You see a pawn standing here waiting for orders.
 His armor is shiny and black.  He stands ready to give his life for the Crown.
 
 ~
-206 0 0 0 16 0 0 0 -400 E
+78 0 0 0 16 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1
@@ -21,7 +21,7 @@ You see a pawn standing here waiting for orders.
 His armor is spotless and white.  He stands ready to give his life for the
 Crown.  
 ~
-206 0 0 0 16 0 0 0 400 E
+78 0 0 0 16 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 1

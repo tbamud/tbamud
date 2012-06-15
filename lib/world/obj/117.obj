@@ -5,7 +5,7 @@ A simple ring made out of gold, it looks like a ring one would recieve at a wedd
 ~
 11 q 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #11701
 sign~
 a sign~
@@ -14,7 +14,7 @@ Tower #1: Shops and excecutive officing
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-50 1 0 0
+50 1 0 0 0
 #11702
 yellow straightsword~
 @YYellow@n straightsword~
@@ -22,7 +22,7 @@ A @YYellow@n straightsword is lying here.~
 ~
 5 a 0 0 0 an 0 0 0 0 0 0 0
 2 3 6 3
-6 475 0 15
+6 475 0 10 0
 E
 yellow straightsword~
    The long straight blade is stained a bright yellow.  It is well forged and
@@ -37,7 +37,7 @@ A @YYellow@n field plate is lying here.~
 ~
 9 bo 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
-9 1 0 15
+9 1 0 10 0
 E
 yellow field plate~
    The field plate is stained a bright yellow.  The armor is made of extremely
@@ -51,7 +51,7 @@ A @DSilver@n scimitar has been left here.~
 ~
 5 a 0 0 0 an 0 0 0 0 0 0 0
 3 2 9 3
-7 500 0 15
+7 500 0 10 0
 E
 silver scimitar~
    The scimitar is well curved and very sharp.  The blade is made of silver and
@@ -65,7 +65,7 @@ A Broiled Turkey has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
-3 1250 0 20
+3 1250 0 20 0
 E
 broiled turkey~
    This delicious meal was no doubt made by the chefs at The Turkey's Gobble.  
@@ -80,7 +80,7 @@ A @DSilver@n splint mail has been left here.~
 ~
 9 bm 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
-10 550 0 15
+10 550 0 10 0
 E
 silver splint mail~
    This unique armor has been made from forged scraps of silver, and is
@@ -94,7 +94,7 @@ A Turkey Sandwich has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-2 30 0 0
+2 30 0 0 0
 E
 turkey sandwich~
    A turkey sandwich with a toothpick.  It looks quite tasty.  
@@ -106,7 +106,7 @@ A wooden cello has been left here.~
 ~
 12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-8 1 0 0
+8 1 0 0 0
 T 11705
 E
 wooden cello~
@@ -120,7 +120,7 @@ A Turkey Soup has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-5 100 0 0
+5 100 0 0 0
 E
 turkey soup~
    The steaming soup is served in an ivory bowl.  The soup is a tanish color
@@ -134,7 +134,7 @@ A Turkey Surprise has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-4 75 0 0
+4 75 0 0 0
 E
 turkey surprise~
    Nobody knows what they put in this meal.  Nobody really cares, since it isn't
@@ -147,7 +147,7 @@ A Cranberry Juice has been left here.~
 ~
 23 0 0 0 0 a 0 0 0 0 0 0 0
 2 2 0 0
-3 60 0 0
+3 60 0 0 0
 E
 cranberry juice~
    The dark red juice is served in a tall glass with cranberries at the bottom
@@ -161,7 +161,7 @@ A Pumpkin Ale has been left here.~
 ~
 23 0 0 0 0 a 0 0 0 0 0 0 0
 21 7 3 0
-10 200 0 0
+10 200 0 0 0
 E
 pumpkin ale~
    The orange ale is served in a large glass mug.  It has a thick froth at the
@@ -175,7 +175,7 @@ A Pumpkin Pie has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-9 300 0 0
+9 300 0 0 0
 E
 pumpkin pie~
    The pie is baked to perfection and is topped in the center with whip cream.
@@ -188,10 +188,10 @@ A @RRoad@n @Yto@n @CHeaven@n has been left here.~
 ~
 23 0 0 0 0 a 0 0 0 0 0 0 0
 100 10 2 0
-15 750 0 0
+15 750 0 0 0
 E
 road heaven wine~
-   This dark red wine is called the @RRoad@n @Yto@n @CHeaven@n because it is
+   This dark red wine is called the 	RRoad	n 	Yto	n 	CHeaven	n because it is
 extremely intoxicating but filling.  The bottle that contains it is huge and
 probably will keep you busy for quite some time.  The wine has a smell of a
 mixture of many fruits, though it is difficult to tell which ones were used.  
@@ -203,7 +203,7 @@ A Flask of White Wine has been left here.~
 ~
 23 0 0 0 0 a 0 0 0 0 0 0 0
 12 3 2 0
-5 75 0 0
+5 75 0 0 0
 E
 flask wine~
    The flask is brown, and not very big.  The wine inside it kind of smells like
@@ -216,7 +216,7 @@ An Estanzia has been left here.~
 ~
 23 0 0 0 0 a 0 0 0 0 0 0 0
 15 5 2 0
-10 300 0 0
+10 300 0 0 0
 E
 estanzia~
    The wine in the bottle is a nice clear/white color.  The bottle itself is
@@ -229,7 +229,7 @@ A glass of wine has been left here.~
 ~
 23 0 0 0 0 a 0 0 0 0 0 0 0
 8 2 2 0
-5 50 0 0
+5 50 0 0 0
 E
 glass wine~
    The glass is made of an intricately cut crystal filled to the top with a
@@ -243,7 +243,7 @@ The wine cellar key has been left here.~
 ~
 18 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 key~
    The key is pink and cut very nicely.  It is hanging off of a chain and it has
@@ -256,10 +256,10 @@ A Chalice of Red Something has been left here.~
 ~
 23 0 0 0 0 a 0 0 0 0 0 0 0
 7 7 13 0
-7 400 0 0
+7 400 0 0 0
 E
 chalice wine~
-   @WO@n@DM@n@WG@n @WO@n@DM@n@WG@n that isn't @mwine@n it's @rblood!!!!!  @n
+   	WO	n	DM	n	WG	n 	WO	n	DM	n	WG	n that isn't 	mwine	n it's 	rblood!!!!!  	n
 ~
 #11720
 defender~
@@ -268,10 +268,10 @@ The @rD@n@me@n@rf@n@me@n@rn@n@md@n@re@n@mr@n has been left here.~
 ~
 5 abdmnoq 0 0 0 an 0 0 0 0 0 0 0
 4 7 3 10
-15 2000000 0 20
+15 2000000 0 10 0
 E
 defender~
-   The @rD@n@me@n@rf@n@me@n@rn@n@md@n@re@n@mr@n is a valiant sword only usable
+   The 	rD	n	me	n	rf	n	me	n	rn	n	md	n	re	n	mr	n is a valiant sword only usable
 by masters of the world.  The blade is a dull gray and the hilt is made of
 silver with a leather bound handle for a good grip.  Legend goes it was used to
 protect Los Torres from i nvasion of the Valdurain Army.  It is only wieldable
@@ -284,7 +284,7 @@ An @DOptical@n @bBlue@n helm has been left here.~
 ~
 9 0 0 0 0 ae 0 0 0 e 0 0 0
 10 0 0 0
-7 2750 0 12
+7 2750 0 10 0
 E
 optical blue helm~
    Painted blue and black in a very, very thin striped pattern, the helmet makes
@@ -300,7 +300,7 @@ Some Large Boots have been left here.~
 ~
 9 0 0 0 0 afg 0 0 0 0 0 0 0
 10 0 0 0
-10 2500 0 11
+10 2500 0 10 0
 T 11708
 T 11709
 E
@@ -315,7 +315,7 @@ Some Titanium Gauntlets have been left here.~
 ~
 9 b 0 0 0 ah 0 0 0 0 0 0 0
 7 0 0 0
-5 2200 0 11
+5 2200 0 10 0
 E
 titanium gauntlets~
    These gauntlets have been forged with pure titanium.  They are sturdy yet
@@ -330,7 +330,7 @@ A pair of greaves have been left here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
-10 1500 0 10
+10 1500 0 10 0
 E
 pair greaves~
    The greaves are made of metal and strap around the user's legs with
@@ -343,7 +343,7 @@ A White Chainmail has been left here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 9 0 0 0
-13 4000 0 0
+13 4000 0 10 0
 E
 white chainmail~
    A chainmail made entirely of a white painted metal is here.  It has not been
@@ -357,7 +357,7 @@ A bow made of dark, red wood has been left here.~
 ~
 5 mn 0 0 0 ano 0 0 0 0 0 0 0
 3 3 4 1
-10 600 0 14
+10 600 0 14 0
 E
 bow red wood~
    This is a bow intricately made of red wood from the Red Forest outside of Los
@@ -377,7 +377,7 @@ An Ousishi Katana has been left here.~
 ~
 5 p 0 0 0 an 0 0 0 t 0 0 0
 3 5 4 3
-20 1500 0 13
+20 1500 0 10 0
 E
 ousishi katana~
    This sword is a new model of the katana.  Unlike most models, it has a
@@ -395,7 +395,7 @@ A red arrow has been left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 10 0 0
+2 10 0 10 0
 E
 arrow~
    The skinny arrow is painted red and has red feathers at the end of it.  It
@@ -409,7 +409,7 @@ A Redwood Quiver has been left here.~
 ~
 15 0 0 0 0 ao 0 0 0 0 0 0 0
 10 0 -1 0
-3 200 0 0
+3 200 0 0 0
 E
 redwood quiver~
    Red painted wood signifies this quiver was made by the Red Assassins, an
@@ -425,7 +425,7 @@ An @WO@n@Yb@n@Rs@n@Mc@n@Be@n@Cn@n@Gi@n@Kt@n@Wy@n has been left here.~
 ~
 11 abdq 0 0 0 ao 0 0 0 i 0 0 0
 0 0 0 0
-2 5 0 20
+2 5 0 10 0
 A
 1 2
 A
@@ -439,7 +439,7 @@ A Beam of Light has been left here.~
 ~
 1 a 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
-1 500 0 17
+1 500 0 17 0
 E
 beam light~
    This is a strange source of light indeed.  It is a beam of eternal light from
@@ -453,7 +453,7 @@ A Kard has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 5 14
-3 350 0 13
+3 350 0 13 0
 E
 kard~
    The small and lightweight dagger was made so that nobody would see it when it
@@ -469,7 +469,7 @@ A @RRed Cloth Costume@n has been left here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-5 475 0 15
+5 475 0 15 0
 E
 red cloth costume~
    The costume is made of red cloths woven and tied together in a tight fashion,
@@ -489,7 +489,7 @@ A pewter key has been left here.~
 ~
 18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 pewter key~
    The key is simply cut, and made of a dark gray colored stone.  
@@ -501,10 +501,10 @@ A bouquet of exotic flowers has been left here.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 bouquet exotic flowers~
-   A hand picked bouquet of @rred@n, @ggreen@n, @yyellow@n and @bblue@n flowers
+   A hand picked bouquet of 	rred	n, 	ggreen	n, 	yyellow	n and 	bblue	n flowers
 nicely arranged into a bouquet could make the perfect gift for anyone.  
 ~
 #11736
@@ -514,7 +514,7 @@ A Red Breaker has been left here.~
 ~
 5 a 0 0 0 an 0 0 0 0 0 0 0
 2 3 6 9
-12 900 0 17
+12 900 0 17 0
 E
 red breaker~
    This extremely large sword is also known as a 'breaker' It extends 4 feet
@@ -529,7 +529,7 @@ A broken chandelier has been left here.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-15 1 0 0
+15 1 0 0 0
 E
 broken chandelier~
    The chandelier is broken and of no use.  The top of the chandelier where the
@@ -542,7 +542,7 @@ A Marble Fountain stands in the center of the plaza.~
 ~
 23 0 0 0 0 a 0 0 0 0 0 0 0
 500 500 15 0
-505 1000 0 0
+505 1000 0 0 0
 E
 marble fountain~
    The fountain is made of a black marble and is impossibly cut, making the
@@ -556,7 +556,7 @@ A paintbrush has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 1 6 0
-3 60 0 6
+3 60 0 6 0
 E
 paintbrush~
    The small paintbrush is dipped in blue paint.  
@@ -568,7 +568,7 @@ A Chef's Knife has been left here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 4 2 14
-5 70 0 10
+5 70 0 10 0
 E
 chef's knife~
    The knife is a standard knife used in a kitchen.  It is very lare, and has a
@@ -582,7 +582,7 @@ A note has been left here.~
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-50 12 0 0
+50 12 0 0 0
 #11742
 black belt~
 a black belt~
@@ -590,7 +590,7 @@ A black belt has been left here.~
 ~
 11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-4 150 0 13
+4 150 0 13 0
 E
 black belt~
    This is a belt made of thick rough cloth that should be tied around the
@@ -605,7 +605,7 @@ A Feather Duster has been left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-2 75 0 0
+2 75 0 0 0
 E
 feather duster~
    The feather duster has a wooden handle attached to numerous large brown
@@ -638,5 +638,5 @@ Get to 11720
 ~
 16 ab 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 $~

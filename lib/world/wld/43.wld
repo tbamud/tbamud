@@ -53,11 +53,11 @@ D2
 ~
 0 0 4301
 E
-north~
+south~
    More ice bridge.    
 ~
 E
-south~
+north~
    More ice bridge.    
 ~
 S
@@ -173,10 +173,10 @@ D3
 S
 #4309
 Snow Field~
-   It's still snowing in this baren, forsaken land of ice.  Only the penguins
+   It is still snowing in this baren, forsaken land of ice.  Only the penguins
 and a couple lumps of some sort of creature roam these lands.  The penguins are
 many and with their babies seem many more.  As you scan your surroundings you
-see a large hump of ice to the northeast.    
+see a large hump of ice to the northeast.  
 ~
 43 0 0 0 0 0
 D0
@@ -661,17 +661,17 @@ D2
 ~
 0 0 4331
 E
+wall~
+   The walls in this room are perfectly smoothed away and still refecting that
+strange blue light.  You think the light must be coming from outside for there
+are no lights in here.    
+~
+E
 throne chair~
    This chair made completly of ice is suberbly crafted and sqared away.  It
 seems to be made of one block of ice as you can see no grooves to mark that it
 is not.  The seat of the chair is very low in humanoid standards, but penguins
 see it not fit to be in high places.    
-~
-E
-wall~
-   The walls in this room are perfectly smoothed away and still refecting that
-strange blue light.  You think the light must be coming from outside for there
-are no lights in here.    
 ~
 S
 #4333

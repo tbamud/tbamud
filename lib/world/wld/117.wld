@@ -29,9 +29,8 @@ D0
 ~
 0 11700 11702
 E
-soil ground~
-   The soil is a nice dark brown for all the flowers.  A ring is laying in the
-dirt.  
+trees tree~
+   The trees are skinny with beautiful red leaves.  
 ~
 E
 flowers flower path~
@@ -39,8 +38,9 @@ flowers flower path~
 be something glimmering in the soil.  
 ~
 E
-trees tree~
-   The trees are skinny with beautiful red leaves.  
+soil ground~
+   The soil is a nice dark brown for all the flowers.  A ring is laying in the
+dirt.  
 ~
 S
 T 11701
@@ -103,13 +103,13 @@ D4
 ~
 0 11700 11707
 E
+display~
+   There are many fancy armors on display at 'Defender's Dream'.  
+~
+E
 orchestra~
    There is a full orchestra at the center of the lobby.  They are playing a
 song that seems to relax the soul and fit the scenery quite well.  
-~
-E
-display~
-   There are many fancy armors on display at 'Defender's Dream'.  
 ~
 S
 T 11702
@@ -132,15 +132,15 @@ D5
 floor~
 1 11700 11758
 E
+chandelier~
+   The chandelier is humongous and made of diamonds with brass candle holders.
+It illuminates the room with a pretty patterned shadow.  
+~
+E
 table tables~
    The tables are round and are suitable for 4 people to sit at.  Theyr rather
 boring at the top but are very intricately cut at the bottim, making it look
 like a roman column.  
-~
-E
-chandelier~
-   The chandelier is humongous and made of diamonds with brass candle holders.
-It illuminates the room with a pretty patterned shadow.  
 ~
 S
 #11705
@@ -160,9 +160,10 @@ D3
 ~
 0 11700 11721
 E
-forest~
-   The forest is seemingly endless from here.  The creatures make all sorts of
-pleasant noises and rustle around in the foliage.  
+Path~
+   The white path has been kept up nicely for it's usage.  There are some spots
+from people walking on it repeatedly.  The brick is nicely layed in a diagonal
+fashion.  
 ~
 E
 towers~
@@ -171,10 +172,9 @@ surrounding it.  They are made of a gray stone and have many windows in the
 walls.  
 ~
 E
-Path~
-   The white path has been kept up nicely for it's usage.  There are some spots
-from people walking on it repeatedly.  The brick is nicely layed in a diagonal
-fashion.  
+forest~
+   The forest is seemingly endless from here.  The creatures make all sorts of
+pleasant noises and rustle around in the foliage.  
 ~
 S
 #11706
@@ -196,13 +196,13 @@ D5
 trapdoor~
 2 11718 11752
 E
+lace~
+   It's everywhere!  Ahhh!!!!  
+~
+E
 wine rack~
    The wine rack in the back of the room is huge.  It contains a lot of wines
 that are cooled by a large vent at the top.  It is sealed off with a glass door.
-~
-E
-lace~
-   It's everywhere!  Ahhh!!!!  
 ~
 S
 #11707
@@ -271,9 +271,9 @@ D3
 ~
 0 11700 11707
 E
-desk computer~
-   The desk has papers neatly stacked papers in one corner, and a high quality
-computer on one side.  The desk seems larger than most other desks.  
+door~
+   The door is made of wood and has been left open for people to come in and out
+as they please.  
 ~
 E
 wall pictures~
@@ -281,9 +281,9 @@ wall pictures~
 It is dotted with hanging framed pictures of people that Lesalie knows.  
 ~
 E
-door~
-   The door is made of wood and has been left open for people to come in and out
-as they please.  
+desk computer~
+   The desk has papers neatly stacked papers in one corner, and a high quality
+computer on one side.  The desk seems larger than most other desks.  
 ~
 S
 T 11723
@@ -301,8 +301,9 @@ D1
 ~
 0 11700 11707
 E
-wall border~
-   The wall is painted tan with a dark green border around the celing.  
+celing fan~
+   The smooth celing has an elaborate fan in the center which blows a soothing
+breeze in the room.  
 ~
 E
 desk paperwork decorations computer telephone~
@@ -310,9 +311,8 @@ desk paperwork decorations computer telephone~
 computer, a telephone, some paperwork, and decorations.  
 ~
 E
-celing fan~
-   The smooth celing has an elaborate fan in the center which blows a soothing
-breeze in the room.  
+wall border~
+   The wall is painted tan with a dark green border around the celing.  
 ~
 S
 T 11725
@@ -345,13 +345,13 @@ D5
 ~
 0 11700 11707
 E
+doors~
+   The doors in the room lead to some of the officials' offices.  
+~
+E
 stairs marble~
    The black marble tiling echoes as people walk on it.  It sort of makes a path
 to two marble staircases that lead both up and down.  
-~
-E
-doors~
-   The doors in the room lead to some of the officials' offices.  
 ~
 S
 #11712
@@ -367,21 +367,21 @@ D2
 ~
 0 11700 11711
 E
-papers~
-   The papers are scattered across the floor in a disastrous manner.  
-~
-E
-wall~
-   The walls have been beaten and cracked for some unknown reason
+window~
+   The window has been broken, making a cold breeze swift in.  Shards of glass
+hang around its edges.  
 ~
 E
 desk~
    The desk has been ripped apart!  
 ~
 E
-window~
-   The window has been broken, making a cold breeze swift in.  Shards of glass
-hang around its edges.  
+wall~
+   The walls have been beaten and cracked for some unknown reason
+~
+E
+papers~
+   The papers are scattered across the floor in a disastrous manner.  
 ~
 S
 T 11723
@@ -472,13 +472,13 @@ D2
 ~
 0 11700 11715
 E
+desk papers~
+   The desk is bare minus a few articles of paperwork.  
+~
+E
 suitcases boxes~
    The boxes and suitcases in the corner of the room are all packed with
 Luther's belongings.  
-~
-E
-desk papers~
-   The desk is bare minus a few articles of paperwork.  
 ~
 S
 #11717
@@ -495,14 +495,14 @@ D3
 ~
 0 11700 11715
 E
-walls~
-   The walls are painted white, except for a dark red wall that gives a really
-nice accent into the room.  
-~
-E
 desk papers~
    The desk is very large and it has exquisite carved patterns on the sides.  
 It is filled with paperwork galore!  
+~
+E
+walls~
+   The walls are painted white, except for a dark red wall that gives a really
+nice accent into the room.  
 ~
 S
 T 11723
@@ -519,18 +519,18 @@ D1
 ~
 0 11700 11715
 E
-scrolls~
-   The wall is adorned with red scrolls containing the writings and beliefs of
-Thedoric.  
+desk papers floor~
+   The floor is made of the same red wood as the paper filled desk is.  It's
+also quite similar to the wood that the trees outside give...  
 ~
 E
 curtains window~
    The rather large window has been shaded with grand red curtains.  
 ~
 E
-desk papers floor~
-   The floor is made of the same red wood as the paper filled desk is.  It's
-also quite similar to the wood that the trees outside give...  
+scrolls~
+   The wall is adorned with red scrolls containing the writings and beliefs of
+Thedoric.  
 ~
 S
 T 11722
@@ -552,8 +552,9 @@ D5
 ~
 0 11700 11715
 E
-corners colums~
-   The corners are filled in with Mediterranean sytled column quarters.  
+carpet velvet posts~
+   The red carpet is barred off by golden posts linked together with velvet
+rope.  
 ~
 E
 doors~
@@ -562,9 +563,8 @@ creaking sound when opened.  A creaking sound that echoes throughout the entire
 tower.  
 ~
 E
-carpet velvet posts~
-   The red carpet is barred off by golden posts linked together with velvet
-rope.  
+corners colums~
+   The corners are filled in with Mediterranean sytled column quarters.  
 ~
 S
 #11720
@@ -582,13 +582,8 @@ D2
 grand~
 0 11700 11719
 E
-lights~
-   The lights are scattered at the top edges of the walls and point down to make
-a circle of light around the desk and the chair.  
-~
-E
-walls tapestries~
-   The walls are draped with tapestries showing strange pictures and patterns.
+ceiling~
+   The ceiling is strangely high, almost out of sight!  
 ~
 E
 desk chair~
@@ -597,8 +592,13 @@ ivory colored, though.  It wouldn't be very comfy to sit in an ivory chair now,
 would it?  
 ~
 E
-ceiling~
-   The ceiling is strangely high, almost out of sight!  
+walls tapestries~
+   The walls are draped with tapestries showing strange pictures and patterns.
+~
+E
+lights~
+   The lights are scattered at the top edges of the walls and point down to make
+a circle of light around the desk and the chair.  
 ~
 S
 #11721
@@ -624,14 +624,14 @@ D3
 ~
 0 11700 11722
 E
-path cracks~
-   The pathway that is usually nicely tidy isn't so much over here.  There are
-cracks in the path that are making the citizens unwillingly trip.  
-~
-E
 trees forest~
    The forest is seemingly endless from here.  The sound of animals rustling in
 the forest is obscenely louder here.  
+~
+E
+path cracks~
+   The pathway that is usually nicely tidy isn't so much over here.  There are
+cracks in the path that are making the citizens unwillingly trip.  
 ~
 S
 #11722
@@ -655,13 +655,12 @@ D1
 ~
 0 11700 11721
 E
-tile footprints path~
-   The white tile path is covered in brown footprints from the dirty boots and
-shoes of people.  
-~
-E
-citizens tourists~
-   There are many gathering citizens and tourists of Los Torres in the plaza.  
+tree~
+   The green tree in the northeast corner attracts many people.  They gather
+around it, sit next to it, they have lunch, all sorts of stuff.  The leaves are
+a strange color of green and the bark is brown.  It is extremely large even
+compared to the trees in the Red Forest.  It seems to be about half the height
+of the tower to the north.  
 ~
 E
 stumps~
@@ -669,12 +668,13 @@ stumps~
 on them.  
 ~
 E
-tree~
-   The green tree in the northeast corner attracts many people.  They gather
-around it, sit next to it, they have lunch, all sorts of stuff.  The leaves are
-a strange color of green and the bark is brown.  It is extremely large even
-compared to the trees in the Red Forest.  It seems to be about half the height
-of the tower to the north.  
+citizens tourists~
+   There are many gathering citizens and tourists of Los Torres in the plaza.  
+~
+E
+tile footprints path~
+   The white tile path is covered in brown footprints from the dirty boots and
+shoes of people.  
 ~
 S
 T 11715
@@ -697,8 +697,8 @@ D2
 E
 path flowers~
    The white tile path is clean swept and lined with gorgeous exotic flowers,
-including some @rred@n, some @yyellow@n, and some @ggreen@n and a small amount
-of @bblue@n ones.  
+including some 	rred	n, some 	yyellow	n, and some 	ggreen	n and a small amount
+of 	bblue	n ones.  
 ~
 S
 T 11716
@@ -721,18 +721,18 @@ D2
 ~
 0 11700 11723
 E
-archway~
-   The archway is made of a dark gray stone and isn't to impressive.  The gate
-underneath it leads into all the houses of the citizens of Los Torres.  
+tower windows~
+   The tower stands high and is made of a dark gray colored stone.  Windows made
+of crystal clear glass appear occasionally on the wall.  
 ~
 E
 path~
    The white path ceases here, looking neat and tidy.  
 ~
 E
-tower windows~
-   The tower stands high and is made of a dark gray colored stone.  Windows made
-of crystal clear glass appear occasionally on the wall.  
+archway~
+   The archway is made of a dark gray stone and isn't to impressive.  The gate
+underneath it leads into all the houses of the citizens of Los Torres.  
 ~
 S
 #11725
@@ -758,21 +758,8 @@ D3
 ~
 0 11700 11727
 E
-fireplace~
-   The fireplace is large and made of a tan colored stone, like the walls and
-the celing.  The fire roars and crackles warming the entire room.  One of the
-tiles on the side of the fireplace is kind of loose.  
-~
-E
-armchairs tables~
-   There are very comfortable looking armchairs colored red that sircle around
-small wooden tables and the grand fireplace on the north wall.  
-~
-E
-desk~
-   The desk on the far side is made of wood and very big.  It has brochures on a
-small rack advertising the shops of the other tower, and a broken silver bell
-marked "Ring for service.  "
+carpet pattern~
+   The plush carpet is red with a bizarre pattern along the edges.  
 ~
 E
 celing lights~
@@ -781,8 +768,21 @@ the red carpet.  There are circular lights scattered across that blare making
 this room very, very bright.  
 ~
 E
-carpet pattern~
-   The plush carpet is red with a bizarre pattern along the edges.  
+desk~
+   The desk on the far side is made of wood and very big.  It has brochures on a
+small rack advertising the shops of the other tower, and a broken silver bell
+marked "Ring for service.  "
+~
+E
+armchairs tables~
+   There are very comfortable looking armchairs colored red that sircle around
+small wooden tables and the grand fireplace on the north wall.  
+~
+E
+fireplace~
+   The fireplace is large and made of a tan colored stone, like the walls and
+the celing.  The fire roars and crackles warming the entire room.  One of the
+tiles on the side of the fireplace is kind of loose.  
 ~
 S
 T 11717
@@ -854,13 +854,13 @@ D5
 ~
 0 11700 11727
 E
+staircase~
+   The spiral staircase continues up a floor and down a floor.  
+~
+E
 rug~
    The rug is spread over the center of the floor, giving the room some
 atmosphere.  
-~
-E
-staircase~
-   The spiral staircase continues up a floor and down a floor.  
 ~
 S
 #11729
@@ -875,12 +875,12 @@ D2
 ~
 0 11700 11728
 E
-washer dryer~
-   There is a large rumbling washer and dryer set.  
-~
-E
 bags tags~
    The bags of laundry have tags saying where they go when they are done.  
+~
+E
+washer dryer~
+   There is a large rumbling washer and dryer set.  
 ~
 S
 #11730
@@ -896,14 +896,14 @@ D0
 ~
 0 11700 11728
 E
-sofa~
-   There is a big sofa soutside of the kitchen, where the chef presumably
-sleeps.  
-~
-E
 kitchen pots pans ingredients~
    The kitchen area is very abnormally large and is filled with pots and pans.
 There are also some cooking ingredients visible in open cupboards.  
+~
+E
+sofa~
+   There is a big sofa soutside of the kitchen, where the chef presumably
+sleeps.  
 ~
 S
 #11731
@@ -930,12 +930,12 @@ D5
 ~
 0 11700 11728
 E
-lights~
-   The lights on the ceiling light the room up quite a bit.  
-~
-E
 rug floor~
    The square rug in the muddle of the floor gives the room a chic look.  
+~
+E
+lights~
+   The lights on the ceiling light the room up quite a bit.  
 ~
 S
 #11732
@@ -951,13 +951,8 @@ D2
 ~
 0 11700 11731
 E
-railing~
-   Railings are on the side walls so that students can stretch easily.  
-~
-E
-mirror~
-   There is a really big mirror that stretches all across the far wall of the
-room.  
+mat~
+   This is a large yellow mat that students can practice what they know on.  
 ~
 E
 lights~
@@ -965,8 +960,13 @@ lights~
 they light the room.  
 ~
 E
-mat~
-   This is a large yellow mat that students can practice what they know on.  
+mirror~
+   There is a really big mirror that stretches all across the far wall of the
+room.  
+~
+E
+railing~
+   Railings are on the side walls so that students can stretch easily.  
 ~
 S
 #11733
@@ -981,8 +981,8 @@ D0
 ~
 0 11700 11731
 E
-kitchen pots pans~
-   The kitchen area is fairly dirty, with some pots and pans lying in the sink.
+bed~
+   The bed is made nicely and tucked away in the corner of the room.  
 ~
 E
 sofas living~
@@ -990,8 +990,8 @@ sofas living~
 coffee table.  
 ~
 E
-bed~
-   The bed is made nicely and tucked away in the corner of the room.  
+kitchen pots pans~
+   The kitchen area is fairly dirty, with some pots and pans lying in the sink.
 ~
 S
 #11734
@@ -1018,12 +1018,12 @@ D5
 ~
 0 11700 11731
 E
-staircase~
-   More stairs, more stairs...  The stairs can take you down or up.  
-~
-E
 rug~
    The people in this tower must like their rugs.  
+~
+E
+staircase~
+   More stairs, more stairs...  The stairs can take you down or up.  
 ~
 S
 #11735
@@ -1039,9 +1039,8 @@ D2
 ~
 0 11700 11734
 E
-desks~
-   Some of the desks in the classroom have been chaotically trned over for some
-reason.  
+footprints~
+   A ton of muddy children's footprints lead to the exit.  
 ~
 E
 chalkboard ~
@@ -1049,8 +1048,9 @@ chalkboard ~
 crude drawings of flowers and clouds, and in others it's just a scribble.  
 ~
 E
-footprints~
-   A ton of muddy children's footprints lead to the exit.  
+desks~
+   Some of the desks in the classroom have been chaotically trned over for some
+reason.  
 ~
 S
 #11736
@@ -1093,13 +1093,13 @@ D5
 ~
 0 11700 11734
 E
+rug~
+   Hmm, a square rug on the floor...  How original...  
+~
+E
 staircase~
    The stairway seems to be getting lighter as it goes upward.  Perhaps the top
 of the tower is near?  
-~
-E
-rug~
-   Hmm, a square rug on the floor...  How original...  
 ~
 S
 #11738
@@ -1116,17 +1116,17 @@ D2
 ~
 0 11700 11737
 E
-dust~
-   Amazingly, there isn't any!  
+bookshelves citizens~
+   The wooden bookshelves all over the place hold a ton of books.  Citizens are
+browsing through them, looking for what they want.  
 ~
 E
 desk~
    Citizens bring books they've found here to check out and read for a bit.  
 ~
 E
-bookshelves citizens~
-   The wooden bookshelves all over the place hold a ton of books.  Citizens are
-browsing through them, looking for what they want.  
+dust~
+   Amazingly, there isn't any!  
 ~
 S
 #11739
@@ -1142,18 +1142,18 @@ D0
 ~
 0 11700 11737
 E
-urinals dividers~
-   On the west wall are urinals with dividers inbetween them, so nobody can
-sneak a peek, even if they wanted to.  
+sinks~
+   There are sinks on the east wall, some of them have yellow pot-it-notes with
+'out of order' written on them attached.  
 ~
 E
 stalls toilet~
    Toilet stalls are on the rear wall with blue paint on them.  
 ~
 E
-sinks~
-   There are sinks on the east wall, some of them have yellow pot-it-notes with
-'out of order' written on them attached.  
+urinals dividers~
+   On the west wall are urinals with dividers inbetween them, so nobody can
+sneak a peek, even if they wanted to.  
 ~
 S
 #11740
@@ -1180,14 +1180,14 @@ D5
 ~
 0 11700 11737
 E
-statue thedoric~
-   In the center of the room is a small statue dedicated to Thedoric, who is
-doing a dramatic pose.  By the looks of it, he hasn't really done anything.  
-~
-E
 light stairway~
    The stairway up leads to the top, where all the light is coming from.  
 Downstairs the rooms are a bit darker.  
+~
+E
+statue thedoric~
+   In the center of the room is a small statue dedicated to Thedoric, who is
+doing a dramatic pose.  By the looks of it, he hasn't really done anything.  
 ~
 S
 #11741
@@ -1202,17 +1202,17 @@ D2
 ~
 0 11700 11740
 E
-sefas living~
-   There is a cozy looking living area with a couple of sofas gathered around a
-coffee table.  
+bed~
+   The bed is made nicely and tucked away in the corner of the room.  
 ~
 E
 kitchen pots pans~
    The kitchen area is fairly dirty, with some pots and pans lying in the sink.
 ~
 E
-bed~
-   The bed is made nicely and tucked away in the corner of the room.  
+sefas living~
+   There is a cozy looking living area with a couple of sofas gathered around a
+coffee table.  
 ~
 S
 #11742
@@ -1227,12 +1227,12 @@ D0
 ~
 0 11700 11740
 E
-window~
-   There isn't anything special about this window...  
-~
-E
 walls ceiling floor~
    The walls, ceiling and floor are all painted white.  
+~
+E
+window~
+   There isn't anything special about this window...  
 ~
 S
 #11743
@@ -1257,12 +1257,12 @@ D5
 ~
 0 11700 11740
 E
-stairs~
-   The stairs only lead back down into the tower.  
-~
-E
 balconies~
    To the north and the south are extended balconies to the tower.  
+~
+E
+stairs~
+   The stairs only lead back down into the tower.  
 ~
 S
 #11744
@@ -1277,14 +1277,14 @@ D2
 ~
 0 11700 11743
 E
-balcony~
-   The balcony is a stone extension of the tower.  It is made of pewter and has
-a large railing surrounding it to prevent anyone from falling.  
-~
-E
 view forest trees~
    There is an endless view of the Red Forest from here.  It is extremely
 relaxing
+~
+E
+balcony~
+   The balcony is a stone extension of the tower.  It is made of pewter and has
+a large railing surrounding it to prevent anyone from falling.  
 ~
 S
 #11745
@@ -1300,13 +1300,13 @@ D0
 ~
 0 11700 11743
 E
-chairs~
-   There are metal chairs places here so that citizens can look down and relax.
-~
-E
 view citizens town~
    The the entire outside town of Los Torres is visible from here.  Talking
 citizens are noticable, but the sound doesn't reach up this far.  
+~
+E
+chairs~
+   There are metal chairs places here so that citizens can look down and relax.
 ~
 S
 #11746
@@ -1321,8 +1321,8 @@ D2
 ~
 0 11700 11727
 E
-kitchen pots pans~
-   The kitchen area is fairly dirty, with some pots and pans laying in the sink.
+bed~
+   The bed is made nicely and tucked away in a corner of the room.  
 ~
 E
 living sofas~
@@ -1330,8 +1330,8 @@ living sofas~
 coffee table.  
 ~
 E
-bed~
-   The bed is made nicely and tucked away in a corner of the room.  
+kitchen pots pans~
+   The kitchen area is fairly dirty, with some pots and pans laying in the sink.
 ~
 S
 #11747
@@ -1347,13 +1347,13 @@ D0
 ~
 0 11700 11727
 E
-bed~
-   The bed is very small, though it looks very cozy.  
-~
-E
 paintings canvases~
    There are paintings and canvases along the walls.  There are splashes of
 paint behind the art that are the wall's only decorations.  
+~
+E
+bed~
+   The bed is very small, though it looks very cozy.  
 ~
 S
 #11748
@@ -1402,9 +1402,9 @@ D3
 ~
 0 11700 11703
 E
-floor footprints~
-   The white tile floor has been stained with muddy footprints from all the
-shoppers that have browsed around the store.  
+display sign~
+   The weapons and armor on display are rather nice.  A sign hangs near the
+display that says 'Items on display are for DISPLAY ONLY, DO NOT TOUCH'.  
 ~
 E
 celind~
@@ -1412,9 +1412,9 @@ celind~
 good.  It makes most people jump when they see it.  
 ~
 E
-display sign~
-   The weapons and armor on display are rather nice.  A sign hangs near the
-display that says 'Items on display are for DISPLAY ONLY, DO NOT TOUCH'.  
+floor footprints~
+   The white tile floor has been stained with muddy footprints from all the
+shoppers that have browsed around the store.  
 ~
 S
 T 11711
@@ -1434,12 +1434,10 @@ D4
 trapdoor~
 2 11718 11706
 E
-fungus fungi floors~
-   The floos have patches of fungi growing on them.  
-~
-E
-mold walls~
-   The walls are filthy and covered in mold.  
+barrels~
+   The wooden barrels are the source of the wine like stench in the room.  At
+first glance they seemed empty, though since it's so dark it's hard to see
+anything.  The barrels are actually filled with a dark red blood!  
 ~
 E
 cobwebs~
@@ -1447,10 +1445,12 @@ cobwebs~
 nook and cranny you can see.  
 ~
 E
-barrels~
-   The wooden barrels are the source of the wine like stench in the room.  At
-first glance they seemed empty, though since it's so dark it's hard to see
-anything.  The barrels are actually filled with a dark red blood!  
+mold walls~
+   The walls are filthy and covered in mold.  
+~
+E
+fungus fungi floors~
+   The floos have patches of fungi growing on them.  
 ~
 S
 #11753
@@ -1472,15 +1472,15 @@ D2
 blockade~
 1 11700 11754
 E
-foliage twigs leaves trees~
-   The scenery is completely filled with twigs, trees, stumps, leaves and other
-foliage.  All of which seem to have an appropriate shade of red to them.  
-~
-E
 stump~
    The stump is rather grand in comparison with the other stumps on the trail.
 It is wide and has thousands of little rings signifying that it was very old.  
 The tree that was cut down must have been just as obscure as this stump.  
+~
+E
+foliage twigs leaves trees~
+   The scenery is completely filled with twigs, trees, stumps, leaves and other
+foliage.  All of which seem to have an appropriate shade of red to them.  
 ~
 S
 T 11710
@@ -1506,15 +1506,15 @@ D3
 ~
 0 11700 11755
 E
-path~
-   The path is scattered with red stumps, broken trigs and red leaves.  It is
-more visible than the path outside the blockade of trees.  
-~
-E
 trees~
    The trees stretch up for a really long distance.  The red canopy of leaves
 suddenly swallows them up without a trace.  One of the trees is engraved with
 'Red Assassins' in the bark.  
+~
+E
+path~
+   The path is scattered with red stumps, broken trigs and red leaves.  It is
+more visible than the path outside the blockade of trees.  
 ~
 S
 #11755
@@ -1535,14 +1535,9 @@ D5
 sand~
 1 11700 11756
 E
-trees~
-   The trees are somewhat withered away and dead.  The source of this is
-unclear.  
-~
-E
-nest~
-   The nest is made of tiny leaves and placed cutely in the brances of a still
-living tree.  It is so close you could reach out and touch it.  
+path~
+   The path is stumpless and clear, except when it comes to a rather sudden end.
+It leads to the peculiar patch of sand below a lively tree.  
 ~
 E
 sand~
@@ -1550,9 +1545,14 @@ sand~
 path.  It seems to have no important purpose here.  
 ~
 E
-path~
-   The path is stumpless and clear, except when it comes to a rather sudden end.
-It leads to the peculiar patch of sand below a lively tree.  
+nest~
+   The nest is made of tiny leaves and placed cutely in the brances of a still
+living tree.  It is so close you could reach out and touch it.  
+~
+E
+trees~
+   The trees are somewhat withered away and dead.  The source of this is
+unclear.  
 ~
 S
 T 11713
@@ -1611,14 +1611,14 @@ D4
 ~
 0 11700 11704
 E
-hole~
-   There is a large hole in the celing from the Chandelier breaking through the
-floor of The Turkey's Gobble.  
-~
-E
 cobwebs~
    Cobwebs are in every direction of the room, I mean, everywhere.  It is
 impossible to move without touching 20 cobwebs.  It's that bad.  
+~
+E
+hole~
+   There is a large hole in the celing from the Chandelier breaking through the
+floor of The Turkey's Gobble.  
 ~
 S
 #11759
@@ -1639,15 +1639,15 @@ D3
 ~
 0 11700 11756
 E
-stalactices~
-   The stalactites drip water from the celing making an annoying sound with each
-drop.  
-~
-E
 wall door~
    The wall to the east is made of splintery dark wood.  There is a door in the
 wall that has barred windows and a rusty looking handle.  There is a smell of
 urine and excrement...  Also the bitter smell of blood!  
+~
+E
+stalactices~
+   The stalactites drip water from the celing making an annoying sound with each
+drop.  
 ~
 S
 #11760
@@ -1666,9 +1666,9 @@ D3
 door~
 2 11700 11759
 E
-pile excement urine pee poop~
-   There is a small pile of excrement and a puddle of urine in the far corner of
-the room.  The smell of the pile is unbearable!  
+machine barrels~
+   The machine is pumping blood from the ground, somehow, then storing the blood
+into wooden barrels that are stacked next to the machine like a pyramid.  
 ~
 E
 roots~
@@ -1676,9 +1676,9 @@ roots~
 the machine is pumping?!  
 ~
 E
-machine barrels~
-   The machine is pumping blood from the ground, somehow, then storing the blood
-into wooden barrels that are stacked next to the machine like a pyramid.  
+pile excement urine pee poop~
+   There is a small pile of excrement and a puddle of urine in the far corner of
+the room.  The smell of the pile is unbearable!  
 ~
 S
 $~

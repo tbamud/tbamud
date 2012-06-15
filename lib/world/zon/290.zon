@@ -2,6 +2,8 @@
 Matrix of C.A.W.~
 Lizard Lair Safari~
 29000 29099 25 1 d 0 0 0 10 15
+O 0 29008 1 29016 	(a LUCKY)
+D 0 29016 2 1 	(LUCKY)
 M 0 29000 8 29002 	(the sea serpent)
 M 0 29000 8 29002 	(the sea serpent)
 M 0 29000 8 29002 	(the sea serpent)
@@ -66,11 +68,9 @@ M 0 29006 1 29018 	(Mr. Hooper)
 G 1 29009 99 -1 	(a barrel)
 G 1 29010 99 -1 	(a cup)
 G 1 29011 99 -1 	(a glass)
-O 0 29008 10 29016 	(a LUCKY)
 O 0 29003 1 29008 	(a useless key)
 O 0 29004 1 29013 	(a large altar)
 D 0 29002 0 1 	(A Tunnel)
-D 0 29016 2 1 	(LUCKY)
 D 0 29005 3 2 	(Tunnel End)
 D 0 29006 1 2 	(The Conjuring Chamber)
 D 0 29013 1 2 	(Temple Of Morgash)

@@ -73,9 +73,9 @@ The way out!
 0 -1 4402
 S
 #4404
-In a tent.~
-   You are in a small tent with 4 bunks in a corner.  The only exit seems to be
-back west.    
+In a Tent~
+   You are in a small tent with four bunks in a corner.  The only exit seems to
+be back west.
 ~
 44 8 0 0 0 0
 D3
@@ -252,13 +252,13 @@ This opening will take you to the entrance.
 ~
 0 -1 4406
 E
-skulls~
-   Human skulls, no doubt about it!  
-~
-E
 throne chair~
    A chair made from fresh wood, bound with bands of tree bark.  On the top,
 skulls smile back at you with empty eyesockets.  
+~
+E
+skulls~
+   Human skulls, no doubt about it!  
 ~
 S
 #4412
@@ -292,11 +292,11 @@ XXXXXXX +  +--+--+/-+ XXX
 ~
 S
 #4413
-In the shamans tent.~
+In the Shamans Tent~
    You have entered the shamans hut, and a bizarre light is streaming from the
 center of the tent.  It's a mixture of blue and the purple from the tent.  You
 think this is very pretty, and you'd like to watch it for a long time.  
-Unfortunately you seem to have come at a bad time for that, sice the owner is
+Unfortunately you seem to have come at a bad time for that, since the owner is
 here...  In the middle of the tent a fire is burning with a blue flame, and
 magic seems to permeate the very fabric of the tent.  You see a bunk in the
 corner, and you can leave to the south.    

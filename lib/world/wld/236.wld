@@ -38,6 +38,10 @@ D2
 ~
 0 0 23700
 E
+masonry~
+   The stones have been set so close, you can't even force a knife between them.
+~
+E
 sign~
    +----------------------------------+
    |                                  |
@@ -62,10 +66,6 @@ sign~
                    |   |
                    |   |
                    |   |
-~
-E
-masonry~
-   The stones have been set so close, you can't even force a knife between them.
 ~
 S
 #23602
@@ -140,12 +140,12 @@ D1
 0 0 23607
 S
 #23606
-The armourers stall~
-   You are in the corner of the cave, which the dwarves have decided to use as
-trade area.  In this, the farthest corner from the entrance, some shining
-armour has been laid out on an old sack.  Behind it, the assistant to the
-armoursmith is getting ready to display his merchandise to you.  To get back to
-the center of the trade halls, you must go south.    
+The Armourers Stall~
+   You are in the corner of the cave, which the dwarves have decided to use as a
+trade area.  In this, the farthest corner from the entrance, some shining armour
+has been laid out on an old sack.  Behind it, the assistant to the armoursmith
+is getting ready to display his merchandise to you.  To get back to the center
+of the trade halls, you must go south.  
 ~
 236 8 0 0 0 0
 D2
@@ -274,12 +274,6 @@ D0
 ~
 0 0 23611
 E
-rods metal~
-   Long rods of differently alloyed metal hang here.  On the floor next to them,
-bars of lead have been lain down.  Also a barrel sits here, full to the edge
-with leather strips for handles.  
-~
-E
 forge contraption strange~
    A forge with large leather bellows has been set in the full length of the
 eastern wall.  A small stream in the corner makes a small milling wheel turn,
@@ -287,6 +281,12 @@ which in turn makes the bellows blow.  It is obvious to you that the reason for
 putting the forge here is that small stream.  It runs from a hole in the cave
 wall about three feet up, into a hole in the corner.  A small basin suggests the
 stream is used to temper the steel in, too.  
+~
+E
+rods metal~
+   Long rods of differently alloyed metal hang here.  On the floor next to them,
+bars of lead have been lain down.  Also a barrel sits here, full to the edge
+with leather strips for handles.  
 ~
 S
 #23613
@@ -357,14 +357,14 @@ D3
 ~
 0 0 23611
 E
-forge~
-   The forge has been set in sotnes and is extremely hot.  On the other side of
-the fire, you notice the weaponsmiths' smithy.  
-~
-E
 crate~
    A wooden crate about one by two feet.  It contains strips of leather used for
 the armours made here.  
+~
+E
+forge~
+   The forge has been set in sotnes and is extremely hot.  On the other side of
+the fire, you notice the weaponsmiths' smithy.  
 ~
 S
 #23616
@@ -380,13 +380,6 @@ D3
 ~
 0 0 23613
 E
-shelf~
-   A wide shelf has been made from the stone wall.  And you notice it has been
-made by removing the surrounding rock piece by piece.  A labour with no end, it
-seems.  On it a couple of small gemstones have been laid, along with a
-handwritten sign: HANDS OFF!  
-~
-E
 tombstones stones headstones~
    They all look about the same:
 _____________       ___           _______
@@ -398,6 +391,13 @@ _____________       ___           _______
 |           |       | |            |   |
 |           |       | |            |   |
 |___________|       |_|            |___|
+~
+E
+shelf~
+   A wide shelf has been made from the stone wall.  And you notice it has been
+made by removing the surrounding rock piece by piece.  A labour with no end, it
+seems.  On it a couple of small gemstones have been laid, along with a
+handwritten sign: HANDS OFF!  
 ~
 S
 #23617
@@ -548,9 +548,10 @@ The ladder stretches into darkness.
 ~
 0 0 23670
 E
-basket~
-   A large basket, it looks sturdy enough to carry a ton of rock at once.  It
-should be able to carry you with all your belongings without any problems.  
+walls~
+   The walls are the same rock as the surrounding city.  You notice, however,
+that these walls doesn't consist of blocks of stone.  The room's more likely
+been dug out of the mountain.  
 ~
 E
 crane large~
@@ -559,10 +560,9 @@ and stone from the mine.  You think you might be able to fit in the basket
 currently hanging here.  
 ~
 E
-walls~
-   The walls are the same rock as the surrounding city.  You notice, however,
-that these walls doesn't consist of blocks of stone.  The room's more likely
-been dug out of the mountain.  
+basket~
+   A large basket, it looks sturdy enough to carry a ton of rock at once.  It
+should be able to carry you with all your belongings without any problems.  
 ~
 S
 T 23606
@@ -1528,17 +1528,17 @@ A portal leads back to the royal court.
 portal~
 0 0 23663
 E
-altar marble fire~
-   Tha altar is about 3' tall, 6' wide and 2' deep.  It's just out of reach on
-the other side of the silver chain, and on it, an extremely beautiful hammer has
-been put.  
-~
-E
 chain silver~
    A thin silver chain seems to enter the rock on both sides of the altar.  
 There are no hooks or rings, the chain simply continues into the rock.  A strong
 magical field protects the chain, and no matter how you try, you can't seem to
 cross it.  
+~
+E
+altar marble fire~
+   Tha altar is about 3' tall, 6' wide and 2' deep.  It's just out of reach on
+the other side of the silver chain, and on it, an extremely beautiful hammer has
+been put.  
 ~
 S
 #23667
@@ -1557,13 +1557,13 @@ The court continues.
 ~
 0 0 23663
 E
+tapestries~
+   You wonder, could there be anything behind these heavy tapestries?  
+~
+E
 throne chair seat dwarven~
    The Throne has been cut of black marble, and decorated with jade.  In the
 seat the king seem almost divine.  
-~
-E
-tapestries~
-   You wonder, could there be anything behind these heavy tapestries?  
 ~
 S
 T 23603

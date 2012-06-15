@@ -11,6 +11,13 @@ D0
 ~
 0 0 24005
 E
+gate~
+   The large gates are made of wood, but are so heavily reinforced with stell
+that The large gates are made of wood, but are so heavily reinforced with steel
+that you can hardly tell.  It would take someone of inhuman strength to close
+them.  
+~
+E
 credits info~
    Builder   : Rumble
 Zone         : 240 Dun Maura
@@ -27,13 +34,6 @@ Links        : 00s, 37w, 47e, 84n
 Zone: 240 was linked to the following zones:
 100 The Northern Highway           at: 24000 (south) ---> 10096
  86 Duke Kalithorn's Keep          at: 24084 (north) --->  8660
-~
-E
-gate~
-   The large gates are made of wood, but are so heavily reinforced with stell
-that The large gates are made of wood, but are so heavily reinforced with steel
-that you can hardly tell.  It would take someone of inhuman strength to close
-them.  
 ~
 S
 #24001
@@ -596,13 +596,13 @@ D5
 Grate~
 1 0 24088
 E
+grate~
+   A small grate is partially hidden under some dirt and blankets.    
+~
+E
 rug~
    The rug seems to be covering a large grate in the floor.  You wonder if you
 could lift that heavy metal grate.    
-~
-E
-grate~
-   A small grate is partially hidden under some dirt and blankets.    
 ~
 S
 #24031
@@ -1262,8 +1262,8 @@ S
 Whits Lane~
    Minotaurs do not look down on other races, but they rarely understand the
 likes of the "higher", "civilized" species.  They are a very brusque and direct
-people and don't particularly enjoy the likes of those races that rely on
-diplomacy and subterfuge to exist.    
+towards people and don't particularly enjoy the likes of those races that rely
+on diplomacy and subterfuge to exist.  
 ~
 240 0 0 0 0 0
 D0
@@ -1567,7 +1567,10 @@ Zoa Way~
    Minotaurs frequently prize strength and prowess, and tend to prefer simple,
 direct solutions to problems.  The majority of Minotaurs despise laziness and
 injustice.  You wonder exactly at what their definition of laziness and
-injustice would be.    
+injustice would be.  Minotaurs frequently prize strength and prowess, and tend
+to prefer simple, direct solutions to problems.  The majority of Minotaurs
+despise laziness and injustice.  You wonder exactly what their definition of
+laziness and injustice would be.  
 ~
 240 0 0 0 0 0
 D2

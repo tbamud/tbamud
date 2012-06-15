@@ -5,7 +5,7 @@ A crown of gold lies forgotten here.~
 ~
 8 g 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-10 600 0 0
+10 600 0 0 0
 E
 crown gold~
    This golden crown looks to be worth its weight in gold...  
@@ -15,9 +15,9 @@ claymore~
 a claymore~
 An almost new claymore lies here on the ground.~
 ~
-5 h 0 0 0 an 0 0 0 0 0 0 0
+5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 11
-2 110 0 0
+2 110 0 0 0
 E
 claymore~
    This claymore has a similar shape to a dagger except that the hilt is
@@ -32,7 +32,7 @@ A pile of clothing has been left here.  It looks like robes.~
 ~
 9 ag 0 0 0 ak 0 0 0 0 0 0 0
 5 0 0 0
-5 300 0 0
+5 300 0 0 0
 E
 robes lizardman~
    These robes have intricate designs on them with a flavour towards the
@@ -49,18 +49,18 @@ A completely useless key lies here.~
 ~
 18 0 0 0 0 ab 0 0 0 0 0 0 0
 29003 0 0 0
-1 1 0 0
-E
-reason~
-   There is absolutely no reason for this key except to be an ignorant item that
-no one can get.  The bonuses are in case some Id's it and should be ignored
-since the item cannot be used anyways.  
-~
+1 1 0 0 0
 E
 key useless~
    This key is completely useless since it cannot be picked up and to get to it,
 the door it unlocks must be unlocked...  Hmmmmm, I'm sure that there is some
 obscure reason for it though...  
+~
+E
+reason~
+   There is absolutely no reason for this key except to be an ignorant item that
+no one can get.  The bonuses are in case some Id's it and should be ignored
+since the item cannot be used anyways.  
 ~
 A
 1 3
@@ -71,20 +71,20 @@ An astronomically huge altar stands in the middle of the room.~
 ~
 9 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
-writing~
-   Not to insult your intelligence or anything, but it happens to be completely
-and utterly incomprehensible.  
+altar~
+   This altar is really BIG.  It has neat little incomprehensible writing all
+over it.  
 ~
 E
 twit~
    It can be worn on your head, you twit!  
 ~
 E
-altar~
-   This altar is really BIG.  It has neat little incomprehensible writing all
-over it.  
+writing~
+   Not to insult your intelligence or anything, but it happens to be completely
+and utterly incomprehensible.  
 ~
 A
 14 -30
@@ -97,7 +97,7 @@ A large green key lies here.~
 ~
 18 abg 0 0 0 ao 0 0 0 0 0 0 0
 29005 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 key green~
    This key is to be used for the exit.  Nothing else.  
@@ -109,15 +109,15 @@ A magical scroll sits here.~
 ~
 2 f 0 0 0 ao 0 0 0 0 0 0 0
 17 1 3 35
-5 200 0 0
+5 200 0 0 0
+E
+magic scroll~
+   This magical scroll has the word 'EEFRTFG' on it.  
+~
 E
 eefrtfg~
    Actually, I was sort of hoping you knew what it meant...  Since I haven't the
 foggiest.  
-~
-E
-magic scroll~
-   This magical scroll has the word 'EEFRTFG' on it.  
 ~
 A
 14 10
@@ -128,7 +128,7 @@ A shield is laying here on the ground.~
 ~
 9 a 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
-13 513 0 0
+13 513 0 0 0
 E
 shield~
    This is a very plain shield as if the creator had gotten extremely annoyed by
@@ -143,7 +143,7 @@ A LUCKY is lying here on the ground.~
 ~
 18 0 0 0 0 ao 0 0 0 0 0 0 0
 29008 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 lucky~
    Boy are you lucky you found this...  IT opens the door in the tunnels.  
@@ -155,7 +155,7 @@ A milk barrel has been left here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 50 50 10 0
-50 60 0 0
+50 60 0 0 0
 E
 milk barrel~
    This barrel is a standard Sesame Street milk barrel, normally found in Mr.  
@@ -168,7 +168,7 @@ A cup of milk, don't spill it.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 5 5 10 0
-10 10 0 0
+10 10 0 0 0
 #29011
 milk glass milk~
 a glass~
@@ -176,7 +176,7 @@ A milk glass is sitting here waiting for an eager drinker.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 5 5 10 0
-6 10 0 0
+6 10 0 0 0
 E
 milk glass~
    This is an ordinary glass with the Sesame Street emblem engraved on the side.
@@ -189,7 +189,7 @@ A small chocolate chip cookie has been left here.~
 ~
 19 0 0 0 0 ao 0 0 0 0 0 0 0
 6 0 0 0
-1 7 0 0
+1 7 0 0 0
 E
 cookie chocolate chip small~
    This is essentially just a small version of the VERY BIG CHOCOLATE CHIP

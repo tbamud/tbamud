@@ -22,7 +22,7 @@ Give Suggestions - 1302~
 0 g 100
 ~
 wait 2 sec
-say The best advice for new builders is under @RHELP SUGGESTIONS@n.
+say The best advice for new builders is under 	RHELP SUGGESTIONS	n.
 ~
 #1302
 Finish Redit Hallway - 1304~
@@ -33,9 +33,9 @@ say Good Job. That's the first form of OLC (on-line-creation) everyone learns.
 wait 2 sec
 say Now I would suggest that you practice what you have learned.
 wait 2 sec
-say Check your title under @RWHO@n. A vnum should be listed there, if not mudmail Rumble for one.
+say Check your title under 	RWHO	n. A vnum should be listed there, if not mudmail Rumble for one.
 wait 2 sec
-say Just type @RGOTO VNUM@n and type redit to modify your room.
+say Just type 	RGOTO VNUM	n and type redit to modify your room.
 wait 2 sec
 say Once you think you have it complete go ahead and move on to the next hallway.
 wait 3 sec
@@ -45,7 +45,7 @@ beam %actor.name%
 CAPITAL LETTERS (1301)~
 0 c 0
 CAPITAL~
-%send% %actor% @RSocrates tells you, 'Good job, that is correct. Be on the lookout for more of those.'@n
+%send% %actor% 	RSocrates tells you, 'Good job, that is correct. Be on the lookout for more of those.'	n
 ~
 #1304
 Sanct check on enter~
@@ -157,10 +157,10 @@ Eat, look, read, candy~
 if look /= %cmd.mudcommand% && heart /= %arg% && %arg% || read /= %cmd.mudcommand% && heart /= %arg% && %arg% || read /= %cmd.mudcommand% && candy /= %arg% && %arg% || look /= %cmd.mudcommand% && candy /= %arg% && %arg%
 *
 eval color %random.3%
-set col[1] \@W
-set col[2] \@R
-set col[3] \@M
-*@n
+set col[1] \	W
+set col[2] \	R
+set col[3] \	M
+*	n
 eval colors %%col[%color%]%%
 *
 eval heart %random.15%
@@ -182,7 +182,7 @@ set love[15] Cutie Pie
 eval candy %%love[%heart%]%%
 *
 %send% %actor% Written on the candy is:
-%send% %actor% %colors% %candy% \@n
+%send% %actor% %colors% %candy% \	n
 *
 elseif eat /= %cmd.mudcommand% && heart /= %arg% && %arg% ||  eat /= %cmd.mudcommand% && candy /= %arg% && %arg%
 *
@@ -1812,9 +1812,8 @@ Trial Vnum Assigner - 1332~
 *~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Player must have nohassle off! To junk assigner use tbalim purge player.
-set actor %self.carried_by%
-*Shouldn't be necessary, added by Fizban due to script not knowing who actor was under certain circumstances
-if %actor.varexists(TBA_trial_vnum)% && %actor.level% == 30
+if %actor.level% > 30
+  set actor %self.carried_by%
   * We set completed trial vnums to -#. So if negative abort.
   if %actor.TBA_trial_vnum% < 0
     return 0

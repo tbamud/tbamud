@@ -40,50 +40,24 @@ D5
 ~
 0 0 2798
 E
-7~
-   The orb is only kept in one place, held by the skeletal creature in room
-2763.  The only problem is that the way in is a one way exit, the only other
-ways out are a death trap to the east..  Or to kneel to the creature so that he
-teleports you out.  In order to get the orb you must kill the creature, which
-then leaves you trapped there...  Or does it?  ;-) There is a memlin child in
-room 2722 who will explain to you the wonders of Dynar magic - namely that a
-glowing circle works as a portal.  So, all you need to do is kill the creature,
-take the orb and KNEEL CIRCLE to get out.  
+spoilers~
+   Ahhh, cheater!!  Don't you want to enjoy the zone?!  *sniff*, ok, if you
+really have to look there are a few little secrets listed here to spoil your
+zone exploring pleasure.  Just type look # to look at each one.    
+1: Temple Entrance Puzzle
+2: Lost Child Puzzle
+3: Goethite Shackle
+4: Girl who Transforms to Doll
+5: Colour-changing Shard of Glass
+6: Defeating the Sorceress
+7: Getting the Orb
 ~
 E
-6~
-   The Sorceress does two main things while fighting.  First, she will randomly
-cause a circle of fire to flare up, that will damage you if you try to flee or
-exit the room.  Second, she will occasionally use her staff to fireball anyone
-attacking her.  If you kill her in the normal way, her staff will remain behind
-and reincarnate her after a few minutes.  The only way to permanently get rid of
-her, and get ahold of her items, is to get the glowing orb from the skeletal
-creature in room 2763.  Once you have the orb, you must defeat the sorceress in
-the normal way and then USE ORB as soon as she is gone and only her staff
-remains.  This will dissolve the remaining fire elemental and kill the sorceress
-permanently.  It will also leave behind everything she was wearing.  By the way,
-her firey dress will burn whoever wears it, unless they are also wearing the
-crystal nymph ring.  
-~
-E
-5~
-   The shard of glass (2727) that loads in room 2754 will change colours and
-display a message when you pick it up.  The colour/message is different for
-each class of player.    
-~
-E
-4~
-   Upon entering room 2742, a little girl will appear and transform herself
-into a doll (2723).  This doll when kept in your inventory will perform attacks
-randomly when you fight.  It will do this three times and then change back into
-a girl who runs away.  (The doll will only load once in this room until you
-either use up its three attacks, or pass room 2702)
-~
-E
-3~
-   The Goethite shackle (2708) when worn, cannot be removed except for in the
-center of the Twilight Temple (2743) where the Keeper will remove it
-automatically for you.    
+1~
+   The northern exit in room 2707 will normally repel you, causing you to sit
+down if you try to enter.  When you stand up, the resident memlin will explain
+that only the enslaved may enter.  This means..  You guessed it, you have to be
+wearing the Goethite shackle to be allowed to pass.    
 ~
 E
 2~
@@ -102,24 +76,50 @@ you found her.  Examining those floorboards (room 2719) will reveal a hidden key
 that allows passage through the glassygates into the Sorceress' palace area.  
 ~
 E
-1~
-   The northern exit in room 2707 will normally repel you, causing you to sit
-down if you try to enter.  When you stand up, the resident memlin will explain
-that only the enslaved may enter.  This means..  You guessed it, you have to be
-wearing the Goethite shackle to be allowed to pass.    
+3~
+   The Goethite shackle (2708) when worn, cannot be removed except for in the
+center of the Twilight Temple (2743) where the Keeper will remove it
+automatically for you.    
 ~
 E
-spoilers~
-   Ahhh, cheater!!  Don't you want to enjoy the zone?!  *sniff*, ok, if you
-really have to look there are a few little secrets listed here to spoil your
-zone exploring pleasure.  Just type look # to look at each one.    
-1: Temple Entrance Puzzle
-2: Lost Child Puzzle
-3: Goethite Shackle
-4: Girl who Transforms to Doll
-5: Colour-changing Shard of Glass
-6: Defeating the Sorceress
-7: Getting the Orb
+4~
+   Upon entering room 2742, a little girl will appear and transform herself
+into a doll (2723).  This doll when kept in your inventory will perform attacks
+randomly when you fight.  It will do this three times and then change back into
+a girl who runs away.  (The doll will only load once in this room until you
+either use up its three attacks, or pass room 2702)
+~
+E
+5~
+   The shard of glass (2727) that loads in room 2754 will change colours and
+display a message when you pick it up.  The colour/message is different for
+each class of player.    
+~
+E
+6~
+   The Sorceress does two main things while fighting.  First, she will randomly
+cause a circle of fire to flare up, that will damage you if you try to flee or
+exit the room.  Second, she will occasionally use her staff to fireball anyone
+attacking her.  If you kill her in the normal way, her staff will remain behind
+and reincarnate her after a few minutes.  The only way to permanently get rid of
+her, and get ahold of her items, is to get the glowing orb from the skeletal
+creature in room 2763.  Once you have the orb, you must defeat the sorceress in
+the normal way and then USE ORB as soon as she is gone and only her staff
+remains.  This will dissolve the remaining fire elemental and kill the sorceress
+permanently.  It will also leave behind everything she was wearing.  By the way,
+her firey dress will burn whoever wears it, unless they are also wearing the
+crystal nymph ring.  
+~
+E
+7~
+   The orb is only kept in one place, held by the skeletal creature in room
+2763.  The only problem is that the way in is a one way exit, the only other
+ways out are a death trap to the east..  Or to kneel to the creature so that he
+teleports you out.  In order to get the orb you must kill the creature, which
+then leaves you trapped there...  Or does it?  ;-) There is a memlin child in
+room 2722 who will explain to you the wonders of Dynar magic - namely that a
+glowing circle works as a portal.  So, all you need to do is kill the creature,
+take the orb and KNEEL CIRCLE to get out.  
 ~
 S
 #2701
@@ -145,9 +145,9 @@ air wafting from the branches.
 ~
 0 0 2798
 E
-trees~
-   The trees seem to close heavily around the cave entrance, almost concealing
-it as though willed by some magic to do so.    
+cave~
+   This open cave is so dark you can hardly see inside, but silent figures can
+be seen lurking just within the shadows.    
 ~
 E
 rubble piles~
@@ -155,9 +155,9 @@ rubble piles~
 the surrounding air.    
 ~
 E
-cave~
-   This open cave is so dark you can hardly see inside, but silent figures can
-be seen lurking just within the shadows.    
+trees~
+   The trees seem to close heavily around the cave entrance, almost concealing
+it as though willed by some magic to do so.    
 ~
 S
 #2702
@@ -250,14 +250,14 @@ flickering within and a thin layer of sand covers the floor.
 ~
 0 0 2706
 E
-pile rocks~
-   This pile of rocks has a strange powdery coating, the pale yellowish colour
-and the surrounding smell indicates that it might be sulfur.    
-~
-E
 sharp stalactites~
    These mineral encrustations look to have formed over many months or even
 years, jagged and sparkling like dry icicles.
+~
+E
+pile rocks~
+   This pile of rocks has a strange powdery coating, the pale yellowish colour
+and the surrounding smell indicates that it might be sulfur.    
 ~
 S
 #2705
@@ -303,14 +303,14 @@ entrance like menacing teeth.
 ~
 0 0 2704
 E
-flickering lantern~
-   This lantern has been attached to the wall so that it cannot be taken.  A
-bright flame burns steadily, illuminating the way.    
-~
-E
 footprints~
    These tiny footprints, leading to the north, are unusually small but
 unmistakeably memlin, indicating the presence of children in these caverns.  
+~
+E
+flickering lantern~
+   This lantern has been attached to the wall so that it cannot be taken.  A
+bright flame burns steadily, illuminating the way.    
 ~
 S
 #2707
@@ -336,9 +336,9 @@ and an unpleasant smell drifts from this direction.
 undefined~
 0 0 2704
 E
-tools~
-   Various picks, shovels, and the occasional rusted knife lie abandoned here,
-unusable by the look of them.    
+curtain~
+   A strange mist surrounds the northern curtain, circulating slowly but not
+dispersing, as if it guarded the way.
 ~
 E
 mine cart~
@@ -346,9 +346,9 @@ mine cart~
 and on closer inspection one of the wheels looks cracked beyond repair.    
 ~
 E
-curtain~
-   A strange mist surrounds the northern curtain, circulating slowly but not
-dispersing, as if it guarded the way.
+tools~
+   Various picks, shovels, and the occasional rusted knife lie abandoned here,
+unusable by the look of them.    
 ~
 S
 T 2717
@@ -487,9 +487,13 @@ unseen light source.
 ~
 0 0 2713
 E
-grassy moss~
-   These tiny tufts of moss give a welcome splash of green to the sandy brown
-of these tunnels, scenting the air subtly as well.    
+tiny fading footprints~
+   These little footprints seem to vanish mysteriously to the east.    
+~
+E
+sign~
+   This sign has been filled with various words and numbers that appear to be
+dates, but not particularly legible or significant to non-memlins.    
 ~
 E
 large round bench~
@@ -498,13 +502,9 @@ memlins, though judging by its slightly buckling legs, it has probably held
 more.    
 ~
 E
-sign~
-   This sign has been filled with various words and numbers that appear to be
-dates, but not particularly legible or significant to non-memlins.    
-~
-E
-tiny fading footprints~
-   These little footprints seem to vanish mysteriously to the east.    
+grassy moss~
+   These tiny tufts of moss give a welcome splash of green to the sandy brown
+of these tunnels, scenting the air subtly as well.    
 ~
 S
 #2713
@@ -550,15 +550,15 @@ way to a sandy path.
 ~
 0 0 2713
 E
-thick crystal pane~
-   This pane acts like a skylight, allowing the intense heat and light of the
-sun to flood the room, magnified by the refracting ability of the crystal.    
-~
-E
 creeping vines~
    These vines look fantastically healthy and seem to be growing at a fast
 rate, wall-papering the sides and ceiling of the cave with various shades of
 green.    
+~
+E
+thick crystal pane~
+   This pane acts like a skylight, allowing the intense heat and light of the
+sun to flood the room, magnified by the refracting ability of the crystal.    
 ~
 S
 #2715
@@ -618,9 +618,9 @@ movement filling the air.
 ~
 0 0 2715
 E
-kitchen utensils~
-   Various pieces of cutlery lie strewn apart, long handled spoons and sharp
-chopping knives, all in various stages of use.
+huge stacks plates~
+   Most of these plates are smoothly carved from wood, chipped here and there in
+places as if well used, most stacked in dirty piles waiting to be cleaned.
 ~
 E
 large pot~
@@ -628,9 +628,9 @@ large pot~
 smell as every now and again something bobs to the surface and dips back down.
 ~
 E
-huge stacks plates~
-   Most of these plates are smoothly carved from wood, chipped here and there in
-places as if well used, most stacked in dirty piles waiting to be cleaned.
+kitchen utensils~
+   Various pieces of cutlery lie strewn apart, long handled spoons and sharp
+chopping knives, all in various stages of use.
 ~
 S
 #2717
@@ -649,16 +649,16 @@ activity filling the air.
 ~
 0 0 2715
 E
-various tools watering cans rakes~
-   These tools all seem to play a major role in gardening and growing various
-crops, most of them starting to rust and decay from what appears to be lack of
-care.
-~
-E
 buckets pods seeds~
    A variety of green husks and several pouches of seeds spill carelessly into
 their bucket containers, some of them sprouting into tiny roots from the
 dampness.  
+~
+E
+various tools watering cans rakes~
+   These tools all seem to play a major role in gardening and growing various
+crops, most of them starting to rust and decay from what appears to be lack of
+care.
 ~
 S
 #2718
@@ -682,14 +682,14 @@ water filling the air.
 ~
 0 0 2712
 E
-faded blood streaks~
-   It looks as if this place is a site of regular injury, old and new blood
-marks marring the otherwise shiny surface of the rock.
-~
-E
 film slimy moisture~
    The ground glistens wetly, a combination of what looks to be moulded water
 and weaving slug trails makes it appear very slippery indeed.
+~
+E
+faded blood streaks~
+   It looks as if this place is a site of regular injury, old and new blood
+marks marring the otherwise shiny surface of the rock.
 ~
 S
 T 2711
@@ -708,9 +708,10 @@ the surrounding rock, making the cupboard appear inescapable.
 seamlessdoor~
 1 0 2712
 E
-broken toys~
-   A tiny clay doll's head lies in the dirt, its unblinking eyes coated in a
-delicate film of dust.
+old cobwebs~
+   These webs look to be years old, any beauty to their carefully woven
+structure, long eroded, greyed and dimmed so that they are little more than
+fluttering ghosts in the breeze.
 ~
 E
 useless tools~
@@ -718,10 +719,9 @@ useless tools~
 ground, forgotten and left to rot.
 ~
 E
-old cobwebs~
-   These webs look to be years old, any beauty to their carefully woven
-structure, long eroded, greyed and dimmed so that they are little more than
-fluttering ghosts in the breeze.
+broken toys~
+   A tiny clay doll's head lies in the dirt, its unblinking eyes coated in a
+delicate film of dust.
 ~
 S
 #2720
@@ -774,17 +774,17 @@ extends into darkness.
 ~
 0 0 2723
 E
-several benches~
-   These benches are simple in design, barely more than wooden slabs, fastened
-to the stony walls and worn in places.
-~
-E
 large stone sculpture weighing scales~
    A tall spiralling column of metallic rock stretches almost to the roof of the
 cavern, two elegant silvery arms spreadeagling out from either side.  At the end
 of each a long loop of sparkling chain hangs down, each suspending a flat metal
 plate, a careful representation of the scales normally used for weighing and
 measuring.
+~
+E
+several benches~
+   These benches are simple in design, barely more than wooden slabs, fastened
+to the stony walls and worn in places.
 ~
 S
 #2722
@@ -804,15 +804,15 @@ the swirling droplets of water.
 ~
 0 0 2721
 E
-towels~
-   These towels look as though they were once clean and fluffy, but now are
-little more than brown rags, used solely for getting the job done.    
-~
-E
 lumps soap~
    These appear to have been mashed together out of some homemade substance and
 used as soap.  Several of the slippery lumps sit in crevices along the spring.
   
+~
+E
+towels~
+   These towels look as though they were once clean and fluffy, but now are
+little more than brown rags, used solely for getting the job done.    
 ~
 S
 #2723
@@ -837,14 +837,14 @@ tall sculpture rising from the ground.
 ~
 0 0 2721
 E
-cubicle-like hollows~
-   These little carved hollows seem to be used as bunk beds, comfortable looking
-arrangements of moss and bracken fluffed together into bedding piles.
-~
-E
 trailing vines~
    These dark veiny tendrils weave their way along the walls, providing firm
 support for anyone who would wish to climb inside the higher hollows.
+~
+E
+cubicle-like hollows~
+   These little carved hollows seem to be used as bunk beds, comfortable looking
+arrangements of moss and bracken fluffed together into bedding piles.
 ~
 S
 #2724
@@ -863,15 +863,15 @@ humidity.
 ~
 0 0 2723
 E
-toys~
-   Several basic children's toys lie scattered around, a bright pink ball
-particularly catches the eye, as does a rather beautiful painted doll.    
-~
-E
 drawings~
    These drawings look meticulously done, many of the papers depicting the sun
 and the moon.  A few of the newer ones show memlin stick-figures wielding picks
 and digging.    
+~
+E
+toys~
+   Several basic children's toys lie scattered around, a bright pink ball
+particularly catches the eye, as does a rather beautiful painted doll.    
 ~
 S
 #2725
@@ -1591,7 +1591,7 @@ T 2754
 liberally decorated with everything that used to make up the insides of your
 body.  
 ~
-27 2 0 0 0 0
+27 0 0 0 0 0
 S
 T 2735
 #2765
@@ -2195,15 +2195,8 @@ tranquility of this place.
 ~
 27 8 0 0 0 0
 E
-wall-hung wall hung candles~
-   These tall elegant candles burn brightly, scarlet flickers of flame dancing
-upon the wax as if to some unheard rhythm.  
-~
-E
-beautiful bed~
-   The smooth, dark frame of this bed has been carved by the hand of a skilled
-master, various artistic depictions of love emerging from the flowing lines of
-the wood as if they had grown there.  
+test~
+   Move bounce
 ~
 E
 glass fountain~
@@ -2212,8 +2205,15 @@ smooth pebbles within, small drops of water splashing over the side as it
 trickles.    
 ~
 E
-test~
-   Move bounce
+beautiful bed~
+   The smooth, dark frame of this bed has been carved by the hand of a skilled
+master, various artistic depictions of love emerging from the flowing lines of
+the wood as if they had grown there.  
+~
+E
+wall-hung wall hung candles~
+   These tall elegant candles burn brightly, scarlet flickers of flame dancing
+upon the wax as if to some unheard rhythm.  
 ~
 S
 $~

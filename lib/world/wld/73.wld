@@ -77,19 +77,19 @@ You can see some light to the west.
 ~
 0 -1 7302
 E
-mud~
-   When you examine the mud, you notice small worms crawling around.  
-~
-E
 worms~
    The worms are purple.  They do not look edible.  
+~
+E
+mud~
+   When you examine the mud, you notice small worms crawling around.  
 ~
 S
 #7304
 The Cave Turning-Point~
-   The mud is getting deeper.  You are wondering, 'Would it be an idea to
-leave, before I disappear?'.  To the south you notice a flat round stone
-is blocking the way.  To the west you can see mud.
+   The mud is getting deeper.  You are wondering, 'Would it be an idea to leave,
+before I disappear?'  To the south you notice a flat round stone is blocking the
+way.  To the west you can see mud.
 ~
 73 9 0 0 0 0
 D2
@@ -127,13 +127,13 @@ You see a grey block.
 block grey~
 1 -1 7306
 E
-socket~
-   The socket looks like the work of a dwarf.  It is VERY beautiful.  
-~
-E
 crystal globe~
    The crystal globe is glowing with a pulsing light.  It looks like there is
 smoke inside it.  
+~
+E
+socket~
+   The socket looks like the work of a dwarf.  It is VERY beautiful.  
 ~
 S
 #7306
@@ -437,9 +437,10 @@ The eastern part of the lair.
 ~
 0 -1 7317
 E
-table~
-   On the table there is dust, in the center there is a small statue of a Dragon
-sleeping.  
+dragon statue~
+   It looks like a silver dragon.  It is nailed onto the table.  The dragon sits
+on a red dragon that looks dead.  But the eyes of the red dragon are glowing,
+pulsating red.  You feel drained.  
 ~
 E
 skeleton skeletons~
@@ -447,10 +448,9 @@ skeleton skeletons~
 sword or club.  
 ~
 E
-dragon statue~
-   It looks like a silver dragon.  It is nailed onto the table.  The dragon sits
-on a red dragon that looks dead.  But the eyes of the red dragon are glowing,
-pulsating red.  You feel drained.  
+table~
+   On the table there is dust, in the center there is a small statue of a Dragon
+sleeping.  
 ~
 S
 #7321
@@ -533,22 +533,22 @@ You see a room far away.
 ~
 0 -1 7323
 E
-head heads~
-   When you study the faces of the heads you see that they are faces of dragons.
-The face to the north is red, the face to the east is green, and the face to the
-south is blue.  
-~
-E
-green~
-   This looks like an evil dragon.  
+blue~
+   This looks like a good dragon.  
 ~
 E
 red~
    This looks like a neutral dragon.  
 ~
 E
-blue~
-   This looks like a good dragon.  
+green~
+   This looks like an evil dragon.  
+~
+E
+head heads~
+   When you study the faces of the heads you see that they are faces of dragons.
+The face to the north is red, the face to the east is green, and the face to the
+south is blue.  
 ~
 S
 #7325

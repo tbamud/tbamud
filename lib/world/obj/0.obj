@@ -31,10 +31,6 @@ The email listing of the gods is pinned against the wall.~
 0 0 0 0
 1 1 0 30 0
 E
-emails listing~
-   HELP CONTACT
-~
-E
 wizlist~
                                  Implementors
                                  ~~~~~~~~~~~ 
@@ -50,6 +46,10 @@ wizlist~
         Kyr   Macros   Meyekul   Mick   Minisham   Mythran   Neela   Poiu
     Santa   Shamra   Shimmer   Silvanos   Smaug   Snowlock   Talgard   Taylor
        Theophilus   Tocamat   Torpidai   Treestump   Tuskony   Zizazat   
+~
+E
+emails listing~
+   HELP CONTACT
 ~
 #5
 foraged berries~
@@ -1119,11 +1119,13 @@ T 99
 T 176
 E
 teleporter~
-   This teleporter is used to transfer players between zones.  Accessible zones
-are listed under HELP AREAS by being CAPITALIZED.  For example to teleport to:
+This teleporter is used to transfer players between zones.  Accessible zones
+are listed under HELP ZONES by being CAPITALIZED.  For example to teleport to:
   74 Newbie GRAVEyard                   -- Jojen                       3- 5
 type: teleport grave
    The teleporter may also be used to recall back to Midgaard at any time.
+ 
+Uncapitalized zones are linked through a capitalized zone.
 ~
 #83
 slip paper tapcode code~

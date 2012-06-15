@@ -103,12 +103,12 @@ D4
 door~
 0 20100 20100
 E
-dust~
-   It is powdery-looking and grey in colour.  
-~
-E
 footprints prints foot~
    The footprints are still fresh.  
+~
+E
+dust~
+   It is powdery-looking and grey in colour.  
 ~
 S
 #20105
@@ -229,15 +229,15 @@ Konolua Beach
 ~
 0 20100 20105
 E
+tree trees~
+   The trees have broad leaves that can provide shade from the sun in the
+morning.  
+~
+E
 cliff~
    The cliff stands tall at a good 45 feet skywards.  Covered with plenty of
 vegetation, it looks like a guards standing the coast protecting the shores from
 danger.  
-~
-E
-tree trees~
-   The trees have broad leaves that can provide shade from the sun in the
-morning.  
 ~
 S
 T 20103
@@ -859,7 +859,7 @@ Underwater~
    You are submerged underwater, and all around you is water.  Corals sway under
 the water currents and dance, while shoals of fishes dart around in the shadows.
 ~
-201 2 0 0 0 0
+201 0 0 0 0 0
 S
 #20131
 In the Deep Ocean~
@@ -1360,14 +1360,14 @@ D2
 ~
 0 20100 20147
 E
-north cliff~
-   Marks leading to the north cliff suggests that something has been dragged
-there.  Perhaps @Rsearch@ning for something will uncover a treasure box?  
-~
-E
 sand marks~
    Lines leading to the area against the north cliff suggests that something has
 been dragged there.  
+~
+E
+north cliff~
+   Marks leading to the north cliff suggests that something has been dragged
+there.  Perhaps 	Rsearch	ning for something will uncover a treasure box?  
 ~
 S
 T 20121

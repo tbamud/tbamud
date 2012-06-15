@@ -146,7 +146,7 @@ D
    N
 Too bad, you seem to have fallen into a never ending abyss.
 ~
-57 6 0 0 0 0
+57 4 0 0 0 0
 S
 T 5799
 #5708
@@ -434,13 +434,13 @@ D4
 ~
 0 0 5724
 E
-bones~
-   These bones are mostly crushed and powdered but most of them look human...  
-~
-E
 tracks~
    These tracks are insect like and very large.  Whatever made these must be
 huge.  
+~
+E
+bones~
+   These bones are mostly crushed and powdered but most of them look human...  
 ~
 S
 #5724
@@ -513,12 +513,12 @@ The sap is dribbling down the trunk forming a pool at the base of the tree.
 ~
 0 0 5731
 E
-eyes~
-   The eyes are small and beady, they look evil.  
-~
-E
 ladder~
    Sap oozes down this ladder forming a sticky covering.  
+~
+E
+eyes~
+   The eyes are small and beady, they look evil.  
 ~
 S
 #5728
@@ -645,11 +645,11 @@ D5
 ~
 0 0 5733
 E
-blood~
+pool~
    A pool of bluey gray blood has collected in the corner.  
 ~
 E
-pool~
+blood~
    A pool of bluey gray blood has collected in the corner.  
 ~
 S
