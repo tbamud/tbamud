@@ -449,7 +449,7 @@ EVENTFUNC(event_whirlwind)
 }
 
 /* The "Whirlwind" skill is designed to provide a basic understanding of the
- * mud event and list systems. This is in NO WAY a balanced skill. */
+ * mud event and list systems. */
 ACMD(do_whirlwind)
 {
   
