@@ -125,6 +125,10 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
 	    "/s         -  saves text\r\n");
     break;
   case PARSE_TOGGLE:
+    if (!*d->str) {
+      write_to_output(d, "No string.\r\n");        
+      break;
+    }
     if (strchr(*d->str, '@')) {
       parse_at(*d->str);
       write_to_output(d, "Toggling (at) into (tab) Characters...\r\n");  
