@@ -334,7 +334,7 @@ void ProtocolDestroy( protocol_t *apProtocol )
 
    for ( i = eMSDP_NONE+1; i < eMSDP_MAX; ++i )
    {
-	  if (apProtocol->pVariables[i]->pValueString)
+      if (apProtocol->pVariables[i]->pValueString)
         free(apProtocol->pVariables[i]->pValueString);
       free(apProtocol->pVariables[i]);
    }
@@ -1402,7 +1402,7 @@ const char *ColourRGB( descriptor_t *apDescriptor, const char *apRGB )
    bool charHasColor = TRUE;
    
    if (apDescriptor->character && !clr(apDescriptor->character, C_CMP))
-		charHasColor = FALSE;
+     charHasColor = FALSE;
 
    if ( pProtocol && pProtocol->pVariables[eMSDP_ANSI_COLORS]->ValueInt && charHasColor )
    {

@@ -385,19 +385,19 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
   int door;
 
   if (*dir) {			/* a direction was specified */
-	if ((door = search_block(dir, dirs, FALSE)) == -1) { /* Partial Match */
-	  if ((door = search_block(dir, autoexits, FALSE)) == -1) { /* Check 'short' dirs too */
-		send_to_char(ch, "That's not a direction.\r\n");
-		return (-1);
-	  }
+    if ((door = search_block(dir, dirs, FALSE)) == -1) { /* Partial Match */
+      if ((door = search_block(dir, autoexits, FALSE)) == -1) { /* Check 'short' dirs too */
+        send_to_char(ch, "That's not a direction.\r\n");
+        return (-1);
+      }
     }
     if (EXIT(ch, door)) {	/* Braces added according to indent. -gg */
       if (EXIT(ch, door)->keyword) {
-	if (is_name(type, EXIT(ch, door)->keyword))
-	  return (door);
-	else {
-	  send_to_char(ch, "I see no %s there.\r\n", type);
-	  return (-1);
+        if (is_name(type, EXIT(ch, door)->keyword))
+          return (door);
+        else {
+          send_to_char(ch, "I see no %s there.\r\n", type);
+          return (-1);
         }
       } else
 	return (door);
@@ -530,7 +530,7 @@ static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int
   if (!obj && ((other_room = EXIT(ch, door)->to_room) != NOWHERE))
     if ((back = world[other_room].dir_option[rev_dir[door]]) != NULL)
       if (back->to_room != IN_ROOM(ch))
-	back = NULL;
+        back = NULL;
 
   switch (scmd) {
   case SCMD_OPEN:
@@ -573,15 +573,15 @@ static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int
   /* Notify the room. */
   if (len < sizeof(buf))
     snprintf(buf + len, sizeof(buf) - len, "%s%s.",
-	obj ? "" : "the ", obj ? "$p" : EXIT(ch, door)->keyword ? "$F" : "door");
+      obj ? "" : "the ", obj ? "$p" : EXIT(ch, door)->keyword ? "$F" : "door");
   if (!obj || IN_ROOM(obj) != NOWHERE)
     act(buf, FALSE, ch, obj, obj ? 0 : EXIT(ch, door)->keyword, TO_ROOM);
 
   /* Notify the other room */
   if (back && (scmd == SCMD_OPEN || scmd == SCMD_CLOSE))
       send_to_room(EXIT(ch, door)->to_room, "The %s is %s%s from the other side.\r\n",
-		back->keyword ? fname(back->keyword) : "door", cmd_door[scmd],
-		scmd == SCMD_CLOSE ? "d" : "ed");
+        back->keyword ? fname(back->keyword) : "door", cmd_door[scmd],
+        scmd == SCMD_CLOSE ? "d" : "ed");
 }
 
 static int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd)
@@ -646,14 +646,11 @@ ACMD(do_gen_door)
     keynum = DOOR_KEY(ch, obj, door);
     if (!(DOOR_IS_OPENABLE(ch, obj, door)))
       send_to_char(ch, "You can't %s that!\r\n", cmd_door[subcmd]);
-    else if (!DOOR_IS_OPEN(ch, obj, door) &&
-	     IS_SET(flags_door[subcmd], NEED_OPEN))
+    else if (!DOOR_IS_OPEN(ch, obj, door) && IS_SET(flags_door[subcmd], NEED_OPEN))
       send_to_char(ch, "But it's already closed!\r\n");
-    else if (!DOOR_IS_CLOSED(ch, obj, door) &&
-	     IS_SET(flags_door[subcmd], NEED_CLOSED))
+    else if (!DOOR_IS_CLOSED(ch, obj, door) && IS_SET(flags_door[subcmd], NEED_CLOSED))
       send_to_char(ch, "But it's currently open!\r\n");
-    else if (!(DOOR_IS_LOCKED(ch, obj, door)) &&
-	     IS_SET(flags_door[subcmd], NEED_LOCKED))
+    else if (!(DOOR_IS_LOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_LOCKED))
       send_to_char(ch, "Oh.. it wasn't locked, after all..\r\n");
     else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) && ((!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOKEY))) && (has_key(ch, keynum)) )
     {
@@ -665,12 +662,10 @@ ACMD(do_gen_door)
     {
       send_to_char(ch, "It is locked, and you do not have the key!\r\n");
     }
-    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) &&
-	     IS_SET(flags_door[subcmd], NEED_UNLOCKED) &&
+    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) &&
              (GET_LEVEL(ch) < LVL_IMMORT || (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE))))
       send_to_char(ch, "It seems to be locked.\r\n");
-    else if (!has_key(ch, keynum) && (GET_LEVEL(ch) < LVL_GOD) &&
-	     ((subcmd == SCMD_LOCK) || (subcmd == SCMD_UNLOCK)))
+    else if (!has_key(ch, keynum) && (GET_LEVEL(ch) < LVL_GOD) && ((subcmd == SCMD_LOCK) || (subcmd == SCMD_UNLOCK)))
       send_to_char(ch, "You don't seem to have the proper key.\r\n");
     else if (ok_pick(ch, keynum, DOOR_IS_PICKPROOF(ch, obj, door), subcmd))
       do_doorcmd(ch, obj, door, subcmd);
@@ -689,11 +684,11 @@ ACMD(do_enter)
 				 * keyword */
     for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
-	if (EXIT(ch, door)->keyword)
-	  if (!str_cmp(EXIT(ch, door)->keyword, buf)) {
-	    perform_move(ch, door, 1);
-	    return;
-	  }
+        if (EXIT(ch, door)->keyword)
+          if (!str_cmp(EXIT(ch, door)->keyword, buf)) {
+            perform_move(ch, door, 1);
+            return;
+          }
     send_to_char(ch, "There is no %s here.\r\n", buf);
   } else if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_INDOORS))
     send_to_char(ch, "You are already indoors.\r\n");
@@ -959,17 +954,17 @@ ACMD(do_follow)
   } else {			/* Not Charmed follow person */
     if (leader == ch) {
       if (!ch->master) {
-	send_to_char(ch, "You are already following yourself.\r\n");
-	return;
+        send_to_char(ch, "You are already following yourself.\r\n");
+        return;
       }
       stop_follower(ch);
     } else {
       if (circle_follow(ch, leader)) {
-	send_to_char(ch, "Sorry, but following in loops is not allowed.\r\n");
-	return;
+        send_to_char(ch, "Sorry, but following in loops is not allowed.\r\n");
+        return;
       }
       if (ch->master)
-	stop_follower(ch);
+        stop_follower(ch);
       REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_GROUP);
       add_follower(ch, leader);
     }

@@ -1235,18 +1235,18 @@ int enter_player_game (struct descriptor_data *d)
   /* We have to place the character in a room before equipping them
    * or equip_char() will gripe about the person in NOWHERE. */
   if ((load_room = GET_LOADROOM(d->character)) != NOWHERE)
-	load_room = real_room(load_room);
+    load_room = real_room(load_room);
 
   /* If char was saved with NOWHERE, or real_room above failed... */
   if (load_room == NOWHERE) {
-	if (GET_LEVEL(d->character) >= LVL_IMMORT)
-	  load_room = r_immort_start_room;
-	else
-	  load_room = r_mortal_start_room;
+    if (GET_LEVEL(d->character) >= LVL_IMMORT)
+      load_room = r_immort_start_room;
+    else
+      load_room = r_mortal_start_room;
   }
 
   if (PLR_FLAGGED(d->character, PLR_FROZEN))
-	load_room = r_frozen_start_room;
+    load_room = r_frozen_start_room;
 
   /* copyover */
   GET_ID(d->character) = GET_IDNUM(d->character);
@@ -1276,38 +1276,38 @@ int enter_player_game (struct descriptor_data *d)
 
 EVENTFUNC(get_protocols)
 {
-	struct descriptor_data *d;
-	struct mud_event_data *pMudEvent;
-	char buf[MAX_STRING_LENGTH];
-	int len;
-	
-	if (event_obj == NULL)
-	  return 0;
-	  
-	pMudEvent = (struct mud_event_data *) event_obj;
-	d = (struct descriptor_data *) pMudEvent->pStruct;  
-	
-	/* Clear extra white space from the "protocol scroll" */
-	write_to_output(d, "[H[J");
+  struct descriptor_data *d;
+  struct mud_event_data *pMudEvent;
+  char buf[MAX_STRING_LENGTH];
+  int len;
 
-	len = snprintf(buf, MAX_STRING_LENGTH,   "\tO[\toClient\tO] \tw%s\tn | ", d->pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString);
-	
-	if (d->pProtocol->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt)
-	  len += snprintf(buf + len, MAX_STRING_LENGTH - len, "\tO[\toColors\tO] \tw256\tn | ");
-	else if (d->pProtocol->pVariables[eMSDP_ANSI_COLORS]->ValueInt)
+  if (event_obj == NULL)
+    return 0;
+  
+  pMudEvent = (struct mud_event_data *) event_obj;
+  d = (struct descriptor_data *) pMudEvent->pStruct;  
+  
+  /* Clear extra white space from the "protocol scroll" */
+  write_to_output(d, "[H[J");
+
+  len = snprintf(buf, MAX_STRING_LENGTH,   "\tO[\toClient\tO] \tw%s\tn | ", d->pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString);
+
+  if (d->pProtocol->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt)
+    len += snprintf(buf + len, MAX_STRING_LENGTH - len, "\tO[\toColors\tO] \tw256\tn | ");
+  else if (d->pProtocol->pVariables[eMSDP_ANSI_COLORS]->ValueInt)
       len += snprintf(buf + len, MAX_STRING_LENGTH - len, "\tO[\toColors\tO] \twAnsi\tn | ");
-	else
+  else
       len += snprintf(buf + len, MAX_STRING_LENGTH - len, "[Colors] No Color | ");
  
-	len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toMXP\tO] \tw%s\tn | ", d->pProtocol->bMXP ? "Yes" : "No");
-	len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toMSDP\tO] \tw%s\tn | ", d->pProtocol->bMSDP ? "Yes" : "No");	  
-	len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toATCP\tO] \tw%s\tn\r\n\r\n", d->pProtocol->bATCP ? "Yes" : "No");
-		 
-	write_to_output(d, buf, 0);	 
-		  
-	write_to_output(d, GREETINGS, 0); 
-	STATE(d) = CON_GET_NAME;
-	return 0;
+  len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toMXP\tO] \tw%s\tn | ", d->pProtocol->bMXP ? "Yes" : "No");
+  len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toMSDP\tO] \tw%s\tn | ", d->pProtocol->bMSDP ? "Yes" : "No");
+  len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toATCP\tO] \tw%s\tn\r\n\r\n", d->pProtocol->bATCP ? "Yes" : "No");
+   
+  write_to_output(d, buf, 0);
+    
+  write_to_output(d, GREETINGS, 0); 
+  STATE(d) = CON_GET_NAME;
+  return 0;
 }
 
 /* deal with newcomers and other non-playing sockets */
@@ -1348,9 +1348,9 @@ void nanny(struct descriptor_data *d, char *arg)
   /* Not in OLC. */
   switch (STATE(d)) {
   case CON_GET_PROTOCOL:
-		write_to_output(d, "Collecting Protocol Information... Please Wait.\r\n"); 
-		return;
-  break;		
+    write_to_output(d, "Collecting Protocol Information... Please Wait.\r\n"); 
+    return;
+  break;
   case CON_GET_NAME:		/* wait for input of name */
     if (d->character == NULL) {
       CREATE(d->character, struct char_data, 1);

@@ -2719,7 +2719,7 @@ ACMD(do_show)
   /* show thaco */
   case 11:
     len = strlcpy(buf, "LvL - Mu Cl Th Wa\r\n----------------\r\n", sizeof(buf));
-			
+
     for (j = 1; j < LVL_IMMORT; j++) {
       nlen = snprintf(buf + len, sizeof(buf) - len,  "%-3d - %-2d %-2d %-2d %-2d\r\n", j, 
 				thaco(CLASS_MAGIC_USER, j),
@@ -2728,43 +2728,43 @@ ACMD(do_show)
 				thaco(CLASS_WARRIOR, j));
       if (len + nlen >= sizeof(buf))
         break;
-      len += nlen;		
-		}
-			
-    page_string(ch->desc, buf, TRUE);	
+      len += nlen;
+    }
+
+    page_string(ch->desc, buf, TRUE);
     break;
 
   /* show experience tables */
   case 12:
     len = strlcpy(buf, "LvL - Mu     Cl     Th     Wa\r\n--------------------------\r\n", sizeof(buf));
-	 
-	for (i = 1; i < LVL_IMMORT; i++) { 		
-	  nlen = snprintf(buf + len, sizeof(buf) - len,  "%-3d - %-6d %-6d %-6d %-6d\r\n", i,  
+
+    for (i = 1; i < LVL_IMMORT; i++) { 
+      nlen = snprintf(buf + len, sizeof(buf) - len,  "%-3d - %-6d %-6d %-6d %-6d\r\n", i,  
 				level_exp(CLASS_MAGIC_USER, i) - level_exp(CLASS_MAGIC_USER, i - 1),
 				level_exp(CLASS_CLERIC, i) - level_exp(CLASS_CLERIC, i - 1),
 				level_exp(CLASS_THIEF, i) - level_exp(CLASS_THIEF, i - 1),
 				level_exp(CLASS_WARRIOR, i) - level_exp(CLASS_WARRIOR, i - 1));
-	  if (len + nlen >= sizeof(buf))
-		break;
-	  len += nlen;		
+      if (len + nlen >= sizeof(buf))
+        break;
+      len += nlen;
     }
-			
-    page_string(ch->desc, buf, TRUE);	
+
+    page_string(ch->desc, buf, TRUE);
     break;
 
   case 13:
     len = strlcpy(buf, "Colours\r\n--------------------------\r\n", sizeof(buf));
-		k = 0;	
+    k = 0;
     for (r = 0; r < 6; r++)
-			for (g = 0; g < 6; g++)
-			  for (b = 0; b < 6; b++) {
-					  sprintf(colour, "F%d%d%d", r, g, b);
-					nlen = snprintf(buf + len, sizeof(buf) - len,  "%s%s%s", ColourRGB(ch->desc, colour), colour, ++k % 6 == 0 ? "\tn\r\n" : "    ");
-				if (len + nlen >= sizeof(buf))
-					break;
-				len += nlen;
-				}	
-    page_string(ch->desc, buf, TRUE);	
+      for (g = 0; g < 6; g++)
+        for (b = 0; b < 6; b++) {
+          sprintf(colour, "F%d%d%d", r, g, b);
+          nlen = snprintf(buf + len, sizeof(buf) - len,  "%s%s%s", ColourRGB(ch->desc, colour), colour, ++k % 6 == 0 ? "\tn\r\n" : "    ");
+          if (len + nlen >= sizeof(buf))
+            break;
+          len += nlen;
+        }
+    page_string(ch->desc, buf, TRUE);
     break;
 
   /* show what? */

@@ -83,7 +83,7 @@ ACMD(do_hit)
     act("$N is just such a good friend, you simply can't hit $M.", FALSE, ch, 0, vict, TO_CHAR);
   else {
     if (!CONFIG_PK_ALLOWED && !IS_NPC(vict) && !IS_NPC(ch)) 
-	check_killer(ch, vict);
+      check_killer(ch, vict);
 
     if ((GET_POS(ch) == POS_STANDING) && (vict != FIGHTING(ch))) { 
       if (GET_DEX(ch) > GET_DEX(vict) || (GET_DEX(ch) == GET_DEX(vict) && rand_number(1, 2) == 1))  /* if faster */
@@ -203,10 +203,10 @@ ACMD(do_order)
       act("$n gives $N an order.", FALSE, ch, 0, vict, TO_ROOM);
 
       if ((vict->master != ch) || !AFF_FLAGGED(vict, AFF_CHARM))
-	act("$n has an indifferent look.", FALSE, vict, 0, 0, TO_ROOM);
+        act("$n has an indifferent look.", FALSE, vict, 0, 0, TO_ROOM);
       else {
-	send_to_char(ch, "%s", CONFIG_OK);
-	command_interpreter(vict, message);
+        send_to_char(ch, "%s", CONFIG_OK);
+        command_interpreter(vict, message);
       }
     } else {			/* This is order "followers" */
       char buf[MAX_STRING_LENGTH];
@@ -215,16 +215,16 @@ ACMD(do_order)
       act(buf, FALSE, ch, 0, 0, TO_ROOM);
 
       for (k = ch->followers; k; k = k->next) {
-	if (IN_ROOM(ch) == IN_ROOM(k->follower))
-	  if (AFF_FLAGGED(k->follower, AFF_CHARM)) {
-	    found = TRUE;
-	    command_interpreter(k->follower, message);
-	  }
+        if (IN_ROOM(ch) == IN_ROOM(k->follower))
+          if (AFF_FLAGGED(k->follower, AFF_CHARM)) {
+            found = TRUE;
+            command_interpreter(k->follower, message);
+          }
       }
       if (found)
-	send_to_char(ch, "%s", CONFIG_OK);
+        send_to_char(ch, "%s", CONFIG_OK);
       else
-	send_to_char(ch, "Nobody here is a loyal subject of yours!\r\n");
+        send_to_char(ch, "Nobody here is a loyal subject of yours!\r\n");
     }
   }
 }

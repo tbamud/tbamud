@@ -78,18 +78,18 @@ static void prefedit_save_to_char(struct descriptor_data *d)
   }
   else
   {
-	if (!vict) {
-	  mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (no vict)");
-	  send_to_char(d->character, "Unable to save toggles (no vict)");
-    } else if (!vict->desc) {
-	  mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (no vict descriptor)");
-	  send_to_char(d->character, "Unable to save toggles (no vict descriptor)");
-	} else if (!IS_PLAYING(vict->desc)) {
-	  mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (vict not playing)");
-	  send_to_char(d->character, "Unable to save toggles (vict not playing)");
-	} else {
-	  mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (unknown reason)");
-	  send_to_char(d->character, "Unable to save toggles (unknown reason)");
+  if (!vict) {
+    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (no vict)");
+    send_to_char(d->character, "Unable to save toggles (no vict)");
+  } else if (!vict->desc) {
+    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (no vict descriptor)");
+    send_to_char(d->character, "Unable to save toggles (no vict descriptor)");
+  } else if (!IS_PLAYING(vict->desc)) {
+    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (vict not playing)");
+    send_to_char(d->character, "Unable to save toggles (vict not playing)");
+  } else {
+    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: Unable to save toggles (unknown reason)");
+    send_to_char(d->character, "Unable to save toggles (unknown reason)");
     }
   }
 }

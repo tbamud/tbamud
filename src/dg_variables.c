@@ -86,7 +86,7 @@ int item_in_list(char *item, obj_data *list)
   int count = 0;
 
   if (!item || !*item)
-  	return 0;
+    return 0;
 
   if (*item == UID_CHAR) {
     long id = atol(item + 1);
@@ -218,7 +218,7 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
     if (cindex > len || cindex < 1)
       strcpy(str, "");
     else
-    	snprintf(str, slen, "%c", vd->value[cindex - 1]);
+      snprintf(str, slen, "%c", vd->value[cindex - 1]);
     return TRUE;
   } else if (!str_cmp(field, "mudcommand")) {
     /* find the mud command returned from this text */
@@ -658,13 +658,13 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (subfield && *subfield) {
               int addition = atoi(subfield);
               GET_DAMROLL(c) = MAX(1, GET_DAMROLL(c) + addition);
-			}
-			snprintf(str, slen, "%d", GET_DAMROLL(c));
-			} else if (!str_cmp(field, "dex")) {
-			  if (subfield && *subfield) {
-			    int addition = atoi(subfield);
+            }
+            snprintf(str, slen, "%d", GET_DAMROLL(c));
+            } else if (!str_cmp(field, "dex")) {
+              if (subfield && *subfield) {
+                int addition = atoi(subfield);
                 int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
-			    GET_DEX(c) += addition;
+                GET_DEX(c) += addition;
                 if (GET_DEX(c) > max) GET_DEX(c) = max;
                 if (GET_DEX(c) < 3) GET_DEX(c) = 3;
               }
@@ -673,7 +673,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "drunk")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-	     GET_COND(c, DRUNK) = MAX(-1, MIN(addition, 24));
+              GET_COND(c, DRUNK) = MAX(-1, MIN(addition, 24));
             }
             snprintf(str, slen, "%d", GET_COND(c, DRUNK));
           }
@@ -760,12 +760,12 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             snprintf(str, slen, "%d", GET_HIT(c));
           }
           else if (!str_cmp(field, "hitroll")) {
-			if (subfield && *subfield) {
-			  int addition = atoi(subfield);
-			  GET_HITROLL(c) = MAX(1, GET_HITROLL(c) + addition);
-			}
-			snprintf(str, slen, "%d", GET_HITROLL(c));
-		  }
+            if (subfield && *subfield) {
+              int addition = atoi(subfield);
+              GET_HITROLL(c) = MAX(1, GET_HITROLL(c) + addition);
+            }
+            snprintf(str, slen, "%d", GET_HITROLL(c));
+          }
           else if (!str_cmp(field, "hunger")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
@@ -844,7 +844,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
               GET_LEVEL(c) = MIN(MAX(lev, 0), LVL_IMMORT-1);
             } else
               snprintf(str, slen, "%d", GET_LEVEL(c));
-		  }
+          }
           break;
         case 'm':
           if (!str_cmp(field, "mana")) {
@@ -1202,7 +1202,7 @@ o->contains));
               snprintf(str, slen, "%s", (item_in_list(subfield,
 o->contains) ? "1" : "0"));
             else
-            	strcpy(str, "0");
+              strcpy(str, "0");
           }
           else if (!str_cmp(field, "hasattached")) {
             if (!(subfield && *subfield))

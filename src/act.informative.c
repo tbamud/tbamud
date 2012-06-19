@@ -505,16 +505,11 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
 
   if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
-      ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH))
-  {
-      if(!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
-      {
+      ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH)) {
+    if(!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
         str_and_map(world[target_room].description, ch, target_room);
-      }
-      else
-      {
-    send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
-      }
+    else
+      send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
   }
 
   /* autoexits */
@@ -1040,7 +1035,7 @@ int search_help(const char *argument, int level)
 
 //      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
       if (strn_cmp(argument, help_table[mid].keywords, minlen))
-	      break;
+        break;
 
       return mid;
     }
@@ -1481,8 +1476,7 @@ ACMD(do_users)
       sprintf(line2, "%s%s%s", CCGRN(ch, C_SPR), line, CCNRM(ch, C_SPR));
       strcpy(line, line2);
     }
-    if (STATE(d) != CON_PLAYING ||
-		(STATE(d) == CON_PLAYING && CAN_SEE(ch, d->character))) {
+    if (STATE(d) != CON_PLAYING || (STATE(d) == CON_PLAYING && CAN_SEE(ch, d->character))) {
       send_to_char(ch, "%s", line);
       num_can_see++;
     }
@@ -2035,7 +2029,7 @@ ACMD(do_toggle)
     return;
   }
 
-	len = strlen(arg);
+  len = strlen(arg);
   for (toggle = 0; *tog_messages[toggle].command != '\n'; toggle++)
     if (!strncmp(arg, tog_messages[toggle].command, len))
       break;
@@ -2043,7 +2037,7 @@ ACMD(do_toggle)
     if (*tog_messages[toggle].command == '\n' || tog_messages[toggle].min_level > GET_LEVEL(ch)) {
       send_to_char(ch, "You can't toggle that!\r\n");
       return;
-      }
+    }
 
   switch (toggle) {
   case SCMD_COLOR:
@@ -2093,13 +2087,13 @@ ACMD(do_toggle)
     }
     result = PRF_TOG_CHK(ch, PRF_BUILDWALK);
     if (PRF_FLAGGED(ch, PRF_BUILDWALK)) {
-		for (i=0; *arg2 && *(sector_types[i]) != '\n'; i++)
-		  if (is_abbrev(arg2, sector_types[i]))
-			  break;
-	  if (*(sector_types[i]) == '\n') 
-	    i=0;
-	  GET_BUILDWALK_SECTOR(ch) = i;
-	  send_to_char(ch, "Default sector type is %s\r\n", sector_types[i]);
+      for (i=0; *arg2 && *(sector_types[i]) != '\n'; i++)
+        if (is_abbrev(arg2, sector_types[i]))
+          break;
+      if (*(sector_types[i]) == '\n') 
+        i=0;
+      GET_BUILDWALK_SECTOR(ch) = i;
+      send_to_char(ch, "Default sector type is %s\r\n", sector_types[i]);
       mudlog(CMP, GET_LEVEL(ch), TRUE,
              "OLC: %s turned buildwalk on.  Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
     } else
@@ -2393,40 +2387,29 @@ ACMD(do_whois)
 
   send_to_char(ch, "Level: %d\r\n", GET_LEVEL(victim));
 
-  if (!(GET_LEVEL(victim) < LVL_IMMORT) || (GET_LEVEL(ch) >= GET_LEVEL(victim)))
-  {
+  if (!(GET_LEVEL(victim) < LVL_IMMORT) || (GET_LEVEL(ch) >= GET_LEVEL(victim))) {
     strcpy (buf, (char *) asctime(localtime(&(victim->player.time.logon))));
     buf[10] = '\0';
 
     hours = (time(0) - victim->player.time.logon) / 3600;
 
-    if (!got_from_file)
-    {
+    if (!got_from_file) {
       send_to_char(ch, "Last Logon: They're playing now!  (Idle %d Minutes)",
            victim->char_specials.timer * SECS_PER_MUD_HOUR / SECS_PER_REAL_MIN);
 
       if (!victim->desc)
-      {
         send_to_char(ch, "  (Linkless)\r\n");
-      }
       else
-      {
         send_to_char(ch, "\r\n");
-      }
+
       if (PRF_FLAGGED(victim, PRF_AFK))
-      {
         send_to_char(ch, "%s%s is afk right now, so %s may not respond to communication.%s\r\n", CBGRN(ch, C_NRM), GET_NAME(victim), GET_SEX(victim) == SEX_NEUTRAL ? "it" : (GET_SEX(victim) == SEX_MALE ? "he" : "she"), CCNRM(ch, C_NRM));
-      }
     }
     else if (hours > 0)
-    {
       send_to_char(ch, "Last Logon: %s (%d days & %d hours ago.)\r\n", buf, hours/24, hours%24);
-    }
     else
-    {
       send_to_char(ch, "Last Logon: %s (0 hours & %d minutes ago.)\r\n",
                    buf, (int)(time(0) - victim->player.time.logon)/60);
-    }
   }
 
   if (has_mail(GET_IDNUM(victim)))

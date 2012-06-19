@@ -54,17 +54,17 @@ EVENTFUNC(event_countdown)
 {
   struct mud_event_data * pMudEvent;
   struct char_data * ch = NULL;
-	
+
   pMudEvent = (struct mud_event_data * ) event_obj;
-	
+
   switch (mud_event_index[pMudEvent->iId].iEvent_Type) {
     case EVENT_CHAR:
       ch = (struct char_data * ) pMudEvent->pStruct;
     break;
     default:
     break;
-  }	
-	
+  }
+
   switch (pMudEvent->iId) {
     default:
     break;
@@ -84,7 +84,7 @@ void attach_mud_event(struct mud_event_data *pMudEvent, long time)
   struct char_data * ch;
    
   pEvent = event_create(mud_event_index[pMudEvent->iId].func, pMudEvent, time);
-  pEvent->isMudEvent = TRUE;	
+  pEvent->isMudEvent = TRUE;
   pMudEvent->pEvent = pEvent;        
 
   switch (mud_event_index[pMudEvent->iId].iEvent_Type) {
@@ -106,16 +106,16 @@ struct mud_event_data *new_mud_event(event_id iId, void *pStruct, char *sVariabl
 {
   struct mud_event_data *pMudEvent;
   char *varString;
-		
+
   CREATE(pMudEvent, struct mud_event_data, 1);
-  varString = (sVariables != NULL) ? strdup(sVariables) : NULL;	
-		
+  varString = (sVariables != NULL) ? strdup(sVariables) : NULL;
+
   pMudEvent->iId         = iId;
   pMudEvent->pStruct     = pStruct;
   pMudEvent->sVariables  = varString;
   pMudEvent->pEvent      = NULL;
-	
-  return (pMudEvent);	
+
+  return (pMudEvent);
 }
 
 void free_mud_event(struct mud_event_data *pMudEvent)
@@ -139,7 +139,7 @@ void free_mud_event(struct mud_event_data *pMudEvent)
 
   if (pMudEvent->sVariables != NULL)
     free(pMudEvent->sVariables);
-	  
+
   pMudEvent->pEvent->event_obj = NULL;
   free(pMudEvent);
 }
@@ -154,14 +154,14 @@ struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId)
     return NULL;
 
   simple_list(NULL);
-	
+
   while ((pEvent = (struct event *) simple_list(ch->events)) != NULL) {
-		if (!pEvent->isMudEvent)
-		  continue;
-		pMudEvent = (struct mud_event_data * ) pEvent->event_obj;
-	  if (pMudEvent->iId == iId) {
-	    found = TRUE;	
-	    break;
+    if (!pEvent->isMudEvent)
+      continue;
+     pMudEvent = (struct mud_event_data * ) pEvent->event_obj;
+    if (pMudEvent->iId == iId) {
+     found = TRUE;
+     break;
     }
   }
   

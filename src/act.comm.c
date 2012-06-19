@@ -26,15 +26,15 @@ static bool legal_communication(char * arg);
 
 static bool legal_communication(char * arg) 
 {
-	while (*arg) {
-		if (*arg == '@') {
-			arg++;
-		  if (*arg == '(' || *arg == ')' || *arg == '<' || *arg == '>')
-		    return FALSE; 
-		}
-		arg++;
-	}
-	return TRUE;
+  while (*arg) {
+    if (*arg == '@') {
+      arg++;
+      if (*arg == '(' || *arg == ')' || *arg == '<' || *arg == '>')
+        return FALSE; 
+    }
+    arg++;
+  }
+  return TRUE;
 }
 
 ACMD(do_say)
