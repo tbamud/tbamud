@@ -11,13 +11,6 @@ D0
 ~
 0 0 24005
 E
-gate~
-   The large gates are made of wood, but are so heavily reinforced with stell
-that The large gates are made of wood, but are so heavily reinforced with steel
-that you can hardly tell.  It would take someone of inhuman strength to close
-them.  
-~
-E
 credits info~
    Builder   : Rumble
 Zone         : 240 Dun Maura
@@ -34,6 +27,13 @@ Links        : 00s, 37w, 47e, 84n
 Zone: 240 was linked to the following zones:
 100 The Northern Highway           at: 24000 (south) ---> 10096
  86 Duke Kalithorn's Keep          at: 24084 (north) --->  8660
+~
+E
+gate~
+   The large gates are made of wood, but are so heavily reinforced with stell
+that The large gates are made of wood, but are so heavily reinforced with steel
+that you can hardly tell.  It would take someone of inhuman strength to close
+them.  
 ~
 S
 #24001
@@ -435,7 +435,7 @@ D3
 S
 #24023
 Vassar Road~
-   To the west you can hear the sounds of fighting.  To the east a small
+   To the east you can hear the sounds of fighting.  To the west a small
 marketplace.  You remember more of the minotuar history.  They are intensely
 proud creatures, half-human and half-cow, "bovine" is just about the worst
 insult anyone can hurl at a minotaur
@@ -596,13 +596,13 @@ D5
 Grate~
 1 0 24088
 E
-grate~
-   A small grate is partially hidden under some dirt and blankets.    
-~
-E
 rug~
    The rug seems to be covering a large grate in the floor.  You wonder if you
 could lift that heavy metal grate.    
+~
+E
+grate~
+   A small grate is partially hidden under some dirt and blankets.    
 ~
 S
 #24031

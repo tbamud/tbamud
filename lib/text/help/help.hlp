@@ -16,7 +16,7 @@ Examples:
   > ^you^you doing^
   You tell Rumble, 'Hi there, how are you doing?'
 
-See also: ALIAS
+See also: \t(HELP ALIAS\t)
 #0
 %ASOUND% OASOUND MASOUND WASOUND ASOUND
 
@@ -270,10 +270,10 @@ about being a newbie here.
 #31
 @@
 
-The @@ character is used as a colorcode. If you see it, try toggling color to
+The @ character is used as a colorcode. If you see it, try toggling color to
 complete. If this still does not work you must not be able to view colors.
 
-Many people have asked why use the @@ as colorcodes while others use &. 
+Many people have asked why use the @ as colorcodes while others use &. 
 Welcor of TBA changed this because of trigedit. A builder who enters:
 if %actor.is_pc% && %arg% would only see: if %actor.is_pc% & %arg%. No 
 big deal, but this could get confusing to newbies when you tell them AND 
@@ -312,6 +312,7 @@ subtracted from your standard (naked) AC value, modified depending on where on
 the body you are wearing the armor.  Some items have a special bonus, and 
 subtract from the AC directly. Negative AC is better. 
 
+See Also: ARMOR-SPELL
 #0
 ACRONYMS TERMINOLOGY VOCABULARY
 
@@ -698,14 +699,26 @@ Any areas that 'overlap' the specified range are shown in red.
 
 See Also: ZONES
 #0
-ARMOR
+ARMOR-SPELL
 
 Usage       : cast 'armor' [target]
 Accumulative: No
 Duration    : 24 Hours
 Level       : Mage level 4, Cleric level 1.
 
-The Armor spell will improve your AC by 2.
+The Armor spell will improve your AC by 20 points or up to 10%.
+
+See also: AC
+#0
+GROUP-ARMOR
+
+Usage       : cast 'group armor'
+Accumulative: No
+Duration    : 24 Hours
+Level       : Cleric level 9.
+
+The Group Armor spell will improve the AC of everyone in your group by 20 
+points or up to 10%.
 
 See also: AC
 #0
@@ -1923,9 +1936,9 @@ Usage: prefedit
 
    If you have a color-capable terminal and wish to see useful color-coding
 of information, use PREFEDIT to set the level of coloring you see.
-   The letters for the colors are to be preceded by a single @@ sign, where the
-actual code will be @@<letter>. Double @@@@ = single @@. All use of colorcodes
-@RMUST@n be terminated with @@n to restore normal color to prevent color bleeding.
+   The letters for the colors are to be preceded by a single @ sign, where the
+actual code will be @<letter>. Double @@ = single @. All use of colorcodes
+@RMUST@n be terminated with @n to restore normal color to prevent color bleeding.
  
 The colors are:
 n - normal
@@ -1942,7 +1955,7 @@ Extra codes:
 @ll - blink@n      @oo - bold@n
 @uu - underline@n  @ee - reverse video@n
 
-See also: @@, ANSI, PROMPT, TOGGLE
+See also: @, ANSI, PROMPT, TOGGLE
 #0
 COLORSPRAY COLOR-SPRAY
 
@@ -2744,21 +2757,21 @@ EMAILS ICQ AIM E-MAILS CONTACTS MSN AOL
 
 Name     Email                      ICQ #      AIM             MSN 
 
-Welcor   welcor@@tbamud.com        18755607
-Rumble   rumble@@tbamud.com         4822010   admwint         wintersn
-Shamra   shamra@@tbamud.com                   BlackdemonRahl
+Welcor   welcor@tbamud.com        18755607
+Rumble   rumble@tbamud.com         4822010   admwint         wintersn
+Shamra   shamra@tbamud.com                   BlackdemonRahl
 
-Amber    amber@@tbamud.com
-Detta    detta@@tbamud.com    
-Elaseth  elaseth@@tbamud.com                  ParaVox3
-Elorien  elorien@@tbamud.com 
-Ferret   ferret@@tbamud.com                                   radiax01
-Fizban   fizban@@tbamud.com                   Fizban1216      fizban1216
-Fyre     fyre@@tbamud.com 
-Heiach   heiach@@tbamud.com                   heiach          heiach
-Random   random@@tbamud.com       219948345
-Relsqui  relsqui@@tbamud.com       72136407   Relsqui         penguinista 
-Rhade    rhade@@tbamud.com                                    rhade_73
+Amber    amber@tbamud.com
+Detta    detta@tbamud.com    
+Elaseth  elaseth@tbamud.com                  ParaVox3
+Elorien  elorien@tbamud.com 
+Ferret   ferret@tbamud.com                                   radiax01
+Fizban   fizban@tbamud.com                   Fizban1216      fizban1216
+Fyre     fyre@tbamud.com 
+Heiach   heiach@tbamud.com                   heiach          heiach
+Random   random@tbamud.com       219948345
+Relsqui  relsqui@tbamud.com       72136407   Relsqui         penguinista 
+Rhade    rhade@tbamud.com                                    rhade_73
 
 #0
 EMOTES : EMOTIONS
@@ -3441,7 +3454,7 @@ gdb > list
 GEMOTES GMOTES EMOTICONS
 
 Usage: gemote <social>
-       gemote @@ <message>
+       gemote <message>
 
 Allows you to perform socials or messages like emote over gossip for everyone 
 on the gossip channel to see.
@@ -4190,6 +4203,13 @@ prevent a thief from picking the lock you must also set the PICKPROOF flag.
 Always create a unique name and description for your key and give hints in the 
 description about where it should be used.
 
+A good practice is to ensure keys load more than one instance since key storage
+in a house is no different from a character always idling with keys to hoard 
+them. Single instance keys are a bad idea since if a player dies behind a door 
+with the only key in their corpse they have no way to get back. Also, keys 
+should always be the first dependent object loaded to a mob so they don't rely
+on other equipment loading to the mob prior to it.
+
 See also: KEYS, ZONE-DESC, REDIT-EXIT
 #31
 KEYS DOORS GATES
@@ -4452,32 +4472,32 @@ Sebastian Hammer
 Prss. Maries Alle 15, 1
 1908 Frb. C.
 DENMARK
-(email quinn@@freja.diku.dk)
+(email quinn@freja.diku.dk)
 
 Michael Seifert
 Nr. Soeg. 37C, 1, doer 3
 1370 Copenhagen K.
 DENMARK
-(email seifert@@freja.diku.dk)
+(email seifert@freja.diku.dk)
 
 Hans Henrik St{rfeldt
 Langs} 19
 3500 V{rl|se
 DENMARK
-(email bombman@@freja.diku.dk)
+(email bombman@freja.diku.dk)
 
 Tom Madsen
 R|de Mellemvej 94B, 64
 2300 Copenhagen S.
 DENMARK
-(email noop@@freja.diku.dk)
+(email noop@freja.diku.dk)
 
 Katja Nyboe
 Kildeg}rdsvej 2
 2900 Hellerup
 31 62 82 84
 DENMARK
-(email katz@@freja.diku.dk)
+(email katz@freja.diku.dk)
 
 
 This document contains the rules by which you can use, alter or publish
@@ -7442,31 +7462,30 @@ RECRUITING ADVERTISING ADVERTISEMENTS ADVERTIZING ADVERTIZEMENTS
    For those wishing to help spread the word about TBA, thank you! The
 simplest way to help is to write a review at:@C
 http://mudconnector.com/mud-bin/adv_search.cgi?Mode=MUD&mud=The+Builder+Academy
+
 @n   Also please spread the word to your friends and other MUDs. We provide
 training to anyone who wants it and we even offer up TBA as a builder port for
 other MUDs. 
 
    To prevent harassment of builders trying to learn we strictly enforce a no
-advertising policy. The one exception is that you may post to the advertising
-board in room 88. There are far better places to recruit builders such as the
-mudconnector. AGAIN: NO ADVERTISING FOR MUDs IS ALLOWED ON TBA. This includes
-all channels including tells. You may set your MUD addy in your title.
+advertising policy. The only exception is that you may post to the advertising
+board in room 88 and the advertising section in the forums. There are far 
+better places to recruit builders such as TMC.
 
    For Implementors searching for help to create their MUDs. The staff of TBA
 is flattered, but we have plenty of builders and development to keep us busy
-for years. If you want to recruit, there is a board located in room 88 for 
-you to post your advertisements. If anyone is asked to work on another MUD 
-they should notify the staff immediately. If you are staff from another MUD 
-here to evaluate a builders work before hiring them please contact any staff 
-member.  We will vouch for good builders that have crossed our threshold and 
-tell you our honest feelings about the abilities of each. 
+for years. If you are staff from another MUD here to evaluate a builders work 
+before hiring them please contact any staff member.  We will vouch for good 
+builders that have crossed our threshold and tell you our honest feelings 
+about the abilities of each. 
 
-   The harsh truth is that good MUDs do not need to advertise and as a minimum 
-will usually require new builders to complete a zone or equivalent proof that 
-you are a good builder. If someone says they just started a MUD and need good 
-builders be warned most MUDs fail and there is a good chance you will lose 
-work. It happens to all builders eventually. Never build on a MUD unless they 
-make backups and will give you a copy of your work whenever you request it.
+   The harsh truth is that most decent MUDs have been around for a while and do
+not need to advertise. They also usually require new builders to complete a 
+zone or provide equivalent proof that you are a good builder. If someone says 
+they just started a MUD and need good builders be warned most MUDs fail and 
+there is a good chance you will lose your work. It happens to all builders 
+eventually. Make sure whatever MUD you build for does regular backups and ask 
+if they will provide you a copy of your finished work.
 
 See also: TMC, TBA-ADVERTISING
 #0
@@ -8381,7 +8400,7 @@ by teachers to send text to builders while in OLC. Combined with the snoop
 command this allows a teacher to see and tell builders what to do. Here is a 
 little shortcut alias I use.
 
-alias sa send alambil @M@@MRumble sends you:@n@@n $*
+alias sa send alambil @M@MRumble sends you:@n@n $*
 
 With this I just type: sa <message>. This will use color to catch his attention
 and will list my name since send does not automatically show who the send is 
@@ -8397,7 +8416,7 @@ SENSE-LIFE DETECT-LIFE
 Usage       : cast 'sense life'
 Accumulative: Yes (Duration)
 Duration    : Level hours.
-Level       : Cleric level 5, Mage level 17.
+Level       : Cleric level 18.
 
 Allows the caster to sense the presence of a player or monster in the
 room which is hiding.  The true identity will remain hidden however.
@@ -9209,7 +9228,7 @@ caster is greater than 18).  Maximum strength is 18/100.
 STYLISTICS ELASETH STYLE
 
 @nunpublished work © 2000 Elizabeth Hoefling Last Modified: Feb 19th, 2004
-     @celaseth@@tbamud.com@n
+     @celaseth@tbamud.com@n
 
 @cDisclaimer@n: The opinions herein belong solely to Elizabeth Hoefling. Some 
 games look for different things when building, but overall any zone made by 
@@ -9731,77 +9750,30 @@ Mud Created: 2000
 The Builder Academy 
 Code Base: [tbaMUD] the latest version 
 Site: tbamud.com 9091 [195.234.11.64] 
-Admin Email: rumble@@tbamud.com 
+Admin Email: rumble@tbamud.com 
 Theme: Teaching Builders and tbaMUD Codebase Development
 http://www.tbamud.com/ 
 telnet://tbamud.com:9091 
 
-Since 2000 The Builder Academy has been training new builders and developing 
-the CircleMUD codebase, Oasis OLC, and trigedit. After years of stock 
-CircleMUD stagnation TBA offered to take over stock CircleMUD development 
-several times. TBA unofficially released CircleMUD 3.5 in 2006 and later 
-released the codebase under the name tbaMUD. TbaMUD is holding true to the 
-original CircleMUD vision with a few additions. The largest difference is the 
-inclusion of Oasis OLC, trigedit, in-depth tutorials, help files, and examples.
-TBA will continue development and is always open to feedback and 
-recommendations from the MUDding community. TBA is foremost a MUDding resource 
-with the goal of improving the MUDding community. 
+The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community into an extensive tutorial zone, help files, and examples.
 
-   We are happy to announce the release of the tbaMUD codebase
-formerly known as CircleMUD. If you are interested in a mature
-and stable codebase with dedicated staff and support please check
-us out.
+TBA now has two main missions. It originally was meant to be a training MUD open to anyone willing to learn or teach how to create your own text-based World. 1,000's of builder's have gone through our training and many MUDs require new builders to complete training at TBA before they can apply to their MUD. TBA's other mission is the development of the codebase formerly known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to release our codebase under the name tbaMUD and we have been updating it tirelessly for over 10 years.
 
-Download here: http://tbamud.com/
+TBA is a low stress, no deadline, training environment where anyone with motivation can work at their own pace to learn as much or as little as they wish. Numerous people are available to answer questions and give advice.
 
-The tbaMUD vision:
-TbaMUD's vision is to provide the MUDding community a stable and
-functional codebase that includes an in-depth World and help files
-that makes it ready to be molded into a custom MUD by its coders and
-builders. We also provide multiple resources to allow for feedback,
-contribution, and the sharing of ideas within the MUDding community
-to ensure constant development and improvements.
-TbaMUD is highly developed from the programming side, but highly
-UNdeveloped on the game-playing side. So, if you're looking for a
-huge MUD with billions of spells, skills, classes, and races, tbaMUD
-will disappoint you. TbaMUD still has only the 4 original Diku
-classes, the original spells, and the original skills. On the other
-hand, if you're looking for a highly stable, developed, organized,
-and well documented "blank slate" MUD on which you can put your OWN
-ideas for spells, skills, and classes, then tbaMUD is what what you
-are looking for.
+1000's of builders served and counting.
 
-TBA's Vision:
-The most challenging aspect of running a mud is finding good
-builders. You will hear this from the admin of every MUD that has
-ever been. In the past it has always been up to each individual MUD
-to find and attempt to train their own builders. This works, but I
-think the MUDding community can come up with something better. That
-is why I created The Builder Academy.
-TBA has been open to anyone interested in learning or teaching how
-to build using Oasis OLC with dg scripts since 2000. TBA is now being
-used to develop the tbaMUD codebase (formerly known as CircleMUD).
-TBA has trained thousands of builders and has an extensive
-tutorial and help file system. No pressure, no deadline, just come
-learn, teach, or help develop tbaMUD. Give back to the community we
-have all taken so much from. TBA is a MUDding resource. Please take
-advantage of it so we can improve all of the MUDding community.
-TBA is a low stress, no deadline, training environment. Where
-anyone with motivation can work at their own pace to learn as much or
-as little as they wish. Numerous people are available to answer
-questions and give advice. 1000's of builders served and counting.
-TBA can even be used by other MUDs as a builder's port. Just send
-us your newbie builders. We will teach them and then you can have
-them back with the zones they build.
+The most challenging aspect of running a MUD is finding good builders. You will hear this from the admin of every MUD that has ever been. In the past it has always been up to each individual MUD to find and usually train their own builders. This works, but I think the MUDing community can come up with something better. That is why we created The Builder's Academy. No pressure, no deadline, just come and learn or help teach. Give something back to the community we have all taken so much from. TBA is a MUDing community resource, please submit any lessons learned or building tips and tricks so we can improve our codebase and training.
 
-We are always open to anyone willing to learn, teach, or help
-develop tbaMUD.
-__________________
-Rumble
+TBA can also be used by other MUDs as a builder's port. Just send us your newbie builders. We will teach them and then you can have them back with the zones they built.
+
+We are always open to anyone willing to learn or help teach so we can continue to improve the tbaMUD codebase.
+
+- Rumble
 The Builder Academy
 tbamud.com 9091
 http://tbamud.com
-rumble@@tbamud.com
+rumble@tbamud.com
 #0
 TBAMAPS TBA-MAPS
 
@@ -9826,38 +9798,23 @@ TBAMUD PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW 
 TBA stands for The Builder Academy. 
 @RGOTO 3@n to enter the Builder Academy tutorial.
 
-   TBA is a low stress, no deadline, training environment. Where anyone with 
-motivation can work at their own pace to learn as much or as little as they
-wish. Numerous people are available to answer questions and give advice.
+The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community into an extensive tutorial zone, help files, and examples.
+
+TBA now has two main missions. It originally was meant to be a training MUD open to anyone willing to learn or teach how to create your own text-based World. 1,000's of builder's have gone through our training and many MUDs require new builders to complete training at TBA before they can apply to their MUD. TBA's other mission is the development of the codebase formerly known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to release our codebase under the name tbaMUD and we have been updating it tirelessly for over 10 years.
+
+TBA is a low stress, no deadline, training environment where anyone with motivation can work at their own pace to learn as much or as little as they wish. Numerous people are available to answer questions and give advice.
+
 1000's of builders served and counting.
 
-The tbaMUD vision: 
-   TbaMUD's vision is to provide the MUDding community a stable and functional 
-codebase that includes an in-depth World and help files that makes it ready to 
-be molded into a custom MUD by its coders and builders. We also provide 
-multiple resources to allow for feedback, contribution, and the sharing of 
-ideas within the MUDding community to ensure constant development and 
-improvements. 
-   TbaMUD is highly developed from the programming side, but highly UNdeveloped 
-on the game-playing side. So, if you're looking for a huge MUD with billions of 
-spells, skills, classes, and races, tbaMUD will disappoint you. TbaMUD still 
-has only the 4 original Diku classes, the original spells, and the original 
-skills. On the other hand, if you're looking for a highly stable, developed, 
-organized, and well documented "blank slate" MUD on which you can put your OWN 
-ideas for spells, skills, and classes, then tbaMUD is what what you are looking 
-for.
+The most challenging aspect of running a MUD is finding good builders. You will hear this from the admin of every MUD that has ever been. In the past it has always been up to each individual MUD to find and usually train their own builders. This works, but I think the MUDing community can come up with something better. That is why we created The Builder's Academy. No pressure, no deadline, just come and learn or help teach. Give something back to the community we have all taken so much from. TBA is a MUDing community resource, please submit any lessons learned or building tips and tricks so we can improve our codebase and training.
 
-TBA was created in 2000 on Cruel World which was being run by Zemial and Welcor.
-I began combining my own experience with the work of others into an extensive 
-tutorial zone, help files, and examples. Welcor and I ended up separating TBA 
-from Cruel World to further enhance our training of new builders. Welcor has 
-taken over the development of Trigedit and has contributed extensively to what
-has now evolved into the tbaMUD release. 
+TBA can also be used by other MUDs as a builder's port. Just send us your newbie builders. We will teach them and then you can have them back with the zones they built.
 
-After offering several times to take over CircleMUD development TBA released
-CircleMUD 3.5 and later changed the codebase name to tbaMUD. TBA now has many
-purposes including: Developing trigedit, OLC, the tbaMUD codebase, and all the
-zones.
+We are always open to anyone willing to learn or help teach so we can continue to improve the tbaMUD codebase.
+
+- Rumble
+The Builder Academy
+tbamud.com 9091
 
 See also: NEWBIE
 #0
@@ -12517,13 +12474,13 @@ WIZNET ; WIZTALK WIZTELL WIZCHAT WIZLINE SEMICOLON IMMCHAT
 
 The immortal communication channel which is the only channel visible in OLC.
 
-Usage: wiznet [ #<level> ] [ <text> | *<emotetext> | @@ ]
+Usage: wiznet [ #<level> ] [ <text> | *<emotetext> | @ ]
 
 Examples:
 
 >wiznet <text>    - just sends text.
 >; <text>         - ; is short for wiznet.
->; @@              - shows all gods that are on and visible to you.
+>; @              - shows all gods that are on and visible to you.
                   - also shows if the gods who are visible to you are writing.
 >;#<level> <text> - sends text to everyone <level> and above.
                   - ;#2 only God and above will see this.
@@ -13077,7 +13034,7 @@ typos, ideas, or submissions to:
 Rumble
 The Builder Academy
 tbamud.com 9091
-rumble@@tbamud.com
+rumble@tbamud.com
 
    This is a listing of the current areas available:
  

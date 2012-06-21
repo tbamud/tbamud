@@ -5,7 +5,7 @@ The rainbow staff lies here.~
 ~
 1 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-8 500 0 0
+8 500 0 0 0
 A
 4 1
 #27701
@@ -15,7 +15,7 @@ Sting lies here.~
 ~
 5 abk 0 0 0 an 0 0 0 0 0 0 0
 0 2 7 10
-1 1000 0 0
+1 1000 0 0 0
 A
 2 2
 #27702
@@ -25,18 +25,16 @@ A sign demands your attention.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign~
    Welcome to the Shire.  As you enter the Shire from Haon-Dor you come under
-the jurisdiction of the Thain, the peacekeeper of the Shire.  Consequently,
-by entering these lands you agree to obey our laws.  If you break these laws,
-you will be severely punished.  We do not like riff raff in our peaceful
-town.
+the jurisdiction of the Thain, the peacekeeper of the Shire.  Consequently, by
+entering these lands you agree to obey our laws.  If you break these laws, you
+will be severely punished.  We do not like riff raff in our peaceful town.
 
-					The Thain
-					Peacekeeper of the Shire
-
+The Thain
+Peacekeeper of the Shire
 ~
 #27703
 pipeweed bread~
@@ -45,7 +43,7 @@ A loaf of pipeweed bread arouses your hunger.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 13 0 0
+1 13 0 0 0
 #27704
 silvery cloak~
 a silvery cloak~
@@ -53,7 +51,7 @@ A silvery cloak lies here.~
 ~
 9 gk 0 0 0 ak 0 0 0 0 0 0 0
 7 0 0 0
-3 100 0 0
+3 100 0 0 0
 A
 24 -2
 #27705
@@ -63,7 +61,7 @@ The One Ring is here.~
 ~
 9 g 0 0 0 abo 0 0 0 0 0 0 0
 0 0 0 0
-3 250 0 0
+3 250 0 0 0
 A
 17 10
 A
@@ -75,7 +73,7 @@ An elven bow lies here.~
 ~
 5 bgk 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 4
-10 200 0 0
+10 200 0 0 0
 A
 18 2
 #27707
@@ -85,7 +83,7 @@ A mithril axe lies here.~
 ~
 5 acmno 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 5
-12 400 0 0
+12 400 0 0 0
 A
 19 2
 #27708
@@ -95,7 +93,7 @@ The girth of the thain lies here.~
 ~
 9 n 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 0
-4 1000 0 0
+4 1000 0 0 0
 A
 4 2
 #27709
@@ -105,7 +103,7 @@ A tiny dagger lies here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 6 11
-3 40 0 0
+3 40 0 0 0
 #27710
 egg~
 an egg~
@@ -113,7 +111,7 @@ An egg lies here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 9 0 0
+1 9 0 0 0
 #27711
 bag~
 a bag~
@@ -121,7 +119,7 @@ A bag is on the floor.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 50 0 0 0
-5 50 0 0
+5 50 0 0 0
 #27712
 lantern~
 a lantern~
@@ -129,7 +127,7 @@ A lantern is on the floor.~
 ~
 1 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 20 0
-4 50 0 0
+4 50 0 0 0
 #27713
 bardiche long weapon~
 a bardiche~
@@ -137,7 +135,7 @@ A long weapon with a sharp end is on the floor.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 3
-10 1000 0 0
+10 1000 0 0 0
 A
 18 4
 #27714
@@ -147,7 +145,7 @@ A flail is on the floor.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 6
-8 300 0 0
+8 300 0 0 0
 #27715
 sunflower golden flower~
 a golden sunflower~
@@ -155,7 +153,7 @@ A golden sunflower blooms here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
-1 1 0 0
+1 1 0 0 0
 E
 sunflower golden flower~
    This large flower is the bright golden yellow colour of sunshine, beautiful
@@ -169,7 +167,7 @@ A pile of sunflower seeds has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 sunflower seeds~
    This little teardrop shaped seeds are dark grey and striped with white, the
@@ -183,7 +181,7 @@ A trickle of water flows from the Brandywine.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 99 99 15 0
-0 0 0 0
+0 0 0 0 0
 E
 water trickle Brandywine water~
    This little trickle of sparkling water comes straight from the Brandywine
@@ -197,7 +195,7 @@ A plate of toad-in-the-hole is steaming here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plate toad hole toad-in-the-hole~
    This steaming dish is made mainly of battered sausages, crisp brown batter
@@ -212,7 +210,7 @@ A plate of venison in red wine is steaming here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plate venison red wine~
    This delicious looking meal is made from diced venison that has been simmered
@@ -227,7 +225,7 @@ A plate of suet pudding with beef sits steaming here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 30 0 0
+1 30 0 0 0
 E
 plate suet pudding beef~
    This brown crisp battering looks perfectly made, puffy and steaming next to a
@@ -242,7 +240,7 @@ A bowl of apple crumble sits here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 bowl apple crumble~
    This dish is made of diced apples that have been coated with brown sugar and
@@ -257,7 +255,7 @@ A bowl of apricot fool sits here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 bowl apricot fool~
    Golden apricots have been mashed to a smooth puree and allowed to soak in
@@ -271,7 +269,7 @@ A plate of bacon roly-poly sits steaming here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 plate bacon roly-poly~
    This traditional dish is made with moist suet pastry, filled with chopped
@@ -286,7 +284,7 @@ A plate of bangers and mash smells absolutely delicious.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 20 0 0
+1 20 0 0 0
 E
 plate bangers mash~
    Three crispy brown sausages sit side by side, nestled next to a generous
@@ -300,7 +298,7 @@ A bowl of bread and butter pudding is soaking here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 12 0 0
+1 12 0 0 0
 E
 bowl bread butter pudding~
    Sliced bread has been soaked in sugared milk until completely moist and soft,
@@ -315,7 +313,7 @@ A plate of bubble and squeak wafts heat into the air.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plate bubble squeak~
    Chopped up beef has been fried together with green cabbage and mixed
@@ -329,7 +327,7 @@ A plate of cauliflower cheese sits temptingly here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 16 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plate cauliflower cheese~
    Pale cauliflower florets have been steamed lightly until softened and baked
@@ -343,7 +341,7 @@ A plate of chicken kiev steams slowly.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-1 30 0 0
+1 30 0 0 0
 E
 plate chicken kiev~
    A piece of succulent white chicken breast has been carefully pierced and
@@ -358,7 +356,7 @@ A plate of fried duck breast simmers with heat.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 30 0 0
+1 30 0 0 0
 E
 plate fried duck breast~
    This slightly fatty piece of deep red meat has been seared with intense heat
@@ -373,7 +371,7 @@ A scotch egg has been dropped here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 scotch egg~
    This filling little snack has been made from a hard boiled egg which has then
@@ -387,7 +385,7 @@ A bowl of bananas and custard has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 bowl bananas custard~
    This delicious desert has been made from sliced bananas left to simmer in hot
@@ -401,7 +399,7 @@ A piece of sticky gingerbread is lying here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 piece sticky gingerbread~
    This golden brown piece of gingerbread is soft and squidgy, made from mostly
@@ -415,7 +413,7 @@ A plate of smoked mackerel has been set here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plate smoked mackerel~
    Creamy coloured mackerel meat has been cooked and mashed together with melted
@@ -430,7 +428,7 @@ A plate of shepherd's pie gives off a delicious smell.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plate shepherd's pie~
    This piping hot dish has been made from minced mutton mixed with sliced
@@ -445,7 +443,7 @@ A pickled onion lies on the ground.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 pickled onion~
    This very small onion is about the size of a whole walnut, peeled and scalded
@@ -459,7 +457,7 @@ A sausage roll lies steaming here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 20 0 0
+1 20 0 0 0
 E
 sausage roll~
    A slightly spiced sausage has been cooked until soft and tender and rolled in
@@ -473,7 +471,7 @@ A bowl of spotted dick is set here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 spotted dick bowl~
    Shredded suet pastry has been tossed with breadcrumbs and raisins, seasoned
@@ -488,7 +486,7 @@ A plate of baked gammon in cider sits here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plate baked gammon cider~
    A joint of gammon has been slowly simmered in a cider sauce with chopped
@@ -502,7 +500,7 @@ A plate of baked flounder smells delicious.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 14 0 0 0
-1 20 0 0
+1 20 0 0 0
 E
 plate baked flounder~
    Two small flounders have been baked with nutmeg and herbs before being
@@ -517,7 +515,7 @@ A crumpet has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-1 20 0 0
+1 20 0 0 0
 E
 crumpet~
    A salted batter of flour and yeast has been mixed with warm milk and fried
@@ -531,7 +529,7 @@ A plate of lamprey in brewet sits here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-1 24 0 0
+1 24 0 0 0
 E
 plate lamprey brewet~
    A piece of fresh white lamprey has been boiled in salted water and then fried
@@ -546,7 +544,7 @@ A piece of lemon cake sits here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 6 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 piece lemon cake~
    This deliciously sweet and lemony piece of cake is a delicate yellow colour,
@@ -560,7 +558,7 @@ A plate of mushroom croustades is steaming here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-1 24 0 0
+1 24 0 0 0
 E
 plate mushroom croustades~
    Wholemeal rolls have been hollowed out and spread with crushed garlic,
@@ -575,7 +573,7 @@ A bowl of treacle pudding sits here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 15 0 0 0
-1 15 0 0
+1 15 0 0 0
 E
 bowl treacle pudding~
    A golden tart of treacle and rich shortcrust pastry has been sprinkled with
@@ -589,7 +587,7 @@ A plate of skirlie with mushrooms has been set here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plate skirlie mushrooms~
    Sliced mushrooms and onion have been fried until golden brown in good meat
@@ -603,7 +601,7 @@ A plate of quails on mushrooms has been set here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-1 25 0 0
+1 25 0 0 0
 E
 plate quails mushrooms~
    Two plump quails have been stuffed with finely chopped garlic, chives, and
@@ -618,7 +616,7 @@ A hunter's knife lies forgotten here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 4 3 11
-1 150 0 0
+1 150 0 0 0
 E
 hunter's knife~
    This little serrated blade has been designed for sawing through tough hides
@@ -632,7 +630,7 @@ flowing purple skirt~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-2 150 0 0
+2 150 0 0 0
 E
 flowing purple skirt~
    This long skirt is made from masses of purple fabric, making it very full and
@@ -648,7 +646,7 @@ purple bodice~
 ~
 11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 purple bodice~
    This delicate bodice has been designed to tightly cinch the waist of the
@@ -662,7 +660,7 @@ white cotton blouse~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 90 0 0
+1 90 0 0 0
 E
 white cotton blouse~
    This simple gauzy blouse is loose and airy, gathered sleeves ending at the
@@ -679,7 +677,7 @@ daisy chain~
 ~
 11 0 0 0 0 aeo 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 daisy chain~
    This pretty little chain is made up of flowers as white as pure snow, their
@@ -692,7 +690,7 @@ sweeping green skirt~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-2 110 0 0
+2 110 0 0 0
 E
 sweeping green skirt~
    This long velvety skirt hangs in deep sweeping folds, the long hem trimmed
@@ -707,7 +705,7 @@ green bodice~
 ~
 11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 green bodice~
    This deep green material is slightly velvety in feel, dark wooden buttons
@@ -723,7 +721,7 @@ light yellow skirt~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-2 120 0 0
+2 120 0 0 0
 E
 light yellow skirt~
    This brightly coloured skirt is made from a very fragile and airy material,
@@ -738,7 +736,7 @@ yellow bodice~
 ~
 11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 E
 yellow bodice~
    This pretty little bodice is hemmed with a delicate embroidering of gold, and
@@ -754,7 +752,7 @@ flowing blue skirt~
 ~
 11 0 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-2 120 0 0
+2 120 0 0 0
 E
 flowing blue skirt~
    Made from light silky material, this delicate blue skirt is soft and smooth
@@ -769,7 +767,7 @@ blue bodice~
 ~
 11 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 90 0 0
+1 90 0 0 0
 E
 blue bodice~
    Lightly embroidered with silver thread, this blue bodice is made of a very
@@ -785,7 +783,7 @@ A wooden crate stands amongst the shadows.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 99 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 wooden crate~
    Made of damp and mouldy wooden boards, this crate looks more likely to fall
@@ -800,7 +798,7 @@ string black pearls~
 ~
 11 0 0 0 0 ac 0 0 0 o 0 0 0
 0 0 0 0
-1 500 2 0
+1 500 2 0 0
 E
 string black pearls~
    Darkly beautiful, these smooth black pearls are linked with a fine silver
@@ -816,7 +814,7 @@ A treasure chest stands against the wall.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 99 13 27761 0
-0 0 0 0
+0 0 0 0 0
 E
 treasure chest~
    This strong wooden chest is bound with thick metal bands, keeping the
@@ -831,7 +829,7 @@ A tiny metal key glints on the ground.~
 ~
 18 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 tiny metal key~
    This little key has been forged from a silvery metal, its once polished
@@ -845,7 +843,7 @@ A pile of gold coins glints temptingly here.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1220 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 pile gold coins~
    Various pieces of gold lie gathered in a pile, worn with time and lack of
@@ -858,7 +856,7 @@ A bejewelled shield sparkles here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
-3 1000 5 0
+3 1000 5 0 0
 E
 paladin's bejewelled shield~
    This shield is inscribed with the name of Paladin Took II, and seems to be
@@ -874,7 +872,7 @@ A small chest stands here, covered over with a dirty cloth.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 99 1 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 chest small~
    This decrepit wooden chest is made from dark mouldy boards, almost completely
@@ -888,7 +886,7 @@ An old skeleton lies crumpled here.~
 ~
 13 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-5 1 0 0
+5 1 0 0 0
 E
 old skeleton~
    This intact pile of bones is obviously the long decayed form of a hobbit,

@@ -5,7 +5,7 @@ A red feather lies here.~
 ~
 2 0 0 0 0 ae 0 0 0 0 0 0 0
 30 26 -1 -1
-1 300 0 0
+1 300 0 0 0
 A
 17 -5
 #4501
@@ -15,7 +15,7 @@ A large bundle of cloth lies here.~
 ~
 9 k 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-5 100 0 0
+5 100 0 0 0
 A
 4 2
 A
@@ -25,9 +25,9 @@ sandals shoes~
 a pair of sandals~
 Some nice sandals sit here.~
 ~
-9 hkmopq 0 0 0 ag 0 0 0 0 0 0 0
+9 kmopq 0 0 0 ag 0 0 0 0 0 0 0
 2 0 0 0
-2 500 0 0
+2 500 0 0 0
 A
 3 1
 A
@@ -39,7 +39,7 @@ A pile of gold is stacked here.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 500 0 0 0
-20 500 0 0
+20 500 0 0 0
 #4517
 chimera statue~
 a statue of a chimera~
@@ -47,15 +47,15 @@ A small statue is here.~
 ~
 12 c 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-5 1 0 0
+5 1 0 0 0
 #4518
 phoenix claw~
 a phoenix claw~
 A large claw of the phoenix lies here.~
 ~
-5 hkopq 0 0 0 an 0 0 0 0 0 0 0
+5 kopq 0 0 0 an 0 0 0 0 0 0 0
 2 3 7 8
-3 1000 0 0
+3 1000 0 0 0
 A
 17 5
 A
@@ -69,7 +69,7 @@ Some celery stalks here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 48 0 0 0
-1 500 0 0
+1 500 0 0 0
 #4524
 bunch o strawberries~
 a bunch of strawberries~
@@ -77,7 +77,7 @@ A bunch of strawberries lie here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 1 0 0
+1 1 0 0 0
 #4588
 cloak green dark arrow broken~
 a Cloak of the Broken Arrow~
@@ -85,7 +85,7 @@ A dark green cloak lies here.~
 ~
 1 gk 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-9 1000 0 30
+9 1000 0 30 0
 A
 5 2
 A

@@ -5,7 +5,7 @@ A steel suit of MoS is laying here on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 8 0 0 0
-11 450 0 30 0
+11 450 0 10 0
 E
 armor suit steal~
    Polished to a high sheen, this suit of steel completely encases the upper
@@ -37,7 +37,7 @@ An MoS shield has been left here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
-5 12 0 30 0
+5 12 0 10 0
 E
 shield steel~
    This shield bears the sigil of the Militant Order of the Sword two swords,
@@ -81,7 +81,7 @@ A
 A
 13 -5
 #25305
-banner~
+banner gray piece cloth~
 a gray piece of cloth~
 A gray piece of cloth lies thrown in a corner.~
 ~
@@ -89,7 +89,7 @@ A gray piece of cloth lies thrown in a corner.~
 0 0 0 0
 5 100 0 0 0
 E
-banner~
+banner gray piece cloth~
    This cloth tapestry depicts the Elven Lore of the Ancients, from the
 beginning of time to present day.  All the history and magic that is the Elven
 Society is depicted on this tapestry.  

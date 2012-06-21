@@ -293,7 +293,7 @@ a jar of blue waters~
 An empty looking jar lays here.~
 ~
 10 0 0 0 0 a 0 0 0 0 0 0 0
-12 -1 -1 -1
+12 51 -1 -1
 4 180 20 0 0
 #10633
 bright yellow gel jar~
@@ -301,7 +301,7 @@ a jar containing bright yellow gel~
 A jar glowing in bright yellow sits here.~
 ~
 10 0 0 0 0 a 0 0 0 0 0 0 0
-12 -1 -1 -1
+12 44 -1 -1
 5 160 16 0 0
 #10634
 cherry tube~
@@ -349,7 +349,7 @@ a null gravity potion~
 A small jar is here floating in the middle of the room.~
 ~
 10 0 0 0 0 a 0 0 0 0 0 0 0
-12 -1 -1 -1
+12 53 -1 -1
 1 500 50 0 0
 #10640
 banks~
@@ -360,11 +360,11 @@ A vault for collection and deposits is here.~
 0 0 0 0
 0 0 0 0 0
 #10641
-Dagger~
-an assasins dagger~
+assassins dagger~
+an assassins dagger~
 A long slender dagger is lying here~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
-5 4 4 14
+5 4 4 11
 1 100 10 0 0
 $~
