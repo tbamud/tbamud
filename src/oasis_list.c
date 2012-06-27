@@ -263,7 +263,10 @@ void perform_obj_aff_list(struct char_data * ch, char *arg)
       if ((apply == APPLY_CLASS && obj_proto[num].obj_flags.type_flag == ITEM_WEAPON) ||
           (apply == APPLY_LEVEL && obj_proto[num].obj_flags.type_flag == ITEM_ARMOR) ) {
         ov = obj_index[num].vnum;
-        v1 = ((obj_proto[num].obj_flags.value[2]+1)*(obj_proto[num].obj_flags.value[1])/2);
+        if (apply == APPLY_CLASS)
+          v1 = ((obj_proto[num].obj_flags.value[2]+1)*(obj_proto[num].obj_flags.value[1])/2);
+        else
+          v1 = (obj_proto[num].obj_flags.value[0]);
 
         if ((r_num = real_object(ov)) != NOTHING)
           add_to_obj_list(lst, MAX_OBJ_LIST, ov, v1);
