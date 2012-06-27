@@ -232,7 +232,12 @@ void perform_obj_type_list(struct char_data * ch, char *arg)
             send_to_char(ch, "Not a valid item type");
             return;
         }
-        len += tmp_len;
+        if (len + tmp_len < sizeof(buf) - 1)
+          len += tmp_len;
+        else {
+		  buf[sizeof(buf) -1] = '\0';
+		  break;	
+		}
       }
     }
   }
