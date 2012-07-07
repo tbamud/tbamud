@@ -321,6 +321,7 @@ const char *connected_types[] = {
   "Quest edit",
   "Preference edit",
   "IBT edit",
+  "Message edit",
   "Protocol Detection",
   "\n"
 };

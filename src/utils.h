@@ -1050,6 +1050,8 @@ do                                                              \
 #define CONFIG_PROTOCOL_NEGOTIATION config_info.operation.protocol_negotiation
 /** Use the special character in comm channels? */
 #define CONFIG_SPECIAL_IN_COMM config_info.operation.special_in_comm
+/** Activate debug mode? */
+#define CONFIG_DEBUG_MODE config_info.operation.debug_mode
 
 /* Autowiz */
 /** Use autowiz or not? */

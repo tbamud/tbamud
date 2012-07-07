@@ -28,6 +28,11 @@
 #include "act.h"
 #include "modify.h"
 
+/* Globals */
+const char * RGBone = "F022";
+const char * RGBtwo = "F055";
+const char * RGBthree = "F555";
+
 static void Write( descriptor_t *apDescriptor, const char *apData )
 {
    if ( apDescriptor != NULL)
@@ -565,13 +570,13 @@ const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int 
             /* 1,2,3 to be used a MUD's base colour palette. Just to maintain
              * some sort of common colouring scheme amongst coders/builders */
             case '1':
-               pCopyFrom = ColourRGB(apDescriptor, "F022");
+               pCopyFrom = ColourRGB(apDescriptor, RGBone);
                break;
             case '2':
-               pCopyFrom = ColourRGB(apDescriptor, "F055");
+               pCopyFrom = ColourRGB(apDescriptor, RGBtwo);
                break;
             case '3':
-               pCopyFrom = ColourRGB(apDescriptor, "F555");
+               pCopyFrom = ColourRGB(apDescriptor, RGBthree);
                break;
             case 'n':
                pCopyFrom = s_Clean;
@@ -1499,6 +1504,15 @@ static void Negotiate( descriptor_t *apDescriptor )
 
       /* Check for other protocols. */
       Write(apDescriptor, DoNAWS);
+      /* Gnome-mud seems to have an issue with negotiating DoCHARSET under
+       * certain conditions cause it to crash. This is a GNOME-MUD issue
+       * and not an issue on our end. Never-the-less, if you discover you
+       * are having this issue you can either a) disable protocol negotiation
+       * in cedit, or b) disable detection of CHARSET by deleting/commenting
+       * the following line.
+       * 
+       * For more information on gnome-mud's bug see:
+       * https://bugs.launchpad.net/ubuntu/+source/gnome-mud/+bug/398340 */
       Write(apDescriptor, DoCHARSET);
       Write(apDescriptor, WillMSDP);
       Write(apDescriptor, WillMSSP);

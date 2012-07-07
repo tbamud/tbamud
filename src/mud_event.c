@@ -41,7 +41,7 @@ void init_events(void)
  * mud_event_index[] such as:
    * { "Lay on hands"    , event_countdown, EVENT_CHAR  }
  * and then add the event after a successful skill call:
-   * attach_mud_event(new_mud_event(eLAYONHANDS, ch, NULL), 24 * SECS_PER_MUD_HOUR);
+   * NEW_EVENT(eLAYONHANDS, ch, NULL, 24 * SECS_PER_MUD_HOUR)
  * and then add something like this is your skill function:
    * if (char_has_mud_event(ch, eLAYONHANDS)) {
    *   send_to_char(ch, "You must wait a full 24 hours before re-using this skill.\r\n");

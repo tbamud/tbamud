@@ -76,6 +76,7 @@
 #include "boards.h"
 #include "act.h"
 #include "ban.h"
+#include "msgedit.h"
 #include "fight.h"
 #include "spells.h" /* for affect_update */
 #include "modify.h"
@@ -1432,7 +1433,7 @@ static int set_sendbuf(socket_t s)
 /* Initialize a descriptor */
 static void init_descriptor (struct descriptor_data *newd, int desc)
 {
-    static int last_desc = 0;	/* last descriptor number */
+  static int last_desc = 0;	/* last descriptor number */
 
   newd->descriptor = desc;
   newd->idle_tics = 0;
@@ -2111,6 +2112,7 @@ void close_socket(struct descriptor_data *d)
     case CON_AEDIT:
     case CON_HEDIT:
     case CON_QEDIT:
+    case CON_MSGEDIT:
       cleanup_olc(d, CLEANUP_ALL);
       break;
     default:

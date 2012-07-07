@@ -58,7 +58,6 @@ static struct char_data *next_combat_list = NULL;
 /* local file scope utility functions */
 static void perform_group_gain(struct char_data *ch, int base, struct char_data *victim);
 static void dam_message(int dam, struct char_data *ch, struct char_data *victim, int w_type);
-static void free_messages_type(struct msg_type *msg);
 static void make_corpse(struct char_data *ch);
 static void change_alignment(struct char_data *ch, struct char_data *victim);
 static void group_gain(struct char_data *ch, struct char_data *victim);
@@ -95,89 +94,6 @@ int compute_armor_class(struct char_data *ch)
   return (MAX(-100, armorclass));      /* -100 is lowest */
 }
 
-static void free_messages_type(struct msg_type *msg)
-{
-  if (msg->attacker_msg)	free(msg->attacker_msg);
-  if (msg->victim_msg)		free(msg->victim_msg);
-  if (msg->room_msg)		free(msg->room_msg);
-}
-
-void free_messages(void)
-{
-  int i;
-
-  for (i = 0; i < MAX_MESSAGES; i++)
-    while (fight_messages[i].msg) {
-      struct message_type *former = fight_messages[i].msg;
-
-      free_messages_type(&former->die_msg);
-      free_messages_type(&former->miss_msg);
-      free_messages_type(&former->hit_msg);
-      free_messages_type(&former->god_msg);
-
-      fight_messages[i].msg = fight_messages[i].msg->next;
-      free(former);
-    }
-}
-
-void load_messages(void)
-{
-  FILE *fl;
-  int i, type;
-  struct message_type *messages;
-  char chk[128], *buf;
-
-  if (!(fl = fopen(MESS_FILE, "r"))) {
-    log("SYSERR: Error reading combat message file %s: %s", MESS_FILE, strerror(errno));
-    exit(1);
-  }
-
-  for (i = 0; i < MAX_MESSAGES; i++) {
-    fight_messages[i].a_type = 0;
-    fight_messages[i].number_of_attacks = 0;
-    fight_messages[i].msg = NULL;
-  }
-
-  while (!feof(fl)) {
-    buf = fgets(chk, 128, fl);
-    while (!feof(fl) && (*chk == '\n' || *chk == '*'))
-      buf = fgets(chk, 128, fl);
-
-    while (*chk == 'M') {
-      buf = fgets(chk, 128, fl);
-      sscanf(chk, " %d\n", &type);
-      for (i = 0; (i < MAX_MESSAGES) && (fight_messages[i].a_type != type) &&
-         (fight_messages[i].a_type); i++);
-      if (i >= MAX_MESSAGES) {
-        log("SYSERR: Too many combat messages.  Increase MAX_MESSAGES and recompile.");
-        exit(1);
-      }
-      CREATE(messages, struct message_type, 1);
-      fight_messages[i].number_of_attacks++;
-      fight_messages[i].a_type = type;
-      messages->next = fight_messages[i].msg;
-      fight_messages[i].msg = messages;
-
-      messages->die_msg.attacker_msg = fread_action(fl, i);
-      messages->die_msg.victim_msg = fread_action(fl, i);
-      messages->die_msg.room_msg = fread_action(fl, i);
-      messages->miss_msg.attacker_msg = fread_action(fl, i);
-      messages->miss_msg.victim_msg = fread_action(fl, i);
-      messages->miss_msg.room_msg = fread_action(fl, i);
-      messages->hit_msg.attacker_msg = fread_action(fl, i);
-      messages->hit_msg.victim_msg = fread_action(fl, i);
-      messages->hit_msg.room_msg = fread_action(fl, i);
-      messages->god_msg.attacker_msg = fread_action(fl, i);
-      messages->god_msg.victim_msg = fread_action(fl, i);
-      messages->god_msg.room_msg = fread_action(fl, i);
-      buf  = fgets(chk, 128, fl);
-      while (!feof(fl) && (*chk == '\n' || *chk == '*'))
-        buf  = fgets(chk, 128, fl);
-    }
-  }
-  fclose(fl);
-}
-
 void update_pos(struct char_data *victim)
 {
   if ((GET_HIT(victim) > 0) && (GET_POS(victim) > POS_STUNNED))
@@ -204,7 +120,7 @@ void check_killer(struct char_data *ch, struct char_data *vict)
   SET_BIT_AR(PLR_FLAGS(ch), PLR_KILLER);
   send_to_char(ch, "If you want to be a PLAYER KILLER, so be it...\r\n");
   mudlog(BRF, LVL_IMMORT, TRUE, "PC Killer bit set on %s for initiating attack on %s at %s.",
-	    GET_NAME(ch), GET_NAME(vict), world[IN_ROOM(vict)].name);
+    GET_NAME(ch), GET_NAME(vict), world[IN_ROOM(vict)].name);
 }
 
 /* start one char fighting another (yes, it is horrible, I know... )  */
@@ -605,58 +521,60 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
 
   struct obj_data *weap = GET_EQ(ch, WEAR_WIELD);
 
+  /* @todo restructure the messages library to a pointer based system as
+   * opposed to the current cyclic location system. */
   for (i = 0; i < MAX_MESSAGES; i++) {
     if (fight_messages[i].a_type == attacktype) {
       nr = dice(1, fight_messages[i].number_of_attacks);
       for (j = 1, msg = fight_messages[i].msg; (j < nr) && msg; j++)
-	msg = msg->next;
+        msg = msg->next;
 
       if (!IS_NPC(vict) && (GET_LEVEL(vict) >= LVL_IMPL)) {
-	act(msg->god_msg.attacker_msg, FALSE, ch, weap, vict, TO_CHAR);
-	act(msg->god_msg.victim_msg, FALSE, ch, weap, vict, TO_VICT);
-	act(msg->god_msg.room_msg, FALSE, ch, weap, vict, TO_NOTVICT);
+        act(msg->god_msg.attacker_msg, FALSE, ch, weap, vict, TO_CHAR);
+        act(msg->god_msg.victim_msg, FALSE, ch, weap, vict, TO_VICT);
+        act(msg->god_msg.room_msg, FALSE, ch, weap, vict, TO_NOTVICT);
       } else if (dam != 0) {
         /*
          * Don't send redundant color codes for TYPE_SUFFERING & other types
          * of damage without attacker_msg.
          */
-	if (GET_POS(vict) == POS_DEAD) {
+        if (GET_POS(vict) == POS_DEAD) {
           if (msg->die_msg.attacker_msg) {
             send_to_char(ch, CCYEL(ch, C_CMP));
             act(msg->die_msg.attacker_msg, FALSE, ch, weap, vict, TO_CHAR);
             send_to_char(ch, CCNRM(ch, C_CMP));
           }
 
-	  send_to_char(vict, CCRED(vict, C_CMP));
-	  act(msg->die_msg.victim_msg, FALSE, ch, weap, vict, TO_VICT | TO_SLEEP);
-	  send_to_char(vict, CCNRM(vict, C_CMP));
+          send_to_char(vict, CCRED(vict, C_CMP));
+          act(msg->die_msg.victim_msg, FALSE, ch, weap, vict, TO_VICT | TO_SLEEP);
+          send_to_char(vict, CCNRM(vict, C_CMP));
 
-	  act(msg->die_msg.room_msg, FALSE, ch, weap, vict, TO_NOTVICT);
-	} else {
+          act(msg->die_msg.room_msg, FALSE, ch, weap, vict, TO_NOTVICT);
+        } else {
           if (msg->hit_msg.attacker_msg) {
-	    send_to_char(ch, CCYEL(ch, C_CMP));
-	    act(msg->hit_msg.attacker_msg, FALSE, ch, weap, vict, TO_CHAR);
-	    send_to_char(ch, CCNRM(ch, C_CMP));
+            send_to_char(ch, CCYEL(ch, C_CMP));
+            act(msg->hit_msg.attacker_msg, FALSE, ch, weap, vict, TO_CHAR);
+            send_to_char(ch, CCNRM(ch, C_CMP));
           }
 
-	  send_to_char(vict, CCRED(vict, C_CMP));
-	  act(msg->hit_msg.victim_msg, FALSE, ch, weap, vict, TO_VICT | TO_SLEEP);
-	  send_to_char(vict, CCNRM(vict, C_CMP));
+          send_to_char(vict, CCRED(vict, C_CMP));
+          act(msg->hit_msg.victim_msg, FALSE, ch, weap, vict, TO_VICT | TO_SLEEP);
+          send_to_char(vict, CCNRM(vict, C_CMP));
 
-	  act(msg->hit_msg.room_msg, FALSE, ch, weap, vict, TO_NOTVICT);
-	}
+          act(msg->hit_msg.room_msg, FALSE, ch, weap, vict, TO_NOTVICT);
+        }
       } else if (ch != vict) {	/* Dam == 0 */
         if (msg->miss_msg.attacker_msg) {
-	  send_to_char(ch, CCYEL(ch, C_CMP));
-	  act(msg->miss_msg.attacker_msg, FALSE, ch, weap, vict, TO_CHAR);
-	  send_to_char(ch, CCNRM(ch, C_CMP));
+          send_to_char(ch, CCYEL(ch, C_CMP));
+          act(msg->miss_msg.attacker_msg, FALSE, ch, weap, vict, TO_CHAR);
+          send_to_char(ch, CCNRM(ch, C_CMP));
         }
 
-	send_to_char(vict, CCRED(vict, C_CMP));
-	act(msg->miss_msg.victim_msg, FALSE, ch, weap, vict, TO_VICT | TO_SLEEP);
-	send_to_char(vict, CCNRM(vict, C_CMP));
+        send_to_char(vict, CCRED(vict, C_CMP));
+        act(msg->miss_msg.victim_msg, FALSE, ch, weap, vict, TO_VICT | TO_SLEEP);
+        send_to_char(vict, CCNRM(vict, C_CMP));
 
-	act(msg->miss_msg.room_msg, FALSE, ch, weap, vict, TO_NOTVICT);
+        act(msg->miss_msg.room_msg, FALSE, ch, weap, vict, TO_NOTVICT);
       }
       return (1);
     }
@@ -681,7 +599,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
       return (-1);
 
     log("SYSERR: Attempt to damage corpse '%s' in room #%d by '%s'.",
-		GET_NAME(victim), GET_ROOM_VNUM(IN_ROOM(victim)), GET_NAME(ch));
+        GET_NAME(victim), GET_ROOM_VNUM(IN_ROOM(victim)), GET_NAME(ch));
     die(victim, ch);
     return (-1);			/* -je, 7/7/92 */
   }
@@ -921,6 +839,11 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
   /* roll the die and take your chances... */
   diceroll = rand_number(1, 20);
 
+  /* report for debugging if necessary */
+  if (CONFIG_DEBUG_MODE >= NRM)
+    send_to_char(ch, "\t1Debug:\r\n   \t2Thaco: \t3%d\r\n   \t2AC: \t3%d\r\n   \t2Diceroll: \t3%d\tn\r\n", 
+      calc_thaco, victim_ac, diceroll);
+
   /* Decide whether this is a hit or a miss.
    *  Victim asleep = hit, otherwise:
    *     1   = Automatic miss.
@@ -948,10 +871,10 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
       dam += dice(GET_OBJ_VAL(wielded, 1), GET_OBJ_VAL(wielded, 2));
     } else {
       /* If no weapon, add bare hand damage instead */
-      if (IS_NPC(ch))
-	dam += dice(ch->mob_specials.damnodice, ch->mob_specials.damsizedice);
-      else
-	dam += rand_number(0, 2);	/* Max 2 bare hand damage for players */
+        if (IS_NPC(ch))
+          dam += dice(ch->mob_specials.damnodice, ch->mob_specials.damsizedice);
+        else
+          dam += rand_number(0, 2);	/* Max 2 bare hand damage for players */
     }
 
     /* Include a damage multiplier if victim isn't ready to fight:
@@ -995,13 +918,13 @@ void perform_violence(void)
 
     if (IS_NPC(ch)) {
       if (GET_MOB_WAIT(ch) > 0) {
-	GET_MOB_WAIT(ch) -= PULSE_VIOLENCE;
-	continue;
+        GET_MOB_WAIT(ch) -= PULSE_VIOLENCE;
+        continue;
       }
       GET_MOB_WAIT(ch) = 0;
       if (GET_POS(ch) < POS_FIGHTING) {
-	GET_POS(ch) = POS_FIGHTING;
-	act("$n scrambles to $s feet!", TRUE, ch, 0, 0, TO_ROOM);
+        GET_POS(ch) = POS_FIGHTING;
+        act("$n scrambles to $s feet!", TRUE, ch, 0, 0, TO_ROOM);
       }
     }
 

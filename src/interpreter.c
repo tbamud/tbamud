@@ -210,6 +210,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "medit"    , "med"     , POS_DEAD    , do_oasis_medit, LVL_BUILDER, 0 },
   { "mlist"    , "mlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_MLIST },
   { "mcopy"    , "mcopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_MEDIT },
+  { "msgedit"  , "msgedit" , POS_DEAD    , do_msgedit,   LVL_GOD, 0 },
   { "mute"     , "mute"    , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_MUTE },
 
   { "news"     , "news"    , POS_SLEEPING, do_gen_ps   , 0, SCMD_NEWS },
@@ -1333,6 +1334,7 @@ void nanny(struct descriptor_data *d, char *arg)
     { CON_QEDIT, qedit_parse },
     { CON_PREFEDIT, prefedit_parse },
     { CON_IBTEDIT, ibtedit_parse },
+    { CON_MSGEDIT, msgedit_parse },
     { -1, NULL }
   };
 

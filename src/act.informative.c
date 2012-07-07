@@ -491,7 +491,7 @@ void look_at_room(struct char_data *ch, int ignore_brief)
 
     sprintbitarray(ROOM_FLAGS(IN_ROOM(ch)), room_bits, RF_ARRAY_MAX, buf);
     send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
-    send_to_char(ch, "%s [ %s] ", world[IN_ROOM(ch)].name, buf);
+    send_to_char(ch, "%s [ %s] [ %s ]", world[IN_ROOM(ch)].name, buf, sector_types[world[IN_ROOM(ch)].sector_type]);
 
     if (SCRIPT(rm)) {
       send_to_char(ch, "[T");
@@ -1032,12 +1032,16 @@ int search_help(const char *argument, int level)
 
       while (level < help_table[mid].min_level && mid < (bot + top) / 2)
         mid++;
-
-//      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
-      if (strn_cmp(argument, help_table[mid].keywords, minlen))
+  
+  /* The following line was commented out at some point, by someone, for some reason...
+   * as I am unaware of that reason, and without a level check all help files, including
+   * the ones we may not want a player to see, are available. So I'm reversing this now.
+   * -Vat */
+      if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
+    /*if (strn_cmp(argument, help_table[mid].keywords, minlen))*/
         break;
-
-      return mid;
+        
+      return (mid);
     }
     else if (chk > 0)
       bot = mid + 1;
@@ -1087,7 +1091,7 @@ ACMD(do_help)
           send_to_char(ch, "\r\nDid you mean:\r\n");
           found = 1;
         }
-        send_to_char(ch, "  %s\r\n", help_table[i].keywords);
+        send_to_char(ch, "  \t<send link=\"Help %s\">%s\t</send>\r\n", help_table[i].keywords, help_table[i].keywords);
       }
     }
     return;
@@ -1407,7 +1411,7 @@ ACMD(do_users)
     }
   }				/* end while (parser) */
   send_to_char(ch,
-	 "Num Class   Name         State          Idl   Login@@   Site\r\n"
+	 "Num Class   Name         State          Idl   Login\t*   Site\r\n"
 	 "--- ------- ------------ -------------- ----- -------- ------------------------\r\n");
 
   one_argument(argument, arg);
@@ -1419,23 +1423,23 @@ ACMD(do_users)
       continue;
     if (IS_PLAYING(d)) {
       if (d->original)
-	tch = d->original;
+        tch = d->original;
       else if (!(tch = d->character))
-	continue;
+        continue;
 
       if (*host_search && !strstr(d->host, host_search))
-	continue;
+        continue;
       if (*name_search && str_cmp(GET_NAME(tch), name_search))
-	continue;
+        continue;
       if (!CAN_SEE(ch, tch) || GET_LEVEL(tch) < low || GET_LEVEL(tch) > high)
-	continue;
+        continue;
       if (outlaws && !PLR_FLAGGED(tch, PLR_KILLER) &&
 	  !PLR_FLAGGED(tch, PLR_THIEF))
-	continue;
+        continue;
       if (showclass && !(showclass & (1 << GET_CLASS(tch))))
-	continue;
+        continue;
       if (GET_INVIS_LEV(tch) > GET_LEVEL(ch))
-	continue;
+        continue;
 
       if (d->original)
 	sprintf(classname, "[%2d %s]", GET_LEVEL(d->original),
@@ -2422,7 +2426,7 @@ ACMD(do_whois)
 
   if (!got_from_file && victim->desc != NULL && GET_LEVEL(ch) >= LVL_GOD) {
     protocol_t * prot = victim->desc->pProtocol;
-    send_to_char(ch, "Client:  %s\r\n", prot->pVariables[eMSDP_CLIENT_ID]->pValueString);
+    send_to_char(ch, "Client:  %s [%s]\r\n", prot->pVariables[eMSDP_CLIENT_ID]->pValueString, prot->pVariables[eMSDP_CLIENT_VERSION]->pValueString ? prot->pVariables[eMSDP_CLIENT_VERSION]->pValueString : "Unknown");
     send_to_char(ch, "Color:   %s\r\n", prot->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt ? "Xterm" : (prot->pVariables[eMSDP_ANSI_COLORS]->ValueInt ? "Ansi" : "None"));
     send_to_char(ch, "MXP:     %s\r\n", prot->bMXP ? "Yes" : "No");
     send_to_char(ch, "Charset: %s\r\n", prot->bCHARSET ? "Yes" : "No");

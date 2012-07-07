@@ -132,6 +132,7 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->operation.ibt_autosave       = CONFIG_IBT_AUTOSAVE;
   OLC_CONFIG(d)->operation.protocol_negotiation = CONFIG_PROTOCOL_NEGOTIATION;
   OLC_CONFIG(d)->operation.special_in_comm    = CONFIG_SPECIAL_IN_COMM;
+  OLC_CONFIG(d)->operation.debug_mode    = CONFIG_DEBUG_MODE;
   
   /* Autowiz */
   OLC_CONFIG(d)->autowiz.use_autowiz          = CONFIG_USE_AUTOWIZ;
@@ -234,7 +235,8 @@ static void cedit_save_internally(struct descriptor_data *d)
   CONFIG_IBT_AUTOSAVE       = OLC_CONFIG(d)->operation.ibt_autosave;
   CONFIG_PROTOCOL_NEGOTIATION = OLC_CONFIG(d)->operation.protocol_negotiation;
   CONFIG_SPECIAL_IN_COMM      = OLC_CONFIG(d)->operation.special_in_comm;
-  
+  CONFIG_DEBUG_MODE           = OLC_CONFIG(d)->operation.debug_mode;
+    
   /* Autowiz */
   CONFIG_USE_AUTOWIZ          = OLC_CONFIG(d)->autowiz.use_autowiz;
   CONFIG_MIN_WIZLIST_LEV      = OLC_CONFIG(d)->autowiz.min_wizlist_lev;
@@ -551,6 +553,10 @@ int save_config( IDXTYPE nowhere )
   fprintf(fl, "* If yes, enable the special character in comm channels.\n"
               "special_in_comm = %d\n\n",
               CONFIG_SPECIAL_IN_COMM);
+              
+  fprintf(fl, "* If 0 then off, otherwise 1: Brief, 2: Normal, 3: Complete.\n"
+              "debug_mode = %d\n\n",
+              CONFIG_DEBUG_MODE);
 
   fclose(fl);
 
@@ -738,6 +744,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
   	"%sP%s) Autosave bugs when resolved from commandline : %s%s\r\n"
   	"%sR%s) Enable Protocol Negotiation : %s%s\r\n"
   	"%sS%s) Enable Special Char in Comm : %s%s\r\n"
+  	"%sT%s) Current Debug Mode : %s%s\r\n"
     "%sQ%s) Exit To The Main Menu\r\n"
     "Enter your choice : ",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.DFLT_PORT,
@@ -758,6 +765,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
     grn, nrm, cyn, OLC_CONFIG(d)->operation.ibt_autosave ? "Yes" : "No",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.protocol_negotiation ? "Yes" : "No",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.special_in_comm ? "Yes" : "No",
+    grn, nrm, cyn, OLC_CONFIG(d)->operation.debug_mode == 0 ? "OFF" : (OLC_CONFIG(d)->operation.debug_mode == 1 ? "BRIEF" : (OLC_CONFIG(d)->operation.debug_mode == 2 ? "NORMAL" : "COMPLETE")),
     grn, nrm
     );
 
@@ -1226,20 +1234,26 @@ void cedit_parse(struct descriptor_data *d, char *arg)
            TOGGLE_VAR(OLC_CONFIG(d)->operation.medit_advanced);
            break;
 
-		 case 'p':
-		 case 'P':
-		   TOGGLE_VAR(OLC_CONFIG(d)->operation.ibt_autosave);
-		   break;
+         case 'p':
+         case 'P':
+           TOGGLE_VAR(OLC_CONFIG(d)->operation.ibt_autosave);
+           break;
 
-		 case 'r':
-		 case 'R':
-		   TOGGLE_VAR(OLC_CONFIG(d)->operation.protocol_negotiation);
-		   break;
+         case 'r':
+         case 'R':
+           TOGGLE_VAR(OLC_CONFIG(d)->operation.protocol_negotiation);
+           break;
 		   
-		 case 's':
-		 case 'S':
-		   TOGGLE_VAR(OLC_CONFIG(d)->operation.special_in_comm);
-		   break;
+         case 's':
+         case 'S':
+           TOGGLE_VAR(OLC_CONFIG(d)->operation.special_in_comm);
+           break;
+       
+         case 't':
+         case 'T':
+           write_to_output(d, "Enter the current debug level (0: Off, 1: Brief, 2: Normal, 3: Complete) : ");
+           OLC_MODE(d) = CEDIT_DEBUG_MODE;
+           return;
 
          case 'q':
          case 'Q':
@@ -1611,6 +1625,11 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
     case CEDIT_MAX_BAD_PWS:
       OLC_CONFIG(d)->operation.max_bad_pws = atoi(arg);
+      cedit_disp_operation_options(d);
+      break;
+
+    case CEDIT_DEBUG_MODE:
+      OLC_CONFIG(d)->operation.debug_mode = LIMIT(atoi(arg), 0, 3);
       cedit_disp_operation_options(d);
       break;
 

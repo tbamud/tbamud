@@ -37,6 +37,7 @@ ACMD(do_oasis_hedit)
 {
   char arg[MAX_INPUT_LENGTH];
   struct descriptor_data *d;
+  int i;
 
   /* No building as a mob or while being forced. */
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
@@ -80,13 +81,22 @@ ACMD(do_oasis_hedit)
   CREATE(d->olc, struct oasis_olc_data, 1);
   OLC_NUM(d) = 0;
   OLC_STORAGE(d) = strdup(arg);
+  
   OLC_ZNUM(d) = search_help(OLC_STORAGE(d), LVL_IMPL);
+
+  if (help_table[OLC_ZNUM(d)].duplicate) {
+    for (i = 0; i < top_of_helpt; i++)
+      if (help_table[i].duplicate == 0 && help_table[i].entry == help_table[OLC_ZNUM(d)].entry) {
+        OLC_ZNUM(d) = i;
+        break;
+      }
+  }
 
   if (OLC_ZNUM(d) == NOWHERE) {
     send_to_char(ch, "Do you wish to add the '%s' help file? ", OLC_STORAGE(d));
     OLC_MODE(d) = HEDIT_CONFIRM_ADD;
   } else {
-    send_to_char(ch, "Do you wish to edit the '%s' help file? ", help_table[OLC_ZNUM(d)].keywords);
+    send_to_char(ch, "Do you wish to edit the '%s' help file?", help_table[OLC_ZNUM(d)].keywords);
     OLC_MODE(d) = HEDIT_CONFIRM_EDIT;
   }
 
@@ -132,6 +142,7 @@ static void hedit_save_internally(struct descriptor_data *d)
 
     for (i = 0; i < top_of_helpt; i++)
       new_help_table[i] = help_table[i];
+      
     new_help_table[top_of_helpt++] = *OLC_HELP(d);
     free(help_table);
     help_table = new_help_table;
@@ -397,8 +408,8 @@ ACMD(do_hindex)
     return;
   }
 
-  len = sprintf(buf, "Help index entries beginning with '%s':\r\n", argument);
-  len2 = sprintf(buf2, "Help index entries containing '%s':\r\n", argument);
+  len = sprintf(buf, "\t1Help index entries beginning with '%s':\t2\r\n", argument);
+  len2 = sprintf(buf2, "\t1Help index entries containing '%s':\t2\r\n", argument);
   for (i = 0; i < top_of_helpt; i++) {
     if (is_abbrev(argument, help_table[i].keywords)
         && (GET_LEVEL(ch) >= help_table[i].min_level))
@@ -423,6 +434,9 @@ ACMD(do_hindex)
 
   // Join the two strings
   len += snprintf(buf + len, sizeof(buf) - len, "%s", buf2);
+
+  len += snprintf(buf + len, sizeof(buf) - len, "\t1Applicable Index Entries: \t3%d\r\n"
+                                                 "\t1Total Index Entries: \t3%d\tn\r\n", count + count2, top_of_helpt);
 
   page_string(ch->desc, buf, TRUE);
 }

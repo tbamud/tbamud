@@ -26,6 +26,7 @@
 #include "handler.h" /* for is_name */
 #include "quest.h"
 #include "ibt.h"
+#include "msgedit.h"
 
 /* Internal Data Structures */
 /** @deprecated olc_scmd_info appears to be deprecated. Commented out for now.
@@ -174,8 +175,14 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
   }
 
    if (OLC_IBT(d)) {
-	 free_olc_ibt(OLC_IBT(d));
-	 OLC_IBT(d) = NULL;
+	   free_olc_ibt(OLC_IBT(d));
+	   OLC_IBT(d) = NULL;
+   }
+   
+   if (OLC_MSG_LIST(d)) {
+     free_message_list(OLC_MSG_LIST(d));
+     OLC_MSG_LIST(d) = NULL;  
+     OLC_MSG(d) = NULL;
    }
 
   /* Free storage if allocated (tedit, aedit, and trigedit). This is the command

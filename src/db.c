@@ -38,6 +38,7 @@
 #include "quest.h"
 #include "ibt.h"
 #include "mud_event.h"
+#include "msgedit.h"
 #include <sys/stat.h>
 
 /*  declarations of most of the 'global' variables */
@@ -3781,6 +3782,7 @@ static void load_default_config( void )
   CONFIG_MAP_SIZE               = default_map_size;
   CONFIG_MINIMAP_SIZE           = default_minimap_size;
   CONFIG_SCRIPT_PLAYERS         = script_players;
+  CONFIG_DEBUG_MODE             = debug_mode;
 
   /* Rent / crashsave options. */
   CONFIG_FREE_RENT              = free_rent;
@@ -3869,7 +3871,9 @@ void load_config( void )
         break;
 
       case 'd':
-        if (!str_cmp(tag, "display_closed_doors"))
+        if (!str_cmp(tag, "debug_mode"))
+          CONFIG_DEBUG_MODE = num;
+        else if (!str_cmp(tag, "display_closed_doors"))
           CONFIG_DISP_CLOSED_DOORS = num;
         else if (!str_cmp(tag, "diagonal_dirs"))
           CONFIG_DIAGONAL_DIRS = num;
