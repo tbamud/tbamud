@@ -530,7 +530,7 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
   }
 
   while (*flow && i < high) {
-    while (*flow && strchr("\n\r\f\t\v ", *flow)) {
+    while (*flow && strchr("\n\r\f\v ", *flow)) {
       if (*flow == '\n' && !pass_line)
         if (i++ >= high) {
           pass_line = 1;
@@ -545,6 +545,8 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
         if (*flow == '\t') {
           if (*(flow + 1) == '\t')
             color_chars++;
+          else if (*(flow + 1) == '[')
+            color_chars += 7;
           else
             color_chars += 2;
           flow++;
