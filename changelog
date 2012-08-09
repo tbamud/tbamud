@@ -2,6 +2,19 @@ TbaMUD is currently being developed by The Builder Academy. If you need any
 help, find any bugs, or have ideas for improvement please stop by TBA at 
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
 @
+[Aug 08 2012] - Vatiken
+  bug: fixed another copyover issue that resulted in dying character respawning at corpse.
+  bug: fixed an issue where a PC could be remembered after dying. (Thanks Zusuk)
+  improve: cleaned up some code and did some colour adjustments.
+  feature: new debug toggle with 4 settings.
+  bug: fixed an issue with hedit that prevented editing of certain helpfiles.
+  feature: added message editor for combat messages.
+  bug: fixed a small bug with colour codes in interpreter.c.
+  bug: fixed crash bug in oasis_lists.c caused by buffer overflows.
+  bug: fixed issue with certain clients that were adding extra new-lines.
+  bug: fixed crash bug in improved editor.
+  improve: cedit toggle for colour codes in comm channels.
+  typo: Fixed typo in do_scan.
 [May 28 2012] - Vatiken
   bug: Fixed a MAJOR duping issue.
 [May 24 2012] - Vatiken

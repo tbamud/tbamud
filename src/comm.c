@@ -460,7 +460,7 @@ void copyover_recover()
       if (!PLR_FLAGGED(d->character, PLR_DELETED)) {
         REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
         REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
-	REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
       } else
         fOld = FALSE;
     } else
@@ -473,7 +473,13 @@ void copyover_recover()
     } else {
       write_to_descriptor (desc, "\n\rCopyover recovery complete.\n\r");
       GET_PREF(d->character) = pref;
+    
       enter_player_game(d);
+
+      /* Clear their load room if it's not persistant. */
+      if (!PLR_FLAGGED(d->character, PLR_LOADROOM))
+        GET_LOADROOM(d->character) = NOWHERE;
+
       d->connected = CON_PLAYING;
       look_at_room(d->character, 0);
 
