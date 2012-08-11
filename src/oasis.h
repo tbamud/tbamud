@@ -34,9 +34,10 @@
 #define MAX_PEOPLE 10 /* Max # of people you want to sit in furniture. */
 
 /* Limit information. */
-#define MAX_ROOM_NAME	75
-#define MAX_MOB_NAME	50
-#define MAX_OBJ_NAME	50
+/* Name size increased due to larger colour/mxp codes. -Vatiken */
+#define MAX_ROOM_NAME	150
+#define MAX_MOB_NAME	100
+#define MAX_OBJ_NAME	100
 #define MAX_ROOM_DESC	2048
 #define MAX_EXIT_DESC	256
 #define MAX_EXTRA_DESC  512

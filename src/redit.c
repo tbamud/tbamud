@@ -680,6 +680,10 @@ void redit_parse(struct descriptor_data *d, char *arg)
   case REDIT_NAME:
     if (!genolc_checkstring(d, arg))
       break;
+    if (count_non_protocol_chars(arg) > MAX_ROOM_NAME / 2) {
+      write_to_output(d, "Size limited to %d non-protocol characters.\r\n", MAX_ROOM_NAME / 2);
+      break;
+    }
     if (OLC_ROOM(d)->name)
       free(OLC_ROOM(d)->name);
     arg[MAX_ROOM_NAME - 1] = '\0';
