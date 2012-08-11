@@ -995,17 +995,18 @@ obj_save_data *objsave_parse_objects(FILE *fl)
 
     /* if the file is done, wrap it all up */
     if(get_line(fl, line) == FALSE || (*line == '$' && line[1] == '~')) {
-      if (temp == NULL && current->obj == NULL)	{
+      if (temp == NULL && current->obj == NULL) {
         /* Remove current from list. */
         tempsave = head;
         if (tempsave == current) {
           free(current);
           head = NULL;
-      } else {
-	  while (tempsave) {
+        } else {
+          while (tempsave) {
             if (tempsave->next == current)
               tempsave->next = NULL;
-            tempsave = tempsave->next;          }
+            tempsave = tempsave->next;
+          }
           free(current);
         }
       }
@@ -1025,21 +1026,26 @@ obj_save_data *objsave_parse_objects(FILE *fl)
     if (*line == '#') {
       /* check for false alarm. */
       if (sscanf(line, "#%d", &nr) == 1) {
-        if (real_object(nr) == NOTHING) { //object does not exist
-        	  log("SYSERR: Protection: deleting object %d.", nr);
+        /* I'm currently unaware as to why the following IF skips on the
+         * loop when an object is returned NOTHING due to the fact that "NOTHING"
+         * is handled in below in such an instance. Unless someone knows why
+         * this was written as such, it's now obsolete.
+         *                                          -Vatiken           
+        if (real_object(nr) == NOTHING) {
+            log("SYSERR: Protection: deleting object %d.", nr);
             continue;
-          }
-      	if (temp) {
-      	  current->obj = temp;
-    	  CREATE(current->next, obj_save_data, 1);
+          } */
+        if (temp) {
+          current->obj = temp;
+          CREATE(current->next, obj_save_data, 1);
           current=current->next;
 
-       	  current->locate = 0;
+          current->locate = 0;
           temp = NULL;
         }
-      }
-      else
-      	continue;
+      } else
+        continue;
+        
       /* we have the number, check it, load obj. */
       if (nr == NOTHING) {   /* then it is unique */
         temp = create_obj();
@@ -1058,14 +1064,21 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       continue;
     }
 
+    /* Should never get here, but since we did in the past, I'll put 
+    * a safety check in. */
+    if (temp == NULL) {
+      log("SYSERR: Attempting to parse obj_save_data on NULL object.");
+      abort();
+    }
+
     tag_argument(line, tag);
     num = atoi(line);
 
     switch(*tag) {
     case 'A':
       if (!strcmp(tag, "ADes")) {
-      	char error[40];
-      	snprintf(error, sizeof(error)-1, "rent(Ades):%s", temp->name);
+        char error[40];
+        snprintf(error, sizeof(error)-1, "rent(Ades):%s", temp->name);
         temp->action_description = fread_string(fl, error);
       } else if (!strcmp(tag, "Aff ")) {
         sscanf(line, "%d %d %d", &t[0], &t[1], &t[2]);
