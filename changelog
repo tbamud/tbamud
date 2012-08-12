@@ -2,6 +2,8 @@ TbaMUD is currently being developed by The Builder Academy. If you need any
 help, find any bugs, or have ideas for improvement please stop by TBA at 
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
 @
+[Aug 12 2012] - Vatiken
+  bug: fixed typo in dg_variables.c (Thanks Zusuk)
 [Aug 08 2012] - Vatiken
   bug: fixed another copyover issue that resulted in dying character respawning at corpse.
   bug: fixed an issue where a PC could be remembered after dying. (Thanks Zusuk)

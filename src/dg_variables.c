@@ -978,7 +978,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           if (!str_cmp(field, "saving_breath")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              GET_SAVE(c, SAVING_SPELL) += addition;
+              GET_SAVE(c, SAVING_BREATH) += addition;
             }
             snprintf(str, slen, "%d", GET_SAVE(c, SAVING_BREATH));
           }
