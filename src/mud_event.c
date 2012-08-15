@@ -172,3 +172,22 @@ struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId)
   
   return NULL;
 } 
+
+void clear_char_event_list(struct char_data * ch)
+{
+  struct event * pEvent;
+    
+  if (ch->events == NULL)
+    return;
+    
+  if (ch->events->iSize == 0)
+    return;
+    
+  simple_list(NULL);
+
+  while ((pEvent = (struct event *) simple_list(ch->events)) != NULL) {
+    event_cancel(pEvent);
+  }
+  
+  simple_list(NULL);  
+}

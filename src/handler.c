@@ -976,6 +976,7 @@ void extract_char_final(struct char_data *ch)
 void extract_char(struct char_data *ch)
 {
   char_from_furniture(ch);
+  clear_char_event_list(ch);
 
   if (IS_NPC(ch))
     SET_BIT_AR(MOB_FLAGS(ch), MOB_NOTDEADYET);
