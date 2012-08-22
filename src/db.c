@@ -3935,8 +3935,6 @@ void load_config( void )
           CONFIG_IDLE_RENT_TIME = num;
         else if (!str_cmp(tag, "idle_max_level"))
           CONFIG_IDLE_MAX_LEVEL = num;
-        else if (!str_cmp(tag, "no_mort_to_immort"))
-          CONFIG_NO_MORT_TO_IMMORT = num;
         else if (!str_cmp(tag, "immort_start_room"))
           CONFIG_IMMORTAL_START = num;
         else if (!str_cmp(tag, "ibt_autosave"))
@@ -3996,6 +3994,8 @@ void load_config( void )
       case 'n':
         if (!str_cmp(tag, "nameserver_is_slow"))
           CONFIG_NS_IS_SLOW = num;
+        else if (!str_cmp(tag, "no_mort_to_immort"))
+          CONFIG_NO_MORT_TO_IMMORT = num;
         else if (!str_cmp(tag, "noperson")) {
           char tmp[READ_SIZE];
           if (CONFIG_NOPERSON)
