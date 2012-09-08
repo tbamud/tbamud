@@ -1026,15 +1026,11 @@ obj_save_data *objsave_parse_objects(FILE *fl)
     if (*line == '#') {
       /* check for false alarm. */
       if (sscanf(line, "#%d", &nr) == 1) {
-        /* I'm currently unaware as to why the following IF skips on the
-         * loop when an object is returned NOTHING due to the fact that "NOTHING"
-         * is handled in below in such an instance. Unless someone knows why
-         * this was written as such, it's now obsolete.
-         *                                          -Vatiken           
+        /* Do not save an object if it has been deleted */
         if (real_object(nr) == NOTHING) {
             log("SYSERR: Protection: deleting object %d.", nr);
             continue;
-          } */
+          }
         if (temp) {
           current->obj = temp;
           CREATE(current->next, obj_save_data, 1);
