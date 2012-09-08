@@ -161,7 +161,7 @@ ACMD(do_put)
 
 static int can_take_obj(struct char_data *ch, struct obj_data *obj)
 {
-  if (!PRF_FLAGGED(ch, PRF_NOHASSLE)) {
+  if (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
 	  if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)) {
 		act("$p: you can't carry that many items.", FALSE, ch, obj, 0, TO_CHAR);
 		return (0);

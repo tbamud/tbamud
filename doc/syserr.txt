@@ -18,7 +18,9 @@ rumble@tbamud.com -- Rumble
 8.  Char is already equipped: (medit-s-desc), (oedit-s-desc)
 9.  SYSERR: Attempt to assign spec to non-existant mob #
 10. No associated object exists when attempting to create a board [vnum #]. 
-11. 11: SYSERR: Mob using >'((ch)-)player_specials....
+11. SYSERR: Mob using >'((ch)-)player_specials....
+12: SYSERR: Object # (keyword) is type NOTE and has extra description with
+    same name (keyword)
 
 1: Errant Rooms
 
@@ -106,4 +108,10 @@ know this is confusing, but just copy the example below.
 + if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT)) // This line should be added without the "+"
 
 The changed line now will not just check for a flag, instead it will check if 
-it is a player (not an NPC) and it is flagged then continue. 
+it is a player (not an NPC) and it is flagged then continue.
+
+12: SYSERR: Object # (keyword) is type NOTE and has extra description with
+same name (keyword)
+
+Object type NOTE is meant to be written on using the action-description. So if
+you have an extra description with the same keyword it will never be viewable.
