@@ -1184,6 +1184,9 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
     if (k == d)
       continue;
 
+   if (k->character == NULL)
+      continue;
+
     /* Do the player names match? */
     if (!strcmp(GET_NAME(k->character), GET_NAME(d->character))) {
       /* Check the other character is still in creation? */
