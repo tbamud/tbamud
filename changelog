@@ -4,7 +4,7 @@ telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
 @
 [Sep 08 2012] - Rumble
   added another example to doc/syserr.txt
-  Added a !NPC check to can_take_object. It was spamming a "mob using player data SYSERR". This means mobs do not have a max weight carrying capacity anymore. I think this is a good thing because I've seen people stumped when mob triggers fail due to weig
+  Added a !NPC check to can_take_object. It was spamming a "mob using player data SYSERR". This means mobs do not have a max weight carrying capacity anymore. I think this is a good thing because I've seen people stumped when mob triggers fail due to weight limitations. But it could be unbalancing on some MUDs since pets could then carry unlimited gear.
 ht limitations. But it could be unbalancing on some MUDs since pets could then carry unlimited gear.
   Uncommented code to prevent crashes when trying to save a deleted object.
 [Aug 22 2012] - Rumble

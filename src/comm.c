@@ -2382,12 +2382,12 @@ void send_to_all(const char *messg, ...)
 void send_to_outdoor(const char *messg, ...)
 {
   struct descriptor_data *i;
+  va_list args;
 
   if (!messg || !*messg)
     return;
 
   for (i = descriptor_list; i; i = i->next) {
-    va_list args;
 
     if (STATE(i) != CON_PLAYING || i->character == NULL)
       continue;
