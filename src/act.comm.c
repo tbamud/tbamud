@@ -73,41 +73,26 @@ ACMD(do_say)
 
 ACMD(do_gsay)
 {
-  struct char_data *k;
-  struct follow_type *f;
-
   skip_spaces(&argument);
-
-  if (!AFF_FLAGGED(ch, AFF_GROUP)) {
-    send_to_char(ch, "But you are not the member of a group!\r\n");
+  
+  if (!GROUP(ch)) {
+    send_to_char(ch, "But you are not a member of a group!\r\n");
     return;
   }
   if (!*argument)
     send_to_char(ch, "Yes, but WHAT do you want to group-say?\r\n");
   else {
-    char buf[MAX_STRING_LENGTH];
-
+		
     if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
-      parse_at(argument);
-
-    if (ch->master)
-      k = ch->master;
-    else
-      k = ch;
-
-    snprintf(buf, sizeof(buf), "$n tells the group, '%s\tn'", argument);
-
-    if (AFF_FLAGGED(k, AFF_GROUP) && (k != ch))
-      act(buf, FALSE, ch, 0, k, TO_VICT | TO_SLEEP);
-    for (f = k->followers; f; f = f->next)
-      if (AFF_FLAGGED(f->follower, AFF_GROUP) && (f->follower != ch))
-        act(buf, FALSE, ch, 0, f->follower, TO_VICT | TO_SLEEP);
-    
+      parse_at(argument);		
+		
+    send_to_group(ch, ch->group, "%s%s%s says, '%s'%s\r\n", CCGRN(ch, C_NRM), CCGRN(ch, C_NRM), GET_NAME(ch), argument, CCNRM(ch, C_NRM));
+	
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else
-      send_to_char(ch, "You tell the group, '%s\tn'\r\n", argument);
-  }
+      send_to_char(ch, "%sYou group-say, '%s'%s\r\n", CCGRN(ch, C_NRM), argument, CCNRM(ch, C_NRM));
+	}
 }
 
 static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg)

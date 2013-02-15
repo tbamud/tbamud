@@ -1245,6 +1245,27 @@ void do_cheat(struct char_data *ch)
   save_char(ch);
 }
 
+void return_to_char(struct char_data * ch)
+{
+  /* If someone switched into your original body, disconnect them. - JE
+  * Zmey: here we put someone switched in our body to disconnect state but
+  * we must also NULL his pointer to our character, otherwise close_socket()
+  * will damage our character's pointer to our descriptor (which is assigned
+  * below in this function). */
+  if (ch->desc->original->desc) {
+    ch->desc->original->desc->character = NULL;
+    STATE(ch->desc->original->desc) = CON_DISCONNECT;
+  }
+
+  /* Now our descriptor points to our original body. */
+  ch->desc->character = ch->desc->original;
+  ch->desc->original = NULL;
+
+  /* And our body's pointer to descriptor now points to our descriptor. */
+  ch->desc->character->desc = ch->desc;
+  ch->desc = NULL;  
+}
+
 ACMD(do_return)
 {
   if (!IS_NPC(ch) && !ch->desc->original) {
@@ -1258,24 +1279,7 @@ ACMD(do_return)
 
   if (ch->desc && ch->desc->original) {
     send_to_char(ch, "You return to your original body.\r\n");
-
-    /* If someone switched into your original body, disconnect them. - JE
-     * Zmey: here we put someone switched in our body to disconnect state but
-     * we must also NULL his pointer to our character, otherwise close_socket()
-     * will damage our character's pointer to our descriptor (which is assigned
-     * below in this function). */
-    if (ch->desc->original->desc) {
-      ch->desc->original->desc->character = NULL;
-      STATE(ch->desc->original->desc) = CON_DISCONNECT;
-    }
-
-    /* Now our descriptor points to our original body. */
-    ch->desc->character = ch->desc->original;
-    ch->desc->original = NULL;
-
-    /* And our body's pointer to descriptor now points to our descriptor. */
-    ch->desc->character->desc = ch->desc;
-    ch->desc = NULL;
+    return_to_char(ch);
   }
 }
 
@@ -2169,7 +2173,6 @@ ACMD(do_wiznet)
   int level = LVL_IMMORT;
 
   skip_spaces(&argument);
-  delete_doubledollar(argument);
 
   if (!*argument) {
     send_to_char(ch, "Usage: wiznet [ #<level> ] [<text> | *<emotetext> | @ ]\r\n");
@@ -3637,10 +3640,9 @@ ACMD (do_zcheck)
           len += snprintf(buf + len, sizeof(buf) - len,
                           "- Has %d experience (limit: %d)\r\n",
                               GET_EXP(mob), MAX_EXP_ALLOWED);
-        if ((AFF_FLAGGED(mob, AFF_GROUP) || AFF_FLAGGED(mob, AFF_CHARM) || AFF_FLAGGED(mob, AFF_POISON)) && (found = 1))
+        if ((AFF_FLAGGED(mob, AFF_CHARM) || AFF_FLAGGED(mob, AFF_POISON)) && (found = 1))
 	  len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Has illegal affection bits set (%s %s %s)\r\n",
-                              AFF_FLAGGED(mob, AFF_GROUP) ? "GROUP" : "",
+                          "- Has illegal affection bits set (%s %s)\r\n",
                               AFF_FLAGGED(mob, AFF_CHARM) ? "CHARM" : "",
                               AFF_FLAGGED(mob, AFF_POISON) ? "POISON" : "");
 
@@ -4153,6 +4155,11 @@ ACMD(do_copyover)
    /* For each playing descriptor, save its state */
    for (d = descriptor_list; d ; d = d_next) {
      struct char_data * och = d->character;
+   
+   /* If d is currently in someone else's body, return them. */  
+   if (och && d->original)
+     return_to_char(och);
+        
    /* We delete from the list , so need to save this */
      d_next = d->next;
 

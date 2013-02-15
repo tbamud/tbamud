@@ -2418,6 +2418,29 @@ void send_to_room(room_rnum room, const char *messg, ...)
   }
 }
 
+/* Sends a message to the entire group, except for ch.
+ * Send 'ch' as NULL, if you want to message to reach
+ * everyone. -Vatiken */
+void send_to_group(struct char_data *ch, struct group_data *group, const char * msg, ...)
+{
+	struct char_data *tch;
+  va_list args;
+
+  if (msg == NULL)
+    return;
+    	
+  while ((tch = simple_list(group->members)) != NULL) {
+    if (tch != ch && !IS_NPC(tch) && tch->desc && STATE(tch->desc) == CON_PLAYING) {
+      write_to_output(tch->desc, "%s[%sGroup%s]%s ", 
+      CCGRN(tch, C_NRM), CBGRN(tch, C_NRM), CCGRN(tch, C_NRM), CCNRM(tch, C_NRM));
+      va_start(args, msg);
+      vwrite_to_output(tch->desc, msg, args);
+      va_end(args);
+    }
+  }
+}
+
+
 /* Thx to Jamie Nelson of 4D for this contribution */
 void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...)
 {

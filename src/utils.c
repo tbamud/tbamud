@@ -573,7 +573,6 @@ void stop_follower(struct char_data *ch)
 
   ch->master = NULL;
   REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_CHARM);
-  REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_GROUP);
 }
 
 /** Finds the number of follows that are following, and charmed by, the

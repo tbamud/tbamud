@@ -156,6 +156,8 @@ void mobile_activity(void)
       {
 	      if (ch == vict || !IS_NPC(vict) || !FIGHTING(vict))
           continue; 
+        if (GROUP(vict) && GROUP(vict) == GROUP(ch))
+          continue;
 	      if (IS_NPC(FIGHTING(vict)) || ch == FIGHTING(vict))
           continue;
 

@@ -12,8 +12,13 @@
 #include "db.h"
 #include "dg_event.h"
 
+static struct iterator_data Iterator;
+static bool loop = FALSE;
+static struct list_data *pLastList = NULL;
+
 /* Global lists */
 struct list_data * global_lists = NULL;
+struct list_data * group_list   = NULL;
 
 struct list_data * create_list(void) 
 {
@@ -53,7 +58,7 @@ void free_list(struct list_data * pList)
 {
   void * pContent;
   
-  simple_list(NULL);  
+  clear_simple_list();  
     
   if (pList->iSize)
     while ((pContent = simple_list(pList)))
@@ -225,6 +230,12 @@ struct item_data * find_in_list(void * pContent, struct list_data * pList)
     return NULL;
 }
 
+void clear_simple_list(void)
+{
+  loop = FALSE;
+  pLastList = NULL;  
+}
+
 /** This is the "For Dummies" function, as although it's not as flexible,
  * it is even easier applied for list searches then using your own iterators
  * and next_in_list()
@@ -239,15 +250,11 @@ struct item_data * find_in_list(void * pContent, struct list_data * pList)
 
 void * simple_list(struct list_data * pList)
 {
-  static struct iterator_data Iterator;
-  static bool loop = FALSE;
-  static struct list_data *pLastList = NULL;
   void * pContent;
 
   /* Reset List */
   if (pList == NULL) {
-    loop = FALSE;
-    pLastList = NULL;
+    clear_simple_list();
     return NULL;
   }
 

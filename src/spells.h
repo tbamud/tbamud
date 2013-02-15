@@ -33,6 +33,7 @@
 #define MAG_SUMMONS	(1 << 8)
 #define MAG_CREATIONS	(1 << 9)
 #define MAG_MANUAL	(1 << 10)
+#define MAG_ROOMS   (1 << 11)
 
 #define TYPE_UNDEFINED               (-1)
 #define SPELL_RESERVED_DBC            0  /* SKILL NUMBER ZERO -- RESERVED */
@@ -91,8 +92,9 @@
 #define SPELL_WATERWALK              51 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_IDENTIFY               52 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_FLY                    53 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_DARKNESS               54
 /** Total Number of defined spells */
-#define NUM_SPELLS    53
+#define NUM_SPELLS                   54
 
 /* Insert new spells here, up to MAX_SPELLS */
 #define MAX_SPELLS		    130
@@ -240,6 +242,8 @@ void mag_groups(int level, struct char_data *ch, int spellnum, int savetype);
 void mag_masses(int level, struct char_data *ch, int spellnum, int savetype);
 
 void mag_areas(int level, struct char_data *ch, int spellnum, int savetype);
+
+void mag_rooms(int level, struct char_data *ch, int spellnum);
 
 void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
  int spellnum, int savetype);

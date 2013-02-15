@@ -263,6 +263,9 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
   if (IS_SET(SINFO.routines, MAG_CREATIONS))
     mag_creations(level, caster, spellnum);
 
+  if (IS_SET(SINFO.routines, MAG_ROOMS))
+    mag_rooms(level, caster, spellnum);
+
   if (IS_SET(SINFO.routines, MAG_MANUAL))
     switch (spellnum) {
     case SPELL_CHARM:		MANUAL_SPELL(spell_charm); break;
@@ -473,7 +476,7 @@ int cast_spell(struct char_data *ch, struct char_data *tch,
     send_to_char(ch, "You cannot cast this spell upon yourself!\r\n");
     return (0);
   }
-  if (IS_SET(SINFO.routines, MAG_GROUPS) && !AFF_FLAGGED(ch, AFF_GROUP)) {
+  if (IS_SET(SINFO.routines, MAG_GROUPS) && !GROUP(ch)) {
     send_to_char(ch, "You can't cast this spell if you're not in a group!\r\n");
     return (0);
   }
@@ -788,6 +791,10 @@ void mag_assign_spells(void)
   spello(SPELL_CURSE, "curse", 80, 50, 2, POS_STANDING,
 	TAR_CHAR_ROOM | TAR_OBJ_INV, TRUE, MAG_AFFECTS | MAG_ALTER_OBJS,
 	"You feel more optimistic.");
+
+  spello(SPELL_DARKNESS, "darkness", 30, 5, 4, POS_STANDING,
+	TAR_IGNORE, FALSE, MAG_ROOMS,
+	NULL);
 
   spello(SPELL_DETECT_ALIGN, "detect alignment", 20, 10, 2, POS_STANDING,
 	TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS,

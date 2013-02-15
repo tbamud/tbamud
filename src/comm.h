@@ -27,6 +27,8 @@ void send_to_room(room_rnum room, const char *messg, ...) __attribute__ ((format
     (printf, 2, 3)));
 void send_to_outdoor(const char *messg, ...) __attribute__ ((format (printf, 1,
     2)));
+void send_to_group(struct char_data *ch, struct group_data *group, const char * msg, ...) __attribute__ ((format
+    (printf, 3, 4)));
 void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...)
     __attribute__ ((format (printf, 3, 4)));
 

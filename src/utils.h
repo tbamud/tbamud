@@ -867,6 +867,11 @@ do                                                              \
 /** Defines if ch is outdoors or not. */
 #define OUTSIDE(ch) (!ROOM_FLAGGED(IN_ROOM(ch), ROOM_INDOORS))
 
+/* Group related defines */
+#define GROUP(ch)            (ch->group)
+#define GROUP_LEADER(group)  (group->leader)
+#define GROUP_FLAGS(group)   (group->group_flags)
+
 /* Happy-hour defines */
 #define IS_HAPPYQP   (happy_data.qp_rate > 0)
 #define IS_HAPPYEXP  (happy_data.exp_rate > 0)

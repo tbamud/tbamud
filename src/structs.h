@@ -148,6 +148,11 @@
 
 #define HISTORY_SIZE   5 /**< Number of last commands kept in each history */
 
+/* Group Defines */
+#define GROUP_OPEN    (1 << 0)  /**< Group is open for members */
+#define GROUP_ANON    (1 << 1)  /**< Group is Anonymous */
+#define GROUP_NPC     (1 << 2)  /**< Group created by NPC and thus not listed */
+
 /* PC classes */
 #define CLASS_UNDEFINED	  (-1) /**< PC Class undefined */
 #define CLASS_MAGIC_USER  0    /**< PC Class Magic User */
@@ -280,7 +285,7 @@
 #define AFF_SENSE_LIFE      6   /**< Char can sense hidden life */
 #define AFF_WATERWALK       7   /**< Char can walk on water */
 #define AFF_SANCTUARY       8   /**< Char protected by sanct */
-#define AFF_GROUP           9   /**< (R) Char is grouped */
+#define AFF_UNUSED          9   /**< (R) Char is grouped */
 #define AFF_CURSE          10   /**< Char is cursed */
 #define AFF_INFRAVISION    11   /**< Char can see in dark */
 #define AFF_POISON         12   /**< (R) Char is poisoned */
@@ -804,6 +809,8 @@ struct room_data
   struct script_data *script; /**< script info for the room */
   struct obj_data *contents;  /**< List of items in room */
   struct char_data *people;   /**< List of NPCs / PCs in room */
+  
+  struct list_data * events;  
 };
 
 /* char-related structures */
@@ -834,6 +841,15 @@ struct time_data
   time_t logon; /**< Time of the last logon, used to calculate time played */
   int played;   /**< This is the total accumulated time played in secs */
 };
+
+/* Group Data Struct */
+struct group_data
+{
+  struct char_data * leader;
+  struct list_data * members;
+  int group_flags;
+};
+
 
 /** The pclean_criteria_data is set up in config.c and used in db.c to determine
  * the conditions which will cause a player character to be deleted from disk
@@ -1034,6 +1050,8 @@ struct char_data
 
   struct follow_type *followers; /**< List of characters following */
   struct char_data *master;      /**< List of character being followed */
+
+  struct group_data *group;      /**< Character's Group */
 
   long pref; /**< unique session id */
   

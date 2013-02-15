@@ -965,7 +965,7 @@ ACMD(do_follow)
       }
       if (ch->master)
         stop_follower(ch);
-      REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_GROUP);
+
       add_follower(ch, leader);
     }
   }

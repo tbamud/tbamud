@@ -33,6 +33,7 @@ struct iterator_data {
 
 /* Externals */
 extern struct list_data * global_lists;
+extern struct list_data * group_list;
 
 /* Locals */
 void add_to_list(void * pContent, struct list_data * pList);
@@ -46,4 +47,5 @@ void remove_from_list(void * pContent, struct list_data * pList);
 struct item_data * find_in_list(void * pContent, struct list_data * pList);
 void * simple_list(struct list_data * pList);
 void free_list(struct list_data * pList);
+void clear_simple_list(void);
 #endif

@@ -271,6 +271,10 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   if (killer)
     autoquest_trigger_check(killer, ch, NULL, AQ_MOB_KILL);
 
+  /* Alert Group if Applicable */
+  if (GROUP(ch))
+    send_to_group(ch, GROUP(ch), "%s has died.\r\n", GET_NAME(ch));
+
   update_pos(ch);
 
   make_corpse(ch);
@@ -316,20 +320,11 @@ static void perform_group_gain(struct char_data *ch, int base,
 
 static void group_gain(struct char_data *ch, struct char_data *victim)
 {
-  int tot_members, base, tot_gain;
+  int tot_members = 0, base, tot_gain;
   struct char_data *k;
-  struct follow_type *f;
-
-  if (!(k = ch->master))
-    k = ch;
-
-  if (AFF_FLAGGED(k, AFF_GROUP) && (IN_ROOM(k) == IN_ROOM(ch)))
-    tot_members = 1;
-  else
-    tot_members = 0;
-
-  for (f = k->followers; f; f = f->next)
-    if (AFF_FLAGGED(f->follower, AFF_GROUP) && IN_ROOM(f->follower) == IN_ROOM(ch))
+  
+  while ((k = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL)
+    if (IN_ROOM(ch) == IN_ROOM(k))
       tot_members++;
 
   /* round up to the nearest tot_members */
@@ -344,12 +339,9 @@ static void group_gain(struct char_data *ch, struct char_data *victim)
   else
     base = 0;
 
-  if (AFF_FLAGGED(k, AFF_GROUP) && IN_ROOM(k) == IN_ROOM(ch))
-    perform_group_gain(k, base, victim);
-
-  for (f = k->followers; f; f = f->next)
-    if (AFF_FLAGGED(f->follower, AFF_GROUP) && IN_ROOM(f->follower) == IN_ROOM(ch))
-      perform_group_gain(f->follower, base, victim);
+  while ((k = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL)
+    if (IN_ROOM(k) == IN_ROOM(ch))
+      perform_group_gain(k, base, victim);
 }
 
 static void solo_gain(struct char_data *ch, struct char_data *victim)
@@ -738,7 +730,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   /* Uh oh.  Victim died. */
   if (GET_POS(victim) == POS_DEAD) {
     if (ch != victim && (IS_NPC(victim) || victim->desc)) {
-      if (AFF_FLAGGED(ch, AFF_GROUP))
+      if (GROUP(ch))
 	group_gain(ch, victim);
       else
         solo_gain(ch, victim);
@@ -762,7 +754,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     }
 
     die(victim, ch);
-    if (IS_AFFECTED(ch, AFF_GROUP) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
+    if (GROUP(ch) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
       generic_find("corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
       if (corpse_obj) {
         do_get(ch, "all.coin corpse", 0, 0);
@@ -905,8 +897,7 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
 /* control the fights going on.  Called every 2 seconds from comm.c. */
 void perform_violence(void)
 {
-  struct char_data *ch;
-  struct follow_type *k;
+  struct char_data *ch, *tch;
 
   for (ch = combat_list; ch; ch = next_combat_list) {
     next_combat_list = ch->next_fighting;
@@ -933,18 +924,24 @@ void perform_violence(void)
       continue;
     }
 
-    for (k = ch->followers; k; k=k->next) {
-      /* should followers auto-assist master? */
-      if (!IS_NPC(k->follower) && !FIGHTING(k->follower) && PRF_FLAGGED(k->follower,
-	  PRF_AUTOASSIST) && (IN_ROOM(k->follower) == IN_ROOM(ch)))
-        do_assist(k->follower, GET_NAME(ch), 0, 0);
+    if (GROUP(ch)) {
+      while ((tch = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL) {
+        if (tch == ch)
+          continue;
+        if (!IS_NPC(tch) && !PRF_FLAGGED(tch, PRF_AUTOASSIST))
+          continue;
+        if (IN_ROOM(ch) != IN_ROOM(tch))
+          continue;
+        if (FIGHTING(tch))
+          continue;
+        if (GET_POS(tch) != POS_STANDING)
+          continue;
+        if (!CAN_SEE(tch, ch))
+          continue;
+      
+        do_assist(tch, GET_NAME(ch), 0, 0);				  
+      }
     }
-
-    /* should master auto-assist followers?  */
-    if (ch->master && PRF_FLAGGED(ch->master, PRF_AUTOASSIST) &&
-        FIGHTING(ch) && !FIGHTING(ch->master) && !IS_NPC(ch) &&
-        (IN_ROOM(ch->master) == IN_ROOM(ch)) && !IS_NPC(ch->master))
-      do_assist(ch->master, GET_NAME(ch), 0, 0);
 
     hit(ch, FIGHTING(ch), TYPE_UNDEFINED);
     if (MOB_FLAGGED(ch, MOB_SPEC) && GET_MOB_SPEC(ch) && !MOB_FLAGGED(ch, MOB_NOTDEADYET)) {

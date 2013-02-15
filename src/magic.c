@@ -21,6 +21,7 @@
 #include "dg_scripts.h"
 #include "class.h"
 #include "fight.h"
+#include "mud_event.h"
 
 
 /* local file scope function prototypes */
@@ -574,34 +575,21 @@ static void perform_mag_groups(int level, struct char_data *ch,
  * Just add a new case to perform_mag_groups. */
 void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
 {
-  struct char_data *tch, *k;
-  struct follow_type *f, *f_next;
+  struct char_data *tch;
 
   if (ch == NULL)
     return;
 
-  if (!AFF_FLAGGED(ch, AFF_GROUP))
+  if (!GROUP(ch))
     return;
-  if (ch->master != NULL)
-    k = ch->master;
-  else
-    k = ch;
-  for (f = k->followers; f; f = f_next) {
-    f_next = f->next;
-    tch = f->follower;
+    
+  while ((tch = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL) {
     if (IN_ROOM(tch) != IN_ROOM(ch))
-      continue;
-    if (!AFF_FLAGGED(tch, AFF_GROUP))
-      continue;
-    if (ch == tch)
       continue;
     perform_mag_groups(level, ch, tch, spellnum, savetype);
   }
-
-  if ((k != ch) && AFF_FLAGGED(k, AFF_GROUP))
-    perform_mag_groups(level, ch, k, spellnum, savetype);
-  perform_mag_groups(level, ch, ch, spellnum, savetype);
 }
+
 
 /* Mass spells affect every creature in the room except the caster. No spells
  * of this class currently implemented. */
@@ -663,8 +651,7 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
       continue;
     if (!IS_NPC(ch) && IS_NPC(tch) && AFF_FLAGGED(tch, AFF_CHARM))
       continue;
-    if (!IS_NPC(tch) && spell_info[spellnum].violent && AFF_FLAGGED(tch, AFF_GROUP) && AFF_FLAGGED(ch, AFF_GROUP) &&
-      ( ((ch->master == NULL) ? ch : ch->master) == ((tch->master == NULL) ? tch : tch->master) )  )
+    if (!IS_NPC(tch) && spell_info[spellnum].violent && GROUP(tch) && GROUP(ch) && GROUP(ch) == GROUP(tch))
       continue;
 	if ((spellnum == SPELL_EARTHQUAKE) && AFF_FLAGGED(tch, AFF_FLYING))
 	  continue;
@@ -784,6 +771,9 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
     act(mag_summon_msgs[msg], FALSE, ch, 0, mob, TO_ROOM);
     load_mtrigger(mob);
     add_follower(mob, ch);
+    
+    if (GROUP(ch) && GROUP_LEADER(GROUP(ch)) == ch)
+      join_group(mob, GROUP(ch));    
   }
   if (handle_corpse) {
     for (tobj = obj->contains; tobj; tobj = next_obj) {
@@ -976,3 +966,42 @@ void mag_creations(int level, struct char_data *ch, int spellnum)
   load_otrigger(tobj);
 }
 
+void mag_rooms(int level, struct char_data *ch, int spellnum)
+{
+  room_rnum rnum;
+  int duration;
+  bool failure = FALSE;
+  event_id IdNum = -1;
+  const char *msg = NULL;
+  const char *room = NULL;
+  
+  rnum = IN_ROOM(ch);
+  
+  if (ROOM_FLAGGED(rnum, ROOM_NOMAGIC))
+    failure = TRUE;
+  
+  switch (spellnum) {
+    case SPELL_DARKNESS:
+      IdNum = eSPL_DARKNESS;
+      if (ROOM_FLAGGED(rnum, ROOM_DARK))
+        failure = TRUE;
+        
+      duration = 5;
+      SET_BIT_AR(ROOM_FLAGS(rnum), ROOM_DARK);
+        
+      msg = "You cast a shroud of darkness upon the area.";
+      room = "$n casts a shroud of darkness upon this area.";
+    break;
+  
+  }
+  
+  if (failure || IdNum == -1) {
+    send_to_char(ch, "You failed!\r\n");
+    return;
+  }
+  
+  send_to_char(ch, "%s\r\n", msg);
+  act(room, FALSE, ch, 0, 0, TO_ROOM);
+  
+  NEW_EVENT(eSPL_DARKNESS, &world[rnum], NULL, duration * PASSES_PER_SEC);
+}

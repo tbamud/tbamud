@@ -177,6 +177,9 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   /* and you are your next_in_room          -- anderyu (10-05-22) */ 
   room->people = NULL; 
 
+  /* Nullify the events structure. */
+  room->events = NULL;
+
   /* Allocate space for all strings. */
   room->name = str_udup(world[real_num].name);
   room->description = str_udup(world[real_num].description);

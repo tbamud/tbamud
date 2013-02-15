@@ -249,7 +249,6 @@ ACMD(do_sneak);
 ACMD(do_split);
 ACMD(do_steal);
 ACMD(do_title);
-ACMD(do_ungroup);
 ACMD(do_visible);
 
 
@@ -328,6 +327,7 @@ ACMD(do_plist);
 ACMD(do_purge);
 ACMD(do_recent);
 ACMD(do_restore);
+void return_to_char(struct char_data * ch);
 ACMD(do_return);
 ACMD(do_saveall);
 ACMD(do_send);

@@ -323,7 +323,6 @@ cpp_extern const struct command_info cmd_info[] = {
   { "tstat"    , "tstat"   , POS_DEAD    , do_tstat    , LVL_BUILDER, 0 },
 
   { "unlock"   , "unlock"  , POS_SITTING , do_gen_door , 0, SCMD_UNLOCK },
-  { "ungroup"  , "ungroup" , POS_DEAD    , do_ungroup  , 0, 0 },
   { "unban"    , "unban"   , POS_DEAD    , do_unban    , LVL_GRGOD, 0 },
   { "unaffect" , "unaffect", POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_UNAFFECT },
   { "uptime"   , "uptime"  , POS_DEAD    , do_date     , LVL_GOD, SCMD_UPTIME },
@@ -1140,7 +1139,6 @@ static int perform_dupe_check(struct descriptor_data *d)
   d->character->char_specials.timer = 0;
   REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
   REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
-  REMOVE_BIT_AR(AFF_FLAGS(d->character), AFF_GROUP);
   STATE(d) = CON_PLAYING;
   MXPSendTag( d, "<VERSION>" );
 
@@ -1416,7 +1414,6 @@ void nanny(struct descriptor_data *d, char *arg)
           REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
           REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
           REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
-          REMOVE_BIT_AR(AFF_FLAGS(d->character), AFF_GROUP);
           d->character->player.time.logon = time(0);
           write_to_output(d, "Password: ");
           echo_off(d);

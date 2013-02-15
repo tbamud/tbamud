@@ -17,6 +17,7 @@
 #include "genzon.h"
 #include "shop.h"
 #include "dg_olc.h"
+#include "mud_event.h"
 
 
 /* This function will copy the strings so be sure you free your own copies of 
@@ -166,6 +167,16 @@ int delete_room(room_rnum rnum)
   if (SCRIPT(room))
     extract_script(room, WLD_TRIGGER);
   free_proto_script(room, WLD_TRIGGER);
+
+  if (room->events != NULL) {
+	  if (room->events->iSize > 0) {
+		struct event * pEvent;
+
+		while ((pEvent = simple_list(room->events)) != NULL)
+		  event_cancel(pEvent);
+	  }
+	  free_list(room->events);
+  }
 
   /* Change any exit going to this room to go the void. Also fix all the exits 
    * pointing to rooms above this. */
@@ -378,10 +389,12 @@ int copy_room(struct room_data *to, struct room_data *from)
   free_room_strings(to);
   *to = *from;
   copy_room_strings(to, from);
+  to->events = from->events;
 
   /* Don't put people and objects in two locations. Should this be done here? */
   from->people = NULL;
   from->contents = NULL;
+  from->events = NULL;
 
   return TRUE;
 }

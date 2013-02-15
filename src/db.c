@@ -511,6 +511,16 @@ void destroy_db(void)
       free(world[cnt].description);
     free_extra_descriptions(world[cnt].ex_description);
 
+  if (world[cnt].events != NULL) {
+	  if (world[cnt].events->iSize > 0) {
+		struct event * pEvent;
+
+		while ((pEvent = simple_list(world[cnt].events)) != NULL)
+		  event_cancel(pEvent);
+	  }
+	  free_list(world[cnt].events);
+  }
+
     /* free any assigned scripts */
     if (SCRIPT(&world[cnt]))
       extract_script(&world[cnt], WLD_TRIGGER);
@@ -651,6 +661,7 @@ void boot_db(void)
   
   log("Initialize Global Lists");
   global_lists = create_list();
+  group_list   = create_list();
 
   log("Initializing Events");
   init_events();
@@ -1724,7 +1735,6 @@ void parse_mobile(FILE *mob_f, int nr)
     /* Make some basic checks. */
     REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_CHARM);
     REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_POISON);
-    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_GROUP);
     REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_SLEEP);
     if (MOB_FLAGGED(mob_proto + i, MOB_AGGRESSIVE) && MOB_FLAGGED(mob_proto + i, MOB_AGGR_GOOD))
       REMOVE_BIT_AR(MOB_FLAGS(mob_proto + i), MOB_AGGR_GOOD);
@@ -2346,7 +2356,8 @@ struct char_data *create_char(void)
 
 void new_mobile_data(struct char_data *ch)
 {
-	ch->events   = create_list();
+  ch->events   = NULL;
+  ch->group    = NULL;
 }
 
 

@@ -74,6 +74,12 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
   } else if (bottom > top) {
     *error = "Bottom room cannot be greater than top room.\r\n";
     return NOWHERE;
+  } else if (bottom < 0) {
+    *error = "Bottom room cannot be less then 0.\r\n";
+    return NOWHERE;
+  } else if (top >= IDXTYPE_MAX) {
+    *error = "Top greater than IDXTYPE_MAX. (Commonly 65535)\r\n";
+    return NOWHERE;
   }
 
   for (i = 0; i < top_of_zone_table; i++)

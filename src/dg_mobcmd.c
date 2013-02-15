@@ -872,18 +872,18 @@ ACMD(do_mtransform)
   int keep_hp = 1; /* new mob keeps the old mob's hp/max hp/exp */
   int pos;
 
-    if (!MOB_OR_IMPL(ch)) {
-        send_to_char(ch, "Huh?!?\r\n");
-        return;
-    }
+  if (!MOB_OR_IMPL(ch)) {
+    send_to_char(ch, "Huh?!?\r\n");
+    return;
+  }
 
-    if (AFF_FLAGGED(ch, AFF_CHARM))
-        return;
+  if (AFF_FLAGGED(ch, AFF_CHARM))
+    return;
 
-    if (ch->desc) {
-      send_to_char(ch, "You've got no VNUM to return to, dummy! try 'switch'\r\n");
-      return;
-    }
+  if (ch->desc) {
+    send_to_char(ch, "You've got no VNUM to return to, dummy! try 'switch'\r\n");
+    return;
+  }
 
   one_argument(argument, arg);
 
@@ -935,11 +935,13 @@ ACMD(do_mtransform)
     tmpmob.proto_script = ch->proto_script;
     tmpmob.script = ch->script;
     tmpmob.memory = ch->memory;
+    tmpmob.events = ch->events;
     tmpmob.next_in_room = ch->next_in_room;
     tmpmob.next = ch->next;
     tmpmob.next_fighting = ch->next_fighting;
     tmpmob.followers = ch->followers;
     tmpmob.master = ch->master;
+    tmpmob.group = ch->group;
 
     GET_WAS_IN(&tmpmob) = GET_WAS_IN(ch);
     if (keep_hp) {

@@ -309,6 +309,17 @@ static void list_one_char(struct char_data *i, struct char_data *ch)
     }
   }
 
+  if (GROUP(i)) {
+    if (GROUP(i) == GROUP(ch))
+      send_to_char(ch, "(%s%s%s) ", CBGRN(ch, C_NRM),
+	GROUP_LEADER(GROUP(i)) == i ? "leader" : "group",
+        CCNRM(ch, C_NRM));
+    else
+      send_to_char(ch, "(%s%s%s) ", CBRED(ch, C_NRM),
+        GROUP_LEADER(GROUP(i)) == i ? "leader" : "group",
+	CCNRM(ch, C_NRM));
+  }
+
   if (IS_NPC(i) && i->player.long_descr && GET_POS(i) == GET_DEFAULT_POS(i)) {
     if (AFF_FLAGGED(i, AFF_INVISIBLE))
       send_to_char(ch, "*");
@@ -1201,9 +1212,9 @@ ACMD(do_who)
         continue;
       if (showclass && !(showclass & (1 << GET_CLASS(tch))))
         continue;
-      if (showgroup && (!tch->master || !AFF_FLAGGED(tch, AFF_GROUP)))
+      if (showgroup && !GROUP(tch))
         continue;
-      if (showleader && (!tch->followers || !AFF_FLAGGED(tch, AFF_GROUP)))
+      if (showleader && (!GROUP(tch) || GROUP_LEADER(GROUP(tch)) != tch))
         continue;
       for (i = 0; *rank[i].disp != '\n'; i++)
         if (GET_LEVEL(tch) >= rank[i].min_level && GET_LEVEL(tch) <= rank[i].max_level)
@@ -1245,9 +1256,9 @@ ACMD(do_who)
         continue;
       if (showclass && !(showclass & (1 << GET_CLASS(tch))))
         continue;
-      if (showgroup && (!tch->master || !AFF_FLAGGED(tch, AFF_GROUP)))
+      if (showgroup && !GROUP(tch))
         continue;
-      if (showleader && (!tch->followers || !AFF_FLAGGED(tch, AFF_GROUP)))
+      if (showleader && (!GROUP(tch) || GROUP_LEADER(GROUP(tch)) != tch))
         continue;
 
       if (short_list) {
