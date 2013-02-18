@@ -78,7 +78,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 Looking north nothing but fog can be seen
 ~
@@ -104,7 +104,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 Nothing but fog can be seen to the north.    
 ~
@@ -135,7 +135,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 Nothing but fog and mist can be seen in the distance.    
 ~
@@ -197,7 +197,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 Fog and mist can be seen in the distance.    
 ~
@@ -228,7 +228,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 Fog and mist are the only things to be seen in the distance.    
 ~
@@ -258,7 +258,7 @@ even see where you come from on the shore side of the lake.  It may be too late
 to turn back.  Sand covers the ground here with a small patch of square shaped
 grass in the center of the small island.    
 ~
-238 4 0 0 0 0
+238 32772 0 0 0 0
 D0
 As you look north you see nothing but nasty water.    
 ~
@@ -285,7 +285,7 @@ algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
 anything in the distance.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -316,7 +316,7 @@ algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
 anything in the distance.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -349,7 +349,7 @@ algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
 anything in the distance.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -382,7 +382,7 @@ algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
 anything in the distance.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -415,7 +415,7 @@ algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
 anything in the distance.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -448,7 +448,7 @@ algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
 anything in the distance.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -481,7 +481,7 @@ algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
 anything in the distance.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -513,7 +513,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -542,7 +542,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -570,7 +570,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -602,7 +602,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -634,7 +634,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -666,7 +666,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -698,7 +698,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -730,7 +730,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -762,7 +762,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -788,7 +788,7 @@ There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
 be moving any and it has a strange glow to it.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D2
 ~
 ~
@@ -805,7 +805,7 @@ There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
 be moving any and it has a strange glow to it.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D1
 ~
 ~
@@ -826,7 +826,7 @@ There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
 be moving any and it has a strange glow to it.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D1
 ~
 ~
@@ -847,7 +847,7 @@ There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
 be moving any and it has a strange glow to it.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D1
 ~
 ~
@@ -868,7 +868,7 @@ There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
 be moving any and it has a strange glow to it.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D1
 ~
 ~
@@ -889,7 +889,7 @@ There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
 be moving any and it has a strange glow to it.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D1
 ~
 ~
@@ -910,7 +910,7 @@ There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
 be moving any and it has a strange glow to it.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D1
 ~
 ~
@@ -932,7 +932,7 @@ crystals poking out from the sides of the castle making it impossable to scale
 the wall.  There is a large gate leading into the castle directly to the north.
   
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D1
 ~
 ~
@@ -949,7 +949,7 @@ a fowl stench that has completely closed you in.  Many nasty bugs crawl around
 looking for a crumb of food here . There is a small tunnel leading off into the
 north leading you into darkness.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 Looking north there is a small tunnel leading north
 ~
@@ -973,7 +973,7 @@ escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spide webs
 linning the walls.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -992,7 +992,7 @@ escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spide webs
 linning the walls.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -1011,7 +1011,7 @@ in the wall nothing special but just notches.  Also there are still spider webs
 linning the walls.  There seems to be the remains of someones skull lying here
 on the ground.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -1029,7 +1029,7 @@ escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spide webs
 linning the walls.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -1047,7 +1047,7 @@ escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spide webs
 linning the walls.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D0
 ~
 ~
@@ -1065,7 +1065,7 @@ escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spider webs
 linning the walls.    
 ~
-238 0 0 0 0 0
+238 32768 0 0 0 0
 D2
 ~
 ~
@@ -1176,12 +1176,12 @@ The entrance to the castle appears to be this way.
 trapdoor~
 1 0 23841
 E
-pillar~
-   These pillars appear to be made of pure crystal and are about 10 feet tall.
-~
-E
 pottery~
    These pots are very old and fragile but very valuable.  
+~
+E
+pillar~
+   These pillars appear to be made of pure crystal and are about 10 feet tall.
 ~
 S
 #23846
@@ -1270,12 +1270,12 @@ Looking east appears to take you to the western hallway.
 ~
 0 0 23848
 E
-scratch~
-   There are many scratches forming a small circle in the middle of the tiles.
-~
-E
 statue~
    Looking at the statue you notice that it is a large statue of a wyvern.  
+~
+E
+scratch~
+   There are many scratches forming a small circle in the middle of the tiles.
 ~
 S
 #23850
@@ -1403,13 +1403,13 @@ Looking south seems to lead you toward the beginning of the hidden hallway.
 ~
 0 0 23856
 E
-look sky~
-   This really looks like the real sky except it is sturdy and can hold you up.
-~
-E
 look mountain~
    The mountain looks as if it may fall any second probably because this is not
 the way you usually see them.  
+~
+E
+look sky~
+   This really looks like the real sky except it is sturdy and can hold you up.
 ~
 S
 #23858
@@ -1507,7 +1507,7 @@ inside of the big portal.
 ~
 S
 #23863
-Throught the red portal~
+Through the red portal~
    This appears to be some kind of swirling vortex that you can freely travel
 through.  There are small spots that line the walls here.  Many particles float
 about bumping into you at times making a spark.  There is no floor, roof, or

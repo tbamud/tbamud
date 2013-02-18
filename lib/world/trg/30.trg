@@ -406,14 +406,27 @@ end
 %echoaround% %actor% %actor.name% steps out of space and time.
 ~
 #3015
-Teleporter Recall~
+Teleporter Recall and Return~
 1 c 7
-recall~
+re~
 * By Rumble of The Builder Academy    tbamud.com 9091
-%send% %actor% You recall to safety.
-%echoaround% %actor% %actor.name% recalls.
-%teleport% %actor% 3001
-%force% %actor% look
+if %cmd% == recall
+  eval teleporter_return_room %actor.room.vnum%
+  remote  teleporter_return_room %actor.id%
+  %send% %actor% You recall to safety.
+  %echoaround% %actor% %actor.name% recalls.
+  %teleport% %actor% 3001
+  %force% %actor% look
+  %echoaround% %actor% %actor.name% appears in the room.
+elseif %cmd% == return
+  %send% %actor% You return to your previous location.
+  %echoaround% %actor% %actor.name% teleports out of the room.
+  %teleport% %actor% %actor.teleporter_return_room%
+  %force% %actor% look
+  %echoaround% %actor% %actor.name% appears in the room.
+else
+  return 0
+end
 ~
 #3016
 Kind Soul Gives Newbie Equipment~
@@ -570,5 +583,11 @@ if %actor.level% == 0
 end
 wait 3 sec
 %zoneecho% 3001 A booming voice announces, 'Welcome %actor.name% to the realm!'
+~
+#3099
+Test~
+2 b 1
+~
+%zoneecho% 3001 You hear a loud --=BOOM=--,
 ~
 $~

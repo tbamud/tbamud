@@ -5,7 +5,7 @@ An old rusted sword that barely looks usable is lying here.~
 ~
 5 mn 0 0 0 an 0 0 0 0 0 0 0
 6 3 5 3
-4 300 30 20
+4 300 30 20 0
 E
 scimitar sword~
    A saber having a curved blade with the edge on the convex side is pitted and
@@ -18,7 +18,7 @@ A dark chainmail shirt covered in grime was left here.~
 ~
 9 g 0 0 0 ad 0 0 0 0 0 0 0
 7 0 0 0
-11 825 82 21
+11 825 82 21 0
 E
 chainmail black dark~
    Bits of rotted clothing, and possibly even flesh are caught in between the
@@ -34,7 +34,7 @@ A ferret skin is lying here.~
 ~
 9 p 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-2 400 50 0
+2 400 50 0 0
 E
 ferret pelt skin~
    The hide has been well-tanned and the fur is very soft and supple.  An
@@ -49,7 +49,7 @@ A heart lying on the floor is still beating.~
 ~
 12 agjl 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 1000 500 0
+2 1000 500 0 0
 E
 heart vampire~
    The heart still beats with some strange life of its own.  Small spurts of
@@ -66,7 +66,7 @@ A pair of gloves made of fine fur lay here.~
 ~
 9 gjp 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
-2 200 25 0
+2 200 25 0 0
 E
 fur gloves ferret~
    The gloves are small and well-made.  The stitching is almost impercebtible
@@ -82,7 +82,7 @@ A pair of black velvet gloves are lying here.~
 ~
 9 op 0 0 0 ah 0 0 0 0 0 0 0
 2 0 0 0
-2 500 50 5
+2 500 50 5 0
 E
 animators gloves~
    The gloves seem to have some form of magical quality.  They are hard to
@@ -99,7 +99,7 @@ A finely crafted stiletto is lying on the ground.~
 ~
 5 an 0 0 0 ano 0 0 0 0 0 0 0
 5 4 2 11
-5 500 55 21
+5 500 55 21 0
 E
 stiletto~
    It is a slender dagger with a blade thick in proportion to its breadth.  
@@ -115,7 +115,7 @@ A smelly and stained corset was discarded here.~
 ~
 9 jp 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-10 100 10 0
+10 100 10 0 0
 E
 corset~
    It is a woman's close-fitting boned supporting undergarment that is often
@@ -129,7 +129,7 @@ An old sword was left here.~
 ~
 5 n 0 0 0 an 0 0 0 0 0 0 0
 3 2 8 14
-4 300 30 12
+4 300 30 12 0
 E
 sword~
    It is a weapon with a long blade for cutting or thrusting that is often used
@@ -146,7 +146,7 @@ A pair of old leather boots lie here.~
 ~
 9 j 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-4 240 30 4
+4 240 30 4 0
 E
 leather boots~
    These boots are rotted and slowly falling apart from age.  The stitching has
@@ -161,7 +161,7 @@ An old dented helm is lying here, with a head still in it.~
 ~
 9 j 0 0 0 ae 0 0 0 0 0 0 0
 5 0 0 0
-2 40 4 3
+2 40 4 3 0
 E
 helm~
    The remains of someone's brains is splattered into the top of the helm.  
@@ -174,7 +174,7 @@ A grey robe with two lightning bolts crossed on the chest is hanging here.~
 ~
 9 k 0 0 0 ak 0 0 0 0 0 0 0
 2 0 0 0
-7 7 0 0
+7 7 0 0 0
 E
 robe~
    A pair of crossed lightning bolts are emblazoned on the front of this fine
@@ -190,7 +190,7 @@ A finely crafted sword with lightning bolts engraved on the handle lies here.~
 ~
 5 kmn 0 0 0 an 0 0 0 0 0 0 0
 6 3 9 3
-10 900 300 30
+10 900 300 30 0
 E
 masters sword~
    The quality of this blade mesmerizes you, as does the finely emblazoned
@@ -208,7 +208,7 @@ A pair of brass knuckles are lying here.~
 ~
 9 gj 0 0 0 ah 0 0 0 0 0 0 0
 2 0 0 0
-2 240 24 3
+2 240 24 3 0
 E
 brass knuckles~
    The knuckles are roughly made, pitted and even cracked in one place were the
@@ -224,9 +224,9 @@ flames~
 some flames~
 Flames flicker across the floor, burning everything in their path.~
 ~
-14 0 0 0 0 0 0 0 0 0 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 flames~
    They dance across the floor, ceiling, and walls.  Just waiting for an
@@ -239,7 +239,7 @@ a half-eaten cadaver~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 cadaver hidden~
    The stench permeates you and all your clothing as you examine it closer.  
@@ -253,7 +253,7 @@ A beatiful ring with a large emerald set in it's face.~
 ~
 12 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 30 3 10
+1 30 3 10 0
 E
 emerald ring~
    This gold ring has been set with a large green emerald, princess cut.    
@@ -267,7 +267,7 @@ A candle lies here~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 50 0
-3 3 0 0
+3 3 0 0 0
 E
 flickering candle~
    A little stub of candle is all that is left.    
@@ -281,7 +281,7 @@ Some steel leg plates are in need of some legs to protect.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 8 0 0 0
-4 300 30 20
+4 300 30 20 0
 E
 steel leg plates~
    Made from a dull hard metal, these plates are surprisingly light for their
@@ -294,7 +294,7 @@ Some steel arm plates have been abandoned.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 8 0 0 0
-5 375 37 20
+5 375 37 20 0
 E
 steel arm plates~
    The plates are made from a durable and light alloy that appears to be steel.
@@ -307,7 +307,7 @@ A blackened shield is propped up here, waiting to be carried into battle.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 8 0 0 0
-10 750 75 20
+10 750 75 20 0
 E
 blackened shield~
    The shield was once made of a fine wood, but has now been hardened and burnt
@@ -320,7 +320,7 @@ Some twine that has been braided into a belt.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
-2 10 1 0
+2 10 1 0 0
 E
 twine~
    This loosely braided piece of twine has been made into a belt, a poor one,
@@ -333,7 +333,7 @@ A leather wristguard lies in the dirt.~
 ~
 9 0 0 0 0 am 0 0 0 0 0 0 0
 1 0 0 0
-3 30 3 0
+3 30 3 0 0
 E
 leather wristguard~
    The wristguard has been heavily oiled and is extremely flexible and

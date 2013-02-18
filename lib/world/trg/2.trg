@@ -450,4 +450,18 @@ else
   %echo% don't open door.
 end
 ~
+#222
+Mob Death - weapon name~
+0 f 100
+~
+* By Rumble of The Builder Academy    tbamud.com 9091
+if %actor.eq(wield)%
+  set item   %actor.eq(wield)%
+  say I can not believe I fell at the hands of one such as you.
+  say I curse you %actor.name% and I curse %item.shortdesc% that you use.
+else
+  say I can not believe I fell at the hands of one such as you.
+  say I curse you %actor.name%.
+end
+~
 $~

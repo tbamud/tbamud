@@ -1372,14 +1372,39 @@ D5
 door~
 1 0 225
 E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
+~
+E
 floor~
    The stone floor is the same shade of grey as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
 ~
-E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
-~
 S
+#399
+Welcome to the Builder Academy~
+   A builder is a term usually used to describe a person who designs MUD zones
+for other characters to explore. Any player with motivation, ideas, and good 
+writing style can be a builder as well as a player. As a Builder, your job is 
+to create the virtual world in which players can roam around, solve puzzles, 
+find treasures, and gain experience. A Builder creates the rooms, objects, 
+mobs, shops, and triggers with which players will interact. 
+   If this is something you are interested in doing then you have come to the
+right place. Be warned, building is not easy and will require hard work, 
+patience, and the ability to take constructive criticism.
+   Your first task is to apply for builder status at: 
+http://tbamud.com/
+   When you finish and submit the application tell anyone level 32 or higher
+and they will advance you to begin your training.
+
+   If would like to check out the tbaMUD World as a player connect to tbamud.com 4000.
+~
+3 24 0 0 0 0
+D0
+~
+~
+0 0 3
+S
+T 199
 $~

@@ -961,7 +961,7 @@ Dog Emote - 192~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 eval number %random.4%
-set txt1 sniffs at you friendlily.
+set txt1 sniffs at you in greeting.
 set txt2 whimpers for some attention.
 set txt3 growls menacingly at your feet.
 set txt4 watches your every movement suspiciously.
@@ -1651,7 +1651,7 @@ set  text[40]  If at first you don't succeed, you are obviously not Chuck Norris
 set  text[41]  Geico saved 15%% by switching to Chuck Norris.
 set  text[42]  If you see Chuck Norris crying he will grant you a wish, if your wish is dying.
 set  text[43]  Pee Wee Herman got arrested for masturbating in public. The same day, Chuck Norris got an award for masturbating in public.
-set  text[44]  They say that lightning never strikes the same place twice. Niether does Chuck Norris. He doesn't have to.
+set  text[44]  They say that lightning never strikes the same place twice. Neither does Chuck Norris. He doesn't have to.
 set  text[45]  Water boils faster when Chuck Norris watches it.
 set  text[46]  Chuck Norris' cowboy boots are made from real cowboys.
 set  text[47]  When Chuck Norris exercises, the machine gets stronger.
@@ -1704,12 +1704,25 @@ eval speech %speech%
 #176
 Teleporter Recall - O82~
 1 c 7
-recall~
+re~
 * By Rumble of The Builder Academy    tbamud.com 9091
-%send% %actor% You recall to safety.
-%echoaround% %actor% %actor.name% recalls.
-%teleport% %actor% 3001
-%force% %actor% look
+if %cmd% == recall
+  eval teleporter_return_room %actor.room.vnum%
+  remote  teleporter_return_room %actor.id%
+  %send% %actor% You recall to safety.
+  %echoaround% %actor% %actor.name% recalls.
+  %teleport% %actor% 3001
+  %force% %actor% look
+  %echoaround% %actor% %actor.name% appears in the room.
+elseif %cmd% == return
+  %send% %actor% You return to your previous location.
+  %echoaround% %actor% %actor.name% teleports out of the room.
+  %teleport% %actor% %actor.teleporter_return_room%
+  %force% %actor% look
+  %echoaround% %actor% %actor.name% appears in the room.
+else
+  return 0
+end
 ~
 #177
 Kick Me Sign - O197~
@@ -2220,7 +2233,7 @@ Stayalive idleout bracelet - 88~
 * By Rumble of The Builder Academy    tbamud.com 9091
 eval actor %self.worn_by%
 if %actor%
-  %send% %actor% @n
+  %send% %actor% 	n
 end
 ~
 #196
@@ -2242,11 +2255,11 @@ say Good Job, you made it.
 wait 2 sec
 say Now I would suggest that you practice what you have learned.
 wait 2 sec
-say Check your title under @RWHO@n. A vnum should be listed there, if not mudmail Rumble for one.
+say Check your title under 	RWHO	n. A vnum should be listed there, if not mudmail Rumble for one.
 wait 2 sec
-say Just type @RGOTO VNUM@n and type redit to modify your room.
+say Just type 	RGOTO VNUM	n and type redit to modify your room.
 wait 2 sec
-say Once you complete your room come back to these hallways by typing @RGOTO 3@n.
+say Once you complete your room come back to these hallways by typing 	RGOTO 3	n.
 wait 3 sec
 beam %actor.name%
 ~
@@ -2255,7 +2268,7 @@ TBA Give Suggestions - 21~
 0 g 100
 ~
 wait 2 sec
-say The best advice for new builders is under @RHELP SUGGESTIONS@n.
+say The best advice for new builders is under 	RHELP SUGGESTIONS	n.
 ~
 #199
 TBA Welcome - 18~
@@ -2273,7 +2286,7 @@ if %actor.level% <= 1
     wait 2 sec
     %echo% Friedrich Nietzsche says, 'If you are interested in learning how to build, or want to teach others, then you have come to the right place.'
     wait 2 sec
-    %echo% Friedrich Nietzsche says, 'Please fill out the application at: http://tbamud.com/BuilderApplication'
+    %echo% Friedrich Nietzsche says, 'Please fill out the application at: http://tbamud.com'
     nop %actor.thirst(-1)%
     nop %actor.hunger(-1)%
     set TBA_mortal_greeting 1

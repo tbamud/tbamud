@@ -14,13 +14,6 @@ You can see the corner of the motherboard.
 ~
 0 -1 28001
 E
-portal~
-   This portal has been fashioned from some sort of metal.  The portal itself
-looks very futuristic, lights flash all about the portal, and things beep.  
-This portal is probably the work of some ancient Technomancer(computer
-geek/wizard).  
-~
-E
 credits info~
    Living Motherboard by Ryan Kelley(Kinesthesia of BlueMageMUD) rkelley@@exis.net
 ******************************************************************************
@@ -31,6 +24,13 @@ suit your particular MUD.
 This is my first zone I have released publicaly, and I hope you all enjoy
 it.  E-mail me with any comments or suggestions.  All that said, enjoy!
 Links: 00 portal
+~
+E
+portal~
+   This portal has been fashioned from some sort of metal.  The portal itself
+looks very futuristic, lights flash all about the portal, and things beep.  
+This portal is probably the work of some ancient Technomancer(computer
+geek/wizard).  
 ~
 S
 #28001
@@ -202,7 +202,7 @@ You can sense a massive amount of power to the east.
 ~
 0 -1 28014
 D2
-More $%#@! microchips.
+More $%#	! microchips.
 ~
 ~
 0 -1 28008
@@ -337,7 +337,7 @@ you feel a tingling sensation, then it grows into a massive shock, as thousands
 of volts of electricity course through your body, causing your nerves to go
 into overload.    
 ~
-280 8 0 0 0 0
+280 12 0 0 0 0
 S
 #28014
 A power outlet.~

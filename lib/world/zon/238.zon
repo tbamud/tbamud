@@ -2,6 +2,9 @@
 Polar Higgins~
 Crystal Castle~
 23800 23899 30 2 d 0 0 0 22 26
+O 0 23870 1 23870 	(a pile of dark plate)
+O 0 23837 1 23837 	(a small skull)
+P 1 23838 99 23837 	(a light potion)
 M 0 23874 1 23874 	(the queen plegia)
 G 1 23800 1 -1 	(a map of the crystal castle)
 E 1 23874 100 0 	(queens scepter)
@@ -45,9 +48,6 @@ E 1 23847 100 14 	(a small crystal wristband)
 E 1 23848 100 7 	(some crystal leggings)
 E 1 23849 100 13 	(a crystal girth)
 M 0 23842 6 23842 	(the small rat)
-O 0 23837 1 23837 	(a small skull)
-P 0 23838 100 23837 	(a light potion)
-O 0 23870 5 23870 	(a pile of dark plate)
 O 0 23862 1 23866 	(a red portal)
 O 0 23861 1 23865 	(a blue portal)
 M 0 23860 1 23860 	(the large troll)

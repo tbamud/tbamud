@@ -344,9 +344,7 @@ E
 ceiling porthole stairwell~
    There is a small porthole covering the ascent of the stairwell. 
 There is an inscription written on the porthole:
-"I am the end of every life,
-and the beggining of every end.
-What am I?"
+I am the end of every life, and the beginning of every end. What am I?
 ~
 S
 T 17502
@@ -395,12 +393,6 @@ You, my friend, cannot come through."
 porthole~
 0 0 17517
 E
-look porthole~
-   The inscription on the porthole reads:
-"This way is now barred to you,
-You, my friend, cannot come through."
-~
-E
 rock stone poetry~
    "_____ smother light,
 Black bleak land,
@@ -417,6 +409,12 @@ Bringsie forth,
 I call it back!"
  
 - Trickster
+~
+E
+look porthole~
+   The inscription on the porthole reads:
+"This way is now barred to you,
+You, my friend, cannot come through."
 ~
 S
 T 17506
@@ -440,17 +438,17 @@ And you will find they be of like kind."
 grate~
 0 0 17521
 E
+anvil~
+   Upon close inspection you find the following is engraved into the metal:
+"abcdefghijklmnopqrstuvwkyz."
+~
+E
 grate door plaque poetry~
    The grate is huge, thick and immovable.  There is writing here:
 "If this riddle you wish to solve,
 Five keys you need to find,
 Look for them all in your forge's anvil,
 And you will find they be of like kind."
-~
-E
-anvil~
-   Upon close inspection you find the following is engraved into the metal:
-"abcdefghijklmnopqrstuvwkyz."
 ~
 S
 T 17508

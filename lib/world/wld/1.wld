@@ -76,11 +76,11 @@ T 56
 #101
 The Temple of the Gods~
    This seems to be the highest point in the kingdom of Sanctus.  It is from
-here that the worshippers of the gods come to pay tribute to those who have
-saved them from the chaos and destruction beyond the sanctuary of the city
-walls.  Large windows reach from the floor to the ceiling, giving an excellent
-view of the city and countryside beyond.  An altar stands in the middle of the
-room with a statue on each side.  
+here that the worshipers of the gods come to pay tribute to those who have saved
+them from the chaos and destruction beyond the sanctuary of the city walls.  
+Large windows reach from the floor to the ceiling, giving an excellent view of
+the city and countryside beyond.  An altar stands in the middle of the room with
+a statue on each side.  
 ~
 1 16 0 0 0 0
 D2
@@ -165,7 +165,7 @@ void~
 ~
 S
 #105
-Meeting Room of the Magi~
+Rean's Zone Description Room~
    Those who have achieved the power and fame to be considered a Magi rule the
 Mages Quarter of Sanctus.  They are responsible for the upkeep of the magical
 barrier that protects the city from the chaos of the outside world.  They may

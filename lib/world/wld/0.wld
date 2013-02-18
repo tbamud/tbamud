@@ -35,7 +35,7 @@ mobs, shops, and triggers with which players will interact.
 right place. Be warned, building is not easy and will require hard work, 
 patience, and the ability to take constructive criticism.
    Your first task is to apply for builder status at: 
-http://tbamud.com/BuilderApplication
+http://tbamud.com/
    When you finish and submit the application tell anyone level 32 or higher
 and they will advance you to begin your training.
 
@@ -547,34 +547,60 @@ D2
 S
 #33
 Rumble's Room~
-Our lives begin to end the day we become silent about things that matter.
-\t(HELP CLASS\t) <--- would create a basic MXP link
-\t[F500]BRIGHT RED\tn
-\t[F411]PINK\tn
-\tPPINK\tn
-\t[B005]BLUE BACKGROUND\tn
-\t[U9814/Rook] <-- Create a rook icon, or display the word Rook if the player's client doesn't have that functionality
-\t<SOUND FName="ouch.wav" V=50 L=2 P=80 T="combat" U="www.yourMUD.com/sounds/"> <-- Would play ouch.wav on an MXP/MSP capable client.
-\t<send "command1|command2|command3" hint="click to see menu|Item 1|Item 2|Item 2">this is a menu link\t</SEND> <--- Will send an expandable pop-up menu, complete with mouse-over tool tip on an MXP capable client.
+@(HELP CLASS@) = A basic MXP link for HELP CLASS
+@[U9814/Rook] = Creates a rook icon, or display the word Rook
+@<SOUND FName="ouch.wav" V=50 L=2 P=80 T="combat" U="www.yourMUD.com/sounds/"> 
+@<send "command1|command2|command3" hint="click to see menu|Item 1|Item 2|Item 2">this is a menu link@</SEND> 
 ~
 0 8 0 0 0 0
 E
-undefined~
-test
+july4~
+   On July 4, 1776, we claimed our independence from England and Democracy was
+born.  Every day thousands leave their homeland to come to the "land of the
+free and the home of the brave" so they can begin their American Dream.  The
+United States is truly a diverse nation made up of dynamic people.  Each year
+on July 4, Americans celebrate that freedom and indepen-dence with barbecues,
+picnics, and family ga-therings.  Through the Internet we are learning about
+and communicat-ing with people of different nations, with different languages
+and different races throughout the world.  Bringing the world closer with
+understanding and knowledge can only benefit all nations.  We invite all
+nations to celebrate with Americans online this Fourth of July.  Happy
+Birthday, America!    
 ~
 E
-Catcher Rye~
-   The mark of the immature man is that he wants to die nobly for a cause, 
-while the mark of the mature man is that he wants to live humbly for one.  
---Wilhelm Stekel
-   ...you'll find that you're not the first person who was ever confused and 
-frighteneed and even sickened by human behavior. You're by no means alone on 
-that score, you'll be excited and stimulated to know. Many, many men have been 
-just as troubled morally and spiritually as you are right now. Happily, some 
-of them kept records of their troubles. You'll learn from them-if you want to. 
-Just as someday, if you have something to offer, someone will learn something 
-from you. It's a beautiful reciprocal arrangement.
---The Catcher in the Rye   
+oath~
+   I do solemnly swear that I will support and defend the Constitution of the
+United States against all enemies, foreign and domestic, and to bear true faith
+and allegiance to the same that I take this obligation freely, without any
+mental reservation or purpose of evasion, and that I will well and faithfully
+discharge the duties of the office upon which I am about to enter.
+~
+E
+builder~
+  
+There is one timeless way of building.
+  
+It is thousands of years old, and the same today as it has always been.
+  
+   The great traditional buildings of the past, the villages and tents and
+temples in which man feels at home, have always been made by people who were
+very close to the center of this way.  It is not possible to make great
+buildings, or great towns, beautiful places, places where you feel yourself,
+places where you feel alive, except by following this way.  And, as you will
+see, this way will lead anyone who looks for it to buildings which are
+themselves as ancient in their form, as the trees and hills, and as our faces
+are.    
+                                        --The Timeless Way of Building
+~
+E
+war~
+   War is an ugly thing, but not the ugliest of things.  The decayed and
+degraded state of moral and patriotic feeling which thinks that nothing is
+worth war is much worse.  The person who has nothing for which he is willing to
+fight, nothing which is more important than his own personal safety, is a
+miserable creature and has no chance of being free unless made and kept so by
+the exertions of better men than himself.
+John Stuart Mill
 ~
 E
 old glory flag~
@@ -607,53 +633,22 @@ or daughter-I am proud.  My name is Old Glory-long may I wave.  Dear God, long
 may I wave.    
 ~
 E
-war~
-   War is an ugly thing, but not the ugliest of things.  The decayed and
-degraded state of moral and patriotic feeling which thinks that nothing is
-worth war is much worse.  The person who has nothing for which he is willing to
-fight, nothing which is more important than his own personal safety, is a
-miserable creature and has no chance of being free unless made and kept so by
-the exertions of better men than himself.
-John Stuart Mill
+Catcher Rye~
+   The mark of the immature man is that he wants to die nobly for a cause, 
+while the mark of the mature man is that he wants to live humbly for one.  
+--Wilhelm Stekel
+   ...you'll find that you're not the first person who was ever confused and 
+frighteneed and even sickened by human behavior. You're by no means alone on 
+that score, you'll be excited and stimulated to know. Many, many men have been 
+just as troubled morally and spiritually as you are right now. Happily, some 
+of them kept records of their troubles. You'll learn from them-if you want to. 
+Just as someday, if you have something to offer, someone will learn something 
+from you. It's a beautiful reciprocal arrangement.
+--The Catcher in the Rye   
 ~
 E
-builder~
-  
-There is one timeless way of building.
-  
-It is thousands of years old, and the same today as it has always been.
-  
-   The great traditional buildings of the past, the villages and tents and
-temples in which man feels at home, have always been made by people who were
-very close to the center of this way.  It is not possible to make great
-buildings, or great towns, beautiful places, places where you feel yourself,
-places where you feel alive, except by following this way.  And, as you will
-see, this way will lead anyone who looks for it to buildings which are
-themselves as ancient in their form, as the trees and hills, and as our faces
-are.    
-                                        --The Timeless Way of Building
-~
-E
-oath~
-   I do solemnly swear that I will support and defend the Constitution of the
-United States against all enemies, foreign and domestic, and to bear true faith
-and allegiance to the same that I take this obligation freely, without any
-mental reservation or purpose of evasion, and that I will well and faithfully
-discharge the duties of the office upon which I am about to enter.
-~
-E
-july4~
-   On July 4, 1776, we claimed our independence from England and Democracy was
-born.  Every day thousands leave their homeland to come to the "land of the
-free and the home of the brave" so they can begin their American Dream.  The
-United States is truly a diverse nation made up of dynamic people.  Each year
-on July 4, Americans celebrate that freedom and indepen-dence with barbecues,
-picnics, and family ga-therings.  Through the Internet we are learning about
-and communicat-ing with people of different nations, with different languages
-and different races throughout the world.  Bringing the world closer with
-understanding and knowledge can only benefit all nations.  We invite all
-nations to celebrate with Americans online this Fourth of July.  Happy
-Birthday, America!    
+undefined~
+test
 ~
 S
 #34
@@ -668,6 +663,24 @@ dry as you see yourself in the watery panorama ...  And time stands still for
 just one moment ...  As you see your future in the depths ...    
 ~
 0 520 0 0 0 0
+S
+#35
+@[f511]Elora's@[f412] Den@[f313] of @[f214]Dreams@n~
+   Shadows form and dissipate, creating fluid, illogical images, which seem to
+come to life one minute, only to disappear as wisps of smoke the next.  Around
+them, sharp brush strokes of iridescence twist into crooked, ever-changing
+patterns.  The warble of a songbird becomes the maniacal laughter of a dancing
+clown, which in turn dissolves into a prancing pony.  The only constant here
+appears to be a faint scent of jasmine.
+~
+0 24 0 0 0 0
+S
+#71
+The Vault Of The Programancer~
+   The walls, furniture and other decor that animate Vatiken's vault are
+comprised of nothing more then floating ones and zeros.
+~
+0 1024 0 0 0 9
 S
 #88
 Advertising Room~
@@ -843,14 +856,14 @@ D2
 ~
 0 0 98
 E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
-~
-E
 floor~
    The stone floor is the same shade of grey as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
+~
+E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
 ~
 S
 $~

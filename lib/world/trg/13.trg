@@ -1812,7 +1812,7 @@ Trial Vnum Assigner - 1332~
 *~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Player must have nohassle off! To junk assigner use tbalim purge player.
-if %actor.level% > 30
+if %actor.level% > 30 && %actor.varexists(TBA_trial_vnum)%
   set actor %self.carried_by%
   * We set completed trial vnums to -#. So if negative abort.
   if %actor.TBA_trial_vnum% < 0

@@ -197,17 +197,17 @@ You see the exit to the entrance hall.
 ~
 0 -1 3006
 E
-writing carving carvings symbols symbol~
-   Although it is very hard to understand, you think it looks a lot like beer,
-poems about beer, and small beer-mugs.  
-~
-E
 sign~
    The sign reads:
 Free instructions provided by the Grunting Boar Inn.
    Buy  - Buy something (drinkable) from the bartender.
    List - The bartender will show you all the different drinks and
           specialties, and tell the price of each.
+~
+E
+writing carving carvings symbols symbol~
+   Although it is very hard to understand, you think it looks a lot like beer,
+poems about beer, and small beer-mugs.  
 ~
 S
 #3008
@@ -255,19 +255,19 @@ You see the main street.
 ~
 0 -1 3013
 E
-sign~
-   Free instructions provided by the store:
-   Buy  - Will buy you some bread or pastry.
-   List - The baker will kindly tell you the price and sort of the bread in
-          his bakery.
-~
-E
 danish pastry~
    You see that this is truly delicious pastry.  Must be made by a Dane from
 Denmark (which surely is not the capital of Sweden!  ).  Former ruler of
 Scandinavia, England, Northern Germany, Northern France, Russia, Greenland,
 Iceland, Estonia etc.  Etc.  The sight of those large, wholesome chokoladeboller
 makes your mouth water and your soul sing.  
+~
+E
+sign~
+   Free instructions provided by the store:
+   Buy  - Will buy you some bread or pastry.
+   List - The baker will kindly tell you the price and sort of the bread in
+          his bakery.
 ~
 S
 #3010
@@ -813,14 +813,9 @@ The city gate is to the west.
 gate~
 1 3112 3052
 E
-wall~
-   It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
-~
-E
-tower towers~
-   Both of the towers are built from large grey rocks that have been fastened to
-each other with some kind of mortar, just like the city wall.  
+bridge footbridge~
+   It is too high up to reach but it looks as if one easily could walk across it
+from one tower to the other.  
 ~
 E
 gate~
@@ -829,9 +824,14 @@ reinforced with large iron bands to make them even more sturdy.  One of the
 doors is equipped with a very big lock.  
 ~
 E
-bridge footbridge~
-   It is too high up to reach but it looks as if one easily could walk across it
-from one tower to the other.  
+tower towers~
+   Both of the towers are built from large grey rocks that have been fastened to
+each other with some kind of mortar, just like the city wall.  
+~
+E
+wall~
+   It is built from large grey rocks that have been fastened to each other with
+some kind of mortar.  It is far too high to climb.  
 ~
 S
 #3041
@@ -857,14 +857,9 @@ You see Main Street.
 ~
 0 -1 3016
 E
-wall~
-   It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
-~
-E
-tower towers~
-   Both of the towers are built from large grey rocks that have been fastened to
-each other with some kind of mortar, just like the city wall.  
+bridge footbridge~
+   It is too high up to reach but it looks as if one easily could walk across it
+from one tower to the other.  
 ~
 E
 gate~
@@ -873,9 +868,14 @@ reinforced with large iron bands to make them even more sturdy.  One of the
 doors is equipped with a very big lock.  
 ~
 E
-bridge footbridge~
-   It is too high up to reach but it looks as if one easily could walk across it
-from one tower to the other.  
+tower towers~
+   Both of the towers are built from large grey rocks that have been fastened to
+each other with some kind of mortar, just like the city wall.  
+~
+E
+wall~
+   It is built from large grey rocks that have been fastened to each other with
+some kind of mortar.  It is far too high to climb.  
 ~
 S
 #3042
@@ -923,13 +923,13 @@ The road continues further south.
 ~
 0 -1 3047
 E
+wall writing letters~
+   It says 'Who watches the watchmen?  '
+~
+E
 wall~
    It is built from large grey rocks that have been fastened to each other with
 some kind of mortar.  It is far too high to climb.  
-~
-E
-wall writing letters~
-   It says 'Who watches the watchmen?  '
 ~
 S
 #3044
@@ -1070,18 +1070,18 @@ You see the Concourse.
 ~
 0 -1 3100
 E
-wall~
+bridge~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar, just like the wall.  
 ~
 E
 opening~
    You cannot really see it from here as it is somewhere beneath your feet.  
 ~
 E
-bridge~
+wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar, just like the wall.  
+some kind of mortar.  It is far too high to climb.  
 ~
 S
 #3052
@@ -1102,14 +1102,9 @@ The forest edge is to the west.
 ~
 0 -1 6092
 E
-wall~
-   It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
-~
-E
-tower towers~
-   Both of the towers are built from large grey rocks that have been fastened to
-each other with some kind of mortar, just like the city wall.  
+bridge footbridge~
+   It is too high up to reach but it looks as if one easily could walk across it
+from one tower to the other.  
 ~
 E
 gate~
@@ -1118,9 +1113,14 @@ reinforced with large iron bands to make them even more sturdy.  One of the
 doors is equipped with a very big lock.  
 ~
 E
-bridge footbridge~
-   It is too high up to reach but it looks as if one easily could walk across it
-from one tower to the other.  
+tower towers~
+   Both of the towers are built from large grey rocks that have been fastened to
+each other with some kind of mortar, just like the city wall.  
+~
+E
+wall~
+   It is built from large grey rocks that have been fastened to each other with
+some kind of mortar.  It is far too high to climb.  
 ~
 S
 #3053
@@ -1141,14 +1141,9 @@ You see the city gate.
 gate~
 1 3112 3041
 E
-wall~
-   It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
-~
-E
-tower towers~
-   Both of the towers are built from large grey rocks that have been fastened to
-each other with some kind of mortar, just like the city wall.  
+bridge footbridge~
+   It is too high up to reach but it looks as if one easily could walk across it
+from one tower to the other.  
 ~
 E
 gate~
@@ -1157,9 +1152,14 @@ reinforced with large iron bands to make them even more sturdy.  One of the
 doors is equipped with a very big lock.  
 ~
 E
-bridge footbridge~
-   It is too high up to reach but it looks as if one easily could walk across it
-from one tower to the other.  
+tower towers~
+   Both of the towers are built from large grey rocks that have been fastened to
+each other with some kind of mortar, just like the city wall.  
+~
+E
+wall~
+   It is built from large grey rocks that have been fastened to each other with
+some kind of mortar.  It is far too high to climb.  
 ~
 S
 #3054
@@ -1182,16 +1182,16 @@ You see the southern end of the temple.
 ~
 0 -1 3001
 E
+altar~
+   Even though the altar is more than ten feet long it appears to be made from a
+single block of white virgin marble.  
+~
+E
 statue odin king god~
    The statue represents the one-eyed Odin sitting on a his throne.  He has
 long, grey hair and beard and a strict look on his face.  On top of the throne,
 just above his shoulders, his two ravens Hugin and Munin are sitting and at his
 feet are his wolves Gere and Freke.  
-~
-E
-altar~
-   Even though the altar is more than ten feet long it appears to be made from a
-single block of white virgin marble.  
 ~
 S
 #3058
@@ -1301,29 +1301,6 @@ You see the entrance to the Grunting Boar Inn and Tavern.
 ~
 0 -1 3006
 E
-WANTED posters poster wall~
-   Faces of various known Killers and Thieves can barely be seen behind the
-crates on the west wall.  Some of them look quite familar, sorta like that guy
-who you saw in the Reception a minute ago...  But then again, they are rather
-hard to see past the crates.  
-~
-E
-crates opened large~
-   As you know, it is illegal to send contraband items through the Midgaard
-Mail.  The customs agents use this as a great excuse to seize liquor, rare
-spices, and just about anything they might find useful or profitable.  
-~
-E
-cobwebs~
-   They seem to cover everything here, even the Postmaster himself.  
-~
-E
-letters envelopes assorted~
-   Envelopes of all sizes are heaped into hugh piles around the room.  As you
-look closer, you see a letter that you had posted a full week ago, laying
-unnoticed and slightly rat-chewed towards the bottom of the pile.  
-~
-E
 sign~
    **********************************************************
    *                                                        *
@@ -1341,6 +1318,29 @@ sign~
    *         Stamps cost 150 coins per letter               *
    *         Type 'HELP MAIL' for more info                 *
    **********************************************************
+~
+E
+letters envelopes assorted~
+   Envelopes of all sizes are heaped into hugh piles around the room.  As you
+look closer, you see a letter that you had posted a full week ago, laying
+unnoticed and slightly rat-chewed towards the bottom of the pile.  
+~
+E
+cobwebs~
+   They seem to cover everything here, even the Postmaster himself.  
+~
+E
+crates opened large~
+   As you know, it is illegal to send contraband items through the Midgaard
+Mail.  The customs agents use this as a great excuse to seize liquor, rare
+spices, and just about anything they might find useful or profitable.  
+~
+E
+WANTED posters poster wall~
+   Faces of various known Killers and Thieves can barely be seen behind the
+crates on the west wall.  Some of them look quite familar, sorta like that guy
+who you saw in the Reception a minute ago...  But then again, they are rather
+hard to see past the crates.  
 ~
 S
 #3063

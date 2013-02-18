@@ -54,6 +54,9 @@ trigger you must define actor.
 eval stunned %actor.hitp%     - evaluate all hitpoints and then damage
 %damage% %actor% %stunned%    - leaving the player stunned, but will recover 
 
+eval random_up_to_stunned %%random.%stunned%%%
+%damage% %actor %eval random_up_to_stunned%
+
 eval num_hitp %actor.hitp%/2  - calculate half of hitpoints and then damage
 %damage% %actor% %num_hitp% 
 
@@ -381,62 +384,6 @@ not update any other stats (like max hp or exp).
 
 See Also: CHAR-VAR, ADMLEVEL
 #31
-ADMIN
-
-Usage: admin <player> <priv> - toggle privs
-       admin <player>        - show player's privs
-       admin help            - show priv names and full usage
-
-NOTE: Works for offline players too!
-Valid privs are:
-     TellAll - You may use 'page all'
-SeeInventory - You can see other players inventories
-   SeeSecret - You may see secret doors
- KnowWeather - You may know weather data
-   FullWhere - You know fully where things are
-       Money - You do not require money
- EatAnything - You can eat anything
-    NoPoison - You cannot be poisoned
-WalkAnywhere - You can walk anywhere
-      NoKeys - You do not require keys
- InstantKill - You have the touch of death
-     NoSteal - You cannot be stolen from
-    TransAll - You may use 'trans all'
-SwitchMortal - You can use 'switch'
-   ForceMass - You may use 'force all'
-   AllHouses - You may enter any house
-    NoDamage - You do not take damage
-    AllShops - You may use any shop
-       CEDIT - You may use cedit
-       Build - You may use basic OLC tools
-    AdvBuild - You may use advanced OLC tools
-        Poof - You may use goto and set poofs
-       Admin - You may set admin privs
-       SetQP - You can give and remove qp
- AdvancedIBT - You can use advanced IBT commands
-Build, AdvBuild and Poof privs for mortals require the OLC zone to be set!
-
-SEE ALSO: ADVANCE@   
-#31
-ADMLEVEL ACTOR.ADMLEVEL ACTOR-ADMLEVEL %ACTOR.ADMLEVEL%
-
-This is used to find the admin level of a player, or to check that a player is
-above a minimum admin level.  The admin level can never be changed by a script.
-
-%actor.admlevel%        - return the admin level of actor
-%actor.admlevel(<val>)% - return 1 if actor is admin level 'val' or higher
-                        val may be an admin level number or name
-                        Abbreviations are allowed (Imp instead of Implementor)
-
-Example:
-if %actor.admlevel(Imm)%
- %send% %actor% Your admin level is %actor.admlevel%
-else
- %send% %actor% You are mortal
-end
-
-See Also: CHAR-VAR, ACTOR.CLASS, ACTOR.LEVEL
-#31
 ADVANCE DEMOTE
 
 Usage: advance <player> <level>
@@ -707,18 +654,6 @@ Duration    : 24 Hours
 Level       : Mage level 4, Cleric level 1.
 
 The Armor spell will improve your AC by 20 points or up to 10%.
-
-See also: AC
-#0
-GROUP-ARMOR
-
-Usage       : cast 'group armor'
-Accumulative: No
-Duration    : 24 Hours
-Level       : Cleric level 9.
-
-The Group Armor spell will improve the AC of everyone in your group by 20 
-points or up to 10%.
 
 See also: AC
 #0
@@ -1048,13 +983,6 @@ Shows your balance.
 Moves all of your money in/out of the bank.
 
 See also: GOLD, SCORE
-#0
-WHIRLWIND
-
-Whirlwind is a warrior skill available at level 16. It is a melee multi-target 
-damage attack.
-
-See also: KICK, RESCUE, BASH
 #0
 BASH
 
@@ -1638,6 +1566,8 @@ Usage: changelog <text>
 submitter name. To view the changelog use the file command with argument
 changelog.
 
+Changelog: http://tbamud.com/websvn/filedetails.php?repname=tbaMUD&path=%2Fchangelog
+
 See Also: FILE, CHANGES
 #31
 CHANGES
@@ -1691,7 +1621,6 @@ Excluding the subfield () returns the value. Adding a subfield adjusts it.
 
 cha/con/dex/int - Checks the stat. @RHELP TRIG-STAT@n. Subfield adjusts. 
 str/stradd/wis()  () is a subfield and allows a change to the variable.
-admlevel        - The actor's current admin level. @RHELP ADMLEVEL@n
 alias           - The list of aliases of the mob or the player name. 
 align()         - The actor's alignment @RHELP ALIGN@n. Subfield adjusts.
 affect()        - Checks the actor for the affect. @RHELP AFFECT@n 
@@ -1892,19 +1821,6 @@ Clears the screen just before you enter the main OLC menu.
 
 See Also: TOGGLE
 #31
-CMDINFO
-
-Usage: cmdinfo <command>
-
-Lists details of the provided command.
-
-Example: nohassle
-@Full Command : nohassle
-@Command Type : Admin/Imm-Only
-@Admin Level  : 1 (Immortal)
-@Min Level    : <Any>
-@Allowed Positions  : Dead, Mortally wounded, Incapacitated ...
-#31
 CODING C++ PROGRAMMING LINUX UNIX 
 
    Coding is far more difficult than building, to do it well requires years of
@@ -1932,31 +1848,41 @@ See also: FREE-SERVERS, DOCUMENTATION, DOWNLOADS, CWG
 #31
 COLORCODES ANSI COLOURCODES COLOR-CODES COLOUR-CODES COLOR-LEVEL COLORS COLOURS PCOLORS COLORCODING
 
-Usage: prefedit
+Usage:
 
    If you have a color-capable terminal and wish to see useful color-coding
 of information, use PREFEDIT to set the level of coloring you see.
-   The letters for the colors are to be preceded by a single @ sign, where the
-actual code will be @<letter>. Double @@ = single @. All use of colorcodes
-@RMUST@n be terminated with @n to restore normal color to prevent color bleeding.
+   The letters for the colors are to be preceded by a single @* sign, where the
+actual code will be @*<letter>. @** = single @*. All use of colorcodes @RMUST@n 
+be terminated with @*n to restore normal color to prevent color bleeding.
  
-The colors are:
+ANSI colors:
 n - normal
-@dd - black@n      @DD - gray@n           @00 - background black@n
-@bb - blue@n       @BB - bright blue@n    @11 - background blue@n
-@gg - green@n      @GG - bright green@n   @22 - background green@n
-@cc - cyan@n       @CC - bright cyan@n    @33 - background cyan@n
-@rr - red@n        @RR - bright red@n     @44 - background red@n
-@mm - magenta@n    @MM - bright magenta@n @55 - background magenta@n
-@yy - yellow@n     @YY - bright yellow@n  @66 - background yellow@n
-@ww - white@n      @WW - bright white@n   @77 - background white@n
- 
-Extra codes:
-@ll - blink@n      @oo - bold@n
-@uu - underline@n  @ee - reverse video@n
+@dd - black@n      @DD - gray@n
+@bb - blue@n       @BB - bright blue@n
+@gg - green@n      @GG - bright green@n
+@cc - cyan@n       @CC - bright cyan@n
+@rr - red@n        @RR - bright red@n
+@mm - magenta@n    @MM - bright magenta@n
+@yy - yellow@n     @YY - bright yellow@n
+@ww - white@n      @WW - bright white@n
+256 Colors:
+@pp - pink@n       @PP - bright pink@n
+@oo - orange@n     @OO - bright orange@n
 
-See also: @, ANSI, PROMPT, TOGGLE
-#0
+Other Color Codes:
+@*1, @*2, @*3 are MUD primary colors
+@*- - blink@n      @*+ - bold@n
+@*_ - underline@n  @*? - reverse video@n
+
+Other codes:
+@-- - blink@n        @++ - bold@n
+@__ - underline@n    @== - reverse video@n
+@11 - Mud Color 1@n  @33 - Mud Color 3@n     * Can be redefined in protocol.c
+@22 - Mud Color 2@n  * - The '@*' Symbol@n
+
+See also: @*, OLC-COLOR, ANSI, PROMPT, TOGGLE, SHOW-COLOUR
+#1
 COLORSPRAY COLOR-SPRAY
 
 Usage       : cast 'color spray' <victim>
@@ -2236,6 +2162,8 @@ CYGWIN README.CYGWIN README-CYGWIN COMPILER SHELLS
 
 You can view all the documentation files via the websvn link at www.tbamud.com
 in the /doc directory.
+
+http://tbamud.com/websvn/filedetails.php?repname=tbaMUD&path=%2Fdoc%2FREADME.CYGWIN
 
 See also: CODING, DOWNLOADS
 #31
@@ -2757,22 +2685,24 @@ EMAILS ICQ AIM E-MAILS CONTACTS MSN AOL
 
 Name     Email                      ICQ #      AIM             MSN 
 
-Welcor   welcor@tbamud.com        18755607
-Rumble   rumble@tbamud.com         4822010   admwint         wintersn
-Shamra   shamra@tbamud.com                   BlackdemonRahl
+Welcor   welcor@*tbamud.com        18755607
+Rumble   rumble@*tbamud.com         4822010   admwint         wintersn
+Shamra   shamra@*tbamud.com                   BlackdemonRahl
 
-Amber    amber@tbamud.com
-Detta    detta@tbamud.com    
-Elaseth  elaseth@tbamud.com                  ParaVox3
-Elorien  elorien@tbamud.com 
-Ferret   ferret@tbamud.com                                   radiax01
-Fizban   fizban@tbamud.com                   Fizban1216      fizban1216
-Fyre     fyre@tbamud.com 
-Heiach   heiach@tbamud.com                   heiach          heiach
-Random   random@tbamud.com       219948345
-Relsqui  relsqui@tbamud.com       72136407   Relsqui         penguinista 
-Rhade    rhade@tbamud.com                                    rhade_73
+Amber    amber@*tbamud.com
+Detta    detta@*tbamud.com    
+Elaseth  elaseth@*tbamud.com                  ParaVox3
+Elorien  elorien@*tbamud.com 
+Ferret   ferret@*tbamud.com                                   radiax01
+Fizban   fizban@*tbamud.com                   Fizban1216      fizban1216
+Fyre     fyre@*tbamud.com 
+Heiach   heiach@*tbamud.com                   heiach          heiach
+Random   random@*tbamud.com       219948345
+Relsqui  relsqui@*tbamud.com       72136407   Relsqui         penguinista 
+Rhade    rhade@*tbamud.com                                    rhade_73
 
+
+Vatiken  joseph.arnusch@*gmail.com
 #0
 EMOTES : EMOTIONS
 
@@ -2790,6 +2720,8 @@ Rhade is feeling very sad today.
 
 See also: SOCIALS, GEMOTE
 #0
+Empty
+#31
 ENCHANT-WEAPON ENCHANT-ARMOR 
 
 Usage       : cast 'enchant weapon' <weapon>
@@ -2966,6 +2898,39 @@ May give you some valuable information about an item or monster.
 
 See also: LOOK
 #0
+EXAMPLE-REPORT PROGRESS-REPORT 
+
+As a builder on a mud it is important that you are accountable to someone.
+To prepare you for this, and to keep the Builder Academy professional, I 
+request (not mandatory) a report from every builder so I can keep track of 
+everyones progress and give help to those who are serious about learning to
+build. These monthly reports are due the 1st of each month. The report will 
+include at a minimum the info in the example below. A simple mudmail to
+Rumble with this info is sufficient. Here is an example:
+
+Rumble's Building Report.
+Builder      : Rumble
+Zone         : 13 The Builder Academy
+Began        : When you started working on the zone.
+Player Level : 30
+Rooms        : 145 complete
+Mobs         : 23
+Objects      : 42
+Triggers     : 129 
+Theme        : Its purpose, hack & slash, quest, rescue princess, kill ogre...
+Completion   : When do you expect to finish it, how is the progress going?
+Notes        : Such things as zone alignment, economy, quests, special mobs and
+       objs, and anything else I should know about your zone. What 
+       makes it unique?
+
+To submit a report type @RAT POSTMASTER MAIL RUMBLE@n. Do not worry about 
+making it look pretty. This is only necessary after you have completed your 
+trialroom and if you have your own zone. This proposal is also a good example
+of the Zone Description Room required for all zones. By writing the report you
+can include the same information in the zone description room.
+
+See also: REPORT-EXAMPLE, ZONE-DESC
+#0
 EXITS
 
 Usage: exits
@@ -3138,6 +3103,8 @@ Demorie: aw :)
 Gossip: Demorie pounces on Shamra, pinning him to the ground.
 Gossip: Demorie kisses Shamra passionately.
 Bulrock gossips, 'Okay okay... get a Vnum for pete's sake'
+
+Silvaria: Omg I love reading through these files XD
 
 Fade: if (GET_SEXY_NESS(Fade) > VERY)
 Fade: worship(Fade.body);
@@ -3653,6 +3620,18 @@ he types : "ungroup Quifael" to kick Quifael out of the group.
 
 See also: FOLLOW, EXPERIENCE, UNGROUP, GSAY, ASSIST, GROUPS, REPORT
 #0
+GROUP-ARMOR
+
+Usage       : cast 'group armor'
+Accumulative: No
+Duration    : 24 Hours
+Level       : Cleric level 9.
+
+The Group Armor spell will improve the AC of everyone in your group by 20 
+points or up to 10%.
+
+See also: AC
+#0
 GSAY GTELL
 
 Usage: gsay <message>
@@ -4055,7 +4034,7 @@ Lists the most powerful beings on the MUD.  These are the people responsible
 for administering the system.
 
 See also: IMPLEMENTOR
-#31
+#1
 IMOTD
 
 Usage: imotd
@@ -4817,6 +4796,8 @@ say You must bring it to me to complete your quest, you know.
    Creates a new variable with the name given, whose contents shall be suitable 
 for referring to a character, object, or room whose id is provided.
 
+
+Example: TSTAT 308
 #31
 MANA
 
@@ -5055,7 +5036,6 @@ W) Copy mob
 X) Delete Mob                                      @RHELP MEDIT-DELETE@n   
 Q) Quit
 Enter choice :
-
 #31
 MEDIT-NPC-FLAGS MEDIT-FLAGS SPEC STAYZONE AGGRESSIVE AGGR_GOOD AGGR_NEU AGGR_EVIL STAY-ZONE STAY_ZONE SCAVENGER NPCFLAGS NPC-FLAGS MOBFLAGS MOB-FLAGS SENTINEL AWARE NOCHARM MOB-NPC NPC_FLAGS HELPER
  
@@ -5360,20 +5340,6 @@ MOBILE-FORMATS MOB-FORMATS MOB-FILES
 <load position> <default position> <sex> 
 
 See also: MEDIT
-#31
-MORTAL
-
-Usage: mortal
-
-The mortal command is used by any non-mortal to temporarily relinquish their
-admin level and privileges.  This is used for play-testing a zone.
-
-While in a mortal state, all administrative powers are inaccessible, although
-you will still be able to use wiznet.
-
-To recover all your previous immortal powers, type @yreturn@n.
-
-See Also: RETURN
 #31
 MORTALS
 
@@ -6204,6 +6170,40 @@ try them out. I have used CircEdit and the newest CWC seems to be even better.
 
 Old editors: ftp://ftp.circlemud.org/pub/CircleMUD/contrib/olc/offline/
 #31
+OLC-COLOR IMMORTAL-COLORS GOD-COLORS OLC-COLORS
+
+   While in OLC, color is handled through the '@*' codes, but must be manually
+converted to a tab through the following means:
+  > @*RRed@*n
+  > /t
+    (All @*'s toggled into Tabs)
+  > /s 
+  > /q
+  
+Usage: @[xRGB]
+
+x = [f:foreground or b:background] 
+RGB = is red, green, blue
+
+Examples: 
+@[f500]@*[f500] = foreground full Red
+@[f513]@*[f513] - Foreground color of Red-5, Green-1, and Blue-3@n 
+@[b315]@*[b315] - Background color of Red-3, Green-1, and Blue-5@n 
+All 256 Color combinations can be seen by "show colour".
+
+Advanced Examples:
+@(HELP CLASS@) = A basic MXP link for HELP CLASS
+@[U9814/Rook] = Creates a rook icon, or display the word Rook if the player's 
+                client doesn't have that functionality
+@<SOUND FName="ouch.wav" V=50 L=2 P=80 T="combat" U="www.yourMUD.com/sounds/"> 
+              = Would play ouch.wav on an MXP/MSP capable client.
+@<send "command1|command2|command3" hint="click to see menu|Item 1|Item 2|Item 2">this is a menu link@</SEND> 
+              = Sends an expandable pop-up menu, complete with mouse-over tool tip on an MXP capable client.
+
+http://tbamud.com/forum/4-development/167-3-63-colour-code-faq-and-information#167
+
+See also: @*, ANSI, PROMPT, TOGGLE, SHOW-COLOUR
+#0
 OLIST
 
 Usage: olist <range of vnums or zone number>
@@ -6989,15 +6989,13 @@ charge, who they can ask for help, and who they should be wary of taking tips
 from. I encourage everyone to help each other. Just realize that if the person
 is not at least a Great God they may have relatively little experience.
   
-Admin Level 1 (Immortal) Anyone who is new to TBA and is working on their trial
-              vnum or zone.
-Admin Level 2 (God) An experienced builder that has proven their knowledge and 
-              is willing to teach others. Admin Level 2 and above is 
-		@  considered staff.
-Admin Level 3 (Greater God) An experienced builder that has contributed 
-              significantly to TBA.
-Admin Level 4 (Implementor) Welcor, Jamdog, and I (Rumble). Welcor hosts, 
-              Jamdog codes, I administrate.
+Level 31 (Immortal) Anyone who is new to TBA and is working on their trial
+                    vnum or zone.
+Level 32 (God) An experienced builder that has proven their knowledge and is 
+               willing to teach others. Level 2 and above is considered staff.
+Level 33 (Greater God) An experienced builder that has contributed 
+                       significantly to TBA.
+Level 34 (Implementor) Welcor and I (Rumble). Welcor hosts and I administrate.
 
    Do not bother asking to be advanced, and if that is why you are here, you
 are wasting your time. Note, this does not mean you are not a quality builder,
@@ -7713,6 +7711,97 @@ The following terrains may be selected (only one):
 9    UNDERWATER     Underwater requires AFF_SCUBA.          5 
 
 #31
+RELEASES
+ 
+If you have any additions, corrections, ideas, or bug reports please stop by the
+Builder Academy at telnet://tbamud.com:9091 or email rumblebamud.com -- Rumble
+ 
+CircleMUD Release History 
+Originally by Jeremy Elson 
+ 
+Abstract 
+ 
+This document lists the release history of CircleMUD and at the end is the post
+to rec.games.mud.diku which originally anounced CircleMUD as a publically 
+available MUD source code. 
+ 
+Release history:
+Version 3.63 release: April, 2012
+Version 3.62 release: September, 2010
+Version 3.61 release: January, 2010
+Version 3.60 release: September, 2009
+Version 3.59 release: April, 2009
+Version 3.58 release: January, 2009
+Version 3.57 release: August, 2008
+Version 3.56 release: April, 2008
+Version 3.55 release: January, 2008
+Version 3.54 release: December, 2007
+Version 3.53 release: July, 2007
+Version 3.52 release: April, 2007
+Version 3.51 release: February, 2007
+Version 3.5 release: December, 2006
+Version 3.1  (yes, no beta pl): November 18, 2002
+Version 3.00 beta pl22 release: October 4, 2002
+Version 3.00 beta pl21 release: April 15, 2002
+Version 3.00 beta pl20 release: January 15, 2002
+Version 3.00 beta pl19 release: August 14, 2001
+Version 3.00 beta pl18 release: March 18, 2001
+Version 3.00 beta pl17 release: January 23, 2000
+Version 3.00 beta pl16 release: August 30, 1999
+Version 3.00 beta pl15 release: March 16, 1999
+Version 3.00 beta pl14 release: July 3, 1998
+Version 3.00 beta pl13a release: June 4, 1998
+Version 3.00 beta pl13 release: June 1, 1998
+Version 3.00 beta pl12 release: October 29, 1997
+Version 3.00 beta pl11 release: April 14, 1996
+Version 3.00 beta pl10 release: March 11, 1996
+Version 3.00 beta pl9 release: February 6, 1996
+Version 3.00 beta pl8 release: May 23, 1995
+Version 3.00 beta pl7 release: March 9, 1995
+Version 3.00 beta pl6 release: March 6, 1995
+Version 3.00 beta pl5 release: February 23, 1995
+Version 3.00 beta pl4 release: September 28, 1994
+Version 3.00 beta pl1-3, internal releases for beta-testers.
+Version 3.00 alpha: Ran on net for testing.  Code not released.
+Version 2.20 release: November 17, 1993
+Version 2.11 release: September 19, 1993
+Version 2.10 release: September 1, 1993
+Version 2.02 release: Late August 1993
+Version 2.01 release: Early August 1993
+Version 2.00 release: July 16, 1993 (Initial public release)
+ 
+The CircleMUD ?press release? is included below, in case you haven?t seen it 
+and want to.
+ 
+Wake the kids and find the dog, because it?s the FTP release of 
+ 
+CIRCLEMUD 2.0 
+ 
+That?s right --CircleMUD 2.0 is done and is now available for anonymous FTP 
+at ftp.cs.jhu.edu! 
+ 
+CircleMUD is highly developed from the programming side, but highly UNdeveloped 
+on the game-playing side. So, if you?re looking for a huge MUD with billions 
+of spells, skills, classes, races, and areas, Circle will probably disappoint 
+you severely. Circle still has only the 4 original Diku classes, the original 
+spells, the original skills, and about a dozen areas. 
+ 
+On the other hand, if you?re looking for a highly stable, well-developed, 
+well-organized "blank slate" MUD on which you can put your OWN ideas for 
+spells, skills, classes, and areas, then Circle might be just what you?re 
+looking for. 
+ 
+"Multi-user WHAT?" --My Mom 
+Give it a try --what do you have to lose other than your GPA/job, friends, 
+and life? 
+ 
+Good luck, and happy Mudding, 
+ 
+Jeremy Elson aka Ras 
+ 
+Circle and tbaMUD?s complete source code and areas are available at
+http://www.tbamud.com.
+#0
 RELOAD
 
 Usage: reload < '*' | all | file >
@@ -7846,39 +7935,6 @@ everyone in your group know the condition you are in.
   report - Yields "Tink reports: 25/25H, 110/110M, 84/84V"
 
 See Also: FOLLOW, GROUP, UNGROUP, GSAY, ASSIST, SPLIT
-#0
-REPORT PROGRESS-REPORT 
-
-As a builder on a mud it is important that you are accountable to someone.
-To prepare you for this, and to keep the Builder Academy professional, I 
-request (not mandatory) a report from every builder so I can keep track of 
-everyones progress and give help to those who are serious about learning to
-build. These monthly reports are due the 1st of each month. The report will 
-include at a minimum the info in the example below. A simple mudmail to
-Rumble with this info is sufficient. Here is an example:
-
-Rumble's Building Report.
-Builder      : Rumble
-Zone         : 13 The Builder Academy
-Began        : When you started working on the zone.
-Player Level : 30
-Rooms        : 145 complete
-Mobs         : 23
-Objects      : 42
-Triggers     : 129 
-Theme        : Its purpose, hack & slash, quest, rescue princess, kill ogre...
-Completion   : When do you expect to finish it, how is the progress going?
-Notes        : Such things as zone alignment, economy, quests, special mobs and
-       objs, and anything else I should know about your zone. What 
-       makes it unique?
-
-To submit a report type @RAT POSTMASTER MAIL RUMBLE@n. Do not worry about 
-making it look pretty. This is only necessary after you have completed your 
-trialroom and if you have your own zone. This proposal is also a good example
-of the Zone Description Room required for all zones. By writing the report you
-can include the same information in the zone description room.
-
-See also: REPORT-EXAMPLE, ZONE-DESC
 #0
 REPORT-EXAMPLE
 
@@ -8427,16 +8483,7 @@ See also: HIDE
 SERVERS FREE-SERVERS HOSTINGS FREE-HOSTS
 
 http://amber.org.uk
-http://www.slayn.net/web/
-http://isunlimited.net
-http://kaaomud.net
-http://moocowpenguin.net
-http://www.bylur.net/free/#3110
-http://xnixhosting.homeunix.org -- Contact Reaplo
-http://www.planetmud.net/ 
-www.evileyehosting.com
 www.frostmud.com
-http://www.bylur.net/free/#3110
 
 If you have any additions or deletions please mudmail rumble.
 
@@ -8595,7 +8642,7 @@ Usage: show houses        - Display a list of all houses
 
 See Also; SHOW
 #31
-SHOW-SHOPS SHOW-ZONES SHOWZONES SHOWSHOPS ZSTAT SHOW->ZONES
+SHOW-SHOPS SHOW-ZONES SHOWZONES SHOWSHOPS ZSTAT SHOW->ZONES SHOW-COLOUR SHOW-COLOR
 
 Usage: show <mode> [argument]
 
@@ -8619,6 +8666,7 @@ stats     Shows game status information including players in game, mobs etc.
 houses    Shows the houses that are currently defined.
 errors    Shows errant rooms.
 snoop     Shows all people currently snooping.
+colour    Shows all 256 colors
 
 Examples:
   show zone
@@ -9011,7 +9059,7 @@ STAFF DUTY DUTIES STAFF-DUTIES TBA-STAFF-DUTIES TBASTAFF
 
 1.  Have them fill out the application at: @Chttp://tbamud.com/@n
     They must submit the application before being advanced. 
-2.  Advance them to Immortal.  <advance Rumble admin 1>
+2.  Advance them to Immortal.  <advance Rumble 31>
 3.  Transfer or teleport them to 3, Socrates will greet them with instructions. 
 4.  Tell them to read through the entire zone and follow its instructions. 
     Remind them that if they get confused they can ask for help over wiznet.
@@ -9039,7 +9087,7 @@ Great God's:
     in their title "set rumble title has trial vnum #" "set rumble olc #." Put
     their name in their trial vnum room title. Use the assigner to limit them
     to their single vnum. HELP ASSIGNER. In the rare occasion that I am absent 
-@HELP STAFF-ZONES explains how I setup new zones.
+    @HELP STAFF-ZONES explains how I setup new zones.
 
 Rumble
 #31
@@ -9493,7 +9541,7 @@ road.
     the room a name to go by. For example, 'By a Patch of Daisies' if daisies 
     are the most prominent thing or a name such as 'The Green Room'. Try not to
     describe the title in the description of the room as the only item in the 
-    room. In some cases, if the room has a name, try not redescribe the title 
+    room. In some cases, if the room has a name, try not to redescribe the title 
     with the same words. For example, if the room title is 'By a Patch of 
     Daisies' there really is little need to add the daisies to the room desc. 
     It is acceptable to do so, but be descriptive in these instances instead 
@@ -9563,10 +9611,11 @@ road.
 SUBVERSION SVN
 
 To checkout the latest version:
-svn checkout http://tbamud.com/svn/circlemud/circlemud tbamud
+svn checkout http://tbamud.com/svn/circlemud tbamud
 
 Full details: http://tbamud.com/forum/2-general/21-subversion-basics-svn
 
+SVN Redbook: http://svnbook.red-bean.com/en/1.6/svn-book.html
 #0
 SUGGESTIONS
 
@@ -9588,7 +9637,7 @@ do not ask for much from builders, I let them build anything they want, if
 there is something special they want that is not in the code we will put it in 
 (as long as it is reasonable of course) I don't ask for long hours and I don't 
 sit looking over anyone's shoulders, I don't even require a builder to have 
-experience, I am more then willing to teach someone, what I am unwilling to do 
+experience, I am more than willing to teach someone, what I am unwilling to do 
 is let someone take advantage of me or my MUD which is mostly what I find 
 happening with newbie builders. I know I am rambling and I assure you I do 
 have a point and here it is: *drum roll please*
@@ -9755,15 +9804,20 @@ Theme: Teaching Builders and tbaMUD Codebase Development
 http://www.tbamud.com/ 
 telnet://tbamud.com:9091 
 
-The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community into an extensive tutorial zone, help files, and examples.
+The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community into an extensive tutorial zone, help files, and examples
 
-TBA now has two main missions. It originally was meant to be a training MUD open to anyone willing to learn or teach how to create your own text-based World. 1,000's of builder's have gone through our training and many MUDs require new builders to complete training at TBA before they can apply to their MUD. TBA's other mission is the development of the codebase formerly known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to release our codebase under the name tbaMUD and we have been updating it tirelessly for over 10 years.
+
+TBA now has two main missions. It originally was meant to be a training MUD open to anyone willing to learn or teach how to create your own text-based World. 1,000's of builder's have gone through our training and many MUDs require new builders to comple
+e training at TBA before they can apply to their MUD. TBA's other mission is the development of the codebase formerly known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to release our codebase under the name tbaMUD and we have been updat
+ng it tirelessly for over 10 years.
 
 TBA is a low stress, no deadline, training environment where anyone with motivation can work at their own pace to learn as much or as little as they wish. Numerous people are available to answer questions and give advice.
 
 1000's of builders served and counting.
 
-The most challenging aspect of running a MUD is finding good builders. You will hear this from the admin of every MUD that has ever been. In the past it has always been up to each individual MUD to find and usually train their own builders. This works, but I think the MUDing community can come up with something better. That is why we created The Builder's Academy. No pressure, no deadline, just come and learn or help teach. Give something back to the community we have all taken so much from. TBA is a MUDing community resource, please submit any lessons learned or building tips and tricks so we can improve our codebase and training.
+The most challenging aspect of running a MUD is finding good builders. You will hear this from the admin of every MUD that has ever been. In the past it has always been up to each individual MUD to find and usually train their own builders. This works, b
+t I think the MUDing community can come up with something better. That is why we created The Builder's Academy. No pressure, no deadline, just come and learn or help teach. Give something back to the community we have all taken so much from. TBA is a MUD
+ng community resource, please submit any lessons learned or building tips and tricks so we can improve our codebase and training.
 
 TBA can also be used by other MUDs as a builder's port. Just send us your newbie builders. We will teach them and then you can have them back with the zones they built.
 
@@ -9798,15 +9852,20 @@ TBAMUD PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW 
 TBA stands for The Builder Academy. 
 @RGOTO 3@n to enter the Builder Academy tutorial.
 
-The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community into an extensive tutorial zone, help files, and examples.
+The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community into an extensive tutorial zone, help files, and examples
 
-TBA now has two main missions. It originally was meant to be a training MUD open to anyone willing to learn or teach how to create your own text-based World. 1,000's of builder's have gone through our training and many MUDs require new builders to complete training at TBA before they can apply to their MUD. TBA's other mission is the development of the codebase formerly known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to release our codebase under the name tbaMUD and we have been updating it tirelessly for over 10 years.
+
+TBA now has two main missions. It originally was meant to be a training MUD open to anyone willing to learn or teach how to create your own text-based World. 1,000's of builder's have gone through our training and many MUDs require new builders to comple
+e training at TBA before they can apply to their MUD. TBA's other mission is the development of the codebase formerly known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to release our codebase under the name tbaMUD and we have been updat
+ng it tirelessly for over 10 years.
 
 TBA is a low stress, no deadline, training environment where anyone with motivation can work at their own pace to learn as much or as little as they wish. Numerous people are available to answer questions and give advice.
 
 1000's of builders served and counting.
 
-The most challenging aspect of running a MUD is finding good builders. You will hear this from the admin of every MUD that has ever been. In the past it has always been up to each individual MUD to find and usually train their own builders. This works, but I think the MUDing community can come up with something better. That is why we created The Builder's Academy. No pressure, no deadline, just come and learn or help teach. Give something back to the community we have all taken so much from. TBA is a MUDing community resource, please submit any lessons learned or building tips and tricks so we can improve our codebase and training.
+The most challenging aspect of running a MUD is finding good builders. You will hear this from the admin of every MUD that has ever been. In the past it has always been up to each individual MUD to find and usually train their own builders. This works, b
+t I think the MUDing community can come up with something better. That is why we created The Builder's Academy. No pressure, no deadline, just come and learn or help teach. Give something back to the community we have all taken so much from. TBA is a MUD
+ng community resource, please submit any lessons learned or building tips and tricks so we can improve our codebase and training.
 
 TBA can also be used by other MUDs as a builder's port. Just send us your newbie builders. We will teach them and then you can have them back with the zones they built.
 
@@ -12335,6 +12394,13 @@ Room example: @RTSTAT 24, 2201@n
 Obj example:  @RTSTAT 23@n
 Mob example:  @RTSTAT 11858@n
 #31
+WHIRLWIND
+
+Whirlwind is a warrior skill available at level 16. It is a melee multi-target 
+damage attack.
+
+See also: KICK, RESCUE, BASH
+#0
 WHO WHOINVIS
 
 Usage: who [minlev[-maxlev]] [-n name] [-c classlist] [-k] [-l] [-n] [-q] [-r] [-s] [-z]
@@ -12429,15 +12495,15 @@ Usage: wizhelp <name>
 Gives a list of the special commands available to you or the name you provide.
 Disabled commands will be gray.
 
-Admin Level 4 (Implementor):
-admin        cedit        changelog    export       reload       shutdow      
-shutdown     wizlock      
+Level 34 (Implementor):
+cedit        changelog    export       reload       shutdow      shutdown
+wizlock
 
-Admin Level 3 (Great God):
+Level 33 (Great God):
 ban          copyover     freeze       hcontrol     reroll       skillset     
 thaw         unban        wizupdate    
 
-Admin Level 2 (God):
+Level 32 (God):
 advance      aedit        checkload    dc           file         force        
 gecho        hedit        helpcheck    hsedit       last         links        
 mcopy        mute         notitle      ocopy        pardon       plist        
@@ -12445,8 +12511,8 @@ qecho        rcopy        restore      scopy        send         snoop
 switch       tcopy        tedit        transfer     unaffect     uptime       
 users        zlock        zunlock      
 
-Admin Level 1 (Immortal):
-;            at           attach       buildwalk    cmdinfo      date         
+Level 31 (Immortal):
+;            at           attach       buildwalk    date         
 detach       dig          echo         handbook     holylight    imotd        
 invis        load         medit        mlist        nohassle     nowiz        
 oedit        olc          olist        peace        purge        qedit        
@@ -12455,8 +12521,7 @@ sedit        set          show         slist        stat         teleport
 tlist        trigedit     tstat        vdelete      vnum         vstat        
 wiznet       wizhelp      zcheck       zedit        zlist        zpurge       
 zreset       
-                        
-						@
+
 @RHELP <any of the above commands>@n
 #31
 WIZLOCK
@@ -12726,7 +12791,7 @@ ZEDIT-CREATE ZEDIT-CREATION ZONE-CREATE ZONE-CREATION ZCREATE CREATE-ZONE
 
 Usage: zedit new <new zone number> <bottom of zone> <top of zone>
 
-@Only Implementors can create new zones. Zones can be any size but must
+@OOnly Implementors can create new zones. Zones can be any size but must
 consist of consecutive vnums. tbaMUD supports 0-655 zones. That means vnums 
 0 -> 65500. So to create zone 350 you would type: zedit new 350 35000 35099 
 for a 100 vnum zone. Which I find the easiest to manage. But, in reality you 
@@ -12742,8 +12807,29 @@ Examples:
 
 Max zone number is 655. Max vnum is 65534. 65535 is reserved for corpses.
    
-See Also: ZEDIT, ZEDIT-NEW
+See Also: ZEDIT, ZEDIT-NEW, ZEDIT-DELETE
 #31
+ZEDIT-DELETE
+
+To remove a single zone you will need server access and then remove
+the references to the zone in the World directory index files. For
+example if I want to remove zone 123 I edit the following files and
+remove the line 123.<file type>:
+lib/world/zon/index --Remove line of text 123.zon
+lib/world/wld/index --Remove line of text 123.wld
+lib/world/mob/index --Remove line of text 123.mob
+lib/world/obj/index --Remove line of text 123.obj
+lib/world/trg/index --Remove line of text 123.trg
+lib/world/shp/index --Remove line of text 123.shp
+lib/world/qst/index --Remove line of text 123.qst
+One done reboot to reload the World files
+You may not have index references to all of the above files.
+One last note of caution if you delete a zone reference that is used
+in the code for say mortal loadroom the MUD will not boot. So make
+sure that zone is not used anywhere in the code.
+
+See Also: ZEDIT-CREATE
+#0
 ZEDIT-EQUIP
 
    Choosing this option brings up the menu:
@@ -12879,7 +12965,7 @@ T) Assign a trigger (Advanced builders only)
 V) Set a global variable (Advanced builders only)
   Set a global variable to be used by triggers. @RHELP GLOBAL@n.
 
-See also: ZEDIT-EQUIP, MAXLOAD, ZRESET
+See also:  ZEDIT-CREATE, ZEDIT-EQUIP, MAXLOAD, ZRESET
 #31
 ZEDIT-RESETS RESET-MODES
 
@@ -12991,7 +13077,7 @@ make sure that you list them there. For examples goto the following rooms:
 8600, 10600, 20000. Add anything to this room that you think would make it 
 easier to administer the zone on a MUD. 
 
-See also: REPORT, PLANNING, PROPOSAL
+See also: EXAMPLE-REPORT, PLANNING, PROPOSAL
 
 #31
 ZONE-FORMATS ZON-FILES
