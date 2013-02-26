@@ -176,6 +176,7 @@ int delete_room(room_rnum rnum)
 		  event_cancel(pEvent);
 	  }
 	  free_list(room->events);
+    room->events = NULL;
   }
 
   /* Change any exit going to this room to go the void. Also fix all the exits 

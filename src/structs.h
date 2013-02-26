@@ -732,6 +732,8 @@ struct obj_data
   struct obj_data *next_content;  /**< For 'contains' lists   */
   struct obj_data *next;          /**< For the object list */
   struct char_data *sitting_here; /**< For furniture, who is sitting in it */
+  
+  struct list_data *events;      /**< Used for object events */
 };
 
 /** Instance info for an object that gets saved to disk.

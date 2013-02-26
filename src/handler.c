@@ -816,6 +816,17 @@ void extract_obj(struct obj_data *obj)
   if (SCRIPT(obj))
     extract_script(obj, OBJ_TRIGGER);
 
+  if (obj->events != NULL) {
+	  if (obj->events->iSize > 0) {
+		struct event * pEvent;
+
+		while ((pEvent = simple_list(obj->events)) != NULL)
+		  event_cancel(pEvent);
+	  }
+	  free_list(obj->events);
+    obj->events = NULL;
+  }
+
   if (GET_OBJ_RNUM(obj) == NOTHING || obj->proto_script != obj_proto[GET_OBJ_RNUM(obj)].proto_script)
     free_proto_script(obj, OBJ_TRIGGER);
 

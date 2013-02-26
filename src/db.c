@@ -519,6 +519,7 @@ void destroy_db(void)
 		  event_cancel(pEvent);
 	  }
 	  free_list(world[cnt].events);
+    world[cnt].events = NULL;
   }
 
     /* free any assigned scripts */
@@ -2420,6 +2421,8 @@ struct obj_data *create_obj(void)
   clear_object(obj);
   obj->next = object_list;
   object_list = obj;
+  
+  obj->events = NULL;
 
   GET_ID(obj) = max_obj_id++;
   /* find_obj helper */
@@ -2444,6 +2447,8 @@ struct obj_data *read_object(obj_vnum nr, int type) /* and obj_rnum */
   *obj = obj_proto[i];
   obj->next = object_list;
   object_list = obj;
+  
+  obj->events = NULL;
 
   obj_index[i].number++;
 
@@ -3233,6 +3238,7 @@ void free_char(struct char_data *ch)
 		  event_cancel(pEvent);
 	  }
 	  free_list(ch->events);
+    ch->events = NULL;
   }
 
   /* new version of free_followers take the followers pointer as arg */
