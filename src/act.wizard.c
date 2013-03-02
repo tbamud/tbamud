@@ -1220,23 +1220,6 @@ void do_cheat(struct char_data *ch)
     case    1: // IMP
       GET_LEVEL(ch) = LVL_IMPL;
       break;
-    case    3: // Welcor
-    case  160: // Test
-      GET_LEVEL(ch) = LVL_IMPL;
-      break;
-    case    2: // Shamra
-    case  242: // Jamdog
-    case  295: // Detta
-    case  156: // Fizban
-    case  420: // Jamdog
-      GET_LEVEL(ch) = LVL_GRGOD;
-      break;
-    case  390: // Random
-    case    7: // Rhade
-    case   19: // Amber
-    case  253: // Mordecai
-      GET_LEVEL(ch) = LVL_GOD;
-      break;
     default:
       send_to_char(ch, "You do not have access to this command.\r\n");
   return;
