@@ -474,7 +474,7 @@ ACMD(do_whirlwind)
   }
 
   send_to_char(ch, "You begin to spin rapidly in circles.\r\n");
-  act("$N begins to rapidly spin in a circle!", FALSE, ch, 0, 0, TO_ROOM);
+  act("$n begins to rapidly spin in a circle!", FALSE, ch, 0, 0, TO_ROOM);
   
   /* NEW_EVENT() will add a new mud event to the event list of the character.
    * This function below adds a new event of "eWHIRLWIND", to "ch", and passes "NULL" as
