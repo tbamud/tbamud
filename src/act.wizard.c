@@ -3128,6 +3128,7 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
     case 39: /* poofin */
       if ((vict == ch) || (GET_LEVEL(ch) == LVL_IMPL)) {
         skip_spaces(&val_arg);
+        parse_at(val_arg);
 
         if (POOFIN(vict))
           free(POOFIN(vict));
@@ -3141,6 +3142,7 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
     case 40: /* poofout */
       if ((vict == ch) || (GET_LEVEL(ch) == LVL_IMPL)) {
         skip_spaces(&val_arg);
+        parse_at(val_arg);
 
         if (POOFOUT(vict))
           free(POOFOUT(vict));
