@@ -3,6 +3,8 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
 @
 [Apr 08 2013] - Rumble
+  Fixed wizlist so it is viewable in OLC again. (Thanks Silvaria)
+  Fixed color bleeding in level range menu. (Thanks Silvaria)
   Fixed typos, updated help.
 [Apr 03 2013] - Rumble
   Fixed typo in Whirlwind

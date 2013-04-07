@@ -2220,12 +2220,8 @@ ACMD(do_wiznet)
     if (IS_PLAYING(d) && (GET_LEVEL(d->character) >= level) &&
 	(!PRF_FLAGGED(d->character, PRF_NOWIZ))
 	&& (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
-      if (CAN_SEE(d->character, ch)) 
         msg = act(buf1, FALSE, d->character, 0, 0, TO_CHAR | DG_NO_TRIG);
-      else 
-        msg = act(buf2, FALSE, d->character, 0, 0, TO_CHAR | DG_NO_TRIG);
-      
-      add_history(d->character, msg, HIST_WIZNET);
+        add_history(d->character, msg, HIST_WIZNET);
     }
   }
 

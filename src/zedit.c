@@ -703,9 +703,9 @@ void zedit_disp_levels(struct descriptor_data *d)
 	"\ty2\tn) Set maximum level recommendation\r\n"
 	"\ty3\tn) Clear level recommendations\r\n\r\n"
 	"\ty0\tn) Quit to main menu\r\n"
-        "\tgCurrent Setting: %s%s\r\n"
+        "\tgCurrent Setting: %s%s%s\r\n"
 	"\r\n"
-	"Enter choice (0 to quit): ", levels_set ? "\tc" : "\ty", lev_string
+	"Enter choice (0 to quit): ", levels_set ? "\tc" : "\ty", lev_string, "\tn"
 	);
   OLC_MODE(d) = ZEDIT_LEVELS;
 }
