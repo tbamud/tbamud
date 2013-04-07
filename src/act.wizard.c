@@ -1197,7 +1197,7 @@ ACMD(do_switch)
   else if (victim->desc)
     send_to_char(ch, "You can't do that, the body is already in use!\r\n");
   else if ((GET_LEVEL(ch) < LVL_IMPL) && !IS_NPC(victim))
-    send_to_char(ch, "You aren't holy enough to use a mortal's body.\r\n");
+    send_to_char(ch, "You are not holy enough to use their body.\r\n");
   else if (GET_LEVEL(ch) < LVL_GRGOD && ROOM_FLAGGED(IN_ROOM(victim), ROOM_GODROOM))
     send_to_char(ch, "You are not godly enough to use that room!\r\n");
   else if (GET_LEVEL(ch) < LVL_GRGOD && ROOM_FLAGGED(IN_ROOM(victim), ROOM_HOUSE)

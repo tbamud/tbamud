@@ -1663,7 +1663,7 @@ quest           - Returns the current quest (or 0 if there's no current quest).
 questdone(#)    - Returns TRUE (1) if the quest vnum (#) has been completed. 
 questpoints()   - Checks the actor's questpoints. Subfield modifies. @RHELP NOP@n
 room            - The room the actor is in as a room variable. 
-saving_para()   - The actors saving throw for paralization. Subfield adjusts.
+saving_para()   - The actors saving throw for paralysis. Subfield adjusts.
 saving_rod()    - The actors saving throw for staffs/wands. Subfield adjusts.
 saving_petri()  - The actors saving throw for petrification. Subfield adjusts.
 saving_breath() - The actors saving throw for breath weapons. Subfield adjusts.
@@ -2192,6 +2192,16 @@ creature, than a level fifteen player would do with a Damroll of +10.
 
 See also: HITROLL, AC, STATS
 #0
+DARKNESS
+
+Usage       : cast 'darkness'
+
+Accumulative: No
+Duration    : 1
+Level       : Cleric level 13.
+
+Envelopes the room in a temporary cloak of darkness.
+#0
 DATE AM PM 
 
 Usage: date
@@ -2683,26 +2693,23 @@ See also: OLC, REDIT, OEDIT, MEDIT, ZEDIT, SEDIT, TRIGEDIT, TEXT-EDITOR
 #31
 EMAILS ICQ AIM E-MAILS CONTACTS MSN AOL
 
-Name     Email                      ICQ #      AIM             MSN 
+Name     Email
 
-Welcor   welcor@*tbamud.com        18755607
-Rumble   rumble@*tbamud.com         4822010   admwint         wintersn
-Shamra   shamra@*tbamud.com                   BlackdemonRahl
-
-Amber    amber@*tbamud.com
-Detta    detta@*tbamud.com    
-Elaseth  elaseth@*tbamud.com                  ParaVox3
-Elorien  elorien@*tbamud.com 
-Ferret   ferret@*tbamud.com                                   radiax01
-Fizban   fizban@*tbamud.com                   Fizban1216      fizban1216
-Fyre     fyre@*tbamud.com 
-Heiach   heiach@*tbamud.com                   heiach          heiach
-Random   random@*tbamud.com       219948345
-Relsqui  relsqui@*tbamud.com       72136407   Relsqui         penguinista 
-Rhade    rhade@*tbamud.com                                    rhade_73
-
-
-Vatiken  joseph.arnusch@*gmail.com
+Welcor   welcor@tbamud.com
+Rumble   rumble@tbamud.com
+Vatiken  joseph.arnusch@gmail.com
+Shamra   shamra@tbamud.com
+Fizban   fizban@tbamud.com
+Amber    amber@tbamud.com
+Detta    detta@tbamud.com
+Elaseth  elaseth@tbamud.com
+Elorien  elorien@tbamud.com
+Ferret   ferret@tbamud.com
+Fyre     fyre@tbamud.com
+Heiach   heiach@tbamud.com
+Random   random@tbamud.com
+Relsqui  relsqui@tbamud.com
+Rhade    rhade@tbamud.com
 #0
 EMOTES : EMOTIONS
 
@@ -2898,7 +2905,7 @@ May give you some valuable information about an item or monster.
 
 See also: LOOK
 #0
-EXAMPLE-REPORT PROGRESS-REPORT 
+EXAMPLE-PROPOSAL PROGRESS-REPORT REPORT-EXAMPLE EXAMPLE-REPORT 
 
 As a builder on a mud it is important that you are accountable to someone.
 To prepare you for this, and to keep the Builder Academy professional, I 
@@ -3584,39 +3591,12 @@ the shell prompt), type @Wman grep@n.
 #31
 GROUP
 
-Usage: group [player]
-       group all
+Usage: group 
+       group < list | new | join | leave | options | kick >
 
-GROUP with no arguments shows the status of your group.  GROUP <player>
-adds or removes <player> from your group.  GROUP ALL adds everyone who is
-following you to your group.
-
-If you are a group member, then you will share experience points for killing
-monsters equally among the group.  Experience points will only be shared among
-group members that are in the same location, at the time of the killing
-blow.  Sharing is regardless of whether the group members have been
-participating in the fight.
-
-To make a group, a "leader" must be selected.  All members of the group
-must then "follow" the leader using the follow command.  The leader should
-NOT follow anyone!  The leader can now toggle group membership for each player
-in the group, by using "group <player_name>" or "group all"
- 
-Example:
-
-  Quifael and Redferne wish to group with Dragon.
-
-  Quifael : follow dragon
-  Redferne: follow dragon
-  (Dragon should be following no one but himself)
-  Dragon  : group dragon
-  Dragon  : group redferne
-  Dragon  : group quifael
-    or
-  Dragon  : group all
-
-Later when Dragon gets upset at Quifael (because he is sleeping all the time)
-he types : "ungroup Quifael" to kick Quifael out of the group.
+GROUP with no arguments shows the status of your group.  GROUP list will show
+you a listing of all groups within the game, as well as their zone location and
+whether or not they are seeking new members.
 
 See also: FOLLOW, EXPERIENCE, UNGROUP, GSAY, ASSIST, GROUPS, REPORT
 #0
@@ -5369,6 +5349,65 @@ RECALL                          - Recall to / set / reset your recall base.
 SLEEP WAKE REST SIT STAND       - Change your position (or others').
 LOCK UNLOCK OPEN CLOSE PICK     - Doors and containers.
 #0
+MSGEDIT MESSAGE-EDITOR
+
+The Message Editor (BETA):
+  tbaMUD 3.64
+WARNING: THE NEW MESSAGE EDITOR WILL ALTER THE EXISTING MESSAGE FILE BY CONVERTING
+IT TO A MORE EASILY MACHINE READABLE FORMAT WHEN A MESSAGE IS SUCCESSFULLY EDITED.
+The Message Editor is an OLC style editor for modifying the in-game combat messages.
+Simply typing "msgedit" will bring up a list of all active in-game combat messages,
+along with the skill they are associated with, number of entries, and a name (if
+one exists.)
+========================================
+Message List: 
+0 ) [5  ] 1, burning hands        30) [314] 2, Unknown           
+1 ) [6  ] 1, call lightning       31) [399] 2, Unknown           
+2 ) [8  ] 1, chill touch          32) [33 ] 1, poison            
+3 ) [10 ] 1, color spray          33) [202] 1, !UNUSED!          
+4 ) [22 ] 1, dispel evil          34) [203] 1, !UNUSED!          
+5 ) [23 ] 1, earthquake           35) [204] 1, !UNUSED!          
+6 ) [25 ] 1, energy drain         36) [205] 1, !UNUSED!          
+7 ) [26 ] 1, fireball             37) [206] 1, !UNUSED!      
+=========================================
+MSG #, SKILL NUMBER, NUMBER OF ENTRIES, NAME (if applicable)
+0 )    [5  ]         1,                 burning hands
+To edit a message, use the command "msgedit" along with the entry # of the message
+you would like to edit. To edit the "burning hands" entry, the correct command would
+be:
+  > msgedit 0
+==========================================
+Msg Edit: [0x1] [$n: Attacker | $N: Victim]
+1) Action Type: 5 [burning hands]
+   Death Messages:
+A) CHAR :  You have burned $N to death!
+B) VICT :  You have been burned to death by $n!
+C) ROOM :  $n has burned $N to death!
+   Miss Messages:
+D) CHAR :  You miss $N with your burning hands.
+E) VICT :  $n reaches for you with burning hands, but misses!
+F) ROOM :  $n tries to burn $N, but $E escapes!
+   Hit Messages:
+G) CHAR :  You burn $N with your hot little hands!
+H) VICT :  You cry out in pain as $n grabs you with burning hands!
+I) ROOM :  $N cries out as $n burns $M!
+   God Messages:
+J) CHAR :  Your attempt to burn $N nears BLASPHEMY!!!
+K) VICT :  The pitiful creature before you tries to burn you.
+L) ROOM :  Unaware of the risks, $n tries to burn $N.
+N) New Q) Quit
+============================================
+To edit a message, simply enter the applicable letter for the line to which you'd
+like to edit, and an entry prompt will emerge along with an example of use.
+To edit the A), "char death message", simply type from the message editor:
+  > a
+============================================
+Enter Selection : a
+Example: You kill $N!
+Enter new string : 
+=============================================
+Developed by Joseph Arnusch (Vatiken) for use in tbaMUD 3.64.
+#0
 MUDCOMMAND CMD.MUDCOMMAND %CMD.MUDCOMMAND% %MUDCOMMAND% CMD.MUDCOMMAND 
 
    Used to match text to existing commands in the MUD. This will also match
@@ -5412,6 +5451,10 @@ MV MOVEPOINTS MOVE-POINTS MOVEMENTPOINTS MOVEMENT-POINTS
 traveling and require some rest to continue.
 
 See also: MANA, HITPOINTS
+#0
+MXP PROTOCOLS
+
+http://www.zuggsoft.com/zmud/mxp.htm#Introduction
 #0
 NESTED-IFS
 
@@ -9027,10 +9070,11 @@ SPELLS MAGICS SPELLBOOKS TOMBS SPELL-LEVELS SPELLS-STOCK SPELLLIST
 | Curse               14   |   Identify             11   |
 | Poison              14   |   Word of Recall       12   |
 | Fireball            15   |   Earthquake           12   |
-| Charm               16   |   Dispel Evil          14   |
-| Identify            20   |   Dispel Good          14   |
-| Enchant Weapon      26   |   Sanctuary            15   |
-| Clone               30   |   Call Lightning       15   |
+| Charm               16   |   Darkness             13   |
+| Identify            20   |   Dispel Evil          14   |
+| Enchant Weapon      26   |   Dispel Good          14   |
+| Clone               30   |   Sanctuary            15   |
+|                          |   Call Lightning       15   |
 |                          |   Heal                 16   |
 |                          |   Control Weather      17   |
 |                          |   Sense Life           18   |
@@ -11702,6 +11746,8 @@ Variables:
 %time%      - MUD hour trigger fires off.
 %self%      - the room.
 
+Example: @RTSTAT 211@n
+
 See also: TRIGEDIT-ROOM-GLOBAL, %TIME%
 #31
 TRIGEDIT-ROOM-ZONE-RESET TRIGEDIT-ROOM-ZRESET TRIGEDIT-ROOM-LOAD
@@ -12755,7 +12801,7 @@ Make each mob unique, don't reuse the same mob for each gate, and load only 1
 of each. Or you can use trigedit to load the mob on zreset, checking if they 
 already exist. Both can be very time consuming.
 
-See Also: FOUNTAIN, ZEDIT-ADVANCED
+See Also: FOUNTAIN
 #31
 ZEDIT-BUILDERS
 
@@ -13064,7 +13110,7 @@ to check if they made anything of value that could be saved and donated.
 worked and then delete the zone from the server withe the RemoveWorld script.
 
 #31
-ZONE-DESCRIPTION-ROOM ZONE_DESCRIPTION_ROOM 00 EXAMPLE-PROPOSALS EXAMPLE-ZONE-DESCRIPTIONS ZONE-INFO TEST-ZONE TRIAL-ZONE ZONE-DESCRIPTIONS ZEDIT-DESCRIPTION
+ZONE-DESCRIPTION-ROOM ZONE_DESCRIPTION_ROOM 00 EXAMPLE-ZONE-DESCRIPTIONS ZONE-INFO TEST-ZONE TRIAL-ZONE ZONE-DESCRIPTIONS ZEDIT-DESCRIPTION
 
 Your zone proposal should be cut and pasted into your "Zone Description Room",
 which will be in room <zone #>00 (first room in your zone). In this credit room you 
@@ -13363,63 +13409,4 @@ zlock - Locks one or all zones. Type zlock for usage.
 zunlock - Locks one or all zones. Type zunlock for usage. 
 
 #31
-MSGEDIT MESSAGE-EDITOR
-
-The Message Editor (BETA):
-  tbaMUD 3.64
-WARNING: THE NEW MESSAGE EDITOR WILL ALTER THE EXISTING MESSAGE FILE BY CONVERTING
-IT TO A MORE EASILY MACHINE READABLE FORMAT WHEN A MESSAGE IS SUCCESSFULLY EDITED.
-The Message Editor is an OLC style editor for modifying the in-game combat messages.
-Simply typing "msgedit" will bring up a list of all active in-game combat messages,
-along with the skill they are associated with, number of entries, and a name (if
-one exists.)
-========================================
-Message List: 
-0 ) [5  ] 1, burning hands        30) [314] 2, Unknown           
-1 ) [6  ] 1, call lightning       31) [399] 2, Unknown           
-2 ) [8  ] 1, chill touch          32) [33 ] 1, poison            
-3 ) [10 ] 1, color spray          33) [202] 1, !UNUSED!          
-4 ) [22 ] 1, dispel evil          34) [203] 1, !UNUSED!          
-5 ) [23 ] 1, earthquake           35) [204] 1, !UNUSED!          
-6 ) [25 ] 1, energy drain         36) [205] 1, !UNUSED!          
-7 ) [26 ] 1, fireball             37) [206] 1, !UNUSED!      
-=========================================
-MSG #, SKILL NUMBER, NUMBER OF ENTRIES, NAME (if applicable)
-0 )    [5  ]         1,                 burning hands
-To edit a message, use the command "msgedit" along with the entry # of the message
-you would like to edit. To edit the "burning hands" entry, the correct command would
-be:
-  > msgedit 0
-==========================================
-Msg Edit: [0x1] [$n: Attacker | $N: Victim]
-1) Action Type: 5 [burning hands]
-   Death Messages:
-A) CHAR :  You have burned $N to death!
-B) VICT :  You have been burned to death by $n!
-C) ROOM :  $n has burned $N to death!
-   Miss Messages:
-D) CHAR :  You miss $N with your burning hands.
-E) VICT :  $n reaches for you with burning hands, but misses!
-F) ROOM :  $n tries to burn $N, but $E escapes!
-   Hit Messages:
-G) CHAR :  You burn $N with your hot little hands!
-H) VICT :  You cry out in pain as $n grabs you with burning hands!
-I) ROOM :  $N cries out as $n burns $M!
-   God Messages:
-J) CHAR :  Your attempt to burn $N nears BLASPHEMY!!!
-K) VICT :  The pitiful creature before you tries to burn you.
-L) ROOM :  Unaware of the risks, $n tries to burn $N.
-N) New Q) Quit
-============================================
-To edit a message, simply enter the applicable letter for the line to which you'd
-like to edit, and an entry prompt will emerge along with an example of use.
-To edit the A), "char death message", simply type from the message editor:
-  > a
-============================================
-Enter Selection : a
-Example: You kill $N!
-Enter new string : 
-=============================================
-Developed by Joseph Arnusch (Vatiken) for use in tbaMUD 3.64.
-#0
 $~
