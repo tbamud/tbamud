@@ -2149,7 +2149,7 @@ ACMD(do_force)
 ACMD(do_wiznet)
 {
   char buf1[MAX_INPUT_LENGTH + MAX_NAME_LENGTH + 32],
-       buf2[MAX_INPUT_LENGTH + MAX_NAME_LENGTH + 32], *msg;
+       buf2[MAX_INPUT_LENGTH + MAX_NAME_LENGTH + 32];
   struct descriptor_data *d;
   char emote = FALSE;
   char any = FALSE;
@@ -2220,12 +2220,13 @@ ACMD(do_wiznet)
     if (IS_PLAYING(d) && (GET_LEVEL(d->character) >= level) &&
 	(!PRF_FLAGGED(d->character, PRF_NOWIZ))
 	&& (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
-      if (CAN_SEE(d->character, ch))
-        msg = act(buf1, FALSE, d->character, 0, 0, TO_CHAR | DG_NO_TRIG);
-      else 
-        msg = act(buf2, FALSE, d->character, 0, 0, TO_CHAR | DG_NO_TRIG);
-      
-      add_history(d->character, msg, HIST_WIZNET);
+      if (CAN_SEE(d->character, ch)) {
+        send_to_char(d->character, "%s%s%s\r\n", CCCYN(d->character, C_NRM), buf1, CCNRM(d->character, C_NRM));
+        add_history(d->character, buf1, HIST_WIZNET);
+      } else {
+        send_to_char(d->character, "%s%s%s\r\n", CCCYN(d->character, C_NRM), buf2, CCNRM(d->character, C_NRM));
+        add_history(d->character, buf2, HIST_WIZNET);
+      }
     }
   }
 
