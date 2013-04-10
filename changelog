@@ -2,6 +2,8 @@ TbaMUD is currently being developed by The Builder Academy. If you need any
 help, find any bugs, or have ideas for improvement please stop by TBA at 
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
 @
+[Apr 10 2013] - Rumble
+  Another wiznet fix to add returns for add_history.
 [Apr 10 2013] - Fizban
   Fixed wiznet so it is viewable in OLC again.
 [Apr 09 2013] - Rumble

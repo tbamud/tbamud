@@ -2209,11 +2209,11 @@ ACMD(do_wiznet)
     return;
   }
   if (level > LVL_IMMORT) {
-    snprintf(buf1, sizeof(buf1), "\tc%s: <%d> %s%s\tn", GET_NAME(ch), level, emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "\tcSomeone: <%d> %s%s\tn", level, emote ? "<--- " : "", argument);
-  } else {
-    snprintf(buf1, sizeof(buf1), "\tc%s: %s%s\tn", GET_NAME(ch), emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "\tcSomeone: %s%s\tn", emote ? "<--- " : "", argument);
+    snprintf(buf1, sizeof(buf1), "\tc%s: <%d> %s%s\tn\r\n", GET_NAME(ch), level, emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "\tcSomeone: <%d> %s%s\tn\r\n", level, emote ? "<--- " : "", argument);
+} else {
+    snprintf(buf1, sizeof(buf1), "\tc%s: %s%s\tn\r\n", GET_NAME(ch), emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "\tcSomeone: %s%s\tn\r\n", emote ? "<--- " : "", argument);
   }
 
   for (d = descriptor_list; d; d = d->next) {
@@ -2221,10 +2221,10 @@ ACMD(do_wiznet)
 	(!PRF_FLAGGED(d->character, PRF_NOWIZ))
 	&& (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
       if (CAN_SEE(d->character, ch)) {
-        send_to_char(d->character, "%s%s%s\r\n", CCCYN(d->character, C_NRM), buf1, CCNRM(d->character, C_NRM));
+        send_to_char(d->character, "%s%s%s", CCCYN(d->character, C_NRM), buf1, CCNRM(d->character, C_NRM));
         add_history(d->character, buf1, HIST_WIZNET);
       } else {
-        send_to_char(d->character, "%s%s%s\r\n", CCCYN(d->character, C_NRM), buf2, CCNRM(d->character, C_NRM));
+        send_to_char(d->character, "%s%s%s", CCCYN(d->character, C_NRM), buf2, CCNRM(d->character, C_NRM));
         add_history(d->character, buf2, HIST_WIZNET);
       }
     }
