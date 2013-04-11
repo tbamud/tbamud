@@ -2221,9 +2221,11 @@ ACMD(do_wiznet)
 	(!PRF_FLAGGED(d->character, PRF_NOWIZ))
 	&& (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
       if (CAN_SEE(d->character, ch)) {
+        parse_at(buf1);
         send_to_char(d->character, "%s%s%s", CCCYN(d->character, C_NRM), buf1, CCNRM(d->character, C_NRM));
         add_history(d->character, buf1, HIST_WIZNET);
       } else {
+        parse_at(buf2);
         send_to_char(d->character, "%s%s%s", CCCYN(d->character, C_NRM), buf2, CCNRM(d->character, C_NRM));
         add_history(d->character, buf2, HIST_WIZNET);
       }
