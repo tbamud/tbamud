@@ -1546,19 +1546,19 @@ ACMD(do_sac)
       send_to_char(ch, "You sacrifice %s to the Gods.\r\nThe Gods ignore your sacrifice.\r\n", GET_OBJ_SHORT(j));
     break;
     case 2:
-      send_to_char(ch, "You sacrifice %s to the Gods.\r\nThe gods give you %d experience points.\r\n", GET_OBJ_SHORT(j), (2*GET_OBJ_COST(j)));
+      send_to_char(ch, "You sacrifice %s to the Gods.\r\nThe gods give you %d experience points.\r\n", GET_OBJ_SHORT(j), 1+2*GET_OBJ_LEVEL(j));
       GET_EXP(ch) += (1+2*GET_OBJ_LEVEL(j));
     break;
     case 3:
-      send_to_char(ch, "You sacrifice %s to the Gods.\r\nYou receive %d experience points.\r\n", GET_OBJ_SHORT(j), GET_OBJ_COST(j));
+      send_to_char(ch, "You sacrifice %s to the Gods.\r\nYou receive %d experience points.\r\n", GET_OBJ_SHORT(j), 1+GET_OBJ_LEVEL(j));
       GET_EXP(ch) += (1+GET_OBJ_LEVEL(j));
     break;
     case 4:
-      send_to_char(ch, "Your sacrifice to the Gods is rewarded with %d gold coins.\r\n", GET_OBJ_COST(j));
+      send_to_char(ch, "Your sacrifice to the Gods is rewarded with %d gold coins.\r\n", 1+GET_OBJ_LEVEL(j));
       increase_gold(ch, (1+GET_OBJ_LEVEL(j)));
     break;
     case 5:
-      send_to_char(ch, "Your sacrifice to the Gods is rewarded with %d gold coins\r\n", (2*GET_OBJ_COST(j)));
+      send_to_char(ch, "Your sacrifice to the Gods is rewarded with %d gold coins\r\n", (1+2*GET_OBJ_LEVEL(j)));
       increase_gold(ch, (1+2*GET_OBJ_LEVEL(j)));
     break;
     default:
