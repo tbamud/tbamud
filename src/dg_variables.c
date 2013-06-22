@@ -179,6 +179,11 @@ int text_processed(char *field, char *subfield, struct trig_var_data *vd,
   if (!str_cmp(field, "strlen")) {                     /* strlen    */
     snprintf(str, slen, "%d", (int)strlen(vd->value));
     return TRUE;
+  } else if (!str_cmp(field, "toupper")) {             /* toupper   */
+    char *upper = vd->value;
+    if (*upper)
+      snprintf(str, slen, "%c%s", UPPER(*upper), upper + 1);
+    return TRUE;
   } else if (!str_cmp(field, "trim")) {                /* trim      */
     /* trim whitespace from ends */
     snprintf(tmpvar, sizeof(tmpvar)-1 , "%s", vd->value); /* -1 to use later*/
