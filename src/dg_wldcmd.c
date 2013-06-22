@@ -399,7 +399,7 @@ WCMD(do_wpurge)
     ch = get_char_in_room(room, arg);
 
   if (!ch) {
-    if (obj && *arg == UID_CHAR)
+    if (*arg == UID_CHAR)
       obj = get_obj(arg);
     else
       obj = get_obj_in_room(room, arg);
