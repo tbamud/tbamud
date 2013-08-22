@@ -118,8 +118,8 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
 	    "/i# <text> -  inserts <text> before line #\r\n"
 	    "/l         -  lists buffer\r\n"
 	    "/n         -  lists buffer with line numbers\r\n"
-	    "/r 'a' 'b' -  replace 1st occurance of text <a> in buffer with text <b>\r\n"
-	    "/ra 'a' 'b'-  replace all occurances of text <a> within buffer with text <b>\r\n"
+	    "/r 'a' 'b' -  replace 1st occurence of text <a> in buffer with text <b>\r\n"
+	    "/ra 'a' 'b'-  replace all occurences of text <a> within buffer with text <b>\r\n"
 	    "              usage: /r[a] 'pattern' 'replacement'\r\n"
 	    "/t         -  toggles '@' and tabs\r\n"
 	    "/s         -  saves text\r\n");
@@ -193,7 +193,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
       return;
     } else if ((total_len = ((strlen(t) - strlen(s)) + strlen(*d->str))) <= d->max_str) {
       if ((replaced = replace_str(d->str, s, t, rep_all, d->max_str)) > 0) {
-	write_to_output(d, "Replaced %d occurance%sof '%s' with '%s'.\r\n", replaced, ((replaced != 1) ? "s " : " "), s, t);
+	write_to_output(d, "Replaced %d occurence%sof '%s' with '%s'.\r\n", replaced, ((replaced != 1) ? "s " : " "), s, t);
       } else if (replaced == 0) {
 	write_to_output(d, "String '%s' not found.\r\n", s);
       } else
