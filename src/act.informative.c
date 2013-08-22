@@ -2150,7 +2150,7 @@ ACMD(do_toggle)
     break;
   case SCMD_PAGELENGTH:
     if (!*arg2)
-      send_to_char(ch, "You current page length is set to %d lines.", GET_PAGE_LENGTH(ch));
+      send_to_char(ch, "Your current page length is set to %d lines.", GET_PAGE_LENGTH(ch));
     else if (is_number(arg2)) {
       GET_PAGE_LENGTH(ch) = MIN(MAX(atoi(arg2), 5), 255);
       send_to_char(ch, "Okay, your page length is now set to %d lines.", GET_PAGE_LENGTH(ch));
