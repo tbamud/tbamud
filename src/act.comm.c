@@ -155,7 +155,6 @@ ACMD(do_tell)
    /* getpid() is not portable */
     send_to_char(ch, "Sorry, that is not available in the windows port.\r\n");
 #else /* all other configurations */
-    int i;
     char word[MAX_INPUT_LENGTH], *p, *q;
 
     if (last_webster_teller != -1L) {
@@ -180,7 +179,6 @@ ACMD(do_tell)
       return;
     }
     snprintf(buf, sizeof(buf), "../bin/webster %s %d &", word, (int) getpid());
-    i = system(buf);
     last_webster_teller = GET_IDNUM(ch);
     send_to_char(ch, "You look up '%s' in Merriam-Webster.\r\n", word);
 #endif /* platform specific part */
