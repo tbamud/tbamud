@@ -14,6 +14,7 @@
 /* protect our calloc() and free() calls from recursive redefinition: */
 #define ZMALLOC_H
 
+#include "conf.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -1,0 +1,418 @@
+/*
+ * conf.h.win -- conf.h file for Windows 95/NT compilation; any compiler
+ * Created by Jeremy Elson, 1 July 1998
+ * Updated by Fade 2013
+ */
+
+#define CIRCLE_WINDOWS 1
+
+/* Visual Studio compatibility
+Eliminate deprecation warnings for the older, less secure functions */
+#define _CRT_SECURE_NO_DEPRECATE 1
+#define _CRT_NONSTDC_NO_DEPRECATE 1
+
+#define alloca(x) malloc(x)
+
+/* Define to empty if the keyword does not work.  */
+#undef const
+
+/* Define if you don't have vprintf but do have _doprnt.  */
+#undef HAVE_DOPRNT
+
+/* Define if you have <sys/wait.h> that is POSIX.1 compatible.  */
+#undef HAVE_SYS_WAIT_H
+
+/* Define if you have the vprintf function.  */
+#define HAVE_VPRINTF 1
+
+/* Define to `int' if <sys/types.h> doesn't define.  */
+#define pid_t int
+
+/* Define as the return type of signal handlers (int or void).  */
+#define RETSIGTYPE void
+
+/* Define to `unsigned' if <sys/types.h> doesn't define.  */
+#undef size_t
+
+/* Define if you have the ANSI C header files.  */
+#define STDC_HEADERS 1
+
+/* Define if you can safely include both <sys/time.h> and <time.h>.  */
+#undef TIME_WITH_SYS_TIME
+
+/* Define if we're compiling CircleMUD under any type of UNIX system.  */
+#undef CIRCLE_UNIX
+
+/* Define if the system is capable of using crypt() to encrypt.  */
+#undef CIRCLE_CRYPT
+
+/* Define if we don't have proper support for the system's crypt().  */
+#undef HAVE_UNSAFE_CRYPT
+
+/* Define is the system has struct in_addr.  */
+#define HAVE_STRUCT_IN_ADDR 1
+
+/* Define to `int' if <sys/socket.h> doesn't define.  */
+#define socklen_t int
+
+/* Define to `int' if <sys/types.h> doesn't define.  */
+#define ssize_t int
+
+/* Define if you have the gettimeofday function.  */
+#undef HAVE_GETTIMEOFDAY
+
+/* Define if you have the inet_addr function.  */
+#define HAVE_INET_ADDR 1
+
+/* Define if you have the inet_aton function.  */
+#undef HAVE_INET_ATON
+
+/* Define if you have the select function.  */
+#define HAVE_SELECT 1
+
+/* Define if you have the snprintf function.  */
+#define HAVE_SNPRINTF 1
+
+/* Define if you have the strcasecmp function.  */
+#undef HAVE_STRCASECMP
+
+/* Define if you have the strdup function.  */
+#define HAVE_STRDUP 1
+
+/* Define if you have the strerror function.  */
+#undef HAVE_STRERROR
+
+/* Define if you have the stricmp function.  */
+#define HAVE_STRICMP 1
+
+/* Define if you have the strlcpy function.  */
+#undef HAVE_STRLCPY
+
+/* Define if you have the strncasecmp function.  */
+#undef HAVE_STRNCASECMP
+
+/* Define if you have the strnicmp function.  */
+#define HAVE_STRNICMP 1
+
+/* Define if you have the strstr function.  */
+#define HAVE_STRSTR 1
+
+/* Define if you have the vsnprintf function.  */
+#define HAVE_VSNPRINTF 1
+
+/* Define if you have the <arpa/inet.h> header file.  */
+#undef HAVE_ARPA_INET_H
+
+/* Define if you have the <arpa/telnet.h> header file.  */
+#undef HAVE_ARPA_TELNET_H
+
+/* Define if you have the <assert.h> header file.  */
+#define HAVE_ASSERT_H 1
+
+/* Define if you have the <crypt.h> header file.  */
+#undef HAVE_CRYPT_H
+
+/* Define if you have the <errno.h> header file.  */
+#define HAVE_ERRNO_H 1
+
+/* Define if you have the <fcntl.h> header file.  */
+#define HAVE_FCNTL_H 1
+
+/* Define if you have the <limits.h> header file.  */
+#define HAVE_LIMITS_H 1
+
+/* Define if you have the <mcheck.h> header file.  */
+#undef HAVE_MCHECK_H
+
+/* Define if you have the <memory.h> header file.  */
+#undef HAVE_MEMORY_H
+
+/* Define if you have the <net/errno.h> header file.  */
+#undef HAVE_NET_ERRNO_H
+
+/* Define if you have the <netdb.h> header file.  */
+#undef HAVE_NETDB_H
+
+/* Define if you have the <netinet/in.h> header file.  */
+#undef HAVE_NETINET_IN_H
+
+/* Define if you have the <signal.h> header file.  */
+#undef HAVE_SIGNAL_H
+
+/* Define if you have the <string.h> header file.  */
+#define HAVE_STRING_H 1
+
+/* Define if you have the <strings.h> header file.  */
+#undef HAVE_STRINGS_H
+
+/* Define if you have the <sys/fcntl.h> header file.  */
+#undef HAVE_SYS_FCNTL_H
+
+/* Define if you have the <sys/resource.h> header file.  */
+#undef HAVE_SYS_RESOURCE_H
+
+/* Define if you have the <sys/select.h> header file.  */
+#undef HAVE_SYS_SELECT_H
+
+/* Define if you have the <sys/socket.h> header file.  */
+#undef HAVE_SYS_SOCKET_H
+
+/* Define if you have the <sys/stat.h> header file.  */
+#define HAVE_SYS_STAT_H 1
+
+/* Define if you have the <sys/time.h> header file.  */
+#undef HAVE_SYS_TIME_H
+
+/* Define if you have the <sys/types.h> header file.  */
+#define HAVE_SYS_TYPES_H 1
+
+/* Define if you have the <sys/uio.h> header file.  */
+#undef HAVE_SYS_UIO_H
+
+/* Define if you have the <unistd.h> header file.  */
+#undef HAVE_UNISTD_H
+
+/* Define if you have the malloc library (-lmalloc).  */
+#undef HAVE_LIBMALLOC
+
+/* Check for a prototype to accept. */
+#undef NEED_ACCEPT_PROTO
+
+/* Check for a prototype to atoi. */
+#undef NEED_ATOI_PROTO
+
+/* Check for a prototype to atol. */
+#undef NEED_ATOL_PROTO
+
+/* Check for a prototype to bind. */
+#undef NEED_BIND_PROTO
+
+/* Check for a prototype to bzero. */
+#undef NEED_BZERO_PROTO
+
+/* Check for a prototype to chdir. */
+#undef NEED_CHDIR_PROTO
+
+/* Check for a prototype to close. */
+#undef NEED_CLOSE_PROTO
+
+/* Check for a prototype to crypt. */
+#undef NEED_CRYPT_PROTO
+
+/* Check for a prototype to fclose. */
+#undef NEED_FCLOSE_PROTO
+
+/* Check for a prototype to fcntl. */
+#undef NEED_FCNTL_PROTO
+
+/* Check for a prototype to fflush. */
+#undef NEED_FFLUSH_PROTO
+
+/* Check for a prototype to fprintf. */
+#undef NEED_FPRINTF_PROTO
+
+/* Check for a prototype to fputc. */
+#undef NEED_FPUTC_PROTO
+
+/* Check for a prototype to fputs. */
+#undef NEED_FPUTS_PROTO
+
+/* Check for a prototype to fread. */
+#undef NEED_FREAD_PROTO
+
+/* Check for a prototype to fscanf. */
+#undef NEED_FSCANF_PROTO
+
+/* Check for a prototype to fseek. */
+#undef NEED_FSEEK_PROTO
+
+/* Check for a prototype to fwrite. */
+#undef NEED_FWRITE_PROTO
+
+/* Check for a prototype to getpeername. */
+#undef NEED_GETPEERNAME_PROTO
+
+/* Check for a prototype to getpid. */
+#undef NEED_GETPID_PROTO
+
+/* Check for a prototype to getrlimit. */
+#undef NEED_GETRLIMIT_PROTO
+
+/* Check for a prototype to getsockname. */
+#undef NEED_GETSOCKNAME_PROTO
+
+/* Check for a prototype to gettimeofday. */
+#undef NEED_GETTIMEOFDAY_PROTO
+
+/* Check for a prototype to htonl. */
+#undef NEED_HTONL_PROTO
+
+/* Check for a prototype to htons. */
+#undef NEED_HTONS_PROTO
+
+/* Check for a prototype to inet_addr. */
+#undef NEED_INET_ADDR_PROTO
+
+/* Check for a prototype to inet_aton. */
+#undef NEED_INET_ATON_PROTO
+
+/* Check for a prototype to inet_ntoa. */
+#undef NEED_INET_NTOA_PROTO
+
+/* Check for a prototype to listen. */
+#undef NEED_LISTEN_PROTO
+
+/* Check for a prototype to ntohl. */
+#undef NEED_NTOHL_PROTO
+
+/* Check for a prototype to perror. */
+#undef NEED_PERROR_PROTO
+
+/* Check for a prototype to printf. */
+#undef NEED_PRINTF_PROTO
+
+/* Check for a prototype to qsort. */
+#undef NEED_QSORT_PROTO
+
+/* Check for a prototype to read. */
+#undef NEED_READ_PROTO
+
+/* Check for a prototype to remove. */
+#undef NEED_REMOVE_PROTO
+
+/* Check for a prototype to rewind. */
+#undef NEED_REWIND_PROTO
+
+/* Check for a prototype to select. */
+#undef NEED_SELECT_PROTO
+
+/* Check for a prototype to setitimer. */
+#undef NEED_SETITIMER_PROTO
+
+/* Check for a prototype to setrlimit. */
+#undef NEED_SETRLIMIT_PROTO
+
+/* Check for a prototype to setsockopt. */
+#undef NEED_SETSOCKOPT_PROTO
+
+/* Check for a prototype to snprintf. */
+#undef NEED_SNPRINTF_PROTO
+
+/* Check for a prototype to socket. */
+#undef NEED_SOCKET_PROTO
+
+/* Check for a prototype to sprintf. */
+#undef NEED_SPRINTF_PROTO
+
+/* Check for a prototype to sscanf. */
+#undef NEED_SSCANF_PROTO
+
+/* Check for a prototype to strcasecmp. */
+#undef NEED_STRCASECMP_PROTO
+
+/* Check for a prototype to strdup. */
+#undef NEED_STRDUP_PROTO
+
+/* Check for a prototype to strerror. */
+#undef NEED_STRERROR_PROTO
+
+/* Check for a prototype to stricmp. */
+#undef NEED_STRICMP_PROTO
+
+/* Check for a prototype to strlcpy. */
+#define NEED_STRLCPY_PROTO 1
+
+/* Check for a prototype to strncasecmp. */
+#undef NEED_STRNCASECMP_PROTO
+
+/* Check for a prototype to strnicmp. */
+#undef NEED_STRNICMP_PROTO
+
+/* Check for a prototype to system. */
+#undef NEED_SYSTEM_PROTO
+
+/* Check for a prototype to time. */
+#undef NEED_TIME_PROTO
+
+/* Check for a prototype to unlink. */
+#undef NEED_UNLINK_PROTO
+
+/* Check for a prototype to vsnprintf. */
+#undef NEED_VSNPRINTF_PROTO
+
+/* Check for a prototype to write. */
+#undef NEED_WRITE_PROTO
+
+/* For protocol snippet */
+/*
+ * Definitions for the TELNET protocol.
+ * Taken from arpa/telnet.h
+ */
+#define	IAC		255		/* interpret as command: */
+#define	DONT	254		/* you are not to use option */
+#define	DO		253		/* please, you use option */
+#define	WONT	252		/* I won't use option */
+#define	WILL	251		/* I will use option */
+#define	SB		250		/* interpret as subnegotiation */
+#define	GA		249		/* you may reverse the line */
+#define	EL		248		/* erase the current line */
+#define	EC		247		/* erase the current character */
+#define	AYT		246		/* are you there */
+#define	AO		245		/* abort output--but let prog finish */
+#define	IP		244		/* interrupt process--permanently */
+#define	BREAK	243		/* break */
+#define	DM		242		/* data mark--for connect. cleaning */
+#define	NOP		241		/* nop */
+#define	SE		240		/* end sub negotiation */
+#define EOR     239     /* end of record (transparent mode) */
+#define	ABORT	238		/* Abort process */
+#define	SUSP	237		/* Suspend process */
+#define	xEOF	236		/* End of file: EOF is already used... */
+#define SYNCH	242		/* for telfunc calls */
+
+/* telnet options */
+#define TELOPT_BINARY	0	/* 8-bit data path */
+#define TELOPT_ECHO		1	/* echo */
+#define	TELOPT_RCP		2	/* prepare to reconnect */
+#define	TELOPT_SGA		3	/* suppress go ahead */
+#define	TELOPT_NAMS		4	/* approximate message size */
+#define	TELOPT_STATUS	5	/* give status */
+#define	TELOPT_TM		6	/* timing mark */
+#define	TELOPT_RCTE		7	/* remote controlled transmission and echo */
+#define TELOPT_NAOL 	8	/* negotiate about output line width */
+#define TELOPT_NAOP 	9	/* negotiate about output page size */
+#define TELOPT_NAOCRD	10	/* negotiate about CR disposition */
+#define TELOPT_NAOHTS	11	/* negotiate about horizontal tabstops */
+#define TELOPT_NAOHTD	12	/* negotiate about horizontal tab disposition */
+#define TELOPT_NAOFFD	13	/* negotiate about formfeed disposition */
+#define TELOPT_NAOVTS	14	/* negotiate about vertical tab stops */
+#define TELOPT_NAOVTD	15	/* negotiate about vertical tab disposition */
+#define TELOPT_NAOLFD	16	/* negotiate about output LF disposition */
+#define TELOPT_XASCII	17	/* extended ascic character set */
+#define	TELOPT_LOGOUT	18	/* force logout */
+#define	TELOPT_BM		19	/* byte macro */
+#define	TELOPT_DET		20	/* data entry terminal */
+#define	TELOPT_SUPDUP	21	/* supdup protocol */
+#define	TELOPT_SUPDUPOUTPUT 22	/* supdup output */
+#define	TELOPT_SNDLOC	23	/* send location */
+#define	TELOPT_TTYPE	24	/* terminal type */
+#define	TELOPT_EOR		25	/* end or record */
+#define	TELOPT_TUID		26	/* TACACS user identification */
+#define	TELOPT_OUTMRK	27	/* output marking */
+#define	TELOPT_TTYLOC	28	/* terminal location number */
+#define	TELOPT_3270REGIME 29	/* 3270 regime */
+#define	TELOPT_X3PAD	30	/* X.3 PAD */
+#define	TELOPT_NAWS		31	/* window size */
+#define	TELOPT_TSPEED	32	/* terminal speed */
+#define	TELOPT_LFLOW	33	/* remote flow control */
+#define TELOPT_LINEMODE	34	/* Linemode option */
+#define TELOPT_XDISPLOC	35	/* X Display Location */
+#define TELOPT_OLD_ENVIRON 36	/* Old - Environment variables */
+#define	TELOPT_AUTHENTICATION 37/* Authenticate */
+#define	TELOPT_ENCRYPT	38	/* Encryption option */
+#define TELOPT_NEW_ENVIRON 39	/* New - Environment variables */
+#define	TELOPT_TN3270E	40	/* RFC2355 - TN3270 Enhancements */
+#define	TELOPT_CHARSET	42	/* RFC2066 - Charset */
+#define	TELOPT_COMPORT	44	/* RFC2217 - Com Port Control */
+#define	TELOPT_KERMIT	47	/* RFC2840 - Kermit */
+#define	TELOPT_EXOPL	255	/* extended-options-list */

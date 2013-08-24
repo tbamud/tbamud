@@ -1828,11 +1828,11 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
   /* we'll search last to first, since it's faster than any thing else we can
    * do (like searching for the last shutdown/etc..) */
   for(tmp=recs-1; tmp > 0; tmp--) {
-    fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
+    fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
     if (fread(&mlast,sizeof(struct last_entry),1,fp) != 1)
       return NULL;
         /*another one to keep that stepback */
-    fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
+    fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
 
     if(mlast.idnum == idnum && mlast.punique == punique) {
       /* then we've found a match */
@@ -1867,10 +1867,10 @@ static void mod_llog_entry(struct last_entry *llast,int type) {
   /* We'll search last to first, since it's faster than any thing else we can
    * do (like searching for the last shutdown/etc..) */
   for(tmp=recs; tmp > 0; tmp--) {
-    fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
+    fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
     i = fread(&mlast,sizeof(struct last_entry),1,fp);
     /* Another one to keep that stepback. */
-    fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
+    fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
 
     if(mlast.idnum == llast->idnum && mlast.punique == llast->punique) {
       /* Then we've found a match, lets assume quit is inviolate, mainly
@@ -2071,9 +2071,9 @@ ACMD(do_last)
 
   send_to_char(ch, "Last log\r\n");
   while(num > 0 && recs > 0) {
-    fseek(fp,-1* (sizeof(struct last_entry)),SEEK_CUR);
+    fseek(fp,-1* ((long)sizeof(struct last_entry)),SEEK_CUR);
     i = fread(&mlast,sizeof(struct last_entry),1,fp);
-    fseek(fp,-1*(sizeof(struct last_entry)),SEEK_CUR);
+    fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
     if(!*name ||(*name && !str_cmp(name, mlast.username))) {
       send_to_char(ch,"%10.10s %20.20s %16.16s - ",
         mlast.username, mlast.hostname, ctime(&mlast.time));

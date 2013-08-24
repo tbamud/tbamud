@@ -186,7 +186,7 @@ void free_mud_event(struct mud_event_data *pMudEvent)
 struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId)
 {
   struct event * pEvent;
-  struct mud_event_data * pMudEvent;
+  struct mud_event_data * pMudEvent = NULL;
   bool found = FALSE;
 
   if (ch->events == NULL)
