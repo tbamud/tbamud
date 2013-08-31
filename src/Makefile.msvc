@@ -36,11 +36,18 @@ LFLAGS=/OUT:circle.exe /nologo /subsystem:console
 MAKE = $(MAKE) /NOLOGO /S
 
 OBJFILES = comm.obj act.comm.obj act.informative.obj act.movement.obj act.item.obj \
-        act.offensive.obj act.other.obj act.social.obj act.wizard.obj ban.obj boards.obj \
-        castle.obj class.obj config.obj constants.obj db.obj fight.obj graph.obj handler.obj \
-        house.obj interpreter.obj limits.obj magic.obj mail.obj mobact.obj modify.obj \
-        objsave.obj shop.obj spec_assign.obj spec_procs.obj spell_parser.obj \
-        spells.obj utils.obj weather.obj random.obj players.obj quest.obj qedit.obj genqst.obj
+asciimap.obj act.offensive.obj act.other.obj act.social.obj act.wizard.obj \
+ban.obj boards.obj castle.obj class.obj config.obj constants.obj db.obj \
+dg_event.obj dg_scripts.obj dg_triggers.obj fight.obj genolc.obj graph.obj \
+handler.obj house.obj ibt.obj interpreter.obj limits.obj lists.obj magic.obj \
+mail.obj msgedit.obj mobact.obj modify.obj mud_event.obj oasis.obj oasis_copy.obj \
+oasis_delete.obj oasis_list.obj objsave.obj protocol.obj shop.obj spec_assign.obj \
+spec_procs.obj spell_parser.obj improved-edit.obj spells.obj utils.obj weather.obj \
+random.obj players.obj quest.obj qedit.obj genqst.obj aedit.obj cedit.obj hedit.obj \
+medit.obj oedit.obj qedit.obj redit.obj sedit.obj tedit.obj zedit.obj \
+dg_comm.obj dg_db_scripts.obj dg_handler.obj dg_misc.obj dg_mobcmd.obj dg_objcmd.obj \
+dg_olc.obj dg_variables.obj dg_wldcmd.obj genmob.obj genobj.obj genshp.obj genwld.obj \
+genzon.obj prefedit.obj
 
 default: circle.exe
         $(MAKE) circle.exe
