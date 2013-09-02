@@ -169,7 +169,7 @@ void free_mud_event(struct mud_event_data *pMudEvent)
       room = (struct room_data *) pMudEvent->pStruct;
       remove_from_list(pMudEvent->pEvent, room->events);
       
-      if (room->events->iSize == 0) {
+      if (room->events && (room->events->iSize == 0)) { 
         free_list(room->events);
         room->events = NULL;
       }      
