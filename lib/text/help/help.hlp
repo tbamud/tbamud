@@ -1,23 +1,6 @@
 ! ^ !
 
-Use ! to repeat the last command typed at the keyboard.
-
-Use ^ to replace a string from the last command with a new string.  The
-syntax is the same as in csh: "^old-string^replacement"
-
-Examples:
-
-  > tell rasmusse Hi there, how are you?
-  No-one by that name here.
-
-  > ^rasmusse^Rumble
-  You tell Rumble, 'Hi there, how are you?'
-
-  > ^you^you doing^
-  You tell Rumble, 'Hi there, how are you doing?'
-
-See also: \t(HELP ALIAS\t)
-#0
+Use ! to repeat the last command typed #0
 %ASOUND% OASOUND MASOUND WASOUND ASOUND
 
 %asound% <message>
@@ -275,6 +258,8 @@ about being a newbie here.
 
 The @ character is used as a colorcode. If you see it, try toggling color to
 complete. If this still does not work you must not be able to view colors.
+
+To print a single @* follow it with the * (asterisk).
 
 Many people have asked why use the @ as colorcodes while others use &. 
 Welcor of TBA changed this because of trigedit. A builder who enters:
@@ -633,14 +618,13 @@ AREAS
 
 Usage: areas [level-range] 
 
-Lists all zones with the GRID flag set and shows the level restrictions for 
-each zone. Players can also restrict the level range. 
+Lists all active zones. Any argument will filter the results by level.
 
-areas       lists all areas. 
-areas 24    list all areas where level 24 is in it's level range. 
+areas       list all areas
+areas 24    list all areas where level 24 is in the level range
 areas -10   list areas in the level range 0 to 10 
-areas 15-   lists all areas with a level range higher than 15 
-areas 5-12  lists areas in the level range 5 to 12
+areas 15-   list all areas with a level range higher than 15 
+areas 5-12  list areas in the level range 5 to 12
 
 Any areas that 'overlap' the specified range are shown in red.
 
@@ -858,7 +842,7 @@ AUTOQUESTS QUESTS QUESTMASTERS QUESTPOINTS QUEST-POINTS QUEST-MOBS QUESTMOBS
    An autoquest is a quest that can be automatically started and completed by 
 players on the MUD without the intervention of an immortal.  Players simply 
 visit a questmaster where they join an available quest, and get rewarded on 
-completion.
+it’s completion.
 
 See Also: QEDIT, QUEST-FLAG
 #31
@@ -866,7 +850,7 @@ AUTOQUESTS QUESTS QUESTMASTERS QUEST-MOBS QUESTMOBS
 
    An autoquest is a quest that can be automatically started and completed 
 without the intervention of an immortal.  Simply visit a questmaster and join 
-an available quest, and get rewarded on completion. Keep an eye out for
+an available quest, and get rewarded on it’s completion. Keep an eye out for
 autoquests scattered throughout the World.
 
 See Also: QUEST-FLAG, QUESTPOINTS
@@ -1566,7 +1550,7 @@ Usage: changelog <text>
 submitter name. To view the changelog use the file command with argument
 changelog.
 
-Changelog: http://tbamud.com/websvn/filedetails.php?repname=tbaMUD&path=%2Fchangelog
+Changelog: https://github.com/welcor/tbamud/blob/master/changelog
 
 See Also: FILE, CHANGES
 #31
@@ -1857,31 +1841,17 @@ actual code will be @*<letter>. @** = single @*. All use of colorcodes @RMUST@n
 be terminated with @*n to restore normal color to prevent color bleeding.
  
 ANSI colors:
-n - normal
-@dd - black@n      @DD - gray@n
-@bb - blue@n       @BB - bright blue@n
-@gg - green@n      @GG - bright green@n
-@cc - cyan@n       @CC - bright cyan@n
-@rr - red@n        @RR - bright red@n
-@mm - magenta@n    @MM - bright magenta@n
-@yy - yellow@n     @YY - bright yellow@n
-@ww - white@n      @WW - bright white@n
-256 Colors:
-@pp - pink@n       @PP - bright pink@n
-@oo - orange@n     @OO - bright orange@n
+@*n - normal     @** - @*                Other Codes
+@*d - @dblack@n      @*D - @Dgray@n             @*@11@n, @*@22@n, @*@33@n MUD primary colors
+@*b - @bblue@n       @*B - @Bbright blue@n      @*- - @-blink@n        @*+ - @+bold@n
+@*g - @ggreen@n      @*G - @Gbright green@n     @*_ - @_underline@n    @*= - @=reverse video@n
+@*c - @ccyan@n       @*C - @Cbright cyan@n
+@*r - @rred@n        @*R - @Rbright red@n       256 Colors: 
+@*m - @mmagenta@n    @*M - @Mbright magenta@n   @*p - @ppink@n       @*P - @Pbright pink@n
+@*y - @yyellow@n     @*Y - @Ybright yellow@n    @*o - @oorange@n     @*O - @Obright orange@n
+@*w - @wwhite@n      @*W - @Wbright white@n     @*[F###] - @RSHOW COLOUR@n to list all codes.
 
-Other Color Codes:
-@*1, @*2, @*3 are MUD primary colors
-@*- - blink@n      @*+ - bold@n
-@*_ - underline@n  @*? - reverse video@n
-
-Other codes:
-@-- - blink@n        @++ - bold@n
-@__ - underline@n    @== - reverse video@n
-@11 - Mud Color 1@n  @33 - Mud Color 3@n     * Can be redefined in protocol.c
-@22 - Mud Color 2@n  * - The '@*' Symbol@n
-
-See also: @*, OLC-COLOR, ANSI, PROMPT, TOGGLE, SHOW-COLOUR
+See also: @*, OLC-COLOR, MXP, ANSI, PROMPT, TOGGLE, SHOW-COLOUR
 #1
 COLORSPRAY COLOR-SPRAY
 
@@ -2729,6 +2699,8 @@ See also: SOCIALS, GEMOTE
 #0
 Empty
 #31
+Empty
+#0
 ENCHANT-WEAPON ENCHANT-ARMOR 
 
 Usage       : cast 'enchant weapon' <weapon>
@@ -2866,7 +2838,7 @@ that is not used.
 
 See also: TRIG-ERRORS, ZEDIT-MISTAKES, SEDIT-MISTAKES
 #31
-EVALUATE TRIG-EVALS EVALS 
+EVAL EVALUATE TRIG-EVALS EVALS 
 
 Usage: eval <variable> <expression>
 
@@ -2883,7 +2855,7 @@ is not evaluated until the variable is accessed.
 
 Example: @RTSTAT 49@n
 
-See also: TRIG-SET, EVAL-EXAMPLES
+See Also: SET-EXAMPLES
 #31
 EVERYTHING ANYTHING
 
@@ -3463,6 +3435,12 @@ Examples:
 
 See also: DROP, PUT, AUTOLOOT, AUTOGOLD
 #0
+GITHUB SVN SUBVERSION
+
+Get started: https://help.github.com/articles/set-up-git
+
+tbamud repository: https://github.com/welcor/tbamud
+#0
 GIVE PAY BRIBE
 
 Usage: give <object> [target]
@@ -3597,6 +3575,35 @@ Usage: group
 GROUP with no arguments shows the status of your group.  GROUP list will show
 you a listing of all groups within the game, as well as their zone location and
 whether or not they are seeking new members.
+If you are a group member, then you will share experience points for killing
+monsters equally among the group.  Experience points will only be shared among
+group members that are in the same location, at the time of the killing
+blow.  Sharing is regardless of whether the group members have been
+participating in the fight.
+To join a group, you must target a member of an "open" group (as in accepting
+new members) and use GROUP join <player name>.
+
+Example:
+  Rumble wishes to join Vatiken's group, so assuming Vatiken has set his group
+  to open. Rumble then types:
+  > group join Vatiken 
+
+To make a group, the wannabe "leader" will use the GROUP new command:
+  > group new
+  
+To leave a group, simple use GROUP leave:
+  > group leave
+  
+If the leader leaves the group and one or more members still exists, a new
+leader will be chosen at random, otherwise the group will be disbanded.
+Group Leaders:
+
+To edit the options in a group, use the GROUP option <option> commands.
+  > group option anonymous     : Group information will be hidden/revealed
+  > group option open          : Group will be open/closed to new members
+
+To kick someone from the group, use GROUP kick <player name>
+  > group kick rumble
 
 See also: FOLLOW, EXPERIENCE, UNGROUP, GSAY, ASSIST, GROUPS, REPORT
 #0
@@ -3866,8 +3873,8 @@ Builder Academy Homepage:
    @C http://www.tbamud.com@n
 
 The address (or IP and port) to TBA:
-TBA         : tbamud.com 9091 IP: 195.234.11.64
-Player Port : tbamud.com 4000 IP: 195.234.11.64
+TBA         : tbamud.com 9091 IP: 206.41.252.202
+Player Port : tbamud.com 4000 IP: 206.41.252.202
 
 Internet protocol (IP) is what identifies each computer individually on the internet.  The
 Gods can see your IP and report abuse to your provider so behave. 
@@ -5454,7 +5461,19 @@ See also: MANA, HITPOINTS
 #0
 MXP PROTOCOLS
 
-http://www.zuggsoft.com/zmud/mxp.htm#Introduction
+@*<send "look self">look@*</send> = @<send "look self">look@</send> - clickable link to send hidden command
+@*<send "help trial" hint="Click here">How to build your trial@*</send> = @<send "help trial" hint="Click here">How to build your trial@</send>
+@*(HELP CLASS@*) = @(HELP CLASS@) - A clickable link
+
+@*[U9814/Rook] = @[U9814/Rook] - Creates a rook icon (requires UTF-8 support), or display the word Rook
+
+@*<SOUND FName="ouch.wav" V=50 L=2 P=80 T="combat" U="www.yourMUD.com/sounds/"> =
+@<SOUND FName="ouch.wav" V=50 L=2 P=80 T="combat" U="www.yourMUD.com/sounds/">
+
+@*<send "command1|command2|command3" hint="click to see menu|Item 1|Item 2|Item 2">this is a menu link@</SEND> =
+@<send "command1|command2|command3" hint="click to see menu|Item 1|Item 2|Item 2">this is a menu link@</SEND> =
+
+See Also: http://www.zuggsoft.com/zmud/mxp.htm#Introduction
 #0
 NESTED-IFS
 
@@ -5627,7 +5646,7 @@ since 4d5 would give damage between 4-20.
 
 See also: STANDARDS, %DAMAGE%
 #31
-NUMERIC-ARGUMENTS NUMARG NARG TRIGEDIT-NUMERIC-ARGUMENTS TRIGEDIT-ARGUMENTS %NUMERIC% TRIGEDIT-NUMARG NUMERICARGUMENT NUMERIC-ARGUMENT
+NUMERIC-ARGUMENTS NUMARG NARG TRIGEDIT-NUMERIC-ARGUMENTS %NUMERIC% TRIGEDIT-NUMARG NUMERICARGUMENT NUMERIC-ARGUMENT
 
 4) Numeric Arg : @y100@n
 
@@ -5664,7 +5683,7 @@ OBJ-FORMATS OBJECT-FORMATS OBJ-FILES
 <short description>~
 <long description>~
 <action description>~
-<type flag> <extra (effects) bitvector> <wear bitvector>
+<type flag> <extra (effects) bitvector> <wear bitvector> <perm affects>
 <value 0> <value 1> <value 2> <value 3>
 <weight> <cost> <rent per day>
 {Zero or more Extra Descriptions and/or Affect Fields}
@@ -7127,7 +7146,7 @@ prefer to add the quest in the zone where quest completion takes place.
 Quests use vnums in exactly the same way as mobiles, object and rooms.  Each 
 zone will normally have 100 vnums available (#00 to #99, where # is the zone 
 number).  Usually, when creating the first quest in a zone, #00 is used, 
-then #01, etc.
+then #01, etc…
 
 When you qedit <vnum> to create a new quest (or edit an existing one), you will 
 see the menu in @RHELP QEDIT-MENU@n
@@ -7138,12 +7157,12 @@ QEDIT-ACCEPT
 
     This is the text that is sent to the player when they start the quest.  It 
 should describe in detail exactly what is required to complete the quest.  The 
-text is simply output on the player's screen, so be creative here.  An example 
+text is simply output on the player’s screen, so be creative here.  An example 
 of an accept message text could be something like:
 
 The questmaster rummages in a large pile of papers.
-The questmaster says 'Ah, here it is'
-The questmaster says 'Bob, the local butcher has offered this quest'
+The questmaster says ‘Ah, here it is’
+The questmaster says ‘Bob, the local butcher has offered this quest’
 The questmaster shows you a hastily scrawled note, that reads:
 
 I am willing to offer any plucky adventurer 10 quest points if they bring me a 
@@ -7153,7 +7172,7 @@ order to fill.  I need these within 24 hours
 
 Thanks, Bob the Butcher, Midgaard
 The questmaster sighs.
-The questmaster says 'A tricky quest, but it'll cost you 5qp to back out now'
+The questmaster says ‘A tricky quest, but it’ll cost you 5qp to back out now’
 #31
 QEDIT-COMPLETED QEDIT-ABANDONED
 
@@ -7167,7 +7186,7 @@ all timed quests.
 QEDIT-COMPLETION
 
    Just like the accept message, this is simply text that is output on the 
-player's screen when they successfully complete the quest.  Prizes (quest 
+player’s screen when they successfully complete the quest.  Prizes (quest 
 points, gold coins, experience points or an object) are automatically 
 announced after this text is shown, so this text does not need to have that 
 information in it.
@@ -7193,7 +7212,7 @@ Quest flags: @cNOBITS@n
 Enter quest flags, 0 to quit :
 
    Currently, only one flag is available, the REPEATABLE flag.  When you have 
-finished turning this on or off, select 0 (zero) to return to the main menu.
+finished turning this on or off, select ‘0’ (zero) to return to the main menu.
 #31
 QEDIT-LEVELS
 
@@ -7247,12 +7266,12 @@ QEDIT-NEXT
 
    This is the quest vnum of next quest in a chain.  When a player completes 
 the current quest, the next quest will automatically be joined.  This allows 
-for long quests with a number of steps.
+for long quests with a number of ‘steps’.
 #31
 QEDIT-PREREQUISITE
 
    This is the object vnum for a prerequisite object. The prerequisite object 
-should be in the player's inventory in order for them to be able to join the 
+should be in the player’s inventory in order for them to be able to join the 
 quest.  It is not taken from the player when the quest starts.
 #31
 QEDIT-PREVIOUS
@@ -7263,15 +7282,15 @@ completed by the player in order to join this quest.
 QEDIT-QUANTITY
 
    This is the number of times the player needs to repeat the quest.  For 
-example, it could be the number of items the player needs to find in an object 
-quest of the number of mobs the player should kill in a kill mob quest.  This
-should be used with caution, however. In an object quest picking up the same
+example, it could be the number of items the player needs to find in a ‘object’
+quest of the number of mobs the player should kill in a ‘kill mob’ quest.  This
+should be used with caution, however. In an object quest ‘picking up’ the same
 object 20 times will also complete the quest.
 #31
 QEDIT-QUIT QEDIT-MESSAGE
 
    The quit message is sent to the player when they type quest leave.  Players 
-can lose quest points for abandoning a quest (see Abandoned on the next 
+can lose quest points for abandoning a quest (see “Abandoned” on the next 
 page), so if they lose quest points, this text really should inform them of 
 that.
 #31
@@ -7300,14 +7319,14 @@ Room, Clear Room             - Room VNUM
 #31
 QEDIT-TIME
 
-   This is the number of ticks or game hours that the player has to complete 
+   This is the number of ‘ticks’ or game hours that the player has to complete 
 the quest.  If this is set, then the builder should really try to do the quest 
-themselves, and time how long it takes (typing time before and after the 
-attempt), and then giving at least one extra tick for players to complete it.
+themselves, and time how long it takes (typing ‘time’ before and after the 
+attempt), and then giving at least one extra ‘tick’ for players to complete it.
 #31
 QEDIT-TYPE
 
-   There are a few different quest types.  When you select option 7 from the 
+   There are a few different quest types.  When you select option ‘7’ from the 
 main menu, you will be shown a list to choose from:
 
 0) Object         - Player needs to find a particular object.
@@ -7382,7 +7401,7 @@ Usage: quest [list | join <#> | progress | leave | history]
 
 quest          - Show usage information for the quest command.
 quest list     - Used at the questmaster to see which quests are available.
-quest join #   - Used to the questmaster to join the quest listed as number nn on quest list.
+quest join #   - Used to the questmaster to join the quest listed as number ‘nn’ on quest list.
 quest progress - Shows the player which quest they are doing, and their quest progress.
 quest leave    - Allows the player to abandon the current quest, taking the quest point penalty.
 quest history  - Shows all previously completed non-repeatable quests.
@@ -8615,13 +8634,16 @@ See also: TRIG-SET, CLASS, STAT
 #31
 SET-EXAMPLES EVAL-EXAMPLES
 
-GOOD:
-@Gset maxlength 0
-@n
-
-BAD:
-@Reval maxlength 0     * This doesn't need to be evaluated, just set it.
-@n
+Good: set num %random.3%
+Bad:   eval num %random.3%
+Good: set numcheck %findmob.5000(%mobvnum%)%
+Bad:   eval numcheck %findmob.5000(%mobvnum%)%
+Good: eval numcheck %%findmob.%self.vnum%(%mobvnum%)%%
+Bad:   set numcheck %%findmob.%self.vnum%(%mobvnum%)%%
+Good: eval product 3 * 4
+Bad:   set product 3 * 4
+Good: set maxlength 0
+Bad:   eval maxlength 0     * This doesn't need to be evaluated, just set it.
 
 See Also: TRIG-SET, EVAL
 #31
@@ -8699,7 +8721,7 @@ information, such as a player name.
 zones     Shows all the zones in the game and their current reset status.
           An age of -1 means it is in the 'to be reset next' queue.
           Show Zone # will list specific information about that zone.
-          Show Zone <name> will list all zones by <name>.
+          Show Zone <author> will list all zones by <author>.
 death     Shows all death traps in the game.
 player    Shows player summary information, simply provide a player name.
 godrooms  Shows the rooms in the 'god zone'.
@@ -9372,7 +9394,7 @@ and simply bearing artistic merit. Second, by ensuring that they are absolutely
 necessary to achieve the goals of the game! If your game is made for experience
 and equipment gathering, and failure to read descriptions directly impedes this
 goal, then players will learn to read everything. If your game is made for 
-exploring or role-play, most of your players probably already read them 
+exploring or role-play, most of your players probably already read them Â- 
 because knowing their environment is a basic requirement of play. In any case, 
 builders exist to ensure that the goals of play are supported by game 
 descriptions.
@@ -9384,7 +9406,7 @@ meaning behind descriptions, areas to find, special items, unique nooks and
 crannies to spend time socializing, and hints that point to these things 
 elsewhere outside of your own zone is an excellent idea. In fact, if you 
 don't wish to be building descriptions no one will read, you should employ 
-special secret, most especially on games where knowing one's environment 
+special secrets Â- most especially on games where knowing one's environment 
 does deeply affect a character's development. No matter what kind of zone you
 are building, keep it interesting throughout!
 
@@ -9407,7 +9429,7 @@ road.
    shouldn't be the sole builder of your zone. Instead, seek the assistance of 
    someone who adds creative merit to your descriptions. You can do practically
    everything from plot to secrets to minutiae, even write the zone in full and
-   just ask someone you know who writes well to 'say it better' and rewrite 
+   just ask someone you know who writes well to Â'say it better' and rewrite 
    what you intended to have there all along. Novels have editors, and so 
    should any zone.
 
@@ -9652,15 +9674,6 @@ road.
         provide a link or help-keyword to it for those who wish to see the 
         original. Thanks!@n
 #31
-SUBVERSION SVN
-
-To checkout the latest version:
-svn checkout http://tbamud.com/svn/circlemud tbamud
-
-Full details: http://tbamud.com/forum/2-general/21-subversion-basics-svn
-
-SVN Redbook: http://svnbook.red-bean.com/en/1.6/svn-book.html
-#0
 SUGGESTIONS
 
    I have been MUDding for many years, I then became a builder, then an 
@@ -9842,30 +9855,45 @@ TBA-ADVERTISING
 Mud Created: 2000 
 The Builder Academy 
 Code Base: [tbaMUD] the latest version 
-Site: tbamud.com 9091 [195.234.11.64] 
+Site: tbamud.com 9091 [206.41.252.202] 
 Admin Email: rumble@tbamud.com 
 Theme: Teaching Builders and tbaMUD Codebase Development
 http://www.tbamud.com/ 
 telnet://tbamud.com:9091 
 
-The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community into an extensive tutorial zone, help files, and examples
+The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began 
+with a combination of my own MUDding experience and the work of numerous others from the 
+MUDding community into an extensive tutorial zone, help files, and examples
 
 
-TBA now has two main missions. It originally was meant to be a training MUD open to anyone willing to learn or teach how to create your own text-based World. 1,000's of builder's have gone through our training and many MUDs require new builders to comple
-e training at TBA before they can apply to their MUD. TBA's other mission is the development of the codebase formerly known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to release our codebase under the name tbaMUD and we have been updat
-ng it tirelessly for over 10 years.
+TBA now has two main missions. It originally was meant to be a training MUD open to anyone 
+willing to learn or teach how to create your own text-based World. 1,000's of builder's 
+have gone through our training and many MUDs require new builders to complete training at 
+TBA before they can apply to their MUD. TBA's other mission is the development of the 
+codebase formerly known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to 
+release our codebase under the name tbaMUD and we have been updating it tirelessly for 
+over 10 years.
 
-TBA is a low stress, no deadline, training environment where anyone with motivation can work at their own pace to learn as much or as little as they wish. Numerous people are available to answer questions and give advice.
+TBA is a low stress, no deadline, training environment where anyone with motivation can 
+work at their own pace to learn as much or as little as they wish. Numerous people are 
+available to answer questions and give advice.
 
 1000's of builders served and counting.
 
-The most challenging aspect of running a MUD is finding good builders. You will hear this from the admin of every MUD that has ever been. In the past it has always been up to each individual MUD to find and usually train their own builders. This works, b
-t I think the MUDing community can come up with something better. That is why we created The Builder's Academy. No pressure, no deadline, just come and learn or help teach. Give something back to the community we have all taken so much from. TBA is a MUD
-ng community resource, please submit any lessons learned or building tips and tricks so we can improve our codebase and training.
+The most challenging aspect of running a MUD is finding good builders. You will hear this 
+from the admin of every MUD that has ever been. In the past it has always been up to each 
+individual MUD to find and usually train their own builders. This works, but I think the 
+MUDing community can come up with something better. That is why we created The Builder's 
+Academy. No pressure, no deadline, just come and learn or help teach. Give something back 
+to the community we have all taken so much from. TBA is a MUDing community resource, 
+please submit any lessons learned or building tips and tricks so we can improve our 
+codebase and training.
 
-TBA can also be used by other MUDs as a builder's port. Just send us your newbie builders. We will teach them and then you can have them back with the zones they built.
+TBA can also be used by other MUDs as a builder's port. Just send us your newbie builders. 
+We will teach them and then you can have them back with the zones they built.
 
-We are always open to anyone willing to learn or help teach so we can continue to improve the tbaMUD codebase.
+We are always open to anyone willing to learn or help teach so we can continue to improve 
+the tbaMUD codebase.
 
 - Rumble
 The Builder Academy
@@ -9946,33 +9974,23 @@ Uncapitalized zones are linked through a capitalized zone.
 
 See also: ZONES
 #0
-TELNET CLIENTS ZMUD GMUD TINYFUGUE TINTIN PUEBLO MUDMASTER MUSH PARSING TERMINALS CMUD
-
+TELNET CLIENTS ZMUD GMUD TINTIN MUSH PARSING TERMINALS CMUD MUDLET
+ 
 Below is a list of specialty telnet programs for connecting to MUDs. 
+ 
+Mudlet     (all) - http://www.mudlet.org/download/
+CMUD     $ (Win) - http://www.zuggsoft.com/cmud/
+ZMud     $ (Win) - http://forums.zuggsoft.com/index.php?page=4&action=file&file_id=65
+ZMud Free  (Win) - http://forums.zuggsoft.com/index.php?page=4&action=file&file_id=18
+Portal     (Win) - http://gameaxle.com/
+TinTin     (all) - http://tintin.sourceforge.net/
+Mushclient (Win) - http://www.gammon.com.au/mushclient/mushclient.htm
+PuTTY      (Win) - http://www.chiark.greenend.org.uk/
+Atlantis   (Mac) - http://riverdark.net/atlantis/
 
-ZMud (PC) - @Chttp://www.zuggsoft.com/zmud/down.asp#zMUD@n
-ZMud Free (PC) - http://forums.zuggsoft.com/index.php?page=4&action=file&file_id=18
-CMUD (PC) - http://www.zuggsoft.com/cmud/
-Portal (PC) - http://gameaxle.com/
-GMud (PC) - http://sourceforge.net/projects/gmud/ (fits on a floppy).
-TinTin++ - http://tintin.sourceforge.net/
-Mushclient - http://www.gammon.com.au/mushclient/mushclient.htm
-Atlantis (Mac) - http://riverdark.net/atlantis/
-Pueblo - http://pueblo.sf.net/
-Fireclient (PC) - http://www.firebolt.com/download.php
-Tinyfugue (Many platforms) - http://tinyfugue.sourceforge.net/ 
-MCL (Linux) - http://www.andreasen.org/mcl/ 
-MudMaster (DOS) - http://www.mud-master.com/index.html 
-CRT (PC) - http://www.vandyke.com 
-BetterTelnet (Mac) - http://www.cstone.net/~rbraun/mac/telnet/ 
-PuTTY (PC) - http://www.chiark.greenend.org.uk/~sgtatham/putty/ 
-Cantrip (Mac OS 10) - http://code.google.com/p/cantrip/
-Savitar (Mac OS 10) - http://www.heynow.com/Savitar/
-RoAClient - http://rware.ncmp.net/roaclient/
-
-Warning: Some clients will give you problems since they use special characters 
-like the / character (Avplay, Mush, and SimpleMU) if you are getting weird 
-behavior disable all triggers and parsing.
+$ = not free
+Warning: Some clients will give you problems since they use special characters.
+If you are getting weird behavior disable all triggers and parsing.
 #0
 TESTS
 
@@ -10204,8 +10222,8 @@ Usage: tlist <range of vnums or zone number>
 
 Tlist gives you a list of the triggers numbered within the parameters.
 Be warned that all the triggers on TBA may not work since anyone could
-have made them. Ask around for the best examples. Zone 13, 40, 41 is a 
-good start.
+have made them. Examples of zones with good triggers include:
+Zones: 0, 1, 2, 3, 11, 12, 13, 19, 27, 118 to name a few. 
 
    tlist 13          - lists all triggers defined in zone 13
    tlist 4000 4099   - lists all existing triggers from vnum 4000 to 4099
@@ -10324,26 +10342,31 @@ mortal greet room.
 
 This is what I do to setup a new builder:
 
-set <player> olc <zone #>
-set <player> title has trial vnum # 
-set <player> loadroom 3
-set <player> gold 1000000
-restore <player>
-redit # 
-1
-<player>'s Trial Vnum
-q
-y
-nohassle
-load obj 1332
-mortal
-tbalim <player> # 
-return
-nohassle
+send("advance " .. matches[3] .. " 31")
+send("set " .. matches[3] .. " nohassle off")
+send("set " .. matches[3] .. " olc 611")
+send("set file " .. matches[3] .. " olc 611")
+send("set " .. matches[3] .. " title has trial vnum " .. matches[2])
+send("set file " .. matches[3] .. " title has trial vnum " .. matches[2])
+send("set " .. matches[3] .. " loadroom 3")
+send("set file " .. matches[3] .. " loadroom 3")
+send("set " .. matches[3] .. " gold 1000000")
+send("restore " .. matches[3])
+send("redit " .. matches[2])
+send("1")
+send(matches[3] .. "'s Trial Vnum")
+send("q")
+send("y")
+send("toggle nohassle off")
+send("load obj 1332")
+send("set self level 32")
+send("tbalim " .. matches[3] .. " " .. matches[2])
+send("return")
+send("toggle nohassle on")
 
 @RTSTAT 1306, 1365, 1366@n
 
-See also: TRIAL
+See Also: TRIAL
 #31
 TRIG-AFFECTS TRIGEDIT-AFFECTS %ACTOR.AFFECT%
 
@@ -10399,43 +10422,6 @@ Examples: @RTSTAT 94, 9116@n
 
 See also: TRIG-INV, %PURGE%, %LOAD%, POSITIONS, CHAR-VAR
 #31
-TRIG-ERRORS TRIGEDIT-ERRORS TRIGEDIT-MISTAKES
-
-Make sure nohassle is off.
-Test with a mortal. Command triggers (and some other functionality) will not work for God and above.
-For mob triggers make sure the mob can see the actor, set INFRA, DET-INVIS and switch into the mob and fire the trigger to see if the mob gets an error message.
-For mobs AFF_CHARM prevents triggers from firing.
-A second trigger of the same type will not fire unless the first has a return 0 in it.
-
-As a general rule always use an ID (%actor%) not a name (%actor.name%) unless 
-you actually need to display the actors name.
-
-GOOD: %send% %actor% Hi there, %actor.name%!
-GOOD: %teleport% %actor% 0
-GOOD: %force% %actor% kneel %self.name%
-GOOD: mkill %actor%
-
-BAD: %send% %actor.name% Hi there, %actor.name%!
-BAD: %teleport% %actor.name% 0
-BAD: %force% %actor.name% kneel
-BAD: mkill %actor.name%
-
-Another common mistake is the mis-use of set and eval. 
-
-GOOD: set fruit apple
-GOOD: set num %random.5%
-GOOD: eval num 4 * %random.3%
-GOOD: eval text %%txt[%num%]%%
-GOOD: set num 5
-GOOD: set command %cmd% %arg%
-
-BAD: eval num 5
-BAD: eval num %random.4%
-BAD: eval fruit apple
-BAD: eval command %cmd% %arg%
-
-See Also: ZEDIT-MISTAKES, SEDIT-MISTAKES
-#31
 TRIG-EXAMPLES ASSEMBLIES ASSEMBLE ASSEMBLY VEHICLES MAKE BAKE BREW CRAFT FLETCH KNIT MIX THATCH WEAVE ASSEDIT FORGE SMOKE SMOKING CIGARS CIGARETTES PIPES SHOTGUN TRIGEDIT-EXAMPLES
 
    The above list of skills are not implemented since the same thing can be done with trigedit.
@@ -10443,7 +10429,7 @@ TRIG-EXAMPLES ASSEMBLIES ASSEMBLE ASSEMBLY VEHICLES MAKE BAKE BREW CRAFT FLETCH 
 Assemblies: @RTSTAT 38, 48, 335@n
 Smokables: @RTSTAT 159@n
 Furniture: @RTSTAT 1399@n
-Weapons: @RTSTAT 1361, 9000, 11840, 13005@n
+Weapons: @RTSTAT 45, 9000, 11840, 13005@n
 
 See Also: TSTAT, TRIG-QUESTS, TRIG-GAMES
 #31
@@ -10544,10 +10530,6 @@ Default is similar to case but matches any condition not met.
 Done is used to terminate a while or switch block.
 
 Example: @RTSTAT 35, 18, 6, 153, 132@n
-#31
-TRIG.HLP
-#31
-TRIG.HLP END
 #31
 TRIGEDIT TRIGS TRIGEDITOR TRIGGEREDIT TRIGGER-EDIT TRIGGERS DG-SCRIPTS TRIG-HELP SCRIPTS MOBPROGS MPROGS PROGS SCRIPTING TRIGMENU
 
@@ -11182,9 +11164,9 @@ this example, we have three steps:
 4. Find corresponding trigger types.  
    Having split the quest up it makes it easy to decide which triggers to use 
 from @RHELP TRIG-TYPE@n:
-   mob GREET trigger (attached to questmaster) @RHELP TRIGEDIT-MOB-GREET@N
-   mob DEATH trigger (attached to ogre) @RHELP TRIGEDIT-MOB-DEATH@N
-   mob RECEIVE trigger (attached to questmaster) @RHELP TRIGEDIT-MOB-RECEIVE@N
+   mob GREET trigger (attached to questmaster) @RHELP TRIGEDIT-MOB-GREET@n
+   mob DEATH trigger (attached to ogre) @RHELP TRIGEDIT-MOB-DEATH@n
+   mob RECEIVE trigger (attached to questmaster) @RHELP TRIGEDIT-MOB-RECEIVE@n
  
 5. Write the triggers.  
     Up to this point trigedit should not have been used. Most people struggle
@@ -11314,8 +11296,7 @@ Gameplay issues:
 The above list is just a few examples. All of them could be implemented, but 
 it is beyond the scope of this tutorial. 
 
-12DEC01 - original mob tutorial by Welcor
-02FEB06 - last updated/modified by Rumble
+Original mob tutorial by Welcor
 #31
 TRIGEDIT-NAMES TRIG-NAMES TRIGGER-NAMES
 
@@ -11999,6 +11980,51 @@ TRIGGER-FORMATS TRG-FILES TRIG-FILES TRIG-FORMATS TRG-FORMATS
 
 See Also: TRIGEDIT
 #31
+TRIGGER-TESTING TRIGEDIT-TESTING
+ 
+There are numerous reasons a trigger may not fire.
+ 
+1. Nohassle - Ensure you have nohassle off. Simply toggle it by typing "nohassle" 
+or stat self to see if the PRF flag NO_HASS is set (enabled).
+ 
+2. %echo% - Make sure the trigger is doing what you expect. Add an "%echo% firing" 
+in the first line to make sure it is working. Also echo any variables you are 
+using in the trigger to make sure they contain what you expect.
+ 
+3. Mobs - If a mob can not see the player a trigger may not fire. Be wary of blind
+mobs, dark rooms, invis/sneaking players. Also switch into the mob to test the 
+trigger and you will see the mob try to execute the trigger commands to help you 
+troubleshoot. If you see a "Huh?" or a "that person is not here" it can help fix 
+your problem.
+ 
+4. Command Triggers - Arguments: * means all commands. This is an easy way to 
+freeze yourself (all commands you enter are captured by the trigger). To protect 
+against this and other possibly malicious uses of triggers level 32 and above may 
+not be able to fully test some triggers (specifically damage and command come to 
+mind). So either create a mortal character or set your level to 31 to fully test 
+all triggers. The return command can be setup to allow you to restore your level 
+back to original, ask your coder to add your ID.
+ 
+See Also: TRIGEDIT-ADVANCED
+#0
+TRIGGER-TESTING
+
+There are numerous reasons a trigger would not fire.
+
+1. Nohassle - Ensure you have nohassle off. Simply toggle it by typing "nohassle" or stat self to see if the PRF flag NO_HASS is set (enabled).
+
+2. %echo% - Make sure the trigger is doing what you expect. Add an "%echo% firing" in the first line to make sure it is working. Also echo any variables you are using in the trigger to make sure they contain what you expect.
+
+3. Mobs - If a mob can not see the player a trigger may not fire. Be wary of blind mobs, dark rooms, invis/sneaking players. Also switch into the mob to test the trigger and you will see the mob try to execute the trigger commands to help you troubleshoo
+. If you see a "Huh?" or a "that person is not here" it can help you fix your problem.
+ 
+4. Command Triggers - Arguments: * means all commands. This is an easy way to freeze yourself (all commands you enter are captured by the trigger). To protect against this and other possibly malicious uses of triggers level 32 and above may not be able t
+ fully test some triggers (specifically damage and command come to mind). So either create a mortal character or set your level to 31 to fully test all triggers. The return command can be setup to allow you to restore your level back to original, ask you
+
+
+
+See also: TRIGEDIT-MOB-TUTORIAL, TRIGEDIT-ADVANCED-TUTORIAL
+#0
 TSTAT EXAMPLES TRIGSTAT TRIGGERSTAT
 
 Usage: tstat <trigger vnum>
@@ -13176,12 +13202,13 @@ rumble@tbamud.com
    4 JADE Forest                        -- Unknown                    10-25
    5 NEWBIE Farm                        -- Unknown                     1-10
    6 SEA of Souls                       -- Unknown                    10-25
-   7 CAMELOT                            -- Lok Parna                  20-30
+   7 CAMELOT                            -- Lok                        20-30
    9 River Island Of Minos              -- Mahatma                     4-25
+  11 Frozen Castle                      -- Detta                      25-30 
   12 God Simplex                        -- CircleMUD                    all
   15 Straight Path                      -- Steppin                    13-30  
-  16 CAMELOT II                         -- Lok Parna                  20-30
-  17 CAMELOT III                        -- Lok Parna                  20-30
+  16 CAMELOT II                         -- Lok                        20-30
+  17 CAMELOT III                        -- Lok                        20-30
   18 NUCLEAR Wasteland                  -- Rumble                     35-40
   19 SPIDER Swamp                       -- Detta                      15-20
   20 ARENA                              -- Rumble                     10-20
@@ -13252,6 +13279,7 @@ rumble@tbamud.com
  187 CIRCUS                             -- Wolfgaar Arina              2- 4
  200 WESTERN Highway                    -- Talandra                    3- 7
  201 SAPPHIRE Islands                   -- Elixias                      all
+ 211 TAROT                              -- Parnassus                   1-30 
  220 The Enchanted KITCHEN              -- Exa                        10-20
  232 TERRINGHAM                         -- Ferret                     21-24 
  233 DRAGON Plains                      -- Unknown                    15-17
@@ -13348,8 +13376,8 @@ rumble@tbamud.com
  325 REVELRY                            -- Kaan                        6-30
  326 Army PERIMETER                     -- Kaan                        8-30
  345 ASYLUM for the Insane              -- Duluth                      6-10
- 555 ULTIMA                             -- Unknown Parna               1-30
- 556 Ultima II                          -- Unknown Parna               1-30
+ 555 ULTIMA                             -- Casret                      1-30
+ 556 Ultima II                          -- Casret                      1-30
  
 Zone names CAPITALIZED are accessed by teleporter. i.e. "teleport sanctus"
 Uncapitalized zones are linked through a capitalized zone.

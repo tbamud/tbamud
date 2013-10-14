@@ -247,7 +247,7 @@ sword quest war's blood~
 extends far out from the basket hilt, guarding the wielder from all attacks.  
 Engraved across the blade are these words.  "Seek not death.  Seek not triumph.
 Seek wisdom, honor, and truth.  For I wield the spirit of my wielder, and blood
-of heroes never dies.  " These words are written in golden runes across the
+of heroes never dies."  These words are written in golden runes across the
 polished steel of the blade.  War's blood is given only to those warriors meant
 for greatness.  Remember, the sword wields the spirit of its master.    
 ~
@@ -271,9 +271,9 @@ shadow stealer dagger quest~
    This long, thin dagger is made of the blackest metal you have ever seen.  It
 seems to devour all the light in its vicinity, making it appear as if it were a
 part of the very night.  As you look at the blade and hilt, you can make out an
-inscription which travels from the point of the weapon, to its ornately engraved
-pommel.  "Who so ever would let blood for love, who so ever would make war upon
-death, who so ever would give their life to love, make war with my darkness.  "
+inscription which travels from the point of the weapon to its ornately engraved
+pommel.  "Whosoever would let blood for love, whosoever would make war upon
+death, whosoever would give their life to love, make war with my darkness."
 Wield this fabled blade of lost love, and become one with the shadows.  
 ~
 A
@@ -298,7 +298,7 @@ flame that gives it substance flickers and flares as you watch, threatening to
 break its magical wards and devour its surroundings.  As you hold this weapon,
 these words are burned into your mind.  "From the flash to the flame, my light
 shall guide the wizardry with wisdom.  From the beginning to the end, there
-will I be; to weave the one force eternal.  "
+will I be; to weave the one force eternal."
 ~
 A
 4 3
@@ -320,7 +320,7 @@ mace quest divine blessing~
 with thousands of tiny runes of all the deities that have ever been and ever
 will be.  Written across the flanges of the head are these words, "Let faith be
 the beginning.  Let the body be its instrument.  Let divinity flow through the
-wielder of my force.  Believe and be blessed.  "
+wielder of my force.  Believe and be blessed."
 ~
 A
 4 3
@@ -343,9 +343,9 @@ goodness.  The bow itself is a shaft of pure silver, inscribed with sunbursts
 and lightning bolts.  Its string is a thread of purest white light that shimmers
 as you look at it.  No arrow is needed for this mighty weapon.  Its wielder need
 never carry a quiver.  If you listen closely, you can hear the weapon humming
-with its own energy.  If you listen long enough you might here these words in
+with its own energy.  If you listen long enough you might hear these words in
 its song.  "Let light banish darkness.  Let Hope banish fear.  I am the herald
-of the end.  Where I strike, only light remains.  "
+of the end.  Where I strike, only light remains."
 ~
 A
 12 50
@@ -371,7 +371,7 @@ head of the spear is a huge dragon's fang, rumored to be from the mouth of the
 god Balm himself.  Etched in runes across the head of the spear are these words.
 "Find gray where only black and white were before.  Seek truth where others seek
 good and evil.  Bring justice through the scales of balance.  Then may you wield
-the truth that is my gift.  "
+the truth that is my gift."
 ~
 A
 12 50
@@ -398,8 +398,7 @@ No light seems to reach it, no living thing seeks its touch.  Tendrils of sickly
 smoke rise from the blade tainting your thoughts and the very air around you.  
 It calls you, it draws you.  "Wield me, worship me, watch me take the blood of
 the pure.  Become one with my taint.  Feel the foulness fermenting your soul.  
-Accept evil, accept the shadow.  Wield me and become death.  Become immortal.  
-"
+Accept evil, accept the shadow.  Wield me and become death.  Become immortal."  
 ~
 A
 18 5
@@ -417,15 +416,15 @@ A small cap of the faerie folk seeks the grasp of a true quickling.~
 1 1000 0 20 0
 E
 cap quickling quest~
-   This small green cap is made of a fine velvet lined with silk.  It's material
+   This small green cap is made of a fine velvet lined with silk.  Its material
 seems to conform to your touch, as if trying to accommodate itself to your
 grasp.  Its only distinctive feature is a emerald studded silver stickpin
 jutting jauntily out of the front of the cap.  A peace of silk ribbon forms a
 band around the inside of the brim.  These words have been embroidered into the
 cap's material.  "The world is a wonder.  A wonder to wander.  To wander the
-wonderful world.  That is the life of a sprite.  Come my brothers, for much is
-lost that we may find.  Come my sisters, for many are lost that we may love.  
-Happiness is a laugh away.  Live and laugh and love; that is joy.  "
+wonderful world.  That is the life of a sprite.  Come, my brothers, for much is
+lost that we may find.  Come, my sisters, for many are lost that we may love.  
+Happiness is a laugh away.  Live and laugh and love; that is joy."
 ~
 A
 14 50
@@ -448,8 +447,7 @@ and blood.  Crude markings cover their surface, chronicling the history of the
 trollish race in gory detail.  Marked in magical runes on the inside of each
 band are these words.  "Breaking bones, bringing blood, battering battle, bless
 me brothers, My eyes see red, my claws drip scarlet, and my soul is crimsoned
-with the blood of the hunt.  We will triumph, for there is no cure for death.  
-"
+with the blood of the hunt.  We will triumph, for there is no cure for death."
 ~
 A
 1 3
@@ -470,7 +468,7 @@ star man quest~
    This beautiful gem was mined from the center of the mountain from which the
 stone of Sanctus's walls is constructed.  It pulses with the glow of true magic.
 Carved by the finest craftsman, enchanted by the most powerful wielders of the
-magical arts, This stone was made for the greatest of the human race.  Look into
+magical arts, this stone was made for the greatest of the human race.  Look into
 its depths, and see all the souls of mortal man.  It has no peer, no equal, and
 has yet to be classified by dwarven miners or gnomish scholars.  The human who
 holds it holds the light of all humanity in their grasp.  
@@ -492,14 +490,14 @@ The protection of dragon-kind seeks the next hero of the wryms.~
 T 86
 E
 shield quest wyrmguard~
-Torn from Balm's breast, this scale has been shaped into a shield of
+   Torn from Balm's breast, this scale has been shaped into a shield of
 unrivaled strength and beauty.  Its diamond shape expands and shapes itself to
 protect any dragon who bears it, from the youngest of hatchlings, to the most
 ancient of wyrms.  The shield shimmers and wavers with all the colors of the
 rainbow.  In its shimmering depths can be seen all the colors of every dragon
 that has ever come to pass.  Magical runes circle the shield's rim.  "Come wind,
-come fire.  Come Thunder come rain.  My bearer need never fear.  Come giants to
-dual.  My roar of triumph will be the last you ever hear."
+come fire.  Come Thunder, come rain.  My bearer need never fear.  Come giants to
+duel.  My roar of triumph will be the last you ever hear."  
 ~
 A
 17 -10
@@ -524,7 +522,7 @@ its making.  The most hallowed dwarven priests have gifted this armor with their
 blessing.  It has no peer, no equal.  Inscribed on the armor's breastplate are
 these words: "To march to the clang of the hammer.  To be cooled by the
 whistling wind of the whirling axe.  Come foe, come fool; Break yourself on the
-rock of the dwarf.  Eternal wealth awaits, and we will not be denied.  "
+rock of the dwarf.  Eternal wealth awaits, and we will not be denied."
 ~
 A
 18 5
@@ -545,11 +543,11 @@ scholar's guide jeweler's loop quest~
    You are looking at what could quite possibly be one of the most beautiful
 peaces of artistry ever made.  This finely crafted jeweler's loop is suspended
 from a chain of golden links.  The loop itself is a perfectly made combination
-of grounned glass, perfectly crafted silver, and precision gnomish workmanship.
+of ground glass, perfectly crafted silver, and precision gnomish workmanship.
 It is so simple as to be elegant.  A tiny plaque hangs from the chain that
 suspends the loop.  "To you who would sacrifice for life, join me.  To you who
 would become a slave to wonder, hold me.  To you who seek riches through
-learning, I am yours.  "
+learning, I am yours."
 ~
 A
 3 3
@@ -568,11 +566,11 @@ The companions to the wanderlust sit here waiting for travel.~
 E
 boots strider quest~
    These fine boots have been made from the hides of monsters and beasts the
-world over.  They are unadorned, black suede leather, with a thick soul and
+world over.  They are unadorned black suede leather, with a thick sole and
 steel toe.  The stitching that holds them together is so fine as to be
-invisible.  As you look at them words enter your mind.  "Trip over mountain.  
+invisible.  As you look at them, words enter your mind.  "Trip over mountain.  
 Stride over sea.  Travel across desert.  Run between the forest trees.  Be bold,
-be brave.  Be unfettered.  Let us run the world over.  You and me.  "
+be brave.  Be unfettered.  Let us run the world over.  You and me."
 ~
 A
 14 50
@@ -593,12 +591,12 @@ battleaxe dragonbane quest~
    There is no greater weapon in mortal hands.  This is an instrument of death.
 The two-headed axe was meant for the hands of a giant.  The shaft and hilt of
 this mighty blade are formed from a gray stone that can never be chipped or
-broken.  The head of the weapon is formed from two massive pieces of obsidian
-Shaped like diamonds side by side.  However this vicious object has but one
+broken.  The head of the weapon is formed from two massive pieces of obsidian,
+shaped like diamonds, side by side.  However this vicious object has but one
 purpose.  Etched into the two heads of the axe are these words.  "Slash, slice,
-swerve and swipe.  Dodge, duck, down and up.  I draw the blood of the week.  
+swerve and swipe.  Dodge, duck, down and up.  I draw the blood of the weak.  
 Thunder marks my strike.  Lightning shines when I am drawn.  I am the storm to
-end all.  I am the dragonbane.  "
+end all.  I am the dragonbane."
 ~
 A
 13 50
@@ -609,20 +607,20 @@ A
 #36
 cloak Elven court quest~
 the cloak of the elven court~
-A heavy cloak of brown and green is hear for the next elven king.~
+A heavy cloak of brown and green is here for the next elven king.~
 ~
 9 dgq 0 0 0 ack 0 0 0 0 0 0 0
 10 0 0 0
 4 1000 0 20 0
 E
 cloak elven court quest~
-   A heavy, richly embroidered cloak of green and brown.  It's color changes as
+   A heavy, richly embroidered, cloak of green and brown.  Its color changes as
 you move, blending in with the world around you.  A simple wooden clasp holds it
 together at the neck.  It would be like any other nobleman's traveling cloak
 were it not for one thing.  Laced with thread so fine it almost isn't there, the
-symbol of the Elvin court is sewn over the breast of the cloak.  This is the
-garment of the Elvin court.  Its bearers are the pride of their race.  Only 6
-heroes have ever been worthy to wear such a mark of honor.  
+symbol of the Elven court is sewn over the breast of the cloak.  This is the
+garment of the Elven court.  Its bearers are the pride of their race.  Only 6
+heroes have ever been worthy to wear such a mark of honor.
 ~
 A
 2 3
@@ -662,7 +660,7 @@ One of the lost treasures of Sanctum is here.~
 T 90
 E
 gem sanctum~
-   This is one of the treasures from the hordes of the city of Sanctum.  
+   This is one of the treasures from the hoards of the city of Sanctum.  
 ~
 #39
 staff curative~
@@ -734,7 +732,7 @@ could vanish at any turn.  Looking deep into the fire that is their strength you
 see these words in yellow and red flame.  "Drawn from the depths.  Delivered
 from death.  Directed by Divinity.  I am the truth.  The light.  The guardian of
 hope and the future.  Find comfort in my flames.  Find strength in my touch.  
-For with me, Lies all that is to come.  "
+For with me lies all that is to come."
 ~
 A
 6 3
@@ -782,7 +780,7 @@ A comfy bed is begging you to take a nap.~
 1 1 0 0 0
 E
 comfy bed~
-   This bed is beckoning you to lay down and get some much needed sleep.
+   This bed is beckoning you to lie down and get some much needed sleep.
 Just "sleep bed"
 ~
 #49
@@ -1073,7 +1071,7 @@ wooden sign~
 #71
 chinese finger trap fingertrap cardboard tube~
 a chinese finger trap~
-A strange and colorful tube was left here. It is made from cardboard intricately weaved together.~
+A strange and colorful tube was left here. It is made from cardboard intricately woven together.~
 ~
 11 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
@@ -1081,7 +1079,7 @@ A strange and colorful tube was left here. It is made from cardboard intricately
 T 87
 E
 chinese finger trap fingertrap cardboard tube~
-   It consists of at least a dozen different colors of cardboard weaved together
+   It consists of at least a dozen different colors of cardboard woven together
 into a tube.  The holes on each end are just about the right size to stick a
 finger in.
 ~

@@ -253,12 +253,12 @@ eval inroom %self.room%
 Teleporter~
 1 c 3
 teleport~
-* By Rumble w/help from Jamie Nelson on http://groups.yahoo.com/group/dg_scripts/
+* By Rumble and Jamie Nelson of The Builder Academy    tbamud.com 9091
 %send% %actor% You attempt to manipulate space and time.
 %echoaround% %actor% %actor.name% attempts to manipulate space and time.
 wait 1 sec
 set sanctus 100
-set jade 499
+set jade 400
 set newbie 500
 set sea 600
 set camelot 775
@@ -383,6 +383,9 @@ set pale 32300
 set army 32400
 set revelry 32500
 set perimeter 32600
+set asylum 34501
+set ultima 55685
+set tarot 21101
 if !%arg%
   *they didnt type a location
   set fail 1

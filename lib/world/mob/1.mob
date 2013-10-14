@@ -210,7 +210,7 @@ man~
 the man~
 A man pushes past you in a rush to get somewhere.
 ~
-   The man gives a little smirk as you look at him.  He acknowlegdes you with a
+   The man gives a little smirk as you look at him.  He acknowledges you with a
 simple nod and then moves on.    
 ~
 2120 0 0 0 0 0 0 0 1000 E
@@ -1250,19 +1250,19 @@ right up.
 E
 T 125
 #187
-the baker~
+baker~
 the baker~
 A baker, covered in flour, pounds relentlessly on some tough dough.
 ~
    She looks very rugged.  Years of baking has given her arms like a smithy.  
-Very scary, especially considering she is bigger than most smithy's you've
-seen.  She smiles kindly and tells you to let her know when you see something
-you'd like.    
+Very scary, especially considering she is bigger than most smithies you've seen.
+She smiles kindly and tells you to let her know when you see something you'd
+like.
 ~
 24586 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
 340 115600
-8 8 0
+8 8 2
 E
 T 120
 #188

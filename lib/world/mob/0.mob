@@ -49,7 +49,7 @@ The questmaster is waiting for a brave adventurer to step forth.
    Many adventurers come here to seek glory by attempting to solve the quests
 given to them by this old man.  The quests are not easy, sometimes nearly
 impossible.  But they will always be a challenge.  The questmaster looks at you
-and says, 'help autoquest should show you all you need to know'.  
+and says, 'Help autoquest should show you all you need to know'.  
 ~
 188426 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
@@ -99,7 +99,7 @@ John Russell seems to have lost his dog.
    John Russell maintained his strain of fox terriers bred strictly for working,
 and the terrier we know of today as the Jack Russell is much the same as the
 pre-1900's fox terrier.  The Jack Russell has survived the changes that have
-occured in the modern-day Fox Terrier because it has been preserved by working
+occurred in the modern-day Fox Terrier because it has been preserved by working
 terrier enthusiasts in England for more than 100 years.  
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -112,13 +112,13 @@ jack russell terrier~
 the Jack Russell terrier~
 A Jack Russell terrier is following a scent.
 ~
-   Jack Russell Terriers are a type, or strain, of working terrier they are not
-purebred in the sense that they have a broad genetic make-up, a broad standard,
-and do not breed true to type.  You will see different "types" of JRTs, from
-long-bodied, short, crooked legs to a more proportioned length of body and
-longer legs.  This is a result of having been bred strictly for hunting since
-their beginning in the early 1800's, and their preservation as a working breed
-since.  
+   Jack Russell Terriers are a type, or strain, of working terrier.  They are
+not purebred in the sense that they have a broad genetic make-up, a broad
+standard, and do not breed true to type.  You will see different "types" of
+JRTs, from long-bodied, short, crooked legs to a more proportioned length of
+body and longer legs.  This is a result of having been bred strictly for hunting
+since their beginning in the early 1800's, and their preservation as a working
+breed since.  
 ~
 10 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
@@ -146,7 +146,7 @@ sick looking dog~
 a sick looking dog~
 A sick looking dog gags on something in its mouth.
 ~
-   The dog is unkept and unhealthy.  It does not look like it has been eating
+   The dog is unkempt and unhealthy.  It does not look like it has been eating
 very well.  
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -175,7 +175,7 @@ A strange humanoid is here.  How odd, its flesh seems to be falling off!
    This strange humanoid is moving rather slowly, and appears to be a corpse, a
 walking corpse!  It must be a zombie or something of the sort.  
 ~
-450570 0 0 0 0 0 0 0 0 E
+188426 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 0
@@ -220,7 +220,7 @@ A questmaster is waiting for a brave adventurer to step forth.
    Many adventurers come here to seek glory by attempting to solve the quests
 given to them by this old woman. The quests are not easy, sometimes nearly
 impossible. But they will always be a challenge. The questmaster looks at you
-and says, 'are you up for a challenge? '
+and says, 'Are you up for a challenge? '
 ~
 253962 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -234,7 +234,7 @@ quest mobile~
 a quest mob~
 A quest mob wanders around aimlessly waiting to be slaughtered.
 ~
-   This mobiles sole purpose is to be hunted down and killed.  
+   This mobile's sole purpose is to be hunted down and killed.
 ~
 10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -245,12 +245,12 @@ T 144
 #16
 ogre questogre~
 a quest ogre~
-A huge quest ogre has a pair of wings attached to its back as if he could fly.
+A huge quest ogre has a pair of wings attached to his back as if he could fly.
 ~
-   Though large and intimidating this ogre does not seem to realize that he
-would strike fear into the hearts of most mortals. Instead everything seems to
-scare it to death. It is as if he has seen the future and he knows he is going
-to die. A crude pair of small wings are attached to its back and it seems to be
+   Though large and intimidating, this ogre does not seem to realize that he
+would strike fear into the hearts of most mortals.  Instead everything seems to
+scare him to death.  It is as if he has seen the future and he knows he is going
+to die.  A crude pair of small wings are attached to his back and he seems to be
 trying to fly away.
 ~
 253962 0 0 0 0 0 0 0 0 E
@@ -391,7 +391,7 @@ variable questmaster master~
 the variable questmaster~
 The variable questmaster is waiting to set you.
 ~
-   This questmaster will save a variable to your player file to remember wether
+   This questmaster will save a variable to your player file to remember whether
 or not you have done his quest. This way you can only do this quest once. 
 ~
 253962 0 0 0 0 0 0 0 0 E
@@ -422,18 +422,18 @@ man james bond stockdale admiral~
 James Stockdale~
 A man beaten to the brink of his life stares up at you with powerful eyes.
 ~
-   James Stockdale was shotdown by anti-aircraft fire during Vietnam. He was
-held as a POW for seven years. He spent over half of this time in solitary
-confinement in leg irons. Even being incapacitated he was still able to lead
-the POW underground resistance successfully. For this he was routinely tortured
-and beaten resulting in permament disablement from a repeatedly broken leg,
-broken back, and shoulders being wrenched from their sockets. When his captors
-attempted to use him as televised propaganda he slit his scalp with a razor. 
+   James Stockdale was shot down by anti-aircraft fire during Vietnam.  He was
+held as a POW for seven years.  He spent over half of this time in solitary
+confinement in leg irons.  Even being incapacitated he was still able to lead
+the POW underground resistance successfully.  For this he was routinely tortured
+and beaten resulting in permanent disablement from a repeatedly broken leg,
+broken back, and shoulders being wrenched from their sockets.  When his captors
+attempted to use him as televised propaganda, he slit his scalp with a razor.  
 When they covered the cut with a hat he beat himself with a stool until his face
-was swollen beyond recognition. As a final attempt he slit his wrists rather
-than allow himself to be used or let down his fellow POW's. His captors found
-him unconscious and near death. The torture stopped after that and they no
-longer attempted to use him. He received the Medal of Honor for his actions.
+was swollen beyond recognition.  As a final attempt he slit his wrists rather
+than allow himself to be used or let down his fellow POWs.  His captors found
+him unconscious and near death.  The torture stopped after that and they no
+longer attempted to use him.  He received the Medal of Honor for his actions.
 ~
 262154 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
@@ -446,10 +446,10 @@ carl von clausewitz~
 Carl Von Clausewitz~
 Carl Von Clausewitz is hunkered down in a corner of the cell plotting an escape plan.
 ~
-   Carl von Clausewitz was born in Burg bei Magdeburg, Prussia in 1780. 
-Clausewitz's father was an officer in the Prussian Army Carl entered the
+   Carl von Clausewitz was born in Burg bei Magdeburg, Prussia, in 1780.  
+Clausewitz's father was an officer in the Prussian Army.  Carl entered the
 Prussian military service at the age of twelve years, eventually attaining the
-rank of Major General. He is most famous for his military treatise Vom Kriege,
+rank of Major General.  He is most famous for his military treatise, Vom Kriege,
 translated into English as On War.
 ~
 262154 0 0 0 0 0 0 0 0 E
@@ -482,7 +482,7 @@ the spy for the underground~
 A spy from the underground resistance is discreetly looking for some new recruits.
 ~
    The underground resistance has been blamed for most of the crime in the city
-and it has been rumoured that many new recruits often end up missing. The few
+and it has been rumored that many new recruits often end up missing. The few
 that do manage to come back are often damaged both physically and mentally.
 ~
 8 0 0 0 0 0 0 0 0 E

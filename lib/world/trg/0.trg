@@ -114,7 +114,8 @@ shake~
 * mostly positive, three are mostly negative, and five are abstentions. 
 *
 * Check arguments if they match. /= checks abbreviations.
-if ball /= %arg% || eightball /= %arg%
+set argcheck 'ball 'eightball
+if %argcheck.contains('%arg%)%
   * Echo text to everyone else in the room and the actor.
   %echoaround% %actor% %actor.name% shakes %self.shortdesc% vigorously.
   %send% %actor% You shake %self.shortdesc% vigorously.
@@ -296,7 +297,8 @@ wait 1 sec
 Restorative Comfy Bed 1401 - Sleep~
 1 c 4
 sl~
-if %mud.mudcommand% == sleep && %arg% == bed
+set argcheck 'bed
+if %cmd.mudcommand% == sleep && %argcheck.contains('%arg%)%
   %force% %actor% sleep
   set laying_in_comfy_bed_14 1
   remote laying_in_comfy_bed_14 %actor.id%
@@ -1604,7 +1606,8 @@ Room Command Example~
 2 c 100
 l~
 * By Rumble of The Builder Academy    tbamud.com 9091
-if %cmd.mudcommand% == look && bridge /= %arg%
+set bridge 'bridge
+if %cmd.mudcommand% == look && %bridge.contains('%arg%)%
   %send% %actor% As you look at the bridge a small form staggers out from underneath it.
   %echoaround% %actor% As %actor.name% peers under the bridge a small form emerges.
   %load% mob 207
@@ -1754,15 +1757,15 @@ Mob Random Example~
 0 b 2
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* don't let him cast while incapacitated.
+* With random triggers ACTOR is NOT defined. So set it.
+set actor %random.char%
+wait 1 sec
+say Hey!  You don't belong here!
+emote mumbles, 'Now what was that spell...'
+wait 1 sec
+* Senile old guard casts random spells on intruders.
+* Don't cast if incapacitated 
 if %self.hitp% > 0
-  * With random triggers ACTOR is NOT defined. So set it.
-  set actor %random.char%
-  wait 1 sec
-  say Hey!  You don't belong here!
-  emote mumbles, 'Now what was that spell...'
-  wait 1 sec
-  * Senile old guard casts random spells on intruders.
   switch %random.17%
     case 1
       dg_cast 'cure light' %actor%
@@ -1830,11 +1833,13 @@ Mob Command Example~
 0 c 100
 l~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* Make sure the command is look, check for any abbrev of window
-if %cmd.mudcommand% == look && %arg% /= orb
+* does not work for level 32 and above.
+* Make sure the command is look, check for any abbrev of orb
+if %cmd.mudcommand% == look && orb /= %arg%
   %send% %actor% As you look at the orb a feeling of peace and serenity comes over you.
   %echoround% %actor% %actor.name% stares at the orb.
 else
+  * If it doesn't match let the command continue.
   return 0
 end
 ~
@@ -2801,12 +2806,12 @@ end
 Obj Command 82 - Teleporter~
 1 c 3
 teleport~
-* By Rumble w/help from Jamie Nelson on http://groups.yahoo.com/group/dg_scripts/
+* By Rumble and Jamie Nelson of The Builder Academy    tbamud.com 9091
 %send% %actor% You attempt to manipulate space and time.
 %echoaround% %actor% %actor.name% attempts to manipulate space and time.
 wait 1 sec
 set sanctus 100
-set jade 499
+set jade 400
 set newbie 500
 set sea 600
 set camelot 775
@@ -2933,6 +2938,7 @@ set revelry 32500
 set perimeter 32600
 set asylum 34501
 set ultima 55685
+set tarot 21101
 if !%arg%
   *they didnt type a location
   set fail 1
