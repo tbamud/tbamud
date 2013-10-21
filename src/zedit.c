@@ -412,13 +412,12 @@ bool zedit_get_levels(struct descriptor_data *d, char *buf)
 /* the main menu */
 static void zedit_disp_menu(struct descriptor_data *d)
 {
-  int subcmd = 0, room, counter = 0;
+  int subcmd = 0, counter = 0;
   char buf1[MAX_STRING_LENGTH], lev_string[50];
   bool levels_set = FALSE;
 
   get_char_colors(d->character);
   clear_screen(d);
-  room = real_room(OLC_NUM(d));
 
   sprintbitarray(OLC_ZONE(d)->zone_flags, zone_bits, ZN_ARRAY_MAX, buf1);
   levels_set = zedit_get_levels(d, lev_string);

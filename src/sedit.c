@@ -354,10 +354,8 @@ static void sedit_no_trade_menu(struct descriptor_data *d)
 
 static void sedit_types_menu(struct descriptor_data *d)
 {
-  struct shop_data *shop;
   int i, count = 0;
 
-  shop = OLC_SHOP(d);
   get_char_colors(d->character);
 
   clear_screen(d);

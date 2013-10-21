@@ -310,12 +310,10 @@ ACMD(do_export_zone)
   zone_vnum zvnum; 
   char sysbuf[MAX_INPUT_LENGTH]; 
   char zone_name[MAX_INPUT_LENGTH], *f; 
-  int success, i; 
+  int success;
 
-  /* system command locations are relative to 
-   * where the binary IS, not where it was run 
-   * from, thus we act like we are in the bin 
-   * folder, because we are*/ 
+  /* system command locations are relative to where the binary IS, not where it
+   * was run from, thus we act like we are in the bin folder, because we are*/ 
   char *path = "../lib/world/export/"; 
 
   if (IS_NPC(ch) || GET_LEVEL(ch) < LVL_IMPL) 
@@ -335,12 +333,10 @@ ACMD(do_export_zone)
     return; 
   } 
 
-  /* If we fail, it might just be because the 
-   *   directory didn't exist.  Can't hurt to try 
-   *     again. Do it silently though ( no logs ). */ 
+  /* If we fail, it might just be because the directory didn't exist.  Can't 
+   * hurt to try again. Do it silently though ( no logs ). */ 
   if (!export_info_file(zrnum)) { 
     sprintf(sysbuf, "mkdir %s", path); 
-    i = system(sysbuf); 
   } 
 						      
   if (!(success = export_info_file(zrnum))) 
@@ -371,15 +367,12 @@ ACMD(do_export_zone)
 
   /* Remove the old copy. */ 
   sprintf(sysbuf, "rm %s%s.tar.gz", path, f); 
-  i = system(sysbuf); 
 
   /* Tar the new copy. */ 
    sprintf(sysbuf, "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg %sqq.shp", path, f, path, path, path, path, path, path, path);
-  i = system(sysbuf); 
 
   /* Gzip it. */ 
   sprintf(sysbuf, "gzip %s%s.tar", path, f); 
-  i = system(sysbuf); 
 
   send_to_char(ch, "Files tar'ed to \"%s%s.tar.gz\"\r\n", path, f); 
 }

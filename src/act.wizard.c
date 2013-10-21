@@ -4263,10 +4263,10 @@ ACMD(do_file)
   FILE *req_file;              /* Pointer to file to be read. */
   size_t req_file_size = 0;    /* Size of file to be read. */
   int req_file_lines = 0;      /* Number of total lines in file to be read. */
-  int lines_read = 0; /* Counts total number of lines read from the file. */
-  int req_lines = 0;  /* Number of lines requested to be displayed. */
-  int i, j;           /* Generic loop counters. */
-  int l;              /* Marks choice of file in fields array. */
+  int lines_read = 0;     /* Counts total number of lines read from the file. */
+  int req_lines = 0;      /* Number of lines requested to be displayed. */
+  int i, j;               /* Generic loop counters. */
+  int l;                  /* Marks choice of file in fields array. */
   char field[MAX_INPUT_LENGTH];  /* Holds users choice of file to be read. */
   char value[MAX_INPUT_LENGTH];  /* Holds # lines to be read, if requested. */
   char buf[MAX_STRING_LENGTH];   /* Display buffer for req_file. */
@@ -4357,9 +4357,7 @@ ACMD(do_file)
    /* Must be able to access the file on disk. */
    if (!(req_file=fopen(fields[l].file,"r"))) {
      send_to_char(ch, "The file %s can not be opened.\r\n", fields[l].file);
-     mudlog(BRF, LVL_IMPL, TRUE,
-            "SYSERR: Error opening file %s using 'file' command.",
-            fields[l].file);
+     mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: Error opening file %s using 'file' command.", fields[l].file);
      return;
    }
    /**/
@@ -4389,7 +4387,7 @@ ACMD(do_file)
      lines_read = file_head( req_file, buf, sizeof(buf), req_lines );
    }
 
-   /** Since file_head and file_tail will add the overflow message, we
+   /* Since file_head and file_tail will add the overflow message, we
     * don't check for status here. */
    if ( lines_read == req_file_lines )
    {
@@ -4580,7 +4578,7 @@ ACMD(do_wizupdate)
 bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_name)
 {
   struct char_data *temp_ch=NULL;
-  int plr_i = 0, i, j, k;
+  int plr_i = 0, i, k;
   char old_name[MAX_NAME_LENGTH], old_pfile[50], new_pfile[50], buf[MAX_STRING_LENGTH];
 
   if (!ch)
@@ -4603,7 +4601,7 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
     return FALSE;
   }
 
-  // Check that someone with new_name isn't already logged in
+  /* Check that someone with new_name isn't already logged in */
   if ((temp_ch = get_player_vis(ch, new_name, NULL, FIND_CHAR_WORLD)) != NULL) {
     send_to_char(ch, "Sorry, the new name already exists.\r\n");
     return FALSE;
@@ -4655,7 +4653,6 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
 
   /* Rename the player's pfile */
   sprintf(buf, "mv %s %s", old_pfile, new_pfile);
-  j = system(buf);
 
   /* Save the changed player index - the pfile is saved by perform_set */
   save_player_index();

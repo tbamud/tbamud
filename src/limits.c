@@ -198,7 +198,6 @@ void run_autowiz(void)
   if (CONFIG_USE_AUTOWIZ) {
     size_t res;
     char buf[256];
-    int i;
 
 #if defined(CIRCLE_UNIX)
     res = snprintf(buf, sizeof(buf), "nice ../bin/autowiz %d %s %d %s %d &",
@@ -211,7 +210,6 @@ void run_autowiz(void)
     /* Abusing signed -> unsigned conversion to avoid '-1' check. */
     if (res < sizeof(buf)) {
       mudlog(CMP, LVL_IMMORT, FALSE, "Initiating autowiz.");
-      i = system(buf);
       reboot_wizlists();
     } else
       log("Cannot run autowiz: command-line doesn't fit in buffer.");

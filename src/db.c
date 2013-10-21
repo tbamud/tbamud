@@ -172,8 +172,9 @@ char *fread_action(FILE *fl, int nr)
 
   parse_at(buf);
 
-  /* Some clients interpret '\r' the same as { '\r' '\n' }, so the original way of just
-     replacing '\n' with '\0' would appear as 2 new lines following the action */
+  /* Some clients interpret '\r' the same as { '\r' '\n' }, so the original way
+   * of just replacing '\n' with '\0' would appear as 2 new lines following the
+   * action */
   for (i = 0; buf[i] != '\0'; i++)
     if (buf[i] == '\r' || buf[i] == '\n') {
       buf[i] = '\0';
