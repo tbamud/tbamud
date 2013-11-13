@@ -4918,6 +4918,9 @@ bool AddRecentPlayer(char *chname, char *chhost, bool newplr, bool cpyplr)
   time_t ct;
   int max_vnum;
 
+  if (!chname || !*chname) // dropped connection with no name given
+       return FALSE;
+
   ct = time(0);  /* Grab the current time */
 
   this = create_recent();
