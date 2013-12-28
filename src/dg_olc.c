@@ -860,8 +860,8 @@ int format_script(struct descriptor_data *d)
 {
   char nsc[MAX_CMD_LENGTH], *t, line[READ_SIZE];
   char *sc;
-  size_t len = 0, nlen = 0, llen = 0, int ret;
-  int indent = 0, indent_next = FALSE, found_case = FALSE, i, line_num = 0;
+  size_t len = 0, nlen = 0, llen = 0;
+  int indent = 0, indent_next = FALSE, found_case = FALSE, i, line_num = 0, ret;
 
   if (!d->str || !*d->str)
     return FALSE;
