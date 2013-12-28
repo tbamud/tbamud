@@ -381,7 +381,7 @@ void Crash_listrent(struct char_data *ch, char *name)
   FILE *fl;
   char filename[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH], line[READ_SIZE];
   obj_save_data *loaded, *current;
-  int rentcode = RENT_UNDEF, timed, netcost, gold, account, nitems;
+  int rentcode = RENT_UNDEF, timed, netcost, gold, account, nitems, numread, len;
   
   if (!get_filename(filename, sizeof(filename), CRASH_FILE, name))
     return;
