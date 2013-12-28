@@ -995,7 +995,7 @@ void mag_rooms(int level, struct char_data *ch, int spellnum)
   
   }
   
-  if (failure || IdNum == -1) {
+  if (failure || (event_id)IdNum == -1) {
     send_to_char(ch, "You failed!\r\n");
     return;
   }
