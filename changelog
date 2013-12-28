@@ -2,6 +2,9 @@ TbaMUD is currently being developed by The Builder Academy. If you need any
 help, find any bugs, or have ideas for improvement please stop by TBA at 
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
 @
+Changelog moved to Github:
+https://github.com/welcor/tbamud/blob/master/changelog
+
 [Jun 21 2013] - Vatiken
   Added 'toupper' as a dg_script command to capitalize the first letter
   of a string.
