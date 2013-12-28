@@ -442,8 +442,9 @@ static int count_pages(char *str, struct char_data *ch)
 {
   int pages;
 
-  for (pages = 1; (str = next_page(str, ch)); pages++);
-    return (pages);
+  for (pages = 1; (str = next_page(str, ch)); pages++)
+    ; /* moved semi-colon to suppress warning */
+  return (pages);
 }
 
 /* This function assigns all the pointers for showstr_vector for the
