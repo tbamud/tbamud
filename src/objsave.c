@@ -381,8 +381,8 @@ void Crash_listrent(struct char_data *ch, char *name)
   FILE *fl;
   char filename[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH], line[READ_SIZE];
   obj_save_data *loaded, *current;
-  int rentcode,timed,netcost,gold,account,nitems, numread, len;
-
+  int rentcode = RENT_UNDEF, timed, netcost, gold, account, nitems;
+  
   if (!get_filename(filename, sizeof(filename), CRASH_FILE, name))
     return;
 
@@ -1205,8 +1205,9 @@ static int Crash_load_objs(struct char_data *ch) {
     return 1;
   }
   if (get_line(fl, line))
-    sscanf(line,"%d %d %d %d %d %d",&rentcode, &timed,
-           &netcost,&gold,&account,&nitems);
+    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "Failed to read player's rent code: %s.", GET_NAME(ch));
+  else
+    sscanf(line,"%d %d %d %d %d %d",&rentcode, &timed, &netcost, &gold, &account, &nitems);
 
   if (rentcode == RENT_RENTED || rentcode == RENT_TIMEDOUT) {
     sprintf(str, "%d", SECS_PER_REAL_DAY);
