@@ -313,8 +313,8 @@ int save_rooms(zone_rnum rzone)
 	  room->room_flags[3], room->sector_type 
       );
 
-  fprintf(sf, convert_from_tabs(buf2), 0);
-
+  fprintf(sf, "%s", convert_from_tabs(buf2));
+ 
       /* Now you write out the exits for the room. */
       for (j = 0; j < DIR_COUNT; j++) {
 	if (R_EXIT(room, j)) {
