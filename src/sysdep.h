@@ -325,6 +325,7 @@ struct in_addr {
 #define cpp_extern	/* Nothing */
 #endif
 
+#ifndef CIRCLE_OS_X
 /* Guess if we have the getrlimit()/setrlimit() functions */
 #if defined(RLIMIT_NOFILE) || defined (RLIMIT_OFILE)
 #define HAS_RLIMIT
@@ -332,6 +333,7 @@ struct in_addr {
 # define RLIMIT_NOFILE RLIMIT_OFILE
 #endif
 #endif
+#endif /*CIRCLE_OS_X*/
 
 /* Make sure we have STDERR_FILENO */
 #ifndef STDERR_FILENO
