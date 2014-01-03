@@ -36,11 +36,19 @@ can try to make Circle work with every UNIX variant that we can.
         gzip -dc circle30xxxx.tar.gz | tar xvf -
 
 
+
 3)  Configure CircleMUD for your system.  Circle must be configured using
     the 'configure' program which attempts to guess correct values for
     various system-dependent variables used during compilation.  It uses
     those values to create a 'Makefile' and a header file called 'conf.h'.
 
+    *** Macintosh OS X only:
+      Open Makefile.in in the src directory and make the following change:
+      
+      Find the line:         MYFLAGS = @MYFLAGS@
+      Change it to:          MYFLAGS = -DCIRCLE_OS_X
+    ***
+    
     From Circle's root directory, type
 
         ./configure
