@@ -8709,7 +8709,8 @@ stats     Shows game status information including players in game, mobs etc.
 houses    Shows the houses that are currently defined.
 errors    Shows errant rooms.
 snoop     Shows all people currently snooping.
-colour    Shows all 256 colors
+colour    Shows all 256 colors.
+trigger   Shows all instances of an attached trigger vnum.
 
 Examples:
   show zone

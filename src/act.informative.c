@@ -47,7 +47,6 @@ static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch);
 /* do_where utility functions */
 static void perform_immort_where(struct char_data *ch, char *arg);
 static void perform_mortal_where(struct char_data *ch, char *arg);
-static void print_object_location(int num, struct obj_data *obj, struct char_data *ch, int recur);
 
 /* Subcommands */
 /* For show_obj_to_char 'mode'.	/-- arbitrary */
@@ -1589,8 +1588,7 @@ static void perform_mortal_where(struct char_data *ch, char *arg)
   }
 }
 
-static void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
-			        int recur)
+void print_object_location(int num, struct obj_data *obj, struct char_data *ch, int recur)
 {
   if (num > 0)
     send_to_char(ch, "O%3d. %-25s%s - ", num, obj->short_description, QNRM);

@@ -53,6 +53,7 @@ ACMD(do_write);
 /* Utility Functions */
 /** @todo Move to a utility library */
 char *find_exdesc(char *word, struct extra_descr_data *list);
+void print_object_location(int num, struct obj_data *obj, struct char_data *ch, int recur);
 /** @todo Move to a mud centric string utility library */
 void space_to_minus(char *str);
 /** @todo Move to a help module? */

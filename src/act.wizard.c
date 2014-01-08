@@ -2451,30 +2451,34 @@ ACMD(do_show)
   byte self = FALSE;
   struct char_data *vict = NULL;
   struct obj_data *obj;
+  struct room_data *room;
   struct descriptor_data *d;
   char field[MAX_INPUT_LENGTH], value[MAX_INPUT_LENGTH],
 	arg[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH];
   int r, g, b;
   char colour[16];
+  trig_data *trig;
+  int numFound = 0;
 
   struct show_struct {
     const char *cmd;
     const char level;
   } fields[] = {
-    { "nothing",	0  },				/* 0 */
-    { "zones",		LVL_IMMORT },			/* 1 */
-    { "player",		LVL_IMMORT },
-    { "rent",		LVL_IMMORT },
-    { "stats",		LVL_IMMORT },
-    { "errors",		LVL_IMMORT },			/* 5 */
-    { "death",		LVL_IMMORT },
-    { "godrooms",	LVL_IMMORT },
-    { "shops",		LVL_IMMORT },
-    { "houses",		LVL_IMMORT },
-    { "snoop",		LVL_IMMORT },			/* 10 */
-    { "thaco",      LVL_IMMORT },
-    { "exp",        LVL_IMMORT },
-    { "colour",     LVL_IMMORT },
+    { "nothing",      0  },           /* 0 */
+    { "zones",        LVL_IMMORT },   /* 1 */
+    { "player",       LVL_IMMORT },
+    { "rent",         LVL_IMMORT },
+    { "stats",        LVL_IMMORT },
+    { "errors",       LVL_IMMORT },   /* 5 */
+    { "death",        LVL_IMMORT },
+    { "godrooms",     LVL_IMMORT },
+    { "shops",        LVL_IMMORT },
+    { "houses",       LVL_IMMORT },
+    { "snoop",        LVL_IMMORT },   /* 10 */
+    { "thaco",        LVL_IMMORT },
+    { "exp",          LVL_IMMORT },
+    { "colour",       LVL_IMMORT },
+    { "trigger",      LVL_IMMORT },
     { "\n", 0 }
   };
 
@@ -2754,6 +2758,66 @@ ACMD(do_show)
           len += nlen;
         }
     page_string(ch->desc, buf, TRUE);
+    break;
+
+  /* show triggers */
+  case 14:
+    if (!*value || atoi(value) == 0) {
+      // As implemented, it is impossible to search for instances of trigger #0.  C'est la vie.
+      send_to_char(ch, "What trigger number do you want to show?\r\n");
+      return;
+    }
+
+    for(vict = character_list; vict; vict = vict->next) {
+      if(CAN_SEE(ch, vict) && IN_ROOM(vict) != NOWHERE && SCRIPT(vict) && TRIGGERS(SCRIPT(vict))) {
+        // for all triggers on the mob
+        if(GET_TRIG_VNUM(TRIGGERS(SCRIPT(vict)))) {
+          for (trig = TRIGGERS(SCRIPT(vict)); trig; trig = trig->next) {
+            if(GET_TRIG_VNUM(trig) == atoi(value))  {
+              send_to_char(ch, "M%3d. %-25s%s - [%5d] %-25s%s [T", ++numFound, GET_NAME(vict), QNRM,
+                           GET_ROOM_VNUM(IN_ROOM(vict)), world[IN_ROOM(vict)].name, QNRM);
+              for (trig = TRIGGERS(SCRIPT(vict)); trig; trig = trig->next)
+                send_to_char(ch, " %d", GET_TRIG_VNUM(trig));
+              send_to_char(ch, "]\r\n");
+              break;
+            }
+          }
+        }
+      }
+    }
+    for (obj = object_list; obj; obj = obj->next) {
+      if (CAN_SEE_OBJ(ch, obj) && SCRIPT(obj) && TRIGGERS(SCRIPT(obj))) {
+        for (trig = TRIGGERS(SCRIPT(obj)); trig; trig = trig->next) {
+          if(GET_TRIG_VNUM(trig) == atoi(value)) {
+            /* Unfortunately, print_object_location doesn't currently print a list
+             * of all triggers attached to the object.  It is used nonetheless because
+             * it can optionally show, recursively, the location of the object.  It
+             * would be messy to re-implement such functionality here.
+             */ 
+            print_object_location(++numFound, obj, ch, TRUE);
+            break;
+          }
+        }
+      }
+    }
+    for (i = 0; i <= top_of_world; i++) {
+      room = &world[i];
+      if(SCRIPT(room) && TRIGGERS(SCRIPT(room))) {
+        for (trig = TRIGGERS(SCRIPT(room)); trig; trig = trig->next) {
+          if(GET_TRIG_VNUM(trig) == atoi(value)) {
+            send_to_char(ch, "R%3d. %-25s%s - [%5d] %-25s%s [T", ++numFound, world[i].name, QNRM,
+                         GET_ROOM_VNUM(i), world[i].name, QNRM);
+            for (trig = TRIGGERS(SCRIPT(room)); trig; trig = trig->next)
+              send_to_char(ch, " %d", GET_TRIG_VNUM(trig));
+            send_to_char(ch, "]\r\n");
+            break;
+          }
+        }
+      }
+    }
+    if (!numFound)
+      send_to_char(ch, "No instances of attached trigger #%d found.\r\n", atoi(value));
+
     break;
 
   /* show what? */
