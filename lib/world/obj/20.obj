@@ -5,15 +5,15 @@ A strange looking helmet with an ornamental fish on it.~
 ~
 9 e 0 0 0 ae 0 0 0 0 0 0 0
 3 0 0 0
-3 500 0 0
+3 500 0 0 0
 #2001
 shortsword~
 a shortsword~
-A short, thick sword is stuck in the ground up to it's hilt.~
+A short, thick sword is stuck in the ground up to its hilt.~
 ~
 5 emn 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 3
-6 1000 0 0
+6 1000 0 0 0
 #2002
 shield~
 a shield~
@@ -21,7 +21,7 @@ A strange oblong shaped shield with a fish painted on it is lying here.~
 ~
 9 eq 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
-6 450 0 0
+6 450 0 0 0
 #2003
 leg shield~
 some leg shields~
@@ -29,7 +29,7 @@ A pair of metal plates lie on the floor.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
-3 100 0 0
+3 100 0 0 0
 #2004
 arm shield~
 some arm shields~
@@ -37,15 +37,15 @@ A set of arm shields are lying in the dust.~
 ~
 9 e 0 0 0 ai 0 0 0 0 0 0 0
 3 0 0 0
-3 300 0 0
+3 300 0 0 0
 #2005
 net~
 a net~
-A net with weighted lead balls on it's egdes is lying here.~
+A net, with weighted lead balls on its edges, is lying here.~
 ~
 12 e 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-15 200 0 0
+15 200 0 0 0
 A
 18 2
 A
@@ -57,7 +57,7 @@ A trident with barbed points was left here.~
 ~
 5 emn 0 0 0 an 0 0 0 0 0 0 0
 0 6 3 11
-6 500 0 0
+6 500 0 0 0
 #2007
 dagger~
 a dagger~
@@ -65,7 +65,7 @@ An old dull looking dagger was discarded here.~
 ~
 5 en 0 0 0 an 0 0 0 0 0 0 0
 2 2 3 14
-3 300 0 0
+3 300 0 0 0
 #2008
 pot~
 a smelly pot~
@@ -73,7 +73,7 @@ A smelly pot is stinking up the entire room.~
 ~
 12 dh 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-20 10 0 0
+20 10 0 0 0
 A
 6 -2
 A
@@ -85,7 +85,7 @@ A long sharpened iron tusk was left here.~
 ~
 5 en 0 0 0 an 0 0 0 0 0 0 0
 0 3 3 11
-10 100 0 0
+10 100 0 0 0
 #2010
 warriors medal~
 the warriors medal~
@@ -93,7 +93,7 @@ A medal is lying here~
 ~
 11 amnoq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 25
+1 1000 0 25 0
 A
 13 25
 A
@@ -107,7 +107,7 @@ A medal is lying here~
 ~
 11 amnpq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 25
+1 1000 0 25 0
 A
 2 2
 A
@@ -121,7 +121,7 @@ A medal is lying here~
 ~
 11 amopq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 25
+1 1000 0 25 0
 A
 12 25
 A
@@ -135,7 +135,7 @@ A medal is lying here~
 ~
 11 anopq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 25
+1 1000 0 25 0
 A
 12 25
 A
@@ -149,7 +149,7 @@ A medal is lying here~
 ~
 11 aq 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 25
+1 1000 0 25 0
 A
 18 3
 A

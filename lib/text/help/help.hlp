@@ -72,8 +72,7 @@ Example: @RTSTAT 17, 23603, 53429, 2759@n
 %ECHO% %ECHOAROUND% %SEND% TRIG-SEND %ZONEECHO% ZONEECHO ZONECHO %ZONECHO% ZECHOAROUND ECHOAROUND OECHO WECHO MECHO OECHOAROUND WECHOAROUND MECHOAROUD OSEND WSEND MSEND ZONECHO RECHO %ZECHO% ZSOUND MECHOAROUND MZONEECHO MRECHO
 
 %echo% <message>
-   Message is sent to all non-sleeping characters in the same room that this 
-trigger is executing in.
+   Message is sent to all characters in the same room that this trigger is executing in.
 
 %echoaround% <victim> <message>
    Message will be sent to all characters in the room with victim, except for 
@@ -1135,9 +1134,9 @@ define MAX_OPER                     4
 #31
 BUGS TYPOS IDEAS
 
-Usage: bug submit <bug report>
-       idea submit <your new idea>
-       typo submit <that nasty typo>       
+Usage: bug submit <title of bug>
+       idea submit <title of idea>
+       typo submit <title of typo>       
 
 For making useful suggestions and reporting problems to the Powers that Be. You
 must first submit a title for your report after which you will be able to enter
@@ -2929,8 +2928,8 @@ into a compressed file as: <zone #>_<zone name>.tgz i.e. 1_Sanctus.tgz
 replace the QQ's with your zone number. If you want to keep the existing zone
 number make sure to say so when you ask for an export. The easiest way to add
 a new zone is to first create the new zone and then overwrite the created 
-files. A zone consist of up to 5 different files that are located in their own
-directories in lib/world/: <zone_#>.mob .obj .shp .trg .wld .zon
+files. A zone consist of up to 6 different files that are located in their own
+directories in lib/world/: <zone_#>.mob .obj .shp .trg .qst .wld .zon
 
 #31
 EXPRESSIONS TRIG-EXPRESSIONS TRIGEDIT-EXPRESSIONS INCREMENTS MATHEMATICAL NUMBERS TRIGEDIT-NUMBERS != <> LOGIC && /= || \ RNUMBERS + OPERATORS OPERATIONS == EQUAL ADDITION SUBTRACTION
@@ -3933,14 +3932,7 @@ See also: HOUSE
 HSEDIT EDIT-HOUSE HOUSE-EDIT CREATE-HOUSE HOUSE-CREATE BUILD-HOUSE
 HOUSE-BUILD
 
-Usage: hsedit <room vnum>
-
-This command will let you edit (online) any player-house within your designated
-zone. The vnum must be a valid room vnum. If the room is not already a house,
-then a new house is created at that room. If no room number is specified, the 
-current room is used as target.
-
-See Also: HSEDIT-MENU, SHOW-HOUSES
+See: HOUSE, HOUSES, HCONTROL
 #31
 HSEDIT-MENU
 
@@ -5461,6 +5453,12 @@ See also: MANA, HITPOINTS
 #0
 MXP PROTOCOLS
 
+say Hi this is @R@*RBright Red@n@*n and this is @*r@rdull red@n@*n
+say Hi this is @*[f500]@[f500]Bright Red@n@*n and this is only @*[f400]@[f400]slightly less bright red@n@*n
+say @*1@1This@n@*n is the MUD's primary colour, while @*2@2This@n@*n is our secondary colour.
+say I like @*G@GGreen Apples@n@*n but not as much as I like @*O@OOranges@n@*n
+say If your client is capable, you will see a @*[U9814/Rook]@[U9814/Rook] here.
+
 @*<send "look self">look@*</send> = @<send "look self">look@</send> - clickable link to send hidden command
 @*<send "help trial" hint="Click here">How to build your trial@*</send> = @<send "help trial" hint="Click here">How to build your trial@</send>
 @*(HELP CLASS@*) = @(HELP CLASS@) - A clickable link
@@ -5703,7 +5701,7 @@ to include instructions, something like this: to read another page type read #.
 The player would type read 1, and would actually read page 1, then type read 2
 and so on.
 
-See Also: NOTE, MAP
+See Also: MAP, NOTELL
 #31
 OBJ-TRIGGERS OBJECT-TRIGGERS TRIGEDIT-OBJ-TYPES
 
@@ -5961,6 +5959,8 @@ E) Extra descriptions menu                @RHELP OEDIT-EXTRA@n
 M) Min Level   : @c0@n                        @RHELP OEDIT-MIN-LEVEL@n
 P) Perm Affects: @cNOBITS@n                   @RHELP OEDIT-PERM-AFFECTS@n
 S) Script    : @cNot Set.@n                   @RHELP SCRIPT-MENU@n
+W) Copy object
+X) Delete object
 Q) Quit                                
 Enter choice :                        
 
@@ -7723,8 +7723,9 @@ REDIT-MENU MENU ROOM_MENU BUILDINGS CASTLES REDIT-EDITOR ROOM-MENU EDIT-MENU EDI
 9) Exit up     : @c-1@n
 A) Exit down   : @c-1@n
 B) Extra descriptions menu                          @RHELP REDIT-EXTRA@n
-D) Delete Room                                      @RHELP REDIT-DELETE@n   
 S) Script      : @cNot Set.@n                           @RHELP SCRIPT-MENU@n
+W) Copy Room
+D) Delete Room                                      @RHELP REDIT-DELETE@n   
 Q) Quit
 Enter choice :
 
@@ -8126,7 +8127,7 @@ ROOM-TRIGGERS TRIGEDIT-ROOM-TYPES
 17) Leave        @RHELP TRIGEDIT-ROOM-LEAVE@n       
 18) Door         @RHELP TRIGEDIT-ROOM-DOOR@n       
 #31
-RUMBLE TBA THE-BUILDER-ACADEMY
+RUMBLE
  
    Thanks, I need all the help I can get.
 
@@ -10018,6 +10019,7 @@ read it.
  
 Editor command formats: /<letter>
  
+@n/t         -  converts @* color codes into color. Use prior to /s.
 @n/a         -  aborts the editor and changes are lost.
 @n/c         -  clears the buffer.
 @n/d#        -  deletes line #, or a range #-#.
@@ -10341,6 +10343,7 @@ trial vnums in their zone. The assigner is loaded to every player in the
 mortal greet room. 
 
 This is what I do to setup a new builder:
+In MUDlet I use an alias "atv # <name>" (matches2 = vnum, matches3 = name)
 
 send("advance " .. matches[3] .. " 31")
 send("set " .. matches[3] .. " nohassle off")
@@ -10412,13 +10415,15 @@ See also: ATTACH, DETACH, TRIG-ATTACH
 #31
 TRIG-EQUIPMENT ACTOR.EQUIPMENT %ACTOR.EQ% %EQ% TRIG_EQUIPMENT
 
-%actor.eq()% 
+%actor.eq(wield)%
+%actor.eq(wield).vnum% 
+if %actor.eq(wield).vnum(6719)% 
 
 Returns the identifier for the object equipped in the subfield position, if 
 if any. The specified position may be either a position number (0-18) or the 
 name of the location. @RHELP POSITIONS. * checks all positions.
 
-Examples: @RTSTAT 94, 9116@n
+Examples: @RTSTAT 94, 2700@n
 
 See also: TRIG-INV, %PURGE%, %LOAD%, POSITIONS, CHAR-VAR
 #31
@@ -12461,7 +12466,7 @@ Usage: while expression
 negative, or a break is used. The while loop must be terminated by a done. 
 While loops are disabled after looping 100 times.
 
-Room example: @RTSTAT 24, 2201@n
+Room example: @RTSTAT 24, 2201, 18@n
 Obj example:  @RTSTAT 23@n
 Mob example:  @RTSTAT 11858@n
 #31

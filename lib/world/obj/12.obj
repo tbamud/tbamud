@@ -9,7 +9,7 @@ A list of the staff's emails has been left here.~
 T 1205
 E
 list email staff~
-@RHELP CONTACT@n for the most recent listing or:
+	RHELP CONTACT	n for the most recent listing or:
 
 ~
 #1201
@@ -160,8 +160,8 @@ A staff only board is floating here.~
 0 0 0 0 0
 #1228
 advertising bulletin boards gen_boards~
-a advertising bulletin board~
-A advertising board is hovering here.~
+an advertising bulletin board~
+An advertising board is hovering here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
@@ -304,13 +304,13 @@ A piece of fireworks is planted in a champagne bottle.~
 0 0 0 0 0
 T 1297
 E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
+~
+E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
-~
-E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~

@@ -1604,7 +1604,7 @@ end
 ~
 #175
 Chuck Norris - 34~
-0 ab 12
+0 ab 8
 ~
 * Chuck Norris Facts!
 eval max %random.89%

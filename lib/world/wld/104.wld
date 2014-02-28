@@ -1216,14 +1216,14 @@ D2
 0 0 10462
 S
 #10464
-An Observetion Room~
-   @yThe room is not a small room, but rather vast, books are scattered all around
-the floor and on the tables.  This place seems as though no one has cleaned it
-for months.  Large tools scatter the desk off in the corner, and many piles of
-papers with writing on them scatter this desk as well.  The ceiling above is
-nothing but a thick looking glass with bars filling in for support.
+An Observation Room~
+   @yThe room is not a small room, but rather vast, books are scattered all 
+around the floor and on the tables.  This place seems as though no one has 
+cleaned it for months.  Large tools scatter the desk off in the corner, and many 
+piles of papers with writing on them scatter this desk as well.  The ceiling 
+above is nothing but a thick looking glass with bars filling in for support.@n
 ~
-104 8196 0 0 0 0
+104 4 0 0 0 0
 D2
 ~
 ~
@@ -1247,7 +1247,7 @@ from the fireplace. @n
 104 24 0 0 0 0
 E
 main chamber room taylors tays~
-   @WA small lamp sits in the center of the room letting off a small amount of
+   	WA small lamp sits in the center of the room letting off a small amount of
 light.  A beautiful white shag carpet is covering the whole floor besides in a
 small spot where there is white marble with small flecks of black in them.  
 Directly on the wall behind the marble is a large fireplace the sinks deep into
@@ -1258,7 +1258,7 @@ fireplaces frame is made of small marble bricks, all are black, making the
 fireplace standout from the rest of the room.  A window lies on the wall
 opposite the fireplace, letting in a little light through the linen curtains.  
 A large squishy looking armchair sits in the middle of the room only a few feet
-from the firplace.  @n
+from the firplace.  	n
 ~
 S
 $~

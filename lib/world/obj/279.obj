@@ -5,7 +5,7 @@ A red cloak is lying here.~
 ~
 9 a 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-5 175 0 0
+5 175 0 0 0
 A
 17 -10
 A
@@ -17,7 +17,7 @@ A pair of brown boots are lying here.~
 ~
 11 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-6 1000 0 0
+6 1000 0 0 0
 A
 17 -5
 A
@@ -31,7 +31,7 @@ A wood, and old vase has been left here.~
 ~
 17 g 0 0 0 a 0 0 0 0 0 0 0
 12 12 15 0
-12 150 0 0
+12 150 0 0 0
 E
 look vase~
    This is a very old vase, inside is clear water wich you can drink, it says
@@ -45,7 +45,7 @@ A silver plate is stuck to the wall.~
 ~
 17 aik 0 0 0 0 0 0 0 0 0 0 0
 10 10 14 0
-0 0 0 0
+0 0 0 0 0
 E
 look plate~
    This plate is filled with blessed water.  
@@ -57,7 +57,7 @@ A sweater is lying here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-3 400 0 0
+3 400 0 0 0
 A
 17 -10
 #27911
@@ -67,7 +67,7 @@ A bible has been left here.~
 ~
 1 amo 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-5 50 0 0
+5 50 0 0 0
 A
 17 -5
 A
@@ -81,7 +81,7 @@ A wood slab has been left here.~
 ~
 22 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-28 120 0 0
+28 120 0 0 0
 A
 1 -1
 A
@@ -95,7 +95,7 @@ A basket has been left here.~
 ~
 15 i 0 0 0 ao 0 0 0 0 0 0 0
 150 1 -1 0
-3 100 0 0
+3 100 0 0 0
 #27924
 ring Cardinal Cardinal's ruby~
 Cardinal's ruby ring~
@@ -103,7 +103,7 @@ A ruby ring has been left here.~
 ~
 9 a 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-2 440 0 0
+2 440 0 0 0
 A
 18 2
 A
@@ -117,7 +117,7 @@ A pair of dirty pants has been left here.~
 ~
 11 k 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-4 1000 0 0
+4 1000 0 0 0
 A
 17 -5
 A
@@ -129,7 +129,7 @@ A green piece of cloth is lying here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-4 125 0 0
+4 125 0 0 0
 A
 17 -9
 A
@@ -143,7 +143,7 @@ A pair of sandals are lying here.~
 ~
 11 a 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-2 250 0 0
+2 250 0 0 0
 A
 17 -3
 A
@@ -157,7 +157,7 @@ A stone shield has been left here.~
 ~
 9 bh 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
-10 1000 0 0
+10 1000 0 0 0
 A
 1 -1
 A
@@ -171,7 +171,7 @@ A pair of stone sleeves are lying here.~
 ~
 9 bh 0 0 0 ai 0 0 0 0 0 0 0
 4 0 0 0
-12 275 0 0
+12 275 0 0 0
 A
 1 -1
 A
@@ -185,7 +185,7 @@ A pair of leggings made out of stone are lying here.~
 ~
 9 bdh 0 0 0 af 0 0 0 0 0 0 0
 4 0 0 0
-15 257 0 0
+15 257 0 0 0
 A
 13 -1
 A
@@ -199,7 +199,7 @@ A shiny sword is lying here.~
 ~
 5 ckmno 0 0 0 an 0 0 0 0 0 0 0
 2 6 6 0
-5 825 0 0
+5 825 0 0 0
 A
 1 1
 A
@@ -213,7 +213,7 @@ A chain has been left here.~
 ~
 11 ao 0 0 0 acm 0 0 0 0 0 0 0
 0 0 0 0
-3 853 0 0
+3 853 0 0 0
 A
 17 -5
 A
@@ -227,7 +227,7 @@ A bright collar has been left here.~
 ~
 11 b 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-3 150 0 0
+3 150 0 0 0
 A
 17 -5
 A
@@ -241,7 +241,7 @@ A grey stone fountain babbles here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 2 0
-505 0 0 0
+505 0 0 0 0
 E
 look fountain~
    Is not just a fountain, it is an ornament of the city.  
@@ -253,7 +253,7 @@ A magic potion has been left here~
 ~
 2 c 0 0 0 a 0 0 0 0 0 0 0
 30 3 43 3
-2 562 0 0
+2 562 0 0 0
 #27945
 lamp copper~
 a copper lamp~
@@ -261,7 +261,7 @@ A copper lamp has been left here.~
 ~
 1 adhn 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-6 500 0 0
+6 500 0 0 0
 A
 9 -5
 A
@@ -275,7 +275,7 @@ Some flowers have been left here.~
 ~
 12 ck 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 A
 6 1
 #27949
@@ -285,7 +285,7 @@ A dagger stained with blood has been left here.~
 ~
 5 djnp 0 0 0 an 0 0 0 0 0 0 0
 2 2 12 0
-7 120 0 0
+7 120 0 0 0
 A
 2 1
 A
@@ -299,7 +299,7 @@ A hermit mace has been left here.~
 ~
 5 jp 0 0 0 an 0 0 0 0 0 0 0
 1 2 6 10
-8 500 0 0
+8 500 0 0 0
 #27955
 magical key~
 a magical key~
@@ -307,7 +307,7 @@ A magical key has been left here.~
 ~
 18 cf 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-5 1 0 0
+5 1 0 0 0
 #27957
 magic belt~
 a magic belt~
@@ -315,7 +315,7 @@ A magic belt is lying here.~
 ~
 9 aop 0 0 0 al 0 0 0 0 0 0 0
 5 0 0 0
-10 120 0 20
+10 120 0 20 0
 A
 24 -2
 A
@@ -327,7 +327,7 @@ A bronze statue of Louis XIV is here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 look statue~
    This statue was made in honor of the king Louis XIV.  
@@ -339,7 +339,7 @@ A white dress is lying here.~
 ~
 11 a 0 0 0 adk 0 0 0 0 0 0 0
 0 0 0 0
-4 500 0 0
+4 500 0 0 0
 E
 look dress~
    It is a beautifull dress, you cant imagine yourself using it.  
@@ -355,7 +355,7 @@ A black hood is lying here.~
 ~
 11 jnp 0 0 0 aek 0 0 0 0 0 0 0
 0 0 0 0
-2 500 0 0
+2 500 0 0 0
 A
 17 -5
 A
@@ -369,7 +369,7 @@ A bronze key is lying here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-8 1 0 0
+8 1 0 0 0
 E
 look key~
    This key is the one that open the principal door of the Musketeers H.  Q.  
@@ -381,10 +381,10 @@ A blody guillotine is here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
-look guillotine~
-   This guillotine was built to punich the revolutioners.  
+guillotine~
+   This guillotine was built to punish the revolutioners.  
 ~
 #27971
 French cake~
@@ -393,7 +393,7 @@ A French cake has been left here it looks delicius.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 2 0 0 0
-1 50 0 0
+1 50 0 0 0
 #27972
 Musketeer hat~
 a Musketeer hat~
@@ -401,7 +401,7 @@ A brown hat has been left here.~
 ~
 11 kn 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-5 120 0 0
+5 120 0 0 0
 A
 17 -4
 A
@@ -415,7 +415,7 @@ A sword has been left here.~
 ~
 5 fl 0 0 0 an 0 0 0 0 0 0 0
 3 4 6 3
-1 100 0 0
+1 100 0 0 0
 A
 6 1
 A
@@ -429,7 +429,7 @@ A sword is lying here.~
 ~
 5 aop 0 0 0 an 0 0 0 0 0 0 0
 3 4 5 3
-3 500 0 0
+3 500 0 0 0
 A
 4 1
 A
@@ -443,7 +443,7 @@ A pair of brown gloves has been left here.~
 ~
 11 mn 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
-1 5 0 0
+1 5 0 0 0
 A
 17 -5
 A
@@ -457,7 +457,7 @@ A peace of bread has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-3 58 0 0
+3 58 0 0 0
 #27987
 horseshoes~
 a set of horseshoes~
@@ -465,7 +465,7 @@ A set of horseshoes has been left here.~
 ~
 11 c 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-12 400 0 0
+12 400 0 0 0
 E
 look horseshoes~
    This object can only be use by a horse sorry if you liked them but, you cant
@@ -484,7 +484,7 @@ A staff has been left here.~
 ~
 4 gi 0 0 0 ao 0 0 0 0 0 0 0
 30 5 5 3
-1 180 0 0
+1 180 0 0 0
 E
 look staff~
    This is a magical an powerful staff that blesses all the persons that are
@@ -497,7 +497,7 @@ An oxided key has been left here.~
 ~
 18 bcdh 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-8 100 0 0
+8 100 0 0 0
 E
 look key~
    This is a key of a cell, what ever muste be in that cell you should live it
@@ -510,7 +510,7 @@ The cadaver of a man is lying here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 look corpse~
    This is the corpse of the man that once had the iron mask on his head.  
@@ -522,7 +522,7 @@ A platinum key is lying here.~
 ~
 18 f 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 100 0 0
+3 100 0 0 0
 E
 look key~
    This is not an ordinary key, this key can open a secret passage that leads to
@@ -535,7 +535,7 @@ A royal crown has been left here.~
 ~
 11 a 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-8 250 0 0
+8 250 0 0 0
 A
 19 -5
 A
@@ -547,7 +547,7 @@ An iron mask is lying here.~
 ~
 11 b 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-12 180 0 0
+12 180 0 0 0
 A
 19 -5
 A
@@ -559,7 +559,7 @@ A Musketeer cape is lying here.~
 ~
 9 ekn 0 0 0 adk 0 0 0 0 0 0 0
 0 0 0 0
-4 150 0 0
+4 150 0 0 0
 A
 17 -5
 A
@@ -573,7 +573,7 @@ A necklace has been left here.~
 ~
 11 jk 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-3 250 0 0
+3 250 0 0 0
 A
 13 10
 A
@@ -587,7 +587,7 @@ A pair of gloves have been left here.~
 ~
 11 afop 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
-6 1000 0 0
+6 1000 0 0 0
 A
 12 25
 A
@@ -599,7 +599,7 @@ A chain has been left here~
 ~
 9 0 0 0 0 acdhklm 0 0 0 0 0 0 0
 0 0 0 0
-16 500 0 0
+16 500 0 0 0
 A
 1 -1
 A
@@ -611,7 +611,7 @@ A dark mask is lying here.~
 ~
 11 bmn 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 A
 19 -5
 A

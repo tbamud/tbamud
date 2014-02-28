@@ -1,11 +1,11 @@
 #25404
-armour lieutenant silver chain mesh~
-the lieutenant's armour~
-Some armour made of silver chain mesh lies here.~
+armor lieutenant silver chain mesh~
+the lieutenant's armor~
+Some armor made of silver chain mesh lies here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
-30 700 0 30
+30 700 0 30 0
 E
 armour~
    It look well-used and well worn by its previous owner.  The mesh is turned
@@ -21,15 +21,15 @@ A golden locket lies here.~
 ~
 9 agk 0 0 0 ac 0 0 0 0 0 0 0
 5 0 0 0
-6 450 0 20
-E
-locket~
-   It is engraved with a line of text etched in fine writing.  
-~
+6 450 0 20 0
 E
 text~
    To my darling daughter Penelope for her 16th birthday.  Much love, Arnold -
 Lord of Jareth.  
+~
+E
+locket~
+   It is engraved with a line of text etched in fine writing.  
 ~
 A
 4 2
@@ -42,7 +42,7 @@ A fishtail dagger lays here.~
 ~
 5 amn 0 0 0 an 0 0 0 0 0 0 0
 1 2 7 11
-12 10 0 10
+12 10 0 10 0
 A
 1 1
 A
@@ -54,7 +54,7 @@ Some armor made from leather scraps is here.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-18 10 0 5
+18 10 0 5 0
 #25409
 peanut butter pickle sandwich~
 a peanut butter and pickle sandwich~
@@ -62,7 +62,7 @@ A peanut butter and pickle sandwich lies in the dust here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 0
-3 2 0 0
+3 2 0 0 0
 #25412
 mordecai's robe~
 Mordecai's Robe~
@@ -70,7 +70,7 @@ Mordecai's Robe lies here.~
 ~
 9 ij 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
-20 850 0 31
+20 850 0 20 0
 E
 robe~
    It is a long, black robe with a flowing cape.  It is jet black with a thin
@@ -88,7 +88,7 @@ A scrumptous looking chicken drumstick lies here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-3 5 0 0
+3 5 0 0 0
 #25414
 key bamboo~
 the Bamboo Key~
@@ -96,7 +96,7 @@ There is a bamboo key lying here.~
 ~
 18 cdq 0 0 0 a 0 0 0 0 0 0 0
 3600 0 0 0
-1 1000 0 0
+1 1000 0 0 0
 #25415
 key skull~
 the skull-shaped key~
@@ -104,7 +104,7 @@ There is a skull-shaped key lying here.~
 ~
 18 cdq 0 0 0 a 0 0 0 0 0 0 0
 3652 0 0 0
-1 1000 0 0
+1 1000 0 0 0
 #25416
 coins gold stash~
 Mordecai's Stash~
@@ -112,7 +112,7 @@ Mordecai's stash has been left here.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
-10 1 0 0
+10 1 0 0 0
 #25417
 key dull gray~
 the dull grey key~
@@ -120,7 +120,7 @@ A dull grey key has been left here.~
 ~
 18 cdq 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 1 0 0
+10 1 0 0 0
 #25418
 hole~
 a hole~
@@ -128,7 +128,7 @@ a hole~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 100 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 hole~
    It is a putrid, rotting, grub-infested mud hole in the ground that stinks
@@ -141,5 +141,5 @@ A cob, stipped of its corn is here.~
 ~
 4 q 0 0 0 a 0 0 0 0 0 0 0
 4 1 1 17
-1 1 0 1
+1 1 0 1 0
 $~

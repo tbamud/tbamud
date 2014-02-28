@@ -368,12 +368,6 @@ A heavy book is lying here.~
 0 0 0 0
 5 550 55 0 0
 E
-book journal~
-   The large book is quite heavy and made of leather.  On the front the
-embossed letters are too faded to read.  But a bookmark page at the end of the
-book looks readable.    
-~
-E
 bookmarked page writing ~
    Today many of the merchants left to find a better location for their wares.
 I have decided to stay here despite the evil gossip of black magic and human
@@ -384,6 +378,12 @@ things from the other towns and enjoy living apart from the other towns.  The
 common people have always had to make do.  I think Zamba is better off without
 all the tourist and having to follow the laws of all the surrounding town.  We
 are much better off being apart from outsiders.    
+~
+E
+book journal~
+   The large book is quite heavy and made of leather.  On the front the
+embossed letters are too faded to read.  But a bookmark page at the end of the
+book looks readable.    
 ~
 #7530
 black robe~
@@ -505,7 +505,7 @@ vial powder black~
 within the vial.    
 ~
 #7538
-a torch~
+torch~
 a torch~
 A small torch is mounted to the wall.~
 ~

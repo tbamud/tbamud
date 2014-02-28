@@ -169,12 +169,12 @@ BareHandAttack: 10
 E
 #2212
 algae monster~
-a algae monster~
+an algae monster~
 An algae monster is trying to hide from you.
 ~
-   This monster is covered in algae, it looks somewhat human in form, but is
+   This monster is covered in algae.  It looks somewhat human in form, but it is
 impossible to tell for sure.  It looks very hostile.  Claws and teeth protrude
-from the fungus covered beast.    
+from the fungus covered beast.  
 ~
 2110 0 0 0 1048660 0 0 0 0 E
 18 14 0 3d3+180 3d3+3

@@ -777,7 +777,7 @@ an almost blinding gleam.  Every server, without exception, is a strikingly
 beautiful young woman wearing skirts which leave little to the imagination and
 tight blouses which leave even less.  As your hostess shows you to your table,
 hands you your menu, and asks if you would like any drinks, you realize that if
-there is any other place in Dibrova you would like to be more than where you are
+there is any other place in Jareth you would like to be more than where you are
 now, it really doesn't matter.  
 ~
 257 8 0 0 0 0
@@ -786,19 +786,6 @@ You see the reception area.
 ~
 ~
 0 -1 25715
-E
-0~
-   The sign reads:
-  Use 'List' to see the available pets.
-  Use 'Buy <pet>' to buy yourself a pet.
-  Instructions for having pets:
-  You can use 'order <pet> <instructions>' to order your pets around.
-  If you abuse your pet, it will no longer regard you as its master.
-  If you have several pets you may use 'order followers <instructions>'
-  You can name the pet you buy with: 'buy <pet> <name>'
- Regards,
- The Shopkeeper
-~
 S
 #25732
 Grainy's Bar & Grille~
@@ -1149,13 +1136,13 @@ D3
 door~
 1 -1 25747
 E
-chest coins~
-   There could be as much as one million gold in that chest...  
-~
-E
 rack armor~
    The value of that armor must be twenty times the value of any other armor in
 all the land..  
+~
+E
+chest coins~
+   There could be as much as one million gold in that chest...  
 ~
 S
 #25749

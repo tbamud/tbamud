@@ -20,15 +20,15 @@ A glistening black axe is lying here.~
 2 2 6 3
 5 100 0 5 0
 E
-evil runes~
-   The runes are unreadable but unmistakably Khan-li in origin, testifying to
-the evil magic bestowed upon this weapon.    
-~
-E
 blackened axe black glistening~
    This incredibly sharp axe looks to be made of some normal metal which has
 then been blackened with magic.  Only the handle appears naturally dark, carved
 out of glistening obsidian and inscribed with evil runes.    
+~
+E
+evil runes~
+   The runes are unreadable but unmistakably Khan-li in origin, testifying to
+the evil magic bestowed upon this weapon.    
 ~
 A
 1 2
@@ -52,7 +52,7 @@ but does not look otherwise contaminated.
 #2703
 phosphorescent mushroom fungi fungus~
 @Ga phosphorescent mushroom@n~
-@GA phosphorescent mushroom@g grows here, glowing faintly.~
+@GA phosphorescent mushroom@g grows here, glowing faintly.@n~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
@@ -100,39 +100,39 @@ A ragged book has been left here.~
 0 0 0 0
 5 1 0 0 0
 E
-1~
-   @G
-@gEntry 1@n
-   I have lost all interest in keeping this diary.  Since the sorceress has
-taken over, life has not been worth writing about.  I shall instead record
-anything I observe that may aid in her demise, though it will mean my death
-should this book be found.    
-~
-E
-2~
-   @G
-@gEntry 2@n
-   Someone came to help us today, he told me he knew how to destroy the
-sorceress once and for all.  I thought he would be the one to succeed but he
-was killed by the toothy one.  Now the abominable creature has holed itself
-into a cave from which there is no return... or so it is claimed.    
+ragged diary~
+   This dark leather book is almost falling apart, although there appears to be
+very little written inside it. The word 	gPRIVATE	n has been carefully carved
+into the cover.
+
+           (type look 1, 2, or 3 to view pages)
 ~
 E
 3~
-   @G
-@gEntry 3@n
+   	G
+	gEntry 3	n
    Somehow I fear this may be my last entry.  I have been recruited, along with
 several others for a secret task by the sorceress' evil bird.  What the task is
 I do not yet know, but I know that the sorceress has a particular way of
 keeping her secrets, and it does not involve the survival of witnesses.    
 ~
 E
-ragged diary~
-   This dark leather book is almost falling apart, although there appears to be
-very little written inside it. The word @gPRIVATE@n has been carefully carved
-into the cover.
-
-           (type look 1, 2, or 3 to view pages)
+2~
+   	G
+	gEntry 2	n
+   Someone came to help us today, he told me he knew how to destroy the
+sorceress once and for all.  I thought he would be the one to succeed but he
+was killed by the toothy one.  Now the abominable creature has holed itself
+into a cave from which there is no return... or so it is claimed.    
+~
+E
+1~
+   	G
+	gEntry 1	n
+   I have lost all interest in keeping this diary.  Since the sorceress has
+taken over, life has not been worth writing about.  I shall instead record
+anything I observe that may aid in her demise, though it will mean my death
+should this book be found.    
 ~
 #2707
 carcass stone~
@@ -239,7 +239,7 @@ A leathery pouch is lying here.~
 15 50 0 1 0
 E
 leathery water pouch~
-   Apparantly made for holding water, this tan-coloured leather has been
+   Apparently made for holding water, this tan-coloured leather has been
 treated with some form of sticky resin, making it relatively leak-proof.    
 ~
 #2715
@@ -300,14 +300,14 @@ A mouldy puddle stagnates in the corner.~
 50 5 -1 0
 0 0 0 0 0
 E
-loose floorboards~
-   These floorboards look a little loose, as though they have been pried open
-and set carefully back into place.    
-~
-E
 mouldy puddle~
    This looks like it may have once been water, but has turned into a greenish
 glob of undrinkable slime from the influence of mould and various fungi.    
+~
+E
+loose floorboards~
+   These floorboards look a little loose, as though they have been pried open
+and set carefully back into place.    
 ~
 #2721
 white bone key~
@@ -352,9 +352,9 @@ and are chillingly life-like.  Mostly in the closed position, from time to time
 they open as if by accident.    
 ~
 #2724
-firey spine~
-a @Rfirey spine@n~
-A @Rfirey spine@n lies here.~
+fiery spine~
+a @Rfiery spine@n~
+A @Rfiery spine@n lies here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 3 9 14
@@ -376,7 +376,7 @@ The massive stone skull of a dragon sits ominously on the altar.~
 E
 massive stone dragon skull~
    This enormous stone skull appears to have come from an actual dragon corpse.
-Apparantly once made of bone, it has long since petrified into smooth stone.  
+Apparently once made of bone, it has long since petrified into smooth stone.  
 Long jagged teeth frame the slightly open jaw, and the two immense eye sockets
 are empty, filled with an unnatural darkness.    
 ~
@@ -715,7 +715,7 @@ A tiny opal lies here, attached to a fragile gold chain.~
 E
 tiny opal pendant gold chain~
    A tiny fire opal lies embedded in a delicate circle of gold, its smooth white
-surface flecked with brilliat shades of scarlet and crimson.  A slight glow
+surface flecked with brilliant shades of scarlet and crimson.  A slight glow
 seems to come from it as though some inner source of light is shining through, a
 fragile gold chain trailing from the tip of its gold setting.  
 ~
@@ -778,7 +778,7 @@ A dusty white vest lies forgotten here.~
 E
 dusty white vest~
    This simple, loose-fitting vest is made of comfortable breathable material,
-well-suited for hot humid environments.  Apparantly once a brilliant white, it
+well-suited for hot humid environments.  Apparently once a brilliant white, it
 has faded and grayed with dust.  
 ~
 A
@@ -829,7 +829,7 @@ E
 loose-fitting breeches~
    These large breeches have been designed for maximum ease of movement,
 comfortable and light material delicately sewn to hold in place without
-restricting.  Well-used and grimey they are nonetheless intact.  
+restricting.  Well-used and grimy, they are nonetheless intact.  
 ~
 A
 2 2
@@ -972,31 +972,26 @@ A silver-leafed book lies here.~
 0 0 0 0
 1 1 0 0 0
 E
-silver-leafed book time~
-   This beautiful shimmering book is bound with leather and overlaid with fine
-silver leafing.  Carefully scrawled letters glow vaguely phosphorescent on the
-cover, spelling out Book of Time.  There appears to be three chapters (look 1,
-2, or 3).  
-~
-E
-1 one~
-                        FIRST AGE - AGE OF SORROW
+3 three~
+                       THIRD AGE - AGE OF REBIRTH
 
- This is an accounting of things past, the first age.
+This is an accounting of things future, the third age.
 
-The first efforts of the Cui in shaping their world resulted in the separating
-of Denuo  into two major root forms - Khan'li, those of darkness, and Dynar,
-those of light, the intention being that the interactions between the two would 
-allow for motion of forces whilst keeping the balance relatively stable.
+With the canvas wiped clean and the hearts of the Cui weighed heavy with 
+grief and regret, they will invest their last energies in creating a new race. A
+form of life that embodies the whole scope of the balance, having the ability to
+sway itself to dark or light as it pleases.
 
-However, the Cui were not prepared for the outright carnage that resulted. 
-Dynar and Khan'li both working to slaughter the other and spilling oceans of 
-blood, destroying many of their sub-races that Cui had sacrificed themselves to 
-create. 
+The internal nature of these opposing forces means that the race will have to 
+keep peace within itself or suffer complete self-inflicted destruction. Thus, 
+along with the power to choose, this life will have the burning desire of its
+Cui makers to continue itself, to survive, to flourish and grow.
 
-Dismayed, the Cui sought to make peace between the two, realising that all 
-they had worked for was about to destroy itself. Finally, they sought to make 
-a more drastic change...
+With only one of the Cui remaining, this race is left almost entirely to its own
+devices, only a few perceiving and heeding the whisperings of their sole 
+remaining parent and the occasional Ve offspring.
+
+Beyond this point no speaking creature can see.
 
 ~
 E
@@ -1028,27 +1023,32 @@ and uninhabited the third age will begin.
 
 ~
 E
-3 three~
-                       THIRD AGE - AGE OF REBIRTH
+1 one~
+                        FIRST AGE - AGE OF SORROW
 
-This is an accounting of things future, the third age.
+ This is an accounting of things past, the first age.
 
-With the canvass wiped clean and the hearts of the Cui weighed heavy with 
-grief and regret, they will invest their last energies in creating a new race. A
-form of life that embodies the whole scope of the balance, having the ability to
-sway itself to dark or light as it pleases.
+The first efforts of the Cui in shaping their world resulted in the separating
+of Denuo  into two major root forms - Khan'li, those of darkness, and Dynar,
+those of light, the intention being that the interactions between the two would 
+allow for motion of forces whilst keeping the balance relatively stable.
 
-The internal nature of these opposing forces means that the race will have to 
-keep peace within itself or suffer complete self-inflicted destruction. Thus, 
-along with the power to choose, this life will have the burning desire of its
-Cui makers to continue itself, to survive, to flourish and grow.
+However, the Cui were not prepared for the outright carnage that resulted. 
+Dynar and Khan'li both working to slaughter the other and spilling oceans of 
+blood, destroying many of their sub-races that Cui had sacrificed themselves to 
+create. 
 
-With only one of the Cui remaining, this race is left almost entirely to its own
-devices, only a few perceiving and heeding the whisperings of their sole 
-remaining parent and the occassional Ve offspring.
+Dismayed, the Cui sought to make peace between the two, realising that all 
+they had worked for was about to destroy itself. Finally, they sought to make 
+a more drastic change...
 
-Beyond this point no speaking creature can see.
-
+~
+E
+silver-leafed book time~
+   This beautiful shimmering book is bound with leather and overlaid with fine
+silver leafing.  Carefully scrawled letters glow vaguely phosphorescent on the
+cover, spelling out Book of Time.  There appears to be three chapters (look 1,
+2, or 3).  
 ~
 #2766
 strip white meat~
@@ -1060,7 +1060,7 @@ A strip of white meat has been left here to rot.~
 1 10 0 0 0
 E
 strip white meat~
-   This long piece of white flesh is fresh and healthy-looking.  Apparantly some
+   This long piece of white flesh is fresh and healthy-looking.  Apparently some
 sort of poultry, it smells a bit like...  chicken?  
 ~
 #2767
@@ -1099,9 +1099,9 @@ A boiled potato lies here.~
 1 10 0 0 0
 E
 boiled potato~
-   This slightly mud-stained vegetable looks not long plucked from the ground,
-recently boiled it is still somewhat warm to the touch and a sprinkling of salt
-coats its light brown skin.  
+   This slightly mud-stained vegetable looks not long plucked from the ground.
+Recently boiled, it is still somewhat warm to the touch.  A sprinkling of salt
+coats its light brown skin.
 ~
 #2770
 fresh carrot~
@@ -1233,7 +1233,7 @@ icy mana ring~
    This cool glassy ring has been forged from a silvery metal and interwoven
 with blue crystal, the two substances spiralling around each other in a
 never-ending circle, a symbol of the flowing of unseen forces.  It looks as
-though it may impart some powerful magic unto the wearer if@c used@n.  
+though it may impart some powerful magic unto the wearer if	c used	n.  
 ~
 #2777
 Goethite staff flame fire~

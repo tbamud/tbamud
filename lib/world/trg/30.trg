@@ -376,7 +376,7 @@ set leper 31200
 set altar 31400
 set mcgintey 31500
 set wharf 31700
-set dock 31800
+set dock 31801
 set yllnthad 31900
 set bay 32200
 set pale 32300

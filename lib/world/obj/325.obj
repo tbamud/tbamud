@@ -436,9 +436,9 @@ A
 A
 18 3
 #32547
-dainty kercheif~
-a dainty kercheif~
-A dainty kercheif lies on the ground.~
+dainty kerchief~
+a dainty kerchief~
+A dainty kerchief lies on the ground.~
 ~
 12 o 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
@@ -492,7 +492,7 @@ A silly-looking joker's cap with bells at the ends lies here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 4 0 0 0
-0 0 0 15 0
+4 20 0 15 0
 A
 6 2
 #32553

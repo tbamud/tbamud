@@ -746,14 +746,14 @@ A pure gold sceptre is topped with a perfect crystal orb of power.~
 10 0 0 0
 10 1000 0 30 0
 E
-orb~
-   The orb of power is transparent to the point of sightlessness.  It holds
-within a vast store of power.
-~
-E
 sceptre~
    The second of the crown jewels, this sceptre is amazingly light, and
 amazingly powerful.  It is pure gold, but topped with an orb of power.
+~
+E
+orb~
+   The orb of power is transparent to the point of sightlessness.  It holds
+within a vast store of power.
 ~
 A
 5 2

@@ -410,11 +410,12 @@ Switch Echo Example~
 2 g 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* put a wait in here so it doesn't fire before the player enters the room
+* Since this is an ENTER trigger we must put a wait in here 
+* so it doesn't fire before the player enters the room
 wait 1
-switch %random.3%
+switch %random.4%
   case 1
-    * only the person entering the room will see this.
+    * only the person (actor) entering the room will see this.
     %send% %actor% You trip over a root as you walk into the room. 
     * everyone in the room except the actor will see this.
     %echoaround% %actor% %actor.name% trips on a root while walking into the room.
@@ -430,6 +431,19 @@ switch %random.3%
   break
   case 3
     %echo% A light breeze picks up, causing the leaves to rustle quietly.
+  break
+  case 4
+    * echoes go to everyone, even sleeping players. To prevent this try:
+    set target_char %self.people%
+    while %target_char%
+      set tmp_target %target_char.next_in_room%
+      if %target_char.pos% != sleeping
+        %send% %target_char% You are not sleeping
+      else
+        %send% %target_char% You are sleeping
+      end
+      set target_char %tmp_target%
+    done
   break
   default
     * this should be here, even if it's never reached
@@ -1637,7 +1651,7 @@ Room Speech Example~
 * set the first word
 set word %speech.car%
 * set the rest of the speech string
-se rest %speech.cdr%
+set rest %speech.cdr%
 * while there is a first word keep going
 while %word%
   %echo% the first word is: %word%
@@ -2269,6 +2283,7 @@ Obj Load Example~
 1 n 50
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
+* Squeak when loading.
 %echo% %self.shortdesc% lets out a faint squeak as if gasping for breath.
 ~
 #89
@@ -2929,7 +2944,7 @@ set leper 31200
 set altar 31400
 set mcgintey 31500
 set wharf 31700
-set dock 31800
+set dock 31801
 set yllnthad 31900
 set bay 32200
 set pale 32300

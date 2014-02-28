@@ -12,11 +12,11 @@ quietly to herself.
 8 8 2
 E
 #7802
-Stamnell the Baker~
+Stamnell Baker~
 Stamnell, the baker~
 The baker Stamnell stands here smiling.
 ~
-   Stamnell has rosey cheeks and round belly.  His handlebar mustache has bits
+   Stamnell has rosy cheeks and round belly.  His handlebar mustache has specks
 of flour in it, but he doesn't seem to mind.  
 ~
 147466 0 0 0 0 0 0 0 500 E
@@ -43,7 +43,7 @@ a small human boy~
 A small boy stands here.
 ~
    The small boy has a crooked smile across his dirty face.  His blonde hair
-lays messily on his head and he has clothes that looks like they have seen
+lies messily on his head and he has clothes that looks like they have seen
 better days.  
 ~
 200 0 0 0 0 0 0 0 750 E
@@ -75,8 +75,8 @@ the village fool~
 The village fool stands here, making an idiot of himself.
 ~
    Little more than a nuisance, the fool walks around trying his best to
-entertain.  His ratty clothes dispell dust with every movement as he goes about
-his way.  
+entertain.  His ratty clothes shed dust with every movement as he goes about his
+way.  
 ~
 8264 0 0 0 0 0 0 0 600 E
 7 18 5 1d1+70 1d2+1
@@ -99,7 +99,7 @@ his way.
 BareHandAttack: 13
 E
 #7808
-a human servant~
+human servant~
 a human servant~
 A human servant stands here.
 ~
@@ -121,16 +121,16 @@ blood from his constant hunting.
 254024 0 0 0 0 0 0 0 -100 E
 7 18 5 1d1+70 1d2+1
 70 4900
-8 8 2
+8 8 1
 BareHandAttack: 7
 E
 #7810
-The elven healer~
+elven healer~
 the elven healer~
-The elven healer hurries about
+The elven healer hurries about.
 ~
    The elven healer hurries about from house to house bandaging the sick.  
-Mabye she will have enough time to teach you,
+Maybe she will have enough time to teach you.
 ~
 81992 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1

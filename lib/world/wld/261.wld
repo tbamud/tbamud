@@ -1,9 +1,8 @@
 #26100
 Foyer~
    You stand at the entrance to a large home, a home almost large enough to be
-called a castle.  Direclty in front of you (west) a hallway runs into the
-interior of the castle.  North of you is a door which looks to house a coat
-closet.  
+called a castle.  To the west a hallway runs into the interior of the castle.  
+North of you is a door which looks to house a coat closet.  
 ~
 261 8 0 0 0 0
 D0
@@ -372,12 +371,12 @@ D3
 ~
 0 0 26113
 E
-desk~
-   The desk is basically uninteresting, as are the papers on top of it...  
-~
-E
 closet~
    Nice clothes, but not your size at all.  
+~
+E
+desk~
+   The desk is basically uninteresting, as are the papers on top of it...  
 ~
 S
 #26112
@@ -879,11 +878,11 @@ D3
 door~
 1 0 26135
 E
-beaker beakers flask flasks burner burners tong tongs~
+mortar mortars pestle pestles jar jars~
    Looks like normal, fragile lab equipment to you.  
 ~
 E
-mortar mortars pestle pestles jar jars~
+beaker beakers flask flasks burner burners tong tongs~
    Looks like normal, fragile lab equipment to you.  
 ~
 S

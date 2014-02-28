@@ -5,7 +5,7 @@ Some apprehension lays here in waiting.~
 ~
 12 0 0 0 0 an 0 0 0 tu 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 apprehension~
    Everyone has a little.  Some have more than others.  It is that feeling of
@@ -19,7 +19,7 @@ A fist sized smooth metal grenade looks armed.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 1350
 E
 grenade~
@@ -34,7 +34,7 @@ A pile of gold coins is half-buried in the mud and muck.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1000000 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 1351
 E
 pile gold coins~
@@ -48,7 +48,7 @@ A small silver plated pistol.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 1 1 0
-1 1 0 0
+1 1 0 0 0
 T 1352
 #1304
 kiss candy~
@@ -57,7 +57,7 @@ A sweet kiss has lost its way and lies here waiting~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 kiss candy ~
    Fyre has selected only the finest of ingredients for this chocolate
@@ -72,7 +72,7 @@ Some common sense has been left here. Better give it to someone that needs it.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 common sense~
    Common sense seems to be lacking in the world.  Be sure to spread this
@@ -85,7 +85,7 @@ A policy on how to get new builders started, called "Order of Events" is hoverin
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 order events policy starting newbie builders~
    HELP STAFF
@@ -97,7 +97,7 @@ A building report example.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 building report example~
    HELP REPORT
@@ -109,7 +109,7 @@ A manual of tips on how to use proper grammar.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 grammar tips~
    HELP GRAMMAR
@@ -121,7 +121,7 @@ The zone proposal guidelines were left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 zone proposal guidelines~
    HELP PROPOSAL
@@ -133,7 +133,7 @@ A zone completion policy for builder's.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 zone completion policy~
    HELP COMPLETION
@@ -145,7 +145,7 @@ Something you definitely deserve was left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1312
 suggestions~
 some suggestions~
@@ -153,7 +153,7 @@ Some Suggestions for a would be builder.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 suggestions~
    HELP SUGGESTIONS
@@ -178,7 +178,7 @@ be sure it worked and then feel free to delete away.
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1314
 graduation certificate~
 a graduation certificate~
@@ -186,7 +186,7 @@ A certificate for graduating from TBA has been abandoned here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 certificate graduation~
    It rambles on in some officialese language about how great the person is who
@@ -199,7 +199,7 @@ A gnarled wooden staff beacons you.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 T 1389
 E
 gnarled wooden staff~
@@ -214,7 +214,7 @@ An orb meant to top a staff must have fallen out here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 orb staff topping~
    The orb is about the size of a small fist.  It appears to have been meant to
@@ -227,7 +227,7 @@ A broken and useless staff has been discarded here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 broken staff~
    It appears to have once been a very nice staff that someone ruined by
@@ -240,7 +240,7 @@ A christmas hat with reindeer horns coming out of it lies here.~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 christmas hat reindeer~
    This festive hat is trimmed with red and gold tinsel, green velvety material
@@ -248,13 +248,13 @@ peaking in the middle with two large reindeer horns branching out either side.
 Very fetching.  
 ~
 #1319
-a festive Christmas cracker~
+festive Christmas cracker~
 a festive @rC@wh@rr@wi@rs@wt@rm@wa@rs@n @ncracker~
 A festive @rC@wh@rr@wi@rs@wt@rm@wa@rs@n @gcracker lies here, ready to be pulled.~
 ~
 0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 christmas cracker festive~
    This is a very fun looking Christmas cracker, and fun things are always best
@@ -268,7 +268,7 @@ The World's smallest violin is waiting for someone to play it.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 smallest violin~
    This violin is meant for those with a sarcastic wit and too much spare time
@@ -281,7 +281,7 @@ Yes, this is everything including the kitchen sink.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 kitchen sink~
    Rumble thought of everything......  
@@ -293,7 +293,7 @@ An oath lays on the ground waiting to be sworn.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 oath~
    I do solemnly swear that I will support and defend the Constitution of the
@@ -309,10 +309,10 @@ A builder intro note has been dropped here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 introduction note paper~
-   This has been moved to @RHELP INTRO@n.  
+   This has been moved to 	RHELP INTRO	n.  
 ~
 #1329
 test backpack~
@@ -321,7 +321,7 @@ A locked backpack with Test written on its front.~
 ~
 15 0 0 0 0 ak 0 0 0 0 0 0 0
 100 10 -1 0
-1 1 0 0
+1 1 0 0 0
 T 1349
 #1330
 straightjacket jacket straitjacket~
@@ -330,7 +330,7 @@ A pristine white straitjacket is waiting for you.~
 ~
 11 0 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-10 100 0 0
+10 100 0 0 0
 T 1345
 T 1346
 #1331
@@ -340,7 +340,7 @@ A curved goat's horn overflows with fruit, vegetables, and ears of grain.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-15 100 0 0
+15 100 0 0 0
 E
 cornucopia goats horn~
    "Cornucopia" comes from the Latin "cornu copiae," which translates literally
@@ -358,7 +358,7 @@ A trial vnum assigner helps people work on thier trial vnum.~
 ~
 12 q 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+0 0 0 0 0
 T 1365
 T 1366
 T 1306
@@ -374,7 +374,7 @@ A post-it note is stuck here as a reminder to someone.~
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1334
 pilot precise pen~
 a fine pen~
@@ -382,15 +382,15 @@ A Pilot Precision Pen awaits someone's use.~
 ~
 21 0 0 0 0 ano 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1335
-a novelty prize~
+novelty prize~
 a novelty prize~
 A novelty prize lies on the ground.~
 ~
-0 0 0 0 0 a 0 0 0 0 0 0 0
+8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 novelty prize~
    This is a rather cheap-looking novelty prize.  Congratulations on winning
@@ -403,7 +403,7 @@ A beautifully wrapped @RC@gh@Rr@gi@Rs@gt@Rm@ga@Rs @gp@Rr@ge@Rs@ge@Rn@gt@g has be
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 1973
 E
 wrapped christmas present~
@@ -418,7 +418,7 @@ bright christmas lights~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 bright christmas lights~
    This string of Christmas lights is brightly coloured, and brings an air of
@@ -431,7 +431,7 @@ A large Christmas pine tree, covered with tinsel and baubles lights up the room.
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 Christmas tree pine large~
    This large and beautiful tree gives off a rich scent of fresh pine, long
@@ -440,13 +440,13 @@ baubles hang here and there, along with assorted wooden toys.  Soft glowing
 lights surround the entire tree with a warm halo-like haze.  
 ~
 #1339
-a Christmas pudding~
+Christmas pudding~
 a plump Christmas pudding~
 A plump Christmas pudding has been left here, what's wrong with it?~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 pudding christmas~
    A wonderfully delicious looking pudding filled with festive fruits and
@@ -459,7 +459,7 @@ christmas santa claus hat~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 christmas santa claus hat~
    This bright red hat is trimmed with soft white fur, a little fluffy pom-pom
@@ -472,7 +472,7 @@ A Christmas stocking hangs expectantly from the wall.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 99 0 -1 0
-1 1 0 0
+1 1 0 0 0
 E
 christmas stocking~
    This rather large knitted stocking has been designed to hold a LOT of
@@ -485,7 +485,7 @@ A pretty heart shaped candy with a message on it lies here.~
 ~
 0 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 1309
 #1343
 code conduct~
@@ -494,7 +494,7 @@ The Code of Conduct was placed here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 code conduct~
    The United States Military Code of Conduct
@@ -532,7 +532,7 @@ A sword so ultimately powerful that it is cheesy.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 4 5 14
-1 1 0 0
+1 1 0 0 0
 #1345
 key gateguard~
 a key~
@@ -540,7 +540,7 @@ The gateguards key was left here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1369
 Memorial 9.11 9/11 stone pyramid 911~
 a 911 memorial~
@@ -548,7 +548,7 @@ A tapered pyramid of dark stone rises from floor to ceiling.~
 ~
 8 e 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 plaque base~
    To the memory of the thousands who died, and for the hundreds of millions
@@ -571,7 +571,7 @@ An American flag is hung at half mast to mourn the World's loss.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 flag american mast half 1FEB03~
    The flag hangs limp and still unstirred by the wind. As if it mourns along with the
@@ -629,7 +629,7 @@ A large pile of cash and coins are labeled "Rumble's Gambling Winnings."~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 150 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1389
 obvious award~
 the "thanks for stating the obvious" award~
@@ -637,7 +637,7 @@ The "thanks for stating the obvious" award lies here majestically, waiting to be
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 obvious award~
    This award was created for those who have the knack of stating what everyone
@@ -650,7 +650,7 @@ The "I don't know how to talk on the right channel" award is waiting to be award
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 award channel~
    The award is huge and cumbersome.  It is a large gold plated telephone
@@ -664,7 +664,7 @@ A bottle of deodorant is begging to be sprayed~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 1 0
-1 9 0 0
+1 9 0 0 0
 T 1362
 E
 deodorant bottle~
@@ -678,7 +678,7 @@ A postal worker's shotgun is beckoning you.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 1 1 1 12
-1 1 0 0
+1 1 0 0 0
 T 45
 E
 shotgun~
@@ -691,7 +691,7 @@ Dorothy left her ruby slippers here. Maybe they can take you home.~
 ~
 11 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 1391
 E
 ruby slippers~
@@ -811,7 +811,7 @@ This poem was written by a Marine stationed in Okinawa Japan.
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #1398
 rotten mistletoe~
 some rotten mistletoe~
@@ -819,5 +819,5 @@ This mistletoe reeks of mold and decay.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 1 0 0 1
-1 1 0 0
+1 1 0 0 0
 $~

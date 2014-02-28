@@ -420,7 +420,7 @@ else
 end
 ~
 #335
-Camille Napalm Assembly Quest - 300~
+Camille Napalm Assemble Quest - 300~
 0 j 100
 ~
 if %actor.is_pc%
@@ -543,7 +543,7 @@ elseif %cmd.mudcommand% == buy
     %load% mob %pet_vnum%
     %force% %pet_name% mfollow %actor%
     dg_affect %pet_name% charm on 999
-    emote opens the stable door and returns leading your horse by its reins.
+    emote opens the stable door and returns leading a horse by its reins.
     tell %actor.name% here you go. Treat'em well.
     nop %actor.gold(-%pet_cost%)%
   end

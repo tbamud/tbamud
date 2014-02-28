@@ -5,7 +5,7 @@ A Beer Keg is here with the tap already in it.~
 ~
 23 o 0 0 0 0 0 0 0 0 0 0 0
 50 50 1 0
-55 0 0 0
+55 0 0 0 0
 T 10400
 #10401
 beer glass beer~
@@ -14,7 +14,7 @@ A Beer Glass is on the ground here.~
 ~
 17 o 0 0 0 ao 0 0 0 0 0 0 0
 50 50 1 0
-55 10 0 0
+55 10 0 0 0
 #10402
 forest map~
 a forest map~
@@ -22,7 +22,7 @@ A forest map lies here rolled up.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 750 0 0
+1 750 0 0 0
 E
 map forest~
 Area     : A Small Forest
@@ -48,13 +48,13 @@ A tacky wooden sign is tacked into the ground by a tall oak.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 wooden sign tacky~
   +----------------------------+
-  | @DMiz'real@n and Orchan Forest |
+  | 	DMiz'real	n and Orchan Forest |
 +----------------------------------+
-|  The forest of @DMiz'real@n lies     | 
+|  The forest of 	DMiz'real	n lies     | 
 |   to the north of this forest.   |
 |----------------------------------|
 |   To the south lies the Orchan   |
@@ -73,7 +73,7 @@ A long sword shines on the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 1 12 3
-8 347 0 5
+8 347 0 5 0
 #10405
 broze armor~
 bronze armor~
@@ -81,7 +81,7 @@ Bronze aromor glimmers in the light.~
 ~
 9 0 0 0 0 adf 0 0 0 0 0 0 0
 4 0 0 0
-15 362 0 4
+15 362 0 4 0
 #10406
 bronze helm~
 a bronze helm~
@@ -89,7 +89,7 @@ A bronze helm is on the ground.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 9 0 0 0
-5 346 0 4
+5 346 0 4 0
 #10407
 leather boots~
 a pair of leather boots~
@@ -97,7 +97,7 @@ A pair of boots are strewn about here.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 4 0 0 0
-3 150 0 2
+3 150 0 2 0
 #10408
 metal gloves~
 a pair of metal gloves~
@@ -105,7 +105,7 @@ A pair of metal gloves lie here.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
-5 124 0 2
+5 124 0 2 0
 #10409
 wooden shield~
 a wooden shield~
@@ -113,7 +113,7 @@ A wooden shield is on the ground here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 7 0 0 0
-3 4 0 3
+3 4 0 3 0
 #10410
 town map~
 a town map~
@@ -121,7 +121,7 @@ A map has be carelessly droped here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 800 0 0
+1 800 0 0 0
 E
 town map~
 Area    : Orchan Village
@@ -150,7 +150,7 @@ A road sign is staked into the ground on the side of the road~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 road sign~
    +------+
@@ -177,7 +177,7 @@ A sheet of map parchment has been droped.~
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 170 0 0
+1 170 0 0 0
 #10413
 ink pen~
 an ink pen~
@@ -185,7 +185,7 @@ An ink pen is on the ground near your feet.~
 ~
 21 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 225 0 0
+2 225 0 0 0
 #10414
 house sign~
 a house sign~
@@ -193,7 +193,7 @@ A sign has been placed neatly onto the door.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 sign~
   +----------------+
@@ -213,7 +213,7 @@ A short sword shimmers from the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 1 8 3
-5 312 0 2
+5 312 0 2 0
 #10416
 dagger~
 a dagger~
@@ -221,7 +221,7 @@ A dagger is stuck in the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 1 1 5 3
-2 224 0 2
+2 224 0 2 0
 #10417
 silver dagger~
 a silver dagger~
@@ -229,7 +229,7 @@ A silver dagger lies here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 2 13 3
-2 352 0 2
+2 352 0 2 0
 #10418
 diamond encrusted long sword~
 a diamond encrusted long sword~
@@ -237,7 +237,7 @@ A diamond encrusted long sword shimmers from the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 4 3 12 3
-8 647 0 4
+8 647 0 4 0
 #10419
 spear~
 a spear~
@@ -245,7 +245,7 @@ A spear has benn oddly placed here.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 2 1 8 14
-3 274 0 2
+3 274 0 2 0
 #10420
 war hammer~
 a war hammer~
@@ -253,7 +253,7 @@ A war hammer lies on the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 2 1 14 7
-14 289 0 3
+14 289 0 3 0
 #10421
 diamond encrusted armor~
 diamond encrusted armor~
@@ -261,7 +261,7 @@ Diamond encrusted armor lies on the ground.~
 ~
 9 0 0 0 0 ad 0 0 0 0 0 0 0
 10 0 0 0
-10 624 0 5
+10 624 0 5 0
 #10422
 diamond encrusted leggings~
 a pair os diamond encrusted leggings~
@@ -269,7 +269,7 @@ A pair os diamond encrusted leggings lies on the ground here.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 10 0 0 0
-8 675 0 4
+8 675 0 4 0
 #10423
 diamond gloves~
 a pair of diamond gloves~
@@ -277,7 +277,7 @@ A pair of diamond gloves have been left here.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 10 0 0 0
-5 657 0 4
+5 657 0 4 0
 #10424
 diamond helm~
 a diamond helm~
@@ -285,7 +285,7 @@ A diamond helm has been placed here.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 9 0 0 0
-4 681 0 4
+4 681 0 4 0
 #10425
 siamond shield~
 a diamond shield~
@@ -293,7 +293,7 @@ A diamond shield lies on the ground.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
-7 661 0 4
+7 661 0 4 0
 #10426
 silver boots~
 a pair of silve boots~
@@ -301,7 +301,7 @@ A pair of silver boots lies on the ground.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-5 628 0 0
+5 628 0 0 0
 #10427
 Zone Description Sign~
 a Zone Description Sign~
@@ -309,7 +309,7 @@ A Zone Description Sign Has been placed here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 Zone Description Sign~
 +------------------+
@@ -336,30 +336,30 @@ A maze map(not for mortals)~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 30
+1 1 0 30 0
 E
 map maze~
-@r-------------------------------------------------------
+	r-------------------------------------------------------
                                                        
-@b                               DED    
-@b                                |
-@b                DED  DED  DED--MOD--DED   X --MOD
-@b                 |    |         |         |    |
-@b            X -- X -- X   CNT-- X         X --MOD--DED
-@b            |         |         |         |
-@b      DED-- X    X --MOD-- X -- X -- X -- X
-@b            |    |    |         |
-@b  X -- X -- X   DED   X        MOD
-@b  |                   |
-@b  X                  DED
-@b  |
-@b ENT
+	b                               DED    
+	b                                |
+	b                DED  DED  DED--MOD--DED   X --MOD
+	b                 |    |         |         |    |
+	b            X -- X -- X   CNT-- X         X --MOD--DED
+	b            |         |         |         |
+	b      DED-- X    X --MOD-- X -- X -- X -- X
+	b            |    |    |         |
+	b  X -- X -- X   DED   X        MOD
+	b  |                   |
+	b  X                  DED
+	b  |
+	b ENT
 
-@r-------------------------------------------------------
-@yENT: Beginning              MOD: Monsters Den
-@yDED: Dead End                 X: Just a Regular Maze Room
-@yCNT: Center of the Maze         @BRooms: 31
-@r-------------------------------------------------------@n
+	r-------------------------------------------------------
+	yENT: Beginning              MOD: Monsters Den
+	yDED: Dead End                 X: Just a Regular Maze Room
+	yCNT: Center of the Maze         	BRooms: 31
+	r-------------------------------------------------------	n
 ~
 #10429
 Infa Armor~
@@ -367,8 +367,8 @@ Infra Armor~
 Infra armor sits here~
 ~
 9 ag 0 0 0 ad 0 0 0 o 0 0 0
-30 0 0 0
-16 892 0 7
+10 0 0 0
+16 892 0 7 0
 T 10413
 E
 Infa armor~
@@ -388,7 +388,7 @@ Taylors Journal sits here for people to read.~
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 10408
 #10431
 Master Map~
@@ -397,44 +397,37 @@ A Master Map lies on the ground here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-4 1000 0 0
+4 1000 0 0 0
 E
-master map~
-@bMaster Map
-@r*=================+==================================*
-@r| @bPage 1        @r|            @bForest Map              @r|
-@r| @bPage 2        @r|            @bVillage Map             @r|    
-@r| @bPage 3        @r|            @bMaze Map                @r|   
-@r+=================+==================================+
-|                                                    |
-|    @b@uTo look at any of these maps, it is look (#)@n@r    |
-|                                                    |
-*====================================================*@n
-~
-E
-1~
-@bArea     : A Small Forest
-@bLevel    : Any Level
-@r-------------------------------------------------------
-@b                  WOD
-                   |                            
-             BET--WOP--NTF--FTF  ENF                           
-              |    |         |    |
-             HSE  LLP--ENF  SHK--LKE                                        
-@r-------------------------------------------------------
-@bWOD: Further into the Woods    LLP: Lightly Lit Path
-BET: Barricade of Trees        ENF: End of Forest
-WOP: Woodland Path             NTF: Near the Tree Fort
-FTF: Foot of the Fort          SHK: A Small Shack
-LKE: Lake
-@r-------------------------------------------------------
+3~
+	r-------------------------------------------------------
+                                                       
+	b                               DED    
+	b                                |
+	b                DED  DED  DED--MOD--DED   X --MOD
+	b                 |    |         |         |    |
+	b            X -- X -- X   CNT-- X         X --MOD--DED
+	b            |         |         |         |
+	b      DED-- X    X --MOD-- X -- X -- X -- X
+	b            |    |    |         |
+	b  X -- X -- X   DED   X        MOD
+	b  |                   |
+	b  X                  DED
+	b  |
+	b ENT
+
+	r-------------------------------------------------------
+	yENT: Beginning              MOD: Monsters Den
+	yDED: Dead End                 X: Just a Regular Maze Room
+	yCNT: Center of the Maze         	BRooms: 31
+	r-------------------------------------------------------	n
 ~
 E
 2~
-@bArea    : Orchan Village
+	bArea    : Orchan Village
 Level   : Any
-@r-------------------------------------------------------
-@b                                                        
+	r-------------------------------------------------------
+	b                                                        
                 MSH                       
                  |                      
                 MST--MST--VIW             
@@ -445,36 +438,43 @@ Level   : Any
                  |    |    |            
                 ELD  WPS--ROR     
 
-@r-------------------------------------------------------
-@bGTE: Gate         ELD: Village Elder
+	r-------------------------------------------------------
+	bGTE: Gate         ELD: Village Elder
 ROR: Rock Road    VIW: Village Warrior
 WPS: Weapon Shop  MST: Main Street
 ACS: Amor Shop    MSH: Map Shop 
-@r-------------------------------------------------------
+	r-------------------------------------------------------
 ~
 E
-3~
-@r-------------------------------------------------------
-                                                       
-@b                               DED    
-@b                                |
-@b                DED  DED  DED--MOD--DED   X --MOD
-@b                 |    |         |         |    |
-@b            X -- X -- X   CNT-- X         X --MOD--DED
-@b            |         |         |         |
-@b      DED-- X    X --MOD-- X -- X -- X -- X
-@b            |    |    |         |
-@b  X -- X -- X   DED   X        MOD
-@b  |                   |
-@b  X                  DED
-@b  |
-@b ENT
-
-@r-------------------------------------------------------
-@yENT: Beginning              MOD: Monsters Den
-@yDED: Dead End                 X: Just a Regular Maze Room
-@yCNT: Center of the Maze         @BRooms: 31
-@r-------------------------------------------------------@n
+1~
+	bArea     : A Small Forest
+	bLevel    : Any Level
+	r-------------------------------------------------------
+	b                  WOD
+                   |                            
+             BET--WOP--NTF--FTF  ENF                           
+              |    |         |    |
+             HSE  LLP--ENF  SHK--LKE                                        
+	r-------------------------------------------------------
+	bWOD: Further into the Woods    LLP: Lightly Lit Path
+BET: Barricade of Trees        ENF: End of Forest
+WOP: Woodland Path             NTF: Near the Tree Fort
+FTF: Foot of the Fort          SHK: A Small Shack
+LKE: Lake
+	r-------------------------------------------------------
+~
+E
+master map~
+	bMaster Map
+	r*=================+==================================*
+	r| 	bPage 1        	r|            	bForest Map              	r|
+	r| 	bPage 2        	r|            	bVillage Map             	r|    
+	r| 	bPage 3        	r|            	bMaze Map                	r|   
+	r+=================+==================================+
+|                                                    |
+|    	b	uTo look at any of these maps, it is look (#)	n	r    |
+|                                                    |
+*====================================================*	n
 ~
 #10432
 map~
@@ -483,24 +483,7 @@ DO NOT LOOK!~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 200 0 0
-E
-legend~
-                             +------+
-                             |LEGEND|                     
-       +---------------------+------+--------------------+
-       | ---:  Gate                :X::  A Dead End      |
-       | : ::  Golden Road         EHS:  Elders House    |
-       | MST:  Main Street         PSH:  Items Shop      |
-       | TSQ:  Town Square         BRD:  Brick Road      |
-       | SIN:  Small Intersection  INN:  Inn             |
-       | TPT:  Trodden Path        JSH:  Jaks Shop       |
-       | CRD:  Cement Road         PND:  Pond            |
-       | DRD:  Dirt Road           QLA:  Quan Road       |
-       | STB:  Stable              CTY:  Court Yard      |
-       | GRD:  Gold Road           WEL:  Well            |
-       +-------------------------------------------------+
-~
+1 200 0 0 0
 E
 map~
   ______________________________     ___________________________
@@ -535,6 +518,23 @@ map~
                                             
                            To see the legend it is 'look legend'
 ~
+E
+legend~
+                             +------+
+                             |LEGEND|                     
+       +---------------------+------+--------------------+
+       | ---:  Gate                :X::  A Dead End      |
+       | : ::  Golden Road         EHS:  Elders House    |
+       | MST:  Main Street         PSH:  Items Shop      |
+       | TSQ:  Town Square         BRD:  Brick Road      |
+       | SIN:  Small Intersection  INN:  Inn             |
+       | TPT:  Trodden Path        JSH:  Jaks Shop       |
+       | CRD:  Cement Road         PND:  Pond            |
+       | DRD:  Dirt Road           QLA:  Quan Road       |
+       | STB:  Stable              CTY:  Court Yard      |
+       | GRD:  Gold Road           WEL:  Well            |
+       +-------------------------------------------------+
+~
 #10433
 spy glasses~
 spy glasses~
@@ -542,16 +542,16 @@ A pair of spy glasses lies here.~
 ~
 12 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 0 10
+1 1000 0 10 0
 T 10417
 #10434
 Infra Armor~
 the Infra Armor~
 Infra armor sits here~
 ~
-9 ag 0 0 0 d 0 0 0 o 0 0 0
-30 0 0 0
-16 892 0 7
+9 ag 0 0 0 ad 0 0 0 o 0 0 0
+10 0 0 0
+16 892 0 7 0
 A
 1 3
 A
@@ -565,6 +565,6 @@ A bag is neatly folded here.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 T 10416
 $~

@@ -46,6 +46,10 @@ D0
 ~
 ~
 0 0 3
+D2
+~
+~
+2 0 -1
 S
 T 199
 #3
@@ -147,12 +151,12 @@ Writing Good Descriptions~
 descriptions.  This will also cover proper grammar and the use of the text
 editor where you enter all of your long descriptions.  
    The hardest part for most new builders is writing descriptions. We assume 
-that you are reasonably literate and know basic English grammar and spelling. 
-If this does not describe you, we humbly suggest that you take some English 
-classes, get a dictionary, and start learning. Proper grammar should be used 
-at all times. If you can write reasonably well, great! I am sure you will still
-find this hallway useful. We will discuss some of the issues related to writing
-specifically for a MUD, such as:
+that you are reasonably literate and know basic grammar and spelling. If 
+this does not describe you, we humbly suggest that you take some classes, 
+get a dictionary, and start learning. Proper grammar should be used at all 
+times. If you can write reasonably well, great! I am sure you will still 
+find this hallway useful. We will discuss some of the issues related to 
+writing specifically for a MUD, such as:
 @RHELP DESCRIBING
 HELP YOU
 HELP BIAS
@@ -558,6 +562,10 @@ from you. It's a beautiful reciprocal arrangement.
 @(HELP QUOTE@)
 ~
 0 8 0 0 0 0
+D2
+~
+~
+0 0 33
 E
 Catcher Rye~
    The mark of the immature man is that he wants to die nobly for a cause, 

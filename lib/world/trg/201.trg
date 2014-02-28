@@ -3,10 +3,10 @@ Seabreeze/Landbreeze - All Rooms~
 2 b 75
 ~
 if ( %time.hour% >=7 && %time.hour% <=19)
-  %echo% @WA seabreeze arrives from the south, bringing in the smell of salt.@n
+  %echo% 	WA seabreeze arrives from the south, bringing in the smell of salt.	n
   return 0
 else
-  %echo% @WA landbreeze arrives swiftly from the north.@n
+  %echo% 	WA landbreeze arrives swiftly from the north.	n
   return 0
 end
 ~
@@ -14,7 +14,7 @@ end
 Seawaves for the Seashore~
 2 b 75
 ~
-%echo% @CThe waves roll onto the beach and breaks gently...@n
+%echo% 	CThe waves roll onto the beach and breaks gently...	n
 return 0
 ~
 #20103
@@ -22,7 +22,7 @@ Seabreeze only - all~
 2 b 100
 ~
 if ( %time.hour% >=7 && %time.hour% <=19)
-  %echo% @WA seabreeze arrives from the south, bringing in the smell of salt.@n
+  %echo% 	WA seabreeze arrives from the south, bringing in the smell of salt.	n
   return 0
 end
 ~
@@ -30,14 +30,14 @@ end
 water swelling - shallow waters~
 2 b 50
 ~
-%echo% @CThe waves crawl inland, swelling occasionally as an incipient wind arrives from the open ocean.@n
+%echo% 	CThe waves crawl inland, swelling occasionally as an incipient wind arrives from the open ocean.	n
 return 0
 ~
 #20105
 deep wave~
 2 b 50
 ~
-%echo% @WA wind howls and blows forcefully, forming froth at the surface of the dark waters.@n
+%echo% 	WA wind howls and blows forcefully, forming froth at the surface of the dark waters.	n
 return 0
 ~
 #20106
@@ -59,10 +59,10 @@ waves + wind~
 eval line %random.2%
 switch %line%
   case 1
-    %echo% @WHarsh, cold wind tears at you in all directions.@n       
+    %echo% 	WHarsh, cold wind tears at you in all directions.	n       
   break
   default
-    %echo% @BThe waves rush in as the ocean body shifts...@n
+    %echo% 	BThe waves rush in as the ocean body shifts...	n
   break
 done
 ~
@@ -73,11 +73,11 @@ wind+pounding~
 eval line %random.2%
 switch %line%
   case 1
-    %echo% @WHarsh, cold wind tears at you in all directions.@n       
+    %echo% 	WHarsh, cold wind tears at you in all directions.	n       
     return 0
   break
   default
-    %echo% @BThe incessant waves pounds the base of the cliff...@n
+    %echo% 	BThe incessant waves pounds the base of the cliff...	n
     return 0
   break
 done
@@ -237,49 +237,49 @@ tosses char around waters - 20132, 20140, 20141, 20142~
 2 g 100
 ~
 if !(%actor.varexists(breath_air)%)
-  %send% %actor% @RGULP AIR@W! You're running out of oxygen!
+  %send% %actor% 	RGULP AIR	W! You're running out of oxygen!
 end
 switch %random.10%
   case 1
     wait 1 secs
-    %send% %actor% @BThe powerful and formidable currents takes tosses you @Cnorth@B!@n
-    %echoaround% %actor% @B %actor.name% is pulled screaming @Cnorth@B by the forceful currents!@n
+    %send% %actor% 	BThe powerful and formidable currents takes tosses you 	Cnorth	B!	n
+    %echoaround% %actor% 	B %actor.name% is pulled screaming 	Cnorth	B by the forceful currents!	n
     %force% %actor% north
   break
   case 2
     wait 1 secs
-    %send% %actor% @BThe powerful and formidable currents takes tosses you @Csouth@B!@n
-    %echoaround% %actor% @B %actor.name% is pulled screaming @Csouth@B by the forceful currents!@n
+    %send% %actor% 	BThe powerful and formidable currents takes tosses you 	Csouth	B!	n
+    %echoaround% %actor% 	B %actor.name% is pulled screaming 	Csouth	B by the forceful currents!	n
     %force% %actor% south
   break
   case 3
     wait 1 secs
-    %send% %actor% @BThe powerful and formidable currents takes tosses you @Ceast@B!@n
-    %echoaround% %actor% @B %actor.name% is pulled screaming @Ceast@B by the forceful currents!@n
+    %send% %actor% 	BThe powerful and formidable currents takes tosses you 	Ceast	B!	n
+    %echoaround% %actor% 	B %actor.name% is pulled screaming 	Ceast	B by the forceful currents!	n
     %force% %actor% east
   break
   case 4
     wait 1 secs
-    %send% %actor% @BThe powerful and formidable currents takes tosses you @Cwest@B!@n
-    %echoaround% %actor% @B %actor.name% is pulled screaming @Cwest@B by the forceful currents!@n
+    %send% %actor% 	BThe powerful and formidable currents takes tosses you 	Cwest	B!	n
+    %echoaround% %actor% 	B %actor.name% is pulled screaming 	Cwest	B by the forceful currents!	n
     %force% %actor% west
   break
   case 5
     wait 1 secs
-    %send% %actor% @BThe waves surges and grew to tower over you. Then they come crashing down and @Cdrowns@B you beneath the surface!@n
-    %echoaround% %actor% @BA gigantic wave forms and comes crashing @Cdown@B upon %actor.name%!@n
+    %send% %actor% 	BThe waves surges and grew to tower over you. Then they come crashing down and 	Cdrowns	B you beneath the surface!	n
+    %echoaround% %actor% 	BA gigantic wave forms and comes crashing 	Cdown	B upon %actor.name%!	n
     %force% %actor% down
   break
   case 6
     wait 1 secs
-    %send% %actor% @BYou hit a nearby jagged reef and everything went dark...@n
+    %send% %actor% 	BYou hit a nearby jagged reef and everything went dark...	n
     %teleport% %actor% 20146
     %damage% %actor% 100
   break
   default
     wait 2 secs
-    %send% %actor% @BUnderwater seacurrents sucks you @Cdownwards@B and pushes you beneath the surface!@n
-    %echoaround% %actor% @BA gigantic wave forms and comes crashing @Cdown@B upon %actor.name%!@n
+    %send% %actor% 	BUnderwater seacurrents sucks you 	Cdownwards	B and pushes you beneath the surface!	n
+    %echoaround% %actor% 	BA gigantic wave forms and comes crashing 	Cdown	B upon %actor.name%!	n
     %force% %actor% down
     %damage% %actor% 50
   break
@@ -291,42 +291,42 @@ Underwater currents - 20139 20145 20144 20143~
 ~
 if %actor.is_pc%
   if !(%actor.varexists(breath_air)%)
-    %send% %actor% @WPANIC! You ran out of oxygen and feel as if your lungs are going to burst!@n
+    %send% %actor% 	WPANIC! You ran out of oxygen and feel as if your lungs are going to burst!	n
     %damage% %actor% 10
   else
-    %send% %actor% @WYou hold your breath as long as you can before they escape through your mouth as bubbles...@n
+    %send% %actor% 	WYou hold your breath as long as you can before they escape through your mouth as bubbles...	n
     rdelete breath_air %actor.id%
   end
   eval line %random.10%
   switch %line%
     case 1
       wait 1 secs
-      %send% %actor% @BUnderwater sea currents hauls you @Cnorth@B!@n
-      %echoaround% %actor% @B %actor.name% is pulled @Cnorth@B by invisible hands!@n
+      %send% %actor% 	BUnderwater sea currents hauls you 	Cnorth	B!	n
+      %echoaround% %actor% 	B %actor.name% is pulled 	Cnorth	B by invisible hands!	n
       %force% %actor% north
     break
     case 2
       wait 1 secs
-      %send% %actor% @BUnderwater sea currents hauls you @Csouth@B!@n
-      %echoaround% %actor% @B %actor.name% is pulled @Csouth@B by invisible hands!@n
+      %send% %actor% 	BUnderwater sea currents hauls you 	Csouth	B!	n
+      %echoaround% %actor% 	B %actor.name% is pulled 	Csouth	B by invisible hands!	n
       %force% %actor% south
     break
     case 3
       wait 1 secs
-      %send% %actor% @BUnderwater sea currents hauls you @Ceast@B!@n
-      %echoaround% %actor% @B %actor.name% is pulled @Ceast@B by invisible hands!@n
+      %send% %actor% 	BUnderwater sea currents hauls you 	Ceast	B!	n
+      %echoaround% %actor% 	B %actor.name% is pulled 	Ceast	B by invisible hands!	n
       %force% %actor% east
     break
     case 4
       wait 1 secs
-      %send% %actor% @BUnderwater sea currents hauls you @Cwest@B!@n
-      %echoaround% %actor% @B %actor.name% is pulled screaming @Cwest@B by the forceful currents!@n
+      %send% %actor% 	BUnderwater sea currents hauls you 	Cwest	B!	n
+      %echoaround% %actor% 	B %actor.name% is pulled screaming 	Cwest	B by the forceful currents!	n
       %force% %actor% west
     break
     default
       wait 1 secs
-      %send% %actor% @BThe currents suddenly go @Cup@B, and you are dragged above the surface!@n
-      %echoaround% %actor% @BThe currents drags %actor.name% @Cup@B@n
+      %send% %actor% 	BThe currents suddenly go 	Cup	B, and you are dragged above the surface!	n
+      %echoaround% %actor% 	BThe currents drags %actor.name% 	Cup	B	n
       %force% %actor% up
     break
   done
@@ -395,8 +395,8 @@ if !(%actor.varexists(receive_oceana)%)
       *yes you have the requirements
       %echo% The island trembles...
       wait 3 secs
-      %echoaround% %actor% @CWater burst out from the tip of the cliff, forming a gigantic waterfall over %actor.name%@n
-      %send% %actor% @CWater burst out from the tip of the cliff, forming a gigantic waterfall over you!@n
+      %echoaround% %actor% 	CWater burst out from the tip of the cliff, forming a gigantic waterfall over %actor.name%	n
+      %send% %actor% 	CWater burst out from the tip of the cliff, forming a gigantic waterfall over you!	n
       wait 4 secs
       wait 2 secs
       %send% %actor% A voice says to you, 'You are worthy of this blade, receive this gift from  Leviathius - Son of Leviathan.'
@@ -420,12 +420,12 @@ Sword restriction - 20111~
 1 j 100
 ~
 if !(%actor.varexists(receive_oceana)%)
-  %send% %actor% You try to wield the sword @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@n, but it freezes your hand and you hurriedly drop it onto the floor.
-  %echoaround% %actor% %actor.name% accidentally drops @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@n to the floor in an attempt to wield it.
+  %send% %actor% You try to wield the sword 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	n, but it freezes your hand and you hurriedly drop it onto the floor.
+  %echoaround% %actor% %actor.name% accidentally drops 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	n to the floor in an attempt to wield it.
   %force% %actor% drop oceana
 else
   %send% %actor% Energy flows into your veins as visions of the vast ocean and its interminable depths floods your vision.
-  %echoaround% %actor% %actor.name% looks refreshed after wielding @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@n.
+  %echoaround% %actor% %actor.name% looks refreshed after wielding 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	n.
 end
 ~
 #20123
@@ -438,23 +438,23 @@ if (%arg%==fusion)
   if !(%actor.hitp%>=%half_hit%)
     if !(%actor.mana%<50)
       eval %actor.mana% %actor.mana%-50
-      %send% %actor% @BYou weave a web of healing around you with the aid of the blade...@n
-      %echoaround% %actor% @B%actor.name% weaves a web of healing around him with the aid of %actor.hisher% @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@n.
+      %send% %actor% 	BYou weave a web of healing around you with the aid of the blade...	n
+      %echoaround% %actor% 	B%actor.name% weaves a web of healing around him with the aid of %actor.hisher% 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	n.
       while (%actor.hitp%<%half_hit%)
-        %send% %actor% @BWebs of healing fixes your scars and injuries...@n
+        %send% %actor% 	BWebs of healing fixes your scars and injuries...	n
         wait 1 secs
         %damage% %actor% -10
       done
-      %send% %actor% @BYou lost connection with the sword.@n
+      %send% %actor% 	BYou lost connection with the sword.	n
     else
-      %send% %actor% @BNot enough mana to complete the transition!@n
-      %send% %actor% @BYou lost connection with the sword.@n
+      %send% %actor% 	BNot enough mana to complete the transition!	n
+      %send% %actor% 	BYou lost connection with the sword.	n
     end
   else
-    %send% %actor% @BThe blade refuses to heal you because you are healthy enough!@n
+    %send% %actor% 	BThe blade refuses to heal you because you are healthy enough!	n
   end
 else
-  %send% %actor% @BThat is not a function of the blade.@n
+  %send% %actor% 	BThat is not a function of the blade.	n
 end
 ~
 #20124
@@ -495,11 +495,11 @@ Gulp air! 41 40 42 32~
 gulp~
 if (%arg%==air)
   if !(%actor.varexists(breath_air)%)
-    %send% %actor% @WYou gulp in a mouthful of air!@n
+    %send% %actor% 	WYou gulp in a mouthful of air!	n
     set breath_air 1
     remote breath_air %actor.id%
   else
-    %send% %actor% @WYou can't take in anymore!@n
+    %send% %actor% 	WYou can't take in anymore!	n
   end
 end
 ~
@@ -513,45 +513,45 @@ if (%arg%==aurorafall)
 %damage% %actor% 100
       eval %actor.mana% %actor.mana%-100
       eval victim %actor.fighting%
-%echoaround% %actor% @W%actor.name% performs Aurora Fall with %actor.hisher% @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W.@n
-      %echoaround% %actor% @W%actor.name% whirls @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W around %actor.himher% creating @bf@Br@Co@Wzen illusions of the blade.@n
-      %send% %actor% @WYou whirl @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W around you, creating @bf@Br@Co@Wsted illusions of the sacred blade.@n
+%echoaround% %actor% 	W%actor.name% performs Aurora Fall with %actor.hisher% 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	W.	n
+      %echoaround% %actor% 	W%actor.name% whirls 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	W around %actor.himher% creating 	bf	Br	Co	Wzen illusions of the blade.	n
+      %send% %actor% 	WYou whirl 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	W around you, creating 	bf	Br	Co	Wsted illusions of the sacred blade.	n
       wait 2 secs
-      %echo% @WThe surroundings @Dloose@W their colours as @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W rapidly @Ddrains@W energy from them.@n
+      %echo% 	WThe surroundings 	Dloose	W their colours as 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	W rapidly 	Ddrains	W energy from them.	n
       wait 2 secs
 if (%actor.fighting%)
 if ((%victim.is_pc%))
-      %send% %actor% @WYour blade refuses to kill %victim.himher%.@n
+      %send% %actor% 	WYour blade refuses to kill %victim.himher%.	n
 halt
 end
-      %echoaround% %actor% @W%actor.name%'s movement becomes a @Dblur@W as %actor.himher% impales %victim.name%, inflicting @bretribution@W onto the enemy!@n
-      %send% %actor% @WYou put a step forward, movements becoming a @Dblur@W as you impale %victim.name% with your blade.@n
+      %echoaround% %actor% 	W%actor.name%'s movement becomes a 	Dblur	W as %actor.himher% impales %victim.name%, inflicting 	bretribution	W onto the enemy!	n
+      %send% %actor% 	WYou put a step forward, movements becoming a 	Dblur	W as you impale %victim.name% with your blade.	n
       set count 0
       while (%count%<10)
         if (!(%victim.hitp%<-10) && %victim% && %actor.fighting%)
       eval victim %actor.fighting%
-          %echoaround% %actor% @W%actor.name%'s @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@y e@Yx@Wplod@Ye@ys@W with a thousand burst of @Wb@Yr@bi@Wl@Yl@Ci@ba@Wn@bc@Ye@W!@n
-          %send% %actor% @WYour @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W explodes with a thousand burst of @Wb@Yr@bi@Wl@Yl@Ci@ba@Wn@bc@Ye@W!@n
-          %echo% @Y%victim.name% screams with agony!@n
+          %echoaround% %actor% 	W%actor.name%'s 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	y e	Yx	Wplod	Ye	ys	W with a thousand burst of 	Wb	Yr	bi	Wl	Yl	Ci	ba	Wn	bc	Ye	W!	n
+          %send% %actor% 	WYour 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	W explodes with a thousand burst of 	Wb	Yr	bi	Wl	Yl	Ci	ba	Wn	bc	Ye	W!	n
+          %echo% 	Y%victim.name% screams with agony!	n
           %damage% %victim% 100
           eval count %count%+1
 wait 2
 else
-%send% %actor% @WSparks fly from your @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W and creates an impact on the ground.@n
-%echoaround% %actor% @WSparks fly from %actor.name%'s @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W and creates an impact on the ground!@n
+%send% %actor% 	WSparks fly from your 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	W and creates an impact on the ground.	n
+%echoaround% %actor% 	WSparks fly from %actor.name%'s 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	W and creates an impact on the ground!	n
 %echo% The ground trembles...
 eval count %count%+1
 wait 2
         end
       done
 end
-      %echoaround% %actor% @WThe glow on %actor.name%'s @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W subsides...@n
-      %send% %actor% @WThe glow on your @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W subsides...@n
+      %echoaround% %actor% 	WThe glow on %actor.name%'s 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	W subsides...	n
+      %send% %actor% 	WThe glow on your 	bO	Bc	Ce	Wa	Cn	Ba 	bM	Be	Cr	Widia	Cn	Bu	bs	W subsides...	n
     else
-      %send% %actor% @WYou're not in the condition to use this function!@n
+      %send% %actor% 	WYou're not in the condition to use this function!	n
     end
   else
-    %send% %actor% @WYou're not in the condition to use this function!@n
+    %send% %actor% 	WYou're not in the condition to use this function!	n
   end
 end
 ~
@@ -566,7 +566,7 @@ switch %random.10%
 case 1
 switch %random.10%
 case 5
-%echoaround% %actor% %actor.name% finds a spiral @Ws@ye@Wa@ys@rh@ye@Wll!@n
+%echoaround% %actor% %actor.name% finds a spiral 	Ws	ye	Wa	ys	rh	ye	Wll!	n
 %send% %actor% You found a spiral shell!
 %load% obj 20101 %actor% inv
 break
@@ -576,12 +576,12 @@ case 3
 %load% obj 20104 %actor% inv
 break
 case 1
-%echoaround% %actor% %actor.name% finds a @MP@Wr@Mi@ms@Wm S@Mhe@Wll!@n
+%echoaround% %actor% %actor.name% finds a 	MP	Wr	Mi	ms	Wm S	Mhe	Wll!	n
 %send% %actor% You found a prism shell!
 %load% obj 20116 %actor% inv
 break
 default
-%echoaround% %actor% %actor.name% finds a @MP@Wr@Mi@ms@Wm S@Mh@ma@Wrd!@n
+%echoaround% %actor% %actor.name% finds a 	MP	Wr	Mi	ms	Wm S	Mh	ma	Wrd!	n
 %send% %actor% You found a prism shard!
 %load% obj 20115 %actor% inv
 break
@@ -593,7 +593,7 @@ case 2
 %load% obj 20104 %actor% inv
 break
 case 3
-%echoaround% %actor% %actor.name% finds a spiral @Ws@ye@Wa@ys@rh@ye@Wll!@n
+%echoaround% %actor% %actor.name% finds a spiral 	Ws	ye	Wa	ys	rh	ye	Wll!	n
 %send% %actor% You found a spiral shell!
 %load% obj 20101 %actor% inv
 break
@@ -614,7 +614,7 @@ if %arg%==tryny
   wait 2 secs
   say Hello %actor.name%, what brings you here this day?
   wait 2 secs
-  say I sell some stuff that you may want to buy, type @Rlist@n to show them.
+  say I sell some stuff that you may want to buy, type 	Rlist	n to show them.
   wait 2 secs
   smile
 end
@@ -705,7 +705,7 @@ CLIMB - 20109~
 2 c 100
 climb~
 if (%arg%==up)
-  %send% %actor% @GYou swiftly climb up the vines.@n
+  %send% %actor% 	GYou swiftly climb up the vines.	n
   %echoaround% %actor% %actor.name% grabs at hanging vines and deftly climbs %actor.hisher% way to the top.
   %teleport% %actor% 20157
   %force% %actor% look
@@ -725,7 +725,7 @@ if ((%arg%==man) || (%arg%==fool))
   wait 2 secs
   say What do you want %actor.name%?
   %send% %actor% 1) Talk
-  %send% %actor% 2) Trade @MP@Wr@Mi@ms@Wm S@Mh@ma@Wrds for @MP@Wr@Mi@ms@Wm S@Mhe@Wlls@n
+  %send% %actor% 2) Trade 	MP	Wr	Mi	ms	Wm S	Mh	ma	Wrds for 	MP	Wr	Mi	ms	Wm S	Mhe	Wlls	n
   %send% %actor% 3) say Can you make me some fine prism equipments?
 else
   %send% %actor% Greet who?
@@ -747,11 +747,11 @@ say I will make some for you if you would just bring me some of those stuff.
 Numder of shards - 20106~
 0 c 100
 2~
-%send% %actor% An Old Fool tells you 'Ten @MP@Wr@Mi@ms@Wm S@Mh@ma@Wrds@n is the same as a single @MP@Wr@Mi@ms@Wm S@Mhe@Wll@n.'
+%send% %actor% An Old Fool tells you 'Ten 	MP	Wr	Mi	ms	Wm S	Mh	ma	Wrds	n is the same as a single 	MP	Wr	Mi	ms	Wm S	Mhe	Wll	n.'
 wait 2 secs
-%send% %actor% An Old Fool tells you 'Holding a single shell is way lighter than having 10 shards, and it is wise to exchnage them to ease your load.'
+%send% %actor% An Old Fool tells you 'Holding a single shell is way lighter than having 10 shards, and it is wise to exchange them to ease your load.'
 wait 2 secs
-%send% %actor% An Old Fool tells you 'If you want just @MTRADE@n with me, and I'll exchange them for you.'
+%send% %actor% An Old Fool tells you 'If you want just 	MTRADE	n with me, and I'll exchange them for you.'
 eval i %actor.inventory%
 set no_of_shards 0
 while (%i%)
@@ -770,7 +770,7 @@ CLIMBDOWN! - 20157~
 2 c 0
 climb~
 if (%arg%==down)
-  %send% %actor% @GYou swing down the vines.@n
+  %send% %actor% 	GYou swing down the vines.	n
   %echoaround% %actor% %actor.name% grabs at hanging vines and swings down.
   %teleport% %actor% 20109
   %force% %actor% look
@@ -796,11 +796,11 @@ done
 if (%no_of_shards%<10)
   say You don't have enough shards for me to trade that many shells!
 else
-  %send% %actor% You give an Old Fool ten @MP@Wr@Mi@ms@Wm S@Mh@ma@Wrds!@n
-  %echoaround% %actor% %actor.name% gives ten @MP@Wr@Mi@ms@Wm S@Mh@ma@Wrds@n to an Old Fool.
+  %send% %actor% You give an Old Fool ten 	MP	Wr	Mi	ms	Wm S	Mh	ma	Wrds!	n
+  %echoaround% %actor% %actor.name% gives ten 	MP	Wr	Mi	ms	Wm S	Mh	ma	Wrds	n to an Old Fool.
   wait 2 secs
-  %send% %actor% An Old Fool gives you a @MP@Wr@Mi@ms@Wm S@Mhe@Wll@n.
-  %echoaround% %actor% An Old Fool gives %actor.name% a @MP@Wr@Mi@ms@Wm S@Mhe@Wll@n.
+  %send% %actor% An Old Fool gives you a 	MP	Wr	Mi	ms	Wm S	Mhe	Wll	n.
+  %echoaround% %actor% An Old Fool gives %actor.name% a 	MP	Wr	Mi	ms	Wm S	Mhe	Wll	n.
   set n 10
   while (%n%>0)
     %purge% %actor.inventory(20115)%
@@ -827,8 +827,8 @@ while (%i%)
 done
 if (%arg%==anklet)
   if (%no_of_shells%>=5)
-    %send% %actor% You hand the shells to the Fool, who gives you a @MP@Wr@Mi@ms@Wm @MA@Wn@Mk@ml@We@mt@n in return.
-    %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a @MP@Wr@Mi@ms@Wm @MA@Wn@Mk@ml@We@mt@n.
+    %send% %actor% You hand the shells to the Fool, who gives you a 	MP	Wr	Mi	ms	Wm 	MA	Wn	Mk	ml	We	mt	n in return.
+    %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a 	MP	Wr	Mi	ms	Wm 	MA	Wn	Mk	ml	We	mt	n.
     set n 5
     while (%n%>0)
       %purge% %actor.inventory(20116)%
@@ -841,8 +841,8 @@ if (%arg%==anklet)
 else
   if (%arg%==collar)
     if (%no_of_shells%>=5)
-      %send% %actor% You hand the shells to the Fool, who gives you a @MP@Wr@Mi@ms@Wm @MC@Wo@Ml@ml@Wa@Mr@n in return.
-      %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a @MP@Wr@Mi@ms@Wm @MC@Wo@Ml@ml@Wa@Mr@n.
+      %send% %actor% You hand the shells to the Fool, who gives you a 	MP	Wr	Mi	ms	Wm 	MC	Wo	Ml	ml	Wa	Mr	n in return.
+      %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a 	MP	Wr	Mi	ms	Wm 	MC	Wo	Ml	ml	Wa	Mr	n.
       set n 5
       while (%n%>0)
         %purge% %actor.inventory(20116)%
@@ -855,8 +855,8 @@ else
   else
     if (%arg%==dress) 
       if (%no_of_shells%>=15)
-        %send% %actor% You hand the shells to the Fool, who gives you a @MP@Wr@Mi@ms@Wm @MD@Wr@Me@ms@Ws@n in return.
-        %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a @MP@Wr@Mi@ms@Wm @MD@Wr@Me@ms@Ws@n.
+        %send% %actor% You hand the shells to the Fool, who gives you a 	MP	Wr	Mi	ms	Wm 	MD	Wr	Me	ms	Ws	n in return.
+        %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a 	MP	Wr	Mi	ms	Wm 	MD	Wr	Me	ms	Ws	n.
         set n 15
         while (%n%>0)
           %purge% %actor.inventory(20116)%
@@ -882,7 +882,7 @@ say You want me to make equipments for you.
 wait 2 secs
 nod
 wait 2 secs
-say I can make equipments out of prism shells. To do that, @RCREATE <OBJECT>@n and I will make you the item.
+say I can make equipments out of prism shells. To do that, 	RCREATE <OBJECT>	n and I will make you the item.
 %send% %actor% Prism Dress  - 15 Shells
 %send% %actor% Prism Collar - 05 Shells
 %send% %actor% Prism Anklet -  05 Shells
@@ -998,8 +998,8 @@ if (%actor.fighting%)
   set victim %actor.fighting%
   %damage% %victim% 100
   %force% %victim% scream
-  %echoaround% %actor% %actor.name%'s @bDeathly@bnirvana@W glows@n!
-  %send% %actor% Your @bDeathly@bnirvana@W glows@n at %victim.name%.
+  %echoaround% %actor% %actor.name%'s 	bDeathly	bnirvana	W glows	n!
+  %send% %actor% Your 	bDeathly	bnirvana	W glows	n at %victim.name%.
 end
 ~
 #20188
@@ -1021,7 +1021,7 @@ elseif %arg% == add
   set worthy_oceana 1
   remote worthy_oceana %actor.id%
 else
-  say Invalid command! @RPlease Add@n or @Rdelete@n?
+  say Invalid command! 	RPlease Add	n or 	Rdelete	n?
 end
 ~
 #20190
@@ -1039,16 +1039,16 @@ void!~
 1 c 1
 void~
 %teleport% %arg% 0
-%send% %arg% @CYou are swept away by a large tsunami!@n
+%send% %arg% 	CYou are swept away by a large tsunami!	n
 %force% %arg% look
-%echo% @CA large tsunami arrives and sweeps %arg% away!@n
+%echo% 	CA large tsunami arrives and sweeps %arg% away!	n
 ~
 #20192
 summon someone!- trans!~
 1 c 1
 trans~
-%send% %arg% @CA large tsunami arrives and carries you away!@n
-%echo% @CA large tsunami arrives and tosses %arg% onto the ground!@n
+%send% %arg% 	CA large tsunami arrives and carries you away!	n
+%echo% 	CA large tsunami arrives and tosses %arg% onto the ground!	n
 %teleport% %arg% %actor.name%
 %force% %arg% look
 ~
@@ -1057,7 +1057,7 @@ Telport Someone - Surfboard =)~
 1 c 1
 teleport~
 %teleport% %arg%
-%echo% @CA large tsunami arrives!@n
+%echo% 	CA large tsunami arrives!	n
 ~
 #20194
 remove trig~

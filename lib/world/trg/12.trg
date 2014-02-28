@@ -18,7 +18,7 @@ if %actor.is_pc%
   Eval test %test1.strlen%
   Eval che %sum%/1
   If %che% == %sum%
-    %echo% @WComputing results...@n
+    %echo% 	WComputing results...	n
     if (%speech%/===)
       if (%sum%==1)
         set sum Yes
@@ -44,23 +44,23 @@ if %actor.is_pc%
     end
     eval opt1 8 + %test%
     eval opt2 (2*%wid1.strlen%)+%sumslen.strlen%+5
-    %echo% @WWizzzzzzzzzz....@n
+    %echo% 	WWizzzzzzzzzz....	n
     if (%opt1%-2) == (%opt2%)
-      %echo% @c...%y%...@n
-      %echo% @c:@C..%y%..@c:@n
-      %echo% @c:@C:@G   %speech% @C  :@c:@n
-      %echo% @c:@C:.%y%.:@c:@n
-      %echo% @c:@C: %wid1%@G %sum% @C%wid1% :@c:@n
-      %echo% @c:@C:.%y%.:@c:@n
-      %echo% @c:..%y%..:@n
+      %echo% 	c...%y%...	n
+      %echo% 	c:	C..%y%..	c:	n
+      %echo% 	c:	C:	G   %speech% 	C  :	c:	n
+      %echo% 	c:	C:.%y%.:	c:	n
+      %echo% 	c:	C: %wid1%	G %sum% 	C%wid1% :	c:	n
+      %echo% 	c:	C:.%y%.:	c:	n
+      %echo% 	c:..%y%..:	n
     else
-      %echo% @r....%y%...@n
-      %echo% @r:@R...%y%..@r:@n
-      %echo% @r:@R:@G    %speech% @R  :@r:@n
-      %echo% @r:@R:..%y%.:@r:@n
-      %echo% @r:@R: %wid1%@G %sum% @R%wid1% :@r:@n
-      %echo% @r:@R:..%y%.:@r:@n
-      %echo% @r:...%y%..:@n
+      %echo% 	r....%y%...	n
+      %echo% 	r:	R...%y%..	r:	n
+      %echo% 	r:	R:	G    %speech% 	R  :	r:	n
+      %echo% 	r:	R:..%y%.:	r:	n
+      %echo% 	r:	R: %wid1%	G %sum% 	R%wid1% :	r:	n
+      %echo% 	r:	R:..%y%.:	r:	n
+      %echo% 	r:...%y%..:	n
     end
   end
 end
@@ -226,46 +226,46 @@ end
 eval forest_sounds %random.25%
 switch %forest_sounds%
   case 1
-    %echo% @gThe gently chirping of crickets peacefully resonate across the forest.@n
+    %echo% 	gThe gently chirping of crickets peacefully resonate across the forest.	n
   break
   case 2
-    %echo% A haze of @yfir@Wefl@yies@n dart inbetween some ancient cedars.
+    %echo% A haze of 	yfir	Wefl	yies	n dart inbetween some ancient cedars.
   break
   case 3
-    %echo% @DA thick fog drifts in, dampening the moss.@n
+    %echo% 	DA thick fog drifts in, dampening the moss.	n
   break
   case 4
-    %echo% @DThe area is surrounded by a visually impeneratable mist.@n
+    %echo% 	DThe area is surrounded by a visually impeneratable mist.	n
   break
   case 5
-    %echo% @DThe grey haze starts to glow a dim silvery shade as the moonlight strikes it.@n
+    %echo% 	DThe grey haze starts to glow a dim silvery shade as the moonlight strikes it.	n
   break
   case 6
-    %echo% @DThe damp fallen clouds swirl slightly in an eddying wind.@n
+    %echo% 	DThe damp fallen clouds swirl slightly in an eddying wind.	n
   break
   case 7
-    %echo% @DThe thick brume shifts and ebbs away slightly.@n
+    %echo% 	DThe thick brume shifts and ebbs away slightly.	n
   break
   case 8
-    %echo% A hushed whispering sound seems to emanate from the patch of @rt@wo@ra@wd@rs@wt@ro@wo@rl@ws@n.
+    %echo% A hushed whispering sound seems to emanate from the patch of 	rt	wo	ra	wd	rs	wt	ro	wo	rl	ws	n.
   break
   case 9
-    %echo% The largest @rt@wo@ra@wd@rs@wt@ro@wo@rl@n yawns openly and mumbles something to one of its friends.
+    %echo% The largest 	rt	wo	ra	wd	rs	wt	ro	wo	rl	n yawns openly and mumbles something to one of its friends.
   break
   case 10
-    %echo% Like a diminutive choir, the patch of @rt@wo@ra@wd@rs@wt@ro@wo@rl@ws@n let loose a high-pitched song of peace.
+    %echo% Like a diminutive choir, the patch of 	rt	wo	ra	wd	rs	wt	ro	wo	rl	ws	n let loose a high-pitched song of peace.
   break
   case 11
     %echo% From the east, tiny voices talk amongst themselves in their own plant-like language.
   break
   case 12
-    %echo% The patch of @rt@wo@ra@wd@rs@wt@ro@wo@rl@ws@n sway synchronisingly in the silver moonlight.
+    %echo% The patch of 	rt	wo	ra	wd	rs	wt	ro	wo	rl	ws	n sway synchronisingly in the silver moonlight.
   break
   case 13
     %echo% The peaceful chirping of bird-song floats down from above.
   break
   case 14
-    %echo% @gA piping little note sings down to you from above.@n
+    %echo% 	gA piping little note sings down to you from above.	n
   break
   case 15
     %echo% The tweeting of a newly born bird calling to its mother echoes around the forest.
@@ -277,16 +277,16 @@ switch %forest_sounds%
     %echo% The sound of ruffling and the snapping of small twigs reaches your ears.
   break
   case 18
-    %echo% @gA rapid chattering drifts down from the giant trees to the northeast.@n
+    %echo% 	gA rapid chattering drifts down from the giant trees to the northeast.	n
   break
   case 19
     %echo% With inequable grace, a snowy white owl ghosts in on silent wings.
   break
   case 20
-    %echo% A @dblack @Dbat@n flutters across the forest, high above.
+    %echo% A 	dblack 	Dbat	n flutters across the forest, high above.
   break
   case 21
-    %echo% @gA relaxed nattering can be heard in the top of a tree to the south.@n
+    %echo% 	gA relaxed nattering can be heard in the top of a tree to the south.	n
   break
   case 22
     %echo% A hedgehog slowly wanders inbetween some trees and out of view.
@@ -295,10 +295,10 @@ switch %forest_sounds%
     %echo% A faint wind breathes in from all directions, steeping the mists.
   break
   case 24
-    %echo% A @rr@ya@bi@gn@cb@mo@rw@n-colored butterfly floats across the clearing.
+    %echo% A 	rr	ya	bi	gn	cb	mo	rw	n-colored butterfly floats across the clearing.
   break
   case 25
-    %echo% A strange @Yglowing @wluminescence@n drifts off to the north, fading into the damp fog.
+    %echo% A strange 	Yglowing 	wluminescence	n drifts off to the north, fading into the damp fog.
   break
   default
   break
@@ -473,7 +473,7 @@ if %cmd% == go
     set p_dir %arg%
     extract px 1 %playerco%
     extract py 2 %playerco%
-    set [%py%][%px%] @g\*@n
+    set [%py%][%px%] 	g\*	n
     switch %p_dir%
       case right
         if %px%!=10
@@ -522,7 +522,7 @@ if %cmd% == go
     eval holech %%[%py%][%px%]%%
     if %holech%/=@@
       if !(%chase%>0)
-        set alert @MYou fall into a bottomless pit!@n
+        set alert 	MYou fall into a bottomless pit!	n
         unset points
         set nextlev 0
         global nextlev
@@ -543,14 +543,14 @@ if %cmd% == go
       global points
       eval exo (%nextlev%*950)
       nop %actor.exp(%exo%)%
-      set [%py%][%px%] @c.@n
+      set [%py%][%px%] 	c.	n
       global [%py%][%px%]
       eval prize_count (%prize_count%)+1
       set winner [%prize_count%]
       if %prize_count%>=%numofprizes%
         eval nextlev (%nextlev%)+1
         global nextlev
-        set winner @YYou Win!!!@n Moving to level %nextlev%.
+        set winner 	YYou Win!!!	n Moving to level %nextlev%.
         set px 10
         set py 10
         set ax 1
@@ -577,22 +577,22 @@ if %cmd% == go
         eval spec_prize [%random.10%][%random.10%]
         global spec_prize
       else
-        set %spec_prize% @yY@n
+        set %spec_prize% 	yY	n
         eval spec_prize
         global spec_prize
       end
     end
     if %sizem%
-      set [%py%][%px%] @GO@n
+      set [%py%][%px%] 	GO	n
       unset sizem
     else
-      set [%py%][%px%] @Go@n
+      set [%py%][%px%] 	Go	n
       set sizem 1
       global sizem
     end
     extract ax 1 %animal%
     extract ay 2 %animal%
-    set [%ay%][%ax%] @r\*@n
+    set [%ay%][%ax%] 	r\*	n
     if !%dir_chosen%
       set dir_chosen 1
       if %px%>%ax%
@@ -665,7 +665,7 @@ if %cmd% == go
       set animal %ax% %ay%
       global animal
     end
-    eval [%ay%][%ax%] @Ra@n
+    eval [%ay%][%ax%] 	Ra	n
     eval ch_3 %%[%py%][%px%]%%
     set ch_3 %ch_3%
     if %ch_3.contains(a)%
@@ -685,7 +685,7 @@ if %cmd% == go
         set py 10
         %force% %actor% createnewgame
       else
-        set alert You have been eaten by the @Ranimal@n.
+        set alert You have been eaten by the 	Ranimal	n.
         set points 0
         global points
         set nextlev 0
@@ -731,26 +731,26 @@ if %cmd% == go
     if %cht%>0
       set chy You can FLY and chase the animal %cht% more times.
     end
-    set snd %send% %actor% @n
+    set snd %send% %actor% 	n
     %force% %actor% cls
     %snd%                    )       \\   /      (
     %snd%                   /\|\\      )\\_/(     /\|\\
     %snd% \*                / \| \\    (/\\\|/\\)   / \| \\         \*
     %snd% \|\`._____________/__\|__o____\\\`\|'/___o__\|__\\______.'\|
     %snd% \|                    '\^\` \|  \\\|/   '\^\`             \|
-    %snd% \|                        \|   V   level: %levlev%      \| Dir: @C %arg%@n
-    %snd% \|   %printrow10%  \| @M@@@n = Bottomless Pit     \| Points: @Y%points%@n
-    %snd% \|   %printrow9%  \| @yY@n = Power Up           \| Exp: @C%exx%@n
-    %snd% \|   %printrow8%  \| @Wp@n = Prize              \| AMU: %dedu%
-    %snd% \|   %printrow7%  \| @Go@n = You                \|
-    %snd% \|   %printrow6%  \| @Ra@n = Animal             \|
-    %snd% \|   %printrow5%  \| @cTo Move Type:@n          \|
-    %snd% \|   %printrow4%  \| @Cgo <up\|down\|left\|right>@n\|
+    %snd% \|                        \|   V   level: %levlev%      \| Dir: 	C %arg%	n
+    %snd% \|   %printrow10%  \| 	M@@	n = Bottomless Pit     \| Points: 	Y%points%	n
+    %snd% \|   %printrow9%  \| 	yY	n = Power Up           \| Exp: 	C%exx%	n
+    %snd% \|   %printrow8%  \| 	Wp	n = Prize              \| AMU: %dedu%
+    %snd% \|   %printrow7%  \| 	Go	n = You                \|
+    %snd% \|   %printrow6%  \| 	Ra	n = Animal             \|
+    %snd% \|   %printrow5%  \| 	cTo Move Type:	n          \|
+    %snd% \|   %printrow4%  \| 	Cgo <up\|down\|left\|right>	n\|
     %snd% \|   %printrow3%  \|                        \|
-    %snd% \|   %printrow2%  \| @BCost of AMU exp per MV@n \|
-    %snd% \|   %printrow1%  \|    @BIf you have exp.@n    \|
+    %snd% \|   %printrow2%  \| 	BCost of AMU exp per MV	n \|
+    %snd% \|   %printrow1%  \|    	BIf you have exp.	n    \|
     %snd% \|                        \|                        \|
-    %snd% \|                        \|  NEEDED: @R%numop%@n HAVE: @G%przc%@n   \|
+    %snd% \|                        \|  NEEDED: 	R%numop%	n HAVE: 	G%przc%	n   \|
     %snd% \| .______________________\|______________________. \|
     %snd% \|'         l    /\\ /     \\\\            \\ /\\    l \`\|
     %snd% \*          l  /   V       ))             V  \\  l  \*
@@ -807,8 +807,8 @@ eval animal 1 1
 global animal
 eval playerco 10 10
 global playerco
-set [1][1] @ra@n
-set [10][10] @Go@n
+set [1][1] 	ra	n
+set [10][10] 	Go	n
 global [1][1]
 global [10][10]
 eval numofprizes 0
@@ -823,25 +823,25 @@ while (%ww%>1)
   eval n %ww%
   eval row %random.10%
   eval r_col (%random.3%-1)
-  set [%n%][1] @c.@n
+  set [%n%][1] 	c.	n
   global [%n%][1]
-  set [%n%][2] @c.@n
+  set [%n%][2] 	c.	n
   global [%n%][2]
-  set [%n%][3] @c.@n
+  set [%n%][3] 	c.	n
   global [%n%][3]
-  set [%n%][4] @c.@n
+  set [%n%][4] 	c.	n
   global [%n%][4]
-  set [%n%][5] @c.@n
+  set [%n%][5] 	c.	n
   global [%n%][5]
-  set [%n%][6] @c.@n
+  set [%n%][6] 	c.	n
   global [%n%][6]
-  set [%n%][7] @c.@n
+  set [%n%][7] 	c.	n
   global [%n%][7]
-  set [%n%][8] @c.@n
+  set [%n%][8] 	c.	n
   global [%n%][8]
-  set [%n%][9] @c.@n
+  set [%n%][9] 	c.	n
   global [%n%][9]
-  set [%n%][10] @c.@n
+  set [%n%][10] 	c.	n
   global [%n%][10]
   if (%r_col%)
     while (%r_col%<3)
@@ -850,7 +850,7 @@ while (%ww%>1)
       if !(%posis%/=[%n%][%jj%])
         eval numofprizes %numofprizes%+1
         global numofprizes
-        eval [%n%][%jj%] @Wp@n
+        eval [%n%][%jj%] 	Wp	n
         global [%n%][%jj%]
         set posis %posis% [%n%][%jj%]
       end
@@ -866,13 +866,13 @@ if (%r_ttt%>0)
     eval j9 %random.10%
     eval cer %%[%j9%][%j8%]%%
     if !(%cer%/=p)
-      eval [%j9%][%j8%] @M\@@@n
+      eval [%j9%][%j8%] 	M\@@	n
       global [%j9%][%j8%]
     end
   done
 end
 if !(%[10][10]%/=p)
-  set [10][10] @c.@n
+  set [10][10] 	c.	n
   global [10][10]
 end
 ~
@@ -894,7 +894,7 @@ while %self.varexists(%j%)%
   done
   eval j %j%+1
 done
-%echo% @yO===============SCORE======BOARD=====================O@n
+%echo% 	yO===============SCORE======BOARD=====================O	n
 wait 1
 %echo% O=#==NAME============\|=Level=\|=Points==\|=EXP=========O
 set i 1
@@ -932,7 +932,7 @@ while %self.varexists(%j%)%
   if %d%<9
     set d 0%j%
   end
-  %echo% \|@g%d%@n: @w%nam%@n %sp%\| @c%ll%@n \| @y%points%@n \| @W%exp%@n
+  %echo% \|	g%d%	n: 	w%nam%	n %sp%\| 	c%ll%	n \| 	y%points%	n \| 	W%exp%	n
   eval j %j%+1
 done
 %echo% O=#==================================================O
@@ -1114,9 +1114,9 @@ end
 autolook for (rm 1269) Elaseth's Oubliette~
 2 g 100
 ~
-%echo%  @n
-%echo%  @n
-%echo% @DWelcome to hell. Next time heed the gods, they don't play games.@n
+%echo%  	n
+%echo%  	n
+%echo% 	DWelcome to hell. Next time heed the gods, they don't play games.	n
 ~
 #1269
 harp~
@@ -1288,117 +1288,117 @@ Shuffle Deck~
 1 c 7
 *~
 if %cmd% == shuffle
-  %echo% %deck% card's in the deck.
+  %echo% %deck% cards in the deck.
   set deck 52
   global deck
   *
-  set Ace_Spade's 1
-  global Ace_Spade's
-  set 2_Spade's 1
-  global 2_Spade's
-  set 3_Spade's 1
-  global 3_Spade's
-  set 4_Spade's 1
-  global 4_Spade's
-  set 5_Spade's 1
-  global 5_Spade's
-  set 6_Spade's 1
-  global 6_Spade's
-  set 7_Spade's 1
-  global 7_Spade's
-  set 8_Spade's 1
-  global 8_Spade's
-  set 9_Spade's 1
-  global 9_Spade's
-  set 10_Spade's 1
-  global 10_spade's
-  set Jack_Spade's 1
-  global Jack_Spade's
-  set Queen_Spade's 1
-  global Queen_Spade's
-  set King_Spade's 1
-  global King_Spade's
+  set Ace_Spades 1
+  global Ace_Spades
+  set 2_Spades 1
+  global 2_Spades
+  set 3_Spades 1
+  global 3_Spades
+  set 4_Spades 1
+  global 4_Spades
+  set 5_Spades 1
+  global 5_Spades
+  set 6_Spades 1
+  global 6_Spades
+  set 7_Spades 1
+  global 7_Spades
+  set 8_Spades 1
+  global 8_Spades
+  set 9_Spades 1
+  global 9_Spades
+  set 10_Spades 1
+  global 10_spades
+  set Jack_Spades 1
+  global Jack_Spades
+  set Queen_Spades 1
+  global Queen_Spades
+  set King_Spades 1
+  global King_Spades
   *
-  set Ace_Heart's 1
-  global Ace_Heart's
-  set 2_Heart's 1
-  global 2_Heart's
-  set 3_Heart's 1
-  global 3_Heart's
-  set 4_Heart's 1
-  global 4_Heart's
-  set 5_Heart's 1
-  global 5_Heart's
-  set 6_Heart's 1
-  global 6_Heart's
-  set 7_Heart's 1
-  global 7_Heart's
-  set 8_Heart's 1
-  global 8_Heart's
-  set 9_Heart's 1
-  global 9_Heart's
-  set 10_Heart's 1
-  global 10_Heart's
-  set Jack_Heart's 1
-  global Jack_Heart's
-  set Queen_Heart's 1
-  global Queen_Heart's
-  set King_Heart's 1
-  global King_Heart's
+  set Ace_Hearts 1
+  global Ace_Hearts
+  set 2_Hearts 1
+  global 2_Hearts
+  set 3_Hearts 1
+  global 3_Hearts
+  set 4_Hearts 1
+  global 4_Hearts
+  set 5_Hearts 1
+  global 5_Hearts
+  set 6_Hearts 1
+  global 6_Hearts
+  set 7_Hearts 1
+  global 7_Hearts
+  set 8_Hearts 1
+  global 8_Hearts
+  set 9_Hearts 1
+  global 9_Hearts
+  set 10_Hearts 1
+  global 10_Hearts
+  set Jack_Hearts 1
+  global Jack_Hearts
+  set Queen_Hearts 1
+  global Queen_Hearts
+  set King_Hearts 1
+  global King_Hearts
   *
-  set Ace_Club's 1
-  global Ace_Club's
-  set 2_Club's 1
-  global 2_Club's
-  set 3_Club's 1
-  global 3_Club's
-  set 4_Club's 1
-  global 4_Club's
-  set 5_Club's 1
-  global 5_Club's
-  set 6_Club's 1
-  global 6_Club's
-  set 7_Club's 1
-  global 7_Club's
-  set 8_Club's 1
-  global 8_Club's
-  set 9_Club's 1
-  global 9_Club's
-  set 10_Club's 1
-  global 10_Club's
-  set Jack_Club's 1
-  global Jack_Club's
-  set Queen_Club's 1
-  global Queen_Club's
-  set King_Club's 1
-  global King_Club's
+  set Ace_Clubs 1
+  global Ace_Clubs
+  set 2_Clubs 1
+  global 2_Clubs
+  set 3_Clubs 1
+  global 3_Clubs
+  set 4_Clubs 1
+  global 4_Clubs
+  set 5_Clubs 1
+  global 5_Clubs
+  set 6_Clubs 1
+  global 6_Clubs
+  set 7_Clubs 1
+  global 7_Clubs
+  set 8_Clubs 1
+  global 8_Clubs
+  set 9_Clubs 1
+  global 9_Clubs
+  set 10_Clubs 1
+  global 10_Clubs
+  set Jack_Clubs 1
+  global Jack_Clubs
+  set Queen_Clubs 1
+  global Queen_Clubs
+  set King_Clubs 1
+  global King_Clubs
   *
-  set Ace_Diamond's 1
-  global Ace_Diamond's
-  set 2_Diamond's 1
-  global 2_Diamond's
-  set 3_Diamond's 1
-  global 3_Diamond's
-  set 4_Diamond's 1
-  global 4_Diamond's
-  set 5_Diamond's 1
-  global 5_Diamond's
-  set 6_Diamond's 1
-  global 6_Diamond's
-  set 7_Diamond's 1
-  global 7_Diamond's
-  set 8_Diamond's 1
-  global 8_Diamond's
-  set 9_Diamond's 1
-  global 9_Diamond's
-  set 10_Diamond's 1
-  global 10_Diamond's
-  set Jack_Diamond's 1
-  global Jack_Diamond's
-  set Queen_Diamond's 1
-  global Queen_Diamond's
-  set King_Diamond's 1
-  global King_Diamond's
+  set Ace_Diamonds 1
+  global Ace_Diamonds
+  set 2_Diamonds 1
+  global 2_Diamonds
+  set 3_Diamonds 1
+  global 3_Diamonds
+  set 4_Diamonds 1
+  global 4_Diamonds
+  set 5_Diamonds 1
+  global 5_Diamonds
+  set 6_Diamonds 1
+  global 6_Diamonds
+  set 7_Diamonds 1
+  global 7_Diamonds
+  set 8_Diamonds 1
+  global 8_Diamonds
+  set 9_Diamonds 1
+  global 9_Diamonds
+  set 10_Diamonds 1
+  global 10_Diamonds
+  set Jack_Diamonds 1
+  global Jack_Diamonds
+  set Queen_Diamonds 1
+  global Queen_Diamonds
+  set King_Diamonds 1
+  global King_Diamonds
   *
   %echo% %actor.name% shuffles %actor.hisher% deck.
   %echo% %deck% cards in the deck.
@@ -1409,19 +1409,19 @@ elseif %cmd% == deal
   switch %random.4%
     case 1
       set col 
-      set suit Diamond's
+      set suit Diamonds
     break
     case 2
       set col 
-      set suit Heart's
+      set suit Hearts
     break
     case 3
       set col 
-      set suit Club's
+      set suit Clubs
     break
     case 4
       set col 
-      set suit Spade's
+      set suit Spades
     break
     default
       set suit JOKER!
@@ -1503,7 +1503,7 @@ remote spech %world_global.id%
 ~
 set fire %random.900%
 wait %fire% sec
-%echo% @bThe fire crackles softly in the fireplace.@n
+%echo% 	bThe fire crackles softly in the fireplace.	n
 ~
 #1289
 (1209) Taylors Random Office Noises~
@@ -1512,19 +1512,19 @@ wait %fire% sec
 set office_noises %random.5%
 switch %office_noises%
   case 1
-    %echo% @bLoud footsteps can be heard coming from the hall outside.@n
+    %echo% 	bLoud footsteps can be heard coming from the hall outside.	n
   break
   case 2
-    %echo% @bThe sound of thunder echoes in from outside.@n
+    %echo% 	bThe sound of thunder echoes in from outside.	n
   break
   case 3
-    %echo% @bA large book falls off the desk, hitting the floor with a loud thud.@n
+    %echo% 	bA large book falls off the desk, hitting the floor with a loud thud.	n
   break
   case 4
-    %echo% @bTalking can be heard coming from outside the door.@n
+    %echo% 	bTalking can be heard coming from outside the door.	n
   break
   case 5
-    %echo% @bThe sound of chirping birds flows in though the window.@n
+    %echo% 	bThe sound of chirping birds flows in though the window.	n
   break
   default
   break

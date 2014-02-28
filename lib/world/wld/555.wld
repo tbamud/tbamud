@@ -9,6 +9,8 @@ The area starts down in room 55685 and uses zone 555 and 556.
    The two mazes (Desert and Whirlpool) may have to be adjusted.  
 The maze progs of 130 (Welcor's Mist Maze) are much better but
 seemed a bit too strong for the area.
+
+Edits made for tbaMUD by Parna.
 ~
 555 8 0 0 0 0
 D5
@@ -594,13 +596,13 @@ D3
 ~
 0 0 55533
 E
-undefined~
-   'Secret Door: The Shelf' is on the shelf.
-~
-E
 shelf shelves bookshelves bookcases~
    The shelf to the south looks a bit strange.  It might be possible to open the
 shelf.
+~
+E
+undefined~
+   'Secret Door: The Shelf' is on the shelf.
 ~
 S
 T 55532
@@ -1302,22 +1304,22 @@ D0
 You see trees.
 ~
 ~
-0 0 55576
+0 0 55570
 D1
 You see trees.
 ~
 ~
-0 0 55572
+0 0 55576
 D2
 You see trees.
 ~
 ~
-0 0 55581
+0 0 55572
 D3
 You see trees.
 ~
 ~
-0 0 55570
+0 0 55581
 S
 T 55571
 #55572

@@ -27,7 +27,7 @@ testmemory~
 ~
 wait 4 s
 poke %actor.name%
-say i've seen you before, %actor.name%.
+say I've seen you before, %actor.name%.
 mforget %actor.name%
 ~
 #2702
@@ -101,7 +101,7 @@ tell %actor.name% You are not allowed to be here!
 wait 1 s
 %send% %actor% A dying memlin gasps: Please help me...
 wait 2 s
-%send% %actor% A dying memlin gasps: my death cannot be stopped, please end it now.
+%send% %actor% A dying memlin gasps: My death cannot be stopped, please end it now.
 wait 3 s
 emote groans with pain as you hear a loud creaking sound.
 ~
@@ -479,7 +479,7 @@ end
 (2714) child quest on death~
 0 f 100
 ~
-%echo% 	BA partially-petrified memlin gasps with his dying breath: my daughter... find her... in the Sandy... Tunn...	n
+%echo% 	BA partially-petrified memlin gasps with his dying breath: My daughter... find her... in the Sandy... Tunn...	n
 ~
 #2725
 test for Tink~
@@ -804,7 +804,7 @@ test door~
 2 c 100
 enter~
 if ("%arg%" == "space")
-%send% %actor% A previously concealed space suddenly becomes apparant.
+%send% %actor% A previously concealed space suddenly becomes apparent.
 %echoaround% %actor% %actor.name% has discovered a hidden space!
 %door% 2740 down flags a
 %door% 2740 down room 2741
@@ -845,7 +845,7 @@ TESTCOMBAT 2~
 ~
 switch %random.3%
   case 0
-    %echo% The warrior raises his sword
+    %echo% The warrior raises his sword.
 set raise 1
 remote raise %actor.id%
 wait 4 s
@@ -884,7 +884,7 @@ rdelete stab %actor.id%
 end
  break
 default
-%echo% The warrior raises his sword
+%echo% The warrior raises his sword.
 set raise 1
 remote raise %actor.id%
 wait 4 s
@@ -986,7 +986,7 @@ eval where %self.room%
 if %where.east(bits)% == DOOR CLOSED
   return 0
 else
-  say Impudent fool! Your insolence forces me to take action
+  say Impudent fool! Your insolence forces me to take action!
   %damage% %actor% 100
 end
 ~
@@ -1244,7 +1244,7 @@ elseif %room.vnum% == 2790
 elseif %room.vnum% == 2792
   say The direct descendants of a Cui and a Denuo joining are known as Ve.
   wait 1 s
-  say They inherit characteristics of both their parents, usually turning to prophesying and magic arts,  their skills and powers outdoing even the strongest of their Denuo brothers.
+  say They inherit characteristics of both their parents, usually turning to prophesying and magic arts, their skills and powers outdoing even the strongest of their Denuo brothers.
   wait 3 s
   say Ve also have extra powers of perception and foresight, though at times they are uncertain and unclear.
 elseif %room.vnum% == 2791
@@ -1301,7 +1301,7 @@ wait 3 s
 wait 6 s
   say Well adapted to living and digging small tunnel networks for themselves, the memlins occasionally also build habitats in deep forests.
 wait 4 s
-  say The memlin skills are a mystery to most as they are an unaggressive race, It is known that they do not bleed, having bodies that rise and return to earth and that neither fire nor water harm them.
+  say The memlin skills are a mystery to most as they are an unaggressive race. It is known that they do not bleed, having bodies that rise and return to earth and that neither fire nor water harm them.
 wait 6 s
   say In times of great need, it is said that they can call instant death upon an enemy, though these cases are so rarely witnessed that they are often believed to be myth.
 wait 5 s

@@ -66,7 +66,7 @@ T 2716
 #2704
 tiny wish~
 a @Ctiny wish@n~
-A @Ctiny wish@y floats lazily through the air.
+A @Ctiny wish@y floats lazily through the air.@n
 ~
    It looks almost like a small wisp of cotton, delicate white strands drifting
 out from a spherical body as it floats in the air.  Almost more like a seedling
@@ -81,12 +81,12 @@ air, as though it were somehow filtering and replenishing it.
 E
 T 2703
 #2705
-armoured guardian~
-an armoured guardian~
-An armoured guardian stands here, blocking the gates to the north.
+armored guardian~
+an armored guardian~
+An armored guardian stands here, blocking the gates to the north.
 ~
    Tall and menacing, his body is completely covered with black irridescent
-armour that reveals none of his natural form.  Even his eyes are masked by the
+armor that reveals none of his natural form.  Even his eyes are masked by the
 metal visor over his face, though somehow he seems to perceive his surroundings
 very well indeed.    
 ~
@@ -152,10 +152,10 @@ T 2773
 #2709
 fire wrm~
 a @Rfire wrm@n~
-A @Rfire wrm@y scuttles about here, filling the air with smoke.
+A @Rfire wrm@y scuttles about here, filling the air with smoke.@n
 ~
    This creature wanders about the place devouring anything it sees.  
-Shuffling along on spines that cover its entire body, its gigantic firey mouth
+Shuffling along on spines that cover its entire body, its gigantic fiery mouth
 gives it the ability to consume even metals and piles of rubble, making it
 useful for excavation sites.  Black smoke rises from the creature, the product
 of its constant digestion.    
@@ -202,7 +202,7 @@ E
 #2712
 newly grown wish~
 a newly-grown @Cwish@n~
-A newly-grown @Cwish@y wobbles uncertainly in the air.
+A newly-grown @Cwish@y wobbles uncertainly in the air.@n
 ~
    This little creature is still sticky from the sap of its parent vine.  
 Disentangling its delicate strands slowly, it seems to grow larger as the air
@@ -255,12 +255,12 @@ T 2724
 #2715
 smoking fire wrm~
 a smoking @Rfire wrm@n~
-A @Rfire wrm@y is tethered here, billowing smoke around it.
+A @Rfire wrm@y is tethered here, billowing smoke around it.@n
 ~
    Large sharp spines protrude from all over this strange creature, twitching
 slightly as peristaltic-like contractions ripple through its body.  Large
 amounts of thick black smoke ooze from pores all over its body as it devours the
-piles of rubble, ore and all with its massive firey mouth, acting almost as
+piles of rubble, ore and all with its massive fiery mouth, acting almost as
 living waste disposal.  
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -286,14 +286,14 @@ BareHandAttack: 4
 E
 T 2778
 #2717
-irridescent beetle little~
-a little irridescent beetle~
-A little irridescent beetle scurries along.
+iridescent beetle little~
+a little iridescent beetle~
+A little iridescent beetle scurries along.
 ~
    This little glistening beetle has two rather large pinchers that protrude
 like horns from its head.  Tiny legs move almost too quickly to be seen, as the
 creature scuttles nervously around, streaks of blue and green glinting in its
-black armour.  
+black armor.  
 ~
 200 0 0 0 2048 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
@@ -375,7 +375,7 @@ T 2761
 #2722
 female humanoid Ve~
 a female Ve~
-A female humanoid with scaley skin stands here, her eyes faintly glowing.
+A female humanoid with scaly skin stands here, her eyes faintly glowing.
 ~
    This young female is tall and well built, her lean body covered with pale
 soft scales that shimmer gently in the light, barely noticeable they look more
@@ -445,7 +445,7 @@ the Revealer~
 The Revealer stands here, guarding the secrets of his people.
 ~
    This aged memlin is shrunken and wrinkled with time, his large eyes faded in
-colour as an ember about to die.  His expression is firm and troubled, as though
+color as an ember about to die.  His expression is firm and troubled, as though
 he has seen enough for many lifetimes.  
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -476,7 +476,7 @@ a young memlin~
 A young memlin stands eagerly here, as if waiting for something.
 ~
    This bright-eyed memlin has an expression of almost excited wonder and
-curiousity on his face.  Fidgetting constantly, he wrings his hands as he
+curiousity on his face.  Fidgeting constantly, he wrings his hands as he
 glances around at everything, flickers of emotion passing over his face like
 windblown clouds.  
 ~

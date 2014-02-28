@@ -5,7 +5,7 @@ A tasseled bracelet is lying here.~
 ~
 9 g 0 0 0 am 0 0 0 0 0 0 0
 2 0 0 0
-3 400 0 0
+3 400 0 0 0
 A
 12 5
 #28101
@@ -15,7 +15,7 @@ A red ring is lying here.~
 ~
 12 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 120 0 0
+1 120 0 0 0
 A
 3 1
 A
@@ -27,7 +27,7 @@ A small pendant is lying here.~
 ~
 9 g 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-1 100 0 0
+1 100 0 0 0
 A
 13 8
 A
@@ -39,7 +39,7 @@ A pair of dark sleeves is lying here.~
 ~
 9 g 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
-3 400 0 0
+3 400 0 0 0
 #28104
 shoes birch bark tiny~
 a pair of birch bark shoes~
@@ -47,7 +47,7 @@ A tiny pair of shoes is here.~
 ~
 9 g 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-2 50 0 0
+2 50 0 0 0
 A
 18 1
 #28105
@@ -57,7 +57,7 @@ A red-handled knife is lying here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 0 2 4 11
-1 100 0 0
+1 100 0 0 0
 A
 18 1
 A
@@ -69,7 +69,7 @@ A small jerkin is lying here.~
 ~
 9 g 0 0 0 ad 0 0 0 0 0 0 0
 4 0 0 0
-3 114 0 0
+3 114 0 0 0
 A
 12 3
 A
@@ -83,15 +83,15 @@ A brown belt is lying here.~
 ~
 9 g 0 0 0 al 0 0 0 0 0 0 0
 4 0 0 0
-2 60 0 0
+2 60 0 0 0
 #28108
-a wooden ring~
+wooden ring~
 a wooden ring~
 A small loop of wood is lying here.~
 ~
 12 g 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 30 0 0
+1 30 0 0 0
 A
 13 3
 #28109
@@ -101,7 +101,7 @@ A small pair of mittens is lying here.~
 ~
 9 g 0 0 0 ah 0 0 0 0 0 0 0
 1 0 0 0
-1 75 0 0
+1 75 0 0 0
 A
 18 1
 A
@@ -113,7 +113,7 @@ A small talon is lying here.~
 ~
 12 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 40 0 0
+1 40 0 0 0
 A
 4 1
 A
@@ -125,7 +125,7 @@ A modest rucksack is lying here.~
 ~
 15 g 0 0 0 ak 0 0 0 0 0 0 0
 65 1 -1 0
-2 30 0 0
+2 30 0 0 0
 #28112
 lantern carved small wood~
 a carved lantern~
@@ -133,7 +133,7 @@ A small lantern of wood is lying here.~
 ~
 1 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 102 0
-2 50 0 0
+2 50 0 0 0
 A
 4 1
 #28113
@@ -143,7 +143,7 @@ A conical, peculiar hat is lying here.~
 ~
 9 g 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
-1 60 0 0
+1 60 0 0 0
 A
 12 3
 A
@@ -155,7 +155,7 @@ A pair of brown leggings is lying here.~
 ~
 9 g 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
-2 40 0 0
+2 40 0 0 0
 A
 4 1
 A
@@ -167,7 +167,7 @@ A tankard of beer is here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 1 0
-8 12 0 0
+8 12 0 0 0
 #28116
 soup substantial plate~
 a substantial soup~
@@ -175,7 +175,7 @@ A plate of soup is here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 30 0 0 0
-1 27 0 0
+1 27 0 0 0
 #28117
 pastry khanjar~
 a pastry of Khanjar~
@@ -183,7 +183,7 @@ A nice pastry is here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 3 0 0 0
-1 8 0 0
+1 8 0 0 0
 #28120
 mask green leather~
 a green leather mask~
@@ -191,7 +191,7 @@ A green mask is lying here.~
 ~
 9 cd 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 80 0 0
+1 80 0 0 0
 A
 1 1
 A
@@ -203,7 +203,7 @@ A small bronze key is lying here.~
 ~
 18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 #28131
 key iron~
 a small iron key~
@@ -211,5 +211,5 @@ A small iron key is lying here.~
 ~
 18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0
+1 100 0 0 0
 $~

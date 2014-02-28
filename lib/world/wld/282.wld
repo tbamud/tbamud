@@ -15,19 +15,6 @@ D5
 ~
 0 0 28201
 E
-engraving wall~
-   **********************************
-   *             BEWARE!!!          *
-   *       Here Dwells Kerajim,     *  
-   *       King of the Balrogs.     *  
-   *       Die at your own risk,    *
-   * We very much doubt the chances *
-   *     of any Corpse Retrieval    *
-   *                                *
-   *         Raf & Blizzard         *
-   **********************************
-~
-E
 credits info~
    ===========================================================================
                          The Infernal Pit of Kerjim
@@ -51,6 +38,19 @@ The Authors can be reached at their email addresses quoted below, or on
   picard@@indigo.ie                            purcellc@@post.queensu.ca
 Zone 282 is linked to the following zones:
 265 Beach & Lighthouse             at 28200 (south) ---> 26536
+~
+E
+engraving wall~
+   **********************************
+   *             BEWARE!!!          *
+   *       Here Dwells Kerajim,     *  
+   *       King of the Balrogs.     *  
+   *       Die at your own risk,    *
+   * We very much doubt the chances *
+   *     of any Corpse Retrieval    *
+   *                                *
+   *         Raf & Blizzard         *
+   **********************************
 ~
 S
 #28201
@@ -357,7 +357,7 @@ S
 #28220
 A small temple~
    This is a small temple, there is a table in the center of the room covered
-with plates and untensels.  Everything here is black, there is are curtains all
+with plates and utensils.  Everything here is black, there is are curtains all
 around covering the burnt walls.  The floor has runes encrusted into them, you
 can make out some of them, they are markings of the devil.    
 ~

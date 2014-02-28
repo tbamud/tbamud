@@ -5,7 +5,7 @@ The end of a long dining table protrudes from the west.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 end table~
    Majestic and intricately carved, this massive table fills the entire
@@ -19,7 +19,7 @@ The end of a long dining table protrudes from the east.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 end table~
    Majestic and intricately carved, this massive table fills the entire
@@ -33,7 +33,7 @@ A long dining table stretches to the east and west.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 long dining table~
    Made by the finest of carpenters, this immensely long table has several legs
@@ -48,7 +48,7 @@ A throne of quartz and beryl stands frozen in the center of the room.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 throne quartz beryl~
    Sculpted as if from ice itself, the transparent quartz of this throne
@@ -63,7 +63,7 @@ A grand glass piano stands abandoned to dust and snow.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 T 1107
 E
 grand glass piano~
@@ -80,7 +80,7 @@ A case of jewellery glistens in the light.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 case jewellery~
    Once polished and transparent, this delicate case is now slightly frosted
@@ -96,7 +96,7 @@ A silver flame writhes silently on a crystal stand.~
 ~
 1 dq 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
-1 1000 0 0
+1 1000 0 0 0
 E
 silver flame crystal stand~
    Slowly undulating, the ripples of this fire are cool and reflective, giving
@@ -112,7 +112,7 @@ Blossoms of edelweiss nod sorrowfully in the stirring air.~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 blossoms flowers edelweiss~
    Delicately star-shaped, and the pure colour of spun white wool, these tiny
@@ -126,7 +126,7 @@ A diamond bracelet glints brightly from the shadows.~
 ~
 11 0 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-1 400 0 0
+1 400 0 0 0
 T 1109
 E
 diamond bracelet~
@@ -143,7 +143,7 @@ An ivory bed spread with silk stands in the center of the room.~
 ~
 6 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 ivory bed silk~
    Smooth creamy curving lines make up the white frame of this bed, polished
@@ -158,7 +158,7 @@ A crystal chalice sparkles with holy light.~
 ~
 15 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 10 0 0
+1 10 0 0 0
 E
 crystal chalice~
    Clear as pure water, this delicate chalice sparkles as though imbued with its
@@ -172,7 +172,7 @@ A pewter blade glints sharply.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 0 0 0 0
-1 5 0 0
+1 5 0 0 0
 E
 pewter blade~
    Beautifully fashioned, this blade is extremely sharp along both its edges.  
@@ -187,7 +187,7 @@ A sleep ring lies here~
 ~
 11 0 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-2 4 0 0
+2 4 0 0 0
 #1113
 rosewood bed~
 a rosewood bed, covered with satin~
@@ -195,7 +195,7 @@ A bed of rosewood stands undisturbed, covered with satin.~
 ~
 6 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 rosewood bed~
    Darkly beautiful, this bed has been carved from richly-hued rosewood.  
@@ -211,7 +211,7 @@ A bed of mahogany and velvet stands frozen with ice.~
 ~
 6 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 bed mahogany velvet~
    The deep, dark wood of this bedframe glistens as though freshly polished, a
@@ -226,7 +226,7 @@ A crystalline bed stands here, covered with feather-down.~
 ~
 6 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 crystalline bed~
    This bed's slender frame has been carved from some crystalline substance,
@@ -241,7 +241,7 @@ A frosted plum has been left here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 frosted plum~
    Richly purple, this fruit is blossoming with beads of frozen juice.  Its
@@ -255,7 +255,7 @@ A brick of cheese stands frozen in place.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 7 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 frozen brick cheese~
    This rich-coloured cheese looks as though it was once smooth and creamy.  
@@ -269,7 +269,7 @@ A pewter goblet glints subtly.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 30 30 15 0
-35 10 0 0
+35 10 0 0 0
 E
 pewter goblet~
    This pretty goblet has been engraved with the image of a winged dragon.  The
@@ -283,7 +283,7 @@ A barrel of ale has been cracked open.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 60 60 3 0
-0 0 0 0
+0 0 0 0 0
 E
 barrel ale~
    This large wooden barrel has had its top deliberately cracked and forced off.
@@ -296,7 +296,7 @@ An iron maiden stands against the wall.~
 ~
 6 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 iron maiden~
    This medival torture device is visciously built, designed to cause
@@ -313,7 +313,7 @@ A bucket dangles above the well.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 T 1127
 E
 bucket rope~
@@ -328,7 +328,7 @@ A rope hangs down into the well.~
 ~
 6 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 T 1126
 E
 rope~
@@ -343,7 +343,7 @@ A gold coin shines brightly here.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 0 0 0
+1 1 0 0 0
 E
 gold coin~
    This shiny, round coin has been abandoned for some strange reason.  Perhaps
@@ -356,7 +356,7 @@ A handful of sludge lies in a lumpy pile.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 0 0 0
+1 1 0 0 0
 E
 handful sludge~
    Mostly consisting of mud and a few green tufts of moss or fungi, this handful
@@ -370,7 +370,7 @@ An object for helping with triggers lies here.~
 ~
 6 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 #1126
 white key~
 @Wa white key@n~
@@ -378,7 +378,7 @@ white key~
 ~
 18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 0 0 0
+1 1 0 0 0
 E
 white key~
    This pale key is elegant and intricately carved.  It seems to have been
@@ -392,7 +392,7 @@ dark key~
 ~
 18 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 dark key~
    Oily black and glistening, this dark key looks as though it has been carved
@@ -406,7 +406,7 @@ crystal tiara~
 ~
 11 0 0 0 0 ae 0 0 0 0 0 0 0
 0 0 0 0
-1 300 0 0
+1 300 0 0 0
 E
 crystal tiara~
    Delicate and shimmering, a thin band of crystal has been twisted by some
@@ -422,7 +422,7 @@ snow-speckled gown~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-2 400 0 0
+2 400 0 0 0
 E
 snow-speckled gown~
    Long and flowing, this elegant white gown appears to made out of an extremely
@@ -439,7 +439,7 @@ A DG test map lies here.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 0 0 0
+1 1 0 0 0
 T 1134
 E
 DG test map~

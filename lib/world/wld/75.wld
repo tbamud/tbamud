@@ -1286,14 +1286,14 @@ A Corridor.
 ~
 0 0 7553
 E
-sofa chair~
-   The chairs and sofa are thick with padding and made of a brown leather that
-has been treated to make it soft and smooth.    
-~
-E
 fireplace~
    The fireplace is quite large.  The mantle is decorated with a large golden
 candelabra.  The front of the fireplace is covered with a mess screen.    
+~
+E
+sofa chair~
+   The chairs and sofa are thick with padding and made of a brown leather that
+has been treated to make it soft and smooth.    
 ~
 S
 #7553
@@ -1378,18 +1378,18 @@ A Corridor.
 ~
 0 0 7557
 E
+plaque~
+   This portrait of the Empiress Kiona was dedicated to her from her friend and
+mentor.    
+       Shimmer
+~
+E
 painting woman~
    The woman in the painting is wearing a large crown and elegant golden robes.
 She is adorned in several expensive pieces of jewerly.  Her features are soft
 under her black hair and tan skin.  She has striking blue eyes unlike the other
 natives with their dark brown eyes.  A gold plaque is mounted to the wall under
 the painting.    
-~
-E
-plaque~
-   This portrait of the Empiress Kiona was dedicated to her from her friend and
-mentor.    
-       Shimmer
 ~
 S
 #7557
@@ -1458,17 +1458,17 @@ The Balcony.
 ~
 0 0 7560
 E
-wall room floor~
-   The room is bright and airy.  Everything around the room and the room itself
-is a snow white giving the room an aura of purity.    
-~
-E
 pillar~
    The pillars at each corner of the room is a massive white stone that has
 been sculpted into the shape of a muscular man wearing a short toga, sandels,
 and armbands on his upper arm.  The man is standing with his hands upward
 holding up the ceiling.  The sculpture is very realistic and almost looks
 alive.    
+~
+E
+wall room floor~
+   The room is bright and airy.  Everything around the room and the room itself
+is a snow white giving the room an aura of purity.    
 ~
 S
 #7560
@@ -1624,13 +1624,13 @@ A Wooden Door.
 door south~
 1 0 7565
 E
-trunk~
-   The wooden trunk is plain except for having a large lock holding it shut.  
+candle table~
+   Several black candles sit here on the table lit leaving a trail of foul
+smoke.    
 ~
 E
-candle table~
-   Several black candles sit here on the table lit leaving a trail of fowl
-smoke.    
+trunk~
+   The wooden trunk is plain except for having a large lock holding it shut.  
 ~
 S
 #7568
@@ -1646,14 +1646,14 @@ A Wooden Door.
 door north~
 1 0 7565
 E
-shelf wall~
-   The shelf is a display case of many unique weapons.  It is made of a strong
-oak wood.  The front of the shelf is a glass door.    
-~
-E
 paper desk~
    A few papers sit here on the desk.  Each having the seal of the royal crest
 of Empress Kiona.    
+~
+E
+shelf wall~
+   The shelf is a display case of many unique weapons.  It is made of a strong
+oak wood.  The front of the shelf is a glass door.    
 ~
 S
 #7569
@@ -1692,13 +1692,13 @@ An Oak Door.
 door iron~
 1 0 7571
 E
-door~
-   The double doors are encraved with the image of a royal seal.  
-~
-E
 seal~
    The seal is of a shield containing a pair of crossed swords with the face of
 a panther growling from above the wicked looking blades.    
+~
+E
+door~
+   The double doors are encraved with the image of a royal seal.  
 ~
 S
 #7571

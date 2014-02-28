@@ -16,7 +16,7 @@ priest~
 a priest~
 A priest is praying for his favorite gladiator to win.
 ~
-   For a priest he seems to be enjoying the blood shed a little too much.    
+   For a priest he seems to be enjoying the bloodshed a little too much.    
 ~
 231496 0 0 0 64 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -26,9 +26,9 @@ E
 #2002
 augur~
 an augur~
-An Augur is trying to predict the winner of the next bout.
+An augur is trying to predict the winner of the next bout.
 ~
-   Known for their predictions by the reading of omens these men are very
+   Known for their predictions by the reading of omens, these men are very
 popular among the rich.    
 ~
 2264 0 0 0 64 0 0 0 0 E
@@ -54,7 +54,7 @@ vestal virgin~
 a vestal virgin~
 A Vestal Virgin brushes close against you and winks seductively.
 ~
-   She doesn't look nearly as innocent as she's suppose to be.    
+   She doesn't look nearly as innocent as she's supposed to be.    
 ~
 256030 0 0 0 65616 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -64,11 +64,11 @@ BareHandAttack: 4
 E
 #2005
 samnite~
-a samnite warrior~
-A samnite warrior is waiting for his next bout here.
+a Samnite warrior~
+A Samnite warrior is waiting for his next bout.
 ~
    This warrior looks depressed, already realizing his fate.  He will battle in
-the arena until he is killed.  Could be today or years from now, but his fate
+the arena until he is killed.  It could be today or years from now, but his fate
 is unavoidable.    
 ~
 67672 0 0 0 0 0 0 0 0 E
@@ -78,8 +78,8 @@ is unavoidable.
 BareHandAttack: 12
 E
 #2006
-thraecian warrior~
-a thraecian warrior~
+thracian warrior~
+a Thracian warrior~
 This warrior is covered in sweat, practicing his hand to hand combat skills.
 ~
    This guy is huge, well over six feet and pure muscle.  Looks like he's been
@@ -111,8 +111,8 @@ ostrich bird~
 an ostrich~
 A strange bird with long legs and a long neck stands here.
 ~
-   This must be one of the exotic animals from a far away country the emperor
-brings in to amuse his people.    
+   This must be one of the exotic animals from far away countries that the 
+emperor brings in to amuse his people.
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -123,13 +123,12 @@ E
 #2009
 horse giraffe~
 a giraffe~
-A humungous yellow horse looking animal with brown spots towers above you.
+An odd animal, looking like a stretched-out horse, towers above you.
 ~
    Another one of those exotic animals the emperor imports to keep his people
-happy by slaughtering them in the arena.  You think you heard the name before,
-"giraffee"
+happy by slaughtering them in the arena.  What sort of strange name is 'giraffe'?"
 ~
-65546 0 0 0 0 0 0 0 0 E
+65562 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
 130 16900
 8 8 1
@@ -151,12 +150,12 @@ placed over the regular ivory ones and look very sharp.
 BareHandAttack: 11
 E
 #2011
-Retiarri warrior~
-a retiarri warrior~
-A warrior in training practices with a wicked looking trident
+retiarius warrior~
+a retiarius warrior~
+A warrior in training practices with a wicked looking trident.
 ~
-   This warrior is heavily equipped with weapons a dagger, trident and a
-weighted net.    
+   This warrior is heavily equipped with weapons.  He carries a dagger, a
+trident and a weighted net.
 ~
 65608 0 0 0 0 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
@@ -165,13 +164,13 @@ weighted net.
 BareHandAttack: 3
 E
 #2012
-mirmillone gladiator~
-a mirmillone~
-This is gladiator practices with a shortsword, he looks very skilled.
+murmillo gladiator~
+a murmillo~
+This gladiator practices with a shortsword.  He looks very skilled.
 ~
-   He is heavily armored with a helmet arm and leg guards and a funny looking
-shield.  All of his armor has a strange ornament of a fish on them.  He swings
-a shortsword with ease and familiarity.    
+   He is heavily armored with a helmet, arm and leg guards and a funny looking
+shield.  The crest of his helmet has a strange ornament of a fish on it.  He 
+swings a shortsword with ease and familiarity.
 ~
 65608 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
@@ -182,7 +181,7 @@ E
 #2013
 lion~
 a lion~
-A lion looks up as you enter, he looks hungry.
+A lion looks up as you enter.  He looks hungry.
 ~
    These lions are starved then let loose in the arenas with gladiators or
 unarmed slaves.    
@@ -199,8 +198,8 @@ a tiger~
 A tiger looks at you hungrily.
 ~
    Another animal that is let loose in the arenas to battle against the
-gladiators or feed on the slaves this large cat looks like it hasn't eaten in a
-long time.    
+gladiators or feed on the slaves, this large cat looks like it hasn't eaten 
+in a long time.
 ~
 10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -223,10 +222,10 @@ veteran of combat of all kinds.
 E
 #2016
 Gaul~
-a gaul~
-A gaul is practicing, he looks pathetic.
+a Gaul~
+A Gaul is practicing.  He looks pathetic.
 ~
-   This gladiator looks like he just began his training.    
+   This gladiator looks like he has just begun his training.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -234,11 +233,11 @@ A gaul is practicing, he looks pathetic.
 8 8 1
 E
 #2017
-emporer titus~
-Emporer Titus~
-Emperor Titus is overseeing the ampitheater.
+Emperor Titus~
+Emperor Titus~
+Emperor Titus is overseeing the amphitheater.
 ~
-   Emporer Titus abuses his wealth and power all the while holding these great
+   Emperor Titus abuses his wealth and power, all the while holding these great
 games to distract the ignorant masses.  He is very good at it.  
 ~
 10 0 0 0 80 0 0 0 0 E
@@ -250,9 +249,9 @@ E
 #2018
 knight~
 a knight~
-This gladiator is dressed up like a knight, he looks ridiculous.
+This gladiator is dressed up like a knight.  He looks ridiculous.
 ~
-   This gladiator is dressed up like a knight, for one of the many shows.    
+   This gladiator is dressed up like a knight for one of the many shows.
 ~
 72 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -279,7 +278,7 @@ a civilian~
 A civilian is screaming at the top of his lungs, enthralled with the battle.
 ~
    He is watching the bout, screaming his encouragement to his favorite
-gladiator.  He seems to enjoy the blood shed and death.    
+gladiator.  He seems to enjoy the bloodshed and death.    
 ~
 72 0 0 0 80 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -292,8 +291,7 @@ religious official~
 a religious official~
 A religious official is wandering aimlessly through the crowd.
 ~
-   He looks lost, he's walking around kissing babies and other political
-necessities.    
+   He walks around, spouting religious dogma to anyone who will listen.
 ~
 72 0 0 0 80 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
